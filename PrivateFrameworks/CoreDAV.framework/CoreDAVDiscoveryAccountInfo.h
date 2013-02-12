@@ -58,6 +58,7 @@
 - (id)host;
 - (id)identityPersist;
 - (id)initWithAccountInfoProvider:(id)arg1;
+- (id)oauthToken;
 - (id)password;
 - (int)port;
 - (id)principalURL;

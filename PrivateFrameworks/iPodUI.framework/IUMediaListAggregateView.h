@@ -5,12 +5,12 @@
 @class IUMediaListAggregateViewConfiguration, IUReflectionImageView, NSMutableArray;
 
 @interface IUMediaListAggregateView : UIImageView {
-    unsigned int _needsViewsLoaded : 1;
     unsigned int _drawAsDisabled : 1;
     IUReflectionImageView *_artworkView;
     IUMediaListAggregateViewConfiguration *_configuration;
     NSMutableArray *_configurationSubviews;
     id _delegate;
+    BOOL _needsViewsLoaded;
 }
 
 @property(retain) IUMediaListAggregateViewConfiguration * configuration;
@@ -21,11 +21,13 @@
 - (void)_reloadSubviewsForConfiguration;
 - (void)_reloadViews;
 - (void)_removeSubviewsForConfiguration:(BOOL)arg1;
+- (void)_setNeedsViewsLoaded;
 - (id)configuration;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithConfiguration:(id)arg1;
 - (void)layoutSubviews;
+- (void)reloadData;
 - (void)setConfiguration:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

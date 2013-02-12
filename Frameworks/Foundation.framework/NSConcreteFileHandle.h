@@ -6,19 +6,21 @@
    See Warning(s) below.
  */
 
+@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
+
 @interface NSConcreteFileHandle : NSFileHandle {
     unsigned short _activity;
-    struct dispatch_data_s { } *_anchor;
-    struct dispatch_source_s { } *_dsrc;
+    NSObject<OS_dispatch_data> *_anchor;
+    NSObject<OS_dispatch_source> *_dsrc;
     int _error;
     int _fd;
-    struct dispatch_queue_s { } *_fhLock;
+    NSObject<OS_dispatch_queue> *_fhLock;
     unsigned short _flags;
     void *_nativeHandle;
     BOOL _padding2[2];
     BOOL _padding[2];
-    struct dispatch_queue_s { } *_readMonitoringQueue;
-    struct dispatch_source_s { } *_readMonitoringSource;
+    NSObject<OS_dispatch_queue> *_readMonitoringQueue;
+    NSObject<OS_dispatch_source> *_readMonitoringSource;
     id _readabilityHandler;
     void *_resultBytes;
     unsigned long _resultLength;
@@ -26,13 +28,13 @@
     struct __CFRunLoop { } *_rl;
     struct __CFRunLoopSource { } *_source;
     long long _weakRefCount;
-    struct dispatch_queue_s { } *_writeMonitoringQueue;
-    struct dispatch_source_s { } *_writeMonitoringSource;
+    NSObject<OS_dispatch_queue> *_writeMonitoringQueue;
+    NSObject<OS_dispatch_source> *_writeMonitoringSource;
     id _writeabilityHandler;
 }
 
 - (void)_cancelDispatchSources;
-- (struct dispatch_source_s { }*)_monitor:(const struct dispatch_source_type_s { }*)arg1 source:(struct dispatch_source_s { }*)arg2 onQueue:(struct dispatch_queue_s { }*)arg3;
+- (id)_monitor:(const struct dispatch_source_type_s { }*)arg1 source:(id)arg2 onQueue:(id)arg3;
 - (void)acceptConnectionInBackgroundAndNotify;
 - (void)acceptConnectionInBackgroundAndNotifyForModes:(id)arg1;
 - (id)availableData;
@@ -41,6 +43,7 @@
 - (void)closeFile;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (int)fileDescriptor;
 - (void)finalize;
 - (id)init;

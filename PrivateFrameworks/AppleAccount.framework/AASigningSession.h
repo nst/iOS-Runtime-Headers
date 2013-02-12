@@ -13,6 +13,7 @@
 
 @property(readonly) long error;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (long)error;
 - (void)establishSession;

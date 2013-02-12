@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface UIKeyboardInputMode : UITextInputMode {
     NSString *hardwareLayout;
@@ -13,6 +13,7 @@
 
 @property(retain) NSString * hardwareLayout;
 @property(retain) NSString * identifier;
+@property(readonly) NSArray * normalizedIdentifierLevels;
 @property(retain) NSString * primaryLanguage;
 @property(retain) NSString * softwareLayout;
 
@@ -25,6 +26,7 @@
 - (id)hardwareLayout;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
+- (id)normalizedIdentifierLevels;
 - (id)primaryLanguage;
 - (void)setHardwareLayout:(id)arg1;
 - (void)setIdentifier:(id)arg1;

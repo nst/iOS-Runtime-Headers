@@ -3,19 +3,19 @@
  */
 
 @interface PLCameraFloatingShutterButton : PLCameraButton {
-    float hitRectExtension;
 }
 
-@property float hitRectExtension;
++ (id)backgroundImageName;
++ (id)backgroundPressedImageName;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundResizableEdgeInsets;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
++ (id)defaultIconName;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectExtension;
++ (id)photoIconLandscapeName;
++ (id)photoIconPortraitName;
++ (id)videoOffIconName;
++ (id)videoOnIconName;
 
-- (void)_loadStillLandscapeResources;
-- (void)_loadStillResources;
-- (void)_loadVideoResources;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
-- (float)hitRectExtension;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRectFrame;
-- (id)initWithDefaultSize;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setHitRectExtension:(float)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSLocale, NSMutableArray, NSString;
+@class AVWeakReference, NSLocale, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVChapterMetadataItemInternal : NSObject {
     struct { 
@@ -22,7 +22,7 @@
     } duration;
     struct OpaqueFigAsset { } *figAsset;
     NSLocale *locale;
-    struct dispatch_queue_s { } *readWriteQueue;
+    NSObject<OS_dispatch_queue> *readWriteQueue;
     } time;
     id value;
     long valueErrorCode;

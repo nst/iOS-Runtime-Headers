@@ -5,10 +5,18 @@
 @class <EKDayViewContentDelegate>, EKCalendarDate, EKDayGridView, EKEvent, NSCalendar, NSMutableArray, NSTimeZone, UIView;
 
 @interface EKDayViewContent : UIView <UIGestureRecognizerDelegate> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     unsigned int _loadingOccurrences : 1;
     unsigned int _allowsOccurrenceSelection : 1;
     unsigned int _putSelectionOnTop : 1;
-    unsigned int _showsGrid : 1;
     unsigned int _darkensSelection : 1;
     unsigned int _eventsFillGrid : 1;
     unsigned int _dimsNonSelectedItems : 1;
@@ -24,6 +32,8 @@
     NSMutableArray *_itemsByDay;
     float _lastDayWidth;
     float _lastHeight;
+    } _latestVisibleRect;
+    BOOL _lazyAddsOccurrenceViews;
     UIView *_saturdayDarkeningView;
     EKEvent *_selectedEvent;
     EKCalendarDate *_startDate;
@@ -42,7 +52,7 @@
 @property BOOL eventsFillGrid;
 @property(readonly) double firstEventSecond;
 @property float fixedDayWidth;
-@property BOOL showsGrid;
+@property BOOL lazyAddsOccurrenceViews;
 @property BOOL showsLeftBorder;
 @property(copy) EKCalendarDate * startDate;
 @property(copy) NSTimeZone * timeZone;
@@ -54,7 +64,6 @@
 - (id)_dayStarts;
 - (float)_dayWidth;
 - (void)_layoutContentItems:(id)arg1 dayStart:(id)arg2 dayEnd:(id)arg3 xPosition:(float)arg4 width:(float)arg5;
-- (void)_selectedOccurrenceChanged:(id)arg1;
 - (BOOL)allowsOccurrenceSelection;
 - (id)calendar;
 - (BOOL)containsEvent:(id)arg1;
@@ -63,7 +72,6 @@
 - (double)dateForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dayOccurrenceViewClicked:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dayOccurrenceViewDragExited:(id)arg1;
-- (void)dayOccurrenceViewStartTouch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)dimmedOccurrence;
@@ -76,11 +84,14 @@
 - (id)grid;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 backgroundColor:(id)arg3 opaque:(BOOL)arg4 numberOfDaysToDisplay:(unsigned int)arg5;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2;
+- (id)lastDisplayedSecond;
 - (void)layoutSubviews;
+- (BOOL)lazyAddsOccurrenceViews;
 - (id)occurrenceViewForEvent:(id)arg1 onDate:(double)arg2;
 - (id)occurrenceViewForEvent:(id)arg1;
 - (id)occurrenceViews;
 - (struct CGPoint { float x1; float x2; })pointForDate:(double)arg1;
+- (void)rectBecameVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)selectEvent:(id)arg1;
 - (id)selectedEvent;
 - (void)setAllowsOccurrenceSelection:(BOOL)arg1;
@@ -93,16 +104,15 @@
 - (void)setEventsFillGrid:(BOOL)arg1;
 - (void)setFixedDayWidth:(float)arg1;
 - (void)setHoursToPadTop:(int)arg1;
+- (void)setLazyAddsOccurrenceViews:(BOOL)arg1;
 - (void)setOccurrences:(id)arg1;
 - (void)setOrientation:(int)arg1;
-- (void)setShowsGrid:(BOOL)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setStartDateWithDateComponents:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)setViewsDimmed:(BOOL)arg1 forEvent:(id)arg2;
-- (BOOL)showsGrid;
 - (BOOL)showsLeftBorder;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)startDate;

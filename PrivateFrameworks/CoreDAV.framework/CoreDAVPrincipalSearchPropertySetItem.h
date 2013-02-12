@@ -10,8 +10,9 @@
 
 @property(retain) NSMutableSet * principalSearchProperties;
 
++ (id)copyParseRules;
+
 - (void)addPrincipalSearchProperty:(id)arg1;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)init;

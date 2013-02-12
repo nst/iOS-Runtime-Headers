@@ -13,7 +13,8 @@
         unsigned int shouldRestoreFromViewAlpha : 1; 
         unsigned int shouldRasterize : 1; 
         unsigned int enableRotationAfterTransition : 1; 
-        unsigned int reserved : 25; 
+        unsigned int removeFromView : 1; 
+    float _curlUpRevealedHeight;
     id _delegate;
     UIResponder *_firstResponderToRemember;
     UIView *_fromView;
@@ -27,6 +28,7 @@
 
 + (double)defaultDurationForTransition:(int)arg1;
 
+- (float)_curlUpRevealedHeight;
 - (void)_didCompleteTransition:(BOOL)arg1;
 - (void)_didStartTransition;
 - (BOOL)_isTransitioningFromFromView:(id)arg1;
@@ -49,6 +51,7 @@
 - (void)setShouldNotifyDidCompleteImmediately:(BOOL)arg1;
 - (BOOL)shouldNotifyDidCompleteImmediately;
 - (id)toView;
+- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(BOOL)arg4;
 - (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (BOOL)transition:(int)arg1 toView:(id)arg2;
 

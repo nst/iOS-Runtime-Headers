@@ -13,7 +13,6 @@
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } accuracyBounds;
 @property id delegate;
 @property(getter=isDisplayingAccuracy,readonly) BOOL displayingAccuracy;
-@property BOOL effectsVisible;
 @property double headingAccuracy;
 @property(readonly) CALayer * headingLayer;
 @property(getter=isHovering,readonly) BOOL hovering;
@@ -27,9 +26,8 @@
 
 + (unsigned int)_selectedZIndex;
 + (unsigned int)_zIndex;
-+ (float)accuracyDiameter:(float)arg1 level:(unsigned int)arg2;
++ (float)accuracyDiameter:(float)arg1;
 + (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrameWithFrame:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (void)initialize;
 + (Class)layerClass;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_visibleRect;
@@ -45,7 +43,6 @@
 - (id)description;
 - (void)didMoveToWindow;
 - (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })effectiveFrame;
-- (BOOL)effectsVisible;
 - (double)headingAccuracy;
 - (id)headingLayer;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -57,7 +54,6 @@
 - (void)setAccuracy:(float)arg1 duration:(double)arg2;
 - (void)setAccuracy:(float)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEffectsVisible:(BOOL)arg1;
 - (void)setHeadingAccuracy:(double)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setPosition:(BOOL)arg1 value:(struct CADoublePoint { double x1; double x2; })arg2 accuracy:(BOOL)arg3 value:(float)arg4 duration:(double)arg5;

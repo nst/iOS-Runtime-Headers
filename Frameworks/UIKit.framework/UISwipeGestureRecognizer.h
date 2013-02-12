@@ -9,7 +9,7 @@
         float x; 
         float y; 
     unsigned int _failed : 1;
-    int _direction;
+    unsigned int _direction;
     double _maximumDuration;
     float _maximumPrimaryMovement;
     float _maximumSecondaryMovement;
@@ -24,7 +24,7 @@
     NSMutableArray *_touches;
 }
 
-@property int direction;
+@property unsigned int direction;
 @property double maximumDuration;
 @property float maximumPrimaryMovement;
 @property float maximumSecondaryMovement;
@@ -35,8 +35,8 @@
 @property float rateOfMinimumMovementDecay;
 @property(readonly) struct CGPoint { float x1; float x2; } startPoint;
 
-+ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(int)arg4 touchCount:(unsigned int)arg5;
-+ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(int)arg4;
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(unsigned int)arg4 touchCount:(unsigned int)arg5;
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(unsigned int)arg4;
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 touchCount:(unsigned int)arg4;
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 
@@ -44,7 +44,7 @@
 - (BOOL)_checkForSwipeWithDelta:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;
 - (void)_resetGestureRecognizer;
 - (void)dealloc;
-- (int)direction;
+- (unsigned int)direction;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
@@ -59,7 +59,7 @@
 - (unsigned int)numberOfTouchesRequired;
 - (float)rateOfMaximumMovementDecay;
 - (float)rateOfMinimumMovementDecay;
-- (void)setDirection:(int)arg1;
+- (void)setDirection:(unsigned int)arg1;
 - (void)setMaximumDuration:(double)arg1;
 - (void)setMaximumPrimaryMovement:(float)arg1;
 - (void)setMaximumSecondaryMovement:(float)arg1;

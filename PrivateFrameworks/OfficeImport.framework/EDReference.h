@@ -15,6 +15,7 @@
 + (id)referenceWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
 + (id)referenceWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 
+- (id).cxx_construct;
 - (struct EDAreaReference { int x1; int x2; int x3; int x4; })areaReference;
 - (bool)containsRow:(int)arg1 column:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

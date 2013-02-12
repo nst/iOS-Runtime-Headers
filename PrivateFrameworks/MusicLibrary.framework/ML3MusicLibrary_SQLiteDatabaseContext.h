@@ -2,14 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class CPLRUDictionary, ML3NondurableWriteSet;
+@class CPLRUDictionary, ML3MusicLibrary, ML3NondurableWriteSet, MLSQLiteConnection, MLSQLiteConnectionQueue;
 
-@interface ML3MusicLibrary_SQLiteDatabaseContext : NSObject {
+@interface ML3MusicLibrary_SQLiteDatabaseContext : NSObject <MLSQLiteConnectionSQLiteDelegate> {
     unsigned int _transactionHasChanges : 1;
     unsigned int _transactionHasNonContentsChanges : 1;
+    unsigned int _transactionHasInvisiblePropertyChanges : 1;
     unsigned int _transactionHasDisplayValuesChanges : 1;
-    struct sqlite3 { } *_db;
+    MLSQLiteConnection *_connection;
+    MLSQLiteConnectionQueue *_connectionQueue;
     const void *_iTunesExtensions;
+    ML3MusicLibrary *_library;
     ML3NondurableWriteSet *_nondurableWriteSet;
     struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
     CPLRUDictionary *_statementCache;
@@ -17,29 +20,34 @@
     unsigned int _writeStatementCount;
 }
 
-@property(readonly) struct sqlite3 { }* db;
+@property(readonly) MLSQLiteConnection * connection;
+@property(readonly) MLSQLiteConnectionQueue * connectionQueue;
 @property(retain) ML3NondurableWriteSet * nondurableWriteSet;
 @property(readonly) struct iPhoneSortKeyBuilder { }* sortKeyBuilder;
 @property BOOL transactionHasChanges;
 @property BOOL transactionHasDisplayValuesChanges;
+@property BOOL transactionHasInvisiblePropertyChanges;
 @property BOOL transactionHasNonContentsChanges;
 @property int transactionKind;
 
-- (id)copyStatementForSQL:(id)arg1 cache:(BOOL)arg2;
-- (struct sqlite3 { }*)db;
+- (void).cxx_destruct;
+- (void)connection:(id)arg1 didOpenDBHandle:(struct sqlite3 { }*)arg2;
+- (void)connection:(id)arg1 willCloseDBHandle:(struct sqlite3 { }*)arg2;
+- (id)connection;
+- (id)connectionQueue;
 - (void)dealloc;
-- (BOOL)executeSQL:(id)arg1 waitIfBusy:(BOOL)arg2;
-- (BOOL)executeSQL:(id)arg1;
-- (id)initWithDB:(struct sqlite3 { }*)arg1;
+- (id)initWithLibrary:(id)arg1 connectionQueue:(id)arg2;
 - (id)nondurableWriteSet;
 - (void)setNondurableWriteSet:(id)arg1;
 - (void)setTransactionHasChanges:(BOOL)arg1;
 - (void)setTransactionHasDisplayValuesChanges:(BOOL)arg1;
+- (void)setTransactionHasInvisiblePropertyChanges:(BOOL)arg1;
 - (void)setTransactionHasNonContentsChanges:(BOOL)arg1;
 - (void)setTransactionKind:(int)arg1;
 - (struct iPhoneSortKeyBuilder { }*)sortKeyBuilder;
 - (BOOL)transactionHasChanges;
 - (BOOL)transactionHasDisplayValuesChanges;
+- (BOOL)transactionHasInvisiblePropertyChanges;
 - (BOOL)transactionHasNonContentsChanges;
 - (int)transactionKind;
 

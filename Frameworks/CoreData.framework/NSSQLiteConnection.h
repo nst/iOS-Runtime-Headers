@@ -11,7 +11,8 @@
         unsigned int _fileSystemType : 2; 
         unsigned int _proxyLocking : 1; 
         unsigned int _vacuumSetupNeeded : 1; 
-        unsigned int _reserved : 26; 
+        unsigned int _usingWAL : 1; 
+        unsigned int _reserved : 25; 
     NSSQLiteStatement *_beginStatement;
     struct __CFDictionary { } *_cachedEntityUpdateStatements;
     NSSQLiteStatement *_commitStatement;
@@ -43,6 +44,7 @@
 + (int)readMagicWordFromPath:(const char *)arg1;
 
 - (id)_adapter;
+- (id)_beginPowerAssertionWithAssert:(unsigned int*)arg1;
 - (void)_bindVariablesWithDeletedRow:(id)arg1;
 - (void)_bindVariablesWithInsertedRow:(id)arg1;
 - (void)_bindVariablesWithUpdatedRow:(id)arg1 andOriginalRow:(id)arg2 forDeltasMask:(struct __CFBitVector { }*)arg3;
@@ -58,6 +60,7 @@
 - (void)_configurePragmaOptions:(int)arg1;
 - (void)_configureSynchronousMode;
 - (void)_configureUbiquityMetadataTable;
+- (void)_endPowerAssertionWithAssert:(unsigned int)arg1 andApp:(id)arg2;
 - (void)_ensureDatabaseOpen;
 - (void)_ensureNoFetchInProgress;
 - (void)_ensureNoStatementPrepared;
@@ -74,6 +77,7 @@
 - (int)_rowsChangedByLastExecute;
 - (void)_setupVacuumIfNecessary;
 - (struct sqlite3_stmt { }*)_vmstatement;
+- (void)addPeerRange:(id)arg1;
 - (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
 - (id)allPeerRanges;
 - (void)beginTransaction;
@@ -99,7 +103,7 @@
 - (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
 - (id)fetchTableCreationSQL;
 - (id)fetchTableNames;
-- (id)fetchUbiqiutyKnowledgeVector;
+- (id)fetchUbiquityKnowledgeVector;
 - (void)finalize;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
 - (void)handleCorruptedDB:(id)arg1;

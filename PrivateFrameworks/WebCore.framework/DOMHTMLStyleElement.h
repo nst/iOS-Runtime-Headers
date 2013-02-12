@@ -9,7 +9,7 @@
 
 @property BOOL disabled;
 @property(copy) NSString * media;
-@property(retain,readonly) DOMStyleSheet * sheet;
+@property(readonly) DOMStyleSheet * sheet;
 @property(copy) NSString * type;
 
 - (BOOL)disabled;

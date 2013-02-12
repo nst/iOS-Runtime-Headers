@@ -4,7 +4,7 @@
 
 @class NSArray, NSDictionary, NSString, RUITableView, RUIWebView, UIBarButtonItem, UIToolbar, UIView;
 
-@interface RUIPage : UIViewController {
+@interface RUIPage : UIViewController <UIWebViewDelegate> {
     UIView *_containerView;
     id _delegate;
     BOOL _hidesBackButton;
@@ -59,8 +59,10 @@
 - (id)containerView;
 - (id)contentScrollView;
 - (void)dealloc;
+- (id)delegate;
 - (id)description;
 - (BOOL)hasTableView;
+- (BOOL)hasWebView;
 - (BOOL)hidesBackButton;
 - (id)init;
 - (id)leftNavigationBarButton;

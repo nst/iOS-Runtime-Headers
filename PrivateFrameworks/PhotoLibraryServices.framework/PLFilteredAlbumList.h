@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <NSObject><NSCopying>, NSIndexSet, NSMutableIndexSet, NSMutableOrderedSet, NSPredicate, NSString, PLIndexMapper, PLManagedAlbumList, PLPhotoLibrary;
+@class NSMutableIndexSet, NSMutableOrderedSet, NSPredicate, NSString, PLIndexMapper, PLManagedAlbumList, PLPhotoLibrary;
 
 @interface PLFilteredAlbumList : NSObject <PLAlbumContainer, PLIndexMapperDataSource, PLIndexMappingCache> {
-    NSMutableOrderedSet *_albums;
     NSMutableIndexSet *_filteredIndexes;
     PLIndexMapper *_indexMapper;
+    NSMutableOrderedSet *_weak_albums;
     PLManagedAlbumList *backingAlbumList;
     int filter;
     NSPredicate *predicate;
@@ -18,14 +18,14 @@
 @property(readonly) NSString * _typeDescription;
 @property(readonly) int albumListType;
 @property(readonly) NSMutableOrderedSet * albums;
+@property(readonly) id albumsSortingComparator;
 @property(retain) PLManagedAlbumList * backingAlbumList;
-@property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
 @property(readonly) BOOL canEditAlbums;
 @property int filter;
-@property(readonly) NSIndexSet * filteredIndexes;
 @property(readonly) PLIndexMapper * indexMapper;
 @property(readonly) PLPhotoLibrary * photoLibrary;
 @property(retain) NSPredicate * predicate;
+@property(readonly) unsigned int unreadAlbumsCount;
 
 + (id)filteredAlbumList:(id)arg1 filter:(int)arg2;
 
@@ -37,11 +37,13 @@
 - (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
 - (int)albumListType;
 - (id)albums;
+- (id)albumsSortingComparator;
 - (id)backingAlbumList;
 - (id)cachedIndexMapState;
 - (BOOL)canEditAlbums;
 - (unsigned int)countOfFilteredAlbums;
 - (void)dealloc;
+- (Class)derivedChangeNotificationClass;
 - (id)description;
 - (int)filter;
 - (id)filteredAlbumsAtIndexes:(id)arg1;
@@ -55,7 +57,8 @@
 - (void)insertFilteredAlbums:(id)arg1 atIndexes:(id)arg2;
 - (void)insertObject:(id)arg1 inFilteredAlbumsAtIndex:(unsigned int)arg2;
 - (id)managedObjectContext;
-- (void)mappedDataSourceChanged:(id)arg1;
+- (BOOL)mappedDataSourceChanged:(id)arg1 remoteNotificationData:(id)arg2;
+- (BOOL)needsReordering;
 - (id)objectInFilteredAlbumsAtIndex:(unsigned int)arg1;
 - (id)photoLibrary;
 - (id)predicate;
@@ -65,8 +68,11 @@
 - (void)replaceObjectInFilteredAlbumsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)setBackingAlbumList:(id)arg1;
 - (void)setFilter:(int)arg1;
+- (void)setNeedsReordering;
 - (void)setPredicate:(id)arg1;
 - (void)set_albums:(id)arg1;
 - (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
+- (unsigned int)unreadAlbumsCount;
+- (void)updateAlbumsOrderIfNeeded;
 
 @end

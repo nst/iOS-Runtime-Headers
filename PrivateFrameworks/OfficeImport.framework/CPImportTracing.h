@@ -3,9 +3,6 @@
  */
 
 @interface CPImportTracing : CPTracing {
-    long mImportingOpstat;
-    long mProcessorOpstat;
-    long mReadingOpstat;
 }
 
 - (void)dealloc;

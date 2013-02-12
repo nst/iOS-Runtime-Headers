@@ -2,32 +2,40 @@
    Image: /System/Library/PrivateFrameworks/AOSNotification.framework/AOSNotification
  */
 
-@class <AOSNotifySessionDelegate>;
+@class <AOSNotifySessionDelegate>, CPDistributedNotificationCenter;
 
 @interface AOSNotifySession : NSObject {
+    CPDistributedNotificationCenter *_center;
     <AOSNotifySessionDelegate> *_delegate;
-    unsigned int _serverPort;
 }
 
 @property <AOSNotifySessionDelegate> * delegate;
 
-+ (id)copySerialNum:(id*)arg1;
-+ (id)copySetupToken:(id*)arg1;
++ (id)copyLostModeParams;
 + (id)copyStoreAccount;
++ (void)disableLostMode;
++ (BOOL)lostModeIsActive;
++ (id)sharedInstance;
 
-- (void)_stopDeliveringNotifications;
-- (void)_topicNotified:(id)arg1;
+- (id)_errorForCode:(int)arg1 message:(id)arg2;
+- (void)_stopVettingNotifications;
 - (void)_vetFinished:(id)arg1;
 - (void)_vetResultReceived:(id)arg1;
 - (id)addAccount:(id)arg1;
+- (id)addFMFAccount:(id)arg1;
 - (id)cancelEmailVet;
 - (void)dealloc;
 - (id)delegate;
-- (id)getSetupToken:(id*)arg1;
+- (void)dumpDebugInfo:(id)arg1;
+- (id)fmipAccount;
+- (id)iCloudAccount;
+- (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (id)removeAccount:(id)arg1;
+- (id)removeFMFAccountWithUsername:(id)arg1;
 - (id)retrieveAllAccounts:(id*)arg1;
 - (id)retrieveCurrentAccountForService:(id)arg1 returningAccount:(id*)arg2;
+- (id)retrieveFMFAccount:(id*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)startListeningOnTopic:(id)arg1;
 - (void)stopListeningOnTopic:(id)arg1;

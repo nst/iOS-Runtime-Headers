@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableSet, NSSQLCore, NSSet, PFUbiquityLocation, PFUbiquityPeer, PFUbiquityStoreMetadata, _PFUbiquityStack;
+@class NSMutableSet, NSSQLCore, NSSet, PFUbiquityLocation, PFUbiquityPeer, PFUbiquityStoreMetadata, PFUbiquitySwitchboardCacheWrapper, _PFUbiquityStack;
 
 @interface PFUbiquityStoreExportContext : NSObject {
+    PFUbiquitySwitchboardCacheWrapper *_cacheWrapper;
     PFUbiquityPeer *_localPeer;
     _PFUbiquityStack *_stack;
     NSSQLCore *_store;
@@ -13,6 +14,7 @@
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
+@property(retain) PFUbiquitySwitchboardCacheWrapper * cacheWrapper;
 @property(readonly) PFUbiquityPeer * localPeer;
 @property(readonly) _PFUbiquityStack * stack;
 @property(retain) NSSQLCore * store;
@@ -21,10 +23,12 @@
 @property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
 - (id)addTransactionEntryForGlobalIDString:(id)arg1 andLocalManagedObjectID:(id)arg2 andTransactionType:(int)arg3;
+- (id)cacheWrapper;
 - (void)dealloc;
 - (id)description;
 - (id)initWithStoreName:(id)arg1 andUbiquityRootLocation:(id)arg2 forLocalPeerID:(id)arg3 withStack:(id)arg4;
 - (id)localPeer;
+- (void)setCacheWrapper:(id)arg1;
 - (void)setStore:(id)arg1;
 - (id)stack;
 - (id)store;

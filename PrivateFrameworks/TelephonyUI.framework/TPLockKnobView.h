@@ -7,17 +7,13 @@
 @interface TPLockKnobView : UIImageView {
     UIAlphaAnimation *_animation;
     float _centerDelta;
-    BOOL _isSecondaryKnob;
     TPBottomLockBar *_track;
     BOOL _tracking;
 }
 
 - (void)beginTracking:(id)arg1;
-- (float)currentProgress;
 - (void)dealloc;
-- (id)initWithImage:(id)arg1 isSecondaryKnob:(BOOL)arg2;
 - (id)initWithImage:(id)arg1;
-- (BOOL)isSecondaryKnob;
 - (BOOL)isTracking;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setLockView:(id)arg1;

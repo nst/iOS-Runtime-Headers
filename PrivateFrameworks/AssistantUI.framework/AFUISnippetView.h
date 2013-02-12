@@ -9,8 +9,6 @@
     UIImageView *_bottomGradientImage;
     AFUISnippetContentContainerView *_contentContainer;
     <AFUISnippetViewDelegate> *_delegate;
-    BOOL _hasDisclosure;
-    BOOL _isDisclosed;
     UIView *_shadowView;
 }
 
@@ -18,33 +16,26 @@
 @property int borderStyle;
 @property(retain) UIView * contentView;
 @property <AFUISnippetViewDelegate> * delegate;
-@property(getter=isDisclosed) BOOL disclosed;
-@property BOOL hasDisclosure;
 @property BOOL showsShadow;
 
 + (id)addShadowToView:(id)arg1;
 + (void)layoutShadowView:(id)arg1 withinBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
-- (void)_disclosureButtonHit:(id)arg1;
+- (void).cxx_destruct;
 - (void)_resizeToFit;
-- (void)_setDisclosed:(BOOL)arg1;
 - (int)backgroundStyle;
 - (id)backgroundView;
 - (int)borderStyle;
 - (id)contentView;
-- (void)dealloc;
 - (id)delegate;
-- (BOOL)hasDisclosure;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDisclosed;
+- (BOOL)isReadyToAppear;
 - (void)layoutSubviews;
 - (void)setBackgroundStyle:(int)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBorderStyle:(int)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisclosed:(BOOL)arg1;
-- (void)setHasDisclosure:(BOOL)arg1;
 - (void)setHeaderImage:(id)arg1;
 - (void)setHeaderText:(id)arg1;
 - (void)setShowsShadow:(BOOL)arg1;

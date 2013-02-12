@@ -15,6 +15,8 @@
     id _context;
     NSDate *_creationDate;
     id _deliveryAcknowledgementBlock;
+    NSString *_dsAuthID;
+    BOOL _forceCellular;
     NSDictionary *_responseAlert;
     NSData *_serviceData;
     double _timeout;
@@ -27,6 +29,7 @@
     BOOL _wantsResponse;
 }
 
+@property(readonly) NSData * IDCertificate;
 @property(setter=_setCachedBody:,retain) NSDictionary * _cachedBody;
 @property(setter=_setUsingOutgoingPush:) BOOL _usingOutgoingPush;
 @property(readonly) NSDictionary * additionalMessageHeaders;
@@ -40,12 +43,23 @@
 @property(retain) NSDate * creationDate;
 @property(readonly) double customRetryInterval;
 @property(copy) id deliveryAcknowledgementBlock;
+@property(setter=setDSAuthID:,copy) NSString * dsAuthID;
+@property BOOL forceCellular;
+@property(readonly) struct __SecKey { }* identityPrivateKey;
+@property(readonly) struct __SecKey { }* identityPublicKey;
 @property(readonly) BOOL ignoresNetworkConnectivity;
 @property(readonly) BOOL isValidMessage;
 @property(readonly) NSDictionary * messageBody;
 @property(readonly) NSDictionary * messageBodyUsingCache;
 @property(readonly) NSDictionary * nonStandardMessageHeadersForOutgoingPush;
 @property(readonly) BOOL payloadCanBeLogged;
+@property(readonly) NSData * provisionCertificate;
+@property(readonly) struct __SecKey { }* provisionPrivateKey;
+@property(readonly) struct __SecKey { }* provisionPublicKey;
+@property(readonly) NSData * pushCertificate;
+@property(readonly) struct __SecKey { }* pushPrivateKey;
+@property(readonly) struct __SecKey { }* pushPublicKey;
+@property(readonly) NSData * pushToken;
 @property(readonly) NSArray * requiredKeys;
 @property(copy) NSDictionary * responseAlertInfo;
 @property(readonly) int responseCommand;
@@ -59,6 +73,7 @@
 @property(readonly) BOOL wantsAPSRetries;
 @property(readonly) BOOL wantsBagKey;
 @property BOOL wantsBinaryPush;
+@property(readonly) BOOL wantsBodySignature;
 @property(readonly) BOOL wantsCFNetworkTimeout;
 @property(readonly) BOOL wantsCompressedBody;
 @property(readonly) BOOL wantsCustomRetryInterval;
@@ -66,9 +81,12 @@
 @property(readonly) BOOL wantsHTTPHeaders;
 @property BOOL wantsIntegerUniqueIDs;
 @property(readonly) BOOL wantsJSONBody;
+@property(readonly) BOOL wantsManagedRetries;
 @property BOOL wantsResponse;
+@property(readonly) BOOL wantsSignature;
 @property(readonly) BOOL wantsUserAgentInHeaders;
 
+- (id)IDCertificate;
 - (void)_cacheBody;
 - (id)_cachedBody;
 - (void)_setCachedBody:(id)arg1;
@@ -87,9 +105,13 @@
 - (double)customRetryInterval;
 - (void)dealloc;
 - (id)deliveryAcknowledgementBlock;
+- (id)dsAuthID;
+- (BOOL)forceCellular;
 - (void)handleResponseDictionary:(id)arg1;
 - (void)handleResponseHeaders:(id)arg1;
 - (BOOL)hasRequiredKeys:(id*)arg1;
+- (struct __SecKey { }*)identityPrivateKey;
+- (struct __SecKey { }*)identityPublicKey;
 - (BOOL)ignoresNetworkConnectivity;
 - (id)init;
 - (BOOL)isValidMessage;
@@ -97,6 +119,13 @@
 - (id)messageBodyUsingCache;
 - (id)nonStandardMessageHeadersForOutgoingPush;
 - (BOOL)payloadCanBeLogged;
+- (id)provisionCertificate;
+- (struct __SecKey { }*)provisionPrivateKey;
+- (struct __SecKey { }*)provisionPublicKey;
+- (id)pushCertificate;
+- (struct __SecKey { }*)pushPrivateKey;
+- (struct __SecKey { }*)pushPublicKey;
+- (id)pushToken;
 - (id)requiredKeys;
 - (id)responseAlertInfo;
 - (int)responseCommand;
@@ -105,7 +134,9 @@
 - (void)setCompletionBlock:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCreationDate:(id)arg1;
+- (void)setDSAuthID:(id)arg1;
 - (void)setDeliveryAcknowledgementBlock:(id)arg1;
+- (void)setForceCellular:(BOOL)arg1;
 - (void)setResponseAlertInfo:(id)arg1;
 - (void)setServiceData:(id)arg1;
 - (void)setTimeout:(double)arg1;
@@ -124,6 +155,7 @@
 - (BOOL)wantsAPSRetries;
 - (BOOL)wantsBagKey;
 - (BOOL)wantsBinaryPush;
+- (BOOL)wantsBodySignature;
 - (BOOL)wantsCFNetworkTimeout;
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsCustomRetryInterval;
@@ -131,7 +163,9 @@
 - (BOOL)wantsHTTPHeaders;
 - (BOOL)wantsIntegerUniqueIDs;
 - (BOOL)wantsJSONBody;
+- (BOOL)wantsManagedRetries;
 - (BOOL)wantsResponse;
+- (BOOL)wantsSignature;
 - (BOOL)wantsUserAgentInHeaders;
 
 @end

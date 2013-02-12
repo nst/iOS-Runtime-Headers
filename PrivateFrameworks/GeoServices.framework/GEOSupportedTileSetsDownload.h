@@ -12,9 +12,12 @@
 @property(retain) GEODownloadMetadata * metadata;
 @property(retain) GEOSupportedTileSets * tileSets;
 
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)metadata;
 - (BOOL)readFrom:(id)arg1;
 - (void)setMetadata:(id)arg1;

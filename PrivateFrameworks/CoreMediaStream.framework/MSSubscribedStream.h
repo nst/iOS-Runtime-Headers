@@ -14,8 +14,8 @@
 
 + (id)subscribedStreamWithStreamID:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)ctag;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

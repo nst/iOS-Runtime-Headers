@@ -9,7 +9,10 @@
 
 + (void)initialize;
 
+- (void)_createExternalDataDictWithValueCallbacks:(void*)arg1;
+- (void)_doForgetAllExternalData:(void*)arg1;
 - (void)_growRegistrationCollectionTo:(unsigned int)arg1;
+- (id)_initWithValueCallbacks:(void*)arg1;
 - (void)dealloc;
 - (void)decrementRefCountForObjectID:(id)arg1;
 - (id)externalDataForObjectID:(id)arg1 timestamp:(double)arg2;

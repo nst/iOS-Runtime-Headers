@@ -6,6 +6,7 @@
 
 @interface MFOutgoingMessageDelivery : NSObject {
     MailAccount *_archiveAccount;
+    NSArray *_charsets;
     NSDictionary *_compositionSpecification;
     MFMailDelivery *_currentDeliveryObject;
     <MFDeliveryDelegate> *_delegate;
@@ -21,7 +22,7 @@
 
 @property(retain) NSDictionary * compositionSpecification;
 
-+ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
++ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 + (id)newWithMessage:(id)arg1;
 
@@ -33,7 +34,7 @@
 - (void)dealloc;
 - (int)deliverSynchronously;
 - (int)deliveryStatus;
-- (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
+- (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 - (id)initWithMessage:(id)arg1;
 - (id)message;

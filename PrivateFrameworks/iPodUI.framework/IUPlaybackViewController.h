@@ -5,12 +5,12 @@
 @class MPAVItem, MPPlaybackTitlesView, MPTransitionController, MPViewController, UINavigationButton, UIView;
 
 @interface IUPlaybackViewController : IUiPodViewController {
-    unsigned int _exited : 1;
     unsigned int _usingVideoOut : 1;
     unsigned int _wantsVideoLayer : 1;
     MPViewController *_activeViewController;
     UINavigationButton *_backButton;
     UIView *_backstop;
+    BOOL _exited;
     struct __CFBag { } *_ignoredChangeTypes;
     int _interfaceOrientation;
     MPAVItem *_item;
@@ -28,7 +28,6 @@
 
 - (void)_accessorySplashViewWillAppearNotification:(id)arg1;
 - (void)_backButtonAction:(id)arg1;
-- (void)_crossedTimeMarkerNotification:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
@@ -40,23 +39,30 @@
 - (void)_setActiveViewController:(id)arg1 forTransition:(BOOL)arg2;
 - (void)_transitionFinished:(id)arg1;
 - (void)_tvOutCapabilityChanged:(id)arg1;
+- (id)activeViewController;
 - (void)beginIgnoringChangeTypes:(unsigned int)arg1;
-- (id)createTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
-- (id)createTransitionControllerForChangeToItem:(id)arg1 fromItem:(id)arg2;
-- (id)createViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)dealloc;
 - (void)deviceOrientationChanged:(int)arg1;
 - (void)endIgnoringChangeTypes:(unsigned int)arg1;
 - (void)exitPlayerAnimated:(BOOL)arg1;
 - (void)exitPlayerForAccessorySplash;
+- (BOOL)exited;
 - (id)init;
+- (int)interfaceOrientation;
 - (BOOL)isStatusBarHidden;
 - (id)item;
 - (void)loadView;
+- (id)newTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
+- (id)newTransitionControllerForChangeToItem:(id)arg1 fromItem:(id)arg2;
+- (id)newViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (int)orientation;
 - (void)performTransition:(id)arg1;
-- (id)player;
+- (void)registerForPlayerNotifications;
 - (void)reloadData;
+- (void)setActiveViewController:(id)arg1;
+- (void)setExited:(BOOL)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
 - (void)setItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setItem:(id)arg1;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
@@ -67,6 +73,7 @@
 - (BOOL)shouldIgnoreChangeType:(unsigned int)arg1;
 - (BOOL)shouldShowNowPlayingButton;
 - (int)statusBarStyle;
+- (void)unregisterForPlayerNotifications;
 - (void)updateArtworkToImageAtTimeMarker:(id)arg1;
 - (BOOL)usingVideoOut;
 - (void)viewController:(id)arg1 beginIgnoringChangeTypes:(unsigned int)arg2;

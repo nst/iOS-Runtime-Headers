@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLAdapter, NSSQLConnection, NSSQLEntity, NSSQLModel, NSSQLRow, NSSQLRowCache, NSSaveChangesRequest, NSSet, NSString;
+@class NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSQLAdapter, NSSQLConnection, NSSQLEntity, NSSQLModel, NSSQLRow, NSSQLRowCache, NSSaveChangesRequest, NSSet, NSString, NSURL;
 
-@interface NSSQLCore : NSPersistentStore {
+@interface NSSQLCore : NSPersistentStore <NSFilePresenter> {
     struct _sqlCoreFlags { 
         unsigned int preparingForSave : 1; 
         unsigned int beganTransaction : 1; 
@@ -44,6 +44,10 @@
     int _transactionInMemorySequence;
     NSMutableDictionary *_uniqueTable;
 }
+
+@property(readonly) NSOperationQueue * presentedItemOperationQueue;
+@property(readonly) NSURL * presentedItemURL;
+@property(readonly) NSURL * primaryPresentedItemURL;
 
 + (BOOL)SQLGenerationV1Default;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
@@ -90,7 +94,9 @@
 - (id)_newAdapterForModel:(id)arg1;
 - (id)_newConflictRecordForObject:(id)arg1 originalRow:(id)arg2 newRow:(id)arg3;
 - (id)_newObjectGraphStyleForSQLRow:(id)arg1 withObject:(id)arg2;
-- (id)_newRowCacheRowForToManyUpdatesForRelationship:(id)arg1 rowCacheOriginal:(id)arg2 originalSnapshot:(id)arg3 value:(id)arg4 added:(id)arg5 deleted:(id)arg6 sourceRowPK:(long long)arg7 properties:(id)arg8 sourceObject:(id)arg9 reorderedIndexes:(char **)arg10;
+- (id)_newObjectIDForEntity:(id)arg1 referenceData64:(unsigned long long)arg2;
+- (id)_newReservedKeysForEntities:(id)arg1 counts:(id)arg2;
+- (id)_newRowCacheRowForToManyUpdatesForRelationship:(id)arg1 rowCacheOriginal:(id)arg2 originalSnapshot:(id)arg3 value:(id)arg4 added:(id)arg5 deleted:(id)arg6 sourceRowPK:(long long)arg7 properties:(id)arg8 sourceObject:(id)arg9 newIndexes:(unsigned int**)arg10 reorderedIndexes:(char **)arg11;
 - (id)_newRowsForFetchPlan:(id)arg1 selectedBy:(SEL)arg2 withArgument:(id)arg3;
 - (Class)_objectIDClass;
 - (id)_obtainOpenChannel;
@@ -99,7 +105,7 @@
 - (id)_performExhaustiveConflictDetectionForObjects:(id)arg1 withChannel:(id)arg2;
 - (BOOL)_performFastConflictDetectionForObjects:(id)arg1 withChannel:(id)arg2;
 - (void)_performPostSaveTasks;
-- (void)_populateOrderKeysInOrderedSet:(id)arg1 usingSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 reorderedIndexes:(char **)arg4;
+- (void)_populateOrderKeysInOrderedSet:(id)arg1 usingSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 newIndexes:(unsigned int**)arg4 reorderedIndexes:(char **)arg5;
 - (void)_populateRowForOp:(id)arg1 withObject:(id)arg2;
 - (id)_predicateForSelectingObjectForOperation:(id)arg1;
 - (void)_prefetchRelationshipKey:(id)arg1 sourceEntityDescription:(id)arg2 sourceObjectIDs:(id)arg3 prefetchRelationshipKeys:(id)arg4 inContext:(id)arg5;
@@ -111,6 +117,7 @@
 - (struct __CFArray { }*)_rowsForConflictDetection:(id)arg1 withChannel:(id)arg2;
 - (void)_setMetadata:(id)arg1;
 - (id)_ubiquityDictionaryForAttribute:(id)arg1 onObject:(id)arg2;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
 - (id)adapter;
 - (id)availableChannel;
 - (void)beginTransaction;
@@ -181,6 +188,8 @@
 - (void)performChanges;
 - (id)permanentObjectIDForObjectInTransaction:(id)arg1;
 - (void)prepareForSave:(id)arg1;
+- (id)presentedItemOperationQueue;
+- (id)presentedItemURL;
 - (id)rawSQLTextForToManyFaultStatement:(id)arg1 stripBindVariables:(BOOL)arg2 swapEKPK:(BOOL)arg3;
 - (void)recomputePrimaryKeyMaxForEntities:(id)arg1;
 - (void)recordChangesInContext:(id)arg1;

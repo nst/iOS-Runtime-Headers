@@ -34,6 +34,7 @@
 
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;
 - (void)_coreProtocolDidFinishError:(id)arg1;
+- (void)abort;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;

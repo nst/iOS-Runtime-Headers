@@ -14,6 +14,7 @@
 - (BOOL)hasSearchBar;
 - (BOOL)isCurrentController;
 - (BOOL)isViewLoaded;
+- (void)loadView;
 - (void)performDefaultActionForRow:(int)arg1;
 - (id)searchResultListDelegate;
 - (void)setSearchResultListDelegate:(id)arg1;

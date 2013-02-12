@@ -2,40 +2,51 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <AVPlaylistFeeder>, MPAVItem, MPAVQueuePlayerFeeder, MPQueuePlayer;
+@class <MPAVPlaylistFeeder>, MPAVItem, MPAVQueuePlayerFeeder, MPQueuePlayer, NSString;
 
 @interface MPAVPlaylistManager : NSObject <MPAVQueuePlayerFeederSource> {
-    unsigned int _goToTargetIndex : 1;
+    NSString *_audioSessionModeOverride;
     MPAVItem *_currentItem;
     MPAVQueuePlayerFeeder *_feeder;
+    BOOL _goToTargetIndex;
     int _isChangingPlaylistFeeder;
     int _lastSelectionDirection;
     MPQueuePlayer *_player;
-    <AVPlaylistFeeder> *_playlistFeeder;
+    <MPAVPlaylistFeeder> *_playlistFeeder;
     int _repeatMode;
     int _retainCount;
     int _targetIndex;
+    BOOL _updatedAudioSessionMode;
 }
 
+@property(retain) NSString * audioSessionModeOverride;
 @property(readonly) BOOL canChangePlaylistFeeder;
 @property(readonly) int currentIndex;
 @property(readonly) MPAVItem * currentItem;
 @property BOOL forceSynchronousQueueFilling;
 @property(readonly) BOOL isChangingPlaylistFeeder;
 @property(readonly) int lastSelectionDirection;
+@property BOOL managesSystemDownloads;
+@property unsigned int maxQueueDepth;
+@property unsigned int minQueueDepth;
 @property(readonly) MPQueuePlayer * player;
-@property(retain) <AVPlaylistFeeder> * playlistFeeder;
+@property(retain) <MPAVPlaylistFeeder> * playlistFeeder;
 @property int repeatMode;
 
+- (void)_assetCancelNotification:(id)arg1;
+- (id)_audioSessionModeForMediaItem:(id)arg1;
 - (id)_feeder;
 - (id)_feederItemForIndex:(int)arg1;
 - (BOOL)_isDeallocating;
 - (id)_itemToFollowItemIndex:(int)arg1 skipUnavailableContent:(BOOL)arg2;
+- (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (int)_nextItemIndex:(int)arg1 repeatMode:(int)arg2;
 - (int)_prepareToQueuePlaybackIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)_reloadQueuedItemsIfPathBecameAvailable;
 - (BOOL)_tryRetain;
+- (void)_updateAudioSessionMode;
+- (id)audioSessionModeOverride;
 - (BOOL)canChangePlaylistFeeder;
 - (void)contentInvalidated;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
@@ -48,6 +59,9 @@
 - (id)init;
 - (BOOL)isChangingPlaylistFeeder;
 - (int)lastSelectionDirection;
+- (BOOL)managesSystemDownloads;
+- (unsigned int)maxQueueDepth;
+- (unsigned int)minQueueDepth;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
 - (id)playlistFeeder;
@@ -60,10 +74,15 @@
 - (int)repeatMode;
 - (id)retain;
 - (unsigned int)retainCount;
+- (void)setAudioSessionModeOverride:(id)arg1;
 - (void)setCurrentIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)setForceSynchronousQueueFilling:(BOOL)arg1;
+- (void)setManagesSystemDownloads:(BOOL)arg1;
+- (void)setMaxQueueDepth:(unsigned int)arg1;
+- (void)setMinQueueDepth:(unsigned int)arg1;
 - (BOOL)setPlaylistFeeder:(id)arg1 startIndex:(int)arg2;
 - (void)setPlaylistFeeder:(id)arg1;
 - (void)setRepeatMode:(int)arg1;
+- (void)updateForSoundCheckDefaultsChange;
 
 @end

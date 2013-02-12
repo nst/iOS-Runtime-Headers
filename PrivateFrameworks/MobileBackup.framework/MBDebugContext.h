@@ -9,7 +9,7 @@
 }
 
 @property(retain) NSDate * simulatedDate;
-@property(readonly) int time;
+@property(readonly) long time;
 
 + (id)defaultDebugContext;
 

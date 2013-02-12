@@ -18,7 +18,7 @@
 - (void)_setEntity:(id)arg1;
 - (void)_setEntitysReferenceID:(unsigned int)arg1;
 - (id)_underlyingProperty;
-- (void)_versionHash:(char *)arg1;
+- (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2;
 - (Class)class;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

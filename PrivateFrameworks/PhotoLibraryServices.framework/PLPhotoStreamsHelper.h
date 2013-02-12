@@ -7,20 +7,21 @@
 }
 
 + (BOOL)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;
-+ (id)photoStreamAccount;
++ (id)iCloudServiceAccount;
 + (BOOL)photoStreamsEnabled;
 + (id)publishBreadcrumbsPath;
 + (id)sharedPhotoStreamsHelper;
 + (BOOL)writeBreadcrumbContent:(id)arg1 forHashString:(id)arg2;
 
 - (void)_appDidEnterBackground:(id)arg1;
-- (struct CGSize { float x1; float x2; })_derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2;
 - (id)_photoStreamAlbumNameWithFirstName:(id)arg1 lastName:(id)arg2 email:(id)arg3;
 - (int)_serverIntegerLimitForKey:(id)arg1 debugDefaultKey:(id)arg2;
 - (void)cleanupPhotoStreamMetadataForAssetsWithUUIDs:(id)arg1 forStreamID:(id)arg2;
+- (void)clearCachedAccountState;
 - (void)dealloc;
 - (float)derivedAssetDimensionLimit;
 - (id)derivedAssetForMasterAsset:(id)arg1;
+- (struct CGSize { float x1; float x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2;
 - (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5 reenqueueCount:(id)arg6;
 - (int)friendsLimit;
 - (int)imageLimitForFriendStream;
@@ -29,9 +30,9 @@
 - (id)init;
 - (void)initiateDeletionOfPhotoStreamAssets:(id)arg1;
 - (BOOL)isValidUploadAsset:(id)arg1 type:(id)arg2 fileSize:(id)arg3;
+- (id)lastPhotoStreamUpdateDate;
 - (id)pathToSavedMetadataForAssetHash:(id)arg1 streamID:(id)arg2 createIntermediateDirs:(BOOL)arg3;
 - (id)pause_mstreamd;
-- (id)photoStreamAlbumTitleForPersonID:(id)arg1;
 - (id)photoStreamsPublishStreamID;
 - (void)pollForNewSubscriptionContent;
 - (void)pollForNewSubscriptionContentOncePerAppForegroundSession;

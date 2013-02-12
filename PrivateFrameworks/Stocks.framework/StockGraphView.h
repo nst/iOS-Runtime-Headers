@@ -6,7 +6,7 @@
 
 @interface StockGraphView : UIView <GraphRenderOperationDelegate> {
     StockChartData *_chartData;
-    UIView<StockGraphViewContainer> *_chartView;
+    UIView<StockGraphViewContainer> *_chartViewDelegate;
     unsigned int _dataCount;
     unsigned int _dataSize;
     BOOL _detailedMode;
@@ -31,11 +31,13 @@
 }
 
 @property UIView<StockGraphViewContainer> * chartViewDelegate;
-@property(readonly) NSArray * dottedLinePositions;
+@property BOOL detailedMode;
+@property(setter=setDottedLinePositionsWithLabelInfo:,retain) NSArray * dottedLinePositions;
 @property(readonly) BOOL isRendered;
 
 + (id)SelectedLineColor;
 
+- (void).cxx_destruct;
 - (void)_finishCurrentLine;
 - (void)_layoutSubviews;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lineViewFrameForBoundsSize:(struct CGSize { float x1; float x2; })arg1;
@@ -51,6 +53,7 @@
 - (void)clearData;
 - (void)clearPaths;
 - (void)dealloc;
+- (BOOL)detailedMode;
 - (id)dottedLinePositions;
 - (void)graphRenderOperationDidFinish:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -59,7 +62,7 @@
 - (struct { double x1; double x2; unsigned long long x3; })plottedPointNearestToPoint:(struct CGPoint { float x1; float x2; }*)arg1;
 - (void)prepareToAnimateSetShowingVolume:(BOOL)arg1;
 - (void)readyForDisplayFromChartData;
-- (void)recomputePathsAndRenderWithPriorityIfNeeded:(int)arg1;
+- (void)recomputePathsAndRenderIfNeeded;
 - (void)resizeSelectedLineClipViewWithLeftX:(float)arg1 rightX:(float)arg2;
 - (struct CGPoint { float x1; float x2; })rightmostPlottedPoint;
 - (void)setChartViewDelegate:(id)arg1;

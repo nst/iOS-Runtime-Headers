@@ -15,10 +15,13 @@
 @property(retain) NSString * sourceName;
 @property(retain) NSString * sourceVersion;
 
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasSourceVersion;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setSourceId:(id)arg1;
 - (void)setSourceName:(id)arg1;

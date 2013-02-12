@@ -6,7 +6,7 @@
 }
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
-+ (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
++ (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
 
 - (id)_persistentAttendee;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -14,7 +14,7 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
-- (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
+- (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)owner;

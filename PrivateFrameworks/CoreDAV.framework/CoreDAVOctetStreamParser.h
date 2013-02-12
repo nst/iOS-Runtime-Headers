@@ -12,6 +12,8 @@
 @property(retain) NSMutableData * octetStreamData;
 @property(readonly) NSError * parserError;
 
++ (BOOL)canHandleContentType:(id)arg1;
+
 - (void)dealloc;
 - (id)description;
 - (id)init;

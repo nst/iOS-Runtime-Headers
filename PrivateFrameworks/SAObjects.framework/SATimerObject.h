@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * state;
-@property(retain) NSNumber * timerValue;
+@property(copy) NSNumber * timerValue;
 
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;

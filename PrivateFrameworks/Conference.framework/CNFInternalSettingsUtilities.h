@@ -5,16 +5,18 @@
 @interface CNFInternalSettingsUtilities : NSObject {
 }
 
++ (id)IDSEnvironment;
 + (id)currentInternalSettingsBundle;
-+ (BOOL)isConferenceConsoleLoggingEnabled;
 + (BOOL)isViceroyLoggingEnabled;
 + (void)killEverything;
 + (void)killImagent;
++ (void)killImavagent;
 + (void)killMediaServerd;
 + (void)nukeKeychain;
-+ (void)setConferenceConsoleLoggingEnabled:(BOOL)arg1;
 + (void)setCurrentInternalSettingsBundle:(id)arg1;
++ (void)setIDSEnvironment:(id)arg1;
 + (void)setViceroyLoggingEnabled:(BOOL)arg1;
++ (void)signOutAllAccounts;
 + (void)syncImagentLogSettings;
 
 @end

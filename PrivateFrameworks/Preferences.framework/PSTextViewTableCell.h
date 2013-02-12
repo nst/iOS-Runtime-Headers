@@ -8,13 +8,22 @@
     PSTextView *_textView;
 }
 
+@property(retain) PSTextView * textView;
+
+- (void)_adjustTextView:(id)arg1 updateTable:(BOOL)arg2 withSpecifier:(id)arg3;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
+- (void)cellRemovedFromView;
+- (void)dealloc;
 - (void)drawTitleInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)layoutSubviews;
 - (BOOL)resignFirstResponder;
 - (void)setTextView:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)textView;
+- (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textViewInsets;
 
 @end

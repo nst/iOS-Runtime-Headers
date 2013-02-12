@@ -2,30 +2,46 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBSectionSubtypeParameters, NSMutableDictionary;
+@class BBSectionSubtypeParameters, NSData, NSLock, NSMutableDictionary, NSString;
 
 @interface BBSectionParameters : NSObject {
     NSMutableDictionary *_allSubtypeParameters;
     BBSectionSubtypeParameters *_defaultSubtypeParameters;
+    NSString *_displayName;
+    BOOL _displaysCriticalBulletins;
+    NSData *_iconData;
+    NSLock *_lock;
     unsigned int _messageNumberOfLines;
     BOOL _orderSectionUsingRecencyDate;
     BOOL _showsDateInFloatingLockScreenAlert;
     BOOL _showsSubtitle;
+    NSString *_uniqueIdentifier;
     BOOL _usesVariableLayout;
 }
 
 @property(retain) NSMutableDictionary * allSubtypeParameters;
 @property(retain) BBSectionSubtypeParameters * defaultSubtypeParameters;
+@property(copy) NSString * displayName;
+@property BOOL displaysCriticalBulletins;
+@property(retain) NSData * iconData;
 @property unsigned int messageNumberOfLines;
 @property BOOL orderSectionUsingRecencyDate;
 @property BOOL showsDateInFloatingLockScreenAlert;
 @property BOOL showsSubtitle;
+@property(retain) NSString * uniqueIdentifier;
 @property BOOL usesVariableLayout;
+
++ (void)addSectionParametersToCache:(id)arg1;
++ (id)copyCachedSectionParametersWithIdentifier:(id)arg1;
++ (void)removeSectionParametersFromCache:(id)arg1;
 
 - (id)allSubtypeParameters;
 - (void)dealloc;
 - (id)defaultSubtypeParameters;
+- (id)displayName;
+- (BOOL)displaysCriticalBulletins;
 - (void)encodeWithCoder:(id)arg1;
+- (id)iconData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)messageNumberOfLines;
@@ -33,13 +49,18 @@
 - (id)parametersForSubtype:(int)arg1;
 - (void)setAllSubtypeParameters:(id)arg1;
 - (void)setDefaultSubtypeParameters:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (void)setDisplaysCriticalBulletins:(BOOL)arg1;
+- (void)setIconData:(id)arg1;
 - (void)setMessageNumberOfLines:(unsigned int)arg1;
 - (void)setOrderSectionUsingRecencyDate:(BOOL)arg1;
 - (void)setShowsDateInFloatingLockScreenAlert:(BOOL)arg1;
 - (void)setShowsSubtitle:(BOOL)arg1;
+- (void)setUniqueIdentifier:(id)arg1;
 - (void)setUsesVariableLayout:(BOOL)arg1;
 - (BOOL)showsDateInFloatingLockScreenAlert;
 - (BOOL)showsSubtitle;
+- (id)uniqueIdentifier;
 - (BOOL)usesVariableLayout;
 
 @end

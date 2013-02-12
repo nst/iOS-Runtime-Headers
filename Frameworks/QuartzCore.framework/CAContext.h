@@ -30,6 +30,7 @@
 - (void)orderAbove:(unsigned int)arg1;
 - (void)orderBelow:(unsigned int)arg1;
 - (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
+- (void)setFencePort:(unsigned int)arg1 commitHandler:(id)arg2;
 - (void)setFencePort:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
 

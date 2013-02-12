@@ -51,6 +51,7 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (BOOL)_configIsValid:(id)arg1 error:(id*)arg2;
 - (id)_eapPasswordFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
 - (id)_eapUsernameFromConfig:(id)arg1 isRequired:(BOOL*)arg2;
@@ -58,7 +59,6 @@
 - (BOOL)autoJoin;
 - (id)certificateUUID;
 - (id)credentialUUID;
-- (void)dealloc;
 - (id)description;
 - (id)eapClientConfig;
 - (id)encryptionType;

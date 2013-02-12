@@ -17,9 +17,9 @@
     CKAtomListView *_toField;
 }
 
-@property(readonly) struct CGSize { float width; float height; } contentSize;
+@property(readonly) struct CGSize { float x1; float x2; } contentSize;
 @property id delegate;
-@property(retain,readonly) NSArray * recipients;
+@property(readonly) NSArray * recipients;
 @property(getter=isSeparatorShadowHidden) BOOL separatorShadowHidden;
 @property int style;
 

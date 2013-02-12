@@ -19,6 +19,8 @@
 - (id)date;
 - (void)dealloc;
 - (id)game;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)playerID;
 - (void)setDate:(id)arg1;
 - (void)setGame:(id)arg1;

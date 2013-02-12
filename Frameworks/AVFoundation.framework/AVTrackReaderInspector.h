@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference;
+@class AVWeakReference, NSArray;
 
 @interface AVTrackReaderInspector : AVAssetTrackInspector {
+    NSArray *_cachedMediaCharacteristics;
     struct OpaqueFigFormatReader { } *_formatReader;
     unsigned long _mediaType;
     int _trackID;
@@ -19,6 +20,7 @@
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
 - (void)dealloc;
+- (struct CGSize { float x1; float x2; })dimensions;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (void)finalize;
@@ -30,6 +32,7 @@
 - (BOOL)isSelfContained;
 - (id)languageCode;
 - (int)layer;
+- (id)mediaCharacteristics;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;

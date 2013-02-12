@@ -6,6 +6,8 @@
 
 @interface AVChatNegotiationOp : IMExtendedOperation {
     unsigned int _useICE : 1;
+    unsigned int _shouldWaitForWifi : 1;
+    unsigned int _showNetworkOptions : 1;
     IMExtendedOperation *_ardChannelOp;
     NSString *_conferenceID;
     NSDictionary *_extraContext;
@@ -16,6 +18,6 @@
 
 - (void)createChildOperations;
 - (void)dealloc;
-- (id)initWithParticipant:(id)arg1 conferenceID:(id)arg2;
+- (id)initWithParticipant:(id)arg1 conferenceID:(id)arg2 shouldWaitForWifi:(BOOL)arg3 shouldShowNetworkOptions:(BOOL)arg4;
 
 @end

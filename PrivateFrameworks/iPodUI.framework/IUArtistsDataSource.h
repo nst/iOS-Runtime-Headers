@@ -8,6 +8,7 @@
 
 + (int)mediaEntityType;
 + (id)queryCollectionPropertiesToFetch;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tabBarItemIconImageInsets;
 + (id)tabBarItemIconName;
 + (id)tabBarItemTitleKey;
 
@@ -18,6 +19,7 @@
 - (BOOL)deleteRemovesEntireGroup;
 - (id)init;
 - (SEL)libraryHasDisplayableEntitiesSelector;
+- (void)reloadActionRows;
 - (unsigned int)requiredEntityCountForSections;
 - (void)setQueries:(id)arg1;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;

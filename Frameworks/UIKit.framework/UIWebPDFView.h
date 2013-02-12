@@ -24,9 +24,6 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct _IndexPair { 
-        int first; 
-        int last; 
     NSMutableArray *_backingLayerImageViews;
     struct CGPDFDocument { } *_cgPDFDocument;
     } _contentOffsetAtScrollStart;
@@ -38,9 +35,8 @@
     NSURL *_documentURL;
     BOOL _hasScheduledCacheUpdate;
     int _ignoreContentOffsetChanges;
-    BOOL _inDidZoom;
     float _initialZoomScale;
-    } _installedPageIndices;
+    NSArray *_pageMinYs;
     NSMutableArray *_pageViews;
     NSObject<UIWebPDFViewDelegate> *_pdfDelegate;
     BOOL _rotating;
@@ -52,6 +48,7 @@
     BOOL hidePageViewsUntilReadyToRender;
     NSArray *pageRects;
     WebPDFViewPlaceholder *pdfPlaceHolderView;
+    BOOL readyForSnapshot;
 }
 
 @property(retain) UIColor * backgroundColorForUnRenderedContent;
@@ -66,22 +63,23 @@
 @property BOOL hidePageViewsUntilReadyToRender;
 @property int ignoreContentOffsetChanges;
 @property float initialZoomScale;
+@property(retain) NSArray * pageMinYs;
 @property(retain) NSArray * pageRects;
 @property NSObject<UIWebPDFViewDelegate> * pdfDelegate;
 @property WebPDFViewPlaceholder * pdfPlaceHolderView;
+@property BOOL readyForSnapshot;
 @property(readonly) unsigned int totalPages;
 
 + (void)setAsPDFDocRepAndView;
 
-- (struct _IndexPair { int x1; int x2; })_addBackwardSubViewsInDocCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withPageRects:(id)arg2 usingIndices:(struct _IndexPair { int x1; int x2; })arg3;
-- (struct _IndexPair { int x1; int x2; })_addForwardSubViewsInDocCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withPageRects:(id)arg2 usingIndices:(struct _IndexPair { int x1; int x2; })arg3;
 - (id)_addPageAtIndex:(unsigned int)arg1;
-- (void)_addSubViewsInViewCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_addSubViewsInViewCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 force:(BOOL)arg2;
 - (BOOL)_checkIfDocumentNeedsUnlock;
 - (void)_define:(id)arg1;
 - (void)_didScroll;
 - (BOOL)_hasPageRects;
 - (id)_installViewAtIndex:(int)arg1 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (unsigned int)_pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_pageWithSelection;
 - (void)_recreateUIPDFDocument;
 - (void)_removeBackgroundImageObserverIfNeeded:(id)arg1;
@@ -94,15 +92,20 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewCachingBoundsInUIViewCoords;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewportBoundsInUIVIewCoordsWithView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewportBoundsInUIViewCoords;
+- (void)annotationIsBeingPressed:(id)arg1 annotation:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (void)annotationWasTouched:(id)arg1 annotation:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
 - (id)backgroundColorForUnRenderedContent;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGPDFDocument { }*)cgPDFDocument;
 - (void)clearSelection;
 - (void)dealloc;
 - (void)didCompleteLayout;
+- (void)didLongPress:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToPageIndex:(unsigned int)arg4;
+- (void)didLongPress:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToURL:(id)arg4;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (void)didRotate:(id)arg1;
-- (void)didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withAnnotationDictionary:(struct CGPDFDictionary { }*)arg3;
+- (void)didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToPageIndex:(unsigned int)arg4;
+- (void)didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToURL:(id)arg4;
 - (void)didZoom:(id)arg1;
 - (id)document;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
@@ -110,20 +113,22 @@
 - (float)documentScale;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })documentTransform;
 - (id)documentURL;
-- (void)ensureCorrectPagesAreInstalled;
+- (void)ensureCorrectPagesAreInstalled:(BOOL)arg1;
 - (unsigned int)firstVisiblePageNumber;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)hideActivityIndicatorForUnRenderedContent;
 - (BOOL)hidePageViewsUntilReadyToRender;
 - (int)ignoreContentOffsetChanges;
+- (id)imageForContactRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 onPageInViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 destinationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)initWithWebPDFViewPlaceholder:(id)arg1;
 - (float)initialZoomScale;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)pageMinYs;
 - (id)pageRects;
 - (id)pdfDelegate;
 - (id)pdfPlaceHolderView;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)prepareForSnapshot;
+- (void)prepareForSnapshot:(BOOL)arg1;
+- (BOOL)readyForSnapshot;
 - (void)resetZoom:(id)arg1;
 - (void)setBackgroundColorForUnRenderedContent:(id)arg1;
 - (void)setDocumentPassword:(id)arg1;
@@ -133,9 +138,11 @@
 - (void)setHidePageViewsUntilReadyToRender:(BOOL)arg1;
 - (void)setIgnoreContentOffsetChanges:(int)arg1;
 - (void)setInitialZoomScale:(float)arg1;
+- (void)setPageMinYs:(id)arg1;
 - (void)setPageRects:(id)arg1;
 - (void)setPdfDelegate:(id)arg1;
 - (void)setPdfPlaceHolderView:(id)arg1;
+- (void)setReadyForSnapshot:(BOOL)arg1;
 - (void)snapshotComplete;
 - (unsigned int)totalPages;
 - (id)uiPDFDocument;
@@ -145,6 +152,6 @@
 - (void)willRotate:(id)arg1;
 - (void)willScroll:(id)arg1;
 - (void)willZoom:(id)arg1;
-- (void)zoom:(id)arg1 to:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 kind:(int)arg3;
+- (void)zoom:(id)arg1 to:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 kind:(int)arg4;
 
 @end

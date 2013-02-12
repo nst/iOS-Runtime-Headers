@@ -8,22 +8,7 @@
  */
 
 @interface CAMeshInterpolator : CAMeshTransform {
-    struct Interpolator { int (**x1)(); struct Atomic { 
-            struct { 
-                int x; 
-            } _v; 
-        } x2; struct Object {} *x3; struct Object {} *x4; struct Object {} *x5; struct Object {} *x6; struct ValueInterpolator { 
-            double _t; 
-            double _h00; 
-            double _h10; 
-            double _h01; 
-            double _h11; 
-            double _k0; 
-            double _k1; 
-            double _k2; 
-            double _k3; 
-            bool_supports_cubic; 
-        } x7; } *_interp;
+    struct Interpolator { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Ref<CA::Render::Object> { struct Object {} *x_3_1_1; } x3; struct Ref<CA::Render::Object> { struct Object {} *x_4_1_1; } x4; struct Ref<CA::Render::Object> { struct Object {} *x_5_1_1; } x5; struct Ref<CA::Render::Object> { struct Object {} *x_6_1_1; } x6; struct ValueInterpolator { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; double x_7_1_5; double x_7_1_6; double x_7_1_7; double x_7_1_8; double x_7_1_9; boolx_7_1_10; } x7; } *_interp;
 }
 
 - (void)dealloc;

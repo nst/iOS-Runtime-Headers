@@ -2,23 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVController, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, UIActivityIndicatorView, UILabel, UIView;
+@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVController, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, UIActivityIndicatorView, UIImage, UILabel, UIView;
 
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
     unsigned int _wantsTick : 1;
     unsigned int _geniusButtonDisabled : 1;
-    unsigned int _rewindButtonDisabled : 1;
+    unsigned int _fastForwardAndRewindButtonDisabled : 1;
     unsigned int _playbackSpeedButtonDisabled : 1;
     unsigned int _mailButtonDisabled : 1;
     unsigned int _mailButtonHidden : 1;
-    unsigned int _socialLikeButtonHidden : 1;
-    unsigned int _socialLikeButtonSelected : 1;
-    unsigned int _socialPostButtonHidden : 1;
     unsigned int _useMediaDetailSlider : 1;
     unsigned int _detailScrubbing : 1;
     unsigned int _needsUpdateButtonVisibility : 1;
     UIActivityIndicatorView *_activityIndicator;
     <MPPlaybackControlsDelegate> *_delegate;
+    MPButton *_fastFowardButton;
+    UIView *_fastFowardButtonBezel;
     MPButton *_geniusButton;
     MPAVItem *_item;
     MPButton *_mailButton;
@@ -33,57 +32,52 @@
     CABasicAnimation *_rewindOpacityAnimation;
     float _seekedToValue;
     MPButton *_shuffleButton;
-    MPButton *_socialLikeButton;
-    MPButton *_socialPostButton;
     double _tickInterval;
     UILabel *_trackInfoLabel;
-    unsigned int _visibleParts;
+    unsigned long long _visibleParts;
 }
 
 @property <MPPlaybackControlsDelegate> * delegate;
 @property(readonly) BOOL hideGeniusButton;
 @property(readonly) BOOL isScrubbing;
 @property(retain) MPAVItem * item;
+@property(readonly) UIImage * mailButtonImage;
 @property(retain) MPAVController * player;
+@property(readonly) UIImage * repeatButtonImage;
 @property(readonly) unsigned int repeatType;
+@property(readonly) UIImage * shuffleButtonImage;
+@property(readonly) BOOL shuffleIsOn;
 @property(readonly) unsigned int shuffleType;
-@property unsigned int visibleParts;
+@property unsigned long long visibleParts;
 
 + (unsigned int)defaultVisibleParts;
 
+- (void)_addOpacityAnimationToBezelView:(id)arg1 reversed:(BOOL)arg2;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;
 - (void)_contentsChangedNotification:(id)arg1;
 - (double)_currentDisplayTime;
+- (void)_fastForwardButton:(id)arg1;
 - (void)_geniusButton:(id)arg1;
-- (id)_geniusButtonImage:(unsigned int)arg1;
 - (void)_handleGeniusButtonClick;
 - (void)_initializeControls;
 - (void)_isGeniusEnabledDidChangeNotification:(id)arg1;
 - (void)_mailButton:(id)arg1;
-- (id)_mailButtonImage;
 - (void)_playbackSpeedButton:(id)arg1;
 - (void)_repeatButton:(id)arg1;
-- (id)_repeatButtonImage;
 - (void)_resetGeniusButtonImages;
 - (void)_rewindButton:(id)arg1;
 - (void)_setVisiblePartsNeedReload;
 - (void)_shuffleButton:(id)arg1;
-- (id)_shuffleButtonImage;
-- (BOOL)_shuffleIsOn;
-- (void)_socialLikeButton:(id)arg1;
-- (void)_socialPostButton:(id)arg1;
 - (void)_tickNotification:(id)arg1;
 - (void)_updateButtonVisibility;
 - (void)_updateForPlaybackSpeed;
 - (double)_updatedDisplayDurationForTime:(double)arg1;
 - (void)_validityChangedNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)crossedArtworkTimeMarker:(id)arg1;
-- (void)crossedChapterTimeMarker:(id)arg1;
-- (void)crossedURLTimeMarker:(id)arg1;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
@@ -92,7 +86,8 @@
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)didMoveToSuperview;
-- (unsigned int)displayablePartsInPartMask:(unsigned int)arg1;
+- (unsigned long long)displayablePartsInPartMask:(unsigned long long)arg1;
+- (id)geniusButtonImageForControlState:(unsigned int)arg1;
 - (void)handleChangeToRepeatType:(unsigned int)arg1;
 - (void)handleChangeToShuffleType:(unsigned int)arg1;
 - (BOOL)hideGeniusButton;
@@ -100,24 +95,32 @@
 - (BOOL)isScrubbing;
 - (id)item;
 - (void)layoutSubviews;
-- (id)newButtonForPart:(unsigned int)arg1;
+- (id)mailButtonImage;
+- (id)newButtonForPart:(unsigned long long)arg1;
 - (id)newProgressIndicator;
+- (id)newTrackInfoLabel;
+- (id)playbackSpeedButtonImageForPlaybackSpeed:(unsigned int)arg1;
 - (id)player;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)progressBarClipsToChapterDuration;
+- (void)registerForPlayerNotifications;
 - (void)reloadButtonVisibility;
 - (void)reloadView;
+- (id)repeatButtonImage;
 - (unsigned int)repeatType;
 - (void)resetDetailSlider:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setVisibleParts:(unsigned int)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1;
+- (id)shuffleButtonImage;
+- (BOOL)shuffleIsOn;
 - (unsigned int)shuffleType;
 - (void)startTicking;
 - (void)stopTicking;
+- (void)unregisterForPlayerNotifications;
 - (void)updateForEndOfDetailScrubbing;
-- (unsigned int)visibleParts;
+- (unsigned long long)visibleParts;
 
 @end

@@ -30,9 +30,11 @@
 
 - (void)_addValuesToCache;
 - (id)_allRecordInfosInRecordInfoDictionary:(id)arg1;
+- (id)_bestValueBetween:(id)arg1 and:(id)arg2;
 - (BOOL)_canSaveAtIndex:(int)arg1;
 - (void)_clearAllCachedInfo;
 - (void*)_copyCachedValueForPerson:(void*)arg1;
+- (id)_findFuzzyMatchingValue:(id)arg1 inDictionary:(id)arg2;
 - (void)_getAnyIdentifier:(int*)arg1 person:(const void**)arg2 propertyValue:(id*)arg3 propertyLabel:(id*)arg4 fromRecordInfoDictionary:(id)arg5;
 - (void)_getFromCacheAnyPropertyValue:(id*)arg1 andLabel:(id*)arg2 forRecordInfoDictionary:(id)arg3;
 - (void)_getFromCachePropertyValue:(id*)arg1 andLabel:(id*)arg2 forPerson:(void*)arg3 identifier:(int)arg4;
@@ -41,9 +43,13 @@
 - (BOOL)_hasNonNullSoundForIdentifier:(int)arg1;
 - (int)_indexFromInfo:(id)arg1;
 - (void)_insertSingleValue:(id)arg1 label:(id)arg2 identifier:(int)arg3 forPerson:(void*)arg4 indicesAndLabelsForValuesSeenAlready:(id)arg5;
+- (BOOL)_isBirthdayDate:(id)arg1 equivalentTo:(id)arg2;
 - (BOOL)_isEmptyValue:(id)arg1 isPreinserted:(BOOL)arg2;
+- (BOOL)_isPropertyValue:(id)arg1 equivalentTo:(id)arg2;
+- (BOOL)_isSocialProfile:(id)arg1 equivalentTo:(id)arg2;
 - (id)_newLocalizedCountryNameForCountryCode:(id)arg1;
 - (id)_newLocalizedPlaceholderForKey:(id)arg1;
+- (id)_peopleInCache;
 - (BOOL)_propertyIsDate;
 - (BOOL)_recordInfoDictionary:(id)arg1 containsPerson:(void*)arg2;
 - (id)_recordInfoDictionaryAtIndex:(int)arg1;
@@ -68,6 +74,7 @@
 - (id)_valueForCheckingExistenceOfPropertyValue:(id)arg1;
 - (id)_valueFromCacheForPerson:(void*)arg1;
 - (id)_vibrationManager;
+- (id)accountBadgeFromInfo:(id)arg1 whenEditing:(BOOL)arg2;
 - (id)actionsControllerPreparedWithValueAtIndex:(int)arg1;
 - (id)actualPropertyLabelAtIndex:(int)arg1 forPerson:(void*)arg2;
 - (void)addPreinsertedItem;
@@ -109,6 +116,7 @@
 - (id)lineInfosForInfo:(id)arg1;
 - (id)localizedPropertyLabelAtIndex:(int)arg1;
 - (BOOL)multiCellContentView:(id)arg1 alwaysShowsClearButtonAtIndexPath:(id)arg2;
+- (id)peopleFromInfo:(id)arg1 whenEditing:(BOOL)arg2;
 - (id)placeholderTextForKey:(id)arg1 info:(id)arg2;
 - (void*)policyForPerson:(void*)arg1;
 - (void)prepareActionsController:(id)arg1 withValueAtIndex:(int)arg2;

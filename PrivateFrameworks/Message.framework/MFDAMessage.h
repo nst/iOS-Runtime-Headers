@@ -17,6 +17,7 @@
 - (void)dealloc;
 - (id)externalConversationID;
 - (id)headers;
+- (id)headersIfAvailable;
 - (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
 - (id)mailbox;
 - (id)messageBody;

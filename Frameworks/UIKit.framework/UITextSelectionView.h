@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSTimer, UITextRangeView, UITextSelection, UIView, UIView<UITextSelectingContainer>;
+@class NSArray, NSTimer, UITextInteractionAssistant, UITextRangeView, UITextSelection, UIView;
 
 @interface UITextSelectionView : UIView {
     BOOL m_activated;
@@ -13,23 +13,23 @@
     BOOL m_deferSelectionCommands;
     BOOL m_delayShowingCommands;
     BOOL m_dictationReplacementsMode;
+    UITextInteractionAssistant *m_interactionAssistant;
     struct __CFRunLoopObserver { } *m_observer;
     UITextRangeView *m_rangeView;
     NSArray *m_replacements;
     UITextSelection *m_selection;
     int m_showingCommandsCounter;
-    UIView<UITextSelectingContainer> *m_view;
     BOOL m_visible;
     BOOL m_wasShowingCommands;
 }
 
 @property BOOL caretBlinks;
 @property(readonly) UIView * caretView;
+@property(readonly) UITextInteractionAssistant * interactionAssistant;
 @property(readonly) UITextRangeView * rangeView;
 @property(retain) NSArray * replacements;
 @property(readonly) UITextSelection * selection;
 @property(readonly) BOOL selectionCommandsShowing;
-@property(readonly) UIView<UITextSelectingContainer> * view;
 @property BOOL visible;
 
 - (void)activate;
@@ -58,7 +58,7 @@
 - (void)hideSelectionCommands;
 - (void)hideSelectionCommandsAfterDelay:(double)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithView:(id)arg1;
+- (id)initWithInteractionAssistant:(id)arg1;
 - (void)inputViewDidAnimate;
 - (void)inputViewDidChange;
 - (void)inputViewDidMove;
@@ -66,6 +66,8 @@
 - (void)inputViewWillChange;
 - (void)inputViewWillMove;
 - (void)installIfNecessary;
+- (id)interactionAssistant;
+- (void)invalidate;
 - (void)layoutChangedByScrolling:(BOOL)arg1;
 - (void)prepareForMagnification;
 - (id)rangeView;
@@ -101,9 +103,9 @@
 - (void)updateSelectionRectsIfNeeded;
 - (void)updateSelectionWithDocumentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateWithMagnifierTerminalPoint:(BOOL)arg1;
-- (id)view;
 - (void)viewAnimate:(id)arg1;
 - (BOOL)visible;
 - (void)willRotate:(id)arg1;
+- (void)windowDidResignOrBecomeKey;
 
 @end

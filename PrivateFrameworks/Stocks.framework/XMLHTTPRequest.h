@@ -53,6 +53,8 @@
 + (void)saveDebugString;
 + (id)uniqueQueryIDString;
 
+- (void).cxx_destruct;
+- (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

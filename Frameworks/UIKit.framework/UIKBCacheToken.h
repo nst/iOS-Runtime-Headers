@@ -18,6 +18,7 @@
 @property struct CGSize { float x1; float x2; } size;
 @property(readonly) NSString * string;
 
++ (id)tokenForKey:(id)arg1 style:(int)arg2 state:(int)arg3 clipCorners:(int)arg4;
 + (id)tokenForKey:(id)arg1 style:(int)arg2 state:(int)arg3;
 + (id)tokenForKeyplane:(id)arg1;
 + (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;

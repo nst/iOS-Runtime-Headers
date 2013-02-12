@@ -13,6 +13,7 @@
 
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (void)_addPauseUUID:(id)arg1;
 - (void)_removeTimerUUID:(id)arg1;
 - (void)_timerDidFire:(id)arg1;

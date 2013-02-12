@@ -14,14 +14,12 @@
 + (id)defaultCapabilitiesManager;
 
 - (void)_checkRingtoneStoreAvailability;
-- (BOOL)areCustomVibrationsAllowed;
 - (void)dealloc;
 - (BOOL)hasAdditionalTextTones;
 - (BOOL)hasTelephonyCapability;
 - (BOOL)hasVibratorCapability;
 - (id)init;
 - (BOOL)isRingtoneStoreAvailable;
-- (BOOL)isSensitiveUIAllowed;
 - (BOOL)isToneStoreAvailable;
 - (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
 - (void)setIsToneStoreAvailable:(BOOL)arg1;

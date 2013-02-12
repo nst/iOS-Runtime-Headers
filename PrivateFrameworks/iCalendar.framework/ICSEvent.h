@@ -52,6 +52,7 @@
 + (id)name;
 
 - (void)fixComponent;
+- (BOOL)isDefaultAlarmDeleted;
 - (void)setTransp:(int)arg1;
 - (void)setX_apple_dontschedule:(BOOL)arg1;
 - (void)setX_apple_ews_busystatus:(int)arg1;

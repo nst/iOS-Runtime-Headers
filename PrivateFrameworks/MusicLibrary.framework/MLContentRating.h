@@ -13,11 +13,11 @@
 @property(retain) NSNumber * ratingRank;
 @property(copy) NSString * ratingSystem;
 
+- (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (void)_setValueCopy:(id)arg1 forKey:(id)arg2;
 - (id)copyStringRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithContentRatingDictionary:(id)arg1;
 - (id)initWithStringRepresentation:(id)arg1;

@@ -5,23 +5,35 @@
 @class NSData, NSMutableArray;
 
 @interface GEOTrafficTile : PBCodable {
+    NSMutableArray *_trafficIncidents;
     NSMutableArray *_trafficSegments;
     NSData *_vertices;
 }
 
 @property(readonly) BOOL hasVertices;
+@property(retain) NSMutableArray * trafficIncidents;
 @property(retain) NSMutableArray * trafficSegments;
 @property(retain) NSData * vertices;
 
+- (void)addTrafficIncident:(id)arg1;
 - (void)addTrafficSegment:(id)arg1;
+- (void)clearTrafficIncidents;
+- (void)clearTrafficSegments;
+- (void)copyTo:(id)arg1;
 - (struct { int x1; int x2; }*)createUnpackedVerticesWithGutterSize:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasVertices;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setTrafficIncidents:(id)arg1;
 - (void)setTrafficSegments:(id)arg1;
 - (void)setVertices:(id)arg1;
+- (id)trafficIncidentAtIndex:(unsigned int)arg1;
+- (id)trafficIncidents;
+- (unsigned int)trafficIncidentsCount;
 - (id)trafficSegmentAtIndex:(unsigned int)arg1;
 - (id)trafficSegments;
 - (unsigned int)trafficSegmentsCount;

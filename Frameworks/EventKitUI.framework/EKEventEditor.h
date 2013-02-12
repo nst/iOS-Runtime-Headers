@@ -19,10 +19,13 @@
 - (id)_viewForSheet;
 - (id)defaultAlertTitle;
 - (id)defaultTitleForCalendarItem;
+- (unsigned int)entityType;
 - (id)event;
+- (void)loadView;
 - (id)notificationNamesForLocaleChange;
 - (id)preferredTitle;
 - (void)refreshStartAndEndDates;
+- (BOOL)saveCalendarItemWithSpan:(int)arg1 error:(id*)arg2;
 - (void)setEvent:(id)arg1;
 - (void)setShowAttachments:(BOOL)arg1;
 - (void)setupDeleteButton;

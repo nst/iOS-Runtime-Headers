@@ -28,7 +28,7 @@
 @property(retain) UIColor * highlightedTextColor;
 @property ABSwellTextView * parent;
 @property(retain) UIColor * shadowColor;
-@property struct CGSize { float width; float height; } shadowOffset;
+@property struct CGSize { float x1; float x2; } shadowOffset;
 
 - (void)_beginPinningInputViews;
 - (void)_endPinningInputViews;

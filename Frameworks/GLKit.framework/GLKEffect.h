@@ -45,32 +45,13 @@
             float q; 
         } ; 
         float v[4]; 
-    union _GLKVector4 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-            float w; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-            float a; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-            float q; 
-        } ; 
-        float v[4]; 
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 
+    int _aColorLoc;
     } _baseLightingColor;
     int _baseLightingColorLoc;
     unsigned char _colorMaterialEnabled;
@@ -105,11 +86,10 @@
     unsigned int _vshName;
     GLKShaderBlockNode *_vshRootNode;
     char **_vshStrings;
-    } _white;
-    bool_programStale;
     bool_textureOrderStale;
 }
 
+@property int aColorLoc;
 @property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } baseLightingColor;
 @property int baseLightingColorLoc;
 @property unsigned char colorMaterialEnabled;
@@ -137,7 +117,6 @@
 @property struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } prevVshMask;
 @property(readonly) NSMutableDictionary * programHash;
 @property unsigned int programName;
-@property bool programStale;
 @property(retain) NSMutableArray * properties;
 @property(retain) NSArray * textureOrder;
 @property bool textureOrderStale;
@@ -146,12 +125,12 @@
 @property unsigned int vshName;
 @property(readonly) GLKShaderBlockNode * vshRootNode;
 @property char ** vshStrings;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } white;
 
 + (id)programInfoLogForName:(unsigned int)arg1 effectLabel:(id)arg2 msg:(const char *)arg3;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 + (id)shaderInfoLogForName:(unsigned int)arg1 effectLabel:(id)arg2 msg:(const char *)arg3;
 
+- (int)aColorLoc;
 - (void)addTransformProperty;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })baseLightingColor;
 - (int)baseLightingColorLoc;
@@ -170,7 +149,9 @@
 - (unsigned int)fshName;
 - (id)fshRootNode;
 - (char **)fshStrings;
+- (bool)includeFshShaderTextForRootNode:(id)arg1;
 - (bool)includeShaderTextForRootNode:(id)arg1;
+- (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (id)init;
 - (id)initWithPropertyArray:(id)arg1;
 - (void)initializeMasks;
@@ -179,15 +160,10 @@
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })lightModelAmbientColor;
 - (int)lightModelAmbientColorLoc;
 - (unsigned char)lightModelTwoSided;
-- (void)lightModelTwoSidedMask;
 - (id)lightProperties;
-- (void)lightStateChanged;
-- (void)logFshMasks;
-- (void)logVshMasks;
 - (unsigned char)masksInitialized;
 - (float*)materialAmbientColor;
 - (float*)materialDiffuseColor;
-- (void)normalizedNormalsMask;
 - (unsigned int)numFshStrings;
 - (unsigned int)numLights;
 - (unsigned int)numTextures;
@@ -199,8 +175,8 @@
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })prevVshMask;
 - (id)programHash;
 - (unsigned int)programName;
-- (bool)programStale;
 - (id)properties;
+- (void)setAColorLoc:(int)arg1;
 - (void)setBaseLightingColor:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg1;
 - (void)setBaseLightingColorLoc:(int)arg1;
 - (void)setColorMaterialEnabled:(unsigned char)arg1;
@@ -224,29 +200,23 @@
 - (void)setPrevFshMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setPrevVshMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setProgramName:(unsigned int)arg1;
-- (void)setProgramStale:(bool)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setShaderBindings;
-- (void)setTextureNameStrings;
+- (void)setTextureIndices;
 - (void)setTextureOrder:(id)arg1;
 - (void)setTextureOrderStale:(bool)arg1;
 - (void)setTexturingEnabled:(unsigned char)arg1;
 - (void)setVshMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg1;
 - (void)setVshName:(unsigned int)arg1;
 - (void)setVshStrings:(char **)arg1;
-- (void)setWhite:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg1;
 - (id)textureOrder;
 - (bool)textureOrderStale;
 - (unsigned char)texturingEnabled;
-- (void)texturingEnabledMask;
 - (void)unrollLoopNodesForStaticTreeWithRoot:(id)arg1;
 - (void)updateFshStringsWithRoot:(id)arg1 enabled:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)updateVshStringsWithRoot:(id)arg1 enabled:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg2;
 - (BOOL)useColorAttrib;
 - (BOOL)useTexCoordAttrib;
-- (void)useTexCoordAttribMask;
-- (void)vNormalEyeMask;
-- (void)vPositionEyeMask;
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMask;
 - (unsigned int)vshMaskCt;
 - (char **)vshMaskStr;
@@ -254,6 +224,5 @@
 - (unsigned int)vshName;
 - (id)vshRootNode;
 - (char **)vshStrings;
-- (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })white;
 
 @end

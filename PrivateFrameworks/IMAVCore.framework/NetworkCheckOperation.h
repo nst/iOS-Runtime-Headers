@@ -7,13 +7,15 @@
 @interface NetworkCheckOperation : IMExtendedOperation {
     unsigned int _foundActiveWiFi : 1;
     unsigned int _foundUsableNetwork : 1;
+    unsigned int _showNetworkOptions : 1;
+    unsigned int _shouldWaitForWifi : 1;
     IMAVChatParticipant *_participant;
 }
 
 - (void)dealloc;
 - (BOOL)hasActiveWiFi;
 - (BOOL)hasValidNetwork;
-- (id)initWithParticipant:(id)arg1;
+- (id)initWithParticipant:(id)arg1 shouldWaitForWifi:(BOOL)arg2 shouldShowNetworkOptions:(BOOL)arg3;
 - (void)main;
 
 @end

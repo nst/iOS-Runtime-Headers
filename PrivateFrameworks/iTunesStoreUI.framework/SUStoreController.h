@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation, MFMailComposeViewController, NSArray, NSDictionary, NSString, NSURL, SUClient, SULocationObserver, SUPurchaseManager, SUSectionsResponse, SUTabBarController, UINavigationController, UIWindow;
+@class ISOperation, MFMailComposeViewController, NSArray, NSDictionary, NSString, NSURL, SUClient, SUSectionsResponse, SUTabBarController, UINavigationController, UIWindow;
 
 @interface SUStoreController : NSObject <SUClientDelegate, SUPurchaseManagerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
     SUClient *_client;
@@ -11,10 +11,9 @@
     NSURL *_launchURL;
     ISOperation *_loadSectionsOperation;
     NSString *_localStoreFrontAtLastSuspend;
-    SULocationObserver *_locationObserver;
+    id _locationObserver;
     MFMailComposeViewController *_mailComposeViewController;
     NSArray *_overlayConfigurations;
-    SUPurchaseManager *_purchaseManager;
     BOOL _reloadForStorefrontChangeAfterAccountSetup;
     BOOL _reloadSectionsOnNextLaunch;
     NSDictionary *_storeFrontLanguages;
@@ -78,7 +77,6 @@
 - (void)endPurchaseBatch;
 - (void)exitStoreAfterDialogsDismiss;
 - (void)exitStoreWithReason:(int)arg1;
-- (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
 - (void)handleApplicationURL:(id)arg1;
 - (id)init;
 - (BOOL)isComposingEmail;
@@ -101,7 +99,6 @@
 - (void)purchaseManagerDidEndUpdates:(id)arg1;
 - (void)purchaseManagerWillBeginUpdates:(id)arg1;
 - (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
-- (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
 - (BOOL)selectSectionWithIdentifier:(id)arg1;
 - (void)setLaunchURL:(id)arg1;
 - (void)setupUI;

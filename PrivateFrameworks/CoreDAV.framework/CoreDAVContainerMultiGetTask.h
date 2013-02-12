@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, NSString;
+@class <CoreDAVAccountInfoProvider>, <CoreDAVTaskManager>, NSError, NSSet, NSString;
 
-@interface CoreDAVContainerMultiGetTask : CoreDAVTask {
+@interface CoreDAVContainerMultiGetTask : CoreDAVTask <CoreDAVContainerMultiGetSubmittable> {
     NSSet *_additionalPropElements;
     Class _appSpecificDataItemClass;
     NSString *_appSpecificDataProp;
@@ -17,10 +17,15 @@
     NSSet *_urls;
 }
 
+@property <CoreDAVAccountInfoProvider> * accountInfoProvider;
 @property(retain) NSSet * additionalPropElements;
+@property(copy) id completionBlock;
+@property(readonly) NSError * error;
 @property(readonly) NSSet * missingURLs;
 @property(readonly) NSSet * parsedContents;
 @property BOOL shouldIgnoreResponseErrors;
+@property <CoreDAVTaskManager> * taskManager;
+@property double timeoutInterval;
 
 - (id)additionalPropElements;
 - (id)copyAdditionalPropElements;

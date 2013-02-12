@@ -6,7 +6,6 @@
 
 @interface PLCameraElapsedTimeView : UIImageView {
     BOOL _autorotationEnabled;
-    UILabel *_hours;
     UILabel *_minutes;
     int _orientation;
     UILabel *_seconds;
@@ -17,6 +16,7 @@
 
 @property BOOL autorotationEnabled;
 
+- (id)_createTimeLabelWithFont:(id)arg1;
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_setDeviceOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_startWatchingDeviceOrientationChanges;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class <GKVoiceChatSessionDelegate>, GKRWLock, GKSessionInternal, GKVoiceChatServiceFocus, GKWifiListener, NSArray, NSMutableArray, NSMutableDictionary, NSString, VoiceChatSessionRoster;
+@class <GKVoiceChatSessionDelegate>, GKRWLock, GKSessionInternal, GKVoiceChatServiceFocus, GKWifiListener, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, VoiceChatSessionRoster;
 
 @interface GKVoiceChatSessionInternal : NSObject <GKSessionVoiceChatDelegate, GKVoiceChatClient, VideoConferenceSpeakingDelegate, WifiListenerDelegate> {
-    unsigned long _audioInputAvailable;
     unsigned int _conferenceID;
     NSMutableArray *_connectedFocusPeers;
     NSMutableArray *_connectedPeers;
@@ -20,7 +19,7 @@
     id _publicWrapper;
     VoiceChatSessionRoster *_roster;
     GKRWLock *_rwLock;
-    struct dispatch_queue_s { } *_sendQueue;
+    NSObject<OS_dispatch_queue> *_sendQueue;
     NSString *_sessionName;
     unsigned int _sessionState;
     GKVoiceChatServiceFocus *_vcService;
@@ -48,7 +47,6 @@
 + (void)brokenHash:(id)arg1 response:(char *)arg2;
 
 - (void)addPeerToFocusPausedList:(id)arg1;
-- (void)audioInputDidChange:(unsigned long)arg1;
 - (int)calculateChannelQualities;
 - (void)calculateConferenceID;
 - (void)cleanup;
@@ -57,11 +55,13 @@
 - (void)dealloc;
 - (id)decodePeerID:(id)arg1;
 - (id)delegate;
-- (id)delegate;
 - (void)didStartSpeaking:(id)arg1;
 - (void)didStopSpeaking:(id)arg1;
 - (id)encodePeerID:(id)arg1;
 - (int)goodChannels;
+- (void)handlePeerDisconnected:(id)arg1;
+- (void)informClientVoiceChatConnecting:(id)arg1;
+- (void)informClientVoiceChatCouldNotConnect:(id)arg1;
 - (void)informClientVoiceChatDidStart:(id)arg1;
 - (void)informClientVoiceChatDidStop:(id)arg1;
 - (void)informClientVoiceChatFocusChange:(id)arg1;
@@ -88,7 +88,6 @@
 - (id)sessionName;
 - (float)sessionVolume;
 - (void)setActiveSession:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsUsingSuppression:(BOOL)arg1;
 - (void)setMute:(BOOL)arg1 forPeer:(id)arg2;

@@ -4,7 +4,7 @@
 
 @class <PLPublishingAgentDelegate>, NSData, NSMutableArray, NSString, PLVideoRemaker, UIViewController;
 
-@interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate> {
+@interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate, UIAlertViewDelegate> {
     unsigned int _remakingWasCancelled : 1;
     unsigned int _remaking : 1;
     unsigned int _publishing : 1;
@@ -69,7 +69,10 @@
 - (void)_stopNetworkObservation;
 - (void)_transcodeVideo:(id)arg1;
 - (void)_updateStatisticsFromSnapshots;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowsHDOver3GUpload;
+- (BOOL)allowsTellingFriend;
+- (BOOL)allowsViewingOnHost;
 - (long long)approximateHDUploadSize;
 - (long long)approximateSDUploadSize;
 - (void)cancelButtonClicked;
@@ -126,6 +129,7 @@
 - (void)setTrimStartTime:(double)arg1 andEndTime:(double)arg2;
 - (void)setUserInfo:(id)arg1;
 - (BOOL)shouldCancelPublish;
+- (void)showAlertWithError:(id)arg1;
 - (void)snapshot;
 - (id)tellAFriendBody;
 - (id)tellAFriendSubject;

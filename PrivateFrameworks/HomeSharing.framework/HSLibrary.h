@@ -24,7 +24,7 @@
 - (id)connection;
 - (id)context;
 - (void)dealloc;
-- (id)initWithBaseURL:(id)arg1 forAccount:(id)arg2;
+- (id)initWithConnectionConfiguration:(id)arg1;
 - (id)initWithName:(id)arg1 uniqueIdentifier:(id)arg2 version:(unsigned int)arg3 baseURL:(id)arg4;
 - (id)name;
 - (BOOL)requiresPassword;

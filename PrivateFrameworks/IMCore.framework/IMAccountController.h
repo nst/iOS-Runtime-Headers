@@ -7,24 +7,35 @@
 @interface IMAccountController : NSObject {
     NSMutableDictionary *_accountMap;
     NSMutableArray *_accounts;
+    BOOL _cachesEnabled;
     BOOL _isReadOnly;
+    NSMutableDictionary *_serviceToAccountsMap;
+    NSMutableDictionary *_serviceToActiveAccountsMap;
+    NSMutableDictionary *_serviceToConnectedAccountsMap;
+    NSMutableDictionary *_serviceToOperationalAccountsMap;
 }
 
 @property(readonly) NSMutableArray * _accounts;
 @property(readonly) NSArray * accounts;
 @property(readonly) NSArray * activeAccounts;
-@property(readonly) id aimAccount;
 @property(readonly) id bestAccountForStatus;
 @property(readonly) NSArray * connectedAccounts;
-@property(readonly) id jabberAccount;
-@property(readonly) id mostLoggedInAccount;
 @property(readonly) int numberOfAccounts;
+@property(readonly) NSArray * operationalAccounts;
 
 + (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;
 
+- (id)__ck_anyAccount;
+- (id)__ck_defaultAccountForService:(id)arg1;
+- (id)__ck_operationalPhoneAccountForService:(id)arg1;
+- (id)__iCloudSystemAccountForService:(id)arg1;
 - (id)_accounts;
 - (void)_activeAccountChanged:(id)arg1;
+- (id)_bestOperationalAccountForSendingForService:(id)arg1;
+- (void)_disableCache;
+- (void)_enableCache;
+- (id)_serviceAgentConnectedAccounts;
 - (BOOL)accountActive:(id)arg1;
 - (id)accountAtIndex:(int)arg1;
 - (BOOL)accountConnected:(id)arg1;
@@ -48,16 +59,18 @@
 - (BOOL)addAccount:(id)arg1 locally:(BOOL)arg2;
 - (BOOL)addAccount:(id)arg1;
 - (id)aimAccount;
-- (BOOL)allowsWeakReference;
-- (id)anyAccountForService:(id)arg1 login:(id)arg2 guid:(id)arg3;
-- (id)anyAccountForService:(id)arg1 withLogin:(id)arg2;
-- (id)anyAccountForService:(id)arg1;
-- (id)anyActiveAccountForService:(id)arg1 withLogin:(id)arg2;
-- (id)anyActiveAccountForService:(id)arg1;
-- (id)anyConnectedAccountForService:(id)arg1 withLogin:(id)arg2;
-- (id)anyConnectedAccountForService:(id)arg1;
 - (void)autoLogin;
+- (id)bestAccountForService:(id)arg1 login:(id)arg2 guid:(id)arg3;
+- (id)bestAccountForService:(id)arg1 withLogin:(id)arg2;
+- (id)bestAccountForService:(id)arg1;
 - (id)bestAccountForStatus;
+- (id)bestAccountWithCapability:(unsigned long long)arg1;
+- (id)bestActiveAccountForService:(id)arg1 withLogin:(id)arg2;
+- (id)bestActiveAccountForService:(id)arg1;
+- (id)bestConnectedAccountForService:(id)arg1 withLogin:(id)arg2;
+- (id)bestConnectedAccountForService:(id)arg1;
+- (id)bestOperationalAccountForService:(id)arg1 withLogin:(id)arg2;
+- (id)bestOperationalAccountForService:(id)arg1;
 - (BOOL)canActivateAccount:(id)arg1;
 - (BOOL)canActivateAccounts:(id)arg1;
 - (BOOL)canDeleteAccount:(id)arg1;
@@ -75,8 +88,10 @@
 - (id)jabberAccount;
 - (id)mostLoggedInAccount;
 - (int)numberOfAccounts;
+- (id)operationalAccounts;
+- (id)operationalAccountsForService:(id)arg1;
+- (id)operationalAccountsWithCapability:(unsigned long long)arg1;
 - (BOOL)readOnly;
-- (BOOL)retainWeakReference;
 - (void)setReadOnly:(BOOL)arg1;
 
 @end

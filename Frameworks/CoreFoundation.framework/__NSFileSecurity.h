@@ -11,6 +11,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (struct _filesec { }*)_filesec;
+- (BOOL)clearProperties:(unsigned int)arg1;
 - (BOOL)copyAccessControlList:(struct _acl {}**)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

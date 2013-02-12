@@ -2,12 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface MPGeniusMixArtworkCachedFilesManager : NSObject {
-    struct dispatch_queue_s { } *_cleanupQueue;
+    NSObject<OS_dispatch_queue> *_cleanupQueue;
 }
 
 + (id)sharedInstance;
 
+- (void)_mediaLibraryDisplayValuesWillChangeNotification:(id)arg1;
 - (void)cleanupIfNecessaryWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (id)init;

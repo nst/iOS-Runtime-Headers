@@ -13,6 +13,7 @@
 @property(copy) NSNumber * radius;
 @property(copy) NSString * title;
 
++ (id)defaultPropertiesToLoad;
 + (id)relations;
 
 - (id)addressBookEntityID;

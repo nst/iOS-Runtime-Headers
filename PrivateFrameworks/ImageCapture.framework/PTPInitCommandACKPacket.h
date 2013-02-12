@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface PTPInitCommandACKPacket : NSObject {
-    unsigned int _connectionNumber;
+    unsigned long _connectionNumber;
     NSString *_responderFriendlyName;
     unsigned char _responderGUID[16];
 }

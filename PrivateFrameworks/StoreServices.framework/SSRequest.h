@@ -2,66 +2,35 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSRequestDelegate>, NSLock, NSString, SSRequestGroup;
+@class <SSRequestDelegate>, NSObject<OS_dispatch_queue>, SSXPCConnection;
 
-@interface SSRequest : NSObject <SSCoding> {
+@interface SSRequest : NSObject <SSXPCCoding> {
     int _backgroundTaskIdentifier;
     BOOL _cancelAfterTaskExpiration;
     <SSRequestDelegate> *_delegate;
-    SSRequestGroup *_group;
-    NSString *_groupIdentifier;
-    NSString *_identifier;
-    NSLock *_lock;
-    int _state;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    SSXPCConnection *_requestConnection;
+    SSXPCConnection *_responseConnection;
 }
 
 @property <SSRequestDelegate> * delegate;
-@property SSRequestGroup * requestGroup;
-@property(retain) NSString * requestGroupIdentifier;
-@property(retain) NSString * requestIdentifier;
-@property(readonly) int requestState;
 @property BOOL shouldCancelAfterTaskExpiration;
 
 - (void)_beginBackgroundTask;
-- (void)_daemonExited:(id)arg1;
 - (void)_endBackgroundTask;
-- (void)_failWithError:(id)arg1;
-- (void)_finish;
 - (id)_initSSRequest;
-- (void)_mainThreadDaemonExited:(id)arg1;
-- (id)_newIdentifier;
-- (void)_requestFailedNotification:(id)arg1;
-- (void)_requestFinishedNotification:(id)arg1;
-- (void)_setRequestState:(int)arg1;
-- (void)awakeFromDaemonInRequestGroup:(id)arg1;
+- (void)_shutdownRequest;
+- (void)_shutdownRequestWithMessageID:(long long)arg1;
+- (void)_startWithMessageID:(long long)arg1 messageBlock:(id)arg2;
 - (void)cancel;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnect;
-- (void)handleBackgroundTaskExpiration;
-- (void)handleDaemonExit;
-- (id)handleFailureResponse:(id)arg1;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
-- (void)registerForDaemonNotifications;
-- (id)requestGroup;
-- (id)requestGroupIdentifier;
-- (id)requestIdentifier;
-- (int)requestState;
-- (void)sendDidFailWithError:(id)arg1;
-- (void)sendDidFinish;
 - (void)setDelegate:(id)arg1;
-- (void)setRequestGroup:(id)arg1;
-- (void)setRequestGroupIdentifier:(id)arg1;
-- (void)setRequestIdentifier:(id)arg1;
 - (void)setShouldCancelAfterTaskExpiration:(BOOL)arg1;
 - (BOOL)shouldCancelAfterTaskExpiration;
 - (BOOL)start;
-- (void)unregisterForDaemonNotifications;
+- (void)startWithCompletionBlock:(id)arg1;
 
 @end

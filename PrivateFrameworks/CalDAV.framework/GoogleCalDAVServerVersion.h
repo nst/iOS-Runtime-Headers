@@ -6,6 +6,7 @@
 }
 
 - (id)init;
+- (id)supportedCalendarComponentSets;
 - (id)type;
 
 @end

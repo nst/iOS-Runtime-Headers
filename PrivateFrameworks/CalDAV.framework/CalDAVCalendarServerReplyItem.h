@@ -2,23 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CoreDAVLeafItem, NSMutableSet;
+@class CoreDAVLeafItem;
 
-@interface CalDAVCalendarServerReplyItem : CoreDAVItem {
+@interface CalDAVCalendarServerReplyItem : CalDAVItemWithRecurrenceChildren {
     CoreDAVLeafItem *_attendee;
-    NSMutableSet *_recurrences;
 }
 
 @property(retain) CoreDAVLeafItem * attendee;
-@property(retain) NSMutableSet * recurrences;
 
-- (void)addRecurrence:(id)arg1;
 - (id)attendee;
 - (id)copyParseRules;
 - (void)dealloc;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)recurrences;
 - (void)setAttendee:(id)arg1;
-- (void)setRecurrences:(id)arg1;
 
 @end

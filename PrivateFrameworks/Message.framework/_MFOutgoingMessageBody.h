@@ -6,7 +6,7 @@
 
 @interface _MFOutgoingMessageBody : MessageBody <MFCollectingDataConsumer> {
     MFBufferedDataConsumer *_consumer;
-    unsigned int _count;
+    unsigned long _count;
     BOOL _lastNewLine;
     NSData *_rawData;
 }

@@ -14,8 +14,8 @@
 + (BOOL)isTableDeleted:(id)arg1;
 
 - (id)columnInfo;
-- (id)createColumnInfo;
-- (id)createStopArrayForRow:(unsigned int)arg1;
+- (id)copyColumnInfo;
+- (id)copyStopArrayForRow:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithWDTable:(id)arg1 parent:(id)arg2;
 - (id)insideBorders;

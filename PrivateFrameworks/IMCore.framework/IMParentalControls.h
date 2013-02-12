@@ -32,7 +32,6 @@
 - (BOOL)accountHasWhitelist:(id)arg1;
 - (BOOL)accountIsEnabled:(id)arg1;
 - (BOOL)active;
-- (BOOL)allowsWeakReference;
 - (void)dealloc;
 - (BOOL)disableAV;
 - (BOOL)disableAccount:(id)arg1;
@@ -42,7 +41,6 @@
 - (BOOL)forceWhitelistForService:(id)arg1;
 - (id)init;
 - (BOOL)okToConnectAccount:(id)arg1;
-- (BOOL)retainWeakReference;
 - (void)setShouldPostNotifications:(BOOL)arg1;
 - (BOOL)shouldPostNotifications;
 - (id)whitelistForAccount:(id)arg1;

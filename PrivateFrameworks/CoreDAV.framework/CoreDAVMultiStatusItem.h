@@ -13,8 +13,9 @@
 @property(retain) CoreDAVLeafItem * responseDescription;
 @property(readonly) NSSet * responses;
 
++ (id)copyParseRules;
+
 - (void)addResponse:(id)arg1;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)init;

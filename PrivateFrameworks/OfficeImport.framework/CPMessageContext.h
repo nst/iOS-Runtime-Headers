@@ -13,7 +13,6 @@
 
 + (void)createContextForCurrentThread;
 + (id)currentObjectOrPlaceholder;
-+ (id)errorsUsingName:(id)arg1;
 + (id)getErrorArray;
 + (id)getWarningArray;
 + (void)initialize;
@@ -34,7 +33,6 @@
 + (unsigned int)saveObjectStack;
 + (void)setIsFileStructuredStorage:(BOOL)arg1;
 + (void)setObject:(id)arg1 forPlaceholder:(id)arg2;
-+ (id)warningsUsingName:(id)arg1;
 
 - (void)dealloc;
 - (id)init;

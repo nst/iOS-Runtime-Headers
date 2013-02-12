@@ -8,8 +8,11 @@
     DKConnection *_connection;
 }
 
+- (void).cxx_destruct;
 - (void)_clearConnection;
 - (id)_connection;
+- (void)_sendMessage:(id)arg1 withReply:(id)arg2;
+- (void)_sendMessage:(id)arg1 withReplySync:(id)arg2;
 - (id)accounts;
 - (void)barrier;
 - (void)dealloc;

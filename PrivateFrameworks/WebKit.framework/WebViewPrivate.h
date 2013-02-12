@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <WebCaretChangeListener>, <WebDeviceOrientationProvider>, <WebFormDelegate>, <WebGeolocationProvider>, NSMutableSet, NSString, NSTimer, NSURL, WAKWindow, WebEvent, WebFixedPositionContent, WebInspector, WebNodeHighlight, WebPreferences, WebVideoFullscreenController;
+@class <WebCaretChangeListener>, <WebDeviceOrientationProvider>, <WebFormDelegate>, <WebGeolocationProvider>, <WebNotificationProvider>, NSDictionary, NSMutableSet, NSString, NSURL, WAKWindow, WebFixedPositionContent, WebIndicateLayer, WebInspector, WebNodeHighlight, WebPreferences, WebVideoFullscreenController;
 
 @interface WebViewPrivate : NSObject {
     struct String { 
@@ -63,6 +63,7 @@
         int (*didFinishDocumentLoadForFrameFunc)(); 
         int (*didDisplayInsecureContentFunc)(); 
         int (*didRunInsecureContentFunc)(); 
+        int (*didDetectXSSFunc)(); 
     struct WebScriptDebugDelegateImplementationCache { 
         BOOL didParseSourceExpectsBaseLineNumber; 
         BOOL exceptionWasRaisedExpectsHasHandlerFlag; 
@@ -81,14 +82,30 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct HashMap<long unsigned int,WTF::RetainPtr<objc_object*>,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int>,WTF::HashTraits<WTF::RetainPtr<objc_object*> > > { 
-        struct HashTable<long unsigned int,std::pair<long unsigned int, WTF::RetainPtr<objc_object*> >,WTF::PairFirstExtractor<std::pair<long unsigned int, WTF::RetainPtr<objc_object*> > >,WTF::IntHash<long unsigned int>,WTF::PairHashTraits<WTF::HashTraits<long unsigned int>, WTF::HashTraits<WTF::RetainPtr<objc_object*> > >,WTF::HashTraits<long unsigned int> > { 
-            struct pair<long unsigned int,WTF::RetainPtr<objc_object*> > {} *m_table; 
+    struct Mutex { 
+        struct _opaque_pthread_mutex_t { 
+            long __sig; 
+            BOOL __opaque[40]; 
+        } m_mutex; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id>> > { 
+        struct HashTable<unsigned long, std::__1::pair<unsigned long, WTF::RetainPtr<id>>, WTF::PairFirstExtractor<std::__1::pair<unsigned long, WTF::RetainPtr<id>>>, WTF::IntHash<unsigned long>, WTF::HashMapValueTraits<WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id>>>, WTF::HashTraits<unsigned long> > { 
+            struct pair<unsigned long, WTF::RetainPtr<id> > {} *m_table; 
             int m_tableSize; 
             int m_tableSizeMask; 
             int m_keyCount; 
             int m_deletedCount; 
         } m_impl; 
+    struct OwnPtr<LayerFlushController> { 
+        struct LayerFlushController {} *m_ptr; 
     struct CGSize { 
         float width; 
         float height; 
@@ -106,12 +123,11 @@
     } _globalHistoryItem;
     int _keyboardUIMode;
     BOOL _keyboardUIModeAccessed;
+    <WebNotificationProvider> *_notificationProvider;
     BOOL allowsMessaging;
     BOOL allowsRemoteInspection;
     BOOL allowsUndo;
     NSString *applicationNameForUserAgent;
-    NSTimer *autoscrollTimer;
-    WebEvent *autoscrollTriggerEvent;
     struct CGColor { } *backgroundColor;
     BOOL becomingFirstResponder;
     BOOL becomingFirstResponderFromOutside;
@@ -120,6 +136,7 @@
     BOOL closing;
     BOOL cssAnimationsSuspended;
     WebNodeHighlight *currentNodeHighlight;
+    float customDeviceScaleFactor;
     int didDrawTiles;
     id downloadDelegate;
     BOOL drawsBackground;
@@ -132,34 +149,35 @@
     id frameLoadDelegateForwarder;
     } frameLoadDelegateImplementations;
     WebVideoFullscreenController *fullscreenController;
-    BOOL handlingMouseDownEvent;
     BOOL hasSpellCheckerDocumentTag;
     id historyDelegate;
     } historyDelegateImplementations;
+    NSString *hostApplicationBundleId;
+    NSString *hostApplicationName;
     WAKWindow *hostWindow;
-    BOOL hoverFeedbackSuspended;
     } identifierMap;
-    BOOL ignoringMouseDraggedEvents;
     BOOL includesFlattenedCompositingLayersWhenDrawingToBitmap;
+    WebIndicateLayer *indicateLayer;
     WebInspector *inspector;
     BOOL interactiveFormValidationEnabled;
     BOOL isStopping;
-    WebEvent *keyDownEvent;
     } lastLayoutSize;
-    struct __CFRunLoopObserver { } *layerSyncRunLoopObserver;
+    } layerFlushController;
     <WebDeviceOrientationProvider> *m_deviceOrientationProvider;
     BOOL mainFrameDocumentReady;
     BOOL mainViewIsScrollingOrZooming;
     NSString *mediaStyle;
-    WebEvent *mouseDownEvent;
     BOOL needsOneShotDrawingSynchronization;
     void *observationInfo;
     struct Page { } *page;
+    } pendingFixedPositionLayoutRect;
+    } pendingFixedPositionLayoutRectMutex;
     id policyDelegate;
     id policyDelegateForwarder;
     BOOL postsAcceleratedCompositingNotifications;
     WebPreferences *preferences;
     int programmaticFocusCount;
+    NSDictionary *remoteInspectorUserInfo;
     } resourceLoadDelegateImplementations;
     id resourceProgressDelegate;
     id resourceProgressDelegateForwarder;
@@ -175,7 +193,6 @@
     } userAgent;
     BOOL userAgentOverridden;
     NSURL *userStyleSheetLocation;
-    BOOL usesDocumentViews;
     BOOL usesPageCache;
     int validationMessageTimerMagnification;
     float zoomMultiplier;

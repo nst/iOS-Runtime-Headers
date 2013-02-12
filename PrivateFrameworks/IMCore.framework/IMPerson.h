@@ -29,7 +29,7 @@
 @property(readonly) NSArray * mobileNumbers;
 @property(readonly) NSString * name;
 @property(copy) NSString * nickname;
-@property(readonly) NSArray * phoneNumbers;
+@property NSArray * phoneNumbers;
 @property(readonly) int recordID;
 @property(readonly) unsigned int status;
 @property(readonly) NSString * uniqueID;
@@ -48,7 +48,6 @@
 - (int)_recordID;
 - (void*)_recordRef;
 - (BOOL)_registered;
-- (id)_valuesAndLabelsForProperty:(id)arg1;
 - (id)allEmails;
 - (id)allHandlesForProperty:(id)arg1;
 - (void)appendID:(id)arg1 toProperty:(id)arg2;
@@ -88,6 +87,7 @@
 - (void)setImageData:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setNickname:(id)arg1;
+- (void)setPhoneNumbers:(id)arg1;
 - (void)setValues:(id)arg1 forIMProperty:(id)arg2;
 - (void)setValues:(id)arg1 forProperty:(id)arg2;
 - (unsigned int)status;

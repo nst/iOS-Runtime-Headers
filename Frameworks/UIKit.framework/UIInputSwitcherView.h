@@ -34,6 +34,8 @@
 - (void)setInputMode:(id)arg1;
 - (void)setInputModes:(id)arg1;
 - (void)setKeyboardSettingsFromSwitcher:(BOOL)arg1;
+- (void)show;
+- (id)subtitleForItemAtIndex:(int)arg1;
 - (id)titleForItemAtIndex:(int)arg1;
 
 @end

@@ -30,6 +30,7 @@
     id _rotatingClient;
     UIView *_rotatingSnapshotView;
     } _rotationSettings;
+    BOOL _skipClientRotationCallbacks;
     BOOL _skipFooterRotation;
     BOOL _skipHeaderRotation;
     int _toOrientation;
@@ -41,6 +42,7 @@
 @property(readonly) float duration;
 @property(readonly) int fromOrientation;
 @property(readonly) id rotatingClient;
+@property BOOL skipClientRotationCallbacks;
 @property(readonly) int toOrientation;
 
 - (BOOL)_isFooterTranslucent;
@@ -57,7 +59,9 @@
 - (id)initWithClient:(id)arg1 toOrientation:(int)arg2 duration:(float)arg3 andWindow:(id)arg4;
 - (void)rotateSnapshots;
 - (id)rotatingClient;
+- (void)setSkipClientRotationCallbacks:(BOOL)arg1;
 - (void)setupRotationOrderingKeyboardInAfterRotation:(BOOL)arg1;
+- (BOOL)skipClientRotationCallbacks;
 - (void)slideHeaderViewAndFooterViewOffScreen:(BOOL)arg1 forInterfaceOrientation:(int)arg2;
 - (int)toOrientation;
 

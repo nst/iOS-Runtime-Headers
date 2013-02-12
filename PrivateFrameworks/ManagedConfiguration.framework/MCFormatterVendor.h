@@ -2,15 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumberFormatter;
+@class NSNumberFormatter, NSObject<OS_dispatch_queue>;
 
 @interface MCFormatterVendor : NSObject {
     NSNumberFormatter *_numberFormatter;
-    struct dispatch_queue_s { } *_syncQueue;
+    NSObject<OS_dispatch_queue> *_syncQueue;
 }
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_localeDidChange:(id)arg1;
 - (void)dealloc;
 - (id)init;

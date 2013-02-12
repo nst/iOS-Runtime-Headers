@@ -2,46 +2,72 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray, NSManagedObjectContext, NSManagedObjectModel, NSPersistentStoreCoordinator;
+@class NSArray, NSEntityDescription, NSManagedObjectContext, NSMutableSet, NSOperationQueue, NSPersistentStoreCoordinator, TIPersistentQueue;
 
 @interface TIUserDictionaryController : NSObject {
     NSArray *_cachedAllWords;
+    TIPersistentQueue *_changeJournal;
     NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
+    NSOperationQueue *_operationQueue;
+    NSMutableSet *_pendingDeletions;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    BOOL _shouldImportWords;
 }
 
 @property(retain) NSArray * cachedAllWords;
+@property(readonly) TIPersistentQueue * changeJournal;
+@property(readonly) NSOperationQueue * dictionaryAccessQueue;
 @property(readonly) NSManagedObjectContext * managedObjectContext;
-@property(readonly) NSManagedObjectModel * managedObjectModel;
+@property(readonly) NSOperationQueue * operationQueue;
+@property(readonly) NSMutableSet * pendingDeletions;
 @property(readonly) NSPersistentStoreCoordinator * persistentStoreCoordinator;
-@property BOOL shouldImportWords;
+@property(readonly) NSEntityDescription * userWordEntityDescription;
+@property(readonly) NSArray * userWordSortDescriptors;
 
-+ (id)legacyImportFilePaths;
-+ (id)legacyImportWordKeyPairsFromFiles:(id)arg1;
-+ (id)sharedInstance;
-+ (id)wordKeyPairs;
++ (id)addPersistentStoreAtURL:(id)arg1 ubiquitousContentURL:(id)arg2 toCoordinator:(id)arg3;
++ (id)cloudPersistentStorePath;
++ (void)loadWordKeyPairs:(id)arg1;
++ (id)localPersistentStorePath;
++ (id)newManagedObjectModel;
++ (id)newPersistentStoreCoordinatorWithURL:(id)arg1 ubiquitousContentURL:(id)arg2;
 
 - (id)allWords;
-- (id)allWordsAsWordKeyPairs;
+- (id)arrayOfUniqueWordsFromSortedArray:(id)arg1;
 - (id)cachedAllWords;
+- (id)changeJournal;
+- (void)convertUpdatesToInsertionsAndDeletions;
 - (void)dealloc;
 - (void)deleteWord:(id)arg1;
+- (id)dictionaryAccessQueue;
 - (id)emptyWord;
-- (void)importLegacyEntries;
-- (void)importSampleShortcuts;
 - (id)init;
+- (void)initializePersistentStoreCoordinator;
+- (void)invalidateCachedWords;
+- (BOOL)isOnUserDictionaryAccessQueue;
+- (BOOL)isUserDictionaryAccessible;
+- (void)loadManagedObjectContext;
+- (void)loadPersistentStore;
 - (id)managedObjectContext;
 - (void)managedObjectContextDidSave:(id)arg1;
-- (id)managedObjectModel;
+- (id)newFetchRequestForContext:(id)arg1;
+- (id)operationQueue;
+- (id)pendingDeletions;
+- (void)performSelector:(SEL)arg1 withEachWordIn:(id)arg2;
 - (id)persistentStoreCoordinator;
-- (void)rollback;
+- (id)persistentStoreURL;
+- (id)persistentStoreURLWithUbiquitousContentURL:(id*)arg1;
+- (id)predicateFilteringForSearchText:(id)arg1;
+- (void)revertWord:(id)arg1;
 - (BOOL)save;
-- (void)saveWordKeyPairsToFile;
+- (void)sendChangesToKBD;
 - (void)setCachedAllWords:(id)arg1;
-- (void)setShouldImportWords:(BOOL)arg1;
-- (BOOL)shouldImportWords;
-- (void)updateNilShortcuts;
+- (void)unloadManagedObjectContext;
+- (void)unloadPersistentStore;
+- (void)userDictionaryStoreDidSave:(id)arg1;
+- (Class)userWordClassForContext:(id)arg1;
+- (id)userWordEntityDescription;
+- (id)userWordEntityDescriptionForContext:(id)arg1;
+- (id)userWordSortDescriptors;
+- (id)userWordSortDescriptorsForContext:(id)arg1;
+- (id)userWordWithCommittedValues:(id)arg1;
 
 @end

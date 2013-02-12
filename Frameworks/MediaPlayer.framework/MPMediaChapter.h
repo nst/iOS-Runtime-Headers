@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@interface MPMediaChapter : NSObject <NSCoding> {
+@interface MPMediaChapter : NSObject {
     int _chapterType;
     unsigned int _indexInChaptersWithAnyType;
     unsigned int _indexInChaptersWithSameType;

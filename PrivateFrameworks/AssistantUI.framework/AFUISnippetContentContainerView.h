@@ -2,36 +2,32 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class AFUIPerforatedBackgroundView, UIButton, UIView;
+@class AFUIPerforatedBackgroundView, UIView;
 
 @interface AFUISnippetContentContainerView : UIView <AFUISnippetPaperViewDelegate> {
     BOOL _backgroundIsPaper;
     BOOL _backgroundNeedsRegeneration;
     UIView *_backgroundView;
-    UIButton *_disclosureButton;
     BOOL _perforated;
     AFUIPerforatedBackgroundView *_perforatedBackground;
     UIView *_userContent;
 }
 
 @property(retain) UIView * backgroundView;
-@property(retain) UIButton * disclosureButton;
 @property BOOL perforatedEdges;
 @property(retain) UIView * userContent;
 
+- (void).cxx_destruct;
 - (void)_regeneratePerforatedBackground;
 - (id)backgroundView;
 - (void)dealloc;
-- (id)disclosureButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)paperViewPropertyChanged:(id)arg1;
 - (BOOL)perforatedEdges;
 - (void)setBackgroundView:(id)arg1;
-- (void)setDisclosureButton:(id)arg1;
 - (void)setPerforatedEdges:(BOOL)arg1;
 - (void)setUserContent:(id)arg1;
-- (void)setUserContentAnimated:(id)arg1 animation:(id)arg2 completion:(id)arg3;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)userContent;
 

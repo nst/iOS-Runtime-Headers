@@ -25,11 +25,14 @@
 
 + (id)indexSet;
 + (id)indexSetWithIndex:(unsigned int)arg1;
++ (id)indexSetWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)indexSetWithIndexes:(unsigned int)arg1;
-+ (id)indexSetWithIndexes:(unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 
 - (unsigned int)__getContainmentVector:(out BOOL*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)_gkIndexSetByAddingIndex:(int)arg1;
+- (id)_gkIndexSetByRemovingIndex:(int)arg1;
 - (unsigned int)_indexAtIndex:(unsigned int)arg1;
 - (unsigned int)_indexClosestToIndex:(unsigned int)arg1 equalAllowed:(BOOL)arg2 following:(BOOL)arg3;
 - (unsigned int)_indexOfRangeAfterOrContainingIndex:(unsigned int)arg1;
@@ -42,9 +45,8 @@
 - (BOOL)containsIndex:(unsigned int)arg1;
 - (BOOL)containsIndexes:(id)arg1;
 - (BOOL)containsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (unsigned int)count;
 - (unsigned int)countOfIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)dealloc;
@@ -73,18 +75,20 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIndex:(unsigned int)arg1;
 - (id)initWithIndexSet:(id)arg1;
-- (id)initWithIndexes:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (id)initWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 - (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)intersectsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIndexSet:(id)arg1;
+- (BOOL)isSingleContiguousRange;
 - (unsigned int)lastIndex;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)pl_indexSetByExtractingIndexes:(id)arg1;
 - (id)pl_shortDescription;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
 - (unsigned int)rangeCount;
+- (id)replacementObjectForPortCoder:(id)arg1;
 
 @end

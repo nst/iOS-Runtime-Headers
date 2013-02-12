@@ -23,5 +23,6 @@
 - (id)init;
 - (BOOL)isInExtendedMode;
 - (void)play;
+- (BOOL)showPlaybackStateOverlaysOnTVOut;
 
 @end

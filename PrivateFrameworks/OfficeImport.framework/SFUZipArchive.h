@@ -18,6 +18,7 @@
 - (id)allEntryNames;
 - (void)collapseCommonRootDirectory;
 - (void)dealloc;
+- (BOOL)decompressAtPath:(id)arg1;
 - (id)encryptedDocumentUuid;
 - (id)entryWithName:(id)arg1 dataLength:(long long)arg2;
 - (id)entryWithName:(id)arg1;

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary, NSString, NSURL;
+@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface SUAVRemakerOutput : NSObject <NSCopying> {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSURL *_mediaURL;
     NSString *_remakerMode;
     NSDictionary *_remakerOptions;

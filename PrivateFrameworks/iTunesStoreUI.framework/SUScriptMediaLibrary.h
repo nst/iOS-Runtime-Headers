@@ -16,6 +16,8 @@
 @property(readonly) NSString * itemPropertyDiscNumber;
 @property(readonly) NSString * itemPropertyGenre;
 @property(readonly) NSString * itemPropertyIsCompilation;
+@property(readonly) NSString * itemPropertyIsHD;
+@property(readonly) NSString * itemPropertyIsRental;
 @property(readonly) NSString * itemPropertyLastPlayedDate;
 @property(readonly) NSString * itemPropertyLyrics;
 @property(readonly) NSString * itemPropertyMediaType;
@@ -56,18 +58,19 @@
 @property(readonly) NSString * queryPresetVideoPodcasts;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (id)_copyQueryWithPreset:(id)arg1;
+- (void)_connectNativeObject;
 - (BOOL)_isRestricted;
-- (void)_loadNativeObject;
+- (void)_launchMusicApp;
+- (void)_launchMusicAppAfterPlayback:(id)arg1 firstItem:(id)arg2;
 - (id)attributeKeys;
 - (id)containsAdamID:(id)arg1;
 - (id)containsAdamIDs:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (void)getProperties:(id)arg1 ofAdamIDs:(id)arg2 withCompletionFunction:(id)arg3;
 - (id)itemPropertyAlbumArtist;
 - (id)itemPropertyAlbumTitle;
 - (id)itemPropertyArtist;
@@ -76,6 +79,8 @@
 - (id)itemPropertyDiscNumber;
 - (id)itemPropertyGenre;
 - (id)itemPropertyIsCompilation;
+- (id)itemPropertyIsHD;
+- (id)itemPropertyIsRental;
 - (id)itemPropertyLastPlayedDate;
 - (id)itemPropertyLyrics;
 - (id)itemPropertyMediaType;
@@ -103,6 +108,9 @@
 - (id)mediaTypeTVShow;
 - (id)mediaTypeVideoPodcast;
 - (id)musicPlayerForType:(id)arg1;
+- (id)playSongsInCollectionWithAdamID:(id)arg1 firstItemID:(id)arg2;
+- (id)playSongsWithAdamIDs:(id)arg1;
+- (id)playVideoWithAdamID:(id)arg1;
 - (id)playerTypeApplication;
 - (id)playerTypeIPod;
 - (id)queryPresetAlbums;

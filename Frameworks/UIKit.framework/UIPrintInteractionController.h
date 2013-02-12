@@ -44,10 +44,13 @@
 - (BOOL)_canShowDuplex;
 - (BOOL)_canShowPageRange;
 - (BOOL)_canShowPaperList;
+- (void)_cancelManualPrintPage;
 - (void)_cleanPrintState;
 - (id)_currentPrintInfo;
+- (void)_enableManualPrintPage:(BOOL)arg1;
 - (void)_endPrintJob:(BOOL)arg1 error:(id)arg2;
 - (id)_init;
+- (void)_manualPrintPage;
 - (id)_paperForContentType:(int)arg1;
 - (id)_paperForPDFItem:(id)arg1 withDuplexMode:(int)arg2;
 - (void)_preparePrintInfo;

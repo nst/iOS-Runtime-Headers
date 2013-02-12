@@ -11,9 +11,11 @@
     int _groupingType;
     NSSet *_itemPropertiesToFetch;
     NSArray *_orderingProperties;
+    BOOL _useSections;
 }
 
 @property(copy) NSSet * collectionPropertiesToFetch;
+@property int entityOrder;
 @property(readonly) BOOL excludesEntitiesWithBlankNames;
 @property(copy) NSSet * filterPredicates;
 @property int groupingType;
@@ -31,6 +33,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (int)entityOrder;
 - (BOOL)excludesEntitiesWithBlankNames;
 - (id)filterPredicates;
 - (int)groupingType;
@@ -40,10 +43,11 @@
 - (id)itemPropertiesToFetch;
 - (id)orderingProperties;
 - (id)predicateForProperty:(id)arg1;
+- (id)queryCriteriaByApplyingStandardPredicates:(BOOL)arg1 externalClientFilteringPredicates:(BOOL)arg2;
 - (void)removeFilterPredicate:(id)arg1;
 - (void)removePredicatesForProperty:(id)arg1;
-- (id)sanitizedQueryCriteria;
 - (void)setCollectionPropertiesToFetch:(id)arg1;
+- (void)setEntityOrder:(int)arg1;
 - (void)setFilterPredicates:(id)arg1;
 - (void)setGroupingType:(int)arg1;
 - (void)setItemPropertiesToFetch:(id)arg1;

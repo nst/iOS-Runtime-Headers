@@ -5,11 +5,11 @@
 @interface MSSendEmail : MSMailDefaultService {
 }
 
-+ (id)sendEmail:(id)arg1 delegate:(id)arg2;
-+ (id)smi_serverCommandName;
++ (id)sendEmail:(id)arg1 playSound:(BOOL)arg2 completionBlock:(id)arg3;
++ (id)sendMessageData:(id)arg1 autosaveIdentifier:(id)arg2 completionBlock:(id)arg3;
 
-- (id)_didSendEmail:(id)arg1 userInfo:(id)arg2;
-- (id)_sendEmail:(id)arg1 delegate:(id)arg2;
-- (void)_smi_notifyClientDidFinishWithError:(id)arg1;
+- (void)_sendEmail:(id)arg1 playSound:(BOOL)arg2 completionBlock:(id)arg3;
+- (void)_sendMessageData:(id)arg1 autosaveIdentifier:(id)arg2 completionBlock:(id)arg3;
+- (void)_simulateServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id)arg3;
 
 @end

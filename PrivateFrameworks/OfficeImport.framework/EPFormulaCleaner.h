@@ -43,6 +43,7 @@
 - (bool)isObjectSupported:(id)arg1;
 - (bool)isReferenceValidInLassoForRow:(int)arg1 rowRelative:(bool)arg2 column:(int)arg3 columnRelative:(bool)arg4;
 - (bool)isReferenceValidInLassoForSheet:(id)arg1 rowMin:(int)arg2 rowMinRelative:(bool)arg3 rowMax:(int)arg4 rowMaxRelative:(bool)arg5 columnMin:(int)arg6 columnMinRelative:(bool)arg7 columnMax:(int)arg8 columnMaxRelative:(bool)arg9;
+- (bool)isThereContentOutsideOfLassoBoundsForSheet:(id)arg1 rowMin:(int)arg2 rowMax:(int)arg3 columnMin:(int)arg4 columnMax:(int)arg5;
 - (void)prepareToProcessFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
 - (void)reportWarning:(int)arg1 parameter:(id)arg2;
 - (void)reportWarning:(int)arg1;

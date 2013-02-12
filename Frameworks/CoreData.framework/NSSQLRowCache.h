@@ -13,6 +13,7 @@
 
 - (id)adapter;
 - (void)dealloc;
+- (void)forgetAllExternalData;
 - (void)forgetRowForObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
 - (id)initWithSQLCore:(id)arg1;
 - (void)registerRow:(id)arg1 forObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2;

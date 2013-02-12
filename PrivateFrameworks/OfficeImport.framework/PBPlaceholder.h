@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface PBPlaceholder : NSObject {
 }
 
@@ -11,5 +16,6 @@
 + (int)readPlaceholderOrientation:(int)arg1;
 + (int)readPlaceholderSize:(int)arg1;
 + (int)readPlaceholderType:(int)arg1;
++ (void)writePlaceholder:(id)arg1 toPlaceholderAtom:(struct PptOEPlaceholderAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; int x7; unsigned int x8 : 8; unsigned int x9 : 8; }*)arg2 isMaster:(BOOL)arg3 isNotes:(BOOL)arg4;
 
 @end

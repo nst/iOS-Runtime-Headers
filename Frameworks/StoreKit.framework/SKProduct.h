@@ -2,26 +2,43 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSDecimalNumber, NSLocale, NSString;
+@class NSArray, NSDecimalNumber, NSLocale, NSString;
 
 @interface SKProduct : NSObject {
     id _internal;
 }
 
+@property(getter=_localeIdentifier,setter=_setLocaleIdentifier:,copy) NSString * _localeIdentifier;
+@property(readonly) NSArray * downloadContentLengths;
+@property(readonly) NSString * downloadContentVersion;
+@property(getter=isDownloadable,readonly) BOOL downloadable;
 @property(readonly) NSString * localizedDescription;
 @property(readonly) NSString * localizedTitle;
 @property(readonly) NSDecimalNumber * price;
 @property(readonly) NSLocale * priceLocale;
 @property(readonly) NSString * productIdentifier;
 
+- (id)_localeIdentifier;
+- (void)_setContentVersion:(id)arg1;
+- (void)_setDownloadContentLengths:(id)arg1;
+- (void)_setDownloadable:(BOOL)arg1;
+- (void)_setLocaleIdentifier:(id)arg1;
+- (void)_setLocalizedDescription:(id)arg1;
+- (void)_setLocalizedTitle:(id)arg1;
+- (void)_setPrice:(id)arg1;
+- (void)_setPriceLocale:(id)arg1;
+- (void)_setProductIdentifier:(id)arg1;
+- (id)copyXPCEncoding;
 - (void)dealloc;
+- (id)downloadContentLengths;
+- (id)downloadContentVersion;
 - (id)init;
-- (id)initWithDictionary:(id)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)isDownloadable;
 - (id)localizedDescription;
 - (id)localizedTitle;
 - (id)price;
 - (id)priceLocale;
 - (id)productIdentifier;
-- (void)setLocale:(id)arg1;
 
 @end

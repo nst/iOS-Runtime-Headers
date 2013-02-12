@@ -3,17 +3,13 @@
  */
 
 @interface UIStatusBarOrientationAnimationParameters : UIStatusBarAnimationParameters {
-    BOOL _notifySpringBoardAndFence;
     int _orientationAnimation;
 }
 
-@property BOOL notifySpringBoardAndFence;
 @property int orientationAnimation;
 
 - (id)initWithDefaultParameters;
-- (BOOL)notifySpringBoardAndFence;
 - (int)orientationAnimation;
-- (void)setNotifySpringBoardAndFence:(BOOL)arg1;
 - (void)setOrientationAnimation:(int)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class <ABStyleProvider>;
 
-@interface ABSectionListHeaderView : UITableHeaderFooterView {
+@interface ABSectionListHeaderView : UITableViewHeaderFooterView {
     <ABStyleProvider> *_styleProvider;
 }
 

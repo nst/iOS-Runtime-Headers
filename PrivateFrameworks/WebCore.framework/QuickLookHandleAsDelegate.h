@@ -8,14 +8,11 @@
  */
 
 @interface QuickLookHandleAsDelegate : NSObject <NSURLConnectionDelegate> {
-    struct ResourceHandle { int (**x1)(); int x2; struct OwnPtr<WebCore::ResourceHandleInternal> { 
-            struct ResourceHandleInternal {} *m_ptr; 
-        } x3; struct OwnPtr<WebCore::QuickLookHandle> { 
-            struct QuickLookHandle {} *m_ptr; 
     struct _CFURLConnection { } *m_connection;
-        } x4; } *m_handle;
+    struct ResourceHandle { int (**x1)(); int x2; struct OwnPtr<WebCore::ResourceHandleInternal> { struct ResourceHandleInternal {} *x_3_1_1; } x3; struct OwnPtr<WebCore::QuickLookHandle> { struct QuickLookHandle {} *x_4_1_1; } x4; } *m_handle;
 }
 
+- (void)clearHandle;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2 lengthReceived:(long long)arg3;
 - (void)connection:(id)arg1 didReceiveDataArray:(id)arg2;

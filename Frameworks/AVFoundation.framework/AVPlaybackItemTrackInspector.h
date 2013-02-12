@@ -16,6 +16,7 @@
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)asset;
 - (void)dealloc;
+- (struct CGSize { float x1; float x2; })dimensions;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (void)finalize;

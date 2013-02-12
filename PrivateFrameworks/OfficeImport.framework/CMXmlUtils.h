@@ -5,13 +5,12 @@
 @interface CMXmlUtils : NSObject {
 }
 
-+ (id)createFilteredString:(id)arg1;
-+ (id)createHeadElementForDeviceWidth:(int)arg1;
-+ (id)createHeadElementWithTitle:(id)arg1 deviceWidth:(int)arg2;
-+ (id)createHeadElementWithTitle:(id)arg1;
-+ (id)createXhtmlDocument;
++ (id)copyFilteredString:(id)arg1;
++ (id)copyHeadElementForDeviceWidth:(int)arg1;
++ (id)copyHeadElementWithTitle:(id)arg1 deviceWidth:(int)arg2;
++ (id)copyHeadElementWithTitle:(id)arg1;
++ (id)copyXhtmlDocument;
 + (void)filterString:(id)arg1;
 + (id)xhtmlStringWithXmlData:(id)arg1;
-+ (id)xhtmlStringWithXmlDoc:(id)arg1;
 
 @end

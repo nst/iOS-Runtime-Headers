@@ -14,6 +14,7 @@
 }
 
 - (id)addLevel;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)document;
 - (id)initWithDocument:(id)arg1;

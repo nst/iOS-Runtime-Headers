@@ -7,6 +7,7 @@
 @interface GKVoiceChatServicePrivate : NSObject <VideoConferenceDelegate, VideoConferenceRealTimeChannel> {
     struct tagCONNRESULT { 
         int iCallID; 
+        int iRole; 
         int iRemoteCallID; 
         int proto; 
         int bIfRelay; 
@@ -71,6 +72,7 @@
         int bIfRemoteCellularQoS; 
         int iLocalCellTech; 
         int iRemoteCellTech; 
+        unsigned short wCellularMTU; 
     int bundle;
     int chatMode;
     <GKVoiceChatClient> *client;
@@ -101,14 +103,14 @@
 @property(getter=isFocus) BOOL focus;
 @property(readonly) float inputMeterLevel;
 @property(getter=isInputMeteringEnabled) BOOL inputMeteringEnabled;
-@property(getter=getLocalBitrate,readonly) double localBitrate;
-@property(getter=getLocalFramerate,readonly) double localFramerate;
+@property(readonly) double localBitrate;
+@property(readonly) double localFramerate;
 @property void* localVideoLayer;
 @property(getter=isMicrophoneMuted) BOOL microphoneMuted;
 @property(readonly) float outputMeterLevel;
 @property(getter=isOutputMeteringEnabled) BOOL outputMeteringEnabled;
-@property(getter=getRemoteBitrate,readonly) double remoteBitrate;
-@property(getter=getRemoteFramerate,readonly) double remoteFramerate;
+@property(readonly) double remoteBitrate;
+@property(readonly) double remoteFramerate;
 @property float remoteParticipantVolume;
 @property void* remoteVideoLayer;
 @property int state;
@@ -125,12 +127,8 @@
 - (void)dealloc;
 - (void)denyCallID:(int)arg1;
 - (void)forceNoICE:(BOOL)arg1;
-- (double)getLocalBitrate;
-- (double)getLocalFramerate;
 - (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(long)arg4;
 - (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
-- (double)getRemoteBitrate;
-- (double)getRemoteFramerate;
 - (void)informClientOfInviteFromParticipant:(id)arg1;
 - (void)informClientVoiceChatDidNotStart:(id)arg1;
 - (void)informClientVoiceChatDidNotStartMainSelector:(id)arg1;
@@ -144,12 +142,16 @@
 - (BOOL)isInputMeteringEnabled;
 - (BOOL)isMicrophoneMuted;
 - (BOOL)isOutputMeteringEnabled;
+- (double)localBitrate;
 - (id)localDisplayNameForCallID:(int)arg1;
+- (double)localFramerate;
 - (void*)localVideoLayer;
 - (float)outputMeterLevel;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
+- (double)remoteBitrate;
 - (id)remoteDisplayNameForCallID:(int)arg1;
+- (double)remoteFramerate;
 - (float)remoteParticipantVolume;
 - (void*)remoteVideoLayer;
 - (void)resetState;

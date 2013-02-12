@@ -8,13 +8,16 @@
 + (id)cacheKeyForLeaderboardWithGame:(id)arg1 player:(id)arg2 cagetoryID:(id)arg3 timeScope:(int)arg4 playerScope:(int)arg5;
 + (id)cacheKeyForLeaderboardWithGame:(id)arg1 player:(id)arg2 cagetoryID:(id)arg3;
 + (id)cacheKeyForPlayer:(id)arg1 game:(id)arg2;
++ (id)cacheKeyForPlayerKey:(id)arg1 gameKey:(id)arg2;
 + (id)gameCompareCache;
 + (id)gameDetailCache;
 + (id)leaderboardCache;
 + (id)playerDetailCache;
 
+- (id)dataSourceForKey:(id)arg1 withController:(id)arg2;
 - (void)dealloc;
 - (id)init;
+- (id)objectForKey:(id)arg1;
 - (void)purgeCache:(id)arg1;
 
 @end

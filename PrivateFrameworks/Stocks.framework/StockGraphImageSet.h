@@ -14,7 +14,7 @@
 @property(retain) UIImage * plainLineImage;
 @property(retain) UIImage * volumeGraphImage;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)lineGraphImage;
 - (id)plainLineImage;
 - (void)setLineGraphImage:(id)arg1;

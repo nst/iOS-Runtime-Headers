@@ -10,13 +10,13 @@
 @property BOOL autofocus;
 @property(copy) NSString * challenge;
 @property BOOL disabled;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * keytype;
-@property(retain,readonly) DOMNodeList * labels;
+@property(readonly) DOMNodeList * labels;
 @property(copy) NSString * name;
-@property(copy,readonly) NSString * type;
-@property(copy,readonly) NSString * validationMessage;
-@property(retain,readonly) DOMValidityState * validity;
+@property(readonly) NSString * type;
+@property(readonly) NSString * validationMessage;
+@property(readonly) DOMValidityState * validity;
 @property(readonly) BOOL willValidate;
 
 - (BOOL)autofocus;

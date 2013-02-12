@@ -30,7 +30,7 @@
 - (void)invalidate;
 - (BOOL)isCancelled;
 - (BOOL)isPending;
-- (void)release;
+- (oneway void)release;
 - (id)threadKey;
 
 @end

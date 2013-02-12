@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
  */
 
-@class <PKPrinterBrowserDelegate>, NSFileHandle, NSMutableArray, NSMutableDictionary;
+@class <PKPrinterBrowserDelegate>, NSFileHandle, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface PKPrinterBrowser : NSObject {
     <PKPrinterBrowserDelegate> *delegate;
@@ -17,7 +17,7 @@
     NSMutableArray *pendingList;
     NSMutableDictionary *printers;
     NSMutableDictionary *printersByUUID;
-    struct dispatch_queue_s { } *printersQueue;
+    NSObject<OS_dispatch_queue> *printersQueue;
 }
 
 @property <PKPrinterBrowserDelegate> * delegate;
@@ -25,7 +25,7 @@
 @property(retain) NSMutableArray * pendingList;
 @property(retain) NSMutableDictionary * printers;
 @property(retain) NSMutableDictionary * printersByUUID;
-@property(readonly) struct dispatch_queue_s { }* printersQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * printersQueue;
 
 + (id)browserWithDelegate:(id)arg1;
 
@@ -37,13 +37,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)handle;
-- (void)handleNotification:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)pendingList;
 - (id)printers;
 - (id)printersByUUID;
-- (struct dispatch_queue_s { }*)printersQueue;
+- (id)printersQueue;
 - (void)queryCallback:(int)arg1 flags:(unsigned int)arg2 fullName:(const char *)arg3 rdlen:(unsigned short)arg4 rdata:(const void*)arg5;
+- (void)queryHardcodedPrinters;
 - (void)reissueTXTQuery:(id)arg1;
 - (void)removePrinter:(id)arg1;
 - (void)setDelegate:(id)arg1;

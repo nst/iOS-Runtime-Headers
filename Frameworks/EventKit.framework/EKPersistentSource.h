@@ -16,6 +16,7 @@
 @property int sourceType;
 @property(copy) NSString * title;
 
++ (id)defaultPropertiesToLoad;
 + (id)relations;
 
 - (id)UUID;

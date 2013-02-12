@@ -6,6 +6,7 @@
 
 @interface MSCupidStateMachine : NSObject <MSStreamsProtocolDelegate> {
     MSBackoffManager *_MMCSBackoffManager;
+    BOOL _hasDeactivated;
     NSString *_manifestPath;
     NSString *_personID;
     MSBackoffManager *_streamsBackoffManager;
@@ -13,8 +14,10 @@
 }
 
 @property(retain) NSMutableDictionary * _userManifest;
+@property BOOL hasDeactivated;
 @property(readonly) NSString * personID;
 
+- (void).cxx_destruct;
 - (void)_abort;
 - (void)_backoffMMCSBackoffTimer;
 - (void)_backoffStreamsBackoffTimer;
@@ -30,9 +33,11 @@
 - (void)deactivate;
 - (void)dealloc;
 - (void)forget;
+- (BOOL)hasDeactivated;
 - (id)initWithPersonID:(id)arg1;
 - (id)personID;
 - (void)protocol:(id)arg1 didReceiveRetryAfterDate:(id)arg2;
+- (void)setHasDeactivated:(BOOL)arg1;
 - (void)set_userManifest:(id)arg1;
 
 @end

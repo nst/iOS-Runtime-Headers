@@ -16,10 +16,10 @@
 @property(readonly) BOOL isRoot;
 @property(readonly) BOOL isSigned;
 
+- (void).cxx_destruct;
 - (id)certificatePersistentID;
 - (struct __SecCertificate { }*)copyCertificate;
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
-- (void)dealloc;
 - (id)description;
 - (id)expiry;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;

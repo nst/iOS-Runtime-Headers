@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSString, SSDownloadManager, SSPreorderManager;
+@class NSArray, NSString, SSPreorderManager, SUClientInterface, SUDownloadManager;
 
 @interface SUScriptDownloadQueue : SUScriptObject <SSDownloadManagerObserver, SSPreorderManagerObserver> {
-    SSDownloadManager *_downloadManager;
-    NSArray *_downloads;
+    SUClientInterface *_clientInterface;
+    SUDownloadManager *_downloadManager;
     SSPreorderManager *_preorderManager;
     NSString *_queueType;
 }
@@ -15,22 +15,20 @@
 @property(readonly) NSString * queueType;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (void)_checkQueues;
 - (id)_className;
-- (id)_copyScriptDownloads;
-- (void)_handleDownloadsChanged;
-- (void)_ntsResetDownloads;
-- (void)_ntsTearDownQueues;
+- (void)_setupManagersWithClientInterface:(id)arg1 queueType:(id)arg2;
+- (void)_tearDownQueues;
 - (id)attributeKeys;
 - (void)checkQueue;
 - (void)dealloc;
+- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (id)downloads;
 - (void)finalizeForWebScript;
-- (id)initWithQueueType:(id)arg1;
+- (id)initWithQueueType:(id)arg1 clientInterface:(id)arg2;
 - (void)preorderManagerPreordersDidChange:(id)arg1;
 - (id)queueType;
 - (id)scriptAttributeKeys;

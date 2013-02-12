@@ -29,7 +29,7 @@
 + (id)defaultValueForKey:(id)arg1;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
-- (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct String {} *x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Behavior {} *x9; }*)arg1;
+- (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Ref<CA::Render::String> { struct String {} *x_4_1_1; } x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Ref<const CA::Render::Behavior> { struct Behavior {} *x_9_1_1; } x9; }*)arg1;
 - (BOOL)allowsWeakReference;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -40,7 +40,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabled;
 - (id)name;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (BOOL)retainWeakReference;

@@ -15,9 +15,9 @@
 
 @property(retain) NSURL * principalURL;
 @property(retain) NSMutableSet * readDetails;
-@property(retain,readonly) NSSet * readOnlyPrincipalDetails;
+@property(readonly) NSSet * readOnlyPrincipalDetails;
 @property(retain) NSMutableArray * readPrincipalURLs;
-@property(retain,readonly) NSSet * readWritePrincipalDetails;
+@property(readonly) NSSet * readWritePrincipalDetails;
 @property BOOL serverSupportsExpandPropertyReport;
 @property(retain) NSMutableSet * writeDetails;
 @property(retain) NSMutableArray * writePrincipalURLs;

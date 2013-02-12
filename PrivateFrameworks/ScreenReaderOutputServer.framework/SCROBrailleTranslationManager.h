@@ -37,7 +37,7 @@
 - (BOOL)primaryTableSupportsEightDotBraille;
 - (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
 - (id)printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)setAuxiliaryTranslationTableWithTableIdentifier:(id)arg1;

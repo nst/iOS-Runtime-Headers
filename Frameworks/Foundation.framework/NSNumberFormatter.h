@@ -22,8 +22,11 @@
 + (void)setDefaultFormatterBehavior:(unsigned int)arg1;
 
 - (void*)__Keynote_NOOP;
+- (void)_clearFormatter;
 - (void)_regenerateFormatter;
 - (void)_reset;
+- (void)_setUsesCharacterDirection:(BOOL)arg1;
+- (BOOL)_usesCharacterDirection;
 - (BOOL)allowsFloats;
 - (BOOL)alwaysShowsDecimalSeparator;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;

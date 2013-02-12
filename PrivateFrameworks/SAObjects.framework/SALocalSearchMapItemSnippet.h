@@ -9,9 +9,9 @@
 
 @property(copy) NSArray * items;
 @property(copy) NSArray * providerCommand;
-@property(retain) NSNumber * regionOfInterestRadiusInMiles;
+@property(copy) NSNumber * regionOfInterestRadiusInMiles;
 @property(retain) SALocation * searchRegionCenter;
-@property(retain) NSNumber * userCurrentLocation;
+@property(copy) NSNumber * userCurrentLocation;
 
 + (id)mapItemSnippet;
 + (id)mapItemSnippetWithDictionary:(id)arg1 context:(id)arg2;

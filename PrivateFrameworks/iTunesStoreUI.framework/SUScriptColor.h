@@ -2,29 +2,32 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class UIColor;
+
 @interface SUScriptColor : SUScriptObject {
-    struct CGColor { } *_color;
+    UIColor *_color;
 }
 
 @property(readonly) float alpha;
 @property(readonly) float blue;
 @property(readonly) float green;
+@property(readonly) UIColor * nativeColor;
 @property(readonly) float red;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (void)_ntsSetColor:(struct CGColor { }*)arg1;
 - (float)alpha;
 - (id)attributeKeys;
 - (float)blue;
 - (struct CGColor { }*)copyCGColor;
 - (void)dealloc;
 - (float)green;
-- (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithStyleString:(id)arg1;
+- (id)initWithUIColor:(id)arg1;
+- (id)nativeColor;
 - (float)red;
 - (id)scriptAttributeKeys;
 - (void)setHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;

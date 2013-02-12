@@ -17,9 +17,11 @@
 - (void)dealloc;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)game;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1 game:(id)arg2;
 - (id)internal;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setGame:(id)arg1;
 - (void)setInternal:(id)arg1;

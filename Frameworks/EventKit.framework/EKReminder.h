@@ -2,35 +2,42 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
+@class NSDate, NSDateComponents;
 
 @interface EKReminder : EKCalendarItem {
 }
 
 @property(getter=isCompleted) BOOL completed;
 @property(copy) NSDate * completionDate;
-@property(readonly) NSDate * dueDate;
+@property(copy) NSDateComponents * dueDateComponents;
+@property int priority;
+@property(copy) NSDateComponents * startDateComponents;
 
 + (id)reminderWithEventStore:(id)arg1;
 
 - (id)_persistentReminder;
 - (void)_sendModifiedNote;
-- (void)clearParentUUID;
+- (void)clearParentID;
 - (BOOL)commit:(id*)arg1;
-- (int)compareDueDateWithReminder:(id)arg1;
 - (id)completionDate;
 - (void)dealloc;
 - (id)description;
+- (unsigned int)displayOrder;
 - (id)dueDate;
 - (id)dueDateComponents;
 - (id)externalURI;
 - (id)initWithPersistentObject:(id)arg1;
 - (BOOL)isCompleted;
-- (id)parentUUID;
+- (id)parentID;
+- (int)priority;
+- (id)reminderIdentifier;
 - (void)setCompleted:(BOOL)arg1;
 - (void)setCompletionDate:(id)arg1;
+- (void)setDisplayOrder:(unsigned int)arg1;
 - (void)setDueDateComponents:(id)arg1;
+- (void)setPriority:(int)arg1;
 - (void)setStartDateComponents:(id)arg1;
+- (void)setTimeZone:(id)arg1;
 - (id)startDateComponents;
 - (BOOL)validate:(id*)arg1;
 

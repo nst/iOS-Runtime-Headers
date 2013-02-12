@@ -14,8 +14,8 @@
 
 + (id)responseWithInvitation:(id)arg1 accept:(BOOL)arg2;
 
+- (void).cxx_destruct;
 - (BOOL)accept;
-- (void)dealloc;
 - (id)initWithInvitation:(id)arg1 accept:(BOOL)arg2;
 - (id)invitation;
 - (void)setAccept:(BOOL)arg1;

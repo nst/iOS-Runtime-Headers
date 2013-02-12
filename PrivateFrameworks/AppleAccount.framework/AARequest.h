@@ -5,6 +5,7 @@
 @class NSString, NSURLRequest;
 
 @interface AARequest : NSObject {
+    struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
     BOOL _flushCache;
     NSString *_urlString;
 }
@@ -15,11 +16,14 @@
 + (id)protocolVersion;
 + (Class)responseClass;
 
+- (void).cxx_destruct;
 - (id)bodyDictionary;
 - (void)dealloc;
 - (BOOL)flushCache;
 - (id)initWithURLString:(id)arg1;
 - (void)performRequestWithHandler:(id)arg1;
+- (id)redactedBodyStringWithPropertyList:(id)arg1;
+- (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (void)setFlushCache:(BOOL)arg1;
 - (id)urlCredential;
 - (id)urlRequest;

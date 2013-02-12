@@ -31,6 +31,7 @@
 - (id)hostURL;
 - (id)href;
 - (id)init;
+- (id)initForReplyWithUID:(id)arg1 href:(id)arg2 hostURL:(id)arg3 summary:(id)arg4;
 - (id)inviteStatus;
 - (BOOL)isComponentSupportedForString:(id)arg1;
 - (id)organizer;

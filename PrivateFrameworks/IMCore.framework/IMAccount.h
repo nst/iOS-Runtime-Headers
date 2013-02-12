@@ -2,15 +2,16 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMHandle, IMPeople, IMRemoteProxy<IMServiceSessionProtocol>, IMServiceImpl, NSArray, NSAttributedString, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString, UIImage;
+@class IMHandle, IMPeople, IMServiceImpl, NSArray, NSAttributedString, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString;
 
 @interface IMAccount : NSObject <IMSystemMonitorListener> {
-    UIImage *_accountImage;
+    id _accountImage;
     NSData *_accountImageData;
     NSDictionary *_accountPersistentProperties;
     NSMutableDictionary *_accountPersistentPropertiesChanges;
     NSDictionary *_accountPreferences;
     NSMutableDictionary *_accountPreferencesChanges;
+    int _accountType;
     BOOL _asleep;
     BOOL _blockIdleStatus;
     IMPeople *_buddyList;
@@ -24,9 +25,12 @@
     NSMutableDictionary *_currentAccountStatus;
     NSDictionary *_data;
     NSMutableDictionary *_dataChanges;
+    unsigned long long _defaultHandleCapabilities;
     NSString *_displayName;
     NSArray *_groups;
     BOOL _hasBeenRemoved;
+    BOOL _hasCheckedDefaultHandleCapabilities;
+    BOOL _hasPostedOfflineNotification;
     BOOL _hasReceivedSync;
     BOOL _iconChecked;
     NSMutableDictionary *_imHandles;
@@ -48,12 +52,12 @@
     int _numHolding;
     NSDictionary *_profile;
     NSMutableDictionary *_profileChanges;
+    int _profileStatus;
     NSDictionary *_registrationAlertInfo;
     int _registrationFailureReason;
     int _registrationStatus;
-    IMRemoteProxy<IMServiceSessionProtocol> *_remoteSession;
     IMServiceImpl *_service;
-    UIImage *_smallImage;
+    id _smallImage;
     NSMutableDictionary *_sortOrders;
     NSDictionary *_subtypeInfo;
     BOOL _syncedWithRemoteBuddyList;
@@ -62,6 +66,7 @@
     BOOL _useMeCardName;
 }
 
+@property(readonly) BOOL _isUsableForSending;
 @property(readonly) NSDictionary * _persistentProperties;
 @property(retain) NSString * accountDescription;
 @property(readonly) NSData * accountImageData;
@@ -103,6 +108,8 @@
 @property(readonly) BOOL isConnected;
 @property(readonly) BOOL isConnecting;
 @property(readonly) BOOL isManaged;
+@property(readonly) BOOL isOperational;
+@property(readonly) BOOL isRegistered;
 @property(readonly) BOOL justLoggedIn;
 @property(retain) NSString * login;
 @property(readonly) id loginIMHandle;
@@ -148,6 +155,10 @@
 + (void)setTemporaryPassword:(id)arg1 forAccount:(id)arg2 forServiceName:(id)arg3;
 + (id)temporaryPasswordForAccount:(id)arg1 forServiceName:(id)arg2;
 
+- (BOOL)CNFRegRegisteringLocalPhoneNumberSentinelAlias;
+- (BOOL)CNFRegSignInComplete;
+- (BOOL)CNFRegSignInFailed;
+- (id)__ck_handlesFromAddressStrings:(id)arg1;
 - (id)_aliasInfoForAlias:(id)arg1;
 - (id)_aliases;
 - (void)_applyChangesToTemporaryCache:(id)arg1;
@@ -156,6 +167,7 @@
 - (void)_handleDeliveredCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
 - (void)_handleIncomingCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
 - (void)_handleIncomingData:(id)arg1 fromBuddyInfo:(id)arg2;
+- (BOOL)_isUsableForSending;
 - (void)_loadFromDictionary:(id)arg1 force:(BOOL)arg2;
 - (void)_loginWithAutoLogin:(BOOL)arg1;
 - (void)_markHasSyncedWithRemoteBuddies;
@@ -163,7 +175,7 @@
 - (id)_persistentProperties;
 - (id)_persistentPropertyForKey:(id)arg1;
 - (void)_refreshLoginIMHandle;
-- (id)_remoteSession;
+- (void)_registrationStatusChanged:(id)arg1;
 - (void)_removePersistentPropertyForKey:(id)arg1;
 - (void)_resumeBuddyUpdatesNow;
 - (id)_serverWithSSL:(BOOL)arg1;
@@ -189,6 +201,7 @@
 - (void)accountWillBeRemoved;
 - (BOOL)addAlias:(id)arg1 type:(int)arg2;
 - (BOOL)addAlias:(id)arg1;
+- (BOOL)addAliases:(id)arg1;
 - (void)addBuddyToBuddyList:(id)arg1;
 - (BOOL)addIMHandle:(id)arg1 toGroups:(id)arg2 atLocation:(int)arg3;
 - (BOOL)addIMHandle:(id)arg1 toIMPerson:(id)arg2;
@@ -286,6 +299,8 @@
 - (BOOL)isConnecting;
 - (BOOL)isInvisible;
 - (BOOL)isManaged;
+- (BOOL)isOperational;
+- (BOOL)isRegistered;
 - (BOOL)justLoggedIn;
 - (void)loadFromDictionary:(id)arg1;
 - (id)login;
@@ -293,7 +308,7 @@
 - (id)loginDisplayString;
 - (id)loginIMHandle;
 - (unsigned int)loginStatus;
-- (void)loginStatusChanged:(unsigned int)arg1 message:(id)arg2 reason:(unsigned int)arg3 properties:(id)arg4;
+- (void)loginStatusChanged:(unsigned int)arg1 message:(id)arg2 reason:(int)arg3 properties:(id)arg4;
 - (id)loginStatusMessage;
 - (void)logoutAccount;
 - (BOOL)makingChanges;
@@ -323,6 +338,7 @@
 - (id)propertiesForGroup:(id)arg1;
 - (void)recalculateSubtypeInfo;
 - (id)recalculatedSubtypeInfo;
+- (BOOL)refreshVettedAliases;
 - (BOOL)registerAccount;
 - (void)registerIMHandle:(id)arg1;
 - (id)registrationFailureAlertInfo;
@@ -330,6 +346,7 @@
 - (int)registrationStatus;
 - (BOOL)removeAlias:(id)arg1 type:(int)arg2;
 - (BOOL)removeAlias:(id)arg1;
+- (BOOL)removeAliases:(id)arg1;
 - (BOOL)removeIMHandle:(id)arg1 fromGroups:(id)arg2;
 - (BOOL)removeIMHandle:(id)arg1 fromIMPerson:(id)arg2;
 - (void)removeObjectForKey:(id)arg1;
@@ -371,7 +388,7 @@
 - (void)setDictionaryData:(id)arg1 forPreferenceKey:(id)arg2;
 - (void)setDisplayName:(id)arg1;
 - (void)setGoIdle:(BOOL)arg1;
-- (void)setIMAccountLoginStatus:(unsigned int)arg1 errorMessage:(id)arg2 reason:(unsigned int)arg3;
+- (void)setIMAccountLoginStatus:(unsigned int)arg1 errorMessage:(id)arg2 reason:(int)arg3;
 - (void)setIMAccountLoginStatus:(unsigned int)arg1 errorMessage:(id)arg2;
 - (void)setIMAccountLoginStatus:(unsigned int)arg1;
 - (void)setInteger:(int)arg1 forKey:(id)arg2;
@@ -408,6 +425,8 @@
 - (id)uniqueID;
 - (BOOL)unregisterAccount;
 - (void)unregisterIMHandle:(id)arg1;
+- (BOOL)unvalidateAlias:(id)arg1;
+- (BOOL)unvalidateAliases:(id)arg1;
 - (BOOL)updateAuthorizationCredentials:(id)arg1 token:(id)arg2;
 - (void)updateCapabilities:(unsigned long long)arg1;
 - (void)updateWithTargetGroups;
@@ -417,6 +436,7 @@
 - (BOOL)validServer;
 - (BOOL)validateAlias:(id)arg1 type:(int)arg2;
 - (BOOL)validateAlias:(id)arg1;
+- (BOOL)validateAliases:(id)arg1;
 - (BOOL)validateProfile;
 - (int)validationErrorReasonForAlias:(id)arg1 type:(int)arg2;
 - (int)validationErrorReasonForAlias:(id)arg1;

@@ -2,40 +2,55 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSNumber, UIImage, _UIBarButtonItemAppearanceStorage;
+@class NSDictionary, NSMutableDictionary, NSNumber, UIImage, _UIBarButtonItemAppearanceStorage;
 
 @interface _UINavigationBarAppearanceStorage : NSObject {
-    UIImage *backgroundImage;
+    BOOL _deferShadowToSearchBar;
+    NSMutableDictionary *backgroundImagesForBarMetrics;
     _UIBarButtonItemAppearanceStorage *buttonAppearanceStorage;
-    UIImage *miniBackgroundImage;
+    BOOL hidesShadow;
     NSNumber *miniTitleVerticalAdjustment;
     BOOL reversesShadowOffset;
+    UIImage *shadowImage;
     NSDictionary *textAttributes;
     NSNumber *titleVerticalAdjustment;
 }
 
 @property(readonly) _UIBarButtonItemAppearanceStorage * _barButtonAppearanceStorage;
-@property(retain) UIImage * backgroundImage;
+@property(readonly) UIImage * backgroundImage;
 @property(readonly) _UIBarButtonItemAppearanceStorage * barButtonAppearanceStorage;
-@property(retain) UIImage * miniBackgroundImage;
+@property BOOL deferShadowToSearchBar;
+@property BOOL hidesShadow;
+@property(readonly) UIImage * miniBackgroundImage;
+@property(readonly) UIImage * miniPromptBackgroundImage;
 @property(retain) NSNumber * miniTitleVerticalAdjustment;
+@property(readonly) UIImage * promptBackgroundImage;
 @property BOOL reversesShadowOffset;
+@property(retain) UIImage * shadowImage;
 @property(copy) NSDictionary * textAttributes;
 @property(retain) NSNumber * titleVerticalAdjustment;
 
 - (id)_barButtonAppearanceStorage;
 - (id)backgroundImage;
+- (id)backgroundImageForBarMetrics:(int)arg1;
 - (id)barButtonAppearanceStorage;
 - (void)dealloc;
+- (BOOL)deferShadowToSearchBar;
+- (BOOL)hidesShadow;
 - (id)miniBackgroundImage;
+- (id)miniPromptBackgroundImage;
 - (id)miniTitleVerticalAdjustment;
+- (id)promptBackgroundImage;
 - (BOOL)reversesShadowOffset;
-- (void)setBackgroundImage:(id)arg1;
-- (void)setMiniBackgroundImage:(id)arg1;
+- (void)setBackgroundImage:(id)arg1 forBarMetrics:(int)arg2;
+- (void)setDeferShadowToSearchBar:(BOOL)arg1;
+- (void)setHidesShadow:(BOOL)arg1;
 - (void)setMiniTitleVerticalAdjustment:(id)arg1;
 - (void)setReversesShadowOffset:(BOOL)arg1;
+- (void)setShadowImage:(id)arg1;
 - (void)setTextAttributes:(id)arg1;
 - (void)setTitleVerticalAdjustment:(id)arg1;
+- (id)shadowImage;
 - (id)textAttributes;
 - (id)titleVerticalAdjustment;
 

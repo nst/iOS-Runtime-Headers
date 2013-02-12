@@ -4,8 +4,9 @@
 
 @class NSString, NSURL, UIWebView;
 
-@interface RUIWebView : RUIElement {
+@interface RUIWebView : RUIElement <UIWebViewDelegate> {
     NSURL *_baseURL;
+    id _delegate;
     NSString *_html;
     UIWebView *_webView;
 }
@@ -17,7 +18,11 @@
 - (void)dealloc;
 - (id)html;
 - (void)setBaseURL:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setHtml:(id)arg1;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (id)webView;
+- (void)webViewDidFinishLoad:(id)arg1;
 
 @end

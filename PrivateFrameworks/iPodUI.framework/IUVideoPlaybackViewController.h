@@ -7,16 +7,17 @@
 @interface IUVideoPlaybackViewController : IUPlaybackViewController {
     unsigned int _fakeIsCurrentControllerToEnableOrientationNotifications : 1;
     unsigned int _firstVideoFrameDisplayed : 1;
-    unsigned int _isDisappearingAndWillEndPlayback : 1;
     unsigned int _showControlsWithFirstFrame : 1;
     double _currentTimeOnAppear;
     UIImageView *_fillerImageView;
+    BOOL _isDisappearingAndWillEndPlayback;
     double _restoredTimeOnAppear;
     UIBarButtonItem *_scaleModeButton;
 }
 
 @property double currentTimeOnAppear;
 @property(retain) UIImage * fillerImage;
+@property(readonly) BOOL isCurrentItemValid;
 @property double restoredTimeOnAppear;
 @property BOOL showControlsWithFirstFrame;
 @property(readonly) UIImage * videoSnapshot;
@@ -28,6 +29,7 @@
 - (void)_firstVideoFrameDisplayedNotification:(id)arg1;
 - (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)_itemReadyToPlayNotification:(id)arg1;
 - (void)_removeFillerImageView;
 - (id)_scaleModeButton;
 - (void)_scaleModeButtonAction:(id)arg1;
@@ -36,20 +38,22 @@
 - (BOOL)_usingPhoneVideoOutMode;
 - (void)_validateInterfaceOrientation:(int*)arg1;
 - (id)copyArchivableContexts;
-- (id)createViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (double)currentTimeOnAppear;
 - (void)dealloc;
 - (void)exitPlayerAnimated:(BOOL)arg1;
 - (id)fillerImage;
 - (id)init;
 - (BOOL)isCurrentController;
+- (BOOL)isCurrentItemValid;
 - (void)loadView;
 - (int)modalTransition;
+- (id)newViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (BOOL)requireHUDVisible;
 - (BOOL)restoreArchivedContexts:(id)arg1;
 - (double)restoredTimeOnAppear;
 - (void)setCurrentTimeOnAppear:(double)arg1;
 - (void)setFillerImage:(id)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setRestoredTimeOnAppear:(double)arg1;
 - (void)setShowControlsWithFirstFrame:(BOOL)arg1;
@@ -57,7 +61,7 @@
 - (BOOL)showControlsWithFirstFrame;
 - (id)title;
 - (void)videoController:(id)arg1 scaleModeDidChange:(unsigned int)arg2;
-- (BOOL)videoController:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (BOOL)videoController:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (id)videoSnapshot;
 - (void)viewControllerRequestsExit:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

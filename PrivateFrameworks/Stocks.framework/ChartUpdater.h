@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSString, StockChartData;
+@class ChartParserData, NSString, StockChartData;
 
 @interface ChartUpdater : XMLHTTPRequest {
+    ChartParserData *_chartParserData;
     StockChartData *_currentChartData;
     id _delegate;
     int _interval;
@@ -15,6 +16,8 @@
 
 + (id)_rangeStringForInterval:(int)arg1;
 
+- (void).cxx_destruct;
+- (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (id)delegate;
 - (void)didParseData;

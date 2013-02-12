@@ -9,11 +9,11 @@
 
 @property BOOL defaultSelected;
 @property BOOL disabled;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(readonly) int index;
 @property(copy) NSString * label;
 @property BOOL selected;
-@property(copy,readonly) NSString * text;
+@property(readonly) NSString * text;
 @property(copy) NSString * value;
 
 - (id)createPickerCell;

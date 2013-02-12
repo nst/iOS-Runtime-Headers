@@ -12,9 +12,9 @@
 + (id)colorWithRedByte:(unsigned char)arg1 greenByte:(unsigned char)arg2 blueByte:(unsigned char)arg3;
 + (id)mapAdjustedColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
 + (int)mapSchemeColorID:(int)arg1 colorMap:(id)arg2;
-+ (id)nsColorWithOADColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
-+ (id)nsColorWithOADColor:(id)arg1;
-+ (id)nsColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
++ (id)tsuColorWithOADColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
++ (id)tsuColorWithOADColor:(id)arg1;
++ (id)tsuColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 
 - (void)addTransform:(id)arg1;
 - (void)addTransformOfType:(int)arg1 value:(float)arg2;

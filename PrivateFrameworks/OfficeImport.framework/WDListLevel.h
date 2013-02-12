@@ -9,13 +9,13 @@
     WDOfficeArt *mImage;
     int mJustification;
     BOOL mLegacy;
-    int mLegacyIndent;
-    int mLegacySpace;
+    long mLegacyIndent;
+    long mLegacySpace;
     BOOL mLegal;
     int mNumberFormat;
     WDParagraphProperties *mParagraphProperties;
     BOOL mRestartNumbering;
-    int mStartNumber;
+    long mStartNumber;
     int mSuffix;
     NSMutableString *mText;
 }

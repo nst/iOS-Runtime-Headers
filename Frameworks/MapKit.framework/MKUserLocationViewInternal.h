@@ -11,7 +11,6 @@
         unsigned int enforceLowerBound : 1; 
         unsigned int shouldDisplayHalo : 1; 
         unsigned int shouldDisplayEffects : 1; 
-        unsigned int effectsVisible : 1; 
         unsigned int shouldDisplayAccuracy : 1; 
         unsigned int shouldDisplayHeading : 1; 
         unsigned int stale : 1; 
@@ -47,7 +46,6 @@
 @property(readonly) BOOL canHaloExcludingEffects;
 @property id delegate;
 @property BOOL disableAccuracyDidUpdate;
-@property BOOL effectsVisible;
 @property(readonly) BOOL hasHalo;
 @property(readonly) BOOL hasQuiesced;
 @property double headingAccuracy;
@@ -64,7 +62,7 @@
 @property(getter=isStale) BOOL stale;
 @property int zoomDirection;
 
-+ (float)accuracyDiameter:(float)arg1 level:(unsigned int)arg2;
++ (float)accuracyDiameter:(float)arg1;
 + (id)bounceImageRects;
 + (id)dotImage;
 + (id)dotPressedImage;
@@ -77,7 +75,6 @@
 + (id)headingAngleLargeImage;
 + (id)headingAngleMediumImage;
 + (id)headingAngleSmallImage;
-+ (void)initialize;
 + (float)maxVisibleAccuracyDiameter;
 
 - (float)accuracy;
@@ -100,7 +97,6 @@
 - (id)dotBounceAnimation;
 - (void)drawAccuracy:(float)arg1;
 - (id)dropTeleportingUserLocationAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)effectsVisible;
 - (void)effectsVisibleDidChange;
 - (id)haloAnimation;
 - (BOOL)hasHalo;
@@ -138,7 +134,6 @@
 - (void)setContentsScale:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableAccuracyDidUpdate:(BOOL)arg1;
-- (void)setEffectsVisible:(BOOL)arg1;
 - (void)setHeadingAccuracy:(double)arg1;
 - (void)setMapType:(unsigned int)arg1;
 - (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;

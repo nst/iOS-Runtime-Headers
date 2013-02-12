@@ -11,8 +11,12 @@
 @property(readonly) NSArray * invalidProductIdentifiers;
 @property(readonly) NSArray * products;
 
+- (void)_setInvalidIdentifiers:(id)arg1;
+- (void)_setProducts:(id)arg1;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)init;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)invalidProductIdentifiers;
 - (id)products;
 

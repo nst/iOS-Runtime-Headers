@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, UILabel;
+@class <ABStyleProvider>, UIImageView, UILabel;
 
 @interface ABPersonCellContentView : UIView {
     struct CGRect { 
@@ -23,6 +23,7 @@
             float width; 
             float height; 
         } size; 
+    UIImageView *_badge;
     BOOL _editing;
     UILabel *_label;
     } _labelViewRect;
@@ -39,11 +40,14 @@
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForView:(id)arg1;
 - (void)dealloc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForBadge;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLabel;
 - (id)label;
+- (float)labelBaselineAdjustment;
 - (void)layoutLabel;
 - (void)layoutSubviews;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForView:(id)arg1;
+- (void)setBadgeIcon:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLabelText:(id)arg1;
 - (void)setStyleProvider:(id)arg1;

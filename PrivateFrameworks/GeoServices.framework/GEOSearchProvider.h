@@ -12,13 +12,12 @@
 
 @property(copy) id error;
 
-+ (id)hostname;
 + (unsigned short)provider;
 
 - (void)cancel;
 - (void)dealloc;
 - (id)error;
-- (void)search:(id)arg1 finished:(id)arg2 spellingSuggestion:(id)arg3 refinement:(id)arg4 error:(id)arg5;
+- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 spellingSuggestion:(id)arg5 refinement:(id)arg6 error:(id)arg7 isCompletions:(BOOL)arg8;
 - (void)setError:(id)arg1;
 
 @end

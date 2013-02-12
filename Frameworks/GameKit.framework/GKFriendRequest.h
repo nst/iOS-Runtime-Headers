@@ -18,9 +18,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1;
+- (id)initWithPendingFriendRequest:(id)arg1;
 - (id)internal;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setStatus:(int)arg1;

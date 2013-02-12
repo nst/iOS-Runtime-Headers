@@ -2,19 +2,26 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKExpandingTextCell;
+@class EKReminderInlineEditItemCell;
 
 @interface EKReminderInlineEditItem : EKReminderEditItem <EKExpandingTextViewDelegate> {
-    EKExpandingTextCell *_cell;
+    EKReminderInlineEditItemCell *_cell;
+    BOOL _isListeningToHeightChanges;
 }
 
+- (void)_applyStylesFromStyleProviderToTextView:(id)arg1;
 - (void)_keyboardDidShow:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
+- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
+- (int)cellStyle;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
 - (id)init;
 - (BOOL)isInline;
+- (id)newCell;
+- (BOOL)shouldPinKeyboard;
+- (id)textFromReminder;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidChangeContentHeight:(id)arg1;

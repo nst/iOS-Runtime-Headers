@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIColor, UIFont, UIImage, UIView;
+@class UIColor, UIFont, UIImage, UIView, _UIGraphicsLetterpressStyle;
 
 @interface ABStyleProvider : NSObject <ABStyleProvider> {
 }
@@ -10,12 +10,12 @@
 @property(readonly) UIImage * cardActionButtonBackgroundHighlighted;
 @property(readonly) UIImage * cardActionButtonBackgroundNormal;
 @property(readonly) float cardActionButtonHeight;
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } cardActionButtonImageInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cardActionButtonImageInsets;
 @property(readonly) float cardActionButtonSpacing;
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } cardActionButtonTitleDoubleLineInsets;
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } cardActionButtonTitleSingleLineInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cardActionButtonTitleDoubleLineInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cardActionButtonTitleSingleLineInsets;
 @property(readonly) int cardActionButtonType;
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } cardActionButtonsInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cardActionButtonsInsets;
 @property(readonly) UIImage * cardActionConferenceIcon;
 @property(readonly) UIImage * cardActionConferenceIconPressed;
 @property(readonly) BOOL cardAlwaysShowsNotes;
@@ -24,7 +24,9 @@
 @property(readonly) int cardCellAccessoryTypeEditRingtone;
 @property(readonly) int cardCellAccessoryTypeRingtone;
 @property(readonly) UIColor * cardCellBackgroundColor;
+@property(readonly) float cardCellBadgePaddingLeft;
 @property(readonly) UIColor * cardCellDisabledBackgroundColor;
+@property(readonly) UIImage * cardCellFacebookBadge;
 @property(readonly) int cardCellSelectionStyle;
 @property(readonly) float cardCellVerticalSpacingBetweenAlertsOfSimilarType;
 @property(readonly) UIColor * cardClippingImageLabelBevelColor;
@@ -42,6 +44,7 @@
 @property(readonly) BOOL cardHeaderNameViewAlignOnBottom;
 @property(readonly) float cardHeaderViewLeftMargin;
 @property(readonly) float cardHeaderViewTopMargin;
+@property(readonly) UIColor * cardHeadlineShadowColor;
 @property(readonly) UIColor * cardHeadlineTextColor;
 @property(readonly) UIFont * cardHeadlineTextFont;
 @property(readonly) UIColor * cardLabelBackgroundColor;
@@ -52,10 +55,10 @@
 @property(readonly) UIColor * cardLabelHighlightedShadowColor;
 @property(readonly) UIColor * cardLabelHighlightedTextColor;
 @property(readonly) UIColor * cardLabelImportantHighlightedTextColor;
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } cardLabelInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cardLabelInsets;
 @property(readonly) UIColor * cardLabelSelectedBackgroundColor;
 @property(readonly) UIColor * cardLabelShadowColor;
-@property(readonly) struct CGSize { float width; float height; } cardLabelShadowOffset;
+@property(readonly) struct CGSize { float x1; float x2; } cardLabelShadowOffset;
 @property(readonly) UIColor * cardLabelTextColor;
 @property(readonly) UIFont * cardLabelTextFont;
 @property(readonly) float cardLabelWidth;
@@ -64,14 +67,20 @@
 @property(readonly) UIView * cardNotesHeaderView;
 @property(readonly) float cardNotesHeaderViewHeight;
 @property(readonly) BOOL cardNotesLabelIncludesSource;
+@property(readonly) UIImage * cardPhotoBackgroundImage;
 @property(readonly) UIImage * cardPhotoEditMultipleOverlayImage;
 @property(readonly) UIImage * cardPhotoEditMultiplePhotoBackdropImage;
 @property(readonly) UIImage * cardPhotoEditOverlayImage;
 @property(readonly) UIImage * cardPhotoEditPlaceholderImage;
+@property(readonly) UIImage * cardPhotoFacebookAttributionImage;
+@property(readonly) float cardPhotoFrameBorderSize;
 @property(readonly) UIImage * cardPhotoMaskImage;
+@property(readonly) UIImage * cardPhotoMaskMultipleImage;
+@property(readonly) struct CGSize { float x1; float x2; } cardPhotoOffset;
 @property(readonly) UIImage * cardPhotoOverlayImage;
-@property(readonly) UIColor * cardPhotoShadowColor;
-@property(readonly) struct CGSize { float width; float height; } cardPhotoShadowOffset;
+@property(readonly) UIImage * cardPhotoPasteboardMaskImage;
+@property(readonly) UIImage * cardPhotoShadowImage;
+@property(readonly) struct CGSize { float x1; float x2; } cardPhotoShadowOffset;
 @property(readonly) BOOL cardPhotoShouldApplyOverlayImageWhenLabelPresent;
 @property(readonly) BOOL cardPhotoShouldApplyOverlayImageWhenPersonImagePresent;
 @property(readonly) UIImage * cardPlaceholderCompanyImage;
@@ -85,26 +94,28 @@
 @property(readonly) float cardSectionHeaderHeightForFollowingCardActions;
 @property(readonly) float cardSectionHeaderHorizontalPadding;
 @property(readonly) UIColor * cardSectionHeaderShadowColor;
-@property(readonly) struct CGSize { float width; float height; } cardSectionHeaderShadowOffset;
+@property(readonly) struct CGSize { float x1; float x2; } cardSectionHeaderShadowOffset;
 @property(readonly) UIColor * cardSectionHeaderTextColor;
 @property(readonly) BOOL cardShouldUseSeparateSectionsForUnknownCardActions;
+@property(readonly) UIColor * cardTableBackgroundColor;
 @property(readonly) UIColor * cardTableCellBorderColor;
 @property(readonly) BOOL cardTableShouldAdjustForKeyboard;
 @property(readonly) BOOL cardTableShouldRemoveBackgroundView;
 @property(readonly) BOOL cardTableUsesRowFadeAnimation;
 @property(readonly) unsigned int cardTagNumberOfLines;
+@property(readonly) UIColor * cardTaglineShadowColor;
 @property(readonly) UIColor * cardTaglineTextColor;
 @property(readonly) UIFont * cardTaglineTextFont;
 @property(readonly) UIColor * cardValueBackgroundColor;
 @property(readonly) UIImage * cardValueClearButtonImage;
 @property(readonly) UIColor * cardValueDisabledTextColor;
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } cardValueEditingInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cardValueEditingInsets;
 @property(readonly) UIColor * cardValueHighlightedShadowColor;
 @property(readonly) UIColor * cardValueHighlightedTextColor;
 @property(readonly) BOOL cardValueHighlightsWhenTouched;
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } cardValueInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cardValueInsets;
 @property(readonly) UIColor * cardValueShadowColor;
-@property(readonly) struct CGSize { float width; float height; } cardValueShadowOffset;
+@property(readonly) struct CGSize { float x1; float x2; } cardValueShadowOffset;
 @property(readonly) UIColor * cardValueTappableColor;
 @property(readonly) UIColor * cardValueTextColor;
 @property(readonly) UIFont * cardValueTextFont;
@@ -113,12 +124,12 @@
 @property(readonly) UIColor * groupAccountNameColor;
 @property(readonly) UIFont * groupAccountNameFont;
 @property(readonly) UIColor * groupAccountNameShadowColor;
-@property(readonly) struct CGSize { float width; float height; } groupAccountNameShadowOffset;
+@property(readonly) struct CGSize { float x1; float x2; } groupAccountNameShadowOffset;
 @property(readonly) UIColor * groupCellBackgroundColor;
 @property(readonly) UIColor * groupCellHighlightedTextColor;
 @property(readonly) int groupCellSelectionStyle;
 @property(readonly) UIColor * groupCellShadowColor;
-@property(readonly) struct CGSize { float width; float height; } groupCellShadowOffset;
+@property(readonly) struct CGSize { float x1; float x2; } groupCellShadowOffset;
 @property(readonly) UIColor * groupCellTextColor;
 @property(readonly) BOOL groupSectionDrawsDefaultTopShadow;
 @property(readonly) float groupSectionHeaderHeight;
@@ -126,21 +137,28 @@
 @property(readonly) UIColor * groupsTableBackgroundColor;
 @property(readonly) BOOL groupsTableShouldRemoveBackgroundView;
 @property(readonly) BOOL labelPickerShouldPushCustomLabelCreator;
+@property(readonly) _UIGraphicsLetterpressStyle * letterpressStyle;
 @property(readonly) BOOL linkedCardsShouldAllowDeletion;
 @property(readonly) BOOL linkedPhotoLabelStringsDescribeSourceOnly;
 @property(readonly) BOOL linkedPhotoPickerIncludesCurrentPhoto;
 @property(readonly) UIFont * memberNameBoldFont;
 @property(readonly) UIFont * memberNameBoldFontForSectionHeader;
 @property(readonly) UIColor * memberNameDisabledTextColor;
-@property(readonly) struct UIEdgeInsets { float top; float left; float bottom; float right; } memberNameInsets;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } memberNameInsets;
 @property(readonly) float memberNameInterComponentSpacing;
+@property(readonly) UIImage * memberNameMeCardDisabledImage;
+@property(readonly) UIImage * memberNameMeCardImage;
+@property(readonly) UIImage * memberNameMeCardSelectedImage;
+@property(readonly) UIColor * memberNameMeCardShadowColor;
+@property(readonly) UIColor * memberNameMeCardTextColor;
 @property(readonly) UIFont * memberNamePlaceholderFont;
 @property(readonly) UIFont * memberNameRegularFont;
 @property(readonly) UIFont * memberNameRegularFontForSectionHeader;
+@property(readonly) BOOL memberNameRespectsLargeTextSetting;
 @property(readonly) UIColor * memberNameSelectedColor;
 @property(readonly) UIColor * memberNameSelectedShadowColor;
 @property(readonly) UIColor * memberNameShadowColor;
-@property(readonly) struct CGSize { float width; float height; } memberNameShadowOffset;
+@property(readonly) struct CGSize { float x1; float x2; } memberNameShadowOffset;
 @property(readonly) UIColor * memberNameTextColor;
 @property(readonly) float memberScrollBarInset;
 @property(readonly) UIImage * memberSectionListHeaderImage;
@@ -153,8 +171,7 @@
 @property(readonly) float membersIndexMaximumHeight;
 @property(readonly) UIColor * membersIndexTextColor;
 @property(readonly) UIColor * membersIndexTrackingBackgroundColor;
-@property(readonly) BOOL membersSearchBarScrolls;
-@property(readonly) int membersSearchResultAccessoryType;
+@property(readonly) BOOL membersSearchBarIsInTableHeader;
 @property(readonly) int membersSelectionStyle;
 @property(readonly) int peoplePickerBarStyle;
 @property(readonly) BOOL presentDatePickerInPopover;
@@ -164,15 +181,14 @@
 @property(readonly) BOOL searchIsAlwaysActive;
 @property(readonly) BOOL serverSearchNavigationBarHidingEnabled;
 @property(readonly) BOOL shouldApplyMaskImage;
-@property(readonly) BOOL shouldDrawLetterpressText;
 @property(readonly) BOOL shouldPropagateStylesThroughUnknownPersonActions;
 @property(readonly) BOOL shouldPropagateStylesToPickers;
 @property(readonly) BOOL shouldShowCardPhotoPlaceholder;
+@property(readonly) BOOL shouldUseCardContentProviderWhenAvailable;
 @property(readonly) BOOL shouldUsePeoplePickerBarStyle;
 @property(readonly) int unknownModalPresentationStyle;
 
 + (id)defaultStyleProvider;
-+ (id)defaultStyleProviderForMaps;
 + (id)defaultStyleProviderForStyle:(int)arg1;
 
 - (int)abCellStyleForCardTableLinkingUI;
@@ -182,6 +198,7 @@
 - (int)abCellStyleForMembersTable;
 - (id)accessoryButtonForRelatedNames;
 - (id)accessoryViewForFavoritesBadge;
+- (id)accessoryViewForMailVIPBadge;
 - (id)accessoryViewForVideoBadge;
 - (id)cardActionButtonBackgroundHighlighted;
 - (id)cardActionButtonBackgroundNormal;
@@ -201,9 +218,11 @@
 - (int)cardCellAccessoryTypeRingtone;
 - (id)cardCellBackgroundColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardCellBackgroundInsetsWhenEditing:(BOOL)arg1;
+- (float)cardCellBadgePaddingLeft;
 - (id)cardCellDisabledBackgroundColor;
 - (id)cardCellDividerColorVertical:(BOOL)arg1;
 - (id)cardCellDividerShadowColorVertical:(BOOL)arg1;
+- (id)cardCellFacebookBadge;
 - (int)cardCellSelectionStyle;
 - (float)cardCellVerticalSpacingBetweenAlertsOfSimilarType;
 - (id)cardClippingImageLabelBevelColor;
@@ -226,6 +245,7 @@
 - (float)cardHeaderSpacingFromCardBodyWhenEditing:(BOOL)arg1;
 - (float)cardHeaderViewLeftMargin;
 - (float)cardHeaderViewTopMargin;
+- (id)cardHeadlineShadowColor;
 - (id)cardHeadlineTextColor;
 - (id)cardHeadlineTextFont;
 - (id)cardLabelBackgroundColor;
@@ -251,13 +271,19 @@
 - (float)cardNotesHeaderViewHeight;
 - (BOOL)cardNotesLabelIncludesSource;
 - (float)cardNotesMinimumHeightWhenEditing:(BOOL)arg1;
+- (id)cardPhotoBackgroundImage;
 - (id)cardPhotoEditMultipleOverlayImage;
 - (id)cardPhotoEditMultiplePhotoBackdropImage;
 - (id)cardPhotoEditOverlayImage;
 - (id)cardPhotoEditPlaceholderImage;
+- (id)cardPhotoFacebookAttributionImage;
+- (float)cardPhotoFrameBorderSize;
 - (id)cardPhotoMaskImage;
+- (id)cardPhotoMaskMultipleImage;
+- (struct CGSize { float x1; float x2; })cardPhotoOffset;
 - (id)cardPhotoOverlayImage;
-- (id)cardPhotoShadowColor;
+- (id)cardPhotoPasteboardMaskImage;
+- (id)cardPhotoShadowImage;
 - (struct CGSize { float x1; float x2; })cardPhotoShadowOffset;
 - (BOOL)cardPhotoShouldApplyOverlayImageWhenLabelPresent;
 - (BOOL)cardPhotoShouldApplyOverlayImageWhenPersonImagePresent;
@@ -275,6 +301,7 @@
 - (struct CGSize { float x1; float x2; })cardSectionHeaderShadowOffset;
 - (id)cardSectionHeaderTextColor;
 - (BOOL)cardShouldUseSeparateSectionsForUnknownCardActions;
+- (id)cardTableBackgroundColor;
 - (id)cardTableCellBorderColor;
 - (BOOL)cardTableShouldAdjustForKeyboard;
 - (BOOL)cardTableShouldRemoveBackgroundView;
@@ -286,6 +313,7 @@
 - (float)cardTableViewSectionFooterHeightWhenEditing:(BOOL)arg1;
 - (float)cardTableViewSectionHeaderHeightWhenEditing:(BOOL)arg1;
 - (unsigned int)cardTagNumberOfLines;
+- (id)cardTaglineShadowColor;
 - (id)cardTaglineTextColor;
 - (id)cardTaglineTextFont;
 - (id)cardValueBackgroundColor;
@@ -329,6 +357,7 @@
 - (id)groupsTableBackgroundColor;
 - (BOOL)groupsTableShouldRemoveBackgroundView;
 - (BOOL)labelPickerShouldPushCustomLabelCreator;
+- (id)letterpressStyle;
 - (BOOL)linkedCardsShouldAllowDeletion;
 - (BOOL)linkedPhotoLabelStringsDescribeSourceOnly;
 - (BOOL)linkedPhotoPickerIncludesCurrentPhoto;
@@ -338,9 +367,15 @@
 - (float)memberNameFontSize;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })memberNameInsets;
 - (float)memberNameInterComponentSpacing;
+- (id)memberNameMeCardDisabledImage;
+- (id)memberNameMeCardImage;
+- (id)memberNameMeCardSelectedImage;
+- (id)memberNameMeCardShadowColor;
+- (id)memberNameMeCardTextColor;
 - (id)memberNamePlaceholderFont;
 - (id)memberNameRegularFont;
 - (id)memberNameRegularFontForSectionHeader;
+- (BOOL)memberNameRespectsLargeTextSetting;
 - (id)memberNameSelectedColor;
 - (id)memberNameSelectedShadowColor;
 - (id)memberNameShadowColor;
@@ -357,8 +392,7 @@
 - (float)membersIndexMaximumHeight;
 - (id)membersIndexTextColor;
 - (id)membersIndexTrackingBackgroundColor;
-- (BOOL)membersSearchBarScrolls;
-- (int)membersSearchResultAccessoryType;
+- (BOOL)membersSearchBarIsInTableHeader;
 - (int)membersSelectionStyle;
 - (id)newAccessoryDisclosureIndicatorForCellStyle:(int)arg1;
 - (id)newBackgroundViewForCellStyle:(int)arg1 selected:(BOOL)arg2;
@@ -415,6 +449,8 @@
 - (BOOL)presentDatePickerInPopover;
 - (BOOL)presentModalViewInPopover;
 - (BOOL)presentNewContactsControllersInPopover;
+- (BOOL)refreshTinyActionCell;
+- (BOOL)reloadCallAction;
 - (BOOL)searchControllerForceKeyboardDisplayEnabled;
 - (BOOL)searchIsAlwaysActive;
 - (void)selectCustomPartWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 occupiedCorners:(unsigned int)arg2 forCell:(id)arg3;
@@ -431,10 +467,10 @@
 - (BOOL)shouldAdjustTableView:(id)arg1 forKeyboardOrdering:(BOOL)arg2;
 - (BOOL)shouldApplyMaskImage;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)shouldDrawLetterpressText;
 - (BOOL)shouldPropagateStylesThroughUnknownPersonActions;
 - (BOOL)shouldPropagateStylesToPickers;
 - (BOOL)shouldShowCardPhotoPlaceholder;
+- (BOOL)shouldUseCardContentProviderWhenAvailable;
 - (BOOL)shouldUsePeoplePickerBarStyle;
 - (int)unknownModalPresentationStyle;
 - (void)unselectAllCellParts:(id)arg1;

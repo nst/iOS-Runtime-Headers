@@ -28,6 +28,7 @@
 @property(copy) id newConnectionHandler;
 @property(copy) id shutdownHandler;
 
+- (void).cxx_destruct;
 - (BOOL)_connectionIsAllowed:(struct _xpc_connection_s { }*)arg1;
 - (id)_connections;
 - (void)_handleNewConnection:(struct _xpc_connection_s { }*)arg1;
@@ -38,7 +39,6 @@
 - (void)dealloc;
 - (id)defaultMessageHandler;
 - (id)disconnectHandler;
-- (BOOL)hasActiveConnections;
 - (id)initListenerWithServiceName:(id)arg1 andQueue:(struct dispatch_queue_s { }*)arg2;
 - (id)initListenerWithServiceName:(id)arg1;
 - (id)newConnectionHandler;

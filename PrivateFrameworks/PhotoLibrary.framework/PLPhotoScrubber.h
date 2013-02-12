@@ -14,11 +14,13 @@
             float width; 
             float height; 
         } size; 
+    UIView *_accessoryView;
     BezelView *_backgroundView;
     int _currentRotationDegrees;
     <PhotoScrubberDataSource> *_dataSource;
     BOOL _deferImageLoading;
     unsigned int _displayedImageIndex;
+    float _horizontalInsetMargin;
     unsigned int _imageCount;
     float _imagesPerViewRatio;
     int _isHorizontal;
@@ -31,9 +33,13 @@
     UIView *_thumbnailTrackView;
     NSMutableArray *_thumbnailViews;
     double _timeOfLastTouch;
+    float _vertialInsetMargin;
 }
 
+@property(retain) UIView * accessoryView;
 @property <PhotoScrubberDataSource> * dataSource;
+@property float horizontalInsetMargin;
+@property float vertialInsetMargin;
 
 + (id)_backgroundImage;
 + (id)_shadowImage;
@@ -46,6 +52,7 @@
 - (unsigned int)_thumbnailIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateLoupe:(BOOL)arg1;
 - (void)_updateLoupeWithTouch:(id)arg1 forceUpdate:(BOOL)arg2;
+- (id)accessoryView;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
@@ -54,6 +61,7 @@
 - (int)displayedImageIndex;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (float)horizontalInsetMargin;
 - (id)init;
 - (id)initWithScrubberOrientation:(int)arg1;
 - (BOOL)isScrubbing;
@@ -61,14 +69,18 @@
 - (void)reloadData;
 - (void)reloadDataWithNewDisplayedIndex:(unsigned int)arg1;
 - (void)reloadImageAtIndex:(int)arg1;
+- (void)setAccessoryView:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDataSource:(id)arg1 reloadData:(BOOL)arg2;
 - (void)setDataSource:(id)arg1;
 - (void)setDeferImageLoading:(BOOL)arg1;
 - (void)setDisplayedImageIndex:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHorizontalInsetMargin:(float)arg1;
 - (void)setImage:(id)arg1 atIndex:(int)arg2;
 - (void)setLoupeImage:(id)arg1;
+- (void)setVertialInsetMargin:(float)arg1;
+- (float)vertialInsetMargin;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -56,6 +56,7 @@
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setProgressDelegate:(id)arg1;
+- (id)streamError;
 - (unsigned int)streamStatus;
 - (unsigned int)totalBytes;
 

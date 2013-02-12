@@ -16,7 +16,7 @@
 - (id)_newOnTheGoViewControllerContext;
 - (id)_otgActionRow;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 - (id)entitiesForQuery:(id)arg1;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
 - (int)initialSelectedIndex;

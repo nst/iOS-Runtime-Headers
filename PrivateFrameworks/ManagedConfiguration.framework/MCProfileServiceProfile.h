@@ -19,12 +19,12 @@
 @property(readonly) NSArray * deviceAttributes;
 @property(retain) NSData * enrollmentIdentityPersistentID;
 
+- (void).cxx_destruct;
 - (id)URLString;
 - (id)_badDataTypeErrorWithFieldName:(id)arg1;
 - (id)_unsupportedValueErrorWithFieldName:(id)arg1 value:(id)arg2;
 - (id)challenge;
 - (BOOL)confirmInstallation;
-- (void)dealloc;
 - (id)description;
 - (id)deviceAttributes;
 - (id)enrollmentIdentityPersistentID;

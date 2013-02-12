@@ -10,6 +10,7 @@
 
 @property(retain) NSDictionary * attributes;
 
+- (int)_horizontalAlignmentForString:(id)arg1;
 - (id)attributes;
 - (void)dealloc;
 - (id)imageAttributeAndScale:(float*)arg1;
@@ -18,5 +19,7 @@
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setImageAlignment:(int)arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

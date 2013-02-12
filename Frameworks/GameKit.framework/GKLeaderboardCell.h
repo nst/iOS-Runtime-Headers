@@ -22,7 +22,6 @@
 
 - (int)bottomEdgeStyle;
 - (void)configureBackgroundView;
-- (float)contentsMargin;
 - (void)dealloc;
 - (id)description;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OCCancelDelegate>, NSMutableArray, OAXDrawingState, OCPPackagePart, SFUNoCopyDictionary, WDDocument, WXOAVState;
+@class <OCCancelDelegate>, NSMutableArray, OAXDrawingState, OCPPackagePart, TSUNoCopyDictionary, WDCharacterRun, WDDocument, WXOAVState;
 
 @interface WXState : NSObject {
     struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; } *mAnnotationDocument;
@@ -26,11 +26,12 @@
     NSMutableArray *mFormatAuthorStack;
     NSMutableArray *mFormatDateStack;
     BOOL mIsThumbnail;
-    SFUNoCopyDictionary *mMapAnnotationIdToAnnotation;
-    SFUNoCopyDictionary *mMapBookmarkIdToName;
+    TSUNoCopyDictionary *mMapAnnotationIdToAnnotation;
+    TSUNoCopyDictionary *mMapBookmarkIdToName;
     BOOL mNewSectionRequested;
     OCPPackagePart *mPackagePart;
-    SFUNoCopyDictionary *mTextNodesToBeAdded;
+    WDCharacterRun *mReadSymbolTo;
+    TSUNoCopyDictionary *mTextNodesToBeAdded;
     WXOAVState *mWXOavState;
 }
 
@@ -58,6 +59,7 @@
 - (void)dealloc;
 - (id)document;
 - (id)drawingState;
+- (bool)hasAnnotations;
 - (id)init;
 - (id)initNoStacksWith:(id)arg1;
 - (BOOL)isNewSectionRequested;
@@ -70,6 +72,7 @@
 - (void)pushDeleteAuthor:(id)arg1 date:(id)arg2;
 - (void)pushEditAuthor:(id)arg1 date:(id)arg2;
 - (void)pushFormatAuthor:(id)arg1 date:(id)arg2;
+- (id)readSymbolTo;
 - (void)setAnnotationPart:(id)arg1;
 - (void)setCancelDelegate:(id)arg1;
 - (void)setCurrentCellCNFStyle:(unsigned long)arg1;
@@ -81,6 +84,7 @@
 - (void)setIsThumbnail:(BOOL)arg1;
 - (void)setNewSectionRequested:(BOOL)arg1;
 - (void)setPackagePart:(id)arg1;
+- (void)setReadSymbolTo:(id)arg1;
 - (id)wxoavState;
 - (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)xmlAnnotationWithID:(long)arg1;
 - (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)xmlEndnoteWithID:(long)arg1;

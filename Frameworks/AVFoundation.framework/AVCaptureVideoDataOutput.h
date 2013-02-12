@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureVideoDataOutputSampleBufferDelegate>, AVCaptureVideoDataOutputInternal, NSArray, NSDictionary;
+@class <AVCaptureVideoDataOutputSampleBufferDelegate>, AVCaptureVideoDataOutputInternal, NSArray, NSDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVCaptureVideoDataOutput : AVCaptureOutput {
     AVCaptureVideoDataOutputInternal *_internal;
@@ -12,16 +12,19 @@
 @property(readonly) NSArray * availableVideoCVPixelFormatTypes;
 @property(readonly) NSArray * availableVideoCodecTypes;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } minFrameDuration;
-@property(readonly) struct dispatch_queue_s { }* sampleBufferCallbackQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * sampleBufferCallbackQueue;
 @property(readonly) <AVCaptureVideoDataOutputSampleBufferDelegate> * sampleBufferDelegate;
 @property(copy) NSDictionary * videoSettings;
 
 + (void)initialize;
++ (id)supportedVideoSettingsKeys;
 
 - (void)_AVCaptureVideoDataOutput_VideoDataBecameReady;
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (BOOL)alwaysDiscardsLateVideoFrames;
+- (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
+- (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (id)availableVideoCVPixelFormatTypes;
 - (id)availableVideoCodecTypes;
 - (id)connectionMediaTypes;
@@ -32,13 +35,15 @@
 - (id)init;
 - (BOOL)isTheOnlyDataOutput;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
-- (struct dispatch_queue_s { }*)sampleBufferCallbackQueue;
+- (struct CGSize { float x1; float x2; })outputSizeForCaptureOptions:(id)arg1;
+- (id)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;
 - (void)setAlwaysDiscardsLateVideoFrames:(BOOL)arg1;
 - (void)setMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setSampleBufferDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
+- (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
 - (void)setSession:(id)arg1;
 - (void)setVideoSettings:(id)arg1;
+- (id)vettedVideoSettingsForSettingsDictionary:(id)arg1;
 - (id)videoSettings;
 
 @end

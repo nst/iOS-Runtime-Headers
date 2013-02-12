@@ -24,6 +24,7 @@
 - (id)init;
 - (BOOL)isClassicControlWindow:(id)arg1;
 - (void)loadView;
+- (id)screen;
 - (id)window;
 
 @end

@@ -2,24 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUClientDelegate>, ISURLOperationPool, NSLock, NSMutableArray, NSString, SUImageCache, SUScriptExecutionContext, SUViewControllerFactory;
+@class <SUClientDelegate>, ISURLOperationPool, NSLock, NSString, SUClientInterface, SUImageCache, SUScriptExecutionContext;
 
 @interface SUClient : NSObject {
     struct __CFArray { } *_assetTypes;
-    NSString *_clientIdentifier;
+    SUClientInterface *_clientInterface;
     <SUClientDelegate> *_delegate;
     BOOL _dontSaveNavigationPath;
-    NSMutableArray *_downloadManagers;
     SUImageCache *_imageCache;
     ISURLOperationPool *_imagePool;
     NSLock *_lock;
     SUScriptExecutionContext *_scriptExecutionContext;
-    NSString *_searchHintsURLBagKey;
-    NSString *_searchURLBagKey;
-    SUViewControllerFactory *_viewControllerFactory;
 }
 
-@property(retain) NSString * clientIdentifier;
+@property(readonly) SUClientInterface * clientInterface;
 @property <SUClientDelegate> * delegate;
 @property BOOL dontSaveNavigationPath;
 @property(retain) SUImageCache * imageCache;
@@ -27,7 +23,6 @@
 @property(readonly) SUScriptExecutionContext * scriptExecutionContext;
 @property(retain) NSString * searchHintsURLBagKey;
 @property(retain) NSString * searchURLBagKey;
-@property(retain) SUViewControllerFactory * viewControllerFactory;
 
 + (id)imagePool;
 + (void)setSharedClient:(id)arg1;
@@ -39,29 +34,26 @@
 - (void)_memoryWarningNotification:(id)arg1;
 - (id)_newAccountViewControllerForButtonAction:(id)arg1;
 - (id)_newComposeReviewViewControllerForButtonAction:(id)arg1;
-- (void)_ntsEndQueueSession:(id)arg1 fromArray:(id)arg2;
-- (id)_ntsQueueSessionWithDownloadKinds:(id)arg1 fromArray:(id)arg2;
-- (id)_ntsQueueSessionWithQueue:(id)arg1 fromArray:(id)arg2;
 - (BOOL)_presentModalViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_purgeCaches;
 - (void)_reloadScriptExecutionContext;
 - (struct __CFArray { }*)assetTypes;
-- (id)beginDownloadManagerSessionForDownloadKind:(id)arg1;
-- (id)beginDownloadManagerSessionWithDownloadKinds:(id)arg1;
 - (id)clientIdentifier;
+- (id)clientInterface;
 - (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)dismissTopViewControllerAnimated:(BOOL)arg1;
 - (BOOL)dontSaveNavigationPath;
-- (void)endDownloadManagerSessionForManager:(id)arg1;
 - (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)imageCache;
 - (id)imagePool;
 - (id)init;
+- (id)initWithClientInterface:(id)arg1;
 - (BOOL)openExternalURL:(id)arg1;
 - (BOOL)openInternalURL:(id)arg1;
 - (BOOL)openURL:(id)arg1 inClientApplication:(id)arg2;
+- (id)queueSessionManager;
 - (id)scriptExecutionContext;
 - (id)searchHintsURLBagKey;
 - (id)searchURLBagKey;
@@ -72,6 +64,7 @@
 - (void)setDontSaveNavigationPath:(BOOL)arg1;
 - (void)setImageCache:(id)arg1;
 - (void)setImagePool:(id)arg1;
+- (void)setQueueSessionManager:(id)arg1;
 - (void)setSearchHintsURLBagKey:(id)arg1;
 - (void)setSearchURLBagKey:(id)arg1;
 - (void)setViewControllerFactory:(id)arg1;

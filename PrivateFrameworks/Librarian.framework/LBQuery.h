@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSPredicate, NSString, NSThread;
+@class NSArray, NSMetadataQuery, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSPredicate, NSThread;
 
 @interface LBQuery : NSObject {
     struct { 
@@ -17,6 +17,9 @@
         unsigned int progress_max_ms; 
         unsigned int update_max_num; 
         unsigned int update_max_ms; 
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     int (*_create_result_callbacks_equal)();
     int (*_create_result_callbacks_release)();
     int (*_create_result_fn)();
@@ -30,16 +33,15 @@
     void *_create_result_context;
     void *_create_value_context;
     NSMutableDictionary *_created;
-    long long _disableCount;
+    int _disableCount;
     NSThread *_executeThread;
     NSMutableIndexSet *_insertionSet;
-    struct dispatch_queue_s { } *_notificationQueue;
-    unsigned long long _notifyInterval;
-    struct dispatch_source_s { } *_notifyTimer;
+    NSObject<OS_dispatch_queue> *_notificationQueue;
+    unsigned long _notifyInterval;
     struct __LBItemUpdateObserver { } *_observer;
     NSPredicate *_predicate;
     int _previousQueryState;
-    NSString *_query;
+    NSMetadataQuery *_query;
     int _queryState;
     NSMutableIndexSet *_removalSet;
     NSMutableIndexSet *_replacementSet;
@@ -49,15 +51,18 @@
     NSArray *_searchScopes;
     void *_sort_context;
     NSArray *_sortingAttributes;
+    } _stateLock;
     BOOL _synchronous;
     NSMutableDictionary *_toBeInserted;
     NSMutableDictionary *_toBeRemoved;
     NSMutableDictionary *_toBeReplaced;
     NSArray *_values;
     bool_pendingChanges;
+    bool_pendingNote;
     bool_ubiquitousGatherComplete;
 }
 
+- (void)__updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
 - (void)_createChangeSets;
 - (void)_didChange:(unsigned int)arg1 inSet:(id)arg2;
 - (void)_didInsert:(id)arg1;
@@ -65,17 +70,18 @@
 - (void)_didReplace:(id)arg1;
 - (void)_disableUpdates;
 - (void)_enableUpdates;
-- (void)_postNote:(struct __CFString { }*)arg1;
 - (void)_processChanges;
 - (void)_processUpdates;
 - (void)_runQuery;
+- (void)_sendNote;
 - (void)_stop;
+- (void)_updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
 - (void)_willChange:(unsigned int)arg1 inSet:(id)arg2;
 - (void)_willInsert:(id)arg1;
 - (void)_willRemove:(id)arg1;
 - (void)_willReplace:(id)arg1;
 - (void)addChangeToURL:(id)arg1 withInfo:(id)arg2;
-- (void)addCreatedURL:(id)arg1 withInfo:(id)arg2 makeLive:(bool)arg3;
+- (void)addCreatedURL:(id)arg1 withInfo:(id)arg2;
 - (void)addItemWithURL:(id)arg1 usingInfo:(id)arg2;
 - (id)attributeValueForName:(id)arg1 forResultAtIndex:(int)arg2;
 - (unsigned int)countOfResultsForAttributeName:(id)arg1 value:(id)arg2;
@@ -85,12 +91,14 @@
 - (void)enableUpdates;
 - (unsigned char)executeWithOptions:(unsigned long)arg1;
 - (int)indexOfResult:(const void*)arg1;
-- (id)initWithQuery:(id)arg1 values:(id)arg2 sortingAttributes:(id)arg3 items:(struct __CFArray { }*)arg4;
+- (id)initWithQuery:(id)arg1 values:(id)arg2 sortingAttributes:(id)arg3 items:(id)arg4;
+- (void)performBlock:(id)arg1;
 - (void)postNote:(struct __CFString { }*)arg1;
 - (id)predicate;
 - (void)processUpdates;
 - (const void*)resultAtIndex:(int)arg1;
 - (unsigned int)resultCount;
+- (void)runBlock:(id)arg1;
 - (void)sendNote;
 - (void)setBatchingParameters:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (void)setCreateResultFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;

@@ -12,8 +12,8 @@
 @property double expirationTime;
 @property(retain) NSArray * newsItems;
 
+- (void).cxx_destruct;
 - (id)archiveArray;
-- (void)dealloc;
 - (double)expirationTime;
 - (id)initWithArchiveArray:(id)arg1;
 - (id)newsItems;

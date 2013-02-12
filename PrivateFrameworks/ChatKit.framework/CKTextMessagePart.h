@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString;
+@class NSAttributedString, NSString;
 
 @interface CKTextMessagePart : CKMessagePart {
     NSString *_contentLocation;
-    NSString *_text;
+    NSAttributedString *_text;
 }
 
 @property(copy) NSString * contentLocation;

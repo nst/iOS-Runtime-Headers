@@ -10,6 +10,7 @@
 @property(retain) struct __CVPixelBufferPool { }* smallPool;
 
 + (id)openCLContext;
++ (id)openGLContext:(id)arg1;
 + (id)openGLContext;
 
 - (void)applyFilter:(id)arg1 toSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 resultHandler:(id)arg4;
@@ -18,7 +19,6 @@
 - (struct __CVBuffer { }*)createCVPixelBufferForFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
 - (id)init;
 - (struct __CVPixelBufferPool { }*)largePool;
-- (void)lock;
 - (struct _CAImageQueue { }*)outputImageQueue;
 - (void)preloadFilter:(id)arg1;
 - (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
@@ -29,6 +29,5 @@
 - (void)setOutputImageQueue:(struct _CAImageQueue { }*)arg1;
 - (void)setSmallPool:(struct __CVPixelBufferPool { }*)arg1;
 - (struct __CVPixelBufferPool { }*)smallPool;
-- (void)unlock;
 
 @end

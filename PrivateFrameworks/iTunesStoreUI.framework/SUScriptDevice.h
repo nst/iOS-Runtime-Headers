@@ -20,6 +20,7 @@
 @property(readonly) NSString * capabilityNameHDVideo;
 @property(readonly) NSString * capabilityNamePodcasts;
 @property(readonly) NSString * capabilityNameWiFi;
+@property(readonly) unsigned long deviceTypeIdentifier;
 @property(readonly) NSNumber * diskSpaceAvailable;
 @property(readonly) int freeSpaceEffortLevelAutomaticOnly;
 @property(readonly) int freeSpaceEffortLevelDoNothing;
@@ -27,6 +28,8 @@
 @property(readonly) int freeSpaceEffortLevelPromptUser;
 @property(readonly) NSString * freeSpaceOptionEffortLevel;
 @property(readonly) int hardwareType;
+@property(readonly) int hardwareTypeAppleTVJ33;
+@property(readonly) int hardwareTypeAppleTVK66;
 @property(readonly) int hardwareTypeIPadJ1;
 @property(readonly) int hardwareTypeIPadJ2;
 @property(readonly) int hardwareTypeIPadJ2a;
@@ -67,6 +70,8 @@
 @property(readonly) NSString * restrictionAllowVoiceDialing;
 @property(readonly) NSString * restrictionAppInstallationAllowed;
 @property(readonly) NSString * restrictionAppRemovalAllowed;
+@property(readonly) NSString * restrictionBookStoreAllowed;
+@property(readonly) NSString * restrictionBookStoreEroticaAllowed;
 @property(readonly) int restrictionBoolNo;
 @property(readonly) int restrictionBoolNoData;
 @property(readonly) int restrictionBoolYes;
@@ -84,7 +89,7 @@
 @property(readonly) NSString * restrictionYouTubeAllowed;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)UTIForURL:(id)arg1;
@@ -96,7 +101,6 @@
 - (id)_className;
 - (int)_deviceCapabilityForString:(id)arg1;
 - (void)_removeScriptFunction:(id)arg1;
-- (void)_showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
 - (int)activeNetworkType;
 - (id)applicationsForUTI:(id)arg1;
 - (id)attributeKeys;
@@ -111,6 +115,7 @@
 - (id)capabilityNameWiFi;
 - (id)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;
 - (void)dealloc;
+- (unsigned long)deviceTypeIdentifier;
 - (id)diskSpaceAvailable;
 - (int)freeSpaceEffortLevelAutomaticOnly;
 - (int)freeSpaceEffortLevelDoNothing;
@@ -118,6 +123,8 @@
 - (int)freeSpaceEffortLevelPromptUser;
 - (id)freeSpaceOptionEffortLevel;
 - (int)hardwareType;
+- (int)hardwareTypeAppleTVJ33;
+- (int)hardwareTypeAppleTVK66;
 - (int)hardwareTypeIPadJ1;
 - (int)hardwareTypeIPadJ2;
 - (int)hardwareTypeIPadJ2a;
@@ -161,6 +168,8 @@
 - (id)restrictionAllowVoiceDialing;
 - (id)restrictionAppInstallationAllowed;
 - (id)restrictionAppRemovalAllowed;
+- (id)restrictionBookStoreAllowed;
+- (id)restrictionBookStoreEroticaAllowed;
 - (int)restrictionBoolNo;
 - (int)restrictionBoolNoData;
 - (int)restrictionBoolYes;

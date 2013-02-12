@@ -2,25 +2,26 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, NSArray;
+@class AVAsset, AVMediaSelectionOption, NSArray, NSDictionary;
 
 @interface AVMediaSelectionTrackGroup : AVMediaSelectionGroup {
-    BOOL _allowsEmptySelection;
     AVAsset *_asset;
+    AVMediaSelectionOption *_defaultOption;
+    NSDictionary *_dictionary;
     NSArray *_options;
     NSArray *_trackIDs;
 }
 
+- (id)_defaultOption;
 - (BOOL)_isAlternateTrackGroup;
-- (id)_optionForTrackID:(int)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
-- (BOOL)allowsEmptySelection;
 - (id)asset;
 - (void)dealloc;
+- (id)dictionary;
 - (unsigned int)hash;
-- (id)initWithAsset:(id)arg1 alternateTrackIDs:(id)arg2;
+- (id)initWithAsset:(id)arg1 dictionary:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (id)mediaSelectionOptionWithPropertyList:(id)arg1;
 - (id)options;
 - (id)trackIDs;
+- (id)tracks;
 
 @end

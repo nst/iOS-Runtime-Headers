@@ -6,7 +6,7 @@
 
 @interface OADSound : OCDDelayedMedia {
     NSString *mName;
-    int mSizeInBytes;
+    long mSizeInBytes;
     NSData *mSoundData;
 }
 

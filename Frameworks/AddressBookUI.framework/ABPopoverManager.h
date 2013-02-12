@@ -4,7 +4,7 @@
 
 @class <ABPopoverRepresentDelegate>, UIActionSheet, UIBarButtonItem, UIPopoverController, UIResponder, UIView, UIWindow;
 
-@interface ABPopoverManager : NSObject {
+@interface ABPopoverManager : NSObject <UIPopoverControllerDelegate, UIActionSheetDelegate> {
     UIActionSheet *_autorotateActionSheet;
     UIBarButtonItem *_autorotateBarButtonItem;
     unsigned int _autorotateDirections;

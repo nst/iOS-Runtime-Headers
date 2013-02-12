@@ -22,7 +22,6 @@
 - (id)addSpecialCharacter;
 - (id)addSymbol;
 - (int)blockType;
-- (int)characterCount;
 - (void)clearProperties;
 - (void)clearRuns;
 - (void)dealloc;
@@ -32,6 +31,7 @@
 - (BOOL)isContinuationOf:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isTextFrame;
+- (float)maxReflectionDistance;
 - (id)newRunIterator;
 - (id)properties;
 - (void)removeLastCharacter:(unsigned short)arg1;

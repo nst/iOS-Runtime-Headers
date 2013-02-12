@@ -16,8 +16,8 @@
 
 - (id)baseStyle;
 - (id)boldStyle;
+- (id)copyCharacterStyle;
 - (unsigned int)countAndStripLeadingTabs;
-- (id)createCharacterStyle;
 - (void)dealloc;
 - (int)defaultTabWidth;
 - (id)initWithText:(id)arg1;

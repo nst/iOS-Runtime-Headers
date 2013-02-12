@@ -7,10 +7,10 @@
 
 @property(getter=isDrawingEnabled) BOOL drawingEnabled;
 @property struct CGColor { }* fillColor;
-@property unsigned int levelsOfDetail;
-@property unsigned int levelsOfDetailBias;
+@property unsigned long levelsOfDetail;
+@property unsigned long levelsOfDetailBias;
 @property float maximumTileScale;
-@property struct CGSize { float width; float height; } tileSize;
+@property struct CGSize { float x1; float x2; } tileSize;
 
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;

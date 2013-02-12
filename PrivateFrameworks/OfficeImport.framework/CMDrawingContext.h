@@ -35,18 +35,19 @@
     NSMutableArray *_transforms;
 }
 
+- (id).cxx_construct;
 - (void)_addTransform:(id)arg1;
 - (void)_applyTransform:(id)arg1;
 - (struct CGContext { }*)_cgContext;
 - (void)_closeContext;
-- (void)_createCGContext;
+- (void)_copyCGContext;
 - (void)_playbackActions;
 - (void)_restoreLastTransform;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_transformRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTransform:(id)arg2;
 - (void)addDebugPath:(struct CGPath { }*)arg1;
 - (void)addPath:(struct CGPath { }*)arg1;
 - (void)addTransform:(id)arg1;
-- (id)createPDF;
+- (id)copyPDF;
 - (float)currentScaleFactor;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })currentTransform;
 - (void)dealloc;

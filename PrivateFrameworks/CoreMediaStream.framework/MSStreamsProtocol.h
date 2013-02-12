@@ -10,7 +10,6 @@
 @class <MSStreamsProtocolDelegate>, NSString, NSURL;
 
 @interface MSStreamsProtocol : NSObject {
-    NSURL *_URL;
     <MSStreamsProtocolDelegate> *_delegate;
     NSString *_personID;
 }
@@ -24,13 +23,11 @@
 @property(readonly) NSURL * resetURL;
 @property(readonly) NSURL * uploadCompleteURL;
 
-+ (id)deviceInfoDictForPersonID:(id)arg1;
-
+- (void).cxx_destruct;
 - (void)_didFindServerSideConfigurationVersion:(id)arg1;
 - (void)_didReceiveRetryAfterDate:(id)arg1;
 - (void)_refreshAuthTokenForContext:(struct __MSSPCContext { void *x1; struct __CFString {} *x2; struct __CFString {} *x3; struct __CFDictionary {} *x4; double x5; int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); struct CFURLConnectionClient_V1 {} *x11; struct _CFURLConnection {} *x12; struct __CFData {} *x13; struct __CFHTTPMessage {} *x14; struct __CFError {} *x15; }*)arg1;
 - (void)abort;
-- (void)dealloc;
 - (id)delegate;
 - (id)deleteURL;
 - (id)deviceInfoDict;

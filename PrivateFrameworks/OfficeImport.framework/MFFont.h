@@ -18,14 +18,14 @@
     int m_family;
     int m_lfCharSet;
     unsigned char m_lfClipPrecision;
-    int m_lfEscapement;
+    long m_lfEscapement;
     NSString *m_lfFaceName;
-    int m_lfHeight;
-    int m_lfOrientation;
+    long m_lfHeight;
+    long m_lfOrientation;
     int m_lfOutPrecision;
     int m_lfQuality;
-    int m_lfWeight;
-    int m_lfWidth;
+    long m_lfWeight;
+    long m_lfWidth;
     int m_pitch;
 }
 
@@ -43,6 +43,7 @@
 - (id)initWithStockFont:(int)arg1;
 - (int)selectInto:(id)arg1;
 - (BOOL)strikeout;
+- (id)stringWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textExtent:(id)arg1 :(int)arg2 :(int*)arg3 :(int)arg4;
 - (BOOL)underline;
 

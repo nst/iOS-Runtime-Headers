@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIBrowserDocumentController>, NSMutableDictionary, UIWebFormCompletionController;
+@class <UIBrowserDocumentController>, UIWebFormCompletionController, _UIWebFormDelegateEditedFormsMap;
 
 @interface UIWebFormDelegate : NSObject <WebFormDelegate> {
     UIWebFormCompletionController *_completionController;
     <UIBrowserDocumentController> *_controller;
-    NSMutableDictionary *_editedForms;
+    _UIWebFormDelegateEditedFormsMap *_editedForms;
 }
 
 - (void)_clearEditedFormsInFrame:(id)arg1;

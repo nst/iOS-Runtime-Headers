@@ -13,10 +13,14 @@
     MFDAMessageStore *store;
 }
 
+@property(readonly) BOOL isUserRequested;
+@property(readonly) BOOL shouldSend;
+
 - (id)deferredOperation;
 - (unsigned long long)generationNumber;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isUserRequested;
 - (BOOL)shouldSend;
 
 @end

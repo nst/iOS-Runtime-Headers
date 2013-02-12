@@ -18,6 +18,7 @@
     UIImage *_image;
     UIImageView *_imageView;
     BOOL _isCameraAlbum;
+    BOOL _isSharedPhotoStreamList;
     UIImage *_landscapeImage;
     UILongPressGestureRecognizer *_longPressRecognizer;
     NSString *_message;
@@ -53,6 +54,7 @@
 - (void)setFilter:(int)arg1;
 - (void)setImage:(id)arg1;
 - (void)setIsCameraAlbum:(BOOL)arg1;
+- (void)setIsSharedPhotoStreamList:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setPortraitImage:(id)arg1 landscapeImage:(id)arg2;
 - (void)setTitle:(id)arg1;

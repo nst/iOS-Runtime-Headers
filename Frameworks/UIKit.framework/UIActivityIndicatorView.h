@@ -27,6 +27,7 @@
     int _spokeFrameRatio;
     NSArray *_spokeImages;
     BOOL _useArtwork;
+    BOOL _useOutlineShadow;
     float _width;
 }
 
@@ -46,6 +47,7 @@
 @property int spokeFrameRatio;
 @property(readonly) NSArray * spokeImages;
 @property BOOL useArtwork;
+@property BOOL useOutlineShadow;
 @property float width;
 
 + (id)_loadResourcesForStyle:(int)arg1;
@@ -59,15 +61,19 @@
 - (BOOL)_canCustomize;
 - (BOOL)_canCustomizeStyle:(int)arg1;
 - (id)_commonInitWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (int)_customStyleForStyle:(int)arg1;
 - (id)_defaulColorForStyle:(int)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_feedTheGear;
 - (id)_generateImages;
 - (id)_imageForStep:(int)arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isArtWorkBased;
 - (id)_layoutInfosForStyle:(int)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)_removeAllAnimations:(BOOL)arg1;
 - (void)_setUpAnimation;
 - (BOOL)_shouldGoBackToBaseStyle;
 - (BOOL)_shouldGoToCustomStyle;
@@ -114,6 +120,7 @@
 - (void)setSpokeFrameRatio:(int)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setUseArtwork:(BOOL)arg1;
+- (void)setUseOutlineShadow:(BOOL)arg1;
 - (void)setWidth:(float)arg1;
 - (id)shadowColor;
 - (struct CGSize { float x1; float x2; })shadowOffset;
@@ -128,6 +135,7 @@
 - (void)stopAnimating;
 - (void)stopAnimation;
 - (BOOL)useArtwork;
+- (BOOL)useOutlineShadow;
 - (float)width;
 
 @end

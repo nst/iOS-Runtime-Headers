@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKAchievementSectionDataSource, GKGameRecord, GKTableViewCell, NSArray, NSMutableArray;
+@class GKAchievementSection, GKGameRecord, GKTableViewCell, NSArray, NSMutableArray;
 
 @interface GKAchievementViewControllerPrivate : GKTableViewControllerV2 {
     struct { 
@@ -10,7 +10,7 @@
         unsigned int usePlayerBackground : 1; 
         unsigned int translucentNavBar : 1; 
         unsigned int reserved : 27; 
-    GKAchievementSectionDataSource *_achievementViewSection;
+    GKAchievementSection *_achievementViewSection;
     NSMutableArray *_achievements;
     GKTableViewCell *_detailHeaderCell;
     } _flags;
@@ -18,7 +18,7 @@
     BOOL _showRatingControl;
 }
 
-@property(retain) GKAchievementSectionDataSource * achievementViewSection;
+@property(retain) GKAchievementSection * achievementViewSection;
 @property(retain) NSArray * achievements;
 @property(retain) GKTableViewCell * detailHeaderCell;
 @property(retain) GKGameRecord * gameRecord;
@@ -26,6 +26,7 @@
 @property BOOL showRatingControl;
 
 - (void)_gkResetContents;
+- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (id)achievementViewSection;
 - (id)achievements;
@@ -35,10 +36,8 @@
 - (id)initWithGameRecord:(id)arg1;
 - (BOOL)isPlayButtonVisible;
 - (void)loadView;
-- (void)localPlayerDidAuthenticate:(id)arg1;
 - (float)marginForTableView:(id)arg1;
 - (void)playTapped;
-- (void)reloadView;
 - (void)setAchievementViewSection:(id)arg1;
 - (void)setAchievements:(id)arg1;
 - (void)setDetailHeaderCell:(id)arg1;
@@ -49,8 +48,6 @@
 - (BOOL)showRatingControl;
 - (id)title;
 - (id)tokenImageForAchievement:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)updateStatusWithError:(id)arg1;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

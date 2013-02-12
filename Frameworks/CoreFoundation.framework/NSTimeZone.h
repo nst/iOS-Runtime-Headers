@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSTimeZone : NSObject <NSCopying, NSCoding> {
+@interface NSTimeZone : NSObject <NSCopying, NSSecureCoding> {
 }
 
 + (id)ICSQuickTimeZoneNames;
@@ -16,6 +16,7 @@
 + (void)resetSystemTimeZone;
 + (void)setAbbreviationDictionary:(id)arg1;
 + (void)setDefaultTimeZone:(id)arg1;
++ (BOOL)supportsSecureCoding;
 + (id)systemTimeZone;
 + (id)timeZoneDataVersion;
 + (id)timeZoneForSecondsFromGMT:(int)arg1;
@@ -50,6 +51,7 @@
 - (id)name;
 - (id)nextDaylightSavingTimeTransition;
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (int)secondsFromGMT;
 - (int)secondsFromGMTForDate:(id)arg1;
 - (void)setCityName:(id)arg1;

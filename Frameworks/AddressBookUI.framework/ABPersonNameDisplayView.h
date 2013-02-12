@@ -85,7 +85,6 @@
 - (void)setPrimaryProperty:(int)arg1;
 - (void)setPrimaryPropertyFormattingCountryCode:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (void)setStyleProvider:(id)arg1;
 - (void)setTagLine:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)styleProvider;

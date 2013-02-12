@@ -22,9 +22,12 @@
 + (BOOL)setThreadPriority:(double)arg1;
 + (void)sleepForTimeInterval:(double)arg1;
 + (void)sleepUntilDate:(id)arg1;
-+ (id)stackBacktrace;
 + (double)threadPriority;
 
+- (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2 modes:(id)arg3;
+- (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2;
+- (void)__im_performBlock:(id)arg1 modes:(id)arg2;
+- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2 modes:(id)arg3;
 - (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
 - (void)__im_performBlock:(id)arg1;
 - (void)_nq:(id)arg1;

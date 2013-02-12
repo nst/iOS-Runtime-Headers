@@ -2,99 +2,62 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <CalendarEventLoaderDelegate>, EKEventStore, NSArray, NSMutableSet, NSPredicate;
+@class <CalendarEventLoaderDelegate>, EKEventStore, NSArray, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface CalendarEventLoader : NSObject {
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    NSPredicate *_backgroundPredicate;
-    id _backgroundRequest;
-    NSArray *_backgroundResults;
-    int _backgroundSeed;
+    int _cancelSeed;
+    unsigned int _componentForExpandingPadding;
+    unsigned int _componentForExpandingRequests;
+    double _currentlyLoadingEnd;
+    double _currentlyLoadingStart;
+    unsigned int _daysOfPadding;
     <CalendarEventLoaderDelegate> *_delegate;
-    double _end;
-    } _endGr;
-    struct CalFilter { } *_filter;
-    struct dispatch_group_s { } *_group;
-    BOOL _loadsBlocked;
-    struct dispatch_queue_s { } *_lock;
-    NSArray *_occurrences;
+    double _lastRequestedEnd;
+    double _lastRequestedStart;
+    NSObject<OS_dispatch_group> *_loadGroup;
+    NSObject<OS_dispatch_queue> *_loadQueue;
+    double _loadedEnd;
+    NSArray *_loadedOccurrences;
+    BOOL _loadedOccurrencesAreStale;
+    double _loadedStart;
+    unsigned int _maxDaysToCache;
     NSMutableSet *_occurrencesAwaitingDeletion;
     NSMutableSet *_occurrencesAwaitingRefresh;
-    unsigned int _paddingMonthsToLoad;
-    NSPredicate *_predicate;
-    BOOL _processingReload;
-    struct dispatch_queue_s { } *_queue;
-    int _seed;
-    double _selectedDate;
-    } _selectedDateGr;
-    NSArray *_selectedDateOccurrences;
-    } _selectedDateTimeGr;
-    double _start;
-    } _startGr;
+    NSObject<OS_dispatch_queue> *_occurrencesLock;
+    double _preferredReloadEnd;
+    double _preferredReloadStart;
+    NSSet *_selectedCalendars;
     EKEventStore *_store;
 }
 
 @property <CalendarEventLoaderDelegate> * delegate;
-@property(retain) struct CalFilter { }* filter;
-@property BOOL loadsBlocked;
-@property unsigned int paddingMonthsToLoad;
 
-- (BOOL)_backgroundLoadCompleted:(id)arg1;
-- (void)_beginBackgroundLoadForPredicate:(id)arg1;
-- (void)_clearOccurrences;
+- (void)_enqueueLoadForRangeStart:(double)arg1 end:(double)arg2;
 - (void)_eventStoreChanged:(id)arg1;
-- (void)_notifyDelegateThatOccurrencesDidUpdate;
-- (void)_reload:(BOOL)arg1;
-- (void)_reloadOccurrences;
-- (void)_setDisplayedDateRange:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 end:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 loadMethod:(int)arg3;
-- (void)_updatePredicate;
+- (void)_getLoadStart:(double*)arg1 end:(double*)arg2 fromLoadedStart:(double)arg3 loadedEnd:(double)arg4 currentlyLoadingStart:(double)arg5 currentlyLoadingEnd:(double)arg6;
+- (void)_getStart:(double)arg1 end:(double)arg2 expandedToComponents:(unsigned int)arg3 withResultStart:(double*)arg4 resultEnd:(double*)arg5;
+- (void)_getStart:(double)arg1 end:(double)arg2 paddedByDays:(int)arg3 inTimeZone:(id)arg4 resultStart:(double*)arg5 resultEnd:(double*)arg6;
+- (void)_loadIfNeededBetweenStart:(double)arg1 end:(double)arg2 loadPaddingNow:(BOOL)arg3;
+- (void)_pruneLoadedOccurrences;
+- (void)_reload;
+- (id)_uniqueEventsFromArray:(id)arg1;
 - (void)addOccurrenceAwaitingDeletion:(id)arg1;
 - (void)addOccurrenceAwaitingRefresh:(id)arg1;
-- (void)cancelBackgroundLoad;
+- (void)cancelAllLoads;
 - (void)dealloc;
 - (id)delegate;
-- (struct CalFilter { }*)filter;
 - (id)initWithEventStore:(id)arg1;
-- (BOOL)loadsBlocked;
-- (id)occurrencesForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 waitForLoad:(BOOL)arg2;
-- (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 waitForLoad:(BOOL)arg3;
-- (unsigned int)paddingMonthsToLoad;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDate;
-- (id)selectedDateOccurrences:(BOOL)arg1 loadIsComplete:(BOOL*)arg2;
-- (id)selectedDateOccurrences:(BOOL)arg1;
+- (void)loadIfNeeded;
+- (BOOL)loadIsComplete;
+- (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 preSorted:(BOOL)arg3 waitForLoad:(BOOL)arg4;
+- (void)setCacheLimit:(unsigned int)arg1;
+- (void)setComponentForExpandingPadding:(unsigned int)arg1;
+- (void)setComponentForExpandingRequests:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFilter:(struct CalFilter { }*)arg1;
-- (void)setLoadsBlocked:(BOOL)arg1;
-- (void)setPaddingMonthsToLoad:(unsigned int)arg1;
-- (void)setSelectedDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 loadMethod:(int)arg2;
+- (void)setPadding:(unsigned int)arg1;
+- (void)setPreferredReloadStartDate:(id)arg1 endDate:(id)arg2;
+- (void)setSelectedCalendars:(id)arg1;
 - (void)timeZoneChanged;
-- (BOOL)waitForBackgroundLoad;
+- (void)waitForBackgroundLoad;
 
 @end

@@ -14,10 +14,10 @@
 @property(readonly) NSString * name;
 @property(readonly) BOOL needsReply;
 
+- (void).cxx_destruct;
 - (id)aceDictionary;
 - (id)commandValueForKey:(id)arg1;
 - (id)context;
-- (void)dealloc;
 - (id)description;
 - (id)domain;
 - (id)initWithMessage:(id)arg1;

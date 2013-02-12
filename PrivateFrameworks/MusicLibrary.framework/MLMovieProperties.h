@@ -15,13 +15,13 @@
 @property(copy) NSArray * screenwriters;
 @property(copy) NSString * studioName;
 
+- (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (void)_setValueCopy:(id)arg1 forKey:(id)arg2;
 - (id)castMembers;
 - (id)copyMoviePropertiesDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyrightWarning;
-- (void)dealloc;
 - (id)directors;
 - (id)init;
 - (id)initWithMoviePropertiesDictionary:(id)arg1;

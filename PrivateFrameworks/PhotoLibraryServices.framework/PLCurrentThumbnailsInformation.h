@@ -5,11 +5,11 @@
 @class PLThumbnailManager;
 
 @interface PLCurrentThumbnailsInformation : NSObject {
-    const struct __CFDictionary { } *_indexSheetThumbIDsForAssets;
+    struct __CFDictionary { } *_indexSheetThumbIDsForAssets;
     PLThumbnailManager *_thumbnailManager;
-    const struct __CFDictionary { } *_wildcatIndexThumbIDsForAssets;
-    const struct __CFDictionary { } *_wildcatScrubberThumbIDsForAssets;
-    const struct __CFDictionary { } *_wildcatStackThumbIDsForAssets;
+    struct __CFDictionary { } *_wildcatIndexThumbIDsForAssets;
+    struct __CFDictionary { } *_wildcatScrubberThumbIDsForAssets;
+    struct __CFDictionary { } *_wildcatStackThumbIDsForAssets;
 }
 
 @property struct __CFDictionary { }* _indexSheetThumbIDsForAssets;

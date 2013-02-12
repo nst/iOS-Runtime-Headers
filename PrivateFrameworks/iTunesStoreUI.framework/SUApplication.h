@@ -22,6 +22,7 @@
 - (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationDidFinishLaunching:(id)arg1;
+- (BOOL)applicationSuspend:(struct __GSEvent { }*)arg1 settings:(id)arg2;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)dealloc;
 - (double)defaultImageSnapshotExpiration;

@@ -9,6 +9,8 @@
     UITextField *_textField;
 }
 
+@property(readonly) UITextField * textField;
+
 - (BOOL)_canBecomeFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;
@@ -20,6 +22,7 @@
 - (void)setText:(id)arg1;
 - (id)text;
 - (void)textChanged:(id)arg1;
+- (id)textField;
 - (void)textFieldDidBecomeFirstResponder:(id)arg1;
 - (void)textFieldDidResignFirstResponder:(id)arg1;
 

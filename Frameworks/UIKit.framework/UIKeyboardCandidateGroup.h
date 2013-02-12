@@ -17,6 +17,7 @@
 - (void)addCandidate:(id)arg1;
 - (id)candidates;
 - (void)dealloc;
+- (BOOL)hasAlternativeText;
 - (unsigned int)hash;
 - (id)initWithTitle:(id)arg1 candidates:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

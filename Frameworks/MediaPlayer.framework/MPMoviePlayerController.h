@@ -6,6 +6,7 @@
 
 @interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
     void *_internal;
+    BOOL _readyForDisplay;
 }
 
 @property(readonly) UIView * backgroundView;
@@ -17,15 +18,17 @@
 @property(readonly) BOOL isPreparedToPlay;
 @property(readonly) int loadState;
 @property(readonly) int playbackState;
+@property(readonly) BOOL readyForDisplay;
 @property int repeatMode;
 @property int scalingMode;
 @property BOOL shouldAutoplay;
-@property BOOL useApplicationAudioSession;
 @property(readonly) UIView * view;
 
 + (void)allInstancesResignActive;
 
+- (BOOL)_isReadyForDisplay;
 - (void)_resignActive;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoFrame;
 - (BOOL)allowsAirPlay;
 - (id)backgroundView;
 - (void)beginSeekingBackward;
@@ -55,6 +58,7 @@
 - (double)playableDuration;
 - (int)playbackState;
 - (void)prepareToPlay;
+- (BOOL)readyForDisplay;
 - (int)repeatMode;
 - (int)scalingMode;
 - (void)setAllowsAirPlay:(BOOL)arg1;
@@ -70,13 +74,11 @@
 - (void)setRepeatMode:(int)arg1;
 - (void)setScalingMode:(int)arg1;
 - (void)setShouldAutoplay:(BOOL)arg1;
-- (void)setUseApplicationAudioSession:(BOOL)arg1;
 - (BOOL)shouldAutoplay;
 - (void)skipToBeginning;
 - (void)skipToNextItem;
 - (void)skipToPreviousItem;
 - (void)stop;
-- (BOOL)useApplicationAudioSession;
 - (id)view;
 
 @end

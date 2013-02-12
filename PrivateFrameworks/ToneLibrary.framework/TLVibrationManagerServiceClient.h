@@ -5,8 +5,8 @@
 @interface TLVibrationManagerServiceClient : NSObject {
 }
 
-+ (void)_sendXPCMessageWithWrapper:(id)arg1 asynchronously:(BOOL)arg2 remainingAttempts:(unsigned int)arg3 previousError:(id)arg4 completionBlock:(id)arg5;
-+ (struct _xpc_connection_s { }*)_sharedConnection;
++ (void)_sendXPCMessage:(id)arg1 asynchronously:(BOOL)arg2 remainingAttempts:(unsigned int)arg3 previousError:(id)arg4 completionBlock:(id)arg5;
++ (id)_sharedConnection;
 + (void)sendMessage:(id)arg1 asynchronously:(BOOL)arg2 completionBlock:(id)arg3;
 
 @end

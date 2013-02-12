@@ -46,7 +46,7 @@
     NSMutableArray *_currentRowArray;
     BOOL _currentRowIsLast;
     RTFTextTable *_currentTable;
-    unsigned int _defaultToUniCharEncoding;
+    unsigned long _defaultToUniCharEncoding;
     id _delegate;
     NSMutableDictionary *_documentInfoDictionary;
     BOOL _isRTLDocument;

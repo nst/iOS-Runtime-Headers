@@ -59,5 +59,6 @@
 - (BOOL)showPageRange;
 - (BOOL)showPaper;
 - (void)startPrinting;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

@@ -17,11 +17,13 @@
 
 - (BOOL)async;
 - (id)charset;
+- (id)crossOrigin;
 - (BOOL)defer;
 - (id)event;
 - (id)htmlFor;
 - (void)setAsync:(BOOL)arg1;
 - (void)setCharset:(id)arg1;
+- (void)setCrossOrigin:(id)arg1;
 - (void)setDefer:(BOOL)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setHtmlFor:(id)arg1;

@@ -15,12 +15,12 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (BOOL)_checkForValidContents:(id)arg1 outError:(id*)arg2;
 - (void)_finishInitializationWithContents:(id)arg1;
 - (id)_strippedAPNDefaults;
 - (id)_validationErrorType:(int)arg1 forInvalidKey:(id)arg2;
 - (id)apnDefaults;
-- (void)dealloc;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (void)setWasInstalled:(BOOL)arg1;

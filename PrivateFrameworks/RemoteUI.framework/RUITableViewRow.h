@@ -47,7 +47,7 @@
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
 - (void)populatePostbackDictionary:(id)arg1;
-- (float)rowHeightWithMax:(float)arg1 tableView:(id)arg2 indexPath:(id)arg3;
+- (float)rowHeightWithMax:(float)arg1 peggedHeight:(float)arg2 tableView:(id)arg3 indexPath:(id)arg4;
 - (BOOL)rowInvalid;
 - (id)selectOptions;
 - (int)selectedRow;

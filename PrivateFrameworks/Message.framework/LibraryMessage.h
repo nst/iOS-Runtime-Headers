@@ -19,7 +19,7 @@
     unsigned int _originalMailboxID;
     NSString *_remoteID;
     unsigned int _size;
-    unsigned int _uid;
+    unsigned long _uid;
 }
 
 @property(copy) id deallocationHandler;
@@ -27,6 +27,7 @@
 + (id)messageWithLibraryID:(unsigned int)arg1;
 
 - (id)_attachmentStorageLocation;
+- (void)_initializeMetadata;
 - (void)_updateUID;
 - (id)account;
 - (BOOL)canBeDeleted;
@@ -66,7 +67,6 @@
 - (id)persistentID;
 - (id)preferredEmailAddressToReplyWith;
 - (id)refreshedMessage;
-- (oneway void)release;
 - (id)remoteID;
 - (void)setDeallocationHandler:(id)arg1;
 - (void)setFlags:(unsigned long long)arg1;

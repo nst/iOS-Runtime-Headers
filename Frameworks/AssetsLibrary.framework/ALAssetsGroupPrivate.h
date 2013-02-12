@@ -5,7 +5,7 @@
 @class ALAssetsFilter, ALAssetsLibrary, NSMutableDictionary, NSObject<PLAssetContainer>, PLPhotoLibrary;
 
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
-    NSObject<PLAssetContainer> *_album;
+    struct NSObject { Class x1; } *_album;
     ALAssetsFilter *_assetsFilter;
     unsigned int _groupType;
     BOOL _isValid;
@@ -43,6 +43,8 @@
 - (void)setIsValid:(BOOL)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPropertyValues:(id)arg1;
+- (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (void)set_photoLibrary:(id)arg1;
+- (id)valueForProperty:(id)arg1;
 
 @end

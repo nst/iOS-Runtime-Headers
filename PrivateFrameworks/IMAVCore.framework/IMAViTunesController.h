@@ -8,11 +8,9 @@
 
 + (id)sharedInstance;
 
-- (BOOL)allowsWeakReference;
 - (void)dealloc;
 - (id)init;
 - (void)pause;
 - (void)resume;
-- (BOOL)retainWeakReference;
 
 @end

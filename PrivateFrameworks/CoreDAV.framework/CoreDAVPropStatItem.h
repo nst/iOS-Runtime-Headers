@@ -16,7 +16,8 @@
 @property(retain) CoreDAVLeafItem * responseDescription;
 @property(retain) CoreDAVLeafItem * status;
 
-- (id)copyParseRules;
++ (id)copyParseRules;
+
 - (void)dealloc;
 - (id)description;
 - (id)errorItem;

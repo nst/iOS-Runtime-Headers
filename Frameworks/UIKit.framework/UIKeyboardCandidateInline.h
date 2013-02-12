@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateListDelegate>, NSArray, NSString, UIKeyboardCandidateExtended, UIView<UIKeyboardCandidateList>;
+@class <UIKeyboardCandidateListDelegate>, NSArray, NSString, UIKeyboardCandidateView<UIKeyboardCandidateViewInline>, UIView<UIKeyboardCandidateList>;
 
 @interface UIKeyboardCandidateInline : NSObject <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate> {
     struct CGRect { 
@@ -14,28 +14,28 @@
             float width; 
             float height; 
         } size; 
+    struct { 
+        unsigned int isExtended; 
     <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
-    NSArray *_candidates;
-    UIKeyboardCandidateExtended *_extendedCandidatesView;
-    } _inlineRect;
-    NSString *_inlineText;
+    } _inlineFlags;
     int _promptTextType;
-    BOOL _showingExtendedCandidatesView;
+    NSArray *m_candidates;
+    UIKeyboardCandidateView<UIKeyboardCandidateViewInline> *m_extendedView;
+    } m_inlineRect;
+    NSString *m_inlineText;
+    UIView<UIKeyboardCandidateList> *m_inlineView;
 }
 
 @property <UIKeyboardCandidateListDelegate> * candidateListDelegate;
-@property(copy) NSArray * candidates;
-@property(retain) UIKeyboardCandidateExtended * extendedCandidatesView;
+@property(retain) NSArray * candidates;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inlineRect;
-@property(copy) NSString * inlineText;
-@property(readonly) UIView<UIKeyboardCandidateList> * inlineView;
+@property(retain) NSString * inlineText;
 @property int promptTextType;
-@property BOOL showingExtendedCandidatesView;
 
-+ (void)releaseSharedInstance;
 + (id)sharedInstance;
 
 - (id)_inlineView;
+- (id)activeCandidateList;
 - (void)animateInlineCandidate;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (id)candidateAtIndex:(unsigned int)arg1;
@@ -44,15 +44,16 @@
 - (void)candidateListSelectionDidChange:(id)arg1;
 - (void)candidateListShouldBeDismissed:(id)arg1;
 - (id)candidates;
+- (void)candidatesDidChange;
 - (void)configureKeyboard:(id)arg1;
 - (unsigned int)count;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
 - (void)dealloc;
-- (id)extendedCandidatesView;
-- (void)hideExtendedCandidatesView;
+- (id)init;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inlineRect;
 - (id)inlineText;
+- (BOOL)isReducedWidth;
 - (void)layout;
 - (BOOL)needsWebDocumentViewEventsDirectly;
 - (int)promptTextType;
@@ -61,19 +62,17 @@
 - (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
 - (void)setCandidates:(id)arg1;
 - (void)setCompletionContext:(id)arg1;
-- (void)setExtendedCandidatesView:(id)arg1;
 - (void)setInlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInlineText:(id)arg1;
+- (void)setInlineViewExtended:(BOOL)arg1;
 - (void)setPromptTextType:(int)arg1;
-- (void)setShowingExtendedCandidatesView:(BOOL)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
+- (void)showCandidate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
-- (void)showExtendedCandidatesView;
 - (void)showNextCandidate;
 - (void)showNextPage;
 - (void)showPageAtIndex:(unsigned int)arg1;
 - (void)showPreviousCandidate;
 - (void)showPreviousPage;
-- (BOOL)showingExtendedCandidatesView;
 
 @end

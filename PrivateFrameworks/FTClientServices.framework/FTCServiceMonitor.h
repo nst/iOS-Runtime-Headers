@@ -11,6 +11,7 @@
 @property(readonly) int serviceType;
 
 - (void)_postAvailability:(int)arg1;
+- (void)_updateAvailability;
 - (void)dealloc;
 - (void)handleActiveAccountsChanged:(id)arg1;
 - (id)initWithServiceType:(int)arg1;

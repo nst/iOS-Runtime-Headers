@@ -7,6 +7,8 @@
 @interface NSFileVersion : NSObject {
     NSString *_clientID;
     NSURL *_contentsURL;
+    BOOL _contentsURLIsAccessed;
+    BOOL _discardable;
     NSURL *_fileURL;
     BOOL _isBackup;
     BOOL _isResolved;
@@ -44,9 +46,11 @@
 + (id)_temporaryStorageLocationForIdentifier:(id)arg1;
 + (id)_versionOfItemAtURL:(id)arg1 forClientID:(id)arg2 name:(id)arg3 temporaryStorageIdentifier:(id)arg4 evenIfDeleted:(BOOL)arg5;
 + (id)_versionOfItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2 temporaryStorageIdentifier:(id)arg3;
++ (id)addVersionOfItemAtURL:(id)arg1 withContentsOfURL:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
 + (id)currentVersionOfItemAtURL:(id)arg1;
 + (id)otherVersionsOfItemAtURL:(id)arg1;
 + (BOOL)removeOtherVersionsOfItemAtURL:(id)arg1 error:(id*)arg2;
++ (id)temporaryDirectoryURLForNewVersionOfItemAtURL:(id)arg1;
 + (id)unresolvedConflictVersionsOfItemAtURL:(id)arg1;
 + (BOOL)unresolvedConflictsExistForItemAtURL:(id)arg1;
 + (id)versionOfItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2;
@@ -57,11 +61,13 @@
 - (id)_initWithFileURL:(id)arg1 library:(id)arg2 clientID:(id)arg3 name:(id)arg4 contentsURL:(id)arg5 isBackup:(BOOL)arg6 revision:(id)arg7;
 - (BOOL)_isBackup;
 - (void)_overrideModificationDateWithDate:(id)arg1;
+- (BOOL)_preserveConflictVersionLocally;
 - (BOOL)_setDocumentInfo:(id)arg1;
 - (void)dealloc;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isConflict;
+- (BOOL)isDiscardable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isResolved;
 - (id)localizedName;
@@ -71,6 +77,7 @@
 - (BOOL)removeAndReturnError:(id*)arg1;
 - (id)replaceItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)restoreOverItemAtURL:(id)arg1 error:(id*)arg2;
+- (void)setDiscardable:(BOOL)arg1;
 - (void)setResolved:(BOOL)arg1;
 
 @end

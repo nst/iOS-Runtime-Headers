@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSString, PFUbiquityKnowledgeVector, PFUbiquityPeer, PFUbiquityStoreMetadata, PFUbiquityStoreSaveSnapshot, PFUbiquityTransactionLog, _PFUbiquityStack;
+@class NSDictionary, NSMutableDictionary, NSString, PFUbiquityKnowledgeVector, PFUbiquityPeer, PFUbiquityStoreMetadata, PFUbiquityStoreSaveSnapshot, PFUbiquitySwitchboardCacheWrapper, PFUbiquityTransactionLog, _PFUbiquityStack;
 
 @interface PFUbiquityImportContext : NSObject {
     PFUbiquityPeer *_actingPeer;
+    PFUbiquitySwitchboardCacheWrapper *_cacheWrapper;
     PFUbiquityKnowledgeVector *_currentKnowledgeVector;
     NSString *_exportingPeerID;
+    NSMutableDictionary *_globalIDToFetchedObject;
     NSDictionary *_globalIDToLocalIDURICache;
     PFUbiquityKnowledgeVector *_kv;
     _PFUbiquityStack *_stack;
@@ -17,28 +19,37 @@
 }
 
 @property(readonly) PFUbiquityPeer * actingPeer;
+@property(retain) PFUbiquitySwitchboardCacheWrapper * cacheWrapper;
 @property(retain) PFUbiquityKnowledgeVector * currentKnowledgeVector;
 @property(retain) NSString * exportingPeerID;
+@property(readonly) NSMutableDictionary * globalIDToFetchedObject;
 @property(retain) NSDictionary * globalIDToLocalIDURICache;
 @property(retain) PFUbiquityKnowledgeVector * knowledgeVector;
-@property(readonly) _PFUbiquityStack * stack;
-@property(readonly) PFUbiquityStoreMetadata * storeMetadata;
+@property(retain) _PFUbiquityStack * stack;
+@property(retain) PFUbiquityStoreMetadata * storeMetadata;
 @property(retain) PFUbiquityStoreSaveSnapshot * storeSaveSnapshot;
 @property(retain) PFUbiquityTransactionLog * transactionLog;
 
 - (id)actingPeer;
+- (id)cacheWrapper;
 - (id)currentKnowledgeVector;
 - (void)dealloc;
 - (id)exportingPeerID;
+- (id)globalIDToFetchedObject;
 - (id)globalIDToLocalIDURICache;
+- (id)init;
 - (id)initWithStack:(id)arg1 andStoreMetadata:(id)arg2;
 - (id)initWithStoreName:(id)arg1 andUbiquityRootLocation:(id)arg2 withLocalPeerID:(id)arg3;
 - (id)knowledgeVector;
+- (BOOL)prefetchManagedObjectsInContext:(id)arg1 error:(id*)arg2;
 - (void)setActingPeer:(id)arg1;
+- (void)setCacheWrapper:(id)arg1;
 - (void)setCurrentKnowledgeVector:(id)arg1;
 - (void)setExportingPeerID:(id)arg1;
 - (void)setGlobalIDToLocalIDURICache:(id)arg1;
 - (void)setKnowledgeVector:(id)arg1;
+- (void)setStack:(id)arg1;
+- (void)setStoreMetadata:(id)arg1;
 - (void)setStoreSaveSnapshot:(id)arg1;
 - (void)setTransactionLog:(id)arg1;
 - (id)stack;

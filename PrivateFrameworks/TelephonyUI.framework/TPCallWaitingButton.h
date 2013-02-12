@@ -9,6 +9,7 @@
     TPButton *_innerButton;
 }
 
++ (id)_buttonForType:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForType:(int)arg1;
 + (float)defaultVerticalCenteringOffset;
 

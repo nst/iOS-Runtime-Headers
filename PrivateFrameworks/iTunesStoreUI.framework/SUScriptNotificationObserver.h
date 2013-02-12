@@ -9,6 +9,7 @@
     struct __CFSet { } *_receivers;
 }
 
+- (void)_audioSessionsChangedNotification:(id)arg1;
 - (void)_beginObservingNotifications;
 - (void)_dispatchEvent:(id)arg1 forName:(id)arg2;
 - (void)_endObservingNotifications;

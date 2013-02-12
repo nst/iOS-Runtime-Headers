@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIDocumentInteractionControllerDelegate>, NSArray, NSString, NSURL, UIActionSheet, UIBarButtonItem, UIPopoverController, UIView, UIViewController, _UIPreviewItemProxy;
+@class <UIDocumentInteractionControllerDelegate>, NSArray, NSString, NSURL, UIActivityViewController, UIBarButtonItem, UIPopoverController, UIView, UIViewController, _UIPreviewItemProxy;
 
 @interface UIDocumentInteractionController : NSObject <UIActionSheetDelegate> {
     struct CGRect { 
@@ -14,16 +14,15 @@
             float width; 
             float height; 
         } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
     struct { 
         unsigned int delegateViewControllerForPreview : 1; 
         unsigned int delegateRectForPreview : 1; 
         unsigned int delegateViewForPreview : 1; 
         unsigned int transitionImageForPreview : 1; 
+        unsigned int documentProxyForPreview : 1; 
         unsigned int delegateWillBeginPreview : 1; 
         unsigned int delegateDidEndPreviewPreview : 1; 
+        unsigned int delegateWillEndPreviewPreview : 1; 
         unsigned int delegateWillPresentOptionsMenu : 1; 
         unsigned int delegateDidDismissOptionsMenu : 1; 
         unsigned int delegateWillPresentOpenInMenu : 1; 
@@ -33,20 +32,22 @@
         unsigned int delegateCanPerformAction : 1; 
         unsigned int delegatePerformAction : 1; 
         unsigned int delegateUnzipURL : 1; 
-    int _alternateOpenButtonIndex;
+        unsigned int showingOptionsMenu : 1; 
+        unsigned int showingOpenInMenu : 1; 
+        unsigned int delegateExcludesActivities : 1; 
+        unsigned int delegateCanBlockRemoteImages : 1; 
+        unsigned int delegateAddsActivities : 1; 
+        unsigned int delegateProvidesActivityItem : 1; 
+        unsigned int delegateProvidesPrintInfo : 1; 
+        unsigned int performingActivity : 1; 
+    UIActivityViewController *_activityViewController;
     id _annotation;
     id _applicationToOpen;
     NSArray *_availableApplications;
-    int _copyButtonIndex;
-    int _defaultOpenButtonIndex;
     <UIDocumentInteractionControllerDelegate> *_delegate;
     } _documentInteractionControllerFlags;
     NSArray *_gestureRecognizers;
     NSArray *_icons;
-    UIActionSheet *_openInMenu;
-    } _openInTableViewSize;
-    UIViewController *_openInViewController;
-    UIActionSheet *_optionsMenu;
     UIPopoverController *_popoverController;
     UIBarButtonItem *_presentItem;
     } _presentRect;
@@ -54,62 +55,76 @@
     UIViewController *_presentingViewController;
     id _previewController;
     id _previewItemProxy;
-    int _printButtonIndex;
-    int _quickLookButtonIndex;
     BOOL _shouldUnzipDocument;
+    NSURL *_tmpURLToDeleteOnDealloc;
     NSString *_uniqueIdentifier;
     NSURL *_unzippedDocumentURL;
 }
 
 @property(retain) NSURL * URL;
 @property(copy) NSString * UTI;
+@property(retain) UIActivityViewController * activityViewController;
 @property(retain) id annotation;
 @property <UIDocumentInteractionControllerDelegate> * delegate;
 @property(readonly) NSArray * gestureRecognizers;
 @property(readonly) NSArray * icons;
 @property(copy) NSString * name;
-@property(readonly) UIPopoverController * popoverController;
+@property(getter=_performingActivity,setter=_setPerformingActivity:) BOOL performingActivity;
+@property(retain) UIPopoverController * popoverController;
 @property(readonly) id previewController;
 @property(readonly) _UIPreviewItemProxy * previewItemProxy;
 @property BOOL shouldUnzipDocument;
+@property BOOL shouldUnzipDocument;
+@property(retain) NSString * uniqueIdentifier;
 @property(retain) NSString * uniqueIdentifier;
 
-+ (id)_UTIForFilename:(id)arg1;
-+ (id)_applicationsForFilename:(id)arg1 UTI:(id)arg2;
-+ (struct dispatch_queue_s { }*)_unzippingQueue;
++ (id)_UTIForFileURL:(id)arg1;
++ (id)_applicationsForDocumentProxy:(id)arg1;
++ (id)_unzippingQueue;
++ (id)allActionSelectorNames;
 + (void)initialize;
 + (id)interactionControllerWithURL:(id)arg1;
 
 - (id)URL;
 - (id)UTI;
+- (void)_activityControllerViewDidDismiss;
 - (id)_applicationToOpen;
 - (id)_applications:(BOOL)arg1;
 - (BOOL)_canPreviewUnzippedDocument;
+- (BOOL)_canSaveToCameraRollForType;
 - (BOOL)_canUnzipDocument;
+- (BOOL)_canUnzipDocumentAndPresentOpenIn;
 - (BOOL)_canUnzipDocumentAndPresentOptions;
+- (BOOL)_delegateCanPerformAction:(SEL)arg1;
 - (BOOL)_delegateExistsAndImplementsRequiredMethods:(id*)arg1;
+- (BOOL)_delegateImplementsLegacyActions;
+- (BOOL)_delegatePerformAction:(SEL)arg1;
 - (BOOL)_documentNeedsHelpUnzippingForPreview;
+- (id)_documentProxy;
 - (void)_finishedCopyingResource;
+- (void)_fixupFileExtensionIfNeeded;
 - (void)_interfaceOrientationWillChange:(id)arg1;
 - (void)_invalidate;
 - (BOOL)_isFilenameValidForUnzipping:(id)arg1;
+- (BOOL)_isImage;
+- (BOOL)_isImageOrVideo;
 - (BOOL)_isValidURL:(id)arg1;
+- (BOOL)_isVideo;
 - (void)_openDocumentWithApplication:(id)arg1;
 - (void)_openDocumentWithCurrentApplication;
+- (BOOL)_performingActivity;
 - (void)_presentOpenIn:(id)arg1;
-- (void)_presentOpenInForPhoneInView:(id)arg1;
 - (void)_presentOptionsMenu:(id)arg1;
 - (void)_presentPreview:(id)arg1;
 - (void)_setApplicationToOpen:(id)arg1;
+- (void)_setPerformingActivity:(BOOL)arg1;
 - (void)_setUnzippedDocumentURL:(id)arg1;
 - (BOOL)_setupForOpenInMenu;
 - (BOOL)_setupForOptionsMenu;
 - (BOOL)_setupPreviewController;
 - (void)_unzipFileAndSetupPayload:(id)arg1;
 - (id)_unzippedDocumentURL;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheetCancel:(id)arg1;
+- (id)activityViewController;
 - (id)annotation;
 - (unsigned int)applicationCount;
 - (void)dealloc;
@@ -123,8 +138,8 @@
 - (int)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (void)openDocumentWithDefaultApplication;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
+- (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (id)popoverController;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (BOOL)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)presentOpenInMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
@@ -136,10 +151,13 @@
 - (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
 - (id)previewController;
 - (void)previewControllerDidDismiss:(id)arg1;
+- (void)previewControllerWillDismiss:(id)arg1;
 - (id)previewItemProxy;
+- (void)setActivityViewController:(id)arg1;
 - (void)setAnnotation:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPopoverController:(id)arg1;
 - (void)setPreviewURLOverride:(id)arg1;
 - (void)setShouldUnzipDocument:(BOOL)arg1;
 - (void)setURL:(id)arg1;
@@ -147,6 +165,5 @@
 - (void)setUniqueIdentifier:(id)arg1;
 - (BOOL)shouldUnzipDocument;
 - (id)uniqueIdentifier;
-- (void)updatePopoverContentSizeForPresentationOfTableViewHack;
 
 @end

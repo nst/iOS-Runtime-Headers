@@ -13,6 +13,7 @@
 @property(retain) NSDictionary * nameOrders;
 @property BOOL updateSmartPlaylists;
 
+- (void).cxx_destruct;
 - (id)_addAlbumArtistForImportTrackProperties:(id)arg1;
 - (id)_addAlbumForImportTrackProperties:(id)arg1;
 - (id)_addArtistForImportTrackProperties:(id)arg1;
@@ -21,7 +22,6 @@
 - (id)_addStoreLinkForImportTrackProperties:(id)arg1;
 - (id)_newTrackPropertiesByProcessingImportTrack:(id)arg1 insertStringsIntoSortMap:(BOOL)arg2;
 - (BOOL)_shouldInsertITMediaKindIntoPurchasedPlaylist:(unsigned long)arg1;
-- (void)dealloc;
 - (void)importTrack:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)initWithMusicLibrary:(id)arg1;
 - (id)nameOrders;

@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSOrderedSet : NSObject <NSCopying, NSMutableCopying, NSCoding, NSFastEnumeration> {
+@interface NSOrderedSet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)newOrderedSetWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 + (id)orderedSet;
 + (id)orderedSetWithArray:(id)arg1 copyItems:(BOOL)arg2;
 + (id)orderedSetWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
@@ -20,9 +21,18 @@
 + (id)orderedSetWithOrderedSet:(id)arg1;
 + (id)orderedSetWithSet:(id)arg1 copyItems:(BOOL)arg2;
 + (id)orderedSetWithSet:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)_avgForKeyPath:(id)arg1;
 - (id)_countForKeyPath:(id)arg1;
+- (id)_gkDistinctValuesForKeyPath:(id)arg1;
+- (id)_gkFilteredOrderedSetUsingPredicate:(id)arg1;
+- (id)_gkFirstObject;
+- (BOOL)_gkIsEqualToOrderedSet:(id)arg1;
+- (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
+- (id)_gkMapDictionaryWithKeyPath:(id)arg1;
+- (id)_gkSortedOrderedSetUsingDescriptors:(id)arg1;
+- (id)_gkValuesForKeyPath:(id)arg1;
 - (id)_maxForKeyPath:(id)arg1;
 - (id)_minForKeyPath:(id)arg1;
 - (id)_mutableArrayValueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned int)arg2;
@@ -88,6 +98,7 @@
 - (id)lastObject;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (id)objectEnumerator;
 - (id)objectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (id)objectsAtIndexes:(id)arg1;

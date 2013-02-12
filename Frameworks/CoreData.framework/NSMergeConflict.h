@@ -13,18 +13,19 @@
     id _source;
 }
 
-@property(retain,readonly) NSDictionary * cachedSnapshot;
+@property(readonly) NSDictionary * cachedSnapshot;
 @property(readonly) unsigned int newVersionNumber;
-@property(retain,readonly) NSDictionary * objectSnapshot;
+@property(readonly) NSDictionary * objectSnapshot;
 @property(readonly) unsigned int oldVersionNumber;
-@property(retain,readonly) NSDictionary * persistedSnapshot;
-@property(retain,readonly) NSManagedObject * sourceObject;
+@property(readonly) NSDictionary * persistedSnapshot;
+@property(readonly) NSManagedObject * sourceObject;
 
 - (id)ancestorSnapshot;
 - (id)cachedSnapshot;
 - (void)dealloc;
 - (id)description;
 - (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
+- (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 snapshot1:(id)arg4 snapshot2:(id)arg5 snapshot3:(id)arg6;
 - (unsigned int)newVersionNumber;
 - (id)objectForKey:(id)arg1;
 - (id)objectSnapshot;

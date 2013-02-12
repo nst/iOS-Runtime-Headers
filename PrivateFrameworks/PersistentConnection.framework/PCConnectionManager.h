@@ -30,6 +30,7 @@
     unsigned int _powerAssertionID;
     PCDarwinNotificationRunLoopSource *_prefsChangedSource;
     int _prefsStyle;
+    int _pushIsConnectedToken;
     unsigned int _reconnectIteration;
     PCPersistentTimer *_reconnectWakeTimer;
     BOOL _reconnectWithKeepAliveDelay;
@@ -60,6 +61,7 @@
 - (void)_delayTimerFired;
 - (double)_getCachedWWANKeepAliveInterval;
 - (void)_intervalTimerFired;
+- (BOOL)_isPushConnected;
 - (void)_loadPreferencesGeneratingEvent:(BOOL)arg1;
 - (void)_preferencesChanged;
 - (void)_releasePowerAssertion;
@@ -70,7 +72,8 @@
 - (void)_setupTimerForPushWithKeepAliveInterval:(double)arg1;
 - (id)_stringForAction:(int)arg1;
 - (id)_stringForEvent:(int)arg1;
-- (void)_takePowerAssertion;
+- (id)_stringForStyle:(int)arg1;
+- (void)_takePowerAssertionWithTimeout:(double)arg1;
 - (void)_validateActionForCurrentStyle:(int)arg1;
 - (void)cancelPollingIntervalOverride;
 - (double)currentKeepAliveInterval;

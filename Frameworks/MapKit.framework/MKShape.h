@@ -14,6 +14,7 @@
 @property(copy) NSString * title;
 
 - (struct { double x1; double x2; })coordinate;
+- (void)dealloc;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)subtitle;

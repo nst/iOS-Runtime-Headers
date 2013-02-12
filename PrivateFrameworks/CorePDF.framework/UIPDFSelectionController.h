@@ -20,11 +20,18 @@
     struct CGPoint { 
         float x; 
         float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     } _adjustedPoint;
-    int _firstIndex;
+    BOOL _cancelled;
+    long _firstIndex;
     BOOL _hiding;
+    BOOL _instantHighlightMode;
+    BOOL _instantModeIsSuspended;
     BOOL _isTracking;
-    int _lastIndex;
+    long _lastIndex;
+    BOOL _needsLayout;
     UIPDFPageView *_pageView;
     BOOL _preceeds;
     BOOL _rangeMode;
@@ -32,16 +39,19 @@
     } _selectionBounds;
     } _selectionFixedPoint;
     <UIPDFSelectionWidget><NSObject> *_selectionWidget;
+    } _startPoint;
 }
 
-@property(readonly) struct CGPoint { float x; float y; } adjustedPoint;
-@property(readonly) struct CGPoint { float x; float y; } currentSelectionPoint;
-@property(readonly) struct CGPoint { float x; float y; } initialSelectionPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } adjustedPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } currentSelectionPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } initialSelectionPoint;
+@property BOOL instantHighlightMode;
 @property(readonly) BOOL isTracking;
 @property UIPDFPageView * pageView;
 @property(readonly) BOOL rangeMode;
 @property(readonly) <UIPDFSelectionWidget> * selectionWidget;
 
+- (void)addSelectionWidget:(id)arg1;
 - (void)adjustSelection:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })adjustedPoint;
 - (void)clearSelection;
@@ -52,20 +62,27 @@
 - (void)hideWidget;
 - (id)init;
 - (struct CGPoint { float x1; float x2; })initialSelectionPoint;
+- (BOOL)instantHighlightMode;
 - (BOOL)isTracking;
 - (void)layoutSelections;
 - (id)pageView;
 - (BOOL)rangeMode;
 - (struct CGPoint { float x1; float x2; })selectedPointOffset;
 - (void)selectionHide:(id)arg1;
+- (void)selectionHideFromAncestor:(id)arg1;
 - (void)selectionShow:(id)arg1;
 - (void)selectionShowDelayed:(id)arg1;
+- (void)selectionShowToAncestor:(id)arg1;
 - (id)selectionWidget;
+- (void)setInstantHighlightMode:(BOOL)arg1;
 - (void)setPageView:(id)arg1;
 - (void)setSelectionFor:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)shouldTrackAt:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startSelectingAt:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startTracking:(struct CGPoint { float x1; float x2; })arg1 andPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)startTracking:(struct CGPoint { float x1; float x2; })arg1 showMagnifier:(BOOL*)arg2;
+- (void)suspendInstantHighlightMode;
+- (void)tracking:(struct CGPoint { float x1; float x2; })arg1 andPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)tracking:(struct CGPoint { float x1; float x2; })arg1 showMagnifier:(BOOL*)arg2;
 - (BOOL)useParagraphMode;
 

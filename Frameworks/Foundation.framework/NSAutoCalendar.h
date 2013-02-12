@@ -13,6 +13,8 @@
     NSTimeZone *changedTimeZone;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (void)_update:(id)arg1;
 - (id)calendarIdentifier;
 - (Class)classForCoder;

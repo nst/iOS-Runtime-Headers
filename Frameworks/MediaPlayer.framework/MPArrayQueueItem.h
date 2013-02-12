@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, NSString, SSDownload;
+@class MPAVItem, NSString;
 
 @interface MPArrayQueueItem : NSObject {
-    SSDownload *_download;
     MPAVItem *_item;
     NSString *_path;
     double _startTime;
@@ -13,7 +12,6 @@
     NSString *_videoID;
 }
 
-@property(retain) SSDownload * download;
 @property(readonly) MPAVItem * item;
 @property(copy) NSString * path;
 @property double startTime;
@@ -21,12 +19,10 @@
 @property(copy) NSString * videoID;
 
 - (void)dealloc;
-- (id)download;
 - (id)init;
 - (id)initWithMPAVItem:(id)arg1;
 - (id)item;
 - (id)path;
-- (void)setDownload:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSDownloadAuthenticationSession;
+@class NSObject<OS_dispatch_queue>, SSDownloadAuthenticationSession;
 
 @interface SSDownloadAuthenticationChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSDownloadAuthenticationSession *_session;
 }
 

@@ -2,34 +2,41 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
+@class NSMutableArray;
+
 @interface SPSearchResultSerializer : PBDataWriter {
     unsigned int _byteVector;
     unsigned int _byteVectorCapacity;
     unsigned int _byteVectorCnt;
+    BOOL _completed;
     BOOL _inProc;
     Class _lastResultClass;
     BOOL _respondsToAuxiliarySubtitleUTF8String;
     BOOL _respondsToAuxiliaryTitleUTF8String;
     BOOL _respondsToBadgeValue;
     BOOL _respondsToIdentifier;
-    BOOL _respondsToResultDisplayIdentifierUTF8String;
-    BOOL _respondsToResultDomain;
     BOOL _respondsToSubtitleUTF8String;
     BOOL _respondsToSummaryUTF8String;
     BOOL _respondsToTitleUTF8String;
     BOOL _respondsToURL;
+    NSMutableArray *_sections;
 }
 
+@property(readonly) BOOL completed;
+
 - (unsigned int)_allocateSize:(unsigned int)arg1;
+- (id)_convertConformingResult:(id)arg1;
 - (BOOL)appendResult:(id)arg1;
+- (BOOL)appendSection:(id)arg1;
 - (unsigned int)byteVector;
 - (unsigned int)byteVectorCount;
+- (BOOL)completed;
 - (void)dealloc;
 - (id)init;
-- (id)initForDomain:(int)arg1 andDisplayIdentifier:(id)arg2 andCategory:(id)arg3 withInitialCapacity:(unsigned int)arg4 inProc:(BOOL)arg5;
-- (id)initForDomain:(int)arg1 andDisplayIdentifier:(id)arg2 andCategory:(id)arg3 withInitialCapacity:(unsigned int)arg4;
-- (id)initForDomain:(int)arg1 andDisplayIdentifier:(id)arg2 withInitialCapacity:(unsigned int)arg3;
-- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (void)writeCString:(const char *)arg1 forTag:(unsigned short)arg2;
+- (id)initWithInitialCapacity:(unsigned int)arg1 inProc:(BOOL)arg2;
+- (id)initWithInitialCapacity:(unsigned int)arg1;
+- (unsigned int)sectionCount;
+- (void)serialize;
+- (unsigned int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

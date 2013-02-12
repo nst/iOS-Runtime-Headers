@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface MPPipelineJPEGDecoder : NSObject {
     struct CGSize { 
         float width; 
@@ -11,9 +13,9 @@
     } imageSize;
     unsigned int maxJPEGSize;
     unsigned int requestedImageCount;
-    struct dispatch_queue_s { } *stackQueue420;
-    struct dispatch_queue_s { } *stackQueueBGRA;
-    struct dispatch_queue_s { } *stackQueueJPEG;
+    NSObject<OS_dispatch_queue> *stackQueue420;
+    NSObject<OS_dispatch_queue> *stackQueueBGRA;
+    NSObject<OS_dispatch_queue> *stackQueueJPEG;
     struct StackItem { void *x1; struct StackItem {} *x2; } *stackTop420;
     struct StackItem { void *x1; struct StackItem {} *x2; } *stackTopBGRA;
     struct StackItem { void *x1; struct StackItem {} *x2; } *stackTopJPEG;
@@ -25,7 +27,7 @@
 + (struct __IOSurfaceAccelerator { }*)_createAccelerator;
 + (struct __IOSurfaceAccelerator { }*)_popSurfaceAccelerator;
 + (void)_pushSurfaceAccelerator:(struct __IOSurfaceAccelerator { }*)arg1;
-+ (struct dispatch_queue_s { }*)_stackQueueTransferSession;
++ (id)_stackQueueTransferSession;
 
 - (struct __IOSurface { }*)_create420Surface;
 - (struct __IOSurface { }*)_createBGRASurface;
@@ -39,7 +41,7 @@
 - (void)_pushBGRASurface:(struct __IOSurface { }*)arg1;
 - (void)_pushJPEGSurface:(struct __IOSurface { }*)arg1;
 - (void)_receivedMemoryWarning:(id)arg1;
-- (void)_removeBGRASurface;
+- (BOOL)_removeBGRASurface;
 - (void)dealloc;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 cachedCount:(int)arg2;
 - (unsigned int)maxJPEGSize;

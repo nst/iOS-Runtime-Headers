@@ -10,7 +10,7 @@
 
 @property(copy) NSArray * tokens;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)dkPlistRepresentation;
 - (id)initWithDKPlistRepresentation:(id)arg1;
 - (void)setTokens:(id)arg1;

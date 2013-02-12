@@ -10,8 +10,8 @@
     float _progress;
     UIImage *_progressImage;
     UIColor *_progressTintColor;
+    UIImageView *_progressView;
     int _progressViewStyle;
-    UIImageView *_progressViews[3];
     UIImage *_trackImage;
     UIColor *_trackTintColor;
     UIImageView *_trackView;
@@ -25,11 +25,13 @@
 @property(retain) UIColor * trackTintColor;
 
 + (int)_indexForStyle:(int)arg1 barStyle:(int)arg2;
-+ (struct { id x1; id x2; id x3; id x4; })_sliceImage:(id)arg1;
-+ (struct { id x1; id x2; id x3; id x4; })_standardImagesForStyle:(int)arg1 barStyle:(int)arg2;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (struct { id x1; id x2; })_standardImagesForStyle:(int)arg1 barStyle:(int)arg2;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
+- (id)_appropriateProgressImage;
+- (id)_appropriateTrackImage;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_progressColor;
 - (void)_setProgress:(float)arg1;
@@ -37,9 +39,8 @@
 - (void)_setProgressColor:(id)arg1;
 - (BOOL)_shouldTintProgress;
 - (BOOL)_shouldTintTrack;
-- (void)_updateCapsAtEndOfAnimation;
-- (void)_updateCapsAtStartOfAnimation;
 - (void)_updateImages;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (int)barStyle;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -53,6 +54,7 @@
 - (id)progressTintColor;
 - (int)progressViewStyle;
 - (void)setBarStyle:(int)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (void)setProgress:(float)arg1;

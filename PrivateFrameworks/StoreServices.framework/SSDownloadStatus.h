@@ -4,7 +4,7 @@
 
 @class NSError, SSDownloadPhase;
 
-@interface SSDownloadStatus : NSObject <SSCoding, NSCopying> {
+@interface SSDownloadStatus : NSObject <SSXPCCoding, NSCopying> {
     SSDownloadPhase *_activePhase;
     BOOL _contentRestricted;
     NSError *_error;
@@ -22,13 +22,11 @@
 @property(readonly) float percentComplete;
 
 - (id)activePhase;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)error;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isContentRestricted;
 - (BOOL)isFailed;
 - (BOOL)isFailedTransient;

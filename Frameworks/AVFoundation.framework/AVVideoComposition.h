@@ -14,8 +14,9 @@
 @property(readonly) float renderScale;
 @property(readonly) struct CGSize { float x1; float x2; } renderSize;
 
-+ (id)videoCompositionForAsset:(id)arg1 videoGravity:(id)arg2;
-+ (id)videoCompositionForAsset:(id)arg1;
++ (void)initialize;
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1;
 
 - (int)_auxiliaryTrackID;
 - (id)_auxiliaryTrackLayer;

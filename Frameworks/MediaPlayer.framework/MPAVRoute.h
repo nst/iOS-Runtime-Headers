@@ -31,11 +31,11 @@
 + (id)videoRouteForRoute:(id)arg1;
 + (id)wirelessDisplayRouteForRoute:(id)arg1;
 
+- (id)_initWithName:(id)arg1 routeType:(int)arg2 routeUID:(id)arg3 routeIndex:(unsigned int)arg4 requiresPassword:(BOOL)arg5;
 - (void)dealloc;
 - (BOOL)displayIsPicked;
 - (int)displayRouteType;
 - (unsigned int)hash;
-- (id)initWithName:(id)arg1 routeType:(int)arg2 routeUID:(id)arg3 routeIndex:(unsigned int)arg4 requiresPassword:(BOOL)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPicked;
 - (id)name;

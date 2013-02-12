@@ -60,7 +60,7 @@
 - (int)_serverOrderForChange:(void*)arg1;
 - (void)_setChildrenOrder:(id)arg1 forFolderURL:(id)arg2;
 - (void)_setRootCTag:(id)arg1 rootSyncToken:(id)arg2 knownOrderings:(id)arg3;
-- (void)_setServerIdOnItem:(void*)arg1 isBookmark:(BOOL)arg2;
+- (void)_setServerIdOnItem:(void*)arg1 isBookmark:(BOOL)arg2 suggestedId:(id)arg3;
 - (void)_syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id)arg2 skipAddChanges:(BOOL)arg3;
 - (id)accountInfoProvider;
 - (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;

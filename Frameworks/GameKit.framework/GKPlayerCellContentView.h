@@ -16,17 +16,19 @@
 @property BOOL shouldShowPhoto;
 @property BOOL showAlias;
 
++ (id)cachedPhotoOfSize:(int)arg1 forPlayer:(id)arg2;
++ (id)imageSourceForPhotoSize:(int)arg1;
++ (void)loadPhotoOfSize:(int)arg1 forPlayer:(id)arg2 completionHandler:(id)arg3;
 + (id)playerContentView;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gkPopoverPresentationRect;
 - (void)dealloc;
-- (id)imageSourceForPhotoSize:(int)arg1;
 - (id)initWithNumberOfLines:(unsigned int)arg1;
 - (id)lastPlayedGameStringForDate:(id)arg1 withGame:(id)arg2;
 - (void)layoutSubviews;
 - (int)photoSize;
 - (id)player;
 - (void)prepareForReuse;
-- (void)refreshExpensiveContent;
 - (void)setPhotoSize:(int)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setShouldShowPhoto:(BOOL)arg1;
@@ -34,6 +36,5 @@
 - (BOOL)shouldShowPhoto;
 - (BOOL)showAlias;
 - (void)updateLines;
-- (void)updatePhotoFromCache;
 
 @end

@@ -2,22 +2,30 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPixelPoint;
-
 @interface GEOLocationShiftRequest : PBRequest {
-    GEOPixelPoint *_pixel;
+    struct { 
+        double _x; 
+        double _y; 
+        int _z; 
+        struct { 
+            unsigned int z : 1; 
+        } _has; 
+    } _pixel;
 }
 
-@property(retain) GEOPixelPoint * pixel;
+@property struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; } pixel;
 
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)pixel;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })pixel;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setPixel:(id)arg1;
+- (void)setPixel:(struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; })arg1;
 - (void)writeTo:(id)arg1;
 
 @end

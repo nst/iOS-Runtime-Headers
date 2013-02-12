@@ -7,7 +7,7 @@
 @interface SUStorePageProtocol : NSObject <NSCopying> {
     NSArray *_allowedOrientations;
     NSString *_copyright;
-    NSString *_expectedClientIdentifier;
+    NSArray *_expectedClientIdentifiers;
     NSNumber *_focusedItemIdentifier;
     NSArray *_navigationButtons;
     NSArray *_navigationHistoryItems;
@@ -21,7 +21,7 @@
 
 @property(retain) NSArray * allowedOrientations;
 @property(retain) NSString * copyright;
-@property(retain) NSString * expectedClientIdentifier;
+@property(copy) NSArray * expectedClientIdentifiers;
 @property(retain) NSNumber * focusedItemIdentifier;
 @property(copy) NSArray * navigationButtons;
 @property(retain) NSArray * navigationHistoryItems;
@@ -40,7 +40,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyright;
 - (void)dealloc;
-- (id)expectedClientIdentifier;
+- (id)expectedClientIdentifiers;
 - (id)focusedItemIdentifier;
 - (id)init;
 - (id)navigationButtonForLocation:(id)arg1;
@@ -53,7 +53,7 @@
 - (id)rootSectionIdentifier;
 - (void)setAllowedOrientations:(id)arg1;
 - (void)setCopyright:(id)arg1;
-- (void)setExpectedClientIdentifier:(id)arg1;
+- (void)setExpectedClientIdentifiers:(id)arg1;
 - (void)setFocusedItemIdentifier:(id)arg1;
 - (void)setNavigationButtons:(id)arg1;
 - (void)setNavigationHistoryItems:(id)arg1;

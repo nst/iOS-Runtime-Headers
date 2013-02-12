@@ -37,7 +37,6 @@
 - (BOOL)_canChangeOrientation;
 - (BOOL)_canDisplayDisclosureInCallout;
 - (BOOL)_canDisplayPlacemarkInCallout;
-- (BOOL)_canDisplayStreetViewInCallout;
 - (id)_contentLayer;
 - (void)_enableRotationForHeadingMode:(float)arg1;
 - (BOOL)_hasAlternateOrientation;
@@ -49,7 +48,6 @@
 - (void)_setCalloutView:(id)arg1;
 - (void)_setCanDisplayDisclosureInCallout:(BOOL)arg1;
 - (void)_setCanDisplayPlacemarkInCallout:(BOOL)arg1;
-- (void)_setCanDisplayStreetViewInCallout:(BOOL)arg1;
 - (void)_setMapType:(unsigned int)arg1;
 - (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
 - (void)_setZIndex:(unsigned int)arg1 notify:(BOOL)arg2;

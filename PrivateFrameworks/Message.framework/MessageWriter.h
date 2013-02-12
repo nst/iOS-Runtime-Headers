@@ -5,46 +5,37 @@
 @class NSDictionary;
 
 @interface MessageWriter : NSObject {
-    unsigned int _createsRichText : 1;
     unsigned int _allows8BitMimeParts : 1;
     unsigned int _allowsBinaryMimeParts : 1;
-    unsigned int _allowsAppleDoubleAttachments : 1;
     unsigned int _writeSizeDispositionParameter : 1;
     unsigned int _allowsQuotedPrintable : 1;
     NSDictionary *_compositionSpecification;
     id _delegate;
-    unsigned int _encodingHint;
     Class _messageClassToInstantiate;
-    unsigned int _preferredEncoding;
 }
 
 @property(readonly) NSDictionary * compositionSpecification;
+@property id delegate;
 
 - (BOOL)allows8BitMimeParts;
-- (BOOL)allowsAppleDoubleAttachments;
 - (BOOL)allowsBinaryMimeParts;
 - (BOOL)allowsQuotedPrintable;
 - (void)appendDataForMimePart:(id)arg1 toData:(id)arg2 withPartData:(id)arg3;
 - (id)compositionSpecification;
 - (id)createMessageWithHtmlString:(id)arg1 attachments:(id)arg2 headers:(id)arg3;
+- (id)createMessageWithHtmlString:(id)arg1 plainTextAlternative:(id)arg2 otherHtmlStringsAndAttachments:(id)arg3 charsets:(id)arg4 headers:(id)arg5;
 - (id)createMessageWithHtmlString:(id)arg1 plainTextAlternative:(id)arg2 otherHtmlStringsAndAttachments:(id)arg3 headers:(id)arg4;
 - (id)createMessageWithPlainTextDocumentsAndAttachments:(id)arg1 headers:(id)arg2;
 - (id)createMessageWithString:(id)arg1 headers:(id)arg2;
-- (BOOL)createsRichText;
 - (void)dealloc;
-- (unsigned long)encodingHint;
+- (id)delegate;
 - (id)init;
 - (id)initWithCompositionSpecification:(id)arg1;
-- (unsigned long)preferredEncoding;
 - (void)setAllows8BitMimeParts:(BOOL)arg1;
-- (void)setAllowsAppleDoubleAttachments:(BOOL)arg1;
 - (void)setAllowsBinaryMimeParts:(BOOL)arg1;
 - (void)setAllowsQuotedPrintable:(BOOL)arg1;
-- (void)setCreatesRichText:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEncodingHint:(unsigned long)arg1;
 - (void)setMessageClassToInstantiate:(Class)arg1;
-- (void)setPreferredEncoding:(unsigned long)arg1;
 - (void)setWriteSizeDispositionParameter:(BOOL)arg1;
 
 @end

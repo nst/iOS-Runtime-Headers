@@ -24,9 +24,10 @@
 @property(retain) CoreDAVLeafItem * xmppServer;
 @property(retain) CoreDAVLeafItem * xmppURI;
 
++ (id)copyParseRules;
+
 - (id)apsBundleID;
 - (id)apsEnv;
-- (id)copyParseRules;
 - (id)courierServer;
 - (void)dealloc;
 - (id)description;

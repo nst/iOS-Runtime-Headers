@@ -11,14 +11,10 @@
 @property(readonly) NSString * service;
 @property(readonly) NSString * username;
 
-- (id)displayUsername:(id)arg1;
-- (id)editingUsername:(id)arg1;
 - (id)placeholder;
-- (void)reloadDisplayText;
 - (void)reloadFromModelIncludingRows:(BOOL)arg1;
 - (id)service;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
 - (id)username;
 

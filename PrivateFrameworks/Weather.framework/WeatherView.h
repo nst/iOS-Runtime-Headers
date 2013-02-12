@@ -19,13 +19,13 @@
 @property id delegate;
 
 - (id)_bigIcon;
-- (void)_removeWindView;
 - (id)_secondaryBigIcon;
 - (id)bigImageBundle;
 - (id)bundle;
 - (id)city;
 - (void)cityDidFinishWeatherUpdate:(id)arg1;
 - (void)cityDidStartWeatherUpdate:(id)arg1;
+- (void)cleanupWindView;
 - (void)dealloc;
 - (id)delegate;
 - (void)refreshLocalization;
@@ -34,7 +34,7 @@
 - (void)setupBigIconOffset:(int)arg1;
 - (void)setupSecondaryBigIconOffset:(int)arg1;
 - (void)showCity:(id)arg1;
-- (void)updateWeatherDisplayForCity:(id)arg1;
+- (BOOL)updateWeatherDisplayForCity:(id)arg1;
 - (void)updateWind;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })windFrame;
 

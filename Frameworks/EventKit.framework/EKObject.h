@@ -39,7 +39,6 @@
 - (BOOL)existsInStore;
 - (unsigned long)flags;
 - (BOOL)hasChanges;
-- (unsigned int)hash;
 - (id)initWithPersistentObject:(id)arg1;
 - (void)insertPersistentObjectIfNeeded;
 - (int)intPropertyForKey:(id)arg1 withPersistentFallback:(id)arg2;

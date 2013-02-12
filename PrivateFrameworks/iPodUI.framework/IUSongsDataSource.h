@@ -5,11 +5,6 @@
 @class NSString;
 
 @interface IUSongsDataSource : IUMediaQueriesDataSource {
-    int _interfaceOrientation;
-    BOOL _showAlbum;
-    BOOL _showAlbumConfigured;
-    BOOL _showDuration;
-    BOOL _showDurationConfigured;
     unsigned int _syncAssetTotal;
     int _syncAssetTotalToken;
     BOOL _syncAssetTotalTokenIsValid;
@@ -19,11 +14,6 @@
     NSString *_syncProgressString;
 }
 
-@property int interfaceOrientation;
-@property BOOL showAlbum;
-@property BOOL showDuration;
-
-+ (Class)cellConfigurationClassForAlbumSongs;
 + (int)mediaEntityType;
 + (id)queryItemPropertiesToFetch;
 + (id)tabBarItemIconName;
@@ -33,20 +23,16 @@
 - (void)_updateSyncProgressString;
 - (BOOL)allowsDeletion;
 - (BOOL)allowsDownloadingAllEntities;
+- (BOOL)canShowDownloadAllEntities;
 - (Class)cellConfigurationClass;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (id)countStringFormat;
 - (void)createGlobalContexts;
 - (void)dealloc;
 - (id)init;
-- (int)interfaceOrientation;
 - (SEL)libraryHasDisplayableEntitiesSelector;
+- (void)reloadActionRows;
 - (unsigned int)requiredEntityCountForSections;
-- (void)setInterfaceOrientation:(int)arg1;
-- (void)setShowAlbum:(BOOL)arg1;
-- (void)setShowDuration:(BOOL)arg1;
-- (BOOL)showAlbum;
-- (BOOL)showDuration;
 - (Class)songCellConfigurationGlobalContextClass;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 

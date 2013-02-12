@@ -5,6 +5,7 @@
 @interface PLDisconnectedManagedObjectContext : PLManagedObjectContext {
 }
 
++ (BOOL)canMergeRemoteChanges;
 + (BOOL)useModelMigratorToCreateDatabase;
 
 - (void)connectToChangeHub;

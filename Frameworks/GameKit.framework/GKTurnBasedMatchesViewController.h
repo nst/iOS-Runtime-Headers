@@ -2,72 +2,87 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKTurnBasedMatchmakerViewControllerDelegate>, GKMatchRequest, GKTurnBasedMatchesDataSource, GKTurnBasedMatchmakerViewController;
+@class GKMatchRequest, GKTurnBasedInviteViewController, GKTurnBasedMatchesDataSource, GKTurnBasedMatchmakerViewController, NSObject<GKTurnBasedMatchmakerViewControllerDelegate>;
 
-@interface GKTurnBasedMatchesViewController : GKTableViewControllerV2 <GKTurnBasedInviteViewControllerDelegate> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    <GKTurnBasedMatchmakerViewControllerDelegate> *_delegate;
-    } _formSheetInsets;
+@interface GKTurnBasedMatchesViewController : GKTableViewControllerV2 <GKTurnBasedInviteViewControllerDelegate, GKTurnBasedMatchDetailViewControllerDelegate> {
+    BOOL _authenticateViewControllerVisible;
+    NSObject<GKTurnBasedMatchmakerViewControllerDelegate> *_delegateWeak;
+    GKTurnBasedInviteViewController *_inviteController;
     GKMatchRequest *_matchRequest;
     GKTurnBasedMatchesDataSource *_matchesDataSource;
     GKTurnBasedMatchmakerViewController *_matchmakerViewController;
     int _maxMatchesSeen;
     BOOL _showExistingMatches;
     BOOL _showingExistingMatches;
+    BOOL _suppressUpdateContents;
 }
 
-@property <GKTurnBasedMatchmakerViewControllerDelegate> * delegate;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } formSheetInsets;
+@property BOOL authenticateViewControllerVisible;
+@property NSObject<GKTurnBasedMatchmakerViewControllerDelegate> * delegate;
+@property(retain) GKTurnBasedInviteViewController * inviteController;
 @property(retain) GKMatchRequest * matchRequest;
 @property(retain) GKTurnBasedMatchesDataSource * matchesDataSource;
 @property GKTurnBasedMatchmakerViewController * matchmakerViewController;
 @property int maxMatchesSeen;
 @property BOOL showExistingMatches;
 @property BOOL showingExistingMatches;
+@property BOOL suppressUpdateContents;
 
 - (void)_gkResetContents;
+- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)addPressed;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (BOOL)authenticateViewControllerVisible;
 - (void)authenticatedStatusChanged:(id)arg1;
 - (void)cancelButtonPressed;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)didSelectMatch:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })formSheetInsets;
+- (void)finishWithMatchID:(id)arg1;
 - (id)initWithMatchRequest:(id)arg1;
+- (id)inviteController;
 - (void)loadView;
 - (id)matchRequest;
 - (id)matchesDataSource;
 - (id)matchmakerViewController;
 - (int)maxMatchesSeen;
+- (void)navigationPopToSelfAndSuppressUpdateContents;
 - (void)prepareDataSource;
+- (id)prepareHeaderView;
 - (void)receivedTurnBasedNotification:(id)arg1;
+- (void)setAuthenticateViewControllerVisible:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFormSheetInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setInviteController:(id)arg1;
 - (void)setMatchRequest:(id)arg1;
 - (void)setMatchesDataSource:(id)arg1;
 - (void)setMatchmakerViewController:(id)arg1;
 - (void)setMaxMatchesSeen:(int)arg1;
 - (void)setShowExistingMatches:(BOOL)arg1;
 - (void)setShowingExistingMatches:(BOOL)arg1;
+- (void)setSuppressUpdateContents:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)showDetailControllerForMatch:(id)arg1 style:(int)arg2;
 - (BOOL)showExistingMatches;
-- (void)showInvitationAlertForMatch:(id)arg1;
 - (void)showInviteControllerAnimated:(BOOL)arg1;
 - (BOOL)showingExistingMatches;
-- (void)tableView:(id)arg1 didDeleteMatch:(id)arg2 withIndexPath:(id)arg3 fromSection:(id)arg4;
+- (unsigned int)supportedInterfaceOrientations;
+- (BOOL)suppressUpdateContents;
+- (void)tableView:(id)arg1 didDeleteMatch:(id)arg2;
 - (id)title;
-- (void)turnBasedInviteViewController:(id)arg1 didCreateSession:(id)arg2;
+- (void)turnBasedInviteViewController:(id)arg1 didCreateMatchID:(id)arg2;
 - (void)turnBasedInviteViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)turnBasedInviteViewControllerWasCancelled:(id)arg1;
+- (void)turnBasedMatchDetailViewControllerDidAcceptInvitation:(id)arg1;
+- (void)turnBasedMatchDetailViewControllerDidChooseMatch:(id)arg1;
+- (void)turnBasedMatchDetailViewControllerDidDeclineInvitation:(id)arg1;
+- (void)turnBasedMatchDetailViewControllerDidQuitMatch:(id)arg1;
+- (void)turnBasedMatchDetailViewControllerDidRemoveMatch:(id)arg1;
+- (void)updateHeaderView;
+- (void)updateHeaderViewForTableView:(id)arg1 isLandscape:(BOOL)arg2;
+- (BOOL)usesCrossfade;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidUnload;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -11,7 +11,7 @@
 - (id)autoSeriesFill:(int)arg1;
 - (id)autoStroke;
 - (id)autoStrokeForSeriesIndex:(int)arg1;
-- (id)fillWithColorIndex:(int)arg1;
+- (id)fillWithColorIndex:(unsigned int)arg1;
 - (void)resolveAxisGraphicProperties:(id)arg1;
 - (void)resolveChartAreaGraphicProperties:(id)arg1;
 - (void)resolveFloorGraphicProperties:(id)arg1;

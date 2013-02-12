@@ -20,7 +20,9 @@
 @property(readonly) GEOTileKeyList * keyList;
 @property(retain) NSThread * thread;
 
-+ (id)hostname;
++ (struct { unsigned int x1; double x2; }*)expiringTilesets;
++ (unsigned int)expiringTilesetsCount;
++ (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (unsigned char)tileProviderIdentifier;
 
 - (id)bundleIdentifier;

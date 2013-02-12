@@ -11,7 +11,7 @@
 
 - (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
 - (void)dealloc;
-- (void)hideTopMostMiniAlert:(int)arg1;
+- (void)hideTopMostMiniAlert;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
 - (void)localNotificationDidSnooze:(id)arg1;
@@ -20,7 +20,7 @@
 - (void)remoteNotificationRegistrationFailedWithErrorDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
 - (void)remoteNotificationRegistrationSucceededWithDeviceToken:(id)arg1;
 - (void)sheetWithRemoteViewIdentifierDidDismiss:(id)arg1;
-- (void)showTopMostMiniAlert;
+- (void)showTopMostMiniAlertWithSynchronizationPort:(unsigned int)arg1;
 - (void)simpleRemoteActionDidOccur:(int)arg1;
 - (void)statusBarWillChangeOrientation:(int)arg1 duration:(float)arg2;
 - (void)updatePort;

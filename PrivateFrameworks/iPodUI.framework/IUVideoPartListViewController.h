@@ -56,6 +56,7 @@
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (Class)tableViewCellClass;
 - (unsigned int)trackToPlayInDataSource:(id)arg1;
+- (void)updateFooterView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

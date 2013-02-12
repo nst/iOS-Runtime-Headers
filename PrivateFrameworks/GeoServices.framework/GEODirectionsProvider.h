@@ -17,7 +17,6 @@
 @property(copy) id finishedHandler;
 @property BOOL isLoading;
 
-+ (id)providerHostname;
 + (unsigned short)providerID;
 
 - (void)cancelProviderRequest;

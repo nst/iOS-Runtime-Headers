@@ -2,47 +2,44 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKPlayer, NSData, NSDictionary, NSString;
+@class GKInviteInternal, GKPlayer, NSData, NSString;
 
 @interface GKInvite : NSObject {
     BOOL _cancelled;
-    BOOL _hosted;
-    NSDictionary *_inviteDictionary;
-    NSString *_inviteID;
-    NSString *_inviter;
+    GKInviteInternal *_internal;
     GKPlayer *_invitingPlayer;
-    NSString *_message;
-    NSData *_sessionToken;
 }
 
 @property(getter=isCancelled) BOOL cancelled;
-@property(getter=isHosted) BOOL hosted;
-@property(retain) NSDictionary * inviteDictionary;
-@property(retain) NSString * inviteID;
-@property(retain) NSString * inviter;
-@property(retain) GKPlayer * invitingPlayer;
-@property(retain) NSString * message;
-@property(retain) NSData * sessionToken;
+@property(getter=isHosted,readonly) BOOL hosted;
+@property(retain) GKInviteInternal * internal;
+@property(readonly) NSString * inviteID;
+@property(readonly) NSString * inviter;
+@property(readonly) GKPlayer * invitingPlayer;
+@property(readonly) BOOL isNearby;
+@property(readonly) NSString * message;
+@property(readonly) unsigned int playerAttributes;
+@property(readonly) unsigned int playerGroup;
+@property(readonly) NSData * sessionToken;
 
-+ (id)inviteWithDictionary:(id)arg1;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 
 - (void)dealloc;
 - (id)description;
-- (id)inviteDictionary;
-- (id)inviteID;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (unsigned int)hash;
+- (id)init;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (id)internal;
 - (id)inviter;
 - (id)invitingPlayer;
 - (BOOL)isCancelled;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isHosted;
-- (id)message;
-- (id)sessionToken;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setCancelled:(BOOL)arg1;
-- (void)setHosted:(BOOL)arg1;
-- (void)setInviteDictionary:(id)arg1;
-- (void)setInviteID:(id)arg1;
-- (void)setInviter:(id)arg1;
-- (void)setInvitingPlayer:(id)arg1;
-- (void)setMessage:(id)arg1;
-- (void)setSessionToken:(id)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

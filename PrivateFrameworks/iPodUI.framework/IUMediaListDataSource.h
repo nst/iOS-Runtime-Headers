@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class IUActionRowDataSource, IUMediaListAggregateViewConfiguration, IUSectionInfo, IUVariableCellConfigurationCache, NSString, UIColor;
 
 @interface IUMediaListDataSource : IUMediaDataSource {
@@ -12,20 +16,20 @@
     Class _cellConfigurationClass;
     IUVariableCellConfigurationCache *_configurationCache;
     IUActionRowDataSource *_prefixActionRows;
+    id _reloadActionRowsCompletion;
     IUSectionInfo *_sectionInfo;
     IUActionRowDataSource *_suffixActionRows;
 }
 
 @property(readonly) struct CGPoint { float x1; float x2; } actualImageOrigin;
 @property(readonly) BOOL allowsDeletion;
-@property(readonly) BOOL allowsDownloadingAllEntities;
 @property(readonly) BOOL allowsRearrange;
+@property(readonly) BOOL canShowDownloadAllEntities;
 @property Class cellConfigurationClass;
 @property(readonly) unsigned int count;
 @property(readonly) unsigned int countOfActionRows;
 @property(readonly) NSString * countStringFormat;
 @property(getter=isEmpty,readonly) BOOL empty;
-@property(getter=isEmptyAfterFiltering,readonly) BOOL emptyAfterFiltering;
 @property(readonly) UIColor * gridAlbumFillColor;
 @property(readonly) UIColor * gridBackgroundColor;
 @property(readonly) BOOL gridDimTouchedAlbum;
@@ -41,10 +45,12 @@
 @property(readonly) BOOL gridUseUnmodifiedThumbnails;
 @property(readonly) BOOL hasActionRowsEvenWhenNoOtherRowsExist;
 @property(readonly) BOOL hasPlayableItems;
+@property(readonly) BOOL hideActionRowsOnAppear;
 @property(readonly) int initialSelectedIndex;
 @property(readonly) int initialVisibleIndex;
 @property(readonly) unsigned int numberOfSections;
 @property(readonly) IUActionRowDataSource * prefixActionRows;
+@property(copy) id reloadActionRowsCompletion;
 @property(readonly) float rowHeight;
 @property(retain) IUSectionInfo * sectionInfo;
 @property(readonly) float sectionTitleLeftPadding;
@@ -58,13 +64,13 @@
 - (struct CGPoint { float x1; float x2; })actualImageOrigin;
 - (id)aggregateTableHeaderViewConfiguration;
 - (BOOL)allowsDeletion;
-- (BOOL)allowsDownloadingAllEntities;
 - (BOOL)allowsRearrange;
 - (void)cacheActionStateForActionWithContext:(id)arg1;
 - (BOOL)canDeleteIndex:(unsigned int)arg1;
 - (BOOL)canMoveIndex:(unsigned int)arg1;
+- (BOOL)canShowDownloadAllEntities;
 - (Class)cellConfigurationClass;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 - (void)clearCachedActionState;
 - (id)contextForContext:(id)arg1 redirectType:(int)arg2;
 - (unsigned int)count;
@@ -94,6 +100,7 @@
 - (BOOL)gridUseUnmodifiedThumbnails;
 - (BOOL)hasActionRowsEvenWhenNoOtherRowsExist;
 - (BOOL)hasPlayableItems;
+- (BOOL)hideActionRowsOnAppear;
 - (BOOL)indexIsActionRow:(unsigned int)arg1;
 - (unsigned int)indexOfActionRowWithTag:(int)arg1;
 - (unsigned int)indexOfSectionAtIndex:(unsigned int)arg1;
@@ -102,13 +109,14 @@
 - (int)initialVisibleIndex;
 - (void)invalidate;
 - (BOOL)isEmpty;
-- (BOOL)isEmptyAfterFiltering;
 - (int)mediaDisclosureStyleForIndex:(unsigned int)arg1;
+- (int)mediaEditingDisclosureStyleForIndex:(unsigned int)arg1;
 - (BOOL)moveIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)newGridImageView;
 - (unsigned int)numberOfSections;
 - (id)prefixActionRows;
 - (void)reloadActionRows;
+- (id)reloadActionRowsCompletion;
 - (void)reloadData;
 - (void)reloadDataWithCompletionHandler:(id)arg1;
 - (void)reloadIsEmpty;
@@ -121,6 +129,7 @@
 - (id)selectionConfirmationAlertForIndex:(unsigned int)arg1;
 - (BOOL)selectionPossibleForIndex:(unsigned int)arg1;
 - (void)setCellConfigurationClass:(Class)arg1;
+- (void)setReloadActionRowsCompletion:(id)arg1;
 - (void)setSectionInfo:(id)arg1;
 - (BOOL)shouldDisplayWhenEmpty;
 - (BOOL)shouldDrawAsDisabledForIndex:(unsigned int)arg1;

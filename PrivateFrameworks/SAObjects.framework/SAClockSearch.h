@@ -7,7 +7,7 @@
 @interface SAClockSearch : SABaseClientBoundCommand {
 }
 
-@property(retain) NSNumber * alCityId;
+@property(copy) NSNumber * alCityId;
 @property(copy) NSString * countryCode;
 @property(copy) NSURL * identifier;
 @property(copy) NSURL * targetAppId;

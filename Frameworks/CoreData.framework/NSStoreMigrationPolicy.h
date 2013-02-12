@@ -12,7 +12,6 @@
     NSURL *_destinationURL;
     NSMappingModel *_mappingModel;
     NSMigrationManager *_migrationManager;
-    void *_reserved1;
     void *_reserved2;
     void *_reserved3;
     void *_reserved4;
@@ -22,6 +21,7 @@
     NSManagedObjectModel *_sourceModel;
     NSDictionary *_sourceOptions;
     NSURL *_sourceURL;
+    long _workingWithSkewedSource;
 }
 
 + (int)migrationDebugLevel;

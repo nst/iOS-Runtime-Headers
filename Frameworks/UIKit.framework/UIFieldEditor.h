@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMDocument, DOMHTMLElement, NSString, UIView<UITextSelectingContainer>;
+@class DOMDocument, DOMHTMLElement, NSString, UIView<UITextInput>;
 
 @interface UIFieldEditor : UIWebDocumentView <UIAutoscrollContainer> {
     unsigned int _baseWritingDirectionIsRTL : 1;
@@ -12,13 +12,10 @@
     unsigned int _delegateRespondsToShouldInsertText : 1;
     unsigned int _delegateRespondsToShouldReplaceWithText : 1;
     unsigned int _fieldEditorReentrancyGuard : 1;
-    unsigned int _isResigningFirstResponder : 1;
-    unsigned int _mouseWasDragged : 1;
-    unsigned int _reserved : 21;
+    unsigned int _clearOnDelete : 1;
     NSString *_currentStyle;
     DOMDocument *_document;
-    NSString *_initialText;
-    UIView<UITextSelectingContainer> *_proxiedView;
+    UIView<UITextInput> *_proxiedView;
     DOMHTMLElement *_sizeElement;
     DOMHTMLElement *_textElement;
 }
@@ -26,19 +23,23 @@
 @property struct CGPoint { float x1; float x2; } autoscrollContentOffset;
 
 + (id)activeFieldEditor;
++ (id)excludedElementsForHTML;
 + (void)releaseSharedInstance;
 + (id)sharedFieldEditor;
 
 - (void)_deleteBackwardAndNotify:(BOOL)arg1;
 - (id)_responderForBecomeFirstResponder;
 - (void)_selectNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_setTextElementAttributedText:(id)arg1;
 - (void)_setTextElementString:(id)arg1;
 - (void)_setTextElementStyle:(id)arg1;
 - (id)_textSelectingContainer;
+- (id)attributedText;
 - (id)automaticallySelectedOverlay;
 - (struct CGPoint { float x1; float x2; })autoscrollContentOffset;
 - (void)autoscrollWillNotStart;
 - (void)becomeFieldEditorForView:(id)arg1;
+- (void)beginSelectionChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForVisiblePosition:(id)arg1;
 - (unsigned int)characterOffsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -46,10 +47,13 @@
 - (struct CGSize { float x1; float x2; })contentSize;
 - (id)customOverlayContainer;
 - (void)dealloc;
+- (void)deleteBackward;
+- (void)disableClearsOnInsertion;
 - (BOOL)hasMarkedText;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)interactionAssistant;
 - (BOOL)isEditing;
+- (BOOL)isInsideRichlyEditableTextWidget;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (BOOL)keyboardInput:(id)arg1 shouldReplaceTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (BOOL)keyboardInputChanged:(id)arg1;
@@ -70,10 +74,11 @@
 - (int)scrollYOffset;
 - (void)selectAll;
 - (void)selectionChanged;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionClipRect;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
 - (id)selectionView;
+- (void)setAttributedText:(id)arg1 andSetCaretSelectionAfterText:(BOOL)arg2;
 - (void)setAutoscrollContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (void)setBaseWritingDirection:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNotificationsDisabled:(BOOL)arg1;

@@ -21,7 +21,11 @@
 @property unsigned int cachePolicy;
 @property(copy) NSString * clientIdentifier;
 @property long long expectedContentLength;
+@property unsigned int networkServiceType;
 @property(copy) NSDictionary * requestParameters;
+@property BOOL requiresExtendedValidationCertificates;
+@property BOOL shouldDecodeResponse;
+@property BOOL shouldDisableCellularFallback;
 @property BOOL shouldProcessProtocol;
 @property double timeoutInterval;
 @property(copy) NSArray * userAgentComponents;
@@ -36,7 +40,12 @@
 - (void)setHTTPHeaders:(id)arg1;
 - (void)setHTTPMethod:(id)arg1;
 - (void)setITunesStoreRequest:(BOOL)arg1;
+- (void)setMultiPartFormDataWithDictionary:(id)arg1;
+- (void)setNetworkServiceType:(unsigned int)arg1;
 - (void)setRequestParameters:(id)arg1;
+- (void)setRequiresExtendedValidationCertificates:(BOOL)arg1;
+- (void)setShouldDecodeResponse:(BOOL)arg1;
+- (void)setShouldDisableCellularFallback:(BOOL)arg1;
 - (void)setShouldProcessProtocol:(BOOL)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)setURL:(id)arg1;

@@ -13,6 +13,7 @@
         unsigned int drawingDisabled : 1; 
     } _flags;
     NSMutableArray *_proxiedViews;
+    int _subviewsImplementingCanDraw;
     } _viewsLock;
 }
 

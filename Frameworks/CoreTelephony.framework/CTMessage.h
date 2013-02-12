@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@class CTPhoneNumber, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<CTMessageAddress><NSCopying>, NSString;
+@class CTPhoneNumber, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<CTMessageAddress><NSCopying>, NSString, NSUUID;
 
 @interface CTMessage : NSObject {
     NSString *_contentType;
@@ -18,6 +18,7 @@
     NSObject<CTMessageAddress><NSCopying> *_sender;
     CTPhoneNumber *_serviceCenter;
     NSString *_subject;
+    NSUUID *_uuid;
 }
 
 @property(copy) NSString * contentType;
@@ -32,6 +33,7 @@
 @property(copy) NSObject<CTMessageAddress><NSCopying> * sender;
 @property(copy) CTPhoneNumber * serviceCenter;
 @property(copy) NSString * subject;
+@property(retain) NSUUID * uniqueIdentifier;
 
 - (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
 - (id)addData:(id)arg1 withContentType:(id)arg2;
@@ -71,6 +73,8 @@
 - (void)setSender:(id)arg1;
 - (void)setServiceCenter:(id)arg1;
 - (void)setSubject:(id)arg1;
+- (void)setUniqueIdentifier:(id)arg1;
 - (id)subject;
+- (id)uniqueIdentifier;
 
 @end

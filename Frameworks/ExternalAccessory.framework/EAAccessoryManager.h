@@ -2,10 +2,21 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class NSArray, NSMutableArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface EAAccessoryManager : NSObject {
+@class EABluetoothAccessoryPicker, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSTimer;
+
+@interface EAAccessoryManager : NSObject <EABluetoothAccessoryPickerDelegate> {
     NSMutableArray *_connectedAccessories;
+    NSObject<OS_dispatch_queue> *_connectionQueue;
+    EABluetoothAccessoryPicker *_picker;
+    id _pickerCompletion;
+    NSTimer *_pickerTimer;
+    NSString *_selectedBluetoothAddress;
+    BOOL _sequesterNewAccessories;
+    NSMutableArray *_sequesteredAccessories;
 }
 
 @property(readonly) NSArray * connectedAccessories;
@@ -26,12 +37,15 @@
 - (void)_externalAccessoryReconnected:(id)arg1;
 - (void)_externalAccessoryUpdated:(id)arg1;
 - (void)_gpsTimeRequested:(id)arg1;
+- (void)_handleAccessoryNotificationTimeout:(id)arg1;
 - (void)_iapServerDied:(id)arg1;
 - (id)_initFromSingletonCreationMethod;
+- (void)_integrateSequesteredAccessories;
 - (void)_locationNmeaDataAvailable:(id)arg1;
 - (void)_locationPointDataAvailable:(id)arg1;
 - (void)_nmeaFilteringSupportChanged:(id)arg1;
 - (void)_notifyObserversThatAccessoryDisconnectedWithUserInfo:(id)arg1;
+- (void)_removeAllAccessoriesFromArray:(id)arg1 notifyClients:(BOOL)arg2;
 - (void)accessibilityAction:(id)arg1;
 - (void)accessibilityContextChange:(id)arg1;
 - (void)accessibilityItemPropertyRequest:(id)arg1;
@@ -41,15 +55,19 @@
 - (BOOL)areLocationAccessoriesEnabled;
 - (id)connectedAccessories;
 - (void)dealloc;
+- (void)devicePicker:(id)arg1 didSelectAddress:(id)arg2 errorCode:(int)arg3;
 - (void)endSession:(unsigned int)arg1 forConnectionID:(unsigned int)arg2;
 - (id)init;
 - (void)openCompleteForSession:(unsigned int)arg1 connectionID:(unsigned int)arg2;
+- (void)pointOfInterestSelection:(id)arg1;
 - (void)registerForLocalNotifications;
 - (void)setAreLocationAccessoriesEnabled:(BOOL)arg1;
 - (void)setShouldAllowCppRuntime:(BOOL)arg1;
 - (void)setShouldAllowInternalProtocols:(BOOL)arg1;
 - (BOOL)shouldAllowCppRuntime;
 - (BOOL)shouldAllowInternalProtocols;
+- (void)showBluetoothAccessoryPickerWithNameFilter:(id)arg1 completion:(id)arg2;
 - (void)unregisterForLocalNotifications;
+- (void)wakeAccessoryWithToken:(id)arg1;
 
 @end

@@ -14,9 +14,10 @@
 @property(readonly) NSString * protocolVersion;
 @property(readonly) NSDictionary * responseDictionary;
 
-- (void)_parseResponse:(id)arg1;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (void)_parsePlistResponse:(id)arg1;
 - (id)error;
+- (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(BOOL)arg3;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)protocolVersion;
 - (id)responseDictionary;

@@ -11,8 +11,8 @@
 @property(readonly) NSString * name;
 @property(readonly) NSString * uniqueID;
 
-- (id)_FTAudioDevice;
-- (id)_initWithFTAudioDevice:(id)arg1;
+- (id)_AVAudioDevice;
+- (id)_initWithAVAudioDevice:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;

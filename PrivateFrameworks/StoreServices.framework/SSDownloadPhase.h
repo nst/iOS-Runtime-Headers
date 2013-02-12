@@ -4,7 +4,7 @@
 
 @class SSOperationProgress;
 
-@interface SSDownloadPhase : NSObject <SSCoding, NSCopying> {
+@interface SSDownloadPhase : NSObject <SSXPCCoding, NSCopying> {
     SSOperationProgress *_operationProgress;
 }
 
@@ -16,15 +16,13 @@
 @property(readonly) long long progressValue;
 @property(readonly) long long totalProgressValue;
 
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (double)estimatedSecondsRemaining;
 - (id)init;
 - (id)initWithOperationProgress:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)operationProgress;
 - (int)phaseType;
 - (float)progressChangeRate;

@@ -7,13 +7,14 @@
 
 @property(getter=isCurrentUser) BOOL currentUser;
 
-+ (id)organizerWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3 isCurrentUser:(BOOL)arg4;
++ (id)defaultPropertiesToLoad;
++ (id)organizerWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
 + (id)relations;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)entityType;
-- (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3 isCurrentUser:(BOOL)arg4;
+- (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
 - (BOOL)isCurrentUser;
 - (id)owner;
 - (void)setCurrentUser:(BOOL)arg1;

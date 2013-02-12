@@ -12,20 +12,46 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     id _block;
-    struct OpaqueFigPlaybackItem { } *_figPlaybackItem;
-    } _interval;
+    } _currentHostTime;
+    } _currentTime;
+    } _intervalRequested;
+    } _lastFireTime;
+    } _lastIntervalUsed;
+    } _lastStopTime;
+    unsigned int _sequenceNum;
 }
 
-- (void)_resetTimerForPlayerNewRate:(float)arg1;
-- (void)_startObservingPlaybackItemNotificationsForCurrentItem;
-- (void)_stopObservingPlaybackItemNotifications;
-- (void)_stopRespondingToPlayerStateChanges;
+- (void)_cacheTimebaseTimeAndHostTime;
+- (void)_effectiveRateChanged;
+- (void)_handleTimeDiscontinuity;
+- (void)_resetNextFireTime;
 - (void)dealloc;
-- (void)finalize;
-- (id)initWithPlayer:(id)arg1 interval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
-- (void)invalidate;
-- (void)itemTimeJumped;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)initWithPlayer:(id)arg1 interval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(id)arg3 block:(id)arg4;
 
 @end

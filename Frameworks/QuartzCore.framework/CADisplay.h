@@ -15,7 +15,7 @@
 
 @property BOOL allowsVirtualModes;
 @property(readonly) NSArray * availableModes;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property(getter=isCloned,readonly) BOOL cloned;
 @property(getter=isCloningSupported,readonly) BOOL cloningSupported;
 @property(copy) NSString * colorMode;
@@ -29,6 +29,7 @@
 @property(getter=isOverscanned,readonly) BOOL overscanned;
 @property(readonly) CADisplayMode * preferredMode;
 @property(readonly) double refreshRate;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } safeBounds;
 @property(getter=isSupported,readonly) BOOL supported;
 @property(readonly) int tag;
 @property(readonly) NSString * uniqueId;
@@ -58,6 +59,7 @@
 - (float)overscanAmount;
 - (id)preferredMode;
 - (double)refreshRate;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })safeBounds;
 - (void)setAllowsVirtualModes:(BOOL)arg1;
 - (void)setColorMode:(id)arg1;
 - (void)setCurrentMode:(id)arg1;

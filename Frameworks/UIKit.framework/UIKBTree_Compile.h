@@ -19,6 +19,7 @@
 + (int)typeForString:(id)arg1;
 + (id)uniqueNameWithType:(int)arg1;
 
+- (BOOL)_needsScaling;
 - (id)attributeSet:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)geometrySet:(BOOL)arg1;

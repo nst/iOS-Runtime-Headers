@@ -16,8 +16,9 @@
 - (id)init;
 - (void)layoutSubviews;
 - (id)newVolumeSlider;
+- (void)registerForPlayerNotifications;
 - (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
-- (void)setVisibleParts:(unsigned int)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)unregisterForPlayerNotifications;
 
 @end

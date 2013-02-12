@@ -7,8 +7,6 @@
 @interface MPMediaItem : MPMediaEntity {
 }
 
-@property(readonly) BOOL _hasDownloadProgress;
-@property(readonly) BOOL _isDownloadable;
 @property(readonly) NSString * albumArtist;
 @property(readonly) NSString * albumTitle;
 @property(readonly) NSString * artist;
@@ -24,8 +22,10 @@
 @property BOOL hasBeenPlayed;
 @property(readonly) BOOL isITunesU;
 @property(readonly) BOOL isRental;
+@property(readonly) BOOL isUsableAsRepresentativeItem;
 @property(copy) NSDate * lastPlayedDate;
 @property(copy) NSDate * lastSkippedDate;
+@property(copy) NSDate * lastUsedDate;
 @property(readonly) NSURL * libraryLinkURL;
 @property(readonly) int mediaType;
 @property(readonly) BOOL mediaTypeCanSeedGenius;
@@ -44,22 +44,15 @@
 @property(readonly) unsigned int year;
 
 + (void)_createFilterableDictionary;
-+ (BOOL)_hasDownloadProgressForDownloadStatus:(int)arg1 downloadIdentifier:(id)arg2 isTemporaryCloudDownload:(BOOL)arg3 mediaItemPersistentID:(id)arg4;
-+ (BOOL)_isDownloadableForRedownloadParameters:(id)arg1 filePath:(id)arg2 downloadStatus:(int)arg3 isTemporaryCloudDownload:(BOOL)arg4;
 + (BOOL)_isValidItemProperty:(id)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
-+ (id)daapKeyForMediaProperty:(id)arg1;
-+ (id)daapValueFromMediaValue:(id)arg1 mediaProperty:(id)arg2;
 + (id)dynamicProperties;
-+ (id)mediaPropertyForDAAPKey:(id)arg1;
-+ (id)mediaValueFromDAAPValue:(id)arg1 mediaProperty:(id)arg2;
++ (id)fallbackTitlePropertyForGroupingType:(int)arg1;
 + (id)persistentIDPropertyForGroupingType:(int)arg1;
 + (id)titlePropertyForGroupingType:(int)arg1;
 
 - (id)_bestStoreURL;
 - (id)_directStoreURL;
-- (BOOL)_hasDownloadProgress;
-- (BOOL)_isDownloadable;
 - (id)_libraryLinkArtist;
 - (id)_libraryLinkArtist;
 - (id)_libraryLinkKind;
@@ -78,32 +71,45 @@
 - (id)chapterOfType:(int)arg1 atTime:(double)arg2;
 - (id)chapters;
 - (id)chaptersOfType:(int)arg1;
+- (void)clearBookmarkTime;
 - (id)composer;
 - (id)containerLibraryLinkURL;
 - (unsigned int)countOfChaptersOfType:(int)arg1;
+- (void)didReceiveMemoryWarning;
+- (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (id)directStoreURL;
 - (id)effectiveAlbumArtist;
 - (double)effectiveStopTime;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)existsInLibrary;
-- (void)gaplessHeuristicInfo:(unsigned int*)arg1 duration:(unsigned int*)arg2 lastPacketsResync:(unsigned int*)arg3 encodingDelay:(unsigned int*)arg4 encodingDrain:(unsigned int*)arg5;
+- (void)gaplessHeuristicInfo:(unsigned int*)arg1 durationInSamples:(unsigned long long*)arg2 lastPacketsResync:(unsigned long long*)arg3 encodingDelay:(unsigned int*)arg4 encodingDrain:(unsigned int*)arg5;
 - (id)genre;
 - (BOOL)hasBeenPlayed;
 - (unsigned int)hash;
+- (void)incrementPlayCountForPlayingToEnd;
+- (BOOL)incrementPlayCountForStopTime:(double)arg1;
+- (void)incrementSkipCount;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPersistentID:(unsigned long long)arg1;
+- (BOOL)isDownloadInProgress;
+- (BOOL)isDownloadable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isITunesU;
 - (BOOL)isRental;
+- (BOOL)isUsableAsRepresentativeItem;
 - (id)lastPlayedDate;
 - (id)lastSkippedDate;
+- (id)lastUsedDate;
 - (id)libraryLinkURL;
+- (void)markNominalAmountHasBeenPlayed;
 - (int)mediaType;
 - (BOOL)mediaTypeCanSeedGenius;
+- (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
 - (unsigned int)playCount;
 - (unsigned int)playCountSinceSync;
 - (double)playbackDuration;
 - (id)podcastTitle;
+- (void)populateLocationPropertiesWithPath:(id)arg1;
 - (id)predicateForProperty:(id)arg1;
 - (unsigned int)rating;
 - (id)releaseDate;
@@ -113,12 +119,12 @@
 - (void)setHasBeenPlayed:(BOOL)arg1;
 - (void)setLastPlayedDate:(id)arg1;
 - (void)setLastSkippedDate:(id)arg1;
+- (void)setLastUsedDate:(id)arg1;
 - (void)setPlayCount:(unsigned int)arg1;
 - (void)setPlayCountSinceSync:(unsigned int)arg1;
 - (void)setRating:(unsigned int)arg1;
 - (void)setSkipCount:(unsigned int)arg1;
 - (void)setSkipCountSinceSync:(unsigned int)arg1;
-- (BOOL)shouldPlayInOppositeApplication;
 - (unsigned int)skipCount;
 - (unsigned int)skipCountSinceSync;
 - (id)snapshotAtPlaybackTime:(double)arg1 startRentalClock:(BOOL)arg2 timeOut:(double)arg3;
@@ -128,7 +134,9 @@
 - (id)title;
 - (id)uncroppedAlbumImageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)uncroppedImageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)updateLastUsedDateToCurrentDate;
 - (id)valueForProperty:(id)arg1;
+- (id)valuesForProperties:(id)arg1;
 - (unsigned int)year;
 
 @end

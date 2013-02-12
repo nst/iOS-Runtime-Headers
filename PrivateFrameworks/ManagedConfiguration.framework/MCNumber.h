@@ -11,7 +11,7 @@
 + (id)numberWithInt:(int)arg1;
 + (id)numberWithUnsignedInt:(unsigned int)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)descriptionWithLocale:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

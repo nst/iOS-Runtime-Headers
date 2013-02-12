@@ -11,8 +11,8 @@
 @property int bitsPerPixel;
 @property(copy) NSString * exifCreationDateTime;
 @property(copy) NSString * exifModificationDateTime;
-@property(readonly) struct timespec { int tv_sec; long tv_nsec; } fsCreationTime;
-@property(readonly) struct timespec { int tv_sec; long tv_nsec; } fsModificationTime;
+@property(readonly) struct timespec { int x1; long x2; } fsCreationTime;
+@property(readonly) struct timespec { int x1; long x2; } fsModificationTime;
 @property(readonly) unsigned long long fsSN;
 @property(readonly) long long fsSize;
 @property int imgHeight;

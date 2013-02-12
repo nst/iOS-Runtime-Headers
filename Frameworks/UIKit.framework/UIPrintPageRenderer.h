@@ -25,7 +25,6 @@
         } size; 
     float _footerHeight;
     float _headerHeight;
-    int _pageCount;
     } _paperRect;
     struct CGContext { } *_printContext;
     NSMutableArray *_printFormatters;

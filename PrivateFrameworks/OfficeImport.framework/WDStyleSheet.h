@@ -40,7 +40,6 @@
 - (void)setName:(id)arg1 forId:(id)arg2;
 - (int)styleCount;
 - (id)styleIdForName:(id)arg1;
-- (id)styleIdFromStyleName:(id)arg1;
 - (id)styleNameToId:(id)arg1;
 - (id)styleWithId:(id)arg1;
 - (id)styleWithName:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSCalendar : NSObject <NSCopying, NSCoding> {
+@interface NSCalendar : NSObject <NSCopying, NSSecureCoding> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -10,6 +10,7 @@
 + (id)currentCalendar;
 + (id)gregorianCalendar;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (id)AMSymbol;
 - (id)PMSymbol;

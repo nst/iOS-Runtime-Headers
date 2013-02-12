@@ -15,6 +15,7 @@
         unsigned int willUseInput : 1; 
     <VSSpeechSynthesizerDelegate> *_delegate;
     int _footprint;
+    void *_inactiveKeepAlive;
     void *_keepAlive;
     float _pitch;
     float _rate;
@@ -49,6 +50,7 @@
 - (float)rate;
 - (void)setDelegate:(id)arg1;
 - (void)setFootprint:(int)arg1;
+- (void)setMaintainInactivePersistentConnection:(BOOL)arg1;
 - (void)setMaintainPersistentConnection:(BOOL)arg1;
 - (id)setPitch:(float)arg1;
 - (id)setRate:(float)arg1;

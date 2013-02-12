@@ -17,8 +17,8 @@
 
 - (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)addCssStyle:(id)arg1;
-- (id)createDictionaryWithSizeInfos:(BOOL)arg1;
-- (id)createResourceWithName:(id)arg1;
+- (id)copyDictionaryWithSizeInfos:(BOOL)arg1;
+- (id)copyResourceWithName:(id)arg1;
 - (id)cssStylesheetString;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 resourcePathPrefix:(id)arg2;

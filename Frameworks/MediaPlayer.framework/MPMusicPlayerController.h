@@ -4,9 +4,13 @@
 
 @class MPMusicPlayerControllerInternal;
 
-@interface MPMusicPlayerController : NSObject {
+@interface MPMusicPlayerController : NSObject <MPMediaPlayback> {
     MPMusicPlayerControllerInternal *_internal;
 }
+
+@property float currentPlaybackRate;
+@property double currentPlaybackTime;
+@property(readonly) BOOL isPreparedToPlay;
 
 + (id)applicationMusicPlayer;
 + (id)iPodMusicPlayer;
@@ -15,8 +19,10 @@
 + (void)setRunLoopForNotifications:(id)arg1;
 
 - (void)_clientCheckInUsingExistencePort:(BOOL)arg1;
+- (void)_isQueuePreparedDidChange:(BOOL)arg1;
 - (void)_itemPlaybackDidEnd:(unsigned long long)arg1;
 - (void)_musicPlayerDidLaunch;
+- (BOOL)_musicPlayerExistencePortIsValid;
 - (void)_nowPlayingItemDidChange:(unsigned long long)arg1;
 - (void)_playbackStateDidChange:(int)arg1;
 - (void)_registerForLaunchNotifications;
@@ -30,26 +36,36 @@
 - (void)_unregisterForLaunchNotifications;
 - (BOOL)allowsRemoteUIAccess;
 - (void)beginGeneratingPlaybackNotifications;
+- (void)beginSeekingBackward;
+- (void)beginSeekingForward;
 - (unsigned int)currentChapterIndex;
+- (float)currentPlaybackRate;
 - (double)currentPlaybackTime;
 - (void)dealloc;
 - (void)endGeneratingPlaybackNotifications;
+- (void)endSeeking;
 - (void)forwardInvocation:(id)arg1;
 - (unsigned int)indexOfNowPlayingItem;
 - (id)init;
 - (BOOL)isGeniusAvailable;
+- (BOOL)isGeniusAvailableForSeedItems:(id)arg1;
 - (BOOL)isNowPlayingItemFromGeniusMix;
+- (BOOL)isPreparedToPlay;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfItems;
+- (void)pause;
 - (void)pauseWithFadeoutDuration:(double)arg1;
+- (void)play;
 - (int)playbackSpeed;
 - (int)playbackState;
+- (void)prepareToPlay;
 - (int)repeatMode;
 - (BOOL)serverIsAlive;
 - (void)setAllowsRemoteUIAccess:(BOOL)arg1;
 - (void)setCurrentChapterIndex:(unsigned int)arg1;
+- (void)setCurrentPlaybackRate:(float)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
 - (void)setPlaybackSpeed:(int)arg1;
 - (void)setQueueWithGeniusMixPlaylist:(id)arg1;
@@ -62,6 +78,7 @@
 - (void)setUseCachedPlaybackState:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (int)shuffleMode;
+- (void)stop;
 - (unsigned int)unshuffledIndexOfNowPlayingItem;
 - (float)volume;
 

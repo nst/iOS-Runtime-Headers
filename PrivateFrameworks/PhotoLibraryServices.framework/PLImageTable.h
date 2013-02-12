@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMutableArray, NSMutableIndexSet, NSString;
+@class NSDictionary, NSMutableArray, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface PLImageTable : NSObject {
     struct CGSize { 
@@ -18,9 +18,9 @@
     int _imageLength;
     int _imageRowBytes;
     NSString *_path;
-    struct dispatch_queue_s { } *_preheatIndexIsolation;
+    NSObject<OS_dispatch_queue> *_preheatIndexIsolation;
     NSMutableIndexSet *_preheatIndexes;
-    struct dispatch_queue_s { } *_preheatQueue;
+    NSObject<OS_dispatch_queue> *_preheatQueue;
     BOOL _readOnly;
     int _segmentCount;
     unsigned long _segmentLength;
@@ -59,7 +59,6 @@
 - (void)_verifyThumbnailDataForIndex:(unsigned int)arg1 uuid:(id)arg2;
 - (void)_writeImage:(id)arg1 withDuration:(id)arg2 photoUUID:(id)arg3 toEntryAtIndex:(int)arg4 isPlaceholder:(BOOL)arg5;
 - (void)compactWithOccupiedIndexes:(id)arg1;
-- (struct __CFDictionary { }*)currentAssetUUIDsToIndexesMapping;
 - (id)dataForEntryAtIndex:(int)arg1;
 - (void)dealloc;
 - (void)deleteEntryAtIndex:(int)arg1 withUUID:(id)arg2;
@@ -77,6 +76,7 @@
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(BOOL)arg3;
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2;
 - (BOOL)isReadOnly;
+- (struct __CFDictionary { }*)newCurrentAssetUUIDsToIndexesMapping;
 - (id)path;
 - (id)photoUUIDToIndexMap;
 - (id)preflightCompactionWithOccupiedIndexes:(id)arg1;

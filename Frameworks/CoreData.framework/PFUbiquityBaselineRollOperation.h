@@ -13,6 +13,7 @@
 - (BOOL)haveConsistentStateForBaselineRoll;
 - (BOOL)isEqual:(id)arg1;
 - (void)main;
+- (id)retainedDelegate;
 - (BOOL)rollBaselineWithError:(id*)arg1;
 - (void)setDelegate:(id)arg1;
 

@@ -15,6 +15,7 @@
     BOOL _unicode;
 }
 
+- (BOOL)_advancePastLineFoldingSequenceIfNeeded;
 - (void)_applyNextStringInEncoding:(unsigned int)arg1 quotedPrintable:(BOOL)arg2 stopTokens:(int)arg3 trim:(BOOL)arg4 intoString:(id)arg5;
 - (BOOL)advancePastEOL;
 - (BOOL)advancePastEOLSingle;
@@ -27,6 +28,7 @@
 - (int)advanceToString;
 - (BOOL)advanceToToken:(int)arg1 throughTypes:(int)arg2;
 - (int)advanceToUnicodeString;
+- (BOOL)advancedPastToken:(int)arg1;
 - (BOOL)atEOF;
 - (unsigned int)cursor;
 - (void)dealloc;

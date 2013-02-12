@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString;
+
 @interface EXReader : OCXReader {
+    NSString *mTemporaryDirectory;
 }
 
-+ (id)readFromData:(id)arg1 cancel:(id)arg2 tracing:(id)arg3 asThumbnail:(BOOL)arg4 delegate:(id)arg5;
-+ (id)readFromData:(id)arg1 cancel:(id)arg2 tracing:(id)arg3 temporaryDirectory:(id)arg4;
-+ (id)readFromFileName:(id)arg1 cancel:(id)arg2 tracing:(id)arg3 asThumbnail:(BOOL)arg4 delegate:(id)arg5;
-+ (id)readFromFileName:(id)arg1 cancel:(id)arg2 tracing:(id)arg3 temporaryDirectory:(id)arg4;
-+ (id)readFromPackage:(id)arg1 fileName:(id)arg2 cancel:(id)arg3 tracing:(id)arg4 temporaryDirectory:(id)arg5;
+@property(retain) NSString * temporaryDirectory;
 
-- (id)edWorkbookFromPart:(id)arg1 package:(id)arg2 fileName:(id)arg3 cancel:(id)arg4 tracing:(id)arg5 temporaryDirectory:(id)arg6;
+- (void)dealloc;
+- (id)read;
+- (void)setTemporaryDirectory:(id)arg1;
+- (id)temporaryDirectory;
 
 @end

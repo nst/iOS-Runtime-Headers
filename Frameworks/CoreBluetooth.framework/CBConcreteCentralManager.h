@@ -2,38 +2,28 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class NSMutableDictionary;
+@class CBXpcConnection, NSMutableDictionary;
 
-@interface CBConcreteCentralManager : CBCentralManager {
+@interface CBConcreteCentralManager : CBCentralManager <CBXpcConnectionDelegate> {
+    CBXpcConnection *_connection;
+    BOOL _isScanning;
     NSMutableDictionary *_peripherals;
-    struct _xpc_connection_s { } *_xpcConnection;
 }
 
+- (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
 - (void)cancelPeripheralConnection:(id)arg1;
-- (void)checkIn:(BOOL)arg1;
-- (void)checkOut;
 - (void)connectPeripheral:(id)arg1 options:(id)arg2;
-- (void*)createXpcArrayWithNSArray:(id)arg1;
-- (void*)createXpcDictionaryWithNSDictionary:(id)arg1;
-- (void*)createXpcObjectWithNSObject:(id)arg1;
 - (void)dealloc;
 - (void)handleConnectedPeripheralsRetrieved:(id)arg1;
-- (void)handleConnectionEvent:(void*)arg1;
-- (void)handleConnectionMsg:(void*)arg1;
-- (void)handleConnectionReset;
 - (void)handlePeripheralConnectionCompleted:(id)arg1;
 - (void)handlePeripheralDisconnectionCompleted:(id)arg1;
 - (void)handlePeripheralDiscovered:(id)arg1;
 - (void)handlePeripheralEvent:(id)arg1 selector:(SEL)arg2;
 - (void)handlePeripheralsRetrieved:(id)arg1;
 - (void)handleStateUpdated:(id)arg1;
-- (id)initWithDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
-- (id)nsArrayWithXpcArray:(void*)arg1;
-- (id)nsDictionaryWithXpcDictionary:(void*)arg1;
-- (id)nsObjectWithXpcObject:(void*)arg1;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)orphanPeripherals;
 - (id)peripheralForHandle:(id)arg1 args:(id)arg2;
-- (oneway void)release;
 - (void)releasePeripheral:(id)arg1;
 - (void)retainPeripheral:(id)arg1;
 - (void)retrieveConnectedPeripherals;
@@ -41,5 +31,7 @@
 - (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
 - (void)stopScan;
+- (void)xpcConnection:(id)arg1 didReceiveMessage:(int)arg2 arguments:(id)arg3;
+- (void)xpcConnectionDidReset:(id)arg1;
 
 @end

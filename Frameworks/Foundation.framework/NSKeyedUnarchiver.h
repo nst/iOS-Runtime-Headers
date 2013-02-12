@@ -21,6 +21,10 @@
     id _tmpRefObjMap;
 }
 
++ (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;
++ (id)MSSafeUnarchiveObjectWithData:(id)arg1;
++ (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
++ (id)MSSafeUnarchiveObjectWithFile:(id)arg1;
 + (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
 + (Class)classForClassName:(id)arg1;
 + (void)initialize;
@@ -29,12 +33,14 @@
 + (id)unarchiveObjectWithData:(id)arg1;
 + (id)unarchiveObjectWithFile:(id)arg1;
 
+- (id)_allowedClassNames;
 - (id)_blobForCurrentObject;
 - (unsigned int)_currentUniqueIdentifier;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
 - (id)_decodePropertyListForKey:(id)arg1;
 - (id)_initWithStream:(struct __CFReadStream { }*)arg1 data:(id)arg2 topDict:(struct __CFDictionary { }*)arg3;
 - (void)_replaceObject:(id)arg1 withObject:(id)arg2;
+- (void)_setAllowedClassNames:(id)arg1;
 - (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
 - (id)allowedClasses;
 - (BOOL)allowsKeyedCoding;
@@ -53,6 +59,8 @@
 - (int)decodeIntForKey:(id)arg1;
 - (id)decodeObject;
 - (id)decodeObjectForKey:(id)arg1;
+- (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
+- (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (void)decodeValuesOfObjCTypes:(const char *)arg1;
 - (id)delegate;
@@ -63,9 +71,11 @@
 - (id)initForReadingWithData:(id)arg1;
 - (id)initWithStream:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
+- (BOOL)requiresSecureCoding;
 - (void)setAllowedClasses:(id)arg1;
 - (void)setClass:(Class)arg1 forClassName:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setRequiresSecureCoding:(BOOL)arg1;
 - (unsigned int)systemVersion;
 - (int)versionForClassName:(id)arg1;
 

@@ -6,8 +6,9 @@
 }
 
 - (BOOL)__chatIsDowngraded:(id)arg1;
-- (id)__existingChatForRecipients:(id)arg1;
-- (BOOL)__recipientsHaveUsedSMSBefore:(id)arg1;
+- (id)__existingChatForHandles:(id)arg1;
+- (unsigned int)_optionsForChat:(id)arg1;
 - (unsigned int)_optionsForRecipients:(id)arg1;
+- (id)preferredServiceForConversation:(id)arg1 newComposition:(BOOL)arg2 checkWithServer:(BOOL)arg3 error:(int*)arg4;
 
 @end

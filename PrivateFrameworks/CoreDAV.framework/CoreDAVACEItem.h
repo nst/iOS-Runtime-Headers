@@ -20,9 +20,9 @@
 @property(retain) CoreDAVPrincipalItem * principal;
 @property(retain) CoreDAVItemWithNoChildren * protectedItem;
 
++ (id)copyParseRules;
 + (id)privilegeItemWithNameSpace:(id)arg1 andName:(id)arg2;
 
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)deny;
 - (id)description;

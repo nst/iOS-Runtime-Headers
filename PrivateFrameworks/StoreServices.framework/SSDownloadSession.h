@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSDownload, SSDownloadAsset, SSXPCConnection;
+@class NSObject<OS_dispatch_queue>, SSDownload, SSDownloadAsset, SSXPCConnection;
 
 @interface SSDownloadSession : NSObject {
     SSXPCConnection *_controlConnection;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     long long _sessionID;
 }
 
 @property(readonly) SSDownload * download;
 @property(readonly) SSDownloadAsset * downloadAsset;
 
-- (void*)_copySessionPropertyWithKey:(const char *)arg1;
+- (id)_copySessionPropertyWithKey:(const char *)arg1;
 - (id)_initSSDownloadSession;
 - (id)_initWithSessionIdentifier:(long long)arg1 controlConnection:(id)arg2;
 - (void)dealloc;

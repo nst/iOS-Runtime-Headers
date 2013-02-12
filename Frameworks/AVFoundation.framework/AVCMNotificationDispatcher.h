@@ -7,13 +7,13 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class AVCallbackRegistry, NSMutableDictionary;
+@class AVCallbackRegistry, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVCMNotificationDispatcher : NSObject {
     AVCallbackRegistry *_callbackRegistry;
     struct opaqueCMNotificationCenter { } *_cmNotificationCenter;
     NSMutableDictionary *_listenerObjectsPassedToFig;
-    struct dispatch_queue_s { } *_listenerObjectsQueue;
+    NSObject<OS_dispatch_queue> *_listenerObjectsQueue;
 }
 
 @property(readonly) struct opaqueCMNotificationCenter { }* CMNotificationCenter;

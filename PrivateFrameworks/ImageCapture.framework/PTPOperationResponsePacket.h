@@ -4,9 +4,9 @@
 
 @interface PTPOperationResponsePacket : NSObject {
     int _numParameters;
-    unsigned int _parameters[5];
+    unsigned long _parameters[5];
     unsigned short _responseCode;
-    unsigned int _transactionID;
+    unsigned long _transactionID;
 }
 
 - (id)contentForTCP;

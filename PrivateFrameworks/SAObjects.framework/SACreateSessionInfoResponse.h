@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSData * sessionInfo;
-@property(retain) NSNumber * validityDuration;
+@property(copy) NSNumber * validityDuration;
 
 + (id)createSessionInfoResponse;
 + (id)createSessionInfoResponseWithDictionary:(id)arg1 context:(id)arg2;

@@ -7,8 +7,8 @@
         long __sig; 
         BOOL __opaque[40]; 
     unsigned int *_activePIDList;
-    unsigned int _activePIDListCount;
-    unsigned int _activePIDListSize;
+    unsigned long _activePIDListCount;
+    unsigned long _activePIDListSize;
     } _lock;
 }
 

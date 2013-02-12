@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSNumber, NSString, UIKeyboard, UIScrollView, UITableView, _MFComposeRecipientView;
+@class <EKEventAttendeePickerDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSNumber, NSString, UIKeyboard, UIScrollView, UITableView, _MFComposeRecipientView;
 
-@interface EKEventAttendeePicker : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, _MFComposeRecipientViewDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate> {
+@interface EKEventAttendeePicker : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, _MFComposeRecipientViewDelegate, _MFComposeRecipientViewStyleDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,6 +15,7 @@
             float height; 
         } size; 
     _MFComposeRecipientView *_composeRecipientView;
+    <EKEventAttendeePickerDelegate> *_emailValidationDelegate;
     } _initialFrame;
     UIKeyboard *_keyboard;
     NSNumber *_lastSearchId;
@@ -31,6 +32,7 @@
 }
 
 @property(readonly) NSArray * addresses;
+@property <EKEventAttendeePickerDelegate> * emailValidationDelegate;
 @property(copy) NSArray * recipients;
 @property(readonly) NSString * remainingText;
 @property(copy) NSString * searchAccountID;
@@ -48,6 +50,7 @@
 - (void)animationDidStop:(id)arg1;
 - (void)beganNetworkActivity;
 - (void)commitRemainingText;
+- (int)composeRecipientView:(id)arg1 atomStyleForRecipient:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
@@ -59,6 +62,7 @@
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
 - (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
 - (void)dealloc;
+- (id)emailValidationDelegate;
 - (void)endedNetworkActivity;
 - (void)finishedSearchingForType:(int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
@@ -67,11 +71,13 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (id)peoplePickerPrompt;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)recipients;
 - (id)remainingText;
 - (id)searchAccountID;
 - (void)searchWithText:(id)arg1;
+- (void)setEmailValidationDelegate:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSearchAccountID:(id)arg1;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
@@ -82,6 +88,7 @@
 - (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -10,7 +10,7 @@
     unsigned int _useCellDataOnly : 1;
     MFSMTPConnection *_connection;
     Class _deliveryClass;
-    int _lastTimerSetTime;
+    long _lastTimerSetTime;
     NSTimer *_timer;
 }
 

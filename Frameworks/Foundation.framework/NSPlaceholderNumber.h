@@ -5,6 +5,8 @@
 @interface NSPlaceholderNumber : NSPlaceholderValue {
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)init;
 - (id)initWithBool:(BOOL)arg1;
 - (id)initWithChar:(BOOL)arg1;

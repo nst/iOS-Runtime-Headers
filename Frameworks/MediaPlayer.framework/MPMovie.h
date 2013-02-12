@@ -2,10 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSURL;
+@class MPAVItem, NSURL;
 
 @interface MPMovie : NSObject {
-    id _internal;
+    struct CGSize { 
+        float width; 
+        float height; 
+    double _endPlaybackTime;
+    BOOL _explicitlySetMovieSourceType;
+    MPAVItem *_item;
+    double _lastKnownDuration;
+    } _lastKnownNaturalSize;
+    unsigned int _lastKnownType;
+    BOOL _movieIsUnplayable;
+    int _movieSourceType;
+    double _startPlaybackTime;
+    NSURL *_url;
 }
 
 @property(readonly) double duration;
@@ -17,12 +29,12 @@
 @property double startPlaybackTime;
 @property(readonly) NSURL * url;
 
-+ (id)movieWithURL:(id)arg1 error:(id*)arg2;
++ (id)movieWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 
 - (id)_MPArrayQueueItem;
 - (void)_determineMediaType;
 - (void)_durationAvailableNotification:(id)arg1;
-- (id)_initWithURL:(id)arg1 error:(id*)arg2;
+- (id)_initWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (void)_naturalSizeAvailableNotification:(id)arg1;
 - (void)_typeAvailableNotification:(id)arg1;
 - (void)dealloc;

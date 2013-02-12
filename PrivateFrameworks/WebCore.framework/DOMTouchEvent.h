@@ -8,14 +8,14 @@
 }
 
 @property(readonly) BOOL altKey;
-@property(retain,readonly) DOMTouchList * changedTouches;
+@property(readonly) DOMTouchList * changedTouches;
 @property(readonly) BOOL ctrlKey;
 @property(readonly) BOOL metaKey;
 @property(readonly) float rotation;
 @property(readonly) float scale;
 @property(readonly) BOOL shiftKey;
-@property(retain,readonly) DOMTouchList * targetTouches;
-@property(retain,readonly) DOMTouchList * touches;
+@property(readonly) DOMTouchList * targetTouches;
+@property(readonly) DOMTouchList * touches;
 
 - (BOOL)altKey;
 - (id)changedTouches;

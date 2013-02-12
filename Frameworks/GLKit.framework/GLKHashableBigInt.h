@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@interface GLKHashableBigInt : NSObject {
+@interface GLKHashableBigInt : NSObject <NSCopying> {
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 

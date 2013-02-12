@@ -10,6 +10,8 @@
 
 @property(retain) MessageFileWrapper * fileWrapper;
 
++ (unsigned int)precedenceLevel;
+
 - (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
 - (BOOL)_isSinglePagePDFThatIsAllowedToBeInline;
 - (unsigned int)approximateSize;
@@ -30,19 +32,24 @@
 - (BOOL)isContentOpenable;
 - (BOOL)isDisplayableInline;
 - (BOOL)isDisplayableInsidePlugin;
+- (BOOL)isPass;
 - (BOOL)isPlaceholder;
-- (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(int)arg1;
-- (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(int)arg3;
+- (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(unsigned int)arg1;
+- (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(unsigned int)arg3;
 - (id)mf_markupURL;
 - (id)mimePart;
 - (id)mimeType;
-- (void)scaleImageToFit:(int)arg1;
+- (BOOL)needsRedownload;
+- (id)pass;
+- (id)persistentUniqueIdentifier;
+- (void)scaleImageToFit:(unsigned int)arg1;
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;
 - (void)setFileWrapper:(id)arg1;
 - (void)setImageScalingFlags:(unsigned int)arg1;
 - (void)setMimePart:(id)arg1;
 - (BOOL)shouldDownloadAttachmentOnDisplay;
 - (id)textEncodingGuess;
+- (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
 - (id)unzippedContentType;
 
 @end

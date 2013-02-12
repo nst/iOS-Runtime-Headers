@@ -42,9 +42,7 @@
 - (id)ignoredWords;
 - (id)init;
 - (void)initGlobals;
-- (void)initUserAddressBook;
 - (void)initUserDictionaries;
-- (void)initUserPersonalEntries;
 - (BOOL)isWordInUserDictionaries:(id)arg1 caseSensitive:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfMisspelledWordInString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 startingAt:(int)arg3 wrap:(BOOL)arg4 language:(id)arg5;
 - (void)setIgnoredWords:(id)arg1;

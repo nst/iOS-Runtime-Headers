@@ -8,7 +8,7 @@
 
 + (id)borderWithBorder:(id)arg1 precedence:(int)arg2 resources:(id)arg3;
 
-- (id)iniWithBorder:(id)arg1 precedence:(int)arg2 resources:(id)arg3;
+- (id)initWithBorder:(id)arg1 precedence:(int)arg2 resources:(id)arg3;
 - (BOOL)isEqualToBorder:(id)arg1;
 - (int)precedence;
 

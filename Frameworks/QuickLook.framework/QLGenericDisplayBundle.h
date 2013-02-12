@@ -20,7 +20,6 @@
 - (id)error;
 - (void)loadView;
 - (void)loadWithHints:(id)arg1;
-- (void)prepareForSlidingIn:(id)arg1;
 - (void)setError:(id)arg1;
 
 @end

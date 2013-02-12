@@ -32,6 +32,7 @@
 - (void)addEntriesFromDictionary:(id)arg1;
 - (id)allKeys;
 - (id)allValues;
+- (Class)classForArchiver;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
@@ -44,7 +45,7 @@
 - (BOOL)isEqualToDictionary:(id)arg1;
 - (id)keyEnumerator;
 - (const id*)knownKeyValuesPointer;
-- (const id)mapping;
+- (id)mapping;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;

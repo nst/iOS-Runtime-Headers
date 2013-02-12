@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSMutableArray, NSTimer;
+@class NSMutableArray;
 
 @interface IMAVHandler : NSObject {
-    NSTimer *_wiFiQueueTimer;
-    NSMutableArray *_wifiActivationQueue;
+    NSMutableArray *_pendingChats;
+    NSMutableArray *_pendingLookups;
 }
 
 + (void)ensureHandlerSetup;
 + (void)initialize;
 
-- (void)_checkWiFiQueue:(id)arg1;
-- (void)_clearWiFiActivationQueue;
-- (void)_enqueueIMAVChatForWiFiActivation:(id)arg1;
+- (void)_enqueueIMAVChatForNetworkActivation:(id)arg1;
 - (void)_handleIncomingAVChatForNotification:(id)arg1;
 - (void)_notifyInvitationFor:(id)arg1;
 - (void)_notifyMissedInvitationFor:(id)arg1;
 - (void)_notifyOfIncomingInvitationFor:(id)arg1 notifyInvitationListeners:(BOOL)arg2;
-- (void)_setWiFiActivationTimer;
 - (void)account:(id)arg1 conference:(id)arg2 cancelRequestInvitationWithBuddy:(id)arg3;
 - (void)account:(id)arg1 conference:(id)arg2 changedToNewConferenceID:(id)arg3;
+- (void)account:(id)arg1 conference:(id)arg2 invitationSentSuccessfully:(BOOL)arg3;
 - (void)account:(id)arg1 conference:(id)arg2 notifyMissedInvitationWithBuddy:(id)arg3;
 - (void)account:(id)arg1 conference:(id)arg2 peerID:(id)arg3 propertiesUpdated:(id)arg4;
 - (void)account:(id)arg1 conference:(id)arg2 peerIDChangedFromID:(id)arg3 toID:(id)arg4;
@@ -37,14 +35,11 @@
 - (void)account:(id)arg1 relay:(id)arg2 handleCancel:(id)arg3 fromPerson:(id)arg4;
 - (void)account:(id)arg1 relay:(id)arg2 handleInitate:(id)arg3 fromPerson:(id)arg4;
 - (void)account:(id)arg1 relay:(id)arg2 handleUpdate:(id)arg3 fromPerson:(id)arg4;
-- (void)audioReflectorRequested:(BOOL)arg1 transactionID:(unsigned int)arg2;
-- (void)currentAVChatInfoRequestedWithTransactionID:(unsigned int)arg1;
 - (void)dealloc;
 - (void)pendingVCRequestComplete;
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (void)property:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (void)setupComplete;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;
-- (void)videoStillForPersonRequested:(id)arg1 withTransactionID:(unsigned int)arg2;
 
 @end

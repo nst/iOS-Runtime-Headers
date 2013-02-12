@@ -4,7 +4,7 @@
 
 @class NSArray, NSString, PFUbiquityLocation;
 
-@interface PFUbiquityLocation : NSObject {
+@interface PFUbiquityLocation : NSObject <NSCopying> {
     NSString *_exportingPeerID;
     NSString *_filename;
     unsigned int _hash;
@@ -41,6 +41,7 @@
 + (id)createMetadataRootLocationForUbiquityRootLocation:(id)arg1;
 + (id)createMetadataStoreLocationForLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
 + (id)createMetadataUUIDLocationForLocalPeerID:(id)arg1 storeName:(id)arg2 UUID:(id)arg3 andUbiquityRootLocation:(id)arg4;
++ (id)createPeerBaselineFileLocationForLocalPeerID:(id)arg1 andBaselineFileLocation:(id)arg2;
 + (id)createPeerRootLocationForPeerID:(id)arg1 withUbiquityRootLocation:(id)arg2;
 + (id)createPeerStoreLocationForPeerID:(id)arg1 andStoreName:(id)arg2 withUbiquityRootLocation:(id)arg3;
 + (id)createPeerStoreVersionLocationForPeerID:(id)arg1 storeName:(id)arg2 andModelVersionHash:(id)arg3 withUbiquityRootLocation:(id)arg4;
@@ -61,9 +62,13 @@
 + (id)createUbiquityLocationForURL:(id)arg1 withUbiquityRootPath:(id)arg2;
 + (id)createUbiquityLocationForURL:(id)arg1 withUbiquityRootURL:(id)arg2;
 + (id)createUbiquityPeerReceiptFileLocationForPeerWithID:(id)arg1 storeName:(id)arg2 andModelVersionHash:(id)arg3 withUbiquityRootLocation:(id)arg4;
++ (id)createUbiquityPeerReceiptSafeSaveLocationFromReceiptFileLocation:(id)arg1;
 + (id)createVersionHashStringForModel:(id)arg1;
++ (void)initialize;
 + (BOOL)isUbiquityLocationPath:(id)arg1 equalToPath:(id)arg2;
++ (id)locationSentinel;
 + (id)pathByTruncatingBeforeLibraryMobileDocuments:(id)arg1;
++ (void)setLocationSentinel:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createFullPath;
@@ -72,6 +77,7 @@
 - (id)description;
 - (id)exportingPeerID;
 - (BOOL)fileExistsAtLocation;
+- (BOOL)fileExistsAtLocationWithLocalPeerID:(id)arg1;
 - (id)filename;
 - (unsigned int)hash;
 - (id)init;

@@ -8,15 +8,19 @@
     int _action;
     int _animation;
     UITableViewUpdateGap *_gap;
+    BOOL _headerFooterOnly;
     NSIndexPath *_indexPath;
     float _offset;
+    BOOL _skipAnimation;
 }
 
 @property(readonly) int action;
 @property int animation;
 @property UITableViewUpdateGap * gap;
+@property BOOL headerFooterOnly;
 @property(readonly) NSIndexPath * indexPath;
 @property float offset;
+@property BOOL skipAnimation;
 
 - (id)_actionDescription;
 - (int)action;
@@ -24,6 +28,7 @@
 - (int)compareIndexPaths:(id)arg1;
 - (void)dealloc;
 - (id)gap;
+- (BOOL)headerFooterOnly;
 - (id)indexPath;
 - (id)initWithAction:(int)arg1 forIndexPath:(id)arg2 animation:(int)arg3;
 - (int)inverseCompareIndexPaths:(id)arg1;
@@ -31,6 +36,9 @@
 - (float)offset;
 - (void)setAnimation:(int)arg1;
 - (void)setGap:(id)arg1;
+- (void)setHeaderFooterOnly:(BOOL)arg1;
 - (void)setOffset:(float)arg1;
+- (void)setSkipAnimation:(BOOL)arg1;
+- (BOOL)skipAnimation;
 
 @end

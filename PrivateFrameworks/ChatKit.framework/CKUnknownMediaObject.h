@@ -7,13 +7,4 @@
 
 + (BOOL)supportsMIMEType:(id)arg1;
 
-- (id)_effectiveFilename;
-- (id)_icon;
-- (float)balloonHeightWithPreviewData:(id)arg1;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
-- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
-- (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
-- (BOOL)shouldTranscodeForMMS;
-
 @end

@@ -22,6 +22,7 @@
 @property(readonly) <NSObject><NSCopying> * value;
 
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
++ (id)metadataItemsFromArray:(id)arg1 filteredAndSortedAccordingToPreferredLanguages:(id)arg2;
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
 + (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
 + (id)metadataItemsFromArray:(id)arg1 withStringValue:(id)arg2;

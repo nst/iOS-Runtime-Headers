@@ -13,8 +13,10 @@
 @property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property unsigned int sectionIndex;
 
-- (void)dealloc;
 - (id)description;
+- (unsigned int)hash;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 sectionIndex:(unsigned int)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (unsigned int)sectionIndex;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

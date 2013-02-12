@@ -2,30 +2,38 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObjectID, NSDate, NSTimeZone;
+@class EKObjectID, NSDate, NSString, NSTimeZone;
 
 @interface EKAlarmOccurrence : NSObject {
+    NSDate *_acknowledgedDate;
     EKObjectID *_alarmID;
+    NSString *_externalID;
     NSDate *_fireDate;
     NSDate *_ownerDate;
     EKObjectID *_ownerID;
     NSTimeZone *_ownerTimeZone;
 }
 
+@property(readonly) NSDate * acknowledgedDate;
 @property(readonly) EKObjectID * alarmID;
+@property(readonly) NSString * externalID;
 @property(readonly) NSDate * fireDate;
 @property(readonly) NSDate * ownerDate;
 @property(readonly) EKObjectID * ownerID;
 @property(readonly) NSTimeZone * ownerTimeZone;
 
-+ (id)alarmOccurrenceWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 fireDate:(id)arg5;
++ (id)alarmOccurrenceWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 fireDate:(id)arg5 externalID:(id)arg6 acknowledgedDate:(id)arg7;
 
+- (id)acknowledgedDate;
 - (id)alarmID;
 - (void)dealloc;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
+- (id)externalID;
 - (id)fireDate;
-- (id)initWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 fireDate:(id)arg5;
+- (id)initWithAlarmID:(id)arg1 ownerID:(id)arg2 ownerDate:(id)arg3 ownerTimeZone:(id)arg4 fireDate:(id)arg5 externalID:(id)arg6 acknowledgedDate:(id)arg7;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)ownerDate;
 - (id)ownerID;
 - (id)ownerTimeZone;

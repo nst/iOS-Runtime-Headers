@@ -12,6 +12,10 @@
 + (id)mapTableWithStrongToWeakObjects;
 + (id)mapTableWithWeakToStrongObjects;
 + (id)mapTableWithWeakToWeakObjects;
++ (id)strongToStrongObjectsMapTable;
++ (id)strongToWeakObjectsMapTable;
++ (id)weakToStrongObjectsMapTable;
++ (id)weakToWeakObjectsMapTable;
 
 - (id)allKeys;
 - (id)allValues;

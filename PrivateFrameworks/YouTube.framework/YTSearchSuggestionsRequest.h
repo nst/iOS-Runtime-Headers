@@ -2,24 +2,20 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSMutableURLRequest, NSString;
+@class NSMutableArray, NSString;
 
-@interface YTSearchSuggestionsRequest : XMLSAXHTTPRequest {
-    NSMutableURLRequest *_deferredRequest;
+@interface YTSearchSuggestionsRequest : YTXMLHTTPRequest {
     id _delegate;
     NSString *_query;
     NSMutableArray *_suggestions;
 }
 
-- (void)_didAuthenticate:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (id)_suggestionsURLForQuery:(id)arg1;
 - (void)clearDelegate;
 - (void)dealloc;
+- (void)didAuthenticate:(id)arg1;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (void)loadRequest:(id)arg1;
 - (int)parseData:(id)arg1;
 - (void)requestSuggestionsWithDelegate:(id)arg1 query:(id)arg2;
 

@@ -6,12 +6,12 @@
 
 @interface MessageHeaders : NSObject <NSCopying> {
     NSData *_data;
-    unsigned int _preferredEncoding;
+    unsigned long _preferredEncoding;
 }
 
-+ (id)addressListFromEncodedString:(id)arg1 encoding:(unsigned long)arg2;
 + (id)addressListFromEncodedString:(id)arg1;
 + (id)basicHeaders;
++ (id)copyAddressListFromEncodedData:(id)arg1 encoding:(unsigned long)arg2;
 + (id)encodedDataForAddressList:(id)arg1 splittingAtLength:(unsigned int)arg2 firstLineBuffer:(unsigned int)arg3;
 + (BOOL)isStructuredHeaderKey:(id)arg1;
 + (BOOL)shouldDecodeHeaderForKey:(id)arg1;
@@ -20,7 +20,6 @@
 - (id)_capitalizedKeyForKey:(id)arg1;
 - (unsigned long)_contentTypeEncoding;
 - (id)_copyAddressListForKey:(id)arg1;
-- (id)_copyEncodedHeaderStringForKey:(id)arg1;
 - (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned int*)arg2 decoded:(BOOL)arg3;
 - (id)_copyHeaderValueForKey:(id)arg1;
 - (id)_decodeHeaderKeysFromData:(id)arg1;
@@ -37,11 +36,6 @@
 - (id)copyAddressListForSender;
 - (id)copyAddressListForTo;
 - (id)copyDecodedStringFromHeaderData:(id)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)copyEncodedStringForBcc;
-- (id)copyEncodedStringForCc;
-- (id)copyEncodedStringForResentFrom;
-- (id)copyEncodedStringForSender;
-- (id)copyEncodedStringForTo;
 - (id)copyFirstHeaderForKey:(id)arg1;
 - (id)copyFirstNonDecodedHeaderForKey:(id)arg1;
 - (id)copyFirstStringValueForKey:(id)arg1;
@@ -57,7 +51,6 @@
 - (id)headersForKey:(id)arg1;
 - (id)init;
 - (id)initWithHeaderData:(id)arg1 encoding:(unsigned long)arg2;
-- (id)isoLatin1CharsetHint;
 - (BOOL)messageIsFromEntourage;
 - (id)mutableCopy;
 - (unsigned long)preferredEncoding;

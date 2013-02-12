@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MCMediaControlClientRemote;
+@class MCMediaControlClientRemote, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface MCMediaControlReply : NSObject {
     MCMediaControlClientRemote *_client;
     id _completionBlock;
-    struct dispatch_queue_s { } *_completionQueue;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_completionQueue;
+    NSObject<OS_dispatch_queue> *_queue;
     BOOL _replySent;
-    struct dispatch_source_s { } *_source;
+    NSObject<OS_dispatch_source> *_source;
 }
 
 @property(readonly) unsigned int receivePort;
@@ -23,7 +23,7 @@
 - (void)_sendReplyWithErrorCode:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithClient:(id)arg1 completionQueue:(struct dispatch_queue_s { }*)arg2 completionBlock:(id)arg3;
+- (id)initWithClient:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (unsigned int)receivePort;
 
 @end

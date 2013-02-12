@@ -7,13 +7,17 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSDictionary : NSObject <NSCopying, NSMutableCopying, NSCoding, NSFastEnumeration> {
+@interface NSDictionary : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration> {
 }
 
 @property(readonly) unsigned short fileHFSFlags;
 @property(readonly) unsigned long long fileHFSResourceForkSize;
 
 + (id)_dictionaryWithData:(id)arg1 isPlist:(BOOL)arg2 allowedClasses:(id)arg3;
++ (id)_geo_dictionaryFromXPCObject:(id)arg1;
++ (id)_gkDictionaryWithFormEncodedString:(id)arg1;
++ (id)_gkDictionaryWithServerData:(id)arg1 error:(out id*)arg2;
++ (id)_gkDictionaryWithXMLPlistData:(id)arg1;
 + (id)_gkMetadataForBundlePath:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)dictionary;
@@ -27,8 +31,13 @@
 + (id)dictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (id)dictionaryWithObjects:(id)arg1 forKeys:(id)arg2;
 + (id)dictionaryWithObjectsAndKeys:(id)arg1;
++ (id)dictionaryWithParametersInURLString:(id)arg1;
 + (id)dictionaryWithPlistData:(id)arg1;
++ (id)newDictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
++ (id)sharedKeySetForKeys:(id)arg1;
++ (BOOL)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (struct KeyValueArray { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
 - (id)CDVObjectForKeyCaseInsensitive:(id)arg1;
@@ -44,28 +53,63 @@
 - (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
 - (id)ML3StringForKey:(id)arg1;
 - (BOOL)MR_isEqualToDictionary:(id)arg1;
+- (id)MSASAlbumResetSyncAlbumGUID;
+- (id)MSASEventIsDueToAlbumDeletionAlbumGUID;
+- (id)MSASEventIsDueToAssetCollectionDeletionAssetCollectionGUID;
+- (BOOL)MSASIsErrorRecovery;
+- (BOOL)MSASIsGlobalResetSync;
+- (BOOL)MSASIsLocalChange;
+- (BOOL)MSASIsNotInteresting;
 - (id)MSDeepCopy;
 - (id)MSDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MSMutableDeepCopy;
 - (id)MSMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)WLArrayContaining:(Class)arg1 forKey:(id)arg2;
+- (id)WLArrayForKey:(id)arg1;
+- (BOOL)WLBoolForKey:(id)arg1;
+- (id)WLColorForKey:(id)arg1;
+- (id)WLDateForKey:(id)arg1;
+- (id)WLDictionaryForKey:(id)arg1;
+- (double)WLDoubleForKey:(id)arg1;
+- (int)WLIntegerForKey:(id)arg1;
+- (id)WLNumberForKey:(id)arg1;
+- (id)WLStringForKey:(id)arg1;
+- (id)WLURLForKey:(id)arg1;
 - (id)_FTFilteredDictionaryForAPS;
 - (void)__apply:(int (*)())arg1 context:(void*)arg2;
+- (id)__ftreg_candidateAliases;
+- (BOOL)__ftreg_isValidSetupDictionary;
+- (id)__ftreg_responseAppleID;
+- (id)__ftreg_responseAuthToken;
+- (BOOL)__ftreg_responseIsUpgrade;
+- (id)__ftreg_responseProfileID;
 - (BOOL)__getValue:(id*)arg1 forKey:(id)arg2;
+- (id)__imDeepCopy;
+- (BOOL)__imIsMutable;
 - (id)_arrayForKey:(id)arg1;
 - (BOOL)_boolForKey:(id)arg1;
 - (unsigned long)_cfTypeID;
 - (id)_dataForKey:(id)arg1;
 - (id)_dictionaryForKey:(id)arg1;
+- (id)_geo_newXPCObject;
 - (id)_gkAdamID;
+- (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
+- (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
 - (id)_gkExternalVersion;
+- (id)_gkImageUrlForSize:(int)arg1 foundSize:(out unsigned int*)arg2;
 - (id)_gkImageUrlForSize:(int)arg1;
+- (id)_gkImageUrlWithFallbacksForSize:(int)arg1;
 - (BOOL)_gkIsGameCenterEnabled;
 - (BOOL)_gkIsGameCenterEverEnabled;
 - (id)_gkItemName;
+- (id)_gkPlistXMLData;
 - (id)_gkPurchaseDate;
+- (id)_gkSubDictionaryWithKeys:(id)arg1;
+- (id)_iAd_dictionaryWithTruncatedDataDescriptions;
+- (id)_iAd_stringValueForKey:(id)arg1;
 - (BOOL)_mapkit_writeBinaryPlist:(id)arg1 atomically:(BOOL)arg2;
 - (id)_numberForKey:(id)arg1;
-- (void)_safari_setObject:(id)arg1 forUncopiedKey:(id)arg2;
+- (id)_sa_mappedDictionaryWithBlock:(id)arg1;
 - (id)_stringForKey:(id)arg1;
 - (id)_stringToWrite;
 - (id)_sync_address;
@@ -96,7 +140,7 @@
 - (void)appendJsonStringToString:(id)arg1;
 - (id)archiveData;
 - (id)asQueryParameterString;
-- (id)asQueryParameterString;
+- (BOOL)boolValueForKey:(id)arg1;
 - (Class)classForCoder;
 - (BOOL)containsKey:(id)arg1;
 - (BOOL)containsObject:(id)arg1;
@@ -105,14 +149,7 @@
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (unsigned int)countForKey:(id)arg1;
 - (unsigned int)countForObject:(id)arg1;
-- (BOOL)decodeBoolForKey:(id)arg1;
-- (double)decodeDoubleForKey:(id)arg1;
-- (long long)decodeInt64ForKey:(id)arg1;
-- (int)decodeIntegerForKey:(id)arg1;
-- (long long)decodeLongLongForKey:(id)arg1;
-- (id)decodeObjectForKey:(id)arg1;
-- (unsigned long long)decodeUInt64ForKey:(id)arg1;
-- (unsigned int)decodeUnsignedIntegerForKey:(id)arg1;
+- (id)deepCopy;
 - (id)description;
 - (id)descriptionInStringsFileFormat;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
@@ -146,6 +183,7 @@
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (void)getObjects:(id*)arg1;
+- (id)gksDeepMutableCopy;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -171,6 +209,7 @@
 - (id)keysSortedByValueWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
 - (BOOL)matchesUID:(id)arg1;
 - (BOOL)mf_boolForKey:(id)arg1;
+- (id)mf_filterUsingMap:(id)arg1;
 - (int)mf_integerForKey:(id)arg1;
 - (id)mutableCopyWithElementsCopy;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -178,9 +217,12 @@
 - (id)objectEnumerator;
 - (id)objectForInt:(int)arg1;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKeyedSubscript:(id)arg1;
+- (id)objectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
 - (float)offset;
 - (id)plistData;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)safeObjectForKey:(id)arg1 ofClass:(Class)arg2;
 - (id)scriptEntry;
 - (id)scriptPath;

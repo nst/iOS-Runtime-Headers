@@ -10,15 +10,21 @@
         float height; 
     unsigned int _hasBeenDownloaded : 1;
     } _cachedImageSize;
+    BOOL _displayableAsIcon;
     NSData *_iconImageData;
     MimeTextAttachment *_original;
 }
+
+@property BOOL displayableAsIcon;
+
++ (unsigned int)precedenceLevel;
 
 - (void)_cacheImageSizeIfNecessary;
 - (void)_setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)approximateSize;
 - (float)constrainedWidth;
 - (void)dealloc;
+- (BOOL)displayableAsIcon;
 - (void)download;
 - (BOOL)hasBeenDownloaded;
 - (struct CGSize { float x1; float x2; })imageDimensions;
@@ -27,9 +33,14 @@
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
 - (BOOL)isDisplayableInline;
 - (BOOL)isDisplayableInsidePlugin;
+- (id)mimeTextAttachment;
+- (BOOL)needsRedownload;
+- (id)persistentUniqueIdentifier;
+- (void)setDisplayableAsIcon:(BOOL)arg1;
 - (void)setDisplayableInline:(BOOL)arg1;
 - (void)setDisplayableInsidePlugin:(BOOL)arg1;
 - (void)setFileWrapper:(id)arg1;
+- (void)setNeedsRedownload:(BOOL)arg1;
 - (void)setupForComposition;
 - (BOOL)shouldDownloadAttachmentOnDisplay;
 - (id)textEncodingGuess;

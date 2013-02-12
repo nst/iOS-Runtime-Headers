@@ -2,52 +2,67 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
+@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
+
 @interface PLGatekeeperClient : NSObject {
-    struct _xpc_connection_s { } *connection;
+    NSObject<OS_xpc_object> *connection;
 }
 
-@property struct _xpc_connection_s { }* connection;
-@property(readonly) struct dispatch_queue_s { }* replyQueue;
+@property NSObject<OS_xpc_object> * connection;
+@property(readonly) NSObject<OS_dispatch_queue> * replyQueue;
 
 + (id)sharedInstance;
 
 - (void)addAssetWithURL:(id)arg1 toAlbumWithUUID:(id)arg2 handler:(id)arg3;
 - (void)addGroupWithName:(id)arg1 handler:(id)arg2;
-- (void)cleanupDualCameraRollAfterTellurideCorruption;
+- (unsigned long long)attemptToPurgeSharedAssetsSpace:(unsigned long long)arg1;
+- (void)automaticallyDeleteEmptyAlbum:(id)arg1;
+- (void)cleanupAfteriTunesSync;
 - (void)cleanupForStoreDemoMode;
 - (void)cleanupModelAfteriTunesRestore;
+- (void)clearAllBulletinsWithLastClearedRecordID:(unsigned int)arg1;
 - (void)clearChangeStore;
-- (struct _xpc_connection_s { }*)connection;
+- (id)connection;
 - (void)createPhotoLibraryDatabase;
 - (void)createPhotostreamAlbumWithStreamID:(id)arg1;
 - (void)dataMigrationWillFinish;
+- (id)emailAddressForKey:(int)arg1;
+- (void)enablePhotostreamsWithStreamID:(id)arg1;
 - (int)fileDescriptorForAssetURL:(id)arg1;
-- (id)fileURLForAssetURL:(id)arg1;
+- (id)fileURLForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2;
 - (id)fileURLForNewAssetWithType:(unsigned int)arg1 extension:(id)arg2;
 - (void)finalizeOTARestoreRecreatingAlbums:(BOOL)arg1;
+- (int)getCurrentApplicationBadgeCount;
+- (id)getCurrentBulletins;
+- (void)getLibrarySizes:(id)arg1;
 - (void)getPhotosAndVideosCountWithHandler:(id)arg1;
+- (id)getThumbnailImageDataForBulletinWithRecordID:(unsigned int)arg1;
 - (id)imageDataFromAssetURL:(id)arg1 format:(int)arg2;
 - (void)importFileSystemAssetsWaitingForReply:(BOOL)arg1;
 - (id)init;
+- (int)keyForEmailAddress:(id)arg1;
 - (void)launchAssetsd;
-- (id)messagesImageDataFromAssetURL:(id)arg1 format:(int)arg2;
 - (void)notifyAboutTerminationDueToUncaughtException:(id)arg1;
+- (unsigned long long)purgeableSharedAssetsSpace;
 - (void)recalculateCachedAlbumCounts;
 - (void)recoverFromCrashIfNeeded;
-- (struct dispatch_queue_s { }*)replyQueue;
+- (void)repairSingletonObjects;
+- (id)replyQueue;
 - (void)requestAccessWithHandler:(id)arg1;
 - (void)requestImageFromAssetURL:(id)arg1 format:(int)arg2 handler:(id)arg3;
-- (void)saveAssetWithData:(id)arg1 handler:(id)arg2 imageSurface:(struct __IOSurface { }*)arg3 previewImageSurface:(struct __IOSurface { }*)arg4;
-- (unsigned int)secondsNeededToCleanupDualCameraRollAfterTellurideCorruption;
+- (void)saveAssetWithJobDictionary:(id)arg1 handler:(id)arg2 imageSurface:(struct __IOSurface { }*)arg3 previewImageSurface:(struct __IOSurface { }*)arg4;
 - (unsigned int)secondsNeededToCleanupModelAfteriTunesRestore;
-- (struct dispatch_queue_s { }*)sendQueue;
-- (void)setConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)sendDaemonJob:(id)arg1 replyHandler:(id)arg2;
+- (id)sendQueue;
+- (void)setConnection:(id)arg1;
 - (void)updateCameraPreviewWellImage:(id)arg1;
 - (void)updateModelAfterOTARestore;
 - (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2;
+- (void)updateSharedAlbumsCachedServerConfigurationLimits;
 - (void)updateStackedImageCacheForAlbum:(id)arg1;
 - (void)updateThumbnailsForPhoto:(id)arg1 generatePreviewImage:(BOOL)arg2 waitForReply:(BOOL)arg3 assignNewIndex:(BOOL)arg4;
 - (void)updateThumbnailsForPhoto:(id)arg1 generatePreviewImage:(BOOL)arg2 waitForReply:(BOOL)arg3;
+- (void)waitUntilConnectionSendsAllMessages;
 - (void)writeDataInBackground:(id)arg1 toFileURL:(id)arg2;
 
 @end

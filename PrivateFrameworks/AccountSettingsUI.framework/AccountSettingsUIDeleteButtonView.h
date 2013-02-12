@@ -4,7 +4,7 @@
 
 @class UIButton;
 
-@interface AccountSettingsUIDeleteButtonView : UIView <PreferencesTableCustomView> {
+@interface AccountSettingsUIDeleteButtonView : UIView <PSHeaderFooterView> {
     UIButton *_deleteButton;
 }
 

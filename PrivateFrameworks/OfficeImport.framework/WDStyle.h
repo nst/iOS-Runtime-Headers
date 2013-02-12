@@ -19,8 +19,6 @@
     WDTableStyleOverride *mTableStyleOverrides[12];
 }
 
-+ (id)newIDFromName:(id)arg1;
-
 - (id)baseStyle;
 - (id)characterProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

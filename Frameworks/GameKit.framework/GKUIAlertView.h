@@ -18,5 +18,6 @@
 - (void)dealloc;
 - (id)dismissHandler;
 - (void)setDismissHandler:(id)arg1;
+- (void)show;
 
 @end

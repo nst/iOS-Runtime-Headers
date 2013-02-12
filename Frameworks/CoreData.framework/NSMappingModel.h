@@ -17,6 +17,7 @@
 }
 
 + (BOOL)_isInferredMappingModel:(id)arg1;
++ (id)_mappingModelFromPaths:(id)arg1 forSourceHashes:(id)arg2 destinationHashes:(id)arg3;
 + (id)_modelPathsFromBundles:(id)arg1;
 + (id)inferredMappingModelForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id*)arg3;
 + (void)initialize;

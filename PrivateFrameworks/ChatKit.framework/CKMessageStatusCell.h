@@ -12,9 +12,9 @@
 
 @property float outsideMargin;
 
-- (void)_repositionSubviews;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 - (float)outsideMargin;
 - (void)setColor:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

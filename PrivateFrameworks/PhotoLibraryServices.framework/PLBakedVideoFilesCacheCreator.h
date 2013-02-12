@@ -4,7 +4,7 @@
 
 @class NSLock, NSMutableDictionary, PLPhotoLibrary;
 
-@interface PLBakedVideoFilesCacheCreator : NSObject <PLPhotoBakedThumbnailsDelegate, PLCachedFilesManagerPlugin> {
+@interface PLBakedVideoFilesCacheCreator : NSObject <PLPhotoBakedThumbnailsDelegate> {
     BOOL _cancelPostProcessing;
     NSLock *_cancellationLock;
     NSMutableDictionary *_optionsDictionary;

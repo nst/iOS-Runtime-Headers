@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSMutableDictionary, NSSet, NSString, SSDialog, SSItem, SSItemMedia;
+@class NSArray, NSMutableDictionary, NSSet, NSString, SSDialog, SSItem, SSItemMedia, SSNetworkConstraints;
 
 @interface SSItemOffer : NSObject <NSCopying> {
     SSItem *_item;
@@ -18,6 +18,7 @@
 @property(readonly) NSString * buyParameters;
 @property(readonly) SSDialog * confirmationDialog;
 @property(readonly) long long estimatedDiskSpaceNeeded;
+@property(readonly) SSNetworkConstraints * networkConstraints;
 @property(readonly) NSString * offerIdentifier;
 @property(readonly) SSItemMedia * offerMedia;
 @property(getter=isOneTapOffer,readonly) BOOL oneTapOffer;
@@ -49,6 +50,7 @@
 - (id)initWithOfferIdentifier:(id)arg1 dictionary:(id)arg2;
 - (BOOL)isOneTapOffer;
 - (BOOL)isPreorder;
+- (id)networkConstraints;
 - (id)offerIdentifier;
 - (id)offerMedia;
 - (id)playableMedia;

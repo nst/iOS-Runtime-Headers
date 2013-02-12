@@ -11,6 +11,7 @@
 
 + (id)defaultContextManager;
 
+- (void).cxx_destruct;
 - (id)_collateContexts;
 - (void)_collateContextsIntoArray:(id)arg1;
 - (void)_shutdownServer;

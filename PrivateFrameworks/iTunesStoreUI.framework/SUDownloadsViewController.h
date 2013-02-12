@@ -2,21 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUDownloadManager, SUViewController<SUDownloadsChildViewController>;
+@class NSObject<OS_dispatch_source>, SUClientInterface, SUDownloadManager, SUViewController<SUDownloadsChildViewController>, UIView;
 
-@interface SUDownloadsViewController : SUViewController <SSDownloadManagerObserver, SSPreorderManagerObserver> {
+@interface SUDownloadsViewController : SUViewController <SSDownloadManagerObserver> {
     SUViewController<SUDownloadsChildViewController> *_childViewController;
+    SUClientInterface *_clientInterface;
     SUDownloadManager *_downloadManager;
+    UIView *_emptyDownloadQueueView;
     BOOL _isUsingNetwork;
+    NSObject<OS_dispatch_source> *_reloadFromServerTimer;
 }
 
+- (void)_cancelReloadFromServerTimer;
 - (void)_clientDidStopIgnoringDownloadsNotification:(id)arg1;
 - (void)_gotoPurchasedPlaylist:(id)arg1;
-- (id)_headerViewWithTitle:(id)arg1 subtitle:(id)arg2;
 - (id)_newChildViewController;
-- (id)_newPurchasedPlaylistButton;
 - (void)_reloadDataAnimated:(BOOL)arg1;
+- (void)_reloadDownloadManagerFromServer;
+- (void)_reloadEmptyDownloadQueueView;
 - (void)_setUsingNetwork:(BOOL)arg1;
+- (void)_startReloadFromServerTimer;
 - (void)_tabConfigurationChanged:(id)arg1;
 - (void)_updatePurchasedPlaylistButton;
 - (void)applicationWillEnterForeground;
@@ -27,10 +32,10 @@
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)init;
+- (id)initWithClientInterface:(id)arg1 managerOptions:(id)arg2 preorderItemKinds:(id)arg3;
 - (id)initWithManagerOptions:(id)arg1 preorderItemKinds:(id)arg2;
 - (id)initWithManagerOptions:(id)arg1;
 - (void)loadView;
-- (void)preorderManagerPreordersDidChange:(id)arg1;
 - (void)reload;
 - (void)reloadData;
 - (id)scriptButtons;

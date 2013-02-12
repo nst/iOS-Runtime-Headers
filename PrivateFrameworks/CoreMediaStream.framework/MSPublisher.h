@@ -40,6 +40,7 @@
 + (id)publisherForPersonID:(id)arg1;
 + (void)stopAllActivities;
 
+- (void).cxx_destruct;
 - (void)_abort;
 - (id)_abortedError;
 - (void)_addAssetToFileHashMap:(id)arg1;

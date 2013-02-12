@@ -16,6 +16,7 @@
 
 + (id)computeItemIDForAsset:(id)arg1;
 
+- (void).cxx_destruct;
 - (int)_getFileDescriptorFromItem:(unsigned long long)arg1;
 - (void)_getItemDone:(unsigned long long)arg1 path:(id)arg2 error:(id)arg3;
 - (id)_getUTIFromItem:(unsigned long long)arg1;

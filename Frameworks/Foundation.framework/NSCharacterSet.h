@@ -5,7 +5,6 @@
 @interface NSCharacterSet : NSObject <NSCopying, NSMutableCopying, NSCoding> {
 }
 
-+ (id)CJKCharacterSet;
 + (id)alphanumericCharacterSet;
 + (id)capitalizedLetterCharacterSet;
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
@@ -49,5 +48,6 @@
 - (BOOL)longCharacterIsMember:(unsigned long)arg1;
 - (void)makeImmutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 
 @end

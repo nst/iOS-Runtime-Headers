@@ -11,6 +11,7 @@
         unsigned int flags; 
         long long epoch; 
     NSURL *_URL;
+    NSArray *_inputGroups;
     NSArray *_inputs;
     AVMediaFileType *_mediaFileType;
     NSArray *_metadataItems;
@@ -20,6 +21,7 @@
 }
 
 @property(copy) NSURL * URL;
+@property(copy) NSArray * inputGroups;
 @property(copy) NSArray * inputs;
 @property(copy) AVMediaFileType * mediaFileType;
 @property(copy) NSArray * metadataItems;
@@ -29,11 +31,13 @@
 
 - (id)URL;
 - (void)dealloc;
+- (id)inputGroups;
 - (id)inputs;
 - (id)mediaFileType;
 - (id)metadataItems;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (int)movieTimeScale;
+- (void)setInputGroups:(id)arg1;
 - (void)setInputs:(id)arg1;
 - (void)setMediaFileType:(id)arg1;
 - (void)setMetadataItems:(id)arg1;

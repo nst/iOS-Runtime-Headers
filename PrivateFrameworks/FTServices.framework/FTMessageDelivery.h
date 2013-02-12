@@ -14,6 +14,7 @@
     NSString *_userAgent;
 }
 
+@property(readonly) NSArray * allMessages;
 @property(readonly) BOOL busy;
 @property(readonly) FTMessage * currentMessage;
 @property(readonly) BOOL hasQueuedItems;
@@ -35,6 +36,8 @@
 - (void)_retryTimerHit:(id)arg1;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_setRetryTimer:(double)arg1;
+- (void)_signMessage:(id)arg1 useDataSignatures:(BOOL)arg2 body:(id)arg3 queryString:(id)arg4 intoDictionary:(id)arg5;
+- (id)allMessages;
 - (BOOL)busy;
 - (void)cancelMessage:(id)arg1;
 - (id)currentMessage;

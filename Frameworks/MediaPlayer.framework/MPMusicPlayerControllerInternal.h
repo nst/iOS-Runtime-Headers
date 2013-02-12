@@ -16,12 +16,17 @@
     MPMusicPlayerController *_musicPlayerController;
     int _playbackNotificationObservers;
     int _playbackState;
+    BOOL _preparedToPlay;
+    struct SBSProcessAssertion { } *_processAssertion;
     MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
 }
 
 @property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;
 
+- (id)_bundleIdentifier;
+- (void)acquireProcessAssertion;
+- (void)dealloc;
 - (void)didPrepareForRemoteSelectorInvocation;
 - (BOOL)inBlockHandlingPlaybackStateChangedMessageFromServer;
 - (id)initWithMusicPlayerController:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class MessageStore, NSArray, NSString;
 
-@interface Message : NSObject {
+@interface Message : NSObject <NSCopying> {
     unsigned int _calculatedAttachmentInfo : 1;
     NSArray *_bcc;
     NSArray *_cc;
@@ -16,7 +16,7 @@
     unsigned long long _generationNumber;
     long long _messageIDHeaderHash;
     unsigned short _numberOfAttachments;
-    unsigned int _preferredEncoding;
+    unsigned long _preferredEncoding;
     NSArray *_sender;
     NSString *_senderAddressComment;
     MessageStore *_store;
@@ -42,6 +42,7 @@
 - (id)bccIfCached;
 - (id)bestAlternativeInPart:(id)arg1;
 - (id)bodyData;
+- (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2;
 - (id)bodyDataIsComplete:(BOOL*)arg1;
 - (id)cachedAttributes;
@@ -69,6 +70,7 @@
 - (int)generationCompare:(id)arg1;
 - (unsigned long long)generationNumber;
 - (id)headerData;
+- (id)headerDataDownloadIfNecessary:(BOOL)arg1;
 - (id)headers;
 - (id)headersIfAvailable;
 - (id)init;

@@ -7,9 +7,13 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSDate : NSObject <NSCopying, NSCoding> {
+@interface NSDate : NSObject <NSCopying, NSSecureCoding> {
 }
 
++ (id)PKDateTomorrow;
++ (id)PKDateWithDaysBeforeNow:(unsigned int)arg1;
++ (id)PKDateWithDaysFromNow:(unsigned int)arg1;
++ (id)PKDateYesterday;
 + (id)_gkDateFromServerTimestamp:(id)arg1;
 + (id)_gkServerTimestamp;
 + (id)_mapkit_dateWithAbsoluteTime:(double)arg1;
@@ -39,8 +43,16 @@
 + (BOOL)notifyOfUnknownTokens;
 + (BOOL)parsingLeafNode;
 + (BOOL)parsingWithSubItems;
++ (id)stringForDuration:(double)arg1;
++ (BOOL)supportsSecureCoding;
 + (double)timeIntervalSinceReferenceDate;
 
+- (void)MLBindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (BOOL)PKIsEqualToDateIgnoringTime:(id)arg1;
+- (BOOL)PKIsToday;
+- (BOOL)PKIsTomorrow;
+- (BOOL)PKIsYesterday;
+- (BOOL)_afui_isSameDayAsDate:(id)arg1;
 - (unsigned long)_cfTypeID;
 - (id)_gkServerTimestamp;
 - (id)_web_RFC1123DateString;
@@ -50,12 +62,13 @@
 - (id)activeSyncStringForYearMonthDay;
 - (id)activeSyncStringWithoutSeparators;
 - (id)addTimeInterval:(double)arg1;
+- (BOOL)afui_isToday;
+- (BOOL)afui_isTomorrow;
 - (Class)classForCoder;
 - (int)compare:(id)arg1;
-- (id)copyPropertyListEncoding;
 - (void)copyToWordDate:(struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (id)dateByAddingTimeInterval:(double)arg1;
 - (id)dateForDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateForDayInTimeZone:(id)arg1;
@@ -74,13 +87,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDate:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (id)initWithTimeInterval:(double)arg1 sinceDate:(id)arg2;
 - (id)initWithTimeIntervalSince1970:(double)arg1;
 - (id)initWithTimeIntervalSinceNow:(double)arg1;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDate:(id)arg1;
 - (BOOL)isNSDate__;
@@ -88,6 +100,7 @@
 - (id)mf_descriptionForMimeHeaders;
 - (id)mf_replyPrefixForSender:(id)arg1 withSpacer:(BOOL)arg2;
 - (id)nearestMidnight;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (double)timeIntervalSince1970;
 - (double)timeIntervalSinceDate:(id)arg1;
 - (double)timeIntervalSinceNow;

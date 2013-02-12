@@ -14,7 +14,7 @@
 @property(readonly) int pageY;
 @property(readonly) int screenX;
 @property(readonly) int screenY;
-@property(retain,readonly) <DOMEventTarget> * target;
+@property(readonly) <DOMEventTarget> * target;
 
 - (int)clientX;
 - (int)clientY;

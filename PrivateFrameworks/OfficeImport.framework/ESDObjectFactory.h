@@ -10,8 +10,8 @@
 @interface ESDObjectFactory : NSObject {
 }
 
-+ (struct EshObject { }*)createObjectWithType:(unsigned short)arg1 version:(unsigned short)arg2;
-+ (struct EshObject { }*)createObjectWithType:(unsigned short)arg1;
++ (struct EshObject { int (**x1)(); unsigned short x2; }*)createObjectWithType:(unsigned short)arg1 version:(unsigned short)arg2;
++ (struct EshObject { int (**x1)(); unsigned short x2; }*)createObjectWithType:(unsigned short)arg1;
 + (void)initialize;
 + (void)replaceHostEshFactoryWith:(struct EshObjectFactory { int (**x1)(); boolx2; }*)arg1;
 + (void)restoreHostEshFactory;

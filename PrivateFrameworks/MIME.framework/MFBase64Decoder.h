@@ -7,15 +7,15 @@
 @interface MFBase64Decoder : MFBaseFilterDataConsumer {
     BOOL _bound;
     unsigned int _decodedBits;
-    unsigned int _equalCount;
+    unsigned long _equalCount;
     NSMutableData *_leftovers;
-    char *_table;
-    unsigned int _validBytes;
+    const char *_table;
+    unsigned long _validBytes;
 }
 
 @property BOOL convertCommas;
 @property BOOL isBound;
-@property(readonly) unsigned int unconverted;
+@property(readonly) unsigned long unconverted;
 
 + (BOOL)isValidBase64:(id)arg1;
 

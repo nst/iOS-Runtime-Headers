@@ -37,36 +37,7 @@
 @property BOOL softwareMicrophoneEnabled;
 @property(readonly) BOOL softwareMicrophoneSupported;
 
-+ (BOOL)ARDClientCapable;
-+ (BOOL)ARDServerCapable;
-+ (BOOL)blockARDCapable;
-+ (BOOL)blockAudioOnlyCalls;
-+ (BOOL)blockCameraCapable;
-+ (BOOL)blockMicrophoneCapable;
-+ (BOOL)cameraCapable;
-+ (BOOL)cameraConnected;
-+ (BOOL)canReceiveWidescreen;
-+ (BOOL)canUseSmallDataBlobs;
-+ (id)delegate;
-+ (BOOL)hasActiveConference;
-+ (BOOL)microphoneCapable;
-+ (BOOL)microphoneConnected;
-+ (BOOL)multiAudioCapable;
-+ (BOOL)multiVideoCapable;
-+ (unsigned int)overallChatState;
-+ (void)requestPendingVCInvitations;
-+ (void)setBlockARDCapable:(BOOL)arg1;
-+ (void)setBlockAudioOnlyCalls:(BOOL)arg1;
-+ (void)setBlockCameraCapable:(BOOL)arg1;
-+ (void)setBlockMicrophoneCapable:(BOOL)arg1;
-+ (void)setDelegate:(id)arg1;
-+ (void)setIMAVCapabilities:(int)arg1 toCaps:(int)arg2;
-+ (void)setSoftwareCameraEnabled:(BOOL)arg1;
-+ (void)setSoftwareMicrophoneEnabled:(BOOL)arg1;
-+ (void)setupIMAVController;
 + (id)sharedInstance;
-+ (BOOL)softwareCameraEnabled;
-+ (BOOL)softwareMicrophoneEnabled;
 
 - (BOOL)ARDClientCapable;
 - (BOOL)ARDServerCapable;
@@ -76,7 +47,6 @@
 - (void)_setServiceVCCaps:(unsigned long long)arg1 toCaps:(unsigned long long)arg2;
 - (BOOL)_shouldHandleInvites;
 - (BOOL)_shouldRunConferences;
-- (BOOL)allowsWeakReference;
 - (BOOL)ardMuxingSupported;
 - (BOOL)blockARDCapable;
 - (BOOL)blockAudioOnlyCalls;
@@ -105,7 +75,6 @@
 - (unsigned int)overallChatState;
 - (void)pushCachedVCCapsToDaemon;
 - (void)requestPendingVCInvitations;
-- (BOOL)retainWeakReference;
 - (void)setBlockARDCapable:(BOOL)arg1;
 - (void)setBlockAudioOnlyCalls:(BOOL)arg1;
 - (void)setBlockCameraCapable:(BOOL)arg1;

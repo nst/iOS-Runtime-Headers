@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface SUWebImagePool : NSObject {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     struct __CFDictionary { } *_images;
     int _poolIdentifier;
 }

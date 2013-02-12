@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextPosition;
+@class UITextPosition, UITextRangeImpl;
 
 @interface UITextRange : NSObject {
 }
@@ -10,10 +10,12 @@
 @property(getter=isEmpty,readonly) BOOL empty;
 @property(readonly) UITextPosition * end;
 @property(getter=_isCaret,readonly) BOOL isCaret;
+@property(getter=_isImpl,readonly) UITextRangeImpl * isImpl;
 @property(getter=_isRanged,readonly) BOOL isRanged;
 @property(readonly) UITextPosition * start;
 
 - (BOOL)_isCaret;
+- (id)_isImpl;
 - (BOOL)_isRanged;
 - (id)end;
 - (BOOL)isEmpty;

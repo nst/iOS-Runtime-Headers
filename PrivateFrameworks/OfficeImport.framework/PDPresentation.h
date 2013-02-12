@@ -25,6 +25,7 @@
     NSMutableArray *mSlides;
 }
 
+- (id).cxx_construct;
 - (unsigned long)addBulletBlip:(id)arg1;
 - (void)addNotesMaster:(id)arg1;
 - (void)addSlide:(id)arg1;

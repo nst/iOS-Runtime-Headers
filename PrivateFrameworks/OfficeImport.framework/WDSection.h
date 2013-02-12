@@ -15,6 +15,7 @@
         unsigned int pageHeight; 
         unsigned int pageScale; 
         int pageOrientation; 
+        int textDirection; 
         unsigned int leftMargin; 
         unsigned int rightMargin; 
         unsigned int topMargin; 
@@ -48,6 +49,7 @@
         unsigned int pageHeightOverridden : 1; 
         unsigned int pageScaleOverridden : 1; 
         unsigned int pageOrientationOverridden : 1; 
+        unsigned int textDirectionOverridden : 1; 
         unsigned int leftMarginOverridden : 1; 
         unsigned int rightMarginOverridden : 1; 
         unsigned int topMarginOverridden : 1; 
@@ -88,6 +90,7 @@
         unsigned int pageHeight; 
         unsigned int pageScale; 
         int pageOrientation; 
+        int textDirection; 
         unsigned int leftMargin; 
         unsigned int rightMargin; 
         unsigned int topMargin; 
@@ -121,6 +124,7 @@
         unsigned int pageHeightOverridden : 1; 
         unsigned int pageScaleOverridden : 1; 
         unsigned int pageOrientationOverridden : 1; 
+        unsigned int textDirectionOverridden : 1; 
         unsigned int leftMarginOverridden : 1; 
         unsigned int rightMarginOverridden : 1; 
         unsigned int topMarginOverridden : 1; 
@@ -166,6 +170,7 @@
     } mTrackedProperties;
 }
 
+- (id).cxx_construct;
 - (void)appendColumnSpace:(unsigned long)arg1;
 - (void)appendColumnWidth:(unsigned long)arg1;
 - (int)borderDepth;
@@ -225,6 +230,7 @@
 - (BOOL)isPageWidthOverridden;
 - (BOOL)isRightBorderOverridden;
 - (BOOL)isRightMarginOverridden;
+- (BOOL)isTextDirectionOverridden;
 - (BOOL)isTitlePageOverridden;
 - (BOOL)isTopBorderOverridden;
 - (BOOL)isTopMarginOverridden;
@@ -280,10 +286,12 @@
 - (void)setPageWidth:(unsigned long)arg1;
 - (void)setResolveMode:(int)arg1;
 - (void)setRightMargin:(unsigned long)arg1;
+- (void)setTextDirection:(int)arg1;
 - (void)setTitlePage:(BOOL)arg1;
 - (void)setTopMargin:(unsigned long)arg1;
 - (void)setVerticalJustification:(int)arg1;
 - (id)text;
+- (int)textDirection;
 - (BOOL)titlePage;
 - (id)topBorder;
 - (unsigned long)topMargin;

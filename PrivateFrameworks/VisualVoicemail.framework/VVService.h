@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSError, NSRecursiveLock, NSString, NSTimer;
+@class NSError, NSRecursiveLock, NSString, PCPersistentTimer;
 
 @interface VVService : NSObject {
     struct { 
@@ -21,7 +21,7 @@
     int _mailboxUsage;
     struct __CFDate { } *_nextRetryWakeDate;
     struct __CFDate { } *_nextTrashCompactionWakeDate;
-    NSTimer *_notificationFallbackTimer;
+    PCPersistentTimer *_notificationFallbackTimer;
     struct __CFDate { } *_notificationFallbackWakeDate;
     Class _notificationInterpreter;
     NSString *_password;
@@ -33,10 +33,10 @@
     struct __CFRunLoopSource { } *_pmRunLoopSource;
     int _retryIntervalIndex;
     struct __CFArray { } *_retryIntervals;
-    NSTimer *_retryTimer;
+    PCPersistentTimer *_retryTimer;
     } _serviceFlags;
     double _trashCompactionAge;
-    NSTimer *_trashCompactionTimer;
+    PCPersistentTimer *_trashCompactionTimer;
     unsigned int _trashedCount;
     unsigned int _unreadCount;
 }
@@ -45,11 +45,13 @@
 + (void)_resetInsomniaState;
 + (void)_setInsomniaState:(BOOL)arg1;
 + (void)_suppressInsomniaState;
++ (unsigned int)_voicemailPowerAssertion;
 + (void)initialize;
 + (void)setInsomniaEnabled:(BOOL)arg1;
 + (id)sharedService;
 + (BOOL)sharedServiceIsSubscribed;
 
+- (void)_attemptDelayedSynchronize:(id)arg1;
 - (void)_attemptDelayedSynchronize;
 - (void)_attemptScheduledTrashCompaction;
 - (void)_cancelAutomatedTrashCompaction;
@@ -139,6 +141,7 @@
 - (BOOL)sharedSubscriptionRequiresSetup;
 - (BOOL)shouldScheduleAutoTrashOnMailboxUsageChange;
 - (BOOL)shouldTrashCompactRecord:(void*)arg1;
+- (BOOL)synchronizationPending;
 - (void)synchronize:(BOOL)arg1;
 - (BOOL)taskOfTypeExists:(int)arg1;
 - (double)trashCompactionAge;

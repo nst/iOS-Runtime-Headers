@@ -6,8 +6,8 @@
 }
 
 + (int)mediaEntityType;
++ (id)tabBarItemIconName;
 + (id)tabBarItemTitleKey;
-+ (int)tabBarSystemItem;
 
 - (SEL)libraryHasDisplayableEntitiesSelector;
 

@@ -25,6 +25,7 @@
 - (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
 - (id)bulletBlipRefForURL:(id)arg1;
 - (void)clearDrawableForShapeIdMap;
+- (void)clearTargetBlipCollection;
 - (id)client;
 - (id)colorMap;
 - (id)colorScheme;

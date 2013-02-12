@@ -7,7 +7,7 @@
 @interface SAClockObject : SADomainObject {
 }
 
-@property(retain) NSNumber * alCityId;
+@property(copy) NSNumber * alCityId;
 @property(copy) NSString * cityName;
 @property(copy) NSString * countryCode;
 @property(copy) NSString * countryName;

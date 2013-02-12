@@ -5,6 +5,7 @@
 @interface NSMutableSet : NSSet {
 }
 
++ (id)_vk_newWeakSet;
 + (id)nonRetainingSet;
 + (id)setWithCapacity:(unsigned int)arg1;
 
@@ -26,6 +27,7 @@
 - (void)intersectSet:(id)arg1;
 - (id)mf_uniquedObject:(id)arg1;
 - (void)minusOrderedSet:(id)arg1;
+- (void)minusPathSet:(id)arg1;
 - (void)minusSet:(id)arg1;
 - (void)pl_addObjectIfNotNil:(id)arg1;
 - (void)removeAllObjects;

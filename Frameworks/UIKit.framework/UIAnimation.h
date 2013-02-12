@@ -10,7 +10,7 @@
     struct { 
         unsigned int curve : 4; 
         unsigned int tvOutput : 1; 
-        unsigned int reserved : 27; 
+        unsigned int useNSTimer : 1; 
     SEL _action;
     } _animationFlags;
     id _completion;
@@ -36,9 +36,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setProgress:(float)arg1;
+- (void)setUsesNSTimer:(BOOL)arg1;
 - (int)state;
 - (void)stopAnimation;
 - (id)target;
-- (BOOL)tvOutput;
+- (int)type;
+- (BOOL)usesNSTimer;
 
 @end

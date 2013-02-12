@@ -26,7 +26,6 @@
 - (id)_ptpInformationForAllAssets;
 - (id)albumHandles;
 - (id)albumObjectIDs;
-- (id)assetsInAlbumWithObjectID:(id)arg1;
 - (id)assetsInAssociation:(struct NSObject { Class x1; }*)arg1;
 - (id)associationsInAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)dealloc;

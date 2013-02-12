@@ -23,6 +23,7 @@
 + (id)sharedInstance;
 
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
+- (void)_advertisingChanged;
 - (BOOL)_attach:(id)arg1;
 - (void)_cleanup:(BOOL)arg1;
 - (void)_connectabilityChanged;
@@ -46,7 +47,9 @@
 - (void)connectDevice:(id)arg1;
 - (BOOL)connectable;
 - (BOOL)connected;
+- (id)connectedDevices:(BOOL)arg1;
 - (id)connectedDevices;
+- (id)connectedLEDevices;
 - (id)connectingDevices;
 - (void)dealloc;
 - (BOOL)devicePairingEnabled;
@@ -56,6 +59,7 @@
 - (BOOL)enabled;
 - (void)endVoiceCommand:(id)arg1;
 - (id)init;
+- (BOOL)isAnyoneAdvertising;
 - (BOOL)isAnyoneScanning;
 - (BOOL)isDiscoverable;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
@@ -79,6 +83,7 @@
 - (BOOL)setEnabled:(BOOL)arg1;
 - (void)setPincode:(id)arg1 forDevice:(id)arg2;
 - (BOOL)setPowered:(BOOL)arg1;
+- (void)showPowerPrompt;
 - (void)startVoiceCommand:(id)arg1;
 - (void)unpairDevice:(id)arg1;
 - (BOOL)wasDeviceDiscovered:(id)arg1;

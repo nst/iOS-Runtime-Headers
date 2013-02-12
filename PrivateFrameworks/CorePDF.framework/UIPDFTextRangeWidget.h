@@ -24,8 +24,8 @@
     CALayer *_rightSelectionGrabber;
 }
 
-@property(readonly) struct CGPoint { float x; float y; } currentSelectionPointOnPage;
-@property(readonly) struct CGPoint { float x; float y; } initialSelectionPointOnPage;
+@property(readonly) struct CGPoint { float x1; float x2; } currentSelectionPointOnPage;
+@property(readonly) struct CGPoint { float x1; float x2; } initialSelectionPointOnPage;
 @property UIPDFPageView * pageView;
 
 - (struct CGPoint { float x1; float x2; })currentSelectionPointOnPage;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UISelectionGrabber, UITextSelectionView, UITouch, UIView<UITextSelectingContainer>;
+@class NSArray, NSMutableArray, UIResponder<UITextInput>, UISelectionGrabber, UITextSelectionView, UITouch;
 
 @interface UITextRangeView : UIView {
     struct CGRect { 
@@ -43,7 +43,7 @@
     BOOL m_baseIsStart;
     } m_basePoint;
     BOOL m_commandsWereShowing;
-    UIView<UITextSelectingContainer> *m_container;
+    UIResponder<UITextInput> *m_container;
     } m_endEdge;
     UISelectionGrabber *m_endGrabber;
     } m_extentPoint;
@@ -72,7 +72,7 @@
 @property BOOL baseIsStart;
 @property struct CGPoint { float x1; float x2; } basePoint;
 @property BOOL commandsWereShowing;
-@property(readonly) UIView<UITextSelectingContainer> * container;
+@property(readonly) UIResponder<UITextInput> * container;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endEdge;
 @property(retain) UISelectionGrabber * endGrabber;
 @property struct CGPoint { float x1; float x2; } extentPoint;
@@ -93,6 +93,9 @@
 @property(retain) UISelectionGrabber * startGrabber;
 @property struct CGPoint { float x1; float x2; } touchOffset;
 
+- (BOOL)_endIsHorizontal;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionClipRect;
+- (BOOL)_startIsHorizontal;
 - (id)activeTouch;
 - (BOOL)animateUpdate;
 - (struct CGPoint { float x1; float x2; })applyTouchOffset:(struct CGPoint { float x1; float x2; })arg1;
@@ -114,7 +117,6 @@
 - (double)firstMovedTime;
 - (BOOL)inGesture;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionView:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (struct CGPoint { float x1; float x2; })initialBasePoint;
 - (float)initialDistance;
 - (struct CGPoint { float x1; float x2; })initialExtentPoint;
@@ -152,6 +154,7 @@
 - (void)setInitialExtentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setInputViewIsChanging:(BOOL)arg1;
 - (void)setIsScrolling:(BOOL)arg1;
+- (void)setMagnifierOrientation;
 - (void)setMagnifying:(BOOL)arg1;
 - (void)setMode:(int)arg1;
 - (void)setRects:(id)arg1;

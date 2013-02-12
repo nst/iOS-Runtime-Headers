@@ -11,5 +11,7 @@
 }
 
 + (void)readFrom:(id)arg1 at:(long)arg2 textRun:(struct WrdCharacterTextRun { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct WrdCharacterProperties {} *x5; struct WrdCharacterProperties {} *x6; }*)arg3 paragraph:(id)arg4 specialCharacter:(id)arg5;
++ (void)writeCharacterProperties:(id)arg1 to:(id)arg2;
++ (void)writeText:(id)arg1 to:(id)arg2;
 
 @end

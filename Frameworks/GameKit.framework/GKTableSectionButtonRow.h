@@ -2,77 +2,98 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, NSString;
+@class NSArray, NSIndexSet, NSString;
 
-@interface GKTableSectionButtonRow : NSObject <GKTableSection> {
+@interface GKTableSectionButtonRow : GKTableSection {
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
+    float _betweenButtonsMargin;
     NSArray *_buttonActions;
+    NSIndexSet *_buttonIndexesShowingLoadingIndicator;
     } _buttonInsets;
     NSArray *_buttonTitles;
     int _buttonType;
     NSArray *_buttons;
     float _footerHeight;
+    float _footerSideMargin;
     NSString *_footerText;
     float _headerHeight;
+    BOOL _hidden;
     float _minButtonWidthForNarrowTable;
     float _minButtonWidthForWideTable;
     float _minButtonWidthThreshold;
     BOOL _useFullColumnWidth;
+    BOOL _useStackedButtons;
 }
 
+@property float betweenButtonsMargin;
 @property(retain) NSArray * buttonActions;
+@property(retain) NSIndexSet * buttonIndexesShowingLoadingIndicator;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } buttonInsets;
 @property(retain) NSArray * buttonTitles;
 @property int buttonType;
 @property(retain) NSArray * buttons;
 @property float footerHeight;
+@property float footerSideMargin;
 @property(retain) NSString * footerText;
 @property float headerHeight;
-@property(getter=isLoading) BOOL loading;
+@property BOOL hidden;
 @property float minButtonWidthForNarrowTable;
 @property float minButtonWidthForWideTable;
 @property float minButtonWidthThreshold;
 @property BOOL useFullColumnWidth;
+@property BOOL useStackedButtons;
 
 + (id)sectionWithButtonTitle:(id)arg1 action:(SEL)arg2;
 
+- (float)betweenButtonsMargin;
 - (id)buttonActions;
+- (id)buttonAtIndex:(int)arg1;
+- (id)buttonIndexesShowingLoadingIndicator;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })buttonInsets;
 - (id)buttonTitles;
 - (int)buttonType;
 - (void)buttonWasTouched:(id)arg1;
 - (id)buttons;
 - (void)centerButton:(id)arg1 tableWidth:(float)arg2;
-- (float)contentViewWidthForTableView:(id)arg1;
 - (void)dealloc;
 - (float)footerHeight;
+- (float)footerSideMargin;
 - (id)footerText;
 - (float)headerHeight;
+- (float)heightForFooterInTableView:(id)arg1;
+- (float)heightForHeaderInTableView:(id)arg1;
+- (BOOL)hidden;
 - (id)init;
 - (float)minButtonWidthForNarrowTable;
 - (float)minButtonWidthForTable:(id)arg1;
 - (float)minButtonWidthForWideTable;
 - (float)minButtonWidthThreshold;
-- (float)sectionFooterHeightInTableView:(id)arg1;
-- (id)sectionFooterViewInTableView:(id)arg1;
-- (float)sectionHeaderHeightInTableView:(id)arg1;
-- (int)sectionRowCountInTableView:(id)arg1;
+- (int)rowCountInTableView:(id)arg1;
+- (void)setBetweenButtonsMargin:(float)arg1;
 - (void)setButtonActions:(id)arg1;
+- (void)setButtonIndexesShowingLoadingIndicator:(id)arg1;
 - (void)setButtonInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setButtonTitles:(id)arg1;
 - (void)setButtonType:(int)arg1;
 - (void)setButtons:(id)arg1;
 - (void)setFooterHeight:(float)arg1;
+- (void)setFooterSideMargin:(float)arg1;
 - (void)setFooterText:(id)arg1;
 - (void)setHeaderHeight:(float)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setMinButtonWidthForNarrowTable:(float)arg1;
 - (void)setMinButtonWidthForWideTable:(float)arg1;
 - (void)setMinButtonWidthThreshold:(float)arg1;
 - (void)setUseFullColumnWidth:(BOOL)arg1;
+- (void)setUseStackedButtons:(BOOL)arg1;
+- (void)startLoadingIndicatorForButtonAtIndex:(int)arg1 inTableView:(id)arg2;
+- (void)stopLoadingIndicatorForButtonAtIndex:(int)arg1 inTableView:(id)arg2;
+- (float)tableView:(id)arg1 contentViewHeightForRow:(int)arg2;
+- (float)tableView:(id)arg1 contentViewWidthForRow:(int)arg2;
 - (void)tableView:(id)arg1 didSelectIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfColumnsForRow:(int)arg2;
@@ -80,5 +101,8 @@
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (void)tableView:(id)arg1 willDrawCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (BOOL)useFullColumnWidth;
+- (BOOL)useStackedButtons;
+- (BOOL)useStackedButtonsInTableView:(id)arg1;
+- (id)viewForSectionFooterInTableView:(id)arg1;
 
 @end

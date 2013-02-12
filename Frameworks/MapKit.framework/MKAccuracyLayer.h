@@ -12,6 +12,7 @@
 + (id)defaultValueForKey:(id)arg1;
 + (BOOL)needsDisplayForKey:(id)arg1;
 
+- (void)_setAccuracy:(float)arg1 force:(BOOL)arg2;
 - (float)accuracy;
 - (BOOL)isAccuracyBounded:(float)arg1;
 - (BOOL)isAccuracyMaxBounded:(float)arg1;

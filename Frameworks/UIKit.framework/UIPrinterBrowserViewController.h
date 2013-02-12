@@ -6,7 +6,6 @@
 
 @interface UIPrinterBrowserViewController : UITableViewController <PKPrinterBrowserDelegate> {
     BOOL _clearCurrentPrinter;
-    double _displayTime;
     BOOL _loaded;
     PKPrinter *_lockedPrinter;
     UIPrintPanelViewController *_printPanelViewController;
@@ -24,6 +23,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)startPrinterBrowser;
 - (void)stopPrinterBrowser;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

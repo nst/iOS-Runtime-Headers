@@ -15,13 +15,14 @@
         unsigned int delegateShouldBeRequiredToFail : 1; 
         unsigned int delegateFailed : 1; 
         unsigned int privateDelegateShouldBegin : 1; 
+        unsigned int privateDelegateCanPrevent : 1; 
+        unsigned int privateDelegateCanBePrevented : 1; 
         unsigned int privateDelegateShouldRecognizeSimultaneously : 1; 
         unsigned int privateDelegateShouldReceiveTouch : 1; 
         unsigned int subclassShouldRequireFailure : 1; 
         unsigned int cancelsTouchesInView : 1; 
         unsigned int delaysTouchesBegan : 1; 
         unsigned int delaysTouchesEnded : 1; 
-        unsigned int notExclusive : 1; 
         unsigned int disabled : 1; 
         unsigned int dirty : 1; 
         unsigned int queriedFailureRequirements : 1; 
@@ -95,6 +96,7 @@
 - (void)_resetIfFinished;
 - (void)_setDirty;
 - (void)_setFailureMap:(id)arg1;
+- (BOOL)_shouldBegin;
 - (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
 - (void)_touchWasCancelled:(id)arg1;
 - (void)_updateGestureStateWithEvent:(id)arg1 afterDelay:(BOOL)arg2;
@@ -114,7 +116,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (BOOL)isEnabled;
-- (BOOL)isExclusive;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (unsigned int)numberOfTouches;
@@ -128,7 +129,6 @@
 - (void)setDelaysTouchesEnded:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setExclusive:(BOOL)arg1;
 - (void)setState:(int)arg1;
 - (void)setView:(id)arg1;
 - (int)state;

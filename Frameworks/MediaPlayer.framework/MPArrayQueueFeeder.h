@@ -10,12 +10,11 @@
 
 @property(readonly) NSArray * items;
 
-- (double)bookmarkTimeForIndex:(unsigned int)arg1;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
+- (unsigned int)itemCount;
 - (id)items;
-- (unsigned int)numberOfPaths;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)playbackInfoAtIndex:(unsigned int)arg1;
 

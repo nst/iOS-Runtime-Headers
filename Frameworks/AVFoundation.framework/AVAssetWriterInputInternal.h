@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputHelper, AVWeakReference;
+@class AVAssetWriterInputHelper, AVWeakReference, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetWriterInputInternal : NSObject {
     BOOL attachedToPixelBufferAdaptor;
     AVAssetWriterInputHelper *helper;
-    struct dispatch_queue_s { } *helperQueue;
+    NSObject<OS_dispatch_queue> *helperQueue;
     AVWeakReference *weakReference;
     AVWeakReference *weakReferenceToAssetWriter;
 }

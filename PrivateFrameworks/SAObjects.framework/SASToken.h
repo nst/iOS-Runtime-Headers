@@ -7,11 +7,11 @@
 @interface SASToken : AceObject <SAAceSerializable> {
 }
 
-@property(retain) NSNumber * confidenceScore;
-@property(retain) NSNumber * endTime;
+@property(copy) NSNumber * confidenceScore;
+@property(copy) NSNumber * endTime;
 @property BOOL removeSpaceAfter;
 @property BOOL removeSpaceBefore;
-@property(retain) NSNumber * startTime;
+@property(copy) NSNumber * startTime;
 @property(copy) NSString * text;
 
 + (id)token;

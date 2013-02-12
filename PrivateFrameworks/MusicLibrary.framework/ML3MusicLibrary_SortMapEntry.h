@@ -11,9 +11,9 @@
     NSData *_sortKey;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
+- (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3 nameOrder:(long long)arg4;
 - (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3;
-- (id)initWithStatement:(struct sqlite3_stmt { }*)arg1;
 
 @end

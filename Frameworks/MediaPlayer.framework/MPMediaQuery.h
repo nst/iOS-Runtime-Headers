@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaLibrary, MPMediaPlaylist, MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSArray, NSSet, NSString;
+@class MPMediaItem, MPMediaItemCollection, MPMediaLibrary, MPMediaPlaylist, MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSArray, NSSet, NSString;
 
 @interface MPMediaQuery : NSObject <NSCoding, NSCopying> {
     struct MPMediaQueryInternal { 
@@ -14,13 +14,20 @@
     } _internal;
 }
 
+@property(readonly) unsigned int _countOfCollections;
+@property(readonly) unsigned int _countOfItems;
+@property(readonly) BOOL _hasCollections;
+@property(readonly) BOOL _hasItems;
 @property struct MPMediaQueryInternal { id x1; id x2; int x3; id x4; int x5; } _internal;
 @property(readonly) NSString * bestTitle;
+@property(readonly) MPMediaItemCollection * collectionByJoiningCollections;
+@property(readonly) NSArray * collectionPersistentIdentifiers;
 @property(copy) NSSet * collectionPropertiesToFetch;
 @property(readonly) MPMediaQuerySectionInfo * collectionSectionInfo;
 @property(readonly) NSArray * collectionSections;
 @property(readonly) NSArray * collections;
 @property(readonly) int comparableGroupingType;
+@property(readonly) MPMediaItemCollection * containingAlbum;
 @property(readonly) MPMediaItem * containingEntityRepresentativeItem;
 @property(readonly) int containingEntityType;
 @property(readonly) MPMediaPlaylist * containingPlaylist;
@@ -30,6 +37,7 @@
 @property int filteredMediaTypes;
 @property unsigned int groupingThreshold;
 @property int groupingType;
+@property(readonly) NSArray * itemPersistentIdentifiers;
 @property(copy) NSSet * itemPropertiesToFetch;
 @property(readonly) MPMediaQuerySectionInfo * itemSectionInfo;
 @property(readonly) NSArray * itemSections;
@@ -39,6 +47,7 @@
 @property(readonly) NSArray * playlistsWithoutActivePlaylists;
 @property BOOL sortItems;
 @property(readonly) BOOL specifiesPlaylistItems;
+@property BOOL useSections;
 @property(readonly) BOOL willGroupEntities;
 
 + (id)ITunesUAudioQuery;
@@ -53,7 +62,9 @@
 + (id)devicePurchasesPlaylist;
 + (id)geniusMixesQuery;
 + (id)genresQuery;
++ (void)initFilteringDisabled;
 + (void)initialize;
++ (BOOL)isFilteringDisabled;
 + (id)movieRentalsQuery;
 + (id)moviesQuery;
 + (id)musicVideosQuery;
@@ -63,30 +74,39 @@
 + (void)setFilteringDisabled:(BOOL)arg1;
 + (id)songsQuery;
 + (id)tvShowsQuery;
++ (id)videoITunesUAudioQuery;
 + (id)videoPodcastsQuery;
 + (id)videosQuery;
 
-- (void)_calculateFirstFrequentLongPrefixInfo:(struct { id x1; id x2; unsigned int x3; }*)arg1;
+- (void)_calculateFirstFrequentLongPrefixInfo:(id)arg1;
+- (unsigned int)_countOfCollections;
+- (unsigned int)_countOfItems;
 - (void)_enumerateCollectionsUsingBlock:(id)arg1;
 - (void)_enumerateItemsUsingBlock:(id)arg1;
+- (BOOL)_hasCollections;
+- (BOOL)_hasItems;
 - (struct MPMediaQueryInternal { id x1; id x2; int x3; id x4; int x5; })_internal;
 - (BOOL)_isFilteringDisabled;
-- (id)_itemsImmediately:(BOOL)arg1;
 - (id)_orderingProperties;
 - (id)_sanitizedQuery;
 - (void)_setOrderingProperties:(id)arg1;
+- (BOOL)_updatePredicateForProperty:(id)arg1 withPropertyPredicate:(id)arg2;
 - (id)_valueForAggregateFunction:(id)arg1 onProperty:(id)arg2 entityType:(int)arg3;
 - (void)addFilterPredicate:(id)arg1;
 - (id)backOfAlbumQueryForItem:(id)arg1;
 - (id)bestTitle;
+- (id)collectionByJoiningCollections;
+- (id)collectionPersistentIdentifiers;
 - (id)collectionPropertiesToFetch;
 - (id)collectionSectionInfo;
 - (id)collectionSections;
 - (id)collections;
 - (int)comparableGroupingType;
+- (id)containingAlbum;
 - (id)containingEntityRepresentativeItem;
 - (int)containingEntityType;
 - (id)containingPlaylist;
+- (id)copyByRemovingStaticEntities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)criteria;
 - (void)dealloc;
@@ -102,6 +122,8 @@
 - (unsigned int)groupingThreshold;
 - (unsigned int)groupingThreshold;
 - (int)groupingType;
+- (BOOL)hasDownloadableEntities;
+- (BOOL)hasDownloadingEntities;
 - (unsigned int)hash;
 - (unsigned int)indexOfEntityWithPersistentID:(unsigned long long)arg1;
 - (unsigned int)indexOfFirstEntityMatchingPredicate:(id)arg1;
@@ -113,11 +135,14 @@
 - (id)initWithFilterPredicatesInternal:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNowPlayingQuery:(id)arg1;
+- (id)itemPersistentIdentifiers;
 - (id)itemPropertiesToFetch;
 - (id)itemSectionInfo;
 - (id)itemSections;
 - (id)items;
 - (id)mediaLibrary;
+- (id)mediaQueryWithDownloadableEntities;
+- (id)mediaQueryWithDownloadingEntities;
 - (id)nowPlayingComparableQuery;
 - (id)playlistsWithoutActivePlaylists;
 - (id)predicateForProperty:(id)arg1;
@@ -140,9 +165,12 @@
 - (void)setMediaLibrary:(id)arg1;
 - (void)setSortItems:(BOOL)arg1;
 - (void)setStaticEntities:(id)arg1 entityType:(int)arg2;
+- (void)setUseSections:(BOOL)arg1;
 - (void)set_internal:(struct MPMediaQueryInternal { id x1; id x2; int x3; id x4; int x5; })arg1;
 - (BOOL)sortItems;
 - (BOOL)specifiesPlaylistItems;
+- (BOOL)updateFilterPredicatesToHideUnreachableWhenOfflineCloudContent:(BOOL)arg1;
+- (BOOL)useSections;
 - (id)valueForAggregateFunction:(id)arg1 onCollectionsForProperty:(id)arg2;
 - (id)valueForAggregateFunction:(id)arg1 onItemsForProperty:(id)arg2;
 - (BOOL)willGroupEntities;

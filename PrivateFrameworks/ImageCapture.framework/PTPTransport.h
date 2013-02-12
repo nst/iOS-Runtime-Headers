@@ -8,9 +8,6 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
@@ -19,11 +16,9 @@
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[596]; } *_callbackThread;
     } _callbackThreadCondition;
     BOOL _callbackThreadConditionSignaled;
-    BOOL _callbackThreadIsRunning;
     } _callbackThreadMutex;
     struct __CFRunLoop { } *_callbackThreadRunLoop;
-    } _callbackThreadRunMutex;
-    unsigned int _canceledTransactionID;
+    unsigned long _canceledTransactionID;
     int _connectionStatus;
     PTPWrappedBytes *_dataForTransaction;
     id _delegate;
@@ -35,6 +30,7 @@
     BOOL _responseReceived;
     int _role;
     BOOL _timedOut;
+    unsigned long _totalBytesFilled;
     unsigned short _type;
 }
 
@@ -51,7 +47,6 @@
 - (void)endCallbackThread;
 - (unsigned long long)excessReceivedDataSize;
 - (id)init;
-- (BOOL)isCallbackThreadRunning;
 - (int)lockCallbackThreadMutex;
 - (id)response;
 - (BOOL)responseReceived;

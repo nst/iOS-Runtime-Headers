@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class CLLocationManager, NSDate, NSDateFormatter, NSTimer, PCPersistentTimer;
+@class CLLocationManager, NSDate, NSDateFormatter, NSObject<OS_dispatch_queue>, NSTimer, PCPersistentTimer;
 
 @interface _EKAlarmEngine : NSObject <CLLocationManagerDelegate> {
     BOOL _abortedLastAttemptToAdjustFences;
     NSDateFormatter *_dateFormatter;
     double _defaultRadius;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     double _lastCheckpoint;
     int _lastDBSequence;
     CLLocationManager *_locationManager;

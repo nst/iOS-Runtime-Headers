@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString, NSURL, SSDownload;
+@class NSNumber, NSObject<OS_dispatch_queue>, NSString, NSURL, SSDownload;
 
 @interface ISUDownload : NSObject {
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSDownload *_download;
 }
 

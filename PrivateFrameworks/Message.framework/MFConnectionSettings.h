@@ -12,6 +12,7 @@
     unsigned int _portNumber;
     NSString *_serviceName;
     BOOL _tryDirectSSLConnection;
+    BOOL _usesOpportunisticSockets;
     BOOL _usesSSL;
 }
 
@@ -21,6 +22,7 @@
 @property unsigned int portNumber;
 @property(copy) NSString * serviceName;
 @property BOOL tryDirectSSL;
+@property BOOL usesOpportunisticSockets;
 @property BOOL usesSSL;
 
 - (BOOL)allowsTrustPrompt;
@@ -39,8 +41,10 @@
 - (void)setPortNumber:(unsigned int)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)setTryDirectSSL:(BOOL)arg1;
+- (void)setUsesOpportunisticSockets:(BOOL)arg1;
 - (void)setUsesSSL:(BOOL)arg1;
 - (BOOL)tryDirectSSL;
+- (BOOL)usesOpportunisticSockets;
 - (BOOL)usesSSL;
 
 @end

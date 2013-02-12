@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class <NSObject>, MPMediaItem, NSString;
+@class <NSObject>, IUDownloadActionConfiguration, MPMediaItem, NSString;
 
 @interface IUTableCellConfiguration : NSObject {
     struct CGSize { 
@@ -11,12 +11,9 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    unsigned int _ignoresLeftIndentWhenEditing : 1;
+    struct CGSize { 
+        float width; 
+        float height; 
     unsigned int _isDeleteConfirmationVisible : 1;
     unsigned int _needsDisplay : 1;
     unsigned int _hasDownloadProgress : 1;
@@ -26,7 +23,8 @@
     id _globalContext;
     BOOL _isNowPlaying;
     } _layoutSize;
-    } _selectionEdgeInsets;
+    IUDownloadActionConfiguration *_purchaseActionConfiguration;
+    } _purchaseButtonSize;
 }
 
 @property struct CGSize { float x1; float x2; } backgroundSize;
@@ -36,15 +34,19 @@
 @property(readonly) <NSObject> * downloadableAsset;
 @property(retain) id globalContext;
 @property BOOL hasDownloadProgress;
-@property BOOL ignoresLeftIndentWhenEditing;
 @property BOOL isDeleteConfirmationVisible;
 @property BOOL isNowPlaying;
+@property(readonly) Class layoutManagerClass;
 @property struct CGSize { float x1; float x2; } layoutSize;
 @property(readonly) MPMediaItem * mediaItem;
 @property BOOL needsDisplay;
 @property(readonly) unsigned int numberOfImages;
 @property(readonly) unsigned int numberOfLabels;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } selectionEdgeInsets;
+@property(readonly) int preset;
+@property(retain) IUDownloadActionConfiguration * purchaseActionConfiguration;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } purchaseButtonFrame;
+@property struct CGSize { float x1; float x2; } purchaseButtonSize;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } selectionEdgeInsets;
 @property(readonly) BOOL showsUntruncationCallout;
 @property(readonly) NSString * untruncationCalloutString;
 
@@ -59,7 +61,6 @@
 - (id)backgroundColorForImageAtIndex:(unsigned int)arg1;
 - (id)backgroundColorWithModifiers:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })backgroundSize;
-- (id)backgroundViewWithModifiers:(unsigned int)arg1;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })downloadButtonFrame;
@@ -73,12 +74,12 @@
 - (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
 - (id)globalContext;
 - (BOOL)hasDownloadProgress;
-- (BOOL)ignoresLeftIndentWhenEditing;
 - (id)imageAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (void)invalidateDynamicTrackCaches;
 - (BOOL)isDeleteConfirmationVisible;
 - (BOOL)isDownloadable;
 - (BOOL)isNowPlaying;
+- (Class)layoutManagerClass;
 - (struct CGSize { float x1; float x2; })layoutSize;
 - (void)layoutSubviewLayoutViews:(id)arg1;
 - (int)lineBreakModeForLabelAtIndex:(unsigned int)arg1;
@@ -87,18 +88,23 @@
 - (unsigned int)numberOfImages;
 - (unsigned int)numberOfLabels;
 - (struct CGSize { float x1; float x2; })offsetForLabelAtIndex:(unsigned int)arg1;
+- (int)preset;
+- (id)purchaseActionConfiguration;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })purchaseButtonFrame;
+- (struct CGSize { float x1; float x2; })purchaseButtonSize;
 - (void)reloadData;
+- (void)reloadLayoutInformation;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionEdgeInsets;
 - (void)setBackgroundSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDownloadable:(BOOL)arg1;
 - (void)setGlobalContext:(id)arg1;
 - (void)setHasDownloadProgress:(BOOL)arg1;
-- (void)setIgnoresLeftIndentWhenEditing:(BOOL)arg1;
 - (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
 - (void)setIsNowPlaying:(BOOL)arg1;
 - (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNeedsDisplay:(BOOL)arg1;
-- (void)setSelectionEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPurchaseActionConfiguration:(id)arg1;
+- (void)setPurchaseButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)showsUntruncationCallout;
 - (id)stringForLabelAtIndex:(unsigned int)arg1;
 - (id)subviewLayoutViewsWithModifiers:(unsigned int)arg1;

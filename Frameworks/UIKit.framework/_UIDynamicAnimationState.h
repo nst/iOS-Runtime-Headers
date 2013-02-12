@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, NSMutableArray, UIScreen;
+@class CADisplayLink, NSMutableArray, NSTimer, UIScreen;
 
 @interface _UIDynamicAnimationState : NSObject {
     NSMutableArray *_activeAnimations;
@@ -10,6 +10,7 @@
     double _lastUpdateTime;
     UIScreen *_screen;
     BOOL _shouldSchedYield;
+    NSTimer *_timer;
 }
 
 @end

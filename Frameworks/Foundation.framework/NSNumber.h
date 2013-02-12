@@ -10,6 +10,7 @@
 @interface NSNumber : NSValue <ASParsingLeafNode> {
 }
 
++ (id)_gkServerTimeInterval:(double)arg1;
 + (BOOL)acceptsTopLevelLeaves;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)boolFromICSString:(id)arg1;
@@ -18,9 +19,11 @@
 + (BOOL)notifyOfUnknownTokens;
 + (id)numberWithBool:(BOOL)arg1;
 + (id)numberWithCGFloat:(float)arg1;
++ (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithChar:(BOOL)arg1;
 + (id)numberWithDouble:(double)arg1;
 + (id)numberWithFloat:(float)arg1;
++ (id)numberWithFloatZero;
 + (id)numberWithInt:(int)arg1;
 + (id)numberWithInteger:(int)arg1;
 + (id)numberWithItemIdentifier:(unsigned long long)arg1;
@@ -39,23 +42,28 @@
 + (BOOL)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
 + (BOOL)parsingLeafNode;
 + (BOOL)parsingWithSubItems;
++ (BOOL)supportsSecureCoding;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; boolx10; }*)arg4;
+- (void)MLBindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
 - (void)_ICSBoolAppendingToString:(id)arg1;
 - (void)_ICSFBTypeAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)_ICSUTCOffsetAppendingToString:(id)arg1;
+- (BOOL)_allowsDirectEncoding;
 - (long)_cfNumberType;
 - (unsigned long)_cfTypeID;
+- (bool)_getCString:(char *)arg1 length:(int)arg2 multiplier:(double)arg3;
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
 - (int)_reverseCompare:(id)arg1;
 - (void)appendJsonStringToString:(id)arg1;
 - (BOOL)boolValue;
+- (float)cgFloatValue;
 - (float)cgFloatValue;
 - (BOOL)charValue;
 - (Class)classForCoder;
@@ -70,6 +78,7 @@
 - (unsigned int)hash;
 - (id)initWithASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 lengthUntilEndOfTerminator:(int)arg6;
 - (id)initWithBool:(BOOL)arg1;
+- (id)initWithCGFloat:(float)arg1;
 - (id)initWithCGFloat:(float)arg1;
 - (id)initWithChar:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;

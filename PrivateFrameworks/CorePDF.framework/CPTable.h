@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPGraphicObject;
-
 @interface CPTable : CPChunk <CPDisposable, CPGraphicUser> {
     struct CGRect { 
         struct CGPoint { 
@@ -16,7 +14,7 @@
         } size; 
     struct CGColor { } *backgroundColor;
     unsigned int backgroundGraphicCount;
-    CPGraphicObject **backgroundGraphics;
+    id *backgroundGraphics;
     unsigned int columnCount;
     float *columnX;
     BOOL disposed;
@@ -31,7 +29,7 @@
 @property(readonly) float* columnX;
 @property unsigned int rowCount;
 @property(readonly) float* rowY;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } tableBounds;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } tableBounds;
 
 - (struct CGColor { }*)backgroundColor;
 - (id)backgroundGraphicAtIndex:(unsigned int)arg1;

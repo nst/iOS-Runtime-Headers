@@ -51,6 +51,7 @@
     } _contentInset;
     } _frame;
     float _offset;
+    BOOL _preferLandscapeOrientations;
     unsigned int _preferredArrowDirections;
     } _preferredContentSize;
     } _targetRect;
@@ -65,6 +66,7 @@
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 @property(readonly) float offset;
+@property BOOL preferLandscapeOrientations;
 @property unsigned int preferredArrowDirections;
 @property struct CGSize { float x1; float x2; } preferredContentSize;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
@@ -89,6 +91,7 @@
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (float)offset;
+- (BOOL)preferLandscapeOrientations;
 - (unsigned int)preferredArrowDirections;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setArrowHeight:(float)arg1;
@@ -96,6 +99,7 @@
 - (void)setContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContainingFrameInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPreferLandscapeOrientations:(BOOL)arg1;
 - (void)setPreferredArrowDirections:(unsigned int)arg1;
 - (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

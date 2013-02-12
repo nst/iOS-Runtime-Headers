@@ -12,13 +12,13 @@
 @property int cols;
 @property(copy) NSString * defaultValue;
 @property BOOL disabled;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * name;
 @property BOOL readOnly;
 @property int rows;
 @property int selectionEnd;
 @property int selectionStart;
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * type;
 @property(copy) NSString * value;
 @property(readonly) BOOL willValidate;
 
@@ -37,6 +37,7 @@
 - (BOOL)checkValidity;
 - (int)cols;
 - (id)defaultValue;
+- (id)dirName;
 - (BOOL)disabled;
 - (id)endPosition;
 - (id)form;
@@ -51,6 +52,7 @@
 - (BOOL)required;
 - (int)rows;
 - (void)select;
+- (id)selectionDirection;
 - (int)selectionEnd;
 - (int)selectionStart;
 - (void)setAccessKey:(id)arg1;
@@ -60,6 +62,7 @@
 - (void)setCols:(int)arg1;
 - (void)setCustomValidity:(id)arg1;
 - (void)setDefaultValue:(id)arg1;
+- (void)setDirName:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setMaxLength:(int)arg1;
 - (void)setName:(id)arg1;
@@ -67,11 +70,13 @@
 - (void)setReadOnly:(BOOL)arg1;
 - (void)setRequired:(BOOL)arg1;
 - (void)setRows:(int)arg1;
+- (void)setSelectionDirection:(id)arg1;
 - (void)setSelectionEnd:(int)arg1;
 - (void)setSelectionRange:(int)arg1 end:(int)arg2;
 - (void)setSelectionStart:(int)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setValue:(id)arg1;
+- (void)setWrap:(id)arg1;
 - (id)startPosition;
 - (int)structuralComplexityContribution;
 - (id)textInputTraits;
@@ -81,5 +86,6 @@
 - (id)validity;
 - (id)value;
 - (BOOL)willValidate;
+- (id)wrap;
 
 @end

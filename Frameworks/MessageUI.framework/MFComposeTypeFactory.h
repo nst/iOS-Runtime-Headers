@@ -18,9 +18,10 @@
 + (void)addAttachment:(id)arg1 prepend:(BOOL)arg2 withCompositionModel:(id)arg3 delegate:(id)arg4;
 + (id)addInlineAttachmentForInclusion:(id)arg1 onlyIfNecessary:(BOOL)arg2 delegate:(id)arg3;
 + (id)headersFromDelegate:(id)arg1;
-+ (int)imageScaleFromUserDefaults;
++ (unsigned int)imageScaleFromUserDefaults;
 + (id)messageFromDelegate:(id)arg1;
 + (void)setupWithCompositionModel:(id)arg1 delegate:(id)arg2;
++ (void)setupWithContent:(id)arg1 delegate:(id)arg2;
 + (id)subjectFromSubject:(id)arg1 withComposeType:(int)arg2;
 
 @end

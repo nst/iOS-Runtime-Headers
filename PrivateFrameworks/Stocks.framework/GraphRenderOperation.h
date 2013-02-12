@@ -4,15 +4,14 @@
 
 @class <GraphRenderOperationDelegate>, NSArray, StockGraphImageSet, UIColor;
 
-@interface GraphRenderOperation : NSOperation {
+@interface GraphRenderOperation : NSObject {
     struct CGSize { 
         float width; 
         float height; 
     struct CGSize { 
         float width; 
         float height; 
-    BOOL _isExecuting;
-    BOOL _isFinished;
+    BOOL _cancelled;
     UIColor *axisColor;
     UIColor *backgroundLinesColor;
     <GraphRenderOperationDelegate> *delegate;
@@ -36,13 +35,14 @@
 
 @property(retain) UIColor * axisColor;
 @property(retain) UIColor * backgroundLinesColor;
+@property(getter=isCancelled,readonly) BOOL cancelled;
 @property <GraphRenderOperationDelegate> * delegate;
 @property BOOL detailedMode;
 @property(retain) NSArray * dottedLinePositions;
 @property(retain) StockGraphImageSet * graphImageSet;
 @property BOOL letterPress;
 @property(retain) UIColor * lineColor;
-@property struct CGSize { float width; float height; } lineGraphSize;
+@property struct CGSize { float x1; float x2; } lineGraphSize;
 @property(retain) NSArray * linePointCounts;
 @property float lineWidth;
 @property unsigned long long maxVolume;
@@ -52,23 +52,21 @@
 @property float volumeBarWidth;
 @property struct { float x1; unsigned long long x2; }* volumeBars;
 @property unsigned int volumeCount;
-@property struct CGSize { float width; float height; } volumeGraphSize;
+@property struct CGSize { float x1; float x2; } volumeGraphSize;
 
 + (struct CGGradient { }*)LineBackgroundGradient;
 
+- (void).cxx_destruct;
 - (void)_deliverDelegateCallback;
 - (id)axisColor;
 - (id)backgroundLinesColor;
-- (void)dealloc;
+- (void)cancel;
 - (id)delegate;
 - (BOOL)detailedMode;
 - (id)dottedLinePositions;
-- (void)finish;
 - (id)graphImageSet;
 - (id)init;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (BOOL)isCancelled;
 - (BOOL)letterPress;
 - (id)lineColor;
 - (struct CGSize { float x1; float x2; })lineGraphSize;
@@ -76,6 +74,7 @@
 - (float)lineWidth;
 - (unsigned long long)maxVolume;
 - (struct CGPoint { float x1; float x2; }*)points;
+- (void)render;
 - (void)renderGraphLineInContext:(struct CGContext { }*)arg1 withColor:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3;
 - (void)renderLineGraph;
 - (void)renderVolumeGraph;
@@ -100,7 +99,6 @@
 - (void)setVolumeCount:(unsigned int)arg1;
 - (void)setVolumeGraphSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)shadowLineColor;
-- (void)start;
 - (float)volumeBarWidth;
 - (struct { float x1; unsigned long long x2; }*)volumeBars;
 - (unsigned int)volumeCount;

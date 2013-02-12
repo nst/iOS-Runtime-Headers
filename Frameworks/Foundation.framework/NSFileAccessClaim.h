@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSError, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString;
+@class NSError, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_semaphore>, NSObject<OS_xpc_object>, NSString;
 
 @interface NSFileAccessClaim : NSObject {
     unsigned int _blockageCount;
@@ -17,8 +17,8 @@
     unsigned int _claimerBlockageCount;
     NSError *_claimerError;
     id _claimerOrNil;
-    struct dispatch_semaphore_s { } *_claimerWaiterOrNull;
-    struct _xpc_connection_s { } *_client;
+    NSObject<OS_dispatch_semaphore> *_claimerWaiterOrNull;
+    NSObject<OS_xpc_object> *_client;
     BOOL _didMakePresentersRelinquishToWriter;
     BOOL _didWait;
     BOOL _isRevoked;
@@ -28,6 +28,7 @@
     NSMutableDictionary *_reacquisitionProceduresByPresenterID;
     NSMutableArray *_revocationProcedures;
     BOOL _revokingIsInexorable;
+    id _sandboxToken;
 }
 
 + (BOOL)canReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
@@ -41,7 +42,7 @@
 - (id)claimID;
 - (id)claimerError;
 - (BOOL)claimerInvokingIsBlockedByReactorWithID:(id)arg1;
-- (struct _xpc_connection_s { }*)client;
+- (id)client;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndenting:(id)arg1;
@@ -54,8 +55,8 @@
 - (void)forwardUsingMessageSender:(id)arg1 crashHandler:(id)arg2;
 - (void)granted;
 - (void)ifSymbolicLinkAtURL:(id)arg1 withResolutionCount:(int*)arg2 thenReevaluateSelf:(id)arg3 elseInvokeClaimer:(id)arg4;
-- (id)initWithClient:(struct _xpc_connection_s { }*)arg1 claimID:(id)arg2 purposeID:(id)arg3;
-- (id)initWithClient:(struct _xpc_connection_s { }*)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
+- (id)initWithClient:(id)arg1 claimID:(id)arg2 purposeID:(id)arg3;
+- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByClaimWithPurposeID:(id)arg1;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
@@ -65,9 +66,10 @@
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (void)makePresentersOfItemAtLocation:(id)arg1 orContainedItem:(BOOL)arg2 relinquishUsingProcedureGetter:(id)arg3;
 - (void)makeProviderOfItemAtLocation:(id)arg1 provideThenContinue:(id)arg2;
-- (struct dispatch_semaphore_s { }*)newClaimerWaiter;
+- (id)newClaimerWaiter;
 - (id)pendingClaims;
 - (id)purposeID;
+- (id)purposeIDOfClaimOnItemAtLocation:(id)arg1 forMessagingPresenter:(id)arg2;
 - (void)removePendingClaims:(id)arg1;
 - (void)revoked;
 - (void)setCameFromSuperarbiter;

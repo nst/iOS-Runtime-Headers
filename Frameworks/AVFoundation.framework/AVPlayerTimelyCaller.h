@@ -2,25 +2,36 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, AVWeakReference;
+@class AVPlayer, AVWeakReference, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
 
 @interface AVPlayerTimelyCaller : NSObject {
-    BOOL _isTimerSourceRunning;
+    double _currentRate;
+    BOOL _isInvalidated;
+    double _lastRate;
     AVPlayer *_player;
-    struct dispatch_queue_s { } *_timerQueue;
+    struct OpaqueCMTimebase { } *_timebase;
+    NSObject<OS_dispatch_queue> *_timerQueue;
     BOOL _timerQueueIsPlayerStateDispatchQueue;
-    struct dispatch_source_s { } *_timerSource;
+    NSObject<OS_dispatch_source> *_timerSource;
     AVWeakReference *_weakReference;
 }
 
 @property(getter=_weakReference,readonly) AVWeakReference * weakReference;
 
+- (void)_effectiveRateChanged;
+- (void)_handleTimeDiscontinuity;
+- (long)_removeCurrentTimebaseFromTimerSource;
+- (void)_resetNextFireTime;
+- (void)_startObservingTimebaseNotificationsForCurrentItem;
+- (void)_stopObservingTimebaseNotifications;
+- (void)_stopRespondingToPlayerStateChanges;
+- (void)_timebaseDidChange:(id)arg1;
 - (id)_weakReference;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithPlayer:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
+- (id)initWithPlayer:(id)arg1 queue:(id)arg2;
 - (void)invalidate;
-- (void)itemTimeJumped;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
 
 @end

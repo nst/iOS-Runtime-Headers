@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CAShapeLayer, UIImage, UIImageView, UIView;
+@class UIImage, UIImageView, UIView;
 
-@interface PLCameraImageWellView : UIView {
+@interface PLCameraImageWellView : UIView <PLCameraButtonBarSubviewProtocol> {
+    UIImageView *_backgroundImageView;
     int _buttonBarStyle;
-    UIImageView *_containerImageView;
+    UIView *_containerView;
     int _deviceOrientation;
     UIImage *_thumbnailImage;
     UIImageView *_thumbnailImageView;
-    CAShapeLayer *_thumbnailMaskLayer;
     UIView *_thumbnailOverlayView;
     BOOL _watchingOrientationChanges;
 }
-
-+ (float)imageWellCornerRadius;
 
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_setImageViewHighlighted:(BOOL)arg1;
@@ -23,9 +21,9 @@
 - (void)_stopWatchingDeviceOrientationChanges;
 - (void)addMaskedSubview:(id)arg1;
 - (void)beginContentFadeOutWithDuration:(float)arg1;
+- (void)buttonBar:(id)arg1 didChangeMode:(int)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 buttonBarStyle:(int)arg3;
-- (void)layoutSubviews;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

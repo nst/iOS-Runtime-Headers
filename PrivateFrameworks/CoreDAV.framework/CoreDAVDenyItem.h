@@ -10,8 +10,9 @@
 
 @property(retain) NSMutableSet * privileges;
 
++ (id)copyParseRules;
+
 - (void)addPrivilege:(id)arg1;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)init;

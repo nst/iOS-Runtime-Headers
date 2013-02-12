@@ -5,7 +5,8 @@
 @interface ABMapsTabletStyleProvider : ABTabletStyleProvider {
 }
 
-- (int)cardActionButtonType;
-- (id)cardCellBackgroundColor;
+- (id)cardActionConferenceIcon;
+- (id)cardLabelTextColor;
+- (id)personActionColor;
 
 @end

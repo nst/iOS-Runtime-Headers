@@ -31,6 +31,7 @@
 - (void)dealloc;
 - (void)invalidateAVController;
 - (BOOL)isAirPlayMirroring;
+- (BOOL)isUsingBlueToothLEA;
 - (int)numberOfAudioRoutes;
 - (BOOL)pickHandsetRoute;
 - (void)pickRouteAtIndex:(unsigned int)arg1;

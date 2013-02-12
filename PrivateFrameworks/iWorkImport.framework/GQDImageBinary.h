@@ -12,6 +12,7 @@
     } mSize;
 }
 
+- (id).cxx_construct;
 - (struct __CFURL { }*)absoluteUrlForState:(id)arg1;
 - (void)dealloc;
 - (int)readDataAttributesFromReader:(struct _xmlTextReader { }*)arg1;

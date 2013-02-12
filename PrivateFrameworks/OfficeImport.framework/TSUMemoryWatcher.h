@@ -10,6 +10,8 @@
     BOOL _stop;
 }
 
+- (void)_periodicallySimulateMemoryWarning:(id)arg1;
+- (void)_simulateMemoryWarning:(id)arg1;
 - (void)beginObserving;
 - (void)dealloc;
 - (id)initWithFlushingManager:(id)arg1;

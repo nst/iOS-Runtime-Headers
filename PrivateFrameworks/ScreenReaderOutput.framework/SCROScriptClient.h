@@ -22,7 +22,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)handleCallback:(id)arg1;
 - (id)init;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (BOOL)runScriptFile:(id)arg1;

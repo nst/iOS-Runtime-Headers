@@ -5,11 +5,12 @@
 @class NSDictionary, NSString;
 
 @interface AVChatParticipantStatusNugget : NSObject <NSCoding> {
-    unsigned int _ardRole;
+    int _ardRole;
     int _error;
     NSString *_imHandleID;
     NSString *_imHandleName;
     NSString *_invitedBy;
+    unsigned int _newState;
     unsigned int _reason;
     BOOL _sendingAudio;
     BOOL _sendingVideo;
@@ -19,12 +20,13 @@
 }
 
 @property(readonly) NSString * ID;
-@property(readonly) unsigned int ardRole;
+@property(readonly) int ardRole;
 @property(readonly) NSDictionary * dictionaryDescription;
 @property(readonly) int error;
 @property(readonly) NSString * invitedBy;
 @property(readonly) BOOL isUsingICE;
 @property(readonly) NSString * name;
+@property(readonly) unsigned int newState;
 @property(readonly) unsigned int reason;
 @property(readonly) BOOL sendingAudio;
 @property(readonly) BOOL sendingVideo;
@@ -36,8 +38,9 @@
 
 - (id)ID;
 - (void)_configureWithDictionaryDescription:(id)arg1;
-- (unsigned int)ardRole;
+- (int)ardRole;
 - (void)dealloc;
+- (id)description;
 - (id)dictionaryDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (int)error;
@@ -46,6 +49,7 @@
 - (id)invitedBy;
 - (BOOL)isUsingICE;
 - (id)name;
+- (unsigned int)newState;
 - (unsigned int)reason;
 - (BOOL)sendingAudio;
 - (BOOL)sendingVideo;

@@ -20,7 +20,6 @@
 - (id)getDAObjectWithLocalItem:(void*)arg1 serverId:(id)arg2 account:(id)arg3;
 - (int)getIdFromLocalObject:(void*)arg1;
 - (id)initWithContainer:(void*)arg1;
-- (BOOL)mapWithoutCommitting;
 - (void)openDB;
 - (BOOL)saveContainer;
 - (void)setContainer:(void*)arg1;

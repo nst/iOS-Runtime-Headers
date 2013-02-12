@@ -13,7 +13,7 @@
     union { 
         NSString *thePseudoName; 
         VMUCallTreeNode *theChild; 
-        VMUCallTreeNode **theChildren; 
+        id *theChildren; 
     unsigned long long address;
     unsigned int count;
     unsigned int flags;

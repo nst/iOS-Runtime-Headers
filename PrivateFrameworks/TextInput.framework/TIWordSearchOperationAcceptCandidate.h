@@ -2,22 +2,27 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class UIKeyboardCandidate;
+@class TIMecabraWrapper, UIKeyboardCandidate;
 
 @interface TIWordSearchOperationAcceptCandidate : TIWordSearchOperation {
-    UIKeyboardCandidate *_acceptedCandidate;
-    BOOL _isPartial;
+    UIKeyboardCandidate *_candidate;
+    TIMecabraWrapper *_mecabraWrapper;
+    BOOL _partialCandidate;
 }
 
-@property(retain) UIKeyboardCandidate * acceptedCandidate;
-@property(readonly) BOOL isPartial;
+@property(retain) UIKeyboardCandidate * candidate;
+@property(retain) TIMecabraWrapper * mecabraWrapper;
+@property(getter=isPartialCandidate) BOOL partialCandidate;
 
-- (id)acceptedCandidate;
 - (void)cancel;
+- (id)candidate;
 - (void)dealloc;
-- (id)initWithTIWordSearch:(id)arg1 candidate:(id)arg2 isPartial:(BOOL)arg3;
-- (BOOL)isPartial;
+- (id)initWithWordSearch:(id)arg1 candidate:(id)arg2 isPartial:(BOOL)arg3;
+- (BOOL)isPartialCandidate;
+- (id)mecabraWrapper;
 - (void)perform;
-- (void)setAcceptedCandidate:(id)arg1;
+- (void)setCandidate:(id)arg1;
+- (void)setMecabraWrapper:(id)arg1;
+- (void)setPartialCandidate:(BOOL)arg1;
 
 @end

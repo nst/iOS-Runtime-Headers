@@ -9,6 +9,7 @@
 + (id)tabBarItemTitleKey;
 
 - (id)createNoContentDataSource;
+- (int)filteredMediaTypes;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (void)setQueries:(id)arg1;
 - (id)viewControllerContextForMediaQuery:(id)arg1;

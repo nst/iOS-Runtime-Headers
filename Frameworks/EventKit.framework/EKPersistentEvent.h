@@ -25,6 +25,8 @@
 @property(readonly) NSString * eventIdentifier;
 @property(getter=isFloating,readonly) BOOL floating;
 @property(getter=isInvitation,readonly) BOOL invitation;
+@property(readonly) unsigned int invitationChangedProperties;
+@property unsigned int invitationStatus;
 @property(getter=isMeeting,readonly) BOOL meeting;
 @property unsigned int modifiedProperties;
 @property BOOL needsOccurrenceCacheUpdate;
@@ -32,7 +34,6 @@
 @property int participationStatus;
 @property(readonly) int pendingParticipationStatus;
 @property unsigned int privacyLevel;
-@property unsigned int readStatus;
 @property(copy) NSString * responseComment;
 @property int status;
 
@@ -44,7 +45,6 @@
 - (void)_adjustForNewCalendar;
 - (BOOL)_areDurationUnitsCached;
 - (BOOL)_hasExternalIDOrDeliverySource;
-- (BOOL)_hasValidEventAction;
 - (void)_invalidateCachedDurationUnits;
 - (id)actions;
 - (void)addAction:(id)arg1;
@@ -66,7 +66,10 @@
 - (id)eventIdentifier;
 - (id)exportToICS;
 - (void)filterExceptionDates;
+- (BOOL)hasValidEventAction;
 - (id)initCommon;
+- (unsigned int)invitationChangedProperties;
+- (unsigned int)invitationStatus;
 - (BOOL)isEditable;
 - (BOOL)isFloating;
 - (BOOL)isInvitation;
@@ -79,7 +82,6 @@
 - (int)pendingParticipationStatus;
 - (void)primitiveValueChangedForKey:(id)arg1;
 - (unsigned int)privacyLevel;
-- (unsigned int)readStatus;
 - (BOOL)refresh;
 - (void)removeAction:(id)arg1;
 - (id)responseComment;
@@ -87,12 +89,12 @@
 - (void)setActions:(id)arg1;
 - (void)setAvailability:(int)arg1;
 - (void)setEndDate:(id)arg1;
+- (void)setInvitationStatus:(unsigned int)arg1;
 - (void)setModifiedProperties:(unsigned int)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
 - (void)setOriginalStartDate:(id)arg1;
 - (void)setParticipationStatus:(int)arg1;
 - (void)setPrivacyLevel:(unsigned int)arg1;
-- (void)setReadStatus:(unsigned int)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setURL:(id)arg1;

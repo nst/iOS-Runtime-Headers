@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureSession, AVCaptureVideoPreviewLayerInternal, NSString;
+@class AVCaptureConnection, AVCaptureSession, AVCaptureVideoPreviewLayerInternal, NSString;
 
 @interface AVCaptureVideoPreviewLayer : CALayer {
     AVCaptureVideoPreviewLayerInternal *_internal;
 }
 
 @property BOOL automaticallyAdjustsMirroring;
+@property(readonly) AVCaptureConnection * connection;
 @property(getter=isMirrored) BOOL mirrored;
 @property(getter=isMirroringSupported,readonly) BOOL mirroringSupported;
 @property int orientation;
@@ -19,17 +20,27 @@
 + (void)initialize;
 + (id)layerWithSession:(id)arg1;
 
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (BOOL)_automaticallyAdjustsMirroring;
+- (id)_input;
+- (BOOL)_isMirrored;
+- (int)_orientation;
+- (void)_updateCaptureDeviceTransform;
 - (id)activeConnections;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (BOOL)automaticallyAdjustsMirroring;
+- (void)bumpChangeSeed;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
+- (struct CGPoint { float x1; float x2; })captureDevicePointOfInterestForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)centerSublayer;
+- (int)changeSeed;
+- (id)connection;
 - (id)connectionMediaTypes;
 - (id)connections;
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
+- (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
 - (id)initWithSession:(id)arg1;
@@ -41,10 +52,14 @@
 - (BOOL)isPaused;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
 - (void)layoutSublayers;
+- (id)liveConnections;
 - (id)notReadyError;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (int)orientation;
+- (struct CGPoint { float x1; float x2; })pointForCaptureDevicePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (float)previewRotationDegrees;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForCaptureDeviceFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForMetadataObject:(id)arg1;
 - (void)removeConnection:(id)arg1;
 - (id)session;
 - (void)setAutomaticallyAdjustsMirroring:(BOOL)arg1;
@@ -57,6 +72,7 @@
 - (void)setSession:(id)arg1;
 - (void)setVideoGravity:(id)arg1;
 - (id)subLayer;
+- (id)transformedMetadataObjectForMetadataObject:(id)arg1;
 - (id)videoGravity;
 
 @end

@@ -13,7 +13,6 @@
 }
 
 - (void)calculateMetrics;
-- (float)center;
 - (void)clearCachedInfo;
 - (double)maxFontLineHeight;
 - (float)maxFontSize;

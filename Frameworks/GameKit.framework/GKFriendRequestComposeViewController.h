@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKFriendRequestComposeViewControllerDelegate>, GKComposeController, NSNumber, NSString;
+@class <GKFriendRequestComposeViewControllerDelegate>, GKComposeHostedViewController, NSNumber, NSString;
 
-@interface GKFriendRequestComposeViewController : UINavigationController <GKComposeControllerDelegate> {
-    GKComposeController *_composeController;
-    <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegate;
+@interface GKFriendRequestComposeViewController : UINavigationController {
+    GKComposeHostedViewController *_composeController;
+    <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegateWeak;
     NSString *_message;
     unsigned int _recipientCount;
 }
 
-@property(retain) GKComposeController * composeController;
+@property(retain) GKComposeHostedViewController * composeController;
 @property <GKFriendRequestComposeViewControllerDelegate> * composeViewDelegate;
 @property(retain) NSString * message;
 @property unsigned int recipientCount;
@@ -19,20 +19,16 @@
 
 + (unsigned int)maxNumberOfRecipients;
 
-- (void)addRecipientsNonPlayerIDCommon:(id)arg1;
-- (void)addRecipientsWithAliases:(id)arg1;
+- (void)__viewControllerWillBePresented:(BOOL)arg1;
 - (void)addRecipientsWithEmailAddresses:(id)arg1;
 - (void)addRecipientsWithPlayerIDs:(id)arg1;
-- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)composeController;
-- (void)composeControllerAppeared:(id)arg1;
-- (void)composeControllerCancelled:(id)arg1;
-- (void)composeControllerSendStarted:(id)arg1;
 - (id)composeViewDelegate;
 - (void)dealloc;
-- (void)didReceiveMemoryWarning;
 - (id)init;
 - (id)message;
+- (BOOL)navigationBarHidden;
 - (void)prepareForNewRecipients:(id)arg1;
 - (unsigned int)recipientCount;
 - (id)rid;
@@ -42,7 +38,10 @@
 - (void)setMessage:(id)arg1;
 - (void)setRecipientCount:(unsigned int)arg1;
 - (void)setRid:(id)arg1;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

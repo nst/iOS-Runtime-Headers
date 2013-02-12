@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetTrackInspector, AVWeakReference, NSArray;
+@class AVAssetTrackInspector, AVWeakReference;
 
 @interface AVAssetTrackInternal : NSObject {
     AVWeakReference *assetWeakReference;
-    long getTaggedCharacteristicsOncePerTrack;
-    NSArray *taggedCharacteristics;
     AVAssetTrackInspector *trackInspector;
 }
 

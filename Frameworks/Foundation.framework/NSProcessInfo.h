@@ -21,8 +21,11 @@
 - (int)_suddenTerminationDisablingCount;
 - (unsigned int)activeProcessorCount;
 - (id)arguments;
+- (BOOL)automaticTerminationSupportEnabled;
 - (void)dealloc;
+- (void)disableAutomaticTermination:(id)arg1;
 - (void)disableSuddenTermination;
+- (void)enableAutomaticTermination:(id)arg1;
 - (void)enableSuddenTermination;
 - (id)environment;
 - (id)globallyUniqueString;
@@ -37,6 +40,7 @@
 - (id)processName;
 - (unsigned int)processorCount;
 - (void)setArguments:(id)arg1;
+- (void)setAutomaticTerminationSupportEnabled:(BOOL)arg1;
 - (void)setProcessName:(id)arg1;
 - (double)systemUptime;
 - (id)userFullName;

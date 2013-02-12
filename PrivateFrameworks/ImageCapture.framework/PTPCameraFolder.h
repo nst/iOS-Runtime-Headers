@@ -10,9 +10,9 @@
 }
 
 @property(copy) id info;
-@property(readonly) unsigned int objHandle;
+@property(readonly) unsigned long objHandle;
 @property(retain) NSString * path;
-@property(readonly) unsigned int storageID;
+@property(readonly) unsigned long storageID;
 @property(readonly) unsigned int type;
 
 - (void)dealloc;

@@ -9,10 +9,10 @@
 
 @property(copy) NSArray * addedFrequency;
 @property(copy) NSURL * alarmId;
-@property(retain) NSNumber * enabled;
-@property(retain) NSNumber * hour;
+@property(copy) NSNumber * enabled;
+@property(copy) NSNumber * hour;
 @property(copy) NSString * label;
-@property(retain) NSNumber * minute;
+@property(copy) NSNumber * minute;
 @property(copy) NSArray * removedFrequency;
 @property(copy) NSURL * targetAppId;
 

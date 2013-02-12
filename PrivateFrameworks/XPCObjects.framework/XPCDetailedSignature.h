@@ -8,6 +8,7 @@
 }
 
 + (id)signatureWithArgumentCount:(unsigned int)arg1 classes:(Class)arg2;
++ (id)signatureWithoutArguments;
 
 - (Class)argumentClassAtIndex:(unsigned int)arg1;
 - (void)dealloc;

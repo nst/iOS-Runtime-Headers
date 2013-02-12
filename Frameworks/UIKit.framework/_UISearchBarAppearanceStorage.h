@@ -2,22 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSValue;
+@class NSMutableDictionary, NSValue, UIImage;
 
 @interface _UISearchBarAppearanceStorage : NSObject {
     NSMutableDictionary *iconImages;
     NSMutableDictionary *searchFieldBackgroundImages;
     NSValue *searchFieldPositionAdjustment;
+    UIImage *separatorImage;
 }
 
 @property(retain) NSValue * searchFieldPositionAdjustment;
+@property(retain) UIImage * separatorImage;
 
 - (void)dealloc;
 - (id)imageForIcon:(int)arg1 state:(unsigned int)arg2;
 - (id)searchFieldBackgroundImageForState:(unsigned int)arg1;
 - (id)searchFieldPositionAdjustment;
+- (id)separatorImage;
 - (void)setImage:(id)arg1 forIcon:(int)arg2 state:(unsigned int)arg3;
 - (void)setSearchFieldBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setSearchFieldPositionAdjustment:(id)arg1;
+- (void)setSeparatorImage:(id)arg1;
 
 @end

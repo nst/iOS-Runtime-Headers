@@ -20,8 +20,9 @@
 @property(readonly) BOOL supportsInsert;
 @property(readonly) BOOL supportsUpdate;
 
++ (id)copyParseRules;
+
 - (void)addSupportedItem:(id)arg1;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)dictRepresentation;

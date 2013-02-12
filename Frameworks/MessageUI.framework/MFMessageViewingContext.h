@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class ActivityMonitor, MFError, MFLock, MailMessage, MessageBody, MimePart, NSArray, NSObject<MFMessageViewingContextDelegate>, NSTimer;
+@class ActivityMonitor, MFError, MFLock, MailMessage, MessageBody, MimePart, NSArray, NSObject<MFMessageViewingContextDelegate>;
 
 @interface MFMessageViewingContext : NSObject {
     unsigned int _loadedFullData : 1;
@@ -21,10 +21,8 @@
     ActivityMonitor *_loadTask;
     MimePart *_loadedPart;
     MailMessage *_message;
-    struct __CFDictionary { } *_progresses;
     MFError *_secureMIMEError;
     NSArray *_signers;
-    NSTimer *_updater;
 }
 
 @property(readonly) id content;
@@ -46,6 +44,7 @@
 @property(readonly) MFError * secureMimeError;
 @property(readonly) NSArray * signers;
 
++ (BOOL)isAttachmentTooLarge:(id)arg1;
 + (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;
 
 - (void)_loadAttachments:(id)arg1;
@@ -59,7 +58,6 @@
 - (void)_setMessageBody:(id)arg1;
 - (void)_setSecureMIMEError:(id)arg1;
 - (void)_setSigners:(id)arg1;
-- (void)_updateProgress:(id)arg1;
 - (id)attachments;
 - (void)cancelLoad;
 - (id)content;
@@ -79,7 +77,6 @@
 - (BOOL)isPartial;
 - (void)load;
 - (void)loadAsPlainText:(BOOL)arg1 asHTML:(BOOL)arg2 downloadIfNecessary:(BOOL)arg3;
-- (void)loadAttachment:(id)arg1 progress:(id)arg2;
 - (void)loadBestAlternative;
 - (void)loadFull;
 - (void)loadMore;
@@ -88,7 +85,7 @@
 - (id)loadedPart;
 - (id)message;
 - (id)messageBody;
-- (unsigned int)numberOfImageAttachments;
+- (id)saveableAttachments;
 - (id)secureMimeError;
 - (void)setDelegate:(id)arg1;
 - (void)setIsDraftMessage:(BOOL)arg1;

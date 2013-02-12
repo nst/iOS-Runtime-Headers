@@ -13,10 +13,13 @@
 - (void)_failed:(int)arg1;
 - (void)_updateNextPendingCity;
 - (void)addCityToPendingQueue:(id)arg1;
+- (id)aggregateDictionaryDomain;
 - (void)dealloc;
 - (void)didProcessDocument;
 - (void)failCity:(id)arg1;
 - (void)failWithError:(id)arg1;
+- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(int)arg2;
+- (void)handleNilCity;
 - (id)init;
 - (BOOL)isDataValid:(id)arg1;
 - (BOOL)isUpdatingCity:(id)arg1;

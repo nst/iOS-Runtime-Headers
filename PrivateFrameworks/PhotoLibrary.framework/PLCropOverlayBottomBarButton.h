@@ -2,10 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLCropOverlayBottomBarButton : UIButton {
+@interface PLCropOverlayBottomBarButton : UIButton <PLCameraButtonBarSubviewProtocol> {
+    int _buttonBarMode;
+    int _buttonBarStyle;
+    BOOL _isDoneButton;
 }
 
-- (id)initWithTitle:(id)arg1 isDoneButton:(BOOL)arg2;
+@property(readonly) BOOL isDoneButton;
+
+- (void)_configureForButtonBarStyle:(int)arg1 buttonBarMode:(int)arg2;
+- (void)buttonBar:(id)arg1 didChangeMode:(int)arg2;
+- (id)initWithTitle:(id)arg1 buttonBarStyle:(int)arg2 buttonBarMode:(int)arg3 isDoneButton:(BOOL)arg4;
+- (id)initWithTitle:(id)arg1 buttonBarStyle:(int)arg2 isDoneButton:(BOOL)arg3;
+- (BOOL)isDoneButton;
+- (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

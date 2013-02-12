@@ -10,8 +10,9 @@
 }
 
 @property(readonly) NSString * UUID;
+@property(readonly) NSDate * cachedEndDate;
 @property(readonly) NSString * calendarIdentifier;
-@property int count;
+@property unsigned int count;
 @property(copy) NSArray * daysOfTheMonth;
 @property(copy) NSArray * daysOfTheWeek;
 @property(copy) NSArray * daysOfTheYear;
@@ -32,7 +33,7 @@
 - (id)cachedEndDate;
 - (id)calendarIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)count;
+- (unsigned int)count;
 - (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
 - (id)daysOfTheYear;
@@ -48,7 +49,7 @@
 - (BOOL)isDirty;
 - (id)monthsOfTheYear;
 - (id)owner;
-- (void)setCount:(int)arg1;
+- (void)setCount:(unsigned int)arg1;
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)setDaysOfTheYear:(id)arg1;

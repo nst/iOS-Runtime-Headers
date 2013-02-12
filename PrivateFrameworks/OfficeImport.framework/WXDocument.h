@@ -10,9 +10,8 @@
 + (void)mapDocument:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)mapFontTable:(id)arg1 to:(id)arg2;
 + (void)mapLists:(id)arg1 to:(id)arg2 state:(id)arg3;
++ (void)mapSources:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)mapStyles:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)readDocumentSettings:(id)arg1 to:(id)arg2 state:(id)arg3;
-+ (id)readFromArchive:(id)arg1 cancel:(id)arg2 asThumbnail:(BOOL)arg3;
-+ (id)readFromData:(id)arg1 cancel:(id)arg2 asThumbnail:(BOOL)arg3;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSCountedSet, NSMutableArray, NSRecursiveLock;
+@class NSCountedSet, NSMutableArray, NSRecursiveLock, PLXPCTransaction;
 
 @interface PLImageWriter : NSObject <PLPhotoBakedThumbnailsDelegate> {
     BOOL _databaseIsCorrupt;
@@ -11,7 +11,9 @@
     int _jobQueueAvailabilityToken;
     NSRecursiveLock *_jobsLock;
     NSMutableArray *_lowPriorityJobs;
+    PLXPCTransaction *_transaction;
     NSCountedSet *_unfinishedHighPriorityJobs;
+    int _unfinishedJobCount;
     NSCountedSet *_unfinishedLowPriorityJobs;
     BOOL _writerThreadRunning;
 }
@@ -23,9 +25,13 @@
 
 - (void)_decorateThumbnail:(id)arg1;
 - (void)_decrementJobCount:(id)arg1;
+- (void)_enablePhotoStreamJob:(id)arg1;
 - (void)_incrementJobCount:(id)arg1;
 - (BOOL)_isHighPriorityJob:(id)arg1;
 - (void)_postJobQueueNotificationIsAvailable:(BOOL)arg1;
+- (void)_processAutodeleteEmptyAlbumJob:(id)arg1;
+- (void)_processCrashRecoveryJob:(id)arg1;
+- (void)_processDaemonJob:(id)arg1;
 - (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1;
 - (void)_processDeletePhotoStreamDataJob:(id)arg1;
 - (void)_processImageJob:(id)arg1;
@@ -40,11 +46,18 @@
 - (void)_removeTransientKeys:(id)arg1;
 - (BOOL)_sufficientDiskSpaceToCopyVideoAtPath:(id)arg1;
 - (void)_writerThread;
-- (id)cameraAssetPathForNewAssetWithType:(int)arg1;
+- (id)cameraAssetExtensionForType:(int)arg1;
+- (id)cameraAssetPathForNewAssetWithExtension:(id)arg1;
 - (BOOL)canEnqueueJob:(id)arg1;
 - (void)dealloc;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (BOOL)enqueueJob:(id)arg1;
+- (id)incomingDirectoryPath;
+- (id)incomingDirectoryPathForPhotoStream;
 - (id)init;
+- (id)pathForNewAssetPathAtAlbumDirectoryPath:(id)arg1 assetType:(unsigned int)arg2 extension:(id)arg3;
+- (BOOL)saveImageJobToDisk:(id)arg1;
+- (id)uniqueIncomingPathForAssetWithUUID:(id)arg1 andExtension:(id)arg2 isPhotoStream:(BOOL)arg3;
+- (id)uuidFromIncomingFilename:(id)arg1;
 
 @end

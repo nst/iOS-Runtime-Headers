@@ -37,6 +37,7 @@
 
 @property struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } repeatEndDate;
 
+- (id)_endDateStringForCurrentShorteningStatus;
 - (void)_localeChanged;
 - (BOOL)_showsNeverButton;
 - (id)_stringForEndDate;

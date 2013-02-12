@@ -8,8 +8,8 @@
 }
 
 @property(copy) NSString * desiredAccuracy;
-@property(retain) NSNumber * maxAge;
-@property(retain) NSNumber * searchTimeout;
+@property(copy) NSNumber * maxAge;
+@property(copy) NSNumber * searchTimeout;
 
 + (id)getRequestOrigin;
 + (id)getRequestOriginWithDictionary:(id)arg1 context:(id)arg2;

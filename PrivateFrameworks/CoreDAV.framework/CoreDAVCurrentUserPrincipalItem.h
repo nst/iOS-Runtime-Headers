@@ -12,7 +12,8 @@
 @property(retain) CoreDAVHrefItem * href;
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
-- (id)copyParseRules;
++ (id)copyParseRules;
+
 - (void)dealloc;
 - (id)description;
 - (id)href;

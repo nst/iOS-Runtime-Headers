@@ -12,7 +12,9 @@
 }
 
 + (struct Context { int (**x1)(); unsigned int x2; struct CGColorSpace {} *x3; struct CGColorSpace {} *x4; }*)glesInternalContextOptions:(id)arg1;
++ (int)_crashed_because_nonaddressable_memory_was_passed_to_render:(id)arg1 toBitmap:(void*)arg2 rowBytes:(int)arg3 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 format:(int)arg5 colorSpace:(struct CGColorSpace { }*)arg6;
 + (id)_singletonContext;
++ (BOOL)applicationIsInForegroundState;
 + (id)clContextOptions:(id)arg1;
 + (id)context;
 + (id)contextWithEAGLContext:(id)arg1 options:(id)arg2;
@@ -23,7 +25,8 @@
 - (struct CGColorSpace { }*)_colorspace;
 - (void)_gpuContextCheck;
 - (id)_initWithInternalRepresentation:(void*)arg1;
-- (bool)_isGPUContext;
+- (void)_insertEventMarker:(const char *)arg1;
+- (bool)_isEAGLBackedContext;
 - (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 format:(int)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
 - (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 format:(int)arg3;
 - (struct CGImage { }*)createCGImage:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -44,6 +47,7 @@
 - (void)render:(id)arg1 toCVPixelBuffer:(struct __CVBuffer { }*)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 colorSpace:(struct CGColorSpace { }*)arg4;
 - (void)render:(id)arg1 toCVPixelBuffer:(struct __CVBuffer { }*)arg2;
 - (void)render:(id)arg1 toIOSurface:(struct __IOSurface { }*)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 colorSpace:(struct CGColorSpace { }*)arg4;
+- (void)render:(id)arg1 toTexture:(unsigned int)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 colorSpace:(struct CGColorSpace { }*)arg4;
 - (void)unlock;
 
 @end

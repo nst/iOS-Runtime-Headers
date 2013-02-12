@@ -2,49 +2,31 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class AVRemaker, NSString;
+@class NSString;
 
 @interface CKAVMediaObject : CKMediaObject {
-    double _approximateDuration;
     NSString *_createdFilename;
     BOOL _durationLoaded;
-    BOOL _remakeDidEnd;
-    BOOL _remakeSuccessful;
-    AVRemaker *_remaker;
 }
 
-@property BOOL remakeDidEnd;
-
-+ (void)_dequeueNextTranscodeOnMainThread;
-+ (void)initialize;
 + (double)maxMMSTrimDurationForMediaType:(int)arg1;
 + (id)transcodeOptionsWithMaxBytes:(int)arg1 forMediaType:(int)arg2;
 
-- (void)_beginRemakingOnMainThreadWithOptions:(id)arg1;
-- (void)_determineDurationOnMainThreadWithFile:(id)arg1;
-- (void)_enqueueTranscodeOnMainThreadWithOptions:(id)arg1;
-- (void)_remakeDidComplete:(id)arg1;
-- (Class)balloonPreviewClassWithPreviewData:(id)arg1;
-- (void)cleanupAfterTranscode;
-- (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
 - (void)copyToPasteboard:(id)arg1;
 - (void)dealloc;
 - (double)duration;
 - (id)effectiveExportedFilename;
 - (id)fileForDataWithExtension:(id)arg1;
-- (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
+- (id)icon;
 - (void)prepareForTranscode;
-- (id)previewTitle;
-- (BOOL)remakeDidEnd;
 - (void)setDuration:(double)arg1;
-- (void)setRemakeDidEnd:(BOOL)arg1;
-- (BOOL)shouldTranscodeForMMS;
+- (id)subtitle;
+- (id)title;
 - (double)transcodeDuration;
 - (double)transcodeEndTime;
 - (id)transcodeMimeType;
 - (id)transcodePath;
 - (double)transcodeStartTime;
 - (id)transcodedFilename;
-- (id)transcodedPathExtension;
 
 @end

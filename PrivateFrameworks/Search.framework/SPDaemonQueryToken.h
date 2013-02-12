@@ -6,32 +6,21 @@
 
 @interface SPDaemonQueryToken : NSObject {
     struct __CFMachPort { } *_callbackPort;
-    BOOL _completed;
     <SPDaemonQueryDelegate> *_delegate;
     SPSearchQuery *_query;
     unsigned int _queryID;
-    unsigned int _sortsInFlight;
 }
 
-@property BOOL completed;
 @property <SPDaemonQueryDelegate> * delegate;
 @property(readonly) SPSearchQuery * query;
 @property(readonly) unsigned int queryID;
-@property unsigned int sortsInFlight;
 
-- (void)_callbackPipeBrokenCallback:(struct __CFMachPort { }*)arg1;
-- (void)_sendCompletion;
-- (void)_sendError:(id)arg1;
-- (void)_sendResults:(id)arg1;
-- (BOOL)completed;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithQuery:(id)arg1 andCallbackPort:(unsigned int)arg2;
+- (void)handleMessage:(id)arg1;
+- (id)initWithQuery:(id)arg1;
 - (id)query;
 - (unsigned int)queryID;
-- (void)setCompleted:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSortsInFlight:(unsigned int)arg1;
-- (unsigned int)sortsInFlight;
 
 @end

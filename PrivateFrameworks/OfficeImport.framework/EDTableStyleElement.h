@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)differentialStyle;
 - (id)initWithResources:(id)arg1;
-- (unsigned int)key;
+- (int)key;
 - (void)setBandSize:(unsigned int)arg1;
 - (void)setDifferentialStyle:(id)arg1;
 - (void)setDifferentialStyleWithIndex:(unsigned int)arg1;

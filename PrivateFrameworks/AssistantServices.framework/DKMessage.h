@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class DKConnection, NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString;
 
 @interface DKMessage : NSObject {
     NSMutableDictionary *_info;
     NSString *_name;
-    DKConnection *_receivingConnection;
     NSMutableDictionary *_replyInfo;
     void *_x_reply;
     struct _xpc_connection_s { } *_x_reply_connection;
@@ -15,8 +14,9 @@
 
 @property(readonly) NSString * name;
 
+- (void).cxx_destruct;
 - (void*)_createXPCMessage;
-- (id)_initWithXPCMessage:(void*)arg1 onConnection:(id)arg2;
+- (id)_initWithXPCMessage:(void*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)errorFromInfo;

@@ -10,7 +10,6 @@
         unsigned int removeConfirmationVisible : 1; 
         unsigned int removedFromTargetWhenHidden : 1; 
         unsigned int disableToggleRotate : 1; 
-        unsigned int tableCellTarget : 1; 
         unsigned int alwaysHideRemoveButton : 1; 
         unsigned int editingStyle : 3; 
         unsigned int reserved : 23; 

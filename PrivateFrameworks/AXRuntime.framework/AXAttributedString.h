@@ -17,6 +17,7 @@
 - (struct __CFAttributedString { }*)cfAttributedString;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (id)coalescedFontAttributes;
+- (void)convertAttachmentsWithBlock:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -25,6 +26,7 @@
 - (id)initWithString:(id)arg1;
 - (BOOL)isAXAttributedString;
 - (unsigned int)length;
+- (id)lowercaseString;
 - (void)replaceString:(struct __CFString { }*)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
@@ -32,5 +34,6 @@
 - (void)setAttributes:(id)arg1;
 - (id)string;
 - (id)substringFromIndex:(unsigned int)arg1;
+- (id)uppercaseString;
 
 @end

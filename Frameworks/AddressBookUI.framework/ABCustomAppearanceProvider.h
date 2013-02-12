@@ -28,6 +28,7 @@
 - (void)setIndicatesFaceTimeHistory:(BOOL)arg1 onActionButton:(id)arg2;
 - (BOOL)shouldPropagateStylesThroughUnknownPersonActions;
 - (BOOL)shouldPropagateStylesToPickers;
+- (BOOL)shouldUseCardContentProviderWhenAvailable;
 - (int)unknownModalPresentationStyle;
 
 @end

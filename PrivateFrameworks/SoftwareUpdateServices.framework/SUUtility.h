@@ -27,7 +27,7 @@
 + (id)prettyPrintDate:(id)arg1;
 + (id)serialNumber;
 + (void)setIsDaemon:(BOOL)arg1;
-+ (struct dispatch_queue_s { }*)taskQueue;
++ (id)taskQueue;
 + (id)translateError:(id)arg1 withAddedUserInfo:(id)arg2;
 + (id)translateError:(id)arg1;
 + (int)translateErrorCodeFromError:(id)arg1;

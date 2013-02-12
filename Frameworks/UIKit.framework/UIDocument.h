@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDate, NSDocumentDifferenceSize, NSLock, NSMutableArray, NSOperationQueue, NSString, NSTimer, NSURL, NSUndoManager;
+@class NSDate, NSDocumentDifferenceSize, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSOperationQueue, NSString, NSTimer, NSURL, NSUndoManager;
 
 @interface UIDocument : NSObject <NSFilePresenter> {
     struct __docFlags { 
@@ -25,8 +25,8 @@
     id _differenceSinceSaving;
     } _docFlags;
     NSLock *_documentPropertyLock;
-    struct dispatch_queue_s { } *_fileAccessQueue;
-    struct dispatch_semaphore_s { } *_fileAccessSemaphore;
+    NSObject<OS_dispatch_queue> *_fileAccessQueue;
+    NSObject<OS_dispatch_semaphore> *_fileAccessSemaphore;
     unsigned int _fileContentsPreservationReason;
     NSDate *_fileModificationDate;
     NSOperationQueue *_filePresenterQueue;
@@ -35,7 +35,7 @@
     double _lastPreservationTime;
     double _lastSaveTime;
     NSString *_localizedName;
-    struct dispatch_queue_s { } *_openingQueue;
+    NSObject<OS_dispatch_queue> *_openingQueue;
     NSUndoManager *_undoManager;
     id _versionWithoutRecentChanges;
     NSMutableArray *_versions;
@@ -44,7 +44,7 @@
 @property(readonly) NSDocumentDifferenceSize * differenceDueToRecentChanges;
 @property(readonly) NSDocumentDifferenceSize * differenceSincePreservingPreviousVersion;
 @property(readonly) NSDocumentDifferenceSize * differenceSinceSaving;
-@property(readonly) int documentState;
+@property(readonly) unsigned int documentState;
 @property(getter=_isEditingDisabled,setter=_setEditingDisabled:) BOOL editingDisabled;
 @property(copy) NSDate * fileModificationDate;
 @property(readonly) NSString * fileType;
@@ -52,6 +52,7 @@
 @property(readonly) NSString * localizedName;
 @property(readonly) NSOperationQueue * presentedItemOperationQueue;
 @property(readonly) NSURL * presentedItemURL;
+@property(readonly) NSURL * primaryPresentedItemURL;
 @property(retain) NSUndoManager * undoManager;
 
 + (void)_autosavingTimerDidFireSoContinue:(id)arg1;
@@ -70,7 +71,7 @@
 - (void)_changeWasRedone:(id)arg1;
 - (void)_changeWasUndone:(id)arg1;
 - (void)_coordinateWritingItemAtURL:(id)arg1 error:(id*)arg2 byAccessor:(id)arg3;
-- (struct dispatch_queue_s { }*)_fileOpeningQueue;
+- (id)_fileOpeningQueue;
 - (void)_finishSavingToURL:(id)arg1 forSaveOperation:(int)arg2 changeCount:(id)arg3;
 - (BOOL)_hasSavingError;
 - (BOOL)_hasUnsavedChanges;
@@ -79,7 +80,7 @@
 - (BOOL)_isInOpen;
 - (BOOL)_isOpen;
 - (void)_lockFileAccessQueueAndPerformBlock:(id)arg1;
-- (void)_performBlock:(id)arg1 synchronouslyOnQueue:(struct dispatch_queue_s { }*)arg2;
+- (void)_performBlock:(id)arg1 synchronouslyOnQueue:(id)arg2;
 - (void)_performBlockSynchronouslyOnMainThread:(id)arg1;
 - (id)_presentableFileNameForSaveOperation:(int)arg1 url:(id)arg2;
 - (void)_registerAsFilePresenterIfNecessary;
@@ -98,6 +99,7 @@
 - (BOOL)_shouldAllowWritingInResponseToPresenterMessage;
 - (void)_unlockFileAccessQueue;
 - (void)_unregisterAsFilePresenterIfNecessary;
+- (void)_updateConflictState;
 - (void)_updateLocalizedName;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
 - (void)accommodatePresentedSubitemDeletionAtURL:(id)arg1 completionHandler:(id)arg2;
@@ -111,7 +113,7 @@
 - (id)differenceSincePreservingPreviousVersion;
 - (id)differenceSinceSaving;
 - (void)disableEditing;
-- (int)documentState;
+- (unsigned int)documentState;
 - (void)enableEditing;
 - (id)fileAttributesToWriteToURL:(id)arg1 forSaveOperation:(int)arg2 error:(id*)arg3;
 - (id)fileModificationDate;
@@ -131,11 +133,13 @@
 - (void)presentedItemDidGainVersion:(id)arg1;
 - (void)presentedItemDidLoseVersion:(id)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;
+- (void)presentedItemDidResolveConflictVersion:(id)arg1;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
 - (void)presentedSubitemAtURL:(id)arg1 didGainVersion:(id)arg2;
 - (void)presentedSubitemAtURL:(id)arg1 didLoseVersion:(id)arg2;
 - (void)presentedSubitemAtURL:(id)arg1 didMoveToURL:(id)arg2;
+- (void)presentedSubitemAtURL:(id)arg1 didResolveConflictVersion:(id)arg2;
 - (void)presentedSubitemDidAppearAtURL:(id)arg1;
 - (void)presentedSubitemDidChangeAtURL:(id)arg1;
 - (BOOL)readFromURL:(id)arg1 error:(id*)arg2;

@@ -6,7 +6,6 @@
 
 @interface IUViewControllerContext : NSObject <NSCoding> {
     unsigned int _isRootController : 1;
-    unsigned int _showActionRowsOnAppear : 1;
     unsigned int _titleIgnoresHistory : 1;
     IUMediaDataSource *_dataSource;
     NSString *_defaultPNGNameOverride;
@@ -19,6 +18,7 @@
     <NSCoding><NSObject> *_viewControllerInfo;
 }
 
+@property(readonly) NSString * aggregateStatisticsDisplayCountKey;
 @property(getter=isArchivable,readonly) BOOL archivable;
 @property(retain) IUMediaDataSource * dataSource;
 @property(retain) NSString * defaultPNGName;
@@ -27,7 +27,6 @@
 @property(getter=isRestorableNavigationPathNode,readonly) BOOL restorableNavigationPathNode;
 @property(readonly) IUViewControllerContext * rootContext;
 @property(getter=isRootController) BOOL rootController;
-@property BOOL showActionRowsOnAppear;
 @property(retain) IUViewControllerContext * sourceContext;
 @property(retain) IUMediaEntitySpecifier * specifier;
 @property(readonly) BOOL startAtEndOnFirstAppear;
@@ -37,10 +36,13 @@
 @property(retain) <NSCoding><NSObject> * viewControllerInfo;
 
 + (id)contextWithDataSource:(id)arg1;
++ (id)contextWithIdentifier:(id)arg1;
++ (id)newViewControllerWithIdentifier:(id)arg1;
 
 - (id)_newDataSourceFromType:(int)arg1 mediaQuery:(id)arg2;
 - (id)_newDataSourceFromType:(int)arg1 mediaSpecifier:(id)arg2;
 - (void)_reloadDataSourceFromSourceContext;
+- (id)aggregateStatisticsDisplayCountKey;
 - (id)copySpecifierHistory;
 - (id)dataSource;
 - (void)dealloc;
@@ -63,14 +65,12 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRootController:(BOOL)arg1;
-- (void)setShowActionRowsOnAppear:(BOOL)arg1;
 - (void)setSourceContext:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setTitleIgnoresHistory:(BOOL)arg1;
 - (void)setTransitionImage:(id)arg1;
 - (void)setViewControllerInfo:(id)arg1;
-- (BOOL)showActionRowsOnAppear;
 - (id)sourceContext;
 - (id)specifier;
 - (BOOL)startAtEndOnFirstAppear;

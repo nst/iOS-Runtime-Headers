@@ -5,6 +5,8 @@
 @class IMAVChatParticipant, NSData, NetworkCheckOperation;
 
 @interface FetchICEDataOp : IMExtendedOperation {
+    unsigned int _shouldWaitForWifi : 1;
+    unsigned int _showNetworkOptions : 1;
     NSData *_ICEData;
     NetworkCheckOperation *_networkCheckOp;
     IMAVChatParticipant *_participant;
@@ -13,7 +15,7 @@
 - (id)ICEData;
 - (void)createChildOperations;
 - (void)dealloc;
-- (id)initWithParticipant:(id)arg1;
+- (id)initWithParticipant:(id)arg1 shouldWaitForWifi:(BOOL)arg2 shouldShowNetworkOptions:(BOOL)arg3;
 - (void)main;
 - (id)networkCheckOperation;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class <MCInteractionDelegate>, CPDistributedMessagingCenter, NSData, NSDate, NSDictionary, NSMutableArray, NSTimer;
+@class <MCInteractionDelegate>, CPDistributedMessagingCenter, NSData, NSDate, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSTimer;
 
 @interface MCProfileConnection : NSObject {
     <MCInteractionDelegate> *_interactionDelegate;
@@ -11,7 +11,7 @@
     NSDate *_lastNoPasscodeMDMPollTime;
     CPDistributedMessagingCenter *_messageCenter;
     BOOL _needToRestoreOriginalProfileData;
-    struct dispatch_queue_s { } *_notificationSyncQueue;
+    NSObject<OS_dispatch_queue> *_notificationSyncQueue;
     NSMutableArray *_notificationTokens;
     struct __CFBag { } *_observers;
     NSData *_originalProfileData;
@@ -22,6 +22,7 @@
 
 + (id)sharedConnection;
 
+- (void).cxx_destruct;
 - (void)__checkForProfiledCrash;
 - (void)__doMCICDidFinish:(id)arg1;
 - (void)__effectiveSettingsDidChange:(id)arg1;
@@ -31,6 +32,7 @@
 - (void)__restrictionDidChange;
 - (void)_applyToObservers:(id)arg1;
 - (void)_cancelUserInputTimeout;
+- (void)_defaultsDidChange;
 - (void)_detectProfiledCrashes;
 - (void)_doMCICDidBeginInstallingNextProfileData:(id)arg1 params:(id)arg2;
 - (void)_doMCICDidFinish:(id)arg1 params:(id)arg2;
@@ -40,7 +42,9 @@
 - (void)_doMCICRequestUserInput:(id)arg1 params:(id)arg2;
 - (void)_doMCICShowUserWarnings:(id)arg1 params:(id)arg2;
 - (void)_effectiveSettingsDidChange:(id)arg1;
+- (int)_getPasscodeComplianceWarningExpiryDate:(id)arg1 lastLockDate:(id)arg2 outLocalizedTitle:(id*)arg3 outLocalizedMessage:(id*)arg4;
 - (id)_init;
+- (void)_internalDefaultsDidChange;
 - (BOOL)_openSensitiveURLString:(id)arg1 unlock:(BOOL)arg2;
 - (void)_passcodeDidChange;
 - (void)_passcodePolicyDidChange;
@@ -64,6 +68,7 @@
 - (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
 - (id)chaperoneOrganization;
 - (void)checkCarrierProfile;
+- (void)checkCarrierProfileForceInstallation:(BOOL)arg1;
 - (void)checkIn;
 - (void)checkInAsynchronously;
 - (BOOL)clearPasscodeWithEscrowKeybagData:(id)arg1 secret:(id)arg2 outError:(id*)arg3;
@@ -83,11 +88,12 @@
 - (id)effectiveRestrictions;
 - (id)effectiveUserSettings;
 - (id)effectiveValueForSetting:(id)arg1;
+- (id)effectiveWhitelistedAppsAndOptions;
+- (void)getPasscodeComplianceWarningLastLockDate:(id)arg1 completionBlock:(id)arg2;
 - (int)getPasscodeComplianceWarningLastLockDate:(id)arg1 outLocalizedTitle:(id*)arg2 outLocalizedMessage:(id*)arg3;
 - (BOOL)installConfigurationProfileWithData:(id)arg1;
 - (void)installProfile:(id)arg1 interactionDelegate:(id)arg2;
 - (id)installProfile:(id)arg1 outError:(id*)arg2;
-- (id)installProfileData:(id)arg1 context:(id)arg2 managingProfileIdentifier:(id)arg3 outError:(id*)arg4;
 - (void)installProfileData:(id)arg1 interactionDelegate:(id)arg2;
 - (id)installProfileData:(id)arg1 managingProfileIdentifier:(id)arg2 outError:(id*)arg3;
 - (id)installProfileData:(id)arg1 outError:(id*)arg2;
@@ -132,6 +138,7 @@
 - (id)queueProfileForAcceptance:(id)arg1 outError:(id*)arg2;
 - (id)queueProfileForInstallation:(id)arg1 outError:(id*)arg2;
 - (void)recomputeUserComplianceWarning;
+- (void)recomputeUserComplianceWarningSynchronously;
 - (void)removeBoolSetting:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)removeOrphanedClientRestrictions;

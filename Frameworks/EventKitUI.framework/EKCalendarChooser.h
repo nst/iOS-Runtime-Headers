@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCalendarChooserDelegate>, <EKStyleProvider>, EKEventStore, NSArray, NSIndexPath, NSMutableDictionary, NSMutableSet, NSSet, UITableView;
+@class <EKCalendarChooserDelegate>, <EKStyleProvider>, EKEventStore, EKSource, NSArray, NSIndexPath, NSMutableDictionary, NSMutableSet, NSSet, UITableView, _UIAccessDeniedView;
 
 @interface EKCalendarChooser : UIViewController {
     struct { 
@@ -16,13 +16,17 @@
         unsigned int showsCancelButton : 1; 
         unsigned int showsWritableCalendarsOnly : 1; 
         unsigned int showsRefreshButton : 1; 
+    _UIAccessDeniedView *_accessDeniedView;
     NSIndexPath *_checkedRow;
     int _chooserMode;
+    NSMutableDictionary *_customGroupMap;
     <EKCalendarChooserDelegate> *_delegate;
-    int _entityType;
+    unsigned int _entityType;
     EKEventStore *_eventStore;
     } _flags;
     NSArray *_groups;
+    int _lastAuthorizationStatus;
+    EKSource *_limitedToSource;
     NSMutableSet *_selectedCalendars;
     NSMutableDictionary *_storeGroupMap;
     int _style;
@@ -30,13 +34,17 @@
     UITableView *_tableView;
 }
 
+@property(retain) _UIAccessDeniedView * accessDeniedView;
 @property(retain) NSIndexPath * checkedRow;
 @property int chooserMode;
+@property(retain) NSMutableDictionary * customGroupMap;
 @property <EKCalendarChooserDelegate> * delegate;
-@property int entityType;
+@property unsigned int entityType;
 @property(retain) EKEventStore * eventStore;
 @property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; } flags;
 @property(retain) NSArray * groups;
+@property int lastAuthorizationStatus;
+@property(retain) EKSource * limitedToSource;
 @property(retain) NSMutableSet * selectedCalendarSet;
 @property(copy) NSSet * selectedCalendars;
 @property int selectionStyle;
@@ -48,7 +56,9 @@
 
 - (void)_applySelection;
 - (BOOL)_calendarAvailableForEditing:(id)arg1;
+- (void)_eventStoreChanged:(id)arg1;
 - (id)_filterCalendars:(id)arg1;
+- (id)_groupForCustomGroupType:(int)arg1;
 - (id)_groupForSource:(id)arg1;
 - (id)_indexPathForCalendar:(id)arg1 source:(id)arg2;
 - (BOOL)_isEllipsisCellForGroup:(id)arg1 rowIndex:(int)arg2;
@@ -61,28 +71,33 @@
 - (void)_selectCalendar:(id)arg1 selected:(BOOL)arg2;
 - (void)_selectGroup:(id)arg1 selected:(BOOL)arg2;
 - (void)_setCalendars:(id)arg1;
+- (BOOL)_shouldShowGroupNameInSection:(int)arg1;
 - (id)_stringForSharedCalendar:(id)arg1;
 - (BOOL)_tableShouldDisplayAllCalendarButtons;
 - (BOOL)_tableShouldDisplayAllCalendarsSection;
 - (BOOL)_tableShouldDisplayAllCellForGroup:(id)arg1;
 - (BOOL)_tableShouldDisplayNewCalendarCellForGroup:(id)arg1;
+- (id)accessDeniedView;
 - (BOOL)allowsEdit;
 - (BOOL)allowsRotation;
 - (void)calendarEditor:(id)arg1 didCompleteWithAction:(int)arg2;
-- (void)calendarsChanged:(id)arg1;
 - (void)cancel:(id)arg1;
 - (id)checkedRow;
 - (int)chooserMode;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (id)customGroupMap;
 - (void)dealloc;
 - (id)delegate;
 - (void)done:(id)arg1;
-- (int)entityType;
+- (unsigned int)entityType;
 - (id)eventStore;
 - (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; })flags;
 - (id)groups;
-- (id)initWithSelectionStyle:(int)arg1 displayStyle:(int)arg2 entityType:(int)arg3 eventStore:(id)arg4;
+- (id)initWithSelectionStyle:(int)arg1 displayStyle:(int)arg2 entityType:(unsigned int)arg3 eventStore:(id)arg4 limitedToSource:(id)arg5;
+- (id)initWithSelectionStyle:(int)arg1 displayStyle:(int)arg2 entityType:(unsigned int)arg3 eventStore:(id)arg4;
 - (id)initWithSelectionStyle:(int)arg1 displayStyle:(int)arg2 eventStore:(id)arg3;
+- (int)lastAuthorizationStatus;
+- (id)limitedToSource;
 - (void)loadView;
 - (float)marginForTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
@@ -91,16 +106,20 @@
 - (id)selectedCalendarSet;
 - (id)selectedCalendars;
 - (int)selectionStyle;
+- (void)setAccessDeniedView:(id)arg1;
 - (void)setAllowsEdit:(BOOL)arg1;
 - (void)setAllowsRotation:(BOOL)arg1;
 - (void)setCheckedRow:(id)arg1;
 - (void)setChooserMode:(int)arg1;
+- (void)setCustomGroupMap:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setEntityType:(int)arg1;
+- (void)setEntityType:(unsigned int)arg1;
 - (void)setEventStore:(id)arg1;
 - (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; })arg1;
 - (void)setGroups:(id)arg1;
+- (void)setLastAuthorizationStatus:(int)arg1;
+- (void)setLimitedToSource:(id)arg1;
 - (void)setSelectedCalendar:(id)arg1;
 - (void)setSelectedCalendarSet:(id)arg1;
 - (void)setSelectedCalendars:(id)arg1;
@@ -119,6 +138,7 @@
 - (BOOL)showsWritableCalendarsOnly;
 - (id)storeGroupMap;
 - (id)styleProvider;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
@@ -129,5 +149,6 @@
 - (id)tableView;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

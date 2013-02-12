@@ -4,11 +4,11 @@
 
 @interface OCXSStreamLevel : NSObject {
     int mDepth;
-    char *mName;
+    const char *mName;
 }
 
 @property int depth;
-@property char * name;
+@property const char * name;
 
 - (int)depth;
 - (const char *)name;

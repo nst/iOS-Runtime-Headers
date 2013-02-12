@@ -6,6 +6,7 @@
 }
 
 + (double)fadeDuration;
++ (unsigned int)prefetchedTiles;
 + (BOOL)shouldDrawOnMainThread;
 
 - (id)actionForKey:(id)arg1;

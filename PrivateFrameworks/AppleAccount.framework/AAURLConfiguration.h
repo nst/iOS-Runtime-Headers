@@ -13,7 +13,9 @@
 @property(readonly) NSString * addEmailURL;
 @property(readonly) NSString * authenticateURL;
 @property(readonly) NSString * completeValidateEmailURL;
+@property(readonly) NSString * emailLookupURL;
 @property(readonly) NSString * fetchAccountSettingsURL;
+@property(readonly) NSString * genericTermsURL;
 @property(readonly) NSString * initiateValidateEmailURL;
 @property(readonly) NSString * mobileMeOfferAlertURL;
 @property(readonly) NSString * registerURL;
@@ -27,13 +29,15 @@
 + (void)reset;
 + (id)urlConfiguration;
 
+- (void).cxx_destruct;
 - (id)accountCreationUIURL;
 - (id)accountCreationURL;
 - (id)addEmailURL;
 - (id)authenticateURL;
 - (id)completeValidateEmailURL;
-- (void)dealloc;
+- (id)emailLookupURL;
 - (id)fetchAccountSettingsURL;
+- (id)genericTermsURL;
 - (id)initWithDictionary:(id)arg1;
 - (id)initiateValidateEmailURL;
 - (id)mobileMeOfferAlertURL;

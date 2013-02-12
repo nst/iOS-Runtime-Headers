@@ -34,6 +34,7 @@
 - (int)screenX;
 - (int)screenY;
 - (BOOL)shiftKey;
+- (BOOL)webkitDirectionInvertedFromDevice;
 - (int)wheelDelta;
 - (int)wheelDeltaX;
 - (int)wheelDeltaY;

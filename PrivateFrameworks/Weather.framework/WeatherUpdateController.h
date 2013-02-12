@@ -41,6 +41,8 @@
 - (void)setSearchCompletion:(id)arg1;
 - (void)setWeatherInfoCompletion:(id)arg1;
 - (id)weatherInfoCompletion;
+- (void)weatherInformationForIDs:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)weatherInformationForLocation:(id)arg1 withCompletionHandler:(id)arg2;
 - (BOOL)weatherListContainsCity:(id)arg1;
 
 @end

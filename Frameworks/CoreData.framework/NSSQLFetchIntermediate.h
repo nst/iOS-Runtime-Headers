@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLEntity, NSSQLGroupByIntermediate, NSSQLHavingIntermediate, NSSQLLimitIntermediate, NSSQLOffsetIntermediate, NSSQLOrderIntermediate, NSSQLSelectIntermediate, NSSQLWhereIntermediate, NSString;
+@class NSMutableArray, NSMutableDictionary, NSSQLEntity, NSSQLGroupByIntermediate, NSSQLHavingIntermediate, NSSQLLimitIntermediate, NSSQLOffsetIntermediate, NSSQLOrderIntermediate, NSSQLSelectIntermediate, NSSQLWhereIntermediate, NSString;
 
 @interface NSSQLFetchIntermediate : NSSQLIntermediate {
     NSString *_correlationToken;
     NSString *_governingAlias;
     NSSQLEntity *_governingEntity;
     NSSQLGroupByIntermediate *_groupByClause;
-    NSMutableSet *_groupByKeypaths;
+    NSMutableArray *_groupByKeypaths;
     NSSQLHavingIntermediate *_havingClause;
     BOOL _isDictionaryCountFetch;
     NSMutableArray *_joinIntermediates;

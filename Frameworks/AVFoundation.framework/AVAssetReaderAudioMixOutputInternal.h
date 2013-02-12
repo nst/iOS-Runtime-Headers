@@ -7,6 +7,7 @@
 @interface AVAssetReaderAudioMixOutputInternal : NSObject {
     AVAudioMix *audioMix;
     AVAudioOutputSettings *audioOutputSettings;
+    NSMutableDictionary *audioTapProcessorsForTracks;
     NSArray *audioTracks;
     NSMutableDictionary *audioVolumeCurvesForTracks;
 }

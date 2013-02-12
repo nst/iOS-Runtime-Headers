@@ -3,7 +3,7 @@
  */
 
 @interface PTPCancelPacket : NSObject {
-    unsigned int _transactionID;
+    unsigned long _transactionID;
 }
 
 - (id)contentForTCP;

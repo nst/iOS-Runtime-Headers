@@ -5,31 +5,11 @@
 @class <TSUFlushable>, NSCondition, NSThread, TSUMemoryWatcher, TSUPointerKeyDictionary, TSURetainedPointerKeyDictionary;
 
 @interface TSUFlushingManager : NSObject {
-    struct set<TSUFlushableObjectInfo*,TSUFlushableObjectInfoPointerFlushingOrderLess,std::allocator<TSUFlushableObjectInfo*> > { struct _Rb_tree<TSUFlushableObjectInfo*,TSUFlushableObjectInfo*,std::_Identity<TSUFlushableObjectInfo*>,TSUFlushableObjectInfoPointerFlushingOrderLess,std::allocator<TSUFlushableObjectInfo*> > { 
-            struct _Rb_tree_impl<TSUFlushableObjectInfoPointerFlushingOrderLess,false> { 
-                struct TSUFlushableObjectInfoPointerFlushingOrderLess { } _M_key_compare; 
-                struct _Rb_tree_node_base { 
-                    int _M_color; 
-                    struct _Rb_tree_node_base {} *_M_parent; 
-                    struct _Rb_tree_node_base {} *_M_left; 
-                    struct _Rb_tree_node_base {} *_M_right; 
-                } _M_header; 
-                unsigned int _M_node_count; 
-            } _M_impl; 
-    struct set<TSUFlushableObjectInfo*,TSUFlushableObjectInfoPointerTimeStampLess,std::allocator<TSUFlushableObjectInfo*> > { struct _Rb_tree<TSUFlushableObjectInfo*,TSUFlushableObjectInfo*,std::_Identity<TSUFlushableObjectInfo*>,TSUFlushableObjectInfoPointerTimeStampLess,std::allocator<TSUFlushableObjectInfo*> > { 
-            struct _Rb_tree_impl<TSUFlushableObjectInfoPointerTimeStampLess,false> { 
-                struct TSUFlushableObjectInfoPointerTimeStampLess { } _M_key_compare; 
-                struct _Rb_tree_node_base { 
-                    int _M_color; 
-                    struct _Rb_tree_node_base {} *_M_parent; 
-                    struct _Rb_tree_node_base {} *_M_left; 
-                    struct _Rb_tree_node_base {} *_M_right; 
-                } _M_header; 
-                unsigned int _M_node_count; 
-            } _M_impl; 
+    unsigned int _activeBgThreadTask;
     BOOL _alwaysFlushing;
+    unsigned int _backgroundTransitionTaskId;
     NSThread *_bgThread;
-    unsigned int _clock;
+    unsigned long _clock;
     NSCondition *_cond;
     <TSUFlushable> *_flushingObject;
     TSUPointerKeyDictionary *_inactiveObjects;
@@ -38,8 +18,8 @@
     BOOL _isWaitingForFlush;
     TSUMemoryWatcher *_memoryWatcher;
     TSURetainedPointerKeyDictionary *_objects;
-        } x1; } *_sortedNewObjects;
-        } x1; } *_sortedObjects;
+    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::allocator<TSUFlushableObjectInfo *> > { struct _Rb_tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfo *, std::_Identity<TSUFlushableObjectInfo *>, TSUFlushableObjectInfoPointerTimeStampLess, std::allocator<TSUFlushableObjectInfo *> > { struct _Rb_tree_impl<TSUFlushableObjectInfoPointerTimeStampLess, false> { struct TSUFlushableObjectInfoPointerTimeStampLess { } x_1_2_1; struct _Rb_tree_node_base { int x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; unsigned int x_1_2_3; } x_1_1_1; } x1; } *_sortedNewObjects;
+    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::allocator<TSUFlushableObjectInfo *> > { struct _Rb_tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfo *, std::_Identity<TSUFlushableObjectInfo *>, TSUFlushableObjectInfoPointerFlushingOrderLess, std::allocator<TSUFlushableObjectInfo *> > { struct _Rb_tree_impl<TSUFlushableObjectInfoPointerFlushingOrderLess, false> { struct TSUFlushableObjectInfoPointerFlushingOrderLess { } x_1_2_1; struct _Rb_tree_node_base { int x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; unsigned int x_1_2_3; } x_1_1_1; } x1; } *_sortedObjects;
     BOOL _stopFlushing;
     BOOL _stopFlushingWhenQueueEmpty;
 }
@@ -49,6 +29,10 @@
 + (id)sharedManager;
 
 - (void)_backgroundThread:(id)arg1;
+- (void)_bgTaskFinished;
+- (void)_bgTaskStarted;
+- (void)_bgThreadActive;
+- (void)_bgThreadInactive;
 - (void)_didUseObject:(id)arg1;
 - (void)_flushAllEligible;
 - (void)_startFlushingObjects;
@@ -61,15 +45,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)didEnterBackground;
+- (void)didReceiveMemoryWarning;
 - (void)doneWithObject:(id)arg1;
-- (struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)eraseInfoForObject:(id)arg1;
+- (struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned long x5[2]; }*)eraseInfoForObject:(id)arg1;
 - (id)init;
-- (void)insertObjectInfo:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)arg1;
-- (BOOL)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)arg1;
+- (void)insertObjectInfo:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned long x5[2]; }*)arg1;
+- (BOOL)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned long x5[2]; }*)arg1;
 - (void)memoryLevelDecreased:(int)arg1 was:(int)arg2;
 - (void)memoryLevelIncreased:(int)arg1 was:(int)arg2;
 - (void)protectObject:(id)arg1;
-- (void)release;
+- (oneway void)release;
 - (void)removeObject:(id)arg1;
 - (id)retain;
 - (unsigned int)retainCount;

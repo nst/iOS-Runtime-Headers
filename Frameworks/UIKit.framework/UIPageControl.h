@@ -2,24 +2,32 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
+@class NSMutableArray, UIColor, UIImage;
 
 @interface UIPageControl : UIControl {
     struct { 
         unsigned int hideForSinglePage : 1; 
         unsigned int defersCurrentPageDisplay : 1; 
     int _currentPage;
+    UIImage *_currentPageImage;
+    UIColor *_currentPageIndicatorTintColor;
     int _displayedPage;
     NSMutableArray *_indicators;
     } _pageControlFlags;
+    UIImage *_pageImage;
+    UIColor *_pageIndicatorTintColor;
 }
 
 @property int currentPage;
+@property(retain) UIColor * currentPageIndicatorTintColor;
 @property BOOL defersCurrentPageDisplay;
 @property BOOL hidesForSinglePage;
 @property int numberOfPages;
+@property(retain) UIColor * pageIndicatorTintColor;
 
 - (void)_commonPageControlInit;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (int)_displayedPage;
 - (id)_pageIndicatorCurrentImageForPage:(int)arg1;
 - (id)_pageIndicatorImageForPage:(int)arg1;
@@ -28,21 +36,27 @@
 - (void)_setDisplayedPage:(int)arg1;
 - (void)_updateCurrentPageDisplay;
 - (int)currentPage;
+- (id)currentPageIndicatorTintColor;
 - (void)dealloc;
 - (BOOL)defersCurrentPageDisplay;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)hidesForSinglePage;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
 - (int)numberOfPages;
+- (id)pageIndicatorTintColor;
 - (void)setCurrentPage:(int)arg1;
+- (void)setCurrentPageIndicatorTintColor:(id)arg1;
 - (void)setDefersCurrentPageDisplay:(BOOL)arg1;
 - (void)setHidesForSinglePage:(BOOL)arg1;
 - (void)setNumberOfPages:(int)arg1;
+- (void)setPageIndicatorTintColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeForNumberOfPages:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateCurrentPageDisplay;

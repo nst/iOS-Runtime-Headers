@@ -12,6 +12,7 @@
 @property <MPMediaPickerControllerDelegate> * delegate;
 @property(readonly) int mediaTypes;
 @property(copy) NSString * prompt;
+@property BOOL showsCloudItems;
 
 + (void)preheatMediaPicker;
 
@@ -30,6 +31,9 @@
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPrompt:(id)arg1;
-- (void)viewDidUnload;
+- (void)setShowsCloudItems:(BOOL)arg1;
+- (BOOL)showsCloudItems;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

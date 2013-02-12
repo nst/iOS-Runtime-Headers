@@ -9,14 +9,15 @@
 
 @class NSArray, NSMutableDictionary, NSOperationQueue;
 
-@interface MFContactsSearchResultsModel : NSObject {
+@interface MFContactsSearchResultsModel : NSObject <_MFSearchResultsConsumer> {
     BOOL _favorMobileNumbers;
     struct __CFSet { } *_finishedResultTypes;
+    NSArray *_infrequentRecentSearchResults;
     NSMutableDictionary *_localSearchResultsByAddress;
     int _preferredType;
     NSOperationQueue *_queue;
+    NSMutableDictionary *_recentRecipientsByAddress;
     NSArray *_recentSearchResults;
-    NSMutableDictionary *_recipientsByAddress;
     int _resetCount;
     struct __CFArray { } *_resultTypesPriorityOrder;
     struct __CFArray { } *_resultTypesSortOrder;

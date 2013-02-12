@@ -5,7 +5,6 @@
 @interface SUScriptVolumeViewController : SUScriptViewController {
 }
 
-- (id)init;
 - (id)newNativeViewController;
 
 @end

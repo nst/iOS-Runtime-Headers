@@ -7,18 +7,18 @@
 @interface DOMHTMLDocument : DOMDocument {
 }
 
-@property(retain,readonly) DOMElement * activeElement;
+@property(readonly) DOMElement * activeElement;
 @property(copy) NSString * alinkColor;
 @property(copy) NSString * bgColor;
-@property(copy,readonly) NSString * compatMode;
+@property(readonly) NSString * compatMode;
 @property(copy) NSString * designMode;
 @property(copy) NSString * dir;
-@property(retain,readonly) DOMHTMLCollection * embeds;
+@property(readonly) DOMHTMLCollection * embeds;
 @property(copy) NSString * fgColor;
 @property(readonly) int height;
 @property(copy) NSString * linkColor;
-@property(retain,readonly) DOMHTMLCollection * plugins;
-@property(retain,readonly) DOMHTMLCollection * scripts;
+@property(readonly) DOMHTMLCollection * plugins;
+@property(readonly) DOMHTMLCollection * scripts;
 @property(copy) NSString * vlinkColor;
 @property(readonly) int width;
 

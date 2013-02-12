@@ -5,6 +5,10 @@
 @class GLKEffectPropertyTexGen, NSMutableArray, NSString;
 
 @interface GLKEffectPropertyTexture : GLKEffectProperty {
+    struct GLKBigInt_s { 
+        unsigned long long n0; 
+        unsigned long long n1; 
+    } _allFshMasks;
     unsigned char _enabled;
     int _envMode;
     NSString *_filePath;
@@ -22,6 +26,7 @@
     char *_unitCubeNameString;
 }
 
+@property(readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allFshMasks;
 @property unsigned char enabled;
 @property int envMode;
 @property(readonly) NSString * filePath;
@@ -42,8 +47,10 @@
 @property(readonly) unsigned char vNormalEyeMask;
 @property(readonly) unsigned char vPositionEyeMask;
 
++ (void)clearAllTexturingMasks:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg1 fshMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg2;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
+- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })allFshMasks;
 - (void)bind;
 - (void)dealloc;
 - (id)description;
@@ -51,19 +58,15 @@
 - (unsigned char)enabled;
 - (int)envMode;
 - (id)filePath;
-- (unsigned int)fshMaskCt;
-- (char **)fshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMasks;
-- (bool)includeShaderTextForRootNode:(id)arg1;
+- (bool)includeFshShaderTextForRootNode:(id)arg1;
+- (bool)includeVshShaderTextForRootNode:(id)arg1;
 - (id)init;
 - (void)initializeMasks;
 - (unsigned char)matrixEnabled;
 - (unsigned int)name;
 - (unsigned char)normalizedNormalsMask;
-- (void)reflectionMapMask;
 - (void)setEnabled:(unsigned char)arg1;
 - (void)setEnvMode:(int)arg1;
-- (void)setMasks;
 - (void)setMatrixEnabled:(unsigned char)arg1;
 - (void)setName:(unsigned int)arg1;
 - (void)setShaderBindings;
@@ -75,7 +78,6 @@
 - (void)setUnitCubeNameString:(char *)arg1;
 - (int)target;
 - (id)texGenArray;
-- (void)texGenMask;
 - (id)texGenR;
 - (id)texGenS;
 - (id)texGenT;
@@ -87,8 +89,5 @@
 - (unsigned char)useTexCoordAttribMask;
 - (unsigned char)vNormalEyeMask;
 - (unsigned char)vPositionEyeMask;
-- (unsigned int)vshMaskCt;
-- (char **)vshMaskStr;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMasks;
 
 @end

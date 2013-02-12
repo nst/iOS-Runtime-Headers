@@ -30,7 +30,7 @@
 - (id)init;
 - (id)location;
 - (id)locationDictionaryForImageWithDeviceOrientation:(int)arg1 rearFacingCamera:(BOOL)arg2;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)locationString;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHeadingEnabled:(BOOL)arg1;

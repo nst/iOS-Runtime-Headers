@@ -39,6 +39,6 @@
 - (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
 - (id)streamConsumer;
 - (id)tag;
-- (void)taskFailed:(id)arg1 withStatusCode:(int)arg2;
+- (void)taskFailed:(id)arg1 statusCode:(int)arg2 error:(id)arg3;
 
 @end

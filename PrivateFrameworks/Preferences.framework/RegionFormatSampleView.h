@@ -4,7 +4,7 @@
 
 @class UILabel;
 
-@interface RegionFormatSampleView : UIView <PreferencesTableCustomView> {
+@interface RegionFormatSampleView : UIView <PSHeaderFooterView> {
     UILabel *_labels[4];
     float _sized;
 }

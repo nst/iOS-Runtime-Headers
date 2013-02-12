@@ -16,12 +16,13 @@
 @property(copy) NSString * fullName;
 @property(copy) NSString * lastName;
 @property(copy) NSString * lastNamePhonetic;
-@property(retain) NSNumber * me;
+@property(copy) NSNumber * me;
 @property(copy) NSString * middleName;
 @property(copy) NSString * nickName;
 @property(copy) NSArray * phones;
 @property(copy) NSString * prefix;
 @property(copy) NSArray * relatedNames;
+@property(copy) NSArray * socialProfiles;
 @property(copy) NSString * suffix;
 
 + (id)person;
@@ -59,7 +60,9 @@
 - (void)setPhones:(id)arg1;
 - (void)setPrefix:(id)arg1;
 - (void)setRelatedNames:(id)arg1;
+- (void)setSocialProfiles:(id)arg1;
 - (void)setSuffix:(id)arg1;
+- (id)socialProfiles;
 - (id)suffix;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 

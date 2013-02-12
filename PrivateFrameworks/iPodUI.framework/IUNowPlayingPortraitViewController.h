@@ -2,41 +2,58 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUFlipperButton, MPImageCache, MPImageCacheRequest, MPPortraitTransportControls, MPViewController, UINavigationButton, UITransitionView, UIView;
+@class IUDownloadActionConfiguration, IUFlipperButton, IUPortraitTransportControls, MPImageCache, MPImageCacheRequest, MPViewController, UIBarButtonItem, UINavigationBar, UINavigationButton, UITransitionView, UIView;
 
-@interface IUNowPlayingPortraitViewController : MPViewController <IUCoverFlowTransitionViewController, MPVideoTransferViewController> {
-    unsigned int _tvOutEnabled : 1;
-    UINavigationButton *_backButton;
+@interface IUNowPlayingPortraitViewController : MPViewController <UIActionSheetDelegate, IUCoverFlowTransitionViewController, MPVideoTransferViewController> {
+    UIView *_albumHighlight;
+    UIBarButtonItem *_backBarButtonItem;
     BOOL _didZoom;
+    UIBarButtonItem *_doneBarButtonItem;
+    IUDownloadActionConfiguration *_downloadActionConfiguration;
+    float _filteredAlbumHighlightX;
+    float _filteredNavigationBarHighlightX;
     UIView *_flipContainerView;
     IUFlipperButton *_flipperButton;
     MPImageCache *_flipperImageCache;
     MPImageCacheRequest *_flipperImageRequest;
     MPViewController *_mainController;
+    UINavigationBar *_navigationBar;
+    UIView *_navigationBarHighlight;
     MPViewController *_preFlipController;
     MPViewController *_preSlideController;
     UINavigationButton *_scaleModeButton;
     BOOL _showFlipperHint;
+    int _style;
     UIView *_transitionOverlayView;
     UITransitionView *_transitionView;
-    MPPortraitTransportControls *_transportControls;
+    IUPortraitTransportControls *_transportControls;
+    BOOL _tvOutEnabled;
 }
 
 @property(getter=isTVOutEnabled) BOOL TVOutEnabled;
 @property BOOL inhibitOverlay;
 @property BOOL showFlipperHint;
+@property int style;
 
-- (void)_back:(id)arg1;
-- (void)_configureViewController:(id)arg1;
-- (void)_crossedTimeMarkerNotification:(id)arg1;
+- (void)_backAction:(id)arg1;
+- (id)_backBarButtonItem;
+- (id)_buyButton;
+- (void)_buyButtonAction:(id)arg1;
+- (void)_didDisplayVideoNotification:(id)arg1;
+- (id)_doneBarButtonItem;
 - (void)_exitNowPlaying;
+- (void)_flip;
 - (void)_flipFromViewController:(id)arg1 toViewController:(id)arg2 withType:(id)arg3;
 - (id)_flipTransition;
-- (void)_flipperButton:(id)arg1;
 - (id)_flipperButton;
+- (void)_flipperButtonAction:(id)arg1;
+- (void)_itemReadyToPlayNotification:(id)arg1;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (id)_navigationBar;
 - (void)_reloadForChangeFromItem:(id)arg1 toItem:(id)arg2;
-- (void)_scaleModeButton:(id)arg1;
+- (void)_reportIssueCancelAction:(id)arg1;
+- (void)_reportIssueDoneAction:(id)arg1;
+- (void)_scaleModeButtonAction:(id)arg1;
 - (void)_setExistingNavigationItem:(id)arg1;
 - (void)_setFlipperButtonImageWithItem:(id)arg1 time:(double)arg2;
 - (void)_slideToController:(id)arg1 transition:(int)arg2;
@@ -44,8 +61,11 @@
 - (void)_updateViewControllerForChangeFromItem:(id)arg1 toItem:(id)arg2 animate:(BOOL)arg3;
 - (Class)_viewControllerClassForItem:(id)arg1;
 - (id)_viewControllerForChangeFromItem:(id)arg1 toItem:(id)arg2 withAvailableController:(id)arg3;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
+- (id)coverFlowControllerInitialTransitionImage:(id)arg1;
 - (void)coverFlowDidTransitionIn:(BOOL)arg1;
 - (void)coverFlowDidTransitionOut:(BOOL)arg1;
 - (void)coverFlowIsTransitioningIn:(BOOL)arg1;
@@ -53,10 +73,10 @@
 - (void)coverFlowWillTransitionIn:(BOOL)arg1;
 - (void)coverFlowWillTransitionOut:(BOOL)arg1;
 - (id)coverViewFlipView;
+- (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)dealloc;
 - (void)displayVideoView;
 - (int)displayableInterfaceOrientationForInterfaceOrientation:(int)arg1;
-- (void)flip:(id)arg1;
 - (id)init;
 - (BOOL)isStatusBarHidden;
 - (BOOL)isTVOutEnabled;
@@ -66,12 +86,14 @@
 - (void)setItem:(id)arg1;
 - (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setShowFlipperHint:(BOOL)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (BOOL)showFlipperHint;
 - (int)statusBarStyle;
-- (BOOL)transportControls:(id)arg1 heldButtonPart:(unsigned int)arg2;
-- (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned int)arg2;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (int)style;
+- (BOOL)transportControls:(id)arg1 heldButtonPart:(unsigned long long)arg2;
+- (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned long long)arg2;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)videoController:(id)arg1 scaleModeDidChange:(unsigned int)arg2;
 - (void)videoController:(id)arg1 willShowChaptersWithTransition:(id)arg2;
 - (id)videoView;

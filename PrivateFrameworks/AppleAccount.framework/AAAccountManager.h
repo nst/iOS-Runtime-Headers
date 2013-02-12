@@ -14,18 +14,14 @@
 @property(readonly) AAAccount * primaryAccount;
 
 + (id)sharedManager;
-+ (void)showMobileMeOfferIfNecessary;
 
-- (void)_delayNextCheckByFourToFiveDays;
+- (void).cxx_destruct;
 - (id)accountWithIdentifier:(id)arg1;
 - (id)accountWithPersonID:(id)arg1;
 - (id)accountWithUsername:(id)arg1;
 - (id)accounts;
 - (id)accountsEnabledForDataclass:(id)arg1;
 - (void)addAccount:(id)arg1;
-- (void)dealloc;
-- (void)downloadMobileMeOffer;
-- (void)presentMobileMeOfferWithTitle:(id)arg1 message:(id)arg2;
 - (id)primaryAccount;
 - (void)reloadAccounts;
 - (void)removeAccount:(id)arg1;

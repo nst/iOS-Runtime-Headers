@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <PLCameraControllerDelegate>, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMovieFileOutput, AVCaptureOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, NSString, NSTimer, SBSAccelerometer;
+@class <PLCameraControllerDelegate>, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMovieFileOutput, AVCaptureOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, NSObject<OS_dispatch_queue>, NSString, NSTimer, SBSAccelerometer;
 
 @interface PLCameraController : NSObject <SBSAccelerometerDelegate, AVCaptureFileOutputRecordingDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
     struct CGSize { 
@@ -28,11 +28,13 @@
         unsigned int supportsZoom : 1; 
         unsigned int supportsHDR : 1; 
         unsigned int supportsPanorama : 1; 
+        unsigned int supportsVideoStillCapture : 1; 
         unsigned int hasFlash : 1; 
         unsigned int hasFrontCamera : 1; 
         unsigned int deferStartVideoCapture : 1; 
         unsigned int inCall : 1; 
         unsigned int isCapturingPanorama : 1; 
+        unsigned int isProcessingPanorama : 1; 
         unsigned int focusDisabled : 1; 
         unsigned int focusWasModified : 1; 
         unsigned int serverDied : 1; 
@@ -42,14 +44,17 @@
         unsigned int flashWillFireAutomatically : 1; 
         unsigned int isCameraApp : 1; 
         unsigned int didSendPreviewStartedCallbackToEmptyDelegate : 1; 
+        unsigned int didGetPreviewStartedCallbackAfterResume : 1; 
         unsigned int logFocusInfo : 1; 
         unsigned int logPreviewInfo : 1; 
         unsigned int logCaptureInfo : 1; 
         unsigned int logFlashInfo : 1; 
         unsigned int logDebugInfo : 1; 
         unsigned int logPanoInfo : 1; 
-        unsigned int enableFirstLastFrame : 1; 
         unsigned int enable720p60Recording : 1; 
+        unsigned int pptTestDisableAutofocus : 1; 
+        unsigned int isInternalInstall : 1; 
+        unsigned int shouldTearDownPano : 1; 
         unsigned int convertSampleBufferToJPEG : 1; 
         unsigned int delegateDidStartSession : 1; 
         unsigned int delegateWillStartPreview : 1; 
@@ -69,6 +74,8 @@
         unsigned int delegateCapturedPhoto : 1; 
         unsigned int delegateDidChangeCaptureAbility : 1; 
         unsigned int delegateDidUpdatePanoramaPreview : 1; 
+        unsigned int delegateDidReceivePanoramaIssue : 1; 
+        unsigned int delegateDidStartPanoramaCapture : 1; 
         unsigned int delegateWillStopPanoramaCapture : 1; 
         unsigned int delegatePanoramaWillStartProcessing : 1; 
         unsigned int delegatePanoramaDidStopProcessing : 1; 
@@ -92,7 +99,7 @@
     AVCaptureStillImageOutput *_avCaptureOutputPhoto;
     AVCaptureMovieFileOutput *_avCaptureOutputVideo;
     AVCaptureSession *_avCaptureSession;
-    struct dispatch_queue_s { } *_avCaptureSessionDispatchQueue;
+    NSObject<OS_dispatch_queue> *_avCaptureSessionDispatchQueue;
     int _cameraDevice;
     } _cameraFlags;
     int _cameraMode;
@@ -111,8 +118,8 @@
     int _hdrEV0PhotoCaptureCount;
     BOOL _hdrEnabled;
     NSTimer *_idleTimerTimer;
-    int _imageWriterQueueAvailabilityToken;
     BOOL _imageWriterQueueIsAvailable;
+    unsigned int _ioSurfaceCounter;
     BOOL _isFocusingOnFace;
     struct CGImage { } *_lastVideoPreviewFrameImageRef;
     BOOL _lockFocusAfterFocusFinishes;
@@ -147,6 +154,7 @@
 @property(readonly) struct CGSize { float x1; float x2; } panoramaPreviewSize;
 @property(copy) id postSessionSetupBlock;
 @property(readonly) AVCaptureVideoPreviewLayer * previewLayer;
+@property int previewOrientation;
 @property(readonly) BOOL supportsHDR;
 @property float zoomFactor;
 
@@ -154,11 +162,13 @@
 
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationSuspended:(id)arg1;
-- (void)_applicationWilEnterForeground:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_autofocus:(BOOL)arg1 autoExpose:(BOOL)arg2;
+- (void)_autofocusAfterCapture;
 - (void)_autofocusOperationFinished;
 - (void)_callStateDidChange:(id)arg1;
 - (void)_capturedPhotoWithDictionary:(id)arg1 error:(id)arg2;
+- (void)_cleanupPanorama;
 - (void)_clearPreviewLayer;
 - (void)_commonFocusFinished;
 - (void)_configureSessionWithCameraMode:(int)arg1 cameraDevice:(int)arg2;
@@ -183,16 +193,22 @@
 - (void)_inputPortFormatDescriptionDidChange:(id)arg1;
 - (void)_interruptionEnded:(id)arg1;
 - (BOOL)_isCountingHDREV0Captures;
+- (void)_jankyPreviewStartedWorkaround;
 - (BOOL)_lockCurrentDeviceForConfiguration;
 - (void)_lockFocus:(BOOL)arg1 lockExposure:(BOOL)arg2 lockWhiteBalance:(BOOL)arg3;
 - (void)_lockedFocusOperationFinished;
 - (BOOL)_modeUsesCompassHeading;
 - (void)_movieFileRecordingCompleted:(id)arg1;
-- (void)_panoramaDidReceiveErrorNotification:(id)arg1;
-- (void)_panoramaDidReceiveWarningNotification:(id)arg1;
+- (void)_panoShouldEnd;
+- (void)_panoramaDidReceiveErrorNotificationString:(struct __CFString { }*)arg1;
+- (void)_panoramaDidReceiveIssueWithPanoramaString:(struct __CFString { }*)arg1;
+- (void)_panoramaDidReceiveStatusNotificationString:(struct __CFString { }*)arg1;
+- (void)_panoramaDidReceiveWarningNotificationString:(struct __CFString { }*)arg1;
 - (void)_panoramaDidStop;
+- (void)_pptTestSetAutofocusDisabled:(BOOL)arg1;
 - (void)_previewStarted:(id)arg1;
 - (void)_processCapturedPhotoWithDictionary:(id)arg1 error:(id)arg2;
+- (void)_processSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_recoverFromServerError;
 - (void)_removeVideoCaptureFileAndDirectoryAtPath:(id)arg1;
 - (void)_resetIdleTimer;
@@ -204,13 +220,17 @@
 - (void)_sessionStopped:(id)arg1;
 - (void)_setCameraMode:(int)arg1 cameraDevice:(int)arg2;
 - (void)_setCameraOrientation:(int)arg1;
+- (void)_setDefaultPrewarmDate:(id)arg1;
 - (void)_setDelaySuspend:(BOOL)arg1;
+- (void)_setFaceDetectionEnabled:(BOOL)arg1 forCaptureDevice:(id)arg2 captureOutput:(id)arg3;
 - (void)_setFlashMode:(int)arg1 force:(BOOL)arg2;
 - (void)_setLocationEnabled:(BOOL)arg1;
 - (void)_setOrientation;
 - (void)_setOrientationEventsEnabled:(BOOL)arg1;
+- (void)_setOrientationForConnection:(id)arg1;
 - (void)_setVideoCapturePath:(id)arg1;
 - (BOOL)_setupCamera;
+- (void)_startPreview:(id)arg1;
 - (void)_startPreviewWithCameraDevice:(int)arg1 cameraMode:(int)arg2;
 - (void)_synchronizeHDRSettings;
 - (void)_tearDownCamera;
@@ -227,18 +247,19 @@
 - (void)_willTakePhoto;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
-- (void)autoExpose;
 - (void)autofocus;
-- (void)autofocusAfterCapture;
 - (int)cameraDevice;
 - (int)cameraMode;
 - (int)cameraOrientation;
 - (BOOL)canCapturePanorama;
 - (BOOL)canCapturePhoto;
+- (BOOL)canCapturePhotoDuringRecording;
 - (BOOL)canCaptureVideo;
 - (BOOL)canFocusAtPoint;
 - (BOOL)canLockFocus;
+- (void)captureIOSurface;
 - (int)captureOrientation;
+- (void)captureOutput:(id)arg1 didDropSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
@@ -261,6 +282,7 @@
 - (void)focusAtAdjustedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)hasFlash;
 - (BOOL)hasFrontCamera;
+- (BOOL)hasInheritedForegroundState;
 - (id)imageOutput;
 - (BOOL)imageWriterQueueIsAvailable;
 - (BOOL)inCall;
@@ -276,11 +298,11 @@
 - (BOOL)isFocusing;
 - (BOOL)isFocusingOnFace;
 - (BOOL)isHDREnabled;
+- (BOOL)isPreviewMirrored;
 - (BOOL)isReady;
 - (BOOL)isTorchDisabled;
 - (BOOL)isTorchOn;
-- (void)lockExposure;
-- (void)lockFocus;
+- (void)lockFocusAndExposureForPano;
 - (void)lockFocusForRecording;
 - (float)maximumZoomFactor;
 - (double)minimumVideoCaptureDuration;
@@ -289,9 +311,12 @@
 - (float)panoramaPreviewScale;
 - (struct CGSize { float x1; float x2; })panoramaPreviewSize;
 - (void)panoramaProcessorOutputCallbackWithStatus:(long)arg1 buffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (void)performAutofocusAfterCapture;
 - (void)postOrientationChangedNotification:(int)arg1 force:(BOOL)arg2;
 - (id)postSessionSetupBlock;
 - (id)previewLayer;
+- (int)previewOrientation;
+- (void)releaseIOSurface;
 - (void)restartAutoFocus;
 - (void)setCameraDevice:(int)arg1;
 - (void)setCameraMode:(int)arg1;
@@ -301,16 +326,20 @@
 - (void)setCurrentInput:(id)arg1;
 - (void)setCurrentOutput:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFaceDetectionEnabled:(BOOL)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setFocusDisabled:(BOOL)arg1;
 - (void)setHDREnabled:(BOOL)arg1;
 - (void)setIsCameraApp:(BOOL)arg1;
+- (void)setPanoramaCaptureDirection:(int)arg1;
 - (void)setPanoramaImageQueueLayer:(id)arg1;
 - (void)setPostSessionSetupBlock:(id)arg1;
+- (void)setPreviewOrientation:(int)arg1;
 - (void)setVideoCaptureMaximumDuration:(double)arg1;
 - (void)setVideoCaptureQuality:(int)arg1;
 - (void)setZoomFactor:(float)arg1;
 - (void)startPanoramaCapture;
+- (void)startPreview:(id)arg1;
 - (void)startPreview;
 - (void)startVideoCapture;
 - (void)stopPanoramaCapture;
@@ -320,7 +349,7 @@
 - (BOOL)supportsPanorama;
 - (BOOL)supportsVideoCapture;
 - (BOOL)supportsZoom;
-- (void)tearDownCaptureSession;
+- (void)userInitiatedLockFocus;
 - (id)videoCapturePath;
 - (float)zoomFactor;
 

@@ -12,10 +12,13 @@
     BOOL mIsOnPhone;
     BOOL mIsThumbnail;
     unsigned int mPageCount;
+    NSString *mPassphrase;
     NSMutableSet *mPausedPaths;
     NSString *mResourcePathPrefix;
     int mWidth;
 }
+
+@property(copy) NSString * passphrase;
 
 + (int)blipTypeToResourceType:(int)arg1;
 + (id)resourceTypeToExtension:(int)arg1;
@@ -31,8 +34,8 @@
 - (id)cachedPathForDrawable:(id)arg1;
 - (void)closeResourceAtPath:(id)arg1;
 - (void)commitDataAtPath:(id)arg1;
-- (id)createResourceWithName:(id)arg1;
-- (id)createResourceWithType:(int)arg1;
+- (id)copyResourceWithName:(id)arg1;
+- (id)copyResourceWithType:(int)arg1;
 - (id)cssStylesheetString;
 - (void)dealloc;
 - (id)init;
@@ -41,6 +44,7 @@
 - (BOOL)isProgressive;
 - (BOOL)isThumbnail;
 - (unsigned int)pageCount;
+- (id)passphrase;
 - (void)pauseProgressiveMappingOnPath:(id)arg1;
 - (BOOL)progressiveMappingIsPausedOnPath:(id)arg1;
 - (void)pushCssToPath:(id)arg1;
@@ -56,6 +60,7 @@
 - (BOOL)setIsOnPhone:(BOOL)arg1;
 - (void)setIsThumbnail:(BOOL)arg1;
 - (void)setPageCount:(unsigned int)arg1;
+- (void)setPassphrase:(id)arg1;
 - (void)setResourcePathPrefix:(id)arg1;
 
 @end

@@ -10,7 +10,6 @@
 @property(readonly) NSString * formatString;
 @property(readonly) NSArray * handles;
 @property(readonly) int statusType;
-@property(readonly) NSString * stringValue;
 
 - (id)description;
 - (id)formatString;

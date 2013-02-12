@@ -2,14 +2,20 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NSIndexPath, NSMutableArray, NSString, TLToneManager, TLVibrationPickerViewController, UITableView;
+@class MPMediaPickerController, MPMusicPlayerController, NSIndexPath, NSMutableArray, NSString, TLToneManager, TLVibrationPickerViewController, UITableView;
 
-@interface TLToneTableController : NSObject <TLVibrationPickerViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface TLToneTableController : NSObject <TLVibrationPickerViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, MPMediaPickerControllerDelegate> {
+    BOOL _allowsDeletingCurrentSystemVibration;
     id _avController;
+    int _context;
     BOOL _customAVController;
+    Class _customTableViewCellClass;
     NSString *_defaultIdentifier;
     id _delegate;
     unsigned int _filter;
+    NSMutableArray *_mediaItems;
+    MPMediaPickerController *_mediaPickerController;
+    MPMusicPlayerController *_musicPlayer;
     BOOL _noneAtTop;
     NSString *_noneIdentifier;
     NSString *_noneString;
@@ -18,39 +24,52 @@
     TLToneManager *_ringtoneManager;
     NSIndexPath *_selectedRingtoneIndexPath;
     NSString *_selectedVibrationIdentifier;
+    BOOL _showMediaAtTop;
     BOOL _showsDefault;
     BOOL _showsDefaultVibration;
+    BOOL _showsMedia;
     BOOL _showsNoVibrationSelected;
     BOOL _showsNone;
     BOOL _showsNoneVibration;
     BOOL _showsNothingSelected;
     BOOL _showsRingtonesStore;
+    BOOL _showsStoreButtonInNavigationBar;
     BOOL _showsUserGeneratedVibrations;
     BOOL _showsVibrations;
-    BOOL _showsVibrationsAlongsideTones;
     BOOL _startedInteruption;
     unsigned int _systemRingtoneStartIndex;
     UITableView *_tableView;
     BOOL _tonePicker;
+    NSString *_vibrationAccountIdentifier;
     TLVibrationPickerViewController *_vibrationPickerViewController;
 }
 
+@property BOOL allowsDeletingCurrentSystemVibration;
 @property(setter=setDefaultIdentifier:,retain) id defaultIdentifier;
+@property(retain) NSString * selectedVibrationIdentifier;
+@property BOOL showsDefaultVibration;
+@property BOOL showsNoVibrationSelected;
+@property BOOL showsNoneVibration;
+@property BOOL showsUserGeneratedVibrations;
+@property BOOL showsVibrations;
+@property(retain) NSString * vibrationAccountIdentifier;
 
+- (unsigned int)_addMediaIdentifierToList:(id)arg1;
+- (BOOL)_canShowStore;
+- (void)_goToStore;
+- (void)_handleItemPlaybackDidEndWithAVController:(id)arg1;
+- (id)_mediaItemForIdentifier:(id)arg1;
+- (void)_refreshMediaItems;
+- (void)_registerForItemPlaybackDidEndNotificationWithCurrentAVController;
 - (void)_setRingtoneManager:(id)arg1;
-- (void)_setSelectedVibrationIdentifierTableViewUpdateDidComplete:(id)arg1;
-- (BOOL)_showsDefaultVibration;
-- (BOOL)_showsNoneVibration;
-- (BOOL)_showsUserGeneratedVibrations;
 - (BOOL)_showsVibrations;
-- (BOOL)_showsVibrationsSwitchIsOn;
-- (void)_stopPlayingButKeepVibrating:(BOOL)arg1;
-- (void)_stopPlayingWithFadeOut:(BOOL)arg1 shouldKeepVibrating:(BOOL)arg2;
-- (void)_switchValueDidChange:(id)arg1;
-- (id)_vibrationPickerViewController;
+- (void)_unregisterForItemPlaybackDidEndNotificationWithCurrentAVController;
+- (void)addMediaItems:(id)arg1;
 - (void)addRingtonesInDirectory:(id)arg1 toArray:(id)arg2 fileExtension:(id)arg3;
+- (BOOL)allowsDeletingCurrentSystemVibration;
 - (id)avController;
 - (int)compareRingtoneWithIdentifier:(id)arg1 toRingtoneWithIdentifier:(id)arg2;
+- (void)configureNavigationBarIfNeeded;
 - (id)copyCurrentPhoneRingtoneIdentifier;
 - (id)copyCurrentPhoneRingtoneName;
 - (id)copyCurrentPhoneTextToneIdentifier;
@@ -58,10 +77,12 @@
 - (void)dealloc;
 - (id)defaultIdentifier;
 - (void)finishedWithPicker;
+- (id)identifierAtIndexPath:(id)arg1 isMediaItem:(BOOL*)arg2;
 - (id)identifierOfRingtoneAtIndexPath:(id)arg1;
 - (id)indexPathForDefaultGroup;
 - (id)indexPathForFirstRingtoneGroup;
-- (id)indexPathForNoneGroup;
+- (id)indexPathForMediaGroup;
+- (id)indexPathForNone;
 - (id)indexPathForRingtoneWithIdentifier:(id)arg1;
 - (id)indexPathForRingtonesStoreGroup;
 - (id)indexPathForSelectedRingtone;
@@ -71,36 +92,55 @@
 - (id)initWithAVController:(id)arg1;
 - (BOOL)isDefaultGroupAtIndexPath:(id)arg1;
 - (BOOL)isDividerAtIndexPath:(id)arg1;
+- (BOOL)isMediaGroupAtIndexPath:(id)arg1;
 - (BOOL)isNoneGroupAtIndexPath:(id)arg1;
-- (BOOL)isOtherVibrationGroupWithSection:(int)arg1;
 - (BOOL)isRingtonesStoreGroupAtIndexPath:(id)arg1;
 - (BOOL)isVibrationGroupAtIndexPath:(id)arg1;
 - (id)loadTextTonesFromPlist;
+- (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
+- (void)mediaPickerDidCancel:(id)arg1;
+- (id)musicPlayer;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)playMediaItemWithIdentifier:(id)arg1;
 - (void)playRingtoneWithIdentifier:(id)arg1;
+- (void)processNewMediaItemSelected:(id)arg1;
 - (void)processNewRingtoneSelected:(id)arg1;
 - (void)reloadRingtones;
+- (void)removeMediaItems:(id)arg1;
 - (id)ringtoneManager;
+- (id)selectedIdentifier:(BOOL*)arg1;
 - (id)selectedRingtoneIdentifier;
 - (id)selectedVibrationIdentifier;
 - (void)setAVController:(id)arg1;
+- (void)setAllowsDeletingCurrentSystemVibration:(BOOL)arg1;
+- (void)setContext:(int)arg1;
+- (void)setCustomTableViewCellClass:(Class)arg1;
 - (void)setDefaultIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setMediaAtTop:(BOOL)arg1;
 - (void)setNoneAtTop:(BOOL)arg1;
 - (void)setNoneString:(id)arg1;
+- (void)setSelectedMediaIdentifier:(id)arg1;
 - (void)setSelectedRingtoneIdentifier:(id)arg1;
 - (void)setSelectedVibrationIdentifier:(id)arg1;
 - (void)setShowsDefault:(BOOL)arg1;
 - (void)setShowsDefaultVibration:(BOOL)arg1;
+- (void)setShowsMedia:(BOOL)arg1;
 - (void)setShowsNoVibrationSelected:(BOOL)arg1;
 - (void)setShowsNone:(BOOL)arg1;
 - (void)setShowsNoneVibration:(BOOL)arg1;
 - (void)setShowsNothingSelected:(BOOL)arg1;
 - (void)setShowsRingtonesStore:(BOOL)arg1;
+- (void)setShowsStoreButtonInNavigationBar:(BOOL)arg1;
 - (void)setShowsUserGeneratedVibrations:(BOOL)arg1;
 - (void)setShowsVibrations:(BOOL)arg1;
-- (void)setShowsVibrationsAlongsideTones:(BOOL)arg1;
 - (void)setTableView:(id)arg1;
+- (void)setVibrationAccountIdentifier:(id)arg1;
+- (BOOL)showsDefaultVibration;
+- (BOOL)showsNoVibrationSelected;
+- (BOOL)showsNoneVibration;
+- (BOOL)showsUserGeneratedVibrations;
+- (BOOL)showsVibrations;
 - (void)stopPlaying;
 - (void)stopPlayingWithFadeOut:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -108,7 +148,10 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (void)togglePlayMediaItemWithIdentifier:(id)arg1;
 - (void)togglePlayWithRingtoneWithIdentifier:(id)arg1;
+- (void)updateSelectedIdentifierForExternalChange;
+- (id)vibrationAccountIdentifier;
 - (void)vibrationPickerViewController:(id)arg1 selectedVibrationWithIdentifier:(id)arg2;
 
 @end

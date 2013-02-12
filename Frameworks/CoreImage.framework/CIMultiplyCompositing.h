@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIMultiplyCompositing : CICompositeFilter {
+@interface CIMultiplyCompositing : _CICompositeFilter {
 }
 
 + (id)_filter_display_name;

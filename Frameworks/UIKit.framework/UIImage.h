@@ -2,16 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CIImage, NSArray;
+@class CIImage, NSArray, _UIDecompressionInfo;
 
 @interface UIImage : NSObject <NSCoding> {
     struct { 
         unsigned int named : 1; 
         unsigned int imageOrientation : 3; 
         unsigned int cached : 1; 
-        unsigned int hasBeenCached : 1; 
         unsigned int hasPattern : 1; 
         unsigned int isCIImage : 1; 
+        unsigned int imageSetIdentifer : 16; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _alignmentRectInsets;
+    _UIDecompressionInfo *_decompressionInfo;
     } _imageFlags;
     void *_imageRef;
     float _scale;
@@ -19,6 +26,7 @@
 
 @property(readonly) struct CGImage { }* CGImage;
 @property(readonly) CIImage * CIImage;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
 @property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } capInsets;
 @property(readonly) double duration;
 @property(readonly) int imageOrientation;
@@ -27,27 +35,24 @@
 @property(readonly) int leftCapWidth;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } mediaImageSubRect;
 @property double mediaImageTime;
+@property(readonly) int resizingMode;
 @property(readonly) float scale;
 @property(readonly) struct CGSize { float x1; float x2; } size;
 @property(readonly) int topCapHeight;
 
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2 scale:(float)arg3;
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2;
-+ (id)_applicationIconImageForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 format:(int)arg3 scale:(float)arg4;
-+ (id)_applicationIconImageForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 format:(int)arg3;
 + (id)_backgroundGradientWithStartColor:(id)arg1 andEndColor:(id)arg2;
-+ (id)_balloonImage:(BOOL)arg1 color:(BOOL)arg2;
-+ (id)_balloonMask:(BOOL)arg1;
++ (id)_cachedImageForKey:(id)arg1 fromBlock:(id)arg2;
 + (id)_defaultBackgroundGradient;
-+ (void)_flushCacheOnMemoryWarning:(id)arg1;
++ (id)_deviceSpecificImageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)_deviceSpecificImageNamed:(id)arg1;
++ (void)_flushCache:(id)arg1;
 + (void)_flushSharedImageCache;
 + (void)_gkloadRemoteImageForURL:(id)arg1 withCompletionHandler:(id)arg2;
-+ (id)_highlightImage;
-+ (id)_iAdCore_imageNamed:(id)arg1;
 + (id)_iconForResourceProxy:(id)arg1 format:(int)arg2;
 + (id)_iconForResourceProxy:(id)arg1 variant:(int)arg2 variantsScale:(float)arg3;
 + (int)_iconVariantForUIApplicationIconFormat:(int)arg1 scale:(float*)arg2;
-+ (id)_imageWithColor:(BOOL)arg1;
 + (id)_mapkit_imageNamed:(id)arg1;
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 effectsImage:(id)arg3 maskImage:(id)arg4 style:(int)arg5;
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 maskImage:(id)arg3 effectsImage:(id)arg4 style:(int)arg5 edgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg6;
@@ -56,11 +61,12 @@
 + (id)animatedImageNamed:(id)arg1 duration:(double)arg2;
 + (id)animatedImageWithImages:(id)arg1 duration:(double)arg2;
 + (id)animatedResizableImageNamed:(id)arg1 capInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 duration:(double)arg3;
++ (id)animatedResizableImageNamed:(id)arg1 capInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 resizingMode:(int)arg3 duration:(double)arg4;
 + (id)applicationImageNamed:(id)arg1;
 + (id)ckImageNamed:(id)arg1;
 + (id)ckImageWithData:(id)arg1;
 + (id)imageAtPath:(id)arg1;
-+ (id)imageFromAlbumArtData:(id)arg1 artworkInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg2;
++ (id)imageFromAlbumArtData:(id)arg1 artworkInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; BOOL x_1_1_7; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg2;
 + (id)imageFromAlbumArtData:(id)arg1 height:(int)arg2 width:(int)arg3 bytesPerRow:(int)arg4 cache:(BOOL)arg5;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imageNamed:(id)arg1;
@@ -72,19 +78,20 @@
 + (id)imageWithContentsOfFile:(id)arg1;
 + (id)imageWithData:(id)arg1 scale:(float)arg2;
 + (id)imageWithData:(id)arg1;
++ (id)imageWithWLImage:(id)arg1;
 + (void)initialize;
 + (id)kitImageNamed:(id)arg1;
++ (void)loadImageWithURL:(id)arg1 completion:(id)arg2;
 + (struct CGImage { }*)missingMapTileImage;
 + (id)nikeBackgroundImage;
 + (id)nikeRunLandscapeBackgroundImage;
-+ (void)removeImageNameFromCache:(id)arg1;
 + (void)resetMissingMapTileImage;
 + (id)reversedNikeRunLandscapeBackgroundImage;
 + (void)setPreferredSharedImageScale:(float)arg1;
 + (id)sharedImageNamed:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 drawUsingBlock:(id)arg3;
++ (id)socialFrameworkImageNamed:(id)arg1 leftCapWidth:(float)arg2 topCapHeight:(float)arg3;
++ (id)socialFrameworkImageNamed:(id)arg1;
 + (id)tpImageNamed:(id)arg1 inBundle:(id)arg2;
-+ (id)twitterFrameworkImageNamed:(id)arg1 leftCapWidth:(float)arg2 topCapHeight:(float)arg3;
-+ (id)twitterFrameworkImageNamed:(id)arg1;
 
 - (struct CGImage { }*)CGImage;
 - (id)CIImage;
@@ -93,8 +100,13 @@
 - (id)_applicationIconImageForFormat:(int)arg1 precomposed:(BOOL)arg2;
 - (id)_automationID;
 - (id)_bezeledImageWithShadowRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 fillRed:(float)arg5 green:(float)arg6 blue:(float)arg7 alpha:(float)arg8 drawShadow:(BOOL)arg9;
+- (BOOL)_canEncodeWithName:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentStretchInPixels;
+- (void)_decompressionComplete;
+- (void)_decompressionFallbackImageCreation;
 - (id)_doubleBezeledImageWithExteriorShadowRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 interiorShadowRed:(float)arg5 green:(float)arg6 blue:(float)arg7 alpha:(float)arg8 fillRed:(float)arg9 green:(float)arg10 blue:(float)arg11 alpha:(float)arg12;
+- (void)_encodeDataWithCoder:(id)arg1 imageName:(id)arg2;
+- (void)_encodePropertiesWithCoder:(id)arg1;
 - (id)_flatImageWithWhite:(float)arg1 alpha:(float)arg2;
 - (void)_gkDrawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withMask:(id)arg2;
 - (id)_gkImageByAddingAlpha;
@@ -103,25 +115,39 @@
 - (id)_gkImageByScalingToSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 padColor:(id)arg3;
 - (id)_gkImageByScalingToSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)_gkImageByScalingToSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)_hasBeenCached;
 - (id)_imageScaledToProportion:(float)arg1 interpolationQuality:(int)arg2;
+- (int)_imageSetIdentifier;
+- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 renderingIntent:(int)arg4;
+- (id)_initWithData:(id)arg1 preserveScale:(BOOL)arg2 cache:(BOOL)arg3;
 - (id)_initWithData:(id)arg1 preserveScale:(BOOL)arg2;
 - (id)_initWithData:(id)arg1 scale:(float)arg2;
 - (id)_initWithIOSurface:(struct __IOSurface { }*)arg1 imageOrientation:(int)arg2;
 - (id)_initWithIOSurface:(struct __IOSurface { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
+- (id)_initWithOtherImage:(id)arg1;
 - (BOOL)_isCached;
+- (BOOL)_isDecompressing;
+- (BOOL)_isInvisible;
 - (BOOL)_isNamed;
 - (BOOL)_isResizable;
 - (BOOL)_isTiledWhenStretchedToSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGColor { }*)_patternColor;
+- (void)_preheatBitmapData;
+- (id)_resizableImageWithCapMask:(int)arg1;
+- (void)_saveDecompressedImage:(struct CGImage { }*)arg1;
 - (id)_selectedTabBarItemImageWithTintColor:(id)arg1;
+- (id)_serializedData;
+- (void)_setAlignmentRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setAlwaysStretches:(BOOL)arg1;
 - (void)_setCached:(BOOL)arg1;
+- (void)_setImageSetIdentifier:(int)arg1;
 - (void)_setNamed:(BOOL)arg1;
+- (void)_startEagerDecompression;
 - (id)_stretchableImageWithCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)_subimageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGColor { }*)_tiledPatternColor;
 - (id)_unselectedTabBarItemImageWithTintColor:(id)arg1;
 - (void)abpis_swizzleClass;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bitmapRectFromImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)cacheNameKey;
 - (id)cacheSizeKey;
@@ -132,8 +158,7 @@
 - (void)compositeToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 operation:(int)arg3 fraction:(float)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)downsampleWithMaxSize:(unsigned int)arg1 resultsHandler:(id)arg2;
-- (id)downsampledImageWithMaxSize:(unsigned int)arg1;
+- (void)decode;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fraction:(float)arg2 operation:(int)arg3;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fraction:(float)arg2;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -153,6 +178,8 @@
 - (int)imageOrientation;
 - (struct CGImage { }*)imageRef;
 - (id)imageScaledToSize:(struct CGSize { float x1; float x2; })arg1 cornerRadius:(float)arg2;
+- (id)imageWithAlignmentRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)imageWithOrientation:(int)arg1;
 - (id)images;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 imageOrientation:(int)arg2;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
@@ -160,27 +187,28 @@
 - (id)initWithCIImage:(id)arg1 scale:(float)arg2 orientation:(int)arg3;
 - (id)initWithCIImage:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContentsOfCPBitmapFile:(id)arg1 flags:(int)arg2;
 - (id)initWithContentsOfFile:(id)arg1 cache:(BOOL)arg2;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithData:(id)arg1 cache:(BOOL)arg2;
 - (id)initWithData:(id)arg1 scale:(float)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithIOSurface:(struct __IOSurface { }*)arg1;
-- (id)initWithImageRef:(struct CGImage { }*)arg1;
 - (struct __IOSurface { }*)ioSurface;
-- (BOOL)isCoverflowPlaceholder;
 - (BOOL)isPlaceholder;
 - (int)leftCapWidth;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaImageSubRect;
 - (double)mediaImageTime;
-- (id)newBalloonImageWithTail:(BOOL)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)mpIsCoverflowPlaceholder;
+- (id)mp_stretchableImageWithLeftCapWidth:(int)arg1 rightCapWidth:(int)arg2;
 - (struct CGImage { }*)newBorderMaskWithThickness:(unsigned int)arg1 forImageSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)newImageRotatedByDegrees:(float)arg1;
 - (id)newImageWithOrientation:(int)arg1;
 - (id)patternColor;
 - (void)removeFromCache;
+- (id)resizableImageWithCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 resizingMode:(int)arg2;
 - (id)resizableImageWithCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (int)resizingMode;
+- (id)roundCorners:(unsigned int)arg1 withRadiusPercent:(float)arg2;
 - (float)scale;
 - (void)setCacheNameKey:(id)arg1;
 - (void)setCacheSizeKey:(id)arg1;
@@ -192,6 +220,8 @@
 - (id)stretchableImageWithLeftCapWidth:(int)arg1 topCapHeight:(int)arg2;
 - (id)subImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)topCapHeight;
+- (id)wlImageByRecoloringWithColor:(id)arg1;
+- (id)wlResizableImageByTilingCenterPixel;
 - (BOOL)writeToCPBitmapFile:(id)arg1 flags:(int)arg2;
 
 @end

@@ -63,9 +63,11 @@
 - (id)initForWritingWithMutableData:(id)arg1;
 - (unsigned int)outputFormat;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
+- (BOOL)requiresSecureCoding;
 - (void)setClassName:(id)arg1 forClass:(Class)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setOutputFormat:(unsigned int)arg1;
+- (void)setRequiresSecureCoding:(BOOL)arg1;
 - (unsigned int)systemVersion;
 - (int)versionForClassName:(id)arg1;
 

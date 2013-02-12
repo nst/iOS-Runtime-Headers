@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUModalContext, NSString;
+@class IUModalContext, MPStoreCompletionOffering, NSString;
 
 @interface IUMediaDataSource : NSObject {
     NSString *_backButtonTitle;
     int _coalesceInvalidateNotifications;
     BOOL _coalesceInvalidateNotificationsSkipped;
+    MPStoreCompletionOffering *_completionOffering;
     BOOL _editing;
     BOOL _hasReloaded;
     BOOL _ignoresInvalidation;
@@ -16,9 +17,11 @@
 }
 
 @property(retain) NSString * backButtonTitle;
+@property(readonly) BOOL canShowCompletionOfferings;
+@property(retain) MPStoreCompletionOffering * completionOffering;
 @property(getter=isEditing,setter=setIsEditing:) BOOL editing;
 @property BOOL ignoresInvalidation;
-@property(readonly) BOOL isFiltered;
+@property(readonly) BOOL isContentDisplayEnabled;
 @property(retain) IUModalContext * modalContext;
 @property(getter=isRestorableNavigationPathNode,readonly) BOOL restorableNavigationPathNode;
 @property(readonly) BOOL shouldDisplayWhenEmpty;
@@ -29,6 +32,7 @@
 + (id)moreListTitleKey;
 + (void)setLoadingDisabled:(BOOL)arg1;
 + (id)shortNoContextNavigationTitleKey;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tabBarItemIconImageInsets;
 + (id)tabBarItemIconName;
 + (id)tabBarItemTitleKey;
 + (int)tabBarSystemItem;
@@ -36,22 +40,25 @@
 - (void)attemptToReloadDataIfNecessary;
 - (id)backButtonTitle;
 - (void)beginCoalescingChanges;
+- (BOOL)canShowCompletionOfferings;
+- (id)completionOffering;
 - (void)configureMoreListTableCell:(id)arg1;
 - (id)contextForContext:(id)arg1 redirectType:(int)arg2;
 - (id)createNoContentDataSource;
 - (void)dealloc;
 - (void)endCoalescingChanges;
-- (BOOL)filterUsingDataSource:(id)arg1;
+- (int)filteredMediaTypes;
 - (BOOL)ignoresInvalidation;
 - (void)invalidate;
+- (BOOL)isContentDisplayEnabled;
 - (BOOL)isEditing;
-- (BOOL)isFiltered;
 - (BOOL)isRestorableNavigationPathNode;
 - (SEL)libraryHasDisplayableEntitiesSelector;
 - (id)modalContext;
 - (id)newTabBarItem;
 - (void)reloadData;
 - (void)setBackButtonTitle:(id)arg1;
+- (void)setCompletionOffering:(id)arg1;
 - (void)setIgnoresInvalidation:(BOOL)arg1;
 - (void)setIsEditing:(BOOL)arg1;
 - (void)setModalContext:(id)arg1;

@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSMutableArray;
+@class AVWeakReference, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface AVFigAssetTrackInspector : AVAssetTrackInspector {
-    struct dispatch_queue_s { } *_completionHandlerQueue;
+    NSArray *_cachedMediaCharacteristics;
+    NSObject<OS_dispatch_queue> *_completionHandlerQueue;
     struct OpaqueFigAssetTrack { } *_figAssetTrack;
     NSMutableArray *_loadingBatches;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
@@ -17,9 +18,10 @@
 }
 
 - (void)_addFigAssetTrackNotifications;
-- (struct dispatch_queue_s { }*)_completionHandlerQueue;
+- (id)_completionHandlerQueue;
 - (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (struct OpaqueFigAssetTrack { }*)_figAssetTrack;
+- (unsigned long)_figMediaType;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (int)_loadStatusForFigAssetTrackProperty:(id)arg1 returningError:(int*)arg2;
 - (id)_loadingBatches;
@@ -31,6 +33,7 @@
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
 - (void)dealloc;
+- (struct CGSize { float x1; float x2; })dimensions;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (void)finalize;
@@ -44,6 +47,7 @@
 - (id)languageCode;
 - (int)layer;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (id)mediaCharacteristics;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;

@@ -23,6 +23,10 @@
 + (id)imageWithIOSurface:(struct __IOSurface { }*)arg1 options:(id)arg2;
 + (id)imageWithIOSurface:(struct __IOSurface { }*)arg1;
 + (id)imageWithInternalRepresentation:(void*)arg1;
++ (id)imageWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 flipped:(BOOL)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
++ (id)imageWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 options:(id)arg3;
++ (id)noiseImage;
++ (id)noiseImagePadded;
 
 - (id)_autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 context:(id)arg3 options:(id)arg4;
 - (id)_dictForFeature:(id)arg1 scale:(float)arg2 imageHeight:(float)arg3;
@@ -31,8 +35,6 @@
 - (id)_initWithInternalRepresentation:(void*)arg1;
 - (void*)_internalRepresentation;
 - (id)_scaleImageToMaxDimension:(unsigned int)arg1;
-- (struct __IOSurface { }*)_surfaceAndFormat:(int*)arg1;
-- (struct __IOSurface { }*)_surfaceWithFormat:(int)arg1;
 - (id)autoAdjustmentFilters;
 - (id)autoAdjustmentFiltersWithImageProperties:(id)arg1 options:(id)arg2;
 - (id)autoAdjustmentFiltersWithOptions:(id)arg1;
@@ -44,9 +46,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extent;
 - (id)filteredImage:(id)arg1 keysAndValues:(id)arg2;
+- (id)imageByApplyingBlur:(double)arg1;
+- (id)imageByApplyingGamma:(double)arg1;
+- (id)imageByApplyingLanczosScale:(double)arg1 aspectRatio:(double)arg2;
 - (id)imageByApplyingOrientation:(int)arg1;
 - (id)imageByApplyingTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)imageByCroppingToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)imageByPremultiplying;
+- (id)imageByUnpremultiplying;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })imageTransformForOrientation:(int)arg1;
 - (id)initWithBitmapData:(id)arg1 bytesPerRow:(unsigned long)arg2 size:(struct CGSize { float x1; float x2; })arg3 format:(int)arg4 colorSpace:(struct CGColorSpace { }*)arg5;
 - (id)initWithBitmapData:(id)arg1 bytesPerRow:(unsigned long)arg2 size:(struct CGSize { float x1; float x2; })arg3 format:(int)arg4 options:(id)arg5;
@@ -68,6 +75,9 @@
 - (id)initWithIOSurface:(struct __IOSurface { }*)arg1;
 - (id)initWithImage:(id)arg1 options:(id)arg2;
 - (id)initWithImage:(id)arg1;
+- (id)initWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 flipped:(BOOL)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
+- (id)initWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 options:(id)arg3;
 - (id)properties;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })regionOfInterestForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 @end

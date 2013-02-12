@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSDate, NSMutableArray;
 
 @interface IMAVCallManager : NSObject {
     unsigned int _callState;
     NSMutableArray *_chatArray;
     unsigned int _globalCallState;
+    NSDate *_lastCallStateChange;
     unsigned int _telephonyCallState;
     int _token;
 }
@@ -29,15 +30,15 @@
 - (id)_nonRetainingChatList;
 - (void)_postStateChangeIfNecessary;
 - (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3;
+- (void)_setCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
 - (void)_setCallState:(unsigned int)arg1;
 - (void)_setTelephonyCallState:(unsigned int)arg1;
 - (unsigned int)_telephonyCallState;
 - (void)_updateOverallChatState;
-- (BOOL)allowsWeakReference;
 - (unsigned int)callState;
 - (id)calls;
+- (void)dealloc;
 - (BOOL)hasActiveCall;
 - (id)init;
-- (BOOL)retainWeakReference;
 
 @end

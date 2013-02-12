@@ -16,6 +16,7 @@
 + (id)newCitiesByIdentifierMap:(id)arg1;
 + (id)sharedManager;
 
+- (id)allCities;
 - (id)bestCityForLegacyCity:(struct __CFArray { }*)arg1;
 - (id)citiesMatchingName:(id)arg1 localized:(BOOL)arg2;
 - (id)citiesMatchingName:(id)arg1;

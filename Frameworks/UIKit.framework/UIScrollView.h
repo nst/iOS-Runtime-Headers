@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIScrollViewDelegate>, NSArray, UIImageView, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIView;
+@class <UIScrollViewDelegate>, NSArray, NSISVariable, UIImageView, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIView;
 
-@interface UIScrollView : UIView <NSCoding> {
+@interface UIScrollView : UIView <_UIScrollToTopView, NSCoding> {
     struct CGSize { 
         float width; 
         float height; 
@@ -29,6 +29,7 @@
         unsigned int zoomBouncing : 1; 
         unsigned int alwaysBounceHorizontal : 1; 
         unsigned int alwaysBounceVertical : 1; 
+        unsigned int preventScrollingContainer : 1; 
         unsigned int canCancelContentTouches : 1; 
         unsigned int delaysContentTouches : 1; 
         unsigned int programmaticScrollDisabled : 1; 
@@ -68,6 +69,7 @@
         unsigned int dontScrollToTop : 1; 
         unsigned int scrollingToTop : 1; 
         unsigned int useGestureRecognizers : 1; 
+        unsigned int singleFingerPan : 1; 
         unsigned int autoscrolling : 1; 
         unsigned int automaticContentOffsetAdjustmentDisabled : 1; 
         unsigned int skipStartOffsetAdjustment : 1; 
@@ -88,6 +90,8 @@
         unsigned int disableContentOffsetRounding : 1; 
         unsigned int adjustedDecelerationTargetX : 1; 
         unsigned int adjustedDecelerationTargetY : 1; 
+        unsigned int hasScrolled : 1; 
+        unsigned int wantsConstrainedContentSize : 1; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -122,10 +126,13 @@
     } _adjustedDecelerationFactor;
     } _adjustedDecelerationTarget;
     id _animation;
+    NSArray *_automaticContentConstraints;
+    NSISVariable *_contentHeightVariable;
     } _contentInset;
     double _contentOffsetAnimationDuration;
     } _contentSize;
     UIView *_contentView;
+    NSISVariable *_contentWidthVariable;
     } _decelerationFactor;
     double _decelerationLnFactorH;
     double _decelerationLnFactorV;
@@ -156,7 +163,7 @@
     double _previousHorizontalVelocity;
     double _previousVerticalVelocity;
     } _rotationCenterPoint;
-    void *_scrollHeartbeat;
+    id _scrollHeartbeat;
     } _scrollIndicatorInset;
     id _scrollNotificationViews;
     id _scrollTestParameters;
@@ -167,13 +174,19 @@
     } _startTouchPosition;
     double _startTouchTime;
     id _swipe;
+    BOOL _useContentDimensionVariablesForConstraintLowering;
     UIImageView *_verticalScrollIndicator;
     double _verticalVelocity;
     } _zoomAnchorPoint;
+    id _zoomAnimation;
     unsigned int _zoomAnimationCount;
     UIView *_zoomView;
 }
 
+@property(setter=_setAutomaticContentConstraints:,copy) NSArray * _automaticContentConstraints;
+@property(readonly) NSISVariable * _contentHeightVariable;
+@property(readonly) NSISVariable * _contentWidthVariable;
+@property(setter=_setUseContentDimensionVariablesForConstraintLowering:) BOOL _useContentDimensionVariablesForConstraintLowering;
 @property BOOL alwaysBounceHorizontal;
 @property BOOL alwaysBounceVertical;
 @property BOOL bounces;
@@ -214,9 +227,11 @@
 + (float)_cancelSelectDistance;
 + (SEL)_panGestureAction;
 + (SEL)_pinchGestureAction;
++ (void)_scrollWithNSTimer:(BOOL)arg1;
 
 - (int)_abuttedEdgesForContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (int)_abuttedPagingEdges;
+- (void)_addClassSpecificConstraints;
 - (void)_addContentSubview:(id)arg1 atBack:(BOOL)arg2;
 - (void)_addScrollNotificationView:(id)arg1;
 - (void)_adjustBackgroundShadowsForContentSizeForcedVisible:(BOOL)arg1 withOffset:(float)arg2;
@@ -227,6 +242,12 @@
 - (void)_adjustScrollerIndicators:(BOOL)arg1 alwaysShowingThem:(BOOL)arg2;
 - (void)_adjustShadowsIfNecessary;
 - (void)_adjustShadowsIfNecessaryForOffset:(float)arg1;
+- (void)_adjustStartOffsetForGrabbedBouncingScrollView;
+- (float)_adjustedHorizontalOffsetPinnedToScrollableBounds:(float)arg1;
+- (float)_adjustedVerticalOffsetPinnedToScrollableBounds:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_animatedOriginalOffset;
+- (struct CGPoint { float x1; float x2; })_animatedTargetOffset;
+- (id)_automaticContentConstraints;
 - (id)_backgroundShadowForSlideAnimation;
 - (void)_beginTouchesInContentView:(id)arg1 touches:(id)arg2 withEvent:(id)arg3;
 - (BOOL)_beginTrackingWithEvent:(id)arg1;
@@ -236,20 +257,28 @@
 - (BOOL)_cancelContentTouchWithEvent:(id)arg1 forced:(BOOL)arg2;
 - (void)_centerContentIfNecessary;
 - (void)_changedGesture:(id)arg1 withEvent:(id)arg2;
+- (void)_clearContentOffsetAnimation:(id)arg1;
 - (void)_clearContentOffsetAnimation;
+- (void)_clearParentAdjustment;
+- (BOOL)_constraintAffectsContentSize:(id)arg1;
+- (id)_constraintsFromContentSize;
+- (id)_contentHeightVariable;
 - (double)_contentOffsetAnimationDuration;
+- (id)_contentWidthVariable;
 - (BOOL)_continueScrollingAtOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (int)_currentlyAbuttedContentEdges;
 - (id)_defaultHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (float)_defaultPagingFriction;
 - (void)_deferredBeginTouchesInContentView;
+- (void)_delegateScrollViewAnimationEnded;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (void)_disableScrollingIfNecessary;
-- (void)_enableScrollingIfNecessary;
 - (void)_endGesture:(id)arg1 withEvent:(id)arg2;
 - (void)_endPanWithEvent:(id)arg1;
 - (void)_forceDelegateScrollViewDidZoom:(BOOL)arg1;
+- (void)_forgetDependentConstraint:(id)arg1;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)_gestureRecognizerFailed:(id)arg1;
 - (id)_gestureTargetHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)_getBouncingDecelerationOffset:(double*)arg1 forTimeInterval:(double)arg2 lastUpdateOffset:(double)arg3 min:(double)arg4 max:(double)arg5 decelerationFactor:(double)arg6 decelerationLnFactor:(double)arg7 velocity:(double*)arg8;
 - (id)_getDelegateZoomView;
@@ -264,16 +293,21 @@
 - (BOOL)_isAnimatingScroll;
 - (BOOL)_isAnimatingZoom;
 - (BOOL)_isAutoscrolling;
+- (BOOL)_isBouncing;
 - (BOOL)_isHorizontalBouncing;
 - (BOOL)_isRectFullyVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_isScrollingEnabled;
 - (BOOL)_isVerticalBouncing;
+- (id)_layoutVariableWithAmbiguousValue;
 - (void)_markScrollViewAnimationForKey:(id)arg1 ofView:(id)arg2;
 - (void)_moveContentSubview:(id)arg1 toBack:(BOOL)arg2;
 - (void)_notifyDidScroll;
+- (struct CGSize { float x1; float x2; })_nsis_contentSize;
+- (float)_offsetForRubberBandOffset:(float)arg1 maxOffset:(float)arg2 minOffset:(float)arg3 range:(float)arg4;
 - (struct CGPoint { float x1; float x2; })_originalOffsetForAnimatedSetContentOffset;
 - (BOOL)_ownsAnimationForKey:(id)arg1 ofView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })_pageDecelerationTarget;
+- (float)_pagingFriction;
 - (BOOL)_pagingLeft;
 - (BOOL)_pagingRight;
 - (id)_panGestureRecognizer;
@@ -285,17 +319,21 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_prepareToPageWithHorizontalVelocity:(float)arg1 verticalVelocity:(float)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForPageContainingView:(id)arg1;
+- (void)_registerAsScrollToTopViewIfPossible;
 - (void)_registerForRotation:(BOOL)arg1 ofWindow:(id)arg2;
+- (void)_rememberDependentConstraint:(id)arg1;
 - (void)_removeScrollNotificationView:(id)arg1;
 - (BOOL)_resetScrollingForGestureEvent:(id)arg1;
 - (void)_resetScrollingWithEvent:(struct __GSEvent { }*)arg1;
 - (void)_resetScrollingWithUIEvent:(id)arg1;
+- (void)_resizeWithOldSuperviewSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CADoublePoint { double x1; double x2; })_rubberBandContentOffsetForOffset:(struct CADoublePoint { double x1; double x2; })arg1 outsideX:(BOOL*)arg2 outsideY:(BOOL*)arg3;
+- (float)_rubberBandOffsetForOffset:(float)arg1 maxOffset:(float)arg2 minOffset:(float)arg3 range:(float)arg4 outside:(BOOL*)arg5;
 - (void)_runLoopModePopped:(id)arg1;
 - (float)_scrollHysteresis;
 - (id)_scrollTestExtraResults;
-- (BOOL)_scrollToTop;
-- (void)_scrollViewAnimationEnded;
+- (void)_scrollToTopFromTouchAtScreenLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id)arg2;
+- (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (void)_scrollViewDidEndDecelerating;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewDidEndZooming;
@@ -303,41 +341,60 @@
 - (void)_scrollViewWillBeginDragging;
 - (void)_scrollViewWillBeginZooming;
 - (BOOL)_scrollsToMakeFirstResponderVisible;
+- (void)_setAbsoluteContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)_setAutomaticContentConstraints:(id)arg1;
 - (void)_setAutomaticContentOffsetAdjustmentEnabled:(BOOL)arg1;
 - (void)_setAutoscrolling:(BOOL)arg1;
+- (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2 animationCurve:(int)arg3 animationAdjustsForContentOffsetDelta:(BOOL)arg4;
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2 animationCurve:(int)arg3;
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2 animationCurve:(int)arg3;
 - (void)_setContentOffsetAnimationDuration:(double)arg1;
+- (void)_setContentOffsetPinned:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)_setContentOffsetPinned:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setIgnoreLinkedOnChecks:(BOOL)arg1;
+- (void)_setPagingFriction:(float)arg1;
 - (void)_setShowsBackgroundShadow:(BOOL)arg1;
 - (void)_setStaysCenteredDuringPinch:(BOOL)arg1;
+- (void)_setSubviewWantsAutolayout;
+- (void)_setTransfersScrollToContainer:(BOOL)arg1;
+- (void)_setUseContentDimensionVariablesForConstraintLowering:(BOOL)arg1;
 - (void)_setZoomAnchorPoint:(struct CADoublePoint { double x1; double x2; })arg1;
 - (float)_shadowHeightOffset;
 - (void)_shiftOffset:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_shouldTrackImmediatelyWhileDecelerating;
 - (BOOL)_showsBackgroundShadow;
 - (void)_skipNextStartOffsetAdjustment;
-- (void)_smoothScroll:(id)arg1;
+- (void)_smoothScrollDisplayLink:(id)arg1;
+- (void)_smoothScrollTimer:(id)arg1;
+- (void)_smoothScrollWithUpdateTime:(double)arg1;
 - (void)_startGesture:(id)arg1 withEvent:(id)arg2;
 - (void)_startTimer:(BOOL)arg1;
 - (BOOL)_staysCenteredDuringPinch;
 - (void)_stopScrollDecelerationNotify:(BOOL)arg1;
 - (void)_stopScrollingAndZoomingAnimations;
+- (void)_stopScrollingAndZoomingAnimationsPinningToContentViewport:(BOOL)arg1 tramplingDragFlags:(BOOL)arg2;
 - (void)_stopScrollingAndZoomingAnimationsPinningToContentViewport:(BOOL)arg1;
-- (void)_stopScrollingNotify:(BOOL)arg1 dealloc:(BOOL)arg2 pin:(BOOL)arg3;
+- (void)_stopScrollingNotify:(BOOL)arg1 pin:(BOOL)arg2 tramplingDragFlags:(BOOL)arg3;
+- (void)_stopScrollingNotify:(BOOL)arg1 pin:(BOOL)arg2;
+- (BOOL)_supportsContentDimensionVariables;
 - (void)_systemGestureStateChanged:(id)arg1;
 - (void)_testingScrollStep;
 - (double)_touchDelayForScrollDetection;
 - (struct CGPoint { float x1; float x2; })_touchPositionForTouches:(id)arg1;
 - (id)_touchedContentView;
 - (void)_touchesEnded:(id)arg1 withEvent:(id)arg2 wasCancelled:(BOOL)arg3;
+- (BOOL)_transfersScrollToContainer;
+- (void)_updateContentFitDisableScrolling;
 - (void)_updatePagingGesture;
 - (void)_updatePanGesture;
+- (void)_updatePanGestureConfiguration;
 - (void)_updatePinchGesture;
 - (void)_updatePinchGestureForState:(int)arg1;
 - (BOOL)_updateTouchPanWithStartDelta:(struct CGSize { float x1; float x2; })arg1 event:(id)arg2 ignoringDirectionalScroll:(BOOL)arg3;
+- (BOOL)_useContentDimensionVariablesForConstraintLowering;
 - (BOOL)_usesDifferentHitTestForGestures;
 - (double)_verticalVelocity;
+- (BOOL)_viewIsInsideNavigationController;
 - (void)_webCustomViewWillBeRemovedFromSuperview;
 - (void)_willMoveToWindow:(id)arg1;
 - (struct CADoublePoint { double x1; double x2; })_zoomAnchorPoint;
@@ -355,6 +412,7 @@
 - (BOOL)allowsMultipleFingers;
 - (BOOL)alwaysBounceHorizontal;
 - (BOOL)alwaysBounceVertical;
+- (void)animator:(id)arg1 stopAnimation:(id)arg2 fraction:(float)arg3;
 - (struct CGPoint { float x1; float x2; })autoscrollContentOffset;
 - (BOOL)bounces;
 - (BOOL)bouncesHorizontally;
@@ -372,16 +430,17 @@
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
 - (float)decelerationRate;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)delayed:(id)arg1;
 - (BOOL)delaysContentTouches;
 - (id)delegate;
 - (id)description;
 - (void)didFinishGesture:(int)arg1 inView:(id)arg2 forEvent:(struct __GSEvent { }*)arg3;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flashScrollIndicators;
 - (BOOL)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)gestureRecognizerFailed:(id)arg1;
 - (void)handlePan:(id)arg1;
 - (void)handlePinch:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
@@ -407,6 +466,8 @@
 - (float)maximumZoomScale;
 - (BOOL)mf_needsToAdjustContentOffset;
 - (float)minimumZoomScale;
+- (id)nsli_contentHeightVariable;
+- (id)nsli_contentWidthVariable;
 - (struct CGPoint { float x1; float x2; })offset;
 - (id)panGestureRecognizer;
 - (id)pinchGestureRecognizer;
@@ -451,7 +512,6 @@
 - (void)setScrollEnabled:(BOOL)arg1;
 - (void)setScrollIndicatorInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setScrollTestParameters:(id)arg1;
-- (void)setScrollViewOffsetPinned:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)setScrollsToTop:(BOOL)arg1;
 - (void)setShowBackgroundShadow:(BOOL)arg1;
@@ -459,6 +519,7 @@
 - (void)setShowsVerticalScrollIndicator:(BOOL)arg1;
 - (void)setTopExtensionViewColor:(id)arg1;
 - (void)setTracksImmediatelyWhileDecelerating:(BOOL)arg1;
+- (void)setUserInteractionEnabled:(BOOL)arg1;
 - (void)setUsesGestureRecognizers:(BOOL)arg1;
 - (void)setVerticalScrollDecelerationFactor:(float)arg1;
 - (void)setZoomEnabled:(BOOL)arg1;

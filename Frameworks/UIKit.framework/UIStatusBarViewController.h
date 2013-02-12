@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIClassicStatusBarView, UIView, UIWindow;
+@class UIClassicStatusBarView, UIView, UIWindow, _UIClassicCornersWindow;
 
 @interface UIStatusBarViewController : UIViewController {
-    UIWindow *_leftBottomCorner;
-    UIWindow *_rightBottomCorner;
+    _UIClassicCornersWindow *_cornersWindow;
+    BOOL _iPhoneWS;
+    BOOL _keyboardVisible;
     UIView *_statusBar;
-    UIClassicStatusBarView *_statusBarBackgroundImage;
+    UIClassicStatusBarView *_statusBarBackgroundView;
     UIWindow *_window;
 }
 
@@ -22,14 +23,15 @@
 - (void)_setStatusBarBackgroundImageForOrientation:(int)arg1;
 - (void)_statusBarHideAnimationFinished:(id)arg1 finished:(BOOL)arg2 hidden:(id)arg3;
 - (struct CGSize { float x1; float x2; })_statusBarSizeForOrientation:(int)arg1;
-- (void)_updateCornersWithOrientation:(int)arg1;
-- (void)_updateStatusBarGeometryWithOrientation:(int)arg1 slideUp:(BOOL)arg2 expandWindowForRotationAnimations:(BOOL)arg3;
-- (void)_updateStatusBarWithOrientation:(int)arg1 style:(int)arg2 hidden:(BOOL)arg3 slideUp:(BOOL)arg4 expandWindowForRotationAnimations:(BOOL)arg5;
+- (void)_statusBarViewControllerKeyboardDidHide:(id)arg1;
+- (void)_statusBarViewControllerKeyboardWillShow:(id)arg1;
+- (void)_updateCornersForRotationFromOrientation:(int)arg1 toOrientation:(int)arg2 withStatusBarStyle:(int)arg3 statusBarShouldHide:(BOOL)arg4;
+- (void)_updateStatusBarForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 style:(int)arg3 hidden:(BOOL)arg4 slideUp:(BOOL)arg5;
+- (void)_updateStatusBarGeometryForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 hidden:(BOOL)arg3 slideUp:(BOOL)arg4;
 - (void)_zoom:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isClassicControlWindow:(id)arg1;
-- (id)loadCorner:(BOOL)arg1 cornerImage:(id)arg2 cornersFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)loadView;
 - (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;

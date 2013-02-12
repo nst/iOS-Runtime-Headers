@@ -41,5 +41,6 @@
 - (id)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4;
 - (void)webView:(id)arg1 unableToImplementPolicyWithError:(id)arg2 frame:(id)arg3;
 - (void)webViewClose:(id)arg1;
+- (void)webViewSupportedOrientationsUpdated:(id)arg1;
 
 @end

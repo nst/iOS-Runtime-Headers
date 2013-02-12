@@ -2,36 +2,38 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUStoreSocialHistory;
+@class NSString, SUScriptInterface, UIImageView;
 
 @interface IUStoreClientController : SUClientController <SSDownloadManagerObserver, MCProfileConnectionObserver> {
+    BOOL _hasContinueSearchCapability;
     BOOL _isUsingNetwork;
-    BOOL _shouldIgnoreSocial;
-    BOOL _socialEnabled;
-    IUStoreSocialHistory *_socialHistory;
+    NSString *_purchasedItemIdentifier;
+    UIImageView *_purchasedItemView;
+    SUScriptInterface *_scriptInterface;
 }
 
-@property BOOL shouldIgnoreSocial;
-@property(getter=isSocialEnabled,readonly) BOOL socialEnabled;
-@property(readonly) IUStoreSocialHistory * socialHistory;
+@property(retain) NSString * purchasedItemIdentifier;
+@property(retain) UIImageView * purchasedItemView;
+@property(retain) SUScriptInterface * scriptInterface;
+@property(getter=isStoreRestricted,readonly) BOOL storeRestricted;
 
++ (id)continueSearchingURForMediaType:(int)arg1 searchString:(id)arg2;
 + (id)musicStoreURLWithAction:(id)arg1;
++ (void)setSharedController:(id)arg1;
 + (id)sharedController;
 
-- (void)_accountStoreChangedNotification:(id)arg1;
-- (void)_networkTypeChangedNotification:(id)arg1;
-- (void)_reloadSocialEnabled;
-- (void)bagDidLoadNotification:(id)arg1;
-- (void)becomeActive;
 - (void)dealloc;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)init;
 - (id)initWithClientIdentifier:(id)arg1;
-- (BOOL)isSocialEnabled;
+- (BOOL)isStoreRestricted;
+- (BOOL)loadHasContinueSearchCapabilityWithUpdateBlock:(id)arg1;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)setShouldIgnoreSocial:(BOOL)arg1;
-- (BOOL)shouldIgnoreSocial;
-- (id)socialHistory;
+- (id)purchasedItemIdentifier;
+- (id)purchasedItemView;
+- (id)scriptInterface;
+- (void)setPurchasedItemIdentifier:(id)arg1;
+- (void)setPurchasedItemView:(id)arg1;
+- (void)setScriptInterface:(id)arg1;
 
 @end

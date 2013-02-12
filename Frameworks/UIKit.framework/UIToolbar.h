@@ -2,31 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIColor, UIView;
+@class NSArray, UIColor, UIImageView, UIView;
 
-@interface UIToolbar : UIView {
+@interface UIToolbar : UIView <_UIShadowedView> {
     struct { 
         unsigned int barStyle : 2; 
         unsigned int mode : 2; 
-        unsigned int alertShown : 1; 
         unsigned int wasEnabled : 1; 
         unsigned int downButtonSentAction : 1; 
         unsigned int isTranslucent : 1; 
         unsigned int forceTopBarAppearance : 1; 
+        unsigned int autolayoutIsLocked : 1; 
     id _appearanceStorage;
     UIView *_backgroundView;
     NSArray *_buttonItems;
+    id _currentAlert;
     int _currentButtonGroup;
     id _delegate;
     float _extraEdgeInsets;
+    float *_fadedItemAlphas;
     struct __CFDictionary { } *_groups;
-    struct __CFArray { } *_hiddenItems;
     NSArray *_items;
     int _pressedTag;
+    UIImageView *_shadowView;
     UIColor *_tintColor;
     } _toolbarFlags;
 }
 
+@property(setter=_setAutoLayoutIsLocked:) BOOL _autolayoutIsLocked;
+@property(setter=_setShadowView:,retain) UIImageView * _shadowView;
 @property int barStyle;
 @property(copy) NSArray * items;
 @property(retain) UIColor * tintColor;
@@ -40,8 +44,14 @@
 + (float)defaultSelectionModeHeight;
 + (Class)defaultTextButtonClass;
 
+- (void)_activityViewControllerIsAppearing:(id)arg1;
+- (void)_activityViewControllerIsDisappearing:(id)arg1;
 - (void)_adjustButtonPressed:(id)arg1;
-- (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
+- (void)_alertIsAppearing:(id)arg1;
+- (void)_alertIsDisappearing:(id)arg1;
+- (BOOL)_autolayoutIsLocked;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
 - (id)_backgroundView;
 - (void)_buttonBarFinishedAnimating;
 - (void)_buttonCancel:(id)arg1;
@@ -50,6 +60,7 @@
 - (id)_buttonName:(id)arg1 withType:(int)arg2;
 - (void)_buttonUp:(id)arg1;
 - (id)_buttonWithDescription:(id)arg1;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (id)_currentButtons;
 - (id)_currentCustomBackgroundRespectOversize:(BOOL*)arg1;
 - (id)_customToolbarAppearance;
@@ -58,28 +69,35 @@
 - (void)_didFinishHidingRetainedOldItems:(id)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (float)_edgeMarginForBorderedItem:(BOOL)arg1;
+- (void)_fadeInItems;
+- (void)_fadeOutItems;
 - (void)_finishButtonAnimation:(int)arg1 forButton:(int)arg2;
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfBarButtonItem:(id)arg1;
-- (BOOL)_isHidden:(id)arg1;
+- (BOOL)_hasCustomAutolayoutNeighborSpacing;
+- (BOOL)_hidesShadow;
 - (BOOL)_isInNavigationBar;
-- (BOOL)_isPositionedHiddenForAlert;
 - (BOOL)_isTopBar;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 actuallyRepositionButtons:(BOOL)arg3;
 - (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
+- (void)_setAutoLayoutIsLocked:(BOOL)arg1;
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (void)_setBackgroundView:(id)arg1;
 - (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(unsigned int)arg3;
 - (void)_setForceTopBarAppearance:(BOOL)arg1;
+- (void)_setHidesShadow:(BOOL)arg1;
+- (void)_setShadowView:(id)arg1;
 - (void)_setTintColor:(id)arg1 force:(BOOL)arg2;
+- (id)_shadowView;
 - (void)_showButtons:(int*)arg1 withCount:(int)arg2 group:(int)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(int)arg6;
 - (BOOL)_subclassImplementsDrawRect;
 - (void)_updateBackgroundImage;
 - (void)_updateItemsForNewFrame:(id)arg1;
 - (void)_updateOpacity;
 - (void)_updateScriptingInfo:(id)arg1 view:(id)arg2;
+- (void)addConstraint:(id)arg1;
 - (void)animateToolbarItemIndex:(unsigned int)arg1 duration:(double)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (void)animateWithDuration:(float)arg1 forButton:(int)arg2;
 - (id)backgroundImageForToolbarPosition:(int)arg1 barMetrics:(int)arg2;
@@ -100,6 +118,8 @@
 - (id)initInView:(id)arg1 withItems:(struct { int x1; int x2; id x3; id x4; float x5; int x6; SEL x7; id x8; }*)arg2 withCount:(int)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (void)invalidateIntrinsicContentSize;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isMinibar;
 - (BOOL)isTranslucent;
@@ -110,6 +130,7 @@
 - (BOOL)onStateForButton:(int)arg1;
 - (void)positionButtons:(id)arg1 tags:(int*)arg2 count:(int)arg3 group:(int)arg4;
 - (void)registerButtonGroup:(int)arg1 withButtons:(int*)arg2 withCount:(int)arg3;
+- (void)removeConstraint:(id)arg1;
 - (id)scriptingInfoWithChildren;
 - (void)setAutoresizingMask:(unsigned int)arg1;
 - (void)setBackgroundImage:(id)arg1 forToolbarPosition:(int)arg2 barMetrics:(int)arg3;
@@ -128,8 +149,11 @@
 - (void)setItems:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setOnStateForButton:(BOOL)arg1 forButton:(int)arg2;
+- (void)setShadowImage:(id)arg1 forToolbarPosition:(int)arg2;
 - (void)setTintColor:(id)arg1;
+- (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 - (void)setTranslucent:(BOOL)arg1;
+- (id)shadowImageForToolbarPosition:(int)arg1;
 - (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (void)showButtonGroup:(int)arg1 withDuration:(double)arg2;
 - (void)showButtons:(int*)arg1 withCount:(int)arg2 withDuration:(double)arg3;

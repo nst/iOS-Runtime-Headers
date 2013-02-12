@@ -11,10 +11,12 @@
 + (id)tabBarItemTitleKey;
 
 - (BOOL)allowsDeletion;
-- (BOOL)allowsDownloadingAllEntities;
+- (BOOL)canShowDownloadAllEntities;
 - (Class)cellConfigurationClassForEntity:(id)arg1;
 - (BOOL)deleteRemovesEntireGroup;
+- (BOOL)hideActionRowsOnAppear;
 - (SEL)libraryHasDisplayableEntitiesSelector;
+- (void)reloadActionRows;
 - (unsigned int)requiredEntityCountForSections;
 - (id)viewControllerContextForIndex:(unsigned int)arg1;
 - (id)viewControllerContextForMediaQuery:(id)arg1;

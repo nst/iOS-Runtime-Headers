@@ -6,34 +6,31 @@
 
 @interface KeychainWrapper : NSObject {
     NSString *_accountName;
-    NSString *_dnsName;
     NSLock *_lock;
-    NSString *_serverName;
     NSString *_serviceName;
 }
 
-+ (id)keychainWrapperWithAccountName:(id)arg1 serverName:(id)arg2 dnsName:(id)arg3;
-+ (id)keychainWrapperWithAccountName:(id)arg1 serviceName:(id)arg2;
-+ (BOOL)supportsSavingAirDiskPasswords;
+@property(copy) NSString * accountName;
+@property(retain) NSLock * lock;
+@property(copy) NSString * serviceName;
+
++ (id)keychainPasswordForMACAddress:(id)arg1;
++ (id)keychainWrapperWithMACAddress:(id)arg1;
++ (void)removeKeychainPasswordForMACAddress:(id)arg1;
 
 - (id)accountName;
-- (long)addGenericPasswordWithAttributes:(id)arg1 data:(id)arg2;
-- (long)addInternetPassword:(id)arg1;
-- (id)airDiskPassword;
+- (long)addGenericPassword:(id)arg1 withLabel:(id)arg2 andDescription:(id)arg3;
 - (void)dealloc;
-- (id)dnsName;
 - (id)genericPassword;
-- (id)genericPasswordForItemRef:(id*)arg1;
-- (id)getAirDiskServerDescs;
-- (id)initWithAccountName:(id)arg1 serverName:(id)arg2 dnsName:(id)arg3;
+- (id)genericPasswordQuery;
+- (id)getGenericPassword;
+- (id)getPasswordFromQuery:(id)arg1;
 - (id)initWithAccountName:(id)arg1 serviceName:(id)arg2;
-- (void)removeAirDiskPasswords;
+- (id)lock;
 - (void)removeGenericPassword;
-- (id)serverName;
 - (id)serviceName;
 - (void)setAccountName:(id)arg1;
-- (void)setDNSName:(id)arg1;
-- (void)setServerName:(id)arg1;
+- (void)setLock:(id)arg1;
 - (void)setServiceName:(id)arg1;
 
 @end

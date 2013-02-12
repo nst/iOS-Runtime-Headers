@@ -3,8 +3,6 @@
  */
 
 @interface Account : BasicAccount <ASDynamicAccountClassLoader, AccountCreationProtocol> {
-    unsigned int _isOffline : 1;
-    unsigned int _autosynchronizingEnabled : 1;
     unsigned int _isActive : 2;
 }
 
@@ -12,11 +10,10 @@
 + (id)accountPropertiesValueForKey:(id)arg1 value:(id)arg2;
 + (id)accountTypeString;
 + (id)accountWithBasicAccount:(id)arg1;
-+ (BOOL)allObjectsInArrayAreOffline:(id)arg1;
 + (id)basicAccountProperties;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
-+ (BOOL)haveAccountsBeenConfigured;
++ (id)existingAccountForUniqueID:(id)arg1;
 + (id)hostname;
 + (BOOL)isPredefinedAccountType;
 + (BOOL)isSSLEditable;
@@ -34,10 +31,10 @@
 + (id)supportedDataclasses;
 
 - (BOOL)_connectAndAuthenticate:(id)arg1;
-- (void)_initializeState;
 - (id)_newConnection;
 - (void)_queueAccountInfoDidChange;
 - (void)_removePasswordInKeychain;
+- (void)_resetAccountProperties:(id)arg1;
 - (void)_setAccountProperties:(id)arg1;
 - (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
 - (void)accountInfoDidChange;
@@ -50,11 +47,11 @@
 - (id)certUIService;
 - (Class)connectionClass;
 - (struct __CFString { }*)connectionServiceType;
+- (id)copyDiagnosticInformation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customDescriptionForError:(id)arg1 authScheme:(id)arg2 defaultDescription:(id)arg3;
 - (id)customTitleForAuthenticationError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
 - (id)customTitleForError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
-- (void)dealloc;
 - (id)defaultConnectionSettings;
 - (unsigned int)defaultPortNumber;
 - (unsigned int)defaultSecurePortNumber;
@@ -67,7 +64,6 @@
 - (id)insecureConnectionSettings;
 - (BOOL)isActive;
 - (BOOL)isCommonPortNumber:(unsigned int)arg1;
-- (BOOL)isOffline;
 - (BOOL)isPasswordMissing;
 - (void*)keychainAccessibility;
 - (unsigned int)keychainPortNumber;
@@ -80,8 +76,7 @@
 - (id)passwordFromStoredUserInfo;
 - (unsigned int)portNumber;
 - (id)preferredAuthScheme;
-- (id)promptUserForPasswordWithMessage:(id)arg1;
-- (id)promptUserIfNeededForPasswordWithMessage:(id)arg1;
+- (BOOL)promptUserForPasswordWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
 - (id)propertiesToSave;
 - (void)releaseAllConnections;
 - (void)releaseAllForcedConnections;
@@ -91,12 +86,10 @@
 - (id)secureConnectionSettings;
 - (id)secureServiceName;
 - (id)serviceName;
-- (void)setAutosynchronizingEnabled:(BOOL)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setHostname:(id)arg1;
 - (void)setIsActive:(BOOL)arg1;
-- (void)setIsOffline:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPasswordInKeychain:(id)arg1;
 - (void)setPortNumber:(unsigned int)arg1;

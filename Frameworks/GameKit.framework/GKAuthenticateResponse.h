@@ -2,14 +2,15 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGameInternal, NSDictionary, NSString;
+@class GKGameInternal, GKPlayerInternal, NSString;
 
 @interface GKAuthenticateResponse : GKResponse {
     NSString *_accountName;
-    NSDictionary *_alertDictionary;
     NSString *_authToken;
     GKGameInternal *_game;
+    GKPlayerInternal *_localPlayer;
     BOOL _loginDisabled;
+    unsigned int _maxGameStateSizeTurnBased;
     unsigned int _maxPlayersHosted;
     unsigned int _maxPlayersP2P;
     unsigned int _maxPlayersTurnBased;
@@ -19,10 +20,11 @@
 }
 
 @property(retain) NSString * accountName;
-@property(retain) NSDictionary * alertDictionary;
 @property(retain) NSString * authToken;
 @property(retain) GKGameInternal * game;
+@property(retain) GKPlayerInternal * localPlayer;
 @property BOOL loginDisabled;
+@property unsigned int maxGameStateSizeTurnBased;
 @property unsigned int maxPlayersHosted;
 @property unsigned int maxPlayersP2P;
 @property unsigned int maxPlayersTurnBased;
@@ -33,22 +35,24 @@
 + (id)codedPropertyKeys;
 
 - (id)accountName;
-- (id)alertDictionary;
 - (id)authToken;
 - (void)dealloc;
 - (id)description;
 - (id)game;
+- (id)localPlayer;
 - (BOOL)loginDisabled;
+- (unsigned int)maxGameStateSizeTurnBased;
 - (unsigned int)maxPlayersHosted;
 - (unsigned int)maxPlayersP2P;
 - (unsigned int)maxPlayersTurnBased;
 - (id)playerID;
 - (BOOL)sandboxed;
 - (void)setAccountName:(id)arg1;
-- (void)setAlertDictionary:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setGame:(id)arg1;
+- (void)setLocalPlayer:(id)arg1;
 - (void)setLoginDisabled:(BOOL)arg1;
+- (void)setMaxGameStateSizeTurnBased:(unsigned int)arg1;
 - (void)setMaxPlayersHosted:(unsigned int)arg1;
 - (void)setMaxPlayersP2P:(unsigned int)arg1;
 - (void)setMaxPlayersTurnBased:(unsigned int)arg1;

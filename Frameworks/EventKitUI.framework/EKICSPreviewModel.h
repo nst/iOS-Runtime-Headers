@@ -5,6 +5,7 @@
 @class EKEventStore, NSArray, NSData, NSMutableArray;
 
 @interface EKICSPreviewModel : NSObject {
+    BOOL _actionsDisabled;
     NSData *_data;
     EKEventStore *_destStore;
     NSMutableArray *_importedEvents;
@@ -13,6 +14,7 @@
     NSMutableArray *_unimportedEvents;
 }
 
+@property(readonly) BOOL actionsDisabled;
 @property(readonly) NSArray * allEvents;
 @property(readonly) EKEventStore * eventStore;
 @property(readonly) int importedEventCount;
@@ -21,6 +23,7 @@
 @property(readonly) int unimportedEventCount;
 @property(readonly) NSArray * unimportedEvents;
 
+- (BOOL)actionsDisabled;
 - (id)allEvents;
 - (void)dealloc;
 - (id)eventStore;

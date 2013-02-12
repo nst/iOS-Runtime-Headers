@@ -11,7 +11,7 @@
 + (id)allocForSQLEntity:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
-+ (unsigned int)newBatchRowAllocation:(id*)arg1 count:(unsigned int)arg2 forSQLEntity:(id)arg3 withOwnedObjectIDs:(struct _NSScalarObjectID {}**)arg4 andTimestamp:(double)arg5;
++ (unsigned int)newBatchRowAllocation:(id*)arg1 count:(unsigned int)arg2 forSQLEntity:(id)arg3 withOwnedObjectIDs:(struct _NSScalarObjectID { Class x1; }**)arg4 andTimestamp:(double)arg5;
 
 - (id)_snapshot_;
 - (void)_validateToOnes;
@@ -40,5 +40,6 @@
 - (void)setObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
 - (void)setOptLock:(long long)arg1;
 - (id)valueForKey:(id)arg1;
+- (long long)version;
 
 @end

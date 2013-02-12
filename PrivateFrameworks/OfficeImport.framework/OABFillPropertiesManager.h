@@ -10,12 +10,11 @@
 @class <OABPropertiesManager>;
 
 @interface OABFillPropertiesManager : NSObject <OABFillPropertiesManager> {
-    struct EshFill { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; } *mFill;
+    const struct EshFill { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; } *mFill;
     <OABPropertiesManager> *mMasterManager;
     int mShapeType;
 }
 
-- (const struct EshTablePropVal<EshGradientStop> { int (**x1)(); struct ChVector<EshGradientStop> { struct EshGradientStop {} *x_2_1_1; struct EshGradientStop {} *x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; } x2; }*)fillGradientColors;
 - (struct EshBlip { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; struct UID { unsigned char x_4_1_1[16]; } x4; }*)fillBlipDataReference;
 - (void)dealloc;
 - (long)fillAngle;
@@ -30,6 +29,7 @@
 - (long)fillFocusLeft;
 - (long)fillFocusRight;
 - (long)fillFocusTop;
+- (const struct EshTablePropVal<EshGradientStop> { }*)fillGradientColors;
 - (int)fillType;
 - (id)initWithFill:(const struct EshFill { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg1 shapeType:(int)arg2 masterShape:(struct EshShape { }*)arg3;
 - (BOOL)isFilled;

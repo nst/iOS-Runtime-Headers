@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIRemoteView, UIView;
+@class UISpringBoardHostedView, UIView;
 
 @interface UIRemoteSheetInfo : NSObject {
     void *_context;
     id _delegate;
-    UIRemoteView *_remoteView;
+    UISpringBoardHostedView *_remoteView;
     int _returnCode;
     SEL _selector;
     UIView *_sheetView;
@@ -15,7 +15,7 @@
 
 @property void* context;
 @property id delegate;
-@property(retain) UIRemoteView * remoteView;
+@property(retain) UISpringBoardHostedView * remoteView;
 @property int returnCode;
 @property SEL selector;
 @property(retain) UIView * sheetView;

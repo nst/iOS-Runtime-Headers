@@ -12,14 +12,16 @@
     unsigned int _offset;
 }
 
+- (id)allData;
 - (void)appendNetworkData:(id)arg1;
 - (void)dealloc;
 - (BOOL)hasUnreadData;
 - (id)initWithData:(id)arg1;
 - (void)markOffset;
-- (id)readData:(unsigned short)arg1;
+- (id)readData:(unsigned int)arg1;
 - (id)readString;
-- (unsigned short)readUnsignedShort;
+- (BOOL)readUnsignedInt:(unsigned int*)arg1;
+- (BOOL)readUnsignedShort:(unsigned short*)arg1;
 - (void)seekToMarkedOffset;
 
 @end

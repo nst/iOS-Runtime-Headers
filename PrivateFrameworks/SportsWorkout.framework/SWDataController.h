@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSDictionary, NSManagedObjectContext, NSPersistentStoreCoordinator;
+@class NSDictionary, NSManagedObjectContext, NSObject<OS_dispatch_queue>, NSPersistentStoreCoordinator;
 
 @interface SWDataController : NSObject {
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _isPerformingMigration;
     NSManagedObjectContext *_managedObjectContext;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;

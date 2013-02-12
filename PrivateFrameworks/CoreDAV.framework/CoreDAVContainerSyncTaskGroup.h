@@ -51,6 +51,7 @@
 
 - (void)_bulkChange;
 - (void)_bulkChangeTask:(id)arg1 didFinishWithError:(id)arg2;
+- (void)_configureMultiGet:(id)arg1;
 - (void)_getCTag;
 - (void)_getDataPayloads;
 - (void)_getETags;

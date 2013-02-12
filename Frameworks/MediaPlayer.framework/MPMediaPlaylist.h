@@ -18,12 +18,12 @@
 - (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)existsInLibrary;
-- (id)geniusMixArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
+- (id)loadGeniusMixArtworkWithTileLength:(float)arg1 completionBlock:(id)arg2;
 - (int)mediaTypes;
 - (id)name;
 - (unsigned long long)persistentID;

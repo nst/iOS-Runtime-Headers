@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
+@class NSMutableArray;
+
 @interface GEOMapRegion : PBCodable {
+    struct { 
+        unsigned int eastLng : 1; 
+        unsigned int northLat : 1; 
+        unsigned int southLat : 1; 
+        unsigned int westLng : 1; 
     double _eastLng;
-    BOOL _hasEastLng;
-    BOOL _hasNorthLat;
-    BOOL _hasSouthLat;
-    BOOL _hasWestLng;
+    } _has;
     double _northLat;
     double _southLat;
+    NSMutableArray *_vertexs;
     double _westLng;
 }
 
@@ -24,11 +29,15 @@
 @property double southLat;
 @property(readonly) double spanLat;
 @property(readonly) double spanLng;
+@property(retain) NSMutableArray * vertexs;
 @property double westLng;
 
+- (void)addVertex:(id)arg1;
 - (double)centerLat;
 - (double)centerLng;
+- (void)clearVertexs;
 - (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -37,10 +46,11 @@
 - (BOOL)hasNorthLat;
 - (BOOL)hasSouthLat;
 - (BOOL)hasWestLng;
-- (id)initWithGMMGeometry:(id)arg1;
-- (id)initWithGMMMapInfo:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
+- (id)initWithMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
+- (BOOL)isEqual:(id)arg1;
 - (double)northLat;
 - (BOOL)readFrom:(id)arg1;
 - (void)setEastLng:(double)arg1;
@@ -48,13 +58,18 @@
 - (void)setHasNorthLat:(BOOL)arg1;
 - (void)setHasSouthLat:(BOOL)arg1;
 - (void)setHasWestLng:(BOOL)arg1;
+- (void)setMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNorthLat:(double)arg1;
 - (void)setSouthLat:(double)arg1;
 - (void)setSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
+- (void)setVertexs:(id)arg1;
 - (void)setWestLng:(double)arg1;
 - (double)southLat;
 - (double)spanLat;
 - (double)spanLng;
+- (id)vertexAtIndex:(unsigned int)arg1;
+- (id)vertexs;
+- (unsigned int)vertexsCount;
 - (double)westLng;
 - (void)writeTo:(id)arg1;
 

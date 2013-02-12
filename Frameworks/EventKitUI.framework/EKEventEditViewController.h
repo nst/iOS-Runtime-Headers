@@ -22,13 +22,15 @@
 + (void)setDefaultDatesForEvent:(id)arg1;
 
 - (void)_storeChanged:(id)arg1;
+- (BOOL)canHideDoneAndCancelButtons;
+- (void)cancelEditing;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)editViewDelegate;
+- (void)editor:(id)arg1 didCompleteWithAction:(int)arg2;
+- (void)editor:(id)arg1 prepareCalendarItemForEdit:(id)arg2;
 - (id)editor;
 - (id)event;
-- (void)eventEditor:(id)arg1 didCompleteWithAction:(int)arg2;
-- (void)eventEditor:(id)arg1 prepareCalendarItemForEdit:(id)arg2;
 - (id)eventStore;
 - (void)handleTapOutside;
 - (id)initWithEvent:(id)arg1 store:(id)arg2;
@@ -36,6 +38,7 @@
 - (void)refreshStartAndEndDates;
 - (BOOL)saveWithSpan:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)scrollToNotes;
+- (void)setCanHideDoneAndCancelButtons:(BOOL)arg1;
 - (void)setEditViewDelegate:(id)arg1;
 - (void)setEditor:(id)arg1;
 - (void)setEvent:(id)arg1;

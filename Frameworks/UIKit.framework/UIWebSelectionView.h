@@ -91,8 +91,8 @@
 - (void)contractForActiveHandle;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })desiredBox;
+- (void)didEndScrollingOrZoomingPage;
 - (void)didEndScrollingOverflow;
-- (void)didEndScrollingPage;
 - (void)endSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)expandForActiveHandle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fetchSelectionBoundingRect;
@@ -104,10 +104,11 @@
 - (void)hideCopyCallout;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithWebDocumentView:(id)arg1;
+- (BOOL)isHorizontalWritingMode;
 - (void)layoutChangedByScrolling:(BOOL)arg1;
 - (id)nodeInPristineGraphAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)onAfterScrollShowingSelection:(BOOL)arg1;
-- (void)onBeforeScrollHidingSelection:(BOOL)arg1;
+- (void)onAfterScrollOrZoomShowingSelection:(BOOL)arg1;
+- (void)onBeforeScrollOrZoomHidingSelection:(BOOL)arg1;
 - (void)removeFromSuperview;
 - (void)resetSelection;
 - (void)scaleChanged;
@@ -116,6 +117,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrame;
 - (id)selectionNode;
 - (void)setHandleCenters;
+- (void)setOrientationOfMagnifier:(id)arg1 forHandleInText:(id)arg2;
 - (void)setSelectionFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setSelectionFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSelectionNode:(id)arg1;
@@ -141,7 +143,7 @@
 - (void)updateSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateSelectionRects;
 - (void)updateTextRangeViewSelectionRects;
+- (void)willStartScrollingOrZoomingPage;
 - (void)willStartScrollingOverflow;
-- (void)willStartScrollingPage;
 
 @end

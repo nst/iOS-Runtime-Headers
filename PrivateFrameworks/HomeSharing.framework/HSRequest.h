@@ -28,6 +28,7 @@
 - (id)canonicalResponseForResponse:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionWithoutHeaderFields;
 - (id)initWithAction:(id)arg1;
 - (int)method;
 - (id)requestURLForBaseURL:(id)arg1 sessionID:(unsigned int)arg2;

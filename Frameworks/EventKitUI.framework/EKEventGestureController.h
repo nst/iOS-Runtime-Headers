@@ -96,6 +96,7 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)initWithView:(id)arg1;
 - (void)invalidate;
+- (BOOL)isDraggingOccurrence;
 - (struct CGPoint { float x1; float x2; })latestTouchPoint;
 - (void)promptUserForRecurrenceActionOnOccurrence:(id)arg1 whenFinished:(id)arg2;
 - (void)removeDraggedOccurrence;

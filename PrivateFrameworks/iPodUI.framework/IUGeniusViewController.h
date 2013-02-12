@@ -4,7 +4,7 @@
 
 @class IUMediaActionButtonsCell, IUMediaActionSheet, NSArray;
 
-@interface IUGeniusViewController : IUMediaListViewController <UIActionSheetDelegate> {
+@interface IUGeniusViewController : IUMusicViewController <IUMediaActionButtonsCellDelegate, UIActionSheetDelegate> {
     NSArray *_buttonActionBlocks;
     IUMediaActionButtonsCell *_buttonsCell;
     IUMediaActionSheet *_confirmPlaylistChangeSheet;

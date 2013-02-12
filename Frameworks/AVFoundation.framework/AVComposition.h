@@ -22,6 +22,7 @@
 - (id)_newTrackForIndex:(long)arg1;
 - (void)_setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
+- (id)description;
 - (void)finalize;
 - (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

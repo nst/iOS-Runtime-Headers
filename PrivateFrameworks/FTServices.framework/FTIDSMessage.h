@@ -36,8 +36,6 @@
 - (struct __SecKey { }*)identityPrivateKey;
 - (struct __SecKey { }*)identityPublicKey;
 - (id)init;
-- (id)messageBody;
-- (id)nonStandardMessageHeadersForOutgoingPush;
 - (id)provisionCertificate;
 - (struct __SecKey { }*)provisionPrivateKey;
 - (struct __SecKey { }*)provisionPublicKey;
@@ -58,7 +56,9 @@
 - (void)setPushToken:(id)arg1;
 - (BOOL)wantsBagKey;
 - (BOOL)wantsBinaryPush;
+- (BOOL)wantsBodySignature;
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsHTTPHeaders;
+- (BOOL)wantsSignature;
 
 @end

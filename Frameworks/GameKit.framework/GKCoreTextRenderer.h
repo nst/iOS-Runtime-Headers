@@ -22,14 +22,13 @@
     int _baselineAdjustment;
     } _bounds;
     id _contentPath;
-    BOOL _hasTruncationClusters;
+    BOOL _hasCalculatedBounds;
     float _leading;
     float _minimumFontSize;
     int _numberOfLines;
     UIColor *_shadowColor;
     } _shadowOffset;
     BOOL _shouldDrawEmoji;
-    BOOL _shouldQuoteText;
     BOOL _shouldSizeToTextImageBounds;
     UIColor *_textColor;
     NSObject<GKTextLayout> *_textLayout;
@@ -43,14 +42,13 @@
 @property(readonly) float baselineYOffset;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property(retain) id contentPath;
-@property BOOL hasTruncationClusters;
+@property BOOL hasCalculatedBounds;
 @property float leading;
 @property float minimumFontSize;
 @property int numberOfLines;
 @property(retain) UIColor * shadowColor;
 @property struct CGSize { float x1; float x2; } shadowOffset;
 @property BOOL shouldDrawEmoji;
-@property BOOL shouldQuoteText;
 @property BOOL shouldSizeToTextImageBounds;
 @property(retain) UIColor * textColor;
 @property(retain) NSObject<GKTextLayout> * textLayout;
@@ -68,7 +66,7 @@
 - (id)contentPath;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (BOOL)hasTruncationClusters;
+- (BOOL)hasCalculatedBounds;
 - (id)init;
 - (void)invalidateTextLayout;
 - (float)leading;
@@ -83,14 +81,13 @@
 - (void)setBaselineAdjustment:(int)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentPath:(id)arg1;
-- (void)setHasTruncationClusters:(BOOL)arg1;
+- (void)setHasCalculatedBounds:(BOOL)arg1;
 - (void)setLeading:(float)arg1;
 - (void)setMinimumFontSize:(float)arg1;
 - (void)setNumberOfLines:(int)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShouldDrawEmoji:(BOOL)arg1;
-- (void)setShouldQuoteText:(BOOL)arg1;
 - (void)setShouldSizeToTextImageBounds:(BOOL)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTextLayout:(id)arg1;
@@ -98,7 +95,6 @@
 - (id)shadowColor;
 - (struct CGSize { float x1; float x2; })shadowOffset;
 - (BOOL)shouldDrawEmoji;
-- (BOOL)shouldQuoteText;
 - (BOOL)shouldSizeToTextImageBounds;
 - (id)string:(id)arg1 withCTFont:(struct __CTFont { }*)arg2;
 - (struct CGSize { float x1; float x2; })suggestFrameSizeForString:(id)arg1 withConstraints:(struct CGSize { float x1; float x2; })arg2 fitsRange:(struct { int x1; int x2; }*)arg3;
@@ -107,7 +103,6 @@
 - (id)textLayout;
 - (id)textLayoutForString:(id)arg1 withConstraints:(struct CGSize { float x1; float x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2;
-- (struct __CTRun { }*)truncateLine:(struct __CTLine { }*)arg1 removingStringRange:(struct { int x1; int x2; })arg2 runAttributes:(struct __CFDictionary { }*)arg3 truncationSymbol:(id)arg4;
 - (id)truncationSymbol;
 
 @end

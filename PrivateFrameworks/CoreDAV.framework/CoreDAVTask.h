@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, <CoreDAVTaskManager>, CoreDAVRequestLogger, NSData, NSDate, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableDictionary, NSURL, NSURLConnection, NSURLRequest;
+@class <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, <CoreDAVTaskManager>, CoreDAVErrorItem, CoreDAVRequestLogger, NSData, NSDate, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableDictionary, NSURL, NSURLConnection, NSURLRequest;
 
-@interface CoreDAVTask : NSObject {
+@interface CoreDAVTask : NSObject <CoreDAVSubmittable> {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
     BOOL _allowAutomaticRedirects;
     id _completionBlock;
@@ -28,6 +28,7 @@
     BOOL _everTriedTokenAuth;
     NSData *_fakeResponseData;
     BOOL _finished;
+    CoreDAVErrorItem *_forbiddenErrorItem;
     BOOL _haveParsedFakeResponseData;
     BOOL _justTriedTokenAuth;
     CoreDAVRequestLogger *_logger;
@@ -69,6 +70,7 @@
 @property unsigned int totalBytesReceived;
 @property(readonly) NSURL * url;
 
++ (id)stringFromDepth:(int)arg1;
 + (unsigned int)uniqueQueryID;
 
 - (id)_applyAuthenticationChain:(struct __CFArray { }*)arg1 toRequest:(id)arg2;
@@ -81,7 +83,6 @@
 - (id)accountInfoProvider;
 - (id)additionalHeaderValues;
 - (BOOL)allowAutomaticRedirects;
-- (id)appleClientInfoString;
 - (unsigned int)cachePolicy;
 - (id)completionBlock;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
@@ -103,6 +104,7 @@
 - (id)description;
 - (id)error;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
+- (void)finishEarlyWithError:(id)arg1;
 - (id)httpMethod;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isFinished;
@@ -139,6 +141,7 @@
 - (void)setTotalBytesReceived:(unsigned int)arg1;
 - (BOOL)shouldLogResponseBody;
 - (void)startModal;
+- (void)submitWithTaskManager:(id)arg1;
 - (id)taskManager;
 - (void)tearDownResources;
 - (double)timeoutInterval;

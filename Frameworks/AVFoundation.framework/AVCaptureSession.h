@@ -21,7 +21,6 @@
 - (id)_addFastSwitchOptionsToCaptureOptions:(id)arg1 forDevice:(id)arg2 preset:(id)arg3;
 - (void)_addInputWithNoConnections:(id)arg1;
 - (void)_addOutputWithNoConnections:(id)arg1;
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)_beginConfiguration;
 - (void)_beginSessionUpdates;
 - (BOOL)_buildAndRunGraph;
@@ -31,6 +30,7 @@
 - (void)_commitConfiguration;
 - (id)_connectionsForNewInputPort:(id)arg1;
 - (id)_connectionsForNewOutput:(id)arg1;
+- (id)_connectionsForNewVideoPreviewLayer:(id)arg1;
 - (id)_createCaptureOptionsForPreset:(id)arg1 audioDevice:(id)arg2 videoDevice:(id)arg3 errorStatus:(int*)arg4;
 - (long)_createRecorderIfNeeded;
 - (id)_currentVideoDevice;
@@ -42,7 +42,6 @@
 - (id)_errorForFigRecorderNotification:(id)arg1;
 - (void)_excludeOutputsForCaptureOptions:(id)arg1;
 - (BOOL)_figRecorderOldOptionsAreEqual:(id)arg1 toNewOptions:(id)arg2 livesourceOptionsAreEqual:(BOOL*)arg3;
-- (id)_figRecorderOptionsForPreset:(id)arg1 audioDevice:(id)arg2 videoDevice:(id)arg3;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (id)_liveConnections;
 - (void)_postRuntimeError:(id)arg1;
@@ -51,6 +50,8 @@
 - (void)_removeConnection:(id)arg1;
 - (void)_removeConnectionsForInputPort:(id)arg1;
 - (void)_removeVideoPreviewLayerConnectionsForInputPort:(id)arg1;
+- (id)_resolvedCaptureOptionsByApplyingOverridesToCaptureOptions:(id)arg1;
+- (id)_resolvedCaptureOptionsForPreset:(id)arg1 audioDevice:(id)arg2 videoDevice:(id)arg3;
 - (BOOL)_sessionHasEnabledMovieFileOutput;
 - (void)_setInterrupted:(BOOL)arg1;
 - (void)_setRunning:(BOOL)arg1;
@@ -66,6 +67,8 @@
 - (void)addInputWithNoConnections:(id)arg1;
 - (void)addOutput:(id)arg1;
 - (void)addOutputWithNoConnections:(id)arg1;
+- (void)addVideoPreviewLayer:(id)arg1;
+- (void)addVideoPreviewLayerConnection:(id)arg1;
 - (void)beginConfiguration;
 - (BOOL)canAddConnection:(id)arg1;
 - (BOOL)canAddInput:(id)arg1;
@@ -75,6 +78,7 @@
 - (void)commitConfiguration;
 - (void)dealloc;
 - (id)description;
+- (id)figRecorderOptions;
 - (id)init;
 - (id)inputWithClass:(Class)arg1;
 - (id)inputs;
@@ -90,12 +94,12 @@
 - (void)removeInput:(id)arg1;
 - (void)removeOutput:(id)arg1;
 - (void)removeVideoPreviewLayer;
+- (void)removeVideoPreviewLayerConnection:(id)arg1;
 - (id)sessionPreset;
 - (void)setSessionPreset:(id)arg1;
 - (void)setVideoPreviewLayer:(id)arg1;
 - (void)startRunning;
 - (void)stopRunning;
 - (id)videoPreviewLayer;
-- (void)videoPreviewLayerPropertiesChanged;
 
 @end

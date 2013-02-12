@@ -13,7 +13,7 @@
 
 + (struct CGGradient { }*)_gradient;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)resizeSelectedLineClipViewWithLeftX:(float)arg1 rightX:(float)arg2;
 - (void)setGraphImageSet:(id)arg1;

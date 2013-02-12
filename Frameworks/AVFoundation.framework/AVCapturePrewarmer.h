@@ -7,5 +7,6 @@
 
 + (void)cancel;
 + (void)prewarm;
++ (void)prewarmUsingDefaultSettingsAfterDate:(id)arg1;
 
 @end

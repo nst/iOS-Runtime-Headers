@@ -10,6 +10,7 @@
         float x; 
         float y; 
     float _accuracy;
+    BOOL _adjustsForContentOffsetDelta;
     } _originalOffset;
     } _targetOffset;
 }

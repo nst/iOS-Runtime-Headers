@@ -10,6 +10,7 @@
     NSString *_reason;
     NSString *_reasonID;
     NSNumber *_rid;
+    NSNumber *_source;
 }
 
 @property(retain) NSString * playerID;
@@ -17,10 +18,13 @@
 @property(retain) NSString * reason;
 @property(retain) NSString * reasonID;
 @property(retain) NSNumber * rid;
+@property(retain) NSNumber * source;
 
 + (id)codedPropertyKeys;
 
 - (void)dealloc;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)playerID;
 - (id)reason2;
 - (id)reason;
@@ -31,5 +35,7 @@
 - (void)setReason:(id)arg1;
 - (void)setReasonID:(id)arg1;
 - (void)setRid:(id)arg1;
+- (void)setSource:(id)arg1;
+- (id)source;
 
 @end

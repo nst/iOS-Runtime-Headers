@@ -7,6 +7,7 @@
 @interface _UIPreviewItemProxy : NSObject {
     NSURL *_URL;
     NSURL *_URLToDeleteOnDealloc;
+    NSURL *_URLsToDeleteOnDealloc;
     NSString *_name;
     NSString *_previewItemContentType;
     NSURL *_previewURLOverride;

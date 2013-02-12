@@ -26,6 +26,7 @@
 @property(getter=isExecuting) BOOL executing;
 @property(getter=isFinished) BOOL finished;
 
+- (void).cxx_destruct;
 - (void)_callHandler;
 - (void)cancel;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
@@ -34,7 +35,6 @@
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (void)dealloc;
 - (id)initWithRequest:(id)arg1 handler:(id)arg2;
 - (BOOL)isCanceled;
 - (BOOL)isExecuting;

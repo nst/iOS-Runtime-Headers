@@ -20,12 +20,14 @@
     BOOL _showsDoneButton;
     <EKStyleProvider> *_styleProvider;
     int _subitem;
+    int _subsection;
 }
 
 @property <EKEditItemViewControllerDelegate> * editDelegate;
 @property BOOL modal;
 @property BOOL showsDoneButton;
 @property int subitem;
+@property int subsection;
 
 - (void)_saveAndDismissWithForce:(BOOL)arg1;
 - (void)cancel;
@@ -45,9 +47,12 @@
 - (void)setModal:(BOOL)arg1;
 - (void)setShowsDoneButton:(BOOL)arg1;
 - (void)setSubitem:(int)arg1;
+- (void)setSubsection:(int)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showsDoneButton;
 - (int)subitem;
+- (int)subsection;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidLoad;

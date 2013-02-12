@@ -48,7 +48,6 @@
 - (id)avItem;
 - (void)cacheCurrentDuration;
 - (void)cacheCurrentSize;
-- (id)chapterImageForImageID:(int)arg1;
 - (void)dealloc;
 - (void)ensureFPItem;
 - (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(int)arg3;

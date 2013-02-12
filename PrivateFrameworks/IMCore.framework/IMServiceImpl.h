@@ -13,8 +13,6 @@
     NSArray *_emailDomains;
     BOOL _handlesChatInvites;
     BOOL _hasLoadedServiceProperties;
-    id _icon;
-    BOOL _iconChecked;
     NSData *_imageData;
     BOOL _isPersistent;
     BOOL _isPlugInService;
@@ -25,15 +23,23 @@
     unsigned int _screenNameSensitivity;
     NSDictionary *_serviceDefaults;
     NSDictionary *_serviceProps;
+    BOOL _shouldDisableDeactivation;
     BOOL _shouldInternationalizeNumbers;
     BOOL _supportsAdding;
     BOOL _supportsAuthorization;
+    BOOL _supportsDatabaseStorage;
+    BOOL _supportsGroupAttachments;
+    BOOL _supportsIDStatusLookup;
+    BOOL _supportsMutatingGroupMembers;
     BOOL _supportsPhoneNumberMapping;
+    BOOL _supportsPresence;
     BOOL _supportsRegistration;
     BOOL _supportsSMS;
 }
 
 @property(readonly) unsigned int IDSensitivity;
+@property(readonly) BOOL _supportsDatabaseStorage;
+@property(readonly) BOOL _wantsInternationizedNumbers;
 @property(readonly) Class accountClass;
 @property(readonly) NSArray * accountIDs;
 @property(readonly) NSArray * addressBookProperties;
@@ -42,25 +48,35 @@
 @property(readonly) int buddyNotesMaxByteLength;
 @property(readonly) NSDictionary * cardMap;
 @property(retain) NSDictionary * defaultAccountSettings;
-@property(readonly) NSString * description;
 @property(readonly) NSArray * emailDomains;
 @property(readonly) BOOL handlesChatInvites;
 @property(readonly) NSString * internalName;
 @property(readonly) BOOL isPersistent;
 @property(readonly) BOOL isPlugInService;
+@property(readonly) int maxAttachmentSize;
+@property(readonly) int maxChatParticipants;
 @property(readonly) NSString * name;
 @property(retain) NSDictionary * serviceDefaults;
 @property(readonly) NSData * serviceImageData;
 @property(retain) NSDictionary * serviceProperties;
 @property(readonly) NSString * shortName;
+@property(readonly) BOOL shouldDisableDeactivation;
 @property(readonly) BOOL supportsAdding;
 @property(readonly) BOOL supportsAuthorization;
+@property(readonly) BOOL supportsGroupAttachments;
+@property(readonly) BOOL supportsIDStatusLookup;
+@property(readonly) BOOL supportsMutatingGroupMembers;
 @property(readonly) BOOL supportsPhoneNumberMapping;
+@property(readonly) BOOL supportsPresence;
 @property(readonly) BOOL supportsRegistration;
-@property(readonly) BOOL wantsInternationizedNumbers;
 
++ (id)activeServices;
++ (id)connectedServices;
++ (id)connectedServicesWithCapability:(unsigned long long)arg1;
++ (id)operationalServicesWithCapability:(unsigned long long)arg1;
 + (Class)serviceClass;
 + (id)serviceWithInternalName:(id)arg1;
++ (id)servicesWithCapability:(unsigned long long)arg1;
 + (void)setServiceClass:(Class)arg1;
 + (id)supportedCountryCodes;
 + (BOOL)systemSupportsSMSSending;
@@ -75,7 +91,9 @@
 - (void)_loadPropertiesIfNeeded;
 - (id)_newIDToCardMap;
 - (id)_personToIDMap;
+- (BOOL)_supportsDatabaseStorage;
 - (void)_syncWithRemoteBuddies;
+- (BOOL)_wantsInternationizedNumbers;
 - (Class)accountClass;
 - (id)accountIDs;
 - (void)accountInitialSyncPerformed:(id)arg1;
@@ -99,6 +117,7 @@
 - (BOOL)handlesChatInvites;
 - (id)imABPeopleWithScreenName:(id)arg1 countryCode:(id)arg2 identifier:(int*)arg3;
 - (id)imABPeopleWithScreenName:(id)arg1 identifier:(int*)arg2;
+- (id)imABPeopleWithScreenName:(id)arg1 options:(unsigned int)arg2;
 - (id)imABPeopleWithScreenName:(id)arg1;
 - (id)infoForAllScreenNames;
 - (id)infoForPreferredScreenNames;
@@ -111,6 +130,8 @@
 - (BOOL)isPlugInService;
 - (id)localizedName;
 - (id)localizedShortName;
+- (int)maxAttachmentSize;
+- (int)maxChatParticipants;
 - (id)myScreenNames;
 - (id)name;
 - (id)normalizedFormOfID:(id)arg1;
@@ -124,14 +145,18 @@
 - (void)setServiceDefaults:(id)arg1;
 - (void)setServiceProperties:(id)arg1;
 - (id)shortName;
+- (BOOL)shouldDisableDeactivation;
 - (unsigned int)status;
 - (void)statusChangedForAccount:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
 - (id)subtypeInformationForAccount:(id)arg1;
 - (BOOL)supportsAdding;
 - (BOOL)supportsAuthorization;
+- (BOOL)supportsGroupAttachments;
+- (BOOL)supportsIDStatusLookup;
+- (BOOL)supportsMutatingGroupMembers;
 - (BOOL)supportsPhoneNumberMapping;
+- (BOOL)supportsPresence;
 - (BOOL)supportsRegistration;
 - (void)updateIDToCardMapWithNotification:(id)arg1;
-- (BOOL)wantsInternationizedNumbers;
 
 @end

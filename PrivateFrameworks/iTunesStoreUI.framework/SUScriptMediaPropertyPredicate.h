@@ -16,14 +16,10 @@
 @property(readonly) id value;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
 - (id)_className;
-- (id)_copyComparisonType;
-- (id)_copyProperty;
-- (id)_copyValue;
 - (id)_playlistAttributesForScriptArray:(id)arg1;
-- (void)_setProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
 - (id)attributeKeys;
 - (id)comparisonType;
 - (void)dealloc;

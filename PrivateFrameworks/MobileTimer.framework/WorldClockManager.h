@@ -10,12 +10,12 @@
     NSDate *lastModified;
 }
 
-@property(retain,readonly) NSArray * cities;
+@property(readonly) NSArray * cities;
 @property(retain) NSDate * lastModified;
 
 + (id)sharedManager;
 
-- (BOOL)addCity:(id)arg1;
+- (unsigned int)addCity:(id)arg1;
 - (BOOL)canAddCity;
 - (BOOL)checkIfCitiesModified;
 - (id)cities;

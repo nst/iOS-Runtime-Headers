@@ -19,9 +19,6 @@
 - (BOOL)hasEncryption;
 - (id)humanReadableName;
 - (id)name;
-- (oneway void)release;
 - (BOOL)requiresPassword;
-- (id)retain;
-- (unsigned int)retainCount;
 
 @end

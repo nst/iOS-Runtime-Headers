@@ -2,21 +2,22 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class CPDistributedMessagingCenter, NSMutableDictionary;
+@class CPDistributedMessagingCenter, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface MSConnection : NSObject {
     CPDistributedMessagingCenter *_center;
     CPDistributedMessagingCenter *_noWakeCenter;
     NSMutableDictionary *_serverSideConfig;
     int _serverSideConfigNotificationToken;
-    struct dispatch_queue_s { } *_serverSideConfigQueue;
+    NSObject<OS_dispatch_queue> *_serverSideConfigQueue;
     NSMutableDictionary *_shareState;
     int _shareStateNotificationToken;
-    struct dispatch_queue_s { } *_shareStateQueue;
+    NSObject<OS_dispatch_queue> *_shareStateQueue;
 }
 
 + (id)sharedConnection;
 
+- (void).cxx_destruct;
 - (id)_machErrorWithUnderlyingError:(id)arg1;
 - (void)abortActivitiesForPersonID:(id)arg1;
 - (void)checkForOutstandingActivities;

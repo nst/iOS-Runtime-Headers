@@ -8,8 +8,8 @@
 }
 
 @property(copy) NSString * align;
-@property(retain,readonly) DOMDocument * contentDocument;
-@property(retain,readonly) DOMAbstractView * contentWindow;
+@property(readonly) DOMDocument * contentDocument;
+@property(readonly) DOMAbstractView * contentWindow;
 @property(copy) NSString * frameBorder;
 @property(copy) NSString * height;
 @property(copy) NSString * longDesc;
@@ -42,8 +42,10 @@
 - (void)setSandbox:(id)arg1;
 - (void)setScrolling:(id)arg1;
 - (void)setSrc:(id)arg1;
+- (void)setSrcdoc:(id)arg1;
 - (void)setWidth:(id)arg1;
 - (id)src;
+- (id)srcdoc;
 - (int)structuralComplexityContribution;
 - (id)width;
 

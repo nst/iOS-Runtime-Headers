@@ -6,6 +6,7 @@
 
 @interface NSURLConnectionInternalConnection : NSURLConnectionInternal <NSURLConnectionRequired> {
     struct _CFURLConnection { } *_cfConn;
+    int _cfConnLock;
     struct _CFURLAuthChallenge { } *_currCFChallenge;
     NSURLAuthenticationChallenge *_currNSChallenge;
     long long _expectedTotalBytes;
@@ -15,8 +16,11 @@
 }
 
 - (struct _CFURLConnection { }*)_CFURLConnection;
+- (struct _CFURLConnection { }*)_atomic_CFURLConnection;
 - (void)_invalidate;
 - (void)_resumeLoading;
+- (struct _CFURLConnection { }*)_retainCFURLConnection;
+- (void)_setDelegateQueue:(id)arg1;
 - (void)_setShouldSkipCancelOnRelease:(bool)arg1;
 - (void)_suspendLoading;
 - (void)cancel;

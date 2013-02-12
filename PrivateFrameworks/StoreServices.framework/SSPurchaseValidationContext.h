@@ -10,27 +10,21 @@
 
 @interface SSPurchaseValidationContext : NSObject <NSCopying> {
     NSIndexSet *_allowedDeviceIdentifiers;
-    long long _diskSpaceAvailable;
     id _sizeLimitBlock;
     NSString *_systemName;
     NSString *_systemVersion;
 }
 
 @property(copy) NSIndexSet * allowedDeviceIdentifiers;
-@property long long diskSpaceAvailable;
 @property(copy) id sizeLimitBlock;
 @property(copy) NSString * systemName;
 @property(copy) NSString * systemVersion;
 
-- (BOOL)_isAnyIPad;
-- (BOOL)_isAnyIPod;
 - (id)_supportedDeviceForOffer:(id)arg1;
 - (id)allowedDeviceIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (long long)diskSpaceAvailable;
 - (void)setAllowedDeviceIdentifiers:(id)arg1;
-- (void)setDiskSpaceAvailable:(long long)arg1;
 - (void)setSizeLimitBlock:(id)arg1;
 - (void)setSystemName:(id)arg1;
 - (void)setSystemVersion:(id)arg1;

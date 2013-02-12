@@ -22,6 +22,7 @@
 @property(retain) MPMediaItem * mediaItem;
 @property(getter=isPlayButtonEnabled) BOOL playButtonEnabled;
 
+- (void)_cancelAction:(id)arg1;
 - (id)_copyrightFormattedString;
 - (void)_playMovie:(id)arg1;
 - (void)_updatePlayButtonImages;

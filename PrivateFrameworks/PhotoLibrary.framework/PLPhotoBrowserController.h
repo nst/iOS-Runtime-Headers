@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLPhotoBrowserControllerDelegate>, NSArray, NSData, NSMutableDictionary, NSMutableSet, NSNumberFormatter, NSObject<PLAssetContainer>, NSOrderedSet, NSString, NSTimer, PLAirPlayBackgroundView, PLAirTunesService, PLAirTunesServiceBrowser, PLCropOverlay, PLEditPhotoController, PLLibraryImageDataProvider, PLManagedAsset, PLPhotoPrinter, PLPhotoScrubber, PLPhotoTileViewController, PLPictureFramePlugin, PLProgressView, PLPublishingAgent, PLSlideshowSettingsViewController, PLVideoRemaker, PLVideoView, UIActionSheet, UIAlertView, UIBarButtonItem, UIImage, UIImageView, UILongPressGestureRecognizer, UINavigationController, UIPageController, UIPopoverController, UIProgressHUD, UIScrollView, UIToolbar, UITransitionView, UIView, UIViewController, UIWindow;
+@class <PLPhotoBrowserControllerDelegate>, NSArray, NSMutableDictionary, NSMutableSet, NSNumberFormatter, NSObject<PLAssetContainer>, NSOrderedSet, NSString, NSTimer, PLActivityViewController, PLAirPlayBackgroundView, PLAirTunesService, PLAirTunesServiceBrowser, PLCommentsButton, PLCropOverlay, PLEditPhotoController, PLLibraryImageDataProvider, PLManagedAsset, PLPhotoScrubber, PLPhotoTileViewController, PLPictureFramePlugin, PLProgressView, PLPublishingAgent, PLSlideshowSettingsViewController, PLVideoRemaker, PLVideoView, UIActionSheet, UIAlertView, UIBarButtonItem, UIImage, UIImageView, UILongPressGestureRecognizer, UINavigationBar, UINavigationController, UIPageController, UIPopoverController, UIProgressHUD, UIScrollView, UIToolbar, UITransitionView, UIView, UIViewController, UIWindow;
 
-@interface PLPhotoBrowserController : UIViewController <ABPeoplePickerNavigationControllerDelegate, PLAlbumChangeObserver, PLAirTunesServicePhotoBrowsingDataSource, UIPageControllerDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate, UIScrollViewDelegate, UIToolbarDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate, PhotoScrubberDataSource, UIPopoverControllerDelegate, PLUIEditImageViewControllerDelegate, PLPhotoPrinterDelegate, PLSlideshowSettingsViewControllerDelegate, PLSlideshowPluginDelegate, PLAirTunesServicePickerViewControllerDelegate, AirPlayRemoteSlideshowDelegate> {
+@interface PLPhotoBrowserController : UIViewController <ABPeoplePickerNavigationControllerDelegate, PLAlbumChangeObserver, PLAirTunesServicePhotoBrowsingDataSource, PLPublishingActivityDelegate, PLActivityViewControllerDelegate, UIPageControllerDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate, UIScrollViewDelegate, UIToolbarDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate, PhotoScrubberDataSource, UIPopoverControllerDelegate, PLUIEditImageViewControllerDelegate, PLSlideshowSettingsViewControllerDelegate, PLSlideshowPluginDelegate, PLAirTunesServicePickerViewControllerDelegate, AirPlayRemoteSlideshowDelegate, PLDismissableViewController> {
     struct CGSize { 
         float width; 
         float height; 
@@ -49,11 +49,16 @@
     unsigned int _didShowHDRPrompt : 1;
     unsigned int _imagesAreShuffled : 1;
     unsigned int _stopMirroringIfNeeded : 1;
+    unsigned int _isEditingComment : 1;
     unsigned int _slideShowIsStreamed : 1;
     unsigned int _airTunesSlideShowIsEnding : 1;
     SEL _actionAfterForcedRotation;
     UIBarButtonItem *_actionItem;
     UIActionSheet *_actionView;
+    SEL _activityAction;
+    UIPopoverController *_activityControllerPopover;
+    id _activityTarget;
+    PLActivityViewController *_activityViewController;
     PLAirPlayBackgroundView *_airTunesBackgroundView;
     PLAirTunesServiceBrowser *_airTunesBrowser;
     UIPopoverController *_airTunesServicePickerPopover;
@@ -72,6 +77,10 @@
     struct __CFDictionary { } *_buttonGroups;
     UITransitionView *_cameraTransitionView;
     BOOL _canDelayImageLoading;
+    PLCommentsButton *_commentsButton;
+    UINavigationBar *_commentsEditBar;
+    int _commentsInteractionMode;
+    BOOL _commentsTableWasVisible;
     UIViewController *_composeSheetViewController;
     } _contentStartSize;
     PLCropOverlay *_cropOverlay;
@@ -85,9 +94,6 @@
     unsigned int _deletedIndex;
     PLPhotoTileViewController *_deletedTile;
     PLEditPhotoController *_editController;
-    NSData *_emailData;
-    NSString *_emailDataMimeType;
-    NSString *_emailImageExtension;
     UIView *_emptyCameraView;
     float _endScale;
     UIView *_fadeToBlackView;
@@ -109,7 +115,6 @@
     long _personCount;
     SEL _photoAction;
     id _photoActionInvoker;
-    PLPhotoPrinter *_photoPrinter;
     PLPhotoScrubber *_photoScrubber;
     UIBarButtonItem *_playSlideshowItem;
     BOOL _playingVideo;
@@ -138,6 +143,8 @@
     BOOL _slideshowIsEnding;
     BOOL _slideshowIsLoading;
     BOOL _slideshowIsOrigami;
+    unsigned int _slideshowItemsShown;
+    unsigned int _slideshowItemsToShow;
     PLPictureFramePlugin *_slideshowPlugin;
     UIPopoverController *_slideshowSettingsPopover;
     PLSlideshowSettingsViewController *_slideshowSettingsViewController;
@@ -150,6 +157,7 @@
     unsigned int _statusBarIsLocked;
     int _statusBarStyle;
     NSMutableDictionary *_tileCache;
+    PLCommentsButton *_toolbarCommentsButton;
     NSTimer *_toolbarTimer;
     BOOL _tvOutOn;
     UIPageController *_tvOutPageController;
@@ -168,8 +176,10 @@
 @property(readonly) UIScrollView * albumScroller;
 @property(readonly) NSOrderedSet * assets;
 @property BOOL canDelayImageLoading;
+@property(readonly) BOOL canEditPhoto;
 @property(readonly) BOOL canEditVideo;
 @property BOOL canShowCopyCallout;
+@property(readonly) PLCommentsButton * commentsButton;
 @property PLManagedAsset * currentAsset;
 @property(readonly) PLPhotoTileViewController * currentTile;
 @property unsigned int currentTileIndex;
@@ -186,13 +196,13 @@
 @property BOOL shouldShowOverlaysWhenViewAppears;
 @property BOOL shouldShowOverlaysWhenViewDisappears;
 @property(readonly) BOOL showsAirTunesOption;
+@property(readonly) PLCommentsButton * toolbarCommentsButton;
 
 + (void)setPageControllerScrollViewClass:(Class)arg1;
 
 - (id)_actionViewRootView;
 - (void)_airTunesServiceDidDisconnect:(id)arg1;
 - (void)_airTunesServicesDidChange:(id)arg1;
-- (BOOL)_airTunesSlideShowShouldContinue;
 - (void)_airTunesSlideShowTimerFired;
 - (void)_airTunesSlideShowViewWasTapped;
 - (void)_airplaySetup;
@@ -200,12 +210,12 @@
 - (BOOL)_albumScrollerIsVisible;
 - (void)_animateSendToEmail;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_animationDestinationRectForImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_appAllowsSupressionOfAlerts;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (id)_assetAtTileIndex:(unsigned int)arg1;
 - (void)_backgroundSavePhoto:(id)arg1;
 - (id)_buttonItemViewWithTag:(int)arg1;
-- (BOOL)_canEmailPhoto;
 - (BOOL)_canTrimCurrentVideoInPlace;
 - (BOOL)_canUploadHDVideo;
 - (void)_cancelProgressTimer;
@@ -214,7 +224,6 @@
 - (void)_cancelToolbarTimer;
 - (void)_cancelVideoEditingMode:(id)arg1;
 - (void)_capabilitiesChanged;
-- (void)_clearCurrentPhotoPrinter;
 - (void)_clearFullScreenView;
 - (void)_clearPublishingAgent:(id)arg1;
 - (void)_commonDidBeginRemaking;
@@ -234,6 +243,7 @@
 - (BOOL)_didSetDataForCurrentItem;
 - (void)_disableIdleTimer;
 - (void)_discardPhotoScrubber;
+- (void)_dismissActivityControllerPopover;
 - (void)_dismissAirtunesServicePickerPopover;
 - (void)_dismissCropOverlay;
 - (void)_dismissModalViewControllerAnimated:(BOOL)arg1;
@@ -243,11 +253,12 @@
 - (void)_displayComposeSheet;
 - (void)_displayLastImageForSlideshowPlugin:(id)arg1;
 - (double)_durationForCurrentVideo;
+- (void)_endActivityController;
 - (void)_endAirTunesPicker;
 - (void)_endPeoplePicker;
 - (void)_endSettingWallpaper:(id)arg1;
 - (void)_endSlideshow;
-- (void)_endSlideshowSettings;
+- (void)_endSlideshowSettingsAnimated:(BOOL)arg1;
 - (void)_enterVideoEditingMode;
 - (void)_externalScreenGotDisconnected;
 - (void)_fadeIn;
@@ -264,8 +275,10 @@
 - (void)_forceRemoveSavingPhotoHUD;
 - (id)_fullScreenPreviewImageForPhoto:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)_handleCancelSlideshowSettings:(id)arg1;
 - (void)_handleDirectionButtonMouseDown:(id)arg1 direction:(int)arg2;
 - (void)_hideCallout;
+- (void)_hideCommentsTableIfNecessary:(float)arg1;
 - (void)_hideToolbarFired:(id)arg1;
 - (void)_hideTrimUI;
 - (BOOL)_isAirPlayEnabled;
@@ -274,6 +287,7 @@
 - (void)_loadSlideshowPlugin;
 - (void)_longPressRecognized:(id)arg1;
 - (id)_lowResolutionPreviewImageForPhoto:(id)arg1;
+- (id)_mailComposeViewControllerWithPhoto:(id)arg1 attachmentIdentifier:(id*)arg2;
 - (void)_makeTilesPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)_navigationBar;
 - (id)_navigationController;
@@ -284,6 +298,7 @@
 - (void)_performCATransition:(id)arg1;
 - (void)_performCloseTrashAnimation;
 - (void)_performOpenTrashAnimation;
+- (void)_performPostAlbumStreamTasksWithNewlyCreatedAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)_performSendViaEmail;
 - (void)_photoScrubberDidBeginScrubbing:(id)arg1;
 - (void)_photoScrubberDidEndScrubbing:(id)arg1;
@@ -300,7 +315,6 @@
 - (void)_processAlbumChangedWithItems:(id)arg1 albumModificationMode:(int)arg2;
 - (void)_processAssetsMovedNotification:(id)arg1;
 - (void)_processUpdatedAssets:(id)arg1;
-- (void)_publishToMobileMeClicked;
 - (void)_publishToYouTubeClicked;
 - (void)_publishingAgentDidEndRemaking:(id)arg1;
 - (void)_publishingAgentDidFinishPublishing:(id)arg1;
@@ -322,6 +336,7 @@
 - (void)_savePhotoFinished:(id)arg1;
 - (void)_scrubTimerFired:(id)arg1;
 - (void)_setAutohidesControls:(BOOL)arg1;
+- (void)_setComposeSheetViewController:(id)arg1;
 - (void)_setImageAsHomeScreenAndLockScreenClicked:(id)arg1;
 - (void)_setImageAsHomeScreenClicked:(id)arg1;
 - (void)_setImageAsLockScreenClicked:(id)arg1;
@@ -331,6 +346,7 @@
 - (void)_setShouldRasterizeOverlays:(BOOL)arg1;
 - (void)_setupPhotoScrubber:(BOOL)arg1;
 - (BOOL)_shouldShowAssignToContactOption;
+- (void)_showCommentTableIfNecessary:(float)arg1;
 - (void)_showCompositionForPublishingBundleNamed:(id)arg1;
 - (void)_showConfirmationForPassthroughTrimming:(id)arg1;
 - (void)_showCropOverlayWithTitle:(id)arg1 subtitle:(id)arg2 cropButtonTitle:(id)arg3 disablingRotation:(BOOL)arg4 duration:(float)arg5;
@@ -357,6 +373,7 @@
 - (void)_stopStreamingPhotosToAirTunes;
 - (void)_stopVideoPlaybackForIndex:(int)arg1;
 - (void)_streamPhoto:(id)arg1 withTransition:(id)arg2;
+- (id)_suppresionContexts;
 - (id)_tileForAsset:(id)arg1 shouldCreate:(BOOL)arg2 tileCache:(id)arg3;
 - (id)_tileForTileIndex:(unsigned int)arg1 shouldCreate:(BOOL)arg2 tileCache:(id)arg3;
 - (void)_transcodeVideoUsingMode:(int)arg1;
@@ -367,10 +384,12 @@
 - (void)_trimVideo:(id)arg1;
 - (void)_updateAfterAnimation;
 - (void)_updateFilteredImagesAndShuffle:(BOOL)arg1;
+- (void)_updateForCommentsControllerEditMode:(id)arg1;
 - (void)_updateNavigationBar;
 - (void)_updateOverlaysAndShowButtonBar:(BOOL)arg1;
 - (void)_updatePhotoScrubberVisibility;
 - (void)_updateProgressView;
+- (void)_updateStatusBarVisibilityWithDuration:(double)arg1;
 - (void)_updateTVOutAfterAnimation;
 - (void)_updateToolbar:(BOOL)arg1;
 - (void)_updateVideoScrubberWidth;
@@ -379,6 +398,7 @@
 - (id)_visibleViewController;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)activityViewControllerDidDismiss:(id)arg1;
 - (void)addAirTunesButton;
 - (id)airPlayRemoteSlideshowAssetKeys:(id)arg1;
 - (id)airTunesButton;
@@ -391,6 +411,7 @@
 - (struct NSObject { Class x1; }*)album;
 - (void)albumDidChange:(id)arg1;
 - (int)albumFilter;
+- (Class)albumPickerControllerClass;
 - (id)albumScroller;
 - (void)albumScrollerDidEndSmoothScroll;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
@@ -404,12 +425,14 @@
 - (BOOL)autohideControlsIsEnabled;
 - (void)beginEditingPhoto:(id)arg1;
 - (BOOL)canDelayImageLoading;
+- (BOOL)canEditPhoto;
 - (BOOL)canEditVideo;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canShowCopyCallout;
 - (BOOL)canShowNextImage:(BOOL)arg1;
 - (BOOL)canShowNextImage;
 - (BOOL)canShowPreviousImage;
+- (id)commentsButton;
 - (void)copy:(id)arg1;
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (void)cropOverlayWasOKed:(id)arg1;
@@ -428,7 +451,7 @@
 - (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)disableAutohideControls;
-- (void)displayActionMenu:(id)arg1;
+- (void)displayActivitySheet:(id)arg1;
 - (void)displayNextPhoto:(id)arg1;
 - (void)displayPreviousPhoto:(id)arg1;
 - (double)durationForTransition:(int)arg1;
@@ -441,6 +464,7 @@
 - (void)imageViewDidSwitchToFullSizeImage:(id)arg1;
 - (void)imageViewWillSwitchToFullSizeImage:(id)arg1;
 - (id)initWithImageDataProvider:(id)arg1;
+- (int)interfaceIdiom;
 - (BOOL)isCameraApp;
 - (BOOL)isEditing;
 - (BOOL)isEditingAsset;
@@ -462,18 +486,20 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (id)photoCountFormatter;
-- (void)photoPrinterDidDismissPrintingOptions:(id)arg1;
-- (void)photoPrinterWillPresentPrintingOptions:(id)arg1;
 - (id)photoScrollerTitle;
 - (id)photoScrubber:(id)arg1 loadImageSynchronously:(BOOL)arg2 atIndex:(int)arg3 forLoupe:(BOOL)arg4;
 - (id)photoScrubber;
+- (void)photoTileViewController:(id)arg1 commentsControllerWillBeginScrolling:(id)arg2;
 - (void)photoTileViewController:(id)arg1 didAppear:(BOOL)arg2;
 - (void)photoTileViewController:(id)arg1 didDisappear:(BOOL)arg2;
+- (void)photoTileViewController:(id)arg1 didExitEditModeInCommentsController:(id)arg2;
 - (void)photoTileViewController:(id)arg1 willAppear:(BOOL)arg2;
+- (void)photoTileViewController:(id)arg1 willEnterEditModeInCommentsController:(id)arg2;
 - (BOOL)photoTileViewControllerAllowsEditing:(id)arg1;
 - (void)photoTileViewControllerCancelImageRequests:(id)arg1;
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
 - (void)photoTileViewControllerDidSetHDRTypeForPhoto:(id)arg1;
+- (void)photoTileViewControllerDoubleTap:(id)arg1;
 - (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
 - (void)photoTileViewControllerRequestsFullSizeImage:(id)arg1;
@@ -482,13 +508,17 @@
 - (void)playSlideshow:(id)arg1;
 - (void)playSlideshowFromAlbumUsingOrigami:(BOOL)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)printCurrentPhoto:(id)arg1;
-- (void)publishToMobileMeClicked;
-- (void)publishToTwitterClicked;
+- (BOOL)prepareForDismissingAnimated:(BOOL)arg1;
+- (void)prepareToSendViaEmail;
 - (void)publishToYouTubeClicked;
+- (void)publishingActivityNeedsVideoEditMode:(id)arg1;
 - (id)remakerContainerView;
 - (void)removeAirTunesButton;
+- (void)removeRemakerContainerView;
 - (void)resetToolbarTimer;
+- (void)revealPhotoComment:(id)arg1;
+- (void)revealUnseenComments;
+- (id)rootNavigationController;
 - (id)rotatingFooterView;
 - (void)saveCurrentPhoto:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -522,6 +552,7 @@
 - (void)setVideoEditingMode:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setVideoEditingMode:(BOOL)arg1;
 - (BOOL)shouldShowActionMenu;
+- (BOOL)shouldShowCommentsButton;
 - (BOOL)shouldShowOverlaysWhenViewAppears;
 - (BOOL)shouldShowOverlaysWhenViewDisappears;
 - (BOOL)shouldShowPlayButton;
@@ -531,6 +562,7 @@
 - (void)showOverlaysWithDuration:(float)arg1;
 - (void)showPreviousImageWithTransition:(int)arg1;
 - (void)showSlideshowSettings:(id)arg1;
+- (BOOL)showingCommentsTable;
 - (BOOL)showsAirTunesOption;
 - (void)slideImageOverMessage;
 - (void)slideshowPluginDidDisplayFinalImage:(id)arg1;
@@ -549,10 +581,15 @@
 - (void)storeCurrentConfiguration:(id)arg1;
 - (void)suckToTrash:(id)arg1 transitionParent:(id)arg2;
 - (unsigned int)tileIndexOfImage:(id)arg1;
+- (void)toggleCommentsTableVisibility;
 - (void)togglePlayPause:(id)arg1;
+- (id)toolbarCommentsButton;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (void)updateAfterCollapse;
 - (void)updateAirTunesButton;
+- (void)updateCommentsButtonContent;
+- (void)updateCommentsButtonVisibility;
+- (void)updateCommentsTableVisibility;
 - (void)updateNavigationItemTitle;
 - (void)updateOverlays;
 - (void)updateOverlaysAnimated:(BOOL)arg1;
@@ -580,7 +617,9 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear;
 - (void)viewWillDisappear;
+- (void)viewWillLayoutSubviews;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willPresentActionSheet:(id)arg1;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

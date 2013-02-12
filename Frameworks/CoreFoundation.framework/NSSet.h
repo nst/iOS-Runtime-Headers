@@ -7,10 +7,11 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSSet : NSObject <NSCopying, NSMutableCopying, NSCoding, NSFastEnumeration> {
+@interface NSSet : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)newSetWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 + (id)set;
 + (id)setWithArray:(id)arg1 copyItems:(BOOL)arg2;
 + (id)setWithArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 copyItems:(BOOL)arg3;
@@ -25,6 +26,8 @@
 + (id)setWithOrderedSet:(id)arg1;
 + (id)setWithSet:(id)arg1 copyItems:(BOOL)arg2;
 + (id)setWithSet:(id)arg1;
++ (BOOL)supportsSecureCoding;
++ (BOOL)supportsSecureCoding;
 
 - (void)ML3GetValuesAsPersistentIDsUsingBlock:(id)arg1;
 - (void)__applyValues:(int (*)())arg1 context:(void*)arg2;
@@ -35,7 +38,12 @@
 - (id)_distinctUnionOfArraysForKeyPath:(id)arg1;
 - (id)_distinctUnionOfObjectsForKeyPath:(id)arg1;
 - (id)_distinctUnionOfSetsForKeyPath:(id)arg1;
+- (id)_gkDistinctValuesForKeyPath:(id)arg1;
+- (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
+- (id)_gkMapDictionaryWithKeyPath:(id)arg1;
 - (id)_gkMapWithBlock:(id)arg1;
+- (id)_gkSetByRemovingObject:(id)arg1;
+- (id)_gkValuesForKeyPath:(id)arg1;
 - (id)_maxForKeyPath:(id)arg1;
 - (id)_minForKeyPath:(id)arg1;
 - (id)_sumForKeyPath:(id)arg1;
@@ -88,8 +96,6 @@
 - (id)member:(id)arg1;
 - (id)members:(id)arg1 notFoundMarker:(id)arg2;
 - (id)mf_getAllObjectsAsArray;
-- (void)mf_makeObjectsPerformSelectorOnMainThread:(SEL)arg1 waitUntilDone:(BOOL)arg2;
-- (void)mf_makeObjectsPerformSelectorValue:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
 - (id)objectsPassingTest:(id)arg1;
@@ -97,6 +103,7 @@
 - (unsigned int)pl_countOfObjectsPassingTest:(id)arg1;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)setByAddingObject:(id)arg1;
 - (id)setByAddingObjectsFromArray:(id)arg1;
 - (id)setByAddingObjectsFromSet:(id)arg1;

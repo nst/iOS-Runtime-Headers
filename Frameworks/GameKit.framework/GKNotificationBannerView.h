@@ -33,8 +33,8 @@
 + (id)bannerWindow;
 + (void)decrementCount;
 + (void)incrementCount;
-+ (struct dispatch_queue_s { }*)queue;
-+ (struct dispatch_semaphore_s { }*)semaphore;
++ (id)queue;
++ (id)semaphore;
 
 - (void)_hide;
 - (void)_layoutForOrientation:(int)arg1 animated:(BOOL)arg2;
@@ -44,6 +44,7 @@
 - (void)dealloc;
 - (double)duration;
 - (id)imageView;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
 - (id)initWithTitle:(id)arg1 message:(id)arg2;
 - (void)layoutSubviews;
 - (id)message;

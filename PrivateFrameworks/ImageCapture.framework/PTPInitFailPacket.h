@@ -3,7 +3,7 @@
  */
 
 @interface PTPInitFailPacket : NSObject {
-    unsigned int _reason;
+    unsigned long _reason;
 }
 
 - (id)contentForTCP;

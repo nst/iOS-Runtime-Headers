@@ -5,15 +5,14 @@
 @class UIViewController;
 
 @interface GKModalRootViewController : GKViewController {
-    int _statusBarOrientation;
     id oldDelegate;
     UIViewController *oldRootViewController;
-    BOOL stopAuthenticating;
+    int statusBarOrientation;
 }
 
 @property(retain) id oldDelegate;
 @property(retain) UIViewController * oldRootViewController;
-@property BOOL stopAuthenticating;
+@property int statusBarOrientation;
 
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -22,8 +21,8 @@
 - (id)oldRootViewController;
 - (void)setOldDelegate:(id)arg1;
 - (void)setOldRootViewController:(id)arg1;
-- (void)setStopAuthenticating:(BOOL)arg1;
+- (void)setStatusBarOrientation:(int)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)stopAuthenticating;
+- (int)statusBarOrientation;
 
 @end

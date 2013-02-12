@@ -2,34 +2,41 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableSet, NSString;
+@class NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
-@interface ISNetworkObserver : NSObject <ISSingleton, SSDownloadQueueObserver> {
-    struct dispatch_queue_s { } *_dispatchQueue;
+@interface ISNetworkObserver : NSObject <SSDownloadQueueObserver> {
+    NSString *_dataStatusIndicator;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _isCellularRestricted;
     double _lastNetworkTypeChangeTime;
     int _networkType;
     int _networkUsageCount;
+    NSObject<OS_dispatch_queue> *_notificationQueue;
     NSMutableSet *_observedDownloadQueues;
+    NSString *_operatorName;
     struct __SCNetworkReachability { } *_reachability;
+    NSString *_registrationStatus;
+    struct __CTServerConnection { } *_telephonyServer;
 }
 
-@property(getter=isCellularDataRestricted,readonly) BOOL cellularDataRestricted;
 @property(readonly) NSString * connectionTypeHeader;
+@property(readonly) NSString * dataStatusIndicator;
 @property(readonly) double lastNetworkTypeChangeTime;
+@property(readonly) NSString * modemRegistrationStatus;
 @property int networkType;
+@property(readonly) NSString * operatorName;
 @property(readonly) BOOL shouldShowCellularAutomaticDownloadsSwitch;
 @property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
 @property(getter=isWiFiEnabled,readonly) BOOL wifiEnabled;
 
 + (void)set3GEnabled:(BOOL)arg1;
 + (void)setAirplaneModeEnabled:(BOOL)arg1;
-+ (void)setSharedInstance:(id)arg1;
 + (void)setWiFiEnabled:(BOOL)arg1;
 + (id)sharedInstance;
 
 - (int)_currentNetworkType;
-- (void)_dataStatusChangedNotification:(id)arg1;
+- (id)_dataStatusIndicator;
+- (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
 - (int)_networkTypeFromDataIndicator:(id)arg1;
 - (BOOL)_ntsIsUsingNetwork;
 - (void)_postTypeChangedNotificationFromValue:(int)arg1 toValue:(int)arg2;
@@ -37,22 +44,23 @@
 - (void)_reloadCellularRestriction;
 - (void)_reloadNetworkType;
 - (int)_setNetworkType:(int)arg1;
-- (void)_telephonyObserverAvailableNotification:(id)arg1;
 - (void)beginObservingDownloadQueue:(id)arg1;
 - (void)beginUsingNetwork;
 - (id)connectionTypeHeader;
 - (id)copyValueForCarrierBundleKey:(id)arg1;
+- (id)dataStatusIndicator;
 - (void)dealloc;
 - (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
 - (void)downloadQueueNetworkUsageChanged:(id)arg1;
 - (void)endObservingDownloadQueue:(id)arg1;
 - (void)endUsingNetwork;
 - (id)init;
-- (BOOL)isCellularDataRestricted;
 - (BOOL)isUsingNetwork;
 - (BOOL)isWiFiEnabled;
 - (double)lastNetworkTypeChangeTime;
+- (id)modemRegistrationStatus;
 - (int)networkType;
+- (id)operatorName;
 - (void)reloadNetworkType;
 - (void)setNetworkType:(int)arg1;
 - (BOOL)shouldShowCellularAutomaticDownloadsSwitch;

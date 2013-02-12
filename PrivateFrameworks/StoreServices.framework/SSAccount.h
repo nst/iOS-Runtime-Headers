@@ -4,10 +4,11 @@
 
 @class NSLock, NSNumber, NSString;
 
-@interface SSAccount : NSObject <SSCoding, NSCopying> {
+@interface SSAccount : NSObject <SSXPCCoding, NSCopying> {
     int _accountKind;
     NSString *_accountName;
     int _accountScope;
+    int _accountSource;
     BOOL _active;
     BOOL _activeLockerAccount;
     int _availableServiceTypes;
@@ -23,6 +24,7 @@
 @property int accountKind;
 @property(copy) NSString * accountName;
 @property int accountScope;
+@property int accountSource;
 @property(getter=isActive) BOOL active;
 @property(getter=isActiveLockerAccount) BOOL activeLockerAccount;
 @property(getter=isAuthenticated,readonly) BOOL authenticated;
@@ -35,15 +37,16 @@
 @property(copy) NSString * storeFrontIdentifier;
 @property(retain) NSNumber * uniqueIdentifier;
 
+- (void)_sendBlockingXPCMessage:(id)arg1;
 - (int)accountKind;
 - (id)accountName;
 - (int)accountScope;
+- (int)accountSource;
 - (void)addAvailableServiceTypes:(int)arg1;
 - (void)addEnabledServiceTypes:(int)arg1;
 - (int)availableServiceTypes;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (id)creditsString;
 - (void)dealloc;
 - (id)description;
@@ -51,8 +54,7 @@
 - (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
 - (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id)arg2;
 - (id)init;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isActive;
 - (BOOL)isActiveLockerAccount;
 - (BOOL)isAuthenticated;
@@ -65,6 +67,7 @@
 - (void)setAccountKind:(int)arg1;
 - (void)setAccountName:(id)arg1;
 - (void)setAccountScope:(int)arg1;
+- (void)setAccountSource:(int)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setActiveLockerAccount:(BOOL)arg1;
 - (void)setAvailableServiceTypes:(int)arg1;

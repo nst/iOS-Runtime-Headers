@@ -18,7 +18,7 @@
     double minInterLevel2ndDiff;
     BOOL ownData;
     BOOL ownDifferences;
-    struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; } *profile;
+    const struct { double x1; unsigned int x2; double x3; double x4; unsigned int x5; double x6; double x7; BOOL x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; BOOL x20; } *profile;
     double *x;
     unsigned int xCount;
     struct { unsigned int x1; double x2; double x3; double x4; } *xStats;

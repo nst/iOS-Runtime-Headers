@@ -10,6 +10,7 @@
 
 @property(readonly) NSArray * availableMetadataFormats;
 @property(readonly) NSArray * commonMetadata;
+@property(readonly) struct CGSize { float x1; float x2; } dimensions;
 @property(getter=isEnabled,readonly) BOOL enabled;
 @property(readonly) float estimatedDataRate;
 @property(getter=isExcludedFromAutoselectionInTrackGroup,readonly) BOOL excludedFromAutoselectionInTrackGroup;
@@ -18,6 +19,7 @@
 @property(readonly) NSString * languageCode;
 @property(readonly) int layer;
 @property(readonly) NSLocale * locale;
+@property(readonly) NSArray * mediaCharacteristics;
 @property(readonly) NSString * mediaType;
 @property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) int naturalTimeScale;
@@ -41,6 +43,7 @@
 - (id)commonMetadata;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (struct CGSize { float x1; float x2; })dimensions;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (id)formatDescriptions;
@@ -53,6 +56,7 @@
 - (int)layer;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)locale;
+- (id)mediaCharacteristics;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;

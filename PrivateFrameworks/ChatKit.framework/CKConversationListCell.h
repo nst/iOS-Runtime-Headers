@@ -2,47 +2,44 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAggregateConversation, CKSummaryLabel, NSDate, NSString, UIDateLabel, UIImageView, UILabel;
+@class CKSummaryLabel, NSDate, NSString, UIDateLabel, UIImageView, UILabel;
 
 @interface CKConversationListCell : UITableViewCell {
     CKSummaryLabel *_backupSummaryLabel;
-    CKAggregateConversation *_conversation;
     UIDateLabel *_dateLabel;
     UILabel *_fromLabel;
     UIImageView *_groupImageView;
-    UILabel *_hitsLabel;
+    BOOL _isPlaceholder;
     NSDate *_searchMessageDate;
-    int _searchMessageID;
-    int _searchPartID;
+    NSString *_searchMessageGUID;
     NSString *_searchSummaryText;
     CKSummaryLabel *_summaryLabel;
     UIImageView *_unreadIndicatorImageView;
 }
 
-@property(retain) CKAggregateConversation * conversation;
-@property(readonly) NSDate * searchMessageDate;
-@property(readonly) int searchMessageID;
-@property(readonly) int searchPartID;
+@property(retain) NSDate * searchMessageDate;
+@property(copy) NSString * searchMessageGUID;
+@property(copy) NSString * searchSummaryText;
 
 + (float)cellHeight;
 + (id)identifier;
 
 - (void)_createBackupSummaryLabel;
-- (void)clearText;
-- (id)conversation;
 - (void)dealloc;
 - (void)didTransitionToState:(unsigned int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 conversation:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)searchMessageDate;
-- (int)searchMessageID;
-- (int)searchPartID;
-- (void)setConversation:(id)arg1;
+- (id)searchMessageGUID;
+- (id)searchSummaryText;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)updateContents;
+- (void)setSearchMessageDate:(id)arg1;
+- (void)setSearchMessageGUID:(id)arg1;
+- (void)setSearchSummaryText:(id)arg1;
+- (void)updateContentsForConversation:(id)arg1;
 - (void)updateFontSize;
-- (void)updateWithSearchResult:(struct _CKSpotlightSearchResult { id x1; int x2; int x3; id x4; id x5; }*)arg1;
+- (void)updateWithSearchResult:(id)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;
 
 @end

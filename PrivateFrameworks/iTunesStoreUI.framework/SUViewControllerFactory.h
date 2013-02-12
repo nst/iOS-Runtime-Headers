@@ -8,7 +8,6 @@
 - (id)newDownloadsViewController;
 - (id)newNetworkLockoutViewControllerWithSection:(id)arg1;
 - (id)newPlaceholderViewController;
-- (id)newReportAProblemViewControllerWithItemIdentifier:(unsigned long long)arg1;
 - (id)newStorePageViewControllerWithSection:(id)arg1;
 - (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2;
 - (id)newViewControllerForTrackList:(id)arg1;

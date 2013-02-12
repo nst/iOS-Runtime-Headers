@@ -9,12 +9,12 @@
     APSConnection *_apsConnection;
     NSData *_cachedPushToken;
     int _cachedStatus;
-    BOOL _fastUserSwitched;
 }
 
 - (void)_acceptIncomingPushes;
 - (void)_handleAcceptPush:(id)arg1;
 - (void)_handleCancelPush:(id)arg1;
+- (void)_handleDevicesUpdatedPush:(id)arg1;
 - (void)_handleEmailConfirmedPush:(id)arg1;
 - (void)_handleGenericCommandPush:(id)arg1;
 - (void)_handleGenericDataPush:(id)arg1;
@@ -25,10 +25,12 @@
 - (void)_handleIncomingTextMessage:(id)arg1;
 - (void)_handleInitatePush:(id)arg1;
 - (void)_handlePendingMessagePush:(id)arg1;
+- (void)_handleProfileHandlesUpdatedPush:(id)arg1;
 - (void)_handleRejectPush:(id)arg1;
 - (void)_handleRelayCancelPush:(id)arg1;
 - (void)_handleRelayInitatePush:(id)arg1;
 - (void)_handleRelayUpdatePush:(id)arg1;
+- (void)_handleReloadBagPush:(id)arg1;
 - (void)_handleReregisterPush:(id)arg1;
 - (void)_handleSendPush:(id)arg1;
 - (void)_ignoreIncomingPushes;
@@ -45,8 +47,6 @@
 - (id)pushToken;
 - (void)requestKeepAlive;
 - (void)setRegistered:(BOOL)arg1;
-- (void)systemDidFastUserSwitchIn;
-- (void)systemDidFastUserSwitchOut;
 - (void)updateTopics;
 
 @end

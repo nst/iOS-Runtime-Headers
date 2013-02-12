@@ -14,7 +14,5 @@
 - (id)init;
 - (BOOL)isActivityAvailable;
 - (void)setActivityHandler:(id)arg1;
-- (void)startWatchdogCheckins;
-- (void)stopWatchdogCheckins;
 
 @end

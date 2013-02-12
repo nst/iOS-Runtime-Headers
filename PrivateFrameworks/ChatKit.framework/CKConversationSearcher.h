@@ -2,29 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKConversationSearcherDelegate>, NSTimer, SPDaemonQueryToken, SPSearchResultDeserializer, UISearchBar, UISearchDisplayController;
+@class <CKConversationSearcherDelegate>, CKSpotlightQuery, NSArray, UISearchBar, UISearchDisplayController;
 
-@interface CKConversationSearcher : NSObject <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, SPDaemonQueryDelegate> {
-    struct _CKSpotlightSearchResultList { 
-        unsigned int length; 
-        unsigned int capacity; 
-        struct _CKSpotlightSearchResult {} *array; 
-    struct _CKSpotlightSearchResultList { 
-        unsigned int length; 
-        unsigned int capacity; 
-        struct _CKSpotlightSearchResult {} *array; 
+@interface CKConversationSearcher : NSObject <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
     BOOL _active;
-    } _allSearchResults;
+    CKSpotlightQuery *_currentQuery;
     <CKConversationSearcherDelegate> *_delegate;
-    SPSearchResultDeserializer *_deserializer;
-    unsigned int _deserializerIndex;
-    } _perConversationSearchResults;
-    SPDaemonQueryToken *_queryToken;
-    NSTimer *_resultProcessor;
     UISearchBar *_searchBar;
     UISearchDisplayController *_searchController;
     BOOL _shouldDisplayNoResults;
     BOOL _showingSearchResults;
+    NSArray *_sortedSearchResults;
 }
 
 @property(getter=isActive,readonly) BOOL active;
@@ -32,7 +20,6 @@
 @property(getter=isShowingSearchResults,readonly) BOOL showingSearchResults;
 
 - (void)_cancel;
-- (void)_processSearchResults;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (BOOL)isActive;
@@ -42,9 +29,6 @@
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;
 - (id)searchController;
-- (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
-- (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
-- (void)searchDaemonQueryCompleted:(id)arg1;
 - (void)searchDisplayController:(id)arg1 didHideSearchResultsTableView:(id)arg2;
 - (void)searchDisplayController:(id)arg1 didShowSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;

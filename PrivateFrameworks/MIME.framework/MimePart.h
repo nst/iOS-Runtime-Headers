@@ -96,6 +96,7 @@
 - (BOOL)hasContents;
 - (id)init;
 - (BOOL)isAttachment;
+- (BOOL)isGenerated;
 - (BOOL)isHTML;
 - (BOOL)isReadableText;
 - (BOOL)isRich;
@@ -109,6 +110,7 @@
 - (id)parentPart;
 - (BOOL)parseIMAPPropertyList:(id)arg1;
 - (BOOL)parseMimeBody;
+- (BOOL)parseMimeBodyDownloadIfNecessary:(BOOL)arg1;
 - (id)partNumber;
 - (id)preservedHeaderValueForKey:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
@@ -120,6 +122,7 @@
 - (void)setContentTransferEncoding:(id)arg1;
 - (void)setDisposition:(id)arg1;
 - (void)setDispositionParameter:(id)arg1 forKey:(id)arg2;
+- (void)setIsGenerated:(BOOL)arg1;
 - (void)setLanguages:(id)arg1;
 - (void)setMimeBody:(id)arg1;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -129,7 +132,7 @@
 - (BOOL)shouldConsiderInlineOverridingExchangeServer;
 - (id)signedData;
 - (id)startPart;
-- (void)storeData:(id)arg1 inMessage:(id)arg2 isComplete:(BOOL)arg3;
+- (id)storeData:(id)arg1 inMessage:(id)arg2 isComplete:(BOOL)arg3;
 - (id)subpartAtIndex:(int)arg1;
 - (id)subparts;
 - (id)subtype;

@@ -13,13 +13,13 @@
 + (void)_appWillActivate;
 + (void)_appWillDeactivate;
 + (void)_synchronizeStoresForced:(BOOL)arg1;
++ (id)additionalStoreWithIdentifier:(id)arg1;
 + (id)defaultStore;
 
 - (void)_adjustTimer:(id)arg1;
 - (void)_adjustTimerForAutosync;
 - (void)_configurationDidChange;
 - (BOOL)_hasPendingSynchronize;
-- (id)_initWithDomain:(id)arg1;
 - (void)_pleaseSynchronize:(id)arg1;
 - (BOOL)_postDidChangeNotificationExternalChanges:(id)arg1 sourceChangeCount:(int)arg2;
 - (void)_printDebugDescription;
@@ -32,9 +32,12 @@
 - (void)_sourceDidChange:(id)arg1;
 - (int)_storeChangeFromSourceChange:(int)arg1;
 - (void)_syncConcurrently;
-- (BOOL)_synchronizeForced:(BOOL)arg1 notificationQueue:(struct dispatch_queue_s { }*)arg2;
+- (void)_syncConcurrentlyForced:(BOOL)arg1;
+- (BOOL)_synchronizeForced:(BOOL)arg1 notificationQueue:(id)arg2;
 - (BOOL)_synchronizeForced:(BOOL)arg1;
 - (void)_unregisterFromDaemon;
+- (void)_useSourceAsyncWithBlock:(id)arg1;
+- (void)_useSourceSyncWithBlock:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
 - (id)dataForKey:(id)arg1;
@@ -44,6 +47,8 @@
 - (double)doubleForKey:(id)arg1;
 - (void)finalize;
 - (id)init;
+- (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2 additionalStore:(BOOL)arg3;
+- (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (long long)longLongForKey:(id)arg1;
 - (unsigned int)maximumDataLengthPerKey;

@@ -31,6 +31,7 @@
 + (id)baselineStoreURLForUbiquityName:(id)arg1 andUbiquityLogURL:(id)arg2;
 + (BOOL)isBaselineRootURL:(id)arg1;
 + (id)metadataForStoreWithName:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)storeMetadatasWithName:(id)arg1 inManagedObjectContext:(id)arg2;
 
 - (id)createKnowledgeVectorForBaseline;
 - (id)createPeerRangesForBaselineWithLocalPeerID:(id)arg1;
@@ -43,6 +44,7 @@
 - (id)storeOptions;
 - (id)ubiquityRootLocation;
 - (id)ubiquityRootURL;
+- (void)updatePeerStatesToMatchKnowledgeVector:(id)arg1;
 - (void)updateWithStore:(id)arg1;
 
 @end

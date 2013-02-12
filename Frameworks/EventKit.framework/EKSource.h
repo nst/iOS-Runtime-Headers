@@ -15,13 +15,17 @@
 - (id)_persistentItem;
 - (id)allCalendars;
 - (id)calendars;
+- (id)calendarsForEntityType:(unsigned int)arg1;
 - (BOOL)commit:(id*)arg1;
 - (id)constraints;
 - (id)defaultAlarmOffset;
 - (id)description;
+- (int)displayOrderForNewCalendar;
 - (id)externalID;
 - (id)init;
 - (BOOL)isEnabled;
+- (BOOL)isFacebookSource;
+- (id)readWriteCalendarsForEntityType:(unsigned int)arg1;
 - (BOOL)remove:(id*)arg1;
 - (void)setDefaultAlarmOffset:(id)arg1;
 - (id)sourceIdentifier;

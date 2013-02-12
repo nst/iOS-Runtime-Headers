@@ -3,15 +3,48 @@
  */
 
 @interface PLBouncingView : UIImageView {
+    struct CGSize { 
+        float width; 
+        float height; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _animationEndFrame;
+    } _animationLandFrame;
+    } _captureDimensions;
     int _captureOrientation;
     BOOL _isFlipped;
 }
 
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } animationEndFrame;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } animationLandFrame;
+@property struct CGSize { float x1; float x2; } captureDimensions;
 @property int captureOrientation;
 @property BOOL isFlipped;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })animationEndFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })animationLandFrame;
+- (struct CGSize { float x1; float x2; })captureDimensions;
 - (int)captureOrientation;
 - (BOOL)isFlipped;
+- (void)setAnimationEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAnimationLandFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCaptureDimensions:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCaptureOrientation:(int)arg1;
 - (void)setIsFlipped:(BOOL)arg1;
 

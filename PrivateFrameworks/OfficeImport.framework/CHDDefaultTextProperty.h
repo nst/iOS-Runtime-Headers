@@ -27,7 +27,7 @@
 - (bool)isShowPercentageLabel;
 - (bool)isShowSeriesLabel;
 - (bool)isShowValueLabel;
-- (unsigned int)key;
+- (int)key;
 - (int)labelPosition;
 - (id)runs;
 - (void)setContentFormat:(id)arg1;

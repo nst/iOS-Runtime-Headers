@@ -12,44 +12,41 @@
 @property(readonly) int clientLeft;
 @property(readonly) int clientTop;
 @property(readonly) int clientWidth;
-@property(retain,readonly) DOMElement * firstElementChild;
-@property(copy,readonly) NSString * innerText;
-@property(retain,readonly) DOMElement * lastElementChild;
-@property(retain,readonly) DOMElement * nextElementSibling;
+@property(readonly) DOMElement * firstElementChild;
+@property(readonly) NSString * innerText;
+@property(readonly) DOMElement * lastElementChild;
+@property(readonly) DOMElement * mf_containingQuoteBlockElement;
+@property(readonly) BOOL mf_isContainedInQuoteBlock;
+@property(readonly) BOOL mf_isContainedInTable;
+@property(readonly) DOMElement * nextElementSibling;
 @property(readonly) int offsetHeight;
 @property(readonly) int offsetLeft;
-@property(retain,readonly) DOMElement * offsetParent;
+@property(readonly) DOMElement * offsetParent;
 @property(readonly) int offsetTop;
 @property(readonly) int offsetWidth;
-@property(retain,readonly) DOMElement * previousElementSibling;
+@property(readonly) DOMElement * previousElementSibling;
 @property(readonly) int scrollHeight;
 @property int scrollLeft;
 @property int scrollTop;
 @property(readonly) int scrollWidth;
-@property(retain,readonly) DOMCSSStyleDeclaration * style;
-@property(copy,readonly) NSString * tagName;
+@property(readonly) DOMCSSStyleDeclaration * style;
+@property(readonly) NSString * tagName;
 
 + (id)_DOMElementFromJSContext:(struct OpaqueJSContext { }*)arg1 value:(struct OpaqueJSValue { }*)arg2;
 + (BOOL)isRichTextStyle:(id)arg1;
 
-- (struct OpaqueJSValue { }*)_ensureShadowRoot:(struct OpaqueJSContext { }*)arg1;
 - (struct __GSFont { }*)_font;
 - (id)_getURLAttribute:(id)arg1;
 - (id)_markerTextForListItem;
-- (void)_removeShadowRoot;
-- (id)_shadowPseudoId;
-- (struct OpaqueJSValue { }*)_shadowRoot:(struct OpaqueJSContext { }*)arg1;
 - (void)blur;
 - (unsigned int)childElementCount;
 - (int)clientHeight;
 - (int)clientLeft;
 - (int)clientTop;
 - (int)clientWidth;
-- (BOOL)contains:(id)arg1;
 - (BOOL)exceedsStructuralComplexity:(int)arg1;
 - (id)firstElementChild;
 - (void)focus;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)getAttribute:(id)arg1;
 - (id)getAttributeNS:(id)arg1 :(id)arg2;
 - (id)getAttributeNS:(id)arg1 localName:(id)arg2;
@@ -73,6 +70,10 @@
 - (BOOL)isRichTextElement;
 - (BOOL)isRichTextElementType;
 - (id)lastElementChild;
+- (id)mf_containingQuoteBlockElement;
+- (BOOL)mf_isContainedInAnyElementInSet:(id)arg1;
+- (BOOL)mf_isContainedInQuoteBlock;
+- (BOOL)mf_isContainedInTable;
 - (int)mf_quoteLevelDelta;
 - (void)mf_stripCSSStyle;
 - (id)nextElementSibling;
@@ -112,5 +113,6 @@
 - (id)tapHighlightColor;
 - (BOOL)touchCalloutEnabled;
 - (BOOL)webkitMatchesSelector:(id)arg1;
+- (id)webkitRegionOverflow;
 
 @end

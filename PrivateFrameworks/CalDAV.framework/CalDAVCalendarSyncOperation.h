@@ -34,5 +34,7 @@
 - (BOOL)setLocalETag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
 - (BOOL)setLocalScheduleTag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
 - (void)syncCalendar;
+- (BOOL)syncDeleteTask:(id)arg1 error:(id)arg2;
+- (BOOL)syncPutTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
 
 @end

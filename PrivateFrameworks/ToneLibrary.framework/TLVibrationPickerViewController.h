@@ -5,12 +5,12 @@
 @class <TLVibrationPickerViewControllerDelegate>, NSArray, NSIndexPath, NSString, NSTimer, TLVibrationManager, TLVibratorController;
 
 @interface TLVibrationPickerViewController : UITableViewController <TLVibrationPickerTableViewCellDelegate, TLVibrationRecorderViewControllerDelegate> {
+    int _alertType;
     BOOL _allowsDeletingCurrentSystemVibration;
     BOOL _canEnterEditingMode;
     <TLVibrationPickerViewControllerDelegate> *_delegate;
     BOOL _isCallingParentViewController;
     NSString *_noneString;
-    unsigned int _numberOfPrecedingSections;
     NSIndexPath *_selectedVibrationIndexPath;
     BOOL _showsDefault;
     BOOL _showsEditButtonAtRightSideOfCurrentNavigationController;
@@ -21,16 +21,13 @@
     NSArray *_sortedUserGeneratedVibrationIdentifiers;
     NSArray *_sortedVibrationIdentifiers;
     BOOL _swipeToDeleteMode;
-    BOOL _useVerboseSectionTitles;
     BOOL _vibrating;
     TLVibrationManager *_vibrationManager;
     NSTimer *_vibrationShouldStopTimer;
-    unsigned int _vibrationType;
     TLVibratorController *_vibratorController;
     BOOL _viewHasAppearedAtLeastOnce;
 }
 
-@property(setter=_setNumberOfPrecedingSections:) unsigned int _numberOfPrecedingSections;
 @property(readonly) int _sectionForDefaultGroup;
 @property(readonly) int _sectionForNoneGroup;
 @property(readonly) int _sectionForSystemGroup;
@@ -39,9 +36,7 @@
 @property(readonly) BOOL _showsOnlyEditableSections;
 @property(readonly) NSArray * _sortedUserGeneratedVibrationIdentifiers;
 @property(readonly) NSArray * _sortedVibrationIdentifiers;
-@property(setter=_setUseVerboseSectionTitles:) BOOL _useVerboseSectionTitles;
 @property BOOL allowsDeletingCurrentSystemVibration;
-@property(setter=setAVController:,retain) id avController;
 @property BOOL canEnterEditingMode;
 @property(readonly) float contentHeight;
 @property <TLVibrationPickerViewControllerDelegate> * delegate;
@@ -56,19 +51,16 @@
 - (void)_handleUserGeneratedVibrationsDidChangeNotification;
 - (id)_identifierOfVibrationAtIndexPath:(id)arg1;
 - (id)_indexPathForVibrationWithIdentifier:(id)arg1;
-- (int)_nonAdjustedNumberOfSectionsInTableView:(id)arg1;
+- (id)_navigationItem;
 - (id)_nonEditingIndexPathFromActualIndexPath:(id)arg1;
-- (unsigned int)_numberOfPrecedingSections;
 - (void)_processSelectionOfVibrationWithIdentifier:(id)arg1;
 - (int)_sectionForDefaultGroup;
 - (int)_sectionForNoneGroup;
 - (int)_sectionForSystemGroup;
 - (int)_sectionForUserGeneratedGroup;
 - (id)_selectedVibrationIndexPath;
-- (void)_setNumberOfPrecedingSections:(unsigned int)arg1;
 - (void)_setSelectedVibrationIdentifier:(id)arg1 processSelectionOfVibrationIdentifier:(BOOL)arg2;
 - (void)_setSelectedVibrationIndexPath:(id)arg1;
-- (void)_setUseVerboseSectionTitles:(BOOL)arg1;
 - (BOOL)_showsOnlyEditableSections;
 - (id)_sortedArrayWithVibrationIdentifiers:(id)arg1 allowsDuplicateVibrationNames:(BOOL)arg2;
 - (id)_sortedUserGeneratedVibrationIdentifiers;
@@ -77,20 +69,18 @@
 - (void)_updateEditButtonItem;
 - (void)_updateEditButtonItemWithAnimation:(BOOL)arg1;
 - (void)_updateSelectionStyleForCell:(id)arg1 indexPath:(id)arg2;
-- (BOOL)_useVerboseSectionTitles;
 - (BOOL)allowsDeletingCurrentSystemVibration;
-- (id)avController;
 - (BOOL)canEnterEditingMode;
 - (float)contentHeight;
 - (void)dealloc;
 - (id)delegate;
 - (void)finishedWithPicker;
+- (id)initWithAlertType:(int)arg1 showsDefault:(BOOL)arg2 showsUserGenerated:(BOOL)arg3 showsNone:(BOOL)arg4;
 - (id)initWithStyle:(int)arg1;
-- (id)initWithVibrationType:(unsigned int)arg1 avController:(id)arg2 showsDefault:(BOOL)arg3 showsUserGenerated:(BOOL)arg4 showsNone:(BOOL)arg5;
+- (id)initWithVibrationType:(int)arg1 avController:(id)arg2 showsDefault:(BOOL)arg3 showsUserGenerated:(BOOL)arg4 showsNone:(BOOL)arg5;
 - (id)noneString;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)selectedVibrationIdentifier;
-- (void)setAVController:(id)arg1;
 - (void)setAllowsDeletingCurrentSystemVibration:(BOOL)arg1;
 - (void)setCanEnterEditingMode:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;

@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVPropertyStorage : NSObject {
     NSMutableDictionary *_propertyStorage;
-    struct dispatch_queue_s { } *_storageAccessWorkQueue;
+    NSObject<OS_dispatch_queue> *_storageAccessWorkQueue;
 }
 
 - (void)dealloc;

@@ -34,6 +34,7 @@
 @property(retain) NSString * summary;
 @property(retain) NSString * title;
 
+- (BOOL)containsAttachments;
 - (id)content;
 - (id)contentAsPlainText;
 - (id)contentAsPlainTextPreservingNewlines;

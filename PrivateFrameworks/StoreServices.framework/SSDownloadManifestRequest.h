@@ -4,7 +4,7 @@
 
 @class <SSDownloadManifestRequestDelegate>, NSURLRequest;
 
-@interface SSDownloadManifestRequest : SSRequest <SSCoding> {
+@interface SSDownloadManifestRequest : SSRequest <SSXPCCoding> {
     int _manifestFormat;
     BOOL _shouldHideUserPrompts;
     NSURLRequest *_urlRequest;
@@ -16,19 +16,17 @@
 @property BOOL shouldHideUserPrompts;
 
 - (id)URLRequest;
-- (void)_sendResponseToDelegate:(id)arg1;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
+- (id)initWithXPCEncoding:(id)arg1;
 - (int)manifestFormat;
 - (void)setManifestFormat:(int)arg1;
 - (void)setShouldHideUserPrompts:(BOOL)arg1;
 - (BOOL)shouldHideUserPrompts;
+- (BOOL)start;
+- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithManifestResponseBlock:(id)arg1;
 
 @end

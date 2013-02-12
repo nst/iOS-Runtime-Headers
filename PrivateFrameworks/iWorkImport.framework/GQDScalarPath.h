@@ -11,6 +11,7 @@
     int mType;
 }
 
+- (id).cxx_construct;
 - (struct CGPath { }*)createBezierPath;
 - (BOOL)isRect;
 - (BOOL)isRectangular;

@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSMutableData, NSURLConnection;
+@class IMRemoteURLConnection;
 
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
-    NSMutableData *_currentResponseData;
-    int _currentStatusCode;
-    NSURLConnection *_currentURLConnection;
+    IMRemoteURLConnection *_remoteConnection;
 }
 
 - (void)_cleanupURLConnection;
@@ -21,10 +19,6 @@
 - (id)_urlRequestWithURL:(id)arg1 andData:(id)arg2 message:(id)arg3;
 - (BOOL)busy;
 - (void)cancelMessage:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;

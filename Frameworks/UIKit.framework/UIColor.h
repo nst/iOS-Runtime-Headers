@@ -4,7 +4,7 @@
 
 @class CIColor, NSString;
 
-@interface UIColor : NSObject <NSCoding> {
+@interface UIColor : NSObject <NSCoding, NSCopying> {
     NSString *_systemColorName;
 }
 
@@ -12,10 +12,13 @@
 @property(readonly) CIColor * CIColor;
 @property(getter=_systemColorName,setter=_setSystemColorName:,retain) NSString * systemColorName;
 
++ (id)__halfTransparentBlackColor;
++ (id)__halfTransparentWhiteColor;
++ (id)_dimmingViewColor;
 + (id)_gkColorFromRGBAHexString:(id)arg1;
-+ (id)_iAd_colorWithRGBA:(unsigned int)arg1;
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
++ (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
 + (id)_remoteUI_colorWithString:(id)arg1;
 + (id)_systemColorForColor:(id)arg1 withName:(id)arg2;
 + (id)_systemColorWithName:(id)arg1;
@@ -24,6 +27,8 @@
 + (id)blackColor;
 + (id)blueColor;
 + (id)brownColor;
++ (id)checkerboardColorWithColor:(id)arg1 andColor:(id)arg2 squareSize:(struct CGSize { float x1; float x2; })arg3;
++ (id)classFallbacksForKeyedArchiver;
 + (id)clearColor;
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithCIColor:(id)arg1;
@@ -31,11 +36,13 @@
 + (id)colorWithPatternImage:(id)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithStyleString:(id)arg1;
++ (id)colorWithWLColor:(id)arg1;
 + (id)colorWithWhite:(float)arg1 alpha:(float)arg2;
 + (id)cyanColor;
 + (id)darkGrayColor;
 + (id)darkTextColor;
 + (id)disabledTextColor;
++ (id)grayCheckerboardColor;
 + (id)grayColor;
 + (id)greenColor;
 + (id)groupTableViewBackgroundColor;
@@ -91,11 +98,14 @@
 + (id)tableSeparatorDarkColor;
 + (id)tableSeparatorLightColor;
 + (id)tableShadowColor;
++ (id)tableViewCellDarkBlueTextColor;
++ (id)tangierScrollViewTexturedBackgroundColor;
 + (id)textFieldAtomBlueColor;
 + (id)textFieldAtomPurpleColor;
 + (id)texturedTranscriptBackgroundColor;
 + (id)tileBackgroundColor;
 + (id)tileGridBackgroundColor;
++ (id)transparentGrayCheckerboardColor;
 + (id)underPageBackgroundColor;
 + (id)viewFlipsideBackgroundColor;
 + (id)whiteColor;
@@ -103,8 +113,10 @@
 
 - (struct CGColor { }*)CGColor;
 - (id)CIColor;
+- (BOOL)_getWhite:(float*)arg1 alpha:(float*)arg2;
 - (void)_setSystemColorName:(id)arg1;
 - (id)_systemColorName;
+- (BOOL)_vk_getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (float)alphaComponent;
 - (float)blueComponent;
 - (float)brightnessComponent;
@@ -141,7 +153,6 @@
 - (void)setFill;
 - (void)setStroke;
 - (id)soverWithColor:(id)arg1;
-- (id)styleString;
 - (id)styleString;
 
 @end

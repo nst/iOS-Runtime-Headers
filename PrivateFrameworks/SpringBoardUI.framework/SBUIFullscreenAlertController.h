@@ -16,6 +16,7 @@
 @property BOOL shouldAnimateIn;
 
 - (id)activationContext;
+- (BOOL)allowStackingOfAlert:(id)arg1;
 - (BOOL)allowSuspension;
 - (void)animateViewOut;
 - (id)animationStartTime;
@@ -26,6 +27,7 @@
 - (BOOL)displaysAboveStatusBar;
 - (void)finishedAnimatingIn;
 - (void)finishedAnimatingOut;
+- (void)handleAutoLock;
 - (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;
 - (BOOL)handleLockButtonPressed;
 - (BOOL)handleMenuButtonTap;

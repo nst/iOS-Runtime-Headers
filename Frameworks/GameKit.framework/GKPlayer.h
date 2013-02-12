@@ -7,20 +7,17 @@
 @interface GKPlayer : NSObject {
     NSArray *_friends;
     GKPlayerInternal *_internal;
-    int _inviteStatus;
     GKGame *_lastPlayedGame;
 }
 
 @property(copy) NSString * alias;
 @property(readonly) NSString * cacheKey;
 @property(readonly) unsigned int detailPieces;
-@property(readonly) NSString * email;
-@property(readonly) NSArray * emails;
+@property(readonly) NSString * displayName;
 @property(readonly) NSString * firstName;
 @property(retain) NSArray * friends;
 @property(readonly) BOOL hasPhoto;
 @property(retain) GKPlayerInternal * internal;
-@property int inviteStatus;
 @property(readonly) BOOL isFriend;
 @property(readonly) NSString * lastName;
 @property(readonly) NSDate * lastPlayedDate;
@@ -32,37 +29,42 @@
 @property(copy) NSString * status;
 @property(readonly) unsigned int validPieces;
 
++ (void)acceptFriendRequestsFromPlayerIDs:(id)arg1 withHandles:(id)arg2 handler:(id)arg3;
 + (id)anonymousPlayer;
++ (id)cacheKeyForPlayerID:(id)arg1;
++ (void)declineFriendRequestsFromPlayerIDs:(id)arg1 handler:(id)arg2;
++ (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (void)loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadPlayersForIdentifiers:(id)arg1 withPieces:(unsigned int)arg2 withCompletionHandler:(id)arg3;
-+ (id)sharedCache;
 + (int)sizeForPhotoSize:(int)arg1;
 + (id)unknownPlayer;
 
 - (void)_postChangeNotification;
-- (void)acceptFriendRequestForHandle:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)acceptFriendRequestWithCompletionHandler:(id)arg1;
 - (id)attributedDisplayName;
+- (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1 withFont:(id)arg2;
 - (id)attributedDisplayNameWithIdentifiableName:(BOOL)arg1;
 - (id)attributedIdentifiableName:(id)arg1 withFont:(id)arg2 foreColor:(id)arg3 shadowColor:(id)arg4;
 - (id)cacheKey;
 - (void)dealloc;
-- (void)declineFriendRequest:(id)arg1;
+- (void)declineFriendRequestWithCompletionHandler:(id)arg1;
 - (id)description;
 - (unsigned int)detailPieces;
 - (id)displayName;
 - (id)displayNameWithIdentifiableName:(BOOL)arg1 quoteAlias:(BOOL)arg2;
 - (id)email;
 - (id)emails;
+- (void)encodeWithCoder:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)friends;
 - (BOOL)hasPhoto;
 - (unsigned int)hash;
 - (id)identifiableNameIncludingSurname:(BOOL)arg1;
+- (id)imageURLForPhotoSizeList;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
-- (int)inviteStatus;
 - (BOOL)isAnonymousPlayer;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFriend;
@@ -83,10 +85,8 @@
 - (void)postChangeNotification;
 - (id)quotedAlias:(id)arg1 withFont:(id)arg2 foreColor:(id)arg3 shadowColor:(id)arg4;
 - (BOOL)respondsToSelector:(SEL)arg1;
-- (void)sendFriendRequestWithMessage:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setFriends:(id)arg1;
 - (void)setInternal:(id)arg1;
-- (void)setInviteStatus:(int)arg1;
 - (void)setLastPlayedGame:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)sortName;

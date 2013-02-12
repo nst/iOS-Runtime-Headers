@@ -11,11 +11,12 @@
 }
 
 @property(readonly) CBUUID * UUID;
-@property(readonly) CBCharacteristic * characteristic;
+@property CBCharacteristic * characteristic;
 @property(retain) id value;
 
 - (id)UUID;
 - (id)characteristic;
+- (void)setCharacteristic:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 

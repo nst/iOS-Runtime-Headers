@@ -90,6 +90,7 @@
 
 @property int alertViewStyle;
 @property int cancelButtonIndex;
+@property(copy) id complete;
 @property id delegate;
 @property(readonly) int firstOtherButtonIndex;
 @property(copy) NSString * message;
@@ -97,8 +98,14 @@
 @property(copy) NSString * title;
 @property(getter=isVisible,readonly) BOOL visible;
 
++ (id)_alertViewForSessionWithRemoteViewController:(id)arg1;
++ (id)_alertViewForWindow:(id)arg1;
 + (id)_alertWindow;
 + (id)_popupAlertBackground:(BOOL)arg1;
++ (id)_remoteAlertViewWithBlock:(id)arg1;
++ (void)_setSpringBoardAlertDisplayingOverApplicationAlert:(BOOL)arg1;
++ (BOOL)_springBoardAlertDisplayingOverApplicationAlert;
++ (id)alertViewWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 otherButtonTitles:(id)arg4;
 + (void)applyTransformToAllAlerts:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (struct CGSize { float x1; float x2; })minimumSize;
 
@@ -156,7 +163,8 @@
 - (float)_maxHeight;
 - (BOOL)_needsKeyboard;
 - (void)_nukeOldTextFields;
-- (void)_performPopoutAnimationAnimated:(BOOL)arg1;
+- (void)_performPopoutAnimationAnimated:(BOOL)arg1 coveredBySpringBoardAlert:(BOOL)arg2;
+- (void)_performPopup:(BOOL)arg1 animationType:(int)arg2 revealedBySpringBoardAlert:(BOOL)arg3;
 - (void)_performPopup:(BOOL)arg1 animationType:(int)arg2;
 - (void)_performPopup:(BOOL)arg1;
 - (void)_popoutAnimationDidStop:(id)arg1 finished:(id)arg2;
@@ -176,6 +184,7 @@
 - (void)_setupKBWatcher;
 - (void)_setupTitleStyle;
 - (BOOL)_shouldOrderInAutomaticKeyboard;
+- (BOOL)_shouldUseUndoStyle;
 - (void)_showKeyboard:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_showManualKBIfNecessary;
 - (void)_slideSheetOut:(BOOL)arg1;
@@ -194,6 +203,7 @@
 - (int)addButtonWithTitle:(id)arg1;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (int)alertSheetStyle;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (int)alertViewStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
 - (BOOL)becomeFirstResponder;
@@ -207,6 +217,7 @@
 - (id)buttons;
 - (BOOL)canBecomeFirstResponder;
 - (int)cancelButtonIndex;
+- (id)complete;
 - (id)context;
 - (void)dealloc;
 - (id)defaultButton;
@@ -228,6 +239,7 @@
 - (BOOL)isVisible;
 - (id)keyboard;
 - (void)layout;
+- (void)layoutAnimated:(BOOL)arg1 withDuration:(double)arg2;
 - (void)layoutAnimated:(BOOL)arg1;
 - (id)message;
 - (int)numberOfButtons;
@@ -253,6 +265,7 @@
 - (void)setBodyText:(id)arg1;
 - (void)setBodyTextMaxLineCount:(int)arg1;
 - (void)setCancelButtonIndex:(int)arg1;
+- (void)setComplete:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDefaultButton:(id)arg1;
 - (void)setDefaultButtonIndex:(int)arg1;
@@ -278,7 +291,6 @@
 - (BOOL)showsOverSpringBoardAlerts;
 - (id)subtitle;
 - (int)suspendTag;
-- (id)table;
 - (BOOL)tableShouldShowMinimumContent;
 - (id)tableView;
 - (id)taglineTextLabel;

@@ -2,18 +2,19 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CALayer;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class count;
 
 @interface CALayerArray : NSArray {
-    struct _CALayerArrayIvars { 
-        CALayer **layers; 
-        unsigned int count; 
-        unsigned int capacity; 
-        unsigned long mutations; 
-        BOOL retained; 
+    /* Warning: unhandled struct encoding: '{_CALayerArrayIvars="layers"^@"count"I"capacity"I"mutations"L"retained"c}' */ struct _CALayerArrayIvars { 
+        count **layers; 
     } _ivars;
 }
 
+- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;

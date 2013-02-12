@@ -7,7 +7,8 @@
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (Class)classForCoder:(id)arg1;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;

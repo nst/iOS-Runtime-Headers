@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
  */
 
-@class NSArray;
-
 @interface ASSettingsAccountController : DASettingsAccountController {
     unsigned int _diagsVisibleValue;
-    NSArray *_specifiersToInsert;
 }
 
 - (id)_defaultAccountDescription;
+- (void)_faultInPostAutoDiscoverSpecifiers;
 - (BOOL)_isHotmailAccount;
 - (void)_tryUpdatingCompositeValueWithId:(id)arg1 fromValue:(id)arg2 forKey:(id)arg3;
 - (void)account:(id)arg1 isValid:(BOOL)arg2 validationError:(id)arg3;
@@ -19,7 +17,6 @@
 - (id)accountSpecifiers;
 - (BOOL)autodiscoverAccount;
 - (id)autodiscoverySpecifiers;
-- (void)dealloc;
 - (void)finishedAccountSetup;
 - (BOOL)haveEnoughValues;
 - (id)localizedAccountSetupTitleString;

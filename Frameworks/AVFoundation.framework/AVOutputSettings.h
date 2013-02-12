@@ -8,8 +8,8 @@
     NSDictionary *_outputSettingsDictionary;
 }
 
+@property(getter=isCodecAvailableOnCurrentSystem,readonly) BOOL codecAvailableOnCurrentSystem;
 @property(readonly) NSSet * compatibleMediaTypes;
-@property(getter=isDictionaryFullyFormed,readonly) BOOL dictionaryFullyFormed;
 @property(readonly) NSDictionary * outputSettingsDictionary;
 @property(readonly) BOOL willYieldCompressedSamples;
 
@@ -21,13 +21,14 @@
 + (id)registeredOutputSettingsClasses;
 + (unsigned int)validateOutputSettingsDictionary:(id)arg1;
 
+- (BOOL)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
 - (id)compatibleMediaTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
-- (BOOL)isDictionaryFullyFormed;
+- (BOOL)isCodecAvailableOnCurrentSystem;
 - (id)outputSettingsDictionary;
 - (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 - (BOOL)willYieldCompressedSamples;

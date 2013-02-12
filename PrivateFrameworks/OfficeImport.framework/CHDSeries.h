@@ -25,6 +25,7 @@
 
 + (id)seriesWithChart:(id)arg1;
 
+- (unsigned int)categoryCount;
 - (id)categoryData;
 - (id)chart;
 - (id)chartType;
@@ -36,11 +37,13 @@
 - (id)errorBarXAxis;
 - (id)errorBarYAxis;
 - (id)graphicProperties;
+- (bool)hasErrorBars;
+- (bool)hasTrendlines;
 - (id)initWithChart:(id)arg1;
 - (bool)isDateTimeFormattingFlag;
 - (bool)isEmpty;
 - (bool)isHidden;
-- (unsigned int)key;
+- (int)key;
 - (id)lastCachedName;
 - (id)name;
 - (int)order;
@@ -58,11 +61,11 @@
 - (void)setName:(id)arg1;
 - (void)setOrder:(int)arg1;
 - (void)setStyleIndex:(int)arg1;
-- (void)setTrendlinesCollection:(id)arg1;
+- (void)setTrendlineCollection:(id)arg1;
 - (void)setValueData:(id)arg1;
 - (id)shallowCopy;
 - (int)styleIndex;
-- (id)trendlinesCollection;
+- (id)trendlineCollection;
 - (id)valueData;
 
 @end

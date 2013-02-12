@@ -18,7 +18,7 @@
 }
 
 @property NSObject<CNFCallViewControllerDelegate> * delegate;
-@property(retain,readonly) CNFAudioDeviceController * deviceController;
+@property(readonly) CNFAudioDeviceController * deviceController;
 @property(retain) CNFDisplayController * displayController;
 @property BOOL initialMuteState;
 @property BOOL isOutgoingInvitation;
@@ -66,7 +66,6 @@
 - (id)deviceController;
 - (void)didFinishLocking;
 - (id)displayController;
-- (void)hangUpConferenceOnScreenLock;
 - (id)initWithDelegate:(id)arg1;
 - (BOOL)initialMuteState;
 - (BOOL)isInPhoneCall;
@@ -100,6 +99,7 @@
 - (void)updateViewControllerForOrientation:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

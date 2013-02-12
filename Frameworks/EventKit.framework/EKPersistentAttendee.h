@@ -11,15 +11,16 @@
 @property int pendingStatus;
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
-+ (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
++ (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
++ (id)defaultPropertiesToLoad;
 + (id)relations;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)entityType;
+- (id)initWithAddress:(id)arg1 name:(id)arg2;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
-- (id)initWithExternalID:(id)arg1 name:(id)arg2;
-- (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
+- (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
 - (id)owner;
 - (int)participantRole;
 - (int)participantStatus;

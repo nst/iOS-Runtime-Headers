@@ -4,7 +4,7 @@
 
 @class NSString, NSValue;
 
-@interface PDBuildMapKey : NSObject {
+@interface PDBuildMapKey : NSObject <NSCopying> {
     NSValue *mDrawableValue;
     NSString *mGroupId;
 }

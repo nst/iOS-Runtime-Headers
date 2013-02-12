@@ -16,7 +16,7 @@
 - (id)editorViewSmallFont;
 - (BOOL)labelPickerShouldPushCustomLabelCreator;
 - (id)membersHeaderBackgroundColor;
-- (BOOL)membersSearchBarScrolls;
+- (BOOL)membersSearchBarIsInTableHeader;
 - (id)personActionColor;
 - (id)personActionFont;
 - (float)personEditorFieldVerticalInset;

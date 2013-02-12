@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, PFUbiquityLocation, PFUbiquityStoreMetadata;
+@class NSManagedObjectModel, NSString, PFUbiquityLocation, PFUbiquityStoreMetadata;
 
 @interface PFUbiquityMigrationManager : NSObject {
     NSManagedObjectModel *_destinationModel;
+    NSString *_localPeerID;
     PFUbiquityLocation *_rootLocation;
     NSManagedObjectModel *_sourceModel;
     PFUbiquityStoreMetadata *_storeMetadata;
@@ -18,8 +19,9 @@
 
 - (void)dealloc;
 - (id)destinationModel;
-- (id)initWithDestinationModel:(id)arg1 storeMetadata:(id)arg2 ubiquityRootLocation:(id)arg3;
-- (BOOL)migrateUbiquitousContentForStoreName:(id)arg1 peerID:(id)arg2 error:(id*)arg3;
+- (id)initWithDestinationModel:(id)arg1 sourceModel:(id)arg2 ubiquityRootLocation:(id)arg3 localPeerID:(id)arg4;
+- (id)initWithDestinationModel:(id)arg1 storeMetadata:(id)arg2 ubiquityRootLocation:(id)arg3 localPeerID:(id)arg4;
+- (BOOL)migrateTransactionLogs:(BOOL)arg1 andBaselineIfNecessaryForStoreName:(id)arg2 peerID:(id)arg3 error:(id*)arg4;
 - (id)rootLocation;
 - (id)sourceModel;
 - (id)storeMetadata;

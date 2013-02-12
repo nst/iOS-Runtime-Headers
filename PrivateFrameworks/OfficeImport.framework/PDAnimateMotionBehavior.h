@@ -19,6 +19,7 @@
     } mRotationCenter;
 }
 
+- (id).cxx_construct;
 - (double)angle;
 - (void)dealloc;
 - (BOOL)hasAngle;

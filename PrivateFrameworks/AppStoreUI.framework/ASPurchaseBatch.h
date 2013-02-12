@@ -15,7 +15,6 @@
 - (id)_tooBigForNetworkErrorForError:(id)arg1 withCount:(int)arg2;
 - (id)copyFilteredItemsFromItems:(id)arg1;
 - (id)everythingFailedErrorForError:(id)arg1;
-- (id)init;
 - (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
 
 @end

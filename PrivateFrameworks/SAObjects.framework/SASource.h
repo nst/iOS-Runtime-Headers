@@ -10,7 +10,7 @@
 @property(copy) NSString * accountIdentifier;
 @property(copy) NSString * accountName;
 @property(copy) NSString * domainIdentifier;
-@property(retain) NSNumber * remote;
+@property(copy) NSNumber * remote;
 
 + (id)source;
 + (id)sourceWithDictionary:(id)arg1 context:(id)arg2;

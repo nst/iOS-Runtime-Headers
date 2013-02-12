@@ -9,7 +9,7 @@
 + (id)formula;
 + (id)messageForWarning:(int)arg1;
 
-- (BOOL)addArrayToken:(long)arg1;
+- (BOOL)addArrayWithCol:(int)arg1 andRow:(int)arg2;
 - (bool)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2 extendedDataCount:(unsigned int)arg3;
 - (char *)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2 numArgs:(int)arg3;
 - (char *)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2;
@@ -63,6 +63,6 @@
 - (id)warning;
 - (id)warningParameter;
 - (int)warningType;
-- (struct ChVector<XlPtg*> { struct XlPtg {} **x1; struct XlPtg {} **x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xlPtgs;
+- (struct ChVector<XlPtg *> { struct XlPtg {} **x1; struct XlPtg {} **x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xlPtgs;
 
 @end

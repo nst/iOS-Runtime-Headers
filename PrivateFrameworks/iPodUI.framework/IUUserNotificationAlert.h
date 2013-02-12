@@ -6,11 +6,11 @@
    See Warning(s) below.
  */
 
-@class NSString;
+@class NSObject<OS_dispatch_queue>, NSString;
 
 @interface IUUserNotificationAlert : NSObject {
     id _completionHandler;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     struct __CFDictionary { } *_notificationDictionary;
     struct __CFUserNotification { } *_userNotification;
 }

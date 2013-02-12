@@ -39,6 +39,7 @@
 @property <MSServerSideConfigProtocolDelegate> * delegate;
 @property(readonly) NSString * personID;
 
+- (void).cxx_destruct;
 - (void)_didFailAuthenticationWithError:(id)arg1;
 - (void)_didFinishWithResponse:(id)arg1 error:(id)arg2;
 - (void)abort;

@@ -8,7 +8,7 @@
     SFUCryptoKey *mCryptoKey;
     BOOL mDeleteFileWhenDone;
     long long mFileLength;
-    unsigned int mFileType;
+    unsigned long mFileType;
     BOOL mHasFileAttributes;
     NSString *mPath;
     long long mPlaintextDataLength;

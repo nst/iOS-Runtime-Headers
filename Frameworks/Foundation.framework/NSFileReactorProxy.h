@@ -6,22 +6,22 @@
    See Warning(s) below.
  */
 
-@class NSFileAccessNode;
+@class NSFileAccessNode, NSObject<OS_xpc_object>;
 
 @interface NSFileReactorProxy : NSObject {
-    struct _xpc_connection_s { } *_client;
+    NSObject<OS_xpc_object> *_client;
     NSFileAccessNode *_itemLocation;
     id _messageSender;
     id _reactorID;
 }
 
-- (struct _xpc_connection_s { }*)client;
+- (id)client;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndenting:(id)arg1;
 - (void)finalize;
 - (void)forwardUsingMessageSender:(id)arg1;
-- (id)initWithClient:(struct _xpc_connection_s { }*)arg1 reactorID:(id)arg2 messageSender:(id)arg3;
+- (id)initWithClient:(id)arg1 reactorID:(id)arg2 messageSender:(id)arg3;
 - (id)itemLocation;
 - (id)messageSender;
 - (id)reactorID;

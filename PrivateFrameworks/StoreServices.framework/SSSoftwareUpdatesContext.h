@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface SSSoftwareUpdatesContext : NSObject <SSCoding, NSCopying, NSMutableCopying> {
+@interface SSSoftwareUpdatesContext : NSObject <SSXPCCoding, NSCopying, NSMutableCopying> {
     NSString *_clientIdentifierHeader;
     BOOL _forced;
     NSArray *_softwareTypes;
@@ -15,12 +15,10 @@
 @property(readonly) NSArray * softwareTypes;
 
 - (id)clientIdentifierHeader;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isForced;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)softwareTypes;

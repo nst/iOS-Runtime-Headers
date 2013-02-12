@@ -7,7 +7,7 @@
 @interface SAAceView : AceObject <SAAceSerializable, SADeferredKeyObject> {
 }
 
-@property(retain) NSNumber * listenAfterSpeaking;
+@property(copy) NSNumber * listenAfterSpeaking;
 @property(copy) NSString * speakableText;
 @property(copy) NSString * viewId;
 

@@ -10,8 +10,6 @@
 @interface WBDocument : NSObject {
 }
 
-+ (void)addImageBullets:(id)arg1;
-+ (id)imageBulletParagraph:(id)arg1;
 + (id)readFrom:(id)arg1;
 + (void)readNoteSeparatorFrom:(id)arg1 type:(int)arg2 separator:(id)arg3;
 + (void)readProperties:(id)arg1 document:(id)arg2;

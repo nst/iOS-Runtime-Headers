@@ -14,8 +14,11 @@
     unsigned long imageDataFormatType;
     long long imageMaxDataSize;
     BOOL isCapturingPhoto;
+    float jpegQuality;
+    BOOL jpegQualitySpecified;
     NSDictionary *outputSettings;
     } previewImageSize;
+    BOOL rawCaptureEnabled;
     NSMutableArray *stillImageRequests;
     BOOL suspendsVideoProcessingDuringCapture;
 }

@@ -30,6 +30,8 @@
 - (void)setResponseSessionTokens:(id)arg1;
 - (void)setURI:(id)arg1;
 - (id)uri;
+- (BOOL)wantsBodySignature;
 - (BOOL)wantsHTTPGet;
+- (BOOL)wantsManagedRetries;
 
 @end

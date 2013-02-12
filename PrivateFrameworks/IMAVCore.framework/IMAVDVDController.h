@@ -8,13 +8,9 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_pauseDVD;
-- (BOOL)_playDVD;
-- (BOOL)allowsWeakReference;
 - (void)dealloc;
 - (id)init;
 - (void)pause;
 - (void)resume;
-- (BOOL)retainWeakReference;
 
 @end

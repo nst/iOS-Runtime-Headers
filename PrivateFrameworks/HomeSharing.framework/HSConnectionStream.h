@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface HSConnectionStream : NSObject {
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
     struct __CFReadStream { } *_readStream;
 }
 

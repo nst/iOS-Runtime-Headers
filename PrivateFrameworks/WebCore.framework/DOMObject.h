@@ -8,7 +8,7 @@
     struct DOMObjectInternal { } *_internal;
 }
 
-@property(retain,readonly) DOMStyleSheet * sheet;
+@property(readonly) DOMStyleSheet * sheet;
 
 - (oneway void)_webcore_releaseOnWebThread;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

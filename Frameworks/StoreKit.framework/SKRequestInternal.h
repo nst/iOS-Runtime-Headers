@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class <SKRequestDelegate>, NSString;
+@class <SKRequestDelegate>, SKPaymentQueueClient, SKXPCConnection;
 
 @interface SKRequestInternal : NSObject {
     int _backgroundTaskIdentifier;
+    SKPaymentQueueClient *_client;
+    SKXPCConnection *_connection;
     <SKRequestDelegate> *_delegate;
-    NSString *_identifier;
     int _state;
 }
 

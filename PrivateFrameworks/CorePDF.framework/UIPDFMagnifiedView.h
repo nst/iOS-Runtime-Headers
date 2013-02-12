@@ -34,7 +34,7 @@
 
 @property struct CGImage { }* image;
 @property unsigned int pageRotation;
-@property struct CGPoint { float x; float y; } touchPoint;
+@property struct CGPoint { float x1; float x2; } touchPoint;
 
 - (void)createGrabbers;
 - (void)dealloc;

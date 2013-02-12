@@ -7,7 +7,7 @@
 @interface SAFmfLocationSnippet : SAUISnippet {
 }
 
-@property(retain) NSNumber * atRequestedLocation;
+@property(copy) NSNumber * atRequestedLocation;
 @property(copy) NSArray * locations;
 @property(copy) NSString * proximity;
 @property(copy) NSURL * searchContext;

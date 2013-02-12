@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIBarButtonItem, UIImageView, UINavigationBar, UIView;
+@class NSArray, NSMutableDictionary, NSString, UIBarButtonItem, UIImageView, UINavigationBar, UIView;
 
 @interface UINavigationItem : NSObject <NSCoding> {
     UIBarButtonItem *_backBarButtonItem;
     NSString *_backButtonTitle;
     UIView *_backButtonView;
+    NSMutableDictionary *_backgroundImages;
     BOOL _barStyleIndependent;
     id _context;
     NSArray *_customLeftViews;
@@ -30,6 +31,7 @@
     UIView *_titleView;
 }
 
+@property(readonly) NSMutableDictionary * _backgroundImages;
 @property(getter=_isBarStyleIndependent,setter=_setBarStyleIndependent:) BOOL _barStyleIndependent;
 @property(setter=_setIndependentBarStyle:) int _independentBarStyle;
 @property(setter=_setLeftFlexibleSpaceCount:) unsigned int _leftFlexibleSpaceCount;
@@ -51,13 +53,20 @@
 
 - (BOOL)_accumulateViewsFromItems:(id)arg1 isLeft:(BOOL)arg2 refreshViews:(BOOL)arg3;
 - (id)_automationID;
+- (id)_backgroundImages;
 - (void)_cleanupFrozenTitleView;
 - (id)_customLeftView;
+- (id)_customLeftViewCreating:(BOOL)arg1;
 - (id)_customLeftViews;
+- (id)_customLeftViewsCreating:(BOOL)arg1;
 - (id)_customRightView;
+- (id)_customRightViewCreating:(BOOL)arg1;
 - (id)_customRightViews;
+- (id)_customRightViewsCreating:(BOOL)arg1;
 - (void)_freezeCurrentTitleView;
+- (id)_independentBackgroundImageForBarMetrics:(int)arg1;
 - (int)_independentBarStyle;
+- (id)_independentShadowImage;
 - (BOOL)_isBarStyleIndependent;
 - (id)_leftBarButtonItem;
 - (id)_leftBarButtonItems;
@@ -65,18 +74,20 @@
 - (id)_leftItemSpaceList;
 - (void)_removeBackButtonView;
 - (void)_removeTitleAndButtonViews;
-- (void)_replaceCustomLeftViewAtIndex:(unsigned int)arg1 withView:(id)arg2;
-- (void)_replaceCustomRightViewAtIndex:(unsigned int)arg1 withView:(id)arg2;
+- (void)_replaceCustomLeftRightViewAtIndex:(unsigned int)arg1 withView:(id)arg2 left:(BOOL)arg3;
 - (id)_rightBarButtonItem;
 - (id)_rightBarButtonItems;
 - (unsigned int)_rightFlexibleSpaceCount;
 - (id)_rightItemSpaceList;
+- (void)_setBackButtonPressed:(BOOL)arg1;
 - (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(int)arg2;
 - (void)_setBarStyleIndependent:(BOOL)arg1;
+- (void)_setCustomLeftRightView:(id)arg1 left:(BOOL)arg2;
 - (void)_setCustomLeftView:(id)arg1;
 - (void)_setCustomLeftViews:(id)arg1;
 - (void)_setCustomRightView:(id)arg1;
 - (void)_setCustomRightViews:(id)arg1;
+- (void)_setIndependentBackgroundImage:(id)arg1 shadowImage:(id)arg2 forBarMetrics:(int)arg3;
 - (void)_setIndependentBarStyle:(int)arg1;
 - (void)_setLeftBarButtonItem:(id)arg1;
 - (void)_setLeftBarButtonItems:(id)arg1;

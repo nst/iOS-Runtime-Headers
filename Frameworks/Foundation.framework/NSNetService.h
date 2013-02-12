@@ -22,7 +22,7 @@
 - (id)description;
 - (id)domain;
 - (void)finalize;
-- (BOOL)getInputStream:(id*)arg1 outputStream:(id*)arg2;
+- (BOOL)getInputStream:(out id*)arg1 outputStream:(out id*)arg2;
 - (unsigned int)hash;
 - (id)hostName;
 - (id)initWithCFNetService:(struct __CFNetService { }*)arg1;

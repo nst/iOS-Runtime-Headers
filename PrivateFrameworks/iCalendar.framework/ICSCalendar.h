@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSColor, ICSDuration, NSMutableDictionary, NSMutableSet, NSString;
+@class ICSColor, ICSDuration, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface ICSCalendar : ICSComponent {
     NSMutableSet *_keys;
     NSMutableDictionary *_masters;
     NSMutableDictionary *_occurrences;
+    NSMutableArray *_parsingErrors;
     NSMutableDictionary *_timezones;
 }
 
@@ -39,6 +40,7 @@
 - (id)_init;
 - (id)_timeZonesForComponents:(id)arg1 options:(int)arg2;
 - (void)addComponent:(id)arg1;
+- (void)addParsingError:(id)arg1;
 - (id)calscale;
 - (id)componentForKey:(id)arg1;
 - (id)componentKeys;
@@ -49,6 +51,7 @@
 - (void)fixPropertiesInheritance;
 - (id)init;
 - (int)method;
+- (id)parsingErrors;
 - (id)prodid;
 - (void)setCalscale:(id)arg1;
 - (void)setComponents:(id)arg1 options:(int)arg2;

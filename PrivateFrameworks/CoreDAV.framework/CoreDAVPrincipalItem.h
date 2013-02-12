@@ -20,9 +20,10 @@
 @property(retain) CoreDAVItemWithNoChildren * selfItem;
 @property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
++ (id)copyParseRules;
+
 - (id)all;
 - (id)authenticated;
-- (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)hashString;

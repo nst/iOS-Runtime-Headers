@@ -8,12 +8,12 @@
     UILabel *_labelView;
 }
 
-+ (id)_localizedImage;
-+ (id)_localizedPressedImage;
-+ (float)_localizedTextFontSize;
-+ (id)_localizedTextLabel;
-+ (BOOL)_textDrawnAsLabel;
-
+- (id)_backgroundImage;
+- (id)_backgroundPressedImage;
+- (id)_labelView;
+- (float)_localizedTextFontSize;
+- (id)_localizedTextLabel;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
 - (id)init;
 - (void)layoutSubviews;

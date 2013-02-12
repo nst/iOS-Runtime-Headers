@@ -12,6 +12,7 @@
 + (void)_setDependencyFilePath:(id)arg1;
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (void)_addOrphanParent:(id)arg1 forDomain:(id)arg2;
 - (id)_domainsDict;
 - (id)_domainsDictionaryForDomain:(id)arg1 parent:(id)arg2 outParentsDict:(id*)arg3 outDependents:(id*)arg4;
@@ -20,7 +21,6 @@
 - (void)addDependent:(id)arg1 ofParent:(id)arg2 inDomain:(id)arg3 reciprocalDomain:(id)arg4;
 - (void)addDependent:(id)arg1 ofParent:(id)arg2 inDomain:(id)arg3;
 - (void)commitChanges;
-- (void)dealloc;
 - (id)dependentsOfParent:(id)arg1 inDomain:(id)arg2;
 - (id)init;
 - (id)orphanedParentsForDomain:(id)arg1;

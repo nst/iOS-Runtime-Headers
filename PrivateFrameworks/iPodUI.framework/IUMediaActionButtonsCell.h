@@ -2,32 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class NSMutableArray, UIColor;
+@class <IUMediaActionButtonsCellDelegate>, NSMutableArray;
 
-@interface IUMediaActionButtonsCell : IUMediaTableCell {
-    UIColor *_bottomSeparatorColor;
+@interface IUMediaActionButtonsCell : IUMusicTableViewCell {
     NSMutableArray *_buttons;
-    id _delegate;
+    <IUMediaActionButtonsCellDelegate> *_delegate;
 }
 
-@property(retain) UIColor * bottomSeparatorColor;
-@property id delegate;
+@property <IUMediaActionButtonsCellDelegate> * delegate;
 
 - (void)_buttonAction:(id)arg1;
-- (void)_buttonFadeDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (id)_buttonImageForControlState:(unsigned int)arg1 stretchable:(BOOL)arg2;
+- (id)_buttonImageForControlState:(unsigned int)arg1;
 - (void)_didCreateContentView;
-- (id)bottomSeparatorColor;
-- (id)createButtonWithTitle:(id)arg1 action:(SEL)arg2;
+- (id)_newButtonWithTitle:(id)arg1 action:(SEL)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitles:(id)arg1;
 - (void)layoutSubviews;
 - (void)reconfigureWithButtonTitles:(id)arg1 animated:(BOOL)arg2;
-- (void)setBottomSeparatorColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)supportsSpinning;
 
 @end

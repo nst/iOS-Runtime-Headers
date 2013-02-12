@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class <IUVideoSummaryViewDataSource>, MPMediaItem, MPWebDocumentView, NSDictionary, UIButton, UIImageView, UILabel, UIScrollView, UIView;
+@class <IUVideoSummaryViewDataSource>, MPMediaItem, MPWebDocumentView, NSDictionary, UILabel, UIScrollView, UIView;
 
 @interface IUVideoSummaryView : UIView {
     float _availableWidth;
@@ -24,16 +24,14 @@
 @property <IUVideoSummaryViewDataSource> * dataSource;
 @property(readonly) UILabel * directorContentLabel;
 @property(readonly) UILabel * directorHeaderLabel;
+@property(readonly) UILabel * lengthContentLabel;
+@property(readonly) UILabel * lengthHeaderLabel;
 @property(readonly) UIView * lowerBackgroundView;
 @property(retain) NSDictionary * movieInfo;
 @property(readonly) UILabel * producerContentLabel;
 @property(readonly) UILabel * producerHeaderLabel;
 @property(readonly) UILabel * screenwriterContentLabel;
 @property(readonly) UILabel * screenwriterHeaderLabel;
-@property(readonly) UIImageView * soundtrackAlbumArtImageView;
-@property(readonly) UIButton * soundtrackBuyButton;
-@property(readonly) UILabel * soundtrackContentLabel;
-@property(readonly) UILabel * soundtrackHeaderLabel;
 @property(readonly) MPWebDocumentView * summaryContentTextView;
 @property(readonly) UILabel * summaryHeaderLabel;
 
@@ -41,6 +39,7 @@
 
 - (void)_layoutNoMetadataColumn1;
 - (void)_layoutNoMetadataColumn2;
+- (void)_layoutOnMainThread;
 - (id)_newlineSeperatedListOfNames:(id)arg1;
 - (void)_populateHeaderAndContentLabels:(id)arg1 key:(id)arg2 singular:(id)arg3 plural:(id)arg4 header:(id)arg5 content:(id)arg6;
 - (void)_setFooterView:(id)arg1;
@@ -60,6 +59,8 @@
 - (void)layoutSubviews;
 - (void)layoutSubviewsWithMetadata;
 - (void)layoutSubviewsWithNoMetadata;
+- (id)lengthContentLabel;
+- (id)lengthHeaderLabel;
 - (id)lowerBackgroundView;
 - (id)movieInfo;
 - (id)producerContentLabel;
@@ -71,10 +72,6 @@
 - (void)setDataSource:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMovieInfo:(id)arg1;
-- (id)soundtrackAlbumArtImageView;
-- (id)soundtrackBuyButton;
-- (id)soundtrackContentLabel;
-- (id)soundtrackHeaderLabel;
 - (id)summaryContentTextView;
 - (id)summaryHeaderLabel;
 

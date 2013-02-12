@@ -12,9 +12,9 @@
     <TLVibrationRecorderViewDelegate> *_delegate;
     UILabel *_instructionsLabel;
     BOOL _isWaitingForEndOfCurrentVibrationComponent;
-    unsigned int _leftButtonIdentifier;
+    int _leftButtonIdentifier;
     BOOL _replayMode;
-    unsigned int _rightButtonIdentifier;
+    int _rightButtonIdentifier;
     TLVibrationRecorderTouchSurface *_touchSurface;
     double _vibrationPatternMaximumDuration;
 }
@@ -24,10 +24,10 @@
 
 - (void)_enterWaitingModeWithAnimation:(BOOL)arg1 animateButtons:(BOOL)arg2 enablePlayButton:(BOOL)arg3;
 - (void)_exitWaitingModeWithAnimation:(BOOL)arg1;
-- (void)_getButtonPropertiesForIdentifier:(unsigned int)arg1 enabled:(BOOL)arg2 color:(int*)arg3 title:(id*)arg4 icon:(id*)arg5;
+- (void)_getButtonPropertiesForIdentifier:(int)arg1 enabled:(BOOL)arg2 color:(int*)arg3 title:(id*)arg4 icon:(id*)arg5;
 - (BOOL)_replayMode;
-- (void)_setLeftButtonIdentifier:(unsigned int)arg1 enabled:(BOOL)arg2 rightButtonIdentifier:(unsigned int)arg3 enabled:(BOOL)arg4 animate:(BOOL)arg5 completion:(id)arg6;
-- (void)_setLeftButtonIdentifier:(unsigned int)arg1 enabled:(BOOL)arg2 rightButtonIdentifier:(unsigned int)arg3 enabled:(BOOL)arg4 animate:(BOOL)arg5;
+- (void)_setLeftButtonIdentifier:(int)arg1 enabled:(BOOL)arg2 rightButtonIdentifier:(int)arg3 enabled:(BOOL)arg4 animate:(BOOL)arg5 completion:(id)arg6;
+- (void)_setLeftButtonIdentifier:(int)arg1 enabled:(BOOL)arg2 rightButtonIdentifier:(int)arg3 enabled:(BOOL)arg4 animate:(BOOL)arg5;
 - (void)_setReplayMode:(BOOL)arg1;
 - (void)_updateProgress:(id)arg1;
 - (void)dealloc;

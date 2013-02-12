@@ -30,11 +30,13 @@
 + (id)cameraPreviewWellAssetID;
 + (id)cameraPreviewWellImage;
 + (id)cameraPreviewWellImageFileURL;
-+ (struct dispatch_queue_s { }*)cameraPreviewWellImageQueue;
++ (id)cameraPreviewWellImageQueue;
++ (id)defaultThumbnailsDirectory;
 + (BOOL)missingThumbnailTables;
 + (void)removeObsoleteMetadata;
 + (void)resetImageTables;
 + (void)saveCameraPreviewWellImage:(struct CGImage { }*)arg1 assetID:(id)arg2;
++ (void)saveCameraPreviewWellImageForAsset:(id)arg1;
 + (int)thumbnailFormat;
 + (BOOL)thumbnailTablesNeedToBeRecreated;
 + (int)thumbnailVersion;
@@ -45,9 +47,9 @@
 - (id)_dataForInFlightAsset:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 imageDataFormat:(int*)arg9;
 - (id)_imageTableForFormat:(int*)arg1;
 - (id)_tableDescriptions;
-- (struct __CFDictionary { }*)assetUUIDToThumbnailIndexMappingForFormat:(int)arg1;
 - (void)clearCachedInformation;
 - (id)compactImageTables;
+- (BOOL)copyThumbnailsFromAsset:(id)arg1 toAsset:(id)arg2;
 - (int)count;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (void)dealloc;
@@ -57,9 +59,12 @@
 - (BOOL)entryAtIndexIsPlaceholder:(int)arg1;
 - (id)indexSheetThumbs;
 - (id)initWithWeakPhotoLibrary:(id)arg1;
+- (struct __CFDictionary { }*)newAssetUUIDToThumbnailIndexMappingForFormat:(int)arg1;
 - (id)newImageForPhoto:(id)arg1 withFormat:(int)arg2 outImageProperties:(const struct __CFDictionary {}**)arg3;
+- (id)newUnbakedIndexImageForAsset:(id)arg1;
 - (id)photoLibrary;
 - (id)photoUUIDToIndexMap;
+- (struct __CFDictionary { }*)placeholderThumbnailDataByFormatID;
 - (id)preflightImageTableCompactionForPhotos:(id)arg1;
 - (void)preheatImageDataForAssets:(id)arg1 format:(int)arg2;
 - (void)setPhotoLibrary:(id)arg1;

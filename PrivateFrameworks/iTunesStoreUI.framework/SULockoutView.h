@@ -5,27 +5,36 @@
 @class NSString, UIImage, UIImageView, UILabel;
 
 @interface SULockoutView : UIView {
+    UIImageView *_backgroundImageView;
     UILabel *_bodyLabel;
+    UIImageView *_glowImageView;
     UIImageView *_imageView;
     int _layoutPreset;
     UILabel *_titleLabel;
 }
 
-@property(retain) NSString * body;
+@property(retain) UIImage * backgroundImage;
+@property(copy) NSString * body;
+@property(retain) UIImage * glowImage;
 @property(retain) UIImage * image;
 @property int layoutPreset;
-@property(retain) NSString * title;
+@property(copy) NSString * title;
 
 - (id)_bodyLabel;
 - (id)_imageView;
 - (void)_layoutForSlowNetwork;
+- (id)_newLabel;
 - (id)_titleLabel;
+- (id)backgroundImage;
 - (id)body;
 - (void)dealloc;
+- (id)glowImage;
 - (id)image;
 - (int)layoutPreset;
 - (void)layoutSubviews;
+- (void)setBackgroundImage:(id)arg1;
 - (void)setBody:(id)arg1;
+- (void)setGlowImage:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLayoutPreset:(int)arg1;
 - (void)setTitle:(id)arg1;

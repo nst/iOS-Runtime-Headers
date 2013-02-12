@@ -8,9 +8,10 @@
 }
 
 @property(copy) NSString * aceId;
+@property BOOL eyesFree;
 @property BOOL handsFree;
 @property(copy) NSString * motionActivity;
-@property(retain) NSNumber * motionConfidence;
+@property(copy) NSNumber * motionConfidence;
 @property(copy) NSString * origin;
 @property(copy) NSString * refId;
 @property(copy) NSString * utterance;
@@ -19,11 +20,13 @@
 + (id)startRequestWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
+- (BOOL)eyesFree;
 - (id)groupIdentifier;
 - (BOOL)handsFree;
 - (id)motionActivity;
 - (id)motionConfidence;
 - (id)origin;
+- (void)setEyesFree:(BOOL)arg1;
 - (void)setHandsFree:(BOOL)arg1;
 - (void)setMotionActivity:(id)arg1;
 - (void)setMotionConfidence:(id)arg1;

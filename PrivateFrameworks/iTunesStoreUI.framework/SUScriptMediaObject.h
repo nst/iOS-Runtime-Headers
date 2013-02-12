@@ -13,7 +13,7 @@
 @property(readonly) SUMediaObject * nativeMediaObject;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (void)_addScriptFunction:(id)arg1;

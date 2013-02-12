@@ -7,13 +7,23 @@
     unsigned int _batteryNotificationRef;
     struct __CFRunLoopSource { } *_batteryRunLoopSource;
     double _currentLevel;
+    BOOL _isExteralPowerConnected;
 }
+
+@property double currentLevel;
+@property BOOL isExternalPowerConnected;
 
 + (id)defaultMonitor;
 
-- (void)_updateBatteryLevelWithBatteryEntry:(unsigned int)arg1;
+- (BOOL)_updateBatteryConnectedStateWithBatteryEntry:(unsigned int)arg1;
 - (double)batteryPercentRemaining;
+- (double)currentLevel;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isExternalPowerConnected;
+- (void)setCurrentLevel:(double)arg1;
+- (void)setExternalPowerConnected:(BOOL)arg1;
+- (void)updateBatteryConnectedStateWithBatteryEntry:(unsigned int)arg1;
+- (void)updateBatteryLevelWithBatteryEntry:(unsigned int)arg1;
 
 @end

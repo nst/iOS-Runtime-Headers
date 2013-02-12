@@ -43,7 +43,7 @@
 - (void)_unobserveAVPlayer;
 - (void)_updateForCurrentMovieControlMode;
 - (void)_videoViewScaleModeDidChange:(id)arg1;
-- (unsigned int)_visiblePartsForMovieControlMode;
+- (unsigned long long)_visiblePartsForMovieControlMode;
 - (id)_volumeAudioCategory;
 - (void)_willBeginSuspendAnimationNotification:(id)arg1;
 - (void)_willResignNotification:(id)arg1;

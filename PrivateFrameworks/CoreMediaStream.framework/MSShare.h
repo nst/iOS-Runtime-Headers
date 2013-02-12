@@ -27,8 +27,8 @@
 
 + (id)share;
 
+- (void).cxx_destruct;
 - (id)UUID;
-- (void)dealloc;
 - (id)description;
 - (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;

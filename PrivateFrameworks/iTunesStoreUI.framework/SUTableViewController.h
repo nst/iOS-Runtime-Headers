@@ -31,6 +31,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (BOOL)deleteRowAtIndexPath:(id)arg1;
+- (void)didReceiveMemoryWarning;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (BOOL)indexPathIsPlaceholder:(id)arg1;
 - (id)init;
@@ -38,7 +39,6 @@
 - (id)newTableView;
 - (unsigned int)numberOfRows;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)purgeMemoryForReason:(int)arg1;
 - (void)reloadData;
 - (void)reloadForChangedRowCount:(int)arg1;
 - (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;

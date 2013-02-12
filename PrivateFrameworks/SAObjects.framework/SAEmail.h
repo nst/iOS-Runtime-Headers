@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * emailAddress;
-@property(retain) NSNumber * favoriteFacetime;
+@property(copy) NSNumber * favoriteFacetime;
 @property(copy) NSString * label;
 
 + (id)email;

@@ -6,11 +6,14 @@
     struct CLMotionActivity { 
         int type; 
         int confidence; 
+        int mountedState; 
+        int mountedConfidence; 
+        float tilt; 
     } fActivity;
 }
 
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; })arg1;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; })arg1;
 
 @end

@@ -23,8 +23,8 @@
 + (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
+- (void).cxx_destruct;
 - (id)URL;
-- (void)dealloc;
 - (id)description;
 - (BOOL)fullScreen;
 - (id)iconData;

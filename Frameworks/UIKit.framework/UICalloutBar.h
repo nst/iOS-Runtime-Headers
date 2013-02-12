@@ -106,6 +106,7 @@
 + (void)_releaseSharedInstance;
 + (id)activeCalloutBar;
 + (void)fadeSharedCalloutBar;
++ (void)fadeSharedCalloutBarIfNeededForView:(id)arg1 window:(id)arg2;
 + (void)hideSharedCalloutBar;
 + (id)sharedCalloutBar;
 + (BOOL)sharedCalloutBarIsVisible;

@@ -23,8 +23,10 @@
     float _dividerOffsetY;
     UIImageView *_foregroundView;
     NSArray *_labels;
+    float _maxWidth;
     float _minFontSizeDelta;
     NSArray *_processedLabels;
+    SEL _secondaryFontSelector;
     SEL _segmentLayoutSelector;
     struct { float x1; float x2; id x3; } *_segmentNodes;
     int _segmentWidthAllocationStyle;
@@ -54,8 +56,10 @@
 @property float dividerOffsetY;
 @property(retain) UIImageView * foregroundView;
 @property(retain) NSArray * labels;
+@property float maxWidth;
 @property float minFontSizeDelta;
 @property(retain) NSArray * processedLabels;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } segmentBounds;
 @property SEL segmentLayoutSelector;
 @property struct { float x1; float x2; id x3; }* segmentNodes;
 @property int segmentWidthAllocationStyle;
@@ -68,6 +72,7 @@
 @property SEL themeDividerImageSelector;
 @property SEL themeFontSelector;
 @property SEL themeNormalTextColorSelector;
+@property SEL themeSecondaryFontSelector;
 @property SEL themeSecondaryTextColorSelector;
 @property SEL themeSelectedTextColorSelector;
 @property SEL themeSelectionImageSelector;
@@ -99,8 +104,10 @@
 - (void)layoutSegmentsEqually:(struct { float x1; float x2; id x3; }*)arg1 number:(int)arg2;
 - (void)layoutSegmentsProportionally:(struct { float x1; float x2; id x3; }*)arg1 number:(int)arg2;
 - (void)layoutSubviews;
+- (float)maxWidth;
 - (float)minFontSizeDelta;
 - (id)processedLabels;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })segmentBounds;
 - (SEL)segmentLayoutSelector;
 - (struct { float x1; float x2; id x3; }*)segmentNodes;
 - (int)segmentWidthAllocationStyle;
@@ -117,6 +124,7 @@
 - (void)setForegroundView:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLabels:(id)arg1;
+- (void)setMaxWidth:(float)arg1;
 - (void)setMinFontSizeDelta:(float)arg1;
 - (void)setNeedsLayout;
 - (void)setProcessedLabels:(id)arg1;
@@ -132,6 +140,7 @@
 - (void)setThemeDividerImageSelector:(SEL)arg1;
 - (void)setThemeFontSelector:(SEL)arg1;
 - (void)setThemeNormalTextColorSelector:(SEL)arg1;
+- (void)setThemeSecondaryFontSelector:(SEL)arg1;
 - (void)setThemeSecondaryTextColorSelector:(SEL)arg1;
 - (void)setThemeSelectedTextColorSelector:(SEL)arg1;
 - (void)setThemeSelectionImageSelector:(SEL)arg1;
@@ -144,6 +153,7 @@
 - (SEL)themeDividerImageSelector;
 - (SEL)themeFontSelector;
 - (SEL)themeNormalTextColorSelector;
+- (SEL)themeSecondaryFontSelector;
 - (SEL)themeSecondaryTextColorSelector;
 - (SEL)themeSelectedTextColorSelector;
 - (SEL)themeSelectionImageSelector;

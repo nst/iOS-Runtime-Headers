@@ -7,17 +7,17 @@
 @interface DOMHTMLObjectElement : DOMHTMLElement {
 }
 
-@property(copy,readonly) NSURL * absoluteImageURL;
+@property(readonly) NSURL * absoluteImageURL;
 @property(copy) NSString * align;
 @property(copy) NSString * archive;
 @property(copy) NSString * border;
 @property(copy) NSString * code;
 @property(copy) NSString * codeBase;
 @property(copy) NSString * codeType;
-@property(retain,readonly) DOMDocument * contentDocument;
+@property(readonly) DOMDocument * contentDocument;
 @property(copy) NSString * data;
 @property BOOL declare;
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * height;
 @property int hspace;
 @property(copy) NSString * name;

@@ -4,7 +4,7 @@
 
 @class CPDocument, CPObject, CPPage, NSMutableArray;
 
-@interface CPObject : NSObject <NSCopying> {
+@interface CPObject : NSObject <NSCopying, CPCopying> {
     NSMutableArray *children;
     CPDocument *document;
     CPPage *page;
@@ -44,6 +44,7 @@
 - (id)firstSibling;
 - (unsigned int)indexOf:(id)arg1;
 - (id)init;
+- (id)initSuper;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastChild;
 - (id)lastDescendantOfClass:(Class)arg1;
@@ -53,6 +54,8 @@
 - (void)map:(SEL)arg1 target:(id)arg2 last:(BOOL)arg3;
 - (void)map:(SEL)arg1 target:(id)arg2;
 - (void)mapSafely:(SEL)arg1 target:(id)arg2 childrenOfClass:(Class)arg3;
+- (id)newTakeChildren;
+- (id)newTakeChildrenAmong:(id)arg1;
 - (id)nextSibling;
 - (id)page;
 - (id)parent;
@@ -71,8 +74,6 @@
 - (void)setParent:(id)arg1;
 - (void)setZOrder:(long)arg1;
 - (id)shallowDescendantsOfClass:(Class)arg1;
-- (id)takeChildren;
-- (id)takeChildrenAmong:(id)arg1;
 - (void)updateZOrder:(long)arg1;
 - (long)zOrder;
 

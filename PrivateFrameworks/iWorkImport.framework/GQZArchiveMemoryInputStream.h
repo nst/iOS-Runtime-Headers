@@ -5,7 +5,7 @@
 @class NSData;
 
 @interface GQZArchiveMemoryInputStream : NSObject <GQZArchiveInputStream> {
-    char *mBytes;
+    const char *mBytes;
     NSData *mData;
     long long mSize;
 }

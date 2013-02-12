@@ -2,43 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString;
+@class NSObject<OS_dispatch_queue>, NSString;
 
 @interface ISDevice : NSObject <ISSingleton> {
     unsigned int _daemonLaunchCount;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_guid;
-    BOOL _pluggedIn;
-    int _pluggedInToken;
+    double _lastFreeSpaceRequest;
 }
 
 @property(readonly) NSString * deviceName;
 @property(readonly) NSString * guid;
 @property(readonly) NSString * hardwareName;
-@property(getter=isPluggedIn,readonly) BOOL pluggedIn;
 @property(readonly) NSString * serialNumber;
 @property(readonly) NSString * systemName;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
-- (void)_cancelScheduledPowerAssertionRelease:(id)arg1;
-- (BOOL)_releasePowerAssertion:(id)arg1;
-- (void)_schedulePowerAssertionRelease:(id)arg1;
-- (void)_setPluggedIn:(BOOL)arg1;
+- (int)_deviceClass;
 - (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
 - (id)copyProtocolConditionalContext;
 - (id)copyPurchaseValidationContext;
-- (void)daemonDidLaunch;
-- (unsigned int)daemonLaunchCount;
-- (void)daemonWillExitCleanly;
 - (void)dealloc;
 - (id)deviceName;
 - (id)guid;
 - (id)hardwareName;
 - (id)init;
-- (BOOL)isPluggedIn;
 - (BOOL)releasePowerAssertion:(id)arg1;
+- (void)requestFreeSpace:(unsigned long long)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id)arg4;
 - (id)serialNumber;
 - (id)supportedOfferDeviceForDevices:(id)arg1;
 - (id)systemName;

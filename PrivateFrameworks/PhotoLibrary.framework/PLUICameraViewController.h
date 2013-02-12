@@ -16,8 +16,8 @@
 }
 
 - (void)_adjustContentSizeForOrientation:(int)arg1;
-- (unsigned int)_cameraCaptureMode;
-- (unsigned int)_cameraDevice;
+- (int)_cameraCaptureMode;
+- (int)_cameraDevice;
 - (int)_cameraFlashMode;
 - (id)_cameraOverlayView;
 - (id)_cameraView;
@@ -25,8 +25,8 @@
 - (BOOL)_displaysFullScreen;
 - (void)_editabilityChanged:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
-- (void)_setCameraCaptureMode:(unsigned int)arg1;
-- (void)_setCameraDevice:(unsigned int)arg1;
+- (void)_setCameraCaptureMode:(int)arg1;
+- (void)_setCameraDevice:(int)arg1;
 - (void)_setCameraFlashMode:(int)arg1;
 - (void)_setCameraOverlayView:(id)arg1;
 - (void)_setCameraViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;

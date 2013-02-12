@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray, NSString;
+@class NSArray, NSString, TIWordSearch;
 
 @interface TIWordSearchOperationGetCandidates : TIWordSearchOperation {
     SEL _action;
@@ -11,25 +11,30 @@
     NSArray *_results;
     id _target;
     BOOL _withPrediction;
+    TIWordSearch *_wordSearch;
 }
 
 @property(readonly) SEL action;
 @property(readonly) NSArray * geometryModelData;
 @property(readonly) NSString * inputString;
 @property(retain) NSArray * results;
-@property(retain,readonly) id target;
+@property(readonly) id target;
 @property(readonly) BOOL withPrediction;
+@property(retain) TIWordSearch * wordSearch;
 
 - (SEL)action;
+- (void)checkForCachedResults;
 - (void)completeSearchOnMainThreadWithResults:(id)arg1;
 - (void)dealloc;
 - (id)geometryModelData;
-- (id)initWithTIWordSearch:(id)arg1 inputString:(id)arg2 withPrediction:(BOOL)arg3 target:(id)arg4 action:(SEL)arg5 geometryModelData:(id)arg6;
+- (id)initWithWordSearch:(id)arg1 inputString:(id)arg2 withPrediction:(BOOL)arg3 target:(id)arg4 action:(SEL)arg5 geometryModelData:(id)arg6;
 - (id)inputString;
 - (void)perform;
 - (id)results;
 - (void)setResults:(id)arg1;
+- (void)setWordSearch:(id)arg1;
 - (id)target;
 - (BOOL)withPrediction;
+- (id)wordSearch;
 
 @end

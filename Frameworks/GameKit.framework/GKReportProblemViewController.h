@@ -20,7 +20,6 @@
 - (void)processGameKitURLComponents:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)url;
 - (void)viewWillAppear:(BOOL)arg1;
 

@@ -5,7 +5,7 @@
 @class CALayer;
 
 @interface UIPDFPageContentTiledLayer : CATiledLayer {
-    CALayer *selectionLayer;
+    CALayer *_selectionLayer;
 }
 
 - (void)dealloc;

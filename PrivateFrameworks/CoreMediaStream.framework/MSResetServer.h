@@ -8,6 +8,7 @@
     MSMediaStreamDaemon *_daemon;
     NSString *_personID;
     MSResetServerProtocol *_protocol;
+    id _selfReference;
 }
 
 @property MSMediaStreamDaemon * daemon;
@@ -15,8 +16,8 @@
 
 + (id)resetServerObjectWithPersonID:(id)arg1 baseURL:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)daemon;
-- (void)dealloc;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
 - (id)personID;
 - (void)resetServer;

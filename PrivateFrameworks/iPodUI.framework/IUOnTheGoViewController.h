@@ -4,7 +4,7 @@
 
 @class IUMediaActionButtonsCell, IUMediaActionSheet, IUMediaAlertView;
 
-@interface IUOnTheGoViewController : IUMediaListViewController <UIActionSheetDelegate, UIAlertViewDelegate, UITextFieldDelegate> {
+@interface IUOnTheGoViewController : IUMusicViewController <IUMediaActionButtonsCellDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UITextFieldDelegate> {
     IUMediaActionButtonsCell *_buttonsCell;
     IUMediaActionSheet *_confirmPlaylistChangeSheet;
     IUMediaAlertView *_renamePlaylistAlert;
@@ -34,5 +34,6 @@
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

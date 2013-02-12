@@ -14,6 +14,8 @@
 + (id)_permittedAutoLockNumbers;
 + (id)_permittedGracePeriodNumbers;
 + (id)_selectLargestNumberFromSortedArray:(id)arg1 equalToOrLessThanNumber:(id)arg2;
++ (void)_sendChangeNotificationsBasedOnDefaultsAdditionByDomain:(id)arg1;
++ (void)_sendChangeNotificationsBasedOnDefaultsRemovalByDomain:(id)arg1;
 + (void)_setRequriesEncryptedBackupInLockdownWithEffectiveUserSettings:(id)arg1;
 
 @end

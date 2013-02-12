@@ -10,25 +10,23 @@
 }
 
 @property(readonly) int _gkColumn;
-@property(readonly) int _gkRow;
-@property(readonly) int _gkSection;
 @property(readonly) unsigned int gridColumn;
 @property(readonly) unsigned int gridRow;
 @property(readonly) unsigned int gridSection;
+@property(readonly) int item;
 @property(readonly) int row;
 @property(readonly) int section;
 
++ (id)_gkIndexPathsSeparatedBySection:(id)arg1;
++ (id)indexPathForItem:(int)arg1 inSection:(int)arg2;
 + (id)indexPathForRow:(int)arg1 inSection:(int)arg2;
 + (id)indexPathForRow:(unsigned int)arg1 column:(unsigned int)arg2 inSection:(unsigned int)arg3;
 + (id)indexPathWithIndex:(unsigned int)arg1;
-+ (id)indexPathWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
++ (id)indexPathWithIndexes:(const unsigned int*)arg1 length:(unsigned int)arg2;
 
+- (id)_GKNormalizedIndexPath;
 - (int)_gkColumn;
-- (id)_gkIndexPathWithColumn:(int)arg1;
-- (id)_gkIndexPathsForColumnCount:(int)arg1;
-- (id)_gkNormalizedIndexPath;
-- (int)_gkRow;
-- (int)_gkSection;
+- (id)_gkIndexPathByAddingColumn:(int)arg1;
 - (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dd_stringValue;
@@ -47,8 +45,9 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIndex:(unsigned int)arg1;
-- (id)initWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
+- (id)initWithIndexes:(const unsigned int*)arg1 length:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
+- (int)item;
 - (unsigned int)length;
 - (int)row;
 - (int)section;

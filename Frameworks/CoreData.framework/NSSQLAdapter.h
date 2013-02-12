@@ -34,7 +34,6 @@
 - (id)newPrimaryKeyInitializeStatementForEntity:(id)arg1 withInitialMaxPK:(long long)arg2;
 - (id)newRenameTableStatementFrom:(id)arg1 to:(id)arg2;
 - (id)newRenameTableStatementFromManyToMany:(id)arg1 toManyToMany:(id)arg2 orToRandomSpot:(id)arg3;
-- (id)newSQLStringForResettingPrimaryKeMaxWithEntities:(id)arg1;
 - (id)newSelectStatementWithFetchRequest:(id)arg1;
 - (id)newStatementWithEntity:(id)arg1;
 - (id)newStatementWithSQLString:(id)arg1;

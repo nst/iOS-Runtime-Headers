@@ -5,4 +5,7 @@
 @interface _UIFallbackPresentationWindow : UIWindow {
 }
 
+- (BOOL)_affectsTintView;
+- (BOOL)_includeInDefaultImageSnapshot;
+
 @end

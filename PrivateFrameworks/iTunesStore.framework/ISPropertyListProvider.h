@@ -19,9 +19,9 @@
 @property BOOL shouldTriggerDownloads;
 
 - (void)_checkDownloadQueues;
+- (void)_checkInAppPurchaseQueueForAction:(id)arg1;
 - (void)_performActionsForResponse:(id)arg1;
 - (BOOL)_processFailureTypeFromPropertyList:(id)arg1 error:(id*)arg2;
-- (BOOL)_runAuthorizationDialog:(id)arg1 returningError:(id*)arg2;
 - (void)_selectFooterSection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;

@@ -5,11 +5,13 @@
 @interface GKLeaderboardViewControllerPrivate : GKAbstractLeaderboardViewController {
 }
 
+- (Class)dataSourceClass;
 - (void)didSelectPlayer:(id)arg1;
+- (void)didSelectScore:(id)arg1;
 - (void)loadView;
-- (void)prepareDataSource;
+- (float)marginForTableView:(id)arg1;
 - (void)setTimeScope:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)updateNavbarButtons;
+- (BOOL)usesCrossfade;
 
 @end

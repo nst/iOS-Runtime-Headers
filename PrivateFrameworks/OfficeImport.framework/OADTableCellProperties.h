@@ -19,8 +19,8 @@
     BOOL mIsRightStrokeOverridden;
     BOOL mIsTextAnchorCenterOverridden;
     BOOL mIsTextAnchorOverridden;
+    BOOL mIsTextFlowOverridden;
     BOOL mIsTextHorizontalOverflowOverridden;
-    BOOL mIsTextVerticalOverridden;
     BOOL mIsThreeDPropertiesOverridden;
     BOOL mIsTopLeftToBottomRightStrokeOverridden;
     BOOL mIsTopMarginOverridden;
@@ -31,8 +31,8 @@
     OADStroke *mRightStroke;
     int mTextAnchor;
     BOOL mTextAnchorCenter;
+    int mTextFlow;
     int mTextHorizontalOverflow;
-    int mTextVertical;
     OADTableCell3DProperties *mThreeDProperties;
     OADStroke *mTopLeftToBottomRightStroke;
     float mTopMargin;
@@ -54,8 +54,8 @@
 - (BOOL)isRightStrokeOverridden;
 - (BOOL)isTextAnchorCenterOverridden;
 - (BOOL)isTextAnchorOverridden;
+- (BOOL)isTextFlowOverridden;
 - (BOOL)isTextHorizontalOverflowOverridden;
-- (BOOL)isTextVerticalOverridden;
 - (BOOL)isThreeDPropertiesOverridden;
 - (BOOL)isTopLeftToBottomRightStrokeOverridden;
 - (BOOL)isTopMarginOverridden;
@@ -74,8 +74,8 @@
 - (void)setRightStroke:(id)arg1;
 - (void)setTextAnchor:(int)arg1;
 - (void)setTextAnchorCenter:(BOOL)arg1;
+- (void)setTextFlow:(int)arg1;
 - (void)setTextHorizontalOverflow:(int)arg1;
-- (void)setTextVertical:(int)arg1;
 - (void)setThreeDProperties:(id)arg1;
 - (void)setTopLeftToBottomRightStroke:(id)arg1;
 - (void)setTopMargin:(float)arg1;
@@ -84,8 +84,8 @@
 - (id)strokeNormalToDir:(int)arg1 bound:(int)arg2;
 - (int)textAnchor;
 - (BOOL)textAnchorCenter;
+- (int)textFlow;
 - (int)textHorizontalOverflow;
-- (int)textVertical;
 - (id)threeDProperties;
 - (id)topLeftToBottomRightStroke;
 - (float)topMargin;

@@ -19,13 +19,17 @@
 @property float coneAngle;
 @property float coneEdgeSoftness;
 @property float diffuseIntensity;
-@property struct CAPoint3D { float x; float y; float z; } direction;
+@property struct CAPoint3D { float x1; float x2; float x3; } direction;
 @property(getter=isEnabled) BOOL enabled;
 @property float falloff;
 @property float falloffDistance;
+@property(retain) id image;
+@property(copy) NSString * imageBlendMode;
+@property float imageNormalAngle;
+@property float imageRotation;
 @property float intensity;
 @property(copy) NSString * name;
-@property struct CAPoint3D { float x; float y; float z; } position;
+@property struct CAPoint3D { float x1; float x2; float x3; } position;
 @property float specularIntensity;
 @property(copy) NSString * type;
 
@@ -44,6 +48,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (float)falloff;
 - (float)falloffDistance;
+- (id)image;
+- (id)imageBlendMode;
+- (float)imageNormalAngle;
+- (float)imageRotation;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithType:(id)arg1;
@@ -60,6 +68,10 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFalloff:(float)arg1;
 - (void)setFalloffDistance:(float)arg1;
+- (void)setImage:(id)arg1;
+- (void)setImageBlendMode:(id)arg1;
+- (void)setImageNormalAngle:(float)arg1;
+- (void)setImageRotation:(float)arg1;
 - (void)setIntensity:(float)arg1;
 - (void)setName:(id)arg1;
 - (void)setPosition:(struct CAPoint3D { float x1; float x2; float x3; })arg1;

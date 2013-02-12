@@ -32,7 +32,7 @@
 - (void)_resetLocalIVars;
 - (int)assetType;
 - (long long)bytesDownloaded;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadFileName;
 - (id)downloadPath;

@@ -7,13 +7,26 @@
 
 + (id)defaultWorkspace;
 
+- (id)URLOverrideForURL:(id)arg1;
+- (id)applicationForOpeningResource:(id)arg1;
+- (id)applicationIdentifierForOpeningResource:(id)arg1;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
+- (id)deviceIdentifierForAdvertising;
+- (id)deviceIdentifierForVendor;
+- (id)directionsApplications;
+- (id)installedApplications;
 - (BOOL)invalidateIconCache:(id)arg1;
+- (BOOL)openSensitiveURL:(id)arg1 withOptions:(id)arg2;
+- (BOOL)openURL:(id)arg1 withOptions:(id)arg2;
+- (BOOL)openURL:(id)arg1;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 delegate:(id)arg5;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 userInfo:(id)arg3;
+- (id)privateURLSchemes;
+- (id)publicURLSchemes;
 - (BOOL)registerApplication:(id)arg1;
+- (BOOL)registerApplicationDictionary:(id)arg1;
 - (BOOL)unregisterApplication:(id)arg1;
 
 @end

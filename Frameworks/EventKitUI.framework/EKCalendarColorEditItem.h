@@ -9,9 +9,12 @@
     unsigned int _checkedRow;
 }
 
+@property(readonly) NSMutableArray * cells;
+
 - (id)_cellForColor:(id)arg1;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
 - (id)cellForSubitemAtIndex:(int)arg1;
+- (id)cells;
 - (void)dealloc;
 - (id)headerTitle;
 - (int)numberOfSubitems;

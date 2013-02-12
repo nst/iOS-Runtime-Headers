@@ -23,7 +23,7 @@
 - (id)displayNameForExtendedDomain:(int)arg1;
 - (int)domainCount;
 - (int)domainForIndexRow:(unsigned int)arg1;
-- (int)domainForKey:(const id)arg1;
+- (int)domainForKey:(id)arg1;
 - (id)init;
 - (id)keyForDomain:(int)arg1;
 - (void)removeUnwantedDomains;

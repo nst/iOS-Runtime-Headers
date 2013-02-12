@@ -14,10 +14,10 @@
 @property(copy) NSString * cellPadding;
 @property(copy) NSString * cellSpacing;
 @property(copy) NSString * frameBorders;
-@property(retain,readonly) DOMHTMLCollection * rows;
+@property(readonly) DOMHTMLCollection * rows;
 @property(copy) NSString * rules;
 @property(copy) NSString * summary;
-@property(retain,readonly) DOMHTMLCollection * tBodies;
+@property(readonly) DOMHTMLCollection * tBodies;
 @property(retain) DOMHTMLTableSectionElement * tFoot;
 @property(retain) DOMHTMLTableSectionElement * tHead;
 @property(copy) NSString * width;
@@ -29,6 +29,7 @@
 - (id)cellPadding;
 - (id)cellSpacing;
 - (id)createCaption;
+- (id)createTBody;
 - (id)createTFoot;
 - (id)createTHead;
 - (void)deleteCaption;

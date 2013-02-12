@@ -12,12 +12,14 @@
     BOOL _didObserveVersionChangingByWriter;
     BOOL _isInSuperArbiter;
     id _postwritingProcedure;
+    id _prewritingProcedure;
     unsigned int _writingRelinquishmentCount;
 }
 
 + (id)urlWithItemURL:(id)arg1 subitemPath:(id)arg2;
 
 - (void)accommodateDeletionWithSubitemPath:(id)arg1 completionHandler:(id)arg2;
+- (void)afterRelinquishingToWriterInvokeProcedure:(id)arg1;
 - (void)beforeReacquiringFromWriterInvokeProcedure:(id)arg1;
 - (id)currentWriterPurposeID;
 - (void)dealloc;
@@ -28,8 +30,10 @@
 - (BOOL)hasRelinquishedToWriter;
 - (void)observeChangeByWriterWithPurposeID:(id)arg1;
 - (void)observeChangeOfSubitemAtURL:(id)arg1 byWriterWithPurposeID:(id)arg2;
+- (void)observeDisconnectionByWriterWithPurposeID:(id)arg1;
 - (void)observeMoveByWriterWithPurposeID:(id)arg1;
 - (void)observeMoveOfSubitemAtURL:(id)arg1 toURL:(id)arg2 byWriterWithPurposeID:(id)arg3;
+- (void)observeReconnectionByWriterWithPurposeID:(id)arg1;
 - (void)observeVersionChangeOfKind:(id)arg1 withClientID:(id)arg2 name:(id)arg3 subitemPath:(id)arg4;
 - (void)relinquishToReadingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 resultHandler:(id)arg4;
 - (void)relinquishToWritingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 subitemPath:(id)arg4 resultHandler:(id)arg5;
@@ -37,5 +41,6 @@
 - (void)saveChangesWithCompletionHandler:(id)arg1;
 - (void)setInSuperarbiter;
 - (void)setItemLocation:(id)arg1;
+- (void)updateLastEventIdentifier:(unsigned long long)arg1;
 
 @end

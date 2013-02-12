@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSMachPort;
+@class CUTWeakReference, NSMachPort;
 
 @interface PCDarwinNotificationRunLoopSource : NSObject {
     int _notifyToken;
     NSMachPort *_port;
     SEL _selector;
-    id _target;
+    CUTWeakReference *_target;
 }
 
 - (void)dealloc;

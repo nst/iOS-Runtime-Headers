@@ -7,7 +7,7 @@
 @interface DOMWebKitCSSKeyframesRule : DOMCSSRule {
 }
 
-@property(retain,readonly) DOMCSSRuleList * cssRules;
+@property(readonly) DOMCSSRuleList * cssRules;
 @property(copy) NSString * name;
 
 - (id)cssRules;

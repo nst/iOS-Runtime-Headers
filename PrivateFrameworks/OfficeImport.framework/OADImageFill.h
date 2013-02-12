@@ -6,7 +6,7 @@
 
 @interface OADImageFill : OADFill {
     OADBlipRef *mBlipRef;
-    int mDpi;
+    long mDpi;
     BOOL mIsBlipRefOverridden;
     BOOL mIsDpiOverridden;
     BOOL mIsRotateWithShapeOverridden;

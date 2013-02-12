@@ -2,33 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableDictionary, SSDownloadManager, SSPreorderManager;
+@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, SSDownloadManager, SUClientInterface;
 
 @interface SUDownloadManager : NSObject {
     NSArray *_cachedDownloads;
-    NSArray *_cachedPreorderDownloads;
-    NSArray *_cachedPreorders;
+    SUClientInterface *_clientInterface;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSDownloadManager *_downloadManager;
     NSMutableDictionary *_downloadsByID;
-    SSPreorderManager *_preorderManager;
 }
 
 @property(readonly) SSDownloadManager * downloadManager;
 @property(readonly) NSArray * downloads;
-@property(readonly) SSPreorderManager * preorderManager;
-@property(readonly) NSArray * preorders;
 
+- (void)_finishPreflightWithCompletionBlock:(id)arg1;
+- (void)_reloadDownloadManager;
 - (void)_removeObject:(id)arg1 fromArray:(id*)arg2;
 - (void)dealloc;
 - (BOOL)deleteDownload:(id)arg1;
-- (BOOL)deletePreorder:(id)arg1;
 - (id)downloadForDownloadIdentifier:(long long)arg1;
 - (id)downloadManager;
 - (id)downloads;
-- (id)initWithDownloadManager:(id)arg1 preorderManager:(id)arg2;
-- (id)preorderManager;
-- (id)preorders;
+- (id)initWithDownloadManager:(id)arg1 clientInterface:(id)arg2;
+- (id)initWithDownloadManager:(id)arg1;
+- (void)preflightWithCompletionBlock:(id)arg1;
 - (void)reloadDownloadManager;
-- (void)reloadPreorderManager;
 
 @end

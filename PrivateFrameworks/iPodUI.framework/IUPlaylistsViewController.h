@@ -4,7 +4,7 @@
 
 @class IUMediaAlertView, UITextField;
 
-@interface IUPlaylistsViewController : IUMediaListViewController <UIAlertViewDelegate, UITextFieldDelegate> {
+@interface IUPlaylistsViewController : IUMusicViewController <UIAlertViewDelegate, UITextFieldDelegate> {
     UITextField *_addPlaylistAlertTextField;
     IUMediaAlertView *_addPlaylistAlertView;
 }
@@ -18,6 +18,7 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dealloc;
 - (void)editPlaylist:(id)arg1;
+- (BOOL)hideActionRowsOnAppear;
 - (id)init;
 - (void)modalContextWillDismiss:(id)arg1 withSuccess:(BOOL)arg2;
 - (BOOL)textFieldShouldReturn:(id)arg1;

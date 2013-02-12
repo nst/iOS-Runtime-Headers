@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEOTileKeyList, MKMapSnapshotCreator, NSMutableDictionary, NSString, UIImage;
+@class MKMapSnapshotCreator, NSString, UIImage, VKMapSnapshotCreator;
 
 @interface MKMapSnapshotRequest : NSObject {
     struct { 
@@ -11,25 +11,14 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     NSString *_attributionString;
     id _context;
     } _coordinate;
     MKMapSnapshotCreator *_delegate;
     UIImage *_image;
-    unsigned int _maxX;
-    unsigned int _maxY;
-    unsigned int _minX;
-    unsigned int _minY;
-    NSMutableDictionary *_objects;
-    BOOL _paused;
-    } _renderOffset;
     id _requester;
     } _size;
-    GEOTileKeyList *_tileKeyList;
-    unsigned int _zoomAdd;
+    VKMapSnapshotCreator *_snapshotCreator;
     unsigned int _zoomLevel;
 }
 
@@ -42,15 +31,14 @@
 @property struct CGSize { float x1; float x2; } size;
 @property unsigned int zoomLevel;
 
-- (void)_restartLoadingAfterPause:(id)arg1;
 - (id)attributionString;
+- (void)cancel;
 - (id)context;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)image;
-- (id)init;
 - (id)requester;
 - (void)setAttributionString:(id)arg1;
 - (void)setContext:(id)arg1;
@@ -60,10 +48,7 @@
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setZoomLevel:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (void)startLoading;
-- (void)stopLoading;
-- (void)tileRequesterCompleted;
-- (void)tileRequesterFailedWithError:(id)arg1;
+- (void)start;
 - (unsigned int)zoomLevel;
 
 @end

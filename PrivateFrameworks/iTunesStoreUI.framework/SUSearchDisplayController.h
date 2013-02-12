@@ -6,6 +6,7 @@
     BOOL _store_navigationBarHidingEnabled;
 }
 
+- (id)_createPopoverController;
 - (void)_noEventSetSearchFieldText:(id)arg1;
 - (BOOL)isNavigationBarHidingEnabled;
 - (void)setActive:(BOOL)arg1 animated:(BOOL)arg2;

@@ -5,28 +5,28 @@
 @class NSString;
 
 @interface PTPObjectInfoDataset : NSObject {
-    unsigned int _associationDesc;
+    unsigned long _associationDesc;
     unsigned short _associationType;
     NSString *_captureDate;
     NSString *_filename;
-    unsigned int _imageBitDepth;
-    unsigned int _imagePixHeight;
-    unsigned int _imagePixWidth;
+    unsigned long _imageBitDepth;
+    unsigned long _imagePixHeight;
+    unsigned long _imagePixWidth;
     NSString *_keywords;
     NSString *_modificationDate;
     unsigned long long _objectCompressedSize;
     unsigned short _objectFormat;
-    unsigned int _objectHandle;
-    unsigned int _parentObject;
+    unsigned long _objectHandle;
+    unsigned long _parentObject;
     unsigned short _protectionStatus;
-    unsigned int _sequenceNumber;
-    unsigned int _storageID;
-    unsigned int _thmFileSize;
-    unsigned int _thumbCompressedSize;
+    unsigned long _sequenceNumber;
+    unsigned long _storageID;
+    unsigned long _thmFileSize;
+    unsigned long _thumbCompressedSize;
     unsigned short _thumbFormat;
-    unsigned int _thumbOffset;
-    unsigned int _thumbPixHeight;
-    unsigned int _thumbPixWidth;
+    unsigned long _thumbOffset;
+    unsigned long _thumbPixHeight;
+    unsigned long _thumbPixWidth;
 }
 
 - (unsigned long)associationDesc;

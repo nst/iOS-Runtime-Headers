@@ -5,11 +5,13 @@
 @class NSDictionary, NSString;
 
 @interface FTDeviceSupport : NSObject {
+    BOOL _accountModificationRestricted;
     BOOL _blockPost;
     NSString *_buildVersion;
     int _carrierBundleSupported;
     BOOL _commCenterDead;
     BOOL _faceTimeBlocked;
+    int _iMessageAllowedToken;
     BOOL _iMessageBlocked;
     NSString *_lastDeviceID;
     NSString *_model;
@@ -18,8 +20,11 @@
     NSString *_productVersion;
     BOOL _shouldUseSIMState;
     BOOL _simBecameNotReady;
+    BOOL _supportsBackCamera;
     BOOL _supportsCellularData;
     BOOL _supportsFT;
+    BOOL _supportsFrontCamera;
+    BOOL _supportsMMS;
     BOOL _supportsNonWiFiFaceTime;
     BOOL _supportsSMS;
     BOOL _supportsWLAN;
@@ -28,12 +33,15 @@
 }
 
 @property(readonly) NSDictionary * CTNetworkInformation;
+@property(readonly) BOOL accountModificationRestricted;
 @property(readonly) BOOL commCenterDead;
 @property(readonly) BOOL conferencingAllowed;
 @property(readonly) BOOL conferencingBlocked;
 @property(readonly) BOOL conferencingEnabled;
 @property(readonly) NSString * deviceID;
 @property(readonly) NSString * deviceIDPrefix;
+@property(readonly) NSString * deviceName;
+@property(readonly) int deviceType;
 @property(readonly) NSString * deviceTypeIDPrefix;
 @property(readonly) BOOL faceTimeAvailable;
 @property(readonly) BOOL faceTimeBlocked;
@@ -47,19 +55,25 @@
 @property(readonly) BOOL madridBlocked;
 @property(readonly) BOOL madridSupported;
 @property(readonly) NSString * model;
+@property(readonly) BOOL nonWifiFaceTimeAvailable;
 @property(readonly) int performanceClass;
 @property(readonly) NSString * productBuildVersion;
 @property(readonly) NSString * productName;
 @property(readonly) NSString * productVersion;
 @property(readonly) BOOL registrationSupported;
 @property(readonly) BOOL supportsAppleIDIdentification;
+@property(readonly) BOOL supportsBackFacingCamera;
 @property(readonly) BOOL supportsCellularData;
+@property(readonly) BOOL supportsFrontFacingCamera;
+@property(readonly) BOOL supportsMMS;
 @property(readonly) BOOL supportsNonWiFiFaceTime;
 @property(readonly) BOOL supportsSMS;
 @property(readonly) BOOL supportsSMSIdentification;
+@property(readonly) BOOL supportsSimultaneousVoiceAndDataRightNow;
 @property(readonly) BOOL supportsWLAN;
 @property(readonly) BOOL supportsWiFi;
 @property(readonly) NSString * telephoneNumber;
+@property(readonly) NSDictionary * telephonyCapabilities;
 @property(readonly) NSString * userAgentString;
 @property(readonly) BOOL wantsBreakBeforeMake;
 
@@ -90,7 +104,8 @@
 - (void)_updateCapabilities;
 - (BOOL)_updateDeviceID;
 - (void)_updateManagedConfigurationSettings;
-- (BOOL)allowsWeakReference;
+- (void)_watchNotifyTokens;
+- (BOOL)accountModificationRestricted;
 - (void)carrierSettingsChanged:(id)arg1;
 - (BOOL)commCenterDead;
 - (BOOL)conferencingAllowed;
@@ -99,6 +114,8 @@
 - (void)dealloc;
 - (id)deviceID;
 - (id)deviceIDPrefix;
+- (id)deviceName;
+- (int)deviceType;
 - (id)deviceTypeIDPrefix;
 - (BOOL)faceTimeAvailable;
 - (BOOL)faceTimeBlocked;
@@ -113,6 +130,7 @@
 - (BOOL)madridBlocked;
 - (BOOL)madridSupported;
 - (id)model;
+- (BOOL)nonWifiFaceTimeAvailable;
 - (int)performanceClass;
 - (id)productBuildVersion;
 - (id)productName;
@@ -120,15 +138,19 @@
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (BOOL)registrationSupported;
-- (BOOL)retainWeakReference;
 - (BOOL)supportsAppleIDIdentification;
+- (BOOL)supportsBackFacingCamera;
 - (BOOL)supportsCellularData;
+- (BOOL)supportsFrontFacingCamera;
+- (BOOL)supportsMMS;
 - (BOOL)supportsNonWiFiFaceTime;
 - (BOOL)supportsSMS;
 - (BOOL)supportsSMSIdentification;
+- (BOOL)supportsSimultaneousVoiceAndDataRightNow;
 - (BOOL)supportsWLAN;
 - (BOOL)supportsWiFi;
 - (id)telephoneNumber;
+- (id)telephonyCapabilities;
 - (id)userAgentString;
 - (BOOL)wantsBreakBeforeMake;
 

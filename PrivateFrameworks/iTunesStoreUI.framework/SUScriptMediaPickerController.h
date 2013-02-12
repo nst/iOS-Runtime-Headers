@@ -12,15 +12,9 @@
 @property(retain) NSString * prompt;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
-- (BOOL)_allowsPickingMultipleItems;
 - (id)_className;
-- (id)_copyMediaTypes;
-- (id)_copyPrompt;
-- (void)_setAllowsPickingMultipleItems:(BOOL)arg1;
-- (void)_setMediaTypes:(id)arg1;
-- (void)_setPrompt:(id)arg1;
 - (BOOL)allowsPickingMultipleItems;
 - (id)attributeKeys;
 - (id)initWithMediaTypes:(id)arg1;
@@ -29,7 +23,6 @@
 - (id)prompt;
 - (id)scriptAttributeKeys;
 - (void)setAllowsPickingMultipleItems:(BOOL)arg1;
-- (void)setMediaTypes:(id)arg1;
 - (void)setNativeViewController:(id)arg1;
 - (void)setPrompt:(id)arg1;
 

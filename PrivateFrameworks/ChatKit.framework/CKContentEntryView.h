@@ -24,6 +24,7 @@
 
 @property(readonly) NSArray * contentViews;
 @property(readonly) unsigned int displayedLines;
+@property(readonly) BOOL isShowingDictationPlaceholder;
 @property int outgoingBubbleColor;
 @property BOOL showsSubject;
 
@@ -37,11 +38,9 @@
 - (void)_loadEntryViews;
 - (void)_reloadEntryViewsIfLoaded;
 - (void)_removeContentView:(id)arg1;
-- (void)_scrollViewAnimationEnded;
 - (void)_setupGestureRecognizers;
 - (id)activeView;
 - (id)attachments;
-- (void)attachmentsDidChange;
 - (BOOL)canPasteObject:(id)arg1;
 - (BOOL)ckTextContentViewShouldReturn:(id)arg1;
 - (void)clearMessage;
@@ -60,17 +59,15 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertMessagePart:(id)arg1;
 - (BOOL)isActive;
+- (BOOL)isShowingDictationPlaceholder;
 - (int)lastCursorPosition;
 - (void)loadSubviews;
 - (void)makeActive;
 - (id)messageComposition;
-- (id)messageCompositionIfTextOnly;
-- (id)messageParts;
 - (void)moveCursorToEnd;
 - (int)outgoingBubbleColor;
 - (void)reflowContent;
 - (void)reflowContentWithAnimation:(BOOL)arg1;
-- (void)removeFromSuperview;
 - (void)restoreCursorPosition;
 - (void)saveCursorPosition;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
@@ -79,7 +76,6 @@
 - (void)setCursorPosition:(int)arg1;
 - (void)setDefaultText:(id)arg1;
 - (void)setEntryFieldDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIgnoreAnimations:(BOOL)arg1;
 - (void)setMessageComposition:(id)arg1;
 - (void)setMessageParts:(id)arg1;
@@ -98,7 +94,6 @@
 - (void)textContentViewDidChange:(id)arg1;
 - (BOOL)textContentViewShouldBeginEditing:(id)arg1;
 - (BOOL)textContentViewShouldEndEditing:(id)arg1;
-- (void)updateCandidateDisplay;
 - (void)updateFontSize;
 
 @end

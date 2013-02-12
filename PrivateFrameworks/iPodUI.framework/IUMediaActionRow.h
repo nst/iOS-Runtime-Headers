@@ -9,6 +9,7 @@
     IUMediaTableCell *_cell;
     IUTableCellConfiguration *_configuration;
     BOOL _includeInDisplayedRowCount;
+    int _mediaTypes;
     BOOL _selectable;
     BOOL _showCheckmark;
     BOOL _showDisclosure;
@@ -17,19 +18,23 @@
 }
 
 @property(readonly) UIView * accessoryView;
-@property SEL action;
+@property(readonly) SEL action;
 @property(retain) IUMediaTableCell * cell;
 @property(retain) IUTableCellConfiguration * configuration;
 @property BOOL includeInDisplayedRowCount;
 @property(readonly) int mediaDisclosureStyle;
+@property(readonly) int mediaTypes;
 @property BOOL selectable;
 @property BOOL showCheckmark;
 @property BOOL showDisclosure;
 @property BOOL showPlusButton;
-@property int tag;
+@property(readonly) int tag;
 
++ (id)actionRowWithPreset:(int)arg1 action:(SEL)arg2 title:(id)arg3 cellConfigurationClass:(Class)arg4;
++ (id)actionRowWithPreset:(int)arg1 action:(SEL)arg2 title:(id)arg3;
 + (id)actionRowWithPreset:(int)arg1 action:(SEL)arg2;
-+ (id)hyperlinkActionRowWithTitle:(id)arg1;
++ (id)actionRowWithTag:(int)arg1 action:(SEL)arg2;
++ (id)hyperlinkActionRowWithTag:(int)arg1 mediaType:(int)arg2 title:(id)arg3 action:(SEL)arg4;
 
 - (id)accessoryView;
 - (SEL)action;
@@ -38,10 +43,11 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)includeInDisplayedRowCount;
-- (id)initWithTag:(int)arg1 action:(SEL)arg2;
+- (id)initWithPreset:(int)arg1 mediaTypes:(int)arg2 title:(id)arg3 action:(SEL)arg4 cellConfigurationClass:(Class)arg5;
+- (id)initWithTag:(int)arg1 mediaTypes:(int)arg2 selectable:(BOOL)arg3 action:(SEL)arg4;
 - (int)mediaDisclosureStyle;
+- (int)mediaTypes;
 - (BOOL)selectable;
-- (void)setAction:(SEL)arg1;
 - (void)setCell:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setIncludeInDisplayedRowCount:(BOOL)arg1;
@@ -49,9 +55,6 @@
 - (void)setShowCheckmark:(BOOL)arg1;
 - (void)setShowDisclosure:(BOOL)arg1;
 - (void)setShowPlusButton:(BOOL)arg1;
-- (void)setSimpleConfigurationPreset:(int)arg1;
-- (void)setSimpleConfigurationWithTitle:(id)arg1;
-- (void)setTag:(int)arg1;
 - (BOOL)showCheckmark;
 - (BOOL)showDisclosure;
 - (BOOL)showPlusButton;

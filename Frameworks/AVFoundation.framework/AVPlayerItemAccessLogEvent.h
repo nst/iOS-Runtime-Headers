@@ -13,6 +13,7 @@
 @property(readonly) double indicatedBitrate;
 @property(readonly) long long numberOfBytesTransferred;
 @property(readonly) int numberOfDroppedVideoFrames;
+@property(readonly) int numberOfMediaRequests;
 @property(readonly) int numberOfSegmentsDownloaded;
 @property(readonly) int numberOfServerAddressChanges;
 @property(readonly) int numberOfStalls;
@@ -33,6 +34,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (long long)numberOfBytesTransferred;
 - (int)numberOfDroppedVideoFrames;
+- (int)numberOfMediaRequests;
 - (int)numberOfSegmentsDownloaded;
 - (int)numberOfServerAddressChanges;
 - (int)numberOfStalls;

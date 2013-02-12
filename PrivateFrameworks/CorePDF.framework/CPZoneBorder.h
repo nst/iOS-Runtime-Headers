@@ -4,7 +4,7 @@
 
 @class CPPage, NSMutableArray;
 
-@interface CPZoneBorder : NSObject <NSCopying> {
+@interface CPZoneBorder : NSObject <NSCopying, CPCopying> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -60,6 +60,7 @@
 - (BOOL)hasVectorGoingForward:(BOOL)arg1 startingAtIndex:(unsigned int*)arg2;
 - (unsigned int)indexOfIntersectionWith:(id)arg1;
 - (id)init;
+- (id)initSuper;
 - (id)initWithGraphicObject:(id)arg1;
 - (void)instantiateVectors;
 - (unsigned int)intersectionCount;

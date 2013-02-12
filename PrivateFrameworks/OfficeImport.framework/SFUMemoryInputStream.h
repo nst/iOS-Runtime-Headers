@@ -5,10 +5,10 @@
 @class NSData;
 
 @interface SFUMemoryInputStream : NSObject <SFUBufferedInputStream> {
-    char *mCurrent;
+    const char *mCurrent;
     NSData *mData;
-    char *mEnd;
-    char *mStart;
+    const char *mEnd;
+    const char *mStart;
 }
 
 - (BOOL)canSeek;

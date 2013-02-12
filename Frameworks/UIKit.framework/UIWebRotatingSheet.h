@@ -2,39 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMNode, UIWebBrowserView;
+@class UIWebDocumentView;
 
-@interface UIWebRotatingSheet : UIActionSheet {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    unsigned int _arrowDirections;
-    id _delegateWhileRotating;
-    float _documentScale;
-    } _fromPoint;
-    BOOL _isRotating;
-    DOMNode *_node;
+@interface UIWebRotatingSheet : _UIRotatingActionSheet {
     BOOL _wasDeferringCallbacks;
-    UIWebBrowserView *_webBrowserView;
+    UIWebDocumentView *_webBrowserView;
 }
 
-@property unsigned int arrowDirections;
-@property(retain) DOMNode * node;
-
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculatePresentationRect;
 - (void)_disableWebView;
 - (void)_enableWebView;
-- (void)_handleDidRotate;
-- (BOOL)_presentSheetWithDisabledWebView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)arrowDirections;
 - (void)dealloc;
-- (void)didRotate:(id)arg1;
 - (void)doneWithSheet;
-- (id)initWithDOMNode:(id)arg1 atLocation:(struct CGPoint { float x1; float x2; })arg2;
-- (id)node;
+- (id)initWithUIWebDocumentView:(id)arg1;
 - (BOOL)presentSheet;
-- (void)setArrowDirections:(unsigned int)arg1;
-- (void)setNode:(id)arg1;
-- (void)willRotate:(id)arg1;
 
 @end

@@ -7,7 +7,7 @@
 @interface WDATextBox : NSObject {
     boolmOle;
     WDDocument *mDocument;
-    unsigned int mNextTextBoxId;
+    unsigned long mNextTextBoxId;
     WDAContent *mParent;
     WDText *mText;
 }

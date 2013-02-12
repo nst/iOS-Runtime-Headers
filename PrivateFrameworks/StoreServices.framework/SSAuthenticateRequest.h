@@ -4,24 +4,21 @@
 
 @class <SSAuthenticateRequestDelegate>, SSAuthenticationContext;
 
-@interface SSAuthenticateRequest : SSRequest <SSCoding> {
+@interface SSAuthenticateRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
 }
 
 @property(readonly) SSAuthenticationContext * authenticationContext;
 @property <SSAuthenticateRequestDelegate> * delegate;
 
-- (void)_sendResponseToDelegate:(id)arg1;
 - (id)authenticationContext;
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
-- (id)handleFailureResponse:(id)arg1;
-- (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
 - (id)initWithAccount:(id)arg1;
 - (id)initWithAuthenticationContext:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
-- (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)start;
+- (void)startWithAuthenticateResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
 
 @end

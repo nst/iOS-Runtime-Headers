@@ -5,28 +5,28 @@
 @class CIImage, CIVector, NSNumber;
 
 @interface CILightTunnel : CIFilter {
+    CIVector *inputCenter;
     CIImage *inputImage;
-    CIVector *inputPoint;
     NSNumber *inputRadius;
     NSNumber *inputRotation;
 }
 
+@property(copy) CIVector * inputCenter;
 @property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputPoint;
 @property(copy) NSNumber * inputRadius;
 @property(copy) NSNumber * inputRotation;
 
 + (id)customAttributes;
 
 - (id)_kernel;
+- (id)inputCenter;
 - (id)inputImage;
-- (id)inputPoint;
 - (id)inputRadius;
 - (id)inputRotation;
 - (id)outputImage;
 - (void)setDefaults;
+- (void)setInputCenter:(id)arg1;
 - (void)setInputImage:(id)arg1;
-- (void)setInputPoint:(id)arg1;
 - (void)setInputRadius:(id)arg1;
 - (void)setInputRotation:(id)arg1;
 

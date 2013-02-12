@@ -43,7 +43,6 @@
 - (id)videoView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidUnload;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class AVConference, NSMutableArray, NSMutableDictionary;
+@class AVConference, NSLock, NSMutableArray, NSMutableDictionary;
 
 @interface IMAVConferenceInterface : IMAVInterface <AVConferenceDelegate> {
     NSMutableDictionary *_avConferences;
+    NSLock *_avConferencesLock;
     NSMutableArray *_avConferencesToCleanup;
     BOOL _duringInit;
     BOOL _pendingCleanup;
-    BOOL _previewStarted;
-    AVConference *_vcc;
 }
 
 @property(readonly) AVConference * controller;
@@ -22,7 +21,6 @@
 - (void)_avChatDealloc:(id)arg1;
 - (id)_avChatForConference:(id)arg1 callID:(int)arg2 errorString:(id)arg3;
 - (id)_avChatForConference:(id)arg1;
-- (int)_checkNetworkForChat:(id)arg1;
 - (void)_cleanupAVInterface;
 - (void)_conferenceEnded:(id)arg1;
 - (id)_conferenceForAVChat:(id)arg1;
@@ -38,14 +36,15 @@
 - (void)_queueAVConferenceForCleanup:(id)arg1;
 - (void)_setCurrentCamera:(id)arg1;
 - (void)_setCurrentMicrophone:(id)arg1;
+- (BOOL)_submitEndCallMetric:(id)arg1 forChat:(id)arg2;
 - (BOOL)_submitLoggingInformation:(id)arg1 forChat:(id)arg2;
 - (BOOL)allowsVideoForAVChat:(id)arg1;
 - (unsigned int)avChat:(id)arg1 enableAudioReflector:(BOOL)arg2;
 - (int)avChat:(id)arg1 endConferenceForUserID:(id)arg2;
-- (id)avChat:(id)arg1 localICEDataForHandle:(id)arg2 usingRelay:(BOOL)arg3;
+- (id)avChat:(id)arg1 localICEDataForHandleID:(id)arg2 service:(id)arg3 usingRelay:(BOOL)arg4 supportsARDMuxing:(BOOL)arg5;
 - (void)avChat:(id)arg1 prepareConnectionWithRemoteConnectionData:(id)arg2 localConnectionData:(id)arg3;
-- (void)avChat:(id)arg1 setCameraOrientation:(unsigned int)arg2;
-- (void)avChat:(id)arg1 setCameraType:(unsigned int)arg2;
+- (BOOL)avChat:(id)arg1 setCameraOrientation:(unsigned int)arg2;
+- (BOOL)avChat:(id)arg1 setCameraType:(unsigned int)arg2;
 - (void)avChat:(id)arg1 setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg2 localPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg3;
 - (void)avChat:(id)arg1 setMute:(BOOL)arg2;
 - (void)avChat:(id)arg1 setPaused:(BOOL)arg2;
@@ -61,9 +60,9 @@
 - (BOOL)closeCamera;
 - (void)conference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
 - (void)conference:(id)arg1 didStartSession:(BOOL)arg2 withUserInfo:(id)arg3;
+- (void)conference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3 callMetadata:(id)arg4;
 - (void)conference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
 - (void)conference:(id)arg1 inititiateRelayRequest:(int)arg2 requestDict:(id)arg3;
-- (void)conference:(id)arg1 receivedFirstPreviewForCallID:(int)arg2;
 - (void)conference:(id)arg1 receivedFirstRemoteFrameForCallID:(int)arg2;
 - (void)conference:(id)arg1 receivedNoRemotePacketsForTime:(double)arg2 callID:(int)arg3;
 - (void)conference:(id)arg1 remoteAudioPaused:(BOOL)arg2 callID:(int)arg3;
@@ -73,6 +72,9 @@
 - (void)conference:(id)arg1 sendRelayUpdate:(int)arg2 updateDict:(id)arg3;
 - (void)conference:(id)arg1 updateInputMeterLevel:(float)arg2;
 - (void)conference:(id)arg1 updateOutputMeterLevel:(float)arg2;
+- (void)conference:(id)arg1 videoQualityNotificationForCallID:(int)arg2 isDegraded:(BOOL)arg3 isRemote:(BOOL)arg4;
+- (void)conference:(id)arg1 withCallID:(int)arg2 networkHint:(BOOL)arg3;
+- (void)conference:(id)arg1 withCallID:(int)arg2 remoteMediaStalled:(BOOL)arg3;
 - (id)controller;
 - (void)dealloc;
 - (int)endConferenceForAVChat:(id)arg1;
@@ -82,7 +84,6 @@
 - (void)handleRelayUpdate:(id)arg1 fromParticipant:(id)arg2;
 - (id)init;
 - (void)initAVInterface;
-- (void)invalidateAVInterface;
 - (BOOL)isAVInterfaceReady;
 - (BOOL)isMuteForAVChat:(id)arg1;
 - (BOOL)isPausedForAVChat:(id)arg1;
@@ -92,14 +93,14 @@
 - (void*)localVideoLayer;
 - (id)natTypeForAVChat:(id)arg1;
 - (BOOL)openCamera;
-- (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
-- (void*)remoteVideoBackLayer;
-- (void*)remoteVideoLayer;
+- (void*)remoteVideoBackLayerForChat:(id)arg1;
+- (void*)remoteVideoLayerForChat:(id)arg1;
+- (void)serverDiedForConference:(id)arg1;
 - (void)setLocalVideoBackLayer:(void*)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
-- (void)setRemoteVideoBackLayer:(void*)arg1;
-- (void)setRemoteVideoLayer:(void*)arg1;
-- (void)setupComplete;
+- (void)setRemoteVideoBackLayer:(void*)arg1 forChat:(id)arg2;
+- (void)setRemoteVideoLayer:(void*)arg1 forChat:(id)arg2;
+- (void)setRemoteVideoLayersFromChat:(id)arg1 toChat:(id)arg2;
 - (BOOL)startPreviewWithError:(id*)arg1;
 - (BOOL)stopPreview;
 - (BOOL)supportsLayers;

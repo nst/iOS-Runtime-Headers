@@ -17,7 +17,7 @@
 
 - (void)_mediaLibrariesDidChangeNotification:(id)arg1;
 - (id)accessoryViewForIndex:(unsigned int)arg1;
-- (id)cellConfigurationForIndex:(unsigned int)arg1 artworkLoadingCompletionHandler:(id)arg2;
+- (id)cellConfigurationForIndex:(unsigned int)arg1 shouldLoadArtwork:(BOOL)arg2 artworkLoadingCompletionHandler:(id)arg3;
 - (void)configureMoreListTableCell:(id)arg1;
 - (id)connectingMediaLibrary;
 - (unsigned int)count;

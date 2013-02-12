@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSColorStub;
+@class TSUColor;
 
 @interface EDColorLocator : NSObject {
-    NSColorStub *mColor;
+    TSUColor *mColor;
     int mColorIndex;
     unsigned int mColorOffset;
 }

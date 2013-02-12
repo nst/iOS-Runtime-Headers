@@ -2,15 +2,20 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonEditDelegate>, <ABPersonViewControllerDelegate>, <ABStyleProvider>, NSArray, NSString, UIFont, UIImage, UIView;
+@class <ABPersonEditDelegate>, <ABPersonViewControllerDelegate>, <ABStyleProvider>, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, AFContextManager, NSArray, NSString, NSTimer, UIFont, UIImage, UIView;
 
-@interface ABPersonViewController : UIViewController {
+@interface ABPersonViewController : UIViewController <AFContextProvider, UIViewControllerRestoration> {
+    ABPersonTableViewActionsDelegate *_actionsDelegate;
+    ABPersonTableViewDataSource *_dataSource;
+    NSTimer *_editAnimationTimer;
     id _helper;
     BOOL _internal2;
     id _internal;
     <ABPersonViewControllerDelegate> *_personViewDelegate;
+    ABPersonTableViewSharingDelegate *_sharingDelegate;
 }
 
+@property(readonly) ABPersonTableViewActionsDelegate * actionsDelegate;
 @property void* addressBook;
 @property BOOL allowsActions;
 @property BOOL allowsAddToFavorites;
@@ -24,12 +29,16 @@
 @property BOOL allowsVibrations;
 @property BOOL appearsInLinkingPeoplePicker;
 @property(copy) NSString * attribution;
+@property BOOL badgeEmailPropertiesForMailVIP;
+@property(readonly) AFContextManager * contextManager;
 @property(retain) UIView * customFooterView;
 @property(retain) UIView * customHeaderView;
 @property(retain) UIView * customMessageView;
+@property(readonly) ABPersonTableViewDataSource * dataSource;
 @property void* displayedPerson;
 @property(copy) NSArray * displayedProperties;
 @property <ABPersonEditDelegate> * editDelegate;
+@property(readonly) ABPersonViewControllerHelper * helper;
 @property(copy) NSString * message;
 @property(copy) NSString * messageDetail;
 @property(retain) UIFont * messageDetailFont;
@@ -42,13 +51,18 @@
 @property(copy) NSString * shareMessageBody;
 @property BOOL shareMessageBodyIsHTML;
 @property(copy) NSString * shareMessageSubject;
+@property(readonly) ABPersonTableViewSharingDelegate * sharingDelegate;
 @property BOOL shouldAlignPersonHeaderViewToImage;
 @property BOOL shouldShowLinkedPeople;
-@property BOOL shouldShowLinkingUIOnCard;
 @property(retain) <ABStyleProvider> * styleProvider;
+@property(readonly) UIView * tableHeaderView;
 @property(copy) id willTweetLocationCallback;
+@property(copy) id willWeiboLocationCallback;
+
++ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (BOOL)_allowsAutorotation;
+- (void)_editAnimationTimerFired:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)_handleLocalChange:(struct __CFDictionary { }*)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
@@ -58,6 +72,8 @@
 - (void)_updateTableDataForExternalChange;
 - (int)abViewControllerType;
 - (float)ab_heightToFitForViewInPopoverView;
+- (id)actionsDelegate;
+- (void)addActionWithTitle:(id)arg1 content:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
 - (void)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 forProperty:(int)arg4 withActionGrouping:(int)arg5 ordering:(int)arg6;
 - (void*)addressBook;
@@ -78,19 +94,22 @@
 - (void)applicationWillSuspend;
 - (void)applicationWillTerminate:(id)arg1;
 - (id)attribution;
+- (BOOL)badgeEmailPropertiesForMailVIP;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancelEditing:(BOOL)arg1;
 - (id)contextManager;
 - (id)customFooterView;
 - (id)customHeaderView;
 - (id)customMessageView;
+- (id)dataSource;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void*)displayedPerson;
 - (id)displayedProperties;
-- (void)editAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)editCancel:(id)arg1;
 - (id)editDelegate;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)forceUseLinkedInfos:(id)arg1 currentIndexInLinkedInfos:(int)arg2;
 - (id)getCurrentContext;
 - (BOOL)handleExternalChange;
@@ -118,6 +137,7 @@
 - (id)personHeaderView;
 - (id)personViewDelegate;
 - (void)pickerCancel:(id)arg1;
+- (id)prepareViewWithPerson:(void*)arg1;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 forProperty:(int)arg3 withActionGrouping:(int)arg4 ordering:(int)arg5;
 - (void)saveChanges;
 - (void)setActionShouldPickHighlightedItem:(BOOL)arg1;
@@ -135,6 +155,8 @@
 - (void)setAppearsInLinkingPeoplePicker:(BOOL)arg1;
 - (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
+- (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
+- (void)setCardContentProvider:(id)arg1;
 - (void)setCustomAppearanceProvider:(id)arg1;
 - (void)setCustomFooterView:(id)arg1;
 - (void)setCustomHeaderView:(id)arg1;
@@ -165,12 +187,14 @@
 - (void)setShouldShowLinkingUIOnCard:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setWillTweetLocationCallback:(id)arg1;
+- (void)setWillWeiboLocationCallback:(id)arg1;
 - (void)shareContactByEmail:(id)arg1;
 - (id)shareLocationSnapshotImage;
 - (id)shareLocationURL;
 - (id)shareMessageBody;
 - (BOOL)shareMessageBodyIsHTML;
 - (id)shareMessageSubject;
+- (id)sharingDelegate;
 - (BOOL)shouldAlignPersonHeaderViewToImage;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldShowLinkedPeople;
@@ -178,6 +202,7 @@
 - (void)startDelayingChangeNotifications;
 - (void)stopDelayingChangeNotificationsAndDeliverNow:(BOOL)arg1;
 - (id)styleProvider;
+- (id)tableHeaderView;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (void)updateNavigationButtons;
@@ -192,5 +217,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (id)willTweetLocationCallback;
+- (id)willWeiboLocationCallback;
 
 @end

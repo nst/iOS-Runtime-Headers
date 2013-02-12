@@ -7,8 +7,8 @@
 @interface DOMHTMLFrameElement : DOMHTMLElement {
 }
 
-@property(retain,readonly) DOMDocument * contentDocument;
-@property(retain,readonly) DOMAbstractView * contentWindow;
+@property(readonly) DOMDocument * contentDocument;
+@property(readonly) DOMAbstractView * contentWindow;
 @property(copy) NSString * frameBorder;
 @property(readonly) int height;
 @property(copy) NSString * location;

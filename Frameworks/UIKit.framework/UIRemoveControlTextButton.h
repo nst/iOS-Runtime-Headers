@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UITableCell;
+@class NSString;
 
 @interface UIRemoveControlTextButton : UIControl {
     NSString *_label;
-    UITableCell *_tableCell;
 }
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;

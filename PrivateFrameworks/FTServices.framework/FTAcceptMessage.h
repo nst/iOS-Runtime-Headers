@@ -46,6 +46,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
+- (id)init;
 - (id)messageBody;
 - (id)peerBlob;
 - (id)peerID;

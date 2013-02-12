@@ -25,6 +25,7 @@
 
 + (id)defaultDimmingColor;
 
+- (void)_simulateTap;
 - (void)dealloc;
 - (id)delegate;
 - (id)dimmingColor;

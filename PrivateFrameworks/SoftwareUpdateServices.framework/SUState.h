@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class NSDate, NSString, SUDescriptor, SUDownload, SUDownloadInterfaceReport;
+@class NSDate, NSString, SUDescriptor, SUDownload;
 
-@interface SUState : NSObject {
+@interface SUState : NSObject <NSKeyedUnarchiverDelegate> {
     BOOL _autodownloadNeedsOneTimeRetry;
-    SUDownloadInterfaceReport *_downloadInterfaceReport;
     SUDownload *_lastDownload;
     NSString *_lastProductBuild;
     NSString *_lastProductType;
@@ -20,7 +19,6 @@
 }
 
 @property BOOL autodownloadNeedsOneTimeRetry;
-@property(retain) SUDownloadInterfaceReport * downloadInterfaceReport;
 @property(copy) SUDownload * lastDownload;
 @property(retain) NSString * lastProductBuild;
 @property(retain) NSString * lastProductType;
@@ -39,7 +37,6 @@
 - (BOOL)autodownloadNeedsOneTimeRetry;
 - (void)dealloc;
 - (id)description;
-- (id)downloadInterfaceReport;
 - (id)init;
 - (id)lastDownload;
 - (id)lastProductBuild;
@@ -56,7 +53,6 @@
 - (id)scheduledAutodownloadWifiPeriodEndTime;
 - (id)scheduledManualDownloadWifiPeriodEndTime;
 - (void)setAutodownloadNeedsOneTimeRetry:(BOOL)arg1;
-- (void)setDownloadInterfaceReport:(id)arg1;
 - (void)setLastDownload:(id)arg1;
 - (void)setLastProductBuild:(id)arg1;
 - (void)setLastProductType:(id)arg1;
@@ -67,5 +63,6 @@
 - (void)setScheduledAutodownloadPolicyChangeTime:(id)arg1;
 - (void)setScheduledAutodownloadWifiPeriodEndTime:(id)arg1;
 - (void)setScheduledManualDownloadWifiPeriodEndTime:(id)arg1;
+- (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 
 @end

@@ -16,8 +16,8 @@
 @property(readonly) NSString * name;
 @property(readonly) NSString * uniqueID;
 
-- (id)_FTCamera;
-- (id)_initWithFTCamera:(id)arg1;
+- (id)_AVCamera;
+- (id)_initWithAVCamera:(id)arg1;
 - (int)cameraStyle;
 - (void)dealloc;
 - (id)description;

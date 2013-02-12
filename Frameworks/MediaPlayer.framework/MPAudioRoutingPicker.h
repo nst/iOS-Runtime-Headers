@@ -4,7 +4,7 @@
 
 @class MPAudioDeviceController, NSArray;
 
-@interface MPAudioRoutingPicker : UIAlertView <UITableViewDataSource, UITableViewDelegate> {
+@interface MPAudioRoutingPicker : UIAlertView <MPAudioDeviceControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     MPAudioDeviceController *_audioDeviceController;
     BOOL _ignoringInteractionEvents;
     NSArray *_routes;

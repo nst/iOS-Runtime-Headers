@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController;
+@class MPAVController, NSObject<OS_dispatch_queue>;
 
 @interface MPSystemNowPlayingController : NSObject {
     BOOL _hasSeenAnyItem;
     MPAVController *_player;
-    struct dispatch_queue_s { } *_serialQueue;
+    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSObject<OS_dispatch_queue> *_statusBarQueue;
 }
 
 @property MPAVController * player;
@@ -15,6 +16,7 @@
 - (int)_MRRepeatModeForMPRepeatType:(unsigned int)arg1;
 - (int)_MRShuffleModeForMPShuffleType:(unsigned int)arg1;
 - (unsigned int)_chapterIndexForItem:(id)arg1 atTime:(double)arg2;
+- (id)_progressInfoForItem:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)player;

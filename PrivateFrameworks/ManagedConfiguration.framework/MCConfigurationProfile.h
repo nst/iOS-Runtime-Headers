@@ -10,12 +10,11 @@
 }
 
 @property MCProfileServiceProfile * OTAProfile;
-@property(readonly) NSArray * payloads;
 
+- (void).cxx_destruct;
 - (id)OTAProfile;
 - (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;
 - (void)_sortPayloads;
-- (void)dealloc;
 - (id)description;
 - (id)earliestCertificateExpiryDate;
 - (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;

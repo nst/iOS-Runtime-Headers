@@ -5,8 +5,8 @@
 @class NSConditionLock;
 
 @interface _SCRCThreadTask : NSObject {
-    unsigned int _count;
-    unsigned int _mask;
+    unsigned long _count;
+    unsigned long _mask;
     void *_objects[4];
     SEL _selector;
     id _target;

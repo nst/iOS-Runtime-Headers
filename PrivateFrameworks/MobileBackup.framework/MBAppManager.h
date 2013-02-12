@@ -10,6 +10,7 @@
 }
 
 + (id)appManager;
++ (id)appManagerWithSettingsContext:(id)arg1;
 
 - (id)_appsWithPlists:(id)arg1 error:(id*)arg2;
 - (id)_safeHarborsWithError:(id*)arg1;
@@ -18,7 +19,7 @@
 - (id)allDisabledDomainNames;
 - (id)allRestrictedDomainNames;
 - (id)appWithBundleID:(id)arg1;
-- (id)createSafeHarborForApp:(id)arg1 _register:(BOOL)arg2 error:(id*)arg3;
+- (id)createSafeHarborForApp:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)initWithSettingsContext:(id)arg1;
 - (BOOL)isDomainNameEnabled:(id)arg1;

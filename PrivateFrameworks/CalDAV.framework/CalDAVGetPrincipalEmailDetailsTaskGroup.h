@@ -9,8 +9,8 @@
     NSURL *_principalURL;
 }
 
-@property(retain,readonly) NSSet * addresses;
-@property(retain,readonly) NSString * displayName;
+@property(readonly) NSSet * addresses;
+@property(readonly) NSString * displayName;
 @property(retain) CalDAVPrincipalEmailDetailsResult * principalResult;
 @property(retain) NSURL * principalURL;
 

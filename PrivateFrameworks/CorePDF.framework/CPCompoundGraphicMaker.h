@@ -2,26 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPChunk, CPCluster, CPGraphicObject;
+@class CPChunk, CPCluster;
 
 @interface CPCompoundGraphicMaker : NSObject <CPDisposable> {
-    struct { unsigned int x1; struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
     CPCluster *cluster;
     BOOL disposed;
-        } x2; } *groupInfoArray;
+    struct { unsigned int x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } *groupInfoArray;
     unsigned int groupInfoCount;
     double pageSpread;
     CPChunk *parentChunk;
     unsigned int shapeCount;
-    CPGraphicObject **shapes;
+    id *shapes;
     BOOL shapesAreVectorGraphics;
 }
 

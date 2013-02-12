@@ -4,9 +4,10 @@
 
 @class NSDictionary, NSNumber;
 
-@interface PFUbiquityKnowledgeVector : NSObject <NSCoding> {
+@interface PFUbiquityKnowledgeVector : NSObject <NSCoding, NSCopying> {
     unsigned int _hash;
     NSDictionary *_kv;
+    NSDictionary *_storeKVDict;
     NSNumber *_sum;
 }
 
@@ -22,15 +23,18 @@
 - (id)allPeerIDs;
 - (BOOL)canMergeWithKnowledgeVector:(id)arg1;
 - (int)compare:(id)arg1;
+- (BOOL)conflictsWithKnowledgeVector:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createAncestorVectorForConflictingVector:(id)arg1;
 - (id)createKnowledgeVectorString;
 - (id)createSetOfAllPeerIDsWithOtherVector:(id)arg1;
+- (id)createStoreKnowledgeVectorDictionary;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
+- (id)initFromCopy:(id)arg1 storeKVDict:(id)arg2 sum:(id)arg3 hash:(unsigned int)arg4;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKnowledgeVectorDictionary:(id)arg1;
 - (id)initWithKnowledgeVectorString:(id)arg1;
@@ -46,5 +50,6 @@
 - (id)newKnowledgeVectorBySubtractingVector:(id)arg1;
 - (id)sum;
 - (id)transactionNumberForPeerID:(id)arg1;
+- (void)updateWithKnowledgeVector:(id)arg1;
 
 @end

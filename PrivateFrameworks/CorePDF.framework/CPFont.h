@@ -35,10 +35,12 @@
         float underlineThickness; 
     struct CGFont { } *cgFont;
     struct CGPDFFont { } *cgPDFFont;
+    float defaultWidth;
     } descriptor;
     BOOL disposed;
     BOOL exactMatch;
     NSString *fontName;
+    BOOL isHorizontal;
     struct __CFDictionary { } *kernDictionary;
     double kernUnitsPerEm;
 }
@@ -60,6 +62,7 @@
 - (void)getFontName;
 - (BOOL)getGlyphs:(unsigned short*)arg1 forCodes:(const unsigned short*)arg2 count:(unsigned int)arg3;
 - (id)initWith:(struct CGPDFDictionary { }*)arg1;
+- (BOOL)isHorizontal;
 - (BOOL)isSameFontAs:(id)arg1;
 - (float)italicAngle;
 - (double)kernBetweenUnicode:(unsigned short)arg1 andUnicode:(unsigned short)arg2;

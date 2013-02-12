@@ -2,39 +2,77 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class HandView, NSBundle, NSTimeZone, UIImage, UIImageView;
+@class NSCalendar, NSDate, NSTimeZone, UIImage, UIImageView, UIView<HandView>;
 
 @interface AnalogClockView : UIView <Clock> {
-    UIImageView *_background;
-    UIImage *_backgroundEveningImage;
-    UIImage *_backgroundImage;
-    BOOL _evening;
-    HandView *_hourHand;
-    HandView *_minsHand;
-    BOOL _registerForUpdates;
-    NSBundle *_resourcesBundle;
-    float _seconds;
-    HandView *_secsHand;
-    BOOL _snippetStyle;
-    int _sweepIndex;
-    NSTimeZone *_timeZone;
+    NSCalendar *_calendar;
+    UIView<HandView> *_dayHands[3];
+    UIImage *_faceDayImage;
+    UIImage *_faceNightImage;
+    UIImageView *_faceView;
+    int _flutterIndex;
+    BOOL _isRenderStateStale;
+    BOOL _minuteHourAnimationTriggered;
+    UIView<HandView> *_nightHands[3];
+    BOOL _nighttime;
+    UIImageView *_rivet;
+    int _runMode;
+    double _seconds;
+    UIView<HandView> *_shadowHands[3];
+    int _style;
+    NSDate *_time;
 }
 
-+ (void)_sweepBack;
-+ (void)_updateTimes;
-+ (struct CGSize { float x1; float x2; })defaultSize;
-+ (void)registerClock:(id)arg1;
-+ (void)startAllClocks;
-+ (void)stopAllClocks;
-+ (void)unregisterClock:(id)arg1;
+@property(readonly) UIImageView * faceView;
+@property(readonly) int hour;
+@property(readonly) int minute;
+@property(getter=isNighttime,readonly) BOOL nighttime;
+@property int runMode;
+@property(getter=isStarted,readonly) BOOL started;
+@property int style;
+@property(retain) NSDate * time;
+@property(retain) NSTimeZone * timeZone;
 
-- (void)_setEvening:(BOOL)arg1;
++ (void)initialize;
++ (BOOL)isClockRegistered:(id)arg1;
++ (void)registerClock:(id)arg1;
++ (void)registerSweepingClock:(id)arg1;
++ (void)registerTickingClock:(id)arg1;
++ (struct CGSize { float x1; float x2; })sizeForStyle:(int)arg1;
++ (void)unregisterClock:(id)arg1;
++ (void)unregisterSweepingClock:(id)arg1;
++ (void)unregisterTickingClock:(id)arg1;
++ (void)updateFlutterForAllTicking;
++ (void)updateTimeForAllSweeping;
++ (void)updateTimeForAllTicking;
+
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 registerForUpdates:(BOOL)arg2 offsets:(struct CGPoint { float x1; float x2; }*)arg3 scales:(struct CGSize { float x1; float x2; }*)arg4 bundle:(id)arg5 snippetStyle:(BOOL)arg6;
+- (id)faceView;
+- (int)hour;
+- (id)initWithBitmapHandsForStyle:(int)arg1 hasRivet:(BOOL)arg2 centerOffset:(struct CGSize { float x1; float x2; })arg3 dayHandParts:(id*)arg4 dayHandRotationalCenters:(struct CGPoint { float x1; float x2; }*)arg5 nightHandParts:(id*)arg6 nightHandRotationalCenters:(struct CGPoint { float x1; float x2; }*)arg7 shadowHandParts:(id*)arg8 shadowHandRotationalCenters:(struct CGPoint { float x1; float x2; }*)arg9 shadowOffset:(struct CGSize { float x1; float x2; })arg10;
+- (id)initWithBitmapStyle:(int)arg1;
+- (id)initWithStyle:(int)arg1;
+- (id)initWithVectorHandsForStyle:(int)arg1 resourcePath:(id)arg2 offsets:(struct CGPoint { float x1; float x2; }*)arg3 scales:(struct CGSize { float x1; float x2; }*)arg4;
+- (id)initWithVectorStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (BOOL)isNighttime;
+- (BOOL)isStarted;
+- (int)minute;
+- (int)runMode;
+- (void)setHandAngle:(float)arg1 forHandIndex:(int)arg2;
+- (void)setNighttime:(BOOL)arg1;
+- (void)setRunMode:(int)arg1;
+- (void)setStyle:(int)arg1;
+- (void)setTime:(id)arg1 animated:(BOOL)arg2;
 - (void)setTime:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (void)start;
+- (void)stop;
+- (int)style;
+- (id)time;
 - (id)timeZone;
-- (void)updateSweepBack;
+- (void)updateFlutter;
 - (void)updateTime;
+- (void)updateTimeAnimated:(BOOL)arg1;
 
 @end

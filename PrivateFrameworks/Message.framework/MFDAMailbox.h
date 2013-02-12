@@ -2,18 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAFolder;
+@class NSString;
 
 @interface MFDAMailbox : MailboxUid {
-    DAFolder *_DAFolder;
+    NSString *_folderID;
 }
 
-- (id)DAFolder;
+@property(copy) NSString * folderID;
+
 - (id)URLStringWithAccount:(id)arg1;
+- (id)_folderID;
 - (void)dealloc;
 - (id)description;
 - (id)folderID;
-- (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 account:(id)arg3 folder:(id)arg4;
-- (void)setDAFolder:(id)arg1;
+- (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 account:(id)arg3 folderID:(id)arg4;
+- (BOOL)mergeWithUserInfo:(id)arg1;
+- (void)setFolderID:(id)arg1;
 
 @end

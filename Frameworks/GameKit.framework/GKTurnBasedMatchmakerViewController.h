@@ -12,13 +12,18 @@
 @property BOOL showExistingMatches;
 @property <GKTurnBasedMatchmakerViewControllerDelegate> * turnBasedMatchmakerDelegate;
 
+- (void)__viewControllerWillBePresented:(BOOL)arg1;
 - (void)dealloc;
+- (id)init;
 - (id)initWithMatchRequest:(id)arg1;
+- (void)loadView;
 - (id)privateViewController;
 - (void)setPrivateViewController:(id)arg1;
 - (void)setShowExistingMatches:(BOOL)arg1;
 - (void)setTurnBasedMatchmakerDelegate:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showExistingMatches;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)turnBasedMatchmakerDelegate;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

@@ -15,7 +15,7 @@
 - (void)getObjects:(id*)arg1;
 - (id)initForKeys:(id)arg1;
 - (id)initWithSearchStrategy:(id)arg1;
-- (const id)mapping;
+- (id)mapping;
 - (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setValues:(id*)arg1;
 - (id)valueAtIndex:(unsigned int)arg1;

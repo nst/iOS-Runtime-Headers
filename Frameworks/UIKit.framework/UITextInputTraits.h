@@ -13,6 +13,7 @@
     int autocapitalizationType;
     int autocorrectionType;
     BOOL contentsIsSingleValue;
+    BOOL deferBecomingResponder;
     BOOL displaySecureTextUsingPlainText;
     int emptyContentReturnKeyType;
     BOOL enablesReturnKeyAutomatically;
@@ -22,7 +23,6 @@
     BOOL learnsCorrections;
     BOOL returnKeyGoesToNextResponder;
     int returnKeyType;
-    BOOL richText;
     BOOL secureTextEntry;
     UIColor *selectionBarColor;
     UIImage *selectionDragDotImage;
@@ -34,6 +34,7 @@
     int textSelectionBehavior;
     id textSuggestionDelegate;
     struct __CFCharacterSet { } *textTrimmingSet;
+    BOOL useInterfaceLanguageForLocalization;
 }
 
 @property BOOL acceptsEmoji;
@@ -42,6 +43,7 @@
 @property int autocapitalizationType;
 @property int autocorrectionType;
 @property BOOL contentsIsSingleValue;
+@property BOOL deferBecomingResponder;
 @property BOOL displaySecureTextUsingPlainText;
 @property int emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
@@ -53,7 +55,6 @@
 @property BOOL learnsCorrections;
 @property BOOL returnKeyGoesToNextResponder;
 @property int returnKeyType;
-@property(getter=isRichText) BOOL richText;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 @property(retain) UIColor * selectionBarColor;
 @property(retain) UIImage * selectionDragDotImage;
@@ -65,6 +66,7 @@
 @property int textSelectionBehavior;
 @property id textSuggestionDelegate;
 @property struct __CFCharacterSet { }* textTrimmingSet;
+@property BOOL useInterfaceLanguageForLocalization;
 
 + (id)defaultTextInputTraits;
 + (BOOL)keyboardTypeRequiresASCIICapable:(int)arg1;
@@ -78,6 +80,7 @@
 - (BOOL)contentsIsSingleValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (BOOL)deferBecomingResponder;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)displaySecureTextUsingPlainText;
@@ -88,7 +91,6 @@
 - (id)insertionPointColor;
 - (unsigned int)insertionPointWidth;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isRichText;
 - (BOOL)isSecureTextEntry;
 - (int)keyboardAppearance;
 - (int)keyboardType;
@@ -104,6 +106,7 @@
 - (void)setAutocapitalizationType:(int)arg1;
 - (void)setAutocorrectionType:(int)arg1;
 - (void)setContentsIsSingleValue:(BOOL)arg1;
+- (void)setDeferBecomingResponder:(BOOL)arg1;
 - (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
 - (void)setEmptyContentReturnKeyType:(int)arg1;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
@@ -115,7 +118,6 @@
 - (void)setLearnsCorrections:(BOOL)arg1;
 - (void)setReturnKeyGoesToNextResponder:(BOOL)arg1;
 - (void)setReturnKeyType:(int)arg1;
-- (void)setRichText:(BOOL)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setSelectionBarColor:(id)arg1;
 - (void)setSelectionDragDotImage:(id)arg1;
@@ -129,6 +131,7 @@
 - (void)setTextTrimmingSet:(struct __CFCharacterSet { }*)arg1;
 - (void)setToDefaultValues;
 - (void)setToSecureValues;
+- (void)setUseInterfaceLanguageForLocalization:(BOOL)arg1;
 - (int)shortcutConversionType;
 - (int)spellCheckingType;
 - (BOOL)suppressReturnKeyStyling;
@@ -137,5 +140,6 @@
 - (int)textSelectionBehavior;
 - (id)textSuggestionDelegate;
 - (struct __CFCharacterSet { }*)textTrimmingSet;
+- (BOOL)useInterfaceLanguageForLocalization;
 
 @end

@@ -13,6 +13,7 @@
 - (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didClearWindowObjectForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (void)webView:(id)arg1 didCommitLoadForFrame:(id)arg2;
+- (void)webView:(id)arg1 didDetectXSS:(id)arg2;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFailProvisionalLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;

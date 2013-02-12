@@ -17,7 +17,6 @@
 - (id)copyAllObserversForNotificationName:(id)arg1 andObject:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)objectWillBeDeallocated:(id)arg1 holder:(id)arg2;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;

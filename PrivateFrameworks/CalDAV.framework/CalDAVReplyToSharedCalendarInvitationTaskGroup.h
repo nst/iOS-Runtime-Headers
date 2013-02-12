@@ -8,12 +8,14 @@
     BOOL _acceptInvitation;
     NSURL *_calendarHomeURL;
     CalDAVCalendarServerInviteNotificationItem *_invitation;
+    NSURL *_sharedAs;
 }
 
 @property BOOL acceptInvitation;
 @property(retain) NSURL * calendarHomeURL;
 @property <CoreDAVTaskGroupDelegate> * delegate;
 @property(retain) CalDAVCalendarServerInviteNotificationItem * invitation;
+@property(retain) NSURL * sharedAs;
 
 - (BOOL)acceptInvitation;
 - (id)calendarHomeURL;
@@ -26,6 +28,8 @@
 - (void)setAcceptInvitation:(BOOL)arg1;
 - (void)setCalendarHomeURL:(id)arg1;
 - (void)setInvitation:(id)arg1;
+- (void)setSharedAs:(id)arg1;
+- (id)sharedAs;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 

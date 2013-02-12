@@ -87,7 +87,6 @@
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitle:(id)arg1;
 - (id)_addButtonWithTitleText:(id)arg1;
-- (void)_adjustLabelFontSizes;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
 - (void)_appSuspended:(id)arg1;
@@ -112,7 +111,6 @@
 - (void)_hideAnimated:(BOOL)arg1;
 - (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (BOOL)_isAnimating;
-- (BOOL)_isSBAlert;
 - (BOOL)_isSBAlert;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
@@ -180,6 +178,7 @@
 - (BOOL)isVisible;
 - (id)keyboard;
 - (void)layout;
+- (void)layoutAnimated:(BOOL)arg1 withDuration:(double)arg2;
 - (void)layoutAnimated:(BOOL)arg1;
 - (id)message;
 - (int)numberOfButtons;
@@ -222,7 +221,6 @@
 - (BOOL)showsOverSpringBoardAlerts;
 - (id)subtitle;
 - (int)suspendTag;
-- (id)table;
 - (BOOL)tableShouldShowMinimumContent;
 - (id)tableView;
 - (id)taglineTextView;

@@ -5,6 +5,6 @@
 @interface CNFAlertView : UIAlertView {
 }
 
-- (void)resizeForConferenceFailureMessage;
+- (void)resizeForFaceTimeFailureMessage;
 
 @end

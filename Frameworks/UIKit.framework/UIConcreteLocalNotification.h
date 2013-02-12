@@ -13,6 +13,7 @@
     NSString *customLockSliderLabel;
     NSDate *fireDate;
     BOOL fireNotificationsWhenAppRunning;
+    NSString *firedNotificationName;
     BOOL hasAction;
     BOOL hideAlertTitle;
     BOOL interruptAudioAndLockDevice;
@@ -22,8 +23,9 @@
     unsigned int repeatInterval;
     BOOL resumeApplicationInBackground;
     BOOL showAlarmStatusBarItem;
+    NSString *snoozedNotificationName;
     NSString *soundName;
-    BOOL soundNameIsARingtone;
+    int soundType;
     NSTimeZone *timeZone;
     int totalRepeatCount;
     NSData *userInfoData;
@@ -44,6 +46,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fireDate;
 - (BOOL)fireNotificationsWhenAppRunning;
+- (id)firedNotificationName;
 - (BOOL)hasAction;
 - (unsigned int)hash;
 - (BOOL)hideAlertTitle;
@@ -67,6 +70,7 @@
 - (void)setCustomLockSliderLabel:(id)arg1;
 - (void)setFireDate:(id)arg1;
 - (void)setFireNotificationsWhenAppRunning:(BOOL)arg1;
+- (void)setFiredNotificationName:(id)arg1;
 - (void)setHasAction:(BOOL)arg1;
 - (void)setHideAlertTitle:(BOOL)arg1;
 - (void)setInterruptAudioAndLockDevice:(BOOL)arg1;
@@ -76,14 +80,16 @@
 - (void)setRepeatInterval:(unsigned int)arg1;
 - (void)setResumeApplicationInBackground:(BOOL)arg1;
 - (void)setShowAlarmStatusBarItem:(BOOL)arg1;
+- (void)setSnoozedNotificationName:(id)arg1;
 - (void)setSoundName:(id)arg1;
-- (void)setSoundNameIsARingtone:(BOOL)arg1;
+- (void)setSoundType:(int)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTotalRepeatCount:(int)arg1;
 - (void)setUserInfo:(id)arg1;
 - (BOOL)showAlarmStatusBarItem;
+- (id)snoozedNotificationName;
 - (id)soundName;
-- (BOOL)soundNameIsARingtone;
+- (int)soundType;
 - (id)timeZone;
 - (int)totalRepeatCount;
 - (id)userInfo;

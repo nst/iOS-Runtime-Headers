@@ -5,12 +5,11 @@
 @class IUCoverFlowViewController, IUMediaEntitySpecifier;
 
 @interface IUMixedPlaybackViewController : IUPlaybackViewController <IUCoverFlowOwner> {
-    unsigned int _animateREO : 1;
-    unsigned int _showFlipperHint : 1;
-    unsigned int _nextPushWillZoomArtwork : 1;
-    unsigned int _exiting : 1;
     IUMediaEntitySpecifier *_albumContextSpecifier;
+    BOOL _animateREO;
+    BOOL _nextPushWillZoomArtwork;
     IUMediaEntitySpecifier *_playlistContextSpecifier;
+    BOOL _showFlipperHint;
     IUCoverFlowViewController *_transferredCoverFlowController;
 }
 
@@ -18,6 +17,7 @@
 @property(readonly) BOOL isShowingCoverFlow;
 @property BOOL nextPushWillZoomArtwork;
 
+- (BOOL)IUShouldApplyInterfaceStyle;
 - (void)_backOfAlbumTrackChangeNotification:(id)arg1;
 - (void)_exitToAlbumContext:(id)arg1 animated:(BOOL)arg2;
 - (void)_exitToPlaylistContext:(id)arg1 animated:(BOOL)arg2;
@@ -28,16 +28,16 @@
 - (void)_setAnimatesForResumeEventsOnly:(BOOL)arg1;
 - (void)_setFakeItemForDataSource:(id)arg1;
 - (void)_updateAnimateForResumeEventsOnly;
-- (BOOL)_willStartPlaybackWhenViewAppears;
 - (id)coverFlowViewController;
-- (id)createTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
-- (id)createTransitionControllerForChangeToItem:(id)arg1 fromItem:(id)arg2;
-- (id)createViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (void)dealloc;
 - (void)exitPlayerAnimated:(BOOL)arg1;
 - (void)exitPlayerForAccessorySplash;
 - (id)init;
 - (BOOL)isShowingCoverFlow;
+- (id)newMediaNavigationItem;
+- (id)newTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
+- (id)newTransitionControllerForChangeToItem:(id)arg1 fromItem:(id)arg2;
+- (id)newViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (BOOL)nextPushWillZoomArtwork;
 - (void)setCoverFlowViewController:(id)arg1;
 - (void)setItem:(id)arg1 animated:(BOOL)arg2;

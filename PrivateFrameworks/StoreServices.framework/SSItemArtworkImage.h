@@ -4,12 +4,13 @@
 
 @class NSMutableDictionary, NSString, NSURL;
 
-@interface SSItemArtworkImage : NSObject <SSCoding, NSCopying> {
+@interface SSItemArtworkImage : NSObject <SSXPCCoding, NSCopying> {
     NSMutableDictionary *_dictionary;
     NSString *_imageKind;
 }
 
 @property(retain) NSURL * URL;
+@property(readonly) NSString * URLString;
 @property(readonly) int height;
 @property(copy) NSString * imageKind;
 @property(readonly) int imageOrientation;
@@ -19,10 +20,10 @@
 @property(readonly) int width;
 
 - (id)URL;
+- (id)URLString;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
@@ -32,8 +33,7 @@
 - (float)imageScale;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithArtworkDictionary:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPrerendered;
 - (void)setImageKind:(id)arg1;

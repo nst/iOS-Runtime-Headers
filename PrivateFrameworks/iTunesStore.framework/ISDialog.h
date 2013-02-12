@@ -10,6 +10,7 @@
     BOOL _authorizationIsForced;
     NSArray *_buttons;
     int _defaultButtonIndex;
+    BOOL _dismissOnHomeButton;
     BOOL _dismissOnLock;
     NSString *_displayCountKey;
     BOOL _expectsResponse;
@@ -27,6 +28,7 @@
     NSString *_title;
     int _unlockActionButtonIndex;
     NSMutableDictionary *_userInfo;
+    struct __CFDictionary { } *_userNotificationValues;
 }
 
 @property BOOL allowDuplicates;
@@ -34,6 +36,7 @@
 @property BOOL authorizationIsForced;
 @property(retain) NSArray * buttons;
 @property int defaultButtonIndex;
+@property BOOL dismissOnHomeButton;
 @property BOOL dismissOnLock;
 @property(copy) NSString * displayCountKey;
 @property(getter=isDisplayable,readonly) BOOL displayable;
@@ -60,8 +63,10 @@
 - (BOOL)authorizationIsForced;
 - (id)buttons;
 - (id)copyUserNotification;
+- (void*)copyValueForCFUserNotificationKey:(struct __CFString { }*)arg1;
 - (void)dealloc;
 - (int)defaultButtonIndex;
+- (BOOL)dismissOnHomeButton;
 - (BOOL)dismissOnLock;
 - (id)displayCountKey;
 - (BOOL)expectsResponse;
@@ -84,6 +89,7 @@
 - (void)setAuthorizationIsForced:(BOOL)arg1;
 - (void)setButtons:(id)arg1;
 - (void)setDefaultButtonIndex:(int)arg1;
+- (void)setDismissOnHomeButton:(BOOL)arg1;
 - (void)setDismissOnLock:(BOOL)arg1;
 - (void)setDisplayCountKey:(id)arg1;
 - (void)setExpectsResponse:(BOOL)arg1;
@@ -100,6 +106,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setUnlockActionButtonIndex:(int)arg1;
 - (void)setValue:(id)arg1 forUserInfoKey:(id)arg2;
+- (void)setValue:(void*)arg1 forCFUserNotificationKey:(struct __CFString { }*)arg2;
 - (BOOL)shouldDismissAfterUnlock;
 - (BOOL)shouldDisplayAsTopMost;
 - (BOOL)shouldHideButtonsInAwayView;

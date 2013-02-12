@@ -23,10 +23,12 @@
 
 - (id)accountName;
 - (id)alias;
+- (void)availableAccountTypes:(id)arg1 parameters:(id)arg2 complete:(id)arg3;
 - (void)dealloc;
 - (void)finish;
 - (id)firstName;
 - (id)lastName;
+- (void)linkAccounts:(id)arg1 parameters:(id)arg2 complete:(id)arg3;
 - (int)mode;
 - (void)processGameKitURLComponents:(id)arg1;
 - (void)setAccountName:(id)arg1;

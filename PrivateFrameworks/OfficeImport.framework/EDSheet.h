@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDColorReference, EDHeaderFooter, EDPageSetup, EDProcessors, EDString, EDWarnings, EDWorkbook, ESDContainer, NSMutableArray, SFUPointerKeyDictionary;
+@class EDColorReference, EDHeaderFooter, EDPageSetup, EDProcessors, EDString, EDWarnings, EDWorkbook, ESDContainer, NSMutableArray, TSUPointerKeyDictionary;
 
 @interface EDSheet : OCDDelayedNode {
     boolmDisplayFormulas;
     boolmDisplayGridlines;
     boolmHidden;
     boolmIsDialogSheet;
-    SFUPointerKeyDictionary *mCommentMap;
+    TSUPointerKeyDictionary *mCommentMap;
     EDColorReference *mDefaultGridlineColorReference;
     NSMutableArray *mDrawables;
     ESDContainer *mEscherDrawing;
@@ -17,7 +17,7 @@
     EDString *mName;
     EDPageSetup *mPageSetup;
     EDProcessors *mProcessors;
-    SFUPointerKeyDictionary *mTextBoxMap;
+    TSUPointerKeyDictionary *mTextBoxMap;
     EDWarnings *mWarnings;
     EDWorkbook *mWorkbook;
 }

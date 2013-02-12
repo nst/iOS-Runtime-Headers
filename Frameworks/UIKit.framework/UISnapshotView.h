@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIColor, UIView;
+@class NSMutableArray, UIColor, UIImageView, UIView;
 
-@interface UISnapshotView : UIView {
+@interface UISnapshotView : UIView <UIStatusBarTinting> {
     struct CGSize { 
         float width; 
         float height; 
@@ -45,15 +45,19 @@
     UIColor *_edgePaddingColor;
     NSMutableArray *_edgePaddingViews;
     UIView *_imageView;
+    UIImageView *_shadowView;
     } _snapshotRect;
+    UIColor *_statusBarTintColor;
 }
 
+@property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
 @property(getter=_contentOffset,setter=_setContentOffset:) struct CGPoint { float x1; float x2; } contentOffset;
 @property(getter=_contentSize,readonly) struct CGSize { float x1; float x2; } contentSize;
 @property(getter=isEdgeAntialiasingEnabled) BOOL edgeAntialiasingEnabled;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgePadding;
 @property(retain) UIColor * edgePaddingColor;
+@property(retain) UIImageView * shadowView;
 @property(getter=_snapshotRect,setter=_setSnapshotRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotRect;
 @property(getter=_snapshotView,readonly) UIView * snapshotView;
 @property(getter=isVerticalStretchEnabled) BOOL verticalStretchEnabled;
@@ -62,13 +66,16 @@
 - (struct CGPoint { float x1; float x2; })_contentOffset;
 - (struct CGSize { float x1; float x2; })_contentSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsCenterForEdgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 withContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_drawEdges:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 withContentSize:(struct CGSize { float x1; float x2; })arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgePadding;
 - (void)_positionImageView;
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setStatusBarTintColor:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_snapshotRect;
 - (id)_snapshotView;
+- (id)_statusBarTintColor;
 - (void)_updateContentsRect;
 - (void)captureSnapshotOfView:(id)arg1 withSnapshotType:(int)arg2;
 - (void)captureSnapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2 withSnapshotType:(int)arg3;
@@ -87,6 +94,8 @@
 - (void)setEdgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setEdgePaddingColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setShadowView:(id)arg1;
 - (void)setVerticalStretchEnabled:(BOOL)arg1;
+- (id)shadowView;
 
 @end

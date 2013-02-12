@@ -10,8 +10,13 @@
 
 @property(readonly) NSArray * connections;
 
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
++ (void)initialize;
+
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (id)_inputForConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
+- (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
+- (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (void)bumpChangeSeed;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (int)changeSeed;
@@ -26,8 +31,12 @@
 - (id)init;
 - (id)liveConnections;
 - (id)notReadyError;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (struct CGSize { float x1; float x2; })outputSizeForCaptureOptions:(id)arg1;
 - (void)removeConnection:(id)arg1;
 - (id)session;
 - (void)setSession:(id)arg1;
+- (id)transformedMetadataObjectForMetadataObject:(id)arg1 connection:(id)arg2;
+- (void)updateMetadataTransformForCaptureOptions:(id)arg1;
 
 @end

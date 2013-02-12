@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSString, NSUUID;
 
 @interface UIDevice : NSObject {
     struct { 
@@ -23,6 +23,7 @@
 @property(readonly) int batteryState;
 @property(readonly) NSString * buildVersion;
 @property(getter=isGeneratingDeviceOrientationNotifications,readonly) BOOL generatesDeviceOrientationNotifications;
+@property(readonly) NSUUID * identifierForVendor;
 @property(readonly) NSString * localizedModel;
 @property(readonly) NSString * model;
 @property(getter=isMultitaskingSupported,readonly) BOOL multitaskingSupported;
@@ -39,12 +40,14 @@
 + (id)currentDevice;
 + (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
++ (id)platformString;
 
 - (float)_backlightLevel;
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
 - (BOOL)_isTTYEnabled;
 - (void)_playSystemSound:(unsigned long)arg1;
 - (void)_registerForSystemSounds:(id)arg1;
+- (void)_setActiveUserInterfaceIdiom:(int)arg1;
 - (void)_setBacklightLevel:(float)arg1;
 - (void)_setBatteryLevel:(float)arg1;
 - (void)_setBatteryState:(int)arg1;
@@ -59,6 +62,7 @@
 - (id)buildVersion;
 - (id)deviceInfoForKey:(struct __CFString { }*)arg1;
 - (void)endGeneratingDeviceOrientationNotifications;
+- (id)identifierForVendor;
 - (BOOL)isBatteryMonitoringEnabled;
 - (BOOL)isGeneratingDeviceOrientationNotifications;
 - (BOOL)isMediaPicker;

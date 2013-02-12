@@ -5,15 +5,32 @@
 @interface NSMutableDictionary : NSDictionary {
 }
 
++ (id)MSASDictionaryWithCopyOfDictionary:(id)arg1;
 + (id)dictionaryWithCapacity:(unsigned int)arg1;
++ (id)dictionaryWithSharedKeySet:(id)arg1;
 + (id)nonRetainingDictionary;
 + (id)nonRetainingKeyAndValueDictionary;
++ (id)retainingKeyDictionary;
 
 - (void)CDVAddObjectsAndKeys:(id)arg1;
 - (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
 - (void)MCDeepCopyMissingEntriesFromDictionary:(id)arg1;
 - (void)MCFixUpRestrictionsDictionaryForMDMReporting;
 - (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
+- (id)MSASAddDictionary:(id)arg1;
+- (id)MSASAddEventIsDueToAlbumDeletionAlbumGUID:(id)arg1;
+- (id)MSASAddEventIsDueToAssetCollectionDeletionAssetCollectionGUID:(id)arg1;
+- (id)MSASAddIsAlbumResetSyncAlbumGUID:(id)arg1;
+- (id)MSASAddIsErrorRecovery;
+- (id)MSASAddIsGlobalResetSync;
+- (id)MSASAddIsLocalChange;
+- (id)MSASAddNotInterestingKey;
+- (void)__addObject:(id)arg1 forKey:(id)arg2;
+- (void)__setObject:(id)arg1 forKey:(id)arg2;
+- (void)_gkAddEntriesFromFormEncodedString:(id)arg1;
+- (int)_gkInviteStatusForPlayer:(id)arg1;
+- (int)_gkInviteStatusForPlayerID:(id)arg1;
+- (void)_gkSetInviteStatus:(int)arg1 forPlayer:(id)arg2;
 - (void)_mutate;
 - (void)_web_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_web_setInt:(int)arg1 forKey:(id)arg2;
@@ -24,6 +41,7 @@
 - (void)_webkit_setInt:(int)arg1 forKey:(id)arg2;
 - (void)_webkit_setLongLong:(long long)arg1 forKey:(id)arg2;
 - (void)_webkit_setObject:(id)arg1 forUncopiedKey:(id)arg2;
+- (void)_webkit_setUnsignedInt:(unsigned int)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedShort:(unsigned short)arg1 forKey:(id)arg2;
 - (void)addEntriesFromDictionary:(id)arg1;
@@ -33,14 +51,6 @@
 - (void)addObjects:(id)arg1 forKeys:(id)arg2;
 - (id)addToCacheAndReturnCssString:(id)arg1;
 - (Class)classForCoder;
-- (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
-- (void)encodeDouble:(double)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
-- (void)encodeInteger:(int)arg1 forKey:(id)arg2;
-- (void)encodeLongLong:(long long)arg1 forKey:(id)arg2;
-- (void)encodeObject:(id)arg1 forKey:(id)arg2;
-- (void)encodeUInt64:(unsigned long long)arg1 forKey:(id)arg2;
-- (void)encodeUnsignedInteger:(unsigned int)arg1 forKey:(id)arg2;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
@@ -60,10 +70,12 @@
 - (void)replaceObject:(id)arg1 forKey:(id)arg2;
 - (void)replaceObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)replaceObjects:(id)arg1 forKeys:(id)arg2;
+- (void)setAsString:(id)arg1 forKey:(id)arg2;
 - (void)setDictionary:(id)arg1;
 - (void)setEntriesFromDictionary:(id)arg1;
 - (void)setObject:(id)arg1 forInt:(int)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)setObjects:(id)arg1 forKeys:(id)arg2;
 - (void)setSafeObject:(id)arg1 forKey:(id)arg2;

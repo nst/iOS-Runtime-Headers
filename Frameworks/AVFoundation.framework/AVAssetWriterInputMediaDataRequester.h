@@ -6,26 +6,26 @@
    See Warning(s) below.
  */
 
-@class AVAssetWriterInputWritingHelper;
+@class AVAssetWriterInputWritingHelper, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetWriterInputMediaDataRequester : NSObject {
     id _requestBlock;
-    struct dispatch_queue_s { } *_requestQueue;
+    NSObject<OS_dispatch_queue> *_requestQueue;
     AVAssetWriterInputWritingHelper *_writingHelper;
 }
 
 @property(readonly) id requestBlock;
-@property(readonly) struct dispatch_queue_s { }* requestQueue;
+@property(readonly) NSObject<OS_dispatch_queue> * requestQueue;
 
 - (void)_requestMediaDataIfReady;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
-- (id)initWithAssetWriterInputWritingHelper:(id)arg1 requestQueue:(struct dispatch_queue_s { }*)arg2 requestBlock:(id)arg3;
+- (id)initWithAssetWriterInputWritingHelper:(id)arg1 requestQueue:(id)arg2 requestBlock:(id)arg3;
 - (void)invalidate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)requestBlock;
-- (struct dispatch_queue_s { }*)requestQueue;
+- (id)requestQueue;
 - (void)startRequestingMediaData;
 
 @end

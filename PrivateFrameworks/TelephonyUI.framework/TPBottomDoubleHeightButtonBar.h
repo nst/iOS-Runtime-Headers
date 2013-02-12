@@ -12,8 +12,8 @@
     UIView *_topWell;
 }
 
-@property(retain,readonly) TPButton * bottomButton;
-@property(retain,readonly) TPButton * topButton;
+@property(readonly) TPButton * bottomButton;
+@property(readonly) TPButton * topButton;
 
 + (id)_backgroundImage;
 + (float)defaultHeightForOrientation:(int)arg1;

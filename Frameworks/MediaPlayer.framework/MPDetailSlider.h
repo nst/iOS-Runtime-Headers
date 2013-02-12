@@ -19,27 +19,29 @@
         float left; 
         float bottom; 
         float right; 
-    unsigned int _allowsDetailScrubbing : 1;
-    unsigned int _isTracking : 1;
-    unsigned int _didBeginTracking : 1;
-    unsigned int _needsCommit : 1;
-    unsigned int _canCommit : 1;
-    unsigned int _durationAllowsDetailScrubbing : 1;
-    unsigned int _autoscrubActive : 1;
+    BOOL _allowsDetailScrubbing;
+    BOOL _allowsScrubbing;
+    BOOL _autoscrubActive;
     NSTimer *_autoscrubTimer;
     double _availableDuration;
     } _beginLocationInView;
+    BOOL _canCommit;
     double _currentTime;
     UILabel *_currentTimeInverseLabel;
     UILabel *_currentTimeLabel;
     id _delegate;
     float _detailScrubbingVerticalRange;
+    BOOL _didBeginTracking;
     UIImageView *_downloadingTrackOverlay;
     double _duration;
+    BOOL _durationAllowsDetailScrubbing;
     UIImageView *_glowDetailScrubImageView;
+    BOOL _isTracking;
     } _lastCommittedLocationInView;
     float _maxTrackWidth;
     float _minScale;
+    float _minTimeLabelWidth;
+    BOOL _needsCommit;
     } _previousLocationInView;
     int _scrubValue;
     int _style;
@@ -50,12 +52,14 @@
 }
 
 @property BOOL allowsDetailScrubbing;
+@property BOOL allowsScrubbing;
 @property double availableDuration;
 @property <MPDetailSliderDelegate> * delegate;
 @property(readonly) BOOL detailScrubbingAvailableForCurrentDuration;
 @property float detailScrubbingVerticalRange;
 @property double duration;
 @property(readonly) NSString * localizedScrubSpeedText;
+@property float minTimeLabelWidth;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } timeLabelInsets;
 @property int timeLabelStyle;
 
@@ -79,6 +83,7 @@
 - (void)_updateTimeDisplayForTime:(double)arg1;
 - (void)_updateTrackInset;
 - (BOOL)allowsDetailScrubbing;
+- (BOOL)allowsScrubbing;
 - (double)availableDuration;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTracking;
@@ -99,12 +104,15 @@
 - (BOOL)isTracking;
 - (void)layoutSubviews;
 - (id)localizedScrubSpeedText;
+- (float)minTimeLabelWidth;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setAllowsScrubbing:(BOOL)arg1;
 - (void)setAvailableDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDetailScrubbingVerticalRange:(float)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setMinTimeLabelWidth:(float)arg1;
 - (void)setTimeLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTimeLabelStyle:(int)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;

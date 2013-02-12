@@ -6,13 +6,14 @@
    See Warning(s) below.
  */
 
-@class BBAssertion, NSString;
+@class BBAssertion, NSArray, NSString;
 
 @interface BBResponse : NSObject <NSCoding> {
     NSString *_actionKey;
     NSString *_bulletinID;
     BOOL _deliverToPublisher;
     BBAssertion *_lifeAssertion;
+    NSArray *_lifeAssertions;
     NSString *_replyText;
     id _sendBlock;
     BOOL _sent;
@@ -21,7 +22,7 @@
 @property(retain) NSString * actionKey;
 @property(retain) NSString * bulletinID;
 @property BOOL deliverToPublisher;
-@property(retain) BBAssertion * lifeAssertion;
+@property(copy) NSArray * lifeAssertions;
 @property(copy) NSString * replyText;
 @property(copy) id sendBlock;
 
@@ -31,14 +32,14 @@
 - (BOOL)deliverToPublisher;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)lifeAssertion;
+- (id)lifeAssertions;
 - (id)replyText;
 - (void)send;
 - (id)sendBlock;
 - (void)setActionKey:(id)arg1;
 - (void)setBulletinID:(id)arg1;
 - (void)setDeliverToPublisher:(BOOL)arg1;
-- (void)setLifeAssertion:(id)arg1;
+- (void)setLifeAssertions:(id)arg1;
 - (void)setReplyText:(id)arg1;
 - (void)setSendBlock:(id)arg1;
 

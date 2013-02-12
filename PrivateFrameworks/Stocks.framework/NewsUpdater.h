@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class <NewsUpdaterDelegate>, Stock, StockNewsItemCollection;
+@class <NewsUpdaterDelegate>, NewsParserData, Stock, StockNewsItemCollection;
 
 @interface NewsUpdater : XMLHTTPRequest {
     <NewsUpdaterDelegate> *_delegate;
     BOOL _firstLoad;
     StockNewsItemCollection *_lastNewsItemCollection;
     double _lastResponseTimestamp;
+    NewsParserData *_newsParserData;
     Stock *_stock;
 }
 
@@ -17,6 +18,9 @@
 + (id)_newsItemCollectionCache;
 + (id)sharedNewsUpdater;
 
+- (void).cxx_destruct;
+- (id)aggregateDictionaryDomain;
+- (void)cancel;
 - (void)clearNewsCacheOnDisk;
 - (id)delegate;
 - (void)didParseData;

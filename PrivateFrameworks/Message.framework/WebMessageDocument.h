@@ -12,7 +12,7 @@
     MimeBody *_mimeBody;
     NSMutableDictionary *_partsByFilename;
     NSMutableDictionary *_partsByURL;
-    unsigned int _preferredEncoding;
+    unsigned long _preferredEncoding;
     unsigned int _uniqueId;
 }
 
@@ -20,7 +20,7 @@
 @property(readonly) NSData * htmlData;
 @property(readonly) MimeBody * mimeBody;
 @property(readonly) MimePart * mimePart;
-@property unsigned int preferredEncoding;
+@property unsigned long preferredEncoding;
 
 + (id)sourceForURL:(id)arg1;
 

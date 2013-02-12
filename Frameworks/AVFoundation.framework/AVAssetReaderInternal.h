@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVWeakKeyValueObserverProxy, AVWeakReference, NSError, NSMutableArray;
+@class AVAsset, AVWeakKeyValueObserverProxy, AVWeakReference, NSError, NSMutableArray, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetReaderInternal : NSObject {
     struct { 
@@ -24,7 +24,7 @@
     struct OpaqueFigAssetReader { } *figAssetReader;
     NSMutableArray *outputs;
     int status;
-    struct dispatch_queue_s { } *statusReadWriteQueue;
+    NSObject<OS_dispatch_queue> *statusReadWriteQueue;
     } timeRange;
     AVWeakReference *weakReference;
 }

@@ -10,25 +10,41 @@
     <MailComposeDeliveryControllerDelegate> *_delegate;
     MFOutgoingMessageDelivery *_delivery;
     MailboxUid *_draftMailbox;
+    OutgoingMessage *_draftMessage;
     NSString *_draftMessageID;
     MFError *_error;
-    OutgoingMessage *_message;
     MailMessage *_originalMessage;
     NSString *_sendingAddress;
-    BOOL _shouldSave;
 }
 
+@property int composeType;
 @property <MailComposeDeliveryControllerDelegate> * delegate;
+@property(retain) MailboxUid * draftMailbox;
+@property(copy) NSString * draftMessageID;
+@property(retain) MailMessage * originalMessage;
+@property(copy) NSString * sendingAddress;
 
+- (id)_initWithDelivery:(id)arg1 draftMessage:(id)arg2;
 - (void)_removeDraft;
 - (void)_setCodePointTranslationEnabled:(BOOL)arg1;
+- (int)composeType;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)deliverMessage;
+- (id)draftMailbox;
+- (id)draftMessageID;
 - (id)error;
-- (id)initWithDelivery:(id)arg1 outgoingMessage:(id)arg2 sendingAddress:(id)arg3 draftMessageID:(id)arg4 draftMailbox:(id)arg5 originalMessage:(id)arg6 composeType:(int)arg7 shouldSave:(BOOL)arg8;
+- (id)initWithDelivery:(id)arg1;
+- (id)initWithDraftMessage:(id)arg1;
 - (void)notifyUserDeliverySucceeded:(id)arg1;
+- (id)originalMessage;
+- (id)sendingAddress;
+- (void)setComposeType:(int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDraftMailbox:(id)arg1;
+- (void)setDraftMessageID:(id)arg1;
+- (void)setOriginalMessage:(id)arg1;
 - (void)setPercentDone:(double)arg1;
+- (void)setSendingAddress:(id)arg1;
 
 @end

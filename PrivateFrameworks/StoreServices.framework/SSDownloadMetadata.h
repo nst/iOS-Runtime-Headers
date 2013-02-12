@@ -4,7 +4,7 @@
 
 @class NSArray, NSData, NSDate, NSDictionary, NSLock, NSMutableDictionary, NSNumber, NSString, NSURL, SSItemImageCollection;
 
-@interface SSDownloadMetadata : NSObject <SSCoding, NSCoding, NSCopying> {
+@interface SSDownloadMetadata : NSObject <SSXPCCoding, NSCoding, NSCopying> {
     NSMutableDictionary *_dictionary;
     int _keyStyle;
     NSLock *_lock;
@@ -30,6 +30,8 @@
 @property(copy) NSString * longDescription;
 @property(readonly) NSNumber * numberOfBytesToHash;
 @property unsigned long long preOrderIdentifier;
+@property(copy) NSString * preferredAssetFlavor;
+@property(readonly) NSDictionary * primaryAssetDictionary;
 @property(retain) NSURL * primaryAssetURL;
 @property(copy) NSString * redownloadActionParameters;
 @property(getter=isRedownloadDownload) BOOL redownloadDownload;
@@ -50,6 +52,7 @@
 @property(retain) NSString * thumbnailNewsstandBindingType;
 @property(retain) NSString * title;
 @property(retain) NSString * transactionIdentifier;
+@property(copy) NSURL * transitMapDataURL;
 
 - (id)MD5HashStrings;
 - (id)_assetDictionary;
@@ -69,6 +72,7 @@
 - (BOOL)artworkIsPrerendered;
 - (id)bundleIdentifier;
 - (id)cancelDownloadURL;
+- (id)cloudIdentifier;
 - (id)collectionArtistName;
 - (unsigned long long)collectionIdentifier;
 - (id)collectionIndexInCollectionGroup;
@@ -76,10 +80,9 @@
 - (unsigned long long)composerIdentifier;
 - (id)composerName;
 - (id)contentRating;
-- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWritableMetadata;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (id)copyright;
 - (void)dealloc;
 - (id)dictionary;
@@ -101,8 +104,7 @@
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithItem:(id)arg1;
 - (id)initWithKind:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isAutomaticDownload;
 - (BOOL)isCompilation;
 - (BOOL)isContentRestricted;
@@ -124,6 +126,8 @@
 - (id)podcastFeedURL;
 - (id)podcastType;
 - (unsigned long long)preOrderIdentifier;
+- (id)preferredAssetFlavor;
+- (id)primaryAssetDictionary;
 - (id)primaryAssetURL;
 - (id)purchaseDate;
 - (id)redownloadActionParameters;
@@ -140,6 +144,7 @@
 - (void)setAutomaticDownload:(BOOL)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCancelDownloadURL:(id)arg1;
+- (void)setCloudIdentifier:(id)arg1;
 - (void)setCollectionArtistName:(id)arg1;
 - (void)setCollectionIdentifier:(unsigned long long)arg1;
 - (void)setCollectionIndexInCollectionGroup:(id)arg1;
@@ -175,6 +180,7 @@
 - (void)setPodcastFeedURL:(id)arg1;
 - (void)setPodcastType:(id)arg1;
 - (void)setPreOrderIdentifier:(unsigned long long)arg1;
+- (void)setPreferredAssetFlavor:(id)arg1;
 - (void)setPrimaryAssetURL:(id)arg1;
 - (void)setPurchaseDate:(id)arg1;
 - (void)setRedownloadActionParameters:(id)arg1;
@@ -200,6 +206,7 @@
 - (void)setThumbnailNewsstandBindingType:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
+- (void)setTransitMapDataURL:(id)arg1;
 - (void)setValue:(id)arg1 forMetadataKey:(id)arg2;
 - (void)setValuesFromDownload:(id)arg1;
 - (void)setVideoDetailsDictionary:(id)arg1;
@@ -217,6 +224,7 @@
 - (id)thumbnailNewsstandBindingType;
 - (id)title;
 - (id)transactionIdentifier;
+- (id)transitMapDataURL;
 - (id)valueForFirstAvailableKey:(id)arg1;
 - (id)valueForMetadataKey:(id)arg1;
 - (id)videoDetailsDictionary;

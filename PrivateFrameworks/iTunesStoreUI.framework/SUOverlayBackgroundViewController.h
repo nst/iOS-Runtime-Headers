@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUOverlayBackgroundDelegate>, NSArray, NSMutableArray, SUOverlayViewController, SUScalingFlipView, SUTouchCaptureView;
+@class <SUOverlayBackgroundDelegate>, NSArray, NSMutableArray, SUOverlayViewController, SUScalingFlipView, SUTouchCaptureView, UISwipeGestureRecognizer;
 
 @interface SUOverlayBackgroundViewController : SUViewController <SUScalingFlipViewDelegate, UIGestureRecognizerDelegate> {
     struct CGRect { 
@@ -22,6 +22,7 @@
     <SUOverlayBackgroundDelegate> *_delegate;
     } _keyboardFrame;
     int _selectedViewControllerIndex;
+    UISwipeGestureRecognizer *_swipeGestureRecognizer;
     NSMutableArray *_viewControllers;
 }
 
@@ -48,10 +49,11 @@
 - (void)_performFlipForAction:(id)arg1;
 - (void)_performNextAction;
 - (void)_performPresentAction:(id)arg1;
+- (void)_reloadGestureRecognizers;
 - (void)_removeViewController:(id)arg1;
 - (id)_selectedViewController;
 - (void)_sendDidDismiss;
-- (void)_shouldDismiss:(id)arg1 finishedWithValue:(id)arg2;
+- (void)_shouldDismissFinishedWithValue:(id)arg1;
 - (void)_swipe:(id)arg1;
 - (void)_tearDownFlipView;
 - (float)_viewControllerHorizontalPadding;

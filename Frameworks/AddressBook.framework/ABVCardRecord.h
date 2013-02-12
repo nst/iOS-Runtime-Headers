@@ -25,6 +25,7 @@
 - (id)ISO8061StringFromDate:(id)arg1;
 - (id)ISO8061StringFromDateTime:(id)arg1;
 - (id)_21vCardRepresentationAsData;
+- (void)_appendPropValue:(id)arg1 forExternalPropKey:(id)arg2 toOutString:(id)arg3 usingDelimiter:(id)arg4;
 - (id)_copyGroupVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1;
 - (id)_copyVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1 withPhoto:(id)arg2 extraPhotoParameters:(id)arg3;
 - (id)_fullName;
@@ -34,6 +35,7 @@
 - (id)_realCompositeName;
 - (BOOL)_showField:(unsigned int)arg1 identifier:(int)arg2;
 - (BOOL)_showField:(unsigned int)arg1;
+- (BOOL)_usesArrayForExternalPropKey:(id)arg1;
 - (id)_vCardKeyForAddressLabel:(id)arg1 vCard3:(BOOL)arg2;
 - (struct __CFString { }*)_vCardKeyForEmailLabel:(id)arg1;
 - (struct __CFString { }*)_vCardKeyForGenericLabel:(id)arg1;

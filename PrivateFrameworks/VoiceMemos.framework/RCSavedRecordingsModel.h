@@ -4,7 +4,7 @@
 
 @class NSArray, NSFetchRequest, NSFetchedResultsController, NSManagedObjectContext, NSManagedObjectModel;
 
-@interface RCSavedRecordingsModel : NSObject {
+@interface RCSavedRecordingsModel : NSObject <NSFetchedResultsControllerDelegate> {
     NSManagedObjectContext *_context;
     NSFetchedResultsController *_fetchController;
     NSFetchRequest *_fetchRequest;
@@ -14,8 +14,10 @@
 @property(readonly) unsigned int count;
 @property(readonly) NSArray * recordings;
 
++ (void)invalidateSharedModel;
 + (id)sharedModel;
 
+- (void).cxx_destruct;
 - (void)_generateAssetManifestPlist;
 - (id)_init;
 - (id)_labelPresetsForQuery:(id)arg1;

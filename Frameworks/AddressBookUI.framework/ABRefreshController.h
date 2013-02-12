@@ -2,45 +2,49 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class AccountsManager, NSMutableDictionary, NSTimer;
+@class ACAccountStore, AccountsManager, NSMutableDictionary, NSTimer;
 
 @interface ABRefreshController : NSObject {
+    NSMutableDictionary *_accountGroupListsToRefreshByObserver;
+    ACAccountStore *_accountStore;
     AccountsManager *_accountsManager;
-    NSMutableDictionary *_groupWrappersToRefreshByObserver;
-    NSMutableDictionary *_groupWrappersToRefreshGroupsByObserver;
-    NSMutableDictionary *_lastAccountRefreshDates;
-    NSMutableDictionary *_lastGroupListRefreshDates;
+    NSMutableDictionary *_contactsFiltersToRefreshByObserver;
     double _refreshDelay;
     NSTimer *_refreshTimer;
 }
 
 + (id)sharedInstance;
 
+- (BOOL)_acAccountExistsForIdentifier:(id)arg1;
 - (void)_actuallyRefreshOrphanedAccountsWithAddressBook:(void*)arg1;
-- (void)_addWrapper:(id)arg1 withObserver:(void*)arg2 toDictionary:(id*)arg3;
+- (void)_addObjectToRefresh:(id)arg1 withObserver:(void*)arg2 toDictionary:(id*)arg3;
 - (id)_allContactsSyncingAccounts;
 - (void)_invalidateTimer;
 - (void)_postponeAllRefreshes;
 - (void)_proceedWithRefresh:(id)arg1;
+- (void)_refreshACAccountWithIdentifier:(id)arg1 isUserRequested:(BOOL)arg2;
 - (void)_refreshAccount:(id)arg1 isUserRequested:(BOOL)arg2;
 - (void)_refreshAccountGroupList:(id)arg1 isUserRequested:(BOOL)arg2;
+- (void)_refreshGroupListForACAccountWithIdentifier:(id)arg1 isUserRequested:(BOOL)arg2;
 - (void)_resumeAllRefreshes;
 - (void)_scheduleRefreshTimerIfNeeded;
 - (void)_setAccountsManager:(id)arg1;
 - (void)_setRefreshDelay:(double)arg1;
-- (BOOL)accountGroupListNeedsRefresh:(id)arg1;
+- (id)accountStore;
 - (void)accountsChanged;
 - (id)accountsManager;
+- (BOOL)canRefreshAccountIdentifier:(id)arg1;
+- (BOOL)canRefreshContactsFilter:(id)arg1;
+- (BOOL)canRefreshSources:(id)arg1;
 - (void)cancelAllScheduledRefreshesWithObserver:(void*)arg1;
 - (void)dealloc;
-- (BOOL)groupWrapperNeedsRefresh:(id)arg1;
-- (BOOL)hasRefreshableAccounts;
 - (id)init;
 - (void)refreshAccountGroupList:(id)arg1;
+- (void)refreshContactsFilter:(id)arg1;
 - (void)refreshEverythingNow;
-- (void)refreshGroupWrapper:(id)arg1;
-- (void)scheduleRefreshIfNeededForGroupWrapper:(id)arg1 withObserver:(void*)arg2;
-- (void)scheduleRefreshIfNeededForGroupsInGroupWrapper:(id)arg1 withObserver:(void*)arg2;
+- (id)refreshableAccountIdentifiersForContactsFilter:(id)arg1;
+- (void)scheduleRefreshForAccountGroupList:(id)arg1 withObserver:(void*)arg2;
+- (void)scheduleRefreshForContactsFilter:(id)arg1 withObserver:(void*)arg2;
 - (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1 afterDelay:(BOOL)arg2;
 - (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1;
 

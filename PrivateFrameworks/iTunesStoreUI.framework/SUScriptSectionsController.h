@@ -11,13 +11,11 @@
 @property(retain) SUScriptSection * selectedSection;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
 - (id)_copySectionWithIdentifier:(id)arg1;
-- (id)_copySections;
-- (id)_copySelectedSection;
 - (id)_fixedSelectedIdentifier;
 - (void)_setSelectedIdentifier:(id)arg1;
 - (void)_tabBarConfigurationChangedNotification:(id)arg1;

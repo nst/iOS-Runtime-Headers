@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class <ISOperationDelegate>, ISOperation, NSArray, NSError, NSLock, NSRunLoop, NSString, SSOperationProgress;
+@class <ISOperationDelegate>, ISOperation, NSArray, NSError, NSLock, NSMutableArray, NSRunLoop, NSString, SSOperationProgress;
 
 @interface ISOperation : NSOperation {
     <ISOperationDelegate> *_delegate;
@@ -15,7 +15,8 @@
     NSArray *_serializationLockIdentifiers;
     BOOL _shouldMessageMainThread;
     BOOL _shouldRunWithBackgroundPriority;
-    ISOperation *_subOperation;
+    BOOL _stopped;
+    NSMutableArray *_subOperations;
     BOOL _success;
     id _threadSafeDelegate;
 }
@@ -30,14 +31,15 @@
 @property(copy) NSArray * serializationLockIdentifiers;
 @property BOOL shouldMessageMainThread;
 @property BOOL shouldRunWithBackgroundPriority;
-@property(retain) ISOperation * subOperation;
 @property BOOL success;
 @property(readonly) id threadSafeDelegate;
 @property(readonly) NSString * uniqueKey;
 
-- (void)_dispatchCompletionBlock;
+- (void)_addSubOperation:(id)arg1;
 - (void)_failAfterException;
+- (void)_keepAliveTimer:(id)arg1;
 - (void)_main:(BOOL)arg1;
+- (void)_removeSubOperation:(id)arg1;
 - (void)_sendErrorToDelegate:(id)arg1;
 - (void)_sendSuccessToDelegate;
 - (void)_sendWillStartToDelegate;
@@ -48,6 +50,7 @@
 - (id)copySerializationLocks;
 - (void)dealloc;
 - (id)delegate;
+- (void)dispatchCompletionBlock;
 - (id)error;
 - (id)init;
 - (BOOL)loadSoftwareMapReturningError:(id*)arg1;
@@ -77,13 +80,11 @@
 - (void)setSerializationLockIdentifiers:(id)arg1;
 - (void)setShouldMessageMainThread:(BOOL)arg1;
 - (void)setShouldRunWithBackgroundPriority:(BOOL)arg1;
-- (void)setSubOperation:(id)arg1;
 - (void)setSuccess:(BOOL)arg1;
 - (BOOL)shouldFailAfterUniquePredecessorError:(id)arg1;
 - (BOOL)shouldMessageMainThread;
 - (BOOL)shouldRunWithBackgroundPriority;
-- (void)stopRunLoop;
-- (id)subOperation;
+- (BOOL)stopRunLoop;
 - (BOOL)success;
 - (id)threadSafeDelegate;
 - (id)uniqueKey;

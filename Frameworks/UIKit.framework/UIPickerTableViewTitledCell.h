@@ -2,15 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UILabel;
+@class NSAttributedString, NSString, UILabel;
 
 @interface UIPickerTableViewTitledCell : UITableViewCell {
     UILabel *_titleLabel;
 }
 
+@property(retain) NSAttributedString * attributedTitle;
 @property(retain) NSString * title;
 
+- (id)attributedTitle;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setAttributedTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

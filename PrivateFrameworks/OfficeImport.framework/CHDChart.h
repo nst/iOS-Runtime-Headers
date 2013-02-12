@@ -38,9 +38,11 @@
 
 + (id)binaryEffects:(BOOL)arg1;
 
+- (id).cxx_construct;
 - (void)addChild:(id)arg1;
 - (void)addChildren:(id)arg1;
 - (id)backWallGraphicProperties;
+- (unsigned int)categoryCount;
 - (id)chartAreaGraphicProperties;
 - (id)childAtIndex:(unsigned int)arg1;
 - (unsigned int)childCount;
@@ -65,12 +67,14 @@
 - (bool)isBinary;
 - (bool)isDirectionChanged;
 - (bool)isMSGraph;
+- (bool)isPie;
 - (bool)isPlotVisibleCellsOnly;
 - (id)legend;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
 - (id)mainType;
 - (id)plotArea;
 - (id)processors;
+- (void)replaceChild:(id)arg1 with:(id)arg2;
 - (unsigned int)seriesCount;
 - (void)setAutoTitleDeleted:(bool)arg1;
 - (void)setBackWallGraphicProperties:(id)arg1;

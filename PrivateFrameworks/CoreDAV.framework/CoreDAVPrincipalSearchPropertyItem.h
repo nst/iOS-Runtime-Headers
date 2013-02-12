@@ -12,7 +12,8 @@
 @property(retain) CoreDAVLeafItem * descriptionItem;
 @property(retain) CoreDAVItem * prop;
 
-- (id)copyParseRules;
++ (id)copyParseRules;
+
 - (void)dealloc;
 - (id)description;
 - (id)descriptionItem;

@@ -4,7 +4,7 @@
 
 @class UIImageView, UILabel;
 
-@interface GKAchievementCompareSectionHeader : GKSectionHeader {
+@interface GKAchievementCompareSectionHeader : GKDecoratedLabel {
     UIImageView *_cellSeparatorViewLeft;
     UIImageView *_cellSeparatorViewRight;
     UILabel *_friendLabel;

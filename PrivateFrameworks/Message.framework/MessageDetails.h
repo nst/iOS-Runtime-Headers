@@ -8,14 +8,14 @@
     long long conversationHash;
     unsigned int dateReceived;
     unsigned int dateSent;
-    unsigned int encoding;
+    unsigned long encoding;
     NSString *externalID;
     BOOL isInvalid;
     MessageLibrary *library;
     unsigned int libraryID;
     int mailboxID;
     unsigned long long messageFlags;
-    unsigned int uid;
+    unsigned long uid;
 }
 
 - (id)copyMessageInfo;

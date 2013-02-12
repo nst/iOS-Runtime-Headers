@@ -5,42 +5,35 @@
 @class NSCache, NSString;
 
 @interface CPBitmapStore : NSObject {
-    struct sqlite3_stmt { } *_beginStmt;
     NSCache *_cache;
-    struct sqlite3_stmt { } *_commitStmt;
-    struct sqlite3 { } *_db;
-    BOOL _dbIsMissing;
-    BOOL _dbIsReadOnly;
-    struct sqlite3_stmt { } *_findStmt;
     NSString *_imagePath;
     NSString *_path;
-    struct sqlite3_stmt { } *_saveStmt;
-    struct __CFRunLoopObserver { } *_txnObserver;
     int _version;
 }
 
 @property(readonly) int version;
 
++ (id)CPBitmapStoreWithPath:(id)arg1 version:(int)arg2 useDirectHashing:(BOOL)arg3;
+
+- (struct CGImage { }*)_copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 fillMem:(id)arg6 alternateCompletion:(id)arg7;
+- (id)_versionPath;
 - (id)allGroups;
-- (void)beginAutoTxn;
-- (struct sqlite3_stmt { }*)beginStmt;
-- (struct sqlite3_stmt { }*)commitStmt;
+- (void)commitTransaction;
 - (void)commitTxn;
 - (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
+- (struct CGImage { }*)copyImageForKey:(id)arg1 inGroup:(id)arg2;
 - (struct CGImage { }*)copyImageForKey:(id)arg1;
-- (void)createDbAt:(const char *)arg1;
-- (struct sqlite3 { }*)db;
-- (id)dbPath;
 - (void)dealloc;
-- (BOOL)findImageWithKey:(id)arg1 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg2;
-- (struct sqlite3_stmt { }*)findStmt;
+- (BOOL)findImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
 - (int)imageCount;
+- (id)imageNameForKey:(id)arg1 inGroup:(id)arg2;
 - (id)imagePath;
 - (id)initWithPath:(id)arg1 version:(int)arg2;
+- (unsigned int)memContentOffset;
+- (void*)openAndMmap:(id)arg1 withInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg2;
 - (void)purge;
 - (void)removeImagesInGroups:(id)arg1;
 - (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
-- (struct sqlite3_stmt { }*)saveStmt;
 - (int)setVersion:(int)arg1;
 - (void)storeImageForKey:(id)arg1 inGroup:(id)arg2 opaque:(BOOL)arg3 image:(struct CGImage { }*)arg4;
 - (int)version;

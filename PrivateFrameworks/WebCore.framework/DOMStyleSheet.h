@@ -8,12 +8,12 @@
 }
 
 @property BOOL disabled;
-@property(copy,readonly) NSString * href;
-@property(retain,readonly) DOMMediaList * media;
-@property(retain,readonly) DOMNode * ownerNode;
-@property(retain,readonly) DOMStyleSheet * parentStyleSheet;
-@property(copy,readonly) NSString * title;
-@property(copy,readonly) NSString * type;
+@property(readonly) NSString * href;
+@property(readonly) DOMMediaList * media;
+@property(readonly) DOMNode * ownerNode;
+@property(readonly) DOMStyleSheet * parentStyleSheet;
+@property(readonly) NSString * title;
+@property(readonly) NSString * type;
 
 - (void)dealloc;
 - (BOOL)disabled;

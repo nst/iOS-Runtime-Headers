@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLVideoViewDelegate>, AVRemaker, NSArray, NSDictionary, NSLock, NSMutableDictionary, NSString, NSTimer, NSURL, PLAirPlayBackgroundView, PLAirTunesService, PLManagedAsset, PLMoviePlayerController, PLPhotoBakedThumbnails, PLPhotoTileViewController, PLVideoEditingOverlayView, PLVideoOutBackgroundView, PLVideoPosterFrameView, UIButton, UIImage, UIImageView, UIMovieScrubber, UIView;
+@class <PLVideoViewDelegate>, AVRemaker, NSArray, NSDictionary, NSLock, NSMutableDictionary, NSString, NSTimer, NSURL, PLAirPlayBackgroundView, PLAirTunesService, PLManagedAsset, PLMoviePlayerController, PLPhotoBakedThumbnails, PLPhotoTileViewController, PLProgressStack, PLVideoEditingOverlayView, PLVideoOutBackgroundView, PLVideoPosterFrameView, UIButton, UIImage, UIImageView, UIMovieScrubber, UIView;
 
 @interface PLVideoView : UIView <UIMovieScrubberDelegate, UIMovieScrubberDataSource, PLMoviePlayerControllerDelegate> {
     struct CGSize { 
@@ -82,7 +82,7 @@
     NSMutableDictionary *_thumbnailRequests;
     } _thumbnailSize;
     PLVideoEditingOverlayView *_trimMessageView;
-    struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; } *_trimProgressStack;
+    PLProgressStack *_trimProgressStack;
     NSTimer *_trimProgressTimer;
     NSString *_trimmedPath;
     PLManagedAsset *_trimmedVideoClip;
@@ -121,6 +121,7 @@
 @property BOOL showsPosterFrame;
 @property BOOL showsScrubber;
 @property(readonly) double startTime;
+@property(retain) PLProgressStack * trimProgressStack;
 @property(retain) PLManagedAsset * trimmedVideoClip;
 @property(readonly) PLManagedAsset * videoCameraImage;
 @property(readonly) NSString * videoPathAfterTrim;
@@ -220,6 +221,7 @@
 - (void)layoutSubviews;
 - (BOOL)loadMediaImmediately;
 - (void)moviePlayerBufferingStateDidChange:(id)arg1;
+- (BOOL)moviePlayerCanManageStatusBar:(id)arg1;
 - (void)moviePlayerDurationAvailable:(id)arg1;
 - (BOOL)moviePlayerExitRequest:(id)arg1 exitReason:(int)arg2;
 - (BOOL)moviePlayerHeadsetNextTrackPressed:(id)arg1;
@@ -277,6 +279,7 @@
 - (void)setShowsPosterFrame:(BOOL)arg1;
 - (void)setShowsScrubber:(BOOL)arg1 duration:(double)arg2;
 - (void)setShowsScrubber:(BOOL)arg1;
+- (void)setTrimProgressStack:(id)arg1;
 - (void)setTrimmedVideoClip:(id)arg1;
 - (void)setVideoOverlayBackgroundView:(id)arg1;
 - (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -288,6 +291,7 @@
 - (void)stop;
 - (void)toggleScaleMode:(float)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (id)trimProgressStack;
 - (void)trimUsingMode:(int)arg1 saveACopy:(BOOL)arg2;
 - (id)trimmedVideoClip;
 - (id)videoCameraImage;

@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSColorStub;
+@class TSUColor;
 
 @interface MFPen : NSObject <MFObject> {
-    NSColorStub *m_colour;
+    TSUColor *m_colour;
     int m_penStyle;
-    int m_penWidth;
+    long m_penWidth;
     double *m_userStyleArray;
 }
 

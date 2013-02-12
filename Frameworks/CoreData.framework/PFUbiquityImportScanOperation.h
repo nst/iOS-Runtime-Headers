@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSObject<PFUbiquityImportScanOperationDelegate>, NSSet, NSString, PFUbiquityLocation;
+@class NSError, NSMutableDictionary, NSObject<PFUbiquityImportScanOperationDelegate>, NSSet, NSString, PFUbiquityLocation, PFUbiquitySwitchboardEntry;
 
 @interface PFUbiquityImportScanOperation : PFUbiquityImportOperation {
     NSSet *_activeStoreNames;
+    PFUbiquitySwitchboardEntry *_entry;
     BOOL _includeLocalPeerLogs;
     BOOL _isFirstImport;
     NSString *_localPeerID;
+    NSMutableDictionary *_receiptFileCache;
     PFUbiquityLocation *_rootLocationToScan;
+    NSError *_scanError;
+    BOOL _success;
 }
 
 @property(readonly) NSSet * activeStoreNames;
@@ -18,6 +22,10 @@
 @property BOOL isFirstImport;
 @property(readonly) NSString * localPeerID;
 @property(readonly) PFUbiquityLocation * rootLocationToScan;
+@property(readonly) NSError * scanError;
+@property(readonly) BOOL success;
+
++ (void)initialize;
 
 - (id)activeStoreNames;
 - (BOOL)batchDownloadTransactionLogsAtLocations:(id)arg1 error:(id*)arg2;
@@ -30,8 +38,11 @@
 - (BOOL)isFirstImport;
 - (id)localPeerID;
 - (void)main;
+- (id)retainedDelegate;
 - (id)rootLocationToScan;
+- (id)scanError;
 - (void)setDelegate:(id)arg1;
 - (void)setIsFirstImport:(BOOL)arg1;
+- (BOOL)success;
 
 @end

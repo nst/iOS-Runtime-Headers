@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, UIFont;
+@class NSString, UIColor, UIFont;
 
 @interface EKTextViewWithLabelTextMetrics : UITextView <CalendarLabelTextMetrics> {
     int lineBreakMode;
@@ -12,6 +12,8 @@
 @property int lineBreakMode;
 @property int numberOfLines;
 @property(copy) NSString * text;
+@property int textAlignment;
+@property(retain) UIColor * textColor;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)lineBreakMode;

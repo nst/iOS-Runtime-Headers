@@ -12,7 +12,10 @@
 
 @property(getter=isLoaded,readonly) BOOL loaded;
 
++ (id)fallbackSubtitleOptionForAsset:(id)arg1 withSelectedAudioOption:(id)arg2;
+
 - (id)_keyForTrackType:(unsigned int)arg1;
+- (id)_titleOfOption:(id)arg1;
 - (void)beginTrackChanges;
 - (void)commitTrackChanges;
 - (id)currentTrackForType:(unsigned int)arg1;

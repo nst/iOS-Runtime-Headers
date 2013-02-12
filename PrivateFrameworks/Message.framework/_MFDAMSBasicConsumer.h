@@ -9,7 +9,7 @@
     MFMailMessageLibrary *library;
     MFDAMailbox *mailbox;
     ActivityMonitor *monitor;
-    int numNewMessages;
+    unsigned int numNewMessages;
     MFDAMessageStore *store;
 }
 

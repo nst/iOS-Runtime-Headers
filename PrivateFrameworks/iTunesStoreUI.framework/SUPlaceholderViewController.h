@@ -20,6 +20,7 @@
 - (void)_bagDidLoadNotification:(id)arg1;
 - (id)_newURLBagBackgroundGradient;
 - (void)_reloadBackgroundGradient;
+- (void)_reloadLoadingView;
 - (id)backgroundGradient;
 - (id)copyArchivableContext;
 - (void)dealloc;

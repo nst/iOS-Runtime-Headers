@@ -28,12 +28,14 @@
     BOOL _multipleAssets;
     UINavigationButton *_selectionButton;
     id _selectionButtonAction;
+    NSString *_selectionButtonCustomTitle;
     int _selectionButtonType;
 }
 
 @property(readonly) int bannerStyle;
 @property(copy) NSString * labelText;
 @property(copy) id selectionButtonAction;
+@property(copy) NSString * selectionButtonCustomTitle;
 @property int selectionButtonType;
 
 - (void)_fancyAnimateThumbnailToCell:(id)arg1 completion:(id)arg2;
@@ -48,9 +50,11 @@
 - (id)labelText;
 - (void)layoutSubviews;
 - (id)selectionButtonAction;
+- (id)selectionButtonCustomTitle;
 - (int)selectionButtonType;
 - (void)setLabelText:(id)arg1;
 - (void)setSelectionButtonAction:(id)arg1;
+- (void)setSelectionButtonCustomTitle:(id)arg1;
 - (void)setSelectionButtonType:(int)arg1;
 - (void)updateDisplayForAssets:(id)arg1;
 

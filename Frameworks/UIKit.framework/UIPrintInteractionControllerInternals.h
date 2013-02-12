@@ -11,6 +11,7 @@
     UIPrintInfo *_activePrintInfo;
     int _currentPage;
     UIPrintPageRenderer *_formatterRenderer;
+    BOOL _manualPrintPageEnabled;
     int _pageCount;
     } _pageRange;
     UIPrintPaper *_paper;

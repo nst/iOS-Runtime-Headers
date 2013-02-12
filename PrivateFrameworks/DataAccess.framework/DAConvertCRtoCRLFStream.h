@@ -48,6 +48,7 @@
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (id)streamError;
 - (unsigned int)streamStatus;
 
 @end

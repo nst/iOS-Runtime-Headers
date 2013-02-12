@@ -12,10 +12,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)fastIndexForKnownKey:(id)arg1;
 - (unsigned int)indexForKey:(id)arg1;
-- (id)initForKeys:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initForKeys:(id)arg1;
+- (id)initForKeys:(id*)arg1 count:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
-- (const id*)keys;
+- (id*)keys;
 - (unsigned int)length;
 
 @end

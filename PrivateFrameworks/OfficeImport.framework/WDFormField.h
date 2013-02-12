@@ -10,7 +10,7 @@
     BOOL mLinkSpecifyingNamedLocation;
     NSString *mMacName;
     NSString *mNamedLocation;
-    unsigned int mPosition;
+    unsigned long mPosition;
     NSString *mURI;
 }
 

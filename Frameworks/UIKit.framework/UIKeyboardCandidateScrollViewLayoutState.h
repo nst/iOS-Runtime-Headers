@@ -25,6 +25,7 @@
     NSArray *_groupHeaderCells;
     float _groupHeight;
     BOOL _grouped;
+    BOOL _hasIndex;
     BOOL _layoutFinished;
     float _previousGroupMaxY;
     float _rowHeight;
@@ -45,6 +46,7 @@
 @property(retain) NSArray * groupHeaderCells;
 @property float groupHeight;
 @property BOOL grouped;
+@property BOOL hasIndex;
 @property BOOL layoutFinished;
 @property float previousGroupMaxY;
 @property float rowHeight;
@@ -65,6 +67,7 @@
 - (id)groupHeaderCells;
 - (float)groupHeight;
 - (BOOL)grouped;
+- (BOOL)hasIndex;
 - (BOOL)layoutFinished;
 - (float)previousGroupMaxY;
 - (float)rowHeight;
@@ -81,6 +84,7 @@
 - (void)setGroupHeaderCells:(id)arg1;
 - (void)setGroupHeight:(float)arg1;
 - (void)setGrouped:(BOOL)arg1;
+- (void)setHasIndex:(BOOL)arg1;
 - (void)setLayoutFinished:(BOOL)arg1;
 - (void)setPreviousGroupMaxY:(float)arg1;
 - (void)setRowHeight:(float)arg1;

@@ -23,6 +23,7 @@
 - (void)_dismissCurrentViewControllerOurselves;
 - (void)_presentController:(id)arg1;
 - (void)_presentCurrentViewControllerOurselves;
+- (void)action:(id)arg1 viewControllerReady:(id)arg2;
 - (void)actionDidFinish;
 - (id)actionsForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (id)baseView;
@@ -30,6 +31,7 @@
 - (void)dealloc;
 - (id)defaultActionForURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (void)dismissCurrentController;
+- (void)failedToPrepareViewControllerForAction:(id)arg1;
 - (id)init;
 - (id)interactionDelegate;
 - (void)performAction:(id)arg1;

@@ -14,7 +14,7 @@
 @property(readonly) BOOL ended;
 @property(readonly) unsigned short fillMode;
 @property(readonly) int iterationCount;
-@property(copy,readonly) NSString * name;
+@property(readonly) NSString * name;
 @property(readonly) BOOL paused;
 
 - (void)dealloc;

@@ -16,7 +16,7 @@
 @property(readonly) PLIndexMapper * indexMapper;
 @property(readonly) NSIndexSet * updatedFilteredIndexes;
 
-+ (id)notificationForFilteredAlbumList:(id)arg1 fromAlbumListChangeNotification:(id)arg2;
++ (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 
 - (id)_changedObjects;
 - (id)_diffDescription;

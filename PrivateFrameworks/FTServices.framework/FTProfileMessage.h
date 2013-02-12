@@ -7,11 +7,17 @@
 @interface FTProfileMessage : FTMessage <NSCopying> {
     NSString *_authToken;
     NSString *_profileID;
+    NSData *_pushCert;
+    struct __SecKey { } *_pushKey;
+    struct __SecKey { } *_pushPublicKey;
     NSData *_pushToken;
 }
 
 @property(copy) NSString * authToken;
 @property(copy) NSString * profileID;
+@property(copy) NSData * pushCertificate;
+@property struct __SecKey { }* pushPrivateKey;
+@property struct __SecKey { }* pushPublicKey;
 @property(copy) NSData * pushToken;
 
 - (id)additionalMessageHeaders;
@@ -24,10 +30,16 @@
 - (BOOL)hasRequiredKeys:(id*)arg1;
 - (id)init;
 - (id)profileID;
+- (id)pushCertificate;
+- (struct __SecKey { }*)pushPrivateKey;
+- (struct __SecKey { }*)pushPublicKey;
 - (id)pushToken;
 - (int)responseCommand;
 - (void)setAuthToken:(id)arg1;
 - (void)setProfileID:(id)arg1;
+- (void)setPushCertificate:(id)arg1;
+- (void)setPushPrivateKey:(struct __SecKey { }*)arg1;
+- (void)setPushPublicKey:(struct __SecKey { }*)arg1;
 - (void)setPushToken:(id)arg1;
 - (BOOL)wantsBagKey;
 - (BOOL)wantsBinaryPush;

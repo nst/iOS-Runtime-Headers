@@ -16,6 +16,8 @@
     NSString *_normalizedName;
     NSFileAccessNode *_parent;
     id _presenterOrPresenters;
+    id _progressPublisherOrPublishers;
+    id _progressSubscriberOrSubscribers;
     id _provider;
     NSFileAccessNode *_symbolicLinkDestination;
     unsigned int _symbolicLinkReferenceCount;
@@ -23,6 +25,8 @@
 
 - (void)addAccessClaim:(id)arg1;
 - (void)addPresenter:(id)arg1;
+- (void)addProgressPublisher:(id)arg1;
+- (void)addProgressSubscriber:(id)arg1;
 - (void)assertDead;
 - (void)assertDescendantsLive;
 - (void)assertLive;
@@ -42,6 +46,11 @@
 - (void)forEachPresenterOfItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfItemOrContainingItemPerformProcedure:(id)arg1;
 - (void)forEachPresenterOfItemPerformProcedure:(id)arg1;
+- (void)forEachProgressPublisherOfItemOrContainedItemPerformProcedure:(id)arg1;
+- (void)forEachProgressPublisherOfItemPerformProcedure:(id)arg1;
+- (void)forEachProgressSubscriberOfItemOrContainingItemPerformProcedure:(id)arg1;
+- (void)forEachProgressSubscriberOfItemPerformProcedure:(id)arg1;
+- (void)forEachProgressThingOfItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)forEachReactorToItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)forEachRelevantAccessClaimPerformProcedure:(id)arg1;
 - (id)initWithParent:(id)arg1 name:(id)arg2 normalizedName:(id)arg3;
@@ -50,12 +59,15 @@
 - (BOOL)itemIsItemAtLocation:(id)arg1;
 - (BOOL)itemIsSubarbitrable;
 - (id)itemProvider;
+- (id)parent;
 - (id)pathExceptPrivate;
 - (id)pathFromAncestor:(id)arg1;
 - (id)pathToDescendantForFileURL:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (void)removeAccessClaim:(id)arg1;
 - (void)removeChildForNormalizedName:(id)arg1;
 - (void)removePresenter:(id)arg1;
+- (void)removeProgressPublisher:(id)arg1;
+- (void)removeProgressSubscriber:(id)arg1;
 - (void)removeSelfIfUseless;
 - (void)setArbitrationBoundary;
 - (void)setChild:(id)arg1 forName:(id)arg2 normalizedName:(id)arg3;

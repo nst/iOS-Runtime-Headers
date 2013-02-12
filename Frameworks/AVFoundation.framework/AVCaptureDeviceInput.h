@@ -12,7 +12,7 @@
 
 + (id)deviceInputWithDevice:(id)arg1 error:(id*)arg2;
 
-- (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (void)_setDevice:(id)arg1;
 - (void)dealloc;
 - (id)description;

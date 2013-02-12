@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSError, NSMutableData, NSString, NSURL, NSURLConnection;
+@class NSData, NSError, NSMutableData, NSObject<OS_dispatch_semaphore>, NSString, NSURL, NSURLConnection;
 
 @interface MCHTTPTransaction : NSObject {
     NSString *_CMSSignatureHeaderName;
@@ -10,7 +10,7 @@
     NSString *_contentType;
     NSURL *_currentURL;
     NSData *_data;
-    struct dispatch_semaphore_s { } *_doneSema;
+    NSObject<OS_dispatch_semaphore> *_doneSema;
     NSError *_error;
     struct __SecIdentity { } *_identity;
     NSString *_method;
@@ -38,6 +38,7 @@
 + (id)performRequestURL:(id)arg1 method:(id)arg2 timeout:(double)arg3 userAgent:(id)arg4 contentType:(id)arg5 data:(id)arg6 identity:(struct __SecIdentity { }*)arg7 outPermanentlyRedirectedURL:(id*)arg8 outError:(id*)arg9;
 + (id)transactionWithURL:(id)arg1 method:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)CMSSignatureHeaderName;
 - (void)_beginTransaction;
 - (BOOL)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;

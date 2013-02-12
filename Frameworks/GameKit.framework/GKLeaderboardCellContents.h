@@ -2,27 +2,27 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKScore, NSAttributedString, NSString;
+@class GKScore, GKTouchConsumingView, NSAttributedString;
 
 @interface GKLeaderboardCellContents : GKPlayerCellContentView {
     int _disclosureStyle;
     NSAttributedString *_displayName;
-    NSString *_placeholderString;
     float _rankWidth;
     GKScore *_score;
     unsigned int _totalScores;
+    GKTouchConsumingView *_touchEater;
 }
 
-@property(readonly) float contentsMargin;
 @property int disclosureStyle;
 @property(retain) NSAttributedString * displayName;
-@property(retain) NSString * placeholderString;
 @property(readonly) float rankAvailableWidth;
 @property float rankWidth;
 @property(retain) GKScore * score;
 @property unsigned int totalScores;
+@property(retain) GKTouchConsumingView * touchEater;
 
 - (void)dealloc;
+- (id)defaultImage;
 - (int)digits;
 - (int)disclosureStyle;
 - (id)displayName;
@@ -30,19 +30,22 @@
 - (float)fontSizeForRank;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)init;
-- (id)placeholderString;
+- (void)layoutSubviews;
 - (void)prepareForReuse;
 - (float)rankAvailableWidth;
 - (float)rankWidth;
+- (id)representedObject;
 - (id)score;
 - (void)setDisclosureStyle:(int)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setPlaceholderString:(id)arg1;
 - (void)setRankWidth:(float)arg1;
+- (void)setScore:(id)arg1 updateBackgroundViews:(BOOL)arg2;
 - (void)setScore:(id)arg1;
 - (void)setTotalScores:(unsigned int)arg1;
+- (void)setTouchEater:(id)arg1;
 - (BOOL)shouldShowPhoto;
 - (unsigned int)totalScores;
+- (id)touchEater;
 - (void)updateLines;
 
 @end

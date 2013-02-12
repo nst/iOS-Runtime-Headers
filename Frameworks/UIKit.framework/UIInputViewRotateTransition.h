@@ -5,7 +5,6 @@
 @interface UIInputViewRotateTransition : UIInputViewTransition {
 }
 
-- (BOOL)canAnimate;
 - (BOOL)fadeAccessoryView;
 - (void)postNotificationsForTransitionEnd;
 - (void)postNotificationsForTransitionStart;

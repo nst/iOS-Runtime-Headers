@@ -9,7 +9,7 @@
 
 @property(copy) NSString * aceId;
 @property(retain) SAMPMediaItem * listeningToItem;
-@property(retain) NSNumber * listeningToMusicApplication;
+@property(copy) NSNumber * listeningToMusicApplication;
 @property(copy) NSString * refId;
 @property int state;
 

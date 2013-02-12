@@ -7,12 +7,8 @@
 @interface DOMFile : DOMBlob {
 }
 
-@property(copy,readonly) NSString * fileName;
-@property(readonly) unsigned long long fileSize;
-@property(copy,readonly) NSString * name;
+@property(readonly) NSString * name;
 
-- (id)fileName;
-- (unsigned long long)fileSize;
 - (double)lastModifiedDate;
 - (id)name;
 

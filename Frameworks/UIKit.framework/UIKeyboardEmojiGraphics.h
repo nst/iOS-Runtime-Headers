@@ -34,6 +34,7 @@
 + (struct __CFDictionary { }*)emojiFontAttributes;
 + (struct CGSize { float x1; float x2; })emojiSize:(BOOL)arg1;
 + (id)imageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 name:(id)arg2 pressed:(BOOL)arg3;
++ (BOOL)isLandscape;
 + (struct CGPoint { float x1; float x2; })margin:(BOOL)arg1;
 + (struct CGPoint { float x1; float x2; })padding:(BOOL)arg1;
 + (unsigned char)rowCount:(BOOL)arg1;
@@ -48,13 +49,6 @@
 - (id)categoryRecentsGenerator:(id)arg1;
 - (id)categorySymbolsGenerator:(id)arg1;
 - (id)categoryWithSymbol:(id)arg1 pressed:(id)arg2;
-- (id)controlDeleteGenerator:(id)arg1;
-- (id)controlDeleteKeyGenerator:(BOOL)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)controlDismissKeyGenerator:(BOOL)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)controlInternationalGenerator:(id)arg1;
-- (id)controlInternationalKeyGenerator:(BOOL)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)controlSpaceKeyGenerator:(BOOL)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)controlWithSymbol:(id)arg1 corners:(int)arg2 padding:(struct CGSize { float x1; float x2; })arg3 generator:(id)arg4;
 - (struct UIKBTheme { }*)createProtoThemeForKey:(id)arg1 keyboard:(id)arg2 state:(int)arg3;
 - (id)darkDividerGenerator:(id)arg1;
 - (void)dealloc;

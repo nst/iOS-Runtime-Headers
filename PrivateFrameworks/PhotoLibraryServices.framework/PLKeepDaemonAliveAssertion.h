@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
+@class NSObject<OS_xpc_object>;
+
 @interface PLKeepDaemonAliveAssertion : NSObject {
-    struct _xpc_connection_s { } *_keepaliveConnection;
+    NSObject<OS_xpc_object> *_keepaliveConnection;
 }
 
 + (id)assertion;
@@ -12,7 +14,7 @@
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_registerForAppActiveNotifications;
 - (void)_setupConnection;
-- (void)_setupHeartBeatForConnection:(struct _xpc_connection_s { }*)arg1;
+- (void)_setupHeartBeatForConnection:(id)arg1;
 - (void)_tearDownConnection;
 - (void)_unregisterForAppActiveNotifications;
 - (void)dealloc;

@@ -21,6 +21,8 @@
 - (id)date;
 - (void)dealloc;
 - (id)email;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)message;
 - (id)playerID;
 - (void)setDate:(id)arg1;

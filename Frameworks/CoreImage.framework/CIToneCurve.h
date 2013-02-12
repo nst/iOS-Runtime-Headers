@@ -29,7 +29,6 @@
 - (id)_initFromProperties:(id)arg1;
 - (BOOL)_isIdentity;
 - (id)_kernel16;
-- (id)_kernel8;
 - (id)_outputProperties;
 - (void)dealloc;
 - (id)inputImage;

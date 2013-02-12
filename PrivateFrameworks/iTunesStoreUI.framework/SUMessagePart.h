@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIImage;
+@class NSObject<OS_dispatch_queue>, NSString, UIImage;
 
 @interface SUMessagePart : NSObject {
     NSString *_contentEncoding;
-    struct dispatch_queue_s { } *_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
 @property(readonly) NSString * MIMEType;

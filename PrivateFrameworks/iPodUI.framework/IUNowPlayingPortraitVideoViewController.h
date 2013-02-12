@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@interface IUNowPlayingPortraitVideoViewController : MPPortraitVideoViewController {
+@interface IUNowPlayingPortraitVideoViewController : IUPortraitVideoViewController {
 }
 
 - (id)init;

@@ -51,6 +51,7 @@
 - (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setPlaysKeyboardClicks:(BOOL)arg1;
 - (void)activateKeypadView;
+- (void)adjustButtonsNow;
 - (int)autocapitalizationType;
 - (int)autocorrectionType;
 - (BOOL)becomeFirstResponder;

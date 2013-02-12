@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKTranscriptButtonViewDelegate>, UIPlacardButton;
+@class <CKTranscriptButtonViewDelegate>, UIButton;
 
 @interface CKTranscriptHeaderView : UIView <CKTranscriptButtonView> {
-    UIPlacardButton *_callButton;
+    UIButton *_callButton;
     BOOL _callingAvailable;
-    UIPlacardButton *_contactsButton;
+    UIButton *_contactsButton;
     BOOL _disableFirstButtonRow;
     BOOL _faceTimeAvailable;
-    UIPlacardButton *_faceTimeButton;
+    UIButton *_faceTimeButton;
     BOOL _hasContact;
     BOOL _hasMoreMessages;
     BOOL _isGroupMessage;
     BOOL _isPhoneTranscript;
-    UIPlacardButton *_loadMoreButton;
+    UIButton *_loadMoreButton;
     id _transcriptButtonDelegate;
 }
 

@@ -33,6 +33,7 @@
 @property(retain) NSDate * modificationDate;
 @property(retain) NSNumber * orientation;
 @property short orientationValue;
+@property(retain) NSString * originalAssetsUUID;
 @property(retain) NSString * originalFilename;
 @property(retain) NSNumber * originalFilesize;
 @property int originalFilesizeValue;
@@ -72,6 +73,7 @@
 - (short)kindValue;
 - (id)objectID;
 - (short)orientationValue;
+- (id)originalAssetsUUID;
 - (id)originalFilename;
 - (id)originalFilesize;
 - (int)originalFilesizeValue;
@@ -106,6 +108,7 @@
 - (void)setImportSessionID:(id)arg1;
 - (void)setKindValue:(short)arg1;
 - (void)setOrientationValue:(short)arg1;
+- (void)setOriginalAssetsUUID:(id)arg1;
 - (void)setOriginalFilename:(id)arg1;
 - (void)setOriginalFilesize:(id)arg1;
 - (void)setOriginalFilesizeValue:(int)arg1;

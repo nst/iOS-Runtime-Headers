@@ -32,6 +32,9 @@
 @property(readonly) float timeWidth;
 @property BOOL usesLightText;
 
++ (void)_calculateWidthForOrientation:(int)arg1;
++ (float)_hourWidthForOrientation:(int)arg1;
++ (void)_invalidateWidth;
 + (float)defaultHeightForOrientation:(int)arg1;
 + (float)designatorSizeForOrientation:(int)arg1;
 + (float)hourHeightForOrientation:(int)arg1;

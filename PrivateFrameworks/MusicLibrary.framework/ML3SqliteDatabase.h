@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3SqliteDatabaseContext, NSString;
+@class ML3SqliteDatabaseContext, MLSQLiteConnectionQueue, NSString;
 
 @interface ML3SqliteDatabase : NSObject {
+    MLSQLiteConnectionQueue *_backgroundConnectionQueue;
     ML3SqliteDatabaseContext *_backgroundDatabaseContext;
-    struct dispatch_queue_s { } *_backgroundQueue;
+    NSString *_backgroundQueueIdentifier;
     BOOL _enableWrites;
+    NSString *_identifier;
     ML3SqliteDatabaseContext *_mainDatabaseContext;
     NSString *_path;
 }
@@ -18,6 +20,7 @@
 + (BOOL)attachAuxiliaryDatabases:(struct sqlite3 { }*)arg1;
 + (BOOL)buildDatabaseTablesUsingHandle:(struct sqlite3 { }*)arg1 usingTransaction:(BOOL)arg2;
 + (void)closeDatabaseHandle:(struct sqlite3 { }*)arg1;
++ (int)currentUserVersion;
 + (id)databasePath;
 + (BOOL)executeSQL:(id)arg1 usingHandle:(struct sqlite3 { }*)arg2;
 + (void)limitCacheSize:(struct sqlite3 { }*)arg1;
@@ -30,24 +33,28 @@
 + (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
 + (void)stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(BOOL*)arg2 didFinish:(BOOL*)arg3;
 + (id)systemCurrentLanguage;
-+ (int)userVersionCurrent;
 + (BOOL)userVersionMatchesSystemUsingHandle:(struct sqlite3 { }*)arg1;
 + (int)userVersionUsingHandle:(struct sqlite3 { }*)arg1;
 
+- (void).cxx_destruct;
+- (void)_accessDatabaseContextUsingBlock:(id)arg1;
 - (void)_debugLoggingOptionsDidChangeNotification:(id)arg1;
+- (void)_enumerateDatabaseContextsUsingBlock:(id)arg1;
+- (id)_onBackgroundQueueDatabaseContext;
+- (id)_onMainQueueDatabaseContext;
 - (BOOL)_openDatabaseWithOpenHandler:(id)arg1;
 - (void)accessDatabaseContextUsingBlock:(id)arg1;
 - (void)accessDatabaseUsingBlock:(id)arg1;
-- (id)backgroundQueue_backgroundDatabaseContext;
 - (BOOL)buildDatabaseTables;
 - (BOOL)canWriteToDatabase;
 - (BOOL)coerceValidDatabase;
 - (void)dealloc;
 - (BOOL)deleteAndRecreateDatabaseUsingHandle:(struct sqlite3 {}**)arg1;
+- (id)description;
 - (void)didCommitInDatabaseContext:(id)arg1;
 - (void)didRollbackInDatabaseContext:(id)arg1;
 - (BOOL)executeSQL:(id)arg1;
-- (id)initWithPath:(id)arg1 enableWrites:(BOOL)arg2;
+- (id)initWithIdentifier:(id)arg1 path:(id)arg2 backgroundConnectionQueue:(id)arg3 enableWrites:(BOOL)arg4;
 - (id)newDatabaseContext;
 - (BOOL)openDatabaseHandle:(struct sqlite3 {}**)arg1;
 - (struct sqlite3 { }*)openedDatabaseHandle;
@@ -57,7 +64,7 @@
 - (void)prepareStatementForSQL:(id)arg1 usingBlock:(id)arg2;
 - (void)reconnectBackgroundDatabaseContext;
 - (void)reconnectMainDatabaseContext;
-- (void)reconnectToDatabase;
+- (void)reconnectToDatabaseWithCompletionHandler:(id)arg1;
 - (BOOL)requiresPostProcessing;
 
 @end

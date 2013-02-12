@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSCalendar, NSDate, NSLocale, NSTimeZone, UIPickerView;
+@class NSCalendar, NSDate, NSLocale, NSTimeZone, _UIDatePickerView;
 
 @interface UIDatePicker : UIControl <NSCoding> {
-    UIPickerView *_pickerView;
+    _UIDatePickerView *_pickerView;
 }
 
+@property(getter=_allowsZeroCountdownDuration,setter=_setAllowsZeroCountdownDuration:) BOOL allowsZeroCountdownDuration;
 @property(copy) NSCalendar * calendar;
 @property double countDownDuration;
 @property(retain) NSDate * date;
 @property int datePickerMode;
 @property(getter=_dateUnderSelectionBar,readonly) NSDate * dateUnderSelectionBar;
+@property(getter=_drawsBackground,setter=_setDrawsBackground:) BOOL drawsBackground;
 @property(retain) NSLocale * locale;
 @property(retain) NSDate * maximumDate;
 @property(retain) NSDate * minimumDate;
@@ -20,11 +22,21 @@
 @property(retain) NSTimeZone * timeZone;
 @property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
 
++ (Class)_pickerViewClass;
+
+- (BOOL)_allowsZeroCountdownDuration;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (float)_contentWidth;
 - (id)_dateUnderSelectionBar;
+- (BOOL)_drawsBackground;
 - (void)_insertPickerView;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_locale;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (id)_selectedTextForCalendarUnit:(unsigned int)arg1;
+- (void)_setAllowsZeroCountdownDuration:(BOOL)arg1;
+- (void)_setDrawsBackground:(BOOL)arg1;
 - (void)_setHidesLabels:(BOOL)arg1;
 - (void)_setHighlightsToday:(BOOL)arg1;
 - (void)_setLocale:(id)arg1;
@@ -40,12 +52,14 @@
 - (int)hour;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)invalidateIntrinsicContentSize;
 - (id)locale;
 - (id)maximumDate;
 - (id)minimumDate;
 - (int)minute;
 - (int)minuteInterval;
 - (int)second;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setCountDownDuration:(double)arg1;
 - (void)setDate:(id)arg1 animate:(BOOL)arg2;

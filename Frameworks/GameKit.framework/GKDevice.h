@@ -24,6 +24,7 @@
 
 + (id)currentDevice;
 
+- (void)_initPlatform;
 - (id)buildVersion;
 - (id)buildVersionHeader;
 - (void)dealloc;

@@ -14,9 +14,11 @@
         void **items; 
         BOOL wantsStrong; 
         BOOL wantsWeak; 
+        BOOL wantsARC; 
         BOOL shouldCopyIn; 
         BOOL usesStrong; 
         BOOL usesWeak; 
+        BOOL usesARC; 
         BOOL usesSentinel; 
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
@@ -37,9 +39,11 @@
         void **items; 
         BOOL wantsStrong; 
         BOOL wantsWeak; 
+        BOOL wantsARC; 
         BOOL shouldCopyIn; 
         BOOL usesStrong; 
         BOOL usesWeak; 
+        BOOL usesARC; 
         BOOL usesSentinel; 
         BOOL pointerPersonality; 
         BOOL integerPersonality; 

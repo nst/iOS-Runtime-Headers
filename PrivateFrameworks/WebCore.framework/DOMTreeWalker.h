@@ -9,8 +9,8 @@
 
 @property(retain) DOMNode * currentNode;
 @property(readonly) BOOL expandEntityReferences;
-@property(retain,readonly) <DOMNodeFilter> * filter;
-@property(retain,readonly) DOMNode * root;
+@property(readonly) <DOMNodeFilter> * filter;
+@property(readonly) DOMNode * root;
 @property(readonly) unsigned int whatToShow;
 
 - (id)currentNode;

@@ -5,44 +5,72 @@
 @class GEOAddress, GEOPlace, NSMutableArray, NSString;
 
 @interface GEOPlaceResult : PBCodable {
+    struct { 
+        unsigned int confidence : 1; 
     NSMutableArray *_additionalPlaces;
     double _confidence;
-    BOOL _hasConfidence;
+    } _has;
+    NSMutableArray *_namedFeatures;
     GEOPlace *_place;
     NSString *_quad;
+    NSString *_suggestedQuery;
     GEOAddress *_tokenEntity;
+    NSMutableArray *_unmatchedStrings;
 }
 
 @property(retain) NSMutableArray * additionalPlaces;
 @property double confidence;
 @property BOOL hasConfidence;
 @property(readonly) BOOL hasQuad;
+@property(readonly) BOOL hasSuggestedQuery;
 @property(readonly) BOOL hasTokenEntity;
+@property(retain) NSMutableArray * namedFeatures;
 @property(retain) GEOPlace * place;
 @property(retain) NSString * quad;
+@property(retain) NSString * suggestedQuery;
 @property(retain) GEOAddress * tokenEntity;
+@property(retain) NSMutableArray * unmatchedStrings;
 
 - (void)addAdditionalPlace:(id)arg1;
+- (void)addNamedFeature:(id)arg1;
+- (void)addUnmatchedString:(id)arg1;
 - (id)additionalPlaceAtIndex:(unsigned int)arg1;
 - (id)additionalPlaces;
 - (unsigned int)additionalPlacesCount;
+- (void)clearAdditionalPlaces;
+- (void)clearNamedFeatures;
+- (void)clearUnmatchedStrings;
 - (double)confidence;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasConfidence;
 - (BOOL)hasQuad;
+- (BOOL)hasSuggestedQuery;
 - (BOOL)hasTokenEntity;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
+- (id)namedFeatureAtIndex:(unsigned int)arg1;
+- (id)namedFeatures;
+- (unsigned int)namedFeaturesCount;
 - (id)place;
 - (id)quad;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setConfidence:(double)arg1;
 - (void)setHasConfidence:(BOOL)arg1;
+- (void)setNamedFeatures:(id)arg1;
 - (void)setPlace:(id)arg1;
 - (void)setQuad:(id)arg1;
+- (void)setSuggestedQuery:(id)arg1;
 - (void)setTokenEntity:(id)arg1;
+- (void)setUnmatchedStrings:(id)arg1;
+- (id)suggestedQuery;
 - (id)tokenEntity;
+- (id)unmatchedStringAtIndex:(unsigned int)arg1;
+- (id)unmatchedStrings;
+- (unsigned int)unmatchedStringsCount;
 - (void)writeTo:(id)arg1;
 
 @end

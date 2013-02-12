@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKUITheme, UIImageView, UIView<GKTableViewCellContents>;
+@class GKUITheme, UIButton, UIImageView, UIView<GKTableViewCellContents>;
 
 @interface GKTableViewCell : UITableViewCell {
     struct { 
@@ -22,6 +22,7 @@
     int _backgroundStyle;
     } _contentInsets;
     UIView<GKTableViewCellContents> *_contents;
+    UIButton *_disclosureButton;
     UIImageView *_disclosureIndicator;
     BOOL _groupHighlightEnabled;
     } _styleFlags;
@@ -32,11 +33,13 @@
 @property int backgroundStyle;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property(retain) UIView<GKTableViewCellContents> * contents;
+@property(retain) UIButton * disclosureButton;
 @property BOOL groupHighlightEnabled;
 @property(readonly) BOOL isGroupedTableView;
 @property BOOL leaveAccessorySpace;
 @property(retain) GKUITheme * theme;
 
+- (id)_gkDescriptionWithChildren:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
 - (int)backgroundStyle;
 - (void)configureBackgroundView;
@@ -44,6 +47,7 @@
 - (id)contents;
 - (void)dealloc;
 - (id)description;
+- (id)disclosureButton;
 - (BOOL)groupHighlightEnabled;
 - (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2 backgroundStyle:(int)arg3;
 - (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2;
@@ -62,6 +66,7 @@
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContents:(id)arg1;
 - (void)setContentsInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setDisclosureButton:(id)arg1;
 - (void)setGroupHighlightEnabled:(BOOL)arg1;
 - (void)setGroupSelectedOrHighlighted:(BOOL)arg1 isHighlight:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;

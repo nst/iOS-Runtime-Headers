@@ -12,7 +12,7 @@
 @property(retain) NSError * error;
 @property(retain) NSString * hostName;
 
-+ (id)reachabilityWithHostName:(id)arg1;
++ (id)_gkReachabilityWithHostName:(id)arg1;
 
 - (void)dealloc;
 - (id)error;

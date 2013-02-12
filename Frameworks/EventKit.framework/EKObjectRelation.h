@@ -21,9 +21,11 @@
 - (id)committedValue;
 - (void)dealloc;
 - (void)didCommit;
+- (unsigned int)hash;
 - (id)initWithOwner:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3;
 - (id)inverseName;
 - (BOOL)isDirty;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isWeak;
 - (id)owner;
 - (void)refresh;

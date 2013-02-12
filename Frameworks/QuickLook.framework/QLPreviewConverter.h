@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (void)finishConverting;
 - (void)finishedAppendingData;
+- (BOOL)htmlErrorDisabled;
 - (id)initWithConnection:(id)arg1 delegate:(id)arg2 response:(id)arg3 options:(id)arg4;
 - (id)initWithData:(id)arg1 name:(id)arg2 uti:(id)arg3 options:(id)arg4;
 - (id)initWithURL:(id)arg1 uti:(id)arg2 options:(id)arg3;
@@ -49,5 +50,6 @@
 - (id)previewResponse;
 - (id)previewUTI;
 - (id)safeRequestForRequest:(id)arg1;
+- (void)setHtmlErrorDisabled:(BOOL)arg1;
 
 @end

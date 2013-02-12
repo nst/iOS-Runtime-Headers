@@ -4,10 +4,11 @@
 
 @class NSArray, NSString;
 
-@interface SACommandFailed : SABaseCommand <SAServerBoundCommand, SAClientBoundCommand> {
+@interface SACommandFailed : SABaseClientBoundCommand <SAServerBoundCommand, SAClientBoundCommand> {
 }
 
 @property(copy) NSString * aceId;
+@property(copy) NSString * appId;
 @property(copy) NSArray * callbacks;
 @property int errorCode;
 @property(copy) NSString * reason;
@@ -18,7 +19,6 @@
 + (id)commandFailedWithErrorCode:(int)arg1;
 + (id)commandFailedWithReason:(id)arg1;
 
-- (id)callbacks;
 - (id)encodedClassName;
 - (int)errorCode;
 - (id)groupIdentifier;
@@ -26,7 +26,6 @@
 - (id)initWithReason:(id)arg1;
 - (id)reason;
 - (BOOL)requiresResponse;
-- (void)setCallbacks:(id)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setReason:(id)arg1;
 

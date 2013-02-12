@@ -51,7 +51,6 @@
 + (id)inheritanceKeywords;
 + (id)makeUID;
 + (id)name;
-+ (id)newUID;
 + (int)statusFromString:(id)arg1;
 + (id)stringFromStatus:(int)arg1;
 

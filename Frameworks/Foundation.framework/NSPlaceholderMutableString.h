@@ -19,6 +19,7 @@
 - (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
 - (id)initWithFormat:(id)arg1 locale:(id)arg2 arguments:(void*)arg3;
 - (id)initWithString:(id)arg1;
+- (id)initWithUTF8String:(const char *)arg1;
 - (unsigned int)length;
 - (oneway void)release;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;

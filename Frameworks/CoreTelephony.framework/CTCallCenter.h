@@ -11,7 +11,7 @@
 @interface CTCallCenter : NSObject {
     id _callEventHandler;
     NSSet *_currentCalls;
-    void *_internal;
+    void *_server;
 }
 
 @property(copy) id callEventHandler;
@@ -21,14 +21,12 @@
 - (BOOL)calculateCallStateChanges:(id)arg1;
 - (id)callEventHandler;
 - (void)cleanUpServerConnection;
-- (void)cleanUpServerConnectionNoLock;
 - (id)currentCalls;
 - (void)dealloc;
 - (id)description;
 - (BOOL)getCurrentCallSetFromServer:(id)arg1;
 - (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
 - (id)init;
-- (void)reestablishServerConnectionIfNeeded;
 - (void)setCallEventHandler:(id)arg1;
 - (void)setCurrentCalls:(id)arg1;
 - (BOOL)setUpServerConnection;

@@ -40,9 +40,10 @@
 - (unsigned int)achievements;
 - (id)categoryID;
 - (void)dealloc;
-- (id)description;
 - (unsigned int)friendRank;
 - (id)game;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
 - (id)lastPlayedDate;
 - (unsigned int)maxFriendRank;

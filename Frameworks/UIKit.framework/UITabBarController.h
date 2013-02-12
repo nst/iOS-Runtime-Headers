@@ -49,6 +49,7 @@
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)_gkForceNextContentUpdate;
 - (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkResetContents;
 - (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
@@ -63,10 +64,12 @@
 - (void)_rebuildTabBarItemsIfNeeded;
 - (void)_selectDefaultViewControllerIfNecessaryWithAppearanceTransitions:(BOOL)arg1;
 - (id)_selectedViewControllerInTabBar;
+- (void)_setBadgeValue:(id)arg1 forTabBarItem:(id)arg2;
 - (void)_setMaximumNumberOfItems:(unsigned int)arg1;
 - (void)_setSelectedTabBarItem:(id)arg1;
 - (void)_setSelectedViewController:(id)arg1;
 - (BOOL)_shouldPersistViewWhenCoding;
+- (BOOL)_shouldSynthesizeSupportedOrientations;
 - (BOOL)_shouldUseOnePartRotation;
 - (void)_tabBarItemClicked:(id)arg1;
 - (id)_transitionView;
@@ -80,10 +83,12 @@
 - (void)concealTabBarSelection;
 - (id)customizableViewControllers;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)defaultFirstResponder;
 - (id)delegate;
 - (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)hideBarWithTransition:(int)arg1;
 - (id)initWithCoder:(id)arg1;

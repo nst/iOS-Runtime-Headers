@@ -31,7 +31,7 @@
 - (id)init;
 - (BOOL)isRegisteredWithMach;
 - (BOOL)registerWithMach;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (struct __CFRunLoopSource { }*)serverSource;

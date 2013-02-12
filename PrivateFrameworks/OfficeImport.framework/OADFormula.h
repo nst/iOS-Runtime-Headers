@@ -13,6 +13,7 @@
     int mType;
 }
 
+- (id).cxx_construct;
 - (struct OADFormulaArg { int x1; int x2; })argAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithType:(int)arg1 arg0:(struct OADFormulaArg { int x1; int x2; })arg2 arg1:(struct OADFormulaArg { int x1; int x2; })arg3 arg2:(struct OADFormulaArg { int x1; int x2; })arg4;

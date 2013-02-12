@@ -22,6 +22,7 @@
 - (void)_analyzeTokensInInterwordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 paragraphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)_analyzeTokensInWordRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 paragraphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)_calculateSentenceRangesForParagraphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)_ngramTagsAndFrequenciesForMisspelledRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 word:(id)arg2 tags:(id*)arg3 frequencies:(id*)arg4;
 - (id)_rankedCandidatesForMisspelledRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 candidates:(id)arg2 contextualFrequencies:(id*)arg3 baseFrequencies:(id*)arg4;
 - (id)_rankedCandidatesForMisspelledRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 candidates:(id)arg2;
 - (id)_tagSchemeForScheme:(id)arg1;

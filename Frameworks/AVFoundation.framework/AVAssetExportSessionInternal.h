@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVAssetTrack, AVAudioMix, AVURLAsset, AVVideoComposition, AVWeakReference, NSArray, NSError, NSString, NSURL;
+@class AVAsset, AVAssetTrack, AVAudioMix, AVVideoComposition, AVWeakReference, NSArray, NSError, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface AVAssetExportSessionInternal : NSObject {
     struct { 
@@ -22,8 +22,10 @@
             unsigned int flags; 
             long long epoch; 
         } duration; 
-    AVURLAsset *asset;
+    AVAsset *asset;
     AVAudioMix *audioMix;
+    NSArray *compatibleFileTypes;
+    long compatibleFileTypesDispatchOncePredicate;
     NSError *error;
     AVAssetTrack *firstVideoTrack;
     id handler;
@@ -36,11 +38,12 @@
     NSString *preset16x9;
     NSString *preset;
     float progress;
-    struct dispatch_queue_s { } *readWriteQueue;
+    NSObject<OS_dispatch_queue> *readWriteQueue;
     struct OpaqueFigRemaker { } *remaker;
-    struct dispatch_queue_s { } *remakerNotificationSerializationQueue;
+    NSObject<OS_dispatch_queue> *remakerNotificationSerializationQueue;
     int status;
     } timeRange;
+    BOOL useHardwareVideoEncoderIfAvailable;
     AVVideoComposition *videoComposition;
     AVWeakReference *weakReference;
 }

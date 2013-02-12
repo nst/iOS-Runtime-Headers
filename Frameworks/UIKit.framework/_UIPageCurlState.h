@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class NSDate, UIView, _UIPageCurl, _UIPageCurlState;
+@class UIView, _UIPageCurl;
 
-@interface _UIPageCurlState : NSObject {
+@interface _UIPageCurlState : _UITransitionState {
     struct CGPoint { 
         float x; 
         float y; 
@@ -17,27 +17,21 @@
         float y; 
     UIView *_backPageView;
     UIView *_backView;
-    NSDate *_beginDate;
-    id _completion;
     int _completionCount;
-    int _curlDirection;
     int _curlState;
     int _curlType;
+    id _finally;
     BOOL _finished;
     UIView *_frontPageView;
     UIView *_frontView;
     } _initialLocation;
-    _UIPageCurlState *_nextState;
     _UIPageCurl *_pageCurl;
-    _UIPageCurlState *_previousState;
     } _referenceLocation;
     BOOL _willComplete;
 }
 
 @property(readonly) UIView * backPageView;
 @property(readonly) UIView * backView;
-@property(readonly) NSDate * beginDate;
-@property(readonly) int curlDirection;
 @property(readonly) int curlState;
 @property(readonly) int curlType;
 @property(readonly) UIView * frontPageView;
@@ -45,34 +39,31 @@
 @property(readonly) struct CGPoint { float x1; float x2; } initialLocation;
 @property(readonly) _UIPageCurl * pageCurl;
 @property(getter=hasPendingAnimations,readonly) BOOL pendingAnimations;
-@property(readonly) _UIPageCurlState * previousState;
 @property(readonly) struct CGPoint { float x1; float x2; } referenceLocation;
 
-- (void)_detach;
+- (int)_effectiveTransitionDirection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pageViewFrame;
 - (void)addBackPageContent;
 - (void)addFrontPageContent;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)backPageView;
 - (id)backView;
-- (id)beginDate;
 - (void)cleanup;
 - (void)cleanupWithFinishedState:(BOOL)arg1 completedState:(BOOL)arg2;
-- (int)curlDirection;
 - (int)curlState;
 - (int)curlType;
 - (void)dealloc;
+- (void)finally;
 - (id)frontPageView;
 - (id)frontView;
 - (BOOL)hasPendingAnimations;
 - (void)incrementCompletionCount;
-- (id)initWithPageCurl:(id)arg1 andCurlType:(int)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 withReferenceLocation:(struct CGPoint { float x1; float x2; })arg4 inDirection:(int)arg5 withView:(id)arg6 revealingView:(id)arg7 completion:(id)arg8;
+- (id)initWithPageCurl:(id)arg1 andCurlType:(int)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 withReferenceLocation:(struct CGPoint { float x1; float x2; })arg4 inDirection:(int)arg5 withView:(id)arg6 revealingView:(id)arg7 completion:(id)arg8 finally:(id)arg9;
 - (struct CGPoint { float x1; float x2; })initialLocation;
-- (void)markBeginDate;
+- (void)invalidatePageCurl;
+- (BOOL)isCompatibleWithCurlOfType:(int)arg1 inDirection:(int)arg2;
 - (id)pageCurl;
-- (id)previousState;
 - (struct CGPoint { float x1; float x2; })referenceLocation;
 - (void)setCurlState:(int)arg1 willComplete:(BOOL)arg2;
-- (void)setNextState:(id)arg1;
 
 @end

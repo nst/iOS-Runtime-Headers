@@ -2,23 +2,23 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMAccount, IMChat, IMPerson;
+@class NSString;
 
 @interface CKIMDBMessage : CKDBMessage {
-    IMPerson *_person;
+    int _personID;
+    NSString *_personName;
 }
 
-@property(retain,readonly) IMAccount * account;
-@property(retain,readonly) IMChat * chat;
-@property(retain) IMPerson * person;
+@property int personID;
+@property(retain) NSString * personName;
 
-- (id)account;
-- (id)chat;
 - (void)dealloc;
 - (id)initWithRecordID:(int)arg1;
 - (void)markAsRead;
-- (id)person;
+- (int)personID;
+- (id)personName;
 - (void)resetIMPerson;
-- (void)setPerson:(id)arg1;
+- (void)setPersonID:(int)arg1;
+- (void)setPersonName:(id)arg1;
 
 @end

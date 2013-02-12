@@ -9,7 +9,7 @@
 
 @property(copy) NSString * align;
 @property(copy) NSString * bgColor;
-@property(retain,readonly) DOMHTMLCollection * cells;
+@property(readonly) DOMHTMLCollection * cells;
 @property(copy) NSString * ch;
 @property(copy) NSString * chOff;
 @property(readonly) int rowIndex;

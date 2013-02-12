@@ -6,14 +6,17 @@
 
 @interface AlarmManager : NSObject {
     NSMutableArray *_alarms;
+    NSString *_defaultSound;
+    int _defaultSoundType;
     BOOL _dirty;
     BOOL invalidAlarmsDetected;
     NSDate *lastModified;
     NSMutableArray *logMessageList;
 }
 
-@property(retain,readonly) NSArray * alarms;
-@property(retain) NSString * defaultSound;
+@property(readonly) NSArray * alarms;
+@property(readonly) NSString * defaultSound;
+@property(readonly) int defaultSoundType;
 @property BOOL invalidAlarmsDetected;
 @property(retain) NSDate * lastModified;
 @property(retain) NSMutableArray * logMessageList;
@@ -26,28 +29,35 @@
 + (void)writeAlarmsToPreferences:(id)arg1;
 
 - (void)addAlarm:(id)arg1 active:(BOOL)arg2;
+- (id)alarmWithId:(id)arg1;
 - (id)alarmWithIdUrl:(id)arg1;
 - (id)alarms;
 - (BOOL)checkIfAlarmsModified;
+- (void)countAlarmsInAggregateDictionary;
 - (void)dealloc;
 - (id)defaultSound;
+- (int)defaultSoundType;
+- (void)handleAlarm:(id)arg1 startedUsingSong:(id)arg2;
+- (void)handleAlarm:(id)arg1 stoppedUsingSong:(id)arg2;
 - (void)handleAnyNotificationChanges;
-- (void)handleExpiredOrSnoozedNotificationsOnly;
+- (void)handleExpiredOrSnoozedNotificationsOnly:(id)arg1;
 - (void)handleNotificationFired:(id)arg1;
 - (void)handleNotificationSnoozed:(id)arg1;
 - (id)init;
 - (BOOL)invalidAlarmsDetected;
 - (id)lastModified;
 - (void)loadAlarms;
+- (void)loadDefaultSoundAndType;
 - (void)loadScheduledNotifications;
 - (void)loadScheduledNotificationsWithCancelUnused:(BOOL)arg1;
 - (id)logMessageList;
+- (id)nextAlarmForDate:(id)arg1 activeOnly:(BOOL)arg2 allowRepeating:(BOOL)arg3;
 - (void)reloadScheduledNotifications;
 - (void)reloadScheduledNotificationsWithRefreshActive:(BOOL)arg1 cancelUnused:(BOOL)arg2;
 - (void)removeAlarm:(id)arg1;
 - (void)saveAlarms;
 - (void)setAlarm:(id)arg1 active:(BOOL)arg2;
-- (void)setDefaultSound:(id)arg1;
+- (void)setDefaultSound:(id)arg1 ofType:(int)arg2;
 - (void)setInvalidAlarmsDetected:(BOOL)arg1;
 - (void)setLastModified:(id)arg1;
 - (void)setLogMessageList:(id)arg1;

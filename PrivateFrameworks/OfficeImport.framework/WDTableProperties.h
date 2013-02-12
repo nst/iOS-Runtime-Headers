@@ -147,6 +147,7 @@
     } mTrackedProperties;
 }
 
+- (id).cxx_construct;
 - (int)alignment;
 - (id)baseStyle;
 - (id)bottomBorder;

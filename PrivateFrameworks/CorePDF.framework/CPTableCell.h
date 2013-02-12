@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPGraphicObject;
-
 @interface CPTableCell : CPChunk <CPDisposable> {
     struct CGRect { 
         struct CGPoint { 
@@ -20,28 +18,19 @@
     struct { 
         int location; 
         int length; 
-    struct { struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
     struct CGColor { } *backgroundColor;
     unsigned int backgroundGraphicCount;
-    CPGraphicObject **backgroundGraphics;
-        } x1; struct CGColor {} *x2; unsigned int x3; CPGraphicObject **x4; } *borders;
+    id *backgroundGraphics;
+    struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGColor {} *x2; unsigned int x3; id *x4; } *borders;
     } cellBounds;
     } columnSpan;
     } rowSpan;
 }
 
 @property(readonly) unsigned int backgroundGraphicCount;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } cellBounds;
-@property struct { int location; int length; } columnSpan;
-@property struct { int location; int length; } rowSpan;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cellBounds;
+@property struct { int x1; int x2; } columnSpan;
+@property struct { int x1; int x2; } rowSpan;
 
 - (struct CGColor { }*)backgroundColor;
 - (id)backgroundGraphicAtIndex:(unsigned int)arg1;

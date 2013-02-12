@@ -2,52 +2,44 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKLeaderboardViewControllerDelegate>, <GKLeaderboardViewControllerPrivateDelegate>, GKGame, GKLeaderboardDataSource, GKLeaderboardViewController, GKPlayer, GKSparseLeaderboard, GKUITheme, NSString, UISegmentedControl, UIView;
+@class <GKLeaderboardViewControllerDelegate>, <GKLeaderboardViewControllerPrivateDelegate>, GKGame, GKLeaderboardDataSource, GKLeaderboardViewController, GKPlayer, GKSparseLeaderboard, GKUITheme, NSString;
 
 @interface GKAbstractLeaderboardViewController : GKTableViewControllerV2 <GKLeaderboardDelegate> {
-    BOOL _allowsFriendSelection;
     NSString *_categoryID;
     GKLeaderboardViewController *_controllerForDelegate;
     <GKLeaderboardViewControllerPrivateDelegate> *_delegate;
     GKSparseLeaderboard *_friendLeaderboard;
     GKGame *_game;
     GKSparseLeaderboard *_globalLeaderboard;
-    UISegmentedControl *_landscapeScopeControl;
     GKLeaderboardDataSource *_leaderboardDataSource;
     <GKLeaderboardViewControllerDelegate> *_leaderboardDelegate;
     NSString *_localizedLeaderboardTitle;
     int _navbarStyle;
     GKPlayer *_player;
-    UISegmentedControl *_portraitScopeControl;
-    UIView *_scopeControlContainer;
     GKUITheme *_theme;
     int _timeScope;
     BOOL _translucentNavBar;
 }
 
-@property BOOL allowsFriendSelection;
 @property(retain) NSString * categoryID;
 @property GKLeaderboardViewController * controllerForDelegate;
 @property <GKLeaderboardViewControllerPrivateDelegate> * delegate;
 @property(retain) GKSparseLeaderboard * friendLeaderboard;
 @property(retain) GKGame * game;
 @property(retain) GKSparseLeaderboard * globalLeaderboard;
-@property(retain) UISegmentedControl * landscapeScopeControl;
 @property(retain) GKLeaderboardDataSource * leaderboardDataSource;
 @property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
 @property(retain) NSString * localizedLeaderboardTitle;
 @property int navbarStyle;
 @property(retain) GKPlayer * player;
-@property(retain) UISegmentedControl * portraitScopeControl;
-@property(retain) UIView * scopeControlContainer;
 @property(readonly) GKUITheme * theme;
 @property int timeScope;
 @property BOOL translucentNavBar;
 
 - (void)_gkResetContents;
+- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)_timeFilterSegmentedControlChanged:(id)arg1;
-- (BOOL)allowsFriendSelection;
 - (void)authenticatedStatusChanged;
 - (id)categoryID;
 - (id)controllerForDelegate;
@@ -59,7 +51,6 @@
 - (id)game;
 - (id)globalLeaderboard;
 - (id)initWithGame:(id)arg1;
-- (id)landscapeScopeControl;
 - (void)layoutSubviewsForOrientation:(int)arg1;
 - (id)leaderboardDataSource;
 - (id)leaderboardDelegate;
@@ -70,11 +61,8 @@
 - (int)navbarStyle;
 - (void)playTapped;
 - (id)player;
-- (id)portraitScopeControl;
 - (void)prepareDataSource;
 - (void)reloadScoresWithCompletionHandlerAndError:(id)arg1;
-- (id)scopeControlContainer;
-- (void)setAllowsFriendSelection:(BOOL)arg1;
 - (void)setCategoryID:(id)arg1 timeScope:(int)arg2;
 - (void)setCategoryID:(id)arg1;
 - (void)setControllerForDelegate:(id)arg1;
@@ -82,25 +70,18 @@
 - (void)setFriendLeaderboard:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)setGlobalLeaderboard:(id)arg1;
-- (void)setLandscapeScopeControl:(id)arg1;
 - (void)setLeaderboardDataSource:(id)arg1;
 - (void)setLeaderboardDelegate:(id)arg1;
 - (void)setLocalizedLeaderboardTitle:(id)arg1;
 - (void)setNavbarStyle:(int)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setPortraitScopeControl:(id)arg1;
-- (void)setScopeControlContainer:(id)arg1;
 - (void)setTimeScope:(int)arg1;
 - (void)setTranslucentNavBar:(BOOL)arg1;
 - (void)setupScopeContainer:(id)arg1;
 - (id)theme;
 - (int)timeScope;
 - (BOOL)translucentNavBar;
-- (void)updateCategorySubtitle;
 - (void)updateNavbarButtons;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

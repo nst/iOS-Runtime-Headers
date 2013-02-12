@@ -2,11 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebFormAccessoryDelegate>, UIBarButtonItem, UISegmentedControl;
+@class <UIWebFormAccessoryDelegate>, UIBarButtonItem, UISegmentedControl, UIToolbar;
 
-@interface UIWebFormAccessory : UIToolbar {
+@interface UIWebFormAccessory : UIInputView {
     UIBarButtonItem *_autofill;
     UIBarButtonItem *_clearButton;
+    UIBarButtonItem *_doneButton;
+    UIBarButtonItem *_flexibleSpaceItem;
+    UIToolbar *_leftToolbar;
+    UIToolbar *_rightToolbar;
     UISegmentedControl *_tab;
     <UIWebFormAccessoryDelegate> *delegate;
 }
@@ -19,9 +23,12 @@
 @property(getter=isNextEnabled) BOOL nextEnabled;
 @property(getter=isPreviousEnabled) BOOL previousEnabled;
 
++ (id)toolbarWithItems:(id)arg1;
+
 - (id)_autofill;
 - (id)_clearButton;
 - (void)_orientationDidChange:(id)arg1;
+- (void)_refreshAutofillPresentation;
 - (id)_tab;
 - (void)_updateFrame;
 - (void)autoFill:(id)arg1;
@@ -29,10 +36,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)done:(id)arg1;
-- (id)init;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAutoFillEnabled;
 - (BOOL)isNextEnabled;
 - (BOOL)isPreviousEnabled;
+- (void)layoutSubviews;
 - (void)setAutoFillEnabled:(BOOL)arg1;
 - (void)setAutoFillVisible:(BOOL)arg1;
 - (void)setClearVisible:(BOOL)arg1;

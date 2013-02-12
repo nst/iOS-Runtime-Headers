@@ -29,9 +29,13 @@
 - (id)initWithTableViewController:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (BOOL)searchBarHidesAlone;
+- (void)searchDisplayController:(id)arg1 didHideSearchResultsTableView:(id)arg2;
 - (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 didShowSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchScope:(int)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
 - (void)searchDisplayController:(id)arg1 willUnloadSearchResultsTableView:(id)arg2;
 - (id)searchDisplayController;
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;

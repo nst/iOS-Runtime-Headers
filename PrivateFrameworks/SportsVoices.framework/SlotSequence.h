@@ -13,7 +13,7 @@
 + (id)emptySlotSequence;
 + (id)slotSequenceWithArray:(id)arg1;
 
-- (int)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (BOOL)empty;

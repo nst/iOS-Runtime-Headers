@@ -33,9 +33,15 @@
 - (id)cardLabelEmphasizedHighlightedTextColor;
 - (id)cardLabelHighlightedTextColor;
 - (id)cardLabelTextColor;
+- (id)cardPhotoBackgroundImage;
+- (id)cardPhotoEditOverlayImage;
 - (id)cardPhotoEditPlaceholderImage;
+- (id)cardPhotoFacebookAttributionImage;
+- (float)cardPhotoFrameBorderSize;
+- (id)cardPhotoMaskImage;
+- (struct CGSize { float x1; float x2; })cardPhotoOffset;
 - (id)cardPhotoOverlayImage;
-- (id)cardPhotoShadowColor;
+- (id)cardPhotoShadowImage;
 - (struct CGSize { float x1; float x2; })cardPhotoShadowOffset;
 - (BOOL)cardPhotoShouldApplyOverlayImageWhenLabelPresent;
 - (id)cardPlaceholderCompanyImage;
@@ -82,6 +88,7 @@
 - (float)membersIndexMaximumHeight;
 - (id)membersIndexTextColor;
 - (id)membersIndexTrackingBackgroundColor;
+- (BOOL)membersSearchBarIsInTableHeader;
 - (int)membersSelectionStyle;
 - (id)newAccessoryDisclosureIndicatorForCellStyle:(int)arg1;
 - (id)newBackgroundViewForCellStyle:(int)arg1 selected:(BOOL)arg2;
@@ -105,6 +112,8 @@
 - (id)personValueImportantHighlightColor;
 - (id)personViewGetFavoritesBadge;
 - (id)personViewGetFavoritesBadgeHighlighted;
+- (float)personViewHeaderImageHeight;
+- (float)personViewHeaderImageWidth;
 - (BOOL)presentDatePickerInPopover;
 - (BOOL)presentModalViewInPopover;
 - (BOOL)presentNewContactsControllersInPopover;
@@ -113,6 +122,7 @@
 - (void)setIndicatesFaceTimeHistory:(BOOL)arg1 onActionButton:(id)arg2;
 - (id)shadowColorForCellStyle:(int)arg1;
 - (BOOL)shouldPropagateStylesToPickers;
+- (BOOL)shouldUseCardContentProviderWhenAvailable;
 - (BOOL)shouldUsePeoplePickerBarStyle;
 
 @end

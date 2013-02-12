@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <MFSASLSecurityLayer>, NSData, NSMutableString, _MFSocket;
+@class <MFSASLSecurityLayer>, NSArray, NSData, NSMutableString, NSString, _MFSocket;
 
 @interface Connection : NSObject {
     unsigned int _isFetching : 1;
@@ -29,6 +29,17 @@
     _MFSocket *_socket;
     char *_zbuffer;
 }
+
+@property(readonly) NSArray * authenticationMechanisms;
+@property(readonly) NSArray * capabilities;
+@property(readonly) BOOL hasBytesAvailable;
+@property BOOL isFetching;
+@property(readonly) BOOL isForcedConnection;
+@property(readonly) BOOL isValid;
+@property(readonly) double lastUsedTime;
+@property(readonly) BOOL loginDisabled;
+@property(readonly) NSString * securityProtocol;
+@property(readonly) BOOL usesOpportunisticSockets;
 
 + (void)flushLog;
 + (void)initialize;
@@ -71,6 +82,7 @@
 - (void)setIsFetching:(BOOL)arg1;
 - (BOOL)startCompression;
 - (BOOL)startTLSForAccount:(id)arg1;
+- (BOOL)usesOpportunisticSockets;
 - (BOOL)writeBytes:(const char *)arg1 length:(unsigned int)arg2 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)writeData:(id)arg1 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)writeData:(id)arg1;

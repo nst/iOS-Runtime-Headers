@@ -9,13 +9,13 @@
     NSString *_hostIdentifier;
 }
 
+- (void).cxx_destruct;
 - (id)_commandGetEncryptionKey:(id)arg1;
 - (id)_commandGetProfileList:(id)arg1;
 - (id)_commandHello:(id)arg1;
 - (id)_commandInstallProfile:(id)arg1;
 - (id)_commandRemoveProfile:(id)arg1;
 - (id)_commandSetCertificate:(id)arg1;
-- (void)dealloc;
 - (id)processRequest:(id)arg1;
 
 @end

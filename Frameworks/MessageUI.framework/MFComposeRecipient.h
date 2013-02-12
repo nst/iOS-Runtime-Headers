@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MFComposeRecipient : NSObject <MFDraggableItem> {
+@interface MFComposeRecipient : NSObject <NSCopying, MFDraggableItem> {
     NSString *_address;
     NSString *_countryCode;
     int _identifier;
@@ -15,6 +15,7 @@
 }
 
 @property(retain) NSString * countryCode;
+@property(getter=isRemovableFromSearchResults,readonly) BOOL removableFromSearchResults;
 
 + (id)mf_recipientWithGALResult:(id)arg1;
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
@@ -36,9 +37,11 @@
 - (BOOL)isEmail;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPhone;
+- (BOOL)isRemovableFromSearchResults;
 - (id)label;
+- (id)normalizedAddress;
 - (id)objectForDragType:(id)arg1;
-- (int)property;
+- (id)placeholderName;
 - (int)property;
 - (id)rawAddress;
 - (void*)record;

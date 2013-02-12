@@ -6,13 +6,13 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    unsigned int _count;
+    unsigned long _count;
     struct _gktableitem { unsigned int x1; id x2; double x3; double x4; } *_items;
     } _lock;
-    unsigned int _size;
+    unsigned long _size;
 }
 
-@property(readonly) unsigned int count;
+@property(readonly) unsigned long count;
 
 - (id)allObjects;
 - (unsigned long)count;

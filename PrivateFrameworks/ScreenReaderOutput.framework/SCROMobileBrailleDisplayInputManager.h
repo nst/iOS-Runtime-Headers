@@ -33,7 +33,7 @@
 - (id)init;
 - (id)inputIdentifierAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
 - (id)modelIdentifierForDisplayWithToken:(long)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

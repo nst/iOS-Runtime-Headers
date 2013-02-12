@@ -3,9 +3,6 @@
  */
 
 @interface NSBezierPathStub : NSObject <NSCopying> {
-    struct PATHSEGMENT { unsigned char x1; struct CGPoint { 
-            float x; 
-            float y; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -15,7 +12,7 @@
             float width; 
             float height; 
         } size; 
-    struct $_621 { 
+    struct { 
         unsigned int _flags : 8; 
         unsigned int _pathState : 2; 
         unsigned int _unused : 22; 
@@ -26,7 +23,7 @@
     float _dashedLinePhase;
     int _elementCount;
     float _flatness;
-        } x2; } *_head;
+    struct PATHSEGMENT { unsigned char x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; } *_head;
     int _lastSubpathIndex;
     float _lineWidth;
     float _miterLimit;
@@ -74,6 +71,7 @@
 + (void)strokeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (unsigned int)windingRule;
 
+- (id).cxx_construct;
 - (void)_addPathSegment:(int)arg1 point:(struct CGPoint { float x1; float x2; })arg2;
 - (void)_appendArcSegmentWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(double)arg2 angle1:(double)arg3 angle2:(double)arg4;
 - (id)_copyFlattenedPath;
@@ -90,15 +88,10 @@
 - (void)appendBezierPathWithArcFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3;
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 startAngle:(float)arg3 endAngle:(float)arg4;
-- (void)appendBezierPathWithArcWithCenter:(struct CGPoint { float x1; float x2; })arg1 radiusSize:(struct CGSize { float x1; float x2; })arg2 startAngle:(float)arg3 endAngle:(float)arg4 clockwise:(BOOL)arg5;
-- (void)appendBezierPathWithArcWithRect:(struct CGPoint { float x1; float x2; })arg1 rightBottom:(struct CGPoint { float x1; float x2; })arg2 start:(struct CGPoint { float x1; float x2; })arg3 end:(struct CGPoint { float x1; float x2; })arg4 clockwise:(BOOL)arg5;
 - (void)appendBezierPathWithOvalInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)appendBezierPathWithPoints:(struct CGPoint { float x1; float x2; }*)arg1 count:(int)arg2;
 - (void)appendBezierPathWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)appendBezierPathWithRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 xRadius:(float)arg2 yRadius:(float)arg3;
-- (void)appendBezierPathWithString:(id)arg1 attributes:(id)arg2 spacing:(int*)arg3 spacingCount:(int)arg4;
-- (void)appendBezierPathWithString:(id)arg1 attributes:(id)arg2;
-- (void)attachBezierPath:(id)arg1;
 - (id)bezierPathByFlatteningPath;
 - (id)bezierPathByReversingPath;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
@@ -114,12 +107,10 @@
 - (unsigned int)elementAtIndex:(int)arg1 associatedPoints:(struct CGPoint { float x1; float x2; }*)arg2;
 - (unsigned int)elementAtIndex:(int)arg1;
 - (int)elementCount;
-- (BOOL)equalToCurrentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)fill;
 - (void)finalize;
 - (float)flatness;
 - (void)flattenIntoPath:(id)arg1;
-- (id)getGlyphs:(id)arg1 :(id)arg2 :(unsigned int*)arg3;
 - (void)getLineDash:(float*)arg1 count:(int*)arg2 phase:(float*)arg3;
 - (id)init;
 - (BOOL)isEmpty;

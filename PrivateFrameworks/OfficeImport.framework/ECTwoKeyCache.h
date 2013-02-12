@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class SFUPointerKeyDictionary;
+@class TSUPointerKeyDictionary;
 
 @interface ECTwoKeyCache : NSObject {
-    SFUPointerKeyDictionary *mCache;
+    TSUPointerKeyDictionary *mCache;
 }
 
 - (void)dealloc;

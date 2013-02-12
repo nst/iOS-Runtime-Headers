@@ -5,7 +5,9 @@
 @class NSArray;
 
 @interface ICCameraFolder : ICCameraItem {
+    int _filesLock;
     void *_folderProperties;
+    int _foldersLock;
 }
 
 @property(readonly) NSArray * contents;
@@ -23,10 +25,14 @@
 - (id)folders;
 - (BOOL)hasThumbnail;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
+- (void)lockFiles;
+- (void)lockFolders;
 - (id)metadata;
 - (void)requestMetadata;
 - (void)requestThumbnail;
 - (struct CGImage { }*)thumbnail;
+- (void)unlockFiles;
+- (void)unlockFolders;
 - (id)valueForUndefinedKey:(id)arg1;
 
 @end

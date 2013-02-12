@@ -18,7 +18,6 @@
     int _status;
 }
 
-@property(readonly) NSURL * URL;
 @property(readonly) AVAssetCache * assetCache;
 @property(readonly) NSURL * downloadDestinationURL;
 @property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;

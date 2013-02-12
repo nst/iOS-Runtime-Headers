@@ -61,7 +61,7 @@
 @property struct OpaqueAGPSession { }* agpSessionRef;
 @property(getter=isAvailable) BOOL available;
 @property(getter=isBusy) BOOL busy;
-@property(retain,readonly) GKConnection * connection;
+@property(readonly) GKConnection * connection;
 @property id dataReceiveHandler;
 @property <GKSessionDelegate> * delegate;
 @property double disconnectTimeout;

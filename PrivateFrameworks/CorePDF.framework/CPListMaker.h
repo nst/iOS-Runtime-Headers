@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPLayoutArea, CPList, CPTextLine, NSArray;
+@class CPLayoutArea, CPList, NSArray;
 
 @interface CPListMaker : NSObject <CPDisposable> {
     CPLayoutArea *area;
     CPList *list;
     NSArray *spacers;
     unsigned int textLineCount;
-    CPTextLine **textLines;
+    id *textLines;
 }
 
 + (void)makeListsInChunk:(id)arg1;

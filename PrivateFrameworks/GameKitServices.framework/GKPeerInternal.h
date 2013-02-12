@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class GKSessionInternal, NSData, NSString;
+@class GKSessionInternal, NSString;
 
 @interface GKPeerInternal : NSObject <GKTableCleanupWhenRemoved> {
-    NSData **_addrList;
+    id *_addrList;
     double _connectTimeout;
     NSString *_displayName;
     unsigned int *_interfaceList;

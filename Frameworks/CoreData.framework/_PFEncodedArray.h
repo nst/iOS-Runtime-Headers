@@ -14,7 +14,8 @@
 - (void)_replaceObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)_tryRetain;
 - (const id*)_values;
-- (Class)classForCoder:(id)arg1;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)copy;
 - (unsigned int)count;
 - (void)dealloc;

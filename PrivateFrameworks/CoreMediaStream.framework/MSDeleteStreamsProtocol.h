@@ -38,10 +38,11 @@
 
 @property <MSDeleteStreamsProtocolDelegate> * delegate;
 
+- (void).cxx_destruct;
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;
 - (void)_coreProtocolDidFinishResponse:(id)arg1 error:(id)arg2;
 - (void)_resetConnectionVariables;
-- (void)dealloc;
+- (void)abort;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
 - (void)sendDeletionRequestForAssetCollections:(id)arg1;
 

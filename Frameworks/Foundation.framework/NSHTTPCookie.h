@@ -52,6 +52,7 @@
 - (id)path;
 - (id)portList;
 - (id)properties;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)value;
 - (unsigned int)version;
 

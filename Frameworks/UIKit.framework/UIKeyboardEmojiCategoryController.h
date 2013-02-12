@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardEmojiController>, NSDictionary, NSMutableDictionary;
-
 @interface UIKeyboardEmojiCategoryController : NSObject {
-    NSMutableDictionary *_defaultsData;
-    NSMutableDictionary *categories;
-    <UIKeyboardEmojiController> *emojiController;
 }
 
-@property(retain) NSDictionary * defaultsData;
++ (Class)classForCategoryControl;
 
-- (id)categoryForKey:(id)arg1;
-- (void)dealloc;
-- (id)defaultsData;
-- (id)initWithController:(id)arg1;
-- (void)releaseCategories;
-- (void)setDefaultsData:(id)arg1;
-- (void)updateRecents;
+- (id)initWithCategoryControl:(id)arg1;
+- (void)setCurrentCategory:(id)arg1;
 
 @end

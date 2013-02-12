@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSTimer, SUGridView, UIButton, UIColor, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UITableView, UITextField, UIView, _UITableViewCellOldEditingData;
+@class NSIndexPath, NSString, NSTimer, SUGridView, UIButton, UIColor, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UITableView, UITextField, UIView, _UITableViewCellOldEditingData;
 
 @interface UITableViewCell : UIView <NSCoding, UIGestureRecognizerDelegate> {
     struct { 
@@ -42,10 +42,12 @@
         unsigned int usingMultiselectbackgroundView : 1; 
         unsigned int layoutLoopCounter : 2; 
     SEL _accessoryAction;
+    id _accessoryActionSegueTemplate;
     UIColor *_accessoryTintColor;
     UIButton *_accessoryView;
     UIColor *_backgroundColor;
     UIView *_backgroundView;
+    id _badge;
     UIView *_bottomShadowAnimationView;
     UIColor *_bottomShadowColor;
     UIView *_contentView;
@@ -58,6 +60,7 @@
     UIButton *_editingAccessoryView;
     id _editingData;
     UIView *_floatingSeparatorView;
+    id _highlightingSupport;
     UIImageView *_imageView;
     int _indentationLevel;
     float _indentationWidth;
@@ -67,6 +70,7 @@
     UIView *_multipleSelectionBackgroundView;
     id _oldEditingData;
     UIImage *_reorderControlImage;
+    NSIndexPath *_representedIndexPath;
     SEL _returnAction;
     NSString *_reuseIdentifier;
     float _rightMargin;
@@ -120,6 +124,8 @@
 @property(readonly) UILabel * textLabel;
 @property BOOL wasSwiped;
 
++ (id)_defaultTopShadowColor;
+
 - (SEL)_accessoryAction;
 - (id)_accessoryTintColor;
 - (id)_accessoryView:(BOOL)arg1;
@@ -128,6 +134,9 @@
 - (BOOL)_backgroundColorSet;
 - (float)_backgroundInset;
 - (id)_backgroundView:(BOOL)arg1;
+- (id)_badge:(BOOL)arg1;
+- (id)_badge;
+- (id)_badgeText;
 - (BOOL)_canDrawContent;
 - (void)_cancelInternalPerformRequests;
 - (void)_clearOpaqueViewState:(id)arg1;
@@ -168,9 +177,11 @@
 - (struct CGSize { float x1; float x2; })_imageInsetSize;
 - (id)_imageView:(BOOL)arg1;
 - (id)_imageView;
+- (id)_indexPath;
 - (BOOL)_isCurrentlyConsideredHighlighted;
 - (BOOL)_isHighlighted;
 - (BOOL)_isReorderable;
+- (BOOL)_isUsingOldStyleMultiselection;
 - (void)_layoutSubviewsAnimated:(BOOL)arg1;
 - (void)_longPressGestureRecognized:(id)arg1;
 - (void)_menuDismissed:(id)arg1;
@@ -194,13 +205,15 @@
 - (id)_selectedBackgroundView:(BOOL)arg1;
 - (void)_setAccessoryAction:(SEL)arg1;
 - (void)_setAccessoryTintColor:(id)arg1;
-- (void)_setDisclosureStateUsingDefault:(id)arg1 librarySelector:(SEL)arg2;
+- (void)_setBadgeText:(id)arg1;
 - (void)_setDrawsTopSeparator:(BOOL)arg1;
 - (void)_setDrawsTopSeparatorDuringReordering:(BOOL)arg1;
 - (void)_setDrawsTopShadow:(BOOL)arg1;
 - (void)_setEditingStyle:(int)arg1;
 - (void)_setFont:(id)arg1 layout:(BOOL)arg2;
 - (void)_setGrabberHidden:(BOOL)arg1;
+- (void)_setHiddenForReuse:(BOOL)arg1;
+- (void)_setIndexPath:(id)arg1;
 - (void)_setMultiselecting:(BOOL)arg1;
 - (void)_setNeedsSetup:(BOOL)arg1;
 - (void)_setOpaque:(BOOL)arg1 forSubview:(id)arg2;
@@ -213,10 +226,10 @@
 - (void)_setTableBackgroundCGColor:(struct CGColor { }*)arg1 withSystemColorName:(id)arg2;
 - (void)_setTableView:(id)arg1;
 - (void)_setTarget:(id)arg1;
-- (void)_setUnhighlightedBackgroundColor:(id)arg1 forSubview:(id)arg2;
 - (void)_setupMenuGesture;
 - (void)_setupSelectedBackgroundView;
 - (void)_setupTableViewCellCommon;
+- (BOOL)_shouldSaveOpaqueStateForView:(id)arg1;
 - (void)_showReorderControl;
 - (void)_startToEditTextField;
 - (void)_syncAccessoryViewsIfNecessary;
@@ -240,6 +253,7 @@
 - (void)_willBeDeleted;
 - (id)accessibilityTableViewCellText;
 - (SEL)accessoryAction;
+- (id)accessoryActionSegueTemplate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessoryRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)accessoryType;
 - (id)accessoryView;
@@ -322,13 +336,13 @@
 - (id)separatorColor;
 - (int)separatorStyle;
 - (void)setAccessoryAction:(SEL)arg1;
+- (void)setAccessoryActionSegueTemplate:(id)arg1;
 - (void)setAccessoryType:(int)arg1;
 - (void)setAccessoryView:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBottomShadowColor:(id)arg1;
 - (void)setClipsContents:(BOOL)arg1;
-- (void)setContentAlpha:(float)arg1;
 - (void)setDisclosureStateUsingDefault:(id)arg1 librarySelector:(SEL)arg2;
 - (void)setDrawingEnabled:(BOOL)arg1;
 - (void)setEditAction:(SEL)arg1;
@@ -337,7 +351,6 @@
 - (void)setEditingAccessoryType:(int)arg1;
 - (void)setEditingAccessoryView:(id)arg1;
 - (void)setEditingBySwiping:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setEditingStyle:(int)arg1;
 - (void)setEditingStyle:(int)arg1;
 - (void)setFont:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

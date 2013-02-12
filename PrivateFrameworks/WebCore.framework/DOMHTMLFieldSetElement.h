@@ -7,11 +7,16 @@
 @interface DOMHTMLFieldSetElement : DOMHTMLElement {
 }
 
-@property(retain,readonly) DOMHTMLFormElement * form;
+@property(readonly) DOMHTMLFormElement * form;
 
 - (BOOL)checkValidity;
+- (BOOL)disabled;
 - (id)form;
+- (id)name;
 - (void)setCustomValidity:(id)arg1;
+- (void)setDisabled:(BOOL)arg1;
+- (void)setName:(id)arg1;
+- (id)type;
 - (id)validationMessage;
 - (id)validity;
 - (BOOL)willValidate;

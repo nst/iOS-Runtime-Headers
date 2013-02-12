@@ -28,22 +28,13 @@
 @property(readonly) MPMediaQuery * nativeQuery;
 
 + (void)initialize;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (void)_addFilterPredicate:(id)arg1;
 - (void)_beginWatchingLibraryIfNecessary;
-- (BOOL)_canFilterByProperty:(id)arg1;
 - (id)_className;
-- (id)_copyCollections;
-- (id)_copyFilterPredicates;
-- (id)_copyGroupingType;
-- (id)_copyItems;
 - (void)_libraryChangedNotification:(id)arg1;
-- (void)_removeFilterPredicate:(id)arg1;
 - (void)_resetCaches;
-- (void)_setFilterPredicates:(id)arg1;
-- (void)_setGroupingType:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
 - (id)attributeKeys;
 - (id)canFilterByProperty:(id)arg1;

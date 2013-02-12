@@ -23,7 +23,7 @@
 - (void)_daemonDisconnected:(id)arg1;
 - (void)_processAccountStatusChange;
 - (void)_statusImageAppearanceChanged:(id)arg1;
-- (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(unsigned int)arg4 properties:(id)arg5;
+- (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(int)arg4 properties:(id)arg5;
 - (void)activeAccountsChanged:(id)arg1 forService:(id)arg2;
 - (void)centerDidRemoveObserver;
 - (void)centerWillAddObserver;

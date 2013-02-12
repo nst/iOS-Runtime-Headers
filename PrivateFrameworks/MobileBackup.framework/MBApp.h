@@ -14,11 +14,13 @@
 @property(retain) NSDate * datePlacedInSafeHarbor;
 @property(readonly) NSDictionary * infoPlist;
 @property(readonly) BOOL isPlaceholder;
+@property(readonly) BOOL isSystemApp;
 @property(getter=isSafeHarbor,readonly) BOOL safeHarbor;
 @property(readonly) NSString * safeHarborDir;
 
 + (id)appWithBundleID:(id)arg1;
 + (id)appWithPropertyList:(id)arg1;
++ (id)safeHarborWithPath:(id)arg1;
 
 - (id)_placeholderRelativePathsToBackupAndRestoreWithCache:(id)arg1;
 - (id)bundleID;
@@ -35,6 +37,7 @@
 - (BOOL)isEqualToApp:(id)arg1;
 - (BOOL)isPlaceholder;
 - (BOOL)isSafeHarbor;
+- (BOOL)isSystemApp;
 - (id)placeholderDomainWithCache:(id)arg1;
 - (id)propertyListForBackupProperties;
 - (id)propertyListForSafeHarborInfo;

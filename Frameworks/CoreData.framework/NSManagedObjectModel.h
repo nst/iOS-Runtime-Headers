@@ -36,9 +36,11 @@
 - (void)_createCachesAndOptimizeState;
 - (id)_entitiesByVersionHash;
 - (id)_entityForName:(id)arg1;
+- (id)_entityVersionHashesByNameInStyle:(unsigned int)arg1;
 - (void)_flattenProperties;
 - (BOOL)_hasPrecomputedKeyOrder;
 - (id)_initWithEntities:(id)arg1;
+- (BOOL)_isConfiguration:(id)arg1 inStyle:(unsigned int)arg2 compatibleWithStoreMetadata:(id)arg3;
 - (BOOL)_isOptimizedForEncoding;
 - (id)_localizationPolicy;
 - (id)_modelForVersionHashes:(id)arg1;

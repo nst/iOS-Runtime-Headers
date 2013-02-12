@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVURLAssetFailedURLRequestHandling>, AVAssetInspectorLoader, NSArray, NSString, NSURL;
+@class AVAssetInspectorLoader, AVAssetResourceLoader, NSArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface AVURLAssetInternal : NSObject {
     NSURL *URL;
     NSString *anchorChapterType;
     NSArray *chapterGroupInfo;
-    <AVURLAssetFailedURLRequestHandling> *failedURLRequestDelegate;
     AVAssetInspectorLoader *loader;
+    long makeOneResourceLoaderOnly;
+    AVAssetResourceLoader *resourceLoader;
     NSArray *tracks;
+    NSObject<OS_dispatch_queue> *tracksAccessQueue;
 }
 
 @end

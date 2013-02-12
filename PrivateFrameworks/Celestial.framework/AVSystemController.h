@@ -9,6 +9,7 @@
 + (void)initialize;
 + (id)sharedAVSystemController;
 
+- (BOOL)allowUserToExceedEUVolumeLimit;
 - (id)attributeForKey:(id)arg1;
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1 fallbackCategory:(id)arg2 resultVolume:(float*)arg3 affectedCategory:(id*)arg4;
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;

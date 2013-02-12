@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary, NSString, NSURL;
+@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface SUMediaObject : NSObject {
-    struct dispatch_queue_s { } *_dispatchQueue;
-    unsigned int _imagePickerQualityType;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    int _imagePickerQualityType;
     NSDictionary *_pickerInfo;
 }
 
 @property(readonly) NSDictionary * imagePickerInfo;
-@property unsigned int imagePickerQualityType;
+@property int imagePickerQualityType;
 @property(readonly) NSString * inputSourceMIMEType;
 @property(readonly) NSString * mediaType;
 @property(readonly) NSURL * mediaURL;
@@ -24,7 +24,7 @@
 - (id)copyPreparationOperations;
 - (void)dealloc;
 - (id)imagePickerInfo;
-- (unsigned int)imagePickerQualityType;
+- (int)imagePickerQualityType;
 - (id)init;
 - (id)initWithImagePickerInfo:(id)arg1;
 - (id)inputSourceMIMEType;
@@ -36,6 +36,6 @@
 - (id)newThumbnailImageWithMaximumSize:(float)arg1;
 - (id)referenceURL;
 - (void)saveToLibraryWithCompletionBlock:(id)arg1;
-- (void)setImagePickerQualityType:(unsigned int)arg1;
+- (void)setImagePickerQualityType:(int)arg1;
 
 @end

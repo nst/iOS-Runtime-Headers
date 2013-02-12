@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSFileHandle : NSObject {
+@interface NSFileHandle : NSObject <NSSecureCoding> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -17,10 +17,14 @@
 + (id)fileHandleWithStandardInput;
 + (id)fileHandleWithStandardOutput;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (id)availableData;
+- (Class)classForCoder;
 - (void)closeFile;
+- (void)encodeWithCoder:(id)arg1;
 - (int)fileDescriptor;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
 - (unsigned long long)offsetInFile;

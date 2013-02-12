@@ -7,8 +7,8 @@
 @interface SAPhone : AceObject <SAAceSerializable> {
 }
 
-@property(retain) NSNumber * favoriteFacetime;
-@property(retain) NSNumber * favoriteVoice;
+@property(copy) NSNumber * favoriteFacetime;
+@property(copy) NSNumber * favoriteVoice;
 @property(copy) NSString * label;
 @property(copy) NSString * number;
 

@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIImage;
+@class NSBundle, NSString, UIImage;
 
 @interface SULockoutViewController : SUViewController {
     UIImage *_image;
+    NSBundle *_localizationBundle;
     NSString *_messageBody;
     NSString *_messageTitle;
 }
 
 @property(retain) UIImage * image;
+@property(retain) NSBundle * localizationBundle;
 @property(retain) NSString * messageBody;
 @property(retain) NSString * messageTitle;
 
@@ -19,9 +21,11 @@
 - (id)image;
 - (id)init;
 - (void)loadView;
+- (id)localizationBundle;
 - (id)messageBody;
 - (id)messageTitle;
 - (void)setImage:(id)arg1;
+- (void)setLocalizationBundle:(id)arg1;
 - (void)setMessageBody:(id)arg1;
 - (void)setMessageTitle:(id)arg1;
 

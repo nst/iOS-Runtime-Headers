@@ -4,7 +4,7 @@
 
 @class NSDate, NSString;
 
-@interface MBRestoreInfo : NSObject <NSCoding> {
+@interface MBRestoreInfo : NSObject <NSCoding, NSCopying> {
     NSString *_backupBuildVersion;
     NSDate *_date;
     NSString *_deviceBuildVersion;
@@ -17,6 +17,7 @@
 @property(readonly) BOOL wasCloudRestore;
 
 - (id)backupBuildVersion;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;

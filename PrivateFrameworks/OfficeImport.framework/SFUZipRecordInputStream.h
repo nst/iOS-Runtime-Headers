@@ -5,7 +5,7 @@
 @class <SFUBufferedInputStream>;
 
 @interface SFUZipRecordInputStream : NSObject {
-    char *mBuffer;
+    const char *mBuffer;
     long long mBufferEnd;
     long long mBufferStart;
     <SFUBufferedInputStream> *mInput;

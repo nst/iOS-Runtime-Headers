@@ -2,22 +2,24 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPImageCacheDelegate>, CPLRUDictionary, NSOperationQueue;
+@class <MPImageCacheDelegate>, CPLRUDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface MPImageCache : NSObject <MPImageRequestDelegate> {
     unsigned int _cacheSize;
     CPLRUDictionary *_cachedImages;
-    struct dispatch_queue_s { } *_cachedImagesQueue;
+    NSObject<OS_dispatch_queue> *_cachedImagesQueue;
     <MPImageCacheDelegate> *_delegate;
+    id _libraryDisplayValueChangeObserver;
     NSOperationQueue *_operationQueue;
+    int _resumeToForegroundCacheSize;
     int _retainCount;
+    int _suspendToBackgroundCacheSize;
 }
 
 @property unsigned int cacheSize;
 @property <MPImageCacheDelegate> * delegate;
 @property BOOL imageRequestsSuspended;
-
-+ (id)sharedImageCache;
+@property id libraryDisplayValueChangeObserver;
 
 - (void)_cacheImage:(id)arg1 forKey:(id)arg2;
 - (id)_cachedImageForKey:(id)arg1;
@@ -26,7 +28,9 @@
 - (void)_enqueueRequest:(id)arg1;
 - (id)_imageByApplyingModificationsForCachedImageForRequest:(id)arg1;
 - (BOOL)_isDeallocating;
+- (void)_removeCachedImageForKey:(id)arg1;
 - (BOOL)_tryRetain;
+- (void)_willEnterForegroundNotification:(id)arg1;
 - (void)_zapCache;
 - (void)_zapCachedPlaceholders;
 - (unsigned int)cacheSize;
@@ -41,12 +45,15 @@
 - (void)imageRequest:(id)arg1 loadedImage:(id)arg2;
 - (BOOL)imageRequestsSuspended;
 - (id)init;
+- (id)libraryDisplayValueChangeObserver;
 - (void)loadImageForRequest:(id)arg1 asynchronously:(BOOL)arg2 completionHandler:(id)arg3;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
+- (void)setCacheSize:(unsigned int)arg1 preserveExisting:(BOOL)arg2;
 - (void)setCacheSize:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImageRequestsSuspended:(BOOL)arg1;
+- (void)setLibraryDisplayValueChangeObserver:(id)arg1;
 
 @end

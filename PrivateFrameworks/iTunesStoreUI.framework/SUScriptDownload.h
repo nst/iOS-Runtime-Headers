@@ -2,28 +2,28 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString;
+@class ISUDownload, NSNumber, NSString;
 
 @interface SUScriptDownload : SUScriptObject {
-    NSNumber *_adamID;
-    NSString *_phase;
+    ISUDownload *_download;
 }
 
 @property(readonly) NSNumber * adamID;
 @property(readonly) NSString * phase;
+@property(readonly) float progress;
 
 + (void)initialize;
 + (id)phaseStringForDownload:(id)arg1;
-+ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForKeyName:(id)arg1;
 
 - (id)_className;
 - (id)adamID;
 - (id)attributeKeys;
 - (void)dealloc;
-- (id)initWithAdamID:(id)arg1 phase:(id)arg2;
-- (id)initWithDownload:(id)arg1;
-- (BOOL)isEqualToDownload:(id)arg1;
+- (id)initWithISUDownload:(id)arg1;
+- (id)initWithSSDownload:(id)arg1;
 - (id)phase;
+- (float)progress;
 - (id)scriptAttributeKeys;
 
 @end

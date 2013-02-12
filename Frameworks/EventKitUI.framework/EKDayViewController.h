@@ -36,7 +36,9 @@
     EKDayView *_previousDay;
     CalendarOccurrencesCollection *_previousDayOccurrences;
     UIView *_previousDayWithGutter;
+    BOOL _shouldAutoscrollOnNextActivation;
     BOOL _showsBanner;
+    BOOL _viewAppeared;
 }
 
 @property BOOL allowsDaySwitching;
@@ -47,6 +49,7 @@
 @property(copy) NSDateComponents * displayDate;
 @property(copy) NSDateComponents * pendingNextDate;
 @property(copy) NSDateComponents * pendingPreviousDate;
+@property BOOL shouldAutoscrollOnNextActivation;
 @property BOOL showsBanner;
 
 + (id)_createGutterDayViewWithDayView:(id)arg1;
@@ -70,6 +73,7 @@
 - (BOOL)allowsDaySwitching;
 - (BOOL)allowsSelection;
 - (void)applicationDidBecomeActive;
+- (void)applicationWillResignActive;
 - (void)bringEventToFront:(id)arg1;
 - (id)calendar;
 - (void)calendarDayBanner:(id)arg1 arrowClicked:(int)arg2 forRepeat:(BOOL)arg3;
@@ -117,6 +121,7 @@
 - (void)scrollEventIntoView:(id)arg1 animated:(BOOL)arg2;
 - (void)scrollEventsIntoViewAnimated:(BOOL)arg1;
 - (void)scrollToNow:(BOOL)arg1;
+- (void)scrollToSecond:(unsigned int)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -130,15 +135,19 @@
 - (void)setDisplayDate:(id)arg1;
 - (void)setPendingNextDate:(id)arg1;
 - (void)setPendingPreviousDate:(id)arg1;
+- (void)setShouldAutoscrollOnNextActivation:(BOOL)arg1;
 - (void)setShowsBanner:(BOOL)arg1;
 - (void)setTimeZone:(id)arg1;
+- (BOOL)shouldAutoscrollOnNextActivation;
 - (BOOL)showsBanner;
+- (void)significantTimeChangeOccurred;
 - (float)timedRegionOriginForEventGestureController:(id)arg1;
 - (id)touchTrackingViewForEventGestureController:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

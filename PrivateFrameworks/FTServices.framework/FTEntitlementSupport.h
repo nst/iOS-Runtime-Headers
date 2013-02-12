@@ -6,7 +6,6 @@
 
 @interface FTEntitlementSupport : NSObject {
     struct __CTServerConnection { } *_ctServerConnection;
-    struct __CFMachPort { } *_ctServerMachPort;
     struct __CFString { } *_entitlementStatus;
 }
 
@@ -24,10 +23,8 @@
 - (void)_registrationStateChanged;
 - (BOOL)_setupCTServerConnection;
 - (void)_unregisterForCTEntitlementNotifications;
-- (BOOL)allowsWeakReference;
 - (BOOL)faceTimeNonWiFiEntitled;
 - (id)init;
 - (id)registrationState;
-- (BOOL)retainWeakReference;
 
 @end

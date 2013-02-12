@@ -6,6 +6,7 @@
 }
 
 + (id)dropBoxLocationForUID:(id)arg1 dropBoxPath:(id)arg2;
++ (id)preferredCalendarUserAddressFromAddresses:(id)arg1;
 + (id)stringFromUIDWithPathSafeCharacters:(id)arg1;
 
 @end

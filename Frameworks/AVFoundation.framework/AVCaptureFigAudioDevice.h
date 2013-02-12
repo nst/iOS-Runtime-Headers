@@ -17,6 +17,7 @@
 - (void)audioInputDevicesDidChangeHandler:(id)arg1;
 - (void)dealloc;
 - (id)devicePropertiesDictionary;
+- (id)formats;
 - (BOOL)hasMediaType:(id)arg1;
 - (id)init;
 - (id)initWithProperties:(id)arg1;

@@ -16,7 +16,7 @@
 - (id)initWithAlwaysReportFailures:(BOOL)arg1;
 - (void)setDone:(BOOL)arg1;
 - (BOOL)shouldRetryRequest;
-- (void)taskFailed:(id)arg1 withStatusCode:(int)arg2;
+- (void)taskFailed:(id)arg1 statusCode:(int)arg2 error:(id)arg3;
 - (void)waitUntilDone;
 - (BOOL)waitUntilDoneBeforeDate:(id)arg1;
 

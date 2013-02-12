@@ -3,25 +3,71 @@
  */
 
 @interface UITextEffectsWindow : UIAutoRotatingWindow {
+    struct CGPoint { 
+        float x; 
+        float y; 
     unsigned long _activeEffectsCount;
+    float _defaultWindowLevel;
+    } _hostedWindowOffset;
     BOOL _inDealloc;
+    BOOL _nonServiceHosted;
 }
 
+@property(readonly) unsigned int contextID;
+@property float defaultWindowLevel;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } hostedFrame;
+@property struct CGPoint { float x1; float x2; } hostedWindowOffset;
+@property BOOL nonServiceHosted;
+
 + (void)_releaseSharedInstances;
++ (void)lowerTextEffectsWindowsForHideNotificationCenter;
++ (id)preferredTextEffectsWindow;
++ (id)preferredTextEffectsWindowAboveStatusBar;
++ (void)raiseTextEffectsWindowsForShowNotificationCenter;
++ (id)sharedTextEffectsWindow:(BOOL)arg1;
 + (id)sharedTextEffectsWindow;
 + (id)sharedTextEffectsWindowAboveStatusBar;
 
+- (struct CGPoint { float x1; float x2; })_adjustPointForHostedDisplay:(struct CGPoint { float x1; float x2; })arg1 hasTarget:(BOOL)arg2 inset:(BOOL)arg3;
+- (BOOL)_affectsTintView;
+- (BOOL)_canShowTextServices;
 - (void)_didRemoveSubview:(id)arg1;
 - (BOOL)_disableViewScaling;
+- (BOOL)_isTextEffectsWindow;
+- (BOOL)_isWindowServerHostingManaged;
+- (id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
+- (void)_updateTransformLayerForClassicPresentation;
+- (BOOL)_usesWindowServerHitTesting;
 - (void)bringSubviewToFront:(id)arg1;
+- (struct CGPoint { float x1; float x2; })classicWindowPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)contextID;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromWindow:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toWindow:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromWindow:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toView:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
 - (void)dealloc;
+- (float)defaultWindowLevel;
 - (void)delayHideWindow;
 - (void)didAddSubview:(id)arg1;
+- (void)handleStatusBarChangeFromHeight:(float)arg1 toHeight:(float)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hostedFrame;
+- (struct CGPoint { float x1; float x2; })hostedWindowOffset;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)interfaceOrientation;
 - (BOOL)isInternalWindow;
+- (struct CGPoint { float x1; float x2; })magnifierScreenPointForPoint:(struct CGPoint { float x1; float x2; })arg1 targetWindow:(id)arg2;
 - (void)matchDeviceOrientation;
+- (BOOL)nonServiceHosted;
 - (void)resetTransform;
 - (void)sendSubviewToBack:(id)arg1;
+- (void)setDefaultWindowLevel:(float)arg1;
+- (void)setHostedWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setKeepContextInBackground:(BOOL)arg1;
+- (void)setNonServiceHosted:(BOOL)arg1;
 - (void)sortSubviews;
 - (void)updateForOrientation:(int)arg1 forceResetTransform:(BOOL)arg2;
 - (void)updateForOrientation:(int)arg1;

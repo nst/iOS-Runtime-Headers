@@ -14,8 +14,8 @@
 
 + (id)invitationStringsWithTitle:(id)arg1 body:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)body;
-- (void)dealloc;
 - (id)initWithTitle:(id)arg1 body:(id)arg2;
 - (void)setBody:(id)arg1;
 - (void)setTitle:(id)arg1;

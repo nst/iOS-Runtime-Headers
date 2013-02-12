@@ -8,15 +8,16 @@
     MPMediaLibrary *_library;
 }
 
++ (id)backgroundColorWithModifiers:(unsigned int)arg1;
 + (float)rowHeightForGlobalContext:(id)arg1;
 
+- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (void)configureForMediaLibrary:(id)arg1;
 - (void)dealloc;
-- (void)drawBackgroundWithModifiers:(unsigned int)arg1;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)init;
 - (void)reloadLayoutInformation;
-- (void)reloadStrings;
+- (void)reloadStringsWithProperties:(id)arg1;
 - (id)stringForLabelAtIndex:(unsigned int)arg1;
 
 @end

@@ -2,45 +2,30 @@
    Image: /System/Library/PrivateFrameworks/ApplePushService.framework/ApplePushService
  */
 
-@class NSDictionary, NSMutableDictionary, NSString;
-
-@interface APSOutgoingMessage : NSObject {
-    NSMutableDictionary *_objects;
+@interface APSOutgoingMessage : APSMessage {
 }
 
 @property(getter=isCritical) BOOL critical;
-@property unsigned int identifier;
 @property int payloadFormat;
+@property unsigned int payloadLength;
 @property unsigned int timeout;
-@property(retain) NSString * topic;
-@property(retain) NSDictionary * userInfo;
 
-- (id)data;
-- (void)dealloc;
 - (BOOL)hasTimedOut;
-- (unsigned int)identifier;
-- (id)initWithData:(id)arg1;
-- (id)initWithTopic:(id)arg1 userInfo:(id)arg2;
 - (BOOL)isCritical;
 - (unsigned int)messageID;
-- (id)objectForKey:(id)arg1;
 - (int)payloadFormat;
+- (unsigned int)payloadLength;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setCritical:(BOOL)arg1;
-- (void)setIdentifier:(unsigned int)arg1;
 - (void)setMessageID:(unsigned int)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setPayloadFormat:(int)arg1;
+- (void)setPayloadLength:(unsigned int)arg1;
 - (void)setSent:(BOOL)arg1;
 - (void)setTimedOut:(BOOL)arg1;
 - (void)setTimeout:(unsigned int)arg1;
 - (void)setTimestamp:(id)arg1;
-- (void)setTopic:(id)arg1;
-- (void)setUserInfo:(id)arg1;
 - (unsigned int)timeout;
 - (id)timestamp;
-- (id)topic;
-- (id)userInfo;
 - (BOOL)wasCancelled;
 - (BOOL)wasSent;
 

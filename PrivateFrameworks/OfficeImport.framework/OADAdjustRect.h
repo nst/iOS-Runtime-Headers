@@ -21,6 +21,7 @@
     } mTop;
 }
 
+- (id).cxx_construct;
 - (struct OADAdjustCoord { BOOL x1; int x2; })bottom;
 - (id)initWithLeft:(struct OADAdjustCoord { BOOL x1; int x2; })arg1 top:(struct OADAdjustCoord { BOOL x1; int x2; })arg2 right:(struct OADAdjustCoord { BOOL x1; int x2; })arg3 bottom:(struct OADAdjustCoord { BOOL x1; int x2; })arg4;
 - (struct OADAdjustCoord { BOOL x1; int x2; })left;

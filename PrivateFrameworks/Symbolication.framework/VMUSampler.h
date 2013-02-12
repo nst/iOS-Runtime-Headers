@@ -55,6 +55,7 @@
 - (void)_makeHighPriority;
 - (void)_makeTimeshare;
 - (void)_runSamplingThread;
+- (id)createOutput;
 - (void)dealloc;
 - (id)delegate;
 - (id)dispatchQueueNameForSerialNumber:(unsigned long long)arg1 returnedConcurrentFlag:(BOOL*)arg2 returnedThreadId:(unsigned long long*)arg3;

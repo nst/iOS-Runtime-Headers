@@ -5,12 +5,14 @@
 @class NSDictionary, PLGenericAlbum;
 
 @interface PLAlbumChangeNotification : PLContainerChangeNotification {
+    BOOL _invitationRecordsDidChange;
     BOOL _keyAssetDidChange;
     BOOL _titleDidChange;
     NSDictionary *_userInfo;
 }
 
 @property(readonly) PLGenericAlbum * album;
+@property(readonly) BOOL invitationRecordsDidChange;
 @property(readonly) BOOL keyAssetDidChange;
 @property(readonly) BOOL titleDidChange;
 
@@ -18,12 +20,13 @@
 
 - (void)_calculateDiffs;
 - (id)_contentRelationshipName;
+- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)album;
 - (void)dealloc;
 - (id)description;
+- (BOOL)invitationRecordsDidChange;
 - (BOOL)keyAssetDidChange;
 - (id)name;
-- (id)notificaionForDerivedAlbum:(id)arg1;
 - (BOOL)titleDidChange;
 - (id)userInfo;
 

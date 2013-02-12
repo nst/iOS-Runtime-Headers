@@ -7,12 +7,14 @@
 @interface PLAggregateAlbumList : NSObject <PLAlbumListChangeObserver, PLAlbumContainer> {
     NSMutableOrderedSet *_allAlbums;
     NSMutableOrderedSet *_childAlbumLists;
-    int filter;
+    int _filter;
 }
 
 @property(readonly) NSString * _prettyDescription;
 @property(readonly) NSString * _typeDescription;
+@property(readonly) id albumsSortingComparator;
 @property int filter;
+@property(readonly) unsigned int unreadAlbumsCount;
 
 + (struct NSObject { Class x1; }*)albumListWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
 
@@ -23,6 +25,7 @@
 - (void)albumListDidChange:(id)arg1;
 - (int)albumListType;
 - (id)albums;
+- (id)albumsSortingComparator;
 - (BOOL)canEditAlbums;
 - (void)dealloc;
 - (int)filter;
@@ -30,7 +33,11 @@
 - (id)identifier;
 - (id)initWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
 - (id)managedObjectContext;
+- (BOOL)needsReordering;
 - (id)photoLibrary;
 - (void)setFilter:(int)arg1;
+- (void)setNeedsReordering;
+- (unsigned int)unreadAlbumsCount;
+- (void)updateAlbumsOrderIfNeeded;
 
 @end

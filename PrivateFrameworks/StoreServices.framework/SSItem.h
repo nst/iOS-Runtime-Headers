@@ -71,8 +71,11 @@
 - (id)networkName;
 - (id)numberOfCollectionsInCollectionGroup;
 - (id)numberOfItemsInCollection;
+- (int)numberOfPrintedPages;
 - (int)numberOfUserRatings;
 - (id)playableMedia;
+- (id)podcastEpisodeGUID;
+- (id)podcastFeedURL;
 - (id)preOrderIdentifier;
 - (id)priceDisplay;
 - (id)rawItemDictionary;
@@ -91,6 +94,8 @@
 - (id)tellAFriendBodyURL;
 - (id)tellAFriendSubject;
 - (id)thumbnailImages;
+- (id)tweetInitialText;
+- (id)tweetURL;
 - (void)urlConnectionRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (id)videoDetails;

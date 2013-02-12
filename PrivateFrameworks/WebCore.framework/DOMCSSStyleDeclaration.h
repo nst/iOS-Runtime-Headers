@@ -9,7 +9,9 @@
 
 @property(copy) NSString * cssText;
 @property(readonly) unsigned int length;
-@property(retain,readonly) DOMCSSRule * parentRule;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_margin;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_padding;
+@property(readonly) DOMCSSRule * parentRule;
 
 - (id)_fontSizeDelta;
 - (void)_setFontSizeDelta:(id)arg1;
@@ -94,6 +96,8 @@
 - (id)marks;
 - (id)maxHeight;
 - (id)maxWidth;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_margin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_padding;
 - (id)minHeight;
 - (id)minWidth;
 - (id)orphans;

@@ -16,7 +16,7 @@
 @property UIColor * highlightedTextColor;
 @property(copy) NSString * placeholder;
 @property UIColor * shadowColor;
-@property struct CGSize { float width; float height; } shadowOffset;
+@property struct CGSize { float x1; float x2; } shadowOffset;
 @property(copy) NSString * text;
 @property(retain) UIColor * textColor;
 

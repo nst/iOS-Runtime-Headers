@@ -5,8 +5,11 @@
 @interface SUMoreNavigationController : UIMoreNavigationController {
 }
 
++ (Class)_moreListControllerClass;
+
 - (id)copyScriptViewController;
-- (id)navigationBar;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 
 @end

@@ -2,24 +2,31 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class DOMElement, SUWebView, UIImage;
+@class DOMElement, NSString, UIImage, UIWebView;
 
 @interface SUDOMElement : NSObject {
     DOMElement *_element;
     UIImage *_image;
-    SUWebView *_webView;
+    UIWebView *_webView;
 }
 
 @property(readonly) DOMElement * element;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 @property(readonly) UIImage * imageRepresentation;
-@property(retain) SUWebView * webView;
+@property(readonly) NSString * innerText;
+@property(retain) UIWebView * webView;
 
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDOMElement:(id)arg1;
+
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frame;
 - (void)dealloc;
 - (id)element;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)imageRepresentation;
 - (id)initWithDOMElement:(id)arg1;
+- (id)innerText;
+- (id)newImageView;
+- (id)newLabelForElementWithText:(id)arg1;
 - (void)setProperty:(id)arg1 value:(id)arg2;
 - (void)setWebView:(id)arg1;
 - (id)webView;

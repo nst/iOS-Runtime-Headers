@@ -35,6 +35,7 @@
 @property(retain) WebFrame * webFrame;
 
 - (id)URLString;
+- (void)associateWithPrintController:(id)arg1;
 - (id)browserView;
 - (void)dealloc;
 - (void)drawContentForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -43,9 +44,12 @@
 - (id)numberFormatter;
 - (int)numberOfPages;
 - (id)paginationInfo;
+- (id)printControllerWithPageTitle:(id)arg1;
 - (BOOL)printFooter;
+- (id)printInfoWithPageTitle:(id)arg1;
 - (void)printInteractionControllerDidFinishJob:(id)arg1;
 - (void)printInteractionControllerWillStartJob:(id)arg1;
+- (id)printingFrame;
 - (void)setBrowserView:(id)arg1;
 - (void)setNumberFormatter:(id)arg1;
 - (void)setPrintFooter:(BOOL)arg1;

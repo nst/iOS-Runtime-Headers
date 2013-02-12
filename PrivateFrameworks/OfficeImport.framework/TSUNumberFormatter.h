@@ -31,6 +31,8 @@
 + (id)currentLocaleCurrencyCode;
 + (id)currentLocaleDecimalSeparator;
 + (id)currentLocaleListSeparator;
++ (id)currentNonCachedLocaleCurrencyCode;
++ (id)currentNonCachedLocaleDecimalSeparator;
 + (unsigned short)defaultDecimalPlacesForCurrencyCode:(id)arg1;
 + (id)defaultFormatStringForValueType:(int)arg1 negativeStyle:(int)arg2;
 + (id)defaultFormatStringForValueType:(int)arg1;

@@ -19,6 +19,7 @@
 - (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
 - (id)_playerItem;
 - (void)_removeLayer:(id)arg1;
+- (void)_setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1;
 - (void)_setAudioVolumeCurve:(id)arg1;
 - (id)assetTrack;
 - (void)dealloc;

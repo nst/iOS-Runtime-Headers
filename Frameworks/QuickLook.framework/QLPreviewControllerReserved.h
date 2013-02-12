@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewControllerDataSource>, <QLPreviewItem>, NSOperation, NSTimer, NSURLRequest, QLPopOverState, QLSwipeView, UIBarButtonItem, UIDocumentInteractionController, UIImageView, UINavigationBar, UISegmentedControl, UITapGestureRecognizer, UIToolbar, UIView;
+@class <QLPreviewControllerDataSource>, <QLPreviewItem>, MPDetailSlider, MPVolumeView, NSMutableDictionary, NSMutableSet, NSNumberFormatter, NSOperation, NSString, NSTimer, NSURL, QLPopOverState, QLProgressView, UIBarButtonItem, UIDocumentInteractionController, UIImageView, UILabel, UINavigationController, UISegmentedControl, UITapGestureRecognizer, UIView, UIViewController<QLPreviewContentControllerProtocol>, _UIAsyncInvocation;
 
 @interface QLPreviewControllerReserved : NSObject {
     struct CGRect { 
@@ -14,51 +14,71 @@
             float width; 
             float height; 
         } size; 
-    unsigned int isHTMLContent : 1;
     unsigned int statusBarWasHidden : 1;
+    unsigned int toolbarWasHidden : 1;
     unsigned int isZooming : 1;
     unsigned int isZoomingIn : 1;
     unsigned int useZoomAnimation : 1;
     unsigned int useTransitionImage : 1;
+    unsigned int hasLoadError : 1;
+    unsigned int isDelayingPresentation : 1;
+    unsigned int delayedItemIsLoaded : 1;
+    UITapGestureRecognizer *_tapGestureRegnizer;
     UIBarButtonItem *actionItem;
-    BOOL arrowWasTapped;
     UIBarButtonItem *arrowsItem;
+    NSMutableDictionary *avStateForPreviewItems;
+    int barStyle;
     BOOL blockRemoteImages;
-    UIToolbar *bottomToolBar;
-    <QLPreviewItem> *cachedPreviewItem;
+    _UIAsyncInvocation *cancelViewServiceRequest;
     UIView *clippingView;
-    <QLPreviewItem> *currentPreviewItem;
+    BOOL clippingViewActive;
     int currentPreviewItemIndex;
-    UISegmentedControl *customToolbarSegmentedArrowControl;
+    NSURL *currentPreviewItemURL;
     <QLPreviewControllerDataSource> *dataSource;
     id delegate;
-    UITapGestureRecognizer *headerTapRecognizer;
+    MPDetailSlider *detailSlider;
     UIImageView *iconView;
-    NSTimer *idleTimer;
+    NSNumberFormatter *indexFormatter;
+    UIBarButtonItem *indexItem;
+    UILabel *indexLabel;
     UIDocumentInteractionController *interactionController;
     BOOL internalViewsLoaded;
-    UIBarButtonItem *leftArrowItem;
+    BOOL loadingProgressVisible;
+    NSString *loadintTextForMissingFiles;
     UIView *mainView;
     int mode;
-    UINavigationBar *navigationBar;
+    UIImageView *navigationBarBackground;
+    UIImageView *navigationBarShadow;
+    UINavigationController *navigationController;
     unsigned int numberOfPreviewItems;
     NSOperation *openOperation;
     int overlayState;
     NSTimer *overlayTimer;
-    UIView *overlayView;
     UIView *parentControllerView;
+    UIBarButtonItem *pauseButton;
     QLPopOverState *popOverState;
+    NSMutableSet *preloadedPreviewItems;
+    <QLPreviewItem> *presentedPreviewItem;
+    UIViewController<QLPreviewContentControllerProtocol> *previewContentController;
     <QLPreviewItem> *previewItem;
-    NSURLRequest *previewRequest;
+    NSMutableDictionary *previewItemCache;
+    int previousMode;
     int previousStatusBarStyle;
-    UIBarButtonItem *rightArrowItem;
+    int previousToolbarStyle;
+    BOOL previousToolbarWasTranlucent;
+    QLProgressView *progressView;
+    UIBarButtonItem *routeButton;
+    UILabel *scrubInstructionsLabel;
+    UILabel *scrubSpeedLabel;
+    BOOL scrubbing;
     UISegmentedControl *segmentedArrowControl;
     BOOL showActionAsDefaultButton;
     } sourceFrame;
     UIView *sourceView;
-    QLSwipeView *swipeView;
     UIBarButtonItem *titleItem;
+    BOOL translucent;
     BOOL useCustomActionButton;
+    MPVolumeView *volumeView;
     UIView *zoomView;
 }
 

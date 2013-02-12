@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class HSLibrary, NSMutableDictionary, NSMutableSet;
+@class HSLibrary, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
 
 @interface MPHomeSharingML3DataProvider : MPMediaLibraryDataProviderML3 {
     unsigned int _updateCheckEnabled : 1;
     NSMutableDictionary *_blocksForLoadingContainerPIDs;
-    struct dispatch_queue_s { } *_containerFillQueue;
-    int _homeSharingGroupIDChangedToken;
+    NSObject<OS_dispatch_queue> *_containerFillQueue;
     HSLibrary *_homeSharingLibrary;
     NSMutableSet *_loadedContainerPIDs;
     NSMutableDictionary *_tokenDataForDSIDs;
@@ -19,11 +18,7 @@
 
 + (void)_determineHomeSharingGroupIDIfNecessary;
 + (void)beginScanningForLibraries;
-+ (BOOL)canValidateHomeSharingCredentials;
-+ (void)determineHomeSharingGroupIDForAppleID:(id)arg1 password:(id)arg2 completionHandler:(id)arg3;
 + (void)endScanningForLibraries;
-+ (BOOL)hasHomeSharingCredentials;
-+ (id)homeSharingAppleID;
 + (id)homeSharingGroupID;
 + (BOOL)isConnecting;
 + (BOOL)isScanningForLibraries;
@@ -31,6 +26,7 @@
 - (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_fetchTokensForAuthorizedDSIDs;
 - (void)_fillContainerForQueryCriteria:(id)arg1 completionBlock:(id)arg2;
+- (void)_homeSharingGroupIDDidChangeNotification:(id)arg1;
 - (void)_scheduleUpdateCheck;
 - (id)_tokenDataForMediaItem:(id)arg1;
 - (void)_willEnterForegroundNotification:(id)arg1;
@@ -45,20 +41,23 @@
 - (id)homeSharingLibrary;
 - (id)initWithHomeSharingLibrary:(id)arg1;
 - (BOOL)isSupportedSharingVersion;
+- (id)itemResultSetForQueryCriteria:(id)arg1;
+- (void)loadArtworkImageForFormat:(int)arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
 - (void)loadBestArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
 - (void)loadBestTimedArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 atPlaybackTime:(double)arg3 completionBlock:(id)arg4;
-- (void)loadCollectionsUsingFetchRequest:(id)arg1;
 - (void)loadCoverFlowArtworkImageForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
-- (void)loadItemsUsingFetchRequest:(id)arg1;
+- (void)loadQueryCriteria:(id)arg1 countOfCollectionsWithCompletionBlock:(id)arg2;
+- (void)loadQueryCriteria:(id)arg1 countOfItemsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id)arg2;
 - (id)name;
+- (void)performUbiquitousDatabaseUpdateTransaction:(id)arg1;
 - (id)protectedContentSupportStorageURL;
 - (BOOL)requiresAuthentication;
 - (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3;
 - (id)uniqueIdentifier;
-- (void)updateUbiquitousBookmarksWithKey:(id)arg1 bookmarkMediaValue:(id)arg2;
+- (void)updateUbiquitousValuesForTrackWithKey:(id)arg1 mediaPropertyValues:(id)arg2;
 
 @end

@@ -14,6 +14,7 @@
 - (void*)_secAccessibilityForDAKeychainAccessibility:(int)arg1;
 - (id)guessPasswordForURL:(id)arg1;
 - (id)loadKeychainInformationsForURL:(id)arg1;
+- (void)migratePasswordForAccount:(id)arg1 persistentUUID:(id)arg2 passwordExpected:(BOOL)arg3;
 - (id)passwordForAccountWithPersistentUUID:(id)arg1 expectedAccessibility:(int)arg2 shouldSetAccessibility:(BOOL)arg3 passwordExpected:(BOOL)arg4;
 - (void)removeKeychainInformationsForURL:(id)arg1;
 - (BOOL)removePasswordForAccount:(id)arg1 withPersistentUUID:(id)arg2;

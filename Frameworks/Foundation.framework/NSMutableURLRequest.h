@@ -5,6 +5,9 @@
 @interface NSMutableURLRequest : NSURLRequest {
 }
 
++ (id)_gkHTTPGETRequestWithURL:(id)arg1 playerID:(id)arg2 authToken:(id)arg3 pushToken:(id)arg4 gameDescriptor:(id)arg5;
++ (id)_gkHTTPPOSTRequestWithURL:(id)arg1 playerID:(id)arg2 authToken:(id)arg3 pushToken:(id)arg4 gameDescriptor:(id)arg5 postData:(id)arg6;
++ (id)_gkHTTPRequestWithURL:(id)arg1 playerID:(id)arg2 authToken:(id)arg3 pushToken:(id)arg4 gameDescriptor:(id)arg5;
 + (int)hashForPlayerID:(id)arg1;
 + (void)setPlayerIDHashParametersFromBag:(id)arg1;
 
@@ -12,13 +15,13 @@
 - (void)_web_setHTTPReferrer:(id)arg1;
 - (void)_web_setHTTPUserAgent:(id)arg1;
 - (void)addValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (id)copyPropertyListEncoding;
+- (void)bindToCommand:(struct __CNPluginCommand { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFDictionary {} *x2; unsigned int x3; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void*)copyXPCEncoding;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 - (unsigned int)requestPriority;
 - (void)setAllHTTPHeaderFields:(id)arg1;
+- (void)setAllowsCellularAccess:(BOOL)arg1;
 - (void)setBoundInterfaceIdentifier:(id)arg1;
 - (void)setBuildVersion:(id)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;

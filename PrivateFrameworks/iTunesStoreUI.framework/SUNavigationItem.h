@@ -2,21 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIBarButtonItem, UIView;
+@class UIBarButtonItem;
 
 @interface SUNavigationItem : UINavigationItem {
-    BOOL _returnsInternalTitleView;
 }
 
-@property(readonly) UIView * internalTitleView;
 @property(retain) UIBarButtonItem * secondaryLeftBarButtonItem;
 
-- (void)_setReturnsInternalTitleView:(BOOL)arg1;
-- (id)internalTitleView;
 - (id)secondaryLeftBarButtonItem;
 - (void)setSecondaryLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setSecondaryLeftBarButtonItem:(id)arg1;
-- (void)setTitleView:(id)arg1;
-- (id)titleView;
 
 @end

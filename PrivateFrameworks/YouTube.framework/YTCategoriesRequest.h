@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSMutableURLRequest;
+@class NSMutableArray;
 
-@interface YTCategoriesRequest : XMLSAXHTTPRequest {
+@interface YTCategoriesRequest : YTXMLHTTPRequest {
     NSMutableArray *_categories;
-    NSMutableURLRequest *_deferredRequest;
     id _delegate;
 }
 
 - (id)_categoriesURL;
-- (void)_didAuthenticate:(id)arg1;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)clearDelegate;
 - (void)dealloc;
+- (void)didAuthenticate:(id)arg1;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (id)init;

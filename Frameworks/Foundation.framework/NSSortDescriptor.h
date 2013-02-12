@@ -35,6 +35,7 @@
 - (id)initWithKey:(id)arg1 ascending:(BOOL)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
+- (id)replacementObjectForPortCoder:(id)arg1;
 - (id)reversedSortDescriptor;
 - (SEL)selector;
 

@@ -25,6 +25,7 @@
 - (int)currentNetworkType;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isCellularDataRoamingEnabled;
 - (BOOL)isCellularRoaming;
 - (BOOL)isNetworkTypeCellular:(int)arg1;
 - (void)removeObserver:(id)arg1;

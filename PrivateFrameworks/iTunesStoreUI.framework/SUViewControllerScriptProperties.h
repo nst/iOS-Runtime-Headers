@@ -2,42 +2,62 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUGradient, UIColor;
+@class NSDictionary, SUGradient, UIColor;
 
 @interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying> {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    BOOL _alwaysDispatchesScrollEvents;
     UIColor *_backgroundColor;
+    NSDictionary *_contextDictionary;
     BOOL _doubleTapEnabled;
     BOOL _embedded;
+    BOOL _flashesScrollIndicators;
     BOOL _inputViewObeysDOMFocus;
     int _loadingIndicatorStyle;
     UIColor *_loadingTextColor;
     UIColor *_loadingTextShadowColor;
     SUGradient *_placeholderBackgroundGradient;
+    } _scrollContentInsets;
     BOOL _scrollingDisabled;
     BOOL _shouldLoadProgressively;
     BOOL _shouldShowFormAccessory;
     BOOL _showsBackgroundShadow;
+    BOOL _showsHorizontalScrollIndicator;
+    BOOL _showsVerticalScrollIndicator;
     UIColor *_topExtensionColor;
 }
 
+@property BOOL alwaysDispatchesScrollEvents;
 @property(retain) UIColor * backgroundColor;
+@property(copy) NSDictionary * contextDictionary;
 @property(getter=isDoubleTapEnabled) BOOL doubleTapEnabled;
 @property(getter=isEmbedded) BOOL embedded;
+@property BOOL flashesScrollIndicators;
 @property BOOL inputViewObeysDOMFocus;
 @property int loadingIndicatorStyle;
 @property(retain) UIColor * loadingTextColor;
 @property(retain) UIColor * loadingTextShadowColor;
 @property(retain) SUGradient * placeholderBackgroundGradient;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollContentInsets;
 @property(getter=isScrollingDisabled) BOOL scrollingDisabled;
 @property BOOL shouldLoadProgressively;
 @property BOOL shouldShowFormAccessory;
 @property BOOL showsBackgroundShadow;
+@property BOOL showsHorizontalScrollIndicator;
+@property BOOL showsVerticalScrollIndicator;
 @property(retain) UIColor * topExtensionColor;
 
+- (BOOL)alwaysDispatchesScrollEvents;
 - (id)backgroundColor;
+- (id)contextDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)flashesScrollIndicators;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)inputViewObeysDOMFocus;
 - (BOOL)isDoubleTapEnabled;
@@ -47,22 +67,31 @@
 - (id)loadingTextColor;
 - (id)loadingTextShadowColor;
 - (id)placeholderBackgroundGradient;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })scrollContentInsets;
+- (void)setAlwaysDispatchesScrollEvents:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setContextDictionary:(id)arg1;
 - (void)setDoubleTapEnabled:(BOOL)arg1;
 - (void)setEmbedded:(BOOL)arg1;
+- (void)setFlashesScrollIndicators:(BOOL)arg1;
 - (void)setInputViewObeysDOMFocus:(BOOL)arg1;
 - (void)setLoadingIndicatorStyle:(int)arg1;
 - (void)setLoadingTextColor:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;
 - (void)setPlaceholderBackgroundGradient:(id)arg1;
+- (void)setScrollContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setScrollingDisabled:(BOOL)arg1;
 - (void)setShouldLoadProgressively:(BOOL)arg1;
 - (void)setShouldShowFormAccessory:(BOOL)arg1;
 - (void)setShowsBackgroundShadow:(BOOL)arg1;
+- (void)setShowsHorizontalScrollIndicator:(BOOL)arg1;
+- (void)setShowsVerticalScrollIndicator:(BOOL)arg1;
 - (void)setTopExtensionColor:(id)arg1;
 - (BOOL)shouldLoadProgressively;
 - (BOOL)shouldShowFormAccessory;
 - (BOOL)showsBackgroundShadow;
+- (BOOL)showsHorizontalScrollIndicator;
+- (BOOL)showsVerticalScrollIndicator;
 - (id)topExtensionColor;
 
 @end

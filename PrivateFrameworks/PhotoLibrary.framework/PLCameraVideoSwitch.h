@@ -4,7 +4,13 @@
 
 @class UIImage, UIImageView;
 
-@interface PLCameraVideoSwitch : UIControl {
+@interface PLCameraVideoSwitch : UIControl <PLCameraButtonBarSubviewProtocol> {
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,8 +24,6 @@
     unsigned int _didLayoutViews : 1;
     unsigned int _didMove : 1;
     unsigned int _lockEnabled : 1;
-    UIImage *_backgroundImage;
-    UIImageView *_backgroundImageView;
     int _buttonBarStyle;
     UIImage *_cameraImage;
     UIImageView *_cameraImageView;
@@ -27,8 +31,11 @@
     UIImage *_handleDownImage;
     UIImage *_handleImage;
     UIImageView *_handleImageView;
+    } _handleOffOrigin;
+    } _handleOnOrigin;
     } _hitRect;
     int _orientation;
+    float _trackOriginY;
     float _trackingHorizontalLocation;
     UIImage *_videoImage;
     UIImageView *_videoImageView;
@@ -44,13 +51,19 @@
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_loadInitialResources;
 - (void)_loadLandscapeResources;
+- (void)_loadTallImageResourcesForButtonBarMode:(int)arg1;
 - (void)_loadTrackingResources;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationAndTranslationTransformForDeviceOrientation:(int)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(int)arg1;
 - (void)_setOn:(BOOL)arg1 animationDuration:(float)arg2;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)_stopWatchingDeviceOrientationChanges;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformForCameraImageForDeviceOrientation:(int)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformForVideoImageForDeviceOrientation:(int)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformWithTranslationOffset:(struct CGSize { float x1; float x2; })arg1 deviceOrientation:(int)arg2;
 - (void)_updateEnabledness;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)buttonBar:(id)arg1 didChangeMode:(int)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;

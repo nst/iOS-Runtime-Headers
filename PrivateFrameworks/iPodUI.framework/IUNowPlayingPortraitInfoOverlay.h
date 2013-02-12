@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@interface IUNowPlayingPortraitInfoOverlay : MPPortraitInfoOverlay <MFMailComposeViewControllerDelegate> {
+@interface IUNowPlayingPortraitInfoOverlay : IUPortraitInfoOverlay <SKStoreProductViewControllerDelegate, MFMailComposeViewControllerDelegate> {
+    id _itemToShare;
 }
 
 - (void)_appDefaultsChanged:(id)arg1;
@@ -11,17 +12,13 @@
 - (void)_delayedSeedGeniusForControls:(id)arg1;
 - (void)controlsOverlay:(id)arg1 adjustShuffleAndRepeatTypeForItem:(id)arg2;
 - (void)controlsOverlay:(id)arg1 didClickMailPodcastLinkButtonForItem:(id)arg2;
-- (void)controlsOverlay:(id)arg1 didTapSocialLikeButtonForItem:(id)arg2;
-- (void)controlsOverlay:(id)arg1 didTapSocialPostButtonForItem:(id)arg2;
 - (unsigned int)controlsOverlay:(id)arg1 playbackSpeedForItem:(id)arg2;
+- (BOOL)controlsOverlay:(id)arg1 shouldDisableFastFowardAndRewindButtonForItem:(id)arg2;
 - (BOOL)controlsOverlay:(id)arg1 shouldDisableMailPodcastLinkButtonForItem:(id)arg2;
 - (BOOL)controlsOverlay:(id)arg1 shouldDisablePlaybackSpeedButtonForItem:(id)arg2;
-- (BOOL)controlsOverlay:(id)arg1 shouldDisableRewindButtonForItem:(id)arg2;
 - (BOOL)controlsOverlay:(id)arg1 shouldHideMailPodcastLinkButtonForItem:(id)arg2;
-- (BOOL)controlsOverlay:(id)arg1 shouldHideSocialLikeButtonForItem:(id)arg2;
-- (BOOL)controlsOverlay:(id)arg1 shouldHideSocialPostButtonForItem:(id)arg2;
-- (BOOL)controlsOverlay:(id)arg1 shouldSelectSocialLikeButtonForItem:(id)arg2;
 - (BOOL)controlsOverlay:(id)arg1 shouldUseDetailScrubberForItem:(id)arg2;
+- (void)controlsOverlayDidClickFastForwardButton:(id)arg1;
 - (void)controlsOverlayDidClickPlaybackSpeedButton:(id)arg1;
 - (void)controlsOverlayDidClickRewindButton:(id)arg1;
 - (void)dealloc;
@@ -32,6 +29,7 @@
 - (BOOL)playbackControls:(id)arg1 changedShuffleType:(unsigned int)arg2;
 - (BOOL)playbackControlsDidTapGeniusButton:(id)arg1;
 - (BOOL)playbackControlsScrubberShouldDisplaySingleChapters:(id)arg1;
+- (void)productViewControllerDidFinish:(id)arg1;
 - (unsigned int)repeatTypeForControlsOverlay:(id)arg1;
 - (unsigned int)shuffleTypeForPlaybackControls:(id)arg1;
 

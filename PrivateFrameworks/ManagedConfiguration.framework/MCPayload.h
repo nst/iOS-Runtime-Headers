@@ -36,6 +36,7 @@
 + (id)typeStrings;
 + (id)wrapperPayloadDictionary;
 
+- (void).cxx_destruct;
 - (id)UUID;
 - (void)dealloc;
 - (id)description;

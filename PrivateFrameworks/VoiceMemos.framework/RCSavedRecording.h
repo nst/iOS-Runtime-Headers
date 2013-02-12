@@ -21,18 +21,20 @@
 @property unsigned int labelPreset;
 @property(copy) NSString * path;
 @property(copy) NSString * pathForRemaking;
+@property(getter=isPendingRestore) BOOL pendingRestore;
 @property(getter=isSynced) BOOL synced;
 
 + (id)localizedStringForRecordingLabel:(unsigned int)arg1;
 
+- (void).cxx_destruct;
 - (id)avItem;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
-- (void)dealloc;
 - (id)detailLabel;
 - (double)duration;
 - (long long)iTunesPersistentID;
 - (BOOL)isBeingRemade;
+- (BOOL)isPendingRestore;
 - (BOOL)isSynced;
 - (id)label;
 - (unsigned int)labelPreset;
@@ -42,6 +44,7 @@
 - (void)setITunesPersistentID:(long long)arg1;
 - (void)setLabelPreset:(unsigned int)arg1;
 - (void)setPathForRemaking:(id)arg1;
+- (void)setPendingRestore:(BOOL)arg1;
 - (void)setSynced:(BOOL)arg1;
 - (void)willSave;
 

@@ -56,6 +56,7 @@
 - (id)_flattenedSubentities;
 - (BOOL)_hasAttributesWithExternalDataReferences;
 - (BOOL)_hasCustomPrimitiveProperties;
+- (BOOL)_hasPotentialHashSkew;
 - (BOOL)_hasPropertiesIndexedBySpotlight;
 - (BOOL)_hasPropertiesStoredInTruthFile;
 - (id)_initWithName:(id)arg1;
@@ -63,12 +64,14 @@
 - (BOOL)_isEditable;
 - (BOOL)_isFlattened;
 - (BOOL)_isInheritedPropertyNamed:(id)arg1;
+- (id)_keypathsForDeletions;
 - (void*)_leopardStyleAttributesByName;
 - (void*)_leopardStyleRelationshipsByName;
 - (id)_localRelationshipNamed:(id)arg1;
 - (long)_modelsReferenceID;
 - (id)_newMappingForPropertiesOfRange:(unsigned int)arg1;
 - (void*)_newSnowLeopardStyleDictionaryContainingPropertiesOfType:(unsigned int)arg1;
+- (id)_newVersionHashInStyle:(unsigned int)arg1;
 - (id)_new_implicitlyObservedKeys;
 - (unsigned long)_offsetRelationshipIndex:(unsigned long)arg1 fromSuperEntity:(id)arg2 andIsToMany:(BOOL)arg3;
 - (id)_propertiesOfType:(unsigned int)arg1;
@@ -96,6 +99,7 @@
 - (id)_subentityNamed:(id)arg1;
 - (void)_throwIfNotEditable;
 - (BOOL)_tryRetain;
+- (id)_versionHashInStyle:(unsigned int)arg1;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
 - (id)attributeKeys;
 - (id)attributesByName;

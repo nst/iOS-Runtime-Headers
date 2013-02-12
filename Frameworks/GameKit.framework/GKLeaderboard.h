@@ -9,6 +9,7 @@
         unsigned int location; 
         unsigned int length; 
     NSString *_category;
+    NSString *_groupIdentifier;
     int _loadingCount;
     GKScore *_localPlayerScore;
     unsigned int _maxRange;
@@ -16,7 +17,6 @@
     int _playerScope;
     } _range;
     NSArray *_scores;
-    int _sequenceNumber;
     int _timeScope;
     NSString *_title;
     NSObject<GKLeaderboardDelegate> *_weakDelegate;
@@ -24,6 +24,7 @@
 
 @property(retain) NSString * category;
 @property NSObject<GKLeaderboardDelegate> * delegate;
+@property(retain) NSString * groupIdentifier;
 @property(getter=isLoading,readonly) BOOL loading;
 @property int loadingCount;
 @property(retain) GKScore * localPlayerScore;
@@ -32,13 +33,14 @@
 @property int playerScope;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property(retain) NSArray * scores;
-@property int sequenceNumber;
 @property int timeScope;
 @property(retain) NSString * title;
 
 + (void)loadCategoriesForGame:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadCategoriesForGame:(id)arg1 withPlayer:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadCategoriesWithCompletionHandler:(id)arg1;
++ (void)loadCategoryWithID:(id)arg1 forGame:(id)arg2 withPlayer:(id)arg3 withCompletionHandler:(id)arg4;
++ (void)loadLeaderboardsWithCompletionHandler:(id)arg1;
 + (void)setDefaultLeaderboard:(id)arg1 withCompletionHandler:(id)arg2;
 
 - (id)category;
@@ -46,9 +48,12 @@
 - (void)decrementLoadingCountAtomically;
 - (id)delegate;
 - (id)description;
+- (id)groupIdentifier;
+- (unsigned int)hash;
 - (void)incrementLoadingCountAtomically;
 - (id)init;
 - (id)initWithPlayerIDs:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isLoading;
 - (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)loadScoresWithCompletionHandler:(id)arg1;
@@ -59,9 +64,9 @@
 - (int)playerScope;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)scores;
-- (int)sequenceNumber;
 - (void)setCategory:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setGroupIdentifier:(id)arg1;
 - (void)setLoadingCount:(int)arg1;
 - (void)setLocalPlayerScore:(id)arg1;
 - (void)setMaxRange:(unsigned int)arg1;
@@ -69,7 +74,6 @@
 - (void)setPlayerScope:(int)arg1;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setScores:(id)arg1;
-- (void)setSequenceNumber:(int)arg1;
 - (void)setTimeScope:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (int)timeScope;

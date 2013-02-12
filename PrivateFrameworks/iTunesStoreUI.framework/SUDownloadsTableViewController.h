@@ -10,21 +10,19 @@
 @property(retain) SUTableDataSource * dataSource;
 @property(retain) NSArray * scriptButtons;
 
-- (void)_accountsChangedNotification:(id)arg1;
 - (id)_downloadsViewController;
-- (void)_reloadDataAnimated:(BOOL)arg1;
-- (void)_updateFooterView;
+- (void)_reloadPreviewOverlayVisibility;
 - (void)dealloc;
 - (BOOL)deleteRowAtIndexPath:(id)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (id)init;
 - (void)loadView;
-- (void)reloadData;
 - (void)reloadDownloadCellForDownload:(id)arg1;
 - (id)scriptButtons;
 - (void)setScriptButtons:(id)arg1;
-- (void)startPreOrderDownloadAction:(id)arg1;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)visibleDownloadCellForDownload:(id)arg1;
 
 @end

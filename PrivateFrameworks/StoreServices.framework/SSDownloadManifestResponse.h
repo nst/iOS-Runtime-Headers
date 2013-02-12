@@ -4,19 +4,17 @@
 
 @class NSArray;
 
-@interface SSDownloadManifestResponse : NSObject <SSCoding, NSCoding> {
+@interface SSDownloadManifestResponse : NSObject <SSXPCCoding, NSCoding> {
     NSArray *_validDownloads;
 }
 
-@property(retain) NSArray * validDownloads;
+@property(copy) NSArray * validDownloads;
 
-- (id)copyPropertyListEncoding;
-- (void*)copyXPCEncoding;
+- (id)copyXPCEncoding;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithXPCEncoding:(void*)arg1;
+- (id)initWithXPCEncoding:(id)arg1;
 - (void)setValidDownloads:(id)arg1;
 - (id)validDownloads;
 

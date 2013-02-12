@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class PBRequester;
+@class GEORequester;
 
 @interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <PBRequesterDelegate> {
-    PBRequester *_requester;
+    BOOL _isForwardGeocodeRequest;
+    GEORequester *_requester;
 }
 
 + (id)forwardGeocoderURL;
 + (unsigned short)provider;
 + (id)providerName;
 + (id)reverseGeocoderURL;
++ (void)setUsePersistentConnection:(BOOL)arg1;
 
 - (void)cancel;
 - (void)dealloc;

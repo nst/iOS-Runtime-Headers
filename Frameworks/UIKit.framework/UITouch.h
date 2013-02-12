@@ -22,6 +22,7 @@
     NSMutableArray *_gestureRecognizers;
     UIView *_gestureView;
     } _locationInWindow;
+    float _movementMagnitudeSquared;
     unsigned char _pathIdentity;
     unsigned char _pathIndex;
     float _pathMajorRadius;
@@ -66,6 +67,7 @@
 - (id)_gestureRecognizers;
 - (BOOL)_isEaten;
 - (BOOL)_isFirstTouchForView;
+- (BOOL)_isStationaryRelativeToTouches:(id)arg1;
 - (void)_loadStateFromTouch:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_locationInWindow:(id)arg1;
 - (unsigned char)_pathIdentity;
@@ -82,6 +84,7 @@
 - (void)_setPathIdentity:(unsigned char)arg1;
 - (void)_setPathIndex:(unsigned char)arg1;
 - (void)_setPathMajorRadius:(float)arg1;
+- (void)_updateMovementMagnitudeForLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
 - (void)dealloc;
 - (id)description;

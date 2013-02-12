@@ -8,7 +8,7 @@
     DADSearchQuery *_query;
 }
 
-@property(readonly) DADSearchQuery *query; /* unknown property attribute: V_query */
+@property(readonly) DADSearchQuery *query;
 
 - (NSInteger)commandCode;
 - (void)dealloc;

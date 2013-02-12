@@ -13,10 +13,10 @@
     NSArray *_updates;
 }
 
-@property(retain) NSArray *updates; /* unknown property attribute: V_updates */
-@property NSInteger state; /* unknown property attribute: V_state */
-@property(copy) NSString *identifier; /* unknown property attribute: V_identifier */
-@property <ISUpdateQueueDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <ISUpdateQueueDelegate> *delegate;
+@property(copy) NSString *identifier;
+@property(retain) NSArray *updates;
+@property NSInteger state;
 
 + (void)_externalApplicationChange:(id)arg1;
 + (void)setWatchesForExternalChanges:(BOOL)arg1;

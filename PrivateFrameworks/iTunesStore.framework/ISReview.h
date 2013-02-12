@@ -16,15 +16,15 @@
     NSUInteger _titleMaxLength;
 }
 
-@property NSUInteger titleMaxLength; /* unknown property attribute: V_titleMaxLength */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(retain) NSURL *submitURL; /* unknown property attribute: V_submitURL */
-@property float rating; /* unknown property attribute: V_rating */
-@property NSUInteger nicknameMaxLength; /* unknown property attribute: V_nicknameMaxLength */
-@property(retain) NSString *nickname; /* unknown property attribute: V_nickname */
-@property(readonly) BOOL metadataIsValid; /* unknown property attribute: V_metadataIsValid */
-@property NSUInteger bodyMaxLength; /* unknown property attribute: V_bodyMaxLength */
-@property(retain) NSString *body; /* unknown property attribute: V_body */
+@property(retain) NSString *body;
+@property(retain) NSString *nickname;
+@property(retain) NSURL *submitURL;
+@property(retain) NSString *title;
+@property NSUInteger bodyMaxLength;
+@property(readonly) BOOL metadataIsValid;
+@property NSUInteger nicknameMaxLength;
+@property float rating;
+@property NSUInteger titleMaxLength;
 
 - (id)body;
 - (NSUInteger)bodyMaxLength;

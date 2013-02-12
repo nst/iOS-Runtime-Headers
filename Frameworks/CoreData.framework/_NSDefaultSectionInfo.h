@@ -14,13 +14,13 @@
     NSUInteger _sectionOffset;
 }
 
-@property NSUInteger oldSectionNumber; /* unknown property attribute: V_oldSectionNumber */
-@property(readonly) NSUInteger numberOfObjects; /* unknown property attribute: V_numberOfObjects */
-@property(readonly) NSUInteger sectionOffset; /* unknown property attribute: V_sectionOffset */
-@property(readonly) NSString *indexTitle; /* unknown property attribute: V_indexTitle */
-@property(readonly) NSString *name; /* unknown property attribute: V_name */
+@property(readonly) NSString *indexTitle;
+@property(readonly) NSString *name;
 @property(readonly) NSArray *objects;
+@property(readonly) NSUInteger numberOfObjects;
+@property NSUInteger oldSectionNumber;
 @property(readonly) NSUInteger sectionNumber;
+@property(readonly) NSUInteger sectionOffset;
 
 - (void)clearSectionObjectsCache;
 - (void)dealloc;

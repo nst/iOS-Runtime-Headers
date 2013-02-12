@@ -17,9 +17,9 @@
     struct __SCDynamicStore { } *_store;
 }
 
-@property(retain) NSString *operatorName; /* unknown property attribute: V_operatorName */
-@property NSUInteger networkType; /* unknown property attribute: V_networkType */
 @property(retain,readonly) NSString *connectionTypeHeader;
+@property(retain) NSString *operatorName;
+@property NSUInteger networkType;
 @property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
 @property(getter=isWiFiEnabled,readonly) BOOL wifiEnabled;
 
@@ -28,7 +28,6 @@
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
-- (void)_addSessionCookiesNotification:(id)arg1;
 - (void)_assetActivityChangedNotification:(id)arg1;
 - (void)_daemonExitedNotification:(id)arg1;
 - (void)_delayedDataStatusChange:(id)arg1;
@@ -39,7 +38,6 @@
 - (NSUInteger)_networkTypeFromDataIndicator:(id)arg1;
 - (void)_reloadNetworkType;
 - (void)_reloadOperatorName;
-- (void)_setSessionCookies:(id)arg1;
 - (void)_startWatchingDaemon;
 - (void)_startWatchingDynamicStore;
 - (void)_stopDataStatusTimer;
@@ -59,6 +57,5 @@
 - (void)setAssetNetworkActivityFilter:(NSInteger)arg1;
 - (void)setNetworkType:(NSUInteger)arg1;
 - (void)setOperatorName:(id)arg1;
-- (void)synchronizeSessionCookies;
 
 @end

@@ -18,13 +18,13 @@
     UITouch *_touch;
 }
 
-@property double startAngle; /* unknown property attribute: V_startAngle */
-@property double angle; /* unknown property attribute: V_angle */
-@property BOOL restrictsToAngle; /* unknown property attribute: V_restrictsToAngle */
-@property(retain) UITouch *touch; /* unknown property attribute: V_touch */
-@property double minimumDistance; /* unknown property attribute: V_minimumDistance */
-@property CGPoint startPosition; /* unknown property attribute: V_startPosition */
-@property double maximumDeviation; /* unknown property attribute: V_maximumDeviation */
+@property(retain) UITouch *touch;
+@property double angle;
+@property double maximumDeviation;
+@property double minimumDistance;
+@property BOOL restrictsToAngle;
+@property double startAngle;
+@property CGPoint startPosition;
 
 - (double)angle;
 - (void)clearTimer;

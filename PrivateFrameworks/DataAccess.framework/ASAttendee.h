@@ -13,11 +13,11 @@
     NSInteger _status;
 }
 
-@property NSInteger localId; /* unknown property attribute: V_localId */
-@property NSInteger role; /* unknown property attribute: V_role */
-@property NSInteger status; /* unknown property attribute: V_status */
-@property(retain) NSString *email; /* unknown property attribute: V_email */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
+@property(retain) NSString *email;
+@property(retain) NSString *name;
+@property NSInteger localId;
+@property NSInteger role;
+@property NSInteger status;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

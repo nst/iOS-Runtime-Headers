@@ -10,37 +10,51 @@
     NSMutableArray *_documentInfos;
     NSString *_errorMessage;
     BOOL _hasAutoSpellingCorrected;
+    BOOL _hasPayloadType;
     BOOL _hasResultOffset;
+    BOOL _hasTotalResults;
     GMMMapInfo *_mapInfo;
     NSString *_originalQuery;
+    NSInteger _payloadType;
     NSString *_refinementQuery;
     NSInteger _resultOffset;
     NSMutableArray *_searchResults;
     NSString *_spellingSuggestion;
+    NSString *_splitQueryLocationPart;
+    NSString *_splitQuerySearchPart;
     NSInteger _status;
+    NSInteger _totalResults;
 }
 
-@property(readonly) BOOL hasResultOffset; /* unknown property attribute: V_hasResultOffset */
-@property NSInteger resultOffset; /* unknown property attribute: V_resultOffset */
-@property(retain) NSMutableArray *categorys; /* unknown property attribute: V_categorys */
-@property(retain) NSMutableArray *documentInfos; /* unknown property attribute: V_documentInfos */
-@property(retain) NSMutableArray *searchResults; /* unknown property attribute: V_searchResults */
-@property(retain) GMMMapInfo *mapInfo; /* unknown property attribute: V_mapInfo */
-@property(retain) NSString *spellingSuggestion; /* unknown property attribute: V_spellingSuggestion */
-@property(readonly) BOOL hasAutoSpellingCorrected; /* unknown property attribute: V_hasAutoSpellingCorrected */
-@property BOOL autoSpellingCorrected; /* unknown property attribute: V_autoSpellingCorrected */
-@property(retain) NSString *refinementQuery; /* unknown property attribute: V_refinementQuery */
-@property(retain) NSString *originalQuery; /* unknown property attribute: V_originalQuery */
-@property(retain) NSString *errorMessage; /* unknown property attribute: V_errorMessage */
-@property NSInteger status; /* unknown property attribute: V_status */
+@property(retain) NSMutableArray *categorys;
+@property(retain) NSMutableArray *documentInfos;
+@property(retain) NSString *errorMessage;
+@property(retain) GMMMapInfo *mapInfo;
+@property(retain) NSString *originalQuery;
+@property(retain) NSString *refinementQuery;
+@property(retain) NSMutableArray *searchResults;
+@property(retain) NSString *spellingSuggestion;
+@property(retain) NSString *splitQueryLocationPart;
+@property(retain) NSString *splitQuerySearchPart;
+@property BOOL autoSpellingCorrected;
 @property(readonly) NSInteger categorysCount;
 @property(readonly) NSInteger documentInfosCount;
+@property(readonly) BOOL hasAutoSpellingCorrected;
 @property(readonly) BOOL hasErrorMessage;
 @property(readonly) BOOL hasMapInfo;
 @property(readonly) BOOL hasOriginalQuery;
+@property(readonly) BOOL hasPayloadType;
 @property(readonly) BOOL hasRefinementQuery;
+@property(readonly) BOOL hasResultOffset;
 @property(readonly) BOOL hasSpellingSuggestion;
+@property(readonly) BOOL hasSplitQueryLocationPart;
+@property(readonly) BOOL hasSplitQuerySearchPart;
+@property(readonly) BOOL hasTotalResults;
+@property NSInteger payloadType;
+@property NSInteger resultOffset;
 @property(readonly) NSInteger searchResultsCount;
+@property NSInteger status;
+@property NSInteger totalResults;
 
 - (void)addCategory:(id)arg1;
 - (void)addDocumentInfo:(id)arg1;
@@ -59,12 +73,17 @@
 - (BOOL)hasErrorMessage;
 - (BOOL)hasMapInfo;
 - (BOOL)hasOriginalQuery;
+- (BOOL)hasPayloadType;
 - (BOOL)hasRefinementQuery;
 - (BOOL)hasResultOffset;
 - (BOOL)hasSpellingSuggestion;
+- (BOOL)hasSplitQueryLocationPart;
+- (BOOL)hasSplitQuerySearchPart;
+- (BOOL)hasTotalResults;
 - (id)init;
 - (id)mapInfo;
 - (id)originalQuery;
+- (NSInteger)payloadType;
 - (BOOL)readFrom:(id)arg1;
 - (id)refinementQuery;
 - (NSInteger)resultOffset;
@@ -79,14 +98,21 @@
 - (void)setErrorMessage:(id)arg1;
 - (void)setMapInfo:(id)arg1;
 - (void)setOriginalQuery:(id)arg1;
+- (void)setPayloadType:(NSInteger)arg1;
 - (void)setRefinementQuery:(id)arg1;
 - (void)setResultOffset:(NSInteger)arg1;
 - (void)setSearchResult:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setSearchResults:(id)arg1;
 - (void)setSpellingSuggestion:(id)arg1;
+- (void)setSplitQueryLocationPart:(id)arg1;
+- (void)setSplitQuerySearchPart:(id)arg1;
 - (void)setStatus:(NSInteger)arg1;
+- (void)setTotalResults:(NSInteger)arg1;
 - (id)spellingSuggestion;
+- (id)splitQueryLocationPart;
+- (id)splitQuerySearchPart;
 - (NSInteger)status;
+- (NSInteger)totalResults;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
     UILabel *_titleLabel;
 }
 
-- (void)setText:(id)arg1;
 - (void)setTextAlignment:(NSInteger)arg1;
+- (void)setTitleText:(id)arg1;
 
 @end

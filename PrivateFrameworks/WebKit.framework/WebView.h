@@ -68,6 +68,7 @@
 - (void)_boundsChanged;
 - (void)_cacheFrameLoadDelegateImplementations;
 - (void)_cacheResourceLoadDelegateImplementations;
+- (void)_cacheScriptDebugDelegateImplementations;
 - (BOOL)_canResetZoom:(BOOL)arg1;
 - (BOOL)_canZoomIn:(BOOL)arg1;
 - (BOOL)_canZoomOut:(BOOL)arg1;
@@ -139,7 +140,6 @@
 - (id)_responderForResponderOperations;
 - (void)_retrieveKeyboardUIModeFromPreferences:(id)arg1;
 - (void)_scheduleViewUpdate;
-- (id)_scriptDebugDelegateForwarder;
 - (id)_selectedOrMainFrame;
 - (void)_setAllowsMessaging:(BOOL)arg1;
 - (void)_setCatchesDelegateExceptions:(BOOL)arg1;

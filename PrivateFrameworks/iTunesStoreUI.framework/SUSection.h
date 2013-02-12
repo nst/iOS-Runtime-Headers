@@ -22,21 +22,21 @@
     NSString *_urlBagKey;
 }
 
-@property(retain) NSString *urlBagKey; /* unknown property attribute: V_urlBagKey */
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property NSInteger type; /* unknown property attribute: V_type */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(retain) UIImage *selectedMoreListImage; /* unknown property attribute: V_selectedMoreListImage */
-@property(retain) UIImage *selectedImage; /* unknown property attribute: V_selectedImage */
-@property(retain) NSString *partnerHeader; /* unknown property attribute: V_partnerHeader */
-@property(retain) UIImage *moreListImage; /* unknown property attribute: V_moreListImage */
-@property NSUInteger minimumNetworkType; /* unknown property attribute: V_minimumNetworkType */
-@property(getter=isLocationSection) BOOL locationSection; /* unknown property attribute: V_isLocationSection */
-@property(retain) UIImage *image; /* unknown property attribute: V_image */
-@property(retain) NSString *identifier; /* unknown property attribute: V_identifier */
-@property(getter=isDefaultSection) BOOL defaultSection; /* unknown property attribute: V_isDefaultSection */
-@property(retain) ISArtworkGroup *artworkGroup; /* unknown property attribute: V_artworkGroup */
+@property(retain) ISArtworkGroup *artworkGroup;
+@property(retain) NSString *identifier;
+@property(retain) UIImage *image;
+@property(retain) UIImage *moreListImage;
+@property(retain) NSString *partnerHeader;
+@property(retain) UIImage *selectedImage;
+@property(retain) UIImage *selectedMoreListImage;
+@property(retain) NSString *title;
+@property(retain) NSURL *url;
+@property(retain) NSString *urlBagKey;
+@property(getter=isDefaultSection) BOOL defaultSection;
+@property(getter=isLocationSection) BOOL locationSection;
+@property NSUInteger minimumNetworkType;
 @property(getter=isTransient,readonly) BOOL transient;
+@property NSInteger type;
 @property(getter=isUsingLocalArtwork,readonly) BOOL usingLocalArtwork;
 
 + (id)copySectionsFromDictionary:(id)arg1;

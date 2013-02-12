@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateList>, <UIKeyboardInput>, CandWord, NSArray, NSMutableDictionary, NSString, NSTimer, UIAutocorrectInlinePrompt, UIDelayedAction, UIKeyboardInputManager, UIKeyboardLanguageIndicator, UIKeyboardLayout, UITextInputTraits;
+@class <UIKeyboardCandidateList>, <UIKeyboardInput>, CandWord, NSArray, NSMutableDictionary, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, NSTimer, UIAutocorrectInlinePrompt, UIDelayedAction, UIKeyboardInputManager, UIKeyboardLanguageIndicator, UIKeyboardLayout, UITextInputTraits;
 
 @interface UIKeyboardImpl : UIView {
     struct CGPoint { 
@@ -52,6 +52,7 @@
     BOOL m_performanceLoggingEnabled;
     BOOL m_preferencesNeedSynchronization;
     NSString *m_previousInputString;
+    NSObject<UIKeyboardRecording><UIApplicationEventRecording> *m_recorder;
     NSInteger m_returnKeyState;
     BOOL m_selecting;
     BOOL m_shift;
@@ -69,6 +70,7 @@
     BOOL m_userChangedSelection;
 }
 
+@property(retain) <UIKeyboardRecording><UIApplicationEventRecording> *recorder;
 @property BOOL shouldSkipCandidateSelection;
 
 + (id)activeInstance;
@@ -171,6 +173,7 @@
 - (id)inputModeLastUsedPreference;
 - (id)inputModePreference;
 - (id)inputOverlayContainer;
+- (void)installRecorder;
 - (BOOL)isAllowedInputMode:(id)arg1;
 - (BOOL)isAutoFillMode;
 - (BOOL)isAutoShifted;
@@ -183,9 +186,11 @@
 - (NSInteger)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(NSInteger)arg2 atTime:(double)arg3 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg4 forceShift:(BOOL)arg5;
 - (BOOL)keySlidIntoSwipe;
 - (id)keyboardDefaultForKey:(id)arg1;
+- (BOOL)keyboardRecordingEnabled;
 - (BOOL)keyboardsExpandedPreference;
 - (id)localePreference;
 - (void)longPressAction;
+- (BOOL)needsToDeferUpdateTextCandidateView;
 - (void)notifyShiftState;
 - (NSInteger)orientation;
 - (BOOL)performanceLoggingPreference;
@@ -196,6 +201,7 @@
 - (void)prepareForGeometryChange;
 - (void)prepareForSelectionChange;
 - (void)recomputeActiveInputModes;
+- (id)recorder;
 - (void)registerKeyArea:(struct CGPoint { float x1; float x2; })arg1 withRadii:(struct CGPoint { float x1; float x2; })arg2 forKeyCode:(unsigned short)arg3 forLowerKey:(id)arg4 forUpperKey:(id)arg5;
 - (void)removeAutocorrectPrompt;
 - (void)removeFromSuperview;
@@ -231,6 +237,7 @@
 - (void)setOrientationForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPhraseBoundary:(NSUInteger)arg1;
 - (void)setPreviousInputString:(id)arg1;
+- (void)setRecorder:(id)arg1;
 - (void)setReturnKeyEnabled:(BOOL)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setShift:(BOOL)arg1 autoshift:(BOOL)arg2;
@@ -245,11 +252,14 @@
 - (BOOL)shouldChargeKeys;
 - (BOOL)shouldEnableShiftForDeletedCharacter:(unsigned short)arg1;
 - (BOOL)shouldSkipCandidateSelection;
+- (BOOL)shouldSwitchInputMode:(id)arg1;
 - (void)showInputModeIndicator;
 - (void)showNextCandidates;
 - (void)startAutoDeleteTimer;
 - (void)startCaretBlinkIfNeeded;
+- (void)startKeyboardRecording;
 - (void)stopAutoDelete;
+- (void)stopKeyboardRecording;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })subtractKeyboardFrameFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (BOOL)suppliesCompletions;
 - (void)synchronizePreferences;

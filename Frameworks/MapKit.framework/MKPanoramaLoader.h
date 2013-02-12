@@ -19,21 +19,21 @@
     BOOL _tilesNeedSort;
 }
 
-@property(retain) NSTimer *nextTimer; /* unknown property attribute: V_nextTimer */
-@property BOOL isPrefetching; /* unknown property attribute: V_isPrefetching */
-@property BOOL tilesNeedSort; /* unknown property attribute: V_tilesNeedSort */
-@property(retain) NSMutableArray *childPanoramaIDs; /* unknown property attribute: V_childPanoramaIDs */
-@property(retain) MKPanoramaLoader *childLoader; /* unknown property attribute: V_childLoader */
-@property(retain) GMMRequester *requester; /* unknown property attribute: V_requester */
-@property id delegate; /* unknown property attribute: V_delegate */
-@property(retain) NSMutableSet *pendingResponseTiles; /* unknown property attribute: V_pendingResponseTiles */
-@property(retain) NSMutableArray *requestTiles; /* unknown property attribute: V_requestTiles */
-@property(retain) MKPanorama *panorama; /* unknown property attribute: V_panorama */
-@property BOOL needsCancel; /* unknown property attribute: V_needsCancel */
+@property(retain) MKPanoramaLoader *childLoader;
+@property(retain) NSMutableArray *childPanoramaIDs;
+@property(retain) NSTimer *nextTimer;
+@property(retain) MKPanorama *panorama;
+@property(retain) NSMutableSet *pendingResponseTiles;
+@property(retain) NSMutableArray *requestTiles;
+@property(retain) GMMRequester *requester;
+@property id delegate;
 @property(readonly) BOOL isDone;
 @property(readonly) BOOL isDoneLoadingPanoramas;
 @property(readonly) BOOL isDonePendingTiles;
 @property(readonly) BOOL isDoneRequestingTiles;
+@property BOOL isPrefetching;
+@property BOOL needsCancel;
+@property BOOL tilesNeedSort;
 
 + (id)createRequestWithCoordinate:(struct { double x1; double x2; })arg1;
 + (id)createRequestWithId:(id)arg1 metadata:(BOOL)arg2 zoomLevel:(id)arg3 tilePaths:(id)arg4;

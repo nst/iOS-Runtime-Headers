@@ -14,7 +14,6 @@
 - (BOOL)_isNameCached;
 - (void)acceptSSP:(NSInteger)arg1;
 - (id)address;
-- (BOOL)available;
 - (NSInteger)batteryLevel;
 - (NSInteger)compare:(id)arg1;
 - (void)connect;

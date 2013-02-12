@@ -33,22 +33,21 @@
     NSInteger zoomDirection;
 }
 
-@property NSInteger zoomDirection; /* unknown property attribute: VzoomDirection */
-@property NSUInteger mapType; /* unknown property attribute: VmapType */
-@property double headingAccuracy; /* unknown property attribute: VheadingAccuracy */
-@property float accuracy; /* unknown property attribute: Vaccuracy */
-@property id delegate; /* unknown property attribute: Vdelegate */
 @property(readonly) MKHoverAnimation *hoverAnimation;
 @property(readonly) MKUserLocationPositionAnimation *positionAnimation;
+@property float accuracy;
 @property BOOL animatedSublayers;
 @property(readonly) BOOL canHalo;
 @property(readonly) BOOL canHaloExcludingAccuracy;
 @property(readonly) BOOL canHaloExcludingEffects;
+@property id delegate;
 @property BOOL disableAccuracyDidUpdate;
 @property(getter=isDisplayingAccuracy,readonly) BOOL displayingAccuracy;
 @property(readonly) BOOL hasHalo;
 @property(readonly) BOOL hasQuiesced;
+@property double headingAccuracy;
 @property(getter=isHovering,readonly) BOOL hovering;
+@property NSUInteger mapType;
 @property(readonly) BOOL needsHalo;
 @property CGPoint position;
 @property BOOL shouldDisplayAccuracy;
@@ -56,6 +55,7 @@
 @property BOOL shouldDisplayHalo;
 @property BOOL shouldDisplayHeading;
 @property(getter=isStale) BOOL stale;
+@property NSInteger zoomDirection;
 
 + (float)accuracyDiameter:(float)arg1 level:(NSUInteger)arg2;
 + (id)bounceImages;

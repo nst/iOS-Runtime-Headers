@@ -12,10 +12,10 @@
     NSData *_data;
 }
 
-@property(copy) NSData *data; /* unknown property attribute: V_data */
-@property(copy) NSString *contentLocation; /* unknown property attribute: V_contentLocation */
-@property(copy) NSString *contentId; /* unknown property attribute: V_contentId */
-@property(copy) NSString *contentType; /* unknown property attribute: V_contentType */
+@property(copy) NSString *contentId;
+@property(copy) NSString *contentLocation;
+@property(copy) NSString *contentType;
+@property(copy) NSData *data;
 
 - (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
 - (id)allContentTypeParameterNames;

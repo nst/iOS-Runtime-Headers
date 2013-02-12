@@ -6,6 +6,7 @@
 
 @interface SUViewController : UIViewController <ISOperationDelegate> {
     BOOL _beganTransitionSafety;
+    BOOL _excludeFromNavigationHistory;
     SUViewControllerContext *_jetsamContext;
     BOOL _loading;
     NSMutableArray *_operations;
@@ -13,8 +14,9 @@
     SUViewControllerContext *_restoredContext;
 }
 
-@property(getter=isLoading) BOOL loading; /* unknown property attribute: V_loading */
 @property(readonly) NSString *defaultPNGName;
+@property(getter=isLoading) BOOL loading;
+@property BOOL shouldExcludeFromNavigationHistory;
 @property(readonly) NSInteger statusBarStyle;
 
 - (void)_dialogFinishedNotification:(id)arg1;
@@ -22,11 +24,12 @@
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (void)cancelOperations;
+- (id)copyArchivableContext;
 - (void)dealloc;
 - (id)defaultPNGName;
 - (void)dismissAfterDialogs;
 - (void)enqueueOperation:(id)arg1;
-- (void)handleExternalURL:(id)arg1;
+- (void)handleApplicationURL:(id)arg1;
 - (id)initWithSection:(id)arg1;
 - (BOOL)isLoading;
 - (void)loadView;
@@ -37,11 +40,14 @@
 - (void)presentDialog:(id)arg1 pendUntilVisible:(BOOL)arg2;
 - (void)presentDialogForError:(id)arg1 pendUntilVisible:(BOOL)arg2;
 - (void)purgeMemoryForReason:(NSInteger)arg1;
+- (void)reload;
 - (void)resetRestoredContext;
 - (void)restoreArchivableContext:(id)arg1;
 - (void)setBadgeCount:(NSInteger)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (void)setLoading:(BOOL)arg1;
+- (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldExcludeFromNavigationHistory;
 - (NSInteger)statusBarStyle;
 - (void)trackOperation:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

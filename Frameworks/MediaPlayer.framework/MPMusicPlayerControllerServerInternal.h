@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MLQuery;
+@class MLQuery, NSMutableArray;
 
 @interface MPMusicPlayerControllerServerInternal : MPServerObject <MPMusicPlayerController> {
     unsigned int _useApplicationSpecificQueue : 1;
     unsigned int _queuePrepared : 1;
-    NSUInteger _clientPort;
+    NSMutableArray *_clientPorts;
+    NSInteger _extendedModeNotifyToken;
     MLQuery *_query;
     NSInteger _repeatMode;
     NSInteger _shuffleMode;
@@ -16,23 +17,28 @@
 + (BOOL)_canSeedGeniusWithItem:(id)arg1;
 
 - (id)_avController;
-- (void)_clientPortInvalidated;
+- (void)_clientPortInvalidated:(id)arg1;
+- (void)_clientPortInvalidatedNotification:(id)arg1;
 - (void)_itemDidChange:(id)arg1;
 - (void)_playbackStateDidChange:(id)arg1;
-- (void)_prepareQueueWithQuery:(id)arg1;
+- (void)_prepareQueueIfNecessary;
 - (void)_registerClientPort:(NSUInteger)arg1;
+- (void)_setQueueWithQuery:(id)arg1;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
 - (id)currentPlaybackTime;
 - (void)dealloc;
 - (void)endSeeking;
+- (id)init;
 - (id)isGeniusAvailable;
 - (id)nowPlayingItem;
 - (void)pause;
+- (void)pauseWithFadeoutDuration:(id)arg1;
 - (void)play;
 - (void)playItem:(id)arg1;
 - (id)playbackState;
 - (void)prepareForDecodingWithCoder:(id)arg1;
+- (void)prepareQueueForPlayback;
 - (id)repeatMode;
 - (void)setCurrentPlaybackTime:(id)arg1;
 - (void)setNowPlayingItem:(id)arg1;
@@ -45,6 +51,7 @@
 - (void)shuffle;
 - (id)shuffleMode;
 - (void)skipToBeginning;
+- (void)skipToBeginningOrPreviousItem;
 - (void)skipToNextItem;
 - (void)skipToPreviousItem;
 - (void)stop;

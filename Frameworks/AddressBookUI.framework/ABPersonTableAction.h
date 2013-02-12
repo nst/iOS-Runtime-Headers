@@ -21,21 +21,21 @@
     NSString *_title;
 }
 
-@property __CFArray *properties; /* unknown property attribute: V_properties */
-@property NSInteger ordering; /* unknown property attribute: V_ordering */
-@property NSInteger grouping; /* unknown property attribute: V_grouping */
-@property(readonly) UIButton *existingButton; /* unknown property attribute: V_button */
-@property(readonly) NSInteger property; /* unknown property attribute: V_property */
-@property(readonly) SEL selector; /* unknown property attribute: V_selector */
-@property(readonly) id target; /* unknown property attribute: V_target */
-@property BOOL displaysShortTitle; /* unknown property attribute: V_displaysShortTitle */
-@property(readonly) NSString *shortTitle; /* unknown property attribute: V_shortTitle */
-@property(readonly) NSString *title; /* unknown property attribute: V_title */
-@property BOOL allowDifferentiationSheet; /* unknown property attribute: V_allowDifferentiationSheet */
-@property(copy) NSString *differentiationSheetTitle; /* unknown property attribute: V_differentiationSheetTitle */
-@property <ABPersonTableActionDelegate> *delegate; /* unknown property attribute: V_delegate */
 @property(readonly) UIButton *button;
+@property <ABPersonTableActionDelegate> *delegate;
+@property(copy) NSString *differentiationSheetTitle;
+@property(readonly) UIButton *existingButton;
+@property __CFArray *properties;
+@property(readonly) NSString *shortTitle;
 @property(readonly) UITableViewCell *tableViewCell;
+@property(readonly) NSString *title;
+@property BOOL allowDifferentiationSheet;
+@property BOOL displaysShortTitle;
+@property NSInteger grouping;
+@property NSInteger ordering;
+@property(readonly) NSInteger property;
+@property(readonly) SEL selector;
+@property(readonly) id target;
 
 + (BOOL)array:(id)arg1 containsActionWithTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(NSInteger)arg5 ordering:(NSInteger)arg6 outIndex:(NSInteger*)arg7;
 

@@ -9,13 +9,14 @@
     NSData *_relativePoints;
 }
 
-@property(retain) NSData *relativePoints; /* unknown property attribute: V_relativePoints */
-@property(retain) GMMGeometry *absolutePoint; /* unknown property attribute: V_absolutePoint */
+@property(retain) GMMGeometry *absolutePoint;
+@property(retain) NSData *relativePoints;
 @property(readonly) BOOL hasRelativePoints;
 
 - (id)absolutePoint;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasRelativePoints;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;

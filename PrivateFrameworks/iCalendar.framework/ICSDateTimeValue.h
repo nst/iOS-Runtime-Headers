@@ -8,9 +8,9 @@
     NSInteger _second;
 }
 
-@property(readonly) NSInteger second; /* unknown property attribute: V_second */
-@property(readonly) NSInteger minute; /* unknown property attribute: V_minute */
-@property(readonly) NSInteger hour; /* unknown property attribute: V_hour */
+@property(readonly) NSInteger hour;
+@property(readonly) NSInteger minute;
+@property(readonly) NSInteger second;
 
 - (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
 - (id)components;

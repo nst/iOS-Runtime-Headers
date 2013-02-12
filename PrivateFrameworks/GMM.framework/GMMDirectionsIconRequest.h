@@ -11,11 +11,11 @@
     BOOL _hasCachedIconVersion;
 }
 
-@property(retain) NSMutableArray *cachedIconIDs; /* unknown property attribute: V_cachedIconIDs */
-@property(readonly) BOOL hasCachedIconVersion; /* unknown property attribute: V_hasCachedIconVersion */
-@property NSInteger cachedIconVersion; /* unknown property attribute: V_cachedIconVersion */
-@property(retain) GMMClientCapabilities *capabilities; /* unknown property attribute: V_capabilities */
+@property(retain) NSMutableArray *cachedIconIDs;
+@property(retain) GMMClientCapabilities *capabilities;
 @property(readonly) NSInteger cachedIconIDsCount;
+@property NSInteger cachedIconVersion;
+@property(readonly) BOOL hasCachedIconVersion;
 @property(readonly) BOOL hasCapabilities;
 
 - (void)addCachedIconID:(long long)arg1;

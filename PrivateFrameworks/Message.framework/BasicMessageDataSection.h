@@ -11,10 +11,10 @@
     BOOL _partial;
 }
 
-@property(retain) NSString *partName; /* unknown property attribute: V_partName */
-@property(getter=isComplete) BOOL complete; /* unknown property attribute: V_complete */
-@property(getter=isPartial) BOOL partial; /* unknown property attribute: V_partial */
-@property(retain) NSData *data; /* unknown property attribute: V_data */
+@property(retain) NSData *data;
+@property(retain) NSString *partName;
+@property(getter=isComplete) BOOL complete;
+@property(getter=isPartial) BOOL partial;
 
 - (id)data;
 - (void)dealloc;

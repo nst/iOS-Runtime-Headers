@@ -15,6 +15,7 @@
 + (id)descriptionForPayloadCount:(NSUInteger)arg1;
 + (BOOL)shouldValidateCommonAttributes;
 
+- (struct __SecCertificate { }*)certificateCopyFromKeychain;
 - (id)certificateData;
 - (id)certificateMD5;
 - (void)clearPassword;

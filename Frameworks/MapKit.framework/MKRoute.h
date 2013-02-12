@@ -16,29 +16,30 @@
     NSMutableArray *_steps;
 }
 
-@property(readonly) MKRouteStep *previousStep; /* unknown property attribute: V_previousStep */
-@property(retain) MKRouteStep *step; /* unknown property attribute: V_step */
-@property(readonly) NSArray *steps; /* unknown property attribute: V_steps */
-@property(readonly) NSUInteger pointCount; /* unknown property attribute: V_pointCount */
-@property(readonly) ? *points; /* unknown property attribute: V_points */
-@property(readonly) NSInteger mode; /* unknown property attribute: V_mode */
 @property(readonly) NSString *abbreviatedTravelTime;
 @property(readonly) NSString *abbreviatedTravelTimeWithTraffic;
 @property(readonly) NSCalendarDate *arrivalDate;
 @property(readonly) NSString *cost;
 @property(readonly) NSCalendarDate *departureDate;
 @property(readonly) NSDictionary *dictionaryRepresentation;
+@property(readonly) NSString *distanceSummary;
 @property(readonly) MKSearchResult *endSearchResult;
 @property(readonly) NSString *expandedDistance;
 @property(readonly) NSString *expandedTravelTime;
 @property(readonly) NSString *expandedTravelTimeWithTraffic;
 @property(readonly) MKRouteStep *firstMiddleStep;
 @property(readonly) MKRouteStep *lastMiddleStep;
+@property(readonly) ? *points;
+@property(readonly) MKRouteStep *previousStep;
 @property(readonly) NSArray *simplifiedSteps;
 @property(readonly) MKSearchResult *startSearchResult;
+@property(retain) MKRouteStep *step;
+@property(readonly) NSArray *steps;
 @property(readonly) NSInteger durationSeconds;
 @property(readonly) ? endCoordinate;
 @property(readonly) BOOL hasTraffic;
+@property(readonly) NSInteger mode;
+@property(readonly) NSUInteger pointCount;
 @property(readonly) ? startCoordinate;
 
 - (void)_createSteps;
@@ -54,6 +55,7 @@
 - (id)departureDate;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)distanceSummary;
 - (NSInteger)durationSeconds;
 - (struct { double x1; double x2; })endCoordinate;
 - (id)endSearchResult;

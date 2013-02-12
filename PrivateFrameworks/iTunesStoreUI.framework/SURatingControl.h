@@ -24,8 +24,8 @@
     float _value;
 }
 
-@property float starWidth; /* unknown property attribute: V_starWidth */
 @property(retain) NSString *explanationText;
+@property float starWidth;
 @property float value;
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;

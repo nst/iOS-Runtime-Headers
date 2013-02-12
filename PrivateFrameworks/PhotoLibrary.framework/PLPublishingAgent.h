@@ -22,7 +22,7 @@
     id _userInfo;
 }
 
-@property <PLPublishingAgentDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <PLPublishingAgentDelegate> *delegate;
 
 + (id)publishingAgentForBundleNamed:(id)arg1;
 
@@ -53,6 +53,7 @@
 - (void)setMediaData:(id)arg1;
 - (void)setMediaPath:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (id)tellAFriendSubject;
 - (id)tellAFriendURL;
 - (id)userInfo;
 

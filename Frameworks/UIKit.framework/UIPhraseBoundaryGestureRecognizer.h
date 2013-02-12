@@ -12,10 +12,10 @@
     id _userData;
 }
 
-@property id userData; /* unknown property attribute: V_userData */
-@property(readonly) BOOL secondDelayElapsed; /* unknown property attribute: V_secondDelayElapsed */
-@property double secondDelay; /* unknown property attribute: V_secondDelay */
-@property UIView<UITextSelectingContainer> *containerView; /* unknown property attribute: V_containerView */
+@property UIView<UITextSelectingContainer> *containerView;
+@property double secondDelay;
+@property(readonly) BOOL secondDelayElapsed;
+@property id userData;
 
 - (void)clearTimer;
 - (id)containerView;

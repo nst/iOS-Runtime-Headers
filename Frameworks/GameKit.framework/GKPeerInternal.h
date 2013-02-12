@@ -8,6 +8,7 @@
     NSData **_addrList;
     double _connectTimeout;
     NSString *_displayName;
+    NSUInteger *_interfaceList;
     BOOL _isBusy;
     NSInteger _lookupServiceCount;
     struct _DNSServiceRef_t {} **_lookupServiceList;
@@ -23,18 +24,18 @@
     struct _DNSServiceRef_t { } *_txtRecordService;
 }
 
-@property BOOL needsToTimeout; /* unknown property attribute: V_needsToTimeout */
-@property double connectTimeout; /* unknown property attribute: V_connectTimeout */
-@property(retain) GKSessionInternal *session; /* unknown property attribute: V_session */
-@property BOOL moreResolvesComing; /* unknown property attribute: V_moreResolvesComing */
-@property NSUInteger servicePort; /* unknown property attribute: V_servicePort */
-@property _DNSServiceRef_t *txtRecordService; /* unknown property attribute: V_txtRecordService */
-@property _DNSServiceRef_t *resolveService; /* unknown property attribute: V_resolveService */
-@property NSInteger serviceCount; /* unknown property attribute: V_serviceCount */
-@property(getter=isBusy) BOOL busy; /* unknown property attribute: V_isBusy */
-@property(readonly) NSUInteger pid; /* unknown property attribute: V_pid */
-@property(readonly) NSString *displayName; /* unknown property attribute: V_displayName */
-@property(readonly) NSString *serviceName; /* unknown property attribute: V_serviceName */
+@property(readonly) NSString *displayName;
+@property _DNSServiceRef_t *resolveService;
+@property(readonly) NSString *serviceName;
+@property(retain) GKSessionInternal *session;
+@property _DNSServiceRef_t *txtRecordService;
+@property(getter=isBusy) BOOL busy;
+@property double connectTimeout;
+@property BOOL moreResolvesComing;
+@property BOOL needsToTimeout;
+@property(readonly) NSUInteger pid;
+@property NSInteger serviceCount;
+@property NSUInteger servicePort;
 
 - (void)addLookup:(struct _DNSServiceRef_t { }*)arg1;
 - (void)cleanupForGKTable:(id)arg1;
@@ -49,13 +50,13 @@
 - (BOOL)moreResolvesComing;
 - (BOOL)needsToTimeout;
 - (NSUInteger)pid;
-- (void)removeAndReturnLookupList:(struct _DNSServiceRef_t {}***)arg1 andAddrList:(id**)arg2 count:(NSInteger*)arg3;
+- (void)removeAndReturnLookupList:(struct _DNSServiceRef_t {}***)arg1 andAddrList:(id**)arg2 andInterfaceList:(NSUInteger**)arg3 count:(NSInteger*)arg4;
 - (struct _DNSServiceRef_t { }*)resolveService;
 - (NSInteger)serviceCount;
 - (id)serviceName;
 - (NSUInteger)servicePort;
 - (id)session;
-- (void)setAddr:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { NSUInteger x_4_1_1; } x4; BOOL x5[8]; }*)arg1 forLookupService:(struct _DNSServiceRef_t { }*)arg2;
+- (void)setAddr:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { NSUInteger x_4_1_1; } x4; BOOL x5[8]; }*)arg1 interface:(NSUInteger)arg2 forLookupService:(struct _DNSServiceRef_t { }*)arg3;
 - (void)setBusy:(BOOL)arg1;
 - (void)setConnectTimeout:(double)arg1;
 - (void)setMoreResolvesComing:(BOOL)arg1;

@@ -61,6 +61,7 @@
 - (void)_finishedLoadingImageRef:(id)arg1;
 - (void)_gestureChanged:(NSInteger)arg1 event:(struct __GSEvent { }*)arg2;
 - (BOOL)_getContentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1 contentsGravity:(id*)arg2 forSize:(struct CGSize { float x1; float x2; })arg3;
+- (float)_minimumZoomScaleDelta;
 - (void)_prepareForAnimatedZoomToScale:(float)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_scrollerContentSize;
 - (void)_setImageViewZoomScale:(float)arg1;

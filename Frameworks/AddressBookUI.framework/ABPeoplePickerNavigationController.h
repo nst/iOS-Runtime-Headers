@@ -23,9 +23,9 @@
     id _reserved3;
 }
 
-@property <ABPeoplePickerNavigationControllerDelegate> *peoplePickerDelegate; /* unknown property attribute: V_peoplePickerDelegate */
 @property void *addressBook;
 @property(copy) NSArray *displayedProperties;
+@property <ABPeoplePickerNavigationControllerDelegate> *peoplePickerDelegate;
 
 + (void)notifyPreferencesChanged;
 

@@ -11,7 +11,7 @@
     UINavigationItem *_originalNavigationItem;
 }
 
-@property(retain) UINavigationBar *navigationBar; /* unknown property attribute: V_navigationBar */
+@property(retain) UINavigationBar *navigationBar;
 @property BOOL playAfterFlip;
 
 - (id)_chapterGuideTitleLabel;

@@ -9,7 +9,7 @@
     BOOL _selected;
 }
 
-@property(retain) DOMHTMLOptionElement *_node; /* unknown property attribute: V_node */
+@property(retain) DOMHTMLOptionElement *_node;
 
 - (id)_node;
 - (void)dealloc;

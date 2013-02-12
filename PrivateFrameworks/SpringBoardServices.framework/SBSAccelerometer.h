@@ -18,7 +18,7 @@
     float _zThreshold;
 }
 
-@property <SBSAccelerometerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <SBSAccelerometerDelegate> *delegate;
 @property BOOL accelerometerEventsEnabled;
 @property BOOL orientationEventsEnabled;
 @property double updateInterval;

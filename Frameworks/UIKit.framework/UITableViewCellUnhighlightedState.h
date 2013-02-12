@@ -10,9 +10,9 @@
     BOOL _opaque;
 }
 
-@property(retain) UIColor *backgroundColor; /* unknown property attribute: V_backgroundColor */
-@property BOOL highlighted; /* unknown property attribute: V_highlighted */
-@property BOOL opaque; /* unknown property attribute: V_opaque */
+@property(retain) UIColor *backgroundColor;
+@property BOOL highlighted;
+@property BOOL opaque;
 
 - (id)backgroundColor;
 - (void)dealloc;

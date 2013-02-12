@@ -14,7 +14,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct $_528 { 
+    struct $_534 { 
         unsigned int panoramaWillChange : 1; 
         unsigned int panoramaDidChange : 1; 
         unsigned int streetViewWillClose : 1; 
@@ -116,19 +116,19 @@
     BOOL zooming;
 }
 
-@property(retain) GMMStreetViewReportRequest *gmmReport; /* unknown property attribute: VgmmReport */
-@property(retain) MKSearchResult *searchResult; /* unknown property attribute: VsearchResult */
-@property(retain) NSString *copyright; /* unknown property attribute: Vcopyright */
-@property(retain) MKStreetViewLabelCache *labelCache; /* unknown property attribute: VlabelCache */
-@property(retain) MKStreetViewTileDecoder *tileDecoder; /* unknown property attribute: VtileDecoder */
-@property(retain) MKPanoramaTextures *previousTextures; /* unknown property attribute: VpreviousTextures */
-@property(retain) MKPanoramaTextures *textures; /* unknown property attribute: Vtextures */
-@property(retain) MKPanoramaAnnotationGeometry *previousAnnotationGeometry; /* unknown property attribute: VpreviousAnnotationGeometry */
-@property(retain) MKPanoramaAnnotationGeometry *annotationGeometry; /* unknown property attribute: VannotationGeometry */
-@property(retain) MKPanoramaSphereGeometry *previousSphere; /* unknown property attribute: VpreviousSphere */
-@property(retain) MKPanoramaSphereGeometry *sphere; /* unknown property attribute: Vsphere */
-@property(retain) MKPanorama *previousPanorama; /* unknown property attribute: VpreviousPanorama */
-@property(retain) MKPanorama *panorama; /* unknown property attribute: Vpanorama */
+@property(retain) MKPanoramaAnnotationGeometry *annotationGeometry;
+@property(retain) NSString *copyright;
+@property(retain) GMMStreetViewReportRequest *gmmReport;
+@property(retain) MKStreetViewLabelCache *labelCache;
+@property(retain) MKPanorama *panorama;
+@property(retain) MKPanoramaAnnotationGeometry *previousAnnotationGeometry;
+@property(retain) MKPanorama *previousPanorama;
+@property(retain) MKPanoramaSphereGeometry *previousSphere;
+@property(retain) MKPanoramaTextures *previousTextures;
+@property(retain) MKSearchResult *searchResult;
+@property(retain) MKPanoramaSphereGeometry *sphere;
+@property(retain) MKPanoramaTextures *textures;
+@property(retain) MKStreetViewTileDecoder *tileDecoder;
 
 - (id)annotationGeometry;
 - (id)copyright;

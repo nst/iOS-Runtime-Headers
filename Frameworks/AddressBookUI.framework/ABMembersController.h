@@ -55,7 +55,6 @@
 - (BOOL)isSearching;
 - (void)loadState;
 - (void)localSearchOperation:(id)arg1 completedWithCopyOfMatchingRecordIDs:(struct __CFArray { }*)arg2;
-- (id)navigationBarTitleWithModel:(id)arg1;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (id)operationQueue;
 - (void)relayoutAccessoryView;

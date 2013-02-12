@@ -10,7 +10,7 @@
     UIImageView *_well;
 }
 
-@property float progressValue; /* unknown property attribute: V_progressValue */
+@property float progressValue;
 
 + (float)_minFillWidth;
 + (float)defaultHeight;

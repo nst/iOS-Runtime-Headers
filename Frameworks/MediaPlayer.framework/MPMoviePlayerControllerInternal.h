@@ -12,7 +12,6 @@
         unsigned int isStreaming : 1; 
         unsigned int statusBarWasHidden : 1; 
         unsigned int shouldRestartPlaybackAfterAudioRouteChange : 1; 
-        unsigned int shouldResumeGeneratingDeviceOrientationNotifications : 1; 
         unsigned int playbackFailed : 1; 
         unsigned int isFinishing : 1; 
         unsigned int hideLoadingIndicatorForLocalFiles : 1; 
@@ -20,10 +19,12 @@
         unsigned int playAfterCreatingPlayer : 1; 
         unsigned int canShowControlsOverlay : 1; 
         unsigned int tearDownPlayerOnEnd : 1; 
+        unsigned int didSendPreloadNotification : 1; 
         unsigned int unused : 18; 
     UIColor *_backgroundColor;
     NSURL *_contentURL;
     AVFileValidator *_fileValidator;
+    NSUInteger _generatingDeviceOrientationNotificationsCount;
     double _initialPlaybackTime;
     NSInteger _movieControlMode;
     NSUInteger _oldSimpleRemoteRoutingPriority;

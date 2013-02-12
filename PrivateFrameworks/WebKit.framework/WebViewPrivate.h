@@ -84,6 +84,14 @@
         int (*didFirstLayoutInFrameFunc)(); 
         int (*didFirstVisuallyNonEmptyLayoutInFrameFunc)(); 
         int (*didFinishDocumentLoadForFrameFunc)(); 
+    struct _WebScriptDebugDelegateImplementationCache { 
+        BOOL didParseSourceExpectsBaseLineNumber; 
+        int (*didParseSourceFunc)(); 
+        int (*failedToParseSourceFunc)(); 
+        int (*didEnterCallFrameFunc)(); 
+        int (*willExecuteStatementFunc)(); 
+        int (*willLeaveCallFrameFunc)(); 
+        int (*exceptionWasRaisedFunc)(); 
     struct CGSize { 
         float width; 
         float height; 
@@ -144,7 +152,7 @@
     } resourceLoadDelegateImplementations;
     id resourceProgressDelegate;
     id scriptDebugDelegate;
-    id scriptDebugDelegateForwarder;
+    } scriptDebugDelegateImplementations;
     BOOL selectTrailingWhitespaceEnabled;
     BOOL shouldCacheFileURLs;
     BOOL shouldCloseWithWindow;

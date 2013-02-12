@@ -20,12 +20,12 @@
     } _touchToCenterOffset;
 }
 
-@property CGSize centerToSelectionPointOffset; /* unknown property attribute: V_centerToSelectionPointOffset */
-@property(readonly) CGSize touchToCenterOffset; /* unknown property attribute: V_touchToCenterOffset */
-@property(retain) UITouch *touch; /* unknown property attribute: V_touch */
-@property NSInteger position; /* unknown property attribute: V_position */
+@property(retain) UITouch *touch;
+@property CGSize centerToSelectionPointOffset;
 @property(readonly) BOOL hasTextPosition;
+@property NSInteger position;
 @property NSInteger textPosition;
+@property(readonly) CGSize touchToCenterOffset;
 
 - (struct CGPoint { float x1; float x2; })applyCenterToSelectionPointOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })applyOffsetInDirectionOfHandle:(float)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;

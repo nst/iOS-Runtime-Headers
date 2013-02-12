@@ -9,8 +9,8 @@
     NSString *_bundleIdentifier;
 }
 
-@property(retain) NSString *bundleIdentifier; /* unknown property attribute: V_bundleIdentifier */
-@property(retain) NSString *badgeValue; /* unknown property attribute: V_badgeValue */
+@property(retain) NSString *badgeValue;
+@property(retain) NSString *bundleIdentifier;
 
 - (id)badgeValue;
 - (id)bundleIdentifier;

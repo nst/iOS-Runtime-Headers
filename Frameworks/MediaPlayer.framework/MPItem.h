@@ -21,14 +21,14 @@
     NSUInteger _type;
 }
 
-@property MPQueueFeeder *feeder; /* unknown property attribute: V_feeder */
-@property(retain,readonly) MPAlternateTracks *alternateTracks; /* unknown property attribute: V_alternateTracks */
 @property(retain,readonly) NSString *album;
 @property(retain,readonly) NSString *albumArtist;
+@property(retain,readonly) MPAlternateTracks *alternateTracks;
 @property(retain,readonly) NSString *artist;
 @property(retain,readonly) NSArray *artworkTimeMarkers;
 @property(retain,readonly) NSArray *chapterTimeMarkers;
 @property(retain,readonly) NSString *displayableText;
+@property MPQueueFeeder *feeder;
 @property(retain,readonly) NSString *mainTitle;
 @property(readonly) NSUInteger contentUniqueID;
 @property(readonly) NSUInteger countForQueueFeeder;
@@ -51,6 +51,7 @@
 - (void)_commonInit;
 - (void)_delayedInvalidateCachedPlayedDuration;
 - (void)_itemAttributeAvailableNotification:(id)arg1;
+- (void)_itemReadyToPlayNotification:(id)arg1;
 - (void)_sizeChangedNotification:(id)arg1;
 - (void)_updateForNaturalSizeChange;
 - (id)album;
@@ -86,6 +87,7 @@
 - (void)notePlaybackFinishedByHittingEnd;
 - (double)playableDuration;
 - (float)playbackRateForLevel:(NSUInteger)arg1 direction:(NSInteger)arg2 paused:(BOOL)arg3;
+- (void)postDurationDidChange;
 - (void)resetBookkeeping;
 - (float)scanIntervalForLevel:(NSUInteger)arg1 paused:(BOOL)arg2;
 - (void)setAlternateAudioTrackID:(NSUInteger)arg1;

@@ -12,8 +12,8 @@
     UIColor *_tintColor;
 }
 
-@property(retain) UIColor *tintColor; /* unknown property attribute: V_tintColor */
 @property(retain) UIImage *backgroundImage;
+@property(retain) UIColor *tintColor;
 @property NSInteger barStyle;
 @property(getter=isTranslucent) BOOL translucent;
 @property BOOL usesEmbeddedAppearance;

@@ -11,10 +11,10 @@
     NSString *_urlBagKey;
 }
 
-@property(retain) NSString *urlBagKey; /* unknown property attribute: V_urlBagKey */
-@property(retain) NSString *stringToComplete; /* unknown property attribute: V_stringToComplete */
-@property <SUCompletionTableDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property NSInteger assetTypesForSearchParameters; /* unknown property attribute: V_assetTypesForSearchParameters */
+@property <SUCompletionTableDelegate> *delegate;
+@property(retain) NSString *stringToComplete;
+@property(retain) NSString *urlBagKey;
+@property NSInteger assetTypesForSearchParameters;
 
 - (void)_dismissWithPickedItem:(id)arg1;
 - (void)_fetchCompletions;

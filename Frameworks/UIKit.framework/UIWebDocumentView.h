@@ -102,6 +102,8 @@
             BOOL active; 
             BOOL defaultPrevented; 
             NSMutableArray *regions; 
+            float originalGestureDistance; 
+            float originalGestureAngle; 
         } directEvents; 
     struct { 
         WebPDFView *view; 
@@ -342,7 +344,6 @@
 - (BOOL)containsOnlySelectableElements;
 - (id)content;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameForView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })contentsPointForWebView:(id)arg1;
 - (void)continueInteractionWithLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertCaretRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointToSelectedFrameCoordinates:(struct CGPoint { float x1; float x2; })arg1;
@@ -368,7 +369,6 @@
 - (void)didEndZoom;
 - (void)didRemovePlugInView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentVisibleRectForWebView:(id)arg1;
 - (void)doubleTap:(struct __GSEvent { }*)arg1;
 - (float)doubleTapDelay;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })doubleTapRect;
@@ -466,7 +466,6 @@
 - (BOOL)playsNicelyWithGestures;
 - (BOOL)pointAtEndOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)pointAtStartOfLine:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)rangeAtSentenceStart:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(NSInteger)arg1;
 - (id)rangeByMovingCurrentSelection:(NSInteger)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
@@ -579,6 +578,7 @@
 - (void)setUserStyleSheet:(id)arg1;
 - (void)setViewportSize:(struct CGSize { float x1; float x2; })arg1 forDocumentTypes:(NSInteger)arg2;
 - (BOOL)shouldChangeSelectionForEvent:(struct __GSEvent { }*)arg1;
+- (BOOL)shouldEnableAutoShift;
 - (BOOL)shouldUseTextLoupe;
 - (void)showBrowserSheet:(id)arg1;
 - (void)smartExtendRangedSelection:(NSInteger)arg1;

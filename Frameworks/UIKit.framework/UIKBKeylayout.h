@@ -10,8 +10,8 @@
     NSMutableArray *m_refs;
 }
 
-@property(retain) UIKBKeyset *keyset; /* unknown property attribute: Vm_keyset */
-@property(retain) NSString *name; /* unknown property attribute: Vm_name */
+@property(retain) UIKBKeyset *keyset;
+@property(retain) NSString *name;
 @property(readonly) NSArray *references;
 
 + (id)keylayout;

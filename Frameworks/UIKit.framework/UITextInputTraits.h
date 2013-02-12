@@ -22,20 +22,20 @@
     struct __CFCharacterSet { } *textTrimmingSet;
 }
 
-@property BOOL acceptsEmoji; /* unknown property attribute: VacceptsEmoji */
-@property BOOL contentsIsSingleValue; /* unknown property attribute: VcontentsIsSingleValue */
-@property NSInteger textSelectionBehavior; /* unknown property attribute: VtextSelectionBehavior */
-@property NSInteger textLoupeVisibility; /* unknown property attribute: VtextLoupeVisibility */
-@property NSUInteger insertionPointWidth; /* unknown property attribute: VinsertionPointWidth */
-@property(retain) UIColor *insertionPointColor; /* unknown property attribute: VinsertionPointColor */
-@property(getter=isSecureTextEntry) BOOL secureTextEntry; /* unknown property attribute: VsecureTextEntry */
-@property BOOL enablesReturnKeyAutomatically; /* unknown property attribute: VenablesReturnKeyAutomatically */
-@property NSInteger returnKeyType; /* unknown property attribute: VreturnKeyType */
-@property NSInteger keyboardAppearance; /* unknown property attribute: VkeyboardAppearance */
-@property NSInteger keyboardType; /* unknown property attribute: VkeyboardType */
-@property NSInteger autocorrectionType; /* unknown property attribute: VautocorrectionType */
-@property NSInteger autocapitalizationType; /* unknown property attribute: VautocapitalizationType */
+@property(retain) UIColor *insertionPointColor;
 @property __CFCharacterSet *textTrimmingSet;
+@property BOOL acceptsEmoji;
+@property NSInteger autocapitalizationType;
+@property NSInteger autocorrectionType;
+@property BOOL contentsIsSingleValue;
+@property BOOL enablesReturnKeyAutomatically;
+@property NSUInteger insertionPointWidth;
+@property NSInteger keyboardAppearance;
+@property NSInteger keyboardType;
+@property NSInteger returnKeyType;
+@property(getter=isSecureTextEntry) BOOL secureTextEntry;
+@property NSInteger textLoupeVisibility;
+@property NSInteger textSelectionBehavior;
 @property id textSuggestionDelegate;
 
 + (id)defaultTextInputTraits;

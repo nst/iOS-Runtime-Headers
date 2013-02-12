@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class ComposeRecipientView, NSArray, SearchShadowView, UIScroller, UITableView;
+@class ComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSNumber, SearchShadowView, UIScroller, UITableView;
 
-@interface CKRecipientSelectionView : UIView <UITableViewDataSource, UITableViewDelegate, CKOverlayViewProtocol> {
+@interface CKRecipientSelectionView : UIView <UITableViewDataSource, UITableViewDelegate, CKOverlayViewProtocol, MFContactsSearchConsumer> {
+    NSArray *_abProperties;
+    NSNumber *_currentSearchTaskID;
     id _delegate;
-    NSArray *_searchResults;
+    MFContactsSearchManager *_searchManager;
+    MFContactsSearchResultsModel *_searchResults;
     UITableView *_searchResultsTable;
     SearchShadowView *_shadowView;
     BOOL _showingSearchField;
@@ -14,14 +17,16 @@
     UIScroller *_toFieldScrollingView;
 }
 
-@property(getter=isShowingSearchField,readonly) BOOL showingSearchField; /* unknown property attribute: V_showingSearchField */
-@property id delegate; /* unknown property attribute: V_delegate */
+@property id delegate;
+@property(getter=isShowingSearchField,readonly) BOOL showingSearchField;
 
 - (void)_hideSearchField:(BOOL)arg1;
 - (void)_searchWithText:(id)arg1;
 - (void)_showSearchField:(BOOL)arg1;
 - (void)_updateContentSize;
+- (void)_updateShowingSearch;
 - (void)animationDidStop:(id)arg1;
+- (void)beganNetworkActivity;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
@@ -30,8 +35,12 @@
 - (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
+- (void)consumeSearchResults:(id)arg1 type:(NSInteger)arg2 taskID:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
+- (void)endedNetworkActivity;
+- (void)finishedSearchingForType:(NSInteger)arg1;
+- (void)finishedTaskWithID:(id)arg1;
 - (BOOL)hasText;
 - (float)heightWithoutSeparator;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ABProperties:(id)arg2;

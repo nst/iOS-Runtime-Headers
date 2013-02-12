@@ -31,6 +31,7 @@
 - (BOOL)supportsItemOperationsCommand;
 - (NSInteger)supportsMailboxSearch;
 - (BOOL)supportsSettingsCommand;
+- (BOOL)useBooleanFolderItemsSyncDeletesAsMoves;
 - (BOOL)usesAirSyncBaseNamespace;
 - (BOOL)versionChangeRequiresAccountUpgrade:(id)arg1;
 

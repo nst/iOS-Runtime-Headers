@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLVideoViewDelegate>, AVRemaker, MLPhotoBakedThumbnails, NSDictionary, NSMutableDictionary, NSString, NSTimer, PLCameraImage, PLImageTile, PLMoviePlayerController, PLVideoEditingOverlayView, UIButton, UIImageView, UIMovieScrubber;
+@class <PLVideoViewDelegate>, AVRemaker, MLPhoto, MLPhotoBakedThumbnails, NSArray, NSDictionary, NSMutableDictionary, NSString, NSTimer, PLImageTile, PLMoviePlayerController, PLVideoEditingOverlayView, UIButton, UIImageView, UIMovieScrubber;
 
 @interface PLVideoView : UIView <UIMovieScrubberDelegate, UIMovieScrubberDataSource, PLItemView> {
     unsigned int _didLayout : 1;
@@ -12,10 +12,12 @@
     unsigned int _playing : 1;
     unsigned int _editing : 1;
     unsigned int _canEdit : 1;
+    unsigned int _disableEditAfterTrim : 1;
     unsigned int _scrubbing : 1;
     unsigned int _scrubbingToRight : 1;
     unsigned int _showsPosterFrame : 1;
     unsigned int _deleteOriginalFile : 1;
+    unsigned int _passthroughTrimming : 1;
     unsigned int _preparingMoviePlayer : 1;
     unsigned int _didPrepareMoviePlayer : 1;
     unsigned int _canShowOverlay : 1;
@@ -28,19 +30,26 @@
     unsigned int _loadScrubberThumbnails : 1;
     unsigned int _loadMediaImmediately : 1;
     unsigned int _displayingToTVOut : 1;
+    unsigned int _videoIsLandscape : 1;
+    unsigned int _canCreateMetadata : 1;
+    unsigned int _createPreviewPosterFrame : 1;
     MLPhotoBakedThumbnails *_bakedLandscapeThumbnails;
     MLPhotoBakedThumbnails *_bakedPortraitThumbnails;
     NSMutableDictionary *_cachedThumbnails;
+    NSUInteger _currentThumbnailRequestID;
     <PLVideoViewDelegate> *_delegate;
     double _duration;
     PLImageTile *_imageTile;
     NSInteger _interfaceOrientation;
+    NSArray *_landscapeSummaryThumbnailTimestamps;
     double _lastActualValue;
     double _lastScrubbedValue;
     double _maximumTrimLength;
     PLMoviePlayerController *_moviePlayer;
     NSInteger _orientationWhenLastDisplayed;
+    NSArray *_portraitSummaryThumbnailTimestamps;
     UIImageView *_posterFrameView;
+    NSUInteger _previewFrameRequestID;
     float _progress;
     AVRemaker *_remaker;
     NSUInteger _scaleMode;
@@ -48,30 +57,33 @@
     UIImageView *_scrubberBackgroundView;
     NSTimer *_scrubberUpdateTimer;
     NSDictionary *_thumbnailOptionsDict;
+    NSMutableDictionary *_thumbnailRequests;
     NSInteger _timeOptions;
     PLVideoEditingOverlayView *_trimMessageView;
     struct { id x1; float x2; struct __CFArray {} *x3; float x4; } *_trimProgressStack;
     NSTimer *_trimProgressTimer;
     NSString *_trimmedPath;
-    PLCameraImage *_videoCameraImage;
+    MLPhoto *_videoCameraImage;
     UIButton *_videoOverlayPlayButton;
 }
 
-@property(readonly) NSInteger interfaceOrientation; /* unknown property attribute: V_interfaceOrientation */
 @property <PLVideoViewDelegate> *delegate;
 @property PLImageTile *imageTile;
 @property(readonly) UIView *previewImageView;
-@property(readonly) PLCameraImage *videoCameraImage;
+@property(readonly) MLPhoto *videoCameraImage;
 @property BOOL canEdit;
 @property(readonly) double duration;
 @property(getter=isEditing) BOOL editing;
 @property(readonly) double endTime;
+@property(readonly) NSInteger interfaceOrientation;
 @property BOOL isDisplayingToTVOut;
 @property BOOL loadMediaImmediately;
 @property BOOL showsPosterFrame;
 @property(readonly) double startTime;
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
+- (BOOL)_canCreateMetadata;
+- (BOOL)_canEditDuration:(double)arg1;
 - (void)_createScrubber:(BOOL)arg1;
 - (void)_didScrubToValue:(double)arg1 withHandle:(NSInteger)arg2;
 - (void)_fileGroupContentsDidChange:(id)arg1;
@@ -86,16 +98,20 @@
 - (void)_remakerDidFinish:(id)arg1;
 - (void)_removeScrubberUpdateTimer;
 - (void)_removeTrimProgressTimer;
+- (void)_requestPreviewPosterFrameForVideoSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_reset;
 - (void)_resetScrubberUpdateTimer;
 - (void)_resetTrimProgressTimer;
+- (void)_saveCachedThumbnailsIfNecessary;
+- (void)_savePreviewPosterFrameImage:(struct CGImage { }*)arg1;
 - (void)_scrubberAnimationFinished;
+- (float)_scrubberYOffsetForOrientation:(NSInteger)arg1;
 - (void)_setScaleModeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setZoomScale:(float)arg1 duration:(double)arg2;
 - (void)_showVideoOverlay;
 - (void)_thumbnailImageGenerationFailed:(id)arg1;
 - (void)_thumbnailImageWasGenerated:(id)arg1;
-- (void)_thumbnailsWereRegenerated;
+- (void)_thumbnailsWereRegenerated:(id)arg1 error:(id)arg2 contextInfo:(void*)arg3;
 - (void)_updatePosterContentMode;
 - (void)_updateScrubberValue;
 - (void)_updateScrubberVisibility:(BOOL)arg1;
@@ -113,6 +129,7 @@
 - (id)description;
 - (double)duration;
 - (double)endTime;
+- (void)handleDoubleTap;
 - (void)hideScrubberBackgroundViewWithDuration:(float)arg1;
 - (void)hideTrimMessage;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -167,15 +184,15 @@
 - (void)setShowsPosterFrame:(BOOL)arg1;
 - (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showScrubberBackgroundViewWithDuration:(float)arg1;
-- (void)showTrimMessageAboveEdge:(float)arg1;
+- (void)showTrimMessage:(id)arg1 withBottomY:(float)arg2;
 - (BOOL)showsPosterFrame;
 - (double)startTime;
 - (void)stop;
-- (void)toggleScaleMode:(BOOL)arg1;
+- (void)toggleScaleMode:(float)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)trimUsingMode:(NSInteger)arg1 passthrough:(BOOL)arg2;
+- (void)trimUsingMode:(NSInteger)arg1 passthrough:(BOOL)arg2 saveACopy:(BOOL)arg3;
 - (void)updateZoomScales;
 - (id)videoCameraImage;
 - (void)viewDidAppear;

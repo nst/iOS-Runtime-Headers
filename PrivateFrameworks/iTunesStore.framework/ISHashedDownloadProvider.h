@@ -23,11 +23,11 @@
     long long _validatedBytes;
 }
 
-@property long long validatedBytes; /* unknown property attribute: V_validatedBytes */
-@property long long streamedBytes; /* unknown property attribute: V_totalBytesWritten */
-@property long long numberOfBytesToHash; /* unknown property attribute: V_numberOfBytesToHash */
-@property(retain) NSString *localFilePath; /* unknown property attribute: V_localFilePath */
-@property(retain) NSArray *hashes; /* unknown property attribute: V_hashes */
+@property(retain) NSArray *hashes;
+@property(retain) NSString *localFilePath;
+@property long long numberOfBytesToHash;
+@property long long streamedBytes;
+@property long long validatedBytes;
 
 - (BOOL)_checkHashForByteCount:(long long)arg1;
 - (void)_closeFile;

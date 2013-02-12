@@ -10,9 +10,9 @@
     NSArray *_stores;
 }
 
-@property NSInteger expectedResultType; /* unknown property attribute: V_expectedResultType */
-@property(copy) NSNumber *status; /* unknown property attribute: V_status */
-@property(retain) NSArray *stores; /* unknown property attribute: V_stores */
+@property(copy) NSNumber *status;
+@property(retain) NSArray *stores;
+@property NSInteger expectedResultType;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

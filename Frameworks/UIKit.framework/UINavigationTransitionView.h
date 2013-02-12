@@ -9,11 +9,12 @@
     id _delegate;
     UIView *_firstResponderToRestore;
     UIView *_fromView;
+    float _fromViewAlpha;
     UIView *_toView;
     NSInteger _transition;
 }
 
-@property id delegate; /* unknown property attribute: V_delegate */
+@property id delegate;
 
 + (double)defaultDurationForTransition:(NSInteger)arg1;
 

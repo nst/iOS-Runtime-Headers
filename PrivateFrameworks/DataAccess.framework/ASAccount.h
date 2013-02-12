@@ -26,11 +26,11 @@
 + (id)defaultProperties;
 
 - (void*)_copyDefaultExchangeEventsCalendar:(BOOL)arg1;
-- (id)_createPolicyManager;
 - (id)_defaultMailFolderWithDefaultType:(NSInteger)arg1 fallbackType:(NSInteger)arg2 fallbackName:(id)arg3;
 - (void)_fillOutActionsArray:(id)arg1 responseArray:(id)arg2 withTask:(id)arg3 added:(id)arg4 removed:(id)arg5 modified:(id)arg6 addedResponse:(id)arg7 modifiedResponse:(id)arg8 removedResponse:(id)arg9 fetchedResponse:(id)arg10;
 - (id)_folderHierarchy;
 - (BOOL)_generateAutodiscoverURLsForEmailAddress:(id)arg1;
+- (id)_newPolicyManager;
 - (void)_removeInvitationsForMailboxFolderID:(id)arg1;
 - (BOOL)_shouldSaveLastKnownProtocolVersion;
 - (void)_startAutodiscoverTaskWithConsumer:(id)arg1;
@@ -51,7 +51,7 @@
 - (void)cancelTaskWithID:(NSInteger)arg1;
 - (void)checkValidityWithConsumer:(id)arg1;
 - (void)cleanupAccountFiles;
-- (BOOL)clearOutInviteWithDeliveryFolderId:(id)arg1 deliveryServerId:(id)arg2 wasSoftDelete:(BOOL)arg3;
+- (BOOL)clearOutInviteWithDeliveryFolderId:(id)arg1 deliveryServerId:(id)arg2 wasSoftDelete:(BOOL)arg3 withDBHelper:(id)arg4 considerInvitedToInvitations:(BOOL)arg5;
 - (id)consumerForTask:(id)arg1;
 - (id)contactsFolders;
 - (void)dealloc;

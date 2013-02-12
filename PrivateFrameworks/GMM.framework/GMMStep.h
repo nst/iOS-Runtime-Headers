@@ -42,54 +42,54 @@
     NSInteger _transitAgencyIndex;
 }
 
-@property(retain) NSString *deprecatedDuration; /* unknown property attribute: V_deprecatedDuration */
-@property(retain) NSString *deprecatedDistance; /* unknown property attribute: V_deprecatedDistance */
-@property(retain) NSMutableArray *stepCues; /* unknown property attribute: V_stepCues */
-@property(readonly) BOOL hasManeuverTurnNumber; /* unknown property attribute: V_hasManeuverTurnNumber */
-@property NSInteger maneuverTurnNumber; /* unknown property attribute: V_maneuverTurnNumber */
-@property(readonly) BOOL hasManeuverTurnSide; /* unknown property attribute: V_hasManeuverTurnSide */
-@property NSInteger maneuverTurnSide; /* unknown property attribute: V_maneuverTurnSide */
-@property(readonly) BOOL hasManeuverType; /* unknown property attribute: V_hasManeuverType */
-@property NSInteger maneuverType; /* unknown property attribute: V_maneuverType */
-@property(retain) NSMutableArray *notices; /* unknown property attribute: V_notices */
-@property(retain) NSMutableArray *alertIndexs; /* unknown property attribute: V_alertIndexs */
-@property(retain) NSString *streetViewPanoId; /* unknown property attribute: V_streetViewPanoId */
-@property(readonly) BOOL hasTransitAgencyIndex; /* unknown property attribute: V_hasTransitAgencyIndex */
-@property NSInteger transitAgencyIndex; /* unknown property attribute: V_transitAgencyIndex */
-@property(readonly) BOOL hasShowInInstructions; /* unknown property attribute: V_hasShowInInstructions */
-@property BOOL showInInstructions; /* unknown property attribute: V_showInInstructions */
-@property(retain) NSString *iconSummaryText; /* unknown property attribute: V_iconSummaryText */
-@property(readonly) BOOL hasIconId; /* unknown property attribute: V_hasIconId */
-@property long long iconId; /* unknown property attribute: V_iconId */
-@property(retain) NSString *direction; /* unknown property attribute: V_direction */
-@property(readonly) BOOL hasDepartureIntervalSeconds; /* unknown property attribute: V_hasDepartureIntervalSeconds */
-@property NSInteger departureIntervalSeconds; /* unknown property attribute: V_departureIntervalSeconds */
-@property(retain) GMMDateTime *arrivalDateTime; /* unknown property attribute: V_arrivalDateTime */
-@property(retain) GMMDateTime *departureDateTime; /* unknown property attribute: V_departureDateTime */
-@property(retain) NSString *arrivalAddress; /* unknown property attribute: V_arrivalAddress */
-@property(retain) NSString *departureAddress; /* unknown property attribute: V_departureAddress */
-@property(readonly) BOOL hasDeparturePointIndex; /* unknown property attribute: V_hasDeparturePointIndex */
-@property NSInteger departurePointIndex; /* unknown property attribute: V_departurePointIndex */
-@property(readonly) BOOL hasDurationSeconds; /* unknown property attribute: V_hasDurationSeconds */
-@property NSInteger durationSeconds; /* unknown property attribute: V_durationSeconds */
-@property(readonly) BOOL hasDistanceMeters; /* unknown property attribute: V_hasDistanceMeters */
-@property NSInteger distanceMeters; /* unknown property attribute: V_distanceMeters */
-@property(retain) NSString *instructions; /* unknown property attribute: V_instructions */
-@property(readonly) BOOL hasStepType; /* unknown property attribute: V_hasStepType */
-@property NSInteger stepType; /* unknown property attribute: V_stepType */
+@property(retain) NSMutableArray *alertIndexs;
+@property(retain) NSString *arrivalAddress;
+@property(retain) GMMDateTime *arrivalDateTime;
+@property(retain) NSString *departureAddress;
+@property(retain) GMMDateTime *departureDateTime;
+@property(retain) NSString *deprecatedDistance;
+@property(retain) NSString *deprecatedDuration;
+@property(retain) NSString *direction;
+@property(retain) NSString *iconSummaryText;
+@property(retain) NSString *instructions;
+@property(retain) NSMutableArray *notices;
+@property(retain) NSMutableArray *stepCues;
+@property(retain) NSString *streetViewPanoId;
 @property(readonly) NSInteger alertIndexsCount;
+@property NSInteger departureIntervalSeconds;
+@property NSInteger departurePointIndex;
+@property NSInteger distanceMeters;
+@property NSInteger durationSeconds;
 @property(readonly) BOOL hasArrivalAddress;
 @property(readonly) BOOL hasArrivalDateTime;
 @property(readonly) BOOL hasDepartureAddress;
 @property(readonly) BOOL hasDepartureDateTime;
+@property(readonly) BOOL hasDepartureIntervalSeconds;
+@property(readonly) BOOL hasDeparturePointIndex;
 @property(readonly) BOOL hasDeprecatedDistance;
 @property(readonly) BOOL hasDeprecatedDuration;
 @property(readonly) BOOL hasDirection;
+@property(readonly) BOOL hasDistanceMeters;
+@property(readonly) BOOL hasDurationSeconds;
+@property(readonly) BOOL hasIconId;
 @property(readonly) BOOL hasIconSummaryText;
 @property(readonly) BOOL hasInstructions;
+@property(readonly) BOOL hasManeuverTurnNumber;
+@property(readonly) BOOL hasManeuverTurnSide;
+@property(readonly) BOOL hasManeuverType;
+@property(readonly) BOOL hasShowInInstructions;
+@property(readonly) BOOL hasStepType;
 @property(readonly) BOOL hasStreetViewPanoId;
+@property(readonly) BOOL hasTransitAgencyIndex;
+@property long long iconId;
+@property NSInteger maneuverTurnNumber;
+@property NSInteger maneuverTurnSide;
+@property NSInteger maneuverType;
 @property(readonly) NSInteger noticesCount;
+@property BOOL showInInstructions;
 @property(readonly) NSInteger stepCuesCount;
+@property NSInteger stepType;
+@property NSInteger transitAgencyIndex;
 
 - (void)addAlertIndex:(NSInteger)arg1;
 - (void)addNotice:(id)arg1;
@@ -108,6 +108,7 @@
 - (id)deprecatedDuration;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)direction;
 - (NSInteger)distanceMeters;
 - (NSInteger)durationSeconds;

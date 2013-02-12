@@ -2,19 +2,20 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class ComposeRecipientAtom, NSArray, NSMutableArray, NSMutableDictionary, UIPushButton, UITextField;
+@class ComposeRecipientAtom, NSArray, NSMutableArray, NSMutableDictionary, UIImage, UIPushButton, UITextField;
 
 @interface ComposeRecipientView : MFComposeHeaderView <UITextFieldDelegate, ABPeoplePickerNavigationControllerDelegate> {
     UIPushButton *_addButton;
-    BOOL _allowsDuplicateEntries;
     NSMutableDictionary *_atoms;
     BOOL _becomingFirstResponder;
+    UIImage *_buttonImage;
     BOOL _editable;
     BOOL _ignoreFirstResponderChanges;
     NSInteger _maxRecipients;
     ComposeRecipientAtom *_opaqueTextAtom;
     BOOL _parentIsClosing;
     BOOL _picking;
+    UIImage *_pressedImage;
     NSArray *_properties;
     NSMutableArray *_recipients;
     UITextField *_textField;
@@ -55,7 +56,6 @@
 - (void)reflow;
 - (void)removeAddressAtIndex:(NSInteger)arg1;
 - (void)setAddresses:(id)arg1;
-- (void)setAllowsDuplicateEntries:(BOOL)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setIgnoreFirstResponderChanges:(BOOL)arg1;
 - (void)setLabel:(id)arg1;

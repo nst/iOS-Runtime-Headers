@@ -21,13 +21,13 @@
     float _yOffset;
 }
 
-@property CGPoint animationPoint; /* unknown property attribute: V_magnificationPoint */
-@property float yOffset; /* unknown property attribute: V_yOffset */
-@property CGPoint offset; /* unknown property attribute: V_offset */
-@property(retain) UIView<UITextSelectingContainer> *target; /* unknown property attribute: V_target */
+@property(retain) UIView<UITextSelectingContainer> *target;
+@property CGPoint animationPoint;
 @property CGPoint magnificationPoint;
+@property CGPoint offset;
 @property(readonly) CGPoint terminalPoint;
 @property(readonly) BOOL terminalPointPlacedCarefully;
+@property float yOffset;
 
 + (id)sharedCaretMagnifier;
 

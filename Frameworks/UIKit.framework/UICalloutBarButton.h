@@ -16,9 +16,9 @@
     BOOL m_single;
 }
 
-@property(readonly) float contentScale; /* unknown property attribute: Vm_contentScale */
-@property(readonly) float contentWidth; /* unknown property attribute: Vm_contentWidth */
-@property(readonly) SEL action; /* unknown property attribute: Vm_action */
+@property(readonly) SEL action;
+@property(readonly) float contentScale;
+@property(readonly) float contentWidth;
 
 + (id)buttonWithImage:(id)arg1 action:(SEL)arg2 inView:(id)arg3;
 + (id)buttonWithTitle:(id)arg1 action:(SEL)arg2 inView:(id)arg3;

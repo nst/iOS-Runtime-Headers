@@ -20,6 +20,8 @@
 - (id)artist;
 - (id)artwork;
 - (id)artworkDataForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)bpm;
+- (id)comments;
 - (id)commonProperties;
 - (id)composer;
 - (void)dealloc;
@@ -28,6 +30,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)episodeNumber;
 - (id)genre;
+- (id)globalID;
+- (id)grouping;
 - (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMLTrack:(id)arg1 prefetchProperties:(BOOL)arg2;
@@ -45,5 +49,6 @@
 - (id)seriesName;
 - (id)skipCount;
 - (id)title;
+- (id)year;
 
 @end

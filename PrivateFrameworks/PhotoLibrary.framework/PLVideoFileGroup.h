@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhoto, NSURL;
+@class MLPhoto, NSString, NSURL;
 
 @interface PLVideoFileGroup : NSObject {
     MLPhoto *_photo;
     NSURL *_url;
+    NSString *_videoPreviewFilePath;
 }
 
 - (void)dealloc;
@@ -24,5 +25,6 @@
 - (id)pathForTrimmedVideoFile;
 - (id)pathForVideoFile;
 - (id)pathForVideoPreviewFile;
+- (void)setVideoPreviewFilePath:(id)arg1;
 
 @end

@@ -25,6 +25,7 @@
 - (id)_createLabelForElement:(id)arg1 withText:(id)arg2;
 - (void)_didFinishLoadForFrame:(id)arg1;
 - (void)_injectScriptObjectsForWindow:(id)arg1;
+- (id)_localStoragePath;
 - (void)_positionView:(id)arg1 forWidget:(id)arg2;
 - (id)_webView;
 - (id)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
@@ -38,12 +39,12 @@
 - (void)scriptInterface:(id)arg1 parsedPropertyList:(id)arg2 ofType:(NSInteger)arg3;
 - (void)scriptInterface:(id)arg1 receivedEventOfType:(NSInteger)arg2 userInfo:(id)arg3;
 - (void)scriptInterface:(id)arg1 registeredNativeWidget:(id)arg2;
-- (void)scriptInterface:(id)arg1 registeredNavigationButton:(id)arg2;
 - (void)scriptInterface:(id)arg1 removedNativeWidgetWithIdentifier:(id)arg2;
 - (void)setOpenURLsExternally:(BOOL)arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)setSourceIsTrusted:(BOOL)arg1;
 - (BOOL)sourceIsTrusted;
+- (void)stopLoading;
 - (id)superviewForImageSheetForWebView:(id)arg1;
 - (id)title;
 

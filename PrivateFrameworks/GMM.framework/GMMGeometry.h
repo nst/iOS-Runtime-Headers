@@ -13,12 +13,11 @@
     NSInteger _type;
 }
 
-@property(retain) GMMEfficientMapPoint *efficientMapPoint; /* unknown property attribute: V_efficientMapPoint */
-@property(retain) GMMPixelPoint *pixelPoint; /* unknown property attribute: V_pixelPoint */
-@property(retain) GMMPolygon *polygon; /* unknown property attribute: V_polygon */
-@property(retain) GMMPolyLine *polyLine; /* unknown property attribute: V_polyLine */
-@property(retain) GMMMapPoint *mapPoint; /* unknown property attribute: V_mapPoint */
-@property NSInteger type; /* unknown property attribute: V_type */
+@property(retain) GMMEfficientMapPoint *efficientMapPoint;
+@property(retain) GMMMapPoint *mapPoint;
+@property(retain) GMMPixelPoint *pixelPoint;
+@property(retain) GMMPolyLine *polyLine;
+@property(retain) GMMPolygon *polygon;
 @property(readonly) ? coordinate;
 @property(readonly) BOOL hasCoordinate;
 @property(readonly) BOOL hasEfficientMapPoint;
@@ -28,11 +27,13 @@
 @property(readonly) BOOL hasPolygon;
 @property(readonly) NSInteger latitudeE6;
 @property(readonly) NSInteger longitudeE6;
+@property NSInteger type;
 
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)efficientMapPoint;
 - (BOOL)hasCoordinate;
 - (BOOL)hasEfficientMapPoint;
@@ -47,6 +48,7 @@
 - (NSInteger)longitudeE6;
 - (id)mapPoint;
 - (id)pixelPoint;
+- (id)pixelPointGeometry;
 - (id)polyLine;
 - (id)polygon;
 - (BOOL)readFrom:(id)arg1;

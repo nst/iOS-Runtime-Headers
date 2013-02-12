@@ -14,15 +14,15 @@
     CKService *_service;
 }
 
-@property(readonly) BOOL senderIsVoicemail; /* unknown property attribute: V_senderIsVoicemail */
-@property(readonly) BOOL foundABNameForSender; /* unknown property attribute: V_foundABNameForSender */
-@property NSInteger propertyType; /* unknown property attribute: V_propertyType */
-@property(readonly) void *abRecord; /* unknown property attribute: V_abRecord */
-@property NSInteger identifier; /* unknown property attribute: V_identifier */
-@property NSInteger addressBookUID; /* unknown property attribute: V_addressBookUID */
-@property(readonly) CKService *service; /* unknown property attribute: V_service */
+@property(readonly) void *abRecord;
 @property(readonly) NSString *name;
 @property(readonly) NSString *rawAddress;
+@property(readonly) CKService *service;
+@property NSInteger addressBookUID;
+@property(readonly) BOOL foundABNameForSender;
+@property NSInteger identifier;
+@property NSInteger propertyType;
+@property(readonly) BOOL senderIsVoicemail;
 
 - (id)_initWithService:(id)arg1;
 - (void*)abRecord;

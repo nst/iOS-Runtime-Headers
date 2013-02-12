@@ -32,6 +32,7 @@
 - (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
 - (void)invert;
 - (void)mf_fixupRFC2231Values;
+- (id)mf_objectForKey:(id)arg1 ofClass:(Class)arg2;
 - (void)removeAllObjects;
 - (void)removeKeysForObject:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;

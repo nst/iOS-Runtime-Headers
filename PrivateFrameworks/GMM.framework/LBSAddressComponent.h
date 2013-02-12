@@ -13,19 +13,20 @@
     NSInteger _type;
 }
 
-@property(retain) LBSAddressRange *range; /* unknown property attribute: V_range */
-@property(retain) LBSFeatureId *feature_id; /* unknown property attribute: V_feature_id */
-@property(readonly) BOOL hasFeature_type; /* unknown property attribute: V_hasFeature_type */
-@property NSInteger feature_type; /* unknown property attribute: V_feature_type */
-@property(retain) NSMutableArray *parsed_names; /* unknown property attribute: V_parsed_names */
-@property NSInteger type; /* unknown property attribute: V_type */
+@property(retain) LBSFeatureId *feature_id;
+@property(retain) NSMutableArray *parsed_names;
+@property(retain) LBSAddressRange *range;
+@property NSInteger feature_type;
 @property(readonly) BOOL hasFeature_id;
+@property(readonly) BOOL hasFeature_type;
 @property(readonly) BOOL hasRange;
 @property(readonly) NSInteger parsed_namesCount;
+@property NSInteger type;
 
 - (void)addParsed_name:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)feature_id;
 - (NSInteger)feature_type;
 - (BOOL)hasFeature_id;

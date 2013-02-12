@@ -11,10 +11,10 @@
     UIView *_pressedView;
 }
 
-@property(retain) UIView *pressedView; /* unknown property attribute: V_pressedView */
-@property(retain) UIImageView *imageView; /* unknown property attribute: V_imageView */
-@property(retain) UIView *popup; /* unknown property attribute: V_popup */
-@property(retain) UIKeyboardEmoji *emoji; /* unknown property attribute: V_emoji */
+@property(retain) UIKeyboardEmoji *emoji;
+@property(retain) UIImageView *imageView;
+@property(retain) UIView *popup;
+@property(retain) UIView *pressedView;
 
 + (id)emojiViewForEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (void)recycleEmojiView:(id)arg1;

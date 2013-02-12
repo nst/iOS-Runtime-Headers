@@ -19,7 +19,7 @@
     NSString *tag;
 }
 
-@property(retain) id streamConsumer; /* unknown property attribute: V_streamConsumer */
+@property(retain) id streamConsumer;
 
 - (void)actionFailed:(NSInteger)arg1 forTask:(id)arg2 error:(id)arg3;
 - (id)actionsConsumer;

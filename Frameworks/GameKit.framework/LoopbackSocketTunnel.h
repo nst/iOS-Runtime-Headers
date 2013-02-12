@@ -30,7 +30,7 @@
     } vtpSA;
 }
 
-@property NSObject *optionalArg; /* unknown property attribute: VoptionalArg */
+@property NSObject *optionalArg;
 
 - (void)getIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)getVTPIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
@@ -40,5 +40,6 @@
 - (NSInteger)serverLoopProc:(id)arg1;
 - (void)setOptionalArg:(id)arg1;
 - (void)setVTPIP:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
+- (void)shutdownSocket;
 
 @end

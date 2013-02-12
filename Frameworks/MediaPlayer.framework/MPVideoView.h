@@ -24,15 +24,15 @@
     CALayer *_videoBufferLayer;
 }
 
-@property double stopTime; /* unknown property attribute: V_stopTime */
-@property double startTime; /* unknown property attribute: V_startTime */
-@property CGSize subtitlesMargin; /* unknown property attribute: V_subtitlesMargin */
-@property NSUInteger effectiveScaleMode; /* unknown property attribute: V_effectiveScaleMode */
-@property NSUInteger scaleMode; /* unknown property attribute: V_scaleMode */
-@property(retain) NSString *movieTitle; /* unknown property attribute: V_movieTitle */
-@property(retain) NSString *movieSubtitle; /* unknown property attribute: V_movieSubtitle */
+@property(retain) NSString *movieSubtitle;
+@property(retain) NSString *movieTitle;
 @property(readonly) BOOL canChangeScaleMode;
+@property NSUInteger effectiveScaleMode;
 @property(readonly) CGRect movieFrame;
+@property NSUInteger scaleMode;
+@property double startTime;
+@property double stopTime;
+@property CGSize subtitlesMargin;
 @property CGSize subtitlesPadding;
 
 - (id)_avController;
@@ -88,6 +88,7 @@
 - (void)setRepeatGap:(double)arg1;
 - (void)setRepeatMode:(NSInteger)arg1;
 - (void)setScaleMode:(NSUInteger)arg1 animated:(BOOL)arg2;
+- (void)setScaleMode:(NSUInteger)arg1 duration:(float)arg2;
 - (void)setScaleMode:(NSUInteger)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;

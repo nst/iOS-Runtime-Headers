@@ -4,7 +4,7 @@
 
 @class NSTimer;
 
-@interface UIMotionEvent : UIEvent {
+@interface UIMotionEvent : UIInternalEvent {
     double _highLevelTime;
     NSUInteger _highPassStateIndex;
     float _highPassState[2];
@@ -19,12 +19,14 @@
     NSInteger _shakeState;
     NSInteger _stateMachineState;
     NSInteger _subtype;
+    NSInteger notifyToken;
 }
 
-@property NSInteger shakeState; /* unknown property attribute: V_shakeState */
+@property NSInteger shakeState;
 
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
 - (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 currentState:(NSInteger)arg3;
+- (void)_enablePeakDetectionIfNecessary;
 - (NSInteger)_feedStateMachine:(float)arg1 currentState:(NSInteger)arg2 timestamp:(double)arg3;
 - (float)_highPass:(float)arg1;
 - (void)_idleTimerFired;

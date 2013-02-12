@@ -18,8 +18,6 @@
     NSString *_path;
 }
 
-+ (id)calendarFromDictionaryRepresentation:(id)arg1 inAccount:(id)arg2;
-
 - (void)_dropCalStoreContext;
 - (id)_gatherModifiedEventsFromModifiedAlarmsInCalCalendar:(void*)arg1 inDatabase:(struct CalDatabase { }*)arg2;
 - (id)_gatherModifiedEventsFromModifiedAttendeesInCalCalendar:(void*)arg1 inDatabase:(struct CalDatabase { }*)arg2;
@@ -29,11 +27,11 @@
 - (id)addedEvents;
 - (void)clearEventChanges;
 - (id)color;
+- (id)ctag;
 - (void)dealloc;
 - (void)deleteCalendar;
 - (id)deletedEvents;
 - (id)description;
-- (id)dictionaryRepresentation;
 - (BOOL)enabled;
 - (void*)getCalCalendar;
 - (id)guid;
@@ -43,6 +41,7 @@
 - (id)path;
 - (void)setAccount:(id)arg1;
 - (void)setColor:(id)arg1;
+- (void)setCtag:(id)arg1;
 - (void)setDescription:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setGuid:(id)arg1;

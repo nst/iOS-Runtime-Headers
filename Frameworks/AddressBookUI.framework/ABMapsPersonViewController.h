@@ -9,11 +9,11 @@
     BOOL _showShareLocation;
 }
 
-@property BOOL shouldShowShareLocation; /* unknown property attribute: V_showShareLocation */
-@property BOOL shouldShowRemovePin; /* unknown property attribute: V_showRemovePin */
-@property BOOL shouldShowAddToBookmarks; /* unknown property attribute: V_showAddToBookmarks */
-@property BOOL shouldShowDirections; /* unknown property attribute: V_showDirections */
 @property <ABMapsPersonViewControllerDelegate> *mapsPersonViewControllerDelegate;
+@property BOOL shouldShowAddToBookmarks;
+@property BOOL shouldShowDirections;
+@property BOOL shouldShowRemovePin;
+@property BOOL shouldShowShareLocation;
 
 - (void)addToBookmarks:(id)arg1 identifier:(id)arg2;
 - (BOOL)allowsAddingToAddressBook;

@@ -12,7 +12,7 @@
     CKService *_service;
 }
 
-@property(readonly) CKService *service; /* unknown property attribute: V_service */
+@property(readonly) CKService *service;
 
 - (void)_addGroupToDeletionSchedule:(NSInteger)arg1;
 - (void)_conversationChanged;

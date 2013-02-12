@@ -7,7 +7,7 @@
     BOOL _updatingPolicy;
 }
 
-@property <ASPolicyManagerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <ASPolicyManagerDelegate> *delegate;
 
 - (id)currentPolicyKey;
 - (id)delegate;

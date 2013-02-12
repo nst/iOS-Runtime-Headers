@@ -8,7 +8,7 @@
     NSString *_classString;
 }
 
-@property(retain) NSString *classString; /* unknown property attribute: V_classString */
+@property(retain) NSString *classString;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

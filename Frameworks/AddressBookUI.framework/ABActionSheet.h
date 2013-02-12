@@ -8,7 +8,7 @@
     struct __CFArray { } *_tags;
 }
 
-@property void *ab_context; /* unknown property attribute: V_ab_context */
+@property void *ab_context;
 
 - (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3 tag2:(NSInteger)arg4;
 - (id)ab_addButtonWithTitle:(id)arg1 label:(id)arg2 tag:(NSInteger)arg3;

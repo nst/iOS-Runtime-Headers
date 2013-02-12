@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKMapViewDelegate><MKMapViewDelegatePrivate>, MKMapLevelView, MKMapViewPositioningChange, MKOverlayView, MKRouteLoader, MKRouteView, MKScrollView, MKSearchResult, NSArray, NSMutableArray, NSMutableSet, NSTimer, NSValue, UIImageView, UITextField, UIView;
+@class <MKMapViewDelegate><MKMapViewDelegatePrivate>, MKMapLevelView, MKMapView, MKMapViewPositioningChange, MKOverlayView, MKRouteLoader, MKRouteView, MKScrollView, MKSearchResult, NSArray, NSMutableArray, NSMutableSet, NSTimer, NSValue, UIImageView, UITextField, UIView;
 
 @interface MKMapViewInternal : NSObject <UITextFieldDelegate> {
     struct { 
@@ -76,6 +76,7 @@
     NSUInteger eventMode;
     NSUInteger eventModeHistory;
     struct __GSEvent { } *gestureChangedEvent;
+    BOOL hasUserSpecifiedZoomLevel;
     double heading;
     BOOL headingEnabled;
     BOOL headingSupported;
@@ -98,7 +99,9 @@
     NSValue *mouseDownWindowPoint;
     NSValue *mouseUpWindowPoint;
     BOOL needToShowRoute;
+    BOOL needsToCallDelegateForRegionChange;
     MKOverlayView *overlayView;
+    BOOL pansAndZoomsToRouteStep;
     BOOL persistFixedUserLocation;
     MKMapViewPositioningChange *positioningChange;
     NSTimer *positioningChangeTimer;
@@ -132,11 +135,13 @@
     NSUInteger suspendedEffectsCount;
     NSTimer *tapAndHoldTimer;
     float targetScale;
+    MKMapLevelView **terrainMapLevelViews;
     NSUInteger tileCount;
     NSTimer *tileExpirationTimer;
     BOOL trafficEnabled;
     NSInteger trafficStatus;
     BOOL useTargetScale;
+    MKMapView *view;
     } zoomCoordinate;
     BOOL zoomEnabled;
     } zoomEndCoordinate;
@@ -147,13 +152,23 @@
     NSMutableArray *zoomingLevelViews;
 }
 
-@property(retain) NSValue *mouseUpWindowPoint; /* unknown property attribute: VmouseUpWindowPoint */
-@property(retain) NSValue *mouseDownWindowPoint; /* unknown property attribute: VmouseDownWindowPoint */
+@property(retain) NSValue *mouseDownWindowPoint;
+@property(retain) NSValue *mouseUpWindowPoint;
 
+- (void)goToDefaultLocation;
 - (id)mouseDownWindowPoint;
 - (id)mouseUpWindowPoint;
+- (void)reachabilityChanged:(id)arg1;
+- (void)runPositioningChangeIfNeeded:(id)arg1;
+- (void)runPositioningChangeIfNeeded;
+- (void)scrollToUserLocation;
 - (void)setMouseDownWindowPoint:(id)arg1;
 - (void)setMouseUpWindowPoint:(id)arg1;
+- (void)showAccessories:(id)arg1;
+- (void)showAddedAnnotationsAndRouteAnimated;
+- (void)startEffects;
+- (void)stopHoverWithChange:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (void)updateExpiredTiles;
 
 @end

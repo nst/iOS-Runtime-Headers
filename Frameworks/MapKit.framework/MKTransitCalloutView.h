@@ -4,33 +4,31 @@
 
 @class UIImageView;
 
-@interface MKTransitCalloutView : MKAnnotationView {
-    NSInteger _calloutType;
+@interface MKTransitCalloutView : MKAnnotationView <MKOrientable> {
     UIImageView *_iconView;
+    NSInteger _orientation;
 }
 
-@property NSInteger calloutType; /* unknown property attribute: V_calloutType */
 @property(retain) UIImage *icon;
 @property(readonly) MKRouteStep *step;
+@property NSInteger _orientation;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bubbleFrameForOrigin:(struct CGPoint { float x1; float x2; })arg1 calloutType:(NSInteger)arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bubbleFrameForType:(NSInteger)arg1;
 + (id)_imageForType:(NSInteger)arg1;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bubbleFrameForMapPosition:(struct CGPoint { float x1; float x2; })arg1 calloutType:(NSInteger)arg2;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForMapPosition:(struct CGPoint { float x1; float x2; })arg1 calloutType:(NSInteger)arg2;
 
 - (NSInteger)_annotationViewType;
 - (void)_layoutIcon;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantRect;
+- (NSInteger)_orientation;
+- (NSUInteger)_orientationCount;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (void)_updateAnchorPoint;
 - (void)_updateCalloutOffset;
-- (NSInteger)calloutType;
 - (void)dealloc;
 - (id)icon;
 - (id)initWithStep:(id)arg1;
 - (id)rightCalloutAccessoryView;
-- (void)setCalloutType:(NSInteger)arg1;
 - (void)setIcon:(id)arg1;
+- (void)set_orientation:(NSInteger)arg1;
 - (id)step;
 
 @end

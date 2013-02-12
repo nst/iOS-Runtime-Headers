@@ -23,11 +23,11 @@
     float _velocity;
 }
 
-@property float scaleThreshold; /* unknown property attribute: V_scaleThreshold */
-@property(readonly) CGAffineTransform transform; /* unknown property attribute: V_transform */
 @property(readonly) CGPoint anchorPoint;
 @property(readonly) float scale;
+@property float scaleThreshold;
 @property(getter=isScrollViewGesture) BOOL scrollViewGesture;
+@property(readonly) CGAffineTransform transform;
 @property(readonly) float velocity;
 
 - (float)_distanceBetweenTouches:(id)arg1;

@@ -11,9 +11,9 @@
     NSString *_text;
 }
 
-@property(retain) UIImage *icon; /* unknown property attribute: V_icon */
-@property(copy) NSString *subtext; /* unknown property attribute: V_subtext */
-@property(copy) NSString *text; /* unknown property attribute: V_text */
+@property(retain) UIImage *icon;
+@property(copy) NSString *subtext;
+@property(copy) NSString *text;
 
 + (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (float)fixedHeight;

@@ -13,12 +13,12 @@
     double _yaw;
 }
 
-@property(readonly) UIColor *roadOverlayColor; /* unknown property attribute: V_roadOverlayColor */
-@property(readonly) double yaw; /* unknown property attribute: V_yaw */
-@property(readonly) NSString *streetRange; /* unknown property attribute: V_streetRange */
-@property(readonly) NSString *text; /* unknown property attribute: V_text */
-@property(readonly) NSString *panoramaID; /* unknown property attribute: V_panoramaID */
-@property NSInteger type; /* unknown property attribute: V_type */
+@property(readonly) NSString *panoramaID;
+@property(readonly) UIColor *roadOverlayColor;
+@property(readonly) NSString *streetRange;
+@property(readonly) NSString *text;
+@property NSInteger type;
+@property(readonly) double yaw;
 
 - (void)dealloc;
 - (id)description;

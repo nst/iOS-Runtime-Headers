@@ -9,9 +9,9 @@
     NSMutableDictionary *_properties;
 }
 
-@property(retain) NSArray *components; /* unknown property attribute: V_components */
 @property(retain) NSArray *attach;
 @property(retain) NSArray *attendee;
+@property(retain) NSArray *components;
 @property(retain) ICSDate *created;
 @property(retain) NSString *description;
 @property(retain) ICSDate *dtend;

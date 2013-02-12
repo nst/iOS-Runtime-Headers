@@ -12,7 +12,7 @@
     NSUInteger _size;
 }
 
-@property(readonly) NSUInteger count; /* unknown property attribute: V_count */
+@property(readonly) NSUInteger count;
 
 - (id)allObjects;
 - (unsigned long)count;

@@ -7,18 +7,23 @@
 @interface ABRingtoneManager : NSObject {
     NSDictionary *_additionalInformation;
     id _delegate;
+    NSDictionary *_iTunesRingtonesByIdentifier;
     NSDictionary *_identifierForPath;
     NSDictionary *_nameForIdentifier;
     NSDictionary *_pathForIdentifier;
     BOOL _showRingtones;
 }
 
++ (id)deviceITunesRingtoneDirectory;
 + (id)iTunesRingtoneDirectory;
 + (id)sharedRingtoneManager;
 + (id)systemAlarmSoundDirectory;
 + (id)systemRingtoneDirectory;
 + (id)userRingtoneDirectory;
 
+- (id)_copyITunesRingtonesFromManifestPath:(id)arg1 mediaDirectoryPath:(id)arg2;
+- (void)_deviceRingtonesChangedNotification;
+- (void)_reloadITunesRingtonesAfterExternalChange;
 - (id)copyIdentifierForRingtoneAtPath:(id)arg1 isValid:(BOOL*)arg2;
 - (id)copyNameOfRingtoneWithIdentifier:(id)arg1 isValid:(BOOL*)arg2;
 - (id)copyNameOfRingtoneWithIdentifier:(id)arg1;

@@ -12,15 +12,16 @@
     NSInteger _lineWidth;
 }
 
-@property(retain) NSData *line; /* unknown property attribute: V_line */
-@property(readonly) BOOL hasLineColor; /* unknown property attribute: V_hasLineColor */
-@property NSInteger lineColor; /* unknown property attribute: V_lineColor */
-@property(readonly) BOOL hasLineWidth; /* unknown property attribute: V_hasLineWidth */
-@property NSInteger lineWidth; /* unknown property attribute: V_lineWidth */
+@property(retain) NSData *line;
 @property(readonly) BOOL hasLine;
+@property(readonly) BOOL hasLineColor;
+@property(readonly) BOOL hasLineWidth;
+@property NSInteger lineColor;
+@property NSInteger lineWidth;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasLine;
 - (BOOL)hasLineColor;
 - (BOOL)hasLineWidth;

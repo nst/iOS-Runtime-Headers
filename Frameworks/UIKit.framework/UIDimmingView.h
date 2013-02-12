@@ -7,7 +7,7 @@
     struct CGGradient { } *_gradient;
 }
 
-@property id delegate; /* unknown property attribute: V_delegate */
+@property id delegate;
 
 + (id)dimmingViewForView:(id)arg1;
 

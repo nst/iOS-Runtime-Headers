@@ -19,9 +19,9 @@
     BOOL _viewTitle;
 }
 
-@property id delegate; /* unknown property attribute: V_delegate */
-@property(copy) NSString *title; /* unknown property attribute: V_title */
-@property(retain) CKConversation *conversation; /* unknown property attribute: V_conversation */
+@property(retain) CKConversation *conversation;
+@property(copy) NSString *title;
+@property id delegate;
 
 - (BOOL)_calcVals:(BOOL*)arg1;
 - (void)_finishProgress;

@@ -11,7 +11,7 @@
     NSUInteger totalCount;
 }
 
-@property(retain) NSDate *latestDateToAdd; /* unknown property attribute: VlatestDateToAdd */
+@property(retain) NSDate *latestDateToAdd;
 
 - (void)dealloc;
 - (BOOL)handleItems:(id)arg1;

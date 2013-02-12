@@ -15,7 +15,7 @@
             float width; 
             float height; 
         } size; 
-    struct $_157 { 
+    struct $_159 { 
         unsigned int _flags : 8; 
         unsigned int _pathState : 2; 
         unsigned int _unused : 22; 

@@ -8,7 +8,7 @@
     NSArray *_emailAddresses;
 }
 
-@property(retain) NSArray *emailAddresses; /* unknown property attribute: V_emailAddresses */
+@property(retain) NSArray *emailAddresses;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

@@ -12,9 +12,9 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property unsigned long long itemIdentifier; /* unknown property attribute: V_itemIdentifier */
-@property NSInteger assetType; /* unknown property attribute: V_assetType */
+@property(retain) NSURL *url;
+@property NSInteger assetType;
+@property unsigned long long itemIdentifier;
 
 - (void)_cancel;
 - (void)_fetchReviewInfo;

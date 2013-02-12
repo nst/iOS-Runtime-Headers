@@ -10,11 +10,11 @@
     NSInteger _status;
 }
 
-@property(retain) NSMutableArray *deviceLocations; /* unknown property attribute: V_deviceLocations */
-@property(retain) LBSGLocation *location; /* unknown property attribute: V_location */
-@property NSInteger status; /* unknown property attribute: V_status */
+@property(retain) NSMutableArray *deviceLocations;
+@property(retain) LBSGLocation *location;
 @property(readonly) NSInteger deviceLocationsCount;
 @property(readonly) BOOL hasLocation;
+@property NSInteger status;
 
 - (void)addDeviceLocation:(id)arg1;
 - (void)dealloc;

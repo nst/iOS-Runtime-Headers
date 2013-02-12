@@ -36,12 +36,14 @@
     NSUInteger _pid;
     NSUInteger _port;
     <GKSessionPrivateDelegate> *_privateDelegate;
+    NSInteger _sReset;
     struct _DNSServiceRef_t { } *_service;
     struct _DNSServiceRef_t { } *_serviceBrowser;
     GKSession *_session;
     BOOL _sessionStarted;
     BOOL _shutdown;
     BOOL _stopHandlingEvents;
+    BOOL _wifiEnabled;
     struct OpaqueAGPSession { } *agpSessionRef;
     double disconnectTimeout;
     NSString *displayName;
@@ -52,22 +54,23 @@
     struct OpaqueGCKSession { } *sessionRef;
 }
 
-@property(readonly) NSInteger sessionMode; /* unknown property attribute: V_mode */
-@property(readonly) NSString *sessionID; /* unknown property attribute: VsessionID */
-@property <GKSessionPrivateDelegate> *privateDelegate; /* unknown property attribute: V_privateDelegate */
-@property id dataReceiveHandler; /* unknown property attribute: V_dataReceiveHandler */
-@property NSUInteger port; /* unknown property attribute: V_port */
-@property OpaqueAGPSession *agpSessionRef; /* unknown property attribute: VagpSessionRef */
-@property OpaqueGCKSession *sessionRef; /* unknown property attribute: VsessionRef */
-@property <GKSessionDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property NSUInteger maxPeers; /* unknown property attribute: VmaxPeers */
-@property(retain) NSString *serviceType; /* unknown property attribute: VserviceType */
-@property(retain) NSString *domain; /* unknown property attribute: Vdomain */
+@property OpaqueAGPSession *agpSessionRef;
+@property <GKSessionDelegate> *delegate;
 @property(readonly) NSString *displayName;
+@property(retain) NSString *domain;
 @property(readonly) NSString *peerID;
+@property <GKSessionPrivateDelegate> *privateDelegate;
+@property(retain) NSString *serviceType;
+@property(readonly) NSString *sessionID;
+@property OpaqueGCKSession *sessionRef;
 @property(getter=isAvailable) BOOL available;
 @property(getter=isBusy) BOOL busy;
+@property id dataReceiveHandler;
 @property double disconnectTimeout;
+@property NSUInteger maxPeers;
+@property NSUInteger port;
+@property(readonly) NSInteger sessionMode;
+@property BOOL wifiEnabled;
 
 - (BOOL)acceptConnectionFromPeer:(id)arg1 error:(id*)arg2;
 - (struct OpaqueAGPSession { }*)agpSessionRef;
@@ -84,7 +87,7 @@
 - (void)denyConnectionFromPeer:(id)arg1;
 - (id)description;
 - (void)didFindService:(const char *)arg1 fromIF:(const char *)arg2 withError:(NSInteger)arg3 moreComing:(BOOL)arg4;
-- (void)didLookupHostname:(struct _DNSServiceRef_t { }*)arg1 forPeer:(id)arg2 hostName:(const char *)arg3 address:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { NSUInteger x_4_1_1; } x4; BOOL x5[8]; }*)arg4 withError:(NSInteger)arg5 moreComing:(BOOL)arg6;
+- (void)didLookupHostname:(struct _DNSServiceRef_t { }*)arg1 forPeer:(id)arg2 hostName:(const char *)arg3 address:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { NSUInteger x_4_1_1; } x4; BOOL x5[8]; }*)arg4 interface:(NSUInteger)arg5 withError:(NSInteger)arg6 moreComing:(BOOL)arg7;
 - (void)didPublishWithError:(NSInteger)arg1;
 - (void)didRemoveService:(const char *)arg1 fromIF:(const char *)arg2 withError:(NSInteger)arg3 moreComing:(BOOL)arg4;
 - (void)didResolveService:(struct _DNSServiceRef_t { }*)arg1 forPeer:(id)arg2 hostName:(const char *)arg3 port:(unsigned short)arg4 interface:(NSUInteger)arg5 txtLen:(unsigned short)arg6 txtRecord:(const void*)arg7 withError:(NSInteger)arg8 moreComing:(BOOL)arg9;
@@ -135,6 +138,7 @@
 - (void)setPrivateDelegate:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setSessionRef:(struct OpaqueGCKSession { }*)arg1;
+- (void)setWifiEnabled:(BOOL)arg1;
 - (void)stopOldService;
 - (void)stopResolvingAllPeers;
 - (void)tellDelegate_connectionRequestToPeerFailed:(id)arg1;
@@ -150,5 +154,6 @@
 - (void)timeoutConnectToPeer:(id)arg1;
 - (BOOL)tryConnectToPeer:(id)arg1;
 - (void)unlock;
+- (BOOL)wifiEnabled;
 
 @end

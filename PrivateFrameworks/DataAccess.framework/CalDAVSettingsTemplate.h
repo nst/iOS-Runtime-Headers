@@ -16,17 +16,17 @@
     NSString *primaryUsernameDomain;
 }
 
-@property(retain) NSString *pathFormat; /* unknown property attribute: VpathFormat */
-@property NSInteger httpsPort; /* unknown property attribute: VhttpsPort */
-@property NSInteger httpPort; /* unknown property attribute: VhttpPort */
-@property(retain) NSString *primaryUsernameDomain; /* unknown property attribute: VprimaryUsernameDomain */
-@property(retain) NSArray *domainAliasPatterns; /* unknown property attribute: VdomainAliasPatterns */
-@property(retain) NSString *primaryDomain; /* unknown property attribute: VprimaryDomain */
-@property NSInteger order; /* unknown property attribute: Vorder */
-@property(retain) NSString *name; /* unknown property attribute: Vname */
 @property(readonly) NSString *defaultScheme;
+@property(retain) NSArray *domainAliasPatterns;
+@property(retain) NSString *name;
+@property(retain) NSString *pathFormat;
+@property(retain) NSString *primaryDomain;
+@property(retain) NSString *primaryUsernameDomain;
 @property(readonly) NSInteger defaultPort;
 @property(readonly) BOOL defaultUseSSL;
+@property NSInteger httpPort;
+@property NSInteger httpsPort;
+@property NSInteger order;
 
 + (id)appleTemplate;
 + (id)calendarServerTemplate;

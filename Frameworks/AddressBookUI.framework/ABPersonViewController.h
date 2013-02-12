@@ -13,10 +13,9 @@
     <ABPersonViewControllerDelegate> *_personViewDelegate;
 }
 
-@property BOOL allowsActions; /* unknown property attribute: V_allowsActions */
-@property BOOL allowsDeletion; /* unknown property attribute: V_allowsDeletion */
 @property void *addressBook;
 @property(copy) NSString *attribution;
+@property(retain) UIView *customMessageView;
 @property void *displayedPerson;
 @property(copy) NSArray *displayedProperties;
 @property(copy) NSString *message;
@@ -29,8 +28,10 @@
 @property <ABPersonViewControllerDelegate> *personViewDelegate;
 @property(copy) NSString *shareMessageBody;
 @property(copy) NSString *shareMessageSubject;
+@property BOOL allowsActions;
 @property BOOL allowsAddToFavorites;
 @property BOOL allowsCancel;
+@property BOOL allowsDeletion;
 @property BOOL allowsEditing;
 @property BOOL allowsRingtone;
 @property BOOL shareMessageBodyIsHTML;
@@ -52,6 +53,7 @@
 - (BOOL)allowsEditing;
 - (BOOL)allowsRingtone;
 - (id)attribution;
+- (id)customMessageView;
 - (void)dealloc;
 - (void*)displayedPerson;
 - (id)displayedProperties;
@@ -77,6 +79,7 @@
 - (void)setAllowsRingtone:(BOOL)arg1;
 - (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setAttribution:(id)arg1;
+- (void)setCustomMessageView:(id)arg1;
 - (void)setDates:(id)arg1 withMessageFormat:(id)arg2;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setDisplayedProperties:(id)arg1;

@@ -8,7 +8,7 @@
     <MPSwipableViewDelegate> *_swipeDelegate;
 }
 
-@property <MPSwipableViewDelegate> *swipeDelegate; /* unknown property attribute: V_swipeDelegate */
+@property <MPSwipableViewDelegate> *swipeDelegate;
 
 - (void)_swipeGestureRecognized:(id)arg1;
 - (void)_tapGestureRecognized:(id)arg1;

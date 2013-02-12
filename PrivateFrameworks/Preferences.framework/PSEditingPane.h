@@ -32,6 +32,7 @@
 - (void)setPreferenceSpecifier:(id)arg1;
 - (void)setPreferenceValue:(id)arg1;
 - (id)specifierLabel;
+- (void)viewDidBecomeVisible;
 - (BOOL)wantsNewButton;
 
 @end

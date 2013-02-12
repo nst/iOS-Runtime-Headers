@@ -10,9 +10,9 @@
     double _stopTime;
 }
 
-@property double stopTime; /* unknown property attribute: V_stopTime */
-@property double startTime; /* unknown property attribute: V_startTime */
-@property(retain) NSString *path; /* unknown property attribute: V_path */
+@property(retain) NSString *path;
+@property double startTime;
+@property double stopTime;
 
 - (void)dealloc;
 - (id)path;

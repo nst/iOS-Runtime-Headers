@@ -21,13 +21,13 @@
     NSInteger m_writingDirection;
 }
 
-@property BOOL containsEnd; /* unknown property attribute: Vm_containsEnd */
-@property BOOL containsStart; /* unknown property attribute: Vm_containsStart */
-@property BOOL isLastOnLine; /* unknown property attribute: Vm_isLastOnLine */
-@property BOOL isFirstOnLine; /* unknown property attribute: Vm_isFirstOnLine */
-@property BOOL isLineBreak; /* unknown property attribute: Vm_isLineBreak */
-@property NSInteger writingDirection; /* unknown property attribute: Vm_writingDirection */
-@property CGRect rect; /* unknown property attribute: Vm_rect */
+@property BOOL containsEnd;
+@property BOOL containsStart;
+@property BOOL isFirstOnLine;
+@property BOOL isLastOnLine;
+@property BOOL isLineBreak;
+@property CGRect rect;
+@property NSInteger writingDirection;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endEdge:(id)arg1;
 + (id)selectionRect;

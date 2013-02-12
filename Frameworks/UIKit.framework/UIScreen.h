@@ -15,8 +15,8 @@
     } _bounds;
 }
 
-@property(readonly) CGRect bounds; /* unknown property attribute: V_bounds */
 @property(readonly) CGRect applicationFrame;
+@property(readonly) CGRect bounds;
 
 + (id)mainScreen;
 

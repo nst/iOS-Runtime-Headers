@@ -11,7 +11,7 @@
     <STEmpedLinkingManagerDelegate> *_delegate;
 }
 
-@property <STEmpedLinkingManagerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <STEmpedLinkingManagerDelegate> *delegate;
 
 + (void)_startLinking;
 + (void)_startRemoteLinking;

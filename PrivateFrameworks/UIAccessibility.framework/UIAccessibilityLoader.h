@@ -11,5 +11,6 @@
 + (id)_axBundleForBundle:(id)arg1;
 + (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2 forceLoad:(BOOL)arg3;
 + (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2;
++ (void)initialize;
 
 @end

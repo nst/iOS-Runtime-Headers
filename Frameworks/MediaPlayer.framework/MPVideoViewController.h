@@ -28,12 +28,8 @@
     NSUInteger _visibleParts;
 }
 
-@property(retain) UIColor *backstopColor; /* unknown property attribute: V_backstopColor */
-@property NSUInteger visibleParts; /* unknown property attribute: V_visibleParts */
-@property NSUInteger scaleMode; /* unknown property attribute: V_scaleMode */
-@property NSUInteger disabledParts; /* unknown property attribute: V_disabledParts */
-@property NSUInteger desiredParts; /* unknown property attribute: V_desiredParts */
 @property(readonly) UIView *backgroundView;
+@property(retain) UIColor *backstopColor;
 @property(retain,readonly) MPVideoView *videoView;
 @property BOOL TVOutEnabled;
 @property BOOL allowsDetailScrubbing;
@@ -41,10 +37,14 @@
 @property BOOL canAnimateControlsOverlay;
 @property(readonly) BOOL canChangeScaleMode;
 @property BOOL canShowControlsOverlay;
+@property NSUInteger desiredParts;
 @property BOOL disableControlsAutohide;
+@property NSUInteger disabledParts;
 @property BOOL displayPlaybackErrorAlerts;
 @property BOOL ownsStatusBar;
+@property NSUInteger scaleMode;
 @property(readonly) BOOL viewControllerWillRequestExit;
+@property NSUInteger visibleParts;
 
 + (BOOL)isPlayingToTVOut;
 + (id)sharedVideoView:(BOOL)arg1;
@@ -55,12 +55,14 @@
 - (void)_delayedUpdateBackgroundView;
 - (void)_hideLoadingForStateChange:(id)arg1;
 - (void)_hideLoadingIndicator;
+- (void)_itemDurationDidChange:(id)arg1;
 - (void)_popForTimeJump:(id)arg1;
 - (void)_scheduleLoadingIndicatorIfNeeded;
 - (void)_tvOutCapabilityChangedNotification;
 - (void)_updateAlwaysPlayWheneverPossible;
 - (void)_updateBackgroundView:(BOOL)arg1;
 - (void)_updateIdleTimerDisabledFromPlaybackState:(NSUInteger)arg1;
+- (void)_updateProgressControlForItem:(id)arg1;
 - (void)_videoVideo_batteryStateDidChangeNotification:(id)arg1;
 - (void)_videoView_effectiveScaleModeChangedNotification:(id)arg1;
 - (void)_videoView_playbackErrorNotification:(id)arg1;
@@ -68,10 +70,12 @@
 - (void)_videoView_resumeEventsOnlyNotification:(id)arg1;
 - (void)_videoView_scaleModeChangedNotification:(id)arg1;
 - (void)_videoView_sizeChangedNotification:(id)arg1;
+- (void)_videoView_timedImageMetadataAvailableNotification:(id)arg1;
 - (void)_videoView_validityChangedNotification:(id)arg1;
 - (BOOL)allowsDetailScrubbing;
 - (BOOL)attemptAutoPlayWhenControlsHidden;
 - (id)backgroundView;
+- (void)backgroundViewDidUpdate;
 - (id)backstopColor;
 - (BOOL)canAnimateControlsOverlay;
 - (BOOL)canChangeScaleMode;

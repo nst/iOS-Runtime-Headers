@@ -25,6 +25,7 @@
 - (void)_notifyFullMessageLoadFailed;
 - (void)_notifyInitialLoadComplete;
 - (void)abortAttachmentLoad:(id)arg1 pluginClient:(id)arg2;
+- (id)attachments;
 - (void)cancelLoad;
 - (id)content;
 - (NSUInteger)contentOffset;

@@ -17,16 +17,16 @@
     NSString *_serialNumber;
 }
 
-@property <EAAccessoryDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property NSDictionary *protocols; /* unknown property attribute: V_protocols */
-@property(copy) NSString *hardwareRevision; /* unknown property attribute: V_hardwareRevision */
-@property(copy) NSString *firmwareRevision; /* unknown property attribute: V_firmwareRevision */
-@property(copy) NSString *serialNumber; /* unknown property attribute: V_serialNumber */
-@property(copy) NSString *modelNumber; /* unknown property attribute: V_modelNumber */
-@property(copy) NSString *name; /* unknown property attribute: V_name */
-@property(copy) NSString *manufacturer; /* unknown property attribute: V_manufacturer */
-@property NSUInteger connectionID; /* unknown property attribute: V_connectionID */
-@property BOOL connected; /* unknown property attribute: V_connected */
+@property <EAAccessoryDelegate> *delegate;
+@property(copy) NSString *firmwareRevision;
+@property(copy) NSString *hardwareRevision;
+@property(copy) NSString *manufacturer;
+@property(copy) NSString *modelNumber;
+@property(copy) NSString *name;
+@property NSDictionary *protocols;
+@property(copy) NSString *serialNumber;
+@property BOOL connected;
+@property NSUInteger connectionID;
 
 - (BOOL)connected;
 - (NSUInteger)connectionID;

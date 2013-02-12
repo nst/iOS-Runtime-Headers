@@ -2,55 +2,66 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSString, NSURL;
+@class NSArray, NSNumber, NSString, NSURL;
 
 @interface ISMutableDownloadMetadata : ISDownloadMetadata <NSCoding> {
+    NSString *_artistName;
     BOOL _artworkIsPrerendered;
     NSString *_bundleID;
     NSURL *_displayableArtworkURL;
     NSString *_downloadKey;
+    NSNumber *_durationInMS;
+    NSString *_genre;
     BOOL _isRental;
     unsigned long long _itemIdentifier;
     NSString *_kind;
     NSString *_playlistName;
     unsigned long long _preOrderIdentifier;
     NSArray *_sinfs;
-    NSString *_subtitle;
     NSString *_title;
     NSString *_transactionID;
 }
 
-@property(retain) NSString *transactionID; /* unknown property attribute: V_transactionID */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(retain) NSString *subtitle; /* unknown property attribute: V_subtitle */
-@property(retain) NSArray *sinfs; /* unknown property attribute: V_sinfs */
-@property(getter=isRental) BOOL rental; /* unknown property attribute: V_isRental */
-@property unsigned long long preOrderIdentifier; /* unknown property attribute: V_preOrderIdentifier */
-@property(retain) NSString *playlistName; /* unknown property attribute: V_playlistName */
-@property(retain) NSString *kind; /* unknown property attribute: V_kind */
-@property unsigned long long itemIdentifier; /* unknown property attribute: V_itemIdentifier */
-@property(retain) NSString *downloadKey; /* unknown property attribute: V_downloadKey */
-@property(retain) NSURL *displayableArtworkURL; /* unknown property attribute: V_displayableArtworkURL */
-@property(retain) NSString *bundleID; /* unknown property attribute: V_bundleID */
-@property BOOL artworkIsPrerendered; /* unknown property attribute: V_artworkIsPrerendered */
+@property(retain) NSString *artistName;
+@property(retain) NSString *bundleID;
 @property(retain) NSDictionary *dictionary;
+@property(retain) NSURL *displayableArtworkURL;
+@property(retain) NSString *downloadKey;
+@property(retain) NSNumber *durationInMS;
+@property(retain) NSString *genre;
+@property(retain) NSString *kind;
+@property(retain) NSString *playlistName;
+@property(retain) NSArray *sinfs;
+@property(retain) NSString *subtitle;
+@property(retain) NSString *title;
+@property(retain) NSString *transactionID;
+@property BOOL artworkIsPrerendered;
+@property unsigned long long itemIdentifier;
+@property unsigned long long preOrderIdentifier;
+@property(getter=isRental) BOOL rental;
 
+- (id)artistName;
 - (BOOL)artworkIsPrerendered;
 - (id)bundleID;
 - (void)dealloc;
 - (id)displayableArtworkURL;
 - (id)downloadKey;
+- (id)durationInMS;
 - (void)encodeWithCoder:(id)arg1;
+- (id)genre;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isRental;
 - (unsigned long long)itemIdentifier;
 - (id)kind;
 - (id)playlistName;
 - (unsigned long long)preOrderIdentifier;
+- (void)setArtistName:(id)arg1;
 - (void)setArtworkIsPrerendered:(BOOL)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setDisplayableArtworkURL:(id)arg1;
 - (void)setDownloadKey:(id)arg1;
+- (void)setDurationInMS:(id)arg1;
+- (void)setGenre:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setKind:(id)arg1;
 - (void)setPlaylistName:(id)arg1;
@@ -61,7 +72,6 @@
 - (void)setTitle:(id)arg1;
 - (void)setTransactionID:(id)arg1;
 - (id)sinfs;
-- (id)subtitle;
 - (id)title;
 - (id)transactionID;
 

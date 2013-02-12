@@ -18,7 +18,7 @@
     id _uiController;
 }
 
-@property <PLPhotoScrollerViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <PLPhotoScrollerViewControllerDelegate> *delegate;
 @property BOOL canShowCopyCallout;
 @property NSUInteger visibleItemIndex;
 

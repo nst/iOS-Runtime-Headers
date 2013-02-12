@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
  */
 
-@class BluetoothAudioJack, NSMutableDictionary;
+@class NSMutableDictionary;
 
 @interface BluetoothManager : NSObject {
     struct BTAccessoryManagerImpl { } *_accessoryManager;
     BOOL _audioConnected;
-    BluetoothAudioJack *_audioJack;
     NSMutableDictionary *_btAddrDict;
     NSMutableDictionary *_btDeviceDict;
     NSInteger _connectedState;
     struct BTDiscoveryAgentImpl { } *_discoveryAgent;
+    BOOL _enableAVRCPSkip;
     struct BTLocalDeviceImpl { } *_localDevice;
     struct BTPairingAgentImpl { } *_pairingAgent;
     BOOL _pairingEnabled;
@@ -19,6 +19,8 @@
     BOOL _scanningEnabled;
     struct BTSessionImpl { } *_session;
 }
+
+@property(readonly) BOOL enableAVRCPSkip;
 
 + (void)initialize;
 + (NSInteger)lastInitError;
@@ -39,20 +41,16 @@
 - (id)addDeviceIfNeeded:(struct BTDeviceImpl { }*)arg1;
 - (BOOL)airplaneMode;
 - (BOOL)audioConnected;
-- (id)audioJack;
-- (BOOL)canBeConnected;
 - (void)cancelPairing;
 - (void)cleanup;
 - (void)connectDevice:(id)arg1;
-- (void)connectVisualVoicemailAudio;
 - (BOOL)connectable;
-- (id)connectableDevices;
 - (BOOL)connected;
 - (id)connectingDevices;
 - (void)dealloc;
 - (BOOL)devicePairingEnabled;
 - (BOOL)deviceScanningEnabled;
-- (void)disconnectVisualVoicemailAudio;
+- (BOOL)enableAVRCPSkip;
 - (void)enableTestMode;
 - (BOOL)enabled;
 - (void)endVoiceCommand:(id)arg1;

@@ -23,6 +23,7 @@
 - (id)_deliveryAccountCreateIfNeeded:(BOOL)arg1;
 - (BOOL)_isOurConnection:(id)arg1;
 - (void)_removeCredential:(id)arg1;
+- (id)_specialMailboxUidWithType:(NSInteger)arg1 create:(BOOL)arg2;
 - (BOOL)archiveSentMessages;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
@@ -34,9 +35,7 @@
 - (NSInteger)emptyFrequencyForMailboxType:(NSInteger)arg1;
 - (BOOL)enableAccount;
 - (id)hostname;
-- (id)mailboxUidOfType:(NSInteger)arg1 createIfNeeded:(BOOL)arg2;
 - (id)password;
-- (id)primaryMailboxUid;
 - (BOOL)shouldEnableAfterError:(id)arg1;
 - (BOOL)xListSupportedOnConnection:(id)arg1;
 

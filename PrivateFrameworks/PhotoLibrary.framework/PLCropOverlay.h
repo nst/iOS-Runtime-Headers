@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCropLCDLayer, PLCropOverlayBottomBar, PLCropOverlayCropView, PLToolbar, TPBottomDualButtonBar, TPCameraPushButton, TPPushButton, UIImageView, UIProgressHUD;
+@class PLCropLCDLayer, PLCropOverlayBottomBar, PLCropOverlayCropView, PLToolbar, TPBottomDualButtonBar, TPCameraPushButton, TPPushButton, UIImageView, UIProgressHUD, UIView;
 
 @interface PLCropOverlay : UIView {
     struct CGRect { 
@@ -18,6 +18,7 @@
     unsigned int _offsetStatusBar : 1;
     unsigned int _tookPhoto : 1;
     unsigned int _showsCropRegion : 1;
+    unsigned int _controlsAreVisible : 1;
     PLCropOverlayBottomBar *_bottomBar;
     TPPushButton *_cancelButton;
     } _cropRect;
@@ -30,6 +31,8 @@
     NSInteger _mode;
     TPCameraPushButton *_okButton;
     TPBottomDualButtonBar *_oldBottomBar;
+    UIView *_overlayContainerView;
+    UIImageView *_shadowView;
     float _statusBarHeight;
 }
 
@@ -44,6 +47,7 @@
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(NSInteger)arg4;
 - (id)bottomBar;
 - (void)cancelButtonClicked:(id)arg1;
+- (BOOL)controlsAreVisible;
 - (void)cropOverlayBottomBarCancelButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarDoneButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarPauseButtonClicked:(id)arg1;
@@ -65,8 +69,10 @@
 - (NSInteger)mode;
 - (id)modeSwitch;
 - (void)okButtonClicked:(id)arg1;
+- (id)overlayContainerView;
 - (void)removeProgress;
 - (void)setCancelButtonTitle:(id)arg1;
+- (void)setControlsAreVisible:(BOOL)arg1;
 - (void)setCropRectVisible:(BOOL)arg1 duration:(float)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
@@ -74,6 +80,7 @@
 - (void)setOKButtonColor:(NSInteger)arg1;
 - (void)setOKButtonShowsCamera:(BOOL)arg1;
 - (void)setOKButtonTitle:(id)arg1;
+- (void)setOverlayContainerView:(id)arg1;
 - (void)setProgressDone;
 - (void)setShowProgress:(BOOL)arg1 title:(id)arg2;
 - (void)setShowsCropRegion:(BOOL)arg1;

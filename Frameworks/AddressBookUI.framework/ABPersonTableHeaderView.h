@@ -12,19 +12,21 @@
     void *_person;
 }
 
-@property(retain) UIView *extraHeaderView; /* unknown property attribute: V_extraHeaderView */
-@property <ABPersonTableHeaderViewDelegateProtocol> *delegate; /* unknown property attribute: V_delegate */
-@property(readonly) ABPersonImageView *imageView; /* unknown property attribute: V_imageView */
-@property(readonly) ABCardNameControl *nameView; /* unknown property attribute: V_nameView */
-@property void *person; /* unknown property attribute: V_person */
 @property(copy) NSString *alternateName;
+@property(retain) UIView *customMessageView;
+@property <ABPersonTableHeaderViewDelegateProtocol> *delegate;
+@property(retain) UIView *extraHeaderView;
+@property(readonly) ABPersonImageView *imageView;
 @property(copy) NSString *message;
 @property(copy) NSString *messageDetail;
 @property(retain) UIFont *messageDetailFont;
 @property(retain) UIFont *messageFont;
+@property(readonly) ABCardNameControl *nameView;
+@property void *person;
 
 - (id)alternateName;
 - (id)createDateMessageStringFromDates:(id)arg1 withMessageFormat:(id)arg2;
+- (id)customMessageView;
 - (void)dealloc;
 - (id)delegate;
 - (void)deselectAnimated:(BOOL)arg1;
@@ -43,7 +45,9 @@
 - (void*)person;
 - (void)reloadImageData;
 - (void)reloadNameDataAnimated:(BOOL)arg1;
+- (void)setAllowsEditing:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;
+- (void)setCustomMessageView:(id)arg1;
 - (void)setDates:(id)arg1 withMessageFormat:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

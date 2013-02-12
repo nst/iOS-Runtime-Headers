@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
-@interface SUArtworkCellConfiguration : SUArrayCellConfiguration <ISURLOperationDelegate> {
+@interface SUArtworkCellConfiguration : SUArrayCellConfiguration <ISStoreURLOperationDelegate> {
     NSMutableDictionary *_artworkByURL;
     NSMutableArray *_artworkLoadOperations;
 }

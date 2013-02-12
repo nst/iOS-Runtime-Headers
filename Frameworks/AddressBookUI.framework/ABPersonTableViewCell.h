@@ -16,12 +16,12 @@
     UILabel *_valueTextLabel;
 }
 
-@property(getter=isImportant) BOOL important; /* unknown property attribute: V_important */
-@property(getter=isEmphasized) BOOL emphasized; /* unknown property attribute: V_emphasized */
-@property NSInteger property; /* unknown property attribute: V_property */
-@property(getter=isFavorite) BOOL favorite; /* unknown property attribute: V_favorite */
-@property(copy) NSString *valueText; /* unknown property attribute: V_valueText */
-@property(copy) NSString *labelText; /* unknown property attribute: V_labelText */
+@property(copy) NSString *labelText;
+@property(copy) NSString *valueText;
+@property(getter=isEmphasized) BOOL emphasized;
+@property(getter=isFavorite) BOOL favorite;
+@property(getter=isImportant) BOOL important;
+@property NSInteger property;
 
 + (BOOL)isMultiLineProperty:(NSInteger)arg1;
 

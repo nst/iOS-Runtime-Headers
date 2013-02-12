@@ -8,7 +8,7 @@
     UIWebDocumentView *_documentView;
 }
 
-@property UIWebDocumentView *documentView; /* unknown property attribute: V_documentView */
+@property UIWebDocumentView *documentView;
 
 - (id)documentView;
 - (void)setDocumentView:(id)arg1;

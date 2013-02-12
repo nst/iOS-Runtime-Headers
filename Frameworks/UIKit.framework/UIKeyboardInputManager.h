@@ -61,6 +61,7 @@
 - (id)setInputObject:(id)arg1;
 - (void)setKeyboardMatchType:(NSInteger)arg1;
 - (void)setPhraseBoundary:(NSUInteger)arg1;
+- (void)setShallowPrediction:(BOOL)arg1;
 - (void)setShift:(BOOL)arg1;
 - (id)shadowTyping;
 - (BOOL)shouldExtendPriorWord;

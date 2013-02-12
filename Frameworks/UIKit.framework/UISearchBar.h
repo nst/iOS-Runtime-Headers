@@ -36,12 +36,12 @@
     UIColor *_tintColor;
 }
 
-@property(retain) UIColor *tintColor; /* unknown property attribute: V_tintColor */
-@property <UISearchBarDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <UISearchBarDelegate> *delegate;
 @property(copy) NSString *placeholder;
 @property(copy) NSString *prompt;
 @property(copy) NSArray *scopeButtonTitles;
 @property(copy) NSString *text;
+@property(retain) UIColor *tintColor;
 @property NSInteger autocapitalizationType;
 @property NSInteger autocorrectionType;
 @property NSInteger barStyle;
@@ -94,6 +94,7 @@
 - (BOOL)isTranslucent;
 - (NSInteger)keyboardType;
 - (void)layoutSubviews;
+- (void)movedToSuperview:(id)arg1;
 - (id)placeholder;
 - (id)prompt;
 - (BOOL)resignFirstResponder;
@@ -133,5 +134,6 @@
 - (BOOL)textFieldShouldEndEditing:(id)arg1;
 - (id)tintColor;
 - (BOOL)usesEmbeddedAppearance;
+- (void)willMoveToSuperview:(id)arg1;
 
 @end

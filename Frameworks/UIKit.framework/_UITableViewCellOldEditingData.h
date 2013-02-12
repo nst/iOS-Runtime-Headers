@@ -10,8 +10,8 @@
     UIView *_separator;
 }
 
-@property(retain) UIView *separatorView; /* unknown property attribute: V_separator */
-@property(retain) UIControl *reorderControl; /* unknown property attribute: V_grabber */
+@property(retain) UIControl *reorderControl;
+@property(retain) UIView *separatorView;
 
 - (BOOL)dataRequired;
 - (void)dealloc;

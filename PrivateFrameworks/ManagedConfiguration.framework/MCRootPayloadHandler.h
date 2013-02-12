@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface MCRootPayloadHandler : MCPayloadHandler {
     BOOL _isEncrypted;
     BOOL _isSpecialProfileType;
     NSMutableArray *_payloads;
+    NSString *_productBuildVersion;
+    NSString *_productVersion;
 }
+
+@property(readonly) NSString *productBuildVersion;
+@property(readonly) NSString *productVersion;
 
 + (void)initialize;
 + (BOOL)isContainer;
@@ -27,6 +32,8 @@
 - (void)neuteredPayloadDictionaryCopy:(id)arg1;
 - (id)payloads;
 - (id)performInstallStep:(NSInteger)arg1 withRoot:(id)arg2 truth:(id)arg3;
+- (id)productBuildVersion;
+- (id)productVersion;
 - (id)reEnrollErrorString;
 - (id)reEnrollInfoString;
 - (id)removalPassword;

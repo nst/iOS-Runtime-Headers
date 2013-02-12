@@ -44,8 +44,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)hopFinished:(id)arg1;
-- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
-- (void)iTunesSyncRequestedStart;
+- (void)iTunesSyncPhaseDidFinish:(NSInteger)arg1 reason:(NSInteger)arg2;
+- (void)iTunesSyncPhaseWillStart:(NSInteger)arg1;
 - (BOOL)imageViewIsDisplayingLandscape:(id)arg1;
 - (void)imageWasSelected:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -63,7 +63,6 @@
 - (void)setShowCamera:(BOOL)arg1;
 - (BOOL)showCamera;
 - (void)showCropUI;
-- (void)syncingHasBeenUnblockedBySB;
 - (void)willHide;
 - (void)willStartGesture:(NSInteger)arg1 inView:(id)arg2 forEvent:(struct __GSEvent { }*)arg3;
 

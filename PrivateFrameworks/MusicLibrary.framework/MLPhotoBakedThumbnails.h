@@ -7,6 +7,7 @@
 @interface MLPhotoBakedThumbnails : NSObject {
     NSInteger _count;
     NSInteger _format;
+    BOOL _isAlbumVideo;
     NSMutableDictionary *_options;
     BOOL _optionsAccessed;
     NSInteger _singleThumbnailImageLength;
@@ -21,7 +22,9 @@
 @property(readonly) CGRect imageRect;
 @property(readonly) CGSize size;
 
++ (BOOL)saveBakedThumbnailsOfAlbumVideoImages:(id)arg1 toFile:(id)arg2 format:(NSInteger)arg3 orientation:(NSInteger*)arg4 options:(id)arg5 delegate:(id)arg6;
 + (BOOL)saveBakedThumbnailsOfImages:(id)arg1 toFile:(id)arg2 format:(NSInteger)arg3 orientation:(NSInteger*)arg4 options:(id)arg5 delegate:(id)arg6;
++ (id)thumbnailsForAlbumVideo:(id)arg1 format:(NSInteger)arg2;
 + (id)thumbnailsWithContentsOfFile:(id)arg1 format:(NSInteger)arg2;
 
 - (NSUInteger)bitmapInfo;
@@ -30,9 +33,12 @@
 - (NSInteger)count;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
+- (id)initWithAlbumVideo:(id)arg1 format:(NSInteger)arg2;
+- (id)initWithAlbumVideoImages:(id)arg1 format:(NSInteger)arg2 orientation:(NSInteger*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (id)initWithContentsOfFile:(id)arg1 format:(NSInteger)arg2;
 - (id)initWithImages:(id)arg1 format:(NSInteger)arg2 orientation:(NSInteger*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (id)options;
+- (BOOL)saveToAlbumVideoFile:(id)arg1;
 - (BOOL)saveToFile:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (char *)thumbnailBytesAtIndex:(NSInteger)arg1;

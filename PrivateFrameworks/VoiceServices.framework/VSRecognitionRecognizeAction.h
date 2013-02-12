@@ -9,6 +9,7 @@
         unsigned int debugDumpEnabled : 1; 
         unsigned int preferredEngine : 2; 
         unsigned int resetEngine : 1; 
+        unsigned int bluetoothAllowed : 1; 
         unsigned int hasStarted : 1; 
     NSString *_audioInputPath;
     NSString *_debugDumpPath;
@@ -31,6 +32,7 @@
 - (void)_handledThreadedResults:(id)arg1 nextAction:(id)arg2;
 - (BOOL)_hasDeferredStartCallback;
 - (float)_inputLevel;
+- (BOOL)_isActivelyRecognizing;
 - (BOOL)_isRecognizing;
 - (id)_keywordAtIndex:(NSInteger)arg1;
 - (NSInteger)_keywordCount;
@@ -39,6 +41,7 @@
 - (void)_releaseFromPrepare;
 - (void)_reset;
 - (BOOL)_setAudioInputPath:(id)arg1;
+- (BOOL)_setBluetoothInputAllowed:(BOOL)arg1;
 - (BOOL)_setDebugDumpEnabled:(BOOL)arg1 dumpPath:(id)arg2;
 - (BOOL)_setDebugDumpEnabled:(BOOL)arg1;
 - (BOOL)_setDebugDumpPath:(id)arg1;

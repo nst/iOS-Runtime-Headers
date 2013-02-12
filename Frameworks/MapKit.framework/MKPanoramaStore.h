@@ -11,9 +11,9 @@
     NSUInteger _maxByteCapacity;
 }
 
-@property NSUInteger maxByteCapacity; /* unknown property attribute: V_maxByteCapacity */
-@property <MKPanoramaStoreDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <MKPanoramaStoreDelegate> *delegate;
 @property(readonly) NSUInteger count;
+@property NSUInteger maxByteCapacity;
 
 + (id)sharedStore;
 

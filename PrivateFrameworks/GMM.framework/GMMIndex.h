@@ -7,11 +7,12 @@
     NSInteger _tileYIndex;
 }
 
-@property NSInteger tileYIndex; /* unknown property attribute: V_tileYIndex */
-@property NSInteger tileXIndex; /* unknown property attribute: V_tileXIndex */
+@property NSInteger tileXIndex;
+@property NSInteger tileYIndex;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setTileXIndex:(NSInteger)arg1;

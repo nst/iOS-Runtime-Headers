@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLHeading, CLLocation, CLLocationManager, MKRouteStep, MKTripRecorder, NSDictionary, NSMutableArray, NSMutableSet, NSString, NSTimer;
+@class CLHeading, CLLocation, CLLocationManager, GMMLocationShiftRequester, MKLocationShiftFunction, MKRouteStep, MKTripRecorder, NSDictionary, NSHashTable, NSMutableArray, NSString, NSTimer;
 
-@interface MKLocationManager : NSObject <CLLocationManagerDelegate> {
+@interface MKLocationManager : NSObject <CLLocationManagerDelegateInternal, PBRequesterDelegate> {
     double _GPSStartTime;
     double _applicationResumeTime;
     double _applicationSuspendTime;
     double _calculatingLocationStartTime;
+    BOOL _chinaShiftEnabled;
     CLLocationManager *_clLocationManager;
     NSTimer *_coalesceTimer;
     NSTimer *_delayedDeliveryTimer;
@@ -24,9 +25,11 @@
     NSDictionary *_lastLocationSourceInfo;
     double _lastLocationUpdateTime;
     double _locationAccuracyUpdateTime;
-    NSMutableSet *_locationObservers;
+    NSHashTable *_locationObservers;
     MKTripRecorder *_recorder;
     MKRouteStep *_routeStep;
+    MKLocationShiftFunction *_shiftFunction;
+    GMMLocationShiftRequester *_shiftFunctionRequester;
     BOOL _shouldThrottleHeading;
     BOOL _trackingHeading;
     BOOL _trackingLocation;
@@ -36,35 +39,39 @@
     BOOL _usesRouteCorrection;
 }
 
-@property(retain) id headingObserver; /* unknown property attribute: V_headingObserver */
-@property(readonly) CLHeading *heading; /* unknown property attribute: V_heading */
-@property BOOL shouldThrottleHeading; /* unknown property attribute: V_shouldThrottleHeading */
-@property BOOL usesRouteCorrection; /* unknown property attribute: V_usesRouteCorrection */
-@property(retain) MKRouteStep *routeStep; /* unknown property attribute: V_routeStep */
-@property(readonly) BOOL isLocationServicesDenied; /* unknown property attribute: V_isLocationServicesDenied */
-@property(readonly) BOOL isLastLocationRouteCorrected; /* unknown property attribute: V_isLastLocationRouteCorrected */
-@property(retain) NSMutableArray *tripPaths; /* unknown property attribute: V_tripPaths */
-@property(retain) NSString *tripPath; /* unknown property attribute: V_tripPath */
-@property double userLocationCacheDuration; /* unknown property attribute: V_userLocationCacheDuration */
-@property(readonly) BOOL isLastLocationStale; /* unknown property attribute: V_isLastLocationStale */
-@property double expectedTimeTillNextUpdate; /* unknown property attribute: V_expectedTimeTillNextUpdate */
+@property(readonly) CLHeading *heading;
 @property(readonly) CLLocation *lastLocation;
 @property(readonly) NSDictionary *lastLocationSourceInfo;
+@property(retain) MKRouteStep *routeStep;
+@property(retain) MKLocationShiftFunction *shiftFunction;
+@property(retain) GMMLocationShiftRequester *shiftFunctionRequester;
+@property(retain) NSString *tripPath;
+@property(retain) NSMutableArray *tripPaths;
 @property(readonly) double accuracy;
+@property BOOL chinaShiftEnabled;
+@property double expectedTimeTillNextUpdate;
 @property(readonly) BOOL hasHiFiCapability;
 @property(readonly) BOOL hasLocation;
-@property(readonly) double headingUpdateDuration;
+@property id headingObserver;
+@property(readonly) double headingUpdateTimeInterval;
 @property(readonly) BOOL isHeadingServicesAvailable;
+@property(readonly) BOOL isLastLocationRouteCorrected;
+@property(readonly) BOOL isLastLocationStale;
 @property(readonly) BOOL isLocationServicesApproved;
 @property(readonly) BOOL isLocationServicesAvailable;
+@property(readonly) BOOL isLocationServicesDenied;
 @property(readonly) BOOL isLocationServicesEnabled;
 @property(readonly) NSInteger lastLocationSource;
 @property(readonly) CGPoint longLat;
+@property BOOL shouldThrottleHeading;
+@property double userLocationCacheDuration;
+@property BOOL usesRouteCorrection;
 
 + (NSInteger)locationMKLocationSourceFromSupportInfo:(id)arg1;
 + (id)sharedLocationManager;
 + (id)supportInfoFromLocationMKLocationSource:(NSInteger)arg1;
 
+- (id)_applyChinaLocationShift:(id)arg1 supportInfo:(id)arg2;
 - (BOOL)_isTimeToResetOnResume;
 - (void)_reportHeadingFailureWithError:(id)arg1;
 - (void)_reportHeadingSuccess;
@@ -82,6 +89,7 @@
 - (void)applicationResumed:(id)arg1;
 - (void)applicationSuspended:(id)arg1;
 - (NSInteger)bestLocationSource;
+- (BOOL)chinaShiftEnabled;
 - (id)clLocationManager;
 - (void)dampenGPSLocationAccuracy:(id*)arg1 oldLocationSource:(NSInteger)arg2;
 - (BOOL)displayCoreLocationStats;
@@ -90,7 +98,7 @@
 - (BOOL)hasLocation;
 - (id)heading;
 - (id)headingObserver;
-- (double)headingUpdateDuration;
+- (double)headingUpdateTimeInterval;
 - (id)init;
 - (BOOL)isGPSWarmingUp;
 - (BOOL)isHeadingServicesAvailable;
@@ -112,8 +120,13 @@
 - (struct CGPoint { float x1; float x2; })longLat;
 - (void)reportCoalescedUpdated;
 - (void)repostLastKnownLocation;
+- (void)requestShiftFunctionForLocation:(id)arg1 supportInfo:(id)arg2 wrap:(BOOL)arg3;
+- (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
+- (void)requesterDidFinish:(id)arg1;
 - (void)reset;
 - (id)routeStep;
+- (void)setChinaShiftEnabled:(BOOL)arg1;
 - (void)setClLocationManager:(id)arg1;
 - (void)setCoalesceTimer:(id)arg1;
 - (void)setExpectedTimeTillNextUpdate:(double)arg1;
@@ -122,11 +135,15 @@
 - (void)setLastLocation:(id)arg1;
 - (void)setLastLocationSourceInfo:(id)arg1;
 - (void)setRouteStep:(id)arg1;
+- (void)setShiftFunction:(id)arg1;
+- (void)setShiftFunctionRequester:(id)arg1;
 - (void)setShouldThrottleHeading:(BOOL)arg1;
 - (void)setTripPath:(id)arg1;
 - (void)setTripPaths:(id)arg1;
 - (void)setUserLocationCacheDuration:(double)arg1;
 - (void)setUsesRouteCorrection:(BOOL)arg1;
+- (id)shiftFunction;
+- (id)shiftFunctionRequester;
 - (BOOL)shouldCoalesceUpdates;
 - (BOOL)shouldStartCoalescingLocation:(id)arg1 supportInfo:(id)arg2;
 - (BOOL)shouldStopCoalescingLocation:(id)arg1 supportInfo:(id)arg2;

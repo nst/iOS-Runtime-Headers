@@ -46,9 +46,6 @@
 + (id)preFillForm:(id)arg1 inFrame:(id)arg2;
 + (void)preFillInWebFrame:(id)arg1;
 + (BOOL)previousDataCompletionEnabled;
-+ (void)setAddressBookCompletionEnabled:(BOOL)arg1;
-+ (void)setPasswordCompletionEnabled:(BOOL)arg1;
-+ (void)setPreviousDataCompletionEnabled:(BOOL)arg1;
 + (BOOL)shouldSaveFormData;
 + (BOOL)shouldSaveUsernamesAndPasswords;
 

@@ -33,6 +33,7 @@
 + (id)saslProfileName;
 
 - (id)_URLScheme;
+- (void)_apsDeviceTokenChanged:(id)arg1;
 - (id)_apsTopic;
 - (void)_backgroundReleaseAllConnections:(id)arg1;
 - (BOOL)_canReceiveNewMailNotifications;

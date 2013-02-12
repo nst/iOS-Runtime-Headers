@@ -13,13 +13,13 @@
     NSString *_title;
 }
 
-@property(readonly) NSInteger chapterProperty; /* unknown property attribute: V_chapterProperty */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property double time; /* unknown property attribute: V_time */
-@property(retain) id thumbnail; /* unknown property attribute: V_thumbnail */
-@property NSUInteger index; /* unknown property attribute: V_index */
-@property double duration; /* unknown property attribute: V_duration */
+@property(retain) NSString *title;
+@property(readonly) NSInteger chapterProperty;
 @property(readonly) double comparableTime;
+@property double duration;
+@property NSUInteger index;
+@property(retain) id thumbnail;
+@property double time;
 
 - (NSInteger)chapterProperty;
 - (double)comparableTime;

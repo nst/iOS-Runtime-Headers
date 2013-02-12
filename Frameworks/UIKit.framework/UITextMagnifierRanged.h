@@ -25,10 +25,10 @@
     UITextMagnifierTimeWeightedPoint *_weightedPoint;
 }
 
-@property CGPoint offset; /* unknown property attribute: V_offset */
-@property CGPoint animationPoint; /* unknown property attribute: V_animationPoint */
-@property(retain) UIView<UITextSelectingContainer> *target; /* unknown property attribute: V_target */
+@property(retain) UIView<UITextSelectingContainer> *target;
+@property CGPoint animationPoint;
 @property CGPoint magnificationPoint;
+@property CGPoint offset;
 @property(readonly) CGPoint terminalPoint;
 @property(readonly) BOOL terminalPointPlacedCarefully;
 

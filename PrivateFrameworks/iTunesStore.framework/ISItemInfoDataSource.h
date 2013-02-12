@@ -9,6 +9,7 @@
 
 - (id)createInfoForType:(NSUInteger)arg1 withDictionary:(id)arg2;
 - (NSInteger)displayTypeForString:(id)arg1;
+- (NSUInteger)itemTypeForString:(id)arg1 info:(id)arg2;
 - (NSUInteger)itemTypeFromDictionary:(id)arg1;
 - (NSUInteger)pageTypeFromDictionary:(id)arg1;
 - (id)pageTypeStringFromDictionary:(id)arg1;

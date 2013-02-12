@@ -8,7 +8,9 @@
     NSOutputStream *_stream;
 }
 
-@property(retain) NSOutputStream *stream; /* unknown property attribute: V_stream */
+@property(retain) NSOutputStream *stream;
+
++ (id)writeProtoBuffers:(id)arg1 toFile:(id)arg2;
 
 - (void)dealloc;
 - (id)initWithOutputStream:(id)arg1;

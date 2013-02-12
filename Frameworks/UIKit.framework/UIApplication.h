@@ -47,12 +47,17 @@
         unsigned int userDefaultsSyncDisabled : 1; 
         unsigned int doubleHeightMode : 4; 
         unsigned int headsetButtonClickCount : 4; 
+        unsigned int isHeadsetButtonDown : 1; 
+        unsigned int isFastForwardActive : 1; 
+        unsigned int isRewindActive : 1; 
         unsigned int disableViewGroupOpacity : 1; 
         unsigned int disableViewEdgeAntialiasing : 1; 
         unsigned int shakeToEdit : 1; 
-        unsigned int editWindowIsVisible : 1; 
+        unsigned int ignoreHeadsetClicks : 1; 
     } _applicationFlags;
     <UIApplicationDelegate> *_delegate;
+    id _editAlertView;
+    UIEvent *_event;
     NSMutableSet *_exclusiveTouchWindows;
     NSTimer *_hideNetworkActivityIndicatorTimer;
     UIEvent *_motionEvent;
@@ -116,6 +121,7 @@
 - (void)_dumpScreenContents:(struct __GSEvent { }*)arg1;
 - (void)_dumpUIHierarchy:(struct __GSEvent { }*)arg1;
 - (void)_endShowingNetworkActivityIndicator;
+- (id)_event;
 - (id)_exclusiveTouchWindows;
 - (void)_fetchInfoPlistFlags;
 - (void)_finishedSettingStatusBarMode:(NSInteger)arg1 oldMode:(NSInteger)arg2 newOrientation:(NSInteger)arg3 oldOrientation:(NSInteger)arg4;
@@ -125,6 +131,7 @@
 - (void)_handleAccessoryKeyStateChanged:(struct __GSEvent { }*)arg1;
 - (void)_handleHeadsetButtonClick;
 - (void)_handleHeadsetButtonDoubleClick;
+- (void)_handleHeadsetButtonDown:(struct __GSEvent { }*)arg1;
 - (void)_handleHeadsetButtonTripleClick;
 - (void)_handleHeadsetButtonUp:(struct __GSEvent { }*)arg1;
 - (void)_handleUserDefaultsDidChange:(id)arg1;
@@ -133,6 +140,7 @@
 - (BOOL)_isActivated;
 - (BOOL)_isInteractionEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_isLaunchedSuspended;
+- (BOOL)_isSimulatorMotionEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_isTouchEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_isTrackingAnyTouch;
 - (BOOL)_isViewEdgeAntialiasingDisabled;
@@ -151,6 +159,7 @@
 - (void)_prepareToSetStatusBarMode:(NSInteger)arg1 orientation:(NSInteger)arg2 duration:(float)arg3;
 - (void)_processScriptEvent:(struct __GSEvent { }*)arg1;
 - (void)_purgeSharedInstances;
+- (struct __CFMessagePort { }*)_purplePPTServerPort;
 - (void)_receivedMemoryNotification;
 - (void)_registerForAlertItemStateChangeNotification;
 - (void)_registerForDisplayOnOff;
@@ -175,6 +184,7 @@
 - (void)_setDelegate:(id)arg1 assumeOwnership:(BOOL)arg2;
 - (void)_setDoubleHeightMode:(NSInteger)arg1;
 - (void)_setHandlingURL:(BOOL)arg1 url:(id)arg2;
+- (void)_setIgnoreHeadsetClicks:(BOOL)arg1;
 - (void)_setStatusBarMode:(NSInteger)arg1;
 - (void)_setStatusBarShowsProgress:(BOOL)arg1;
 - (void)_setStatusBarStyle:(NSInteger)arg1 orientation:(NSInteger)arg2 animated:(BOOL)arg3;
@@ -185,6 +195,7 @@
 - (void)_setUserDefaultsSyncEnabled:(BOOL)arg1;
 - (void)_sheetWithRemoteIdentifierDidDismiss:(id)arg1;
 - (BOOL)_shouldHandleTestURL:(id)arg1;
+- (BOOL)_shouldIgnoreHeadsetClicks;
 - (void)_showEditAlertView;
 - (void)_startPlaybackTimer;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_statusBarFrameForMode:(NSInteger)arg1 orientation:(NSInteger)arg2;
@@ -214,6 +225,7 @@
 - (void)addWebClipToHomeScreen:(id)arg1;
 - (NSInteger)alertOrientation;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)anotherApplicationFinishedLaunching:(struct __GSEvent { }*)arg1;
 - (void)applicationDidBeginSuspendAnimation;
@@ -261,17 +273,19 @@
 - (void)endIgnoringInteractionEvents;
 - (void)endRemoteSheet:(id)arg1 returnCode:(NSInteger)arg2;
 - (void)endRemoteSheet:(id)arg1;
-- (BOOL)enterAccountFlowWithURL:(id)arg1 style:(NSInteger)arg2 continuationData:(id)arg3;
+- (BOOL)enterAccountFlowWithURL:(id)arg1 style:(NSInteger)arg2 queryStringDictionary:(id)arg3;
 - (void)failedTest:(id)arg1;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (void)finishedTest:(id)arg1;
 - (BOOL)firstLaunchAfterBoot;
-- (BOOL)gotoStoreURL:(id)arg1 withAuthentication:(BOOL)arg2;
+- (BOOL)gotoStoreURL:(id)arg1 needsAuthentication:(BOOL)arg2 withContext:(id)arg3;
+- (void)handleApplicationURL:(id)arg1;
 - (BOOL)handleEvent:(struct __GSEvent { }*)arg1 withNewEvent:(id)arg2;
 - (BOOL)handleEvent:(struct __GSEvent { }*)arg1;
 - (void)handleOutOfLineDataRequest:(struct __GSEvent { }*)arg1;
 - (void)handleOutOfLineDataResponse:(id)arg1 requestID:(NSUInteger)arg2;
 - (BOOL)handleTestURL:(id)arg1;
+- (void)headsetAvailabilityChanged:(struct __GSEvent { }*)arg1;
 - (void)headsetButtonDown:(struct __GSEvent { }*)arg1;
 - (void)headsetButtonUp:(struct __GSEvent { }*)arg1;
 - (BOOL)homeScreenCanAddIcons;
@@ -316,9 +330,11 @@
 - (void)pushRunLoopMode:(id)arg1;
 - (void)quitTopApplication:(struct __GSEvent { }*)arg1;
 - (void)registerForRemoteNotificationTypes:(NSInteger)arg1;
+- (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
 - (void)removeDefaultImage:(id)arg1;
 - (void)removeStatusBarCustomText;
 - (void)removeStatusBarImageNamed:(id)arg1;
+- (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
 - (BOOL)reportApplicationSuspended;
 - (void)requestDeviceUnlock;
 - (void)resetIdleDuration:(double)arg1;
@@ -352,7 +368,6 @@
 - (void)setProximitySensingEnabled:(BOOL)arg1;
 - (void)setProximitySensorEnabled:(BOOL)arg1;
 - (void)setReceivesMemoryWarnings:(BOOL)arg1;
-- (void)setRelaunchesAfterAbnormalExit:(BOOL)arg1;
 - (void)setSimpleRemoteRoutingPriority:(NSUInteger)arg1;
 - (void)setStatusBarCustomText:(id)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
@@ -373,7 +388,6 @@
 - (void)setUIOrientation:(NSInteger)arg1;
 - (void)setUsesBackgroundNetwork:(BOOL)arg1;
 - (BOOL)shouldLaunchSafe;
-- (BOOL)showCodeEntryWithCode:(id)arg1 url:(id)arg2;
 - (BOOL)showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
 - (void)showNetworkPromptsIfNecessary:(BOOL)arg1;
 - (void)showTTYPromptForNumber:(id)arg1 withID:(NSInteger)arg2;

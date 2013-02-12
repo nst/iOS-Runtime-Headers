@@ -9,7 +9,7 @@
     NSString *_text;
 }
 
-@property(copy) NSString *contentLocation; /* unknown property attribute: V_contentLocation */
+@property(copy) NSString *contentLocation;
 
 - (id)contentLocation;
 - (void)copyToPasteboard;

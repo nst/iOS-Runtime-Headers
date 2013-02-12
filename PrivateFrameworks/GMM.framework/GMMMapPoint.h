@@ -7,14 +7,16 @@
     NSInteger _longitude;
 }
 
-@property NSInteger longitude; /* unknown property attribute: V_longitude */
-@property NSInteger latitude; /* unknown property attribute: V_latitude */
+@property NSInteger latitude;
+@property NSInteger longitude;
 
 + (id)mapPointWithCoordinate:(struct { double x1; double x2; })arg1;
 
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
+- (id)description;
+- (id)dictionaryRepresentation;
 - (NSUInteger)hash;
 - (id)init;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;

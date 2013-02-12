@@ -127,22 +127,22 @@
     UIView *_zoomView;
 }
 
-@property float maximumZoomScale; /* unknown property attribute: V_maximumZoomScale */
-@property <UIScrollViewDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property UIEdgeInsets contentInset; /* unknown property attribute: V_contentInset */
-@property CGSize contentSize; /* unknown property attribute: V_contentSize */
+@property <UIScrollViewDelegate> *delegate;
 @property BOOL alwaysBounceHorizontal;
 @property BOOL alwaysBounceVertical;
 @property BOOL bounces;
 @property BOOL bouncesZoom;
 @property BOOL canCancelContentTouches;
+@property UIEdgeInsets contentInset;
 @property CGPoint contentOffset;
+@property CGSize contentSize;
 @property(getter=isDecelerating,readonly) BOOL decelerating;
 @property float decelerationRate;
 @property BOOL delaysContentTouches;
 @property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
 @property(getter=isDragging,readonly) BOOL dragging;
 @property NSInteger indicatorStyle;
+@property float maximumZoomScale;
 @property float minimumZoomScale;
 @property(getter=isPagingEnabled) BOOL pagingEnabled;
 @property(getter=isProgrammaticScrollEnabled) BOOL programmaticScrollEnabled;
@@ -208,7 +208,9 @@
 - (void)_setAutoscrolling:(BOOL)arg1;
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2 animationCurve:(NSInteger)arg3;
 - (void)_setContentOffsetAnimationDuration:(double)arg1;
+- (void)_setShowsBackgroundShadow:(BOOL)arg1;
 - (void)_shiftOffset:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_showsBackgroundShadow;
 - (void)_smoothScroll:(double)arg1;
 - (void)_startGesture:(id)arg1 withEvent:(id)arg2;
 - (void)_startTimer:(BOOL)arg1;
@@ -311,7 +313,6 @@
 - (void)setZoomScale:(float)arg1 animated:(BOOL)arg2;
 - (void)setZoomScale:(float)arg1 withAnchorPoint:(struct CGPoint { float x1; float x2; })arg2 validatingScrollOffset:(BOOL)arg3 allowRubberbanding:(BOOL)arg4 animated:(BOOL)arg5;
 - (void)setZoomScale:(float)arg1;
-- (BOOL)showBackgroundShadow;
 - (BOOL)showsHorizontalScrollIndicator;
 - (BOOL)showsVerticalScrollIndicator;
 - (NSInteger)swipe:(NSInteger)arg1 withEvent:(struct __GSEvent { }*)arg2;

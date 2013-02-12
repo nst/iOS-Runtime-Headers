@@ -10,15 +10,16 @@
     NSString *_phone;
 }
 
-@property(retain) NSString *phone; /* unknown property attribute: V_phone */
-@property(retain) NSString *mainUrl; /* unknown property attribute: V_mainUrl */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
+@property(retain) NSString *mainUrl;
+@property(retain) NSString *name;
+@property(retain) NSString *phone;
 @property(readonly) BOOL hasMainUrl;
 @property(readonly) BOOL hasPhone;
 
 - (void)dealloc;
 - (id)description;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasMainUrl;
 - (BOOL)hasPhone;
 - (id)init;

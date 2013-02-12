@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUWebViewControllerDelegate>, ISItem, NSMutableArray, NSNumber, NSString, NSURL, SUStructuredPage, SUTableViewController, SUWebView;
+@class ISItem, NSNumber, NSString, NSURL, SUStructuredPage, SUTableViewController, SUWebView;
 
 @interface SUWebViewController : SUViewController <SUWebViewDelegate> {
     NSString *_copyright;
-    <SUWebViewControllerDelegate> *_delegate;
     NSNumber *_itemIdentifierToSelect;
-    NSMutableArray *_navigationButtons;
     ISItem *_rootItem;
     NSString *_rootSectionIdentifier;
     NSInteger _style;
@@ -19,19 +17,14 @@
     SUWebView *_webView;
 }
 
-@property BOOL viewIsReady; /* unknown property attribute: V_viewIsReady */
-@property NSInteger style; /* unknown property attribute: V_style */
-@property <SUWebViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property NSInteger style;
+@property BOOL viewIsReady;
 
 - (void)_handleProtocol:(id)arg1;
 - (void)_handleRootObject:(id)arg1;
 - (void)_handleTrackList:(id)arg1;
-- (void)_leftNavigationButtonAction:(id)arg1;
-- (void)_performActionForNavigationButtonSide:(NSInteger)arg1;
 - (void)_priceButtonAction:(id)arg1;
-- (void)_reloadNavigationBar;
 - (void)_reloadUI;
-- (void)_rightNavigationButtonAction:(id)arg1;
 - (void)_selectTrackListItemWithIdentifier:(id)arg1;
 - (void)_setCopyright:(id)arg1;
 - (void)_setTrackListController:(id)arg1;
@@ -42,12 +35,10 @@
 - (id)createDataProviderToProcessProtocol;
 - (id)createViewControllerForTrackList:(id)arg1;
 - (void)dealloc;
-- (id)delegate;
 - (void)loadView;
 - (void)operationFinished:(id)arg1;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 - (id)rootSectionIdentifier;
-- (void)setDelegate:(id)arg1;
 - (void)setStyle:(NSInteger)arg1;
 - (void)setViewIsReady:(BOOL)arg1;
 - (NSInteger)style;
@@ -56,8 +47,8 @@
 - (void)webView:(id)arg1 foundPropertyList:(id)arg2 ofType:(NSInteger)arg3;
 - (void)webView:(id)arg1 performPurchaseAnimationWithView:(id)arg2;
 - (void)webView:(id)arg1 receivedEventOfType:(NSInteger)arg2 userInfo:(id)arg3;
-- (void)webView:(id)arg1 registeredNavigationButton:(id)arg2;
 - (id)webView:(id)arg1 viewForWidget:(id)arg2;
+- (void)webView:(id)arg1 willInjectScriptObject:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;
 
 @end

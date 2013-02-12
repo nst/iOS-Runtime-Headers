@@ -9,8 +9,8 @@
     NSNumber *_status;
 }
 
-@property(retain) ASSettingsTaskUserInformationGetResponse *getResponse; /* unknown property attribute: V_getResponse */
-@property(retain) NSNumber *status; /* unknown property attribute: V_status */
+@property(retain) ASSettingsTaskUserInformationGetResponse *getResponse;
+@property(retain) NSNumber *status;
 
 + (BOOL)acceptsTopLevelLeaves;
 + (BOOL)frontingBasicTypes;

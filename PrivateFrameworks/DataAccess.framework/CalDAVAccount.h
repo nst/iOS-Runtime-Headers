@@ -68,7 +68,7 @@
 - (id)principal;
 - (id)principalPath;
 - (void)refreshAllSources;
-- (void)refreshForced:(BOOL)arg1 calendarsOnly:(BOOL)arg2;
+- (void)refreshWithContext:(id)arg1;
 - (id)session;
 - (void)setConnectedState:(NSInteger)arg1;
 - (void)setDisplayName:(id)arg1;

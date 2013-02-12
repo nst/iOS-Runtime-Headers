@@ -16,12 +16,12 @@
     NSInteger _system;
 }
 
-@property NSInteger system; /* unknown property attribute: V_system */
-@property(readonly) NSString *ratingDescription; /* unknown property attribute: V_description */
-@property NSInteger rank; /* unknown property attribute: V_rank */
-@property(readonly) CGSize logoURLSize; /* unknown property attribute: V_logoURLSize */
-@property(readonly) NSURL *logoURL; /* unknown property attribute: V_logoURL */
-@property(readonly) NSString *label; /* unknown property attribute: V_label */
+@property(readonly) NSString *label;
+@property(readonly) NSURL *logoURL;
+@property(readonly) NSString *ratingDescription;
+@property(readonly) CGSize logoURLSize;
+@property NSInteger rank;
+@property NSInteger system;
 
 + (BOOL)allowExplicitContent;
 + (NSInteger)ratingSystemFromString:(id)arg1;

@@ -16,23 +16,24 @@
     NSInteger _zoomLevel;
 }
 
-@property(readonly) BOOL hasZoomLevel; /* unknown property attribute: V_hasZoomLevel */
-@property NSInteger zoomLevel; /* unknown property attribute: V_zoomLevel */
-@property(retain) NSString *searchTerm; /* unknown property attribute: V_searchTerm */
-@property(readonly) BOOL hasSearchType; /* unknown property attribute: V_hasSearchType */
-@property NSInteger searchType; /* unknown property attribute: V_searchType */
-@property(readonly) BOOL hasRequestType; /* unknown property attribute: V_hasRequestType */
-@property NSInteger requestType; /* unknown property attribute: V_requestType */
-@property(retain) NSString *appKey; /* unknown property attribute: V_appKey */
-@property(retain) NSString *appName; /* unknown property attribute: V_appName */
+@property(retain) NSString *appKey;
+@property(retain) NSString *appName;
+@property(retain) NSString *searchTerm;
 @property(readonly) BOOL hasAppKey;
 @property(readonly) BOOL hasAppName;
+@property(readonly) BOOL hasRequestType;
 @property(readonly) BOOL hasSearchTerm;
+@property(readonly) BOOL hasSearchType;
+@property(readonly) BOOL hasZoomLevel;
+@property NSInteger requestType;
+@property NSInteger searchType;
+@property NSInteger zoomLevel;
 
 - (id)appKey;
 - (id)appName;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasAppKey;
 - (BOOL)hasAppName;
 - (BOOL)hasRequestType;

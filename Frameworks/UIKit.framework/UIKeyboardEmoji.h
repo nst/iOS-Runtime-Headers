@@ -11,10 +11,10 @@
     unsigned short _unicodeCharacter;
 }
 
-@property unsigned short unicodeCharacter; /* unknown property attribute: V_unicodeCharacter */
-@property(retain) NSString *codePoint; /* unknown property attribute: V_codePoint */
-@property(retain) NSString *imageName; /* unknown property attribute: V_imageName */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
+@property(retain) NSString *codePoint;
+@property(retain) NSString *imageName;
+@property(retain) NSString *name;
+@property unsigned short unicodeCharacter;
 
 - (id)codePoint;
 - (void)dealloc;

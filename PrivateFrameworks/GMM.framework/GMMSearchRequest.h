@@ -5,8 +5,12 @@
 @class GMMClientCapabilities, GMMMapInfo, NSData, NSString;
 
 @interface GMMSearchRequest : PBRequest {
+    BOOL _addLabelToUnverifiedListings;
+    BOOL _adjustViewport;
     GMMClientCapabilities *_capabilities;
     NSString *_gaiaSid;
+    BOOL _hasAddLabelToUnverifiedListings;
+    BOOL _hasAdjustViewport;
     BOOL _hasIncludeAdResults;
     BOOL _hasIncludeCategories;
     BOOL _hasIncludeKmlResults;
@@ -16,8 +20,10 @@
     BOOL _hasIncludeStreetViewPanoId;
     BOOL _hasIncludeStructuredAddress;
     BOOL _hasMaxResults;
+    BOOL _hasPayloadType;
     BOOL _hasResultOffset;
     BOOL _hasSourceType;
+    BOOL _hasTileSize;
     BOOL _hasUseSeparateRefinementString;
     BOOL _includeAdResults;
     BOOL _includeCategories;
@@ -30,54 +36,66 @@
     NSData *_kmlDocument;
     GMMMapInfo *_mapInfo;
     NSInteger _maxResults;
+    NSInteger _payloadType;
     NSString *_query;
     NSInteger _resultOffset;
     NSInteger _sourceType;
+    NSInteger _tileSize;
     NSInteger _type;
     BOOL _useSeparateRefinementString;
 }
 
-@property(readonly) BOOL hasIncludeStreetViewPanoId; /* unknown property attribute: V_hasIncludeStreetViewPanoId */
-@property BOOL includeStreetViewPanoId; /* unknown property attribute: V_includeStreetViewPanoId */
-@property(readonly) BOOL hasIncludeProximityAdResults; /* unknown property attribute: V_hasIncludeProximityAdResults */
-@property BOOL includeProximityAdResults; /* unknown property attribute: V_includeProximityAdResults */
-@property(readonly) BOOL hasIncludeRatings; /* unknown property attribute: V_hasIncludeRatings */
-@property BOOL includeRatings; /* unknown property attribute: V_includeRatings */
-@property(readonly) BOOL hasSourceType; /* unknown property attribute: V_hasSourceType */
-@property NSInteger sourceType; /* unknown property attribute: V_sourceType */
-@property(readonly) BOOL hasUseSeparateRefinementString; /* unknown property attribute: V_hasUseSeparateRefinementString */
-@property BOOL useSeparateRefinementString; /* unknown property attribute: V_useSeparateRefinementString */
-@property(readonly) BOOL hasIncludeMapsUrlForEachResult; /* unknown property attribute: V_hasIncludeMapsUrlForEachResult */
-@property BOOL includeMapsUrlForEachResult; /* unknown property attribute: V_includeMapsUrlForEachResult */
-@property(readonly) BOOL hasIncludeCategories; /* unknown property attribute: V_hasIncludeCategories */
-@property BOOL includeCategories; /* unknown property attribute: V_includeCategories */
-@property(retain) GMMClientCapabilities *capabilities; /* unknown property attribute: V_capabilities */
-@property(retain) NSString *gaiaSid; /* unknown property attribute: V_gaiaSid */
-@property(retain) NSData *kmlDocument; /* unknown property attribute: V_kmlDocument */
-@property(readonly) BOOL hasIncludeKmlResults; /* unknown property attribute: V_hasIncludeKmlResults */
-@property BOOL includeKmlResults; /* unknown property attribute: V_includeKmlResults */
-@property(readonly) BOOL hasIncludeAdResults; /* unknown property attribute: V_hasIncludeAdResults */
-@property BOOL includeAdResults; /* unknown property attribute: V_includeAdResults */
-@property(readonly) BOOL hasIncludeStructuredAddress; /* unknown property attribute: V_hasIncludeStructuredAddress */
-@property BOOL includeStructuredAddress; /* unknown property attribute: V_includeStructuredAddress */
-@property(readonly) BOOL hasMaxResults; /* unknown property attribute: V_hasMaxResults */
-@property NSInteger maxResults; /* unknown property attribute: V_maxResults */
-@property(readonly) BOOL hasResultOffset; /* unknown property attribute: V_hasResultOffset */
-@property NSInteger resultOffset; /* unknown property attribute: V_resultOffset */
-@property(retain) GMMMapInfo *mapInfo; /* unknown property attribute: V_mapInfo */
-@property(retain) NSString *query; /* unknown property attribute: V_query */
-@property NSInteger type; /* unknown property attribute: V_type */
+@property(retain) GMMClientCapabilities *capabilities;
+@property(retain) NSString *gaiaSid;
+@property(retain) NSData *kmlDocument;
+@property(retain) GMMMapInfo *mapInfo;
+@property(retain) NSString *query;
+@property BOOL addLabelToUnverifiedListings;
+@property BOOL adjustViewport;
+@property(readonly) BOOL hasAddLabelToUnverifiedListings;
+@property(readonly) BOOL hasAdjustViewport;
 @property(readonly) BOOL hasCapabilities;
 @property(readonly) BOOL hasGaiaSid;
+@property(readonly) BOOL hasIncludeAdResults;
+@property(readonly) BOOL hasIncludeCategories;
+@property(readonly) BOOL hasIncludeKmlResults;
+@property(readonly) BOOL hasIncludeMapsUrlForEachResult;
+@property(readonly) BOOL hasIncludeProximityAdResults;
+@property(readonly) BOOL hasIncludeRatings;
+@property(readonly) BOOL hasIncludeStreetViewPanoId;
+@property(readonly) BOOL hasIncludeStructuredAddress;
 @property(readonly) BOOL hasKmlDocument;
 @property(readonly) BOOL hasMapInfo;
+@property(readonly) BOOL hasMaxResults;
+@property(readonly) BOOL hasPayloadType;
+@property(readonly) BOOL hasResultOffset;
+@property(readonly) BOOL hasSourceType;
+@property(readonly) BOOL hasTileSize;
+@property(readonly) BOOL hasUseSeparateRefinementString;
+@property BOOL includeAdResults;
+@property BOOL includeCategories;
+@property BOOL includeKmlResults;
+@property BOOL includeMapsUrlForEachResult;
+@property BOOL includeProximityAdResults;
+@property BOOL includeRatings;
+@property BOOL includeStreetViewPanoId;
+@property BOOL includeStructuredAddress;
+@property NSInteger maxResults;
+@property NSInteger payloadType;
+@property NSInteger resultOffset;
+@property NSInteger sourceType;
+@property NSInteger tileSize;
+@property NSInteger type;
+@property BOOL useSeparateRefinementString;
 
-+ (id)newSearchRequestWithQuery:(id)arg1 requestType:(NSInteger)arg2 centerPoint:(struct CGPoint { float x1; float x2; })arg3 longLatSpan:(struct CGSize { float x1; float x2; })arg4 zoomLevel:(NSInteger)arg5;
-
+- (BOOL)addLabelToUnverifiedListings;
+- (BOOL)adjustViewport;
 - (id)capabilities;
 - (void)dealloc;
 - (id)description;
 - (id)gaiaSid;
+- (BOOL)hasAddLabelToUnverifiedListings;
+- (BOOL)hasAdjustViewport;
 - (BOOL)hasCapabilities;
 - (BOOL)hasGaiaSid;
 - (BOOL)hasIncludeAdResults;
@@ -91,8 +109,10 @@
 - (BOOL)hasKmlDocument;
 - (BOOL)hasMapInfo;
 - (BOOL)hasMaxResults;
+- (BOOL)hasPayloadType;
 - (BOOL)hasResultOffset;
 - (BOOL)hasSourceType;
+- (BOOL)hasTileSize;
 - (BOOL)hasUseSeparateRefinementString;
 - (BOOL)includeAdResults;
 - (BOOL)includeCategories;
@@ -106,11 +126,14 @@
 - (id)kmlDocument;
 - (id)mapInfo;
 - (NSInteger)maxResults;
+- (NSInteger)payloadType;
 - (id)query;
 - (BOOL)readFrom:(id)arg1;
 - (NSUInteger)requestTypeCode;
 - (Class)responseClass;
 - (NSInteger)resultOffset;
+- (void)setAddLabelToUnverifiedListings:(BOOL)arg1;
+- (void)setAdjustViewport:(BOOL)arg1;
 - (void)setCapabilities:(id)arg1;
 - (void)setGaiaSid:(id)arg1;
 - (void)setIncludeAdResults:(BOOL)arg1;
@@ -124,12 +147,15 @@
 - (void)setKmlDocument:(id)arg1;
 - (void)setMapInfo:(id)arg1;
 - (void)setMaxResults:(NSInteger)arg1;
+- (void)setPayloadType:(NSInteger)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setResultOffset:(NSInteger)arg1;
 - (void)setSourceType:(NSInteger)arg1;
+- (void)setTileSize:(NSInteger)arg1;
 - (void)setType:(NSInteger)arg1;
 - (void)setUseSeparateRefinementString:(BOOL)arg1;
 - (NSInteger)sourceType;
+- (NSInteger)tileSize;
 - (NSInteger)type;
 - (BOOL)useSeparateRefinementString;
 - (void)writeTo:(id)arg1;

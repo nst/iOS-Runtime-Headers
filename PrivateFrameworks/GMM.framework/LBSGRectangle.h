@@ -9,11 +9,12 @@
     LBSGLatLng *_upperRight;
 }
 
-@property(retain) LBSGLatLng *upperRight; /* unknown property attribute: V_upperRight */
-@property(retain) LBSGLatLng *lowerLeft; /* unknown property attribute: V_lowerLeft */
+@property(retain) LBSGLatLng *lowerLeft;
+@property(retain) LBSGLatLng *upperRight;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (id)lowerLeft;
 - (BOOL)readFrom:(id)arg1;

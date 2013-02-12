@@ -10,8 +10,8 @@
     NSUInteger m_width;
 }
 
-@property(readonly) NSUInteger height; /* unknown property attribute: Vm_height */
-@property(readonly) NSUInteger width; /* unknown property attribute: Vm_width */
+@property(readonly) NSUInteger height;
+@property(readonly) NSUInteger width;
 
 - (struct CGImage { }*)createImage;
 - (void)dealloc;

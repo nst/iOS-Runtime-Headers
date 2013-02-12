@@ -8,12 +8,13 @@
     NSInteger _zoomLevel;
 }
 
-@property NSInteger zoomLevel; /* unknown property attribute: V_zoomLevel */
-@property NSInteger pixelY; /* unknown property attribute: V_pixelY */
-@property NSInteger pixelX; /* unknown property attribute: V_pixelX */
+@property NSInteger pixelX;
+@property NSInteger pixelY;
+@property NSInteger zoomLevel;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (NSInteger)pixelX;
 - (NSInteger)pixelY;

@@ -28,21 +28,21 @@
     NSString *title;
 }
 
-@property id delegate; /* unknown property attribute: Vdelegate */
-@property(retain) UIImage *startupImage; /* unknown property attribute: VstartupImage */
-@property(retain) UIImage *iconImage; /* unknown property attribute: ViconImage */
-@property NSInteger statusBarStyle; /* unknown property attribute: VstatusBarStyle */
-@property BOOL removalDisallowed; /* unknown property attribute: VremovalDisallowed */
-@property BOOL fullScreen; /* unknown property attribute: VfullScreen */
-@property CGPoint scrollPoint; /* unknown property attribute: VscrollPoint */
-@property float scale; /* unknown property attribute: Vscale */
-@property(copy) NSString *title; /* unknown property attribute: Vtitle */
-@property(retain) NSURL *startupImageURL; /* unknown property attribute: VstartupImageURL */
-@property(retain) NSURL *iconURL; /* unknown property attribute: ViconURL */
-@property(retain) NSURL *precomposedIconURL; /* unknown property attribute: VprecomposedIconURL */
-@property(retain) NSURL *pageURL; /* unknown property attribute: VpageURL */
-@property(copy) NSString *identifier; /* unknown property attribute: Videntifier */
+@property(retain) UIImage *iconImage;
 @property(readonly) NSString *iconImagePath;
+@property(retain) NSURL *iconURL;
+@property(copy) NSString *identifier;
+@property(retain) NSURL *pageURL;
+@property(retain) NSURL *precomposedIconURL;
+@property(retain) UIImage *startupImage;
+@property(retain) NSURL *startupImageURL;
+@property(copy) NSString *title;
+@property id delegate;
+@property BOOL fullScreen;
+@property BOOL removalDisallowed;
+@property float scale;
+@property CGPoint scrollPoint;
+@property NSInteger statusBarStyle;
 
 + (id)_contentForMetaName:(id)arg1 inWebDocumentView:(id)arg2;
 + (id)pathForWebClipWithIdentifier:(id)arg1;

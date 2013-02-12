@@ -7,23 +7,29 @@
 @interface ISStoreAuthenticateOperation : ISOperation {
     NSNumber *_authenticatedDSID;
     ISAuthenticationContext *_context;
+    BOOL _usingNetwork;
 }
 
-@property(retain,readonly) ISAuthenticationContext *context; /* unknown property attribute: V_context */
-@property(retain) NSNumber *authenticatedDSID; /* unknown property attribute: V_authenticatedDSID */
+@property(retain) NSNumber *authenticatedDSID;
+@property(retain,readonly) ISAuthenticationContext *context;
+@property(getter=isUsingNetwork) BOOL usingNetwork;
 
 - (void)_authenticateFailed:(id)arg1;
 - (void)_authenticateFinished:(id)arg1;
+- (void)_authenticateSubmitted:(id)arg1;
 - (void)_daemonExited:(id)arg1;
 - (void)_requestAuthentication;
+- (void)_runAuthentication;
 - (void)_timer:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
 - (id)context;
 - (void)dealloc;
 - (id)initWithAuthenticationContext:(id)arg1;
+- (BOOL)isUsingNetwork;
 - (void)run;
 - (void)setAuthenticatedDSID:(id)arg1;
+- (void)setUsingNetwork:(BOOL)arg1;
 - (id)uniqueKey;
 
 @end

@@ -10,9 +10,9 @@
     NSUInteger texture;
 }
 
-@property NSUInteger texture; /* unknown property attribute: Vtexture */
-@property(retain) NSIndexPath *tilePath; /* unknown property attribute: V_tilePath */
-@property(retain) MKPanorama *panorama; /* unknown property attribute: V_panorama */
+@property(retain) MKPanorama *panorama;
+@property(retain) NSIndexPath *tilePath;
+@property NSUInteger texture;
 
 - (void)dealloc;
 - (id)panorama;

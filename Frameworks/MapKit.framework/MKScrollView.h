@@ -5,7 +5,7 @@
 @class CALayer, MKUserLocationView, NSArray;
 
 @interface MKScrollView : UIScrollView {
-    struct $_235 { 
+    struct $_239 { 
         unsigned int willStartGesturesInView : 1; 
         unsigned int didFinishGesturesInView : 1; 
         NSUInteger firstTouchBegan; 
@@ -23,10 +23,10 @@
     MKUserLocationView *_userLocationView;
 }
 
-@property(retain) MKUserLocationView *userLocationView; /* unknown property attribute: V_userLocationView */
-@property(readonly) double lastGestureEndedInterval; /* unknown property attribute: V_lastGestureEndedInterval */
-@property(readonly) NSUInteger gestureCount; /* unknown property attribute: V_gestureCount */
-@property BOOL enableBoundsHitDetection; /* unknown property attribute: V_enableBoundsHitDetection */
+@property(retain) MKUserLocationView *userLocationView;
+@property BOOL enableBoundsHitDetection;
+@property(readonly) NSUInteger gestureCount;
+@property(readonly) double lastGestureEndedInterval;
 
 - (void)_firstTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (id)_hitTestForContentView:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

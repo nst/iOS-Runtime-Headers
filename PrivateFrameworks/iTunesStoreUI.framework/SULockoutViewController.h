@@ -10,9 +10,9 @@
     NSString *_messageTitle;
 }
 
-@property(retain) NSString *messageTitle; /* unknown property attribute: V_messageTitle */
-@property(retain) NSString *messageBody; /* unknown property attribute: V_messageBody */
-@property(retain) UIImage *image; /* unknown property attribute: V_image */
+@property(retain) UIImage *image;
+@property(retain) NSString *messageBody;
+@property(retain) NSString *messageTitle;
 
 - (void)dealloc;
 - (id)image;

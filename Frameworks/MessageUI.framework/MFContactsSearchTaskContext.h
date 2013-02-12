@@ -11,10 +11,10 @@
     NSString *_text;
 }
 
-@property(retain,readonly) NSMutableSet *searchQueries; /* unknown property attribute: V_searchQueries */
-@property(retain,readonly) NSMutableSet *operations; /* unknown property attribute: V_operations */
-@property(retain,readonly) NSString *text; /* unknown property attribute: V_text */
-@property(retain,readonly) <MFContactsSearchConsumer> *consumer; /* unknown property attribute: V_consumer */
+@property(retain,readonly) <MFContactsSearchConsumer> *consumer;
+@property(retain,readonly) NSMutableSet *operations;
+@property(retain,readonly) NSMutableSet *searchQueries;
+@property(retain,readonly) NSString *text;
 
 + (id)contextWithConsumer:(id)arg1 text:(id)arg2 operations:(id)arg3 searchQueries:(id)arg4;
 

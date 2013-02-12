@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISDownloadMetadata, NSNumber, NSString;
+@class ISDownloadMetadata, NSDictionary, NSNumber, NSString;
 
 @interface ISPurchaseDescriptor : NSObject <NSCoding> {
     NSNumber *_accountDSID;
+    NSDictionary *_assetMetadata;
     NSString *_buyParameters;
     ISDownloadMetadata *_metadata;
     NSInteger _primaryAssetType;
 }
 
-@property NSInteger primaryAssetType; /* unknown property attribute: V_primaryAssetType */
-@property(retain) ISDownloadMetadata *metadata; /* unknown property attribute: V_metadata */
-@property(retain) NSString *buyParameters; /* unknown property attribute: V_buyParameters */
-@property(retain) NSNumber *accountDSID; /* unknown property attribute: V_accountDSID */
+@property(retain) NSNumber *accountDSID;
+@property(retain) NSDictionary *assetMetadata;
+@property(retain) NSString *buyParameters;
+@property(retain) ISDownloadMetadata *metadata;
+@property NSInteger primaryAssetType;
 
 - (id)accountDSID;
+- (id)assetMetadata;
 - (id)buyParameters;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -25,6 +28,7 @@
 - (id)metadata;
 - (NSInteger)primaryAssetType;
 - (void)setAccountDSID:(id)arg1;
+- (void)setAssetMetadata:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setPrimaryAssetType:(NSInteger)arg1;

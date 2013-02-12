@@ -14,12 +14,12 @@
     NSString *_title;
 }
 
-@property(retain) NSDate *date; /* unknown property attribute: V_date */
-@property(retain) NSURL *URL; /* unknown property attribute: V_URL */
-@property unsigned long long identifier; /* unknown property attribute: V_identifier */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(copy) NSNumber *badge; /* unknown property attribute: V_badge */
-@property NSInteger domain; /* unknown property attribute: V_domain */
+@property(retain) NSURL *URL;
+@property(copy) NSNumber *badge;
+@property(retain) NSDate *date;
+@property(retain) NSString *title;
+@property NSInteger domain;
+@property unsigned long long identifier;
 
 - (id)URL;
 - (const char *)URLUTF8String;

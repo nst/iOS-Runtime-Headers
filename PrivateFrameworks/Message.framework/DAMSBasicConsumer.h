@@ -13,8 +13,8 @@
     DAMessageStore *store;
 }
 
-@property(retain) MFError *error; /* unknown property attribute: Verror */
-@property(retain) ActivityMonitor *monitor; /* unknown property attribute: Vmonitor */
+@property(retain) MFError *error;
+@property(retain) ActivityMonitor *monitor;
 
 - (void)dealloc;
 - (id)error;

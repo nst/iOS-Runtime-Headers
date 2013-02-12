@@ -20,21 +20,22 @@
     float _version;
 }
 
-@property(retain) CLLocation *prevLocation; /* unknown property attribute: V_prevLocation */
-@property(retain) NSTimer *headingTimer; /* unknown property attribute: V_headingTimer */
-@property(retain) NSTimer *timer; /* unknown property attribute: V_timer */
-@property(retain) NSDate *startDate; /* unknown property attribute: V_startDate */
-@property BOOL isPlaying; /* unknown property attribute: V_isPlaying */
-@property(retain) NSString *filePath; /* unknown property attribute: V_filePath */
-@property(retain) NSArray *tripPoints; /* unknown property attribute: V_tripPoints */
-@property(retain) MKTripPoint *tripPoint; /* unknown property attribute: V_tripPoint */
+@property(retain) NSString *filePath;
+@property(retain) NSTimer *headingTimer;
+@property(retain) CLLocation *prevLocation;
+@property(retain) NSDate *startDate;
+@property(retain) NSTimer *timer;
+@property(retain) MKTripPoint *tripPoint;
+@property(retain) NSArray *tripPoints;
 @property(readonly) double bestAccuracy;
 @property(readonly) BOOL hasSpeed;
+@property BOOL isPlaying;
 
 - (BOOL)_readVersion:(id*)arg1;
 - (double)bestAccuracy;
 - (void)dealloc;
 - (id)filePath;
+- (BOOL)hasHeading;
 - (BOOL)hasSpeed;
 - (id)headingTimer;
 - (id)initWithFilePath:(id)arg1;

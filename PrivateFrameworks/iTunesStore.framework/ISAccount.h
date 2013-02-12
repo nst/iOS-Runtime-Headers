@@ -14,14 +14,14 @@
     NSString *_token;
 }
 
-@property(retain) NSString *token; /* unknown property attribute: V_token */
-@property(retain) NSString *password; /* unknown property attribute: V_password */
-@property NSInteger kind; /* unknown property attribute: V_kind */
-@property(retain) NSString *identifier; /* unknown property attribute: V_identifier */
-@property(retain) NSNumber *dsID; /* unknown property attribute: V_dsID */
-@property(retain) NSString *creditString; /* unknown property attribute: V_creditString */
-@property(retain) NSString *cachedPassword; /* unknown property attribute: V_cachedPassword */
+@property(retain) NSString *cachedPassword;
+@property(retain) NSString *creditString;
+@property(retain) NSNumber *dsID;
+@property(retain) NSString *identifier;
+@property(retain) NSString *password;
+@property(retain) NSString *token;
 @property(getter=isAuthenticated,readonly) BOOL authenticated;
+@property NSInteger kind;
 @property(getter=isPrimary,readonly) BOOL primary;
 
 - (id)_copyPasswordFromKeychain;

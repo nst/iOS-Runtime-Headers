@@ -17,6 +17,7 @@
 + (struct __SecCertificate { }*)certificateFromPossiblyPEMEncodedData:(id)arg1;
 + (id)descriptionForPayloadCount:(NSUInteger)arg1;
 
+- (struct __SecCertificate { }*)certificateCopyFromKeychain;
 - (id)certificateData;
 - (id)certificateMD5;
 - (id)createCouldNotDecodeAnchorCertificateError;

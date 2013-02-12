@@ -8,27 +8,30 @@
     NSString *_address;
     NSInteger _identifier;
     NSString *_label;
-    NSInteger _uid;
+    NSInteger _property;
+    void *_record;
 }
 
-+ (id)_abFindAddressForRecord:(void*)arg1 identifier:(NSInteger)arg2;
-+ (void*)_abFindRecordForAddress:(id)arg1 identifier:(NSInteger*)arg2 uniqueID:(NSInteger*)arg3;
-+ (NSInteger)_recipientABProperty;
-+ (id)recipientWithAddress:(id)arg1;
-+ (id)recipientWithRecord:(void*)arg1 identifier:(NSInteger)arg2;
++ (id)recipientWithGALResult:(id)arg1;
++ (id)recipientWithProperty:(NSInteger)arg1 address:(id)arg2;
++ (id)recipientWithRecord:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
 
+- (id)_unformattedAddress;
 - (id)address;
 - (id)commentedAddress;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)displayString;
+- (NSUInteger)hash;
 - (NSInteger)identifier;
-- (id)initWithRecord:(void*)arg1 identifier:(NSInteger)arg2 address:(id)arg3;
+- (id)initWithRecord:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3 address:(id)arg4;
 - (BOOL)isEmail;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isPhone;
 - (id)label;
+- (NSInteger)property;
+- (NSInteger)property;
 - (void*)record;
-- (void)setAddress:(id)arg1;
 - (id)uncommentedAddress;
 
 @end

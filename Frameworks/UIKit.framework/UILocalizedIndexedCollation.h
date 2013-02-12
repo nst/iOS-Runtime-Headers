@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSLocale;
+@class NSArray, NSLocale, NSString;
 
 @interface UILocalizedIndexedCollation : NSObject {
     NSLocale *_locale;
@@ -10,6 +10,7 @@
     NSArray *_sectionIndexTitles;
     NSArray *_sectionStartStrings;
     NSArray *_sectionTitles;
+    NSString *_transform;
 }
 
 @property(readonly) NSArray *sectionIndexTitles;
@@ -25,5 +26,6 @@
 - (id)sectionIndexTitles;
 - (id)sectionTitles;
 - (id)sortedArrayFromArray:(id)arg1 collationStringSelector:(SEL)arg2;
+- (id)transformedCollationStringForString:(id)arg1;
 
 @end

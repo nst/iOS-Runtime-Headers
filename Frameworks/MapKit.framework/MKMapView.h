@@ -30,6 +30,7 @@
 @property(getter=isUserLocationVisible,readonly) BOOL userLocationVisible;
 @property(getter=isZoomEnabled) BOOL zoomEnabled;
 
++ (void)_handleMemoryWarning:(id)arg1;
 + (void)initialize;
 + (NSUInteger)minZoomLevel;
 + (void)setUserLocationCacheDuration:(double)arg1;
@@ -76,6 +77,7 @@
 - (void)_goToCurrentLocationOnTransitionEnd;
 - (void)_goToDefaultLocation;
 - (void)_goToUserLocation:(BOOL)arg1 shouldZoom:(BOOL)arg2;
+- (void)_handleMemoryWarning:(id)arg1;
 - (BOOL)_hasHovered;
 - (BOOL)_haveNewPendingLocation;
 - (id)_initAndEnableLoading:(BOOL)arg1 startGMMSession:(BOOL)arg2;
@@ -83,13 +85,13 @@
 - (BOOL)_isHandlingUserEvent;
 - (BOOL)_isHoverScheduled;
 - (BOOL)_isHovering;
-- (BOOL)_isInteractionEnabled;
 - (BOOL)_isLocationCoordinatesInView:(id)arg1;
 - (BOOL)_isOrWillHover;
 - (BOOL)_isReadyToRunPositioningChange;
 - (BOOL)_isScrolling;
 - (BOOL)_isScrollingAnimation;
 - (BOOL)_isTilingEnabled;
+- (BOOL)_isTrafficVisible;
 - (BOOL)_isUserInitiated;
 - (BOOL)_isUserLocationCoordinateInView;
 - (BOOL)_isUserLocationInView:(BOOL)arg1;
@@ -167,10 +169,11 @@
 - (void)_setTileExpirationTimer:(id)arg1;
 - (void)_setupDestinationRouteViewAtLevel:(NSInteger)arg1;
 - (BOOL)_shouldChangeZoomLevel:(float*)arg1 withChange:(id)arg2;
+- (BOOL)_shouldConservePowerAnimationType:(NSInteger)arg1;
 - (BOOL)_shouldHandleTouchesMoved:(id)arg1 withEvent:(id)arg2;
+- (BOOL)_shouldZoomOnLiveTracking;
 - (void)_showAccessories:(id)arg1;
 - (void)_showAddedAnnotationsAndRouteAnimated:(BOOL)arg1;
-- (void)_showAddedAnnotationsAndRouteAnimated;
 - (void)_showAddedAnnotationsAnimated:(BOOL)arg1;
 - (void)_sizeDidChangeWithCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_sizeWillChange;
@@ -188,7 +191,6 @@
 - (void)_suspendSearchResultsProcessingAndPinDropAnimations;
 - (void)_switchToAnimationType:(NSInteger)arg1;
 - (void)_synchronizeScrollingAnimation:(BOOL)arg1 includePositionView:(BOOL)arg2;
-- (void)_toggleLocationConsole;
 - (void)_updateAccessories;
 - (void)_updateBadge;
 - (void)_updateCenteredAttributesWithCoordinate:(struct { double x1; double x2; })arg1;
@@ -259,6 +261,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)dequeueReusableAnnotationViewWithIdentifier:(id)arg1;
+- (id)descriptionForLocation:(id)arg1 sourceInfo:(id)arg2 compact:(BOOL)arg3;
 - (void)deselectAnnotation:(id)arg1 animated:(BOOL)arg2;
 - (void)didFinishGesturesInView:(id)arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)disableHeadingTracking:(BOOL)arg1;
@@ -284,6 +287,7 @@
 - (void)goToSearchResults:(id)arg1 centerLongLat:(struct CGPoint { float x1; float x2; })arg2 longLatSpan:(struct CGSize { float x1; float x2; })arg3;
 - (void)goToUserLocation;
 - (BOOL)hasUserLocation;
+- (BOOL)hasUserSpecifiedZoomLevel;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)ignoreLocationUpdates;
 - (id)initFromIBWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -317,7 +321,7 @@
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
 - (void)locationManagerUpdatedHeading:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
-- (struct CGSize { float x1; float x2; })longLatSpan;
+- (struct { double x1; double x2; })longLatSpan;
 - (id)mapInfo;
 - (void)mapLevelView:(id)arg1 didUpdateTrafficStatus:(NSInteger)arg2;
 - (void)mapLevelViewDidFailLoading:(id)arg1 withError:(id)arg2;
@@ -345,10 +349,11 @@
 - (BOOL)overlayViewEffectsEnabled:(id)arg1;
 - (BOOL)overlayViewIsRotated:(id)arg1;
 - (BOOL)overlayViewIsUserLocationChangeDone:(id)arg1;
-- (struct CGSize { float x1; float x2; })overlayViewLongLatSpan:(id)arg1;
+- (struct { double x1; double x2; })overlayViewLongLatSpan:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })overlayViewVisibleRect:(id)arg1;
 - (void)overlayViewWillAnimateBubble:(id)arg1;
 - (void)overlayViewWillDropPins:(id)arg1;
+- (BOOL)pansAndZoomsToRouteStep;
 - (void)pauseUserHeadingUpdates;
 - (void)pauseUserLocationUpdates;
 - (struct CGPoint { float x1; float x2; })pinDroppingLongLat;
@@ -385,6 +390,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFixedUserLocation:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHasUserSpecifiedZoomLevel:(BOOL)arg1;
 - (void)setHeadingEnabled:(BOOL)arg1;
 - (void)setHeadingSupported:(BOOL)arg1;
 - (void)setHeadingTrackingEnabled:(BOOL)arg1;
@@ -394,6 +400,7 @@
 - (void)setLiveTrackingEnabled:(BOOL)arg1;
 - (void)setLoadingEnabled:(BOOL)arg1;
 - (void)setMapType:(NSUInteger)arg1;
+- (void)setPansAndZoomsToRouteStep:(BOOL)arg1;
 - (void)setPositioningChange:(id)arg1;
 - (void)setPredictedUserLocation:(id)arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;

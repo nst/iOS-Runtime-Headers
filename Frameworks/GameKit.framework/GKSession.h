@@ -15,6 +15,7 @@
 @property(getter=isBusy) BOOL busy;
 @property double disconnectTimeout;
 @property(readonly) NSInteger sessionMode;
+@property BOOL wifiEnabled;
 
 - (BOOL)acceptConnectionFromPeer:(id)arg1 error:(id*)arg2;
 - (void)cancelConnectToPeer:(id)arg1;
@@ -47,9 +48,11 @@
 - (void)setDisconnectTimeout:(double)arg1;
 - (void)setPrivateDelegate:(id)arg1;
 - (void)setSearchCriteria:(id)arg1;
+- (void)setWifiEnabled:(BOOL)arg1;
 - (BOOL)startAdvertisingAndReturnError:(id*)arg1;
 - (BOOL)startSearchingAndReturnError:(id*)arg1;
 - (void)stopAdvertising;
 - (void)stopSearchingForPeers;
+- (BOOL)wifiEnabled;
 
 @end

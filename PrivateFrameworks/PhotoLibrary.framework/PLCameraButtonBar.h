@@ -8,7 +8,7 @@
     PLCameraButton *_cameraButton;
 }
 
-@property(retain) PLCameraButton *cameraButton; /* unknown property attribute: V_cameraButton */
+@property(retain) PLCameraButton *cameraButton;
 
 + (id)backgroundImage;
 

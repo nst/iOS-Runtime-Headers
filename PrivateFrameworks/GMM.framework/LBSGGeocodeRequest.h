@@ -14,14 +14,14 @@
     NSUInteger _numFeatureLimit;
 }
 
-@property(readonly) BOOL hasAddressLinesLimit; /* unknown property attribute: V_hasAddressLinesLimit */
-@property NSInteger addressLinesLimit; /* unknown property attribute: V_addressLinesLimit */
-@property(retain) LBSGRectangle *boundingBox; /* unknown property attribute: V_boundingBox */
-@property(readonly) BOOL hasIncludeBoundingBoxes; /* unknown property attribute: V_hasIncludeBoundingBoxes */
-@property BOOL includeBoundingBoxes; /* unknown property attribute: V_includeBoundingBoxes */
-@property(readonly) BOOL hasNumFeatureLimit; /* unknown property attribute: V_hasNumFeatureLimit */
-@property NSUInteger numFeatureLimit; /* unknown property attribute: V_numFeatureLimit */
+@property(retain) LBSGRectangle *boundingBox;
+@property NSInteger addressLinesLimit;
+@property(readonly) BOOL hasAddressLinesLimit;
 @property(readonly) BOOL hasBoundingBox;
+@property(readonly) BOOL hasIncludeBoundingBoxes;
+@property(readonly) BOOL hasNumFeatureLimit;
+@property BOOL includeBoundingBoxes;
+@property NSUInteger numFeatureLimit;
 
 - (NSInteger)addressLinesLimit;
 - (id)boundingBox;

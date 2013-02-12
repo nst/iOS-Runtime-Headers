@@ -11,11 +11,11 @@
     id _userNotification;
 }
 
-@property(retain) id userNotification; /* unknown property attribute: V_userNotification */
-@property(retain) ISDialogButton *selectedButton; /* unknown property attribute: V_selectedButton */
-@property BOOL performDefaultActions; /* unknown property attribute: V_performDefaultActions */
-@property(retain) ISDialog *dialog; /* unknown property attribute: V_dialog */
 @property <ISDialogOperationDelegate> *delegate;
+@property(retain) ISDialog *dialog;
+@property(retain) ISDialogButton *selectedButton;
+@property BOOL performDefaultActions;
+@property(retain) id userNotification;
 
 + (id)operationWithDialog:(id)arg1;
 + (id)operationWithError:(id)arg1;

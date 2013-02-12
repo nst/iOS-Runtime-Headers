@@ -15,6 +15,7 @@
 - (id)fileGroup;
 - (BOOL)isAudio;
 - (BOOL)isVideo;
+- (id)pathForVideoFile;
 - (id)title;
 
 @end

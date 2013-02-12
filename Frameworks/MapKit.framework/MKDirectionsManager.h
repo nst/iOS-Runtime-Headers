@@ -27,33 +27,33 @@
     NSInteger _transitResultPageOffset;
 }
 
-@property(retain) GMMRequester *requester; /* unknown property attribute: V_requester */
-@property NSInteger mode; /* unknown property attribute: V_mode */
-@property(retain) GMMMapInfo *mapInfo; /* unknown property attribute: V_mapInfo */
-@property NSInteger defaultMode; /* unknown property attribute: V_defaultMode */
-@property BOOL isDisplayed; /* unknown property attribute: V_isDisplayed */
-@property(readonly) BOOL needsSave; /* unknown property attribute: V_needsSave */
-@property(retain) NSString *endAddressString; /* unknown property attribute: V_endAddressString */
-@property(retain) NSString *startAddressString; /* unknown property attribute: V_startAddressString */
-@property(retain) MKAddressBookAddress *endAddress; /* unknown property attribute: V_endAddress */
-@property(retain) MKAddressBookAddress *startAddress; /* unknown property attribute: V_startAddress */
-@property(retain) MKSearchResult *endSearchResult; /* unknown property attribute: V_endSearchResult */
-@property(retain) MKSearchResult *startSearchResult; /* unknown property attribute: V_startSearchResult */
 @property(readonly) NSTimeZone *arrivalTimeZone;
 @property(readonly) NSTimeZone *departureTimeZone;
 @property(readonly) NSDictionary *dictionaryRepresentation;
+@property(retain) MKAddressBookAddress *endAddress;
+@property(retain) NSString *endAddressString;
+@property(retain) MKSearchResult *endSearchResult;
+@property(retain) GMMMapInfo *mapInfo;
 @property(readonly) MKRouteStep *previousStep;
 @property(readonly) NSArray *receivedResponses;
+@property(retain) GMMRequester *requester;
 @property(retain) MKRoute *route;
 @property(readonly) NSArray *routes;
+@property(retain) MKAddressBookAddress *startAddress;
+@property(retain) NSString *startAddressString;
+@property(retain) MKSearchResult *startSearchResult;
 @property(retain) MKRouteStep *step;
 @property(readonly) NSArray *steps;
 @property(readonly) NSUInteger availableModes;
+@property NSInteger defaultMode;
 @property(readonly) BOOL hasEnd;
 @property(readonly) BOOL hasReceivedResponse;
 @property(readonly) BOOL hasStart;
+@property BOOL isDisplayed;
 @property(readonly) BOOL isLoading;
 @property(readonly) BOOL isTransitEnabled;
+@property NSInteger mode;
+@property(readonly) BOOL needsSave;
 @property(readonly) NSUInteger previousStepIndex;
 @property(readonly) NSUInteger receivedResponseCount;
 @property(readonly) BOOL startAndEndAreEqual;

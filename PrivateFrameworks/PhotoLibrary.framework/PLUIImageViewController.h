@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhoto, NSDictionary, PLCropOverlay, PLImageTile, PLVideoRemaker, PLVideoView, UIImage;
+@class MLPhoto, NSString, PLCropOverlay, PLImageTile, PLVideoRemaker, PLVideoView, UIImage;
 
 @interface PLUIImageViewController : UIViewController <PLVideoViewDelegate> {
     struct CGRect { 
@@ -15,7 +15,6 @@
             float height; 
         } size; 
     unsigned int _allowEditing : 1;
-    unsigned int _useTelephonyUI : 1;
     unsigned int _statusBarWasHidden : 1;
     unsigned int _isVideo : 1;
     unsigned int _isDisappearing : 1;
@@ -26,10 +25,10 @@
     struct CGImage { } *_imageRef;
     PLImageTile *_imageTile;
     NSInteger _newStatusBarMode;
-    NSDictionary *_options;
     MLPhoto *_photo;
     NSInteger _previousStatusBarMode;
     PLVideoRemaker *_remaker;
+    NSString *_videoPath;
     PLVideoView *_videoView;
 }
 
@@ -37,7 +36,7 @@
 - (BOOL)_displaysFullScreen;
 - (void)_editabilityChanged:(id)arg1;
 - (NSInteger)_imagePickerStatusBarMode;
-- (void)_setUseTelephonyUI:(BOOL)arg1;
+- (id)_trimMessage;
 - (void)_updateGestureSettings;
 - (void)_updateTitles;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
@@ -47,18 +46,19 @@
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (void)cropOverlayWasOKed:(id)arg1;
 - (void)dealloc;
-- (id)imagePickerOptions;
+- (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
 - (id)initWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithPhoto:(id)arg1;
 - (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithVideoPath:(id)arg1;
 - (void)loadView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrame;
 - (void)setAllowsEditing:(BOOL)arg1;
-- (void)setImagePickerOptions:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)videoRemakerDidBeginRemaking:(id)arg1;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
 - (BOOL)videoViewCanBeginPlayback:(id)arg1;
+- (BOOL)videoViewCanCreateMetadata:(id)arg1;
 - (void)videoViewDidBeginPlayback:(id)arg1;
 - (void)videoViewDidEndPlayback:(id)arg1 didFinish:(BOOL)arg2;
 - (void)videoViewDidPausePlayback:(id)arg1 didFinish:(BOOL)arg2;

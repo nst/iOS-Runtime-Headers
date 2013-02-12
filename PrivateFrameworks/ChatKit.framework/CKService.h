@@ -9,8 +9,8 @@
     NSString *_serviceID;
 }
 
-@property(readonly) CKConversationList *conversationList; /* unknown property attribute: V_conversationList */
-@property(readonly) NSString *serviceID; /* unknown property attribute: V_serviceID */
+@property(readonly) CKConversationList *conversationList;
+@property(readonly) NSString *serviceID;
 
 - (id)abPropertyTypes;
 - (BOOL)canAcceptMediaObject:(id)arg1 givenMediaObjects:(id)arg2;

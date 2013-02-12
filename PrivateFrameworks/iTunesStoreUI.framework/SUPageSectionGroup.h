@@ -10,9 +10,9 @@
     NSInteger _style;
 }
 
-@property NSInteger style; /* unknown property attribute: V_style */
-@property(retain) NSArray *sections; /* unknown property attribute: V_sections */
-@property NSInteger defaultSectionIndex; /* unknown property attribute: V_defaultSectionIndex */
+@property(retain) NSArray *sections;
+@property NSInteger defaultSectionIndex;
+@property NSInteger style;
 
 - (NSInteger)_sectionStyleForString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

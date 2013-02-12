@@ -22,7 +22,7 @@
     NSInteger _streamingState;
 }
 
-@property NSInteger streamingState; /* unknown property attribute: V_streamingState */
+@property NSInteger streamingState;
 
 - (void)_logBlobChunk:(id)arg1;
 - (void)_moveLogFileContents;
@@ -31,7 +31,7 @@
 - (BOOL)advanceOffsetByAmount:(NSUInteger)arg1;
 - (char *)bufferForLength:(NSUInteger)arg1 shouldFree:(BOOL*)arg2;
 - (id)bufferWithAllData;
-- (unsigned char)byteAtOffsetFromCurrentByte:(NSInteger)arg1;
+- (unsigned char)byteAtOffsetFromCurrentByte:(NSUInteger)arg1;
 - (NSInteger)codePage;
 - (long long)curOffset;
 - (unsigned char)currentByte;

@@ -19,17 +19,17 @@
     NSString *_subject;
 }
 
-@property(readonly) NSUInteger replaceMessage; /* unknown property attribute: V_replaceMessage */
-@property(copy) NSString *contentType; /* unknown property attribute: V_contentType */
-@property(readonly) NSDictionary *rawHeaders; /* unknown property attribute: V_rawHeaders */
-@property(copy) NSObject<CTMessageAddress><NSCopying> *sender; /* unknown property attribute: V_sender */
-@property(copy) NSString *subject; /* unknown property attribute: V_subject */
-@property(copy) CTPhoneNumber *serviceCenter; /* unknown property attribute: V_serviceCenter */
-@property NSInteger messageType; /* unknown property attribute: V_messageType */
-@property(readonly) NSArray *items; /* unknown property attribute: V_items */
-@property NSUInteger messageId; /* unknown property attribute: V_messageId */
-@property(readonly) NSDate *date; /* unknown property attribute: V_date */
-@property(readonly) NSArray *recipients; /* unknown property attribute: V_recipients */
+@property(copy) NSString *contentType;
+@property(readonly) NSDate *date;
+@property(readonly) NSArray *items;
+@property(readonly) NSDictionary *rawHeaders;
+@property(readonly) NSArray *recipients;
+@property(copy) NSObject<CTMessageAddress><NSCopying> *sender;
+@property(copy) CTPhoneNumber *serviceCenter;
+@property(copy) NSString *subject;
+@property NSUInteger messageId;
+@property NSInteger messageType;
+@property(readonly) NSUInteger replaceMessage;
 
 - (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
 - (id)addData:(id)arg1 withContentType:(id)arg2;

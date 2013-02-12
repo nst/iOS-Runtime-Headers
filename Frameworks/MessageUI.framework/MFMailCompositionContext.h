@@ -17,12 +17,12 @@
     NSArray *_toRecipients;
 }
 
-@property(readonly) GenericAttachmentStore *attachments; /* unknown property attribute: V_attachments */
-@property(copy) NSArray *bccRecipients; /* unknown property attribute: V_bccRecipients */
-@property(copy) NSArray *ccRecipients; /* unknown property attribute: V_ccRecipients */
-@property(copy) NSArray *toRecipients; /* unknown property attribute: V_toRecipients */
-@property(copy) NSString *subject; /* unknown property attribute: V_subject */
-@property(copy) NSString *sendingAddress; /* unknown property attribute: V_sendingAddress */
+@property(readonly) GenericAttachmentStore *attachments;
+@property(copy) NSArray *bccRecipients;
+@property(copy) NSArray *ccRecipients;
+@property(copy) NSString *sendingAddress;
+@property(copy) NSString *subject;
+@property(copy) NSArray *toRecipients;
 @property(getter=isKeyboardVisible) BOOL keyboardVisible;
 
 + (id)MFMailCompositionContextWithURL:(id)arg1;

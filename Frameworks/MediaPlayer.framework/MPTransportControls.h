@@ -25,12 +25,12 @@
     MediaVolumeSlider *_volumeSlider;
 }
 
-@property NSUInteger visibleParts; /* unknown property attribute: V_visibleParts */
-@property id target; /* unknown property attribute: V_target */
-@property(retain) MPItem *item; /* unknown property attribute: V_item */
-@property NSUInteger disabledParts; /* unknown property attribute: V_disabledParts */
-@property NSUInteger desiredParts; /* unknown property attribute: V_desiredParts */
+@property(retain) MPItem *item;
+@property NSUInteger desiredParts;
+@property NSUInteger disabledParts;
 @property(getter=isForVideo) BOOL forVideo;
+@property id target;
+@property NSUInteger visibleParts;
 
 - (void)_alternateTypesChangedNotification:(id)arg1;
 - (NSUInteger)_applyDesiredPartsToParts:(NSUInteger)arg1;

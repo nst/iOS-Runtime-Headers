@@ -10,8 +10,8 @@
     NSString *m_visualStyle;
 }
 
-@property(readonly) NSString *visualStyle; /* unknown property attribute: Vm_visualStyle */
-@property(retain) UIKBKeyplane *keyplane; /* unknown property attribute: Vm_keyplane */
+@property(retain) UIKBKeyplane *keyplane;
+@property(readonly) NSString *visualStyle;
 
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

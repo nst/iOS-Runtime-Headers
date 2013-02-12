@@ -41,7 +41,7 @@
     NSInteger _wakeGracePeriod;
 }
 
-@property(retain,readonly) NSThread *managerThread; /* unknown property attribute: V_managerThread */
+@property(retain,readonly) NSThread *managerThread;
 
 + (NSInteger)_deviceOffset;
 + (void)_setSpeedFactor:(float)arg1;

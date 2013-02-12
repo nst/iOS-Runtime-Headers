@@ -24,12 +24,12 @@
     NSMutableArray *_touches;
 }
 
-@property float allowableMovement; /* unknown property attribute: V_allowableMovement */
-@property(readonly) NSArray *touches; /* unknown property attribute: V_touches */
-@property NSInteger numberOfFingers; /* unknown property attribute: V_numberOfFingers */
-@property NSInteger numberOfTaps; /* unknown property attribute: V_numberOfTaps */
-@property(readonly) CGPoint location; /* unknown property attribute: V_location */
+@property(readonly) NSArray *touches;
+@property float allowableMovement;
 @property(readonly) CGPoint centroid;
+@property(readonly) CGPoint location;
+@property NSInteger numberOfFingers;
+@property NSInteger numberOfTaps;
 
 - (BOOL)_shouldSaveGestureFromExclusion:(id)arg1;
 - (float)allowableMovement;

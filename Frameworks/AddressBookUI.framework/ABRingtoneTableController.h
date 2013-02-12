@@ -11,6 +11,7 @@
     id _delegate;
     NSString *_noneString;
     void *_person;
+    NSMutableArray *_purchasedRingtoneIdentifiers;
     ABRingtoneManager *_ringtoneManager;
     NSInteger _selectedRingtoneIndex;
     BOOL _showsDefault;

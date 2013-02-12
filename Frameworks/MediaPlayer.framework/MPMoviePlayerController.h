@@ -30,18 +30,15 @@
 - (void)_checkNetworkMediaType;
 - (void)_createPlayer;
 - (void)_delayedBeginFadeOut;
+- (void)_delayedHideOverlay;
 - (void)_expireImplicitAudioRouteChangePlaybackRestart;
-- (void)_itemDidChangeNotification:(id)arg1;
+- (void)_itemDidGenerateCGImage:(id)arg1;
 - (void)_itemFailedToPlay:(id)arg1;
-- (void)_itemFailedToPlayMainThreadCallback:(id)arg1;
 - (id)_localizedDescriptionForErrorCode:(NSInteger)arg1;
 - (void)_mediaServerDied:(id)arg1;
-- (void)_mediaServerDiedMainThreadCallback:(id)arg1;
 - (void)_movieDidDecode:(id)arg1;
-- (void)_movieDidDecodeMainThreadCallback:(id)arg1;
-- (void)_movieDidPreload:(id)arg1;
-- (void)_movieDidPreloadMainThreadCallback:(id)arg1;
 - (void)_pausePlaybackForNotification:(id)arg1;
+- (void)_play;
 - (void)_playbackEnded:(id)arg1;
 - (void)_playbackFailedWithError:(id)arg1;
 - (void)_playbackRateChanged:(id)arg1;
@@ -63,6 +60,7 @@
 - (void)_willTerminateNotification:(id)arg1;
 - (id)backgroundColor;
 - (id)backgroundView;
+- (void)cancelThumbnailRequests;
 - (id)contentURL;
 - (double)currentTime;
 - (void)dealloc;
@@ -76,6 +74,7 @@
 - (NSInteger)orientation;
 - (void)pause;
 - (void)play;
+- (void)requestThumbnailsAtTimes:(id)arg1 timeOption:(NSInteger)arg2;
 - (NSInteger)scalingMode;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
@@ -86,6 +85,7 @@
 - (void)setOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)setScalingMode:(NSInteger)arg1;
 - (void)stop;
+- (struct CGImage { }*)thumbnailAtTime:(double)arg1 timeOption:(NSInteger)arg2;
 - (void)viewControllerRequestsExit:(id)arg1;
 
 @end

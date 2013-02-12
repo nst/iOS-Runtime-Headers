@@ -11,9 +11,9 @@
     NSNumber *_rotationDirection;
 }
 
-@property(readonly) CLHeading *heading; /* unknown property attribute: V_heading */
-@property(readonly) BOOL animated; /* unknown property attribute: V_animated */
+@property(readonly) CLHeading *heading;
 @property(readonly) MKRotationAnimation *rotationAnimation;
+@property(readonly) BOOL animated;
 @property(readonly) BOOL hasRotationDirection;
 @property NSInteger rotationDirection;
 

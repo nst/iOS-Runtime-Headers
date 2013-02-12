@@ -17,7 +17,7 @@
     NSInteger m_type;
 }
 
-@property(retain) NSString *labelID; /* unknown property attribute: Vm_labelID */
+@property(retain) NSString *labelID;
 @property NSInteger mode;
 @property NSInteger state;
 @property NSInteger style;

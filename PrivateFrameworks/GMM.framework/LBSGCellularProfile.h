@@ -13,14 +13,14 @@
     long long _timestamp;
 }
 
-@property(readonly) BOOL hasPrefetchMode; /* unknown property attribute: V_hasPrefetchMode */
-@property NSInteger prefetchMode; /* unknown property attribute: V_prefetchMode */
-@property(retain) NSMutableArray *historicalCellss; /* unknown property attribute: V_historicalCellss */
-@property(retain) NSMutableArray *neighborss; /* unknown property attribute: V_neighborss */
-@property long long timestamp; /* unknown property attribute: V_timestamp */
-@property(retain) LBSGCell *primaryCell; /* unknown property attribute: V_primaryCell */
+@property(retain) NSMutableArray *historicalCellss;
+@property(retain) NSMutableArray *neighborss;
+@property(retain) LBSGCell *primaryCell;
+@property(readonly) BOOL hasPrefetchMode;
 @property(readonly) NSInteger historicalCellssCount;
 @property(readonly) NSInteger neighborssCount;
+@property NSInteger prefetchMode;
+@property long long timestamp;
 
 - (void)addHistoricalCells:(id)arg1;
 - (void)addNeighbors:(id)arg1;

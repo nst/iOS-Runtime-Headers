@@ -26,12 +26,14 @@
     NSURL *_previewURL;
     NSString *_price;
     id _requiredCapabilities;
+    NSInteger _shouldShowPlusIcon;
     NSInteger _supportedDeviceType;
 }
 
-@property(readonly) id requiredCapabilities; /* unknown property attribute: V_requiredCapabilities */
-@property NSInteger mediaType; /* unknown property attribute: V_mediaType */
+@property NSInteger mediaType;
 @property(getter=isPreorder,readonly) BOOL preorder;
+@property(readonly) id requiredCapabilities;
+@property(readonly) NSInteger shouldShowPlusIcon;
 
 - (id)actionDisplayName;
 - (id)assetURL;
@@ -53,6 +55,7 @@
 - (id)priceDisplay;
 - (id)requiredCapabilities;
 - (void)setMediaType:(NSInteger)arg1;
+- (NSInteger)shouldShowPlusIcon;
 - (BOOL)supportsDeviceType:(NSInteger)arg1;
 
 @end

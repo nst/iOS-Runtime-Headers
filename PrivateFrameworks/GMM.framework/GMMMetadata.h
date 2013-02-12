@@ -7,13 +7,14 @@
     BOOL _needsLinkStreetRange;
 }
 
-@property(readonly) BOOL hasNeedsLinkStreetRange; /* unknown property attribute: V_hasNeedsLinkStreetRange */
-@property BOOL needsLinkStreetRange; /* unknown property attribute: V_needsLinkStreetRange */
+@property(readonly) BOOL hasNeedsLinkStreetRange;
+@property BOOL needsLinkStreetRange;
 
 + (id)standardMetadata;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasNeedsLinkStreetRange;
 - (id)init;
 - (BOOL)needsLinkStreetRange;

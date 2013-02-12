@@ -25,6 +25,8 @@
 - (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionWithLocale:(id)arg1 indent:(NSUInteger)arg2;
+- (id)descriptionWithLocale:(id)arg1;
 - (void)getObjects:(id*)arg1;
 - (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 - (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;

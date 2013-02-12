@@ -18,6 +18,7 @@
 @property(readonly) BOOL locationServicesApproved;
 @property(readonly) BOOL locationServicesAvailable;
 @property(readonly) BOOL locationServicesEnabled;
+@property BOOL privateMode;
 @property BOOL supportInfo;
 
 + (id)sharedManager;
@@ -45,11 +46,13 @@
 - (void)onClientEventLocation:(id)arg1;
 - (void)onClientEventPlacemark:(id)arg1;
 - (void)onClientEventRegistered:(id)arg1;
+- (BOOL)privateMode;
 - (id)purpose;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
 - (void)setHeadingFilter:(double)arg1;
+- (void)setPrivateMode:(BOOL)arg1;
 - (void)setPurpose:(id)arg1;
 - (void)setSupportInfo:(BOOL)arg1;
 - (void)startUpdatingHeading;

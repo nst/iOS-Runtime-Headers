@@ -10,10 +10,10 @@
     NSInteger _iconVersion;
 }
 
-@property(retain) NSMutableArray *iconDefinitions; /* unknown property attribute: V_iconDefinitions */
-@property(readonly) BOOL hasIconVersion; /* unknown property attribute: V_hasIconVersion */
-@property NSInteger iconVersion; /* unknown property attribute: V_iconVersion */
+@property(retain) NSMutableArray *iconDefinitions;
+@property(readonly) BOOL hasIconVersion;
 @property(readonly) NSInteger iconDefinitionsCount;
+@property NSInteger iconVersion;
 
 - (void)addIconDefinition:(id)arg1;
 - (void)dealloc;

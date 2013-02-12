@@ -45,9 +45,6 @@
     UIWebDocumentView *m_webView;
 }
 
-@property(getter=isEditing) BOOL editing; /* unknown property attribute: Vm_editing */
-@property BOOL scrollsSelectionOnWebDocumentChanges; /* unknown property attribute: Vm_scrollsSelectionOnWebDocumentChanges */
-@property UIEdgeInsets selectionInset; /* unknown property attribute: Vm_selectionInset */
 @property(readonly) UIView<UITextSelectingContent> *content;
 @property <UITextContentViewDelegate> *delegate;
 @property(retain) UIFont *font;
@@ -58,12 +55,15 @@
 @property NSInteger autocapitalizationType;
 @property NSInteger autocorrectionType;
 @property(getter=isEditable) BOOL editable;
+@property(getter=isEditing) BOOL editing;
 @property BOOL enablesReturnKeyAutomatically;
 @property NSInteger keyboardAppearance;
 @property NSInteger keyboardType;
 @property NSInteger returnKeyType;
+@property BOOL scrollsSelectionOnWebDocumentChanges;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 @property _NSRange selectedRange;
+@property UIEdgeInsets selectionInset;
 @property NSInteger textAlignment;
 
 - (id)_automationValue;
@@ -76,6 +76,7 @@
 - (void)_setLtoRTextDirection:(id)arg1;
 - (void)_setRtoLTextDirection:(id)arg1;
 - (id)_syntheticTouch;
+- (id)automaticallySelectedOverlay;
 - (BOOL)becomeFirstResponder;
 - (BOOL)becomesEditableWithGestures;
 - (void)beginSelectionChange;
@@ -130,6 +131,7 @@
 - (BOOL)isFirstResponder;
 - (BOOL)isInteractingWithLink;
 - (BOOL)isPoint:(struct CGPoint { float x1; float x2; })arg1 inRange:(id)arg2;
+- (BOOL)isSMSTextView;
 - (void)keyboardDidShow:(id)arg1;
 - (NSInteger)keyboardInput:(id)arg1 positionForAutocorrection:(id)arg2;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
@@ -150,7 +152,6 @@
 - (void)performScrollSelectionToVisible:(BOOL)arg1;
 - (BOOL)pointAtEndOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)pointAtStartOfLine:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)rangeAtSentenceStart:(id)arg1;
 - (void)recalculateStyle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForScrollToVisible;

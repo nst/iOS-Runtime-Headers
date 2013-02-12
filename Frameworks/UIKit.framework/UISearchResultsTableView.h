@@ -8,7 +8,7 @@
     UISearchDisplayController *_controller;
 }
 
-@property UISearchDisplayController *controller; /* unknown property attribute: V_controller */
+@property UISearchDisplayController *controller;
 
 - (float)_offsetForNoResultsMessage;
 - (id)controller;

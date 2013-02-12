@@ -2,36 +2,58 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class ASItem, DATaskManager, NSError, NSString;
+@class ASItem, ASParseContext, ASTaskManager, NSError, NSHTTPURLResponse, NSMutableSet, NSString, NSURLConnection, NSURLRequest;
 
-@interface ASTask : ASHTTPRequest <DATask> {
+@interface ASTask : NSObject <DATask> {
     BOOL _askedToCancelWhileModal;
+    NSMutableSet *_attemptedIdentities;
+    NSURLConnection *_connection;
     void *_context;
     ASItem *_currentlyParsingItem;
+    id _delegate;
+    BOOL _didCancel;
+    BOOL _didFailWithError;
+    BOOL _didFinishLoading;
+    BOOL _didReceiveData;
+    BOOL _didReceiveResponse;
+    BOOL _didReset;
+    BOOL _didSendRequest;
     BOOL _finished;
+    BOOL _forceEDGE;
     BOOL _haveParsedCommand;
     BOOL _haveSwitchedCodePage;
     BOOL _inDelegateCallout;
     BOOL _isExclusive;
+    BOOL _isFakingIt;
     NSString *_lastKnownPassword;
     NSString *_lastKnownPolicyKey;
     NSInteger _modalPushCount;
     NSInteger _modalReason;
+    ASParseContext *_parseContext;
     struct __CFUserNotification { } *_passwordNotification;
     NSError *_passwordNotificationError;
     struct __CFString { } *_passwordNotificationRunLoopModes;
     struct __CFRunLoopSource { } *_passwordNotificationRunLoopSource;
     BOOL _receivedBadPasswordResponse;
+    NSURLRequest *_request;
+    NSHTTPURLResponse *_response;
     BOOL _retry;
     NSInteger _taskID;
-    DATaskManager *_taskManager;
+    ASTaskManager *_taskManager;
 }
 
-@property BOOL askedToCancelWhileModal; /* unknown property attribute: V_askedToCancelWhileModal */
-@property DATaskManager *taskManager; /* unknown property attribute: V_taskManager */
+@property void *context;
+@property(retain) ASItem *currentlyParsingItem;
+@property(retain) NSString *lastKnownPassword;
+@property DATaskManager *taskManager;
+@property BOOL askedToCancelWhileModal;
+@property id delegate;
+@property BOOL forceEDGETransport;
+@property BOOL isExclusive;
 
 + (void)_restoreDefaultTaskTimeout;
 + (void)_setDefaultTaskTimeout:(double)arg1;
++ (NSUInteger)uniqueQueryID;
 
 - (id)_applyAuthenticationChain:(struct __CFArray { }*)arg1 toRequest:(id)arg2;
 - (void)_continuePerformTask;
@@ -39,13 +61,14 @@
 - (id)_easVersion;
 - (void)_failImmediately;
 - (void)_handleBadPasswordResponse;
+- (BOOL)_handleCertificateError:(id)arg1;
 - (void)_handlePasswordNotificationResponse:(unsigned long)arg1;
 - (BOOL)_handleRedirect:(id)arg1;
+- (void)_initFakeParseContext;
 - (BOOL)_isWBXML;
 - (id)_policyKey;
 - (void)_popModal;
 - (void)_pushModalForReason:(NSInteger)arg1;
-- (void)_setLastKnownPassword:(id)arg1;
 - (BOOL)_shouldAuth;
 - (void)_tearDownPasswordNotification;
 - (id)_url;
@@ -54,19 +77,31 @@
 - (void)cancelTaskWithReason:(NSInteger)arg1 underlyingError:(id)arg2;
 - (id)command;
 - (NSInteger)commandCode;
+- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (NSInteger)connectionActionForResponse:(id)arg1;
-- (void)connectionFailedWithError:(id)arg1;
+- (void)connectionDidFinishLoading:(id)arg1;
+- (id)contentType;
 - (void*)context;
 - (id)currentlyParsingItem;
 - (void)dealloc;
+- (id)delegate;
+- (id)description;
 - (void)didCallOutToDelegate;
+- (void)didProcessContext:(id)arg1;
 - (BOOL)expectsWBXML;
 - (void)finishWithError:(id)arg1;
+- (BOOL)forceEDGETransport;
 - (id)httpMethod;
 - (id)init;
 - (BOOL)isExclusive;
 - (BOOL)isInCallOutToDelegate;
+- (id)lastKnownPassword;
+- (void)loadRequest:(id)arg1;
 - (id)parameterData;
 - (double)percentComplete;
 - (void)performTask;
@@ -76,13 +111,18 @@
 - (id)requestBodyStream;
 - (BOOL)requiresEASVersionInformaton;
 - (void)reset;
+- (id)responseContentType;
 - (void)setAskedToCancelWhileModal:(BOOL)arg1;
 - (void)setContext:(void*)arg1;
 - (void)setCurrentlyParsingItem:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setForceEDGETransport:(BOOL)arg1;
 - (void)setIsExclusive:(BOOL)arg1;
+- (void)setLastKnownPassword:(id)arg1;
 - (void)setTaskManager:(id)arg1;
 - (BOOL)shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
 - (BOOL)shouldHoldPowerAssertion;
+- (BOOL)shouldLogIncomingData;
 - (void)startModal;
 - (NSInteger)taskID;
 - (id)taskManager;
@@ -91,7 +131,9 @@
 - (void)taskManagerDidUpdatePolicyKey;
 - (NSInteger)taskStatusForError:(id)arg1;
 - (NSInteger)taskStatusForExchangeStatus:(NSInteger)arg1;
+- (void)tearDownResources;
 - (double)timeoutInterval;
 - (void)willCallOutToDelegate;
+- (void)willProcessContext;
 
 @end

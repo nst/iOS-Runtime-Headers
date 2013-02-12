@@ -9,8 +9,8 @@
     NSSet *_tileViews;
 }
 
-@property(retain) NSError *error; /* unknown property attribute: V_error */
-@property(copy) NSSet *tileViews; /* unknown property attribute: V_tileViews */
+@property(retain) NSError *error;
+@property(copy) NSSet *tileViews;
 
 - (void)dealloc;
 - (id)error;

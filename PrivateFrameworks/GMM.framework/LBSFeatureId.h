@@ -7,12 +7,13 @@
     unsigned long long _fprint;
 }
 
-@property unsigned long long fprint; /* unknown property attribute: V_fprint */
-@property unsigned long long cell_id; /* unknown property attribute: V_cell_id */
+@property unsigned long long cell_id;
+@property unsigned long long fprint;
 
 - (unsigned long long)cell_id;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (unsigned long long)fprint;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;

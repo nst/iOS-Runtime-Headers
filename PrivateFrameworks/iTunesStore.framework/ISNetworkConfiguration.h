@@ -8,7 +8,7 @@
     struct __CFDictionary { } *_searchParameters;
 }
 
-@property(readonly) NSInteger allowedAssetTypes; /* unknown property attribute: V_allowedAssetTypes */
+@property(readonly) NSInteger allowedAssetTypes;
 
 - (NSInteger)allowedAssetTypes;
 - (BOOL)allowsAssetType:(NSInteger)arg1 fileSize:(long long)arg2;

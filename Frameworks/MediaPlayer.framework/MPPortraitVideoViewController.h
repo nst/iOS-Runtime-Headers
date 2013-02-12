@@ -12,7 +12,7 @@
     MPPortraitTransportControls *_transportControls;
 }
 
-@property(retain) UINavigationBar *navigationBar; /* unknown property attribute: V_navigationBar */
+@property(retain) UINavigationBar *navigationBar;
 @property(readonly) BOOL ownsTransportControls;
 
 - (void)_handleSwipeRight;

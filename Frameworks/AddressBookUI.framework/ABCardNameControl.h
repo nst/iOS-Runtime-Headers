@@ -4,14 +4,26 @@
 
 @class NSString, UIImageView, UILabel, UIView;
 
-@interface ABCardNameControl : UIControl {
+@interface ABCardNameControl : ABPasteboardControl {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     UIImageView *_accessoryView;
     NSString *_alternateName;
     UIView *_backgroundView;
+    UIView *_customMessageView;
     UILabel *_dateView;
     void *_displayedPerson;
+    } _drawnNameRect;
     BOOL _editable;
     BOOL _isSelected;
+    BOOL _isSelectedForPasteboard;
     BOOL _isSelectionAnimationEnabled;
     UILabel *_message;
     UILabel *_messageDetail;
@@ -21,31 +33,40 @@
     NSString *_tagLine;
 }
 
-@property(copy) NSString *primaryPropertyFormattingCountryCode; /* unknown property attribute: V_primaryPropertyFormattingCountryCode */
+@property(retain) UIView *customMessageView;
 @property(copy) NSString *message;
 @property(copy) NSString *messageDetail;
 @property(retain) UIFont *messageDetailFont;
 @property(retain) UIFont *messageFont;
+@property(copy) NSString *primaryPropertyFormattingCountryCode;
 
 + (id)createNameBevelColor;
 + (id)createNameColor;
 + (id)createNameFont;
++ (id)createNamePasteboardColor;
 + (id)createTagLineFont;
 + (id)dateLineFont;
 
+- (void)_adjustLabelTextColorForPasteboardSelection:(BOOL)arg1;
+- (void)abMenuControllerWillHide;
+- (void)abMenuControllerWillShow:(id)arg1;
+- (BOOL)abShouldShowMenu;
 - (id)accessoryView;
 - (id)alternateName;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)copy:(id)arg1;
 - (id)copyCompositeNameWithTagLine:(id)arg1 isPlaceholder:(BOOL*)arg2;
 - (struct __CFArray { }*)copyNamePropertiesForEditing:(BOOL)arg1;
 - (id)copyPrimaryValue;
 - (id)copyTagLine;
 - (id)createBasicLabel:(BOOL)arg1;
+- (id)customMessageView;
 - (void)dealloc;
 - (void)deselectAnimated:(BOOL)arg1;
 - (void)drawNameInView:(id)arg1 withClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)fontForName:(id)arg1 withWidth:(float)arg2;
+- (float)heightForCustomMessageViewConstrainedToWidth:(float)arg1;
 - (float)heightForMessageConstrainedToWidth:(float)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
@@ -55,6 +76,7 @@
 - (id)messageFont;
 - (id)primaryPropertyFormattingCountryCode;
 - (void)setAlternateName:(id)arg1;
+- (void)setCustomMessageView:(id)arg1;
 - (void)setDateMessageString:(id)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setEditable:(BOOL)arg1;

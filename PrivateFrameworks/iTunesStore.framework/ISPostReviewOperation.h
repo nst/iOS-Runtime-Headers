@@ -4,15 +4,15 @@
 
 @class ISReview;
 
-@interface ISPostReviewOperation : ISOperation <ISURLOperationDelegate> {
+@interface ISPostReviewOperation : ISOperation <ISStoreURLOperationDelegate> {
     BOOL _backgroundReview;
     unsigned long long _itemIdentifier;
     ISReview *_review;
 }
 
-@property(retain) ISReview *review; /* unknown property attribute: V_review */
-@property unsigned long long itemIdentifier; /* unknown property attribute: V_itemIdentifier */
-@property(getter=isBackgroundReview) BOOL backgroundReview; /* unknown property attribute: V_backgroundReview */
+@property(retain) ISReview *review;
+@property(getter=isBackgroundReview) BOOL backgroundReview;
+@property unsigned long long itemIdentifier;
 
 + (BOOL)setRating:(float)arg1 forApplicationAtPath:(id)arg2;
 

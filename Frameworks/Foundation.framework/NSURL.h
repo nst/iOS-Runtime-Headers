@@ -105,7 +105,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)escapedPath;
 - (void)finalize;
 - (id)fragment;
 - (id)friendFinderURL;
@@ -138,7 +137,7 @@
 - (BOOL)isWebcalURL;
 - (id)itmsURL:(NSInteger*)arg1;
 - (id)itmsURL;
-- (id)lastEscapedPathComponent;
+- (id)lastRawPathComponent;
 - (id)mapsURL;
 - (id)parameterString;
 - (id)password;
@@ -167,6 +166,7 @@
 - (id)unquotedPassword;
 - (id)uri;
 - (id)uri;
+- (id)urlByConvertingToStoreURL;
 - (id)urlByReplacingSchemeWithScheme:(id)arg1;
 - (id)urlBySettingHost:(id)arg1;
 - (id)urlBySettingPath:(id)arg1;

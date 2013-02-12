@@ -10,8 +10,8 @@
     float _tableHeight;
 }
 
-@property(retain) id cellContext; /* unknown property attribute: V_cellContext */
 @property(readonly) NSArray *caches;
+@property(retain) id cellContext;
 
 - (id)cacheForClass:(Class)arg1;
 - (id)caches;

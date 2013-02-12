@@ -10,8 +10,8 @@
     UIView *_transitionBehindView;
 }
 
-@property(retain) UIView *transitionBehindView; /* unknown property attribute: V_transitionBehindView */
-@property(retain) UINavigationBar *portraitNavigationBar; /* unknown property attribute: V_portraitNavigationBar */
+@property(retain) UINavigationBar *portraitNavigationBar;
+@property(retain) UIView *transitionBehindView;
 
 - (void)_animationDidStop;
 - (void)_prepareViews;

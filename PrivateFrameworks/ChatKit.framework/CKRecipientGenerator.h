@@ -9,10 +9,9 @@
     NSArray *_searchABPropertyTypes;
 }
 
-@property(retain) NSArray *searchABPropertyTypes; /* unknown property attribute: V_searchABPropertyTypes */
+@property(retain) NSArray *searchABPropertyTypes;
 
 - (void)_appendSearchResults:(id)arg1 identifiers:(id)arg2 abPropertyType:(NSInteger)arg3 toArray:(id)arg4;
-- (Class)_recipientClassForABPropertyType:(NSInteger)arg1;
 - (void)dealloc;
 - (id)recipientWithAddress:(id)arg1;
 - (id)recipientWithRecord:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;

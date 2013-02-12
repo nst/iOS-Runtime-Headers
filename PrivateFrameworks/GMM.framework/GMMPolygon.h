@@ -15,20 +15,21 @@
     NSInteger _lineWidth;
 }
 
-@property(retain) NSMutableArray *innerBoundarys; /* unknown property attribute: V_innerBoundarys */
-@property(readonly) BOOL hasFillColor; /* unknown property attribute: V_hasFillColor */
-@property NSInteger fillColor; /* unknown property attribute: V_fillColor */
-@property(retain) NSData *line; /* unknown property attribute: V_line */
-@property(readonly) BOOL hasLineColor; /* unknown property attribute: V_hasLineColor */
-@property NSInteger lineColor; /* unknown property attribute: V_lineColor */
-@property(readonly) BOOL hasLineWidth; /* unknown property attribute: V_hasLineWidth */
-@property NSInteger lineWidth; /* unknown property attribute: V_lineWidth */
+@property(retain) NSMutableArray *innerBoundarys;
+@property(retain) NSData *line;
+@property NSInteger fillColor;
+@property(readonly) BOOL hasFillColor;
 @property(readonly) BOOL hasLine;
+@property(readonly) BOOL hasLineColor;
+@property(readonly) BOOL hasLineWidth;
 @property(readonly) NSInteger innerBoundarysCount;
+@property NSInteger lineColor;
+@property NSInteger lineWidth;
 
 - (void)addInnerBoundary:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (NSInteger)fillColor;
 - (BOOL)hasFillColor;
 - (BOOL)hasLine;

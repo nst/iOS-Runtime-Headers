@@ -48,13 +48,13 @@
     NSMutableSet *m_variantKeyTokens;
 }
 
-@property BOOL didLongPress; /* unknown property attribute: Vm_didLongPress */
-@property BOOL shift; /* unknown property attribute: Vm_shift */
-@property(retain) UIKBKey *activeKey; /* unknown property attribute: Vm_activeKey */
-@property(copy) NSString *keyplaneName; /* unknown property attribute: Vm_keyplaneName */
-@property(copy) NSString *keyboardName; /* unknown property attribute: Vm_keyboardName */
-@property(readonly) UIKBKeyplane *keyplane; /* unknown property attribute: Vm_keyplane */
-@property(readonly) UIKBKeyboard *keyboard; /* unknown property attribute: Vm_keyboard */
+@property(retain) UIKBKey *activeKey;
+@property(readonly) UIKBKeyboard *keyboard;
+@property(copy) NSString *keyboardName;
+@property(readonly) UIKBKeyplane *keyplane;
+@property(copy) NSString *keyplaneName;
+@property BOOL didLongPress;
+@property BOOL shift;
 
 - (id)activeKey;
 - (void)addKeyToActivatedSet:(id)arg1;

@@ -11,8 +11,8 @@
     struct __CFBinaryHeap { } *_itemLRUHeap;
 }
 
-@property float compactionFactor; /* unknown property attribute: V_compactionFactor */
 @property(readonly) NSArray *allObjects;
+@property float compactionFactor;
 @property(readonly) NSUInteger count;
 
 - (id)allObjects;

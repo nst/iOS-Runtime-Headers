@@ -7,22 +7,21 @@
 @interface ConnectionSettings : NSObject {
     unsigned int _usesSSL : 1;
     unsigned int _tryDirectSSLConnection : 1;
-    NSInteger _dataContextIdentifier;
+    struct __CFString { } *_connectionServiceType;
     NSString *_hostname;
     NSUInteger _portNumber;
     NSData *_serverCertificateDigest;
     NSString *_serviceName;
 }
 
-- (long)dataContextIdentifier;
+- (struct __CFString { }*)connectionServiceType;
 - (void)dealloc;
 - (id)description;
 - (id)hostname;
-- (id)init;
 - (NSUInteger)portNumber;
 - (id)serverCertificateDigest;
 - (id)serviceName;
-- (void)setDataContextIdentifier:(long)arg1;
+- (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setHostname:(id)arg1;
 - (void)setPortNumber:(NSUInteger)arg1;
 - (void)setServerCertificateDigest:(id)arg1;

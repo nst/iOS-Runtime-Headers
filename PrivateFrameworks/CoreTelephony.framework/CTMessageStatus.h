@@ -8,9 +8,9 @@
     NSInteger _result;
 }
 
-@property(readonly) NSInteger result; /* unknown property attribute: V_result */
-@property(readonly) NSInteger messageType; /* unknown property attribute: V_messageType */
-@property(readonly) NSUInteger messageId; /* unknown property attribute: V_messageId */
+@property(readonly) NSUInteger messageId;
+@property(readonly) NSInteger messageType;
+@property(readonly) NSInteger result;
 
 - (id)initWithMessageId:(NSUInteger)arg1 messageType:(NSInteger)arg2 result:(NSInteger)arg3;
 - (NSUInteger)messageId;

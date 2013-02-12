@@ -16,7 +16,9 @@
 - (void*)dbRecord;
 - (NSInteger)dbRecordID;
 - (void)dealloc;
+- (BOOL)hasTracks;
 - (NSUInteger)hash;
+- (id)infoDescription;
 - (id)initWithDBRecord:(void*)arg1;
 - (BOOL)isDeletablePlaylist;
 - (BOOL)isEqual:(id)arg1;

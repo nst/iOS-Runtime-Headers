@@ -6,10 +6,11 @@
     NSInteger _mode;
 }
 
-@property NSInteger mode; /* unknown property attribute: V_mode */
+@property NSInteger mode;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (NSInteger)mode;
 - (BOOL)readFrom:(id)arg1;

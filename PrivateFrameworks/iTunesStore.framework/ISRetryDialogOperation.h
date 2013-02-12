@@ -6,7 +6,7 @@
     BOOL _shouldRetry;
 }
 
-@property BOOL shouldRetry; /* unknown property attribute: V_shouldRetry */
+@property BOOL shouldRetry;
 
 + (id)operationWithTitle:(id)arg1 message:(id)arg2;
 

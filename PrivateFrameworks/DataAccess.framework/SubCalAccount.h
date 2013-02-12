@@ -2,17 +2,18 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSData, NSMutableDictionary, SubCalTaskManager;
+@class DATaskManager, NSData, NSMutableDictionary;
 
 @interface SubCalAccount : DAAccount {
     NSMutableDictionary *_consumers;
-    SubCalTaskManager *_taskManager;
+    DATaskManager *_taskManager;
     NSData *_tmpICSData;
 }
 
-@property(retain) NSMutableDictionary *consumers; /* unknown property attribute: V_consumers */
+@property(retain) NSMutableDictionary *consumers;
 @property(retain) NSDictionary *externalRepresentation;
-@property(readonly) NSString *scheduleIdentifier;
+@property(retain,readonly) NSString *scheduleIdentifier;
+@property(retain,readonly) NSURL *subscriptionURL;
 @property(retain) NSString *syncId;
 @property BOOL shouldRemoveAlarms;
 @property NSInteger subCalAccountVersion;
@@ -22,6 +23,7 @@
 + (id)defaultProperties;
 + (id)supportedDataclasses;
 
+- (void)_checkValidityWithConsumer:(id)arg1 quickValidate:(BOOL)arg2;
 - (id)_tmpICSCalendarPath;
 - (BOOL)_upgradeSelfFromVersion:(NSInteger)arg1 superClassUpgraded:(BOOL)arg2 accountManager:(id)arg3;
 - (void)checkValidityWithConsumer:(id)arg1;
@@ -50,7 +52,9 @@
 - (void)setUsername:(id)arg1;
 - (BOOL)shouldRemoveAlarms;
 - (NSInteger)subCalAccountVersion;
-- (void)subCalCheckValidityTask:(id)arg1 completedWithStatus:(NSInteger)arg2 error:(id)arg3;
+- (BOOL)subCalDATask:(id)arg1 shouldAllowTrust:(struct __SecTrust { }*)arg2 forHost:(id)arg3;
+- (void)subCalValidationTask:(id)arg1 finishedWithError:(id)arg2 calendarName:(id)arg3 calendarData:(id)arg4;
+- (id)subscriptionURL;
 - (BOOL)supportsAccountType:(NSInteger)arg1;
 - (id)syncId;
 - (id)taskManager;

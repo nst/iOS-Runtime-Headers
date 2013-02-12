@@ -11,6 +11,7 @@
     <DAVAuthStore> *_authStore;
     NSInteger _bufferSize;
     BOOL _builtinRedirect;
+    BOOL _bypassCheckingServerTrust;
     BOOL _bypassProxies;
     NSLock *_certUILock;
     id _certificateDelegate;
@@ -48,6 +49,7 @@
 - (id)acceptEncoding;
 - (void)addAdapter:(id)arg1;
 - (long)bufferSize;
+- (BOOL)bypassCheckingServerTrust;
 - (id)certificateDelegate;
 - (void)clearAuthChallenge;
 - (void)correctBufferSizeWithSize:(long)arg1;
@@ -76,6 +78,7 @@
 - (id)scheme;
 - (void)setAuthStore:(id)arg1;
 - (void)setBuiltinRedirect:(BOOL)arg1;
+- (void)setBypassCheckingServerTrust:(BOOL)arg1;
 - (void)setBypassProxies:(BOOL)arg1;
 - (void)setCertificateDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;

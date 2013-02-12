@@ -7,8 +7,8 @@
     NSInteger _updateDistance;
 }
 
-@property NSInteger updateDistance; /* unknown property attribute: V_updateDistance */
-@property BOOL locationsEnabled; /* unknown property attribute: V_locationsEnabled */
+@property BOOL locationsEnabled;
+@property NSInteger updateDistance;
 
 - (BOOL)locationsEnabled;
 - (void)run;

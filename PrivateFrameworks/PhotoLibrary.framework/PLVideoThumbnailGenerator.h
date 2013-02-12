@@ -20,11 +20,11 @@
     struct { id x1; float x2; struct __CFArray {} *x3; float x4; } *_progressStack;
 }
 
-@property ? *progressStack; /* unknown property attribute: V_progressStack */
-@property(readonly) CGSize naturalSize; /* unknown property attribute: V_naturalSize */
-@property(readonly) double duration; /* unknown property attribute: V_duration */
-@property(readonly) AVController *avController; /* unknown property attribute: V_avController */
-@property(retain) NSString *filePath; /* unknown property attribute: V_filePath */
+@property(readonly) AVController *avController;
+@property(retain) NSString *filePath;
+@property ? *progressStack;
+@property(readonly) double duration;
+@property(readonly) CGSize naturalSize;
 
 - (void)_mainThreadSetup;
 - (void)_mainThreadTeardown;

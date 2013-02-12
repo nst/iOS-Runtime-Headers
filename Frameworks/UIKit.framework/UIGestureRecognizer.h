@@ -24,15 +24,15 @@
     NSMutableSet *_vultures;
 }
 
-@property SEL action; /* unknown property attribute: V_action */
-@property id target; /* unknown property attribute: V_target */
 @property(readonly) UIView *view;
+@property SEL action;
 @property BOOL cancelsTouchesInView;
 @property BOOL delaysTouchesBegan;
 @property BOOL delaysTouchesEnded;
 @property(getter=isEnabled) BOOL enabled;
 @property(getter=isExclusive) BOOL exclusive;
 @property NSInteger state;
+@property id target;
 
 + (BOOL)_delaysDirtyReset;
 + (void)_setDelaysDirtyReset:(BOOL)arg1;

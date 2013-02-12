@@ -6,17 +6,18 @@
 
 @interface MLTrackRepSQL : MLTrack {
     MLChapterTOC *_chapterTOC;
-    void *_itemRef;
 }
 
 @property BOOL hasChanges;
 
 - (BOOL)__dbRecordsEqual:(id)arg1;
+- (unsigned long long)accountID;
 - (id)album;
 - (id)albumArtist;
 - (id)artist;
 - (unsigned long)artworkDBRecordID;
 - (unsigned long)audibleDRMGroupID;
+- (unsigned long)bpm;
 - (id)chapterTOC;
 - (id)comments;
 - (id)composer;
@@ -45,13 +46,16 @@
 - (void)incrementSkipCount;
 - (id)infoDescription;
 - (id)initWithDBRecord:(void*)arg1;
+- (id)initWithTrackContext:(void*)arg1;
 - (BOOL)isAudibleAudioBook;
 - (BOOL)isCompilationTrack;
 - (BOOL)isDemoRental;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToTrack:(id)arg1;
 - (BOOL)isExcludedFromShuffle;
+- (BOOL)isExplicitBasedOnCurrentRestrictions;
 - (BOOL)isHidden;
+- (BOOL)isITunesU;
 - (BOOL)isOTAPurchasedContent;
 - (BOOL)isRental;
 - (double)lastPlayedBookmarkTimeInSeconds;

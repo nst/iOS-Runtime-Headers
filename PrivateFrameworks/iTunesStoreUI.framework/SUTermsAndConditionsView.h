@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SULinkControl, UIAlertView, UIButton;
+@class SULinkControl, SUSubtitledButton, UIAlertView;
 
 @interface SUTermsAndConditionsView : UIView {
     UIAlertView *_accountButtonAlert;
-    UIButton *_button;
+    SUSubtitledButton *_button;
     BOOL _hideAccountButton;
     NSInteger _style;
     SULinkControl *_termsAndConditionsControl;
 }
 
-@property NSInteger style; /* unknown property attribute: V_style */
-@property BOOL hideAccountButton; /* unknown property attribute: V_hideAccountButton */
+@property BOOL hideAccountButton;
+@property NSInteger style;
 
 - (void)_accountsChangedNotification:(id)arg1;
 - (id)_button;
 - (void)_buttonAction:(id)arg1;
 - (void)_clearButtonSelection:(id)arg1;
-- (id)_createGradientButton;
-- (id)_createRoundedCornersButton;
 - (void)_destroyButton;
 - (NSInteger)_linkStyleForStyle:(NSInteger)arg1;
 - (void)_termsAndConditionsAction:(id)arg1;

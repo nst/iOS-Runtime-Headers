@@ -22,9 +22,9 @@
     float _topMargin;
 }
 
-@property id tapDelegate; /* unknown property attribute: V_tapDelegate */
-@property id delegate; /* unknown property attribute: V_delegate */
-@property(copy) NSString *subject; /* unknown property attribute: V_subject */
+@property(copy) NSString *subject;
+@property id delegate;
+@property id tapDelegate;
 
 + (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)defaultFont;
@@ -90,6 +90,7 @@
 - (id)subject;
 - (id)tapDelegate;
 - (id)text;
+- (struct CGSize { float x1; float x2; })textSizeInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2;
 - (void)tighten;
 - (float)tightenedWidth;
 

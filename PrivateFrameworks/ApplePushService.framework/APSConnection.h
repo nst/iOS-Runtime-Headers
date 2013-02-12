@@ -17,7 +17,7 @@
     struct __CFRunLoopSource { } *_runLoopSource;
 }
 
-@property <APSConnectionDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <APSConnectionDelegate> *delegate;
 
 - (void)_connect;
 - (void)_connectionServerPortInvalidated;

@@ -2,18 +2,10 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@class Protocol;
-
 @interface Protocol : Object <NSObject> {
-    struct objc_method_description_list { NSInteger x1; struct objc_method_description { 
-            SEL name; 
-            char *types; 
-    struct objc_method_description_list { NSInteger x1; struct objc_method_description { 
-            SEL name; 
-            char *types; 
-        } x2[1]; } *class_methods;
-        } x2[1]; } *instance_methods;
-    struct objc_protocol_list { struct objc_protocol_list {} *x1; long x2; Protocol *x3[1]; } *protocol_list;
+    struct objc_method_description_list { } *class_methods;
+    struct objc_method_description_list { } *instance_methods;
+    struct objc_protocol_list { } *protocol_list;
     char *protocol_name;
 }
 

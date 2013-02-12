@@ -51,6 +51,7 @@
 - (BOOL)isLikelyToBeginPageLoad;
 - (BOOL)isSecure;
 - (BOOL)isTextControl;
+- (NSInteger)keyboardType;
 - (NSInteger)maxLength;
 - (id)name;
 - (BOOL)nodeCanBecomeFirstResponder;

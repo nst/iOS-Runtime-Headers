@@ -13,15 +13,16 @@
     NSInteger _type;
 }
 
-@property NSInteger type; /* unknown property attribute: V_type */
-@property(retain) NSString *productVersion; /* unknown property attribute: V_productVersion */
-@property(retain,readonly) NSString *hardwareModel; /* unknown property attribute: V_hardwareModel */
 @property(retain,readonly) NSString *guid;
+@property(retain,readonly) NSString *hardwareModel;
+@property(retain) NSString *productVersion;
+@property NSInteger type;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
 - (void)_cancelScheduledPowerAssertionRelease:(id)arg1;
+- (id)_copyCapabilityValueForKey:(struct __CFString { }*)arg1;
 - (void*)_copyDeviceTreeProperty:(id)arg1;
 - (id)_copyStringForDeviceTreeProperty:(id)arg1;
 - (NSInteger)_deviceTypeForModelString:(id)arg1;

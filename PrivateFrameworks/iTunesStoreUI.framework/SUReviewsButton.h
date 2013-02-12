@@ -16,9 +16,9 @@
     NSString *_userRatingCountString;
 }
 
-@property(retain) NSString *userRatingCountString; /* unknown property attribute: V_userRatingCountString */
-@property NSInteger userRatingCount; /* unknown property attribute: V_userRatingCount */
-@property float userRating; /* unknown property attribute: V_userRating */
+@property(retain) NSString *userRatingCountString;
+@property float userRating;
+@property NSInteger userRatingCount;
 
 - (void)dealloc;
 - (void)drawButtonPart:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;

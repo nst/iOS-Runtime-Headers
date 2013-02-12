@@ -5,8 +5,6 @@
 @class NSString;
 
 @interface ABActionsController : NSObject {
-    BOOL _isUnknownPerson;
-    NSString *_label;
     NSInteger _multiValueIdentifier;
     void *_person;
     NSInteger _property;
@@ -16,45 +14,28 @@
 }
 
 + (id)createActionsControllerForProperty:(NSInteger)arg1;
++ (NSInteger)defaultActionForProperty:(NSInteger)arg1;
 
-- (void)actionSelectedAtIndex:(NSInteger)arg1;
-- (id)actionTitleForIndex:(NSInteger)arg1;
-- (id)actionTitleForProperty:(NSInteger)arg1 atIndex:(NSInteger)arg2;
-- (NSInteger)actionsCount;
+- (NSInteger)_actionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
+- (void)_performAction:(NSInteger)arg1 forProperty:(NSInteger)arg2;
+- (BOOL)_shouldShowAddToFavorites;
 - (NSInteger)actionsCountForProperty:(NSInteger)arg1;
-- (NSInteger)actionsGroupFirstIndexOfSecondGroup;
-- (NSInteger)addressActionCount;
-- (void)addressActionSelectedAtIndex:(NSInteger)arg1;
-- (id)addressActionTitleForIndex:(NSInteger)arg1;
-- (NSInteger)addressActionsGroupFirstIndexOfSecondGroup;
 - (void)dealloc;
-- (NSInteger)emailActionCount;
-- (void)emailActionSelectedAtIndex:(NSInteger)arg1;
-- (id)emailActionTitleForIndex:(NSInteger)arg1;
-- (NSInteger)emailActionsGroupFirstIndexOfSecondGroup;
+- (NSInteger)defaultAction;
 - (id)initWithProperty:(NSInteger)arg1 person:(void*)arg2;
 - (id)initWithProperty:(NSInteger)arg1;
-- (void)openURLWithFormat:(id)arg1 value:(id)arg2;
+- (void)performAction:(NSInteger)arg1;
 - (void)performActionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
-- (void)performActionAtIndex:(NSInteger)arg1;
 - (void)performDefaultAction;
 - (void*)person;
-- (NSInteger)phoneActionCount;
-- (void)phoneActionSelectedAtIndex:(NSInteger)arg1;
-- (id)phoneActionTitleForIndex:(NSInteger)arg1;
-- (NSInteger)phoneActionsGroupFirstIndexOfSecondGroup;
-- (void)setIsKnown:(BOOL)arg1;
-- (void)setLabel:(id)arg1;
 - (void)setMultiValueIdentifier:(NSInteger)arg1;
 - (void)setRecordID:(NSInteger)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setValue:(id)arg1;
-- (BOOL)shouldShowAddToFavorites;
 - (id)stringValue;
-- (NSInteger)urlActionCount;
-- (void)urlActionSelectedAtIndex:(NSInteger)arg1;
-- (id)urlActionTitleForIndex:(NSInteger)arg1;
-- (NSInteger)urlActionsGroupFirstIndexOfSecondGroup;
+- (id)titleAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
+- (id)titleForAction:(NSInteger)arg1;
+- (id)urlForAction:(NSInteger)arg1 forProperty:(NSInteger)arg2;
 - (id)value;
 
 @end

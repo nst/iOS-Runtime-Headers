@@ -11,11 +11,11 @@
     NSMutableArray *_routes;
 }
 
-@property(readonly) NSInteger mode; /* unknown property attribute: V_mode */
-@property(retain) MKRoute *route; /* unknown property attribute: V_route */
-@property(retain) NSArray *routes; /* unknown property attribute: V_routes */
-@property(readonly) GMMDirectionsResponse *response; /* unknown property attribute: V_response */
 @property(readonly) NSDictionary *dictionaryRepresentation;
+@property(readonly) GMMDirectionsResponse *response;
+@property(retain) MKRoute *route;
+@property(retain) NSArray *routes;
+@property(readonly) NSInteger mode;
 @property(readonly) BOOL routeAvailable;
 
 - (id)_initWithResponse:(id)arg1 startSearchResult:(id)arg2 endSearchResult:(id)arg3 mode:(NSInteger)arg4;

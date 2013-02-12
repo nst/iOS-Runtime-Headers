@@ -29,7 +29,7 @@
     UIColor *_tintColor;
 }
 
-@property(retain) UIColor *tintColor; /* unknown property attribute: V_tintColor */
+@property(retain) UIColor *tintColor;
 @property(getter=isMomentary) BOOL momentary;
 @property(readonly) NSUInteger numberOfSegments;
 @property NSInteger segmentedControlStyle;

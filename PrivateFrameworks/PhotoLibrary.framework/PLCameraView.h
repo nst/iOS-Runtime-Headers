@@ -2,23 +2,38 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhotoDCFFileGroup, NSData, NSDictionary, NSString, PLCameraController, PLCameraElapsedTimeView, PLCropOverlay, PLImageTile, PLVideoView, UIImage, UIImageView, UIToolbar, UIView;
+@class MLPhotoDCFFileGroup, NSData, NSDictionary, NSString, PLCameraController, PLCameraElapsedTimeView, PLCropOverlay, PLImageTile, PLPreviewView, PLVideoView, UIImage, UIImageView, UIToolbar, UIView;
 
 @interface PLCameraView : UIView <PLCameraControllerDelegate, PLVideoViewDelegate> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     unsigned int _showsCropOverlay : 1;
     unsigned int _allowsEditing : 1;
     unsigned int _changesStatusBar : 1;
     unsigned int _cropOverlayUsesTelephonyUI : 1;
     unsigned int _showsCropRegion : 1;
+    unsigned int _controlsAreVisible : 1;
     unsigned int _allowsMultipleModes : 1;
     unsigned int _capturePhotoWhenFocusFinished : 1;
     unsigned int _dontAnimateVideoPreviewDown : 1;
+    unsigned int _processVideoAfterBounceAnimation : 1;
+    unsigned int _capturingPhoto : 1;
     unsigned int _imagePickerWantsImageData : 1;
     UIView *_animatedCaptureView;
     NSInteger _availablePictureCount;
+    float _bounceAspectRatio;
+    } _bounceDestinationFrame;
     UIToolbar *_cameraButtonBar;
     PLCameraController *_cameraController;
     NSInteger _captureOrientation;
+    SEL _closeIrisAnimationFinishedSelector;
     NSString *_cropButtonTitle;
     PLCropOverlay *_cropOverlay;
     NSString *_cropTitle;
@@ -30,32 +45,42 @@
     UIView *_irisView;
     NSData *_lastCapturedImageData;
     BOOL _manipulatingCrop;
+    SEL _openIrisAnimationFinishedSelector;
     NSInteger _photoSavingOptions;
-    NSInteger _pictureCapacity;
-    UIView *_previewView;
+    PLPreviewView *_previewView;
     UIImage *_previewWellImage;
     UIImageView *_shadowView;
     UIView *_staticIrisView;
     UIImage *_temporaryThumbnailImage;
     PLCameraElapsedTimeView *_timeView;
     MLPhotoDCFFileGroup *_videoFileGroup;
+    NSDictionary *_videoMetadata;
     PLVideoView *_videoView;
 }
 
 @property(readonly) BOOL isCameraReady;
 
+- (void)_animateFinalBounce;
 - (void)_applicationResumed;
 - (id)_bottomBar;
+- (void)_bounceAnimationFinished;
+- (BOOL)_canEditVideo;
 - (void)_checkDiskSpaceAfterCapture;
+- (void)_closeIrisAnimationFinished;
+- (id)_cropOverlay;
 - (void)_deleteVideoFileGroup;
+- (NSInteger)_getCaptureOrientation;
 - (void)_inCallStatusChanged:(id)arg1;
 - (id)_modeSwitch;
 - (id)_newVideoFileGroup;
+- (void)_openIrisAnimationFinished;
 - (void)_performVideoCapture;
 - (void)_playShutterSound;
 - (void)_preparePreviewWellImage:(struct CGImage { }*)arg1 isVideo:(BOOL)arg2;
 - (void)_previewVideoAtPath:(id)arg1;
+- (void)_processCapturedVideo;
 - (void)_removeVideoCaptureFileAtPath:(id)arg1;
+- (id)_scriptingInfo;
 - (void)_setShadowViewVisible:(BOOL)arg1;
 - (id)_shutterButton;
 - (void)_shutterButtonClicked;
@@ -63,12 +88,12 @@
 - (void)_updateImageEditability;
 - (void)_updateModeSwitchVisibility;
 - (void)_updateStatusBar;
+- (void)_videoCaptureCompleted:(id)arg1;
 - (void)_videoSwitchValueDidChange:(id)arg1;
 - (void)animateCameraPreviewDown;
 - (void)animateIrisForSuspension;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)buttonBar;
-- (void)cameraController:(id)arg1 addedVideoAtPath:(id)arg2 withPreviewSurface:(void*)arg3 metadata:(id)arg4 wasInterrupted:(BOOL)arg5;
 - (void)cameraController:(id)arg1 modeDidChange:(NSInteger)arg2;
 - (void)cameraController:(id)arg1 tookPicture:(id)arg2 withPreview:(id)arg3 jpegData:(struct __CFData { }*)arg4 imageProperties:(id)arg5;
 - (void)cameraControllerFocusFinished:(id)arg1;
@@ -78,6 +103,7 @@
 - (void)cameraShutterClicked:(id)arg1;
 - (void)closeIris:(BOOL)arg1 didFinishSelector:(SEL)arg2;
 - (void)closeIrisAnimationFinished;
+- (BOOL)controlsAreVisible;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
 - (void)cropOverlayPause:(id)arg1;
 - (void)cropOverlayPlay:(id)arg1;
@@ -92,13 +118,16 @@
 - (BOOL)isCameraReady;
 - (void)openIrisAnimationFinished;
 - (void)openIrisWithDidFinishSelector:(SEL)arg1;
+- (id)overlayView;
 - (NSInteger)photoSavingOptions;
+- (void)pressShutterButton;
 - (void)primeStaticClosedIris;
 - (void)setAllowsImageEditing:(BOOL)arg1;
 - (void)setAllowsMultipleCameraModes:(BOOL)arg1;
 - (void)setCameraButtonBar:(id)arg1;
 - (void)setCameraMode:(NSInteger)arg1;
 - (void)setChangesStatusBar:(BOOL)arg1;
+- (void)setControlsAreVisible:(BOOL)arg1;
 - (void)setCropOverlayUsesTelephonyUI:(BOOL)arg1;
 - (void)setCropTitle:(id)arg1 buttonTitle:(id)arg2;
 - (void)setDelegate:(id)arg1;
@@ -106,7 +135,9 @@
 - (void)setImagePickerOptions:(id)arg1;
 - (void)setImagePickerWantsImageData:(BOOL)arg1;
 - (void)setManipulatingCrop:(BOOL)arg1;
+- (void)setOverlayView:(id)arg1;
 - (void)setPhotoSavingOptions:(NSInteger)arg1;
+- (void)setPreviewViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setShowsCropOverlay:(BOOL)arg1;
 - (void)setShowsCropRegion:(BOOL)arg1;
 - (void)setupAnimateCameraPreviewDown:(id)arg1;

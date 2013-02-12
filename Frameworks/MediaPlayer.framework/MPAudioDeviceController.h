@@ -21,6 +21,7 @@
 - (BOOL)_routeIsHandset:(id)arg1;
 - (BOOL)_routeIsReceiver:(id)arg1;
 - (BOOL)_routeIsSpeaker:(id)arg1;
+- (BOOL)_routeIsWireless:(id)arg1;
 - (void)clearCachedRoutes;
 - (void)dealloc;
 - (BOOL)handsetRouteIsPicked;
@@ -42,5 +43,6 @@
 - (void)setDelegate:(id)arg1;
 - (BOOL)speakerRouteIsPicked;
 - (BOOL)volumeControlIsAvailable;
+- (BOOL)wirelessRouteIsPicked;
 
 @end

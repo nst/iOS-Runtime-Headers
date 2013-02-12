@@ -12,10 +12,10 @@
     <AccountSettingsUIPlugin> *_plugin;
 }
 
-@property(readonly) NSInteger commonSpecifierMode; /* unknown property attribute: V_commonSpecifierMode */
-@property(readonly) NSSet *accountTypes; /* unknown property attribute: V_accountTypes */
-@property(readonly) NSString *path; /* unknown property attribute: V_path */
+@property(readonly) NSSet *accountTypes;
+@property(readonly) NSString *path;
 @property(readonly) <AccountSettingsUIPlugin> *plugin;
+@property(readonly) NSInteger commonSpecifierMode;
 
 - (id)accountTypes;
 - (NSInteger)commonSpecifierMode;

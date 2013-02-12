@@ -15,12 +15,12 @@
     DOMRange *_textSelection;
 }
 
-@property CGSize desiredSize; /* unknown property attribute: V_desiredSize */
-@property(retain) DOMRange *textSelection; /* unknown property attribute: V_textSelection */
-@property(retain) <UIWebSelectionBlock> *extent; /* unknown property attribute: V_extent */
-@property(retain) <UIWebSelectionBlock> *base; /* unknown property attribute: V_base */
-@property(readonly) UIWebDocumentView *documentView; /* unknown property attribute: V_documentView */
+@property(retain) <UIWebSelectionBlock> *base;
+@property(readonly) UIWebDocumentView *documentView;
+@property(retain) <UIWebSelectionBlock> *extent;
+@property(retain) DOMRange *textSelection;
 @property(readonly) CGRect boundingRect;
+@property CGSize desiredSize;
 @property(getter=isTextOnly,readonly) BOOL textOnly;
 @property(readonly) BOOL valid;
 

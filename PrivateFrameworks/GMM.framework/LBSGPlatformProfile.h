@@ -14,13 +14,13 @@
     NSString *_version;
 }
 
-@property(retain) NSString *userAgent; /* unknown property attribute: V_userAgent */
-@property(retain) NSString *ip; /* unknown property attribute: V_ip */
-@property(retain) NSString *locale; /* unknown property attribute: V_locale */
-@property(retain) NSString *distributionChannel; /* unknown property attribute: V_distributionChannel */
-@property(retain) NSString *platformKey; /* unknown property attribute: V_platformKey */
-@property(retain) NSString *platform; /* unknown property attribute: V_platform */
-@property(retain) NSString *version; /* unknown property attribute: V_version */
+@property(retain) NSString *distributionChannel;
+@property(retain) NSString *ip;
+@property(retain) NSString *locale;
+@property(retain) NSString *platform;
+@property(retain) NSString *platformKey;
+@property(retain) NSString *userAgent;
+@property(retain) NSString *version;
 @property(readonly) BOOL hasDistributionChannel;
 @property(readonly) BOOL hasIp;
 @property(readonly) BOOL hasLocale;
@@ -30,6 +30,7 @@
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)distributionChannel;
 - (BOOL)hasDistributionChannel;
 - (BOOL)hasIp;

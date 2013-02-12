@@ -2,23 +2,29 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CLHeading, CLLocationManager, NSDictionary, NSMutableArray;
+@class CLHeading, CLLocationManager, NSDictionary, NSMutableArray, NSString;
 
 @interface PLLocationController : NSObject <CLLocationManagerDelegate> {
+    NSDictionary *_exifDictionary;
+    BOOL _isUpdating;
     CLHeading *_lastHeading;
     CLLocationManager *_locationManager;
     NSMutableArray *_locationPendingPaths;
+    NSString *_locationStr;
     NSInteger _managerRefCount;
+    NSMutableArray *_pendingPathTimestamps;
     NSDictionary *_supportDOPInfo;
 }
 
 + (id)sharedInstance;
 
+- (BOOL)_addLocationToMediaPath:(id)arg1;
+- (BOOL)_isRunning;
 - (void)_locationlessImageFinishedWriting:(id)arg1 withError:(id)arg2 atPath:(id)arg3;
 - (void)_updatePendingImagePaths;
-- (void)addLocationToImageAtPathWhenAvailable:(id)arg1;
+- (void)addLocationToMediaAtPathWhenAvailable:(id)arg1;
 - (void)dealloc;
-- (BOOL)isRunning;
+- (BOOL)isUpdating;
 - (id)location;
 - (id)locationEXIFDictionary;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;

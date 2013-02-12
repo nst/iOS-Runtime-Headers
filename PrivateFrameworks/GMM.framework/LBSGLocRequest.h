@@ -11,10 +11,10 @@
     LBSGUserProfile *_userProfile;
 }
 
-@property(retain) NSMutableArray *requestElementss; /* unknown property attribute: V_requestElementss */
-@property(retain) LBSGUserProfile *userProfile; /* unknown property attribute: V_userProfile */
-@property(retain) NSMutableArray *appProfiless; /* unknown property attribute: V_appProfiless */
-@property(retain) LBSGPlatformProfile *platformProfile; /* unknown property attribute: V_platformProfile */
+@property(retain) NSMutableArray *appProfiless;
+@property(retain) LBSGPlatformProfile *platformProfile;
+@property(retain) NSMutableArray *requestElementss;
+@property(retain) LBSGUserProfile *userProfile;
 @property(readonly) NSInteger appProfilessCount;
 @property(readonly) BOOL hasUserProfile;
 @property(readonly) NSInteger requestElementssCount;

@@ -9,7 +9,7 @@
     NSDictionary *_propertyList;
 }
 
-@property(retain) ISPropertyListProvider *dataProvider; /* unknown property attribute: V_dataProvider */
+@property(retain) ISPropertyListProvider *dataProvider;
 
 - (id)dataProvider;
 - (void)dealloc;

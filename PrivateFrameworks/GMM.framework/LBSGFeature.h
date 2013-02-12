@@ -12,11 +12,11 @@
     NSString *_name;
 }
 
-@property(retain) LBSGLatLng *center; /* unknown property attribute: V_center */
-@property(retain) LBSGRectangle *bounds; /* unknown property attribute: V_bounds */
-@property(retain) LBSGAddress *address; /* unknown property attribute: V_address */
-@property NSInteger featureType; /* unknown property attribute: V_featureType */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
+@property(retain) LBSGAddress *address;
+@property(retain) LBSGRectangle *bounds;
+@property(retain) LBSGLatLng *center;
+@property(retain) NSString *name;
+@property NSInteger featureType;
 @property(readonly) BOOL hasBounds;
 @property(readonly) BOOL hasCenter;
 
@@ -25,6 +25,7 @@
 - (id)center;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (NSInteger)featureType;
 - (BOOL)hasBounds;
 - (BOOL)hasCenter;

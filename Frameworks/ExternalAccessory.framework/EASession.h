@@ -12,10 +12,10 @@
     NSUInteger _sessionID;
 }
 
-@property(readonly) NSOutputStream *outputStream; /* unknown property attribute: V_outputStream */
-@property(readonly) NSInputStream *inputStream; /* unknown property attribute: V_inputStream */
-@property(readonly) NSString *protocolString; /* unknown property attribute: V_protocolString */
-@property(readonly) EAAccessory *accessory; /* unknown property attribute: V_accessory */
+@property(readonly) EAAccessory *accessory;
+@property(readonly) NSInputStream *inputStream;
+@property(readonly) NSOutputStream *outputStream;
+@property(readonly) NSString *protocolString;
 
 - (NSUInteger)_sessionID;
 - (id)_shortDescription;

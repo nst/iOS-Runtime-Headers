@@ -9,34 +9,34 @@
 @class MKTrafficTile;
 
 @interface MKMapTile : MKTrafficTile {
-    struct $_236 { 
-        union $_237 { 
+    struct $_240 { 
+        union $_241 { 
             struct CGColor {} *color; 
             struct CGImage {} *image; 
             id generic; 
         } representation; 
         NSInteger type; 
-     /* Encoded args for previous method: v12@0:4^{MKTileRequester=^^?i^{Connection}*BBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8 */
-     /* Encoded args for previous method: ^{MKTileRequester=^^?i^{Connection}*BBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8@0:4 */
-     /* Encoded args for previous method: v12@0:4^{MKTileRequester=^^?i^{Connection}*BBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8 */
-     /* Encoded args for previous method: ^{MKTileRequester=^^?i^{Connection}*BBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8@0:4 */
+     /* Encoded args for previous method: v12@0:4^{MKTileRequester=^^?i^{Connection}*BBBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8 */
+     /* Encoded args for previous method: ^{MKTileRequester=^^?i^{Connection}*BBBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8@0:4 */
+     /* Encoded args for previous method: v12@0:4^{MKTileRequester=^^?i^{Connection}*BBBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8 */
+     /* Encoded args for previous method: ^{MKTileRequester=^^?i^{Connection}*BBBB^{TileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@^{__CFSet}}8@0:4 */
     } _content;
     BOOL _hasMissingTile;
     BOOL _hasNonFastTraffic;
     float _highlightAlpha;
     MKTrafficTile *_highlightTile;
     BOOL _needsTrafficTile;
-    struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; struct TileResponse {} *x8; struct __CFRunLoop {} *x9; struct __CFRunLoopTimer {} *x10; NSUInteger x11; id x12; struct __CFSet {} *x13; } *_tileRequester;
+    struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; } *_tileRequester;
     BOOL _trafficEnabled;
-    struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; struct TileResponse {} *x8; struct __CFRunLoop {} *x9; struct __CFRunLoopTimer {} *x10; NSUInteger x11; id x12; struct __CFSet {} *x13; } *_trafficRequester;
+    struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; } *_trafficRequester;
 }
 
 + (struct CGColor {}**)highlightTrafficColors;
 + (struct CGImage { }*)missingImage;
 + (struct CGColor {}**)trafficColors;
 
-- (struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; struct TileResponse {} *x8; struct __CFRunLoop {} *x9; struct __CFRunLoopTimer {} *x10; NSUInteger x11; id x12; struct __CFSet {} *x13; }*)tileRequester;
-- (struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; struct TileResponse {} *x8; struct __CFRunLoop {} *x9; struct __CFRunLoopTimer {} *x10; NSUInteger x11; id x12; struct __CFSet {} *x13; }*)trafficRequester;
+- (struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; }*)tileRequester;
+- (struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; }*)trafficRequester;
 - (BOOL)_canDrawContent;
 - (BOOL)_drawsContent;
 - (void)_setShowsTrafficHighlight:(BOOL)arg1;
@@ -59,10 +59,10 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setHasMissingTile:(BOOL)arg1;
 - (void)setImage:(struct CGImage { }*)arg1;
-- (void)setTileRequester:(struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; struct TileResponse {} *x8; struct __CFRunLoop {} *x9; struct __CFRunLoopTimer {} *x10; NSUInteger x11; id x12; struct __CFSet {} *x13; }*)arg1;
+- (void)setTileRequester:(struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; }*)arg1;
 - (void)setTrafficEnabled:(BOOL)arg1;
 - (void)setTrafficHighlightAlpha:(float)arg1;
-- (void)setTrafficRequester:(struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; struct TileResponse {} *x8; struct __CFRunLoop {} *x9; struct __CFRunLoopTimer {} *x10; NSUInteger x11; id x12; struct __CFSet {} *x13; }*)arg1;
+- (void)setTrafficRequester:(struct MKTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct TileResponse {} *x9; struct __CFRunLoop {} *x10; struct __CFRunLoopTimer {} *x11; NSUInteger x12; id x13; struct __CFSet {} *x14; }*)arg1;
 - (void)setTrafficTile:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (BOOL)trafficEnabled;

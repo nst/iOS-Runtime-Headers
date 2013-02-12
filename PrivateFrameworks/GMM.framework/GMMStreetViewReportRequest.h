@@ -8,7 +8,7 @@
     NSMutableArray *_panoramaVisiteds;
 }
 
-@property(retain) NSMutableArray *panoramaVisiteds; /* unknown property attribute: V_panoramaVisiteds */
+@property(retain) NSMutableArray *panoramaVisiteds;
 @property(readonly) NSInteger panoramaVisitedsCount;
 
 - (void)addPanoramaVisited:(id)arg1;

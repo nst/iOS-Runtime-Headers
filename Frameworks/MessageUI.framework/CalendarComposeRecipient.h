@@ -4,18 +4,15 @@
 
 @class NSString;
 
-@interface CalendarComposeRecipient : MailComposeRecipient {
-    NSInteger _attendeeUid;
+@interface CalendarComposeRecipient : ComposeRecipient {
     NSString *_calAttendeeName;
 }
 
-- (NSInteger)attendeeUid;
 - (void)dealloc;
 - (id)displayString;
-- (id)init;
-- (id)initWithMailComposeRecipient:(id)arg1;
-- (id)initWithRecord:(void*)arg1 identifier:(NSInteger)arg2 address:(id)arg3;
-- (void)setAttendeeUid:(NSInteger)arg1;
+- (NSUInteger)hash;
+- (id)initWithComposeRecipient:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setCalAttendeeName:(id)arg1;
 
 @end

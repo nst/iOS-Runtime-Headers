@@ -8,6 +8,7 @@
 + (BOOL)allowRemovalFailures;
 + (id)deviceID;
 
+- (struct __SecCertificate { }*)certificateCopyFromKeychain;
 - (id)certificateData;
 - (id)certificateMD5;
 - (void)neuteredPayloadDictionaryCopy:(id)arg1;

@@ -19,8 +19,10 @@
 }
 
 - (BOOL)_arrowHighlighted;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
 - (void)_cellSelected:(id)arg1;
 - (float)_layoutCandidates:(id)arg1 maxCount:(NSInteger)arg2 height:(float)arg3 maxScreenWidth:(float)arg4;
+- (void)_mouseUp:(struct __GSEvent { }*)arg1 wasCancelled:(BOOL)arg2;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)edgeType;
@@ -43,6 +45,7 @@
 - (void)showHighlightedArrow;
 - (NSInteger)textEffectsVisibilityLevel;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 

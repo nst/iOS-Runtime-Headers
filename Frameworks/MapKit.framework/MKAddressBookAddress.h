@@ -11,12 +11,12 @@
     NSInteger _recordID;
 }
 
-@property(readonly) NSInteger recordID; /* unknown property attribute: V_recordID */
-@property(readonly) void *record; /* unknown property attribute: V_record */
-@property(readonly) NSInteger addressID; /* unknown property attribute: V_addressID */
+@property(readonly) void *record;
 @property(readonly) NSString *singleLineAddress;
 @property(readonly) NSString *singleLineAddressWithHomeCountry;
+@property(readonly) NSInteger addressID;
 @property(readonly) BOOL isValid;
+@property(readonly) NSInteger recordID;
 
 - (void)_checkValid;
 - (NSInteger)addressID;

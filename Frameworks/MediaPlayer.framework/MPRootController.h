@@ -17,11 +17,11 @@
     MPViewController *_viewController;
 }
 
-@property(retain) MPViewController *viewController; /* unknown property attribute: V_viewController */
-@property NSInteger orientation; /* unknown property attribute: V_orientation */
-@property(retain) MPItem *item; /* unknown property attribute: V_item */
-@property <MPRootControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <MPRootControllerDelegate> *delegate;
+@property(retain) MPItem *item;
 @property(retain,readonly) UIView *rootView;
+@property(retain) MPViewController *viewController;
+@property NSInteger orientation;
 @property(getter=isTransitioning,readonly) BOOL transitioning;
 
 - (void)_beginIgnoringChangeTypes:(NSUInteger)arg1;

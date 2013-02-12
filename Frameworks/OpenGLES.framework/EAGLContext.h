@@ -768,6 +768,7 @@
             int (*begin_conditional_render_NV)(); 
             int (*end_conditional_render_NV)(); 
             int (*get_attached_shaders)(); 
+            int (*provoking_vertex_EXT)(); 
             int (*alpha_funcx)(); 
             int (*clear_colorx)(); 
             int (*clear_depthf)(); 
@@ -1590,6 +1591,7 @@
             int (*begin_conditional_render_NV)(); 
             int (*end_conditional_render_NV)(); 
             int (*get_attached_shaders)(); 
+            int (*provoking_vertex_EXT)(); 
             int (*alpha_funcx)(); 
             int (*clear_colorx)(); 
             int (*clear_depthf)(); 

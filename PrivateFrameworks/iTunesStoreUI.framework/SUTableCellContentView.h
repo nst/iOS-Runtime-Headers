@@ -15,13 +15,14 @@
     NSMutableArray *_subviews;
 }
 
-@property(retain) SUCellConfiguration *configuration; /* unknown property attribute: V_configuration */
-@property NSInteger clipCorners; /* unknown property attribute: V_clipCorners */
+@property(retain) SUCellConfiguration *configuration;
+@property NSInteger clipCorners;
 @property(getter=isDeleteConfirmationVisible) BOOL deleteConfirmationVisisble;
 @property BOOL drawAsDisabled;
 @property(getter=isHighlighted) BOOL highlighted;
 @property BOOL usesSubviews;
 
+- (id)_clipPath;
 - (id)_clippedImageForImage:(id)arg1;
 - (void)_reloadSubviewAlphasAnimated:(BOOL)arg1;
 - (void)_reloadSubviewsForConfiguration;

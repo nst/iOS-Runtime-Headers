@@ -8,6 +8,7 @@
     unsigned int _tvOutEnabled : 1;
     unsigned int _wantsTick : 1;
     unsigned int _allowsDetailScrubbing : 1;
+    unsigned int _detailScrubbing : 1;
     UINavigationButton *_backButton;
     NSUInteger _desiredParts;
     NSUInteger _disabledParts;
@@ -24,17 +25,17 @@
     NSUInteger _visibleParts;
 }
 
-@property NSUInteger visibleParts; /* unknown property attribute: V_visibleParts */
-@property MPVideoViewController *videoController; /* unknown property attribute: V_videoController */
-@property(retain,readonly) MPFullScreenTransportControls *transportControls; /* unknown property attribute: V_transportControls */
-@property id target; /* unknown property attribute: V_target */
-@property NSInteger orientation; /* unknown property attribute: V_orientation */
-@property(retain,readonly) UINavigationBar *navigationBar; /* unknown property attribute: V_navigationBar */
-@property(retain) MPItem *item; /* unknown property attribute: V_item */
-@property NSUInteger disabledParts; /* unknown property attribute: V_disabledParts */
-@property NSUInteger desiredParts; /* unknown property attribute: V_desiredParts */
+@property(retain) MPItem *item;
+@property(retain,readonly) UINavigationBar *navigationBar;
+@property(retain,readonly) MPFullScreenTransportControls *transportControls;
+@property MPVideoViewController *videoController;
 @property BOOL TVOutEnabled;
 @property BOOL allowsDetailScrubbing;
+@property NSUInteger desiredParts;
+@property NSUInteger disabledParts;
+@property NSInteger orientation;
+@property id target;
+@property NSUInteger visibleParts;
 
 - (BOOL)TVOutEnabled;
 - (void)_backButtonAction:(id)arg1;

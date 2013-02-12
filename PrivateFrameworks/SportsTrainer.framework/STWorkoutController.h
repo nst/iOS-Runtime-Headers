@@ -15,12 +15,8 @@
     NSInteger _workoutType;
 }
 
-@property BOOL skipNextEmpedSearch; /* unknown property attribute: V_skipNextEmpedSearch */
-@property NSInteger calibrationType; /* unknown property attribute: V_calibrationType */
-@property NSInteger workoutPreset; /* unknown property attribute: V_workoutPreset */
-@property NSInteger workoutType; /* unknown property attribute: V_workoutType */
-@property NSInteger workoutState; /* unknown property attribute: V_workoutState */
 @property(readonly) NSString *empedSerialNumber;
+@property NSInteger calibrationType;
 @property(readonly) NSInteger distanceUnits;
 @property(readonly) BOOL isCalibratedForRun;
 @property(readonly) BOOL isCalibratedForWalk;
@@ -28,7 +24,11 @@
 @property(readonly) BOOL isExternalReceiverRequired;
 @property(readonly) BOOL isLinkedToEmped;
 @property(readonly) BOOL isLinkedToRemote;
+@property BOOL skipNextEmpedSearch;
 @property(readonly) float workoutGoal;
+@property NSInteger workoutPreset;
+@property NSInteger workoutState;
+@property NSInteger workoutType;
 
 + (id)sharedWorkoutController;
 

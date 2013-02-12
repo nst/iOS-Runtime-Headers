@@ -130,6 +130,7 @@
 - (BOOL)isSupported:(id)arg1 version:(id)arg2;
 - (BOOL)isTextControl;
 - (id)keyboardInputView;
+- (NSInteger)keyboardType;
 - (id)largerParent;
 - (id)lastChild;
 - (id)lastDescendantOfAboutTheSameWidthOrHeight;
@@ -159,7 +160,6 @@
 - (id)previousFocusNode;
 - (id)previousSibling;
 - (NSInteger)quoteLevelDelta;
-- (BOOL)rangeAtSentenceStart:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(NSInteger)arg1;
 - (id)rangeByMovingCurrentSelection:(NSInteger)arg1;
 - (id)rangeOfContainingParagraph;
@@ -208,6 +208,7 @@
 - (void)setTextSuggestionDelegate:(id)arg1;
 - (void)setTextTrimmingSet:(struct __CFCharacterSet { }*)arg1;
 - (void)setupPlaceholderTextIfNeeded;
+- (BOOL)shouldEnableAutoShift;
 - (BOOL)showsTapHighlight;
 - (BOOL)strictlyContainsBlock:(id)arg1;
 - (BOOL)strictlyContainsNode:(id)arg1;

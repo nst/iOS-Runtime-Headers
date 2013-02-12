@@ -13,7 +13,8 @@
 - (void)dealloc;
 - (void)enoughTimeElapsed:(id)arg1;
 - (void)reset;
-- (void)sendTouchesShouldBegin;
+- (void)sendTouchesShouldBeginForDelayedTouches:(id)arg1;
+- (void)sendTouchesShouldBeginForTouches:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

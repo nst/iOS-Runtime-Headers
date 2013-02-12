@@ -7,6 +7,7 @@
 
 + (Class)_internalClass;
 
+- (id)URL;
 - (id)_MLPhoto;
 - (void)_applicationWillTerminate:(id)arg1;
 - (id)_createVideoView;
@@ -15,7 +16,11 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (NSInteger)itemType;
+- (id)pathForVideoFile;
+- (void)setPathForVideoFile:(id)arg1;
+- (void)setPathForVideoPreviewFile:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setVideoWasCaptured:(BOOL)arg1;
 - (id)title;
 
 @end

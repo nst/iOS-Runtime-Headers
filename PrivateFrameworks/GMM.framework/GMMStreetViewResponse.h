@@ -13,16 +13,16 @@
     BOOL _throttled;
 }
 
-@property(readonly) BOOL hasThrottled; /* unknown property attribute: V_hasThrottled */
-@property BOOL throttled; /* unknown property attribute: V_throttled */
-@property(retain) NSString *signature; /* unknown property attribute: V_signature */
-@property(retain) GMMIncomingTile *incomingTile; /* unknown property attribute: V_incomingTile */
-@property(retain) GMMStreetViewMetadata *metadata; /* unknown property attribute: V_metadata */
-@property(retain) NSString *panoId; /* unknown property attribute: V_panoId */
+@property(retain) GMMIncomingTile *incomingTile;
+@property(retain) GMMStreetViewMetadata *metadata;
+@property(retain) NSString *panoId;
+@property(retain) NSString *signature;
 @property(readonly) BOOL hasIncomingTile;
 @property(readonly) BOOL hasMetadata;
 @property(readonly) BOOL hasPanoId;
 @property(readonly) BOOL hasSignature;
+@property(readonly) BOOL hasThrottled;
+@property BOOL throttled;
 
 - (void)dealloc;
 - (id)description;

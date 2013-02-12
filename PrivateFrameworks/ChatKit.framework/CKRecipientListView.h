@@ -15,8 +15,8 @@
     CKAtomListView *_toField;
 }
 
-@property(readonly) CGSize contentSize; /* unknown property attribute: V_contentSize */
-@property id delegate; /* unknown property attribute: V_delegate */
+@property(readonly) CGSize contentSize;
+@property id delegate;
 
 - (void)_adjustContentSize;
 - (void)_clearToField;

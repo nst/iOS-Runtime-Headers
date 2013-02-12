@@ -9,8 +9,8 @@
     NSArray *_viewAnimations;
 }
 
-@property NSInteger animationCount; /* unknown property attribute: V_animationCount */
-@property(retain) NSArray *viewAnimations; /* unknown property attribute: V_viewAnimations */
+@property(retain) NSArray *viewAnimations;
+@property NSInteger animationCount;
 
 - (NSInteger)animationCount;
 - (void)dealloc;

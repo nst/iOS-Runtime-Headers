@@ -14,7 +14,8 @@
     NSInteger _zoomLevel;
 }
 
-@property float scale; /* unknown property attribute: V_scale */
+@property id delegate;
+@property float scale;
 
 + (Class)tileClass;
 
@@ -33,6 +34,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRectToView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })convertTilePoint:(struct { double x1; double x2; })arg1 toPointToView:(id)arg2;
 - (void)dealloc;
+- (id)delegate;
 - (id)description;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;

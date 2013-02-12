@@ -62,13 +62,14 @@
     float _transcriptTableBottomOffset;
 }
 
-@property id composeDelegate; /* unknown property attribute: V_composeDelegate */
-@property(retain) CKMessage *smartForwardMessage; /* unknown property attribute: V_smartForwardMessage */
-@property(retain) CKMessage *messageToThrow; /* unknown property attribute: V_messageToThrow */
-@property CKService *currentService; /* unknown property attribute: V_currentService */
+@property CKService *currentService;
+@property(retain) CKMessage *messageToThrow;
+@property(retain) CKMessage *smartForwardMessage;
+@property id composeDelegate;
 
 + (void)_sendDidFinishSavingImageNotificationWithImage:(id)arg1 error:(id)arg2 context:(void*)arg3;
-+ (void)_sendDidStartSavingImageNotification;
++ (void)_sendDidFinishSavingVideoNotificationWithPath:(id)arg1 error:(id)arg2 context:(void*)arg3;
++ (void)_sendDidStartSavingMediaNotification;
 + (id)tableColor;
 
 - (void)CKTranscriptHeaderView:(id)arg1 buttonClicked:(NSInteger)arg2;

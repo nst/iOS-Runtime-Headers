@@ -19,6 +19,7 @@
 }
 
 - (NSUInteger)_propertyType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)expression;
 - (NSUInteger)expressionResultType;

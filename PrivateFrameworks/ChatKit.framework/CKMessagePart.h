@@ -8,10 +8,11 @@
     NSUInteger _flags;
     NSUInteger _height;
     CKMessage *_parentMessage;
+    NSUInteger _rowID;
 }
 
-@property CKMessage *parentMessage; /* unknown property attribute: V_parentMessage */
 @property(readonly) NSData *highlightData;
+@property CKMessage *parentMessage;
 
 + (id)_assembleTextPartFromRange:(id)arg1;
 + (id)_newPartForPartRepresentation:(id)arg1 previewPartRepresentation:(id)arg2;
@@ -39,7 +40,8 @@
 - (id)previewImage;
 - (id)previewText;
 - (void)setParentMessage:(id)arg1;
-- (void)setUIHeight:(unsigned long)arg1 flags:(unsigned long)arg2;
+- (void)setRowID:(unsigned long)arg1;
+- (void)setUIHeight:(unsigned long)arg1 flags:(unsigned long)arg2 store:(BOOL)arg3;
 - (id)text;
 - (NSInteger)type;
 

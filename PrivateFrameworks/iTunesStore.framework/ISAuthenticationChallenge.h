@@ -9,8 +9,8 @@
     NSString *_localizedTitle;
 }
 
-@property(retain) NSString *localizedTitle; /* unknown property attribute: V_localizedTitle */
-@property(retain) NSString *localizedMessage; /* unknown property attribute: V_localizedMessage */
+@property(retain) NSString *localizedMessage;
+@property(retain) NSString *localizedTitle;
 @property(retain,readonly) NSString *password;
 @property(readonly) <NSURLAuthenticationChallengeSender> *sender;
 @property(retain,readonly) NSString *user;

@@ -13,11 +13,11 @@
     BOOL _usedCache;
 }
 
-@property BOOL usedCache; /* unknown property attribute: V_usedCache */
-@property(retain) NSArray *sections; /* unknown property attribute: V_sections */
-@property BOOL shouldResetUserOrdering; /* unknown property attribute: V_shouldResetUserOrdering */
-@property(getter=isLoaded) BOOL loaded; /* unknown property attribute: V_loaded */
-@property <SUSectionControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <SUSectionControllerDelegate> *delegate;
+@property(retain) NSArray *sections;
+@property(getter=isLoaded) BOOL loaded;
+@property BOOL shouldResetUserOrdering;
+@property BOOL usedCache;
 
 - (void)_cancelLoadOperation;
 - (BOOL)_fetchSectionsUsingCache:(BOOL)arg1;

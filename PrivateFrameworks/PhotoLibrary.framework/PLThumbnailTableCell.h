@@ -19,7 +19,7 @@
     UITouch *_touchForTracking;
 }
 
-@property <PLThumbnailTableCellDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <PLThumbnailTableCellDelegate> *delegate;
 @property(readonly) NSArray *photos;
 @property(readonly) MLPhoto *selectedPhoto;
 @property(copy) NSIndexSet *selectedPhotoIndexes;
@@ -29,12 +29,14 @@
 @property NSInteger thumbnailSelectionStyle;
 
 - (BOOL)_canDrawContent;
+- (void)_deselectAllImages;
 - (void)_hideCopyCallout;
+- (NSInteger)_indexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_isMultipleSelectionEnabled;
 - (void)_longPressRecognized:(id)arg1;
-- (void)_notifySelectionStateChanged;
+- (void)_selectionChanged:(id)arg1 wasSelected:(BOOL)arg2;
 - (void)_setSelected:(BOOL)arg1;
-- (void)_updateSelectedColumnAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_updateSelectedColumnAtPoint:(struct CGPoint { float x1; float x2; })arg1 didSelectPhoto:(BOOL*)arg2;
 - (void)addItemsToPasteboard;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;

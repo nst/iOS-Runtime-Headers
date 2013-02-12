@@ -4,14 +4,14 @@
 
 @class ISStoreURLOperation, NSString, NSTimer;
 
-@interface SUNetworkObserver : NSObject <ISSingleton, ISURLOperationDelegate> {
+@interface SUNetworkObserver : NSObject <ISSingleton, ISStoreURLOperationDelegate> {
     ISStoreURLOperation *_partnerDetectOperation;
     NSString *_partnerIdentifier;
     BOOL _partnersEnabled;
     NSTimer *_startupTimer;
 }
 
-@property(retain) NSString *partnerIdentifier; /* unknown property attribute: V_partnerIdentifier */
+@property(retain) NSString *partnerIdentifier;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;

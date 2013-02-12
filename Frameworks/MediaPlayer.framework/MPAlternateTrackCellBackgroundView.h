@@ -11,8 +11,8 @@
     UIBezierPath *_strokePath;
 }
 
-@property NSInteger sectionLocation; /* unknown property attribute: V_sectionLocation */
-@property NSInteger selectionStyle; /* unknown property attribute: V_selectionStyle */
+@property NSInteger sectionLocation;
+@property NSInteger selectionStyle;
 
 - (void)_createBezierPathWithCornerRadius:(float)arg1 bottomRadius:(float)arg2 animating:(BOOL)arg3;
 - (void)_invalidatePaths;

@@ -11,7 +11,7 @@
     struct __CKSMSAddress { } *_smsAddress;
 }
 
-@property(readonly) __CKSMSAddress *smsAddress; /* unknown property attribute: V_smsAddress */
+@property(readonly) __CKSMSAddress *smsAddress;
 
 + (id)copyAllSMSEntities;
 

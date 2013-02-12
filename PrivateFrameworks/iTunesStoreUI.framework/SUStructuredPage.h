@@ -8,6 +8,7 @@
     NSString *_clientApplication;
     NSString *_copyright;
     BOOL _didShowDialog;
+    BOOL _excludeFromNavigationHistory;
     NSNumber *_focusedItemIdentifier;
     ISItem *_item;
     ISItemInfoDataSource *_itemInfoDataSource;
@@ -18,18 +19,19 @@
     NSInteger _type;
 }
 
-@property NSInteger type; /* unknown property attribute: V_type */
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property(retain) SUPageSectionGroup *sectionsGroup; /* unknown property attribute: V_sectionsGroup */
-@property(retain) NSString *rootSectionIdentifier; /* unknown property attribute: V_rootSectionIdentifier */
-@property(retain) SUItemList *itemList; /* unknown property attribute: V_itemList */
-@property(retain) ISItemInfoDataSource *itemInfoDataSource; /* unknown property attribute: V_itemInfoDataSource */
-@property(retain) ISItem *item; /* unknown property attribute: V_item */
-@property(retain) NSNumber *focusedItemIdentifier; /* unknown property attribute: V_focusedItemIdentifier */
-@property(readonly) BOOL didShowDialog; /* unknown property attribute: V_didShowDialog */
-@property(retain) NSString *copyright; /* unknown property attribute: V_copyright */
-@property(retain) NSString *clientApplication; /* unknown property attribute: V_clientApplication */
+@property(retain) NSString *clientApplication;
+@property(retain) NSString *copyright;
+@property(retain) NSNumber *focusedItemIdentifier;
+@property(retain) ISItem *item;
+@property(retain) ISItemInfoDataSource *itemInfoDataSource;
+@property(retain) SUItemList *itemList;
+@property(retain) NSString *rootSectionIdentifier;
+@property(retain) SUPageSectionGroup *sectionsGroup;
+@property(retain) NSString *title;
+@property(readonly) BOOL didShowDialog;
 @property(readonly) BOOL hasDisplayableContent;
+@property BOOL shouldExcludeFromNavigationHistory;
+@property NSInteger type;
 
 - (id)_copyItemFromDictionary:(id)arg1;
 - (void)_parseItemsFromDictionary:(id)arg1;
@@ -57,8 +59,10 @@
 - (void)setItemList:(id)arg1;
 - (void)setRootSectionIdentifier:(id)arg1;
 - (void)setSectionsGroup:(id)arg1;
+- (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setType:(NSInteger)arg1;
+- (BOOL)shouldExcludeFromNavigationHistory;
 - (id)title;
 - (NSInteger)type;
 

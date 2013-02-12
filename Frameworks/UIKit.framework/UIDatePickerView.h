@@ -38,16 +38,16 @@
     double _todaySinceReferenceDate;
 }
 
-@property id delegateOfDatePicker; /* unknown property attribute: V_delegateOfDatePicker */
-@property NSInteger minuteInterval; /* unknown property attribute: V_minuteInterval */
-@property(copy) NSDate *maximumDate; /* unknown property attribute: V_maximumDate */
-@property(copy) NSDate *minimumDate; /* unknown property attribute: V_minimumDate */
-@property(copy) NSDate *date; /* unknown property attribute: V_date */
-@property(copy) NSCalendar *calendar; /* unknown property attribute: V_calendar */
-@property(retain) NSTimeZone *timeZone; /* unknown property attribute: V_timeZone */
-@property(retain) NSLocale *locale; /* unknown property attribute: V_locale */
-@property NSInteger datePickerMode; /* unknown property attribute: V_datePickerMode */
+@property(copy) NSCalendar *calendar;
+@property(copy) NSDate *date;
+@property(retain) NSLocale *locale;
+@property(copy) NSDate *maximumDate;
+@property(copy) NSDate *minimumDate;
+@property(retain) NSTimeZone *timeZone;
 @property double countDownDuration;
+@property NSInteger datePickerMode;
+@property id delegateOfDatePicker;
+@property NSInteger minuteInterval;
 
 - (id)_ampmCellFont;
 - (NSInteger)_columnForElement:(NSUInteger)arg1;

@@ -11,11 +11,11 @@
     NSInteger _zoom;
 }
 
-@property(retain) NSMutableArray *indexs; /* unknown property attribute: V_indexs */
-@property NSInteger zoom; /* unknown property attribute: V_zoom */
-@property NSInteger tileSize; /* unknown property attribute: V_tileSize */
-@property(retain) GMMClientCapabilities *clientCapabilities; /* unknown property attribute: V_clientCapabilities */
+@property(retain) GMMClientCapabilities *clientCapabilities;
+@property(retain) NSMutableArray *indexs;
 @property(readonly) NSInteger indexsCount;
+@property NSInteger tileSize;
+@property NSInteger zoom;
 
 + (id)outgoingTileForPaths:(id)arg1;
 + (id)outgoingTileForZoomLevel:(NSUInteger)arg1;
@@ -24,6 +24,7 @@
 - (id)clientCapabilities;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)indexAtIndex:(NSUInteger)arg1;
 - (id)indexs;
 - (NSInteger)indexsCount;

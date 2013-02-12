@@ -27,6 +27,7 @@
 - (void)setPane:(id)arg1;
 - (void)suspend;
 - (id)view;
+- (void)viewDidBecomeVisible;
 - (void)viewWillBecomeVisible:(void*)arg1;
 - (void)viewWillRedisplay;
 

@@ -14,6 +14,7 @@
 + (id)sharedTextEffectsWindowAboveStatusBar;
 
 - (void)_didRemoveSubview:(id)arg1;
+- (BOOL)_isTextEffectsWindow;
 - (void)_subviewInteractivityChanged:(id)arg1;
 - (BOOL)acceptsGlobalPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)bringSubviewToFront:(id)arg1;

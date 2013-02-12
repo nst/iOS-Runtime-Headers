@@ -22,7 +22,7 @@
     UIWindow *_window;
 }
 
-@property UIWindow *window; /* unknown property attribute: V_window */
+@property UIWindow *window;
 
 + (id)windowControllerForWindow:(id)arg1;
 + (void)windowWillBeDeallocated:(id)arg1;

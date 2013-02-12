@@ -17,19 +17,19 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImageView *iconView; /* unknown property attribute: V_iconView */
-@property(retain) UILabel *messageLabel; /* unknown property attribute: V_messageLabel */
-@property(retain) UILabel *titleLabel; /* unknown property attribute: V_titleLabel */
-@property(retain) UIActivityIndicatorView *activityIndicator; /* unknown property attribute: V_activityIndicator */
-@property(retain,readonly) NSArray *connectionButtons; /* unknown property attribute: V_connectionButtons */
-@property(retain) UIButton *otherButton; /* unknown property attribute: V_otherButton */
-@property(retain) UIButton *cancelButton; /* unknown property attribute: V_cancelButton */
+@property(retain) UIActivityIndicatorView *activityIndicator;
+@property(retain) UIButton *cancelButton;
+@property(retain,readonly) NSArray *connectionButtons;
 @property UIImage *icon;
+@property(retain) UIImageView *iconView;
 @property NSString *message;
 @property(readonly) UIFont *messageFont;
+@property(retain) UILabel *messageLabel;
+@property(retain) UIButton *otherButton;
 @property(retain,readonly) UITableView *table;
 @property NSString *title;
 @property(readonly) UIFont *titleFont;
+@property(retain) UILabel *titleLabel;
 @property NSInteger numberOfMessageLines;
 @property NSInteger numberOfTitleLines;
 

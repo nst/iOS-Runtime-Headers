@@ -13,12 +13,12 @@
     NSInteger _pointType;
 }
 
-@property NSInteger locationSource; /* unknown property attribute: V_locationSource */
-@property NSInteger commandType; /* unknown property attribute: V_commandType */
-@property NSInteger pointType; /* unknown property attribute: V_pointType */
-@property(retain) NSError *error; /* unknown property attribute: V_error */
-@property(retain) CLLocation *location; /* unknown property attribute: V_location */
-@property(retain) CLHeading *heading; /* unknown property attribute: V_heading */
+@property(retain) NSError *error;
+@property(retain) CLHeading *heading;
+@property(retain) CLLocation *location;
+@property NSInteger commandType;
+@property NSInteger locationSource;
+@property NSInteger pointType;
 
 + (id)tripPoint;
 

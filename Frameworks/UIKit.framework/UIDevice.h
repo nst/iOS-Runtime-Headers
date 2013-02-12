@@ -22,6 +22,7 @@
 @property(retain,readonly) NSString *systemVersion;
 @property(retain,readonly) NSString *uniqueIdentifier;
 @property(readonly) BOOL _mapkit_isChinaDevice;
+@property(readonly) BOOL _mapkit_isLiveScrollCapable;
 @property(readonly) BOOL _mapkit_isSensitiveUIEnabled;
 @property(readonly) float batteryLevel;
 @property(getter=isBatteryMonitoringEnabled) BOOL batteryMonitoringEnabled;
@@ -37,6 +38,7 @@
 
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
 - (BOOL)_mapkit_isChinaDevice;
+- (BOOL)_mapkit_isLiveScrollCapable;
 - (BOOL)_mapkit_isSensitiveUIEnabled;
 - (BOOL)_mapkit_isStreetViewEnabled;
 - (BOOL)_mapkit_isStreetViewPIPEnabled;

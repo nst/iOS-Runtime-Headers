@@ -36,27 +36,27 @@
     ASTimeZone *_timeZone;
 }
 
-@property(retain) NSNumber *responseRequested; /* unknown property attribute: V_responseRequested */
-@property(retain) NSArray *attendeesPendingDeletion; /* unknown property attribute: V_attendeesPendingDeletion */
-@property(retain) ASEventUID *eventUID; /* unknown property attribute: V_eventUID */
-@property(retain) NSArray *exceptions; /* unknown property attribute: V_exceptions */
-@property(retain) ASRecurrence *recurrence; /* unknown property attribute: V_recurrence */
-@property(retain) NSArray *attendees; /* unknown property attribute: V_attendees */
-@property(retain) NSDate *startTime; /* unknown property attribute: V_startTime */
-@property(retain) NSString *subject; /* unknown property attribute: V_subject */
-@property(retain) NSNumber *sensitivity; /* unknown property attribute: V_sensitivity */
-@property(retain) NSNumber *reminderMinsBefore; /* unknown property attribute: V_reminderMinsBefore */
-@property(retain) NSString *organizerName; /* unknown property attribute: V_organizerName */
-@property(retain) NSString *organizerEmail; /* unknown property attribute: V_organizerEmail */
-@property(retain) NSNumber *meetingStatus; /* unknown property attribute: V_meetingStatus */
-@property(retain) NSString *location; /* unknown property attribute: V_location */
-@property(retain) NSDate *endTime; /* unknown property attribute: V_endTime */
-@property(retain) NSDate *dTStamp; /* unknown property attribute: V_dTStamp */
-@property(retain) NSNumber *busyStatus; /* unknown property attribute: V_busyStatus */
-@property(retain) NSNumber *bodyTruncated; /* unknown property attribute: V_bodyTruncated */
-@property(retain) NSString *body; /* unknown property attribute: V_body */
-@property(retain) NSNumber *allDayEvent; /* unknown property attribute: V_allDayEvent */
-@property(retain) ASTimeZone *timeZone; /* unknown property attribute: V_timeZone */
+@property(retain) NSNumber *allDayEvent;
+@property(retain) NSArray *attendees;
+@property(retain) NSArray *attendeesPendingDeletion;
+@property(retain) NSString *body;
+@property(retain) NSNumber *bodyTruncated;
+@property(retain) NSNumber *busyStatus;
+@property(retain) NSDate *dTStamp;
+@property(retain) NSDate *endTime;
+@property(retain) ASEventUID *eventUID;
+@property(retain) NSArray *exceptions;
+@property(retain) NSString *location;
+@property(retain) NSNumber *meetingStatus;
+@property(retain) NSString *organizerEmail;
+@property(retain) NSString *organizerName;
+@property(retain) ASRecurrence *recurrence;
+@property(retain) NSNumber *reminderMinsBefore;
+@property(retain) NSNumber *responseRequested;
+@property(retain) NSNumber *sensitivity;
+@property(retain) NSDate *startTime;
+@property(retain) NSString *subject;
+@property(retain) ASTimeZone *timeZone;
 
 + (void)_setFakeDTStampDateForUnitTests:(id)arg1;
 + (BOOL)acceptsTopLevelLeaves;

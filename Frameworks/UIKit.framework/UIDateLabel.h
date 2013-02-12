@@ -8,11 +8,12 @@
     NSInteger _dateKey;
 }
 
-@property BOOL boldForAllLocales; /* unknown property attribute: V_boldForAllLocales */
+@property BOOL boldForAllLocales;
 
 + (id)defaultFont;
 
 - (NSInteger)_dateKey;
+- (id)_dateLabelCache;
 - (void)_invalidateDateKey;
 - (void)_updateDateStrings;
 - (BOOL)boldForAllLocales;

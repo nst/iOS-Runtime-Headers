@@ -12,10 +12,10 @@
     NSInteger _width;
 }
 
-@property(readonly) NSInteger height; /* unknown property attribute: V_height */
-@property(readonly) NSInteger width; /* unknown property attribute: V_width */
-@property(readonly) CGSize imageSize; /* unknown property attribute: V_imageSize */
-@property(readonly) NSUInteger textureName; /* unknown property attribute: V_textureName */
+@property(readonly) NSInteger height;
+@property(readonly) CGSize imageSize;
+@property(readonly) NSUInteger textureName;
+@property(readonly) NSInteger width;
 
 - (void)dealloc;
 - (NSInteger)height;

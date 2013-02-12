@@ -10,8 +10,8 @@
     <DAMFStreamingContentConsumer> *_streamConsumer;
 }
 
-@property(retain) <DAMFStreamingContentConsumer> *streamConsumer; /* unknown property attribute: V_streamConsumer */
-@property(retain) MFError *error; /* unknown property attribute: V_error */
+@property(retain) MFError *error;
+@property(retain) <DAMFStreamingContentConsumer> *streamConsumer;
 
 - (void)actionFailed:(NSInteger)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)consumeData:(char *)arg1 length:(NSInteger)arg2 format:(NSInteger)arg3 mailMessage:(id)arg4;

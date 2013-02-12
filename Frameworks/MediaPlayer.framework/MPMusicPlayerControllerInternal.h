@@ -2,10 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class MPMediaItemCollection, MPMediaQuery;
+
 @interface MPMusicPlayerControllerInternal : MPServerObjectProxy <MPMusicPlayerController> {
     unsigned int _didCheckIn : 1;
+    unsigned int _useApplicationSpecificQueue : 1;
+    unsigned int _useCachedPlaybackState : 1;
+    unsigned int _cachedPlaybackStateIsValid : 1;
     NSUInteger _clientPort;
+    MPMediaItemCollection *_itemCollection;
     NSInteger _playbackNotificationObservers;
+    NSInteger _playbackState;
+    MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
 }
 

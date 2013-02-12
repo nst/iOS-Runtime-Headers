@@ -2,65 +2,56 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUPageSectionGroup, SUStructuredPage, UILabel, UISegmentedControl, UIView;
+@class SUStructuredPage, UILabel;
 
 @interface SUStructuredPageViewController : SUTableViewController <ISURLOperationDelegate> {
-    NSInteger _activeSectionIndex;
     Class _dataSourceClass;
-    UISegmentedControl *_inlineSectionsControl;
-    SUPageSectionGroup *_inlineSectionsGroup;
+    NSInteger _dataSourceStyle;
     UILabel *_noItemsLabel;
-    UIView *_staticInlineSectionsView;
     SUStructuredPage *_structuredPage;
 }
 
-@property(retain) SUStructuredPage *structuredPage; /* unknown property attribute: V_structuredPage */
-@property(retain) Class dataSourceClass; /* unknown property attribute: V_dataSourceClass */
+@property(retain) SUStructuredPage *structuredPage;
+@property(retain) Class dataSourceClass;
+@property NSInteger dataSourceStyle;
 
 - (BOOL)_handleLoadMoreForIndexPath:(id)arg1;
 - (BOOL)_handleSelectedURL:(id)arg1 ofType:(NSUInteger)arg2;
 - (void)_hidePurchaseConfirmationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_hidePurchaseConfirmationForButton:(id)arg1;
-- (void)_inlineSectionControlAction:(id)arg1;
 - (void)_loadMoreOperation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)_loadMoreWithURL:(id)arg1;
 - (void)_priceButtonAction:(id)arg1;
-- (void)_purchaseFailedNotification:(id)arg1;
-- (void)_reloadInlineSectionsWithGroup:(id)arg1;
+- (void)_purchasedItemSetChangedNotification:(id)arg1;
 - (void)_reloadLoadMoreCellAtIndexPath:(id)arg1;
 - (void)_reloadNoItemsLabel;
-- (void)_reloadSegmentedControl;
 - (void)_reloadTermsAndConditions;
-- (void)_sectionChangeOperation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)_showPurchaseConfirmationForButton:(id)arg1;
-- (void)_tabConfigurationChanged:(id)arg1;
 - (void)_touchCaptureAction:(id)arg1;
 - (void)bannerCell:(id)arg1 tappedButtonAtIndex:(NSInteger)arg2;
 - (id)createDataSource;
-- (id)createInlineViewForSegmentedControl:(id)arg1 style:(NSInteger*)arg2;
 - (id)createNoItemsOverlayLabel;
 - (id)createTermsAndConditionsFooter;
 - (Class)dataSourceClass;
+- (NSInteger)dataSourceStyle;
 - (void)dealloc;
-- (id)displayedURL;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(NSInteger)arg2;
 - (BOOL)hasDisplayableContent;
 - (id)init;
 - (BOOL)loadMoreWithURL:(id)arg1;
-- (void)loadView;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (BOOL)purchaseItemAtIndexPath:(id)arg1;
-- (void)purgeMemoryForReason:(NSInteger)arg1;
 - (void)reloadData;
-- (BOOL)reloadForSectionsWithGroup:(id)arg1;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 - (id)rootSectionIdentifier;
 - (void)setDataSourceClass:(Class)arg1;
+- (void)setDataSourceStyle:(NSInteger)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setStructuredPage:(id)arg1;
 - (id)structuredPage;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -20,6 +20,9 @@
         unsigned int dataSourceCanEditRow : 1; 
         unsigned int dataSourceCanMoveRow : 1; 
         unsigned int dataSourceCanUpdateRow : 1; 
+        unsigned int dataSourceShouldShowMenu : 1; 
+        unsigned int dataSourceCanPerformAction : 1; 
+        unsigned int dataSourcePerformAction : 1; 
         unsigned int delegateEditingStyleForRowAtIndexPath : 1; 
         unsigned int delegateTitleForDeleteConfirmationButtonForRowAtIndexPath : 1; 
         unsigned int delegateShouldIndentWhileEditing : 1; 
@@ -97,6 +100,7 @@
     NSIndexPath *_pendingSelectionIndexPath;
     NSMutableArray *_reloadItems;
     id _reorderingSupport;
+    id _reserved;
     NSMutableArray *_reusableFooterViews;
     NSMutableArray *_reusableHeaderViews;
     NSMutableDictionary *_reusableTableCells;
@@ -130,7 +134,6 @@
     } _visibleRows;
 }
 
-@property NSInteger sectionIndexMinimumDisplayRowCount; /* unknown property attribute: V_sectionIndexMinimumDisplayRowCount */
 @property <UITableViewDataSource> *dataSource;
 @property <UITableViewDelegate> *delegate;
 @property(retain) UIColor *separatorColor;
@@ -140,8 +143,10 @@
 @property BOOL allowsSelectionDuringEditing;
 @property(getter=isEditing) BOOL editing;
 @property float rowHeight;
+@property(retain) id scrollTestParameters;
 @property float sectionFooterHeight;
 @property float sectionHeaderHeight;
+@property NSInteger sectionIndexMinimumDisplayRowCount;
 @property NSInteger separatorStyle;
 @property(readonly) NSInteger style;
 
@@ -160,6 +165,7 @@
 - (void)_beginTouchesInContentView:(id)arg1 touches:(id)arg2 withEvent:(id)arg3;
 - (BOOL)_canEditRowAtIndexPath:(id)arg1;
 - (BOOL)_canMoveRowAtIndexPath:(id)arg1;
+- (BOOL)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (BOOL)_canSelectRowContainingHitView:(id)arg1;
 - (void)_cancelCellReorder:(BOOL)arg1;
 - (id)_cellAfterIndexPath:(id)arg1;
@@ -177,8 +183,10 @@
 - (BOOL)_delegateImplementsHeightForRowsInSection;
 - (BOOL)_delegateImplementsViewForFooterInSection;
 - (BOOL)_delegateImplementsViewForHeaderInSection;
+- (BOOL)_delegateWantsCustomFooterForSection:(NSInteger)arg1;
 - (BOOL)_delegateWantsCustomHeaderForSection:(NSInteger)arg1;
 - (BOOL)_delegateWantsFooterForSection:(NSInteger)arg1;
+- (BOOL)_delegateWantsFooterTitleForSection:(NSInteger)arg1;
 - (BOOL)_delegateWantsHeaderForSection:(NSInteger)arg1;
 - (BOOL)_delegateWantsHeaderTitleForSection:(NSInteger)arg1;
 - (void)_deselectAllNonMultiSelectRowsAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
@@ -206,6 +214,9 @@
 - (BOOL)_isTableHeaderViewHidden;
 - (void)_languageChanged;
 - (id)_newSectionViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isHeader:(BOOL)arg2;
+- (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
+- (void)_performScrollTest:(id)arg1 iterations:(NSInteger)arg2 delta:(NSInteger)arg3 length:(NSInteger)arg4;
+- (void)_performScrollTest:(id)arg1 iterations:(NSInteger)arg2 delta:(NSInteger)arg3;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rectChangedWithNewSize:(struct CGSize { float x1; float x2; })arg1 oldSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_removeWasCanceledForCell:(id)arg1;
@@ -221,6 +232,7 @@
 - (id)_rowData;
 - (void)_scheduleAdjustExtraSeparators;
 - (id)_scriptingInfo;
+- (void)_scroll;
 - (void)_scrollToTopHidingTableHeader:(BOOL)arg1;
 - (void)_scrollToTopHidingTableHeaderIfNecessary:(BOOL)arg1;
 - (BOOL)_scrollsToMakeFirstResponderVisible;
@@ -242,6 +254,7 @@
 - (BOOL)_shouldDisplayTopSeparator;
 - (BOOL)_shouldHighlightInsteadOfSelectRowAtIndexPath:(id)arg1;
 - (BOOL)_shouldIndentWhileEditingForRowAtIndexPath:(id)arg1;
+- (BOOL)_shouldShowMenuForCell:(id)arg1;
 - (float)_spacingForExtraSeparators;
 - (void)_stopAutoscrollTimer;
 - (void)_suspendReloads;
@@ -339,6 +352,7 @@
 - (void)reloadSectionIndexTitles;
 - (void)reloadSections:(id)arg1 withRowAnimation:(NSInteger)arg2;
 - (float)rowHeight;
+- (id)scrollTestParameters;
 - (void)scrollToNearestSelectedRowAtScrollPosition:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(NSInteger)arg2 animated:(BOOL)arg3;
 - (float)sectionFooterHeight;
@@ -366,6 +380,7 @@
 - (void)setMultiselectCheckmarkColor:(id)arg1;
 - (void)setOverlapsSectionHeaderViews:(BOOL)arg1;
 - (void)setRowHeight:(float)arg1;
+- (void)setScrollTestParameters:(id)arg1;
 - (void)setSectionFooterHeight:(float)arg1;
 - (void)setSectionHeaderHeight:(float)arg1;
 - (void)setSectionIndexMinimumDisplayRowCount:(NSInteger)arg1;

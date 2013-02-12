@@ -24,8 +24,8 @@
     NSMutableArray *_viewControllers;
 }
 
-@property <UITabBarControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property(copy) NSArray *customizableViewControllers; /* unknown property attribute: V_customizableViewControllers */
+@property(copy) NSArray *customizableViewControllers;
+@property <UITabBarControllerDelegate> *delegate;
 @property(readonly) UINavigationController *moreNavigationController;
 @property UIViewController *selectedViewController;
 @property(readonly) UITabBar *tabBar;
@@ -47,6 +47,7 @@
 - (void)_prepareTabBar;
 - (BOOL)_reallyWantsFullScreenLayout;
 - (void)_rebuildTabBarItemsAnimated:(BOOL)arg1;
+- (void)_rebuildTabBarItemsIfNeeded;
 - (id)_selectedViewControllerInTabBar;
 - (void)_setSelectedTabBarItem:(id)arg1;
 - (void)_setSelectedViewController:(id)arg1;

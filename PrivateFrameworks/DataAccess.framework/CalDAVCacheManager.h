@@ -16,7 +16,6 @@
 
 - (id)_initWithCalendar:(id)arg1;
 - (id)allFilenames;
-- (id)cTag;
 - (void)dealloc;
 - (void)endChanges;
 - (id)etagForFilename:(id)arg1;
@@ -24,7 +23,6 @@
 - (id)init;
 - (BOOL)isFileLocallyModified:(id)arg1;
 - (NSInteger)localUIDForExternalID:(id)arg1;
-- (void)setCTag:(id)arg1;
 - (void)setETag:(id)arg1 forEventWithExternalID:(id)arg2;
 - (void)setETag:(id)arg1 forFilename:(id)arg2;
 - (void)setEventModified:(id)arg1;

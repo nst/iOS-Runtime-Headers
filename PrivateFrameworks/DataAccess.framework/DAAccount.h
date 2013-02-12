@@ -106,7 +106,7 @@
 - (void)saveAccountSettings;
 - (void)savePasswordInKeychain;
 - (BOOL)searchQueriesRunning;
-- (void)sendEmailsForCalEvents:(id)arg1 consumer:(id)arg2;
+- (BOOL)sendEmailsForCalEvents:(id)arg1 consumer:(id)arg2;
 - (id)sentItemsFolder;
 - (void)setAccountBoolProperty:(BOOL)arg1 forKey:(id)arg2;
 - (void)setAccountDescription:(id)arg1;

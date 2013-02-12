@@ -9,8 +9,8 @@
     BOOL _hidesWhenStopped;
 }
 
-@property BOOL hidesWhenStopped; /* unknown property attribute: V_hidesWhenStopped */
-@property NSInteger activityIndicatorViewStyle; /* unknown property attribute: V_activityIndicatorViewStyle */
+@property NSInteger activityIndicatorViewStyle;
+@property BOOL hidesWhenStopped;
 
 + (void)_loadResourcesForStyle:(NSInteger)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForStyle:(NSInteger)arg1;

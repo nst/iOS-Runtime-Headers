@@ -41,16 +41,16 @@
     } m_y;
 }
 
-@property BOOL explicit; /* unknown property attribute: Vm_explicit */
-@property ? paddingRight; /* unknown property attribute: Vm_paddingRight */
-@property ? paddingBottom; /* unknown property attribute: Vm_paddingBottom */
-@property ? paddingLeft; /* unknown property attribute: Vm_paddingLeft */
-@property ? paddingTop; /* unknown property attribute: Vm_paddingTop */
-@property ? h; /* unknown property attribute: Vm_h */
-@property ? w; /* unknown property attribute: Vm_w */
-@property ? y; /* unknown property attribute: Vm_y */
-@property ? x; /* unknown property attribute: Vm_x */
-@property(retain) NSString *name; /* unknown property attribute: Vm_name */
+@property ? paddingRight; /* unknown property attribute: SsetPaddingRight: */
+@property ? paddingBottom; /* unknown property attribute: SsetPaddingBottom: */
+@property ? paddingLeft; /* unknown property attribute: SsetPaddingLeft: */
+@property ? paddingTop; /* unknown property attribute: SsetPaddingTop: */
+@property ? h; /* unknown property attribute: SsetH: */
+@property ? w; /* unknown property attribute: SsetW: */
+@property ? y; /* unknown property attribute: SsetY: */
+@property ? x; /* unknown property attribute: SsetX: */
+@property(retain) NSString *name;
+@property BOOL explicit;
 
 + (id)geometry;
 + (id)geometryWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

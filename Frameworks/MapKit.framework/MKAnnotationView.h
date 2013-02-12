@@ -27,15 +27,19 @@
 + (id)_streetViewButtonPressedImage;
 + (id)_streetViewCalloutButton;
 + (NSUInteger)_zIndex;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (NSInteger)_annotationViewType;
 - (id)_calloutView;
+- (BOOL)_canChangeOrientation;
 - (BOOL)_canDisplayDisclosureInCallout;
 - (BOOL)_canDisplayPlacemarkInCallout;
 - (BOOL)_canDisplayStreetViewInCallout;
 - (id)_contentLayer;
+- (BOOL)_hasAlternateOrientation;
 - (BOOL)_hasSearchResult;
 - (NSUInteger)_mapType;
+- (NSUInteger)_orientationCount;
 - (id)_overlayView;
 - (void)_resetZIndex;
 - (void)_resetZIndexNotify:(BOOL)arg1;
@@ -45,10 +49,9 @@
 - (void)_setCanDisplayPlacemarkInCallout:(BOOL)arg1;
 - (void)_setCanDisplayStreetViewInCallout:(BOOL)arg1;
 - (void)_setMapType:(NSUInteger)arg1;
-- (void)_setSearchResult:(id)arg1;
 - (void)_setZIndex:(NSUInteger)arg1 notify:(BOOL)arg2;
 - (void)_setZIndex:(NSUInteger)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (void)_updateZIndex;
 - (NSUInteger)_zIndex;
 - (id)annotation;
@@ -64,6 +67,7 @@
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;
 - (BOOL)isSelected;
+- (void)layoutSubviews;
 - (id)leftCalloutAccessoryView;
 - (id)panoramaID;
 - (void)prepareForReuse;

@@ -14,18 +14,19 @@
     NSInteger _yawDegreeE6;
 }
 
-@property(retain) NSString *linkStreetRange; /* unknown property attribute: V_linkStreetRange */
-@property(retain) NSString *linkText; /* unknown property attribute: V_linkText */
-@property(readonly) BOOL hasRoadArgb; /* unknown property attribute: V_hasRoadArgb */
-@property NSInteger roadArgb; /* unknown property attribute: V_roadArgb */
-@property(retain) NSString *panoId; /* unknown property attribute: V_panoId */
-@property(readonly) BOOL hasYawDegreeE6; /* unknown property attribute: V_hasYawDegreeE6 */
-@property NSInteger yawDegreeE6; /* unknown property attribute: V_yawDegreeE6 */
+@property(retain) NSString *linkStreetRange;
+@property(retain) NSString *linkText;
+@property(retain) NSString *panoId;
 @property(readonly) BOOL hasLinkStreetRange;
 @property(readonly) BOOL hasLinkText;
+@property(readonly) BOOL hasRoadArgb;
+@property(readonly) BOOL hasYawDegreeE6;
+@property NSInteger roadArgb;
+@property NSInteger yawDegreeE6;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasLinkStreetRange;
 - (BOOL)hasLinkText;
 - (BOOL)hasRoadArgb;

@@ -16,7 +16,7 @@
     SUTextContentView *_textContentView;
 }
 
-@property <SUComposeReviewViewDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <SUComposeReviewViewDelegate> *delegate;
 @property(getter=isLoading) BOOL loading;
 @property float rating;
 @property(getter=isValid,readonly) BOOL valid;

@@ -42,12 +42,14 @@
 - (id)init;
 - (id)initWithProperties:(id)arg1;
 - (BOOL)isEnabledForDataclass:(id)arg1;
+- (BOOL)isValidDAMMeAccount;
 - (id)properties;
 - (id)propertiesToSave;
 - (BOOL)refreshContainerListForDataclass:(id)arg1;
 - (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2;
 - (BOOL)refreshContainersForDataclass:(id)arg1;
 - (void)removeAccountPropertyForKey:(id)arg1;
+- (void)setAccountClass:(id)arg1;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
 - (void)setDisplayName:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
@@ -55,6 +57,7 @@
 - (void)setFullAccount:(id)arg1;
 - (void)setSyncAccount:(id)arg1;
 - (id)shortTypeString;
+- (id)subscribedCalendarRecords;
 - (id)supportedDataclasses;
 - (id)syncAccountCreatorClassNameForAccountType:(id)arg1;
 - (id)syncStoreIdentifier;

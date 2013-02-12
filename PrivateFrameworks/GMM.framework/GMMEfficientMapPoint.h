@@ -7,15 +7,16 @@
     NSInteger _longitude;
 }
 
-@property NSInteger longitude; /* unknown property attribute: V_longitude */
-@property NSInteger latitude; /* unknown property attribute: V_latitude */
 @property(readonly) ? coordinate;
+@property NSInteger latitude;
 @property(readonly) NSInteger latitudeE6;
+@property NSInteger longitude;
 @property(readonly) NSInteger longitudeE6;
 
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (NSInteger)latitude;
 - (NSInteger)latitudeE6;

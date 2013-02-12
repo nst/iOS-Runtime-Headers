@@ -12,8 +12,8 @@
     NSData *_previewData;
 }
 
-@property(readonly) CKMediaObject *mediaObject; /* unknown property attribute: V_mediaObject */
-@property(readonly) UIImage *composeImage; /* unknown property attribute: V_composeImage */
+@property(readonly) UIImage *composeImage;
+@property(readonly) CKMediaObject *mediaObject;
 
 - (NSInteger)_orientation;
 - (id)composeData;

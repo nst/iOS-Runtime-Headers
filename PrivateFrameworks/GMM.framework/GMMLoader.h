@@ -10,8 +10,10 @@
 
 @interface GMMLoader : NSObject {
      /* Encoded args for previous method: @28@0:4@8@12^{Requester=^^?i^{Connection}*BB}16d20 */
+    NSUInteger _bodyOffset;
     NSURLConnection *_connection;
     NSMutableData *_data;
+    BOOL _readPreamble;
     struct Requester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; } *_requester;
     struct Response { int (**x1)(); NSDictionary *x2; } *_response;
 }

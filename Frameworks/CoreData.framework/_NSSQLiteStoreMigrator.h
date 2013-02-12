@@ -22,7 +22,7 @@
     NSMutableDictionary *_transformedEntityMigrations;
 }
 
-@property(readonly) NSSQLAdapter *adapter; /* unknown property attribute: V_adapter */
+@property(readonly) NSSQLAdapter *adapter;
 
 + (BOOL)_annotatesMigrationMetadata;
 + (void)_setAnnotatesMigrationMetadata:(BOOL)arg1;

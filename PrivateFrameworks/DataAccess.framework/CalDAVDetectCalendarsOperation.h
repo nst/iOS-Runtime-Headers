@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class DAVSession, NSMutableDictionary, NSString;
+@class CalDAVServerVersion, DAVSession, NSMutableDictionary, NSString;
 
 @interface CalDAVDetectCalendarsOperation : AYOperation {
     NSString *_calendarHomePath;
     NSMutableDictionary *_results;
+    CalDAVServerVersion *_serverVersion;
     DAVSession *_session;
 }
+
++ (BOOL)privilegeSetIndicatesWriteable:(id)arg1;
 
 - (id)calendarPropertiesForPath:(id)arg1;
 - (void)dealloc;
 - (void)getCalendars;
 - (id)initWithCalendarHomePath:(id)arg1 session:(id)arg2;
 - (id)paths;
+- (id)serverVersion;
 - (id)session;
 
 @end

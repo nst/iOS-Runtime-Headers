@@ -10,14 +10,15 @@
     GMMProjectionProperties *_projectionProperties;
 }
 
-@property(retain) GMMAnnotationProperties *annotationProperties; /* unknown property attribute: V_annotationProperties */
-@property(retain) GMMProjectionProperties *projectionProperties; /* unknown property attribute: V_projectionProperties */
-@property(retain) GMMDataProperties *dataProperties; /* unknown property attribute: V_dataProperties */
+@property(retain) GMMAnnotationProperties *annotationProperties;
+@property(retain) GMMDataProperties *dataProperties;
+@property(retain) GMMProjectionProperties *projectionProperties;
 
 - (id)annotationProperties;
 - (id)dataProperties;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (id)projectionProperties;
 - (BOOL)readFrom:(id)arg1;

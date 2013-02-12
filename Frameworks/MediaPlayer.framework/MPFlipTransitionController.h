@@ -18,8 +18,8 @@
     } _toFrame;
 }
 
-@property CGRect toFrame; /* unknown property attribute: V_toFrame */
-@property(retain) UIView *fromView; /* unknown property attribute: V_fromView */
+@property(retain) UIView *fromView;
+@property CGRect toFrame;
 
 - (id)_subtypeForTransitionType:(NSUInteger)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

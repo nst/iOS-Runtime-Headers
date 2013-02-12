@@ -9,8 +9,8 @@
     NSString *_title;
 }
 
-@property(retain) NSString *title; /* unknown property attribute: V_title */
-@property NSInteger index; /* unknown property attribute: V_index */
+@property(retain) NSString *title;
+@property NSInteger index;
 
 - (void)dealloc;
 - (id)description;

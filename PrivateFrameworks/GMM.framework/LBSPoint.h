@@ -7,11 +7,12 @@
     NSUInteger _lng_e7;
 }
 
-@property NSUInteger lng_e7; /* unknown property attribute: V_lng_e7 */
-@property NSUInteger lat_e7; /* unknown property attribute: V_lat_e7 */
+@property NSUInteger lat_e7;
+@property NSUInteger lng_e7;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)init;
 - (NSUInteger)lat_e7;
 - (NSUInteger)lng_e7;

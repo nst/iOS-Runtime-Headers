@@ -43,6 +43,9 @@
 + (NSUInteger)tileByteCount;
 
 - (void)_invalidateTilePaths;
+- (NSUInteger)_mapkit_cache_heapTime;
+- (id)_mapkit_cache_key;
+- (NSUInteger)_mapkit_cache_updateTime;
 - (BOOL)_readAnotationProperties:(id)arg1 error:(id*)arg2;
 - (BOOL)_readDataProperties:(id)arg1 error:(id*)arg2;
 - (BOOL)_readProjectionProperties:(id)arg1 error:(id*)arg2;
@@ -64,7 +67,6 @@
 - (BOOL)hasMetadata;
 - (BOOL)hasPreview;
 - (BOOL)hasTileDataForPath:(id)arg1;
-- (NSUInteger)heapTime;
 - (double)horizontalFOV;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (void)incrementTileByteCount:(NSInteger)arg1;
@@ -73,7 +75,6 @@
 - (BOOL)isDisabled;
 - (BOOL)isPresent;
 - (BOOL)isServiceThrottled;
-- (id)key;
 - (id)loadedTilePaths;
 - (struct CGImage { }*)mapImageRef;
 - (id)mapPoint;
@@ -86,12 +87,12 @@
 - (void)removeAllTileData;
 - (void)removeTileDataAtZoomLevel:(NSUInteger)arg1;
 - (void)setAnnotations:(id)arg1;
-- (void)setHeapTime:(NSUInteger)arg1;
 - (void)setMapImageRef:(struct CGImage { }*)arg1;
 - (void)setMapPoint:(id)arg1;
 - (void)setTileByteCount:(NSUInteger)arg1;
-- (void)setUpdateTime:(NSUInteger)arg1;
 - (void)setView:(id)arg1;
+- (void)set_mapkit_cache_heapTime:(NSUInteger)arg1;
+- (void)set_mapkit_cache_updateTime:(NSUInteger)arg1;
 - (id)streetName;
 - (id)streetNumber;
 - (double)throttleTimeInterval;
@@ -103,7 +104,6 @@
 - (struct CGSize { float x1; float x2; })tileSize;
 - (double)tiltPitch;
 - (double)tiltYaw;
-- (NSUInteger)updateTime;
 - (id)view;
 - (double)yaw;
 

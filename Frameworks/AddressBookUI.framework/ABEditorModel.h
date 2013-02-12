@@ -16,7 +16,7 @@
     ABCardItemEditorLayer *_subeditorLayer;
 }
 
-@property NSInteger interfaceOrientation; /* unknown property attribute: V_interfaceOrientation */
+@property NSInteger interfaceOrientation;
 
 - (void*)addressBook;
 - (BOOL)atleastOneFieldHasData;

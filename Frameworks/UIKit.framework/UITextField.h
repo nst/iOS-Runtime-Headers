@@ -78,29 +78,29 @@
     UITextInputTraits *_traits;
 }
 
-@property NSInteger rightViewMode; /* unknown property attribute: V_rightViewMode */
-@property(retain) UIView *rightView; /* unknown property attribute: V_rightView */
-@property NSInteger leftViewMode; /* unknown property attribute: V_leftViewMode */
-@property(retain) UIView *leftView; /* unknown property attribute: V_leftView */
-@property NSInteger clearButtonMode; /* unknown property attribute: V_clearButtonMode */
-@property(retain) UIImage *disabledBackground; /* unknown property attribute: V_disabledBackground */
-@property(retain) UIImage *background; /* unknown property attribute: V_background */
-@property <UITextFieldDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property float minimumFontSize; /* unknown property attribute: V_minimumFontSize */
-@property NSInteger borderStyle; /* unknown property attribute: V_borderStyle */
+@property(retain) UIImage *background;
+@property <UITextFieldDelegate> *delegate;
+@property(retain) UIImage *disabledBackground;
 @property(retain) UIFont *font;
+@property(retain) UIView *leftView;
 @property(copy) NSString *placeholder;
+@property(retain) UIView *rightView;
 @property(copy) NSString *text;
 @property(retain) UIColor *textColor;
 @property BOOL adjustsFontSizeToFitWidth;
 @property NSInteger autocapitalizationType;
 @property NSInteger autocorrectionType;
+@property NSInteger borderStyle;
+@property NSInteger clearButtonMode;
 @property BOOL clearsOnBeginEditing;
 @property(getter=isEditing,readonly) BOOL editing;
 @property BOOL enablesReturnKeyAutomatically;
 @property NSInteger keyboardAppearance;
 @property NSInteger keyboardType;
+@property NSInteger leftViewMode;
+@property float minimumFontSize;
 @property NSInteger returnKeyType;
+@property NSInteger rightViewMode;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 @property NSInteger textAlignment;
 

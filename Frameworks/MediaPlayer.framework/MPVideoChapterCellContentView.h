@@ -13,12 +13,12 @@
     MPTimeMarker *_timeMarker;
 }
 
-@property(retain) MPTimeMarker *timeMarker; /* unknown property attribute: V_timeMarker */
-@property float timeColumnWidth; /* unknown property attribute: V_timeColumnWidth */
-@property NSUInteger index; /* unknown property attribute: V_index */
+@property(retain) MPTimeMarker *timeMarker;
 @property(getter=isCurrent) BOOL current;
+@property NSUInteger index;
 @property(getter=isSelected) BOOL selected;
 @property BOOL showThumbnailColumn;
+@property float timeColumnWidth;
 
 - (void)_addThumbnailIfNecessary:(id)arg1;
 - (void)_removeThumbnailIfNecessary:(id)arg1;

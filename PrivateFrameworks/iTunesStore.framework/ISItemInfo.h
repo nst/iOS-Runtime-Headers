@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISItem, NSArray, NSMutableArray, NSMutableDictionary, NSString;
+@class ISItem, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 
 @interface ISItemInfo : NSObject <NSCopying> {
     NSMutableArray *_artworkGroups;
     ISItem *_containerItem;
+    NSString *_deleteConfirmationTitle;
+    NSURL *_deletionURL;
     NSInteger _displayType;
     NSString *_fallbackStoreOfferKey;
     unsigned long long _identifier;
@@ -19,10 +21,12 @@
     NSString *_uuid;
 }
 
-@property(readonly) NSString *title2; /* unknown property attribute: V_title2 */
-@property(readonly) unsigned long long preOrderIdentifier; /* unknown property attribute: V_preOrderIdentifier */
-@property(readonly) NSInteger displayType; /* unknown property attribute: V_displayType */
-@property(retain) ISItem *containerItem; /* unknown property attribute: V_containerItem */
+@property(retain) ISItem *containerItem;
+@property(readonly) NSString *deleteConfirmationTitle;
+@property(readonly) NSURL *deletionURL;
+@property(readonly) NSString *title2;
+@property(readonly) NSInteger displayType;
+@property(readonly) unsigned long long preOrderIdentifier;
 
 - (void)_addValues:(struct __CFDictionary { }*)arg1 toArray:(id)arg2;
 - (void)_loadArtworkFromArray:(id)arg1;
@@ -37,6 +41,8 @@
 - (id)copyRepresentativeDownload;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)deleteConfirmationTitle;
+- (id)deletionURL;
 - (NSInteger)displayType;
 - (long long)downloadFileSize;
 - (long long)expandedDownloadFileSize;

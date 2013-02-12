@@ -15,13 +15,13 @@
     NSInteger _storeID;
 }
 
-@property NSUInteger sequenceNumber; /* unknown property attribute: V_sequenceNumber */
-@property <ABLocalSearchOperationDelegate> *delegate; /* unknown property attribute: V_delegate */
-@property NSInteger groupID; /* unknown property attribute: V_groupID */
-@property NSInteger storeID; /* unknown property attribute: V_storeID */
-@property(copy) NSString *accountIdentifier; /* unknown property attribute: V_accountIdentifier */
-@property(copy) NSString *search; /* unknown property attribute: V_search */
-@property void *addressBook; /* unknown property attribute: V_addressBook */
+@property(copy) NSString *accountIdentifier;
+@property void *addressBook;
+@property <ABLocalSearchOperationDelegate> *delegate;
+@property(copy) NSString *search;
+@property NSInteger groupID;
+@property NSUInteger sequenceNumber;
+@property NSInteger storeID;
 
 - (id)accountIdentifier;
 - (void)addRecordID:(NSInteger)arg1;

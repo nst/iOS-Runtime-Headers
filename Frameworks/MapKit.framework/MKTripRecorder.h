@@ -12,11 +12,11 @@
     NSDate *_timeStampDate;
 }
 
-@property(retain) NSMutableString *buffer; /* unknown property attribute: V_buffer */
-@property(retain) NSDate *lastRecordingDate; /* unknown property attribute: V_lastRecordingDate */
-@property(retain) NSDate *startDate; /* unknown property attribute: V_startDate */
-@property BOOL isRecording; /* unknown property attribute: V_isRecording */
-@property(retain) NSDate *timeStampDate; /* unknown property attribute: V_timeStampDate */
+@property(retain) NSMutableString *buffer;
+@property(retain) NSDate *lastRecordingDate;
+@property(retain) NSDate *startDate;
+@property(retain) NSDate *timeStampDate;
+@property BOOL isRecording;
 
 - (void)_writeVersion;
 - (void)addAbsoluteTimeCommentIfNeeded;

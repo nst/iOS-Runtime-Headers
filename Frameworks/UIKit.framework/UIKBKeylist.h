@@ -9,8 +9,8 @@
     NSString *m_name;
 }
 
-@property(retain) NSMutableArray *keys; /* unknown property attribute: Vm_keys */
-@property(retain) NSString *name; /* unknown property attribute: Vm_name */
+@property(retain) NSMutableArray *keys;
+@property(retain) NSString *name;
 @property(readonly) NSUInteger count;
 
 + (id)keylist;

@@ -17,7 +17,7 @@
     float _tableViewWidth;
 }
 
-@property float minimumRowHeight; /* unknown property attribute: V_minimumRowHeight */
+@property float minimumRowHeight;
 
 - (void)_ensureSectionOffsetIsValidForSection:(NSInteger)arg1;
 - (void)_updateNumSections;

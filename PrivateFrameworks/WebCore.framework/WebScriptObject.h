@@ -38,6 +38,7 @@
 - (void)finalize;
 - (id)objectAtIndex:(NSUInteger)arg1;
 - (void)removeWebScriptKey:(id)arg1;
+- (id)safeValueForKey:(id)arg1;
 - (void)setException:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setWebScriptValueAtIndex:(NSUInteger)arg1 value:(id)arg2;

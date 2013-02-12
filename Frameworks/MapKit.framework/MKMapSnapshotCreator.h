@@ -22,5 +22,6 @@
 - (void)mapViewDidFailLoadingMap:(id)arg1 withError:(id)arg2;
 - (void)mapViewDidFinishLoadingMap:(id)arg1;
 - (void)mapViewWillStartLoadingMap:(id)arg1;
+- (struct CGImage { }*)recreateCurrentSnapshotWithRequester:(id)arg1 context:(id)arg2;
 
 @end

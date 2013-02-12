@@ -12,8 +12,8 @@
     NSString *_selectedService;
 }
 
-@property id delegate; /* unknown property attribute: V_delegate */
-@property(copy) NSString *selectedService; /* unknown property attribute: V_selectedService */
+@property(copy) NSString *selectedService;
+@property id delegate;
 
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;

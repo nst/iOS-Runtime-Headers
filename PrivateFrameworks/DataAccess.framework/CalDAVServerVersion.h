@@ -6,12 +6,12 @@
     double _version;
 }
 
-@property double version; /* unknown property attribute: V_version */
 @property(readonly) NSString *calendarConstraintsPath;
 @property(readonly) NSString *calendarConstraintsResource;
 @property(readonly) NSString *type;
 @property(readonly) BOOL supportsTimeRangeFilter;
 @property(readonly) BOOL supportsTimeRangeFilterWithoutEndDate;
+@property double version;
 
 + (id)prototypes;
 + (id)versionWithHeader:(id)arg1;

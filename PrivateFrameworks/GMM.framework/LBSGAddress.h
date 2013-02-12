@@ -9,8 +9,8 @@
     NSMutableArray *_formattedAddressLines;
 }
 
-@property(retain) NSMutableArray *components; /* unknown property attribute: V_components */
-@property(retain) NSMutableArray *formattedAddressLines; /* unknown property attribute: V_formattedAddressLines */
+@property(retain) NSMutableArray *components;
+@property(retain) NSMutableArray *formattedAddressLines;
 @property(readonly) NSInteger componentsCount;
 @property(readonly) NSInteger formattedAddressLinesCount;
 
@@ -21,6 +21,7 @@
 - (NSInteger)componentsCount;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)formattedAddressLineAtIndex:(NSUInteger)arg1;
 - (id)formattedAddressLines;
 - (NSInteger)formattedAddressLinesCount;

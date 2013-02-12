@@ -10,15 +10,16 @@
     NSString *_url;
 }
 
-@property(retain) NSString *url; /* unknown property attribute: V_url */
-@property(retain) NSString *text; /* unknown property attribute: V_text */
-@property(retain) NSString *headline; /* unknown property attribute: V_headline */
+@property(retain) NSString *headline;
+@property(retain) NSString *text;
+@property(retain) NSString *url;
 @property(readonly) BOOL hasHeadline;
 @property(readonly) BOOL hasText;
 @property(readonly) BOOL hasUrl;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasHeadline;
 - (BOOL)hasText;
 - (BOOL)hasUrl;

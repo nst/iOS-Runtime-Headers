@@ -11,8 +11,8 @@
     NSArray *_plugins;
 }
 
-@property(retain) NSArray *allowedDataclasses; /* unknown property attribute: V_allowedDataclasses */
-@property(retain) NSArray *plugins; /* unknown property attribute: V_plugins */
+@property(retain) NSArray *allowedDataclasses;
+@property(retain) NSArray *plugins;
 
 - (id)allowedDataclasses;
 - (void)dealloc;

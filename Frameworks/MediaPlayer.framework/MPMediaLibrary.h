@@ -17,6 +17,7 @@
 - (void)_launchNotifyPortInvalidated:(id)arg1;
 - (void)_postLibraryDidChangeNotification;
 - (void)_postLibraryDidChangeNotificationForSync;
+- (void)_postLibraryDidChangeNotificationWithUserInfo:(id)arg1;
 - (void)_registerForLaunchNotifications;
 - (void)_runMigServerOnPort:(NSUInteger)arg1;
 - (void)_stopMigServer;
@@ -34,10 +35,12 @@
 - (void)iTunesSyncHasCompleted:(NSInteger)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)init;
+- (BOOL)itemExistsWithIdentifier:(unsigned long long)arg1;
 - (id)lastModifiedDateIfAvailable;
 - (BOOL)libraryHasBeenModifiedWithToken:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)modificationToken;
 - (BOOL)serverIsAlive;
+- (void)setFilteringDisabled:(BOOL)arg1;
 
 @end

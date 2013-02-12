@@ -2,73 +2,29 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString;
+@class NSString;
 
 @interface GMMDocumentInfo : PBCodable {
     NSString *_attributionUrl;
     NSString *_author;
-    NSString *_description;
-    NSString *_docId;
-    BOOL _hasNumberOfPlacemarks;
-    NSString *_metadata;
-    NSString *_name;
-    NSInteger _numberOfPlacemarks;
-    NSMutableArray *_parseErrors;
-    NSString *_snippet;
 }
 
-@property(readonly) BOOL hasNumberOfPlacemarks; /* unknown property attribute: V_hasNumberOfPlacemarks */
-@property NSInteger numberOfPlacemarks; /* unknown property attribute: V_numberOfPlacemarks */
-@property(retain) NSString *attributionUrl; /* unknown property attribute: V_attributionUrl */
-@property(retain) NSString *author; /* unknown property attribute: V_author */
-@property(retain) NSString *metadata; /* unknown property attribute: V_metadata */
-@property(retain) NSString *description; /* unknown property attribute: V_description */
-@property(retain) NSString *snippet; /* unknown property attribute: V_snippet */
-@property(retain) NSString *docId; /* unknown property attribute: V_docId */
-@property(retain) NSString *name; /* unknown property attribute: V_name */
-@property(retain) NSMutableArray *parseErrors; /* unknown property attribute: V_parseErrors */
+@property(retain) NSString *attributionUrl;
+@property(retain) NSString *author;
 @property(readonly) BOOL hasAttributionUrl;
 @property(readonly) BOOL hasAuthor;
-@property(readonly) BOOL hasDescription;
-@property(readonly) BOOL hasDocId;
-@property(readonly) BOOL hasMetadata;
-@property(readonly) BOOL hasName;
-@property(readonly) BOOL hasSnippet;
-@property(readonly) NSInteger parseErrorsCount;
 
-- (void)addParseError:(id)arg1;
 - (id)attributionUrl;
 - (id)author;
 - (void)dealloc;
 - (id)description;
-- (id)docId;
+- (id)dictionaryRepresentation;
 - (BOOL)hasAttributionUrl;
 - (BOOL)hasAuthor;
-- (BOOL)hasDescription;
-- (BOOL)hasDocId;
-- (BOOL)hasMetadata;
-- (BOOL)hasName;
-- (BOOL)hasNumberOfPlacemarks;
-- (BOOL)hasSnippet;
 - (id)init;
-- (id)metadata;
-- (id)name;
-- (NSInteger)numberOfPlacemarks;
-- (id)parseErrorAtIndex:(NSUInteger)arg1;
-- (id)parseErrors;
-- (NSInteger)parseErrorsCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAttributionUrl:(id)arg1;
 - (void)setAuthor:(id)arg1;
-- (void)setDescription:(id)arg1;
-- (void)setDocId:(id)arg1;
-- (void)setMetadata:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)setNumberOfPlacemarks:(NSInteger)arg1;
-- (void)setParseError:(id)arg1 atIndex:(NSUInteger)arg2;
-- (void)setParseErrors:(id)arg1;
-- (void)setSnippet:(id)arg1;
-- (id)snippet;
 - (void)writeTo:(id)arg1;
 
 @end

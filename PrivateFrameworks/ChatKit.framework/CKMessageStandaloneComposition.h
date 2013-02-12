@@ -12,11 +12,11 @@
     NSString *_textString;
 }
 
-@property BOOL isTextOnly; /* unknown property attribute: V_isTextOnly */
-@property(retain) NSArray *resources; /* unknown property attribute: V_resources */
-@property(copy) NSString *subject; /* unknown property attribute: V_subject */
-@property(copy) NSString *textString; /* unknown property attribute: V_textString */
-@property(copy) NSString *markupString; /* unknown property attribute: V_markupString */
+@property(copy) NSString *markupString;
+@property(retain) NSArray *resources;
+@property(copy) NSString *subject;
+@property(copy) NSString *textString;
+@property BOOL isTextOnly;
 
 - (void)dealloc;
 - (BOOL)isTextOnly;

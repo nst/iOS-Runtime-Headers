@@ -10,14 +10,15 @@
     NSInteger _type;
 }
 
-@property(retain) NSData *imageData; /* unknown property attribute: V_imageData */
-@property NSInteger type; /* unknown property attribute: V_type */
-@property(retain) NSString *key; /* unknown property attribute: V_key */
+@property(retain) NSData *imageData;
+@property(retain) NSString *key;
 @property(readonly) BOOL hasImageData;
 @property(readonly) BOOL hasKey;
+@property NSInteger type;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasImageData;
 - (BOOL)hasKey;
 - (id)imageData;

@@ -10,8 +10,8 @@
     NSInteger _type;
 }
 
-@property NSInteger type; /* unknown property attribute: V_type */
-@property(retain) NSString *sectionIdentifier; /* unknown property attribute: V_sectionIdentifier */
+@property(retain) NSString *sectionIdentifier;
+@property NSInteger type;
 
 - (id)copyViewController;
 - (void)dealloc;

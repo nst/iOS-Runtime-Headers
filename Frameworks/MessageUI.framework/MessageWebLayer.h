@@ -31,6 +31,7 @@
 - (void)loadFragment:(id)arg1;
 - (void)loadFragments:(id)arg1;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
+- (BOOL)notifyDelegateToDisplayContextualMenu:(id)arg1;
 - (void)notifyDelegateToDisplayInSeparateView:(id)arg1;
 - (void)notifyDelegateToLoad:(id)arg1 client:(id)arg2;
 - (void)rescaleMessage:(id)arg1;

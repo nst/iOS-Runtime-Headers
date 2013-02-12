@@ -10,9 +10,9 @@
     NSString *_path;
 }
 
-@property(retain) NSFileHandle *fileHandle; /* unknown property attribute: V_fileHandle */
-@property(retain) NSString *path; /* unknown property attribute: V_path */
-@property BOOL enabled; /* unknown property attribute: V_enabled */
+@property(retain) NSFileHandle *fileHandle;
+@property(retain) NSString *path;
+@property BOOL enabled;
 @property(readonly) BOOL isEnabledByDefault;
 
 + (id)instance;

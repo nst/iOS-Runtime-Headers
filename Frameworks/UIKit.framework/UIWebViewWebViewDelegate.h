@@ -10,6 +10,9 @@
 
 - (void)_clearUIWebView;
 - (id)initWithUIWebView:(id)arg1;
+- (id)webView:(id)arg1 createWebViewWithRequest:(id)arg2 userGesture:(BOOL)arg3;
+- (id)webView:(id)arg1 createWebViewWithRequest:(id)arg2;
+- (void)webView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNewWindowAction:(id)arg2 request:(id)arg3 newFrameName:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didCommitLoadForFrame:(id)arg2;

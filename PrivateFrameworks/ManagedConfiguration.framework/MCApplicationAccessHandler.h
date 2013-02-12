@@ -17,6 +17,7 @@
 + (id)descriptionForPayloadCount:(NSUInteger)arg1;
 + (void)initialize;
 + (BOOL)isCameraAllowed;
++ (BOOL)isScreenShotAllowed;
 + (void)parentalControlsChanged;
 + (id)whiteListKeys;
 + (BOOL)writeResultingApplicationAccessInfo:(id)arg1;

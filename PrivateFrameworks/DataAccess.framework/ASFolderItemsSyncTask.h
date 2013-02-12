@@ -7,6 +7,7 @@
 @interface ASFolderItemsSyncTask : ASTask <NSCopying> {
     NSInteger _bodyTruncationBytes;
     NSArray *_commands;
+    BOOL _deletesAsMoves;
     NSInteger _filterDays;
     NSString *_folderID;
     BOOL _haveShortcut121Response;
@@ -43,6 +44,7 @@
 - (void)finishWithError:(id)arg1;
 - (id)folderID;
 - (NSInteger)handleStreamOperation:(NSInteger)arg1 forCodePage:(NSInteger)arg2 tag:(NSInteger)arg3 withParentItem:(id)arg4 withData:(char *)arg5 dataLength:(NSInteger)arg6;
+- (id)initWithFolderID:(id)arg1 deletesAsMoves:(BOOL)arg2;
 - (id)initWithFolderID:(id)arg1;
 - (BOOL)isInitialSync;
 - (BOOL)isResyncAfterConnectionFailed;

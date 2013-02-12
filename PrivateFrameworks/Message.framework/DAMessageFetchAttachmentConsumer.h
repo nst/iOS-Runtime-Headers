@@ -10,8 +10,8 @@
     ActivityMonitor *_monitor;
 }
 
-@property NSUInteger expectedLength; /* unknown property attribute: V_expectedLength */
-@property(readonly) NSData *accumulatedData; /* unknown property attribute: V_accumulatedData */
+@property(readonly) NSData *accumulatedData;
+@property NSUInteger expectedLength;
 
 - (id)accumulatedData;
 - (void)attachmentFetchCompletedWithStatus:(NSInteger)arg1 forAttachmentNamed:(id)arg2 ofMessageWithServerID:(id)arg3;

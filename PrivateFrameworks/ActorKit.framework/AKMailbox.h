@@ -12,7 +12,7 @@
     id _target;
 }
 
-@property id target; /* unknown property attribute: V_target */
+@property id target;
 
 + (id)mailboxWithTarget:(id)arg1 protocol:(id)arg2;
 

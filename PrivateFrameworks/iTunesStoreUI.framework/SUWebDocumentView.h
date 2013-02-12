@@ -10,9 +10,9 @@
     NSString *_stylesheet;
 }
 
-@property(retain) NSString *stylesheet; /* unknown property attribute: V_stylesheet */
-@property id loadDelegate; /* unknown property attribute: V_loadDelegate */
+@property(retain) NSString *stylesheet;
 @property BOOL adjustHeightToFit;
+@property id loadDelegate;
 
 - (BOOL)adjustHeightToFit;
 - (void)dealloc;

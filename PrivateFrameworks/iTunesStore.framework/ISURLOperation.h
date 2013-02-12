@@ -21,17 +21,17 @@
     BOOL _waitForMinimumNetworkType;
 }
 
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property BOOL shouldWaitForMinimumNetworkType; /* unknown property attribute: V_waitForMinimumNetworkType */
-@property(retain) NSHTTPURLResponse *response; /* unknown property attribute: V_response */
-@property(retain) NSDictionary *queryStringDictionary; /* unknown property attribute: V_queryStringDictionary */
-@property NSUInteger minimumNetworkType; /* unknown property attribute: V_minimumNetworkType */
-@property(retain) NSString *method; /* unknown property attribute: V_method */
-@property(retain) ISDataProvider *dataProvider; /* unknown property attribute: V_dataProvider */
-@property(retain) NSDictionary *customHeaders; /* unknown property attribute: V_customHeaders */
-@property NSUInteger cachePolicy; /* unknown property attribute: V_cachePolicy */
-@property(retain) NSData *body; /* unknown property attribute: V_body */
+@property(retain) NSData *body;
+@property(retain) NSDictionary *customHeaders;
+@property(retain) ISDataProvider *dataProvider;
 @property <ISURLOperationDelegate> *delegate;
+@property(retain) NSString *method;
+@property(retain) NSDictionary *queryStringDictionary;
+@property(retain) NSHTTPURLResponse *response;
+@property(retain) NSURL *url;
+@property NSUInteger cachePolicy;
+@property NSUInteger minimumNetworkType;
+@property BOOL shouldWaitForMinimumNetworkType;
 
 + (id)copyUserAgent;
 
@@ -76,6 +76,7 @@
 - (void)setResponse:(id)arg1;
 - (void)setShouldWaitForMinimumNetworkType:(BOOL)arg1;
 - (void)setUrl:(id)arg1;
+- (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
 - (BOOL)shouldWaitForMinimumNetworkType;
 - (id)url;
 

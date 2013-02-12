@@ -2,25 +2,28 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFContactsSearchManager, NSNumber, NSString;
+@class MFContactsSearchManager, NSNumber, NSSet, NSString;
 
 @interface MFContactsSearchOperation : NSOperation {
     void *_addressBook;
     MFContactsSearchManager *_owner;
+    NSSet *_properties;
     NSNumber *_taskID;
     NSString *_text;
 }
 
-@property(retain,readonly) NSString *text; /* unknown property attribute: V_text */
-@property(readonly) NSNumber *taskID; /* unknown property attribute: V_taskID */
-@property(readonly) MFContactsSearchManager *owner; /* unknown property attribute: V_owner */
-@property(readonly) void *addressBook; /* unknown property attribute: V_addressBook */
+@property(readonly) void *addressBook;
+@property(readonly) MFContactsSearchManager *owner;
+@property(readonly) NSSet *properties;
+@property(readonly) NSNumber *taskID;
+@property(retain,readonly) NSString *text;
 
-+ (id)operationWithAddressBook:(void*)arg1 owner:(id)arg2 text:(id)arg3 taskID:(id)arg4;
++ (id)operationWithAddressBook:(void*)arg1 owner:(id)arg2 text:(id)arg3 taskID:(id)arg4 properties:(id)arg5;
 
 - (void*)addressBook;
 - (void)dealloc;
 - (id)owner;
+- (id)properties;
 - (id)taskID;
 - (id)text;
 - (NSInteger)type;

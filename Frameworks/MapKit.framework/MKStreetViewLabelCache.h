@@ -15,7 +15,7 @@
     struct CGContext { } *scratchContext;
 }
 
-@property(readonly) NSUInteger arrowTexture; /* unknown property attribute: VarrowTexture */
+@property(readonly) NSUInteger arrowTexture;
 
 - (void)ageLabels;
 - (NSUInteger)arrowTexture;

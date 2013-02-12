@@ -17,11 +17,11 @@
     NSInteger _timeLimit;
 }
 
-@property <DASearchQueryConsumer> *consumer; /* unknown property attribute: V_consumer */
-@property BOOL cancelled; /* unknown property attribute: V_cancelled */
-@property NSInteger timeLimit; /* unknown property attribute: V_timeLimit */
-@property _NSRange range; /* unknown property attribute: V_range */
-@property(readonly) NSString *searchString; /* unknown property attribute: V_searchString */
+@property <DASearchQueryConsumer> *consumer;
+@property(readonly) NSString *searchString;
+@property BOOL cancelled;
+@property _NSRange range;
+@property NSInteger timeLimit;
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 

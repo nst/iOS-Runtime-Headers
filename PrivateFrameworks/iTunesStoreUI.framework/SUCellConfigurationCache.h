@@ -9,7 +9,7 @@
     NSMutableArray *_configurations;
 }
 
-@property(retain) id cellContext; /* unknown property attribute: V_cellContext */
+@property(retain) id cellContext;
 
 - (id)cellContext;
 - (id)configurationForRow:(NSUInteger)arg1;

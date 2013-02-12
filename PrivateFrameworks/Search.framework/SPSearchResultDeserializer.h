@@ -13,9 +13,9 @@
     NSUInteger *_resultOffsetVector;
 }
 
-@property(readonly) NSString *displayIdentifier; /* unknown property attribute: V_displayIdentifier */
-@property(readonly) NSUInteger domain; /* unknown property attribute: V_domain */
-@property(readonly) NSUInteger resultCount; /* unknown property attribute: V_resultCount */
+@property(readonly) NSString *displayIdentifier;
+@property(readonly) NSUInteger domain;
+@property(readonly) NSUInteger resultCount;
 
 - (void)_prepareForRandomAccess;
 - (void)dealloc;

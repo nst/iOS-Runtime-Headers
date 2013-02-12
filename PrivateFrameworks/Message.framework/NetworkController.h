@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString, NSTimer;
+@class NSTimer;
 
 @interface NetworkController : NSObject {
     unsigned int _waitingForDialToFinish : 1;
@@ -10,7 +10,6 @@
     unsigned int _isNetworkUp : 1;
     unsigned int _isFatPipe : 1;
     unsigned int _edgeRequested : 1;
-    NSString *_domainName;
     NSTimer *_notificationTimer;
     struct __SCDynamicStore { } *_store;
 }
@@ -25,7 +24,6 @@
 - (void)bringUpEdge;
 - (void*)createPacketContextAssertionWithIdentifier:(id)arg1;
 - (void)dealloc;
-- (id)domainName;
 - (id)edgeInterfaceName;
 - (BOOL)inAirplaneMode;
 - (id)init;

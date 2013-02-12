@@ -4,13 +4,12 @@
 
 @class MLPhotoDCFFileGroup, UIImage;
 
-@interface PLCameraImage : MLPhoto <MLPhotoBakedThumbnailsDelegate> {
+@interface PLCameraImage : MLPhoto {
     unsigned int _didSetHasJPEGData : 1;
     unsigned int _didSetDuration : 1;
     double _duration;
     MLPhotoDCFFileGroup *_fileGroup;
     BOOL _hasJPEGData;
-    NSInteger _photoType;
     UIImage *_thumbnailImage;
 }
 
@@ -20,6 +19,7 @@
 + (void)setMaxImageSize:(NSInteger)arg1;
 
 - (struct CGImage { }*)_createCGImageForFormat:(NSInteger)arg1 orientation:(NSInteger*)arg2 ignoringSizeCaps:(BOOL)arg3 properties:(const struct __CFDictionary {}**)arg4;
+- (void)addExtension:(id)arg1;
 - (void)checkForVideoFile;
 - (NSInteger)compare:(id)arg1;
 - (struct CGImage { }*)createFullScreenCGImageRef:(NSInteger*)arg1 properties:(const struct __CFDictionary {}**)arg2;
@@ -27,7 +27,6 @@
 - (struct CGImage { }*)createFullSizeCGImageRefForImagePickerClient:(NSInteger*)arg1;
 - (struct CGImage { }*)createLowResolutionFullScreenCGImageRef;
 - (void)dealloc;
-- (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)deleteFiles;
 - (id)description;
 - (double)duration;
@@ -41,9 +40,19 @@
 - (id)initWithDCFFileGroup:(id)arg1;
 - (BOOL)isAudio;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isVideo;
-- (void)saveBakedVideoThumbnail;
+- (BOOL)isWritePending;
+- (id)pathForFullSizeImage;
+- (id)pathForPrebakedLandscapeScrubberThumbnails;
+- (id)pathForPrebakedPortraitScrubberThumbnails;
+- (id)pathForPrebakedThumbnail;
+- (id)pathForThumbnailFile;
+- (id)pathForTrimmedVideoFile;
+- (id)pathForVideoFile;
+- (id)pathForVideoPreviewFile;
+- (id)posterImagePath;
+- (void)setDate:(id)arg1;
 - (void)setThumbnailImage:(id)arg1;
+- (void)setWriteIsPending:(BOOL)arg1;
 - (id)thumbnailImage;
 - (id)title;
 

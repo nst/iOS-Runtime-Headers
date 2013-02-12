@@ -6,6 +6,5 @@
 }
 
 - (void)main;
-- (NSInteger)type;
 
 @end

@@ -8,6 +8,7 @@
 + (BOOL)acceptsTopLevelLeaves;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)date;
++ (id)dateForDaysSince1970:(NSInteger)arg1;
 + (id)dateWithActiveSyncString:(id)arg1;
 + (id)dateWithActiveSyncStringFromYearMonthDay:(id)arg1;
 + (id)dateWithActiveSyncStringWithoutSeparators:(id)arg1;
@@ -21,6 +22,7 @@
 + (id)dateWithTimeIntervalSinceNow:(double)arg1;
 + (id)dateWithTimeIntervalSinceReferenceDate:(double)arg1;
 + (id)dateWithWordDate:(const struct WrdDateTime { int (**x1)(); NSInteger x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
++ (NSInteger)daysSince1970;
 + (id)distantFuture;
 + (id)distantPast;
 + (BOOL)frontingBasicTypes;

@@ -11,6 +11,7 @@
     unsigned int usedGeolocation : 1;
     unsigned int webSelectionEnabled : 1;
     unsigned int drawInWebThread : 1;
+    unsigned int allowsPopUps : 1;
     UICheckeredPatternView *checkeredPatternView;
     NSInteger clickedAlertButtonIndex;
     <UIWebViewDelegate> *delegate;
@@ -20,6 +21,8 @@
     UIWebViewWebViewDelegate *webViewDelegate;
 }
 
+- (void)_updateScrollerContentSize:(BOOL)arg1;
+- (void)_updateScrollerIndicatorSubrectForEditingForms:(BOOL)arg1;
 - (void)formAssistant:(id)arg1 didBeginEditingFormNode:(id)arg2;
 - (void)formAssistant:(id)arg1 didEndEditingFormNode:(id)arg2;
 

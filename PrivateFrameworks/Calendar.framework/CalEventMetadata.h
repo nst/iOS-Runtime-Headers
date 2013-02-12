@@ -18,17 +18,17 @@
     NSDictionary *_x_props;
 }
 
-@property(retain) NSArray *priority; /* unknown property attribute: V_priority */
-@property NSInteger classification; /* unknown property attribute: V_classification */
-@property(retain) NSArray *categories; /* unknown property attribute: V_categories */
-@property(retain) NSDictionary *x_props; /* unknown property attribute: V_x_props */
-@property(retain) NSURL *url; /* unknown property attribute: V_url */
-@property NSInteger transp; /* unknown property attribute: V_transp */
-@property NSUInteger sequence; /* unknown property attribute: V_sequence */
-@property(retain) ICSDate *last_modified; /* unknown property attribute: V_last_modified */
-@property(retain) ICSDate *dtstamp; /* unknown property attribute: V_dtstamp */
-@property(retain) ICSDate *created; /* unknown property attribute: V_created */
-@property(retain) NSArray *attach; /* unknown property attribute: V_attach */
+@property(retain) NSArray *attach;
+@property(retain) NSArray *categories;
+@property(retain) ICSDate *created;
+@property(retain) ICSDate *dtstamp;
+@property(retain) ICSDate *last_modified;
+@property(retain) NSArray *priority;
+@property(retain) NSURL *url;
+@property(retain) NSDictionary *x_props;
+@property NSInteger classification;
+@property NSUInteger sequence;
+@property NSInteger transp;
 
 + (id)metadataWithData:(id)arg1;
 + (id)metadataWithICSEvent:(id)arg1;

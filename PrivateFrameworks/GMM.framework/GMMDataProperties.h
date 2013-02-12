@@ -30,36 +30,37 @@
     NSInteger _tileWidth;
 }
 
-@property(readonly) BOOL hasImageSource; /* unknown property attribute: V_hasImageSource */
-@property NSInteger imageSource; /* unknown property attribute: V_imageSource */
-@property NSInteger radius; /* unknown property attribute: V_radius */
-@property NSInteger maxZoomLevel; /* unknown property attribute: V_maxZoomLevel */
-@property(retain) NSString *streetRange; /* unknown property attribute: V_streetRange */
-@property(retain) NSString *text; /* unknown property attribute: V_text */
-@property(retain) NSString *copyright; /* unknown property attribute: V_copyright */
-@property(retain) GMMMapPoint *latLon; /* unknown property attribute: V_latLon */
-@property(readonly) BOOL hasNumZoomLevels; /* unknown property attribute: V_hasNumZoomLevels */
-@property NSInteger numZoomLevels; /* unknown property attribute: V_numZoomLevels */
-@property(retain) NSString *panoId; /* unknown property attribute: V_panoId */
-@property(readonly) BOOL hasTileHeight; /* unknown property attribute: V_hasTileHeight */
-@property NSInteger tileHeight; /* unknown property attribute: V_tileHeight */
-@property(readonly) BOOL hasTileWidth; /* unknown property attribute: V_hasTileWidth */
-@property NSInteger tileWidth; /* unknown property attribute: V_tileWidth */
-@property NSInteger imageHeight; /* unknown property attribute: V_imageHeight */
-@property NSInteger imageWidth; /* unknown property attribute: V_imageWidth */
-@property(readonly) BOOL hasInfoValue; /* unknown property attribute: V_hasInfoValue */
-@property NSInteger infoValue; /* unknown property attribute: V_infoValue */
-@property(readonly) BOOL hasInfoLevel; /* unknown property attribute: V_hasInfoLevel */
-@property NSInteger infoLevel; /* unknown property attribute: V_infoLevel */
-@property(readonly) BOOL hasDisabled; /* unknown property attribute: V_hasDisabled */
-@property BOOL disabled; /* unknown property attribute: V_disabled */
+@property(retain) NSString *copyright;
+@property(retain) GMMMapPoint *latLon;
+@property(retain) NSString *panoId;
+@property(retain) NSString *streetRange;
+@property(retain) NSString *text;
+@property BOOL disabled;
 @property(readonly) BOOL hasCopyright;
+@property(readonly) BOOL hasDisabled;
+@property(readonly) BOOL hasImageSource;
+@property(readonly) BOOL hasInfoLevel;
+@property(readonly) BOOL hasInfoValue;
+@property(readonly) BOOL hasNumZoomLevels;
 @property(readonly) BOOL hasStreetRange;
 @property(readonly) BOOL hasText;
+@property(readonly) BOOL hasTileHeight;
+@property(readonly) BOOL hasTileWidth;
+@property NSInteger imageHeight;
+@property NSInteger imageSource;
+@property NSInteger imageWidth;
+@property NSInteger infoLevel;
+@property NSInteger infoValue;
+@property NSInteger maxZoomLevel;
+@property NSInteger numZoomLevels;
+@property NSInteger radius;
+@property NSInteger tileHeight;
+@property NSInteger tileWidth;
 
 - (id)copyright;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)disabled;
 - (BOOL)hasCopyright;
 - (BOOL)hasDisabled;

@@ -43,9 +43,9 @@
     NSMutableArray *_viewControllers;
 }
 
-@property(retain) UIViewController *disappearingViewController; /* unknown property attribute: V_disappearingViewController */
-@property <UINavigationControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
 @property(readonly) UIViewController *bottomViewController;
+@property <UINavigationControllerDelegate> *delegate;
+@property(retain) UIViewController *disappearingViewController;
 @property(readonly) UINavigationBar *navigationBar;
 @property(readonly) UINavigationTransitionView *navigationTransitionView;
 @property(readonly) UIViewController *previousViewController;
@@ -77,6 +77,7 @@
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
 - (void)_layoutTopViewController;
 - (void)_layoutViewController:(id)arg1;
+- (id)_moreListTitle;
 - (id)_navigationItems;
 - (NSInteger)_navigationTransitionForUITransition:(NSInteger)arg1;
 - (void)_popViewControllerAndUpdateInterfaceOrientationAnimated:(BOOL)arg1;
@@ -119,6 +120,7 @@
 - (BOOL)editing;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstViewController;
+- (NSUInteger)indexOfViewController:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1;

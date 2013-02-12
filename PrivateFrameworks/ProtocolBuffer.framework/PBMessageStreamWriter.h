@@ -9,8 +9,8 @@
     PBStreamWriter *_writer;
 }
 
-@property(retain) PBDataWriter *messageWriter; /* unknown property attribute: V_messageWriter */
-@property(retain) PBStreamWriter *writer; /* unknown property attribute: V_writer */
+@property(retain) PBDataWriter *messageWriter;
+@property(retain) PBStreamWriter *writer;
 
 - (void)dealloc;
 - (id)initWithOutputStream:(id)arg1;

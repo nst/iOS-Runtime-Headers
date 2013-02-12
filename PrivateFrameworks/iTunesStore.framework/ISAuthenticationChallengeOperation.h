@@ -8,7 +8,7 @@
     ISAuthenticationChallenge *_challenge;
 }
 
-@property(retain) ISAuthenticationChallenge *challenge; /* unknown property attribute: V_challenge */
+@property(retain) ISAuthenticationChallenge *challenge;
 
 + (id)operationWithChallenge:(id)arg1;
 

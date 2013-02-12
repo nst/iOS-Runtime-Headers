@@ -11,20 +11,19 @@
 }
 
 - (void)_addFoldersToDaemonMonitoring:(id)arg1;
-- (id)_createPolicyManager;
+- (id)_copySetFlagsCommandForRequest:(id)arg1;
 - (void)_daemonDied;
 - (void)_folderHierarchyChanged;
 - (void)_foldersThatExternalClientsCareAboutChanged;
 - (void)_foldersUpdated:(id)arg1;
 - (void)_logStatus:(id)arg1;
+- (id)_newPolicyManager;
 - (void)_removeFoldersFromDaemonMonitoring:(id)arg1;
 - (void)_reportFolderItemSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2;
 - (void)_retryMonitoring;
-- (id)_setFlagsCommandForRequest:(id)arg1;
 - (void)_sync:(id)arg1 withConsumer:(id)arg2;
 - (void)clearFolderHierarchyCache;
 - (void)dealloc;
-- (id)inboxID;
 - (id)initWithProperties:(id)arg1;
 - (id)mailboxes;
 - (void)monitorFoldersForUpdates:(id)arg1;

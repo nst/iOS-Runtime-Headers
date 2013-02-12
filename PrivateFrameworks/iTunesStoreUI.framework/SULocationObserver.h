@@ -12,7 +12,7 @@
     ISOperation *_operation;
 }
 
-@property(retain) NSArray *locationSections; /* unknown property attribute: V_locationSections */
+@property(retain) NSArray *locationSections;
 @property(getter=isObservingLocation,readonly) BOOL observingLocation;
 
 - (void)_cancelOperation;

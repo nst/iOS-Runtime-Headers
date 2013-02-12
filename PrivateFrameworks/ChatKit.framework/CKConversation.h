@@ -25,10 +25,10 @@
     BOOL _updatesDisabled;
 }
 
-@property(readonly) NSMutableArray *failedMessages; /* unknown property attribute: V_failedMessages */
-@property BOOL updatesDisabled; /* unknown property attribute: V_updatesDisabled */
-@property(readonly) CKService *service; /* unknown property attribute: V_service */
+@property(readonly) NSMutableArray *failedMessages;
+@property(readonly) CKService *service;
 @property(retain) CKMessageComposition *unsentComposition;
+@property BOOL updatesDisabled;
 
 - (void)_addGroupMessage:(id)arg1;
 - (void)_beginGroupAdd;

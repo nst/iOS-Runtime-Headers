@@ -11,10 +11,10 @@
     BOOL _succeeded;
 }
 
-@property(retain) NSData *data; /* unknown property attribute: V_data */
-@property(readonly) BOOL succeeded; /* unknown property attribute: V_succeeded */
-@property(retain) MFError *error; /* unknown property attribute: V_error */
-@property(retain) <DAMFStreamingContentConsumer> *streamConsumer; /* unknown property attribute: V_streamConsumer */
+@property(retain) NSData *data;
+@property(retain) MFError *error;
+@property(retain) <DAMFStreamingContentConsumer> *streamConsumer;
+@property(readonly) BOOL succeeded;
 
 - (id)data;
 - (void)dealloc;

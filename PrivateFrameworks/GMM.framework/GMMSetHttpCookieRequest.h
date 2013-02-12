@@ -9,10 +9,10 @@
     BOOL _hasGmmInstalled;
 }
 
-@property BOOL gmmInvokedViaUrl; /* unknown property attribute: V_gmmInvokedViaUrl */
-@property BOOL gmmInvokedViaMimeType; /* unknown property attribute: V_gmmInvokedViaMimeType */
-@property(readonly) BOOL hasGmmInstalled; /* unknown property attribute: V_hasGmmInstalled */
-@property BOOL gmmInstalled; /* unknown property attribute: V_gmmInstalled */
+@property BOOL gmmInstalled;
+@property BOOL gmmInvokedViaMimeType;
+@property BOOL gmmInvokedViaUrl;
+@property(readonly) BOOL hasGmmInstalled;
 
 - (void)dealloc;
 - (id)description;

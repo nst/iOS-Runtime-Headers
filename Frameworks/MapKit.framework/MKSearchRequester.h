@@ -9,14 +9,14 @@
     GMMRequester *_requester;
 }
 
-@property id delegate; /* unknown property attribute: V_delegate */
+@property id delegate;
 
 - (void)cancel;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithSearchDelegate:(id)arg1;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
+- (void)requesterDidFinish:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)startWithRequest:(id)arg1;
 

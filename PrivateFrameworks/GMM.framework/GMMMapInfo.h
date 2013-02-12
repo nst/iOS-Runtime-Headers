@@ -12,17 +12,20 @@
     NSInteger _zoomLevel;
 }
 
-@property(readonly) BOOL hasZoomLevel; /* unknown property attribute: V_hasZoomLevel */
-@property NSInteger zoomLevel; /* unknown property attribute: V_zoomLevel */
-@property NSInteger longitudeSpan; /* unknown property attribute: V_longitudeSpan */
-@property NSInteger latitudeSpan; /* unknown property attribute: V_latitudeSpan */
-@property(retain) GMMMapPoint *center; /* unknown property attribute: V_center */
+@property(retain) GMMMapPoint *center;
+@property(readonly) BOOL hasZoomLevel;
+@property NSInteger latitudeSpan;
+@property NSInteger longitudeSpan;
+@property NSInteger zoomLevel;
 
 - (id)center;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasZoomLevel;
 - (id)init;
+- (id)initWithRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomLevel:(NSInteger)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (NSInteger)latitudeSpan;
 - (NSInteger)longitudeSpan;
 - (BOOL)readFrom:(id)arg1;

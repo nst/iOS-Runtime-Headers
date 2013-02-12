@@ -11,10 +11,10 @@
     NSExpression *_valueExpression;
 }
 
-@property BOOL replaceMissingValueOnly; /* unknown property attribute: V_replaceMissingValueOnly */
-@property(retain) NSPropertyTransform *prerequisiteTransform; /* unknown property attribute: V_prerequisiteTransform */
-@property(retain) NSExpression *valueExpression; /* unknown property attribute: V_valueExpression */
-@property(retain) NSString *propertyName; /* unknown property attribute: V_propertyName */
+@property(retain) NSPropertyTransform *prerequisiteTransform;
+@property(retain) NSString *propertyName;
+@property(retain) NSExpression *valueExpression;
+@property BOOL replaceMissingValueOnly;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

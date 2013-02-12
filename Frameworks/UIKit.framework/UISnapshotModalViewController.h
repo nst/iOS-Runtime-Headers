@@ -9,7 +9,7 @@
     NSInteger _interfaceOrientation;
 }
 
-@property(retain) UIViewController *disappearingViewController; /* unknown property attribute: V_disappearingViewController */
+@property(retain) UIViewController *disappearingViewController;
 
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
 - (void)dealloc;

@@ -14,6 +14,8 @@
     NSDictionary *_httpRequestHeaders;
     NSDictionary *_httpResponseHeaders;
     BOOL _ignoresResponse;
+    NSMutableArray *_internalRequests;
+    NSMutableArray *_internalResponses;
     NSUInteger _lastGoodDataOffset;
     BOOL _loading;
     NSString *_logRequestToFile;
@@ -29,20 +31,21 @@
     struct __CFRunLoopTimer { } *_timeoutTimer;
 }
 
-@property(retain) NSArray *clientCertificates; /* unknown property attribute: V_clientCertificates */
-@property(retain) NSString *logResponseToFile; /* unknown property attribute: V_logResponseToFile */
-@property(retain) NSString *logRequestToFile; /* unknown property attribute: V_logRequestToFile */
-@property double timeoutSeconds; /* unknown property attribute: V_timeoutSeconds */
-@property BOOL needsCancel; /* unknown property attribute: V_needsCancel */
-@property BOOL silentLoading; /* unknown property attribute: V_silentLoading */
-@property(getter=isLoading) BOOL loading; /* unknown property attribute: V_loading */
-@property(retain) NSDictionary *httpRequestHeaders; /* unknown property attribute: V_httpRequestHeaders */
-@property(retain) NSDictionary *httpResponseHeaders; /* unknown property attribute: V_httpResponseHeaders */
-@property BOOL ignoresResponse; /* unknown property attribute: V_ignoresResponse */
-@property(retain) NSURLConnection *connection; /* unknown property attribute: V_connection */
-@property id delegate; /* unknown property attribute: V_delegate */
-@property(retain) NSURL *URL; /* unknown property attribute: V_URL */
+@property(retain) NSURL *URL;
+@property(retain) NSArray *clientCertificates;
+@property(retain) NSURLConnection *connection;
+@property(retain) NSDictionary *httpRequestHeaders;
+@property(retain) NSDictionary *httpResponseHeaders;
+@property(readonly) NSArray *internalRequests;
+@property(retain) NSString *logRequestToFile;
+@property(retain) NSString *logResponseToFile;
 @property(readonly) NSArray *requests;
+@property id delegate;
+@property BOOL ignoresResponse;
+@property(getter=isLoading) BOOL loading;
+@property BOOL needsCancel;
+@property BOOL silentLoading;
+@property double timeoutSeconds;
 
 - (id)URL;
 - (id)_applicationID;
@@ -57,6 +60,7 @@
 - (void)_startTimeoutTimer;
 - (void)_timeoutTimerFired;
 - (BOOL)_tryParseData;
+- (void)addInternalRequest:(id)arg1;
 - (void)addRequest:(id)arg1;
 - (void)cancel;
 - (void)cancelWithErrorCode:(NSInteger)arg1;
@@ -68,10 +72,12 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
 - (id)httpRequestHeaders;
 - (id)httpResponseHeaders;
 - (BOOL)ignoresResponse;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
+- (id)internalRequests;
 - (BOOL)isLoading;
 - (id)logRequestToFile;
 - (id)logResponseToFile;
@@ -79,6 +85,7 @@
 - (BOOL)readResponsePreamble:(id)arg1;
 - (id)requestPreamble;
 - (id)requests;
+- (id)responseForInternalRequest:(id)arg1;
 - (id)responseForRequest:(id)arg1;
 - (void)setClientCertificates:(id)arg1;
 - (void)setConnection:(id)arg1;

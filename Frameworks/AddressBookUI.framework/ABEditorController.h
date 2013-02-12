@@ -12,7 +12,7 @@
     UITextField *_savedTextFieldResponder;
 }
 
-@property NSInteger interfaceOrientation; /* unknown property attribute: V_interfaceOrientation */
+@property NSInteger interfaceOrientation;
 
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (void)cleanUpContentLayer;

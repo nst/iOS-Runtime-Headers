@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class SFUZipArchive, NSMutableDictionary;
+@class CPZArchive, NSMutableDictionary;
 
 @interface CPBundleResourcePackage : NSObject {
     NSMutableDictionary *mEntryMap;
-    SFUZipArchive *mZipArchive;
+    CPZArchive *mZipArchive;
 }
 
 - (void)dealloc;

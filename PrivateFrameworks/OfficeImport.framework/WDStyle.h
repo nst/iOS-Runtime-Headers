@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterProperties, WDTableStyleOverride, WDStyleSheet, WDTableCellProperties, NSString, WDTableRowProperties, WDStyle, WDParagraphProperties;
+@class NSString, WDCharacterProperties, WDParagraphProperties, WDStyle, WDStyleSheet, WDTableCellProperties, WDTableRowProperties, WDTableStyleOverride;
 
 @interface WDStyle : NSObject <NSCopying> {
     WDStyle *mBaseStyle;
@@ -13,11 +13,13 @@
     WDStyle *mNextStyle;
     WDParagraphProperties *mParagraphProperties;
     WDStyleSheet *mStyleSheet;
-    int mStyleType;
+    NSInteger mStyleType;
     WDTableCellProperties *mTableCellProperties;
     WDTableRowProperties *mTableRowProperties;
     WDTableStyleOverride *mTableStyleOverrides[12];
 }
+
++ (id)newIDFromName:(id)arg1;
 
 - (id)baseStyle;
 - (id)characterProperties;
@@ -25,7 +27,7 @@
 - (void)dealloc;
 - (BOOL)hidden;
 - (id)id;
-- (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;
+- (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(NSInteger)arg3;
 - (BOOL)isAnythingOverridden;
 - (id)name;
 - (id)nextStyle;
@@ -38,7 +40,7 @@
 - (id)tableCellProperties;
 - (id)tableProperties;
 - (id)tableRowProperties;
-- (id)tableStyleOverrideForPart:(int)arg1;
-- (int)type;
+- (id)tableStyleOverrideForPart:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

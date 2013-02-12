@@ -6,6 +6,5 @@
 }
 
 - (id)init;
-- (id)initWithLayer:(id)arg1;
 
 @end

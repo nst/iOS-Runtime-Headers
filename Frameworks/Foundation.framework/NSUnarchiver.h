@@ -5,9 +5,9 @@
 @interface NSUnarchiver : NSCoder {
     void *allUnarchivedObjects;
     id classVersions;
-    unsigned int cursor;
+    NSUInteger cursor;
     void *datax;
-    int lastLabel;
+    NSInteger lastLabel;
     void *map;
     struct _NSZone { } *objectZone;
     void *pointerTable;
@@ -15,7 +15,7 @@
     BOOL streamerVersion;
     void *stringTable;
     BOOL swap;
-    unsigned int systemVersion;
+    NSUInteger systemVersion;
     BOOL unused1;
     BOOL unused2;
 }
@@ -30,8 +30,8 @@
 - (id)classNameDecodedForArchiveClassName:(id)arg1;
 - (id)data;
 - (void)dealloc;
-- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
-- (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
+- (void)decodeArrayOfObjCType:(const char *)arg1 count:(NSUInteger)arg2 at:(void*)arg3;
+- (void*)decodeBytesWithReturnedLength:(NSUInteger*)arg1;
 - (void)decodeClassName:(id)arg1 asClassName:(id)arg2;
 - (id)decodeDataObject;
 - (id)decodeObject;
@@ -43,7 +43,7 @@
 - (struct _NSZone { }*)objectZone;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
-- (unsigned int)systemVersion;
-- (int)versionForClassName:(id)arg1;
+- (NSUInteger)systemVersion;
+- (NSInteger)versionForClassName:(id)arg1;
 
 @end

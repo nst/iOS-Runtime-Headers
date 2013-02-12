@@ -2,17 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSString, NSData, NSMutableDictionary;
+@class NSArray, NSData, NSMutableDictionary, NSString, _NSHTTPBodyStreamWrapper;
 
 @interface NSHTTPURLRequestParameters : NSObject {
     BOOL _pad1;
     BOOL _pad2;
     BOOL _pad3;
+    _NSHTTPBodyStreamWrapper *bodyStreamWrapper;
     NSData *data;
     NSArray *extraCookies;
     NSMutableDictionary *fields;
     NSString *method;
-    unsigned int pageNotFoundCacheLifetime;
+    NSUInteger pageNotFoundCacheLifetime;
     BOOL shouldHandleCookies;
 }
 

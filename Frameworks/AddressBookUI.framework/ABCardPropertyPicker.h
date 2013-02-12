@@ -2,30 +2,23 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, UITableView;
+@class UIPreferencesTable;
 
-@interface ABCardPropertyPicker : UIView <UITableViewDataSource, UITableViewDelegate, ABStyleProviding> {
-    NSArray *_allProperties;
+@interface ABCardPropertyPicker : UIView {
     id _delegate;
-    NSArray *_policies;
-    UITableView *_tableView;
+    struct __CFArray { } *_properties;
+    UIPreferencesTable *_table;
 }
-
-@property(readonly) UITableView * tableView;
 
 - (void)dealloc;
 - (void)deselectAllRowsWithAnimation:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 policies:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (BOOL)propertyIsAllowed:(int)arg1;
-- (void)setBackgroundColor:(id)arg1;
+- (NSInteger)numberOfGroupsInPreferencesTable:(id)arg1;
+- (id)preferencesTable:(id)arg1 cellForRow:(NSInteger)arg2 inGroup:(NSInteger)arg3;
+- (NSInteger)preferencesTable:(id)arg1 numberOfRowsInGroup:(NSInteger)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setProperties:(struct __CFArray { }*)arg1;
-- (id)styleProvider;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView;
+- (BOOL)table:(id)arg1 showDisclosureForRow:(NSInteger)arg2;
+- (void)tableSelectionDidChange:(id)arg1;
 
 @end

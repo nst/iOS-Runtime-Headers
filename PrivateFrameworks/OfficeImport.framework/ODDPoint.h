@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ODDPointPropertySet, OADShapeProperties, OADTextBody;
+@class OADShapeProperties, OADTextBody, ODDPointPropertySet;
 
 @interface ODDPoint : NSObject {
     ODDPointPropertySet *mPropertySet;
     OADShapeProperties *mShapeProperties;
     OADTextBody *mText;
-    int mType;
+    NSInteger mType;
 }
 
 + (void)addConnectionToPoint:(id)arg1 order:(unsigned long)arg2 array:(id*)arg3;
@@ -17,9 +17,9 @@
 - (id)init;
 - (id)propertySet;
 - (void)setText:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(NSInteger)arg1;
 - (id)shapeProperties;
 - (id)text;
-- (int)type;
+- (NSInteger)type;
 
 @end

@@ -2,11 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, Account, MFError, ActivityMonitor;
+@class Account, ActivityMonitor, MFError, NSArray;
 
 @interface AccountValidator : NSObject {
     struct { 
@@ -18,7 +14,6 @@
         unsigned int unused : 27; 
     Account *_account;
     ActivityMonitor *_accountValidationActivity;
-    id _completionBlock;
     id _delegate;
     } _flags;
     NSArray *_incomingServerAuthSchemes;
@@ -31,9 +26,9 @@
 - (BOOL)_incomingServerValid;
 - (id)_ispAccountInfo;
 - (BOOL)_outgoingServerValid;
+- (void)_updateValidationStatusForAccount:(id)arg1 status:(id)arg2;
 - (void)_validateAccount:(id)arg1;
-- (void)_validateAccountInBackground:(id)arg1 withFallbacks:(BOOL)arg2;
-- (void)_validateAccountWithoutFallbacks:(id)arg1;
+- (void)_validateAccountInBackground:(id)arg1;
 - (id)account;
 - (BOOL)accountIsValid;
 - (BOOL)accountSupportsSSL;
@@ -44,9 +39,6 @@
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)stop;
-- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id)arg3;
 - (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
-- (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id)arg2;
-- (void)validateAccountWithoutFallbacks:(id)arg1;
 
 @end

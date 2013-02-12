@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADOrientedBounds, CMDrawingContext, NSString, ODDPoint;
+@class CMDrawingContext, NSString, OADOrientedBounds, ODDPoint;
 
 @interface CMDiagramPointMapper : CMMapper {
     CMDrawingContext *mDrawingContext;
@@ -18,11 +18,10 @@
 - (id)fill;
 - (id)initWithPoint:(id)arg1 drawingContext:(id)arg2 orientedBounds:(id)arg3 parent:(id)arg4;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)mapChildrenTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
+- (void)mapChildrenTextAt:(id)arg1 style:(id)arg2 level:(NSInteger)arg3 withState:(id)arg4;
 - (void)mapChlidrenAt:(id)arg1 withState:(id)arg2;
-- (void)mapPointTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
-- (void)mapSiblingTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
-- (void)mapStyledRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 at:(id)arg2 withState:(id)arg3;
+- (void)mapPointTextAt:(id)arg1 style:(id)arg2 level:(NSInteger)arg3 withState:(id)arg4;
+- (void)mapSiblingTextAt:(id)arg1 style:(id)arg2 level:(NSInteger)arg3 withState:(id)arg4;
 - (void)mapTextAt:(id)arg1 withBounds:(id)arg2 isCentered:(BOOL)arg3 includeChildren:(BOOL)arg4 withState:(id)arg5;
 - (id)plainText;
 - (id)presentationName;

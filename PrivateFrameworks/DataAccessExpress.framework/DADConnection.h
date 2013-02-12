@@ -2,89 +2,49 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSMutableDictionary;
-
-@interface DADConnection : NSObject <AccountNotificationProtocol> {
-    NSMutableSet *_accountIdsWithAlreadyResetCerts;
-    NSMutableSet *_accountIdsWithAlreadyResetThrottleTimers;
-    NSObject<OS_xpc_object> *_conn;
-    NSMutableDictionary *_inFlightAttachmentDownloads;
-    NSMutableDictionary *_inFlightFolderChanges;
-    NSMutableDictionary *_inFlightSearchQueries;
-    NSMutableDictionary *_inFlightShareRequests;
-    NSObject<OS_dispatch_queue> *_muckingWithConn;
-    id _statusReportBlock;
+@interface DADConnection : NSObject {
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    struct __CFMachPort { } *_callbackPort;
+    } _lock;
+    NSUInteger _publicPort;
+    NSUInteger _serverPort;
+    BOOL _shouldResetCertWarnings;
 }
 
-+ (void)accountDidChange:(id)arg1 forDataclass:(id)arg2;
-+ (void)accountWillChange:(id)arg1 forDataclass:(id)arg2;
-+ (void)noteAccountChanges:(id)arg1;
-+ (void)setShouldIgnoreAccountChanges;
 + (id)sharedConnection;
-+ (id)sharedConnectionIfServerIsRunning;
 
-- (void)_cancelDownloadsWithIDs:(id)arg1 error:(id)arg2;
-- (id)_connection;
-- (id)_createReplyToRequest:(id)arg1 withProperties:(id)arg2;
-- (void)_dispatchMessage:(id)arg1;
-- (void)_downloadFinished:(id)arg1;
-- (void)_downloadProgress:(id)arg1;
-- (void)_folderChangeFinished:(id)arg1;
-- (void)_foldersUpdated:(id)arg1;
-- (void)_getStatusReportsFromClient:(id)arg1;
-- (id)_init;
-- (void)_logDataAccessStatus:(id)arg1;
-- (void)_policyKeyChanged:(id)arg1;
-- (void)_reallyRegisterForInterrogation;
+- (void)_applicationResumed;
+- (void)_handleFoldersUpdated:(id)arg1 forAccountID:(id)arg2;
+- (void)_handleNewPolicyKey:(id)arg1 forAccountID:(id)arg2;
+- (void)_handleSendFailure:(NSInteger)arg1 inCodeNamed:(const char *)arg2;
 - (void)_registerForAppResumedNotification;
-- (void)_requestDaemonChangeAgentMonitoringStatus:(BOOL)arg1 waitForReply:(BOOL)arg2;
-- (void)_requestDaemonStopMonitoringAgents_Sync;
-- (void)_resetCertWarningsForAccountId:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
-- (void)_resetThrottleTimersForAccountId:(id)arg1;
-- (void)_sendSynchronousXPCMessageWithParameters:(id)arg1 handlerBlock:(id)arg2;
-- (void)_serverContactsSearchQueryFinished:(id)arg1;
-- (void)_serverDiedWithReason:(id)arg1;
-- (void)_shareResponseFinished:(id)arg1;
-- (void)_tearDownInFlightObjects;
-- (void)applyNewAccountProperties:(id)arg1 onAccountWithId:(id)arg2 forceSave:(BOOL)arg3;
-- (id)beginDownloadingAttachmentWithUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
-- (void)cancelDownloadingAttachmentWithDownloadID:(id)arg1 error:(id)arg2;
-- (void)cancelServerContactsSearch:(id)arg1;
+- (BOOL)_requestDaemonChangeAgentMonitoringStatus:(BOOL)arg1;
+- (BOOL)_resetCertWarningsForAccountId:(id)arg1 andDataClass:(NSInteger)arg2;
+- (void)_setPublicPort:(NSUInteger)arg1;
+- (BOOL)cancelGALSearch:(id)arg1;
 - (id)currentPolicyKeyForAccountID:(id)arg1;
 - (void)dealloc;
-- (id)decodedErrorFromData:(id)arg1;
-- (void)fillOutCurrentEASTimeZoneInfo;
-- (void)handleURL:(id)arg1;
+- (void)handleBrokenPipe;
 - (id)init;
-- (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
-- (BOOL)processFolderChange:(id)arg1 forAccountWithID:(id)arg2;
-- (BOOL)processMeetingRequests:(id)arg1 deliveryIdsToClear:(id)arg2 deliveryIdsToSoftClear:(id)arg3 inFolderWithId:(id)arg4 forAccountWithId:(id)arg5;
-- (BOOL)registerForInterrogationWithBlock:(id)arg1;
-- (void)removeStoresForAccountWithID:(id)arg1;
-- (void)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 andAccountWithID:(id)arg3;
+- (void)invalidateServerPort;
+- (NSInteger)openDADConnectionOnRunLoop:(struct __CFRunLoop { }*)arg1;
+- (BOOL)performGALSearch:(id)arg1 forAccountWithID:(id)arg2 onRunloop:(id)arg3;
+- (BOOL)processMeetingRequests:(id)arg1 inFolderWithId:(id)arg2 forAccountWithId:(id)arg3;
+- (NSUInteger)publicPort;
 - (void)requestDaemonShutdown;
-- (void)requestDaemonStartMonitoringAgents;
-- (void)requestDaemonStartMonitoringAgents_Sync;
-- (void)requestDaemonStopMonitoringAgents;
+- (BOOL)requestDaemonStartMonitoringAgents;
+- (BOOL)requestDaemonStopMonitoringAgents;
 - (BOOL)requestPolicyUpdateForAccountID:(id)arg1;
-- (void)resetTimersAndWarnings;
-- (void)respondToSharedCalendarInvite:(int)arg1 forCalendarWithID:(id)arg2 accountID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
 - (BOOL)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
-- (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3 forAccountID:(id)arg4;
-- (id)statusReports;
+- (NSUInteger)serverPort;
+- (void)stopWatching;
 - (BOOL)stopWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (BOOL)suspendWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
-- (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2 isUserRequested:(BOOL)arg3;
-- (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2;
-- (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3 isUserRequested:(BOOL)arg4;
-- (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3;
-- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
-- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 requireChangedFolders:(BOOL)arg3 isUserRequested:(BOOL)arg4;
-- (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2;
+- (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataClass:(NSInteger)arg2;
+- (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataClass:(NSInteger)arg3;
+- (BOOL)updateFolderListForAccountID:(id)arg1 andDataClass:(NSInteger)arg2;
 - (BOOL)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 
 @end

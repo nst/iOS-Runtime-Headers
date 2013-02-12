@@ -2,46 +2,37 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface EDReference : NSObject <NSCopying> {
-    struct EDAreaReference { 
-        int firstRow; 
-        int firstColumn; 
-        int lastRow; 
-        int lastColumn; 
-    } mAreaReference;
+     /* Encoded args for previous method: B12@0:4@8 */
+    NSInteger mFirstColumn;
+    NSInteger mFirstRow;
+    NSInteger mLastColumn;
+    NSInteger mLastRow;
 }
 
 + (id)reference;
-+ (id)referenceWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
-+ (id)referenceWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
++ (id)referenceWithFirstRow:(NSInteger)arg1 lastRow:(NSInteger)arg2 firstColumn:(NSInteger)arg3 lastColumn:(NSInteger)arg4;
 
-- (id).cxx_construct;
-- (struct EDAreaReference { int x1; int x2; int x3; int x4; })areaReference;
-- (bool)containsRow:(int)arg1 column:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countOfCellsBeingReferenced;
-- (int)firstColumn;
-- (int)firstRow;
-- (bool)fullyAdjacentToReference:(id)arg1;
-- (unsigned int)hash;
+- (NSInteger)firstColumn;
+- (NSInteger)firstRow;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)fullyAdjacentToReference:(id)arg1;
+- (NSUInteger)hash;
 - (id)init;
-- (id)initWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
-- (id)initWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
-- (bool)isCellReference;
-- (bool)isColumnReference;
+- (id)initWithFirstRow:(NSInteger)arg1 lastRow:(NSInteger)arg2 firstColumn:(NSInteger)arg3 lastColumn:(NSInteger)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToReference:(id)arg1;
-- (bool)isRowReference;
-- (bool)isValidAreaReference;
-- (bool)isValidCellReference;
-- (int)lastColumn;
-- (int)lastRow;
-- (void)setFirstColumn:(int)arg1;
-- (void)setFirstRow:(int)arg1;
-- (void)setLastColumn:(int)arg1;
-- (void)setLastRow:(int)arg1;
-- (void)unionWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
+- (NSInteger)lastColumn;
+- (NSInteger)lastRow;
+- (void)setFirstColumn:(NSInteger)arg1;
+- (void)setFirstRow:(NSInteger)arg1;
+- (void)setLastColumn:(NSInteger)arg1;
+- (void)setLastRow:(NSInteger)arg1;
+- (void)unionWithMaxRow:(NSInteger)arg1 maxColumn:(NSInteger)arg2;
 - (void)unionWithReference:(id)arg1;
-- (void)unionWithRow:(int)arg1 column:(int)arg2;
 
 @end

@@ -2,45 +2,32 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDChartType, CHDAxis, CHDSeries, CMState, CHDChart, EDResources;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class CMState, EDChart;
 
 @interface EMChartMapper : CMMapper {
-    struct { 
-        BOOL primaryCategoryHasDates; 
-        BOOL secondaryCategoryHasDates; 
-        BOOL primaryAxisHasDates; 
-        BOOL secondaryAxisHasDates; 
-    CHDAxis *mBaseAxis;
-    CHDChart *mChart;
-    BOOL mHasDateCategory;
-    BOOL mHasPrimaryDateAxis;
-    BOOL mHasSecondaryDateAxis;
-    BOOL mIsHorizontal;
-    BOOL mIsPercentStacked;
-    BOOL mIsStacked;
-    CHDSeries *mMainSeries;
-    CHDChartType *mMainType;
-    unsigned int mPieIndex;
-    } mPlotInfos;
-    CHDAxis *mPrimaryAxis;
-    EDResources *mResources;
-    CHDAxis *mSecondaryAxis;
+     /* Encoded args for previous method: v16@0:4@8B12 */
+     /* Encoded args for previous method: v28@0:4@8@12@16@20B24 */
+    EDChart *mChart;
     CMState *mState;
 }
 
++ (void)initialize;
 + (struct CGColor { }*)newColorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 
-- (id).cxx_construct;
-- (void)_addCategoryAxis:(id)arg1 series:(id)arg2 state:(id)arg3 toDescription:(id)arg4;
-- (void)_addGraphicProperties:(id)arg1 toDescription:(id)arg2 withState:(id)arg3;
-- (void)_addStandardSeries:(id)arg1 toDescription:(id)arg2 withState:(id)arg3;
-- (void)_addUnitAxis:(id)arg1 series:(id)arg2 state:(id)arg3 toDescription:(id)arg4;
-- (id)_baseDateForState:(id)arg1;
-- (void)addBackgroundToDescription:(id)arg1 withState:(id)arg2;
-- (void)addLegendToDescription:(id)arg1 chartSize:(struct CGSize { float x1; float x2; })arg2 withState:(id)arg3;
-- (void)addSeries:(id)arg1 toDescription:(id)arg2 withState:(id)arg3;
-- (void)addTitleToDescription:(id)arg1 withState:(id)arg2;
-- (id)copyPdfWithState:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)_addAxesToDescription:(id)arg1;
+- (void)_addCanvasToDescription:(id)arg1 withBackground:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
+- (void)_addLabelAxisToDescription:(id)arg1 ofType:(id)arg2 withTitle:(id)arg3 andLabels:(id)arg4 centerLabels:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg5;
+- (void)_addLegendToDescription:(id)arg1;
+- (void)_addTitleToDescription:(id)arg1 title:(id)arg2;
+- (void)_addUnitAxisToDescription:(id)arg1 ofType:(id)arg2 withTitle:(id)arg3 andValues:(id)arg4;
+- (id)_chartDescriptionWithState:(id)arg1;
+- (id)_renderChart:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)createChartPlotMapper;
+- (id)createPdfWithState:(id)arg1;
 - (id)initWithChart:(id)arg1 parent:(id)arg2;
 
 @end

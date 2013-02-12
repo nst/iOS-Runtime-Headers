@@ -2,69 +2,28 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIColor, UIImageView;
-
 @interface UIProgressView : UIView <NSCoding> {
-    int _barStyle;
-    BOOL _isAnimating;
     float _progress;
-    UIImage *_progressImage;
-    UIColor *_progressTintColor;
-    UIImageView *_progressView;
-    int _progressViewStyle;
-    UIImage *_trackImage;
-    UIColor *_trackTintColor;
-    UIImageView *_trackView;
+    NSInteger _progressViewStyle;
 }
 
-@property float progress;
-@property(retain) UIImage * progressImage;
-@property(retain) UIColor * progressTintColor;
-@property int progressViewStyle;
-@property(retain) UIImage * trackImage;
-@property(retain) UIColor * trackTintColor;
+@property float progress; /* unknown property attribute: V_progress */
+@property NSInteger progressViewStyle; /* unknown property attribute: V_progressViewStyle */
 
-+ (int)_indexForStyle:(int)arg1 barStyle:(int)arg2;
-+ (struct { id x1; id x2; })_standardImagesForStyle:(int)arg1 barStyle:(int)arg2;
++ (void)_loadResourcesForStyle:(NSInteger)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
-- (id)_appropriateProgressImage;
-- (id)_appropriateTrackImage;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_populateArchivedSubviews:(id)arg1;
-- (id)_progressColor;
-- (void)_setProgress:(float)arg1;
-- (void)_setProgressAnimated:(float)arg1 duration:(double)arg2 delay:(double)arg3 options:(unsigned int)arg4;
-- (void)_setProgressColor:(id)arg1;
-- (BOOL)_shouldTintProgress;
-- (BOOL)_shouldTintTrack;
-- (void)_updateImages;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (int)barStyle;
-- (void)dealloc;
+- (void)drawOverlayProgressView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawProgressView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithProgressViewStyle:(int)arg1;
-- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (void)layoutSubviews;
+- (id)initWithProgressViewStyle:(NSInteger)arg1;
 - (float)progress;
-- (id)progressImage;
-- (id)progressTintColor;
-- (int)progressViewStyle;
-- (void)setBarStyle:(int)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setProgress:(float)arg1 animated:(BOOL)arg2;
+- (NSInteger)progressViewStyle;
 - (void)setProgress:(float)arg1;
-- (void)setProgressImage:(id)arg1;
-- (void)setProgressTintColor:(id)arg1;
-- (void)setProgressViewStyle:(int)arg1;
-- (void)setTrackImage:(id)arg1;
-- (void)setTrackTintColor:(id)arg1;
+- (void)setProgressViewStyle:(NSInteger)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)trackImage;
-- (id)trackTintColor;
 
 @end

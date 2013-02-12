@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLResponse, NSData, NSDictionary;
+@class NSData, NSDictionary, NSURLResponse;
 
 @interface NSCachedURLResponseInternal : NSObject {
     struct _CFCachedURLResponse { } *_cachedURLResponse;
     NSData *data;
     NSURLResponse *response;
-    unsigned int storagePolicy;
+    NSUInteger storagePolicy;
     NSDictionary *userInfo;
 }
 

@@ -6,27 +6,27 @@
 
 @interface EDBorder : NSObject {
     EDColorReference *mColorReference;
-    int mDiagonalType;
+    NSInteger mDiagonalType;
     EDResources *mResources;
-    int mType;
+    NSInteger mType;
 }
 
-+ (id)borderWithType:(int)arg1 color:(id)arg2 diagonalType:(int)arg3 resources:(id)arg4;
-+ (id)borderWithType:(int)arg1 color:(id)arg2 resources:(id)arg3;
-+ (id)borderWithType:(int)arg1 colorReference:(id)arg2 diagonalType:(int)arg3 resources:(id)arg4;
-+ (id)borderWithType:(int)arg1 colorReference:(id)arg2 resources:(id)arg3;
-+ (id)borderWithType:(int)arg1 resources:(id)arg2;
++ (id)borderWithType:(NSInteger)arg1 color:(id)arg2 diagonalType:(NSInteger)arg3 resources:(id)arg4;
++ (id)borderWithType:(NSInteger)arg1 color:(id)arg2 resources:(id)arg3;
++ (id)borderWithType:(NSInteger)arg1 colorReference:(id)arg2 diagonalType:(NSInteger)arg3 resources:(id)arg4;
++ (id)borderWithType:(NSInteger)arg1 colorReference:(id)arg2 resources:(id)arg3;
++ (id)borderWithType:(NSInteger)arg1 resources:(id)arg2;
 
 - (id)color;
 - (id)colorReference;
 - (void)dealloc;
-- (int)diagonalType;
-- (unsigned int)hash;
+- (NSInteger)diagonalType;
+- (NSUInteger)hash;
 - (id)initWithResources:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToBorder:(id)arg1;
-- (void)setDiagonalType:(int)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setDiagonalType:(NSInteger)arg1;
+- (void)setType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

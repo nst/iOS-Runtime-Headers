@@ -5,13 +5,16 @@
 @interface WXDocument : NSObject {
 }
 
-+ (id)documentFrom:(id)arg1 reader:(id)arg2 cancel:(id)arg3 asThumbnail:(BOOL)arg4;
 + (void)initialize;
 + (void)mapDocument:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)mapFontTable:(id)arg1 to:(id)arg2;
 + (void)mapLists:(id)arg1 to:(id)arg2 state:(id)arg3;
-+ (void)mapSources:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)mapStyles:(id)arg1 to:(id)arg2 state:(id)arg3;
 + (void)readDocumentSettings:(id)arg1 to:(id)arg2 state:(id)arg3;
++ (id)readFromArchive:(id)arg1 asThumbnail:(BOOL)arg2;
++ (id)readFromArchive:(id)arg1;
++ (id)readFromData:(id)arg1 asThumbnail:(BOOL)arg2;
++ (id)readFromData:(id)arg1;
++ (id)readFromPackage:(id)arg1 asThumbnail:(BOOL)arg2;
 
 @end

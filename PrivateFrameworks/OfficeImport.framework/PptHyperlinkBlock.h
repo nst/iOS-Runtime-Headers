@@ -2,21 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
-@class ESDContainer, ESDObject;
+@class ESDObject;
 
 @interface PptHyperlinkBlock : NSObject {
-    ESDContainer *mInteractiveInfoContainerHolder;
+     /* Encoded args for previous method: ^{PptInteractiveInfoAtom=^^?S{EshHeader=iIsSC}^^?iBIIiCiBBBC}8@0:4 */
+     /* Encoded args for previous method: ^{PptTxInteracInfoAtom=^^?S{EshHeader=iIsSC}^^?iBii}8@0:4 */
+    ESDObject *mInteractiveInfoAtomHolder;
     ESDObject *mTxInteractiveInfoAtomHolder;
 }
 
-- (struct PptTxInteracInfoAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; int x7; int x8; }*)txtInteractiveInfoAtom;
-- (id)interactiveInfoContainerHolder;
-- (void)setInteractiveInfoContainerHolder:(id)arg1;
+- (struct PptTxInteracInfoAtom { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; NSInteger x7; NSInteger x8; }*)txtInteractiveInfoAtom;
+- (struct PptInteractiveInfoAtom { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; NSUInteger x7; NSUInteger x8; NSInteger x9; unsigned char x10; NSInteger x11; void*x12; void*x13; void*x14; unsigned char x15; }*)interactiveInfoAtom;
+- (void)setInteractiveInfoAtomHolder:(id)arg1;
 - (void)setTxInteractiveInfoAtomHolder:(id)arg1;
 
 @end

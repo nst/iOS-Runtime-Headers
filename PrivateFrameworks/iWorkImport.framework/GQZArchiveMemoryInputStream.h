@@ -5,12 +5,12 @@
 @class NSData;
 
 @interface GQZArchiveMemoryInputStream : NSObject <GQZArchiveInputStream> {
-    const char *mBytes;
+    char *mBytes;
     NSData *mData;
     long long mSize;
 }
 
-- (const char *)dataAtOffset:(long long)arg1 size:(unsigned long)arg2 end:(long long)arg3 readSize:(unsigned int*)arg4;
+- (const char *)dataAtOffset:(long long)arg1 size:(unsigned long)arg2 end:(long long)arg3 readSize:(NSUInteger*)arg4;
 - (void)dealloc;
 - (id)initWithData:(id)arg1;
 - (void)readFromOffset:(long long)arg1 size:(unsigned long)arg2 buffer:(char *)arg3;

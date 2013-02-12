@@ -2,18 +2,11 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray;
-
 @interface YTHistoryVideoDataSource : YTVideoDataSource {
-    NSMutableArray *_history;
 }
 
-- (id)_history;
-- (void)_saveToDefaults;
 - (void)addVideo:(id)arg1;
-- (void)clearHistory;
-- (void)loadFromDefaults;
-- (unsigned int)maxVideosToSave;
-- (void)reloadData;
+- (NSUInteger)maxVideosToSave;
+- (void)removeAllVideos;
 
 @end

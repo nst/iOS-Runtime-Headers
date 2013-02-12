@@ -8,29 +8,26 @@
     NSHTTPURLResponseInternal *_httpInternal;
 }
 
-+ (BOOL)isErrorStatusCode:(int)arg1;
-+ (id)localizedStringForStatusCode:(int)arg1;
++ (BOOL)isErrorStatusCode:(NSInteger)arg1;
++ (id)localizedStringForStatusCode:(NSInteger)arg1;
 
 - (id)_clientCertificateChain;
 - (id)_clientCertificateState;
+- (id)_dateFromAppleMaxAge;
 - (id)_dateFromExpires;
-- (BOOL)_getCacheControlMaxAge:(double*)arg1;
-- (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
+- (id)_dateFromMaxAge;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
-- (double)_maxAge;
 - (id)_peerCertificateChain;
 - (struct __SecTrust { }*)_peerTrust;
 - (void)_setPeerTrust:(struct __SecTrust { }*)arg1;
+- (id)_webcore_MIMEType;
 - (id)allHeaderFields;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
-- (double)expirationInterval;
-- (BOOL)getAppleMaxAge:(double*)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
-- (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
-- (long long)maxExpectedContentLength;
-- (int)statusCode;
+- (id)initWithURL:(id)arg1 statusCode:(NSInteger)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
+- (double)maxAge;
+- (NSInteger)statusCode;
 
 @end

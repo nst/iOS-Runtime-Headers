@@ -6,14 +6,14 @@
 
 @interface PDAnimateEffectBehavior : PDCommonBehaviorData {
     NSString *mFilter;
-    int mTransition;
+    NSInteger mTransition;
 }
 
 - (void)dealloc;
 - (id)filter;
 - (id)init;
 - (void)setFilter:(id)arg1;
-- (void)setTransition:(int)arg1;
-- (int)transition;
+- (void)setTransition:(NSInteger)arg1;
+- (NSInteger)transition;
 
 @end

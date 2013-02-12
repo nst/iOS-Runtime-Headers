@@ -6,13 +6,13 @@
 
 @interface UISystemAlertRequest : NSObject <UIModalViewDelegate> {
     SEL _action;
-    int _alertID;
+    NSInteger _alertID;
     UIModalView *_sheet;
     id _target;
 }
 
-- (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
+- (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
 - (void)dealloc;
-- (id)initWithAlertID:(int)arg1 sheet:(id)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id)initWithAlertID:(NSInteger)arg1 sheet:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 
 @end

@@ -2,36 +2,31 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UITextLabel, UINavigationItem, UINavigationBar;
+@class UINavigationBar, UINavigationItem, UITextLabel;
 
 @interface MPVideoChapterFlipTransitionController : MPFlipTransitionController {
+    unsigned int _shouldPlayAfterFlip : 1;
     UITextLabel *_chapterGuideTitleLabel;
     UINavigationBar *_navigationBar;
     UINavigationItem *_originalNavigationItem;
-    BOOL _shouldPlayAfterFlip;
-    BOOL _tvOutEnabled;
 }
 
-@property BOOL TVOutEnabled;
-@property(retain) UINavigationBar * navigationBar;
+@property(retain) UINavigationBar *navigationBar; /* unknown property attribute: V_navigationBar */
 @property BOOL playAfterFlip;
 
-- (BOOL)TVOutEnabled;
 - (id)_chapterGuideTitleLabel;
 - (id)_copySwizzledNavigationViews;
 - (void)_done:(id)arg1;
 - (void)_hideNavigationAndStatusBars;
 - (void)_hideNavigationBarAnimationDidFinish:(id)arg1;
-- (int)_interfaceOrientation;
+- (NSInteger)_orientation;
 - (void)_restoreOriginalNavigationViews:(BOOL)arg1;
-- (void)_restoreOriginalNavigationViewsDidStop:(id)arg1;
 - (void)_showChapterGuideNavigationViews;
 - (void)dealloc;
 - (id)navigationBar;
-- (void)performTransition:(unsigned int)arg1;
 - (BOOL)playAfterFlip;
 - (void)setNavigationBar:(id)arg1;
 - (void)setPlayAfterFlip:(BOOL)arg1;
-- (void)setTVOutEnabled:(BOOL)arg1;
+- (void)transition:(NSUInteger)arg1;
 
 @end

@@ -5,15 +5,19 @@
 @interface DOMNamedNodeMap : DOMObject {
 }
 
-@property(readonly) unsigned int length;
+@property(readonly) NSUInteger length;
 
++ (id)_wrapNamedNodeMap:(struct NamedNodeMap { int (**x1)(); NSInteger x2; }*)arg1;
+
+- (struct NamedNodeMap { int (**x1)(); NSInteger x2; }*)_namedNodeMap;
+- (id)_initWithNamedNodeMap:(struct NamedNodeMap { int (**x1)(); NSInteger x2; }*)arg1;
 - (void)dealloc;
 - (void)finalize;
 - (id)getNamedItem:(id)arg1;
 - (id)getNamedItemNS:(id)arg1 :(id)arg2;
 - (id)getNamedItemNS:(id)arg1 localName:(id)arg2;
-- (id)item:(unsigned int)arg1;
-- (unsigned int)length;
+- (id)item:(NSUInteger)arg1;
+- (NSUInteger)length;
 - (id)removeNamedItem:(id)arg1;
 - (id)removeNamedItemNS:(id)arg1 :(id)arg2;
 - (id)removeNamedItemNS:(id)arg1 localName:(id)arg2;

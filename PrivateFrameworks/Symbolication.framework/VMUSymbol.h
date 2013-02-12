@@ -5,30 +5,28 @@
 @class NSString, VMUSymbolOwner;
 
 @interface VMUSymbol : VMUAddressRange <NSCopying> {
-    unsigned int _flags;
+    NSUInteger _flags;
     NSString *_mangledName;
     NSString *_name;
     VMUSymbolOwner *_owner;
 }
 
-+ (id)symbolWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
++ (id)symbolWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(NSUInteger)arg5;
 
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
-- (int)compare:(id)arg1;
+- (NSInteger)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)flags;
-- (id)initWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(unsigned int)arg5;
+- (NSUInteger)flags;
+- (id)initWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(NSUInteger)arg5;
 - (BOOL)isArm;
-- (BOOL)isDwarf;
 - (BOOL)isDyldStub;
 - (BOOL)isEqualToSymbol:(id)arg1;
 - (BOOL)isExternal;
 - (BOOL)isFunction;
 - (BOOL)isJavaMethod;
 - (BOOL)isObjcMethod;
-- (BOOL)isStab;
 - (BOOL)isThumb;
 - (id)mangledName;
 - (id)name;

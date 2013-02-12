@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MimePart, NSMutableData, NSArray, NSData;
+@class MappedData, MimePart, NSArray, NSData;
 
 @interface ProgressiveMimeParser : NSObject {
     struct { 
@@ -14,10 +14,10 @@
     id _context;
     NSData *_currentBoundary;
     MimePart *_currentPart;
-    unsigned int _cursor;
-    NSMutableData *_data;
+    NSUInteger _cursor;
+    MappedData *_data;
     id _delegate;
-    unsigned int _lastLength;
+    NSUInteger _lastLength;
     } _parserFlags;
     NSArray *_preserveHeaders;
     MimePart *_topLevelPart;
@@ -35,7 +35,8 @@
 - (id)data;
 - (void)dealloc;
 - (id)initWithBodyData:(id)arg1 topLevelHeaders:(id)arg2 headersToPreserve:(id)arg3;
-- (void)noteDataLengthChanged:(unsigned int)arg1;
+- (id)mappedData;
+- (void)noteDataLengthChanged:(NSUInteger)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)start;

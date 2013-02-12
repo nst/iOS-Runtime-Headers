@@ -8,8 +8,6 @@
 + (id)defaultProperties;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
 
 @end

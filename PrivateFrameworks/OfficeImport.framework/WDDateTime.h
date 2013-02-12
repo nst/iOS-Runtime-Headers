@@ -9,12 +9,11 @@
     WDCharacterProperties *mProperties;
 }
 
-- (void)clearProperties;
 - (id)date;
 - (void)dealloc;
 - (id)initWithParagraph:(id)arg1 date:(id)arg2;
 - (id)properties;
-- (int)runType;
+- (NSInteger)runType;
 - (void)setProperties:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class VMUArchitecture, <VMUMemory>;
+@class <VMUMemory>, VMUArchitecture;
 
 @interface VMUMemory_Handle : VMUMemory_Base <VMUMemory> {
     struct _VMURange { 

@@ -4,23 +4,22 @@
 
 @class ActivityMonitor;
 
-@interface MonitoredInvocation : NSInvocation {
+@interface MonitoredInvocation : MessageInvocation {
+    unsigned int _shouldLogInvocation : 1;
     ActivityMonitor *_monitor;
-    BOOL _shouldLogInvocation;
 }
 
-@property(readonly) ActivityMonitor * monitor;
-
-+ (id)invocationWithMethodSignature:(id)arg1;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4 taskName:(id)arg5 priority:(int)arg6 canBeCancelled:(BOOL)arg7;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3 taskName:(id)arg4 priority:(int)arg5 canBeCancelled:(BOOL)arg6;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 taskName:(id)arg3 priority:(int)arg4 canBeCancelled:(BOOL)arg5;
++ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4 taskName:(id)arg5 priority:(unsigned char)arg6 canBeCancelled:(BOOL)arg7;
++ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3 taskName:(id)arg4 priority:(unsigned char)arg5 canBeCancelled:(BOOL)arg6;
++ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 taskName:(id)arg3 priority:(unsigned char)arg4 canBeCancelled:(BOOL)arg5;
 
 - (void)dealloc;
 - (id)description;
-- (void)invoke;
-- (BOOL)mf_shouldLogInvocation;
+- (id)init;
+- (id)invoke;
 - (id)monitor;
+- (void)setMonitor:(id)arg1;
 - (void)setShouldLogInvocation:(BOOL)arg1;
+- (BOOL)shouldLogInvocation;
 
 @end

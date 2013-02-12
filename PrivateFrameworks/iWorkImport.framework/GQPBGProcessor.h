@@ -8,8 +8,8 @@
 
 - (Class)generator;
 - (BOOL)go;
-- (id)initWithPath:(id)arg1 indexFileName:(id)arg2 outputType:(int)arg3 outputPath:(struct __CFString { }*)arg4 previewRequest:(struct __QLPreviewRequest { }*)arg5 progressiveHelper:(id)arg6 generator:(Class)arg7 zipArchive:(id)arg8 cryptoKey:(id)arg9;
-- (id)initWithZipArchive:(id)arg1 indexFileName:(id)arg2 outputType:(int)arg3 outputPath:(struct __CFString { }*)arg4 previewRequest:(struct __QLPreviewRequest { }*)arg5 progressiveHelper:(id)arg6 generator:(Class)arg7;
+- (id)initWithPath:(id)arg1 indexFileName:(id)arg2 outputType:(NSInteger)arg3 outputPath:(struct __CFString { }*)arg4 previewRequest:(struct __QLPreviewRequest { }*)arg5 generator:(Class)arg6;
+- (id)initWithZipArchive:(id)arg1 documentFilename:(id)arg2 indexFileName:(id)arg3 generator:(Class)arg4;
 - (void)pushInitialState;
 
 @end

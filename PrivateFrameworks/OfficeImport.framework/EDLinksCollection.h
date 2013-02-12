@@ -2,27 +2,31 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSMutableArray;
 
 @interface EDLinksCollection : NSObject {
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
     NSMutableArray *mLinks;
     NSMutableArray *mReferences;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsModified;
 }
 
-- (unsigned int)addLink:(id)arg1;
-- (void)addOrEquivalentExternalAddInName:(id)arg1 linkReferenceIndex:(unsigned int*)arg2 nameIndex:(unsigned int*)arg3;
-- (unsigned int)addOrEquivalentInternalLinkReferenceWithFirstSheetIndex:(unsigned int)arg1 lastSheetIndex:(unsigned int)arg2;
-- (unsigned int)addOrEquivalentLinkReferenceOfType:(int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
-- (unsigned int)addReference:(id)arg1;
-- (bool)convertLinkReferenceIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int*)arg2 lastSheetIndex:(unsigned int*)arg3;
+- (NSUInteger)addLink:(id)arg1;
+- (NSUInteger)addReference:(id)arg1;
 - (void)dealloc;
-- (unsigned int)indexOfFirstLinkWithType:(int)arg1;
-- (unsigned int)indexOfReference:(id)arg1;
+- (NSUInteger)indexOfFirstLinkWithType:(NSInteger)arg1;
+- (NSUInteger)indexOfReference:(id)arg1;
 - (id)init;
-- (id)linkAtIndex:(unsigned int)arg1;
-- (unsigned int)linkIndexCreateIfNeededWithType:(int)arg1;
-- (unsigned int)linksCount;
-- (id)referenceAtIndex:(unsigned int)arg1;
-- (unsigned int)referencesCount;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isModified;
+- (id)linkAtIndex:(NSUInteger)arg1;
+- (NSUInteger)linksCount;
+- (id)referenceAtIndex:(NSUInteger)arg1;
+- (NSUInteger)referencesCount;
+- (void)setIsModified:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 
 @end

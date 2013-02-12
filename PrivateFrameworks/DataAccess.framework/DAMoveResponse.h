@@ -2,27 +2,18 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class DAMessageMoveRequest, NSString;
+@class NSString;
 
 @interface DAMoveResponse : NSObject {
     NSString *_destID;
-    DAMessageMoveRequest *_origRequest;
     NSString *_sourceID;
-    int _status;
+    NSInteger _status;
 }
 
-@property(readonly) NSString * destID;
-@property(retain) DAMessageMoveRequest * origRequest;
-@property(readonly) NSString * sourceID;
-@property(readonly) int status;
-
 - (void)dealloc;
-- (id)description;
 - (id)destID;
-- (id)initWithStatus:(int)arg1 sourceID:(id)arg2 destID:(id)arg3;
-- (id)origRequest;
-- (void)setOrigRequest:(id)arg1;
+- (id)initWithStatus:(NSInteger)arg1 sourceID:(id)arg2 destID:(id)arg3;
 - (id)sourceID;
-- (int)status;
+- (NSInteger)status;
 
 @end

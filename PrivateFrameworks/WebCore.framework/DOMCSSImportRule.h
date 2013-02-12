@@ -2,15 +2,22 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSStyleSheet, NSString, DOMMediaList;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DOMCSSImportRule : DOMCSSRule {
+     /* Encoded args for previous method: @12@0:4^{CSSImportRule=^^?i^{StyleBase}^^?{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{RefPtr<WebCore::MediaList>=^{MediaList}}{RefPtr<WebCore::CSSStyleSheet>=^{CSSStyleSheet}}^{CachedCSSStyleSheet}B}8 */
+     /* Encoded args for previous method: ^{CSSImportRule=^^?i^{StyleBase}^^?{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{RefPtr<WebCore::MediaList>=^{MediaList}}{RefPtr<WebCore::CSSStyleSheet>=^{CSSStyleSheet}}^{CachedCSSStyleSheet}B}8@0:4 */
 }
 
-@property(readonly) NSString * href;
-@property(readonly) DOMMediaList * media;
-@property(readonly) DOMCSSStyleSheet * styleSheet;
+@property(copy,readonly) NSString *href;
+@property(retain,readonly) DOMMediaList *media;
+@property(retain,readonly) DOMCSSStyleSheet *styleSheet;
 
++ (id)_wrapCSSImportRule:(struct CSSImportRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; int (**x4)(); struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct RefPtr<WebCore::MediaList> { struct MediaList {} *x_6_1_1; } x6; struct RefPtr<WebCore::CSSStyleSheet> { struct CSSStyleSheet {} *x_7_1_1; } x7; struct CachedCSSStyleSheet {} *x8; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x9; }*)arg1;
+
+- (struct CSSImportRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; int (**x4)(); struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct RefPtr<WebCore::MediaList> { struct MediaList {} *x_6_1_1; } x6; struct RefPtr<WebCore::CSSStyleSheet> { struct CSSStyleSheet {} *x_7_1_1; } x7; struct CachedCSSStyleSheet {} *x8; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x9; }*)_CSSImportRule;
 - (id)href;
 - (id)media;
 - (id)styleSheet;

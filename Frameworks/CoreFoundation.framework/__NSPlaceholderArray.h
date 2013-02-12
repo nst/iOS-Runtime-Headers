@@ -5,24 +5,23 @@
 @interface __NSPlaceholderArray : NSMutableArray {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)immutablePlaceholder;
 + (void)initialize;
 + (id)mutablePlaceholder;
 
-- (unsigned int)count;
+- (NSUInteger)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (oneway void)release;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2;
+- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (id)objectAtIndex:(NSUInteger)arg1;
+- (void)release;
+- (void)removeObjectAtIndex:(NSUInteger)arg1;
+- (void)replaceObjectAtIndex:(NSUInteger)arg1 withObject:(id)arg2;
 - (id)retain;
-- (unsigned int)retainCount;
+- (NSUInteger)retainCount;
 
 @end

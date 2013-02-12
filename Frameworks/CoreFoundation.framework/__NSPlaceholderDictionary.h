@@ -5,24 +5,23 @@
 @interface __NSPlaceholderDictionary : NSMutableDictionary {
 }
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)immutablePlaceholder;
 + (void)initialize;
 + (id)mutablePlaceholder;
 
-- (unsigned int)count;
+- (NSUInteger)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
+- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
-- (oneway void)release;
+- (void)release;
 - (void)removeObjectForKey:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
+- (NSUInteger)retainCount;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

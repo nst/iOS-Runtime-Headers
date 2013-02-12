@@ -15,19 +15,19 @@
         unsigned int delegateViewHandleTouchPauseIsDown : 1; 
         unsigned int reserved : 28; 
     id _delegate;
-    int _fingerCount;
+    NSInteger _fingerCount;
     float _multiTapDelay;
     float _rejectAsTapThrehold;
     } _startPosition;
     double _startTime;
-    int _tapDownCount;
+    NSInteger _tapDownCount;
     } _tapInfoFlags;
     UIView *_view;
     float _viewTouchPauseThreshold;
 }
 
 - (BOOL)_eventLocationConsideredMovement:(struct __GSEvent { }*)arg1;
-- (void)_handleTapWithCount:(int)arg1 event:(struct __GSEvent { }*)arg2;
+- (void)_handleTapWithCount:(NSInteger)arg1 event:(struct __GSEvent { }*)arg2;
 - (void)_sendTouchPauseDownIfNecessary;
 - (void)_sendTouchPauseUpIfNecessary;
 - (BOOL)cancelMouseTracking;

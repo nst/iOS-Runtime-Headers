@@ -2,32 +2,37 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMoviePlayerController;
+@class MPMoviePlayerController, NSURL;
 
 @interface MPMoviePlayerViewController : UIViewController {
-    id _internal;
+    NSURL *_contentURL;
+    MPMoviePlayerController *_moviePlayerController;
 }
 
-@property(readonly) MPMoviePlayerController * moviePlayer;
+@property(retain) MPMoviePlayerController *moviePlayerController; /* unknown property attribute: V_moviePlayerController */
+@property NSInteger movieControlMode;
+@property NSInteger scalingMode;
 
-- (BOOL)_canReloadView;
-- (void)_moviePlayerViewController_applicationDidEnterBackgroundNotification:(id)arg1;
-- (void)_moviePlayerViewController_playbackDidFinishNotification:(id)arg1;
-- (void)_restoreStatusBarAnimated:(BOOL)arg1;
-- (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
-- (BOOL)canBecomeFirstResponder;
+- (void)_adjustToDeviceOrientation;
+- (void)_beginPlayback;
+- (void)_deviceOrientationChanged:(id)arg1;
+- (void)_playbackEnded:(id)arg1;
+- (void)_preloadedContent:(id)arg1;
+- (BOOL)_viewControllerShouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (id)init;
+- (void)dismissAfterPlayback;
 - (id)initWithContentURL:(id)arg1;
 - (void)loadView;
-- (id)moviePlayer;
-- (void)remoteControlReceivedWithEvent:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (NSInteger)movieControlMode;
+- (id)moviePlayerController;
+- (NSInteger)scalingMode;
+- (void)setMovieControlMode:(NSInteger)arg1;
+- (void)setMoviePlayerController:(id)arg1;
+- (void)setScalingMode:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

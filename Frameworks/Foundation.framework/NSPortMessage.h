@@ -7,7 +7,7 @@
 @interface NSPortMessage : NSObject {
     NSMutableArray *components;
     NSPort *localPort;
-    unsigned int msgid;
+    NSUInteger msgid;
     NSPort *remotePort;
     void *reserved2;
     void *reserved;
@@ -18,10 +18,10 @@
 - (void)dealloc;
 - (id)initWithReceivePort:(id)arg1 sendPort:(id)arg2 components:(id)arg3;
 - (id)initWithSendPort:(id)arg1 receivePort:(id)arg2 components:(id)arg3;
-- (unsigned int)msgid;
+- (NSUInteger)msgid;
 - (id)receivePort;
 - (BOOL)sendBeforeDate:(id)arg1;
 - (id)sendPort;
-- (void)setMsgid:(unsigned int)arg1;
+- (void)setMsgid:(NSUInteger)arg1;
 
 @end

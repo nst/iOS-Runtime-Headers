@@ -4,20 +4,15 @@
 
 @interface OADPresetPattern : OADPattern {
     BOOL mIsTypeOverridden;
-    int mType;
+    NSInteger mType;
 }
 
 + (id)defaultProperties;
-+ (id)nameForPresetPatternType:(int)arg1;
-+ (id)namedBitmapDataForPresetPatternType:(int)arg1;
-+ (id)presetPatternHeader;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isTypeOverridden;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

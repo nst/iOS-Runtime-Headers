@@ -6,24 +6,15 @@
 
 @interface UIRemoteApplication : NSObject {
     NSString *_machServiceName;
-    unsigned int _port;
+    NSUInteger _port;
 }
 
-- (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
 - (void)dealloc;
-- (void)hideTopMostMiniAlert;
+- (void)hideTopMostMiniAlert:(NSInteger)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
-- (void)localNotificationDidSnooze:(id)arg1;
-- (void)localNotificationMessageDelivered:(id)arg1;
-- (void)remoteNotificationMessageDelivered;
-- (void)remoteNotificationRegistrationFailedWithErrorDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
-- (void)remoteNotificationRegistrationSucceededWithDeviceToken:(id)arg1;
-- (void)sheetWithRemoteViewIdentifierDidDismiss:(id)arg1;
-- (void)showTopMostMiniAlertWithSynchronizationPort:(unsigned int)arg1;
-- (void)simpleRemoteActionDidOccur:(int)arg1;
-- (void)statusBarWillChangeOrientation:(int)arg1 duration:(float)arg2;
+- (void)showTopMostMiniAlert;
+- (void)statusBarWillAnimateToHeight:(float)arg1 duration:(double)arg2 fence:(NSInteger)arg3;
 - (void)updatePort;
-- (void)wakeTimerFired;
 
 @end

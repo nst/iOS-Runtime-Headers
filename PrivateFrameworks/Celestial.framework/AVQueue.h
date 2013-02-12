@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSRecursiveLock, NSMutableArray;
+@class NSMutableArray, NSRecursiveLock;
 
 @interface AVQueue : NSObject {
-    int _isBeingModifiedCount;
+    NSUInteger _flags;
     NSMutableArray *_items;
     NSRecursiveLock *_mutex;
     void *_reserved;
@@ -14,25 +14,24 @@
 + (id)avQueue;
 + (id)queueWithArray:(id)arg1 error:(id*)arg2;
 
-- (int)_instantiateItem;
+- (NSInteger)_instantiateItem;
 - (BOOL)appendItem:(id)arg1 error:(id*)arg2;
 - (BOOL)appendItemsFromArray:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
-- (unsigned int)indexOfItem:(id)arg1;
+- (NSUInteger)indexOfItem:(id)arg1;
 - (id)init;
 - (id)initWithArray:(id)arg1 error:(id*)arg2;
 - (id)initWithError:(id*)arg1;
 - (BOOL)insertItem:(id)arg1 afterItem:(id)arg2 error:(id*)arg3;
-- (BOOL)insertItem:(id)arg1 atIndex:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)isBeingModified;
+- (BOOL)insertItem:(id)arg1 atIndex:(NSUInteger)arg2 error:(id*)arg3;
 - (id)itemAfterItem:(id)arg1;
-- (id)itemAtIndex:(unsigned int)arg1;
-- (unsigned int)itemCount;
-- (void)itemWasAdded:(id)arg1 atIndex:(int)arg2;
-- (void)itemWillBeRemoved:(id)arg1 atIndex:(int)arg2;
+- (id)itemAtIndex:(NSUInteger)arg1;
+- (NSUInteger)itemCount;
+- (void)itemWasAdded:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)itemWillBeRemoved:(id)arg1 atIndex:(NSInteger)arg2;
 - (void)removeAllItems;
 - (BOOL)removeItem:(id)arg1;
-- (BOOL)removeItemAtIndex:(unsigned int)arg1;
-- (void)removeItemsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)removeItemAtIndex:(NSUInteger)arg1;
+- (void)removeItemsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 
 @end

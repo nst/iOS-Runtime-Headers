@@ -3,24 +3,24 @@
  */
 
 @interface VMUTraceRecord : NSObject {
-    unsigned long long address;
-    unsigned long long argument;
-    unsigned int depth;
-    unsigned long long *frames;
-    unsigned int seqnum;
-    unsigned int type;
+    NSUInteger address;
+    NSUInteger argument;
+    NSUInteger depth;
+    NSUInteger *frames;
+    NSUInteger seqnum;
+    NSUInteger type;
 }
 
-- (unsigned long long)address;
-- (unsigned long long)argument;
-- (unsigned int)depth;
-- (unsigned long long*)frames;
-- (id)initWithBacktrace:(id)arg1 forTask:(unsigned int)arg2;
-- (id)initWithLoggingRecord:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 forTask:(unsigned int)arg2;
-- (id)initWithTraceRecord:(id)arg1 withDepth:(unsigned int)arg2;
+- (NSUInteger)address;
+- (NSUInteger)argument;
+- (NSUInteger)depth;
+- (NSUInteger*)frames;
+- (id)initWithBacktrace:(id)arg1 forTask:(NSUInteger)arg2;
+- (id)initWithLoggingRecord:(struct { NSUInteger x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; }*)arg1 forTask:(NSUInteger)arg2;
+- (id)initWithTraceRecord:(id)arg1 withDepth:(NSUInteger)arg2;
 - (id)initWithTraceRecord:(id)arg1;
-- (unsigned int)seqnum;
-- (unsigned int)threadID;
-- (unsigned int)type;
+- (NSUInteger)seqnum;
+- (NSUInteger)threadID;
+- (NSUInteger)type;
 
 @end

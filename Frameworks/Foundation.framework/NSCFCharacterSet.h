@@ -7,9 +7,8 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (void)addCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)addCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)addCharactersInString:(id)arg1;
-- (BOOL)allowsWeakReference;
 - (id)bitmapRepresentation;
 - (BOOL)characterIsMember:(unsigned short)arg1;
 - (Class)classForArchiver;
@@ -20,7 +19,7 @@
 - (void)formIntersectionWithCharacterSet:(id)arg1;
 - (void)formUnionWithCharacterSet:(id)arg1;
 - (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (void)invert;
 - (id)invertedSet;
 - (BOOL)isEqual:(id)arg1;
@@ -30,10 +29,9 @@
 - (void)makeCharacterSetFast;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
-- (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)removeCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)removeCharactersInString:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (NSUInteger)retainCount;
 
 @end

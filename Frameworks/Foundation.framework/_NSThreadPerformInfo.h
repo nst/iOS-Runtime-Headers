@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableArray, NSCondition;
+@class NSCondition, NSMutableArray;
 
 @interface _NSThreadPerformInfo : NSObject {
     id argument;

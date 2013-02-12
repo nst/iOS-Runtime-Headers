@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface OADGroup : OADDrawable <OADDrawableContainer> {
+@interface OADGroup : OADDrawable {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -18,18 +18,15 @@
     } mLogicalBounds;
 }
 
-- (id).cxx_construct;
 - (void)addChild:(id)arg1;
 - (void)addChildren:(id)arg1;
-- (id)childAtIndex:(unsigned int)arg1;
-- (unsigned int)childCount;
+- (id)childAtIndex:(NSInteger)arg1;
+- (NSInteger)childCount;
 - (id)children;
 - (void)dealloc;
 - (id)groupProperties;
 - (id)init;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
-- (void)removeUnnecessaryOverrides;
-- (void)replaceChild:(id)arg1 with:(id)arg2;
 - (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setParentTextListStyle:(id)arg1;
 

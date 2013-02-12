@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDWorksheet, EDResources;
+@class EDResources, EDWorksheet;
 
 @interface EDColumnInfoCollection : EDSortedCollection {
     EDResources *mResources;
     EDWorksheet *mWorksheet;
 }
 
-- (id)columnInfoCreateIfNilForColumnNumber:(int)arg1;
-- (id)columnInfoForColumnNumber:(int)arg1;
+- (id)columnInfoCreateIfNilForColumnNumber:(NSInteger)arg1;
+- (id)columnInfoForColumnNumber:(NSInteger)arg1;
 - (void)dealloc;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
 

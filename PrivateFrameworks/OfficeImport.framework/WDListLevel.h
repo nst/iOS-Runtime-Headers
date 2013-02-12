@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDOfficeArt, NSMutableString, WDParagraphProperties, WDCharacterProperties;
+@class NSMutableString, WDCharacterProperties, WDOfficeArt, WDParagraphProperties;
 
 @interface WDListLevel : NSObject {
     WDCharacterProperties *mCharacterProperties;
     WDOfficeArt *mImage;
-    int mJustification;
+    NSInteger mJustification;
     BOOL mLegacy;
-    long mLegacyIndent;
-    long mLegacySpace;
+    NSInteger mLegacyIndent;
+    NSInteger mLegacySpace;
     BOOL mLegal;
-    int mNumberFormat;
+    NSInteger mNumberFormat;
     WDParagraphProperties *mParagraphProperties;
     BOOL mRestartNumbering;
-    long mStartNumber;
-    int mSuffix;
+    NSInteger mStartNumber;
+    NSInteger mSuffix;
     NSMutableString *mText;
 }
 
@@ -26,32 +26,32 @@
 - (BOOL)imageBullet;
 - (BOOL)imageBulletOverridden;
 - (id)initWithDocument:(id)arg1;
-- (int)justification;
+- (NSInteger)justification;
 - (BOOL)justificationOverridden;
 - (BOOL)legacy;
 - (long)legacyIndent;
 - (long)legacySpace;
 - (BOOL)legal;
 - (BOOL)legalOverridden;
-- (int)numberFormat;
+- (NSInteger)numberFormat;
 - (BOOL)numberFormatOverridden;
 - (id)paragraphProperties;
 - (BOOL)restartNumbering;
 - (BOOL)restartNumberingOverridden;
 - (void)setImage:(id)arg1;
-- (void)setJustification:(int)arg1;
+- (void)setJustification:(NSInteger)arg1;
 - (void)setLegacy:(BOOL)arg1;
 - (void)setLegacyIndent:(long)arg1;
 - (void)setLegacySpace:(long)arg1;
 - (void)setLegal:(BOOL)arg1;
-- (void)setNumberFormat:(int)arg1;
+- (void)setNumberFormat:(NSInteger)arg1;
 - (void)setRestartNumbering:(BOOL)arg1;
 - (void)setStartNumber:(long)arg1;
-- (void)setSuffix:(int)arg1;
+- (void)setSuffix:(NSInteger)arg1;
 - (void)setText:(id)arg1;
 - (long)startNumber;
 - (BOOL)startNumberOverridden;
-- (int)suffix;
+- (NSInteger)suffix;
 - (BOOL)suffixOverridden;
 - (id)text;
 - (BOOL)textOverridden;

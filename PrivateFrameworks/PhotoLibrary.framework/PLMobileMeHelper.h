@@ -2,25 +2,42 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSArray;
+@class NSArray, NSMutableArray, NSMutableData, NSMutableURLRequest, NSURLConnection;
 
 @interface PLMobileMeHelper : NSObject {
-    NSArray *_likelyValidUsernames;
-    NSArray *_usernames;
+    NSArray *_albums;
+    NSURLConnection *_connection;
+    id _delegate;
+    NSInteger _lastStatusCode;
+    BOOL _performedFullAccountScan;
+    NSMutableURLRequest *_request;
+    NSMutableData *_responseData;
+    NSMutableArray *_usernamesToCheck;
 }
 
-+ (id)preferredUsername;
++ (id)_copyPasswordForUsername:(id)arg1;
++ (id)_createAlbumFetchRequestForUsernames:(id)arg1 includeTimeStamp:(BOOL)arg2;
++ (void)initialize;
++ (id)languageString;
 + (id)serviceName;
-+ (id)sharedInstance;
 + (id)userAgentString;
 
-- (id)_passwordForUsername:(id)arg1;
-- (id)_usernames;
-- (id)_validUsernames;
+- (id)_accountsWeThinkAreValid;
+- (void)_noValidAccountsFound;
+- (BOOL)_setAlbumsFromServerResponse:(id)arg1;
+- (id)albums;
+- (BOOL)canPostToDotMac;
+- (BOOL)canValidateAlbums;
+- (void)cancel;
+- (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
-- (BOOL)getUsername:(id*)arg1 andPassword:(id*)arg2;
-- (BOOL)hasMobileMeAccounts;
-- (BOOL)hasValidMobileMeAccounts;
-- (void)invalidateUserAccounts;
+- (void)enableApplicationNetworkFlags:(BOOL)arg1;
+- (id)init;
+- (id)preferredUsername;
+- (void)setDelegate:(id)arg1;
+- (void)validateAlbums;
 
 @end

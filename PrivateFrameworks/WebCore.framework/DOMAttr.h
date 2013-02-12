@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMElement, NSString, DOMCSSStyleDeclaration;
-
 @interface DOMAttr : DOMNode {
 }
 
-@property(readonly) NSString * name;
-@property(readonly) DOMElement * ownerElement;
+@property(copy,readonly) NSString *name;
+@property(retain,readonly) DOMElement *ownerElement;
+@property(retain,readonly) DOMCSSStyleDeclaration *style;
+@property(copy) NSString *value;
 @property(readonly) BOOL specified;
-@property(readonly) DOMCSSStyleDeclaration * style;
-@property(copy) NSString * value;
 
-- (BOOL)isId;
++ (id)_wrapAttr:(struct Attr { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct Element {} *x29; struct RefPtr<WebCore::Attribute> { struct Attribute {} *x_30_1_1; } x30; NSInteger x31; }*)arg1;
+
+- (struct Attr { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct Element {} *x29; struct RefPtr<WebCore::Attribute> { struct Attribute {} *x_30_1_1; } x30; NSInteger x31; }*)_attr;
 - (id)name;
 - (id)ownerElement;
 - (void)setValue:(id)arg1;

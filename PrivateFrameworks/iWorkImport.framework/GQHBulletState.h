@@ -3,31 +3,35 @@
  */
 
 @interface GQHBulletState : NSObject {
-    int mCurrentLevel;
+    struct { 
+        NSInteger version; 
+        int (*retain)(); 
+        int (*release)(); 
+        int (*copyDescription)(); 
+        int (*equal)(); 
+    NSInteger mCurrentLevel;
     struct __CFArray { } *mLevels;
+    } mListCallBacks;
 }
 
-+ (struct __CFString { }*)createLabelStr:(int)arg1 number:(int)arg2;
++ (struct __CFString { }*)createLabelStr:(NSInteger)arg1 number:(NSInteger)arg2;
 
-- (struct __CFString { }*)bulletChar:(int)arg1;
-- (int)bulletIndentForLevel:(int)arg1;
-- (struct __CFString { }*)createTieredNumberStringForLevel:(int)arg1;
-- (int)currentLevel;
+- (struct __CFString { }*)bulletChar:(NSInteger)arg1;
+- (NSInteger)bulletIndentForLevel:(NSInteger)arg1;
+- (struct __CFString { }*)createTieredNumberStringForLevel:(NSInteger)arg1;
+- (NSInteger)currentLevel;
 - (void)dealloc;
-- (BOOL)hasNumberAtLevel:(int)arg1;
 - (id)init;
-- (int)labelTypeAtLevel:(int)arg1;
-- (id)listStyleAtLevel:(int)arg1;
-- (int)numberAtLevel:(int)arg1;
-- (void)setBulletChar:(struct __CFString { }*)arg1 level:(int)arg2;
-- (void)setBulletIndent:(int)arg1 level:(int)arg2;
-- (void)setCurrentLevel:(int)arg1;
-- (void)setLabelType:(int)arg1 level:(int)arg2;
-- (void)setListStyle:(id)arg1 atLevel:(int)arg2;
-- (void)setNumber:(int)arg1 level:(int)arg2;
-- (void)setTextIndent:(int)arg1 level:(int)arg2;
-- (void)setType:(int)arg1 level:(int)arg2;
-- (int)textIndentForLevel:(int)arg1;
-- (int)typeAtlevel:(int)arg1;
+- (NSInteger)labelTypeAtLevel:(NSInteger)arg1;
+- (NSInteger)numberAtLevel:(NSInteger)arg1;
+- (void)setBulletChar:(struct __CFString { }*)arg1 level:(NSInteger)arg2;
+- (void)setBulletIndent:(NSInteger)arg1 level:(NSInteger)arg2;
+- (void)setCurrentLevel:(NSInteger)arg1;
+- (void)setLabelType:(NSInteger)arg1 level:(NSInteger)arg2;
+- (void)setNumber:(NSInteger)arg1 level:(NSInteger)arg2;
+- (void)setTextIndent:(NSInteger)arg1 level:(NSInteger)arg2;
+- (void)setType:(NSInteger)arg1 level:(NSInteger)arg2;
+- (NSInteger)textIndentForLevel:(NSInteger)arg1;
+- (NSInteger)typeAtlevel:(NSInteger)arg1;
 
 @end

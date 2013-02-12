@@ -3,53 +3,48 @@
  */
 
 @interface NSIndexPath : NSObject <NSCopying, NSCoding> {
-    unsigned int _hash;
-    unsigned int *_indexes;
-    unsigned int _length;
+    NSUInteger _hash;
+    NSUInteger *_indexes;
+    NSUInteger _length;
     void *_reserved;
 }
 
-@property(readonly) int _gkColumn;
-@property(readonly) unsigned int gridColumn;
-@property(readonly) unsigned int gridRow;
-@property(readonly) unsigned int gridSection;
-@property(readonly) int item;
-@property(readonly) int row;
-@property(readonly) int section;
+@property(readonly) NSUInteger row;
+@property(readonly) NSUInteger section;
 
-+ (id)_gkIndexPathsSeparatedBySection:(id)arg1;
-+ (id)indexPathForItem:(int)arg1 inSection:(int)arg2;
-+ (id)indexPathForRow:(int)arg1 inSection:(int)arg2;
-+ (id)indexPathForRow:(unsigned int)arg1 column:(unsigned int)arg2 inSection:(unsigned int)arg3;
-+ (id)indexPathWithIndex:(unsigned int)arg1;
-+ (id)indexPathWithIndexes:(const unsigned int*)arg1 length:(unsigned int)arg2;
++ (id)_fastUniquer;
++ (id)_uniquer;
++ (id)indexPathForRow:(NSUInteger)arg1 inSection:(NSUInteger)arg2;
++ (id)indexPathWithIndex:(NSUInteger)arg1;
++ (id)indexPathWithIndexes:(NSUInteger*)arg1 length:(NSUInteger)arg2;
++ (id)indexPathWithTileLocation:(struct { struct { NSUInteger x_1_1_1; NSUInteger x_1_1_2; } x1; NSUInteger x2; })arg1;
++ (id)indexPathWithZoomLevel:(NSUInteger)arg1 x:(NSUInteger)arg2 y:(NSUInteger)arg3;
++ (id)tileZoomLevelTwo;
++ (id)tileZoomLevelZero;
 
-- (id)_GKNormalizedIndexPath;
-- (int)_gkColumn;
-- (id)_gkIndexPathByAddingColumn:(int)arg1;
-- (int)compare:(id)arg1;
+- (NSInteger)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dd_stringValue;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)getIndexes:(unsigned int*)arg1;
-- (unsigned int)gridColumn;
-- (unsigned int)gridRow;
-- (unsigned int)gridSection;
-- (unsigned int)hash;
-- (unsigned int)indexAtPosition:(unsigned int)arg1;
-- (id)indexPathByAddingIndex:(unsigned int)arg1;
+- (void)finalize;
+- (void)getIndexes:(NSUInteger*)arg1;
+- (BOOL)hasCoordinate;
+- (NSUInteger)indexAtPosition:(NSUInteger)arg1;
+- (id)indexPathByAddingIndex:(NSUInteger)arg1;
 - (id)indexPathByRemovingLastIndex;
-- (id)indexPathBySettingSection:(unsigned int)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIndex:(unsigned int)arg1;
-- (id)initWithIndexes:(const unsigned int*)arg1 length:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (int)item;
-- (unsigned int)length;
-- (int)row;
-- (int)section;
+- (id)initWithIndex:(NSUInteger)arg1;
+- (id)initWithIndexes:(NSUInteger*)arg1 length:(NSUInteger)arg2;
+- (id)initWithTileLocation:(struct { struct { NSUInteger x_1_1_1; NSUInteger x_1_1_2; } x1; NSUInteger x2; })arg1;
+- (id)initWithZoomLevel:(NSUInteger)arg1 x:(NSUInteger)arg2 y:(NSUInteger)arg3;
+- (NSUInteger)length;
+- (NSUInteger)row;
+- (NSUInteger)section;
+- (struct { struct { NSUInteger x_1_1_1; NSUInteger x_1_1_2; } x1; NSUInteger x2; })tileLocation;
+- (NSUInteger)x;
+- (NSUInteger)y;
+- (NSUInteger)zoomLevel;
 
 @end

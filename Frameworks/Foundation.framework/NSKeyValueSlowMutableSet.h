@@ -11,7 +11,7 @@
     NSKeyValueSetter *_valueSetter;
 }
 
-+ (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { NSUInteger x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 
 - (id)_createMutableSetValueWithSelector:(SEL)arg1;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
@@ -20,7 +20,7 @@
 - (id)_setValueWithSelector:(SEL)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
-- (unsigned int)count;
+- (NSUInteger)count;
 - (void)intersectSet:(id)arg1;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;

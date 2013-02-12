@@ -3,13 +3,12 @@
  */
 
 @interface VMUArchitecture : NSObject <NSCoding, NSCopying> {
-    int _cpuSubtype;
-    int _cpuType;
+    NSInteger _cpuSubtype;
+    NSInteger _cpuType;
 }
 
 + (id)anyArchitecture;
-+ (id)architectureWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
-+ (id)armArchitecture;
++ (id)architectureWithCpuType:(NSInteger)arg1 cpuSubtype:(NSInteger)arg2;
 + (id)currentArchitecture;
 + (id)i386Architecture;
 + (void)initialize;
@@ -21,13 +20,13 @@
 
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })commpageAddressRange;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)cpuSubtype;
-- (int)cpuType;
+- (NSInteger)cpuSubtype;
+- (NSInteger)cpuType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
+- (id)initWithCpuType:(NSInteger)arg1 cpuSubtype:(NSInteger)arg2;
 - (BOOL)is32Bit;
 - (BOOL)is64Bit;
 - (BOOL)isBigEndian;

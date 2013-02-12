@@ -2,50 +2,56 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface EDPageSetup : NSObject {
-    boolmCustomFirstPageNumber;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
     float mBottomMargin;
-    unsigned int mCopies;
-    unsigned int mFirstPageNumber;
-    unsigned int mFitToHeight;
-    unsigned int mFitToWidth;
+    NSUInteger mCopies;
+    NSUInteger mFirstPageNumber;
+    NSUInteger mFitToHeight;
+    NSUInteger mFitToWidth;
     float mFooterMargin;
     float mHeaderMargin;
     float mLeftMargin;
-    int mOrientation;
-    int mPageOrder;
+    NSInteger mOrientation;
+    NSInteger mPageOrder;
     float mRightMargin;
-    unsigned int mScale;
+    NSUInteger mScale;
     float mTopMargin;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mCustomFirstPageNumber;
 }
 
 + (id)pageSetup;
 
 - (float)bottomMargin;
-- (bool)customFirstPageNumber;
-- (unsigned int)firstPageNumber;
-- (unsigned int)fitToHeight;
-- (unsigned int)fitToWidth;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)customFirstPageNumber;
+- (NSUInteger)firstPageNumber;
+- (NSUInteger)fitToHeight;
+- (NSUInteger)fitToWidth;
 - (float)footerMargin;
 - (float)headerMargin;
 - (id)init;
 - (float)leftMargin;
-- (int)order;
-- (int)orientation;
+- (NSInteger)order;
+- (NSInteger)orientation;
 - (float)rightMargin;
-- (unsigned int)scale;
+- (NSUInteger)scale;
 - (void)setBottomMargin:(float)arg1;
-- (void)setCustomFirstPageNumber:(bool)arg1;
-- (void)setFirstPageNumber:(unsigned int)arg1;
-- (void)setFitToHeight:(unsigned int)arg1;
-- (void)setFitToWidth:(unsigned int)arg1;
+- (void)setCustomFirstPageNumber:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setFirstPageNumber:(NSUInteger)arg1;
+- (void)setFitToHeight:(NSUInteger)arg1;
+- (void)setFitToWidth:(NSUInteger)arg1;
 - (void)setFooterMargin:(float)arg1;
 - (void)setHeaderMargin:(float)arg1;
 - (void)setLeftMargin:(float)arg1;
-- (void)setOrder:(int)arg1;
-- (void)setOrientation:(int)arg1;
+- (void)setOrder:(NSInteger)arg1;
+- (void)setOrientation:(NSInteger)arg1;
 - (void)setRightMargin:(float)arg1;
-- (void)setScale:(unsigned int)arg1;
+- (void)setScale:(NSUInteger)arg1;
 - (void)setTopMargin:(float)arg1;
 - (float)topMargin;
 

@@ -5,8 +5,4 @@
 @interface OADMasterBackground : OADBackground {
 }
 
-+ (id)masterBackground;
-
-- (BOOL)isEqual:(id)arg1;
-
 @end

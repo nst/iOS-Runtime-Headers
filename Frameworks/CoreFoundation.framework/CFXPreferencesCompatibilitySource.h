@@ -3,18 +3,11 @@
  */
 
 @interface CFXPreferencesCompatibilitySource : CFXPreferencesSource {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    } accessLock;
 }
 
 - (struct __CFDictionary { }*)copyDictionary;
 - (struct __CFArray { }*)copyKeyList;
-- (void)dealloc;
-- (void)finalize;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
-- (id)init;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (unsigned char)synchronize;
 

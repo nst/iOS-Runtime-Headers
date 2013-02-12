@@ -2,18 +2,17 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueObservance, NSKeyValueObservationInfo, NSObject, NSKeyValueProperty;
+@class NSKeyValueObservance, NSKeyValueObservationInfo, NSKeyValueProperty, NSObject;
 
 @interface NSKeyValueShareableObservationInfoKey : NSObject {
     BOOL _addingNotRemoving;
     void *_additionContext;
     NSObject *_additionObserver;
-    unsigned int _additionOptions;
-    NSObject *_additionOriginalObservable;
+    NSUInteger _additionOptions;
     NSKeyValueProperty *_additionProperty;
     NSKeyValueObservationInfo *_baseObservationInfo;
     NSKeyValueObservance *_removalObservance;
-    unsigned int _removalObservanceIndex;
+    NSUInteger _removalObservanceIndex;
 }
 
 @end

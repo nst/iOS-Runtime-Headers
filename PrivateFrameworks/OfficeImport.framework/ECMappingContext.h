@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSMutableArray;
+@class NSMapTable, NSMutableArray, NSMutableDictionary;
 
 @interface ECMappingContext : NSObject {
-    struct __CFDictionary { } *mIndexToMappedIndex;
+    NSMapTable *mIndexToMappedIndex;
     NSMutableArray *mMappingInfos;
-    struct __CFDictionary { } *mObjectToMappingInfo;
+    NSMapTable *mObjectToMappingInfo;
     NSMutableDictionary *mSheetNameToMappedIndex;
 }
 
-+ (id)mappingContext;
-
-- (void)associateMappingInfo:(id)arg1 withSheetName:(id)arg2 andSheetIndex:(unsigned int)arg3 andObject:(id)arg4;
+- (void)associateMappingInfo:(id)arg1 withSheetName:(id)arg2 andSheetIndex:(NSUInteger)arg3 andObject:(id)arg4;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)mappedSheetIndexForSheetIndex:(unsigned int)arg1;
-- (unsigned int)mappedSheetIndexForSheetName:(id)arg1;
-- (struct ChVector<OcText> { struct OcText {} *x1; struct OcText {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)mappedSheetNames;
-- (id)mappingInfoAtIndex:(unsigned int)arg1;
-- (unsigned int)mappingInfoCount;
+- (NSUInteger)mappedSheetIndexForSheetIndex:(NSUInteger)arg1;
+- (NSUInteger)mappedSheetIndexForSheetName:(id)arg1;
+- (struct ChVector<OcText> { struct OcText {} *x1; struct OcText {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)mappedSheetNames;
+- (id)mappingInfoAtIndex:(NSUInteger)arg1;
+- (NSUInteger)mappingInfoCount;
 - (id)mappingInfoForObject:(id)arg1;
 
 @end

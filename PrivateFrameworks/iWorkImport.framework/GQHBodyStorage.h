@@ -5,13 +5,12 @@
 @interface GQHBodyStorage : NSObject <GQBodyStorageGenerator> {
 }
 
-+ (int)handleBodyStorage:(id)arg1 state:(id)arg2;
-+ (int)handleContainerHint:(id)arg1 state:(id)arg2;
-+ (int)handleFootnotes:(id)arg1 state:(id)arg2;
-+ (int)handleLayout:(id)arg1 state:(id)arg2;
-+ (int)handlePageStart:(id)arg1 state:(id)arg2;
-+ (int)handleSection:(id)arg1 state:(id)arg2;
-+ (int)handleTocContent:(id)arg1 state:(id)arg2;
-+ (int)handleTocEntry:(id)arg1 state:(id)arg2;
++ (NSInteger)handleBodyStorage:(id)arg1 state:(id)arg2;
++ (NSInteger)handleFootnotes:(id)arg1 state:(id)arg2;
++ (NSInteger)handleLayout:(id)arg1 state:(id)arg2;
++ (NSInteger)handlePageStart:(id)arg1 state:(id)arg2;
++ (NSInteger)handleSection:(id)arg1 state:(id)arg2;
++ (NSInteger)handleTocContent:(id)arg1 state:(id)arg2;
++ (NSInteger)handleTocEntry:(id)arg1 state:(id)arg2;
 
 @end

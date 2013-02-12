@@ -2,94 +2,31 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIImageView, UIView, NSString, PSSpecifier;
-
-@interface PSTableCell : UITableViewCell {
-    int _alignment;
-    UIView *_bottomEtchLine;
-    BOOL _cellEnabled;
+@interface PSTableCell : UIPreferencesTableCell {
     BOOL _checked;
-    UIImageView *_checkedImageView;
-    BOOL _etch;
-    NSString *_hiddenTitle;
-    BOOL _lazyIcon;
-    NSString *_lazyIconAppID;
-    BOOL _lazyIconDontUnload;
-    BOOL _lazyIconForceSynchronous;
-    SEL _pAction;
-    id _pTarget;
-    BOOL _reusedCell;
-    BOOL _shouldHideTitle;
-    PSSpecifier *_specifier;
-    UIView *_topEtchLine;
-    UIView *_topShadow;
-    int _type;
-    id _value;
+    id _userInfo;
 }
 
-@property BOOL reusedCell;
-@property(retain) PSSpecifier * specifier;
-@property int type;
-
-+ (id)bottomEtchLineView;
-+ (Class)cellClassForSpecifier:(id)arg1;
-+ (int)cellStyle;
-+ (int)cellTypeFromString:(id)arg1;
-+ (id)reuseIdentifierForBasicCellTypes:(int)arg1;
-+ (id)reuseIdentifierForClassAndType:(int)arg1;
-+ (id)reuseIdentifierForSpecifier:(id)arg1;
-+ (id)stringFromCellType:(int)arg1;
-+ (id)topEtchLineView;
++ (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
++ (NSInteger)cellTypeFromString:(id)arg1;
++ (id)cellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
++ (id)groupHeaderCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
++ (id)segmentCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
++ (id)sliderCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
++ (id)staticTextCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
++ (id)switchCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
++ (id)textFieldCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
++ (id)textViewCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
 
 - (id)_automationID;
-- (id)_contentString;
-- (void)_setBottomEtchHidden:(BOOL)arg1;
-- (void)_setTopEtchHidden:(BOOL)arg1;
-- (void)_setTopShadowHidden:(BOOL)arg1;
-- (void)_updateEtchState:(BOOL)arg1;
-- (SEL)action;
-- (id)blankIcon;
-- (BOOL)canBeChecked;
-- (BOOL)canReload;
-- (BOOL)cellEnabled;
-- (void)cellRemovedFromView;
+- (void)cellClicked:(id)arg1;
 - (void)dealloc;
-- (void)forceSynchronousIconLoadOnNextIconLoad;
-- (id)getIcon;
-- (id)getLazyIcon;
-- (id)getLazyIconID;
-- (id)iconImageView;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (BOOL)isChecked;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)prepareForReuse;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)reloadWithSpecifier:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)reusedCell;
 - (id)scriptingInfoWithChildren;
-- (void)setAction:(SEL)arg1;
-- (void)setAlignment:(int)arg1;
-- (void)setCellEnabled:(BOOL)arg1;
-- (void)setChecked:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setIcon:(id)arg1;
-- (void)setReusedCell:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShouldHideTitle:(BOOL)arg1;
-- (void)setSpecifier:(id)arg1;
-- (void)setTarget:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setType:(int)arg1;
-- (void)setValue:(id)arg1;
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
-- (id)specifier;
-- (id)target;
-- (float)textFieldOffset;
-- (id)title;
-- (id)titleLabel;
+- (void)setUserInfo:(id)arg1;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
 - (id)titleTextLabel;
-- (int)type;
-- (id)value;
-- (id)valueLabel;
+- (id)userInfo;
 
 @end

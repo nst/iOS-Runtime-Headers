@@ -2,27 +2,33 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDAContent, WDText, WDDocument;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSString, WDAContent, WDDocument, WDText;
 
 @interface WDATextBox : NSObject {
-    boolmOle;
     WDDocument *mDocument;
-    unsigned long mNextTextBoxId;
+    NSString *mNextTextBox;
     WDAContent *mParent;
     WDText *mText;
+    NSInteger mTextId;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mOle;
 }
 
 - (void)dealloc;
 - (id)document;
-- (id)init;
 - (BOOL)isOle;
-- (unsigned long)nextTextBoxId;
+- (id)nextTextBox;
 - (id)parent;
 - (void)setDocument:(id)arg1;
-- (void)setNextTextBoxId:(unsigned long)arg1;
+- (void)setNextTextBox:(id)arg1;
 - (void)setOle:(BOOL)arg1;
 - (void)setParent:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setTextId:(NSInteger)arg1;
 - (id)text;
+- (NSInteger)textId;
 
 @end

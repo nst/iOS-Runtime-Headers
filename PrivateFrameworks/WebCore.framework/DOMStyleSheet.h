@@ -2,19 +2,28 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMMediaList, DOMStyleSheet, NSString, DOMNode;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DOMStyleSheet : DOMObject {
+     /* Encoded args for previous method: @12@0:4^{StyleSheet=^^?i^{StyleBase}{Vector<WTF::RefPtr<WebCore::StyleBase>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::StyleBase>,0ul>=^{RefPtr<WebCore::StyleBase>}I}}^{Node}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{RefPtr<WebCore::MediaList>=^{MediaList}}B}8 */
+     /* Encoded args for previous method: ^{StyleSheet=^^?i^{StyleBase}{Vector<WTF::RefPtr<WebCore::StyleBase>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::StyleBase>,0ul>=^{RefPtr<WebCore::StyleBase>}I}}^{Node}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{RefPtr<WebCore::MediaList>=^{MediaList}}B}8@0:4 */
+     /* Encoded args for previous method: @12@0:4^{StyleSheet=^^?i^{StyleBase}{Vector<WTF::RefPtr<WebCore::StyleBase>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::StyleBase>,0ul>=^{RefPtr<WebCore::StyleBase>}I}}^{Node}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{RefPtr<WebCore::MediaList>=^{MediaList}}B}8 */
 }
 
+@property(copy,readonly) NSString *href;
+@property(retain,readonly) DOMMediaList *media;
+@property(retain,readonly) DOMNode *ownerNode;
+@property(retain,readonly) DOMStyleSheet *parentStyleSheet;
+@property(copy,readonly) NSString *title;
+@property(copy,readonly) NSString *type;
 @property BOOL disabled;
-@property(readonly) NSString * href;
-@property(readonly) DOMMediaList * media;
-@property(readonly) DOMNode * ownerNode;
-@property(readonly) DOMStyleSheet * parentStyleSheet;
-@property(readonly) NSString * title;
-@property(readonly) NSString * type;
 
++ (id)_wrapStyleSheet:(struct StyleSheet { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct Vector<WTF::RefPtr<WebCore::StyleBase>,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::StyleBase>,0ul> { struct RefPtr<WebCore::StyleBase> {} *x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; struct Node {} *x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct RefPtr<WebCore::MediaList> { struct MediaList {} *x_8_1_1; } x8; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x9; }*)arg1;
+
+- (struct StyleSheet { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct Vector<WTF::RefPtr<WebCore::StyleBase>,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::StyleBase>,0ul> { struct RefPtr<WebCore::StyleBase> {} *x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; struct Node {} *x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct RefPtr<WebCore::MediaList> { struct MediaList {} *x_8_1_1; } x8; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x9; }*)_styleSheet;
+- (id)_initWithStyleSheet:(struct StyleSheet { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct Vector<WTF::RefPtr<WebCore::StyleBase>,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::StyleBase>,0ul> { struct RefPtr<WebCore::StyleBase> {} *x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; struct Node {} *x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct RefPtr<WebCore::MediaList> { struct MediaList {} *x_8_1_1; } x8; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x9; }*)arg1;
 - (void)dealloc;
 - (BOOL)disabled;
 - (void)finalize;

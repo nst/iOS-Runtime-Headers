@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUColor;
+@class NSColorStub;
 
 @interface WDBorder : NSObject <NSCopying> {
-    TSUColor *mColor;
+    NSColorStub *mColor;
     BOOL mFrame;
     BOOL mShadow;
     unsigned char mSpace;
-    int mStyle;
+    NSInteger mStyle;
     unsigned char mWidth;
 }
 
@@ -18,20 +18,16 @@
 - (void)dealloc;
 - (BOOL)frame;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToBorder:(id)arg1;
 - (void)setBorder:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setFrame:(BOOL)arg1;
-- (void)setNullBorder;
 - (void)setShadow:(BOOL)arg1;
-- (void)setSingleBlackBorder;
 - (void)setSpace:(unsigned char)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(NSInteger)arg1;
 - (void)setWidth:(unsigned char)arg1;
 - (BOOL)shadow;
 - (unsigned char)space;
-- (int)style;
+- (NSInteger)style;
 - (unsigned char)width;
 
 @end

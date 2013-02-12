@@ -3,12 +3,11 @@
  */
 
 @interface OADDateTimeField : OADTextField {
-    int mFormat;
+    NSInteger mFormat;
 }
 
-- (int)format;
+- (NSInteger)format;
 - (id)init;
-- (BOOL)isEmpty;
-- (void)setFormat:(int)arg1;
+- (void)setFormat:(NSInteger)arg1;
 
 @end

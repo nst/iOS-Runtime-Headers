@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADFill, NSArray;
+@class NSArray, OADFill;
 
 @interface OADBackgroundProperties : OADBackground {
     NSArray *mEffects;
@@ -12,7 +12,6 @@
 - (void)dealloc;
 - (id)effects;
 - (id)fill;
-- (BOOL)isEqual:(id)arg1;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
 

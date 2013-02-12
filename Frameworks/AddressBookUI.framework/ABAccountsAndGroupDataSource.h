@@ -2,56 +2,35 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, ABModel, NSDictionary, ACAccountStore, AccountsManager;
+@class ABModel, NSArray, NSDictionary, NSMutableDictionary;
 
-@interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource> {
+@interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource, UITableViewDelegate> {
     NSArray *_accountDisplayNames;
+    NSArray *_accountDisplayTypes;
     NSArray *_accountIdentifiers;
-    ACAccountStore *_accountStore;
-    AccountsManager *_accountsManager;
-    BOOL _dirty;
     NSDictionary *_groupsByAccountIdentifier;
-    BOOL _hidesGlobalGroupWrapper;
-    BOOL _hidesSearchableSources;
+    NSMutableDictionary *_headerViewsBySection;
     ABModel *_model;
 }
 
-@property(retain) ACAccountStore * accountStore;
-@property(retain) AccountsManager * accountsManager;
-@property(getter=isDirty) BOOL dirty;
-@property BOOL hidesGlobalGroupWrapper;
-@property BOOL hidesSearchableSources;
-@property(retain) ABModel * model;
+@property(retain) ABModel *model; /* unknown property attribute: V_model */
 
-- (id)accountDisplayNameAtIndex:(int)arg1;
-- (id)accountStore;
-- (id)accountsManager;
-- (void)cancelScheduledRefresh;
+- (id)accountGroupWrappers;
+- (id)createTable;
+- (id)createTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)defaultGroupWrapper;
 - (id)groupWrapperForIndexPath:(id)arg1;
-- (BOOL)hidesGlobalGroupWrapper;
-- (BOOL)hidesSearchableSources;
-- (id)indexPathForGroupWrapper:(id)arg1;
 - (id)init;
-- (BOOL)isDirty;
 - (id)model;
-- (id)newContactsFilterFromSelectedGroupWrappers;
-- (int)numberOfAccounts;
-- (int)numberOfGroupsForAccountIdentifier:(id)arg1;
-- (int)numberOfGroupsInAccountAtIndex:(int)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (BOOL)needsStyleUpdateForTableView:(id)arg1;
+- (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadData;
-- (void)reloadDataIncludingAccountsManager:(BOOL)arg1 usingArchivedState:(BOOL)arg2;
-- (void)scheduleRefresh;
-- (void)setAccountStore:(id)arg1;
-- (void)setAccountsManager:(id)arg1;
-- (void)setDirty:(BOOL)arg1;
-- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
-- (void)setHidesSearchableSources:(BOOL)arg1;
 - (void)setModel:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
 
 @end

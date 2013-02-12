@@ -2,38 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString, NSObject<OS_dispatch_queue>;
+@class NSString;
 
 @interface ISDevice : NSObject <ISSingleton> {
-    unsigned int _daemonLaunchCount;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_guid;
-    double _lastFreeSpaceRequest;
+    NSUInteger _daemonLaunchCount;
+    NSInteger _deviceType;
+    NSString *_productVersion;
 }
 
-@property(readonly) NSString * deviceName;
-@property(readonly) NSString * guid;
-@property(readonly) NSString * hardwareName;
-@property(readonly) NSString * serialNumber;
-@property(readonly) NSString * systemName;
+@property(readonly) NSString *productVersion;
+@property(readonly) NSInteger deviceType;
 
++ (void)clearSharedInstance;
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
-- (int)_deviceClass;
-- (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
-- (id)copyProtocolConditionalContext;
-- (id)copyPurchaseValidationContext;
+- (void*)_copyDeviceTreeProperty:(id)arg1;
+- (id)_copyStringForDeviceTreeProperty:(id)arg1;
+- (NSInteger)_deviceTypeForModelString:(id)arg1;
+- (BOOL)_isPodcastCapable;
+- (void)daemonDidLaunch;
+- (NSUInteger)daemonLaunchCount;
+- (void)daemonWillExitCleanly;
 - (void)dealloc;
-- (id)deviceName;
-- (id)guid;
-- (id)hardwareName;
-- (id)init;
+- (NSInteger)deviceType;
+- (BOOL)hasCapability:(NSInteger)arg1;
+- (BOOL)isAnyIPhone;
+- (BOOL)isAnyIPod;
+- (id)productVersion;
 - (BOOL)releasePowerAssertion:(id)arg1;
-- (void)requestFreeSpace:(unsigned long long)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id)arg4;
-- (id)serialNumber;
-- (id)supportedOfferDeviceForDevices:(id)arg1;
-- (id)systemName;
 - (BOOL)takePowerAssertion:(id)arg1;
 
 @end

@@ -2,33 +2,32 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSTimeZone : NSObject <NSCopying, NSSecureCoding> {
+@interface NSTimeZone : NSObject <NSCopying, NSCoding> {
 }
 
-+ (id)ICSQuickTimeZoneNames;
 + (id)abbreviationDictionary;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)calendarTimeZone;
 + (id)defaultTimeZone;
 + (id)gmt;
 + (id)knownTimeZoneNames;
 + (id)localTimeZone;
 + (void)resetSystemTimeZone;
-+ (void)setAbbreviationDictionary:(id)arg1;
 + (void)setDefaultTimeZone:(id)arg1;
-+ (BOOL)supportsSecureCoding;
 + (id)systemTimeZone;
-+ (id)timeZoneDataVersion;
-+ (id)timeZoneForSecondsFromGMT:(int)arg1;
++ (id)timeZoneForSecondsFromGMT:(NSInteger)arg1;
 + (id)timeZoneWithAbbreviation:(id)arg1;
 + (id)timeZoneWithName:(id)arg1 data:(id)arg2;
 + (id)timeZoneWithName:(id)arg1;
++ (id)timeZoneWithWindowsName:(id)arg1;
 
-- (id)ICSComputeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
-- (unsigned long)_cfTypeID;
+- (id)_abbreviationForAbsoluteTime:(double)arg1;
+- (double)_daylightSavingTimeOffsetForAbsoluteTime:(double)arg1;
+- (BOOL)_isDaylightSavingTimeForAbsoluteTime:(double)arg1;
+- (double)_nextDaylightSavingTimeTransitionAfterAbsoluteTime:(double)arg1;
+- (double)_secondsFromGMTForAbsoluteTime:(double)arg1;
 - (id)abbreviation;
 - (id)abbreviationForDate:(id)arg1;
-- (id)cityName;
+- (id)abbreviationForTimeInterval:(double)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
@@ -36,24 +35,22 @@
 - (double)daylightSavingTimeOffsetForDate:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithCoder:(id)arg1;
+- (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 data:(id)arg2;
 - (id)initWithName:(id)arg1;
+- (id)initWithWindowsName:(id)arg1;
 - (BOOL)isDaylightSavingTime;
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
+- (BOOL)isDaylightSavingTimeForTimeInterval:(double)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToTimeZone:(id)arg1;
-- (BOOL)isNSTimeZone__;
-- (id)localizedName:(int)arg1 locale:(id)arg2;
+- (id)localizedName:(NSInteger)arg1 locale:(id)arg2;
 - (id)name;
 - (id)nextDaylightSavingTimeTransition;
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
-- (int)secondsFromGMT;
-- (int)secondsFromGMTForDate:(id)arg1;
-- (void)setCityName:(id)arg1;
+- (NSInteger)secondsFromGMT;
+- (NSInteger)secondsFromGMTForDate:(id)arg1;
+- (NSInteger)secondsFromGMTForTimeInterval:(double)arg1;
 
 @end

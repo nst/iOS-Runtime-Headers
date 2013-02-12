@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterProperties, WDTableRowProperties, WDTableCellProperties, WDStyle, WDParagraphProperties, WDDocument;
+@class WDCharacterProperties, WDDocument, WDParagraphProperties, WDStyle, WDTableCellProperties, WDTableRowProperties;
 
 @interface WDTableStyleOverride : NSObject <NSCopying> {
-    unsigned int mParagraphPropertiesOverridden : 1;
-    unsigned int mCharacterPropertiesOverridden : 1;
-    unsigned int mTableRowPropertiesOverridden : 1;
-    unsigned int mTableCellStylePropertiesOverridden : 1;
     WDCharacterProperties *mCharacterProperties;
+    BOOL mCharacterPropertiesOverridden;
     WDDocument *mDocument;
     WDParagraphProperties *mParagraphProperties;
-    int mPart;
+    BOOL mParagraphPropertiesOverridden;
+    NSInteger mPart;
     WDStyle *mStyle;
     WDTableCellProperties *mTableCellStyleProperties;
+    BOOL mTableCellStylePropertiesOverridden;
     WDTableRowProperties *mTableRowProperties;
+    BOOL mTableRowPropertiesOverridden;
 }
 
 - (id)characterProperties;
@@ -32,10 +32,10 @@
 - (id)mutableTableCellStyleProperties;
 - (id)mutableTableRowProperties;
 - (id)paragraphProperties;
-- (int)part;
+- (NSInteger)part;
 - (void)setCharacterPropertiesOverridden:(BOOL)arg1;
 - (void)setParagraphPropertiesOverridden:(BOOL)arg1;
-- (void)setPart:(int)arg1;
+- (void)setPart:(NSInteger)arg1;
 - (void)setStyle:(id)arg1;
 - (void)setTableCellStylePropertiesOverridden:(BOOL)arg1;
 - (void)setTableRowPropertiesOverridden:(BOOL)arg1;

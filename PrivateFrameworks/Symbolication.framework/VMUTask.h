@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class VMUMachTaskContainer, NSArray, <VMUMemory>;
+@class <VMUMemory>, NSArray, VMUMachTaskContainer;
 
 @interface VMUTask : NSObject {
     NSArray *_headers;
@@ -12,7 +12,7 @@
 }
 
 + (id)findDyldHeaderInMemory:(id)arg1 address:(unsigned long long)arg2;
-+ (BOOL)pidIsTranslated:(int)arg1;
++ (BOOL)pidIsTranslated:(NSInteger)arg1;
 + (id)taskWithMachTaskContainer:(id)arg1;
 
 - (void)dealloc;
@@ -20,7 +20,7 @@
 - (id)initWithMachTaskContainer:(id)arg1;
 - (BOOL)isTranslated;
 - (id)memory;
-- (int)pid;
-- (unsigned int)task;
+- (NSInteger)pid;
+- (NSUInteger)task;
 
 @end

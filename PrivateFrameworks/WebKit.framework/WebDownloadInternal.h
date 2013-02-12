@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@interface WebDownloadInternal : NSObject <NSURLDownloadDelegate> {
+@interface WebDownloadInternal : NSObject {
     id realDelegate;
 }
 
@@ -13,7 +13,7 @@
 - (void)download:(id)arg1 didCreateDestination:(id)arg2;
 - (void)download:(id)arg1 didFailWithError:(id)arg2;
 - (void)download:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (void)download:(id)arg1 didReceiveDataOfLength:(unsigned int)arg2;
+- (void)download:(id)arg1 didReceiveDataOfLength:(NSUInteger)arg2;
 - (void)download:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)download:(id)arg1 shouldBeginChildDownloadOfSource:(id)arg2 delegate:(id*)arg3;
 - (BOOL)download:(id)arg1 shouldDecodeSourceDataOfMIMEType:(id)arg2;

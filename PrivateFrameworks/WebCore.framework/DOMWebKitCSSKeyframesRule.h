@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString, DOMCSSRuleList;
-
 @interface DOMWebKitCSSKeyframesRule : DOMCSSRule {
 }
 
-@property(readonly) DOMCSSRuleList * cssRules;
-@property(copy) NSString * name;
+@property(retain,readonly) DOMCSSRuleList *cssRules;
+@property(copy) NSString *name;
 
++ (id)_wrapWebKitCSSKeyframesRule:(struct WebKitCSSKeyframesRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSRuleList> { struct CSSRuleList {} *x_4_1_1; } x4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; }*)arg1;
+
+- (struct WebKitCSSKeyframesRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSRuleList> { struct CSSRuleList {} *x_4_1_1; } x4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; }*)_webKitCSSKeyframesRule;
 - (id)cssRules;
 - (void)deleteRule:(id)arg1;
 - (id)findRule:(id)arg1;

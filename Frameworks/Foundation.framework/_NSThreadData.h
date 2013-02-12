@@ -17,11 +17,11 @@
     NSMutableDictionary *performD;
     id performQ;
     unsigned char qstate;
+    id runLoop;
     SEL selector;
-    int seqNum;
+    NSInteger seqNum;
     unsigned char status;
     id target;
-    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[596]; } *tid;
 }
 
 @end

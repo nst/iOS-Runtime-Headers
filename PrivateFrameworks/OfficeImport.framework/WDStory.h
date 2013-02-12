@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADDrawable;
+@class NSMutableArray, WDText;
 
 @interface WDStory : NSObject {
-    OADDrawable *mHead;
     BOOL mOle;
+    NSMutableArray *mShapes;
+    WDText *mText;
 }
 
+- (void)addShape:(id)arg1;
 - (void)dealloc;
-- (id)head;
-- (id)initWithHead:(id)arg1;
+- (id)initWithDocument:(id)arg1 textType:(NSInteger)arg2;
 - (BOOL)isOle;
 - (void)setOle:(BOOL)arg1;
+- (id)shapeAtIndex:(NSUInteger)arg1;
+- (NSUInteger)shapeCount;
+- (id)shapeEnumerator;
 - (id)text;
 
 @end

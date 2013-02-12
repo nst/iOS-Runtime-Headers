@@ -2,46 +2,44 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSString, NSArray;
+@class NSArray, NSString;
 
 @interface VMUProcInfo : NSObject <SafeVMUProcInfoProtocol> {
     struct timeval { 
-        int tv_sec; 
-        int tv_usec; 
-    NSArray *_arguments;
-    int _cpuType;
+        NSInteger tv_sec; 
+        NSInteger tv_usec; 
+    NSInteger _cpuType;
     NSArray *_envVars;
     NSString *_firstArg;
     NSString *_name;
     BOOL _needTaskPortDealloc;
-    int _pid;
-    int _ppid;
+    NSInteger _pid;
+    NSInteger _ppid;
     NSString *_procTableName;
     NSString *_realAppName;
     NSString *_requestedAppName;
     } _startTime;
-    unsigned int _task;
+    NSUInteger _task;
 }
 
 + (id)getProcessIds;
-+ (BOOL)isProcessRunning:(int)arg1;
-+ (int)processParentId:(int)arg1;
++ (BOOL)isProcessRunning:(NSInteger)arg1;
++ (NSInteger)processParentId:(NSInteger)arg1;
 
-- (id)_infoFromCommandLine:(int)arg1;
-- (id)arguments;
-- (int)compare:(id)arg1;
-- (int)compareByName:(id)arg1;
-- (int)compareByUserAppName:(id)arg1;
-- (int)cpuType;
+- (id)_nameFromCommandLine:(NSInteger)arg1;
+- (NSInteger)compare:(id)arg1;
+- (NSInteger)compareByName:(id)arg1;
+- (NSInteger)compareByUserAppName:(id)arg1;
+- (NSInteger)cpuType;
 - (void)dealloc;
 - (id)description;
 - (id)envVars;
 - (void)finalize;
 - (id)firstArgument;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
-- (id)initWithPid:(int)arg1;
-- (id)initWithTask:(unsigned int)arg1;
+- (id)initWithPid:(NSInteger)arg1;
+- (id)initWithTask:(NSUInteger)arg1;
 - (BOOL)isApp;
 - (BOOL)isCFM;
 - (BOOL)isEqual:(id)arg1;
@@ -49,14 +47,14 @@
 - (BOOL)isNative;
 - (BOOL)isRunning;
 - (id)name;
-- (int)pid;
-- (int)ppid;
+- (NSInteger)pid;
+- (NSInteger)ppid;
 - (id)procTableName;
 - (id)realAppName;
 - (id)requestedAppName;
-- (BOOL)signal:(int)arg1;
-- (struct timeval { int x1; int x2; })startTime;
-- (unsigned int)task;
+- (BOOL)signal:(NSInteger)arg1;
+- (struct timeval { NSInteger x1; NSInteger x2; })startTime;
+- (NSUInteger)task;
 - (BOOL)terminate;
 - (void)update;
 - (id)userAppName;

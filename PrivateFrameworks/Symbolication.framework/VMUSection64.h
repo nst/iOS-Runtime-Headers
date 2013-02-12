@@ -3,7 +3,7 @@
  */
 
 @interface VMUSection64 : VMUSection {
-    unsigned int _reserved3;
+    NSUInteger _reserved3;
 }
 
 - (id)initWithMemory:(id)arg1;

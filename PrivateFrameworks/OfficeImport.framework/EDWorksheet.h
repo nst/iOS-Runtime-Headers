@@ -2,65 +2,51 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUPointerKeyDictionary, EDPane, EDColumnInfoCollection, EDRowBlocks, EDMergedCellCollection, EDReference, EDCollection, EDWarnings;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class EDCollection, EDColumnInfoCollection, EDReference, EDRows;
 
 @interface EDWorksheet : EDSheet {
-    boolmFitToPage;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
     EDColumnInfoCollection *mColumnInfos;
     EDCollection *mConditionalFormattings;
     double mDefaultColumnWidth;
-    unsigned short mDefaultRowHeight;
+    double mDefaultRowHeight;
     EDCollection *mHyperlinks;
-    EDReference *mImplicitCellArea;
     EDReference *mMaxCellReferencedInFormulas;
-    unsigned int mMaxColumnOutlineLevel;
-    unsigned int mMaxRowOutlineLevel;
-    EDMergedCellCollection *mMergedCells;
-    TSUPointerKeyDictionary *mMergedCols;
-    TSUPointerKeyDictionary *mMergedRows;
-    EDPane *mPane;
+    NSInteger mMaxRelevantColumnNumber;
+    NSInteger mMaxRelevantRowNumber;
+    EDCollection *mMergedCells;
     EDCollection *mPivotTables;
-    EDRowBlocks *mRowBlocks;
+    EDRows *mRows;
     EDCollection *mTables;
-    EDWarnings *mWorksheetWarnings;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mFitToPage;
 }
 
 - (id)columnInfos;
 - (id)conditionalFormattings;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)conditionalFormattingsCreated;
+- (void)dealloc;
 - (double)defaultColumnWidth;
-- (unsigned short)defaultRowHeight;
-- (bool)fitToPage;
-- (bool)hasMergedCells;
-- (BOOL)hasMergedCol;
-- (BOOL)hasMergedRow;
+- (double)defaultRowHeight;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)fitToPage;
 - (id)hyperlinks;
-- (id)implicitCellArea;
-- (BOOL)isColMerged:(unsigned int)arg1;
-- (BOOL)isRowMerged:(unsigned int)arg1;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hyperlinksCreated;
+- (id)initWithWorkbook:(id)arg1;
 - (id)maxCellReferencedInFormulas;
-- (unsigned int)maxColumnOutlineLevel;
-- (unsigned int)maxRowOutlineLevel;
 - (id)mergedCells;
-- (id)mergedColRef:(unsigned int)arg1;
-- (id)mergedRowRef:(unsigned int)arg1;
-- (id)pane;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)mergedCellsCreated;
 - (id)pivotTables;
-- (void)reduceMemoryIfPossible;
-- (id)rowBlocks;
+- (id)rows;
 - (void)setDefaultColumnWidth:(double)arg1;
-- (void)setDefaultRowHeight:(unsigned short)arg1;
-- (void)setFitToPage:(bool)arg1;
-- (void)setImplicitCellArea:(id)arg1;
-- (void)setMaxColumnOutlineLevel:(unsigned int)arg1;
-- (void)setMaxRowOutlineLevel:(unsigned int)arg1;
-- (void)setMergedColsRef:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
-- (void)setMergedRowsRef:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
-- (void)setPane:(id)arg1;
-- (void)setup;
+- (void)setDefaultRowHeight:(double)arg1;
+- (void)setFitToPage:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (id)tables;
-- (void)teardown;
-- (void)updateMaxColumnOutlineLevelIfNeeded:(unsigned int)arg1;
-- (void)updateMaxRowOutlineLevelIfNeeded:(unsigned int)arg1;
-- (id)worksheetWarnings;
 
 @end

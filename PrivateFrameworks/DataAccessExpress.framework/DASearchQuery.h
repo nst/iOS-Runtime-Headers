@@ -2,50 +2,50 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSString, <DASearchQueryConsumer>;
+@class <DASearchQueryConsumer>, NSArray, NSString;
 
 @interface DASearchQuery : NSObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        NSUInteger location; 
+        NSUInteger length; 
+    struct __CFMachPort { } *_callbackPort;
+    BOOL _cancelled;
     <DASearchQueryConsumer> *_consumer;
+    NSArray *_queryAttributes;
     } _range;
-    NSString *_searchID;
+    NSUInteger _searchID;
     NSString *_searchString;
-    int _state;
-    int _timeLimit;
+    NSInteger _timeLimit;
 }
 
-@property <DASearchQueryConsumer> * consumer;
-@property unsigned int maxResults;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(copy) NSString * searchID;
-@property(readonly) NSString * searchString;
-@property int state;
-@property int timeLimit;
+@property <DASearchQueryConsumer> *consumer; /* unknown property attribute: V_consumer */
+@property BOOL cancelled; /* unknown property attribute: V_cancelled */
+@property NSInteger timeLimit; /* unknown property attribute: V_timeLimit */
+@property _NSRange range; /* unknown property attribute: V_range */
+@property(copy) NSArray *queryAttributes; /* unknown property attribute: V_queryAttributes */
+@property(readonly) NSString *searchString; /* unknown property attribute: V_searchString */
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 
+- (struct __CFMachPort { }*)callbackPort;
+- (BOOL)cancelled;
 - (id)consumer;
 - (void)dealloc;
 - (id)description;
-- (id)dictionaryRepresentation;
-- (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
+- (void)handleBrokenPipe;
 - (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
-- (BOOL)isQueryRunning;
-- (unsigned int)maxResults;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (id)searchID;
+- (id)queryAttributes;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
+- (NSUInteger)searchID;
 - (id)searchString;
-- (void)sendFinishedToConsumerWithError:(id)arg1;
-- (void)sendResultsToConsumer:(id)arg1;
+- (void)sendResultsToConsumer:(id)arg1 withStatus:(NSInteger)arg2;
+- (void)setCallbackPort:(struct __CFMachPort { }*)arg1;
+- (void)setCancelled:(BOOL)arg1;
 - (void)setConsumer:(id)arg1;
-- (void)setMaxResults:(unsigned int)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setSearchID:(id)arg1;
-- (void)setState:(int)arg1;
-- (void)setTimeLimit:(int)arg1;
-- (int)state;
-- (int)timeLimit;
+- (void)setQueryAttributes:(id)arg1;
+- (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setSearchID:(NSUInteger)arg1;
+- (void)setTimeLimit:(NSInteger)arg1;
+- (NSInteger)timeLimit;
 
 @end

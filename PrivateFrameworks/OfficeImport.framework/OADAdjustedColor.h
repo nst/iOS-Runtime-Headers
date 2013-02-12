@@ -6,7 +6,7 @@
 
 @interface OADAdjustedColor : OADColor {
     unsigned char mAdjustmentParam;
-    int mAdjustmentType;
+    NSInteger mAdjustmentType;
     OADColor *mBaseColor;
     BOOL mGray;
     BOOL mInvert128;
@@ -14,15 +14,13 @@
 }
 
 - (unsigned char)adjustmentParam;
-- (int)adjustmentType;
+- (NSInteger)adjustmentType;
 - (id)baseColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)gray;
-- (unsigned int)hash;
-- (id)initWithBaseColor:(id)arg1 adjustmentType:(int)arg2 adjustmentParam:(unsigned char)arg3 invert:(BOOL)arg4 invert128:(BOOL)arg5 gray:(BOOL)arg6;
+- (id)initWithBaseColor:(id)arg1 adjustmentType:(NSInteger)arg2 adjustmentParam:(unsigned char)arg3 invert:(BOOL)arg4 invert128:(BOOL)arg5 gray:(BOOL)arg6;
 - (BOOL)invert128;
 - (BOOL)invert;
-- (BOOL)isEqual:(id)arg1;
 
 @end

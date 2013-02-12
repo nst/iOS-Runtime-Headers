@@ -3,34 +3,23 @@
  */
 
 @interface UIDateLabel : UILabel {
-    BOOL _boldForAllLocales;
     double _date;
-    struct __CFDate { } *_dateKey;
-    BOOL _forceTimeOnly;
+    NSInteger _dateKey;
 }
-
-@property BOOL boldForAllLocales;
-@property BOOL forceTimeOnly;
 
 + (id)defaultFont;
 
-- (struct __CFDate { }*)_dateKey;
-- (id)_dateLabelCache;
-- (void)_didUpdateDate;
+- (NSInteger)_dateKey;
 - (void)_invalidateDateKey;
 - (void)_updateDateStrings;
-- (BOOL)boldForAllLocales;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)font;
-- (BOOL)forceTimeOnly;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBoldForAllLocales:(BOOL)arg1;
 - (void)setDate:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setFontWithoutInvalidation:(id)arg1;
-- (void)setForceTimeOnly:(BOOL)arg1;
 - (void)setTimeInterval:(double)arg1;
 - (void)sizeToFit;
 - (id)text;

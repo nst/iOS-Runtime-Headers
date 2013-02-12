@@ -5,6 +5,6 @@
 @interface WDOleObject : WDPicture {
 }
 
-- (int)runType;
+- (NSInteger)runType;
 
 @end

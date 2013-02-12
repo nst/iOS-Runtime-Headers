@@ -5,6 +5,6 @@
 @interface GQHPlaceholder : NSObject {
 }
 
-+ (int)handlePlaceholder:(id)arg1 state:(id)arg2;
++ (NSInteger)handlePlaceholder:(id)arg1 state:(id)arg2;
 
 @end

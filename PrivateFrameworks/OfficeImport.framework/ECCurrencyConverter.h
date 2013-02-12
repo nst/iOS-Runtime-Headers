@@ -17,7 +17,7 @@
 - (id)lassoCurrencyCodeForDollar;
 - (id)lassoCurrencyCodeFromXl:(id)arg1;
 - (void)populateDictionaries;
-- (int)xlAccountFormatFromLasso:(id)arg1;
+- (NSInteger)xlAccountFormatFromLasso:(id)arg1;
 - (id)xlCurrencyCodeFromLasso:(id)arg1;
 
 @end

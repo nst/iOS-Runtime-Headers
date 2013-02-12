@@ -2,34 +2,19 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, ABModel;
+@class ABModel;
 
 @interface ABAbstractViewController : UIViewController {
     ABModel *_model;
-    <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) ABModel * model;
-@property(retain) <ABStyleProvider> * styleProvider;
-
-- (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (int)behavior;
+- (NSInteger)behavior;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)initWithModel:(id)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)model;
 - (id)peoplePickerNavigationController;
-- (void)setAddressBook:(void*)arg1;
-- (void)setModel:(id)arg1;
 - (void)setParentViewController:(id)arg1;
-- (void)setStyleProvider:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)styleProvider;
 - (void)updateNavigationButtons;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -7,28 +7,34 @@
     id _table;
 }
 
-+ (BOOL)supportsSecureCoding;
-
 - (void)addObject:(id)arg1;
+- (id)allObjects;
+- (id)anyObject;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)countForObject:(id)arg1;
+- (NSUInteger)count;
+- (NSUInteger)countForObject:(id)arg1;
 - (void)dealloc;
 - (id)descriptionWithLocale:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)getObjects:(id*)arg1 count:(unsigned int)arg2;
 - (id)init;
 - (id)initWithArray:(id)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
+- (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2;
 - (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithSet:(id)arg1;
+- (void)intersectSet:(id)arg1;
+- (BOOL)intersectsSet:(id)arg1;
+- (BOOL)isEqualToSet:(id)arg1;
+- (BOOL)isSubsetOfSet:(id)arg1;
+- (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (void)makeObjectsPerformSelector:(SEL)arg1;
 - (id)member:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
+- (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
+- (void)unionSet:(id)arg1;
 
 @end

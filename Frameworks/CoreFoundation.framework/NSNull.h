@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSNull : NSObject <NSCopying, NSSecureCoding> {
+@interface NSNull : NSObject <NSCopying, NSCoding> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)null;
-+ (BOOL)supportsSecureCoding;
 
 - (unsigned long)_cfTypeID;
-- (void)appendJsonStringToString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -18,10 +16,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (oneway void)release;
-- (id)replacementObjectForPortCoder:(id)arg1;
+- (void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (NSUInteger)retainCount;
 - (id)valueForKey:(id)arg1;
 
 @end

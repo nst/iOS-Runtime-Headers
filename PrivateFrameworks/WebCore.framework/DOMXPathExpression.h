@@ -5,6 +5,10 @@
 @interface DOMXPathExpression : DOMObject {
 }
 
++ (id)_wrapXPathExpression:(struct XPathExpression { NSInteger x1; struct Expression {} *x2; }*)arg1;
+
+- (id)_initWithXPathExpression:(struct XPathExpression { NSInteger x1; struct Expression {} *x2; }*)arg1;
+- (struct XPathExpression { NSInteger x1; struct Expression {} *x2; }*)_xpathExpression;
 - (void)dealloc;
 - (id)evaluate:(id)arg1 :(unsigned short)arg2 :(id)arg3;
 - (id)evaluate:(id)arg1 type:(unsigned short)arg2 inResult:(id)arg3;

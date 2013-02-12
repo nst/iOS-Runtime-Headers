@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, EDWorkbook;
+@class NSMutableArray;
 
 @interface EDProcessors : NSObject {
     NSMutableArray *mProcessors;
-    EDWorkbook *mWorkbook;
 }
 
 - (void)addProcessorClass:(Class)arg1;
-- (void)applyProcessorsWithSheet:(id)arg1;
+- (void)applyProcessorsWithWorkbook:(id)arg1;
 - (void)dealloc;
-- (bool)hasProcessors;
-- (id)initWithWorkbook:(id)arg1;
+- (id)init;
 - (void)markObject:(id)arg1 processor:(Class)arg2;
 - (void)removeAllObjects;
-- (void)removeProcessorClass:(Class)arg1;
 
 @end

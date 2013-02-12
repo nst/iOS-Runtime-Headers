@@ -11,10 +11,11 @@
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
 + (id)supportedNonImageMIMETypes;
-+ (id)unsupportedTextMIMETypes;
 
 - (id)DOMDocument;
+- (id)_bridge;
 - (BOOL)_isDisplayingWebArchive;
+- (void)_loadDataSourceAsWebArchive;
 - (void)_redirectDataToManualLoader:(id)arg1 forPluginView:(id)arg2;
 - (BOOL)canProvideDocumentSource;
 - (BOOL)canSaveAsWebArchive;
@@ -27,14 +28,11 @@
 - (id)elementWithName:(id)arg1 inForm:(id)arg2;
 - (void)finalize;
 - (void)finishedLoadingWithDataSource:(id)arg1;
-- (BOOL)formElementLooksLikeCreditCardNumberField:(id)arg1;
-- (BOOL)formElementLooksLikeSecurityCodeField:(id)arg1;
 - (id)formForElement:(id)arg1;
 - (id)init;
 - (id)matchLabels:(id)arg1 againstElement:(id)arg2;
 - (void)receivedData:(id)arg1 withDataSource:(id)arg2;
 - (void)receivedError:(id)arg1 withDataSource:(id)arg2;
-- (id)searchForLabels:(id)arg1 beforeElement:(id)arg2 resultDistance:(unsigned int*)arg3 resultIsInCellAbove:(BOOL*)arg4;
 - (id)searchForLabels:(id)arg1 beforeElement:(id)arg2;
 - (void)setDataSource:(id)arg1;
 - (id)title;

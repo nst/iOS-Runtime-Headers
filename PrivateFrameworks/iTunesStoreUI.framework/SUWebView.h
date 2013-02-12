@@ -2,40 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIColor, <SUWebViewDelegate>;
+@class NSString;
 
-@interface SUWebView : UIWebView {
-    unsigned int _scrollingDisabled : 1;
-    UIColor *_originalBackgroundColor;
-    BOOL _originalShowsBackgroundShadow;
-    BOOL _showsTopBackgroundShadow;
-    int _synchronousLayoutCount;
-    UIColor *_topBackgroundColor;
+@interface SUWebView : UIWebDocumentView {
+    unsigned int _adjustHeightToFit : 1;
+    id _loadDelegate;
+    NSString *_stylesheet;
 }
 
-@property <SUWebViewDelegate> * delegate;
-@property(getter=isScrollingEnabled) BOOL scrollingEnabled;
-@property BOOL showsTopBackgroundShadow;
-@property(readonly) NSString * title;
-@property(retain) UIColor * topBackgroundColor;
-@property(readonly) id windowScriptObject;
+@property(retain) NSString *stylesheet; /* unknown property attribute: V_stylesheet */
+@property id loadDelegate; /* unknown property attribute: V_loadDelegate */
+@property BOOL adjustHeightToFit;
 
-- (void)_setRichTextReaderViewportSettings;
-- (void)beginSynchronousLayout;
+- (BOOL)adjustHeightToFit;
 - (void)dealloc;
-- (void)endSynchronousLayout;
-- (BOOL)getStatusBarStyle:(int*)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isScrollingEnabled;
-- (void)loadArchive:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)setScrollingEnabled:(BOOL)arg1;
-- (void)setShowsTopBackgroundShadow:(BOOL)arg1;
-- (void)setTopBackgroundColor:(id)arg1;
-- (BOOL)showsTopBackgroundShadow;
-- (id)title;
-- (id)topBackgroundColor;
-- (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (id)windowScriptObject;
+- (id)loadDelegate;
+- (void)setAdjustHeightToFit:(BOOL)arg1;
+- (void)setHTMLFragment:(id)arg1;
+- (void)setLoadDelegate:(id)arg1;
+- (void)setPlaintextString:(id)arg1;
+- (void)setStylesheet:(id)arg1;
+- (id)stylesheet;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
+- (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 
 @end

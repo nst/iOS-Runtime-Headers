@@ -13,19 +13,19 @@
     void *_reserved;
     } contents;
     } flags;
-    unsigned int numCharacters;
+    NSUInteger numCharacters;
 }
 
 - (const char *)cString;
-- (unsigned int)cStringLength;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (NSUInteger)cStringLength;
+- (unsigned short)characterAtIndex:(NSUInteger)arg1;
 - (void)dealloc;
-- (unsigned int)fastestEncoding;
+- (NSUInteger)fastestEncoding;
 - (void)finalize;
-- (BOOL)getBytes:(void*)arg1 maxLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 encoding:(unsigned int)arg4 options:(unsigned int)arg5 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg7;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)length;
+- (BOOL)getBytes:(char *)arg1 maxLength:(NSUInteger)arg2 usedLength:(NSUInteger*)arg3 encoding:(NSUInteger)arg4 options:(NSUInteger)arg5 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg6 remainingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg7;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (NSUInteger)length;
 - (const char *)lossyCString;
-- (void)setContentsNoCopy:(void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3 isUnicode:(BOOL)arg4;
+- (void)setContentsNoCopy:(void*)arg1 length:(NSUInteger)arg2 freeWhenDone:(BOOL)arg3 isUnicode:(BOOL)arg4;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface EDPhoneticRun : NSObject {
-    unsigned int mBaseCharCount;
-    unsigned int mBaseCharIndex;
-    unsigned int mCharIndex;
+    NSUInteger mBaseCharCount;
+    NSUInteger mBaseCharIndex;
+    NSUInteger mCharIndex;
 }
 
-- (unsigned int)charBaseCount;
-- (unsigned int)charBaseIndex;
-- (unsigned int)charIndex;
+- (NSUInteger)charBaseCount;
+- (NSUInteger)charBaseIndex;
+- (NSUInteger)charIndex;
 - (id)init;
-- (void)setCharBaseCount:(unsigned int)arg1;
-- (void)setCharBaseIndex:(unsigned int)arg1;
-- (void)setCharIndex:(unsigned int)arg1;
+- (void)setCharBaseCount:(NSUInteger)arg1;
+- (void)setCharBaseIndex:(NSUInteger)arg1;
+- (void)setCharIndex:(NSUInteger)arg1;
 
 @end

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class UIView, UIImage;
+@class UIImage, UIView;
 
 @interface UIScrubberControl : UIOldSliderControl {
     union { 
@@ -66,16 +66,15 @@
 - (id)createSliderKnobView;
 - (void)dealloc;
 - (void)disableTimesLayout;
-- (void)drawSliderPiece:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawSliderPiece:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (double)duration;
 - (void)enableTimesLayout;
 - (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fillBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)imageForSliderPiece:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maxTrackWidth:(float)arg2 showTimes:(BOOL)arg3 knobStyle:(int)arg4;
+- (id)imageForSliderPiece:(NSInteger)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maxTrackWidth:(float)arg2 showTimes:(BOOL)arg3 knobStyle:(NSInteger)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 maxTrackWidth:(float)arg2 showTimes:(BOOL)arg3 showKnob:(BOOL)arg4;
 - (const struct { float x1; float x2; float x3; }*)metrics;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
@@ -92,9 +91,7 @@
 - (void)setShowDuration:(BOOL)arg1;
 - (void)setShowFullWidthComponents:(BOOL)arg1;
 - (void)setShowTimeCenteredInAvailableArea:(BOOL)arg1;
-- (void)setTimeColor:(id)arg1;
-- (void)setTimeShadowColor:(id)arg1;
-- (void)setValue:(float)arg1 animated:(BOOL)arg2 animationCurve:(int)arg3;
+- (void)setValue:(float)arg1 animated:(BOOL)arg2 animationCurve:(NSInteger)arg3;
 - (void)setValueAvailable:(float)arg1;
 - (void)sizeToFit;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sliderBounds;

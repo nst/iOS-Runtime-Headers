@@ -5,7 +5,4 @@
 @interface OADBulletSizeFollowText : OADBulletSize {
 }
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-
 @end

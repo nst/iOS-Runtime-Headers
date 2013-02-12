@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSDate, NSString, NSArray;
+@class NSArray, NSDate, NSString;
 
 @interface VMUFatHeader : VMUHeader {
     NSArray *_fatArchs;

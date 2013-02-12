@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OCPPackagePart, NSDictionary;
+@class NSDictionary, OCPPackagePart;
 
 @interface OAVShapeManager : NSObject {
     OCPPackagePart *mPackagePart;
-    struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; } *mShape;
+    struct _xmlNode { void *x1; NSInteger x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; } *mShape;
     NSDictionary *mShapeStyle;
     NSDictionary *mTextBoxStyle;
     unsigned short mType;
@@ -26,7 +26,7 @@
 - (id)imageFillId;
 - (id)imageFillTitle;
 - (id)imageRelId;
-- (id)initWithShape:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 type:(unsigned short)arg2 packagePart:(id)arg3;
+- (id)initWithShape:(struct _xmlNode { void *x1; NSInteger x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 type:(unsigned short)arg2 packagePart:(id)arg3;
 - (BOOL)isFillOK;
 - (BOOL)isFilled;
 - (BOOL)isImage;
@@ -36,14 +36,13 @@
 - (BOOL)isStroked;
 - (BOOL)isWordArt;
 - (id)limo;
-- (id)movieRelId;
 - (id)packagePart;
 - (id)path;
 - (float)shadowAlpha;
 - (id)shadowColor;
 - (struct CGPoint { float x1; float x2; })shadowOffsets;
 - (id)shadowType;
-- (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)shape;
+- (struct _xmlNode { void *x1; NSInteger x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)shape;
 - (id)strokeBgColor;
 - (id)strokeCapStyle;
 - (id)strokeCompoundType;

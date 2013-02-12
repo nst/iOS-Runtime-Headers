@@ -10,6 +10,7 @@
 
 + (id)sharedCredentialStorage;
 
+- (BOOL)_hasCredentials;
 - (id)_internalInit;
 - (id)allCredentials;
 - (id)credentialsForProtectionSpace:(id)arg1;

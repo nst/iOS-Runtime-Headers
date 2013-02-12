@@ -3,15 +3,12 @@
  */
 
 @interface DAMailboxGetUpdatesRequest : DAMailboxRequest {
-    int _bodyFormat;
-    int _maxSize;
+    NSInteger _bodyFormat;
+    NSInteger _maxSize;
 }
 
-- (int)bodyFormat;
-- (id)description;
-- (unsigned int)hash;
-- (id)initRequestForBodyFormat:(int)arg1 withBodySizeLimit:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (int)maxSize;
+- (NSInteger)bodyFormat;
+- (id)initRequestForBodyFormat:(NSInteger)arg1 withBodySizeLimit:(NSInteger)arg2;
+- (NSInteger)maxSize;
 
 @end

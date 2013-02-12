@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMStyleSheet;
-
 @interface DOMObject : WebScriptObject <NSCopying> {
     struct DOMObjectInternal { } *_internal;
 }
 
-@property(readonly) DOMStyleSheet * sheet;
-
+- (id)_init;
 - (oneway void)_webcore_releaseOnWebThread;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)finalize;
 - (id)init;
 - (oneway void)release;
 - (id)sheet;

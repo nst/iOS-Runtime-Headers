@@ -5,15 +5,15 @@
 @interface GQHParagraph : NSObject {
 }
 
-+ (id)getBulletStyle:(id)arg1 level:(int)arg2;
-+ (int)handleBookmark:(id)arg1 state:(id)arg2;
-+ (int)handleInlineList:(id)arg1 state:(id)arg2;
-+ (int)handleLink:(id)arg1 state:(id)arg2;
-+ (int)handleParagraph:(id)arg1 state:(id)arg2 bulletStates:(struct __CFDictionary { }*)arg3 isMultiColumn:(BOOL)arg4;
++ (id)getBulletStyle:(id)arg1 level:(NSInteger)arg2;
++ (NSInteger)handleBookmark:(id)arg1 state:(id)arg2;
++ (NSInteger)handleInlineList:(id)arg1 state:(id)arg2;
++ (NSInteger)handleLink:(id)arg1 state:(id)arg2;
++ (NSInteger)handleParagraph:(id)arg1 state:(id)arg2 bulletStates:(struct __CFDictionary { }*)arg3 isMultiColumn:(BOOL)arg4;
 + (void)mapBullet:(struct __CFDictionary { }*)arg1 state:(id)arg2;
-+ (int)mapParagraphStyle:(id)arg1 paragraph:(id)arg2 state:(id)arg3 bulletStates:(struct __CFDictionary { }*)arg4 isMultiColumn:(BOOL)arg5;
-+ (struct __CFDictionary { }*)prepareBullet:(id)arg1 paragraph:(id)arg2 style:(id)arg3 state:(id)arg4 bulletStates:(struct __CFDictionary { }*)arg5 showBullet:(BOOL)arg6;
++ (NSInteger)mapParagraphStyle:(id)arg1 paragraph:(id)arg2 state:(id)arg3 bulletStates:(struct __CFDictionary { }*)arg4 isMultiColumn:(BOOL)arg5;
++ (struct __CFDictionary { }*)prepareBullet:(id)arg1 style:(id)arg2 state:(id)arg3 bulletStates:(struct __CFDictionary { }*)arg4 showBullet:(BOOL)arg5;
 + (BOOL)retrieveFontSizeForFirstCharacter:(id)arg1 fontSize:(float*)arg2;
-+ (BOOL)setupBulletStatesForParagraphStyle:(id)arg1 paragraph:(id)arg2 state:(id)arg3 bulletStates:(struct __CFDictionary { }*)arg4;
++ (BOOL)setupBulletStatesForParagraph:(id)arg1 state:(id)arg2 bulletStates:(struct __CFDictionary { }*)arg3;
 
 @end

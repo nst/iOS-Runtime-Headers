@@ -2,81 +2,54 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CAMediaTimingFunction, CAStateControllerTransition, NSString;
-
-@interface CAAnimation : NSObject <NSMutableCopying, CAPropertyInfo, NSCoding, NSCopying, CAMediaTiming, CAAction> {
-    void *_attr;
-    unsigned int _flags;
+@interface CAAnimation : NSObject <NSCopying, CAMediaTiming, CAAction, NSMutableCopying, CAPropertyInfo> {
+    struct _CAAttrList { } *_attr;
+    NSUInteger _flags;
 }
 
-@property CAStateControllerTransition * CAStateControllerTransition;
-@property int _mapkit_ID;
-@property(readonly) BOOL _mapkit_isScrollingAnimation;
-@property int animationID;
+@property(copy) NSString *fillMode;
+@property(retain) CAMediaTimingFunction *timingFunction;
 @property BOOL autoreverses;
 @property double beginTime;
-@property(copy) NSString * beginTimeMode;
-@property(copy) id completionBlock;
 @property(retain) id delegate;
 @property double duration;
 @property(getter=isEnabled) BOOL enabled;
-@property(copy) NSString * fillMode;
 @property double frameInterval;
 @property(getter=isRemovedOnCompletion) BOOL removedOnCompletion;
 @property float repeatCount;
 @property double repeatDuration;
 @property float speed;
 @property double timeOffset;
-@property(retain) CAMediaTimingFunction * timingFunction;
 
-+ (int (*)())CA_getterForType:(int)arg1;
-+ (int (*)())CA_setterForType:(int)arg1;
-+ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
-+ (BOOL)CA_encodesPropertyConditionally:(unsigned int)arg1 type:(int)arg2;
++ (int (*)())CA_getterForType:(NSInteger)arg1;
++ (int (*)())CA_setterForType:(NSInteger)arg1;
 + (id)animation;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (id)properties;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (int)_mapkit_ID;
-- (BOOL)_mapkit_isScrollingAnimation;
-- (unsigned int)_propertyFlagsForLayer:(id)arg1;
-- (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; void *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; }*)arg1 layer:(id)arg2;
-- (int)animationID;
+- (double)_mapTime:(double)arg1 repeatIndex:(NSInteger*)arg2;
+- (struct _CARenderAnimation { struct { NSInteger x_1_1_1; } x1; float x2; struct _CARenderTiming {} *x3; struct _CARenderVector {} *x4; void *x5; NSUInteger x6; union { struct _CARenderArray {} *x_7_1_1; void *x_7_1_2; struct { void *x_3_2_1; void *x_3_2_2; void *x_3_2_3; void *x_3_2_4; float x_3_2_5; float x_3_2_6; } x_7_1_3; struct { void *x_4_2_1; struct _CARenderArray {} *x_4_2_2; struct _CARenderVector {} *x_4_2_3; struct _CARenderPath {} *x_4_2_4; unsigned char x_4_2_5; } x_7_1_4; struct { NSUInteger x_5_2_1; NSUInteger x_5_2_2; float x_5_2_3; float x_5_2_4; struct _CARenderFilter {} *x_5_2_5; void *x_5_2_6; NSUInteger x_5_2_7; NSUInteger x_5_2_8; } x_7_1_5; } x7; }*)_setCARenderAnimation:(struct _CARenderAnimation { struct { NSInteger x_1_1_1; } x1; float x2; struct _CARenderTiming {} *x3; struct _CARenderVector {} *x4; void *x5; NSUInteger x6; union { struct _CARenderArray {} *x_7_1_1; void *x_7_1_2; struct { void *x_3_2_1; void *x_3_2_2; void *x_3_2_3; void *x_3_2_4; float x_3_2_5; float x_3_2_6; } x_7_1_3; struct { void *x_4_2_1; struct _CARenderArray {} *x_4_2_2; struct _CARenderVector {} *x_4_2_3; struct _CARenderPath {} *x_4_2_4; unsigned char x_4_2_5; } x_7_1_4; struct { NSUInteger x_5_2_1; NSUInteger x_5_2_2; float x_5_2_3; float x_5_2_4; struct _CARenderFilter {} *x_5_2_5; void *x_5_2_6; NSUInteger x_5_2_7; NSUInteger x_5_2_8; } x_7_1_5; } x7; }*)arg1;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (BOOL)autoreverses;
 - (double)beginTime;
-- (id)beginTimeMode;
-- (id)completionBlock;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
+- (void)didChangeValueForKey:(id)arg1;
 - (double)duration;
-- (void)encodeWithCoder:(id)arg1;
 - (id)fillMode;
 - (double)frameInterval;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabled;
 - (BOOL)isRemovedOnCompletion;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)performCompletionBlock:(BOOL)arg1;
 - (BOOL)removedOnCompletion;
 - (float)repeatCount;
 - (double)repeatDuration;
 - (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
-- (void)setAnimationID:(int)arg1;
 - (void)setAutoreverses:(BOOL)arg1;
 - (void)setBeginTime:(double)arg1;
-- (void)setBeginTimeMode:(id)arg1;
-- (void)setCompletionBlock:(id)arg1;
 - (void)setDefaultDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
@@ -92,13 +65,12 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (void)set_mapkit_ID:(int)arg1;
-- (BOOL)shouldArchiveValueForKey:(id)arg1;
 - (float)speed;
 - (double)timeOffset;
 - (id)timingFunction;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
+- (void)willChangeValueForKey:(id)arg1;
 
 @end

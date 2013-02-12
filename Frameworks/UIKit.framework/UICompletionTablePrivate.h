@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIShadowView, UIView, UITableView;
+@class UIShadowView, UITable, UIView;
 
 @interface UICompletionTablePrivate : NSObject {
     id _delegate;
     UIShadowView *_shadowView;
-    UITableView *_table;
+    UITable *_table;
     UIView *_topStrokeView;
 }
 

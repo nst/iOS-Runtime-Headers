@@ -10,19 +10,14 @@
 }
 
 - (id)addRow;
-- (int)blockType;
+- (NSInteger)blockType;
 - (id)cellIterator;
-- (void)clearProperties;
-- (void)clearRows;
 - (void)dealloc;
 - (id)initWithText:(id)arg1;
-- (int)nestingLevel;
-- (id)newCellIterator;
-- (id)newRowIterator;
-- (id)newRunIterator;
+- (NSInteger)nestingLevel;
 - (id)properties;
-- (id)rowAt:(int)arg1;
-- (int)rowCount;
+- (id)rowAt:(NSInteger)arg1;
+- (NSInteger)rowCount;
 - (id)rowIterator;
 - (id)runIterator;
 

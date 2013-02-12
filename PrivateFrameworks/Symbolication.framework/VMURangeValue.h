@@ -3,15 +3,15 @@
  */
 
 @interface VMURangeValue : VMUAddressRange {
-    int _value;
+    NSInteger _value;
 }
 
-+ (id)rangeValueWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 value:(int)arg2;
++ (id)rangeValueWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 value:(NSInteger)arg2;
 
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
-- (int)compare:(id)arg1;
+- (NSInteger)compare:(id)arg1;
 - (id)description;
-- (id)initWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 value:(int)arg2;
-- (int)value;
+- (id)initWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 value:(NSInteger)arg2;
+- (NSInteger)value;
 
 @end

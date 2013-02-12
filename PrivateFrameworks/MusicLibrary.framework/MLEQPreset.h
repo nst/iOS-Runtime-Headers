@@ -5,19 +5,19 @@
 @class NSString;
 
 @interface MLEQPreset : NSObject {
-    int _builtInPresetType;
+    NSInteger _builtInPresetType;
     NSString *_localizedName;
     NSString *_name;
 }
 
-+ (id)eqPresetForBuiltInPresetType:(int)arg1;
++ (id)eqPresetForBuiltInPresetType:(NSInteger)arg1;
 + (id)eqPresetForName:(id)arg1;
 
-- (void).cxx_destruct;
-- (int)builtInPresetType;
-- (id)initWithBuiltInPresetType:(int)arg1;
+- (NSInteger)builtInPresetType;
+- (void)dealloc;
+- (id)initWithBuiltInPresetType:(NSInteger)arg1;
 - (id)localizedName;
 - (id)name;
-- (int)typeForAVController;
+- (NSInteger)typeForAVController;
 
 @end

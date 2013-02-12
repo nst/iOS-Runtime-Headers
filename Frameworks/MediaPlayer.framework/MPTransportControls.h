@@ -2,108 +2,72 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, MPAVItem, NSMutableIndexSet, NSString, MPButton;
+@class MPItem, MediaVolumeSlider, UIPushButton;
 
 @interface MPTransportControls : UIView {
-    unsigned int _playing : 1;
-    BOOL _allowsWirelessPlayback;
-    MPButton *_alternatesButton;
-    MPButton *_bookmarkButton;
-    MPButton *_chaptersButton;
-    unsigned long long _desiredParts;
-    MPButton *_devicePickerButton;
-    unsigned long long _disabledParts;
-    MPButton *_emailButton;
-    NSMutableIndexSet *_heldParts;
-    MPAVItem *_item;
-    MPButton *_nextButton;
-    MPButton *_playButton;
-    MPAVController *_player;
-    MPButton *_previousButton;
-    BOOL _registeredForPlayerNotifications;
-    MPButton *_rewind30SecondsButton;
-    MPButton *_scaleButton;
+    unsigned int _forVideo : 1;
+    unsigned int _paused : 1;
+    UIPushButton *_alternatesButton;
+    UIPushButton *_bookmarkButton;
+    UIPushButton *_chaptersButton;
+    NSUInteger _desiredParts;
+    NSUInteger _disabledParts;
+    UIPushButton *_emailButton;
+    NSUInteger _heldPart;
+    MPItem *_item;
+    UIPushButton *_nextButton;
+    UIPushButton *_playButton;
+    UIPushButton *_previousButton;
     id _target;
-    MPButton *_toggleFullscreenButton;
-    unsigned long long _visibleParts;
-    id _volumeSlider;
+    NSUInteger _visibleParts;
+    MediaVolumeSlider *_volumeSlider;
 }
 
-@property BOOL allowsWirelessPlayback;
-@property unsigned long long desiredParts;
-@property unsigned long long disabledParts;
-@property(retain) MPAVItem * item;
-@property(readonly) NSString * pauseButtonImage;
-@property(readonly) NSString * playButtonImage;
-@property(readonly) NSString * playPauseButtonImage;
-@property(retain) MPAVController * player;
-@property BOOL registeredForPlayerNotifications;
-@property id target;
-@property unsigned long long visibleParts;
-
-+ (Class)buttonClass;
-+ (unsigned long long)defaultVisibleParts;
+@property NSUInteger visibleParts; /* unknown property attribute: V_visibleParts */
+@property id target; /* unknown property attribute: V_target */
+@property(retain) MPItem *item; /* unknown property attribute: V_item */
+@property NSUInteger disabledParts; /* unknown property attribute: V_disabledParts */
+@property NSUInteger desiredParts; /* unknown property attribute: V_desiredParts */
+@property(getter=isForVideo) BOOL forVideo;
 
 - (void)_alternateTypesChangedNotification:(id)arg1;
+- (NSUInteger)_applyDesiredPartsToParts:(NSUInteger)arg1;
 - (void)_applyDesiredPartsWithAnimation:(BOOL)arg1;
-- (unsigned long long)_applyPossibleVisiblePartsToParts:(unsigned long long)arg1;
-- (void)_availableRoutesChangedNotification:(id)arg1;
-- (void)_handleHoldForPart:(unsigned long long)arg1;
-- (void)_handleReleaseForPart:(unsigned long long)arg1;
-- (void)_handleTapForPart:(unsigned long long)arg1;
-- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
+- (id)_buttonImageForPart:(NSUInteger)arg1;
+- (id)_createButtonForPart:(NSUInteger)arg1;
+- (void)_handleHoldForPart:(NSUInteger)arg1;
+- (void)_handleReleaseForPart:(NSUInteger)arg1;
+- (void)_handleTapForPart:(NSUInteger)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
 - (void)_reloadViewWithAnimation:(BOOL)arg1;
-- (void)_timeMarkersAvailableNotification:(id)arg1;
-- (id)_updateAdditions:(id)arg1 removals:(id)arg2 forPart:(unsigned long long)arg3;
-- (void)_updateButtonImageForPart:(unsigned long long)arg1;
+- (id)_updateAdditions:(id)arg1 removals:(id)arg2 forPart:(NSUInteger)arg3;
 - (void)_updateEnabledStates:(BOOL)arg1;
 - (void)_validityChangedNotification:(id)arg1;
-- (BOOL)allowsWirelessPlayback;
-- (BOOL)allowsWirelessPlaybackForCurrentItem;
-- (BOOL)alwaysHidesSystemVolumeHUD;
 - (void)buttonDown:(id)arg1;
-- (id)buttonForPart:(unsigned long long)arg1;
-- (void)buttonHeld:(id)arg1;
-- (void)buttonHoldReleased:(id)arg1;
-- (id)buttonImageForPart:(unsigned long long)arg1;
 - (void)buttonUp:(id)arg1;
+- (id)createVolumeSlider;
 - (void)dealloc;
-- (unsigned long long)desiredParts;
-- (void)didMoveToSuperview;
+- (NSUInteger)desiredParts;
 - (void)didMoveToWindow;
-- (id)disabledButtonImageForPart:(unsigned long long)arg1;
-- (unsigned long long)disabledParts;
-- (id)highlightedButtonImageForPart:(unsigned long long)arg1;
+- (NSUInteger)disabledParts;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isForVideo;
 - (id)item;
-- (id)newButtonForPart:(unsigned long long)arg1;
-- (id)newVolumeSlider;
-- (id)pauseButtonImage;
-- (id)playButtonImage;
-- (id)playPauseButtonImage;
-- (id)player;
-- (void)registerForPlayerNotifications;
-- (BOOL)registeredForPlayerNotifications;
 - (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
-- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
-- (void)setDesiredParts:(unsigned long long)arg1 animated:(BOOL)arg2;
-- (void)setDesiredParts:(unsigned long long)arg1;
-- (void)setDisabledParts:(unsigned long long)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setDesiredParts:(NSUInteger)arg1 animated:(BOOL)arg2;
+- (void)setDesiredParts:(NSUInteger)arg1;
+- (void)setDisabledParts:(NSUInteger)arg1;
+- (void)setForVideo:(BOOL)arg1;
 - (void)setItem:(id)arg1;
-- (void)setPlayer:(id)arg1;
-- (void)setRegisteredForPlayerNotifications:(BOOL)arg1;
 - (void)setTarget:(id)arg1;
-- (void)setVisibleParts:(unsigned long long)arg1 animated:(BOOL)arg2;
-- (void)setVisibleParts:(unsigned long long)arg1;
-- (BOOL)showsVolumeSliderWhenNoVolumeControlAvailable;
+- (void)setVisibleParts:(NSUInteger)arg1 animated:(BOOL)arg2;
+- (void)setVisibleParts:(NSUInteger)arg1;
 - (id)target;
-- (void)unregisterForPlayerNotifications;
-- (unsigned long long)visibleParts;
+- (void)updateVolumeHUDVisibility;
+- (void)viewHandleTouchPause:(id)arg1 isDown:(BOOL)arg2;
+- (double)viewTouchPauseThreshold:(id)arg1;
+- (NSUInteger)visibleParts;
 
 @end

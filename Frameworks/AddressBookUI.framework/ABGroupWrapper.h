@@ -2,78 +2,40 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABGroupWrapper, <ABGroupWrapperDelegate>, NSString, ACAccountStore, NSSet, AccountsManager;
+@class NSString;
 
 @interface ABGroupWrapper : NSObject {
     NSString *_accountIdentifier;
-    ACAccountStore *_accountStore;
-    AccountsManager *_accountsManager;
     void *_addressBook;
     NSString *_cachedName;
-    NSSet *_childGroupWrappers;
-    id _delegate;
     void *_group;
-    ABGroupWrapper *_parentGroupWrapper;
-    BOOL _selected;
-    BOOL _shouldBeSelectedWhenAllChildrenAreSelected;
-    void *_source;
+    void *_store;
 }
 
-@property(readonly) NSString * _accountDescriptionBasedOnIdentifier;
-@property(readonly) NSString * accountIdentifier;
-@property(retain) ACAccountStore * accountStore;
-@property(retain) AccountsManager * accountsManager;
-@property(readonly) void* addressBook;
-@property(retain) NSSet * childGroupWrappers;
-@property <ABGroupWrapperDelegate> * delegate;
-@property(readonly) void* group;
-@property(readonly) NSString * name;
-@property ABGroupWrapper * parentGroupWrapper;
-@property(getter=isSelected) BOOL selected;
-@property BOOL shouldBeSelectedWhenAllChildrenAreSelected;
-@property(readonly) void* source;
-@property(readonly) int sourceType;
+@property(readonly) void *group; /* unknown property attribute: V_group */
+@property(readonly) void *store; /* unknown property attribute: V_store */
+@property(readonly) void *addressBook; /* unknown property attribute: V_addressBook */
+@property(readonly) NSString *accountIdentifier; /* unknown property attribute: V_accountIdentifier */
+@property(readonly) NSString *name;
+@property(readonly) void *storeForNewRecords;
 
-+ (id)newGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3 accountStore:(id)arg4 excludingSearchableStores:(BOOL)arg5 isSoleAccount:(BOOL)arg6;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3 accountStore:(id)arg4;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 excludingSearchableStores:(BOOL)arg3;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;
++ (id)createGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
++ (id)createGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;
 
 - (id)_accountDescriptionBasedOnIdentifier;
 - (id)accountIdentifier;
-- (id)accountManager;
-- (id)accountStore;
-- (id)accountsManager;
 - (void*)addressBook;
-- (void)childGroupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
-- (id)childGroupWrappers;
-- (int)compareToGroupWrapper:(id)arg1;
+- (NSInteger)compareToGroupWrapper:(id)arg1;
 - (id)copyDictionaryRepresentation;
 - (void)dealloc;
-- (id)delegate;
-- (id)description;
 - (void*)group;
-- (id)initWithAddressBook:(void*)arg1 accountIdentifier:(id)arg2 source:(void*)arg3 group:(void*)arg4;
+- (id)initWithAddressBook:(void*)arg1 accountIdentifier:(id)arg2 store:(void*)arg3 group:(void*)arg4;
 - (BOOL)isContainerWrapper;
 - (BOOL)isDirectoryWrapper;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGlobalWrapper;
-- (BOOL)isSelected;
 - (id)name;
-- (id)parentGroupWrapper;
-- (int)score;
-- (void)setAccountStore:(id)arg1;
-- (void)setAccountsManager:(id)arg1;
-- (void)setChildGroupWrappers:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setParentGroupWrapper:(id)arg1;
-- (void)setSelected:(BOOL)arg1 propagateSelectionToChildren:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1;
-- (void)setShouldBeSelectedWhenAllChildrenAreSelected:(BOOL)arg1;
-- (BOOL)shouldBeSelectedWhenAllChildrenAreSelected;
-- (BOOL)showLinkedPeople;
-- (void*)source;
-- (int)sourceType;
+- (void*)store;
+- (void*)storeForNewRecords;
 
 @end

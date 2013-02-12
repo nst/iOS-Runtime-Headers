@@ -17,24 +17,22 @@
 
 - (void)_expandInverted;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (id)autorelease;
 - (id)bitmapRepresentation;
 - (BOOL)characterIsMember:(unsigned short)arg1;
 - (void)dealloc;
 - (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (id)initWithSet:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithSet:(id)arg1 options:(NSUInteger)arg2;
 - (id)invertedSet;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSupersetOfSet:(id)arg1;
 - (BOOL)longCharacterIsMember:(unsigned long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (oneway void)release;
+- (void)release;
 - (id)replacementObjectForCoder:(id)arg1;
 - (id)replacementObjectForKeyedArchiver:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
+- (NSUInteger)retainCount;
 
 @end

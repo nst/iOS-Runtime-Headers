@@ -8,29 +8,17 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)currentQueue;
-+ (id)mainQueue;
 
-- (void)__:(id)arg1;
-- (id)__;
 - (void)addInvocation:(id)arg1;
 - (void)addOperation:(id)arg1;
-- (void)addOperationWithBlock:(id)arg1;
-- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (void)cancelAllOperations;
 - (void)dealloc;
-- (id)description;
-- (void)executeAndWaitForBlock:(id)arg1;
+- (void)finalize;
 - (id)init;
 - (BOOL)isSuspended;
-- (int)maxConcurrentOperationCount;
-- (id)name;
-- (unsigned int)operationCount;
+- (NSInteger)maxConcurrentOperationCount;
 - (id)operations;
-- (BOOL)overcommitsOperations;
-- (void)setMaxConcurrentOperationCount:(int)arg1;
-- (void)setName:(id)arg1;
-- (void)setOvercommitsOperations:(BOOL)arg1;
+- (void)setMaxConcurrentOperationCount:(NSInteger)arg1;
 - (void)setSuspended:(BOOL)arg1;
 - (void)waitUntilAllOperationsAreFinished;
 

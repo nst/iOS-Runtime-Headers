@@ -2,13 +2,17 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSURLDownloadInternal;
 
 @interface NSURLDownload : NSObject <NSURLAuthenticationChallengeSender> {
+     /* Encoded args for previous method: B12@0:4^{__CFString=}8 */
     NSURLDownloadInternal *_internal;
 }
 
-+ (id)_downloadWithLoadingCFURLConnection:(struct _CFURLConnection { }*)arg1 request:(struct _CFURLRequest { }*)arg2 response:(struct _CFURLResponse { }*)arg3 delegate:(id)arg4 proxy:(id)arg5;
 + (id)_downloadWithLoadingConnection:(id)arg1 request:(id)arg2 response:(id)arg3 delegate:(id)arg4 proxy:(id)arg5;
 + (id)_downloadWithRequest:(id)arg1 delegate:(id)arg2 directory:(id)arg3;
 + (BOOL)_isEncodingMIMETypeResumable:(id)arg1;
@@ -18,7 +22,6 @@
 - (BOOL)_deletesFileAfterFailure;
 - (id)_directoryPath;
 - (BOOL)_downloadActive;
-- (id)_initWithLoadingCFURLConnection:(struct _CFURLConnection { }*)arg1 request:(struct _CFURLRequest { }*)arg2 response:(struct _CFURLResponse { }*)arg3 delegate:(id)arg4 proxy:(id)arg5;
 - (id)_initWithLoadingConnection:(id)arg1 request:(id)arg2 response:(id)arg3 delegate:(id)arg4 proxy:(id)arg5;
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 directory:(id)arg3;
 - (id)_initWithResumeInformation:(id)arg1 delegate:(id)arg2 path:(id)arg3;
@@ -40,7 +43,6 @@
 - (void)releaseDelegate;
 - (id)request;
 - (id)resumeData;
-- (BOOL)sendCanAuthenticateAgainstProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
 - (void)sendDecideDestinationWithSuggestedObjectName:(struct __CFString { }*)arg1;
 - (void)sendDidCreateDestination:(struct __CFURL { }*)arg1;
 - (void)sendDidFail:(struct __CFError { }*)arg1;
@@ -49,8 +51,7 @@
 - (void)sendDidReceiveData:(long)arg1;
 - (void)sendDidReceiveResponse:(struct _CFURLResponse { }*)arg1;
 - (void)sendDidStart:(struct _CFURLDownload { }*)arg1;
-- (unsigned char)sendDownloadShouldUseCredentialStorage;
-- (bool)sendShouldDecodeDataOfMIMEType:(struct __CFString { }*)arg1;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)sendShouldDecodeDataOfMIMEType:(struct __CFString { }*)arg1;
 - (void)sendWillResumeWithResponse:(struct _CFURLResponse { }*)arg1 startingByte:(unsigned long long)arg2;
 - (struct _CFURLRequest { }*)sendWillSendRequest:(struct _CFURLRequest { }*)arg1 redirectResponse:(struct _CFURLResponse { }*)arg2;
 - (void)setDeletesFileUponFailure:(BOOL)arg1;

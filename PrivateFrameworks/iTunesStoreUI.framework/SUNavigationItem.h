@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIBarButtonItem;
-
 @interface SUNavigationItem : UINavigationItem {
+    NSInteger _iTunesStoreBarStyle;
 }
 
-@property(retain) UIBarButtonItem * secondaryLeftBarButtonItem;
+@property NSInteger barStyle; /* unknown property attribute: V_iTunesStoreBarStyle */
 
-- (id)secondaryLeftBarButtonItem;
-- (void)setSecondaryLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)setSecondaryLeftBarButtonItem:(id)arg1;
+- (NSInteger)barStyle;
+- (void)setBarStyle:(NSInteger)arg1;
 
 @end

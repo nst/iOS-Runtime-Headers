@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTableCell3DProperties, OADStroke, OADFill;
+@class OADFill, OADStroke, OADTableCell3DProperties;
 
 @interface OADTableCellProperties : NSObject {
     OADStroke *mBottomLeftToTopRightStroke;
@@ -19,8 +19,8 @@
     BOOL mIsRightStrokeOverridden;
     BOOL mIsTextAnchorCenterOverridden;
     BOOL mIsTextAnchorOverridden;
-    BOOL mIsTextFlowOverridden;
     BOOL mIsTextHorizontalOverflowOverridden;
+    BOOL mIsTextVerticalOverridden;
     BOOL mIsThreeDPropertiesOverridden;
     BOOL mIsTopLeftToBottomRightStrokeOverridden;
     BOOL mIsTopMarginOverridden;
@@ -29,10 +29,10 @@
     OADStroke *mLeftStroke;
     float mRightMargin;
     OADStroke *mRightStroke;
-    int mTextAnchor;
+    NSInteger mTextAnchor;
     BOOL mTextAnchorCenter;
-    int mTextFlow;
-    int mTextHorizontalOverflow;
+    NSInteger mTextHorizontalOverflow;
+    NSInteger mTextVertical;
     OADTableCell3DProperties *mThreeDProperties;
     OADStroke *mTopLeftToBottomRightStroke;
     float mTopMargin;
@@ -54,8 +54,8 @@
 - (BOOL)isRightStrokeOverridden;
 - (BOOL)isTextAnchorCenterOverridden;
 - (BOOL)isTextAnchorOverridden;
-- (BOOL)isTextFlowOverridden;
 - (BOOL)isTextHorizontalOverflowOverridden;
+- (BOOL)isTextVerticalOverridden;
 - (BOOL)isThreeDPropertiesOverridden;
 - (BOOL)isTopLeftToBottomRightStrokeOverridden;
 - (BOOL)isTopMarginOverridden;
@@ -72,20 +72,19 @@
 - (void)setLeftStroke:(id)arg1;
 - (void)setRightMargin:(float)arg1;
 - (void)setRightStroke:(id)arg1;
-- (void)setTextAnchor:(int)arg1;
+- (void)setTextAnchor:(NSInteger)arg1;
 - (void)setTextAnchorCenter:(BOOL)arg1;
-- (void)setTextFlow:(int)arg1;
-- (void)setTextHorizontalOverflow:(int)arg1;
+- (void)setTextHorizontalOverflow:(NSInteger)arg1;
+- (void)setTextVertical:(NSInteger)arg1;
 - (void)setThreeDProperties:(id)arg1;
 - (void)setTopLeftToBottomRightStroke:(id)arg1;
 - (void)setTopMargin:(float)arg1;
 - (void)setTopStroke:(id)arg1;
-- (id)stroke:(int)arg1;
-- (id)strokeNormalToDir:(int)arg1 bound:(int)arg2;
-- (int)textAnchor;
+- (id)stroke:(NSInteger)arg1;
+- (NSInteger)textAnchor;
 - (BOOL)textAnchorCenter;
-- (int)textFlow;
-- (int)textHorizontalOverflow;
+- (NSInteger)textHorizontalOverflow;
+- (NSInteger)textVertical;
 - (id)threeDProperties;
 - (id)topLeftToBottomRightStroke;
 - (float)topMargin;

@@ -2,37 +2,27 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSMutableArray, NSMutableSet;
+@class NSMutableArray;
 
 @interface CPMessageContext : NSObject {
-    NSMutableArray *m_currentObjectStack;
-    NSMutableSet *m_errors;
-    NSMutableDictionary *m_placeholderToObjectIdMap;
-    NSMutableSet *m_warnings;
+    NSMutableArray *m_errors;
+    NSMutableArray *m_warnings;
 }
 
 + (void)createContextForCurrentThread;
-+ (id)currentObjectOrPlaceholder;
-+ (id)getErrorArray;
-+ (id)getWarningArray;
++ (id)getError:(NSInteger)arg1;
++ (long)getErrorCount;
++ (id)getWarning:(NSInteger)arg1;
++ (long)getWarningCount;
 + (void)initialize;
 + (BOOL)isFileStructuredStorage;
-+ (void)popCurrentObject;
-+ (void)popCurrentPlaceholder:(id)arg1;
-+ (void)pushCurrentObject:(id)arg1;
-+ (id)pushCurrentPlaceholder;
++ (void)logProblems;
 + (void)removeContextForCurrentThread;
-+ (void)replacePlaceholdersWithObjects;
-+ (void)reportError:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
++ (void)reportError:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
 + (void)reportErrorException:(id)arg1;
-+ (void)reportObject:(id)arg1 withWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg2;
-+ (void)reportObjectOrPlaceholder:(id)arg1 withWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg2 parameters:(void*)arg3;
-+ (void)reportWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
++ (void)reportWarning:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
 + (void)reportWarningException:(id)arg1;
-+ (void)restoreObjectStack:(unsigned int)arg1;
-+ (unsigned int)saveObjectStack;
 + (void)setIsFileStructuredStorage:(BOOL)arg1;
-+ (void)setObject:(id)arg1 forPlaceholder:(id)arg2;
 
 - (void)dealloc;
 - (id)init;

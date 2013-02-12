@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface WDBookmark : WDRun {
-    int mBookmarkType;
+    NSInteger mBookmarkType;
     NSString *mName;
 }
 
-- (int)bookmarkType;
+- (NSInteger)bookmarkType;
 - (void)dealloc;
-- (id)initWithParagraph:(id)arg1 name:(id)arg2 type:(int)arg3;
+- (id)initWithParagraph:(id)arg1 name:(id)arg2 type:(NSInteger)arg3;
 - (id)name;
-- (int)runType;
-- (void)setBookmarkType:(int)arg1;
+- (NSInteger)runType;
+- (void)setBookmarkType:(NSInteger)arg1;
 - (void)setName:(id)arg1;
 
 @end

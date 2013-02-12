@@ -8,9 +8,10 @@
     NSString *_volumeAudioCategory;
 }
 
+- (id)_volumeView;
 - (void)dealloc;
 - (void)layout;
+- (void)modalView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
 - (void)setVolumeAudioCategory:(id)arg1;
-- (id)volumeView;
 
 @end

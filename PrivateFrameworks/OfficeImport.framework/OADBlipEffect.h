@@ -3,14 +3,12 @@
  */
 
 @interface OADBlipEffect : NSObject <NSCopying> {
-    int mType;
+    NSInteger mType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (id)initWithType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithType:(NSInteger)arg1;
 - (void)setStyleColor:(id)arg1;
-- (int)type;
+- (NSInteger)type;
 
 @end

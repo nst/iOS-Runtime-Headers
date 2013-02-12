@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDListLevel, WDDocument;
+@class WDDocument, WDListLevel;
 
 @interface WDListLevelOverride : NSObject {
     WDDocument *mDocument;
     unsigned char mLevel;
     WDListLevel *mListLevel;
-    long mStartNumber;
+    NSInteger mStartNumber;
     BOOL mStartNumberOverridden;
 }
 

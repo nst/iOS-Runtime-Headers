@@ -5,29 +5,29 @@
 @class NSString;
 
 @interface EDPivotDataField : NSObject {
-    int mBaseField;
-    unsigned int mBaseItem;
-    unsigned int mFieldId;
-    int mFormat;
+    NSInteger mBaseField;
+    NSUInteger mBaseItem;
+    NSUInteger mFieldId;
+    NSInteger mFormat;
     NSString *mName;
-    unsigned int mNumFmtId;
+    NSUInteger mNumFmtId;
 }
 
 + (id)pivotDataField;
 
-- (int)baseField;
-- (unsigned int)baseItem;
+- (NSInteger)baseField;
+- (NSUInteger)baseItem;
 - (void)dealloc;
-- (unsigned int)fieldId;
+- (NSUInteger)fieldId;
 - (id)init;
 - (id)name;
-- (unsigned int)numFmtId;
-- (void)setBaseField:(int)arg1;
-- (void)setBaseItem:(unsigned int)arg1;
-- (void)setFieldId:(unsigned int)arg1;
+- (NSUInteger)numFmtId;
+- (void)setBaseField:(NSInteger)arg1;
+- (void)setBaseItem:(NSUInteger)arg1;
+- (void)setFieldId:(NSUInteger)arg1;
 - (void)setName:(id)arg1;
-- (void)setNumFmtId:(unsigned int)arg1;
-- (void)setShowDataAs:(int)arg1;
-- (int)showDataAs;
+- (void)setNumFmtId:(NSUInteger)arg1;
+- (void)setShowDataAs:(NSInteger)arg1;
+- (NSInteger)showDataAs;
 
 @end

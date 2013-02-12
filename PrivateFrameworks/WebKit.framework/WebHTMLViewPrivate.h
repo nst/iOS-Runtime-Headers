@@ -2,32 +2,40 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class WebDataSource, NSTimer, WAKView, WebPluginController, WebEvent, NSString, NSMutableDictionary, NSArray;
+@class NSArray, NSMutableDictionary, NSString, NSTimer, WebDataSource, WebPluginController, WebTextCompleteController;
 
 @interface WebHTMLViewPrivate : NSObject {
+    struct CGSize { 
+        float width; 
+        float height; 
     struct CGPoint { 
         float x; 
         float y; 
     NSTimer *autoscrollTimer;
-    WebEvent *autoscrollTriggerEvent;
+    struct __GSEvent { } *autoscrollTriggerEvent;
+    BOOL avoidingPrintOrphan;
     BOOL closed;
+    WebTextCompleteController *compController;
     WebDataSource *dataSource;
-    BOOL drawingIntoLayer;
-    BOOL exposeInputContext;
     BOOL handlingMouseDownEvent;
     NSMutableDictionary *highlighters;
     BOOL ignoringMouseDraggedEvents;
-    BOOL inScrollPositionChanged;
-    struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; boolx2; boolx3; boolx4; boolx5; } *interpretKeyEventsParameters;
-    WebEvent *keyDownEvent;
+    struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; BOOL x2; BOOL x3; BOOL x4; } *interpretKeyEventsParameters;
+    struct __GSEvent { } *keyDownEvent;
+    } lastLayoutSize;
     } lastScrollPosition;
-    WAKView *layerHostingView;
-    WebEvent *mouseDownEvent;
+    struct __GSEvent { } *mouseDownEvent;
+    BOOL needsLayout;
+    BOOL needsToApplyStyles;
+    BOOL nextResponderDisabledOnce;
     NSArray *pageRects;
-    BOOL paginateScreenContent;
     WebPluginController *pluginController;
     BOOL printing;
+    BOOL receivedNOOP;
+    BOOL resigningFirstResponder;
+    id savedSubviews;
     SEL selectorForDoCommandBySelector;
+    BOOL subviewsSetAside;
     NSString *toolTip;
     id trackingRectOwner;
     void *trackingRectUserData;
@@ -36,7 +44,6 @@
 
 + (void)initialize;
 
-- (id).cxx_construct;
 - (void)clear;
 - (void)dealloc;
 - (void)finalize;

@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, NSString, UIColor, _UIGraphicsLetterpressStyle, NSAttributedString;
+@class NSString, UIColor, UIImage;
 
 @interface UIButtonContent : NSObject <NSCoding, NSCopying> {
-    NSAttributedString *attributedTitle;
     UIImage *background;
     UIImage *image;
     UIColor *shadowColor;
@@ -13,16 +12,13 @@
     UIColor *titleColor;
 }
 
-@property(retain) NSAttributedString * attributedTitle;
-@property(retain) UIImage * background;
-@property(retain) UIImage * image;
+@property(retain) UIColor *shadowColor; /* unknown property attribute: VshadowColor */
+@property(retain) UIColor *titleColor; /* unknown property attribute: VtitleColor */
+@property(retain) UIImage *background; /* unknown property attribute: Vbackground */
+@property(retain) UIImage *image; /* unknown property attribute: Vimage */
+@property(retain) NSString *title; /* unknown property attribute: Vtitle */
 @property(readonly) BOOL isEmpty;
-@property(retain) _UIGraphicsLetterpressStyle * letterpressStyle;
-@property(retain) UIColor * shadowColor;
-@property(retain) NSString * title;
-@property(retain) UIColor * titleColor;
 
-- (id)attributedTitle;
 - (id)background;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -31,11 +27,8 @@
 - (id)image;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEmpty;
-- (id)letterpressStyle;
-- (void)setAttributedTitle:(id)arg1;
 - (void)setBackground:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setLetterpressStyle:(id)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleColor:(id)arg1;

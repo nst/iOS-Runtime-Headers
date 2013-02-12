@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString, DAMailAccount;
+@class DAMailAccount, NSString;
 
-@interface DARequestQueue : MFRequestQueue {
-    DAMailAccount *_account;
-    NSString *_folderID;
+@interface DARequestQueue : RequestQueue {
+    double _invalidSyncKeyTimestamp;
+    DAMailAccount *account;
+    NSString *folderID;
 }
 
+- (void)_processRequests:(id)arg1 withConsumers:(id)arg2;
 - (void)dealloc;
 - (id)filterRequests:(id)arg1 consumers:(id)arg2 newConsumers:(id*)arg3;
 - (id)initWithAccount:(id)arg1 folderID:(id)arg2;

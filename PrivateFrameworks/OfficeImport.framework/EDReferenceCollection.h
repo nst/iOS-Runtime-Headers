@@ -2,22 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface EDReferenceCollection : EDCollection {
-    boolmCoalesce;
+     /* Encoded args for previous method: B16@0:4i8i12 */
 }
 
-+ (id)coalesceCollection;
-+ (id)noCoalesceCollection;
-
-- (unsigned int)addObject:(id)arg1;
+- (NSUInteger)addObject:(id)arg1;
 - (void)coalesce;
-- (bool)coalesceReferenceAtIndex1:(int)arg1 index2:(int)arg2;
-- (unsigned int)countOfCellsBeingReferenced;
-- (id)init;
-- (id)initWihNoCoalesce;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)referenceToCellWithIndex:(unsigned int)arg1 byRow:(bool)arg2;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (id)reverseReferencesByRow:(bool)arg1;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)coalesceReferenceAtIndex1:(NSInteger)arg1 index2:(NSInteger)arg2;
+- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
 
 @end

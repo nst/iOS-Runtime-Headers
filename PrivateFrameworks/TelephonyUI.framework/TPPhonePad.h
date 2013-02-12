@@ -7,8 +7,8 @@
     unsigned int _soundsActivated : 1;
     float _bottomHeight;
     id _delegate;
-    int _downKey;
-    unsigned int _incompleteSounds;
+    NSInteger _downKey;
+    NSUInteger _incompleteSounds;
     struct __CFSet { } *_inflightSounds;
     struct __CFDictionary { } *_keyToButtonMap;
     float _leftWidth;
@@ -16,11 +16,8 @@
     float _midWidth;
     BOOL _playsSounds;
     float _rightWidth;
-    BOOL _supportsHardPause;
     float _topHeight;
 }
-
-@property BOOL supportsHardPause;
 
 + (void)_delayedDeactivate;
 + (BOOL)launchFieldTestIfNeeded:(id)arg1;
@@ -29,37 +26,31 @@
 - (void)_activateSounds:(BOOL)arg1;
 - (void)_appResumed;
 - (void)_appSuspended;
-- (id)_buttonForKeyAtIndex:(int)arg1;
-- (void)_handleKey:(id)arg1 forUIEvent:(id)arg2;
+- (void)_handleKey:(id)arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)_handleKeyPressAndHold:(id)arg1;
-- (id)_imageByCroppingImage:(id)arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (int)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (NSInteger)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_keypadImage;
-- (struct CGPoint { float x1; float x2; })_keypadOrigin;
 - (void)_notifySoundCompletionIfNecessary:(unsigned long)arg1;
-- (void)_playSoundForKey:(int)arg1;
+- (void)_playSoundForKey:(NSInteger)arg1;
 - (id)_pressedImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForKey:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForKey:(NSInteger)arg1;
 - (void)_stopAllSoundsForcingCallbacks:(BOOL)arg1;
-- (void)_stopSoundForKey:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_updateRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
+- (void)_stopSoundForKey:(NSInteger)arg1;
 - (float)_yFudge;
-- (BOOL)cancelTouchTracking;
+- (BOOL)cancelMouseTracking;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)movedFromWindow:(id)arg1;
 - (void)movedToWindow:(id)arg1;
-- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (void)removeFromSuperview;
 - (id)scriptingInfoWithChildren;
-- (void)setButton:(id)arg1 forKeyAtIndex:(int)arg2;
+- (void)setButton:(id)arg1 forKeyAtIndex:(NSInteger)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setNeedsDisplayForKey:(int)arg1;
+- (void)setNeedsDisplayForKey:(NSInteger)arg1;
 - (void)setPlaysSounds:(BOOL)arg1;
-- (void)setSupportsHardPause:(BOOL)arg1;
-- (BOOL)supportsHardPause;
 
 @end

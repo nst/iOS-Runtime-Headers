@@ -2,34 +2,35 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@class CFXPreferencesPropertyListSourceSynchronizer;
-
 @interface CFXPreferencesPropertyListSource : CFXPreferencesSource {
     struct _CFXPreferencesStatInfo { 
         unsigned long long st_ino; 
         long long st_size; 
         struct timespec { 
-            int tv_sec; 
+            NSInteger tv_sec; 
             long tv_nsec; 
         } st_mtimex; 
+    BOOL _checkedOnce;
     struct __CFArray { } *_dirtyKeys;
-    long _formatToWrite;
-    unsigned int _group;
+    NSInteger _formatToWrite;
+    NSUInteger _group;
     unsigned short _mode;
-    unsigned int _owner;
+    NSUInteger _owner;
     } _statInfo;
-    CFXPreferencesPropertyListSourceSynchronizer *_synchronizer;
     struct __CFURL { } *_url;
 }
 
-- (void)_assimilateSync:(id)arg1;
+- (unsigned char)_backingPlistChangedSinceLastSync;
 - (void)_reenableSuddenTermination;
+- (struct __CFDictionary { }*)copyDictionary;
+- (struct __CFArray { }*)copyKeyList;
+- (void*)createPlistFromDisk;
 - (void)dealloc;
-- (id)description;
 - (void)finalize;
-- (id)initWithURL:(struct __CFURL { }*)arg1 mode:(unsigned short)arg2 owner:(unsigned int)arg3 group:(unsigned int)arg4 format:(long)arg5;
+- (void*)getValueForKey:(struct __CFString { }*)arg1;
+- (id)init;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (unsigned char)synchronize;
-- (void)synchronizeInBackgroundWithCompletionBlock:(id)arg1;
+- (unsigned char)writePlistToDisk;
 
 @end

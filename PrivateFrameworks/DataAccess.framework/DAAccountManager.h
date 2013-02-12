@@ -2,59 +2,46 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSRecursiveLock, NSMutableDictionary, NSMutableSet;
+@class NSMutableDictionary;
 
 @interface DAAccountManager : NSObject {
-    NSRecursiveLock *_accountLock;
     BOOL _accountSaveInProgress;
     NSMutableDictionary *_accounts;
     NSMutableDictionary *_accountsToAdd;
     NSMutableDictionary *_accountsToRemove;
-    int _pendingAccountSetupCount;
-    NSMutableSet *_setAsideAccounts;
 }
 
-+ (id)accountStore;
-+ (id)oneshotListOfAccountPersistentUUIDs;
-+ (void)reacquireClientRestrictions:(id)arg1;
 + (id)sharedInstance;
-+ (void)vendDaemonManagers:(Class)arg1;
++ (void)vendDaemonManagers;
 
-- (id)_accountSettingsAccountTypes;
-- (BOOL)_addAccount:(id)arg1 checkUniqueness:(BOOL)arg2;
-- (id)_childAccountTypes;
-- (BOOL)_hasDataclassWeCareAbout:(id)arg1;
-- (void)_removeStoresForAccountWithID:(id)arg1;
+- (void)_migrateExchangeABDataToLocalWithChangeType:(NSInteger)arg1;
+- (void)_migrateExchangeCalDataToLocalWithChangeType:(NSInteger)arg1;
+- (void)_migrateLocalABDataToExchangeWithChangeType:(NSInteger)arg1;
+- (void)_migrateLocalCalDataToExchangeWithChangeType:(NSInteger)arg1;
+- (void)_performMigrationType:(NSInteger)arg1 contactsChangeType:(NSInteger)arg2 calendarChangeType:(NSInteger)arg3;
+- (void)_reloadAccounts;
 - (void)_respondToAccountsChangedNotification;
 - (BOOL)_saveAllAccountSettings:(BOOL)arg1;
-- (void)_setAccountName:(id)arg1 forDataTypes:(int)arg2;
-- (void)_setExternalSource:(id)arg1 statusForDataTypes:(int)arg2;
-- (void)_startAgentMonitoring;
-- (void)_stopAgentMonitoring;
-- (void)_updateExternalSourcesAndAccountNamesForAccounts:(id)arg1;
-- (id)acAccountsWeOwn;
+- (void)_startAgentMonitoringWithContactsChangeType:(NSInteger)arg1 calendarChangeType:(NSInteger)arg2;
+- (void)_stopAgentMonitoringWithContactsChangeType:(NSInteger)arg1 calendarChangeType:(NSInteger)arg2;
+- (BOOL)_upgradeAccount:(id)arg1;
+- (BOOL)_upgradeAccountFromPreSugarBowl:(id)arg1;
 - (id)accountWithID:(id)arg1;
-- (id)accountWithPersistentUUID:(id)arg1;
 - (id)accounts;
-- (id)accountsOfClass:(Class)arg1;
+- (BOOL)addAccount:(id)arg1 contactsChangeType:(NSInteger)arg2 calendarChangeType:(NSInteger)arg3;
 - (BOOL)addAccount:(id)arg1;
-- (void)addPendingAccountSetup;
 - (void)checkValidityForAccount:(id)arg1 consumer:(id)arg2;
 - (void)cleanupLaunchdSemaphore;
+- (id)configurations;
 - (void)dealloc;
 - (void)disableDaemon;
 - (void)enableDaemon;
-- (id)getStatusReports;
-- (BOOL)hasActiveAccounts;
-- (BOOL)hasPendingAccountSetup;
 - (id)init;
+- (id)mailAccounts;
 - (id)pendingAccounts;
-- (void)reloadAccounts;
-- (BOOL)removeAccount:(id)arg1 forAccountIDReset:(BOOL)arg2;
+- (BOOL)removeAccount:(id)arg1 contactsChangeType:(NSInteger)arg2 calendarChangeType:(NSInteger)arg3;
 - (BOOL)removeAccount:(id)arg1;
-- (void)removePendingAccountSetup;
+- (void)sanitizeEventsInCalendar:(void*)arg1;
 - (BOOL)saveAllAccountSettings;
-- (void)setAsideAccountWithID:(id)arg1;
-- (void)unsetAsideAccountWithID:(id)arg1;
 
 @end

@@ -16,10 +16,10 @@
 - (id)init;
 - (BOOL)isFontSchemeRef:(id)arg1;
 - (id)majorFont;
-- (unsigned int)majorFontCount;
+- (NSUInteger)majorFontCount;
 - (id)majorTypefaceForScript:(id)arg1;
 - (id)minorFont;
-- (unsigned int)minorFontCount;
+- (NSUInteger)minorFontCount;
 - (id)minorTypefaceForScript:(id)arg1;
 
 @end

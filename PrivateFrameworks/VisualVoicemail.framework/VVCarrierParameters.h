@@ -9,17 +9,15 @@
 }
 
 + (id)carrierServiceName;
++ (long)dataContextIdentifier;
 + (BOOL)ignoresRoamingSwitch;
 + (id)messageNotificationFallbackTimeout;
 + (id)retryIntervals;
-+ (BOOL)supportsDetachedStorage;
 + (BOOL)supportsGreetingChanges;
 + (BOOL)supportsPasswordChanges;
 
-- (void)_initForBundle:(id)arg1;
 - (void)dealloc;
 - (id)initForService:(id)arg1;
-- (id)initForServiceBundleId:(id)arg1;
 - (id)parameterValueForKey:(id)arg1;
 
 @end

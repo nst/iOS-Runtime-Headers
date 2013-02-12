@@ -2,39 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIMoreListCellLayoutManager, UITableView, UIBarButtonItem;
+@class NSArray;
 
-@interface UIMoreListController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface UIMoreListController : UIViewController {
     BOOL _allowsCustomizing;
-    UIMoreListCellLayoutManager *_layoutManager;
-    UIBarButtonItem *_moreEditButtonItem;
     NSArray *_moreViewControllers;
-    BOOL _moreViewControllersChanged;
-    UITableView *_table;
 }
 
+@property(retain) NSArray *moreViewControllers;
 @property BOOL allowsCustomizing;
-@property(retain) NSArray * moreViewControllers;
-@property BOOL moreViewControllersChanged;
 
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (void)_layoutCells;
 - (void)_updateEditButton;
 - (BOOL)allowsCustomizing;
 - (void)dealloc;
 - (id)init;
-- (void)loadView;
 - (id)moreViewControllers;
-- (BOOL)moreViewControllersChanged;
-- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setAllowsCustomizing:(BOOL)arg1;
 - (void)setMoreViewControllers:(id)arg1;
-- (void)setMoreViewControllersChanged:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (id)tabBarItem;
 - (id)table;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
 
 @end

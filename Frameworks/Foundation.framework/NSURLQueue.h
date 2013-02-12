@@ -8,7 +8,7 @@
     BOOL _pad1;
     BOOL _pad2;
     BOOL _pad3;
-    unsigned int count;
+    NSUInteger count;
     NSURLQueueNode *head;
     id monitor;
     NSURLQueueNode *tail;
@@ -18,14 +18,14 @@
 + (id)newNode;
 
 - (void)clear;
-- (unsigned int)count;
+- (NSUInteger)count;
 - (void)dealloc;
 - (void)finalize;
-- (int)indexOf:(id)arg1;
+- (NSInteger)indexOf:(id)arg1;
 - (id)init;
 - (BOOL)isEmpty;
 - (id)peek;
-- (id)peekAt:(unsigned int)arg1;
+- (id)peekAt:(NSUInteger)arg1;
 - (void)put:(id)arg1;
 - (BOOL)remove:(id)arg1;
 - (void)setWaitOnTake:(BOOL)arg1;

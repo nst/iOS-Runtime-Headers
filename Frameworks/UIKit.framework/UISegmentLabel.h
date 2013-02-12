@@ -3,9 +3,10 @@
  */
 
 @interface UISegmentLabel : UILabel {
+    NSInteger _style;
 }
 
 - (id)_disabledFontColor;
-- (id)init;
+- (id)initWithSegmentedControlStyle:(NSInteger)arg1;
 
 @end

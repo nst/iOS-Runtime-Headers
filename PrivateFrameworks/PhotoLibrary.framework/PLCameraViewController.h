@@ -6,13 +6,21 @@
 
 @interface PLCameraViewController : UIViewController {
     PLCameraView *_cameraView;
-    BOOL _ignoreAppearCallbacks;
 }
 
 - (BOOL)_displaysFullScreen;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
+- (void)_editabilityChanged:(id)arg1;
+- (void)cameraView:(id)arg1 photoSaved:(id)arg2;
+- (void)cameraViewCancelled:(id)arg1;
+- (BOOL)cameraViewShouldShowIris:(id)arg1;
+- (BOOL)cameraViewShouldShowPreviewAfterSelection:(id)arg1;
+- (BOOL)cameraViewShouldShowProgressWhileCapturing:(id)arg1;
 - (void)dealloc;
+- (void)loadView;
+- (void)setAllowsEditing:(BOOL)arg1;
+- (void)setParentViewController:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -2,123 +2,49 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CALayer;
-
 @interface WAKWindow : WAKResponder {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _availableScreenSize;
-    } _cachedVisibleRect;
-    } _frame;
-    CALayer *_hostLayer;
-    CALayer *_rootLayer;
-    float _screenScale;
-    } _screenSize;
-    struct TileCache { id x1; boolx2; boolx3; boolx4; struct RetainPtr<TileCacheTombstone> { struct TileCacheTombstone { } *x_5_1_1; } x5; int x6; int x7; struct IntSize { int x_8_1_1; int x_8_1_2; } x8; boolx9; boolx10; boolx11; boolx12; boolx13; struct OwnPtr<WebCore::TileGrid> { struct TileGrid {} *x_14_1_1; } x14; struct OwnPtr<WebCore::TileGrid> { struct TileGrid {} *x_15_1_1; } x15; struct Timer<WebCore::TileCache> { int (**x_16_1_1)(); double x_16_1_2; double x_16_1_3; int x_16_1_4; unsigned int x_16_1_5; struct TileCache {} *x_16_1_6; } x16; struct Vector<WebCore::IntRect, 0> { unsigned int x_17_1_1; struct VectorBuffer<WebCore::IntRect, 0> { struct IntRect {} *x_2_2_1; unsigned int x_2_2_2; } x_17_1_2; } x17; float x18; float x19; float x20; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_21_1_1; } x21; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_22_1_1; } x22; } *_tileCache;
-    BOOL _useOrientationDependentFontAntialiasing;
-    struct WKWindow { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct WKView {} *x3; struct WKView {} *x4; struct WKView {} *x5; } *_wkWindow;
+    struct WKWindow { struct _WKObject { 
+            NSUInteger referenceCount; 
+            struct _WKClassInfo {} *classInfo; 
+        } x1; struct CGRect { 
+            struct CGPoint { 
+                float x; 
+                float y; 
+            } origin; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } size; 
+        } x2; struct WKView {} *x3; struct WKView {} *x4; struct __GSEvent {} *x5; int (*x6)(); void *x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; } *window;
 }
 
-@property BOOL useOrientationDependentFontAntialiasing;
++ (void)_addWindowWrapper:(id)arg1;
++ (void)_removeWindowWrapper:(id)arg1;
++ (struct __CFDictionary { }*)_windowWrappers;
++ (id)_wrapperForWindowRef:(struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct WKView {} *x3; struct WKView {} *x4; struct __GSEvent {} *x5; int (*x6)(); void *x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; }*)arg1;
 
-+ (id)_wrapperForWindowRef:(struct WKWindow { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct WKView {} *x3; struct WKView {} *x4; struct WKView {} *x5; }*)arg1;
-+ (id)currentEvent;
-+ (BOOL)hasLandscapeOrientation;
-+ (void)setOrientationProvider:(id)arg1;
-
-- (id).cxx_construct;
-- (id)_newFirstResponderAfterResigning;
+- (struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct WKView {} *x3; struct WKView {} *x4; struct __GSEvent {} *x5; int (*x6)(); void *x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; }*)_windowRef;
+- (struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct WKView {} *x3; struct WKView {} *x4; struct __GSEvent {} *x5; int (*x6)(); void *x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; }*)_windowRef;
+- (id)_initWithWindowRef:(struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct WKView {} *x3; struct WKView {} *x4; struct __GSEvent {} *x5; int (*x6)(); void *x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; }*)arg1;
+- (BOOL)_needsToResetDragMargins;
+- (void)_setNeedsToResetDragMargins:(BOOL)arg1;
 - (oneway void)_webcore_releaseOnWebThread;
-- (struct WKWindow { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct WKView {} *x3; struct WKView {} *x4; struct WKView {} *x5; }*)_windowRef;
-- (struct CGSize { float x1; float x2; })availableScreenSize;
 - (void)close;
 - (id)contentView;
 - (struct CGPoint { float x1; float x2; })convertBaseToScreen:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertScreenToBase:(struct CGPoint { float x1; float x2; })arg1;
-- (float)currentTileScale;
+- (struct __GSEvent { }*)currentEvent;
 - (void)dealloc;
-- (id)description;
-- (void)didRotate;
-- (void)displayRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)dumpTiles;
+- (void)endEditingFor:(id)arg1;
 - (id)firstResponder;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (BOOL)hasPendingDraw;
-- (id)hostLayer;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithLayer:(id)arg1;
 - (BOOL)isKeyWindow;
-- (BOOL)keepsZoomedOutTiles;
-- (int)keyViewSelectionDirection;
-- (void)layoutTiles;
-- (void)layoutTilesNow;
-- (void)layoutTilesNowForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSInteger)keyViewSelectionDirection;
 - (BOOL)makeFirstResponder:(id)arg1;
-- (void)makeKeyWindow;
-- (BOOL)makeViewFirstResponder:(id)arg1;
-- (id)recursiveDescription;
 - (oneway void)release;
-- (void)removeAllNonVisibleTiles;
-- (void)removeAllTiles;
-- (void)removeForegroundTiles;
-- (id)rootLayer;
-- (float)screenScale;
-- (struct CGSize { float x1; float x2; })screenSize;
-- (void)sendEvent:(id)arg1;
-- (void)sendEventSynchronously:(id)arg1;
-- (void)sendMouseMoveEvent:(id)arg1 contentChange:(int*)arg2;
-- (void)setAcceleratedDrawingEnabled:(BOOL)arg1;
-- (void)setAvailableScreenSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)sendGSEvent:(id)arg1 contentChange:(NSInteger*)arg2;
+- (void)sendGSEvent:(id)arg1;
 - (void)setContentView:(id)arg1;
-- (void)setCurrentTileScale:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 display:(BOOL)arg2;
-- (void)setKeepsZoomedOutTiles:(BOOL)arg1;
-- (void)setNeedsDisplay;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setRootLayer:(id)arg1;
-- (void)setScreenScale:(float)arg1;
-- (void)setScreenSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTileBordersVisible:(BOOL)arg1;
-- (void)setTilePaintCountsVisible:(BOOL)arg1;
-- (void)setTilesOpaque:(BOOL)arg1;
-- (void)setTilingDirection:(int)arg1;
-- (void)setTilingMode:(int)arg1;
-- (void)setUseOrientationDependentFontAntialiasing:(BOOL)arg1;
-- (void)setZoomedOutTileScale:(float)arg1;
-- (BOOL)tilesOpaque;
-- (int)tilingDirection;
-- (int)tilingMode;
-- (BOOL)useOrientationDependentFontAntialiasing;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
-- (void)willRotate;
-- (float)zoomedOutTileScale;
+- (NSInteger)windowNumber;
 
 @end

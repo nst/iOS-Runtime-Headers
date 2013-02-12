@@ -3,12 +3,12 @@
  */
 
 @interface GQDRStrokePattern : NSObject {
-    int mType;
+    NSInteger mType;
 }
 
 + (id)solidPattern;
 
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
-- (int)type;
+- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (NSInteger)type;
 
 @end

@@ -2,66 +2,25 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSDate, NSString, NSTimer;
+@class NSDate, NSTimer, PCPowerManager;
 
-@interface PCPersistentTimer : NSObject <PCLoggingDelegate> {
-    BOOL _disableSystemWaking;
-    BOOL _disallowInterfaceManagerUsage;
-    NSTimer *_fireRunLoopTimer;
-    double _fireTime;
-    double _lastUpdateTime;
-    double _minimumEarlyFireProportion;
-    struct IONotificationPort { } *_pmNotificationPort;
-    unsigned int _pmNotifier;
-    unsigned int _pmRootDomainConnect;
-    struct __CFRunLoopSource { } *_pmRunLoopSource;
-    unsigned int _powerAssertionID;
-    NSTimer *_preventSleepRunLoopTimer;
-    NSDate *_scheduledWakeDate;
-    SEL _selector;
-    NSString *_serviceIdentifier;
-    BOOL _sleepIsImminent;
-    double _startTime;
-    id _target;
-    id _timeChangeSource;
-    BOOL _triggerOnGMTChange;
-    id _userInfo;
+@interface PCPersistentTimer : NSObject <PCPowerManagerDelegate> {
+    NSDate *_fireDate;
+    SEL _fireSelector;
+    id _fireTarget;
+    double _lastWakeTime;
+    PCPowerManager *_powerManager;
+    NSTimer *_timer;
 }
 
-@property BOOL disableSystemWaking;
-@property(readonly) NSString * loggingIdentifier;
-@property double minimumEarlyFireProportion;
++ (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4;
 
-+ (double)currentMachTimeInterval;
-+ (id)lastSystemWakeDate;
-
-- (id)_earlyFireDate;
-- (void)_fireTimerFired;
-- (id)_initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 triggerOnGMTChange:(BOOL)arg6;
-- (double)_nextForcedAlignmentAbsoluteTime;
-- (void)_powerChangedMessageType:(unsigned int)arg1 notificationID:(void*)arg2;
-- (void)_preventSleepFired;
-- (void)_setPowerMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
-- (void)_setSignificantTimeChangeMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
-- (void)_significantTimeChange;
-- (void)_updateTimers;
+- (void)_timerFired:(id)arg1;
 - (void)dealloc;
-- (id)debugDescription;
-- (BOOL)disableSystemWaking;
-- (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
-- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 disallowInterfaceManagerUsage:(BOOL)arg6;
-- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
-- (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
-- (void)interfaceManagerWWANInterfaceChangedPowerState:(id)arg1;
-- (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
+- (id)fireDate;
+- (id)initScheduledWithInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4;
 - (void)invalidate;
-- (BOOL)isValid;
-- (id)loggingIdentifier;
-- (double)minimumEarlyFireProportion;
-- (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1;
-- (void)setDisableSystemWaking:(BOOL)arg1;
-- (void)setMinimumEarlyFireProportion:(double)arg1;
-- (id)userInfo;
+- (void)systemPoweredOn;
+- (void)systemSleepImminent;
 
 @end

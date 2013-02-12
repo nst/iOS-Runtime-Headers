@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADParagraphProperties, CMStyle;
+@class CMStyle, OADParagraphProperties;
 
 @interface PMBulletMapper : CMMapper {
-    int mFontSize;
+    NSInteger mFontSize;
     OADParagraphProperties *mProperties;
     CMStyle *mStyle;
 }
 
-+ (id)stringForIndex:(int)arg1 withFormat:(int)arg2;
++ (id)stringForIndex:(NSInteger)arg1 withFormat:(NSInteger)arg2;
 
 - (id)bulletFontName;
-- (int)bulletSize;
+- (NSInteger)bulletSize;
 - (void)dealloc;
-- (id)initWithOadProperties:(id)arg1 fontSize:(int)arg2 parent:(id)arg3;
+- (id)initWithOadProperties:(id)arg1 fontSize:(NSInteger)arg2 parent:(id)arg3;
 - (id)makeBulletWithListState:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapBulletColorWithState:(id)arg1;

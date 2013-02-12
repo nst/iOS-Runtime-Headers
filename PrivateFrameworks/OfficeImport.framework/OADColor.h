@@ -8,22 +8,15 @@
     NSMutableArray *mTransforms;
 }
 
-+ (id)basicMapOfColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
-+ (id)colorWithRedByte:(unsigned char)arg1 greenByte:(unsigned char)arg2 blueByte:(unsigned char)arg3;
-+ (id)mapAdjustedColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
-+ (int)mapSchemeColorID:(int)arg1 colorMap:(id)arg2;
-+ (id)tsuColorWithOADColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
-+ (id)tsuColorWithOADColor:(id)arg1;
-+ (id)tsuColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
++ (id)basicMapOfColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3;
++ (id)mapAdjustedColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3;
++ (NSInteger)mapSchemeColorID:(NSInteger)arg1 colorMap:(id)arg2;
++ (id)nsColorWithOADColor:(id)arg1;
 
 - (void)addTransform:(id)arg1;
-- (void)addTransformOfType:(int)arg1 value:(float)arg2;
-- (void)addTransformOfType:(int)arg1;
 - (id)colorForStyleColor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
 - (void)setTransforms:(id)arg1;
 - (id)transforms;
 

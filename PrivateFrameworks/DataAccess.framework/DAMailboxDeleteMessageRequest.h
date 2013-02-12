@@ -9,10 +9,7 @@
 }
 
 - (void)dealloc;
-- (id)description;
-- (unsigned int)hash;
 - (id)initRequestWithMessageID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (id)messageID;
 
 @end

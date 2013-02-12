@@ -2,29 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface OABDefaultsManager : NSObject <OABPropertiesManager> {
 }
 
-- (struct EshBlip { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; struct UID { unsigned char x_4_1_1[16]; } x4; }*)fillBlipDataReference;
+- (const struct EshTablePropVal<ChSINT4> { int (**x1)(); struct ChVector<ChSINT4> { NSInteger *x_2_1_1; NSInteger *x_2_1_2; NSUInteger x_2_1_3; NSUInteger x_2_1_4; NSUInteger x_2_1_5; } x2; }*)strokeCustomDash;
+- (const struct EshTablePropVal<EshGradientStop> { int (**x1)(); struct ChVector<EshGradientStop> { struct EshGradientStop {} *x_2_1_1; struct EshGradientStop {} *x_2_1_2; NSUInteger x_2_1_3; NSUInteger x_2_1_4; NSUInteger x_2_1_5; } x2; }*)fillGradientColors;
 - (long)fillAngle;
 - (long)fillBgAlpha;
-- (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })fillBgColor;
+- (struct EshColor { struct Data { NSInteger x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })fillBgColor;
 - (unsigned long)fillBlipID;
 - (id)fillBlipName;
 - (long)fillFgAlpha;
-- (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })fillFgColor;
+- (struct EshColor { struct Data { NSInteger x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })fillFgColor;
 - (long)fillFocus;
-- (long)fillFocusBottom;
-- (long)fillFocusLeft;
-- (long)fillFocusRight;
-- (long)fillFocusTop;
-- (const struct EshTablePropVal<EshGradientStop> { }*)fillGradientColors;
-- (int)fillType;
+- (NSInteger)fillType;
 - (BOOL)hidden;
 - (BOOL)isFillOK;
 - (BOOL)isFilled;
@@ -34,29 +25,28 @@
 - (BOOL)isStroked;
 - (BOOL)isTextPath;
 - (long)shadowAlpha;
-- (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })shadowColor;
+- (struct EshColor { struct Data { NSInteger x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })shadowColor;
 - (long)shadowOffsetX;
 - (long)shadowOffsetY;
 - (long)shadowSoftness;
-- (int)shadowType;
-- (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })strokeBgColor;
-- (int)strokeCapStyle;
-- (int)strokeCompoundType;
-- (const struct EshTablePropVal<long> { }*)strokeCustomDash;
-- (int)strokeEndArrowLength;
-- (int)strokeEndArrowType;
-- (int)strokeEndArrowWidth;
+- (NSInteger)shadowType;
+- (struct EshColor { struct Data { NSInteger x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })strokeBgColor;
+- (NSInteger)strokeCapStyle;
+- (NSInteger)strokeCompoundType;
+- (NSInteger)strokeEndArrowLength;
+- (NSInteger)strokeEndArrowType;
+- (NSInteger)strokeEndArrowWidth;
 - (long)strokeFgAlpha;
-- (struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })strokeFgColor;
+- (struct EshColor { struct Data { NSInteger x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; })strokeFgColor;
 - (unsigned long)strokeFillBlipID;
 - (id)strokeFillBlipName;
-- (int)strokeFillType;
-- (int)strokeJoinStyle;
+- (NSInteger)strokeFillType;
+- (NSInteger)strokeJoinStyle;
 - (long)strokeMiterLimit;
-- (int)strokePresetDash;
-- (int)strokeStartArrowLength;
-- (int)strokeStartArrowType;
-- (int)strokeStartArrowWidth;
+- (NSInteger)strokePresetDash;
+- (NSInteger)strokeStartArrowLength;
+- (NSInteger)strokeStartArrowType;
+- (NSInteger)strokeStartArrowWidth;
 - (long)strokeWidth;
 - (BOOL)textPathBold;
 - (id)textPathFontFamily;
@@ -64,7 +54,7 @@
 - (BOOL)textPathItalic;
 - (BOOL)textPathSmallcaps;
 - (BOOL)textPathStrikethrough;
-- (int)textPathTextAlignment;
+- (NSInteger)textPathTextAlignment;
 - (BOOL)textPathUnderline;
 - (id)textPathUnicodeString;
 

@@ -2,36 +2,34 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDCollection, NSString, EDResources;
+@class EDCollection, EDResources, NSString;
 
-@interface EDPhoneticInfo : NSObject <EDImmutableObject> {
-    boolmDoNotModify;
-    int mAlign;
-    unsigned int mFontIndex;
+@interface EDPhoneticInfo : NSObject {
+    NSInteger mAlign;
+    NSUInteger mFontIndex;
     EDResources *mResources;
     EDCollection *mRuns;
     NSString *mString;
-    int mType;
+    NSInteger mType;
 }
 
-+ (id)phoneticInfoWithResources:(id)arg1;
++ (id)infoWithResources:(id)arg1;
 
-- (int)align;
+- (NSInteger)align;
 - (void)dealloc;
 - (id)font;
-- (unsigned int)fontIndex;
-- (unsigned int)hash;
+- (NSUInteger)fontIndex;
+- (NSUInteger)hash;
 - (id)initWithResources:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEDPhoneticInfo:(id)arg1;
 - (id)runs;
-- (void)setAlign:(int)arg1;
-- (void)setDoNotModify:(bool)arg1;
+- (void)setAlign:(NSInteger)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(unsigned int)arg1;
+- (void)setFontIndex:(NSUInteger)arg1;
 - (void)setString:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(NSInteger)arg1;
 - (id)string;
-- (int)type;
+- (NSInteger)type;
 
 @end

@@ -17,7 +17,6 @@
     } mTo;
 }
 
-- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })by;
 - (struct CGPoint { float x1; float x2; })from;
 - (id)init;

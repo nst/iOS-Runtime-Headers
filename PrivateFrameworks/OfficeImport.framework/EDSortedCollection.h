@@ -5,9 +5,7 @@
 @interface EDSortedCollection : EDKeyedCollection {
 }
 
-- (unsigned int)addObject:(id)arg1 overrideDuplicate:(bool)arg2;
-- (unsigned int)addObject:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (NSUInteger)addObject:(id)arg1;
+- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
 
 @end

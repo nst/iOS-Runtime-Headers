@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
-
 @interface DOMCSSValue : DOMObject {
 }
 
-@property(copy) NSString * cssText;
+@property(copy) NSString *cssText;
 @property(readonly) unsigned short cssValueType;
 
++ (id)_wrapCSSValue:(struct CSSValue { int (**x1)(); NSInteger x2; }*)arg1;
+
+- (struct CSSValue { int (**x1)(); NSInteger x2; }*)_CSSValue;
+- (id)_initWithCSSValue:(struct CSSValue { int (**x1)(); NSInteger x2; }*)arg1;
 - (id)cssText;
 - (unsigned short)cssValueType;
 - (void)dealloc;

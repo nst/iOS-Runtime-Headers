@@ -3,14 +3,10 @@
  */
 
 @interface DAResponse : DAAction {
-    int _status;
+    NSInteger _status;
 }
 
-@property(readonly) int status;
-
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3 status:(int)arg4;
-- (int)status;
+- (id)initWithAction:(NSInteger)arg1 context:(id)arg2 status:(NSInteger)arg3;
+- (NSInteger)status;
 
 @end

@@ -7,7 +7,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)port;
-+ (id)portWithMachPort:(unsigned int)arg1;
++ (id)portWithMachPort:(NSUInteger)arg1;
 
 - (Class)classForCoder;
 - (Class)classForPortCoder;
@@ -15,16 +15,17 @@
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMachPort:(unsigned int)arg1;
+- (id)initWithMachPort:(NSUInteger)arg1;
 - (void)invalidate;
 - (BOOL)isValid;
-- (unsigned int)machPort;
+- (NSUInteger)machPort;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)replacementObjectForCoder:(id)arg1;
-- (unsigned int)reservedSpaceLength;
+- (id)replacementObjectForPortCoder:(id)arg1;
+- (NSUInteger)reservedSpaceLength;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(unsigned int)arg4;
-- (BOOL)sendBeforeDate:(id)arg1 msgid:(unsigned int)arg2 components:(id)arg3 from:(id)arg4 reserved:(unsigned int)arg5;
+- (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(NSUInteger)arg4;
+- (BOOL)sendBeforeDate:(id)arg1 msgid:(NSUInteger)arg2 components:(id)arg3 from:(id)arg4 reserved:(NSUInteger)arg5;
 - (void)setDelegate:(id)arg1;
 
 @end

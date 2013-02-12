@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoView, MPMovieTVHUDView, NPTVOutBackgroundView;
+@class MPVideoView, MovieTVHUDView, NPTVOutBackgroundView;
 
 @interface MPTVOutWindow : UIWindow {
     NPTVOutBackgroundView *_backgroundView;
-    MPMovieTVHUDView *_hudView;
+    MovieTVHUDView *_hudView;
     MPVideoView *_videoView;
 }
 
+- (BOOL)_canExistBeyondSuspension;
 - (void)_playbackStateChanged:(id)arg1;
-- (BOOL)_setupTargetScreen:(id)arg1;
 - (void)dealloc;
-- (id)init;
-- (BOOL)setVideoView:(id)arg1;
-- (id)videoView;
+- (id)initWithVideoView:(id)arg1;
 
 @end

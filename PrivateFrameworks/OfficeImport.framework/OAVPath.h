@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface OAVPath : NSObject {
+     /* Encoded args for previous method: {EshComputedValue=Bi}16@0:4r^*8c12 */
 }
 
-+ (int)parseCommand:(const char **)arg1;
-+ (struct EshComputedValue { boolx1; int x2; })parseParam:(const char **)arg1 first:(BOOL)arg2;
++ (NSInteger)parseCommand:(const char **)arg1;
++ (struct EshComputedValue { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; NSInteger x2; })parseParam:(const char **)arg1 first:(BOOL)arg2;
 + (void)readPath:(id)arg1 toGeometry:(id)arg2;
 
 @end

@@ -2,25 +2,26 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
-
 @interface DOMCharacterData : DOMNode {
 }
 
-@property(copy) NSString * data;
-@property(readonly) unsigned int length;
+@property(copy) NSString *data;
+@property(readonly) NSUInteger length;
 
++ (id)_wrapCharacterData:(struct CharacterData { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_27_1_1; } x27; }*)arg1;
+
+- (struct CharacterData { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_27_1_1; } x27; }*)_characterData;
 - (void)appendData:(id)arg1;
 - (id)data;
-- (void)deleteData:(unsigned int)arg1 :(unsigned int)arg2;
-- (void)deleteData:(unsigned int)arg1 length:(unsigned int)arg2;
-- (void)insertData:(unsigned int)arg1 :(id)arg2;
-- (void)insertData:(unsigned int)arg1 data:(id)arg2;
-- (unsigned int)length;
-- (void)replaceData:(unsigned int)arg1 :(unsigned int)arg2 :(id)arg3;
-- (void)replaceData:(unsigned int)arg1 length:(unsigned int)arg2 data:(id)arg3;
+- (void)deleteData:(NSUInteger)arg1 :(NSUInteger)arg2;
+- (void)deleteData:(NSUInteger)arg1 length:(NSUInteger)arg2;
+- (void)insertData:(NSUInteger)arg1 :(id)arg2;
+- (void)insertData:(NSUInteger)arg1 data:(id)arg2;
+- (NSUInteger)length;
+- (void)replaceData:(NSUInteger)arg1 :(NSUInteger)arg2 :(id)arg3;
+- (void)replaceData:(NSUInteger)arg1 length:(NSUInteger)arg2 data:(id)arg3;
 - (void)setData:(id)arg1;
-- (id)substringData:(unsigned int)arg1 :(unsigned int)arg2;
-- (id)substringData:(unsigned int)arg1 length:(unsigned int)arg2;
+- (id)substringData:(NSUInteger)arg1 :(NSUInteger)arg2;
+- (id)substringData:(NSUInteger)arg1 length:(NSUInteger)arg2;
 
 @end

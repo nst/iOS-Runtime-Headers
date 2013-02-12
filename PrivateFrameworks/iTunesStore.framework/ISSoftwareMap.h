@@ -2,33 +2,41 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray;
+@class NSConditionLock, NSMutableDictionary;
 
 @interface ISSoftwareMap : NSObject {
-    NSArray *_applications;
+    unsigned int _loadingMap : 1;
+    NSMutableDictionary *_annotations;
+    NSMutableDictionary *_bundleIDForItemID;
+    struct __CFDictionary { } *_mapping;
+    NSConditionLock *_mappingLock;
 }
 
-@property(readonly) NSArray * applications;
++ (void)jetsam;
++ (id)sharedInstance;
 
-+ (void)_startWatchingInstallationNotifications;
-+ (id)applicationForBundleIdentifier:(id)arg1 applicationType:(struct __CFString { }*)arg2;
-+ (id)applicationForBundleIdentifier:(id)arg1;
-+ (id)currentMap;
-+ (BOOL)currentMapIsValid;
-+ (BOOL)haveApplicationsOfType:(struct __CFString { }*)arg1;
-+ (void)invalidateCurrentMap;
-+ (id)loadedMap;
-+ (void)setCurrentMap:(id)arg1;
-+ (void)startObservingNotifications;
-
-- (void)_loadFromMobileInstallation;
-- (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
-- (id)applicationForBundleIdentifier:(id)arg1;
-- (id)applicationForItemIdentifier:(id)arg1;
-- (id)applications;
-- (id)copySoftwareUpdatesPropertyList;
-- (id)copySoftwareUpdatesPropertyListWithUpdatesContext:(id)arg1;
+- (id)_accountInfoForBundleID:(id)arg1;
+- (id)_annotationValueForKey:(id)arg1 bundleID:(id)arg2;
+- (id)_dsIDForBundleID:(id)arg1;
+- (BOOL)_loadMappingIfNecessary;
+- (void)_lockAfterSynchronousLoad;
+- (void)_mainThreadFinishLoading;
+- (void)_mapLoaderThread;
+- (void)_resetMapping;
+- (void)_setFakeApplicationMapping:(struct __CFDictionary { }*)arg1;
+- (id)_valueForKey:(id)arg1 bundleID:(id)arg2;
+- (id)accountIDForBundleID:(id)arg1;
+- (id)bundleIDForItemID:(id)arg1;
+- (BOOL)bundleIDIsInstalled:(id)arg1;
+- (id)copyAllAccounts;
+- (id)copyAllApplications;
 - (void)dealloc;
+- (id)dsIDForBundleID:(id)arg1;
+- (BOOL)haveSoftwareInstalled;
 - (id)init;
+- (BOOL)isLoaded;
+- (BOOL)load:(BOOL)arg1;
+- (void)reset;
+- (id)valueForKey:(id)arg1 bundleID:(id)arg2;
 
 @end

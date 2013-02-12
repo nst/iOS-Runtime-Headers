@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, NSString, <VMUMemory>, NSDate;
+@class <VMUMemory>, NSArray, NSDate, NSString;
 
 @interface VMUMachOHeader : VMUHeader {
     unsigned long long _address;
-    NSString *_dsymPath;
-    unsigned int _fileType;
-    unsigned int _flags;
-    unsigned long long _linkEditBase;
+    NSUInteger _fileType;
+    NSUInteger _flags;
     NSArray *_loadCommands;
     <VMUMemory> *_memory;
     NSString *_name;
@@ -21,20 +19,15 @@
 - (unsigned long long)address;
 - (id)architecture;
 - (id)commpage;
-- (unsigned int)compatibilityVersion;
-- (unsigned int)currentVersion;
 - (void)dealloc;
 - (id)description;
-- (id)dsymPath;
 - (id)dyLinkerPath;
 - (id)dySymbolTable;
-- (unsigned int)fileType;
-- (unsigned int)flags;
+- (NSUInteger)fileType;
+- (NSUInteger)flags;
 - (BOOL)isCommpage;
-- (BOOL)isFromSharedCache;
 - (BOOL)isMachO;
 - (BOOL)isProtected;
-- (unsigned long long)linkEditBase;
 - (id)loadCommands;
 - (id)memory;
 - (id)name;
@@ -43,7 +36,6 @@
 - (id)sections;
 - (id)segmentAddresses;
 - (id)segmentNamed:(id)arg1;
-- (void)setDsymPath:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setTimestamp:(id)arg1;

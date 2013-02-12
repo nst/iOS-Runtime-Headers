@@ -2,30 +2,29 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSMutableArray;
+
 @interface OIXMLElement : OIXMLNode {
-    id _attributes;
-    id _children;
-    BOOL _hasMultipleAttributes;
-    BOOL _hasMultipleChildren;
+    NSMutableArray *_attributes;
+    NSMutableArray *_children;
 }
 
 + (void)_initEmptyHTMLNames;
 + (BOOL)isEmptyHTMLElement:(id)arg1;
 
-- (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(int)arg2;
+- (void)_appendXMLStringToString:(struct __CFString { }*)arg1;
 - (void)addAttribute:(id)arg1;
 - (void)addChild:(id)arg1;
-- (int)attributeCount;
-- (int)childrenCount;
-- (id)closingTagString;
-- (id)contentString;
+- (NSInteger)attributeCount;
+- (id)attributes;
+- (NSInteger)childCount;
+- (id)children;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithName:(id)arg1 stringValue:(id)arg2;
-- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertChild:(id)arg1 atIndex:(NSUInteger)arg2;
 - (id)objectValue;
-- (id)openingTagString;
 - (void)setObjectValue:(id)arg1;
 - (id)stringValue;
 

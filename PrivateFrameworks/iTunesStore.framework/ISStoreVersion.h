@@ -8,7 +8,7 @@
     NSURL *_redirectURL;
 }
 
-@property(retain) NSURL * redirectURL;
+@property(retain) NSURL *redirectURL; /* unknown property attribute: V_redirectURL */
 
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;

@@ -2,40 +2,41 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPageControl, UILabel, UIScrollView, UIKeyboardEmojiInputController, UIKeyboardEmojiCategory, NSMutableArray;
+@class <UIKeyboardEmojiController>, NSMutableArray, UIKeyboardEmojiCategory, UILabel, UIPageControl, UIScrollView;
 
-@interface UIKeyboardEmojiScrollView : UIKBKeyView <UIScrollViewDelegate, UIKeyboardEmojiInput> {
+@interface UIKeyboardEmojiScrollView : UIView <UIScrollViewDelegate> {
     UIKeyboardEmojiCategory *_category;
     UILabel *_categoryLabel;
-    int _currentPage;
-    UIKeyboardEmojiInputController *_inputController;
-    UILabel *_optionalDescription;
+    <UIKeyboardEmojiController> *_controller;
+    NSInteger _currentPage;
     UIPageControl *_pageControl;
     NSMutableArray *_pages;
     UIScrollView *_scrollView;
 }
 
+@property <UIKeyboardEmojiController> *controller; /* unknown property attribute: V_controller */
+
 - (void)clearPages;
-- (int)currentPage;
+- (id)controller;
+- (NSInteger)currentPage;
 - (void)dealloc;
-- (void)delayLayout;
+- (void)delayedLayout:(id)arg1;
 - (void)doLayout;
-- (int)emojiCountPerPageForRotation;
-- (void)ensureSurrounded;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)ensureSurrounded:(NSInteger)arg1;
 - (void)forceLayout;
 - (void)goToFirstPage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)interruptScrolling;
 - (void)layoutPages;
 - (void)layoutRecents;
+- (id)localizedStringForKey:(id)arg1;
 - (void)pageChanged;
-- (void)reloadForCategory:(id)arg1;
-- (void)saveFirstVisibleEmojiIndex;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewWillBeginDecelerating:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)setCategory:(id)arg1;
+- (void)setController:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setScrollDelay:(double)arg1;
-- (BOOL)shouldCache;
 
 @end

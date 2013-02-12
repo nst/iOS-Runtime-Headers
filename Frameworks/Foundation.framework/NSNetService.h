@@ -12,7 +12,7 @@
 + (id)dictionaryFromTXTRecordData:(id)arg1;
 
 - (id)TXTRecordData;
-- (void)_dispatchCallBackWithError:(struct { int x1; int x2; })arg1;
+- (void)_dispatchCallBackWithError:(struct { NSInteger x1; NSInteger x2; })arg1;
 - (struct __CFNetService { }*)_internalNetService;
 - (id)_monitors;
 - (void)_scheduleInDefaultRunLoopForMode:(id)arg1;
@@ -22,22 +22,24 @@
 - (id)description;
 - (id)domain;
 - (void)finalize;
-- (BOOL)getInputStream:(out id*)arg1 outputStream:(out id*)arg2;
-- (unsigned int)hash;
+- (BOOL)getInputStream:(id*)arg1 outputStream:(id*)arg2;
+- (NSUInteger)hash;
 - (id)hostName;
 - (id)initWithCFNetService:(struct __CFNetService { }*)arg1;
-- (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(int)arg4;
+- (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(NSInteger)arg4;
 - (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (int)port;
+- (NSInteger)port;
+- (id)protocolSpecificInformation;
 - (void)publish;
-- (void)publishWithOptions:(unsigned int)arg1;
+- (void)publishWithOptions:(NSUInteger)arg1;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)resolve;
 - (void)resolveWithTimeout:(double)arg1;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setProtocolSpecificInformation:(id)arg1;
 - (BOOL)setTXTRecordData:(id)arg1;
 - (void)startMonitoring;
 - (void)stop;

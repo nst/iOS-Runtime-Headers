@@ -8,33 +8,31 @@
     WebHistoryPrivate *_historyPrivate;
 }
 
-+ (void)_removeAllVisitedLinks;
-+ (void)_setVisitedLinkTrackingEnabled:(BOOL)arg1;
 + (id)optionalSharedHistory;
 + (void)setOptionalSharedHistory:(id)arg1;
 
-- (void)_addVisitedLinksToPageGroup:(struct PageGroup { struct HashMap<WTF::AtomicString, WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>, WTF::AtomicStringHash, WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>> > { struct HashTable<WTF::AtomicString, std::__1::pair<WTF::AtomicString, WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>>, WTF::PairFirstExtractor<std::__1::pair<WTF::AtomicString, WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>>>, WTF::AtomicStringHash, WTF::HashMapValueTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>>>>, WTF::HashTraits<WTF::AtomicString> > { struct pair<WTF::AtomicString, WTF::OwnPtr<WebCore::Supplement<WebCore::PageGroup>> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct HashSet<WebCore::Page *, WTF::PtrHash<WebCore::Page *>, WTF::HashTraits<WebCore::Page *> > { struct HashTable<WebCore::Page *, WebCore::Page *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::Page *>, WTF::HashTraits<WebCore::Page *>, WTF::HashTraits<WebCore::Page *> > { struct Page {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_3_1_1; } x3; struct HashSet<unsigned long long, WebCore::LinkHashHash, WTF::HashTraits<unsigned long long> > { struct HashTable<unsigned long long, unsigned long long, WTF::IdentityExtractor, WebCore::LinkHashHash, WTF::HashTraits<unsigned long long>, WTF::HashTraits<unsigned long long> > { unsigned long long *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_4_1_1; } x4; boolx5; unsigned int x6; struct RefPtr<WebCore::StorageNamespace> { struct StorageNamespace {} *x_7_1_1; } x7; struct OwnPtr<WTF::HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>, WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserScript>, 0>>, WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserScript>, 0>>>> > { struct HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>, WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserScript>, 0>>, WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserScript>, 0>>> > {} *x_8_1_1; } x8; struct OwnPtr<WTF::HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>, WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserStyleSheet>, 0>>, WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserStyleSheet>, 0>>>> > { struct HashMap<WTF::RefPtr<WebCore::DOMWrapperWorld>, WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserStyleSheet>, 0>>, WTF::PtrHash<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::RefPtr<WebCore::DOMWrapperWorld>>, WTF::HashTraits<WTF::OwnPtr<WTF::Vector<WTF::OwnPtr<WebCore::UserStyleSheet>, 0>>> > {} *x_9_1_1; } x9; struct OwnPtr<WebCore::GroupSettings> { struct GroupSettings {} *x_10_1_1; } x10; }*)arg1;
-- (id)_data;
 - (id)_itemForURLString:(id)arg1;
 - (void)_sendNotification:(id)arg1 entries:(id)arg2;
-- (void)_visitedURL:(id)arg1 withTitle:(id)arg2 method:(id)arg3 wasFailure:(BOOL)arg4 increaseVisitCount:(BOOL)arg5;
+- (void)addItem:(id)arg1;
+- (id)addItemForURL:(id)arg1;
 - (void)addItems:(id)arg1;
-- (id)allItems;
+- (id)ageLimitDate;
+- (BOOL)containsItemForURLString:(id)arg1;
 - (BOOL)containsURL:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
-- (int)historyAgeInDaysLimit;
-- (int)historyItemLimit;
+- (NSInteger)historyAgeInDaysLimit;
+- (NSInteger)historyItemLimit;
 - (id)init;
 - (id)itemForURL:(id)arg1;
 - (BOOL)loadFromURL:(id)arg1 error:(id*)arg2;
 - (id)orderedItemsLastVisitedOnDay:(id)arg1;
 - (id)orderedLastVisitedDays;
 - (void)removeAllItems;
+- (void)removeItem:(id)arg1;
 - (void)removeItems:(id)arg1;
 - (BOOL)saveToURL:(id)arg1 error:(id*)arg2;
-- (void)setHistoryAgeInDaysLimit:(int)arg1;
-- (void)setHistoryItemLimit:(int)arg1;
-- (void)timeZoneChanged:(id)arg1;
+- (void)setHistoryAgeInDaysLimit:(NSInteger)arg1;
+- (void)setHistoryItemLimit:(NSInteger)arg1;
+- (void)setLastVisitedTimeInterval:(double)arg1 forItem:(id)arg2;
 
 @end

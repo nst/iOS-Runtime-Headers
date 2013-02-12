@@ -5,7 +5,7 @@
 @interface NSStream : NSObject {
 }
 
-+ (void)getStreamsToHost:(id)arg1 port:(int)arg2 inputStream:(id*)arg3 outputStream:(id*)arg4;
++ (void)getStreamsToHost:(id)arg1 port:(NSInteger)arg2 inputStream:(id*)arg3 outputStream:(id*)arg4;
 
 - (void)close;
 - (id)delegate;
@@ -16,6 +16,6 @@
 - (void)setDelegate:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (unsigned int)streamStatus;
+- (NSUInteger)streamStatus;
 
 @end

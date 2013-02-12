@@ -12,7 +12,7 @@
     void *_state;
 }
 
-+ (id)_errorWithErrno:(int)arg1 atPath:(id)arg2;
++ (id)_errorWithErrno:(NSInteger)arg1 atPath:(id)arg2;
 + (id)filesystemItemRemoveOperationWithPath:(id)arg1;
 
 - (BOOL)_filtersUnderbars;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
-- (id)initWithPath:(id)arg1;
+- (void)initWithPath:(id)arg1;
 - (void)main;
 - (void)setDelegate:(id)arg1;
 

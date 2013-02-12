@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class InlineCandidateCell, NSMutableArray, NSArray;
+@class InlineCandidateCell, NSArray, NSMutableArray;
 
 @interface UIInlineCandidateTextView : UIView {
     SEL _action;
@@ -10,43 +10,39 @@
     NSMutableArray *_candidateCellArray;
     NSArray *_candidates;
     InlineCandidateCell *_currentlyPushedItem;
-    BOOL _phraseEditable;
-    unsigned int _selectedItem;
+    NSUInteger _selectedItem;
     BOOL _showingArrow;
     id _target;
     BOOL m_animating;
-    int m_edgeType;
-    int m_type;
+    NSInteger m_edgeType;
+    NSInteger m_type;
 }
 
 - (BOOL)_arrowHighlighted;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
 - (void)_cellSelected:(id)arg1;
-- (float)_layoutCandidates:(id)arg1 maxCount:(int)arg2 height:(float)arg3 maxScreenWidth:(float)arg4 hasExtensionCandidates:(BOOL)arg5;
-- (void)_mouseUp:(struct __GSEvent { }*)arg1 wasCancelled:(BOOL)arg2;
+- (float)_layoutCandidates:(id)arg1 maxCount:(NSInteger)arg2 height:(float)arg3 maxScreenWidth:(float)arg4;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)edgeType;
+- (NSInteger)edgeType;
 - (id)findCell:(struct CGPoint { float x1; float x2; })arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 candidates:(id)arg2 type:(int)arg3 maxScreenWidth:(float)arg4 hasExtensionCandidates:(BOOL)arg5;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 candidates:(id)arg2 type:(NSInteger)arg3 maxScreenWidth:(float)arg4;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (BOOL)needsWebDocumentViewEventsDirectly;
-- (unsigned int)numberOfShownItems;
+- (NSUInteger)numberOfShownItems;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)redrawArrow;
-- (unsigned int)selectedItem;
+- (NSUInteger)selectedItem;
 - (void)setAnimating:(BOOL)arg1;
-- (void)setEdgeType:(int)arg1;
-- (void)setSelectedItem:(unsigned int)arg1;
+- (void)setEdgeType:(NSInteger)arg1;
+- (void)setSelectedItem:(NSUInteger)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (void)showHighlightedArrow;
-- (int)textEffectsVisibilityLevel;
+- (NSInteger)textEffectsVisibilityLevel;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 

@@ -17,14 +17,14 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expressionString;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithExpressionString:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithExpressionString:(id)arg1 options:(NSUInteger)arg2;
 - (id)initWithExpressionString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })matchedRangeForCString:(const char *)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 subexpressionRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 count:(unsigned int)arg4;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })matchedRangeForString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 subexpressionRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 count:(unsigned int)arg4;
-- (unsigned int)numberOfSubexpressions;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })matchedRangeForCString:(const char *)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 subexpressionRanges:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3 count:(NSUInteger)arg4;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })matchedRangeForString:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 subexpressionRanges:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3 count:(NSUInteger)arg4;
+- (NSUInteger)numberOfSubexpressions;
 
 @end

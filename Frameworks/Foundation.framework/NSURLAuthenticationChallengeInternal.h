@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLResponse, NSError, <NSURLAuthenticationChallengeSender>, NSURLProtectionSpace, NSURLCredential;
+@class <NSURLAuthenticationChallengeSender>, NSError, NSURLCredential, NSURLProtectionSpace, NSURLResponse;
 
 @interface NSURLAuthenticationChallengeInternal : NSObject {
     NSError *error;
     NSURLResponse *failureResponse;
-    int previousFailureCount;
+    NSInteger previousFailureCount;
     NSURLCredential *proposedCredential;
     <NSURLAuthenticationChallengeSender> *sender;
     NSURLProtectionSpace *space;
 }
 
 - (void)dealloc;
-- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
+- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(NSInteger)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
 
 @end

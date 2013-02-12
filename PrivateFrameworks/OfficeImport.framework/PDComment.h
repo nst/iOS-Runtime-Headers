@@ -2,29 +2,28 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
+@class NSCalendarDate, NSString;
 
 @interface PDComment : NSObject {
     struct CGPoint { 
         float x; 
         float y; 
-    unsigned int mAuthorId;
-    NSString *mDate;
-    unsigned int mIndex;
+    NSUInteger mAuthorId;
+    NSCalendarDate *mDateTime;
+    NSUInteger mIndex;
     } mPosition;
     NSString *mText;
 }
 
-- (id).cxx_construct;
-- (unsigned int)authorId;
-- (id)date;
+- (NSUInteger)authorId;
+- (id)dateTime;
 - (void)dealloc;
-- (unsigned int)index;
+- (NSUInteger)index;
 - (id)init;
 - (struct CGPoint { float x1; float x2; })position;
-- (void)setAuthorId:(unsigned int)arg1;
-- (void)setDate:(id)arg1;
-- (void)setIndex:(unsigned int)arg1;
+- (void)setAuthorId:(NSUInteger)arg1;
+- (void)setDateTime:(id)arg1;
+- (void)setIndex:(NSUInteger)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (id)text;

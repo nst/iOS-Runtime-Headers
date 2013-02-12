@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADShapeProperties, OADTextListStyle, OADTextBodyProperties;
+@class OADShapeProperties, OADTextBodyProperties, OADTextListStyle;
 
 @interface OADDefaultProperties : NSObject {
     OADShapeProperties *mShapeProperties;
@@ -12,10 +12,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)initWithDefaults;
-- (void)setShapeProperties:(id)arg1;
-- (void)setTextBodyProperties:(id)arg1;
-- (void)setTextListStyle:(id)arg1;
 - (id)shapeProperties;
 - (id)textBodyProperties;
 - (id)textListStyle;

@@ -2,38 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIActivityIndicatorView, UIColor, UILabel;
+@class UIActivityIndicatorView, UITextLabel;
 
 @interface SULoadingView : UIView {
-    UIColor *_activityIndicatorColor;
-    int _activityIndicatorStyle;
-    UILabel *_label;
+    UITextLabel *_label;
     UIActivityIndicatorView *_progressIndicator;
-    unsigned int _style;
-    UIColor *_textColor;
-    UIColor *_textShadowColor;
+    NSUInteger _style;
 }
 
-@property(retain) UIColor * activityIndicatorColor;
-@property int activityIndicatorStyle;
-@property(retain) UIColor * textColor;
-@property(retain) UIColor * textShadowColor;
-
-- (void)_setupSubviews;
-- (id)activityIndicatorColor;
-- (int)activityIndicatorStyle;
+- (void)_updateLabel:(id)arg1;
+- (id)createProgressIndicator;
+- (id)createTextLabel;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
-- (id)newProgressIndicator;
-- (id)newTextLabel;
-- (void)setActivityIndicatorColor:(id)arg1;
-- (void)setActivityIndicatorStyle:(int)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (void)setTextColor:(id)arg1;
-- (void)setTextShadowColor:(id)arg1;
-- (void)sizeToFit;
-- (id)textColor;
-- (id)textShadowColor;
+- (id)init;
+- (void)setStyle:(NSUInteger)arg1;
 
 @end

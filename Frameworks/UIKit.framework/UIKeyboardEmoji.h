@@ -5,23 +5,27 @@
 @class NSString;
 
 @interface UIKeyboardEmoji : NSObject {
-    unsigned short _glyph;
-    NSString *emojiString;
+    NSString *_codePoint;
+    NSString *_imageName;
+    NSString *_name;
+    unsigned short _unicodeCharacter;
 }
 
-@property(retain) NSString * emojiString;
-@property unsigned short glyph;
-@property(readonly) NSString * key;
+@property unsigned short unicodeCharacter; /* unknown property attribute: V_unicodeCharacter */
+@property(retain) NSString *codePoint; /* unknown property attribute: V_codePoint */
+@property(retain) NSString *imageName; /* unknown property attribute: V_imageName */
+@property(retain) NSString *name; /* unknown property attribute: V_name */
 
-+ (id)emojiWithString:(id)arg1;
-
+- (id)codePoint;
 - (void)dealloc;
-- (id)emojiString;
-- (unsigned short)glyph;
-- (id)initWithString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)key;
-- (void)setEmojiString:(id)arg1;
-- (void)setGlyph:(unsigned short)arg1;
+- (id)image;
+- (id)imageName;
+- (id)initWithName:(id)arg1 imageName:(id)arg2 codePoint:(unsigned short)arg3;
+- (id)name;
+- (void)setCodePoint:(id)arg1;
+- (void)setImageName:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setUnicodeCharacter:(unsigned short)arg1;
+- (unsigned short)unicodeCharacter;
 
 @end

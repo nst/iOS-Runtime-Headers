@@ -2,24 +2,24 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, NSString, NSDictionary;
+@class NSArray, NSDictionary, NSString;
 
 @interface VMULazySymbolOwner : NSObject {
-    unsigned int _flags;
+    NSUInteger _flags;
     NSString *_name;
     NSArray *_regions;
     NSDictionary *_signature;
 }
 
-+ (id)lazySymbolOwnerWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(unsigned int)arg4;
++ (id)lazySymbolOwnerWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(NSUInteger)arg4;
 
 - (id)architecture;
 - (BOOL)containsAddress:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)flags;
+- (NSUInteger)flags;
 - (BOOL)hasRegionsForName:(id)arg1;
-- (id)initWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(unsigned int)arg4;
+- (id)initWithName:(id)arg1 signature:(id)arg2 regions:(id)arg3 flags:(NSUInteger)arg4;
 - (BOOL)isLazy;
 - (BOOL)isProtected;
 - (id)name;

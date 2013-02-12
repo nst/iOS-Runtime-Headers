@@ -2,90 +2,66 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLFormElement, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DOMHTMLTextAreaElement : DOMHTMLElement {
+     /* Encoded args for previous method: @12@0:4^{HTMLTextAreaElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}^{HTMLFormElement}BBBiiiii{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}ii}8 */
+     /* Encoded args for previous method: ^{HTMLTextAreaElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}^{HTMLFormElement}BBBiiiii{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}ii}8@0:4 */
 }
 
-@property(copy) NSString * accessKey;
-@property BOOL autofocus;
-@property int cols;
-@property(copy) NSString * defaultValue;
+@property(copy) NSString *accessKey;
+@property(copy) NSString *defaultValue;
+@property(retain,readonly) DOMHTMLFormElement *form;
+@property(copy) NSString *name;
+@property(copy,readonly) NSString *type;
+@property(copy) NSString *value;
+@property NSInteger cols;
 @property BOOL disabled;
-@property(readonly) DOMHTMLFormElement * form;
-@property(copy) NSString * name;
 @property BOOL readOnly;
-@property int rows;
-@property int selectionEnd;
-@property int selectionStart;
-@property(readonly) NSString * type;
-@property(copy) NSString * value;
-@property(readonly) BOOL willValidate;
+@property NSInteger rows;
+@property NSInteger tabIndex;
 
-- (int)_autocapitalizeType;
++ (id)_wrapHTMLTextAreaElement:(struct HTMLTextAreaElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; struct HTMLFormElement {} *x35; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x36; void*x37; void*x38; NSInteger x39; NSInteger x40; NSInteger x41; NSInteger x42; NSInteger x43; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_44_1_1; } x44; NSInteger x45; NSInteger x46; }*)arg1;
+
+- (struct HTMLTextAreaElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; struct HTMLFormElement {} *x35; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x36; void*x37; void*x38; NSInteger x39; NSInteger x40; NSInteger x41; NSInteger x42; NSInteger x43; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_44_1_1; } x44; NSInteger x45; NSInteger x46; }*)_HTMLTextAreaElement;
 - (BOOL)_isEdited;
-- (BOOL)_requiresAccessoryView;
-- (BOOL)_requiresInputView;
-- (void)_startAssistingDocumentView:(id)arg1;
-- (void)_stopAssistingDocumentView:(id)arg1;
-- (BOOL)_supportsAutoFill;
-- (id)_textFormElement;
 - (id)accessKey;
-- (id)autocapitalize;
-- (BOOL)autocorrect;
-- (BOOL)autofocus;
-- (BOOL)checkValidity;
-- (int)cols;
+- (NSInteger)autocapitalize;
+- (NSInteger)autocorrect;
+- (void)blur;
+- (id)calloutSubtitle;
+- (id)calloutTitle;
+- (BOOL)canBecomeFirstResponder;
+- (NSInteger)cols;
 - (id)defaultValue;
-- (id)dirName;
 - (BOOL)disabled;
-- (id)endPosition;
+- (void)focus;
 - (id)form;
-- (BOOL)isEditing;
+- (Class)formPeripheralClass;
 - (BOOL)isTextControl;
-- (id)labels;
-- (int)maxLength;
 - (id)name;
-- (BOOL)nodeCanBecomeFirstResponder;
-- (id)placeholder;
 - (BOOL)readOnly;
-- (BOOL)required;
-- (int)rows;
+- (NSInteger)rows;
 - (void)select;
-- (id)selectionDirection;
-- (int)selectionEnd;
-- (int)selectionStart;
+- (NSInteger)selectionEnd;
+- (NSInteger)selectionStart;
 - (void)setAccessKey:(id)arg1;
-- (void)setAutocapitalize:(id)arg1;
-- (void)setAutocorrect:(BOOL)arg1;
-- (void)setAutofocus:(BOOL)arg1;
-- (void)setCols:(int)arg1;
-- (void)setCustomValidity:(id)arg1;
+- (void)setCols:(NSInteger)arg1;
 - (void)setDefaultValue:(id)arg1;
-- (void)setDirName:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
-- (void)setMaxLength:(int)arg1;
 - (void)setName:(id)arg1;
-- (void)setPlaceholder:(id)arg1;
 - (void)setReadOnly:(BOOL)arg1;
-- (void)setRequired:(BOOL)arg1;
-- (void)setRows:(int)arg1;
-- (void)setSelectionDirection:(id)arg1;
-- (void)setSelectionEnd:(int)arg1;
-- (void)setSelectionRange:(int)arg1 end:(int)arg2;
-- (void)setSelectionStart:(int)arg1;
-- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setRows:(NSInteger)arg1;
+- (void)setSelectionEnd:(NSInteger)arg1;
+- (void)setSelectionRange:(NSInteger)arg1 end:(NSInteger)arg2;
+- (void)setSelectionStart:(NSInteger)arg1;
+- (void)setTabIndex:(NSInteger)arg1;
 - (void)setValue:(id)arg1;
-- (void)setWrap:(id)arg1;
-- (id)startPosition;
-- (int)structuralComplexityContribution;
+- (NSInteger)tabIndex;
 - (id)textInputTraits;
-- (unsigned int)textLength;
 - (id)type;
-- (id)validationMessage;
-- (id)validity;
 - (id)value;
-- (BOOL)willValidate;
-- (id)wrap;
 
 @end

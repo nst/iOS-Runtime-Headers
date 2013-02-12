@@ -6,43 +6,34 @@
 
 @interface NSDateFormatter : NSFormatter {
     NSMutableDictionary *_attributes;
-    unsigned int _counter;
+    NSUInteger _counter;
     struct __CFDateFormatter { } *_formatter;
 }
 
-+ (id)dateFormatFromTemplate:(id)arg1 options:(unsigned int)arg2 locale:(id)arg3;
-+ (unsigned int)defaultFormatterBehavior;
++ (NSUInteger)defaultFormatterBehavior;
 + (void)initialize;
-+ (id)localizedStringFromDate:(id)arg1 dateStyle:(unsigned int)arg2 timeStyle:(unsigned int)arg3;
-+ (id)mf_formatDate:(id)arg1 shortStyle:(BOOL)arg2;
-+ (void)setDefaultFormatterBehavior:(unsigned int)arg1;
++ (void)setDefaultFormatterBehavior:(NSUInteger)arg1;
 
 - (id)AMSymbol;
 - (id)PMSymbol;
-- (void)_clearFormatter;
 - (id)_dateFormat;
 - (void)_regenerateFormatter;
-- (void)_regenerateFormatterIfAbsent;
-- (void)_reset;
 - (void)_setDateFormat:(id)arg1;
 - (void)_setIsLenient:(BOOL)arg1;
-- (void)_setUsesCharacterDirection:(BOOL)arg1;
-- (BOOL)_usesCharacterDirection;
 - (id)calendar;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateFormat;
 - (id)dateFromString:(id)arg1;
-- (unsigned int)dateStyle;
+- (NSUInteger)dateStyle;
 - (void)dealloc;
 - (id)defaultDate;
-- (BOOL)doesRelativeDateFormatting;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eraSymbols;
 - (void)finalize;
-- (unsigned int)formatterBehavior;
+- (NSUInteger)formatterBehavior;
 - (BOOL)generatesCalendarDates;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 error:(out id*)arg4;
+- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
+- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3 error:(id*)arg4;
 - (id)gregorianStartDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -54,11 +45,10 @@
 - (void)setAMSymbol:(id)arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setDateFormat:(id)arg1;
-- (void)setDateStyle:(unsigned int)arg1;
+- (void)setDateStyle:(NSUInteger)arg1;
 - (void)setDefaultDate:(id)arg1;
-- (void)setDoesRelativeDateFormatting:(BOOL)arg1;
 - (void)setEraSymbols:(id)arg1;
-- (void)setFormatterBehavior:(unsigned int)arg1;
+- (void)setFormatterBehavior:(NSUInteger)arg1;
 - (void)setGeneratesCalendarDates:(BOOL)arg1;
 - (void)setGregorianStartDate:(id)arg1;
 - (void)setLenient:(BOOL)arg1;
@@ -76,7 +66,7 @@
 - (void)setStandaloneMonthSymbols:(id)arg1;
 - (void)setStandaloneQuarterSymbols:(id)arg1;
 - (void)setStandaloneWeekdaySymbols:(id)arg1;
-- (void)setTimeStyle:(unsigned int)arg1;
+- (void)setTimeStyle:(NSUInteger)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTwoDigitStartDate:(id)arg1;
 - (void)setVeryShortMonthSymbols:(id)arg1;
@@ -95,7 +85,7 @@
 - (id)standaloneWeekdaySymbols;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromDate:(id)arg1;
-- (unsigned int)timeStyle;
+- (NSUInteger)timeStyle;
 - (id)timeZone;
 - (id)twoDigitStartDate;
 - (id)veryShortMonthSymbols;

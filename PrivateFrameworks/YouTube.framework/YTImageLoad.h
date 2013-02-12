@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableData, NSString, NSURLConnection, NSURL;
+@class NSMutableData, NSString, NSURL, NSURLConnection;
 
-@interface YTImageLoad : NSObject <NSURLConnectionDelegate> {
+@interface YTImageLoad : NSObject {
     NSURL *_URL;
     NSURLConnection *_connection;
     NSMutableData *_imageData;

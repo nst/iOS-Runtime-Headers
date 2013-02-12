@@ -5,12 +5,13 @@
 @interface NSCharacterSet : NSObject <NSCopying, NSMutableCopying, NSCoding> {
 }
 
++ (id)CJKCharacterSet;
 + (id)alphanumericCharacterSet;
 + (id)capitalizedLetterCharacterSet;
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)characterSetWithCharactersInString:(id)arg1;
 + (id)characterSetWithContentsOfFile:(id)arg1;
-+ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (id)characterSetWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 + (id)controlCharacterSet;
 + (id)decimalDigitCharacterSet;
 + (id)decomposableCharacterSet;
@@ -25,8 +26,6 @@
 + (id)uppercaseLetterCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
 + (id)whitespaceCharacterSet;
-+ (id)whitespaceNewlineAndSpecialCharacterSet;
-+ (id)wordBreakCharacterSet;
 
 - (unsigned long)_cfTypeID;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
@@ -34,10 +33,10 @@
 - (id)bitmapRepresentation;
 - (BOOL)characterIsMember:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (NSUInteger)count;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)invertedSet;
@@ -48,6 +47,5 @@
 - (BOOL)longCharacterIsMember:(unsigned long)arg1;
 - (void)makeImmutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
 
 @end

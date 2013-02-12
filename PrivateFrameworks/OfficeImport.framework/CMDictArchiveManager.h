@@ -2,32 +2,39 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, NSMutableDictionary, NSMutableString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSMutableDictionary, NSString;
 
 @interface CMDictArchiveManager : CMArchiveManager {
-    boolmIsFrameset;
-    NSMutableString *mCssString;
-    NSMutableString *mMainHtml;
+    NSMutableDictionary *mCache;
+    NSInteger mHeight;
+    NSString *mMainHtml;
     NSString *mName;
     NSString *mPrefix;
     NSString *mResourceUrlProtocol;
     NSMutableDictionary *mResources;
-    NSMutableDictionary *mStyleCache;
+    NSInteger mWidth;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsFrameset;
 }
 
-- (void)addCssStyle:(id)arg1 withName:(id)arg2;
-- (id)addCssStyle:(id)arg1;
-- (id)copyDictionaryWithSizeInfos:(BOOL)arg1;
-- (id)copyResourceWithName:(id)arg1;
-- (id)cssStylesheetString;
+- (id)addResourceAndReturnItsPath:(id)arg1 type:(NSInteger)arg2;
+- (id)addResourceForDrawableAndReturnItsPath:(id)arg1 type:(NSInteger)arg2 drawable:(id)arg3;
+- (id)addSubFrameAndReturnItsPath:(id)arg1 name:(id)arg2;
+- (void)cacheResourceWithPath:(id)arg1 forDrawable:(id)arg2;
+- (id)cachedDataForDrawable:(id)arg1;
+- (id)cachedPathForDrawable:(id)arg1;
+- (id)createDictionary;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 resourcePathPrefix:(id)arg2;
+- (id)makePathRelative:(id)arg1;
 - (id)name;
-- (void)pushCssToPath:(id)arg1;
-- (void)pushData:(id)arg1 toPath:(id)arg2;
-- (void)pushText:(id)arg1 toPath:(id)arg2;
-- (int)resourceCount;
-- (id)resourceUrlProtocol;
+- (NSInteger)resourceCount;
+- (void)setHTMLHeight:(NSInteger)arg1;
+- (void)setHTMLWidth:(NSInteger)arg1;
 - (void)setIsFrameset;
+- (void)setMainResource:(id)arg1;
 
 @end

@@ -2,35 +2,51 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface EDPivotFieldItem : NSObject {
-    boolmCalculatedMember;
-    boolmChildItems;
-    boolmDetailsHidden;
-    boolmExpanded;
-    boolmHidden;
-    boolmMissed;
-    unsigned int mItemIndex;
-    int mType;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+    NSUInteger mItemIndex;
+    NSInteger mType;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mCalculatedMember;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mChildItems;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDetailsHidden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mExpanded;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHidden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mMissed;
 }
 
 + (id)pivotFieldItem;
 
-- (bool)calculatedMember;
-- (bool)childItems;
-- (bool)detailsHidden;
-- (bool)expanded;
-- (bool)hidden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)calculatedMember;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)childItems;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)detailsHidden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)expanded;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hidden;
 - (id)init;
-- (unsigned int)itemIndex;
-- (bool)missed;
-- (void)setCalculatedMember:(bool)arg1;
-- (void)setChildItems:(bool)arg1;
-- (void)setDetailsHidden:(bool)arg1;
-- (void)setExpanded:(bool)arg1;
-- (void)setHidden:(bool)arg1;
-- (void)setItemIndex:(unsigned int)arg1;
-- (void)setMissed:(bool)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (NSUInteger)itemIndex;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)missed;
+- (void)setCalculatedMember:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setChildItems:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDetailsHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setExpanded:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setItemIndex:(NSUInteger)arg1;
+- (void)setMissed:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

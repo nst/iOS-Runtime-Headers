@@ -2,28 +2,27 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDFormula, TSUPointerKeyDictionary, EDString;
+@class EDFormula, EDString, SFUPointerKeyDictionary;
 
 @interface EDName : NSObject {
     EDFormula *mFormula;
-    TSUPointerKeyDictionary *mMaxWorksheetReferences;
+    SFUPointerKeyDictionary *mMaxWorksheetReferences;
     EDString *mNameString;
-    unsigned int mSheetIndex;
+    NSUInteger mSheetIndex;
 }
 
 - (void)dealloc;
 - (id)formula;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEDName:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
 - (id)maxWorksheetReferences;
 - (id)nameString;
-- (void)setCleanedFormula:(id)arg1;
-- (void)setFormula:(id)arg1 workbook:(id)arg2;
+- (void)setFormula:(id)arg1;
 - (void)setNameString:(id)arg1;
-- (void)setSheetIndex:(unsigned int)arg1;
-- (unsigned int)sheetIndex;
+- (void)setSheetIndex:(NSUInteger)arg1;
+- (NSUInteger)sheetIndex;
 
 @end

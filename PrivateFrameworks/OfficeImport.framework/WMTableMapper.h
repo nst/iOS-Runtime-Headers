@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WMTableStyle, WDTable, WMTableColumnInfo, WMBordersProperty;
+@class WDTable, WMBordersProperty, WMTableColumnInfo, WMTableStyle;
 
 @interface WMTableMapper : CMMapper {
     WMTableColumnInfo *mColumnInfo;
@@ -11,11 +11,9 @@
     WDTable *mWdTable;
 }
 
-+ (BOOL)isTableDeleted:(id)arg1;
-
 - (id)columnInfo;
-- (id)copyColumnInfo;
-- (id)copyStopArrayForRow:(unsigned int)arg1;
+- (id)createColumnInfo;
+- (id)createStopArrayForRow:(NSUInteger)arg1;
 - (void)dealloc;
 - (id)initWithWDTable:(id)arg1 parent:(id)arg2;
 - (id)insideBorders;

@@ -3,8 +3,8 @@
  */
 
 @interface OADTileTechnique : OADImageFillTechnique {
-    int mAlignment;
-    int mFlipMode;
+    NSInteger mAlignment;
+    NSInteger mFlipMode;
     BOOL mIsAlignmentOverridden;
     BOOL mIsFlipModeOverridden;
     BOOL mIsOffsetXOverridden;
@@ -19,13 +19,11 @@
 
 + (id)defaultProperties;
 
-- (int)alignment;
+- (NSInteger)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)flipMode;
-- (unsigned int)hash;
+- (NSInteger)flipMode;
 - (id)initWithDefaults;
 - (BOOL)isAlignmentOverridden;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFlipModeOverridden;
 - (BOOL)isOffsetXOverridden;
 - (BOOL)isOffsetYOverridden;
@@ -35,8 +33,8 @@
 - (float)offsetY;
 - (float)scaleX;
 - (float)scaleY;
-- (void)setAlignment:(int)arg1;
-- (void)setFlipMode:(int)arg1;
+- (void)setAlignment:(NSInteger)arg1;
+- (void)setFlipMode:(NSInteger)arg1;
 - (void)setOffsetX:(float)arg1;
 - (void)setOffsetY:(float)arg1;
 - (void)setScaleX:(float)arg1;

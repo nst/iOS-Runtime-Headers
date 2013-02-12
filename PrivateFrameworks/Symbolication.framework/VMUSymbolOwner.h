@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, <VMUMemory>, NSString, NSDictionary;
+@class <VMUMemory>, NSArray, NSDictionary, NSString;
 
 @interface VMUSymbolOwner : NSObject <NSCopying> {
-    unsigned int _compatibilityVersion;
-    unsigned int _currentVersion;
-    unsigned int _flags;
+    NSUInteger _flags;
     NSString *_name;
     NSArray *_regions;
     NSDictionary *_signature;
@@ -16,18 +14,15 @@
     <VMUMemory> *_textMemory;
 }
 
-+ (id)symbolOwnerWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(unsigned int)arg7 currentVersion:(unsigned int)arg8 compatibilityVersion:(unsigned int)arg9;
++ (id)symbolOwnerWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(NSUInteger)arg7;
 
 - (id)architecture;
-- (int)compare:(id)arg1;
-- (unsigned int)compatibilityVersion;
 - (BOOL)containsAddress:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)currentVersion;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)flags;
-- (id)initWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(unsigned int)arg7 currentVersion:(unsigned int)arg8 compatibilityVersion:(unsigned int)arg9;
+- (NSUInteger)flags;
+- (id)initWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(NSUInteger)arg7;
 - (BOOL)isAOut;
 - (BOOL)isBundle;
 - (BOOL)isCommpage;

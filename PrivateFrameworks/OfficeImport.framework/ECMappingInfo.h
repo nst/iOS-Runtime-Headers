@@ -8,16 +8,12 @@
     NSString *mSheetName;
 }
 
-@property(readonly) int columnOffset;
-@property(readonly) int rowOffset;
-@property(readonly) NSString * sheetName;
-
 + (id)mappingInfoWithSheetName:(id)arg1;
 
-- (int)columnOffset;
+- (NSInteger)columnOffset;
 - (void)dealloc;
 - (id)initWithSheetName:(id)arg1;
-- (int)rowOffset;
+- (NSInteger)rowOffset;
 - (id)sheetName;
 
 @end

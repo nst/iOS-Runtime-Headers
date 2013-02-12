@@ -10,7 +10,7 @@
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)characterSetWithCharactersInString:(id)arg1;
 + (id)characterSetWithContentsOfFile:(id)arg1;
-+ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (id)characterSetWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 + (id)controlCharacterSet;
 + (id)decimalDigitCharacterSet;
 + (id)decomposableCharacterSet;
@@ -25,7 +25,7 @@
 + (id)whitespaceAndNewlineCharacterSet;
 + (id)whitespaceCharacterSet;
 
-- (void)addCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)addCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)addCharactersInString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)formIntersectionWithCharacterSet:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)invert;
 - (BOOL)isMutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)removeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)removeCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)removeCharactersInString:(id)arg1;
 
 @end

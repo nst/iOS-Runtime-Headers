@@ -13,7 +13,6 @@
 - (id)MIMEType;
 - (id)URL;
 - (struct _CFURLResponse { }*)_CFURLResponse;
-- (id)_cacheTime;
 - (double)_calculatedExpiration;
 - (id)_createdDate;
 - (double)_freshnessLifetime;
@@ -23,6 +22,7 @@
 - (id)_peerCertificateChain;
 - (void)_setExpectedContentLength:(long long)arg1;
 - (void)_setMIMEType:(id)arg1;
+- (id)_webcore_MIMEType;
 - (id)allHeaderFields;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -30,9 +30,8 @@
 - (long long)expectedContentLength;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(int)arg3 textEncodingName:(id)arg4;
-- (long long)maxExpectedContentLength;
-- (int)statusCode;
+- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(NSInteger)arg3 textEncodingName:(id)arg4;
+- (NSInteger)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;
 

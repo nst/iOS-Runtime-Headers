@@ -2,31 +2,50 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
-@class WebFixedPositionContent, <WebFormDelegate>, WebVideoFullscreenController, <WebCaretChangeListener>, WebPreferences, <WebNotificationProvider>, WAKWindow, NSMutableSet, <WebGeolocationProvider>, WebIndicateLayer, NSDictionary, <WebDeviceOrientationProvider>, WebNodeHighlight, WebInspector, NSString, NSURL;
+@class <WebFormDelegate>, NSString, NSURL, WAKWindow, WebInspector, WebPreferences;
 
 @interface WebViewPrivate : NSObject {
-    struct String { 
-        struct RefPtr<WTF::StringImpl> { 
+    struct Page { struct OwnPtr<WebCore::Chrome> { 
+            struct Chrome {} *m_ptr; 
+        } x1; struct OwnPtr<WebCore::SelectionController> { 
+            struct SelectionController {} *m_ptr; 
+        } x2; struct OwnPtr<WebCore::FocusController> { 
+            struct FocusController {} *m_ptr; 
+        } x3; struct OwnPtr<WebCore::ContextMenuController> { 
+            struct ContextMenuController {} *m_ptr; 
+        } x4; struct OwnPtr<WebCore::InspectorController> { 
+            struct InspectorController {} *m_ptr; 
+        } x5; struct OwnPtr<WebCore::Settings> { 
+            struct Settings {} *m_ptr; 
+        } x6; struct OwnPtr<WebCore::ProgressTracker> { 
+            struct ProgressTracker {} *m_ptr; 
+        } x7; struct RefPtr<WebCore::BackForwardList> { 
+            struct BackForwardList {} *m_ptr; 
+        } x8; struct RefPtr<WebCore::Frame> { 
+            struct Frame {} *m_ptr; 
+        } x9; struct RefPtr<WebCore::Node> { 
+            struct Node {} *m_ptr; 
+        } x10; struct EditorClient {} *x11; NSInteger x12; struct String { 
+            struct RefPtr<WebCore::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } x13; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x14; void*x15; void*x16; struct InspectorController {} *x17; struct String { 
+            struct RefPtr<WebCore::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } x18; struct String { 
+            struct RefPtr<WebCore::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+    struct String { struct RefPtr<WebCore::StringImpl> { 
             struct StringImpl {} *m_ptr; 
-        } m_impl; 
-    struct WebResourceDelegateImplementationCache { 
+    struct _WebResourceDelegateImplementationCache { 
         int (*didCancelAuthenticationChallengeFunc)(); 
         int (*didReceiveAuthenticationChallengeFunc)(); 
-        int (*canAuthenticateAgainstProtectionSpaceFunc)(); 
-        int (*connectionPropertiesFunc)(); 
-        int (*webThreadDidFinishLoadingFromDataSourceFunc)(); 
-        int (*webThreadDidFailLoadingWithErrorFromDataSourceFunc)(); 
-        int (*webThreadIdentifierForRequestFunc)(); 
-        int (*webThreadDidLoadResourceFromMemoryCacheFunc)(); 
-        int (*webThreadWillSendRequestFunc)(); 
-        int (*webThreadDidReceiveResponseFunc)(); 
-        int (*webThreadDidReceiveContentLengthFunc)(); 
-        int (*webThreadWillCacheResponseFunc)(); 
         int (*identifierForRequestFunc)(); 
         int (*willSendRequestFunc)(); 
         int (*didReceiveResponseFunc)(); 
@@ -36,21 +55,14 @@
         int (*didLoadResourceFromMemoryCacheFunc)(); 
         int (*willCacheResponseFunc)(); 
         int (*plugInFailedWithErrorFunc)(); 
-        int (*shouldUseCredentialStorageFunc)(); 
-        int (*shouldPaintBrokenImageForURLFunc)(); 
-    struct WebFrameLoadDelegateImplementationCache { 
+    struct _WebFrameLoadDelegateImplementationCache { 
         int (*didClearWindowObjectForFrameFunc)(); 
-        int (*didClearWindowObjectForFrameInScriptWorldFunc)(); 
-        int (*didClearInspectorWindowObjectForFrameFunc)(); 
         int (*windowScriptObjectAvailableFunc)(); 
         int (*didHandleOnloadEventsForFrameFunc)(); 
         int (*didReceiveServerRedirectForProvisionalLoadForFrameFunc)(); 
         int (*didCancelClientRedirectForFrameFunc)(); 
         int (*willPerformClientRedirectToURLDelayFireDateForFrameFunc)(); 
         int (*didChangeLocationWithinPageForFrameFunc)(); 
-        int (*didPushStateWithinPageForFrameFunc)(); 
-        int (*didReplaceStateWithinPageForFrameFunc)(); 
-        int (*didPopStateWithinPageForFrameFunc)(); 
         int (*willCloseFrameFunc)(); 
         int (*didStartProvisionalLoadForFrameFunc)(); 
         int (*didReceiveTitleForFrameFunc)(); 
@@ -59,73 +71,22 @@
         int (*didFailLoadWithErrorForFrameFunc)(); 
         int (*didFinishLoadForFrameFunc)(); 
         int (*didFirstLayoutInFrameFunc)(); 
-        int (*didFirstVisuallyNonEmptyLayoutInFrameFunc)(); 
         int (*didFinishDocumentLoadForFrameFunc)(); 
-        int (*didDisplayInsecureContentFunc)(); 
-        int (*didRunInsecureContentFunc)(); 
-        int (*didDetectXSSFunc)(); 
-    struct WebScriptDebugDelegateImplementationCache { 
-        BOOL didParseSourceExpectsBaseLineNumber; 
-        BOOL exceptionWasRaisedExpectsHasHandlerFlag; 
-        int (*didParseSourceFunc)(); 
-        int (*failedToParseSourceFunc)(); 
-        int (*didEnterCallFrameFunc)(); 
-        int (*willExecuteStatementFunc)(); 
-        int (*willLeaveCallFrameFunc)(); 
-        int (*exceptionWasRaisedFunc)(); 
-    struct WebHistoryDelegateImplementationCache { 
-        int (*navigatedFunc)(); 
-        int (*clientRedirectFunc)(); 
-        int (*serverRedirectFunc)(); 
-        int (*setTitleFunc)(); 
-        int (*populateVisitedLinksFunc)(); 
     struct CGSize { 
         float width; 
         float height; 
-    struct Mutex { 
-        struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
-        } m_mutex; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id>> > { 
-        struct HashTable<unsigned long, std::__1::pair<unsigned long, WTF::RetainPtr<id>>, WTF::PairFirstExtractor<std::__1::pair<unsigned long, WTF::RetainPtr<id>>>, WTF::IntHash<unsigned long>, WTF::HashMapValueTraits<WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id>>>, WTF::HashTraits<unsigned long> > { 
-            struct pair<unsigned long, WTF::RetainPtr<id> > {} *m_table; 
-            int m_tableSize; 
-            int m_tableSizeMask; 
-            int m_keyCount; 
-            int m_deletedCount; 
-        } m_impl; 
-    struct OwnPtr<LayerFlushController> { 
-        struct LayerFlushController {} *m_ptr; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct RefPtr<WebCore::HistoryItem> { 
-        struct HistoryItem {} *m_ptr; 
+    struct HashMap<long unsigned int,WTF::RetainPtr<objc_object*>,WTF::IntHash<uintptr_t>,WTF::HashTraits<long unsigned int>,WTF::HashTraits<WTF::RetainPtr<objc_object*> > > { struct HashTable<long unsigned int,std::pair<long unsigned int, WTF::RetainPtr<objc_object*> >,WTF::PairFirstExtractor<std::pair<long unsigned int, WTF::RetainPtr<objc_object*> > >,WTF::IntHash<uintptr_t>,WTF::PairHashTraits<WTF::HashTraits<long unsigned int>, WTF::HashTraits<WTF::RetainPtr<objc_object*> > >,WTF::HashTraits<long unsigned int> > { 
+            struct pair<long unsigned int,WTF::RetainPtr<objc_object*> > {} *m_table; 
+            NSInteger m_tableSize; 
+            NSInteger m_tableSizeMask; 
+            NSInteger m_keyCount; 
+            NSInteger m_deletedCount; 
     id UIDelegate;
     id UIDelegateForwarder;
     id UIKitDelegate;
     id UIKitDelegateForwarder;
     id WebMailDelegate;
-    <WebCaretChangeListener> *_caretChangeListener;
-    NSMutableSet *_caretChangeListeners;
-    WebFixedPositionContent *_fixedPositionContent;
-    <WebGeolocationProvider> *_geolocationProvider;
-    } _globalHistoryItem;
-    int _keyboardUIMode;
-    BOOL _keyboardUIModeAccessed;
-    <WebNotificationProvider> *_notificationProvider;
     BOOL allowsMessaging;
-    BOOL allowsRemoteInspection;
     BOOL allowsUndo;
     NSString *applicationNameForUserAgent;
     struct CGColor { } *backgroundColor;
@@ -134,75 +95,57 @@
     BOOL catchesDelegateExceptions;
     BOOL closed;
     BOOL closing;
-    BOOL cssAnimationsSuspended;
-    WebNodeHighlight *currentNodeHighlight;
-    float customDeviceScaleFactor;
-    int didDrawTiles;
     id downloadDelegate;
     BOOL drawsBackground;
+    BOOL editable;
     id editingDelegate;
     id editingDelegateForwarder;
-    } fixedLayoutSize;
     <WebFormDelegate> *formDelegate;
     id formDelegateForwarder;
     id frameLoadDelegate;
     id frameLoadDelegateForwarder;
     } frameLoadDelegateImplementations;
-    WebVideoFullscreenController *fullscreenController;
     BOOL hasSpellCheckerDocumentTag;
-    id historyDelegate;
-    } historyDelegateImplementations;
-    NSString *hostApplicationBundleId;
-    NSString *hostApplicationName;
     WAKWindow *hostWindow;
-    } identifierMap;
-    BOOL includesFlattenedCompositingLayersWhenDrawingToBitmap;
-    WebIndicateLayer *indicateLayer;
+    BOOL hoverFeedbackSuspended;
+        } x1; } *identifierMap;
     WebInspector *inspector;
-    BOOL interactiveFormValidationEnabled;
-    BOOL isStopping;
-    } lastLayoutSize;
-    } layerFlushController;
-    <WebDeviceOrientationProvider> *m_deviceOrientationProvider;
+    NSInteger layoutInterval;
     BOOL mainFrameDocumentReady;
-    BOOL mainViewIsScrollingOrZooming;
+    double maxParseDuration;
     NSString *mediaStyle;
-    BOOL needsOneShotDrawingSynchronization;
+    float minimumZoomFontSize;
     void *observationInfo;
-    struct Page { } *page;
-    } pendingFixedPositionLayoutRect;
-    } pendingFixedPositionLayoutRectMutex;
+        } x19; void*x20; NSInteger x21; } *page;
     id policyDelegate;
     id policyDelegateForwarder;
-    BOOL postsAcceleratedCompositingNotifications;
     WebPreferences *preferences;
-    int programmaticFocusCount;
-    NSDictionary *remoteInspectorUserInfo;
+    NSInteger programmaticFocusCount;
     } resourceLoadDelegateImplementations;
     id resourceProgressDelegate;
-    id resourceProgressDelegateForwarder;
+    NSInteger rotationDegrees;
     id scriptDebugDelegate;
-    } scriptDebugDelegateImplementations;
-    BOOL selectTrailingWhitespaceEnabled;
+    id scriptDebugDelegateForwarder;
+    BOOL shouldCacheDecodedImages;
+    BOOL shouldCacheFileURLs;
     BOOL shouldCloseWithWindow;
-    BOOL shouldUpdateWhileOffscreen;
     BOOL smartInsertDeleteEnabled;
-    int spellCheckerDocumentTag;
+    NSInteger spellCheckerDocumentTag;
     BOOL tabKeyCyclesThroughElementsChanged;
+    BOOL telephoneNumberParsingEnabled;
+    float textSizeMultiplier;
     BOOL useSiteSpecificSpoofing;
-    } userAgent;
+        } x1; } *userAgent;
     BOOL userAgentOverridden;
     NSURL *userStyleSheetLocation;
+    BOOL usesLoaderCache;
     BOOL usesPageCache;
-    int validationMessageTimerMagnification;
-    float zoomMultiplier;
-    BOOL zoomsTextOnly;
+    } visibleSize;
+    BOOL windowState;
 }
 
 + (void)initialize;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;

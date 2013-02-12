@@ -5,21 +5,21 @@
 @class OADColor;
 
 @interface OADSolidFill : OADFill {
+    float mAlpha;
     OADColor *mColor;
+    BOOL mIsAlphaOverridden;
     BOOL mIsColorOverridden;
 }
 
-+ (id)blackFill;
 + (id)defaultProperties;
-+ (id)whiteFill;
 
+- (float)alpha;
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isColorOverridden;
-- (BOOL)isEqual:(id)arg1;
+- (void)setAlpha:(float)arg1;
 - (void)setColor:(id)arg1;
 - (void)setStyleColor:(id)arg1;
 

@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUColor;
+@class NSColorStub;
 
 @interface CMBordersProperty : CMProperty {
-    TSUColor *mBorderBottomColor;
-    TSUColor *mBorderColor;
-    TSUColor *mBorderLeftColor;
-    TSUColor *mBorderRightColor;
-    int mBorderStyle[5];
-    TSUColor *mBorderTopColor;
-    int mBorderWidth[5];
-    int mCustomWidth;
+    NSColorStub *mBorderBottomColor;
+    NSColorStub *mBorderColor;
+    NSColorStub *mBorderLeftColor;
+    NSColorStub *mBorderRightColor;
+    NSInteger mBorderStyle[5];
+    NSColorStub *mBorderTopColor;
+    NSInteger mBorderWidth[5];
+    NSInteger mCustomWidth;
 }
 
 + (BOOL)isStroked:(id)arg1;
@@ -23,12 +23,12 @@
 - (id)cssStringForName:(id)arg1;
 - (id)init;
 - (id)initWithOADStroke:(id)arg1;
-- (BOOL)isNoneAtLocation:(int)arg1;
-- (void)setFromOadStroke:(id)arg1 atLocation:(int)arg2 state:(id)arg3;
-- (void)setNoneAtLocation:(int)arg1;
+- (BOOL)isNoneAtLocation:(NSInteger)arg1;
+- (void)setFromOadStroke:(id)arg1 atLocation:(NSInteger)arg2 state:(id)arg3;
+- (void)setNoneAtLocation:(NSInteger)arg1;
 - (id)stringFromColor:(id)arg1;
-- (id)stringFromStyleEnum:(int)arg1;
-- (id)stringFromWidthEnum:(int)arg1;
+- (id)stringFromStyleEnum:(NSInteger)arg1;
+- (id)stringFromWidthEnum:(NSInteger)arg1;
 - (id)styleString;
 - (id)widthString;
 

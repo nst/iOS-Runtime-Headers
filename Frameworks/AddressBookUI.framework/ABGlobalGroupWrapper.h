@@ -5,7 +5,7 @@
 @interface ABGlobalGroupWrapper : ABGroupWrapper {
 }
 
-+ (id)newGlobalGroupWrapperWithAddressBook:(void*)arg1;
++ (id)createGlobalGroupWrapperWithAddressBook:(void*)arg1;
 
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGlobalWrapper;

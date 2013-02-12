@@ -3,16 +3,16 @@
  */
 
 @interface PDAnimationOleChartTarget : PDAnimationShapeTarget {
-    int mChartSubElementType;
-    int mLevel;
+    NSInteger mChartSubElementType;
+    NSInteger mLevel;
 }
 
-- (int)chartSubElementType;
-- (unsigned int)hash;
+- (NSInteger)chartSubElementType;
+- (NSUInteger)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (int)level;
-- (void)setChartSubElementType:(int)arg1;
-- (void)setLevel:(int)arg1;
+- (NSInteger)level;
+- (void)setChartSubElementType:(NSInteger)arg1;
+- (void)setLevel:(NSInteger)arg1;
 
 @end

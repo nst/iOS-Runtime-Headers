@@ -8,14 +8,14 @@
     NSKeyValueGetter *_valueGetter;
 }
 
-+ (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { NSUInteger x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 
 - (id)_nonNilArrayValueWithSelector:(SEL)arg1;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (void)_proxyNonGCFinalize;
-- (unsigned int)count;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (NSUInteger)count;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (id)objectAtIndex:(NSUInteger)arg1;
 - (id)objectsAtIndexes:(id)arg1;
 
 @end

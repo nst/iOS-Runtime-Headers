@@ -2,74 +2,53 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLCollection, NSString;
-
 @interface DOMHTMLElement : DOMElement {
 }
 
-@property(copy) NSString * accessKey;
-@property(readonly) DOMHTMLCollection * children;
-@property(copy) NSString * className;
-@property(copy) NSString * contentEditable;
-@property(copy) NSString * dir;
-@property(copy) NSString * idName;
-@property(copy) NSString * innerHTML;
-@property(copy) NSString * innerText;
+@property(retain,readonly) DOMHTMLCollection *children;
+@property(copy) NSString *className;
+@property(copy) NSString *contentEditable;
+@property(copy) NSString *dir;
+@property(copy) NSString *idName;
+@property(copy) NSString *innerHTML;
+@property(copy) NSString *innerText;
+@property(copy) NSString *lang;
+@property(copy) NSString *outerHTML;
+@property(copy) NSString *outerText;
+@property(copy) NSString *title;
+@property(copy,readonly) NSString *titleDisplayString;
 @property(readonly) BOOL isContentEditable;
-@property(copy) NSString * lang;
-@property(copy) NSString * outerHTML;
-@property(copy) NSString * outerText;
-@property int tabIndex;
-@property(copy) NSString * title;
-@property(readonly) NSString * titleDisplayString;
 
-- (void)absolutePosition:(int*)arg1 :(int*)arg2 :(int*)arg3 :(int*)arg4;
-- (id)accessKey;
++ (id)_wrapHTMLElement:(struct HTMLElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; }*)arg1;
+
+- (struct HTMLElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; }*)_HTMLElement;
+- (void)absolutePosition:(NSInteger*)arg1 :(NSInteger*)arg2 :(NSInteger*)arg3 :(NSInteger*)arg4;
 - (id)children;
-- (id)classList;
 - (id)className;
-- (void)click;
 - (id)contentEditable;
 - (id)dir;
-- (BOOL)draggable;
-- (BOOL)hidden;
 - (id)idName;
 - (id)innerHTML;
 - (id)innerText;
-- (id)insertAdjacentElement:(id)arg1 element:(id)arg2;
-- (void)insertAdjacentHTML:(id)arg1 html:(id)arg2;
-- (void)insertAdjacentText:(id)arg1 text:(id)arg2;
 - (BOOL)isContentEditable;
 - (id)lang;
 - (id)outerHTML;
 - (id)outerText;
-- (int)scrollXOffset;
-- (int)scrollYOffset;
-- (void)setAccessKey:(id)arg1;
+- (NSInteger)scrollXOffset;
+- (NSInteger)scrollYOffset;
 - (void)setClassName:(id)arg1;
 - (void)setContentEditable:(id)arg1;
 - (void)setDir:(id)arg1;
-- (void)setDraggable:(BOOL)arg1;
-- (void)setHidden:(BOOL)arg1;
 - (void)setIdName:(id)arg1;
 - (void)setInnerHTML:(id)arg1;
 - (void)setInnerText:(id)arg1;
 - (void)setLang:(id)arg1;
 - (void)setOuterHTML:(id)arg1;
 - (void)setOuterText:(id)arg1;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
-- (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
-- (void)setSpellcheck:(BOOL)arg1;
-- (void)setTabIndex:(int)arg1;
+- (void)setScrollXOffset:(NSInteger)arg1 scrollYOffset:(NSInteger)arg2 adjustForPurpleCaret:(BOOL)arg3;
+- (void)setScrollXOffset:(NSInteger)arg1 scrollYOffset:(NSInteger)arg2;
 - (void)setTitle:(id)arg1;
-- (void)setTranslate:(BOOL)arg1;
-- (void)setWebkitdropzone:(id)arg1;
-- (BOOL)spellcheck;
-- (int)structuralComplexityContribution;
-- (int)tabIndex;
 - (id)title;
 - (id)titleDisplayString;
-- (BOOL)translate;
-- (id)webkitdropzone;
 
 @end

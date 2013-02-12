@@ -2,15 +2,21 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMStyleSheet, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DOMProcessingInstruction : DOMNode {
+     /* Encoded args for previous method: @12@0:4^{ProcessingInstruction=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}^^?{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}^{CachedResource}{RefPtr<WebCore::StyleSheet>=^{StyleSheet}}BB}8 */
+     /* Encoded args for previous method: ^{ProcessingInstruction=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}^^?{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}^{CachedResource}{RefPtr<WebCore::StyleSheet>=^{StyleSheet}}BB}8@0:4 */
 }
 
-@property(copy) NSString * data;
-@property(readonly) DOMStyleSheet * sheet;
-@property(readonly) NSString * target;
+@property(copy) NSString *data;
+@property(copy,readonly) NSString *target;
 
++ (id)_wrapProcessingInstruction:(struct ProcessingInstruction { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; int (**x29)(); struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_30_1_1; } x30; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_31_1_1; } x31; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_32_1_1; } x32; struct CachedResource {} *x33; struct RefPtr<WebCore::StyleSheet> { struct StyleSheet {} *x_34_1_1; } x34; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x35; void*x36; }*)arg1;
+
+- (struct ProcessingInstruction { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; int (**x29)(); struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_30_1_1; } x30; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_31_1_1; } x31; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_32_1_1; } x32; struct CachedResource {} *x33; struct RefPtr<WebCore::StyleSheet> { struct StyleSheet {} *x_34_1_1; } x34; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x35; void*x36; }*)_processingInstruction;
 - (id)data;
 - (void)setData:(id)arg1;
 - (id)sheet;

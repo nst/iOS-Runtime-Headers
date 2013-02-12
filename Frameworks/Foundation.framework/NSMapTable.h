@@ -7,32 +7,28 @@
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)mapTableWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2;
++ (id)mapTableWithKeyOptions:(NSUInteger)arg1 valueOptions:(NSUInteger)arg2;
 + (id)mapTableWithStrongToStrongObjects;
 + (id)mapTableWithStrongToWeakObjects;
 + (id)mapTableWithWeakToStrongObjects;
 + (id)mapTableWithWeakToWeakObjects;
-+ (id)strongToStrongObjectsMapTable;
-+ (id)strongToWeakObjectsMapTable;
-+ (id)weakToStrongObjectsMapTable;
-+ (id)weakToWeakObjectsMapTable;
 
 - (id)allKeys;
 - (id)allValues;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (NSUInteger)count;
+- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)enumerator;
 - (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
-- (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
+- (NSUInteger)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKeyOptions:(unsigned int)arg1 valueOptions:(unsigned int)arg2 capacity:(unsigned int)arg3;
-- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned int)arg3;
+- (id)initWithKeyOptions:(NSUInteger)arg1 valueOptions:(NSUInteger)arg2 capacity:(NSUInteger)arg3;
+- (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(NSUInteger)arg3;
 - (id)keyEnumerator;
 - (id)keyPointerFunctions;
 - (BOOL)mapMember:(const void*)arg1 originalKey:(const void**)arg2 value:(const void**)arg3;

@@ -5,17 +5,17 @@
 @interface MFPath : NSObject <NSCopying> {
 }
 
-- (int)abort;
-- (int)begin;
-- (int)closeFigure;
+- (NSInteger)abort;
+- (NSInteger)begin;
+- (NSInteger)closeFigure;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CGPoint { float x1; float x2; })currentPoint;
-- (int)end;
-- (int)fill:(id)arg1;
-- (int)flatten;
+- (NSInteger)end;
+- (NSInteger)fill:(id)arg1;
+- (NSInteger)flatten;
 - (BOOL)isOpen;
-- (int)state;
-- (int)stroke:(id)arg1;
-- (int)widen:(id)arg1;
+- (NSInteger)state;
+- (NSInteger)stroke:(id)arg1;
+- (NSInteger)widen:(id)arg1;
 
 @end

@@ -2,11 +2,18 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class NSString, WDABoundingBox;
+
 @interface WDPicture : WDOfficeArt {
+    WDABoundingBox *mBoundingBox;
+    NSString *mName;
 }
 
+- (id)boundingBox;
 - (void)dealloc;
 - (BOOL)hasContent;
-- (int)runType;
+- (id)name;
+- (NSInteger)runType;
+- (void)setBoundingBox:(id)arg1;
 
 @end

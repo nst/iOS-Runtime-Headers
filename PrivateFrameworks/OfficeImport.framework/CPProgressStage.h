@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CPProgressStage, NSString, CPProgressContext;
+@class CPProgressContext, CPProgressStage;
 
 @interface CPProgressStage : NSObject {
     CPProgressContext *m_context;
     double m_currentPosition;
-    NSString *m_name;
     CPProgressStage *m_parentStage;
+    double m_startInParent;
     double m_stepsInParent;
     double m_totalSteps;
 }
@@ -17,9 +17,8 @@
 - (double)currentPosition;
 - (void)dealloc;
 - (void)end;
-- (id)initBranchWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3 inContext:(id)arg4;
 - (id)initRootStageInContext:(id)arg1;
-- (id)initWithSteps:(double)arg1 takingSteps:(double)arg2 name:(id)arg3 inContext:(id)arg4;
+- (id)initWithSteps:(double)arg1 takingSteps:(double)arg2 inContext:(id)arg3;
 - (id)parentStage;
 - (void)setProgress:(double)arg1;
 

@@ -6,32 +6,30 @@
 }
 
 + (id)accountTypeString;
-+ (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)localAccount;
 
 - (id)_URLScheme;
-- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 dictionary:(id)arg5;
+- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 existingMailboxUid:(id)arg4 permanentTag:(id)arg5 dictionary:(id)arg6;
 - (id)_infoForMatchingURL:(id)arg1;
 - (BOOL)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
-- (BOOL)_shouldConfigureMailboxCache;
 - (void)_synchronouslyLoadListingForParent:(id)arg1;
 - (BOOL)canFetch;
-- (BOOL)canGoOffline;
-- (BOOL)deleteInPlaceForMailbox:(id)arg1;
 - (id)displayName;
-- (id)initWithLibrary:(id)arg1 properties:(id)arg2;
+- (NSInteger)fetchSynchronously;
+- (id)initWithPath:(id)arg1;
+- (BOOL)isOffline;
 - (id)mailboxPathExtension;
 - (id)mailboxUidForFileSystemPath:(id)arg1;
 - (id)password:(BOOL)arg1;
 - (id)primaryMailboxUid;
-- (id)pushedMailboxUids;
 - (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
 - (void)setHostname:(id)arg1;
+- (void)setIsOffline:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setPath:(id)arg1;
 - (void)setUsername:(id)arg1;
+- (BOOL)shouldAutoFetch;
 - (Class)storeClass;
-- (BOOL)supportsAppend;
-- (id)transientDraftsFolder;
 - (id)uniqueId;
 
 @end

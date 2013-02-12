@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class NSURLRequest, NSString, <WebPluginContainerCheckController>, WebPolicyDecisionListener;
+@class NSString, NSURLRequest, WebPluginController, WebPolicyDecisionListener;
 
 @interface WebPluginContainerCheck : NSObject {
-    id _contextInfo;
-    <WebPluginContainerCheckController> *_controller;
+    WebPluginController *_controller;
     BOOL _done;
     WebPolicyDecisionListener *_listener;
     NSURLRequest *_request;
@@ -15,17 +14,16 @@
     NSString *_target;
 }
 
-+ (id)checkWithRequest:(id)arg1 target:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4 controller:(id)arg5 contextInfo:(id)arg6;
++ (id)checkWithRequest:(id)arg1 target:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4 controller:(id)arg5;
 
 - (id)_actionInformationWithURL:(id)arg1;
 - (void)_askPolicyDelegate;
-- (void)_continueWithPolicy:(int)arg1;
+- (void)_continueWithPolicy:(NSInteger)arg1;
 - (BOOL)_isForbiddenFileLoad;
 - (void)cancel;
-- (id)contextInfo;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithRequest:(id)arg1 target:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4 controller:(id)arg5 contextInfo:(id)arg6;
+- (id)initWithRequest:(id)arg1 target:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4 controller:(id)arg5;
 - (void)start;
 
 @end

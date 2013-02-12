@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class VMUSymbolOwner, NSString;
+@class NSString, VMUSymbolOwner;
 
 @interface VMURegion : VMUAddressRange <NSCoding, NSCopying> {
     NSString *_name;
@@ -12,12 +12,12 @@
 + (id)regionWithOwner:(id)arg1 name:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3;
 
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
-- (int)compare:(id)arg1;
+- (NSInteger)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOwner:(id)arg1 name:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3;
 - (BOOL)isEqual:(id)arg1;

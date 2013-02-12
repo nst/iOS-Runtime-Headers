@@ -2,28 +2,28 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
-
-@class NSWeakCallback;
 
 @interface NSConcretePointerFunctions : NSPointerFunctions {
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
         BOOL wantsWeak; 
-        BOOL wantsARC; 
         BOOL shouldCopyIn; 
         BOOL usesStrong; 
         BOOL usesWeak; 
-        BOOL usesARC; 
         BOOL usesSentinel; 
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        NSWeakCallback *callback; 
+        struct auto_weak_callback_block { 
+            struct auto_weak_callback_block {} *next; 
+            int (*callback_function)(); 
+            void *arg1; 
+            void *arg2; 
+        } block; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -35,11 +35,13 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
+     /* Encoded args for previous method: v16@0:4^{NSSlice=^^vccccccccc{auto_weak_callback_block=^{auto_weak_callback_block}^?^v^v}^?^?^?^?^?^?^?^?^?^?^?}8B12 */
+     /* Encoded args for previous method: B16@0:4^{NSSlice=^^vccccccccc{auto_weak_callback_block=^{auto_weak_callback_block}^?^v^v}^?^?^?^?^?^?^?^?^?^?^?}8I12 */
     } slice;
 }
 
-+ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; id x13; int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); int (*x24)(); }*)arg1 sentinel:(BOOL)arg2 compactable:(BOOL)arg3;
-+ (bool)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; id x13; int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); int (*x24)(); }*)arg1 withOptions:(unsigned int)arg2;
++ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; struct auto_weak_callback_block { struct auto_weak_callback_block {} *x_11_1_1; int (*x_11_1_2)(); void *x_11_1_3; void *x_11_1_4; } x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 sentinel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
++ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; struct auto_weak_callback_block { struct auto_weak_callback_block {} *x_11_1_1; int (*x_11_1_2)(); void *x_11_1_3; void *x_11_1_4; } x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 withOptions:(NSUInteger)arg2;
 
 - (int (*)())acquireFunction;
 - (int (*)())descriptionFunction;
@@ -48,8 +50,8 @@
 - (int (*)())relinquishFunction;
 - (int (*)())sizeFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (id)initWithOptions:(unsigned int)arg1;
+- (NSUInteger)hash;
+- (id)initWithOptions:(NSUInteger)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)setAcquireFunction:(int (*)())arg1;
 - (void)setDescriptionFunction:(int (*)())arg1;

@@ -8,10 +8,8 @@
     NSMutableDictionary *mStringDictionary;
 }
 
-- (unsigned int)addObject:(id)arg1;
-- (unsigned int)addOrEquivalentObject:(id)arg1;
+- (NSUInteger)addObject:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 
 @end

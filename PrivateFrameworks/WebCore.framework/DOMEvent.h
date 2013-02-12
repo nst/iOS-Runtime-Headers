@@ -2,28 +2,33 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString, <DOMEventTarget>;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DOMEvent : DOMObject {
+     /* Encoded args for previous method: @12@0:4^{Event=^^?i{AtomicString={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}}BBBBBB^{EventTarget}S{RefPtr<WebCore::EventTarget>=^{EventTarget}}Q{RefPtr<WebCore::Event>=^{Event}}}8 */
+     /* Encoded args for previous method: ^{Event=^^?i{AtomicString={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}}BBBBBB^{EventTarget}S{RefPtr<WebCore::EventTarget>=^{EventTarget}}Q{RefPtr<WebCore::Event>=^{Event}}}8@0:4 */
+     /* Encoded args for previous method: @12@0:4^{Event=^^?i{AtomicString={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}}BBBBBB^{EventTarget}S{RefPtr<WebCore::EventTarget>=^{EventTarget}}Q{RefPtr<WebCore::Event>=^{Event}}}8 */
 }
 
+@property(retain,readonly) <DOMEventTarget> *currentTarget;
+@property(retain,readonly) <DOMEventTarget> *target;
+@property(copy,readonly) NSString *type;
 @property(readonly) BOOL bubbles;
-@property BOOL cancelBubble;
 @property(readonly) BOOL cancelable;
-@property(readonly) <DOMEventTarget> * currentTarget;
 @property(readonly) unsigned short eventPhase;
-@property BOOL returnValue;
-@property(readonly) <DOMEventTarget> * srcElement;
-@property(readonly) <DOMEventTarget> * target;
 @property(readonly) unsigned long long timeStamp;
-@property(readonly) NSString * type;
 
++ (id)_wrapEvent:(struct Event { int (**x1)(); NSInteger x2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; struct EventTarget {} *x10; unsigned short x11; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_12_1_1; } x12; unsigned long long x13; struct RefPtr<WebCore::Event> { struct Event {} *x_14_1_1; } x14; }*)arg1;
+
+- (struct Event { int (**x1)(); NSInteger x2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; struct EventTarget {} *x10; unsigned short x11; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_12_1_1; } x12; unsigned long long x13; struct RefPtr<WebCore::Event> { struct Event {} *x_14_1_1; } x14; }*)_event;
+- (id)_initWithEvent:(struct Event { int (**x1)(); NSInteger x2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; struct EventTarget {} *x10; unsigned short x11; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_12_1_1; } x12; unsigned long long x13; struct RefPtr<WebCore::Event> { struct Event {} *x_14_1_1; } x14; }*)arg1;
 - (BOOL)bubbles;
 - (BOOL)cancelBubble;
 - (BOOL)cancelable;
 - (id)currentTarget;
 - (void)dealloc;
-- (BOOL)defaultPrevented;
 - (unsigned short)eventPhase;
 - (void)finalize;
 - (void)initEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3;
@@ -33,7 +38,6 @@
 - (void)setCancelBubble:(BOOL)arg1;
 - (void)setReturnValue:(BOOL)arg1;
 - (id)srcElement;
-- (void)stopImmediatePropagation;
 - (void)stopPropagation;
 - (id)target;
 - (unsigned long long)timeStamp;

@@ -2,66 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIImage;
-
 @interface UISwitch : UIControl <NSCoding> {
     id _control;
-    float _enabledAlpha;
 }
 
-@property float enabledAlpha;
-@property(retain) UIImage * offImage;
 @property(getter=isOn) BOOL on;
-@property(getter=_onColor,setter=_setOnColor:,retain) UIColor * onColor;
-@property(retain) UIImage * onImage;
-@property(retain) UIColor * onTintColor;
-@property(retain) UIColor * thumbTintColor;
-@property(retain) UIColor * tintColor;
 
-- (void)_animateToOn:(BOOL)arg1 withDuration:(float)arg2 sendAction:(BOOL)arg3;
-- (void)_commonInitNewLook;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
-- (void)_encodeFrameWithCoder:(id)arg1;
-- (void)_handlePanNL:(id)arg1;
-- (void)_handleTapNL:(id)arg1;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_onAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (id)_onColor;
-- (id)_onTintColor;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_scriptingInfo;
-- (void)_setOnColor:(id)arg1;
-- (void)_setOnTintColor:(id)arg1;
-- (BOOL)_useOldSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(NSUInteger)arg3;
 - (void)dealloc;
-- (unsigned long long)defaultAccessibilityTraits;
-- (float)enabledAlpha;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElementByDefault;
-- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (BOOL)isEnabled;
+- (BOOL)isHighlighted;
 - (BOOL)isOn;
-- (id)offImage;
-- (id)onImage;
-- (id)onTintColor;
-- (void)setAlpha:(float)arg1;
+- (BOOL)isSelected;
+- (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(NSUInteger)arg3;
 - (void)setAlternateColors:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setEnabledAlpha:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOffImage:(id)arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOn:(BOOL)arg1;
-- (void)setOnImage:(id)arg1;
-- (void)setOnTintColor:(id)arg1;
-- (void)setThumbTintColor:(id)arg1;
-- (void)setTintColor:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)thumbTintColor;
-- (id)tintColor;
+- (NSUInteger)state;
 
 @end

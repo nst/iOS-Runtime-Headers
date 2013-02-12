@@ -2,26 +2,39 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSMutableSet;
+
 @interface UIEvent : NSObject {
+    void *_event;
+    struct __CFDictionary { } *_keyedTouches;
     double _timestamp;
+    NSMutableSet *_touches;
 }
 
-@property(readonly) int subtype;
-@property(readonly) double timestamp;
-@property(readonly) int type;
+@property(readonly) double timestamp; /* unknown property attribute: V_timestamp */
 
+- (void)_addTouch:(id)arg1;
+- (id)_allTouches;
+- (void)_clearTouches;
+- (id)_cloneEvent;
+- (id)_firstTouchForView:(id)arg1;
 - (struct __GSEvent { }*)_gsEvent;
 - (id)_init;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
-- (void)_setTimestamp:(double)arg1;
-- (int)_shakeState;
-- (id)_touchesForGestureRecognizer:(id)arg1;
+- (id)_initWithTouches:(id)arg1 keyedTouches:(struct __CFDictionary { }*)arg2;
+- (void)_moveTouchesFromView:(id)arg1 toView:(id)arg2;
+- (void)_removeTouch:(id)arg1;
+- (void)_removeTouchesForKey:(id)arg1;
+- (void)_setGSEvent:(struct __GSEvent { }*)arg1;
+- (id)_touchesForKey:(id)arg1;
+- (id)_touchesForView:(id)arg1 withPhase:(NSInteger)arg2;
+- (id)_viewsForWindow:(id)arg1;
+- (id)_windows;
 - (id)allTouches;
-- (int)subtype;
+- (void)dealloc;
+- (id)description;
 - (double)timestamp;
-- (id)touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
-- (int)type;
 
 @end

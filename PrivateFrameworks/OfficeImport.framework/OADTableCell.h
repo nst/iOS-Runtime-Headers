@@ -2,38 +2,37 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTextBody, OADTableCellProperties;
+@class OADTableCellProperties, OADTextBody;
 
 @interface OADTableCell : NSObject {
-    int mGridSpan;
+    NSInteger mGridSpan;
     BOOL mHorzMerge;
-    int mLeftColumn;
+    NSInteger mLeftColumn;
     OADTableCellProperties *mProperties;
-    int mRowSpan;
+    NSInteger mRowSpan;
     OADTextBody *mTextBody;
-    int mTopRow;
+    NSInteger mTopRow;
     BOOL mVertMerge;
 }
 
 - (void)dealloc;
-- (int)gridSpan;
+- (NSInteger)gridSpan;
 - (BOOL)horzMerge;
 - (id)init;
-- (int)leftColumn;
-- (BOOL)merge:(int)arg1;
+- (NSInteger)leftColumn;
 - (id)properties;
-- (int)rowSpan;
-- (void)setGridSpan:(int)arg1;
+- (NSInteger)rowSpan;
+- (void)setGridSpan:(NSInteger)arg1;
 - (void)setHorzMerge:(BOOL)arg1;
-- (void)setLeftColumn:(int)arg1;
+- (void)setLeftColumn:(NSInteger)arg1;
 - (void)setProperties:(id)arg1;
-- (void)setRowSpan:(int)arg1;
+- (void)setRowSpan:(NSInteger)arg1;
 - (void)setTextBody:(id)arg1;
-- (void)setTopRow:(int)arg1;
+- (void)setTopRow:(NSInteger)arg1;
 - (void)setVertMerge:(BOOL)arg1;
-- (int)spanAlongDir:(int)arg1;
+- (NSInteger)spanAlongDir:(NSInteger)arg1;
 - (id)textBody;
-- (int)topRow;
+- (NSInteger)topRow;
 - (BOOL)vertMerge;
 
 @end

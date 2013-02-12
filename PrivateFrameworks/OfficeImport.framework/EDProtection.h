@@ -2,20 +2,27 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface EDProtection : NSObject <NSCopying> {
-    boolmHidden;
-    boolmLocked;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHidden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mLocked;
 }
 
-+ (id)protectionWithHidden:(bool)arg1 locked:(bool)arg2;
-
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
-- (id)initWithHidden:(bool)arg1 locked:(bool)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToProtection:(id)arg1;
-- (bool)isHidden;
-- (bool)isLocked;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHidden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLocked;
+- (void)setHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setLocked:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 
 @end

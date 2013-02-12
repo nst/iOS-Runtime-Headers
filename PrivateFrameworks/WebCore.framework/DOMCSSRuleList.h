@@ -2,14 +2,25 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface DOMCSSRuleList : DOMObject {
+     /* Encoded args for previous method: @12@0:4^{CSSRuleList=i{DeprecatedPtrList<WebCore::CSSRule>={DeprecatedPtrListImpl=^{DeprecatedListNode}^{DeprecatedListNode}^{DeprecatedListNode}I^?^{DeprecatedPtrListImplIterator}}B}}8 */
+     /* Encoded args for previous method: ^{CSSRuleList=i{DeprecatedPtrList<WebCore::CSSRule>={DeprecatedPtrListImpl=^{DeprecatedListNode}^{DeprecatedListNode}^{DeprecatedListNode}I^?^{DeprecatedPtrListImplIterator}}B}}8@0:4 */
+     /* Encoded args for previous method: @12@0:4^{CSSRuleList=i{DeprecatedPtrList<WebCore::CSSRule>={DeprecatedPtrListImpl=^{DeprecatedListNode}^{DeprecatedListNode}^{DeprecatedListNode}I^?^{DeprecatedPtrListImplIterator}}B}}8 */
 }
 
-@property(readonly) unsigned int length;
+@property(readonly) NSUInteger length;
 
++ (id)_wrapCSSRuleList:(struct CSSRuleList { NSInteger x1; struct DeprecatedPtrList<WebCore::CSSRule> { struct DeprecatedPtrListImpl { struct DeprecatedListNode {} *x_1_2_1; struct DeprecatedListNode {} *x_1_2_2; struct DeprecatedListNode {} *x_1_2_3; NSUInteger x_1_2_4; int (*x_1_2_5)(); struct DeprecatedPtrListImplIterator {} *x_1_2_6; } x_2_1_1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_2; } x2; }*)arg1;
+
+- (struct CSSRuleList { NSInteger x1; struct DeprecatedPtrList<WebCore::CSSRule> { struct DeprecatedPtrListImpl { struct DeprecatedListNode {} *x_1_2_1; struct DeprecatedListNode {} *x_1_2_2; struct DeprecatedListNode {} *x_1_2_3; NSUInteger x_1_2_4; int (*x_1_2_5)(); struct DeprecatedPtrListImplIterator {} *x_1_2_6; } x_2_1_1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_2; } x2; }*)_CSSRuleList;
+- (id)_initWithCSSRuleList:(struct CSSRuleList { NSInteger x1; struct DeprecatedPtrList<WebCore::CSSRule> { struct DeprecatedPtrListImpl { struct DeprecatedListNode {} *x_1_2_1; struct DeprecatedListNode {} *x_1_2_2; struct DeprecatedListNode {} *x_1_2_3; NSUInteger x_1_2_4; int (*x_1_2_5)(); struct DeprecatedPtrListImplIterator {} *x_1_2_6; } x_2_1_1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_2; } x2; }*)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (id)item:(unsigned int)arg1;
-- (unsigned int)length;
+- (id)item:(NSUInteger)arg1;
+- (NSUInteger)length;
 
 @end

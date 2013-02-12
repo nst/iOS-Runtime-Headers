@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADShade, NSMutableArray, OADRelativeRect;
+@class NSMutableArray, OADRelativeRect, OADShade;
 
 @interface OADGradientFill : OADFill {
     BOOL mAreStopsOverridden;
-    int mFlipMode;
+    NSInteger mFlipMode;
+    float mFocus;
     BOOL mIsFlipModeOverridden;
+    BOOL mIsFocusOverridden;
     BOOL mIsRotateWithShapeOverridden;
     BOOL mIsShadeOverridden;
     BOOL mIsTileRectOverridden;
@@ -24,16 +26,17 @@
 - (void)clearStops;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)flipMode;
-- (unsigned int)hash;
+- (NSInteger)flipMode;
+- (float)focus;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFlipModeOverridden;
+- (BOOL)isFocusOverridden;
 - (BOOL)isRotateWithShapeOverridden;
 - (BOOL)isShadeOverridden;
 - (BOOL)isTileRectOverridden;
 - (BOOL)rotateWithShape;
-- (void)setFlipMode:(int)arg1;
+- (void)setFlipMode:(NSInteger)arg1;
+- (void)setFocus:(float)arg1;
 - (void)setParent:(id)arg1;
 - (void)setRotateWithShape:(BOOL)arg1;
 - (void)setShade:(id)arg1;
@@ -41,9 +44,9 @@
 - (void)setStyleColor:(id)arg1;
 - (void)setTileRect:(id)arg1;
 - (id)shade;
-- (id)stopColorAtIndex:(unsigned int)arg1;
-- (unsigned int)stopCount;
-- (float)stopPositionAtIndex:(unsigned int)arg1;
+- (id)stopColorAtIndex:(NSInteger)arg1;
+- (NSInteger)stopCount;
+- (float)stopPositionAtIndex:(NSInteger)arg1;
 - (id)stops;
 - (id)tileRect;
 

@@ -3,24 +3,25 @@
  */
 
 @interface VMUTaskMemoryCache : NSObject {
-    struct mapped_memory_t { } *_memoryRegions;
-    BOOL _shouldTouchPages;
+    struct { unsigned long x1; unsigned long x2; struct { /* ? */ } *x3; } *_memoryRegions;
     BOOL _stopped;
-    unsigned int _task;
+    NSUInteger _task;
     BOOL _taskIs64Bit;
 }
 
-+ (BOOL)taskIs64Bit:(unsigned int)arg1;
-+ (id)taskMemoryCacheForTask:(unsigned int)arg1;
++ (BOOL)taskIs64Bit:(NSUInteger)arg1;
 
 - (BOOL)copyRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 to:(void*)arg2;
 - (void)dealloc;
 - (void)finalize;
 - (void)flushMemoryCache;
-- (id)initWithTask:(unsigned int)arg1;
-- (int)peekAtAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnsBuf:(void**)arg3;
-- (int)readPointerAt:(unsigned long long)arg1 value:(unsigned long long*)arg2;
-- (int)startPeeking;
-- (int)stopPeeking;
+- (void)freeMemoryRegions;
+- (void)initMemoryRegions;
+- (id)initWithTask:(NSUInteger)arg1;
+- (NSInteger)peekAtAddress:(NSUInteger)arg1 returnsSize:(NSUInteger*)arg2 returnsBuf:(void**)arg3;
+- (NSInteger)peekAtAddress:(NSUInteger)arg1 size:(NSUInteger)arg2 returnsBuf:(void**)arg3;
+- (NSInteger)readPointerAt:(NSUInteger)arg1 value:(NSUInteger*)arg2;
+- (NSInteger)startPeeking;
+- (NSInteger)stopPeeking;
 
 @end

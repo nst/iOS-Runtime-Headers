@@ -3,15 +3,15 @@
  */
 
 @interface GQDWPTextLabel : NSObject {
-    int mFirst;
+    NSInteger mFirst;
     struct __CFString { } *mFormat;
-    int mLabelType;
+    NSInteger mLabelType;
 }
 
 - (void)dealloc;
-- (int)first;
+- (NSInteger)first;
 - (struct __CFString { }*)format;
-- (int)labelType;
-- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (NSInteger)labelType;
+- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 
 @end

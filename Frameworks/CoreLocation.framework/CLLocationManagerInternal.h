@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class <CLLocationManagerDelegate>, NSString;
+@class <CLLocationManagerDelegate>;
 
 @interface CLLocationManagerInternal : NSObject {
     struct { 
-        int suitability; 
+        NSInteger suitability; 
         struct { 
             double latitude; 
             double longitude; 
@@ -14,48 +14,23 @@
         double horizontalAccuracy; 
         double altitude; 
         double verticalAccuracy; 
+        double heading; 
         double speed; 
-        double speedAccuracy; 
         double course; 
-        double courseAccuracy; 
         double timestamp; 
-        int confidence; 
-        double lifespan; 
-        int type; 
-        struct { 
-            double latitude; 
-            double longitude; 
-        } rawCoordinate; 
-        double rawCourse; 
     struct { 
         double bestAccuracy; 
-    int fActivityType;
-    BOOL fAllowsLocationPrompts;
-    BOOL fAllowsMapCorrection;
-    BOOL fBatchingLocation;
     } fCapabilities;
     BOOL fCapabilitiesValid;
     struct __CLClient { } *fClient;
     <CLLocationManagerDelegate> *fDelegate;
     double fDesiredAccuracy;
     double fDistanceFilter;
-    double fHeadingFilter;
-    int fHeadingOrientation;
     } fLocation;
-    NSString *fLocationEventType;
-    BOOL fPaused;
-    int fPausesLocationUpdatesAutomatically;
-    BOOL fPersistentMonitoringEnabled;
-    int fPreviousAuthorizationStatus;
-    BOOL fPreviousAuthorizationStatusValid;
-    BOOL fUpdatingHeading;
     BOOL fUpdatingLocation;
 }
 
-- (int)PausesLocationUpdatesAutomatically;
 - (void)dealloc;
-- (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
-- (void)setPausesLocationUpdatesAutomatically:(int)arg1;
-- (void)stopUpdatingLocationAutoPaused;
+- (id)initWithInfo:(id)arg1;
 
 @end

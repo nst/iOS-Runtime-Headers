@@ -14,14 +14,14 @@
     void *_reserved;
 }
 
-+ (id)decimalNumberHandlerWithRoundingMode:(unsigned int)arg1 scale:(short)arg2 raiseOnExactness:(BOOL)arg3 raiseOnOverflow:(BOOL)arg4 raiseOnUnderflow:(BOOL)arg5 raiseOnDivideByZero:(BOOL)arg6;
++ (id)decimalNumberHandlerWithRoundingMode:(NSUInteger)arg1 scale:(short)arg2 raiseOnExactness:(BOOL)arg3 raiseOnOverflow:(BOOL)arg4 raiseOnUnderflow:(BOOL)arg5 raiseOnDivideByZero:(BOOL)arg6;
 + (id)defaultDecimalNumberHandler;
 
 - (void)encodeWithCoder:(id)arg1;
-- (id)exceptionDuringOperation:(SEL)arg1 error:(unsigned int)arg2 leftOperand:(id)arg3 rightOperand:(id)arg4;
+- (id)exceptionDuringOperation:(SEL)arg1 error:(NSUInteger)arg2 leftOperand:(id)arg3 rightOperand:(id)arg4;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRoundingMode:(unsigned int)arg1 scale:(short)arg2 raiseOnExactness:(BOOL)arg3 raiseOnOverflow:(BOOL)arg4 raiseOnUnderflow:(BOOL)arg5 raiseOnDivideByZero:(BOOL)arg6;
-- (unsigned int)roundingMode;
+- (id)initWithRoundingMode:(NSUInteger)arg1 scale:(short)arg2 raiseOnExactness:(BOOL)arg3 raiseOnOverflow:(BOOL)arg4 raiseOnUnderflow:(BOOL)arg5 raiseOnDivideByZero:(BOOL)arg6;
+- (NSUInteger)roundingMode;
 - (short)scale;
 
 @end

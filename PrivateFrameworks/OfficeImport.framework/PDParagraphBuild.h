@@ -6,25 +6,25 @@
 
 @interface PDParagraphBuild : PDBuild {
     double mAutoAdvanceTime;
-    int mBuildLevel;
+    NSInteger mBuildLevel;
     BOOL mIsReversedParagraphOrder;
     NSMutableArray *mTimeNodeDataList;
-    int mType;
+    NSInteger mType;
 }
 
 - (id)addTimeNodeData;
 - (double)autoAdvanceTime;
-- (int)buildLevel;
+- (NSInteger)buildLevel;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isReversedParagraphOrder;
 - (void)setAutoAdvanceTime:(double)arg1;
-- (void)setBuildLevel:(int)arg1;
+- (void)setBuildLevel:(NSInteger)arg1;
 - (void)setIsReversedParagraphOrder:(BOOL)arg1;
-- (void)setType:(int)arg1;
-- (id)timeNodeDataAtIndex:(int)arg1;
+- (void)setType:(NSInteger)arg1;
+- (id)timeNodeDataAtIndex:(NSInteger)arg1;
 - (id)timeNodeDataList;
-- (int)timeNodeDataListCount;
-- (int)type;
+- (NSInteger)timeNodeDataListCount;
+- (NSInteger)type;
 
 @end

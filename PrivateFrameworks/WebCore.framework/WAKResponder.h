@@ -5,21 +5,22 @@
 @interface WAKResponder : NSObject {
 }
 
-- (void)_forwardEvent:(id)arg1;
+- (void)_forwardEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (void)deleteBackward:(id)arg1;
 - (void)deleteForward:(id)arg1;
-- (void)handleEvent:(id)arg1;
+- (void)handleEvent:(struct __GSEvent { }*)arg1;
 - (void)insertParagraphSeparator:(id)arg1;
 - (void)insertText:(id)arg1;
-- (void)keyDown:(id)arg1;
-- (void)keyUp:(id)arg1;
-- (void)mouseDown:(id)arg1;
-- (void)mouseEntered:(id)arg1;
-- (void)mouseExited:(id)arg1;
-- (void)mouseMoved:(id)arg1;
-- (void)mouseUp:(id)arg1;
+- (void)keyDown:(struct __GSEvent { }*)arg1;
+- (void)keyUp:(struct __GSEvent { }*)arg1;
+- (void)mouseDown:(struct __GSEvent { }*)arg1;
+- (void)mouseDragged:(struct __GSEvent { }*)arg1;
+- (void)mouseEntered:(struct __GSEvent { }*)arg1;
+- (void)mouseExited:(struct __GSEvent { }*)arg1;
+- (void)mouseMoved:(struct __GSEvent { }*)arg1;
+- (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (void)moveDown:(id)arg1;
 - (void)moveDownAndModifySelection:(id)arg1;
 - (void)moveLeft:(id)arg1;
@@ -30,8 +31,8 @@
 - (void)moveUpAndModifySelection:(id)arg1;
 - (id)nextResponder;
 - (BOOL)resignFirstResponder;
-- (void)scrollWheel:(id)arg1;
-- (void)touch:(id)arg1;
+- (void)scrollWheel:(struct __GSEvent { }*)arg1;
+- (void)touch:(struct __GSEvent { }*)arg1;
 - (BOOL)tryToPerform:(SEL)arg1 with:(id)arg2;
 
 @end

@@ -2,32 +2,28 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MPMediaItemCollection;
+@class NSString;
 
 @interface PLPhotosDefaults : NSObject {
-    MPMediaItemCollection *_musicCollection;
-    int _secondsPerSlide;
-    BOOL _shouldPlayMusic;
+    NSString *_musicForSlideshow;
+    NSInteger _secondsPerSlide;
     BOOL _shouldRepeat;
     BOOL _shouldShuffle;
-    int _transition;
+    NSInteger _transition;
 }
 
-+ (int)randomTransition;
++ (NSInteger)randomTransition;
 + (id)sharedInstance;
 
-- (void)dealloc;
+- (BOOL)debugIndexSheetScrolling;
 - (id)init;
-- (id)musicCollection;
-- (int)secondsPerSlide;
-- (void)setMusicCollection:(id)arg1;
-- (void)setPhotoDefaultValues;
-- (void)setShouldPlayMusic:(BOOL)arg1;
-- (void)setTransition:(int)arg1;
+- (id)musicForSlideshow;
+- (NSInteger)secondsPerSlide;
 - (BOOL)shouldPlayMusic;
 - (BOOL)shouldRepeat;
 - (BOOL)shouldShuffle;
-- (int)transition;
-- (int)transitionForAnimationMovingForward:(BOOL)arg1;
+- (NSInteger)smoothScrollBehavior;
+- (NSInteger)transition;
+- (NSInteger)transitionForAnimationMovingForward:(BOOL)arg1;
 
 @end

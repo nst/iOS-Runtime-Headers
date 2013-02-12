@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, NSMutableString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSMutableString, NSString;
 
 @interface EMNumberFormatter : NSObject {
-    boolmIsNegativeRed;
+     /* Encoded args for previous method: B8@0:4 */
     NSString *excelFormatString;
-    int formatType;
+    NSInteger formatType;
     NSMutableString *icuFormatString;
     struct __CFNumberFormatter { } *mBigNumberFormatter;
     struct __CFNumberFormatter { } *mCurrencyFormatter;
@@ -15,6 +19,7 @@
     struct __CFDateFormatter { } *mDateFormatter;
     struct __CFNumberFormatter { } *mGenericFormatter;
     struct __CFNumberFormatter { } *mSmallNumberFormatter;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsNegativeRed;
 }
 
 + (id)formatterForFormat:(id)arg1;
@@ -26,7 +31,6 @@
 - (struct __CFDateFormatter { }*)_dateFormatter;
 - (struct __CFNumberFormatter { }*)_genericFormatter;
 - (struct __CFNumberFormatter { }*)_genericFormatterForDouble;
-- (struct __CFNumberFormatter { }*)_genericFormatterForPercent;
 - (struct __CFNumberFormatter { }*)_smallNumberFormatter;
 - (void)convertCurrencyFormat;
 - (void)convertDateFormat;
@@ -37,13 +41,12 @@
 - (id)formatDefault:(double)arg1;
 - (id)formatDoubleValue:(double)arg1;
 - (id)formatFraction:(double)arg1;
-- (id)formatPercent:(double)arg1;
 - (id)formatPhoneNumber:(double)arg1;
-- (int)formatType;
+- (NSInteger)formatType;
 - (id)icuFormatString;
 - (id)initWithDefaultFormatString;
 - (id)initWithExcelFormatString:(id)arg1;
-- (bool)isNegativeRed;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isNegativeRed;
 - (void)preprocessIcuString;
 
 @end

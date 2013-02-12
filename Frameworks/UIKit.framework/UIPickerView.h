@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, <UIPickerViewDelegate>, <UIPickerViewDataSource>, NSMutableArray;
+@class <UIPickerViewDataSource>, <UIPickerViewDelegate>, NSMutableArray, UIView;
 
-@interface UIPickerView : UIView <UITableViewDelegate, NSCoding, UITableViewDataSource> {
+@interface UIPickerView : UIView <NSCoding> {
     struct { 
         unsigned int needsLayout : 1; 
         unsigned int delegateRespondsToNumberOfComponentsInPickerView : 1; 
@@ -12,75 +12,51 @@
         unsigned int delegateRespondsToDidSelectRow : 1; 
         unsigned int delegateRespondsToViewForRow : 1; 
         unsigned int delegateRespondsToTitleForRow : 1; 
-        unsigned int delegateRespondsToAttributedTitleForRow : 1; 
         unsigned int delegateRespondsToWidthForComponent : 1; 
         unsigned int delegateRespondsToRowHeightForComponent : 1; 
-        unsigned int delegateRespondsToCheckableForRow : 1; 
         unsigned int showsSelectionBar : 1; 
         unsigned int allowsMultipleSelection : 1; 
         unsigned int allowSelectingCells : 1; 
         unsigned int soundsDisabled : 1; 
-        unsigned int usesCheckedSelection : 1; 
-        unsigned int skipsBackground : 1; 
     UIView *_backgroundView;
     <UIPickerViewDataSource> *_dataSource;
     <UIPickerViewDelegate> *_delegate;
     NSMutableArray *_dividers;
-    BOOL _isInLayoutSubviews;
-    int _numberOfComponents;
+    NSInteger _numberOfComponents;
     } _pickerViewFlags;
-    NSMutableArray *_selectionBars;
     NSMutableArray *_tables;
     UIView *_topFrame;
 }
 
-@property(setter=_setInLayoutSubviews:) BOOL _isInLayoutSubviews;
-@property <UIPickerViewDataSource> * dataSource;
-@property <UIPickerViewDelegate> * delegate;
-@property(readonly) int numberOfComponents;
+@property(readonly) NSInteger numberOfComponents; /* unknown property attribute: V_numberOfComponents */
+@property <UIPickerViewDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property <UIPickerViewDataSource> *dataSource; /* unknown property attribute: V_dataSource */
 @property BOOL showsSelectionIndicator;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForCurrentOrientation;
-+ (struct CGSize { float x1; float x2; })sizeForCurrentOrientationThatFits:(struct CGSize { float x1; float x2; })arg1;
-+ (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forInterfaceOrientation:(int)arg2;
 
-- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
-- (id)_createTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forComponent:(int)arg2;
-- (id)_createViewForPickerPiece:(int)arg1;
-- (id)_delegateAttributedTitleForRow:(int)arg1 forComponent:(int)arg2;
-- (int)_delegateNumberOfComponents;
-- (int)_delegateNumberOfRowsInComponent:(int)arg1;
-- (float)_delegateRowHeightForComponent:(int)arg1;
-- (id)_delegateTitleForRow:(int)arg1 forComponent:(int)arg2;
-- (float)_delegateWidthForComponent:(int)arg1 ofCount:(int)arg2 withSizeLeft:(float)arg3;
-- (BOOL)_drawsBackground;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)_isInLayoutSubviews;
+- (id)_createTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forComponent:(NSInteger)arg2;
+- (id)_createViewForPickerPiece:(NSInteger)arg1;
+- (NSInteger)_delegateNumberOfComponents;
+- (NSInteger)_delegateNumberOfRowsInComponent:(NSInteger)arg1;
+- (float)_delegateRowHeightForComponent:(NSInteger)arg1;
+- (id)_delegateTitleForRow:(NSInteger)arg1 forComponent:(NSInteger)arg2;
+- (float)_delegateWidthForComponent:(NSInteger)arg1 ofCount:(NSInteger)arg2 withSizeLeft:(float)arg3;
 - (BOOL)_isLandscapeOrientation;
 - (id)_orientationImageSuffix;
-- (id)_popoverSuffix;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (void)_resetSelectionOfTables;
-- (void)_selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4;
+- (void)_selectRow:(NSInteger)arg1 inComponent:(NSInteger)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionBarRectForHeight:(float)arg1;
 - (id)_selectionBarSuffix;
-- (void)_sendCheckedRow:(int)arg1 inTableView:(id)arg2 checked:(BOOL)arg3;
-- (void)_sendSelectionChangedForComponent:(int)arg1;
+- (void)_sendCheckedRow:(NSInteger)arg1 inTable:(id)arg2 checked:(BOOL)arg3;
+- (void)_sendSelectionChangedForComponent:(NSInteger)arg1;
 - (void)_sendSelectionChangedFromTable:(id)arg1;
-- (void)_setDrawsBackground:(BOOL)arg1;
-- (void)_setInLayoutSubviews:(BOOL)arg1;
-- (void)_setUsesCheckedSelection:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)_soundsEnabled;
+- (void)_setSoundsEnabled:(BOOL)arg1 activate:(BOOL)arg2;
 - (float)_tableRowHeight;
 - (void)_updateSound;
-- (void)_updateWithOldSize:(struct CGSize { float x1; float x2; })arg1 newSize:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)_usesCheckSelection;
-- (BOOL)_usesCheckedSelection;
-- (float)_wheelShift;
 - (BOOL)allowsMultipleSelection;
-- (int)columnForTableView:(id)arg1;
+- (id)cellForRow:(NSInteger)arg1 column:(NSInteger)arg2;
+- (NSInteger)columnForTable:(id)arg1;
 - (id)createDividerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)dataSource;
 - (void)dealloc;
@@ -88,32 +64,37 @@
 - (id)delegate;
 - (void)didMoveToWindow;
 - (void)encodeWithCoder:(id)arg1;
-- (id)imageForPickerPiece:(int)arg1;
-- (id)init;
+- (id)imageForPickerPiece:(NSInteger)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElementByDefault;
 - (void)layoutSubviews;
-- (int)numberOfColumns;
-- (int)numberOfComponents;
-- (int)numberOfRowsInColumn:(int)arg1;
-- (int)numberOfRowsInComponent:(int)arg1;
+- (NSInteger)numberOfColumns;
+- (NSInteger)numberOfComponents;
+- (NSInteger)numberOfRowsInColumn:(NSInteger)arg1;
+- (NSInteger)numberOfRowsInComponent:(NSInteger)arg1;
+- (NSInteger)numberOfRowsInTable:(id)arg1;
 - (id)pickerImageNamePrefix;
 - (void)reload;
 - (void)reloadAllComponents;
 - (void)reloadAllPickerPieces;
-- (void)reloadComponent:(int)arg1;
+- (void)reloadComponent:(NSInteger)arg1;
 - (void)reloadData;
-- (void)reloadDataForColumn:(int)arg1;
-- (struct CGSize { float x1; float x2; })rowSizeForComponent:(int)arg1;
+- (void)reloadDataForColumn:(NSInteger)arg1;
+- (struct CGSize { float x1; float x2; })rowSizeForComponent:(NSInteger)arg1;
 - (double)scrollAnimationDuration;
-- (void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(BOOL)arg3;
-- (void)selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3;
-- (int)selectedRowForColumn:(int)arg1;
-- (int)selectedRowInComponent:(int)arg1;
+- (struct CGPoint { float x1; float x2; })scroller:(id)arg1 adjustSmoothScrollEnd:(struct CGPoint { float x1; float x2; })arg2 velocity:(struct CGSize { float x1; float x2; })arg3;
+- (BOOL)scroller:(id)arg1 shouldAdjustSmoothScrollEndForVelocity:(struct CGSize { float x1; float x2; })arg2;
+- (void)scrollerDidEndAnimatedScrolling:(id)arg1;
+- (void)scrollerDidEndDragging:(id)arg1 willSmoothScroll:(BOOL)arg2;
+- (void)scrollerDidEndSmoothScrolling:(id)arg1;
+- (void)scrollerDidScroll:(id)arg1;
+- (void)selectRow:(NSInteger)arg1 inColumn:(NSInteger)arg2 animated:(BOOL)arg3;
+- (void)selectRow:(NSInteger)arg1 inComponent:(NSInteger)arg2 animated:(BOOL)arg3;
+- (NSInteger)selectedRowForColumn:(NSInteger)arg1;
+- (NSInteger)selectedRowInComponent:(NSInteger)arg1;
+- (id)selectedTableCellForColumn:(NSInteger)arg1;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -123,10 +104,10 @@
 - (void)setSoundsEnabled:(BOOL)arg1;
 - (BOOL)showsSelectionIndicator;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableViewForColumn:(int)arg1;
-- (id)viewForRow:(int)arg1 forComponent:(int)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })visibleRowsForColumn:(int)arg1;
+- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3 reusing:(id)arg4;
+- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3;
+- (id)tableForColumn:(NSInteger)arg1;
+- (id)viewForRow:(NSInteger)arg1 forComponent:(NSInteger)arg2;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })visibleRowsForColumn:(NSInteger)arg1;
 
 @end

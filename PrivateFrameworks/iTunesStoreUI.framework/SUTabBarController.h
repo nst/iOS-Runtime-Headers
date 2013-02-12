@@ -2,114 +2,51 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUPreviewOverlayViewController, <SUTabBarControllerDelegate>, NSMutableArray, SUClientInterface, UIImage, NSString, SUViewController, UIViewController, NSArray;
-
-@interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate> {
-    SUClientInterface *_clientInterface;
-    BOOL _ignoreTabReselection;
-    UIImage *_moreListSelectedImage;
-    NSString *_moreListTitle;
-    UIImage *_moreListUnselectedImage;
-    NSMutableArray *_overlayBackgroundViewControllers;
-    UIViewController *_preTransientSelectedViewController;
-    SUViewController *_preloadedViewController;
-    NSString *_preloadedViewControllerIdentifier;
-    NSString *_preloadedViewControllerKey;
-    SUPreviewOverlayViewController *_previewOverlayViewController;
-    int _reloadingUnderneathTransientControllerCount;
-    NSArray *_sections;
+@interface SUTabBarController : UITabBarController <UITabBarControllerDelegate> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    unsigned int _allowCustomization : 1;
+    unsigned int _adjustedFramesForModalPresent : 1;
+    struct __CFArray { } *_observers;
+    } _selectedViewFrameBeforeAdjust;
 }
 
-@property(getter=_previewOverlayViewController,readonly) SUPreviewOverlayViewController * _previewOverlayViewController;
-@property(readonly) SUClientInterface * clientInterface;
-@property <SUTabBarControllerDelegate> * delegate;
-@property(retain) NSString * moreListTitle;
-@property(retain) NSArray * sections;
-@property(retain) NSString * selectedIdentifier;
+@property(getter=isCustomizable) BOOL customizable;
 
-+ (Class)_moreNavigationControllerClass;
-
-- (void)_applicationDidChangeStatusBarFrame:(id)arg1;
-- (void)_applyMoreListConfiguration;
-- (id)_archivedContextsForViewController:(id)arg1;
-- (void)_beginReloadingUnderneathTransientViewController;
-- (void)_endReloadingUnderneathTransientViewController;
-- (void)_fixupTabBarSelection;
-- (void)_fixupViewControllers;
-- (void)_hidePadPreviewOverlayAnimated:(BOOL)arg1;
-- (void)_hidePhonePreviewOverlayAnimated:(BOOL)arg1;
-- (void)_hidePreviewOverlayAnimated:(BOOL)arg1;
-- (BOOL)_isReloadingUnderneathTransientViewController;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (void)_moveTransientViewController:(id)arg1 toSectionWithIdentifier:(id)arg2 asRoot:(BOOL)arg3;
-- (void)_moveView:(id)arg1 toView:(id)arg2;
-- (void)_partnerChanged:(id)arg1;
-- (id)_previewOverlayViewController;
-- (void)_reloadViewControllersFromSections:(id)arg1 animated:(BOOL)arg2;
-- (void)_removePreviewOverlayViewController;
-- (void)_restoreArchivedContexts:(id)arg1;
-- (void)_restoreArchivedTransientContexts:(id)arg1;
-- (void)_restoreOverlayContexts:(id)arg1;
-- (id)_rootViewControllerForSection:(id)arg1;
-- (BOOL)_saveNavigationPathToDefaults;
-- (BOOL)_saveTransientNavigationPathToDefaults;
-- (id)_sectionForIdentifier:(id)arg1;
-- (id)_sectionForType:(int)arg1;
-- (id)_sectionForViewController:(id)arg1;
-- (void)_setSelectedViewController:(id)arg1;
-- (void)_showPadPreviewOverlay:(id)arg1 animated:(BOOL)arg2;
-- (void)_showPhonePreviewOverlay:(id)arg1 animated:(BOOL)arg2;
-- (void)_showPreviewOverlay:(id)arg1 animated:(BOOL)arg2;
-- (void)_transitionSafeHandlePartnerChange:(id)arg1;
-- (id)_viewControllerForContext:(id)arg1;
-- (void)cancelTransientViewController:(id)arg1;
-- (id)clientInterface;
+- (void)_adjustViewsAfterModalDismissal;
+- (void)_adjustViewsBeforeModalPresentation;
+- (void)_configureStatusBarForTransitionToViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)_fixControllersForTransitionFromMoreList;
+- (void)_fixControllersForTransitionToMoreListWithSelectedController:(id)arg1;
+- (id)_navigationControllerWithTag:(unsigned long)arg1;
+- (void)addObserver:(id)arg1;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dismissOverlayBackgroundViewController;
-- (unsigned int)indexOfViewControllerWithSectionType:(int)arg1;
+- (void)didReceiveMemoryWarning;
+- (void)dismissViewControllerWithModalTransition:(NSInteger)arg1;
 - (id)init;
-- (id)initWithClientInterface:(id)arg1;
-- (BOOL)loadFromDefaults;
-- (BOOL)loadFromDefaultsAndSetSections:(id)arg1;
-- (void)loadView;
-- (id)moreListTitle;
-- (id)overlayBackgroundViewController;
-- (BOOL)presentOverlayBackgroundViewController:(id)arg1;
-- (void)pushTransientViewController:(id)arg1 onSectionWithIdentifier:(id)arg2;
-- (void)reloadSectionVisibilityAnimated:(BOOL)arg1;
-- (void)reloadSectionWithIdentifier:(id)arg1 URL:(id)arg2;
-- (void)resetToSystemDefaults;
-- (void)resetUserDefaults;
-- (id)rotatingFooterView;
-- (id)rotatingHeaderView;
-- (BOOL)saveOrderingToDefaults;
-- (BOOL)saveToDefaults;
-- (void)scriptOverlayBackgroundDidDismiss:(id)arg1;
-- (id)sections;
-- (void)selectDefaultSection;
-- (void)selectSectionOfType:(int)arg1;
-- (id)selectedIdentifier;
-- (id)selectedViewController;
-- (void)setMoreListSelectedImage:(id)arg1 unselectedImage:(id)arg2;
-- (void)setMoreListTitle:(id)arg1;
-- (void)setSectionOrdering:(id)arg1;
-- (void)setSections:(id)arg1;
-- (void)setSelectedIdentifier:(id)arg1;
-- (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)setTransientViewController:(id)arg1 onSectionWithIdentifier:(id)arg2;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
+- (BOOL)isCustomizable;
+- (void)modalDismissTransitionDidComplete;
+- (id)moreListController;
+- (void)presentViewController:(id)arg1 withModalTransition:(NSInteger)arg2;
+- (void)purgeMemoryForReason:(NSInteger)arg1;
+- (void)removeObserver:(id)arg1;
+- (id)selectedViewControllerIgnoringMoreList;
+- (void)setCustomizable:(BOOL)arg1;
+- (void)setSelectedIndex:(NSUInteger)arg1;
+- (void)setViewControllers:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
-- (void)tabBar:(id)arg1 willShowCustomizationSheet:(id)arg2 withNavigationBar:(id)arg3;
-- (id)viewControllerForSectionIdentifier:(id)arg1;
-- (id)viewControllerForSectionType:(int)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
+- (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
+- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
+- (void)tabBarController:(id)arg1 willEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
+- (id)topNavigationController;
+- (void)updateMoreListState;
 
 @end

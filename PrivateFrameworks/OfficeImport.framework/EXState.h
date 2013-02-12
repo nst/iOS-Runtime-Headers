@@ -2,80 +2,90 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CPImportTracing, EXOfficeArtState, <OCCancelDelegate>, ECColumnWidthConvertor, EDWorkbook, EDSheet, EXOAVState, EDResources, EDReference, OCPPackagePart, NSMutableDictionary, NSMutableArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class ECColumnWidthConvertor, EDReference, EDResources, EDSheet, EDWorkbook, EXOAVState, EXOfficeArtState, NSMapTable, NSMutableArray, NSMutableDictionary, OCPPackagePart;
 
 @interface EXState : OAVState {
-    boolmIsPredefinedDxfsBeingRead;
-    boolmIsPredefinedTableStylesRead;
-    boolmMaxColumnsWarned;
-    boolmMaxRowsWarned;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
     NSMutableArray *mArrayedFormulas;
-    <OCCancelDelegate> *mCancelDelegate;
-    unsigned int mCellStyleXfsOffset;
+    NSUInteger mCellStyleXfsOffset;
     ECColumnWidthConvertor *mColumnWidthConvertor;
     OCPPackagePart *mCurrentPart;
     EDSheet *mCurrentSheet;
-    unsigned int mCurrentSheetIndex;
+    NSUInteger mCurrentSheetIndex;
     double mDefaultColumnWidth;
     double mDefaultRowHeight;
+    BOOL mIsThumbnail;
     NSMutableArray *mLegacyDrawables;
     EXOAVState *mOAVState;
     EXOfficeArtState *mOfficeArtState;
     NSMutableDictionary *mReferenceForCommentTextBox;
-    struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; } *mRelationshipNS;
+    struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; } *mRelationshipNS;
     EDResources *mResources;
-    struct __CFDictionary { } *mSharedFormulasMap;
+    NSMapTable *mSharedFormulasMap;
     EDReference *mSheetDimension;
-    unsigned int mTotalCellsWithContentCount;
-    unsigned int mTotalCellsWithFormulaCount;
-    CPImportTracing *mTracing;
+    NSUInteger mTotalCellsWithContentCount;
     EDWorkbook *mWorkbook;
     OCPPackagePart *mWorkbookPart;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsMaxNumberOfColumnsReached;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsMaxNumberOfRowsReached;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsPredefinedDxfsBeingRead;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsPredefinedTableStylesRead;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mMaxColumnsWarned;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mMaxRowsWarned;
 }
 
-@property(readonly) <OCCancelDelegate> * cancelDelegate;
-
-- (void)addSharedBaseFormulaIndex:(unsigned int)arg1 withIndex:(long)arg2;
+- (void)addSharedFormula:(id)arg1 withIndex:(long)arg2;
 - (id)arrayedFormulas;
-- (id)cancelDelegate;
-- (unsigned int)cellStyleXfsOffset;
-- (unsigned int)cellsWithContentCount;
+- (NSUInteger)cellStyleXfsOffset;
 - (id)columnWidthConvertor;
 - (id)currentPart;
 - (id)currentSheet;
-- (unsigned int)currentSheetIndex;
+- (NSUInteger)currentSheetIndex;
 - (void)dealloc;
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
-- (void)incrementCellsWithContentCount;
-- (void)incrementCellsWithFormulaCount;
-- (id)initWithWorkbookPart:(id)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
-- (BOOL)isCancelled;
-- (bool)isPredefinedDxfsBeingRead;
-- (bool)isPredefinedTableStylesRead;
+- (void)incrementCellWithContentCount;
+- (id)init;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isMaxNumberOfColumnsReached;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isMaxNumberOfRowsReached;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPredefinedDxfsBeingRead;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPredefinedTableStylesRead;
+- (BOOL)isThumbnail;
 - (id)legacyDrawables;
 - (id)oavState;
 - (id)officeArtState;
-- (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)arg1;
-- (struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)relationshipNameSpaceForWorkbook;
-- (void)reportWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
-- (void)reportWorksheetWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
+- (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; }*)arg1;
+- (struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; }*)relationshipNameSpaceForWorkbook;
 - (void)resetForNewSheet;
 - (id)resources;
-- (void)setCellStyleXfsOffset:(unsigned int)arg1;
+- (void)setCellStyleXfsOffset:(NSUInteger)arg1;
 - (void)setCurrentPart:(id)arg1;
 - (void)setCurrentSheet:(id)arg1;
-- (void)setCurrentSheetIndex:(unsigned int)arg1;
+- (void)setCurrentSheetIndex:(NSUInteger)arg1;
 - (void)setDefaultColumnWidth:(double)arg1;
 - (void)setDefaultRowHeight:(double)arg1;
-- (void)setOfficeArtState:(id)arg1;
-- (void)setPredefinedDxfsBeingRead:(bool)arg1;
-- (void)setPredefinedTableStylesRead:(bool)arg1;
+- (void)setIsThumbnail:(BOOL)arg1;
+- (void)setMaxNumberOfColumnsReached:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setMaxNumberOfRowsReached:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setPredefinedDxfsBeingRead:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setPredefinedTableStylesRead:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setResources:(id)arg1;
 - (void)setSheetDimension:(id)arg1;
 - (void)setTextBox:(id)arg1 forReference:(id)arg2;
 - (void)setWorkbook:(id)arg1;
-- (unsigned int)sharedBaseFormulaIndexWithIndex:(long)arg1;
+- (void)setWorkbookPart:(id)arg1;
+- (id)sharedFormulaWithIndex:(long)arg1;
 - (id)sheetDimension;
 - (id)textBoxForReference:(id)arg1;
 - (id)workbook;

@@ -2,38 +2,50 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDReference, EDWorksheet, EDResources;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class EDConditionalFormatting, EDHyperlink, EDReference, EDResources, EDWorksheet;
 
 @interface EDColumnInfo : NSObject <NSCopying, EDKeyedObject> {
-    boolmHidden;
-    unsigned char mOutlineLevel;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+    EDConditionalFormatting *mConditionalFormatting;
+    EDHyperlink *mHyperlink;
+    EDReference *mMergedCells;
     EDReference *mRange;
     EDResources *mResources;
-    unsigned int mStyleIndex;
-    int mWidth;
+    NSUInteger mStyleIndex;
+    NSInteger mWidth;
     EDWorksheet *mWorksheet;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHidden;
 }
 
 + (id)columnInfoWithResources:(id)arg1 worksheet:(id)arg2;
 
+- (id)conditionalFormatting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)hyperlink;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
-- (bool)isHidden;
-- (int)key;
-- (unsigned char)outlineLevel;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHidden;
+- (NSInteger)key;
+- (id)mergedCells;
 - (id)range;
-- (void)setHidden:(bool)arg1;
-- (void)setOutlineLevel:(unsigned char)arg1;
+- (void)setConditionalFormatting:(id)arg1;
+- (void)setHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setHyperlink:(id)arg1;
+- (void)setMergedCells:(id)arg1;
 - (void)setRange:(id)arg1;
-- (void)setRangeWithFirstColumn:(int)arg1 lastColumn:(int)arg2;
+- (void)setRangeWithFirstColumn:(NSInteger)arg1 lastColumn:(NSInteger)arg2;
 - (void)setStyle:(id)arg1;
-- (void)setStyleIndex:(unsigned int)arg1;
+- (void)setStyleIndex:(NSUInteger)arg1;
 - (void)setWidth:(double)arg1;
-- (void)setWidthInXlUnits:(int)arg1;
+- (void)setWidthInXlUnits:(NSInteger)arg1;
 - (id)style;
-- (unsigned int)styleIndex;
+- (NSUInteger)styleIndex;
 - (double)width;
-- (int)widthInXlUnits;
+- (NSInteger)widthInXlUnits;
 
 @end

@@ -2,12 +2,21 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface DOMCSSValueList : DOMCSSValue {
+     /* Encoded args for previous method: @12@0:4^{CSSValueList=^^?i{Vector<WTF::RefPtr<WebCore::CSSValue>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::CSSValue>,0ul>=^{RefPtr<WebCore::CSSValue>}I}}B}8 */
+     /* Encoded args for previous method: ^{CSSValueList=^^?i{Vector<WTF::RefPtr<WebCore::CSSValue>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::CSSValue>,0ul>=^{RefPtr<WebCore::CSSValue>}I}}B}8@0:4 */
 }
 
-@property(readonly) unsigned int length;
+@property(readonly) NSUInteger length;
 
-- (id)item:(unsigned int)arg1;
-- (unsigned int)length;
++ (id)_wrapCSSValueList:(struct CSSValueList { int (**x1)(); NSInteger x2; struct Vector<WTF::RefPtr<WebCore::CSSValue>,0ul> { NSUInteger x_3_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::CSSValue>,0ul> { struct RefPtr<WebCore::CSSValue> {} *x_2_2_1; NSUInteger x_2_2_2; } x_3_1_2; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; }*)arg1;
+
+- (struct CSSValueList { int (**x1)(); NSInteger x2; struct Vector<WTF::RefPtr<WebCore::CSSValue>,0ul> { NSUInteger x_3_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::CSSValue>,0ul> { struct RefPtr<WebCore::CSSValue> {} *x_2_2_1; NSUInteger x_2_2_2; } x_3_1_2; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; }*)_CSSValueList;
+- (id)item:(NSUInteger)arg1;
+- (NSUInteger)length;
 
 @end

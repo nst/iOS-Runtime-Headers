@@ -2,62 +2,48 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDWorkbook, NSString, CMArchiveManager, OIXMLDocument, NSMutableArray, OIXMLElement;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class CMArchiveManager, EDWorkbook, NSMutableArray, NSString;
 
 @interface EMWorkbookMapper : CMMapper <CMMapperRoot> {
-    boolmIsFirstMappedSheet;
-    boolmIsFrameset;
+     /* Encoded args for previous method: B8@0:4 */
     EDWorkbook *edWorkbook;
     CMArchiveManager *mArchiver;
-    OIXMLElement *mBodyElement;
     NSString *mFileName;
-    BOOL mHasPushedFirstSheet;
-    BOOL mHasPushedHeader;
-    int mHeight;
-    BOOL mLoadingMessageVisible;
-    unsigned int mNumberOfMappedSheets;
-    unsigned int mRealSheetCount;
+    NSInteger mHeight;
     NSString *mResourceUrlPrefix;
     NSString *mResourceUrlProtocol;
-    unsigned int mSheetIndex;
-    NSMutableArray *mSheetURLs;
     NSString *mStyleSheetGuid;
-    OIXMLDocument *mTabBarDoc;
-    NSString *mTabBarURL;
-    float mTabPosition;
-    int mWidth;
+    NSInteger mWidth;
     NSMutableArray *mWorksheetGuids;
     NSMutableArray *mWorksheetNames;
-    NSMutableArray *mWorksheetUrls;
-    OIXMLDocument *mXhtmlDoc;
 }
 
 + (id)baseDate;
 + (id)borderStyleCache;
 + (id)borderWidthCache;
 + (id)cssStyleCache;
-+ (void)setBaseDate1904:(BOOL)arg1;
 
-- (id)_copyStringForSheet:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 andMapper:(id)arg4;
-- (id)_frontPageByCopyingMainPage;
-- (id)_mainPageBack;
-- (void)_pushTabForSheet:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)archiver;
-- (id)blipAtIndex:(unsigned int)arg1;
-- (id)copySheetMapperWithEdSheet:(id)arg1;
+- (id)blipAtIndex:(NSUInteger)arg1;
+- (id)createFramesetPage:(id)arg1;
+- (id)createNavFrame;
+- (id)createSheetMapperWithEdSheet:(id)arg1;
 - (void)dealloc;
 - (id)documentTitle;
 - (id)fileName;
-- (void)finishMappingWithState:(id)arg1;
-- (BOOL)hasMultipleSheets;
 - (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
-- (bool)isMultiPage;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isMultiPage;
 - (void)mapBodyStyleAt:(id)arg1;
-- (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
+- (void)mapGlobalStylesAt:(id)arg1 style:(id)arg2;
+- (void)mapWithState:(id)arg1;
+- (NSInteger)navFrameHeight;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
 - (void)setFileName:(id)arg1;
-- (void)startMappingWithState:(id)arg1;
-- (id)styleMatrix;
+- (void)setHtmlDocumentSizeInArchiver;
 - (id)workbook;
 
 @end

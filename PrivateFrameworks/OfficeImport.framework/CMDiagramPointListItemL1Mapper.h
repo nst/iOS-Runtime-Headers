@@ -3,10 +3,13 @@
  */
 
 @interface CMDiagramPointListItemL1Mapper : CMDiagramPointMapper {
-    int mListIndex;
+    BOOL mIsTop;
+    NSInteger mListIndex;
 }
 
-- (id)initWithPoint:(id)arg1 drawingContext:(id)arg2 orientedBounds:(id)arg3 listIndex:(int)arg4 parent:(id)arg5;
+- (id)baseTextListStyleWithBounds:(id)arg1 isCentered:(BOOL)arg2;
+- (id)initWithPoint:(id)arg1 drawingContext:(id)arg2 orientedBounds:(id)arg3 listIndex:(NSInteger)arg4 isTop:(BOOL)arg5 parent:(id)arg6;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (void)mapChlidrenAt:(id)arg1 withState:(id)arg2;
 
 @end

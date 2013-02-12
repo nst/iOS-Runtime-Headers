@@ -2,108 +2,27 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UITableView, <PLLibraryViewControllerDelegate>, UIActionSheet, UIView, PLLibraryView, PLSyncProgressView, PLEmptyAlbumView, PLPhotosPickerSession;
+@class PLPhotoLibrary;
 
-@interface PLLibraryViewController : PLAbstractLibraryViewController <UIActionSheetDelegate, PLLibraryTableViewCellEditingDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface PLLibraryViewController : UIViewController {
     struct { 
-        unsigned int delegateDeterminesAccessoryType : 1; 
-        unsigned int adjustedForKeyboard : 1; 
-        unsigned int endEditingAfterKeyboardDismiss : 1; 
-        unsigned int automaticallyRestoresConfiguration : 1; 
-        unsigned int adjustsStatusBarStyle : 1; 
-        unsigned int reserved : 26; 
-    PLPhotosPickerSession *_activePhotosPickerSession;
-    BOOL _albumListHasUnseenContent;
-    UIView *_bannerView;
-    UIActionSheet *_deleteAlbumActionSheet;
-    PLEmptyAlbumView *_emptyLibraryView;
-    UIActionSheet *_invitationConfirmationSheet;
-    } _lvcFlags;
-    unsigned int _renamingAlbumIndex;
-    PLSyncProgressView *_syncProgressView;
-    PLLibraryView *_tableView;
+        unsigned int albumsInvalid : 1; 
+        unsigned int visible : 1; 
+        unsigned int reserved : 30; 
+    PLPhotoLibrary *_library;
+    } _libraryControllerFlags;
 }
 
-@property BOOL adjustsStatusBarStyle;
-@property BOOL automaticallyRestoresConfiguration;
-@property(retain) UIView * bannerView;
-@property <PLLibraryViewControllerDelegate> * delegate;
-@property(readonly) UITableView * tableView;
-
-- (BOOL)_canReorderRowForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (int)_cellEditStyleForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (unsigned int)_displayedAssetsCountForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (void)_keyboardDidHide:(id)arg1;
-- (void)_keyboardWillHide:(id)arg1;
-- (void)_keyboardWillShow:(id)arg1;
-- (float)_largestAccessoryWidth;
-- (void)_navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3 allowShowingEmptyAlbumView:(BOOL)arg4;
-- (void)_presentActionSheet:(id)arg1;
-- (BOOL)_shouldShowAlbumList;
-- (BOOL)_shouldShowEditButton;
-- (void)_updateAlbumListHasUnseenContent;
-- (void)_updateCell:(id)arg1 forAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
-- (int)accessoryTypeForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (BOOL)adjustsStatusBarStyle;
-- (BOOL)albumIsDisplayedEnabled:(struct NSObject { Class x1; }*)arg1;
-- (BOOL)automaticallyRestoresConfiguration;
-- (id)bannerView;
-- (void)beginAddPhotosSessionForAlbum:(id)arg1 didShowHandler:(id)arg2 completionHandler:(id)arg3;
-- (void)cancelAddPhotosSessionAnimated:(BOOL)arg1;
-- (id)contentScrollView;
+- (id)_library;
+- (void)_updateAlbumsIfNecessary;
+- (void)cancelButtonClicked:(id)arg1;
 - (void)dealloc;
-- (void)dismissSharedStreamOptionsViewController;
-- (void)fixContentInsetIfNeeded;
+- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
+- (void)iTunesSyncRequestedStart;
 - (id)init;
-- (int)interfaceIdiom;
-- (void)loadCurrentConfiguration:(id)arg1;
+- (void)libraryView:(id)arg1 didSelectAlbum:(id)arg2;
 - (void)loadView;
-- (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 initiallyHidden:(BOOL)arg2 animated:(BOOL)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)prepareForDefaultImageSnapshot;
-- (void)presentSharedStreamOptionsViewController:(id)arg1;
-- (void)scrollToAlbumAtIndex:(unsigned int)arg1 animated:(BOOL)arg2 select:(BOOL)arg3;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
-- (void)setAdjustsStatusBarStyle:(BOOL)arg1;
-- (void)setAutomaticallyRestoresConfiguration:(BOOL)arg1;
-- (void)setBannerView:(id)arg1;
-- (void)setCurrentPickerSession:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHiddenAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2;
-- (void)setSyncProgressVisible:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)shouldShowUnreadIndicatorForAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)showInvitationConfirmationForAlbum:(id)arg1;
-- (void)storeCurrentConfiguration:(id)arg1;
-- (id)syncProgressView;
-- (id)tableOffsetKey;
-- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
-- (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)tableView;
-- (void)tableViewCell:(id)arg1 didChangeTextToText:(id)arg2;
-- (void)tableViewCellDidBeginEditingText:(id)arg1;
-- (void)updateAlbumListHeader;
-- (BOOL)updateInterfaceForDeletedAlbumIndexes:(id)arg1 addedIndexes:(id)arg2 changedIndexes:(id)arg3 isReordering:(BOOL)arg4 needsFullReload:(BOOL)arg5;
-- (void)updateInterfaceForHasContentChange;
-- (void)updateNavigationItemButtons;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
-- (id)visibleCellViewForAlbumAtIndex:(unsigned int)arg1;
 
 @end

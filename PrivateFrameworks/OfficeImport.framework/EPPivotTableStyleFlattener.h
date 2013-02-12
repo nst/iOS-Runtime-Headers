@@ -2,32 +2,38 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class EDPivotTable;
 
 @interface EPPivotTableStyleFlattener : EPStyleFlattener {
-    unsigned int mColumnFieldsCount;
-    int mFirstDataColumn;
-    int mFirstDataRow;
-    int mFirstHeaderRow;
-    unsigned int mPageFieldsCount;
+     /* Encoded args for previous method: B12@0:4@8 */
+     /* Encoded args for previous method: i16@0:4i8B12 */
+    NSUInteger mColumnFieldsCount;
+    NSInteger mFirstDataColumn;
+    NSInteger mFirstDataRow;
+    NSInteger mFirstHeaderRow;
+    NSUInteger mPageFieldsCount;
     EDPivotTable *mPivotTable;
-    unsigned int mRowFieldsCount;
+    NSUInteger mRowFieldsCount;
 }
 
-- (void)addColumnSubheadingLevel:(unsigned int)arg1 to:(id)arg2;
-- (void)addRowSubheadingLevel:(unsigned int)arg1 to:(id)arg2;
-- (void)addSubtotalColumnLevel:(unsigned int)arg1 to:(id)arg2;
-- (void)addSubtotalRowLevel:(unsigned int)arg1 to:(id)arg2;
-- (int)borderFlagsForStyleType:(int)arg1 row:(int)arg2 column:(int)arg3;
+- (void)addColumnSubheadingLevel:(NSUInteger)arg1 to:(id)arg2;
+- (void)addRowSubheadingLevel:(NSUInteger)arg1 to:(id)arg2;
+- (void)addSubtotalColumnLevel:(NSUInteger)arg1 to:(id)arg2;
+- (void)addSubtotalRowLevel:(NSUInteger)arg1 to:(id)arg2;
+- (NSInteger)borderFlagsForStyleType:(NSInteger)arg1 row:(NSInteger)arg2 column:(NSInteger)arg3;
 - (void)cacheSizes:(id)arg1 inObject:(id)arg2;
 - (void)clearCache;
 - (id)collectionFromWorksheet:(id)arg1;
-- (unsigned int)constrainLevel:(unsigned int)arg1;
-- (id)extractCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3 column:(int)arg4;
-- (id)extractRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3;
-- (bool)isObjectSupported:(id)arg1;
+- (NSUInteger)constrainLevel:(NSUInteger)arg1;
+- (id)extractCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(NSInteger)arg3 column:(NSInteger)arg4;
+- (id)extractRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(NSInteger)arg3;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isObjectSupported:(id)arg1;
 - (id)keysInTheOrderTheyShouldBeApplied;
-- (int)stripeOffset:(int)arg1 row:(bool)arg2;
+- (NSInteger)stripeOffset:(NSInteger)arg1 row:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
 - (id)styleFromObject:(id)arg1;
 
 @end

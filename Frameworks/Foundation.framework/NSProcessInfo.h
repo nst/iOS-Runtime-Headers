@@ -2,47 +2,34 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSString, NSDictionary;
+@class NSArray, NSDictionary, NSString;
 
 @interface NSProcessInfo : NSObject {
     NSArray *arguments;
-    int automaticTerminationOptOutCounter;
     NSDictionary *environment;
     NSString *hostName;
     NSString *name;
+    void *reserved;
 }
 
 + (id)processInfo;
 
-- (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
-- (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
-- (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
-- (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
-- (int)_suddenTerminationDisablingCount;
-- (unsigned int)activeProcessorCount;
+- (NSUInteger)activeProcessorCount;
 - (id)arguments;
-- (BOOL)automaticTerminationSupportEnabled;
 - (void)dealloc;
-- (void)disableAutomaticTermination:(id)arg1;
-- (void)disableSuddenTermination;
-- (void)enableAutomaticTermination:(id)arg1;
-- (void)enableSuddenTermination;
 - (id)environment;
 - (id)globallyUniqueString;
 - (id)hostName;
-- (id)init;
 - (BOOL)isTranslated;
-- (unsigned int)operatingSystem;
+- (NSUInteger)operatingSystem;
 - (id)operatingSystemName;
 - (id)operatingSystemVersionString;
 - (unsigned long long)physicalMemory;
-- (int)processIdentifier;
+- (NSInteger)processIdentifier;
 - (id)processName;
-- (unsigned int)processorCount;
+- (NSUInteger)processorCount;
 - (void)setArguments:(id)arg1;
-- (void)setAutomaticTerminationSupportEnabled:(BOOL)arg1;
 - (void)setProcessName:(id)arg1;
-- (double)systemUptime;
 - (id)userFullName;
 - (id)userHomeDirectory;
 - (id)userName;

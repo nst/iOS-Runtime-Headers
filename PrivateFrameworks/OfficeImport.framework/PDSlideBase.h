@@ -2,54 +2,42 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTableStyle, OADBackground, NSString, NSArray, PDAnimation, PDTransition;
+@class NSArray, NSString, OADBackground, PDAnimation, PDTransition;
 
 @interface PDSlideBase : NSObject {
-    unsigned int mIsHidden : 1;
-    unsigned int mIsDoneWithContent : 1;
     PDAnimation *mAnimation;
     OADBackground *mBackground;
-    OADTableStyle *mDefaultTableStyle;
     NSArray *mDrawables;
+    BOOL mIsHidden;
     NSString *mName;
     PDTransition *mTransition;
 }
 
-+ (int)inheritedPlaceholderType:(int)arg1;
++ (NSInteger)inheritedPlaceholderType:(NSInteger)arg1;
 
-- (void)addSlideNumberPlaceholder:(id)arg1;
+- (id)allPlaceholdersOfBaseType:(NSInteger)arg1;
 - (id)animation;
 - (id)background;
 - (id)colorMap;
 - (id)colorScheme;
 - (void)dealloc;
-- (id)defaultTableStyle;
 - (id)defaultTheme;
-- (void)doneWithContent;
 - (id)drawables;
-- (id)drawingTheme;
-- (id)fontScheme;
-- (void)generatePpt9Animations:(id)arg1;
-- (BOOL)hasPpt10Animations;
-- (BOOL)hasPpt9Animations;
 - (id)init;
 - (BOOL)isHidden;
-- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)name;
-- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)parentShapePropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)parentSlideBase;
-- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(BOOL)arg4;
+- (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
+- (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
-- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 useBaseTypeMatch:(BOOL)arg3 overrideIndex:(BOOL)arg4;
+- (id)placeholderWithType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 useBaseTypeMatch:(BOOL)arg3;
+- (id)placeholderWithType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (void)setBackground:(id)arg1;
-- (void)setDefaultTableStyle:(id)arg1;
 - (void)setDrawables:(id)arg1 defaultTextListStyle:(id)arg2;
-- (void)setInheritedTextStyle:(id)arg1 placeholderType:(int)arg2 defaultTextListStyle:(id)arg3;
 - (void)setIsHidden:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setPpt9AnimationDataForCacheItem:(id)arg1 order:(int)arg2;
 - (void)setTransition:(id)arg1;
 - (id)styleMatrix;
 - (id)transition;

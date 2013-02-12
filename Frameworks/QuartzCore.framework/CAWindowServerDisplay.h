@@ -2,93 +2,43 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSSet, NSString, CAWindowServerDisplay;
-
 @interface CAWindowServerDisplay : NSObject {
-    void *_impl;
+    struct CADisplayServer { int (**x1)(); struct { 
+            NSInteger x; 
+        } x2; struct CADisplay {} *x3; struct __CFString {} *x4; struct _opaque_pthread_mutex_t { 
+            long __sig; 
+            BOOL __opaque[40]; 
+        } x5; struct _opaque_pthread_cond_t { 
+            long __sig; 
+            BOOL __opaque[24]; 
+        } x6; NSUInteger x7; struct _CARenderContext {} **x8; NSUInteger x9; NSUInteger x10; struct { 
+            NSInteger x; 
+        } x11; struct PendingOperation {} *x12; struct _CARenderContext {} *x13; struct _CARenderContext {} *x14; NSUInteger x15; NSInteger *x16; NSUInteger x17; struct _CARenderOGLContext {} *x18; double x19; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; } *_impl;
 }
 
-@property(copy) NSString * TVMode;
-@property(copy) NSString * TVSignalType;
-@property BOOL allowsVirtualModes;
+@property(copy) NSString *TVMode;
+@property(copy) NSString *TVSignalType;
+@property(readonly) NSString *deviceName;
+@property(readonly) NSString *name;
 @property(getter=isBlanked) BOOL blanked;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property(readonly) CAWindowServerDisplay * cloneMaster;
-@property(readonly) NSSet * clones;
-@property(copy) NSString * colorMode;
-@property float contrast;
-@property(readonly) NSString * deviceName;
-@property(readonly) unsigned int displayId;
-@property float idealRefreshRate;
-@property BOOL invertsColors;
-@property float maximumRefreshRate;
-@property float minimumRefreshRate;
-@property(getter=isMirroringEnabled) BOOL mirroringEnabled;
-@property(readonly) NSString * name;
-@property(copy) NSString * orientation;
-@property float overscanAmount;
-@property(readonly) unsigned int rendererFlags;
-@property int tag;
-@property BOOL usesPreferredModeRefreshRate;
+@property(readonly) CGRect bounds;
 
 - (id)TVMode;
 - (id)TVSignalType;
-- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; struct Display {} *x4; struct __CFString {} *x5; struct ContextItem {} *x6; unsigned int x7; unsigned int x8; struct SpinLock { struct { int x_1_2_1; } x_9_1_1; } x9; struct PendingOperation {} *x10; struct Context {} *x11; unsigned int x12; struct Shape {} *x13; unsigned int x14; struct Context {} *x15; struct Renderer {} *x16; double x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; }*)arg1;
-- (void)addClone:(id)arg1 options:(id)arg2;
-- (void)addClone:(id)arg1;
-- (BOOL)allowsVirtualModes;
+- (id)_initWithCADisplayServer:(struct CADisplayServer { int (**x1)(); struct { NSInteger x_2_1_1; } x2; struct CADisplay {} *x3; struct __CFString {} *x4; struct _opaque_pthread_mutex_t { long x_5_1_1; BOOL x_5_1_2[40]; } x5; struct _opaque_pthread_cond_t { long x_6_1_1; BOOL x_6_1_2[24]; } x6; NSUInteger x7; struct _CARenderContext {} **x8; NSUInteger x9; NSUInteger x10; struct { NSInteger x_11_1_1; } x11; struct PendingOperation {} *x12; struct _CARenderContext {} *x13; struct _CARenderContext {} *x14; NSUInteger x15; NSInteger *x16; NSUInteger x17; struct _CARenderOGLContext {} *x18; double x19; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (unsigned int)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (unsigned int)clientPortOfContextId:(unsigned int)arg1;
-- (id)cloneMaster;
-- (id)clones;
-- (id)colorMode;
-- (unsigned int)contextIdAtPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (unsigned int)contextIdHostingContextId:(unsigned int)arg1;
-- (id)contextIdsWithClientPort:(unsigned int)arg1;
-- (float)contrast;
-- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromContextId:(unsigned int)arg2;
-- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toContextId:(unsigned int)arg2;
+- (NSUInteger)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (NSUInteger)contextIdAtPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (id)contextIdsWithClientPort:(NSUInteger)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)deviceName;
-- (unsigned int)displayId;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfContextId:(unsigned int)arg1;
-- (float)idealRefreshRate;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfContextId:(NSUInteger)arg1;
 - (void)invalidate;
-- (BOOL)invertsColors;
 - (BOOL)isBlanked;
-- (BOOL)isMirroringEnabled;
-- (float)maximumRefreshRate;
-- (float)minimumRefreshRate;
 - (id)name;
-- (id)orientation;
-- (float)overscanAmount;
-- (void)removeAllClones;
-- (void)removeClone:(id)arg1;
-- (unsigned int)rendererFlags;
-- (void)setAllowsVirtualModes:(BOOL)arg1;
 - (void)setBlanked:(BOOL)arg1;
-- (void)setColorMode:(id)arg1;
-- (void)setContrast:(float)arg1;
-- (void)setIdealRefreshRate:(float)arg1;
-- (void)setInvertsColors:(BOOL)arg1;
-- (void)setMaximumRefreshRate:(float)arg1;
-- (void)setMinimumRefreshRate:(float)arg1;
-- (void)setMirroringEnabled:(BOOL)arg1;
-- (void)setOrientation:(id)arg1;
-- (void)setOverscanAmount:(float)arg1;
 - (void)setTVMode:(id)arg1;
 - (void)setTVSignalType:(id)arg1;
-- (void)setTag:(int)arg1;
-- (void)setUsesPreferredModeRefreshRate:(BOOL)arg1;
-- (int)tag;
-- (BOOL)usesPreferredModeRefreshRate;
-- (void)willUnblank;
 
 @end

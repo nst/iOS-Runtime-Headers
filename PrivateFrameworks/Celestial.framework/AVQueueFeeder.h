@@ -5,14 +5,13 @@
 @interface AVQueueFeeder : NSObject {
 }
 
-- (double)bookmarkTimeForIndex:(unsigned int)arg1;
-- (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
-- (void)contentsDidChangeByInsertingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)contentInvalidatedWithCurrentItemMovedToIndex:(NSUInteger)arg1;
+- (void)contentsDidChangeByInsertingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)contentsDidChangeByRemovingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)init;
-- (unsigned int)itemCount;
-- (unsigned int)numberOfPaths;
-- (id)pathAtIndex:(unsigned int)arg1;
-- (id)playbackInfoAtIndex:(unsigned int)arg1;
+- (NSUInteger)itemCount;
+- (NSUInteger)numberOfPaths;
+- (id)pathAtIndex:(NSUInteger)arg1;
+- (id)playbackInfoAtIndex:(NSUInteger)arg1;
 
 @end

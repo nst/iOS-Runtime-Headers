@@ -6,8 +6,7 @@
 
 @interface PDSlideChild : PDSlideBase {
     OADColorMap *mColorMapOverride;
-    BOOL mShowMasterPlaceholderAnimations;
-    BOOL mShowMasterShapes;
+    BOOL mInheritsGraphicsFromMaster;
     OADThemeOverrides *mThemeOverrides;
 }
 
@@ -15,15 +14,10 @@
 - (id)colorMapOverride;
 - (id)colorScheme;
 - (void)dealloc;
-- (void)doneWithContent;
-- (id)drawingTheme;
-- (id)fontScheme;
+- (BOOL)inheritsGraphicsFromMaster;
 - (id)init;
 - (void)setColorMapOverride:(id)arg1;
-- (void)setShowMasterPlaceholderAnimations:(BOOL)arg1;
-- (void)setShowMasterShapes:(BOOL)arg1;
-- (BOOL)showMasterPlaceholderAnimations;
-- (BOOL)showMasterShapes;
+- (void)setInheritsGraphicsFromMaster:(BOOL)arg1;
 - (id)styleMatrix;
 - (id)themeOverrides;
 

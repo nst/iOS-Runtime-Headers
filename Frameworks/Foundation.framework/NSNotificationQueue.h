@@ -14,9 +14,9 @@
 
 - (void)_flushNotificationQueue;
 - (void)dealloc;
-- (void)dequeueNotificationsMatching:(id)arg1 coalesceMask:(unsigned int)arg2;
-- (void)enqueueNotification:(id)arg1 postingStyle:(unsigned int)arg2 coalesceMask:(unsigned int)arg3 forModes:(id)arg4;
-- (void)enqueueNotification:(id)arg1 postingStyle:(unsigned int)arg2;
+- (void)dequeueNotificationsMatching:(id)arg1 coalesceMask:(NSUInteger)arg2;
+- (void)enqueueNotification:(id)arg1 postingStyle:(NSUInteger)arg2 coalesceMask:(NSUInteger)arg3 forModes:(id)arg4;
+- (void)enqueueNotification:(id)arg1 postingStyle:(NSUInteger)arg2;
 - (id)init;
 - (id)initWithNotificationCenter:(id)arg1;
 

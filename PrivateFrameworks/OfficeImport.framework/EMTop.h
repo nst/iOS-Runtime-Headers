@@ -2,26 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EMWorkbookMapper, NSString, EMState, CMArchiveManager;
-
-@interface EMTop : CMTop <OIProgressiveReaderDelegate> {
-    CMArchiveManager *_archiver;
-    NSString *_inFileName;
-    EMWorkbookMapper *_mapper;
-    EMState *_state;
-    BOOL _xml;
+@interface EMTop : NSObject {
 }
 
 + (void)fillHTMLArchiveForExcelData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
 + (void)fillHTMLArchiveForExcelFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
-
-- (void)_streamWorkbook:(id)arg1;
-- (void)dealloc;
-- (void)readData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;
-- (void)readFile:(id)arg1 orData:(id)arg2 withDataFileName:(id)arg3 xmlFlag:(BOOL)arg4 archiver:(id)arg5;
-- (void)readFile:(id)arg1 xmlFlag:(BOOL)arg2 archiver:(id)arg3;
-- (void)readerDidEndDocument:(id)arg1;
-- (void)readerDidReadElement:(id)arg1 atIndex:(unsigned int)arg2 inDocument:(id)arg3 isLastElement:(BOOL)arg4;
-- (void)readerDidStartDocument:(id)arg1 withElementCount:(int)arg2;
 
 @end

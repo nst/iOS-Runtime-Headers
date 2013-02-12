@@ -10,7 +10,7 @@
 
 - (void)dealloc;
 - (id)drawable;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (void)setDrawable:(id)arg1;

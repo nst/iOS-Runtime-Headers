@@ -2,88 +2,50 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSUUID;
-
 @interface UIDevice : NSObject {
     struct { 
-        unsigned int batteryMonitoringEnabled : 1; 
-        unsigned int proximityMonitoringEnabled : 1; 
-        unsigned int expectsFaceContactInLandscape : 1; 
         unsigned int orientation : 3; 
         unsigned int batteryState : 2; 
-        unsigned int proximityState : 1; 
-    float _batteryLevel;
     } _deviceFlags;
-    int _numDeviceOrientationObservers;
+    NSInteger _numBatteryStateObservers;
+    NSInteger _numDeviceOrientationObservers;
 }
 
-@property(setter=_setBacklightLevel:) float _backlightLevel;
-@property(readonly) float batteryLevel;
-@property(getter=isBatteryMonitoringEnabled) BOOL batteryMonitoringEnabled;
-@property(readonly) int batteryState;
-@property(readonly) NSString * buildVersion;
+@property(retain,readonly) NSString *buildVersion;
+@property(retain,readonly) NSString *localizedModel;
+@property(retain,readonly) NSString *model;
+@property(retain,readonly) NSString *name;
+@property(retain,readonly) NSString *systemName;
+@property(retain,readonly) NSString *systemVersion;
+@property(retain,readonly) NSString *uniqueIdentifier;
+@property NSInteger batteryState;
 @property(getter=isGeneratingDeviceOrientationNotifications,readonly) BOOL generatesDeviceOrientationNotifications;
-@property(readonly) NSUUID * identifierForVendor;
-@property(readonly) NSString * localizedModel;
-@property(readonly) NSString * model;
-@property(getter=isMultitaskingSupported,readonly) BOOL multitaskingSupported;
-@property(readonly) NSString * name;
-@property int orientation;
-@property(readonly) int orientation;
-@property(getter=isProximityMonitoringEnabled) BOOL proximityMonitoringEnabled;
-@property(readonly) BOOL proximityState;
-@property(readonly) NSString * systemName;
-@property(readonly) NSString * systemVersion;
-@property(readonly) NSString * uniqueIdentifier;
-@property(readonly) int userInterfaceIdiom;
+@property(readonly) BOOL isGeneratingBatteryStateNotifications;
+@property(readonly) BOOL isTimberlineFeatureSetEnabled;
+@property NSInteger orientation;
 
 + (id)currentDevice;
-+ (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
-+ (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
-+ (id)platformString;
 
-- (float)_backlightLevel;
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
-- (BOOL)_isTTYEnabled;
-- (void)_playSystemSound:(unsigned long)arg1;
-- (void)_registerForSystemSounds:(id)arg1;
-- (void)_setActiveUserInterfaceIdiom:(int)arg1;
-- (void)_setBacklightLevel:(float)arg1;
-- (void)_setBatteryLevel:(float)arg1;
-- (void)_setBatteryState:(int)arg1;
-- (void)_setExpectsFaceContactInLandscape:(BOOL)arg1;
-- (void)_setProximityState:(BOOL)arg1;
-- (float)_softwareDimmingAlpha;
-- (void)_unregisterForSystemSounds:(id)arg1;
-- (void)_updateSystemSoundActiveStatus:(id)arg1;
-- (float)batteryLevel;
-- (int)batteryState;
+- (NSInteger)batteryState;
+- (void)beginGeneratingBatteryStateChangeNotifications;
 - (void)beginGeneratingDeviceOrientationNotifications;
 - (id)buildVersion;
-- (id)deviceInfoForKey:(struct __CFString { }*)arg1;
+- (void)endGeneratingBatteryStateChangeNotifications;
 - (void)endGeneratingDeviceOrientationNotifications;
-- (id)identifierForVendor;
-- (BOOL)isBatteryMonitoringEnabled;
+- (BOOL)isGeneratingBatteryStateNotifications;
 - (BOOL)isGeneratingDeviceOrientationNotifications;
-- (BOOL)isMediaPicker;
-- (BOOL)isMultitaskingSupported;
-- (BOOL)isProximityMonitoringEnabled;
-- (BOOL)isWildcat;
+- (BOOL)isStreetViewEnabled;
+- (BOOL)isStreetViewPIPEnabled;
+- (BOOL)isTimberlineFeatureSetEnabled;
 - (id)localizedModel;
 - (id)model;
 - (id)name;
-- (int)orientation;
-- (void)playInputClick;
-- (BOOL)proximityState;
-- (void)setBatteryMonitoringEnabled:(BOOL)arg1;
-- (void)setIsMediaPicker:(BOOL)arg1;
-- (void)setIsWildcat:(BOOL)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setOrientation:(int)arg1;
-- (void)setProximityMonitoringEnabled:(BOOL)arg1;
+- (NSInteger)orientation;
+- (void)setBatteryState:(NSInteger)arg1;
+- (void)setOrientation:(NSInteger)arg1;
 - (id)systemName;
 - (id)systemVersion;
 - (id)uniqueIdentifier;
-- (int)userInterfaceIdiom;
 
 @end

@@ -2,29 +2,28 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ECColumnWidthConvertor, EDWorksheet, CMStyle;
+@class CMStyle, ECColumnWidthConvertor, EDWorksheet;
 
 @interface EMWorksheetMapper : EMSheetMapper {
     EDWorksheet *edWorksheet;
+    NSUInteger mColumnCount;
     double *mColumnGrid;
     ECColumnWidthConvertor *mColumnWidthConvertor;
-    int mHeight;
-    int mMaxPopulatedColumn;
-    int mMaxPopulatedRow;
+    NSInteger mHeight;
+    NSUInteger mRowCount;
     double *mRowGrid;
     CMStyle *mStyle;
-    int mWidth;
+    NSInteger mWidth;
 }
 
-- (void)_initWithState:(id)arg1;
-- (int)columnCount;
+- (NSInteger)columnCount;
 - (double*)columnGrid;
 - (id)columnWidthConvertor;
-- (void)countRowsAndColumnsWithState:(id)arg1;
+- (void)countRowsAndColumns;
 - (void)dealloc;
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
-- (int)height;
+- (NSInteger)height;
 - (id)initWithEDWorksheet:(id)arg1 parent:(id)arg2;
 - (BOOL)isVisible;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
@@ -33,14 +32,10 @@
 - (void)mapGridAt:(id)arg1;
 - (void)mapTableAt:(id)arg1 withState:(id)arg2;
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
-- (int)maxRowNumber;
-- (struct CGSize { float x1; float x2; })preprocessDrawableSizeWithState:(id)arg1;
-- (int)preprocessHeightWithState:(id)arg1;
-- (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
-- (int)preprocessWidthWithState:(id)arg1;
+- (NSInteger)maxRowNumber;
 - (double*)rowGrid;
 - (void)setRowGrid;
-- (int)width;
+- (NSInteger)width;
 - (double)xlColumnWidthToPoints:(double)arg1;
 
 @end

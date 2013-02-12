@@ -2,24 +2,19 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
 @interface OABBlip : NSObject {
+     /* Encoded args for previous method: @12@0:4r^{OcBinaryData=^^?III*B}8 */
+     /* Encoded args for previous method: @12@0:4r^{EshMetafileBlipInfo=^S{UID=[16C]}{OcBinaryData=^^?III*B}i{CsRect<ChSINT4>=[4i]}{CsPoint<ChSINT4>=[2i]}iCC}8 */
 }
 
-+ (struct EshBlip { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; struct UID { unsigned char x_4_1_1[16]; } x4; }*)writeBlip:(id)arg1;
-+ (int)blipTypeForBlipSignature:(int)arg1;
-+ (id)compressMetafileData:(id)arg1 info:(struct EshMetafileBlipInfo { unsigned short *x1; struct UID { unsigned char x_2_1_1[16]; } x2; struct OcBinaryData { int (**x_3_1_1)(); unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; char *x_3_1_6; boolx_3_1_7; struct SsrwOOStream {} *x_3_1_8; } x3; int x4; struct CsRect<long> { long x_5_1_1[4]; } x5; struct CsPoint<long> { long x_6_1_1[2]; } x6; int x7; unsigned char x8; unsigned char x9; }*)arg2;
-+ (id)delayedSubBlipWithMetafileInfo:(const struct EshMetafileBlipInfo { unsigned short *x1; struct UID { unsigned char x_2_1_1[16]; } x2; struct OcBinaryData { int (**x_3_1_1)(); unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; char *x_3_1_6; boolx_3_1_7; struct SsrwOOStream {} *x_3_1_8; } x3; int x4; struct CsRect<long> { long x_5_1_1[4]; } x5; struct CsPoint<long> { long x_6_1_1[2]; } x6; int x7; unsigned char x8; unsigned char x9; }*)arg1;
-+ (id)dibFileContentsWithDibBlipData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; boolx7; struct SsrwOOStream {} *x8; }*)arg1;
++ (NSInteger)blipTypeForBlipSignature:(NSInteger)arg1;
++ (id)dibFileContentsWithDibBlipData:(const struct OcBinaryData { int (**x1)(); NSUInteger x2; NSUInteger x3; NSUInteger x4; char *x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; }*)arg1;
 + (id)readBlipFromBse:(id)arg1;
-+ (id)readBlipFromEshBlip:(struct EshBlip { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; struct UID { unsigned char x_4_1_1[16]; } x4; }*)arg1;
-+ (void)setMetafileBoundsFromPictData:(id)arg1 info:(struct EshMetafileBlipInfo { unsigned short *x1; struct UID { unsigned char x_2_1_1[16]; } x2; struct OcBinaryData { int (**x_3_1_1)(); unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; char *x_3_1_6; boolx_3_1_7; struct SsrwOOStream {} *x_3_1_8; } x3; int x4; struct CsRect<long> { long x_5_1_1[4]; } x5; struct CsPoint<long> { long x_6_1_1[2]; } x6; int x7; unsigned char x8; unsigned char x9; }*)arg2;
-+ (id)subBlipWithMetafileInfo:(const struct EshMetafileBlipInfo { unsigned short *x1; struct UID { unsigned char x_2_1_1[16]; } x2; struct OcBinaryData { int (**x_3_1_1)(); unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; char *x_3_1_6; boolx_3_1_7; struct SsrwOOStream {} *x_3_1_8; } x3; int x4; struct CsRect<long> { long x_5_1_1[4]; } x5; struct CsPoint<long> { long x_6_1_1[2]; } x6; int x7; unsigned char x8; unsigned char x9; }*)arg1;
-+ (void)writeBlip:(id)arg1 toBlipStoreEntry:(struct EshBSE { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; struct EshBlip {} *x4; unsigned short *x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned short x9; int x10; unsigned char x11; int x12; int x13; unsigned char x14; unsigned char x15; struct UID { unsigned char x_16_1_1[16]; } x16; }*)arg2;
-+ (void)writeEmptyBlipStoreEntry:(struct EshBSE { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; struct EshBlip {} *x4; unsigned short *x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned short x9; int x10; unsigned char x11; int x12; int x13; unsigned char x14; unsigned char x15; struct UID { unsigned char x_16_1_1[16]; } x16; }*)arg1;
++ (id)readBlipFromEshBlip:(struct EshBlip { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; struct UID { unsigned char x_4_1_1[16]; } x4; }*)arg1;
++ (id)subBlipWithMetafileInfo:(const struct EshMetafileBlipInfo { unsigned short *x1; struct UID { unsigned char x_2_1_1[16]; } x2; struct OcBinaryData { int (**x_3_1_1)(); NSUInteger x_3_1_2; NSUInteger x_3_1_3; NSUInteger x_3_1_4; char *x_3_1_5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_3_1_6; } x3; NSInteger x4; struct CsRect<ChSINT4> { NSInteger x_5_1_1[4]; } x5; struct CsPoint<ChSINT4> { NSInteger x_6_1_1[2]; } x6; NSInteger x7; unsigned char x8; unsigned char x9; }*)arg1;
 
 @end

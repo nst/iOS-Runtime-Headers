@@ -3,11 +3,10 @@
  */
 
 @interface PDChartBuild : PDBuild {
-    int mChartBuildType;
+    NSInteger mChartBuildType;
 }
 
-- (id)initWithBuildType:(int)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (id)initWithBuildType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

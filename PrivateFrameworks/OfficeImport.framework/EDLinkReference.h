@@ -3,23 +3,23 @@
  */
 
 @interface EDLinkReference : NSObject {
-    unsigned int mFirstSheetIndex;
-    unsigned int mLastSheetIndex;
-    unsigned int mLinkIndex;
+    NSUInteger mFirstSheetIndex;
+    NSUInteger mLastSheetIndex;
+    NSUInteger mLinkIndex;
 }
 
-+ (id)linkReferenceWithLinkIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
++ (id)linkReferenceWithLinkIndex:(NSUInteger)arg1 firstSheetIndex:(NSUInteger)arg2 lastSheetIndex:(NSUInteger)arg3;
 
-- (unsigned int)firstSheetIndex;
-- (unsigned int)hash;
+- (NSUInteger)firstSheetIndex;
+- (NSUInteger)hash;
 - (id)init;
-- (id)initWithLinkIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
+- (id)initWithLinkIndex:(NSUInteger)arg1 firstSheetIndex:(NSUInteger)arg2 lastSheetIndex:(NSUInteger)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLinkReference:(id)arg1;
-- (unsigned int)lastSheetIndex;
-- (unsigned int)linkIndex;
-- (void)setFirstSheetIndex:(unsigned int)arg1;
-- (void)setLastSheetIndex:(unsigned int)arg1;
-- (void)setLinkIndex:(unsigned int)arg1;
+- (NSUInteger)lastSheetIndex;
+- (NSUInteger)linkIndex;
+- (void)setFirstSheetIndex:(NSUInteger)arg1;
+- (void)setLastSheetIndex:(NSUInteger)arg1;
+- (void)setLinkIndex:(NSUInteger)arg1;
 
 @end

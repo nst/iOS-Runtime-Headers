@@ -12,6 +12,7 @@
 }
 
 + (float)defaultWidth;
++ (id)minusCenterImage;
 + (id)minusImage;
 + (id)plusImage;
 

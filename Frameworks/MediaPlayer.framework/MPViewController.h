@@ -2,90 +2,61 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class MPItem, MPTransitionController, MPViewController, NSTimer;
 
-@class MPAVController, MPAVItem, NSTimer, MPViewController, MPTransitionController, UIView;
-
-@interface MPViewController : UIViewController <MPControllerProtocol, MPAVControllerNode> {
+@interface MPViewController : UIViewController {
     unsigned int _appearing : 1;
     unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
-    unsigned int _showOverlayWhileAppearingDisabled : 1;
     id _delegate;
     NSTimer *_idleTimerDisablerTimer;
-    int _interfaceOrientation;
-    MPAVItem *_item;
-    MPAVController *_player;
-    int _playerLockedCount;
-    id _popViewControllerHandler;
+    MPItem *_item;
+    NSInteger _orientation;
     MPTransitionController *_pushedTransitionController;
     MPViewController *_pushedViewController;
-    BOOL _registeredForPlayerNotifications;
 }
 
+@property(getter=idleTimerDisabled) BOOL idleTimerDisabled; /* unknown property attribute: SsetIdleTimerDisabled: */
+@property NSInteger orientation; /* unknown property attribute: V_orientation */
+@property(retain) MPItem *item; /* unknown property attribute: V_item */
 @property id delegate;
-@property(getter=idleTimerDisabled,setter=setIdleTimerDisabled:) BOOL idleTimerDisabled;
-@property(retain) MPAVItem * item;
 @property BOOL observesApplicationSuspendResumeEventsOnly;
-@property int orientation;
-@property(retain) MPAVController * player;
-@property(copy) id popViewControllerHandler;
-@property BOOL registeredForPlayerNotifications;
-@property(readonly) UIView * view;
 
-- (BOOL)_canReloadView;
+- (void)_disableIdleTimer:(id)arg1;
 - (void)_popTransitionEnded:(id)arg1;
 - (void)_pushTransitionEnded:(id)arg1;
-- (void)addChildViewController:(id)arg1;
 - (void)applicationDidResumeEventsOnly;
 - (void)applicationDidSuspendEventsOnly;
-- (void)applicationResumed;
-- (void)beginIgnoringChangeTypes:(unsigned int)arg1;
-- (void)beginTransitionOverlayHidding;
-- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
+- (void)beginIgnoringChangeTypes:(NSUInteger)arg1;
+- (BOOL)canDisplayItem:(id)arg1 withOrientation:(NSInteger)arg2;
 - (void)clearWeakReferencesToObject:(id)arg1;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didChangeToInterfaceOrientation:(int)arg1;
-- (int)displayableInterfaceOrientationForInterfaceOrientation:(int)arg1;
-- (void)endIgnoringChangeTypes:(unsigned int)arg1;
-- (void)endTransitionOverlayHidingWithTransferedOverlayView:(id)arg1;
+- (void)didChangeToOrientation:(NSInteger)arg1;
+- (void)endIgnoringChangeTypes:(NSUInteger)arg1;
 - (BOOL)idleTimerDisabled;
-- (void)incrementAggregateStatisticsDisplayCount;
 - (id)init;
 - (BOOL)isAppearing;
 - (id)item;
-- (void)lockPlayer;
-- (void)noteIgnoredChangeTypes:(unsigned int)arg1;
+- (void)noteIgnoredChangeTypes:(NSUInteger)arg1;
 - (BOOL)observesApplicationSuspendResumeEventsOnly;
-- (int)orientation;
-- (id)player;
+- (NSInteger)orientation;
 - (id)popViewControllerAnimated:(BOOL)arg1;
-- (id)popViewControllerHandler;
 - (void)pushViewController:(id)arg1 withTransition:(id)arg2;
-- (void)registerForPlayerNotifications;
-- (BOOL)registeredForPlayerNotifications;
-- (void)removeChildViewController:(id)arg1;
+- (void)restoreOverlayViewAfterTransition:(id)arg1;
 - (void)setAppearing:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIdleTimerDisabled:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setObservesApplicationSuspendResumeEventsOnly:(BOOL)arg1;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
-- (void)setOrientation:(int)arg1;
-- (void)setPlayer:(id)arg1;
-- (void)setPopViewControllerHandler:(id)arg1;
-- (void)setRegisteredForPlayerNotifications:(BOOL)arg1;
+- (void)setOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
+- (void)setOrientation:(NSInteger)arg1;
 - (void)setView:(id)arg1;
 - (void)startTicking;
 - (void)stopTicking;
-- (void)unlockPlayer;
-- (void)unregisterForPlayerNotifications;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willChangeToInterfaceOrientation:(int)arg1;
+- (void)willChangeToOrientation:(NSInteger)arg1;
 
 @end

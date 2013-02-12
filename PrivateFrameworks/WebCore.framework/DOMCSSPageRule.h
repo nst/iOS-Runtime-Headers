@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSStyleDeclaration, NSString;
-
 @interface DOMCSSPageRule : DOMCSSRule {
 }
 
-@property(copy) NSString * selectorText;
-@property(readonly) DOMCSSStyleDeclaration * style;
+@property(copy) NSString *selectorText;
+@property(retain,readonly) DOMCSSStyleDeclaration *style;
 
++ (id)_wrapCSSPageRule:(struct CSSPageRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_4_1_1; } x4; }*)arg1;
+
+- (struct CSSPageRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_4_1_1; } x4; }*)_CSSPageRule;
 - (id)selectorText;
 - (void)setSelectorText:(id)arg1;
 - (id)style;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDText, WDCharacterRun;
+@class WDCharacterRun, WDText;
 
 @interface WDNote : WDRun {
     BOOL mAutomaticNumbering;
@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (id)initWithParagraph:(id)arg1 footnote:(BOOL)arg2;
 - (id)reference;
-- (int)runType;
+- (NSInteger)runType;
 - (void)setAutomaticNumbering:(BOOL)arg1;
 - (id)text;
 

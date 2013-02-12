@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ECPointerNilKeyDictionary : TSUPointerKeyDictionary {
+@interface ECPointerNilKeyDictionary : SFUPointerKeyDictionary {
     id mNilKeyObject;
 }
 

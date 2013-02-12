@@ -2,31 +2,39 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class EDString;
 
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying> {
-    boolmBuiltIn;
-    boolmReferenced;
-    unsigned int mFormatId;
+     /* Encoded args for previous method: @20@0:4@8I12B16 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+    NSUInteger mFormatId;
     EDString *mFormatString;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mBuiltIn;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mReferenced;
 }
 
-+ (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned int)arg2;
++ (id)contentFormatWithFormatString:(id)arg1 formatId:(NSUInteger)arg2;
 + (id)contentFormatWithFormatString:(id)arg1;
-+ (id)contentFormatWithNSString:(id)arg1 formatId:(unsigned int)arg2 builtIn:(bool)arg3;
++ (id)contentFormatWithNSString:(id)arg1 formatId:(NSUInteger)arg2 builtIn:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
 
-- (bool)builtIn;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)builtIn;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)formatId;
+- (NSUInteger)formatId;
 - (id)formatString;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToContentFormat:(id)arg1;
-- (int)key;
-- (bool)referenced;
-- (void)setFormatId:(unsigned int)arg1;
-- (void)setReferenced:(bool)arg1;
+- (NSInteger)key;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)referenced;
+- (void)setFormatId:(NSUInteger)arg1;
+- (void)setReferenced:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 
 @end

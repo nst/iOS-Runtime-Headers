@@ -9,9 +9,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)dash;
-- (unsigned int)hash;
 - (id)initWithDash:(float)arg1 space:(float)arg2;
-- (BOOL)isEqual:(id)arg1;
 - (float)space;
 
 @end

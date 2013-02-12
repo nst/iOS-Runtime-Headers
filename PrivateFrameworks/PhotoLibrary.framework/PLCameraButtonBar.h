@@ -2,44 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCameraButton, PLCameraOptionsButton, PLCameraToggleButton;
-
-@interface PLCameraButtonBar : UIToolbar <PLCameraButtonBarProtocol> {
-    unsigned int _isBackgroundVisible : 1;
-    int _buttonBarMode;
-    int _buttonBarStyle;
-    PLCameraButton *_cameraButton;
-    PLCameraOptionsButton *_optionsButton;
-    PLCameraToggleButton *_toggleButton;
+@interface PLCameraButtonBar : PLPhotosButtonBar {
+    NSInteger _centerButtonTag;
 }
 
-@property int buttonBarMode;
-@property int buttonBarStyle;
-@property(retain) PLCameraButton * cameraButton;
-@property(retain) PLCameraOptionsButton * optionsButton;
-@property(retain) PLCameraToggleButton * toggleButton;
-
-+ (id)backgroundImage;
-+ (id)backgroundImageForButtonBarStyle:(int)arg1;
-+ (float)buttonBarHeightForTallScreen:(BOOL)arg1;
-+ (float)defaultHeight;
-
-- (void)_setVisibility:(BOOL)arg1;
-- (int)buttonBarMode;
-- (int)buttonBarStyle;
 - (id)cameraButton;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 buttonBarStyle:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isBackgroundVisible;
-- (void)layoutSubviews;
-- (id)optionsButton;
-- (void)setButtonBarMode:(int)arg1 animationDuration:(double)arg2;
-- (void)setButtonBarMode:(int)arg1;
-- (void)setButtonBarStyle:(int)arg1;
-- (void)setCameraButton:(id)arg1;
-- (void)setOptionsButton:(id)arg1;
-- (void)setToggleButton:(id)arg1;
-- (id)toggleButton;
+- (void)deviceOrientationChanged;
+- (void)positionButtons:(id)arg1 tags:(NSInteger*)arg2 count:(NSInteger)arg3 group:(NSInteger)arg4;
+- (void)setCenterButtonTag:(NSInteger)arg1;
+- (void)start;
+- (void)stop;
 
 @end

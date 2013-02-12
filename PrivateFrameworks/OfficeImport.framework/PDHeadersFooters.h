@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface PDHeadersFooters : NSObject {
-    int mDateTimeFormat;
+    NSInteger mDateTimeFormat;
     NSString *mFooter;
     BOOL mHasDateTime;
     BOOL mHasFooter;

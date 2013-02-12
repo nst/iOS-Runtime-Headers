@@ -5,15 +5,9 @@
 @interface WebCoreStatistics : NSObject {
 }
 
-+ (int)autoreleasedPageCount;
-+ (unsigned long)cachedFontDataCount;
-+ (unsigned long)cachedFontDataInactiveCount;
-+ (int)cachedFrameCount;
-+ (int)cachedPageCount;
 + (void)emptyCache;
 + (void)garbageCollectJavaScriptObjects;
 + (void)garbageCollectJavaScriptObjectsOnAlternateThreadForDebugging:(BOOL)arg1;
-+ (unsigned long)glyphPageCount;
 + (unsigned long)iconPageURLMappingCount;
 + (unsigned long)iconRecordCount;
 + (unsigned long)iconRetainedPageURLCount;
@@ -21,7 +15,6 @@
 + (unsigned long)javaScriptGlobalObjectsCount;
 + (unsigned long)javaScriptInterpretersCount;
 + (unsigned long)javaScriptNoGCAllowedObjectsCount;
-+ (id)javaScriptObjectTypeCounts;
 + (unsigned long)javaScriptObjectsCount;
 + (unsigned long)javaScriptProtectedGlobalObjectsCount;
 + (id)javaScriptProtectedObjectTypeCounts;
@@ -29,9 +22,6 @@
 + (unsigned long)javaScriptReferencedObjectsCount;
 + (id)javaScriptRootObjectClasses;
 + (id)javaScriptRootObjectTypeCounts;
-+ (id)memoryStatistics;
-+ (void)purgeInactiveFontData;
-+ (void)returnFreeMemoryToSystem;
 + (void)setCacheDisabled:(BOOL)arg1;
 + (void)setShouldPrintExceptions:(BOOL)arg1;
 + (BOOL)shouldPrintExceptions;

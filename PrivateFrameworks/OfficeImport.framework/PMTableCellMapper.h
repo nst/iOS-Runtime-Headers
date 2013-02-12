@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTableCell, CMStyle;
+@class CMStyle, OADTableCell;
 
 @interface PMTableCellMapper : CMMapper {
     OADTableCell *mCell;
-    int mColIndex;
-    unsigned int mRowIndex;
+    NSInteger mColIndex;
     CMStyle *mStyle;
     float mWidth;
 }
 
 - (void)dealloc;
-- (id)initWithOadTableCell:(id)arg1 rowIndex:(unsigned int)arg2 columnIndex:(int)arg3 parent:(id)arg4;
+- (id)initWithOadTableCell:(id)arg1 columnIndex:(NSInteger)arg2 parent:(id)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapBordersWithState:(id)arg1;
-- (void)mapCellPropertiesWithState:(id)arg1 textAnchor:(int)arg2;
-- (id)rowMapper;
-- (id)tableMapper;
-- (float)widthWithState:(id)arg1;
+- (void)mapCellPropertiesWithState:(id)arg1 textAnchor:(NSInteger)arg2;
+- (float)width;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, NSArray, UIWindow, NSMutableArray;
+@class UIView, UIWindow;
 
 @interface UITouch : NSObject {
     struct CGPoint { 
@@ -14,103 +14,53 @@
     struct { 
         unsigned int _firstTouchForView : 1; 
         unsigned int _isTap : 1; 
-        unsigned int _isDelayed : 1; 
-        unsigned int _sentTouchesEnded : 1; 
-        unsigned int _abandonForwardingRecord : 1; 
-    BOOL _eaten;
-    NSMutableArray *_forwardingRecord;
-    NSMutableArray *_gestureRecognizers;
-    UIView *_gestureView;
+        unsigned int _isWarped : 1; 
     } _locationInWindow;
-    float _movementMagnitudeSquared;
-    unsigned char _pathIdentity;
-    unsigned char _pathIndex;
-    float _pathMajorRadius;
-    int _phase;
+    NSInteger _phase;
     } _previousLocationInWindow;
-    int _savedPhase;
-    unsigned int _tapCount;
+    NSUInteger _tapCount;
     double _timestamp;
     } _touchFlags;
     UIView *_view;
-    UIView *_warpedIntoView;
     UIWindow *_window;
 }
 
-@property(getter=_isEaten,setter=_setEaten:) BOOL _eaten;
-@property(setter=_setPathIdentity:) unsigned char _pathIdentity;
-@property(setter=_setPathIndex:) unsigned char _pathIndex;
-@property(setter=_setPathMajorRadius:) float _pathMajorRadius;
-@property(readonly) NSArray * gestureRecognizers;
-@property(retain) UIView * gestureView;
+@property(retain) UIView *view;
+@property(retain,readonly) UIView *view;
+@property(retain) UIWindow *window;
+@property(retain,readonly) UIWindow *window;
 @property BOOL isTap;
-@property int phase;
-@property(readonly) int phase;
-@property BOOL sentTouchesEnded;
-@property unsigned int tapCount;
-@property(readonly) unsigned int tapCount;
+@property BOOL isWarped;
+@property NSInteger phase;
+@property(readonly) NSInteger phase;
+@property NSUInteger tapCount;
+@property(readonly) NSUInteger tapCount;
 @property double timestamp;
 @property(readonly) double timestamp;
-@property(retain) UIView * view;
-@property(readonly) UIView * view;
-@property(retain) UIView * warpedIntoView;
-@property(retain) UIWindow * window;
-@property(readonly) UIWindow * window;
 
-+ (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(int)arg2 view:(id)arg3;
++ (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(NSInteger)arg2 view:(id)arg3;
 
-- (void)_addGestureRecognizer:(id)arg1;
-- (void)_clearGestureRecognizers;
-- (int)_compareIndex:(id)arg1;
-- (float)_distanceFrom:(id)arg1 inView:(id)arg2;
-- (id)_forwardingRecord;
-- (id)_gestureRecognizers;
-- (BOOL)_isEaten;
 - (BOOL)_isFirstTouchForView;
-- (BOOL)_isStationaryRelativeToTouches:(id)arg1;
-- (void)_loadStateFromTouch:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_locationInWindow:(id)arg1;
-- (unsigned char)_pathIdentity;
-- (unsigned char)_pathIndex;
-- (float)_pathMajorRadius;
-- (id)_phaseDescription;
-- (void)_popPhase;
-- (struct CGPoint { float x1; float x2; })_previousLocationInWindow:(id)arg1;
-- (void)_pushPhase:(int)arg1;
-- (void)_removeGestureRecognizer:(id)arg1;
-- (void)_setEaten:(BOOL)arg1;
 - (void)_setIsFirstTouchForView:(BOOL)arg1;
 - (void)_setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1 resetPrevious:(BOOL)arg2;
-- (void)_setPathIdentity:(unsigned char)arg1;
-- (void)_setPathIndex:(unsigned char)arg1;
-- (void)_setPathMajorRadius:(float)arg1;
-- (void)_updateMovementMagnitudeForLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
 - (void)dealloc;
 - (id)description;
-- (id)gestureRecognizers;
-- (id)gestureView;
-- (int)info;
-- (BOOL)isDelayed;
+- (NSInteger)info;
 - (BOOL)isTap;
+- (BOOL)isWarped;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (int)phase;
+- (NSInteger)phase;
 - (struct CGPoint { float x1; float x2; })previousLocationInView:(id)arg1;
-- (BOOL)sentTouchesEnded;
-- (void)setGestureView:(id)arg1;
-- (void)setIsDelayed:(BOOL)arg1;
 - (void)setIsTap:(BOOL)arg1;
-- (void)setPhase:(int)arg1;
-- (void)setSentTouchesEnded:(BOOL)arg1;
-- (void)setTapCount:(unsigned int)arg1;
+- (void)setIsWarped:(BOOL)arg1;
+- (void)setPhase:(NSInteger)arg1;
+- (void)setTapCount:(NSUInteger)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setView:(id)arg1;
-- (void)setWarpedIntoView:(id)arg1;
 - (void)setWindow:(id)arg1;
-- (unsigned int)tapCount;
+- (NSUInteger)tapCount;
 - (double)timestamp;
 - (id)view;
-- (id)warpedIntoView;
 - (id)window;
 
 @end

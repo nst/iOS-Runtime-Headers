@@ -9,13 +9,13 @@
     BOOL mIsEscher;
 }
 
-- (long)adjustValueAtIndex:(unsigned int)arg1;
+- (long)adjustValueAtIndex:(NSUInteger)arg1;
 - (id)adjustValues;
 - (void)dealloc;
-- (BOOL)hasAdjustValueAtIndex:(unsigned int)arg1;
+- (BOOL)hasAdjustValueAtIndex:(NSUInteger)arg1;
 - (id)init;
 - (BOOL)isEscher;
-- (void)setAdjustValue:(long)arg1 atIndex:(unsigned int)arg2;
+- (void)setAdjustValue:(long)arg1 atIndex:(NSUInteger)arg2;
 - (void)setIsEscher:(BOOL)arg1;
 
 @end

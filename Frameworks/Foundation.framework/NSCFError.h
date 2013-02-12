@@ -7,17 +7,14 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)allowsWeakReference;
-- (Class)classForCoder;
-- (int)code;
+- (NSInteger)code;
 - (id)domain;
 - (void)finalize;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (NSUInteger)retainCount;
 - (id)userInfo;
 
 @end

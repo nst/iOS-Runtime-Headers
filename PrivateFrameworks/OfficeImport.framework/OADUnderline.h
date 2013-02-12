@@ -2,29 +2,27 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADStroke, OADFill;
+@class OADFill, OADStroke;
 
 @interface OADUnderline : NSObject {
-    unsigned int mIsUsingTextFill : 1;
-    unsigned int mIsUsingTextStroke : 1;
     OADFill *mFill;
+    BOOL mIsUsingTextFill;
+    BOOL mIsUsingTextStroke;
     OADStroke *mStroke;
-    unsigned char mType;
+    NSInteger mType;
 }
 
 - (void)dealloc;
 - (id)fill;
-- (unsigned int)hash;
-- (id)initWithStroke:(id)arg1 fill:(id)arg2 type:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithStroke:(id)arg1 fill:(id)arg2 type:(NSInteger)arg3;
 - (BOOL)isUsingTextFill;
 - (BOOL)isUsingTextStroke;
 - (void)setFill:(id)arg1;
 - (void)setIsUsingTextFill:(BOOL)arg1;
 - (void)setIsUsingTextStroke:(BOOL)arg1;
 - (void)setStroke:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(NSInteger)arg1;
 - (id)stroke;
-- (int)type;
+- (NSInteger)type;
 
 @end

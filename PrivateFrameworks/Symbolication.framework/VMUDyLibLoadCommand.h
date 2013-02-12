@@ -2,20 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface VMUDyLibLoadCommand : VMULoadCommand {
-    unsigned int _compatibilityVersion;
-    unsigned int _currentVersion;
+    NSUInteger _compatibilityVersion;
+    NSUInteger _currentVersion;
     NSString *_path;
+    NSDate *_timestamp;
 }
 
-- (unsigned int)compatibilityVersion;
-- (unsigned int)currentVersion;
+- (NSUInteger)compatibilityVersion;
+- (NSUInteger)currentVersion;
 - (void)dealloc;
 - (id)description;
 - (id)initWithMemory:(id)arg1;
-- (BOOL)isLoadDyLib;
+- (BOOL)isDyLib;
 - (id)path;
+- (id)timestamp;
 
 @end

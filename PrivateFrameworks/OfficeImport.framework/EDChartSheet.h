@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDChart;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface EDChartSheet : EDSheet {
     struct CGRect { 
@@ -14,18 +16,13 @@
             float width; 
             float height; 
         } size; 
-    boolmIsBoundsSet;
+     /* Encoded args for previous method: B8@0:4 */
     } mBounds;
-    CHDChart *mMainChart;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsBoundsSet;
 }
 
-- (id).cxx_construct;
-- (void)addDrawable:(id)arg1;
-- (bool)areBoundsSet;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)areBoundsSet;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)mainChart;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setMainChart:(id)arg1;
-- (void)teardown;
 
 @end

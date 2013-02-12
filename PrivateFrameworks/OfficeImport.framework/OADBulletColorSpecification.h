@@ -10,8 +10,6 @@
 
 - (id)color;
 - (void)dealloc;
-- (unsigned int)hash;
 - (id)initWithBulletColor:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
 
 @end

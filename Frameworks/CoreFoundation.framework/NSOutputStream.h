@@ -6,14 +6,13 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)outputStreamToBuffer:(char *)arg1 capacity:(unsigned int)arg2;
++ (id)outputStreamToBuffer:(char *)arg1 capacity:(NSUInteger)arg2;
 + (id)outputStreamToFileAtPath:(id)arg1 append:(BOOL)arg2;
 + (id)outputStreamToMemory;
-+ (id)outputStreamWithURL:(id)arg1 append:(BOOL)arg2;
 
-- (struct { int x1; int x2; })_cfStreamError;
+- (struct { NSInteger x1; NSInteger x2; })_cfStreamError;
 - (unsigned long)_cfTypeID;
 - (BOOL)hasSpaceAvailable;
-- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
+- (NSInteger)write:(const char *)arg1 maxLength:(NSUInteger)arg2;
 
 @end

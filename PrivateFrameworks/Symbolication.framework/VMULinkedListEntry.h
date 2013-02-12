@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class VMUSymbolOwner, VMULinkedListEntry;
+@class VMULinkedListEntry, VMUSymbolOwner;
 
 @interface VMULinkedListEntry : NSObject {
     VMULinkedListEntry *_next;
     VMULinkedListEntry *_prev;
-    unsigned int _size;
+    NSUInteger _size;
     VMUSymbolOwner *_symbolOwner;
 }
 
@@ -20,7 +20,7 @@
 - (id)prev;
 - (void)setNext:(id)arg1;
 - (void)setPrev:(id)arg1;
-- (unsigned int)size;
+- (NSUInteger)size;
 - (id)symbolOwner;
 
 @end

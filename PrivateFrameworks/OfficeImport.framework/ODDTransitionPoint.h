@@ -5,6 +5,6 @@
 @interface ODDTransitionPoint : ODDDataPoint {
 }
 
-- (void)setType:(int)arg1;
+- (void)setType:(NSInteger)arg1;
 
 @end

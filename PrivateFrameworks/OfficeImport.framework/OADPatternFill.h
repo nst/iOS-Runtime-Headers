@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADPattern, OADColor;
+@class OADColor, OADPattern;
 
 @interface OADPatternFill : OADFill {
     OADColor *mBgColor;
@@ -19,13 +19,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fgColor;
-- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isBgColorOverridden;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFgColorOverridden;
 - (BOOL)isPatternOverridden;
-- (id)namedImageDataWithBlipCollection:(id)arg1;
 - (id)pattern;
 - (void)setBgColor:(id)arg1;
 - (void)setColor:(id)arg1;

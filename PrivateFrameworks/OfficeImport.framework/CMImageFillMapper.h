@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADOrientedBounds, OADFill;
+@class OADFill, OADOrientedBounds;
 
 @interface CMImageFillMapper : CMMapper {
     OADOrientedBounds *mBounds;
     OADFill *mFill;
 }
 
-- (id)blipAtIndex:(unsigned int)arg1;
+- (id)blipAtIndex:(NSUInteger)arg1;
 - (id)convertMetafileToPdf:(id)arg1 state:(id)arg2;
 - (id)initWithOadFill:(id)arg1 bounds:(id)arg2 parent:(id)arg3;
 - (BOOL)isCropped;

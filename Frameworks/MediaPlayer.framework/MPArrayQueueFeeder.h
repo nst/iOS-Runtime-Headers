@@ -5,17 +5,12 @@
 @class NSArray;
 
 @interface MPArrayQueueFeeder : MPQueueFeeder {
-    NSArray *_queueItems;
+    NSArray *_paths;
 }
 
-@property(readonly) NSArray * items;
-
-- (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (id)initWithItems:(id)arg1;
-- (unsigned int)itemCount;
-- (id)items;
-- (id)pathAtIndex:(unsigned int)arg1;
-- (id)playbackInfoAtIndex:(unsigned int)arg1;
+- (id)initWithPaths:(id)arg1;
+- (NSUInteger)numberOfPaths;
+- (id)pathAtIndex:(NSUInteger)arg1;
 
 @end

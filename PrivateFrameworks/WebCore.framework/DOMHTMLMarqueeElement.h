@@ -5,29 +5,10 @@
 @interface DOMHTMLMarqueeElement : DOMHTMLElement {
 }
 
-- (id)behavior;
-- (id)bgColor;
-- (id)direction;
-- (id)height;
-- (unsigned int)hspace;
-- (int)loop;
-- (int)scrollAmount;
-- (int)scrollDelay;
-- (void)setBehavior:(id)arg1;
-- (void)setBgColor:(id)arg1;
-- (void)setDirection:(id)arg1;
-- (void)setHeight:(id)arg1;
-- (void)setHspace:(unsigned int)arg1;
-- (void)setLoop:(int)arg1;
-- (void)setScrollAmount:(int)arg1;
-- (void)setScrollDelay:(int)arg1;
-- (void)setTrueSpeed:(BOOL)arg1;
-- (void)setVspace:(unsigned int)arg1;
-- (void)setWidth:(id)arg1;
++ (id)_wrapHTMLMarqueeElement:(struct HTMLMarqueeElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; NSInteger x35; }*)arg1;
+
+- (struct HTMLMarqueeElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; NSInteger x35; }*)_HTMLMarqueeElement;
 - (void)start;
 - (void)stop;
-- (BOOL)trueSpeed;
-- (unsigned int)vspace;
-- (id)width;
 
 @end

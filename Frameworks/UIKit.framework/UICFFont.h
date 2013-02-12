@@ -5,13 +5,11 @@
 @interface UICFFont : UIFont {
 }
 
-- (BOOL)allowsWeakReference;
 - (void)finalize;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (NSUInteger)retainCount;
 
 @end

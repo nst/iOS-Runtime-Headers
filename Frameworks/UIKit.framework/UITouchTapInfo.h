@@ -10,7 +10,7 @@
     float _rejectAsTapThrehold;
     } _startPosition;
     double _startTime;
-    unsigned int _tapCount;
+    NSUInteger _tapCount;
     float _viewTouchPauseThreshold;
 }
 

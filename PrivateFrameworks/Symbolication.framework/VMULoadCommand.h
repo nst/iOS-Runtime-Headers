@@ -4,17 +4,16 @@
 
 @interface VMULoadCommand : NSObject {
     unsigned long long _cmdSize;
-    unsigned int _command;
+    NSUInteger _command;
 }
 
 + (id)loadCommandWithMemory:(id)arg1;
 
 - (unsigned long long)cmdSize;
 - (id)initWithMemory:(id)arg1;
+- (BOOL)isDyLib;
 - (BOOL)isDyLinker;
 - (BOOL)isDySymTab;
-- (BOOL)isIDDyLib;
-- (BOOL)isLoadDyLib;
 - (BOOL)isSegment32;
 - (BOOL)isSegment64;
 - (BOOL)isSegment;

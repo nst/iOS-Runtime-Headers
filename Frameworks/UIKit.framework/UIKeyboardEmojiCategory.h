@@ -2,41 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSArray;
+@class NSArray, NSString;
 
 @interface UIKeyboardEmojiCategory : NSObject {
     NSArray *_emoji;
-    int _lastVisibleFirstEmojiIndex;
-    int _type;
+    NSInteger _lastViewedPage;
+    NSString *_name;
 }
 
-@property int categoryType;
-@property(readonly) NSString * displayDescription;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * displaySymbol;
-@property(retain) NSArray * emoji;
-@property int lastVisibleFirstEmojiIndex;
-@property(readonly) NSString * name;
+@property NSInteger lastViewedPage; /* unknown property attribute: V_lastViewedPage */
+@property(retain) NSArray *emoji; /* unknown property attribute: V_emoji */
+@property(retain) NSString *name; /* unknown property attribute: V_name */
 
-+ (id)categories;
-+ (id)categoryForType:(int)arg1;
-+ (id)emojiRecentsFromPreferences;
-+ (id)getGlyphForRecents:(id)arg1;
-+ (id)localizedStringForKey:(id)arg1;
-+ (int)numberOfCategories;
-
-- (int)categoryType;
-- (void)dealloc;
-- (id)description;
-- (id)displayDescription;
-- (id)displayName;
-- (id)displaySymbol;
 - (id)emoji;
-- (int)lastVisibleFirstEmojiIndex;
+- (NSInteger)lastViewedPage;
 - (id)name;
-- (void)releaseCategories;
-- (void)setCategoryType:(int)arg1;
 - (void)setEmoji:(id)arg1;
-- (void)setLastVisibleFirstEmojiIndex:(int)arg1;
+- (void)setLastViewedPage:(NSInteger)arg1;
+- (void)setName:(id)arg1;
 
 @end

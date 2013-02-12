@@ -3,17 +3,17 @@
  */
 
 @interface VMUSymTabLoadCommand : VMULoadCommand {
-    unsigned int _nsyms;
-    unsigned int _stroff;
-    unsigned int _strsize;
-    unsigned int _symoff;
+    NSUInteger _nsyms;
+    NSUInteger _stroff;
+    NSUInteger _strsize;
+    NSUInteger _symoff;
 }
 
 - (id)initWithMemory:(id)arg1;
 - (BOOL)isSymTab;
-- (unsigned int)nsyms;
-- (unsigned int)stroff;
-- (unsigned int)strsize;
-- (unsigned int)symoff;
+- (NSUInteger)nsyms;
+- (NSUInteger)stroff;
+- (NSUInteger)strsize;
+- (NSUInteger)symoff;
 
 @end

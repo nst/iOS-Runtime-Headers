@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class WebFrame, WAKScrollView;
+@class WAKScrollView, WebFrame;
 
 @interface WebFrameViewPrivate : NSObject {
     WAKScrollView *frameScrollView;
-    BOOL includedInWebKitStatistics;
+    NSInteger marginHeight;
+    NSInteger marginWidth;
     WebFrame *webFrame;
 }
 
 - (void)dealloc;
+- (id)init;
 
 @end

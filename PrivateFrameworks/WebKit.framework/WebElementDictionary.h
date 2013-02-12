@@ -5,10 +5,24 @@
 @class NSMutableDictionary, NSMutableSet;
 
 @interface WebElementDictionary : NSDictionary {
+    struct HitTestResult { struct RefPtr<WebCore::Node> { 
+            struct Node {} *m_ptr; 
+        } x1; struct RefPtr<WebCore::Node> { 
+            struct Node {} *m_ptr; 
+        } x2; struct IntPoint { 
+            NSInteger m_x; 
+            NSInteger m_y; 
+        } x3; struct IntPoint { 
+            NSInteger m_x; 
+            NSInteger m_y; 
+        } x4; struct RefPtr<WebCore::Element> { 
+            struct Element {} *m_ptr; 
+        } x5; struct RefPtr<WebCore::PlatformScrollbar> { 
+            struct PlatformScrollbar {} *m_ptr; 
     NSMutableDictionary *_cache;
     BOOL _cacheComplete;
     NSMutableSet *_nilValues;
-    struct HitTestResult { struct RefPtr<WebCore::Node> { struct Node {} *x_1_1_1; } x1; struct RefPtr<WebCore::Node> { struct Node {} *x_2_1_1; } x2; struct IntPoint { int x_3_1_1; int x_3_1_2; } x3; struct IntPoint { int x_4_1_1; int x_4_1_2; } x4; struct RefPtr<WebCore::Element> { struct Element {} *x_5_1_1; } x5; struct RefPtr<WebCore::Scrollbar> { struct Scrollbar {} *x_6_1_1; } x6; boolx7; boolx8; int x9; int x10; int x11; int x12; int x13; struct RenderRegion {} *x14; struct OwnPtr<WTF::ListHashSet<WTF::RefPtr<WebCore::Node>, 256, WTF::PtrHash<WTF::RefPtr<WebCore::Node>>> > { struct ListHashSet<WTF::RefPtr<WebCore::Node>, 256, WTF::PtrHash<WTF::RefPtr<WebCore::Node>> > {} *x_15_1_1; } x15; } *_result;
+        } x6; } *_result;
 }
 
 + (void)initialize;
@@ -16,26 +30,25 @@
 
 - (id)_absoluteImageURL;
 - (id)_absoluteLinkURL;
-- (id)_absoluteMediaURL;
 - (id)_altDisplayString;
 - (id)_domNode;
 - (void)_fillCache;
 - (id)_image;
 - (id)_imageRect;
 - (id)_isContentEditable;
-- (id)_isInScrollBar;
 - (id)_isLiveLink;
 - (id)_isSelected;
+- (id)_linkRect;
 - (id)_spellingToolTip;
 - (id)_targetWebFrame;
 - (id)_textContent;
 - (id)_title;
 - (id)_titleDisplayString;
 - (id)_webFrame;
-- (unsigned int)count;
+- (NSUInteger)count;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithHitTestResult:(const struct HitTestResult { struct RefPtr<WebCore::Node> { struct Node {} *x_1_1_1; } x1; struct RefPtr<WebCore::Node> { struct Node {} *x_2_1_1; } x2; struct IntPoint { int x_3_1_1; int x_3_1_2; } x3; struct IntPoint { int x_4_1_1; int x_4_1_2; } x4; struct RefPtr<WebCore::Element> { struct Element {} *x_5_1_1; } x5; struct RefPtr<WebCore::Scrollbar> { struct Scrollbar {} *x_6_1_1; } x6; boolx7; boolx8; int x9; int x10; int x11; int x12; int x13; struct RenderRegion {} *x14; struct OwnPtr<WTF::ListHashSet<WTF::RefPtr<WebCore::Node>, 256, WTF::PtrHash<WTF::RefPtr<WebCore::Node>>> > { struct ListHashSet<WTF::RefPtr<WebCore::Node>, 256, WTF::PtrHash<WTF::RefPtr<WebCore::Node>> > {} *x_15_1_1; } x15; }*)arg1;
+- (id)initWithHitTestResult:(const struct HitTestResult { struct RefPtr<WebCore::Node> { struct Node {} *x_1_1_1; } x1; struct RefPtr<WebCore::Node> { struct Node {} *x_2_1_1; } x2; struct IntPoint { NSInteger x_3_1_1; NSInteger x_3_1_2; } x3; struct IntPoint { NSInteger x_4_1_1; NSInteger x_4_1_2; } x4; struct RefPtr<WebCore::Element> { struct Element {} *x_5_1_1; } x5; struct RefPtr<WebCore::PlatformScrollbar> { struct PlatformScrollbar {} *x_6_1_1; } x6; }*)arg1;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 

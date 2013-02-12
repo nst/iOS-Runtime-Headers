@@ -2,49 +2,28 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSHashTable, NSMutableSet, VMUNonOverlappingRangeArray, VMUClassInfoMap;
+@class NSHashTable, NSMapTable, NSMutableSet, VMUSymbolicator;
 
 @interface VMUObjectIdentifier : NSObject {
-    struct _CSTypeRef { 
-        unsigned int _opaque_1; 
-        unsigned int _opaque_2; 
-    unsigned int _cPlusPlusClassCount;
-    unsigned int _cfTypeCount;
-    VMUClassInfoMap *_cfTypeIDtoClassInfo;
-    NSHashTable *_invalidPointers;
-    VMUClassInfoMap *_isaToClassInfo;
-    id _memoryReader;
-    unsigned int _objcClassCount;
+    NSUInteger _cPlusPlusClassCount;
+    NSUInteger _cfTypeCount;
+    NSHashTable *_classAddresses;
+    NSMapTable *_isaToClassInfo;
+    NSUInteger _objcClassCount;
     NSMutableSet *_objcRuntimeMallocBlocks;
-    NSHashTable *_objcRuntimeMallocBlocksHash;
-    } _symbolicator;
-    VMUNonOverlappingRangeArray *_targetProcessVMranges;
-    unsigned int _task;
-    int peeksAtRemoteObjectIsa;
+    VMUSymbolicator *_symbolicator;
+    NSUInteger _task;
 }
 
-- (unsigned int)CFTypeCount;
-- (unsigned int)CPlusPlusClassCount;
-- (unsigned int)ObjCclassCount;
-- (void)_addobjc_opt_ro_classesForOffsets:(struct objc_classheader_t { int x1; int x2; }*)arg1 count:(unsigned int)arg2 classOptAddress:(unsigned long long)arg3;
-- (id)_classInfoForObject:(unsigned long long)arg1;
-- (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned int x1; unsigned char x2[4]; }*)arg1;
-- (id)classInfoForIsaPointer:(unsigned int)arg1;
-- (id)classInfoForObject:(unsigned long long)arg1;
-- (id)classInfoForObjectWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
+- (NSUInteger)CFTypeCount;
+- (NSUInteger)CPlusPlusClassCount;
+- (NSUInteger)ObjCclassCount;
+- (id)classInfoForObject:(NSUInteger)arg1;
 - (void)dealloc;
 - (void)findCFTypes;
 - (void)findObjCclasses;
-- (id)initWithTask:(unsigned int)arg1 symbolicator:(id)arg2;
-- (id)initWithTask:(unsigned int)arg1;
-- (BOOL)isValidRemotePointer:(unsigned long long)arg1;
-- (id)nullClassInfo;
+- (id)initWithTask:(NSUInteger)arg1 symbolicator:(id)arg2;
 - (id)objcRuntimeMallocBlocks;
-- (id)objcRuntimeMallocBlocksHash;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
+- (id)readClassNameString:(NSUInteger)arg1;
 
 @end

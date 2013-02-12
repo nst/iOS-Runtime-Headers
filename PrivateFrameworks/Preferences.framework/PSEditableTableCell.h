@@ -2,51 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIColor;
-
-@interface PSEditableTableCell : PSTableCell <UITextViewDelegate, UITextFieldDelegate> {
-    BOOL _delaySpecifierRelease;
-    id _delegate;
-    BOOL _forceFirstResponder;
-    BOOL _isEditing;
+@interface PSEditableTableCell : UIPreferencesTextTableCell {
     id _realTarget;
     SEL _targetSetter;
-    UIColor *_textColor;
-    BOOL _valueChanged;
+    id _userInfo;
 }
 
-@property(readonly) BOOL isEditing;
-
-+ (int)cellStyle;
-
-- (void)_saveForExit;
-- (void)_setValueChanged;
-- (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canReload;
-- (BOOL)canResignFirstResponder;
-- (void)cellRemovedFromView;
 - (void)controlChanged:(id)arg1;
 - (void)dealloc;
-- (void)endEditingAndSave;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (BOOL)isEditing;
-- (BOOL)isFirstResponder;
-- (void)layoutSubviews;
-- (void)prepareForReuse;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (BOOL)resignFirstResponder;
-- (void)setCellEnabled:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setPlaceholderText:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setValue:(id)arg1;
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
-- (id)textField;
-- (void)textFieldDidBeginEditing:(id)arg1;
-- (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (id)value;
+- (void)setValueChangedOnReturn;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
 
 @end

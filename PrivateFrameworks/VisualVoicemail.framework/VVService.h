@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSError, NSString, NSRecursiveLock, PCPersistentTimer;
+@class NSError, NSRecursiveLock, NSString, NSTimer;
 
 @interface VVService : NSObject {
     struct { 
@@ -10,51 +10,44 @@
         unsigned int subscribed : 1; 
         unsigned int initialSetupRequired : 1; 
         unsigned int fakeInitialSetup : 1; 
-        unsigned int launchedWithFakeInitialSetup : 1; 
         unsigned int mwiState : 1; 
         unsigned int notificationFallbackEnabled : 1; 
         unsigned int capabilitiesLoaded : 1; 
     NSError *_activationError;
-    unsigned int _capabilities;
+    NSUInteger _capabilities;
     id _carrierParameters;
     NSRecursiveLock *_lock;
-    int _mailboxUsage;
+    NSInteger _mailboxUsage;
     struct __CFDate { } *_nextRetryWakeDate;
-    struct __CFDate { } *_nextTrashCompactionWakeDate;
-    PCPersistentTimer *_notificationFallbackTimer;
+    NSTimer *_notificationFallbackTimer;
     struct __CFDate { } *_notificationFallbackWakeDate;
     Class _notificationInterpreter;
     NSString *_password;
     NSError *_passwordError;
     NSString *_passwordMailboxName;
-    unsigned int _pmNotifier;
+    NSUInteger _pmNotifier;
     struct IONotificationPort { } *_pmNotifierPort;
-    unsigned int _pmRootPort;
+    NSUInteger _pmRootPort;
     struct __CFRunLoopSource { } *_pmRunLoopSource;
-    int _retryIntervalIndex;
+    NSInteger _retryIntervalIndex;
     struct __CFArray { } *_retryIntervals;
-    PCPersistentTimer *_retryTimer;
+    NSTimer *_retryTimer;
     } _serviceFlags;
     double _trashCompactionAge;
-    PCPersistentTimer *_trashCompactionTimer;
-    unsigned int _trashedCount;
-    unsigned int _unreadCount;
+    NSUInteger _trashedCount;
+    NSUInteger _unreadCount;
 }
 
 + (void)_handleSIMChange;
 + (void)_resetInsomniaState;
 + (void)_setInsomniaState:(BOOL)arg1;
 + (void)_suppressInsomniaState;
-+ (unsigned int)_voicemailPowerAssertion;
 + (void)initialize;
 + (void)setInsomniaEnabled:(BOOL)arg1;
 + (id)sharedService;
 + (BOOL)sharedServiceIsSubscribed;
 
-- (void)_attemptDelayedSynchronize:(id)arg1;
 - (void)_attemptDelayedSynchronize;
-- (void)_attemptScheduledTrashCompaction;
-- (void)_cancelAutomatedTrashCompaction;
 - (void)_cancelIndicatorAction;
 - (void)_contextActivationFailed:(id)arg1;
 - (void)_contextActivationSucceeded:(id)arg1;
@@ -66,27 +59,23 @@
 - (void)_reactToIndicator;
 - (void)_registerForPowerEventsIfNecessary;
 - (struct __CFArray { }*)_retryIntervals;
-- (void)_scheduleAutomatedTrashCompaction;
 - (void)_scheduleFallbackTimerIfNecessary;
 - (void)_setActivationError:(id)arg1;
 - (void)_setOnline:(BOOL)arg1 fallbackMode:(BOOL)arg2;
+- (double)_trashCompactionAge;
 - (void)_updateOnlineStatusWithDataStatusDict:(struct __CFDictionary { }*)arg1;
 - (id)activationError;
-- (void)cancelAutomatedTrashCompaction;
 - (void)cancelDelayedSynchronize;
 - (void)cancelNotificationFallback;
 - (void)cancelPasswordRequest;
-- (unsigned int)capabilities;
+- (NSUInteger)capabilities;
 - (id)carrierParameterValueForKey:(id)arg1;
 - (void)changePassword:(id)arg1 fromPassword:(id)arg2;
 - (void)clearActivationError;
-- (void)clearRemoteUIDsForDetachedMessages;
-- (struct __CFString { }*)connectionServiceType;
+- (long)dataContextIdentifier;
 - (BOOL)dataForRecordPending:(void*)arg1 progressiveLoadInProgress:(BOOL*)arg2;
 - (void)dealloc;
 - (void)displayPasswordRequestIfNecessary;
-- (BOOL)doTrashCompaction;
-- (BOOL)doesClientManageTrashCompaction;
 - (BOOL)greetingAvailable;
 - (BOOL)greetingFetchExistsProgressiveLoadInProgress:(BOOL*)arg1;
 - (void)handleDataContextDeactivated;
@@ -102,23 +91,22 @@
 - (BOOL)isOnline;
 - (BOOL)isSubscribed;
 - (void)kill;
-- (int)mailboxGreetingType;
+- (NSInteger)mailboxGreetingType;
 - (id)mailboxName;
 - (BOOL)mailboxRequiresSetup;
-- (int)mailboxUsage;
-- (int)maximumGreetingDuration;
-- (int)maximumPasswordLength;
-- (int)maximumRecordedNameDuration;
-- (int)minimumPasswordLength;
+- (NSInteger)mailboxUsage;
+- (NSInteger)maximumGreetingDuration;
+- (NSInteger)maximumPasswordLength;
+- (NSInteger)maximumRecordedNameDuration;
+- (NSInteger)minimumPasswordLength;
 - (void)moveRecordFromTrash:(void*)arg1;
 - (void)moveRecordToTrash:(void*)arg1;
 - (Class)notificationInterpreterClass;
 - (id)password;
 - (BOOL)passwordChangeRequiresEnteringOldPassword;
 - (id)passwordIgnoringSubscription:(BOOL)arg1;
-- (void)progressiveDataLengthsForRecord:(void*)arg1 expected:(unsigned int*)arg2 current:(unsigned int*)arg3;
+- (void)progressiveDataLengthsForRecord:(void*)arg1 expected:(NSUInteger*)arg2 current:(NSUInteger*)arg3;
 - (id)provisionalPassword;
-- (void)removeAllNonDetachedRecords;
 - (void)removeAllRecords;
 - (void)reportError:(id)arg1;
 - (void)resetCounts;
@@ -126,28 +114,24 @@
 - (BOOL)respectsMWINotifications;
 - (void)retrieveDataForRecord:(void*)arg1;
 - (void)retrieveGreeting;
-- (void)scheduleAutomatedTrashCompaction;
 - (void)scheduleDelayedSynchronize;
-- (void)setGreetingType:(int)arg1 withData:(id)arg2 duration:(unsigned int)arg3;
+- (void)setGreetingType:(NSInteger)arg1 withData:(id)arg2 duration:(NSUInteger)arg3;
 - (void)setMailboxRequiresSetup:(BOOL)arg1;
-- (void)setMailboxUsage:(int)arg1;
+- (void)setMailboxUsage:(NSInteger)arg1;
 - (void)setMessageWaiting:(BOOL)arg1;
 - (void)setOnline:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setProvisionalPassword:(id)arg1;
 - (void)setSubscribed:(BOOL)arg1;
-- (void)setTrashedCount:(unsigned int)arg1;
-- (void)setUnreadCount:(unsigned int)arg1;
+- (void)setTrashedCount:(NSUInteger)arg1;
+- (void)setUnreadCount:(NSUInteger)arg1;
 - (BOOL)sharedSubscriptionRequiresSetup;
-- (BOOL)shouldScheduleAutoTrashOnMailboxUsageChange;
 - (BOOL)shouldTrashCompactRecord:(void*)arg1;
-- (BOOL)synchronizationPending;
 - (void)synchronize:(BOOL)arg1;
-- (BOOL)taskOfTypeExists:(int)arg1;
-- (double)trashCompactionAge;
-- (unsigned int)trashedCount;
-- (unsigned int)unreadCount;
-- (void)updateCountsForChangedFlags:(int)arg1 currentRecordFlags:(int)arg2;
+- (BOOL)taskOfTypeExists:(NSInteger)arg1;
+- (NSUInteger)trashedCount;
+- (NSUInteger)unreadCount;
+- (void)updateCountsForChangedFlags:(NSInteger)arg1 currentRecordFlags:(NSInteger)arg2;
 - (void)updateLoggingSettings;
 
 @end

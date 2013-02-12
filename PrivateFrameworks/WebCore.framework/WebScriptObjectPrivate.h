@@ -2,16 +2,64 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
 @interface WebScriptObjectPrivate : NSObject {
-    struct JSObject { struct ClassInfo {} *x1; struct WriteBarrier<JSC::Structure> { struct JSCell {} *x_2_1_1; } x2; struct StorageBarrier { struct WriteBarrierBase<JSC::Unknown> {} *x_3_1_1; } x3; struct WriteBarrier<JSC::Structure> { struct JSCell {} *x_4_1_1; } x4; } *imp;
+    struct JSObject { int (**x1)(); struct PropertyMap { 
+            struct Rep {} *m_singleEntryKey; 
+            union $_212 { 
+                struct JSValue {} *singleEntryValue; 
+                struct PropertyMapHashTable {} *table; 
+            } m_u; 
+            short m_singleEntryAttributes; 
+            unsigned int m_getterSetterFlag : 1; 
+            unsigned int m_usingTable : 1; 
+    struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<KJS::JSGlobalObject> { 
+            struct JSGlobalObject {} *m_ptr; 
+        } x4; struct HashCountedSet<KJS::JSObject*,WTF::PtrHash<KJS::JSObject*>,WTF::HashTraits<KJS::JSObject*> > { 
+            struct HashMap<KJS::JSObject*,unsigned int,WTF::PtrHash<KJS::JSObject*>,WTF::HashTraits<KJS::JSObject*>,WTF::HashTraits<unsigned int> > { 
+                struct HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> > { 
+                    struct pair<int,int> {} *m_table; 
+                    NSInteger m_tableSize; 
+                    NSInteger m_tableSizeMask; 
+                    NSInteger m_keyCount; 
+                    NSInteger m_deletedCount; 
+                } m_impl; 
+            } m_impl; 
+        } x5; struct HashSet<KJS::RuntimeObjectImp*,WTF::PtrHash<KJS::RuntimeObjectImp*>,WTF::HashTraits<KJS::RuntimeObjectImp*> > { 
+            struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<int32_t>,WTF::HashTraits<int32_t>,WTF::HashTraits<int32_t> > { 
+                NSInteger *m_table; 
+                NSInteger m_tableSize; 
+                NSInteger m_tableSizeMask; 
+                NSInteger m_keyCount; 
+                NSInteger m_deletedCount; 
+            } m_impl; 
+    struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<KJS::JSGlobalObject> { 
+            struct JSGlobalObject {} *m_ptr; 
+        } x4; struct HashCountedSet<KJS::JSObject*,WTF::PtrHash<KJS::JSObject*>,WTF::HashTraits<KJS::JSObject*> > { 
+            struct HashMap<KJS::JSObject*,unsigned int,WTF::PtrHash<KJS::JSObject*>,WTF::HashTraits<KJS::JSObject*>,WTF::HashTraits<unsigned int> > { 
+                struct HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> > { 
+                    struct pair<int,int> {} *m_table; 
+                    NSInteger m_tableSize; 
+                    NSInteger m_tableSizeMask; 
+                    NSInteger m_keyCount; 
+                    NSInteger m_deletedCount; 
+                } m_impl; 
+            } m_impl; 
+        } x5; struct HashSet<KJS::RuntimeObjectImp*,WTF::PtrHash<KJS::RuntimeObjectImp*>,WTF::HashTraits<KJS::RuntimeObjectImp*> > { 
+            struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<int32_t>,WTF::HashTraits<int32_t>,WTF::HashTraits<int32_t> > { 
+                NSInteger *m_table; 
+                NSInteger m_tableSize; 
+                NSInteger m_tableSizeMask; 
+                NSInteger m_keyCount; 
+                NSInteger m_deletedCount; 
+            } m_impl; 
+        } x2; struct JSValue {} *x3; } *imp;
     BOOL isCreatedByDOMWrapper;
-    struct RootObject { int (**x1)(); int x2; boolx3; void *x4; struct Strong<JSC::JSGlobalObject> { struct JSValue {} *x_5_1_1; } x5; struct HashCountedSet<JSC::JSObject *, WTF::PtrHash<JSC::JSObject *>, WTF::HashTraits<JSC::JSObject *> > { struct HashMap<JSC::JSObject *, unsigned int, WTF::PtrHash<JSC::JSObject *>, WTF::HashTraits<JSC::JSObject *>, WTF::HashTraits<unsigned int> > { struct HashTable<JSC::JSObject *, std::__1::pair<JSC::JSObject *, unsigned int>, WTF::PairFirstExtractor<std::__1::pair<JSC::JSObject *, unsigned int>>, WTF::PtrHash<JSC::JSObject *>, WTF::HashMapValueTraits<WTF::HashTraits<JSC::JSObject *>, WTF::HashTraits<unsigned int>>, WTF::HashTraits<JSC::JSObject *> > { struct pair<JSC::JSObject *, unsigned int> {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_1_2_1; } x_6_1_1; } x6; struct HashMap<JSC::Bindings::RuntimeObject *, JSC::Weak<JSC::Bindings::RuntimeObject>, WTF::PtrHash<JSC::Bindings::RuntimeObject *>, WTF::HashTraits<JSC::Bindings::RuntimeObject *>, WTF::HashTraits<JSC::Weak<JSC::Bindings::RuntimeObject>> > { struct HashTable<JSC::Bindings::RuntimeObject *, std::__1::pair<JSC::Bindings::RuntimeObject *, JSC::Weak<JSC::Bindings::RuntimeObject>>, WTF::PairFirstExtractor<std::__1::pair<JSC::Bindings::RuntimeObject *, JSC::Weak<JSC::Bindings::RuntimeObject>>>, WTF::PtrHash<JSC::Bindings::RuntimeObject *>, WTF::HashMapValueTraits<WTF::HashTraits<JSC::Bindings::RuntimeObject *>, WTF::HashTraits<JSC::Weak<JSC::Bindings::RuntimeObject>>>, WTF::HashTraits<JSC::Bindings::RuntimeObject *> > { struct pair<JSC::Bindings::RuntimeObject *, JSC::Weak<JSC::Bindings::RuntimeObject> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_7_1_1; } x7; struct HashSet<JSC::Bindings::RootObject::InvalidationCallback *, WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback *>, WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback *> > { struct HashTable<JSC::Bindings::RootObject::InvalidationCallback *, JSC::Bindings::RootObject::InvalidationCallback *, WTF::IdentityExtractor, WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback *>, WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback *>, WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback *> > { struct InvalidationCallback {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_8_1_1; } x8; } *originRootObject;
-    struct RootObject { int (**x1)(); int x2; boolx3; void *x4; struct Strong<JSC::JSGlobalObject> { struct JSValue {} *x_5_1_1; } x5; struct HashCountedSet<JSC::JSObject *, WTF::PtrHash<JSC::JSObject *>, WTF::HashTraits<JSC::JSObject *> > { struct HashMap<JSC::JSObject *, unsigned int, WTF::PtrHash<JSC::JSObject *>, WTF::HashTraits<JSC::JSObject *>, WTF::HashTraits<unsigned int> > { struct HashTable<JSC::JSObject *, std::__1::pair<JSC::JSObject *, unsigned int>, WTF::PairFirstExtractor<std::__1::pair<JSC::JSObject *, unsigned int>>, WTF::PtrHash<JSC::JSObject *>, WTF::HashMapValueTraits<WTF::HashTraits<JSC::JSObject *>, WTF::HashTraits<unsigned int>>, WTF::HashTraits<JSC::JSObject *> > { struct pair<JSC::JSObject *, unsigned int> {} *x_1_3_1; int x_1_3_2; int x_1_3_3; int x_1_3_4; int x_1_3_5; } x_1_2_1; } x_6_1_1; } x6; struct HashMap<JSC::Bindings::RuntimeObject *, JSC::Weak<JSC::Bindings::RuntimeObject>, WTF::PtrHash<JSC::Bindings::RuntimeObject *>, WTF::HashTraits<JSC::Bindings::RuntimeObject *>, WTF::HashTraits<JSC::Weak<JSC::Bindings::RuntimeObject>> > { struct HashTable<JSC::Bindings::RuntimeObject *, std::__1::pair<JSC::Bindings::RuntimeObject *, JSC::Weak<JSC::Bindings::RuntimeObject>>, WTF::PairFirstExtractor<std::__1::pair<JSC::Bindings::RuntimeObject *, JSC::Weak<JSC::Bindings::RuntimeObject>>>, WTF::PtrHash<JSC::Bindings::RuntimeObject *>, WTF::HashMapValueTraits<WTF::HashTraits<JSC::Bindings::RuntimeObject *>, WTF::HashTraits<JSC::Weak<JSC::Bindings::RuntimeObject>>>, WTF::HashTraits<JSC::Bindings::RuntimeObject *> > { struct pair<JSC::Bindings::RuntimeObject *, JSC::Weak<JSC::Bindings::RuntimeObject> > {} *x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_7_1_1; } x7; struct HashSet<JSC::Bindings::RootObject::InvalidationCallback *, WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback *>, WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback *> > { struct HashTable<JSC::Bindings::RootObject::InvalidationCallback *, JSC::Bindings::RootObject::InvalidationCallback *, WTF::IdentityExtractor, WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback *>, WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback *>, WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback *> > { struct InvalidationCallback {} **x_1_2_1; int x_1_2_2; int x_1_2_3; int x_1_2_4; int x_1_2_5; } x_8_1_1; } x8; } *rootObject;
+        } x6; } *originRootObject;
+        } x6; } *rootObject;
 }
 
 @end

@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColorMap, OADTextListStyle, NSMutableArray, OADTheme;
+@class NSMutableArray, NSMutableDictionary, OADColorMap, OADTextListStyle, OADTheme;
 
 @interface PDSlideMaster : PDSlideBase {
     OADTextListStyle *mBodyTextStyle;
     OADColorMap *mColorMap;
+    NSMutableDictionary *mMasterStyles;
     OADTextListStyle *mOtherTextStyle;
     NSMutableArray *mSlideLayouts;
     OADTheme *mTheme;
     OADTextListStyle *mTitleTextStyle;
 }
 
-@property(retain) NSMutableArray * slideLayouts;
-
+- (void)addMasterStyle:(id)arg1 forPlaceholderType:(NSInteger)arg2;
 - (void)addSlideLayout:(id)arg1;
 - (id)addSlideLayout;
 - (id)bodyTextStyle;
@@ -22,28 +22,18 @@
 - (id)colorScheme;
 - (void)dealloc;
 - (id)defaultTheme;
-- (void)doneWithContent;
-- (id)drawingTheme;
-- (id)fontScheme;
 - (id)init;
-- (id)initWithDefaultsAndTheme:(id)arg1;
-- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)otherTextStyle;
-- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)parentShapePropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)parentSlideBase;
-- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(BOOL)arg4;
+- (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
+- (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
-- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (void)setBodyTextStyle:(id)arg1;
-- (void)setOtherTextStyle:(id)arg1;
-- (void)setSlideLayouts:(id)arg1;
+- (id)placeholderWithType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (void)setTheme:(id)arg1;
-- (void)setTitleTextStyle:(id)arg1;
-- (id)slideLayoutAtIndex:(unsigned int)arg1;
-- (unsigned int)slideLayoutCount;
-- (id)slideLayoutOfType:(int)arg1;
-- (id)slideLayouts;
+- (id)slideLayoutAtIndex:(NSUInteger)arg1;
+- (NSUInteger)slideLayoutCount;
 - (id)styleMatrix;
 - (id)theme;
 - (id)titleTextStyle;

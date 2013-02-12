@@ -3,13 +3,11 @@
  */
 
 @interface OADSystemColor : OADColor {
-    int mSystemColorID;
+    NSInteger mSystemColorID;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (id)initWithSystemColorID:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)systemColorID;
+- (id)initWithSystemColorID:(NSInteger)arg1;
+- (NSInteger)systemColorID;
 
 @end

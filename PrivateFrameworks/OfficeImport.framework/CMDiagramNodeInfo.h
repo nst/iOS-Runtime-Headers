@@ -7,30 +7,29 @@
         float mMid; 
         float mLength; 
     BOOL mConnectToVerticalSide;
-    int mExtraRowsBetweenParentAndSelf;
-    int mRow;
-    int mTreeDepth;
+    NSInteger mExtraRowsBetweenParentAndSelf;
+    NSInteger mRow;
+    NSInteger mTreeDepth;
     float mXOffsetRelativeToParent;
     } mXRange;
-    struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mXRanges;
+    struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; } *mXRanges;
 }
 
-- (id).cxx_construct;
 - (void)addToXOffsetRelativeToParent:(float)arg1;
 - (BOOL)connectToVerticalSide;
 - (void)dealloc;
-- (int)extraRowsBetweenParentAndSelf;
+- (NSInteger)extraRowsBetweenParentAndSelf;
 - (id)init;
-- (int)row;
+- (NSInteger)row;
 - (void)setConnectToVerticalSide:(BOOL)arg1;
-- (void)setExtraRowsBetweenParentAndSelf:(int)arg1;
-- (void)setRow:(int)arg1;
-- (void)setTreeDepth:(int)arg1;
+- (void)setExtraRowsBetweenParentAndSelf:(NSInteger)arg1;
+- (void)setRow:(NSInteger)arg1;
+- (void)setTreeDepth:(NSInteger)arg1;
 - (void)setXOffsetRelativeToParent:(float)arg1;
 - (void)setXRange:(struct ODIHRange { float x1; float x2; })arg1;
-- (int)treeDepth;
+- (NSInteger)treeDepth;
 - (float)xOffsetRelativeToParent;
 - (struct ODIHRange { float x1; float x2; })xRange;
-- (struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xRanges;
+- (struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)xRanges;
 
 @end

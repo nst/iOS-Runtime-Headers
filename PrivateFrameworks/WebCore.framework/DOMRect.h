@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSPrimitiveValue;
-
 @interface DOMRect : DOMObject {
 }
 
-@property(readonly) DOMCSSPrimitiveValue * bottom;
-@property(readonly) DOMCSSPrimitiveValue * left;
-@property(readonly) DOMCSSPrimitiveValue * right;
-@property(readonly) DOMCSSPrimitiveValue * top;
+@property(retain,readonly) DOMCSSPrimitiveValue *bottom;
+@property(retain,readonly) DOMCSSPrimitiveValue *left;
+@property(retain,readonly) DOMCSSPrimitiveValue *right;
+@property(retain,readonly) DOMCSSPrimitiveValue *top;
 
++ (id)_wrapRect:(struct Rect { int (**x1)(); NSInteger x2; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_3_1_1; } x3; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_4_1_1; } x4; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_5_1_1; } x5; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_6_1_1; } x6; }*)arg1;
+
+- (struct Rect { int (**x1)(); NSInteger x2; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_3_1_1; } x3; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_4_1_1; } x4; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_5_1_1; } x5; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_6_1_1; } x6; }*)_rect;
+- (id)_initWithRect:(struct Rect { int (**x1)(); NSInteger x2; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_3_1_1; } x3; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_4_1_1; } x4; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_5_1_1; } x5; struct RefPtr<WebCore::CSSPrimitiveValue> { struct CSSPrimitiveValue {} *x_6_1_1; } x6; }*)arg1;
 - (id)bottom;
 - (void)dealloc;
 - (void)finalize;

@@ -2,37 +2,27 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSString, NSArray;
+@class NSArray, NSString;
 
 @interface CPMessageEntry : NSObject {
-    NSMutableArray *m_affectedObjects;
-    int m_count;
+    NSInteger m_count;
     NSArray *m_parameters;
-    int m_tag;
+    NSInteger m_tag;
     NSString *m_text;
-    int m_timeStamp;
 }
-
-@property int timeStamp;
 
 + (void)initialize;
 
-- (void)addAffectedObject:(id)arg1;
-- (id)affectedObjects;
 - (void)dealloc;
 - (id)description;
-- (int)getCount;
-- (int)getMessageTag;
+- (NSInteger)getCount;
+- (NSInteger)getMessageTag;
 - (id)getMessageText;
-- (id)getParameter:(unsigned int)arg1;
-- (int)getParameterCount;
-- (unsigned int)hash;
-- (id)initWithTag:(int)arg1 affectedObject:(id)arg2 text:(id)arg3 parameters:(void*)arg4;
+- (id)getParameter:(NSUInteger)arg1;
+- (NSInteger)getParameterCount;
+- (id)initWithTag:(NSInteger)arg1 text:(id)arg2 parameters:(void*)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (void)logWithCat:(id)arg1;
+- (void)logWithLevel:(NSInteger)arg1;
 - (void)mergeEntries:(id)arg1;
-- (void)setTimeStamp:(int)arg1;
-- (int)timeStamp;
-- (int)timeStampCompare:(id)arg1;
 
 @end

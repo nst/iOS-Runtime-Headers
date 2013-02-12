@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDText, WDTableRow, WDTableCellProperties;
+@class WDTableCellProperties, WDTableRow, WDText;
 
 @interface WDTableCell : NSObject {
-    int mIndex;
+    NSInteger mIndex;
     WDTableCellProperties *mProperties;
     WDTableRow *mRow;
     WDText *mText;
@@ -13,11 +13,9 @@
 }
 
 - (double)cellWidth;
-- (void)clearProperties;
-- (int)compareIndex:(id)arg1;
 - (void)dealloc;
-- (int)index;
-- (id)initWithRow:(id)arg1 at:(int)arg2;
+- (NSInteger)index;
+- (id)initWithRow:(id)arg1 at:(NSInteger)arg2;
 - (id)properties;
 - (id)row;
 - (void)setUseTrackedProperties:(BOOL)arg1;

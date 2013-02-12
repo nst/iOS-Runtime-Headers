@@ -3,13 +3,13 @@
  */
 
 @interface PptMetaCharacterBlock : NSObject {
-    int mPosition;
-    int mType;
+    NSInteger mPosition;
+    NSInteger mType;
 }
 
-- (id)initWithType:(int)arg1 position:(int)arg2;
-- (int)position;
-- (void)setPosition:(int)arg1;
-- (int)type;
+- (id)initWithType:(NSInteger)arg1 position:(NSInteger)arg2;
+- (NSInteger)position;
+- (void)setPosition:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

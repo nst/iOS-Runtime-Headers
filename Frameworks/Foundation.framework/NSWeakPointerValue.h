@@ -9,7 +9,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)getValue:(void*)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)initWithPointer:(void*)arg1;
 - (BOOL)isEqualToValue:(id)arg1;
 - (id)nonretainedObjectValue;

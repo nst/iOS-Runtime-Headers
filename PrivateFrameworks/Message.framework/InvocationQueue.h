@@ -5,38 +5,25 @@
 @class NSConditionLock, NSMutableArray;
 
 @interface InvocationQueue : NSObject {
+    unsigned int _maxThreads : 16;
+    unsigned int _numThreads : 16;
     NSMutableArray *_items;
-    NSConditionLock *_lock;
-    unsigned int _maxThreads;
-    unsigned int _numThreads;
-    int _threadPriorityTrigger;
+    NSConditionLock *_threadRecycleLock;
     double _threadRecycleTimeout;
 }
 
-@property(readonly) unsigned int invocationCount;
-@property unsigned int maxThreadCount;
-@property(readonly) unsigned int threadCount;
-@property int threadPriorityTrigger;
-@property double threadRecycleTimeout;
++ (void)initialize;
 
-+ (void)flushAllInvocationQueues;
-+ (id)sharedInvocationQueue;
-+ (unsigned int)totalInvocationCount;
-
-- (void)_drainQueue:(id)arg1;
+- (void)_drainQueue;
 - (void)addInvocation:(id)arg1;
 - (void)dealloc;
 - (void)didCancel:(id)arg1;
 - (id)init;
-- (id)initWithMaxThreadCount:(unsigned long)arg1;
-- (unsigned int)invocationCount;
-- (unsigned int)maxThreadCount;
+- (NSUInteger)invocationCount;
+- (NSUInteger)maxThreadCount;
 - (void)removeAllItems;
-- (void)setMaxThreadCount:(unsigned int)arg1;
-- (void)setThreadPriorityTrigger:(int)arg1;
+- (void)setMaxThreadCount:(NSUInteger)arg1;
 - (void)setThreadRecycleTimeout:(double)arg1;
-- (unsigned int)threadCount;
-- (int)threadPriorityTrigger;
 - (double)threadRecycleTimeout;
 
 @end

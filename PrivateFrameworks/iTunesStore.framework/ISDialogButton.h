@@ -2,38 +2,31 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString;
+@class NSString, NSURL;
 
-@interface ISDialogButton : NSObject {
-    int _actionType;
-    id _parameter;
+@interface ISDialogButton : NSObject <NSCoding> {
+    NSInteger _action;
+    NSString *_buyParameters;
+    NSString *_redeemCode;
     NSString *_title;
-    int _urlType;
+    NSURL *_url;
 }
 
-@property int actionType;
-@property(retain) id parameter;
-@property(retain) NSString * title;
-@property int urlType;
-
-+ (id)buttonWithTitle:(id)arg1;
-
-- (id)_accountURLForURL:(id)arg1 authenticationContext:(id)arg2;
-- (int)_actionTypeForString:(id)arg1;
-- (void)_openURLWithRequest:(id)arg1;
-- (int)_urlTypeForString:(id)arg1;
-- (int)actionType;
+- (NSInteger)_typeForKindString:(id)arg1;
+- (NSInteger)actionType;
+- (id)buyParameters;
 - (void)dealloc;
-- (BOOL)isEqual:(id)arg1 superficial:(BOOL)arg2;
-- (void)loadFromDictionary:(id)arg1;
-- (id)parameter;
-- (void)performDefaultActionForDialog:(id)arg1;
-- (void)setActionType:(int)arg1;
-- (void)setActionTypeWithString:(id)arg1;
-- (void)setParameter:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithTitle:(id)arg1 action:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (id)redeemCode;
+- (void)setActionType:(NSInteger)arg1;
+- (void)setBuyParameters:(id)arg1;
+- (void)setRedeemCode:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUrlType:(int)arg1;
+- (void)setURL:(id)arg1;
 - (id)title;
-- (int)urlType;
+- (id)url;
 
 @end

@@ -2,33 +2,30 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class <WebQuotaManager>, WebSecurityOriginPrivate;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class WebSecurityOriginPrivate;
 
 @interface WebSecurityOrigin : NSObject {
-    <WebQuotaManager> *_applicationCacheQuotaManager;
-    <WebQuotaManager> *_databaseQuotaManager;
+     /* Encoded args for previous method: @12@0:4^{SecurityOrigin=i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBB}8 */
+     /* Encoded args for previous method: ^{SecurityOrigin=i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}SBBB}8@0:4 */
     WebSecurityOriginPrivate *_private;
 }
 
-- (struct SecurityOrigin { int x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; unsigned short x7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; }*)_core;
-- (id)_initWithWebCoreSecurityOrigin:(struct SecurityOrigin { int x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; unsigned short x7; boolx8; boolx9; boolx10; boolx11; boolx12; boolx13; }*)arg1;
-- (id)applicationCacheQuotaManager;
-- (id)databaseIdentifier;
-- (id)databaseQuotaManager;
+- (struct SecurityOrigin { NSInteger x1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; unsigned short x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; }*)_core;
+- (id)_initWithWebCoreSecurityOrigin:(struct SecurityOrigin { NSInteger x1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; unsigned short x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; }*)arg1;
 - (void)dealloc;
 - (id)domain;
 - (void)finalize;
-- (id)host;
-- (id)initWithURL:(id)arg1;
+- (id)initWithProtocol:(id)arg1 domain:(id)arg2 port:(unsigned short)arg3;
+- (id)initWithProtocol:(id)arg1 domain:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned short)port;
 - (id)protocol;
 - (unsigned long long)quota;
-- (id)safari_userVisibleName;
 - (void)setQuota:(unsigned long long)arg1;
-- (id)stringValue;
-- (id)toString;
 - (unsigned long long)usage;
-- (id)webui_userVisibleName;
 
 @end

@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDStylesCollection, EDFontsCollection, EDTableStylesCollection, EDColorsCollection, EDLinksCollection, EDCollection, EDContentFormatsCollection;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class EDCollection, EDColorsCollection, EDContentFormatsCollection, EDFontsCollection, EDLinksCollection, EDStylesCollection, EDTableStylesCollection;
 
 @interface EDResources : NSObject {
+     /* Encoded args for previous method: @12@0:4B8 */
     EDCollection *mAlignmentInfos;
     EDCollection *mBorder;
     EDCollection *mBorders;
@@ -30,7 +35,7 @@
 - (id)differentialStyles;
 - (id)fills;
 - (id)fonts;
-- (id)initWithStringOptimization:(bool)arg1;
+- (id)initWithStringOptimization:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (id)links;
 - (id)names;
 - (void)setColors:(id)arg1;

@@ -7,17 +7,15 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)_isDeallocating;
-- (unsigned int)_trueCount;
-- (BOOL)_tryRetain;
+- (NSUInteger)_trueCount;
 - (void)addObject:(id)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (NSUInteger)count;
+- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
 - (void)finalize;
 - (void)getObjects:(id*)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;
@@ -27,7 +25,7 @@
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
+- (NSUInteger)retainCount;
 - (void)setSet:(id)arg1;
 - (void)unionSet:(id)arg1;
 

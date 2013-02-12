@@ -2,7 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADMovie : OCDDelayedMedia {
+@class NSData;
+
+@interface OADMovie : NSObject {
+    NSData *mQuicktimeData;
 }
+
+- (void)dealloc;
+- (id)init;
+- (id)quicktimeData;
+- (void)setQuicktimeData:(id)arg1;
 
 @end

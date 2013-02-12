@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDStyle;
+@class EDNumberValue, EDStyle;
 
 @interface EMCellNumberMapper : CMMapper {
     EDStyle *edStyle;
-    double edValue;
+    EDNumberValue *edValue;
 }
 
 - (id)formatValueAsNumber;
-- (id)initWithDoubleValue:(double)arg1 style:(id)arg2 parent:(id)arg3;
+- (id)initWithEDNumberValue:(id)arg1 style:(id)arg2 parent:(id)arg3;
 - (id)insertRedSpanIfNegativeAt:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 

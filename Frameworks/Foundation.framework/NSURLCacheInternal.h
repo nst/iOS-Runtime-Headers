@@ -2,33 +2,33 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLCacheNode, NSMutableSet, NSString, NSURLQueue, NSLock, NSMutableDictionary;
+@class NSLock, NSMutableDictionary, NSMutableSet, NSString, NSURLCacheNode, NSURLQueue;
 
 @interface NSURLCacheInternal : NSObject {
     struct _CFURLCache { } *_cacheRef;
     BOOL _pad1;
     BOOL _pad2;
     BOOL _pad3;
-    unsigned int currentDiskUsage;
-    unsigned int currentMemoryUsage;
+    NSUInteger currentDiskUsage;
+    NSUInteger currentMemoryUsage;
     NSLock *diskCacheGuard;
-    unsigned int diskCacheItemLengthThreshold;
+    NSUInteger diskCacheItemLengthThreshold;
     struct NSLRUFileList { } *diskCacheLRUList;
     BOOL diskCacheLeftoverFilesRemovedFlag;
     NSURLQueue *diskCachePendingOperations;
     NSMutableSet *diskCachePendingRemovals;
     NSMutableDictionary *diskCachePendingWrites;
     double diskCacheTouchTime;
-    unsigned int diskCapacity;
+    NSUInteger diskCapacity;
     NSString *diskPath;
     NSMutableDictionary *memoryCache;
     NSLock *memoryCacheGuard;
-    unsigned int memoryCacheItemLengthThreshold;
+    NSUInteger memoryCacheItemLengthThreshold;
     NSURLCacheNode *memoryCacheLRUHead;
     NSURLCacheNode *memoryCacheLRUTail;
-    unsigned int memoryCapacity;
-    unsigned int syncSkipCount;
-    unsigned int timerResetCount;
+    NSUInteger memoryCapacity;
+    NSUInteger syncSkipCount;
+    NSUInteger timerResetCount;
 }
 
 - (void)dealloc;

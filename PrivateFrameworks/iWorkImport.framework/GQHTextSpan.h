@@ -5,15 +5,13 @@
 @interface GQHTextSpan : NSObject {
 }
 
-+ (int)handleAttachment:(id)arg1 state:(id)arg2;
-+ (int)handleAutoNumber:(id)arg1 state:(id)arg2;
-+ (int)handleContainerHint:(id)arg1 state:(id)arg2;
-+ (int)handlePageStart:(id)arg1 state:(id)arg2;
-+ (int)handleSpan:(id)arg1 checkForTrailingBlanks:(BOOL)arg2 state:(id)arg3;
-+ (int)handleTextBackgroundForStyle:(id)arg1 destStyle:(id)arg2 state:(id)arg3;
-+ (int)handleTextList:(id)arg1 checkForTrailingBlanks:(BOOL)arg2 state:(id)arg3;
-+ (int)handleTextListChild:(id)arg1 outputBlanks:(BOOL)arg2 state:(id)arg3;
-+ (int)handleTextMarker:(id)arg1 outputBlanks:(BOOL)arg2 state:(id)arg3;
-+ (int)nonWhitespaceCount:(struct __CFArray { }*)arg1;
++ (NSInteger)handleAttachment:(id)arg1 state:(id)arg2;
++ (NSInteger)handleAutoNumber:(id)arg1 state:(id)arg2;
++ (NSInteger)handlePageStart:(id)arg1 state:(id)arg2;
++ (NSInteger)handleSpan:(id)arg1 state:(id)arg2;
++ (NSInteger)handleTextList:(id)arg1 state:(id)arg2;
++ (NSInteger)handleTextListChild:(id)arg1 outputBlanks:(BOOL)arg2 state:(id)arg3;
++ (NSInteger)handleTextMarker:(id)arg1 outputBlanks:(BOOL)arg2 state:(id)arg3;
++ (NSInteger)nonWhitespaceCount:(struct __CFArray { }*)arg1;
 
 @end

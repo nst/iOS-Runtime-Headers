@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
 @interface PBTextBlock : NSObject {
+     /* Encoded args for previous method: v24@0:4@8@12@16B20 */
+     /* Encoded args for previous method: v24@0:4@8@12@16B20 */
+     /* Encoded args for previous method: v16@0:4^{PptTextRulerAtom=^^?S{EshHeader=iIsSC}^^?iB{ChVector<PptTab*>=^^{PptTab}^^{PptTab}III}[5S][5S]iSs}8@12 */
 }
 
-+ (void)applyTextRuler:(struct PptTextRulerAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTab> {} *x7; unsigned short x8[5]; unsigned short x9[5]; unsigned short x10; }*)arg1 toTextBlock:(id)arg2;
-+ (void)readClientTextBox:(id)arg1 textBody:(id)arg2 state:(id)arg3;
-+ (void)readFromStyledText:(struct __CFAttributedString { }*)arg1 toStyledPargraphs:(struct __CFArray { }*)arg2;
-+ (void)readFromTextBlock:(id)arg1 toStyledText:(struct __CFAttributedString { }*)arg2;
-+ (void)readParagraph:(id)arg1 paragraph:(struct __CFAttributedString { }*)arg2 textType:(int)arg3 state:(id)arg4;
-+ (void)writeHyperlink:(id)arg1 textBoxParentHolder:(id)arg2 insertIndexInParent:(unsigned int)arg3 counter:(unsigned int*)arg4 charRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 instance:(int)arg6 state:(id)arg7;
-+ (void)writeTextBody:(id)arg1 textBoxParentHolder:(id)arg2 startIndexInParent:(unsigned int)arg3 bulletStyleAtom:(struct PptTextBlockStyling9Atom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTextBlockStyling9Atom::Style *> { struct Style {} **x_7_1_1; struct Style {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; }*)arg4 textRulerAtom:(struct PptTextRulerAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTab> {} *x7; unsigned short x8[5]; unsigned short x9[5]; unsigned short x10; }*)arg5 masterTextStyleAtom:(struct PptTextMasterStyleAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTextMasterStyleAtom::Level *> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; }*)arg6 masterBulletStyleAtom:(struct PptTextMasterStyle9Atom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTextMasterStyle9Atom::Level *> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; }*)arg7 state:(id)arg8;
++ (void)applyTextRuler:(struct PptTextRulerAtom { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; struct ChVector<PptTab*> { struct PptTab {} **x_7_1_1; struct PptTab {} **x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; } x7; unsigned short x8[5]; unsigned short x9[5]; NSInteger x10; unsigned short x11; short x12; }*)arg1 toTextBlock:(id)arg2;
++ (void)readClientTextBox:(id)arg1 textBody:(id)arg2 state:(id)arg3 isPlaceholder:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg4;
++ (void)readParagraph:(id)arg1 paragraph:(id)arg2 state:(id)arg3 isPlaceholder:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg4;
++ (void)styledPargraphs:(id)arg1 styledText:(id)arg2;
++ (void)styledText:(id)arg1 textBlock:(id)arg2;
 
 @end

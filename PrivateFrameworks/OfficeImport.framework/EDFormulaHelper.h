@@ -2,31 +2,34 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ECMappingContext, EDWorksheet, EDWorkbook;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface EDFormulaHelper : NSObject <EFHelper> {
-    int mColumnNumber;
+@class ECMappingContext, EDCell, EDWorkbook;
+
+@interface EDFormulaHelper : NSObject {
+     /* Encoded args for previous method: @20@0:4@8@12B16 */
+     /* Encoded args for previous method: @20@0:4@8@12B16 */
+    EDCell *mCell;
     ECMappingContext *mMappingContext;
-    int mRowNumber;
     EDWorkbook *mWorkbook;
-    EDWorksheet *mWorksheet;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mImporting;
 }
 
-- (int)columnNumber;
-- (unsigned int)createIndexWithType:(int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
++ (id)formulaHelperWithWorkbook:(id)arg1 withCell:(id)arg2 isImport:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
+
+- (NSUInteger)addExternalAddInName:(id)arg1;
 - (void)dealloc;
-- (id)initWithWorkbook:(id)arg1 worksheet:(id)arg2 rowNumber:(int)arg3 columnNumber:(int)arg4;
+- (id)initWithWorkbook:(id)arg1 withCell:(id)arg2 isImport:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
 - (BOOL)isCurrentSheet:(id)arg1;
-- (bool)isThereContentOutsideOfLassoBoundsForRowMin:(unsigned int)arg1 rowMax:(unsigned int)arg2 columnMin:(unsigned int)arg3 columnMax:(unsigned int)arg4;
-- (unsigned int)resolveFile:(id)arg1;
-- (unsigned int)resolveFirstSheet:(id)arg1 lastSheet:(id)arg2;
-- (int)resolveFunctionName:(id)arg1;
-- (unsigned int)resolveName:(id)arg1;
-- (unsigned int)resolveSheet:(id)arg1;
+- (NSUInteger)resolveAddInLinkReference;
+- (NSUInteger)resolveFile:(id)arg1;
+- (NSUInteger)resolveFirstSheet:(id)arg1 lastSheet:(id)arg2;
+- (NSUInteger)resolveName:(id)arg1;
+- (NSUInteger)resolveSheet:(id)arg1;
 - (id)resolveTable:(id)arg1;
-- (unsigned int)resolveTableColumn:(id)arg1 columnName:(id)arg2;
-- (unsigned int)resolveTableToSheetId:(id)arg1;
-- (int)rowNumber;
-- (id)workbook;
+- (NSUInteger)resolveTableColumn:(id)arg1 columnName:(id)arg2;
+- (NSUInteger)resolveTableToSheetId:(id)arg1;
 
 @end

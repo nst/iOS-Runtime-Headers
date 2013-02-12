@@ -2,19 +2,21 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSPrimitiveValue;
-
 @interface DOMRGBColor : DOMObject {
 }
 
-@property(readonly) DOMCSSPrimitiveValue * alpha;
-@property(readonly) DOMCSSPrimitiveValue * blue;
-@property(readonly) DOMCSSPrimitiveValue * green;
-@property(readonly) DOMCSSPrimitiveValue * red;
+@property(retain,readonly) DOMCSSPrimitiveValue *alpha;
+@property(retain,readonly) DOMCSSPrimitiveValue *blue;
+@property(retain,readonly) DOMCSSPrimitiveValue *green;
+@property(retain,readonly) DOMCSSPrimitiveValue *red;
 
++ (id)_wrapRGBColor:(NSUInteger)arg1;
++ (void)initialize;
+
+- (NSUInteger)_RGBColor;
+- (id)_initWithRGB:(NSUInteger)arg1;
 - (id)alpha;
 - (id)blue;
-- (struct CGColor { }*)color;
 - (void)dealloc;
 - (void)finalize;
 - (id)green;

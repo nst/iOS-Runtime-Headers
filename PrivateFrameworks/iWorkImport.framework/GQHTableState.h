@@ -5,37 +5,23 @@
 @class GQDTTable;
 
 @interface GQHTableState : NSObject {
-    boolmSplitTable;
-    struct vector<unsigned short, std::allocator<unsigned short> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; } *mCellCountInColumns;
-    double mCurrentTablePosition;
-    int mGroupLevel;
-    double mLastAttachmentPosition;
-    double mOriginalTableHeight;
-    int mPrevColumnIndex;
-    int mPrevRowIndex;
-    long mSplitTableIndex;
+    struct vector<int16_t,std::allocator<int16_t> > { struct _Vector_impl { 
+            short *_M_start; 
+            short *_M_finish; 
+            short *_M_end_of_storage; 
+        } x1; } *mCellCountInColumns;
+    short mPrevColumnIndex;
+    short mPrevRowIndex;
     GQDTTable *mTable;
 }
 
-- (void)addRowHeight:(float)arg1;
-- (struct vector<unsigned short, std::allocator<unsigned short> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; }*)cellCountInColumns;
-- (double)currentTablePosition;
+- (struct vector<int16_t,std::allocator<int16_t> > { struct _Vector_impl { short *x_1_1_1; short *x_1_1_2; short *x_1_1_3; } x1; }*)cellCountInColumns;
 - (void)dealloc;
-- (int)groupLevel;
 - (id)init;
-- (double)lastAttachmentPosition;
-- (long)nextSplitTableIndex;
-- (double)originalTableHeight;
-- (int)prevColumnIndex;
-- (int)prevRowIndex;
-- (void)setGroupLevel:(int)arg1;
-- (void)setLastAttachmentPosition:(double)arg1;
-- (void)setOriginalTableHeight:(double)arg1;
-- (void)setPrevRowIndex:(int)arg1 columnIndex:(int)arg2;
-- (void)setSplitTable:(bool)arg1;
-- (void)setSplitTableIndex:(long)arg1;
+- (short)prevColumnIndex;
+- (short)prevRowIndex;
+- (void)setPrevRowIndex:(short)arg1 columnIndex:(short)arg2;
 - (void)setTable:(id)arg1;
-- (bool)splitTable;
 - (id)table;
 
 @end

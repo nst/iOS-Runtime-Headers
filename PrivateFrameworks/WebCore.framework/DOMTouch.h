@@ -2,29 +2,31 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class <DOMEventTarget>;
-
 @interface DOMTouch : DOMObject {
 }
 
-@property(readonly) int clientX;
-@property(readonly) int clientY;
-@property(readonly) unsigned int identifier;
-@property(readonly) int pageX;
-@property(readonly) int pageY;
-@property(readonly) int screenX;
-@property(readonly) int screenY;
-@property(readonly) <DOMEventTarget> * target;
+@property(retain,readonly) <DOMEventTarget> *target;
+@property(readonly) NSInteger clientX;
+@property(readonly) NSInteger clientY;
+@property(readonly) NSUInteger identifier;
+@property(readonly) NSInteger pageX;
+@property(readonly) NSInteger pageY;
+@property(readonly) NSInteger screenX;
+@property(readonly) NSInteger screenY;
 
-- (int)clientX;
-- (int)clientY;
++ (id)_wrapTouch:(struct Touch { NSInteger x1; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_2_1_1; } x2; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_3_1_1; } x3; NSUInteger x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; NSInteger x9; NSInteger x10; }*)arg1;
+
+- (id)_initWithTouch:(struct Touch { NSInteger x1; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_2_1_1; } x2; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_3_1_1; } x3; NSUInteger x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; NSInteger x9; NSInteger x10; }*)arg1;
+- (struct Touch { NSInteger x1; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_2_1_1; } x2; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_3_1_1; } x3; NSUInteger x4; NSInteger x5; NSInteger x6; NSInteger x7; NSInteger x8; NSInteger x9; NSInteger x10; }*)_touch;
+- (NSInteger)clientX;
+- (NSInteger)clientY;
 - (void)dealloc;
 - (void)finalize;
-- (unsigned int)identifier;
-- (int)pageX;
-- (int)pageY;
-- (int)screenX;
-- (int)screenY;
+- (NSUInteger)identifier;
+- (NSInteger)pageX;
+- (NSInteger)pageY;
+- (NSInteger)screenX;
+- (NSInteger)screenY;
 - (id)target;
 
 @end

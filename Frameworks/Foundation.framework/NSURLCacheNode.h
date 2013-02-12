@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLRequest, NSString, NSCachedURLResponse, NSURLCacheNode;
+@class NSCachedURLResponse, NSString, NSURLCacheNode, NSURLRequest;
 
 @interface NSURLCacheNode : NSObject {
     NSCachedURLResponse *cachedResponse;
-    unsigned long hash;
+    NSUInteger hash;
     NSString *key;
     NSURLCacheNode *next;
     NSURLCacheNode *prev;

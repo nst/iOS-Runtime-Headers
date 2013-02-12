@@ -2,61 +2,23 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UIImage, UIView, NSArray;
+@class NSMutableArray, UIImageView, UIView;
 
-@interface PLCameraButton : UIButton {
-    int _buttonMode;
-    UIImage *_cameraIcon;
-    UIImage *_cameraIconLandscape;
-    BOOL _dontDrawDisabled;
-    UIImageView *_iconView;
-    BOOL _isCapturing;
+@interface PLCameraButton : UIThreePartButton {
+    NSMutableArray *_buttonImages;
+    UIImageView *_cameraIcon;
     BOOL _isLandscape;
     BOOL _lockEnabled;
-    int _orientation;
-    UIImage *_panoRecordingIcon;
-    UIImage *_panoRecordingIconLandscape;
     UIView *_rotationHolder;
-    NSArray *_videoRecordingIcons;
-    BOOL _watchingOrientationChanges;
 }
 
-+ (id)backgroundImageName;
-+ (id)backgroundPanoOffImageName;
-+ (id)backgroundPanoOffPressedImageName;
-+ (id)backgroundPanoOnImageName;
-+ (id)backgroundPanoOnPressedImageName;
-+ (id)backgroundPressedImageName;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundResizableEdgeInsets;
-+ (id)backgroundVideoImageName;
-+ (id)backgroundVideoPressedImageName;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
-+ (id)defaultIconName;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectExtension;
-+ (id)photoIconLandscapeName;
-+ (id)photoIconPortraitName;
-+ (id)videoOffIconName;
-+ (id)videoOnIconName;
-
-- (void)_deviceOrientationChanged:(id)arg1;
-- (void)_loadPanoLandscapeResources;
-- (void)_loadPanoResources;
-- (void)_loadStillLandscapeResources;
-- (void)_loadStillResources;
-- (void)_loadVideoResources;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
-- (void)_setIcon:(id)arg1;
-- (void)_startWatchingDeviceOrientationChanges;
-- (void)_stopWatchingDeviceOrientationChanges;
 - (void)dealloc;
 - (id)initWithDefaultSize;
-- (int)orientation;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setButtonMode:(int)arg1;
-- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setDontShowDisabledState:(BOOL)arg1;
+- (void)lockEnabled:(BOOL)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (void)setDeviceOrientation:(NSInteger)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setIsCapturing:(BOOL)arg1;
-- (void)setLockEnabled:(BOOL)arg1;
+- (void)updateButtonBackgrounds;
 
 @end

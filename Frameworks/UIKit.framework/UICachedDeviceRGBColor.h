@@ -5,16 +5,13 @@
 @interface UICachedDeviceRGBColor : UIDeviceRGBColor {
 }
 
-- (void)_forceDealloc;
-- (BOOL)allowsWeakReference;
 - (id)autorelease;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (oneway void)release;
+- (void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (NSInteger)retainCount;
 
 @end

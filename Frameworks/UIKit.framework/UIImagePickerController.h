@@ -2,119 +2,37 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIView, <UINavigationControllerDelegate><UIImagePickerControllerDelegate>, NSMutableDictionary;
-
 @interface UIImagePickerController : UINavigationController <NSCoding> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     struct { 
+        unsigned int allowsImageEditing : 1; 
         unsigned int visible : 1; 
         unsigned int isCleaningUp : 1; 
-        unsigned int savingOptions : 3; 
-        unsigned int didRevertStatusBar : 1; 
-    } _cropRect;
-    id _image;
     } _imagePickerFlags;
-    NSArray *_mediaTypes;
-    int _previousStatusBarStyle;
-    NSMutableDictionary *_properties;
-    int _sourceType;
+    NSUInteger _sourceType;
 }
 
-@property BOOL allowsEditing;
+@property <UINavigationControllerDelegate><UIImagePickerControllerDelegate> *delegate;
 @property BOOL allowsImageEditing;
-@property int cameraCaptureMode;
-@property int cameraDevice;
-@property int cameraFlashMode;
-@property(retain) UIView * cameraOverlayView;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } cameraViewTransform;
-@property <UINavigationControllerDelegate><UIImagePickerControllerDelegate> * delegate;
-@property(copy) NSArray * mediaTypes;
-@property BOOL showsCameraControls;
-@property int sourceType;
-@property double videoMaximumDuration;
-@property int videoQuality;
+@property NSUInteger sourceType;
 
-+ (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(int)arg2;
-+ (BOOL)_reviewCapturedItems;
-+ (id)availableCaptureModesForCameraDevice:(int)arg1;
-+ (id)availableMediaTypesForSourceType:(int)arg1;
-+ (BOOL)isCameraDeviceAvailable:(int)arg1;
-+ (BOOL)isFlashAvailableForCameraDevice:(int)arg1;
-+ (BOOL)isSourceTypeAvailable:(int)arg1;
++ (BOOL)_loadPhotoLibraryIfNecessary;
++ (BOOL)isSourceTypeAvailable:(NSUInteger)arg1;
 
-- (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)_allowsImageEditing;
-- (BOOL)_allowsMultipleSelection;
 - (void)_autoDismiss;
-- (id)_cameraViewController;
 - (id)_createInitialController;
-- (BOOL)_didRevertStatusBar;
 - (void)_imagePickerDidCancel;
-- (void)_imagePickerDidCompleteWithInfo:(id)arg1;
-- (void)_imagePickerDidCompleteWithInfoArray:(id)arg1;
-- (unsigned int)_imagePickerSavingOptions;
-- (id)_initWithSourceImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)_initializeProperties;
-- (BOOL)_isCameraCaptureModeValid:(int)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (void)_imagePickerDidCompleteForImage:(id)arg1 editingInfo:(id)arg2;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
-- (id)_properties;
 - (void)_removeAllChildren;
-- (void)_setAllowsImageEditing:(BOOL)arg1;
-- (void)_setAllowsMultipleSelection:(BOOL)arg1;
-- (void)_setImagePickerSavingOptions:(unsigned int)arg1;
-- (void)_setProperties:(id)arg1;
-- (void)_setValue:(id)arg1 forProperty:(id)arg2;
-- (void)_setupControllersForCurrentMediaTypes;
 - (void)_setupControllersForCurrentSourceType;
-- (BOOL)_sourceTypeIsCamera;
-- (void)_updateCameraCaptureMode;
-- (id)_valueForProperty:(id)arg1;
-- (BOOL)allowsEditing;
 - (BOOL)allowsImageEditing;
-- (int)cameraCaptureMode;
-- (int)cameraDevice;
-- (int)cameraFlashMode;
-- (id)cameraOverlayView;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })cameraViewTransform;
-- (BOOL)ckCanDismissWhenSuspending;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)mediaTypes;
-- (void)setAllowsEditing:(BOOL)arg1;
 - (void)setAllowsImageEditing:(BOOL)arg1;
-- (void)setCameraCaptureMode:(int)arg1;
-- (void)setCameraDevice:(int)arg1;
-- (void)setCameraFlashMode:(int)arg1;
-- (void)setCameraOverlayView:(id)arg1;
-- (void)setCameraViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setMediaTypes:(id)arg1;
-- (void)setShowsCameraControls:(BOOL)arg1;
-- (void)setSourceType:(int)arg1;
-- (void)setVideoMaximumDuration:(double)arg1;
-- (void)setVideoQuality:(int)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)showsCameraControls;
-- (int)sourceType;
-- (BOOL)startVideoCapture;
-- (void)stopVideoCapture;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)takePicture;
-- (double)videoMaximumDuration;
-- (int)videoQuality;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)setParentViewController:(id)arg1;
+- (void)setSourceType:(NSUInteger)arg1;
+- (NSUInteger)sourceType;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillUnload;
 
 @end

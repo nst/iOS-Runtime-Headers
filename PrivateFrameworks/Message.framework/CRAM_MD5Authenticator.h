@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface CRAM_MD5Authenticator : MFSASLAuthenticator {
+@interface CRAM_MD5Authenticator : SASLAuthenticator {
 }
 
 - (id)responseForServerData:(id)arg1;

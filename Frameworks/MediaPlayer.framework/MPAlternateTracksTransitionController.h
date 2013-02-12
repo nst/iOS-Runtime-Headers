@@ -2,18 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoViewController, UIImageView;
+@class MPVideoViewController;
 
 @interface MPAlternateTracksTransitionController : MPTransitionController {
-    UIImageView *_snapshotCoverImageView;
     MPVideoViewController *_videoController;
 }
 
-@property MPVideoViewController * videoController;
+@property MPVideoViewController *videoController; /* unknown property attribute: V_videoController */
 
 - (void)_animationDidStop;
-- (void)performTransition:(unsigned int)arg1;
 - (void)setVideoController:(id)arg1;
+- (void)transition:(NSUInteger)arg1;
 - (id)videoController;
 
 @end

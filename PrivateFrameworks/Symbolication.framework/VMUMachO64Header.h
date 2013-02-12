@@ -3,7 +3,7 @@
  */
 
 @interface VMUMachO64Header : VMUMachOHeader {
-    unsigned int _reserved;
+    NSUInteger _reserved;
 }
 
 + (id)machO64HeaderWithUniverse:(id)arg1 memory:(id)arg2 name:(id)arg3 path:(id)arg4 timestamp:(id)arg5;

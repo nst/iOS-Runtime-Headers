@@ -2,26 +2,33 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLTableSectionElement, DOMHTMLCollection, DOMHTMLTableCaptionElement, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DOMHTMLTableElement : DOMHTMLElement {
+     /* Encoded args for previous method: @12@0:4^{HTMLTableElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}BBBiS{RefPtr<WebCore::CSSMappedAttributeDeclaration>=^{CSSMappedAttributeDeclaration}}}8 */
+     /* Encoded args for previous method: ^{HTMLTableElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}BBBiS{RefPtr<WebCore::CSSMappedAttributeDeclaration>=^{CSSMappedAttributeDeclaration}}}8@0:4 */
 }
 
-@property(copy) NSString * align;
-@property(copy) NSString * bgColor;
-@property(copy) NSString * border;
-@property(retain) DOMHTMLTableCaptionElement * caption;
-@property(copy) NSString * cellPadding;
-@property(copy) NSString * cellSpacing;
-@property(copy) NSString * frameBorders;
-@property(readonly) DOMHTMLCollection * rows;
-@property(copy) NSString * rules;
-@property(copy) NSString * summary;
-@property(readonly) DOMHTMLCollection * tBodies;
-@property(retain) DOMHTMLTableSectionElement * tFoot;
-@property(retain) DOMHTMLTableSectionElement * tHead;
-@property(copy) NSString * width;
+@property(copy) NSString *align;
+@property(copy) NSString *bgColor;
+@property(copy) NSString *border;
+@property(retain) DOMHTMLTableCaptionElement *caption;
+@property(copy) NSString *cellPadding;
+@property(copy) NSString *cellSpacing;
+@property(copy) NSString *frameBorders;
+@property(retain,readonly) DOMHTMLCollection *rows;
+@property(copy) NSString *rules;
+@property(copy) NSString *summary;
+@property(retain,readonly) DOMHTMLCollection *tBodies;
+@property(retain) DOMHTMLTableSectionElement *tFoot;
+@property(retain) DOMHTMLTableSectionElement *tHead;
+@property(copy) NSString *width;
 
++ (id)_wrapHTMLTableElement:(struct HTMLTableElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x35; void*x36; void*x37; NSInteger x38; unsigned short x39; struct RefPtr<WebCore::CSSMappedAttributeDeclaration> { struct CSSMappedAttributeDeclaration {} *x_40_1_1; } x40; }*)arg1;
+
+- (struct HTMLTableElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x35; void*x36; void*x37; NSInteger x38; unsigned short x39; struct RefPtr<WebCore::CSSMappedAttributeDeclaration> { struct CSSMappedAttributeDeclaration {} *x_40_1_1; } x40; }*)_HTMLTableElement;
 - (id)align;
 - (id)bgColor;
 - (id)border;
@@ -29,15 +36,14 @@
 - (id)cellPadding;
 - (id)cellSpacing;
 - (id)createCaption;
-- (id)createTBody;
 - (id)createTFoot;
 - (id)createTHead;
 - (void)deleteCaption;
-- (void)deleteRow:(int)arg1;
+- (void)deleteRow:(NSInteger)arg1;
 - (void)deleteTFoot;
 - (void)deleteTHead;
 - (id)frameBorders;
-- (id)insertRow:(int)arg1;
+- (id)insertRow:(NSInteger)arg1;
 - (id)rows;
 - (id)rules;
 - (void)setAlign:(id)arg1;
@@ -52,7 +58,6 @@
 - (void)setTFoot:(id)arg1;
 - (void)setTHead:(id)arg1;
 - (void)setWidth:(id)arg1;
-- (int)structuralComplexityContribution;
 - (id)summary;
 - (id)tBodies;
 - (id)tFoot;

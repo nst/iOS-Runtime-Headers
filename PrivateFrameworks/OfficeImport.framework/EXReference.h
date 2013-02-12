@@ -5,7 +5,6 @@
 @interface EXReference : NSObject {
 }
 
-+ (bool)edAreaReferenceFromXmlReference:(id)arg1 areaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg2;
 + (id)edDiscontinousReferencesFromXmlRanges:(id)arg1;
 + (id)edReferenceFromXmlReference:(id)arg1;
 

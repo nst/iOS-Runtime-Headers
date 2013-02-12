@@ -2,68 +2,36 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIView;
+@class UIImageView, UIView;
 
 @interface UIGroupTableViewCellBackground : UIView {
-    struct { 
-        unsigned int selected : 1; 
-    int _animationCount;
-    UIView *_bottomSeparatorView;
-    } _groupBackgroundFlags;
-    int _newSectionLocation;
-    int _sectionLocation;
-    int _selectionStyle;
-    UIColor *_selectionTintColor;
-    int _separatorStyle;
-    UIView *_topSeparatorView;
+    NSInteger _animationCount;
+    BOOL _disableSeparator;
+    NSInteger _externalAnimationCount;
+    UIImageView *_fixedView;
+    UIImageView *_lowerLeftView;
+    UIImageView *_lowerRightView;
+    NSInteger _sectionLocation;
+    UIView *_separatorView;
+    UIImageView *_upperLeftView;
+    UIImageView *_upperRightView;
 }
 
-@property int sectionLocation;
-@property(getter=isSelected) BOOL selected;
-@property int selectionStyle;
-@property(retain) UIColor * selectionTintColor;
-@property int separatorStyle;
+@property NSInteger sectionLocation; /* unknown property attribute: V_sectionLocation */
 
-+ (void)_flushCacheOnNotification:(id)arg1;
-+ (void)initialize;
-
-- (id)_backgroundColor;
-- (id)_bottomShadowColor;
-- (id)_cachedImageForKey:(id)arg1;
-- (id)_contentMaskLayer;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForContentHeight:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsCenter:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsRect:(BOOL)arg1;
+- (id)_createBackgroundImageViewWithHeight:(float)arg1;
+- (id)_createFixedBackgroundImageViewWithSectionLocation:(NSInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)_decrementAnimationCount;
-- (id)_fillColor;
 - (void)_incrementAnimationCount;
-- (void)_layoutSubviews:(BOOL)arg1;
-- (float)_pixelDisplayedImageHeight;
-- (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withSectionLocation:(int)arg2 forBorder:(BOOL)arg3 cornerRadiusAdjustment:(float)arg4;
-- (id)_sectionBorderColor;
-- (id)_separatorColor;
-- (void)_setSectionLocationAnimationDidStop;
-- (id)_topShadowColor;
-- (id)_topShadowViewWithColor:(id)arg1;
-- (void)_updateSeparatorViews;
-- (id)backgroundColor;
+- (void)_updateSeparatorViewForSectionLocation:(NSInteger)arg1;
+- (void)_updateSubviewsForSectionLocation:(NSInteger)arg1;
+- (id)cellBackgroundColor;
 - (void)dealloc;
-- (void)displayLayer:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isSelected;
 - (void)layoutSubviews;
-- (int)sectionLocation;
-- (int)selectionStyle;
-- (id)selectionTintColor;
-- (int)separatorStyle;
-- (void)setBackgroundColor:(id)arg1;
+- (NSInteger)sectionLocation;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
-- (void)setSectionLocation:(int)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSelectionStyle:(int)arg1;
-- (void)setSelectionTintColor:(id)arg1 layoutSubviews:(BOOL)arg2;
-- (void)setSelectionTintColor:(id)arg1;
-- (void)setSeparatorStyle:(int)arg1;
+- (void)setSectionLocation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setSectionLocation:(NSInteger)arg1;
 
 @end

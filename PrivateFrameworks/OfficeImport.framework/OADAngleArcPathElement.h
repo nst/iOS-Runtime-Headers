@@ -6,27 +6,27 @@
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
-            int value; 
+            NSInteger value; 
         } x; 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
-            int value; 
+            NSInteger value; 
         } y; 
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
-            int value; 
+            NSInteger value; 
         } x; 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
-            int value; 
+            NSInteger value; 
         } y; 
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
-        int value; 
+        NSInteger value; 
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
-        int value; 
+        NSInteger value; 
     } mAngleLength;
     } mCenter;
     BOOL mConnectedToPrevious;
@@ -34,12 +34,11 @@
     } mStartAngle;
 }
 
-- (id).cxx_construct;
-- (struct OADAdjustCoord { BOOL x1; int x2; })angleLength;
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })center;
+- (struct OADAdjustCoord { BOOL x1; NSInteger x2; })angleLength;
+- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; NSInteger x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; NSInteger x_2_1_2; } x2; })center;
 - (BOOL)connectedToPrevious;
-- (id)initWithCenter:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg1 semiaxes:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg2 startAngle:(struct OADAdjustCoord { BOOL x1; int x2; })arg3 angleLength:(struct OADAdjustCoord { BOOL x1; int x2; })arg4 connectedToPrevious:(BOOL)arg5;
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })semiaxes;
-- (struct OADAdjustCoord { BOOL x1; int x2; })startAngle;
+- (id)initWithCenter:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; NSInteger x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; NSInteger x_2_1_2; } x2; })arg1 semiaxes:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; NSInteger x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; NSInteger x_2_1_2; } x2; })arg2 startAngle:(struct OADAdjustCoord { BOOL x1; NSInteger x2; })arg3 angleLength:(struct OADAdjustCoord { BOOL x1; NSInteger x2; })arg4 connectedToPrevious:(BOOL)arg5;
+- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; NSInteger x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; NSInteger x_2_1_2; } x2; })semiaxes;
+- (struct OADAdjustCoord { BOOL x1; NSInteger x2; })startAngle;
 
 @end

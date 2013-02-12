@@ -5,10 +5,7 @@
 @class UIImageView;
 
 @interface UITextFieldRoundedRectBackgroundView : UITextFieldBackgroundView {
-    UIImageView *_center;
-    UIImageView *_leftCap;
-    UIImageView *_progressFill;
-    UIImageView *_rightCap;
+    UIImageView *_imageViews[3][4];
 }
 
 - (void)_updateImages;

@@ -2,33 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSDictionary;
+@class NSMutableDictionary, NSTimer;
 
 @interface ISUserNotification : NSObject {
-    int _allowedRetryCount;
-    int _currentRetryCount;
-    NSDictionary *_dictionary;
-    unsigned long _optionFlags;
-    NSDictionary *_userInfo;
+    id _context;
+    struct __CFDictionary { } *_noteDictionary;
+    struct __CFUserNotification { } *_notification;
+    NSUInteger _options;
+    NSUInteger _retryCount;
+    NSTimer *_retryTimer;
+    NSMutableDictionary *_userInfo;
 }
 
-@property int allowedRetryCount;
-@property int currentRetryCount;
-@property(readonly) NSDictionary * dictionary;
-@property(readonly) unsigned long optionFlags;
-@property(retain) NSDictionary * userInfo;
-
-- (int)allowedRetryCount;
-- (struct __CFUserNotification { }*)copyUserNotification;
-- (int)currentRetryCount;
+- (void)_resetRetry;
+- (void)_retry;
+- (void)_scheduleRetry;
+- (void)_userNotificationDidFinish:(struct __CFUserNotification { }*)arg1 withResponseFlags:(unsigned long)arg2;
+- (void)cancelNotification;
+- (id)context;
 - (void)dealloc;
-- (id)dictionary;
-- (id)init;
-- (id)initWithDictionary:(id)arg1 options:(unsigned long)arg2;
-- (unsigned long)optionFlags;
-- (void)setAllowedRetryCount:(int)arg1;
-- (void)setCurrentRetryCount:(int)arg1;
-- (void)setUserInfo:(id)arg1;
-- (id)userInfo;
+- (id)initWithDictionary:(struct __CFDictionary { }*)arg1 options:(unsigned long)arg2 context:(id)arg3;
+- (struct __CFUserNotification { }*)notification;
+- (void)postNotification;
+- (void)setValue:(id)arg1 forUserInfoKey:(id)arg2;
+- (id)valueForUserInfoKey:(id)arg1;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface WMEnumProperty : CMProperty {
-    int wdValue;
+    NSInteger wdValue;
 }
 
 - (id)cssStringForName:(id)arg1;
-- (id)initWithEnum:(int)arg1;
+- (id)initWithEnum:(NSInteger)arg1;
 - (id)mapCellTextVAlign;
 - (id)mapJustification;
 - (id)mapUnderline;
 - (id)mapVerticalAlign;
-- (int)value;
+- (NSInteger)value;
 
 @end

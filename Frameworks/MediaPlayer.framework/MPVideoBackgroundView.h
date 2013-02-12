@@ -2,56 +2,26 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIImageView, UIView, NSString, UIImage;
+@class UIImageView, UITextLabel, UIView;
 
 @interface MPVideoBackgroundView : UIView {
-    UIImageView *_backgroundPlaceholderImageView;
-    UIView *_backgroundPlaceholderPosterImageView;
-    UIView *_backgroundPlaceholderView;
-    UIImageView *_customBackgroundImageView;
-    NSString *_destinationName;
-    int _destinationPlaceholderStyle;
+    UIView *_hackView;
     UIImageView *_iconView;
-    UIView *_imageView;
-    int _interfaceOrientation;
-    id _layoutSubviewsPostflightHandler;
-    BOOL _showDestinationPlaceholder;
+    UIImageView *_imageView;
+    UITextLabel *_infoSubTitle;
+    UITextLabel *_infoTitle;
+    NSInteger _orientation;
 }
 
-@property(retain) UIImage * backgroundPlaceholderImage;
-@property(retain) UIView * backgroundPlaceholderPosterImageView;
-@property(readonly) UIView * backgroundPlaceholderView;
-@property(copy) NSString * destinationName;
-@property int destinationPlaceholderStyle;
-@property int interfaceOrientation;
-@property(copy) id layoutSubviewsPostflightHandler;
-
-- (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(int)arg3;
-- (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
-- (void)_updateDestinationBackgroundViewAnimated:(BOOL)arg1;
-- (id)backgroundPlaceholderImage;
-- (id)backgroundPlaceholderPosterImageView;
-- (id)backgroundPlaceholderView;
+- (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(NSInteger)arg3;
 - (void)dealloc;
-- (id)destinationName;
-- (int)destinationPlaceholderStyle;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)interfaceOrientation;
+- (void)layoutForCurrentOrientation;
 - (void)layoutSubviews;
-- (id)layoutSubviewsPostflightHandler;
-- (id)qtIcon;
-- (void)setBackgroundPlaceholderImage:(id)arg1;
-- (void)setBackgroundPlaceholderPosterImageView:(id)arg1;
-- (void)setCustomBackgroundImage:(id)arg1;
-- (void)setDestinationName:(id)arg1;
-- (void)setDestinationPlaceholderStyle:(int)arg1;
-- (void)setInterfaceOrientation:(int)arg1;
-- (void)setLayoutSubviewsPostflightHandler:(id)arg1;
-- (void)setShowDestinationPlaceholder:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setInformationalTextShown:(BOOL)arg1;
+- (void)setInformationalTitle:(id)arg1 infoSubTitle:(id)arg2;
+- (void)setOrientation:(NSInteger)arg1;
 - (void)setShowQTAudioOnlyUI:(BOOL)arg1;
+- (BOOL)shouldShowInformationalTextForOrientation:(NSInteger)arg1;
 
 @end

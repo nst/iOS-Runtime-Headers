@@ -2,14 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, NSString, UIView, NSSet, UIColor, UIToolbarButton;
+@class NSSet, NSString, UIImage, UIView;
 
-@interface UIBarButtonItem : UIBarItem <NSCoding> {
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+@interface UIBarButtonItem : UIBarItem {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -21,96 +16,35 @@
         unsigned int isSystemItem : 1; 
         unsigned int systemItem : 7; 
         unsigned int viewIsCustom : 1; 
-        unsigned int isMinibarView : 1; 
-        unsigned int disableAutosizing : 1; 
-        unsigned int selected : 1; 
-        unsigned int imageHasEffects : 1; 
     SEL _action;
-    id _appearanceStorage;
     } _barButtonItemFlags;
-    BOOL _flexible;
     UIImage *_image;
     } _imageInsets;
-    UIImage *_landscapeImagePhone;
-    } _landscapeImagePhoneInsets;
-    float _maximumWidth;
-    float _minimumWidth;
-    NSSet *_possibleSystemItems;
     NSSet *_possibleTitles;
-    int _tag;
+    NSInteger _tag;
     id _target;
     NSString *_title;
-    float _toolbarCharge;
     UIView *_view;
     float _width;
 }
 
-@property(setter=_setFlexible:) BOOL _flexible;
-@property(setter=_setImageHasEffects:) BOOL _imageHasEffects;
-@property(setter=_setMaximumWidth:) float _maximumWidth;
-@property(setter=_setMinimumWidth:) float _minimumWidth;
-@property(readonly) UIToolbarButton * _toolbarButton;
-@property(setter=_setToolbarCharge:) float _toolbarCharge;
-@property SEL action;
-@property(retain) UIView * customView;
-@property(getter=isEnabled) BOOL enabled;
+@property NSInteger tag; /* unknown property attribute: V_tag */
+@property id target; /* unknown property attribute: V_target */
+@property SEL action; /* unknown property attribute: V_action */
+@property(retain) UIView *customView;
+@property(copy) NSSet *possibleTitles;
+@property(retain) UIView *view;
+@property(readonly) BOOL isCustomViewItem;
 @property(readonly) BOOL isSystemItem;
-@property(readonly) BOOL isSystemItem;
-@property(getter=_miniImage,setter=_setMiniImage:,retain) UIImage * miniImage;
-@property(getter=_miniImageInsets,setter=_setMiniImageInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } miniImageInsets;
-@property(getter=_possibleSystemItems,setter=_setPossibleSystemItems:,copy) NSSet * possibleSystemItems;
-@property(getter=_possibleSystemItems,setter=_setPossibleSystemItems:,copy) NSSet * possibleSystemItems;
-@property(copy) NSSet * possibleTitles;
-@property BOOL selected;
-@property BOOL selected;
-@property int style;
-@property(readonly) int systemItem;
-@property(readonly) int systemItem;
-@property id target;
-@property(retain) UIColor * tintColor;
+@property NSInteger style;
+@property(readonly) NSInteger systemItem;
 @property float width;
 
-+ (id)_appearanceProxyViewClasses;
-+ (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8 usingSystemItem:(int)arg9 usingItemStyle:(int)arg10;
-+ (Class)classForNavigationButton;
-
-- (id)_appearanceStorage;
-- (void)_applyPositionAdjustmentToSegmentedControl:(id)arg1;
-- (void)_connectInterfaceBuilderEventConnection:(id)arg1;
-- (BOOL)_flexible;
-- (void)_getNavBarEdgeSizeAdjust:(struct CGSize { float x1; float x2; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 landscape:(BOOL)arg3;
-- (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8;
-- (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 forBarStyle:(int)arg4 landscape:(BOOL)arg5 alwaysBordered:(BOOL)arg6;
-- (BOOL)_imageHasEffects;
-- (float)_maximumWidth;
-- (id)_miniImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_miniImageInsets;
-- (float)_minimumWidth;
-- (id)_possibleSystemItems;
+- (void)_getSystemItemStyle:(NSInteger*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 forBarStyle:(NSInteger)arg5 landscape:(BOOL)arg6 alwaysBordered:(BOOL)arg7;
+- (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 forBarStyle:(NSInteger)arg2 landscape:(BOOL)arg3 alwaysBordered:(BOOL)arg4;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
-- (void)_setFlexible:(BOOL)arg1;
-- (void)_setImageHasEffects:(BOOL)arg1;
-- (void)_setMaximumWidth:(float)arg1;
-- (void)_setMiniImage:(id)arg1;
-- (void)_setMiniImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)_setMinimumWidth:(float)arg1;
-- (void)_setPossibleSystemItems:(id)arg1;
-- (void)_setSystemItem:(int)arg1;
-- (void)_setToolbarCharge:(float)arg1;
-- (void)_setWidth:(float)arg1;
-- (BOOL)_shouldBezelSystemButtonImage;
-- (id)_toolbarButton;
-- (float)_toolbarCharge;
 - (void)_updateView;
-- (float)_width;
 - (SEL)action;
-- (id)backButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
-- (float)backButtonBackgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
-- (struct UIOffset { float x1; float x2; })backButtonTitlePositionAdjustmentForBarMetrics:(int)arg1;
-- (id)backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
-- (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
-- (float)backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
-- (void)configureFromScriptButton:(id)arg1;
 - (id)createViewForNavigationItem:(id)arg1;
 - (id)createViewForToolbar:(id)arg1;
 - (id)customView;
@@ -119,62 +53,34 @@
 - (id)image;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (id)init;
-- (id)initWithBarButtonSystemItem:(int)arg1 target:(id)arg2 action:(SEL)arg3;
+- (id)initWithBarButtonSystemItem:(NSInteger)arg1 target:(id)arg2 action:(SEL)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCustomView:(id)arg1;
-- (id)initWithImage:(id)arg1 landscapeImagePhone:(id)arg2 style:(int)arg3 target:(id)arg4 action:(SEL)arg5;
-- (id)initWithImage:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
-- (id)initWithTitle:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id)initWithImage:(id)arg1 style:(NSInteger)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id)initWithTitle:(id)arg1 style:(NSInteger)arg2 target:(id)arg3 action:(SEL)arg4;
 - (BOOL)isCustomViewItem;
 - (BOOL)isEnabled;
-- (BOOL)isMinibarView;
 - (BOOL)isSystemItem;
-- (id)landscapeImagePhone;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })landscapeImagePhoneInsets;
-- (void)mf_setImageOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)mf_setImageVerticalOffset:(float)arg1;
-- (void)mf_setMiniImageOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)mf_setMiniImageVerticalOffset:(float)arg1;
 - (id)nextResponder;
 - (id)possibleTitles;
-- (id)scriptingID;
-- (BOOL)selected;
 - (void)setAction:(SEL)arg1;
-- (void)setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
-- (void)setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
-- (void)setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
-- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
-- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 style:(int)arg3 barMetrics:(int)arg4;
-- (void)setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)setCustomView:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setIsMinibarView:(BOOL)arg1;
-- (void)setLandscapeImagePhone:(id)arg1;
-- (void)setLandscapeImagePhoneInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPossibleTitles:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
-- (void)setTag:(int)arg1;
+- (void)setStyle:(NSInteger)arg1;
+- (void)setTag:(NSInteger)arg1;
 - (void)setTarget:(id)arg1;
-- (void)setTintColor:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
-- (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)setView:(id)arg1;
 - (void)setWidth:(float)arg1;
-- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
-- (int)style;
-- (int)systemItem;
-- (int)tag;
+- (NSInteger)style;
+- (NSInteger)systemItem;
+- (NSInteger)tag;
 - (id)target;
-- (id)tintColor;
 - (id)title;
-- (struct UIOffset { float x1; float x2; })titlePositionAdjustmentForBarMetrics:(int)arg1;
-- (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)view;
 - (float)width;
-- (id)window;
 
 @end

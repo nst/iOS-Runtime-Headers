@@ -4,24 +4,19 @@
 
 @interface PSEditableListController : PSListController {
     BOOL _editable;
-    BOOL _editingDisabled;
 }
 
-- (id)_editButtonBarItem;
-- (void)_setEditable:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_updateNavigationBar;
-- (void)didLock;
-- (void)editDoneTapped;
+- (void)_updateNavigationBar:(BOOL)arg1;
 - (BOOL)editable;
-- (id)init;
+- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)navigationBarButtonClicked:(NSInteger)arg1;
 - (BOOL)performDeletionActionForSpecifier:(id)arg1;
 - (void)pushController:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
-- (void)setEditingButtonHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)suspend;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)table:(id)arg1 canDeleteRow:(NSInteger)arg2;
+- (BOOL)table:(id)arg1 canSelectRow:(NSInteger)arg2;
+- (void)table:(id)arg1 deleteRow:(NSInteger)arg2;
+- (void)viewWillBecomeVisible:(void*)arg1;
+- (void)viewWillRedisplay;
 
 @end

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, NSMutableArray, PDIterate;
+@class NSMutableArray, NSString, PDIterate;
 
 @interface PDCommonTimeNodeData : NSObject {
     double mAcceleration;
-    int mAnimationPresetClass;
+    NSInteger mAnimationPresetClass;
     NSMutableArray *mChildTimeNodeList;
     double mDeceleration;
     double mDuration;
@@ -14,19 +14,19 @@
     NSString *mGroupId;
     BOOL mHasDuration;
     PDIterate *mIterate;
-    int mPresetId;
-    int mPresetSubType;
-    int mRepeatCount;
-    int mRepeatDuration;
-    int mRestartType;
+    NSInteger mPresetId;
+    NSInteger mPresetSubType;
+    NSInteger mRepeatCount;
+    NSInteger mRepeatDuration;
+    NSInteger mRestartType;
     double mSpeed;
     NSMutableArray *mStartTimeConditions;
     NSMutableArray *mSubTimeNodeList;
-    int mType;
+    NSInteger mType;
 }
 
 - (double)acceleration;
-- (int)animationPresetClass;
+- (NSInteger)animationPresetClass;
 - (id)childTimeNodeList;
 - (void)dealloc;
 - (double)deceleration;
@@ -39,32 +39,31 @@
 - (BOOL)hasType;
 - (id)init;
 - (id)iterate;
-- (int)presetId;
-- (int)presetSubType;
-- (int)repeatCount;
-- (int)repeatDuration;
-- (int)restartType;
+- (NSInteger)presetId;
+- (NSInteger)presetSubType;
+- (NSInteger)repeatCount;
+- (NSInteger)repeatDuration;
+- (NSInteger)restartType;
 - (void)setAcceleration:(double)arg1;
-- (void)setAnimationPresetClass:(int)arg1;
+- (void)setAnimationPresetClass:(NSInteger)arg1;
 - (void)setChildTimeNodeList:(id)arg1;
 - (void)setDeceleration:(double)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setEndTimeConditions:(id)arg1;
 - (void)setGroupId:(id)arg1;
-- (void)setGroupIdValue:(int)arg1;
 - (void)setIterate:(id)arg1;
-- (void)setPresetId:(int)arg1;
-- (void)setPresetSubType:(int)arg1;
-- (void)setRepeatCount:(int)arg1;
-- (void)setRepeatDuration:(int)arg1;
-- (void)setRestartType:(int)arg1;
+- (void)setPresetId:(NSInteger)arg1;
+- (void)setPresetSubType:(NSInteger)arg1;
+- (void)setRepeatCount:(NSInteger)arg1;
+- (void)setRepeatDuration:(NSInteger)arg1;
+- (void)setRestartType:(NSInteger)arg1;
 - (void)setSpeed:(double)arg1;
 - (void)setStartTimeConditions:(id)arg1;
 - (void)setSubTimeNodeList:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(NSInteger)arg1;
 - (double)speed;
 - (id)startTimeConditions;
 - (id)subTimeNodeList;
-- (int)type;
+- (NSInteger)type;
 
 @end

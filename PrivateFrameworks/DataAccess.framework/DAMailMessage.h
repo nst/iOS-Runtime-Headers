@@ -2,40 +2,27 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAMailMessage : NSObject <NSCoding> {
+@interface DAMailMessage : NSObject {
 }
 
 - (id)attachments;
 - (id)body;
-- (int)bodySize;
-- (int)bodyTruncated;
+- (NSInteger)bodySize;
+- (NSInteger)bodyTruncated;
 - (id)cc;
-- (id)conversationId;
-- (id)conversationIndex;
 - (id)date;
 - (id)displayTo;
-- (void)encodeWithCoder:(id)arg1;
-- (BOOL)flagged;
-- (BOOL)flaggedIsSet;
-- (id)folderID;
 - (id)from;
-- (int)importance;
-- (id)initWithCoder:(id)arg1;
-- (int)lastVerb;
-- (id)longID;
-- (BOOL)meetingRequestIsActionable;
+- (NSInteger)importance;
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;
 - (id)messageClass;
 - (BOOL)read;
-- (BOOL)readIsSet;
 - (id)remoteID;
 - (id)replyTo;
 - (id)rfc822Data;
-- (int)smimeType;
 - (id)subject;
 - (id)threadTopic;
 - (id)to;
-- (BOOL)verbIsSet;
 
 @end

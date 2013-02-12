@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIViewAnimationState, NSString;
+@class NSString, UIView, UIViewAnimationState;
 
 @interface UIViewAnimationState : NSObject {
     struct CGPoint { 
@@ -13,34 +13,28 @@
     unsigned int _cacheTransition : 1;
     unsigned int _autoreverses : 1;
     unsigned int _roundsToInteger : 1;
-    unsigned int _layoutSubviews : 1;
+    unsigned int _reserved : 27;
     NSString *_animationID;
     void *_context;
-    int _curve;
+    NSInteger _curve;
     double _delay;
     id _delegate;
-    int _didEndCount;
+    NSInteger _didEndCount;
     SEL _didEndSelector;
     double _duration;
-    int _filter;
-    float _filterValue;
-    UIView *_filterView;
     double _frameInterval;
     UIViewAnimationState *_nextState;
     } _position;
     float _repeatCount;
     double _start;
-    int _transition;
+    NSInteger _transition;
     UIView *_transitionView;
     SEL _willStartSelector;
 }
 
-@property(readonly) BOOL _allowsUserInteraction;
-
 + (void)popAnimationState;
 + (void)pushViewAnimationState:(id)arg1 context:(void*)arg2;
 
-- (BOOL)_allowsUserInteraction;
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;

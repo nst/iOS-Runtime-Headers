@@ -2,77 +2,54 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@class NSBundle, NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
 
-@class NSMutableSet;
-
-@interface WebBasePluginPackage : NSObject {
-    struct String { 
-        struct RefPtr<WTF::StringImpl> { 
-            struct StringImpl {} *m_ptr; 
-        } m_impl; 
-    struct PluginInfo { 
-        struct String { 
-            struct RefPtr<WTF::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } name; 
-        struct String { 
-            struct RefPtr<WTF::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } file; 
-        struct String { 
-            struct RefPtr<WTF::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } desc; 
-        struct Vector<WebCore::MimeClassInfo, 0> { 
-            unsigned int m_size; 
-            struct VectorBuffer<WebCore::MimeClassInfo, 0> { 
-                struct MimeClassInfo {} *m_buffer; 
-                unsigned int m_capacity; 
-            } m_buffer; 
-        } mimes; 
-    struct RetainPtr<__CFBundle *> { 
-        struct __CFBundle {} *m_ptr; 
+@interface WebBasePluginPackage : NSObject <WebCorePluginInfo> {
     int (*BP_CreatePluginMIMETypesPreferences)();
-    } cfBundle;
-    } path;
+    NSDictionary *MIMEToDescription;
+    NSDictionary *MIMEToExtensions;
+    NSBundle *bundle;
+    struct __CFBundle { } *cfBundle;
+    NSMutableDictionary *extensionToMIME;
+    NSString *name;
+    NSString *path;
     NSMutableSet *pluginDatabases;
-    } pluginInfo;
+    NSString *pluginDescription;
 }
 
 + (void)initialize;
 + (id)pluginWithPath:(id)arg1;
 + (id)preferredLocalizationName;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (id)_objectForInfoDictionaryKey:(id)arg1;
+- (id)MIMETypeEnumerator;
+- (id)MIMETypeForExtension:(id)arg1;
 - (oneway void)_webcore_releaseOnWebThread;
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleVersion;
-- (void)createPropertyListFile;
+- (id)bundle;
 - (void)dealloc;
+- (id)description;
+- (id)descriptionForMIMEType:(id)arg1;
+- (id)extensionEnumerator;
+- (id)extensionsForMIMEType:(id)arg1;
+- (id)filename;
 - (void)finalize;
+- (BOOL)getPluginInfoFromBundleAndMIMEDictionary:(id)arg1;
 - (BOOL)getPluginInfoFromPLists;
 - (id)initWithPath:(id)arg1;
 - (BOOL)isJavaPlugIn;
 - (BOOL)isNativeLibraryData:(id)arg1;
 - (BOOL)isQuickTimePlugIn;
 - (BOOL)load;
+- (id)name;
 - (id)pListForPath:(id)arg1 createFile:(BOOL)arg2;
-- (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
-- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo, 0> { unsigned int x_4_1_1; struct VectorBuffer<WebCore::MimeClassInfo, 0> { struct MimeClassInfo {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; }*)pluginInfo;
+- (id)path;
+- (id)pathByResolvingSymlinksAndAliasesInPath:(id)arg1;
+- (id)pluginDescription;
 - (oneway void)release;
-- (BOOL)supportsExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-- (void)unload;
+- (void)setMIMEToDescriptionDictionary:(id)arg1;
+- (void)setMIMEToExtensionsDictionary:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setPath:(id)arg1;
+- (void)setPluginDescription:(id)arg1;
 - (unsigned long)versionNumber;
 - (void)wasAddedToPluginDatabase:(id)arg1;
 - (void)wasRemovedFromPluginDatabase:(id)arg1;

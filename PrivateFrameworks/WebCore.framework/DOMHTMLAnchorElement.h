@@ -2,37 +2,40 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSURL, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DOMHTMLAnchorElement : DOMHTMLElement {
+     /* Encoded args for previous method: @12@0:4^{HTMLAnchorElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}^{Element}B}8 */
+     /* Encoded args for previous method: ^{HTMLAnchorElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}^{Element}B}8@0:4 */
 }
 
-@property(readonly) NSURL * absoluteLinkURL;
-@property(copy) NSString * accessKey;
-@property(copy) NSString * charset;
-@property(copy) NSString * coords;
-@property(readonly) NSString * hashName;
-@property(readonly) NSString * host;
-@property(readonly) NSString * hostname;
-@property(copy) NSString * href;
-@property(copy) NSString * hreflang;
-@property(copy) NSString * name;
-@property(readonly) NSString * pathname;
-@property(readonly) NSString * port;
-@property(readonly) NSString * protocol;
-@property(copy) NSString * rel;
-@property(copy) NSString * rev;
-@property(readonly) NSString * search;
-@property(copy) NSString * shape;
-@property(copy) NSString * target;
-@property(readonly) NSString * text;
-@property(copy) NSString * type;
+@property(copy,readonly) NSURL *absoluteLinkURL;
+@property(copy) NSString *accessKey;
+@property(copy) NSString *charset;
+@property(copy) NSString *coords;
+@property(copy) NSString *href;
+@property(copy) NSString *hreflang;
+@property(copy) NSString *name;
+@property(copy) NSString *rel;
+@property(copy) NSString *rev;
+@property(copy) NSString *shape;
+@property(copy) NSString *target;
+@property(copy) NSString *type;
+@property NSInteger tabIndex;
 
++ (id)_wrapHTMLAnchorElement:(struct HTMLAnchorElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; struct Element {} *x35; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x36; }*)arg1;
+
+- (struct HTMLAnchorElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; struct Element {} *x35; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x36; }*)_HTMLAnchorElement;
 - (id)absoluteLinkURL;
 - (id)accessKey;
-- (BOOL)alwaysAttemptToShowTapHighlight;
+- (void)blur;
+- (id)calloutSubtitle;
+- (id)calloutTitle;
 - (id)charset;
 - (id)coords;
+- (void)focus;
 - (id)hashName;
 - (id)host;
 - (id)hostname;
@@ -40,7 +43,6 @@
 - (id)hreflang;
 - (id)name;
 - (id)pathname;
-- (id)ping;
 - (id)port;
 - (id)protocol;
 - (id)rel;
@@ -52,13 +54,14 @@
 - (void)setHref:(id)arg1;
 - (void)setHreflang:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPing:(id)arg1;
 - (void)setRel:(id)arg1;
 - (void)setRev:(id)arg1;
 - (void)setShape:(id)arg1;
+- (void)setTabIndex:(NSInteger)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)shape;
+- (NSInteger)tabIndex;
 - (id)target;
 - (id)text;
 - (id)type;

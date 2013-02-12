@@ -2,47 +2,51 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUSection, SUClientInterface;
+@class NSMutableArray, UIImage;
 
-@interface SUNavigationController : UINavigationController <SUScriptNativeObject> {
-    BOOL _canBeWeakScriptReference;
-    SUClientInterface *_clientInterface;
-    BOOL _loading;
-    SUSection *_section;
+@interface SUNavigationController : UINavigationController {
+    NSUInteger _minimumNetworkType;
+    UIImage *_moreListImage;
+    UIImage *_moreListSelectedImage;
+    id _moreListTableCell;
+    NSMutableArray *_pendingInvocations;
+    unsigned long _tag;
 }
 
-@property(retain) SUClientInterface * clientInterface;
-@property(getter=isLoading) BOOL loading;
-@property(retain) SUSection * section;
+@property unsigned long tag; /* unknown property attribute: V_tag */
+@property(retain) id moreListTableCell; /* unknown property attribute: V_moreListTableCell */
+@property(retain) UIImage *moreListSelectedImage; /* unknown property attribute: V_moreListSelectedImage */
+@property(retain) UIImage *moreListImage; /* unknown property attribute: V_moreListImage */
+@property NSUInteger minimumNetworkType; /* unknown property attribute: V_minimumNetworkType */
 
-- (void)_loadingDidChangeNotification:(id)arg1;
-- (id)_sectionForViewController:(id)arg1;
-- (void)addChildViewController:(id)arg1;
-- (BOOL)clearsWeakScriptReferences;
-- (id)clientInterface;
-- (id)copyArchivableContext;
-- (id)copyScriptViewController;
++ (id)_createControllerForHistoryItem:(id)arg1;
++ (void)_fireInvocations;
++ (void)setIgnoresInteractionEvents:(BOOL)arg1;
++ (void)setItemInfoDataSource:(id)arg1;
++ (void)setStorePageViewControllerClass:(Class)arg1;
++ (Class)storePageViewControllerClass;
+
+- (void)_invokePendingInvocation;
+- (void)_pendSelector:(SEL)arg1 arguments:(void*)arg2;
 - (void)dealloc;
-- (id)description;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)init;
 - (id)initWithRootViewController:(id)arg1;
-- (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
-- (id)initWithSection:(id)arg1;
-- (BOOL)isLoading;
+- (NSUInteger)minimumNetworkType;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
-- (void)removeChildViewController:(id)arg1;
-- (void)restoreArchivableContext:(id)arg1;
-- (id)section;
-- (void)setClientInterface:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
-- (void)setParentViewController:(id)arg1;
-- (void)setSection:(id)arg1;
-- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setToolbarHidden:(BOOL)arg1;
-- (void)setViewControllers:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
+- (id)moreListTableCell;
+- (id)popViewControllerAnimated:(BOOL)arg1;
+- (void)purgeMemoryForReason:(NSInteger)arg1 isCurrent:(BOOL)arg2;
+- (void)purgeMemoryForReason:(NSInteger)arg1;
+- (void)pushControllerForPage:(id)arg1;
+- (void)pushControllerForURL:(id)arg1 animated:(BOOL)arg2;
+- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setMinimumNetworkType:(NSUInteger)arg1;
+- (void)setMoreListImage:(id)arg1;
+- (void)setMoreListSelectedImage:(id)arg1;
+- (void)setMoreListTableCell:(id)arg1;
+- (void)setTag:(unsigned long)arg1;
+- (void)tabBarButtonReselected;
+- (unsigned long)tag;
 
 @end

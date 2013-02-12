@@ -5,14 +5,14 @@
 @interface UIProgressIndicator : UIActivityIndicatorView {
 }
 
-@property int progressIndicatorStyle;
+@property NSInteger progressIndicatorStyle;
 
 + (struct CGSize { float x1; float x2; })size;
 
-- (int)progressIndicatorStyle;
+- (NSInteger)progressIndicatorStyle;
 - (void)setAnimating:(BOOL)arg1;
-- (void)setProgressIndicatorStyle:(int)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setProgressIndicatorStyle:(NSInteger)arg1;
+- (void)setStyle:(NSInteger)arg1;
 - (void)startAnimation;
 - (void)stopAnimation;
 

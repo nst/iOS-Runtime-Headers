@@ -6,30 +6,23 @@
 
 @interface MLGeniusPlaylistController : NSObject {
     void *_echo;
-    void *_echo_cluster_playlist;
     void *_echo_library;
     NSMutableData *_sharedBlobMutableData;
 }
 
-+ (unsigned int)defaultMinTrackCount;
-+ (unsigned int)defaultTrackCount;
++ (BOOL)hasGeniusCapableiTunes;
 + (BOOL)hasGeniusDataAvailable;
 + (BOOL)hasGeniusFeatureEnabled;
 + (void)ignoreUnusedWarnings;
-+ (id)playlistControllerWithSeedTracks:(id)arg1 error:(id*)arg2;
-+ (BOOL)populateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
++ (BOOL)populatePlaylist:(id)arg1 withSeedTrack:(id)arg2 playlistItemMin:(NSUInteger)arg3 playlistItemMax:(NSUInteger)arg4 error:(id*)arg5;
 + (BOOL)useFakeGeniusData;
 
-- (void).cxx_destruct;
-- (BOOL)_canIncludeTrackInGeniusContainer:(id)arg1;
-- (BOOL)_createClusterPlaylistWithSeedTracks:(id)arg1 error:(id*)arg2;
-- (id)_debugGetTracksStartingAtTrackWithPersistentID:(unsigned long long)arg1 maxTracks:(unsigned int)arg2 stride:(int)arg3;
-- (BOOL)_fakePopulateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
-- (BOOL)_populateContainer:(id)arg1 seedTrack:(id)arg2 error:(id*)arg3;
+- (BOOL)_canIncludeTrackInGeniusPlaylist:(id)arg1;
+- (BOOL)_fakePopulatePlaylist:(id)arg1 withSeedPersistentID:(unsigned long long)arg2 playlistItemMin:(NSUInteger)arg3 playlistItemMax:(NSUInteger)arg4 error:(id*)arg5;
+- (void)_makeCompilerHappy;
+- (BOOL)_populatePlaylist:(id)arg1 withSeedPersistentID:(unsigned long long)arg2 playlistItemMin:(NSUInteger)arg3 playlistItemMax:(NSUInteger)arg4 error:(id*)arg5;
 - (id)_sharedBlobMutableData;
-- (id)_tracksFromClusterForPlaylistItemMax:(unsigned int)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)init;
-- (id)tracksFromClusterForCount:(unsigned int)arg1 error:(id*)arg2;
 
 @end

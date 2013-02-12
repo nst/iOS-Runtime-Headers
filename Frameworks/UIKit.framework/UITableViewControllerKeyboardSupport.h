@@ -11,13 +11,10 @@
     UITableViewController *_tableViewController;
 }
 
-@property float adjustmentForKeyboard;
+@property float adjustmentForKeyboard; /* unknown property attribute: V_adjustmentForKeyboard */
 @property BOOL registeredForNotifications;
 @property BOOL viewIsDisappearing;
 
-- (void)_keyboardDidChangeFrame:(id)arg1;
-- (void)_keyboardDidHide:(id)arg1;
-- (void)_keyboardDidShow:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (float)adjustmentForKeyboard;

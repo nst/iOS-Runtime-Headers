@@ -5,20 +5,16 @@
 @class NSArray;
 
 @interface UIViewAnimationContext : NSObject {
-    int _animationCount;
-    id _completionHandler;
+    NSInteger _animationCount;
     NSArray *_viewAnimations;
 }
 
-@property int animationCount;
-@property(readonly) id completionHandler;
-@property(retain) NSArray * viewAnimations;
+@property NSInteger animationCount; /* unknown property attribute: V_animationCount */
+@property(retain) NSArray *viewAnimations; /* unknown property attribute: V_viewAnimations */
 
-- (int)animationCount;
-- (id)completionHandler;
+- (NSInteger)animationCount;
 - (void)dealloc;
-- (id)initWithCompletionHandler:(id)arg1;
-- (void)setAnimationCount:(int)arg1;
+- (void)setAnimationCount:(NSInteger)arg1;
 - (void)setViewAnimations:(id)arg1;
 - (id)viewAnimations;
 

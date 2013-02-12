@@ -2,70 +2,54 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSData, NSDictionary, <AVAudioPlayerDelegate>, NSURL;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface AVAudioPlayer : NSObject {
+     /* Encoded args for previous method: ^{AudioPlayerImpl=@@@@@{AudioStreamBasicDescription=dIIIIIIII}I*I^{AudioFormatListItem}^{OpaqueAudioFileID}^{OpaqueAudioQueue}qqfdi{AudioFilePacketTableInfo=qii}iiBBBBBBBddddB^{AudioQueueLevelMeterState}[3^{AudioQueueBuffer}]^{AudioQueueBuffer}IBB^{AudioQueueBuffer}BBBBqiI}8@0:4 */
     void *_impl;
 }
 
-@property(copy) NSArray * channelAssignments;
+@property(readonly) NSData *data;
+@property <AVAudioPlayerDelegate> *delegate;
+@property(readonly) NSURL *url;
 @property double currentTime;
-@property(readonly) NSData * data;
-@property <AVAudioPlayerDelegate> * delegate;
-@property(readonly) double deviceCurrentTime;
 @property(readonly) double duration;
-@property BOOL enableRate;
 @property(getter=isMeteringEnabled) BOOL meteringEnabled;
-@property(readonly) unsigned int numberOfChannels;
-@property int numberOfLoops;
-@property float pan;
+@property(readonly) NSUInteger numberOfChannels;
+@property NSInteger numberOfLoops;
 @property(getter=isPlaying,readonly) BOOL playing;
-@property float rate;
-@property(readonly) NSDictionary * settings;
-@property(readonly) NSURL * url;
 @property float volume;
 
-- (float)averagePowerForChannel:(unsigned int)arg1;
+- (float)averagePowerForChannel:(NSUInteger)arg1;
 - (id)baseInit;
 - (void)beginInterruption;
-- (id)channelAssignments;
 - (double)currentTime;
 - (id)data;
 - (void)dealloc;
-- (void)decodeError:(id)arg1;
+- (void)decodeError;
 - (id)delegate;
-- (double)deviceCurrentTime;
 - (double)duration;
-- (BOOL)enableRate;
 - (void)endInterruption;
-- (void)endInterruptionWithFlags:(id)arg1;
 - (void)finalize;
-- (void)finishedPlaying:(id)arg1;
-- (struct AudioPlayerImpl { id x1; id x2; id x3; id x4; id x5; struct AVAudioPlayerCpp {} *x6; id x7; }*)impl;
+- (void)finishedPlaying;
+- (struct AudioPlayerImpl { id x1; id x2; id x3; id x4; id x5; struct AudioStreamBasicDescription { double x_6_1_1; NSUInteger x_6_1_2; NSUInteger x_6_1_3; NSUInteger x_6_1_4; NSUInteger x_6_1_5; NSUInteger x_6_1_6; NSUInteger x_6_1_7; NSUInteger x_6_1_8; NSUInteger x_6_1_9; } x6; NSUInteger x7; char *x8; NSUInteger x9; struct AudioFormatListItem {} *x10; struct OpaqueAudioFileID {} *x11; struct OpaqueAudioQueue {} *x12; long long x13; long long x14; float x15; double x16; NSInteger x17; struct AudioFilePacketTableInfo { long long x_18_1_1; NSInteger x_18_1_2; NSInteger x_18_1_3; } x18; NSInteger x19; NSInteger x20; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; double x28; double x29; double x30; double x31; void*x32; struct AudioQueueLevelMeterState {} *x33; struct AudioQueueBuffer {} *x34[3]; struct AudioQueueBuffer {} *x35; NSUInteger x36; void*x37; void*x38; struct AudioQueueBuffer {} *x39; void*x40; void*x41; void*x42; void*x43; long long x44; NSInteger x45; NSUInteger x46; }*)impl;
 - (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (BOOL)isMeteringEnabled;
 - (BOOL)isPlaying;
-- (unsigned int)numberOfChannels;
-- (int)numberOfLoops;
-- (float)pan;
+- (NSUInteger)numberOfChannels;
+- (NSInteger)numberOfLoops;
 - (void)pause;
-- (float)peakPowerForChannel:(unsigned int)arg1;
+- (float)peakPowerForChannel:(NSUInteger)arg1;
 - (BOOL)play;
-- (BOOL)playAtTime:(double)arg1;
 - (BOOL)prepareToPlay;
-- (void)privCommonCleanup;
-- (float)rate;
-- (void)setChannelAssignments:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEnableRate:(BOOL)arg1;
 - (void)setMeteringEnabled:(BOOL)arg1;
-- (void)setNumberOfLoops:(int)arg1;
-- (void)setPan:(float)arg1;
-- (void)setRate:(float)arg1;
+- (void)setNumberOfLoops:(NSInteger)arg1;
 - (void)setVolume:(float)arg1;
-- (id)settings;
 - (void)stop;
 - (void)updateMeters;
 - (id)url;

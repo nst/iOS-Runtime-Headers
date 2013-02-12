@@ -8,16 +8,12 @@
     struct CGPoint { 
         float x; 
         float y; 
-    float mDistance;
     GQDDrawable *mDrawable;
-    int mFlowType;
+    BOOL mFlowToLeft;
     } mPoint;
-    int mZIndex;
 }
 
-- (id).cxx_construct;
-- (int)comparePoint:(id)arg1;
-- (id)initWithX:(float)arg1 y:(float)arg2 flowType:(int)arg3 drawable:(id)arg4;
-- (int)zIndex;
+- (NSInteger)comparePoint:(id)arg1;
+- (id)initWithX:(float)arg1 y:(float)arg2 flowToLeft:(BOOL)arg3 drawable:(id)arg4;
 
 @end

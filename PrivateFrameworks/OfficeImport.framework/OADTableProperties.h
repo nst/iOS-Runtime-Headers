@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSString, OADTableStyle;
+@class NSArray, NSString, OADFill, OADTableStyle;
 
-@interface OADTableProperties : OADDrawableProperties <OADEffectsParent> {
+@interface OADTableProperties : OADDrawableProperties {
     BOOL mBandColumn;
     BOOL mBandRow;
     NSArray *mEffects;
+    OADFill *mFill;
     BOOL mFirstColumn;
     BOOL mFirstRow;
     BOOL mLastColumn;
@@ -23,11 +24,13 @@
 - (BOOL)bandRow;
 - (void)dealloc;
 - (id)effects;
+- (id)fill;
 - (BOOL)firstColumn;
 - (BOOL)firstRow;
-- (BOOL)hasBandsNormalToDir:(int)arg1;
+- (BOOL)hasBandsNormalToDir:(NSInteger)arg1;
 - (BOOL)hasEffects;
-- (BOOL)hasVectorNormalToDir:(int)arg1 atExtremePos:(int)arg2;
+- (BOOL)hasFill;
+- (BOOL)hasVectorNormalToDir:(NSInteger)arg1 atExtremePos:(NSInteger)arg2;
 - (id)initWithDefaults;
 - (BOOL)lastColumn;
 - (BOOL)lastRow;
@@ -35,6 +38,7 @@
 - (void)setBandColumn:(BOOL)arg1;
 - (void)setBandRow:(BOOL)arg1;
 - (void)setEffects:(id)arg1;
+- (void)setFill:(id)arg1;
 - (void)setFirstColumn:(BOOL)arg1;
 - (void)setFirstRow:(BOOL)arg1;
 - (void)setLastColumn:(BOOL)arg1;

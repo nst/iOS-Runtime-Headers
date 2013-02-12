@@ -2,11 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @class NSString;
 
 @interface NSKeyValueAccessor : NSObject {
@@ -15,7 +10,7 @@
     void *_extraArgument1;
     void *_extraArgument2;
     void *_extraArgument3;
-    unsigned int _extraArgumentCount;
+    NSUInteger _extraArgumentCount;
     NSString *_key;
     SEL _selector;
 }
@@ -24,8 +19,9 @@
 - (void)dealloc;
 - (void*)extraArgument1;
 - (void*)extraArgument2;
-- (unsigned int)extraArgumentCount;
-- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 implementation:(int (*)())arg3 selector:(SEL)arg4 extraArguments:(void*[3])arg5 count:(unsigned int)arg6;
+- (NSUInteger)extraArgumentCount;
+- (void)finalize;
+- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 implementation:(int (*)())arg3 selector:(SEL)arg4 extraArguments:(void*[3])arg5 count:(NSUInteger)arg6;
 - (id)key;
 - (SEL)selector;
 

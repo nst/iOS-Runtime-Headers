@@ -4,30 +4,25 @@
 
 @interface EDTwoCellAnchor : EDAnchor {
     struct EDCellAnchorMarker { 
-        int columnIndex; 
+        NSInteger columnIndex; 
         float columnAdjustment; 
-        int rowIndex; 
+        NSInteger rowIndex; 
         float rowAdjustment; 
     struct EDCellAnchorMarker { 
-        int columnIndex; 
+        NSInteger columnIndex; 
         float columnAdjustment; 
-        int rowIndex; 
+        NSInteger rowIndex; 
         float rowAdjustment; 
-    int mEditAs;
     } mFrom;
     BOOL mIsRelative;
     } mTo;
 }
 
-- (id).cxx_construct;
-- (int)editAs;
-- (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })from;
-- (id)init;
+- (struct EDCellAnchorMarker { NSInteger x1; float x2; NSInteger x3; float x4; })from;
 - (BOOL)isRelative;
-- (void)setEditAs:(int)arg1;
-- (void)setFrom:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
+- (void)setFrom:(struct EDCellAnchorMarker { NSInteger x1; float x2; NSInteger x3; float x4; })arg1;
 - (void)setRelative:(BOOL)arg1;
-- (void)setTo:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
-- (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })to;
+- (void)setTo:(struct EDCellAnchorMarker { NSInteger x1; float x2; NSInteger x3; float x4; })arg1;
+- (struct EDCellAnchorMarker { NSInteger x1; float x2; NSInteger x3; float x4; })to;
 
 @end

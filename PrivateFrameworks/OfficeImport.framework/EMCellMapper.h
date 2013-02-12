@@ -2,38 +2,37 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDReference;
+@class EDCell;
 
 @interface EMCellMapper : CMMapper {
-    int columnSpan;
+    NSInteger columnSpan;
     double columnWidth;
-    struct EDCellHeader { unsigned short x1; unsigned int x2; } *edCell;
-    EDReference *edMergedCellReference;
+    EDCell *edCell;
     BOOL firstCellFlag;
-    int firstColumn;
-    int lastColumn;
-    int rowNumber;
+    NSInteger firstColumn;
+    NSInteger lastColumn;
+    NSInteger rowNumber;
     BOOL spreadLeftFlag;
 }
 
-- (void)adjustColumnSpanForGrid:(double*)arg1 columnCount:(unsigned int)arg2 nextCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg3 withState:(id)arg4;
-- (int)columnSpan;
+- (void)adjustColumnSpanForGrid:(double*)arg1 nextCell:(id)arg2;
+- (NSInteger)columnSpan;
 - (double)columnWidth;
-- (int)firstColumn;
-- (id)initWithEDCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2 parent:(id)arg3 state:(id)arg4;
+- (NSInteger)firstColumn;
+- (id)initWithEDCell:(id)arg1 parent:(id)arg2;
 - (id)initWithParent:(id)arg1;
 - (BOOL)isCellEmpty;
 - (BOOL)isCellMerged;
-- (BOOL)isCellSpreading:(id)arg1;
+- (BOOL)isCellSpreading;
 - (BOOL)isFirstCell;
-- (int)lastColumn;
+- (NSInteger)lastColumn;
 - (void)mapAt:(id)arg1 withState:(id)arg2 height:(double)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (id)mapHyperlinkAt:(id)arg1;
-- (void)mapRowColSpansAt:(id)arg1 withState:(id)arg2;
-- (void)resetColumnSpan:(int)arg1;
+- (void)mapRowColSpansAt:(id)arg1;
+- (void)resetColumnSpan:(NSInteger)arg1;
 - (void)setFirstCellFlag;
-- (void)setFirstColumn:(int)arg1;
-- (void)setLastColumn:(int)arg1;
+- (void)setFirstColumn:(NSInteger)arg1;
+- (void)setLastColumn:(NSInteger)arg1;
 
 @end

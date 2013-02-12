@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDBGObjectPlaceholder, GQDBGSlideNumberPlaceholder, GQDSStyle, GQDSStylesheet, GQDBGBodyPlaceholder, GQDBGTitlePlaceholder;
+@class GQDBGBodyPlaceholder, GQDBGObjectPlaceholder, GQDBGSlideNumberPlaceholder, GQDBGTitlePlaceholder, GQDSStyle, GQDSStylesheet;
 
 @interface GQDBGAbstractSlide : NSObject {
     GQDBGBodyPlaceholder *mBodyPlaceholder;
     BOOL mCallGenerator;
     BOOL mHidden;
-    char *mID;
     GQDBGObjectPlaceholder *mObjectPlaceholder;
     GQDBGSlideNumberPlaceholder *mSlideNumberPlaceholder;
     GQDSStyle *mSlideStyle;
@@ -16,10 +15,9 @@
     GQDBGTitlePlaceholder *mTitlePlaceholder;
 }
 
-- (char *)ID;
 - (void)dealloc;
 - (BOOL)isHidden;
-- (int)readAttributesForSlide:(struct _xmlTextReader { }*)arg1;
+- (NSInteger)readAttributesForSlide:(struct _xmlTextReader { }*)arg1;
 - (id)slideStyle;
 - (id)stylesheet;
 

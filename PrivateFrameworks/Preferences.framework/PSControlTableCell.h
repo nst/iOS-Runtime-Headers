@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIControl;
+@class NSArray, NSDictionary, UIControl, UIProgressIndicator;
 
 @interface PSControlTableCell : PSTableCell {
     UIControl *_control;
+    UIProgressIndicator *_progressIndicator;
+    NSDictionary *_titleDict;
+    NSArray *_values;
 }
 
-@property(retain) UIControl * control;
-
-- (BOOL)canReload;
 - (id)control;
 - (void)controlChanged:(id)arg1;
-- (id)controlValue;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (id)newControl;
-- (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)layoutSubviews;
+- (BOOL)loading;
 - (void)setControl:(id)arg1;
-- (id)valueLabel;
+- (void)setLoading:(BOOL)arg1;
+- (void)setValue:(id)arg1;
+- (void)setValues:(id)arg1 titleDictionary:(id)arg2;
+- (id)titleTextLabel;
+- (id)valueTextLabel;
 
 @end

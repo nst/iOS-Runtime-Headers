@@ -2,51 +2,44 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableString, UIProgressIndicator, UIImageView, MPWebDocumentView, UIView, UIImage, NSString, UIScrollView, UITextLabel;
+@class NSMutableString, UIImage, UIImageView, UIProgressIndicator, UITextLabel, UITextViewLegacy, UIWebDocumentView;
 
-@interface MPTextView : MPSwipableView {
+@interface MPTextView : UIView {
     UIImage *_albumArtwork;
     UIImageView *_background;
+    id _delegate;
     UIImageView *_faderView;
-    UIView *_headerView;
     UIProgressIndicator *_loadingIndicator;
     UITextLabel *_loadingLabel;
-    BOOL _needsLayout;
-    NSString *_rawText;
     BOOL _scrollIndicatorFlashDisabled;
-    UIScrollView *_scrollView;
     NSMutableString *_text;
-    MPWebDocumentView *_webView;
+    UITextViewLegacy *_textView;
+    UIWebDocumentView *_webView;
 }
-
-@property(retain) UIImage * artwork;
-@property(retain) UIView * headerView;
 
 - (void)_addLoadingUI;
 - (void)_addTextUI;
+- (struct CGImage { }*)_createFaderImage:(BOOL)arg1;
+- (struct CGImage { }*)_createFaderImageBackgroundWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_createTextUIIfNeeded;
-- (struct CGImage { }*)_newFaderImage:(BOOL)arg1;
-- (struct CGImage { }*)_newFaderImageBackgroundWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_removeLoadingUI;
 - (void)_removeTextUI;
 - (void)_updateFaderImage:(BOOL)arg1;
-- (void)_updateLoadingUIForWillLoad:(BOOL)arg1;
-- (id)artwork;
 - (void)dealloc;
-- (void)didMoveToSuperview;
 - (BOOL)hasText;
-- (id)headerView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (id)newWebView;
+- (void)movedFromSuperview:(id)arg1;
+- (void)movedToSuperview:(id)arg1;
 - (void)noteDidSnapshot;
 - (void)noteWillSnapshot;
 - (void)setArtwork:(id)arg1;
-- (void)setHeaderView:(id)arg1;
-- (void)setNeedsLayout;
+- (void)setDelegate:(id)arg1;
 - (void)setScrollIndicatorFlashDisabled:(BOOL)arg1;
 - (void)setText:(id)arg1 willLoad:(BOOL)arg2;
-- (void)webViewDidFinishLoading:(id)arg1;
-- (float)webViewWidth;
+- (void)view:(id)arg1 handleTapWithCount:(NSInteger)arg2 event:(struct __GSEvent { }*)arg3;
+- (double)viewDoubleTapDelay:(id)arg1;
+- (double)viewRejectAsTapThrehold:(id)arg1;
+- (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 
 @end

@@ -8,12 +8,11 @@
     WDParagraph *mParagraph;
 }
 
-- (void)clearProperties;
 - (void)dealloc;
 - (id)init;
 - (id)initWithParagraph:(id)arg1;
 - (BOOL)isEmpty;
 - (id)paragraph;
-- (int)runType;
+- (NSInteger)runType;
 
 @end

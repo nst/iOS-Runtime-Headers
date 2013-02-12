@@ -3,12 +3,12 @@
  */
 
 @interface GQDWPAutoNumber : NSObject {
-    int mType;
+    NSInteger mType;
     struct __CFString { } *mValue;
 }
 
 - (void)dealloc;
-- (int)type;
+- (NSInteger)type;
 - (struct __CFString { }*)value;
 
 @end

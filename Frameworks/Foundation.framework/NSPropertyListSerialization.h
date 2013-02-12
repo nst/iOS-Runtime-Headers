@@ -7,13 +7,9 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)dataFromPropertyList:(id)arg1 format:(unsigned int)arg2 errorDescription:(out id*)arg3;
-+ (id)dataWithPropertyList:(id)arg1 format:(unsigned int)arg2 options:(unsigned int)arg3 error:(out id*)arg4;
-+ (BOOL)propertyList:(id)arg1 isValidForFormat:(unsigned int)arg2;
-+ (id)propertyListFromData:(id)arg1 mutabilityOption:(unsigned int)arg2 format:(unsigned int*)arg3 errorDescription:(out id*)arg4;
-+ (id)propertyListWithData:(id)arg1 options:(unsigned int)arg2 format:(unsigned int*)arg3 error:(out id*)arg4;
-+ (id)propertyListWithStream:(id)arg1 options:(unsigned int)arg2 format:(unsigned int*)arg3 error:(out id*)arg4;
-+ (int)writePropertyList:(id)arg1 toStream:(id)arg2 format:(unsigned int)arg3 options:(unsigned int)arg4 error:(out id*)arg5;
++ (id)dataFromPropertyList:(id)arg1 format:(NSUInteger)arg2 errorDescription:(id*)arg3;
++ (BOOL)propertyList:(id)arg1 isValidForFormat:(NSUInteger)arg2;
++ (id)propertyListFromData:(id)arg1 mutabilityOption:(NSUInteger)arg2 format:(NSUInteger*)arg3 errorDescription:(id*)arg4;
 
 - (id)init;
 

@@ -2,41 +2,31 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADBlip, NSString, NSMutableArray;
+@class NSMutableArray, NSString, OADBlip;
 
 @interface OADBlipRef : NSObject <NSCopying> {
     OADBlip *mBlip;
     NSMutableArray *mEffects;
-    long mIndex;
+    NSInteger mIndex;
     NSString *mName;
 }
 
-+ (id)blipRefWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3 effects:(id)arg4;
-+ (id)blipRefWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3;
-+ (int)blipTypeForContentType:(id)arg1;
-+ (int)blipTypeForExtension:(id)arg1;
-+ (int)blipTypeForImageData:(id)arg1;
++ (NSInteger)blipTypeForExtension:(id)arg1;
 + (id)inflatedExtensionForGzippedExtension:(id)arg1;
 
 - (void)addEffect:(id)arg1;
 - (id)blip;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)effectAtIndex:(unsigned int)arg1;
-- (unsigned int)effectCount;
-- (id)effects;
-- (unsigned int)hash;
+- (id)effectAtIndex:(NSUInteger)arg1;
+- (NSUInteger)effectCount;
 - (long)index;
 - (id)init;
-- (id)initWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3 effects:(id)arg4;
-- (id)initWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNull;
+- (id)initWithIndex:(long)arg1 name:(id)arg2;
 - (id)name;
-- (void)removeEffectAtIndex:(unsigned int)arg1;
 - (void)setBlip:(id)arg1;
-- (void)setEffects:(id)arg1;
-- (void)setIndex:(long)arg1;
+- (void)setFilename:(id)arg1 data:(id)arg2;
 - (void)setName:(id)arg1;
+- (void)setPath:(id)arg1;
 
 @end

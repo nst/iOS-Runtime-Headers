@@ -7,6 +7,7 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (void)load;
 
 - (void)dealloc;
 - (id)description;
@@ -14,10 +15,10 @@
 - (id)init;
 - (void)lock;
 - (BOOL)lockBeforeDate:(id)arg1;
-- (void)mf_waitForLock;
 - (id)name;
 - (void)setName:(id)arg1;
 - (BOOL)tryLock;
 - (void)unlock;
+- (void)waitForLock;
 
 @end

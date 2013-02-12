@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
 @interface EBTextBox : NSObject {
+     /* Encoded args for previous method: @16@0:4^{XlGraphicsInfo=^^?isBBBB{ChVector<XlGraphicsInfo::XlObjData*>=^^{XlObjData}^^{XlObjData}III}B^{XlString}iiiBSSS*IIBIIiiB^{XlString}}8@12 */
+     /* Encoded args for previous method: v20@0:4@8^{XlGraphicsInfo=^^?isBBBB{ChVector<XlGraphicsInfo::XlObjData*>=^^{XlObjData}^^{XlObjData}III}B^{XlString}iiiBSSS*IIBIIiiB^{XlString}}12@16 */
 }
 
-+ (id)edTextBoxFromXlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData *> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg1 edResources:(id)arg2;
-+ (void)writeTextBox:(id)arg1 shape:(id)arg2 toXlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData *> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg3 state:(id)arg4;
-+ (void)writeTextRotationFromShape:(id)arg1 toXlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData *> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
++ (id)edTextBoxFromXlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); NSInteger x2; short x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; void*x9; struct XlString {} *x10; NSInteger x11; NSInteger x12; NSInteger x13; void*x14; unsigned short x15; unsigned short x16; unsigned short x17; char *x18; NSUInteger x19; NSUInteger x20; void*x21; NSUInteger x22; NSUInteger x23; NSInteger x24; NSInteger x25; void*x26; struct XlString {} *x27; }*)arg1 edResources:(id)arg2;
++ (void)writeTextBox:(id)arg1 toXlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); NSInteger x2; short x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; void*x9; struct XlString {} *x10; NSInteger x11; NSInteger x12; NSInteger x13; void*x14; unsigned short x15; unsigned short x16; unsigned short x17; char *x18; NSUInteger x19; NSUInteger x20; void*x21; NSUInteger x22; NSUInteger x23; NSInteger x24; NSInteger x25; void*x26; struct XlString {} *x27; }*)arg2 edResources:(id)arg3;
 
 @end

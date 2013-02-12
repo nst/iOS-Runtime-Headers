@@ -5,19 +5,17 @@
 @class NSArray;
 
 @interface ABModelRecord : NSObject {
-    long _highlightIndex;
+    NSInteger _highlightIndex;
     BOOL _isGroup;
     NSArray *_namePieces;
-    int _recordID;
-    struct __CFString { } *_sortKey;
+    void *_record;
 }
 
 - (void)dealloc;
 - (long)highlightIndex;
-- (id)initWithRecordID:(int)arg1 highlightIndex:(long)arg2 group:(BOOL)arg3 namePieces:(id)arg4 sortKey:(struct __CFString { }*)arg5;
+- (id)initWithRecord:(void*)arg1 highlightIndex:(long)arg2 group:(BOOL)arg3 namePieces:(id)arg4;
 - (BOOL)isGroup;
 - (id)namePieces;
-- (int)recordID;
-- (struct __CFString { }*)sortKey;
+- (void*)record;
 
 @end

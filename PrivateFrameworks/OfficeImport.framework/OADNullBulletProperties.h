@@ -5,6 +5,4 @@
 @interface OADNullBulletProperties : OADBulletProperties {
 }
 
-- (BOOL)isEqual:(id)arg1;
-
 @end

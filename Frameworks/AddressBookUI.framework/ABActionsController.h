@@ -2,47 +2,58 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
+@class ABCardController, NSString;
 
 @interface ABActionsController : NSObject {
-    struct __CFArray { } *_actionsForProperty;
-    void *_context;
-    int _lastPropertyForActions;
-    int _multiValueIdentifier;
-    void *_person;
-    int _property;
-    int _recordID;
+    ABCardController *_cardController;
+    BOOL _isUnknownPerson;
+    NSString *_label;
+    NSInteger _multiValueIdentifier;
+    NSInteger _property;
+    NSInteger _recordID;
     NSString *_stringValue;
     id _value;
 }
 
-+ (int)defaultActionForProperty:(int)arg1;
-+ (id)newActionsControllerForProperty:(int)arg1;
++ (id)createActionsControllerForProperty:(NSInteger)arg1 withCardController:(id)arg2;
 
-- (int)_actionAtIndex:(int)arg1 forProperty:(int)arg2;
-- (struct __CFArray { }*)_actionsForProperty:(int)arg1;
-- (void)_performAction:(int)arg1 forProperty:(int)arg2;
-- (int)actionsCountForProperty:(int)arg1;
-- (void*)context;
+- (void)actionSelectedAtIndex:(NSInteger)arg1;
+- (id)actionTitleForIndex:(NSInteger)arg1;
+- (NSInteger)actionsCount;
+- (NSInteger)actionsGroupFirstIndexOfSecondGroup;
+- (NSInteger)addressActionCount;
+- (void)addressActionSelectedAtIndex:(NSInteger)arg1;
+- (id)addressActionTitleForIndex:(NSInteger)arg1;
+- (NSInteger)addressActionsGroupFirstIndexOfSecondGroup;
+- (NSInteger)cardActionCount;
+- (void)cardActionSelectedAtIndex:(NSInteger)arg1;
+- (id)cardActionTitleForIndex:(NSInteger)arg1;
+- (NSInteger)cardActionsGroupFirstIndexOfSecondGroup;
 - (void)dealloc;
-- (int)defaultAction;
-- (id)init;
-- (id)initWithProperty:(int)arg1;
-- (void)performAction:(int)arg1;
-- (void)performActionAtIndex:(int)arg1 forProperty:(int)arg2;
+- (NSInteger)emailActionCount;
+- (void)emailActionSelectedAtIndex:(NSInteger)arg1;
+- (id)emailActionTitleForIndex:(NSInteger)arg1;
+- (NSInteger)emailActionsGroupFirstIndexOfSecondGroup;
+- (id)initWithProperty:(NSInteger)arg1 cardController:(id)arg2;
+- (void)openURLWithFormat:(id)arg1 value:(id)arg2;
+- (void)performActionAtIndex:(NSInteger)arg1;
 - (void)performDefaultAction;
-- (void*)person;
-- (void)resetPrimaryPropertyActions;
-- (void)setContext:(void*)arg1;
-- (void)setMultiValueIdentifier:(int)arg1;
-- (void)setPerson:(void*)arg1;
-- (void)setRecordID:(int)arg1;
+- (NSInteger)phoneActionCount;
+- (void)phoneActionSelectedAtIndex:(NSInteger)arg1;
+- (id)phoneActionTitleForIndex:(NSInteger)arg1;
+- (NSInteger)phoneActionsGroupFirstIndexOfSecondGroup;
+- (void)setIsKnown:(BOOL)arg1;
+- (void)setLabel:(id)arg1;
+- (void)setMultiValueIdentifier:(NSInteger)arg1;
+- (void)setRecordID:(NSInteger)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setValue:(id)arg1;
+- (BOOL)shouldShowAddToFavorites;
 - (id)stringValue;
-- (id)titleAtIndex:(int)arg1 forProperty:(int)arg2;
-- (id)titleForAction:(int)arg1;
-- (id)urlForAction:(int)arg1 forProperty:(int)arg2;
+- (NSInteger)urlActionCount;
+- (void)urlActionSelectedAtIndex:(NSInteger)arg1;
+- (id)urlActionTitleForIndex:(NSInteger)arg1;
+- (NSInteger)urlActionsGroupFirstIndexOfSecondGroup;
 - (id)value;
 
 @end

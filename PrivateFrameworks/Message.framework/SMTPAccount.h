@@ -2,46 +2,40 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFSMTPConnection, NSTimer;
+@class NSTimer, SMTPConnection;
 
 @interface SMTPAccount : DeliveryAccount {
     unsigned int _supportsPipelining : 1;
-    unsigned int _supportsOutboxCopy : 1;
     unsigned int _useCellDataOnly : 1;
-    MFSMTPConnection *_connection;
+    SMTPConnection *_connection;
     Class _deliveryClass;
-    long _lastTimerSetTime;
+    NSInteger _lastTimerSetTime;
     NSTimer *_timer;
 }
 
 + (id)accountTypeString;
-+ (id)displayedAccountTypeString;
-+ (id)displayedShortAccountTypeString;
-+ (void*)keychainProtocol;
 + (id)newDefaultInstance;
-+ (void)registerAppleServiceDeliveryHostname:(id)arg1;
 + (id)saslProfileName;
 
-- (id)_defaultSettingsWithPort:(unsigned int)arg1 useSSL:(BOOL)arg2 directSSL:(BOOL)arg3;
+- (id)_defaultSettingsWithPort:(NSUInteger)arg1 useSSL:(BOOL)arg2 directSSL:(BOOL)arg3;
 - (BOOL)_isAppleServiceDeliveryHostname:(id)arg1;
-- (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
+- (BOOL)_shouldTryDirectSSLConnectionOnPort:(NSUInteger)arg1;
 - (id)alternateConnectionSettings;
 - (id)authenticatedConnection:(BOOL)arg1;
 - (BOOL)canBeFallbackAccount;
-- (id)certUIService;
 - (void)checkInConnection:(id)arg1;
 - (Class)connectionClass;
 - (void)connectionExpired:(id)arg1;
-- (struct __CFString { }*)connectionServiceType;
 - (id)connectionSettingsForAuthentication:(BOOL)arg1 secure:(id)arg2 insecure:(id)arg3;
 - (id)customAuthenticationErrorStringForError:(id)arg1 authScheme:(id)arg2;
+- (long)dataContextIdentifier;
 - (void)dealloc;
-- (unsigned int)defaultPortNumber;
+- (NSUInteger)defaultPortNumber;
 - (Class)deliveryClass;
 - (void)disconnect:(id)arg1;
 - (id)insecureConnectionSettings;
-- (BOOL)isCommonPortNumber:(unsigned int)arg1;
-- (unsigned int)keychainPortNumber;
+- (BOOL)isCommonPortNumber:(NSUInteger)arg1;
+- (NSUInteger)keychainPortNumber;
 - (id)passwordFromKeychain;
 - (id)preferredAuthScheme;
 - (void)releaseAllConnections;
@@ -51,10 +45,8 @@
 - (void)setDeliveryClass:(Class)arg1;
 - (void)setPasswordInKeychain:(id)arg1;
 - (void)setPreferredAuthScheme:(id)arg1;
-- (void)setSupportsOutboxCopy:(BOOL)arg1;
 - (void)setSupportsPipelining:(BOOL)arg1;
 - (void)setTimer;
-- (BOOL)supportsOutboxCopy;
 - (BOOL)supportsPipelining;
 
 @end

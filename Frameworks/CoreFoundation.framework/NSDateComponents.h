@@ -2,74 +2,38 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDateComponents : NSObject <NSCopying, NSSecureCoding> {
+@interface NSDateComponents : NSObject <NSCopying, NSCoding> {
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)dateComponentsFromGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-+ (unsigned int)largerComponentsRelativeToComponent:(unsigned int)arg1;
-+ (id)namesForComponents:(unsigned int)arg1;
-+ (unsigned int)smaller:(BOOL)arg1 componentsRelativeToComponent:(unsigned int)arg2;
-+ (unsigned int)smallerComponentsRelativeToComponent:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
 
 - (id)calendar;
-- (void)clearTimeComponents;
-- (id)conciseDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)date;
-- (id)dateComponents:(unsigned int)arg1 byAddingComponents:(id)arg2 calendar:(id)arg3;
-- (id)dateComponents:(unsigned int)arg1 byAddingDays:(int)arg2 calendar:(id)arg3;
-- (id)dateComponentsForDateOnly;
-- (id)dateComponentsForEndOfDay;
-- (int)day;
-- (void)dealloc;
-- (id)description;
+- (NSInteger)day;
 - (void)encodeWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (int)era;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })gregorianDate;
-- (BOOL)hasTimeComponents;
-- (unsigned int)hash;
-- (int)hour;
+- (NSInteger)era;
+- (NSUInteger)hash;
+- (NSInteger)hour;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isLeapMonth;
-- (int)minute;
-- (int)month;
-- (int)nanosecond;
-- (int)quarter;
-- (int)second;
+- (NSInteger)minute;
+- (NSInteger)month;
+- (NSInteger)second;
 - (void)setCalendar:(id)arg1;
-- (void)setComponents:(id)arg1;
-- (void)setDay:(int)arg1;
-- (void)setEra:(int)arg1;
-- (void)setHour:(int)arg1;
-- (void)setLeapMonth:(BOOL)arg1;
-- (void)setMinute:(int)arg1;
-- (void)setMonth:(int)arg1;
-- (void)setNanosecond:(int)arg1;
-- (void)setQuarter:(int)arg1;
-- (void)setSecond:(int)arg1;
-- (void)setTimeZone:(id)arg1;
-- (void)setValue:(int)arg1 forComponent:(unsigned int)arg2;
-- (void)setWeek:(int)arg1;
-- (void)setWeekOfMonth:(int)arg1;
-- (void)setWeekOfYear:(int)arg1;
-- (void)setWeekday:(int)arg1;
-- (void)setWeekdayOrdinal:(int)arg1;
-- (void)setYear:(int)arg1;
-- (void)setYearForWeekOfYear:(int)arg1;
-- (id)timeZone;
-- (int)valueForComponent:(unsigned int)arg1;
-- (int)week;
-- (int)weekOfMonth;
-- (int)weekOfYear;
-- (int)weekday;
-- (int)weekdayOrdinal;
-- (int)year;
-- (int)yearForWeekOfYear;
+- (void)setDay:(NSInteger)arg1;
+- (void)setEra:(NSInteger)arg1;
+- (void)setHour:(NSInteger)arg1;
+- (void)setMinute:(NSInteger)arg1;
+- (void)setMonth:(NSInteger)arg1;
+- (void)setSecond:(NSInteger)arg1;
+- (void)setWeek:(NSInteger)arg1;
+- (void)setWeekday:(NSInteger)arg1;
+- (void)setWeekdayOrdinal:(NSInteger)arg1;
+- (void)setYear:(NSInteger)arg1;
+- (NSInteger)week;
+- (NSInteger)weekday;
+- (NSInteger)weekdayOrdinal;
+- (NSInteger)year;
 
 @end

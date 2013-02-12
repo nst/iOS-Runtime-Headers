@@ -2,31 +2,27 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, NSMutableDictionary, NSDictionary;
+@class MPItem, NSDictionary, NSMutableDictionary;
 
 @interface MPAlternateTracks : NSObject {
     NSDictionary *_alternateTracks;
-    MPAVItem *_item;
+    MPItem *_item;
     NSMutableDictionary *_trackChangeDictionary;
 }
 
 @property(getter=isLoaded,readonly) BOOL loaded;
 
-+ (id)fallbackSubtitleOptionForAsset:(id)arg1 withSelectedAudioOption:(id)arg2;
-
-- (id)_keyForTrackType:(unsigned int)arg1;
-- (id)_titleOfOption:(id)arg1;
+- (id)_keyForTrackType:(NSUInteger)arg1;
 - (void)beginTrackChanges;
 - (void)commitTrackChanges;
-- (id)currentTrackForType:(unsigned int)arg1;
+- (id)currentTrackForType:(NSUInteger)arg1;
 - (void)dealloc;
-- (BOOL)hasTracksForTypes:(unsigned int)arg1;
-- (unsigned int)indexOfCurrentTrackForType:(unsigned int)arg1;
+- (BOOL)hasTracksForTypes:(NSUInteger)arg1;
+- (NSUInteger)indexOfCurrentTrackForType:(NSUInteger)arg1;
 - (id)initWithItem:(id)arg1;
 - (BOOL)isLoaded;
 - (void)reloadData;
-- (void)setTrack:(id)arg1 forType:(unsigned int)arg2;
-- (unsigned int)trackCountForTypes:(unsigned int)arg1;
-- (id)tracksForType:(unsigned int)arg1;
+- (void)setTrack:(id)arg1 forType:(NSUInteger)arg2;
+- (id)tracksForType:(NSUInteger)arg1;
 
 @end

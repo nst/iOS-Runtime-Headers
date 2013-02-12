@@ -2,83 +2,102 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSURL, UIView;
+@class NSError, NSURL, UIColor, UIWindow;
 
-@interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
-    void *_internal;
-    BOOL _readyForDisplay;
+@interface MPMoviePlayerController : NSObject {
+    struct { 
+        unsigned int active : 1; 
+        unsigned int mediaType : 1; 
+        unsigned int statusBarWasHidden : 1; 
+        unsigned int shouldRestartPlaybackAfterAudioRouteChange : 1; 
+        unsigned int shouldResumeGeneratingDeviceOrientationNotifications : 1; 
+        unsigned int playbackFailed : 1; 
+        unsigned int isFinishing : 1; 
+        unsigned int hideLoadingIndicatorForLocalFiles : 1; 
+        unsigned int fullscreen : 1; 
+        unsigned int unused : 23; 
+    UIColor *_backgroundColor;
+    NSURL *_contentURL;
+    NSInteger _movieControlMode;
+    NSError *_playbackError;
+    } _playerBitfield;
+    NSUInteger _previousStatusBarMode;
+    NSUInteger _previousStatusBarOrientation;
+    NSInteger _scalingMode;
+    id _videoViewController;
+    UIWindow *_window;
 }
 
-@property(readonly) UIView * backgroundView;
-@property(copy) NSURL * contentURL;
-@property int controlStyle;
-@property float currentPlaybackRate;
-@property double currentPlaybackTime;
+@property(retain) UIColor *backgroundColor; /* unknown property attribute: V_backgroundColor */
+@property NSInteger scalingMode; /* unknown property attribute: V_scalingMode */
+@property(readonly) NSURL *contentURL; /* unknown property attribute: V_contentURL */
+@property(readonly) UIView *movieView;
+@property double currentTime;
 @property(getter=isFullscreen) BOOL fullscreen;
-@property(readonly) BOOL isPreparedToPlay;
-@property(readonly) int loadState;
-@property(readonly) int playbackState;
-@property(readonly) BOOL readyForDisplay;
-@property int repeatMode;
-@property int scalingMode;
-@property BOOL shouldAutoplay;
-@property(readonly) UIView * view;
+@property BOOL hideLoadingIndicatorForLocalFiles;
+@property NSInteger movieControlMode;
 
-+ (void)allInstancesResignActive;
++ (id)_currentMoviePlayerController;
++ (BOOL)_playbackInProgress;
++ (void)_setCurrentMoviePlayerController:(id)arg1;
++ (void)_setPlaybackInProgress:(BOOL)arg1;
++ (Class)windowClass;
 
-- (BOOL)_isReadyForDisplay;
-- (void)_resignActive;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoFrame;
-- (BOOL)allowsAirPlay;
-- (id)backgroundView;
-- (void)beginSeekingBackward;
-- (void)beginSeekingForward;
+- (void)_audioRouteChanged:(id)arg1;
+- (void)_bufferingStatusDidChangeNotification:(id)arg1;
+- (void)_createPlayer;
+- (void)_expireImplicitAudioRouteChangePlaybackRestart;
+- (void)_itemDidChangeNotification:(id)arg1;
+- (void)_itemFailedToPlay:(id)arg1;
+- (void)_itemFailedToPlayMainThreadCallback:(id)arg1;
+- (id)_localizedDescriptionForErrorCode:(NSInteger)arg1;
+- (void)_mediaServerDied:(id)arg1;
+- (void)_mediaServerDiedMainThreadCallback:(id)arg1;
+- (void)_movieDidDecode:(id)arg1;
+- (void)_movieDidDecodeMainThreadCallback:(id)arg1;
+- (void)_movieDidPreload:(id)arg1;
+- (void)_movieDidPreloadMainThreadCallback:(id)arg1;
+- (void)_pausePlaybackForNotification:(id)arg1;
+- (void)_playbackEnded:(id)arg1;
+- (void)_playbackFailedWithError:(id)arg1;
+- (void)_playbackRateChanged:(id)arg1;
+- (void)_playbackStateDidChangeNotification:(id)arg1;
+- (void)_playerFadeInAnimationDidEnd:(id)arg1 finished:(id)arg2;
+- (void)_playerFadeOutAnimationDidEnd:(id)arg1 finished:(id)arg2;
+- (void)_playerFinishAndFadeOut;
+- (void)_preloadingComplete;
+- (void)_updateForCurrentMovieControlMode;
+- (void)_videoViewScaleModeDidChange:(id)arg1;
+- (NSUInteger)_visiblePartsForMovieControlMode;
+- (id)_volumeAudioCategory;
+- (void)_willBeginSuspendAnimationNotification:(id)arg1;
+- (void)_willResignNotification:(id)arg1;
+- (void)_willSuspendNotification:(id)arg1;
+- (void)_willTerminateNotification:(id)arg1;
+- (id)backgroundColor;
 - (id)contentURL;
-- (int)controlStyle;
-- (float)currentPlaybackRate;
-- (double)currentPlaybackTime;
+- (double)currentTime;
 - (void)dealloc;
-- (double)duration;
-- (double)endPlaybackTime;
-- (void)endSeeking;
-- (void)forwardInvocation:(id)arg1;
+- (BOOL)hideLoadingIndicatorForLocalFiles;
 - (id)init;
 - (id)initWithContentURL:(id)arg1;
-- (double)initialPlaybackTime;
-- (BOOL)isAirPlayVideoActive;
 - (BOOL)isFullscreen;
-- (BOOL)isPreparedToPlay;
-- (int)loadState;
-- (id)methodSignatureForSelector:(SEL)arg1;
-- (int)movieMediaTypes;
-- (int)movieSourceType;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (NSInteger)movieControlMode;
+- (id)movieView;
+- (NSInteger)orientation;
 - (void)pause;
 - (void)play;
-- (double)playableDuration;
-- (int)playbackState;
-- (void)prepareToPlay;
-- (BOOL)readyForDisplay;
-- (int)repeatMode;
-- (int)scalingMode;
-- (void)setAllowsAirPlay:(BOOL)arg1;
-- (void)setContentURL:(id)arg1;
-- (void)setControlStyle:(int)arg1;
-- (void)setCurrentPlaybackRate:(float)arg1;
-- (void)setCurrentPlaybackTime:(double)arg1;
-- (void)setEndPlaybackTime:(double)arg1;
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)resume;
+- (NSInteger)scalingMode;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setCurrentTime:(double)arg1;
 - (void)setFullscreen:(BOOL)arg1;
-- (void)setInitialPlaybackTime:(double)arg1;
-- (void)setMovieSourceType:(int)arg1;
-- (void)setRepeatMode:(int)arg1;
-- (void)setScalingMode:(int)arg1;
-- (void)setShouldAutoplay:(BOOL)arg1;
-- (BOOL)shouldAutoplay;
-- (void)skipToBeginning;
-- (void)skipToNextItem;
-- (void)skipToPreviousItem;
+- (void)setHideLoadingIndicatorForLocalFiles:(BOOL)arg1;
+- (void)setMovieControlMode:(NSInteger)arg1;
+- (void)setOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setScalingMode:(NSInteger)arg1;
 - (void)stop;
-- (id)view;
+- (id)videoViewController;
+- (void)viewControllerRequestsExit:(id)arg1;
 
 @end

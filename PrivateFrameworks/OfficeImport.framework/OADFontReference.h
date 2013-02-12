@@ -6,15 +6,15 @@
 
 @interface OADFontReference : NSObject <NSCopying> {
     OADColor *mColor;
-    int mIndex;
+    NSInteger mIndex;
 }
 
 - (void)applyToParagraphProperties:(id)arg1;
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)index;
+- (NSInteger)index;
 - (void)setColor:(id)arg1;
-- (void)setIndex:(int)arg1;
+- (void)setIndex:(NSInteger)arg1;
 
 @end

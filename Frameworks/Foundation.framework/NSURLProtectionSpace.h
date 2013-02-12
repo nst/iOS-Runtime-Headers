@@ -4,7 +4,7 @@
 
 @class NSURLProtectionSpaceInternal;
 
-@interface NSURLProtectionSpace : NSObject <NSCoding, NSCopying> {
+@interface NSURLProtectionSpace : NSObject <NSCopying> {
     NSURLProtectionSpaceInternal *_internal;
 }
 
@@ -14,21 +14,17 @@
 - (id)authenticationMethod;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)distinguishedNames;
-- (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)host;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithHost:(id)arg1 port:(int)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
-- (id)initWithProxyHost:(id)arg1 port:(int)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (id)initWithHost:(id)arg1 port:(NSInteger)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (id)initWithProxyHost:(id)arg1 port:(NSInteger)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isProxy;
-- (int)port;
+- (NSInteger)port;
 - (id)protocol;
 - (id)proxyType;
 - (id)realm;
 - (BOOL)receivesCredentialSecurely;
-- (struct __SecTrust { }*)serverTrust;
 
 @end

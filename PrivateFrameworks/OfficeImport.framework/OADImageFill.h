@@ -6,7 +6,7 @@
 
 @interface OADImageFill : OADFill {
     OADBlipRef *mBlipRef;
-    long mDpi;
+    NSInteger mDpi;
     BOOL mIsBlipRefOverridden;
     BOOL mIsDpiOverridden;
     BOOL mIsRotateWithShapeOverridden;
@@ -24,11 +24,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (long)dpi;
-- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isBlipRefOverridden;
 - (BOOL)isDpiOverridden;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isRotateWithShapeOverridden;
 - (BOOL)isSourceRectOverridden;
 - (BOOL)isTechniqueOverridden;

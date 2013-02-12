@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDVideoMediaNode, PDAnimateRotateBehavior, PDParallelTimeNodeGroup, PDAnimateScaleBehavior, PDSetBehavior, PDAnimateMotionBehavior, PDAnimateEffectBehavior, PDAnimateColorBehavior, PDAnimateTimeBehavior, PDSequentialTimeNodeGroup, PDCmdBehavior, NSMutableArray, PDAudioMediaNode;
+@class NSMutableArray, PDAnimateEffectBehavior, PDAnimateMotionBehavior, PDAnimateRotateBehavior, PDAnimateScaleBehavior, PDAnimateTimeBehavior, PDAudioMediaNode, PDCmdBehavior, PDParallelTimeNodeGroup, PDSequentialTimeNodeGroup, PDSetBehavior, PDVideoMediaNode;
 
 @interface PDTimeNode : NSObject {
     PDAudioMediaNode *mAudio;
     PDCmdBehavior *mCmdBehavior;
-    PDAnimateColorBehavior *mColorBehavior;
     PDAnimateEffectBehavior *mEffectBehavior;
     PDAnimateMotionBehavior *mMotionBehavior;
     PDParallelTimeNodeGroup *mParallelTimeNodeGroup;
@@ -23,7 +22,6 @@
 - (id)audio;
 - (id)behavior;
 - (id)cmdBehavior;
-- (id)colorBehavior;
 - (id)commonBehavior;
 - (void)dealloc;
 - (id)effectBehavior;
@@ -36,7 +34,6 @@
 - (void)setAudio:(id)arg1;
 - (void)setBehavior:(id)arg1;
 - (void)setCmdBehavior:(id)arg1;
-- (void)setColorBehavior:(id)arg1;
 - (void)setEffectBehavior:(id)arg1;
 - (void)setMotionBehavior:(id)arg1;
 - (void)setParallel:(id)arg1;

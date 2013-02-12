@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WMStyle, NSString, WDCharacterRun;
+@class NSString, WDCharacterRun, WMStyle;
 
 @interface WMCharacterRunMapper : CMMapper {
-    float mFontSizeBumpFactor;
-    BOOL mIsDeleted;
     WMStyle *mStyle;
     NSString *mText;
     WDCharacterRun *wdCharacterRun;
@@ -16,16 +14,15 @@
 
 - (id)baseStyle;
 - (id)boldStyle;
-- (id)copyCharacterStyle;
-- (unsigned int)countAndStripLeadingTabs;
+- (NSUInteger)countAndStripLeadingTabs;
+- (id)createCharacterStyle;
 - (void)dealloc;
-- (int)defaultTabWidth;
+- (NSInteger)defaultTabWidth;
 - (id)initWithText:(id)arg1;
 - (id)initWithWDCharacterRun:(id)arg1 parent:(id)arg2;
-- (BOOL)isDeleted;
 - (void)map1At:(id)arg1 withState:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapSubstring:(id)arg1 at:(id)arg2;
-- (void)mapTabs:(unsigned int)arg1 at:(id)arg2 afterText:(id)arg3;
+- (void)mapTabs:(NSUInteger)arg1 at:(id)arg2 afterText:(id)arg3;
 
 @end

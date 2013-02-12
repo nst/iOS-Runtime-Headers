@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, WDTableRowProperties, WDTable;
+@class NSMutableArray, WDTable, WDTableRowProperties;
 
 @interface WDTableRow : NSObject {
     NSMutableArray *mCells;
-    int mIndex;
+    NSInteger mIndex;
     WDTableRowProperties *mProperties;
     WDTable *mTable;
 }
 
 - (id)addCell;
-- (id)addCellWithIndex:(int)arg1;
-- (id)cellAt:(int)arg1;
-- (int)cellCount;
+- (id)cellAt:(NSInteger)arg1;
+- (NSInteger)cellCount;
 - (id)cellIterator;
 - (void)dealloc;
-- (int)index;
-- (id)initWithTable:(id)arg1 at:(int)arg2;
-- (id)newCellIterator;
+- (NSInteger)index;
+- (id)initWithTable:(id)arg1 at:(NSInteger)arg2;
 - (id)properties;
 - (id)table;
 

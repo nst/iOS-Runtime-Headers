@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDFont, WDCharacterProperties;
+@class WDCharacterProperties, WDFont;
 
 @interface WDSymbol : WDRun {
     unsigned short mCharacter;
@@ -11,12 +11,11 @@
 }
 
 - (unsigned short)character;
-- (void)clearProperties;
 - (void)dealloc;
 - (id)font;
 - (id)initWithParagraph:(id)arg1;
 - (id)properties;
-- (int)runType;
+- (NSInteger)runType;
 - (void)setCharacter:(unsigned short)arg1;
 - (void)setFont:(id)arg1;
 

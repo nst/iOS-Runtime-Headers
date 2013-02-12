@@ -2,38 +2,55 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, UIViewController<PSController>, PSRootController;
+@class <PSBaseView>, PSRootController;
 
-@interface PSViewController : UIViewController <PSController> {
-    UIViewController<PSController> *_parentController;
+@interface PSViewController : NSObject <PSBaseView> {
+    <PSBaseView> *_parentController;
     PSRootController *_rootController;
-    PSSpecifier *_specifier;
 }
 
-- (BOOL)canBeShownFromSuspendedState;
-- (void)dealloc;
++ (BOOL)isOverlay;
+
+- (void)_layoutProgressIndicator:(id)arg1;
 - (void)didLock;
 - (void)didUnlock;
 - (void)didWake;
-- (void)formSheetViewDidDisappear;
-- (void)formSheetViewWillDisappear;
+- (void)forwardInvocation:(id)arg1;
 - (void)handleURL:(id)arg1;
+- (void)hideNavigationBarButtons;
+- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)insertNavigationItem:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)insertNavigationItem:(id)arg1 atIndexFromEnd:(NSInteger)arg2;
+- (id)methodSignatureForSelector:(SEL)arg1;
+- (void)navigationBarButtonClicked:(NSInteger)arg1;
+- (id)navigationItem;
+- (id)navigationTitle;
 - (id)parentController;
-- (void)popupViewDidDisappear;
-- (void)popupViewWillDisappear;
+- (BOOL)popController;
+- (BOOL)popControllerWithAnimation:(BOOL)arg1;
+- (void)popNavigationItem;
+- (void)popNavigationItemWithAnimation:(BOOL)arg1;
 - (void)pushController:(id)arg1;
+- (void)pushNavigationItem:(id)arg1;
+- (void)pushNavigationItemWithTitle:(id)arg1;
 - (id)readPreferenceValue:(id)arg1;
 - (id)rootController;
+- (void)setNavigationBarEnabled:(BOOL)arg1;
 - (void)setParentController:(id)arg1;
 - (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+- (void)setPrompt:(id)arg1;
 - (void)setRootController:(id)arg1;
-- (void)setSpecifier:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)specifier;
-- (void)statusBarWillAnimateByHeight:(float)arg1;
+- (void)showLeftButton:(id)arg1 withStyle:(NSInteger)arg2 rightButton:(id)arg3 withStyle:(NSInteger)arg4;
+- (void)showNavigationBarButtons:(id)arg1 :(id)arg2;
+- (id)startValidationWithPrompt:(id)arg1;
+- (void)stopValidationWithPrompt:(id)arg1 progressIndicator:(id)arg2;
 - (void)suspend;
-- (void)willBecomeActive;
-- (void)willResignActive;
+- (void)updateValidationPrompt:(id)arg1 progressIndicator:(id)arg2;
+- (id)view;
+- (void)viewDidBecomeVisible;
+- (void)viewTransitionCompleted;
+- (void)viewWillBecomeVisible:(void*)arg1;
+- (void)viewWillRedisplay;
 - (void)willUnlock;
 
 @end

@@ -2,69 +2,59 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDWarnings, EDString, EDPageSetup, EDHeaderFooter, NSMutableArray, EDProcessors, EDWorkbook, ESDContainer, TSUPointerKeyDictionary, EDColorReference;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface EDSheet : OCDDelayedNode {
-    boolmDisplayFormulas;
-    boolmDisplayGridlines;
-    boolmHidden;
-    boolmIsDialogSheet;
-    TSUPointerKeyDictionary *mCommentMap;
+@class EDColorReference, EDHeaderFooter, EDPageSetup, EDString, EDWorkbook, ESDContainer, NSMapTable, NSMutableArray;
+
+@interface EDSheet : NSObject {
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+    NSMapTable *mCommentMap;
     EDColorReference *mDefaultGridlineColorReference;
     NSMutableArray *mDrawables;
     ESDContainer *mEscherDrawing;
     EDHeaderFooter *mHeaderFooter;
     EDString *mName;
     EDPageSetup *mPageSetup;
-    EDProcessors *mProcessors;
-    TSUPointerKeyDictionary *mTextBoxMap;
-    EDWarnings *mWarnings;
+    NSMapTable *mTextBoxMap;
     EDWorkbook *mWorkbook;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDisplayFormulas;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDisplayGridlines;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHidden;
 }
 
-@property bool isDialogSheet;
-
-+ (id)sheetWithWorkbook:(id)arg1;
-
 - (void)addDrawable:(id)arg1;
-- (void)applyProcessors;
 - (void)dealloc;
 - (id)defaultGridlineColor;
 - (id)defaultGridlineColorReference;
-- (void)doneWithNonRowContent;
-- (id)drawableAtIndex:(unsigned int)arg1;
-- (unsigned int)drawableCount;
-- (id)drawableEnumerator;
-- (id)drawables;
-- (id)edCommentForShape:(id)arg1;
-- (id)edTextBoxForShape:(id)arg1;
-- (id)escherDrawing;
+- (id)drawableAtIndex:(NSUInteger)arg1;
+- (NSUInteger)drawableCount;
+- (id)edCommentForESDObject:(id)arg1;
+- (id)edTextBoxForESDObject:(id)arg1;
+- (id)existingEscherDrawing;
 - (id)headerFooter;
 - (id)initWithWorkbook:(id)arg1;
-- (bool)isDialogSheet;
-- (bool)isDisplayFormulas;
-- (bool)isDisplayGridlines;
-- (bool)isHidden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isDisplayFormulas;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isDisplayGridlines;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHidden;
 - (id)name;
 - (id)pageSetup;
-- (id)processors;
-- (void)reduceMemoryIfPossible;
-- (void)removeDrawableAtIndex:(unsigned int)arg1;
 - (void)setDefaultGridlineColor:(id)arg1;
 - (void)setDefaultGridlineColorReference:(id)arg1;
-- (void)setDisplayFormulas:(bool)arg1;
-- (void)setDisplayGridlines:(bool)arg1;
-- (void)setEDComment:(id)arg1 forShape:(id)arg2;
-- (void)setEDTextBox:(id)arg1 forShape:(id)arg2;
-- (void)setEscherDrawing:(id)arg1;
+- (void)setDisplayFormulas:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDisplayGridlines:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setEDComment:(id)arg1 forESDObject:(id)arg2;
+- (void)setEDTextBox:(id)arg1 forESDObject:(id)arg2;
 - (void)setHeaderFooter:(id)arg1;
-- (void)setHidden:(bool)arg1;
-- (void)setIsDialogSheet:(bool)arg1;
+- (void)setHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setName:(id)arg1;
 - (void)setPageSetup:(id)arg1;
-- (void)setup;
-- (void)teardown;
-- (id)warnings;
 - (id)workbook;
 
 @end

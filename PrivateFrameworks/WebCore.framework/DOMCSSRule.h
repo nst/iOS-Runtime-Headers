@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSStyleSheet, NSString, DOMCSSRule;
-
 @interface DOMCSSRule : DOMObject {
 }
 
-@property(copy) NSString * cssText;
-@property(readonly) DOMCSSRule * parentRule;
-@property(readonly) DOMCSSStyleSheet * parentStyleSheet;
+@property(copy) NSString *cssText;
+@property(retain,readonly) DOMCSSRule *parentRule;
+@property(retain,readonly) DOMCSSStyleSheet *parentStyleSheet;
 @property(readonly) unsigned short type;
 
++ (id)_wrapCSSRule:(struct CSSRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)arg1;
+
+- (struct CSSRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)_CSSRule;
+- (id)_initWithCSSRule:(struct CSSRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)arg1;
 - (id)cssText;
 - (void)dealloc;
 - (void)finalize;

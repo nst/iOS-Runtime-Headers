@@ -5,9 +5,9 @@
 @interface GQHPagesFloatingDrawable : NSObject <GQDrawablesGenerator> {
 }
 
-+ (int)beginDrawables:(id)arg1;
++ (NSInteger)beginDrawables:(id)arg1;
 + (Class)beginTable:(id)arg1;
-+ (int)endDrawables:(id)arg1;
-+ (int)handleDrawable:(id)arg1 state:(id)arg2;
++ (NSInteger)endDrawables:(id)arg1;
++ (NSInteger)handleDrawable:(id)arg1 state:(id)arg2;
 
 @end

@@ -2,25 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSHashTable, NSArray;
+@class NSArray;
 
 @interface NSKeyValueObservationInfo : NSObject {
-    unsigned int _cachedHash;
+    NSUInteger _cachedHash;
     BOOL _cachedIsShareable;
-    NSHashTable *_observables;
     NSArray *_observances;
-    int _retainCountMinusOne;
 }
 
-- (id)_initWithObservances:(id*)arg1 count:(unsigned int)arg2;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (id)_initWithObservances:(id*)arg1 count:(NSUInteger)arg2;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (BOOL)isEqual:(id)arg1;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
 
 @end

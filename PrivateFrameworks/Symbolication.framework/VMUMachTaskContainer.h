@@ -3,20 +3,20 @@
  */
 
 @interface VMUMachTaskContainer : NSObject {
-    int _pid;
-    unsigned int _task;
+    NSInteger _pid;
+    NSUInteger _task;
 }
 
 + (id)machTaskContainer;
-+ (id)machTaskContainerWithPid:(int)arg1 task:(unsigned int)arg2;
-+ (id)machTaskContainerWithPid:(int)arg1;
-+ (id)machTaskContainerWithTask:(unsigned int)arg1;
++ (id)machTaskContainerWithPid:(NSInteger)arg1 task:(NSUInteger)arg2;
++ (id)machTaskContainerWithPid:(NSInteger)arg1;
++ (id)machTaskContainerWithTask:(NSUInteger)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
-- (id)initWithPid:(int)arg1 task:(unsigned int)arg2;
-- (int)pid;
-- (unsigned int)task;
+- (id)initWithPid:(NSInteger)arg1 task:(NSUInteger)arg2;
+- (NSInteger)pid;
+- (NSUInteger)task;
 
 @end

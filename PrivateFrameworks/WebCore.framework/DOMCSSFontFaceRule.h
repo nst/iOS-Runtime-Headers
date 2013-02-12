@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSStyleDeclaration;
-
 @interface DOMCSSFontFaceRule : DOMCSSRule {
 }
 
-@property(readonly) DOMCSSStyleDeclaration * style;
+@property(retain,readonly) DOMCSSStyleDeclaration *style;
 
++ (id)_wrapCSSFontFaceRule:(struct CSSFontFaceRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_4_1_1; } x4; }*)arg1;
+
+- (struct CSSFontFaceRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_4_1_1; } x4; }*)_CSSFontFaceRule;
 - (id)style;
 
 @end

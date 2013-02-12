@@ -10,7 +10,7 @@
     BOOL mLinkSpecifyingNamedLocation;
     NSString *mMacName;
     NSString *mNamedLocation;
-    unsigned long mPosition;
+    NSUInteger mPosition;
     NSString *mURI;
 }
 
@@ -23,7 +23,7 @@
 - (id)macName;
 - (id)namedLocation;
 - (unsigned long)position;
-- (int)runType;
+- (NSInteger)runType;
 - (void)setDosName:(id)arg1;
 - (void)setLinkAbsolute:(BOOL)arg1;
 - (void)setLinkSpecifyingNamedLocation:(BOOL)arg1;

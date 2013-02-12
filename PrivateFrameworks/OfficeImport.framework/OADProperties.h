@@ -5,8 +5,8 @@
 @class OADProperties;
 
 @interface OADProperties : NSObject {
-    unsigned int mIsMerged : 1;
-    unsigned int mIsMergedWithParent : 1;
+    BOOL mIsMerged;
+    BOOL mIsMergedWithParent;
     OADProperties *mParent;
 }
 
@@ -14,16 +14,13 @@
 
 - (void)dealloc;
 - (void)flatten;
-- (unsigned int)hash;
 - (id)init;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isMerged;
 - (BOOL)isMergedPropertyForSelector:(SEL)arg1;
 - (BOOL)isMergedWithParent;
 - (id)overrideForSelector:(SEL)arg1;
 - (id)parent;
-- (void)removeUnnecessaryOverrides;
 - (void)setMerged:(BOOL)arg1;
 - (void)setMergedWithParent:(BOOL)arg1;
 - (void)setParent:(id)arg1 myRestrictedClass:(Class)arg2;

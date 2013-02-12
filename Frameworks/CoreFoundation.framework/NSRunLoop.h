@@ -4,25 +4,21 @@
 
 @interface NSRunLoop : NSObject {
     id _dperf;
-    id _info;
     id _perft;
-    id _ports;
-    void *_reserved[6];
+    void *_reserved[8];
     id _rl;
 }
 
-+ (id)_mapkit_networkIORunLoop;
-+ (id)_new:(id)arg1;
++ (void)_portInvalidated:(id)arg1;
++ (void)_runLoop:(id)arg1 addPort:(id)arg2 forMode:(id)arg3;
++ (BOOL)_runLoop:(id)arg1 containsPort:(id)arg2 forMode:(id)arg3;
++ (void)_runLoop:(id)arg1 removePort:(id)arg2 forMode:(id)arg3;
++ (void)_unmapRunLoop:(id)arg1;
 + (id)currentRunLoop;
 + (id)mainRunLoop;
-+ (void)set_mapkit_networkIORunLoop:(id)arg1;
 
-- (void)_addPort:(id)arg1 forMode:(id)arg2;
-- (BOOL)_containsPort:(id)arg1 forMode:(id)arg2;
-- (void)_enumerateInfoPairsWithBlock:(id)arg1;
+- (void)_init:(id)arg1;
 - (void)_invalidateTimers;
-- (void)_portInvalidated:(id)arg1;
-- (void)_removePort:(id)arg1 forMode:(id)arg2;
 - (void)_wakeup;
 - (void)acceptInputForMode:(id)arg1 beforeDate:(id)arg2;
 - (void)addPort:(id)arg1 forMode:(id)arg2;
@@ -39,7 +35,7 @@
 - (struct __CFRunLoop { }*)getCFRunLoop;
 - (id)init;
 - (id)limitDateForMode:(id)arg1;
-- (void)performSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3 order:(unsigned int)arg4 modes:(id)arg5;
+- (void)performSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3 order:(NSUInteger)arg4 modes:(id)arg5;
 - (id)portsForMode:(id)arg1;
 - (void)removePort:(id)arg1 forMode:(id)arg2;
 - (void)removeTimer:(id)arg1 forMode:(id)arg2;

@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UISnapshotView, UITabBar, UITabBarItem, UITabBarItemProxy, NSMutableArray;
+@class NSMutableArray, UIImageView, UITabBar, UITabBarItem, UITabBarItemProxy;
 
 @interface UITabBarCustomizeView : UIView {
     struct CGPoint { 
         float x; 
         float y; 
-    UISnapshotView *_dragImage;
+    UIImageView *_dragImage;
     UITabBarItem *_draggingItem;
     UITabBarItemProxy *_draggingProxy;
     NSMutableArray *_fixedItems;
-    int _gridCount;
+    NSInteger _gridCount;
     float _gridOffset;
     NSMutableArray *_proxies;
     UITabBarItem *_replaceItem;
@@ -30,11 +30,9 @@
 - (void)layoutSubviews;
 - (void)setTabBar:(id)arg1 currentItems:(id)arg2 availableItems:(id)arg3;
 - (void)tabBarTouchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)tabBarTouchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)tabBarTouchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)tabBarTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 

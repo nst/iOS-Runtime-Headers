@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, EDReferenceCollection;
+@class EDReferenceCollection, NSMutableArray;
 
 @interface EDConditionalFormatting : NSObject {
     EDReferenceCollection *mRanges;
@@ -15,11 +15,11 @@
 - (void)addRule:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)insertRule:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)rangeAtIndex:(unsigned int)arg1;
-- (unsigned int)rangeCount;
-- (id)ruleAtIndex:(unsigned int)arg1;
-- (unsigned int)ruleCount;
+- (void)insertRule:(id)arg1 atIndex:(NSUInteger)arg2;
+- (id)rangeAtIndex:(NSUInteger)arg1;
+- (NSUInteger)rangeCount;
+- (id)ruleAtIndex:(NSUInteger)arg1;
+- (NSUInteger)ruleCount;
 - (void)sortRulesByPriority;
 
 @end

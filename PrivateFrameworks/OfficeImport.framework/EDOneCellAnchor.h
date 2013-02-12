@@ -4,9 +4,9 @@
 
 @interface EDOneCellAnchor : EDAnchor {
     struct EDCellAnchorMarker { 
-        int columnIndex; 
+        NSInteger columnIndex; 
         float columnAdjustment; 
-        int rowIndex; 
+        NSInteger rowIndex; 
         float rowAdjustment; 
     struct CGSize { 
         float width; 
@@ -16,10 +16,9 @@
     } mSize;
 }
 
-- (id).cxx_construct;
-- (struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })from;
+- (struct EDCellAnchorMarker { NSInteger x1; float x2; NSInteger x3; float x4; })from;
 - (BOOL)isRelative;
-- (void)setFrom:(struct EDCellAnchorMarker { int x1; float x2; int x3; float x4; })arg1;
+- (void)setFrom:(struct EDCellAnchorMarker { NSInteger x1; float x2; NSInteger x3; float x4; })arg1;
 - (void)setRelative:(BOOL)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })size;

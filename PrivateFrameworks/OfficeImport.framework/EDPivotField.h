@@ -2,43 +2,61 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class EDCollection;
 
 @interface EDPivotField : NSObject {
-    boolmCompact;
-    boolmDataField;
-    boolmInsertBlankRow;
-    boolmOutlineItems;
-    boolmShowAllItems;
-    boolmShowDefaultSubTotal;
-    boolmSubtotalTop;
-    int mAxis;
-    unsigned int mNumFmtId;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+    NSInteger mAxis;
+    NSUInteger mNumFmtId;
     EDCollection *mPivotFieldItems;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mCompact;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDataField;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mInsertBlankRow;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mOutlineItems;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowAllItems;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowDefaultSubTotal;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mSubtotalTop;
 }
 
 + (id)pivotField;
 
-- (int)axis;
-- (bool)compact;
-- (bool)dataField;
+- (NSInteger)axis;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)compact;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)dataField;
 - (void)dealloc;
 - (id)init;
-- (bool)insertBlankRow;
-- (unsigned int)numFmtId;
-- (bool)outlineItems;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)insertBlankRow;
+- (NSUInteger)numFmtId;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)outlineItems;
 - (id)pivotFieldItems;
-- (void)setAxis:(int)arg1;
-- (void)setCompact:(bool)arg1;
-- (void)setDataField:(bool)arg1;
-- (void)setInsertBlankRow:(bool)arg1;
-- (void)setNumFmtId:(unsigned int)arg1;
-- (void)setOutlineItems:(bool)arg1;
-- (void)setShowAllItems:(bool)arg1;
-- (void)setShowDefaultSubTotal:(bool)arg1;
-- (void)setSubtotalTop:(bool)arg1;
-- (bool)showAllItems;
-- (bool)showDefaultSubTotal;
-- (bool)subtotalTop;
+- (void)setAxis:(NSInteger)arg1;
+- (void)setCompact:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDataField:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setInsertBlankRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setNumFmtId:(NSUInteger)arg1;
+- (void)setOutlineItems:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setShowAllItems:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setShowDefaultSubTotal:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setSubtotalTop:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)showAllItems;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)showDefaultSubTotal;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)subtotalTop;
 
 @end

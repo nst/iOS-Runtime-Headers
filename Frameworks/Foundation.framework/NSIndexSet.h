@@ -11,8 +11,8 @@
     union { 
         struct { 
             struct _NSRange { 
-                unsigned int location; 
-                unsigned int length; 
+                NSUInteger location; 
+                NSUInteger length; 
             } _range; 
         } _singleRange; 
         struct { 
@@ -24,71 +24,45 @@
 }
 
 + (id)indexSet;
-+ (id)indexSetWithIndex:(unsigned int)arg1;
-+ (id)indexSetWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
-+ (id)indexSetWithIndexes:(unsigned int)arg1;
-+ (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-+ (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
++ (id)indexSetWithIndex:(NSUInteger)arg1;
++ (id)indexSetWithIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 
-- (unsigned int)__getContainmentVector:(out BOOL*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)_gkIndexSetByAddingIndex:(int)arg1;
-- (id)_gkIndexSetByRemovingIndex:(int)arg1;
-- (unsigned int)_indexAtIndex:(unsigned int)arg1;
-- (unsigned int)_indexClosestToIndex:(unsigned int)arg1 equalAllowed:(BOOL)arg2 following:(BOOL)arg3;
-- (unsigned int)_indexOfRangeAfterOrContainingIndex:(unsigned int)arg1;
-- (unsigned int)_indexOfRangeBeforeOrContainingIndex:(unsigned int)arg1;
-- (unsigned int)_indexOfRangeContainingIndex:(unsigned int)arg1;
+- (void)__000:(out struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg1;
+- (NSUInteger)_indexClosestToIndex:(NSUInteger)arg1 equalAllowed:(BOOL)arg2 following:(BOOL)arg3;
+- (NSUInteger)_indexOfRangeAfterOrContainingIndex:(NSUInteger)arg1;
+- (NSUInteger)_indexOfRangeBeforeOrContainingIndex:(NSUInteger)arg1;
+- (NSUInteger)_indexOfRangeContainingIndex:(NSUInteger)arg1;
 - (id)_init;
 - (id)_numberEnumerator;
 - (void)_setContentToContentFromIndexSet:(id)arg1;
 - (Class)classForCoder;
-- (BOOL)containsIndex:(unsigned int)arg1;
+- (BOOL)containsIndex:(NSUInteger)arg1;
 - (BOOL)containsIndexes:(id)arg1;
-- (BOOL)containsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)containsIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)copyXPCEncoding;
-- (unsigned int)count;
-- (unsigned int)countOfIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (NSUInteger)count;
+- (NSUInteger)countOfIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateIndexesUsingBlock:(id)arg1;
-- (void)enumerateIndexesWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
-- (void)enumerateRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateRangesUsingBlock:(id)arg1;
-- (void)enumerateRangesWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
-- (unsigned int)firstIndex;
-- (unsigned int)getIndexes:(unsigned int*)arg1 maxCount:(unsigned int)arg2 inIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (unsigned int)hash;
-- (unsigned int)indexGreaterThanIndex:(unsigned int)arg1;
-- (unsigned int)indexGreaterThanOrEqualToIndex:(unsigned int)arg1;
-- (unsigned int)indexInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (unsigned int)indexLessThanIndex:(unsigned int)arg1;
-- (unsigned int)indexLessThanOrEqualToIndex:(unsigned int)arg1;
-- (unsigned int)indexPassingTest:(id)arg1;
-- (unsigned int)indexWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (id)indexesPassingTest:(id)arg1;
-- (id)indexesWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (NSUInteger)firstIndex;
+- (NSUInteger)getIndexes:(NSUInteger*)arg1 maxCount:(NSUInteger)arg2 inIndexRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3;
+- (NSUInteger)hash;
+- (NSUInteger)indexGreaterThanIndex:(NSUInteger)arg1;
+- (NSUInteger)indexGreaterThanOrEqualToIndex:(NSUInteger)arg1;
+- (NSUInteger)indexLessThanIndex:(NSUInteger)arg1;
+- (NSUInteger)indexLessThanOrEqualToIndex:(NSUInteger)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIndex:(unsigned int)arg1;
+- (id)initWithIndex:(NSUInteger)arg1;
 - (id)initWithIndexSet:(id)arg1;
-- (id)initWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
-- (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)intersectsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)initWithIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (BOOL)intersectsIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIndexSet:(id)arg1;
-- (BOOL)isSingleContiguousRange;
-- (unsigned int)lastIndex;
+- (NSUInteger)lastIndex;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)pl_indexSetByExtractingIndexes:(id)arg1;
-- (id)pl_shortDescription;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
-- (unsigned int)rangeCount;
-- (id)replacementObjectForPortCoder:(id)arg1;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeAtIndex:(NSUInteger)arg1;
+- (NSUInteger)rangeCount;
 
 @end

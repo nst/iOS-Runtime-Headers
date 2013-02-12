@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ODDDiagram, CMDrawingContext;
+@class CMDrawingContext, ODDDiagram;
 
 @interface CMDiagramMapper : CMDrawableMapper {
     ODDDiagram *mDiagram;
     CMDrawingContext *mDrawingContext;
 }
 
-+ (int)diagramTypeFromString:(id)arg1;
++ (NSInteger)diagramTypeFromString:(id)arg1;
 
-- (id)copyDiagramMapperForId:(id)arg1;
+- (id)createDiagramMapperForId:(id)arg1;
 - (id)diagram;
 - (id)identifierFromLayoutTypeId:(id)arg1;
 - (id)initWithOddDiagram:(id)arg1 drawingContext:(id)arg2 orientedBounds:(id)arg3 parent:(id)arg4;

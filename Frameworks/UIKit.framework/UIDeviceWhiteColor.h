@@ -10,14 +10,11 @@
 
 - (struct CGColor { }*)CGColor;
 - (struct CGColor { }*)_createCGColorWithAlpha:(float)arg1;
-- (float)alphaComponent;
 - (id)colorSpaceName;
 - (id)colorWithAlphaComponent:(float)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)getWhite:(float*)arg1 alpha:(float*)arg2;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;
 - (BOOL)isEqual:(id)arg1;

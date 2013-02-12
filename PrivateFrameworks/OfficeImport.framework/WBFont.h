@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
 @interface WBFont : NSObject {
+     /* Encoded args for previous method: @16@0:4r^{WrdFontFamilyName=^^?{CsString=^^?^SII}{CsString=^^?^SII}i**SBCCC}8@12 */
 }
 
-+ (id)readFrom:(const struct WrdFontFamilyName { int (**x1)(); struct CsString { int (**x_2_1_1)(); unsigned short *x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; struct CsString { int (**x_3_1_1)(); unsigned short *x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; int x4; char *x5; char *x6; unsigned short x7; boolx8; unsigned char x9; unsigned char x10; unsigned char x11; }*)arg1 withFontTable:(id)arg2;
-+ (void)write:(id)arg1 to:(struct WrdFontFamilyName { int (**x1)(); struct CsString { int (**x_2_1_1)(); unsigned short *x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; struct CsString { int (**x_3_1_1)(); unsigned short *x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; int x4; char *x5; char *x6; unsigned short x7; boolx8; unsigned char x9; unsigned char x10; unsigned char x11; }*)arg2;
++ (id)readFrom:(const struct WrdFontFamilyName { int (**x1)(); struct CsString { int (**x_2_1_1)(); unsigned short *x_2_1_2; NSUInteger x_2_1_3; NSUInteger x_2_1_4; } x2; struct CsString { int (**x_3_1_1)(); unsigned short *x_3_1_2; NSUInteger x_3_1_3; NSUInteger x_3_1_4; } x3; NSInteger x4; char *x5; char *x6; unsigned short x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; unsigned char x9; unsigned char x10; unsigned char x11; }*)arg1 withFontTable:(id)arg2;
 
 @end

@@ -9,14 +9,10 @@
     struct CGPoint { 
         float x; 
         float y; 
-    float _accuracy;
-    BOOL _adjustsForContentOffsetDelta;
     } _originalOffset;
     } _targetOffset;
 }
 
-- (void)adjustForContentOffsetDelta:(struct CGPoint { float x1; float x2; })arg1;
-- (void)dealloc;
 - (void)setProgress:(float)arg1;
 
 @end

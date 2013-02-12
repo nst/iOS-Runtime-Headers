@@ -2,25 +2,20 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface NSPointerFunctions : NSObject <NSCopying> {
 }
 
-@property int (* acquireFunction;
-@property int (* descriptionFunction;
-@property int (* hashFunction;
-@property int (* isEqualFunction;
-@property int (* relinquishFunction;
-@property int (* sizeFunction;
+@property unknown type *acquireFunction;
+@property unknown type *descriptionFunction;
+@property unknown type *hashFunction;
+@property unknown type *isEqualFunction;
+@property unknown type *relinquishFunction;
+@property unknown type *sizeFunction;
 @property BOOL usesStrongWriteBarrier;
 @property BOOL usesWeakReadAndWriteBarriers;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)pointerFunctionsWithOptions:(unsigned int)arg1;
++ (id)pointerFunctionsWithOptions:(NSUInteger)arg1;
 
 - (int (*)())acquireFunction;
 - (int (*)())descriptionFunction;
@@ -29,7 +24,7 @@
 - (int (*)())relinquishFunction;
 - (int (*)())sizeFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithOptions:(unsigned int)arg1;
+- (id)initWithOptions:(NSUInteger)arg1;
 - (void)setAcquireFunction:(int (*)())arg1;
 - (void)setDescriptionFunction:(int (*)())arg1;
 - (void)setHashFunction:(int (*)())arg1;

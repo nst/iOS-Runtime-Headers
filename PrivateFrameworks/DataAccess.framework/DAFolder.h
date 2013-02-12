@@ -5,36 +5,29 @@
 @class NSString;
 
 @interface DAFolder : NSObject {
-    int _dataclass;
     NSString *_folderID;
     NSString *_folderName;
+    NSInteger _folderType;
     BOOL _hasRemoteChanges;
     BOOL _isDefault;
     NSString *_parentFolderID;
 }
 
-@property int dataclass;
-@property(copy) NSString * folderID;
-@property(copy) NSString * folderName;
-@property BOOL hasRemoteChanges;
-@property BOOL isDefault;
-@property(copy) NSString * parentFolderID;
-
-- (int)dataclass;
 - (void)dealloc;
 - (id)description;
 - (id)folderID;
 - (id)folderName;
+- (NSInteger)folderType;
 - (BOOL)hasRemoteChanges;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (BOOL)isDefault;
 - (BOOL)isEqual:(id)arg1;
 - (id)mailboxID;
 - (id)parentFolderID;
 - (id)parentMailboxID;
-- (void)setDataclass:(int)arg1;
 - (void)setFolderID:(id)arg1;
 - (void)setFolderName:(id)arg1;
+- (void)setFolderType:(NSInteger)arg1;
 - (void)setHasRemoteChanges:(BOOL)arg1;
 - (void)setIsDefault:(BOOL)arg1;
 - (void)setParentFolderID:(id)arg1;

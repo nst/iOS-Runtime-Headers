@@ -2,79 +2,65 @@
    Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
  */
 
-@class NSMutableDictionary;
+@class BluetoothAudioJack, NSMutableDictionary;
 
 @interface BluetoothManager : NSObject {
     struct BTAccessoryManagerImpl { } *_accessoryManager;
     BOOL _audioConnected;
-    int _available;
-    NSMutableDictionary *_btAddrDict;
+    BluetoothAudioJack *_audioJack;
+    NSMutableDictionary *_bluetoothDeviceDict;
     NSMutableDictionary *_btDeviceDict;
+    NSInteger _connectedState;
     struct BTDiscoveryAgentImpl { } *_discoveryAgent;
     struct BTLocalDeviceImpl { } *_localDevice;
     struct BTPairingAgentImpl { } *_pairingAgent;
+    BOOL _pairingEnabled;
+    NSInteger _powerState;
     BOOL _scanningEnabled;
-    BOOL _scanningInProgress;
-    unsigned int _scanningServiceMask;
     struct BTSessionImpl { } *_session;
 }
 
-+ (int)lastInitError;
++ (void)initialize;
 + (id)sharedInstance;
 
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
-- (void)_advertisingChanged;
-- (BOOL)_attach:(id)arg1;
-- (void)_cleanup:(BOOL)arg1;
-- (void)_connectabilityChanged;
 - (void)_connectedStatusChanged;
-- (void)_discoveryStateChanged;
-- (BOOL)_onlySensorsConnected;
 - (void)_postNotification:(id)arg1;
 - (void)_postNotificationWithArray:(id)arg1;
-- (void)_powerChanged;
+- (void)_powerChanged:(BOOL)arg1;
 - (void)_removeDevice:(id)arg1;
-- (void)_restartScan;
-- (void)_scanForServices:(unsigned int)arg1 withMode:(int)arg2;
-- (void)_setScanState:(int)arg1;
-- (BOOL)_setup:(struct BTSessionImpl { }*)arg1;
-- (void)acceptSSP:(int)arg1 forDevice:(id)arg2;
+- (void)_setup;
+- (void)_setupAccessoryManager;
+- (void)_setupLocalDevice;
+- (void)_setupSession;
 - (id)addDeviceIfNeeded:(struct BTDeviceImpl { }*)arg1;
 - (BOOL)audioConnected;
-- (BOOL)available;
+- (id)audioJack;
+- (BOOL)canBeConnected;
 - (void)cancelPairing;
-- (void)connectDevice:(id)arg1 withServices:(unsigned int)arg2;
+- (void)cleanup;
 - (void)connectDevice:(id)arg1;
 - (BOOL)connectable;
+- (id)connectableDevices;
 - (BOOL)connected;
-- (id)connectedDevices:(BOOL)arg1;
-- (id)connectedDevices;
-- (id)connectedLEDevices;
-- (id)connectingDevices;
 - (void)dealloc;
 - (BOOL)devicePairingEnabled;
 - (BOOL)deviceScanningEnabled;
-- (BOOL)deviceScanningInProgress;
 - (void)enableTestMode;
 - (BOOL)enabled;
-- (void)endVoiceCommand:(id)arg1;
+- (NSUInteger)getAuthorizatedServicesForDevice:(id)arg1;
 - (id)init;
-- (BOOL)isAnyoneAdvertising;
-- (BOOL)isAnyoneScanning;
 - (BOOL)isDiscoverable;
-- (BOOL)isServiceSupported:(unsigned int)arg1;
-- (int)localDeviceSupportsService:(unsigned int)arg1;
-- (id)pairedDevices:(BOOL)arg1;
+- (void)pairDevice:(id)arg1;
 - (id)pairedDevices;
-- (id)pairedLEDevices;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 error:(id)arg3;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
-- (int)powerState;
 - (BOOL)powered;
-- (void)resetDeviceScanning;
-- (void)scanForConnectableDevices:(unsigned int)arg1;
-- (void)scanForServices:(unsigned int)arg1;
+- (void)sendAllContactsToDevice:(id)arg1;
+- (void)sendContact:(id)arg1 toDevice:(id)arg2;
+- (void)serverTerminated;
+- (void)setAirplaneMode:(BOOL)arg1;
 - (void)setAudioConnected:(BOOL)arg1;
 - (void)setConnectable:(BOOL)arg1;
 - (void)setDevicePairingEnabled:(BOOL)arg1;
@@ -83,9 +69,7 @@
 - (BOOL)setEnabled:(BOOL)arg1;
 - (void)setPincode:(id)arg1 forDevice:(id)arg2;
 - (BOOL)setPowered:(BOOL)arg1;
-- (void)showPowerPrompt;
-- (void)startVoiceCommand:(id)arg1;
+- (void)setServiceAuthorization:(NSUInteger)arg1 authorized:(BOOL)arg2 forDevice:(id)arg3;
 - (void)unpairDevice:(id)arg1;
-- (BOOL)wasDeviceDiscovered:(id)arg1;
 
 @end

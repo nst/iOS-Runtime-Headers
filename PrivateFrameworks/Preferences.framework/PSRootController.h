@@ -2,63 +2,91 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, NSMutableSet;
+@class NSMutableArray, NSMutableSet, NSString, UINavigationBar, UIView;
 
-@interface PSRootController : UINavigationController <PSController, UINavigationControllerDelegate> {
+@interface PSRootController : NSObject <PSBaseView> {
+    struct CGSize { 
+        float width; 
+        float height; 
+    UIView *_contentView;
+    NSMutableArray *_controllers;
     BOOL _deallocating;
     unsigned char _hasTelephony;
-    PSSpecifier *_specifier;
+    NSString *_idStr;
+    UINavigationBar *_navBar;
+    BOOL _navBarRightButtonDirty;
+    NSInteger _navBarRightButtonStyle;
+    NSString *_navBarRightButtonTitle;
+    } _size;
     NSMutableSet *_tasks;
+    NSString *_title;
 }
 
-+ (BOOL)processedBundle:(id)arg1 parentController:(id)arg2 parentSpecifier:(id)arg3 bundleControllers:(id*)arg4 settings:(id)arg5;
++ (BOOL)isOverlay;
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 + (void)writePreference:(id)arg1;
 
-- (void)_delayedControllerReleaseAfterPop:(id)arg1;
+- (void)_insertController:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)_popController;
+- (void)_pushController:(id)arg1;
+- (void)_removeController:(id)arg1;
 - (void)addTask:(id)arg1;
-- (id)aggregateDictionaryPath;
 - (BOOL)busy;
-- (BOOL)canBeShownFromSuspendedState;
+- (id)contentView;
 - (id)contentViewForTopController;
+- (id)controllers;
 - (void)dealloc;
 - (BOOL)deallocating;
-- (void)didDismissFormSheetView;
-- (void)didDismissPopupView;
 - (void)didLock;
 - (void)didUnlock;
 - (void)didWake;
 - (void)handleURL:(id)arg1;
+- (BOOL)hasTelephony;
+- (void)hideNavigationBarButtons;
+- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)insertNavigationItem:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)insertNavigationItem:(id)arg1 atIndexFromEnd:(NSInteger)arg2;
+- (id)lastController;
+- (void)lazyLoadBundle:(id)arg1;
+- (void)navigationBar:(id)arg1 buttonClicked:(NSInteger)arg2;
+- (void)navigationBar:(id)arg1 poppedItem:(id)arg2;
+- (void)navigationBar:(id)arg1 pushedItem:(id)arg2;
+- (BOOL)navigationBar:(id)arg1 shouldPopItem:(id)arg2;
+- (id)navigationBar;
+- (void)navigationBarButtonClicked:(NSInteger)arg1;
+- (id)navigationItem;
+- (id)navigationTitle;
 - (id)parentController;
-- (id)popToRootViewControllerAnimated:(BOOL)arg1;
-- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
-- (id)popViewControllerAnimated:(BOOL)arg1;
+- (void)popBackToTopController;
+- (BOOL)popController;
+- (BOOL)popControllerWithAnimation:(BOOL)arg1;
+- (void)popNavigationItem;
+- (void)popNavigationItemWithAnimation:(BOOL)arg1;
 - (void)pushController:(id)arg1;
+- (void)pushNavigationItem:(id)arg1;
+- (void)pushNavigationItemWithTitle:(id)arg1;
 - (id)readPreferenceValue:(id)arg1;
 - (id)rootController;
-- (void)sendWillBecomeActive;
-- (void)sendWillResignActive;
+- (void)setNavigationBarEnabled:(BOOL)arg1;
 - (void)setParentController:(id)arg1;
 - (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+- (void)setPrompt:(id)arg1;
 - (void)setRootController:(id)arg1;
-- (void)setSpecifier:(id)arg1;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
-- (id)specifier;
+- (void)setupRootListForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)showLeftButton:(id)arg1 withStyle:(NSInteger)arg2 rightButton:(id)arg3 withStyle:(NSInteger)arg4;
+- (void)showNavigationBarButtons:(id)arg1 :(id)arg2;
 - (id)specifiers;
-- (void)statusBarWillAnimateByHeight:(float)arg1;
-- (void)statusBarWillChangeHeight:(id)arg1;
 - (void)suspend;
 - (void)taskFinished:(id)arg1;
 - (BOOL)taskIsRunning:(id)arg1;
-- (id)tasksDescription;
-- (void)willBecomeActive;
-- (void)willDismissFormSheetView;
-- (void)willDismissPopupView;
-- (void)willResignActive;
+- (void)updateNavButtons;
+- (id)view;
+- (void)viewDidBecomeVisible;
+- (void)viewTransitionCompleted;
+- (void)viewWillBecomeVisible:(void*)arg1;
+- (void)viewWillRedisplay;
 - (void)willUnlock;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDNotesSlide, NSMutableArray, PDSlideLayout;
+@class NSMutableArray, PDNotesSlide, PDSlideLayout;
 
 @interface PDSlide : PDSlideChild {
     NSMutableArray *mComments;
@@ -11,19 +11,17 @@
 }
 
 - (void)addComment:(id)arg1;
-- (id)commentAtIndex:(unsigned int)arg1;
-- (unsigned int)commentCount;
+- (id)commentAtIndex:(NSUInteger)arg1;
+- (NSUInteger)commentCount;
 - (void)dealloc;
 - (id)defaultTheme;
-- (void)doneWithContent;
-- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)notesSlide;
-- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)parentShapePropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)parentSlideBase;
-- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(BOOL)arg4;
+- (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
+- (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
-- (void)setInheritedTextStyle:(id)arg1 placeholderType:(int)arg2 defaultTextListStyle:(id)arg3;
 - (void)setNotesSlide:(id)arg1;
 - (void)setSlideLayout:(id)arg1;
 - (id)slideLayout;

@@ -2,29 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, NSMutableDictionary, <GQZArchiveInputStream>;
+@class <GQZArchiveInputStream>, NSMutableDictionary;
 
 @interface GQZArchive : NSObject {
     NSMutableDictionary *mEntries;
-    NSString *mFilename;
     <GQZArchiveInputStream> *mInput;
-    BOOL mIsEncrypted;
 }
 
-- (void)collapseCommonRootDirectory;
 - (void)dealloc;
 - (id)entryNames;
 - (id)entryWithName:(id)arg1;
-- (id)filename;
-- (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
-- (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
-- (BOOL)isEncrypted;
-- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readEndOfCentralDirectory;
+- (id)initWithData:(id)arg1;
+- (id)initWithPath:(id)arg1;
+- (struct GQZEndOfCentralDirectory { unsigned long long x1; unsigned long long x2; unsigned long long x3; })readEndOfCentralDirectory;
 - (void)readEntries;
-- (void)readExtraFieldFromBuffer:(const char *)arg1 size:(unsigned long)arg2 entry:(id)arg3;
 - (id)readFilenameFromBuffer:(const char *)arg1 size:(unsigned long)arg2;
-- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromOffset:(long long)arg1;
-- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryWithEocdOffset:(long long)arg1;
-- (const char *)searchForEndOfCentralDirectoryOffset:(long long*)arg1;
+- (const char *)searchForEndOfCentralDirectory;
 
 @end

@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, UIView;
+@class UIView;
 
 @interface UIViewHeartbeat : NSObject {
-    CADisplayLink *_heartbeat;
+    struct __GSHeartbeat { } *_heartbeat;
     SEL _selector;
     UIView *_view;
 }
@@ -13,7 +13,6 @@
 + (void)startHeartbeatWithView:(id)arg1 selector:(SEL)arg2 inRunLoopMode:(id)arg3;
 + (void)stopHeartbeatWithView:(id)arg1 selector:(SEL)arg2;
 
-- (void)_updateDisplayLink:(id)arg1;
 - (void)dealloc;
 
 @end

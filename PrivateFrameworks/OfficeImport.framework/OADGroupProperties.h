@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, OADShape3D, OADScene3D, OADFill;
+@class NSArray, OADFill;
 
-@interface OADGroupProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent> {
+@interface OADGroupProperties : OADDrawableProperties {
     NSArray *mEffects;
     OADFill *mFill;
-    OADScene3D *mScene3D;
-    OADShape3D *mShape3D;
 }
 
 + (id)defaultProperties;
@@ -18,14 +16,8 @@
 - (id)fill;
 - (BOOL)hasEffects;
 - (BOOL)hasFill;
-- (BOOL)hasScene3D;
-- (BOOL)hasShape3D;
 - (id)initWithDefaults;
-- (id)scene3D;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
-- (void)setScene3D:(id)arg1;
-- (void)setShape3D:(id)arg1;
-- (id)shape3D;
 
 @end

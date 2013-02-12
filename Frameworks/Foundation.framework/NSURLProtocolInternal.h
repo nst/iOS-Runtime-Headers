@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLRequest, <NSURLProtocolClient>, NSLock, NSCachedURLResponse;
+@class <NSURLProtocolClient>, NSCachedURLResponse, NSLock, NSURLRequest;
 
 @interface NSURLProtocolInternal : NSObject {
     NSCachedURLResponse *cachedResponse;

@@ -2,46 +2,53 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSArray, EDRowBlock, EDRowBlocks, EDWorksheet, EDColumnInfoCollection;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class EDColumnInfoCollection, EDResources, EDRows, EDWorksheet, NSArray, NSMutableArray;
 
 @interface EPStyleFlattener : EDProcessor {
+     /* Encoded args for previous method: @32@0:4i8@12@16B20i24@28 */
     EDColumnInfoCollection *mColumnInfos;
-    EDRowBlock *mCurrentRowBlock;
-    int mFirstColumn;
-    unsigned int mFirstColumnStripeSize;
-    int mFirstRow;
-    unsigned int mFirstRowStripeSize;
+    NSInteger mFirstColumn;
+    NSUInteger mFirstColumnStripeSize;
+    NSInteger mFirstRow;
+    NSUInteger mFirstRowStripeSize;
     NSArray *mKeys;
-    int mLastColumn;
-    int mLastRow;
+    NSInteger mLastColumn;
+    NSInteger mLastRow;
     NSMutableArray *mRanges;
-    EDRowBlocks *mRowBlocks;
-    unsigned int mSecondColumnStripeSize;
-    unsigned int mSecondRowStripeSize;
+    EDResources *mResources;
+    EDRows *mRows;
+    NSUInteger mSecondColumnStripeSize;
+    NSUInteger mSecondRowStripeSize;
     EDWorksheet *mWorksheet;
 }
 
-- (void)applyDifferentialStyle:(id)arg1 borderFlags:(int)arg2 precedence:(int)arg3 toCell:(struct EDCellHeader {}**)arg4 row:(int)arg5 column:(int)arg6;
-- (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
-- (void)applyStyleElements:(id)arg1 toCell:(struct EDCellHeader { unsigned short x1; unsigned int x2; }*)arg2 row:(int)arg3 column:(int)arg4;
-- (int)borderFlagsForStyleType:(int)arg1 row:(int)arg2 column:(int)arg3;
+- (id)addCellWithColumnNumber:(NSInteger)arg1 toRow:(id)arg2;
+- (void)applyDifferentialStyle:(id)arg1 borderFlags:(NSInteger)arg2 precedence:(NSInteger)arg3 toCell:(id)arg4;
+- (void)applyProcessorToObject:(id)arg1 withWorkbook:(id)arg2;
+- (void)applyStyleElements:(id)arg1 toCell:(id)arg2 row:(NSInteger)arg3 column:(NSInteger)arg4;
+- (NSInteger)borderFlagsForStyleType:(NSInteger)arg1 row:(NSInteger)arg2 column:(NSInteger)arg3;
 - (void)cacheRange:(id)arg1;
 - (void)cacheSizes:(id)arg1 inObject:(id)arg2;
-- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithSetupStyleAtRowNumber:(int)arg1 columnNumber:(int)arg2;
+- (id)cellWithSetupStyleAtRow:(id)arg1 columnNumber:(NSInteger)arg2;
+- (id)cellWithSetupStyleAtRowNumber:(NSInteger)arg1 columnNumber:(NSInteger)arg2;
 - (void)clearCache;
 - (id)collectionFromWorksheet:(id)arg1;
 - (void)dealloc;
-- (id)extractCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3 column:(int)arg4;
+- (id)extractCellStyleElements:(id)arg1 parentScope:(id)arg2 row:(NSInteger)arg3 column:(NSInteger)arg4;
 - (id)extractGlobalStyleElements:(id)arg1;
 - (id)extractKeys:(id)arg1 from:(id)arg2 parent:(id)arg3;
-- (id)extractRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(int)arg3;
-- (id)flattenBorder:(int)arg1 borders:(id)arg2 differentialBorders:(id)arg3 flag:(bool)arg4 precedence:(int)arg5 row:(int)arg6 column:(int)arg7 isBorderCopied:(bool*)arg8;
-- (id)flattenBorders:(id)arg1 differentialBorders:(id)arg2 borderFlags:(int)arg3 precedence:(int)arg4 row:(int)arg5 column:(int)arg6 isBordersCopied:(bool*)arg7;
-- (id)flattenFill:(id)arg1 differentialFill:(id)arg2 isFillCopied:(bool*)arg3;
-- (id)flattenFont:(id)arg1 differentialFont:(id)arg2 isFontCopied:(bool*)arg3;
+- (id)extractRowStyleElements:(id)arg1 parentScope:(id)arg2 row:(NSInteger)arg3;
+- (id)flattenBorder:(NSInteger)arg1 borders:(id)arg2 differentialBorders:(id)arg3 flag:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg4 precedence:(NSInteger)arg5 cell:(id)arg6;
+- (id)flattenBorders:(id)arg1 differentialBorders:(id)arg2 borderFlags:(NSInteger)arg3 precedence:(NSInteger)arg4 cell:(id)arg5;
+- (id)flattenFill:(id)arg1 differentialFill:(id)arg2;
+- (id)flattenFont:(id)arg1 differentialFont:(id)arg2;
 - (id)keysInTheOrderTheyShouldBeApplied;
 - (void)processObject:(id)arg1;
 - (id)styleFromObject:(id)arg1;
-- (id)wrapDifferentialStyleInATableStyleElement:(id)arg1 type:(int)arg2;
+- (id)wrapDifferentialStyleInATableStyleElement:(id)arg1 type:(NSInteger)arg2;
 
 @end

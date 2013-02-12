@@ -4,19 +4,18 @@
 
 @interface PDAnimationTextTarget : PDAnimationShapeTarget {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        NSUInteger location; 
+        NSUInteger length; 
     } mRange;
-    int mType;
+    NSInteger mType;
 }
 
-- (id).cxx_construct;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
+- (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

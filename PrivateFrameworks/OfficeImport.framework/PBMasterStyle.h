@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
  */
 
 @interface PBMasterStyle : NSObject {
+     /* Encoded args for previous method: v28@0:4@8@12@16@20B24 */
 }
 
-+ (void)readMasterStyleAtom:(struct PptTextMasterStyleAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTextMasterStyleAtom::Level *> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; }*)arg1 baseMasterStyleAtom:(struct PptTextMasterStyleAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTextMasterStyleAtom::Level *> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; }*)arg2 masterBulletStyleAtom:(struct PptTextMasterStyle9Atom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTextMasterStyle9Atom::Level *> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; }*)arg3 textListStyle:(id)arg4 state:(id)arg5;
-+ (void)writeTextListStyle:(id)arg1 toMasterStyleAtom:(struct PptTextMasterStyleAtom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTextMasterStyleAtom::Level *> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; }*)arg2 masterBulletStyleAtom:(struct PptTextMasterStyle9Atom { int (**x1)(); unsigned short x2; struct EshHeader { int x_3_1_1; unsigned int x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); int x5; boolx6; struct ChVector<PptTextMasterStyle9Atom::Level *> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; }*)arg3 state:(id)arg4;
++ (void)readMasterStyle:(id)arg1 masterBulletStyle:(id)arg2 textListStyle:(id)arg3 state:(id)arg4 isInheritedByLevel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg5;
 
 @end

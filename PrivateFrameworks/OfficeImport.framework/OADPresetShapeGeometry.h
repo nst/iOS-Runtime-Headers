@@ -3,13 +3,13 @@
  */
 
 @interface OADPresetShapeGeometry : OADShapeGeometry {
-    int mType;
+    NSInteger mType;
 }
 
 - (id)equivalentCustomGeometry;
 - (id)escherEquivalentCustomGeometry;
 - (id)oa12EquivalentCustomGeometry;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

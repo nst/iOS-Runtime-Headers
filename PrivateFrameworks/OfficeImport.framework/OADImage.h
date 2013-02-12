@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADOle, OADMovie, OADShapeGeometry;
+@class OADMovie, OADOle, OADShapeGeometry;
 
 @interface OADImage : OADGraphic {
     OADShapeGeometry *mGeometry;
@@ -10,13 +10,10 @@
     OADOle *mOle;
 }
 
-- (id)createImageFill;
-- (void)createPictureFramePresetGeometry;
 - (void)dealloc;
 - (id)geometry;
 - (id)imageProperties;
 - (id)init;
-- (id)initWithBlipRef:(id)arg1;
 - (id)movie;
 - (id)ole;
 - (void)setGeometry:(id)arg1;

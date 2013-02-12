@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OCCancelDelegate>, OAXDrawingState, OAVState, OAXTableStyleCache, PDPresentation, NSMutableDictionary;
+@class NSMutableDictionary, OAVState, OAXDrawingState, OAXTableStyleCache, PDPresentation;
 
 @interface PXPresentationState : NSObject {
-    <OCCancelDelegate> *mCancel;
     NSMutableDictionary *mModelObjects;
     OAVState *mOAVState;
     OAXDrawingState *mOfficeArtState;
@@ -14,21 +13,15 @@
     PDPresentation *mTgtPresentation;
 }
 
-@property(retain) <OCCancelDelegate> * cancelDelegate;
-
-- (id)cancelDelegate;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCancelled;
 - (id)modelObjectForLocation:(id)arg1;
 - (id)oavState;
 - (id)officeArtState;
-- (void)resetOfficeArtState;
-- (void)setCancelDelegate:(id)arg1;
 - (void)setModelObject:(id)arg1 forLocation:(id)arg2;
-- (void)setSlideIndex:(int)arg1 forSlideURL:(id)arg2;
+- (void)setSlideIndex:(NSInteger)arg1 forSlideURL:(id)arg2;
 - (void)setTgtPresentation:(id)arg1;
-- (int)slideIndexForSlideURL:(id)arg1;
+- (NSInteger)slideIndexForSlideURL:(id)arg1;
 - (id)tableStyleCache;
 - (id)tgtPresentation;
 

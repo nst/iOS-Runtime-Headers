@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, UIView;
+@class UIView;
 
 @interface UIViewAnimation : NSObject {
     struct CGRect { 
@@ -15,51 +15,35 @@
             float height; 
         } size; 
     BOOL _animateFromCurrentPosition;
-    int _curve;
+    NSInteger _curve;
     BOOL _editing;
     float _endAlpha;
     float _endFraction;
     } _endRect;
-    NSIndexPath *_indexPath;
-    BOOL _shouldAnimateShadow;
     BOOL _shouldDeleteAfterAnimation;
-    BOOL _shouldRasterizeAfterAnimation;
-    BOOL _shouldResetRasterizationAfterAnimation;
     float _startFraction;
     UIView *_view;
 }
 
-@property(readonly) BOOL animateFromCurrentPosition;
-@property(readonly) int curve;
-@property(readonly) BOOL editing;
-@property(readonly) float endAlpha;
-@property(readonly) float endFraction;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endRect;
-@property(readonly) NSIndexPath * indexPath;
-@property BOOL shouldAnimateShadow;
-@property(readonly) BOOL shouldDeleteAfterAnimation;
-@property BOOL shouldRasterizeAfterAnimation;
-@property BOOL shouldResetRasterizationAfterAnimation;
-@property(readonly) float startFraction;
-@property(readonly) UIView * view;
+@property(readonly) BOOL editing; /* unknown property attribute: V_editing */
+@property(readonly) BOOL shouldDeleteAfterAnimation; /* unknown property attribute: V_shouldDeleteAfterAnimation */
+@property(readonly) BOOL animateFromCurrentPosition; /* unknown property attribute: V_animateFromCurrentPosition */
+@property(readonly) NSInteger curve; /* unknown property attribute: V_curve */
+@property(readonly) float endFraction; /* unknown property attribute: V_endFraction */
+@property(readonly) float startFraction; /* unknown property attribute: V_startFraction */
+@property(readonly) float endAlpha; /* unknown property attribute: V_endAlpha */
+@property(readonly) CGRect endRect; /* unknown property attribute: V_endRect */
+@property(readonly) UIView *view; /* unknown property attribute: V_view */
 
 - (BOOL)animateFromCurrentPosition;
-- (int)curve;
+- (NSInteger)curve;
 - (void)dealloc;
-- (id)description;
 - (BOOL)editing;
 - (float)endAlpha;
 - (float)endFraction;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endRect;
-- (id)indexPath;
-- (id)initWithView:(id)arg1 indexPath:(id)arg2 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 endAlpha:(float)arg4 startFraction:(float)arg5 endFraction:(float)arg6 curve:(int)arg7 animateFromCurrentPosition:(BOOL)arg8 shouldDeleteAfterAnimation:(BOOL)arg9 editing:(BOOL)arg10;
-- (void)setShouldAnimateShadow:(BOOL)arg1;
-- (void)setShouldRasterizeAfterAnimation:(BOOL)arg1;
-- (void)setShouldResetRasterizationAfterAnimation:(BOOL)arg1;
-- (BOOL)shouldAnimateShadow;
+- (id)initWithView:(id)arg1 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 endAlpha:(float)arg3 startFraction:(float)arg4 endFraction:(float)arg5 curve:(NSInteger)arg6 animateFromCurrentPosition:(BOOL)arg7 shouldDeleteAfterAnimation:(BOOL)arg8 editing:(BOOL)arg9;
 - (BOOL)shouldDeleteAfterAnimation;
-- (BOOL)shouldRasterizeAfterAnimation;
-- (BOOL)shouldResetRasterizationAfterAnimation;
 - (float)startFraction;
 - (id)view;
 

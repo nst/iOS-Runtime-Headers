@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSStyleDeclaration, NSString;
-
 @interface DOMWebKitCSSKeyframeRule : DOMCSSRule {
 }
 
-@property(copy) NSString * keyText;
-@property(readonly) DOMCSSStyleDeclaration * style;
+@property(copy) NSString *keyText;
+@property(retain,readonly) DOMCSSStyleDeclaration *style;
 
++ (id)_wrapWebKitCSSKeyframeRule:(struct WebKitCSSKeyframeRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_4_1_1; } x4; float x5; }*)arg1;
+
+- (struct WebKitCSSKeyframeRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_4_1_1; } x4; float x5; }*)_webKitCSSKeyframeRule;
 - (id)keyText;
 - (void)setKeyText:(id)arg1;
 - (id)style;

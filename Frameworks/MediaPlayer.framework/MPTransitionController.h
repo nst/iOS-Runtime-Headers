@@ -2,56 +2,49 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableSet, MPViewController, UIView, UIViewController;
+@class MPViewController, NSMutableSet, UIView;
 
 @interface MPTransitionController : NSObject {
     float _duration;
-    int _fromInterfaceOrientation;
+    NSInteger _fromOrientation;
     MPViewController *_fromViewController;
     struct __CFDictionary { } *_observers;
     NSMutableSet *_persistentViewsToFadeIn;
     NSMutableSet *_persistentViewsToFadeOut;
     UIView *_rootView;
-    UIViewController *_toContainerViewController;
-    int _toInterfaceOrientation;
+    NSInteger _toOrientation;
     MPViewController *_toViewController;
     NSMutableSet *_viewsToFadeIn;
     NSMutableSet *_viewsToFadeOut;
 }
 
-@property float duration;
-@property int fromInterfaceOrientation;
-@property(retain) MPViewController * fromViewController;
-@property(retain) UIView * rootView;
-@property(retain) UIViewController * toContainerViewController;
-@property int toInterfaceOrientation;
-@property(retain) MPViewController * toViewController;
+@property(retain) MPViewController *toViewController; /* unknown property attribute: V_toViewController */
+@property NSInteger toOrientation; /* unknown property attribute: V_toOrientation */
+@property(retain) UIView *rootView; /* unknown property attribute: V_rootView */
+@property(retain) MPViewController *fromViewController; /* unknown property attribute: V_fromViewController */
+@property NSInteger fromOrientation; /* unknown property attribute: V_fromOrientation */
+@property float duration; /* unknown property attribute: V_duration */
 
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
 - (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)addViewToFadeOut:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)dealloc;
-- (void)didFinishTransition:(BOOL)arg1;
 - (float)duration;
 - (void)fadeViewsForRestore:(BOOL)arg1;
-- (int)fromInterfaceOrientation;
+- (NSInteger)fromOrientation;
 - (id)fromViewController;
 - (id)init;
-- (void)messageObserversWithSuccess:(BOOL)arg1;
-- (void)performTransition:(unsigned int)arg1;
+- (void)messageObservers;
 - (void)removeObserver:(id)arg1;
 - (id)rootView;
 - (void)setDuration:(float)arg1;
-- (void)setFromInterfaceOrientation:(int)arg1;
+- (void)setFromOrientation:(NSInteger)arg1;
 - (void)setFromViewController:(id)arg1;
 - (void)setRootView:(id)arg1;
-- (void)setToContainerViewController:(id)arg1;
-- (void)setToInterfaceOrientation:(int)arg1;
+- (void)setToOrientation:(NSInteger)arg1;
 - (void)setToViewController:(id)arg1;
-- (id)toContainerViewController;
-- (int)toInterfaceOrientation;
+- (NSInteger)toOrientation;
 - (id)toViewController;
-- (void)transition:(unsigned int)arg1;
-- (void)willBeginTransition:(unsigned int)arg1;
+- (void)transition:(NSUInteger)arg1;
 
 @end

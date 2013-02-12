@@ -4,7 +4,7 @@
 
 @class NSData;
 
-@interface OADSubBlip : OCDDelayedMedia {
+@interface OADSubBlip : NSObject {
     struct CGSize { 
         float width; 
         float height; 
@@ -19,25 +19,17 @@
         } size; 
     NSData *mData;
     } mFrame;
-    long mSizeInBytes;
     } mSizeInPoints;
-    int mType;
+    NSInteger mType;
 }
 
-- (id).cxx_construct;
 - (id)data;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (unsigned int)hash;
-- (id)initWithData:(id)arg1 type:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (bool)isLoaded;
-- (void)setData:(id)arg1;
+- (id)initWithData:(id)arg1 type:(NSInteger)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSizeInBytes:(long)arg1;
 - (void)setSizeInPoints:(struct CGSize { float x1; float x2; })arg1;
-- (long)sizeInBytes;
 - (struct CGSize { float x1; float x2; })sizeInPoints;
-- (int)type;
+- (NSInteger)type;
 
 @end

@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString, DOMCSSRule;
-
 @interface DOMCSSStyleDeclaration : DOMObject {
 }
 
-@property(copy) NSString * cssText;
-@property(readonly) unsigned int length;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_margin;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_padding;
-@property(readonly) DOMCSSRule * parentRule;
+@property(copy) NSString *cssText;
+@property(retain,readonly) DOMCSSRule *parentRule;
+@property(readonly) NSUInteger length;
 
++ (id)_wrapCSSStyleDeclaration:(struct CSSStyleDeclaration { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)arg1;
+
+- (struct CSSStyleDeclaration { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)_CSSStyleDeclaration;
 - (id)_fontSizeDelta;
+- (id)_initWithCSSStyleDeclaration:(struct CSSStyleDeclaration { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)arg1;
 - (void)_setFontSizeDelta:(id)arg1;
 - (id)azimuth;
 - (id)background;
@@ -78,9 +78,9 @@
 - (id)getPropertyValue:(id)arg1;
 - (id)height;
 - (BOOL)isPropertyImplicit:(id)arg1;
-- (id)item:(unsigned int)arg1;
+- (id)item:(NSUInteger)arg1;
 - (id)left;
-- (unsigned int)length;
+- (NSUInteger)length;
 - (id)letterSpacing;
 - (id)lineHeight;
 - (id)listStyle;
@@ -96,8 +96,6 @@
 - (id)marks;
 - (id)maxHeight;
 - (id)maxWidth;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_margin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_padding;
 - (id)minHeight;
 - (id)minWidth;
 - (id)orphans;

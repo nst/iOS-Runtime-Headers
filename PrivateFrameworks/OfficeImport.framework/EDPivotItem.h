@@ -6,8 +6,8 @@
 
 @interface EDPivotItem : NSObject {
     EDCollection *mItemIndexes;
-    unsigned int mRepeatedItemCounts;
-    int mType;
+    NSUInteger mRepeatedItemCounts;
+    NSInteger mType;
 }
 
 + (id)pivotItem;
@@ -15,9 +15,9 @@
 - (void)dealloc;
 - (id)init;
 - (id)itemIndexes;
-- (unsigned int)repeatedItemCounts;
-- (void)setRepeatedItemCounts:(unsigned int)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (NSUInteger)repeatedItemCounts;
+- (void)setRepeatedItemCounts:(NSUInteger)arg1;
+- (void)setType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

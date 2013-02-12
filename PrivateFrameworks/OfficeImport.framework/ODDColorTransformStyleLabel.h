@@ -13,7 +13,7 @@
     ODDFillColorList *mTextLineColors;
 }
 
-- (void)applyToShapeStyle:(id)arg1 index:(unsigned int)arg2 count:(unsigned int)arg3 state:(id)arg4;
+- (void)applyToShapeStyle:(id)arg1 index:(NSUInteger)arg2 count:(NSUInteger)arg3 state:(id)arg4;
 - (void)dealloc;
 - (id)effectColors;
 - (id)fillColors;
@@ -24,6 +24,7 @@
 - (void)setTextEffectColors:(id)arg1;
 - (void)setTextFillColors:(id)arg1;
 - (void)setTextLineColors:(id)arg1;
+- (void)simpleApplyToShapeStyle:(id)arg1 index:(NSUInteger)arg2;
 - (id)textEffectColors;
 - (id)textFillColors;
 - (id)textLineColors;

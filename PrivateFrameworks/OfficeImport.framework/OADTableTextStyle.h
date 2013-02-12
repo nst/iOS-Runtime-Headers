@@ -2,32 +2,24 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADFontReference, OADColor;
+@class OADColor, OADFontReference;
 
 @interface OADTableTextStyle : NSObject {
-    int mBold;
+    NSInteger mBold;
     OADColor *mColor;
     OADFontReference *mFontReference;
-    int mItalic;
+    NSInteger mItalic;
 }
 
-+ (int)defaultBold;
-+ (id)defaultColor;
-+ (id)defaultFontReference;
-+ (int)defaultItalic;
-+ (id)defaultStyle;
-
-- (void)applyOverridesFrom:(id)arg1;
-- (int)bold;
+- (NSInteger)bold;
 - (id)color;
 - (void)dealloc;
 - (id)fontReference;
 - (id)init;
-- (int)italic;
-- (void)setBold:(int)arg1;
+- (NSInteger)italic;
+- (void)setBold:(NSInteger)arg1;
 - (void)setColor:(id)arg1;
 - (void)setFontReference:(id)arg1;
-- (void)setItalic:(int)arg1;
-- (id)shallowCopy;
+- (void)setItalic:(NSInteger)arg1;
 
 @end

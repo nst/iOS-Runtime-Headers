@@ -2,78 +2,52 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIDatePickerView, NSLocale, NSCalendar, NSDate, NSTimeZone;
+@class UIPickerView;
 
 @interface UIDatePicker : UIControl <NSCoding> {
-    _UIDatePickerView *_pickerView;
+    UIPickerView *_pickerView;
 }
 
-@property(getter=_allowsZeroCountdownDuration,setter=_setAllowsZeroCountdownDuration:) BOOL allowsZeroCountdownDuration;
-@property(copy) NSCalendar * calendar;
+@property(copy) NSCalendar *calendar;
+@property(retain) NSDate *date;
+@property(retain) NSLocale *locale;
+@property(retain) NSDate *maximumDate;
+@property(retain) NSDate *minimumDate;
+@property(retain) NSTimeZone *timeZone;
 @property double countDownDuration;
-@property(retain) NSDate * date;
-@property int datePickerMode;
-@property(getter=_dateUnderSelectionBar,readonly) NSDate * dateUnderSelectionBar;
-@property(getter=_drawsBackground,setter=_setDrawsBackground:) BOOL drawsBackground;
-@property(retain) NSLocale * locale;
-@property(retain) NSDate * maximumDate;
-@property(retain) NSDate * minimumDate;
-@property int minuteInterval;
-@property(retain) NSTimeZone * timeZone;
-@property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
+@property NSInteger datePickerMode;
+@property NSInteger minuteInterval;
 
-+ (Class)_pickerViewClass;
-
-- (BOOL)_allowsZeroCountdownDuration;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
-- (float)_contentWidth;
-- (id)_dateUnderSelectionBar;
-- (BOOL)_drawsBackground;
 - (void)_insertPickerView;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)_locale;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (id)_selectedTextForCalendarUnit:(unsigned int)arg1;
-- (void)_setAllowsZeroCountdownDuration:(BOOL)arg1;
-- (void)_setDrawsBackground:(BOOL)arg1;
-- (void)_setHidesLabels:(BOOL)arg1;
-- (void)_setHighlightsToday:(BOOL)arg1;
-- (void)_setLocale:(id)arg1;
-- (void)_setUsesBlackChrome:(BOOL)arg1;
-- (BOOL)_usesBlackChrome;
-- (void)awakeFromNib;
 - (id)calendar;
 - (double)countDownDuration;
 - (id)date;
 - (id)dateComponents;
-- (int)datePickerMode;
+- (NSInteger)datePickerMode;
 - (void)encodeWithCoder:(id)arg1;
-- (int)hour;
+- (NSInteger)hour;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)invalidateIntrinsicContentSize;
 - (id)locale;
 - (id)maximumDate;
 - (id)minimumDate;
-- (int)minute;
-- (int)minuteInterval;
-- (int)second;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSInteger)minute;
+- (NSInteger)minuteInterval;
+- (NSInteger)second;
 - (void)setCalendar:(id)arg1;
 - (void)setCountDownDuration:(double)arg1;
 - (void)setDate:(id)arg1 animate:(BOOL)arg2;
 - (void)setDate:(id)arg1 animated:(BOOL)arg2;
 - (void)setDate:(id)arg1;
 - (void)setDateComponents:(id)arg1;
-- (void)setDatePickerMode:(int)arg1;
+- (void)setDatePickerMode:(NSInteger)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlightsToday:(BOOL)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setMaximumDate:(id)arg1;
 - (void)setMinimumDate:(id)arg1;
-- (void)setMinuteInterval:(int)arg1;
+- (void)setMinuteInterval:(NSInteger)arg1;
 - (void)setStaggerTimeIntervals:(BOOL)arg1;
 - (void)setTimeInterval:(double)arg1;
 - (void)setTimeZone:(id)arg1;

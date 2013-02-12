@@ -3,13 +3,13 @@
  */
 
 @interface NSConcreteData : NSData {
-    unsigned int _isInline : 1;
+    unsigned int _inline : 1;
     unsigned int _shouldFree : 1;
     unsigned int _hasVM : 1;
     unsigned int _retainCount : 29;
     void *_bytes;
-    unsigned int _capacity;
-    unsigned int _length;
+    NSUInteger _capacity;
+    NSUInteger _length;
     unsigned char _space[12];
 }
 
@@ -18,11 +18,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getBytes:(void*)arg1 length:(NSUInteger)arg2;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)getBytes:(void*)arg1;
 - (id)init;
-- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
-- (unsigned int)length;
+- (id)initWithBytes:(void*)arg1 length:(NSUInteger)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
+- (NSUInteger)length;
 
 @end

@@ -2,32 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel, NSNumberFormatter, UIActivityIndicatorView;
+@class UIImageView;
 
 @interface PLSyncProgressView : UIView {
-    NSNumberFormatter *_countFormatter;
-    unsigned int _currentCount;
-    UILabel *_infoLabel;
-    int _progressType;
-    UIActivityIndicatorView *_spinner;
-    int _style;
-    unsigned int _totalCount;
+    UIImageView *_icon;
 }
 
-@property(readonly) unsigned int currentCount;
-@property(readonly) int progressType;
-@property(readonly) int style;
-@property(readonly) unsigned int totalCount;
-
-- (id)_progressDescription;
-- (unsigned int)currentCount;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)progressType;
-- (void)setCurrentCount:(unsigned int)arg1 totalCount:(unsigned int)arg2 progressType:(int)arg3;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
-- (unsigned int)totalCount;
 
 @end

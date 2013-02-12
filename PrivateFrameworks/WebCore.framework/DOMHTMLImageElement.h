@@ -2,73 +2,68 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSURL, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
 @interface DOMHTMLImageElement : DOMHTMLElement {
+     /* Encoded args for previous method: @12@0:4^{HTMLImageElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}{HTMLImageLoader=^^?^{Element}^{CachedImage}b1b1b1}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}B^{HTMLFormElement}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}i}8 */
+     /* Encoded args for previous method: ^{HTMLImageElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}{HTMLImageLoader=^^?^{Element}^{CachedImage}b1b1b1}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}B^{HTMLFormElement}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}i}8@0:4 */
 }
 
-@property(readonly) NSURL * absoluteImageURL;
-@property(copy) NSString * align;
-@property(copy) NSString * alt;
-@property(readonly) NSString * altDisplayString;
-@property(copy) NSString * border;
-@property(readonly) BOOL complete;
-@property int height;
-@property int hspace;
+@property(copy,readonly) NSURL *absoluteImageURL;
+@property(copy) NSString *align;
+@property(copy) NSString *alt;
+@property(copy,readonly) NSString *altDisplayString;
+@property(copy) NSString *border;
+@property(copy) NSString *longDesc;
+@property(copy) NSString *name;
+@property(copy) NSString *src;
+@property(copy) NSString *useMap;
+@property NSInteger height;
+@property NSInteger hspace;
 @property BOOL isMap;
-@property(copy) NSString * longDesc;
-@property(copy) NSString * lowsrc;
-@property(copy) NSString * name;
-@property(readonly) int naturalHeight;
-@property(readonly) int naturalWidth;
-@property(copy) NSString * src;
-@property(copy) NSString * useMap;
-@property int vspace;
-@property int width;
-@property(readonly) int x;
-@property(readonly) int y;
+@property NSInteger vspace;
+@property NSInteger width;
 
++ (id)_wrapHTMLImageElement:(struct HTMLImageElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; struct HTMLImageLoader { int (**x_35_1_1)(); struct Element {} *x_35_1_2; struct CachedImage {} *x_35_1_3; unsigned int x_35_1_4 : 1; unsigned int x_35_1_5 : 1; unsigned int x_35_1_6 : 1; } x35; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_36_1_1; } x36; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x37; struct HTMLFormElement {} *x38; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_39_1_1; } x39; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_40_1_1; } x40; NSInteger x41; }*)arg1;
+
+- (struct HTMLImageElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; struct HTMLImageLoader { int (**x_35_1_1)(); struct Element {} *x_35_1_2; struct CachedImage {} *x_35_1_3; unsigned int x_35_1_4 : 1; unsigned int x_35_1_5 : 1; unsigned int x_35_1_6 : 1; } x35; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_36_1_1; } x36; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x37; struct HTMLFormElement {} *x38; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_39_1_1; } x39; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_40_1_1; } x40; NSInteger x41; }*)_HTMLImageElement;
 - (id)absoluteImageURL;
 - (id)align;
 - (id)alt;
 - (id)altDisplayString;
-- (BOOL)alwaysAttemptToShowTapHighlight;
 - (id)border;
+- (id)calloutTitle;
 - (BOOL)complete;
-- (id)crossOrigin;
-- (id)dataRepresentation:(BOOL)arg1;
-- (int)height;
-- (int)hspace;
+- (id)createNSDataRepresentation;
+- (NSInteger)height;
+- (NSInteger)hspace;
 - (BOOL)isMap;
 - (id)longDesc;
 - (id)lowsrc;
-- (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)mf_unconstrainImageSize;
-- (id)mimeType;
 - (id)name;
-- (int)naturalHeight;
-- (int)naturalWidth;
-- (void)recursivelyRemoveMailAttributes;
+- (NSInteger)naturalHeight;
+- (NSInteger)naturalWidth;
 - (void)setAlign:(id)arg1;
 - (void)setAlt:(id)arg1;
 - (void)setBorder:(id)arg1;
-- (void)setCrossOrigin:(id)arg1;
-- (void)setHeight:(int)arg1;
-- (void)setHspace:(int)arg1;
+- (void)setHeight:(NSInteger)arg1;
+- (void)setHspace:(NSInteger)arg1;
 - (void)setIsMap:(BOOL)arg1;
 - (void)setLongDesc:(id)arg1;
 - (void)setLowsrc:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setSrc:(id)arg1;
 - (void)setUseMap:(id)arg1;
-- (void)setVspace:(int)arg1;
-- (void)setWidth:(int)arg1;
+- (void)setVspace:(NSInteger)arg1;
+- (void)setWidth:(NSInteger)arg1;
 - (BOOL)showsTapHighlight;
 - (id)src;
 - (id)useMap;
-- (int)vspace;
-- (int)width;
-- (int)x;
-- (int)y;
+- (NSInteger)vspace;
+- (NSInteger)width;
+- (NSInteger)x;
+- (NSInteger)y;
 
 @end

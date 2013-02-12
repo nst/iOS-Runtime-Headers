@@ -3,15 +3,14 @@
  */
 
 @interface PBOutlineBulletKey : NSObject <NSCopying> {
-    unsigned long mPlaceholderIndex;
-    unsigned long mSlideId;
-    int mTextType;
+    NSUInteger mSlideId;
+    NSInteger mTextType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)initWithOutlineBullet:(id)arg1;
-- (id)initWithSlideId:(unsigned long)arg1 textType:(int)arg2 placeholderIndex:(unsigned long)arg3;
+- (id)initWithSlideId:(NSUInteger)arg1 textType:(NSInteger)arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

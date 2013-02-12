@@ -5,6 +5,7 @@
 @interface EBColorReference : NSObject {
 }
 
-+ (id)edColorReferenceFromXlColorIndex:(unsigned int)arg1 edResources:(id)arg2;
++ (id)edColorReferenceFromXlColorIndex:(NSUInteger)arg1 edResources:(id)arg2;
++ (NSUInteger)xlColorIndexFromCPSystemColorIDEnum:(NSInteger)arg1;
 
 @end

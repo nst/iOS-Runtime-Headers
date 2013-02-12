@@ -9,11 +9,10 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (unsigned long)_cfTypeID;
-- (BOOL)allowsWeakReference;
 - (void)finalize;
 - (void)fire;
 - (id)fireDate;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)init;
 - (id)initWithFireDate:(id)arg1 interval:(double)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 repeats:(BOOL)arg6;
 - (void)invalidate;
@@ -21,8 +20,7 @@
 - (BOOL)isValid;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (NSUInteger)retainCount;
 - (void)setFireDate:(id)arg1;
 - (double)timeInterval;
 - (id)userInfo;

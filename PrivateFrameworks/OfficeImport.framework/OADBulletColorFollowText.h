@@ -5,7 +5,4 @@
 @interface OADBulletColorFollowText : OADBulletColor {
 }
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-
 @end

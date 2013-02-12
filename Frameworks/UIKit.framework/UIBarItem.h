@@ -2,37 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIImage;
-
-@interface UIBarItem : NSObject <UIAppearance> {
-    BOOL _hasCustomizableInstanceAppearanceModifications;
-    BOOL _shouldArchiveUIAppearanceTags;
+@interface UIBarItem : NSObject {
 }
 
-@property(setter=_setHasCustomizableInstanceAppearanceModifications:) BOOL _hasCustomizableInstanceAppearanceModifications;
-@property(setter=_setShouldArchiveUIAppearanceTags:) BOOL _shouldArchiveUIAppearanceTags;
+@property(retain) UIImage *image;
+@property(copy) NSString *title;
 @property(getter=isEnabled) BOOL enabled;
-@property(retain) UIImage * image;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
-@property(retain) UIImage * landscapeImagePhone;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } landscapeImagePhoneInsets;
-@property int tag;
-@property(copy) NSString * title;
-
-+ (id)_appearanceProxyViewClasses;
-+ (id)_appearanceRecorder;
-+ (id)_appearanceRecorderWhenContainedIn:(Class)arg1;
-+ (id)_appearanceWhenContainedIn:(id)arg1;
-+ (id)appearance;
-+ (id)appearanceWhenContainedIn:(Class)arg1;
-
-- (BOOL)_hasCustomizableInstanceAppearanceModifications;
-- (void)_setHasCustomizableInstanceAppearanceModifications:(BOOL)arg1;
-- (void)_setShouldArchiveUIAppearanceTags:(BOOL)arg1;
-- (BOOL)_shouldArchiveUIAppearanceTags;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (id)titleTextAttributesForState:(unsigned int)arg1;
+@property UIEdgeInsets imageInsets;
+@property NSInteger tag;
 
 @end

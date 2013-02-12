@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSUColor;
+@class NSColorStub;
 
 @interface EDColorLocator : NSObject {
-    TSUColor *mColor;
-    int mColorIndex;
-    unsigned int mColorOffset;
+    NSColorStub *mColor;
+    NSInteger mColorIndex;
+    NSUInteger mColorOffset;
 }
 
 - (id)color;
-- (int)colorIndex;
+- (NSInteger)colorIndex;
 - (void)dealloc;
-- (id)initWith:(id)arg1 index:(int)arg2 offset:(unsigned int)arg3;
-- (unsigned int)offset;
+- (id)initWith:(id)arg1 index:(NSInteger)arg2 offset:(NSUInteger)arg3;
+- (NSUInteger)offset;
 - (void)setColor:(id)arg1;
-- (void)setColorIndex:(int)arg1;
-- (void)setOffset:(unsigned int)arg1;
+- (void)setColorIndex:(NSInteger)arg1;
+- (void)setOffset:(NSUInteger)arg1;
 
 @end

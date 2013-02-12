@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSObject<MFDeviceDriver>, MFBrush, MFFont, TSUColor, MFTransform, MFPalette, MFPen, MFPath;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class MFBrush, MFFont, MFPalette, MFPath, MFPen, MFTransform, NSColorStub, NSObject<MFDeviceDriver>;
 
 @interface MFDeviceContext : NSObject <NSCopying> {
     struct CGPoint { 
@@ -11,10 +15,11 @@
     struct CGPoint { 
         float x; 
         float y; 
-    boolm_textUpdateCP;
-    int m_arcDirection;
-    TSUColor *m_bkColour;
-    int m_bkMode;
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+    NSInteger m_arcDirection;
+    NSColorStub *m_bkColour;
+    NSInteger m_bkMode;
     MFBrush *m_brush;
     } m_brushOrg;
     NSObject<MFDeviceDriver> *m_driver;
@@ -23,28 +28,28 @@
     MFPath *m_path;
     MFPen *m_pen;
     } m_penPos;
-    int m_polyFillMode;
-    int m_rop2;
+    NSInteger m_polyFillMode;
+    NSInteger m_rop2;
     MFPalette *m_selectedPalette;
-    int m_stretchMode;
-    int m_textBreakCount;
-    int m_textBreakExtra;
-    int m_textCharExtra;
-    TSUColor *m_textColour;
-    int m_textDirection;
-    int m_textHorizontalAlign;
-    int m_textVerticalAlign;
+    NSInteger m_stretchMode;
+    NSInteger m_textBreakCount;
+    NSInteger m_textBreakExtra;
+    NSInteger m_textCharExtra;
+    NSColorStub *m_textColour;
+    NSInteger m_textDirection;
+    NSInteger m_textHorizontalAlign;
+    NSInteger m_textVerticalAlign;
     MFTransform *m_transform;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_textUpdateCP;
 }
 
 + (id)deviceContextWithDriver:(id)arg1;
 
-- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)getArcDirection;
+- (NSInteger)getArcDirection;
 - (id)getBkColour;
-- (int)getBkMode;
+- (NSInteger)getBkMode;
 - (id)getBrush;
 - (struct CGPoint { float x1; float x2; })getBrushOrg;
 - (id)getCurrentTransform;
@@ -53,22 +58,22 @@
 - (id)getPath;
 - (id)getPen;
 - (struct CGPoint { float x1; float x2; })getPenPosition;
-- (int)getPolyFillMode;
-- (int)getRop2;
+- (NSInteger)getPolyFillMode;
+- (NSInteger)getRop2;
 - (id)getSelectedPalette;
-- (int)getStretchBltMode;
-- (int)getTextBreakCount;
-- (int)getTextBreakExtra;
-- (int)getTextCharExtra;
+- (NSInteger)getStretchBltMode;
+- (NSInteger)getTextBreakCount;
+- (NSInteger)getTextBreakExtra;
+- (NSInteger)getTextCharExtra;
 - (id)getTextColour;
-- (int)getTextDirection;
-- (int)getTextHorizontalAlign;
-- (bool)getTextUpdateCP;
-- (int)getTextVerticalAlign;
+- (NSInteger)getTextDirection;
+- (NSInteger)getTextHorizontalAlign;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)getTextUpdateCP;
+- (NSInteger)getTextVerticalAlign;
 - (id)initWithDriver:(id)arg1;
-- (void)setArcDirection:(int)arg1;
+- (void)setArcDirection:(NSInteger)arg1;
 - (void)setBkColour:(id)arg1;
-- (void)setBkMode:(int)arg1;
+- (void)setBkMode:(NSInteger)arg1;
 - (void)setBrush:(id)arg1;
 - (void)setBrushOrg:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCurrentTransform:(id)arg1;
@@ -77,16 +82,16 @@
 - (void)setPath:(id)arg1;
 - (void)setPen:(id)arg1;
 - (void)setPenPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setPolyFillMode:(int)arg1;
-- (void)setRop2:(int)arg1;
+- (void)setPolyFillMode:(NSInteger)arg1;
+- (void)setRop2:(NSInteger)arg1;
 - (void)setSelectedPalette:(id)arg1;
-- (void)setStretchBltMode:(int)arg1;
-- (void)setTextCharExtra:(int)arg1;
+- (void)setStretchBltMode:(NSInteger)arg1;
+- (void)setTextCharExtra:(NSInteger)arg1;
 - (void)setTextColour:(id)arg1;
-- (void)setTextDirection:(int)arg1;
-- (void)setTextHorizontalAlign:(int)arg1;
-- (void)setTextJustification:(int)arg1 :(int)arg2;
-- (void)setTextUpdateCP:(bool)arg1;
-- (void)setTextVerticalAlign:(int)arg1;
+- (void)setTextDirection:(NSInteger)arg1;
+- (void)setTextHorizontalAlign:(NSInteger)arg1;
+- (void)setTextJustification:(NSInteger)arg1 :(NSInteger)arg2;
+- (void)setTextUpdateCP:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setTextVerticalAlign:(NSInteger)arg1;
 
 @end

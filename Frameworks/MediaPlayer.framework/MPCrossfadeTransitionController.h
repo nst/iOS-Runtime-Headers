@@ -3,15 +3,15 @@
  */
 
 @interface MPCrossfadeTransitionController : MPTransitionController {
-    int _statusBarHidden;
+    NSInteger _statusBarMode;
 }
 
-@property BOOL statusBarHidden;
+@property NSInteger statusBarMode; /* unknown property attribute: V_statusBarMode */
 
 - (void)_animationDidFinish:(id)arg1;
 - (id)init;
-- (void)performTransition:(unsigned int)arg1;
-- (void)setStatusBarHidden:(BOOL)arg1;
-- (BOOL)statusBarHidden;
+- (void)setStatusBarMode:(NSInteger)arg1;
+- (NSInteger)statusBarMode;
+- (void)transition:(NSUInteger)arg1;
 
 @end

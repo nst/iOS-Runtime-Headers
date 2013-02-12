@@ -8,11 +8,11 @@
     NSMutableArray *mStopArray;
 }
 
-- (unsigned int)columnSpan:(float)arg1 at:(unsigned int)arg2;
-- (unsigned int)count;
+- (NSUInteger)columnSpan:(float)arg1 at:(NSUInteger)arg2;
+- (NSUInteger)count;
 - (void)dealloc;
 - (id)initWithStopArray:(id)arg1;
 - (void)mergeStopArray:(id)arg1;
-- (float)stopAt:(unsigned int)arg1;
+- (float)stopAt:(NSUInteger)arg1;
 
 @end

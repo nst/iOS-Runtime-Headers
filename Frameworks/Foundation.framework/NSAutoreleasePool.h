@@ -12,27 +12,27 @@
 + (void)addObject:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)autoreleasePoolExists;
-+ (unsigned int)autoreleasedObjectCount;
++ (NSUInteger)autoreleasedObjectCount;
 + (void)enableFreedObjectCheck:(BOOL)arg1;
 + (void)enableRelease:(BOOL)arg1;
-+ (unsigned int)poolCountHighWaterMark;
-+ (unsigned int)poolCountHighWaterResolution;
++ (NSUInteger)poolCountHighWaterMark;
++ (NSUInteger)poolCountHighWaterResolution;
 + (void)releaseAllPools;
 + (void)resetTotalAutoreleasedObjects;
-+ (void)setPoolCountHighWaterMark:(unsigned int)arg1;
-+ (void)setPoolCountHighWaterResolution:(unsigned int)arg1;
++ (void)setPoolCountHighWaterMark:(NSUInteger)arg1;
++ (void)setPoolCountHighWaterResolution:(NSUInteger)arg1;
 + (void)showPools;
-+ (unsigned int)topAutoreleasePoolCount;
-+ (unsigned int)totalAutoreleasedObjects;
++ (NSUInteger)topAutoreleasePoolCount;
++ (NSUInteger)totalAutoreleasedObjects;
 
 - (void)addObject:(id)arg1;
 - (id)autorelease;
 - (void)dealloc;
 - (void)drain;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (oneway void)release;
+- (id)initWithCapacity:(NSUInteger)arg1;
+- (void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (NSUInteger)retainCount;
 
 @end

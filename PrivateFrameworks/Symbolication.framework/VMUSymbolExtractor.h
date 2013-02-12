@@ -11,7 +11,7 @@
 
 + (id)expandSourceInfos:(id)arg1 usingSymbols:(id)arg2;
 + (id)extractLazySymbolOwnerFromHeader:(id)arg1;
-+ (unsigned int)extractSymbolOwnerFlagsFromHeader:(id)arg1;
++ (NSUInteger)extractSymbolOwnerFlagsFromHeader:(id)arg1;
 + (id)extractSymbolOwnerFromHeader:(id)arg1;
 
 - (void)dealloc;

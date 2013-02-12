@@ -10,8 +10,6 @@
     UIView *_contentLayer;
 }
 
-@property void* addressBook;
-
 - (void*)addressBook;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;
 - (void)cleanUpContentLayer;
@@ -20,11 +18,10 @@
 - (BOOL)contentViewIsVisible;
 - (void)dealloc;
 - (void)displayScrollerIndicators;
-- (id)init;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
 - (void)preloadController;
 - (void)reload;
-- (void)setAddressBook:(void*)arg1;
 - (void)setContentControllerDelegate:(id)arg1;
+- (BOOL)table:(id)arg1 showDisclosureForRow:(NSInteger)arg2;
 
 @end

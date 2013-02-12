@@ -5,22 +5,21 @@
 @class WDCharacterProperties;
 
 @interface WDFieldMarker : WDRun {
-    unsigned int mZombieEmbed : 1;
-    unsigned int mResultDirty : 1;
-    unsigned int mResultEdited : 1;
-    unsigned int mLocked : 1;
-    unsigned int mPrivateResult : 1;
-    unsigned int mNested : 1;
-    unsigned int mHasSeparator : 1;
-    long mFieldPosition;
+    NSInteger mFieldPosition;
     unsigned char mFieldType;
-    int mMarkerType;
+    BOOL mHasSeparator;
+    BOOL mLocked;
+    NSInteger mMarkerType;
+    BOOL mNested;
+    BOOL mPrivateResult;
     WDCharacterProperties *mProperties;
+    BOOL mResultDirty;
+    BOOL mResultEdited;
+    BOOL mZombieEmbed;
 }
 
-- (void)clearProperties;
 - (void)dealloc;
-- (int)fieldMarkerType;
+- (NSInteger)fieldMarkerType;
 - (long)fieldPosition;
 - (unsigned char)fieldType;
 - (BOOL)hasSeparator;
@@ -31,8 +30,8 @@
 - (id)properties;
 - (BOOL)resultDirty;
 - (BOOL)resultEdited;
-- (int)runType;
-- (void)setFieldMarkerType:(int)arg1;
+- (NSInteger)runType;
+- (void)setFieldMarkerType:(NSInteger)arg1;
 - (void)setFieldPosition:(long)arg1;
 - (void)setFieldType:(unsigned char)arg1;
 - (void)setHasSeparator:(BOOL)arg1;

@@ -3,12 +3,10 @@
  */
 
 @interface OADPointTextSpacing : OADTextSpacing {
-    int mPoints;
+    NSInteger mPoints;
 }
 
-- (unsigned int)hash;
-- (id)initWithPoints:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)points;
+- (id)initWithPoints:(NSInteger)arg1;
+- (NSInteger)points;
 
 @end

@@ -11,8 +11,7 @@
     struct OpaqueCFHTTPCookieStorage { } *storage;
 }
 
-- (void)_syncCookies;
 - (void)dealloc;
-- (id)initWithSharedStorage;
+- (id)init;
 
 @end

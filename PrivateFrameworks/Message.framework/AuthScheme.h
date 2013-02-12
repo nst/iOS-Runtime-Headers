@@ -11,14 +11,18 @@
 + (void)registerSchemeClass:(Class)arg1;
 + (id)schemeWithName:(id)arg1;
 
-- (Class)authenticatorClass;
+- (Class)authenticatorClassForAccountClass:(Class)arg1;
 - (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
 - (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
 - (Class)connectionClassForAccountClass:(Class)arg1;
-- (unsigned int)defaultPortForAccount:(id)arg1;
+- (NSUInteger)defaultPortForAccount:(id)arg1;
 - (BOOL)hasEncryption;
 - (id)humanReadableName;
 - (id)name;
+- (void)release;
+- (BOOL)requiresDomain;
 - (BOOL)requiresPassword;
+- (id)retain;
+- (NSUInteger)retainCount;
 
 @end

@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTextBody, OADShapeGeometry;
+@class OADShapeGeometry, OADTextBody;
 
 @interface OADShape : OADGraphic {
     OADShapeGeometry *mGeometry;
     OADTextBody *mTextBody;
 }
 
-- (void)createPresetGeometryWithShapeType:(int)arg1;
 - (void)dealloc;
 - (void)flattenProperties;
 - (id)geometry;
 - (id)init;
-- (void)removeUnnecessaryOverrides;
 - (void)setGeometry:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (void)setTextBody:(id)arg1;
 - (id)shapeProperties;
 - (id)textBody;
-- (int)type;
+- (NSInteger)type;
 
 @end

@@ -2,54 +2,61 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQZArchive, GQDRoot, <GQUOutputBundle>, <GQWrapPointGenerator>, GQPProcessor, GQDSStylesheet, GQSTable;
+@class <GQUOutputBundle>, GQDRoot, GQPProcessor, GQSTable, GQZArchive;
 
-@interface GQSDocument : NSObject <GQWrapPointGenerator> {
+@interface GQSDocument : NSObject {
+    struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint> >,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { 
+            struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>,false> { 
+                struct NSObjectComparator<GQDWrapPoint> { 
+                    SEL mCompareSelector; 
+                } _M_key_compare; 
+                struct _Rb_tree_node_base { 
+                    NSInteger _M_color; 
+                    struct _Rb_tree_node_base {} *_M_parent; 
+                    struct _Rb_tree_node_base {} *_M_left; 
+                    struct _Rb_tree_node_base {} *_M_right; 
+                } _M_header; 
+                NSUInteger _M_node_count; 
+            } _M_impl; 
     GQZArchive *mArchive;
     struct __CFDictionary { } *mBundleResourceUriMap;
     struct __CFURL { } *mBundleUrl;
     Class mCurrentDrawablesGenerator;
     Class mCurrentTableGenerator;
-    <GQWrapPointGenerator> *mCurrentWrapPointGenerator;
     BOOL mDoExternalTextWrap;
-    struct __CFString { } *mFilename;
+    struct __CFString { } *mDocumentFilename;
     BOOL mGeneratingThumbnail;
     BOOL mGeneratorBeginWasCalled;
     id mGeneratorState;
-    BOOL mIsReadingStorageAttachments;
     BOOL mMustRegisterDrawables;
     struct __CFArray { } *mObjectStack;
     <GQUOutputBundle> *mOutputBundle;
     GQPProcessor *mProcessor;
     GQDRoot *mRoot;
     BOOL mShouldStreamTables;
-    GQDSStylesheet *mStylesheet;
     GQSTable *mTableState;
-    unsigned int mTextScale;
     BOOL mThumbnailGenerationDone;
-    struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint>>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>, false> { struct NSObjectComparator<GQDWrapPoint> { SEL x_1_3_1; } x_1_2_1; struct _Rb_tree_node_base { int x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; unsigned int x_1_2_3; } x_1_1_1; } x1; } *mWrapPoints;
+        } x1; } *mWrapPoints;
 }
 
 - (void)addWrapPoint:(id)arg1;
 - (void)clearWrapPoints;
-- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Vector_impl { struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_1; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_2; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_3; } x1; }*)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3 zIndex:(int)arg4;
+- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Vector_impl { struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_1; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_2; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_3; } x1; }*)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3;
 - (struct __CFURL { }*)createUriToDocumentBundleResource:(struct __CFString { }*)arg1;
 - (Class)currentDrawablesGenerator;
 - (Class)currentTableGenerator;
-- (id)currentWrapPointGenerator;
 - (void)dealloc;
 - (BOOL)doExternalTextWrap;
-- (struct __CFString { }*)filename;
+- (struct __CFString { }*)documentFilename;
 - (BOOL)generatorBeginWasCalled;
 - (id)generatorState;
-- (id)initWithRoot:(id)arg1 processor:(id)arg2 archive:(id)arg3 outputBundle:(id)arg4 filename:(struct __CFString { }*)arg5;
-- (id)initWithRoot:(id)arg1 processor:(id)arg2 bundleUrl:(struct __CFURL { }*)arg3 archive:(id)arg4 outputBundle:(id)arg5;
-- (id)initWithRoot:(id)arg1 processor:(id)arg2 outputBundle:(id)arg3 filename:(struct __CFString { }*)arg4;
+- (id)initWithRoot:(id)arg1 processor:(id)arg2 archive:(id)arg3 documentFilename:(struct __CFString { }*)arg4 outputBundle:(id)arg5;
+- (id)initWithRoot:(id)arg1 processor:(id)arg2 bundleUrl:(struct __CFURL { }*)arg3 outputBundle:(id)arg4;
+- (id)initWithRoot:(id)arg1 processor:(id)arg2 outputBundle:(id)arg3;
 - (BOOL)isGeneratingThumbnail;
-- (BOOL)isReadingStorageAttachments;
 - (BOOL)isThumbnailGenerationDone;
 - (BOOL)mustRegisterDrawables;
-- (int)objectStackDepth;
+- (NSInteger)objectStackDepth;
 - (id)outputBundle;
 - (id)peekObject;
 - (id)popRetainedObject;
@@ -58,22 +65,18 @@
 - (id)root;
 - (void)setCurrentDrawablesGenerator:(Class)arg1;
 - (void)setCurrentTableGenerator:(Class)arg1;
-- (void)setCurrentWrapPointGenerator:(id)arg1;
 - (void)setDoExternalTextWrap:(BOOL)arg1;
 - (void)setGeneratingThumbnail:(BOOL)arg1;
 - (void)setGeneratorBeginWasCalled;
 - (void)setGeneratorState:(id)arg1;
-- (void)setIsReadingStorageAttachments:(BOOL)arg1;
 - (void)setMustRegisterDrawables:(BOOL)arg1;
 - (void)setShouldStreamTables:(BOOL)arg1;
-- (void)setStylesheet:(id)arg1;
 - (void)setTableState:(id)arg1;
 - (void)setThumbnailGenerationDone:(BOOL)arg1;
 - (BOOL)shouldStreamTables;
-- (id)stylesheet;
 - (id)tableState;
 - (id)topObjectOfClass:(Class)arg1;
 - (struct __CFString { }*)uriForBundleResource:(struct __CFString { }*)arg1 ofType:(struct __CFString { }*)arg2;
-- (const struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint>>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>, false> { struct NSObjectComparator<GQDWrapPoint> { SEL x_1_3_1; } x_1_2_1; struct _Rb_tree_node_base { int x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; unsigned int x_1_2_3; } x_1_1_1; } x1; }*)wrapPoints;
+- (const struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint> >,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>,false> { struct NSObjectComparator<GQDWrapPoint> { SEL x_1_3_1; } x_1_2_1; struct _Rb_tree_node_base { NSInteger x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; NSUInteger x_1_2_3; } x_1_1_1; } x1; }*)wrapPoints;
 
 @end

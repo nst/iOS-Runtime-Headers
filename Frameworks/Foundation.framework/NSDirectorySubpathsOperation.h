@@ -8,7 +8,7 @@
     NSMutableArray *_subpaths;
 }
 
-+ (id)_errorWithErrno:(int)arg1 atPath:(id)arg2;
++ (id)_errorWithErrno:(NSInteger)arg1 atPath:(id)arg2;
 + (id)directorySubpathsOperationAtPath:(id)arg1;
 
 - (void)dealloc;

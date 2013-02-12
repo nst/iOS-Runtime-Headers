@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDBorders, TSUColor;
+@class EDBorders, NSColorStub;
 
 @interface EMBordersProperty : CMProperty <NSCopying> {
     EDBorders *edValue;
-    TSUColor *mBorderBottomColor;
-    TSUColor *mBorderColor;
-    TSUColor *mBorderLeftColor;
-    TSUColor *mBorderRightColor;
-    int mBorderStyle[5];
-    TSUColor *mBorderTopColor;
-    int mBorderWidth[5];
+    NSColorStub *mBorderBottomColor;
+    NSColorStub *mBorderColor;
+    NSColorStub *mBorderLeftColor;
+    NSColorStub *mBorderRightColor;
+    NSInteger mBorderStyle[5];
+    NSColorStub *mBorderTopColor;
+    NSInteger mBorderWidth[5];
 }
 
 - (id)borderColor;
-- (int*)borderStyles;
-- (int*)borderWidths;
+- (NSInteger*)borderStyles;
+- (NSInteger*)borderWidths;
 - (id)colorString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cssString;
@@ -28,12 +28,12 @@
 - (id)initWithEDBorders:(id)arg1;
 - (id)initWithOADStroke:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isNoneAtLocation:(int)arg1;
-- (void)setBorderStyleAndWidth:(int)arg1 location:(unsigned int)arg2;
-- (void)setNoneAtLocation:(int)arg1;
+- (BOOL)isNoneAtLocation:(NSInteger)arg1;
+- (void)setBorderStyleAndWidth:(NSInteger)arg1 location:(NSUInteger)arg2;
+- (void)setNoneAtLocation:(NSInteger)arg1;
 - (id)stringFromColor:(id)arg1;
-- (id)stringFromStyleEnum:(int)arg1;
-- (id)stringFromWidthEnum:(int)arg1;
+- (id)stringFromStyleEnum:(NSInteger)arg1;
+- (id)stringFromWidthEnum:(NSInteger)arg1;
 - (id)styleHashNumber;
 - (id)styleString;
 - (id)widthHashNumber;

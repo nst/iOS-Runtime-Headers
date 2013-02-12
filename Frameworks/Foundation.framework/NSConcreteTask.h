@@ -2,28 +2,21 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSPort, NSMutableDictionary, NSObject<OS_dispatch_source>;
+@class NSMutableDictionary;
 
 @interface NSConcreteTask : NSTask {
     NSMutableDictionary *_dictionary;
-    NSObject<OS_dispatch_source> *_dsrc;
+    struct __CFFileDescriptor { } *_f;
     BOOL _hasExeced;
-    BOOL _hasPostedDeathNotification;
     BOOL _isRunning;
-    int _pid;
-    int _platformExitInfo;
-    int _suspendCount;
-    id _terminationHandler;
-    BOOL _terminationRun;
-    NSPort *_tmpPort;
+    BOOL _padding[2];
+    NSInteger _pid;
+    NSInteger _platformExitInfo;
+    NSInteger _suspendCount;
 }
 
-- (int)_platformExitInformation;
-- (int)_procid;
+- (NSInteger)_platformExitInformation;
+- (NSInteger)_procid;
 - (id)arguments;
 - (id)currentDirectoryPath;
 - (void)dealloc;
@@ -35,31 +28,27 @@
 - (void)launch;
 - (id)launchPath;
 - (void)launchWithDictionary:(id)arg1;
-- (id)preferredArchitectures;
-- (int)processIdentifier;
+- (NSInteger)processIdentifier;
 - (BOOL)resume;
 - (void)setArguments:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setLaunchPath:(id)arg1;
-- (void)setPreferredArchitectures:(id)arg1;
 - (void)setStandardError:(id)arg1;
 - (void)setStandardInput:(id)arg1;
 - (void)setStandardOutput:(id)arg1;
 - (void)setStartsNewProcessGroup:(BOOL)arg1;
 - (void)setTaskDictionary:(id)arg1;
-- (void)setTerminationHandler:(id)arg1;
 - (id)standardError;
 - (id)standardInput;
 - (id)standardOutput;
 - (BOOL)suspend;
-- (int)suspendCount;
+- (NSInteger)suspendCount;
 - (id)taskDictionary;
 - (void)terminate;
 - (void)terminateTask;
-- (id)terminationHandler;
-- (int)terminationReason;
-- (int)terminationStatus;
+- (NSInteger)terminationReason;
+- (NSInteger)terminationStatus;
 - (void)waitUntilExit;
 
 @end

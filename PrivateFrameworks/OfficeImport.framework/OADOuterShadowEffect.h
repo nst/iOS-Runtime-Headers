@@ -3,29 +3,9 @@
  */
 
 @interface OADOuterShadowEffect : OADShadowEffect {
-    int mAlignment;
-    BOOL mRotateWithShape;
-    float mXScale;
-    float mXSkew;
-    float mYScale;
-    float mYSkew;
 }
 
-- (int)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)rotateWithShape;
-- (void)setAlignment:(int)arg1;
-- (void)setRotateWithShape:(BOOL)arg1;
-- (void)setXScale:(float)arg1;
-- (void)setXSkew:(float)arg1;
-- (void)setYScale:(float)arg1;
-- (void)setYSkew:(float)arg1;
-- (float)xScale;
-- (float)xSkew;
-- (float)yScale;
-- (float)ySkew;
 
 @end

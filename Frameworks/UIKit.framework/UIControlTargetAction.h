@@ -4,14 +4,8 @@
 
 @interface UIControlTargetAction : NSObject {
     SEL _action;
-    BOOL _cancelled;
-    int _eventMask;
+    NSInteger _eventMask;
     id _target;
 }
-
-@property BOOL cancelled;
-
-- (BOOL)cancelled;
-- (void)setCancelled:(BOOL)arg1;
 
 @end

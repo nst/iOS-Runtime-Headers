@@ -7,9 +7,7 @@
 
 - (id)directoryAttributes;
 - (id)fileAttributes;
-- (unsigned int)level;
 - (id)nextObject;
-- (void)skipDescendants;
 - (void)skipDescendents;
 
 @end

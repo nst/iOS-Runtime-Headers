@@ -5,6 +5,10 @@
 @interface DOMImplementation : DOMObject {
 }
 
++ (id)_wrapDOMImplementation:(struct DOMImplementationFront { }*)arg1;
+
+- (struct DOMImplementationFront { }*)_DOMImplementation;
+- (id)_initWithDOMImplementationFront:(struct DOMImplementationFront { }*)arg1;
 - (id)createCSSStyleSheet:(id)arg1 :(id)arg2;
 - (id)createCSSStyleSheet:(id)arg1 media:(id)arg2;
 - (id)createDocument:(id)arg1 :(id)arg2 :(id)arg3;

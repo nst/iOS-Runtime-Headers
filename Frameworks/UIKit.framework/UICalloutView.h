@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIView, UILabel, NSTimer, NSMutableArray;
+@class NSMutableArray, NSTimer, UIImageView, UILabel, UIPushButton, UIView;
 
 @interface UICalloutView : UIControl {
     struct { 
@@ -14,7 +14,7 @@
             float x; 
             float y; 
         } offset; 
-        int position; 
+        NSInteger position; 
         struct CGPoint { 
             float x; 
             float y; 
@@ -42,10 +42,10 @@
         unsigned int animated : 1; 
         unsigned int didMoveCalled : 1; 
         unsigned int hasPendingAnimatedLayout : 1; 
-        unsigned int canAnchorFromBottom : 1; 
-        unsigned int reserved : 28; 
+        unsigned int reserved : 29; 
     } _anchor;
     UIImageView *_bottomAnchor;
+    UIPushButton *_button;
     id _delegate;
     NSMutableArray *_fadeInViews;
     NSMutableArray *_fadeOutViews;
@@ -55,49 +55,28 @@
     UIImageView *_leftBackground;
     UIImageView *_leftCap;
     UIView *_leftView;
-    float _maximumWidth;
     UIImageView *_rightBackground;
     UIImageView *_rightCap;
-    UIView *_rightView;
     UILabel *_subtitle;
     UILabel *_temporary;
     UILabel *_title;
     UIImageView *_topAnchor;
 }
 
-@property(readonly) float UICalloutViewButtonPadding;
-@property(readonly) float UICalloutViewCapHeight;
-@property(readonly) float UICalloutViewCapPaddingTop;
-@property(readonly) float UICalloutViewHorizontalMargin;
-@property(readonly) float UICalloutViewHorizontalPadding;
-@property(readonly) double UICalloutViewLayoutDuration;
-@property(readonly) float UICalloutViewMinimumWidth;
-@property(readonly) float UICalloutViewVerticalMargin;
-@property BOOL canAnchorFromBottom;
-@property(retain) UIView * leftView;
-@property float maximumWidth;
-@property(retain) UIView * rightView;
-@property int subtitleLineBreakMode;
-@property int subtitleTextAlignment;
-@property int titleLineBreakMode;
-@property int titleTextAlignment;
+@property(retain) UIView *leftView; /* unknown property attribute: V_leftView */
+@property NSInteger subtitleLineBreakMode;
+@property NSInteger titleLineBreakMode;
 
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
++ (id)_buttonImage;
++ (id)_buttonImagePressed;
 + (id)_leftCapImage;
 + (id)_rightCapImage;
 + (id)_topAnchorImage;
 + (float)defaultHeight;
 + (id)sharedCalloutView;
 
-- (float)UICalloutViewButtonPadding;
-- (float)UICalloutViewCapHeight;
-- (float)UICalloutViewCapPaddingTop;
-- (float)UICalloutViewHorizontalMargin;
-- (float)UICalloutViewHorizontalPadding;
-- (double)UICalloutViewLayoutDuration;
-- (float)UICalloutViewMinimumWidth;
-- (float)UICalloutViewVerticalMargin;
 - (void)_fadeViewsIn:(BOOL)arg1;
 - (void)_layoutAnimation;
 - (void)_layoutSubviews:(BOOL)arg1;
@@ -108,48 +87,34 @@
 - (void)_setLayoutAnimationTimer:(id)arg1;
 - (void)_setLeftView:(id)arg1;
 - (void)_setOriginForScale:(float)arg1;
-- (void)_setRightView:(id)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (BOOL)canAnchorFromBottom;
 - (void)completeBounceAnimation;
 - (void)dealloc;
 - (id)delegate;
-- (void)fadeOutWithDuration:(double)arg1;
-- (void)getActualAnchorPoint:(struct CGPoint { float x1; float x2; }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 position:(int*)arg3 forDesiredAnchorPoint:(struct CGPoint { float x1; float x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
+- (void)fadeOutWithDuration:(float)arg1;
+- (void)getActualAnchorPoint:(struct CGPoint { float x1; float x2; }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 position:(NSInteger*)arg3 forDesiredAnchorPoint:(struct CGPoint { float x1; float x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isExpanded;
 - (id)leftView;
-- (float)maximumWidth;
 - (struct CGPoint { float x1; float x2; })offset;
 - (void)removeTarget:(id)arg1;
-- (id)rightView;
 - (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animate:(BOOL)arg3;
-- (void)setCanAnchorFromBottom:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1;
-- (void)setMaximumWidth:(float)arg1;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRightView:(id)arg1 animated:(BOOL)arg2;
-- (void)setRightView:(id)arg1;
 - (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setSubtitle:(id)arg1;
-- (void)setSubtitleLineBreakMode:(int)arg1;
-- (void)setSubtitleTextAlignment:(int)arg1;
+- (void)setSubtitleLineBreakMode:(NSInteger)arg1;
 - (void)setTemporaryTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleLineBreakMode:(int)arg1;
-- (void)setTitleTextAlignment:(int)arg1;
+- (void)setTitleLineBreakMode:(NSInteger)arg1;
 - (id)subtitle;
-- (int)subtitleLineBreakMode;
-- (int)subtitleTextAlignment;
+- (NSInteger)subtitleLineBreakMode;
 - (id)temporaryTitle;
 - (id)title;
-- (int)titleLineBreakMode;
-- (int)titleTextAlignment;
+- (NSInteger)titleLineBreakMode;
 
 @end

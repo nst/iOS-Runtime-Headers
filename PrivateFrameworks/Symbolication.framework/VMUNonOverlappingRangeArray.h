@@ -5,14 +5,12 @@
 @interface VMUNonOverlappingRangeArray : VMURangeArray {
 }
 
-- (void)_mergeAllBitsOfRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 excludingRanges:(id)arg2 mergeRanges:(BOOL)arg3;
-- (void)addRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)_mergeAllBitsOfRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 excludingRanges:(id)arg2;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })largestUnusedWithInUse:(id)arg1;
 - (void)mergeRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 excludingRanges:(id)arg2;
 - (void)mergeRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)mergeRanges:(id)arg1 excludingRanges:(id)arg2;
-- (void)mergeRanges:(id)arg1;
-- (void)sortAndMergeRanges;
-- (id)subtract:(id)arg1 mergeRanges:(BOOL)arg2;
+- (id)subtract:(id)arg1;
+- (unsigned long long)sumLengths;
 
 @end

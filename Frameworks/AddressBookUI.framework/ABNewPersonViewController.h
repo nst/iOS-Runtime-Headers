@@ -2,84 +2,38 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABNewPersonViewControllerDelegate>, _UIAccessDeniedView, ABContactsFilter, ABPersonViewControllerHelper, ABPersonTableViewDataSource, <ABStyleProvider>;
+@class <ABNewPersonViewControllerDelegate>;
 
 @interface ABNewPersonViewController : UIViewController {
-    _UIAccessDeniedView *_accessDeniedView;
-    ABPersonTableViewDataSource *_dataSource;
     id _helper;
-    BOOL _isRealViewLoaded;
     <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
     id _parentGroup;
-    void *_recordForNewPerson;
+    id _personView;
 }
 
-@property(readonly) _UIAccessDeniedView * accessDeniedView;
-@property void* addressBook;
-@property(readonly) ABPersonTableViewDataSource * dataSource;
-@property void* displayedPerson;
-@property(readonly) ABPersonViewControllerHelper * helper;
-@property BOOL isRealViewLoaded;
-@property <ABNewPersonViewControllerDelegate> * newPersonViewDelegate;
-@property(retain) ABContactsFilter * parentContactsFilter;
-@property void* parentGroup;
-@property(readonly) void* recordForNewPerson;
-@property BOOL savesNewContactOnSuspend;
-@property BOOL showsCancelButton;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property void *addressBook;
+@property void *displayedPerson;
+@property <ABNewPersonViewControllerDelegate> *newPersonViewDelegate;
+@property void *parentGroup;
 
-- (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (int)abViewControllerType;
-- (float)ab_heightToFitForViewInPopoverView;
-- (void)accessChanged;
-- (id)accessDeniedView;
 - (void*)addressBook;
-- (void)applicationDidResume;
-- (void)applicationWillSuspend;
-- (void)applicationWillTerminate:(id)arg1;
-- (void)attemptSaveAndTellDelegate:(BOOL)arg1;
+- (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancel:(id)arg1;
-- (BOOL)ckCanDismissWhenSuspending;
-- (id)dataSource;
 - (void)dealloc;
-- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void*)displayedPerson;
-- (void)encodeRestorableStateWithCoder:(id)arg1;
-- (id)helper;
 - (id)init;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
-- (id)initWithStyle:(int)arg1;
-- (BOOL)isRealViewLoaded;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)newPersonViewDelegate;
-- (id)parentContactsFilter;
 - (void*)parentGroup;
-- (void*)recordForNewPerson;
+- (id)parentGroupWrapper;
 - (void)save:(id)arg1;
-- (void)saveAndTellDelegate:(BOOL)arg1;
-- (void)savePerson:(void*)arg1;
-- (BOOL)savesNewContactOnSuspend;
 - (void)setAddressBook:(void*)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setIsRealViewLoaded:(BOOL)arg1;
 - (void)setNewPersonViewDelegate:(id)arg1;
-- (void)setParentContactsFilter:(id)arg1;
 - (void)setParentGroup:(void*)arg1;
-- (void)setSavesNewContactOnSuspend:(BOOL)arg1;
-- (void)setShowsCancelButton:(BOOL)arg1;
-- (void)setStyleProvider:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)showsCancelButton;
-- (id)styleProvider;
-- (void)updateNavigationButtons;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)viewDidUnload;
+- (void)setParentGroupWrapper:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

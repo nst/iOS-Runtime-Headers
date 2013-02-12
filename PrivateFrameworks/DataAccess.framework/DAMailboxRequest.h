@@ -3,11 +3,10 @@
  */
 
 @interface DAMailboxRequest : NSObject {
-    int _type;
+    NSInteger _type;
 }
 
-- (int)bodyFormat;
-- (BOOL)mf_alwaysReportFailures;
-- (int)requestType;
+- (NSInteger)bodyFormat;
+- (NSInteger)requestType;
 
 @end

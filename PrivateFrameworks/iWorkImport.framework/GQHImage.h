@@ -5,14 +5,12 @@
 @interface GQHImage : NSObject {
 }
 
-+ (int)handleFloatingImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 crop:(id)arg4 maskPath:(id)arg5 state:(id)arg6;
-+ (int)handleFloatingMedia:(id)arg1 state:(id)arg2;
-+ (int)handleFloatingWebView:(id)arg1 state:(id)arg2;
-+ (int)handleInlineImageBinary:(id)arg1 geometry:(id)arg2 cropGeometry:(id)arg3 maskPath:(id)arg4 style:(id)arg5 state:(id)arg6;
-+ (int)handleInlineImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 state:(id)arg4;
-+ (int)handleInlineMedia:(id)arg1 state:(id)arg2;
-+ (int)handleInlineWebView:(id)arg1 state:(id)arg2;
++ (NSInteger)handleFloatingImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 crop:(id)arg4 state:(id)arg5;
++ (NSInteger)handleFloatingMedia:(id)arg1 state:(id)arg2;
++ (NSInteger)handleFloatingWebView:(id)arg1 state:(id)arg2;
++ (NSInteger)handleInlineImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 state:(id)arg4;
++ (NSInteger)handleInlineMedia:(id)arg1 state:(id)arg2;
++ (NSInteger)handleInlineWebView:(id)arg1 state:(id)arg2;
 + (void)mapCrop:(id)arg1 bounds:(id)arg2 style:(id)arg3;
-+ (void)mapMaskedImage:(id)arg1 maskPath:(id)arg2 geometry:(id)arg3 crop:(id)arg4 graphicStyle:(id)arg5 state:(id)arg6;
 
 @end

@@ -6,12 +6,9 @@
 }
 
 + (id)defaultProperties;
-+ (id)nullFill;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
 - (id)initWithDefaults;
-- (BOOL)isEqual:(id)arg1;
 - (void)setStyleColor:(id)arg1;
 
 @end

@@ -2,11 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface NSClassicHashTable : NSHashTable {
     struct { 
         int (*hash)(); 
@@ -15,18 +10,18 @@
         int (*release)(); 
         int (*describe)(); 
     } _callBacks;
-    struct __CFBasicHash { } *_ht;
+    struct __CFSet { } *_table;
 }
 
 - (void)addObject:(id)arg1;
 - (id)allObjects;
 - (id)copy;
-- (unsigned int)count;
+- (NSUInteger)count;
 - (void)dealloc;
 - (id)description;
 - (void*)getItem:(const void*)arg1;
-- (void)getKeys:(const void**)arg1 count:(unsigned int*)arg2;
-- (unsigned int)hash;
+- (NSUInteger)getKeys:(const void**)arg1;
+- (NSUInteger)hash;
 - (id)init;
 - (void)insertItem:(const void*)arg1;
 - (void)insertKnownAbsentItem:(const void*)arg1;

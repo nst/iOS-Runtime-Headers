@@ -3,12 +3,10 @@
  */
 
 @interface OADTextBodyAutoFit : NSObject {
-    int mType;
+    NSInteger mType;
 }
 
-- (unsigned int)hash;
-- (id)initWithType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)type;
+- (id)initWithType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

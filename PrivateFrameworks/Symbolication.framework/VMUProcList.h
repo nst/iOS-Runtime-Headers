@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSMapTable, NSLock;
+@class NSLock, NSMapTable;
 
 @interface VMUProcList : NSObject {
     NSMapTable *allProcs;
@@ -19,7 +19,7 @@
 - (id)allPathNames;
 - (id)allProcInfos;
 - (BOOL)appsOnly;
-- (unsigned int)count;
+- (NSUInteger)count;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
@@ -28,7 +28,7 @@
 - (id)newestProcInfoSatisfyingCondition:(SEL)arg1 forTarget:(id)arg2;
 - (id)newestProcInfoWithName:(id)arg1;
 - (BOOL)ownedOnly:(BOOL)arg1;
-- (id)procInfoWithPID:(int)arg1;
+- (id)procInfoWithPID:(NSInteger)arg1;
 - (void)removeProcInfo:(id)arg1;
 - (void)setAppsOnly:(BOOL)arg1;
 - (void)setOwnedOnly:(BOOL)arg1;

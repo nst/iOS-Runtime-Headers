@@ -7,17 +7,13 @@
 }
 
 - (struct CGColor { }*)CGColor;
-- (BOOL)_getWhite:(float*)arg1 alpha:(float*)arg2;
-- (float)alphaComponent;
 - (id)colorSpaceName;
 - (id)colorWithAlphaComponent:(float)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (NSUInteger)hash;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isPatternColor;
 - (void)set;
 - (void)setFill;
 - (void)setStroke;

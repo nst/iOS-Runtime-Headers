@@ -3,10 +3,10 @@
  */
 
 @interface WMBordersProperty : CMBordersProperty {
-    unsigned int mBorderCustomWidth[5];
+    NSUInteger mBorderCustomWidth[5];
 }
 
 - (id)init;
-- (void)setBorder:(id)arg1 location:(int)arg2;
+- (void)setBorder:(id)arg1 location:(NSInteger)arg2;
 
 @end

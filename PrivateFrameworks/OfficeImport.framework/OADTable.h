@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTableProperties, OADTableGrid, NSMutableArray;
+@class NSMutableArray, OADTableGrid, OADTableProperties;
 
 @interface OADTable : OADDrawable {
     OADTableGrid *mGrid;
@@ -11,14 +11,11 @@
 }
 
 - (id)addRow;
-- (id)cellAtPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
 - (void)dealloc;
 - (id)grid;
 - (id)init;
-- (id)masterCellOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
-- (struct OADTMatrixPos { int x1; int x2; })masterPosOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
-- (id)rowAtIndex:(unsigned int)arg1;
-- (unsigned int)rowCount;
+- (id)rowAtIndex:(NSInteger)arg1;
+- (NSInteger)rowCount;
 - (void)setParentTextListStyle:(id)arg1;
 - (id)tableProperties;
 

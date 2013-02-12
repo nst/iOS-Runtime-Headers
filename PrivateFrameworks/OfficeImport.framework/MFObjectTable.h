@@ -10,12 +10,12 @@
 
 - (void)clear;
 - (void)dealloc;
-- (int)deleteObject:(unsigned int)arg1;
-- (id)getObject:(unsigned int)arg1;
+- (NSInteger)deleteObject:(NSUInteger)arg1;
+- (id)getObject:(NSUInteger)arg1;
 - (id)init;
-- (unsigned int)insertPos;
-- (int)putObject:(id)arg1 :(unsigned int)arg2;
-- (int)selectInto:(int)arg1 :(id)arg2;
-- (int)size;
+- (NSUInteger)insertPos;
+- (NSInteger)putObject:(id)arg1 :(NSUInteger)arg2;
+- (NSInteger)selectInto:(NSInteger)arg1 :(id)arg2;
+- (NSInteger)size;
 
 @end

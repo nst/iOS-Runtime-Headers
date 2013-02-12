@@ -5,24 +5,24 @@
 @class EDCollection, EDDifferentialStyle;
 
 @interface EDTableStyleElement : NSObject <EDKeyedObject, NSCopying> {
-    unsigned int mBandSize;
+    NSUInteger mBandSize;
     EDDifferentialStyle *mDifferentialStyle;
     EDCollection *mDifferentialStyles;
-    int mType;
+    NSInteger mType;
 }
 
 + (id)tableStyleElementWithResources:(id)arg1;
 
-- (unsigned int)bandSize;
+- (NSUInteger)bandSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)differentialStyle;
 - (id)initWithResources:(id)arg1;
-- (int)key;
-- (void)setBandSize:(unsigned int)arg1;
+- (NSInteger)key;
+- (void)setBandSize:(NSUInteger)arg1;
 - (void)setDifferentialStyle:(id)arg1;
-- (void)setDifferentialStyleWithIndex:(unsigned int)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setDifferentialStyleWithIndex:(NSUInteger)arg1;
+- (void)setType:(NSInteger)arg1;
+- (NSInteger)type;
 
 @end

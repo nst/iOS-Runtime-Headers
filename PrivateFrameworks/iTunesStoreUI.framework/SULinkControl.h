@@ -2,27 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UILabel;
+@class UITextLabel;
 
 @interface SULinkControl : UIControl {
     unsigned int _sizeIsDirty : 1;
-    UILabel *_label;
-    BOOL _shouldDrawUnderline;
-    int _style;
+    UITextLabel *_label;
+    NSUInteger _style;
 }
 
-@property BOOL shouldDrawUnderline;
-
+- (BOOL)_alwaysHandleScrollerMouseEvent;
+- (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
+- (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
+- (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
 - (id)_label;
+- (id)_underlinedBlueColor;
 - (void)_updateLabel;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setShouldDrawUnderline:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(NSUInteger)arg1;
 - (void)setText:(id)arg1;
-- (BOOL)shouldDrawUnderline;
-- (void)sizeToFit;
+- (void)sizeToFitWidth:(float)arg1;
 
 @end

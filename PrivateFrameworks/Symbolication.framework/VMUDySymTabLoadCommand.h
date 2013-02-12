@@ -3,29 +3,29 @@
  */
 
 @interface VMUDySymTabLoadCommand : VMULoadCommand {
-    unsigned int _extrefsymoff;
-    unsigned int _extreloff;
-    unsigned int _iextdefsym;
-    unsigned int _ilocalsym;
-    unsigned int _indirectsymoff;
-    unsigned int _iundefsym;
-    unsigned int _locreloff;
-    unsigned int _modtaboff;
-    unsigned int _nextdefsym;
-    unsigned int _nextrefsyms;
-    unsigned int _nextrel;
-    unsigned int _nindirectsyms;
-    unsigned int _nlocalsym;
-    unsigned int _nlocrel;
-    unsigned int _nmodtab;
-    unsigned int _ntoc;
-    unsigned int _nundefsym;
-    unsigned int _tocoff;
+    NSUInteger _extrefsymoff;
+    NSUInteger _extreloff;
+    NSUInteger _iextdefsym;
+    NSUInteger _ilocalsym;
+    NSUInteger _indirectsymoff;
+    NSUInteger _iundefsym;
+    NSUInteger _locreloff;
+    NSUInteger _modtaboff;
+    NSUInteger _nextdefsym;
+    NSUInteger _nextrefsyms;
+    NSUInteger _nextrel;
+    NSUInteger _nindirectsyms;
+    NSUInteger _nlocalsym;
+    NSUInteger _nlocrel;
+    NSUInteger _nmodtab;
+    NSUInteger _ntoc;
+    NSUInteger _nundefsym;
+    NSUInteger _tocoff;
 }
 
-- (unsigned int)indirectsymoff;
+- (NSUInteger)indirectsymoff;
 - (id)initWithMemory:(id)arg1;
 - (BOOL)isDySymTab;
-- (unsigned int)nindirectsyms;
+- (NSUInteger)nindirectsyms;
 
 @end

@@ -5,17 +5,17 @@
 @class NSString;
 
 @interface PBFontEntity : NSObject {
-    int mCharSet;
+    NSInteger mCharSet;
     NSString *mFaceName;
-    int mFamily;
-    int mType;
+    NSInteger mFamily;
+    NSInteger mType;
 }
 
-- (int)charSet;
+- (NSInteger)charSet;
 - (void)dealloc;
 - (id)faceName;
-- (int)family;
-- (id)initWithName:(id)arg1 charSet:(int)arg2 type:(int)arg3 family:(int)arg4;
-- (int)type;
+- (NSInteger)family;
+- (id)initWithName:(id)arg1 charSet:(NSInteger)arg2 type:(NSInteger)arg3 family:(NSInteger)arg4;
+- (NSInteger)type;
 
 @end

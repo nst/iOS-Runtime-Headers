@@ -14,8 +14,7 @@
 + (id)sharedURLCache;
 
 - (struct _CFURLCache { }*)_CFURLCache;
-- (id)_cacheDirectory;
-- (struct { int x1; int x2; })_cacheStatistics;
+- (struct { NSInteger x1; NSInteger x2; })_cacheStatistics;
 - (void)_diskCacheClear;
 - (BOOL)_diskCacheCreateDirectory;
 - (void)_diskCacheCreateLRUList:(id)arg1;
@@ -27,7 +26,7 @@
 - (void)_diskCacheScheduleWrite:(id)arg1;
 - (void)_diskCacheSetSyncTimer;
 - (void)_diskCacheSync;
-- (void)_diskCacheTruncate:(unsigned int)arg1;
+- (void)_diskCacheTruncate:(NSUInteger)arg1;
 - (void)_memoryCacheAppendNodeToLRUList:(id)arg1;
 - (void)_memoryCacheClear;
 - (id)_memoryCacheGet:(id)arg1;
@@ -35,7 +34,7 @@
 - (void)_memoryCacheRemove:(id)arg1;
 - (void)_memoryCacheRemoveNodeFromLRUList:(id)arg1;
 - (void)_memoryCacheTouchNode:(id)arg1;
-- (void)_memoryCacheTruncate:(unsigned int)arg1;
+- (void)_memoryCacheTruncate:(NSUInteger)arg1;
 - (struct _CFCachedURLResponse { }*)_nscfBridgeURLCacheCopyResponseForRequest:(struct _CFURLRequest { }*)arg1;
 - (long)_nscfBridgeURLCacheCurrentDiskUsage;
 - (long)_nscfBridgeURLCacheCurrentMemoryUsage;
@@ -47,18 +46,17 @@
 - (void)_nscfBridgeURLCacheSetMemoryCapacity:(long)arg1;
 - (void)_nscfBridgeURLCacheStoreCachedResponse:(struct _CFCachedURLResponse { }*)arg1 forRequest:(struct _CFURLRequest { }*)arg2;
 - (id)cachedResponseForRequest:(id)arg1;
-- (unsigned int)currentDiskUsage;
-- (unsigned int)currentMemoryUsage;
+- (NSUInteger)currentDiskUsage;
+- (NSUInteger)currentMemoryUsage;
 - (void)dealloc;
-- (unsigned int)diskCapacity;
+- (NSUInteger)diskCapacity;
 - (id)init;
-- (id)initWithExistingSharedCFURLCache:(struct _CFURLCache { }*)arg1;
-- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
-- (unsigned int)memoryCapacity;
+- (id)initWithMemoryCapacity:(NSUInteger)arg1 diskCapacity:(NSUInteger)arg2 diskPath:(id)arg3;
+- (NSUInteger)memoryCapacity;
 - (void)removeAllCachedResponses;
 - (void)removeCachedResponseForRequest:(id)arg1;
-- (void)setDiskCapacity:(unsigned int)arg1;
-- (void)setMemoryCapacity:(unsigned int)arg1;
+- (void)setDiskCapacity:(NSUInteger)arg1;
+- (void)setMemoryCapacity:(NSUInteger)arg1;
 - (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
 
 @end

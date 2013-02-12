@@ -2,87 +2,77 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class NSString;
 
-@class NSMutableSet, NSString, MFLock, NSMutableDictionary;
-
-@interface LibraryMessage : MailMessage {
-    id _deallocationHandler;
-    unsigned int _libraryID;
-    unsigned int _mailboxID;
+@interface LibraryMessage : Message {
+    struct { 
+        unsigned int reserved : 26; 
+        unsigned int hasCustomEncoding : 1; 
+        unsigned int isPartial : 1; 
+        unsigned int hasTemporaryUid : 1; 
+        unsigned int isHTML : 1; 
+        unsigned int isRich : 1; 
+    } _imapFlags;
+    NSUInteger _libraryID;
+    NSUInteger _mailboxID;
     NSString *_messageID;
-    NSMutableDictionary *_metadata;
-    NSMutableSet *_metadataChangedKeys;
-    MFLock *_metadataLock;
-    unsigned int _originalMailboxID;
+    NSUInteger _originalMailboxID;
     NSString *_remoteID;
-    unsigned int _size;
-    unsigned long _uid;
+    NSUInteger _size;
+    NSUInteger _uid;
 }
 
-@property(copy) id deallocationHandler;
++ (id)messageWithLibraryID:(NSUInteger)arg1;
 
-+ (id)messageWithLibraryID:(unsigned int)arg1;
-
-- (id)_attachmentStorageLocation;
-- (void)_initializeMetadata;
 - (void)_updateUID;
 - (id)account;
-- (BOOL)canBeDeleted;
 - (void)commit;
-- (int)compareByUidWithMessage:(id)arg1;
-- (id)copyMessageInfo;
+- (NSInteger)compareByUidWithMessage:(id)arg1;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (id)dataPathForMimePart:(id)arg1;
 - (void)dealloc;
-- (id)deallocationHandler;
 - (id)description;
 - (BOOL)hasTemporaryUid;
-- (unsigned int)hash;
-- (id)initWithLibraryID:(unsigned int)arg1;
+- (NSUInteger)hash;
+- (struct { unsigned int x1 : 26; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; })imapFlags;
+- (id)initWithLibraryID:(NSUInteger)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isLibraryMessage;
 - (BOOL)isMessageContentsLocallyAvailable;
 - (BOOL)isPartial;
 - (id)library;
-- (unsigned int)libraryID;
+- (NSUInteger)libraryID;
 - (id)mailbox;
-- (unsigned int)mailboxID;
+- (NSUInteger)mailboxID;
 - (id)mailboxName;
-- (void)markAsFlagged;
 - (void)markAsForwarded;
-- (void)markAsNotFlagged;
 - (void)markAsNotViewed;
 - (void)markAsReplied;
 - (void)markAsViewed;
 - (id)messageID;
-- (unsigned int)messageSize;
+- (NSUInteger)messageSize;
 - (id)messageStore;
-- (id)metadataValueForKey:(id)arg1;
-- (unsigned int)originalMailboxID;
+- (NSUInteger)originalMailboxID;
 - (id)originalMailboxURL;
 - (id)path;
 - (id)persistentID;
 - (id)preferredEmailAddressToReplyWith;
-- (id)refreshedMessage;
 - (id)remoteID;
-- (void)setDeallocationHandler:(id)arg1;
 - (void)setFlags:(unsigned long long)arg1;
 - (void)setHasTemporaryUid:(BOOL)arg1;
+- (void)setIMAPFlags:(struct { unsigned int x1 : 26; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; })arg1;
 - (void)setIsPartial:(BOOL)arg1;
-- (void)setLibraryID:(unsigned int)arg1;
-- (void)setMailboxID:(unsigned int)arg1;
+- (void)setLibraryColor:(char *)arg1;
+- (void)setLibraryID:(NSUInteger)arg1;
+- (void)setMailboxID:(NSUInteger)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(BOOL)arg2;
-- (void)setMessageFlags:(unsigned long long)arg1;
-- (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
-- (void)setMessageSize:(unsigned int)arg1;
-- (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
+- (void)setMessageFlags:(unsigned long)arg1;
+- (void)setMessageFlagsWithoutCommitting:(unsigned long)arg1;
+- (void)setMessageSize:(NSUInteger)arg1;
+- (void)setMessageStore:(id)arg1;
 - (void)setMutableInfoFromMessage:(id)arg1;
-- (void)setOriginalMailboxID:(unsigned int)arg1;
+- (void)setOriginalMailboxID:(NSUInteger)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
-- (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(unsigned int)arg3 mailboxID:(unsigned int)arg4 originalMailboxID:(unsigned int)arg5;
+- (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(NSUInteger)arg3 mailboxID:(NSUInteger)arg4 originalMailboxID:(NSUInteger)arg5 color:(char *)arg6;
 - (void)setRemoteID:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (void)setUid:(unsigned long)arg1;

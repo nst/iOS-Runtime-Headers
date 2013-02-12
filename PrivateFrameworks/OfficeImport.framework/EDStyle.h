@@ -2,76 +2,93 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class EDProtection, EDResources;
 
 @interface EDStyle : NSObject <NSCopying, EDImmutableObject> {
-    boolmAlignmentInfoOverridden;
-    boolmBordersOverridden;
-    boolmContentFormatOverridden;
-    boolmDoNotModify;
-    boolmFillOverridden;
-    boolmFontOverridden;
-    boolmProtectionOverridden;
-    unsigned int mAlignmentInfoIndex;
-    unsigned int mBordersIndex;
-    unsigned int mContentFormatId;
-    unsigned int mFillIndex;
-    unsigned int mFontIndex;
-    unsigned int mIndex;
-    unsigned int mParentIndex;
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: v12@0:4B8 */
+    NSUInteger mAlignmentInfoIndex;
+    NSUInteger mBordersIndex;
+    NSUInteger mContentFormatId;
+    NSUInteger mFillIndex;
+    NSUInteger mFontIndex;
+    NSUInteger mIndex;
+    NSUInteger mParentIndex;
     EDProtection *mProtection;
     EDResources *mResources;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mAlignmentInfoOverridden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mBordersOverridden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mContentFormatOverridden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDoNotModify;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mFillOverridden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mFontOverridden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mProtectionOverridden;
 }
 
 + (id)styleWithResources:(id)arg1;
 
 - (id)alignmentInfo;
-- (unsigned int)alignmentInfoIndex;
+- (NSUInteger)alignmentInfoIndex;
 - (id)borders;
-- (unsigned int)bordersIndex;
+- (NSUInteger)bordersIndex;
 - (id)contentFormat;
-- (unsigned int)contentFormatId;
+- (NSUInteger)contentFormatId;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fill;
-- (unsigned int)fillIndex;
+- (NSUInteger)fillIndex;
 - (id)font;
-- (unsigned int)fontIndex;
-- (unsigned int)hash;
-- (unsigned int)index;
+- (NSUInteger)fontIndex;
+- (NSUInteger)hash;
+- (NSUInteger)index;
 - (id)initWithResources:(id)arg1;
-- (bool)isAlignmentInfoOverridden;
-- (bool)isBordersOverridden;
-- (bool)isContentFormatOverridden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isAlignmentInfoOverridden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isBordersOverridden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isContentFormatOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToStyle:(id)arg1;
 - (BOOL)isEquivalentToStyle:(id)arg1;
-- (bool)isFillOverridden;
-- (bool)isFontOverridden;
-- (bool)isProtectionOverridden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isFillOverridden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isFontOverridden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isProtectionOverridden;
 - (id)parent;
-- (unsigned int)parentIndex;
+- (NSUInteger)parentIndex;
 - (id)protection;
 - (void)setAlignmentInfo:(id)arg1;
-- (void)setAlignmentInfoIndex:(unsigned int)arg1;
-- (void)setAlignmentInfoOverridden:(bool)arg1;
+- (void)setAlignmentInfoIndex:(NSUInteger)arg1;
+- (void)setAlignmentInfoOverridden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setBorders:(id)arg1;
-- (void)setBordersIndex:(unsigned int)arg1;
-- (void)setBordersOverridden:(bool)arg1;
+- (void)setBordersIndex:(NSUInteger)arg1;
+- (void)setBordersOverridden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(unsigned int)arg1;
-- (void)setContentFormatOverridden:(bool)arg1;
-- (void)setDoNotModify:(bool)arg1;
+- (void)setContentFormatId:(NSUInteger)arg1;
+- (void)setContentFormatOverridden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDoNotModify:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setFill:(id)arg1;
-- (void)setFillIndex:(unsigned int)arg1;
-- (void)setFillOverridden:(bool)arg1;
+- (void)setFillIndex:(NSUInteger)arg1;
+- (void)setFillOverridden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(unsigned int)arg1;
-- (void)setFontOverridden:(bool)arg1;
-- (void)setIndex:(unsigned int)arg1;
+- (void)setFontIndex:(NSUInteger)arg1;
+- (void)setFontOverridden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setIndex:(NSInteger)arg1;
 - (void)setParent:(id)arg1;
-- (void)setParentIndex:(unsigned int)arg1;
+- (void)setParentIndex:(NSUInteger)arg1;
 - (void)setProtection:(id)arg1;
-- (void)setProtectionOverridden:(bool)arg1;
+- (void)setProtectionOverridden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 
 @end

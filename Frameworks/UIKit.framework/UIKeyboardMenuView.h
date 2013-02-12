@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UITableView, UIView;
+@class NSTimer, UIDimmingView, UIInputSwitcherShadowView, UITableView, UIView;
 
-@interface UIKeyboardMenuView : UIView <UITableViewDataSource, UITableViewDelegate> {
+@interface UIKeyboardMenuView : UIView <UITableViewDataSource, UITableViewDelegate, UIDimmingViewDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,6 +19,7 @@
         float y; 
     double _dismissDelay;
     double dismissDelay;
+    UIDimmingView *m_dimmingView;
     int m_firstVisibleRow;
     int m_mode;
     } m_point;
@@ -30,21 +31,25 @@
     BOOL m_scrollable;
     BOOL m_scrolling;
     UIView *m_selExtraView;
-    UIView *m_shadowView;
+    UIInputSwitcherShadowView *m_shadowView;
     BOOL m_shouldFade;
     UITableView *m_table;
     int m_visibleRows;
 }
 
 @property double dismissDelay;
-@property(readonly) int mode;
+@property int mode;
+@property(readonly) BOOL usesTable;
 
 - (void)_delayedFade;
 - (void)applicationWillSuspend:(id)arg1;
 - (void)autoscrollTimerFired:(id)arg1;
+- (BOOL)centerPopUpOverKey;
 - (void)dealloc;
 - (int)defaultSelectedIndex;
 - (void)didSelectItemAtIndex:(int)arg1;
+- (id)dimmingView;
+- (void)dimmingViewWasTapped:(id)arg1;
 - (double)dismissDelay;
 - (void)endScrolling:(id)arg1;
 - (void)fade;
@@ -58,11 +63,13 @@
 - (BOOL)isVisible;
 - (int)mode;
 - (int)numberOfItems;
+- (void)performShowAnimation;
 - (struct CGSize { float x1; float x2; })preferredSize;
 - (void)removeFromSuperview;
 - (void)selectItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDismissDelay:(double)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setMode:(int)arg1;
 - (void)setNeedsDisplayForCell:(id)arg1;
 - (void)setNeedsDisplayForTopBottomCells;
 - (void)show;
@@ -79,5 +86,6 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)usesTable;
 
 @end

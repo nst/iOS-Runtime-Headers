@@ -12,7 +12,11 @@
 
 - (id)attributes;
 - (void)dealloc;
+- (id)imageAttributeAndScale:(float*)arg1;
+- (void)imageLoaded:(id)arg1;
+- (BOOL)loadImage;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setAttributes:(id)arg1;
+- (void)setImage:(id)arg1;
 
 @end

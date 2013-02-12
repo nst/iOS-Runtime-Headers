@@ -29,6 +29,7 @@
 - (void)dealloc;
 - (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; BOOL x5; long long x6; }*)arg1;
 - (void)invokeForDelegate:(id)arg1;
+- (BOOL)isConnectionActive;
 - (id)originalRequest;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;

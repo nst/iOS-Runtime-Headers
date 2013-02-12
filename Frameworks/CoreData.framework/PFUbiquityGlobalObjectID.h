@@ -24,6 +24,7 @@
 - (id)createCompressedStringWithEntityNameToIndex:(id)arg1 primaryKeyToIndex:(id)arg2 peerIDToIndex:(id)arg3;
 - (id)createGlobalIDString;
 - (void)dealloc;
+- (id)description;
 - (id)entityName;
 - (unsigned int)hash;
 - (id)init;

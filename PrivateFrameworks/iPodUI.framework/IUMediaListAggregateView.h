@@ -16,6 +16,7 @@
 @property(retain) IUMediaListAggregateViewConfiguration * configuration;
 @property id delegate;
 
+- (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
 - (void)_reloadArtworkView;
 - (void)_reloadSubviewsForConfiguration;
 - (void)_reloadViews;

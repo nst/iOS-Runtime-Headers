@@ -26,11 +26,13 @@
 - (void)_incrementJobCount:(id)arg1;
 - (BOOL)_isHighPriorityJob:(id)arg1;
 - (void)_postJobQueueNotificationIsAvailable:(BOOL)arg1;
+- (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1;
 - (void)_processDeletePhotoStreamDataJob:(id)arg1;
 - (void)_processImageJob:(id)arg1;
 - (void)_processImportImageJob:(id)arg1;
 - (void)_processIngestedSyncedAssetJob:(id)arg1;
 - (void)_processJob:(id)arg1;
+- (void)_processReenqueueAssetUUIDsToPhotoStreamJob:(id)arg1;
 - (void)_processSavePhotoStreamImageToCameraRollJob:(id)arg1;
 - (void)_processSyncedVideoSaveJob:(id)arg1;
 - (void)_processVideoJob:(id)arg1;

@@ -53,6 +53,7 @@
 - (void)_createCachesAndOptimizeState;
 - (Class)_entityClass;
 - (void)_flattenProperties;
+- (id)_flattenedSubentities;
 - (BOOL)_hasAttributesWithExternalDataReferences;
 - (BOOL)_hasCustomPrimitiveProperties;
 - (BOOL)_hasPropertiesIndexedBySpotlight;

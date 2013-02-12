@@ -103,9 +103,12 @@
 - (id)appID;
 - (id)carrierMCC;
 - (id)carrierMNC;
+- (void)clearITunesStorefronts;
+- (void)clearUserKeyboards;
 - (unsigned long long)clientClockTime;
 - (int)connectionType;
 - (id)contentRestrictions;
+- (void)copyTo:(id)arg1;
 - (id)currentCarrierMCC;
 - (id)currentCarrierMNC;
 - (void)dealloc;

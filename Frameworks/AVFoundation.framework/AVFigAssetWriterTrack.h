@@ -25,7 +25,7 @@
 @property(readonly) AVMediaFileType * mediaFileType;
 @property(readonly) NSString * mediaType;
 @property(readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } sampleBufferCoalescingInterval;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } sampleBufferCoalescingInterval;
 @property(readonly) int trackID;
 
 + (id)assetWriterTrackWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 outputSettings:(id)arg4 sourcePixelBufferAttributes:(id)arg5 error:(id*)arg6;

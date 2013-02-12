@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMutableArray, NSString;
+@class NSDictionary, NSMutableArray, NSMutableIndexSet, NSString;
 
 @interface PLImageTable : NSObject {
     struct CGSize { 
@@ -13,11 +13,14 @@
     int _entryCount;
     int _entryLength;
     int _fid;
-    unsigned long _fileLength;
+    long long _fileLength;
     int _format;
     int _imageLength;
     int _imageRowBytes;
     NSString *_path;
+    struct dispatch_queue_s { } *_preheatIndexIsolation;
+    NSMutableIndexSet *_preheatIndexes;
+    struct dispatch_queue_s { } *_preheatQueue;
     BOOL _readOnly;
     int _segmentCount;
     unsigned long _segmentLength;
@@ -37,8 +40,12 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })scaleSize:(struct CGSize { float x1; float x2; })arg1 toFitWithinSize:(struct CGSize { float x1; float x2; })arg2;
 
 - (void)_addEntriesIfNecessaryForIndex:(int)arg1;
+- (void)_addPreheatIndexes:(id)arg1;
 - (BOOL)_compactWithOccupiedIndexes:(id)arg1 outPhotoUUIDToIndexMap:(id*)arg2;
 - (int)_fileDescriptor;
+- (void)_flushEntryAtAddress:(void*)arg1 count:(int)arg2;
+- (void)_flushEntryAtAddress:(void*)arg1;
+- (id)_getAndClearPreheatIndexes;
 - (id)_mappedImageDataAtIndex:(int)arg1;
 - (void)_releaseSegment:(id)arg1;
 - (void)_releaseSegmentAtIndex:(int)arg1;
@@ -49,12 +56,13 @@
 - (void)_setEntryCount:(int)arg1;
 - (id)_tableDescription;
 - (void)_updateSegmentCount;
+- (void)_verifyThumbnailDataForIndex:(unsigned int)arg1 uuid:(id)arg2;
 - (void)_writeImage:(id)arg1 withDuration:(id)arg2 photoUUID:(id)arg3 toEntryAtIndex:(int)arg4 isPlaceholder:(BOOL)arg5;
 - (void)compactWithOccupiedIndexes:(id)arg1;
 - (struct __CFDictionary { }*)currentAssetUUIDsToIndexesMapping;
 - (id)dataForEntryAtIndex:(int)arg1;
 - (void)dealloc;
-- (void)deleteEntryAtIndex:(int)arg1;
+- (void)deleteEntryAtIndex:(int)arg1 withUUID:(id)arg2;
 - (void)ensureIndexExists:(int)arg1;
 - (BOOL)entryAtIndexIsPlaceholder:(int)arg1;
 - (int)entryCount;

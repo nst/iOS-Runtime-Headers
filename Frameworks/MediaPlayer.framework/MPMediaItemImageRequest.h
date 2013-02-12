@@ -7,6 +7,7 @@
 @interface MPMediaItemImageRequest : MPImageCacheRequest {
     NSString *_artworkCacheID;
     int _artworkFormat;
+    BOOL _canUseSurfaceBackedImage;
     BOOL _crop;
     BOOL _fillToSquareAspectRatio;
     MPMediaItem *_mediaItem;
@@ -17,6 +18,7 @@
 
 @property(copy) NSString * artworkCacheID;
 @property int artworkFormat;
+@property BOOL canUseSurfaceBackedImage;
 @property BOOL crop;
 @property BOOL fillToSquareAspectRatio;
 @property(readonly) MPMediaItem * mediaItem;
@@ -26,6 +28,7 @@
 
 - (id)artworkCacheID;
 - (int)artworkFormat;
+- (BOOL)canUseSurfaceBackedImage;
 - (void)composeUniqueKey;
 - (id)copyRawImageReturningError:(id*)arg1;
 - (BOOL)crop;
@@ -38,6 +41,7 @@
 - (double)retrievalTime;
 - (void)setArtworkCacheID:(id)arg1;
 - (void)setArtworkFormat:(int)arg1;
+- (void)setCanUseSurfaceBackedImage:(BOOL)arg1;
 - (void)setCrop:(BOOL)arg1;
 - (void)setFillToSquareAspectRatio:(BOOL)arg1;
 - (void)setPlaceHolderMediaType:(int)arg1;

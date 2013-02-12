@@ -6,6 +6,7 @@
     BOOL _appHasPolledOnceThisForegroundSession;
 }
 
++ (BOOL)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;
 + (id)photoStreamAccount;
 + (BOOL)photoStreamsEnabled;
 + (id)publishBreadcrumbsPath;
@@ -16,17 +17,17 @@
 - (struct CGSize { float x1; float x2; })_derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2;
 - (id)_photoStreamAlbumNameWithFirstName:(id)arg1 lastName:(id)arg2 email:(id)arg3;
 - (int)_serverIntegerLimitForKey:(id)arg1 debugDefaultKey:(id)arg2;
-- (void)assetWithFileHash:(id)arg1 metadata:(id)arg2 wasSavedToPath:(id)arg3;
-- (void)assetsWithNames:(id)arg1 willBeDeletedForStreamID:(id)arg2;
+- (void)cleanupPhotoStreamMetadataForAssetsWithUUIDs:(id)arg1 forStreamID:(id)arg2;
 - (void)dealloc;
 - (float)derivedAssetDimensionLimit;
 - (id)derivedAssetForMasterAsset:(id)arg1;
-- (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5;
+- (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5 reenqueueCount:(id)arg6;
 - (int)friendsLimit;
 - (int)imageLimitForFriendStream;
 - (int)imageLimitForOwnStream;
 - (id)imageLimitsByAssetType;
 - (id)init;
+- (void)initiateDeletionOfPhotoStreamAssets:(id)arg1;
 - (BOOL)isValidUploadAsset:(id)arg1 type:(id)arg2 fileSize:(id)arg3;
 - (id)pathToSavedMetadataForAssetHash:(id)arg1 streamID:(id)arg2 createIntermediateDirs:(BOOL)arg3;
 - (id)pause_mstreamd;
@@ -40,6 +41,7 @@
 - (void)resetMstreamdStateForPersonID:(id)arg1;
 - (void)resetServerState;
 - (void)resume_mstreamd:(id)arg1;
+- (void)savePhotoStreamMetadata:(id)arg1 forAsset:(id)arg2;
 - (BOOL)shouldPublishScreenShots;
 - (BOOL)shouldUploadVideos;
 - (id)temporaryPathForRecentlyUploadedAsset:(id)arg1;

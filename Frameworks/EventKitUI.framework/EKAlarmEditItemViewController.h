@@ -8,6 +8,7 @@
     EKAlarm *_alarm;
     int _alarmIndex;
     BOOL _allDay;
+    BOOL _shouldAllowAlarmsTriggeringAfterStartDate;
     CalendarEventAlarmTable *_table;
 }
 
@@ -15,6 +16,7 @@
 @property int alarmIndex;
 @property BOOL allDay;
 @property int presetIdentifier;
+@property BOOL shouldAllowAlarmsTriggeringAfterStartDate;
 
 - (id)alarm;
 - (int)alarmIndex;
@@ -30,6 +32,8 @@
 - (void)setAllDay:(BOOL)arg1;
 - (void)setCustomString:(id)arg1;
 - (void)setPresetIdentifier:(int)arg1;
+- (void)setShouldAllowAlarmsTriggeringAfterStartDate:(BOOL)arg1;
+- (BOOL)shouldAllowAlarmsTriggeringAfterStartDate;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 

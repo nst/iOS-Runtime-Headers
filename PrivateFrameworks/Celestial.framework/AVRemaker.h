@@ -2,12 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface AVRemaker : NSObject {
-    struct AVRemakerPrivate { struct OpaqueFigRemaker {} *x1; BOOL x2; id x3; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x4; inout unsigned short x5; void*x6; void*x7; unsigned long x8; void*x9; id x10; void*x11; inout unsigned short x12; void*x13; void*x14; unsigned long x15; void*x16; id x17; void*x18; inout unsigned short x19; unsigned short x20; void*x21; const int x22; in void*x23; void*x24; id x25; void*x26; inout unsigned short x27; void*x28; int x29; BOOL x30; void*x31; int x32; out in void*x33; const void*x34; void*x35; id x36; void*x37; inout unsigned short x38; void*x39; int x40; BOOL x41; void*x42; int x43; out in void*x44; const void*x45; void*x46; id x47; void*x48; inout unsigned short x49; void*x50; int x51; BOOL x52; void*x53; int x54; out in void*x55; const void*x56; void*x57; double x58; } *_priv;
+    struct AVRemakerPrivate { struct OpaqueFigRemaker {} *x1; BOOL x2; id x3; id x4; id x5; id x6; id x7; id x8; double x9; } *_priv;
 }
 
 @property(readonly) long long approximateByteSize;

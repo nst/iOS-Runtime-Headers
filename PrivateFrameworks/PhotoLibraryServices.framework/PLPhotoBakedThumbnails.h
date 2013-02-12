@@ -14,6 +14,7 @@
     BOOL _missingHeader;
     NSMutableDictionary *_options;
     BOOL _optionsAccessed;
+    NSData *_optionsData;
     int _singleThumbnailImageLength;
     } _size;
     NSData *_thumbnailData;
@@ -26,6 +27,7 @@
 @property(readonly) int format;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageRect;
 @property(readonly) NSMutableDictionary * options;
+@property(readonly) NSData * optionsData;
 @property(readonly) struct CGSize { float x1; float x2; } size;
 
 + (BOOL)saveBakedThumbnailsOfImages:(id)arg1 toFile:(id)arg2 format:(int)arg3 orientation:(int*)arg4 options:(id)arg5 delegate:(id)arg6;
@@ -46,6 +48,7 @@
 - (id)initWithData:(id)arg1 format:(int)arg2;
 - (id)initWithImages:(id)arg1 format:(int)arg2 orientation:(int*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (id)options;
+- (id)optionsData;
 - (BOOL)saveToFile:(id)arg1;
 - (id)serializedData;
 - (struct CGSize { float x1; float x2; })size;

@@ -20,7 +20,7 @@
 + (id)collectionClassesToUpdateBeforeDelete;
 + (id)countedPropertyForMPMediaEntityProperty:(id)arg1;
 + (id)defaultOrderingProperties;
-+ (BOOL)deleteFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
++ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
 + (id)directCollectionQueryWithAggregateQuery:(id)arg1 predicate:(id)arg2 usingSections:(BOOL)arg3;
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (void)enumeratePersistentIDsInLibrary:(id)arg1 afterRevision:(long long)arg2 usingBlock:(id)arg3;
@@ -29,7 +29,7 @@
 + (id)foreignColumnForProperty:(id)arg1;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
-+ (BOOL)incrementRevisionWithLibrary:(id)arg1 persistentID:(long long)arg2 deleted:(BOOL)arg3;
++ (BOOL)incrementRevisionWithLibrary:(id)arg1 persistentID:(long long)arg2 deletionType:(int)arg3;
 + (id)indexableSQLForProperties:(id)arg1;
 + (BOOL)insertValues:(id)arg1 intoTable:(id)arg2 persistentID:(long long)arg3 library:(id)arg4;
 + (BOOL)insertionChangesLibraryContents;

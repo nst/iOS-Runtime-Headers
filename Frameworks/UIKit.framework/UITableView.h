@@ -210,7 +210,6 @@
 @property(getter=isEditing) BOOL editing;
 @property(getter=_keepsFirstResponderVisibleOnBoundsChange,setter=_setKeepsFirstResponderVisibleOnBoundsChange:) BOOL keepsFirstResponderVisibleOnBoundsChange;
 @property float rowHeight;
-@property(retain) id scrollTestParameters;
 @property(getter=_sectionContentInset,setter=_setSectionContentInset:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
 @property float sectionFooterHeight;
 @property float sectionHeaderHeight;
@@ -320,8 +319,6 @@
 - (void)_numberOfRowsDidChange;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (void)_performCellContentStringCalloutCleanupHidingMenu:(BOOL)arg1;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
 - (id)_popReusableHeaderView:(BOOL)arg1 opaque:(BOOL)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rectChangedWithNewSize:(struct CGSize { float x1; float x2; })arg1 oldSize:(struct CGSize { float x1; float x2; })arg2;
@@ -342,8 +339,8 @@
 - (id)_rowData;
 - (void)_scheduleAdjustExtraSeparators;
 - (id)_scriptingInfo;
-- (void)_scroll;
 - (void)_scrollFirstResponderCellToVisible:(BOOL)arg1;
+- (id)_scrollTestExtraResults;
 - (BOOL)_scrollToTop;
 - (void)_scrollToTopHidingTableHeader:(BOOL)arg1;
 - (void)_scrollToTopHidingTableHeaderIfNecessary:(BOOL)arg1;
@@ -527,7 +524,6 @@
 - (void)reloadSections:(id)arg1 withRowAnimation:(int)arg2;
 - (void)resizeSubviewsWithOldSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)rowHeight;
-- (id)scrollTestParameters;
 - (void)scrollToEnd;
 - (void)scrollToNearestSelectedRowAtScrollPosition:(int)arg1 animated:(BOOL)arg2;
 - (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
@@ -562,7 +558,6 @@
 - (void)setMultiselectCheckmarkColor:(id)arg1;
 - (void)setOverlapsSectionHeaderViews:(BOOL)arg1;
 - (void)setRowHeight:(float)arg1;
-- (void)setScrollTestParameters:(id)arg1;
 - (void)setSectionBorderColor:(id)arg1;
 - (void)setSectionFooterHeight:(float)arg1;
 - (void)setSectionHeaderHeight:(float)arg1;

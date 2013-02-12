@@ -12,7 +12,7 @@
 @interface AVCMNotificationDispatcherListenerKey : NSObject <NSCopying> {
     int (*_callback)();
     NSString *_name;
-    void *_object;
+    const void *_object;
     AVWeakReference *_weakReferenceToListener;
 }
 

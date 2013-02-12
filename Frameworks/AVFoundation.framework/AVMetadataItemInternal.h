@@ -18,7 +18,7 @@
     NSString *commonKey;
     } duration;
     NSMutableDictionary *extras;
-    int itemIndex;
+    long itemIndex;
     id key;
     NSString *keySpace;
     NSLocale *locale;

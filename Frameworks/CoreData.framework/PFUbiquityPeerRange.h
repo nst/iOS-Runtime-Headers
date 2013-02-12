@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, NSString, PFUbiquityPeer;
+@class NSNumber, NSString, PFUbiquityPeer, PFUbiquityStoreMetadata;
 
 @interface PFUbiquityPeerRange : NSManagedObject {
 }
@@ -13,11 +13,11 @@
 @property(retain) NSString * peerEntityName;
 @property(retain) NSNumber * peerStart;
 @property(retain) NSNumber * start;
+@property(retain) PFUbiquityStoreMetadata * storeMetadata;
 
 + (id)createArrayOfRangesForAllUnmappedObjectsInStoreWithStoreMetadata:(id)arg1 withLocalPeerID:(id)arg2;
 + (id)fakeManagedObjectURIForStoreMetadata:(id)arg1 entityName:(id)arg2 andPrimaryKey:(id)arg3;
-+ (id)peerRangeForLocalPrimaryKey:(unsigned int)arg1 andEntityName:(id)arg2 inManagedObjectContext:(id)arg3;
-+ (id)peerRangesForEntityName:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)peerRangeForLocalPrimaryKey:(unsigned int)arg1 inStoreNamed:(id)arg2 andEntityName:(id)arg3 inManagedObjectContext:(id)arg4;
 
 - (id)createBaselineDictionary;
 - (void)loadFromBaselineDictionary:(id)arg1;

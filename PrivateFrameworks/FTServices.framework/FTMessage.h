@@ -15,6 +15,7 @@
     id _context;
     NSDate *_creationDate;
     id _deliveryAcknowledgementBlock;
+    NSDictionary *_responseAlert;
     NSData *_serviceData;
     double _timeout;
     NSString *_topic;
@@ -46,6 +47,7 @@
 @property(readonly) NSDictionary * nonStandardMessageHeadersForOutgoingPush;
 @property(readonly) BOOL payloadCanBeLogged;
 @property(readonly) NSArray * requiredKeys;
+@property(copy) NSDictionary * responseAlertInfo;
 @property(readonly) int responseCommand;
 @property(copy) NSData * serviceData;
 @property double timeout;
@@ -96,6 +98,7 @@
 - (id)nonStandardMessageHeadersForOutgoingPush;
 - (BOOL)payloadCanBeLogged;
 - (id)requiredKeys;
+- (id)responseAlertInfo;
 - (int)responseCommand;
 - (id)serviceData;
 - (void)setClientInfo:(id)arg1;
@@ -103,6 +106,7 @@
 - (void)setContext:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDeliveryAcknowledgementBlock:(id)arg1;
+- (void)setResponseAlertInfo:(id)arg1;
 - (void)setServiceData:(id)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setTopic:(id)arg1;

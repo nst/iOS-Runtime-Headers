@@ -70,7 +70,7 @@
 - (void)importer:(id)arg1 didCompleteRemovalOfItems:(id)arg2;
 - (void)importer:(id)arg1 didCopyOriginalForItem:(id)arg2 error:(id)arg3;
 - (void)importer:(id)arg1 didImportItem:(id)arg2 error:(id)arg3;
-- (void)importer:(id)arg1 didRemoveImportItem:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)importer:(id)arg1 didRemoveImportItems:(id)arg2 atIndexes:(id)arg3;
 - (id)importer;
 - (void)importerDidFinishReadingImportItems:(id)arg1 error:(id)arg2;
 - (id)init;

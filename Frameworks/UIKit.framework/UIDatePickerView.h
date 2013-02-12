@@ -84,6 +84,7 @@
 - (id)_newFadeLabel:(id)arg1 toNewLabelWithString:(id)arg2 ifAnimated:(BOOL)arg3;
 - (int)_numberOfDaysInDate:(id)arg1;
 - (int)_numberOfDaysInWeek;
+- (struct __CFDateFormatter { }*)_properlyConfiguredSharedDateFormatter;
 - (BOOL)_scrollingAnyColumnExcept:(int)arg1;
 - (int)_secondForRow:(int)arg1;
 - (void)_selectRow:(int)arg1 inComponent:(int)arg2 animated:(BOOL)arg3 notify:(BOOL)arg4;
@@ -107,7 +108,7 @@
 - (float)_tableRowHeight;
 - (void)_todayChanged:(id)arg1;
 - (id)_todayTextColor;
-- (void)_updateBitsForDate:(id)arg1 andReload:(BOOL)arg2 animateIfNeeded:(BOOL)arg3;
+- (void)_updateBitsForDate:(id)arg1 forced:(BOOL)arg2 andReload:(BOOL)arg3 animateIfNeeded:(BOOL)arg4;
 - (BOOL)_updateDateOrTime;
 - (void)_updateEnabledCells:(BOOL)arg1;
 - (void)_updateLabels:(BOOL)arg1;

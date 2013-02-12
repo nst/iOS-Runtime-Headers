@@ -66,7 +66,7 @@
 - (void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3 barMetrics:(int)arg4;
-- (void)_setEnabled:(BOOL)arg1 forced:(BOOL)arg2;
+- (void)_setEnabled:(BOOL)arg1 forcePropagateToSegments:(BOOL)arg2;
 - (void)_setOptionsBackgroundImage:(id)arg1;
 - (void)_setSegmentedControlAppearance:(struct { id x1; float x2; float x3; struct { id x_4_1_1; id x_4_1_2; id x_4_1_3; id x_4_1_4; id x_4_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_4_1_6; } x4; struct { id x_5_1_1; id x_5_1_2; id x_5_1_3; id x_5_1_4; id x_5_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_5_1_6; } x5; struct { id x_6_1_1; id x_6_1_2; id x_6_1_3; id x_6_1_4; id x_6_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_6_1_6; } x6; struct { id x_7_1_1; id x_7_1_2; id x_7_1_3; id x_7_1_4; id x_7_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_7_1_6; } x7; BOOL x8; }*)arg1;
 - (void)_setSelectedSegmentIndex:(int)arg1 notify:(BOOL)arg2;

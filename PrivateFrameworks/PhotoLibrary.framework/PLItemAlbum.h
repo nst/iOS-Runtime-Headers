@@ -38,6 +38,7 @@
 @property(readonly) unsigned int videosCount;
 
 - (id)assets;
+- (void)batchFetchAssets:(id)arg1;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (unsigned int)count;
 - (void)dealloc;

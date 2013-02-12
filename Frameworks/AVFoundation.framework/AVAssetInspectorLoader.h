@@ -14,7 +14,7 @@
 @property(getter=isCompatibleWithSavedPhotosAlbum,readonly) BOOL compatibleWithSavedPhotosAlbum;
 @property(getter=isComposable,readonly) BOOL composable;
 @property(readonly) NSURL * downloadDestinationURL;
-@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } duration;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property(getter=isExportable,readonly) BOOL exportable;
 @property(getter=_figAsset,readonly) struct OpaqueFigAsset { }* figAsset;
 @property(getter=_formatReader,readonly) struct OpaqueFigFormatReader { }* formatReader;

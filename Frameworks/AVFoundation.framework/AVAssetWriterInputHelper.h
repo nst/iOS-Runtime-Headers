@@ -20,7 +20,7 @@
 @property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
 @property(copy) NSDictionary * sourcePixelBufferAttributes;
 @property(readonly) int status;
-@property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } transform;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 @property(retain) AVWeakReference * weakReferenceToAssetWriterInput;
 
 - (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;

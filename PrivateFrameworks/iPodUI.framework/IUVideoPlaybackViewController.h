@@ -26,6 +26,7 @@
 - (void)_endPlayback;
 - (void)_endPlaybackByPausing;
 - (void)_firstVideoFrameDisplayedNotification:(id)arg1;
+- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_removeFillerImageView;
 - (id)_scaleModeButton;

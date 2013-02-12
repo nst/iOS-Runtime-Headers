@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class CALayer, IUCircleProgressView, IUStaticReflectionTitleView, UIImageView, UILabel;
+@class CALayer, IUBlurredStaticReflectionTitleView, IUCircleProgressView, IUStaticReflectionTitleView, UIImageView, UILabel;
 
 @interface IUStaticReflectionImageView : IUGridImageView {
     struct CGRect { 
@@ -28,7 +28,8 @@
     float _reflectionDistance;
     UIImageView *_reflectionView;
     UIImageView *_shineImageView;
-    IUStaticReflectionTitleView *_titleBlurView;
+    IUBlurredStaticReflectionTitleView *_titleReflectionView;
+    IUBlurredStaticReflectionTitleView *_titleShadowView;
     int _titleStyle;
     IUStaticReflectionTitleView *_titleView;
 }
@@ -40,7 +41,7 @@
 @property BOOL reflectionHidden;
 @property int titleStyle;
 
-- (void)_createTitleViews;
+- (void)_createTitleViews:(id)arg1;
 - (void)_removeTitleViews;
 - (void)dealloc;
 - (id)image;

@@ -63,6 +63,7 @@
     float _indentationWidth;
     double _lastSelectionTime;
     id _layoutManager;
+    UILongPressGestureRecognizer *_menuGesture;
     UIView *_multipleSelectionBackgroundView;
     id _oldEditingData;
     UIImage *_reorderControlImage;
@@ -87,7 +88,6 @@
     UIColor *_topShadowColor;
     UIView *_topShadowView;
     struct __CFDictionary { } *_unhighlightedStates;
-    UILongPressGestureRecognizer *longPressGesture;
 }
 
 @property int accessoryType;
@@ -106,7 +106,6 @@
 @property(readonly) UIImageView * imageView;
 @property int indentationLevel;
 @property float indentationWidth;
-@property(retain) UILongPressGestureRecognizer * longPressGesture;
 @property(retain) UIView * multipleSelectionBackgroundView;
 @property(getter=_needsSetup,setter=_setNeedsSetup:) BOOL needsSetup;
 @property(retain) _UITableViewCellOldEditingData * oldEditingData;
@@ -160,6 +159,7 @@
 - (float)_editingButtonOffset;
 - (void)_editingTransitionAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_finishedFadingGrabber:(id)arg1 finished:(BOOL)arg2;
+- (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_grabberBeganReorder:(id)arg1;
 - (void)_grabberDragged:(id)arg1 yDelta:(float)arg2;
 - (void)_grabberReleased:(id)arg1;
@@ -272,7 +272,6 @@
 - (int)editingStyle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)font;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gridView;
 - (BOOL)hidesAccessoryWhenEditing;
 - (id)image;
@@ -294,7 +293,6 @@
 - (id)layoutManager;
 - (void)layoutSubviews;
 - (int)lineBreakMode;
-- (id)longPressGesture;
 - (id)multipleSelectionBackgroundView;
 - (id)oldEditingData;
 - (void)paste:(id)arg1;
@@ -351,7 +349,6 @@
 - (void)setIndentationWidth:(float)arg1;
 - (void)setLayoutManager:(id)arg1;
 - (void)setLineBreakMode:(int)arg1;
-- (void)setLongPressGesture:(id)arg1;
 - (void)setMultipleSelectionBackgroundView:(id)arg1;
 - (void)setOldEditingData:(id)arg1;
 - (void)setPlaceHolderValue:(id)arg1;

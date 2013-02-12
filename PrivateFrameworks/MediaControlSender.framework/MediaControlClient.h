@@ -13,6 +13,7 @@
     struct dispatch_queue_s { } *_queue;
 }
 
+- (void)activateResource:(id)arg1 completionQueue:(struct dispatch_queue_s { }*)arg2 completionBlock:(id)arg3;
 - (void)addResource:(id)arg1 completionQueue:(struct dispatch_queue_s { }*)arg2 completionBlock:(id)arg3;
 - (void)addResourceData:(id)arg1 mimeType:(id)arg2 uuid:(id)arg3 completionQueue:(struct dispatch_queue_s { }*)arg4 completionBlock:(id)arg5;
 - (void)addResourceFile:(id)arg1 mimeType:(id)arg2 uuid:(id)arg3 completionQueue:(struct dispatch_queue_s { }*)arg4 completionBlock:(id)arg5;
@@ -32,6 +33,7 @@
 - (void)invalidate;
 - (void)performRemoteAction:(id)arg1 withParams:(id)arg2 completionQueue:(struct dispatch_queue_s { }*)arg3 completionBlock:(id)arg4;
 - (void)playRemoteWithParams:(id)arg1 completionQueue:(struct dispatch_queue_s { }*)arg2 completionBlock:(id)arg3;
+- (void)playWithLocalFilePath:(id)arg1 params:(id)arg2 completionQueue:(struct dispatch_queue_s { }*)arg3 completionBlock:(id)arg4;
 - (void)playWithLocalFilePath:(id)arg1 startPosition:(float)arg2 playInfo:(id)arg3 completionQueue:(struct dispatch_queue_s { }*)arg4 completionBlock:(id)arg5;
 - (void)playWithRemoteURL:(id)arg1 startPosition:(float)arg2 completionQueue:(struct dispatch_queue_s { }*)arg3 completionBlock:(id)arg4;
 - (void)removeResource:(id)arg1 completionQueue:(struct dispatch_queue_s { }*)arg2 completionBlock:(id)arg3;

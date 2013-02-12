@@ -31,6 +31,9 @@
 
 - (void)addFunctionNames:(id)arg1;
 - (void)addLines:(id)arg1;
+- (void)clearFunctionNames;
+- (void)clearLines;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -17,9 +17,9 @@
 @property(getter=isVideoMinFrameDurationSupported,readonly) BOOL supportsVideoMinFrameDuration;
 @property(getter=isVideoMirroringSupported,readonly) BOOL supportsVideoMirroring;
 @property(getter=isVideoOrientationSupported,readonly) BOOL supportsVideoOrientation;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } videoMaxFrameDuration;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } videoMaxFrameDuration;
 @property(readonly) float videoMaxScaleAndCropFactor;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } videoMinFrameDuration;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } videoMinFrameDuration;
 @property(getter=isVideoMirrored) BOOL videoMirrored;
 @property int videoOrientation;
 @property float videoScaleAndCropFactor;
@@ -68,8 +68,12 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoCropRect;
 - (BOOL)videoFirstAndLastFramesUncropped;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMaxFrameDuration;
+- (BOOL)videoMaxFrameDurationIsSet;
+- (int)videoMaxFrameRate;
 - (float)videoMaxScaleAndCropFactor;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMinFrameDuration;
+- (BOOL)videoMinFrameDurationIsSet;
+- (int)videoMinFrameRate;
 - (struct CGSize { float x1; float x2; })videoMotionFilterOverlapRatios;
 - (int)videoOrientation;
 - (int)videoRetainedBufferCountHint;

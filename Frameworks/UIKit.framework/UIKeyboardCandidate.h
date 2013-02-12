@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface UIKeyboardCandidate : NSObject <NSCopying> {
+    NSString *_accessibilityLabel;
     NSString *_alternativeText;
 }
 

@@ -38,6 +38,7 @@
 - (id)CNFRegArrayPassingTests:(id)arg1;
 - (BOOL)ICSContainsArray:(id)arg1;
 - (BOOL)MPIsEmpty;
+- (id)MSDSPAssetCollectionWithMasterFileHash:(id)arg1;
 - (id)MSDeepCopy;
 - (id)MSDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MSMutableDeepCopy;
@@ -80,6 +81,7 @@
 - (id)_nextKeywordUsingCursors:(struct __CFDictionary { }*)arg1;
 - (id)_nextToLastObject;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeWithStartIndex:(int)arg1 endIndex:(int)arg2;
+- (id)_sa_mappedArrayWithBlock:(id)arg1;
 - (id)_scrambledKeywordsAndAddToSet:(id)arg1;
 - (void)_setValue:(id)arg1 forKeyPath:(id)arg2 ofObjectAtIndex:(unsigned int)arg3;
 - (id)_spliceAt:(int)arg1 amount:(int)arg2 andInsert:(id)arg3;

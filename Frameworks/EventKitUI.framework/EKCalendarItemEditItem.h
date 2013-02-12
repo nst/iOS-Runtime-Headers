@@ -16,6 +16,7 @@
 @property(retain) <EKStyleProvider> * styleProvider;
 
 - (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2;
+- (BOOL)applicationDidResume;
 - (id)calendarItem;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
 - (id)cellForSubitemAtIndex:(int)arg1;

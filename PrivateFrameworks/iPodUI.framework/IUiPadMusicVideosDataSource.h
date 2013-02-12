@@ -10,5 +10,6 @@
 
 - (int)gridTitleStyle;
 - (SEL)libraryHasDisplayableEntitiesSelector;
+- (BOOL)shouldLoadLocalImagesSynchronously;
 
 @end

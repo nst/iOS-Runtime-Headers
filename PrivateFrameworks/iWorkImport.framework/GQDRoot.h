@@ -24,7 +24,7 @@
 - (struct __CFURL { }*)createUrlToAppBundleResource:(struct __CFString { }*)arg1 processorBundle:(struct __CFBundle { }*)arg2;
 - (void)dealloc;
 - (unsigned int)documentReleaseVersion;
-- (void)forgetAboutObjectWithXmlUid:(const char *)arg1;
+- (void)forgetAboutObject:(id)arg1 withXmlUid:(const char *)arg2;
 - (BOOL)includeStyleWithIdentifier:(const char *)arg1 parentIdentifier:(const char *)arg2 uid:(const char *)arg3;
 - (id)init;
 - (void)initializeAppBundleResourcesUrl;
@@ -32,5 +32,6 @@
 - (id)objectWithXmlUid:(const char *)arg1;
 - (BOOL)readDocumentVersion:(struct _xmlTextReader { }*)arg1 isTooNew:(BOOL*)arg2;
 - (BOOL)readDocumentVersion:(struct _xmlTextReader { }*)arg1;
+- (id)uuid;
 
 @end

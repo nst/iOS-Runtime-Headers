@@ -2,15 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary;
-
 @interface UIKeyboardEmojiFactory : NSObject {
-    NSMutableDictionary *emojiMap;
 }
 
-- (void)dealloc;
-- (id)emojiWithKey:(id)arg1;
-- (id)emojiWithPrivateCodePoint:(id)arg1;
-- (id)init;
+- (id)emojiWithString:(id)arg1;
 
 @end

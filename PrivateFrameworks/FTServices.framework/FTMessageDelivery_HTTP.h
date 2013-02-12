@@ -6,6 +6,7 @@
 
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
     NSMutableData *_currentResponseData;
+    int _currentStatusCode;
     NSURLConnection *_currentURLConnection;
 }
 

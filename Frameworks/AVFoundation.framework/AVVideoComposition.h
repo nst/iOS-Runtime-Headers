@@ -8,11 +8,11 @@
     AVVideoCompositionInternal *_videoComposition;
 }
 
-@property(retain,readonly) AVVideoCompositionCoreAnimationTool * animationTool;
-@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } frameDuration;
-@property(copy,readonly) NSArray * instructions;
+@property(readonly) AVVideoCompositionCoreAnimationTool * animationTool;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } frameDuration;
+@property(readonly) NSArray * instructions;
 @property(readonly) float renderScale;
-@property(readonly) struct CGSize { float width; float height; } renderSize;
+@property(readonly) struct CGSize { float x1; float x2; } renderSize;
 
 + (id)videoCompositionForAsset:(id)arg1 videoGravity:(id)arg2;
 + (id)videoCompositionForAsset:(id)arg1;

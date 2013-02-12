@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
 
 @interface PFUbiquityStoreSaveSnapshot : NSObject {
     NSMutableDictionary *_deletedObjects;
@@ -14,6 +14,7 @@
     NSMutableDictionary *_globalObjectIDToPermanentManagedObjectID;
     NSMutableArray *_globalObjectIDs;
     NSMutableDictionary *_insertedObjects;
+    NSString *_localPeerID;
     NSMutableDictionary *_managedObjectIDToGlobalObjectID;
     NSMutableDictionary *_peerIDToIndex;
     NSMutableArray *_peerIDs;
@@ -32,6 +33,7 @@
 @property(readonly) NSDictionary * globalObjectIDToPermanentManagedObjectID;
 @property(readonly) NSArray * globalObjectIDs;
 @property(readonly) NSDictionary * insertedObjects;
+@property(retain) NSString * localPeerID;
 @property(readonly) NSDictionary * managedObjectIDToGlobalObjectID;
 @property(readonly) NSDictionary * peerIDToIndex;
 @property(readonly) NSArray * peerIDs;
@@ -46,6 +48,7 @@
 - (id)addManagedObject:(id)arg1 withTransactionType:(int)arg2 andStoreExportContext:(id)arg3 withError:(id*)arg4;
 - (id)checkIndex:(id)arg1 forValue:(id)arg2 fromArrayOfValues:(id)arg3;
 - (id)compressedGlobalObjectIDFromGlobalObjectID:(id)arg1;
+- (id)createKnowledgeVectorFromPeerStates;
 - (id)createUbiquityDictionary:(id)arg1 withStoreExportContext:(id)arg2 error:(id*)arg3;
 - (void)dealloc;
 - (id)deletedObjects;
@@ -61,8 +64,10 @@
 - (id)globalObjectIDToPermanentManagedObjectID;
 - (id)globalObjectIDs;
 - (id)init;
-- (id)initWithPersistentStoreOptions:(id)arg1;
+- (id)initWithLocalPeerID:(id)arg1;
+- (id)initWithPersistentStoreOptions:(id)arg1 andLocalPeerID:(id)arg2;
 - (id)insertedObjects;
+- (id)localPeerID;
 - (id)managedObjectIDToGlobalObjectID;
 - (id)peerIDToIndex;
 - (id)peerIDs;
@@ -73,6 +78,7 @@
 - (void)setDeletedObjects:(id)arg1;
 - (void)setEntityNames:(id)arg1 globalObjectIDs:(id)arg2 primaryKeys:(id)arg3 forStoreWithName:(id)arg4;
 - (void)setInsertedObjects:(id)arg1;
+- (void)setLocalPeerID:(id)arg1;
 - (void)setTransactionNumber:(id)arg1 peerStates:(id)arg2 andPeerIDs:(id)arg3;
 - (void)setUpdatedObjects:(id)arg1;
 - (id)storeOptions;

@@ -4,7 +4,7 @@
 
 @class NSMutableOrderedSet, NSString, PLFilteredAlbumList;
 
-@interface PLManagedAlbumList : _PLManagedAlbumList <PLIndexMappersDataOrigin, PLAlbumContainer> {
+@interface PLManagedAlbumList : _PLManagedAlbumList <PLAlbumContainer, PLIndexMappersDataOrigin> {
     PLFilteredAlbumList *_filteredAlbumLists[5];
     BOOL didRegisteredWithUserInterfaceContext;
     BOOL isRegisteredForChanges;

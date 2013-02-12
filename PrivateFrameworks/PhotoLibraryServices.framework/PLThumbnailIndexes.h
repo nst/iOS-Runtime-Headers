@@ -2,7 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
+@class NSMutableIndexSet;
+
 @interface PLThumbnailIndexes : NSObject {
+    NSMutableIndexSet *_blackList;
+    struct dispatch_queue_s { } *isolation;
+    NSMutableIndexSet *unusedIndexes;
+    int usedMax;
 }
 
 + (void)getAvailableThumbnailIndexWithHandler:(id)arg1;
@@ -12,7 +18,10 @@
 + (void)recycleThumbnailIndexes:(id)arg1;
 + (id)sharedInstance;
 
+- (id)fetchOccupiedThumbnailIndexesWithLibrary:(id)arg1;
+- (void)getAvailableThumbnailIndexesFromDatabase;
 - (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id)arg2;
+- (id)init;
 - (void)recycleThumbnailIndex:(unsigned int)arg1;
 - (void)recycleThumbnailIndexes:(id)arg1;
 

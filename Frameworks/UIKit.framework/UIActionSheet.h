@@ -235,6 +235,7 @@
 - (void)presentSheetInPopoverView:(id)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (void)presentSheetToAboveView:(id)arg1;
+- (void)removeFromSuperview;
 - (BOOL)requiresPortraitOrientation;
 - (BOOL)resignFirstResponder;
 - (BOOL)runsModal;

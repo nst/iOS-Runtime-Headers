@@ -61,6 +61,7 @@
 - (void)performBackgroundTaskWithBlock:(id)arg1;
 - (BOOL)performTransactionWithBlock:(id)arg1;
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
+- (long long)playlistGeneration;
 - (id)preferredAudioLanguages;
 - (id)preferredSubtitleLanguages;
 - (void)removeAllItemsInPlaylistWithIdentifier:(long long)arg1;

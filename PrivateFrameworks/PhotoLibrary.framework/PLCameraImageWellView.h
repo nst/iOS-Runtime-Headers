@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImage, UIImageView, UIView;
+@class CAShapeLayer, UIImage, UIImageView, UIView;
 
 @interface PLCameraImageWellView : UIView {
+    int _buttonBarStyle;
     UIImageView *_containerImageView;
     int _deviceOrientation;
     UIImage *_thumbnailImage;
     UIImageView *_thumbnailImageView;
+    CAShapeLayer *_thumbnailMaskLayer;
     UIView *_thumbnailOverlayView;
     BOOL _watchingOrientationChanges;
 }
+
++ (float)imageWellCornerRadius;
 
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_setImageViewHighlighted:(BOOL)arg1;
@@ -20,7 +24,7 @@
 - (void)addMaskedSubview:(id)arg1;
 - (void)beginContentFadeOutWithDuration:(float)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 buttonBarStyle:(int)arg3;
 - (void)layoutSubviews;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setEnabled:(BOOL)arg1;

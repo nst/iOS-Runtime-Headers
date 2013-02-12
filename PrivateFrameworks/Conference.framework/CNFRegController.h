@@ -232,6 +232,7 @@
 - (void)setServiceType:(int)arg1;
 - (void)setServices:(id)arg1;
 - (BOOL)shouldHandleAccountNotification:(id)arg1;
+- (BOOL)shouldShowAlertForError:(id)arg1;
 - (void)showNetworkAlert;
 - (void)showNetworkAlertIfNecessary;
 - (void)showNetworkFirstRunAlert;

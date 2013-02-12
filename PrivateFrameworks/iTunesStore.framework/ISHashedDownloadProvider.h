@@ -19,6 +19,7 @@
     NSString *_localFilePath;
     } _md5Context;
     long long _numberOfBytesToHash;
+    BOOL _shouldResumeFromLocalBytes;
     long long _totalBytesWritten;
     long long _validatedBytes;
 }
@@ -26,6 +27,7 @@
 @property(retain) NSArray * hashes;
 @property(retain) NSString * localFilePath;
 @property long long numberOfBytesToHash;
+@property BOOL shouldResumeFromLocalBytes;
 @property long long streamedBytes;
 @property long long validatedBytes;
 
@@ -50,9 +52,11 @@
 - (void)setHashes:(id)arg1;
 - (void)setLocalFilePath:(id)arg1;
 - (void)setNumberOfBytesToHash:(long long)arg1;
+- (void)setShouldResumeFromLocalBytes:(BOOL)arg1;
 - (void)setStreamedBytes:(long long)arg1;
 - (void)setValidatedBytes:(long long)arg1;
 - (void)setup;
+- (BOOL)shouldResumeFromLocalBytes;
 - (long long)streamedBytes;
 - (long long)validatedBytes;
 

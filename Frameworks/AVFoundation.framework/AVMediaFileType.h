@@ -9,7 +9,7 @@
 }
 
 @property(readonly) NSString * UTI;
-@property(readonly) unsigned int audioFileTypeID;
+@property(readonly) unsigned long audioFileTypeID;
 @property(readonly) NSString * defaultFileExtension;
 @property(readonly) NSString * figFormatReaderFileFormat;
 @property(readonly) NSSet * supportedMediaTypes;

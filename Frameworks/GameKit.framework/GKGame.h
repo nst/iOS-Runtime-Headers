@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGameInternal, GKLoadStoreItemContext, NSDictionary, NSNumber, NSString, SSItem;
+@class GKGameInternal, GKLoadStoreItemContext, NSDate, NSDictionary, NSNumber, NSString, SSItem;
 
 @interface GKGame : NSObject {
     GKGameInternal *_internal;
     BOOL _sandboxed;
     SSItem *_storeItem;
     GKLoadStoreItemContext *_storeItemLoadContext;
+    NSDate *_storeItemLoadExpirationDate;
 }
 
 @property(readonly) NSNumber * adamID;
@@ -27,6 +28,7 @@
 @property(getter=isSandboxed) BOOL sandboxed;
 @property(retain) SSItem * storeItem;
 @property(retain) GKLoadStoreItemContext * storeItemLoadContext;
+@property(retain) NSDate * storeItemLoadExpirationDate;
 
 + (id)currentGame;
 + (id)defaultGameIconWithStyle:(int)arg1;
@@ -53,6 +55,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isInstalled;
 - (BOOL)isSandboxed;
+- (BOOL)isStoreItemUnexpired;
 - (id)loadAndRenderIconForStyle:(int)arg1 withImageBrush:(id)arg2 completionHandler:(id)arg3;
 - (void)loadIconForStyle:(int)arg1 withCompletionHandler:(id)arg2;
 - (void)loadRecentFriendPlayersWithCompletionHandler:(id)arg1;
@@ -62,9 +65,11 @@
 - (void)setSandboxed:(BOOL)arg1;
 - (void)setStoreItem:(id)arg1;
 - (void)setStoreItemLoadContext:(id)arg1;
+- (void)setStoreItemLoadExpirationDate:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)storeItem;
 - (id)storeItemLoadContext;
+- (id)storeItemLoadExpirationDate;
 - (id)valueForUndefinedKey:(id)arg1;
 
 @end

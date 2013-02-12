@@ -16,7 +16,7 @@
 }
 
 @property float inputAmount;
-@property struct CGPoint { float x; float y; } inputPoint;
+@property struct CGPoint { float x1; float x2; } inputPoint;
 
 - (int (*)())kernelWrapper;
 - (const char *)_fragmentShaderSource;

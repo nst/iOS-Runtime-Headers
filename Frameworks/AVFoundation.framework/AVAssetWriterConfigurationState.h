@@ -23,7 +23,7 @@
 @property(copy) NSArray * inputs;
 @property(copy) AVMediaFileType * mediaFileType;
 @property(copy) NSArray * metadataItems;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } movieFragmentInterval;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property int movieTimeScale;
 @property BOOL shouldOptimizeForNetworkUse;
 

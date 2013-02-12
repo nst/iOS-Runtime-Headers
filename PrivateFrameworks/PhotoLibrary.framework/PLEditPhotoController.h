@@ -32,6 +32,7 @@
     unsigned int _isUserAction : 1;
     unsigned int _isCroppingImage : 1;
     unsigned int _didTapForRedEyeCorrection : 1;
+    unsigned int _isCanceling : 1;
     unsigned int _isOrderedOut : 1;
     unsigned int _autoAdjustmentEnabled : 1;
     unsigned int _preloadingEnhancementFilters : 1;
@@ -66,6 +67,7 @@
     UIPopoverController *_popover;
     NSDictionary *_previousAdjustmentState;
     NSUndoManager *_previousUndoManager;
+    unsigned int _redEyeCycleCount;
     CIFilter *_redEyeFilter;
     float _rotationAngle;
     UIProgressHUD *_savingHUD;
@@ -161,7 +163,7 @@
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)addRedEyePoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)albumDidChange:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applySubmode:(id)arg1;
 - (BOOL)autoAdjustmentEnabled;

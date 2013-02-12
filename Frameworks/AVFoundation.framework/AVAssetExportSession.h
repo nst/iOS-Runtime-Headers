@@ -8,12 +8,12 @@
     AVAssetExportSessionInternal *_exportSession;
 }
 
-@property(retain,readonly) AVAsset * asset;
+@property(readonly) AVAsset * asset;
 @property(copy) AVAudioMix * audioMix;
 @property(readonly) NSError * error;
 @property(readonly) long long estimatedOutputFileLength;
 @property long long fileLengthLimit;
-@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } maxDuration;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxDuration;
 @property(copy) NSArray * metadata;
 @property(copy) NSString * outputFileType;
 @property(copy) NSURL * outputURL;
@@ -22,7 +22,7 @@
 @property BOOL shouldOptimizeForNetworkUse;
 @property(readonly) int status;
 @property(readonly) NSArray * supportedFileTypes;
-@property struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } timeRange;
+@property struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
 @property(copy) AVVideoComposition * videoComposition;
 
 + (long long)_estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;

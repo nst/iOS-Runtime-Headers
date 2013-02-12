@@ -31,6 +31,8 @@
 - (id)ads;
 - (unsigned int)adsCount;
 - (id)batchId;
+- (void)clearAds;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -9,7 +9,6 @@
     unsigned int keyboardAppearance : 8;
     BOOL acceptsEmoji;
     BOOL acceptsFloatingKeyboard;
-    BOOL acceptsForwardDelete;
     BOOL acceptsSplitKeyboard;
     int autocapitalizationType;
     int autocorrectionType;
@@ -17,7 +16,7 @@
     BOOL displaySecureTextUsingPlainText;
     int emptyContentReturnKeyType;
     BOOL enablesReturnKeyAutomatically;
-    BOOL forceEnableForwardDelete;
+    BOOL forceEnableDictation;
     UIColor *insertionPointColor;
     unsigned int insertionPointWidth;
     BOOL learnsCorrections;
@@ -39,7 +38,6 @@
 
 @property BOOL acceptsEmoji;
 @property BOOL acceptsFloatingKeyboard;
-@property BOOL acceptsForwardDelete;
 @property BOOL acceptsSplitKeyboard;
 @property int autocapitalizationType;
 @property int autocorrectionType;
@@ -47,7 +45,7 @@
 @property BOOL displaySecureTextUsingPlainText;
 @property int emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
-@property BOOL forceEnableForwardDelete;
+@property BOOL forceEnableDictation;
 @property(retain) UIColor * insertionPointColor;
 @property unsigned int insertionPointWidth;
 @property int keyboardAppearance;
@@ -74,7 +72,6 @@
 
 - (BOOL)acceptsEmoji;
 - (BOOL)acceptsFloatingKeyboard;
-- (BOOL)acceptsForwardDelete;
 - (BOOL)acceptsSplitKeyboard;
 - (int)autocapitalizationType;
 - (int)autocorrectionType;
@@ -86,7 +83,7 @@
 - (BOOL)displaySecureTextUsingPlainText;
 - (int)emptyContentReturnKeyType;
 - (BOOL)enablesReturnKeyAutomatically;
-- (BOOL)forceEnableForwardDelete;
+- (BOOL)forceEnableDictation;
 - (id)init;
 - (id)insertionPointColor;
 - (unsigned int)insertionPointWidth;
@@ -103,7 +100,6 @@
 - (id)selectionHighlightColor;
 - (void)setAcceptsEmoji:(BOOL)arg1;
 - (void)setAcceptsFloatingKeyboard:(BOOL)arg1;
-- (void)setAcceptsForwardDelete:(BOOL)arg1;
 - (void)setAcceptsSplitKeyboard:(BOOL)arg1;
 - (void)setAutocapitalizationType:(int)arg1;
 - (void)setAutocorrectionType:(int)arg1;
@@ -111,7 +107,7 @@
 - (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
 - (void)setEmptyContentReturnKeyType:(int)arg1;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
-- (void)setForceEnableForwardDelete:(BOOL)arg1;
+- (void)setForceEnableDictation:(BOOL)arg1;
 - (void)setInsertionPointColor:(id)arg1;
 - (void)setInsertionPointWidth:(unsigned int)arg1;
 - (void)setKeyboardAppearance:(int)arg1;

@@ -24,8 +24,10 @@
     NSMutableArray *_views;
 }
 
++ (BOOL)allowedToModifyEmailAccounts;
 + (BOOL)canSendEmail;
 + (void)copyItemsToPasteboard:(id)arg1;
++ (void)openEmailAccountPrefs;
 
 - (id)_addAudio:(id)arg1 toCompositionContext:(id)arg2;
 - (id)_addPhoto:(id)arg1 toCompositionContext:(id)arg2 index:(unsigned int)arg3;

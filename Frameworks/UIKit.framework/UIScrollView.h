@@ -159,6 +159,7 @@
     void *_scrollHeartbeat;
     } _scrollIndicatorInset;
     id _scrollNotificationViews;
+    id _scrollTestParameters;
     } _scrollViewFlags;
     id *_shadows;
     double _startOffsetX;
@@ -200,6 +201,7 @@
 @property(getter=isProgrammaticScrollEnabled) BOOL programmaticScrollEnabled;
 @property(getter=isScrollEnabled) BOOL scrollEnabled;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollIndicatorInsets;
+@property(retain) id scrollTestParameters;
 @property BOOL scrollsToTop;
 @property BOOL showsHorizontalScrollIndicator;
 @property BOOL showsVerticalScrollIndicator;
@@ -258,6 +260,7 @@
 - (id)_hitTestForContentView:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (double)_horizontalVelocity;
 - (BOOL)_ignoreLinkedOnChecks;
+- (void)_incrementForScrollTest;
 - (BOOL)_isAnimatingScroll;
 - (BOOL)_isAnimatingZoom;
 - (BOOL)_isAutoscrolling;
@@ -275,6 +278,8 @@
 - (BOOL)_pagingRight;
 - (id)_panGestureRecognizer;
 - (id)_parentScrollView;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3;
 - (void)_pinContentOffsetToClosestPageBoundary;
 - (void)_popTrackingRunLoopMode;
 - (void)_populateArchivedSubviews:(id)arg1;
@@ -288,6 +293,7 @@
 - (struct CADoublePoint { double x1; double x2; })_rubberBandContentOffsetForOffset:(struct CADoublePoint { double x1; double x2; })arg1 outsideX:(BOOL*)arg2 outsideY:(BOOL*)arg3;
 - (void)_runLoopModePopped:(id)arg1;
 - (float)_scrollHysteresis;
+- (id)_scrollTestExtraResults;
 - (BOOL)_scrollToTop;
 - (void)_scrollViewAnimationEnded;
 - (void)_scrollViewDidEndDecelerating;
@@ -412,6 +418,7 @@
 - (void)scrollBy:(float)arg1 forIterations:(int)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })scrollIndicatorInsets;
 - (void)scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (id)scrollTestParameters;
 - (int)scrollableDirections;
 - (BOOL)scrollsToTop;
 - (void)setAllowsMultipleFingers:(BOOL)arg1;
@@ -443,6 +450,7 @@
 - (void)setProgrammaticScrollEnabled:(BOOL)arg1;
 - (void)setScrollEnabled:(BOOL)arg1;
 - (void)setScrollIndicatorInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setScrollTestParameters:(id)arg1;
 - (void)setScrollViewOffsetPinned:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)setScrollsToTop:(BOOL)arg1;

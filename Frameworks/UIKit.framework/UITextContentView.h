@@ -127,6 +127,7 @@
 - (id)font;
 - (id)fontForCaretSelection;
 - (void)forwardInvocation:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (BOOL)hasMarkedText;
 - (BOOL)hasSelection;
 - (BOOL)hasText;
@@ -135,9 +136,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 webView:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)inputDelegate;
-- (void)insertMarsVoltas:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (id)insertDictationResultPlaceholder;
 - (void)insertText:(id)arg1;
-- (id)insertYakushimasPlaceholder:(struct CGSize { float x1; float x2; })arg1;
 - (id)interactionAssistant;
 - (BOOL)isEditable;
 - (BOOL)isEditing;
@@ -156,7 +157,7 @@
 - (id)markedText;
 - (id)markedTextRange;
 - (id)markedTextStyle;
-- (id)metadataDictionariesForMarsVoltas;
+- (id)metadataDictionariesForDictationResults;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)mightHaveLinks;
 - (struct CGPoint { float x1; float x2; })offset;
@@ -174,8 +175,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)rectsForRange:(id)arg1;
 - (void)registerForEditingDelegateNotification:(id)arg1 selector:(SEL)arg2;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (void)removeFromSuperview;
-- (void)removeYakushimasPlaceholder:(id)arg1 willInsertText:(BOOL)arg2;
 - (void)replace:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (void)resetDataDetectorsResultsWithWebLock;
@@ -260,7 +261,6 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)undoManager;
 - (id)undoManagerForWebView:(id)arg1;
-- (id)undoNameForMarsVoltaInsertion;
 - (void)unmarkText;
 - (void)updateContentEditableAttribute:(BOOL)arg1;
 - (void)updateInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;

@@ -10,11 +10,13 @@
     unsigned int _showArtistSubtitle : 1;
     id _aggregateProperties;
     NSMutableSet *_displayedStringProperties;
+    BOOL _hasIndexBar;
     int _interfaceOrientation;
     BOOL _showDuration;
 }
 
 @property(retain) id aggregateProperties;
+@property BOOL hasIndexBar;
 @property int interfaceOrientation;
 @property BOOL showAlbum;
 @property BOOL showAlbumSubtitle;
@@ -23,10 +25,12 @@
 
 - (id)aggregateProperties;
 - (void)dealloc;
+- (BOOL)hasIndexBar;
 - (id)init;
 - (id)initWithPropertiesFromDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (int)interfaceOrientation;
 - (void)setAggregateProperties:(id)arg1;
+- (void)setHasIndexBar:(BOOL)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setShowAlbum:(BOOL)arg1;
 - (void)setShowAlbumSubtitle:(BOOL)arg1;

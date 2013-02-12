@@ -58,6 +58,7 @@
 - (void)startPictureTest;
 - (void)stopCameraPreviewAnimated:(BOOL)arg1;
 - (void)takePicture;
+- (void)tearDownCaptureSession;
 - (int)testPictureCounter;
 - (void)updatePreviewWellImage:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

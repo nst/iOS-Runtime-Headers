@@ -17,6 +17,7 @@
 - (id)_imageData;
 - (void)dealloc;
 - (id)description;
+- (struct CGSize { float x1; float x2; })dimensions;
 - (id)filename;
 - (struct CGImage { }*)fullResolutionImage;
 - (struct CGImage { }*)fullScreenImage;

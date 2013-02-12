@@ -22,6 +22,7 @@
 - (unsigned int)awaitingStoreCompletion;
 - (id)bypassedRestoresForDataclass:(id)arg1;
 - (id)completedStoreAssets;
+- (unsigned int)countOfSyncAssetsForDataclasses:(id)arg1;
 - (unsigned int)currentAsset;
 - (BOOL)dataclassIsEmpty:(id)arg1;
 - (void)dealloc;
@@ -36,7 +37,6 @@
 - (void)reset;
 - (id)restoreAssetsForDataclass:(id)arg1;
 - (id)storeAssetsForDataclass:(id)arg1;
-- (id)syncAssetsForDataclasses:(id)arg1;
 - (unsigned int)totalAssetCount;
 - (id)uploadAssetsForDataclass:(id)arg1;
 

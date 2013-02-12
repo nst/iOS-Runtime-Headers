@@ -7,6 +7,7 @@
 @interface MPItemDownloadProperties : NSObject <NSCopying> {
     long long _assetFileSize;
     NSURL *_destinationURL;
+    BOOL _downloadExists;
     NSString *_downloadIdentifier;
     SSNetworkConstraints *_networkConstraints;
     NSArray *_sinfs;
@@ -15,6 +16,7 @@
 
 @property(readonly) long long assetFileSize;
 @property(readonly) NSURL * destinationURL;
+@property(readonly) BOOL downloadExists;
 @property(readonly) NSString * downloadIdentifier;
 @property(readonly) SSNetworkConstraints * networkConstraints;
 @property(readonly) NSURL * sourceURL;
@@ -25,6 +27,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)destinationURL;
+- (BOOL)downloadExists;
 - (id)downloadIdentifier;
 - (unsigned int)hash;
 - (id)initWithDownload:(id)arg1;

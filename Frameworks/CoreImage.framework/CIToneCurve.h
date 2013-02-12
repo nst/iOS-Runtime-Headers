@@ -5,6 +5,7 @@
 @class CIImage, CIVector;
 
 @interface CIToneCurve : CIFilter {
+    CIImage *_curveImage;
     CIImage *inputImage;
     CIVector *inputPoint0;
     CIVector *inputPoint1;
@@ -30,6 +31,7 @@
 - (id)_kernel16;
 - (id)_kernel8;
 - (id)_outputProperties;
+- (void)dealloc;
 - (id)inputImage;
 - (id)inputPoint0;
 - (id)inputPoint1;

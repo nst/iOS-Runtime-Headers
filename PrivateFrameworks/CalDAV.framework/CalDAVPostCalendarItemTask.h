@@ -4,7 +4,7 @@
 
 @class <CalDAVPostCalendarItemTaskDelegate>, NSString;
 
-@interface CalDAVPostCalendarItemTask : CoreDAVSyncPostTask {
+@interface CalDAVPostCalendarItemTask : CoreDAVPostTask {
     NSString *_previousScheduleTag;
 }
 

@@ -8,7 +8,7 @@
     AVURLAssetInternal *_asset;
 }
 
-@property(copy,readonly) NSURL * URL;
+@property(readonly) NSURL * URL;
 @property(readonly) AVAssetCache * assetCache;
 @property(readonly) NSString * cacheKey;
 @property(setter=setFailedURLRequestDelegate:) <AVURLAssetFailedURLRequestHandling> * failedURLRequestDelegate;

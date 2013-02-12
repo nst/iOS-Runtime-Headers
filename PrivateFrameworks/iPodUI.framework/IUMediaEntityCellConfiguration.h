@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class MPImageCache, MPImageCacheRequest, MPMediaEntity, UIImage;
+@class MPImageCacheRequest, MPMediaEntity, UIImage;
 
 @interface IUMediaEntityCellConfiguration : IUArrayCellConfiguration {
     UIImage *_artwork;
-    MPImageCache *_artworkImageCache;
     MPImageCacheRequest *_artworkImageRequest;
     MPMediaEntity *_entity;
     BOOL _isGenius;

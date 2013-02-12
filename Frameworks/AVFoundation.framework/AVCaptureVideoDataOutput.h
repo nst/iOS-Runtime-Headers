@@ -11,7 +11,7 @@
 @property BOOL alwaysDiscardsLateVideoFrames;
 @property(readonly) NSArray * availableVideoCVPixelFormatTypes;
 @property(readonly) NSArray * availableVideoCodecTypes;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } minFrameDuration;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } minFrameDuration;
 @property(readonly) struct dispatch_queue_s { }* sampleBufferCallbackQueue;
 @property(readonly) <AVCaptureVideoDataOutputSampleBufferDelegate> * sampleBufferDelegate;
 @property(copy) NSDictionary * videoSettings;

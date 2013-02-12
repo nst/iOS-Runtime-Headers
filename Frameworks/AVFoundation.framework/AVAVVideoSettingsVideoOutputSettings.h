@@ -9,7 +9,7 @@
     BOOL _dictionaryWasFullyFormed;
 }
 
-@property(readonly) unsigned int videoCodecType;
+@property(readonly) unsigned long videoCodecType;
 @property(readonly) NSDictionary * videoCompressionProperties;
 @property(readonly) NSDictionary * videoEncoderSpecification;
 

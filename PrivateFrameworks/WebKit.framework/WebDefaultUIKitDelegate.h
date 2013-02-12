@@ -16,7 +16,7 @@
 - (int)getPasteboardChangeCount;
 - (int)getPasteboardItemsCount;
 - (BOOL)hasRichlyEditableSelection;
-- (BOOL)isUnperturbedMarsVoltaResultMarker:(id)arg1;
+- (BOOL)isUnperturbedDictationResultMarker:(id)arg1;
 - (BOOL)performsTwoStepPaste:(id)arg1;
 - (id)readDataFromPasteboard:(id)arg1 withIndex:(int)arg2;
 - (void)revealedSelectionByScrollingWebFrame:(id)arg1;

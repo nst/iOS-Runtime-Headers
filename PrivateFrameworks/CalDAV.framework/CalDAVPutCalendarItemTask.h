@@ -4,7 +4,7 @@
 
 @class <CalDAVPutCalendarItemTaskDelegate>, NSString;
 
-@interface CalDAVPutCalendarItemTask : CoreDAVSyncPutTask {
+@interface CalDAVPutCalendarItemTask : CoreDAVPutTask {
     NSString *_previousScheduleTag;
 }
 

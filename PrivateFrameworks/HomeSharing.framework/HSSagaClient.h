@@ -29,6 +29,7 @@
 - (void)_serverDidLaunch;
 - (void)_serverUpdateInProgressDidChange;
 - (void)_updateForPollingInterval;
+- (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)authenticateWithCompletionHandler:(id)arg1;
 - (void)becomeActive;
@@ -36,11 +37,14 @@
 - (void)deauthenticateWithCompletionHandler:(id)arg1;
 - (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (id)init;
+- (id)initWithAccount:(id)arg1 baseURL:(id)arg2 userAgent:(id)arg3 cookieHeaders:(id)arg4 buildIdentifier:(id)arg5;
 - (id)initWithAccount:(id)arg1 baseURL:(id)arg2 userAgent:(id)arg3 cookieHeaders:(id)arg4;
 - (void)isAuthenticatedWithCompletionHandler:(id)arg1;
 - (void)isAuthenticatedWithQueue:(struct dispatch_queue_s { }*)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForSagaID:(unsigned long long)arg1;
+- (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadIsUpdateInProgressWithCompletionHandler:(id)arg1;
+- (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)resignActive;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;

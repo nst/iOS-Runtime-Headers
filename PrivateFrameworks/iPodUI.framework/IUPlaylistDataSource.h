@@ -14,6 +14,7 @@
 
 - (id)_activeGeniusPlaylist;
 - (id)_activeOnTheGoPlaylist;
+- (void)_isGeniusEnabledDidChangeNotification:(id)arg1;
 - (BOOL)_isRootLevel;
 - (void)_playlistsChangedNotification:(id)arg1;
 - (BOOL)allowsDeletion;

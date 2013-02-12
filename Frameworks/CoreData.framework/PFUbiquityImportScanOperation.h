@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class <PFUbiquityImportScanOperationDelegate>, NSSet, NSString, PFUbiquityLocation;
+@class NSObject<PFUbiquityImportScanOperationDelegate>, NSSet, NSString, PFUbiquityLocation;
 
-@interface PFUbiquityImportScanOperation : NSOperation {
+@interface PFUbiquityImportScanOperation : PFUbiquityImportOperation {
     NSSet *_activeStoreNames;
-    <PFUbiquityImportScanOperationDelegate> *_delegate;
     BOOL _includeLocalPeerLogs;
     BOOL _isFirstImport;
     NSString *_localPeerID;
@@ -14,14 +13,14 @@
 }
 
 @property(readonly) NSSet * activeStoreNames;
-@property <PFUbiquityImportScanOperationDelegate> * delegate;
+@property NSObject<PFUbiquityImportScanOperationDelegate> * delegate;
 @property(readonly) BOOL includeLocalPeerLogs;
 @property BOOL isFirstImport;
 @property(readonly) NSString * localPeerID;
 @property(readonly) PFUbiquityLocation * rootLocationToScan;
 
 - (id)activeStoreNames;
-- (void)cancel;
+- (BOOL)batchDownloadTransactionLogsAtLocations:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)includeLocalPeerLogs;

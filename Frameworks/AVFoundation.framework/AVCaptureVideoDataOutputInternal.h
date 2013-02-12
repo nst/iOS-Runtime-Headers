@@ -14,7 +14,7 @@
     struct dispatch_queue_s { } *clientQueue;
     <AVCaptureVideoDataOutputSampleBufferDelegate> *delegate;
     } deprecatedMinFrameDuration;
-    unsigned int pixelFormatType;
+    unsigned long pixelFormatType;
     NSDictionary *videoSettings;
 }
 

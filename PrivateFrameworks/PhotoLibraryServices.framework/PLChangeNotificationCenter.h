@@ -42,6 +42,7 @@
     unsigned int _thumbnailIndexesChangeCounter;
 }
 
+@property(readonly) BOOL _shouldForceFetchingAlbumsToReload;
 @property(readonly) NSNotificationCenter * backingCenter;
 
 + (id)allManagedObjectKeysStrategy;
@@ -49,9 +50,10 @@
 + (void)distributeStackViewImageUpdatedForAlbumID:(id)arg1;
 + (void)distributeThumbnailUpdatedAtIndex:(unsigned int)arg1;
 + (void)distributeThumbnailUpdatedAtIndexes:(id)arg1;
-+ (void)getInsertedAssetCount:(unsigned int*)arg1 deletedAssetCount:(unsigned int*)arg2 fromContextDidChangeNotification:(id)arg3;
++ (void)forceFetchingAlbumReload;
++ (void)getInsertedAssetCount:(unsigned int*)arg1 deletedAssetCount:(unsigned int*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
 + (void)getInsertedAssets:(id)arg1 deletedAssets:(id)arg2 changedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
-+ (void)processChangeHubEvent:(void*)arg1;
++ (void)processChangeHubEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
 
 - (id)_attributesOfInterestForObject:(id)arg1;
 - (void)_cleanupState;
@@ -69,11 +71,12 @@
 - (id)_orderedRelationshipsOfInterestForObject:(id)arg1;
 - (void)_persistUserAlbumChanges;
 - (void)_postEnqueuedNotifications;
-- (void)_processStackViewAlbumUpdatedEvent:(void*)arg1;
+- (void)_processStackViewAlbumUpdatedEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
 - (void)_processThumbnailsUpdatedEvent:(void*)arg1;
 - (void)_registerForCameraPreviewWellChanges;
 - (void)_registerForStackViewImageChanges;
 - (void)_sendNotificationsForSplitChanges;
+- (BOOL)_shouldForceFetchingAlbumsToReload;
 - (id)_snapshotForObject:(id)arg1;
 - (void)_splitContextDidChangeNotification:(id)arg1;
 - (id)_takeSnapshotFromCommittedValuesOfObject:(id)arg1;
@@ -100,7 +103,7 @@
 - (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)postShouldReloadNotification;
-- (void)processChangeHubEvent:(void*)arg1;
+- (void)processChangeHubEvent:(void*)arg1 withGroup:(struct dispatch_group_s { }*)arg2;
 - (void)processContextDidChangeNotification:(id)arg1;
 - (void)removeAlbumChangeObserver:(id)arg1 album:(struct NSObject { Class x1; }*)arg2;
 - (void)removeAlbumListChangeObserver:(id)arg1 albumList:(struct NSObject { Class x1; }*)arg2;

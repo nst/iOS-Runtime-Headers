@@ -23,6 +23,7 @@
 }
 
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (BOOL)accessInstanceVariablesDirectly;
 + (BOOL)doURLStuff:(id)arg1 createdStubFile:(BOOL*)arg2 readOnly:(BOOL*)arg3 error:(id*)arg4 options:(id)arg5;

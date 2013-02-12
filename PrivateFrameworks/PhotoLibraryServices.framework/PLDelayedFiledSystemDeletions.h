@@ -5,22 +5,17 @@
 @class NSMutableArray;
 
 @interface PLDelayedFiledSystemDeletions : NSObject {
-    NSMutableArray *_fileURLs;
-    NSMutableArray *_owningObjectIDURIs;
-    NSMutableArray *_thumbnailIndexes;
+    NSMutableArray *_deletionInfos;
 }
 
 + (void)appendDescriptionForEvent:(void*)arg1 toComponents:(id)arg2;
 + (id)deletionsFromChangeHubEvent:(void*)arg1;
 
-- (id)URLsToBeDeletedForAsset:(id)arg1 thumbnailIndex:(unsigned int*)arg2;
-- (void)_enumerateAllURLsToBeDeleted:(id)arg1;
-- (void)addDeletionsForAsset:(id)arg1 fileURLs:(id)arg2 thumbnailIndex:(unsigned int)arg3;
-- (id)allThumbnailIndexesToBeDeleted;
+- (void)addFilesystemDeletionInfo:(id)arg1;
 - (void)appendToXPCMessage:(void*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (void)deleteAllRemainingFilesAndThumbnails;
-- (id)initWithOwningObjectIDURIs:(id)arg1 fileURLs:(id)arg2 thumbnailIndexes:(id)arg3;
+- (id)initWithFilesystemDeletionInfos:(id)arg1;
 
 @end

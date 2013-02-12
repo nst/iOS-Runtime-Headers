@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSAuthorizationRequestDelegate>, NSNumber;
+@class <SSAuthorizationRequestDelegate>, NSNumber, NSString;
 
 @interface SSAuthorizationRequest : SSRequest <SSCoding> {
     NSNumber *_accountIdentifier;
+    NSString *_keybagPath;
     id _token;
 }
 
 @property(readonly) NSNumber * accountIdentifier;
 @property(readonly) id authorizationToken;
 @property <SSAuthorizationRequestDelegate> * delegate;
+@property(copy) NSString * keybagPath;
 
 - (id)accountIdentifier;
 - (id)authorizationToken;
@@ -24,5 +26,7 @@
 - (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithXPCEncoding:(void*)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
+- (id)keybagPath;
+- (void)setKeybagPath:(id)arg1;
 
 @end

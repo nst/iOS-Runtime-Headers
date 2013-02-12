@@ -216,6 +216,7 @@
     double timeSinceLastReportedNoPackets;
     LoopbackSocketTunnel *tunnel;
     BOOL useAFRC;
+    BOOL useAWDStats;
     BOOL useCompressedConnectionData;
     BOOL useControlByte;
     BOOL useLoopback;
@@ -508,6 +509,7 @@
 - (BOOL)sipConnectWithError:(id*)arg1;
 - (id)srtpKeyBytes;
 - (BOOL)startAFRC:(id*)arg1;
+- (void)startAWDStats;
 - (BOOL)startAudio:(id*)arg1;
 - (BOOL)startConnectionWithParticipantID:(id)arg1 callID:(int)arg2 usingBlob:(id)arg3 isCaller:(BOOL)arg4 capabilities:(id)arg5 doEncoding:(BOOL)arg6 error:(id*)arg7;
 - (BOOL)startConnectionWithParticipantID:(id)arg1 callID:(int)arg2 usingBlob:(id)arg3 isCaller:(BOOL)arg4 capabilities:(id)arg5 doEncoding:(BOOL)arg6 useRelay:(BOOL)arg7 error:(id*)arg8;

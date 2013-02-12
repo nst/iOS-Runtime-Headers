@@ -22,6 +22,8 @@
 
 - (void)addUrlWithError:(id)arg1;
 - (id)badResponse;
+- (void)clearUrlWithErrors;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

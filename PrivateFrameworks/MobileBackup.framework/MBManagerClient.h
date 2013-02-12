@@ -43,6 +43,7 @@
 - (BOOL)restoreDataExistsForApplicationWithBundleID:(id)arg1 size:(unsigned long long*)arg2;
 - (BOOL)restoreFileWithPath:(id)arg1 error:(id*)arg2;
 - (id)restoreFilesForDomain:(id)arg1 error:(id*)arg2;
+- (id)restoreInfo;
 - (id)restoreState;
 - (void)setAllowiTunesBackup:(BOOL)arg1;
 - (void)setBackupEnabled:(BOOL)arg1 forDomainName:(id)arg2;

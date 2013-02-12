@@ -20,9 +20,7 @@
 - (id)_nameForDeleteButton;
 - (void)_revertEvent;
 - (id)_viewForSheet;
-- (void)_wifiStatusDidChange:(id)arg1;
 - (BOOL)allowsDeletingFutureOccurrences;
-- (void)applicationDidResume;
 - (void)customizeActionSheet:(id)arg1;
 - (void)dealloc;
 - (id)defaultAlertTitle;
@@ -41,7 +39,5 @@
 - (void)setupDeleteButton;
 - (id)styleProvider;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (void)viewDidLoad;
-- (void)viewDidUnload;
 
 @end

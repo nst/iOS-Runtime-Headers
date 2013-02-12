@@ -17,6 +17,7 @@
 }
 
 @property(copy) id appearBlock;
+@property(readonly) BOOL appeared;
 @property(readonly) int currentAppearanceStyle;
 @property(retain) CNFRegController * regController;
 @property BOOL shouldRerootPreferences;
@@ -34,6 +35,7 @@
 - (void)_updateTableLabel:(id)arg1 withTableView:(id)arg2 isTopMostHeader:(BOOL)arg3;
 - (void)_updateTitle;
 - (id)appearBlock;
+- (BOOL)appeared;
 - (void)applicationDidResume;
 - (void)authorizationController:(id)arg1 authorizedAccount:(BOOL)arg2;
 - (void)changePasswordControllerDidCancel:(id)arg1;

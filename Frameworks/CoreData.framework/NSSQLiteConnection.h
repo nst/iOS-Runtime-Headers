@@ -63,6 +63,7 @@
 - (void)_ensureNoStatementPrepared;
 - (void)_ensureNoTransactionOpen;
 - (void)_executeSQLString:(id)arg1;
+- (long long)_fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (void)_finalizeStatement;
 - (void)_forceDisconnectOnError;
 - (long long)_getCurrentAutoVacuumValue;
@@ -82,6 +83,9 @@
 - (BOOL)canConnect;
 - (void)commitTransaction;
 - (void)connect;
+- (id)createMapOfEntityNameToPKMaxForEntities:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntitiesFromPKTable:(id)arg1;
+- (id)createMapOfEntityNameToPKMaxForEntitiesFromUBRangeTable:(id)arg1;
 - (BOOL)databaseIsEmpty;
 - (void)dealloc;
 - (void)deleteCorrelation:(id)arg1;
@@ -116,6 +120,9 @@
 - (void)resetSQLStatement;
 - (void)rollbackTransaction;
 - (void)setExclusiveLockingMode:(BOOL)arg1;
+- (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
+- (id)ubiquityTableKeysAndValues;
+- (id)ubiquityTableValueForKey:(id)arg1;
 - (void)updateCorrelation:(id)arg1;
 - (void)updateRow:(id)arg1;
 - (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;

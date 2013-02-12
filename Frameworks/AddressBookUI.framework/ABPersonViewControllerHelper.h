@@ -29,7 +29,6 @@
     <ABPersonEditDelegate> *_editDelegate;
     int _favoritesListChangeNotificationCount;
     BOOL _hasLinkChanges;
-    BOOL _ignoresReloadData;
     BOOL _ignoresReloadLinkedInfos;
     id _imagePicker;
     BOOL _isAnimatingDatePickerInputView;
@@ -99,7 +98,6 @@
 @property(readonly) BOOL hasLinkChanges;
 @property(readonly) BOOL hasNameChanges;
 @property(readonly) BOOL hasPopoverController;
-@property BOOL ignoresReloadData;
 @property BOOL isLocation;
 @property(copy) NSString * message;
 @property(copy) NSString * messageDetail;
@@ -200,7 +198,6 @@
 - (BOOL)hasPopoverController;
 - (void)ignoreNextExternalChange;
 - (void)ignoreNextLocalChange;
-- (BOOL)ignoresReloadData;
 - (void)imagePicker:(id)arg1 didDismissActionSheet:(id)arg2;
 - (void)imagePicker:(id)arg1 pickedPhoto:(id)arg2;
 - (void)imagePicker:(id)arg1 presentActionSheet:(id)arg2;
@@ -352,7 +349,6 @@
 - (void)setEditDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
-- (void)setIgnoresReloadData:(BOOL)arg1;
 - (void)setIsLocation:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageDetail:(id)arg1;

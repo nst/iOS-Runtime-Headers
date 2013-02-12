@@ -94,6 +94,7 @@
 - (id)_pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3 forRegion:(id)arg4;
 - (id)_pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forRegion:(id)arg3;
 - (id)_regionsArray;
+- (id)assistantUILocalizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)builtInPlugInsPath;
 - (id)builtInPlugInsURL;
 - (id)bundleIdentifier;
@@ -127,7 +128,6 @@
 - (id)newDataURLForResource:(id)arg1 ofType:(id)arg2 withMIMEType:(id)arg3;
 - (id)objectForInfoDictionaryKey:(id)arg1;
 - (id)pathForAuxiliaryExecutable:(id)arg1;
-- (id)pathForImageResource:(id)arg1 ofType:(id)arg2;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3 forLanguage:(id)arg4;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3 forLocalization:(id)arg4;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;

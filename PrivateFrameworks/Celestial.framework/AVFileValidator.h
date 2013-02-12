@@ -2,17 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AVCallbackHandler, NSString;
+@class NSString;
 
 @interface AVFileValidator : NSObject {
-    struct AVFileValidatorPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; unsigned long x6; void*x7; id x8; void*x9; inout unsigned short x10; void*x11; int x12; BOOL x13; void*x14; int x15; out in void*x16; const void*x17; void*x18; struct FigOpaqueMediaValidator {} *x19; struct FigMediaValidatorDataLocation { 
-            unsigned long long offset; 
-            unsigned long long size; 
-        } x20; struct OpaqueCMByteStream {} *x21; BOOL x22; BOOL x23; AVCallbackHandler *x24; } *_priv;
+    struct AVFileValidatorPrivate { id x1; id x2; struct FigOpaqueMediaValidator {} *x3; struct FigMediaValidatorDataLocation { unsigned long long x_4_1_1; unsigned long long x_4_1_2; } x4; struct OpaqueCMByteStream {} *x5; BOOL x6; BOOL x7; id x8; } *_priv;
     NSString *_validationRules;
 }
 

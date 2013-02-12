@@ -42,7 +42,7 @@
 - (id)authenticatedDSID;
 - (BOOL)canSendGUIDParameter;
 - (void)dealloc;
-- (BOOL)handleRedirectFromDataProvider:(id)arg1;
+- (BOOL)handleRedirectFromDataProvider:(id)arg1 error:(id*)arg2;
 - (void)handleResponse:(id)arg1;
 - (id)init;
 - (BOOL)needsAuthentication;

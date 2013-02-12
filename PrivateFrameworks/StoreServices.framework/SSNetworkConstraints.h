@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
+@class NSMutableDictionary;
+
 @interface SSNetworkConstraints : NSObject <SSCoding, SSXPCCoding, NSCopying> {
     struct dispatch_queue_s { } *_dispatchQueue;
-    long long _sizeLimit2G;
-    long long _sizeLimit3G;
-    long long _sizeLimitWiFi;
+    NSMutableDictionary *_sizeLimits;
 }
 
 @property(getter=isAnyNetworkTypeEnabled,readonly) BOOL anyNetworkTypeEnabled;
@@ -16,12 +16,16 @@
 + (id)_newModernNetworkConstraintsWithArray:(id)arg1;
 + (id)newNetworkConstraintsByDownloadKindFromURLBag:(id)arg1;
 
+- (id)_copySizeLimits;
+- (void)_disableAllNetworkTypes;
 - (void)_setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
+- (long long)_sizeLimitForNetworkType:(int)arg1;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
+- (void)disableCellularNetworkTypes;
 - (id)init;
 - (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithXPCEncoding:(void*)arg1;

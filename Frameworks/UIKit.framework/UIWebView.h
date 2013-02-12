@@ -21,6 +21,8 @@
 @property BOOL scalesPageToFit;
 @property(readonly) UIScrollView * scrollView;
 
++ (void)_updatePersistentStoragePaths;
+
 - (BOOL)_appliesExclusiveTouchToSubviewTree;
 - (void)_beginRotation;
 - (id)_browserView;

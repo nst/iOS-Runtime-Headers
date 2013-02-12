@@ -6,12 +6,12 @@
 
 @interface SCROBrailleKey : NSObject <NSCoding> {
     id _appToken;
-    int _displayToken;
+    long _displayToken;
     BOOL _hasRouterInfo;
     NSString *_identifier;
     NSMutableArray *_maskArray;
-    int _routerIndex;
-    int _routerLocation;
+    long _routerIndex;
+    long _routerLocation;
     int _routerToken;
 }
 

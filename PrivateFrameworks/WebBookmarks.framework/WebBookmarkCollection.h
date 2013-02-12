@@ -18,6 +18,7 @@
 + (void)_postBookmarksChangedSyncNotification;
 + (BOOL)lockSync;
 + (id)safariBookmarkCollection;
++ (id)safariBookmarkCollectionCheckingIntegrity:(BOOL)arg1;
 + (id)safariDirectoryPath;
 + (void)unlockSync;
 
@@ -37,10 +38,12 @@
 - (void)_clearAndCreateAncestorTable;
 - (void)_clearAndCreateBookmarksTables;
 - (void)_clearAndCreateBookmarksTitleWordTable;
+- (BOOL)_clearChangeList;
 - (BOOL)_clearSyncKeysUnderBookmarkID:(unsigned int)arg1 isFolder:(BOOL)arg2;
 - (BOOL)_clearTitleWordsForBookmarkID:(unsigned int)arg1;
 - (void)_collectChangesOfType:(int)arg1 withClause:(id)arg2 intoArray:(id)arg3;
 - (void)_createSchema;
+- (BOOL)_databaseIsCorrupt;
 - (id)_databaseTitleForSpecialID:(unsigned int)arg1;
 - (BOOL)_deleteAncestorTableEntriesForBookmarkID:(unsigned int)arg1;
 - (BOOL)_deleteBookmark:(id)arg1 leaveTombstone:(BOOL)arg2;
@@ -61,6 +64,7 @@
 - (BOOL)_insertAncestorTableEntriesForBookmarkID:(unsigned int)arg1 withParentID:(unsigned int)arg2;
 - (BOOL)_insertTombstoneWithServerID:(id)arg1;
 - (int)_intFromExecutingSQL:(id)arg1;
+- (BOOL)_markBookmarkID:(unsigned int)arg1 added:(BOOL)arg2;
 - (BOOL)_markBookmarkID:(unsigned int)arg1 withSpecialID:(unsigned int)arg2;
 - (BOOL)_markSpecialBookmarks;
 - (id)_mergeCandidateBookmarkWithAddress:(id)arg1 parent:(unsigned int)arg2;
@@ -77,6 +81,7 @@
 - (void)_migrateSchemaVersion1And2ToVersion3;
 - (void)_migrateSchemaVersion21ToVersion22;
 - (void)_migrateSchemaVersion22ToVersion23;
+- (void)_migrateSchemaVersion23ToVersion24;
 - (void)_migrateSchemaVersion3ToVersion4;
 - (void)_migrateSchemaVersion4ToVersion5;
 - (void)_migrateSchemaVersion5ToVersion6;
@@ -88,7 +93,7 @@
 - (BOOL)_moveBookmark:(id)arg1 toIndex:(unsigned int)arg2;
 - (void)_normalizeDatabaseURLs;
 - (void)_normalizeSearchString:(struct __CFString { }*)arg1;
-- (BOOL)_openDatabaseAtPath:(id)arg1 error:(id*)arg2;
+- (BOOL)_openDatabaseAtPath:(id)arg1 checkIntegrity:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)_orderChildrenWithServerIDs:(id)arg1 inFolderWithServerID:(id)arg2;
 - (int)_orderIndexForBookmarkInsertedIntoParent:(unsigned int)arg1 insertAtBeginning:(BOOL)arg2;
 - (void)_postBookmarksFolderContentsDidChangeNotification:(unsigned int)arg1;
@@ -107,6 +112,7 @@
 - (BOOL)_saveBookmark:(id)arg1 withSpecialID:(unsigned int)arg2 updateGeneration:(BOOL)arg3;
 - (struct sqlite3_stmt { }*)_selectBookmarksWhere:(id)arg1 countOnly:(BOOL)arg2;
 - (struct sqlite3_stmt { }*)_selectBookmarksWhere:(id)arg1;
+- (id)_serverIDAtOrderIndex:(int)arg1 inFolderWithServerID:(id)arg2;
 - (id)_serverIDForBookmarkID:(unsigned int)arg1;
 - (id)_serverIDsInFolderWithServerID:(id)arg1;
 - (BOOL)_setServerID:(id)arg1 forBookmark:(id)arg2;
@@ -139,6 +145,8 @@
 - (id)firstReadingListBookmarkWithURLMatchingString:(id)arg1 prefixMatch:(BOOL)arg2;
 - (unsigned int)generation;
 - (unsigned int)indexOfReadingListBookmark:(id)arg1 countingOnlyUnread:(BOOL)arg2;
+- (id)initWithPath:(id)arg1 checkIntegrity:(BOOL)arg2;
+- (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3 checkIntegrity:(BOOL)arg4;
 - (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3;
 - (id)initWithPath:(id)arg1;
 - (BOOL)isMerging;

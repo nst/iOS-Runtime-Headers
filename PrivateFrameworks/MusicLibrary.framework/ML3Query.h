@@ -5,6 +5,7 @@
 @class ML3AggregateQuery, ML3MusicLibrary, ML3Predicate, NSArray, NSString;
 
 @interface ML3Query : NSObject <NSCoding> {
+    NSArray *_directionality;
     Class _entityClass;
     ML3MusicLibrary *_library;
     ML3AggregateQuery *_nonDirectAggregateQuery;
@@ -29,6 +30,7 @@
 - (unsigned int)countOfEntities;
 - (void)dealloc;
 - (BOOL)deleteAllEntitiesFromLibrary;
+- (BOOL)deleteAllEntitiesFromLibraryWithDeletionType:(int)arg1;
 - (id)description;
 - (BOOL)distinctPersistentIDProperty;
 - (void)encodeWithCoder:(id)arg1;

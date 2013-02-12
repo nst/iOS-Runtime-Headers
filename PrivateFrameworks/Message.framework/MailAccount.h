@@ -133,6 +133,7 @@
 - (id)_deliveryAccountCreateIfNeeded:(BOOL)arg1;
 - (int)_emptyFrequencyForKey:(id)arg1 defaultValue:(id)arg2;
 - (id)_infoForMatchingURL:(id)arg1;
+- (void)_invalidateCachedMailboxen;
 - (void)_loadEntriesFromFileSystemPath:(id)arg1 parent:(id)arg2;
 - (BOOL)_loadMailboxListingIntoCache:(id)arg1 attributes:(unsigned int)arg2 children:(id)arg3 parent:(id)arg4;
 - (id)_localMailboxNameForType:(int)arg1 usingDisplayName:(id)arg2;

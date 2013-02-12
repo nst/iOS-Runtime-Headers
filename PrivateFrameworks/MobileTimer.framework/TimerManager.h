@@ -16,8 +16,8 @@
 @property(readonly) double remainingTime;
 @property(readonly) int state;
 
++ (id)copyFetchScheduledNotification;
 + (BOOL)discardOldVersion;
-+ (id)fetchScheduledNotificationCopy;
 + (BOOL)isTimerNotification:(id)arg1;
 + (id)newNotificationAt:(double)arg1 withSound:(id)arg2;
 + (id)sharedManager;

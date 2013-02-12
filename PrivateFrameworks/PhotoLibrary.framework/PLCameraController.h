@@ -12,6 +12,15 @@
     struct CGSize { 
         float width; 
         float height; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     struct { 
         unsigned int supportsVideo : 1; 
         unsigned int supportsFocus : 1; 
@@ -52,7 +61,7 @@
         unsigned int delegateSessionWasInterrupted : 1; 
         unsigned int delegateSessionInterruptionEnded : 1; 
         unsigned int delegateServerDied : 1; 
-        unsigned int delegateInputPortFormatDescriptionDidChange : 1; 
+        unsigned int delegateCleanApertureDidChange : 1; 
         unsigned int delegateModeWillChange : 1; 
         unsigned int delegateModeDidChange : 1; 
         unsigned int delegateWillTakePhoto : 1; 
@@ -70,6 +79,7 @@
         unsigned int delegateWillStartAutofocus : 1; 
         unsigned int delegateFocusDidStart : 1; 
         unsigned int delegateFocusDidEnd : 1; 
+        unsigned int delegateFaceMetadataDidChange : 1; 
         unsigned int delegateTorchAvailabilityChanged : 1; 
     SBSAccelerometer *_accelerometer;
     AVCaptureDevice *_avCaptureDeviceAudio;
@@ -89,6 +99,7 @@
     int _cameraOrientation;
     int _captureOrientation;
     int _captureQuality;
+    } _cleanAperture;
     AVCaptureDevice *_currentDevice;
     AVCaptureDeviceInput *_currentInput;
     AVCaptureOutput *_currentOutput;
@@ -123,6 +134,7 @@
 @property int cameraMode;
 @property(readonly) int cameraOrientation;
 @property int captureOrientation;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cleanAperture;
 @property BOOL convertSampleBufferToJPEG;
 @property AVCaptureDevice * currentDevice;
 @property AVCaptureDeviceInput * currentInput;
@@ -147,6 +159,7 @@
 - (void)_autofocusOperationFinished;
 - (void)_callStateDidChange:(id)arg1;
 - (void)_capturedPhotoWithDictionary:(id)arg1 error:(id)arg2;
+- (void)_clearPreviewLayer;
 - (void)_commonFocusFinished;
 - (void)_configureSessionWithCameraMode:(int)arg1 cameraDevice:(int)arg2;
 - (id)_currentVideoConnection;
@@ -157,6 +170,7 @@
 - (void)_didTakePhoto;
 - (void)_exposureCompleted;
 - (void)_exposureStarted;
+- (void)_faceMetadataDidChange:(id)arg1;
 - (void)_faceRectangleChanged;
 - (void)_flashStateChanged;
 - (void)_focusCompleted;
@@ -205,6 +219,7 @@
 - (void)_unlockCurrentDeviceForConfiguration;
 - (void)_updateCallStatus;
 - (void)_updateTorchAvailability;
+- (void)_verifyVideoConsolidationForVideoAtPath:(id)arg1 outUserInfo:(id*)arg2;
 - (id)_videoMetadataArrayIncludingSensitiveProperties:(BOOL)arg1;
 - (void)_wasInterrupted:(id)arg1;
 - (void)_whiteBalanceCompleted;
@@ -228,6 +243,7 @@
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)capturePhoto;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cleanAperture;
 - (BOOL)convertSampleBufferToJPEG;
 - (id)currentDevice;
 - (int)currentFocusMode;
@@ -246,6 +262,7 @@
 - (BOOL)hasFlash;
 - (BOOL)hasFrontCamera;
 - (id)imageOutput;
+- (BOOL)imageWriterQueueIsAvailable;
 - (BOOL)inCall;
 - (id)init;
 - (BOOL)isCameraApp;
@@ -303,6 +320,7 @@
 - (BOOL)supportsPanorama;
 - (BOOL)supportsVideoCapture;
 - (BOOL)supportsZoom;
+- (void)tearDownCaptureSession;
 - (id)videoCapturePath;
 - (float)zoomFactor;
 

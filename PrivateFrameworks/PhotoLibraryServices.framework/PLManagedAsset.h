@@ -20,6 +20,7 @@
 @property(readonly) NSURL * assetURL;
 @property double captureTime;
 @property(readonly) NSDate * date;
+@property unsigned int effectiveThumbnailIndex;
 @property(readonly) NSData * embeddedThumbnailData;
 @property(retain) NSNumber * embeddedThumbnailHeight;
 @property short embeddedThumbnailHeightValue;
@@ -40,8 +41,6 @@
 @property(readonly) NSURL * fileURLForThumbnailFile;
 @property struct { double x1; double x2; } gpsCoordinate;
 @property(readonly) BOOL hasEmbeddedThumbnail;
-@property(readonly) BOOL hasFullSizeImage;
-@property(readonly) BOOL hasFullSizeImageData;
 @property(readonly) BOOL hasLocationInfo;
 @property(readonly) BOOL hasXMPFile;
 @property int highDynamicRangeTypeValue;
@@ -77,13 +76,13 @@
 @property double recordModDate;
 @property int savedAssetTypeValue;
 @property(readonly) NSArray * sortedSidecarFiles;
+@property(readonly) BOOL supportsDistributedPhotoStreamDeletion;
 @property(readonly) NSString * textBadgeString;
-@property unsigned int thumbnailIndex;
+@property int thumbnailIndex;
 @property(copy) NSString * utiType;
 @property(readonly) UIImage * wallpaperFullScreenImage;
 
-+ (void)_copyAssets:(id)arg1 toCameraRollAndAddToAlbum:(id)arg2;
-+ (id)_findExistingAssetWithMatchingDate:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
++ (id)_allAssetUUIDsInManagedObjectContext:(id)arg1;
 + (id)_pathsByAssetUUIDFromFetchResults:(id)arg1 absolute:(BOOL)arg2;
 + (id)abbreviatedMetadataDirectoryForDirectory:(id)arg1;
 + (id)assetWithObjectID:(id)arg1 inLibrary:(id)arg2;
@@ -92,7 +91,6 @@
 + (id)assetWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)assetsWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)bestCreationDateForAssestAtURL:(id)arg1;
-+ (void)copyAssets:(id)arg1 toAlbum:(struct NSObject { Class x1; }*)arg2;
 + (unsigned int)countAssetsWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (unsigned int)countUsedAssetsWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)fileURLFromAssetURL:(id)arg1 photoLibrary:(id)arg2;
@@ -126,7 +124,12 @@
 + (int)posterThumbnailFormat;
 + (id)preferredFileExtensionForType:(id)arg1;
 + (int)thumbnailFormat;
++ (int)wildcatCachedStackImageFormat;
++ (int)wildcatIndexSheetFormat;
++ (int)wildcatPhotoScrubberFormat;
++ (int)wildcatStackFormat;
 
+- (id)_compactDebugDescription;
 - (id)_highDynamicRangeTypeDesription;
 - (BOOL)_isSavedAssetTypeValueValid:(int)arg1;
 - (BOOL)_isValidUTI:(id)arg1 forService:(id)arg2;
@@ -136,6 +139,7 @@
 - (id)addAdjustment;
 - (void)addExtension:(id)arg1;
 - (id)addFaceWithRelativeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 identifier:(short)arg2 albumUUID:(id)arg3;
+- (id)adjustmentsXMPRepresentation;
 - (id)allFileExtensions;
 - (id)allFileURLs;
 - (id)allUniformTypeIdentifiers;
@@ -154,6 +158,8 @@
 - (id)date;
 - (void)dealloc;
 - (void)delete;
+- (void)deleteFromDatabaseOnly;
+- (unsigned int)effectiveThumbnailIndex;
 - (id)embeddedThumbnailData;
 - (id)embeddedThumbnailHeight;
 - (short)embeddedThumbnailHeightValue;
@@ -178,8 +184,6 @@
 - (void)generateThumbnailsWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2 existingThumbnailIndex:(unsigned int)arg3 fromImageSource:(struct CGImageSource { }*)arg4 imageData:(id)arg5 thumbnailDataByFormatID:(struct __CFDictionary { }*)arg6;
 - (struct { double x1; double x2; })gpsCoordinate;
 - (BOOL)hasEmbeddedThumbnail;
-- (BOOL)hasFullSizeImage;
-- (BOOL)hasFullSizeImageData;
 - (BOOL)hasGPS;
 - (BOOL)hasLocationInfo;
 - (BOOL)hasXMPFile;
@@ -195,6 +199,7 @@
 - (BOOL)isEditable;
 - (BOOL)isHDVideo;
 - (BOOL)isInFlight;
+- (BOOL)isInRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isJPEG;
 - (BOOL)isLocatedAtCoordinates:(struct { double x1; double x2; })arg1;
 - (BOOL)isPhoto;
@@ -238,6 +243,7 @@
 - (void)setAssetKind:(int)arg1;
 - (BOOL)setAttributesFromMainFileURL:(id)arg1 savedAssetType:(int)arg2 imageSource:(struct CGImageSource {}**)arg3 imageData:(id*)arg4;
 - (void)setCaptureTime:(double)arg1;
+- (void)setEffectiveThumbnailIndex:(unsigned int)arg1;
 - (void)setEmbeddedThumbnailHeight:(id)arg1;
 - (void)setEmbeddedThumbnailHeightValue:(short)arg1;
 - (void)setEmbeddedThumbnailLength:(id)arg1;
@@ -260,17 +266,20 @@
 - (void)setPersistedFileSystemAttributes;
 - (void)setRecordModDate:(double)arg1;
 - (void)setRecordModDate;
+- (void)setSavedAssetTypeFromImageProperties:(id)arg1;
 - (void)setSavedAssetTypeValue:(int)arg1;
 - (void)setSizeAndOrientationFromImageProperties:(id)arg1;
 - (void)setThumbnailDataFromImageProperties:(id)arg1;
-- (void)setThumbnailIndex:(unsigned int)arg1;
+- (void)setThumbnailIndex:(int)arg1;
 - (void)setUniformTypeIdentifierFromPathExtension:(id)arg1 assetKind:(int)arg2;
 - (void)setUniformTypeIdentifierFromPathExtension:(id)arg1;
 - (void)setUtiType:(id)arg1;
 - (BOOL)setVideoInfoFromFileAtURL:(id)arg1;
+- (id)shortenedFilePath;
 - (id)sortedSidecarFiles;
+- (BOOL)supportsDistributedPhotoStreamDeletion;
 - (id)textBadgeString;
-- (unsigned int)thumbnailIndex;
+- (int)thumbnailIndex;
 - (void)unregisterForChanges;
 - (void)updateAdjustmentsWithAdjustmentMetadata:(id)arg1;
 - (void)updateAdjustmentsWithFiltersAndIdentifiers:(id)arg1;

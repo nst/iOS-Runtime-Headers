@@ -10,7 +10,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    unsigned int argIndex;
+    unsigned long argIndex;
     void **argList;
     unsigned int *argSizeList;
     id *cleanupHandler;
@@ -18,12 +18,12 @@
     } imageDims;
 }
 
-@property unsigned int argIndex;
+@property unsigned long argIndex;
 @property void** argList;
 @property unsigned int* argSizeList;
 @property id* cleanupHandler;
 @property struct __CFArray { }* extraArgsList;
-@property struct CGSize { float width; float height; } imageDims;
+@property struct CGSize { float x1; float x2; } imageDims;
 
 - (void)_applyFilter:(id)arg1 onInputSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 withResultHandler:(id)arg4;
 - (void)_setKernelArg:(void*)arg1 withSize:(unsigned long)arg2;

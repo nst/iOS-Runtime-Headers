@@ -22,8 +22,8 @@
 
 + (void)_clearFileDescriptorQueue;
 + (int)_fileDescriptorForPersistentURL:(id)arg1;
-+ (void)_setFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
 + (void)_setupFileDescriptorQueue;
++ (int)_updateFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
 
 - (BOOL)_isImage;
 - (BOOL)_isVideo;

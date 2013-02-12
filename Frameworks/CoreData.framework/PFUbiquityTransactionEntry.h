@@ -24,6 +24,8 @@
 + (id)createKnowledgeVectorStringFromPeerDictionary:(id)arg1;
 + (id)createPeerCodeDictionaryFromVector:(id)arg1;
 + (id)createSumForKnowlegeVectorString:(id)arg1;
++ (id)createTransactionEntriesForCompressedObjectIDs:(id)arg1 withTransactionType:(int)arg2 withImportContext:(id)arg3;
++ (id)newTransactionEntryForObjectWithCompressedGlobalID:(id)arg1 withTransactionType:(int)arg2 importContext:(id)arg3;
 + (id)transactionEntriesAfterPeerState:(id)arg1 forStoreName:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)transactionEntriesForGlobalIDStrings:(id)arg1 beforePeerState:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)transactionEntriesForPeerID:(id)arg1 beforeTransacationNumber:(id)arg2 forStoreNamed:(id)arg3 inManagedObjectContext:(id)arg4;

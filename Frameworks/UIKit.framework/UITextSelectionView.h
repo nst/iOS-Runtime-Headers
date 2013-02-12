@@ -12,7 +12,7 @@
     UIView *m_caretView;
     BOOL m_deferSelectionCommands;
     BOOL m_delayShowingCommands;
-    BOOL m_grammarReplacementsMode;
+    BOOL m_dictationReplacementsMode;
     struct __CFRunLoopObserver { } *m_observer;
     UITextRangeView *m_rangeView;
     NSArray *m_replacements;
@@ -87,7 +87,7 @@
 - (void)showCalloutBarAfterDelay:(double)arg1;
 - (void)showCaret:(int)arg1;
 - (void)showCommandsWithReplacements:(id)arg1;
-- (void)showReplacementsWithGenerator:(id)arg1 forGrammarChecking:(BOOL)arg2 afterDelay:(double)arg3;
+- (void)showReplacementsWithGenerator:(id)arg1 forDictation:(BOOL)arg2 afterDelay:(double)arg3;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;
 - (void)startCaretBlinkIfNeeded;

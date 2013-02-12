@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSDictionary, NSIndexSet, NSLock, NSMutableOrderedSet, PLImageTable, PLPhotoLibrary;
+@class NSArray, NSDictionary, NSIndexSet, NSLock, NSManagedObjectContext, NSMutableOrderedSet, PLImageTable, PLPhotoLibrary;
 
 @interface PLThumbnailManager : NSObject {
     NSMutableOrderedSet *_assetUUIDsWithThumbnails;
@@ -13,6 +13,8 @@
     NSLock *_lock;
     NSIndexSet *_occupiedIndexes;
     PLPhotoLibrary *_photoLibrary;
+    NSManagedObjectContext *_preheatMOC;
+    NSArray *_thumbTables;
     PLImageTable *_wildcatIndexThumbs;
     PLImageTable *_wildcatScrubberThumbs;
     PLImageTable *_wildcatStackThumbs;
@@ -20,6 +22,7 @@
 
 @property(readonly) PLImageTable * indexSheetThumbs;
 @property PLPhotoLibrary * photoLibrary;
+@property(readonly) NSArray * thumbTables;
 @property(readonly) PLImageTable * wildcatIndexThumbs;
 @property(readonly) PLImageTable * wildcatScrubberThumbs;
 @property(readonly) PLImageTable * wildcatStackThumbs;
@@ -48,7 +51,7 @@
 - (int)count;
 - (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (void)dealloc;
-- (void)deleteThumbnailsAtIndex:(int)arg1;
+- (void)deleteThumbnailsAtIndex:(int)arg1 withUUID:(id)arg2;
 - (void)deleteThumbnailsForPhoto:(id)arg1;
 - (void)ensureIndexExists:(int)arg1;
 - (BOOL)entryAtIndexIsPlaceholder:(int)arg1;
@@ -61,7 +64,9 @@
 - (void)preheatImageDataForAssets:(id)arg1 format:(int)arg2;
 - (void)setPhotoLibrary:(id)arg1;
 - (void)setThumbnails:(struct __CFDictionary { }*)arg1 forPhoto:(id)arg2;
+- (id)thumbTables;
 - (void)thumbnailTablesChangedExternally;
+- (void)updateThumbnailsForPhoto:(id)arg1 previewImage:(id)arg2 thumbnailImage:(id)arg3 generatePreviewImage:(BOOL)arg4 assignNewIndex:(BOOL)arg5;
 - (void)updateThumbnailsForPhoto:(id)arg1 previewImage:(id)arg2 thumbnailImage:(id)arg3 generatePreviewImage:(BOOL)arg4;
 - (id)wildcatIndexThumbs;
 - (id)wildcatScrubberThumbs;

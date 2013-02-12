@@ -14,6 +14,7 @@
 
 + (id)cachedWallpaperDataForVariant:(int)arg1;
 + (void)clearCachedWallpaper;
++ (void)preheatWallpaperDataForVariant:(int)arg1;
 
 - (id)data;
 - (void)dealloc;

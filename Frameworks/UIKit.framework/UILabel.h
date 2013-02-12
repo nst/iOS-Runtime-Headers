@@ -34,6 +34,7 @@
     int _lineSpacing;
     float _minFontSize;
     int _numberOfLines;
+    float _shadowBlur;
     UIColor *_shadowColor;
     } _shadowOffset;
     } _size;
@@ -80,6 +81,7 @@
 - (void)_startMarqueeIfNecessary;
 - (void)_stopMarqueeWithRedisplay:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2 includingShadow:(BOOL)arg3;
+- (BOOL)_usesCGToDrawShadow;
 - (float)actualFontSize;
 - (BOOL)adjustsFontSizeToFitWidth;
 - (BOOL)autotrackTextToFit;
@@ -133,6 +135,7 @@
 - (void)setMinimumFontSize:(float)arg1;
 - (void)setNumberOfLines:(int)arg1;
 - (void)setRawSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowBlur:(float)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1 forDisplayInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -140,6 +143,7 @@
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
+- (float)shadowBlur;
 - (id)shadowColor;
 - (struct CGSize { float x1; float x2; })shadowOffset;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

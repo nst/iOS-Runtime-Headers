@@ -22,7 +22,9 @@
 - (id)appBundleInfoString;
 - (id)authTokenForPersonID:(id)arg1;
 - (id)baseURLForPersonID:(id)arg1;
+- (Class)deletePluginClass;
 - (id)developmentPushToken;
+- (void)didDetectUnrecoverableCondition;
 - (id)fullNameFromFirstName:(id)arg1 lastName:(id)arg2;
 - (id)hardwareString;
 - (void)logFacility:(int)arg1 level:(int)arg2 format:(id)arg3 args:(void*)arg4;

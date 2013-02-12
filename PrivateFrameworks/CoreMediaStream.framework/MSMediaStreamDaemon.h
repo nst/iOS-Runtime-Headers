@@ -12,6 +12,7 @@
 
 @property <MSMediaStreamDaemonDelegate> * delegate;
 
+- (id)_boundDeleterForPersonID:(id)arg1;
 - (id)_boundPublisherForPersonID:(id)arg1;
 - (id)_boundServerSideConfigManagerForPersonID:(id)arg1;
 - (id)_boundSharingManagerForPersonID:(id)arg1;
@@ -22,6 +23,7 @@
 - (void)abortAllActivityForPersonID:(id)arg1;
 - (void)computeHashForAsset:(id)arg1 personID:(id)arg2;
 - (id)delegate;
+- (void)deleteAssetCollections:(id)arg1 forPersonID:(id)arg2;
 - (void)didExceedPublishQuotaForPersonID:(id)arg1 retryDate:(id)arg2;
 - (void)didReceiveAuthenticationFailureForPersonID:(id)arg1;
 - (void)didReceiveAuthenticationSuccessForPersonID:(id)arg1;

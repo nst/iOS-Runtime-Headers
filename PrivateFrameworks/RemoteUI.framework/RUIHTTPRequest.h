@@ -17,7 +17,6 @@
 + (id)serviceUnavailableError;
 
 - (void)_finishedLoading;
-- (BOOL)_loggingEnabled;
 - (void)_startedLoading;
 - (void)cancel;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
@@ -31,6 +30,7 @@
 - (BOOL)isLoading;
 - (void)loadRequest:(id)arg1;
 - (void)loadStatusChanged;
+- (BOOL)loggingEnabled;
 - (void)parseData:(id)arg1;
 - (BOOL)receivedValidResponse:(id)arg1;
 - (id)request;

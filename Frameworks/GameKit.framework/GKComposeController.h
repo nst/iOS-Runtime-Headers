@@ -7,6 +7,7 @@
 @interface GKComposeController : GKAbstractComposeController {
     BOOL _alertShown;
     BOOL _alreadySetUp;
+    NSString *_defaultMessage;
     <GKComposeControllerDelegate> *_delegate;
     BOOL _dismissed;
     int _failCount;

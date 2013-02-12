@@ -18,6 +18,7 @@
     AirPlayRemoteSlideshow *_remoteSlideshow;
     NSDictionary *_remoteSlideshowAvailableFeatures;
     BOOL _requiresPassword;
+    struct dispatch_queue_s { } *_resolveQueue;
     BOOL _sentPhoto;
     NSMutableArray *_streamedPhotoUuids;
     BOOL _streamingLocalSlideShow;

@@ -20,5 +20,6 @@
 - (void)populatePostbackDictionary:(id)arg1;
 - (id)rows;
 - (void)setHeaderView:(id)arg1;
+- (void)setImage:(id)arg1;
 
 @end

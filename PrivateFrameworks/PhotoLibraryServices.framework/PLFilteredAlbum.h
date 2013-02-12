@@ -4,11 +4,12 @@
 
 @class <NSObject><NSCopying>, NSDictionary, NSIndexSet, NSMutableIndexSet, NSMutableOrderedSet, NSNumber, NSObject<PLAssetContainer>, NSOrderedSet, NSPredicate, NSString, NSURL, PLIndexMapper, PLManagedAsset, UIImage;
 
-@interface PLFilteredAlbum : NSObject <PLIndexMapperDataSource, PLIndexMappingCache, PLAssetContainer> {
+@interface PLFilteredAlbum : NSObject <PLUserEditableAssetContainer, PLIndexMapperDataSource, PLIndexMappingCache> {
+    NSObject<PLAssetContainer> *_backingAlbum;
+    BOOL _backingAlbumSupportsEdits;
     NSMutableIndexSet *_filteredIndexes;
     PLIndexMapper *_indexMapper;
     NSMutableOrderedSet *_weak_assets;
-    NSObject<PLAssetContainer> *backingAlbum;
     int filter;
     BOOL isObservingContextChanges;
     NSPredicate *predicate;
@@ -43,6 +44,7 @@
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(retain) NSDictionary * slideshowSettings;
 @property(readonly) NSString * title;
+@property(readonly) NSMutableOrderedSet * userEditableAssets;
 @property(readonly) NSString * uuid;
 @property(readonly) unsigned int videosCount;
 
@@ -54,9 +56,11 @@
 + (struct NSObject { Class x1; }*)unfilteredAlbum:(struct NSObject { Class x1; }*)arg1;
 
 - (id)_assets;
+- (id)_editableBackingAlbum;
 - (id)assets;
 - (struct NSObject { Class x1; }*)backingAlbum;
 - (void)backingContextDidChange:(id)arg1;
+- (void)batchFetchAssets:(id)arg1;
 - (id)cachedIndexMapState;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (unsigned int)count;
@@ -97,7 +101,7 @@
 - (void)removeObjectFromFilteredAssetsAtIndex:(unsigned int)arg1;
 - (void)replaceFilteredAssetsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
 - (void)replaceObjectInFilteredAssetsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (void)setBackingAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)setBackingAlbum:(id)arg1;
 - (void)setFilter:(int)arg1;
 - (void)setImportSessionID:(id)arg1;
 - (void)setIsObservingContextChanges:(BOOL)arg1;
@@ -112,6 +116,7 @@
 - (id)slideshowSettings;
 - (id)title;
 - (void)updateStackedImage;
+- (id)userEditableAssets;
 - (id)uuid;
 - (unsigned int)videosCount;
 

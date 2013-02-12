@@ -18,9 +18,9 @@
 @property(retain) NSDate * lastModified;
 @property(retain) NSMutableArray * logMessageList;
 
++ (id)copyReadAlarmsFromPreferences;
 + (BOOL)discardOldVersion;
 + (BOOL)isAlarmNotification:(id)arg1;
-+ (id)readAlarmsFromPreferencesCopy;
 + (id)sharedManager;
 + (BOOL)upgrade;
 + (void)writeAlarmsToPreferences:(id)arg1;

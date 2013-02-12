@@ -11,6 +11,7 @@
     BOOL _invalidated;
     id _progressHandler;
     struct dispatch_queue_s { } *_queue;
+    int _retainCount;
 }
 
 @property(readonly) BOOL canCancel;
@@ -24,8 +25,10 @@
 + (id)newObserverForMediaItem:(id)arg1;
 + (id)sharedITunesStoreDownloadManager;
 
+- (BOOL)_isDeallocating;
 - (void)_onQueue_invalidate;
 - (void)_onQueue_setShouldFireProgressHandler;
+- (BOOL)_tryRetain;
 - (BOOL)canCancel;
 - (void)cancelDownload;
 - (void)dealloc;
@@ -35,6 +38,9 @@
 - (BOOL)isCurrentlyPlayable;
 - (BOOL)isRestoreDownload;
 - (id)progressHandler;
+- (oneway void)release;
+- (id)retain;
+- (unsigned int)retainCount;
 - (void)setProgressHandler:(id)arg1;
 
 @end

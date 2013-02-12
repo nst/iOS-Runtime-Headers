@@ -2,24 +2,24 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKRibbonSegmentedControl, UIView;
+@class GKHeaderSegmentedControl, UIView;
 
-@interface GKLeaderboardControlSection : NSObject <GKTableSection, GKRibbonSegmentedControlDelegate> {
+@interface GKLeaderboardControlSection : NSObject <GKTableSection, GKHeaderSegmentedControlDelegate> {
     UIView *_controlContainer;
-    GKRibbonSegmentedControl *_timeScopeSegmentedControl;
+    GKHeaderSegmentedControl *_timeScopeSegmentedControl;
     BOOL _visible;
 }
 
 @property(retain) UIView * controlContainer;
 @property(getter=isLoading) BOOL loading;
 @property int timeScope;
-@property(retain) GKRibbonSegmentedControl * timeScopeSegmentedControl;
+@property(retain) GKHeaderSegmentedControl * timeScopeSegmentedControl;
 @property(getter=isVisible) BOOL visible;
 
 - (id)controlContainer;
+- (void)headerSegmentedControlChanged:(id)arg1;
 - (id)init;
 - (BOOL)isVisible;
-- (void)ribbonSegmentedControlChanged:(id)arg1;
 - (float)sectionHeaderHeightInTableView:(id)arg1;
 - (id)sectionHeaderViewInTableView:(id)arg1;
 - (int)sectionRowCountInTableView:(id)arg1;

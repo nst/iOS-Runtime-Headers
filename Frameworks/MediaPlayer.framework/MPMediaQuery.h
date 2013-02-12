@@ -71,6 +71,7 @@
 - (void)_enumerateItemsUsingBlock:(id)arg1;
 - (struct MPMediaQueryInternal { id x1; id x2; int x3; id x4; int x5; })_internal;
 - (BOOL)_isFilteringDisabled;
+- (id)_itemsImmediately:(BOOL)arg1;
 - (id)_orderingProperties;
 - (id)_sanitizedQuery;
 - (void)_setOrderingProperties:(id)arg1;

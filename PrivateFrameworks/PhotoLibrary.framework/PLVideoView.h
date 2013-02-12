@@ -32,7 +32,6 @@
     unsigned int _isMoviePlayerDelegate : 1;
     unsigned int _moviePlayerIsReady : 1;
     unsigned int _moviePlayerDidBuffer : 1;
-    unsigned int _hidePosterImage : 1;
     unsigned int _showingOverlay : 1;
     unsigned int _showingScrubber : 1;
     unsigned int _showScrubberWhenMovieIsReady : 1;
@@ -77,6 +76,7 @@
     NSTimer *_scrubberUpdateTimer;
     float _scrubberWidth;
     PLAirTunesService *_selectedAirTunesService;
+    UIImage *_snapshotImage;
     NSDictionary *_thumbnailOptionsDict;
     NSLock *_thumbnailReqlock;
     NSMutableDictionary *_thumbnailRequests;
@@ -135,7 +135,7 @@
 - (void)_cancelRemaking:(id)arg1;
 - (void)_clearImageGenerators;
 - (void)_createScrubberIfNeeded;
-- (void)_delayedHidePosterFrame;
+- (void)_delayedAddAirPlayBackground;
 - (void)_destroyGenerators;
 - (void)_didBeginPlayback;
 - (void)_didScrubToValue:(double)arg1 withHandle:(int)arg2;
@@ -145,6 +145,7 @@
 - (void)_hideVideoOverlay:(BOOL)arg1;
 - (void)_informDelegateAboutProgressChange:(float)arg1;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
+- (void)_invalidateSnapshotImage;
 - (id)_loadThumbnailsIntoDictionary:(id)arg1 isLandscape:(BOOL)arg2 aspectRatio:(float)arg3;
 - (BOOL)_mediaIsPlayable;
 - (BOOL)_mediaIsVideo;
@@ -177,7 +178,6 @@
 - (void)_serviceImageGenerationRequest;
 - (void)_setNeedsReloadScrubberThumbnails:(BOOL)arg1;
 - (void)_setPlaying:(BOOL)arg1;
-- (void)_setScaleModeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_showVideoOverlay;
 - (void)_startDeliveringNotificationsToMainThread;
 - (void)_stopDeliveringNotifications;
@@ -185,12 +185,15 @@
 - (void)_trimProgressChanged:(id)arg1;
 - (void)_updatePosterFrameVisibility;
 - (void)_updatePosterImageView;
+- (void)_updateScaleModeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateScrubberFrame;
 - (void)_updateScrubberValue;
 - (void)_updateScrubberVisibilityWithDuration:(double)arg1;
+- (void)_updateSnapshotImage;
 - (void)_updateTrimProgress;
 - (void)_verifyPlaybackHasBegun;
 - (void)_videoOverlayFadeOutDidFinish;
+- (id)_videoSnapshot;
 - (void)adjustUIForVideoOut:(BOOL)arg1;
 - (BOOL)canEdit;
 - (void)cancelTrim;
@@ -224,7 +227,7 @@
 - (BOOL)moviePlayerHeadsetPreviousTrackPressed:(id)arg1;
 - (void)moviePlayerPlaybackDidEnd:(id)arg1;
 - (void)moviePlayerPlaybackRateDidChange:(id)arg1;
-- (void)moviePlayerPlaybackStateDidChange:(id)arg1;
+- (void)moviePlayerPlaybackStateDidChange:(id)arg1 fromPlaybackState:(unsigned int)arg2;
 - (void)moviePlayerReadyToPlay:(id)arg1;
 - (void)movieScrubber:(id)arg1 editingEndValueDidChange:(double)arg2;
 - (void)movieScrubber:(id)arg1 editingStartValueDidChange:(double)arg2;

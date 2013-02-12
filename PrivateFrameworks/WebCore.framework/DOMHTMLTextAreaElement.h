@@ -40,6 +40,7 @@
 - (BOOL)disabled;
 - (id)endPosition;
 - (id)form;
+- (BOOL)isEditing;
 - (BOOL)isTextControl;
 - (id)labels;
 - (int)maxLength;

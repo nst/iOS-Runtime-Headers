@@ -50,6 +50,7 @@
 - (BOOL)moviePlayerAddBookmarkButtonPressed:(id)arg1;
 - (BOOL)moviePlayerBackwardButtonPressed:(id)arg1;
 - (void)moviePlayerBufferingStateDidChange:(id)arg1;
+- (void)moviePlayerDidEnterFullscreen:(id)arg1;
 - (void)moviePlayerDidExitFullscreen:(id)arg1;
 - (void)moviePlayerDidHideOverlay:(id)arg1;
 - (void)moviePlayerDidShowOverlay:(id)arg1;

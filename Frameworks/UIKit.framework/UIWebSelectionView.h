@@ -125,7 +125,7 @@
 - (BOOL)shouldSwitchToBlockModeForHandle:(id)arg1;
 - (void)showControls;
 - (void)showControlsAfterRotation;
-- (void)showCopyCallout;
+- (void)showCopyCalloutWithAnimation:(BOOL)arg1;
 - (void)startSelectionCreationWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopAnyAutoscrolling;
 - (void)switchToBlockModeForHandle:(id)arg1;

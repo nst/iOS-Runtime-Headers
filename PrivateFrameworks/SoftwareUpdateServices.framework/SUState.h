@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class NSDate, NSString, SUDescriptor, SUDownload;
+@class NSDate, NSString, SUDescriptor, SUDownload, SUDownloadInterfaceReport;
 
 @interface SUState : NSObject {
     BOOL _autodownloadNeedsOneTimeRetry;
+    SUDownloadInterfaceReport *_downloadInterfaceReport;
     SUDownload *_lastDownload;
     NSString *_lastProductBuild;
     NSString *_lastProductType;
@@ -19,6 +20,7 @@
 }
 
 @property BOOL autodownloadNeedsOneTimeRetry;
+@property(retain) SUDownloadInterfaceReport * downloadInterfaceReport;
 @property(copy) SUDownload * lastDownload;
 @property(retain) NSString * lastProductBuild;
 @property(retain) NSString * lastProductType;
@@ -37,6 +39,7 @@
 - (BOOL)autodownloadNeedsOneTimeRetry;
 - (void)dealloc;
 - (id)description;
+- (id)downloadInterfaceReport;
 - (id)init;
 - (id)lastDownload;
 - (id)lastProductBuild;
@@ -53,6 +56,7 @@
 - (id)scheduledAutodownloadWifiPeriodEndTime;
 - (id)scheduledManualDownloadWifiPeriodEndTime;
 - (void)setAutodownloadNeedsOneTimeRetry:(BOOL)arg1;
+- (void)setDownloadInterfaceReport:(id)arg1;
 - (void)setLastDownload:(id)arg1;
 - (void)setLastProductBuild:(id)arg1;
 - (void)setLastProductType:(id)arg1;

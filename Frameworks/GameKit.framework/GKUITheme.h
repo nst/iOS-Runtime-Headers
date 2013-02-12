@@ -66,7 +66,6 @@
 @property(readonly) UIColor * leaderboardScoreColor;
 @property(readonly) UIColor * lowContrastSecondaryLabelColor;
 @property(readonly) float modalTableViewMargin;
-@property(readonly) UIImage * multiplayerBadgeImage;
 @property(readonly) GKImageSource * photoDetailLandscapeSource;
 @property(readonly) GKImageSource * photoDetailSource;
 @property(readonly) GKImageSource * photoLeaderboardSource;
@@ -238,13 +237,14 @@
 - (id)matchmakerAppOutline;
 - (id)matchmakerButtonFontOfSize:(float)arg1;
 - (float)modalTableViewMargin;
-- (id)multiplayerBadgeImage;
 - (id)navbarBackButtonForControlState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (id)navbarButtonForControlState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (id)navbarCornerImage;
 - (id)navbarFocusButtonForControlState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (id)navbarLandscapeImage;
 - (id)navbarPortraitImage;
 - (id)navbarShadowImage;
+- (id)navbarSplitCornerImage;
 - (id)photoDetailLandscapeSource;
 - (id)photoDetailSource;
 - (id)photoLeaderboardSource;
@@ -299,6 +299,7 @@
 - (id)smallTitleFont;
 - (id)smallTokenBackgroundForType:(int)arg1;
 - (id)tabbarActiveTabImage;
+- (id)tabbarCornerImage;
 - (id)tabbarIconFriendsActive:(BOOL)arg1;
 - (id)tabbarIconGamesActive:(BOOL)arg1;
 - (id)tabbarIconMeActive:(BOOL)arg1;

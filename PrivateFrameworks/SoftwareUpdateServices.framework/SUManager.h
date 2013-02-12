@@ -15,6 +15,8 @@
     BOOL _downloading;
     BOOL _foreground;
     BOOL _installing;
+    int _prevNetworkType;
+    BOOL _recentlyChangedNetworks;
     NSMutableArray *_scanRequests;
     BOOL _scanning;
     SUState *_state;
@@ -71,6 +73,7 @@
 - (void)_verifyAndPrepareUpdate;
 - (struct __MobileAsset { }*)assetToDownloadFromLastScan;
 - (void)autoScanAndDownloadIfAvailable:(int)arg1;
+- (int)bestGuessDownloadNetworkType;
 - (BOOL)cancelDownload:(id*)arg1;
 - (void)cellularRoamingStatusChanged:(BOOL)arg1;
 - (void)dealloc;
@@ -78,6 +81,7 @@
 - (id)download;
 - (struct __MobileAsset { }*)downloadAsset;
 - (void)endAutodownloadTasksAndResetState;
+- (id)getOrCreateDownloadInterfaceReport;
 - (id)init;
 - (BOOL)installUpdate:(id*)arg1;
 - (BOOL)isDownloadHalted;
@@ -86,6 +90,7 @@
 - (BOOL)isInstalling;
 - (BOOL)isScanning;
 - (BOOL)isUpdateReadyForInstallation:(id*)arg1;
+- (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)noteAutodownloadFailedToStartWithError:(id)arg1;
 - (void)notifyScanDidComplete:(id)arg1 error:(id)arg2;
 - (void)notifyScanRequestDidFinish:(id)arg1 update:(id)arg2 error:(id)arg3;

@@ -16,6 +16,8 @@
 + (void)initialize;
 
 - (void)addMetric:(id)arg1;
+- (void)clearMetrics;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

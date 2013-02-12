@@ -63,6 +63,7 @@
 - (void)_gotoStoreURL:(id)arg1 withAuthentication:(BOOL)arg2 forceAuthentication:(BOOL)arg3;
 - (BOOL)_isRunningTest;
 - (BOOL)_launchedToTest;
+- (void)_showMediaPlayerForMediaItem:(id)arg1;
 - (void)_startedTest:(id)arg1;
 - (void)accessibilityPostLayoutChange;
 - (id)accountDSID;
@@ -133,6 +134,8 @@
 - (id)makeDialog;
 - (id)makeDocumentInteractionController;
 - (id)makeLinearGradientWithX0:(float)arg1 y0:(float)arg2 x1:(float)arg3 y1:(float)arg4;
+- (id)makeMediaPlayerItemWithProperties:(id)arg1;
+- (id)makeMediaPlayerViewControllerWithMediaPlayerItem:(id)arg1;
 - (id)makeMenuViewController;
 - (id)makeMessage;
 - (id)makeMessageEntryViewController;
@@ -198,6 +201,7 @@
 - (void)showAlertWithMessage:(id)arg1 title:(id)arg2 buttonTitle:(id)arg3;
 - (BOOL)showConfirmWithMessage:(id)arg1 title:(id)arg2 okButtonTitle:(id)arg3 cancelButtonTitle:(id)arg4;
 - (void)showMediaPlayerWithURLString:(id)arg1 orientation:(id)arg2 title:(id)arg3 subtitle:(id)arg4 bookmarkID:(id)arg5 duration:(id)arg6 type:(id)arg7 imageURL:(id)arg8;
+- (void)showMediaPreviewWithURLString:(id)arg1;
 - (void)showMediaPreviewWithURLString:(id)arg1;
 - (id)showPromptWithMessage:(id)arg1 initialValue:(id)arg2 title:(id)arg3 okButtonTitle:(id)arg4 cancelButtonTitle:(id)arg5;
 - (void)signOutPrimaryAccount;

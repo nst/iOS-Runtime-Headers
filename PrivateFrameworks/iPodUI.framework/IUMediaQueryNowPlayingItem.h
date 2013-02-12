@@ -24,6 +24,7 @@
 - (unsigned int)albumTrackCount;
 - (unsigned int)albumTrackNumber;
 - (BOOL)allowAutoChangingScaleModeToFill;
+- (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 - (id)artist;
 - (id)artworkImageData;
 - (id)artworkMIMEType;
@@ -47,6 +48,7 @@
 - (BOOL)isPlaceholderForItem:(id)arg1;
 - (BOOL)isStreamable;
 - (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (id)mediaItem;

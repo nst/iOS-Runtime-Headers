@@ -45,6 +45,7 @@
 - (void)setPushToken:(id)arg1;
 - (void)setRequestPriority:(unsigned int)arg1;
 - (void)setRestrictions:(id)arg1;
+- (void)setStoreMode:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)setURL:(id)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;

@@ -30,6 +30,7 @@
 - (void)_rollLogs;
 - (void)_statFileIfNecessaryForRollingCheck;
 - (id)compressFile:(id)arg1;
+- (void)dealloc;
 - (id)fh;
 - (id)initWithFilename:(id)arg1;
 - (id)lastStatDate;

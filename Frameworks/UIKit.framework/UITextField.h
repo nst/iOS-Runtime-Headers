@@ -17,6 +17,9 @@
     struct CGSize { 
         float width; 
         float height; 
+    struct CGSize { 
+        float width; 
+        float height; 
     struct { 
         unsigned int secureTextChanged : 1; 
         unsigned int guard : 1; 
@@ -76,6 +79,9 @@
     int _scrollYOffset;
     } _selectionRange;
     UITextSelectionView *_selectionView;
+    float _shadowBlur;
+    UIColor *_shadowColor;
+    } _shadowOffset;
     NSString *_style;
     UITextFieldLabel *_suffixLabel;
     int _suffixWidth;
@@ -145,6 +151,7 @@
 - (id)_copyFont:(id)arg1 newSize:(float)arg2 maxSize:(float)arg3;
 - (id)_createCSSStyleDeclarationForWebView:(id)arg1;
 - (void)_define:(id)arg1;
+- (id)_dictationInterpretations;
 - (void)_drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLabel:(id)arg2;
 - (void)_encodeBackgroundColorWithCoder:(id)arg1;
 - (void)_endedEditing;
@@ -273,6 +280,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForRange:(id)arg1;
 - (id)font;
 - (void)forwardInvocation:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (BOOL)hasMarkedText;
 - (BOOL)hasSelection;
 - (BOOL)hasText;
@@ -283,11 +291,10 @@
 - (id)inputAccessoryView;
 - (id)inputDelegate;
 - (id)inputView;
-- (void)insertMarsVoltas:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (id)insertDictationResultPlaceholder;
 - (void)insertText:(id)arg1;
-- (id)insertYakushimasPlaceholder:(struct CGSize { float x1; float x2; })arg1;
 - (id)interactionAssistant;
-- (id)interpretationsForMarsVoltas;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isEditable;
 - (BOOL)isEditing;
@@ -308,7 +315,7 @@
 - (void)makeTextWritingDirectionRightToLeft:(id)arg1;
 - (id)markedTextRange;
 - (id)markedTextStyle;
-- (id)metadataDictionariesForMarsVoltas;
+- (id)metadataDictionariesForDictationResults;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (float)minimumFontSize;
 - (int)offsetFromPosition:(id)arg1 toPosition:(id)arg2;
@@ -325,7 +332,7 @@
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
 - (id)rectsForRange:(id)arg1;
-- (void)removeYakushimasPlaceholder:(id)arg1 willInsertText:(BOOL)arg2;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (void)replace:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (BOOL)resignFirstResponder;
@@ -398,6 +405,9 @@
 - (void)setSelectionGranularity:(int)arg1;
 - (void)setSelectionRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setSelectionVisible:(BOOL)arg1;
+- (void)setShadowBlur:(float)arg1;
+- (void)setShadowColor:(id)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextAutorresizesToFit:(BOOL)arg1;
@@ -406,6 +416,9 @@
 - (void)setTextColor:(id)arg1;
 - (void)setTextFont:(id)arg1;
 - (void)setUndoEnabled:(BOOL)arg1;
+- (float)shadowBlur;
+- (id)shadowColor;
+- (struct CGSize { float x1; float x2; })shadowOffset;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
 - (id)supportedPasteboardTypes;

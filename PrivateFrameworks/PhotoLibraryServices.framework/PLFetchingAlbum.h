@@ -16,10 +16,15 @@
 @property(retain) NSOrderedSet * fetchedAssets;
 @property(readonly) BOOL hasAssetsCache;
 
++ (BOOL)contextShouldIgnoreChangesForFetchRequest;
++ (BOOL)contextShouldIgnoreChangesForFetchedAssets;
++ (BOOL)contextShouldIgnoreChangesForFetchedAssetsSet;
+
 - (unsigned int)_fetchedCountForAssetsOfKind:(int)arg1;
 - (id)assets;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
+- (void)batchFetchAssets:(id)arg1;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (unsigned int)count;
 - (unsigned int)countForAssetsOfKind:(int)arg1;

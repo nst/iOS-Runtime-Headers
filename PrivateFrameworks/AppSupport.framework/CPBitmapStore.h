@@ -42,6 +42,7 @@
 - (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
 - (struct sqlite3_stmt { }*)saveStmt;
 - (int)setVersion:(int)arg1;
+- (void)storeImageForKey:(id)arg1 inGroup:(id)arg2 opaque:(BOOL)arg3 image:(struct CGImage { }*)arg4;
 - (int)version;
 
 @end

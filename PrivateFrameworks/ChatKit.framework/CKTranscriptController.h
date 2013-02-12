@@ -172,6 +172,7 @@
 
 - (void)__handleLoggingTapped:(id)arg1;
 - (id)_abPersonViewControllerForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
+- (id)_abPropertyTypesForCurrentConversation;
 - (float)_accessoryViewHeight;
 - (id)_actionsToolbar;
 - (void)_actuallyClearCurrentMessageThread;
@@ -238,7 +239,6 @@
 - (id)_fullscreenImageWithSource:(struct CGImageSource { }*)arg1;
 - (id)_fullscreenPhotoScrollerNavigationController;
 - (void)_generatePreviewsForMediaObject:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)_handleAddressBookChangedNotification:(id)arg1;
 - (void)_handleMadridLoginAccountStatusChangedNotification:(id)arg1;
 - (void)_handleMessagePartsUpdated:(id)arg1;
@@ -247,6 +247,7 @@
 - (void)_handleSendAsSMSSettingChanged:(id)arg1;
 - (float)_heightOfContactPhotoForMessageAtIndex:(int)arg1;
 - (float)_heightOfKeyboard;
+- (float)_heightOfKeyboardScreenFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2;
 - (float)_heightOfKeyboardScreenFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_heightOfSpaceAboveKeyboard:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 undocked:(BOOL)arg2;
 - (float)_heightOfTopTranscriptArea;
@@ -265,10 +266,10 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrameForKeyboardScreenFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_keyboardIsOnScreen;
+- (BOOL)_keyboardIsUndocked;
 - (void)_keyboardLayoutDidChange:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardScreenFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withoutAccessoryViewOfHeight:(float)arg2 orientation:(int)arg3;
 - (BOOL)_keyboardScreenFrameIsOnScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)_keyboardUndocked;
 - (void)_keyboardWillShowOrHide:(id)arg1;
 - (id)_localLogDumpButtonTitle;
 - (void)_localeChanged:(id)arg1;
@@ -410,10 +411,10 @@
 - (id)defaultFirstResponder;
 - (void)deleteBackward;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void)dismissPeoplePicker:(id)arg1;
 - (void)dismissPeoplePicker;
 - (void)dismissPreviewController;
+- (void)dismissViewControllerWithTransition:(int)arg1 completion:(id)arg2;
 - (id)effectsWindow;
 - (void)entryDebugClear;
 - (void)entryDebugSliderChange:(id)arg1;

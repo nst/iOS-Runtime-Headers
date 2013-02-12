@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface UIKBBackgroundView : UIView {
+@interface UIKBBackgroundView : UIView <UIKBCacheableView> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -30,6 +30,9 @@
     int _visualStyle;
 }
 
+@property(readonly) BOOL cacheDeferable;
+
+- (BOOL)cacheDeferable;
 - (id)cacheKey;
 - (void)dealloc;
 - (void)displayLayer:(id)arg1;

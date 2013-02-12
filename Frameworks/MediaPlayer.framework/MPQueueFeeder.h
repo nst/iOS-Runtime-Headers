@@ -74,6 +74,7 @@
 - (void)setRepresentedObject:(id)arg1;
 - (void)setShuffleType:(unsigned int)arg1;
 - (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
+- (BOOL)shouldReloadForChangeFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
 - (unsigned int)shuffleType;
 - (BOOL)trackChangesCanEndPlayback;

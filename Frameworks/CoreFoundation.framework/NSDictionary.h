@@ -58,6 +58,7 @@
 - (id)_dictionaryForKey:(id)arg1;
 - (id)_gkAdamID;
 - (id)_gkExternalVersion;
+- (id)_gkImageUrlForSize:(int)arg1;
 - (BOOL)_gkIsGameCenterEnabled;
 - (BOOL)_gkIsGameCenterEverEnabled;
 - (id)_gkItemName;

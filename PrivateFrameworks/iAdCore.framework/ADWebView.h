@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class <ADWebViewDelegate><UIWebViewDelegate>, <UIWebViewDelegate><ADWebViewDelegate>, NSMapTable, NSMutableDictionary, NSString;
+@class <ADWebViewDelegate><UIWebViewDelegate>, <UIWebViewDelegate><ADWebViewDelegate>, NSMutableDictionary, NSString;
 
 @interface ADWebView : UIWebView {
     <ADWebViewDelegate><UIWebViewDelegate> *_delegate;
     BOOL _paused;
     NSMutableDictionary *_resourceLoadStartDates;
-    NSMapTable *_scriptSources;
     BOOL _shouldReportResourceTiming;
     BOOL _shouldReportScriptErrors;
     NSString *_userAgent;
@@ -19,7 +18,6 @@
 @property(readonly) struct OpaqueJSContext { }* javaScriptContextRef;
 @property BOOL paused;
 @property(retain) NSMutableDictionary * resourceLoadStartDates;
-@property(retain) NSMapTable * scriptSources;
 @property BOOL shouldReportResourceTiming;
 @property BOOL shouldReportScriptErrors;
 @property(copy) NSString * userAgent;
@@ -38,12 +36,10 @@
 - (void)loadWebArchive:(id)arg1;
 - (BOOL)paused;
 - (id)resourceLoadStartDates;
-- (id)scriptSources;
 - (void)sendOrientationEventForOrientation:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setResourceLoadStartDates:(id)arg1;
-- (void)setScriptSources:(id)arg1;
 - (void)setShouldReportResourceTiming:(BOOL)arg1;
 - (void)setShouldReportScriptErrors:(BOOL)arg1;
 - (void)setUserAgent:(id)arg1;
@@ -57,8 +53,5 @@
 - (void)webThreadWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
 - (void)webThreadWebView:(id)arg1 resource:(id)arg2 didReceiveResponse:(id)arg3 fromDataSource:(id)arg4;
 - (id)webThreadWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
-- (void)webView:(id)arg1 didParseSource:(id)arg2 baseLineNumber:(unsigned int)arg3 fromURL:(id)arg4 sourceId:(long)arg5 forWebFrame:(id)arg6;
-- (void)webView:(id)arg1 exceptionWasRaised:(id)arg2 hasHandler:(BOOL)arg3 sourceId:(long)arg4 line:(int)arg5 forWebFrame:(id)arg6;
-- (void)webView:(id)arg1 failedToParseSource:(id)arg2 baseLineNumber:(unsigned int)arg3 fromURL:(id)arg4 withError:(id)arg5 forWebFrame:(id)arg6;
 
 @end

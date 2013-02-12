@@ -15,6 +15,7 @@
 - (void)_handleXPCError:(void*)arg1;
 - (void)_handleXPCEvent:(void*)arg1;
 - (void)_setEventHandlerForXPCConnection;
+- (void)cancel;
 - (void)dealloc;
 - (struct dispatch_queue_s { }*)eventQueue;
 - (id)initWithServiceName:(id)arg1 eventQueue:(struct dispatch_queue_s { }*)arg2;

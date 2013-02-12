@@ -5,21 +5,21 @@
 @class <CoreDAVAccountInfoProvider>, NSArray;
 
 @interface CoreDAVRequestLogger : NSObject {
+    NSArray *_headerSortDescriptors;
     <CoreDAVAccountInfoProvider> *_provider;
-    NSArray *_responseHeadersSortDescriptors;
     int _snippetsLogged;
 }
 
-@property(retain) NSArray * responseHeadersSortDescriptors;
+@property(retain) NSArray * headerSortDescriptors;
 
 - (id)_inflateRequestBody:(id)arg1;
 - (void)dealloc;
 - (void)finishCoreDAVResponse;
+- (id)headerSortDescriptors;
 - (id)initWithProvider:(id)arg1;
 - (void)logCoreDAVRequest:(id)arg1;
 - (void)logCoreDAVResponseHeaders:(id)arg1 andStatusCode:(int)arg2;
 - (void)logCoreDAVResponseSnippet:(id)arg1;
-- (id)responseHeadersSortDescriptors;
-- (void)setResponseHeadersSortDescriptors:(id)arg1;
+- (void)setHeaderSortDescriptors:(id)arg1;
 
 @end

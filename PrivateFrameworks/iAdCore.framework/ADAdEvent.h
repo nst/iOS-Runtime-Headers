@@ -25,6 +25,7 @@
 
 - (int)connectionType;
 - (id)context;
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (int)deviceOrientation;

@@ -114,6 +114,7 @@
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forItem:(id)arg3 column:(int)arg4;
 - (id)tableView:(id)arg1 prepareContents:(id)arg2 forItem:(id)arg3;
 - (void)tableView:(id)arg1 prepareExpensiveContentAtIndexPaths:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)tableView:(id)arg1 refreshCellAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2 column:(int)arg3;
 - (id)tableView:(id)arg1 reuseIdentifierForRow:(int)arg2;
 - (id)tableView:(id)arg1 reuseIdentifiersForRow:(int)arg2;

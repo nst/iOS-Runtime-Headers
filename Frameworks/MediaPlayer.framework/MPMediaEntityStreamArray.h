@@ -10,6 +10,7 @@
     unsigned int _hasIsEmpty : 1;
     unsigned int _hasStartedLoadingIsEmpty : 1;
     unsigned int _hasStartedLoadingEntities : 1;
+    unsigned int _isImmediate : 1;
     int _containedMediaTypes;
     unsigned int _count;
     struct __CFArray { } *_countAndSectionInfoSemaphores;
@@ -43,6 +44,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithEntityType:(int)arg1 queryCriteria:(id)arg2 library:(id)arg3 immediate:(BOOL)arg4;
 - (id)initWithEntityType:(int)arg1 queryCriteria:(id)arg2 library:(id)arg3;
 - (id)library;
 - (id)objectAtIndex:(unsigned int)arg1;

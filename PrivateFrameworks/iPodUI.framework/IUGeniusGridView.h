@@ -9,6 +9,7 @@
     NSMutableArray *_coverViews;
     UIView *_coversViewContainer;
     <IUGeniusGridViewDelegate> *_delegate;
+    BOOL _enabled;
     struct CGImage { } *_image;
     int _orientation;
     UIImageView *_playImageView;
@@ -21,6 +22,7 @@
 @property(readonly) UIView * coversViewContainer;
 @property <IUGeniusGridViewDelegate> * delegate;
 @property(readonly) double durationForFlip;
+@property(getter=isEnabled) BOOL enabled;
 @property struct CGImage { }* image;
 @property(readonly) int orientation;
 @property(retain) NSArray * representativeArtists;
@@ -37,7 +39,7 @@
 - (void)_removeAllAnimations;
 - (void)_setCoverImages;
 - (void)_statusBarHeightDidChange:(id)arg1;
-- (void)_updateArtistsLabelForStatusBarHeightChange;
+- (void)_updateArtistsLabelLayout;
 - (id)coversViewContainer;
 - (void)dealloc;
 - (id)delegate;
@@ -45,11 +47,13 @@
 - (void)flipToOrientation:(int)arg1 animated:(BOOL)arg2;
 - (struct CGImage { }*)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isEnabled;
 - (void)layoutSubviews;
 - (int)orientation;
 - (void)prepareForReuse;
 - (id)representativeArtists;
 - (void)setDelegate:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setImage:(struct CGImage { }*)arg1;
 - (void)setRepresentativeArtists:(id)arg1;
 - (void)setShowsPlayButton:(BOOL)arg1;

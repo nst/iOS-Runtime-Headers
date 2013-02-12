@@ -54,6 +54,7 @@
 - (void)_playButtonPressed:(id)arg1;
 - (void)_savePhotoFinished:(id)arg1;
 - (void)_setMode:(int)arg1;
+- (void)_updateCropRectInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateTitle;
 - (void)_updateToolbarItems:(BOOL)arg1;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(int)arg4;
@@ -107,5 +108,6 @@
 - (id)telephonyUIBottomBar;
 - (id)telephonyUIShutterButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleCropRect;
 
 @end

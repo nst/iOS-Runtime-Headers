@@ -15,7 +15,8 @@
 
 - (id)_idForReactor:(id)arg1;
 - (void)_makePresenter:(id)arg1 accommodateDeletionWithSubitemURL:(id)arg2 completionHandler:(id)arg3;
-- (void)_makePresenter:(id)arg1 observeMoveToURL:(id)arg2;
+- (void)_makePresenter:(id)arg1 observeChangeWithSubitemURL:(id)arg2;
+- (void)_makePresenter:(id)arg1 observeMoveToURL:(id)arg2 withSubitemURL:(id)arg3;
 - (void)_makePresenter:(id)arg1 observeVersionChangeOfKind:(id)arg2 withClientID:(id)arg3 name:(id)arg4 subitemURL:(id)arg5;
 - (void)_makePresenter:(id)arg1 reacquireFromReadingClaimForID:(id)arg2;
 - (void)_makePresenter:(id)arg1 reacquireFromWritingClaimForID:(id)arg2;
@@ -23,7 +24,6 @@
 - (void)_makePresenter:(id)arg1 relinquishToReadingClaimWithID:(id)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
 - (void)_makePresenter:(id)arg1 relinquishToWritingClaimWithID:(id)arg2 options:(unsigned int)arg3 subitemURL:(id)arg4 completionHandler:(id)arg5;
 - (void)_makePresenter:(id)arg1 saveChangesWithCompletionHandler:(id)arg2;
-- (void)_makePresenterObserveChange:(id)arg1;
 - (void)_makeProvider:(id)arg1 cancelProvidingItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3;
 - (void)_makeProvider:(id)arg1 provideItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3 completionHandler:(id)arg4;
 - (id)_readRelinquishmentForPresenter:(id)arg1;

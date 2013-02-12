@@ -35,6 +35,7 @@
         } x1; int x2; int x3; } *_record;
     NSString *_subject;
     NSString *_text;
+    NSString *_voicemailString;
 }
 
 @property(retain,readonly) NSString * address;
@@ -117,5 +118,6 @@
 - (void)setIdentifier:(int)arg1;
 - (id)subject;
 - (id)text;
+- (id)voicemailString;
 
 @end

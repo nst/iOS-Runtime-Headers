@@ -15,6 +15,7 @@
     NSArray *normalizedInputModes;
 }
 
+@property(readonly) BOOL containsDictationSupportedInputMode;
 @property(retain) UIKeyboardInputMode * currentInputMode;
 @property(retain) NSString * currentLanguage;
 @property(retain) NSString * currentLocale;
@@ -30,6 +31,7 @@
 
 - (id)activeInputModes;
 - (void)clearCachedValues;
+- (BOOL)containsDictationSupportedInputMode;
 - (id)currentInputMode;
 - (id)currentLanguage;
 - (id)currentLocale;

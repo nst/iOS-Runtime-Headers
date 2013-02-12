@@ -64,6 +64,7 @@
 - (unsigned int)mf_removeObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
+- (void)movePlacesWithOnePhotoInto:(id)arg1;
 - (id)nextDequeuedObject;
 - (id)pop;
 - (void)push:(id)arg1;

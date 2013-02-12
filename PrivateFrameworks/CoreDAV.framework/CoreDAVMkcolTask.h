@@ -2,18 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVTaskDelegate>, NSSet;
+@class <CoreDAVTaskDelegate>, NSSet, NSURL;
 
-@interface CoreDAVMkcolTask : CoreDAVTask {
-    int _order;
+@interface CoreDAVMkcolTask : CoreDAVActionBackedTask {
+    int _absoluteOrder;
+    NSURL *_priorOrderedURL;
     NSSet *_propertiesToSet;
     BOOL _sendOrder;
 }
 
+@property int absoluteOrder;
 @property <CoreDAVTaskDelegate> * delegate;
-@property int order;
+@property(retain) NSURL * priorOrderedURL;
 @property(retain) NSSet * propertiesToSet;
 
+- (int)absoluteOrder;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
@@ -22,10 +25,11 @@
 - (id)httpMethod;
 - (id)initWithPropertiesToSet:(id)arg1 atURL:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (int)order;
+- (id)priorOrderedURL;
 - (id)propertiesToSet;
 - (id)requestBody;
-- (void)setOrder:(int)arg1;
+- (void)setAbsoluteOrder:(int)arg1;
+- (void)setPriorOrderedURL:(id)arg1;
 - (void)setPropertiesToSet:(id)arg1;
 
 @end

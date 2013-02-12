@@ -55,8 +55,6 @@
         unsigned int isHeadsetButtonDown : 1; 
         unsigned int isFastForwardActive : 1; 
         unsigned int isRewindActive : 1; 
-        unsigned int disableViewGroupOpacity : 1; 
-        unsigned int disableViewEdgeAntialiasing : 1; 
         unsigned int shakeToEdit : 1; 
         unsigned int isClassic : 1; 
         unsigned int zoomInClassicMode : 1; 
@@ -72,6 +70,7 @@
         unsigned int delegateWantsNextResponder : 1; 
         unsigned int isRunningInApplicationSwitcher : 1; 
         unsigned int isSendingEventForProgrammaticTouchCancellation : 1; 
+        unsigned int calledInitializationDelegates : 1; 
     } _applicationFlags;
     <UIApplicationDelegate> *_delegate;
     id _editAlertView;
@@ -164,6 +163,7 @@
 - (void)_cancelViewProcessingOfTouches:(id)arg1 withEvent:(id)arg2 sendingTouchesCancelledToViewsOfTouches:(id)arg3;
 - (void)_clearTouchesForView:(id)arg1;
 - (struct CGImage { }*)_createDefaultImageSnapshot;
+- (void)_createHangTracerTimerWithDuration:(double)arg1;
 - (void)_createStatusBarWithRequestedStyle:(int)arg1 orientation:(int)arg2 hidden:(BOOL)arg3;
 - (int)_currentExpectedInterfaceOrientation;
 - (id)_currentTests;
@@ -182,6 +182,7 @@
 - (void)_fetchInfoPlistFlags;
 - (int)_frontMostAppOrientation;
 - (unsigned int)_frontmostApplicationPort;
+- (struct _xpc_connection_s { }*)_getHangTracerConnection;
 - (int)_getSpringBoardOrientation;
 - (void*)_getSymbol:(id)arg1 forFramework:(id)arg2;
 - (BOOL)_gkSendAction:(SEL)arg1 viaResponder:(id)arg2 withObject:(id)arg3;
@@ -213,8 +214,6 @@
 - (BOOL)_isTouchEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_isTrackingAnyTouch;
 - (BOOL)_isViewContentScalingDisabled;
-- (BOOL)_isViewEdgeAntialiasingDisabled;
-- (BOOL)_isViewGroupOpacityDisabled;
 - (BOOL)_isWindowServerHostingManaged;
 - (id)_launchTestName;
 - (void)_leak;
@@ -289,8 +288,10 @@
 - (BOOL)_shouldUseNextFirstResponder;
 - (BOOL)_shouldZoom;
 - (void)_showEditAlertView;
+- (void)_startHangTracer;
 - (void)_startPlaybackTimer;
 - (void)_stopDeactivatingForReason:(int)arg1;
+- (void)_stopHangTracer;
 - (void)_stopPlayback;
 - (BOOL)_supportsShakesWhenNotActive;
 - (id)_targetInChainForAction:(SEL)arg1 sender:(id)arg2;
@@ -389,6 +390,9 @@
 - (void)failedTest:(id)arg1 withResults:(id)arg2;
 - (void)failedTest:(id)arg1;
 - (void)finishedSubTest:(id)arg1 forTest:(id)arg2;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(id)arg4;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 withTeardownBlock:(id)arg3;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (void)finishedTest:(id)arg1;
 - (BOOL)firstLaunchAfterBoot;
@@ -560,6 +564,7 @@
 - (void)testPrep:(id)arg1 options:(id)arg2;
 - (void)unregisterForRemoteNotifications;
 - (void)updateSuspendedSettings:(id)arg1;
+- (void)updateTouchDiagnostics;
 - (id)userCachesDirectory;
 - (void)userDefaultsDidChange:(id)arg1;
 - (id)userHomeDirectory;

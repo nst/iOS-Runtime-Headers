@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSMutableDictionary, NSString;
+@class NSString;
 
 @interface MSMMCSProtocol : NSObject <MSStorageProtocol> {
     NSString *_MMCSDirPath;
     struct __MMCSEngine { } *_engine;
     NSString *_engineDirPath;
-    NSMutableDictionary *_manifest;
-    NSString *_manifestPath;
     NSString *_personID;
 }
 

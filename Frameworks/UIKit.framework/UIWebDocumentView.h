@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextInputDelegate>, <UITextInputTokenizer>, CALayer, DOMElement, DOMHTMLElement, DOMNode, NSArray, NSDictionary, NSMutableSet, NSTimer, UIAutoscroll, UIColor, UIImage, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPopoverController, UIReferenceLibraryViewController, UIResponder<UITextInput>, UIResponder<UITextSelection>, UITapGestureRecognizer, UITextChecker, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UITextSelectionView, UIView, UIView<UITextSelectingContent>, UIWebRotatingSheet, UIWebSelectionAssistant, WebThreadSafeUndoManager, WebView, WebViewReachabilityObserver;
+@class <UITextInputDelegate>, <UITextInputTokenizer>, CALayer, DOMElement, DOMHTMLElement, DOMNode, DOMRange, NSArray, NSDictionary, NSMutableSet, NSTimer, UIAutoscroll, UIColor, UIImage, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPopoverController, UIReferenceLibraryViewController, UIResponder<UITextInput>, UIResponder<UITextSelection>, UITapGestureRecognizer, UITextChecker, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UITextSelectionView, UIView, UIView<UITextSelectingContent>, UIWebRotatingSheet, UIWebSelectionAssistant, WebThreadSafeUndoManager, WebView, WebViewReachabilityObserver;
 
 @interface UIWebDocumentView : UIWebTiledView <UITextSelectingContent, UIAutoscrollContainer, UIActionSheetDelegate, UIGestureRecognizerDelegate, UIKeyboardInput, UIKeyInput, UIModalViewDelegate, UITextInputTokenizer, UITextSelection> {
     struct CGRect { 
@@ -153,6 +153,8 @@
     UIPopoverController *_definePopoverController;
     UIReferenceLibraryViewController *_defineViewController;
     id _delegate;
+    DOMElement *_dictationResultPlaceholder;
+    id _dictationResultPlaceholderRemovalObserver;
     } _documentBounds;
     float _documentScale;
     int _documentType;
@@ -164,8 +166,6 @@
     } _fixedLayoutSizeRoundingDelta;
     CALayer *_flattenedRotatingContentLayer;
     UILongPressGestureRecognizer *_highlightLongPressGestureRecognizer;
-    DOMElement *_imagePlaceholder;
-    id _imagePlaceholderRemovalObserver;
     <UITextInputDelegate> *_inputDelegate;
     } _interaction;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
@@ -181,6 +181,7 @@
     } _pendingSize;
     struct __CFDictionary { } *_plugInViews;
     float _previousDocumentScale;
+    DOMRange *_rangeToRestoreAfterDictation;
     WebViewReachabilityObserver *_reachabilityObserver;
     int _retainCount;
     } _scrollPoint;
@@ -205,7 +206,6 @@
 @property(getter=_acceptsFirstResponder,setter=_setAcceptsFirstResponder:) BOOL _acceptsFirstResponder;
 @property BOOL acceptsEmoji;
 @property BOOL acceptsFloatingKeyboard;
-@property BOOL acceptsForwardDelete;
 @property BOOL acceptsSplitKeyboard;
 @property(readonly) UIResponder<UITextInput> * asText;
 @property int autocapitalizationType;
@@ -221,7 +221,7 @@
 @property int emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
 @property(readonly) UITextPosition * endOfDocument;
-@property BOOL forceEnableForwardDelete;
+@property BOOL forceEnableDictation;
 @property <UITextInputDelegate> * inputDelegate;
 @property(retain) UIColor * insertionPointColor;
 @property unsigned int insertionPointWidth;
@@ -232,6 +232,7 @@
 @property(readonly) UITextRange * markedTextRange;
 @property(copy) NSDictionary * markedTextStyle;
 @property BOOL mediaPlaybackAllowsAirPlay;
+@property(retain) DOMRange * rangeToRestoreAfterDictation;
 @property BOOL returnKeyGoesToNextResponder;
 @property int returnKeyType;
 @property(getter=isRichText) BOOL richText;
@@ -283,6 +284,7 @@
 - (void)_createSheetWithElementActions:(id)arg1 showLinkTitle:(BOOL)arg2;
 - (BOOL)_dataDetectionIsActivated;
 - (void)_define:(id)arg1;
+- (BOOL)_dictationPlaceholderHasBeenRemoved;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_didScroll;
 - (float)_documentScale;
@@ -293,7 +295,7 @@
 - (float)_doubleTapScaleForSize:(float)arg1 isWidth:(BOOL)arg2 isPDF:(BOOL)arg3;
 - (void)_drawPDFPagesForPage:(unsigned int)arg1 withPaginationInfo:(id)arg2;
 - (void)_editableSelectionLayoutChangedByScrolling:(BOOL)arg1;
-- (void)_finishedUsingImagePlaceholder;
+- (void)_finishedUsingDictationPlaceholder;
 - (void)_flattenAndSwapContentLayersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_focusedOrMainFrame;
 - (id)_groupName;
@@ -302,7 +304,6 @@
 - (void)_handleTwoFingerDoubleTapAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_hasSubviewContainingWebContent:(id)arg1;
 - (void)_highlightLongPressRecognized:(id)arg1;
-- (BOOL)_imagePlaceholderHasBeenRemoved;
 - (BOOL)_isDeallocating;
 - (BOOL)_isSubviewOfPlugInView:(id)arg1;
 - (void)_italicize:(id)arg1;
@@ -450,6 +451,8 @@
 - (void)detachInteractionAssistant;
 - (void)detachSelectionView;
 - (BOOL)detectsPhoneNumbers;
+- (id)dictationInterpretations;
+- (id)dictationResultMetadataForRange:(id)arg1;
 - (void)didEndScroll;
 - (void)didEndZoom;
 - (BOOL)didFirstVisuallyNonEmptyLayout;
@@ -476,6 +479,7 @@
 - (id)formElement;
 - (void)forwardInvocation:(id)arg1;
 - (BOOL)fragmentContainsRichContent:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 canBePreventedByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -504,15 +508,14 @@
 - (id)initWithWebView:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (float)initialScale;
 - (id)inputDelegate;
-- (void)insertMarsVoltas:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (id)insertDictationResultPlaceholder;
 - (void)insertText:(id)arg1;
-- (id)insertYakushimasPlaceholder:(struct CGSize { float x1; float x2; })arg1;
 - (void)installGestureRecognizers;
 - (float)integralScaleForScale:(float)arg1 keepingPointFixed:(struct CGPoint { float x1; float x2; }*)arg2;
 - (float)integralScaleForScale:(float)arg1;
 - (id)interactionAssistant;
 - (id)interactionDelegate;
-- (id)interpretationsForMarsVoltas;
 - (BOOL)isCaretInEmptyParagraph;
 - (BOOL)isClassicViewportMode;
 - (BOOL)isDoubleTapEnabled;
@@ -525,7 +528,7 @@
 - (BOOL)isPosition:(id)arg1 withinTextUnit:(int)arg2 inDirection:(int)arg3;
 - (BOOL)isShowingFullScreenPlugInUI;
 - (BOOL)isStandaloneEditableView;
-- (BOOL)isUnperturbedMarsVoltaResultMarker:(id)arg1;
+- (BOOL)isUnperturbedDictationResultMarker:(id)arg1;
 - (BOOL)isWidgetEditingView;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (BOOL)keyboardInput:(id)arg1 shouldReplaceTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
@@ -543,10 +546,9 @@
 - (id)markedText;
 - (id)markedTextRange;
 - (id)markedTextStyle;
-- (id)marsVoltaResultMetadataForRange:(id)arg1;
 - (float)maximumScale;
 - (BOOL)mediaPlaybackAllowsAirPlay;
-- (id)metadataDictionariesForMarsVoltas;
+- (id)metadataDictionariesForDictationResults;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (float)minimumScale;
 - (float)minimumScaleForMinimumSize:(struct CGSize { float x1; float x2; })arg1;
@@ -555,7 +557,7 @@
 - (void)moveForward:(unsigned int)arg1;
 - (BOOL)needsScrollNotifications;
 - (struct CGImage { }*)newSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)nextUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
+- (id)nextUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (int)offsetFromPosition:(id)arg1 toPosition:(id)arg2;
 - (unsigned int)offsetInMarkedTextForSelection:(id)arg1;
 - (void)paste:(id)arg1;
@@ -569,11 +571,12 @@
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
 - (id)positionFromPosition:(id)arg1 toBoundary:(int)arg2 inDirection:(int)arg3;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
-- (id)previousUnperturbedMarsVoltasBoundaryFromPosition:(id)arg1;
+- (id)previousUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(int)arg1;
 - (id)rangeByMovingCurrentSelection:(int)arg1;
 - (id)rangeEnclosingPosition:(id)arg1 withGranularity:(int)arg2 inDirection:(int)arg3;
 - (id)rangeOfEnclosingWord:(id)arg1;
+- (id)rangeToRestoreAfterDictation;
 - (id)readDataFromPasteboard:(id)arg1 withIndex:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -581,7 +584,7 @@
 - (id)rectsForRange:(id)arg1;
 - (void)redrawScaledDocument;
 - (oneway void)release;
-- (void)removeYakushimasPlaceholder:(id)arg1 willInsertText:(BOOL)arg2;
+- (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (void)replace:(id)arg1;
 - (void)replaceCurrentWordWithText:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
@@ -665,6 +668,7 @@
 - (void)setOpaque:(BOOL)arg1;
 - (void)setPaused:(BOOL)arg1 withEvents:(BOOL)arg2;
 - (void)setPaused:(BOOL)arg1;
+- (void)setRangeToRestoreAfterDictation:(id)arg1;
 - (void)setRangedSelectionBaseToCurrentSelection;
 - (void)setRangedSelectionBaseToCurrentSelectionEnd;
 - (void)setRangedSelectionBaseToCurrentSelectionStart;
@@ -723,7 +727,6 @@
 - (id)tokenizer;
 - (id)undoManager;
 - (id)undoManagerForWebView:(id)arg1;
-- (id)undoNameForMarsVoltaInsertion;
 - (void)unmarkText;
 - (void)updateInteractionElements;
 - (BOOL)updateKeyboardStateOnResponderChanges;

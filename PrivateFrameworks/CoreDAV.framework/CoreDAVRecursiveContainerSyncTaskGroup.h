@@ -14,7 +14,6 @@
     NSURL *_folderURL;
     NSMutableDictionary *_folderURLToChildrenURLOrder;
     NSMutableDictionary *_leafURLToETag;
-    unsigned int _maxIndependentTasks;
     unsigned int _multiGetBatchSize;
     NSString *_nextCTag;
     NSString *_nextPTag;
@@ -34,7 +33,6 @@
 @property <CoreDAVLocalDBTreeInfoProvider> * delegate;
 @property(readonly) NSURL * folderURL;
 @property(readonly) NSDictionary * folderURLToChildrenURLOrder;
-@property unsigned int maxIndependentTasks;
 @property unsigned int multiGetBatchSize;
 @property(retain) NSString * nextCTag;
 @property BOOL preflightCTag;
@@ -66,7 +64,7 @@
 - (id)folderURL;
 - (id)folderURLToChildrenURLOrder;
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousPTag:(id)arg3 previousSyncToken:(id)arg4 actions:(id)arg5 syncItemOrder:(BOOL)arg6 context:(void*)arg7 accountInfoProvider:(id)arg8 taskManager:(id)arg9;
-- (unsigned int)maxIndependentTasks;
+- (BOOL)isWhitelistedError:(id)arg1;
 - (void)mkcolTask:(id)arg1 parsedPropStats:(id)arg2 error:(id)arg3;
 - (unsigned int)multiGetBatchSize;
 - (id)nextCTag;
@@ -76,7 +74,6 @@
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)putTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
-- (void)setMaxIndependentTasks:(unsigned int)arg1;
 - (void)setMultiGetBatchSize:(unsigned int)arg1;
 - (void)setNextCTag:(id)arg1;
 - (void)setPreflightCTag:(BOOL)arg1;

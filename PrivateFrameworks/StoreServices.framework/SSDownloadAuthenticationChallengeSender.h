@@ -9,7 +9,7 @@
     SSDownloadAuthenticationSession *_session;
 }
 
-@property SSDownloadAuthenticationSession * authenticationSession;
+@property(readonly) SSDownloadAuthenticationSession * authenticationSession;
 
 - (id)authenticationSession;
 - (void)cancelAuthenticationChallenge:(id)arg1;
@@ -18,7 +18,6 @@
 - (id)initWithAuthenticationSession:(id)arg1;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)setAuthenticationSession:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 
 @end

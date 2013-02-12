@@ -10,12 +10,11 @@
 + (void)_startListeningForNotifications;
 + (BOOL)allIMAPServersSupportNotesSearch;
 + (BOOL)calDAVRemindersForAll;
-+ (int)calDAVTimeout;
 + (BOOL)completelyIgnoreNotes;
++ (BOOL)compressRequests;
 + (BOOL)cookiesEnabled;
++ (double)defaultDAVProbeTimeout;
 + (double)defaultEASTaskTimeoutOutWasFound:(BOOL*)arg1;
-+ (BOOL)googleHack;
-+ (BOOL)icalserverHack;
 + (BOOL)ignoreBadLDAPCerts;
 + (BOOL)ignoreSupportedCommands;
 + (void)initialize;

@@ -23,7 +23,7 @@
 + (id)containerQueryWithContainer:(id)arg1;
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
-+ (BOOL)deleteFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
++ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
 + (id)extraTablesToDelete;
 + (id)extraTablesToInsert;
 + (id)flattenedChapterDataFromSyncInfoDictionaries:(id)arg1 trackPersistentID:(long long)arg2;
@@ -47,6 +47,7 @@
 + (BOOL)trackValueAreInTheCloud:(id)arg1;
 + (BOOL)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
 + (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3 deletedFileSize:(long long*)arg4;
++ (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
 + (id)unsettableProperties;
 
 - (id)absoluteFilePath;

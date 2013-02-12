@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSCalendarDate, NSMutableArray, NSString;
+@class NSDate, NSMutableArray, NSString;
 
 @interface City : NSObject {
     BOOL _autoUpdate;
@@ -33,7 +33,7 @@
     unsigned int _sunsetTime;
     NSString *_temperature;
     int _updateInterval;
-    NSCalendarDate *_updateTime;
+    NSDate *_updateTime;
     NSString *_updateTimeString;
     float _visibility;
     NSString *_windChill;

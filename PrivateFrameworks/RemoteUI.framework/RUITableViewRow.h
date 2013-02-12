@@ -29,6 +29,9 @@
 @property BOOL rowInvalid;
 @property(readonly) int selectedRow;
 
++ (id)_monthAndDayFormatter;
++ (void)resetLocale;
+
 - (void)_activate;
 - (id)_dateFormatter;
 - (void)_datePickerChanged:(id)arg1;
@@ -39,8 +42,6 @@
 - (id)dateMin;
 - (void)dealloc;
 - (id)deleteAction;
-- (id)imageAttributeAndScale:(float*)arg1;
-- (void)imageLoaded:(id)arg1;
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
@@ -56,6 +57,7 @@
 - (void)setDateMin:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteAction:(id)arg1;
+- (void)setImage:(id)arg1;
 - (void)setRowInvalid:(BOOL)arg1;
 - (BOOL)supportsAutomaticSelection;
 - (id)tableCell;

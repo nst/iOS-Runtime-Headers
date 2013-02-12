@@ -157,6 +157,9 @@
 - (struct CDXTicket { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; struct { unsigned char x_5_1_1[6]; unsigned short x_5_1_2; } x5; unsigned int x6; unsigned char x7[0]; }*)mutableCDXTicket;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (int)parsingState;
+- (void)pl_adviceDoNotNeed;
+- (void)pl_adviceWillNeed;
+- (unsigned int)pl_advisoryLength;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfData:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)sha1Digest;
 - (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

@@ -91,7 +91,7 @@
 - (void)oneFingerTripleTap:(id)arg1;
 - (id)rangeForTextReplacement:(id)arg1;
 - (void)resignedFirstResponder;
-- (void)scheduleGrammarReplacementsForAlternatives:(id)arg1 range:(id)arg2;
+- (void)scheduleDictationReplacementsForAlternatives:(id)arg1 range:(id)arg2;
 - (void)scheduleReplacementsForRange:(id)arg1 withOptions:(unsigned int)arg2;
 - (void)scheduleReplacementsWithOptions:(unsigned int)arg1;
 - (id)scrollView;

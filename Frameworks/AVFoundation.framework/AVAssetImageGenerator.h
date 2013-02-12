@@ -10,9 +10,9 @@
 
 @property(copy) NSString * apertureMode;
 @property BOOL appliesPreferredTrackTransform;
-@property struct CGSize { float width; float height; } maximumSize;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } requestedTimeToleranceAfter;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } requestedTimeToleranceBefore;
+@property struct CGSize { float x1; float x2; } maximumSize;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } requestedTimeToleranceAfter;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } requestedTimeToleranceBefore;
 @property(copy) AVVideoComposition * videoComposition;
 
 + (id)assetImageGeneratorWithAsset:(id)arg1;

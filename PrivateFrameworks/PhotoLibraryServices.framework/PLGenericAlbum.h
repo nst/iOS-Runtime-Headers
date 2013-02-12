@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSMutableOrderedSet, NSNumber, NSObject<PLIndexMappingCache>, NSOrderedSet, NSString, NSURL, PLManagedAsset, PLPhotoLibrary, UIImage;
 
-@interface PLGenericAlbum : _PLGenericAlbum <PLAssetContainer> {
+@interface PLGenericAlbum : _PLGenericAlbum <PLAssetContainer, PLIndexMappersDataOrigin> {
     NSObject<PLIndexMappingCache> *_derivededAlbums[5];
     BOOL didRegisteredWithUserInterfaceContext;
     BOOL isRegisteredForChanges;
@@ -13,17 +13,13 @@
 @property(readonly) NSOrderedSet * assets;
 @property(readonly) unsigned int count;
 @property BOOL didRegisteredWithUserInterfaceContext;
-@property BOOL didRegisteredWithUserInterfaceContext;
 @property(readonly) NSURL * groupURL;
 @property(retain) NSString * importSessionID;
 @property(readonly) unsigned int indexOfPosterImage;
 @property(readonly) BOOL isCameraAlbum;
-@property(readonly) BOOL isCameraAlbum;
 @property(readonly) BOOL isEmpty;
 @property(readonly) BOOL isLibrary;
-@property(readonly) BOOL isLibrary;
 @property(readonly) BOOL isPhotoStreamAlbum;
-@property BOOL isRegisteredForChanges;
 @property BOOL isRegisteredForChanges;
 @property(retain) PLManagedAsset * keyAsset;
 @property(readonly) NSNumber * kind;
@@ -37,19 +33,18 @@
 @property(readonly) unsigned int photosCount;
 @property(readonly) UIImage * posterImage;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
-@property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(retain) NSDictionary * slideshowSettings;
-@property(readonly) NSString * title;
-@property(readonly) NSString * uuid;
+@property(retain) NSString * title;
+@property(retain) NSString * uuid;
 @property(readonly) unsigned int videosCount;
 
 + (void)addSingletonObjectsToContext:(id)arg1;
-+ (id)albumForStreamID:(id)arg1 inLibrary:(id)arg2;
 + (struct NSObject { Class x1; }*)albumFromGroupURL:(id)arg1 photoLibrary:(id)arg2;
 + (id)albumWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)albumWithName:(id)arg1 inLibrary:(id)arg2;
 + (id)albumWithObjectID:(id)arg1 inLibrary:(id)arg2;
 + (id)albumWithUUID:(id)arg1 inLibrary:(id)arg2;
++ (id)albumsForStreamID:(id)arg1 inLibrary:(id)arg2;
 + (id)albumsMatchingPredicate:(id)arg1 inLibrary:(id)arg2;
 + (id)albumsMatchingPredicate:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)albumsWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
@@ -72,18 +67,20 @@
 + (id)insertNewEventIntoLibrary:(id)arg1;
 + (id)insertNewEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewFaceAlbumIntoLibrary:(id)arg1;
-+ (id)insertNewPhotoStreamAlbumIntoLibrary:(id)arg1;
 + (id)keyPathsForValuesAffectingKindValue;
 + (id)keyPathsForValuesAffectingName;
 + (id)otaRestoreProgressAlbumInLibrary:(id)arg1;
++ (id)savedAndInFlightAlbumInLibrary:(id)arg1;
 + (id)syncProgressAlbumInLibrary:(id)arg1;
 + (id)wallpaperAlbumInLibrary:(id)arg1;
 
+- (id)_compactDebugDescription;
 - (id)_kindDescription;
 - (id)_prettyDescription;
 - (id)assetsByObjectIDAtIndexes:(id)arg1;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
+- (void)batchFetchAssets:(id)arg1;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (unsigned int)count;
 - (unsigned int)countForAssetsOfKind:(int)arg1;

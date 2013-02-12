@@ -34,8 +34,10 @@
 - (void)_presentationInPopoverDidEndForViewController:(id)arg1;
 - (void)_presentationInPopoverWillBeginForViewController:(id)arg1;
 - (void)_presentationInPopoverWillEndForViewController:(id)arg1;
+- (void)_setCornerRadius:(float)arg1;
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowOffset:(float)arg2;
 - (void)_setIgnoreTapsInDimmingView:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_snapshotBounds;
 - (int)_style;
 - (id)_viewForModalPresentationOfViewController:(id)arg1;
 - (unsigned int)arrowDirection;

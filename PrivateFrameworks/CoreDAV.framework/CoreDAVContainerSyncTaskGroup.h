@@ -86,6 +86,7 @@
 - (id)folderURL;
 - (void)getTask:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 actions:(id)arg4 syncItemOrder:(BOOL)arg5 context:(void*)arg6 accountInfoProvider:(id)arg7 taskManager:(id)arg8;
+- (BOOL)isWhitelistedError:(id)arg1;
 - (id)localItemURLOrder;
 - (unsigned int)maxIndependentTasks;
 - (unsigned int)multiGetBatchSize;

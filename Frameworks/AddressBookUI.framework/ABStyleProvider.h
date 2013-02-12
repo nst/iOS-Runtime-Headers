@@ -211,6 +211,8 @@
 - (float)cardContentOccluderDefaultBottomFadingHeight;
 - (float)cardContentOccluderDefaultTopFadingHeight;
 - (float)cardDeleteButtonHeight;
+- (id)cardDeleteButtonImage;
+- (id)cardDeleteButtonImagePressed;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardDeleteButtonInsets;
 - (id)cardHeaderBackgroundColor;
 - (id)cardHeaderDefaultLabelTextColor;

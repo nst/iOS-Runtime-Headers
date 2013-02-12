@@ -10,6 +10,7 @@
     CoreDAVItemWithHrefChildItem *_location;
     NSMutableSet *_propStats;
     CoreDAVLeafItem *_responseDescription;
+    CoreDAVLeafItem *_serverUID;
     CoreDAVLeafItem *_status;
 }
 
@@ -18,6 +19,7 @@
 @property(retain) CoreDAVItemWithHrefChildItem * location;
 @property(retain) NSMutableSet * propStats;
 @property(retain) CoreDAVLeafItem * responseDescription;
+@property(retain) CoreDAVLeafItem * serverUID;
 @property(retain) CoreDAVLeafItem * status;
 
 - (void)addHref:(id)arg1;
@@ -33,11 +35,13 @@
 - (id)location;
 - (id)propStats;
 - (id)responseDescription;
+- (id)serverUID;
 - (void)setErrorItem:(id)arg1;
 - (void)setHrefs:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPropStats:(id)arg1;
 - (void)setResponseDescription:(id)arg1;
+- (void)setServerUID:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (id)status;
 - (id)successfulPropertiesToValues;

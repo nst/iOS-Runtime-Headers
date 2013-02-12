@@ -9,8 +9,6 @@
     NSArray *_trackIDs;
 }
 
-@property(readonly) NSArray * trackIDs;
-
 - (id)_assetComparisonToken;
 - (void)dealloc;
 - (unsigned int)hash;

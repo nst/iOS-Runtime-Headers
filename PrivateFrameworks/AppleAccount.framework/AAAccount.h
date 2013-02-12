@@ -50,7 +50,10 @@
 - (id)_deviceSpecificLocalizedString:(id)arg1;
 - (id)_errorWithDescriptionForResponseError:(id)arg1;
 - (id)_mailChildAccountProperties;
+- (void)_migrateMobileMeMailChildAccount;
 - (void)_performiCloudMigration;
+- (BOOL)_removeChildAccountsOfType:(id)arg1;
+- (BOOL)_removeChildAccountsOfTypes:(id)arg1;
 - (void)_setToken:(id)arg1;
 - (id)accountFirstDisplayAlert;
 - (id)accountFooterButton;
@@ -68,6 +71,7 @@
 - (id)description;
 - (id)displayName;
 - (id)firstName;
+- (BOOL)fixPartialiCloudMigration;
 - (void)flushCachedPassword;
 - (void)flushCachedTokens;
 - (id)initWithProperties:(id)arg1;

@@ -71,7 +71,7 @@
     BOOL _automaticKeyboardAnimatingIn;
     BOOL _automaticKeyboardAnimatingOut;
     int _automaticKeyboardState;
-    BOOL _blockedReloadInputViewsForMarsVoltaInsertion;
+    BOOL _blockedReloadInputViewsForDictation;
     id _bounceCompletionBlock;
     UIKeyboardCornerView *_cornerViewLeft;
     UIKeyboardCornerView *_cornerViewRight;
@@ -145,6 +145,7 @@
 @property(readonly) UIView * view;
 
 + (void)_releaseSharedInstance;
++ (float)gridViewRubberBandValueForValue:(float)arg1 target:(float)arg2 timeInterval:(float)arg3 velocity:(float*)arg4;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBoundsInAppOrientation;
 + (id)sharedInstance;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visiblePeripheralFrame;
@@ -152,6 +153,7 @@
 - (void)_beginDisablingAnimations;
 - (void)_beginIgnoringReloadInputViews;
 - (void)_beginPinningInputViewsOnBehalfOfResponder:(id)arg1;
+- (void)_clearPinningResponders;
 - (id)_currentInputView;
 - (void)_endDisablingAnimations;
 - (void)_endIgnoringReloadInputViews;
@@ -220,7 +222,7 @@
 - (float)getVerticalOverlapForView:(id)arg1 usingKeyboardInfo:(id)arg2;
 - (void)handleTranslateDetectedFinished:(id)arg1;
 - (BOOL)hasCustomInputView;
-- (BOOL)hasDvorakKeyboard;
+- (BOOL)hasDictationKeyboard;
 - (BOOL)ignoresPinning;
 - (void)implBoundsHeightChangeDoneForGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1;
 - (id)init;

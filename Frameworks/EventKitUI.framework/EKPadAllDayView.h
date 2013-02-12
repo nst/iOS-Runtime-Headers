@@ -36,6 +36,7 @@
     EKEvent *_dimmedOccurrence;
     NSMutableArray *_dividerFaders;
     NSDateComponents *_endDate;
+    float _eventFaderInset;
     NSMutableArray *_eventFaders;
     float _fixedDayWidth;
     NSMutableArray *_layedOutRows;
@@ -79,10 +80,9 @@
 - (id)_calendarOrderSortDescriptor;
 - (double)_dateForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_dayWidth;
-- (id)_dividerFaderImage;
-- (id)_eventFaderImage;
 - (float)_faderWidth;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForOccurrenceBlock:(id)arg1 index:(unsigned int)arg2;
+- (void)_loadFadersIfNeeded;
 - (void)_localeChanged;
 - (id)_numberOfDaysSortDescriptor;
 - (void)_removeDayLabels;

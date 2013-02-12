@@ -4,7 +4,7 @@
 
 @class <NSObject><NSCopying>, NSIndexSet, NSMutableIndexSet, NSMutableOrderedSet, NSPredicate, NSString, PLIndexMapper, PLManagedAlbumList, PLPhotoLibrary;
 
-@interface PLFilteredAlbumList : NSObject <PLIndexMapperDataSource, PLIndexMappingCache, PLAlbumContainer> {
+@interface PLFilteredAlbumList : NSObject <PLAlbumContainer, PLIndexMapperDataSource, PLIndexMappingCache> {
     NSMutableOrderedSet *_albums;
     NSMutableIndexSet *_filteredIndexes;
     PLIndexMapper *_indexMapper;

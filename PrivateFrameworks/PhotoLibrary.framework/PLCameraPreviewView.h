@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCameraFaceDetectionView, PLCameraFocusLockView, PLCameraFocusPointView, PLCameraFocusView, UIView;
+@class NSMutableDictionary, PLCameraFocusLockView, PLCameraFocusPointView, PLCameraFocusView, UIView;
 
 @interface PLCameraPreviewView : UIView {
     struct CGPoint { 
@@ -11,28 +11,37 @@
     unsigned int _canShowFocus : 1;
     unsigned int _controlsAreVisible : 1;
     PLCameraFocusView *_autoFocusView;
+    float _dimmingStrength;
+    UIView *_dimmingView;
     UIView *_disabledView;
-    PLCameraFaceDetectionView *_faceDetectionView;
+    NSMutableDictionary *_faceIDsToViews;
     PLCameraFocusPointView *_focusView;
     PLCameraFocusLockView *_lockFocusView;
     UIView *_snapshotView;
     } _touchLocation;
 }
 
+@property float dimmingStrength;
+
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })defaultAffineTransform;
 
 - (void)animateFocusLock;
 - (void)animateFocusScaleDown;
 - (void)dealloc;
+- (float)dimmingStrength;
+- (void)fadeOutFaceTrackingViews;
 - (void)focusDidEnd;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
-- (void)removeFocusView;
+- (void)removeAllFocusViews;
+- (void)removeAutofocusView;
 - (void)setCameraIsChangingModes:(BOOL)arg1;
 - (void)setControlsAreVisible:(BOOL)arg1;
+- (void)setDimmingStrength:(float)arg1 duration:(double)arg2;
+- (void)setDimmingStrength:(float)arg1;
 - (void)setShouldShowFocus:(BOOL)arg1;
 - (void)showAutofocusView;
-- (void)showFaceRectangleWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)showFaceTrackingViewsForFaces:(id)arg1;
 - (void)showFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showLockFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)zoomFromFactor:(float)arg1 toFactor:(float)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;

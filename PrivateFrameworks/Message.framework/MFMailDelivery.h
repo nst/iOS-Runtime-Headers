@@ -51,5 +51,7 @@
 - (void)setCellDataOnly:(BOOL)arg1;
 - (void)setCompositionSpecification:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (BOOL)shouldEncryptMessage;
+- (BOOL)shouldSignMessage;
 
 @end

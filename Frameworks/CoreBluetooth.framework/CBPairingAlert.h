@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)dismiss;
-- (id)initWithPairingType:(id)arg1 andPasskey:(id)arg2;
+- (id)initWithDeviceName:(id)arg1 pairingType:(id)arg2 passkey:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)show;
 - (void)textDidChange:(id)arg1;

@@ -14,6 +14,7 @@
 @property unsigned long long timestampEvent;
 @property unsigned long long timestampReport;
 
+- (void)copyTo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

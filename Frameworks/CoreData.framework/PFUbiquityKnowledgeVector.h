@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSNumber;
 
-@interface PFUbiquityKnowledgeVector : NSObject {
+@interface PFUbiquityKnowledgeVector : NSObject <NSCoding> {
     unsigned int _hash;
     NSDictionary *_kv;
     NSNumber *_sum;
@@ -28,15 +28,22 @@
 - (id)createSetOfAllPeerIDsWithOtherVector:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithKnowledgeVectorDictionary:(id)arg1;
 - (id)initWithKnowledgeVectorString:(id)arg1;
+- (id)initWithPeerStatesFromStoreMetadata:(id)arg1;
 - (id)initWithStoreKnowledgeVectorDictionary:(id)arg1;
+- (BOOL)isAncestorOfKnowledgeVector:(id)arg1;
+- (BOOL)isDescendantOfKnowledgeVector:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isZeroVector;
 - (unsigned int)length;
 - (id)newKnowledgeVectorByAddingKnowledgeVector:(id)arg1;
 - (id)newKnowledgeVectorByDecrementingPeerWithID:(id)arg1;
+- (id)newKnowledgeVectorBySubtractingVector:(id)arg1;
 - (id)sum;
 - (id)transactionNumberForPeerID:(id)arg1;
 

@@ -2,22 +2,25 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSCountedSet, NSMutableArray, NSTimer, SSDownload, SSDownloadHandler, SSDownloadManager;
+@class AsyncSSDownloadManager, NSCountedSet, NSMutableArray, NSTimer, SSDownloadHandler;
 
 @interface NSURLConnectionInternalBackgroundDownload : NSURLConnectionInternal <NSURLConnectionRequired, SSDownloadManagerObserver, SSDownloadHandlerDelegate> {
     long long _ctLast;
     NSTimer *_deferredStartTimer;
-    SSDownload *_download;
+    long long _downloadIdent;
     SSDownloadHandler *_handler;
-    SSDownloadManager *_manager;
+    AsyncSSDownloadManager *_manager;
     NSMutableArray *_pendingOps;
     NSCountedSet *_runloops;
     struct __CFRunLoopSource { } *_source;
     BOOL _terminated;
 }
 
++ (void)_enableLogging;
 + (id)sharedDownloadManagerForMediaKind:(id)arg1 persistenceIdentifier:(id)arg2;
 
+- (void)_createNewDownload;
+- (long long)_getDownloadIdent;
 - (void)_invalidate;
 - (void)_invokeInvocation:(id)arg1 withConnection:(id)arg2;
 - (void)_managerFailedToStartInTime;
@@ -25,9 +28,11 @@
 - (void)_preTerminalInvocation:(id)arg1;
 - (void)_sendTerminalDidFinishToDelegate:(id)arg1;
 - (void)_sendTerminalErrorToDelegate:(id)arg1;
+- (void)_sourcePerform;
+- (void)_updateClientWithCurrentWrites:(id)arg1;
+- (void)_updateDownloadState:(id)arg1;
 - (void)cancel;
 - (void)cancelAuthenticationChallenge:(id)arg1;
-- (void)checkStartTimer;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -35,18 +40,15 @@
 - (void)downloadHandler:(id)arg1 handleAuthenticationSession:(id)arg2;
 - (BOOL)downloadHandler:(id)arg1 pauseSession:(id)arg2;
 - (void)downloadHandlerDidDisconnect:(id)arg1;
-- (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; BOOL x5; long long x6; }*)arg1;
 - (void)invokeForDelegate:(id)arg1;
-- (id)myOnlyAsset;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
-- (void)sourcePerform;
+- (void)setHandlerForDownload:(id)arg1 completionBlock:(id)arg2;
 - (void)start;
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)updateClientWithCurrentWrites;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 
 @end

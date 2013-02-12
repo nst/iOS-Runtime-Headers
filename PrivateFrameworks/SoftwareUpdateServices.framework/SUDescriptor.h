@@ -7,8 +7,10 @@
 @interface SUDescriptor : NSObject <NSCoding, NSCopying> {
     BOOL _autoDownloadAllowableForCellular;
     SUDocumentation *_documentation;
+    BOOL _downloadAllowableForCellular;
     unsigned long long _downloadSize;
     BOOL _downloadable;
+    BOOL _downloadableOverCellular;
     NSString *_humanReadableUpdateName;
     unsigned long long _installationSize;
     unsigned long long _preparationSize;
@@ -23,6 +25,7 @@
 @property(retain) SUDocumentation * documentation;
 @property unsigned long long downloadSize;
 @property(getter=isDownloadable) BOOL downloadable;
+@property(getter=isDownloadableOverCellular) BOOL downloadableOverCellular;
 @property unsigned long long installationSize;
 @property unsigned long long preparationSize;
 @property(retain) NSString * productBuildVersion;
@@ -47,6 +50,7 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)installationSize;
 - (BOOL)isDownloadable;
+- (BOOL)isDownloadableOverCellular;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValidDescriptor;
 - (unsigned long long)preparationSize;
@@ -58,6 +62,7 @@
 - (void)setDocumentation:(id)arg1;
 - (void)setDownloadSize:(unsigned long long)arg1;
 - (void)setDownloadable:(BOOL)arg1;
+- (void)setDownloadableOverCellular:(BOOL)arg1;
 - (void)setInstallationSize:(unsigned long long)arg1;
 - (void)setPreparationSize:(unsigned long long)arg1;
 - (void)setProductBuildVersion:(id)arg1;

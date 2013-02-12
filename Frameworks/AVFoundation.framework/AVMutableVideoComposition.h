@@ -9,10 +9,10 @@
 }
 
 @property(retain) AVVideoCompositionCoreAnimationTool * animationTool;
-@property struct { long long value; int timescale; unsigned int flags; long long epoch; } frameDuration;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } frameDuration;
 @property(copy) NSArray * instructions;
 @property float renderScale;
-@property struct CGSize { float width; float height; } renderSize;
+@property struct CGSize { float x1; float x2; } renderSize;
 
 + (id)videoComposition;
 + (id)videoCompositionForAsset:(id)arg1 videoGravity:(id)arg2;

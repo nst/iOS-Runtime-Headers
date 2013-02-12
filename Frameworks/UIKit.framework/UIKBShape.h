@@ -48,7 +48,7 @@
 + (id)shape;
 + (id)shapeByCombining:(id)arg1 withShape:(id)arg2;
 
-- (void)addRectFrom:(id)arg1 widthFraction:(float)arg2 adjustOrigin:(BOOL)arg3;
+- (void)addRectFrom:(id)arg1 widthFraction:(float)arg2 adjustOriginFactor:(float)arg3;
 - (void)addRectFrom:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

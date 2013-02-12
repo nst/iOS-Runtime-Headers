@@ -63,6 +63,7 @@
 - (BOOL)isEqualToTree:(id)arg1;
 - (BOOL)isHashed;
 - (BOOL)isLeafType;
+- (BOOL)isLetters;
 - (BOOL)isSameAsTree:(id)arg1;
 - (BOOL)isShiftKeyPlaneChooser;
 - (BOOL)isShiftKeyplane;
@@ -88,6 +89,7 @@
 - (id)recursiveDescription;
 - (void)removeClientVariantActionInfo;
 - (BOOL)renderAsStringKey;
+- (BOOL)renderAsStringKeyExcludingPunctuation:(BOOL)arg1;
 - (int)rendering;
 - (id)representedString;
 - (void)setAttributes:(id)arg1;

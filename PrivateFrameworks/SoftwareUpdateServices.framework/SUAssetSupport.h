@@ -6,6 +6,7 @@
 }
 
 + (id)assetDownloadOptionsFromMetadata:(id)arg1 priority:(int)arg2;
++ (void)cancelDownloadIfNecessary:(struct __MobileAsset { }*)arg1;
 + (void)cleanupAsset:(struct __MobileAsset { }*)arg1;
 + (void)cleanupAssets:(id)arg1;
 + (void)cleanupUpdateAndDocumentationForAsset:(struct __MobileAsset { }*)arg1;

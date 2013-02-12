@@ -5,39 +5,17 @@
 @class NSString;
 
 @interface UIKeyboardEmoji : NSObject {
-    NSString *codePoint;
-    NSString *imageName;
-    NSString *name;
-    NSString *privateCodePoint;
-    NSString *publicCodePoint;
-    unsigned short unicodeCharacter;
+    NSString *emojiString;
 }
 
-@property(retain) NSString * codePoint;
-@property(retain) NSString * imageName;
+@property(retain) NSString * emojiString;
 @property(readonly) NSString * key;
-@property(retain) NSString * name;
-@property(retain) NSString * privateCodePoint;
-@property(retain) NSString * publicCodePoint;
-@property unsigned short unicodeCharacter;
 
-+ (BOOL)shouldUsePublicCodePoints;
-
-- (id)codePoint;
 - (void)dealloc;
-- (id)image;
-- (id)imageName;
-- (id)initWithName:(id)arg1 imageName:(id)arg2 codePoint:(unsigned short)arg3;
+- (id)emojiString;
+- (id)initWithString:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)key;
-- (id)name;
-- (id)privateCodePoint;
-- (id)publicCodePoint;
-- (void)setCodePoint:(id)arg1;
-- (void)setImageName:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)setPrivateCodePoint:(id)arg1;
-- (void)setPublicCodePoint:(id)arg1;
-- (void)setUnicodeCharacter:(unsigned short)arg1;
-- (unsigned short)unicodeCharacter;
+- (void)setEmojiString:(id)arg1;
 
 @end

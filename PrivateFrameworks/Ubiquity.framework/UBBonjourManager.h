@@ -29,6 +29,7 @@
         NSMutableDictionary *_collectionUUIDs; 
     int (*_mme_push_cb)();
     int (*_mme_set_token_cb)();
+    int (*_network_change_cb)();
     int (*_notify_cb)();
     } _browserState;
     NSString *_domain;
@@ -42,6 +43,7 @@
     } _publishedState;
     APSConnection *_pushConnection;
     NSString *_pushEnvironment;
+    struct __SCNetworkReachability { } *_reachabilityRef;
     unsigned long long _refetchMMeConfigTime;
     struct __CFRunLoop { } *_runloop;
     } _serviceState;
@@ -61,6 +63,7 @@
 - (void)_deallocNetworkState;
 - (void)_deallocPublishedState;
 - (void)_deallocPushState;
+- (void)_deallocReachability;
 - (void)_deallocServiceState;
 - (id)_endPointForServiceDict:(id)arg1;
 - (id)_fqdnForNetService:(id)arg1;
@@ -71,6 +74,7 @@
 - (void)_initNetworkState;
 - (void)_initPublishedState;
 - (void)_initPushState;
+- (void)_initReachability;
 - (void)_initServiceState;
 - (bool)_isValid;
 - (void)_processNetService:(id)arg1 type:(int)arg2;
@@ -79,6 +83,7 @@
 - (void)_restartBrowsers;
 - (void)_runBlockOnRL:(id)arg1;
 - (id)_serviceDataForIdentity:(id)arg1 prependedID:(id)arg2;
+- (void)_setNetworkReachable:(BOOL)arg1;
 - (bool)_splitNetServiceName:(id)arg1 rnd:(unsigned int*)arg2 hashedID:(id*)arg3;
 - (void)_updateServicesForIdentity:(id)arg1;
 - (void)connection:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
@@ -99,7 +104,7 @@
 - (void)setContext:(void*)arg1 forUUID:(unsigned char[16])arg2;
 - (void)setMMeUUID:(unsigned char[16])arg1;
 - (void)setPreferredFQDN:(id)arg1 forUUID:(unsigned char[16])arg2;
-- (void)setupClient:(unsigned char[16])arg1 port:(int)arg2 use_ssl:(bool)arg3 notify_cb:(int (*)())arg4 notify_ctx:(void*)arg5 domain:(id)arg6 vlans:(id)arg7;
+- (void)setupClient:(unsigned char[16])arg1 port:(int)arg2 use_ssl:(bool)arg3 network_change_cb:(int (*)())arg4 notify_cb:(int (*)())arg5 notify_ctx:(void*)arg6 domain:(id)arg7 vlans:(id)arg8;
 - (void)setupMMeEnvironment:(id)arg1 mme_set_token_cb:(int (*)())arg2 mme_push_cb:(int (*)())arg3;
 - (void)suspend;
 - (void)updateIdentity:(id)arg1 collections:(id)arg2;

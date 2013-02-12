@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSPersistentStoreCoordinator, NSString, PFUbiquityImportContext, PFUbiquityTransactionLog;
+@class NSDictionary, NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSObject<_PFUbiquityRecordImportOperationDelegate>, NSPersistentStoreCoordinator, NSString, PFUbiquityImportContext, PFUbiquityTransactionLog;
 
-@interface _PFUbiquityRecordImportOperation : NSOperation <NSManagedObjectContextFaultingDelegate> {
-    id _delegate;
+@interface _PFUbiquityRecordImportOperation : PFUbiquityImportOperation <NSManagedObjectContextFaultingDelegate> {
     NSMutableSet *_deletedObjectIDs;
     PFUbiquityImportContext *_importContext;
     int _inMemorySequenceNumber;
@@ -23,7 +22,7 @@
     NSMutableSet *_updatedObjectIDs;
 }
 
-@property id delegate;
+@property NSObject<_PFUbiquityRecordImportOperationDelegate> * delegate;
 @property(readonly) NSMutableSet * deletedObjectIDs;
 @property(readonly) PFUbiquityImportContext * importContext;
 @property(readonly) NSDictionary * initialStoreKnowledgeVector;
@@ -40,15 +39,16 @@
 @property(readonly) NSMutableSet * updatedObjectIDs;
 
 - (void)addManagedObject:(id)arg1 missingObjectWithID:(id)arg2 atKey:(id)arg3 toMissingObjects:(id)arg4;
-- (void)applyChangesFromStoreSaveSnapshot:(id)arg1 withImportContext:(id)arg2 withError:(id*)arg3;
+- (BOOL)applyChangesFromStoreSaveSnapshot:(id)arg1 withImportContext:(id)arg2 withError:(id*)arg3;
 - (id)checkPSCForStoreIdentifiedByImportContext:(id)arg1;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
+- (void)coordinatorWillRemoveStore:(id)arg1;
 - (id)copy;
 - (void)dealloc;
 - (id)delegate;
 - (id)deletedObjectIDs;
 - (id)description;
-- (void)fillManagedObject:(id)arg1 fromUbiquityDictionary:(id)arg2 missingObjects:(id)arg3 withStoreSaveSnapshot:(id)arg4 andGlobalObjectIDToLocalIDURIMap:(id)arg5;
+- (BOOL)fillManagedObject:(id)arg1 fromUbiquityDictionary:(id)arg2 missingObjects:(id)arg3 importContext:(id)arg4 withError:(id*)arg5;
 - (id)importContext;
 - (id)initWithTransactionLog:(id)arg1 withLocalPeerID:(id)arg2;
 - (id)initWithTransactionLog:(id)arg1;
@@ -63,7 +63,7 @@
 - (id)newPersistentStoreCoordinatorForImportContext:(id)arg1;
 - (id)newUbiquityKnowledgeVector;
 - (void)notifyDelegateOfError:(id)arg1;
-- (void)processObjects:(id)arg1 withState:(int)arg2 withGlobalIDIndexesToLocalURIMap:(id)arg3 andImportContext:(id)arg4 outError:(id*)arg5;
+- (BOOL)processObjects:(id)arg1 withState:(int)arg2 andImportContext:(id)arg3 outError:(id*)arg4;
 - (id)psc;
 - (id)resolvedConflicts;
 - (void)respondToStoreTransactionStateChangeNotification:(id)arg1;

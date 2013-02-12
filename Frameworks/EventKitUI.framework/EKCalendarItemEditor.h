@@ -56,6 +56,7 @@
 - (id)_viewForSheet;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowsDeletingFutureOccurrences;
+- (void)applicationDidResume;
 - (id)calendarItem;
 - (void)cancel:(id)arg1;
 - (void)completeWithAction:(int)arg1 animated:(BOOL)arg2;

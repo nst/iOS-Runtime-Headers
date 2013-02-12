@@ -5,11 +5,16 @@
 @class <PLAlbumViewDataSource>, <PLAlbumViewDelegate>, NSMutableIndexSet, PLImageCountCell, UILongPressGestureRecognizer, UITableView, UITapGestureRecognizer;
 
 @interface PLAlbumView : UIView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate> {
+    struct CGPoint { 
+        float x; 
+        float y; 
     struct { 
         unsigned int displayTextBadges : 1; 
         unsigned int canShowCopyCallout : 1; 
         unsigned int delegateCanSelect : 1; 
         unsigned int delegateSelectionDidChange : 1; 
+        unsigned int delegateDidTapPhoto : 1; 
+        unsigned int delegatePreheatImageData : 1; 
     NSMutableIndexSet *_activityIndexes;
     } _albumViewFlags;
     BOOL _allowsSelectionGestures;
@@ -22,6 +27,7 @@
     UILongPressGestureRecognizer *_longPressRecognizer;
     NSUInteger _photoCount;
     NSUInteger _photoIndexToBeSelected;
+    } _previousContentOffset;
     NSMutableIndexSet *_selectedPhotoIndexes;
     NSInteger _selectionStyle;
     BOOL _swipeSelection;
@@ -50,6 +56,7 @@
 - (void)_changeSelectionOfPhotoAtPoint:(struct CGPoint { float x1; float x2; })arg1 notifyDelegate:(BOOL)arg2;
 - (void)_longPressGesture:(id)arg1;
 - (NSUInteger)_photoIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_preheatImageDataForDownwardScroll:(BOOL)arg1;
 - (void)_selectAfterDelay;
 - (void)_setupTableView;
 - (BOOL)_shouldShowImageCountCell;
@@ -81,14 +88,17 @@
 - (void)hideActivityOnPhotoAtIndex:(NSUInteger)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertPhotoAtIndex:(NSUInteger)arg1;
+- (void)insertPhotosAtIndexes:(id)arg1;
 - (BOOL)isPhotoVisibleAtIndex:(NSUInteger)arg1;
 - (void)menuDidHideNotification:(id)arg1;
 - (NSInteger)photoSelectionStyle;
 - (void)reloadData;
 - (void)reloadPhotoAtIndex:(NSUInteger)arg1;
 - (void)removePhotoAtIndex:(NSUInteger)arg1;
+- (void)removePhotosAtIndexes:(id)arg1;
 - (void)scrollToBottom;
 - (void)scrollToPhotoAtIndex:(NSUInteger)arg1 atScrollPosition:(NSInteger)arg2 animated:(BOOL)arg3;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)selectPhotoAtIndex:(NSUInteger)arg1;
 - (NSUInteger)selectedPhotoIndex;

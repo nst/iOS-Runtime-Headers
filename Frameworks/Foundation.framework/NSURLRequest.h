@@ -40,6 +40,7 @@
 - (id)allHTTPHeaderFields;
 - (NSUInteger)cachePolicy;
 - (id)contentDispositionEncodingFallbackArray;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -47,6 +48,7 @@
 - (NSUInteger)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithURL:(id)arg1 cachePolicy:(NSUInteger)arg2 timeoutInterval:(double)arg3;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -9,7 +9,7 @@
 @property NSInteger errorValue;
 
 + (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)ignoresUnknownChildren;
++ (BOOL)errorOnUnknownChildren;
 + (BOOL)parsingWithSubItems;
 
 - (id)copyCoreDAVParseRules;

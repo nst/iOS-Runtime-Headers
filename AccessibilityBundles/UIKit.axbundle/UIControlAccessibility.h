@@ -7,9 +7,9 @@
 
 + (void)_initializeSafeCategory;
 
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)_accessibilityObscuredScreenAllowedViews;
 - (unsigned long long)accessibilityTraits;
+- (BOOL)accessibilityTreeHidden;
 - (BOOL)isAccessibilityElement;
 
 @end

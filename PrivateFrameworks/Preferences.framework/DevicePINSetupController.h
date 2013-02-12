@@ -6,6 +6,7 @@
     BOOL _success;
 }
 
+- (BOOL)canBeShownFromSuspendedState;
 - (id)init;
 - (BOOL)popupStyleIsModal;
 - (BOOL)success;

@@ -25,8 +25,11 @@
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)dealloc;
+- (BOOL)fieldEditor:(id)arg1 shouldInsertText:(id)arg2 replacingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
+- (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
+- (void)keyboardInputChangedSelection:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)selectAll:(id)arg1;
 - (void)setSelectedTextRange:(id)arg1;

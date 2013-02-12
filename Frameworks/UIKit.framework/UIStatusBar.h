@@ -21,6 +21,7 @@
     <UIStatusBarStyleDelegate> *_styleDelegate;
     NSInteger _styleOverrides;
     BOOL _styleRequestedWhileHidden;
+    BOOL _suppressGlow;
     BOOL _waitingOnCallbackAfterChangingStyleOverridesLocally;
 }
 
@@ -57,6 +58,7 @@
 - (void)dealloc;
 - (void)forceUpdateData:(BOOL)arg1;
 - (void)forceUpdateDoubleHeightStatus;
+- (void)forceUpdateGlowAnimation;
 - (void)forceUpdateStyleOverrides:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForOrientation:(NSInteger)arg1;
 - (float)heightForOrientation:(NSInteger)arg1;
@@ -74,6 +76,7 @@
 - (void)setOrientation:(NSInteger)arg1;
 - (void)setStatusBarWindow:(id)arg1;
 - (void)setStyleDelegate:(id)arg1;
+- (void)setSuppressesGlow:(BOOL)arg1;
 - (void)statusBarServer:(id)arg1 didReceiveDoubleHeightStatusString:(id)arg2 forStyle:(NSInteger)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveGlowAnimationState:(BOOL)arg2 forStyle:(NSInteger)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(struct { BOOL x1[20]; BOOL x2[64]; NSInteger x3; NSInteger x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; NSUInteger x9; NSInteger x10; NSInteger x11; NSUInteger x12; NSInteger x13; NSUInteger x14; NSInteger x15; NSInteger x16; unsigned int x17 : 1; BOOL x18[256]; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; }*)arg2 withActions:(NSInteger)arg3;

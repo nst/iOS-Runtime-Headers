@@ -14,6 +14,7 @@
     unsigned int _watchingAttributes : 1;
     unsigned int _videoDisabled : 1;
     unsigned int _lyricsAvailable : 1;
+    unsigned int _delayedInvalidateCachedPlayedDurationScheduled : 1;
     unsigned int _isStreamable : 2;
     MPAlternateTracks *_alternateTracks;
     NSMutableArray *_artworkTimeMarkers;
@@ -44,7 +45,9 @@
 @property(readonly) double currentTimeDisplayOverride;
 @property float defaultPlaybackRate;
 @property(readonly) BOOL displayableTextLoaded;
+@property(readonly) double durationFromExternalMetadata;
 @property(readonly) double durationIfAvailable;
+@property(readonly) BOOL durationIsValid;
 @property(readonly) BOOL externalProtectionEnabled;
 @property(readonly) BOOL hasDataForAlbumArtwork;
 @property(readonly) BOOL hasDataForItemArtwork;
@@ -55,6 +58,8 @@
 @property(readonly) double playableDuration;
 @property(readonly) BOOL requiresExternalProtection;
 @property(getter=isStreamable,readonly) BOOL streamable;
+@property(readonly) double timeOfSeekableEnd;
+@property(readonly) double timeOfSeekableStart;
 @property(readonly) NSUInteger type;
 @property(readonly) BOOL useEmbeddedChapterData;
 @property(readonly) float userRating;
@@ -65,8 +70,10 @@
 + (void)setDefaultScaleMode:(NSUInteger)arg1;
 
 - (void)_blockingloadTimeMarkersForMarkerType:(NSInteger)arg1;
+- (void)_checkAllowsBlockingDurationCall;
 - (void)_commonInit;
 - (void)_delayedInvalidateCachedPlayedDuration;
+- (double)_durationFromExternalMetadataIfAvailable;
 - (id)_embeddedArtworkInfoForTime:(double)arg1;
 - (BOOL)_insertEmbeddedTimeMarkerWithInfo:(id)arg1 markerType:(NSInteger)arg2;
 - (void)_itemAttributeAvailableNotification:(id)arg1;
@@ -83,7 +90,9 @@
 - (id)artist;
 - (id)artworkTimeMarkerForTime:(double)arg1;
 - (id)artworkTimeMarkers;
+- (double)avDuration;
 - (id)blockForDirectAVControllerNotificationReferencingItem:(id)arg1;
+- (id)blockingAttributeForKey:(id)arg1;
 - (id)chapterTimeMarkerForTime:(double)arg1;
 - (id)chapterTimeMarkers;
 - (NSUInteger)contentUniqueID;
@@ -94,7 +103,9 @@
 - (id)displayableText;
 - (BOOL)displayableTextLoaded;
 - (double)duration;
+- (double)durationFromExternalMetadata;
 - (double)durationIfAvailable;
+- (BOOL)durationIsValid;
 - (id)embeddedArtworkInfoQueue;
 - (BOOL)externalProtectionEnabled;
 - (id)feeder;
@@ -145,6 +156,8 @@
 - (void)setVideoDisabled:(BOOL)arg1;
 - (void)setupPlaybackInfo;
 - (id)smallArtworkInfoForTime:(double)arg1;
+- (double)timeOfSeekableEnd;
+- (double)timeOfSeekableStart;
 - (id)titlesForTime:(double)arg1;
 - (NSUInteger)type;
 - (void)updateAttributesForDefaultsChange:(id)arg1;

@@ -73,6 +73,7 @@
 - (id)_web_localizedDescription;
 - (id)_webkit_initWithDomain:(id)arg1 code:(NSInteger)arg2 URL:(id)arg3;
 - (NSInteger)code;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -83,6 +84,7 @@
 - (id)helpAnchor;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(NSInteger)arg2 userInfo:(id)arg3;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)isConnectivityError;
 - (BOOL)isEqual:(id)arg1 compareUserInfo:(BOOL)arg2;
 - (BOOL)isEqualToError:(id)arg1;

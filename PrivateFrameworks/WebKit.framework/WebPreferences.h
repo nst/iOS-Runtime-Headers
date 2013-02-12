@@ -93,6 +93,7 @@
 - (BOOL)isJavaScriptEnabled;
 - (BOOL)isWebSecurityEnabled;
 - (BOOL)isXSSAuditorEnabled;
+- (BOOL)javaScriptCanAccessClipboard;
 - (BOOL)javaScriptCanOpenWindowsAutomatically;
 - (BOOL)loadsImagesAutomatically;
 - (BOOL)localFileContentSniffingEnabled;
@@ -125,6 +126,7 @@
 - (void)setFixedFontFamily:(id)arg1;
 - (void)setFrameFlatteningEnabled:(BOOL)arg1;
 - (void)setJavaEnabled:(BOOL)arg1;
+- (void)setJavaScriptCanAccessClipboard:(BOOL)arg1;
 - (void)setJavaScriptCanOpenWindowsAutomatically:(BOOL)arg1;
 - (void)setJavaScriptEnabled:(BOOL)arg1;
 - (void)setLoadsImagesAutomatically:(BOOL)arg1;

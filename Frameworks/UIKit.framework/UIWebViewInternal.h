@@ -15,7 +15,6 @@
     UICheckeredPatternView *checkeredPatternView;
     NSInteger clickedAlertButtonIndex;
     <UIWebViewDelegate> *delegate;
-    float lastAdjustmentForScroller;
     NSURLRequest *request;
     UIScrollView *scroller;
     UIWebViewWebViewDelegate *webViewDelegate;

@@ -14,17 +14,17 @@
 
 - (void)_addSessionCookies:(struct __CFArray { }*)arg1;
 - (void)_addSessionCookiesNotification:(id)arg1;
-- (id)_archivedDataForSessionOnlyCookiesFromCookies:(struct __CFArray { }*)arg1;
 - (BOOL)_cookie:(struct OpaqueCFHTTPCookie { }*)arg1 isEqualToCookie:(struct OpaqueCFHTTPCookie { }*)arg2;
+- (id)_copyPropertyListForSessionOnlyCookies:(struct __CFArray { }*)arg1;
 - (void)_handleSessionOnlyCookiesFromCookies:(struct __CFArray { }*)arg1;
 - (void)_restoreSessionCookies;
-- (id)archivedPropertiesDataForSessionOnlyCookies;
+- (id)copyPropertyListForSessionOnlyCookies;
 - (id)copyRequestHeaderFieldsForURL:(id)arg1;
 - (void)dealloc;
 - (void)deleteAllCookies;
 - (void)handleResponseHeaderFields:(id)arg1 forURL:(id)arg2;
 - (id)init;
-- (void)setCookiesFromArchivedProperties:(id)arg1;
+- (void)setCookiesFromPropertyList:(id)arg1;
 - (void)synchronizeCookies;
 - (void)synchronizeSessionCookies;
 

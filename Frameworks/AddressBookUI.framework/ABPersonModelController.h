@@ -9,6 +9,7 @@
     ABNamePropertyGroup *_namePropertyGroup;
     NSArray *_people;
     NSMutableDictionary *_propertyGroups;
+    NSMutableDictionary *_unusedPropertyGroups;
 }
 
 @property(readonly) void *addressBook;
@@ -29,8 +30,7 @@
 - (id)propertyGroupForProperty:(NSInteger)arg1 createIfEmpty:(BOOL)arg2;
 - (id)propertyGroupForProperty:(NSInteger)arg1;
 - (void)reloadFromModel;
-- (void)setPeople:(id)arg1;
-- (void)setStyleProvider:(id)arg1;
+- (void)resetPropertyGroups;
 - (void)updateRecord;
 - (id)writablePeople;
 

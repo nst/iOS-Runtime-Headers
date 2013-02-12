@@ -31,14 +31,14 @@
 - (void)_updateStatisticsFromSnapshots;
 - (BOOL)canPause;
 - (double)changeRate;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)currentValue;
 - (void)dealloc;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
 - (double)estimatedTimeRemaining;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (long long)maxValue;
 - (long long)normalizedCurrentValue;
 - (long long)normalizedMaxValue;

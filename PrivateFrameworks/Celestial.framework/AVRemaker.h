@@ -6,21 +6,22 @@
    See Warning(s) below.
  */
 
-@class NSDictionary;
-
 @interface AVRemaker : NSObject {
-    struct AVRemakerPrivate { struct OpaqueFigRemaker {} *x1; BOOL x2; id x3; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x4; inout unsigned short x5; void*x6; void*x7; unsigned long x8; void*x9; id x10; void*x11; inout unsigned short x12; void*x13; void*x14; unsigned long x15; void*x16; id x17; void*x18; inout unsigned short x19; unsigned short x20; void*x21; const NSInteger x22; in void*x23; void*x24; id x25; void*x26; inout unsigned short x27; void*x28; NSInteger x29; BOOL x30; void*x31; NSInteger x32; out in void*x33; const void*x34; void*x35; id x36; void*x37; inout unsigned short x38; void*x39; NSInteger x40; BOOL x41; void*x42; NSInteger x43; out in void*x44; const void*x45; void*x46; NSDictionary *x47; } *_priv;
+    struct AVRemakerPrivate { struct OpaqueFigRemaker {} *x1; BOOL x2; id x3; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x4; inout unsigned short x5; void*x6; void*x7; unsigned long x8; void*x9; id x10; void*x11; inout unsigned short x12; void*x13; void*x14; unsigned long x15; void*x16; id x17; void*x18; inout unsigned short x19; unsigned short x20; void*x21; const NSInteger x22; in void*x23; void*x24; id x25; void*x26; inout unsigned short x27; void*x28; NSInteger x29; BOOL x30; void*x31; NSInteger x32; out in void*x33; const void*x34; void*x35; id x36; void*x37; inout unsigned short x38; void*x39; NSInteger x40; BOOL x41; void*x42; NSInteger x43; out in void*x44; const void*x45; void*x46; id x47; void*x48; inout unsigned short x49; void*x50; NSInteger x51; BOOL x52; void*x53; NSInteger x54; out in void*x55; const void*x56; void*x57; double x58; } *_priv;
 }
 
+@property(readonly) long long approximateByteSize;
 @property(readonly) double maxDurationWithinLimits;
 @property(readonly) double progress;
 @property(readonly) double sourceDuration;
 
++ (long long)approximateByteSizeForMode:(id)arg1 duration:(double)arg2 options:(id)arg3;
 + (id)figRemakerNotificationNames;
 + (double)maximumDurationWithinLimitsForMode:(id)arg1 options:(id)arg2;
 + (id)settingForMode:(id)arg1;
 
 - (void)addListeners;
+- (long long)approximateByteSize;
 - (id)audioPropertiesForItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2;
 - (struct CGSize { float x1; float x2; })calculateDimensionsOfSource;
 - (BOOL)canPassThroughAudio:(id)arg1;

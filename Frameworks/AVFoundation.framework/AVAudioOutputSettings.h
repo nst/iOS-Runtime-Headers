@@ -7,14 +7,15 @@
 
 @property(readonly) NSDictionary *audioSettingsDictionary;
 
++ (id)_audioOutputSettingsWithAudioSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
++ (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)audioOutputSettingsWithAudioSettingsDictionary:(id)arg1;
-+ (struct AudioStreamBasicDescription { double x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; NSUInteger x7; NSUInteger x8; NSUInteger x9; })canonicalLPCMAudioStreamBasicDescriptionForFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
 + (id)defaultAudioOutputSettings;
-+ (id)outputSettingsWithOutputSettingsDictionary:(id)arg1;
 + (id)registeredOutputSettingsClasses;
 
 - (id)audioSettingsDictionary;
 - (id)compatibleMediaTypes;
-- (id)initWithAudioSettingsDictionary:(id)arg1;
+- (id)initWithAudioSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 
 @end

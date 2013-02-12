@@ -83,6 +83,9 @@
 + (id)sqlFormattedStringWithUInt64Value:(unsigned long long)arg1;
 + (id)string;
 + (id)stringForPercentileRankingWithRank:(float)arg1 totalScores:(float)arg2;
++ (id)stringForPercentileWithRank:(float)arg1 totalScores:(float)arg2 asPercentile:(BOOL)arg3 isTop:(BOOL*)arg4;
++ (id)stringForRankAndPercentileWithRank:(float)arg1 totalScores:(float)arg2;
++ (id)stringForRelativeRankInGame:(id)arg1 withPlayer:(id)arg2;
 + (id)stringGUID;
 + (id)stringWithBytes:(const void*)arg1 length:(NSUInteger)arg2 codePointMapper:(int (*)())arg3;
 + (id)stringWithBytes:(const void*)arg1 length:(NSUInteger)arg2 encoding:(NSUInteger)arg3;
@@ -115,6 +118,14 @@
 - (id)MCSafeFilenameHash;
 - (id)MCSafeFilenameHashWithExtension:(id)arg1;
 - (const char *)UTF8String;
+- (NSInteger)_FTBestGuessFTIDType;
+- (id)_FTDataFromBase64String;
+- (id)_FTDataFromHexString;
+- (id)_FTIDFromEmail;
+- (id)_FTIDFromFTIDType:(NSInteger)arg1;
+- (id)_FTIDFromPhoneNumber;
+- (NSInteger)_FTIDType;
+- (id)_FTStripFTIDPrefix;
 - (id)_ICSStringForParameterQuotedValue;
 - (id)_ICSStringForParameterValue;
 - (id)_ICSStringForProperyValue;
@@ -293,7 +304,6 @@
 - (id)createStringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand;
 - (id)createStringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand;
 - (id)createStringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand;
-- (id)createYouTubeVideoDescription;
 - (id)currencyCodeFromCustomNumberFormatCurrencyToken;
 - (BOOL)customFormatIntegerTokenUsesSeparator;
 - (id)dataUsingEncoding:(NSUInteger)arg1 allowLossyConversion:(BOOL)arg2;
@@ -304,6 +314,8 @@
 - (id)decomposedStringWithCanonicalMapping;
 - (id)decomposedStringWithCompatibilityMapping;
 - (id)description;
+- (BOOL)destinationIdIsEmailAddress;
+- (BOOL)destinationIdIsPhoneNumber;
 - (id)digitPlaceholderStringInDigitToken;
 - (id)displayableString;
 - (id)displayableStringByStrippingOffCommonPrefixWithString:(id)arg1;
@@ -500,6 +512,7 @@
 - (id)negativeSubpatternOfNumberFormatPattern;
 - (id)negativeSubpatternOfNumberFormatPattern;
 - (id)negativeSubpatternOfNumberFormatPattern;
+- (id)newYouTubeVideoDescription;
 - (NSUInteger)numberOfDigitsInCustomNumberFormatDecimalToken;
 - (NSUInteger)numberOfDigitsInCustomNumberFormatIntegerToken;
 - (id)numberPortionOfNumberFormatSubpattern;
@@ -525,6 +538,7 @@
 - (id)propertyList;
 - (id)propertyListFromStringsFileFormat;
 - (id)queryKeysAndValues;
+- (id)quotedString;
 - (id)quotedStringRepresentation;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeOfCharacterFromSet:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeOfCharacterFromSet:(id)arg1 options:(NSUInteger)arg2;
@@ -568,6 +582,7 @@
 - (id)stringByAddingPercentEscapes;
 - (id)stringByAddingPercentEscapesForHREF;
 - (id)stringByAddingPercentEscapesForUsername;
+- (id)stringByAddingPercentEscapesIncludingReservedCharacters;
 - (id)stringByAddingPercentEscapesUsingEncoding:(NSUInteger)arg1;
 - (id)stringByAddingURLEscapes;
 - (id)stringByAppendingFormat:(id)arg1;
@@ -578,12 +593,14 @@
 - (id)stringByConvertingURLToPath;
 - (id)stringByDeletingLastPathComponent;
 - (id)stringByDeletingPathExtension;
+- (id)stringByEscapingDoubleQuotes;
 - (id)stringByEscapingXMLSpecialCharacters;
 - (id)stringByExpandingTildeInPath;
 - (id)stringByFixingSymbolCharacters;
 - (id)stringByFoldingWithOptions:(NSUInteger)arg1 locale:(id)arg2;
 - (id)stringByInsertingGroupingSeparators;
 - (id)stringByPaddingToLength:(NSUInteger)arg1 withString:(id)arg2 startingAtIndex:(NSUInteger)arg3;
+- (id)stringByQuotingString;
 - (id)stringByRemovingCharactersFromSet:(id)arg1;
 - (id)stringByRemovingEscapedCharactersFromNumberFormatPattern;
 - (id)stringByRemovingEscapedCharactersFromNumberFormatPattern;

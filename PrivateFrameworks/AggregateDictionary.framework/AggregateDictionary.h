@@ -5,10 +5,13 @@
 @class ADCrashLogStore, ADDataStore, ADKeyStore;
 
 @interface AggregateDictionary : NSObject <ADDataStoreConsumer> {
+    NSUInteger _commitInterval;
     BOOL _crashLogCopyingEnabled;
     ADCrashLogStore *_crashLogStore;
     ADDataStore *_dataStore;
+    struct dispatch_queue_s { } *_dataStoreQueue;
     ADKeyStore *_keyStore;
+    BOOL _log;
     NSUInteger _messageCount;
 }
 

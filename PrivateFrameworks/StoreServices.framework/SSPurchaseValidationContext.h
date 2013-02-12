@@ -8,11 +8,13 @@
     NSIndexSet *_allowedDeviceIdentifiers;
     long long _diskSpaceAvailable;
     SSNetworkConstraints *_networkConstraints;
+    NSString *_systemName;
     NSString *_systemVersion;
 }
 
 @property(copy) NSIndexSet *allowedDeviceIdentifiers;
 @property(retain) SSNetworkConstraints *networkConstraints;
+@property(copy) NSString *systemName;
 @property(copy) NSString *systemVersion;
 @property long long diskSpaceAvailable;
 
@@ -27,7 +29,9 @@
 - (void)setAllowedDeviceIdentifiers:(id)arg1;
 - (void)setDiskSpaceAvailable:(long long)arg1;
 - (void)setNetworkConstraints:(id)arg1;
+- (void)setSystemName:(id)arg1;
 - (void)setSystemVersion:(id)arg1;
+- (id)systemName;
 - (id)systemVersion;
 
 @end

@@ -21,6 +21,7 @@
 
 - (BOOL)acceptCallID:(NSInteger)arg1 error:(id*)arg2;
 - (id)currentFocus;
+- (void)dealloc;
 - (void)denyCallID:(NSInteger)arg1;
 - (id)dictionaryForCallID:(NSInteger)arg1 isIncomingDictonary:(BOOL)arg2;
 - (id)dictionaryForNonce:(NSInteger)arg1 participantID:(id)arg2 isIncomingDictonary:(BOOL)arg3;
@@ -32,10 +33,12 @@
 - (BOOL)hasMic;
 - (id)incomingDictionaryMatchingOriginalCallID:(NSInteger)arg1 participantID:(id)arg2;
 - (id)init;
+- (BOOL)isAudioPausedToParticipantID:(id)arg1;
 - (id)localDisplayNameForCallID:(NSInteger)arg1;
 - (void*)localVideoLayer;
 - (id)openOutgoingDictionaryForParticipantID:(id)arg1;
 - (NSInteger)packetsPerBundle;
+- (void)pauseAudio:(BOOL)arg1 toParticipantID:(id)arg2;
 - (BOOL)processCancelDict:(id)arg1;
 - (BOOL)processFocusChange:(id)arg1 fromParticipantID:(id)arg2;
 - (BOOL)processFocusDict:(id)arg1 fromParticipantID:(id)arg2;
@@ -54,8 +57,10 @@
 - (void)setHasMic:(BOOL)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (void)setPacketsPerBundle:(NSInteger)arg1;
+- (void)setQualityDelegate:(id)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
 - (void)setSpeakingDelegate:(id)arg1;
+- (void)setTalkingPeersLimit:(NSUInteger)arg1;
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (void)stopVoiceChatProc:(id)arg1 participantDidCancel:(BOOL)arg2;
 - (void)stopVoiceChatProc:(id)arg1;

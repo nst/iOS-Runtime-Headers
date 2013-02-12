@@ -15,6 +15,7 @@
     NSMutableArray *outputs;
     NSMutableDictionary *previousFigRecorderOptions;
     struct OpaqueFigRecorder { } *recorder;
+    BOOL recording;
     AVRunLoopCondition *runLoopCondition;
     BOOL running;
     NSString *sessionPreset;
@@ -22,8 +23,9 @@
     AVCaptureFigVideoDevice *videoDevice;
     AVCaptureVideoPreviewLayer *videoPreviewLayer;
     BOOL videoPreviewLayerDidChange;
+    BOOL waitingForRecorderDidStopPreviewing;
+    BOOL waitingForRecorderDidStopRecording;
     BOOL waitingForRecorderStart;
-    BOOL waitingForRecorderStop;
     BOOL wasPreviewingWhenInterrupted;
     AVWeakReference *weakReference;
 }

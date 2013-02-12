@@ -2,15 +2,40 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKBackgroundView, UIWebView;
+@class GKImageBackgroundView, NSString, UIWebView;
 
-@interface GKServerWebViewController : UIViewController <UIWebViewDelegate> {
-    GKBackgroundView *_backgroundView;
+@interface GKServerWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
+    GKImageBackgroundView *_backgroundView;
+    NSString *_cancelCallback;
+    NSString *_leftCallback;
+    NSString *_okCallback;
+    NSString *_rightCallback;
     UIWebView *_webView;
 }
 
+@property(retain) NSString *cancelCallback;
+@property(retain) NSString *leftCallback;
+@property(retain) NSString *okCallback;
+@property(retain) NSString *rightCallback;
+
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (id)cancelCallback;
 - (void)dealloc;
+- (id)decodeDashEncodedString:(id)arg1;
+- (id)gkBackgroundView;
+- (id)leftCallback;
+- (void)leftNavButtonPressed;
 - (void)loadView;
+- (id)okCallback;
+- (void)parseAlertURLString:(id)arg1;
+- (void)parseNavBarURLString:(id)arg1;
+- (id)rightCallback;
+- (void)rightNavButtonPressed;
+- (void)setCancelCallback:(id)arg1;
+- (void)setHeadersForRequest:(id)arg1;
+- (void)setLeftCallback:(id)arg1;
+- (void)setOkCallback:(id)arg1;
+- (void)setRightCallback:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(NSUInteger)arg3;

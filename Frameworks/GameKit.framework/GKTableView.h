@@ -2,10 +2,54 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class NSMutableArray, UIImage, UIView;
+
 @interface GKTableView : UITableView {
+    struct CGSize { 
+        float width; 
+        float height; 
+    UIImage *_backgroundImage;
+    NSMutableArray *_backgroundTiles;
+    BOOL _becomeFirstResponderOnTouch;
+    float _imageHeight;
+    float _shadowInset;
+    UIView *_shadowView;
+    } _statusOffsetShift;
 }
 
+@property(retain) UIImage *backgroundImage;
+@property(retain) NSMutableArray *backgroundTiles;
+@property(retain) UIView *shadowView;
+@property BOOL becomeFirstResponderOnTouch;
+@property float shadowInset;
+@property CGSize statusOffsetShift;
+
+- (id)backgroundImage;
+- (id)backgroundTiles;
+- (id)backgroundView;
+- (BOOL)becomeFirstResponderOnTouch;
 - (BOOL)canBecomeFirstResponder;
+- (void)dealloc;
+- (void)didMoveToWindow;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
+- (void)layoutSubviews;
+- (void)layoutTilesWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 offset:(struct CGSize { float x1; float x2; })arg2;
+- (void)setBackgroundImage:(id)arg1;
+- (void)setBackgroundTiles:(id)arg1;
+- (void)setBackgroundView:(id)arg1;
+- (void)setBecomeFirstResponderOnTouch:(BOOL)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setShadowInset:(float)arg1;
+- (void)setShadowView:(id)arg1;
+- (void)setStatusOffsetShift:(struct CGSize { float x1; float x2; })arg1;
+- (float)shadowInset;
+- (id)shadowView;
+- (struct CGSize { float x1; float x2; })statusOffsetShift;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)updateBackground;
+- (void)updateBackgroundImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)updateShadowView;
 
 @end

@@ -7,6 +7,7 @@
 @interface MKScrollView : UIScrollView {
     struct $_712 { 
         unsigned int shouldHandleTouchesMoved : 1; 
+        unsigned int scrollViewShouldHandlePinch : 1; 
         unsigned int scrollViewWillHandlePinch : 1; 
         unsigned int layoutScrollViewSubviews : 1; 
         unsigned int touchesBegan : 1; 

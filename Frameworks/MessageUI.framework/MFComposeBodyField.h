@@ -18,7 +18,6 @@
     unsigned int _forwardingNotification : 1;
     unsigned int _replaceAttachments : 1;
     unsigned int _isLoading : 1;
-    unsigned int _isNotifyingDraw : 1;
     unsigned int _needsReplaceImages : 1;
     MFGenericAttachmentStore *_attachmentStore;
     DOMHTMLElement *_blockquote;

@@ -7,6 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)appear;
 - (void)fade;
 - (void)hide;

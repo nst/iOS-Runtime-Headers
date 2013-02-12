@@ -5,23 +5,35 @@
 @interface SWLocalRunWorkoutProxy : SWRunWorkoutProxy {
 }
 
+- (void)_nowPlayingChanged:(id)arg1;
 - (void)_sensorSearchStateChanged:(id)arg1;
 - (void)_workoutStateChanged:(id)arg1;
 - (void)activateWorkout;
+- (void)beginSeekingBackward;
+- (void)beginSeekingForward;
+- (id)currentSongName;
 - (void)dealloc;
+- (void)endSeeking;
 - (void)endWorkout;
+- (void)goToNowPlaying;
 - (float)goal;
 - (id)goalType;
 - (BOOL)hasEverStarted;
 - (BOOL)hasPowerSong;
 - (id)init;
+- (NSInteger)musicSelection;
+- (void)pauseMusic;
 - (void)pauseWorkout;
+- (void)playMusic;
 - (void)playOnDemandPrompt;
 - (void)playPowerSong;
 - (id)powerSongName;
 - (void)prepareToActivateWorkout;
 - (id)presetGoal;
+- (void)selectNextSong;
+- (void)selectPreviousSong;
 - (id)sensorSearchState;
+- (BOOL)shouldControlMusic;
 - (id)workoutData;
 - (id)workoutState;
 

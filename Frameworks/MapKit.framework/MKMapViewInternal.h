@@ -34,13 +34,14 @@
             NSInteger longitude_; 
             NSInteger x_pixels_at_max_zoom_; 
             NSInteger y_pixels_at_max_zoom_; 
-    struct $_1064 { 
+    struct $_1070 { 
         unsigned int animateFlagWhileSuspendedResultProcessing : 1; 
         unsigned int callsDelegateForAllRegionChanges : 1; 
         unsigned int changingRegion : 1; 
         unsigned int checkTrafficAvailable : 1; 
         unsigned int debugViewHeading : 1; 
         unsigned int didStartDragging : 1; 
+        unsigned int draggingInterrupted : 1; 
         unsigned int didStartSmoothScrolling : 1; 
         unsigned int drawGridBackground : 1; 
         unsigned int hasUserSpecifiedZoomLevel : 1; 
@@ -165,7 +166,6 @@
 
 - (void)delayedShowAddedAnnotationsAnimated;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)goToDefaultLocation;
 - (BOOL)longPressGestureCanTransitionToRecognizedState:(id)arg1;
 - (void)reachabilityChanged:(id)arg1;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;

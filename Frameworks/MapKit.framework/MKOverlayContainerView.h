@@ -16,6 +16,7 @@
     } _mapTransform;
     NSMapTable *_overlayToView;
     NSMutableArray *_overlays;
+    NSMutableArray *_viewClusters;
     NSMutableArray *_views;
 }
 
@@ -24,9 +25,12 @@
 @property CGAffineTransform mapTransform;
 
 - (void)_addInternalOverlay:(id)arg1 withView:(id)arg2;
+- (void)_coalesceAdjacentClusters;
 - (void)_configureAndAddView:(id)arg1 forOverlay:(id)arg2;
 - (id)_considerAddingOverlayView:(id)arg1 inAddRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)_insertOverlayView:(id)arg1 forOverlay:(id)arg2 atIndex:(NSInteger)arg3;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectWithFractionOfVisible:(double)arg1;
+- (void)_removeOverlayView:(id)arg1 forOverlay:(id)arg2 coalesce:(BOOL)arg3;
 - (NSInteger)_viewIndexForOverlayView:(id)arg1;
 - (void)addAndRemoveOverlayViews;
 - (void)addOverlay:(id)arg1;

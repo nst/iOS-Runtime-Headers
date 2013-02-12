@@ -34,6 +34,7 @@
     NSInteger _mode;
     UIImage *_nonCacheableIcon;
     NSArray *_notices;
+    NSUInteger _numberOfPoints;
     NSUInteger _pointIndex;
     MKSearchResult *_searchResult;
     NSUInteger _stepIndex;
@@ -61,6 +62,7 @@
 @property(readonly) NSInteger durationSeconds;
 @property(readonly) BOOL hasTransitAgencyIndex;
 @property(readonly) NSInteger mode;
+@property NSUInteger numberOfPoints;
 @property(readonly) NSUInteger pointIndex;
 @property NSUInteger stepIndex;
 @property(readonly) NSInteger transitAgencyIndex;
@@ -93,10 +95,12 @@
 - (id)newSearchResult;
 - (id)nonCacheableIcon;
 - (id)notices;
+- (NSUInteger)numberOfPoints;
 - (NSUInteger)pointIndex;
 - (id)searchResult;
 - (void)setBoundingMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNonCacheableIcon:(id)arg1;
+- (void)setNumberOfPoints:(NSUInteger)arg1;
 - (void)setStepIndex:(NSUInteger)arg1;
 - (id)shortInstructions;
 - (NSUInteger)stepIndex;

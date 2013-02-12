@@ -16,6 +16,7 @@
 
 - (id)callID;
 - (id)callState;
+- (void)dealloc;
 - (id)description;
 - (NSUInteger)hash;
 - (BOOL)isEqual:(id)arg1;

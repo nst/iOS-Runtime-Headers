@@ -54,6 +54,7 @@
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1;
 - (id)_accessibilityPreviousMarker:(id)arg1;
+- (void)_accessibilityScrollToVisible;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3;
@@ -71,12 +72,14 @@
 - (BOOL)_prepareAccessibilityCall;
 - (id)accessibilityArrayOfTextForTextMarkers:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityBoundsForTextMarkers:(id)arg1;
+- (BOOL)accessibilityCanFuzzyHitTest;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
 - (id)accessibilityContainer;
 - (void)accessibilityDecreaseSelection:(NSInteger)arg1;
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
 - (NSInteger)accessibilityElementCount;
 - (void)accessibilityElementDidBecomeFocused;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityElementRect;
 - (id)accessibilityFocusedUIElement;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityHint;
@@ -84,8 +87,10 @@
 - (void)accessibilityIncreaseSelection:(NSInteger)arg1;
 - (id)accessibilityLabel;
 - (id)accessibilityLanguage;
+- (id)accessibilityLinkedElement;
 - (void)accessibilityModifySelection:(NSInteger)arg1 increase:(BOOL)arg2;
 - (id)accessibilityObjectForTextMarker:(id)arg1;
+- (id)accessibilityPostProcessHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)accessibilityPostedNotification:(NSInteger)arg1;
 - (void)accessibilitySetPostedNotificationCallback:(int (*)())arg1 withContext:(void*)arg2;
 - (id)accessibilityStringForTextMarkers:(id)arg1;

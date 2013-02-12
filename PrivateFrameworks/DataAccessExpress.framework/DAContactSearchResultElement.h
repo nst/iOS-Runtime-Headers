@@ -26,6 +26,7 @@
     NSString *_office;
     NSString *_pagerNumber;
     NSString *_postalAddress;
+    NSString *_preferredUserAddress;
     NSString *_principalPath;
     NSString *_recordName;
     NSString *_serverSource;
@@ -58,6 +59,7 @@
 @property(copy) NSString *office;
 @property(copy) NSString *pagerNumber;
 @property(copy) NSString *postalAddress;
+@property(copy) NSString *preferredUserAddress;
 @property(copy) NSString *principalPath;
 @property(copy) NSString *recordName;
 @property(copy) NSString *serverSource;
@@ -96,6 +98,7 @@
 - (id)office;
 - (id)pagerNumber;
 - (id)postalAddress;
+- (id)preferredUserAddress;
 - (id)principalPath;
 - (id)recordName;
 - (id)serverSource;
@@ -120,6 +123,7 @@
 - (void)setOffice:(id)arg1;
 - (void)setPagerNumber:(id)arg1;
 - (void)setPostalAddress:(id)arg1;
+- (void)setPreferredUserAddress:(id)arg1;
 - (void)setPrincipalPath:(id)arg1;
 - (void)setRecordName:(id)arg1;
 - (void)setServerSource:(id)arg1;

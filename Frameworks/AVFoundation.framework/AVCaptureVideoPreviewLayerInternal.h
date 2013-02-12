@@ -12,12 +12,13 @@
     NSMutableArray *connections;
     BOOL disableActions;
     NSString *gravity;
-    BOOL isFrontFacing;
+    BOOL isPresentationLayer;
     BOOL mirrored;
     NSInteger orientation;
     } previewSize;
     AVCaptureSession *session;
     CALayer *sublayer;
+    BOOL visible;
 }
 
 @end

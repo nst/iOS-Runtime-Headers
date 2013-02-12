@@ -11,6 +11,8 @@
     WDTable *mWdTable;
 }
 
++ (BOOL)isTableDeleted:(id)arg1;
+
 - (id)columnInfo;
 - (id)createColumnInfo;
 - (id)createStopArrayForRow:(NSUInteger)arg1;

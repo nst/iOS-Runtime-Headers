@@ -10,7 +10,6 @@
     NSString *_centerName;
     CPDistributedMessagingCallout *_currentCallout;
     BOOL _delayedReply;
-    struct __CFMachPort { } *_invalidationPort;
     NSLock *_lock;
     NSUInteger _parkedServerPort;
     BOOL _portPassing;
@@ -34,9 +33,8 @@
 - (NSUInteger)_sendPort;
 - (void)_sendReplyMessage:(id)arg1 portPassing:(BOOL)arg2 onMachPort:(NSUInteger)arg3;
 - (NSUInteger)_serverPort;
-- (void)_serverPortInvalidated;
 - (void)_setSendPort:(NSUInteger)arg1;
-- (void)_setupInvalidationPort;
+- (void)_setupInvalidationSource;
 - (void)dealloc;
 - (id)delayReply;
 - (BOOL)doesServerExist;

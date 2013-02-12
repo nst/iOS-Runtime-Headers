@@ -141,6 +141,7 @@
 - (void)setParameters:(id)arg1 forValueSetting:(id)arg2;
 - (void)setParametersForSettingsByType:(id)arg1;
 - (void)setPasscodeWasSetInBackup:(BOOL)arg1;
+- (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;
 - (void)setValue:(id)arg1 forSetting:(id)arg2;
 - (BOOL)showProfileErrorUIWithProfileIdentifier:(id)arg1 outError:(id*)arg2;
 - (void)shutDown;
@@ -153,6 +154,7 @@
 - (NSInteger)unlockScreenType;
 - (void)updateProfileWithIdentifier:(id)arg1 interactionDelegate:(id)arg2;
 - (id)updateProfileWithIdentifier:(id)arg1 outError:(id*)arg2;
+- (id)userInfoForClientUUID:(id)arg1;
 - (id)userSettings;
 - (BOOL)validatePasscode:(id)arg1 andUnlockContentProtectedDevice:(BOOL)arg2;
 - (BOOL)validatePasscode:(id)arg1;

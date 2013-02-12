@@ -21,6 +21,7 @@
 - (void)_doURLificationOnWebThreadAndRelease:(id)arg1;
 - (void)_enqueueOperationAndRelease:(id)arg1;
 - (id)_newOperationForFrame:(id)arg1;
+- (void)_reallyStartURLificationForOperation:(id)arg1;
 - (struct __DDResult { }*)_resultForURL:(id)arg1 forFrame:(id)arg2 context:(id*)arg3;
 - (id)actionNamesForURL:(id)arg1 inFrame:(id)arg2;
 - (void)cancelURLificationForFrame:(id)arg1;
@@ -36,7 +37,7 @@
 - (void)setIgnoreUIKitNotifications:(BOOL)arg1 forFrame:(id)arg2;
 - (void)setResults:(struct __CFArray { }*)arg1 forFrame:(id)arg2;
 - (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1 forFrame:(id)arg2;
-- (void)startURLificationForFrame:(id)arg1 detectedTypes:(NSUInteger)arg2 disableLayoutCountCheck:(BOOL)arg3;
+- (void)startURLificationForFrame:(id)arg1 detectedTypes:(NSUInteger)arg2 options:(NSInteger)arg3;
 - (void)startURLificationForFrame:(id)arg1 detectedTypes:(NSUInteger)arg2;
 
 @end

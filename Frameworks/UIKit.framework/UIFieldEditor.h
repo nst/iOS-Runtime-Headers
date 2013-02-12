@@ -5,15 +5,16 @@
 @class DOMDocument, DOMHTMLElement, NSString, UIView;
 
 @interface UIFieldEditor : UIWebDocumentView <UIAutoscrollContainer> {
+    unsigned int _baseWritingDirectionIsRTL : 1;
     unsigned int _changingView : 1;
-    unsigned int _mouseWasDragged : 1;
     unsigned int _disableNotifications : 1;
-    unsigned int _isResigningFirstResponder : 1;
     unsigned int _delegateRespondsToFieldEditorDidChange : 1;
     unsigned int _delegateRespondsToShouldInsertText : 1;
     unsigned int _delegateRespondsToShouldReplaceWithText : 1;
     unsigned int _fieldEditorReentrancyGuard : 1;
-    unsigned int _reserved : 22;
+    unsigned int _isResigningFirstResponder : 1;
+    unsigned int _mouseWasDragged : 1;
+    unsigned int _reserved : 21;
     NSString *_currentStyle;
     DOMDocument *_document;
     NSString *_initialText;
@@ -67,6 +68,7 @@
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })selectionRange;
 - (id)selectionView;
 - (void)setAutoscrollContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setBaseWritingDirection:(NSInteger)arg1;
 - (void)setCaretColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNotificationsDisabled:(BOOL)arg1;

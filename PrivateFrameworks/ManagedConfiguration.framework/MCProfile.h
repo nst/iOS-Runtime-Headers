@@ -86,6 +86,8 @@
 - (id)description;
 - (id)displayName;
 - (id)earliestCertificateExpiryDate;
+- (void)evaluateSignerTrust;
+- (void)evaluateSignerTrustAsynchronouslyWithCompletion:(id)arg1;
 - (id)expiryDate;
 - (id)friendlyName;
 - (id)identifier;

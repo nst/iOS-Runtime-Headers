@@ -12,10 +12,10 @@
 + (void)appendData:(id)arg1 forURL:(id)arg2 lastChunk:(BOOL)arg3;
 + (BOOL)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;
-+ (id)createURLWithContentID:(id)arg1 baseURL:(id)arg2;
-+ (id)createUniqueURLWithName:(id)arg1;
 + (id)errorForURL:(id)arg1;
 + (void)initialize;
++ (id)newURLWithContentID:(id)arg1 baseURL:(id)arg2;
++ (id)newUniqueURLWithName:(id)arg1;
 + (void)registerPreview:(id)arg1;
 + (void)registerURL:(id)arg1 mimeType:(id)arg2 textEncoding:(id)arg3;
 + (void)setError:(id)arg1 forURL:(id)arg2;

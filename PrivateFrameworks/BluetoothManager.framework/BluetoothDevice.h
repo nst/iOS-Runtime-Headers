@@ -29,6 +29,8 @@
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
 - (BOOL)isAccessory;
 - (BOOL)isServiceSupported:(NSUInteger)arg1;
+- (NSUInteger)majorClass;
+- (NSUInteger)minorClass;
 - (id)name;
 - (BOOL)paired;
 - (id)scoUID;

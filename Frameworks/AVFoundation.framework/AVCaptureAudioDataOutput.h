@@ -23,5 +23,6 @@
 - (struct dispatch_queue_s { }*)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;
 - (void)setSampleBufferDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
+- (void)setSession:(id)arg1;
 
 @end

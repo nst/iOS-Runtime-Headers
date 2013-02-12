@@ -6,6 +6,7 @@
     id _session;
 }
 
+@property(readonly) GKConnection *connection;
 @property <GKSessionDelegate> *delegate;
 @property(readonly) NSString *displayName;
 @property(readonly) NSString *peerID;

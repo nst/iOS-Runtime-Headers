@@ -11,7 +11,6 @@
     struct _NSRange { 
         NSUInteger location; 
         NSUInteger length; 
-    unsigned int _initialAttachmentCount : 10;
     unsigned int _showKeyboardImmediately : 1;
     unsigned int _isDirty : 1;
     unsigned int _shouldAutosaveWithSuspendInfo : 1;
@@ -40,6 +39,7 @@
     <MFMailComposeControllerDelegate> *_delegate;
     OutgoingMessageDelivery *_delivery;
     MFError *_error;
+    NSUInteger _initialAttachmentCount;
     NSString *_initialTitle;
     MailboxUid *_lastDraftMailboxUid;
     NSString *_lastDraftMessageID;
@@ -78,6 +78,7 @@
 - (id)_autosavedMessage;
 - (void)_bodyTextChanged:(id)arg1;
 - (void)_close;
+- (void)_composeViewDidDraw:(id)arg1;
 - (unsigned long)_estimateMessageSize;
 - (void)_focusGained:(id)arg1;
 - (BOOL)_fromAccountAllowsEmoji;
@@ -95,6 +96,8 @@
 - (void)_quoteReplyMessage:(id)arg1 content:(id)arg2;
 - (void)_reallyAutosaveImmediately:(id)arg1;
 - (void)_removeLastDraftWithStore:(id)arg1;
+- (void)_searchBegan:(id)arg1;
+- (void)_searchEnded:(id)arg1;
 - (void)_setCodePointTranslationEnabled:(BOOL)arg1;
 - (void)_setComposeBodyFieldSelectedRangeDeferred:(id)arg1;
 - (void)_setRecipients:(id)arg1 forField:(NSInteger)arg2;

@@ -14,6 +14,7 @@
         unsigned int downButtonSentAction : 1; 
         unsigned int isTranslucent : 1; 
         unsigned int forceTopBarAppearance : 1; 
+    id _appearance;
     NSArray *_buttonItems;
     NSInteger _currentButtonGroup;
     NSArray *_customizationItems;
@@ -57,6 +58,7 @@
 - (id)_configureFromOldButton:(id)arg1 toNewButtonWithTag:(NSInteger)arg2 skipTag:(NSInteger)arg3;
 - (void)_configureToolbarReplacingItem:(id)arg1 withNewItem:(id)arg2 dragging:(BOOL)arg3 swapping:(BOOL)arg4;
 - (id)_currentButtons;
+- (id)_customToolbarAppearance;
 - (void)_customizeDoneButtonAction:(id)arg1;
 - (void)_customizeWithAvailableItems:(id)arg1;
 - (void)_customizeWithCurrentButtons:(id)arg1 availableButton:(id)arg2;
@@ -74,6 +76,8 @@
 - (id)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 actuallyRepositionButtons:(BOOL)arg3;
 - (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
+- (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
+- (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(NSUInteger)arg3;
 - (void)_setForceTopBarAppearance:(BOOL)arg1;
 - (void)_showButtons:(NSInteger*)arg1 withCount:(NSInteger)arg2 group:(NSInteger)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(NSInteger)arg6;
 - (void)_updateItemsForNewFrame:(id)arg1;

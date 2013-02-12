@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSConditionLock, NSMutableDictionary;
+@class NSConditionLock, NSMutableArray, NSMutableDictionary;
 
 @interface MFGenericAttachmentStore : MFWebAttachmentSource {
     NSMutableDictionary *_attachmentsByURL;
+    NSMutableArray *_attachmentsOrder;
     BOOL _didCancelImageScalingOperations;
     NSUInteger _imagesSize;
     BOOL _outgoing;
@@ -16,7 +17,7 @@
 }
 
 - (void)_delayedSetScalingEnabled;
-- (void)_enqueueAttachment:(id)arg1 forScalingCalculationFromImageSource:(struct CGImageSource { }*)arg2 withFlags:(NSUInteger)arg3;
+- (void)_enqueueScaleAttachment:(id)arg1 withFlags:(NSUInteger)arg2;
 - (BOOL)addAttachment:(id)arg1 renamingContentID:(BOOL)arg2;
 - (id)attachmentForURL:(id)arg1;
 - (id)attachments;

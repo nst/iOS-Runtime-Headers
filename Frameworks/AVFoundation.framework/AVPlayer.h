@@ -36,6 +36,7 @@
 - (void)_attachLayerToFigPlayer;
 - (void)_beginInterruption;
 - (void)_changeStatusToFailedWithError:(id)arg1;
+- (void)_checkDefaultsWriteForPerformanceLogging;
 - (id)_currentItem;
 - (NSInteger)_defaultActionAtItemEnd;
 - (void)_enumerateItemsUsingBlock:(id)arg1;
@@ -46,6 +47,7 @@
 - (BOOL)_isClosedCaptionDisplayEnabled;
 - (BOOL)_isSubtitleDisplayEnabled;
 - (id)_items;
+- (void)_logPerformanceDataForCurrentItem;
 - (id)_playerLayers;
 - (id)_preferredLanguages;
 - (id)_propertyStorage;
@@ -58,9 +60,9 @@
 - (void)_setActionAtItemEnd:(NSInteger)arg1 allowingAdvance:(BOOL)arg2;
 - (void)_setCurrentItem:(id)arg1;
 - (void)_setLayer:(id)arg1;
-- (void)_setLayerNoLock:(id)arg1;
 - (void)_setVideoCompositor:(id)arg1;
 - (void)_setVideoCompositorToMatchItem:(id)arg1;
+- (struct dispatch_queue_s { }*)_stateDispatchQueue;
 - (id)_videoCompositor;
 - (id)_weakReference;
 - (NSInteger)actionAtItemEnd;

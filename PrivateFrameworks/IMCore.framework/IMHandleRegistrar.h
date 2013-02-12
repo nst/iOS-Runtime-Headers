@@ -23,6 +23,7 @@
 - (void)_emptySiblingCacheForIMHandleGUID:(id)arg1;
 - (void)_rebuildUniqueNameMapWithStyleChange:(BOOL)arg1;
 - (id)allIMHandles;
+- (id)autorelease;
 - (id)candidateUniqueNamesForIMHandle:(id)arg1;
 - (void)clearNameReservationsForObject:(id)arg1;
 - (void)clearSiblingCacheForIMHandle:(id)arg1;

@@ -2,23 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMediaFileType, NSArray, NSMutableArray, NSString, NSURL;
+@class AVAssetWriterHelper, AVWeakReference;
 
 @interface AVAssetWriterInternal : NSObject {
-    struct { 
-        long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
-        long long epoch; 
-    struct OpaqueFigAssetWriter { } *figAssetWriter;
-    NSString *fileType;
-    NSMutableArray *inputs;
-    AVMediaFileType *mediaFileType;
-    NSArray *metadataItems;
-    } movieFragmentInterval;
-    BOOL shouldOptimizeForNetworkUse;
-    NSURL *url;
-    BOOL writing;
+    AVAssetWriterHelper *helper;
+    struct dispatch_queue_s { } *helperReadWriteQueue;
+    AVWeakReference *weakReference;
 }
 
 @end

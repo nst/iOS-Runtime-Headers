@@ -7,7 +7,6 @@
 @interface AVCaptureAudioDataOutputInternal : NSObject {
     struct dispatch_queue_s { } *clientQueue;
     <AVCaptureAudioDataOutputSampleBufferDelegate> *delegate;
-    BOOL didCallFigRecorderStartRecording;
 }
 
 - (void)dealloc;

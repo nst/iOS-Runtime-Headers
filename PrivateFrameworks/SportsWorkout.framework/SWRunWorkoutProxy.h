@@ -5,6 +5,7 @@
 @interface SWRunWorkoutProxy : NSObject {
 }
 
+@property(readonly) NSString *currentSongName;
 @property(readonly) NSString *goalType;
 @property(readonly) NSString *powerSongName;
 @property(readonly) NSString *presetGoal;
@@ -14,15 +15,25 @@
 @property(readonly) float goal;
 @property(readonly) BOOL hasEverStarted;
 @property(readonly) BOOL hasPowerSong;
+@property(readonly) NSInteger musicSelection;
+@property(readonly) BOOL shouldControlMusic;
 
-+ (id)createProxy;
 + (void)initialize;
++ (id)newProxy;
 
 - (void)activateWorkout;
+- (void)beginSeekingBackward;
+- (void)beginSeekingForward;
+- (void)endSeeking;
 - (void)endWorkout;
+- (void)goToNowPlaying;
+- (void)pauseMusic;
 - (void)pauseWorkout;
+- (void)playMusic;
 - (void)playOnDemandPrompt;
 - (void)playPowerSong;
 - (void)prepareToActivateWorkout;
+- (void)selectNextSong;
+- (void)selectPreviousSong;
 
 @end

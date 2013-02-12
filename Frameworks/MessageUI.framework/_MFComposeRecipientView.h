@@ -32,7 +32,6 @@
 - (void)addAddress:(id)arg1;
 - (id)addButton;
 - (id)addButton;
-- (id)addButton;
 - (void)addButtonClicked:(id)arg1;
 - (void)addRecipient:(id)arg1;
 - (void)addRecord:(void*)arg1 identifier:(NSInteger)arg2;

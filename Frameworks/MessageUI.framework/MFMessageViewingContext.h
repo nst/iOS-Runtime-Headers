@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class ActivityMonitor, MailMessage, MessageBody, MimePart, NSObject<MFMessageViewingContextDelegate>;
+@class ActivityMonitor, MailMessage, MessageBody, MimePart, NSLock, NSObject<MFMessageViewingContextDelegate>;
 
 @interface MFMessageViewingContext : NSObject {
     unsigned int _loadedFullData : 1;
@@ -13,6 +13,7 @@
     unsigned int _isDraftMessage : 1;
     MessageBody *_body;
     id _content;
+    NSLock *_contentLock;
     NSUInteger _contentOffset;
     NSObject<MFMessageViewingContextDelegate> *_delegate;
     NSUInteger _loadIncrement;

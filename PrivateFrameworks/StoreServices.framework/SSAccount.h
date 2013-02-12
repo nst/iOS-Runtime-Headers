@@ -10,6 +10,7 @@
     NSInteger _accountScope;
     BOOL _active;
     NSString *_creditsString;
+    BOOL _demo;
     NSLock *_lock;
     NSString *_secureToken;
     NSNumber *_uniqueIdentifier;
@@ -23,19 +24,21 @@
 @property NSInteger accountScope;
 @property(getter=isActive) BOOL active;
 @property(getter=isAuthenticated,readonly) BOOL authenticated;
+@property(getter=isDemoAccount) BOOL demoAccount;
 
 - (NSInteger)accountKind;
 - (id)accountName;
 - (NSInteger)accountScope;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creditsString;
 - (void)dealloc;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)isActive;
 - (BOOL)isAuthenticated;
+- (BOOL)isDemoAccount;
 - (void)resetTransientData;
 - (id)secureToken;
 - (void)setAccountKind:(NSInteger)arg1;
@@ -43,6 +46,7 @@
 - (void)setAccountScope:(NSInteger)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setCreditsString:(id)arg1;
+- (void)setDemoAccount:(BOOL)arg1;
 - (void)setSecureToken:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (id)uniqueIdentifier;

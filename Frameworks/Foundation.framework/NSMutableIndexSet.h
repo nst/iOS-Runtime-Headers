@@ -20,6 +20,8 @@
 - (void)addIndexesFromIndexSet:(id)arg1;
 - (void)addIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (Class)classForCoder;
+- (id)copyPropertyListEncoding;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (void)removeAllIndexes;
 - (void)removeIndex:(NSUInteger)arg1;
 - (void)removeIndexes:(id)arg1;

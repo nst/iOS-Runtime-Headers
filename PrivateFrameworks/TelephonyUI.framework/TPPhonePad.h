@@ -27,7 +27,6 @@
 + (BOOL)shouldStringAutoDial:(id)arg1 givenLastChar:(BOOL)arg2;
 
 - (id)__original_forwardingTargetForSelector:(SEL)arg1;
-- (id)_accessibilityInternalChildren;
 - (void)_activateSounds:(BOOL)arg1;
 - (void)_appResumed;
 - (void)_appSuspended;

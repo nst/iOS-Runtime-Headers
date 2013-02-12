@@ -10,12 +10,11 @@
 }
 
 - (void)_buttonPressed:(id)arg1;
-- (void)_touchDown:(id)arg1;
-- (void)_touchUpOutside:(id)arg1;
 - (void)dealloc;
 - (void)setButton:(NSInteger)arg1 isEnabled:(BOOL)arg2;
 - (void)setButton:(NSInteger)arg1 isSelected:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setTitle:(id)arg1 image:(id)arg2 forPosition:(NSInteger)arg3 maintainsSelection:(BOOL)arg4;
+- (void)setOrientation:(NSInteger)arg1;
+- (void)setTitle:(id)arg1 image:(id)arg2 forPosition:(NSInteger)arg3;
 
 @end

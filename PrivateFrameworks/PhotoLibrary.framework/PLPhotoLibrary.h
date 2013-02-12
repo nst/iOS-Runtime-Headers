@@ -9,7 +9,7 @@
     struct __CFDictionary { } *_allPhotos;
     PLPhotoAlbum *_allPhotosAlbum;
     PLConnection *_connection;
-    NSInteger _databaseMigrationNeeded;
+    NSInteger _databaseMigrationKind;
     NSCalendar *_exifConversionCalendar;
     PLPhotoAlbum *_lastImportedPhotosAlbum;
     double _lastRemoteDataModification;
@@ -36,7 +36,6 @@
 + (BOOL)processCanWriteSandboxForPath:(id)arg1;
 + (id)savedPhotosAlbum;
 + (void)setImageWriterIsBusy:(BOOL)arg1;
-+ (void)setSqliteError;
 + (void)setVideoCaptureIsBusy:(BOOL)arg1;
 + (id)sharedPhotoLibrary;
 + (id)sharedPhotoLibraryIfExists;
@@ -44,14 +43,18 @@
 + (id)takingVideoIndicatorFilePath;
 
 - (void)_addPhoto:(id)arg1 toEvent:(id)arg2;
+- (void)_attachAuxDatabase;
+- (void)_closeDatabaseConnection;
 - (void)_deleteFilesAndEmptyDirectoriesAtPaths:(id)arg1;
+- (void)_detachAuxDatabase;
 - (BOOL)_hasAtLeastOneItem:(BOOL)arg1;
 - (id)_imagesForAlbum:(id)arg1 firstImageOnly:(BOOL)arg2;
 - (void)_loadPhotoLibraryAfterMigration;
 - (void)_notifyChangedPhoto:(id)arg1;
 - (void)_notifyPTPAboutAddedPhoto:(id)arg1;
 - (void)_notifyPTPAboutDeletedPhoto:(id)arg1;
-- (void)_notifyPTPAboutPhotoLibraryAvailable;
+- (void)_notifyPTPAboutPhotoLibraryAvailable:(BOOL)arg1;
+- (void)_notifyPhotoLibraryIsNoLongerAvailableOnMainThread;
 - (void)_notifyProgress:(float)arg1;
 - (void)_notifyRebuildProgressOnMainThread:(id)arg1;
 - (NSInteger)_orientationAfterRotatingOrientation:(NSInteger)arg1 clockwiseByDegrees:(NSInteger)arg2 transposeCoordinatesOut:(BOOL*)arg3;
@@ -85,6 +88,7 @@
 - (id)dateForPhoto:(id)arg1;
 - (BOOL)dcimMigratedToDatabase;
 - (void)dealloc;
+- (void)deleteAllImages;
 - (void)deleteImageAtIndex:(NSInteger)arg1 fromAlbum:(id)arg2;
 - (void)deleteImages:(id)arg1;
 - (void)deleteImagesAtIndexes:(id)arg1 fromAlbum:(id)arg2;
@@ -94,10 +98,12 @@
 - (id)fileExtensionsForPhoto:(id)arg1;
 - (void)finishVideoMigration;
 - (void)flushAlbums;
+- (void)flushDCIMAlbums;
 - (void)fullDcimMigration;
 - (BOOL)hasAtLeastOneItem;
 - (BOOL)hasAtLeastOnePhoto;
 - (BOOL)hasAtLeastOnePhotoWithGPS;
+- (BOOL)hasDelegateAndValidDatabase;
 - (BOOL)hasPhotoWithCaptureDate:(id)arg1 fileName:(id)arg2 fileSize:(NSInteger)arg3;
 - (BOOL)hasPhotoWithFileCreationDate:(id)arg1 fileName:(id)arg2 fileSize:(NSInteger)arg3;
 - (id)iTunesFaceImageFallbackForRecordID:(NSInteger)arg1 faceIndex:(NSInteger)arg2 size:(struct CGSize { float x1; float x2; })arg3 returnLocationInImage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
@@ -108,18 +114,24 @@
 - (void)insertAlbum:(id)arg1 intoSortedAlbums:(id)arg2;
 - (BOOL)isPhotoInSavedPhotosAlbum:(id)arg1;
 - (id)lastImportedPhotosAlbum;
+- (BOOL)libraryIsAvailable;
 - (void)loadDatabaseCreateForMigration:(BOOL)arg1;
 - (void)migrateDcimToDatabase;
+- (void)migrateSavedPhotoCaptureTimes;
 - (void)modifyDCIMEntryForPhoto:(id)arg1;
 - (void)modifyDCIMEntryForVideo:(id)arg1 progress:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg2;
 - (id)pathsToFilesTrackedByExtras:(id)arg1;
 - (id)photoFromAssetURL:(id)arg1;
 - (void)photoLibraryAvailableNotification;
+- (void)photoLibraryCorruptNotification;
+- (void)photoLibraryRebuildingNotification;
 - (id)photoWithPrimaryKey:(NSInteger)arg1;
 - (void)pictureWasDeletedNotification;
 - (void)pictureWasTakenOrChanged;
 - (id)posterImageForAlbum:(id)arg1;
+- (void)preheatImageDataForImages:(id)arg1 withFormat:(NSInteger)arg2;
 - (void)prepareToMigrateDcimToDatabase;
+- (BOOL)ptpCanDeleteFiles;
 - (BOOL)ptpDeletePhotoWithKey:(id)arg1 andExtension:(id)arg2;
 - (BOOL)ptpDeletePhotosWithKeys:(id)arg1;
 - (id)ptpInformationForFilesInDirectory:(id)arg1;
@@ -132,7 +144,9 @@
 - (BOOL)rotatePhoto:(id)arg1 byDegrees:(NSInteger)arg2;
 - (id)savedPhotosAlbum;
 - (void)setPtpDelegate:(id)arg1;
+- (void)setSqliteErrorAndExitIfNecessary;
 - (void)something;
+- (id)syncedAlbums;
 - (id)userAlbums;
 
 @end

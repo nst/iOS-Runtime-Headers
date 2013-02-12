@@ -21,12 +21,14 @@
 - (NSUInteger)flags;
 - (id)initWithName:(id)arg1 mangledName:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3 owner:(id)arg4 flags:(NSUInteger)arg5;
 - (BOOL)isArm;
+- (BOOL)isDwarf;
 - (BOOL)isDyldStub;
 - (BOOL)isEqualToSymbol:(id)arg1;
 - (BOOL)isExternal;
 - (BOOL)isFunction;
 - (BOOL)isJavaMethod;
 - (BOOL)isObjcMethod;
+- (BOOL)isStab;
 - (BOOL)isThumb;
 - (id)mangledName;
 - (id)name;

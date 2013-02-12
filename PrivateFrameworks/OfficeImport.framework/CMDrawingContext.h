@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSAffineTransform, NSMutableArray;
+@class CMDrawableMapper, NSAffineTransform, NSMutableArray;
 
 @interface CMDrawingContext : NSObject {
     struct CGRect { 
@@ -28,8 +28,10 @@
     NSAffineTransform *_currentTransform;
     struct __CFData { } *_data;
     struct CGDataConsumer { } *_dataConsumer;
+    struct CGImage { } *_fillImage;
     } _finalFrame;
     } _frame;
+    CMDrawableMapper *_mapper;
     NSMutableArray *_transforms;
 }
 
@@ -50,11 +52,14 @@
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)mapper;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pdfFrame;
 - (void)restoreLastTransform;
 - (void)setFillColor:(struct CGColor { }*)arg1;
+- (void)setFillImage:(struct CGImage { }*)arg1;
 - (void)setLineDash:(id)arg1;
 - (void)setLineWidth:(float)arg1;
+- (void)setMapper:(id)arg1;
 - (void)setStrokeColor:(struct CGColor { }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transformRectToGroup:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transformRectToPage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -14,6 +14,7 @@
 - (void)_notifyAboutPotentialCall;
 - (BOOL)allowsVideoForAVChat:(id)arg1;
 - (float)audioVolumeForAVChat:(id)arg1;
+- (id)autorelease;
 - (id)avChat:(id)arg1 IPAndPortDataWithCallerIP:(id)arg2 callerSIPPort:(NSUInteger)arg3 shouldFindExternalIP:(BOOL)arg4;
 - (id)avChat:(id)arg1 IPAndPortDataWithCallerIPAndPortData:(id)arg2 shouldFindExternalIP:(BOOL)arg3;
 - (NSUInteger)avChat:(id)arg1 enableAudioReflector:(BOOL)arg2;
@@ -72,8 +73,10 @@
 - (BOOL)openCamera;
 - (NSUInteger)overallChatState;
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
+- (oneway void)release;
 - (void*)remoteVideoBackLayer;
 - (void*)remoteVideoLayer;
+- (NSUInteger)retainCount;
 - (void)setCameraOrientation:(NSUInteger)arg1;
 - (void)setCameraType:(NSUInteger)arg1;
 - (void)setDelegate:(id)arg1;

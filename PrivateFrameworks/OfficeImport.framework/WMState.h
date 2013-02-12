@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMOutlineState, WDText;
+@class CMOutlineState, NSMutableDictionary, WDText;
 
 @interface WMState : CMState {
     CMOutlineState *currentListState;
+    NSMutableDictionary *listStates;
     NSUInteger mBlockIndex;
     NSUInteger mCurrentPage;
     BOOL mIsFrame;
@@ -35,6 +36,7 @@
 - (id)lastFooter;
 - (id)lastHeader;
 - (float)leftMargin;
+- (id)listStateForListId:(NSInteger)arg1;
 - (id)outlineState;
 - (float)pageHeight;
 - (float)pageOffset;
@@ -48,6 +50,7 @@
 - (void)setLastFooter:(id)arg1;
 - (void)setLastHeader:(id)arg1;
 - (void)setLeftMargin:(float)arg1;
+- (void)setListState:(id)arg1 forListId:(NSInteger)arg2;
 - (void)setPageHeight:(float)arg1;
 - (void)setRunIndex:(NSUInteger)arg1;
 - (void)setTopMargin:(float)arg1;

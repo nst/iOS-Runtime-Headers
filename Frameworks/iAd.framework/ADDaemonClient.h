@@ -2,13 +2,16 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class CPDistributedMessageCenter, NSMapTable;
+@class CPDistributedMessageCenter, NSMapTable, NSString;
 
 @interface ADDaemonClient : NSObject {
+    NSString *_randomPortName;
     struct __CFMessagePort { } *_replyPort;
     CPDistributedMessageCenter *_sendCenter;
     NSMapTable *_tokenToObserver;
 }
+
+@property(retain) NSString *randomPortName;
 
 + (id)sharedClient;
 
@@ -16,6 +19,8 @@
 - (void)_receivedReply:(long)arg1 withData:(struct __CFData { }*)arg2;
 - (void)_tokenReceivedFromCenter:(id)arg1 reply:(id)arg2 error:(id)arg3 observer:(id)arg4;
 - (id)init;
-- (void)requestBanners:(NSUInteger)arg1 forSpecification:(id)arg2 withProperties:(id)arg3 notifyObserver:(id)arg4;
+- (id)randomPortName;
+- (void)requestBanners:(NSUInteger)arg1 forSpecification:(id)arg2 withProperties:(id)arg3 serverURL:(id)arg4 notifyObserver:(id)arg5;
+- (void)setRandomPortName:(id)arg1;
 
 @end

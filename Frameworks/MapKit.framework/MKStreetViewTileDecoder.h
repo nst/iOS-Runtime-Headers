@@ -31,7 +31,7 @@
 
 - (NSUInteger)_decodeTileData:(id)arg1 context:(struct CGContext { }*)arg2 bytes:(unsigned short*)arg3 level:(NSUInteger)arg4;
 - (void)_runHardwareConverterWithSurfaceProperties:(id)arg1;
-- (void)_runHardwareDecoder;
+- (void)_runHardwareDecoder:(id)arg1;
 - (void)_runSoftwareDecoder;
 - (void)addFreeTexture:(NSUInteger)arg1;
 - (void)dealloc;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVAudioMix, AVPlayerItem, AVPropertyStorage, AVVideoComposition, AVWeakReference, NSArray, NSError, NSMutableArray, NSURL;
+@class AVAsset, AVAudioMix, AVPlayerItem, AVPropertyStorage, AVVideoComposition, AVWeakReference, NSArray, NSDictionary, NSError, NSMutableArray, NSURL;
 
 @interface AVPlayerItemInternal : NSObject {
     struct { 
@@ -36,6 +36,7 @@
     NSArray *chapterImageTimes;
     NSError *error;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
+    NSDictionary *gaplessInfo;
     } initialForwardPlaybackEndTime;
     } initialReversePlaybackEndTime;
     } initialTime;
@@ -47,7 +48,7 @@
     AVWeakReference *playerReference;
     AVPlayerItem *previousItem;
     AVPropertyStorage *propertyStorage;
-    struct dispatch_queue_s { } *serialQueue;
+    struct dispatch_queue_s { } *stateDispatchQueue;
     NSInteger status;
     NSMutableArray *syncLayers;
     NSArray *timedMetadata;

@@ -12,5 +12,6 @@
 - (void)beginNetworkActivity;
 - (void)endNetworkActivity;
 - (id)init;
+- (void)resetNetworkActivity;
 
 @end

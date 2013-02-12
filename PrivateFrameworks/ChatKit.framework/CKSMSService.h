@@ -35,7 +35,9 @@
 - (BOOL)dbFull;
 - (void)dealloc;
 - (void)deleteMessagesForConversationIDs:(id)arg1 removeConversations:(BOOL)arg2;
+- (NSInteger)failedSendCount;
 - (void)fixupNames;
+- (BOOL)hasActiveConversations;
 - (id)headerTitleForComposeRecipients:(id)arg1 mediaObjects:(id)arg2 subject:(id)arg3;
 - (id)headerTitleForEntities:(id)arg1;
 - (id)init;

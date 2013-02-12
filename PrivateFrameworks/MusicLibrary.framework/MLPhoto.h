@@ -49,7 +49,6 @@
 - (id)date;
 - (void)dealloc;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)deleteFiles;
 - (BOOL)didSetPhotoData;
 - (double)duration;
@@ -65,6 +64,8 @@
 - (BOOL)hasFullSizeImageData;
 - (BOOL)hasGPS;
 - (NSInteger)imageID;
+- (id)imageWithFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
+- (id)imageWithFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)imageWithFormat:(NSInteger)arg1;
 - (id)imageWithFormat:(NSInteger)arg1;
 - (id)indexSheetImage;

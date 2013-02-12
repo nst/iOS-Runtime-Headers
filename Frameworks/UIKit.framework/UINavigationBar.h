@@ -25,6 +25,7 @@
         unsigned int crossfadeItems : 1; 
         unsigned int autoAdjustTitle : 1; 
     UIView *_accessoryView;
+    id _appearance;
     id _delegate;
     NSMutableArray *_itemStack;
     UIView *_leftView;
@@ -59,6 +60,7 @@
 - (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_adjustVisibleItemsByDelta:(float)arg1;
 - (id)_allViews;
+- (id)_appearance;
 - (void)_backgroundFadeDidFinish:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (NSInteger)_barStyle:(BOOL)arg1;
 - (float)_barWidth;
@@ -91,6 +93,9 @@
 - (void)_removeAccessoryView;
 - (void)_removeItemsFromSuperview:(id)arg1;
 - (void)_setAutoAdjustTitle:(BOOL)arg1;
+- (void)_setBackButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(NSUInteger)arg3;
+- (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
+- (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(NSUInteger)arg3;
 - (void)_setItems:(id)arg1 transition:(NSInteger)arg2;
 - (void)_setLeftView:(id)arg1 rightView:(id)arg2;
 - (void)_setupTopNavItem:(id)arg1 oldTopNavItem:(id)arg2;
@@ -106,6 +111,7 @@
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (NSUInteger)animationDisabledCount;
+- (void)applyTheme:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })availableTitleArea;
 - (id)backItem;
 - (NSInteger)barStyle;

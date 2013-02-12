@@ -46,6 +46,7 @@
 - (id)copyHeadersForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)encodedHeaders;
 - (id)firstHeaderForKey:(id)arg1;
 - (id)firstSenderAddress;

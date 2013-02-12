@@ -50,6 +50,7 @@
 @property NSUInteger disabledParts;
 @property BOOL displayPlaybackErrorAlerts;
 @property(getter=isFullscreen) BOOL fullscreen;
+@property BOOL inhibitOverlay;
 @property NSUInteger itemTypeOverride;
 @property BOOL ownsStatusBar;
 @property NSUInteger scaleMode;

@@ -34,6 +34,7 @@
     struct sqlite3_stmt { } *_vmstatement;
 }
 
++ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 error:(id*)arg2;
 + (BOOL)_preflightDatabaseAtURL:(id)arg1;
 + (void)_setDebugFlags:(NSInteger)arg1;
 + (void)initialize;

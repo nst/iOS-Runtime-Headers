@@ -5,6 +5,7 @@
 @interface GKSignOutPlayerRequest : GKDataRequest {
 }
 
+- (BOOL)authenticationRequired;
 - (id)key;
 - (void)send;
 

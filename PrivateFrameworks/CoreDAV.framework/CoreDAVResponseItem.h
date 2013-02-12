@@ -2,40 +2,45 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVErrorItem, CoreDAVPropStat, NSString;
+@class CoreDAVErrorItem, NSMutableDictionary, NSString;
 
 @interface CoreDAVResponseItem : CoreDAVItem <CoreDAVParsingAcceptingTopLevelItems> {
+    BOOL _hasPropertyError;
     NSString *_href;
     NSString *_responseDescription;
-    CoreDAVPropStat *_successfulPropStat;
+    NSMutableDictionary *_retrievedSuccessfulPropertiesToValues;
     CoreDAVErrorItem *_topLevelErrorItem;
     NSString *_topLevelStatus;
 }
 
 @property(retain) NSString *href;
 @property(retain) NSString *responseDescription;
-@property(retain) CoreDAVPropStat *successfulPropStat;
+@property(retain) NSMutableDictionary *retrievedSuccessfulPropertiesToValues;
 @property(readonly) NSDictionary *successfulPropertiesToValues;
 @property(retain) CoreDAVErrorItem *topLevelErrorItem;
 @property(retain) NSString *topLevelStatus;
+@property BOOL hasPropertyError;
 
 + (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)ignoresUnknownChildren;
++ (BOOL)errorOnUnknownChildren;
 + (BOOL)parsingWithSubItems;
 
 - (void)addNewTopLevelItem:(id)arg1;
 - (id)copyCoreDAVParseRules;
 - (void)dealloc;
 - (id)description;
+- (BOOL)hasPropertyError;
 - (id)href;
+- (id)initWithXMLParser:(id)arg1 nameSpace:(id)arg2 elementName:(id)arg3 nodeAttributes:(id)arg4 root:(id)arg5 parent:(id)arg6 parentSetter:(SEL)arg7 ruleForMe:(id)arg8;
 - (id)responseDescription;
+- (id)retrievedSuccessfulPropertiesToValues;
+- (void)setHasPropertyError:(BOOL)arg1;
 - (void)setHref:(id)arg1;
 - (void)setResponseDescription:(id)arg1;
-- (void)setSuccessfulPropStat:(id)arg1;
+- (void)setRetrievedSuccessfulPropertiesToValues:(id)arg1;
 - (void)setTopLevelErrorItem:(id)arg1;
 - (void)setTopLevelStatus:(id)arg1;
 - (void)setUnescapedHref:(id)arg1;
-- (id)successfulPropStat;
 - (id)successfulPropertiesToValues;
 - (id)topLevelErrorItem;
 - (id)topLevelStatus;

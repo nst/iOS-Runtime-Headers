@@ -7,7 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)_accessibilityInternalChildren;
 - (id)accessibilityContainerElements;
 - (void)dealloc;
 - (BOOL)isAccessibilityElement;

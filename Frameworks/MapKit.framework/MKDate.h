@@ -14,6 +14,7 @@
 
 + (id)dateWithNSDate:(id)arg1;
 
+- (NSInteger)dayOfCommonEra;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;

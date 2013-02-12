@@ -2,9 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSHashTable, NSMapTable, NSMutableSet, VMURangeArray, VMUSymbolicator;
+@class NSHashTable, NSMapTable, NSMutableSet, VMURangeArray;
 
 @interface VMUObjectIdentifier : NSObject {
+    struct _CSTypeRef { 
+        NSUInteger _opaque_1; 
+        NSUInteger _opaque_2; 
     NSUInteger _cPlusPlusClassCount;
     NSUInteger _cfTypeCount;
     NSMapTable *_cfTypeIDtoClassInfo;
@@ -14,7 +17,7 @@
     NSUInteger _objcClassCount;
     NSMutableSet *_objcRuntimeMallocBlocks;
     NSHashTable *_objcRuntimeMallocBlocksHash;
-    VMUSymbolicator *_symbolicator;
+    } _symbolicator;
     VMURangeArray *_targetProcessVMranges;
     NSUInteger _task;
     NSInteger peeksAtRemoteObjectIsa;
@@ -23,6 +26,8 @@
 - (NSUInteger)CFTypeCount;
 - (NSUInteger)CPlusPlusClassCount;
 - (NSUInteger)ObjCclassCount;
+- (id)classInfoForCFType:(struct __CFRuntimeBase { NSUInteger x1; unsigned char x2[4]; }*)arg1;
+- (id)classInfoForIsaPointer:(NSUInteger)arg1;
 - (id)classInfoForObject:(NSUInteger)arg1;
 - (void)dealloc;
 - (void)findCFTypes;
@@ -30,10 +35,10 @@
 - (void)findTargetProcessVMranges;
 - (id)initWithTask:(NSUInteger)arg1 symbolicator:(id)arg2;
 - (id)initWithTask:(NSUInteger)arg1;
+- (BOOL)isValidRemotePointer:(NSUInteger)arg1;
 - (id)objcRuntimeMallocBlocks;
 - (id)objcRuntimeMallocBlocksHash;
 - (id)readClassNameString:(NSUInteger)arg1;
-- (id)typeInfoForObject:(NSUInteger)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
 
 @end

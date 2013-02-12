@@ -57,6 +57,7 @@
 - (BOOL)allowsSendingTextMessage;
 - (BOOL)allowsSharing;
 - (id)alternateName;
+- (void)applicationDidResume;
 - (id)attribution;
 - (id)customHeaderView;
 - (id)customMessageView;

@@ -19,6 +19,8 @@
 - (void)_AVCaptureVideoDataOutput_VideoDataBecameReady;
 - (id)_applyOverridesToCaptureOptions:(id)arg1;
 - (BOOL)alwaysDiscardsLateVideoFrames;
+- (id)availableVideoCVPixelFormatTypes;
+- (id)availableVideoCodecTypes;
 - (id)connectionMediaTypes;
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;
@@ -30,6 +32,7 @@
 - (void)setAlwaysDiscardsLateVideoFrames:(BOOL)arg1;
 - (void)setMinFrameDuration:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (void)setSampleBufferDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;
+- (void)setSession:(id)arg1;
 - (void)setVideoSettings:(id)arg1;
 - (id)videoSettings;
 

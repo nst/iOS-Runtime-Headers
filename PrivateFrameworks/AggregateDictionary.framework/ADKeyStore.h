@@ -5,6 +5,7 @@
 @class NSMutableSet;
 
 @interface ADKeyStore : NSObject {
+    BOOL _isInternalDevice;
     NSMutableSet *_whitelistedDistributionKeys;
     NSMutableSet *_whitelistedDistributionPrefixes;
     NSMutableSet *_whitelistedScalarKeys;
@@ -13,8 +14,8 @@
 
 - (void)dealloc;
 - (BOOL)distributionKeyIsWhitelisted:(id)arg1;
-- (id)initWithDefaultPathAndAcceptedClasses:(id)arg1;
-- (id)initWithPath:(id)arg1 acceptedClasses:(id)arg2;
+- (id)initWithDefaultPathAndAdditionalAcceptedClasses:(id)arg1;
+- (id)initWithPath:(id)arg1 additionalAcceptedClasses:(id)arg2;
 - (BOOL)scalarKeyIsWhitelisted:(id)arg1;
 
 @end

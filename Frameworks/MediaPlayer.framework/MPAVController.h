@@ -88,6 +88,7 @@
 @property BOOL closedCaptioningEnabled;
 @property double currentTime;
 @property NSInteger feederMode;
+@property(getter=isFullScreenVideoMode,readonly) BOOL fullScreenVideoMode;
 @property(readonly) BOOL handlingRemoteEvent;
 @property(readonly) BOOL isCurrentItemIsReadyToPlay;
 @property(readonly) BOOL muted;
@@ -95,7 +96,6 @@
 @property(readonly) NSUInteger numberOfItems;
 @property NSInteger playbackMode;
 @property(getter=isPlaying,readonly) BOOL playing;
-@property float rate;
 @property double repeatGap;
 @property NSUInteger repeatType;
 @property(getter=isRewindHoldingAtStart,readonly) BOOL rewindHoldingAtStart;
@@ -225,6 +225,7 @@
 - (void)dealloc;
 - (void)dequeueOnDemandItemIfInactive;
 - (BOOL)destinationIsTVOut;
+- (void)disconnectVideoLayer;
 - (id)embeddedDataTimesForItem:(id)arg1;
 - (void)endPlayback;
 - (void)endSeek;
@@ -242,6 +243,8 @@
 - (id)init;
 - (void)insertAndPostEmbeddedTimeMarkerWithNotification:(id)arg1;
 - (BOOL)isCurrentItemIsReadyToPlay;
+- (BOOL)isFullScreenVideoMode;
+- (BOOL)isLiveStreaming;
 - (BOOL)isPlaying;
 - (BOOL)isRewindHoldingAtStart;
 - (BOOL)isSeekingOrScrubbing;
@@ -279,7 +282,7 @@
 - (void)setNextFadeOutDuration:(double)arg1;
 - (void)setPlaybackIndex:(NSInteger)arg1;
 - (void)setPlaybackMode:(NSInteger)arg1;
-- (void)setRate:(float)arg1;
+- (BOOL)setRate:(float)arg1;
 - (void)setRateForScanning:(float)arg1;
 - (void)setRepeatGap:(double)arg1;
 - (void)setRepeatType:(NSUInteger)arg1;
@@ -302,8 +305,6 @@
 - (void)switchToVideoPlayback:(BOOL)arg1;
 - (double)timeOfPlayableEnd;
 - (double)timeOfPlayableStart;
-- (double)timeOfSeekableEnd;
-- (double)timeOfSeekableStart;
 - (void)togglePlayback;
 - (void)updateBookkeepingNow;
 - (BOOL)useApplicationAudioSession;

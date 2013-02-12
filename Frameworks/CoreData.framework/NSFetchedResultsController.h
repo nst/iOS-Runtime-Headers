@@ -62,7 +62,7 @@
 - (NSUInteger)_indexOfFetchedID:(id)arg1;
 - (id)_indexPathForIndex:(NSUInteger)arg1;
 - (void)_insertObjectInFetchedObjects:(id)arg1 atIndex:(NSUInteger)arg2;
-- (BOOL)_keyPathContaintsNonPersistedPropertyes:(id)arg1;
+- (BOOL)_keyPathContainsNonPersistedProperties:(id)arg1;
 - (void)_makeMutableFetchedObjects;
 - (void)_managedObjectContextDidChange:(id)arg1;
 - (void)_managedObjectContextDidSave:(id)arg1;

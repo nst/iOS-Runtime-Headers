@@ -17,7 +17,7 @@
 
 - (void)_adjustTableForKeyboardInfo:(id)arg1;
 - (id)_existingTableView;
-- (id)_tableView:(id)arg1 buttonCellWithTitle:(id)arg2 tintColor:(id)arg3;
+- (id)_gkTableView:(id)arg1 buttonCellWithTitle:(id)arg2 theme:(id)arg3;
 - (BOOL)clearsSelectionOnViewWillAppear;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

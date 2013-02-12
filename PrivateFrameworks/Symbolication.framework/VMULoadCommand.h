@@ -11,9 +11,10 @@
 
 - (unsigned long long)cmdSize;
 - (id)initWithMemory:(id)arg1;
-- (BOOL)isDyLib;
 - (BOOL)isDyLinker;
 - (BOOL)isDySymTab;
+- (BOOL)isIDDyLib;
+- (BOOL)isLoadDyLib;
 - (BOOL)isSegment32;
 - (BOOL)isSegment64;
 - (BOOL)isSegment;

@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSArray, NSData, NSMutableDictionary, NSString;
+@class NSArray, NSCountedSet, NSData, NSMutableDictionary, NSString;
 
 @interface AppleSpell : NSObject {
     NSMutableDictionary *_autocorrections;
     NSMutableDictionary *_bindicts;
     struct __CFDictionary { } *_databaseConnections;
+    id _diagnosticInfo;
     NSData *_globalBindictData;
     NSString *_lastLanguage;
+    NSCountedSet *_learnedResponses;
     void *_proofReaderConnection;
     NSArray *_userPreferredLanguages;
 }
@@ -22,6 +24,7 @@
 - (id)_crudePreviousWordInString:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 precededBy:(id*)arg3;
 - (id)_crudePreviousWordInString:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (id)_detailWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 description:(id)arg2 corrections:(id)arg3;
+- (id)_japaneseCorrectionForString:(id)arg1 connection:(struct _PR_DB_IO { unsigned char x1; unsigned char x2; struct _PR_DOC_FORMAT { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned char x_3_1_6; unsigned short x_3_1_7; unsigned short x_3_1_8; } x3; unsigned short x4; unsigned short x5; unsigned long *x6; unsigned char x7; short x8; short x9; short x10; short x11; unsigned short x12; struct _PR_DBINIT { struct _PR_FILE {} *x_13_1_1[1]; struct _PR_FILE {} *x_13_1_2; struct _PR_FILE {} *x_13_1_3; struct _PR_FILE {} *x_13_1_4; struct _PR_FILE {} *x_13_1_5; struct _PR_FILE {} *x_13_1_6; struct _PR_FILE {} *x_13_1_7; } x13; struct _RULEFILE {} *x14[1]; struct _PR_STATUS { NSUInteger x_15_1_1; NSInteger x_15_1_2; unsigned short x_15_1_3; } x15; }*)arg2;
 - (id)_modifiedGrammarDescriptionForDescription:(id)arg1;
 - (id)autocorrectionDictionaryForLanguage:(id)arg1;
 - (id)bindictDataForLanguage:(id)arg1 index:(NSUInteger)arg2;

@@ -10,6 +10,7 @@
     NSDate *_createdDate;
     unsigned long long _currentBytes;
     NSInteger _error;
+    NSString *_errorDescription;
     NSString *_filename;
     NSString *_guid;
     NSUInteger _hfsCreator;
@@ -28,6 +29,7 @@
     NSDate *_startDate;
     unsigned long long _totalBytes;
     NSInteger _transferState;
+    NSString *_utiType;
     BOOL _wasRegisteredAsStandalone;
     BOOL _wasSaved;
 }
@@ -35,6 +37,7 @@
 + (BOOL)_doesLocalURLRequireArchiving:(id)arg1;
 + (id)_invalidCharactersForFileTransferName;
 
+- (void)_calculateTypeInformation;
 - (void)_clear;
 - (id)_dictionaryRepresentation;
 - (id)_initWithGUID:(id)arg1 filename:(id)arg2 isDirectory:(BOOL)arg3 localURL:(id)arg4 account:(id)arg5 otherPerson:(id)arg6 totalBytes:(unsigned long long)arg7 hfsType:(unsigned long)arg8 hfsCreator:(unsigned long)arg9 hfsFlags:(unsigned short)arg10 isIncoming:(BOOL)arg11 securityLevel:(NSInteger)arg12;
@@ -46,6 +49,7 @@
 - (void)_setCurrentBytes:(unsigned long long)arg1 totalBytes:(unsigned long long)arg2;
 - (void)_setDirectory:(BOOL)arg1 hfsType:(unsigned long)arg2 hfsCreator:(unsigned long)arg3 hfsFlags:(unsigned short)arg4;
 - (void)_setError:(NSInteger)arg1;
+- (void)_setErrorDescription:(id)arg1;
 - (void)_setLastUpdatedInterval:(double)arg1;
 - (void)_setLocalPath:(id)arg1;
 - (void)_setLocalURL:(id)arg1;
@@ -61,6 +65,7 @@
 - (void)dealloc;
 - (id)displayName;
 - (NSInteger)error;
+- (id)errorDescription;
 - (BOOL)existsAtLocalPath;
 - (id)filename;
 - (id)guid;
@@ -81,6 +86,7 @@
 - (id)startDate;
 - (unsigned long long)totalBytes;
 - (NSInteger)transferState;
+- (id)type;
 - (BOOL)wasRegisteredAsStandalone;
 
 @end

@@ -42,6 +42,7 @@
 - (BOOL)containsIndex:(NSUInteger)arg1;
 - (BOOL)containsIndexes:(id)arg1;
 - (BOOL)containsIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)count;
 - (NSUInteger)countOfIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
@@ -71,6 +72,7 @@
 - (id)initWithIndexSet:(id)arg1;
 - (id)initWithIndexes:(NSUInteger*)arg1 count:(NSUInteger)arg2;
 - (id)initWithIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)intersectsIndexesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIndexSet:(id)arg1;

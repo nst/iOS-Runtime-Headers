@@ -18,11 +18,11 @@
 - (void)_purchaseFinishedNotification:(id)arg1;
 - (id)_purchaseForUniqueIdentifier:(id)arg1;
 - (void)_sendError:(id)arg1 forPurchase:(id)arg2;
+- (id)copyPropertyListEncoding;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
 - (void)handleDaemonExit;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithPurchases:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (id)purchases;

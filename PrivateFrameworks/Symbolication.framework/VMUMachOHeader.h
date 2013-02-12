@@ -6,6 +6,7 @@
 
 @interface VMUMachOHeader : VMUHeader {
     unsigned long long _address;
+    NSString *_dsymPath;
     NSUInteger _fileType;
     NSUInteger _flags;
     unsigned long long _linkEditBase;
@@ -20,8 +21,11 @@
 - (unsigned long long)address;
 - (id)architecture;
 - (id)commpage;
+- (NSUInteger)compatibilityVersion;
+- (NSUInteger)currentVersion;
 - (void)dealloc;
 - (id)description;
+- (id)dsymPath;
 - (id)dyLinkerPath;
 - (id)dySymbolTable;
 - (NSUInteger)fileType;
@@ -39,6 +43,7 @@
 - (id)sections;
 - (id)segmentAddresses;
 - (id)segmentNamed:(id)arg1;
+- (void)setDsymPath:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setTimestamp:(id)arg1;

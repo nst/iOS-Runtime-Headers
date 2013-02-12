@@ -10,6 +10,8 @@
     NSString *_previousETag;
 }
 
+@property <CoreDAVPutTaskDelegate> *delegate;
+
 - (id)additionalHeaderValues;
 - (void)dealloc;
 - (void)finishCoreDAVTaskWithError:(id)arg1;

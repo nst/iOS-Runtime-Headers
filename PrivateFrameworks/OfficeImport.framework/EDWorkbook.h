@@ -9,8 +9,8 @@
 @class ECMappingContext, EDProcessors, EDReference, EDResources, EDWarnings, ESDContainer, NSDate, NSMutableArray, NSString, OADDrawingGroup, OADTheme;
 
 @interface EDWorkbook : OCDDocument {
-     /* Encoded args for previous method: @16@0:4I8B12 */
      /* Encoded args for previous method: @12@0:4B8 */
+     /* Encoded args for previous method: @16@0:4I8B12 */
     NSUInteger mActiveSheetIndex;
     NSUInteger mDateBase;
     NSDate *mDateBaseDate;

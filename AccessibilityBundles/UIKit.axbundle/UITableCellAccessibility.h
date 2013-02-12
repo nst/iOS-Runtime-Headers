@@ -31,6 +31,7 @@
 - (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 - (void)registerMockChild:(id)arg1;
+- (void)unregisterAllChildren;
 - (void)unregisterMockChild:(id)arg1;
 
 @end

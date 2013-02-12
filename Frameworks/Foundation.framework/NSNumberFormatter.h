@@ -12,6 +12,9 @@
 }
 
 + (NSUInteger)defaultFormatterBehavior;
++ (id)gkRankFormatter;
++ (id)gk_formatInteger:(NSInteger)arg1 withGrouping:(BOOL)arg2;
++ (id)gk_formatUnsignedInteger:(NSUInteger)arg1 withGrouping:(BOOL)arg2;
 + (void)initialize;
 + (id)localizedStringFromNumber:(id)arg1 numberStyle:(NSUInteger)arg2;
 + (id)mf_formatInteger:(NSInteger)arg1 withGrouping:(BOOL)arg2;

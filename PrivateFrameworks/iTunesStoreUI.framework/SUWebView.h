@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, SUScriptDebugDelegate, SUScriptInterface, SUWebViewDelegateProxy;
+@class NSMutableArray, SSAuthenticationContext, SUScriptDebugDelegate, SUScriptInterface, SUWebViewDelegateProxy;
 
 @interface SUWebView : UIWebView <SUScriptInterfaceDelegate> {
     unsigned int _openURLsExternally : 1;
     unsigned int _scrollingDisabled : 1;
     unsigned int _sourceIsTrusted : 1;
+    SSAuthenticationContext *_authenticationContext;
     SUScriptDebugDelegate *_debugDelegate;
     SUWebViewDelegateProxy *_delegateProxy;
     SUScriptInterface *_scriptInterface;
@@ -15,6 +16,7 @@
     NSInteger _synchronousLayoutCount;
 }
 
+@property(copy) SSAuthenticationContext *authenticationContext;
 @property <SUWebViewDelegate> *delegate;
 @property(readonly) OpaqueJSContext *globalExecutionContext;
 @property(readonly) SUScriptInterface *scriptInterface;
@@ -35,6 +37,7 @@
 - (id)_newLabelForElement:(id)arg1 withText:(id)arg2;
 - (void)_performNextScrollRequest;
 - (void)_setRichTextReaderViewportSettings;
+- (id)authenticationContext;
 - (void)beginSynchronousLayout;
 - (id)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
 - (BOOL)copyImage:(struct CGImage {}**)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forElement:(id)arg3;
@@ -57,6 +60,7 @@
 - (id)scriptInterface;
 - (void)scrollElementToVisible:(id)arg1 animated:(BOOL)arg2 delegate:(id)arg3;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)setAuthenticationContext:(id)arg1;
 - (void)setOpenURLsExternally:(BOOL)arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
 - (void)setSourceIsTrusted:(BOOL)arg1;

@@ -31,6 +31,8 @@
     UIColor *m_textColor;
 }
 
++ (void)_initializeSafeCategory;
+
 - (void)candidateAcceptedAtIndex:(NSUInteger)arg1;
 - (id)candidateAtIndex:(NSUInteger)arg1;
 - (id)candidateList;

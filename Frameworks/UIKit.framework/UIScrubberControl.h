@@ -53,6 +53,7 @@
 + (void)_initializeSafeCategory;
 + (BOOL)allowLayeredFillForKnob;
 
+- (BOOL)_axInteractionEnabled;
 - (BOOL)_notAllValueAvailable;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectOfTrack;
 - (void)_resetTimeFrames;
@@ -61,6 +62,7 @@
 - (void)_updateAvailableFill;
 - (void)_updateTimes:(BOOL)arg1;
 - (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;

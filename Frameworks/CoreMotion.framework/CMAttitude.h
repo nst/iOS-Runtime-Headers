@@ -23,6 +23,7 @@
 - (struct { double x1; double x2; double x3; double x4; })quaternion;
 - (double)roll;
 - (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })rotationMatrix;
+- (void)setQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;
 - (double)yaw;
 
 @end

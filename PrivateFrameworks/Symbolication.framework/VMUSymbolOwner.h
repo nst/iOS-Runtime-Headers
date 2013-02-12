@@ -5,6 +5,8 @@
 @class <VMUMemory>, NSArray, NSDictionary, NSString;
 
 @interface VMUSymbolOwner : NSObject <NSCopying> {
+    NSUInteger _compatibilityVersion;
+    NSUInteger _currentVersion;
     NSUInteger _flags;
     NSString *_name;
     NSArray *_regions;
@@ -14,15 +16,17 @@
     <VMUMemory> *_textMemory;
 }
 
-+ (id)symbolOwnerWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(NSUInteger)arg7;
++ (id)symbolOwnerWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(NSUInteger)arg7 currentVersion:(NSUInteger)arg8 compatibilityVersion:(NSUInteger)arg9;
 
 - (id)architecture;
+- (NSUInteger)compatibilityVersion;
 - (BOOL)containsAddress:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)currentVersion;
 - (void)dealloc;
 - (id)description;
 - (NSUInteger)flags;
-- (id)initWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(NSUInteger)arg7;
+- (id)initWithName:(id)arg1 signature:(id)arg2 textMemory:(id)arg3 regions:(id)arg4 symbols:(id)arg5 sourceInfos:(id)arg6 flags:(NSUInteger)arg7 currentVersion:(NSUInteger)arg8 compatibilityVersion:(NSUInteger)arg9;
 - (BOOL)isAOut;
 - (BOOL)isBundle;
 - (BOOL)isCommpage;

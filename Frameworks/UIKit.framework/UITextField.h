@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor, UIImage, UIImageView, UILabel, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputTraits, UITextInteractionAssistant, UITextSelectionView, UIView;
+@class NSString, UIButton, UIColor, UIImage, UIImageView, UILabel, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputTraits, UITextInteractionAssistant, UITextSelectionView, UIView;
 
 @interface UITextField : UIControl <UITextInputTraits, NSCoding> {
     struct _NSRange { 
@@ -28,8 +28,8 @@
         unsigned int clearsOnBeginEditing : 1; 
         unsigned int adjustsFontSizeToFitWidth : 1; 
         unsigned int fieldEditorAttached : 1; 
-        unsigned int inBecomeFirstResponder : 1; 
-        unsigned int becomingFirstResponder : 1; 
+        unsigned int canBecomeFirstResponder : 1; 
+        unsigned int inDeferredBecomeFirstResponder : 1; 
         unsigned int inResignFirstResponder : 1; 
         unsigned int undoDisabled : 1; 
         unsigned int contentsRTL : 1; 
@@ -39,7 +39,7 @@
     UITextFieldBorderView *_backgroundView;
     NSInteger _borderStyle;
     UIColor *_caretColor;
-    UIView *_clearButton;
+    UIButton *_clearButton;
     NSInteger _clearButtonMode;
     } _clearButtonOffset;
     id _delegate;
@@ -122,6 +122,7 @@
 - (void)_becomeFirstResponder;
 - (void)_becomeFirstResponderAndMakeVisible;
 - (void)_clearBackgroundViews;
+- (id)_clearButton;
 - (void)_clearButtonClicked:(id)arg1;
 - (void)_clearStyle;
 - (id)_copyFont:(id)arg1 newSize:(float)arg2 maxSize:(float)arg3;
@@ -136,6 +137,7 @@
 - (struct CGSize { float x1; float x2; })_leftViewOffset;
 - (float)_marginTopForText:(id)arg1;
 - (id)_placeholderColor;
+- (id)_placeholderLabel;
 - (id)_placeholderView;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (BOOL)_requiresKeyboardResetOnReload;
@@ -195,6 +197,7 @@
 - (void)cancelAutoscroll;
 - (BOOL)caretBlinks;
 - (NSUInteger)characterOffsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)clearButton;
 - (NSInteger)clearButtonMode;
 - (struct CGSize { float x1; float x2; })clearButtonOffset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clearButtonRect;
@@ -211,6 +214,7 @@
 - (id)customOverlayContainer;
 - (void)cut:(id)arg1;
 - (void)dealloc;
+- (void)deferredBecomeFirstResponder;
 - (id)delegate;
 - (id)disabledBackground;
 - (id)documentFragmentForPasteboardItemAtIndex:(NSInteger)arg1;

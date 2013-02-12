@@ -5,27 +5,14 @@
 @class CKContentEntryView, UIButton, UIImageView, UILabel, UIView;
 
 @interface CKMessageEntryView : UIImageView <UIScrollViewDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    UIImageView *_balloonBGSendingView;
-    UIView *_balloonBGView;
-    UIImageView *_balloonFGView;
+    NSInteger _animationState;
     NSUInteger _characterCountDenominator;
     UILabel *_characterCountLabel;
     NSUInteger _characterCountNumerator;
     CKContentEntryView *_contentField;
     id _delegate;
-    UILabel *_fakeSubjectLabel;
-    UIView *_fakeSubjectLine;
-    } _finalFrame;
-    BOOL _isAnimating;
+    UIView *_inputFieldBackground;
+    UIImageView *_inputFieldCover;
     BOOL _isCharacterCountVisible;
     UIButton *_photoButton;
     UIButton *_sendButton;
@@ -35,7 +22,6 @@
 @property id delegate;
 
 + (void)_initializeSafeCategory;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })balloonSendingViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })balloonViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })characterCountFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFieldViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -58,20 +44,16 @@
 - (NSUInteger)displayedLines;
 - (void)enableSendButton;
 - (id)entryField;
-- (void)fadeToSendingState:(BOOL)arg1 withDuration:(float)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrame;
 - (BOOL)hasAttachments;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isCharacterCountVisible;
 - (BOOL)isReallyFirstResponder;
 - (id)photoButton;
 - (void)send:(id)arg1;
+- (void)setAnimationState:(NSInteger)arg1;
 - (void)setCharacterCountNumerator:(NSUInteger)arg1 denominator:(NSUInteger)arg2;
 - (void)setCharacterCountVisible:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFinalFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIsAnimating:(BOOL)arg1;
-- (void)showFakeEntryView:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateForSettingsChange;

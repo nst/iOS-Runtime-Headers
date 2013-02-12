@@ -22,6 +22,7 @@
     unsigned int _animatingFullscreenTransition : 1;
     unsigned int _contentViewDidClipToBounds : 1;
     unsigned int _fullscreenViewSizeIsExternallyManaged : 1;
+    unsigned int _swallowNextTapGesture : 1;
     NSInteger _audioOverlayStyle;
     MPInlineAudioOverlay *_audioOverlayView;
     NSInteger _desiredInterfaceOrientation;

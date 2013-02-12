@@ -10,8 +10,8 @@
 
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying> {
      /* Encoded args for previous method: @20@0:4@8I12B16 */
-     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B8@0:4 */
     NSUInteger mFormatId;
     EDString *mFormatString;

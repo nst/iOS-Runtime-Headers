@@ -12,6 +12,7 @@
 - (id)_accessibilityElementFirst:(BOOL)arg1 last:(BOOL)arg2;
 - (BOOL)_accessibilityEscape;
 - (id)_accessibilityFirstElement;
+- (BOOL)_accessibilityHardwareKeyboardActive;
 - (void)_accessibilityInitialize;
 - (id)_accessibilityLastElement;
 - (id)_accessibilityMainWindow;

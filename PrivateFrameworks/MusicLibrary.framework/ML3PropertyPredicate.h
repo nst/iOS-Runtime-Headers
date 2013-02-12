@@ -12,7 +12,11 @@
 
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (NSUInteger)hash;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithProperty:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)property;
 - (void)setProperty:(id)arg1;
 

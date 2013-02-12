@@ -6,11 +6,11 @@
 }
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
 - (NSInteger)accessibilityElementCount;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
+- (BOOL)accessibilityTreeHidden;
 - (BOOL)canProduceString:(id)arg1;
 - (void)dealloc;
 - (NSInteger)indexOfAccessibilityElement:(id)arg1;

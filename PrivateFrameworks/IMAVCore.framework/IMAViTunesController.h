@@ -8,9 +8,12 @@
 
 + (id)sharedInstance;
 
+- (id)autorelease;
 - (void)dealloc;
 - (id)init;
 - (void)pause;
+- (oneway void)release;
 - (void)resume;
+- (NSUInteger)retainCount;
 
 @end

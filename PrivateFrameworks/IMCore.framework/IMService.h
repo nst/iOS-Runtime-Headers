@@ -17,10 +17,8 @@
 + (id)myIdleTime;
 + (NSUInteger)myStatus;
 + (id)notificationCenter;
-+ (id)pluginService;
 + (id)serviceWithName:(id)arg1;
 + (id)serviceWithNameNonBlocking:(id)arg1;
-+ (id)skypeService;
 + (NSUInteger)statusForABPerson:(id)arg1;
 + (NSUInteger)statusForIMPerson:(id)arg1;
 + (id)subnetService;

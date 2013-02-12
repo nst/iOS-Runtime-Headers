@@ -11,11 +11,14 @@
 + (id)actionsController;
 
 - (void)addHandler:(id)arg1;
+- (id)autorelease;
 - (void)dealloc;
 - (id)init;
 - (id)performActionsForEvent:(NSInteger)arg1 withIMHandle:(id)arg2 withObject:(id)arg3 withChat:(id)arg4 silent:(BOOL)arg5;
 - (id)performActionsForEvent:(NSInteger)arg1 withIMHandle:(id)arg2 withObject:(id)arg3;
 - (id)performActionsForEvent:(NSInteger)arg1 withIMHandle:(id)arg2;
+- (oneway void)release;
 - (void)removeHandler:(id)arg1;
+- (NSUInteger)retainCount;
 
 @end

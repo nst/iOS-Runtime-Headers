@@ -20,7 +20,11 @@
 - (id)accessibilityValue;
 - (void)dealloc;
 - (BOOL)isAccessibilityElement;
+- (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
+- (BOOL)keyboardInput:(id)arg1 shouldReplaceTextInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementText:(id)arg3;
 - (BOOL)keyboardInputChanged:(id)arg1;
+- (void)keyboardInputChangedSelection:(id)arg1;
+- (void)selectAll:(id)arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)webViewDidChange:(id)arg1;
 

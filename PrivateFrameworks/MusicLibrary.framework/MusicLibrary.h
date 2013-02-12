@@ -6,7 +6,6 @@
 
 @interface MusicLibrary : NSObject {
     unsigned int _needsFlush : 1;
-    unsigned int _skippedUpdatePurchasedContent : 1;
     unsigned int _disableExternalPlaylistNotifications : 1;
     unsigned int _autoflushScheduled : 1;
     double _autoflushTargetTime;
@@ -45,6 +44,7 @@
 + (BOOL)importationEnabled;
 + (void)initialize;
 + (BOOL)isDBSyncActive;
++ (BOOL)isDatabaseSchemaUnsupported;
 + (BOOL)isFlushEnabled;
 + (BOOL)isTesting;
 + (void)jetsamMemory;

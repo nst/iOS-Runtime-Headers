@@ -8,5 +8,6 @@
 + (void)_initializeSafeCategory;
 
 - (BOOL)isAccessibilityElement;
+- (void)setHidden:(BOOL)arg1;
 
 @end

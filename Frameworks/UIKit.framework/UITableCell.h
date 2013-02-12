@@ -124,6 +124,7 @@
 - (BOOL)showDisclosure;
 - (BOOL)showDisclosureWhenReordering;
 - (BOOL)showSelection;
+- (void)unregisterAllChildren;
 - (void)unregisterMockChild:(id)arg1;
 - (void)updateHighlightColors;
 

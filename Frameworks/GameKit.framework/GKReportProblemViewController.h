@@ -28,6 +28,7 @@
 - (void)setAuthToken:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHeadersForRequest:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (id)url;

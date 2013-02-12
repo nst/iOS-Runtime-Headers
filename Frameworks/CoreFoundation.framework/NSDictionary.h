@@ -21,6 +21,7 @@
 + (id)dictionaryWithPlistData:(id)arg1;
 + (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
 
+- (id)DAObjectForKeyCaseInsensitive:(id)arg1;
 - (id)MCDeepCopy;
 - (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MCMutableDeepCopy;
@@ -68,6 +69,12 @@
 - (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
 - (NSUInteger)countForKey:(id)arg1;
 - (NSUInteger)countForObject:(id)arg1;
+- (BOOL)decodeBoolForKey:(id)arg1;
+- (double)decodeDoubleForKey:(id)arg1;
+- (long long)decodeInt64ForKey:(id)arg1;
+- (NSInteger)decodeIntegerForKey:(id)arg1;
+- (long long)decodeLongLongForKey:(id)arg1;
+- (id)decodeObjectForKey:(id)arg1;
 - (id)description;
 - (id)descriptionInStringsFileFormat;
 - (id)descriptionWithLocale:(id)arg1 indent:(NSUInteger)arg2;
@@ -137,6 +144,7 @@
 - (id)objectForIntegerKey:(NSInteger)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyCaseInsensitive:(id)arg1;
+- (id)objectForKeyWithNameSpace:(const char *)arg1 elementName:(const char *)arg2;
 - (id)objectsForIntegerKeys:(id)arg1;
 - (id)objectsForIntegerKeys:(id)arg1;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;

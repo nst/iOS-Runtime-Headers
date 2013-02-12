@@ -16,6 +16,7 @@
 
 + (id)defaultVoiceChatService;
 + (void)initialize;
++ (BOOL)isVoIPAllowed;
 
 - (BOOL)acceptCallID:(NSInteger)arg1 error:(id*)arg2;
 - (id)client;

@@ -2,21 +2,26 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKInvite, NSData;
+@class GKInvite, NSData, NSDictionary;
 
 @interface GKAcceptGameInviteDataRequest : GKDataRequest {
+    NSDictionary *_acceptGameInviteResponse;
     NSData *_connectionData;
     GKInvite *_invite;
 }
 
+@property(retain) NSDictionary *acceptGameInviteResponse;
 @property(retain) NSData *connectionData;
 @property(retain) GKInvite *invite;
 
+- (id)acceptGameInviteResponse;
 - (id)connectionData;
 - (void)dealloc;
+- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)invite;
 - (id)key;
 - (id)request;
+- (void)setAcceptGameInviteResponse:(id)arg1;
 - (void)setConnectionData:(id)arg1;
 - (void)setInvite:(id)arg1;
 

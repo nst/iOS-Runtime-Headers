@@ -6,9 +6,11 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSDictionary, NSInvocation, NSMutableArray, NSNumber, NSString, UIColor;
+@class NSArray, NSDictionary, NSMutableArray, NSNumber, NSString;
 
 @interface GKPlayer : NSObject {
+    NSArray *_achievementListFromServer;
+    NSMutableArray *_achievementsAchievedList;
     NSString *_alias;
     NSDictionary *_avatarDescription;
     NSDictionary *_avatarURLs;
@@ -16,61 +18,48 @@
     NSString *_email;
     NSString *_firstName;
     NSString *_friendRequestID;
+    BOOL _hasDetailInfo;
     NSInteger _inviteStatus;
     BOOL _isFriend;
     NSString *_lastName;
     NSDictionary *_lastPlayedGameDescriptor;
+    double _lastPlayedTime;
+    double _lastSeenTime;
+    NSNumber *_numberAchievedForCurrentGame;
+    NSUInteger _numberOfAchievements;
+    NSUInteger _numberOfFriends;
+    NSUInteger _numberOfGamesPlayed;
     NSString *_playerID;
     id _rateCompletionHandler;
     NSInteger _rating;
     NSString *_status;
-    UIColor *_tintColor;
-    NSArray *achievementListFromServer;
-    NSMutableArray *achievementsAchievedList;
-    NSInvocation *currentFriendRequestInvocation;
-    BOOL hasDetailInfo;
-    NSNumber *lastPlayedGameID;
-    double lastPlayedTime;
-    NSNumber *numberAchievedForCurrentGame;
-    NSUInteger numberOfAchievements;
-    NSUInteger numberOfFriends;
-    NSUInteger numberOfGamesPlayed;
 }
 
+@property(readonly) GKABPlayer *GKABPlayer;
 @property(retain) NSArray *achievementListFromServer;
 @property(retain) NSArray *achievementListFromServer;
 @property(retain) NSMutableArray *achievementsAchievedList;
 @property(retain) NSMutableArray *achievementsAchievedList;
-@property(retain) NSString *adamID;
 @property(retain) NSString *alias;
 @property(copy) NSString *alias;
 @property(retain) NSDictionary *avatarDescription;
 @property(retain) NSDictionary *avatarDescription;
 @property(retain) NSDictionary *avatarURLs;
 @property(retain) NSDictionary *avatarURLs;
-@property(retain) NSString *bundleIdentifier;
-@property(retain) NSString *bundleVersion;
 @property(retain,readonly) NSString *cacheKey;
+@property(retain) NSMutableArray *cachedAvatars;
 @property(retain) NSString *email;
-@property(retain) NSString *externalVersion;
 @property(retain) NSString *firstName;
 @property(retain) NSString *friendRequestID;
-@property(retain) NSString *gameID;
 @property(retain) NSString *lastName;
 @property(readonly) GKGame *lastPlayedGame;
 @property(retain) NSDictionary *lastPlayedGameDescriptor;
-@property(retain) NSNumber *lastPlayedGameID;
-@property(retain) NSNumber *lastPlayedGameID;
 @property(retain) NSNumber *numberAchievedForCurrentGame;
 @property(retain) NSNumber *numberAchievedForCurrentGame;
 @property(retain) NSString *playerID;
+@property(copy) ? *rateCompletionHandler;
 @property(readonly) NSString *realName;
-@property(retain) NSString *status;
 @property(copy) NSString *status;
-@property(retain) UIColor *tintColor;
-@property(retain) UIColor *tintColor;
-@property(readonly) UIImage *tintedBackgroundImage;
-@property(retain) NSString *version;
 @property BOOL hasDetailInfo;
 @property BOOL hasDetailInfo;
 @property NSInteger inviteStatus;
@@ -79,6 +68,8 @@
 @property BOOL isFriend;
 @property double lastPlayedTime;
 @property double lastPlayedTime;
+@property double lastSeenTime;
+@property double lastSeenTime;
 @property NSUInteger numberOfAchievements;
 @property NSUInteger numberOfAchievements;
 @property NSUInteger numberOfFriends;
@@ -88,16 +79,20 @@
 @property(readonly) NSInteger rating;
 @property NSInteger rating;
 
++ (id)anonymousPlayer;
 + (void)clearCache;
++ (void)loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)loadPlayersForIdentifiers:(id)arg1 withDetails:(BOOL)arg2 withCompletionHandler:(id)arg3;
 + (id)playerWithAlias:(id)arg1 playerID:(id)arg2 friendRequestID:(id)arg3;
 + (id)playerWithDictionary:(id)arg1;
 + (id)playerWithUniqueID:(id)arg1;
-+ (id)playersWithDictionaries:(id)arg1;
++ (void)updatePlayersWithFriendIDs:(id)arg1;
 
+- (id)GKABPlayer;
 - (void)_loadAvatarImageForSize:(NSInteger)arg1 withCompletionHandler:(id)arg2;
 - (void)_postChangeNotification;
 - (void)_receivedMemoryWarning:(id)arg1;
-- (void)acceptFriendRequest:(id)arg1;
+- (void)acceptFriendRequestForHandle:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)achievementListFromServer;
 - (id)achievementsAchievedList;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
@@ -107,6 +102,7 @@
 - (id)avatarURLForSize:(NSInteger)arg1;
 - (id)avatarURLs;
 - (id)cacheKey;
+- (id)cachedAvatars;
 - (void)clearDetails;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -126,8 +122,8 @@
 - (id)lastName;
 - (id)lastPlayedGame;
 - (id)lastPlayedGameDescriptor;
-- (id)lastPlayedGameID;
 - (double)lastPlayedTime;
+- (double)lastSeenTime;
 - (void)loadAvatarForSize:(NSInteger)arg1 withCompletionHandler:(id)arg2;
 - (void)loadAvatarImageForSize:(NSInteger)arg1 withCompletionHandler:(id)arg2;
 - (void)loadGamesPlayed:(id)arg1;
@@ -140,6 +136,7 @@
 - (id)playerID;
 - (BOOL)populateWithDictionary:(id)arg1;
 - (void)postChangeNotification;
+- (id)rateCompletionHandler;
 - (NSInteger)rating;
 - (id)realName;
 - (void)reloadDetails;
@@ -149,6 +146,7 @@
 - (void)setAlias:(id)arg1;
 - (void)setAvatarDescription:(id)arg1;
 - (void)setAvatarURLs:(id)arg1;
+- (void)setCachedAvatars:(id)arg1;
 - (void)setEmail:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setFriendRequestID:(id)arg1;
@@ -157,20 +155,17 @@
 - (void)setIsFriend:(BOOL)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setLastPlayedGameDescriptor:(id)arg1;
-- (void)setLastPlayedGameID:(id)arg1;
 - (void)setLastPlayedTime:(double)arg1;
+- (void)setLastSeenTime:(double)arg1;
 - (void)setNumberAchievedForCurrentGame:(id)arg1;
 - (void)setNumberOfAchievements:(NSUInteger)arg1;
 - (void)setNumberOfFriends:(NSUInteger)arg1;
 - (void)setNumberOfGamesPlayed:(NSUInteger)arg1;
 - (void)setPlayerID:(id)arg1;
+- (void)setRateCompletionHandler:(id)arg1;
 - (void)setRating:(NSInteger)arg1;
 - (void)setStatus:(id)arg1;
-- (void)setTintColor:(id)arg1;
 - (id)status;
 - (void)submitRating:(NSInteger)arg1 withCompletionHandler:(id)arg2;
-- (id)tintColor;
-- (id)tintColor;
-- (id)tintedBackgroundImage;
 
 @end

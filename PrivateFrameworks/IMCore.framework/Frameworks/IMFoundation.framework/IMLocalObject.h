@@ -7,6 +7,7 @@
 @interface IMLocalObject : NSObject {
     unsigned int _wasSuspended : 1;
     unsigned int _busyForwarding : 1;
+    struct dispatch_semaphore_s { } *_deathLock;
     NSMutableArray *_incomingQueue;
     NSUInteger _port;
     NSString *_portName;
@@ -21,6 +22,7 @@
 + (void)_unregisterIMLocalObject:(id)arg1;
 + (void)initialize;
 
+- (void)_cancelHandlerCompleted;
 - (void)_clearPort:(BOOL)arg1;
 - (void)_dequeueInvocationIfNecessary;
 - (void)_enqueueInvocation:(id)arg1;
@@ -33,7 +35,7 @@
 - (void)_systemShutdown:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)handleHeaderData:(unsigned long long*)arg1 headerLength:(NSUInteger)arg2 data:(char *)arg3 dataLength:(NSUInteger)arg4;
+- (void)handleHeaderData:(unsigned long long*)arg1 headerLength:(NSUInteger)arg2 data:(char *)arg3 dataLength:(NSUInteger)arg4 fromPid:(NSInteger)arg5;
 - (void)handleInvocation:(id)arg1;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
 - (void)invalidate;

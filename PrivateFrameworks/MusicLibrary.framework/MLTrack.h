@@ -36,7 +36,10 @@
 - (id)copyright;
 - (NSInteger)customStopTimeInMS;
 - (void)dealloc;
-- (double)demoRentalExpirationDate;
+- (double)demoRentalDuration;
+- (double)demoRentalPlaybackDuration;
+- (double)demoRentalPlaybackStartTime;
+- (double)demoRentalStartTime;
 - (id)description;
 - (id)directStoreURL;
 - (unsigned long)discNumber;

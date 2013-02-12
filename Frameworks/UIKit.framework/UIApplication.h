@@ -120,6 +120,7 @@
 - (id)_accessibilityElementFirst:(BOOL)arg1 last:(BOOL)arg2;
 - (BOOL)_accessibilityEscape;
 - (id)_accessibilityFirstElement;
+- (BOOL)_accessibilityHardwareKeyboardActive;
 - (void)_accessibilityInit;
 - (void)_accessibilityInitialize;
 - (BOOL)_accessibilityIsSystemWideServer;
@@ -233,7 +234,7 @@
 - (BOOL)_rotationDisabledDuringTouch;
 - (void)_run;
 - (void)_runWithURL:(id)arg1 payload:(id)arg2 launchOrientation:(NSInteger)arg3 statusBarStyle:(NSInteger)arg4 statusBarHidden:(BOOL)arg5;
-- (void)_saveSnapshotToPath:(id)arg1;
+- (BOOL)_saveSnapshotToPath:(id)arg1;
 - (void)_sendMotionBegan:(NSInteger)arg1;
 - (void)_sendMotionCancelled:(NSInteger)arg1;
 - (void)_sendMotionEnded:(NSInteger)arg1;
@@ -287,6 +288,7 @@
 - (void)accessibilityDisable;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLabel;
+- (void)accessibilityStartStopToggle;
 - (void)accessoryKeyStateChanged:(struct __GSEvent { }*)arg1;
 - (NSInteger)activeInterfaceOrientation;
 - (void)addStatusBarImageNamed:(id)arg1 removeOnExit:(BOOL)arg2;

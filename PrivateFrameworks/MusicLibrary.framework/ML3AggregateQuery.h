@@ -15,8 +15,10 @@
 - (Class)aggregateEntityClass;
 - (void)dealloc;
 - (BOOL)distinctPersistentIDProperty;
+- (void)encodeWithCoder:(id)arg1;
 - (Class)entityClass;
 - (id)foreignPersistentIDProperty;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithUnitQuery:(id)arg1 aggregateEntityClass:(Class)arg2 foreignPersistentIDProperty:(id)arg3;
 - (id)persistentIDProperty;
 - (id)queryForUnitEntitiesAtIndex:(NSUInteger)arg1 directCollectionQuery:(id)arg2 ordered:(BOOL)arg3 usingSections:(BOOL)arg4;

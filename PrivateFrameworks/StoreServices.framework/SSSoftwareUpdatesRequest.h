@@ -4,7 +4,7 @@
 
 @class SSSoftwareUpdatesContext;
 
-@interface SSSoftwareUpdatesRequest : SSRequest <NSCoding> {
+@interface SSSoftwareUpdatesRequest : SSRequest {
     SSSoftwareUpdatesContext *_context;
 }
 
@@ -12,11 +12,11 @@
 @property(readonly) SSSoftwareUpdatesContext *updateQueueContext;
 
 - (void)_sendResponseToDelegate:(id)arg1;
+- (id)copyPropertyListEncoding;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
 - (id)handleFailureResponse:(id)arg1;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithUpdateQueueContext:(id)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (id)updateQueueContext;

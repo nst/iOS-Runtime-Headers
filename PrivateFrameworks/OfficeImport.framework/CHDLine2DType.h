@@ -7,8 +7,8 @@
  */
 
 @interface CHDLine2DType : CHDLineType {
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowMarker;

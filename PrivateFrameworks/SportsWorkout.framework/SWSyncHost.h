@@ -13,9 +13,8 @@
 @property(readonly) NSString *scheme;
 @property(getter=isSecure) BOOL secure;
 
-+ (id)developmentOTASyncCheckHost;
 + (id)developmentSyncHost;
-+ (id)productionOTASyncCheckHost;
++ (id)productionLandingPageHost;
 + (id)productionSyncHost;
 
 - (void)dealloc;
@@ -26,7 +25,6 @@
 - (id)initWithHostName:(id)arg1 secure:(BOOL)arg2;
 - (BOOL)isSecure;
 - (id)loginURLForToken:(id)arg1;
-- (id)otaSyncCheckURL;
 - (id)scheme;
 - (void)setSecure:(BOOL)arg1;
 - (id)syncCompleteServiceURL;

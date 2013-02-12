@@ -5,6 +5,7 @@
 @class NSDictionary, NSMutableArray, NSRecursiveLock;
 
 @interface PLImageWriter : NSObject <MLPhotoBakedThumbnailsDelegate> {
+    BOOL _databaseIsCorrupt;
     NSDictionary *_getEmbeddedThumbnail;
     NSMutableArray *_jobs;
     NSRecursiveLock *_jobsLock;

@@ -40,6 +40,7 @@
 - (id)anyConnectedAccountForService:(id)arg1 withLogin:(id)arg2;
 - (id)anyConnectedAccountForService:(id)arg1;
 - (void)autoLogin;
+- (id)autorelease;
 - (id)bestAccountForStatus;
 - (BOOL)canActivateAccount:(id)arg1;
 - (BOOL)canDeleteAccount:(id)arg1;

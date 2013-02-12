@@ -11,7 +11,7 @@
 @property(readonly) NSArray *responseItems;
 
 + (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)ignoresUnknownChildren;
++ (BOOL)errorOnUnknownChildren;
 + (BOOL)parsingWithSubItems;
 
 - (void)addResponseItem:(id)arg1;

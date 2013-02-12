@@ -15,8 +15,8 @@
 
 - (id)_asset;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (void)_setAudioVolumeCurve:(id)arg1;
-- (id)audioParameters;
+- (id)_figAssetReaderExtractionOptions;
+- (BOOL)_trimsSampleDurations;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
@@ -24,7 +24,6 @@
 - (id)initWithTrack:(id)arg1 outputSettings:(id)arg2;
 - (id)mediaType;
 - (id)outputSettings;
-- (void)setAudioParameters:(id)arg1;
 - (id)track;
 
 @end

@@ -10,6 +10,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)_defaultFont;
+- (void)_drawBackground;
 - (id)_scriptingInfo;
 - (void)_styleAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (unsigned long long)accessibilityTraits;

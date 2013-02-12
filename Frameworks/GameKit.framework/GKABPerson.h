@@ -12,6 +12,8 @@
 @property(retain) NSString *firstName;
 @property(retain) NSString *lastName;
 
++ (id)personForContact:(void*)arg1;
++ (id)personForPlayer:(id)arg1;
 + (id)personWithFirstName:(id)arg1 lastName:(id)arg2;
 
 - (void)dealloc;

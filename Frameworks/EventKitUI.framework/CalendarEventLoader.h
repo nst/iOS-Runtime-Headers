@@ -64,6 +64,7 @@
 - (void)_backgroundLoadCompleted;
 - (void)_backgroundLoader;
 - (void)_eventStoreChanged:(id)arg1;
+- (void)_notifyDeferred;
 - (void)_reloadOccurrences;
 - (void)_setDisplayedDateRange:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 end:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 loadMethod:(NSInteger)arg3;
 - (void)beginBackgroundLoadForPredicate:(id)arg1;
@@ -73,7 +74,6 @@
 - (id)displayedOccurrences:(BOOL)arg1;
 - (struct CalFilter { }*)filter;
 - (id)initWithEventStore:(id)arg1;
-- (void)loadEventsIfNeeded:(BOOL)arg1;
 - (BOOL)loadsBlocked;
 - (id)occurrencesForDay:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 waitForLoad:(BOOL)arg2;
 - (id)occurrencesForStartDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 waitForLoad:(BOOL)arg3;

@@ -8,6 +8,7 @@
     unsigned int _screensaverActive : 1;
     unsigned int _screenLocked : 1;
     unsigned int _active : 1;
+    unsigned int _backingUp : 1;
     unsigned int _willSleep : 1;
     double _delayTime;
     NSDate *_idleStart;
@@ -22,6 +23,9 @@
 - (void)_deliverNotificationSelector:(SEL)arg1;
 - (void)_postScreenLocked;
 - (void)_postScreenSaverStarted;
+- (void)_registerForRestoreNotifications;
+- (void)_restoreDidStart;
+- (void)_restoreDidStop;
 - (void)_resume:(id)arg1;
 - (void)_screenLocked:(id)arg1;
 - (void)_screenSaverStarted:(id)arg1;
@@ -32,14 +36,19 @@
 - (void)_systemDidWake;
 - (void)_systemWillShutdown;
 - (void)_systemWillSleep;
+- (void)_unregisterForRestoreNotifications;
 - (void)addListener:(id)arg1;
+- (id)autorelease;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isActive;
+- (BOOL)isBackingUp;
 - (BOOL)isScreenLocked;
 - (BOOL)isScreenSaverActive;
 - (BOOL)isSystemIdle;
+- (oneway void)release;
 - (void)removeListener:(id)arg1;
+- (NSUInteger)retainCount;
 - (void)setActive:(BOOL)arg1;
 - (double)systemIdleTime;
 - (BOOL)systemIsShuttingDown;

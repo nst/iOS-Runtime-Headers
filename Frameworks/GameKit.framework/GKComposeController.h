@@ -4,7 +4,7 @@
 
 @class <GKComposeControllerDelegate>;
 
-@interface GKComposeController : GKAbstractComposeController {
+@interface GKComposeController : GKAbstractComposeController <GKAccountViewControllerDelegate> {
     BOOL _alertShown;
     BOOL _alreadySetUp;
     <GKComposeControllerDelegate> *_delegate;
@@ -16,19 +16,20 @@
 
 @property <GKComposeControllerDelegate> *delegate;
 
+- (void)accountViewControllerDidFinish:(id)arg1 accountCreated:(BOOL)arg2;
 - (void)addPlayerRecipients:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
 - (void)cancelButtonClicked:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (void)dismiss;
 - (void)send:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTextEntryContentsVisible:(BOOL)arg1;
 - (void)showAlertForError:(id)arg1;
+- (void)showAlertForFailures:(id)arg1 allFailed:(BOOL)arg2;
 - (void)showAlertForSuccess;
-- (void)transitionFromNewMessageToConversation;
 - (void)updateNavigationButtons;
+- (void)updateTitle;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

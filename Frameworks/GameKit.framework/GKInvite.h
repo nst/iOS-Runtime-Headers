@@ -2,43 +2,43 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKPlayer, NSData, NSString;
+@class NSData, NSDictionary, NSString;
 
 @interface GKInvite : NSObject {
     BOOL _cancelled;
-    NSData *_connectionData;
     BOOL _hosted;
+    NSDictionary *_inviteDictionary;
     NSString *_inviteID;
-    GKPlayer *_inviter;
+    NSString *_inviter;
     NSString *_message;
-    NSData *_originatorToken;
+    NSData *_sessionToken;
 }
 
-@property(retain) NSData *connectionData;
+@property(retain) NSDictionary *inviteDictionary;
 @property(retain) NSString *inviteID;
-@property(retain) GKPlayer *inviter;
+@property(retain) NSString *inviter;
 @property(retain) NSString *message;
-@property(retain) NSData *originatorToken;
+@property(retain) NSData *sessionToken;
 @property(getter=isCancelled) BOOL cancelled;
 @property(getter=isHosted) BOOL hosted;
 
 + (id)inviteWithDictionary:(id)arg1;
 
-- (id)connectionData;
 - (void)dealloc;
 - (id)description;
+- (id)inviteDictionary;
 - (id)inviteID;
 - (id)inviter;
 - (BOOL)isCancelled;
 - (BOOL)isHosted;
 - (id)message;
-- (id)originatorToken;
+- (id)sessionToken;
 - (void)setCancelled:(BOOL)arg1;
-- (void)setConnectionData:(id)arg1;
 - (void)setHosted:(BOOL)arg1;
+- (void)setInviteDictionary:(id)arg1;
 - (void)setInviteID:(id)arg1;
 - (void)setInviter:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setOriginatorToken:(id)arg1;
+- (void)setSessionToken:(id)arg1;
 
 @end

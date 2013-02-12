@@ -27,8 +27,8 @@
             float d; 
             float tx; 
             float ty; 
-     /* Encoded args for previous method: ^{CPPDFImage={CPPDFObject={CGRect={CGPoint=ff}{CGSize=ff}}II}^{CGPath}^{CGPDFStream}^(CGPDFObject){CGAffineTransform=ffffff}f}8@0:4 */
      /* Encoded args for previous method: @12@0:4^{CPPDFImage={CPPDFObject={CGRect={CGPoint=ff}{CGSize=ff}}II}^{CGPath}^{CGPDFStream}^(CGPDFObject){CGAffineTransform=ffffff}f}8 */
+     /* Encoded args for previous method: ^{CPPDFImage={CPPDFObject={CGRect={CGPoint=ff}{CGSize=ff}}II}^{CGPath}^{CGPDFStream}^(CGPDFObject){CGAffineTransform=ffffff}f}8@0:4 */
         } x5; float x6; } *imageData;
 }
 

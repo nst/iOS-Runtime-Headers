@@ -5,18 +5,22 @@
 @class NSDictionary, NSString, NSTimer;
 
 @interface SWRemoteRunWorkoutProxyClient : SWRunWorkoutProxy {
+    NSString *_currentSongName;
     float _goal;
     NSString *_goalType;
     BOOL _hasEverStarted;
     BOOL _hasPowerSong;
+    NSInteger _musicSelection;
     NSString *_powerSongName;
     NSString *_presetGoal;
     NSString *_sensorSearchState;
+    BOOL _shouldControlMusic;
     NSTimer *_updateTimer;
     NSDictionary *_workoutData;
     NSString *_workoutState;
 }
 
+@property(readonly) NSString *currentSongName;
 @property(readonly) NSString *goalType;
 @property(readonly) NSString *powerSongName;
 @property(readonly) NSString *presetGoal;
@@ -25,25 +29,39 @@
 @property(readonly) NSString *workoutState;
 @property(readonly) float goal;
 @property(readonly) BOOL hasPowerSong;
+@property(readonly) NSInteger musicSelection;
+@property(readonly) BOOL shouldControlMusic;
 
 - (void)_checkinWithServer;
 - (void)_handlePropertyUpdateNotification:(id)arg1;
+- (void)_nowPlayingChanged:(id)arg1;
 - (void)_sensorSearchStateChanged:(id)arg1;
 - (void)_workoutStateChanged:(id)arg1;
 - (void)activateWorkout;
+- (void)beginSeekingBackward;
+- (void)beginSeekingForward;
+- (id)currentSongName;
 - (void)dealloc;
+- (void)endSeeking;
 - (void)endWorkout;
+- (void)goToNowPlaying;
 - (float)goal;
 - (id)goalType;
 - (BOOL)hasPowerSong;
 - (id)init;
+- (NSInteger)musicSelection;
+- (void)pauseMusic;
 - (void)pauseWorkout;
+- (void)playMusic;
 - (void)playOnDemandPrompt;
 - (void)playPowerSong;
 - (id)powerSongName;
 - (void)prepareToActivateWorkout;
 - (id)presetGoal;
+- (void)selectNextSong;
+- (void)selectPreviousSong;
 - (id)sensorSearchState;
+- (BOOL)shouldControlMusic;
 - (id)workoutData;
 - (id)workoutState;
 

@@ -36,6 +36,7 @@
 @property BOOL dumpSensorInfo;
 @property long long freeDiskSpaceLimit;
 @property(readonly) BOOL isCapturingPhoto;
+@property(readonly) BOOL isHighDynamicRangeAvailable;
 @property(readonly) BOOL isPaused;
 @property(readonly) BOOL isPreviewing;
 @property(readonly) BOOL isRecording;
@@ -77,6 +78,7 @@
 - (id)audioLevel;
 - (BOOL)audioMeteringEnabled;
 - (float)autoExposureTarget;
+- (void)backgroundStateChangedHandler:(id)arg1;
 - (id)captureFormatForCaptureMode:(id)arg1 qualityPreset:(id)arg2;
 - (id)captureMode;
 - (BOOL)capturePhoto:(id)arg1;
@@ -102,6 +104,7 @@
 - (id)initWithCaptureMode:(id)arg1 qualityPreset:(id)arg2;
 - (id)initWithFigRecorderCreateFunction:(int (*)())arg1 captureMode:(id)arg2 qualityPreset:(id)arg3;
 - (BOOL)isCapturingPhoto;
+- (BOOL)isHighDynamicRangeAvailable;
 - (BOOL)isPaused;
 - (BOOL)isPreviewing;
 - (BOOL)isRecording;
@@ -134,6 +137,7 @@
 - (void)setAudioCaptureFormat:(NSUInteger)arg1;
 - (void)setAudioMeteringEnabled:(BOOL)arg1;
 - (void)setAutoExposureTarget:(float)arg1;
+- (BOOL)setCaptureMode:(id)arg1 qualityPreset:(id)arg2;
 - (void)setCaptureMode:(id)arg1;
 - (void)setChapterMarkersEnabled:(BOOL)arg1;
 - (void)setContrast:(float)arg1;

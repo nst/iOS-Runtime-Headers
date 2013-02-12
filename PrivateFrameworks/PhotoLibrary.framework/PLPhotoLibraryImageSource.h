@@ -11,7 +11,7 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)createImageForObject:(id)arg1 metadata:(id*)arg2;
+- (id)createImageForObject:(id)arg1 createMetadata:(id*)arg2;
 - (void)dealloc;
 - (id)description;
 - (NSUInteger)hash;

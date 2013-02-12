@@ -23,12 +23,12 @@
 @property(readonly) UITextSelection *selection;
 @property(readonly) UIView<UITextSelectingContainer> *view;
 @property BOOL caretBlinks;
-@property(readonly) BOOL replacementCommandsShowing;
 @property(readonly) BOOL selectionCommandsShowing;
 @property BOOL visible;
 
 + (void)_initializeSafeCategory;
 
+- (void)_axPostAfterDelay:(id)arg1;
 - (void)activate;
 - (void)appearOrFadeIfNecessary;
 - (void)calculateAndShowReplacements:(id)arg1;
@@ -60,7 +60,6 @@
 - (void)prepareForMagnification;
 - (id)rangeView;
 - (void)removeFromSuperview;
-- (BOOL)replacementCommandsShowing;
 - (void)scaleDidChange;
 - (void)scaleWillChange;
 - (id)scrollView;
@@ -73,10 +72,7 @@
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (void)showCaret:(NSInteger)arg1;
-- (void)showCommandsWithReplacements:(id)arg1 replacementDictionary:(id)arg2;
 - (void)showCommandsWithReplacements:(id)arg1;
-- (void)showReplacements:(id)arg1 replacementDictionary:(id)arg2;
-- (void)showReplacements:(id)arg1;
 - (void)showReplacementsWithGenerator:(id)arg1 afterDelay:(double)arg2;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;

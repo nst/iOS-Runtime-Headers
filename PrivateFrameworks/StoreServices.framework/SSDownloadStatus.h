@@ -20,11 +20,11 @@
 @property(readonly) float percentComplete;
 
 - (id)activePhase;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
 - (id)error;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)isFailed;
 - (BOOL)isFailedTransient;
 - (BOOL)isPausable;

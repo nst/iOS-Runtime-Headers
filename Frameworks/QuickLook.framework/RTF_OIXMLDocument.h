@@ -13,8 +13,8 @@
 - (id)XMLString;
 - (id)closingTagString;
 - (id)contentString;
+- (id)copyMutableXMLString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)createMutableXMLString;
 - (void)dealloc;
 - (id)description;
 - (id)initWithRootElement:(id)arg1;

@@ -29,7 +29,7 @@
 - (void)_hideOverlay;
 - (void)_loadVideoFromURL:(BOOL)arg1;
 - (void)_loadVideoInfoWithID:(id)arg1;
-- (void)_presentAlertForError:(id)arg1;
+- (void)_presentAlertForError:(id)arg1 reasonCode:(id)arg2;
 - (void)_setupBackground;
 - (void)_switchToVideo:(id)arg1;
 - (BOOL)canContinuePlayingWhenLocked;

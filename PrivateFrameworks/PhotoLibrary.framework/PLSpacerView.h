@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+@class UIImage;
+
 @interface PLSpacerView : UIView {
     struct CGImage { } *_separatorHiddenContents;
     BOOL _separatorIsVisible;
     struct CGImage { } *_separatorVisibleContents;
+    UIImage *_spacerImage;
     float _spacerWidth;
 }
 
+@property(retain) UIImage *spacerImage;
 @property BOOL separatorIsVisible;
 @property float spacerWidth;
 
@@ -19,7 +23,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)separatorIsVisible;
 - (void)setSeparatorIsVisible:(BOOL)arg1;
+- (void)setSpacerImage:(id)arg1;
 - (void)setSpacerWidth:(float)arg1;
+- (id)spacerImage;
 - (float)spacerWidth;
 
 @end

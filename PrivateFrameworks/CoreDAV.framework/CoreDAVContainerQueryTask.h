@@ -9,19 +9,21 @@
     char *_appSpecificDataProp;
     char *_appSpecificNamespace;
     char *_appSpecificQueryCommand;
-    NSInteger _searchLimit;
+    NSUInteger _searchLimit;
     NSSet *_searchTerms;
 }
 
+@property <CoreDAVContainerQueryTaskDelegate> *delegate;
+
 + (id)_copySearchTermsFromSearchString:(id)arg1;
 
-- (id)_initWithSearchTerms:(id)arg1 searchLimit:(NSInteger)arg2 atRelativeURI:(id)arg3 appSpecificDataItemClass:(Class)arg4;
+- (id)_initWithSearchTerms:(id)arg1 searchLimit:(NSUInteger)arg2 atRelativeURI:(id)arg3 appSpecificDataItemClass:(Class)arg4;
 - (void)addFiltersToXMLData:(id)arg1;
 - (void)dealloc;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithSearchString:(id)arg1 searchLimit:(NSInteger)arg2 atRelativeURI:(id)arg3 appSpecificDataItemClass:(Class)arg4;
-- (id)initWithSearchTerms:(id)arg1 searchLimit:(NSInteger)arg2 atRelativeURI:(id)arg3 appSpecificDataItemClass:(Class)arg4;
+- (id)initWithSearchString:(id)arg1 searchLimit:(NSUInteger)arg2 atRelativeURI:(id)arg3 appSpecificDataItemClass:(Class)arg4;
+- (id)initWithSearchTerms:(id)arg1 searchLimit:(NSUInteger)arg2 atRelativeURI:(id)arg3 appSpecificDataItemClass:(Class)arg4;
 - (BOOL)processData:(id)arg1 withParser:(id)arg2;
 - (id)requestBody;
 

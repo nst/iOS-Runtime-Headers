@@ -38,6 +38,7 @@
     NSIndexSet *_locationMetrics;
     } _locationRect;
     EKEvent *_occurrence;
+    UIColor *_textColor;
     float _textEndY;
     NSString *_title;
     } _titleEndPoint;
@@ -47,7 +48,9 @@
     float _visibleHeight;
 }
 
++ (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 height:(float)arg3;
 + (void)_clearViewCache;
++ (id)_imageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 height:(float)arg3;
 + (void)_initializeSafeCategory;
 + (id)_viewCache;
 + (NSUInteger)_viewCacheSize;
@@ -55,11 +58,10 @@
 + (void)clearCaches;
 + (float)minimumHeight;
 + (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tentative:(BOOL)arg2 cancelled:(BOOL)arg3 color:(id)arg4 selected:(BOOL)arg5 title:(id)arg6 location:(id)arg7;
++ (void)pushRoundedRectPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withCornerRadius:(float)arg3;
 
-- (id)_cachedImageForColor:(id)arg1 height:(float)arg2;
 - (void)_drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_getTitleMetrics:(id*)arg1 endPoint:(struct CGPoint { float x1; float x2; }*)arg2;
-- (id)_imageForColor:(id)arg1 height:(float)arg2;
 - (void)_invalidateMetrics;
 - (id)_locationFont;
 - (id)_locationMetrics;
@@ -74,7 +76,6 @@
 - (BOOL)isAccessibilityElement;
 - (id)location;
 - (id)occurrence;
-- (void)pushRoundedRectPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withCornerRadius:(float)arg3;
 - (void)removeFromSuperview;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setColor:(id)arg1;
@@ -90,6 +91,7 @@
 - (void)setVisibleHeight:(float)arg1;
 - (BOOL)shouldTrack;
 - (BOOL)tentative;
+- (id)textColor;
 - (id)title;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

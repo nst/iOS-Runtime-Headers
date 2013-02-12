@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class <GKNATObserverDelegate>, NSRunLoop, NSString, NSThread;
+@class <GKNATObserverDelegate>, NSMutableDictionary, NSRunLoop, NSString, NSThread;
 
 @interface GKNATObserverInternal : GKNATObserver {
     struct _opaque_pthread_mutex_t { 
@@ -12,11 +12,16 @@
         long __sig; 
         BOOL __opaque[24]; 
     } _cNATCheck;
-    NSUInteger _commNATFlags;
+    NSMutableDictionary *_commNATFlagDictionary;
     NSString *_currentWifiName;
     <GKNATObserverDelegate> *_delegate;
     struct __SCDynamicStore { } *_dynamicStore;
-    BOOL _fNATCheckThread;
+    BOOL _fCurrentNATCheckDone;
+    BOOL _fNATCheckQueued;
+    NSInteger _lastReportedNATType;
+    struct dispatch_group_s { } *_natCheckGroup;
+    struct dispatch_queue_s { } *_natCheckQueue;
+    struct dispatch_queue_s { } *_reportNATQueue;
     NSRunLoop *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     NSThread *_thread;
@@ -27,15 +32,17 @@
 
 - (void)GKNATObserverRunLoop:(id)arg1;
 - (void)GKNATObserverRunLoop;
+- (struct tagCommNATInfo { NSUInteger x1; NSUInteger x2; unsigned short x3[3]; NSUInteger x4; }*)callCommNATTestFromIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
+- (void)carrierNATCheckWithIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithOptions:(id)arg1;
 - (id)nameForWifi;
-- (void)natCheckThread;
 - (void)registerForNetworkChanges;
 - (void)reportNATType;
 - (void)setDelegate:(id)arg1;
 - (void)tryNATCheck;
+- (void)wifiNATCheckWithIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 
 @end

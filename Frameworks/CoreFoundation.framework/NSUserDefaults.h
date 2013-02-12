@@ -13,7 +13,10 @@
 @property(readonly) double _mapkit_throttleTimeInterval;
 @property(getter=isCompassEnabled) BOOL compassEnabled;
 
++ (id)CNFObjectForKey:(id)arg1;
++ (NSUInteger)CNFRegEmailValidationTimeout;
 + (void)_ensureAndLockPreferredLanguageLock;
++ (struct __CFString { }*)_targetDomainWithDomain:(id)arg1;
 + (void)_web_addDefaultsChangeObserver;
 + (void)_web_defaultsDidChange;
 + (id)_web_preferredLanguageCode;
@@ -24,11 +27,19 @@
 + (id)agentObjectForKey:(id)arg1;
 + (id)appObjectForKey:(id)arg1;
 + (id)objectForKey:(id)arg1 inDomain:(id)arg2;
++ (id)objectForKey:(id)arg1 inDomain:(id)arg2;
 + (void)resetStandardUserDefaults;
 + (void)setAgentObject:(id)arg1 forKey:(id)arg2;
 + (void)setAppObject:(id)arg1 forKey:(id)arg2;
++ (void)setCNFObject:(id)arg1 forKey:(id)arg2;
++ (void)setCNFRegEmailValidationTimeout:(NSUInteger)arg1;
 + (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
++ (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
++ (void)setShouldShowCNFRegistrationServerLogs:(BOOL)arg1;
++ (void)setShouldShowCNFRegistrationSettingsUI:(BOOL)arg1;
 + (void)setStandardUserDefaults:(id)arg1;
++ (BOOL)shouldShowCNFRegistrationServerLogs;
++ (BOOL)shouldShowCNFRegistrationSettingsUI;
 + (id)standardUserDefaults;
 
 - (id)URLForKey:(id)arg1;

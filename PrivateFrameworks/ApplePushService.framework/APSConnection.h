@@ -9,7 +9,6 @@
     NSString *_connectionPortName;
     NSUInteger _connectionServerPort;
     struct __CFMachPort { } *_connectionSeverCFMachPort;
-    NSArray *_darwinNotificationNames;
     <APSConnectionDelegate> *_delegate;
     BOOL _enableCriticalReliability;
     NSArray *_enabledTopics;
@@ -31,11 +30,9 @@
 - (void)_connect;
 - (void)_connectionServerPortInvalidated;
 - (id)_dataForPropertyList:(id)arg1;
-- (void)_deliverDarwinNotificationNamed:(id)arg1;
 - (void)_deliverMessageForTopic:(id)arg1 userInfo:(id)arg2;
 - (void)_deliverPublicToken:(id)arg1;
 - (void)_disconnect;
-- (void)_sendDarwinNotificationNames;
 - (void)_sendEnableCriticalReliability;
 - (void)_sendEnabledTopics;
 - (void)_sendIgnoredTopics;
@@ -52,7 +49,6 @@
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (void)setEnabledTopics:(id)arg1;
 - (void)setIgnoredTopics:(id)arg1;
-- (void)setLaunchingDarwinNotificationNames:(id)arg1;
 - (void)setSubtopic:(id)arg1 forEnabledTopic:(id)arg2;
 
 @end

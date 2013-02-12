@@ -5,10 +5,11 @@
 @interface MessageKeychainManager : NSObject {
 }
 
-+ (id)_passwordForGenericAccount:(id)arg1 service:(id)arg2;
++ (id)_passwordForGenericAccount:(id)arg1 service:(id)arg2 error:(id*)arg3;
 + (id)_passwordForHost:(id)arg1 username:(id)arg2 port:(NSInteger)arg3 keychainProtocol:(struct __CFString { }*)arg4;
 + (void)initialize;
 + (id)passwordForHost:(id)arg1 username:(id)arg2 port:(NSInteger)arg3 keychainProtocol:(void*)arg4;
++ (id)passwordForServiceName:(id)arg1 accountName:(id)arg2 error:(id*)arg3;
 + (id)passwordForServiceName:(id)arg1 accountName:(id)arg2;
 + (void)removePasswordForHost:(id)arg1 username:(id)arg2 port:(NSInteger)arg3 keychainProtocol:(void*)arg4;
 + (void)removePasswordForServiceName:(id)arg1 accountName:(id)arg2;

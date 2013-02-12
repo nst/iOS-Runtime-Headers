@@ -8,8 +8,8 @@
 
 @interface GKDataRequest : NSObject {
     id _completionBlock;
-    NSUInteger _replyPort;
     struct dispatch_source_s { } *_replySource;
+    struct dispatch_source_s { } *_serverSource;
 }
 
 @property(readonly) NSString *cacheKey;
@@ -22,10 +22,12 @@
 @property(readonly) NSInteger cachePriority;
 @property(readonly) NSInteger cacheType;
 
++ (NSUInteger)bootstrapPort;
 + (id)protocolVersion;
 + (NSUInteger)serverPort;
 + (BOOL)useTestProtocol;
 
+- (void)_cleanupSources;
 - (BOOL)authenticationRequired;
 - (id)cacheKey;
 - (NSInteger)cachePriority;
@@ -37,7 +39,6 @@
 - (id)errorForResponse:(id)arg1;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)header;
-- (id)init;
 - (id)invalidateCacheKeys;
 - (id)key;
 - (id)request;

@@ -18,7 +18,7 @@
 
 + (id)buttonWithTitle:(id)arg1;
 
-- (id)_accountURLForURL:(id)arg1;
+- (id)_accountURLForURL:(id)arg1 authenticationContext:(id)arg2;
 - (NSInteger)_actionTypeForString:(id)arg1;
 - (void)_openURLWithRequest:(id)arg1;
 - (NSInteger)_urlTypeForString:(id)arg1;

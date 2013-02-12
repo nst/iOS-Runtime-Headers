@@ -18,6 +18,7 @@
 @property(retain) NSNumber *durationInMilliseconds;
 @property(retain) NSData *epubRightsData;
 @property(retain) NSString *fileExtension;
+@property(retain) NSURL *fullSizeImageURL;
 @property(retain) NSString *genre;
 @property(retain) NSString *kind;
 @property(retain) NSString *releaseDateString;
@@ -41,6 +42,7 @@
 - (BOOL)artworkIsPrerendered;
 - (id)bundleIdentifier;
 - (id)collectionName;
+- (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyright;
 - (void)dealloc;
@@ -50,6 +52,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)epubRightsData;
 - (id)fileExtension;
+- (id)fullSizeImageURL;
 - (id)genre;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -57,6 +60,7 @@
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithItem:(id)arg1;
 - (id)initWithKind:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (BOOL)isRental;
 - (BOOL)isSample;
 - (unsigned long long)itemIdentifier;
@@ -72,6 +76,7 @@
 - (void)setDurationInMilliseconds:(id)arg1;
 - (void)setEpubRightsData:(id)arg1;
 - (void)setFileExtension:(id)arg1;
+- (void)setFullSizeImageURL:(id)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setKind:(id)arg1;

@@ -21,6 +21,7 @@
 + (id)deleteAccountActionsForAccountType:(id)arg1;
 + (BOOL)displayToggleForDataclass:(id)arg1;
 + (void)initialize;
++ (BOOL)isMultitaskingEnabled;
 + (BOOL)multipleStoresSupportedByDataclass:(id)arg1;
 + (id)removeActionsIncompatibleWithSingleStoreDataclass:(id)arg1;
 + (id)supportedDataclassesForAccountType:(id)arg1;
@@ -31,6 +32,7 @@
 - (id)_cachedSyncAccount;
 - (id)_creatorClassNameForAccountType:(id)arg1 creatorType:(id)arg2 loader:(id)arg3;
 - (void)_forcedSetAccountProperty:(id)arg1 forKey:(id)arg2;
+- (void)_forcedSetEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (id)_initWithType:(id)arg1 class:(id)arg2;
 - (id)accountClass;
 - (BOOL)accountClassStringIsIMAPSubclass;

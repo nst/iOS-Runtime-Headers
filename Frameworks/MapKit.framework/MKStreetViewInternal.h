@@ -14,7 +14,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct $_899 { 
+    struct $_901 { 
         unsigned int panoramaWillChange : 1; 
         unsigned int panoramaDidChange : 1; 
         unsigned int streetViewWillClose : 1; 

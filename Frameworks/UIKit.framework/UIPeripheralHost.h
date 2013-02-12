@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableSet, UIInputViewPostPinningReloadState, UIInputViewSet, UIInputViewTransition, UIKeyboardAutomatic, UIKeyboardRotationState, UIPeripheralHostState, UIPeripheralHostView, UIResponder;
+@class NSMutableArray, NSMutableSet, UIInputViewPostPinningReloadState, UIInputViewSet, UIInputViewTransition, UIKeyboardAutomatic, UIKeyboardRotationState, UIPeripheralHostView, UIResponder;
 
 @interface UIPeripheralHost : NSObject {
     BOOL _animationFencingEnabled;
@@ -31,7 +31,7 @@
     UIKeyboardRotationState *_rotationState;
     UIResponder *_selfHostingTrigger;
     BOOL _suppresingNotifications;
-    UIPeripheralHostState *_targetState;
+    NSMutableArray *_targetStateStack;
     BOOL _useHideNotificationsWhenNotVisible;
     float m_keyboardAttachedViewHeight;
 }
@@ -157,6 +157,7 @@
 - (id)postPinningReloadState;
 - (void)postWillHideNotificationForGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1 duration:(double)arg2;
 - (void)postWillShowNotificationForGeometry:(struct UIPeripheralAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; })arg1 duration:(double)arg2;
+- (void)prepareForPinning;
 - (void)prepareForRotationOfKeyboard:(id)arg1 toOrientation:(NSInteger)arg2;
 - (void)prepareForRotationToOrientation:(NSInteger)arg1;
 - (void)pushAnimationStyle:(id)arg1;

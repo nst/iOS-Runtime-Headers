@@ -55,6 +55,7 @@
 @property BOOL deliversTouchesForGesturesToSuperview;
 @property BOOL gesturesEnabled;
 @property float height;
+@property CGPoint integralCenter;
 @property BOOL skipsSubviewEnumeration;
 @property NSInteger tag;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
@@ -119,18 +120,15 @@
 - (id)__accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_accessibilityAccessibleElementsInView:(id)arg1;
 - (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
-- (BOOL)_accessibilityAlwaysOrderedFirst;
 - (id)_accessibilityChildVendingParent;
 - (id)_accessibilityChildrenInDirection:(BOOL)arg1;
 - (id)_accessibilityContainerInDirection:(BOOL)arg1 originalElement:(id)arg2;
-- (id)_accessibilityContainingParentForOrdering;
 - (id)_accessibilityElementsInContainerIncludingContainers:(BOOL)arg1 topLevel:(id)arg2;
 - (id)_accessibilityElementsInContainerIncludingContainers:(BOOL)arg1;
 - (id)_accessibilityElementsInDirection:(BOOL)arg1 withCount:(unsigned long)arg2 originalElement:(id)arg3;
 - (void)_accessibilityFinalize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityFrameForView:(id)arg1;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)_accessibilityNextElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityObscuredScreenAllowedViews;
 - (BOOL)_accessibilityObscuresScreen;
@@ -147,7 +145,7 @@
 - (BOOL)_accessibilityUserTestingIsDefaultButton;
 - (BOOL)_accessibilityUserTestingIsRightNavButton;
 - (BOOL)_accessibilityUserTestingIsTypeOfButton:(id)arg1;
-- (BOOL)_accessibilityUsesScrollParentForOrdering;
+- (BOOL)_accessibilityViewIsActive;
 - (id)_accessibleSubviews;
 - (void)_addSubview:(id)arg1 positioned:(NSInteger)arg2 relativeTo:(id)arg3;
 - (BOOL)_alwaysHandleInteractionEvents;
@@ -297,11 +295,11 @@
 - (struct CGSize { float x1; float x2; })abSizeForProperty:(id)arg1 variety:(id)arg2 orientation:(NSInteger)arg3;
 - (struct CGSize { float x1; float x2; })abSizeForProperty:(id)arg1 variety:(id)arg2;
 - (id)abSubviewAtIndexPath:(id)arg1;
-- (NSInteger)accessibilityCompareGeometry:(id)arg1;
 - (id)accessibilityContainer;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (BOOL)accessibilityIsWindow;
 - (unsigned long long)accessibilityTraits;
+- (BOOL)accessibilityTreeHidden;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (void)addGestureRecognizer:(id)arg1;
@@ -376,6 +374,7 @@
 - (void)insertSubview:(id)arg1 atIndex:(NSInteger)arg2;
 - (void)insertSubview:(id)arg1 below:(id)arg2;
 - (void)insertSubview:(id)arg1 belowSubview:(id)arg2;
+- (struct CGPoint { float x1; float x2; })integralCenter;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isDescendantOfView:(id)arg1;
@@ -444,6 +443,7 @@
 - (void)setGesturesEnabled:(BOOL)arg1;
 - (void)setHeight:(float)arg1;
 - (void)setHidden:(BOOL)arg1;
+- (void)setIntegralCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setMultipleTouchEnabled:(BOOL)arg1;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -12,7 +12,7 @@
     NSArray *_fileTransferGUIDs;
     NSInteger _flags;
     NSString *_guid;
-    NSString *_sender;
+    NSDictionary *_senderInfo;
     NSString *_subject;
     NSDate *_time;
 }
@@ -32,12 +32,14 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSender:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(NSInteger)arg6 error:(id)arg7 guid:(id)arg8;
+- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(NSInteger)arg6 error:(id)arg7 guid:(id)arg8;
 - (BOOL)isAlert;
 - (BOOL)isEmpty;
 - (BOOL)isFinished;
 - (BOOL)isPrepared;
 - (NSInteger)securityLevel;
 - (id)sender;
+- (id)senderInfo;
 - (void)setAttributes:(id)arg1;
 - (void)setBody:(id)arg1;
 - (void)setError:(id)arg1;
@@ -45,6 +47,7 @@
 - (void)setFlags:(NSInteger)arg1;
 - (void)setSecurityLevel:(NSInteger)arg1;
 - (void)setSender:(id)arg1;
+- (void)setSenderInfo:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTime:(id)arg1;
 - (void)setURL:(id)arg1;

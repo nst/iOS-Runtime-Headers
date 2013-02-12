@@ -34,6 +34,7 @@
 - (void)_setCapabilities:(NSUInteger)arg1;
 - (oneway void)addListener:(id)arg1 withListenerID:(id)arg2 capabilities:(NSUInteger)arg3;
 - (oneway void)autoLoginWithAccount:(id)arg1;
+- (id)autorelease;
 - (void)blockUntilConnected;
 - (NSUInteger)capabilities;
 - (BOOL)connectToDaemon;
@@ -56,7 +57,9 @@
 - (id)localPort;
 - (oneway void)loginWithAccount:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (oneway void)release;
 - (void)remoteObjectDiedNotification:(id)arg1;
+- (NSUInteger)retainCount;
 - (void)sendABInformationToDaemon;
 - (void)setCapabilities:(NSUInteger)arg1;
 - (void)setDaemonLogsOutWithoutStatusListeners:(BOOL)arg1;

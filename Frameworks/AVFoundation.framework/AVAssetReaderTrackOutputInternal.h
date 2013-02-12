@@ -2,11 +2,9 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetTrack, AVAudioMixInputParameters, AVOutputSettings, NSArray;
+@class AVAssetTrack, AVOutputSettings;
 
 @interface AVAssetReaderTrackOutputInternal : NSObject {
-    AVAudioMixInputParameters *audioParameters;
-    NSArray *audioVolumeCurve;
     AVOutputSettings *outputSettings;
     AVAssetTrack *track;
 }

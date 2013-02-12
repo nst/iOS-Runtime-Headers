@@ -5,6 +5,8 @@
 @interface CoreDAVDeleteTask : CoreDAVTask {
 }
 
+@property <CoreDAVDeleteTaskDelegate> *delegate;
+
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
 - (id)requestBody;

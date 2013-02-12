@@ -8,6 +8,8 @@
     id target;
 }
 
+- (void)clearTarget;
+- (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithTarget:(id)arg1 defaultTarget:(id)arg2 catchExceptions:(BOOL)arg3;
 - (id)methodSignatureForSelector:(SEL)arg1;

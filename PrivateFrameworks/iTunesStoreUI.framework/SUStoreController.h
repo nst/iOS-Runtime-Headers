@@ -9,14 +9,15 @@
     SUSectionsResponse *_lastSectionsResponse;
     NSURL *_launchURL;
     ISOperation *_loadSectionsOperation;
+    NSString *_localStoreFrontAtLastSuspend;
     SULocationObserver *_locationObserver;
     MFMailComposeViewController *_mailComposeViewController;
     NSArray *_overlayConfigurations;
     SUPurchaseManager *_purchaseManager;
     BOOL _reloadForStorefrontChangeAfterAccountSetup;
     BOOL _reloadSectionsOnNextLaunch;
-    NSString *_storeFrontAtLastSuspend;
     NSDictionary *_storeFrontLanguages;
+    NSString *_synchedStoreFrontAtLastSuspend;
     SUTabBarController *_tabBarController;
 }
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@interface CLHeadingInternal : NSObject {
+@interface CLHeadingInternal : NSObject <NSCopying> {
     struct { 
         double magneticHeading; 
         double trueHeading; 
@@ -19,6 +19,7 @@
     } fHeading;
 }
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithClientHeading:(struct { double x1; double x2; double x3; NSInteger x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; })arg1;
 
 @end

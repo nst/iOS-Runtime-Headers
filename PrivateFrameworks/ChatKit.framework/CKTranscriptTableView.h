@@ -8,6 +8,8 @@
 + (void)_initializeSafeCategory;
 
 - (BOOL)isAccessibilityElement;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

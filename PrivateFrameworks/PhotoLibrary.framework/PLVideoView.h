@@ -25,6 +25,7 @@
     unsigned int _preparingMoviePlayer : 1;
     unsigned int _didPrepareMoviePlayer : 1;
     unsigned int _moviePlayerIsReady : 1;
+    unsigned int _firstFrameWasDisplayed : 1;
     unsigned int _showingOverlay : 1;
     unsigned int _showingScrubber : 1;
     unsigned int _showScrubberWhenMovieIsReady : 1;
@@ -72,6 +73,7 @@
     struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; NSString *x6; } *_trimProgressStack;
     NSTimer *_trimProgressTimer;
     NSString *_trimmedPath;
+    MLPhoto *_trimmedVideoClip;
     MLPhoto *_videoCameraImage;
     UIView *_videoOverlayBackgroundView;
     UIButton *_videoOverlayPlayButton;
@@ -83,6 +85,7 @@
 @property PLPhotoTileViewController *imageTile;
 @property(readonly) UIImage *posterFrameImage;
 @property(readonly) UIImageView *previewImageView;
+@property(retain) MLPhoto *trimmedVideoClip;
 @property(readonly) MLPhoto *videoCameraImage;
 @property(readonly) NSString *videoPathAfterTrim;
 @property BOOL canEdit;
@@ -146,6 +149,7 @@
 - (void)_updateScrubberValue;
 - (void)_updateScrubberVisibility:(BOOL)arg1;
 - (void)_updateTrimProgress;
+- (void)_videoFrameDisplayed:(id)arg1;
 - (void)_videoOverlayFadeOutDidFinish;
 - (void)_viewDidAppear:(BOOL)arg1;
 - (id)accessibilityContainerElements;
@@ -222,6 +226,7 @@
 - (void)setScrubberWidth:(float)arg1;
 - (void)setShowsPlayOverlay:(BOOL)arg1;
 - (void)setShowsPosterFrame:(BOOL)arg1;
+- (void)setTrimmedVideoClip:(id)arg1;
 - (void)setVideoOverlayBackgroundView:(id)arg1;
 - (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showScrubberBackgroundViewWithDuration:(float)arg1;
@@ -233,6 +238,7 @@
 - (void)toggleScaleMode:(float)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)trimUsingMode:(NSInteger)arg1 saveACopy:(BOOL)arg2;
+- (id)trimmedVideoClip;
 - (id)videoCameraImage;
 - (id)videoOverlayBackgroundView;
 - (id)videoPathAfterTrim;

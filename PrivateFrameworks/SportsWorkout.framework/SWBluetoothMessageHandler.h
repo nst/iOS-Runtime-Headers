@@ -2,23 +2,30 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSFileHandle;
+@class NSFileHandle, NSTimer;
 
 @interface SWBluetoothMessageHandler : NSObject {
     struct BTDiscoveryAgentImpl { } *_btDiscoveryAgent;
     struct BTLocalDeviceImpl { } *_btLocalDevice;
+    struct __CFRunLoop { } *_btRunLoop;
     struct BTDeviceImpl { } *_btSensorDevice;
     NSUInteger _btSensorDeviceCount;
     NSFileHandle *_btSensorDeviceInputHandle;
     struct BTSessionImpl { } *_btSession;
     NSInteger _deviceVirtualType;
+    struct __CFRunLoopTimer { } *_futureTimer;
+    BOOL _isActivating;
     BOOL _isActive;
     BOOL _isConnecting;
+    NSTimer *_multiSensorTimer;
     BOOL _rssi;
     NSUInteger _serviceMask;
+    BOOL _shouldCancelBTThread;
 }
 
 @property(readonly) BOOL rssi;
+
++ (id)newMessageHandler;
 
 - (const char *)__btSessionName;
 - (void)_attachToSession;
@@ -45,6 +52,8 @@
 - (void)_bluetoothSessionDidDetach:(struct BTSessionImpl { }*)arg1 withResult:(NSInteger)arg2;
 - (void)_bluetoothSessionDidFail:(struct BTSessionImpl { }*)arg1 withResult:(NSInteger)arg2;
 - (void)_bluetoothSessionDidTerminate:(struct BTSessionImpl { }*)arg1 withResult:(NSInteger)arg2;
+- (void)_btThreadMain;
+- (void)_cancelBTThread;
 - (void)_clearLocalDevice;
 - (void)_clearLocalDeviceCallbacks;
 - (void)_clearServiceCallbacks;
@@ -64,6 +73,7 @@
 - (void)_handleScanDidEnd;
 - (BOOL)_isPowerOnForLocalDeviceModule:(NSUInteger)arg1;
 - (void)_openInputPort;
+- (void)_retryConnectToDevice;
 - (void)_setDeviceForAddress:(struct { unsigned char x1[6]; })arg1;
 - (void)_setPowerOn:(BOOL)arg1 forLocalDeviceModule:(NSUInteger)arg2;
 - (void)_setSensorDeviceVirtualType;
@@ -72,11 +82,12 @@
 - (void)_stopDiscoveryAgentScan;
 - (void)activate;
 - (void)beginDeviceDiscovery:(NSInteger)arg1 serviceMask:(NSUInteger)arg2;
+- (void)cancelConnectToDevice;
 - (void)connectToDeviceWithAddress:(struct { unsigned char x1[6]; })arg1;
 - (void)deactivate;
-- (void)dealloc;
 - (struct { unsigned char x1[6]; })deviceAddressForSensor;
 - (void)forgetSensorDevice;
+- (id)init;
 - (BOOL)isActive;
 - (BOOL)isSensorDeviceConnected;
 - (BOOL)isSensorDeviceDiscovered;

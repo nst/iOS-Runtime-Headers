@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSArray;
+@class NSSet;
 
 @interface CoreDAVPropFindTask : CoreDAVTask {
-    NSArray *_propFindElements;
+    NSSet *_propFindElements;
 }
+
+@property <CoreDAVPropFindTaskDelegate> *delegate;
 
 - (void)dealloc;
 - (void)finishCoreDAVTaskWithError:(id)arg1;

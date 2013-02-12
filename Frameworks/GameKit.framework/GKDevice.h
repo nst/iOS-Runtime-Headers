@@ -8,6 +8,7 @@
     NSString *_buildVersion;
     NSString *_deviceName;
     NSString *_gameKitVersion;
+    NSString *_osVersion;
     NSDictionary *_screenCapabilities;
     NSString *_udid;
 }
@@ -15,6 +16,7 @@
 @property(readonly) NSString *buildVersion;
 @property(readonly) NSString *deviceName;
 @property(readonly) NSString *gameKitVersion;
+@property(readonly) NSString *osVersion;
 @property(readonly) NSDictionary *screenCapabilities;
 @property(readonly) NSString *udid;
 
@@ -26,6 +28,7 @@
 - (id)deviceName;
 - (id)gameKitVersion;
 - (id)init;
+- (id)osVersion;
 - (id)processNameHeader;
 - (id)protocolVersionHeader;
 - (id)screenCapabilities;

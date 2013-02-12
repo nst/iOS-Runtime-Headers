@@ -5,6 +5,7 @@
 @class NSTimer, UIImageView;
 
 @interface PLCameraZoomSlider : UISlider {
+    BOOL _autorotationEnabled;
     BOOL _isZoomingFromMax;
     BOOL _isZoomingFromMin;
     UIImageView *_maxImageView;
@@ -14,6 +15,7 @@
     BOOL _watchingOrientationChanges;
 }
 
+@property BOOL autorotationEnabled;
 @property BOOL isZoomingFromMax;
 @property BOOL isZoomingFromMin;
 
@@ -24,6 +26,7 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(NSInteger)arg1;
 - (void)_setDeviceOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)addEndCapImageViewsWithMinImage:(id)arg1 maxImage:(id)arg2;
+- (BOOL)autorotationEnabled;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)clearZoomingFromEndcap;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -40,6 +43,8 @@
 - (void)makeInvisible;
 - (void)makeVisible;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setAutorotationEnabled:(BOOL)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setIsZoomingFromMax:(BOOL)arg1;
 - (void)setIsZoomingFromMin:(BOOL)arg1;
 - (void)setOrientation:(NSInteger)arg1;

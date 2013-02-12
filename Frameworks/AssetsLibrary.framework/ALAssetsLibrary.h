@@ -8,7 +8,10 @@
 
 @property(retain) ALAssetsLibraryPrivate *internal;
 
+- (void)_attachAux;
+- (void)_detachAux;
 - (BOOL)_libraryIsAvailable;
+- (void)_writeImageToSavedPhotosAlbum:(id)arg1 imageData:(id)arg2 metadata:(id)arg3 completionBlock:(id)arg4;
 - (void)addAsset:(id)arg1;
 - (void)assetForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)dealloc;
@@ -16,12 +19,13 @@
 - (id)init;
 - (id)internal;
 - (BOOL)isValid;
-- (void)notify;
 - (void)photoLibraryDidChange:(id)arg1;
 - (id)publicErrorForPrivateDomain:(id)arg1 withPrivateCode:(NSInteger)arg2;
 - (id)publicErrorFromPrivateError:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (BOOL)videoAtPathIsCompatibleWithSavedPhotosAlbum:(id)arg1;
+- (void)writeImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
+- (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
 - (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(NSInteger)arg2 completionBlock:(id)arg3;
 - (void)writeVideoAtPathToSavedPhotosAlbum:(id)arg1 completionBlock:(id)arg2;
 

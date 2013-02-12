@@ -13,6 +13,7 @@
 - (void)dealloc;
 - (id)key;
 - (id)request;
+- (void)send;
 - (void)setStatus:(id)arg1;
 - (id)status;
 

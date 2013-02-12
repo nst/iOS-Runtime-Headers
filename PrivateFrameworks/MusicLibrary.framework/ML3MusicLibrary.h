@@ -12,6 +12,7 @@
 }
 
 @property(retain,readonly) NSOperationQueue *backgroundOperationQueue;
+@property(copy,readonly) NSString *path;
 @property(readonly) ML3MusicLibrary_SQLiteDatabaseContext *threadLocalDatabaseContext;
 
 + (void)attachAuxiliaryDatabases:(struct sqlite3 { }*)arg1;
@@ -42,6 +43,7 @@
 - (id)initWithPath:(id)arg1 enableWrites:(BOOL)arg2;
 - (long long)insertStringIntoSortMapNoTransaction:(id)arg1;
 - (NSInteger)openDatabaseHandle:(struct sqlite3 {}**)arg1;
+- (id)path;
 - (void)performOperationInBackground:(id)arg1;
 - (void)popThreadLocalDatabaseHandle;
 - (struct sqlite3_stmt { }*)preparedStatementForSQL:(id)arg1;

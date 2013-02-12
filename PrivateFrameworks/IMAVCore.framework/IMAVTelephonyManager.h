@@ -12,8 +12,11 @@
 + (id)sharedInstance;
 
 - (void)_handleCallEvent:(id)arg1;
+- (id)autorelease;
 - (NSUInteger)callState;
 - (void)dealloc;
 - (id)init;
+- (oneway void)release;
+- (NSUInteger)retainCount;
 
 @end

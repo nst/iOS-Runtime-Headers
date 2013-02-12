@@ -12,11 +12,11 @@
     struct OpaqueFigPlayer { } *figPlayer;
     NSMutableSet *items;
     AVPlayerItem *lastItem;
+    BOOL logPerformanceData;
     BOOL needsToCreateFigPlayer;
-    struct dispatch_queue_s { } *notificationQueue;
     NSMutableDictionary *pendingFigPlayerProperties;
     AVPropertyStorage *propertyStorage;
-    struct dispatch_queue_s { } *serialQueue;
+    struct dispatch_queue_s { } *stateDispatchQueue;
     NSInteger status;
     AVWeakReference *weakReference;
 }

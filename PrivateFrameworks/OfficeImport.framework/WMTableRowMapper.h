@@ -9,6 +9,8 @@
     WDTableRow *mWdTableRow;
 }
 
++ (BOOL)isTableRowDeleted:(id)arg1;
+
 - (double)height;
 - (id)initWithWDTableRow:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;

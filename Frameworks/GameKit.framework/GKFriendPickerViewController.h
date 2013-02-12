@@ -2,19 +2,18 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKFriendPickerViewControllerDelegate>, GKBackgroundView, GKGameInviteMessageViewController, NSArray, NSMutableArray, NSMutableDictionary, UILabel, UINavigationBar, UISearchBar, UITableView, UIView;
+@class <GKFriendPickerViewControllerDelegate>, GKGameInviteMessageViewController, GKImageBackgroundView, GKUITheme, NSArray, NSMutableArray, NSMutableDictionary, UILabel, UISearchBar, UITableView, UIView;
 
-@interface GKFriendPickerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
+@interface GKFriendPickerViewController : GKTableViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
     NSArray *_allFriends;
     NSMutableDictionary *_avatarImages;
-    GKBackgroundView *_backgroundView;
+    GKImageBackgroundView *_backgroundView;
     <GKFriendPickerViewControllerDelegate> *_delegate;
-    BOOL _didLayout;
     UITableView *_friendTable;
     NSArray *_friends;
+    BOOL _lockedToPortrait;
     NSInteger _maxPlayers;
     GKGameInviteMessageViewController *_messageViewController;
-    UINavigationBar *_navBar;
     UILabel *_navPlayersLabel;
     UILabel *_navTitleLabel;
     UIView *_navView;
@@ -22,12 +21,15 @@
     NSMutableDictionary *_ranks;
     UISearchBar *_searchBar;
     NSMutableArray *_searchFriends;
+    GKUITheme *_theme;
 }
 
 @property(retain) NSMutableDictionary *avatarImages;
 @property <GKFriendPickerViewControllerDelegate> *delegate;
 @property(retain) NSArray *pickableFriends;
 @property(retain) NSMutableDictionary *ranks;
+@property(retain) GKUITheme *theme;
+@property(getter=isLockedToPortrait) BOOL lockedToPortrait;
 @property NSInteger maxPlayers;
 
 - (id)avatarImages;
@@ -35,9 +37,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
+- (void)done;
+- (void)donePickingPlayersWithMessage:(id)arg1;
 - (void)gameInviteMessageViewController:(id)arg1 didFinishWithMessage:(id)arg2;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)layoutSubviewsForInterfaceOrientation:(NSInteger)arg1;
+- (id)initWithTheme:(id)arg1;
+- (BOOL)isLockedToPortrait;
 - (void)loadImageForCellAtIndexPath:(id)arg1;
 - (void)loadView;
 - (NSInteger)maxPlayers;
@@ -51,10 +55,12 @@
 - (id)selectedPlayers;
 - (void)setAvatarImages:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setLockedToPortrait:(BOOL)arg1;
 - (void)setMaxPlayers:(NSInteger)arg1;
 - (void)setPickableFriends:(id)arg1;
 - (void)setPlayerRangeText;
 - (void)setRanks:(id)arg1;
+- (void)setTheme:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)showMessageViewController;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -62,6 +68,7 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (id)theme;
 - (void)updateNavViewLayoutForOrientation:(NSInteger)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

@@ -20,7 +20,6 @@
 @property NSInteger selectionStart;
 @property(readonly) BOOL willValidate;
 
-- (BOOL)_isAssistable;
 - (BOOL)_isEdited;
 - (BOOL)_requiresAccessoryView;
 - (BOOL)_requiresInputView;

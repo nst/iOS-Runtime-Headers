@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CADisplayLink, NSData, NSDictionary, NSMutableArray, NSString, PLCameraController, PLCameraElapsedTimeView, PLCameraFlashButton, PLCameraZoomSlider, PLCropOverlay, PLPhotoLibrary, PLPhotoTileViewController, PLPreviewView, PLReorientingButton, PLVideoView, UIAlertView, UIImage, UIImageView, UIToolbar, UIView;
+@class CADisplayLink, NSData, NSDictionary, NSMutableArray, NSString, PLCameraController, PLCameraElapsedTimeView, PLCameraFlashButton, PLCameraHDRButton, PLCameraProgressView, PLCameraZoomSlider, PLCropOverlay, PLPhotoLibrary, PLPhotoTileViewController, PLPreviewView, PLReorientingButton, PLVideoView, UIAlertView, UIImage, UIImageView, UIToolbar, UIView;
 
-@interface PLCameraView : UIView <PLCameraControllerDelegate, PLVideoViewDelegate, PLCameraFlashButtonDelegate, PLPreviewViewDelegate> {
+@interface PLCameraView : UIView <PLCameraControllerDelegate, PLVideoViewDelegate, PLCameraFlashButtonDelegate, PLCameraHDRButtonDelegate, PLPreviewViewDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -28,14 +28,14 @@
     unsigned int _capturingPhoto : 1;
     unsigned int _switchingBetweenCameras : 1;
     unsigned int _fastIrisAnimation : 1;
-    unsigned int _flashWillFireForCurrentCapture : 1;
-    unsigned int _flashModeDidChange : 1;
+    unsigned int _currentCaptureIsExtendedDuration : 1;
     unsigned int _flashModeDidChangeDuringCapture : 1;
     unsigned int _imageWriterQueueIsFull : 1;
     unsigned int _isCameraApp : 1;
     unsigned int _staticIrisIsClosing : 1;
     unsigned int _irisIsOpening : 1;
     unsigned int _isVisible : 1;
+    unsigned int _keepAlive : 1;
     unsigned int _imagePickerWantsImageData : 1;
     NSInteger _availablePictureCount;
     float _bounceAspectRatio;
@@ -44,7 +44,7 @@
     UIToolbar *_cameraButtonBar;
     PLCameraController *_cameraController;
     NSInteger _captureOrientation;
-    SEL _closeIrisAnimationFinishedSelector;
+    NSMutableArray *_closeIrisDidFinishSelectors;
     NSString *_cropButtonTitle;
     PLCropOverlay *_cropOverlay;
     NSString *_cropTitle;
@@ -53,18 +53,24 @@
     NSInteger _enabledGestures;
     PLCameraFlashButton *_flashButton;
     NSInteger _flashModeBeforeCapture;
+    NSInteger _flashModeBeforeHDR;
     UIView *_flipView;
+    PLCameraHDRButton *_hdrButton;
+    PLCameraProgressView *_hdrProgressView;
     NSDictionary *_imagePickerOptions;
     PLPhotoTileViewController *_imageTile;
     BOOL _irisIsClosed;
     UIView *_irisView;
     BOOL _irisWillOpen;
     NSData *_lastCapturedImageData;
+    NSDictionary *_lastCapturedMetadata;
     PLPhotoLibrary *_library;
     BOOL _manipulatingCrop;
-    SEL _openIrisAnimationFinishedSelector;
+    NSMutableArray *_openIrisDidFinishSelectors;
     UIView *_overlayView;
+    NSInteger _photoFlashMode;
     NSInteger _photoSavingOptions;
+    UIView *_previewContainerView;
     PLPreviewView *_previewView;
     UIView *_previewViewSnapshotView;
     NSMutableArray *_previewWellImages;
@@ -76,6 +82,7 @@
     PLReorientingButton *_toggleCameraButton;
     UIView *_topStripeView;
     UIAlertView *_torchDisabledAlert;
+    NSInteger _videoFlashMode;
     NSDictionary *_videoMetadata;
     PLVideoView *_videoView;
     NSMutableArray *_viewsToBounce;
@@ -86,11 +93,13 @@
 @property NSInteger cameraDevice;
 @property NSInteger cameraMode;
 @property NSInteger flashMode;
-@property BOOL flashModeDidChange;
 @property(readonly) BOOL isCameraReady;
+@property NSInteger photoFlashMode;
+@property NSInteger previewZoomMode;
 
 + (void)_initializeSafeCategory;
 
+- (void)HDRButtonModeDidChange:(id)arg1;
 - (void)_addViewToBounce:(id)arg1;
 - (void)_addZoomAnimationDisplayLinkWithSelector:(SEL)arg1;
 - (void)_albumDidChange:(id)arg1;
@@ -105,6 +114,7 @@
 - (id)_cameraAlbum;
 - (BOOL)_cameraButtonOrientationIsLandscape;
 - (void)_cameraDidBecomeReady;
+- (void)_cameraOrientationChanged:(id)arg1;
 - (BOOL)_canEditVideo;
 - (BOOL)_canTakePhoto;
 - (void)_cancelBounceAnimationsAndUpdatePreviewWell;
@@ -121,10 +131,11 @@
 - (BOOL)_imageWriterQueueIsFull;
 - (void)_inCallStatusChanged:(id)arg1;
 - (void)_incrementZoomSlider;
+- (id)_irisView;
 - (id)_modeSwitch;
 - (void)_openIrisAndAnimatePreviewImage:(id)arg1;
 - (void)_openIrisAnimationFinished;
-- (void)_openIrisForCapture;
+- (void)_overlayDidFadeOut:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_performVideoCapture;
 - (void)_preparePreviewWellImage:(id)arg1 isVideo:(BOOL)arg2;
 - (void)_previewVideoAtPath:(id)arg1;
@@ -136,11 +147,15 @@
 - (void)_resetDiskSpaceWarning;
 - (id)_scriptingInfo;
 - (void)_setBottomBarEnabled:(BOOL)arg1;
+- (void)_setHDRButtonAlpha:(float)arg1 duration:(float)arg2;
+- (void)_setHDRProgressHUDVisible:(BOOL)arg1;
+- (void)_setKeepAlive:(BOOL)arg1;
 - (void)_setOverlayControlsEnabled:(BOOL)arg1;
 - (void)_setOverlayControlsVisible:(BOOL)arg1;
 - (void)_setPreviewView;
 - (void)_setShadowViewVisible:(BOOL)arg1;
 - (void)_showDiskSpaceWarning;
+- (BOOL)_showHDR;
 - (void)_showTorchDisabledAlert:(id)arg1;
 - (id)_shutterButton;
 - (void)_shutterButtonClicked;
@@ -173,6 +188,7 @@
 - (void)cameraControllerModeDidChange:(id)arg1;
 - (void)cameraControllerModeWillChange:(id)arg1;
 - (void)cameraControllerReadyStateChanged:(id)arg1;
+- (void)cameraControllerServerDied:(id)arg1;
 - (void)cameraControllerTorchAvailabilityChanged:(id)arg1;
 - (void)cameraControllerVideoCaptureDidStart:(id)arg1;
 - (void)cameraControllerVideoCaptureDidStop:(id)arg1;
@@ -181,8 +197,8 @@
 - (NSInteger)cameraDevice;
 - (NSInteger)cameraMode;
 - (BOOL)cameraShutterClicked:(id)arg1;
-- (void)closeIris:(BOOL)arg1 didFinishSelector:(SEL)arg2 withDuration:(float)arg3;
 - (void)closeIrisAnimationFinished;
+- (void)closeIrisWithDidFinishSelector:(SEL)arg1 withDuration:(float)arg2;
 - (BOOL)controlsAreVisible;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
 - (void)cropOverlayPause:(id)arg1;
@@ -197,7 +213,6 @@
 - (void)flashButtonModeDidChange:(id)arg1;
 - (void)flashButtonWillExpand:(id)arg1;
 - (NSInteger)flashMode;
-- (BOOL)flashModeDidChange;
 - (void)hideStaticClosedIris;
 - (id)imageTile;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -207,12 +222,14 @@
 - (void)openIrisWithDidFinishSelector:(SEL)arg1 withDuration:(float)arg2;
 - (void)openIrisWithDidFinishSelector:(SEL)arg1;
 - (id)overlayView;
+- (NSInteger)photoFlashMode;
 - (NSInteger)photoSavingOptions;
 - (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
 - (void)prepareForDefaultImageSnapshot;
 - (void)pressShutterButton;
 - (BOOL)previewView:(id)arg1 shouldFocusAtPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)previewViewTouchesEnded:(id)arg1;
+- (NSInteger)previewZoomMode;
 - (void)primeStaticClosedIris;
 - (void)setAllowsImageEditing:(BOOL)arg1;
 - (void)setAllowsMultipleCameraModes:(BOOL)arg1;
@@ -227,17 +244,17 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEnabledGestures:(NSInteger)arg1;
 - (void)setFlashMode:(NSInteger)arg1;
-- (void)setFlashModeDidChange:(BOOL)arg1;
 - (void)setImagePickerOptions:(id)arg1;
 - (void)setImagePickerWantsImageData:(BOOL)arg1;
 - (void)setManipulatingCrop:(BOOL)arg1;
 - (void)setOverlayView:(id)arg1;
+- (void)setPhotoFlashMode:(NSInteger)arg1;
 - (void)setPhotoSavingOptions:(NSInteger)arg1;
 - (void)setPreviewViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setPreviewZoomMode:(NSInteger)arg1;
 - (void)setShowsCropOverlay:(BOOL)arg1;
 - (void)setShowsCropRegion:(BOOL)arg1;
-- (void)setupAnimateCameraPreviewDown:(id)arg1 flipImage:(BOOL)arg2;
-- (void)setupAnimateVideoPreviewDown:(id)arg1;
+- (void)setupAnimatePreviewDown:(id)arg1 flipImage:(BOOL)arg2;
 - (void)showStaticClosedIris;
 - (void)showZoomSlider;
 - (void)startPreview;
@@ -246,7 +263,6 @@
 - (void)switchModesCloseIrisAnimationFinished;
 - (void)takePictureCloseIrisAnimationFinished;
 - (void)takePictureOpenIrisAnimationFinished;
-- (void)tearDownIris;
 - (void)timeLapseTimerFired;
 - (BOOL)videoViewCanBeginPlayback:(id)arg1;
 - (void)videoViewDidBeginPlayback:(id)arg1;

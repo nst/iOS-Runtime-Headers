@@ -8,9 +8,17 @@
     AVAssetReaderOutputInternal *_internal;
 }
 
+@property(getter=_extractionID) NSInteger extractionID; /* unknown property attribute: S_setExtractionID: */
+@property(getter=_figAssetReaderExtractionOptions,readonly) NSDictionary *figAssetReaderExtractionOptions;
 @property(readonly) NSString *mediaType;
+@property(getter=_weakReferenceToAssetReader,readonly) AVWeakReference *weakReferenceToAssetReader;
+@property(getter=_status,readonly) NSInteger status;
+@property(getter=_trimsSampleDurations,readonly) BOOL trimsSampleDurations;
+
++ (void)initialize;
 
 - (id)_asset;
+- (void)_attachToWeakReferenceToAssetReader:(id)arg1;
 - (void)_cancelReading;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (NSInteger)_extractionID;
@@ -18,12 +26,14 @@
 - (void)_figAssetReaderDecodeError;
 - (id)_figAssetReaderExtractionOptions;
 - (void)_figAssetReaderSampleBufferDidBecomeAvailableForExtractionID:(NSInteger)arg1;
+- (BOOL)_isFinished;
+- (void)_markAsFinished;
 - (BOOL)_prepareForReadingReturningError:(id*)arg1;
 - (void)_setExtractionID:(NSInteger)arg1;
 - (void)_setFigAssetReader:(struct OpaqueFigAssetReader { }*)arg1;
-- (void)_setStatus:(NSInteger)arg1;
 - (NSInteger)_status;
 - (BOOL)_trimsSampleDurations;
+- (id)_weakReferenceToAssetReader;
 - (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
 - (void)dealloc;
 - (void)finalize;

@@ -63,8 +63,6 @@
 - (void)computePreview;
 - (void)computePreviewInThread;
 - (id)connection;
-- (id)createAttachmentURLWithID:(id)arg1 properties:(id)arg2;
-- (id)createSafeAttachmentURLWithID:(id)arg1 mimeType:(id)arg2 textEncoding:(id)arg3;
 - (id)data;
 - (void)dealloc;
 - (id)delegate;
@@ -72,6 +70,8 @@
 - (id)fileName;
 - (BOOL)isCancelled;
 - (BOOL)isComputed;
+- (id)newAttachmentURLWithID:(id)arg1 properties:(id)arg2;
+- (id)newSafeAttachmentURLWithID:(id)arg1 mimeType:(id)arg2 textEncoding:(id)arg3;
 - (id)previewRequest;
 - (id)previewResponse;
 - (id)previewURL;

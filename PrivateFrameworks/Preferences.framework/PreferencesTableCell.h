@@ -19,6 +19,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityTableViewCellText;
+- (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (SEL)action;
 - (BOOL)canReload;

@@ -37,6 +37,7 @@
 @property(readonly) NSInteger visibleCalendarCount;
 
 - (void)_calendarStoreChanged:(id)arg1;
+- (void)_calendarStoreChangedExternally:(id)arg1;
 - (void)_cancelSelectedOccurrence:(BOOL)arg1;
 - (NSInteger)_dayIndexFromIndexPath:(id)arg1;
 - (void)_invalidateCachedOccurrences;

@@ -31,18 +31,25 @@
     NSArray *_videoReferences;
 }
 
++ (BOOL)__original_resolveClassMethod:(SEL)arg1;
++ (void)_initializeSafeCategory;
 + (void)disableNotifications;
 + (void)enableNotifications;
 + (void)playbackDidStall;
 + (void)reset3GPlaybackStallCount;
++ (BOOL)resolveClassMethod:(SEL)arg1;
 + (id)unsupportedVideoError;
 + (id)videoIsProcessingError;
 + (id)videoNotFoundError;
 
 - (id)ID;
+- (id)__original_forwardingTargetForSelector:(SEL)arg1;
 - (void)_postVideoDidChange;
 - (void)_thumbnailDidLoad;
+- (id)accessibilityExtendedText;
+- (id)accessibilityLabel;
 - (double)age;
+- (BOOL)allowsHighQuality3GPlayback;
 - (id)anyVideoReference;
 - (id)archiveDictionary;
 - (id)author;
@@ -56,6 +63,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)editURL;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (NSUInteger)hash;
 - (id)infoURL;
 - (id)initFromArchiveDictionary:(id)arg1;

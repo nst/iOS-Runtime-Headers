@@ -30,7 +30,11 @@
 - (NSInteger)comparison;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (NSUInteger)hash;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 caseInsensitive:(BOOL)arg4 transformFunction:(id)arg5 treatNullAsBlank:(BOOL)arg6;
+- (BOOL)isEqual:(id)arg1;
 - (id)operator;
 - (void)setCaseInsensitive:(BOOL)arg1;
 - (void)setComparison:(NSInteger)arg1;

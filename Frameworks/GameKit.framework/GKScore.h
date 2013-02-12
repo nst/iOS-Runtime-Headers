@@ -2,36 +2,43 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKPlayer, NSDate, NSString;
+@class NSDate, NSString;
 
-@interface GKScore : NSObject {
+@interface GKScore : NSObject <NSCoding> {
+    NSString *_category;
     NSDate *_date;
     NSString *_formattedValue;
-    GKPlayer *_player;
+    NSString *_playerID;
     NSInteger _rank;
-    NSInteger _value;
+    long long _value;
 }
 
+@property(retain) NSString *category;
 @property(retain) NSDate *date;
 @property(retain) NSString *formattedValue;
-@property(retain) GKPlayer *player;
+@property(retain) NSString *playerID;
 @property NSInteger rank;
-@property NSInteger value;
+@property long long value;
 
+- (id)category;
 - (id)date;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)formattedValue;
 - (id)init;
+- (id)initWithCategory:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)player;
+- (id)playerID;
 - (NSInteger)rank;
 - (void)reportScoreWithCompletionHandler:(id)arg1;
+- (void)setCategory:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setFormattedValue:(id)arg1;
-- (void)setPlayer:(id)arg1;
+- (void)setPlayerID:(id)arg1;
 - (void)setRank:(NSInteger)arg1;
-- (void)setValue:(NSInteger)arg1;
-- (NSInteger)value;
+- (void)setValue:(long long)arg1;
+- (long long)value;
 
 @end

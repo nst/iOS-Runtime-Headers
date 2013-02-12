@@ -2,15 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLElement, UIColor, UIDelayedAction, UIFont, UITextInteractionAssistant, UITextSelectionView, UITouch, UIWebDocumentView, WebFrame;
+@class DOMHTMLElement, UIColor, UIDelayedAction, UIFont, UITextInteractionAssistant, UITextSelectionView, UIWebDocumentView, WebFrame;
 
 @interface UITextContentView : UIView <UITextSelectingContainer, UITextInputTraits> {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -25,24 +19,16 @@
     BOOL m_editing;
     UIFont *m_font;
     WebFrame *m_frame;
-    BOOL m_handlingMouse;
     BOOL m_hasExplicitTextAlignment;
     UITextInteractionAssistant *m_interactionAssistant;
     NSInteger m_marginTop;
-    BOOL m_passMouseDownToOther;
     BOOL m_reentrancyGuard;
-    BOOL m_scrollOnMouseUp;
     UIDelayedAction *m_scrollToVisibleTimer;
     BOOL m_scrollsSelectionOnWebDocumentChanges;
-    BOOL m_selecting;
     } m_selectionInset;
     UITextSelectionView *m_selectionView;
-    BOOL m_sentMouseDown;
-    UITouch *m_syntheticTouch;
     NSInteger m_textAlignment;
     UIColor *m_textColor;
-    } m_touchOffset;
-    } m_touchPoint;
     UIWebDocumentView *m_webView;
 }
 

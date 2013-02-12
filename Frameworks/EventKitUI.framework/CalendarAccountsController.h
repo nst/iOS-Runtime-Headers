@@ -11,6 +11,7 @@
     NSMutableDictionary *_lastStoreRefreshDates;
 }
 
++ (void)invalidate;
 + (id)sharedInstance;
 
 - (void)_refreshStore:(void*)arg1;

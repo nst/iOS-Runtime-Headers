@@ -16,8 +16,8 @@
 - (id)_errorForStatusCode:(NSInteger)arg1;
 - (void)_sendItemsToDelegate:(id)arg1;
 - (void)dealloc;
-- (void)handleBackgroundTaskExpiration;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
+- (id)init;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (void)setValue:(id)arg1 forParameter:(id)arg2;
 - (id)valueForParameter:(id)arg1;

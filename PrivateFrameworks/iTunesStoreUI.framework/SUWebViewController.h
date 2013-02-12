@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, SUDelayedNavigationItem, SUItem, SUObjectPool, SUStorePageProtocol, SUStructuredPage, SUTableViewController, SUWebView;
+@class NSURL, SSAuthenticationContext, SUDelayedNavigationItem, SUItem, SUObjectPool, SUStorePageProtocol, SUStructuredPage, SUTableViewController, SUWebView;
 
 @interface SUWebViewController : SUViewController <SUWebViewDelegate> {
+    SSAuthenticationContext *_authenticationContext;
     SUDelayedNavigationItem *_delayedNavigationItem;
     BOOL _hasEverAppeared;
     NSInteger _lastKnownOrientation;
@@ -21,6 +22,7 @@
     SUWebView *_webView;
 }
 
+@property(copy) SSAuthenticationContext *authenticationContext;
 @property(retain,readonly) SUWebView *webView;
 @property NSInteger style;
 @property BOOL viewIsReady;
@@ -47,6 +49,7 @@
 - (void)_updateTrackListRootItem;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_webViewFrameForOrientation:(NSInteger)arg1;
 - (unsigned long long)accessibilityTraits;
+- (id)authenticationContext;
 - (id)copyDefaultScriptProperties;
 - (id)copyObjectForScriptFromPoolWithClass:(Class)arg1;
 - (id)copyScriptProperties;
@@ -64,6 +67,7 @@
 - (id)parentViewControllerForWebView:(id)arg1;
 - (void)parentViewControllerHierarchyDidChange;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
+- (void)setAuthenticationContext:(id)arg1;
 - (void)setScriptProperties:(id)arg1;
 - (void)setStorePageProtocol:(id)arg1;
 - (void)setStyle:(NSInteger)arg1;

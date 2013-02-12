@@ -11,6 +11,7 @@
     NSString *_identifierForCPCity;
     float _latitude;
     NSString *_localeCode;
+    BOOL _localizationAttempted;
     float _longitude;
     NSString *_name;
     NSString *_timeZone;
@@ -42,10 +43,12 @@
 - (id)description;
 - (id)displayNameIncludingCountry:(BOOL)arg1;
 - (void)ensureLocalized;
+- (NSUInteger)hash;
 - (NSInteger)identifier;
 - (id)init;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithSQLRow:(char **)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (float)latitude;
 - (id)localeCode;
 - (float)longitude;

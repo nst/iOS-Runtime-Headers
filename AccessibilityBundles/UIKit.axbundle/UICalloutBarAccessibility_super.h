@@ -5,6 +5,7 @@
 @interface UICalloutBarAccessibility_super : UIAccessibilitySafeCategory {
 }
 
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)appear;
 - (void)fade;
 - (void)hide;

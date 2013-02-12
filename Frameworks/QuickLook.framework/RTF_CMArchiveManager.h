@@ -27,13 +27,13 @@
 - (id)cachedPathForDrawable:(id)arg1;
 - (void)closeResourceAtPath:(id)arg1;
 - (void)commitDataAtPath:(id)arg1;
-- (id)createResourceWithName:(id)arg1;
-- (id)createResourceWithType:(NSInteger)arg1;
 - (id)cssStylesheetString;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isProgressive;
 - (BOOL)isThumbnail;
+- (id)newResourceWithName:(id)arg1;
+- (id)newResourceWithType:(NSInteger)arg1;
 - (NSUInteger)pageCount;
 - (void)pauseProgressiveMappingOnPath:(id)arg1;
 - (BOOL)progressiveMappingIsPausedOnPath:(id)arg1;

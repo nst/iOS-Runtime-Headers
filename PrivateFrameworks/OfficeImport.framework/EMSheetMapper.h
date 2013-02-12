@@ -7,6 +7,7 @@
 
 - (NSInteger)height;
 - (NSInteger)preprocessHeightWithState:(id)arg1;
+- (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
 - (NSInteger)preprocessWidthWithState:(id)arg1;
 - (NSInteger)width;
 

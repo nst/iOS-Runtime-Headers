@@ -94,7 +94,6 @@
 - (void)_actionSheetRepresentingAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitle:(id)arg1;
-- (void)_adjustLabelFontSizes;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
 - (void)_appSuspended:(id)arg1;

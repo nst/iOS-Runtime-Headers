@@ -28,6 +28,7 @@
 - (NSInteger)abViewControllerType;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void*)addressBook;
+- (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (void)attemptSaveAndTellDelegate:(BOOL)arg1;
 - (void)cancel:(id)arg1;

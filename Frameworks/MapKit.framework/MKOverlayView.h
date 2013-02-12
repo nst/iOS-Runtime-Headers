@@ -5,6 +5,15 @@
 @class <MKOverlay>;
 
 @interface MKOverlayView : UIView {
+    struct { 
+        struct { 
+            double x; 
+            double y; 
+        } origin; 
+        struct { 
+            double width; 
+            double height; 
+        } size; 
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -16,6 +25,9 @@
         unsigned int keepAlive : 1; 
         unsigned int levelCrossFade : 1; 
         unsigned int drawingDisabled : 1; 
+        unsigned int usesTiledLayer : 1; 
+    } _boundingMapRect;
+    id _canDrawCache;
     } _flags;
     id _geometryDelegate;
     double _lastTile;
@@ -29,6 +41,9 @@
 + (BOOL)_useMiniTiledLayer;
 + (Class)layerClass;
 
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_boundingMapRect;
+- (BOOL)_cachingCanDrawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
+- (id)_canDrawCache;
 - (BOOL)_canDrawContent;
 - (void)_cancelScheduledScaleTimer;
 - (void)_displayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
@@ -66,6 +81,7 @@
 - (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (void)setNeedsDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)set_boundingMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)set_drawingEnabled:(BOOL)arg1;
 - (void)set_geometryDelegate:(id)arg1;
 - (void)set_keepAlive:(BOOL)arg1;

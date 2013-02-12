@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface UIITunesStoreURLResolver : NSObject {
+@interface UIITunesStoreURLResolver : UIURLResolver {
     NSArray *_appStoreHostPatterns;
     NSArray *_appStorePathPatterns;
     NSArray *_bookStoreHostPatterns;
@@ -14,14 +14,11 @@
     NSArray *_musicStorePathPatterns;
 }
 
-+ (void)invalidate;
-+ (id)sharedResolver;
++ (id)urlCacheChangedNotificationName;
++ (id)urlCacheName;
 
-- (id)_copyRegularExpressionsFromArray:(id)arg1;
-- (BOOL)_string:(id)arg1 matchesPatterns:(id)arg2;
-- (BOOL)_url:(id)arg1 matchesHostPatterns:(id)arg2 pathPatterns:(id)arg3;
 - (void)dealloc;
-- (id)init;
-- (NSInteger)urlTypeForURL:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (NSInteger)storeURLTypeForURL:(id)arg1;
 
 @end

@@ -19,14 +19,13 @@
     BOOL _hasConnectionType;
     BOOL _hasIsOnInternationalDataRoaming;
     BOOL _hasRunState;
-    BOOL _hasSessionID;
+    NSMutableArray *_iTunesStorefronts;
     BOOL _isOnInternationalDataRoaming;
     NSString *_mobileAreaCode;
     NSInteger _runState;
     NSInteger _screenDPI;
     NSInteger _screenHeight;
     NSInteger _screenWidth;
-    NSUInteger _sessionID;
     ADTargetingData *_targetingData;
     NSMutableArray *_userKeyboards;
 }
@@ -41,6 +40,7 @@
 @property(retain) NSString *currentCarrierMNC;
 @property(retain) NSString *deviceID;
 @property(retain) NSString *deviceModel;
+@property(retain) NSMutableArray *iTunesStorefronts;
 @property(retain) NSString *mobileAreaCode;
 @property(retain) ADTargetingData *targetingData;
 @property(retain) NSMutableArray *userKeyboards;
@@ -59,16 +59,16 @@
 @property(readonly) BOOL hasIsOnInternationalDataRoaming;
 @property(readonly) BOOL hasMobileAreaCode;
 @property(readonly) BOOL hasRunState;
-@property(readonly) BOOL hasSessionID;
 @property(readonly) BOOL hasTargetingData;
+@property(readonly) NSInteger iTunesStorefrontsCount;
 @property BOOL isOnInternationalDataRoaming;
 @property NSInteger runState;
 @property NSInteger screenDPI;
 @property NSInteger screenHeight;
 @property NSInteger screenWidth;
-@property NSUInteger sessionID;
 @property(readonly) NSInteger userKeyboardsCount;
 
+- (void)addITunesStorefront:(id)arg1;
 - (void)addUserKeyboard:(id)arg1;
 - (id)appID;
 - (id)autofillCountryCode;
@@ -97,8 +97,10 @@
 - (BOOL)hasIsOnInternationalDataRoaming;
 - (BOOL)hasMobileAreaCode;
 - (BOOL)hasRunState;
-- (BOOL)hasSessionID;
 - (BOOL)hasTargetingData;
+- (id)iTunesStorefrontAtIndex:(NSUInteger)arg1;
+- (id)iTunesStorefronts;
+- (NSInteger)iTunesStorefrontsCount;
 - (id)init;
 - (BOOL)isOnInternationalDataRoaming;
 - (id)mobileAreaCode;
@@ -109,7 +111,6 @@
 - (NSInteger)screenDPI;
 - (NSInteger)screenHeight;
 - (NSInteger)screenWidth;
-- (NSUInteger)sessionID;
 - (void)setAppID:(id)arg1;
 - (void)setAutofillCountryCode:(id)arg1;
 - (void)setAutofillZipCode:(id)arg1;
@@ -121,13 +122,14 @@
 - (void)setCurrentCarrierMNC:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setDeviceModel:(id)arg1;
+- (void)setITunesStorefront:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setITunesStorefronts:(id)arg1;
 - (void)setIsOnInternationalDataRoaming:(BOOL)arg1;
 - (void)setMobileAreaCode:(id)arg1;
 - (void)setRunState:(NSInteger)arg1;
 - (void)setScreenDPI:(NSInteger)arg1;
 - (void)setScreenHeight:(NSInteger)arg1;
 - (void)setScreenWidth:(NSInteger)arg1;
-- (void)setSessionID:(NSUInteger)arg1;
 - (void)setTargetingData:(id)arg1;
 - (void)setUserKeyboard:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setUserKeyboards:(id)arg1;

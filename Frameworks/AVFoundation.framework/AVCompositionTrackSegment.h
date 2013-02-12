@@ -9,6 +9,7 @@
 }
 
 @property(readonly) NSURL *sourceURL;
+@property(getter=isEmpty,readonly) BOOL empty;
 @property(readonly) NSInteger sourceTrackID;
 
 + (id)compositionTrackSegmentWithTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg1;
@@ -19,6 +20,7 @@
 - (id)init;
 - (id)initWithTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (id)initWithURL:(id)arg1 trackID:(NSInteger)arg2 sourceTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg3 targetTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg4;
+- (BOOL)isEmpty;
 - (NSInteger)sourceTrackID;
 - (id)sourceURL;
 

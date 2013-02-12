@@ -31,6 +31,7 @@
     NSInteger _repeatMode;
     BOOL _setUseApplicationAudioSessionWhenPlaybackEnds;
     BOOL _shouldAutoplay;
+    BOOL _shouldRestartPlaybackFromBeginning;
     NSUInteger _stateBeforeSettingPlaybackTime;
     double _timeWhenResignedActive;
     NSMutableDictionary *_timedMetadataForUniqueKey;
@@ -63,6 +64,7 @@
 - (void)_postNotificationName:(id)arg1 object:(id)arg2;
 - (void)_prepareToPlayWithStartIndex:(NSUInteger)arg1;
 - (void)_resignActive;
+- (void)_restartPlaybackFromBeginning;
 - (void)_setMoviePlayer:(id)arg1;
 - (void)_setMovies:(id)arg1;
 - (void)_setNowPlayingMovie:(id)arg1;
@@ -131,6 +133,7 @@
 - (id)thumbnailImageAtTime:(double)arg1 timeOption:(NSInteger)arg2;
 - (id)timedMetadata;
 - (id)timedMetadataForKey:(id)arg1;
+- (BOOL)videoController:(id)arg1 tappedButtonPart:(NSUInteger)arg2;
 - (void)videoControllerDidEnterFullscreen:(id)arg1;
 - (void)videoControllerDidExitFullscreen:(id)arg1;
 - (BOOL)videoControllerShouldAutohide:(id)arg1;

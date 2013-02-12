@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSString, NSTimer;
+@class NSArray, NSString, NSTimer;
 
 @interface SWMusicRemoteController : NSObject {
-    NSInteger _currentSeekDirection;
     NSInteger _currentVolumeDirection;
     NSString *_latestSelectedPlaylistName;
     NSInteger _musicSelection;
+    NSArray *_playlists;
     NSTimer *_volumeAdjustTimer;
+    NSArray *_workoutMixes;
 }
 
 @property(copy) NSString *latestSelectedPlaylistName;
@@ -31,11 +32,12 @@
 - (void)_startPlaylistAtIndex:(NSUInteger)arg1 isWorkoutMix:(BOOL)arg2;
 - (void)_startPlaylistWithPersistentUID:(unsigned long long)arg1;
 - (void)beginAdjustingVolume:(NSInteger)arg1;
-- (BOOL)beginSeek:(NSInteger)arg1;
+- (void)beginSeekingBackward;
+- (void)beginSeekingForward;
 - (id)currentSongName;
 - (void)dealloc;
 - (void)endAdjustingVolume:(NSInteger)arg1;
-- (BOOL)endSeek:(NSInteger)arg1;
+- (void)endSeeking;
 - (void)goToNowPlaying;
 - (id)init;
 - (void)interruptPlaybackForTrackUID:(id)arg1;

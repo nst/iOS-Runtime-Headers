@@ -11,14 +11,11 @@
     NSMutableDictionary *_btAddrDict;
     NSMutableDictionary *_btDeviceDict;
     struct BTDiscoveryAgentImpl { } *_discoveryAgent;
-    BOOL _enableAVRCPSkip;
     struct BTLocalDeviceImpl { } *_localDevice;
     struct BTPairingAgentImpl { } *_pairingAgent;
     BOOL _scanningEnabled;
     struct BTSessionImpl { } *_session;
 }
-
-@property(readonly) BOOL enableAVRCPSkip;
 
 + (NSInteger)lastInitError;
 + (id)sharedInstance;
@@ -36,7 +33,6 @@
 - (BOOL)_setup:(struct BTSessionImpl { }*)arg1;
 - (void)acceptSSP:(NSInteger)arg1 forDevice:(id)arg2;
 - (id)addDeviceIfNeeded:(struct BTDeviceImpl { }*)arg1;
-- (BOOL)airplaneMode;
 - (BOOL)audioConnected;
 - (BOOL)available;
 - (void)cancelPairing;
@@ -47,7 +43,6 @@
 - (void)dealloc;
 - (BOOL)devicePairingEnabled;
 - (BOOL)deviceScanningEnabled;
-- (BOOL)enableAVRCPSkip;
 - (void)enableTestMode;
 - (BOOL)enabled;
 - (void)endVoiceCommand:(id)arg1;
@@ -63,7 +58,6 @@
 - (BOOL)powered;
 - (void)sendAllContactsToDevice:(id)arg1;
 - (void)sendContact:(id)arg1 toDevice:(id)arg2;
-- (void)setAirplaneMode:(BOOL)arg1;
 - (void)setAudioConnected:(BOOL)arg1;
 - (void)setAuthorizedServices:(NSUInteger)arg1 forDevice:(id)arg2;
 - (void)setConnectable:(BOOL)arg1;

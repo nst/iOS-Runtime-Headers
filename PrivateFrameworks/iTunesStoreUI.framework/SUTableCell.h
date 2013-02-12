@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUPriceButton, SUTableCellContentView, UIColor;
+@class SUItemOfferButton, SUTableCellContentView, UIColor;
 
 @interface SUTableCell : UITableViewCell {
     struct { 
@@ -14,14 +14,14 @@
     unsigned int _highlightsOnlyContentView : 1;
     UIColor *_bottomBorderColor;
     SUTableCellContentView *_configurationView;
+    SUItemOfferButton *_itemOfferButton;
     } _position;
-    SUPriceButton *_priceButton;
     UIColor *_topBorderColor;
 }
 
 @property(retain) UIColor *bottomBorderColor;
 @property(retain) SUCellConfiguration *configuration;
-@property(retain,readonly) SUPriceButton *priceButton;
+@property(retain,readonly) SUItemOfferButton *itemOfferButton;
 @property(retain) UIColor *topBorderColor;
 @property NSInteger clipCorners;
 @property BOOL drawAsDisabled;
@@ -48,9 +48,9 @@
 - (BOOL)highlightsOnlyContentView;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (id)itemOfferButton;
 - (void)layoutSubviews;
 - (struct { NSUInteger x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; })position;
-- (id)priceButton;
 - (void)setBottomBorderColor:(id)arg1;
 - (void)setClipCorners:(NSInteger)arg1;
 - (void)setConfiguration:(id)arg1;

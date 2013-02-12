@@ -57,7 +57,7 @@
 
 + (void)_initializeSafeCategory;
 + (id)defaultFont;
-+ (id)sectionHeaderLabelWithText:(id)arg1 tintColor:(id)arg2;
++ (id)sectionHeaderLabelWithText:(id)arg1 theme:(id)arg2;
 
 - (BOOL)_allowAscentRounding;
 - (id)_attributes;

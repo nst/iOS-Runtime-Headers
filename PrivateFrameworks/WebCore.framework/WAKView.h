@@ -40,8 +40,8 @@
                 float height; 
             } size; 
      /* Encoded args for previous method: @12@0:4^{WKView={_WKObject=I^{_WKClassInfo}}^{_WKViewContext}^{WKWindow}^{WKView}^{__CFArray}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}b1IfB}8 */
-     /* Encoded args for previous method: ^{WKView={_WKObject=I^{_WKClassInfo}}^{_WKViewContext}^{WKWindow}^{WKView}^{__CFArray}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}b1IfB}8@0:4 */
      /* Encoded args for previous method: @12@0:4^{WKView={_WKObject=I^{_WKClassInfo}}^{_WKViewContext}^{WKWindow}^{WKView}^{__CFArray}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}b1IfB}8 */
+     /* Encoded args for previous method: ^{WKView={_WKObject=I^{_WKClassInfo}}^{_WKViewContext}^{WKWindow}^{WKView}^{__CFArray}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}b1IfB}8@0:4 */
     NSMutableSet *subviewReferences;
     } viewContext;
         } x7; unsigned int x8 : 1; NSUInteger x9; float x10; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x11; } *viewRef;
@@ -53,6 +53,7 @@
 + (id)_wrapperForViewRef:(struct WKView { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; NSUInteger x9; float x10; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x11; }*)arg1;
 + (id)focusView;
 
+- (void)_appendDescriptionToString:(id)arg1 atLevel:(NSInteger)arg2;
 - (id)_frame;
 - (void)_handleEvent:(id)arg1;
 - (BOOL)_handleResponderCall:(NSInteger)arg1;
@@ -66,6 +67,7 @@
 - (BOOL)_web_firstResponderIsSelfOrDescendantView;
 - (id)_web_parentWebFrameView;
 - (id)_web_superviewOfClass:(Class)arg1;
+- (oneway void)_webcore_releaseWithWebThreadLock;
 - (BOOL)accessibilityIsIgnored;
 - (void)addSubview:(id)arg1;
 - (NSUInteger)autoresizingMask;
@@ -76,6 +78,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toView:(id)arg2;
 - (struct CGSize { float x1; float x2; })convertSize:(struct CGSize { float x1; float x2; })arg1 toView:(id)arg2;
 - (void)dealloc;
+- (id)description;
 - (void)display;
 - (void)displayIfNeeded;
 - (void)displayRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -102,6 +105,7 @@
 - (id)nextValidKeyView;
 - (id)previousKeyView;
 - (id)previousValidKeyView;
+- (oneway void)release;
 - (void)releaseGState;
 - (void)removeFromSuperview;
 - (float)scale;

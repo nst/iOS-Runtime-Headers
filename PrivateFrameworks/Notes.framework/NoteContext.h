@@ -9,6 +9,7 @@
     NSInteger __SharedNoteStoreSearchIndexCount;
     CPExclusiveLock *__SharedNoteStoreSearchIndexLock;
     BOOL _hasPriorityInSaveConflicts;
+    BOOL _inMigrator;
     BOOL _indexInBatches;
     BOOL _isIndexing;
     NoteAccountObject *_localAccount;
@@ -22,7 +23,6 @@
     NSUInteger _notificationCount;
     CPExclusiveLock *_objectCreationLock;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    BOOL _receiveNotifications;
     NSPredicate *_searchPredicate;
     NSString *_testingFilePrefix;
 }
@@ -72,7 +72,7 @@
 - (void)indexNotes:(id)arg1;
 - (id)init;
 - (id)initForMigrator;
-- (id)initWithTestingFilePrefix:(id)arg1 withNotifications:(BOOL)arg2;
+- (id)initWithTestingFilePrefix:(id)arg1 inMigrator:(BOOL)arg2;
 - (id)initWithTestingFilePrefix:(id)arg1;
 - (void)invalidate;
 - (BOOL)isIndexing;
@@ -90,6 +90,7 @@
 - (id)nextIndex;
 - (id)noteChangeWithType:(NSInteger)arg1 store:(id)arg2;
 - (id)noteForObjectID:(id)arg1;
+- (BOOL)noteIsSafeToAccess:(id)arg1;
 - (id)notesForIntegerIds:(id)arg1;
 - (id)notesToResumeIndexing;
 - (id)pathForIndex;

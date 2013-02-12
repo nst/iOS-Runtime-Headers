@@ -9,8 +9,8 @@
 @class NSURL, OCPPackage;
 
 @interface OCXDelayedMediaContext : NSObject <OCDDelayedMediaContext> {
-     /* Encoded args for previous method: B12@0:4@8 */
      /* Encoded args for previous method: B16@0:4@8@12 */
+     /* Encoded args for previous method: B12@0:4@8 */
     OCPPackage *mPackage;
     NSURL *mTargetLocation;
 }

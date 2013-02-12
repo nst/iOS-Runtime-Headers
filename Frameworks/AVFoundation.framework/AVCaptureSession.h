@@ -48,9 +48,11 @@
 - (void)_setInterrupted:(BOOL)arg1;
 - (void)_setRunning:(BOOL)arg1;
 - (BOOL)_startPreviewing;
+- (long)_startRecording;
 - (void)_stopAndTearDownGraph;
 - (id)_stopError;
 - (BOOL)_stopPreviewing;
+- (long)_stopRecording;
 - (void)_teardownFigRecorder;
 - (void)addConnection:(id)arg1;
 - (void)addInput:(id)arg1;

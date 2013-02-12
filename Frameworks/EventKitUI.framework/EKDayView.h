@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayViewDataSource>, <EKDayViewDelegate>, CalendarModel, EKDayOccurrenceView, EKDayTimeView, EKDayViewContent, NSDate, UIImageView, UIScrollView, UIView;
+@class <EKDayViewDataSource>, <EKDayViewDelegate>, CalendarModel, EKDayOccurrenceView, EKDayTimeView, EKDayViewContent, NSDate, UIImageView, UIScrollAnimation, UIScrollView, UIView;
 
 @interface EKDayView : UIView <UIScrollViewDelegate, EKDayViewContentDelegate> {
     unsigned int _loadingOccurrences : 1;
@@ -25,6 +25,7 @@
     CalendarModel *_model;
     NSInteger _outlineStyle;
     UIImageView *_overlayTimeFade;
+    UIScrollAnimation *_scrollAnimation;
     UIScrollView *_scroller;
     NSDate *_selectedDate;
     EKDayOccurrenceView *_selectedOccurrenceView;
@@ -42,10 +43,12 @@
 - (id)_allOccurrenceViews;
 - (void)_dimNonSelectedOccrrences:(BOOL)arg1;
 - (id)_dimSubviews:(id)arg1 selectedOccurrence:(id)arg2;
+- (void)_finishedScrollToSecond;
 - (void)_handleOccurrenceViewClick:(id)arg1;
 - (void)_localeChanged;
 - (double)_offsetTimeForDST:(double)arg1 timeZone:(struct __CFTimeZone { }*)arg2;
 - (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_selectedDate;
+- (void)_stopScrolling;
 - (BOOL)allowsOccurrenceSelection;
 - (void)bringEventToFront:(id)arg1;
 - (float)contentInset;

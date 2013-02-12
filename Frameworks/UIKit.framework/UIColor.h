@@ -8,6 +8,7 @@
 @property(readonly) CGColor *CGColor;
 
 + (id)_adlib_colorWithRGBA:(NSUInteger)arg1;
++ (id)_gkColorFromRGBAHexString:(id)arg1;
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
 + (id)_textCaretColorDefault;
@@ -87,11 +88,16 @@
 - (BOOL)_mapkit_isWhite;
 - (struct { unsigned char x1[3]; unsigned char x2; })_mapkit_ubyteColorWithForcedAlpha:(unsigned char)arg1;
 - (float)alphaComponent;
+- (float)blueComponent;
+- (float)brightnessComponent;
+- (id)burnWithColor:(id)arg1;
 - (struct CGColor { }*)cgColor;
 - (Class)classForCoder;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (float)differenceFromColor:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (float)greenComponent;
 - (NSUInteger)hash;
 - (float)hueComponent;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
@@ -102,9 +108,15 @@
 - (id)initWithStyleString:(id)arg1;
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isGreenOrYellow;
+- (float)luminance;
+- (id)overlayWithColor:(id)arg1;
+- (float)redComponent;
+- (float)saturationComponent;
 - (void)set;
 - (void)setFill;
 - (void)setStroke;
+- (id)soverWithColor:(id)arg1;
 - (id)stringValue;
 - (id)styleString;
 

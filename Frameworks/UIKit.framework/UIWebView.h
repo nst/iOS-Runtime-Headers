@@ -19,16 +19,15 @@
 @property BOOL mediaPlaybackRequiresUserAction;
 @property BOOL scalesPageToFit;
 
++ (void)_initializeSafeCategory;
+
 - (void)_adlib_loadBannerContentURL:(id)arg1;
 - (void)_adlib_loadHTMLString:(id)arg1;
 - (void)_adlib_loadWebArchiveData:(id)arg1;
 - (id)_browserView;
-- (id)_buildVersion;
 - (id)_createWebArchiveForData:(id)arg1;
 - (id)_documentView;
 - (void)_frameOrBoundsChanged;
-- (void)_keyboardWillHide:(id)arg1;
-- (void)_keyboardWillShow:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_reportError:(id)arg1;
 - (BOOL)_sanitizeWebArchiveArray:(id)arg1;

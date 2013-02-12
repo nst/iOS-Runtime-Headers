@@ -26,5 +26,7 @@
 - (void)startLinking;
 - (void)startRemoteLinking;
 - (void)stopLinking;
+- (void)unlinkRemote;
+- (void)unlinkSensor;
 
 @end

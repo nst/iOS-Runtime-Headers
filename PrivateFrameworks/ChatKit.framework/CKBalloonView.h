@@ -13,7 +13,6 @@
     unsigned int _isIgnoringSingleTap : 1;
     unsigned int _calloutRegistered : 1;
     unsigned int _tapEnabled : 1;
-    float _bubbleAlpha;
     id _delegate;
     CKMessagePart *_messagePart;
     NSInteger _orientation;
@@ -83,7 +82,6 @@
 - (void)prepareForReuse;
 - (BOOL)resignFirstResponder;
 - (void)restoreBalloonStateAfterRotation;
-- (void)setBubbleAlpha:(float)arg1;
 - (void)setComposition:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDraws:(BOOL)arg1;

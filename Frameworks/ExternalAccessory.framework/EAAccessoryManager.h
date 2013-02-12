@@ -34,19 +34,19 @@
 - (void)_locationNmeaDataAvailable:(id)arg1;
 - (void)_locationPointDataAvailable:(id)arg1;
 - (void)_nmeaFilteringSupportChanged:(id)arg1;
-- (void)_notifyObserversThatAccessoryDisconnected:(id)arg1;
+- (void)_notifyObserversThatAccessoryDisconnectedWithUserInfo:(id)arg1;
+- (BOOL)areLocationAccessoriesEnabled;
 - (id)connectedAccessories;
 - (void)dealloc;
 - (id)init;
 - (void)registerForLocalNotifications;
+- (void)setAreLocationAccessoriesEnabled:(BOOL)arg1;
 - (void)setShouldAllowCppRuntime:(BOOL)arg1;
 - (void)setShouldAllowInternalProtocols:(BOOL)arg1;
 - (void)setShouldAllowLegacyLingoAccessories:(BOOL)arg1;
-- (void)setShouldAllowLocationAccessories:(BOOL)arg1;
 - (BOOL)shouldAllowCppRuntime;
 - (BOOL)shouldAllowInternalProtocols;
 - (BOOL)shouldAllowLegacyLingoAccessories;
-- (BOOL)shouldAllowLocationAccessories;
 - (void)unregisterForLocalNotifications;
 
 @end

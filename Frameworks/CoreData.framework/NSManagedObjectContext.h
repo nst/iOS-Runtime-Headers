@@ -183,7 +183,6 @@
 - (BOOL)hasChanges;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCoordinator:(id)arg1;
 - (id)initWithType:(NSUInteger)arg1;
 - (void)insertObject:(id)arg1;
 - (id)insertedObjects;

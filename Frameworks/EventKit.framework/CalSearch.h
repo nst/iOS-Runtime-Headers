@@ -21,6 +21,7 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
+     /* Encoded args for previous method: @20@0:4^{CalDatabase={__CFRuntimeBase=I[4C]}i^{CPRecordStore}^{CalEventOccurrenceCache}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}BBII^{__CFString}ii^{__CFString}}8^{CalFilter=}12@16 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4^{CalParticipantIdsSearchContext=^{__CFArray}I^B^B^{CalDatabase}}8 */
      /* Encoded args for previous method: ^{CalParticipantIdsSearchContext=^{__CFArray}I^B^B^{CalDatabase}}8@0:4 */
@@ -32,7 +33,6 @@
      /* Encoded args for previous method: v12@0:4^{CalEventOccurrenceSearchContext=^{__CFSet}^{__CFArray}^{__CFArray}^{__CFArray}^B^BiiidI^{CalEventOccurrenceCache}^?^viB^{__CFString}dBi}8 */
      /* Encoded args for previous method: ^{CalEventOccurrenceSearchContext=^{__CFSet}^{__CFArray}^{__CFArray}^{__CFArray}^B^BiiidI^{CalEventOccurrenceCache}^?^viB^{__CFString}dBi}8@0:4 */
      /* Encoded args for previous method: v12@0:4^{CalEventOccurrenceSearchContext=^{__CFSet}^{__CFArray}^{__CFArray}^{__CFArray}^B^BiiidI^{CalEventOccurrenceCache}^?^viB^{__CFString}dBi}8 */
-     /* Encoded args for previous method: @20@0:4^{CalDatabase={__CFRuntimeBase=I[4C]}i^{CPRecordStore}^{CalEventOccurrenceCache}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}BBII^{__CFString}ii^{__CFString}}8^{CalFilter=}12@16 */
     <CalSearchDataSink> *_dataSink;
     } _dataSinkLock;
     } _dataSourceDeallocLock;

@@ -12,6 +12,7 @@
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (void)dealloc;
 - (void)finalize;
+- (id)segmentForTrackTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
 - (id)segments;
 
 @end

@@ -31,6 +31,7 @@
 - (BOOL)isCapturingStillImage;
 - (id)outputSettings;
 - (struct CGSize { float x1; float x2; })previewImageSize;
+- (id)scaleAndCropDictionary;
 - (void)setOutputSettings:(id)arg1;
 - (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
 

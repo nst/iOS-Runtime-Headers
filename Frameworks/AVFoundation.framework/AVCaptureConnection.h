@@ -34,15 +34,19 @@
 - (BOOL)isVideoMirrored;
 - (BOOL)isVideoMirroringSupported;
 - (BOOL)isVideoOrientationSupported;
+- (float)maxVideoScaleAndCropFactor;
 - (id)mediaType;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)output;
 - (void)removeInputPort:(id)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setVideoMirrored:(BOOL)arg1;
 - (void)setVideoOrientation:(NSInteger)arg1;
+- (void)setVideoScaleAndCropFactor:(float)arg1;
 - (void)updateAudioChannelsArray;
 - (void)updateAudioLevelsArray;
 - (NSInteger)videoOrientation;
+- (float)videoScaleAndCropFactor;
 
 @end

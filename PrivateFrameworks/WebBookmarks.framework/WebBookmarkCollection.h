@@ -10,6 +10,7 @@
 
 + (BOOL)lockSync;
 + (id)safariBookmarkCollection;
++ (id)safariDirectoryPath;
 + (void)unlockSync;
 
 - (BOOL)_addBookmarkWithTitle:(id)arg1 address:(id)arg2 parentID:(NSUInteger)arg3 orderIndex:(NSUInteger)arg4 isFolder:(BOOL)arg5 externalUUID:(id)arg6 associatedBookmark:(id)arg7 reorderSiblings:(BOOL)arg8 updateParentChildCount:(BOOL)arg9;

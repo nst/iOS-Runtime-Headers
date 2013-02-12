@@ -41,6 +41,7 @@
 - (id)initWithAccessibilityContainer:(id)arg1;
 - (float)initialYOffset;
 - (BOOL)representsSubview;
+- (void)setAccessibilityContainer:(id)arg1;
 - (void)setAccessibilityDelegate:(id)arg1;
 - (void)setData:(id)arg1 forKey:(id)arg2;
 - (void)setDelegate:(id)arg1 forAttribute:(NSInteger)arg2 withSelector:(SEL)arg3;

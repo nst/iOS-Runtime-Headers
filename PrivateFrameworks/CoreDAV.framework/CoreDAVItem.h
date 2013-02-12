@@ -26,7 +26,7 @@
 @property(readonly) CoreDAVItem *parent;
 
 + (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)ignoresUnknownChildren;
++ (BOOL)errorOnUnknownChildren;
 + (BOOL)parsingWithSubItems;
 
 - (id)_coreDAVParseRules;
@@ -39,6 +39,7 @@
 - (void)ignoreThisContent:(id)arg1;
 - (id)initWithXMLParser:(id)arg1 nameSpace:(id)arg2 elementName:(id)arg3 nodeAttributes:(id)arg4 root:(id)arg5 parent:(id)arg6 parentSetter:(SEL)arg7 ruleForMe:(id)arg8;
 - (id)nameSpace;
+- (void)noteIgnoredItem:(id)arg1;
 - (id)parent;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;

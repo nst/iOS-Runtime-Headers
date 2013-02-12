@@ -2,22 +2,51 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKVerticalGradientView, UIActivityIndicatorView, UIImageView, UILabel;
+@class GKUITheme, UIActivityIndicatorView, UILabel;
 
 @interface GKBackgroundView : UIView {
-    UIImageView *_backgroundImageView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _imageInsets;
+    BOOL _loading;
     UIActivityIndicatorView *_loadingSpinner;
+    BOOL _shouldHideLabelAfterLoading;
     UILabel *_statusLabel;
-    GKVerticalGradientView *_verticalGradientView;
+    GKUITheme *_theme;
 }
 
+@property(retain) UIActivityIndicatorView *loadingSpinner;
+@property(retain) NSString *status;
+@property(retain) UILabel *statusLabel;
+@property(retain) GKUITheme *theme;
+@property UIEdgeInsets imageInsets;
 @property BOOL loading;
+@property BOOL shouldHideLabelAfterLoading;
 
-- (id)init;
++ (void)_initializeSafeCategory;
+
+- (id)accessibilityLabel;
+- (void)dealloc;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (BOOL)loading;
-- (void)setBackgroundImage:(id)arg1;
+- (id)loadingSpinner;
+- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLoading:(BOOL)arg1;
+- (void)setLoadingSpinner:(id)arg1;
+- (void)setShouldHideLabelAfterLoading:(BOOL)arg1;
 - (void)setStatus:(id)arg1;
+- (void)setStatusLabel:(id)arg1;
+- (void)setTheme:(id)arg1;
+- (BOOL)shouldHideLabelAfterLoading;
+- (id)status;
+- (id)statusLabel;
+- (id)theme;
+- (void)updateLoading;
 
 @end

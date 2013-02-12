@@ -328,6 +328,7 @@
 - (void)_zoomAnimationDidStop;
 - (float)_zoomAnimationDurationForScale:(float)arg1;
 - (float)_zoomRubberBandScaleForScale:(float)arg1;
+- (float)_zoomScaleForRubberBandScale:(float)arg1;
 - (float)_zoomScaleFromPresentationLayer:(BOOL)arg1;
 - (void)_zoomToCenter:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(double)arg3 force:(BOOL)arg4;
 - (void)_zoomToCenter:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(double)arg3;

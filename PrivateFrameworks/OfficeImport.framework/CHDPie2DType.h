@@ -7,9 +7,9 @@
  */
 
 @interface CHDPie2DType : CHDChartType {
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */

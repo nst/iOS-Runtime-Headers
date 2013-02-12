@@ -2,45 +2,64 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGame, NSMutableArray;
+@class GKGame, NSMutableArray, NSMutableDictionary;
 
-@interface GKAchievementViewControllerPrivate : UITableViewController {
-    GKGame *_lookedAtGame;
+@interface GKAchievementViewControllerPrivate : GKTableViewController {
+    struct { 
+        unsigned int playButtonVisible : 1; 
+        unsigned int usePlayerBackground : 1; 
+        unsigned int translucentNavBar : 1; 
+        unsigned int reserved : 27; 
+    NSMutableArray *_achievements;
+    } _flags;
+    GKGame *_game;
     NSUInteger _numberOfAchievementsAchieved;
     NSUInteger _pointsTally;
-    NSMutableArray *_userAchievements;
+    NSMutableDictionary *_progressImageCache;
+    NSMutableDictionary *_tokenImageCache;
 }
 
-@property(retain) GKGame *lookedAtGame;
-@property(retain) NSMutableArray *userAchievements;
+@property(retain) NSArray *achievements;
+@property(retain) GKGame *game;
+@property(retain) NSMutableDictionary *progressImageCache;
+@property(retain) NSMutableDictionary *tokenImageCache;
 @property NSUInteger numberOfAchievementsAchieved;
+@property(getter=isPlayButtonVisible) BOOL playButtonVisible;
 @property NSUInteger pointsTally;
 
+- (id)achievements;
 - (void)dealloc;
-- (void)getPlayerGameAchievements:(id)arg1 withError:(id)arg2;
+- (id)game;
+- (id)imageForPercentAchieved:(NSInteger)arg1;
 - (id)initWithGame:(id)arg1 withFriend:(id)arg2;
 - (id)initWithGame:(id)arg1;
+- (BOOL)isPlayButtonVisible;
 - (void)loadView;
 - (void)localPlayerDidAuthenticate:(id)arg1;
-- (id)lookedAtGame;
 - (NSUInteger)numberOfAchievementsAchieved;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (void)playTapped;
 - (NSUInteger)pointsTally;
+- (id)progressImageCache;
 - (void)reloadData;
 - (void)reloadView;
-- (void)setLookedAtGame:(id)arg1;
+- (void)setAchievements:(id)arg1;
+- (void)setGame:(id)arg1;
 - (void)setNumberOfAchievementsAchieved:(NSUInteger)arg1;
+- (void)setPlayButtonVisible:(BOOL)arg1;
 - (void)setPointsTally:(NSUInteger)arg1;
-- (void)setUserAchievements:(id)arg1;
+- (void)setProgressImageCache:(id)arg1;
+- (void)setTokenImageCache:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)title;
-- (id)userAchievements;
+- (id)tokenImageCache;
+- (id)tokenImageForAchievement:(id)arg1 image:(id)arg2;
+- (void)updatePlayerGameAchievements:(id)arg1;
+- (void)updateStatus;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 

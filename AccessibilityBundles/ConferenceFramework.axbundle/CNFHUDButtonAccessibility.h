@@ -8,5 +8,6 @@
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityLabel;
+- (id)accessibilityValue;
 
 @end

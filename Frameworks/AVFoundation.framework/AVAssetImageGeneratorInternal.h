@@ -8,6 +8,16 @@
     struct CGSize { 
         float width; 
         float height; 
+    struct { 
+        long long value; 
+        NSInteger timescale; 
+        NSUInteger flags; 
+        long long epoch; 
+    struct { 
+        long long value; 
+        NSInteger timescale; 
+        NSUInteger flags; 
+        long long epoch; 
     NSString *apertureMode;
     BOOL appliesPreferredTrackTransform;
     AVAsset *asset;
@@ -16,6 +26,8 @@
     struct dispatch_queue_s { } *imageRequestQueue;
     } maximumSize;
     NSInteger nextRequestID;
+    } requestedTimeToleranceAfter;
+    } requestedTimeToleranceBefore;
     NSMutableArray *requests;
     struct dispatch_queue_s { } *requestsQueue;
     AVVideoComposition *videoComposition;

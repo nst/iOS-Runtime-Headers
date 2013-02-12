@@ -39,7 +39,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)_accessibilityObscuredScreenAllowedViews;
 - (void)_cancelDelayedActions;
 - (void)_delayActions;
@@ -52,6 +51,7 @@
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (void)_unhighlight;
 - (unsigned long long)accessibilityTraits;
+- (BOOL)accessibilityTreeHidden;
 - (id)actionsForTarget:(id)arg1 forControlEvent:(NSUInteger)arg2;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(NSUInteger)arg3;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forEvents:(NSInteger)arg3;

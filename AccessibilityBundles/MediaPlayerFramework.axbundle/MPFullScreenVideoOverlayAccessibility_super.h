@@ -8,5 +8,6 @@
 + (void)_initializeSafeCategory;
 
 - (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
+- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(NSInteger)arg2;
 
 @end

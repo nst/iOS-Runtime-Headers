@@ -12,9 +12,12 @@
 @property NSUInteger currentChapterIndex;
 @property(readonly) NSUInteger indexOfNowPlayingItem;
 @property NSInteger playbackSpeed;
+@property(readonly) NSUInteger unshuffledIndexOfNowPlayingItem;
 
 + (id)applicationMusicPlayer;
 + (id)iPodMusicPlayer;
++ (id)runLoopForNotifications;
++ (void)setRunLoopForNotifications:(id)arg1;
 
 - (void)_clientCheckIn;
 - (void)_musicPlayerDidLaunch;
@@ -60,6 +63,7 @@
 - (void)setUseCachedPlaybackState:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (NSInteger)shuffleMode;
+- (NSUInteger)unshuffledIndexOfNowPlayingItem;
 - (float)volume;
 
 @end

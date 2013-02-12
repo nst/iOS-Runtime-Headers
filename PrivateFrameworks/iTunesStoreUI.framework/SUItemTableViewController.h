@@ -14,7 +14,7 @@
 - (void)_touchCaptureAction:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)priceButtonAction:(id)arg1;
+- (void)itemOfferButtonAction:(id)arg1;
 - (BOOL)purchaseItemAtIndexPath:(id)arg1;
 - (void)reloadData;
 - (void)viewWillDisappear:(BOOL)arg1;

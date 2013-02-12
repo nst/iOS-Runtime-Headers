@@ -43,8 +43,7 @@
     } m_pointAboveControls;
     } m_pointBelowControls;
     NSMutableArray *m_rectsToEvade;
-    NSDictionary *m_replacementDictionary;
-    NSArray *m_replacements;
+    NSDictionary *m_replacements;
     id m_responderTarget;
     BOOL m_shouldAppear;
     BOOL m_showExtras;
@@ -56,8 +55,7 @@
 
 @property(copy) NSArray *extraItems;
 @property(readonly) NSArray *rectsToEvade;
-@property(copy) NSDictionary *replacementDictionary;
-@property(copy) NSArray *replacements;
+@property(copy) NSDictionary *replacements;
 @property UIResponder *responderTarget;
 @property NSInteger arrowDirection;
 @property CGRect controlFrame;
@@ -77,6 +75,7 @@
 + (id)sharedCalloutBar;
 + (BOOL)sharedCalloutBarIsVisible;
 
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_showMoreItems:(id)arg1;
 - (BOOL)_updateVisibleItems;
 - (void)addRectToEvade:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -108,7 +107,6 @@
 - (BOOL)rectClear:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)rectsToEvade;
 - (void)removeFromSuperview;
-- (id)replacementDictionary;
 - (id)replacements;
 - (id)responderTarget;
 - (void)setArrowDirection:(NSInteger)arg1;
@@ -117,7 +115,6 @@
 - (void)setExtraItems:(id)arg1;
 - (void)setPointAboveControls:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPointBelowControls:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setReplacementDictionary:(id)arg1;
 - (void)setReplacements:(id)arg1;
 - (void)setResponderTarget:(id)arg1;
 - (void)setTargetDirection:(NSInteger)arg1;

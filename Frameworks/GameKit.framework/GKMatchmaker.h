@@ -13,31 +13,29 @@
     GKMatchPlayersDataRequest *_matchPlayersDataRequest;
 }
 
+@property(copy) ? *inviteHandler;
 @property(retain) GKMatchPlayersDataRequest *matchPlayersDataRequest;
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedMatchmaker;
 
-- (void)addPlayersForHostedMatchRequest:(id)arg1 existingPlayers:(id)arg2 completionHandler:(id)arg3;
-- (void)addPlayersToInviteWithSession:(id)arg1 matchRequest:(id)arg2 completionHandler:(id)arg3;
+- (void)addPlayersForHostedMatchRequest:(id)arg1 existingPlayerIDs:(id)arg2 completionHandler:(id)arg3;
+- (void)addPlayersToInviteWithMatch:(id)arg1 matchRequest:(id)arg2 completionHandler:(id)arg3;
 - (void)addPlayersToMatch:(id)arg1 matchRequest:(id)arg2 completionHandler:(id)arg3;
-- (id)autorelease;
+- (void)applicationWillEnterForeground:(id)arg1;
 - (void)cancel;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)createMatchForRequest:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)dealloc;
+- (void)findMatchForRequest:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)findPlayersForHostedMatchRequest:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)init;
 - (id)inviteHandler;
 - (BOOL)isMatchingPlayers;
 - (void)loadConnectivitySettingsWithCompletionHandler:(id)arg1;
 - (void)localPlayerAcceptedGameInvite:(id)arg1;
+- (void)lookForInvite;
 - (id)matchPlayersDataRequest;
-- (void)matchWithRequest:(id)arg1 currentMatch:(id)arg2 currentPlayers:(id)arg3 combo:(BOOL)arg4 serverHosted:(BOOL)arg5 completionHandler:(id)arg6;
+- (void)matchWithRequest:(id)arg1 currentMatch:(id)arg2 currentPlayerIDs:(id)arg3 combo:(BOOL)arg4 serverHosted:(BOOL)arg5 completionHandler:(id)arg6;
+- (void)queryActivityWithCompletionHandler:(id)arg1;
 - (void)queryPlayerGroupActivity:(NSUInteger)arg1 withCompletionHandler:(id)arg2;
-- (void)release;
-- (id)retain;
-- (NSUInteger)retainCount;
 - (void)setConnectivitySettings:(id)arg1;
 - (void)setInviteHandler:(id)arg1;
 - (void)setMatchPlayersDataRequest:(id)arg1;

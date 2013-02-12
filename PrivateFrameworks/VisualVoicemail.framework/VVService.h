@@ -78,6 +78,7 @@
 - (id)carrierParameterValueForKey:(id)arg1;
 - (void)changePassword:(id)arg1 fromPassword:(id)arg2;
 - (void)clearActivationError;
+- (void)clearRemoteUIDsForDetachedMessages;
 - (struct __CFString { }*)connectionServiceType;
 - (BOOL)dataForRecordPending:(void*)arg1 progressiveLoadInProgress:(BOOL*)arg2;
 - (void)dealloc;

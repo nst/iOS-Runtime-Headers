@@ -14,7 +14,7 @@
             double width; 
             double height; 
         } size; 
-    struct $_841 { 
+    struct $_843 { 
         unsigned int disableDrawing : 1; 
         unsigned int flushOnDisplay : 1; 
         unsigned int needsDisplayOnCancel : 1; 

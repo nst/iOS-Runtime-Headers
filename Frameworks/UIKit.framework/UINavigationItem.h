@@ -36,10 +36,18 @@
 
 - (id)_automationID;
 - (void)_cleanupFrozenTitleView;
+- (id)_customLeftView;
+- (id)_customRightView;
 - (void)_freezeCurrentTitleView;
+- (id)_leftBarButtonItem;
 - (void)_removeBackButtonView;
 - (void)_removeTitleAndButtonViews;
+- (id)_rightBarButtonItem;
 - (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(NSInteger)arg2;
+- (void)_setCustomLeftView:(id)arg1;
+- (void)_setCustomRightView:(id)arg1;
+- (void)_setLeftBarButtonItem:(id)arg1;
+- (void)_setRightBarButtonItem:(id)arg1;
 - (void)_setTitle:(id)arg1 animated:(BOOL)arg2;
 - (void)_setTitleAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_titleView;
@@ -85,6 +93,7 @@
 - (void)setLeftBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftBarButtonItem:(id)arg1;
 - (void)setNavigationBar:(id)arg1;
+- (void)setObject:(id)arg1 forLeftRightKeyPath:(id)arg2 animated:(BOOL)arg3;
 - (void)setPrompt:(id)arg1;
 - (void)setRightBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightBarButtonItem:(id)arg1;

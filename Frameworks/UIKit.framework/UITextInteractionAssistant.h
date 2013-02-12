@@ -32,7 +32,7 @@
 
 @property(readonly) UIFieldEditor *fieldEditor;
 @property(retain) UILongPressGestureRecognizer *loupeGesture;
-@property(readonly) UIScrollView *scrollView;
+@property(readonly) UIView *scrollView;
 @property(retain) UITapGestureRecognizer *singleTapGesture;
 @property(readonly) UIView<UITextSelectingContainer> *view;
 @property CGPoint autoscrollUntransformedExtentPoint;

@@ -12,6 +12,7 @@
     NSNumber *_downloadedElements;
     NSNumber *_failedNetworkRequests;
     NSNumber *_failedProtocolRequests;
+    NSNumber *_falseMoreAvailableCount;
     NSInteger _numHBIDataPoints;
     NSString *_persistentUUID;
     NSNumber *_successfulRequests;
@@ -25,6 +26,7 @@
 @property(retain) NSNumber *downloadedElements;
 @property(retain) NSNumber *failedNetworkRequests;
 @property(retain) NSNumber *failedProtocolRequests;
+@property(retain) NSNumber *falseMoreAvailableCount;
 @property(retain) NSString *persistentUUID;
 @property(retain) NSNumber *successfulRequests;
 @property(retain) NSNumber *timeInNetworking;
@@ -39,11 +41,13 @@
 - (id)downloadedElements;
 - (id)failedNetworkRequests;
 - (id)failedProtocolRequests;
+- (id)falseMoreAvailableCount;
 - (id)init;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (void)mergeStatusReport:(id)arg1;
 - (void)noteFailedNetworkRequest;
 - (void)noteFailedProtocolRequest;
+- (void)noteFalseMoreAvailableResponse;
 - (void)noteNewHBIDataPoint:(NSInteger)arg1;
 - (void)noteSuccessfulRequestWithNumDownloadedElements:(NSInteger)arg1;
 - (void)noteTimeSpentInNetworking:(double)arg1;
@@ -54,6 +58,7 @@
 - (void)setDownloadedElements:(id)arg1;
 - (void)setFailedNetworkRequests:(id)arg1;
 - (void)setFailedProtocolRequests:(id)arg1;
+- (void)setFalseMoreAvailableCount:(id)arg1;
 - (void)setPersistentUUID:(id)arg1;
 - (void)setSuccessfulRequests:(id)arg1;
 - (void)setTimeInNetworking:(id)arg1;

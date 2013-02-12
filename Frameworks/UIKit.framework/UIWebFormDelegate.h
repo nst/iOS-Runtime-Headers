@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <BrowserDocumentController>, NSMutableDictionary, UIWebFormCompletionController;
+@class <UIBrowserDocumentController>, NSMutableDictionary, UIWebFormCompletionController;
 
 @interface UIWebFormDelegate : NSObject <WebFormDelegate> {
     UIWebFormCompletionController *_completionController;
-    <BrowserDocumentController> *_controller;
+    <UIBrowserDocumentController> *_controller;
     NSMutableDictionary *_editedForms;
 }
 

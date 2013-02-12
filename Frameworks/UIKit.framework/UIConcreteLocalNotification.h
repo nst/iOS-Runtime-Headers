@@ -43,7 +43,7 @@
 @property BOOL showAlarmStatusBarItem;
 @property BOOL soundNameIsARingtone;
 
-- (id)_dateComponentsForCalendarUnit:(NSUInteger)arg1;
+- (void)_addCalendarUnits:(NSUInteger)arg1 toDateComponents:(id)arg2;
 - (void)_setUserInfoData:(id)arg1;
 - (id)alertAction;
 - (id)alertBody;

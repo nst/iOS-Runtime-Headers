@@ -7,8 +7,8 @@
  */
 
 @interface ESDBlipContext : NSObject <OCDDelayedMediaContext> {
-     /* Encoded args for previous method: B12@0:4@8 */
      /* Encoded args for previous method: B16@0:4@8@12 */
+     /* Encoded args for previous method: B12@0:4@8 */
     NSUInteger mByteCount;
     NSUInteger mStartOffset;
     struct SsrwOOStream { int (**x1)(); } *mStream;

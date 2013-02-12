@@ -13,7 +13,6 @@
 @property(readonly) NSArray *videoTracks;
 
 + (id)assetReaderVideoCompositionOutputWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
-+ (BOOL)canRequestCompressedSamplesForVideoTracks:(id)arg1 withVideoSettings:(id)arg2;
 
 - (id)_asset;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;

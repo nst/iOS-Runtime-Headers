@@ -41,7 +41,9 @@
 - (id)description;
 - (id)extraAttributes;
 - (void)finalize;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (id)keySpace;
 - (id)locale;

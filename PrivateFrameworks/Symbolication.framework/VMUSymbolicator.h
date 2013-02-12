@@ -18,6 +18,7 @@
 + (id)symbolicatorForMachTaskContainer:(id)arg1;
 + (id)symbolicatorForPath:(id)arg1 architecture:(id)arg2;
 + (id)symbolicatorForPid:(NSInteger)arg1;
++ (id)symbolicatorForSignature:(id)arg1 dsymSearchPaths:(id)arg2 useMds:(BOOL)arg3;
 + (id)symbolicatorForSignature:(id)arg1;
 + (id)symbolicatorForTask:(NSUInteger)arg1;
 + (id)symbolicatorWithHeaders:(id)arg1 allowLazySymbolOwners:(BOOL)arg2 path:(id)arg3 machTaskContainer:(id)arg4;
@@ -51,7 +52,6 @@
 - (id)symbolOwnerForAddress:(unsigned long long)arg1;
 - (id)symbolOwnerForName:(id)arg1;
 - (id)symbolOwnerForPath:(id)arg1;
-- (id)symbolOwnerNameForAddress:(unsigned long long)arg1;
 - (id)symbolOwners;
 - (id)symbolOwnersForName:(id)arg1;
 - (id)symbolOwnersInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;

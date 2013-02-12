@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSLock, NSMutableDictionary, NSString;
+@class NSLock, NSString;
 
 @interface CPDistributedNotificationCenter : NSObject {
     NSString *_centerName;
     BOOL _isServer;
     NSLock *_lock;
     struct __CFRunLoopSource { } *_receiveNotificationSource;
-    NSMutableDictionary *_sendPorts;
+    struct __CFDictionary { } *_sendPorts;
     NSUInteger _startCount;
 }
 
@@ -21,13 +21,13 @@
 - (id)_initWithServerName:(id)arg1;
 - (void)_notificationServerWasRestarted;
 - (void)_receivedCheckIn:(NSUInteger)arg1 auditToken:(struct { NSUInteger x1[8]; }*)arg2;
-- (void)_receivedCheckOut:(struct __CFMachPort { }*)arg1;
 - (void)dealloc;
 - (void)deliverNotification:(id)arg1 userInfo:(id)arg2;
 - (id)name;
 - (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)postNotificationName:(id)arg1;
+- (void)runServer;
 - (void)runServerOnCurrentThread;
 - (void)startDeliveringNotificationsToMainThread;
 - (void)startDeliveringNotificationsToRunLoop:(struct __CFRunLoop { }*)arg1;

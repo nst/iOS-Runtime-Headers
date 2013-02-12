@@ -138,8 +138,7 @@
 - (id)_headerView;
 - (id)_indexPathForHeaderViewRow:(NSUInteger)arg1;
 - (id)_indexPathForPropertyGroup:(id)arg1 index:(NSInteger)arg2 editableFlag:(BOOL)arg3;
-- (id)_indexPathForRingtonePropertyGroup;
-- (BOOL)_isFavoriteInPropertyGroup:(id)arg1 atIndex:(NSInteger)arg2;
+- (BOOL)_isFavoriteOfType:(NSInteger)arg1 inPropertyGroup:(id)arg2 atIndex:(NSInteger)arg3;
 - (BOOL)_isReadonlyAtIndexPath:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
@@ -176,9 +175,11 @@
 - (BOOL)allowsConferencing;
 - (BOOL)allowsDeletion;
 - (BOOL)allowsEditing;
+- (BOOL)allowsFaceTimeFavorite;
 - (BOOL)allowsRingtone;
 - (BOOL)allowsSendingTextMessage;
 - (BOOL)allowsSharing;
+- (BOOL)allowsVoiceFavorite;
 - (id)alternateName;
 - (id)attribution;
 - (void)beginPinning;
@@ -241,8 +242,8 @@
 - (BOOL)isAttributionEnabled;
 - (BOOL)isEditing;
 - (BOOL)isInFullEditingMode;
-- (BOOL)isPhonePropertyDisplayed;
 - (BOOL)isPinning;
+- (BOOL)isPropertyDisplayed:(NSInteger)arg1;
 - (BOOL)isPropertyOptional:(NSInteger)arg1;
 - (void)labelPickerViewController:(id)arg1 didDeleteLabel:(id)arg2;
 - (BOOL)labelPickerViewController:(id)arg1 shouldDismissAfterSelectingLabel:(id)arg2;
@@ -306,9 +307,9 @@
 - (id)propertyGroupsForEditing:(BOOL)arg1;
 - (void)refreshImageData;
 - (void)refreshImageDataAndInformDelegate:(BOOL)arg1;
-- (void)reloadActions;
 - (void)reloadBottomActionCellAnimated:(BOOL)arg1;
 - (void)reloadBottomActionDataForFavorites:(BOOL)arg1 texting:(BOOL)arg2 sharing:(BOOL)arg3 conferencing:(BOOL)arg4;
+- (void)reloadBottomActions;
 - (void)reloadData;
 - (void)reloadDataIncludingHeaderView:(BOOL)arg1 invalidatePropertyData:(BOOL)arg2;
 - (void)reloadDataIncludingHeaderView:(BOOL)arg1;
@@ -317,8 +318,7 @@
 - (void)reloadNameData;
 - (void)reloadNameDataAnimated:(BOOL)arg1;
 - (void)reloadNoValueLabelAnimated:(BOOL)arg1;
-- (void)reloadPhoneActionCellsAnimated:(BOOL)arg1;
-- (void)reloadPhoneValueCellsAnimated:(BOOL)arg1;
+- (void)reloadPrimaryPropertyActionsSection;
 - (void)reloadPropertyGroups;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(NSInteger)arg3 actionGrouping:(NSInteger)arg4 ordering:(NSInteger)arg5 animate:(BOOL)arg6;
 - (void)removeImageDataForPerson:(void*)arg1;
@@ -329,7 +329,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)secondarySourceNameForPerson:(void*)arg1;
-- (id)sectionAnimationsDictionaryForEditing:(BOOL)arg1 visibleIndexPaths:(id)arg2;
+- (id)sectionAnimationsDictionaryForEditing:(BOOL)arg1;
 - (id)sectionAnimationsDictionaryForOriginalPropertyGroups:(id)arg1 newPropertyGroups:(id)arg2;
 - (id)sectionAnimationsDictionaryForSwipeToDeleteAtIndexPath:(id)arg1;
 - (NSUInteger)sectionForAction:(id)arg1;
@@ -365,6 +365,7 @@
 - (void)setDisplayedProperties:(struct __CFArray { }*)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
+- (void)setHighlightedItemForProperty:(NSInteger)arg1 withIdentifier:(NSInteger)arg2 person:(void*)arg3 important:(BOOL)arg4;
 - (void)setHighlightedValueIdentifier:(NSInteger)arg1;
 - (void)setHighlightedValueIsImportant:(BOOL)arg1;
 - (void)setHighlightedValuePerson:(void*)arg1;
@@ -401,7 +402,6 @@
 - (BOOL)shouldShowAddToFavoritesAction;
 - (BOOL)shouldShowContactSourcesStringAsMessage;
 - (BOOL)shouldShowLinkingUI;
-- (BOOL)shouldShowPhoneActions;
 - (BOOL)shouldShowRingtoneCellWhenEditing:(BOOL)arg1;
 - (BOOL)shouldUseAddNewValueCellForProperty:(NSInteger)arg1;
 - (void)showLinkedCardAtRow:(NSInteger)arg1;
@@ -436,15 +436,15 @@
 - (void)tableViewAddFieldUpdateAnimationsDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)tableViewCellForActions:(id)arg1 tableView:(id)arg2 row:(NSInteger)arg3 editing:(BOOL)arg4 allowDequeing:(BOOL)arg5 tag:(NSInteger*)arg6;
 - (NSInteger)tableViewRowAnimationForUpdateAction:(NSUInteger)arg1 isFirstRow:(BOOL)arg2;
-- (void)tellDelegateAddToFavoriteWasSelectedForPropertyAtIndex:(NSInteger)arg1 inPropertyGroup:(id)arg2;
+- (void)tellDelegateAddToFavoriteWasSelectedForPropertyAtIndex:(NSInteger)arg1 inPropertyGroup:(id)arg2 entryType:(NSInteger)arg3;
 - (void)tellDelegateTableViewDataSourceDidSetupCell:(id)arg1 forRowAtIndexPath:(id)arg2 property:(NSInteger)arg3;
 - (id)tinyActionCell;
 - (id)titleForNoValueWithProperty:(NSInteger)arg1;
 - (void)unselectAllCellParts;
-- (void)updateAllowsConferencing;
 - (void)updateByAddingFieldForProperty:(NSInteger)arg1 whenEditing:(BOOL)arg2;
 - (void)updateCellEditingStyleAtIndexPath:(id)arg1;
 - (void)updateContactSourcesStringIfNeeded;
+- (void)updateForConferencingAvailabilityChange;
 - (void)updateHeadersAndFootersForEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateRecord;
 - (void)updateRecordImages;

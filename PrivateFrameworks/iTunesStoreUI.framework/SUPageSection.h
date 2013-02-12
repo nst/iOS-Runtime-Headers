@@ -5,6 +5,7 @@
 @class ISURLRequest, NSString, UIImage;
 
 @interface SUPageSection : NSObject {
+    double _expirationTime;
     NSString *_identifier;
     UIImage *_image;
     NSString *_title;
@@ -16,16 +17,20 @@
 @property(retain) NSString *identifier;
 @property(retain) UIImage *image;
 @property(retain) NSString *title;
+@property double expirationTime;
 @property(readonly) id segmentedControlItem;
 @property(retain) id userInfo;
 
 - (id)URLRequest;
 - (void)dealloc;
+- (double)expirationTime;
 - (id)identifier;
 - (id)image;
+- (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)loadFromDictionary:(id)arg1;
 - (id)segmentedControlItem;
+- (void)setExpirationTime:(double)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setTitle:(id)arg1;

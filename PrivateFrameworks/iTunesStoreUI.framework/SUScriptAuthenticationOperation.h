@@ -9,7 +9,7 @@
     SSMutableAuthenticationContext *_authenticationContext;
 }
 
-@property(retain) NSNumber *authenticatedDSID;
+@property(retain) NSNumber * authenticatedDSID;
 
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;

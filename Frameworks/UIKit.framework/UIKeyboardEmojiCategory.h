@@ -6,19 +6,19 @@
 
 @interface UIKeyboardEmojiCategory : NSObject {
     NSArray *_emoji;
-    NSInteger _lastViewedPage;
+    int _lastViewedPage;
     NSString *_name;
 }
 
-@property(retain) NSArray *emoji;
-@property(retain) NSString *name;
-@property NSInteger lastViewedPage;
+@property(retain) NSArray * emoji;
+@property int lastViewedPage;
+@property(retain) NSString * name;
 
 - (id)emoji;
-- (NSInteger)lastViewedPage;
+- (int)lastViewedPage;
 - (id)name;
 - (void)setEmoji:(id)arg1;
-- (void)setLastViewedPage:(NSInteger)arg1;
+- (void)setLastViewedPage:(int)arg1;
 - (void)setName:(id)arg1;
 
 @end

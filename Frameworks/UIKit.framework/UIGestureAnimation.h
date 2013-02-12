@@ -3,12 +3,12 @@
  */
 
 @interface UIGestureAnimation : UIAnimation {
-    NSInteger _gestureType;
+    int _gestureType;
     SEL _progressSelector;
 }
 
-- (NSInteger)gestureType;
-- (id)initWithTarget:(id)arg1 progressSelector:(SEL)arg2 gestureType:(NSInteger)arg3;
+- (int)gestureType;
+- (id)initWithTarget:(id)arg1 progressSelector:(SEL)arg2 gestureType:(int)arg3;
 - (void)setProgress:(float)arg1;
 
 @end

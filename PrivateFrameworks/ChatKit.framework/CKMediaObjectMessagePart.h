@@ -12,10 +12,10 @@
     NSData *_previewData;
 }
 
-@property(readonly) UIImage *composeImage;
-@property(readonly) CKMediaObject *mediaObject;
+@property(readonly) UIImage * composeImage;
+@property(readonly) CKMediaObject * mediaObject;
 
-- (NSInteger)_orientation;
+- (int)_orientation;
 - (id)composeData;
 - (id)composeImage;
 - (void)copyToPasteboard;
@@ -28,6 +28,6 @@
 - (id)previewData;
 - (void)setComposeData:(id)arg1;
 - (void)setPreviewData:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

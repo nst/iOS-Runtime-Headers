@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableDictionary, NSMutableSet;
 
 @interface WebElementDictionary : NSDictionary {
@@ -14,20 +10,19 @@
         } x1; struct RefPtr<WebCore::Node> { 
             struct Node {} *m_ptr; 
         } x2; struct IntPoint { 
-            NSInteger m_x; 
-            NSInteger m_y; 
+            int m_x; 
+            int m_y; 
         } x3; struct IntPoint { 
-            NSInteger m_x; 
-            NSInteger m_y; 
+            int m_x; 
+            int m_y; 
         } x4; struct RefPtr<WebCore::Element> { 
             struct Element {} *m_ptr; 
         } x5; struct RefPtr<WebCore::Scrollbar> { 
             struct Scrollbar {} *m_ptr; 
-     /* Encoded args for previous method: @12@0:4r^{HitTestResult={RefPtr<WebCore::Node>=^{Node}}{RefPtr<WebCore::Node>=^{Node}}{IntPoint=ii}{IntPoint=ii}{RefPtr<WebCore::Element>=^{Element}}{RefPtr<WebCore::Scrollbar>=^{Scrollbar}}B}8 */
     NSMutableDictionary *_cache;
     BOOL _cacheComplete;
     NSMutableSet *_nilValues;
-        } x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; } *_result;
+        } x6; boolx7; } *_result;
 }
 
 + (void)initialize;
@@ -50,10 +45,10 @@
 - (id)_title;
 - (id)_titleDisplayString;
 - (id)_webFrame;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithHitTestResult:(const struct HitTestResult { struct RefPtr<WebCore::Node> { struct Node {} *x_1_1_1; } x1; struct RefPtr<WebCore::Node> { struct Node {} *x_2_1_1; } x2; struct IntPoint { NSInteger x_3_1_1; NSInteger x_3_1_2; } x3; struct IntPoint { NSInteger x_4_1_1; NSInteger x_4_1_2; } x4; struct RefPtr<WebCore::Element> { struct Element {} *x_5_1_1; } x5; struct RefPtr<WebCore::Scrollbar> { struct Scrollbar {} *x_6_1_1; } x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; }*)arg1;
+- (id)initWithHitTestResult:(const struct HitTestResult { struct RefPtr<WebCore::Node> { struct Node {} *x_1_1_1; } x1; struct RefPtr<WebCore::Node> { struct Node {} *x_2_1_1; } x2; struct IntPoint { int x_3_1_1; int x_3_1_2; } x3; struct IntPoint { int x_4_1_1; int x_4_1_2; } x4; struct RefPtr<WebCore::Element> { struct Element {} *x_5_1_1; } x5; struct RefPtr<WebCore::Scrollbar> { struct Scrollbar {} *x_6_1_1; } x6; boolx7; }*)arg1;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 

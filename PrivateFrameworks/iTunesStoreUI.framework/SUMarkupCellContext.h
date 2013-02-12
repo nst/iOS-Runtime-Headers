@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface SUMarkupCellContext : SUItemCellContext {
-    NSInteger _pendingWebViewLoads;
+    int _pendingWebViewLoads;
     NSString *_stylesheet;
     struct __CFDictionary { } *_webViewCache;
     float _webViewWidth;
 }
 
-@property(retain) NSString *stylesheet;
+@property(retain) NSString * stylesheet;
 @property float webViewWidth;
 
 - (void)dealloc;

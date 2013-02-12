@@ -15,18 +15,18 @@
             float height; 
         } size; 
     struct __CFArray { } *items;
-    NSUInteger ordinalPrefixLength;
-    NSUInteger ordinalSuffixLength;
+    unsigned int ordinalPrefixLength;
+    unsigned int ordinalSuffixLength;
     CPListItem *parentItem;
     } spacer;
-    NSInteger type;
+    int type;
 }
 
-@property(retain) CPListItem *parentItem;
-@property NSUInteger ordinalPrefixLength;
-@property NSUInteger ordinalSuffixLength;
-@property CGRect spacer;
-@property NSInteger type;
+@property unsigned int ordinalPrefixLength;
+@property unsigned int ordinalSuffixLength;
+@property(retain) CPListItem * parentItem;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } spacer;
+@property int type;
 
 - (void)addItem:(id)arg1;
 - (BOOL)containsParagraph:(id)arg1;
@@ -35,17 +35,17 @@
 - (void)finalize;
 - (id)init;
 - (BOOL)isMultilevel;
-- (id)itemAtIndex:(NSUInteger)arg1;
-- (NSUInteger)itemCount;
-- (NSUInteger)ordinalPrefixLength;
-- (NSUInteger)ordinalSuffixLength;
+- (id)itemAtIndex:(unsigned int)arg1;
+- (unsigned int)itemCount;
+- (unsigned int)ordinalPrefixLength;
+- (unsigned int)ordinalSuffixLength;
 - (id)parentItem;
-- (void)setOrdinalPrefixLength:(NSUInteger)arg1;
-- (void)setOrdinalSuffixLength:(NSUInteger)arg1;
+- (void)setOrdinalPrefixLength:(unsigned int)arg1;
+- (void)setOrdinalSuffixLength:(unsigned int)arg1;
 - (void)setParentItem:(id)arg1;
 - (void)setSpacer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })spacer;
-- (NSInteger)type;
+- (int)type;
 
 @end

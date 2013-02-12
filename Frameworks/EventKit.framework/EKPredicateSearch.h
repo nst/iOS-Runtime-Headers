@@ -12,13 +12,13 @@
     id _callback;
     BOOL _finished;
     NSPredicate *_predicate;
-    NSUInteger _previous;
+    unsigned int _previous;
     EKEventStore *_store;
 }
 
 + (id)searchWithPredicate:(id)arg1 store:(id)arg2 callback:(id)arg3;
 
-- (BOOL)_receivedData:(struct { void *x1; double x2; BOOL x3[2048]; }[50])arg1 count:(NSInteger)arg2;
+- (BOOL)_receivedData:(struct { void *x1; double x2; BOOL x3[2048]; }[50])arg1 count:(int)arg2;
 - (void)dealloc;
 - (id)initWithPredicate:(id)arg1 store:(id)arg2 callback:(id)arg3;
 - (void)run;

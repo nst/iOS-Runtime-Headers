@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
+@class UIColor;
+
 @interface PreferencesTextTableCell : PreferencesTableCell <UITextViewDelegate, UITextFieldDelegate> {
     id _delegate;
     BOOL _forceFirstResponder;
+    UIColor *_textColor;
 }
 
 + (void)_initializeSafeCategory;
 
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (BOOL)_accessibilityAlwaysReturnsChild;
+- (id)_accessibilityChildren;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
@@ -19,7 +24,7 @@
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canResignFirstResponder;
 - (void)dealloc;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isEditing;
 - (BOOL)isFirstResponder;
 - (void)layoutSubviews;

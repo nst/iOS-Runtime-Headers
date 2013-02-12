@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLScriptElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *charset;
-@property(copy) NSString *event;
-@property(copy) NSString *htmlFor;
-@property(copy) NSString *src;
-@property(copy) NSString *text;
-@property(copy) NSString *type;
+@property(copy) NSString * charset;
 @property BOOL defer;
+@property(copy) NSString * event;
+@property(copy) NSString * htmlFor;
+@property(copy) NSString * src;
+@property(copy) NSString * text;
+@property(copy) NSString * type;
 
 - (id)charset;
 - (BOOL)defer;

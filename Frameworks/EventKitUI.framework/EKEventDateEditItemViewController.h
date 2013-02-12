@@ -6,14 +6,14 @@
 
 @interface EKEventDateEditItemViewController : EKEventEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKCellShortener> {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
         BOOL minute; 
         double second; 
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -26,8 +26,8 @@
     BOOL _allDay;
     EKPickerTableView *_contentView;
     } _endGr;
-    NSInteger _lastSelectedRow;
-    NSInteger _shorteningStatus;
+    int _lastSelectedRow;
+    int _shorteningStatus;
     } _startGr;
 }
 
@@ -41,29 +41,29 @@
 - (void)_updateDateColors;
 - (void)_updateDatePicker;
 - (void)_updateTimeWidths;
-- (BOOL)calendarPreferencesTable:(id)arg1 canSelectRow:(NSInteger)arg2 inGroup:(NSInteger)arg3;
+- (BOOL)calendarPreferencesTable:(id)arg1 canSelectRow:(int)arg2 inGroup:(int)arg3;
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDate;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDate;
 - (BOOL)fitsPopoverWhenKeyboardActive;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAllDay;
 - (void)loadView;
 - (id)navigationTitle;
 - (void)setAllDay:(BOOL)arg1;
-- (void)setEndDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (void)setStartDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setEndDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 - (void)shortenCell:(id)arg1;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDate;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (BOOL)tableView:(id)arg1 wantsHeaderForSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 wantsHeaderForSection:(int)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

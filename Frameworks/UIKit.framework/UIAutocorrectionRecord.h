@@ -9,8 +9,8 @@
     NSString *_typing;
 }
 
-@property(readonly) NSString *autocorrection;
-@property(readonly) NSString *typing;
+@property(readonly) NSString * autocorrection;
+@property(readonly) NSString * typing;
 
 + (id)recordOfTyping:(id)arg1 forAutocorrection:(id)arg2;
 

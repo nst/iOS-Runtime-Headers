@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class NSString;
+
 @interface SUScriptAccountPageViewController : SUScriptStorePageViewController {
 }
 
-@property(retain) NSString *style;
-@property(readonly) NSString *styleNameDefault;
-@property(readonly) NSString *styleNameSignUp;
-@property(readonly) NSString *styleNameViewAccount;
+@property(retain) NSString * style;
+@property(readonly) NSString * styleNameDefault;
+@property(readonly) NSString * styleNameSignUp;
+@property(readonly) NSString * styleNameViewAccount;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 

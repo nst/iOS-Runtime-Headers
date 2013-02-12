@@ -6,13 +6,13 @@
 
 @interface PBSlideState : NSObject {
     NSMutableDictionary *mBuildOrderMap;
-    NSUInteger mCurrentGroupId;
+    unsigned int mCurrentGroupId;
 }
 
-- (void)addBuild:(id)arg1 order:(NSUInteger)arg2;
+- (void)addBuild:(id)arg1 order:(unsigned int)arg2;
 - (id)buildOrderMap;
 - (void)dealloc;
-- (NSUInteger)generateGroupId;
+- (unsigned int)generateGroupId;
 - (id)init;
 - (void)reset;
 

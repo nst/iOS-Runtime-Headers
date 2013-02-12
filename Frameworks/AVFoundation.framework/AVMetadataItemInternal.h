@@ -7,18 +7,18 @@
 @interface AVMetadataItemInternal : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     NSString *commonKey;
     } duration;
     NSMutableDictionary *extras;
-    NSInteger itemIndex;
+    int itemIndex;
     id key;
     NSString *keySpace;
     NSLocale *locale;

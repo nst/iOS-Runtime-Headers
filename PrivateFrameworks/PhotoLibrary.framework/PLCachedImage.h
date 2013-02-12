@@ -6,23 +6,23 @@
 
 @interface PLCachedImage : UIImage {
     NSString *_cacheKey;
-    NSInteger _format;
+    int _format;
     NSDictionary *_metadata;
     PLImageCache *_owningCache;
 }
 
-@property(retain) NSDictionary *metadata;
-@property NSInteger format;
+@property int format;
+@property(retain) NSDictionary * metadata;
 
 - (id)cacheKey;
 - (void)dealloc;
 - (id)description;
-- (NSInteger)format;
+- (int)format;
 - (id)metadata;
 - (id)owningCache;
 - (void)release;
 - (void)setCacheKey:(id)arg1;
-- (void)setFormat:(NSInteger)arg1;
+- (void)setFormat:(int)arg1;
 - (void)setImageCache:(id)arg1;
 - (void)setMetadata:(id)arg1;
 

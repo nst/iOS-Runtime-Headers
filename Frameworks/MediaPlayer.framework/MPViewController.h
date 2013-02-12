@@ -9,17 +9,17 @@
     unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
     id _delegate;
     NSTimer *_idleTimerDisablerTimer;
-    NSInteger _interfaceOrientation;
+    int _interfaceOrientation;
     MPAVItem *_item;
     MPTransitionController *_pushedTransitionController;
     MPViewController *_pushedViewController;
 }
 
-@property(getter=idleTimerDisabled) BOOL idleTimerDisabled; /* unknown property attribute: SsetIdleTimerDisabled: */
-@property(retain) MPAVItem *item;
 @property id delegate;
+@property(getter=idleTimerDisabled,setter=setIdleTimerDisabled:) BOOL idleTimerDisabled;
+@property(retain) MPAVItem * item;
 @property BOOL observesApplicationSuspendResumeEventsOnly;
-@property NSInteger orientation;
+@property int orientation;
 
 - (BOOL)_canReloadView;
 - (void)_disableIdleTimer:(id)arg1;
@@ -27,22 +27,22 @@
 - (void)_pushTransitionEnded:(id)arg1;
 - (void)applicationDidResumeEventsOnly;
 - (void)applicationDidSuspendEventsOnly;
-- (void)beginIgnoringChangeTypes:(NSUInteger)arg1;
-- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(NSInteger)arg2;
+- (void)beginIgnoringChangeTypes:(unsigned int)arg1;
+- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (void)clearWeakReferencesToObject:(id)arg1;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didChangeToInterfaceOrientation:(NSInteger)arg1;
-- (NSInteger)displayableInterfaceOrientationForInterfaceOrientation:(NSInteger)arg1;
-- (void)endIgnoringChangeTypes:(NSUInteger)arg1;
+- (void)didChangeToInterfaceOrientation:(int)arg1;
+- (int)displayableInterfaceOrientationForInterfaceOrientation:(int)arg1;
+- (void)endIgnoringChangeTypes:(unsigned int)arg1;
 - (BOOL)idleTimerDisabled;
 - (id)init;
 - (BOOL)isAppearing;
 - (id)item;
-- (void)noteIgnoredChangeTypes:(NSUInteger)arg1;
+- (void)noteIgnoredChangeTypes:(unsigned int)arg1;
 - (BOOL)observesApplicationSuspendResumeEventsOnly;
-- (NSInteger)orientation;
+- (int)orientation;
 - (id)popViewControllerAnimated:(BOOL)arg1;
 - (void)pushViewController:(id)arg1 withTransition:(id)arg2;
 - (void)restoreOverlayViewAfterTransition:(id)arg1;
@@ -51,13 +51,15 @@
 - (void)setIdleTimerDisabled:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setObservesApplicationSuspendResumeEventsOnly:(BOOL)arg1;
-- (void)setOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
+- (void)setOrientation:(int)arg1;
+- (void)setView:(id)arg1;
 - (void)startTicking;
 - (void)stopTicking;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)willChangeToInterfaceOrientation:(NSInteger)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willChangeToInterfaceOrientation:(int)arg1;
 
 @end

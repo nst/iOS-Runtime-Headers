@@ -11,16 +11,16 @@
     UILabel *_fromLabel;
     UIImageView *_groupImageView;
     UILabel *_hitsLabel;
-    NSInteger _searchMessageID;
-    NSInteger _searchPartID;
+    int _searchMessageID;
+    int _searchPartID;
     NSString *_searchSummaryText;
     CKSummaryLabel *_summaryLabel;
     UIImageView *_unreadIndicatorImageView;
 }
 
-@property(retain) CKConversation *conversation;
-@property(readonly) NSInteger searchMessageID;
-@property(readonly) NSInteger searchPartID;
+@property(retain) CKConversation * conversation;
+@property(readonly) int searchMessageID;
+@property(readonly) int searchPartID;
 
 + (void)_initializeSafeCategory;
 + (float)cellHeight;
@@ -31,17 +31,17 @@
 - (void)clearText;
 - (id)conversation;
 - (void)dealloc;
-- (void)didTransitionToState:(NSUInteger)arg1;
+- (void)didTransitionToState:(unsigned int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 conversation:(id)arg2;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
-- (NSInteger)searchMessageID;
-- (NSInteger)searchPartID;
+- (int)searchMessageID;
+- (int)searchPartID;
 - (void)setConversation:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateContents;
 - (void)updateFontSize;
-- (void)updateWithSearchResult:(struct _CKSpotlightSearchResult { NSInteger x1; NSInteger x2; NSInteger x3; id x4; }*)arg1;
-- (void)willTransitionToState:(NSUInteger)arg1;
+- (void)updateWithSearchResult:(struct _CKSpotlightSearchResult { int x1; int x2; int x3; id x4; }*)arg1;
+- (void)willTransitionToState:(unsigned int)arg1;
 
 @end

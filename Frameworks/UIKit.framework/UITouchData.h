@@ -8,7 +8,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    NSUInteger lastTapCount;
+    unsigned int lastTapCount;
     UITouch *lastTouch;
     double lastTouchDownTimestamp;
     double lastTouchUpTimestamp;

@@ -2,16 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUItemOfferButton, SUTableCellContentView, UIColor;
+@class SUCellConfiguration, SUItemOfferButton, SUTableCellContentView, UIColor;
 
 @interface SUTableCell : UITableViewCell {
     struct { 
-        NSUInteger localIndex; 
-        NSUInteger localCount; 
-        NSUInteger globalIndex; 
-        NSUInteger globalCount; 
+        unsigned int localIndex; 
+        unsigned int localCount; 
+        unsigned int globalIndex; 
+        unsigned int globalCount; 
     unsigned int _hideHighlight : 1;
-    unsigned int _highlightsOnlyContentView : 1;
     UIColor *_bottomBorderColor;
     SUTableCellContentView *_configurationView;
     SUItemOfferButton *_itemOfferButton;
@@ -19,15 +18,15 @@
     UIColor *_topBorderColor;
 }
 
-@property(retain) UIColor *bottomBorderColor;
-@property(retain) SUCellConfiguration *configuration;
-@property(retain,readonly) SUItemOfferButton *itemOfferButton;
-@property(retain) UIColor *topBorderColor;
-@property NSInteger clipCorners;
+@property(retain) UIColor * bottomBorderColor;
+@property int clipCorners;
+@property(retain) SUCellConfiguration * configuration;
 @property BOOL drawAsDisabled;
 @property BOOL highlightsOnlyContentView;
-@property ? position;
+@property(retain,readonly) SUItemOfferButton * itemOfferButton;
+@property struct { unsigned int localIndex; unsigned int localCount; unsigned int globalIndex; unsigned int globalCount; } position;
 @property BOOL showHighlight;
+@property(retain) UIColor * topBorderColor;
 @property BOOL usesSubviews;
 
 + (void)_initializeSafeCategory;
@@ -38,7 +37,7 @@
 - (id)accessibilityTableViewCellText;
 - (unsigned long long)accessibilityTraits;
 - (id)bottomBorderColor;
-- (NSInteger)clipCorners;
+- (int)clipCorners;
 - (id)configuration;
 - (id)copyPurchaseAnimationView;
 - (void)dealloc;
@@ -47,18 +46,18 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)highlightsOnlyContentView;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)itemOfferButton;
 - (void)layoutSubviews;
-- (struct { NSUInteger x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; })position;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })position;
 - (void)setBottomBorderColor:(id)arg1;
-- (void)setClipCorners:(NSInteger)arg1;
+- (void)setClipCorners:(int)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDrawAsDisabled:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlightsOnlyContentView:(BOOL)arg1;
-- (void)setPosition:(struct { NSUInteger x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; })arg1;
+- (void)setPosition:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowHighlight:(BOOL)arg1;
 - (void)setShowingDeleteConfirmation:(BOOL)arg1;

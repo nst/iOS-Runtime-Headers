@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class MKMapSnapshotCreator, UIImage;
@@ -15,39 +16,36 @@
     struct CGSize { 
         float width; 
         float height; 
-    struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { 
+    struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { 
             long __sig; 
             BOOL __opaque[40]; 
     struct CGPoint { 
         float x; 
         float y; 
-     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8 */
-     /* Encoded args for previous method: v12@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8 */
-     /* Encoded args for previous method: v16@0:4^{GMMTileRequester=^^?i^{Connection}*BBBB{_opaque_pthread_mutex_t=l[40c]}^{GMMTileResponse}^{__CFRunLoop}^{__CFRunLoopTimer}I@B}8@12 */
     id _context;
     } _coordinate;
     MKMapSnapshotCreator *_delegate;
     UIImage *_image;
-    NSUInteger _maxX;
-    NSUInteger _maxY;
-    NSUInteger _minX;
-    NSUInteger _minY;
+    unsigned int _maxX;
+    unsigned int _maxY;
+    unsigned int _minX;
+    unsigned int _minY;
     BOOL _paused;
     } _renderOffset;
     id _requester;
     } _size;
-        } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; } *_tileRequester;
-    NSUInteger _zoomAdd;
-    NSUInteger _zoomLevel;
+        } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; } *_tileRequester;
+    unsigned int _zoomAdd;
+    unsigned int _zoomLevel;
 }
 
-@property MKMapSnapshotCreator *delegate;
-@property(readonly) UIImage *image;
 @property(retain) id context;
-@property ? coordinate;
+@property struct { double latitude; double longitude; } coordinate;
+@property MKMapSnapshotCreator * delegate;
+@property(readonly) UIImage * image;
 @property(retain) id requester;
-@property CGSize size;
-@property NSUInteger zoomLevel;
+@property struct CGSize { float width; float height; } size;
+@property unsigned int zoomLevel;
 
 - (void)_appResumed:(id)arg1;
 - (id)context;
@@ -62,13 +60,13 @@
 - (void)setDelegate:(id)arg1;
 - (void)setRequester:(id)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setZoomLevel:(NSUInteger)arg1;
+- (void)setZoomLevel:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (void)startLoading;
 - (void)stopLoading;
-- (void)tileRequester:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1 failedWithError:(id)arg2;
-- (void)tileRequesterCompleted:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1;
-- (void)tileRequesterProgress:(struct GMMTileRequester { int (**x1)(); NSInteger x2; struct Connection {} *x3; char *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; void*x6; void*x7; void*x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; NSUInteger x13; id x14; void*x15; }*)arg1;
-- (NSUInteger)zoomLevel;
+- (void)tileRequester:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1 failedWithError:(id)arg2;
+- (void)tileRequesterCompleted:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
+- (void)tileRequesterProgress:(struct GMMTileRequester { int (**x1)(); int x2; struct Connection {} *x3; char *x4; boolx5; boolx6; boolx7; boolx8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct GMMTileResponse {} *x10; struct __CFRunLoop {} *x11; struct __CFRunLoopTimer {} *x12; unsigned int x13; id x14; boolx15; }*)arg1;
+- (unsigned int)zoomLevel;
 
 @end

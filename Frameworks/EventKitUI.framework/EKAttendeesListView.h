@@ -18,7 +18,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)_attendingImage;
-- (id)_imageForStatus:(NSInteger)arg1;
+- (id)_imageForStatus:(int)arg1;
 - (id)_maybeImage;
 - (id)_notAttendingImage;
 - (id)_pendingImage;
@@ -29,6 +29,6 @@
 - (void)setAttendeeDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

@@ -18,6 +18,6 @@
 + (id)sectionPropertyForProperty:(id)arg1;
 
 - (void)dealloc;
-- (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(NSUInteger)arg3;
+- (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3;
 
 @end

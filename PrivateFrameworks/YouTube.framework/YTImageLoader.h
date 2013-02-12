@@ -45,7 +45,7 @@
 - (void)_setImageData:(id)arg1 videoID:(id)arg2 forURL:(id)arg3 cacheLocked:(BOOL)arg4;
 - (void)_startLoader;
 - (struct CGImage { }*)createRoundedThumbnailWithImage:(struct CGImage { }*)arg1;
-- (struct CGImage { }*)createSheenedThumbnailWithImage:(struct CGImage { }*)arg1 overlay:(struct CGImage { }*)arg2 width:(NSInteger)arg3 height:(NSInteger)arg4;
+- (struct CGImage { }*)createSheenedThumbnailWithImage:(struct CGImage { }*)arg1 overlay:(struct CGImage { }*)arg2 width:(int)arg3 height:(int)arg4;
 - (struct CGImage { }*)imageForURL:(id)arg1 rounded:(BOOL)arg2 videoID:(id)arg3 loadIfAbsent:(BOOL)arg4;
 - (id)init;
 - (BOOL)isLoadingImages;

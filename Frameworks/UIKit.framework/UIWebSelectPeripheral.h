@@ -9,8 +9,8 @@
     DOMHTMLSelectElement *_selectionNode;
 }
 
-@property(retain) <UIWebSelectControl> *_selectControl;
-@property(retain) DOMHTMLSelectElement *_selectionNode;
+@property(retain) <UIWebSelectControl> * _selectControl;
+@property(retain) DOMHTMLSelectElement * _selectionNode;
 
 + (void)_initializeSafeCategory;
 + (id)createPeripheralWithDOMHTMLSelectElement:(id)arg1;

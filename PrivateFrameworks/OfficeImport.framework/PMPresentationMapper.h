@@ -7,28 +7,28 @@
 @interface PMPresentationMapper : CMMapper <CMMapperRoot> {
     CMArchiveManager *mArchiver;
     OIXMLElement *mBodyElement;
-    NSUInteger mCurrentSlide;
+    unsigned int mCurrentSlide;
     BOOL mHasPushedFirstSlides;
-    NSUInteger mNextCommit;
+    unsigned int mNextCommit;
     PDPresentation *mPresentation;
     NSString *mResourceUrlPrefix;
     NSString *mResourceUrlProtocol;
     NSMutableArray *mSlideGuids;
     NSMutableArray *mSlideNames;
     float mSlideOriginY;
-    NSInteger mWidth;
+    int mWidth;
     OIXMLDocument *mXhtmlDoc;
 }
 
 - (void)_pushEmptySlideWithMessage:(id)arg1;
 - (id)archiver;
-- (id)blipAtIndex:(NSUInteger)arg1;
+- (id)blipAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)documentTitle;
 - (void)finishMappingWithState:(id)arg1;
 - (id)initWithPDPresentation:(id)arg1 archiver:(id)arg2;
 - (void)mapDefaultCssStylesAt:(id)arg1;
-- (void)mapElement:(id)arg1 atIndex:(NSUInteger)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
+- (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
 - (void)setHtmlDocumentSizeInArchiver;
 - (struct CGSize { float x1; float x2; })slideSize;

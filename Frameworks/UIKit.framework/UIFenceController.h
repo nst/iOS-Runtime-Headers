@@ -5,15 +5,15 @@
 @class NSSet;
 
 @interface UIFenceController : NSObject {
-    NSUInteger _fenceBase;
-    NSUInteger _fenceOffset;
+    unsigned int _fenceBase;
+    unsigned int _fenceOffset;
     NSSet *_fencedWindows;
 }
 
 + (id)sharedFenceController;
 
 - (void)_fenceCompleted;
-- (NSUInteger)_fenceWindows:(id)arg1 additionalWindows:(NSInteger)arg2;
+- (unsigned int)_fenceWindows:(id)arg1 additionalWindows:(int)arg2;
 - (id)_fenceableWindows;
 - (void)fenceAllApplicationWindows;
 - (id)init;

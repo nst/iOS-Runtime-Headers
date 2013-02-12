@@ -6,43 +6,43 @@
 
 @interface SUItemContentRating : NSObject <NSCopying> {
     NSDictionary *_dictionary;
-    NSInteger _rank;
+    int _rank;
     NSString *_ratingDescription;
     NSString *_ratingLabel;
-    NSInteger _ratingSystem;
+    int _ratingSystem;
     SSItemArtworkImage *_ratingSystemLogo;
     BOOL _shouldHideWhenRestricted;
 }
 
-@property(copy) NSString *ratingDescription;
-@property(copy) NSString *ratingLabel;
-@property(copy) SSItemArtworkImage *ratingSystemLogo;
 @property(getter=isExplicitContent,readonly) BOOL explicitContent;
-@property NSInteger rank;
-@property NSInteger ratingSystem;
+@property int rank;
+@property(copy) NSString * ratingDescription;
+@property(copy) NSString * ratingLabel;
+@property int ratingSystem;
+@property(copy) SSItemArtworkImage * ratingSystemLogo;
 @property(getter=isRestricted,readonly) BOOL restricted;
 @property BOOL shouldHideWhenRestricted;
 
-+ (NSInteger)ratingSystemFromString:(id)arg1;
++ (int)ratingSystemFromString:(id)arg1;
 
-- (BOOL)_isRatingSystemForApps:(NSInteger)arg1;
-- (BOOL)_isRatingSystemForMovies:(NSInteger)arg1;
-- (BOOL)_isRatingSystemForMusic:(NSInteger)arg1;
-- (BOOL)_isRatingSystemForTV:(NSInteger)arg1;
+- (BOOL)_isRatingSystemForApps:(int)arg1;
+- (BOOL)_isRatingSystemForMovies:(int)arg1;
+- (BOOL)_isRatingSystemForMusic:(int)arg1;
+- (BOOL)_isRatingSystemForTV:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isExplicitContent;
 - (BOOL)isRestricted;
-- (NSInteger)rank;
+- (int)rank;
 - (id)ratingDescription;
 - (id)ratingLabel;
-- (NSInteger)ratingSystem;
+- (int)ratingSystem;
 - (id)ratingSystemLogo;
-- (void)setRank:(NSInteger)arg1;
+- (void)setRank:(int)arg1;
 - (void)setRatingDescription:(id)arg1;
 - (void)setRatingLabel:(id)arg1;
-- (void)setRatingSystem:(NSInteger)arg1;
+- (void)setRatingSystem:(int)arg1;
 - (void)setRatingSystemLogo:(id)arg1;
 - (void)setShouldHideWhenRestricted:(BOOL)arg1;
 - (BOOL)shouldHideWhenRestricted;

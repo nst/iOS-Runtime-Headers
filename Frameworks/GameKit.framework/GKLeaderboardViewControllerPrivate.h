@@ -4,7 +4,7 @@
 
 @class <GKLeaderboardViewControllerDelegate>, <GKLeaderboardViewControllerPrivateDelegate>, GKGame, GKLeaderboardViewController, GKPlayer, GKSparseLeaderboard, GKTableViewCell, GKUITheme, NSMutableDictionary, NSString, UISegmentedControl, UIView;
 
-@interface GKLeaderboardViewControllerPrivate : GKTableViewController <GKRibbonSegmentedControlDelegate> {
+@interface GKLeaderboardViewControllerPrivate : GKTableViewController {
     struct { 
         unsigned int allowFriendSelection : 1; 
         unsigned int translucentNavBar : 1; 
@@ -21,37 +21,34 @@
     UISegmentedControl *_landscapeTimeScopeControl;
     NSMutableDictionary *_leaderboardCache;
     <GKLeaderboardViewControllerDelegate> *_leaderboardDelegate;
-    NSInteger _navbarStyle;
+    int _navbarStyle;
     GKPlayer *_player;
     NSMutableDictionary *_players;
     UISegmentedControl *_portraitTimeScopeControl;
     GKUITheme *_theme;
-    NSInteger _timeScope;
+    int _timeScope;
     UIView *_timeScopeContainer;
 }
 
-@property(retain) NSString *categoryID;
-@property GKLeaderboardViewController *controllerForDelegate;
-@property <GKLeaderboardViewControllerPrivateDelegate> *delegate;
-@property(retain) GKTableViewCell *detailHeaderCell;
-@property(retain) GKSparseLeaderboard *friendLeaderboard;
-@property(retain) GKGame *game;
-@property(retain) GKSparseLeaderboard *globalLeaderboard;
-@property <GKLeaderboardViewControllerDelegate> *leaderboardDelegate;
-@property(retain) GKPlayer *player;
-@property(retain) NSMutableDictionary *players;
-@property(retain) GKUITheme *theme;
-@property(retain) UIView *timeScopeContainer;
 @property BOOL allowsFriendSelection;
+@property(retain) NSString * categoryID;
+@property GKLeaderboardViewController * controllerForDelegate;
+@property <GKLeaderboardViewControllerPrivateDelegate> * delegate;
+@property(retain) GKTableViewCell * detailHeaderCell;
+@property(retain) GKSparseLeaderboard * friendLeaderboard;
+@property(retain) GKGame * game;
+@property(retain) GKSparseLeaderboard * globalLeaderboard;
 @property BOOL isInFormSheet;
-@property NSInteger navbarStyle;
-@property NSInteger timeScope;
+@property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
+@property int navbarStyle;
+@property(retain) GKPlayer * player;
+@property(retain) NSMutableDictionary * players;
+@property(retain) GKUITheme * theme;
+@property int timeScope;
+@property(retain) UIView * timeScopeContainer;
 
 - (void)_gkRefreshContents;
-- (void)_loadScoresForLeaderboard:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)_reloadScores;
-- (void)_reloadSection:(NSUInteger)arg1 forVisibleRows:(id)arg2;
-- (void)_timeFilterChanged:(NSUInteger)arg1;
 - (void)_timeFilterSegmentedControlChanged:(id)arg1;
 - (BOOL)allowsFriendSelection;
 - (void)authenticatedStatusChanged;
@@ -66,25 +63,26 @@
 - (id)game;
 - (id)globalLeaderboard;
 - (id)headerTextForLeaderboard:(id)arg1;
-- (id)indexPathsForLeaderboardRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 inSection:(NSUInteger)arg2;
+- (id)indexPathsForLeaderboardRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inSection:(unsigned int)arg2;
 - (id)initWithGame:(id)arg1;
 - (BOOL)isInFormSheet;
-- (void)layoutSubviewsForOrientation:(NSInteger)arg1;
+- (void)layoutSubviewsForOrientation:(int)arg1;
 - (id)leaderboardDelegate;
-- (id)leaderboardForCategoryID:(id)arg1 timeScope:(NSInteger)arg2 playerScope:(NSInteger)arg3;
-- (id)leaderboardForSection:(NSUInteger)arg1;
-- (void)loadPlayersForScores:(id)arg1 withCompletionHandler:(id)arg2;
+- (id)leaderboardForCategoryID:(id)arg1 timeScope:(int)arg2 playerScope:(int)arg3;
+- (id)leaderboardForSection:(unsigned int)arg1;
+- (void)loadPlayersForScores:(id)arg1 forLeaderboard:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)loadScoresForLeaderboard:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withCompletionHandler:(id)arg3;
 - (void)loadView;
 - (float)marginForTableView:(id)arg1;
-- (NSInteger)navbarStyle;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)navbarStyle;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)playTapped;
 - (id)player;
 - (id)playerForScore:(id)arg1;
 - (id)players;
-- (void)ribbonSegmentedControlChanged:(id)arg1;
+- (void)reloadSection:(unsigned int)arg1 forVisibleRows:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)setAllowsFriendSelection:(BOOL)arg1;
-- (void)setCategoryID:(id)arg1 timeScope:(NSInteger)arg2;
+- (void)setCategoryID:(id)arg1 timeScope:(int)arg2;
 - (void)setCategoryID:(id)arg1;
 - (void)setControllerForDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -94,29 +92,30 @@
 - (void)setGlobalLeaderboard:(id)arg1;
 - (void)setIsInFormSheet:(BOOL)arg1;
 - (void)setLeaderboardDelegate:(id)arg1;
-- (void)setNavbarStyle:(NSInteger)arg1;
+- (void)setNavbarStyle:(int)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setPlayers:(id)arg1;
 - (void)setTheme:(id)arg1;
-- (void)setTimeScope:(NSInteger)arg1;
+- (void)setTimeScope:(int)arg1;
 - (void)setTimeScopeContainer:(id)arg1;
 - (void)setupTableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(NSInteger)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)theme;
-- (NSInteger)timeScope;
+- (int)timeScope;
 - (id)timeScopeContainer;
 - (void)updateNavbarButtons;
+- (void)updateShowMoreCellForSection:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -5,6 +5,7 @@
 @interface DABehaviorOptions : NSObject {
 }
 
++ (id)APSEnv;
 + (BOOL)_shouldForceCookies:(BOOL*)arg1;
 + (BOOL)allIMAPServersSupportNotesSearch;
 + (BOOL)completelyIgnoreNotes;
@@ -13,7 +14,9 @@
 + (BOOL)ignoreBadLDAPCerts;
 + (BOOL)ignoreSupportedCommands;
 + (BOOL)isCustomerInstall;
-+ (NSInteger)refreshThrottleTime;
++ (id)mobileMeServerURL;
++ (int)refreshThrottleTime;
 + (id)whitelistedEASProtocols;
++ (BOOL)writeOutBrokenCancelationRequests;
 
 @end

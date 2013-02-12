@@ -8,7 +8,7 @@
     OADRelativeRect *mFillToRect;
     BOOL mIsFillToRectOverridden;
     BOOL mIsTypeOverridden;
-    NSInteger mType;
+    int mType;
 }
 
 + (id)defaultProperties;
@@ -16,13 +16,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fillToRect;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFillToRectOverridden;
 - (BOOL)isTypeOverridden;
 - (void)setFillToRect:(id)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

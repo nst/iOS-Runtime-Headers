@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class MPMoviePlayerController;
+
 @interface MPMoviePlayerViewController : UIViewController {
     id _internal;
 }
 
-@property(readonly) MPMoviePlayerController *moviePlayer;
+@property(readonly) MPMoviePlayerController * moviePlayer;
 
 - (BOOL)_canReloadView;
-- (void)_playbackDidFinishNotification:(id)arg1;
+- (void)_moviePlayerViewController_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)_moviePlayerViewController_playbackDidFinishNotification:(id)arg1;
+- (void)_restoreStatusBarAnimated:(BOOL)arg1;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
@@ -18,7 +22,7 @@
 - (void)loadView;
 - (id)moviePlayer;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

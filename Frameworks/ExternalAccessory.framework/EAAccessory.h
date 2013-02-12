@@ -2,22 +2,27 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class EAAccessoryInternal;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class <EAAccessoryDelegate>, EAAccessoryInternal, NSArray, NSString;
 
 @interface EAAccessory : NSObject {
     EAAccessoryInternal *_internal;
 }
 
-@property <EAAccessoryDelegate> *delegate;
-@property(readonly) NSString *firmwareRevision;
-@property(readonly) NSString *hardwareRevision;
-@property(readonly) NSString *manufacturer;
-@property(readonly) NSString *modelNumber;
-@property(readonly) NSString *name;
-@property(readonly) NSArray *protocolStrings;
-@property(readonly) NSString *serialNumber;
 @property(getter=isConnected,readonly) BOOL connected;
-@property(readonly) NSUInteger connectionID;
+@property(readonly) unsigned int connectionID;
+@property <EAAccessoryDelegate> * delegate;
+@property(readonly) NSString * firmwareRevision;
+@property(readonly) NSString * hardwareRevision;
+@property(readonly) NSString * manufacturer;
+@property(readonly) NSString * modelNumber;
+@property(readonly) NSString * name;
+@property(readonly) NSArray * protocolStrings;
+@property(readonly) NSString * serialNumber;
 
 - (int (*)())cfAccessoryPortPropertyCallback;
 - (id)_initWithAccessory:(id)arg1;
@@ -29,12 +34,12 @@
 - (id)audioPorts;
 - (struct __CFAccessory { }*)cfAccessory;
 - (void*)cfAccessoryPortPropertyContext;
-- (NSInteger)classType;
-- (NSUInteger)connectionID;
+- (int)classType;
+- (unsigned int)connectionID;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (NSUInteger)eqIndex;
+- (unsigned int)eqIndex;
 - (id)eqNames;
 - (id)firmwareRevision;
 - (BOOL)getEphemerisExpirationInterval:(double*)arg1;
@@ -42,7 +47,7 @@
 - (BOOL)getEphemerisURL:(id*)arg1;
 - (BOOL)getNMEASentence:(id*)arg1;
 - (id)hardwareRevision;
-- (NSInteger)iPodOutOptionsMask;
+- (int)iPodOutOptionsMask;
 - (id)init;
 - (id)internalDescription;
 - (BOOL)isConnected;
@@ -52,21 +57,22 @@
 - (id)preferredApp;
 - (id)protocolStrings;
 - (BOOL)sendEphemeris:(id)arg1;
-- (BOOL)sendEphemerisPointDataGpsWeek:(NSUInteger)arg1 gpsTOW:(double)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(unsigned short)arg5;
-- (BOOL)sendGpsWeek:(NSUInteger)arg1 gpsTOW:(double)arg2;
+- (BOOL)sendEphemerisPointDataGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(unsigned short)arg5;
+- (BOOL)sendGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2;
 - (id)serialNumber;
 - (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
 - (void)setCfAccessoryPortPropertyCallback:(int (*)())arg1;
 - (void)setCfAccessoryPortPropertyContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEqIndex:(NSUInteger)arg1;
+- (void)setEqIndex:(unsigned int)arg1;
 - (void)setEqNames:(id)arg1;
-- (void)setIPodOutOptionsMask:(NSInteger)arg1;
+- (void)setIPodOutOptionsMask:(int)arg1;
 - (BOOL)setNMEASentencesToFilter:(id)arg1;
 - (BOOL)supportsAccessibility;
 - (BOOL)supportsIPodOut;
 - (BOOL)supportsLocation;
 - (BOOL)supportsPublicIap;
+- (void)updateSystemProperty:(int)arg1 withValue:(id)arg2;
 - (id)valueForLegacyLingoProperty:(id)arg1;
 
 @end

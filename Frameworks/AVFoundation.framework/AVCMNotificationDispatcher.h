@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class AVCallbackRegistry, NSMutableDictionary;
 
 @interface AVCMNotificationDispatcher : NSObject {
@@ -11,7 +16,7 @@
     struct dispatch_queue_s { } *_listenerObjectsQueue;
 }
 
-@property(readonly) opaqueCMNotificationCenter *CMNotificationCenter;
+@property(readonly) struct opaqueCMNotificationCenter { }* CMNotificationCenter;
 
 + (void)initialize;
 + (id)notificationDispatcherForCMNotificationCenter:(struct opaqueCMNotificationCenter { }*)arg1;

@@ -3,19 +3,19 @@
  */
 
 @interface MFUUDecoder : MFBaseFilterDataConsumer {
-    NSUInteger _begin;
+    unsigned int _begin;
     BOOL _beginComplete;
     BOOL _dataComplete;
     unsigned char _encoded[4];
-    NSUInteger _end;
-    NSUInteger _length;
+    unsigned int _end;
+    unsigned int _length;
     BOOL _lineComplete;
     BOOL _passthrough;
-    NSUInteger _readBytes;
+    unsigned int _readBytes;
     BOOL _validLength;
 }
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (void)done;
 
 @end

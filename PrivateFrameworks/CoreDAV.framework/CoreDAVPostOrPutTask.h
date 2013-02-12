@@ -6,15 +6,18 @@
 
 @interface CoreDAVPostOrPutTask : CoreDAVTask {
     BOOL _forceToServer;
+    int _order;
     NSString *_previousETag;
     NSString *_requestDataContentType;
     NSData *_requestDataPayload;
+    BOOL _sendOrder;
 }
 
-@property(retain) NSString *previousETag;
-@property(retain) NSString *requestDataContentType;
-@property(retain) NSData *requestDataPayload;
 @property BOOL forceToServer;
+@property int order;
+@property(retain) NSString * previousETag;
+@property(retain) NSString * requestDataContentType;
+@property(retain) NSData * requestDataPayload;
 
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
@@ -23,11 +26,13 @@
 - (BOOL)forceToServer;
 - (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
 - (id)initWithURL:(id)arg1;
+- (int)order;
 - (id)previousETag;
 - (id)requestBody;
 - (id)requestDataContentType;
 - (id)requestDataPayload;
 - (void)setForceToServer:(BOOL)arg1;
+- (void)setOrder:(int)arg1;
 - (void)setPreviousETag:(id)arg1;
 - (void)setRequestDataContentType:(id)arg1;
 - (void)setRequestDataPayload:(id)arg1;

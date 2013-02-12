@@ -17,7 +17,7 @@
 - (BOOL)isOutgoing;
 - (void)markAsRead;
 - (void)markAsSent;
-- (NSInteger)sentCount;
+- (int)sentCount;
 - (void)setOutgoing:(BOOL)arg1;
 
 @end

@@ -8,7 +8,7 @@
     NSMutableArray *_actions;
     NSMutableArray *_callbacks;
     NSMutableDictionary *_getDictionary;
-    NSInteger _handlerType;
+    int _handlerType;
     BOOL _readOnly;
     NSMutableDictionary *_setDictionary;
 }
@@ -16,16 +16,16 @@
 + (id)brailleEvent;
 
 - (id)claimDictionary;
-- (id)claimValueForKey:(NSInteger)arg1;
+- (id)claimValueForKey:(int)arg1;
 - (void)dealloc;
-- (NSInteger)handlerType;
-- (id)initForHandlerType:(NSInteger)arg1;
+- (int)handlerType;
+- (id)initForHandlerType:(int)arg1;
 - (id)mainDictionary;
 - (void)performWithHandler:(id)arg1 trusted:(BOOL)arg2;
-- (void)requestPerformActionForKey:(NSInteger)arg1;
-- (void)requestRegisterCallbackForKey:(NSInteger)arg1;
-- (void)requestSetValue:(id)arg1 forKey:(NSInteger)arg2;
-- (void)requestValueForKey:(NSInteger)arg1;
+- (void)requestPerformActionForKey:(int)arg1;
+- (void)requestRegisterCallbackForKey:(int)arg1;
+- (void)requestSetValue:(id)arg1 forKey:(int)arg2;
+- (void)requestValueForKey:(int)arg1;
 - (void)setClaimDictionary:(id)arg1;
 - (void)setMainDictionary:(id)arg1;
 

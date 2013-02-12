@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, SUMaskedView, SUOverlayTransition, SUScriptFunction, SUScriptWindowContext, SUTouchCaptureView, UIViewController;
+@class NSMutableArray, SUMaskProvider, SUMaskedView, SUOverlayTransition, SUScriptFunction, SUScriptWindowContext, SUTouchCaptureView, UIViewController;
 
 @interface SUOverlayViewController : SUViewController {
     struct CGSize { 
@@ -19,21 +19,22 @@
     float _shadowOpacity;
     float _shadowRadius;
     SUScriptFunction *_shouldDismissFunction;
-    NSInteger _state;
+    int _state;
     SUMaskedView *_subviewContainerView;
     SUTouchCaptureView *_touchCaptureView;
 }
 
-@property(retain) UIViewController *backViewController;
-@property(retain) UIViewController *frontViewController;
-@property(retain) SUMaskProvider *maskProvider;
-@property(retain) SUOverlayTransition *presentationTransition;
-@property(retain) SUScriptFunction *shouldDismissFunction;
 @property(getter=isActiveOverlay,readonly) BOOL activeOverlay;
+@property(readonly) UIViewController * activeViewController;
+@property(retain) UIViewController * backViewController;
+@property(retain) UIViewController * frontViewController;
+@property(retain) SUMaskProvider * maskProvider;
 @property(getter=isOnFront,readonly) BOOL onFront;
-@property CGSize overlaySize;
+@property struct CGSize { float width; float height; } overlaySize;
+@property(retain) SUOverlayTransition * presentationTransition;
 @property float shadowOpacity;
 @property float shadowRadius;
+@property(retain) SUScriptFunction * shouldDismissFunction;
 
 + (struct CGSize { float x1; float x2; })defaultOverlaySize;
 
@@ -54,6 +55,7 @@
 - (id)_subviewContainerView;
 - (void)_tearDownTouchCaptureView;
 - (void)_touchCaptureAction:(id)arg1;
+- (id)activeViewController;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)backViewController;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;

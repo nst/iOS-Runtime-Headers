@@ -12,11 +12,11 @@
     NSString *_textString;
 }
 
-@property(copy) NSString *markupString;
-@property(retain) NSArray *resources;
-@property(copy) NSString *subject;
-@property(copy) NSString *textString;
 @property BOOL isTextOnly;
+@property(copy) NSString * markupString;
+@property(retain) NSArray * resources;
+@property(copy) NSString * subject;
+@property(copy) NSString * textString;
 
 - (void)dealloc;
 - (BOOL)isTextOnly;

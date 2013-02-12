@@ -12,9 +12,9 @@
     NSMutableArray *_sections;
 }
 
-@property <EKICSPreviewListDelegate> *listDelegate;
 @property BOOL allowsImport;
 @property BOOL allowsSubitems;
+@property <EKICSPreviewListDelegate> * listDelegate;
 
 - (BOOL)allowsImport;
 - (BOOL)allowsSubitems;
@@ -23,15 +23,15 @@
 - (void)importAllPressed:(id)arg1;
 - (id)initWithModel:(id)arg1;
 - (id)listDelegate;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setAllowsImport:(BOOL)arg1;
 - (void)setAllowsSubitems:(BOOL)arg1;
 - (void)setListDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)updateImportButton;
 - (void)viewDidLoad;
 

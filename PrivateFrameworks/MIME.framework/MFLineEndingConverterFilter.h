@@ -6,7 +6,7 @@
     BOOL _lastCR;
 }
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (void)done;
 
 @end

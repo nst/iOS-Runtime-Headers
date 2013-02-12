@@ -39,7 +39,7 @@
 - (void)_queueAccountInfoDidChange;
 - (void)_removePasswordInKeychain;
 - (void)_setAccountProperties:(id)arg1;
-- (BOOL)_shouldTryDirectSSLConnectionOnPort:(NSUInteger)arg1;
+- (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
 - (void)accountInfoDidChange;
 - (BOOL)acquireCredentialsWithPassword:(id)arg1;
 - (id)alternateConnectionSettings;
@@ -55,8 +55,8 @@
 - (id)customTitleForError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
 - (void)dealloc;
 - (id)defaultConnectionSettings;
-- (NSUInteger)defaultPortNumber;
-- (NSUInteger)defaultSecurePortNumber;
+- (unsigned int)defaultPortNumber;
+- (unsigned int)defaultSecurePortNumber;
 - (id)displayName;
 - (id)domain;
 - (BOOL)enableAccount;
@@ -65,11 +65,11 @@
 - (id)initWithProperties:(id)arg1;
 - (id)insecureConnectionSettings;
 - (BOOL)isActive;
-- (BOOL)isCommonPortNumber:(NSUInteger)arg1;
+- (BOOL)isCommonPortNumber:(unsigned int)arg1;
 - (BOOL)isOffline;
 - (BOOL)isPasswordMissing;
 - (void*)keychainAccessibility;
-- (NSUInteger)keychainPortNumber;
+- (unsigned int)keychainPortNumber;
 - (id)managedTag;
 - (id)missingPasswordErrorWithTitle:(id)arg1;
 - (id)nameForMailboxUid:(id)arg1;
@@ -77,7 +77,7 @@
 - (id)password;
 - (id)passwordFromKeychain;
 - (id)passwordFromStoredUserInfo;
-- (NSUInteger)portNumber;
+- (unsigned int)portNumber;
 - (id)preferredAuthScheme;
 - (id)promptUserForPasswordWithMessage:(id)arg1;
 - (id)promptUserIfNeededForPasswordWithMessage:(id)arg1;
@@ -89,7 +89,7 @@
 - (void)reportAuthenticationError:(id)arg1 authScheme:(id)arg2;
 - (BOOL)requiresAuthentication;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (id)secureConnectionSettings;
 - (id)secureServiceName;
 - (id)serviceName;
@@ -101,7 +101,7 @@
 - (void)setIsOffline:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPasswordInKeychain:(id)arg1;
-- (void)setPortNumber:(NSUInteger)arg1;
+- (void)setPortNumber:(unsigned int)arg1;
 - (void)setPreferredAuthScheme:(id)arg1;
 - (void)setTryDirectSSL:(BOOL)arg1;
 - (void)setUsername:(id)arg1;

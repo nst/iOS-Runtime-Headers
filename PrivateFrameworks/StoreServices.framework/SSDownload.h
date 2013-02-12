@@ -13,11 +13,11 @@
     NSData *_thumbnailImageData;
 }
 
-@property(retain) NSArray *assets;
-@property(copy) SSDownloadMetadata *metadata;
-@property(retain) SSDownloadStatus *status;
+@property(retain) NSArray * assets;
 @property(readonly) id downloadIdentifier;
 @property(getter=isExternal,readonly) BOOL external;
+@property(copy) SSDownloadMetadata * metadata;
+@property(retain) SSDownloadStatus * status;
 
 - (void)_artworkFailedNotification:(id)arg1;
 - (void)_artworkFinishedNotification:(id)arg1;

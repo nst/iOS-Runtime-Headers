@@ -12,11 +12,11 @@
     UINibDecoder *nibDecoder;
 }
 
-@property(copy) NSData *archiveData;
-@property(retain) NSBundle *bundle;
-@property(copy) NSString *bundleResourceName;
-@property(retain) UINibDecoder *nibDecoder;
+@property(copy) NSData * archiveData;
+@property(retain) NSBundle * bundle;
+@property(copy) NSString * bundleResourceName;
 @property BOOL instantiatingForSimulator;
+@property(retain) UINibDecoder * nibDecoder;
 
 - (id)archiveData;
 - (id)bundle;

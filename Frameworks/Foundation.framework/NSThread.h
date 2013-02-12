@@ -43,10 +43,10 @@
 - (void)registerForStopNotification;
 - (id)runLoop;
 - (void)setName:(id)arg1;
-- (void)setStackSize:(NSUInteger)arg1;
+- (void)setStackSize:(unsigned int)arg1;
 - (void)setThreadPriority:(double)arg1;
 - (BOOL)shouldStop;
-- (NSUInteger)stackSize;
+- (unsigned int)stackSize;
 - (void)start;
 - (id)threadDictionary;
 - (double)threadPriority;

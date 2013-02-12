@@ -5,6 +5,7 @@
 @class NSLock;
 
 @interface SCRCTargetSelectorTimer : SCRCTargetSelector {
+    BOOL _createdTimer;
     BOOL _isCancelled;
     BOOL _isPending;
     id _key;
@@ -16,6 +17,7 @@
 + (void)_runThread;
 + (void)initialize;
 
+- (BOOL)_createdTimer;
 - (void)_dispatch;
 - (void)_dispatchMainThread;
 - (void)_dispatchSCRCThread;

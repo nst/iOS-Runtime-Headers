@@ -12,7 +12,7 @@
 
 + (id)treeWithXMLData:(id)arg1;
 
-- (void)_data:(const char *)arg1 len:(NSInteger)arg2;
+- (void)_data:(const char *)arg1 len:(int)arg2;
 - (void)_endelement:(const char *)arg1;
 - (void)_startelement:(const char *)arg1 attributes:(const char **)arg2;
 - (void)dealloc;

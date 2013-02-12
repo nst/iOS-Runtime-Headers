@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSFetchRequest, NSManagedObjectContext, NSString;
+@class <NSFetchedResultsControllerDelegate>, NSArray, NSFetchRequest, NSManagedObjectContext, NSString;
 
 @interface NSFetchedResultsController : NSObject {
     struct _fetchResultsControllerFlags { 
@@ -34,17 +34,17 @@
     id _sortKeys;
 }
 
-@property(readonly) NSString *cacheName;
-@property <NSFetchedResultsControllerDelegate> *delegate;
-@property(readonly) NSFetchRequest *fetchRequest;
-@property(readonly) NSArray *fetchedObjects;
-@property(readonly) NSManagedObjectContext *managedObjectContext;
-@property(readonly) NSArray *sectionIndexTitles;
-@property(readonly) NSString *sectionNameKeyPath;
-@property(readonly) NSArray *sections;
+@property(readonly) NSString * cacheName;
+@property <NSFetchedResultsControllerDelegate> * delegate;
+@property(readonly) NSFetchRequest * fetchRequest;
+@property(readonly) NSArray * fetchedObjects;
+@property(readonly) NSManagedObjectContext * managedObjectContext;
+@property(readonly) NSArray * sectionIndexTitles;
+@property(readonly) NSString * sectionNameKeyPath;
+@property(readonly) NSArray * sections;
 
 + (id)_CoreDataSectionCachesPath;
-+ (NSUInteger)_insertIndexForObject:(id)arg1 inArray:(id)arg2 lowIdx:(NSUInteger)arg3 highIdx:(NSUInteger)arg4 sortDescriptors:(id)arg5;
++ (unsigned int)_insertIndexForObject:(id)arg1 inArray:(id)arg2 lowIdx:(unsigned int)arg3 highIdx:(unsigned int)arg4 sortDescriptors:(id)arg5;
 + (void)deleteCacheWithName:(id)arg1;
 + (void)initialize;
 
@@ -59,9 +59,9 @@
 - (void)_dumpSectionInfo;
 - (id)_fetchedObjectsArrayOfObjectIDs;
 - (BOOL)_hasFetchedObjects;
-- (NSUInteger)_indexOfFetchedID:(id)arg1;
-- (id)_indexPathForIndex:(NSUInteger)arg1;
-- (void)_insertObjectInFetchedObjects:(id)arg1 atIndex:(NSUInteger)arg2;
+- (unsigned int)_indexOfFetchedID:(id)arg1;
+- (id)_indexPathForIndex:(unsigned int)arg1;
+- (void)_insertObjectInFetchedObjects:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)_keyPathContainsNonPersistedProperties:(id)arg1;
 - (void)_makeMutableFetchedObjects;
 - (void)_managedObjectContextDidChange:(id)arg1;
@@ -73,12 +73,12 @@
 - (void)_preprocessDeletedObjects:(id)arg1 deletesInfo:(id)arg2 sectionsWithDeletes:(id)arg3;
 - (void)_preprocessInsertedObjects:(id)arg1 insertsInfo:(id)arg2 newSectionNames:(id)arg3;
 - (void)_preprocessUpdatedObjects:(id)arg1 insertsInfo:(id)arg2 deletesInfo:(id)arg3 updatesInfo:(id)arg4 sectionsWithDeletes:(id)arg5 newSectionNames:(id)arg6 treatAsRefreshes:(BOOL)arg7;
-- (void)_removeObjectInFetchedObjectsAtIndex:(NSUInteger)arg1;
+- (void)_removeObjectInFetchedObjectsAtIndex:(unsigned int)arg1;
 - (id)_resolveSectionIndexTitleForSectionName:(id)arg1;
 - (BOOL)_restoreCachedSectionInfo;
 - (id)_sectionCachePath;
 - (id)_sectionNameForObject:(id)arg1;
-- (NSUInteger)_sectionNumberForIndex:(NSUInteger)arg1;
+- (unsigned int)_sectionNumberForIndex:(unsigned int)arg1;
 - (void)_updateCachedStoreInfo;
 - (void)_updateSectionOffsetsStartingAtSection:(id)arg1;
 - (id)cacheName;
@@ -91,7 +91,7 @@
 - (id)managedObjectContext;
 - (id)objectAtIndexPath:(id)arg1;
 - (BOOL)performFetch:(id*)arg1;
-- (NSInteger)sectionForSectionIndexTitle:(id)arg1 atIndex:(NSInteger)arg2;
+- (int)sectionForSectionIndexTitle:(id)arg1 atIndex:(int)arg2;
 - (id)sectionIndexTitleForSectionName:(id)arg1;
 - (id)sectionIndexTitles;
 - (id)sectionNameKeyPath;

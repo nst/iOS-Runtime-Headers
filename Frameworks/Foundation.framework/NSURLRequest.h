@@ -11,7 +11,7 @@
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
 + (double)defaultTimeoutInterval;
-+ (id)requestWithURL:(id)arg1 cachePolicy:(NSUInteger)arg2 timeoutInterval:(double)arg3;
++ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (id)requestWithURL:(id)arg1;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
@@ -38,23 +38,23 @@
 - (id)_web_HTTPReferrer;
 - (BOOL)_web_isConditionalRequest;
 - (id)allHTTPHeaderFields;
-- (NSUInteger)cachePolicy;
+- (unsigned int)cachePolicy;
 - (id)contentDispositionEncodingFallbackArray;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithURL:(id)arg1 cachePolicy:(NSUInteger)arg2 timeoutInterval:(double)arg3;
+- (id)initWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)mainDocumentURL;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)networkServiceType;
+- (unsigned int)networkServiceType;
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKPlayer, UIImageView, UILabel;
+@class GKPlayer, NSString, UIImageView, UILabel;
 
 @interface GKFriendRequestAlertView : UIAlertView {
     UILabel *_aliasLabel;
@@ -10,8 +10,8 @@
     GKPlayer *_player;
 }
 
-@property(readonly) GKPlayer *player;
-@property(retain) NSString *request;
+@property(readonly) GKPlayer * player;
+@property(retain) NSString * request;
 
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1;

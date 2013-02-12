@@ -2,20 +2,22 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLAppletElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *align;
-@property(copy) NSString *alt;
-@property(copy) NSString *archive;
-@property(copy) NSString *code;
-@property(copy) NSString *codeBase;
-@property(copy) NSString *height;
-@property(copy) NSString *name;
-@property(copy) NSString *object;
-@property(copy) NSString *width;
-@property NSInteger hspace;
-@property NSInteger vspace;
+@property(copy) NSString * align;
+@property(copy) NSString * alt;
+@property(copy) NSString * archive;
+@property(copy) NSString * code;
+@property(copy) NSString * codeBase;
+@property(copy) NSString * height;
+@property int hspace;
+@property(copy) NSString * name;
+@property(copy) NSString * object;
+@property int vspace;
+@property(copy) NSString * width;
 
 - (id)align;
 - (id)alt;
@@ -23,7 +25,7 @@
 - (id)code;
 - (id)codeBase;
 - (id)height;
-- (NSInteger)hspace;
+- (int)hspace;
 - (id)name;
 - (id)object;
 - (void)setAlign:(id)arg1;
@@ -32,13 +34,13 @@
 - (void)setCode:(id)arg1;
 - (void)setCodeBase:(id)arg1;
 - (void)setHeight:(id)arg1;
-- (void)setHspace:(NSInteger)arg1;
+- (void)setHspace:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setObject:(id)arg1;
-- (void)setVspace:(NSInteger)arg1;
+- (void)setVspace:(int)arg1;
 - (void)setWidth:(id)arg1;
 - (BOOL)showsTapHighlight;
-- (NSInteger)vspace;
+- (int)vspace;
 - (id)width;
 
 @end

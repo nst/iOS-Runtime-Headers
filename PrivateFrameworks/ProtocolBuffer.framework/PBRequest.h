@@ -5,7 +5,7 @@
 @interface PBRequest : PBCodable {
 }
 
-- (NSUInteger)requestTypeCode;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
 
 @end

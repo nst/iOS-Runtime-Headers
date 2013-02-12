@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMCSSRuleList, DOMMediaList;
+
 @interface DOMCSSMediaRule : DOMCSSRule {
 }
 
-@property(retain,readonly) DOMCSSRuleList *cssRules;
-@property(retain,readonly) DOMMediaList *media;
+@property(retain,readonly) DOMCSSRuleList * cssRules;
+@property(retain,readonly) DOMMediaList * media;
 
 - (id)cssRules;
-- (void)deleteRule:(NSUInteger)arg1;
-- (NSUInteger)insertRule:(id)arg1 :(NSUInteger)arg2;
-- (NSUInteger)insertRule:(id)arg1 index:(NSUInteger)arg2;
+- (void)deleteRule:(unsigned int)arg1;
+- (unsigned int)insertRule:(id)arg1 :(unsigned int)arg2;
+- (unsigned int)insertRule:(id)arg1 index:(unsigned int)arg2;
 - (id)media;
 
 @end

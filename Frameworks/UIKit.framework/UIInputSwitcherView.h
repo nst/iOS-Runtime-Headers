@@ -17,13 +17,13 @@
     struct CGPoint { 
         float x; 
         float y; 
-    NSInteger m_currentInputModeIndex;
-    NSInteger m_firstVisibleRow;
-    NSInteger m_mode;
+    int m_currentInputModeIndex;
+    int m_firstVisibleRow;
+    int m_mode;
     } m_point;
     float m_pointerOffset;
     } m_referenceRect;
-    NSInteger m_scrollDirection;
+    int m_scrollDirection;
     double m_scrollStartTime;
     NSTimer *m_scrollTimer;
     BOOL m_scrollable;
@@ -31,10 +31,10 @@
     UIView *m_selExtraView;
     UIView *m_shadowView;
     UITableView *m_table;
-    NSInteger m_visibleRows;
+    int m_visibleRows;
 }
 
-@property(readonly) NSInteger mode;
+@property(readonly) int mode;
 
 + (void)_initializeSafeCategory;
 + (id)activeInstance;
@@ -49,10 +49,10 @@
 - (void)fadeWithDelay:(double)arg1;
 - (id)font;
 - (void)hide;
-- (NSInteger)indexForIndexPath:(id)arg1;
+- (int)indexForIndexPath:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isVisible;
-- (NSInteger)mode;
+- (int)mode;
 - (id)nextInputMode;
 - (id)previousInputMode;
 - (void)removeFromSuperview;
@@ -72,7 +72,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

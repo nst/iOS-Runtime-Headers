@@ -3,8 +3,8 @@
  */
 
 @interface VMURangeArray : NSObject <NSCopying> {
-    NSUInteger _count;
-    NSUInteger _max;
+    unsigned int _count;
+    unsigned int _max;
     struct _VMURange { unsigned long long x1; unsigned long long x2; } *_ranges;
     BOOL _sorted;
 }
@@ -12,24 +12,24 @@
 - (void)addRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)addRanges:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)indexForLocation:(unsigned long long)arg1;
+- (unsigned int)indexForLocation:(unsigned long long)arg1;
 - (id)init;
-- (id)initWithRanges:(const struct _VMURange { unsigned long long x1; unsigned long long x2; }*)arg1 count:(NSUInteger)arg2;
-- (void)insertRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 atIndex:(NSUInteger)arg2;
+- (id)initWithRanges:(const struct _VMURange { unsigned long long x1; unsigned long long x2; }*)arg1 count:(unsigned int)arg2;
+- (void)insertRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 atIndex:(unsigned int)arg2;
 - (BOOL)intersectsLocation:(unsigned long long)arg1;
 - (BOOL)intersectsRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })largestRange;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })largestSubrangeNotExcludedBySelfForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 andLargerThan:(unsigned long long)arg2 startIndex:(NSUInteger*)arg3;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })largestSubrangeNotExcludedBySelfForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 andLargerThan:(unsigned long long)arg2 startIndex:(unsigned int*)arg3;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeAtIndex:(NSUInteger)arg1;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeAtIndex:(unsigned int)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeForLocation:(unsigned long long)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; }*)ranges;
 - (void)removeAllRanges;
-- (void)removeRangeAtIndex:(NSUInteger)arg1;
-- (void)setCapacity:(NSUInteger)arg1;
+- (void)removeRangeAtIndex:(unsigned int)arg1;
+- (void)setCapacity:(unsigned int)arg1;
 - (void)sort;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })subrangeNotExcludedBySelfForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned long long)sumLengths;

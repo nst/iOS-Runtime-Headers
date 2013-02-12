@@ -6,7 +6,7 @@
     struct __CFDictionary { } *_map;
 }
 
-- (NSUInteger*)_createIndexesWithSize:(NSUInteger*)arg1;
+- (unsigned int*)_createIndexesWithSize:(unsigned int*)arg1;
 - (id)_initAndDeepCopyIndexMap:(id)arg1;
 - (id)_initWithIndexMap:(id)arg1;
 - (void)addObjectsFromIndexMap:(id)arg1;
@@ -15,8 +15,9 @@
 - (void)dealloc;
 - (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)indexes;
 - (id)init;
-- (id)initWithObjects:(id*)arg1 andIndexes:(NSUInteger*)arg2 count:(unsigned long)arg3;
+- (id)initWithObjects:(id*)arg1 andIndexes:(unsigned int*)arg2 count:(unsigned long)arg3;
 - (id)objectForIndex:(unsigned long)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForIndex:(unsigned long)arg1;

@@ -28,7 +28,7 @@
     BOOL _touchInside;
 }
 
-@property UIEdgeInsets hitRectEdgeInsets;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } hitRectEdgeInsets;
 
 + (void)_initializeSafeCategory;
 

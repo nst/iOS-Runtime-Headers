@@ -3,12 +3,12 @@
  */
 
 @interface AVAssetWriterClientInitiatedTerminalHelper : AVAssetWriterTerminalHelper {
-    NSInteger _terminalStatus;
+    int _terminalStatus;
 }
 
 - (void)cancelWriting;
-- (id)initWithConfigurationState:(id)arg1 terminalStatus:(NSInteger)arg2;
+- (id)initWithConfigurationState:(id)arg1 terminalStatus:(int)arg2;
 - (id)initWithConfigurationState:(id)arg1;
-- (NSInteger)status;
+- (int)status;
 
 @end

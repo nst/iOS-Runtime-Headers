@@ -9,8 +9,8 @@
     NSArray *_payloads;
 }
 
-@property MCProfileServiceProfile *OTAProfile;
-@property(readonly) NSArray *payloads;
+@property MCProfileServiceProfile * OTAProfile;
+@property(readonly) NSArray * payloads;
 
 - (id)OTAProfile;
 - (void)_addObjectsOfClass:(Class)arg1 fromArray:(id)arg2 toArray:(id)arg3;

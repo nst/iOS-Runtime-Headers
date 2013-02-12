@@ -11,8 +11,8 @@
     BOOL _triedGettingNewCredentials;
 }
 
-@property(retain) IMAccount *account;
-@property <CNFRegViewAccountControllerDelegate> *delegate;
+@property(retain) IMAccount * account;
+@property <CNFRegViewAccountControllerDelegate> * delegate;
 
 - (void)_handleTimeout;
 - (void)_setupAccountHandlers;
@@ -23,7 +23,7 @@
 - (void)cancelTapped;
 - (void)dealloc;
 - (id)delegate;
-- (void)doHandoffWithStatus:(NSInteger)arg1 appleId:(id)arg2 password:(id)arg3;
+- (void)doHandoffWithStatus:(int)arg1 appleId:(id)arg2 password:(id)arg3;
 - (id)initWithAccount:(id)arg1;
 - (id)logName;
 - (void)setAccount:(id)arg1;

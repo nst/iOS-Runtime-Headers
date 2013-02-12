@@ -3,16 +3,16 @@
  */
 
 @interface PLBouncingView : UIImageView {
-    NSInteger _captureOrientation;
+    int _captureOrientation;
     BOOL _isFlipped;
 }
 
-@property NSInteger captureOrientation;
+@property int captureOrientation;
 @property BOOL isFlipped;
 
-- (NSInteger)captureOrientation;
+- (int)captureOrientation;
 - (BOOL)isFlipped;
-- (void)setCaptureOrientation:(NSInteger)arg1;
+- (void)setCaptureOrientation:(int)arg1;
 - (void)setIsFlipped:(BOOL)arg1;
 
 @end

@@ -24,7 +24,7 @@
 - (BOOL)hasCurrentSuggestions;
 - (id)initWithController:(id)arg1;
 - (void)setController:(id)arg1;
-- (struct { id x1; NSUInteger x2; })suggestionsForString:(id)arg1 inputIndex:(NSUInteger)arg2;
+- (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (void)textDidChangeInTextArea:(id)arg1 inFrame:(id)arg2;
 - (void)textDidChangeInTextField:(id)arg1 inFrame:(id)arg2;
 - (BOOL)textField:(id)arg1 doCommandBySelector:(SEL)arg2 inFrame:(id)arg3;

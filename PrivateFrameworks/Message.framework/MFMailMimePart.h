@@ -12,7 +12,7 @@
 - (BOOL)_shouldContinueDecodingProcess;
 - (id)availableBodyData;
 - (void)configureFileWrapper:(id)arg1;
-- (id)contentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4 isComplete:(BOOL*)arg5;
+- (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4 isComplete:(BOOL*)arg5;
 - (id)decodeMessageDelivery_status;
 - (id)decodeMessageExternal_body;
 - (id)decodeMessagePartial;
@@ -27,8 +27,8 @@
 - (id)fileWrapperForDecodedObject:(id)arg1 withFileData:(id*)arg2;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
 - (id)htmlContent;
-- (id)htmlContentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2 downloadIfNecessary:(BOOL)arg3;
-- (id)htmlContentToOffset:(NSUInteger)arg1 resultOffset:(NSUInteger*)arg2;
+- (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
+- (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
 - (void)loadMoreHtmlContent;
 - (void)storeData:(id)arg1 inMessage:(id)arg2 isComplete:(BOOL)arg3;
 

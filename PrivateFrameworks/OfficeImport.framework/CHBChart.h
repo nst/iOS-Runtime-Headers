@@ -5,8 +5,8 @@
 @interface CHBChart : NSObject {
 }
 
-+ (NSInteger)emptyCellsPlottedEnumsFrom:(NSInteger)arg1;
-+ (NSInteger)readCHDDisplayBlanksAsEnumFrom:(NSInteger)arg1;
++ (int)emptyCellsPlottedEnumsFrom:(int)arg1;
++ (int)readCHDDisplayBlanksAsEnumFrom:(int)arg1;
 + (void)readWithState:(id)arg1;
 
 @end

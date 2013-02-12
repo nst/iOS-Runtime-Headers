@@ -11,7 +11,7 @@
 
 - (struct __CFString { }*)dataServiceID;
 - (void)dealloc;
-- (struct __CFString { }*)getServiceIDForPDPContext:(NSUInteger)arg1;
+- (struct __CFString { }*)getServiceIDForPDPContext:(unsigned int)arg1;
 - (id)init;
 - (id)interfaceConfigurationValueForKey:(struct __CFString { }*)arg1 serviceID:(struct __CFString { }*)arg2;
 - (unsigned char)lockAndSynchronize;

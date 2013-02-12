@@ -20,14 +20,14 @@
 - (void)executeAndWaitForBlock:(id)arg1;
 - (id)init;
 - (BOOL)isSuspended;
-- (NSInteger)maxConcurrentOperationCount;
+- (int)maxConcurrentOperationCount;
 - (id)name;
-- (NSUInteger)operationCount;
+- (unsigned int)operationCount;
 - (id)operations;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
-- (void)setMaxConcurrentOperationCount:(NSInteger)arg1;
+- (unsigned int)retainCount;
+- (void)setMaxConcurrentOperationCount:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setSuspended:(BOOL)arg1;
 - (void)waitUntilAllOperationsAreFinished;

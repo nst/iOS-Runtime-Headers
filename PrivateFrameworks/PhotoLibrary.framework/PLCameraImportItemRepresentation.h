@@ -13,12 +13,12 @@
     NSString *_path;
 }
 
-@property(retain) ICCameraFile *cameraFile;
-@property(retain) NSDictionary *metadata;
-@property(copy) NSString *path;
+@property(retain) ICCameraFile * cameraFile;
 @property BOOL canRequestMetadata;
 @property BOOL canRequestThumbnail;
 @property BOOL inDatabase;
+@property(retain) NSDictionary * metadata;
+@property(copy) NSString * path;
 
 - (id)cameraFile;
 - (BOOL)canRequestMetadata;

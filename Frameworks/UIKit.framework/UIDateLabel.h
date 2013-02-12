@@ -5,7 +5,7 @@
 @interface UIDateLabel : UILabel {
     BOOL _boldForAllLocales;
     double _date;
-    NSInteger _dateKey;
+    int _dateKey;
 }
 
 @property BOOL boldForAllLocales;
@@ -13,7 +13,7 @@
 + (void)_initializeSafeCategory;
 + (id)defaultFont;
 
-- (NSInteger)_dateKey;
+- (int)_dateKey;
 - (id)_dateLabelCache;
 - (void)_invalidateDateKey;
 - (void)_updateDateStrings;

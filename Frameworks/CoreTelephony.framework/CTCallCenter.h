@@ -14,8 +14,8 @@
     void *_internal;
 }
 
-@property(copy) ? *callEventHandler;
-@property(retain) NSSet *currentCalls;
+@property(copy) id callEventHandler;
+@property(retain) NSSet * currentCalls;
 
 - (void)broadcastCallStateChangesIfNeededWithFailureLogMessage:(id)arg1;
 - (BOOL)calculateCallStateChanges:(id)arg1;

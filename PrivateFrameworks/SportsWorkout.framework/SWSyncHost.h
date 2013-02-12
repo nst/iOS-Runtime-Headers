@@ -9,8 +9,8 @@
     BOOL _secure;
 }
 
-@property(readonly) NSString *hostName;
-@property(readonly) NSString *scheme;
+@property(readonly) NSString * hostName;
+@property(readonly) NSString * scheme;
 @property(getter=isSecure) BOOL secure;
 
 + (id)developmentSyncHost;

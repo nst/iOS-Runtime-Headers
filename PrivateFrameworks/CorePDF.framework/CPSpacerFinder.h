@@ -28,9 +28,9 @@
             float height; 
         } size; 
     struct { 
-        NSUInteger allocatedSize; 
-        NSUInteger size; 
-        NSUInteger count; 
+        unsigned int allocatedSize; 
+        unsigned int size; 
+        unsigned int count; 
         struct { /* ? */ } *stats; 
         struct { /* ? */ } **ordered; 
     struct { struct CGRect { 
@@ -42,7 +42,7 @@
                 float width; 
                 float height; 
             } size; 
-        } x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; NSUInteger x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; NSUInteger x11; NSUInteger x12; NSUInteger x13; NSUInteger x14; struct { 
+        } x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct { 
             float x; 
             float width; 
         } x15; struct { 
@@ -56,8 +56,8 @@
             float width; 
     CPZone *contentZone;
         } x18; float x19; float x20; BOOL x21; BOOL x22; BOOL x23; } *qualityEntries;
-    NSUInteger segmentationCount;
-    struct { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; unsigned char x3; void*x4; void*x5; void*x6; void*x7; void*x8; unsigned long x9; NSInteger x10; in void*x11; void*x12; NSUInteger x13; struct { /* ? */ } *x14; } *segmentations;
+    unsigned int segmentationCount;
+    struct { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; unsigned char x3; void*x4; void*x5; void*x6; void*x7; void*x8; unsigned long x9; int x10; in void*x11; void*x12; unsigned int x13; struct { /* ? */ } *x14; } *segmentations;
     } spacerSequence;
     NSMutableArray *spacers;
     } textBounds;

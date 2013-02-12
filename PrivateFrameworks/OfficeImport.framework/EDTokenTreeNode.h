@@ -7,19 +7,19 @@
 @interface EDTokenTreeNode : NSObject {
     EDTokenTreeNode *mFirstChild;
     EDTokenTreeNode *mSibling;
-    NSUInteger mTokenIndex;
-    NSInteger mTokenType;
+    unsigned int mTokenIndex;
+    int mTokenType;
 }
 
-+ (id)tokenTreeNodeWithIndexAndType:(NSUInteger)arg1 type:(NSInteger)arg2;
++ (id)tokenTreeNodeWithIndexAndType:(unsigned int)arg1 type:(int)arg2;
 
 - (void)dealloc;
 - (id)firstChild;
 - (id)init;
-- (id)initWithIndexAndType:(NSUInteger)arg1 type:(NSInteger)arg2;
+- (id)initWithIndexAndType:(unsigned int)arg1 type:(int)arg2;
 - (void)setFirstChild:(id)arg1;
 - (void)setSibling:(id)arg1;
 - (id)sibling;
-- (NSUInteger)tokenIndex;
+- (unsigned int)tokenIndex;
 
 @end

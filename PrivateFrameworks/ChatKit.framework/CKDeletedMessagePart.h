@@ -5,6 +5,6 @@
 @interface CKDeletedMessagePart : CKMessagePart {
 }
 
-- (NSInteger)type;
+- (int)type;
 
 @end

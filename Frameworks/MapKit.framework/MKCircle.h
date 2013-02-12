@@ -20,8 +20,8 @@
     double _radius;
 }
 
-@property(readonly) ? boundingMapRect;
-@property(readonly) ? coordinate;
+@property(readonly) struct { struct { double x; double y; } origin; struct { double width; double height; } size; } boundingMapRect;
+@property(readonly) struct { double latitude; double longitude; } coordinate;
 @property(readonly) double radius;
 
 + (id)circleWithCenterCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;

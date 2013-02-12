@@ -20,7 +20,7 @@
 - (void)failWithError:(id)arg1;
 - (id)init;
 - (void)loadRequest:(id)arg1;
-- (NSInteger)parseData:(id)arg1;
+- (int)parseData:(id)arg1;
 - (void)requestCategoriesWithDelegate:(id)arg1;
 
 @end

@@ -7,25 +7,29 @@
 
 + (id)sharedMessageCenter;
 
-- (void)acknowledgeIncomingMessageWithId:(NSUInteger)arg1;
-- (void)acknowledgeOutgoingMessageWithId:(NSUInteger)arg1;
+- (void)acknowledgeIncomingMessageWithId:(unsigned int)arg1;
+- (void)acknowledgeOutgoingMessageWithId:(unsigned int)arg1;
 - (id)allIncomingMessages;
 - (id)decodeMessage:(id)arg1;
-- (id)deferredMessageWithId:(NSUInteger)arg1;
+- (id)deferredMessageWithId:(unsigned int)arg1;
 - (id)encodeMessage:(id)arg1;
-- (BOOL)getCharacterCount:(NSInteger*)arg1 andMessageSplitThreshold:(NSInteger*)arg2 forSmsText:(id)arg3;
-- (NSInteger)incomingMessageCount;
-- (id)incomingMessageWithId:(NSUInteger)arg1 telephonyCenter:(struct __CTTelephonyCenter { }*)arg2 isDeferred:(BOOL)arg3;
-- (id)incomingMessageWithId:(NSUInteger)arg1;
+- (BOOL)getCharacterCount:(int*)arg1 andMessageSplitThreshold:(int*)arg2 forSmsText:(id)arg3;
+- (int)incomingMessageCount;
+- (id)incomingMessageWithId:(unsigned int)arg1 telephonyCenter:(struct __CTTelephonyCenter { }*)arg2 isDeferred:(BOOL)arg3;
+- (id)incomingMessageWithId:(unsigned int)arg1;
 - (id)init;
+- (struct { int x1; int x2; })isDeliveryReportsEnabled:(BOOL*)arg1;
 - (BOOL)isMmsConfigured;
 - (BOOL)isMmsEnabled;
-- (struct { NSInteger x1; NSInteger x2; })send:(id)arg1;
-- (struct { NSInteger x1; NSInteger x2; })sendMMS:(id)arg1;
-- (struct { NSInteger x1; NSInteger x2; })sendMMSFromData:(id)arg1 messageId:(NSUInteger)arg2;
+- (struct { int x1; int x2; })send:(id)arg1 withMoreToFollow:(BOOL)arg2;
+- (struct { int x1; int x2; })send:(id)arg1;
+- (struct { int x1; int x2; })sendMMS:(id)arg1;
+- (struct { int x1; int x2; })sendMMSFromData:(id)arg1 messageId:(unsigned int)arg2;
 - (void)sendMessageAsSmsToShortCodeRecipients:(id)arg1 andReplaceData:(id*)arg2;
-- (struct { NSInteger x1; NSInteger x2; })sendSMS:(id)arg1;
+- (struct { int x1; int x2; })sendSMS:(id)arg1 withMoreToFollow:(BOOL)arg2;
+- (BOOL)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3 withMoreToFollow:(BOOL)arg4;
 - (BOOL)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3;
+- (void)setDeliveryReportsEnabled:(BOOL)arg1;
 - (id)statusOfOutgoingMessages;
 
 @end

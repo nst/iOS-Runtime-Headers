@@ -8,26 +8,26 @@
     unsigned int _hasVM : 1;
     unsigned int _retainCount : 29;
     void *_bytes;
-    NSUInteger _capacity;
-    NSUInteger _length;
+    unsigned int _capacity;
+    unsigned int _length;
 }
 
 - (BOOL)_bytesAreVM;
 - (void)_freeBytes;
-- (void)appendBytes:(const void*)arg1 length:(NSUInteger)arg2;
+- (void)appendBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (void)appendData:(id)arg1;
 - (const void*)bytes;
 - (void)dealloc;
 - (void)finalize;
-- (void)increaseLengthBy:(NSUInteger)arg1;
+- (void)increaseLengthBy:(unsigned int)arg1;
 - (id)init;
-- (id)initWithBytes:(void*)arg1 length:(NSUInteger)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
-- (id)initWithCapacity:(NSUInteger)arg1;
-- (id)initWithLength:(NSUInteger)arg1;
-- (NSUInteger)length;
+- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithLength:(unsigned int)arg1;
+- (unsigned int)length;
 - (void*)mutableBytes;
-- (void)replaceBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withBytes:(const void*)arg2;
-- (void)resetBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (void)setLength:(NSUInteger)arg1;
+- (void)replaceBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBytes:(const void*)arg2;
+- (void)resetBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setLength:(unsigned int)arg1;
 
 @end

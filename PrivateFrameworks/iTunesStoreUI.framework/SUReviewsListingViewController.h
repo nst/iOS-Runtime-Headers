@@ -16,7 +16,7 @@
 - (void)dealloc;
 - (void)loadView;
 - (void)reloadData;
-- (void)reloadForChangedRowCount:(NSInteger)arg1;
+- (void)reloadForChangedRowCount:(int)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewWillAppear:(BOOL)arg1;
 

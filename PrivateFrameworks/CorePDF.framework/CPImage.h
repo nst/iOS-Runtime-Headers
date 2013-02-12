@@ -18,9 +18,9 @@
                     float height; 
                 } size; 
             } bounds; 
-            NSUInteger clipIndex; 
-            NSUInteger insertionOrder; 
-        } x1; NSUInteger x2; struct CGPath {} *x3; struct CGPDFStream {} *x4; NSInteger x5; struct CGImage {} *x6; struct CGPDFDictionary {} *x7; union { unsigned char x_8_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_8_1_2; void*x_8_1_3; void*x_8_1_4; void*x_8_1_5; bycopy unsigned int x_8_1_6/* : ? */; void*x_8_1_7; void*x_8_1_8; BOOL x_8_1_9; void*x_8_1_10; } *x8; struct CGAffineTransform { 
+            unsigned int clipIndex; 
+            unsigned int insertionOrder; 
+        } x1; unsigned int x2; struct CGPath {} *x3; struct CGPDFStream {} *x4; int x5; struct CGImage {} *x6; struct CGPDFDictionary {} *x7; union { unsigned char x_8_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_8_1_2; void*x_8_1_3; void*x_8_1_4; void*x_8_1_5; bycopy unsigned int x_8_1_6/* : ? */; void*x_8_1_7; void*x_8_1_8; BOOL x_8_1_9; void*x_8_1_10; } *x8; struct CGAffineTransform { 
             float a; 
             float b; 
             float c; 
@@ -34,9 +34,9 @@
 
 - (void)accept:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (struct CPPDFImage { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; } x1; NSUInteger x2; struct CGPath {} *x3; struct CGPDFStream {} *x4; NSInteger x5; struct CGImage {} *x6; struct CGPDFDictionary {} *x7; union { unsigned char x_8_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_8_1_2; void*x_8_1_3; void*x_8_1_4; void*x_8_1_5; bycopy unsigned int x_8_1_6/* : ? */; void*x_8_1_7; void*x_8_1_8; BOOL x_8_1_9; void*x_8_1_10; } *x8; struct CGAffineTransform { float x_9_1_1; float x_9_1_2; float x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; float x10; }*)imageData;
+- (struct CPPDFImage { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned int x2; struct CGPath {} *x3; struct CGPDFStream {} *x4; int x5; struct CGImage {} *x6; struct CGPDFDictionary {} *x7; union { unsigned char x_8_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_8_1_2; void*x_8_1_3; void*x_8_1_4; void*x_8_1_5; bycopy unsigned int x_8_1_6/* : ? */; void*x_8_1_7; void*x_8_1_8; BOOL x_8_1_9; void*x_8_1_10; } *x8; struct CGAffineTransform { float x_9_1_1; float x_9_1_2; float x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; float x10; }*)imageData;
 - (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithPDFImage:(struct CPPDFImage { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; } x1; NSUInteger x2; struct CGPath {} *x3; struct CGPDFStream {} *x4; NSInteger x5; struct CGImage {} *x6; struct CGPDFDictionary {} *x7; union { unsigned char x_8_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_8_1_2; void*x_8_1_3; void*x_8_1_4; void*x_8_1_5; bycopy unsigned int x_8_1_6/* : ? */; void*x_8_1_7; void*x_8_1_8; BOOL x_8_1_9; void*x_8_1_10; } *x8; struct CGAffineTransform { float x_9_1_1; float x_9_1_2; float x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; float x10; }*)arg1;
+- (id)initWithPDFImage:(struct CPPDFImage { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned int x2; struct CGPath {} *x3; struct CGPDFStream {} *x4; int x5; struct CGImage {} *x6; struct CGPDFDictionary {} *x7; union { unsigned char x_8_1_1; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_8_1_2; void*x_8_1_3; void*x_8_1_4; void*x_8_1_5; bycopy unsigned int x_8_1_6/* : ? */; void*x_8_1_7; void*x_8_1_8; BOOL x_8_1_9; void*x_8_1_10; } *x8; struct CGAffineTransform { float x_9_1_1; float x_9_1_2; float x_9_1_3; float x_9_1_4; float x_9_1_5; float x_9_1_6; } x9; float x10; }*)arg1;
 - (BOOL)isVisible;
 - (void)recomputeRenderedBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })renderedBounds;

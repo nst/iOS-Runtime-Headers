@@ -8,7 +8,7 @@
     SSRequest *_request;
 }
 
-@property(readonly) SSRequest *request;
+@property(readonly) SSRequest * request;
 
 - (void)_beginObservingNotifications;
 - (void)_delayedStartRequest;

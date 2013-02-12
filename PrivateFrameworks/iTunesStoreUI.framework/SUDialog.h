@@ -10,11 +10,11 @@
     ISDialog *_dialog;
 }
 
-@property <SUDialogDelegate> *delegate;
-@property(readonly) ISDialog *dialog;
+@property <SUDialogDelegate> * delegate;
+@property(readonly) ISDialog * dialog;
 
 - (id)_alertView;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

@@ -10,13 +10,15 @@
     struct __CFMachPort { } *_ctServerMachPort;
     struct __CFUUID { } *_ctToken;
     struct __CTCall { } *_currentCallRef;
+    BOOL _isDesignatedServiceProvider;
 }
 
-@property(readonly) NSUInteger callState;
+@property(readonly) unsigned int callState;
 
 + (id)numberToDialForNumber:(id)arg1 dialAssist:(BOOL*)arg2;
 + (id)sharedInstance;
 
+- (void)__handleCallEvent:(id)arg1;
 - (void)_answerCall:(struct __CTCall { }*)arg1;
 - (void)_cleanupMachInfo;
 - (void)_dialRequested:(struct __CFDictionary { }*)arg1;
@@ -26,11 +28,11 @@
 - (void)_hangUpCall:(struct __CTCall { }*)arg1;
 - (BOOL)_reconnectCTServerConnectionIfNecessary;
 - (BOOL)_registerCTRequestService;
-- (void)_setCurrentCallStatus:(NSInteger)arg1;
+- (void)_setCurrentCallStatus:(int)arg1;
 - (BOOL)_setupCTServerConnection;
 - (BOOL)_unregisterCTRequestService;
 - (id)autorelease;
-- (NSUInteger)callState;
+- (unsigned int)callState;
 - (void)dealloc;
 - (id)init;
 - (void)notifyCallConnectedForChat:(id)arg1;
@@ -39,7 +41,7 @@
 - (void)notifyCallStartedForChat:(id)arg1;
 - (void)notifyMissedCallForChat:(id)arg1;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)startWatchingForCTRequests;
 - (void)stopWatchingForCTRequests;
 - (void)updateCallState;

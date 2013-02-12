@@ -2,39 +2,34 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class CMArchiveManager, EDWorkbook, NSMutableArray, NSString, OIXMLDocument, OIXMLElement;
 
 @interface EMWorkbookMapper : CMMapper <CMMapperRoot> {
-     /* Encoded args for previous method: B8@0:4 */
+    boolmIsFirstMappedSheet;
+    boolmIsFrameset;
     EDWorkbook *edWorkbook;
     CMArchiveManager *mArchiver;
     OIXMLElement *mBodyElement;
     NSString *mFileName;
     BOOL mHasPushedFirstSheet;
     BOOL mHasPushedHeader;
-    NSInteger mHeight;
+    int mHeight;
     BOOL mLoadingMessageVisible;
-    NSUInteger mNumberOfMappedSheets;
-    NSUInteger mRealSheetCount;
+    unsigned int mNumberOfMappedSheets;
+    unsigned int mRealSheetCount;
     NSString *mResourceUrlPrefix;
     NSString *mResourceUrlProtocol;
-    NSUInteger mSheetIndex;
+    unsigned int mSheetIndex;
     NSMutableArray *mSheetURLs;
     NSString *mStyleSheetGuid;
     OIXMLDocument *mTabBarDoc;
     NSString *mTabBarURL;
     float mTabPosition;
-    NSInteger mWidth;
+    int mWidth;
     NSMutableArray *mWorksheetGuids;
     NSMutableArray *mWorksheetNames;
     NSMutableArray *mWorksheetUrls;
     OIXMLDocument *mXhtmlDoc;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsFirstMappedSheet;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsFrameset;
 }
 
 + (id)baseDate;
@@ -44,11 +39,11 @@
 + (void)setBaseDate1904:(BOOL)arg1;
 
 - (id)_createMainPageAndReturnFront;
-- (id)_createStringForSheet:(id)arg1 atIndex:(NSUInteger)arg2 withState:(id)arg3 andMapper:(id)arg4;
+- (id)_createStringForSheet:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 andMapper:(id)arg4;
 - (id)_mainPageBack;
-- (void)_pushTabForSheet:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)_pushTabForSheet:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)archiver;
-- (id)blipAtIndex:(NSUInteger)arg1;
+- (id)blipAtIndex:(unsigned int)arg1;
 - (id)createSheetMapperWithEdSheet:(id)arg1;
 - (void)dealloc;
 - (id)documentTitle;
@@ -56,9 +51,9 @@
 - (void)finishMappingWithState:(id)arg1;
 - (BOOL)hasMultipleSheets;
 - (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isMultiPage;
+- (bool)isMultiPage;
 - (void)mapBodyStyleAt:(id)arg1;
-- (void)mapElement:(id)arg1 atIndex:(NSUInteger)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
+- (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
 - (void)setFileName:(id)arg1;
 - (void)startMappingWithState:(id)arg1;

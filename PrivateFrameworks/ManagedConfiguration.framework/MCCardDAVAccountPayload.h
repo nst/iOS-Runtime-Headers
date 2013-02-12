@@ -9,22 +9,22 @@
     NSString *_accountPersistentUUID;
     NSString *_hostname;
     NSString *_password;
-    NSInteger _port;
+    int _port;
     NSString *_principalURL;
     BOOL _useSSL;
     NSString *_username;
 }
 
-@property(readonly) NSString *accountDescription;
-@property(copy) NSString *accountPersistentUUID;
-@property(readonly) NSString *hostname;
-@property(copy) NSString *password;
-@property(readonly) NSString *principalURL;
-@property(copy) NSString *username;
-@property(readonly) NSInteger port;
+@property(readonly) NSString * accountDescription;
+@property(copy) NSString * accountPersistentUUID;
+@property(readonly) NSString * hostname;
+@property(copy) NSString * password;
+@property(readonly) int port;
+@property(readonly) NSString * principalURL;
 @property(readonly) BOOL useSSL;
+@property(copy) NSString * username;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (id)accountDescription;
@@ -34,7 +34,7 @@
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)password;
-- (NSInteger)port;
+- (int)port;
 - (id)principalURL;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (void)setPassword:(id)arg1;

@@ -8,7 +8,7 @@
     WDDocument *mDocument;
     unsigned char mLevel;
     WDListLevel *mListLevel;
-    NSInteger mStartNumber;
+    int mStartNumber;
     BOOL mStartNumberOverridden;
 }
 

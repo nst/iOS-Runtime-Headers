@@ -6,7 +6,7 @@
 
 @interface EKDayViewController : UIViewController <EKDayViewDelegate, EKDayViewDataSource> {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -30,13 +30,13 @@
     NSTimeZone *_timeZone;
 }
 
-@property <EKDayViewControllerDataSource> *dataSource;
-@property <EKDayViewControllerDelegate> *delegate;
-@property(copy) NSDate *selectedDate;
-@property(copy) NSTimeZone *timeZone;
 @property BOOL allowsDaySwitching;
 @property BOOL allowsSelection;
+@property <EKDayViewControllerDataSource> * dataSource;
+@property <EKDayViewControllerDelegate> * delegate;
+@property(copy) NSDate * selectedDate;
 @property BOOL showsBanner;
+@property(copy) NSTimeZone * timeZone;
 
 - (void)_createBannerView;
 - (void)_disposeBannerView;
@@ -45,19 +45,19 @@
 - (BOOL)allowsDaySwitching;
 - (BOOL)allowsSelection;
 - (void)bringEventToFront:(id)arg1;
-- (void)calendarDayBanner:(id)arg1 arrowClicked:(NSInteger)arg2;
+- (void)calendarDayBanner:(id)arg1 arrowClicked:(int)arg2;
 - (id)dataSource;
 - (void)dayView:(id)arg1 didChangeSelectedDate:(id)arg2;
 - (void)dayView:(id)arg1 didSelectItemAtPath:(id)arg2;
 - (double)dayView:(id)arg1 durationForItemPath:(id)arg2;
 - (id)dayView:(id)arg1 endDateForItemPath:(id)arg2;
-- (NSUInteger)dayView:(id)arg1 numberOfEventsInSection:(NSInteger)arg2;
+- (unsigned int)dayView:(id)arg1 numberOfEventsInSection:(int)arg2;
 - (id)dayView:(id)arg1 occurrenceViewForItemPath:(id)arg2;
 - (id)dayView:(id)arg1 startDateForItemPath:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
-- (NSUInteger)firstVisibleSecond;
+- (unsigned int)firstVisibleSecond;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)layoutContainerView:(id)arg1;
 - (void)loadView;
@@ -65,7 +65,7 @@
 - (void)reloadData;
 - (void)scrollEventIntoView:(id)arg1 animated:(BOOL)arg2;
 - (id)selectedDate;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDateGr;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDateGr;
 - (void)setAllowsDaySwitching:(BOOL)arg1;
 - (void)setAllowsSelection:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;

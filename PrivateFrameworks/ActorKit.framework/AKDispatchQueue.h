@@ -5,8 +5,8 @@
 @class NSConditionLock, NSThread;
 
 @interface AKDispatchQueue : NSObject {
-    NSInteger _keventFDs[2];
-    NSInteger _kqueueFD;
+    int _keventFDs[2];
+    int _kqueueFD;
     union qed_queue_u { } *_queue;
     NSConditionLock *_runStateLock;
     NSThread *_thread;

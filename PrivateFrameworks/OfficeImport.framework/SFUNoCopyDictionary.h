@@ -8,10 +8,10 @@
     NSMapTable *m_map;
 }
 
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(NSUInteger)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;

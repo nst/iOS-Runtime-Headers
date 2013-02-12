@@ -2,36 +2,30 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDReference;
 
 @interface EDSharedFormula : EDFormula {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-    NSUInteger mBaseFormulaIndex;
+    unsigned int mBaseFormulaIndex;
     EDReference *mBaseFormulaRange;
-    NSInteger mColumnBaseOrOffset;
-    NSInteger mRowBaseOrOffset;
+    int mColumnBaseOrOffset;
+    int mRowBaseOrOffset;
 }
 
 - (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
-- (NSUInteger)baseFormulaIndex;
+- (unsigned int)baseFormulaIndex;
 - (id)baseFormulaRange;
 - (id)baseFormulaWithRowBlocks:(id)arg1;
-- (NSInteger)columnBaseOrOffset;
+- (int)columnBaseOrOffset;
 - (void)dealloc;
 - (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isBaseFormula;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isSharedFormula;
-- (NSInteger)rowBaseOrOffset;
-- (void)setBaseFormulaIndex:(NSUInteger)arg1;
-- (void)setColumnBaseOrOffset:(NSInteger)arg1;
-- (void)setRowBaseOrOffset:(NSInteger)arg1;
-- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(NSUInteger*)arg2;
-- (void)updateBaseFormulaRangeWithRow:(NSInteger)arg1 column:(NSInteger)arg2;
+- (bool)isBaseFormula;
+- (bool)isSharedFormula;
+- (int)rowBaseOrOffset;
+- (void)setBaseFormulaIndex:(unsigned int)arg1;
+- (void)setColumnBaseOrOffset:(int)arg1;
+- (void)setRowBaseOrOffset:(int)arg1;
+- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
+- (void)updateBaseFormulaRangeWithRow:(int)arg1 column:(int)arg2;
 - (id)warningWithRowBlocks:(id)arg1;
 
 @end

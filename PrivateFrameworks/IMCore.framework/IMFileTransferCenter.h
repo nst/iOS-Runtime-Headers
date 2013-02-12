@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet;
 
 @interface IMFileTransferCenter : NSObject {
     NSMutableDictionary *_accountIDToTransferGUIDsMap;
@@ -14,10 +14,10 @@
     NSMutableArray *_preauthorizedInfos;
 }
 
-@property(readonly) NSDictionary *activeTransfers;
-@property(readonly) NSArray *orderedTransfers;
+@property(readonly) NSDictionary * activeTransfers;
 @property(readonly) BOOL hasActiveFileTransfers;
 @property(readonly) BOOL hasPendingFileTransfers;
+@property(readonly) NSArray * orderedTransfers;
 
 + (Class)fileTransferClass;
 + (void)setTransferCenterClass:(Class)arg1;
@@ -42,7 +42,7 @@
 - (void)acknowledgeAllPendingTransfers;
 - (void)acknowledgePendingTransfer:(id)arg1;
 - (id)activeTransfers;
-- (void)assignTransfer:(id)arg1 toHandle:(id)arg2 securityLevel:(NSInteger)arg3;
+- (void)assignTransfer:(id)arg1 toHandle:(id)arg2 securityLevel:(int)arg3;
 - (void)dealloc;
 - (BOOL)doesLocalURLRequireArchiving:(id)arg1 toHandle:(id)arg2;
 - (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;

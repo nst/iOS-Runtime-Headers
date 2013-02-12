@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKCalloutPopoverViewInternal;
+@class MKCalloutPopoverViewInternal, UIViewController;
 
 @interface MKCalloutPopoverView : UICalloutView {
     MKCalloutPopoverViewInternal *_internal;
 }
 
-@property(retain) UIViewController *contentViewController;
+@property(retain) UIViewController * contentViewController;
 
 + (id)_arrowExtensionKeyFrameAnimation;
 + (id)_arrowRetractionKeyFrameAnimation;

@@ -5,7 +5,7 @@
 @class SFUFileDataRepresentation;
 
 @interface SFUZipArchiveFileDataRepresentation : SFUDataRepresentation <SFUZipArchiveDataRepresentation> {
-    NSInteger mFd;
+    int mFd;
     SFUFileDataRepresentation *mFileRepresentation;
 }
 

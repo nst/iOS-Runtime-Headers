@@ -3,7 +3,7 @@
  */
 
 @interface GMMProjectionProperties : PBCodable {
-    NSInteger _cameraPitchDegreeE6;
+    int _cameraPitchDegreeE6;
     BOOL _hasCameraPitchDegreeE6;
     BOOL _hasHorizontalFovE6;
     BOOL _hasMaxVisiblePitchE6;
@@ -12,16 +12,16 @@
     BOOL _hasProjectionType;
     BOOL _hasTiltPitchDegreeE6;
     BOOL _hasTiltYawDegreeE6;
-    NSInteger _horizontalFovE6;
-    NSInteger _maxVisiblePitchE6;
-    NSInteger _minVisiblePitchE6;
-    NSInteger _panoYawDegreeE6;
-    NSInteger _projectionType;
-    NSInteger _tiltPitchDegreeE6;
-    NSInteger _tiltYawDegreeE6;
+    int _horizontalFovE6;
+    int _maxVisiblePitchE6;
+    int _minVisiblePitchE6;
+    int _panoYawDegreeE6;
+    int _projectionType;
+    int _tiltPitchDegreeE6;
+    int _tiltYawDegreeE6;
 }
 
-@property NSInteger cameraPitchDegreeE6;
+@property int cameraPitchDegreeE6;
 @property(readonly) BOOL hasCameraPitchDegreeE6;
 @property(readonly) BOOL hasHorizontalFovE6;
 @property(readonly) BOOL hasMaxVisiblePitchE6;
@@ -30,15 +30,15 @@
 @property(readonly) BOOL hasProjectionType;
 @property(readonly) BOOL hasTiltPitchDegreeE6;
 @property(readonly) BOOL hasTiltYawDegreeE6;
-@property NSInteger horizontalFovE6;
-@property NSInteger maxVisiblePitchE6;
-@property NSInteger minVisiblePitchE6;
-@property NSInteger panoYawDegreeE6;
-@property NSInteger projectionType;
-@property NSInteger tiltPitchDegreeE6;
-@property NSInteger tiltYawDegreeE6;
+@property int horizontalFovE6;
+@property int maxVisiblePitchE6;
+@property int minVisiblePitchE6;
+@property int panoYawDegreeE6;
+@property int projectionType;
+@property int tiltPitchDegreeE6;
+@property int tiltYawDegreeE6;
 
-- (NSInteger)cameraPitchDegreeE6;
+- (int)cameraPitchDegreeE6;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -50,23 +50,23 @@
 - (BOOL)hasProjectionType;
 - (BOOL)hasTiltPitchDegreeE6;
 - (BOOL)hasTiltYawDegreeE6;
-- (NSInteger)horizontalFovE6;
+- (int)horizontalFovE6;
 - (id)init;
-- (NSInteger)maxVisiblePitchE6;
-- (NSInteger)minVisiblePitchE6;
-- (NSInteger)panoYawDegreeE6;
-- (NSInteger)projectionType;
+- (int)maxVisiblePitchE6;
+- (int)minVisiblePitchE6;
+- (int)panoYawDegreeE6;
+- (int)projectionType;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCameraPitchDegreeE6:(NSInteger)arg1;
-- (void)setHorizontalFovE6:(NSInteger)arg1;
-- (void)setMaxVisiblePitchE6:(NSInteger)arg1;
-- (void)setMinVisiblePitchE6:(NSInteger)arg1;
-- (void)setPanoYawDegreeE6:(NSInteger)arg1;
-- (void)setProjectionType:(NSInteger)arg1;
-- (void)setTiltPitchDegreeE6:(NSInteger)arg1;
-- (void)setTiltYawDegreeE6:(NSInteger)arg1;
-- (NSInteger)tiltPitchDegreeE6;
-- (NSInteger)tiltYawDegreeE6;
+- (void)setCameraPitchDegreeE6:(int)arg1;
+- (void)setHorizontalFovE6:(int)arg1;
+- (void)setMaxVisiblePitchE6:(int)arg1;
+- (void)setMinVisiblePitchE6:(int)arg1;
+- (void)setPanoYawDegreeE6:(int)arg1;
+- (void)setProjectionType:(int)arg1;
+- (void)setTiltPitchDegreeE6:(int)arg1;
+- (void)setTiltYawDegreeE6:(int)arg1;
+- (int)tiltPitchDegreeE6;
+- (int)tiltYawDegreeE6;
 - (void)writeTo:(id)arg1;
 
 @end

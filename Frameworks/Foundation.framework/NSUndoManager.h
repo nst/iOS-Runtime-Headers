@@ -14,7 +14,7 @@
         unsigned int reserved : 27; 
     void *_NSUndoManagerReserved1;
     void *_NSUndoManagerReserved2;
-    NSInteger _disabled;
+    int _disabled;
     } _flags;
     id _proxy;
     id _redoStack;
@@ -48,13 +48,13 @@
 - (void)disableUndoRegistration;
 - (void)enableUndoRegistration;
 - (void)endUndoGrouping;
-- (NSInteger)groupingLevel;
+- (int)groupingLevel;
 - (BOOL)groupsByEvent;
 - (id)init;
 - (BOOL)isRedoing;
 - (BOOL)isUndoRegistrationEnabled;
 - (BOOL)isUndoing;
-- (NSUInteger)levelsOfUndo;
+- (unsigned int)levelsOfUndo;
 - (id)prepareWithInvocationTarget:(id)arg1;
 - (void)redo;
 - (id)redoActionName;
@@ -66,7 +66,7 @@
 - (id)runLoopModes;
 - (void)setActionName:(id)arg1;
 - (void)setGroupsByEvent:(BOOL)arg1;
-- (void)setLevelsOfUndo:(NSUInteger)arg1;
+- (void)setLevelsOfUndo:(unsigned int)arg1;
 - (void)setRunLoopModes:(id)arg1;
 - (void)undo;
 - (id)undoActionName;

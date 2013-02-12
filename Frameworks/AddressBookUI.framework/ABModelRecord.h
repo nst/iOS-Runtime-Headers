@@ -5,7 +5,7 @@
 @class NSArray;
 
 @interface ABModelRecord : NSObject {
-    NSInteger _highlightIndex;
+    int _highlightIndex;
     BOOL _isGroup;
     NSArray *_namePieces;
     void *_record;

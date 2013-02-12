@@ -7,7 +7,7 @@
 @interface NSComplexOrthography : NSOrthography {
     NSString *_dominantScript;
     NSDictionary *_languageMap;
-    NSUInteger _orthographyFlags;
+    unsigned int _orthographyFlags;
 }
 
 + (void)initialize;
@@ -16,6 +16,6 @@
 - (id)dominantScript;
 - (id)initWithDominantScript:(id)arg1 languageMap:(id)arg2;
 - (id)languageMap;
-- (NSUInteger)orthographyFlags;
+- (unsigned int)orthographyFlags;
 
 @end

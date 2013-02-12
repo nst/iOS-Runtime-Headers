@@ -5,13 +5,13 @@
 @class NSString;
 
 @interface AccountSettingsUIAlertConfirmationOptions : NSObject {
-    NSInteger _cancelButtonIndex;
+    int _cancelButtonIndex;
     NSString *_dataclass;
-    NSInteger _deleteDataButtonIndex;
+    int _deleteDataButtonIndex;
     BOOL _enableAction;
-    NSInteger _keepDataButtonIndex;
-    NSInteger _mergeDataButtonIndex;
-    NSInteger _selectedButtonIndex;
+    int _keepDataButtonIndex;
+    int _mergeDataButtonIndex;
+    int _selectedButtonIndex;
     NSString *_tag;
 }
 

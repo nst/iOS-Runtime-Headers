@@ -3,16 +3,16 @@
  */
 
 @interface OADIndexedColor : OADColor {
-    NSInteger mIndex;
+    int mIndex;
 }
 
-+ (id)indexedColorWithIndex:(NSInteger)arg1;
++ (id)indexedColorWithIndex:(int)arg1;
 
 - (id)colorFromPalette:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
-- (NSInteger)index;
-- (id)initWithIndex:(NSInteger)arg1;
+- (unsigned int)hash;
+- (int)index;
+- (id)initWithIndex:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 
 @end

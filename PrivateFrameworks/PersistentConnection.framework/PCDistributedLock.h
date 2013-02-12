@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface PCDistributedLock : NSObject <NSLocking> {
-    NSInteger _fd;
+    int _fd;
     NSString *_path;
 }
 

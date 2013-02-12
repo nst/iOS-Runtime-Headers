@@ -16,12 +16,12 @@
     CNFAudioPlayer *_player;
 }
 
-@property NSObject<CNFConferenceManagerDelegate> *delegate;
-@property(retain,readonly) CNFAudioDeviceController *deviceController;
-@property(retain,readonly) CNFDisplayController *displayController;
-@property(retain) NSURL *originationURL;
+@property NSObject<CNFConferenceManagerDelegate> * delegate;
+@property(retain,readonly) CNFAudioDeviceController * deviceController;
+@property(retain,readonly) CNFDisplayController * displayController;
 @property BOOL initialMuteState;
 @property BOOL isOutgoingInvitation;
+@property(retain) NSURL * originationURL;
 
 - (void)_beginAudioInterruption;
 - (void)_delayedPlayOutgoingRingSound;
@@ -48,30 +48,29 @@
 - (void)_setupDeviceController;
 - (void)_stopSounds;
 - (void)_tearDownConferenceManager;
-- (void)animateOutFinished;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (id)audioDeviceView:(id)arg1 deviceAtIndex:(NSInteger)arg2 isActive:(BOOL*)arg3;
+- (id)audioDeviceView:(id)arg1 deviceAtIndex:(int)arg2 isActive:(BOOL*)arg3;
 - (void)audioDeviceView:(id)arg1 eventOccurred:(id)arg2;
-- (void)audioDeviceView:(id)arg1 selectedItem:(NSInteger)arg2;
-- (void)audioDeviceView:(id)arg1 selectedMute:(NSInteger)arg2;
-- (NSInteger)audioDeviceViewNumberOfDevices:(id)arg1;
+- (void)audioDeviceView:(id)arg1 selectedItem:(int)arg2;
+- (void)audioDeviceView:(id)arg1 selectedMute:(int)arg2;
+- (int)audioDeviceViewNumberOfDevices:(id)arg1;
 - (BOOL)audioIsMuted;
 - (void)audioPlayerDidStopPlaying:(id)arg1;
 - (BOOL)auxiliaryAudioRoutesAvailable;
-- (void)conferenceDisplayController:(id)arg1 cameraToggleWithReason:(NSUInteger)arg2;
-- (void)conferenceDisplayController:(id)arg1 cancelCallFailureRecoveryWithReason:(NSUInteger)arg2;
-- (void)conferenceDisplayController:(id)arg1 didFinishAnimatingCallEndWithReason:(NSUInteger)arg2;
-- (void)conferenceDisplayController:(id)arg1 endCallWithReason:(NSUInteger)arg2;
-- (void)conferenceDisplayController:(id)arg1 endWithReason:(NSUInteger)arg2;
-- (void)conferenceDisplayController:(id)arg1 muteConferenceWithReason:(NSUInteger)arg2;
-- (void)conferenceDisplayController:(id)arg1 retryVideoConferenceInvitationWithReason:(NSUInteger)arg2;
-- (void)conferenceDisplayController:(id)arg1 returnToVoiceCallWithReason:(NSUInteger)arg2;
+- (void)conferenceDisplayController:(id)arg1 cameraToggleWithReason:(unsigned int)arg2;
+- (void)conferenceDisplayController:(id)arg1 cancelCallFailureRecoveryWithReason:(unsigned int)arg2;
+- (void)conferenceDisplayController:(id)arg1 didFinishAnimatingCallEndWithReason:(unsigned int)arg2;
+- (void)conferenceDisplayController:(id)arg1 endCallWithReason:(unsigned int)arg2;
+- (void)conferenceDisplayController:(id)arg1 endWithReason:(unsigned int)arg2;
+- (void)conferenceDisplayController:(id)arg1 muteConferenceWithReason:(unsigned int)arg2;
+- (void)conferenceDisplayController:(id)arg1 retryVideoConferenceInvitationWithReason:(unsigned int)arg2;
 - (void)conferenceDisplayControllerEndedWhileSuspending:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)deviceController;
 - (id)displayController;
 - (void)hangUpConferenceOnScreenLock;
+- (id)initWithDelegate:(id)arg1 displayController:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
 - (BOOL)initialMuteState;
 - (BOOL)isInPhoneCall;
@@ -83,6 +82,7 @@
 - (void)setIsOutgoingInvitation:(BOOL)arg1;
 - (void)setOriginationURL:(id)arg1;
 - (BOOL)shouldDisplayMuteOption;
+- (void)showAcceptCallBarsAnimated:(BOOL)arg1 wasLocked:(BOOL)arg2;
 - (void)showCallBarsAnimated:(BOOL)arg1;
 - (void)startConferenceWithURL:(id)arg1;
 

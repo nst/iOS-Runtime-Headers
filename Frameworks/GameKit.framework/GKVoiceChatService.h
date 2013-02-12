@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class <GKVoiceChatClient>;
+
 @interface GKVoiceChatService : NSObject {
     id _voiceChatService;
 }
 
-@property <GKVoiceChatClient> *client;
+@property <GKVoiceChatClient> * client;
 @property(readonly) float inputMeterLevel;
 @property(getter=isInputMeteringEnabled) BOOL inputMeteringEnabled;
 @property(getter=isMicrophoneMuted) BOOL microphoneMuted;
@@ -18,10 +20,10 @@
 + (void)initialize;
 + (BOOL)isVoIPAllowed;
 
-- (BOOL)acceptCallID:(NSInteger)arg1 error:(id*)arg2;
+- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
 - (id)client;
 - (void)dealloc;
-- (void)denyCallID:(NSInteger)arg1;
+- (void)denyCallID:(int)arg1;
 - (float)inputMeterLevel;
 - (BOOL)isInputMeteringEnabled;
 - (BOOL)isMicrophoneMuted;

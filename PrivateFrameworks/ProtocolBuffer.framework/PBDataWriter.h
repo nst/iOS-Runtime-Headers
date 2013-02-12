@@ -11,29 +11,29 @@
 - (id)data;
 - (void)dealloc;
 - (id)init;
-- (NSInteger)write:(const char *)arg1 maxLength:(NSUInteger)arg2;
+- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (void)writeBOOL:(BOOL)arg1 forTag:(unsigned short)arg2;
 - (void)writeBareVarint:(long long)arg1;
 - (void)writeBigEndianFixed16:(unsigned short)arg1;
-- (void)writeBigEndianFixed32:(NSUInteger)arg1;
+- (void)writeBigEndianFixed32:(unsigned int)arg1;
 - (void)writeBigEndianShortThenString:(id)arg1;
 - (void)writeData:(id)arg1 forTag:(unsigned short)arg2;
 - (BOOL)writeData:(id)arg1;
 - (void)writeDouble:(double)arg1 forTag:(unsigned short)arg2;
-- (void)writeFixed32:(NSUInteger)arg1 forTag:(unsigned short)arg2;
+- (void)writeFixed32:(unsigned int)arg1 forTag:(unsigned short)arg2;
 - (void)writeFixed64:(unsigned long long)arg1 forTag:(unsigned short)arg2;
 - (void)writeFloat:(float)arg1 forTag:(unsigned short)arg2;
-- (void)writeInt32:(NSInteger)arg1 forTag:(unsigned short)arg2;
+- (void)writeInt32:(int)arg1 forTag:(unsigned short)arg2;
 - (void)writeInt64:(long long)arg1 forTag:(unsigned short)arg2;
 - (void)writeInt8:(BOOL)arg1;
 - (void)writeProtoBuffer:(id)arg1;
-- (void)writeSfixed32:(NSInteger)arg1 forTag:(unsigned short)arg2;
+- (void)writeSfixed32:(int)arg1 forTag:(unsigned short)arg2;
 - (void)writeSfixed64:(long long)arg1 forTag:(unsigned short)arg2;
-- (void)writeSint32:(NSInteger)arg1 forTag:(unsigned short)arg2;
+- (void)writeSint32:(int)arg1 forTag:(unsigned short)arg2;
 - (void)writeSint64:(long long)arg1 forTag:(unsigned short)arg2;
 - (void)writeString:(id)arg1 forTag:(unsigned short)arg2;
 - (void)writeTag:(unsigned short)arg1 andType:(unsigned char)arg2;
-- (void)writeUint32:(NSUInteger)arg1 forTag:(NSUInteger)arg2;
+- (void)writeUint32:(unsigned int)arg1 forTag:(unsigned int)arg2;
 - (void)writeUint64:(unsigned long long)arg1 forTag:(unsigned long long)arg2;
 
 @end

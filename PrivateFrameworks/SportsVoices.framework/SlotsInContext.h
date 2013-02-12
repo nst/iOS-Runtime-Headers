@@ -5,18 +5,19 @@
 @class SimpleSlotSequence, SlotSequence;
 
 @interface SlotsInContext : NSObject {
-    SlotSequence *postContext;
-    SlotSequence *preContext;
-    SlotSequence *preContextReversed;
-    SimpleSlotSequence *significantSlots;
+    SlotSequence *_postContext;
+    SlotSequence *_preContext;
+    SlotSequence *_preContextReversed;
+    SimpleSlotSequence *_significantSlots;
 }
 
-@property(readonly) SimpleSlotSequence *significantSlots;
+@property(readonly) SimpleSlotSequence * significantSlots;
 
 + (id)instanceFromPlist:(id)arg1;
 + (id)slotsInContextWithSignificantSlotSequence:(id)arg1;
 + (id)test;
 
+- (void)dealloc;
 - (id)description;
 - (id)indicesOfOccurrencesInTarget:(id)arg1;
 - (id)initFromPlist:(id)arg1;

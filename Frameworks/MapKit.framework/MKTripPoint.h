@@ -5,35 +5,35 @@
 @class CLHeading, CLLocation, NSError;
 
 @interface MKTripPoint : NSObject {
-    NSInteger _commandType;
+    int _commandType;
     NSError *_error;
     CLHeading *_heading;
     CLLocation *_location;
-    NSInteger _locationSource;
-    NSInteger _pointType;
+    int _locationSource;
+    int _pointType;
 }
 
-@property(retain) NSError *error;
-@property(retain) CLHeading *heading;
-@property(retain) CLLocation *location;
-@property NSInteger commandType;
-@property NSInteger locationSource;
-@property NSInteger pointType;
+@property int commandType;
+@property(retain) NSError * error;
+@property(retain) CLHeading * heading;
+@property(retain) CLLocation * location;
+@property int locationSource;
+@property int pointType;
 
 + (id)tripPoint;
 
-- (NSInteger)commandType;
+- (int)commandType;
 - (void)dealloc;
 - (id)error;
 - (id)heading;
 - (id)location;
-- (NSInteger)locationSource;
-- (NSInteger)pointType;
-- (void)setCommandType:(NSInteger)arg1;
+- (int)locationSource;
+- (int)pointType;
+- (void)setCommandType:(int)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeading:(id)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setLocationSource:(NSInteger)arg1;
-- (void)setPointType:(NSInteger)arg1;
+- (void)setLocationSource:(int)arg1;
+- (void)setPointType:(int)arg1;
 
 @end

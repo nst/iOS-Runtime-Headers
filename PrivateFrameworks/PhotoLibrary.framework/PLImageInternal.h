@@ -14,9 +14,9 @@
 - (id)_data;
 - (void)dealloc;
 - (BOOL)hasFullSizeImage;
-- (NSInteger)imageID;
-- (id)imageWithFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
-- (id)imageWithFormat:(NSInteger)arg1;
+- (int)imageID;
+- (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
+- (id)imageWithFormat:(int)arg1;
 - (id)pathForImageFile;
 - (id)title;
 

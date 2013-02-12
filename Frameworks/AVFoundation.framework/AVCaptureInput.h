@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInputInternal;
+@class AVCaptureInputInternal, NSArray;
 
 @interface AVCaptureInput : NSObject {
     AVCaptureInputInternal *_inputInternal;
 }
 
-@property(readonly) NSArray *ports;
+@property(readonly) NSArray * ports;
 
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;

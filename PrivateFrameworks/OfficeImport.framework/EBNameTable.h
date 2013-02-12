@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface EBNameTable : NSObject {
-     /* Encoded args for previous method: ^{XlNameTable=^^?{CsSimpleHeapVector<XlRecord>={ChVector<XlRecord*>=^^{XlRecord}^^{XlRecord}III}}[14{OcText=^^?iIII**B}]}16@0:4@8@12 */
-     /* Encoded args for previous method: @48@0:4^{XlName=^^?{XlHeader=IsC}^{XlString}^{XlString}^{XlString}^{XlString}^{XlString}*ssssCCBBBBBBBi}8{OcText=^^?iIII**B}12@44 */
-     /* Encoded args for previous method: ^{XlName=^^?{XlHeader=IsC}^{XlString}^{XlString}^{XlString}^{XlString}^{XlString}*ssssCCBBBBBBBi}16@0:4@8@12 */
 }
 
-+ (struct XlNameTable { int (**x1)(); struct CsSimpleHeapVector<XlRecord> { struct ChVector<XlRecord*> { struct XlRecord {} **x_1_2_1; struct XlRecord {} **x_1_2_2; NSUInteger x_1_2_3; NSUInteger x_1_2_4; NSUInteger x_1_2_5; } x_2_1_1; } x2; struct OcText { int (**x_3_1_1)(); NSInteger x_3_1_2; NSUInteger x_3_1_3; NSUInteger x_3_1_4; NSUInteger x_3_1_5; char *x_3_1_6; char *x_3_1_7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_3_1_8; } x3[14]; }*)createXlNameTableFromNamesCollection:(id)arg1 state:(id)arg2;
-+ (struct XlName { int (**x1)(); struct XlHeader { NSUInteger x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlString {} *x3; struct XlString {} *x4; struct XlString {} *x5; struct XlString {} *x6; struct XlString {} *x7; char *x8; short x9; short x10; short x11; short x12; unsigned char x13; unsigned char x14; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; NSInteger x22; }*)xlNameFromEDName:(id)arg1 state:(id)arg2;
-+ (id)edNameFromXlName:(struct XlName { int (**x1)(); struct XlHeader { NSUInteger x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlString {} *x3; struct XlString {} *x4; struct XlString {} *x5; struct XlString {} *x6; struct XlString {} *x7; char *x8; short x9; short x10; short x11; short x12; unsigned char x13; unsigned char x14; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; NSInteger x22; }*)arg1 name:(struct OcText { int (**x1)(); NSInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; char *x6; char *x7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x8; })arg2 state:(id)arg3;
++ (struct XlNameTable { int (**x1)(); struct CsSimpleHeapVector<XlRecord> { struct ChVector<XlRecord*> { struct XlRecord {} **x_1_2_1; struct XlRecord {} **x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_2_1_1; } x2; struct OcText { int (**x_3_1_1)(); int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; char *x_3_1_6; char *x_3_1_7; boolx_3_1_8; } x3[14]; }*)createXlNameTableFromNamesCollection:(id)arg1 state:(id)arg2;
++ (struct XlName { int (**x1)(); struct XlHeader { unsigned int x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlString {} *x3; struct XlString {} *x4; struct XlString {} *x5; struct XlString {} *x6; struct XlString {} *x7; char *x8; short x9; short x10; short x11; short x12; unsigned char x13; unsigned char x14; boolx15; boolx16; boolx17; boolx18; boolx19; boolx20; boolx21; int x22; }*)xlNameFromEDName:(id)arg1 state:(id)arg2;
++ (id)edNameFromXlName:(struct XlName { int (**x1)(); struct XlHeader { unsigned int x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; struct XlString {} *x3; struct XlString {} *x4; struct XlString {} *x5; struct XlString {} *x6; struct XlString {} *x7; char *x8; short x9; short x10; short x11; short x12; unsigned char x13; unsigned char x14; boolx15; boolx16; boolx17; boolx18; boolx19; boolx20; boolx21; int x22; }*)arg1 name:(struct OcText { int (**x1)(); int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; char *x7; boolx8; })arg2 state:(id)arg3;
 + (void)readFromState:(id)arg1;
 
 @end

@@ -13,9 +13,9 @@
     BOOL mHasOriginType;
     BOOL mHasPointType;
     BOOL mHasRotationCenter;
-    NSInteger mOriginType;
+    int mOriginType;
     NSString *mPath;
-    NSInteger mPointType;
+    int mPointType;
     } mRotationCenter;
 }
 
@@ -26,14 +26,14 @@
 - (BOOL)hasPath;
 - (BOOL)hasPointType;
 - (BOOL)hasRotationCenter;
-- (NSInteger)originType;
+- (int)originType;
 - (id)path;
-- (NSInteger)pointType;
+- (int)pointType;
 - (struct CGPoint { float x1; float x2; })rotationCenter;
 - (void)setAngle:(double)arg1;
-- (void)setOriginType:(NSInteger)arg1;
+- (void)setOriginType:(int)arg1;
 - (void)setPath:(id)arg1;
-- (void)setPointType:(NSInteger)arg1;
+- (void)setPointType:(int)arg1;
 - (void)setRotationCenter:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

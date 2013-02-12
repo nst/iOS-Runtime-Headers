@@ -10,8 +10,8 @@
     SUInputSource *_inputSource;
 }
 
-@property(readonly) SUFilteringDataConsumer *dataConsumer;
-@property(readonly) SUInputSource *inputSource;
+@property(readonly) SUFilteringDataConsumer * dataConsumer;
+@property(readonly) SUInputSource * inputSource;
 
 - (void)close;
 - (id)dataConsumer;
@@ -20,8 +20,8 @@
 - (BOOL)hasBytesAvailable;
 - (id)initWithInputSource:(id)arg1 dataConsumer:(id)arg2;
 - (id)inputSource;
-- (NSUInteger)minimumReadLength;
+- (unsigned int)minimumReadLength;
 - (BOOL)open:(id*)arg1;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2 error:(id*)arg3;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
 
 @end

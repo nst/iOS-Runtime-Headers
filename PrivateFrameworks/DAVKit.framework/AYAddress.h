@@ -7,33 +7,33 @@
 
 + (id)IPV4AddressesFromDataAddresses:(id)arg1;
 + (id)_createAddressFromSockaddrBuffer:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
-+ (id)addressOfLocalFromSocket:(NSInteger)arg1;
-+ (id)addressOfPeerFromSocket:(NSInteger)arg1;
++ (id)addressOfLocalFromSocket:(int)arg1;
++ (id)addressOfPeerFromSocket:(int)arg1;
 + (id)addressWithData:(id)arg1;
 + (id)addressWithString:(id)arg1;
 + (id)addressesFromDataAddresses:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
-+ (NSUInteger)netMaskForIPV4Address:(id)arg1;
++ (unsigned int)netMaskForIPV4Address:(id)arg1;
 + (void)startListeningToNetworkConfiguration;
 + (void)stopListeningToNetworkConfiguration;
 + (void)updateNetmasksFromStoreWithChangedKeys:(id)arg1;
 
-- (id)URLToAddressWithScheme:(id)arg1 andPort:(NSInteger)arg2 URI:(id)arg3;
-- (id)URLToAddressWithScheme:(id)arg1 andPort:(NSInteger)arg2;
+- (id)URLToAddressWithScheme:(id)arg1 andPort:(int)arg2 URI:(id)arg3;
+- (id)URLToAddressWithScheme:(id)arg1 andPort:(int)arg2;
 - (id)URLToAddressWithScheme:(id)arg1;
 - (id)addressAsData;
 - (id)addressAsString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)dumpInternal;
-- (void)getAddressAsSockAddr:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 length:(NSInteger*)arg2;
+- (void)getAddressAsSockAddr:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 length:(int*)arg2;
 - (id)initAddressWithData:(id)arg1;
-- (id)initAddressWithLocalFromSocket:(NSInteger)arg1;
-- (id)initAddressWithPeerFromSocket:(NSInteger)arg1;
+- (id)initAddressWithLocalFromSocket:(int)arg1;
+- (id)initAddressWithPeerFromSocket:(int)arg1;
 - (id)initAddressWithString:(id)arg1;
 - (BOOL)isLocalAddressConnectingTo:(id)arg1;
-- (NSInteger)port;
+- (int)port;
 - (id)type;
 
 @end

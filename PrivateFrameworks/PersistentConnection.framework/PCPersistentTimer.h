@@ -11,10 +11,10 @@
     double _lastUpdateTime;
     double _minimumEarlyFireProportion;
     struct IONotificationPort { } *_pmNotificationPort;
-    NSUInteger _pmNotifier;
-    NSUInteger _pmRootDomainConnect;
+    unsigned int _pmNotifier;
+    unsigned int _pmRootDomainConnect;
     struct __CFRunLoopSource { } *_pmRunLoopSource;
-    NSUInteger _powerAssertionID;
+    unsigned int _powerAssertionID;
     NSTimer *_preventSleepRunLoopTimer;
     NSDate *_scheduledWakeDate;
     SEL _selector;
@@ -27,8 +27,8 @@
     id _userInfo;
 }
 
-@property(readonly) NSString *loggingIdentifier;
 @property BOOL disableSystemWaking;
+@property(readonly) NSString * loggingIdentifier;
 @property double minimumEarlyFireProportion;
 
 + (double)currentMachTimeInterval;
@@ -38,7 +38,7 @@
 - (void)_fireTimerFired;
 - (id)_initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 triggerOnGMTChange:(BOOL)arg6;
 - (double)_nextForcedAlignmentAbsoluteTime;
-- (void)_powerChangedMessageType:(NSUInteger)arg1 notificationID:(void*)arg2;
+- (void)_powerChangedMessageType:(unsigned int)arg1 notificationID:(void*)arg2;
 - (void)_preventSleepFired;
 - (void)_setPowerMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
 - (void)_setSignificantTimeChangeMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;

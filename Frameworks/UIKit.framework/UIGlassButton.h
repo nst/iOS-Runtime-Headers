@@ -8,19 +8,19 @@
     UIColor *_tintColor;
 }
 
-@property(retain) UIColor *tintColor;
+@property(retain) UIColor * tintColor;
 
-- (id)backgroundImageForState:(NSUInteger)arg1;
+- (id)backgroundImageForState:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBackgroundImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)setBackgroundImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setTintColor:(id)arg1;
-- (void)setTitleColor:(id)arg1 forStates:(NSUInteger)arg2;
-- (void)setTitleShadowColor:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)setTitleColor:(id)arg1 forStates:(unsigned int)arg2;
+- (void)setTitleShadowColor:(id)arg1 forStates:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tintColor;
-- (id)titleColorForState:(NSUInteger)arg1;
+- (id)titleColorForState:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)titleShadowColorForState:(NSUInteger)arg1;
+- (id)titleShadowColorForState:(unsigned int)arg1;
 
 @end

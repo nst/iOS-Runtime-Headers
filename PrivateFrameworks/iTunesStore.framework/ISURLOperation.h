@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISDataProvider, ISURLRequest, NSCountedSet, NSMutableData, NSURLConnection, NSURLRequest, NSURLResponse, SSAuthenticationContext;
+@class <ISURLOperationDelegate>, ISDataProvider, NSCountedSet, NSMutableData, NSURLConnection, NSURLRequest, NSURLResponse, SSAuthenticationContext, SSMutableURLRequestProperties, SSURLRequestProperties;
 
 @interface ISURLOperation : ISOperation {
     NSURLRequest *_activeURLRequest;
@@ -11,19 +11,19 @@
     long long _contentLength;
     NSMutableData *_dataBuffer;
     ISDataProvider *_dataProvider;
-    NSInteger _networkRetryCount;
+    int _networkRetryCount;
     NSCountedSet *_redirectURLs;
-    ISURLRequest *_request;
+    SSMutableURLRequestProperties *_requestProperties;
     NSURLResponse *_response;
     BOOL _shouldSetCookies;
 }
 
-@property(getter=_shouldSetCookies) BOOL _shouldSetCookies; /* unknown property attribute: S_setShouldSetCookies: */
-@property(retain) SSAuthenticationContext *authenticationContext;
-@property(retain) ISDataProvider *dataProvider;
-@property <ISURLOperationDelegate> *delegate;
-@property(copy) ISURLRequest *request;
-@property(retain) NSURLResponse *response;
+@property(getter=_shouldSetCookies,setter=_setShouldSetCookies:) BOOL _shouldSetCookies;
+@property(retain) SSAuthenticationContext * authenticationContext;
+@property(retain) ISDataProvider * dataProvider;
+@property <ISURLOperationDelegate> * delegate;
+@property(copy) SSURLRequestProperties * requestProperties;
+@property(retain) NSURLResponse * response;
 
 + (id)copyUserAgent;
 
@@ -42,7 +42,7 @@
 - (id)_networkConstraints;
 - (void)_networkTypeChanged:(id)arg1;
 - (BOOL)_preflightWithURL:(id)arg1 error:(id*)arg2;
-- (id)_request;
+- (id)_requestProperties;
 - (void)_retry;
 - (void)_run;
 - (BOOL)_runRequestWithURL:(id)arg1;
@@ -72,11 +72,13 @@
 - (id)init;
 - (id)newRequestWithURL:(id)arg1;
 - (id)request;
+- (id)requestProperties;
 - (id)response;
 - (void)run;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDataProvider:(id)arg1;
 - (void)setRequest:(id)arg1;
+- (void)setRequestProperties:(id)arg1;
 - (void)setResponse:(id)arg1;
 - (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
 

@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)createCachedImageWithImageContents:(void*)arg1 orientation:(NSInteger)arg2 metadata:(id)arg3 fromSource:(id)arg4 object:(id)arg5;
+- (id)newCachedImageWithImageContents:(void*)arg1 orientation:(int)arg2 metadata:(id)arg3 fromSource:(id)arg4 object:(id)arg5;
 
 @end

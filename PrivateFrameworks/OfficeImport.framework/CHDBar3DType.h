@@ -2,22 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDBar3DType : CHDBar2DType {
-     /* Encoded args for previous method: B8@0:4 */
-    NSInteger mGapDepth;
-    NSInteger mShapeType;
+    int mGapDepth;
+    int mShapeType;
 }
 
-+ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)is3DType;
++ (bool)is3DType;
 
-- (NSInteger)gapDepth;
+- (int)gapDepth;
 - (id)initWithChart:(id)arg1;
-- (void)setGapDepth:(NSInteger)arg1;
-- (void)setShapeType:(NSInteger)arg1;
-- (NSInteger)shapeType;
+- (void)setGapDepth:(int)arg1;
+- (void)setShapeType:(int)arg1;
+- (int)shapeType;
 
 @end

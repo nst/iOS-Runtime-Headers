@@ -29,7 +29,7 @@
     <VSRecognitionSessionDelegate> *_delegate;
     id _handlingThread;
     void *_keepAlive;
-    NSUInteger _keywordPhase;
+    unsigned int _keywordPhase;
     NSString *_languageID;
     double _levelInterval;
     NSString *_modelIdentifier;
@@ -72,8 +72,8 @@
 - (BOOL)isFinished;
 - (BOOL)isRecognizing;
 - (BOOL)isValid;
-- (id)keywordAtIndex:(NSInteger)arg1;
-- (NSInteger)keywordCount;
+- (id)keywordAtIndex:(int)arg1;
+- (int)keywordCount;
 - (BOOL)nextActionWillRecognize;
 - (BOOL)nextActionWillTerminateSession;
 - (void)recognitionResultHandlingThread:(id)arg1 didHandleResults:(id)arg2 nextAction:(id)arg3;
@@ -83,11 +83,11 @@
 - (BOOL)setDebugDumpEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInputLevelUpdateInterval:(double)arg1;
-- (void)setKeywordPhase:(NSUInteger)arg1;
+- (void)setKeywordPhase:(unsigned int)arg1;
 - (BOOL)setNextRecognitionAudioInputPath:(id)arg1;
 - (BOOL)setNextRecognitionRequiresReset:(BOOL)arg1;
 - (void)setPerformRecognitionHandlerActions:(BOOL)arg1;
-- (BOOL)setPreferredEngine:(NSInteger)arg1;
+- (BOOL)setPreferredEngine:(int)arg1;
 - (void)setSensitiveActionsEnabled:(BOOL)arg1;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeaking:(BOOL)arg2 withError:(id)arg3;
 - (id)spokenFeedbackAttributedString;

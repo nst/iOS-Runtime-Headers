@@ -2,37 +2,42 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class <GQZArchiveInputStream>;
 
 @interface GQZEntryInflateInputStream : NSObject <GQZEntryInputStream> {
     struct z_stream_s { 
         char *next_in; 
-        NSUInteger avail_in; 
-        NSUInteger total_in; 
+        unsigned int avail_in; 
+        unsigned int total_in; 
         char *next_out; 
-        NSUInteger avail_out; 
-        NSUInteger total_out; 
+        unsigned int avail_out; 
+        unsigned int total_out; 
         char *msg; 
         struct internal_state {} *state; 
         int (*zalloc)(); 
         int (*zfree)(); 
         void *opaque; 
-        NSInteger data_type; 
-        NSUInteger adler; 
-        NSUInteger reserved; 
-    NSUInteger mCalculatedCrc;
-    NSUInteger mCheckCrc;
+        int data_type; 
+        unsigned int adler; 
+        unsigned int reserved; 
+    unsigned int mCalculatedCrc;
+    unsigned int mCheckCrc;
     long long mEnd;
     <GQZArchiveInputStream> *mInput;
     long long mOffset;
     char *mOutBuffer;
-    NSUInteger mOutBufferSize;
+    unsigned int mOutBufferSize;
     } mStream;
 }
 
 - (void)dealloc;
 - (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 input:(id)arg5;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)readToOwnBuffer:(const char **)arg1 size:(NSUInteger*)arg2;
+- (void)readToOwnBuffer:(const char **)arg1 size:(unsigned int*)arg2;
 
 @end

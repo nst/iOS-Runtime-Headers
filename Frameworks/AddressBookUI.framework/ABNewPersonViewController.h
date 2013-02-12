@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABNewPersonViewControllerDelegate>;
+@class <ABNewPersonViewControllerDelegate>, <ABStyleProvider>, ABGroupWrapper, ABPersonViewControllerHelper;
 
 @interface ABNewPersonViewController : UIViewController {
     id _helper;
@@ -11,21 +11,21 @@
     void *_recordForNewPerson;
 }
 
-@property void *addressBook;
-@property void *displayedPerson;
-@property(readonly) ABPersonViewControllerHelper *helper;
-@property <ABNewPersonViewControllerDelegate> *newPersonViewDelegate;
-@property void *parentGroup;
-@property(retain) ABGroupWrapper *parentGroupWrapper;
-@property(readonly) void *recordForNewPerson;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property void* addressBook;
+@property void* displayedPerson;
+@property(readonly) ABPersonViewControllerHelper * helper;
+@property <ABNewPersonViewControllerDelegate> * newPersonViewDelegate;
+@property void* parentGroup;
+@property(retain) ABGroupWrapper * parentGroupWrapper;
+@property(readonly) void* recordForNewPerson;
 @property BOOL savesNewContactOnSuspend;
 @property BOOL showsCancelButton;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
-- (NSInteger)abViewControllerType;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (int)abViewControllerType;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void*)addressBook;
 - (void)applicationDidResume;
@@ -33,11 +33,13 @@
 - (void)applicationWillTerminate:(id)arg1;
 - (void)attemptSaveAndTellDelegate:(BOOL)arg1;
 - (void)cancel:(id)arg1;
+- (BOOL)ckCanDismissWhenSuspending;
 - (void)dealloc;
 - (void*)displayedPerson;
 - (id)helper;
 - (id)init;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
+- (id)initWithStyle:(int)arg1;
 - (void)loadView;
 - (id)newPersonViewDelegate;
 - (void*)parentGroup;
@@ -64,6 +66,6 @@
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

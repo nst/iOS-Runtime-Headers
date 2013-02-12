@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptFunction;
+@class NSString, SUScriptFunction, WebScriptObject;
 
 @interface SUScriptDocumentInteractionController : SUScriptObject {
     SUScriptFunction *_cancelFunction;
     SUScriptFunction *_openWithFunction;
 }
 
-@property(copy) NSString *UTI;
-@property(retain) WebScriptObject *cancelFunction;
-@property(retain) WebScriptObject *openWithFunction;
+@property(copy) NSString * UTI;
+@property(retain) WebScriptObject * cancelFunction;
+@property(retain) WebScriptObject * openWithFunction;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

@@ -5,6 +5,6 @@
 @interface PLPhotoScrollerNavigationItem : UINavigationItem {
 }
 
-- (NSInteger)barStyle;
+- (int)barStyle;
 
 @end

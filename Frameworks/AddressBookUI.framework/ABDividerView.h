@@ -2,22 +2,34 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>;
+@class ABSteadfastLineView, UIColor;
 
 @interface ABDividerView : UIView {
+    UIColor *_defaultColor;
+    BOOL _disappearsOnHighlight;
     BOOL _isVertical;
-    <ABStyleProvider> *_styleProvider;
+    ABSteadfastLineView *_line;
+    UIColor *_shadowColor;
+    ABSteadfastLineView *_shadowLine;
 }
 
-@property(retain) <ABStyleProvider> *styleProvider;
+@property(retain) UIColor * defaultColor;
+@property BOOL disappearsOnHighlight;
+@property(retain) UIColor * shadowColor;
 @property(getter=isVertical) BOOL vertical;
 
 - (void)dealloc;
-- (BOOL)isHighlighted;
+- (id)defaultColor;
+- (BOOL)disappearsOnHighlight;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isVertical;
+- (void)layoutSubviews;
+- (void)setDefaultColor:(id)arg1;
+- (void)setDisappearsOnHighlight:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setStyleProvider:(id)arg1;
+- (void)setShadowColor:(id)arg1;
 - (void)setVertical:(BOOL)arg1;
-- (id)styleProvider;
+- (id)shadowColor;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

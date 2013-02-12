@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class NSDictionary;
+
 @interface AVVideoOutputSettings : AVOutputSettings {
 }
 
-@property(readonly) NSDictionary *videoSettingsDictionary;
+@property(readonly) NSDictionary * videoSettingsDictionary;
 
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
@@ -14,10 +16,10 @@
 + (id)videoOutputSettingsWithVideoSettingsDictionary:(id)arg1;
 
 - (id)compatibleMediaTypes;
-- (NSInteger)height;
+- (int)height;
 - (id)initWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
 - (id)videoSettingsDictionary;
-- (NSInteger)width;
+- (int)width;
 
 @end

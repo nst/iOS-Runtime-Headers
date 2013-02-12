@@ -7,35 +7,35 @@
 @interface UIKeyboardKeyView : UIView {
     float m_cachedFontSize;
     float m_cachedXHeight;
-    NSInteger m_labelAdjustmentX;
-    NSInteger m_labelAdjustmentY;
+    int m_labelAdjustmentX;
+    int m_labelAdjustmentY;
     NSString *m_labelID;
-    NSInteger m_mode;
-    NSInteger m_orientation;
-    NSInteger m_state;
-    NSInteger m_style;
-    NSInteger m_type;
+    int m_mode;
+    int m_orientation;
+    int m_state;
+    int m_style;
+    int m_type;
 }
 
-@property(retain) NSString *labelID;
-@property NSInteger mode;
-@property NSInteger state;
-@property NSInteger style;
-@property NSInteger type;
+@property(retain) NSString * labelID;
+@property int mode;
+@property int state;
+@property int style;
+@property int type;
 
 - (struct __CFData { }*)createCacheKey;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)image;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(NSInteger)arg2 style:(NSInteger)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 style:(int)arg3;
 - (id)labelID;
-- (NSInteger)mode;
+- (int)mode;
 - (void)setLabelID:(id)arg1;
-- (void)setMode:(NSInteger)arg1;
-- (void)setState:(NSInteger)arg1;
-- (void)setStyle:(NSInteger)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)state;
-- (NSInteger)style;
-- (NSInteger)type;
+- (void)setMode:(int)arg1;
+- (void)setState:(int)arg1;
+- (void)setStyle:(int)arg1;
+- (void)setType:(int)arg1;
+- (int)state;
+- (int)style;
+- (int)type;
 
 @end

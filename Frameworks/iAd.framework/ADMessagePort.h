@@ -11,10 +11,10 @@
     struct __CFRunLoopSource { } *_runLoopSource;
 }
 
-@property <ADMessagePortDelegate> *delegate;
-@property(readonly) NSString *name;
-@property(readonly) __CFMessagePort *port;
-@property(readonly) __CFRunLoopSource *runLoopSource;
+@property <ADMessagePortDelegate> * delegate;
+@property(readonly) NSString * name;
+@property(readonly) struct __CFMessagePort { }* port;
+@property(readonly) struct __CFRunLoopSource { }* runLoopSource;
 
 + (void)addRemoteInstance:(id)arg1;
 + (id)remoteInstanceNamed:(id)arg1;

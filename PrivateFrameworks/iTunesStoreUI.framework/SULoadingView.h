@@ -2,26 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIActivityIndicatorView, UILabel;
+@class UIActivityIndicatorView, UIColor, UILabel;
 
 @interface SULoadingView : UIView {
     UILabel *_label;
     UIActivityIndicatorView *_progressIndicator;
-    NSUInteger _style;
+    unsigned int _style;
 }
 
-@property UIColor *textColor;
-@property UIColor *textShadowColor;
-@property NSInteger activityIndicatorStyle;
+@property int activityIndicatorStyle;
+@property UIColor * textColor;
+@property UIColor * textShadowColor;
 
 - (void)_updateLabel:(id)arg1;
-- (NSInteger)activityIndicatorStyle;
+- (int)activityIndicatorStyle;
 - (id)createTextLabel;
 - (void)dealloc;
 - (id)init;
 - (id)newProgressIndicator;
-- (void)setActivityIndicatorStyle:(NSInteger)arg1;
-- (void)setStyle:(NSUInteger)arg1;
+- (void)setActivityIndicatorStyle:(int)arg1;
+- (void)setStyle:(unsigned int)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTextShadowColor:(id)arg1;
 - (id)textColor;

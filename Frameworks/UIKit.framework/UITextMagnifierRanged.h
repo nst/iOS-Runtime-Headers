@@ -12,7 +12,7 @@
         float x; 
         float y; 
     } _animationPoint;
-    NSInteger _autoscrollDirections;
+    int _autoscrollDirections;
     UIView *_autoscrollRenderer;
     } _magnificationPoint;
     float _magnifierOffsetFromTouch;
@@ -23,12 +23,12 @@
     UITextMagnifierTimeWeightedPoint *_weightedPoint;
 }
 
-@property(retain) UIView *target;
-@property(retain) UIResponder<UITextInput> *text;
-@property CGPoint animationPoint;
-@property CGPoint magnificationPoint;
-@property(readonly) CGPoint terminalPoint;
+@property struct CGPoint { float x; float y; } animationPoint;
+@property struct CGPoint { float x; float y; } magnificationPoint;
+@property(retain) UIView * target;
+@property(readonly) struct CGPoint { float x; float y; } terminalPoint;
 @property(readonly) BOOL terminalPointPlacedCarefully;
+@property(retain) UIResponder<UITextInput> * text;
 
 + (id)sharedRangedMagnifier;
 
@@ -39,15 +39,15 @@
 - (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
 - (void)dealloc;
 - (void)detectLostTouches:(id)arg1;
-- (NSInteger)horizontalMovement;
-- (NSInteger)horizontalMovementAtTime:(double)arg1;
+- (int)horizontalMovement;
+- (int)horizontalMovementAtTime:(double)arg1;
 - (id)initWithDefaultFrame;
 - (struct CGPoint { float x1; float x2; })magnificationPoint;
 - (float)offsetFromMagnificationPoint;
 - (void)postAutoscrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)remove;
 - (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setAutoscrollDirections:(NSInteger)arg1;
+- (void)setAutoscrollDirections:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setNeedsDisplay;

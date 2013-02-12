@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
+@class NSString, UIImage;
 
 @interface SUScriptButtonNativeObject : SUScriptNativeObject {
     BOOL _loading;
@@ -10,17 +10,17 @@
     NSString *_subtitle;
 }
 
-@property(retain) UIImage *image;
-@property(readonly) NSString *styleString;
-@property(retain) NSString *subtitle;
-@property(retain) NSString *title;
-@property(readonly) NSInteger buttonType;
+@property(readonly) int buttonType;
+@property(retain) UIImage * image;
 @property(getter=isLoading) BOOL loading;
+@property(readonly) NSString * styleString;
+@property(retain) NSString * subtitle;
+@property(retain) NSString * title;
 
 + (id)objectWithDefaultButtonForScriptObject:(id)arg1;
 
 - (void)buttonAction:(id)arg1;
-- (NSInteger)buttonType;
+- (int)buttonType;
 - (void)dealloc;
 - (BOOL)isLoading;
 - (void)setLoading:(BOOL)arg1;

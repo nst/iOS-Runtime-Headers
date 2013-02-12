@@ -6,31 +6,31 @@
 
 @interface UIKeyboardRotationState : NSObject {
     UIInputViewAnimationStyle *_animationStyle;
-    NSInteger _postRotationState;
+    int _postRotationState;
     BOOL _requiresNewState;
-    NSInteger _state;
-    NSInteger _targetOrientation;
+    int _state;
+    int _targetOrientation;
 }
 
-@property(retain) UIInputViewAnimationStyle *animationStyle;
-@property NSInteger postRotationState;
+@property(retain) UIInputViewAnimationStyle * animationStyle;
+@property int postRotationState;
 @property BOOL requiresNewState;
-@property NSInteger state;
-@property NSInteger targetOrientation;
+@property int state;
+@property int targetOrientation;
 
-+ (id)stateWithState:(NSInteger)arg1 targetOrientation:(NSInteger)arg2;
++ (id)stateWithState:(int)arg1 targetOrientation:(int)arg2;
 
 - (id)animationStyle;
 - (void)dealloc;
-- (NSInteger)postRotationState;
+- (int)postRotationState;
 - (BOOL)requiresNewState;
 - (void)setAnimationStyle:(id)arg1;
-- (void)setPostRotationState:(NSInteger)arg1 animationStyle:(id)arg2;
-- (void)setPostRotationState:(NSInteger)arg1;
+- (void)setPostRotationState:(int)arg1 animationStyle:(id)arg2;
+- (void)setPostRotationState:(int)arg1;
 - (void)setRequiresNewState:(BOOL)arg1;
-- (void)setState:(NSInteger)arg1;
-- (void)setTargetOrientation:(NSInteger)arg1;
-- (NSInteger)state;
-- (NSInteger)targetOrientation;
+- (void)setState:(int)arg1;
+- (void)setTargetOrientation:(int)arg1;
+- (int)state;
+- (int)targetOrientation;
 
 @end

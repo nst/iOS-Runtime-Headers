@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLLIElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *type;
-@property NSInteger value;
+@property(copy) NSString * type;
+@property int value;
 
 - (void)setType:(id)arg1;
-- (void)setValue:(NSInteger)arg1;
+- (void)setValue:(int)arg1;
 - (id)type;
-- (NSInteger)value;
+- (int)value;
 
 @end

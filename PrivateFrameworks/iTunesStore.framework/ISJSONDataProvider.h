@@ -3,13 +3,13 @@
  */
 
 @interface ISJSONDataProvider : ISDataProvider {
-    NSUInteger _options;
+    unsigned int _options;
 }
 
-@property NSUInteger parserOptions;
+@property unsigned int parserOptions;
 
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
-- (NSUInteger)parserOptions;
-- (void)setParserOptions:(NSUInteger)arg1;
+- (unsigned int)parserOptions;
+- (void)setParserOptions:(unsigned int)arg1;
 
 @end

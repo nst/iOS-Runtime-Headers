@@ -11,7 +11,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    NSInteger _autoscrollDirections;
+    int _autoscrollDirections;
     UIView *_autoscrollRenderer;
     } _magnificationPoint;
     UIView *_magnifierRenderer;
@@ -22,13 +22,13 @@
     float _yOffset;
 }
 
-@property(retain) UIView *target;
-@property(retain) UIResponder<UITextInput> *text;
-@property CGPoint animationPoint;
-@property CGPoint magnificationPoint;
-@property CGPoint offset;
-@property(readonly) CGPoint terminalPoint;
+@property struct CGPoint { float x; float y; } animationPoint;
+@property struct CGPoint { float x; float y; } magnificationPoint;
+@property struct CGPoint { float x; float y; } offset;
+@property(retain) UIView * target;
+@property(readonly) struct CGPoint { float x; float y; } terminalPoint;
 @property(readonly) BOOL terminalPointPlacedCarefully;
+@property(retain) UIResponder<UITextInput> * text;
 @property float yOffset;
 
 + (id)sharedCaretMagnifier;
@@ -46,7 +46,7 @@
 - (void)postAutoscrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)remove;
 - (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setAutoscrollDirections:(NSInteger)arg1;
+- (void)setAutoscrollDirections:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setNeedsDisplay;

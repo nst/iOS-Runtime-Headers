@@ -24,7 +24,7 @@
     OADTextSpacing *mAfterSpacing;
     unsigned char mAlign;
     OADTextSpacing *mBeforeSpacing;
-    NSInteger mBulletCharSet;
+    int mBulletCharSet;
     OADBulletColor *mBulletColor;
     OADBulletFont *mBulletFont;
     OADBulletProperties *mBulletProperties;
@@ -33,23 +33,23 @@
     unsigned char mFontAlign;
     double mIndent;
     double mLeftMargin;
-    NSInteger mLevel;
+    int mLevel;
     OADTextSpacing *mLineSpacing;
     double mRightMargin;
     NSMutableArray *mTabStops;
     unsigned char mWrap;
 }
 
-@property NSInteger bulletCharSet;
+@property int bulletCharSet;
 @property BOOL hasBulletCharSet;
 
 + (id)defaultProperties;
 
 - (id)addTabStop;
 - (id)afterSpacing;
-- (NSInteger)align;
+- (int)align;
 - (id)beforeSpacing;
-- (NSInteger)bulletCharSet;
+- (int)bulletCharSet;
 - (id)bulletColor;
 - (id)bulletFont;
 - (id)bulletProperties;
@@ -57,7 +57,7 @@
 - (void)clearTabStops;
 - (void)dealloc;
 - (double)defaultTab;
-- (NSInteger)fontAlign;
+- (int)fontAlign;
 - (BOOL)hasAfterSpacing;
 - (BOOL)hasAlign;
 - (BOOL)hasBeforeSpacing;
@@ -78,7 +78,7 @@
 - (BOOL)hasRightMargin;
 - (BOOL)hasTabStops;
 - (BOOL)hasWrap;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (double)indent;
 - (id)init;
 - (id)initWithDefaults;
@@ -87,35 +87,35 @@
 - (BOOL)isLatinLineBreak;
 - (BOOL)isRightToLeft;
 - (double)leftMargin;
-- (NSInteger)level;
+- (int)level;
 - (id)lineSpacing;
 - (double)nonOveridenLeftMargin;
 - (void)overrideWithProperties:(id)arg1;
 - (void)removeUnnecessaryOverrides;
 - (double)rightMargin;
 - (void)setAfterSpacing:(id)arg1;
-- (void)setAlign:(NSInteger)arg1;
+- (void)setAlign:(int)arg1;
 - (void)setBeforeSpacing:(id)arg1;
-- (void)setBulletCharSet:(NSInteger)arg1;
+- (void)setBulletCharSet:(int)arg1;
 - (void)setBulletColor:(id)arg1;
 - (void)setBulletFont:(id)arg1;
 - (void)setBulletProperties:(id)arg1;
 - (void)setBulletSize:(id)arg1;
 - (void)setDefaultTab:(double)arg1;
-- (void)setFontAlign:(NSInteger)arg1;
+- (void)setFontAlign:(int)arg1;
 - (void)setHasBulletCharSet:(BOOL)arg1;
 - (void)setIndent:(double)arg1;
 - (void)setIsHangingPunctuation:(BOOL)arg1;
 - (void)setIsLatinLineBreak:(BOOL)arg1;
 - (void)setIsRightToLeft:(BOOL)arg1;
 - (void)setLeftMargin:(double)arg1;
-- (void)setLevel:(NSInteger)arg1;
+- (void)setLevel:(int)arg1;
 - (void)setLineSpacing:(id)arg1;
 - (void)setRightMargin:(double)arg1;
-- (void)setWrap:(NSInteger)arg1;
-- (id)tabStopAtIndex:(NSUInteger)arg1;
-- (NSUInteger)tabStopCount;
+- (void)setWrap:(int)arg1;
+- (id)tabStopAtIndex:(unsigned int)arg1;
+- (unsigned int)tabStopCount;
 - (id)tabStops;
-- (NSInteger)wrap;
+- (int)wrap;
 
 @end

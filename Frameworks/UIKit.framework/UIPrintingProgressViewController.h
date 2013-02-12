@@ -15,16 +15,16 @@
 - (void)cancelProgress;
 - (void)cleanupAfterDismiss;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)doneProgress;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 printingProgress:(id)arg3;
 - (double)rotationDelay;
 - (void)setDonePrinting:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)show;
 - (BOOL)visible;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -18,7 +18,7 @@
 - (id)initLockWithURL:(id)arg1;
 - (id)initRelockWithSession:(id)arg1 path:(id)arg2 lockToken:(id)arg3;
 - (id)initRelockWithURL:(id)arg1 lockToken:(id)arg2;
-- (NSInteger)lockTimeout;
+- (int)lockTimeout;
 - (id)lockToken;
 
 @end

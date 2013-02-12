@@ -6,8 +6,8 @@
 
 @interface UITabBarSwappableImageView : UIView {
     id _alternate;
-    NSInteger _buttonTag;
-    NSInteger _currentAnimation;
+    int _buttonTag;
+    int _currentAnimation;
     BOOL _flipped;
     float _scale;
     BOOL _showAlternate;
@@ -15,7 +15,7 @@
     id _value;
 }
 
-- (void)animateImage:(float)arg1 withTabBar:(id)arg2 withTag:(NSInteger)arg3;
+- (void)animateImage:(float)arg1 withTabBar:(id)arg2 withTag:(int)arg3;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithImage:(id)arg1 alternateImage:(id)arg2;

@@ -12,10 +12,10 @@
     BOOL _titleViewIsCustom;
 }
 
-@property(retain) UIBarButtonItem *buttonItem;
-@property SUNavigationItem *navigationItem;
-@property(retain) UIView *titleView;
+@property(retain) UIBarButtonItem * buttonItem;
 @property(getter=isCustomTitleView) BOOL customTitleView;
+@property SUNavigationItem * navigationItem;
+@property(retain) UIView * titleView;
 
 - (id)buttonItem;
 - (void)dealloc;

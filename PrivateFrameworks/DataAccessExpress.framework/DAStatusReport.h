@@ -13,24 +13,24 @@
     NSNumber *_failedNetworkRequests;
     NSNumber *_failedProtocolRequests;
     NSNumber *_falseMoreAvailableCount;
-    NSInteger _numHBIDataPoints;
+    int _numHBIDataPoints;
     NSString *_persistentUUID;
     NSNumber *_successfulRequests;
     NSNumber *_timeInNetworking;
     NSNumber *_timeSpan;
 }
 
-@property(retain) NSString *accountType;
-@property(retain) NSNumber *averageHBI;
-@property(retain) NSString *displayName;
-@property(retain) NSNumber *downloadedElements;
-@property(retain) NSNumber *failedNetworkRequests;
-@property(retain) NSNumber *failedProtocolRequests;
-@property(retain) NSNumber *falseMoreAvailableCount;
-@property(retain) NSString *persistentUUID;
-@property(retain) NSNumber *successfulRequests;
-@property(retain) NSNumber *timeInNetworking;
-@property(retain) NSNumber *timeSpan;
+@property(retain) NSString * accountType;
+@property(retain) NSNumber * averageHBI;
+@property(retain) NSString * displayName;
+@property(retain) NSNumber * downloadedElements;
+@property(retain) NSNumber * failedNetworkRequests;
+@property(retain) NSNumber * failedProtocolRequests;
+@property(retain) NSNumber * falseMoreAvailableCount;
+@property(retain) NSString * persistentUUID;
+@property(retain) NSNumber * successfulRequests;
+@property(retain) NSNumber * timeInNetworking;
+@property(retain) NSNumber * timeSpan;
 
 - (id)accountType;
 - (id)averageHBI;
@@ -48,8 +48,8 @@
 - (void)noteFailedNetworkRequest;
 - (void)noteFailedProtocolRequest;
 - (void)noteFalseMoreAvailableResponse;
-- (void)noteNewHBIDataPoint:(NSInteger)arg1;
-- (void)noteSuccessfulRequestWithNumDownloadedElements:(NSInteger)arg1;
+- (void)noteNewHBIDataPoint:(int)arg1;
+- (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1;
 - (void)noteTimeSpentInNetworking:(double)arg1;
 - (id)persistentUUID;
 - (void)setAccountType:(id)arg1;

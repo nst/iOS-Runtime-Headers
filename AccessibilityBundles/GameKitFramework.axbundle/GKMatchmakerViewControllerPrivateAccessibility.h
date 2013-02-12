@@ -7,9 +7,9 @@
 
 + (void)_initializeSafeCategory;
 
+- (void)finishWithMatch:(id)arg1;
 - (void)matchmakingDidCancel;
 - (void)removeMatchingView;
-- (void)returnMatch:(id)arg1;
 - (void)setupForGeniusMatchmaking;
 - (void)showMatchingView;
 

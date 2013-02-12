@@ -16,7 +16,7 @@
     } _fileRange;
     NSDate *_lastModifiedTimestamp;
     char *_mappedAddress;
-    NSUInteger _mappedSize;
+    unsigned int _mappedSize;
     NSString *_path;
     NSMutableDictionary *_sharedCacheMap;
 }

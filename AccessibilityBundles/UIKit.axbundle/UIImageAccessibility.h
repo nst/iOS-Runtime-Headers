@@ -12,6 +12,10 @@
 + (id)imageWithContentsOfFile:(id)arg1;
 + (id)kitImageNamed:(id)arg1;
 
+- (id)_bezeledImageWithShadowRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 fillRed:(float)arg5 green:(float)arg6 blue:(float)arg7 alpha:(float)arg8 drawShadow:(BOOL)arg9;
+- (id)_doubleBezeledImageWithExteriorShadowRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 interiorShadowRed:(float)arg5 green:(float)arg6 blue:(float)arg7 alpha:(float)arg8 fillRed:(float)arg9 green:(float)arg10 blue:(float)arg11 alpha:(float)arg12;
+- (id)_flatImageWithWhite:(float)arg1 alpha:(float)arg2;
+- (id)_imageScaledToProportion:(float)arg1 interpolationQuality:(int)arg2;
 - (void)dealloc;
 - (id)initWithContentsOfFile:(id)arg1 cache:(BOOL)arg2;
 - (id)initWithContentsOfFile:(id)arg1;

@@ -25,8 +25,8 @@
 - (void)refreshCalendar:(void*)arg1;
 - (void)refreshListingForStore:(void*)arg1;
 - (void)refreshStore:(void*)arg1;
-- (NSInteger)sortOrderForSource:(id)arg1;
-- (NSInteger)sortOrderForStoreType:(NSInteger)arg1;
+- (int)sortOrderForSource:(id)arg1;
+- (int)sortOrderForStoreType:(int)arg1;
 - (BOOL)storeListingNeedsRefresh:(void*)arg1;
 - (BOOL)storeNeedsRefresh:(void*)arg1;
 - (id)titleForSource:(id)arg1 forBeginningOfSentence:(BOOL)arg2;

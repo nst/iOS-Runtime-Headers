@@ -2,17 +2,21 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class MPMediaItem, MPMediaLibrary;
+
 @interface MPMediaEntity : NSObject <NSCoding> {
 }
 
-@property(readonly) MPMediaItem *representativeItem;
+@property(readonly) MPMediaLibrary * mediaLibrary;
 @property(readonly) unsigned long long persistentID;
+@property(readonly) MPMediaItem * representativeItem;
 
 + (BOOL)canFilterByProperty:(id)arg1;
 
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)mediaLibrary;
 - (unsigned long long)persistentID;
 - (id)representativeItem;
 - (id)valueForProperty:(id)arg1;

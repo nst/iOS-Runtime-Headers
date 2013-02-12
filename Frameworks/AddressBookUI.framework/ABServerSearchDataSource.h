@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABServerSearchDataSourceDelegate>, ABGroupWrapper, DAContactsSearchQuery, NSArray, NSMutableArray, NSString;
+@class <ABServerSearchDataSourceDelegate>, <ABStyleProvider>, ABGroupWrapper, DAContactsSearchQuery, NSArray, NSMutableArray, NSString;
 
 @interface ABServerSearchDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, DASearchQueryConsumer> {
     struct { 
@@ -18,20 +18,20 @@
     ABGroupWrapper *_selectedGroupWrapper;
 }
 
-@property(readonly) NSArray *currentResultsAsPeople;
-@property <ABServerSearchDataSourceDelegate> *delegate;
-@property(retain) NSString *searchString;
-@property(retain) ABGroupWrapper *selectedGroupWrapper;
-@property(readonly) <ABStyleProvider> *styleProvider;
+@property(readonly) NSArray * currentResultsAsPeople;
+@property <ABServerSearchDataSourceDelegate> * delegate;
+@property(retain) NSString * searchString;
+@property(retain) ABGroupWrapper * selectedGroupWrapper;
+@property(readonly) <ABStyleProvider> * styleProvider;
 
 - (void)_beginSearch;
 - (void)_cancelBeginSearch;
 - (void)_cancelSearchQuery;
-- (NSInteger)_errorForDAStatusCode:(NSInteger)arg1;
-- (id)_localizedStringForError:(NSInteger)arg1;
+- (int)_errorForDAStatusCode:(int)arg1;
+- (id)_localizedStringForError:(int)arg1;
 - (void)_setCurrentSearchResults:(id)arg1 callDelegate:(BOOL)arg2;
-- (void)_setCurrentSearchResults:(id)arg1 error:(NSInteger)arg2 callDelegate:(BOOL)arg3;
-- (void)_setCurrentSearchResults:(id)arg1 error:(NSInteger)arg2;
+- (void)_setCurrentSearchResults:(id)arg1 error:(int)arg2 callDelegate:(BOOL)arg3;
+- (void)_setCurrentSearchResults:(id)arg1 error:(int)arg2;
 - (void)_setCurrentSearchResults:(id)arg1;
 - (void)beginNewSearchForString:(id)arg1;
 - (void)cancelSearch;
@@ -39,7 +39,7 @@
 - (id)currentResultsAsPeople;
 - (void)dealloc;
 - (id)delegate;
-- (void*)personAtIndex:(NSUInteger)arg1;
+- (void*)personAtIndex:(unsigned int)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
@@ -51,6 +51,7 @@
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

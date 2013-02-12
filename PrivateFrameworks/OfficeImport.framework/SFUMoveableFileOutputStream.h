@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface SFUMoveableFileOutputStream : NSObject <SFUOutputStream> {
-    NSInteger mFd;
+    int mFd;
     NSString *mPath;
 }
 
@@ -21,7 +21,7 @@
 - (BOOL)moveToPath:(id)arg1;
 - (long long)offset;
 - (id)path;
-- (void)seekToOffset:(long long)arg1 whence:(NSInteger)arg2;
+- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
 - (void)truncateToLength:(unsigned long)arg1;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 

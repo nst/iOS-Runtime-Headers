@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMMediaList : DOMObject {
 }
 
-@property(copy) NSString *mediaText;
-@property(readonly) NSUInteger length;
+@property(readonly) unsigned int length;
+@property(copy) NSString * mediaText;
 
 - (void)appendMedium:(id)arg1;
 - (void)dealloc;
 - (void)deleteMedium:(id)arg1;
 - (void)finalize;
-- (id)item:(NSUInteger)arg1;
-- (NSUInteger)length;
+- (id)item:(unsigned int)arg1;
+- (unsigned int)length;
 - (id)mediaText;
 - (void)setMediaText:(id)arg1;
 

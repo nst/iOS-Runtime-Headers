@@ -14,15 +14,15 @@
     NSString *_username;
 }
 
-@property(readonly) NSString *accountDescription;
-@property(copy) NSString *accountPersistentUUID;
-@property(readonly) NSString *hostname;
-@property(retain) NSString *password;
-@property(readonly) NSArray *searchSettings;
-@property(retain) NSString *username;
+@property(readonly) NSString * accountDescription;
+@property(copy) NSString * accountPersistentUUID;
+@property(readonly) NSString * hostname;
+@property(retain) NSString * password;
+@property(readonly) NSArray * searchSettings;
 @property(readonly) BOOL useSSL;
+@property(retain) NSString * username;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (id)accountDescription;

@@ -8,7 +8,7 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSInteger ringIndex;
+    int ringIndex;
     } ringMutex;
     double ringTime[64];
     float ringX[64];
@@ -17,7 +17,7 @@
     SBSAccelerometer *sbsaccel;
 }
 
-- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(NSInteger)arg6;
+- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (void)dealloc;
 - (void)deferOnRunloop_accelerometerEventsEnable;
 - (void)getVector:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;

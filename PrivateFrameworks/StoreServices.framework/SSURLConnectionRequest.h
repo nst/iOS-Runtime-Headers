@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSURLRequestProperties;
+@class <SSURLConnectionRequestDelegate>, NSURLRequest, SSURLRequestProperties;
 
 @interface SSURLConnectionRequest : SSRequest {
     SSURLRequestProperties *_requestProperties;
 }
 
-@property(readonly) NSURLRequest *URLRequest;
-@property <SSURLConnectionRequestDelegate> *delegate;
-@property(readonly) SSURLRequestProperties *requestProperties;
+@property(readonly) NSURLRequest * URLRequest;
+@property <SSURLConnectionRequestDelegate> * delegate;
+@property(readonly) SSURLRequestProperties * requestProperties;
 
 - (id)URLRequest;
 - (id)copyPropertyListEncoding;

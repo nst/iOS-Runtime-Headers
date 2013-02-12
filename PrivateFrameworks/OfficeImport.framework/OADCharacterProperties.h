@@ -24,7 +24,7 @@
     unsigned int mHasCaps : 1;
     unsigned int mHasIsShadowed : 1;
     unsigned int mIsShadowed : 1;
-    NSInteger mBaseline;
+    int mBaseline;
     NSString *mBidiFont;
     unsigned char mCaps;
     OADHyperlink *mClickHyperlink;
@@ -48,16 +48,16 @@
 
 + (void)initialize;
 
-- (NSInteger)baseline;
+- (int)baseline;
 - (id)bidiFont;
-- (NSInteger)caps;
+- (int)caps;
 - (id)clickHyperlink;
 - (void)dealloc;
 - (id)eastAsianFont;
 - (id)effects;
 - (id)fill;
-- (NSInteger)formatKerningType;
-- (NSInteger)formatType;
+- (int)formatKerningType;
+- (int)formatType;
 - (id)hansiFont;
 - (BOOL)hasBaseline;
 - (BOOL)hasBidiFont;
@@ -82,7 +82,7 @@
 - (BOOL)hasStroke;
 - (BOOL)hasSymbolFont;
 - (BOOL)hasUnderline;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)highlight;
 - (id)hoverHyperlink;
 - (id)initWithDefaults;
@@ -96,15 +96,15 @@
 - (double)opacity;
 - (void)overrideWithProperties:(id)arg1;
 - (void)removeUnnecessaryOverrides;
-- (void)setBaseline:(NSInteger)arg1;
+- (void)setBaseline:(int)arg1;
 - (void)setBidiFont:(id)arg1;
-- (void)setCaps:(NSInteger)arg1;
+- (void)setCaps:(int)arg1;
 - (void)setClickHyperlink:(id)arg1;
 - (void)setEastAsianFont:(id)arg1;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
-- (void)setFormatKerningType:(NSInteger)arg1;
-- (void)setFormatType:(NSInteger)arg1;
+- (void)setFormatKerningType:(int)arg1;
+- (void)setFormatType:(int)arg1;
 - (void)setHAnsiFont:(id)arg1;
 - (void)setHighlight:(id)arg1;
 - (void)setHoverHyperlink:(id)arg1;
@@ -117,13 +117,13 @@
 - (void)setOpacity:(double)arg1;
 - (void)setSize:(double)arg1;
 - (void)setSpacing:(double)arg1;
-- (void)setStrikeThroughType:(NSInteger)arg1;
+- (void)setStrikeThroughType:(int)arg1;
 - (void)setStroke:(id)arg1;
 - (void)setSymbolFont:(id)arg1;
 - (void)setUnderline:(id)arg1;
 - (double)size;
 - (double)spacing;
-- (NSInteger)strikeThroughType;
+- (int)strikeThroughType;
 - (id)stroke;
 - (id)symbolFont;
 - (id)underline;

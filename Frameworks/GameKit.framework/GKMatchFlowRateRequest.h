@@ -3,13 +3,13 @@
  */
 
 @interface GKMatchFlowRateRequest : GKGameMatchFlowRateRequest {
-    NSUInteger _playerGroup;
+    unsigned int _playerGroup;
 }
 
-@property NSUInteger playerGroup;
+@property unsigned int playerGroup;
 
-- (NSUInteger)playerGroup;
+- (unsigned int)playerGroup;
 - (id)request;
-- (void)setPlayerGroup:(NSUInteger)arg1;
+- (void)setPlayerGroup:(unsigned int)arg1;
 
 @end

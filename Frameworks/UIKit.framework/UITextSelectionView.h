@@ -14,18 +14,18 @@
     BOOL m_delayShowingCommands;
     UITextRangeView *m_rangeView;
     UITextSelection *m_selection;
-    NSInteger m_showingCommandsCounter;
+    int m_showingCommandsCounter;
     UIView<UITextSelectingContainer> *m_view;
     BOOL m_visible;
     BOOL m_wasShowingCommands;
 }
 
-@property(readonly) UIView *caretView;
-@property(readonly) UITextRangeView *rangeView;
-@property(readonly) UITextSelection *selection;
-@property(readonly) UIView<UITextSelectingContainer> *view;
 @property BOOL caretBlinks;
+@property(readonly) UIView * caretView;
+@property(readonly) UITextRangeView * rangeView;
+@property(readonly) UITextSelection * selection;
 @property(readonly) BOOL selectionCommandsShowing;
+@property(readonly) UIView<UITextSelectingContainer> * view;
 @property BOOL visible;
 
 + (void)_initializeSafeCategory;
@@ -51,7 +51,7 @@
 - (void)detach;
 - (void)didRotate:(id)arg1;
 - (void)doneMagnifying;
-- (void)hideCaret:(NSInteger)arg1;
+- (void)hideCaret:(int)arg1;
 - (void)hideSelectionCommands;
 - (void)hideSelectionCommandsAfterDelay:(double)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -75,7 +75,7 @@
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (BOOL)shouldBeVisible;
-- (void)showCaret:(NSInteger)arg1;
+- (void)showCaret:(int)arg1;
 - (void)showCommandsWithReplacements:(id)arg1;
 - (void)showReplacementsWithGenerator:(id)arg1 afterDelay:(double)arg2;
 - (void)showSelectionCommands;

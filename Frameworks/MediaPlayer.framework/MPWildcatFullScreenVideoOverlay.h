@@ -23,10 +23,11 @@
     MPWildcatFullScreenTransportControls *_transportControls;
 }
 
-@property(copy) NSString *title;
+@property(copy) NSString * title;
 
 - (void)_configureLinkButtonForCurrentItemTime;
-- (NSUInteger)_convertedPartsMask:(NSUInteger)arg1;
+- (unsigned int)_convertedPartsMask:(unsigned int)arg1;
+- (void)_destinationDidChangeNotification:(id)arg1;
 - (void)_doneButton:(id)arg1;
 - (void)_hideScrubInstructions;
 - (void)_initSubviews;
@@ -40,26 +41,26 @@
 - (BOOL)allowsWirelessPlayback;
 - (void)crossedURLTimeMarker:(id)arg1;
 - (void)dealloc;
-- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(NSInteger)arg2;
+- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
-- (NSUInteger)disabledParts;
+- (unsigned int)disabledParts;
 - (void)hideAlternateTracks;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (NSInteger)nowPlayingItemQueueInfoButton:(id)arg1 willDisplayInfoType:(NSInteger)arg2;
+- (int)nowPlayingItemQueueInfoButton:(id)arg1 willDisplayInfoType:(int)arg2;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
-- (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(NSUInteger)arg1;
-- (void)setInterfaceOrientation:(NSInteger)arg1;
+- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDisabledParts:(unsigned int)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
 - (void)setItem:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setVideoViewController:(id)arg1;
-- (void)setVisibleParts:(NSUInteger)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracks;
 - (id)title;
 

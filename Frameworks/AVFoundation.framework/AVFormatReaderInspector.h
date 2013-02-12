@@ -4,26 +4,32 @@
 
 @interface AVFormatReaderInspector : AVAssetInspector {
     struct OpaqueFigFormatReader { } *_formatReader;
+    BOOL didCheckForSaveRestriction;
+    BOOL hasSaveRestriction;
 }
 
-@property(getter=_formatReader,retain) OpaqueFigFormatReader *formatReader; /* unknown property attribute: S_setFormatReader: */
+@property(getter=_formatReader,setter=_setFormatReader:,retain) struct OpaqueFigFormatReader { }* formatReader;
 
 - (struct OpaqueFigFormatReader { }*)_formatReader;
+- (BOOL)_hasQTSaveRestriction;
 - (void*)_propertyAccessor:(struct __CFString { }*)arg1;
 - (void)_setFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
 - (void)dealloc;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
+- (BOOL)isComposable;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isExportable;
+- (BOOL)isReadable;
 - (id)lyrics;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
-- (NSInteger)naturalTimeScale;
+- (int)naturalTimeScale;
 - (float)preferredRate;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;

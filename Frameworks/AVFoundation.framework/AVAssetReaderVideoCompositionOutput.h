@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderVideoCompositionOutputInternal;
+@class AVAssetReaderVideoCompositionOutputInternal, AVVideoComposition, NSArray, NSDictionary;
 
 @interface AVAssetReaderVideoCompositionOutput : AVAssetReaderOutput {
     AVAssetReaderVideoCompositionOutputInternal *_videoCompositionOutputInternal;
 }
 
-@property(copy) AVVideoComposition *videoComposition;
-@property(readonly) NSDictionary *videoSettings;
-@property(readonly) NSArray *videoTracks;
+@property(copy) AVVideoComposition * videoComposition;
+@property(readonly) NSDictionary * videoSettings;
+@property(readonly) NSArray * videoTracks;
 
 + (id)assetReaderVideoCompositionOutputWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 

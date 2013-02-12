@@ -5,9 +5,9 @@
 @class NSMutableArray;
 
 @interface MFBufferedQueue : NSObject <MFQueue> {
-    NSUInteger _currentSize;
+    unsigned int _currentSize;
     double _maximumLatency;
-    NSUInteger _maximumSize;
+    unsigned int _maximumSize;
     NSMutableArray *_queue;
     double _timeOfLastFlush;
 }
@@ -17,10 +17,10 @@
 - (BOOL)flush;
 - (BOOL)handleItems:(id)arg1;
 - (id)init;
-- (id)initWithMaximumSize:(NSUInteger)arg1 latency:(double)arg2;
+- (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (BOOL)isEmpty;
 - (void)setMaximumLatency:(double)arg1;
-- (void)setMaximumSize:(NSUInteger)arg1;
-- (NSUInteger)sizeForItem:(id)arg1;
+- (void)setMaximumSize:(unsigned int)arg1;
+- (unsigned int)sizeForItem:(id)arg1;
 
 @end

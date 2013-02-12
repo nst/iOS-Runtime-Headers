@@ -3,7 +3,7 @@
  */
 
 @interface OADOuterShadowEffect : OADShadowEffect {
-    NSInteger mAlignment;
+    int mAlignment;
     BOOL mRotateWithShape;
     float mXScale;
     float mXSkew;
@@ -11,13 +11,13 @@
     float mYSkew;
 }
 
-- (NSInteger)alignment;
+- (int)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)rotateWithShape;
-- (void)setAlignment:(NSInteger)arg1;
+- (void)setAlignment:(int)arg1;
 - (void)setRotateWithShape:(BOOL)arg1;
 - (void)setXScale:(float)arg1;
 - (void)setXSkew:(float)arg1;

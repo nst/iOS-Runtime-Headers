@@ -2,27 +2,33 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary;
+@class NSArray, NSDictionary, NSNumber, NSString;
 
 @interface AAProvisioningResponse : AAAuthenticationResponse {
     NSDictionary *_appleAccount;
     NSDictionary *_mobileMe;
 }
 
-@property(readonly) NSDictionary *dataclassProperties;
-@property(readonly) NSString *firstName;
-@property(readonly) NSString *lastName;
-@property(readonly) NSNumber *mobileMeAccountStatusCode;
-@property(readonly) NSString *personID;
-@property(readonly) NSString *primaryEmail;
-@property(readonly) NSNumber *primaryEmailVerified;
-@property(readonly) NSArray *provisionedDataclasses;
+@property(readonly) NSDictionary * dataclassProperties;
+@property(readonly) NSString * firstName;
+@property(readonly) NSString * lastName;
+@property(readonly) NSDictionary * mobileMeAccountFirstDisplayAlert;
+@property(readonly) NSDictionary * mobileMeAccountFooterButton;
+@property(readonly) NSString * mobileMeAccountFooterText;
+@property(readonly) NSNumber * mobileMeAccountStatusCode;
+@property(readonly) NSString * personID;
+@property(readonly) NSString * primaryEmail;
+@property(readonly) NSNumber * primaryEmailVerified;
+@property(readonly) NSArray * provisionedDataclasses;
 
 - (id)dataclassProperties;
 - (void)dealloc;
 - (id)firstName;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)lastName;
+- (id)mobileMeAccountFirstDisplayAlert;
+- (id)mobileMeAccountFooterButton;
+- (id)mobileMeAccountFooterText;
 - (id)mobileMeAccountStatusCode;
 - (id)personID;
 - (id)primaryEmail;

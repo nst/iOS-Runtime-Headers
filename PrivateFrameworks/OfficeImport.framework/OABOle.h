@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface OABOle : NSObject {
 }
 
@@ -17,6 +22,6 @@
 + (id)readFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1 size:(unsigned long)arg2 cancel:(id)arg3;
 + (BOOL)readSharedInfoFor:(id)arg1 fromStorage:(struct SsrwOOStorage { struct _Storage {} *x1; unsigned short x2[36]; }*)arg2;
 + (id)readUnicodeStringFromStream:(struct SsrwOOStream { int (**x1)(); }*)arg1;
-+ (id)stringForCLSID:(struct _SsrwOO_GUID { NSUInteger x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
++ (id)stringForCLSID:(struct _SsrwOO_GUID { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
 
 @end

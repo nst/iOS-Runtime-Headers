@@ -10,19 +10,19 @@
     NSString *_identifier;
     UIImage *_image;
     NSString *_imageURL;
-    NSInteger _pointMax;
+    int _pointMax;
     NSString *_title;
     NSString *_unachievedDescription;
 }
 
-@property(retain) NSString *achievedDescription;
-@property(retain) NSString *identifier;
-@property(retain) UIImage *image;
-@property(retain) NSString *imageURL;
-@property(retain) NSString *title;
-@property(retain) NSString *unachievedDescription;
+@property(retain) NSString * achievedDescription;
 @property(getter=isHidden) BOOL hidden;
-@property NSInteger maximumPoints;
+@property(retain) NSString * identifier;
+@property(retain) UIImage * image;
+@property(retain) NSString * imageURL;
+@property int maximumPoints;
+@property(retain) NSString * title;
+@property(retain) NSString * unachievedDescription;
 
 + (id)incompleteAchievementImage;
 + (void)loadAchievementDescriptionsForGame:(id)arg1 withCompletionHandler:(id)arg2;
@@ -40,13 +40,13 @@
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isHidden;
 - (void)loadImageWithCompletionHandler:(id)arg1;
-- (NSInteger)maximumPoints;
+- (int)maximumPoints;
 - (void)setAchievedDescription:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageURL:(id)arg1;
-- (void)setMaximumPoints:(NSInteger)arg1;
+- (void)setMaximumPoints:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUnachievedDescription:(id)arg1;
 - (id)title;

@@ -7,7 +7,7 @@
 @interface AVChatCancelInvitationOp : IMExtendedOperation {
     NSString *_conferenceID;
     IMHandle *_imHandle;
-    NSUInteger _sessionID;
+    unsigned int _sessionID;
 }
 
 - (void)dealloc;

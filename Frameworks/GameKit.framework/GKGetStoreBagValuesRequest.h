@@ -12,11 +12,11 @@
     NSString *_playerID;
 }
 
-@property(retain) NSString *accountName;
-@property(retain) NSString *authToken;
-@property(retain) NSDictionary *bag;
-@property(retain) NSArray *keys;
-@property(retain) NSString *playerID;
+@property(retain) NSString * accountName;
+@property(retain) NSString * authToken;
+@property(retain) NSDictionary * bag;
+@property(retain) NSArray * keys;
+@property(retain) NSString * playerID;
 
 - (id)accountName;
 - (id)authToken;

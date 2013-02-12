@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMutableArray, NSMutableAttributedString, NSMutableDictionary, NSString;
+@class NSArray, NSAttributedString, NSMutableArray, NSMutableAttributedString, NSMutableDictionary, NSString;
 
 @interface IMToSuperParserContext : IMXMLParserContext {
     NSString *_backgroundColor;
     NSMutableArray *_backgroundColorStack;
     NSMutableAttributedString *_body;
-    NSUInteger _boldCount;
+    unsigned int _boldCount;
     NSMutableDictionary *_currentAttributes;
     BOOL _didAddBodyAttributes;
     NSMutableArray *_fileTransferGUIDs;
@@ -17,17 +17,17 @@
     NSString *_foregroundColor;
     NSMutableArray *_foregroundColorStack;
     BOOL _isRightToLeft;
-    NSUInteger _italicCount;
+    unsigned int _italicCount;
     NSMutableArray *_linkStack;
-    NSUInteger _strikethroughCount;
-    NSUInteger _underlineCount;
+    unsigned int _strikethroughCount;
+    unsigned int _underlineCount;
 }
 
-@property BOOL isRightToLeft; /* unknown property attribute: SsetRightToLeft: */
-@property(retain) NSString *backgroundColor;
-@property(readonly) NSAttributedString *body;
-@property(retain) NSArray *fileTransferGUIDs;
-@property(retain) NSString *foregroundColor;
+@property(retain) NSString * backgroundColor;
+@property(readonly) NSAttributedString * body;
+@property(retain) NSArray * fileTransferGUIDs;
+@property(retain) NSString * foregroundColor;
+@property(setter=setRightToLeft:) BOOL isRightToLeft;
 
 - (void)_clearIvars;
 - (void)_initIvars;
@@ -36,7 +36,7 @@
 - (void)_updateFontFamily;
 - (void)_updateFontSize;
 - (void)appendFileTransferWithGUID:(id)arg1;
-- (void)appendInlineImageWithGUID:(id)arg1 filename:(id)arg2 width:(NSInteger)arg3 height:(NSInteger)arg4;
+- (void)appendInlineImageWithGUID:(id)arg1 filename:(id)arg2 width:(int)arg3 height:(int)arg4;
 - (void)appendString:(id)arg1;
 - (id)backgroundColor;
 - (id)body;

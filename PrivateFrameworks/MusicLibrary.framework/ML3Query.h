@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3AggregateQuery, ML3MusicLibrary, ML3Predicate, NSArray, NSLock, NSMutableIndexSet;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class ML3AggregateQuery, ML3MusicLibrary, ML3Predicate, ML3QueryLoadOperation, NSArray, NSLock, NSMutableIndexSet, NSString;
 
 @interface ML3Query : NSObject <NSFastEnumeration, NSCoding> {
     Class _entityClass;
     BOOL _hasLoadedEveryPersistentID;
     ML3MusicLibrary *_library;
     NSMutableIndexSet *_loadedAggregateCountArray;
-    NSUInteger *_loadedAggregatedCountArray;
-    NSUInteger _loadedArrayCapacity;
+    unsigned int *_loadedAggregatedCountArray;
+    unsigned int _loadedArrayCapacity;
     NSMutableIndexSet *_loadedArrayIndexSet;
     NSLock *_loadedArrayLock;
     long long *_loadedPersistentIDArray;
@@ -20,59 +25,60 @@
     BOOL _usingSections;
 }
 
-@property(readonly) ML3MusicLibrary *library;
-@property(readonly) ML3QueryLoadOperation *loadEntitiesOperation;
-@property(readonly) ML3AggregateQuery *nonDirectAggregateQuery;
-@property(readonly) NSArray *orderingProperties;
-@property(readonly) ML3Predicate *predicate;
-@property(readonly) NSString *sectionProperty;
-@property(retain,readonly) NSArray *sections;
-@property(readonly) NSUInteger countOfEntities;
-@property(readonly) NSUInteger countOfEntitiesNoLoad;
+@property(readonly) unsigned int countOfEntities;
+@property(readonly) unsigned int countOfEntitiesNoLoad;
 @property(readonly) Class entityClass;
 @property(readonly) BOOL hasEntities;
 @property BOOL hasLoadedEveryPersistentID;
+@property(readonly) ML3MusicLibrary * library;
+@property(readonly) ML3QueryLoadOperation * loadEntitiesOperation;
+@property(readonly) ML3AggregateQuery * nonDirectAggregateQuery;
+@property(readonly) NSArray * orderingProperties;
+@property(readonly) ML3Predicate * predicate;
+@property(readonly) NSString * sectionProperty;
+@property(retain,readonly) NSArray * sections;
 @property(readonly) BOOL usingSections;
 
-- (void)bindToCountSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
-- (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
-- (void)bindToSectionsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
-- (NSUInteger)countOfEntities;
-- (NSUInteger)countOfEntitiesNoLoad;
+- (void)bindToCountSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
+- (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
+- (void)bindToSectionsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countOfEntities;
+- (unsigned int)countOfEntitiesNoLoad;
 - (void)dealloc;
 - (id)description;
 - (BOOL)distinctPersistentIDProperty;
 - (void)encodeWithCoder:(id)arg1;
-- (id)entityAtIndex:(NSUInteger)arg1;
+- (id)entityAtIndex:(unsigned int)arg1;
 - (Class)entityClass;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 countedProperties:(id)arg2 ordered:(BOOL)arg3 cancelBlock:(id)arg4 usingBlock:(id)arg5;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 countedProperties:(id)arg2 ordered:(BOOL)arg3 usingBlock:(id)arg4;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 countedProperties:(id)arg2 usingBlock:(id)arg3;
 - (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id)arg2;
 - (void)enumeratePersistentIDsUsingBlock:(id)arg1;
 - (void)enumerateSectionsUsingBlock:(id)arg1;
-- (BOOL)getAggregatedCount:(NSUInteger*)arg1 atIndex:(NSUInteger)arg2;
-- (BOOL)getPersistentID:(long long*)arg1 atIndex:(NSUInteger)arg2;
-- (void)growLoadedArraysForIndex:(NSUInteger)arg1;
+- (BOOL)getAggregatedCount:(unsigned int*)arg1 atIndex:(unsigned int)arg2;
+- (BOOL)getPersistentID:(long long*)arg1 atIndex:(unsigned int)arg2;
+- (void)growLoadedArraysForIndex:(unsigned int)arg1;
 - (BOOL)hasEntities;
-- (BOOL)hasLoadedEntitesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (BOOL)hasLoadedEntityAtIndex:(NSUInteger)arg1;
+- (BOOL)hasLoadedEntitesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)hasLoadedEntityAtIndex:(unsigned int)arg1;
 - (BOOL)hasLoadedEveryPersistentID;
-- (NSUInteger)indexOfEntity:(id)arg1;
-- (NSUInteger)indexOfPersistentID:(long long)arg1;
+- (unsigned int)indexOfEntity:(id)arg1;
+- (unsigned int)indexOfPersistentID:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingProperties:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6;
-- (void)insertLoadedAggregatedCount:(NSUInteger)arg1 atIndex:(NSUInteger)arg2;
-- (void)insertLoadedPersistentID:(long long)arg1 atIndex:(NSUInteger)arg2;
+- (void)insertLoadedAggregatedCount:(unsigned int)arg1 atIndex:(unsigned int)arg2;
+- (void)insertLoadedPersistentID:(long long)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)library;
-- (void)loadAggregateCountForEntityAtIndex:(NSUInteger)arg1;
+- (void)loadAggregateCountForEntityAtIndex:(unsigned int)arg1;
 - (void)loadAllEntities;
 - (id)loadEntitiesOperation;
-- (id)loadEntitiesOperationForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 ordered:(BOOL)arg2 properties:(id)arg3 block:(id)arg4;
-- (id)loadEntitiesOperationForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 ordered:(BOOL)arg2;
-- (id)loadEntitiesOperationForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (void)loadEntityAtIndex:(NSUInteger)arg1;
+- (id)loadEntitiesOperationForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 ordered:(BOOL)arg2 properties:(id)arg3 block:(id)arg4;
+- (id)loadEntitiesOperationForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 ordered:(BOOL)arg2;
+- (id)loadEntitiesOperationForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)loadEntityAtIndex:(unsigned int)arg1;
 - (void)loadedAllPersisentIDs;
 - (id)nonDirectAggregateQuery;
 - (id)orderingProperties;
@@ -92,6 +98,7 @@
 - (id)selectUnorderedPersistentIDsSQL;
 - (void)setHasLoadedEveryPersistentID:(BOOL)arg1;
 - (BOOL)usingSections;
-- (void)visitGroupMembersOfEntityAtIndex:(NSUInteger)arg1 visitor:(int (*)())arg2 context:(void*)arg3;
+- (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
+- (void)visitGroupMembersOfEntityAtIndex:(unsigned int)arg1 visitor:(int (*)())arg2 context:(void*)arg3;
 
 @end

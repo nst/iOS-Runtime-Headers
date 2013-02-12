@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+@class <ICDeviceDelegate>, DeviceManager, NSString;
+
 @interface ICDevice : NSObject {
     void *_deviceProperties;
 }
 
-@property(copy) NSString *UUIDString;
-@property <ICDeviceDelegate> *delegate;
-@property DeviceManager *deviceManager;
-@property(readonly) CGImage *icon;
-@property(copy) NSString *name;
-@property(copy) NSString *productKind;
-@property(copy) NSString *transportType;
+@property(copy) NSString * UUIDString;
 @property BOOL autoOpenSession;
 @property BOOL closeSessionPending;
+@property <ICDeviceDelegate> * delegate;
+@property DeviceManager * deviceManager;
 @property BOOL hasOpenSession;
+@property(readonly) struct CGImage { }* icon;
+@property(copy) NSString * name;
 @property BOOL openSessionPending;
-@property NSInteger usbLocationID;
-@property NSInteger usbProductID;
-@property NSInteger usbVendorID;
+@property(copy) NSString * productKind;
+@property(copy) NSString * transportType;
+@property int usbLocationID;
+@property int usbProductID;
+@property int usbVendorID;
 
 - (id)UUIDString;
 - (BOOL)autoOpenSession;
@@ -50,13 +52,13 @@
 - (void)setProductKind:(id)arg1;
 - (void)setTransportType:(id)arg1;
 - (void)setUUIDString:(id)arg1;
-- (void)setUsbLocationID:(NSInteger)arg1;
-- (void)setUsbProductID:(NSInteger)arg1;
-- (void)setUsbVendorID:(NSInteger)arg1;
+- (void)setUsbLocationID:(int)arg1;
+- (void)setUsbProductID:(int)arg1;
+- (void)setUsbVendorID:(int)arg1;
 - (id)transportType;
-- (NSInteger)usbLocationID;
-- (NSInteger)usbProductID;
-- (NSInteger)usbVendorID;
+- (int)usbLocationID;
+- (int)usbProductID;
+- (int)usbVendorID;
 - (id)valueForUndefinedKey:(id)arg1;
 
 @end

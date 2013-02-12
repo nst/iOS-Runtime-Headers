@@ -5,6 +5,6 @@
 @interface UIAccessibilityNotification : NSObject {
 }
 
-+ (void)postNotification:(NSUInteger)arg1 withData:(id)arg2;
++ (void)postNotification:(unsigned int)arg1 withData:(id)arg2;
 
 @end

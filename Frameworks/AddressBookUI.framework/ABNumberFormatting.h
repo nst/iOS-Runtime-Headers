@@ -5,6 +5,6 @@
 @interface ABNumberFormatting : NSObject {
 }
 
-+ (id)newLocalizedStringWithInt:(NSInteger)arg1;
++ (id)newLocalizedStringWithInt:(int)arg1;
 
 @end

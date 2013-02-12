@@ -8,7 +8,7 @@
     NSString *_markupText;
 }
 
-@property(copy) NSString *markupText;
+@property(copy) NSString * markupText;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

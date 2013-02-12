@@ -14,8 +14,8 @@
 
 - (void)dealloc;
 - (id)fill;
-- (NSUInteger)hash;
-- (id)initWithStroke:(id)arg1 fill:(id)arg2 type:(NSInteger)arg3;
+- (unsigned int)hash;
+- (id)initWithStroke:(id)arg1 fill:(id)arg2 type:(int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isUsingTextFill;
 - (BOOL)isUsingTextStroke;
@@ -23,8 +23,8 @@
 - (void)setIsUsingTextFill:(BOOL)arg1;
 - (void)setIsUsingTextStroke:(BOOL)arg1;
 - (void)setStroke:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (id)stroke;
-- (NSInteger)type;
+- (int)type;
 
 @end

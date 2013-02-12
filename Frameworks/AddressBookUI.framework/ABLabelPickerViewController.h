@@ -8,22 +8,22 @@
     NSArray *_additionalLabels;
     void *_addressBook;
     BOOL _didCreateNewLabel;
-    NSInteger _itemIndex;
+    int _itemIndex;
     ABItemLabelPicker *_labelPicker;
     ABPropertyGroup *_propertyGroup;
     NSString *_selectedLabel;
 }
 
-@property(retain) NSString *selectedLabel;
 @property BOOL didCreateNewLabel;
+@property(retain) NSString * selectedLabel;
 
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)dealloc;
 - (BOOL)didCreateNewLabel;
 - (struct CGSize { float x1; float x2; })fullScreenContentSize;
-- (id)initWithAddressBook:(void*)arg1 propertyGroup:(id)arg2 itemIndex:(NSInteger)arg3 additionalLabels:(id)arg4;
+- (id)initWithAddressBook:(void*)arg1 propertyGroup:(id)arg2 itemIndex:(int)arg3 additionalLabels:(id)arg4;
 - (void)itemLabelPicker:(id)arg1 deletedCustomLabel:(id)arg2;
 - (void)itemLabelPicker:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)itemLabelPickerDeletedLastCustomLabel:(id)arg1;

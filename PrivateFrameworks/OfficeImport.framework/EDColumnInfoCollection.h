@@ -9,8 +9,8 @@
     EDWorksheet *mWorksheet;
 }
 
-- (id)columnInfoCreateIfNilForColumnNumber:(NSInteger)arg1;
-- (id)columnInfoForColumnNumber:(NSInteger)arg1;
+- (id)columnInfoCreateIfNilForColumnNumber:(int)arg1;
+- (id)columnInfoForColumnNumber:(int)arg1;
 - (void)dealloc;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
 

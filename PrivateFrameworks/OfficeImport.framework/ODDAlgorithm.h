@@ -3,10 +3,10 @@
  */
 
 @interface ODDAlgorithm : ODDLayoutObject {
-    NSInteger mType;
+    int mType;
 }
 
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

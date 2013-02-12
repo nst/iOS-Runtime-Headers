@@ -18,14 +18,14 @@
     BOOL _viewIsReady;
 }
 
-@property(retain) NSURL *displayedURL;
-@property(retain) UIViewController *firstViewController;
-@property(retain) NSString *mainTitle;
-@property(retain) UIViewController *secondViewController;
-@property(copy) SUShadow *splitShadow;
-@property NSInteger layoutType;
+@property(retain) NSURL * displayedURL;
+@property(retain) UIViewController * firstViewController;
+@property int layoutType;
+@property(retain) NSString * mainTitle;
 @property float minimumPaneSize;
+@property(retain) UIViewController * secondViewController;
 @property float splitPosition;
+@property(copy) SUShadow * splitShadow;
 @property BOOL usesSharedPlaceholder;
 @property(getter=isVertical) BOOL vertical;
 @property BOOL viewIsReady;
@@ -49,7 +49,7 @@
 - (void)addChildViewController:(id)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)copyArchivableContext;
-- (id)copyChildViewControllersForReason:(NSInteger)arg1;
+- (id)copyChildViewControllersForReason:(int)arg1;
 - (id)copyScriptViewController;
 - (void)dealloc;
 - (id)displayedURL;
@@ -57,7 +57,7 @@
 - (id)init;
 - (BOOL)isLoaded;
 - (BOOL)isVertical;
-- (NSInteger)layoutType;
+- (int)layoutType;
 - (void)loadView;
 - (id)mainTitle;
 - (float)minimumPaneSize;
@@ -68,7 +68,7 @@
 - (id)secondViewController;
 - (void)setDisplayedURL:(id)arg1;
 - (void)setFirstViewController:(id)arg1;
-- (void)setLayoutType:(NSInteger)arg1;
+- (void)setLayoutType:(int)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setMainTitle:(id)arg1;
 - (void)setMinimumPaneSize:(float)arg1;

@@ -2,13 +2,18 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface __NSBlockVariable : NSObject {
     int (*byref_destroy)();
     int (*byref_keep)();
     id containedObject;
-    NSInteger flags;
-    struct Block_byref { void *x1; struct Block_byref {} *x2; NSInteger x3; NSInteger x4; int (*x5)(); int (*x6)(); } *forwarding;
-    NSInteger size;
+    int flags;
+    struct Block_byref { void *x1; struct Block_byref {} *x2; int x3; int x4; int (*x5)(); int (*x6)(); } *forwarding;
+    int size;
 }
 
 @end

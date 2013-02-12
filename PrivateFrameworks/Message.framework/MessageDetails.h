@@ -5,16 +5,16 @@
 @class MessageLibrary, NSString;
 
 @interface MessageDetails : NSObject {
-    NSUInteger conversationHash;
-    NSUInteger dateReceived;
-    NSUInteger encoding;
+    unsigned int conversationHash;
+    unsigned int dateReceived;
+    unsigned int encoding;
     NSString *externalID;
     BOOL isInvalid;
     MessageLibrary *library;
-    NSUInteger libraryID;
-    NSInteger mailboxID;
+    unsigned int libraryID;
+    int mailboxID;
     unsigned long long messageFlags;
-    NSUInteger uid;
+    unsigned int uid;
 }
 
 - (id)copyMessageInfo;
@@ -22,12 +22,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)externalID;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)libraryID;
+- (unsigned int)libraryID;
 - (id)mailbox;
-- (NSUInteger)mailboxID;
+- (unsigned int)mailboxID;
 - (unsigned long long)messageFlags;
 - (id)messageID;
 - (id)remoteID;

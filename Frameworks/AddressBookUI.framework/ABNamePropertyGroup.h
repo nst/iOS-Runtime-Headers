@@ -12,25 +12,25 @@
     NSMutableDictionary *_valuesByPersonByProperty;
 }
 
-@property <ABPrimaryValueDelegate> *delegate;
-@property(readonly) void *preferredPerson;
+@property <ABPrimaryValueDelegate> * delegate;
+@property(readonly) void* preferredPerson;
 
-- (NSInteger)_addItemForProperty:(NSInteger)arg1 duringReload:(BOOL)arg2;
+- (int)_addItemForProperty:(int)arg1 duringReload:(BOOL)arg2;
 - (void)_clearAllCachedInfo;
-- (NSInteger)_indexForProperty:(NSInteger)arg1;
+- (int)_indexForProperty:(int)arg1;
 - (id)_indexPathForIndexPath:(id)arg1;
-- (NSInteger)_insertItemAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2 duringReload:(BOOL)arg3;
-- (BOOL)_isEmptyValue:(id)arg1 forProperty:(NSInteger)arg2;
-- (id)_labelAtIndex:(NSInteger)arg1;
-- (id)_newLocalizedPlaceholderForProperty:(NSInteger)arg1;
-- (NSInteger)_propertyAtIndex:(NSInteger)arg1;
+- (int)_insertItemAtIndex:(int)arg1 forProperty:(int)arg2 duringReload:(BOOL)arg3;
+- (BOOL)_isEmptyValue:(id)arg1 forProperty:(int)arg2;
+- (id)_labelAtIndex:(int)arg1;
+- (id)_newLocalizedPlaceholderForProperty:(int)arg1;
+- (int)_propertyAtIndex:(int)arg1;
 - (BOOL)_refreshPreferredPerson;
-- (void)_removeMultipleValuePlaceholderForProperty:(NSInteger)arg1;
-- (void)_removeValueForProperty:(NSInteger)arg1;
-- (void)_setValue:(id)arg1 forProperty:(NSInteger)arg2;
-- (BOOL)_showsMultipleValuePlaceholderForProperty:(NSInteger)arg1;
-- (id)_valueForProperty:(NSInteger)arg1 person:(void*)arg2;
-- (void)addNameProperty:(NSInteger)arg1;
+- (void)_removeMultipleValuePlaceholderForProperty:(int)arg1;
+- (void)_removeValueForProperty:(int)arg1;
+- (void)_setValue:(id)arg1 forProperty:(int)arg2;
+- (BOOL)_showsMultipleValuePlaceholderForProperty:(int)arg1;
+- (id)_valueForProperty:(int)arg1 person:(void*)arg2;
+- (void)addNameProperty:(int)arg1;
 - (BOOL)canSave;
 - (id)copyCompositeName;
 - (id)copyCompositeNameIgnoringOrganization:(BOOL)arg1;
@@ -38,23 +38,23 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)keyboardSettingsForRow:(NSUInteger)arg1;
+- (id)keyboardSettingsForRow:(unsigned int)arg1;
 - (struct __CFArray { }*)nameProperties;
-- (NSUInteger)namePropertiesCount;
+- (unsigned int)namePropertiesCount;
 - (void*)newFakePersonFromCurrentProperties;
-- (id)placeholderTextForRow:(NSUInteger)arg1;
+- (id)placeholderTextForRow:(unsigned int)arg1;
 - (void*)preferredPerson;
-- (id)primaryValueForProperty:(NSInteger)arg1;
-- (NSInteger)property;
-- (NSInteger)propertyForRow:(NSUInteger)arg1;
+- (id)primaryValueForProperty:(int)arg1;
+- (int)property;
+- (int)propertyForRow:(unsigned int)arg1;
 - (void)reloadFromModel;
-- (NSUInteger)rowForProperty:(NSInteger)arg1;
+- (unsigned int)rowForProperty:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setValue:(id)arg1 atRow:(NSUInteger)arg2;
-- (BOOL)showsMultipleValuePlaceholderAtRow:(NSUInteger)arg1;
-- (BOOL)showsMultipleValuePlaceholderForProperty:(NSInteger)arg1;
+- (void)setValue:(id)arg1 atRow:(unsigned int)arg2;
+- (BOOL)showsMultipleValuePlaceholderAtRow:(unsigned int)arg1;
+- (BOOL)showsMultipleValuePlaceholderForProperty:(int)arg1;
 - (void)updateRecord;
-- (id)valueForProperty:(NSInteger)arg1;
-- (id)valueForRow:(NSUInteger)arg1 whenEditing:(BOOL)arg2;
+- (id)valueForProperty:(int)arg1;
+- (id)valueForRow:(unsigned int)arg1 whenEditing:(BOOL)arg2;
 
 @end

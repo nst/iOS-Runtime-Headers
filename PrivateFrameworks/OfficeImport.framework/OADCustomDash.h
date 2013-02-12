@@ -14,14 +14,14 @@
 - (void)addStopWithDash:(float)arg1 space:(float)arg2;
 - (BOOL)areStopsOverridden;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)dashAtIndex:(NSUInteger)arg1;
+- (float)dashAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDefaults;
 - (BOOL)isEqual:(id)arg1;
 - (void)setStops:(id)arg1;
-- (float)spaceAtIndex:(NSUInteger)arg1;
-- (NSUInteger)stopCount;
+- (float)spaceAtIndex:(unsigned int)arg1;
+- (unsigned int)stopCount;
 - (id)stops;
 
 @end

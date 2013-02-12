@@ -17,20 +17,20 @@
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
     NSString *_transactionLogPath;
     NSDictionary *_transactionRecordContent;
-    NSInteger _ubiquity_import_debug_level;
+    int _ubiquity_import_debug_level;
     NSMutableDictionary *_updatedObjectsByRecordUUID;
 }
 
-@property(readonly) NSDictionary *deletedObjectsByRecordUUID;
-@property(retain) NSString *externalRecordsPath;
-@property(retain) NSNotification *importContextSaveNotification;
-@property(readonly) NSDictionary *insertedObjectsByRecordUUID;
-@property NSManagedObjectContext *managedObjectContext;
-@property NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property(retain) NSString *transactionLogPath;
-@property(retain) NSDictionary *transactionRecordContent;
-@property(readonly) NSDictionary *updatedObjectsByRecordUUID;
+@property(readonly) NSDictionary * deletedObjectsByRecordUUID;
+@property(retain) NSString * externalRecordsPath;
 @property BOOL importAllRecords;
+@property(retain) NSNotification * importContextSaveNotification;
+@property(readonly) NSDictionary * insertedObjectsByRecordUUID;
+@property NSManagedObjectContext * managedObjectContext;
+@property NSPersistentStoreCoordinator * persistentStoreCoordinator;
+@property(retain) NSString * transactionLogPath;
+@property(retain) NSDictionary * transactionRecordContent;
+@property(readonly) NSDictionary * updatedObjectsByRecordUUID;
 
 - (id)_fetchObjectsFromRecordUUIDs:(id)arg1 error:(id*)arg2;
 - (void)_importContextDidSave:(id)arg1;

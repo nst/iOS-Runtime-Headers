@@ -30,12 +30,12 @@
     struct CGPath { } *_clipPath;
     float _cornerRadius;
     } _pathOrigin;
-    NSInteger _rectCorner;
+    int _rectCorner;
     BOOL _useSnapshot;
 }
 
-@property(retain) UIImage *backgroundImage;
-@property CGRect backgroundImageSubrect;
+@property(retain) UIImage * backgroundImage;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } backgroundImageSubrect;
 @property float cornerRadius;
 @property BOOL useSnapshot;
 
@@ -46,7 +46,7 @@
 - (float)cornerRadius;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithCornerRadius:(float)arg1 forCorner:(NSInteger)arg2;
+- (id)initWithCornerRadius:(float)arg1 forCorner:(int)arg2;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundImageSubrect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCornerRadius:(float)arg1;

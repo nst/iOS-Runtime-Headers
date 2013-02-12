@@ -9,7 +9,7 @@
     BOOL _isPartial;
 }
 
-@property(retain) UIKeyboardCandidate *acceptedCandidate;
+@property(retain) UIKeyboardCandidate * acceptedCandidate;
 @property(readonly) BOOL isPartial;
 
 - (id)acceptedCandidate;

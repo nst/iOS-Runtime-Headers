@@ -6,11 +6,11 @@
     struct CGSize { 
         float width; 
         float height; 
-    NSInteger mCurrentSlide;
+    int mCurrentSlide;
     } mSlideSize;
 }
 
-- (NSInteger)currentSlide;
+- (int)currentSlide;
 - (void)incrementCurrentSlide;
 - (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)shouldMapLinkWithUrl:(struct __CFString { }*)arg1;

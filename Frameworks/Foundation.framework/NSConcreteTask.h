@@ -11,14 +11,14 @@
     BOOL _hasPostedDeathNotification;
     BOOL _isRunning;
     BOOL _padding[1];
-    NSInteger _pid;
-    NSInteger _platformExitInfo;
-    NSInteger _suspendCount;
+    int _pid;
+    int _platformExitInfo;
+    int _suspendCount;
     NSPort *_tmpPort;
 }
 
-- (NSInteger)_platformExitInformation;
-- (NSInteger)_procid;
+- (int)_platformExitInformation;
+- (int)_procid;
 - (id)arguments;
 - (id)currentDirectoryPath;
 - (void)dealloc;
@@ -31,7 +31,7 @@
 - (id)launchPath;
 - (void)launchWithDictionary:(id)arg1;
 - (id)preferredArchitectures;
-- (NSInteger)processIdentifier;
+- (int)processIdentifier;
 - (BOOL)resume;
 - (void)setArguments:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
@@ -47,12 +47,12 @@
 - (id)standardInput;
 - (id)standardOutput;
 - (BOOL)suspend;
-- (NSInteger)suspendCount;
+- (int)suspendCount;
 - (id)taskDictionary;
 - (void)terminate;
 - (void)terminateTask;
-- (NSInteger)terminationReason;
-- (NSInteger)terminationStatus;
+- (int)terminationReason;
+- (int)terminationStatus;
 - (void)waitUntilExit;
 
 @end

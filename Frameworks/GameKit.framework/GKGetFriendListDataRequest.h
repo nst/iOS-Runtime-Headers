@@ -8,11 +8,11 @@
     NSArray *_friends;
 }
 
-@property(retain) NSArray *friends;
+@property(retain) NSArray * friends;
 
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)dealloc;
 - (id)friends;
 - (id)key;

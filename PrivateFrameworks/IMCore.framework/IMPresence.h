@@ -2,37 +2,37 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMHandle, NSMutableArray, NSMutableSet, NSString;
+@class IMHandle, NSArray, NSMutableArray, NSMutableSet, NSSet, NSString;
 
 @interface IMPresence : IMDirectlyObservableObject <IMDirectlyObservableObjectObserver> {
     NSMutableArray *_imHandles;
     NSMutableSet *_imHandlesSet;
     IMHandle *_mostAvailableIMHandle;
-    NSUInteger _previousStatus;
+    unsigned int _previousStatus;
     BOOL _quiet;
-    NSUInteger _status;
+    unsigned int _status;
     NSString *_statusMessage;
 }
 
-@property(readonly) NSString *displayName;
-@property(readonly) NSString *firstName;
-@property(readonly) NSString *fullName;
-@property(readonly) NSSet *groups;
-@property(readonly) NSSet *imHandleSet;
-@property(readonly) NSArray *imHandles;
-@property(readonly) NSString *lastName;
-@property(readonly) NSString *mobileDeviceName;
-@property(readonly) IMHandle *mostAvailableIMHandle;
-@property(readonly) NSString *nameAndEmail;
-@property(readonly) NSString *nameOfStatus;
-@property(readonly) NSString *previousStatusMessage;
-@property(readonly) NSString *shortName;
-@property(readonly) NSString *statusMessage;
+@property(readonly) NSString * displayName;
+@property(readonly) NSString * firstName;
+@property(readonly) NSString * fullName;
+@property(readonly) NSSet * groups;
+@property(readonly) NSSet * imHandleSet;
+@property(readonly) NSArray * imHandles;
 @property(readonly) BOOL isMobile;
 @property BOOL isQuiet;
-@property(readonly) NSInteger numberOfIMHandles;
-@property(readonly) NSUInteger previousStatus;
-@property(readonly) NSUInteger status;
+@property(readonly) NSString * lastName;
+@property(readonly) NSString * mobileDeviceName;
+@property(readonly) IMHandle * mostAvailableIMHandle;
+@property(readonly) NSString * nameAndEmail;
+@property(readonly) NSString * nameOfStatus;
+@property(readonly) int numberOfIMHandles;
+@property(readonly) unsigned int previousStatus;
+@property(readonly) NSString * previousStatusMessage;
+@property(readonly) NSString * shortName;
+@property(readonly) unsigned int status;
+@property(readonly) NSString * statusMessage;
 @property(readonly) double timeSinceStatusChanged;
 @property(readonly) double timeSinceWentOffline;
 
@@ -71,15 +71,15 @@
 - (id)mostAvailableIMHandle;
 - (id)nameAndEmail;
 - (id)nameOfStatus;
-- (NSInteger)numberOfIMHandles;
+- (int)numberOfIMHandles;
 - (void)objectDidPostDirectNotification:(id)arg1;
 - (void)postNotificationNamed:(id)arg1 forIMHandle:(id)arg2;
-- (NSUInteger)previousStatus;
+- (unsigned int)previousStatus;
 - (id)previousStatusMessage;
 - (void)removeIMHandle:(id)arg1;
 - (void)setIsQuiet:(BOOL)arg1;
 - (id)shortName;
-- (NSUInteger)status;
+- (unsigned int)status;
 - (id)statusMessage;
 - (double)timeSinceStatusChanged;
 - (double)timeSinceWentOffline;

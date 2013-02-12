@@ -8,7 +8,7 @@
     NSMutableArray *_pendingAudioSampleBuffers;
 }
 
-- (NSInteger)_attachToFigAssetWriterUsingOutputSettings:(id)arg1 sourcePixelBufferAttributes:(id)arg2 error:(id*)arg3;
+- (int)_attachToFigAssetWriterUsingOutputSettings:(id)arg1 sourcePixelBufferAttributes:(id)arg2 error:(id*)arg3;
 - (BOOL)_flushPendingSampleBuffersReturningError:(id*)arg1;
 - (BOOL)addSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
 - (void)dealloc;

@@ -10,7 +10,7 @@
 
 - (void)dealloc;
 - (id)font;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithFont:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 

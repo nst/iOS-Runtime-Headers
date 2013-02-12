@@ -10,10 +10,10 @@
     BOOL isUprightRectangle;
     float lineWidth;
     struct CGPath { } *path;
-    NSUInteger pdfObjectID;
+    unsigned int pdfObjectID;
     struct CGColor { } *strokeColor;
     CPImage *strokePattern;
-    NSInteger windingRule;
+    int windingRule;
 }
 
 - (void)accept:(id)arg1;
@@ -31,7 +31,7 @@
 - (BOOL)hasSamePathAs:(id)arg1;
 - (BOOL)hasStroke;
 - (id)init;
-- (id)initWithPDFShape:(struct CPPDFShape { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; } x1; NSUInteger x2; struct CPPDFStyle {} *x3; NSInteger x4; struct CGPath {} *x5; BOOL x6; }*)arg1;
+- (id)initWithPDFShape:(struct CPPDFShape { struct CPPDFObject { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned int x2; struct CPPDFStyle {} *x3; int x4; struct CGPath {} *x5; BOOL x6; }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })innerBounds;
 - (BOOL)isStrokeFor:(id)arg1;
 - (BOOL)isUprightRectangle;
@@ -39,8 +39,8 @@
 - (float)lineWidth;
 - (void)makeLineFromVertex:(struct CGPoint { float x1; float x2; })arg1 toVertex:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPath { }*)path;
-- (NSUInteger)pathElementCount;
-- (NSUInteger)pdfObjectID;
+- (unsigned int)pathElementCount;
+- (unsigned int)pdfObjectID;
 - (void)recomputeBounds;
 - (void)recomputeRenderedBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })renderedBounds;
@@ -48,14 +48,14 @@
 - (void)setFillPattern:(id)arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setPath:(struct CGPath { }*)arg1;
-- (void)setPdfObjectID:(NSUInteger)arg1;
+- (void)setPdfObjectID:(unsigned int)arg1;
 - (void)setStrokeColor:(struct CGColor { }*)arg1;
 - (void)setStrokePattern:(id)arg1;
-- (void)setWindingRule:(NSInteger)arg1;
+- (void)setWindingRule:(int)arg1;
 - (id)string;
 - (struct CGColor { }*)strokeColor;
 - (id)strokePattern;
-- (NSInteger)windingRule;
+- (int)windingRule;
 - (long)zOrder;
 
 @end

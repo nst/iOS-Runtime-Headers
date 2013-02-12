@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSSoftwareUpdatesContext;
+@class <SSSoftwareUpdatesRequestDelegate>, SSSoftwareUpdatesContext;
 
 @interface SSSoftwareUpdatesRequest : SSRequest {
     SSSoftwareUpdatesContext *_context;
 }
 
-@property <SSSoftwareUpdatesRequestDelegate> *delegate;
-@property(readonly) SSSoftwareUpdatesContext *updateQueueContext;
+@property <SSSoftwareUpdatesRequestDelegate> * delegate;
+@property(readonly) SSSoftwareUpdatesContext * updateQueueContext;
 
 - (void)_sendResponseToDelegate:(id)arg1;
 - (id)copyPropertyListEncoding;

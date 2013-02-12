@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface UIDevice : NSObject {
     struct { 
         unsigned int batteryMonitoringEnabled : 1; 
@@ -11,37 +13,37 @@
         unsigned int proximityState : 1; 
     float _batteryLevel;
     } _deviceFlags;
-    NSInteger _numDeviceOrientationObservers;
+    int _numDeviceOrientationObservers;
 }
 
-@property(retain,readonly) NSString *buildVersion;
-@property(retain,readonly) NSString *localizedModel;
-@property(retain,readonly) NSString *model;
-@property(retain,readonly) NSString *name;
-@property(retain,readonly) NSString *systemName;
-@property(retain,readonly) NSString *systemVersion;
-@property(retain,readonly) NSString *uniqueIdentifier;
 @property(readonly) float batteryLevel;
 @property(getter=isBatteryMonitoringEnabled) BOOL batteryMonitoringEnabled;
-@property(readonly) NSInteger batteryState;
+@property(readonly) int batteryState;
+@property(retain,readonly) NSString * buildVersion;
 @property(getter=isGeneratingDeviceOrientationNotifications,readonly) BOOL generatesDeviceOrientationNotifications;
+@property(retain,readonly) NSString * localizedModel;
+@property(retain,readonly) NSString * model;
 @property(getter=isMultitaskingSupported,readonly) BOOL multitaskingSupported;
-@property NSInteger orientation;
-@property(readonly) NSInteger orientation;
+@property(retain,readonly) NSString * name;
+@property int orientation;
+@property(readonly) int orientation;
 @property(getter=isProximityMonitoringEnabled) BOOL proximityMonitoringEnabled;
 @property(readonly) BOOL proximityState;
-@property(readonly) NSInteger userInterfaceIdiom;
+@property(retain,readonly) NSString * systemName;
+@property(retain,readonly) NSString * systemVersion;
+@property(retain,readonly) NSString * uniqueIdentifier;
+@property(readonly) int userInterfaceIdiom;
 
 + (id)currentDevice;
-+ (NSInteger)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
++ (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
 
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
 - (void)_setBatteryLevel:(float)arg1;
-- (void)_setBatteryState:(NSInteger)arg1;
+- (void)_setBatteryState:(int)arg1;
 - (void)_setProximityState:(BOOL)arg1;
 - (float)batteryLevel;
-- (NSInteger)batteryState;
+- (int)batteryState;
 - (void)beginGeneratingDeviceOrientationNotifications;
 - (id)buildVersion;
 - (void)endGeneratingDeviceOrientationNotifications;
@@ -53,17 +55,17 @@
 - (id)localizedModel;
 - (id)model;
 - (id)name;
-- (NSInteger)orientation;
+- (int)orientation;
 - (void)playInputClick;
 - (BOOL)proximityState;
 - (void)setBatteryMonitoringEnabled:(BOOL)arg1;
 - (void)setIsWildcat:(BOOL)arg1;
-- (void)setOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)setOrientation:(int)arg1;
 - (void)setProximityMonitoringEnabled:(BOOL)arg1;
 - (id)systemName;
 - (id)systemVersion;
 - (id)uniqueIdentifier;
-- (NSInteger)userInterfaceIdiom;
+- (int)userInterfaceIdiom;
 
 @end

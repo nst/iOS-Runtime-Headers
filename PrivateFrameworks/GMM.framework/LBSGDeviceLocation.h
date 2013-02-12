@@ -9,10 +9,10 @@
     LBSGLocation *_location;
 }
 
-@property(retain) LBSGCell *cell;
-@property(retain) LBSGLocation *location;
+@property(retain) LBSGCell * cell;
 @property(readonly) BOOL hasCell;
 @property(readonly) BOOL hasLocation;
+@property(retain) LBSGLocation * location;
 
 - (id)cell;
 - (void)dealloc;

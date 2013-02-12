@@ -5,24 +5,24 @@
 @class NSString, NSURL;
 
 @interface SUItemLink : NSObject <NSCopying> {
-    NSInteger _linkTarget;
-    NSInteger _linkType;
+    int _linkTarget;
+    int _linkType;
     NSString *_title;
     NSURL *_url;
 }
 
-@property(retain) NSURL *URL;
-@property(copy) NSString *title;
-@property NSInteger linkTarget;
-@property NSInteger linkType;
+@property(retain) NSURL * URL;
+@property int linkTarget;
+@property int linkType;
+@property(copy) NSString * title;
 
 - (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSInteger)linkTarget;
-- (NSInteger)linkType;
-- (void)setLinkTarget:(NSInteger)arg1;
-- (void)setLinkType:(NSInteger)arg1;
+- (int)linkTarget;
+- (int)linkType;
+- (void)setLinkTarget:(int)arg1;
+- (void)setLinkType:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)title;

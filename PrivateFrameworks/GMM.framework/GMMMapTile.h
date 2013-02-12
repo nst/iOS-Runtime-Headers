@@ -4,19 +4,19 @@
 
 @interface GMMMapTile : PBCodable {
     BOOL _hasTextSize;
-    NSInteger _textSize;
-    NSInteger _tileIndexX;
-    NSInteger _tileIndexY;
-    NSInteger _tileType;
-    NSInteger _zoomLevel;
+    int _textSize;
+    int _tileIndexX;
+    int _tileIndexY;
+    int _tileType;
+    int _zoomLevel;
 }
 
 @property(readonly) BOOL hasTextSize;
-@property NSInteger textSize;
-@property NSInteger tileIndexX;
-@property NSInteger tileIndexY;
-@property NSInteger tileType;
-@property NSInteger zoomLevel;
+@property int textSize;
+@property int tileIndexX;
+@property int tileIndexY;
+@property int tileType;
+@property int zoomLevel;
 
 - (void)dealloc;
 - (id)description;
@@ -24,16 +24,16 @@
 - (BOOL)hasTextSize;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setTextSize:(NSInteger)arg1;
-- (void)setTileIndexX:(NSInteger)arg1;
-- (void)setTileIndexY:(NSInteger)arg1;
-- (void)setTileType:(NSInteger)arg1;
-- (void)setZoomLevel:(NSInteger)arg1;
-- (NSInteger)textSize;
-- (NSInteger)tileIndexX;
-- (NSInteger)tileIndexY;
-- (NSInteger)tileType;
+- (void)setTextSize:(int)arg1;
+- (void)setTileIndexX:(int)arg1;
+- (void)setTileIndexY:(int)arg1;
+- (void)setTileType:(int)arg1;
+- (void)setZoomLevel:(int)arg1;
+- (int)textSize;
+- (int)tileIndexX;
+- (int)tileIndexY;
+- (int)tileType;
 - (void)writeTo:(id)arg1;
-- (NSInteger)zoomLevel;
+- (int)zoomLevel;
 
 @end

@@ -9,7 +9,7 @@
     UITextInputTraits *_traits;
 }
 
-@property(readonly) GKComposeRecipient *recipient;
+@property(readonly) GKComposeRecipient * recipient;
 
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (void)dealloc;

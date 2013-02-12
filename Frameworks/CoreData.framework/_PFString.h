@@ -3,10 +3,10 @@
  */
 
 @interface _PFString : NSString {
-    NSInteger _cd_rc;
-    NSUInteger _length;
-    NSInteger _reserved1;
-    NSInteger _reserved2;
+    int _cd_rc;
+    unsigned int _length;
+    int _reserved1;
+    int _reserved2;
     id _sourceData;
 }
 
@@ -17,23 +17,23 @@
 - (const char *)UTF8String;
 - (const char *)_fastCStringContents:(BOOL)arg1;
 - (const char *)cString;
-- (NSUInteger)cStringLength;
-- (unsigned short)characterAtIndex:(NSUInteger)arg1;
+- (unsigned int)cStringLength;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getCString:(char *)arg1;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getCharacters:(unsigned short*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
-- (NSUInteger)length;
+- (unsigned int)length;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

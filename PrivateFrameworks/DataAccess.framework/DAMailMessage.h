@@ -7,8 +7,8 @@
 
 - (id)attachments;
 - (id)body;
-- (NSInteger)bodySize;
-- (NSInteger)bodyTruncated;
+- (int)bodySize;
+- (int)bodyTruncated;
 - (id)cc;
 - (id)conversationId;
 - (id)conversationIndex;
@@ -17,9 +17,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)folderID;
 - (id)from;
-- (NSInteger)importance;
+- (int)importance;
 - (id)initWithCoder:(id)arg1;
-- (NSInteger)lastVerb;
+- (int)lastVerb;
 - (id)longID;
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;

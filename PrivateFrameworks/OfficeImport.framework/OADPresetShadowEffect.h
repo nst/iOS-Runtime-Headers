@@ -3,15 +3,15 @@
  */
 
 @interface OADPresetShadowEffect : OADShadowEffect {
-    NSInteger mPresetShadowType;
+    int mPresetShadowType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)equivalentOuterShadowEffect;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)presetShadowType;
-- (void)setPresetShadowType:(NSInteger)arg1;
+- (int)presetShadowType;
+- (void)setPresetShadowType:(int)arg1;
 
 @end

@@ -16,7 +16,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)first;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFirst:(id)arg1 second:(id)arg2;

@@ -13,20 +13,20 @@
     MLPhotoDCFDirectory *_directory;
     NSString *_directoryPath;
     NSMutableSet *_extensions;
-    NSUInteger _hash;
+    unsigned int _hash;
     NSString *_prebakedThumbnailPath;
     NSString *_preferredExtension;
     NSString *_videoFileExtension;
 }
 
 + (id)allMetadataFileExtensions;
-+ (struct CGImage { }*)createThumbnailOfImage:(struct CGImage { }*)arg1 format:(NSInteger)arg2 fullPath:(id)arg3 orientation:(NSInteger)arg4 outThumbnailData:(id*)arg5;
++ (struct CGImage { }*)createThumbnailOfImage:(struct CGImage { }*)arg1 format:(int)arg2 fullPath:(id)arg3 orientation:(int)arg4 outThumbnailData:(id*)arg5;
 
 - (void)addExtension:(id)arg1;
 - (void)addExtensionsFromMetadataDirectory;
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)createMetadataDirectoryIfNecessary;
-- (void)createWildcatThumbnailsFromImage:(struct CGImage { }*)arg1 orientation:(NSInteger)arg2 options:(id)arg3 delegate:(id)arg4;
+- (void)createWildcatThumbnailsFromImage:(struct CGImage { }*)arg1 orientation:(int)arg2 options:(id)arg3 delegate:(id)arg4;
 - (id)date;
 - (void)dealloc;
 - (id)delegate;
@@ -43,9 +43,9 @@
 - (BOOL)hasPrebakedWildcatThumbnails;
 - (BOOL)hasThumbnail;
 - (BOOL)hasVideoFile;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)imageSourceTypeHint;
-- (id)initWithName:(id)arg1 number:(NSInteger)arg2 directory:(id)arg3;
+- (id)initWithName:(id)arg1 number:(int)arg2 directory:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
 - (BOOL)isValidImage;

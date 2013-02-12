@@ -23,44 +23,44 @@
     struct __CFWriteStream { } *_writeStream;
 }
 
-+ (NSUInteger)connects;
++ (unsigned int)connects;
 + (unsigned long long)inBytes;
 + (unsigned long long)inBytesPerSecond;
 + (void)initialize;
 + (unsigned long long)outBytes;
 + (unsigned long long)outBytesPerSecond;
-+ (NSUInteger)reads;
++ (unsigned int)reads;
 + (void)resetStatistics;
-+ (void)setSimulatedSocketSpeed:(NSInteger)arg1;
++ (void)setSimulatedSocketSpeed:(int)arg1;
 + (void)showStatistics;
-+ (NSInteger)simulatedSocketSpeed;
++ (int)simulatedSocketSpeed;
 + (unsigned long long)totalBytesPerSecond;
-+ (NSUInteger)writes;
++ (unsigned int)writes;
 
 - (BOOL)_startSSLHandshakeWithProtocol:(id)arg1 disableSSL2:(BOOL)arg2 errorPtr:(id*)arg3;
 - (void)abort;
-- (BOOL)connectToHost:(id)arg1 withPort:(NSUInteger)arg2 service:(id)arg3 protocol:(id)arg4;
+- (BOOL)connectToHost:(id)arg1 withPort:(unsigned int)arg2 service:(id)arg3 protocol:(id)arg4;
 - (struct __CFReadStream { }*)copyReadStream;
 - (struct __CFWriteStream { }*)copyWriteStream;
 - (void)dealloc;
-- (NSInteger)fileDescriptor;
+- (int)fileDescriptor;
 - (id)init;
-- (id)initWithTimeout:(NSInteger)arg1;
+- (id)initWithTimeout:(int)arg1;
 - (BOOL)isReadable;
 - (BOOL)isValid;
 - (BOOL)isWritable;
 - (double)lastUsedTime;
-- (NSInteger)readBytes:(char *)arg1 length:(NSInteger)arg2;
+- (int)readBytes:(char *)arg1 length:(int)arg2;
 - (id)remoteHostname;
-- (NSUInteger)remotePortNumber;
+- (unsigned int)remotePortNumber;
 - (id)securityProtocol;
 - (id)serverCertificates;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setEventHandler:(id)arg1;
 - (BOOL)setSecurityProtocol:(id)arg1;
-- (void)setTimeout:(NSInteger)arg1;
+- (void)setTimeout:(int)arg1;
 - (id)sourceIPAddress;
-- (NSInteger)timeout;
-- (NSInteger)writeBytes:(const char *)arg1 length:(NSInteger)arg2;
+- (int)timeout;
+- (int)writeBytes:(const char *)arg1 length:(int)arg2;
 
 @end

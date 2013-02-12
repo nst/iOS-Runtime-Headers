@@ -3,16 +3,16 @@
  */
 
 @interface CMToggleProperty : CMProperty {
-    NSInteger wdValue;
+    int wdValue;
 }
 
-- (NSInteger)compareValue:(id)arg1;
+- (int)compareValue:(id)arg1;
 - (id)cssStringForName:(id)arg1;
-- (id)initWithCMTogglePropertyValue:(NSInteger)arg1;
+- (id)initWithCMTogglePropertyValue:(int)arg1;
 - (id)mapBold;
 - (id)mapItalic;
 - (id)mapStrikeTrough;
 - (void)resolveWithBaseProperty:(id)arg1;
-- (NSInteger)value;
+- (int)value;
 
 @end

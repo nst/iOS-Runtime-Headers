@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSMutableData, NSURLConnection, NSURLRequest;
 
 @interface XMLSAXHTTPRequest : NSObject {
@@ -33,7 +38,7 @@
         int (*getParameterEntity)(); 
         int (*cdataBlock)(); 
         int (*externalSubset)(); 
-        NSUInteger initialized; 
+        unsigned int initialized; 
         void *_private; 
         int (*startElementNs)(); 
         int (*endElementNs)(); 
@@ -47,7 +52,7 @@
 
 + (BOOL)anyRequestLoading;
 + (id)serviceUnavailableError;
-+ (NSUInteger)uniqueQueryID;
++ (unsigned int)uniqueQueryID;
 
 - (void)_finishedLoading;
 - (void)_startedLoading;
@@ -63,7 +68,7 @@
 - (BOOL)isLoading;
 - (void)loadRequest:(id)arg1;
 - (void)loadStatusChanged;
-- (NSInteger)parseData:(id)arg1;
+- (int)parseData:(id)arg1;
 - (BOOL)receivedValidResponse:(id)arg1;
 - (id)request;
 - (void)willParseData;

@@ -5,18 +5,18 @@
 @class EDResources;
 
 @interface CHDLegendEntry : NSObject {
-    NSUInteger mEntryIndex;
-    NSUInteger mFontIndex;
+    unsigned int mEntryIndex;
+    unsigned int mFontIndex;
     EDResources *mResources;
 }
 
 - (void)dealloc;
-- (NSUInteger)entryIndex;
+- (unsigned int)entryIndex;
 - (id)font;
-- (NSUInteger)fontIndex;
+- (unsigned int)fontIndex;
 - (id)initWithResources:(id)arg1;
-- (void)setEntryIndex:(NSUInteger)arg1;
+- (void)setEntryIndex:(unsigned int)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(NSUInteger)arg1;
+- (void)setFontIndex:(unsigned int)arg1;
 
 @end

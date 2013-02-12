@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface EAAccessoryManager : NSObject {
     NSMutableArray *_connectedAccessories;
 }
 
-@property(readonly) NSArray *connectedAccessories;
+@property(readonly) NSArray * connectedAccessories;
 
 + (BOOL)isLoggingEnabled;
 + (id)sharedAccessoryManager;

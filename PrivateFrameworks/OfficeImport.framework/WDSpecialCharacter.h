@@ -6,15 +6,15 @@
 
 @interface WDSpecialCharacter : WDRun {
     WDCharacterProperties *mProperties;
-    NSInteger mType;
+    int mType;
 }
 
-- (NSInteger)characterType;
+- (int)characterType;
 - (void)clearProperties;
 - (void)dealloc;
 - (id)initWithParagraph:(id)arg1;
 - (id)properties;
-- (NSInteger)runType;
-- (void)setCharacterType:(NSInteger)arg1;
+- (int)runType;
+- (void)setCharacterType:(int)arg1;
 
 @end

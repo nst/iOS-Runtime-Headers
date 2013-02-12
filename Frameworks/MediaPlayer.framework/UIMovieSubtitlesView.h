@@ -20,9 +20,9 @@
     BOOL _subtitlesAreForced;
 }
 
-@property(retain) NSAttributedString *subtitleString;
 @property float fontSize;
-@property CGSize padding;
+@property struct CGSize { float width; float height; } padding;
+@property(retain) NSAttributedString * subtitleString;
 @property(readonly) BOOL subtitlesAreForced;
 
 - (id)_translateUIMovieAttributesOfAttributedString:(id)arg1;

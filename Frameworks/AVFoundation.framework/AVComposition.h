@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCompositionInternal;
+@class AVCompositionInternal, NSArray;
 
 @interface AVComposition : AVAsset <NSMutableCopying> {
     AVCompositionInternal *_priv;
 }
 
-@property(readonly) NSArray *tracks;
+@property(readonly) NSArray * tracks;
 
 + (void)initialize;
 

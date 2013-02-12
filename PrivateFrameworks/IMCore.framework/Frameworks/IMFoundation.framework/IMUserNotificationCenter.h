@@ -29,12 +29,12 @@
 - (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id)arg3;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2;
 - (id)autorelease;
-- (NSUInteger)countForIdentifier:(id)arg1;
+- (unsigned int)countForIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (oneway void)release;
 - (void)removeAllListeners;
 - (void)removeListener:(id)arg1;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

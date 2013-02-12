@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountSettingsUI.framework/AccountSettingsUI
  */
 
-@class NSMutableArray, PSViewController;
+@class NSArray, NSMutableArray, PSViewController;
 
 @interface AccountSettingsUIPluginLoader : NSObject {
     NSMutableArray *_bundles;
@@ -10,10 +10,10 @@
     PSViewController *_parentController;
 }
 
-@property(readonly) NSArray *plugins;
+@property(readonly) NSArray * plugins;
 
-- (void)_addBundleWithName:(id)arg1 commonSpecifierMode:(NSInteger)arg2 accountTypes:(id)arg3;
-- (id)_pluginsWithCommonSpecifierMode:(NSInteger)arg1;
+- (void)_addBundleWithName:(id)arg1 commonSpecifierMode:(int)arg2 accountTypes:(id)arg3;
+- (id)_pluginsWithCommonSpecifierMode:(int)arg1;
 - (void)dealloc;
 - (id)initWithParentController:(id)arg1 includeNonAccountBundles:(BOOL)arg2;
 - (id)orderedPluginsForAdd;

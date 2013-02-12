@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
+@class NSData;
+
 @interface PBCodable : NSObject {
 }
 
-@property(readonly) NSData *data;
+@property(readonly) NSData * data;
 
 - (id)data;
 - (id)dictionaryRepresentation;

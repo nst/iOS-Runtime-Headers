@@ -8,7 +8,7 @@
     AVMediaFileType *_fileType;
 }
 
-@property(readonly) AVMediaFileType *fileType;
+@property(readonly) AVMediaFileType * fileType;
 
 + (void)initialize;
 + (id)mediaFileOutputSettingsValidatorForFileType:(id)arg1;

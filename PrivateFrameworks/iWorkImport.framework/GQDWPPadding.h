@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface GQDWPPadding : NSObject <GQDNameMappable> {
     float mBottom;
     float mLeft;
@@ -9,11 +14,11 @@
     float mTop;
 }
 
-+ (const struct StateSpec { int (**x1)(); char *x2; NSInteger x3; NSInteger x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
++ (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
 - (float)bottom;
 - (float)left;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (float)right;
 - (float)top;
 

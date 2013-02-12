@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSData, NSDate, NSDictionary;
+@class NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @interface FTMessage : NSObject {
     NSDictionary *_clientInfo;
@@ -12,17 +12,18 @@
     NSDictionary *_userInfo;
 }
 
-@property(readonly) NSDictionary *additionalMessageHeaders;
-@property(readonly) NSString *bagKey;
-@property(copy) NSDictionary *clientInfo;
-@property(readonly) NSDate *creationDate;
-@property(readonly) NSDictionary *messageBody;
-@property(readonly) NSArray *requiredKeys;
-@property(copy) NSData *serviceData;
-@property(copy) NSData *sessionToken;
-@property(copy) NSDictionary *userInfo;
+@property(readonly) NSDictionary * additionalMessageHeaders;
+@property(readonly) NSString * bagKey;
+@property(copy) NSDictionary * clientInfo;
+@property(readonly) NSDate * creationDate;
 @property(readonly) BOOL hasRequiredKeys;
 @property(readonly) BOOL isValidMessage;
+@property(readonly) NSDictionary * messageBody;
+@property(readonly) BOOL payloadCanBeLogged;
+@property(readonly) NSArray * requiredKeys;
+@property(copy) NSData * serviceData;
+@property(copy) NSData * sessionToken;
+@property(copy) NSDictionary * userInfo;
 
 - (id)additionalMessageHeaders;
 - (id)bagKey;
@@ -34,6 +35,7 @@
 - (id)init;
 - (BOOL)isValidMessage;
 - (id)messageBody;
+- (BOOL)payloadCanBeLogged;
 - (id)requiredKeys;
 - (id)serviceData;
 - (id)sessionToken;

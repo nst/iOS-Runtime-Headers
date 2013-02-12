@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSArray, PLAirTunesService, UITableView;
+@class <PLAirTunesServicePickerViewControllerDelegate>, NSArray, PLAirTunesService, UITableView;
 
 @interface PLAirTunesServicePickerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     NSArray *_availableServices;
@@ -11,7 +11,7 @@
     UITableView *_table;
 }
 
-@property <PLAirTunesServicePickerViewControllerDelegate> *delegate;
+@property <PLAirTunesServicePickerViewControllerDelegate> * delegate;
 
 - (void)_setCell:(id)arg1 checked:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
@@ -23,7 +23,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 

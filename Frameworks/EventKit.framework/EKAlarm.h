@@ -10,7 +10,7 @@
     double _relativeOffset;
 }
 
-@property(copy) NSDate *absoluteDate;
+@property(copy) NSDate * absoluteDate;
 @property double relativeOffset;
 
 + (id)alarmWithAbsoluteDate:(id)arg1;
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithAbsoluteDate:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRelativeOffset:(double)arg1;

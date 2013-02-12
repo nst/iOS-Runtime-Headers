@@ -12,7 +12,7 @@
     void *_state;
 }
 
-+ (id)_errorWithErrno:(NSInteger)arg1 atPath:(id)arg2;
++ (id)_errorWithErrno:(int)arg1 atPath:(id)arg2;
 + (id)filesystemItemRemoveOperationWithPath:(id)arg1;
 
 - (BOOL)_filtersUnderbars;

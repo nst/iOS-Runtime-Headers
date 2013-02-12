@@ -6,15 +6,15 @@
 
 @interface GKRibbonSegmentedControl : UIControl {
     <GKRibbonSegmentedControlDelegate> *_delegate;
-    NSUInteger _selectedSegment;
-    NSUInteger _selectedSegmentIndex;
+    unsigned int _selectedSegment;
+    unsigned int _selectedSegmentIndex;
     BOOL _settingAppearance;
 }
 
-@property(retain) <GKRibbonSegmentedControlDelegate> *delegate;
 @property(readonly) float defaultHeight;
+@property(retain) <GKRibbonSegmentedControlDelegate> * delegate;
 @property(readonly) float minimumWidth;
-@property NSUInteger selectedSegmentIndex;
+@property unsigned int selectedSegmentIndex;
 
 - (id)_allTimeString;
 - (void)_tap:(id)arg1;
@@ -26,8 +26,8 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)minimumWidth;
-- (NSUInteger)selectedSegmentIndex;
+- (unsigned int)selectedSegmentIndex;
 - (void)setDelegate:(id)arg1;
-- (void)setSelectedSegmentIndex:(NSUInteger)arg1;
+- (void)setSelectedSegmentIndex:(unsigned int)arg1;
 
 @end

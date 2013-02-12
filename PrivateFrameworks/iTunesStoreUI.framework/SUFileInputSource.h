@@ -6,11 +6,11 @@
 
 @interface SUFileInputSource : SUInputSource {
     long long _expectedLength;
-    NSInteger _fd;
+    int _fd;
     NSURL *_url;
 }
 
-@property(readonly) NSURL *fileURL;
+@property(readonly) NSURL * fileURL;
 
 - (void)_close;
 - (void)close;
@@ -21,6 +21,6 @@
 - (id)init;
 - (id)initWithFileURL:(id)arg1;
 - (BOOL)open:(id*)arg1;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2 error:(id*)arg3;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
 
 @end

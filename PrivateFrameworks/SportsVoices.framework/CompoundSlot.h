@@ -5,10 +5,10 @@
 @class SlotSequence;
 
 @interface CompoundSlot : Slot {
-    SlotSequence *slots;
+    SlotSequence *_slots;
 }
 
-@property(readonly) SlotSequence *slots;
+@property(readonly) SlotSequence * slots;
 
 - (void)dealloc;
 - (id)description;

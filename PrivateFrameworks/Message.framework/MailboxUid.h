@@ -6,25 +6,25 @@
 
 @interface MailboxUid : MFWeakObject <MFWeakReferenceHolder> {
     MailAccount *_account;
-    NSUInteger _attributes;
+    unsigned int _attributes;
     NSMutableArray *_children;
     MessageCriterion *_criterion;
-    NSUInteger _mailboxID;
+    unsigned int _mailboxID;
     MailboxUid *_parent;
     NSString *_pathComponent;
     NSString *_permanentTag;
     NSString *_realFullPath;
     MailAccount *_representedAccount;
-    NSInteger _type;
+    int _type;
     NSMutableDictionary *_userInfo;
     BOOL allCriteriaMustBeSatisfied;
     NSString *pendingNameChange;
     NSString *uniqueId;
 }
 
-+ (BOOL)isDraftsMailboxType:(NSInteger)arg1;
-+ (BOOL)isOutgoingMailboxType:(NSInteger)arg1;
-+ (id)specialNameForType:(NSInteger)arg1;
++ (BOOL)isDraftsMailboxType:(int)arg1;
++ (BOOL)isOutgoingMailboxType:(int)arg1;
++ (id)specialNameForType:(int)arg1;
 
 - (id)URL;
 - (id)URLString;
@@ -37,14 +37,14 @@
 - (void)addToPostOrderTraversal:(id)arg1;
 - (BOOL)alwaysWriteFullMessageFile;
 - (id)ancestralAccount;
-- (NSUInteger)attributes;
-- (id)childAtIndex:(NSUInteger)arg1;
+- (unsigned int)attributes;
+- (id)childAtIndex:(unsigned int)arg1;
 - (id)childEnumerator;
 - (id)childEnumeratorIncludingHiddenChildren:(BOOL)arg1;
 - (id)childWithName:(id)arg1;
 - (id)childWithPermanentTag:(id)arg1;
 - (id)children;
-- (NSInteger)compareWithMailboxUid:(id)arg1;
+- (int)compareWithMailboxUid:(id)arg1;
 - (id)copyWithZone:(id)arg1;
 - (id)criterion;
 - (void)dealloc;
@@ -57,11 +57,11 @@
 - (id)fullPath;
 - (id)fullPathNonNil;
 - (BOOL)hasChildren;
-- (NSUInteger)indexOfChild:(id)arg1;
-- (NSInteger)indexToInsertChildMailboxUid:(id)arg1;
+- (unsigned int)indexOfChild:(id)arg1;
+- (int)indexToInsertChildMailboxUid:(id)arg1;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
-- (id)initWithName:(id)arg1 attributes:(NSUInteger)arg2 forAccount:(id)arg3 permanentTag:(id)arg4;
+- (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 forAccount:(id)arg3 permanentTag:(id)arg4;
 - (void)invalidate;
 - (BOOL)isContainer;
 - (BOOL)isDescendantOfMailbox:(id)arg1;
@@ -73,11 +73,11 @@
 - (BOOL)isVisible;
 - (id)lastViewedMessageDate;
 - (id)lastViewedMessageID;
-- (NSUInteger)mailboxID;
+- (unsigned int)mailboxID;
 - (id)mutableCopyOfChildren;
 - (id)name;
-- (NSUInteger)nonDeletedCount;
-- (NSUInteger)numberOfChildren;
+- (unsigned int)nonDeletedCount;
+- (unsigned int)numberOfChildren;
 - (void)objectWillBeDeallocated:(id)arg1;
 - (id)oldURLString;
 - (id)parent;
@@ -88,7 +88,7 @@
 - (id)representedAccount;
 - (id)rootMailbox;
 - (void)saveUserInfo;
-- (void)setAttributes:(NSUInteger)arg1;
+- (void)setAttributes:(unsigned int)arg1;
 - (BOOL)setChildren:(id)arg1;
 - (void)setCriterion:(id)arg1;
 - (void)setLastViewedMessageID:(id)arg1;
@@ -97,8 +97,8 @@
 - (void)setPendingNameChange:(id)arg1;
 - (void)setPermanentTag:(id)arg1;
 - (void)setRepresentedAccount:(id)arg1;
-- (void)setType:(NSInteger)arg1;
-- (BOOL)setUnreadCount:(NSUInteger)arg1;
+- (void)setType:(int)arg1;
+- (BOOL)setUnreadCount:(unsigned int)arg1;
 - (void)setUserInfoBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)setUserInfoWithDictionary:(id)arg1;
@@ -107,9 +107,9 @@
 - (id)store;
 - (id)tildeAbbreviatedPath;
 - (id)topMailbox;
-- (NSInteger)type;
+- (int)type;
 - (id)uniqueId;
-- (NSUInteger)unreadCount;
+- (unsigned int)unreadCount;
 - (BOOL)userInfoBoolForKey:(id)arg1;
 - (id)userInfoDictionary;
 - (id)userInfoForSerialization;

@@ -7,12 +7,13 @@
 @interface AVCaptureMovieFileOutputInternal : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     NSArray *metadata;
     } movieFragmentInterval;
     NSMutableArray *recordingDelegatesArray;
+    BOOL sendLastVideoPreviewFrame;
 }
 
 - (void)dealloc;

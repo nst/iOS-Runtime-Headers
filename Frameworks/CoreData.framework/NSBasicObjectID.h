@@ -3,7 +3,7 @@
  */
 
 @interface NSBasicObjectID : _NSCoreManagedObjectID {
-    NSInteger _cd_rc;
+    int _cd_rc;
     id _referenceData;
 }
 

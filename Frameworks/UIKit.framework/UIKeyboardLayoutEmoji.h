@@ -44,9 +44,9 @@
     UIKeyboardEmojiRecentsController *_recentsController;
 }
 
-@property(readonly) CGRect categoryFrame;
-@property(readonly) CGRect deleteFrame;
-@property(readonly) CGRect globeFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } categoryFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } deleteFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } globeFrame;
 
 + (void)_initializeSafeCategory;
 + (void)emojiKeyboardPreferencesChanged;
@@ -80,6 +80,6 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setKeyboardDefault;
 - (BOOL)shouldShowIndicator;
-- (void)showKeyboardType:(NSInteger)arg1 withAppearance:(NSInteger)arg2;
+- (void)showKeyboardType:(int)arg1 withAppearance:(int)arg2;
 
 @end

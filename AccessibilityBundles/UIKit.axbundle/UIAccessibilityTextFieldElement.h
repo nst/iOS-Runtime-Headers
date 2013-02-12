@@ -8,7 +8,7 @@
     UITextField *_textField;
 }
 
-@property UITextField *textField;
+@property UITextField * textField;
 
 - (void)_accessibilityCopy;
 - (void)_accessibilityCut;
@@ -18,8 +18,8 @@
 - (void)_accessibilityReplace;
 - (void)_accessibilitySelect;
 - (void)_accessibilitySelectAll;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)_accessibilityTextOperations;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_accessibilityUserTestingParent;

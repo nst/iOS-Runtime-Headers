@@ -9,7 +9,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithLatitude:(float)arg1 longitude:(float)arg2 revolution:(float)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (float)latitude;

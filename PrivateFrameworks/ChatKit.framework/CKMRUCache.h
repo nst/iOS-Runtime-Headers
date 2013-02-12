@@ -6,22 +6,22 @@
 
 @interface CKMRUCache : NSObject {
     NSMutableDictionary *_cacheDict;
-    NSUInteger _capacity;
+    unsigned int _capacity;
     NSMutableArray *_orderArray;
 }
 
-@property NSUInteger capacity;
-@property(readonly) NSUInteger count;
+@property unsigned int capacity;
+@property(readonly) unsigned int count;
 
 - (void)_removeLRUObject;
-- (NSUInteger)capacity;
-- (NSUInteger)count;
+- (unsigned int)capacity;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithCapacity:(NSUInteger)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)objectForKey:(id)arg1;
-- (void)setCapacity:(NSUInteger)arg1;
+- (void)setCapacity:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

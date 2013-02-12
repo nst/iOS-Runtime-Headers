@@ -13,11 +13,11 @@
     NSData *_enrollmentIdentityPersistentID;
 }
 
-@property(retain) NSString *URLString;
-@property(readonly) NSArray *deviceAttributes;
-@property(retain) NSData *enrollmentIdentityPersistentID;
+@property(retain) NSString * URLString;
 @property(readonly) id challenge;
 @property(readonly) BOOL confirmInstallation;
+@property(readonly) NSArray * deviceAttributes;
+@property(retain) NSData * enrollmentIdentityPersistentID;
 
 - (id)URLString;
 - (id)_badDataTypeErrorWithFieldName:(id)arg1;

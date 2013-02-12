@@ -25,26 +25,26 @@
     BOOL _outgoingPasswordSameAsIncomingPassword;
 }
 
-@property(readonly) NSString *emailAccountDescription;
-@property(readonly) NSString *emailAccountName;
-@property(readonly) NSString *emailAccountType;
-@property(readonly) NSString *emailAddress;
-@property(readonly) NSString *incomingMailServerAuthentication;
-@property(readonly) NSString *incomingMailServerHostname;
-@property(readonly) NSString *incomingMailServerIMAPPathPrefix;
-@property(readonly) NSNumber *incomingMailServerPortNumber;
-@property(readonly) NSString *incomingMailServerUsername;
-@property(readonly) NSString *incomingPassword;
-@property(readonly) NSString *outgoingMailServerAuthentication;
-@property(readonly) NSString *outgoingMailServerHostname;
-@property(readonly) NSNumber *outgoingMailServerPortNumber;
-@property(readonly) NSString *outgoingMailServerUsername;
-@property(readonly) NSString *outgoingPassword;
+@property(readonly) NSString * emailAccountDescription;
+@property(readonly) NSString * emailAccountName;
+@property(readonly) NSString * emailAccountType;
+@property(readonly) NSString * emailAddress;
+@property(readonly) NSString * incomingMailServerAuthentication;
+@property(readonly) NSString * incomingMailServerHostname;
+@property(readonly) NSString * incomingMailServerIMAPPathPrefix;
+@property(readonly) NSNumber * incomingMailServerPortNumber;
 @property(readonly) BOOL incomingMailServerUseSSL;
+@property(readonly) NSString * incomingMailServerUsername;
+@property(readonly) NSString * incomingPassword;
+@property(readonly) NSString * outgoingMailServerAuthentication;
+@property(readonly) NSString * outgoingMailServerHostname;
+@property(readonly) NSNumber * outgoingMailServerPortNumber;
 @property(readonly) BOOL outgoingMailServerUseSSL;
+@property(readonly) NSString * outgoingMailServerUsername;
+@property(readonly) NSString * outgoingPassword;
 @property(readonly) BOOL outgoingPasswordSameAsIncomingPassword;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)profileNameFromAccountTag:(id)arg1;
 + (id)typeStrings;
 

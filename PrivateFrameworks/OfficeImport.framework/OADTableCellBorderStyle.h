@@ -35,7 +35,7 @@
 - (void)setTopStroke:(id)arg1;
 - (void)setVertInsideStroke:(id)arg1;
 - (id)shallowCopy;
-- (id)stroke:(NSInteger)arg1;
+- (id)stroke:(int)arg1;
 - (id)topLeftToBottomRightStroke;
 - (id)topStroke;
 - (id)vertInsideStroke;

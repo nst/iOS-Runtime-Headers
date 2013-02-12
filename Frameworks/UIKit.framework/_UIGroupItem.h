@@ -8,17 +8,17 @@
     unsigned int _isRadioGroup : 1;
     unsigned int _isLabelGroup : 1;
     unsigned int _reserved : 30;
-    NSInteger _childCount;
-    NSInteger _rowCountBeforeGroup;
+    int _childCount;
+    int _rowCountBeforeGroup;
     NSString *_title;
     float offset;
 }
 
-- (NSInteger)childCount;
+- (int)childCount;
 - (void)dealloc;
-- (id)initWithTitle:(id)arg1 childCount:(NSInteger)arg2 rowCountBeforeGroup:(NSInteger)arg3 isRadioGroup:(BOOL)arg4;
-- (NSInteger)rowCountBeforeGroup;
-- (NSInteger)tableRowForRow:(NSInteger)arg1;
+- (id)initWithTitle:(id)arg1 childCount:(int)arg2 rowCountBeforeGroup:(int)arg3 isRadioGroup:(BOOL)arg4;
+- (int)rowCountBeforeGroup;
+- (int)tableRowForRow:(int)arg1;
 - (id)title;
 
 @end

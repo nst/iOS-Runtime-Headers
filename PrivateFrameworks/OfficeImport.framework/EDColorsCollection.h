@@ -2,28 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDColorsCollection : EDCollection <OADColorPalette> {
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: @12@0:4B8 */
-    NSUInteger mDefaultColorsCount;
+    unsigned int mDefaultColorsCount;
 }
 
-+ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isSystemColorId:(NSUInteger)arg1;
-+ (NSInteger)oadSchemeColorIdFromThemeIndex:(NSInteger)arg1;
-+ (NSInteger)systemColorIdFromIndex:(NSUInteger)arg1;
-+ (NSUInteger)xlColorIndexFromCPSystemColorIDEnum:(NSInteger)arg1;
++ (bool)isSystemColorId:(unsigned int)arg1;
++ (int)oadSchemeColorIdFromThemeIndex:(int)arg1;
++ (int)systemColorIdFromIndex:(unsigned int)arg1;
++ (unsigned int)xlColorIndexFromCPSystemColorIDEnum:(int)arg1;
 
-- (void)addColors:(const NSUInteger*)arg1 count:(unsigned long)arg2 defaultColors:(const NSUInteger*)arg3 defaultCount:(NSUInteger)arg4;
+- (void)addColors:(const unsigned int*)arg1 count:(unsigned long)arg2 defaultColors:(const unsigned int*)arg3 defaultCount:(unsigned int)arg4;
 - (void)addDefaultPalette;
-- (NSUInteger)addOrEquivalentColorExcludingDefaults:(id)arg1;
-- (void)addPalette:(const NSUInteger*)arg1 paletteSize:(unsigned long)arg2 paletteX:(const NSUInteger*)arg3 paletteXSize:(NSUInteger)arg4;
-- (id)colorWithIndex:(NSUInteger)arg1;
-- (NSUInteger)defaultColorsCount;
-- (id)initWithDefaultSetup:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (unsigned int)addOrEquivalentColorExcludingDefaults:(id)arg1;
+- (void)addPalette:(const unsigned int*)arg1 paletteSize:(unsigned long)arg2 paletteX:(const unsigned int*)arg3 paletteXSize:(unsigned int)arg4;
+- (id)colorWithIndex:(unsigned int)arg1;
+- (unsigned int)defaultColorsCount;
+- (id)initWithDefaultSetup:(bool)arg1;
 - (void)setupDefaults;
 
 @end

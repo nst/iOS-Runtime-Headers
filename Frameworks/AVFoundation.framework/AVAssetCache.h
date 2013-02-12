@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetCacheInternal;
+@class AVAssetCacheInternal, NSURL;
 
 @interface AVAssetCache : NSObject {
     AVAssetCacheInternal *_priv;
 }
 
-@property(copy,readonly) NSURL *URL;
+@property(copy,readonly) NSURL * URL;
 @property(readonly) long long currentSize;
 @property long long maxEntrySize;
 @property long long maxSize;

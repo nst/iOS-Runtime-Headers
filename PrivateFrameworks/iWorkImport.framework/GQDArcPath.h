@@ -18,7 +18,7 @@
 - (double)arrowWidth;
 - (struct CGPath { }*)createBezierPath;
 - (double)headAngle;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (struct CGSize { float x1; float x2; })size;
 
 @end

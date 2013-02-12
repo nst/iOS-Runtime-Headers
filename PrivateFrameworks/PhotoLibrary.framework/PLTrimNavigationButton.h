@@ -6,6 +6,6 @@
 }
 
 - (id)initWithTitle:(id)arg1;
-- (void)setControlSize:(NSInteger)arg1;
+- (void)setControlSize:(int)arg1;
 
 @end

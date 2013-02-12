@@ -10,13 +10,13 @@
     NSString *_oldServerId;
 }
 
-@property(readonly) NSString *newContainerId;
-@property(readonly) NSString *oldContainerId;
-@property(readonly) NSString *oldServerId;
+@property(readonly) NSString * newContainerId;
+@property(readonly) NSString * oldContainerId;
+@property(readonly) NSString * oldServerId;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAction:(NSInteger)arg1 context:(id)arg2 oldContainerId:(id)arg3 oldServerId:(id)arg4 newContainerId:(id)arg5;
+- (id)initWithAction:(int)arg1 context:(id)arg2 oldContainerId:(id)arg3 oldServerId:(id)arg4 newContainerId:(id)arg5;
 - (id)initWithCoder:(id)arg1;
 - (id)newContainerId;
 - (id)oldContainerId;

@@ -11,10 +11,10 @@
     SUScriptViewController *_viewController;
 }
 
-@property(getter=_badgeValue,retain) NSString *badgeValue; /* unknown property attribute: Sset_badgeValue: */
-@property(getter=_identifier,retain) NSString *identifier; /* unknown property attribute: Sset_identifier: */
-@property(getter=_transient) BOOL transient; /* unknown property attribute: Sset_transient: */
-@property(getter=_viewController,retain) SUScriptViewController *viewController; /* unknown property attribute: Sset_viewController: */
+@property(getter=_badgeValue,setter=set_badgeValue:,retain) NSString * badgeValue;
+@property(getter=_identifier,setter=set_identifier:,retain) NSString * identifier;
+@property(getter=_transient,setter=set_transient:) BOOL transient;
+@property(getter=_viewController,setter=set_viewController:,retain) SUScriptViewController * viewController;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

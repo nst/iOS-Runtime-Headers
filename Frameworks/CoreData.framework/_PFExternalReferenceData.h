@@ -9,8 +9,8 @@
         unsigned int _isStoredExternally : 1; 
         unsigned int _hasMappedData : 1; 
         unsigned int _reserved : 28; 
-    NSUInteger _bytesLengthForExternalReference;
-    NSUInteger _bytesLengthForStore;
+    unsigned int _bytesLengthForExternalReference;
+    unsigned int _bytesLengthForStore;
     void *_bytesPtrForExternalReference;
     void *_bytesPtrForStore;
     } _externalDataFlags;
@@ -22,8 +22,8 @@
 + (BOOL)_updateFileDescriptorsInUseReserveNew:(BOOL)arg1;
 
 - (void)_attemptToMapData;
-- (NSUInteger)_bytesLengthForExternalReference;
-- (NSUInteger)_bytesLengthForStore;
+- (unsigned int)_bytesLengthForExternalReference;
+- (unsigned int)_bytesLengthForStore;
 - (const void*)_bytesPtrForExternalReference;
 - (const void*)_bytesPtrForStore;
 - (void)_deleteExternalReferenceFromPermanentLocation;
@@ -37,15 +37,15 @@
 - (id)copy;
 - (void)dealloc;
 - (id)description;
-- (void)getBytes:(void*)arg1 length:(NSUInteger)arg2;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)hasExternalReferenceContent;
 - (id)initForExternalLocation:(id)arg1 data:(id)arg2;
-- (id)initWithStoreBytes:(const void*)arg1 length:(NSUInteger)arg2;
+- (id)initWithStoreBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToData:(id)arg1;
-- (NSUInteger)length;
+- (unsigned int)length;
 - (id)mutableCopy;
-- (id)subdataWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

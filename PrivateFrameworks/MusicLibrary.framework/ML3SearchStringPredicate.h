@@ -9,18 +9,18 @@
     NSString *_searchString;
 }
 
-@property(copy) NSArray *properties;
-@property(copy) NSString *searchString;
+@property(copy) NSArray * properties;
+@property(copy) NSString * searchString;
 
 + (id)predicateWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
 
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
+- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

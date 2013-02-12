@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSAffineTransform : NSObject <NSCopying, NSCoding> {
     struct { 
         float m11; 
@@ -15,8 +20,8 @@
 
 + (id)transform;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (id)CA_addValue:(id)arg1 multipliedBy:(NSInteger)arg2;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (float)angle;
 - (void)appendTransform:(id)arg1;
@@ -28,7 +33,7 @@
 - (BOOL)differOnlyByTranslation:(id)arg1;
 - (BOOL)differsFrom:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)initWithCoder:(id)arg1;

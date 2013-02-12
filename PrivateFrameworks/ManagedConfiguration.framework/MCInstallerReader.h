@@ -8,6 +8,6 @@
 + (void)_setProfileStorageDirectory:(id)arg1;
 + (id)sharedReader;
 
-- (id)pathsToInstalledProfilesWithFilterFlags:(NSInteger)arg1;
+- (id)pathsToInstalledProfilesWithFilterFlags:(int)arg1;
 
 @end

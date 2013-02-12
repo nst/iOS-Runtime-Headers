@@ -17,16 +17,16 @@
 + (id)fileHandleWithStandardInput;
 + (id)fileHandleWithStandardOutput;
 + (void)initialize;
-+ (id)mf_createFileAtPath:(id)arg1 flags:(NSInteger)arg2 mode:(NSInteger)arg3;
-+ (id)mf_fileHandleForTempFile:(id*)arg1 atPath:(id)arg2 mode:(NSInteger)arg3;
++ (id)mf_createFileAtPath:(id)arg1 flags:(int)arg2 mode:(int)arg3;
++ (id)mf_fileHandleForTempFile:(id*)arg1 atPath:(id)arg2 mode:(int)arg3;
 
 - (id)availableData;
 - (void)closeFile;
-- (NSInteger)fileDescriptor;
-- (id)initWithPath:(id)arg1 flags:(NSInteger)arg2 createMode:(NSInteger)arg3 error:(id*)arg4;
-- (id)initWithPath:(id)arg1 flags:(NSInteger)arg2 createMode:(NSInteger)arg3;
+- (int)fileDescriptor;
+- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
+- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
 - (unsigned long long)offsetInFile;
-- (id)readDataOfLength:(NSUInteger)arg1;
+- (id)readDataOfLength:(unsigned int)arg1;
 - (id)readDataToEndOfFile;
 - (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;

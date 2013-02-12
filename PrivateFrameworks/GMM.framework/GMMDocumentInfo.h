@@ -9,8 +9,8 @@
     NSString *_author;
 }
 
-@property(retain) NSString *attributionUrl;
-@property(retain) NSString *author;
+@property(retain) NSString * attributionUrl;
+@property(retain) NSString * author;
 @property(readonly) BOOL hasAttributionUrl;
 @property(readonly) BOOL hasAuthor;
 

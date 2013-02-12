@@ -5,7 +5,7 @@
 @interface PLCameraAlbum : PLPhotoAlbum {
     BOOL _albumDidChange;
     BOOL _ignoreNotifications;
-    NSUInteger _previousImageCount;
+    unsigned int _previousImageCount;
 }
 
 + (void)deletePreviewWellImage;
@@ -15,9 +15,9 @@
 + (void)savePreviewWellImage:(id)arg1 shouldNotify:(BOOL)arg2;
 
 - (id)_slideshowSettingsPath;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (BOOL)deletedWhenEmpty;
-- (NSInteger)indexOfPosterImage;
+- (int)indexOfPosterImage;
 - (id)init;
 - (BOOL)isEditable;
 - (id)name;

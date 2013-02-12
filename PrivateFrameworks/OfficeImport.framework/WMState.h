@@ -7,8 +7,8 @@
 @interface WMState : CMState {
     CMOutlineState *currentListState;
     NSMutableDictionary *listStates;
-    NSUInteger mBlockIndex;
-    NSUInteger mCurrentPage;
+    unsigned int mBlockIndex;
+    unsigned int mCurrentPage;
     BOOL mIsFrame;
     BOOL mIsFrameEnd;
     BOOL mIsFrameStart;
@@ -17,19 +17,19 @@
     WDText *mLastHeader;
     float mLeftMargin;
     float mPageHeight;
-    NSUInteger mRunIndex;
+    unsigned int mRunIndex;
     float mTopMargin;
     float mTotalPageHeight;
     CMOutlineState *outlineState;
 }
 
-- (NSUInteger)blockIndex;
+- (unsigned int)blockIndex;
 - (void)clearCurrentListState;
 - (id)currentListState;
-- (NSUInteger)currentPage;
+- (unsigned int)currentPage;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCurrentListId:(NSInteger)arg1;
+- (BOOL)isCurrentListId:(int)arg1;
 - (BOOL)isCurrentListStateOverridden;
 - (BOOL)isFrame;
 - (BOOL)isFrameEnd;
@@ -38,14 +38,14 @@
 - (id)lastFooter;
 - (id)lastHeader;
 - (float)leftMargin;
-- (id)listStateForListId:(NSInteger)arg1;
+- (id)listStateForListId:(int)arg1;
 - (id)outlineState;
 - (float)pageHeight;
 - (float)pageOffset;
-- (NSUInteger)runIndex;
-- (void)setBlockIndex:(NSUInteger)arg1;
+- (unsigned int)runIndex;
+- (void)setBlockIndex:(unsigned int)arg1;
 - (void)setCurrentListState:(id)arg1;
-- (void)setCurrentPage:(NSUInteger)arg1;
+- (void)setCurrentPage:(unsigned int)arg1;
 - (void)setIsFrame:(BOOL)arg1;
 - (void)setIsFrameEnd:(BOOL)arg1;
 - (void)setIsFrameStart:(BOOL)arg1;
@@ -53,9 +53,9 @@
 - (void)setLastFooter:(id)arg1;
 - (void)setLastHeader:(id)arg1;
 - (void)setLeftMargin:(float)arg1;
-- (void)setListState:(id)arg1 forListId:(NSInteger)arg2;
+- (void)setListState:(id)arg1 forListId:(int)arg2;
 - (void)setPageHeight:(float)arg1;
-- (void)setRunIndex:(NSUInteger)arg1;
+- (void)setRunIndex:(unsigned int)arg1;
 - (void)setTopMargin:(float)arg1;
 - (void)setTotalPageHeight:(float)arg1;
 - (float)topMargin;

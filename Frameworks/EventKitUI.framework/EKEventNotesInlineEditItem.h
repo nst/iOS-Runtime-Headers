@@ -9,18 +9,18 @@
     UIResponder *_selectedTextField;
 }
 
-@property(retain) UIResponder *selectedResponder;
+@property(retain) UIResponder * selectedResponder;
 
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(NSInteger)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (BOOL)isInline;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (id)selectedResponder;
 - (id)selectedTextField;
 - (void)setSelectedResponder:(id)arg1;
-- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementText:(id)arg3;
+- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
 

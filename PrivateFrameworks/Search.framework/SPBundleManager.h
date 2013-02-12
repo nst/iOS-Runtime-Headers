@@ -10,13 +10,13 @@
     NSArray *_searchBundles;
 }
 
-@property(readonly) NSArray *datastores;
-@property(readonly) NSArray *searchBundles;
+@property(readonly) NSArray * datastores;
+@property(readonly) NSArray * searchBundles;
 
 + (id)sharedManager;
 
 - (void)_loadSearchBundles;
-- (id)datastoreForDomain:(NSUInteger)arg1;
+- (id)datastoreForDomain:(unsigned int)arg1;
 - (id)datastores;
 - (void)dealloc;
 - (id)domainMap;

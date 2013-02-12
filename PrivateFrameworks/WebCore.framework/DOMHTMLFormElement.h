@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMHTMLCollection, NSString;
+
 @interface DOMHTMLFormElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *acceptCharset;
-@property(copy) NSString *action;
-@property(retain,readonly) DOMHTMLCollection *elements;
-@property(copy) NSString *encoding;
-@property(copy) NSString *enctype;
-@property(copy) NSString *method;
-@property(copy) NSString *name;
-@property(copy) NSString *target;
-@property(readonly) NSInteger length;
+@property(copy) NSString * acceptCharset;
+@property(copy) NSString * action;
+@property(retain,readonly) DOMHTMLCollection * elements;
+@property(copy) NSString * encoding;
+@property(copy) NSString * enctype;
+@property(readonly) int length;
+@property(copy) NSString * method;
+@property(copy) NSString * name;
+@property(copy) NSString * target;
 
 - (id)acceptCharset;
 - (id)action;
@@ -23,7 +25,7 @@
 - (id)elements;
 - (id)encoding;
 - (id)enctype;
-- (NSInteger)length;
+- (int)length;
 - (id)method;
 - (id)name;
 - (BOOL)noValidate;
@@ -38,7 +40,7 @@
 - (void)setName:(id)arg1;
 - (void)setNoValidate:(BOOL)arg1;
 - (void)setTarget:(id)arg1;
-- (NSInteger)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 - (void)submit;
 - (id)target;
 

@@ -7,24 +7,24 @@
 }
 
 + (id)array;
-+ (id)arrayWithCapacity:(NSUInteger)arg1;
++ (id)arrayWithCapacity:(unsigned int)arg1;
 
-- (void)addValue:(NSUInteger)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (void)addValue:(unsigned int)arg1;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
-- (NSUInteger)indexOfValue:(NSUInteger)arg1;
+- (unsigned int)indexOfValue:(unsigned int)arg1;
 - (id)init;
-- (id)initWithCapacity:(NSUInteger)arg1;
-- (void)insertValue:(NSUInteger)arg1 atIndex:(NSUInteger)arg2;
-- (NSUInteger)lastValue;
+- (id)initWithCapacity:(unsigned int)arg1;
+- (void)insertValue:(unsigned int)arg1 atIndex:(unsigned int)arg2;
+- (unsigned int)lastValue;
 - (void)removeLastValue;
-- (void)removeValueAtIndex:(NSUInteger)arg1;
+- (void)removeValueAtIndex:(unsigned int)arg1;
 - (void)removeValuesAtIndexes:(id)arg1;
-- (void)removeValuesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (NSUInteger)valueAtIndex:(NSUInteger)arg1;
+- (void)removeValuesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned int)valueAtIndex:(unsigned int)arg1;
 
 @end

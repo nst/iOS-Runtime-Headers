@@ -6,15 +6,15 @@
 
 @interface AVChatResponseOp : AVChatNegotiationOp {
     NSDictionary *_callerProperties;
-    NSUInteger _response;
-    NSUInteger _sessionID;
+    unsigned int _response;
+    unsigned int _sessionID;
 }
 
 - (void)_sendMessageToBuddy:(id)arg1 result:(id)arg2;
 - (void)createChildOperations;
 - (void)dealloc;
 - (void)didFinish;
-- (id)initWithParticipant:(id)arg1 response:(NSUInteger)arg2 conferenceID:(id)arg3;
+- (id)initWithParticipant:(id)arg1 response:(unsigned int)arg2 conferenceID:(id)arg3;
 - (void)main;
 
 @end

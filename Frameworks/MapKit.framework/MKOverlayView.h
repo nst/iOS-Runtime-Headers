@@ -21,7 +21,7 @@
         float d; 
         float tx; 
         float ty; 
-    struct $_727 { 
+    struct $_720 { 
         unsigned int keepAlive : 1; 
         unsigned int levelCrossFade : 1; 
         unsigned int drawingDisabled : 1; 
@@ -36,7 +36,7 @@
     struct __CFRunLoopTimer { } *_scheduledScaleTimer;
 }
 
-@property(readonly) <MKOverlay> *overlay;
+@property(readonly) <MKOverlay> * overlay;
 
 + (BOOL)_useMiniTiledLayer;
 + (Class)layerClass;
@@ -56,7 +56,7 @@
 - (BOOL)_levelCrossFade;
 - (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })_miniLayerRectForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { double x1; double x2; })_originMapPoint;
-- (NSUInteger)_prefetchedTiles;
+- (unsigned int)_prefetchedTiles;
 - (void)_scheduleDisplayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2 preFlush:(BOOL)arg3 inBackground:(BOOL)arg4;
 - (void)_scheduleSetZoomScale;
 - (void)_scheduleVisibleRectChanged;
@@ -86,7 +86,7 @@
 - (void)set_geometryDelegate:(id)arg1;
 - (void)set_keepAlive:(BOOL)arg1;
 - (void)set_levelCrossFade:(BOOL)arg1;
-- (void)set_prefetchedTiles:(NSUInteger)arg1;
-- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(NSInteger)arg3;
+- (void)set_prefetchedTiles:(unsigned int)arg1;
+- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 
 @end

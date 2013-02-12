@@ -8,12 +8,12 @@
     NSDictionary *_themesOnServer;
 }
 
-@property(readonly) NSDictionary *themesOnServer;
+@property(readonly) NSDictionary * themesOnServer;
 
 - (BOOL)authenticationRequired;
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;

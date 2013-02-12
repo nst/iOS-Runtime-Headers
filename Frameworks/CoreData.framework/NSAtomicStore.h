@@ -6,7 +6,7 @@
 
 @interface NSAtomicStore : NSPersistentStore {
     NSMutableDictionary *_entityCache;
-    NSInteger _nextReference;
+    int _nextReference;
     NSMutableDictionary *_nodeCache;
     void *_reserved4;
     void *_reserved5;

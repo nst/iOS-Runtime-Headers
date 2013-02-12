@@ -2,26 +2,36 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class CMAccelerometerData, CMDeviceMotion, CMGyroData, CMMagnetometerData;
+
 @interface CMMotionManager : NSObject {
     id _internal;
 }
 
-@property(readonly) CMAccelerometerData *accelerometerData;
-@property(readonly) CMDeviceMotion *deviceMotion;
-@property(readonly) CMGyroData *gyroData;
-@property(readonly) CMMagnetometerData *magnetometerData;
 @property(getter=isAccelerometerActive,readonly) BOOL accelerometerActive;
 @property(getter=isAccelerometerAvailable,readonly) BOOL accelerometerAvailable;
+@property(readonly) CMAccelerometerData * accelerometerData;
 @property double accelerometerUpdateInterval;
+@property(readonly) CMDeviceMotion * deviceMotion;
 @property(getter=isDeviceMotionActive,readonly) BOOL deviceMotionActive;
 @property(getter=isDeviceMotionAvailable,readonly) BOOL deviceMotionAvailable;
 @property double deviceMotionUpdateInterval;
 @property(getter=isGyroActive,readonly) BOOL gyroActive;
 @property(getter=isGyroAvailable,readonly) BOOL gyroAvailable;
+@property(readonly) CMGyroData * gyroData;
 @property double gyroUpdateInterval;
 @property(getter=isMagnetometerActive,readonly) BOOL magnetometerActive;
 @property(getter=isMagnetometerAvailable,readonly) BOOL magnetometerAvailable;
+@property(readonly) CMMagnetometerData * magnetometerData;
 @property double magnetometerUpdateInterval;
+@property BOOL showsDeviceMovementDisplay;
+
++ (void)setAllowInBackground:(BOOL)arg1;
 
 - (id)accelerometerData;
 - (double)accelerometerUpdateInterval;
@@ -31,6 +41,7 @@
 - (double)deviceMotionUpdateInterval;
 - (void)didBecomeActive:(id)arg1;
 - (void)didBecomeActivePrivate:(id)arg1;
+- (void)dismissDeviceMovementDisplay;
 - (void)dummySelector:(id)arg1;
 - (id)gyroData;
 - (double)gyroUpdateInterval;
@@ -47,17 +58,23 @@
 - (id)magnetometerData;
 - (double)magnetometerUpdateInterval;
 - (void)onAccelerometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
-- (void)onDeviceMotion:(const struct Sample { double x1; struct { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; }*)arg1;
-- (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
+- (void)onDeviceMotion:(const struct Sample { double x1; struct { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; boolx3; }*)arg1;
+- (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; boolx3; }*)arg1;
 - (void)onMagnetometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
+- (void)setAccelerometerDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setAccelerometerUpdateInterval:(double)arg1;
 - (void)setAccelerometerUpdateIntervalPrivate:(double)arg1;
+- (void)setDeviceMotionCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4 bandwidth:(int)arg5;
 - (void)setDeviceMotionUpdateInterval:(double)arg1;
 - (void)setDeviceMotionUpdateIntervalPrivate:(double)arg1;
+- (void)setGyroDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setGyroUpdateInterval:(double)arg1;
 - (void)setGyroUpdateIntervalPrivate:(double)arg1;
 - (void)setMagnetometerUpdateInterval:(double)arg1;
 - (void)setMagnetometerUpdateIntervalPrivate:(double)arg1;
+- (void)setShowsDeviceMovementDisplay:(BOOL)arg1;
+- (void)setShowsDeviceMovementDisplayPrivate:(BOOL)arg1;
+- (BOOL)showsDeviceMovementDisplay;
 - (void)startAccelerometerUpdates;
 - (void)startAccelerometerUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;

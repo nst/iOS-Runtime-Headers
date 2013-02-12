@@ -32,9 +32,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)deliverAsynchronously;
-- (NSInteger)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
-- (NSInteger)deliverSynchronously;
-- (NSInteger)deliveryStatus;
+- (int)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
+- (int)deliverSynchronously;
+- (int)deliveryStatus;
 - (id)headersForDelivery;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;

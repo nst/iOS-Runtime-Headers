@@ -5,7 +5,7 @@
 @interface _UIAlertManager : NSObject {
 }
 
-+ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_alertTranslationForInterfaceOrientation:(NSInteger)arg1 andTranslation:(float)arg2;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_alertTranslationForInterfaceOrientation:(int)arg1 andTranslation:(float)arg2;
 + (void)addToStack:(id)arg1 dontDimBackground:(BOOL)arg2;
 + (void)alertWindowAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 + (BOOL)cancelAlertsAnimated:(BOOL)arg1;
@@ -14,12 +14,12 @@
 + (void)createAlertWindowIfNeeded:(BOOL)arg1;
 + (void)hideAlertsForTermination;
 + (BOOL)hideTopMostAlertAnimated:(BOOL)arg1;
-+ (void)hideTopmostMiniAlert:(NSInteger)arg1;
++ (void)hideTopmostMiniAlert:(int)arg1;
 + (void)initialize;
-+ (void)noteOrientationChangingTo:(NSInteger)arg1 animated:(BOOL)arg2;
-+ (void)noteOrientationChangingTo:(NSInteger)arg1;
++ (void)noteOrientationChangingTo:(int)arg1 animated:(BOOL)arg2;
++ (void)noteOrientationChangingTo:(int)arg1;
 + (void)removeFromStack:(id)arg1;
-+ (void)reorientAlertWindowTo:(NSInteger)arg1 animated:(BOOL)arg2 keyboard:(id)arg3;
++ (void)reorientAlertWindowTo:(int)arg1 animated:(BOOL)arg2 keyboard:(id)arg3;
 + (void)showTopmostMiniAlert;
 + (void)sizeAlertWindowForCurrentOrientation;
 + (BOOL)stackContainsAlert:(id)arg1;

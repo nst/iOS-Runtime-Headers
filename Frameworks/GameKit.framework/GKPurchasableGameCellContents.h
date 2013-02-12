@@ -2,29 +2,39 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGame, GKStarRatingView, GKUITheme;
+@class GKGame, GKUITheme, SSItem;
 
 @interface GKPurchasableGameCellContents : GKMultilineCellContentView {
+    struct CGPoint { 
+        float x; 
+        float y; 
     GKGame *_game;
-    GKStarRatingView *_ratingView;
+    } _starsOrigin;
+    SSItem *_storeItem;
     GKUITheme *_theme;
 }
 
-@property(retain) GKGame *game;
-@property(retain) GKStarRatingView *ratingView;
-@property(retain) GKUITheme *theme;
+@property(retain) GKGame * game;
+@property struct CGPoint { float x; float y; } starsOrigin;
+@property(retain) SSItem * storeItem;
+@property(retain) GKUITheme * theme;
 
 + (id)purchasableGameCellContentsWithTheme:(id)arg1;
 
 - (void)dealloc;
-- (void)drawLineIndex:(NSUInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
+- (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
+- (void)drawRatingStarsAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)game;
-- (void)layoutSubviews;
+- (void)loadStoreItemForGame:(id)arg1;
 - (void)prepareForReuse;
-- (id)ratingView;
 - (void)setGame:(id)arg1;
-- (void)setRatingView:(id)arg1;
+- (void)setStarsOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStoreItem:(id)arg1;
 - (void)setTheme:(id)arg1;
+- (struct CGPoint { float x1; float x2; })starsOrigin;
+- (id)storeItem;
 - (id)theme;
+- (void)updateLines;
 
 @end

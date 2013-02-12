@@ -5,9 +5,9 @@
 @interface ICSScheduleStatusParameter : ICSPredefinedValue {
 }
 
-+ (id)scheduleStatusParameterFromCode:(NSInteger)arg1;
++ (id)scheduleStatusParameterFromCode:(int)arg1;
 + (id)scheduleStatusParameterFromICSString:(id)arg1;
 
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 
 @end

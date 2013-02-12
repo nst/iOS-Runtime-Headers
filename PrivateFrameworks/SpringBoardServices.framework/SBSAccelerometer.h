@@ -12,14 +12,14 @@
     NSLock *_lock;
     BOOL _orientationEventsEnabled;
     NSThread *_orientationEventsThread;
-    NSInteger _orientationEventsToken;
+    int _orientationEventsToken;
     float _xThreshold;
     float _yThreshold;
     float _zThreshold;
 }
 
-@property <SBSAccelerometerDelegate> *delegate;
 @property BOOL accelerometerEventsEnabled;
+@property <SBSAccelerometerDelegate> * delegate;
 @property BOOL orientationEventsEnabled;
 @property double updateInterval;
 @property float xThreshold;
@@ -32,7 +32,7 @@
 - (id)_orientationEventsThread;
 - (void)_serverWasRestarted;
 - (BOOL)accelerometerEventsEnabled;
-- (NSInteger)currentDeviceOrientation;
+- (int)currentDeviceOrientation;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

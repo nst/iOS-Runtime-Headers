@@ -19,7 +19,7 @@
 - (char *)ID;
 - (void)dealloc;
 - (BOOL)isHidden;
-- (NSInteger)readAttributesForSlide:(struct _xmlTextReader { }*)arg1;
+- (int)readAttributesForSlide:(struct _xmlTextReader { }*)arg1;
 - (id)slideStyle;
 - (id)stylesheet;
 

@@ -11,23 +11,23 @@
     NSDate *_lastStatDate;
     NSString *_logDefaultName;
     NSFileHandle *_logFH;
-    NSInteger _logLevel;
+    int _logLevel;
     NSString *_logName;
     NSString *_logPath;
     struct dispatch_queue_s { } *_logQueue;
-    NSInteger _maxLogFiles;
+    int _maxLogFiles;
     NSString *_outputDefaultName;
-    NSInteger _outputLevel;
+    int _outputLevel;
 }
 
-@property(retain) NSFileHandle *fh;
-@property(retain) NSDate *lastStatDate;
-@property NSInteger logLevel;
-@property NSInteger maxLogFiles;
-@property NSInteger outputLevel;
+@property(retain) NSFileHandle * fh;
+@property(retain) NSDate * lastStatDate;
+@property int logLevel;
+@property int maxLogFiles;
+@property int outputLevel;
 
 - (void)_closeLogFile;
-- (id)_logFilePathWithNumber:(NSInteger)arg1;
+- (id)_logFilePathWithNumber:(int)arg1;
 - (void)_openLogFile;
 - (void)_rollLogs;
 - (void)_statFileIfNecessaryForRollingCheck;
@@ -35,14 +35,14 @@
 - (id)fh;
 - (id)initWithPrefix:(id)arg1 logPath:(id)arg2 logName:(id)arg3;
 - (id)lastStatDate;
-- (NSInteger)logLevel;
-- (void)logWithFileName:(const char *)arg1 functionName:(const char *)arg2 lineNumber:(NSInteger)arg3 level:(NSInteger)arg4 format:(id)arg5 arguments:(void*)arg6;
-- (NSInteger)maxLogFiles;
-- (NSInteger)outputLevel;
+- (int)logLevel;
+- (void)logWithFileName:(const char *)arg1 functionName:(const char *)arg2 lineNumber:(int)arg3 level:(int)arg4 format:(id)arg5 arguments:(void*)arg6;
+- (int)maxLogFiles;
+- (int)outputLevel;
 - (void)setFh:(id)arg1;
 - (void)setLastStatDate:(id)arg1;
-- (void)setLogLevel:(NSInteger)arg1;
-- (void)setMaxLogFiles:(NSInteger)arg1;
-- (void)setOutputLevel:(NSInteger)arg1;
+- (void)setLogLevel:(int)arg1;
+- (void)setMaxLogFiles:(int)arg1;
+- (void)setOutputLevel:(int)arg1;
 
 @end

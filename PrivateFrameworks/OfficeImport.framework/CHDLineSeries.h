@@ -2,24 +2,18 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class CHDMarker;
 
 @interface CHDLineSeries : CHDSeries <CHDMarkerOwner> {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+    boolmSmooth;
     CHDMarker *mMarker;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mSmooth;
 }
 
 - (void)dealloc;
 - (id)initWithChart:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isSmooth;
+- (bool)isSmooth;
 - (id)marker;
 - (void)setMarker:(id)arg1;
-- (void)setSmooth:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setSmooth:(bool)arg1;
 
 @end

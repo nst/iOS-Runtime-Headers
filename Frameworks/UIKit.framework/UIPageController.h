@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPageControllerDelegate>, NSMutableArray, UIPageControl, UIScrollView, UIView;
+@class <UIPageControllerDelegate>, NSMutableArray, UIPageControl, UIScrollView, UIView, UIViewController;
 
 @interface UIPageController : UIViewController {
     struct { 
@@ -10,33 +10,33 @@
         unsigned int delegateDidEndPaging : 1; 
         unsigned int displaysPageControl : 1; 
     <UIPageControllerDelegate> *_delegate;
-    NSInteger _notificationState[3];
+    int _notificationState[3];
     UIPageControl *_pageControl;
     } _pageControllerFlags;
-    NSInteger _pageCount;
-    NSInteger _pageSpacing;
+    int _pageCount;
+    int _pageSpacing;
     UIScrollView *_scrollView;
     NSMutableArray *_viewControllers;
-    NSInteger _visibleIndex;
+    int _visibleIndex;
     UIView *_wrapperViews[3];
 }
 
-@property <UIPageControllerDelegate> *delegate;
-@property(retain,readonly) UIViewController *visibleViewController;
+@property <UIPageControllerDelegate> * delegate;
 @property BOOL displaysPageControl;
-@property NSInteger pageCount;
+@property int pageCount;
 @property float pageSpacing;
-@property NSInteger visibleIndex;
+@property int visibleIndex;
+@property(retain,readonly) UIViewController * visibleViewController;
 
 - (void)_adjustScrollViewContentInsets;
 - (BOOL)_allowsAutorotation;
 - (void)_createPageControl;
-- (BOOL)_doesVisibleViewControllerSupportInterfaceOrientation:(NSInteger)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (BOOL)_doesVisibleViewControllerSupportInterfaceOrientation:(int)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (BOOL)_hasNextViewController;
 - (BOOL)_hasPreviousViewController;
 - (BOOL)_hasVisibleViewController;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (id)_loadNextViewController;
 - (id)_loadPreviousViewController;
 - (id)_loadVisibleViewControllerAndNotify:(BOOL)arg1;
@@ -44,59 +44,60 @@
 - (BOOL)_needToLoadPrevious;
 - (BOOL)_needToLoadVisible;
 - (id)_nextViewController;
-- (NSInteger)_nextViewControllerNotificationState;
-- (void)_notifyNextViewController:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)_notifyPreviousViewController:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)_notifyViewController:(id)arg1 ofState:(NSInteger)arg2 previousState:(NSInteger)arg3 animated:(BOOL)arg4;
-- (void)_notifyVisibleViewController:(NSInteger)arg1 animated:(BOOL)arg2;
+- (int)_nextViewControllerNotificationState;
+- (void)_notifyNextViewController:(int)arg1 animated:(BOOL)arg2;
+- (void)_notifyPreviousViewController:(int)arg1 animated:(BOOL)arg2;
+- (void)_notifyViewController:(id)arg1 ofState:(int)arg2 previousState:(int)arg3 animated:(BOOL)arg4;
+- (void)_notifyVisibleViewController:(int)arg1 animated:(BOOL)arg2;
 - (void)_pageChanged:(id)arg1;
 - (id)_pageControllerScrollView;
 - (id)_previousViewController;
-- (NSInteger)_previousViewControllerNotificationState;
+- (int)_previousViewControllerNotificationState;
 - (void)_scrollView:(id)arg1 boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_scrollView;
 - (void)_scrollViewDidEndPaging;
 - (void)_scrollViewDidScroll:(id)arg1 forceUpdate:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scrollViewFrame;
 - (void)_scrollViewWillBeginPaging;
 - (void)_setNextViewController:(id)arg1;
-- (void)_setNextViewControllerNotificationState:(NSInteger)arg1;
+- (void)_setNextViewControllerNotificationState:(int)arg1;
 - (void)_setPreviousViewController:(id)arg1;
-- (void)_setPreviousViewControllerNotificationState:(NSInteger)arg1;
+- (void)_setPreviousViewControllerNotificationState:(int)arg1;
 - (void)_setVisibleViewController:(id)arg1;
-- (void)_setVisibleViewControllerNotificationState:(NSInteger)arg1;
+- (void)_setVisibleViewControllerNotificationState:(int)arg1;
 - (BOOL)_shouldUseOnePartRotation;
 - (id)_visibleViewController;
-- (NSInteger)_visibleViewControllerNotificationState;
+- (int)_visibleViewControllerNotificationState;
 - (void)dealloc;
 - (id)delegate;
-- (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(NSInteger)arg1;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (BOOL)displaysPageControl;
-- (NSInteger)indexOfViewController:(id)arg1;
+- (int)indexOfViewController:(id)arg1;
 - (void)loadView;
-- (NSInteger)pageCount;
+- (int)pageCount;
 - (float)pageSpacing;
-- (void)reloadViewControllerAtIndex:(NSInteger)arg1;
+- (void)reloadViewControllerAtIndex:(int)arg1;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplaysPageControl:(BOOL)arg1;
-- (void)setPageCount:(NSInteger)arg1;
+- (void)setPageCount:(int)arg1;
 - (void)setPageSpacing:(float)arg1;
-- (void)setVisibleIndex:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)setVisibleIndex:(NSInteger)arg1 preservingLoadedViewControllers:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)setVisibleIndex:(NSInteger)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (void)setVisibleIndex:(int)arg1 animated:(BOOL)arg2;
+- (void)setVisibleIndex:(int)arg1 preservingLoadedViewControllers:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)setVisibleIndex:(int)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (NSInteger)visibleIndex;
+- (int)visibleIndex;
 - (id)visibleViewController;
-- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

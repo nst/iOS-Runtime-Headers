@@ -9,15 +9,15 @@
     BOOL _completed;
     <SPDaemonQueryDelegate> *_delegate;
     SPSearchQuery *_query;
-    NSUInteger _queryID;
-    NSUInteger _sortsInFlight;
+    unsigned int _queryID;
+    unsigned int _sortsInFlight;
 }
 
-@property <SPDaemonQueryDelegate> *delegate;
-@property(readonly) SPSearchQuery *query;
 @property BOOL completed;
-@property(readonly) NSUInteger queryID;
-@property NSUInteger sortsInFlight;
+@property <SPDaemonQueryDelegate> * delegate;
+@property(readonly) SPSearchQuery * query;
+@property(readonly) unsigned int queryID;
+@property unsigned int sortsInFlight;
 
 - (void)_callbackPipeBrokenCallback:(struct __CFMachPort { }*)arg1;
 - (void)_sendCompletion;
@@ -26,12 +26,12 @@
 - (BOOL)completed;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithQuery:(id)arg1 andCallbackPort:(NSUInteger)arg2;
+- (id)initWithQuery:(id)arg1 andCallbackPort:(unsigned int)arg2;
 - (id)query;
-- (NSUInteger)queryID;
+- (unsigned int)queryID;
 - (void)setCompleted:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSortsInFlight:(NSUInteger)arg1;
-- (NSUInteger)sortsInFlight;
+- (void)setSortsInFlight:(unsigned int)arg1;
+- (unsigned int)sortsInFlight;
 
 @end

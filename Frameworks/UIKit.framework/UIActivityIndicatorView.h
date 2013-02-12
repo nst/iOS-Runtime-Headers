@@ -3,18 +3,18 @@
  */
 
 @interface UIActivityIndicatorView : UIView <NSCoding> {
-    NSInteger _activityIndicatorViewStyle;
+    int _activityIndicatorViewStyle;
     BOOL _animating;
     double _duration;
     BOOL _hidesWhenStopped;
 }
 
-@property NSInteger activityIndicatorViewStyle;
+@property int activityIndicatorViewStyle;
 @property BOOL hidesWhenStopped;
 
 + (void)_initializeSafeCategory;
-+ (void)_loadResourcesForStyle:(NSInteger)arg1;
-+ (struct CGSize { float x1; float x2; })defaultSizeForStyle:(NSInteger)arg1;
++ (void)_loadResourcesForStyle:(int)arg1;
++ (struct CGSize { float x1; float x2; })defaultSizeForStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })size;
 
 - (void)_applicationDidEnterBackground:(id)arg1;
@@ -25,21 +25,21 @@
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
-- (NSInteger)activityIndicatorViewStyle;
+- (int)activityIndicatorViewStyle;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hidesWhenStopped;
-- (id)initWithActivityIndicatorStyle:(NSInteger)arg1;
+- (id)initWithActivityIndicatorStyle:(int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isAnimating;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (void)setActivityIndicatorViewStyle:(NSInteger)arg1;
+- (void)setActivityIndicatorViewStyle:(int)arg1;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setHidesWhenStopped:(BOOL)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAnimating;
 - (void)startAnimation;

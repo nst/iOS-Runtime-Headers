@@ -13,10 +13,10 @@
     BOOL _showsClearButtonWhenEmpty;
 }
 
-@property(retain) UIColor *abHighlightedTextColor; /* unknown property attribute: SabSetHighlightedTextColor: */
-@property BOOL abIsHighlightingEnabled; /* unknown property attribute: SabSetHighlightingEnabled: */
-@property BOOL abIsHighlighted; /* unknown property attribute: SabSetHighlighted: */
-@property <ABResponderDelegate> *responderDelegate;
+@property(setter=abSetHighlightedTextColor:,retain) UIColor * abHighlightedTextColor;
+@property(setter=abSetHighlighted:) BOOL abIsHighlighted;
+@property(setter=abSetHighlightingEnabled:) BOOL abIsHighlightingEnabled;
+@property <ABResponderDelegate> * responderDelegate;
 @property BOOL showsClearButtonWhenEmpty;
 
 + (void)_initializeSafeCategory;

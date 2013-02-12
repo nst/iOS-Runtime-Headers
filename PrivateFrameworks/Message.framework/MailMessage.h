@@ -13,11 +13,11 @@
 
 @property unsigned long long modSequenceNumber;
 
-+ (NSUInteger)displayablePriorityForPriority:(NSInteger)arg1;
++ (unsigned int)displayablePriorityForPriority:(int)arg1;
 + (id)forwardedMessagePrefixWithSpacer:(BOOL)arg1;
 + (id)messageWithRFC822Data:(id)arg1;
 + (id)replyPrefixWithSpacer:(BOOL)arg1;
-+ (NSUInteger)validatePriority:(NSInteger)arg1;
++ (unsigned int)validatePriority:(int)arg1;
 
 - (id)URL;
 - (id)account;
@@ -36,7 +36,7 @@
 - (unsigned long long)modSequenceNumber;
 - (unsigned short)numberOfAttachments;
 - (id)originalMailboxURL;
-- (NSInteger)priority;
+- (int)priority;
 - (id)remoteMailboxURL;
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
@@ -48,7 +48,7 @@
 - (void)setSummary:(id)arg1;
 - (BOOL)shouldSetSummary;
 - (id)subject;
-- (id)subjectAndPrefixLength:(NSUInteger*)arg1;
+- (id)subjectAndPrefixLength:(unsigned int*)arg1;
 - (id)subjectNotIncludingReAndFwdPrefix;
 
 @end

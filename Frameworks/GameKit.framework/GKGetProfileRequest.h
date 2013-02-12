@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class NSDictionary, NSString;
+
 @interface GKGetProfileRequest : GKGetProfilesRequest {
 }
 
-@property(retain) NSString *playerID;
-@property(readonly) NSDictionary *profile;
+@property(retain) NSString * playerID;
+@property(readonly) NSDictionary * profile;
 
 - (id)playerID;
 - (id)profile;

@@ -5,8 +5,8 @@
 @interface EmojiPageControl : UIPageControl {
 }
 
-- (id)_pageIndicatorCurrentImageForPage:(NSInteger)arg1;
-- (id)_pageIndicatorImageForPage:(NSInteger)arg1;
-- (void)_setCurrentPage:(NSInteger)arg1;
+- (id)_pageIndicatorCurrentImageForPage:(int)arg1;
+- (id)_pageIndicatorImageForPage:(int)arg1;
+- (void)_setCurrentPage:(int)arg1;
 
 @end

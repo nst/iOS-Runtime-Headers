@@ -5,6 +5,6 @@
 @interface WebWorkersPrivate : NSObject {
 }
 
-+ (NSUInteger)workerThreadCount;
++ (unsigned int)workerThreadCount;
 
 @end

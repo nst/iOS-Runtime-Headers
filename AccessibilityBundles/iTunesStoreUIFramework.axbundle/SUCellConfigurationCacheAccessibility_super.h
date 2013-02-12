@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)configurationForRow:(NSUInteger)arg1;
+- (id)configurationForRow:(unsigned int)arg1;
 
 @end

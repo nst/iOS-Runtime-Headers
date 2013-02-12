@@ -6,17 +6,17 @@
 
 @interface MLPhotoDCFObject : NSObject {
     NSString *_name;
-    NSInteger _number;
+    int _number;
 }
 
-+ (id)validDCFNameForName:(id)arg1 requiredLength:(NSInteger)arg2 nameLength:(NSInteger)arg3 number:(NSInteger*)arg4 numberRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg5 suffix:(id)arg6;
++ (id)validDCFNameForName:(id)arg1 requiredLength:(int)arg2 nameLength:(int)arg3 number:(int*)arg4 numberRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 suffix:(id)arg6;
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initWithName:(id)arg1 number:(NSInteger)arg2;
+- (id)initWithName:(id)arg1 number:(int)arg2;
 - (id)name;
-- (NSInteger)number;
+- (int)number;
 - (void)setWriteIsPending:(BOOL)arg1;
 
 @end

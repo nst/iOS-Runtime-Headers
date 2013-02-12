@@ -5,9 +5,9 @@
 @class NSLock, NSNumber, NSString;
 
 @interface SSAccount : NSObject <NSCopying> {
-    NSInteger _accountKind;
+    int _accountKind;
     NSString *_accountName;
-    NSInteger _accountScope;
+    int _accountScope;
     BOOL _active;
     NSString *_creditsString;
     BOOL _demo;
@@ -17,20 +17,20 @@
     NSNumber *_uniqueIdentifier;
 }
 
-@property(copy) NSString *accountName;
-@property(copy) NSString *creditsString;
-@property(copy) NSString *secureToken;
-@property(retain) NSNumber *uniqueIdentifier;
-@property NSInteger accountKind;
-@property NSInteger accountScope;
+@property int accountKind;
+@property(copy) NSString * accountName;
+@property int accountScope;
 @property(getter=isActive) BOOL active;
 @property(getter=isAuthenticated,readonly) BOOL authenticated;
+@property(copy) NSString * creditsString;
 @property(getter=isDemoAccount) BOOL demoAccount;
+@property(copy) NSString * secureToken;
 @property(getter=isSocialEnabled) BOOL socialEnabled;
+@property(retain) NSNumber * uniqueIdentifier;
 
-- (NSInteger)accountKind;
+- (int)accountKind;
 - (id)accountName;
-- (NSInteger)accountScope;
+- (int)accountScope;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creditsString;
@@ -44,9 +44,9 @@
 - (BOOL)isSocialEnabled;
 - (void)resetTransientData;
 - (id)secureToken;
-- (void)setAccountKind:(NSInteger)arg1;
+- (void)setAccountKind:(int)arg1;
 - (void)setAccountName:(id)arg1;
-- (void)setAccountScope:(NSInteger)arg1;
+- (void)setAccountScope:(int)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setCreditsString:(id)arg1;
 - (void)setDemoAccount:(BOOL)arg1;

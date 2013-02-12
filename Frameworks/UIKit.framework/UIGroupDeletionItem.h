@@ -5,18 +5,18 @@
 @class NSIndexSet;
 
 @interface UIGroupDeletionItem : NSObject {
-    NSInteger _group;
+    int _group;
     NSIndexSet *_indexes;
-    NSUInteger _lastIndex;
+    unsigned int _lastIndex;
 }
 
 - (void)dealloc;
-- (NSInteger)group;
+- (int)group;
 - (id)indexes;
-- (id)initWithGroup:(NSInteger)arg1 andIndexes:(id)arg2;
-- (id)initWithGroup:(NSInteger)arg1;
-- (id)initWithIndexes:(id)arg1 inGroup:(NSInteger)arg2;
-- (NSUInteger)lastIndex;
-- (void)setLastIndex:(NSUInteger)arg1;
+- (id)initWithGroup:(int)arg1 andIndexes:(id)arg2;
+- (id)initWithGroup:(int)arg1;
+- (id)initWithIndexes:(id)arg1 inGroup:(int)arg2;
+- (unsigned int)lastIndex;
+- (void)setLastIndex:(unsigned int)arg1;
 
 @end

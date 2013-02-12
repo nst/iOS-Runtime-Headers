@@ -6,25 +6,25 @@
 
 @interface MKOverlayPathView : MKOverlayView {
     UIColor *_fillColor;
-    NSInteger _lineCap;
+    int _lineCap;
     NSArray *_lineDashPattern;
     float _lineDashPhase;
-    NSInteger _lineJoin;
+    int _lineJoin;
     float _lineWidth;
     float _miterLimit;
     struct CGPath { } *_path;
     UIColor *_strokeColor;
 }
 
-@property(retain) UIColor *fillColor;
-@property(copy) NSArray *lineDashPattern;
-@property CGPath *path;
-@property(retain) UIColor *strokeColor;
-@property NSInteger lineCap;
+@property(retain) UIColor * fillColor;
+@property int lineCap;
+@property(copy) NSArray * lineDashPattern;
 @property float lineDashPhase;
-@property NSInteger lineJoin;
+@property int lineJoin;
 @property float lineWidth;
 @property float miterLimit;
+@property struct CGPath { }* path;
+@property(retain) UIColor * strokeColor;
 
 - (void)applyFillPropertiesToContext:(struct CGContext { }*)arg1 atZoomScale:(float)arg2;
 - (void)applyStrokePropertiesToContext:(struct CGContext { }*)arg1 atZoomScale:(float)arg2;
@@ -35,18 +35,18 @@
 - (void)fillPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)initWithOverlay:(id)arg1;
 - (void)invalidatePath;
-- (NSInteger)lineCap;
+- (int)lineCap;
 - (id)lineDashPattern;
 - (float)lineDashPhase;
-- (NSInteger)lineJoin;
+- (int)lineJoin;
 - (float)lineWidth;
 - (float)miterLimit;
 - (struct CGPath { }*)path;
 - (void)setFillColor:(id)arg1;
-- (void)setLineCap:(NSInteger)arg1;
+- (void)setLineCap:(int)arg1;
 - (void)setLineDashPattern:(id)arg1;
 - (void)setLineDashPhase:(float)arg1;
-- (void)setLineJoin:(NSInteger)arg1;
+- (void)setLineJoin:(int)arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setMiterLimit:(float)arg1;
 - (void)setPath:(struct CGPath { }*)arg1;

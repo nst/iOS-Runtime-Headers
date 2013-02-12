@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDWorkbook, NSMutableArray;
 
 @interface EDProcessors : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
     NSMutableArray *mProcessors;
     EDWorkbook *mWorkbook;
 }
@@ -17,7 +12,7 @@
 - (void)addProcessorClass:(Class)arg1;
 - (void)applyProcessorsWithSheet:(id)arg1;
 - (void)dealloc;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasProcessors;
+- (bool)hasProcessors;
 - (id)initWithWorkbook:(id)arg1;
 - (void)markObject:(id)arg1 processor:(Class)arg2;
 - (void)removeAllObjects;

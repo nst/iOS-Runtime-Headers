@@ -8,8 +8,8 @@
     BOOL _considerInvalidFileGroups;
     MLPhotoDCIMDirectory *_dcimDirectory;
     struct __CFDictionary { } *_fileGroupsByNumber;
-    NSInteger _lastUsedFileGroupNumber;
-    NSInteger _maxFileGroupNumber;
+    int _lastUsedFileGroupNumber;
+    int _maxFileGroupNumber;
 }
 
 @property BOOL considerInvalidFileGroups;
@@ -18,12 +18,12 @@
 + (id)fileGroupRequiredEmptyPrefixes;
 + (void)initializeFileGroupPrefixAndExtensions;
 
-- (NSUInteger)_calculateBaseDirectoryValue;
-- (BOOL)_canAddItemWithPrefix:(id)arg1 minimumFileGroupNumber:(NSInteger)arg2;
+- (unsigned int)_calculateBaseDirectoryValue;
+- (BOOL)_canAddItemWithPrefix:(id)arg1 minimumFileGroupNumber:(int)arg2;
 - (BOOL)_canAddItemWithPrefix:(id)arg1;
 - (id)_lastUsedFileGroupUserInfoKey;
 - (id)_nextAvailableFileGroupWithPrefix:(id)arg1 extension:(id)arg2;
-- (BOOL)canAddFileGroupWithGroupNumber:(NSInteger)arg1;
+- (BOOL)canAddFileGroupWithGroupNumber:(int)arg1;
 - (BOOL)canAddImage;
 - (BOOL)canAddVideo;
 - (BOOL)considerInvalidFileGroups;
@@ -32,7 +32,7 @@
 - (void)ensureDirectoryExists;
 - (id)fileGroups;
 - (id)fullPath;
-- (id)initWithName:(id)arg1 number:(NSInteger)arg2 dcimDirectory:(id)arg3;
+- (id)initWithName:(id)arg1 number:(int)arg2 dcimDirectory:(id)arg3;
 - (BOOL)isEntensionValid:(id)arg1;
 - (id)nextAvailableFileGroup;
 - (id)nextAvailableVideoFileGroupWithExtension:(id)arg1;

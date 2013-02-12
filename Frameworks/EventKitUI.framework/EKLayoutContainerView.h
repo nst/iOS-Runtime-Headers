@@ -8,7 +8,7 @@
     <EKLayoutContainerViewDelegate> *_delegate;
 }
 
-@property <EKLayoutContainerViewDelegate> *delegate;
+@property <EKLayoutContainerViewDelegate> * delegate;
 
 - (id)delegate;
 - (void)layoutSubviews;

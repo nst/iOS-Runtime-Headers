@@ -10,9 +10,9 @@
     NSString *_value;
 }
 
-@property(retain) NSString *name;
-@property(retain) NSString *nameSpace;
-@property(retain) NSString *value;
+@property(retain) NSString * name;
+@property(retain) NSString * nameSpace;
+@property(retain) NSString * value;
 
 - (void)dealloc;
 - (id)description;

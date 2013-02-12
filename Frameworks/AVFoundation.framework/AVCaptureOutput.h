@@ -2,20 +2,20 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureOutputInternal;
+@class AVCaptureOutputInternal, NSArray;
 
 @interface AVCaptureOutput : NSObject {
     AVCaptureOutputInternal *_outputInternal;
 }
 
-@property(readonly) NSArray *connections;
+@property(readonly) NSArray * connections;
 
 - (id)_applyOverridesToCaptureOptions:(id)arg1;
 - (id)activeConnections;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (void)bumpChangeSeed;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
-- (NSInteger)changeSeed;
+- (int)changeSeed;
 - (id)connections;
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;

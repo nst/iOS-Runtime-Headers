@@ -5,10 +5,10 @@
 @class CKContentEntryView, UIButton, UIImageView, UILabel, UIView;
 
 @interface CKMessageEntryView : UIImageView <UIScrollViewDelegate> {
-    NSInteger _animationState;
-    NSUInteger _characterCountDenominator;
+    int _animationState;
+    unsigned int _characterCountDenominator;
     UILabel *_characterCountLabel;
-    NSUInteger _characterCountNumerator;
+    unsigned int _characterCountNumerator;
     CKContentEntryView *_contentField;
     id _delegate;
     UIView *_inputFieldBackground;
@@ -18,8 +18,8 @@
     UIButton *_sendButton;
 }
 
-@property(readonly) UIButton *photoButton;
 @property id delegate;
+@property(readonly) UIButton * photoButton;
 
 + (void)_initializeSafeCategory;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })balloonViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)disableSendButton;
-- (NSUInteger)displayedLines;
+- (unsigned int)displayedLines;
 - (void)enableSendButton;
 - (id)entryField;
 - (BOOL)hasAttachments;
@@ -50,8 +50,8 @@
 - (BOOL)isReallyFirstResponder;
 - (id)photoButton;
 - (void)send:(id)arg1;
-- (void)setAnimationState:(NSInteger)arg1;
-- (void)setCharacterCountNumerator:(NSUInteger)arg1 denominator:(NSUInteger)arg2;
+- (void)setAnimationState:(int)arg1;
+- (void)setCharacterCountNumerator:(unsigned int)arg1 denominator:(unsigned int)arg2;
 - (void)setCharacterCountVisible:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

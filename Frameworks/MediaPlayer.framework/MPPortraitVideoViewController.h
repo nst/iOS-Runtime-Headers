@@ -12,7 +12,7 @@
     MPPortraitTransportControls *_transportControls;
 }
 
-@property(retain) UINavigationBar *navigationBar;
+@property(retain) UINavigationBar * navigationBar;
 @property(readonly) BOOL ownsTransportControls;
 
 + (BOOL)supportsFullscreenDisplay;
@@ -23,7 +23,7 @@
 - (void)_showOverlayView:(BOOL)arg1;
 - (BOOL)allowsDetailScrubbing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundViewSnapshotFrame;
-- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(NSInteger)arg2;
+- (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
 - (id)createChapterFlipTransition;
 - (void)dealloc;
@@ -39,19 +39,19 @@
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
-- (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(NSUInteger)arg1;
+- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDisabledParts:(unsigned int)arg1;
 - (void)setItem:(id)arg1;
 - (void)setNavigationBar:(id)arg1;
-- (void)setOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
-- (void)setVisibleParts:(NSUInteger)arg1 animate:(BOOL)arg2;
+- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
 - (void)showChaptersController;
 - (void)showOverlayView;
 - (void)startTicking;
 - (void)stopTicking;
-- (void)swipableView:(id)arg1 swipedInDirection:(NSInteger)arg2;
-- (void)swipableView:(id)arg1 tappedWithCount:(NSUInteger)arg2;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(NSUInteger)arg2;
+- (void)swipableView:(id)arg1 swipedInDirection:(int)arg2;
+- (void)swipableView:(id)arg1 tappedWithCount:(unsigned int)arg2;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
 - (void)transportControlsDidResize:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

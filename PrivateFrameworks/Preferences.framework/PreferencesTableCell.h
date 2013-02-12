@@ -5,7 +5,7 @@
 @class NSString, UIImageView;
 
 @interface PreferencesTableCell : UITableViewCell {
-    NSInteger _alignment;
+    int _alignment;
     BOOL _cellEnabled;
     BOOL _checked;
     UIImageView *_checkedImageView;
@@ -26,13 +26,13 @@
 - (BOOL)cellEnabled;
 - (void)dealloc;
 - (id)iconImageView;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isChecked;
 - (void)layoutSubviews;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)reloadWithSpecifier:(id)arg1;
 - (void)setAction:(SEL)arg1;
-- (void)setAlignment:(NSInteger)arg1;
+- (void)setAlignment:(int)arg1;
 - (void)setCellEnabled:(BOOL)arg1;
 - (void)setChecked:(BOOL)arg1;
 - (void)setIcon:(id)arg1;

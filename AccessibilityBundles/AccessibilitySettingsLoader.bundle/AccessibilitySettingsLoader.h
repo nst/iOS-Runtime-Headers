@@ -2,7 +2,7 @@
    Image: /System/Library/AccessibilityBundles/AccessibilitySettingsLoader.bundle/AccessibilitySettingsLoader
  */
 
-@interface AccessibilitySettingsLoader : NSObject {
+@interface AccessibilitySettingsLoader : NSObject <EAAccessoryDelegate> {
 }
 
 + (void)_accessoryConnected:(id)arg1;
@@ -26,5 +26,9 @@
 + (void)initialize;
 + (void)update;
 + (void)updateITunesSettings;
+
+- (void)_registerWithAggregateDictionary:(struct __CFString { }*)arg1;
+- (id)accessibilityAccessory:(id)arg1 currentValueForSystemProperty:(int)arg2;
+- (void)accessibilityAccessory:(id)arg1 setValue:(id)arg2 forSystemProperty:(int)arg3;
 
 @end

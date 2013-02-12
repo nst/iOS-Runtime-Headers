@@ -7,7 +7,7 @@
 
 - (id)createViewForNavigationItem:(id)arg1;
 - (id)createViewForToolbar:(id)arg1;
-- (id)initWithImage:(id)arg1 style:(NSInteger)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id)initWithImage:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)setAccessibilityHint:(id)arg1;
 - (void)setAccessibilityLabel:(id)arg1;
 - (void)setAccessibilityTraits:(unsigned long long)arg1;

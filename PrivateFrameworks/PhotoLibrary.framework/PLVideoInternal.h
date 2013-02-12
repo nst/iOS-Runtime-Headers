@@ -12,21 +12,21 @@
     NSString *_previewImagePath;
     NSString *_temporaryPath;
     NSURL *_url;
-    NSUInteger _videoWasCaptured;
+    unsigned int _videoWasCaptured;
 }
 
-- (id)_createImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_ensureAVItemIsLoaded;
+- (id)_newImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)createFullScreenImage:(const struct __CFDictionary {}**)arg1;
-- (id)createFullSizeImage;
-- (id)createLowResolutionFullScreenImage;
 - (void)dealloc;
 - (void)deletePreviewImageIfNecessary;
 - (BOOL)hasFullSizeImage;
-- (NSInteger)imageID;
-- (id)imageWithFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
-- (id)imageWithFormat:(NSInteger)arg1;
+- (int)imageID;
+- (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
+- (id)imageWithFormat:(int)arg1;
 - (BOOL)isVideo;
+- (id)newFullSizeImage;
+- (id)newLowResolutionFullScreenImage;
 - (id)pathForVideoPreviewFile;
 - (void)setPathForVideoPreviewFile:(id)arg1;
 - (void)setVideoWasCaptured:(BOOL)arg1;

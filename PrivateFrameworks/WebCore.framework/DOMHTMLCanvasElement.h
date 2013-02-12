@@ -5,13 +5,13 @@
 @interface DOMHTMLCanvasElement : DOMHTMLElement {
 }
 
-@property NSInteger height;
-@property NSInteger width;
+@property int height;
+@property int width;
 
-- (NSInteger)height;
-- (void)setHeight:(NSInteger)arg1;
-- (void)setWidth:(NSInteger)arg1;
+- (int)height;
+- (void)setHeight:(int)arg1;
+- (void)setWidth:(int)arg1;
 - (id)toDataURL:(id)arg1;
-- (NSInteger)width;
+- (int)width;
 
 @end

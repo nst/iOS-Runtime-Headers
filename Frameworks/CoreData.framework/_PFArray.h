@@ -12,39 +12,39 @@
         unsigned int managedObjects : 1; 
         unsigned int _RESERVED : 27; 
     id *_array;
-    NSInteger _cd_rc;
-    NSUInteger _count;
+    int _cd_rc;
+    unsigned int _count;
     } _flags;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
 
-- (NSUInteger)_flags;
+- (unsigned int)_flags;
 - (id*)_objectsPointer;
 - (void)_setShouldRelease:(BOOL)arg1;
 - (void)_setShouldUseExtendedRelease:(BOOL)arg1;
 - (id)arrayFromObjectIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getObjects:(id*)arg1;
-- (NSUInteger)indexOfManagedObjectForObjectID:(id)arg1;
-- (NSUInteger)indexOfObject:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
-- (NSUInteger)indexOfObject:(id)arg1;
-- (NSUInteger)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
-- (NSUInteger)indexOfObjectIdenticalTo:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(NSUInteger)arg2;
-- (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2 andFlags:(NSUInteger)arg3;
-- (id)managedObjectIDAtIndex:(NSUInteger)arg1;
+- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
+- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)indexOfObject:(id)arg1;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3;
+- (id)managedObjectIDAtIndex:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;
-- (id)objectAtIndex:(NSUInteger)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
-- (id)subarrayWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (unsigned int)retainCount;
+- (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

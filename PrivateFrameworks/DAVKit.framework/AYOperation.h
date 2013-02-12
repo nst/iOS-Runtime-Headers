@@ -9,7 +9,7 @@
     NSThread *_baseThread;
     BOOL _canAbortNow;
     AYOperation *_currentChildOperation;
-    NSInteger _currentMark;
+    int _currentMark;
     NSThread *_currentThread;
     NSError *_error;
     <AYGroup> *_group;
@@ -54,7 +54,7 @@
 - (id)baseThread;
 - (BOOL)canAbortNow;
 - (void)clearError;
-- (NSInteger)currentMark;
+- (int)currentMark;
 - (void)dealloc;
 - (void)endOperationWithError:(id)arg1;
 - (id)error;
@@ -69,8 +69,8 @@
 - (BOOL)isSilent;
 - (void)lockOperation;
 - (id)mainOperation;
-- (void)markWithTag:(NSInteger)arg1 notify:(BOOL)arg2;
-- (void)markWithTag:(NSInteger)arg1;
+- (void)markWithTag:(int)arg1 notify:(BOOL)arg2;
+- (void)markWithTag:(int)arg1;
 - (id)notificationDelegate;
 - (void)notifyWithName:(id)arg1 infos:(id)arg2;
 - (id)operationCompanion;
@@ -83,7 +83,7 @@
 - (void)postOperation;
 - (void)removeInfoForKey:(id)arg1;
 - (void)resetOperation;
-- (void)runOperationWithTimeOut:(NSUInteger)arg1;
+- (void)runOperationWithTimeOut:(unsigned int)arg1;
 - (void)sendEventToThread:(id)arg1;
 - (void)setCanAbortNow:(BOOL)arg1;
 - (void)setError:(id)arg1;

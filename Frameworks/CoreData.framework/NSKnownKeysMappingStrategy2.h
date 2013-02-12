@@ -5,13 +5,13 @@
 @interface NSKnownKeysMappingStrategy2 : NSKnownKeysMappingStrategy1 {
 }
 
-- (id)_setupForKeys:(id*)arg1 count:(NSUInteger)arg2 table:(void*)arg3 inData:(id)arg4;
+- (id)_setupForKeys:(id*)arg1 count:(unsigned int)arg2 table:(void*)arg3 inData:(id)arg4;
 - (void)dealloc;
 - (id)init;
 - (id)initForKeys:(id)arg1;
-- (id)initForKeys:(id*)arg1 count:(NSUInteger)arg2;
+- (id)initForKeys:(id*)arg1 count:(unsigned int)arg2;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

@@ -12,11 +12,11 @@
     NSString *_mobileNetworkCode;
 }
 
-@property(retain) NSString *carrierName;
-@property(retain) NSString *isoCountryCode;
-@property(retain) NSString *mobileCountryCode;
-@property(retain) NSString *mobileNetworkCode;
 @property BOOL allowsVOIP;
+@property(retain) NSString * carrierName;
+@property(retain) NSString * isoCountryCode;
+@property(retain) NSString * mobileCountryCode;
+@property(retain) NSString * mobileNetworkCode;
 
 - (BOOL)allowsVOIP;
 - (id)carrierName;

@@ -14,13 +14,13 @@
     NSString *_udid;
 }
 
-@property(readonly) NSString *buildVersion;
-@property(readonly) NSString *deviceName;
-@property(readonly) NSString *gameKitVersion;
-@property(readonly) NSString *osVersion;
-@property(readonly) NSDictionary *screenCapabilities;
-@property(readonly) NSString *udid;
+@property(readonly) NSString * buildVersion;
+@property(readonly) NSString * deviceName;
 @property(getter=isGameCenterSupported,readonly) BOOL gameCenterSupported;
+@property(readonly) NSString * gameKitVersion;
+@property(readonly) NSString * osVersion;
+@property(readonly) NSDictionary * screenCapabilities;
+@property(readonly) NSString * udid;
 
 + (id)currentDevice;
 

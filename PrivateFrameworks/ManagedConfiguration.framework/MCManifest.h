@@ -15,10 +15,10 @@
 
 - (id)_manifest;
 - (void)_setManifest:(id)arg1;
-- (void)addIdentifierToManifest:(id)arg1 flag:(NSInteger)arg2;
+- (void)addIdentifierToManifest:(id)arg1 flag:(int)arg2;
 - (id)allInstalledProfileIdentifiers;
 - (void)dealloc;
-- (id)identifiersOfProfilesWithFilterFlags:(NSInteger)arg1;
+- (id)identifiersOfProfilesWithFilterFlags:(int)arg1;
 - (id)init;
 - (void)invalidateCache;
 - (id)manifest;

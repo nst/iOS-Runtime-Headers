@@ -5,17 +5,17 @@
 @class OADFill;
 
 @interface OADFillOverlayEffect : OADEffect {
-    NSInteger mBlendMode;
+    int mBlendMode;
     OADFill *mFill;
 }
 
-- (NSInteger)blendMode;
+- (int)blendMode;
 - (void)dealloc;
 - (id)fill;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (void)setBlendMode:(NSInteger)arg1;
+- (void)setBlendMode:(int)arg1;
 - (void)setFill:(id)arg1;
 
 @end

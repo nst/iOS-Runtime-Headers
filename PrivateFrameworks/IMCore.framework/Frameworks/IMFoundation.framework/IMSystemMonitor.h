@@ -18,7 +18,7 @@
     BOOL _willSleep;
 }
 
-@property BOOL isActive; /* unknown property attribute: SsetActive: */
+@property(setter=setActive:) BOOL isActive;
 @property(readonly) BOOL isBackingUp;
 @property BOOL isFastUserSwitched;
 @property(readonly) BOOL isScreenLocked;
@@ -64,7 +64,7 @@
 - (BOOL)isSystemIdle;
 - (oneway void)release;
 - (void)removeListener:(id)arg1;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setActive:(BOOL)arg1;
 - (void)setIsFastUserSwitched:(BOOL)arg1;
 - (double)systemIdleTime;

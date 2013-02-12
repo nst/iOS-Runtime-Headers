@@ -6,14 +6,14 @@
 
 @interface EKEventDateDetailItem : EKEventDetailItem <EKCellShortener> {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
         BOOL minute; 
         double second; 
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -25,9 +25,9 @@
     } _startDateGr;
 }
 
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
+- (id)cellForSubitemAtIndex:(int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
-- (float)defaultCellHeightForSubitemAtIndex:(NSInteger)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (void)reset;
 - (void)setEvent:(id)arg1 store:(id)arg2;
 - (void)shortenCell:(id)arg1;

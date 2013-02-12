@@ -31,10 +31,10 @@
     NSMutableDictionary *_cdxSessions;
     id _eventDelegate;
     BOOL _fAllowMoreRelay;
-    NSInteger _fPreReleased;
-    NSInteger _fPrepareThread;
+    int _fPreReleased;
+    int _fPrepareThread;
     NSMutableArray *_gckEventList;
-    NSUInteger _gckPID;
+    unsigned int _gckPID;
     struct OpaqueGCKSession { } *_gckSession;
     NSMutableDictionary *_initRelayQueue;
     NSMutableArray *_pendingConnectionPIDList;
@@ -58,14 +58,14 @@
     } _xRelay;
 }
 
-@property(retain) CDXClient *cdxClient;
-@property(retain) NSMutableDictionary *cdxSessions;
-@property(retain) NSMutableDictionary *pidToConnectTimeoutSource;
+@property(retain) CDXClient * cdxClient;
+@property(retain) NSMutableDictionary * cdxSessions;
+@property(retain) NSMutableDictionary * pidToConnectTimeoutSource;
 
 - (void)CDXClient:(id)arg1 error:(id)arg2;
 - (void)CDXClient:(id)arg1 preblob:(id)arg2;
-- (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(NSInteger)arg3;
-- (void)addEvent:(struct { NSInteger x1; char *x2; NSInteger x3; NSUInteger x4; }*)arg1 remotePeer:(NSUInteger)arg2;
+- (void)CDXClientSession:(id)arg1 receivedData:(id)arg2 from:(int)arg3;
+- (void)addEvent:(struct { int x1; char *x2; int x3; unsigned int x4; }*)arg1 remotePeer:(unsigned int)arg2;
 - (struct dispatch_queue_s { }*)asyncWorkQueue;
 - (void)cancelConnectParticipant:(id)arg1;
 - (id)cdxClient;
@@ -80,8 +80,8 @@
 - (void)dealloc;
 - (void)doRelayCheckForRemotePeerID:(id)arg1;
 - (id)eventDelegate;
-- (id)extractBlobUsingData:(id)arg1 withSourcePID:(NSUInteger)arg2 destPID:(NSUInteger)arg3;
-- (NSUInteger)gckPID;
+- (id)extractBlobUsingData:(id)arg1 withSourcePID:(unsigned int)arg2 destPID:(unsigned int)arg3;
+- (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
 - (id)initWithParticipantID:(id)arg1;
@@ -96,7 +96,7 @@
 - (void)setEventDelegate:(id)arg1;
 - (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;
 - (void)setPidToConnectTimeoutSource:(id)arg1;
-- (BOOL)shouldWeInitiateRelayWithPID:(NSUInteger)arg1;
+- (BOOL)shouldWeInitiateRelayWithPID:(unsigned int)arg1;
 - (struct dispatch_queue_s { }*)timerQueue;
 - (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 

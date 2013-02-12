@@ -10,9 +10,9 @@
     NSDictionary *_responseAlert;
 }
 
-@property(copy) NSString *authToken;
-@property(copy) NSString *profileID;
-@property(copy) NSDictionary *responseAlertInfo;
+@property(copy) NSString * authToken;
+@property(copy) NSString * profileID;
+@property(copy) NSDictionary * responseAlertInfo;
 
 - (id)additionalMessageHeaders;
 - (id)authToken;

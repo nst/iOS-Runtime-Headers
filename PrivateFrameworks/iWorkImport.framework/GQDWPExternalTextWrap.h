@@ -2,27 +2,32 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface GQDWPExternalTextWrap : NSObject <GQDNameMappable> {
     float mAlphaThreshold;
-    NSInteger mAttachmentWrapType;
+    int mAttachmentWrapType;
     BOOL mFloatingWrapEnabled;
-    NSInteger mFloatingWrapType;
+    int mFloatingWrapType;
     BOOL mInlineWrapEnabled;
     float mMargin;
-    NSInteger mWrapDirection;
-    NSInteger mWrapStyle;
+    int mWrapDirection;
+    int mWrapStyle;
 }
 
-+ (const struct StateSpec { int (**x1)(); char *x2; NSInteger x3; NSInteger x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
++ (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
 - (float)alphaThreshold;
-- (NSInteger)attachmentWrapType;
+- (int)attachmentWrapType;
 - (BOOL)floatingWrapEnabled;
-- (NSInteger)floatingWrapType;
+- (int)floatingWrapType;
 - (BOOL)inlineWrapEnabled;
 - (float)margin;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
-- (NSInteger)wrapDirection;
-- (NSInteger)wrapStyle;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (int)wrapDirection;
+- (int)wrapStyle;
 
 @end

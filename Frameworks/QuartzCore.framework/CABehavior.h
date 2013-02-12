@@ -2,27 +2,34 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSDictionary, NSString;
+
 @interface CABehavior : NSObject <NSCoding, NSCopying> {
     void *_attr;
     void *_priv;
-    NSUInteger _refcount;
-    NSUInteger _uid;
+    unsigned int _refcount;
+    unsigned int _uid;
 }
 
-@property(copy) NSString *name;
-@property(copy) NSDictionary *style;
 @property id delegate;
 @property(getter=isEnabled) BOOL enabled;
+@property(copy) NSString * name;
+@property(copy) NSDictionary * style;
 
-+ (int (*)())CA_getterForType:(NSInteger)arg1;
-+ (int (*)())CA_setterForType:(NSInteger)arg1;
++ (int (*)())CA_getterForType:(int)arg1;
++ (int (*)())CA_setterForType:(int)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)behavior;
 + (id)defaultValueForKey:(id)arg1;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
-- (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; NSUInteger x3; struct String {} *x4; NSUInteger x5; NSUInteger x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Behavior {} *x9; }*)arg1;
+- (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct String {} *x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Behavior {} *x9; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
@@ -34,7 +41,7 @@
 - (id)name;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setName:(id)arg1;

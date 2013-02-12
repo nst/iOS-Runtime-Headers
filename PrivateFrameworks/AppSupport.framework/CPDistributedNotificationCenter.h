@@ -10,7 +10,7 @@
     NSLock *_lock;
     struct __CFRunLoopSource { } *_receiveNotificationSource;
     struct __CFDictionary { } *_sendPorts;
-    NSUInteger _startCount;
+    unsigned int _startCount;
 }
 
 + (id)centerNamed:(id)arg1;
@@ -20,7 +20,7 @@
 - (void)_createReceiveSourceForRunLoop:(struct __CFRunLoop { }*)arg1;
 - (id)_initWithServerName:(id)arg1;
 - (void)_notificationServerWasRestarted;
-- (void)_receivedCheckIn:(NSUInteger)arg1 auditToken:(struct { NSUInteger x1[8]; }*)arg2;
+- (void)_receivedCheckIn:(unsigned int)arg1 auditToken:(struct { unsigned int x1[8]; }*)arg2;
 - (void)dealloc;
 - (void)deliverNotification:(id)arg1 userInfo:(id)arg2;
 - (id)name;

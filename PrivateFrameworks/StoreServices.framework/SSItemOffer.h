@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, NSString, SSItem;
+@class NSArray, NSDictionary, NSSet, NSString, SSDialog, SSItem, SSItemMedia;
 
 @interface SSItemOffer : NSObject <NSCopying> {
     SSItem *_item;
@@ -11,21 +11,21 @@
     NSArray *_supportedDevices;
 }
 
-@property(getter=_offerItem) SSItem *_offerItem; /* unknown property attribute: S_setOfferItem: */
-@property(readonly) NSSet *accountIdentifiers;
-@property(readonly) NSString *actionDisplayName;
-@property(readonly) NSString *actionType;
-@property(readonly) NSString *buyParameters;
-@property(readonly) SSDialog *confirmationDialog;
-@property(readonly) NSString *offerIdentifier;
-@property(readonly) SSItemMedia *offerMedia;
-@property(readonly) NSString *priceDisplay;
-@property(readonly) SSDialog *successDialog;
-@property(readonly) NSArray *supportedDevices;
+@property(getter=_offerItem,setter=_setOfferItem:) SSItem * _offerItem;
+@property(readonly) NSSet * accountIdentifiers;
+@property(readonly) NSString * actionDisplayName;
+@property(readonly) NSString * actionType;
+@property(readonly) NSString * buyParameters;
+@property(readonly) SSDialog * confirmationDialog;
 @property(readonly) long long estimatedDiskSpaceNeeded;
+@property(readonly) NSString * offerIdentifier;
+@property(readonly) SSItemMedia * offerMedia;
 @property(getter=isPreorder,readonly) BOOL preorder;
+@property(readonly) NSString * priceDisplay;
 @property(readonly) id requiredSoftwareCapabilities;
 @property(readonly) BOOL shouldShowPlusIcon;
+@property(readonly) SSDialog * successDialog;
+@property(readonly) NSArray * supportedDevices;
 
 + (id)_preferredOfferIdentifiers;
 

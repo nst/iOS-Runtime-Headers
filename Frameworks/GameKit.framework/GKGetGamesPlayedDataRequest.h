@@ -6,24 +6,28 @@
 
 @interface GKGetGamesPlayedDataRequest : GKDataRequest {
     NSArray *_games;
+    NSArray *_gamesPlayed;
     GKGame *_lookupGame;
     GKPlayer *_player;
 }
 
-@property(readonly) NSArray *games;
-@property(retain) GKGame *lookupGame;
-@property(retain) GKPlayer *player;
+@property(readonly) NSArray * games;
+@property(retain) NSArray * gamesPlayed;
+@property(retain) GKGame * lookupGame;
+@property(retain) GKPlayer * player;
 
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)dealloc;
 - (id)games;
+- (id)gamesPlayed;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
 - (id)lookupGame;
 - (id)player;
 - (id)request;
+- (void)setGamesPlayed:(id)arg1;
 - (void)setLookupGame:(id)arg1;
 - (void)setPlayer:(id)arg1;
 

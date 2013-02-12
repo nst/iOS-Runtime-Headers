@@ -5,15 +5,15 @@
 @class NSString;
 
 @interface DAMailboxFetchSearchResultRequest : NSObject {
-    NSInteger _bodyFormat;
+    int _bodyFormat;
     NSString *_longID;
-    NSInteger _maxSize;
+    int _maxSize;
 }
 
-- (NSInteger)bodyFormat;
+- (int)bodyFormat;
 - (void)dealloc;
-- (id)initRequestForBodyFormat:(NSInteger)arg1 withLongID:(id)arg2 withBodySizeLimit:(NSInteger)arg3;
+- (id)initRequestForBodyFormat:(int)arg1 withLongID:(id)arg2 withBodySizeLimit:(int)arg3;
 - (id)longID;
-- (NSInteger)maxSize;
+- (int)maxSize;
 
 @end

@@ -7,7 +7,7 @@
 @interface UIStatusBarWindow : UIWindow {
     UIStatusBarCorners *_bottomCorners;
     BOOL _cornersHidden;
-    NSInteger _orientation;
+    int _orientation;
     UIStatusBar *_statusBar;
     UIStatusBarCorners *_topCorners;
 }
@@ -23,10 +23,10 @@
 - (void)dealloc;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)orientation;
+- (int)orientation;
 - (void)setCornersHidden:(BOOL)arg1 animationParameters:(id)arg2;
-- (void)setOrientation:(NSInteger)arg1 animationParameters:(id)arg2;
+- (void)setOrientation:(int)arg1 animationParameters:(id)arg2;
 - (void)setStatusBar:(id)arg1;
-- (void)setTopCornerStyle:(NSInteger)arg1 bottomCornerStyle:(NSInteger)arg2 animationParameters:(id)arg3;
+- (void)setTopCornerStyle:(int)arg1 bottomCornerStyle:(int)arg2 animationParameters:(id)arg3;
 
 @end

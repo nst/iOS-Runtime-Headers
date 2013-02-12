@@ -8,8 +8,8 @@
     NSConditionLock *_condition;
     NSMutableArray *_consumers;
     NSMutableArray *_requests;
-    NSUInteger _waitingInside;
-    NSUInteger _waitingOutside;
+    unsigned int _waitingInside;
+    unsigned int _waitingOutside;
 }
 
 - (void)_processRequests:(id)arg1 consumers:(id)arg2;

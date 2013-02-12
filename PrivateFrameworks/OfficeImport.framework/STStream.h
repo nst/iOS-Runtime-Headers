@@ -24,8 +24,8 @@
 - (unsigned short)readLEword;
 - (id)readLEwstring:(unsigned long)arg1;
 - (void)releaseCStream;
-- (void)seek:(long)arg1 fromOrigin:(NSInteger)arg2;
-- (void)setClass:(struct { NSUInteger x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
+- (void)seek:(long)arg1 fromOrigin:(int)arg2;
+- (void)setClass:(struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
 - (void)writeBytes:(id)arg1;
 - (void)writeLEboolean:(unsigned char)arg1;
 - (void)writeLEbyte:(unsigned char)arg1;

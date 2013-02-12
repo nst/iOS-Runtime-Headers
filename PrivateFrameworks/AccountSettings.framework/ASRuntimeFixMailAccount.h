@@ -12,7 +12,7 @@
 - (BOOL)_cleanupAccountClass:(id)arg1;
 - (void)accountsHaveBeenSaved:(BOOL)arg1;
 - (void)dealloc;
-- (NSInteger)fixBasicAccountIfNeeded:(id)arg1 loggingMessage:(id)arg2;
+- (int)fixBasicAccountIfNeeded:(id)arg1 loggingMessage:(id)arg2;
 - (id)init;
 - (id)supportedAccountTypes;
 

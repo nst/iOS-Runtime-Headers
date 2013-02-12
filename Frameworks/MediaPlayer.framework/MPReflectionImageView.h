@@ -12,7 +12,7 @@
     float _reflectionHeight;
 }
 
-@property(retain) UIGradient *reflectionGradient;
+@property(retain) UIGradient * reflectionGradient;
 @property BOOL squareImage;
 
 + (void)_initializeSafeCategory;

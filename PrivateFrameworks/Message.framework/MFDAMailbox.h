@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)folderID;
-- (id)initWithName:(id)arg1 attributes:(NSUInteger)arg2 account:(id)arg3 folder:(id)arg4;
+- (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 account:(id)arg3 folder:(id)arg4;
 - (void)setDAFolder:(id)arg1;
 
 @end

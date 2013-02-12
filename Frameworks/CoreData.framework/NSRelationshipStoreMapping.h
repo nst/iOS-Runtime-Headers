@@ -7,7 +7,7 @@
 @interface NSRelationshipStoreMapping : NSPropertyStoreMapping {
     NSString *_destinationEntityExternalName;
     NSArray *_foreignKeys;
-    NSUInteger _joinSemantic;
+    unsigned int _joinSemantic;
     NSArray *_joins;
 }
 
@@ -17,12 +17,12 @@
 - (id)destinationEntityExternalName;
 - (id)foreignKeys;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)joinSemantic;
+- (unsigned int)joinSemantic;
 - (id)joins;
 - (id)relationship;
 - (void)setDestinationEntityExternalName:(id)arg1;
 - (void)setForeignKeys:(id)arg1;
-- (void)setJoinSemantic:(NSUInteger)arg1;
+- (void)setJoinSemantic:(unsigned int)arg1;
 - (void)setJoins:(id)arg1;
 
 @end

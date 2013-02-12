@@ -8,13 +8,13 @@
     GMMMapPoint *_mapPoint;
 }
 
-@property(retain) GMMMapPoint *mapPoint;
+@property(retain) GMMMapPoint * mapPoint;
 
 - (void)dealloc;
 - (id)dictionaryRepresentation;
 - (id)mapPoint;
 - (BOOL)readFrom:(id)arg1;
-- (NSUInteger)requestTypeCode;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setMapPoint:(id)arg1;
 - (void)writeTo:(id)arg1;

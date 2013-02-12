@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation, MFMailComposeViewController, NSArray, NSDictionary, NSString, NSURL, SUClient, SULocationObserver, SUPurchaseManager, SUSectionsResponse, SUTabBarController;
+@class ISOperation, MFMailComposeViewController, NSArray, NSDictionary, NSString, NSURL, SUClient, SULocationObserver, SUPurchaseManager, SUSectionsResponse, SUTabBarController, UINavigationController;
 
 @interface SUStoreController : NSObject <SUClientDelegate, SUPurchaseManagerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
     SUClient *_client;
@@ -22,13 +22,13 @@
     SUTabBarController *_tabBarController;
 }
 
-@property(readonly) NSString *defaultPNGNameForSuspend;
-@property(retain) NSURL *launchURL;
-@property(readonly) SUTabBarController *tabBarController;
-@property(readonly) UINavigationController *topNavigationController;
-@property(readonly) NSInteger statusBarStyleForSuspend;
+@property(readonly) NSString * defaultPNGNameForSuspend;
+@property(retain) NSURL * launchURL;
+@property(readonly) int statusBarStyleForSuspend;
 @property(getter=isStoreEnabled,readonly) BOOL storeEnabled;
+@property(readonly) SUTabBarController * tabBarController;
 @property(getter=isTabBarControllerLoaded,readonly) BOOL tabBarControllerLoaded;
+@property(readonly) UINavigationController * topNavigationController;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
@@ -37,7 +37,7 @@
 - (void)_bagDidLoadNotification:(id)arg1;
 - (void)_cancelLoadSectionsOperation;
 - (void)_cancelSuspendAfterDialogsDismissed;
-- (void)_defaultHandleApplicationURLRequest:(id)arg1;
+- (void)_defaultHandleApplicationURLRequestProperties:(id)arg1;
 - (void)_dialogDidFinishNotification:(id)arg1;
 - (void)_handleAccountURL:(id)arg1;
 - (void)_handleFinishedBackgroundLoadSectionsOperation:(id)arg1;
@@ -53,6 +53,7 @@
 - (BOOL)_reloadForStorefrontChange;
 - (void)_reloadOverlayConfigurations;
 - (void)_reloadWithSectionsResponse:(id)arg1;
+- (void)_restrictionsChangedNotification:(id)arg1;
 - (id)_resumableViewController;
 - (void)_retrySectionsAfterNetworkTransition;
 - (void)_saveArchivedNavigationPath;
@@ -75,7 +76,7 @@
 - (id)downloadQueueForClient:(id)arg1 downloadKinds:(id)arg2;
 - (void)endPurchaseBatch;
 - (void)exitStoreAfterDialogsDismiss;
-- (void)exitStoreWithReason:(NSInteger)arg1;
+- (void)exitStoreWithReason:(int)arg1;
 - (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
 - (void)handleApplicationURL:(id)arg1;
 - (id)init;
@@ -84,7 +85,7 @@
 - (BOOL)isTabBarControllerLoaded;
 - (id)launchURL;
 - (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(NSInteger)arg2 error:(id)arg3;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (BOOL)matchesClientApplication:(id)arg1;
 - (id)newScriptInterface;
 - (id)overlayConfigurationForStorePage:(id)arg1;
@@ -102,7 +103,7 @@
 - (void)setLaunchURL:(id)arg1;
 - (void)setupUI;
 - (BOOL)showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
-- (NSInteger)statusBarStyleForSuspend;
+- (int)statusBarStyleForSuspend;
 - (id)storeContentLanguage;
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
 - (id)tabBarController;

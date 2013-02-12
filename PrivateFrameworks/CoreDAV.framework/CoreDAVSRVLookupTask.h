@@ -2,23 +2,31 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString;
+@class <CoreDAVSVRLookupTaskDelegate>, NSString;
 
 @interface CoreDAVSRVLookupTask : CoreDAVTask {
+    struct __CFHost { } *_host;
     NSString *_serviceString;
     NSString *_srvHost;
-    NSInteger _srvPort;
+    int _srvPort;
 }
 
-@property <CoreDAVSVRLookupTaskDelegate> *delegate;
+@property <CoreDAVSVRLookupTaskDelegate> * delegate;
+@property(retain) NSString * srvHost;
+@property int srvPort;
 
-- (id)_parseDNSReply:(struct { NSUInteger x1; struct sockaddr {} *x2; struct { /* ? */ } *x3; struct { /* ? */ } **x4; struct { /* ? */ } **x5; struct { /* ? */ } **x6; struct { /* ? */ } **x7; }*)arg1;
+- (id)_parseDNSReply:(struct { unsigned int x1; struct sockaddr {} *x2; struct { /* ? */ } *x3; struct { /* ? */ } **x4; struct { /* ? */ } **x5; struct { /* ? */ } **x6; struct { /* ? */ } **x7; }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (void)finishWithSRVLookupResults:(id)arg1;
 - (id)initWithServiceString:(id)arg1;
 - (void)performCoreDAVTask;
+- (void)setSrvHost:(id)arg1;
+- (void)setSrvPort:(int)arg1;
+- (id)srvHost;
 - (void)srvLookupForHost:(id)arg1 forService:(id)arg2;
+- (int)srvPort;
+- (void)tearDownResources;
 
 @end

@@ -5,7 +5,7 @@
 @interface ABMultiCellContentView_IM : ABMultiCellContentView_DisplayAlternate {
 }
 
-+ (NSUInteger)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
++ (unsigned int)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
 
 - (id)pickerView;
 - (void)reloadFromModel;

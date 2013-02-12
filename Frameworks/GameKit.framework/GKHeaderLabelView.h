@@ -10,7 +10,7 @@
     GKUITheme *_theme;
 }
 
-@property(retain) GKUITheme *theme;
+@property(retain) GKUITheme * theme;
 
 + (void)_initializeSafeCategory;
 

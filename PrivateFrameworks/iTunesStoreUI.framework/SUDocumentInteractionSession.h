@@ -13,7 +13,7 @@
     UIDocumentInteractionController *_documentInteractionController;
 }
 
-@property(copy) ? *completionHandler;
+@property(copy) id completionHandler;
 
 - (void)cancel;
 - (id)completionHandler;

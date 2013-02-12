@@ -6,11 +6,11 @@
 
 @interface CKSendSMSOperation : NSOperation {
     NSDictionary *_messageFields;
-    NSUInteger _recordID;
+    unsigned int _recordID;
 }
 
 - (void)dealloc;
-- (id)initWithMessageFields:(id)arg1 recordID:(NSUInteger)arg2;
+- (id)initWithMessageFields:(id)arg1 recordID:(unsigned int)arg2;
 - (void)main;
 
 @end

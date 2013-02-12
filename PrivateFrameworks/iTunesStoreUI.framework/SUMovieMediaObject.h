@@ -2,22 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface SUMovieMediaObject : SUMediaObject {
     NSMutableArray *_remakerOutputs;
 }
 
-@property(readonly) NSArray *remadeVariants;
+@property(readonly) NSArray * remadeVariants;
 
 - (id)_activeRemadeVariant;
+- (id)_fullSizeImage;
 - (id)_newSnapshotImageWithMaximumSize:(float)arg1;
 - (void)addRemadeVariant:(id)arg1;
 - (id)copyPreparationOperations;
 - (void)dealloc;
 - (id)inputSourceMIMEType;
+- (id)newComposeImageWithMaximumSize:(float)arg1;
 - (id)newInputSource;
 - (id)newThumbnailImageWithMaximumSize:(float)arg1;
 - (id)remadeVariants;
+- (void)saveToLibraryWithCompletionBlock:(id)arg1;
 
 @end

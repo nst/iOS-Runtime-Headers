@@ -8,14 +8,14 @@
 
 - (void)dealloc;
 - (id)initForSerializerStream:(id)arg1;
-- (NSUInteger)serializeData:(id)arg1;
-- (NSUInteger)serializeList:(id)arg1;
-- (NSUInteger)serializeListItemIn:(id)arg1 at:(NSUInteger)arg2;
-- (NSUInteger)serializeObject:(id)arg1;
-- (NSUInteger)serializePListKeyIn:(id)arg1 key:(id)arg2 value:(id)arg3;
-- (NSUInteger)serializePListValueIn:(id)arg1 key:(id)arg2 value:(id)arg3;
-- (NSUInteger)serializePropertyList:(id)arg1;
-- (NSUInteger)serializeString:(id)arg1;
+- (unsigned int)serializeData:(id)arg1;
+- (unsigned int)serializeList:(id)arg1;
+- (unsigned int)serializeListItemIn:(id)arg1 at:(unsigned int)arg2;
+- (unsigned int)serializeObject:(id)arg1;
+- (unsigned int)serializePListKeyIn:(id)arg1 key:(id)arg2 value:(id)arg3;
+- (unsigned int)serializePListValueIn:(id)arg1 key:(id)arg2 value:(id)arg3;
+- (unsigned int)serializePropertyList:(id)arg1;
+- (unsigned int)serializeString:(id)arg1;
 - (id)serializerStream;
 
 @end

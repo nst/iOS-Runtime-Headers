@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInputPortInternal;
+@class AVCaptureInput, AVCaptureInputPortInternal, NSString;
 
 @interface AVCaptureInputPort : NSObject {
     AVCaptureInputPortInternal *_internal;
 }
 
-@property(readonly) opaqueCMFormatDescription *formatDescription;
-@property(readonly) AVCaptureInput *input;
-@property(readonly) NSString *mediaType;
 @property(getter=isEnabled) BOOL enabled;
+@property(readonly) struct opaqueCMFormatDescription { }* formatDescription;
+@property(readonly) AVCaptureInput * input;
+@property(readonly) NSString * mediaType;
 
 + (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
 

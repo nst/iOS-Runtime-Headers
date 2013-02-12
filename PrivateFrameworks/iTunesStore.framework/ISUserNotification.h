@@ -5,29 +5,29 @@
 @class NSDictionary;
 
 @interface ISUserNotification : NSObject {
-    NSInteger _allowedRetryCount;
-    NSInteger _currentRetryCount;
+    int _allowedRetryCount;
+    int _currentRetryCount;
     NSDictionary *_dictionary;
-    NSUInteger _optionFlags;
+    unsigned int _optionFlags;
     NSDictionary *_userInfo;
 }
 
-@property(retain) NSDictionary *dictionary;
-@property(retain) NSDictionary *userInfo;
-@property NSInteger allowedRetryCount;
-@property NSInteger currentRetryCount;
-@property NSUInteger optionFlags;
+@property int allowedRetryCount;
+@property int currentRetryCount;
+@property(retain) NSDictionary * dictionary;
+@property unsigned int optionFlags;
+@property(retain) NSDictionary * userInfo;
 
-- (NSInteger)allowedRetryCount;
+- (int)allowedRetryCount;
 - (struct __CFUserNotification { }*)copyUserNotification;
-- (NSInteger)currentRetryCount;
+- (int)currentRetryCount;
 - (void)dealloc;
 - (id)dictionary;
 - (id)init;
 - (id)initWithDictionary:(id)arg1 options:(unsigned long)arg2;
 - (unsigned long)optionFlags;
-- (void)setAllowedRetryCount:(NSInteger)arg1;
-- (void)setCurrentRetryCount:(NSInteger)arg1;
+- (void)setAllowedRetryCount:(int)arg1;
+- (void)setCurrentRetryCount:(int)arg1;
 - (void)setDictionary:(id)arg1;
 - (void)setOptionFlags:(unsigned long)arg1;
 - (void)setUserInfo:(id)arg1;

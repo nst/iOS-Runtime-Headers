@@ -42,8 +42,8 @@
     BOOL _titleIsNumberOfPhotos;
 }
 
-- (id)_annotationTitleForNumberOfPhotos:(NSUInteger)arg1;
-- (id)_createAnnotationWith2DLocation:(struct { double x1; double x2; })arg1 title:(id)arg2 subtitle:(id)arg3;
+- (id)_annotationTitleForNumberOfPhotos:(unsigned int)arg1;
+- (id)_newAnnotationWith2DLocation:(struct { double x1; double x2; })arg1 title:(id)arg2 subtitle:(id)arg3;
 - (struct { double x1; double x2; })_placeLocation;
 - (void)_setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_updatePlaceToPlace:(id)arg1;

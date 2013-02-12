@@ -8,8 +8,8 @@
     MKUserLocationViewInternal *viewImpl;
 }
 
-@property(retain) MKUserLocationViewInternal *viewImpl;
 @property BOOL hidDot;
+@property(retain) MKUserLocationViewInternal * viewImpl;
 
 + (id)defaultValueForKey:(id)arg1;
 

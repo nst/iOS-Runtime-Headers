@@ -6,19 +6,19 @@
 
 @interface AVPlaybackQueue : NSObject {
     AVQueue *_avItemQueue;
-    NSInteger _avQueueTransactionCount;
+    int _avQueueTransactionCount;
     id _delegate;
     struct OpaqueFigPlayer { } *_figPlayer;
     BOOL _hasBuiltPlaybackQueue;
-    NSInteger _ignoreAVQueueModifications;
+    int _ignoreAVQueueModifications;
     NSMutableArray *_pbItemQueue;
-    NSInteger _repeatMode;
+    int _repeatMode;
     BOOL _waitingToAddFirstItem;
 }
 
 - (void)beginAVQueueTransaction;
 - (void)checkQueueConsistency;
-- (void)clearPBItemQueueFromIndex:(NSInteger)arg1;
+- (void)clearPBItemQueueFromIndex:(int)arg1;
 - (id)currentPlaybackItem;
 - (void)dealloc;
 - (void)endAVQueueTransaction;
@@ -34,7 +34,7 @@
 - (void)scheduleRemoveItemsNoLongerInPlayQueue;
 - (void)setAVItemQueue:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRepeatMode:(NSInteger)arg1;
+- (void)setRepeatMode:(int)arg1;
 - (void)updateBookmarkTimesIncludeFirst:(BOOL)arg1 updateFirst:(BOOL)arg2;
 
 @end

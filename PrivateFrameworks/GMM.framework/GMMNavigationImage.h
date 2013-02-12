@@ -5,26 +5,26 @@
 @class NSData;
 
 @interface GMMNavigationImage : PBCodable {
-    NSInteger _height;
+    int _height;
     NSData *_imageData;
-    NSInteger _width;
+    int _width;
 }
 
-@property(retain) NSData *imageData;
-@property NSInteger height;
-@property NSInteger width;
+@property int height;
+@property(retain) NSData * imageData;
+@property int width;
 
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (NSInteger)height;
+- (int)height;
 - (id)imageData;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setHeight:(NSInteger)arg1;
+- (void)setHeight:(int)arg1;
 - (void)setImageData:(id)arg1;
-- (void)setWidth:(NSInteger)arg1;
-- (NSInteger)width;
+- (void)setWidth:(int)arg1;
+- (int)width;
 - (void)writeTo:(id)arg1;
 
 @end

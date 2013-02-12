@@ -11,9 +11,10 @@
     BOOL _usingRealTableViewCell;
 }
 
-@property(retain) NSIndexPath *indexPath;
-@property(readonly) UITableViewCell *realTableViewCell;
-@property(retain) UITableViewCell *tableViewCell;
+@property(retain) NSIndexPath * indexPath;
+@property(readonly) UITableViewCell * realTableViewCell;
+@property(retain) UITableViewCell * tableViewCell;
+@property BOOL usingRealTableViewCell;
 
 - (float)_accessibilityAllowedGeometryOverlap;
 - (BOOL)_accessibilityBackingElementIsValid;
@@ -21,14 +22,15 @@
 - (void)_accessibilityCut;
 - (BOOL)_accessibilityHasTextOperations;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_accessibilityIsTableCell;
 - (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
 - (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
 - (void)_accessibilityPaste;
 - (void)_accessibilitySelect;
 - (void)_accessibilitySelectAll;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
 - (BOOL)_accessibilityServesAsContainingParentForOrdering;
-- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)_accessibilitySupportsActivateAction;
 - (id)_accessibilityTextOperations;
 - (id)_accessibilityTextViewTextOperationResponder;
@@ -36,8 +38,8 @@
 - (void)accessibilityActivate;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
 - (void)accessibilityDecrement;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (void)accessibilityElementDidBecomeFocused;
 - (void)accessibilityElementDidLoseFocus;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
@@ -51,15 +53,17 @@
 - (id)accessibilityValue;
 - (void)dealloc;
 - (id)description;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (id)indexPath;
 - (BOOL)isAccessibilityElement;
 - (id)realTableViewCell;
 - (void)registerMockChild:(id)arg1;
 - (void)setIndexPath:(id)arg1;
 - (void)setTableViewCell:(id)arg1;
+- (void)setUsingRealTableViewCell:(BOOL)arg1;
 - (id)tableViewCell;
 - (void)unregisterAllChildren;
 - (void)unregisterMockChild:(id)arg1;
+- (BOOL)usingRealTableViewCell;
 
 @end

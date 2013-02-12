@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureFileOutputInternal;
+@class AVCaptureFileOutputInternal, NSURL;
 
 @interface AVCaptureFileOutput : AVCaptureOutput {
     AVCaptureFileOutputInternal *_fileOutputInternal;
 }
 
-@property(readonly) NSURL *outputFileURL;
-@property ? maxRecordedDuration;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } maxRecordedDuration;
 @property long long maxRecordedFileSize;
 @property long long minFreeDiskSpaceLimit;
-@property(readonly) ? recordedDuration;
+@property(readonly) NSURL * outputFileURL;
+@property(readonly) struct { long long value; int timescale; unsigned int flags; long long epoch; } recordedDuration;
 @property(readonly) long long recordedFileSize;
 @property(getter=isRecording,readonly) BOOL recording;
 
@@ -22,16 +22,16 @@
 - (id)init;
 - (BOOL)isRecording;
 - (BOOL)isRecordingPaused;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })maxRecordedDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxRecordedDuration;
 - (long long)maxRecordedFileSize;
 - (long long)minFreeDiskSpaceLimit;
 - (id)outputFileURL;
 - (void)pauseRecording;
 - (BOOL)pausesRecordingOnInterruption;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })recordedDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })recordedDuration;
 - (long long)recordedFileSize;
 - (void)resumeRecording;
-- (void)setMaxRecordedDuration:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setMaxRecordedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMaxRecordedFileSize:(long long)arg1;
 - (void)setMinFreeDiskSpaceLimit:(long long)arg1;
 - (void)setPausesRecordingOnInterruption:(BOOL)arg1;

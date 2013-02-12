@@ -3,9 +3,11 @@
  */
 
 @interface DALocalDBHelper : NSObject {
-    NSInteger _abConnectionCount;
+    int _abConnectionCount;
     void *_abDB;
-    NSInteger _calConnectionCount;
+    int _bookmarkConnectionCount;
+    void *_bookmarkDB;
+    int _calConnectionCount;
     struct CalDatabase { } *_calDB;
     id _calUnitTestCallbackObject;
     SEL _calUnitTestCallbackSelector;
@@ -23,6 +25,10 @@
 - (void)abOpenDB;
 - (void)abProcessAddedRecords;
 - (BOOL)abSaveDB;
+- (void)bookmarkCloseDBAndSave:(BOOL)arg1;
+- (void*)bookmarkDB;
+- (BOOL)bookmarkOpenDB;
+- (void)bookmarkSaveDB;
 - (BOOL)calCloseDBAndSave:(BOOL)arg1;
 - (struct CalDatabase { }*)calDB;
 - (void)calOpenDB;

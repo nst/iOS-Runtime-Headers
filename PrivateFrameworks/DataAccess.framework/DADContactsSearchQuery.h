@@ -9,13 +9,13 @@
     NSString *_searchScope;
 }
 
-@property(retain) NSString *searchBase;
-@property(retain) NSString *searchScope;
+@property(retain) NSString * searchBase;
+@property(retain) NSString * searchScope;
 
 + (id)contactsSearchQueryWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3;
 
 - (void)dealloc;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3;
 - (BOOL)isEqual:(id)arg1;

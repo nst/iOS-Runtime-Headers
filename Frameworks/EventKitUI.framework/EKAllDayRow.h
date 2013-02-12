@@ -7,13 +7,13 @@
 @interface EKAllDayRow : NSObject {
     NSMutableArray *_blocks;
     NSMutableSet *_occupyingDays;
-    NSUInteger _startDate;
+    unsigned int _startDate;
 }
 
 - (void)addOccurrenceBlock:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)occurrenceBlocks;
-- (NSUInteger)spaceGapFor:(id)arg1;
+- (unsigned int)spaceGapFor:(id)arg1;
 
 @end

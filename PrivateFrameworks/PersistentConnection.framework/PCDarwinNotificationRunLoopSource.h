@@ -5,7 +5,7 @@
 @class NSMachPort;
 
 @interface PCDarwinNotificationRunLoopSource : NSObject {
-    NSInteger _notifyToken;
+    int _notifyToken;
     NSMachPort *_port;
     SEL _selector;
     id _target;

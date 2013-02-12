@@ -6,15 +6,15 @@
 
 @interface EDLink : NSObject {
     EDCollection *mExternalNames;
-    NSInteger mType;
+    int mType;
 }
 
-+ (id)linkWithType:(NSInteger)arg1;
++ (id)linkWithType:(int)arg1;
 
 - (void)dealloc;
 - (id)externalNames;
-- (id)initWithType:(NSInteger)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (id)initWithType:(int)arg1;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

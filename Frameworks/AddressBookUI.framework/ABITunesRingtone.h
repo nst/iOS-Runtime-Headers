@@ -12,10 +12,10 @@
     BOOL _purchased;
 }
 
-@property(retain) NSString *identifier;
-@property(retain) NSString *name;
-@property(retain) NSString *path;
-@property(retain) NSDictionary *playbackProperties;
+@property(retain) NSString * identifier;
+@property(retain) NSString * name;
+@property(retain) NSString * path;
+@property(retain) NSDictionary * playbackProperties;
 @property(getter=isPurchased) BOOL purchased;
 
 - (void)dealloc;

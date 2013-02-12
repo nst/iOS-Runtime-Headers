@@ -6,17 +6,17 @@
 
 @interface YTVideoReference : NSObject {
     NSURL *_contentURL;
-    NSUInteger _duration;
-    NSInteger _profile;
+    unsigned int _duration;
+    int _profile;
 }
 
 - (id)archiveDictionary;
 - (id)contentURL;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)duration;
+- (unsigned int)duration;
 - (id)initFromArchiveDictionary:(id)arg1;
-- (id)initWithContentURL:(id)arg1 duration:(NSUInteger)arg2 profile:(NSInteger)arg3;
-- (NSInteger)profile;
+- (id)initWithContentURL:(id)arg1 duration:(unsigned int)arg2 profile:(int)arg3;
+- (int)profile;
 
 @end

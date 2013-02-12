@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptFunction;
+@class NSString, SUScriptFunction;
 
 @interface SUScriptMessageEntryViewController : SUScriptViewController {
     SUScriptFunction *_messageChangedFunction;
     SUScriptFunction *_shouldSendMessageFunction;
 }
 
-@property(copy) NSString *sendButtonTitle;
 @property(copy) id allowedAttachmentTypes;
 @property(retain) id messageChangedFunction;
 @property id photoButtonEnabled;
 @property id sendButtonEnabled;
+@property(copy) NSString * sendButtonTitle;
 @property(retain) id shouldSendMessageFunction;
 
 + (id)webScriptNameForKey:(const char *)arg1;
@@ -30,7 +30,7 @@
 - (void)focus;
 - (id)messageChangedFunction;
 - (id)newNativeViewController;
-- (NSInteger)numberOfAttachmentsWithType:(id)arg1;
+- (int)numberOfAttachmentsWithType:(id)arg1;
 - (id)photoButtonEnabled;
 - (id)scriptAttributeKeys;
 - (id)sendButtonEnabled;

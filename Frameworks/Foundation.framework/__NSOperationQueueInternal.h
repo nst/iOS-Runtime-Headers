@@ -5,16 +5,16 @@
 @class NSOperation;
 
 @interface __NSOperationQueueInternal : NSObject {
-    NSInteger __actualMaxNumOps;
+    int __actualMaxNumOps;
     struct dispatch_queue_s { } *__dispatchQ;
     NSOperation *__firstOperation;
     NSOperation *__lastOperation;
     unsigned char __mainQ;
-    NSInteger __maxNumOps;
+    int __maxNumOps;
     BOOL __nameBuffer[165];
-    NSInteger __numExecOps;
-    NSInteger __outerRC;
-    NSInteger __pendingAddLock;
+    int __numExecOps;
+    int __outerRC;
+    int __pendingAddLock;
     NSOperation *__pendingFirstOperation;
     NSOperation *__pendingLastOperation;
     struct dispatch_semaphore_s { } *__poker;

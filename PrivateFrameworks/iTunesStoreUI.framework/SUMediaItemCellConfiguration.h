@@ -5,20 +5,20 @@
 @interface SUMediaItemCellConfiguration : SUItemCellConfiguration {
 }
 
-@property(readonly) CGSize artworkSize;
-@property(readonly) NSInteger mediaIconType;
+@property(readonly) struct CGSize { float width; float height; } artworkSize;
+@property(readonly) int mediaIconType;
 @property(readonly) BOOL showContentRating;
 
 + (id)copyDefaultContext;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_ratingBorderInsets;
-- (float)alphaForImageAtIndex:(NSUInteger)arg1 fromAlpha:(float*)arg2 withModifiers:(NSUInteger)arg3;
-- (float)alphaForLabelAtIndex:(NSUInteger)arg1 fromAlpha:(float*)arg2 withModifiers:(NSUInteger)arg3;
+- (float)alphaForImageAtIndex:(unsigned int)arg1 fromAlpha:(float*)arg2 withModifiers:(unsigned int)arg3;
+- (float)alphaForLabelAtIndex:(unsigned int)arg1 fromAlpha:(float*)arg2 withModifiers:(unsigned int)arg3;
 - (struct CGSize { float x1; float x2; })artworkSize;
-- (void)drawWithModifiers:(NSUInteger)arg1;
-- (id)fontForLabelAtIndex:(NSUInteger)arg1;
-- (id)initWithStringCount:(NSUInteger)arg1 imageCount:(NSUInteger)arg2;
-- (NSInteger)mediaIconType;
+- (void)drawWithModifiers:(unsigned int)arg1;
+- (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (id)initWithStringCount:(unsigned int)arg1 imageCount:(unsigned int)arg2;
+- (int)mediaIconType;
 - (void)reloadImages;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;

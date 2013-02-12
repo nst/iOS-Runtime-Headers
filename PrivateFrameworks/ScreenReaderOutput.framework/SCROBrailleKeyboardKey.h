@@ -6,7 +6,7 @@
 
 @interface SCROBrailleKeyboardKey : SCROBrailleKey {
     NSString *_keyString;
-    NSUInteger _modifiers;
+    unsigned int _modifiers;
 }
 
 - (void)dealloc;
@@ -14,8 +14,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyString;
-- (NSUInteger)modifiers;
+- (unsigned int)modifiers;
 - (void)setKeyString:(id)arg1;
-- (void)setModifiers:(NSUInteger)arg1;
+- (void)setModifiers:(unsigned int)arg1;
 
 @end

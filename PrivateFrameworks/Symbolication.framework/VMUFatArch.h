@@ -5,22 +5,22 @@
 @class <VMUMemory>;
 
 @interface VMUFatArch : NSObject {
-    NSUInteger _alignment;
-    NSUInteger _fileOffset;
+    unsigned int _alignment;
+    unsigned int _fileOffset;
     <VMUMemory> *_memory;
-    NSUInteger _size;
+    unsigned int _size;
 }
 
-+ (id)fatArchWithMemory:(id)arg1 fileOffset:(NSUInteger)arg2 size:(NSUInteger)arg3 alignment:(NSUInteger)arg4;
++ (id)fatArchWithMemory:(id)arg1 fileOffset:(unsigned int)arg2 size:(unsigned int)arg3 alignment:(unsigned int)arg4;
 + (id)fatArchWithMemory:(id)arg1 memoryView:(id)arg2;
 
-- (NSUInteger)alignment;
+- (unsigned int)alignment;
 - (id)architecture;
 - (void)dealloc;
-- (NSUInteger)fileOffset;
-- (id)initWithMemory:(id)arg1 fileOffset:(NSUInteger)arg2 size:(NSUInteger)arg3 alignment:(NSUInteger)arg4;
+- (unsigned int)fileOffset;
+- (id)initWithMemory:(id)arg1 fileOffset:(unsigned int)arg2 size:(unsigned int)arg3 alignment:(unsigned int)arg4;
 - (id)initWithMemory:(id)arg1 memoryView:(id)arg2;
 - (id)memory;
-- (NSUInteger)size;
+- (unsigned int)size;
 
 @end

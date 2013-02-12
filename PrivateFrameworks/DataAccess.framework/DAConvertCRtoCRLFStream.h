@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSData;
 
 @interface DAConvertCRtoCRLFStream : NSInputStream {
     struct { 
-        NSInteger version; 
+        int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
@@ -20,29 +25,29 @@
     BOOL _openEventSent;
     NSData *_postflightData;
     NSData *_preflightData;
-    NSUInteger _readOffset;
+    unsigned int _readOffset;
     struct __CFRunLoopSource { } *_rls;
-    NSUInteger _streamStatus;
-    NSUInteger _totalLength;
+    unsigned int _streamStatus;
+    unsigned int _totalLength;
 }
 
 - (void)_scheduleCallback;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
-- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { NSInteger x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)_streamEventTrigger;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)getBuffer:(char **)arg1 length:(NSUInteger*)arg2;
+- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
 - (id)initWithData:(id)arg1;
 - (id)initWithMIMEData:(id)arg1 preflightData:(id)arg2 postflightData:(id)arg3 intendToStream:(BOOL)arg4;
 - (void)open;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (NSUInteger)streamStatus;
+- (unsigned int)streamStatus;
 
 @end

@@ -9,8 +9,8 @@
     NSMutableDictionary *_phoneNumberHistory;
 }
 
-@property(retain) NSMutableDictionary *emailAddressHistory;
-@property(retain) NSMutableDictionary *phoneNumberHistory;
+@property(retain) NSMutableDictionary * emailAddressHistory;
+@property(retain) NSMutableDictionary * phoneNumberHistory;
 
 + (id)sharedManager;
 
@@ -25,7 +25,7 @@
 - (id)init;
 - (id)phoneNumberHistory;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setEmailAddressHistory:(id)arg1;
 - (void)setHavePreviouslyConferenced:(BOOL)arg1 withID:(id)arg2;
 - (void)setPhoneNumberHistory:(id)arg1;

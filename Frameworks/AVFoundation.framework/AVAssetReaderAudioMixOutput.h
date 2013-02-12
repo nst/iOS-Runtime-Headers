@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderAudioMixOutputInternal;
+@class AVAssetReaderAudioMixOutputInternal, AVAudioMix, NSArray, NSDictionary;
 
 @interface AVAssetReaderAudioMixOutput : AVAssetReaderOutput {
     AVAssetReaderAudioMixOutputInternal *_audioMixOutputInternal;
 }
 
-@property(copy) AVAudioMix *audioMix;
-@property(readonly) NSDictionary *audioSettings;
-@property(readonly) NSArray *audioTracks;
+@property(copy) AVAudioMix * audioMix;
+@property(readonly) NSDictionary * audioSettings;
+@property(readonly) NSArray * audioTracks;
 
 + (id)assetReaderAudioMixOutputWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 

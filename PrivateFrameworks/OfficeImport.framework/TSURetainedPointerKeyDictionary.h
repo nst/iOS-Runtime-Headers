@@ -5,6 +5,6 @@
 @interface TSURetainedPointerKeyDictionary : TSUNoCopyDictionary {
 }
 
-- (id)initWithCapacity:(NSUInteger)arg1;
+- (id)initWithCapacity:(unsigned int)arg1;
 
 @end

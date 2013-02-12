@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)initWithConfiguration:(id)arg1 style:(NSInteger)arg2;
+- (id)initWithConfiguration:(id)arg1 style:(int)arg2;
 
 @end

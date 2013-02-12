@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActivityIndicatorView, UILabel, UIView;
+@class NSString, UIActivityIndicatorView, UILabel, UIView;
 
 @interface UIPrintStatusTableViewCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
@@ -10,7 +10,7 @@
     UIView *_verticalBar;
 }
 
-@property(copy) NSString *hostName;
+@property(copy) NSString * hostName;
 @property BOOL showActive;
 
 - (void)dealloc;

@@ -2,23 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDComment : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSInteger mColumnIndex;
-    NSInteger mRowIndex;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mVisible;
+    boolmVisible;
+    int mColumnIndex;
+    int mRowIndex;
 }
 
-- (NSInteger)columnIndex;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isVisible;
-- (NSInteger)rowIndex;
-- (void)setColumnIndex:(NSInteger)arg1;
-- (void)setRowIndex:(NSInteger)arg1;
-- (void)setVisible:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (int)columnIndex;
+- (bool)isVisible;
+- (int)rowIndex;
+- (void)setColumnIndex:(int)arg1;
+- (void)setRowIndex:(int)arg1;
+- (void)setVisible:(bool)arg1;
 
 @end

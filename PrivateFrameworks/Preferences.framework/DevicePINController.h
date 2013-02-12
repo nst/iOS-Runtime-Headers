@@ -10,10 +10,10 @@
     NSString *_error1;
     NSString *_error2;
     NSString *_lastEntry;
-    NSInteger _mode;
+    int _mode;
     UIBarButtonItem *_nextButton;
     NSString *_oldPassword;
-    NSInteger _substate;
+    int _substate;
     BOOL _success;
 }
 
@@ -22,10 +22,10 @@
 - (BOOL)_attemptValidationWithPIN:(id)arg1;
 - (void)_clearBlockedState;
 - (void)_dismiss;
-- (NSInteger)_getScreenType;
+- (int)_getScreenType;
 - (BOOL)_isBlocked;
-- (NSInteger)_numberOfFailedAttempts;
-- (void)_setNumberOfFailedAttempts:(NSInteger)arg1;
+- (int)_numberOfFailedAttempts;
+- (void)_setNumberOfFailedAttempts:(int)arg1;
 - (void)_setUnblockTime:(double)arg1;
 - (void)_showFailedAttempts;
 - (void)_showPINConfirmationError;
@@ -53,7 +53,7 @@
 - (id)pinInstructionsPrompt;
 - (id)pinInstructionsPromptFont;
 - (BOOL)pinIsAcceptable:(id)arg1 outError:(id*)arg2;
-- (NSInteger)pinLength;
+- (int)pinLength;
 - (BOOL)requiresKeyboard;
 - (void)setLastEntry:(id)arg1;
 - (void)setOldPassword:(id)arg1;

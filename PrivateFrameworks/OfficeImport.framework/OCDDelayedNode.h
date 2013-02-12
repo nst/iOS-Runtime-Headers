@@ -2,18 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class <OCDDelayedNodeContext>;
 
 @interface OCDDelayedNode : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
+    boolmLoaded;
     <OCDDelayedNodeContext> *mDelayedContext;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mLoaded;
 }
 
 + (void)disableDelayedLoading;
@@ -21,9 +14,9 @@
 
 - (void)dealloc;
 - (id)delayedContext;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLoaded;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)load;
+- (bool)isLoaded;
+- (bool)load;
 - (void)setDelayedContext:(id)arg1;
-- (void)setLoaded:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setLoaded:(bool)arg1;
 
 @end

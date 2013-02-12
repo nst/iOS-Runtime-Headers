@@ -5,31 +5,26 @@
 @class NSDictionary, NSNumber, NSString;
 
 @interface ISAuthenticationResponse : NSObject {
-    NSInteger _accountKind;
-    NSString *_accountName;
-    NSNumber *_accountUniqueIdentifier;
-    NSString *_creditsString;
-    NSNumber *_failureType;
     NSDictionary *_responseDictionary;
-    NSString *_token;
-    NSInteger _urlBagType;
-    NSString *_userMessage;
+    int _urlBagType;
 }
 
-@property(readonly) NSString *accountName;
-@property(readonly) NSNumber *accountUniqueIdentifier;
-@property(readonly) NSString *creditsString;
-@property(readonly) NSNumber *failureType;
-@property(readonly) NSDictionary *responseDictionary;
-@property(readonly) NSString *token;
-@property(readonly) NSString *userMessage;
-@property NSInteger URLBagType;
-@property(readonly) NSInteger accountKind;
-@property(readonly) NSInteger responseType;
+@property int URLBagType;
+@property(readonly) int accountKind;
+@property(readonly) NSString * accountName;
+@property(readonly) NSNumber * accountUniqueIdentifier;
+@property(readonly) NSString * creditsString;
+@property(readonly) NSNumber * failureType;
+@property(readonly) NSDictionary * responseDictionary;
+@property(readonly) int responseType;
+@property(readonly) NSString * token;
+@property(readonly) NSString * userMessage;
 
-- (NSInteger)URLBagType;
-- (void)_loadFromDictionary:(id)arg1;
-- (NSInteger)accountKind;
+- (int)URLBagType;
+- (int)_responseTypeForFailureType:(int)arg1;
+- (int)_responseTypeForStatusValue:(int)arg1;
+- (id)_statusValue;
+- (int)accountKind;
 - (id)accountName;
 - (id)accountUniqueIdentifier;
 - (id)creditsString;
@@ -38,8 +33,8 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)newAccount;
 - (id)responseDictionary;
-- (NSInteger)responseType;
-- (void)setURLBagType:(NSInteger)arg1;
+- (int)responseType;
+- (void)setURLBagType:(int)arg1;
 - (id)token;
 - (id)userMessage;
 

@@ -6,11 +6,11 @@
 
 @interface ABMembersViewController : ABAbstractViewController <ABNewPersonViewControllerDelegate, ABMembersControllerDelegate, ABViewControllerBannerViewProtocol, ABPersonEditDelegate> {
     id _insertionLabel;
-    NSInteger _insertionProperty;
+    int _insertionProperty;
     id _insertionValue;
     ABMembersController *_membersController;
     struct __CFArray { } *_personViewControllers;
-    NSInteger _rightButtonBehavior;
+    int _rightButtonBehavior;
 }
 
 @property(readonly) BOOL allowsCancel;
@@ -21,9 +21,10 @@
 
 - (void)_applicationEnteringBackground;
 - (void)_applicationEnteringForeground;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (void*)_personToUseForSavingState;
-- (NSInteger)abViewControllerType;
+- (int)abViewControllerType;
+- (id)ab_viewControllerToPresentCamera;
 - (void)addPerson:(id)arg1;
 - (BOOL)allowsCancel;
 - (BOOL)allowsCardEditing;
@@ -38,8 +39,8 @@
 - (void)didReceiveMemoryWarning;
 - (void)imageUpdatedForPerson:(void*)arg1;
 - (id)initWithModel:(id)arg1;
-- (void)insertProperty:(NSInteger*)arg1 insertValue:(id*)arg2 insertLabel:(id*)arg3;
-- (BOOL)isNavigationButtonEnabled:(NSInteger)arg1;
+- (void)insertProperty:(int*)arg1 insertValue:(id*)arg2 insertLabel:(id*)arg3;
+- (BOOL)isNavigationButtonEnabled:(int)arg1;
 - (void)linksUpdatedForPerson:(void*)arg1;
 - (void)loadState;
 - (void)loadView;
@@ -59,6 +60,7 @@
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (BOOL)personViewController:(id)arg1 shouldContinueAfterEditingConfirmed:(BOOL)arg2 forPerson:(void*)arg3;
 - (void)personViewControllerIsGoingAway:(id)arg1;
+- (void)personWasDeleted;
 - (void)personWasSelected:(void*)arg1;
 - (void)preferredPersonDidChangeToPerson:(void*)arg1;
 - (void)resetInsertionData;
@@ -77,6 +79,6 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

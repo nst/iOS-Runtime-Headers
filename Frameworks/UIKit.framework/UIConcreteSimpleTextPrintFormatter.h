@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString, UIColor, UIFont;
+
 @interface UIConcreteSimpleTextPrintFormatter : UIWebDocumentViewPrintFormatter {
 }
 
-@property(retain) UIColor *color;
-@property(retain) UIFont *font;
-@property(copy) NSString *text;
-@property NSInteger textAlignment;
+@property(retain) UIColor * color;
+@property(retain) UIFont * font;
+@property(copy) NSString * text;
+@property int textAlignment;
 
 - (id)_textView;
 - (id)_webDocumentView;
@@ -18,8 +20,8 @@
 - (void)setColor:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(NSInteger)arg1;
+- (void)setTextAlignment:(int)arg1;
 - (id)text;
-- (NSInteger)textAlignment;
+- (int)textAlignment;
 
 @end

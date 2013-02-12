@@ -8,9 +8,9 @@
     NSString *_removalPasscode;
 }
 
-@property(retain) NSString *removalPasscode;
+@property(retain) NSString * removalPasscode;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (void)dealloc;

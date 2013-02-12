@@ -9,8 +9,8 @@
     NSString *_searchString;
 }
 
-@property(copy) NSSet *properties;
-@property(copy) NSString *searchString;
+@property(copy) NSSet * properties;
+@property(copy) NSString * searchString;
 
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
 
@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)properties;

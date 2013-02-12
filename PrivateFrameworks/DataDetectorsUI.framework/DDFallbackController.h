@@ -8,7 +8,7 @@
     UIWindow *_baseWindow;
     id _interactionDelegate;
     UIWindow *_ourWindow;
-    NSInteger _startOrientation;
+    int _startOrientation;
 }
 
 - (void)dealloc;
@@ -16,6 +16,6 @@
 - (void)loadView;
 - (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)removeChildViewController:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

@@ -10,13 +10,13 @@
 }
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(NSUInteger)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)assignmentVariable;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithAssignmentExpression:(id)arg1 expression:(id)arg2;
 - (id)initWithAssignmentVariable:(id)arg1 expression:(id)arg2;
 - (id)initWithCoder:(id)arg1;

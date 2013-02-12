@@ -11,16 +11,16 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })captionRectForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (struct CGSize { float x1; float x2; })cellSizeForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
-- (void)_addCommandData:(id)arg1 forRow:(NSUInteger)arg2;
+- (void)_addCommandData:(id)arg1 forRow:(unsigned int)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)drawRow:(NSUInteger)arg1 inContext:(struct CGContext { }*)arg2 forRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 orientation:(NSInteger)arg4;
-- (void)drawUnichar:(unsigned short)arg1 color:(struct CGColor { }*)arg2 italics:(BOOL)arg3 underline:(BOOL)arg4 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 inContext:(struct CGContext { }*)arg6 orientation:(NSInteger)arg7;
-- (void)eraseCommandsForRow:(NSUInteger)arg1;
+- (void)drawRow:(unsigned int)arg1 inContext:(struct CGContext { }*)arg2 forRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 orientation:(int)arg4;
+- (void)drawUnichar:(unsigned short)arg1 color:(struct CGColor { }*)arg2 italics:(BOOL)arg3 underline:(BOOL)arg4 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 inContext:(struct CGContext { }*)arg6 orientation:(int)arg7;
+- (void)eraseCommandsForRow:(unsigned int)arg1;
 - (void)finalize;
-- (BOOL)hasCommandsForRow:(NSUInteger)arg1;
+- (BOOL)hasCommandsForRow:(unsigned int)arg1;
 - (id)init;
-- (void)processCaptionCommand:(NSUInteger)arg1 data:(id)arg2;
+- (void)processCaptionCommand:(unsigned int)arg1 data:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFontName:(id)arg1;
 - (void)tearDown;

@@ -8,15 +8,15 @@
         float height; 
     double mScalar;
     } mSize;
-    NSInteger mType;
+    int mType;
 }
 
 - (struct CGPath { }*)createBezierPath;
 - (BOOL)isRect;
 - (BOOL)isRectangular;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 - (double)scalar;
 - (struct CGSize { float x1; float x2; })size;
-- (NSInteger)type;
+- (int)type;
 
 @end

@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
+@class MKPolyline;
+
 @interface MKPolylineView : MKOverlayPathView {
 }
 
-@property(readonly) MKPolyline *polyline;
+@property(readonly) MKPolyline * polyline;
 
 - (void)createPath;
 - (void)dealloc;

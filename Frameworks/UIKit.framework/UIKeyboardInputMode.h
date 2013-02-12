@@ -11,10 +11,10 @@
     NSString *softwareLayout;
 }
 
-@property(retain) NSString *hardwareLayout;
-@property(retain) NSString *identifier;
-@property(retain) NSString *primaryLanguage;
-@property(retain) NSString *softwareLayout;
+@property(retain) NSString * hardwareLayout;
+@property(retain) NSString * identifier;
+@property(retain) NSString * primaryLanguage;
+@property(retain) NSString * softwareLayout;
 
 + (id)canonicalLanguageIdentifierFromIdentifier:(id)arg1;
 + (id)hardwareLayoutFromIdentifier:(id)arg1;

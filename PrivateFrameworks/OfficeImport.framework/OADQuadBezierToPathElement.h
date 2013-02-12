@@ -6,27 +6,27 @@
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
-            NSInteger value; 
+            int value; 
         } x; 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
-            NSInteger value; 
+            int value; 
         } y; 
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
-            NSInteger value; 
+            int value; 
         } x; 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
-            NSInteger value; 
+            int value; 
         } y; 
     } mControlPoint;
     } mToPoint;
 }
 
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; NSInteger x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; NSInteger x_2_1_2; } x2; })controlPoint;
-- (id)initWithControlPoint:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; NSInteger x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; NSInteger x_2_1_2; } x2; })arg1 toPoint:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; NSInteger x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; NSInteger x_2_1_2; } x2; })arg2;
-- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; NSInteger x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; NSInteger x_2_1_2; } x2; })toPoint;
+- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })controlPoint;
+- (id)initWithControlPoint:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg1 toPoint:(struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })arg2;
+- (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })toPoint;
 
 @end

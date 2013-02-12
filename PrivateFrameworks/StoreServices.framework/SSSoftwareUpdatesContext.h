@@ -9,9 +9,9 @@
     BOOL _forced;
 }
 
-@property(copy,readonly) NSString *clientIdentifierHeader;
-@property(readonly) NSString *queueIdentifier;
+@property(copy,readonly) NSString * clientIdentifierHeader;
 @property(getter=isForced,readonly) BOOL forced;
+@property(readonly) NSString * queueIdentifier;
 
 - (id)clientIdentifierHeader;
 - (id)copyPropertyListEncoding;

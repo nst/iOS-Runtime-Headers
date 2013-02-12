@@ -7,7 +7,7 @@
 @interface DAVMultiStatusResponse : NSObject {
     NSURL *href;
     NSString *responseDescription;
-    NSInteger statusCode;
+    int statusCode;
 }
 
 - (void)dealloc;
@@ -16,6 +16,6 @@
 - (id)init;
 - (id)initWithXMLNode:(id)arg1;
 - (id)responseDescription;
-- (NSInteger)statusCode;
+- (int)statusCode;
 
 @end

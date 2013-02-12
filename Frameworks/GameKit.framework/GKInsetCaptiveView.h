@@ -14,8 +14,8 @@
     } _contentInsets;
 }
 
-@property(retain) UIView *captiveSubview;
-@property UIEdgeInsets contentInsets;
+@property(retain) UIView * captiveSubview;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsets;
 
 - (id)captiveSubview;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;

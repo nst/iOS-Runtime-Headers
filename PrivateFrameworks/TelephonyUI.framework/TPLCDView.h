@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPLCDSubImageView, TPLCDTextView;
+@class TPLCDSubImageView, TPLCDTextView, UIView;
 
 @interface TPLCDView : TPLCDBar {
     unsigned int _layoutAsLabelled : 1;
+    UIView *_contentView;
     TPLCDSubImageView *_imageView;
     TPLCDTextView *_labelView;
     TPLCDTextView *_secondLineTextView;
@@ -16,14 +17,20 @@
 + (float)labelFontSize;
 + (float)textFontSize;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fullSizedContentViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
+- (float)_labelVInset;
+- (void)_resetContentViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_text1Frame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_text2Frame;
+- (float)_textVInset;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (void)blinkLabel;
 - (void)dealloc;
 - (void)didFinishAnimatingLCDLabelFadeOut:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (id)initWithDefaultSizeForOrientation:(int)arg1;
 - (BOOL)isAccessibilityElement;
 - (id)label;
 - (void)layoutSubviews;

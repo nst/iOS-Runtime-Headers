@@ -10,7 +10,7 @@
     BOOL _allowsSearching;
     BOOL _arrangesByGroup;
     IMServicePeopleListGroup *_bonjourGroup;
-    NSInteger _coalesceCount;
+    int _coalesceCount;
     NSString *_collapsedGroupsPrefKey;
     Class _customPeopleListItemClass;
     NSDictionary *_groupProperties;
@@ -33,21 +33,21 @@
     BOOL _usesOfflineGroup;
 }
 
-@property(readonly) NSArray *allIMHandles;
-@property(retain) NSString *collapsedGroupsPrefKey;
-@property(readonly) NSString *groupForNewIMHandles;
-@property(retain) NSDictionary *groupProperties;
-@property(readonly) NSArray *items;
-@property(readonly) NSArray *peopleListGroups;
-@property(readonly) NSArray *peopleListItems;
-@property(retain) NSString *searchString;
+@property(readonly) NSArray * allIMHandles;
 @property BOOL allowsIMHandleSubstitution;
 @property BOOL allowsSearching;
 @property BOOL arrangesByGroup;
+@property(retain) NSString * collapsedGroupsPrefKey;
 @property(retain) Class customPeopleListItemClass;
+@property(readonly) NSString * groupForNewIMHandles;
+@property(retain) NSDictionary * groupProperties;
 @property(readonly) BOOL inSearchMode;
-@property(readonly) NSUInteger numberOfIMHandles;
+@property(readonly) NSArray * items;
+@property(readonly) unsigned int numberOfIMHandles;
+@property(readonly) NSArray * peopleListGroups;
 @property(readonly) Class peopleListItemClass;
+@property(readonly) NSArray * peopleListItems;
+@property(retain) NSString * searchString;
 @property BOOL showsAwayPeople;
 @property BOOL showsIdlePeople;
 @property BOOL showsNoStatusPeople;
@@ -61,7 +61,7 @@
 - (void)_addGroup:(id)arg1;
 - (BOOL)_addIMHandle:(id)arg1 toCollection:(id)arg2 usingOrphanItems:(id)arg3;
 - (BOOL)_allowPeopleListItemInCurrentSearch:(id)arg1;
-- (NSUInteger)_indexOfGroup:(id)arg1 startingAtIndex:(NSInteger)arg2;
+- (unsigned int)_indexOfGroup:(id)arg1 startingAtIndex:(int)arg2;
 - (BOOL)_isBonjourGroup:(id)arg1;
 - (BOOL)_isOfflineGroup:(id)arg1;
 - (void)_observePeopleListItem:(id)arg1;
@@ -71,7 +71,7 @@
 - (BOOL)_peopleListItemShouldBeShown:(id)arg1 inGroup:(id)arg2;
 - (void)_peopleListItemSortOrderChangedNotification:(id)arg1;
 - (void)_postResortNotification;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_rangeOfGroupAndItems:(id)arg1 startingAtIndex:(NSUInteger)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfGroupAndItems:(id)arg1 startingAtIndex:(unsigned int)arg2;
 - (void)_rebuildItems;
 - (void)_refreshContents;
 - (void)_removeGroup:(id)arg1;
@@ -80,7 +80,7 @@
 - (void)_repopulateIMHandle:(id)arg1 filterGroups:(BOOL)arg2;
 - (void)_resort;
 - (void)_resortNow;
-- (struct { NSInteger x1[3]; NSInteger x2; BOOL x3; })_sortParameters;
+- (struct { int x1[3]; int x2; BOOL x3; })_sortParameters;
 - (void)_unobservePeopleListItem:(id)arg1;
 - (void)_updateGroupPreferences;
 - (void)addGroup:(id)arg1;
@@ -106,7 +106,7 @@
 - (id)init;
 - (id)items;
 - (BOOL)makingChanges;
-- (NSUInteger)numberOfIMHandles;
+- (unsigned int)numberOfIMHandles;
 - (void)objectDidPostDirectNotification:(id)arg1;
 - (id)peopleInGroup:(id)arg1;
 - (id)peopleListGroupSortOrder;

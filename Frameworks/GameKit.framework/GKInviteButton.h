@@ -24,18 +24,18 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImage *highlightImage;
-@property(retain) UIColor *highlightTitleColor;
-@property(retain) UIColor *highlightTitleShadowColor;
-@property(retain) UIImage *normalImage;
-@property(retain) UIColor *normalTitleColor;
-@property(retain) UIColor *normalTitleShadowColor;
-@property(retain) GKUITheme *theme;
-@property(retain) UILabel *titleLabel;
 @property BOOL adjustsImageWhenHighlighted;
+@property(retain) UIImage * highlightImage;
+@property(retain) UIColor * highlightTitleColor;
+@property(retain) UIColor * highlightTitleShadowColor;
 @property float leftCapWidth;
 @property float mostlyInsideInset;
-@property UIEdgeInsets titleEdgeInsets;
+@property(retain) UIImage * normalImage;
+@property(retain) UIColor * normalTitleColor;
+@property(retain) UIColor * normalTitleShadowColor;
+@property(retain) GKUITheme * theme;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } titleEdgeInsets;
+@property(retain) UILabel * titleLabel;
 
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;

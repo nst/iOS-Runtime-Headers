@@ -6,7 +6,7 @@
 
 @interface _MFMailboxUidChildrenEnumerator : NSEnumerator {
     BOOL _includeHidden;
-    NSUInteger _index;
+    unsigned int _index;
     NSMutableArray *_mailboxes;
 }
 

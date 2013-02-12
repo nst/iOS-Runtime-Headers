@@ -7,7 +7,7 @@
 @interface SUSearchFieldConfiguration : NSObject <NSCopying> {
     NSString *_cancelString;
     struct __CFDictionary { } *_hintURLs;
-    NSInteger _location;
+    int _location;
     NSString *_placeholder;
     BOOL _rootViewOnly;
     struct __CFDictionary { } *_searchURLs;
@@ -15,34 +15,34 @@
     float _width;
 }
 
-@property(readonly) NSString *cancelString;
-@property(readonly) NSString *placeholderString;
-@property(readonly) NSString *userDefaultsKey;
-@property(readonly) NSInteger location;
+@property(readonly) NSString * cancelString;
+@property(readonly) int location;
+@property(readonly) NSString * placeholderString;
 @property(getter=isRootViewOnly,readonly) BOOL rootViewOnly;
+@property(readonly) NSString * userDefaultsKey;
 @property(readonly) float width;
 
 + (id)defaultConfiguration;
 
-- (id)URLRequestWithBaseURL:(id)arg1 forNetworkType:(NSInteger)arg2;
+- (id)URLRequestPropertiesWithBaseURL:(id)arg1 forNetworkType:(int)arg2;
 - (id)_initWithoutDictionary;
-- (NSInteger)_locationForString:(id)arg1;
-- (id)_newQueryStringDictionaryForNetworkType:(NSInteger)arg1;
+- (int)_locationForString:(id)arg1;
+- (id)_newQueryStringDictionaryForNetworkType:(int)arg1;
 - (struct __CFDictionary { }*)_newURLsDictionaryWithDictionary:(id)arg1;
 - (void)_setHintURLsFromDictionary:(id)arg1;
 - (void)_setSearchURLsFromDictionary:(id)arg1;
-- (id)_urlRequestForURLBagKey:(id)arg1 networkType:(NSInteger)arg2;
+- (id)_urlRequestPropertiesForURLBagKey:(id)arg1 networkType:(int)arg2;
 - (id)cancelString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)hintsURLRequestForNetworkType:(NSInteger)arg1;
+- (id)hintsURLRequestPropertiesForNetworkType:(int)arg1;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isRootViewOnly;
 - (void)loadFromDictionary:(id)arg1;
-- (NSInteger)location;
+- (int)location;
 - (id)placeholderString;
-- (id)searchURLRequestForNetworkType:(NSInteger)arg1;
+- (id)searchURLRequestPropertiesForNetworkType:(int)arg1;
 - (id)userDefaultsKey;
 - (float)width;
 

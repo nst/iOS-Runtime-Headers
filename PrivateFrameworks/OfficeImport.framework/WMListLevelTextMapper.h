@@ -5,17 +5,17 @@
 @class NSMutableArray;
 
 @interface WMListLevelTextMapper : NSObject {
-    NSInteger m_format;
-    NSUInteger m_initNumber;
+    int m_format;
+    unsigned int m_initNumber;
     NSMutableArray *m_tokens;
 }
 
 - (void)dealloc;
-- (id)initWithText:(id)arg1 format:(NSInteger)arg2 initNumber:(NSInteger)arg3;
-- (id)initWithText:(id)arg1 format:(NSInteger)arg2;
+- (id)initWithText:(id)arg1 format:(int)arg2 initNumber:(int)arg3;
+- (id)initWithText:(id)arg1 format:(int)arg2;
 - (id)initWithText:(id)arg1;
 - (id)listLevelTextforOutline:(id)arg1;
-- (id)token:(NSUInteger)arg1;
-- (NSUInteger)tokenCount;
+- (id)token:(unsigned int)arg1;
+- (unsigned int)tokenCount;
 
 @end

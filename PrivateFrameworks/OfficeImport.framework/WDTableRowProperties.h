@@ -7,11 +7,11 @@
 @interface WDTableRowProperties : NSObject <NSCopying> {
     struct { 
         short widthBefore; 
-        NSInteger widthBeforeType; 
+        int widthBeforeType; 
         short widthAfter; 
-        NSInteger widthAfterType; 
-        NSInteger height; 
-        NSInteger heightType; 
+        int widthAfterType; 
+        int height; 
+        int heightType; 
         unsigned int widthBeforeOverridden : 1; 
         unsigned int widthBeforeTypeOverridden : 1; 
         unsigned int widthAfterOverridden : 1; 
@@ -22,11 +22,11 @@
         unsigned int headerOverridden : 1; 
     struct { 
         short widthBefore; 
-        NSInteger widthBeforeType; 
+        int widthBeforeType; 
         short widthAfter; 
-        NSInteger widthAfterType; 
-        NSInteger height; 
-        NSInteger heightType; 
+        int widthAfterType; 
+        int height; 
+        int heightType; 
         unsigned int widthBeforeOverridden : 1; 
         unsigned int widthBeforeTypeOverridden : 1; 
         unsigned int widthAfterOverridden : 1; 
@@ -45,13 +45,13 @@
 }
 
 - (void)addProperties:(id)arg1;
-- (void)addPropertiesValues:(struct { short x1; NSInteger x2; short x3; NSInteger x4; NSInteger x5; NSInteger x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg1 to:(struct { short x1; NSInteger x2; short x3; NSInteger x4; NSInteger x5; NSInteger x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg2;
+- (void)addPropertiesValues:(struct { short x1; int x2; short x3; int x4; int x5; int x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg1 to:(struct { short x1; int x2; short x3; int x4; int x5; int x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg2;
 - (id)characterProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)header;
 - (long)height;
-- (NSInteger)heightType;
+- (int)heightType;
 - (id)init;
 - (id)initWithDocument:(id)arg1;
 - (BOOL)isHeaderOverridden;
@@ -61,19 +61,19 @@
 - (BOOL)isWidthAfterTypeOverridden;
 - (BOOL)isWidthBeforeOverridden;
 - (BOOL)isWidthBeforeTypeOverridden;
-- (NSInteger)resolveMode;
+- (int)resolveMode;
 - (void)setHeader:(BOOL)arg1;
 - (void)setHeight:(long)arg1;
-- (void)setHeightType:(NSInteger)arg1;
-- (void)setResolveMode:(NSInteger)arg1;
+- (void)setHeightType:(int)arg1;
+- (void)setResolveMode:(int)arg1;
 - (void)setWidthAfter:(short)arg1;
-- (void)setWidthAfterType:(NSInteger)arg1;
+- (void)setWidthAfterType:(int)arg1;
 - (void)setWidthBefore:(short)arg1;
-- (void)setWidthBeforeType:(NSInteger)arg1;
+- (void)setWidthBeforeType:(int)arg1;
 - (id)tableProperties;
 - (short)widthAfter;
-- (NSInteger)widthAfterType;
+- (int)widthAfterType;
 - (short)widthBefore;
-- (NSInteger)widthBeforeType;
+- (int)widthBeforeType;
 
 @end

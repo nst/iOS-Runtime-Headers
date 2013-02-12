@@ -5,20 +5,20 @@
 @class NSManagedObjectContext;
 
 @interface _PFManagedObjectReferenceQueue : NSObject {
-    NSInteger _cd_rc;
+    int _cd_rc;
     NSManagedObjectContext *_context;
-    NSInteger _flags;
+    int _flags;
     struct __CFArray { } *_queue;
     struct __CFRunLoopObserver { } *_rlObserver;
-    NSInteger _signalRunloop;
-    NSInteger _spinLock;
+    int _signalRunloop;
+    int _spinLock;
 }
 
 - (BOOL)_GC_queueForDealloc:(id)arg1;
 - (void)_contextDidDealloc;
 - (void)_processReferenceQueue:(BOOL)arg1;
 - (BOOL)_queueBatchForDealloc:(struct __CFArray { }*)arg1;
-- (NSInteger)_queueCount;
+- (int)_queueCount;
 - (BOOL)_queueForDealloc:(id)arg1;
 - (BOOL)_signal;
 - (void)_unregisterRunloopObservers;
@@ -27,6 +27,6 @@
 - (id)initForContext:(id)arg1;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

@@ -7,8 +7,8 @@
 @interface SCROBrailleLine : NSObject {
     struct { 
         NSData *data; 
-        NSInteger alignment; 
-        NSInteger length; 
+        int alignment; 
+        int length; 
         char *cells; 
     BOOL _anyUnread;
     id _appToken;
@@ -20,24 +20,24 @@
     BOOL _currentUnread;
     char *_displayBuffer;
     char *_displayFilter;
-    NSInteger _displayMode;
-    NSInteger _firstToken;
-    NSInteger _iBeamLocation;
-    NSInteger _insetSize;
+    int _displayMode;
+    int _firstToken;
+    int _iBeamLocation;
+    int _insetSize;
     BOOL _isPanning;
-    NSInteger _lastToken;
-    NSInteger _leftInset;
+    int _lastToken;
+    int _leftInset;
     NSMutableAttributedString *_lineBuffer;
-    NSInteger _lineOffset;
-    NSInteger _masterStatusCellIndex;
+    int _lineOffset;
+    int _masterStatusCellIndex;
     BOOL _needsDisplayFlush;
     BOOL _needsStatusFlush;
-    NSInteger _rightInset;
+    int _rightInset;
     BOOL _showDotsSevenAndEight;
-    NSInteger _size;
+    int _size;
     NSData *_statusData;
     char *_statusFilter;
-    NSInteger _statusSize;
+    int _statusSize;
     } _virtualStatus;
 }
 
@@ -59,27 +59,27 @@
 - (BOOL)currentUnread;
 - (void)dealloc;
 - (BOOL)display;
-- (NSInteger)displayMode;
-- (NSInteger)firstToken;
-- (BOOL)getStatusRouterIndex:(NSInteger*)arg1 forRawIndex:(NSInteger)arg2;
-- (id)initWithDriver:(id)arg1 mainSize:(NSInteger)arg2 statusSize:(NSInteger)arg3;
-- (NSInteger)lastToken;
-- (NSInteger)masterStatusCellIndex;
+- (int)displayMode;
+- (int)firstToken;
+- (BOOL)getStatusRouterIndex:(int*)arg1 forRawIndex:(int)arg2;
+- (id)initWithDriver:(id)arg1 mainSize:(int)arg2 statusSize:(int)arg3;
+- (int)lastToken;
+- (int)masterStatusCellIndex;
 - (BOOL)needsDisplayFlush;
 - (BOOL)panLeft;
 - (BOOL)panRight;
 - (void)setAnyUnread:(BOOL)arg1;
 - (void)setAppToken:(id)arg1;
 - (void)setCurrentUnread:(BOOL)arg1;
-- (void)setDisplayMode:(NSInteger)arg1;
+- (void)setDisplayMode:(int)arg1;
 - (void)setFormatter:(id)arg1;
-- (void)setMainSize:(NSInteger)arg1;
-- (void)setMasterStatusCellIndex:(NSInteger)arg1;
+- (void)setMainSize:(int)arg1;
+- (void)setMasterStatusCellIndex:(int)arg1;
 - (void)setRealStatus:(id)arg1;
 - (void)setShowDotsSevenAndEight:(BOOL)arg1;
-- (void)setStatusSize:(NSInteger)arg1;
-- (void)setVirtualStatus:(id)arg1 alignment:(NSInteger)arg2;
+- (void)setStatusSize:(int)arg1;
+- (void)setVirtualStatus:(id)arg1 alignment:(int)arg2;
 - (BOOL)showDotsSevenAndEight;
-- (NSInteger)tokenForRouterIndex:(NSInteger)arg1 location:(NSInteger*)arg2 appToken:(id*)arg3;
+- (int)tokenForRouterIndex:(int)arg1 location:(int*)arg2 appToken:(id*)arg3;
 
 @end

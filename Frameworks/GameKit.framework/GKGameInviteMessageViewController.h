@@ -5,13 +5,12 @@
 @class <GKGameInviteMessageViewControllerDelegate>, NSArray;
 
 @interface GKGameInviteMessageViewController : GKAbstractComposeController {
-    BOOL _alreadySetUp;
     <GKGameInviteMessageViewControllerDelegate> *_delegate;
     NSArray *_players;
 }
 
-@property <GKGameInviteMessageViewControllerDelegate> *delegate;
-@property(retain) NSArray *players;
+@property <GKGameInviteMessageViewControllerDelegate> * delegate;
+@property(retain) NSArray * players;
 
 - (void)dealloc;
 - (id)delegate;
@@ -20,7 +19,7 @@
 - (id)players;
 - (void)setDelegate:(id)arg1;
 - (void)setPlayers:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

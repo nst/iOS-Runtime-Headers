@@ -3,23 +3,23 @@
  */
 
 @interface PDPlaceholder : NSObject {
-    NSInteger mBoundsTrack;
-    NSInteger mIndex;
-    NSInteger mOrientation;
-    NSInteger mSize;
-    NSInteger mType;
+    int mBoundsTrack;
+    int mIndex;
+    int mOrientation;
+    int mSize;
+    int mType;
 }
 
-- (NSInteger)boundsTrack;
-- (NSInteger)index;
+- (int)boundsTrack;
+- (int)index;
 - (id)init;
-- (NSInteger)orientation;
-- (void)setBoundsTrack:(NSInteger)arg1;
-- (void)setIndex:(NSInteger)arg1;
-- (void)setOrientation:(NSInteger)arg1;
-- (void)setSize:(NSInteger)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)size;
-- (NSInteger)type;
+- (int)orientation;
+- (void)setBoundsTrack:(int)arg1;
+- (void)setIndex:(int)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)setSize:(int)arg1;
+- (void)setType:(int)arg1;
+- (int)size;
+- (int)type;
 
 @end

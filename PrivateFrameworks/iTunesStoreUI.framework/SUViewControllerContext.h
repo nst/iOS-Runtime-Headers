@@ -7,14 +7,14 @@
 @interface SUViewControllerContext : NSObject <NSCoding> {
     NSMutableDictionary *_metadata;
     NSString *_sectionIdentifier;
-    NSInteger _type;
+    int _type;
 }
 
-@property(retain) NSString *sectionIdentifier;
-@property NSInteger type;
+@property(retain) NSString * sectionIdentifier;
+@property int type;
 
-- (NSInteger)_typeForTypeString:(id)arg1;
-- (id)_typeStringForType:(NSInteger)arg1;
+- (int)_typeForTypeString:(id)arg1;
+- (id)_typeStringForType:(int)arg1;
 - (id)copyViewController;
 - (void)dealloc;
 - (id)description;
@@ -22,9 +22,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)sectionIdentifier;
 - (void)setSectionIdentifier:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (void)setValue:(id)arg1 forMetadataKey:(id)arg2;
-- (NSInteger)type;
+- (int)type;
 - (id)valueForMetadataKey:(id)arg1;
 
 @end

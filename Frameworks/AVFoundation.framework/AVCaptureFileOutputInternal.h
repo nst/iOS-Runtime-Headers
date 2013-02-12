@@ -5,8 +5,8 @@
 @interface AVCaptureFileOutputInternal : NSObject {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     } maxRecordedDuration;
     long long maxRecordedFileSize;

@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, SUItem;
+@class NSMutableArray, NSString, SUItem;
 
 @interface SUItemListGroup : NSObject {
     NSMutableArray *_items;
     SUItem *_separatorItem;
 }
 
-@property(readonly) NSString *indexBarTitle;
-@property(retain) NSMutableArray *items;
-@property(retain) SUItem *separatorItem;
+@property(readonly) NSString * indexBarTitle;
+@property(retain) NSMutableArray * items;
+@property(retain) SUItem * separatorItem;
 
 - (void)dealloc;
 - (id)description;

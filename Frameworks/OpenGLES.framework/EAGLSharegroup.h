@@ -2,37 +2,33 @@
    Image: /System/Library/Frameworks/OpenGLES.framework/OpenGLES
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EAGLSharegroup : NSObject {
-    struct _EAGLSharegroupPrivate { NSUInteger x1; NSInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct __GLDPixelFormatRec { 
+    struct _EAGLSharegroupPrivate { unsigned int x1; int x2; boolx3; struct __GLDPixelFormatRec { 
             struct __GLDPixelFormatRec {} *next_pixel_format; 
-            NSUInteger renderer_id; 
-            NSUInteger os_support; 
-            NSUInteger buffer_mode; 
-            NSUInteger color_mode; 
-            NSUInteger accum_mode; 
-            NSUInteger depth_mode; 
-            NSUInteger stencil_mode; 
+            unsigned int renderer_id; 
+            unsigned int os_support; 
+            unsigned int buffer_mode; 
+            unsigned int color_mode; 
+            unsigned int accum_mode; 
+            unsigned int depth_mode; 
+            unsigned int stencil_mode; 
             short spad0; 
             short aux_buffers; 
             short sample_buffers; 
             short samples; 
-            NSUInteger sample_mode; 
+            unsigned int sample_mode; 
             unsigned char sample_alpha; 
             unsigned char bpad1; 
             unsigned char bpad2; 
             unsigned char bpad3; 
-            NSUInteger display_mask; 
+            unsigned int display_mask; 
         } x4; struct __GLISharedRec {} *x5; void *x6; } *_private;
 }
 
-- (NSUInteger)APIs;
+- (unsigned int)APIs;
 - (void)dealloc;
 - (id)init;
-- (id)initWithAPI:(NSUInteger)arg1;
-- (void)loadGLIPlugin:(struct __GLDPixelFormatRec { struct __GLDPixelFormatRec {} *x1; NSUInteger x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; NSUInteger x7; NSUInteger x8; short x9; short x10; short x11; short x12; NSUInteger x13; unsigned char x14; unsigned char x15; unsigned char x16; unsigned char x17; NSUInteger x18; }*)arg1;
+- (id)initWithAPI:(unsigned int)arg1;
+- (void)loadGLIPlugin:(struct __GLDPixelFormatRec { struct __GLDPixelFormatRec {} *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; short x9; short x10; short x11; short x12; unsigned int x13; unsigned char x14; unsigned char x15; unsigned char x16; unsigned char x17; unsigned int x18; }*)arg1;
 
 @end

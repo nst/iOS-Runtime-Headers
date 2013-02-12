@@ -9,8 +9,8 @@
     NSMutableDictionary *_registry;
 }
 
-@property(readonly) ADMessagePort *messagePort;
-@property(readonly) NSMutableDictionary *registry;
+@property(readonly) ADMessagePort * messagePort;
+@property(readonly) NSMutableDictionary * registry;
 
 - (void)dealloc;
 - (BOOL)doesServerExist;

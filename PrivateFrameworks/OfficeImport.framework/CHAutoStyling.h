@@ -11,7 +11,7 @@
 + (id)autoStylingWithChart:(id)arg1;
 
 - (void)dealloc;
-- (NSInteger)defaultMarkerStyleForSeriesIndex:(NSInteger)arg1;
+- (int)defaultMarkerStyleForSeriesIndex:(int)arg1;
 - (id)initWithChart:(id)arg1;
 - (void)replaceStrokeAndFillInEmptyMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2;
 

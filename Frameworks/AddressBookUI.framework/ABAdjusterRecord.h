@@ -11,10 +11,10 @@
     UIScrollView *_scrollView;
 }
 
-@property(retain) NSTimer *delayedScrollTimer;
-@property(retain) UIScrollView *scrollView;
 @property float adjustment;
+@property(retain) NSTimer * delayedScrollTimer;
 @property BOOL manuallyAdjusted;
+@property(retain) UIScrollView * scrollView;
 
 + (id)recordWithScrollView:(id)arg1;
 
@@ -23,7 +23,7 @@
 - (void)cancelDelayedAdjustments;
 - (void)dealloc;
 - (id)delayedScrollTimer;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)manuallyAdjusted;
 - (id)scrollView;

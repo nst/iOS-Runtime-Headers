@@ -38,8 +38,11 @@
 - (id)_orderedDataclasses:(id)arg1;
 - (id)accountClass;
 - (BOOL)accountClassStringIsIMAPSubclass;
+- (BOOL)accountPropertiesHaveBookmarkDAVEnabled:(id)arg1;
 - (BOOL)accountPropertiesHaveCalDAVEnabled:(id)arg1;
+- (BOOL)accountPropertiesHaveCardDAVEnabled:(id)arg1;
 - (id)accountPropertyForKey:(id)arg1;
+- (BOOL)accountTypeStringCanOwnBookmarkDAVAccounts;
 - (BOOL)accountTypeStringCanOwnCalDAVAccounts;
 - (BOOL)accountTypeStringCanOwnCardDAVAccounts;
 - (BOOL)accountTypeStringIsIMAPSubclass;
@@ -58,6 +61,7 @@
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (BOOL)isMailAccount;
 - (BOOL)isMobileMeAccount;
+- (BOOL)isValidBookmarkDAVChildAccount;
 - (BOOL)isValidCalDAVChildAccount;
 - (BOOL)isValidCardDAVChildAccount;
 - (BOOL)isValidDAMMeAccount;

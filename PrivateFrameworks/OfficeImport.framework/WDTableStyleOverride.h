@@ -12,7 +12,7 @@
     WDCharacterProperties *mCharacterProperties;
     WDDocument *mDocument;
     WDParagraphProperties *mParagraphProperties;
-    NSInteger mPart;
+    int mPart;
     WDStyle *mStyle;
     WDTableCellProperties *mTableCellStyleProperties;
     WDTableRowProperties *mTableRowProperties;
@@ -32,10 +32,10 @@
 - (id)mutableTableCellStyleProperties;
 - (id)mutableTableRowProperties;
 - (id)paragraphProperties;
-- (NSInteger)part;
+- (int)part;
 - (void)setCharacterPropertiesOverridden:(BOOL)arg1;
 - (void)setParagraphPropertiesOverridden:(BOOL)arg1;
-- (void)setPart:(NSInteger)arg1;
+- (void)setPart:(int)arg1;
 - (void)setStyle:(id)arg1;
 - (void)setTableCellStylePropertiesOverridden:(BOOL)arg1;
 - (void)setTableRowPropertiesOverridden:(BOOL)arg1;

@@ -6,7 +6,7 @@
 
 @interface GKMatchPlayersDataRequest : GKDataRequest {
     NSData *_cdxTicket;
-    NSInteger _connectedPeers;
+    int _connectedPeers;
     NSData *_connectionData;
     GKMatchRequest *_matchRequest;
     unsigned char _matchVersion;
@@ -17,20 +17,20 @@
     NSData *_sessionToken;
 }
 
-@property(retain) NSData *cdxTicket;
-@property(retain) NSData *connectionData;
-@property(retain) GKMatchRequest *matchRequest;
-@property(retain) NSArray *matches;
-@property(retain) NSArray *relayPushes;
-@property(retain) NSString *rid;
-@property(retain) NSData *sessionToken;
-@property NSInteger connectedPeers;
+@property(retain) NSData * cdxTicket;
+@property int connectedPeers;
+@property(retain) NSData * connectionData;
+@property(retain) GKMatchRequest * matchRequest;
 @property unsigned char matchVersion;
+@property(retain) NSArray * matches;
+@property(retain) NSArray * relayPushes;
+@property(retain) NSString * rid;
 @property BOOL serverHosted;
+@property(retain) NSData * sessionToken;
 
-- (void)cancel;
+- (void)cancelWithError:(id)arg1;
 - (id)cdxTicket;
-- (NSInteger)connectedPeers;
+- (int)connectedPeers;
 - (id)connectionData;
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
@@ -45,7 +45,7 @@
 - (BOOL)serverHosted;
 - (id)sessionToken;
 - (void)setCdxTicket:(id)arg1;
-- (void)setConnectedPeers:(NSInteger)arg1;
+- (void)setConnectedPeers:(int)arg1;
 - (void)setConnectionData:(id)arg1;
 - (void)setMatchRequest:(id)arg1;
 - (void)setMatchVersion:(unsigned char)arg1;

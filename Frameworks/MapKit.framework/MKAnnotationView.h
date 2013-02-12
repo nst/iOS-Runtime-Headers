@@ -2,39 +2,39 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKAnnotationViewInternal;
+@class <MKAnnotation>, MKAnnotationViewInternal, NSString, UIImage, UIView;
 
 @interface MKAnnotationView : UIView {
     MKAnnotationViewInternal *_internal;
 }
 
-@property(retain) <MKAnnotation> *annotation;
-@property(retain) UIImage *image;
-@property(retain) UIView *leftCalloutAccessoryView;
-@property(readonly) NSString *reuseIdentifier;
-@property(retain) UIView *rightCalloutAccessoryView;
-@property CGPoint calloutOffset;
+@property(retain) <MKAnnotation> * annotation;
+@property struct CGPoint { float x; float y; } calloutOffset;
 @property BOOL canShowCallout;
-@property CGPoint centerOffset;
-@property NSUInteger dragState;
+@property struct CGPoint { float x; float y; } centerOffset;
+@property unsigned int dragState;
 @property(getter=isDraggable) BOOL draggable;
 @property(getter=isEnabled) BOOL enabled;
 @property(getter=isHighlighted) BOOL highlighted;
+@property(retain) UIImage * image;
+@property(retain) UIView * leftCalloutAccessoryView;
+@property(readonly) NSString * reuseIdentifier;
+@property(retain) UIView * rightCalloutAccessoryView;
 @property(getter=isSelected) BOOL selected;
 
 + (id)_disclosureCalloutButton;
 + (void)_initializeSafeCategory;
-+ (NSUInteger)_selectedZIndex;
++ (unsigned int)_selectedZIndex;
 + (id)_streetViewButtonDisabledImage;
 + (id)_streetViewButtonImage;
 + (id)_streetViewButtonPressedImage;
 + (id)_streetViewCalloutButton;
-+ (NSUInteger)_zIndex;
++ (unsigned int)_zIndex;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_annotationContainer;
-- (NSInteger)_annotationViewType;
+- (int)_annotationViewType;
 - (id)_calloutView;
 - (BOOL)_canChangeOrientation;
 - (BOOL)_canDisplayDisclosureInCallout;
@@ -44,8 +44,8 @@
 - (BOOL)_hasAlternateOrientation;
 - (BOOL)_hasSearchResult;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_mapTransform;
-- (NSUInteger)_mapType;
-- (NSUInteger)_orientationCount;
+- (unsigned int)_mapType;
+- (unsigned int)_orientationCount;
 - (void)_resetZIndex;
 - (void)_resetZIndexNotify:(BOOL)arg1;
 - (id)_searchResult;
@@ -53,12 +53,12 @@
 - (void)_setCanDisplayDisclosureInCallout:(BOOL)arg1;
 - (void)_setCanDisplayPlacemarkInCallout:(BOOL)arg1;
 - (void)_setCanDisplayStreetViewInCallout:(BOOL)arg1;
-- (void)_setMapType:(NSUInteger)arg1;
-- (void)_setZIndex:(NSUInteger)arg1 notify:(BOOL)arg2;
-- (void)_setZIndex:(NSUInteger)arg1;
+- (void)_setMapType:(unsigned int)arg1;
+- (void)_setZIndex:(unsigned int)arg1 notify:(BOOL)arg2;
+- (void)_setZIndex:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (void)_updateZIndex;
-- (NSUInteger)_zIndex;
+- (unsigned int)_zIndex;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
@@ -68,7 +68,7 @@
 - (struct CGPoint { float x1; float x2; })centerOffset;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (NSUInteger)dragState;
+- (unsigned int)dragState;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)image;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
@@ -88,8 +88,8 @@
 - (void)setCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCanShowCallout:(BOOL)arg1;
 - (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDragState:(NSUInteger)arg1 animated:(BOOL)arg2;
-- (void)setDragState:(NSUInteger)arg1;
+- (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)setDragState:(unsigned int)arg1;
 - (void)setDraggable:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;

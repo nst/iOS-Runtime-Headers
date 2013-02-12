@@ -2,22 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SportsVoices.framework/SportsVoices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSArray, NSBundle, NSMutableDictionary;
 
 @interface Decomposer : NSObject {
-    NSArray *availableSoundFiles;
-    NSBundle *bundle;
-    NSMutableDictionary *cache;
-    id delegate;
-    NSInteger iterations;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*debugging;
+    NSArray *_availableSoundFiles;
+    NSBundle *_bundle;
+    NSMutableDictionary *_cache;
+    id _delegate;
+    int _iterations;
+    bool_debugging;
 }
 
-@property(retain) id delegate;
+@property id delegate;
 
 - (void)dealloc;
 - (id)delegate;

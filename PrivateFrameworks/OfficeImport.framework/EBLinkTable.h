@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface EBLinkTable : NSObject {
-     /* Encoded args for previous method: ^{XlLinkTable=^^?{XlLinkLookupTable=^^?B{ChVector<XlXti*>=^^{XlXti}^^{XlXti}III}}{ChVector<XlLink*>=^^{XlLink}^^{XlLink}III}}20@0:4@8@12@16 */
 }
 
-+ (struct XlLinkTable { int (**x1)(); struct XlLinkLookupTable { int (**x_2_1_1)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_2; struct ChVector<XlXti*> { struct XlXti {} **x_3_2_1; struct XlXti {} **x_3_2_2; NSUInteger x_3_2_3; NSUInteger x_3_2_4; NSUInteger x_3_2_5; } x_2_1_3; } x2; struct ChVector<XlLink*> { struct XlLink {} **x_3_1_1; struct XlLink {} **x_3_1_2; NSUInteger x_3_1_3; NSUInteger x_3_1_4; NSUInteger x_3_1_5; } x3; }*)createXlLinkTableFromLinksCollection:(id)arg1 workbook:(id)arg2 state:(id)arg3;
-+ (NSInteger)mapEDLinkTypeToXl:(NSInteger)arg1;
-+ (NSInteger)mapXlLinkTypeToED:(NSInteger)arg1;
++ (struct XlLinkTable { int (**x1)(); struct XlLinkLookupTable { int (**x_2_1_1)(); boolx_2_1_2; struct ChVector<XlXti*> { struct XlXti {} **x_3_2_1; struct XlXti {} **x_3_2_2; unsigned int x_3_2_3; unsigned int x_3_2_4; unsigned int x_3_2_5; } x_2_1_3; } x2; struct ChVector<XlLink*> { struct XlLink {} **x_3_1_1; struct XlLink {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; }*)createXlLinkTableFromLinksCollection:(id)arg1 workbook:(id)arg2 state:(id)arg3;
++ (int)mapEDLinkTypeToXl:(int)arg1;
++ (int)mapXlLinkTypeToED:(int)arg1;
 + (void)readFromState:(id)arg1;
 
 @end

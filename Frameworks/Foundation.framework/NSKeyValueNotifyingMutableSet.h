@@ -8,14 +8,14 @@
     NSMutableSet *_mutableSet;
 }
 
-+ (struct { NSUInteger x1; id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 + (id)_proxyShare;
 
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (void)_proxyNonGCFinalize;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)intersectSet:(id)arg1;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;

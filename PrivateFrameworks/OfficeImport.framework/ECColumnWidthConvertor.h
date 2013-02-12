@@ -3,7 +3,7 @@
  */
 
 @interface ECColumnWidthConvertor : NSObject {
-    NSInteger mMultiplier;
+    int mMultiplier;
 }
 
 - (double)lassoColumnWidthFromXl:(double)arg1;

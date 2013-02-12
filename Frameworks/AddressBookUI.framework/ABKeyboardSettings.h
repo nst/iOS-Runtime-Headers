@@ -5,11 +5,11 @@
 @interface ABKeyboardSettings : NSObject {
 }
 
-+ (NSInteger)autocapitalizationTypeFromDictionary:(id)arg1;
-+ (NSInteger)autocorrectionTypeFromDictionary:(id)arg1;
++ (int)autocapitalizationTypeFromDictionary:(id)arg1;
++ (int)autocorrectionTypeFromDictionary:(id)arg1;
 + (BOOL)contentsIsSingleValue:(id)arg1;
-+ (NSInteger)keyboardTypeFromDictionary:(id)arg1;
-+ (id)newKeyboardSettingsForProperty:(NSInteger)arg1;
++ (int)keyboardTypeFromDictionary:(id)arg1;
++ (id)newKeyboardSettingsForProperty:(int)arg1;
 + (BOOL)usesTextSuggestionDelegate:(id)arg1;
 
 @end

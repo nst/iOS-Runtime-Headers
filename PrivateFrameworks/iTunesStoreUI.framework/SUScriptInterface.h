@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScriptInterfaceDelegate>, NSMutableDictionary, NSURL, SUScriptAccountManager, SUScriptMediaLibrary, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptWindowContext, SUWebImagePool, WebScriptObject;
+@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, NSURL, SUScriptAccount, SUScriptAccountManager, SUScriptAddressBook, SUScriptApplication, SUScriptDevice, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptProtocol, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, SUWebImagePool, WebScriptObject;
 
 @interface SUScriptInterface : SUScriptObject {
     SUScriptAccountManager *_accountManager;
@@ -19,27 +19,28 @@
     WebScriptObject *_windowScriptObject;
 }
 
-@property(readonly) NSArray *accounts;
-@property(readonly) SUScriptAddressBook *addressBook;
-@property(readonly) SUScriptApplication *application;
-@property(copy) NSString *cookie;
-@property <SUScriptInterfaceDelegate> *delegate;
-@property(readonly) SUScriptDevice *device;
-@property(retain) NSURL *mainFrameURL;
-@property(readonly) SUScriptMediaLibrary *mediaLibrary;
-@property(readonly) SUScriptNavigationBar *navigationBar;
-@property(readonly) NSNumber *orientation;
-@property(retain) SUScriptAccount *primaryAccount;
-@property(readonly) SUScriptProtocol *protocol;
-@property(retain) SUScriptWindowContext *scriptWindowContext;
-@property(readonly) SUScriptSectionsController *sectionsController;
-@property(readonly) <SUScriptInterfaceDelegate> *threadSafeDelegate;
-@property(readonly) SUScriptViewController *viewController;
-@property(readonly) SUScriptWindow *window;
+@property(readonly) NSArray * accounts;
+@property(readonly) SUScriptAddressBook * addressBook;
+@property(readonly) SUScriptApplication * application;
+@property(copy) NSString * cookie;
+@property <SUScriptInterfaceDelegate> * delegate;
+@property(readonly) SUScriptDevice * device;
 @property(readonly) id globalRootObject;
+@property(readonly) NSArray * installedSoftwareApplications;
 @property(readonly) id loggingEnabled;
+@property(retain) NSURL * mainFrameURL;
+@property(readonly) SUScriptMediaLibrary * mediaLibrary;
+@property(readonly) SUScriptNavigationBar * navigationBar;
+@property(readonly) NSNumber * orientation;
+@property(retain) SUScriptAccount * primaryAccount;
+@property(readonly) SUScriptProtocol * protocol;
 @property(readonly) id screenReaderRunning;
+@property(retain) SUScriptWindowContext * scriptWindowContext;
+@property(readonly) SUScriptSectionsController * sectionsController;
 @property BOOL sourceIsTrusted;
+@property(readonly) <SUScriptInterfaceDelegate> * threadSafeDelegate;
+@property(readonly) SUScriptViewController * viewController;
+@property(readonly) SUScriptWindow * window;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
@@ -64,8 +65,10 @@
 - (id)accountName;
 - (id)accounts;
 - (id)activeNetworkType;
+- (void)addExternalDownloads:(id)arg1 options:(id)arg2;
 - (void)addExternalDownloads:(id)arg1;
 - (void)addExternalDownloadsFromManifestURL:(id)arg1;
+- (void)addPurchaseWithInfo:(id)arg1 options:(id)arg2;
 - (void)addPurchaseWithInfo:(id)arg1;
 - (id)addressBook;
 - (id)application;
@@ -84,7 +87,7 @@
 - (void)deallocMediaLibrary;
 - (id)delegate;
 - (id)device;
-- (NSInteger)dialogDisplayCountForKey:(id)arg1;
+- (int)dialogDisplayCountForKey:(id)arg1;
 - (id)diskSpaceAvailable;
 - (void)dismissSheet;
 - (void)dismissWindowsWithOptions:(id)arg1;
@@ -104,6 +107,7 @@
 - (id)imagePool;
 - (id)init;
 - (void)initAuthentication;
+- (id)installedSoftwareApplications;
 - (BOOL)isExplicitContentDisabled;
 - (BOOL)isRunningTest;
 - (BOOL)launchedToTest;

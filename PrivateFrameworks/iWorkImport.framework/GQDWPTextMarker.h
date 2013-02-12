@@ -3,9 +3,9 @@
  */
 
 @interface GQDWPTextMarker : NSObject {
-    NSInteger mType;
+    int mType;
 }
 
-- (NSInteger)type;
+- (int)type;
 
 @end

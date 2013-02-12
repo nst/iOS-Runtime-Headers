@@ -8,6 +8,6 @@
 + (void)_initializeSafeCategory;
 
 - (void)addRecipient:(id)arg1;
-- (void)removeAddressAtIndex:(NSInteger)arg1;
+- (void)removeAddressAtIndex:(int)arg1;
 
 @end

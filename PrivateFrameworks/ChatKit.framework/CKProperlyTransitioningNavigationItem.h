@@ -5,6 +5,6 @@
 @interface CKProperlyTransitioningNavigationItem : UINavigationItem {
 }
 
-- (NSInteger)barStyle;
+- (int)barStyle;
 
 @end

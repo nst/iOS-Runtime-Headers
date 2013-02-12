@@ -16,7 +16,7 @@
 - (id)className;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithClassName:(id)arg1 binaryName:(id)arg2 type:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)type;

@@ -13,8 +13,8 @@
 - (id)_availabilityView;
 - (void)dealloc;
 - (BOOL)isEditableForEvent;
-- (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
-- (void)setAvailability:(NSInteger)arg1;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (void)setAvailability:(int)arg1;
 - (BOOL)update;
 
 @end

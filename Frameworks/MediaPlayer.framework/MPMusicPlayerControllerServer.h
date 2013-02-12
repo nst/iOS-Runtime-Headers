@@ -9,6 +9,7 @@
 }
 
 + (void)initialize;
++ (BOOL)isMusicPlayerControllerServerRunning;
 + (id)sharedInstance;
 + (void)startMusicPlayerControllerServer;
 

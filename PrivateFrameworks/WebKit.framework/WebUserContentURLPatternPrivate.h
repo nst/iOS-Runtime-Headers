@@ -2,13 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface WebUserContentURLPatternPrivate : NSObject {
     struct UserContentURLPattern { 
-        /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_invalid; 
+        boolm_invalid; 
         struct String { 
             struct RefPtr<WebCore::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
@@ -24,7 +20,7 @@
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } m_path; 
-        void*m_matchSubdomains; 
+        boolm_matchSubdomains; 
     } pattern;
 }
 

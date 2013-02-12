@@ -9,8 +9,8 @@
     NSString *_username;
 }
 
-@property(copy) NSString *password;
-@property(copy) NSString *username;
+@property(copy) NSString * password;
+@property(copy) NSString * username;
 
 + (Class)responseClass;
 

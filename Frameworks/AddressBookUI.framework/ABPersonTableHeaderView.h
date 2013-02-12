@@ -2,15 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTableHeaderViewDelegate>, <ABStyleProvider>, ABMultiCellContentView, ABNamePropertyGroup, ABPersonImageView, ABPersonNameDisplayView, UIImageView, UIView;
+@class <ABPersonTableHeaderViewDelegate>, <ABStyleProvider>, ABMultiCellContentView, ABNamePropertyGroup, ABPersonImageView, ABPersonNameDisplayView, ABPersonNameEditingViewContainer, NSString, UIFont, UIImageView, UIView;
 
 @interface ABPersonTableHeaderView : UIView {
     <ABPersonTableHeaderViewDelegate> *_delegate;
     ABPersonNameDisplayView *_displayView;
     BOOL _editing;
     ABMultiCellContentView *_editingView;
-    UIView *_editingViewContainer;
+    ABPersonNameEditingViewContainer *_editingViewContainer;
     UIView *_extraHeaderView;
+    UIImageView *_imageShadowView;
     ABPersonImageView *_imageView;
     UIImageView *_multiplePhotoBackdropView;
     ABNamePropertyGroup *_namePropertyGroup;
@@ -19,22 +20,22 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(copy) NSString *alternateName;
-@property(retain) UIView *customMessageView;
-@property <ABPersonTableHeaderViewDelegate> *delegate;
-@property(readonly) ABPersonNameDisplayView *displayView;
-@property(readonly) ABMultiCellContentView *editingView;
-@property(readonly) UIView *editingViewContainer;
-@property(retain) UIView *extraHeaderView;
-@property(readonly) ABPersonImageView *imageView;
-@property(copy) NSString *message;
-@property(copy) NSString *messageDetail;
-@property(retain) UIFont *messageDetailFont;
-@property(retain) UIFont *messageFont;
-@property(retain) ABNamePropertyGroup *namePropertyGroup;
-@property void *personForImageView;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property(copy) NSString * alternateName;
+@property(retain) UIView * customMessageView;
+@property <ABPersonTableHeaderViewDelegate> * delegate;
+@property(readonly) ABPersonNameDisplayView * displayView;
+@property(readonly) ABMultiCellContentView * editingView;
+@property(readonly) UIView * editingViewContainer;
+@property(retain) UIView * extraHeaderView;
+@property(readonly) ABPersonImageView * imageView;
+@property(copy) NSString * message;
+@property(copy) NSString * messageDetail;
+@property(retain) UIFont * messageDetailFont;
+@property(retain) UIFont * messageFont;
+@property(retain) ABNamePropertyGroup * namePropertyGroup;
+@property void* personForImageView;
 @property BOOL representsLinkedPeople;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (id)_displayView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_displayViewFrameForWidth:(float)arg1;
@@ -46,6 +47,7 @@
 - (float)_extraHeaderViewAvailableWidth;
 - (struct CGPoint { float x1; float x2; })_extraHeaderViewOriginForWidth:(float)arg1 whenEditing:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForEditingView;
+- (id)_imageShadowView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrameWhenEditing:(BOOL)arg1;
 - (BOOL)_isSpecialInternalHeaderView;
 - (id)_multiplePhotoBackdropView;
@@ -65,7 +67,7 @@
 - (id)displayView;
 - (id)editingView;
 - (id)editingViewContainer;
-- (id)entryFieldForRow:(NSUInteger)arg1;
+- (id)entryFieldForRow:(unsigned int)arg1;
 - (id)extraHeaderView;
 - (struct CGPoint { float x1; float x2; })extraHeaderViewOrigin;
 - (id)imageView;
@@ -100,7 +102,7 @@
 - (void)setMessageFont:(id)arg1;
 - (void)setNamePropertyGroup:(id)arg1;
 - (void)setPersonForImageView:(void*)arg1;
-- (void)setPrimaryProperty:(NSInteger)arg1 countryCode:(id)arg2;
+- (void)setPrimaryProperty:(int)arg1 countryCode:(id)arg2;
 - (void)setRepresentsLinkedPeople:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

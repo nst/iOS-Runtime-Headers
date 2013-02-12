@@ -8,36 +8,36 @@
     NSString *currentFocus;
     BOOL hasMic;
     NSMutableArray *incomingCallDictList;
-    NSInteger incomingUID;
+    int incomingUID;
     NSMutableArray *outgoingCallDictList;
-    NSInteger packetsPerBundle;
+    int packetsPerBundle;
 }
 
-@property(retain) NSString *currentFocus;
+@property(retain) NSString * currentFocus;
 @property BOOL hasMic;
-@property NSInteger packetsPerBundle;
+@property int packetsPerBundle;
 
 + (id)defaultVoiceChatService;
 
-- (BOOL)acceptCallID:(NSInteger)arg1 error:(id*)arg2;
+- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
 - (id)currentFocus;
 - (void)dealloc;
-- (void)denyCallID:(NSInteger)arg1;
-- (id)dictionaryForCallID:(NSInteger)arg1 isIncomingDictonary:(BOOL)arg2;
-- (id)dictionaryForNonce:(NSInteger)arg1 participantID:(id)arg2 isIncomingDictonary:(BOOL)arg3;
+- (void)denyCallID:(int)arg1;
+- (id)dictionaryForCallID:(int)arg1 isIncomingDictonary:(BOOL)arg2;
+- (id)dictionaryForNonce:(int)arg1 participantID:(id)arg2 isIncomingDictonary:(BOOL)arg3;
 - (id)dictionaryForParticipantID:(id)arg1 isIncomingDictonary:(BOOL)arg2;
 - (double)getLocalBitrate;
 - (double)getLocalFramerate;
 - (double)getRemoteBitrate;
 - (double)getRemoteFramerate;
 - (BOOL)hasMic;
-- (id)incomingDictionaryMatchingOriginalCallID:(NSInteger)arg1 participantID:(id)arg2;
+- (id)incomingDictionaryMatchingOriginalCallID:(int)arg1 participantID:(id)arg2;
 - (id)init;
 - (BOOL)isAudioPausedToParticipantID:(id)arg1;
-- (id)localDisplayNameForCallID:(NSInteger)arg1;
+- (id)localDisplayNameForCallID:(int)arg1;
 - (void*)localVideoLayer;
 - (id)openOutgoingDictionaryForParticipantID:(id)arg1;
-- (NSInteger)packetsPerBundle;
+- (int)packetsPerBundle;
 - (void)pauseAudio:(BOOL)arg1 toParticipantID:(id)arg2;
 - (BOOL)processCancelDict:(id)arg1;
 - (BOOL)processFocusChange:(id)arg1 fromParticipantID:(id)arg2;
@@ -48,25 +48,25 @@
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)remoteCancelled:(id)arg1;
 - (void)remoteCancelledProc:(id)arg1;
-- (id)remoteDisplayNameForCallID:(NSInteger)arg1;
+- (id)remoteDisplayNameForCallID:(int)arg1;
 - (void*)remoteVideoLayer;
 - (void)sendFocusChange:(BOOL)arg1;
-- (void)setChatMode:(NSInteger)arg1;
+- (void)setChatMode:(int)arg1;
 - (void)setCurrentFocus:(id)arg1;
 - (void)setFocus:(BOOL)arg1;
 - (void)setHasMic:(BOOL)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
-- (void)setPacketsPerBundle:(NSInteger)arg1;
+- (void)setPacketsPerBundle:(int)arg1;
 - (void)setQualityDelegate:(id)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
 - (void)setSpeakingDelegate:(id)arg1;
-- (void)setTalkingPeersLimit:(NSUInteger)arg1;
+- (void)setTalkingPeersLimit:(unsigned int)arg1;
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (void)stopVoiceChatProc:(id)arg1 participantDidCancel:(BOOL)arg2;
 - (void)stopVoiceChatProc:(id)arg1;
 - (void)updatedConnectedPeers:(id)arg1;
 - (void)updatedMutedPeers:(id)arg1 forParticipantID:(id)arg2;
-- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(NSInteger)arg3 error:(id)arg4;
-- (void)videoConference:(id)arg1 didStopWithCallID:(NSInteger)arg2 error:(id)arg3;
+- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(int)arg3 error:(id)arg4;
+- (void)videoConference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
 
 @end

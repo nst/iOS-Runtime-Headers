@@ -8,14 +8,14 @@
     struct { 
         struct { 
             long long value; 
-            NSInteger timescale; 
-            NSUInteger flags; 
+            int timescale; 
+            unsigned int flags; 
             long long epoch; 
         } start; 
         struct { 
             long long value; 
-            NSInteger timescale; 
-            NSUInteger flags; 
+            int timescale; 
+            unsigned int flags; 
             long long epoch; 
         } duration; 
     AVWeakKeyValueObserverProxy *KVOProxy;
@@ -23,7 +23,7 @@
     NSError *error;
     struct OpaqueFigAssetReader { } *figAssetReader;
     NSMutableArray *outputs;
-    NSInteger status;
+    int status;
     struct dispatch_queue_s { } *statusReadWriteQueue;
     } timeRange;
     AVWeakReference *weakReference;

@@ -9,17 +9,17 @@
 @class NSString;
 
 @interface MIDINetworkHost : NSObject {
-    struct _MIDINetworkHostImpl { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const NSInteger x6; in void*x7; void*x8; id x9; void*x10; inout unsigned short x11; unsigned short x12; void*x13; const NSInteger x14; in void*x15; void*x16; NSUInteger x17; id x18; void*x19; inout unsigned short x20; unsigned short x21; void*x22; const NSInteger x23; in void*x24; void*x25; NSString *x26; } *_impl;
+    struct _MIDINetworkHostImpl { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const int x6; in void*x7; void*x8; id x9; void*x10; inout unsigned short x11; unsigned short x12; void*x13; const int x14; in void*x15; void*x16; unsigned int x17; id x18; void*x19; inout unsigned short x20; unsigned short x21; void*x22; const int x23; in void*x24; void*x25; NSString *x26; } *_impl;
 }
 
-@property(retain,readonly) NSString *address;
-@property(retain,readonly) NSString *name;
-@property(retain,readonly) NSString *netServiceDomain;
-@property(retain,readonly) NSString *netServiceName;
-@property(readonly) NSUInteger port;
+@property(retain,readonly) NSString * address;
+@property(retain,readonly) NSString * name;
+@property(retain,readonly) NSString * netServiceDomain;
+@property(retain,readonly) NSString * netServiceName;
+@property(readonly) unsigned int port;
 
 + (id)fromAddressAsText:(id)arg1 withName:(id)arg2;
-+ (id)hostWithName:(id)arg1 address:(id)arg2 port:(NSUInteger)arg3;
++ (id)hostWithName:(id)arg1 address:(id)arg2 port:(unsigned int)arg3;
 + (id)hostWithName:(id)arg1 netService:(id)arg2;
 + (id)hostWithName:(id)arg1 netServiceName:(id)arg2 netServiceDomain:(id)arg3;
 
@@ -34,7 +34,7 @@
 - (id)name;
 - (id)netServiceDomain;
 - (id)netServiceName;
-- (NSUInteger)port;
+- (unsigned int)port;
 - (void)setName:(id)arg1;
 
 @end

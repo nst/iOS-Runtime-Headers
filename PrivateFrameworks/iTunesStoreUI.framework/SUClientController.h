@@ -25,17 +25,17 @@
     SUViewControllerFactory *_viewControllerFactory;
 }
 
-@property(readonly) NSString *clientIdentifier;
-@property(retain) SUImageCache *imageCache;
-@property(retain) ISURLOperationPool *imageOperationPool;
-@property(copy) __CFArray *offeredAssetTypes;
-@property(retain) UIViewController *rootViewController;
-@property(readonly) SUScriptExecutionContext *scriptExecutionContext;
-@property(readonly) NSString *storeContentLanguage;
-@property(retain) SUViewControllerFactory *viewControllerFactory;
 @property(getter=isActive,readonly) BOOL active;
+@property(readonly) NSString * clientIdentifier;
+@property(retain) SUImageCache * imageCache;
+@property(retain) ISURLOperationPool * imageOperationPool;
+@property(copy) struct __CFArray { }* offeredAssetTypes;
+@property(retain) UIViewController * rootViewController;
+@property(readonly) SUScriptExecutionContext * scriptExecutionContext;
+@property(readonly) NSString * storeContentLanguage;
 @property(getter=isStoreEnabled,readonly) BOOL storeEnabled;
 @property(readonly) BOOL storeFrontDidChangeSinceLastSuspend;
+@property(retain) SUViewControllerFactory * viewControllerFactory;
 
 + (void)setSharedController:(id)arg1;
 + (id)sharedController;
@@ -78,7 +78,7 @@
 - (BOOL)isComposingEmail;
 - (BOOL)isStoreEnabled;
 - (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(NSInteger)arg2 error:(id)arg3;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id)newPreOrderQueue;
 - (id)newScriptInterface;
 - (struct __CFArray { }*)offeredAssetTypes;

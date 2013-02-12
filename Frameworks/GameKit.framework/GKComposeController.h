@@ -2,31 +2,41 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKComposeControllerDelegate>;
+@class <GKComposeControllerDelegate>, NSString, NSURL;
 
-@interface GKComposeController : GKAbstractComposeController <GKAccountViewControllerDelegate> {
+@interface GKComposeController : GKAbstractComposeController {
     BOOL _alertShown;
     BOOL _alreadySetUp;
     <GKComposeControllerDelegate> *_delegate;
     BOOL _dismissed;
-    NSInteger _entryViewInvisible;
-    NSInteger _failCount;
-    NSInteger _successCount;
+    int _failCount;
+    BOOL _messageWasSetExternally;
+    NSURL *_serverAddFriendsURL;
+    int _successCount;
 }
 
-@property <GKComposeControllerDelegate> *delegate;
+@property(copy) NSString * defaultMessage;
+@property <GKComposeControllerDelegate> * delegate;
+@property BOOL messageWasSetExternally;
+@property(retain) NSURL * serverAddFriendsURL;
 
-- (void)accountViewControllerDidFinish:(id)arg1 accountCreated:(BOOL)arg2;
 - (void)addPlayerRecipients:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)cancelButtonClicked:(id)arg1;
+- (void)dealloc;
+- (id)defaultMessage;
 - (id)delegate;
 - (void)dismiss;
 - (void)loadView;
+- (BOOL)messageWasSetExternally;
 - (void)send:(id)arg1;
+- (void)serverAddFriendsButtonWasTouched;
+- (id)serverAddFriendsURL;
+- (void)setDefaultMessage:(id)arg1;
 - (void)setDefaultMessageWithRealName;
 - (void)setDelegate:(id)arg1;
-- (void)setTextEntryContentsVisible:(BOOL)arg1;
+- (void)setMessageWasSetExternally:(BOOL)arg1;
+- (void)setServerAddFriendsURL:(id)arg1;
 - (void)showAlertForError:(id)arg1;
 - (void)showAlertForFailures:(id)arg1 allFailed:(BOOL)arg2;
 - (void)showAlertForSuccess;

@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAirPlayVideoServiceBrowser;
+@class NSSet;
 
 @interface MPAVDestinationBrowser : NSObject {
-    MPAirPlayVideoServiceBrowser *_airVideoBrowser;
     BOOL _isScanning;
     BOOL _scansForDestinationsWhenEnteringForeground;
 }
 
-@property(readonly) NSSet *availableDestinations;
+@property(readonly) NSSet * availableDestinations;
 @property BOOL scansForDestinationsWhenEnteringForeground;
 
-- (void)_airVideoServicesDidChangeNotification:(id)arg1;
 - (id)availableDestinations;
 - (void)beginScanningForDestinations;
 - (void)dealloc;

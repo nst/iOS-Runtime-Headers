@@ -7,28 +7,28 @@
 @interface UIKBGeometry : NSObject <NSCoding, NSCopying> {
     struct { 
         float amount; 
-        NSInteger unit; 
+        int unit; 
     struct { 
         float amount; 
-        NSInteger unit; 
+        int unit; 
     struct { 
         float amount; 
-        NSInteger unit; 
+        int unit; 
     struct { 
         float amount; 
-        NSInteger unit; 
+        int unit; 
     struct { 
         float amount; 
-        NSInteger unit; 
+        int unit; 
     struct { 
         float amount; 
-        NSInteger unit; 
+        int unit; 
     struct { 
         float amount; 
-        NSInteger unit; 
+        int unit; 
     struct { 
         float amount; 
-        NSInteger unit; 
+        int unit; 
     BOOL m_explicit;
     } m_h;
     NSString *m_name;
@@ -41,16 +41,16 @@
     } m_y;
 }
 
-@property ? paddingRight; /* unknown property attribute: SsetPaddingRight: */
-@property ? paddingBottom; /* unknown property attribute: SsetPaddingBottom: */
-@property ? paddingLeft; /* unknown property attribute: SsetPaddingLeft: */
-@property ? paddingTop; /* unknown property attribute: SsetPaddingTop: */
-@property ? h; /* unknown property attribute: SsetH: */
-@property ? w; /* unknown property attribute: SsetW: */
-@property ? y; /* unknown property attribute: SsetY: */
-@property ? x; /* unknown property attribute: SsetX: */
-@property(retain) NSString *name;
 @property BOOL explicit;
+@property(setter=setH:) struct { float amount; int unit; } h;
+@property(retain) NSString * name;
+@property(setter=setPaddingBottom:) struct { float amount; int unit; } paddingBottom;
+@property(setter=setPaddingLeft:) struct { float amount; int unit; } paddingLeft;
+@property(setter=setPaddingRight:) struct { float amount; int unit; } paddingRight;
+@property(setter=setPaddingTop:) struct { float amount; int unit; } paddingTop;
+@property(setter=setW:) struct { float amount; int unit; } w;
+@property(setter=setX:) struct { float amount; int unit; } x;
+@property(setter=setY:) struct { float amount; int unit; } y;
 
 + (id)geometry;
 + (id)geometryWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -62,30 +62,30 @@
 - (BOOL)explicit;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameWithContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct { float x1; NSInteger x2; })h;
+- (struct { float x1; int x2; })h;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 rect:(struct { struct { float x_1_1_1; NSInteger x_1_1_2; } x1[4]; })arg2 padding:(struct { struct { float x_1_1_1; NSInteger x_1_1_2; } x1[4]; })arg3;
+- (id)initWithName:(id)arg1 rect:(struct { struct { float x_1_1_1; int x_1_1_2; } x1[4]; })arg2 padding:(struct { struct { float x_1_1_1; int x_1_1_2; } x1[4]; })arg3;
 - (id)name;
 - (id)overrideGeometry:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrameWithContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrameWithResolvedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct { float x1; NSInteger x2; })paddingBottom;
-- (struct { float x1; NSInteger x2; })paddingLeft;
-- (struct { float x1; NSInteger x2; })paddingRight;
-- (struct { float x1; NSInteger x2; })paddingTop;
+- (struct { float x1; int x2; })paddingBottom;
+- (struct { float x1; int x2; })paddingLeft;
+- (struct { float x1; int x2; })paddingRight;
+- (struct { float x1; int x2; })paddingTop;
 - (void)setExplicit:(BOOL)arg1;
-- (void)setH:(struct { float x1; NSInteger x2; })arg1;
+- (void)setH:(struct { float x1; int x2; })arg1;
 - (void)setName:(id)arg1;
-- (void)setPaddingBottom:(struct { float x1; NSInteger x2; })arg1;
-- (void)setPaddingLeft:(struct { float x1; NSInteger x2; })arg1;
-- (void)setPaddingRight:(struct { float x1; NSInteger x2; })arg1;
-- (void)setPaddingTop:(struct { float x1; NSInteger x2; })arg1;
-- (void)setW:(struct { float x1; NSInteger x2; })arg1;
-- (void)setX:(struct { float x1; NSInteger x2; })arg1;
-- (void)setY:(struct { float x1; NSInteger x2; })arg1;
-- (struct { float x1; NSInteger x2; })w;
-- (struct { float x1; NSInteger x2; })x;
-- (struct { float x1; NSInteger x2; })y;
+- (void)setPaddingBottom:(struct { float x1; int x2; })arg1;
+- (void)setPaddingLeft:(struct { float x1; int x2; })arg1;
+- (void)setPaddingRight:(struct { float x1; int x2; })arg1;
+- (void)setPaddingTop:(struct { float x1; int x2; })arg1;
+- (void)setW:(struct { float x1; int x2; })arg1;
+- (void)setX:(struct { float x1; int x2; })arg1;
+- (void)setY:(struct { float x1; int x2; })arg1;
+- (struct { float x1; int x2; })w;
+- (struct { float x1; int x2; })x;
+- (struct { float x1; int x2; })y;
 
 @end

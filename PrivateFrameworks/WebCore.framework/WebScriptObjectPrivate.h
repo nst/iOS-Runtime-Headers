@@ -2,71 +2,72 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface WebScriptObjectPrivate : NSObject {
-    struct JSObject { int (**x1)(); struct Structure {} *x2; union $_676 { 
+    struct JSObject { int (**x1)(); struct Structure {} *x2; union $_670 { 
             long long *m_externalStorage; 
             long long m_inlineStorage[4]; 
         } x3; struct RefPtr<JSC::Structure> { 
             struct Structure {} *m_ptr; 
-    struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<JSC::JSGlobalObject> { 
+    struct RootObject { int x1; boolx2; void *x3; struct ProtectedPtr<JSC::JSGlobalObject> { 
             struct JSGlobalObject {} *m_ptr; 
         } x4; struct HashCountedSet<JSC::JSObject*,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*> > { 
             struct HashMap<JSC::JSObject*,unsigned int,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*>,WTF::HashTraits<unsigned int> > { 
                 struct HashTable<JSC::JSObject*,std::pair<JSC::JSObject*, unsigned int>,WTF::PairFirstExtractor<std::pair<JSC::JSObject*, unsigned int> >,WTF::PtrHash<JSC::JSObject*>,WTF::PairHashTraits<WTF::HashTraits<JSC::JSObject*>, WTF::HashTraits<unsigned int> >,WTF::HashTraits<JSC::JSObject*> > { 
                     struct pair<JSC::JSObject*,unsigned int> {} *m_table; 
-                    NSInteger m_tableSize; 
-                    NSInteger m_tableSizeMask; 
-                    NSInteger m_keyCount; 
-                    NSInteger m_deletedCount; 
+                    int m_tableSize; 
+                    int m_tableSizeMask; 
+                    int m_keyCount; 
+                    int m_deletedCount; 
                 } m_impl; 
             } m_impl; 
         } x5; struct HashSet<JSC::Bindings::RuntimeObject*,WTF::PtrHash<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*> > { 
             struct HashTable<JSC::Bindings::RuntimeObject*,JSC::Bindings::RuntimeObject*,WTF::IdentityExtractor<JSC::Bindings::RuntimeObject*>,WTF::PtrHash<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*> > { 
                 struct RuntimeObject {} **m_table; 
-                NSInteger m_tableSize; 
-                NSInteger m_tableSizeMask; 
-                NSInteger m_keyCount; 
-                NSInteger m_deletedCount; 
+                int m_tableSize; 
+                int m_tableSizeMask; 
+                int m_keyCount; 
+                int m_deletedCount; 
             } m_impl; 
         } x6; struct HashSet<JSC::Bindings::RootObject::InvalidationCallback*,WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*> > { 
             struct HashTable<JSC::Bindings::RootObject::InvalidationCallback*,JSC::Bindings::RootObject::InvalidationCallback*,WTF::IdentityExtractor<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*> > { 
                 struct InvalidationCallback {} **m_table; 
-                NSInteger m_tableSize; 
-                NSInteger m_tableSizeMask; 
-                NSInteger m_keyCount; 
-                NSInteger m_deletedCount; 
+                int m_tableSize; 
+                int m_tableSizeMask; 
+                int m_keyCount; 
+                int m_deletedCount; 
             } m_impl; 
-    struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<JSC::JSGlobalObject> { 
+    struct RootObject { int x1; boolx2; void *x3; struct ProtectedPtr<JSC::JSGlobalObject> { 
             struct JSGlobalObject {} *m_ptr; 
         } x4; struct HashCountedSet<JSC::JSObject*,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*> > { 
             struct HashMap<JSC::JSObject*,unsigned int,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*>,WTF::HashTraits<unsigned int> > { 
                 struct HashTable<JSC::JSObject*,std::pair<JSC::JSObject*, unsigned int>,WTF::PairFirstExtractor<std::pair<JSC::JSObject*, unsigned int> >,WTF::PtrHash<JSC::JSObject*>,WTF::PairHashTraits<WTF::HashTraits<JSC::JSObject*>, WTF::HashTraits<unsigned int> >,WTF::HashTraits<JSC::JSObject*> > { 
                     struct pair<JSC::JSObject*,unsigned int> {} *m_table; 
-                    NSInteger m_tableSize; 
-                    NSInteger m_tableSizeMask; 
-                    NSInteger m_keyCount; 
-                    NSInteger m_deletedCount; 
+                    int m_tableSize; 
+                    int m_tableSizeMask; 
+                    int m_keyCount; 
+                    int m_deletedCount; 
                 } m_impl; 
             } m_impl; 
         } x5; struct HashSet<JSC::Bindings::RuntimeObject*,WTF::PtrHash<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*> > { 
             struct HashTable<JSC::Bindings::RuntimeObject*,JSC::Bindings::RuntimeObject*,WTF::IdentityExtractor<JSC::Bindings::RuntimeObject*>,WTF::PtrHash<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*> > { 
                 struct RuntimeObject {} **m_table; 
-                NSInteger m_tableSize; 
-                NSInteger m_tableSizeMask; 
-                NSInteger m_keyCount; 
-                NSInteger m_deletedCount; 
+                int m_tableSize; 
+                int m_tableSizeMask; 
+                int m_keyCount; 
+                int m_deletedCount; 
             } m_impl; 
         } x6; struct HashSet<JSC::Bindings::RootObject::InvalidationCallback*,WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*> > { 
             struct HashTable<JSC::Bindings::RootObject::InvalidationCallback*,JSC::Bindings::RootObject::InvalidationCallback*,WTF::IdentityExtractor<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*> > { 
                 struct InvalidationCallback {} **m_table; 
-                NSInteger m_tableSize; 
-                NSInteger m_tableSizeMask; 
-                NSInteger m_keyCount; 
-                NSInteger m_deletedCount; 
+                int m_tableSize; 
+                int m_tableSizeMask; 
+                int m_keyCount; 
+                int m_deletedCount; 
             } m_impl; 
         } x4; } *imp;
     BOOL isCreatedByDOMWrapper;

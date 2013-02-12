@@ -11,7 +11,7 @@
     EDReference *mReference;
     EDString *mTextMark;
     EDString *mToolTip;
-    NSInteger mType;
+    int mType;
 }
 
 + (id)hyperlink;
@@ -27,9 +27,9 @@
 - (void)setReference:(id)arg1;
 - (void)setTextMark:(id)arg1;
 - (void)setToolTip:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (id)textMark;
 - (id)toolTip;
-- (NSInteger)type;
+- (int)type;
 
 @end

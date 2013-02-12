@@ -8,18 +8,18 @@
     <SUDataConsumer> *_consumer;
 }
 
-@property(retain) <SUDataConsumer> *dataConsumer;
+@property(retain) <SUDataConsumer> * dataConsumer;
 
-+ (NSInteger)maxConsumeLengthForReadLength:(NSInteger)arg1;
++ (int)maxConsumeLengthForReadLength:(int)arg1;
 + (long long)outputLengthForInputLength:(long long)arg1;
 
-- (NSInteger)consumeData:(id)arg1;
+- (int)consumeData:(id)arg1;
 - (id)dataConsumer;
 - (void)dealloc;
 - (void)finish;
 - (id)init;
 - (id)initWithDataConsumer:(id)arg1;
-- (NSUInteger)minimumConsumeLength;
+- (unsigned int)minimumConsumeLength;
 - (void)setDataConsumer:(id)arg1;
 
 @end

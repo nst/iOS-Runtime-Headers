@@ -9,12 +9,12 @@
     MailMessageLibrary *library;
     MFDAMailbox *mailbox;
     ActivityMonitor *monitor;
-    NSInteger numNewMessages;
+    int numNewMessages;
     MFDAMessageStore *store;
 }
 
-@property(retain) MFError *error;
-@property(retain) ActivityMonitor *monitor;
+@property(retain) MFError * error;
+@property(retain) ActivityMonitor * monitor;
 
 - (void)dealloc;
 - (id)error;

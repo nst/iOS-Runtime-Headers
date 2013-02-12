@@ -9,7 +9,7 @@
     UIWebView *_webView;
 }
 
-@property(copy) NSString *notes;
+@property(copy) NSString * notes;
 
 - (id)_webView;
 - (void)dealloc;
@@ -17,7 +17,7 @@
 - (void)loadView;
 - (id)notes;
 - (void)setNotes:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(NSUInteger)arg3;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(unsigned int)arg3;
 
 @end

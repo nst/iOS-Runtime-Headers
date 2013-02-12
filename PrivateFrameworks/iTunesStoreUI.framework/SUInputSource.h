@@ -7,14 +7,14 @@
 
 @property(readonly) long long expectedLength;
 @property(readonly) BOOL hasBytesAvailable;
-@property(readonly) NSUInteger minimumReadLength;
+@property(readonly) unsigned int minimumReadLength;
 
 - (void)close;
 - (id)copyAllData:(id*)arg1;
 - (long long)expectedLength;
 - (BOOL)hasBytesAvailable;
-- (NSUInteger)minimumReadLength;
+- (unsigned int)minimumReadLength;
 - (BOOL)open:(id*)arg1;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2 error:(id*)arg3;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
 
 @end

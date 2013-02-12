@@ -6,9 +6,9 @@
 
 @interface CMShapeBuilder : NSObject {
     NSDictionary *_adjustValues;
-    NSInteger _format;
+    int _format;
     OADOrientedBounds *_orientedBounds;
-    NSInteger _type;
+    int _type;
 }
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canonicalBounds;
@@ -19,8 +19,8 @@
 - (BOOL)isOffice12;
 - (float)maxAdjustedValue;
 - (void)setAdjustValues:(id)arg1;
-- (void)setFileFormat:(NSInteger)arg1;
+- (void)setFileFormat:(int)arg1;
 - (void)setOrientedBounds:(id)arg1;
-- (void)setShapeType:(NSInteger)arg1;
+- (void)setShapeType:(int)arg1;
 
 @end

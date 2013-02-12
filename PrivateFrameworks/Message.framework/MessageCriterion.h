@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSArray, NSString;
 
 @interface MessageCriterion : NSObject {
@@ -9,12 +14,12 @@
     unsigned int _dateIsRelative : 1;
     NSArray *_criteria;
     NSString *_criterionIdentifier;
-    NSInteger _dateUnitType;
+    int _dateUnitType;
     NSString *_expression;
     NSString *_name;
-    NSInteger _qualifier;
+    int _qualifier;
     NSArray *_requiredHeaders;
-    NSInteger _type;
+    int _type;
     NSString *_uniqueId;
 }
 
@@ -22,14 +27,14 @@
 + (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(BOOL)arg2;
 + (id)criteriaFromDefaultsArray:(id)arg1;
 + (id)criterionForMailboxURL:(id)arg1;
-+ (NSInteger)criterionTypeForString:(id)arg1;
++ (int)criterionTypeForString:(id)arg1;
 + (id)defaultsArrayFromCriteria:(id)arg1;
 + (id)messageIsDeletedCriterion:(BOOL)arg1;
 + (id)messageIsServerSearchResultCriterion:(BOOL)arg1;
-+ (id)stringForCriterionType:(NSInteger)arg1;
++ (id)stringForCriterionType:(int)arg1;
 
-- (id)SQLExpressionWithContext:(struct { NSUInteger x1; NSUInteger x2; BOOL x3; BOOL x4; }*)arg1 depth:(NSUInteger)arg2;
-- (id)SQLExpressionWithTables:(NSUInteger*)arg1 baseTable:(NSUInteger)arg2;
+- (id)SQLExpressionWithContext:(struct { unsigned int x1; unsigned int x2; BOOL x3; BOOL x4; }*)arg1 depth:(unsigned int)arg2;
+- (id)SQLExpressionWithTables:(unsigned int*)arg1 baseTable:(unsigned int)arg2;
 - (id)_criterionForSQL;
 - (BOOL)_evaluateAccountCriterion:(id)arg1;
 - (BOOL)_evaluateAddressBookCriterion:(id)arg1;
@@ -46,18 +51,18 @@
 - (id)_headersRequiredForEvaluation;
 - (id)_qualifierString;
 - (BOOL)allCriteriaMustBeSatisfied;
-- (NSUInteger)bestBaseTable;
+- (unsigned int)bestBaseTable;
 - (id)criteria;
 - (id)criterionByAddingEmailCriteria;
 - (id)criterionByExpandingAddressCriteria;
 - (id)criterionForSQL;
 - (id)criterionIdentifier;
-- (NSInteger)criterionType;
+- (int)criterionType;
 - (BOOL)dateIsRelative;
-- (NSInteger)dateUnits;
+- (int)dateUnits;
 - (void)dealloc;
 - (id)description;
-- (id)descriptionWithDepth:(NSUInteger)arg1;
+- (id)descriptionWithDepth:(unsigned int)arg1;
 - (id)dictionaryRepresentation;
 - (BOOL)doesMessageSatisfyCriterion:(id)arg1;
 - (id)emailAddressesForGroupCriterion;
@@ -69,22 +74,22 @@
 - (id)initWithCriterion:(id)arg1 expression:(id)arg2;
 - (id)initWithDictionary:(id)arg1 andRemoveRecognizedKeysIfMutable:(BOOL)arg2;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithType:(NSInteger)arg1 qualifier:(NSInteger)arg2 expression:(id)arg3;
+- (id)initWithType:(int)arg1 qualifier:(int)arg2 expression:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)messageRuleQualifierForString:(id)arg1;
+- (int)messageRuleQualifierForString:(id)arg1;
 - (id)name;
-- (NSInteger)qualifier;
+- (int)qualifier;
 - (void)setAllCriteriaMustBeSatisfied:(BOOL)arg1;
 - (void)setCriteria:(id)arg1;
 - (void)setCriterionIdentifier:(id)arg1;
-- (void)setCriterionType:(NSInteger)arg1;
+- (void)setCriterionType:(int)arg1;
 - (void)setDateIsRelative:(BOOL)arg1;
-- (void)setDateUnits:(NSInteger)arg1;
+- (void)setDateUnits:(int)arg1;
 - (void)setExpression:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setQualifier:(NSInteger)arg1;
+- (void)setQualifier:(int)arg1;
 - (id)simplifiedCriterion;
 - (id)simplifyOnce;
-- (id)stringForMessageRuleQualifier:(NSInteger)arg1;
+- (id)stringForMessageRuleQualifier:(int)arg1;
 
 @end

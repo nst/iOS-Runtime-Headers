@@ -13,9 +13,9 @@
     UIToolbar *_toolbar;
 }
 
-@property <PLEditPhotoControllerDelegate> *delegate;
-@property(readonly) MLPhoto *editedPhoto;
-@property UIToolbar *toolbar;
+@property <PLEditPhotoControllerDelegate> * delegate;
+@property(readonly) MLPhoto * editedPhoto;
+@property UIToolbar * toolbar;
 
 - (void)cancelCropPhoto:(id)arg1;
 - (void)cropPhoto:(id)arg1;

@@ -9,9 +9,9 @@
 }
 
 - (void)dealloc;
-- (id)initWithStructs:(const struct CPEnumerationStruct { NSInteger x1; id x2; }*)arg1 count:(NSInteger)arg2 caseSensitive:(BOOL)arg3;
-- (id)initWithStructs:(const struct CPEnumerationStruct { NSInteger x1; id x2; }*)arg1 count:(NSInteger)arg2;
-- (id)stringForValue:(NSInteger)arg1;
-- (NSInteger)valueForString:(id)arg1;
+- (id)initWithStructs:(const struct CPEnumerationStruct { int x1; id x2; }*)arg1 count:(int)arg2 caseSensitive:(BOOL)arg3;
+- (id)initWithStructs:(const struct CPEnumerationStruct { int x1; id x2; }*)arg1 count:(int)arg2;
+- (id)stringForValue:(int)arg1;
+- (int)valueForString:(id)arg1;
 
 @end

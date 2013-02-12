@@ -3,21 +3,32 @@
  */
 
 @interface ABCapabilitiesManager : NSObject {
+    BOOL _isRingtoneStoreAvailable;
 }
+
+@property BOOL isRingtoneStoreAvailable;
 
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;
 
+- (void)_checkRingtoneStoreAvailability;
+- (id)conferenceURLForDestinationID:(id)arg1;
+- (id)conferenceURLForPhoneNumber:(id)arg1;
+- (void)dealloc;
 - (BOOL)hasAdditionalTextTones;
 - (BOOL)hasCameraCapability;
 - (BOOL)hasCellularDataCapability;
 - (BOOL)hasCellularTelephonyCapability;
+- (BOOL)hasPreviouslyConferencedWithID:(id)arg1;
 - (BOOL)hasSMSCapability;
 - (BOOL)hasTelephonyCapability;
+- (id)init;
 - (BOOL)isConferencingAvailable;
 - (BOOL)isConferencingEverGonnaBeAvailable;
 - (BOOL)isEmailConfigured;
 - (BOOL)isMMSConfigured;
+- (BOOL)isRingtoneStoreAvailable;
 - (BOOL)isSensitiveUIAllowed;
+- (void)setIsRingtoneStoreAvailable:(BOOL)arg1;
 
 @end

@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString;
+@class <CoreDAVTaskDelegate>, NSString;
 
 @interface CoreDAVPutTask : CoreDAVPostOrPutTask {
     NSString *_newETag;
 }
 
-@property <CoreDAVTaskDelegate> *delegate;
-@property(retain) NSString *newETag;
+@property <CoreDAVTaskDelegate> * delegate;
+@property(retain) NSString * newETag;
 
 - (void)dealloc;
 - (id)description;

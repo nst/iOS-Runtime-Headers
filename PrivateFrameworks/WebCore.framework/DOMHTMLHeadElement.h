@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLHeadElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *profile;
+@property(copy) NSString * profile;
 
 - (id)profile;
 - (void)setProfile:(id)arg1;

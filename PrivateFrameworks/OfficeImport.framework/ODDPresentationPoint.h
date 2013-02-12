@@ -13,6 +13,6 @@
 - (id)children;
 - (void)dealloc;
 - (id)parent;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 
 @end

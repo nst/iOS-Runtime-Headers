@@ -2,24 +2,24 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface SPSearchQuery : NSObject <NSCopying> {
     double _cancellationTime;
     BOOL _cancelled;
     double _creationTime;
-    NSInteger _domainCount;
+    int _domainCount;
     char *_domainVector;
     BOOL _finished;
-    NSUInteger _queryID;
+    unsigned int _queryID;
     NSString *_searchString;
 }
 
-@property(readonly) NSArray *searchDomains;
-@property(readonly) NSString *searchString;
 @property(readonly) double cancellationTime;
 @property(readonly) BOOL cancelled;
 @property(readonly) double creationTime;
+@property(readonly) NSArray * searchDomains;
+@property(readonly) NSString * searchString;
 
 - (void)cancel;
 - (double)cancellationTime;
@@ -28,9 +28,9 @@
 - (double)creationTime;
 - (void)dealloc;
 - (char *)domainsVector;
-- (NSInteger)domainsVectorCount;
-- (NSUInteger)hash;
-- (id)initWithSearchString:(id)arg1 andDomainsVector:(char *)arg2 vectorCount:(NSInteger)arg3;
+- (int)domainsVectorCount;
+- (unsigned int)hash;
+- (id)initWithSearchString:(id)arg1 andDomainsVector:(char *)arg2 vectorCount:(int)arg3;
 - (id)initWithSearchString:(id)arg1 forSearchDomains:(id)arg2;
 - (id)initWithSearchString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

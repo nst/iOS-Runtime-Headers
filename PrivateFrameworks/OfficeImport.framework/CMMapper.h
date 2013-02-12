@@ -16,7 +16,7 @@
 - (void)finishMappingWithState:(id)arg1;
 - (id)initWithParent:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (void)mapElement:(id)arg1 atIndex:(NSUInteger)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
+- (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
 - (void)mapStylesheetAt:(id)arg1 stylesheet:(id)arg2;
 - (id)parent;
 - (id)root;

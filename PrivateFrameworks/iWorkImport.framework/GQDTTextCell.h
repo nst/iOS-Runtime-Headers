@@ -11,8 +11,8 @@
 
 - (void)dealloc;
 - (id)layoutStorage;
-- (NSInteger)readContentForTCell:(struct _xmlTextReader { }*)arg1;
-- (NSInteger)readContentForTextCell:(struct _xmlTextReader { }*)arg1;
+- (int)readContentForTCell:(struct _xmlTextReader { }*)arg1;
+- (int)readContentForTextCell:(struct _xmlTextReader { }*)arg1;
 - (struct __CFString { }*)stringValue;
 
 @end

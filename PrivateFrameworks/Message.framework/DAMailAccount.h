@@ -16,14 +16,14 @@
     NSString *_cachedSentMessagesFolderID;
     NSString *_cachedTrashFolderID;
     DAAccount *_daAccount;
-    NSUInteger _daysToSync;
+    unsigned int _daysToSync;
     BOOL _doneInitialInboxCheck;
     BOOL _loadedInitialMailboxList;
     BOOL _observingPushedFoldersPrefsChanged;
     BOOL _receivedInitialMailboxUpdate;
     NSMutableDictionary *_requestQueuesByFolderID;
     BOOL _startListeningOnHierarchyChange;
-    NSInteger _supportsServerSearch;
+    int _supportsServerSearch;
     MFDAMailbox *_temporaryInbox;
     NSCountedSet *_userFocusMailboxIds;
     NSSet *_watchedFolderIds;
@@ -42,14 +42,14 @@
 
 - (id)_URLScheme;
 - (BOOL)_canReceiveNewMailNotifications;
-- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 existingMailboxUid:(id)arg4 permanentTag:(id)arg5 dictionary:(id)arg6;
-- (id)_copyMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 permanentTag:(id)arg4 dictionary:(id)arg5;
+- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 permanentTag:(id)arg5 dictionary:(id)arg6;
+- (id)_copyMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 permanentTag:(id)arg4 dictionary:(id)arg5;
 - (void)_ensureWeHaveLoadedInitialMailboxList;
 - (id)_inboxFolderID;
 - (id)_infoForMatchingURL:(id)arg1;
 - (void)_loadChildren:(id)arg1 forID:(id)arg2 intoBox:(id)arg3 replacingInbox:(id)arg4 withID:(id)arg5;
-- (id)_newMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(NSUInteger)arg3 dictionary:(id)arg4;
-- (id)_specialMailboxUidWithType:(NSInteger)arg1 create:(BOOL)arg2;
+- (id)_newMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 dictionary:(id)arg4;
+- (id)_specialMailboxUidWithType:(int)arg1 create:(BOOL)arg2;
 - (id)accountConduit;
 - (void)accountHierarchyChanged:(id)arg1;
 - (id)accountPropertyForKey:(id)arg1;
@@ -59,11 +59,11 @@
 - (id)allMailboxUids;
 - (BOOL)canFetchMessagesByNumericRange;
 - (void)cancelSearchQuery:(id)arg1;
-- (NSUInteger)daysToSync;
+- (unsigned int)daysToSync;
 - (void)dealloc;
 - (id)deliveryAccount;
 - (id)displayName;
-- (NSInteger)emptyFrequencyForMailboxType:(NSInteger)arg1;
+- (int)emptyFrequencyForMailboxType:(int)arg1;
 - (void)fetchMailboxList;
 - (BOOL)finishedInitialMailboxListLoad;
 - (void)foldersContentsChanged:(id)arg1;
@@ -72,7 +72,7 @@
 - (id)initWithDAAccount:(id)arg1;
 - (id)initWithLibrary:(id)arg1 properties:(id)arg2;
 - (void)invalidate;
-- (BOOL)isRunningInPreferences;
+- (BOOL)isRunningInDisallowedBundle;
 - (id)mailboxForFolderID:(id)arg1;
 - (id)mailboxPathExtension;
 - (id)mailboxUidForInfo:(id)arg1;

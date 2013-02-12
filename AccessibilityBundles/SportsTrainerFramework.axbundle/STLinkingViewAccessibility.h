@@ -14,6 +14,6 @@
 - (void)_rescanForRemote;
 - (void)_sensorHideAnimationDidStop;
 - (void)layoutSubviews;
-- (void)setLinkingType:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setLinkingType:(int)arg1 animated:(BOOL)arg2;
 
 @end

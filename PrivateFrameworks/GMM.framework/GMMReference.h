@@ -10,9 +10,9 @@
     NSString *_url;
 }
 
-@property(retain) NSString *domain;
-@property(retain) NSString *title;
-@property(retain) NSString *url;
+@property(retain) NSString * domain;
+@property(retain) NSString * title;
+@property(retain) NSString * url;
 
 - (void)dealloc;
 - (id)description;

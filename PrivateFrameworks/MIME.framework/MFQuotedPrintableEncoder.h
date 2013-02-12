@@ -7,8 +7,8 @@
     BOOL _forTextPart;
     unsigned char _lastHorizontalWhitespace;
     BOOL _lastWasNewLine;
-    NSUInteger _line;
-    NSUInteger _matchedFrom;
+    unsigned int _line;
+    unsigned int _matchedFrom;
 }
 
 @property BOOL forHeader;
@@ -16,7 +16,7 @@
 
 + (unsigned long)requiredSizeToEncodeHeaderBytes:(const char *)arg1 length:(unsigned long)arg2;
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (void)done;
 - (BOOL)forHeader;
 - (BOOL)forTextPart;

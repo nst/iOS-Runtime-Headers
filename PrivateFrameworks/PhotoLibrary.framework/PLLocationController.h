@@ -23,11 +23,11 @@
 - (void)_stopUpdating;
 - (void)_updateLocationRunState;
 - (void)_updatePendingAssets;
-- (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(NSInteger)arg2 cameraWasRearFacing:(BOOL)arg3;
+- (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(int)arg2 cameraWasRearFacing:(BOOL)arg3;
 - (void)dealloc;
 - (id)init;
 - (id)location;
-- (id)locationDictionaryForImageWithDeviceOrientation:(NSInteger)arg1 rearFacingCamera:(BOOL)arg2;
+- (id)locationDictionaryForImageWithDeviceOrientation:(int)arg1 rearFacingCamera:(BOOL)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (id)locationString;
 - (void)setEnabled:(BOOL)arg1;

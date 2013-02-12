@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface UIFont : NSObject {
 }
 
-@property(retain,readonly) NSString *familyName;
-@property(retain,readonly) NSString *fontName;
 @property(readonly) float ascender;
 @property(readonly) float capHeight;
 @property(readonly) float descender;
+@property(retain,readonly) NSString * familyName;
+@property(retain,readonly) NSString * fontName;
 @property(readonly) float lineHeight;
 @property(readonly) float pointSize;
 @property(readonly) float xHeight;
@@ -19,17 +21,18 @@
 + (float)buttonFontSize;
 + (id)familyNames;
 + (id)fontNamesForFamilyName:(id)arg1;
-+ (id)fontWithFamilyName:(id)arg1 traits:(NSInteger)arg2 size:(float)arg3;
++ (id)fontWithFamilyName:(id)arg1 traits:(int)arg2 size:(float)arg3;
 + (id)fontWithMarkupDescription:(id)arg1;
-+ (id)fontWithName:(id)arg1 size:(float)arg2 traits:(NSInteger)arg3;
++ (id)fontWithName:(id)arg1 size:(float)arg2 traits:(int)arg3;
 + (id)fontWithName:(id)arg1 size:(float)arg2;
 + (id)italicSystemFontOfSize:(float)arg1;
 + (float)labelFontSize;
 + (float)smallSystemFontSize;
-+ (id)systemFontOfSize:(float)arg1 traits:(NSInteger)arg2;
++ (id)systemFontOfSize:(float)arg1 traits:(int)arg2;
 + (id)systemFontOfSize:(float)arg1;
 + (float)systemFontSize;
 
+- (struct __CTFont { }*)_gkCTFont;
 - (float)ascender;
 - (float)capHeight;
 - (Class)classForCoder;
@@ -40,7 +43,7 @@
 - (id)fontName;
 - (id)fontWithSize:(float)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFamilyName:(id)arg1 traits:(NSInteger)arg2 size:(float)arg3;
+- (id)initWithFamilyName:(id)arg1 traits:(int)arg2 size:(float)arg3;
 - (id)initWithMarkupDescription:(id)arg1;
 - (id)initWithName:(id)arg1 size:(float)arg2;
 - (BOOL)isFixedPitch;
@@ -49,7 +52,7 @@
 - (float)lineHeight;
 - (id)markupDescription;
 - (float)pointSize;
-- (NSInteger)traits;
+- (int)traits;
 - (float)xHeight;
 
 @end

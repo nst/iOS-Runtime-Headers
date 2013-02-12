@@ -2,25 +2,27 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonIconImageView, ABStyleProvider, NSArray;
+@class <ABStyleProvider>, ABPersonIconImageView, NSArray;
 
 @interface ABMemberCell : UITableViewCell {
     BOOL _drawsComponentsRTL;
-    NSInteger _highlightIndex;
+    int _highlightIndex;
     BOOL _isGroup;
     void *_member;
     NSArray *_namePieces;
     ABPersonIconImageView *_personImageView;
-    ABStyleProvider *_styleProvider;
+    <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) <ABStyleProvider> *styleProvider;
 @property BOOL shouldPickBestImage;
 @property BOOL shouldShowImage;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 + (void)_initializeSafeCategory;
 
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_drawText:(id)arg1 withColor:(id)arg2 shadowColor:(id)arg3 shadowOffset:(struct CGSize { float x1; float x2; })arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5 forWidth:(float)arg6 withFont:(id)arg7 lineBreakMode:(int)arg8;
+- (struct CGSize { float x1; float x2; })_drawText:(id)arg1 withColor:(id)arg2 shadowColor:(id)arg3 shadowOffset:(struct CGSize { float x1; float x2; })arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5 withFont:(id)arg6;
 - (id)_scriptingInfo;
 - (id)accessibilityLabel;
 - (id)boldFont;

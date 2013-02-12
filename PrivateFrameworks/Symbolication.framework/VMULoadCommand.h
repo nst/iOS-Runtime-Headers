@@ -4,7 +4,7 @@
 
 @interface VMULoadCommand : NSObject {
     unsigned long long _cmdSize;
-    NSUInteger _command;
+    unsigned int _command;
 }
 
 + (id)loadCommandWithMemory:(id)arg1;

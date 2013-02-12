@@ -6,6 +6,6 @@
 }
 
 - (void)main;
-- (NSInteger)type;
+- (int)type;
 
 @end

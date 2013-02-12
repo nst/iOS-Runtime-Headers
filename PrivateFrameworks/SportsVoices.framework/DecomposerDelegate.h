@@ -5,8 +5,8 @@
 @class NSDictionary;
 
 @interface DecomposerDelegate : NSObject <DecomposerDelegateProtocol> {
-    NSDictionary *overridesForParts;
-    NSDictionary *overridesForWhole;
+    NSDictionary *_overridesForParts;
+    NSDictionary *_overridesForWhole;
 }
 
 - (void)dealloc;

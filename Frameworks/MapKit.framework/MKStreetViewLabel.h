@@ -3,10 +3,10 @@
  */
 
 @interface MKStreetViewLabel : NSObject {
-    NSUInteger texture;
+    unsigned int texture;
 }
 
 - (void)dealloc;
-- (id)initWithBytes:(char *)arg1 width:(NSUInteger)arg2 height:(NSUInteger)arg3;
+- (id)initWithBytes:(char *)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3;
 
 @end

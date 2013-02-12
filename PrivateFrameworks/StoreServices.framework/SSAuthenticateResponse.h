@@ -6,18 +6,18 @@
 
 @interface SSAuthenticateResponse : NSObject {
     SSAccount *_authenticatedAccount;
-    NSInteger _responseType;
+    int _responseType;
 }
 
-@property(retain) SSAccount *authenticatedAccount;
-@property NSInteger authenticateResponseType;
+@property int authenticateResponseType;
+@property(retain) SSAccount * authenticatedAccount;
 
-- (NSInteger)authenticateResponseType;
+- (int)authenticateResponseType;
 - (id)authenticatedAccount;
 - (id)copyPropertyListEncoding;
 - (void)dealloc;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (void)setAuthenticateResponseType:(NSInteger)arg1;
+- (void)setAuthenticateResponseType:(int)arg1;
 - (void)setAuthenticatedAccount:(id)arg1;
 
 @end

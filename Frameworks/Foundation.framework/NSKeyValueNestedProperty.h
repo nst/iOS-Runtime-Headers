@@ -16,7 +16,7 @@
 
 - (void)_addDependentValueKey:(id)arg1;
 - (void)_givenPropertiesBeingInitialized:(struct __CFSet { }*)arg1 getAffectingProperties:(id)arg2;
-- (id)_initWithContainerClass:(id)arg1 keyPath:(id)arg2 firstDotIndex:(NSUInteger)arg3 propertiesBeingInitialized:(struct __CFSet { }*)arg4;
+- (id)_initWithContainerClass:(id)arg1 keyPath:(id)arg2 firstDotIndex:(unsigned int)arg3 propertiesBeingInitialized:(struct __CFSet { }*)arg4;
 - (Class)_isaForAutonotifying;
 - (id)_keyPathIfAffectedByValueForKey:(id)arg1 exactMatch:(BOOL*)arg2;
 - (id)_keyPathIfAffectedByValueForMemberOfKeys:(id)arg1;

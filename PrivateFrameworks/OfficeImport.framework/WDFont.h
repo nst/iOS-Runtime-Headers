@@ -5,28 +5,28 @@
 @class NSString;
 
 @interface WDFont : NSObject <NSCopying> {
-    NSInteger mCharacterSet;
-    NSInteger mFontFamily;
+    int mCharacterSet;
+    int mFontFamily;
     NSString *mName;
-    NSInteger mPitch;
+    int mPitch;
     NSString *mSecondName;
 }
 
-- (NSInteger)characterSet;
+- (int)characterSet;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSInteger)fontFamily;
-- (NSUInteger)hash;
+- (int)fontFamily;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (NSInteger)pitch;
+- (int)pitch;
 - (id)secondName;
-- (void)setCharacterSet:(NSInteger)arg1;
-- (void)setFontFamily:(NSInteger)arg1;
+- (void)setCharacterSet:(int)arg1;
+- (void)setFontFamily:(int)arg1;
 - (void)setName:(id)arg1;
-- (void)setPitch:(NSInteger)arg1;
+- (void)setPitch:(int)arg1;
 - (void)setSecondName:(id)arg1;
 
 @end

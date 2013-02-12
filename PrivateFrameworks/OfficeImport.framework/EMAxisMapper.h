@@ -2,17 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EMAxisMapper : CMMapper {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
 }
 
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)centerLabels;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLogarithmic;
+- (bool)centerLabels;
+- (bool)isLogarithmic;
 - (id)label;
 - (id)labels;
 - (float)maxValue;
@@ -21,7 +15,7 @@
 - (struct CGColor { }*)strokeColor;
 - (float)strokeWidth;
 - (struct CGColor { }*)textColor;
-- (NSUInteger)type;
+- (unsigned int)type;
 - (float)unit;
 - (id)values;
 

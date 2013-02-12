@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableDictionary;
+@class NSDictionary, NSMutableDictionary;
 
 @interface MCRestrictionsPayload : MCPayload {
     NSMutableDictionary *_restrictions;
 }
 
-@property(readonly) NSDictionary *restrictions;
+@property(readonly) NSDictionary * restrictions;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (id)_defaultMediaSettings;

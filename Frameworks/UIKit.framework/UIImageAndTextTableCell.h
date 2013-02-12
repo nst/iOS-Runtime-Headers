@@ -13,13 +13,13 @@
 
 - (id)_getTitleColor;
 - (id)_scriptingInfo;
-- (NSInteger)alignment;
+- (int)alignment;
 - (void)dealloc;
 - (id)iconImageView;
 - (struct CGPoint { float x1; float x2; })iconInset;
 - (id)image;
 - (void)layoutSubviews;
-- (void)setAlignment:(NSInteger)arg1;
+- (void)setAlignment:(int)arg1;
 - (void)setImage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;

@@ -9,8 +9,8 @@
 @interface AVPlayerPeriodicCaller : AVPlayerTimelyCaller {
     struct { 
         long long value; 
-        NSInteger timescale; 
-        NSUInteger flags; 
+        int timescale; 
+        unsigned int flags; 
         long long epoch; 
     id _block;
     struct OpaqueFigPlaybackItem { } *_figPlaybackItem;
@@ -23,7 +23,7 @@
 - (void)_stopRespondingToPlayerStateChanges;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithPlayer:(id)arg1 interval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg2 queue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
+- (id)initWithPlayer:(id)arg1 interval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
 - (void)invalidate;
 - (void)itemTimeJumped;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSArray;
+
 @interface MPMediaQueryMutableSectionInfo : MPMediaQuerySectionInfo {
 }
 
-@property(copy) NSArray *sectionIndexTitles;
+@property(copy) NSArray * sectionIndexTitles;
 
-- (void)addSectionWithHeaderTitle:(id)arg1 sectionIndexTitleIndex:(NSUInteger)arg2 count:(NSUInteger)arg3;
+- (void)addSectionWithHeaderTitle:(id)arg1 sectionIndexTitleIndex:(unsigned int)arg2 count:(unsigned int)arg3;
 
 @end

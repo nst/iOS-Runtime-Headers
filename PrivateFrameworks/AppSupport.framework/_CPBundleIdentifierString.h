@@ -13,9 +13,9 @@
 - (id)_initWithExecutablePath:(id)arg1;
 - (BOOL)_isProcessName;
 - (void)_loadBundleIdentifierOrProcessName;
-- (unsigned short)characterAtIndex:(NSUInteger)arg1;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
-- (NSUInteger)length;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)length;
 
 @end

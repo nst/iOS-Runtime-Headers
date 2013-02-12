@@ -11,9 +11,9 @@
     BOOL _timedOccurrencesExtendPastRange;
 }
 
-@property(readonly) NSArray *allDayOccurrences;
-@property(readonly) NSArray *occurrences;
-@property(readonly) NSArray *timedOccurrences;
+@property(readonly) NSArray * allDayOccurrences;
+@property(readonly) NSArray * occurrences;
+@property(readonly) NSArray * timedOccurrences;
 @property(readonly) BOOL timedOccurrencesExtendPastRange;
 
 - (id)allDayOccurrences;

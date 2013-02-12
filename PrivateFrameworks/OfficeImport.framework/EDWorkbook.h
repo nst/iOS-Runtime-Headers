@@ -2,17 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class ECMappingContext, EDProcessors, EDReference, EDResources, EDWarnings, ESDContainer, NSDate, NSMutableArray, NSString, OADDrawingGroup, OADTheme;
 
 @interface EDWorkbook : OCDDocument {
-     /* Encoded args for previous method: @12@0:4B8 */
-     /* Encoded args for previous method: @16@0:4I8B12 */
-    NSUInteger mActiveSheetIndex;
-    NSUInteger mDateBase;
+    unsigned int mActiveSheetIndex;
+    unsigned int mDateBase;
     NSDate *mDateBaseDate;
     OADDrawingGroup *mDrawingGroup;
     ESDContainer *mEscherDrawingGroup;
@@ -20,7 +14,7 @@
     ECMappingContext *mMappingContext;
     NSMutableArray *mOtherResources;
     EDProcessors *mProcessors;
-    NSUInteger mRealSheetCount;
+    unsigned int mRealSheetCount;
     EDResources *mResources;
     NSMutableArray *mSheets;
     NSString *mTemporaryDirectory;
@@ -30,41 +24,41 @@
 }
 
 - (id)activeSheet;
-- (NSUInteger)activeSheetIndex;
+- (unsigned int)activeSheetIndex;
 - (void)addOtherResources:(id)arg1;
 - (void)addSheet:(id)arg1;
 - (void)applyProcessors;
-- (NSUInteger)dateBase;
+- (unsigned int)dateBase;
 - (id)dateBaseDate;
 - (void)dealloc;
 - (id)drawingGroup;
 - (id)escherDrawingGroup;
 - (id)fileName;
-- (NSUInteger)indexOfSheet:(id)arg1;
-- (NSUInteger)indexOfSheetWithName:(id)arg1;
+- (unsigned int)indexOfSheet:(id)arg1;
+- (unsigned int)indexOfSheetWithName:(id)arg1;
 - (id)init;
 - (id)initWithFileName:(id)arg1;
-- (id)initWithStringOptimization:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (id)initWithStringOptimization:(bool)arg1;
 - (id)mappingContext;
 - (id)processors;
 - (void)reduceMemoryIfPossible;
-- (void)removeWorksheetAtIndex:(NSUInteger)arg1;
+- (void)removeWorksheetAtIndex:(unsigned int)arg1;
 - (id)resources;
 - (void)setActiveSheet:(id)arg1;
-- (void)setActiveSheetIndex:(NSUInteger)arg1;
-- (void)setDateBase:(NSUInteger)arg1;
+- (void)setActiveSheetIndex:(unsigned int)arg1;
+- (void)setDateBase:(unsigned int)arg1;
 - (void)setEscherDrawingGroup:(id)arg1;
 - (void)setMappingContext:(id)arg1;
 - (void)setResources:(id)arg1;
 - (void)setTemporaryDirectory:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setVisibleRange:(id)arg1;
-- (id)sheetAtIndex:(NSUInteger)arg1 loadIfNeeded:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-- (id)sheetAtIndex:(NSUInteger)arg1;
-- (NSUInteger)sheetCount;
+- (id)sheetAtIndex:(unsigned int)arg1 loadIfNeeded:(bool)arg2;
+- (id)sheetAtIndex:(unsigned int)arg1;
+- (unsigned int)sheetCount;
 - (id)temporaryDirectory;
 - (id)theme;
-- (void)trashSheetAtIndex:(NSUInteger)arg1;
+- (void)trashSheetAtIndex:(unsigned int)arg1;
 - (id)visibleRange;
 - (id)warnings;
 - (id)workbookName;

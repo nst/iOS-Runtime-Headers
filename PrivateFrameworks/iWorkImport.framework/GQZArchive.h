@@ -19,12 +19,12 @@
 - (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (BOOL)isEncrypted;
-- (struct GQZEndOfCentralDirectory { NSUInteger x1; long long x2; long long x3; })readEndOfCentralDirectory;
+- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readEndOfCentralDirectory;
 - (void)readEntries;
 - (void)readExtraFieldFromBuffer:(const char *)arg1 size:(unsigned long)arg2 entry:(id)arg3;
 - (id)readFilenameFromBuffer:(const char *)arg1 size:(unsigned long)arg2;
-- (struct GQZEndOfCentralDirectory { NSUInteger x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromOffset:(long long)arg1;
-- (struct GQZEndOfCentralDirectory { NSUInteger x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryWithEocdOffset:(long long)arg1;
+- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromOffset:(long long)arg1;
+- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryWithEocdOffset:(long long)arg1;
 - (const char *)searchForEndOfCentralDirectoryOffset:(long long*)arg1;
 
 @end

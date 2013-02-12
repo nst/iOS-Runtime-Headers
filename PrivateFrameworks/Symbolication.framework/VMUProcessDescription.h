@@ -6,13 +6,13 @@
 
 @interface VMUProcessDescription : NSObject {
     struct _CSTypeRef { 
-        NSUInteger _opaque_1; 
-        NSUInteger _opaque_2; 
+        unsigned int _opaque_1; 
+        unsigned int _opaque_2; 
     NSDictionary *_binaryImageHints;
     BOOL _binaryImagePostProcessingComplete;
     NSMutableArray *_binaryImages;
     NSDictionary *_buildVersionDictionary;
-    NSInteger _cpuType;
+    int _cpuType;
     NSCalendarDate *_date;
     unsigned long long _executableLoadAddress;
     NSString *_executablePath;
@@ -24,48 +24,51 @@
     NSDictionary *_osVersionDictionary;
     NSString *_parentExecutablePath;
     NSString *_parentProcessName;
-    NSInteger _pid;
-    NSInteger _ppid;
+    int _pid;
+    int _ppid;
     NSString *_processName;
     BOOL _processNameNeedsCorrection;
     NSArray *_sortedBinaryImages;
     } _symbolicator;
-    NSUInteger _task;
+    unsigned int _task;
     NSArray *_unreadableBinaryImagePaths;
 }
 
+- (id)_binaryImagesDescriptionForRanges:(id)arg1;
 - (id)_buildInfoDescription;
 - (id)_buildVersionDictionary;
 - (id)_bundleLock;
 - (id)_cpuTypeDescription;
-- (void)_extractBinaryImageInfoFromSymbolOwner:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg1;
-- (double)_extractDyldInfoFromSymbolOwner:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg1 withNonContiguousMemory:(id)arg2;
-- (id)_extractInfoPlistFromSymbolOwner:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg1 withNonContiguousMemory:(id)arg2;
+- (void)_extractBinaryImageInfoFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
+- (double)_extractDyldInfoFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1 withNonContiguousMemory:(id)arg2;
+- (id)_extractInfoPlistFromSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1 withNonContiguousMemory:(id)arg2;
 - (id)_osVersionDictionary;
+- (id)_rangesOfBinaryImages:(id)arg1 forBacktraces:(id)arg2;
 - (id)_readDataFromMemory:(id)arg1 atAddress:(unsigned long long)arg2 size:(unsigned long)arg3;
 - (id)_sanitizeVersion:(id)arg1;
 - (id)_systemVersionDescription;
-- (id)binaryImageDictionaryForAddress:(NSUInteger)arg1;
+- (id)binaryImageDictionaryForAddress:(unsigned int)arg1;
 - (id)binaryImages;
 - (id)binaryImagesDescription;
+- (id)binaryImagesDescriptionForBacktraces:(id)arg1;
 - (id)bundleIdentifier;
-- (NSInteger)cpuType;
+- (int)cpuType;
 - (id)date;
 - (id)dateAndVersionDescription;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (id)executablePath;
-- (id)initWithPid:(NSInteger)arg1 orTask:(NSUInteger)arg2;
+- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2;
 - (BOOL)isAppleApplication;
 - (BOOL)isTranslated;
 - (id)parentProcessName;
-- (NSInteger)pid;
+- (int)pid;
 - (id)processDescriptionHeader;
 - (id)processIdentifier;
 - (id)processName;
 - (id)processVersion;
 - (id)processVersionDictionary;
-- (NSUInteger)task;
+- (unsigned int)task;
 
 @end

@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GQDTTable;
 
 @interface GQHTableState : NSObject {
@@ -13,39 +9,37 @@
             unsigned short *_M_start; 
             unsigned short *_M_finish; 
             unsigned short *_M_end_of_storage; 
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+    boolmSplitTable;
         } x1; } *mCellCountInColumns;
     double mCurrentTablePosition;
-    NSInteger mGroupLevel;
+    int mGroupLevel;
     double mLastAttachmentPosition;
     double mOriginalTableHeight;
-    NSInteger mPrevColumnIndex;
-    NSInteger mPrevRowIndex;
+    int mPrevColumnIndex;
+    int mPrevRowIndex;
     long mSplitTableIndex;
     GQDTTable *mTable;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mSplitTable;
 }
 
 - (void)addRowHeight:(float)arg1;
 - (struct vector<short unsigned int,std::allocator<short unsigned int> > { struct _Vector_impl { unsigned short *x_1_1_1; unsigned short *x_1_1_2; unsigned short *x_1_1_3; } x1; }*)cellCountInColumns;
 - (double)currentTablePosition;
 - (void)dealloc;
-- (NSInteger)groupLevel;
+- (int)groupLevel;
 - (id)init;
 - (double)lastAttachmentPosition;
 - (long)nextSplitTableIndex;
 - (double)originalTableHeight;
-- (NSInteger)prevColumnIndex;
-- (NSInteger)prevRowIndex;
-- (void)setGroupLevel:(NSInteger)arg1;
+- (int)prevColumnIndex;
+- (int)prevRowIndex;
+- (void)setGroupLevel:(int)arg1;
 - (void)setLastAttachmentPosition:(double)arg1;
 - (void)setOriginalTableHeight:(double)arg1;
-- (void)setPrevRowIndex:(NSInteger)arg1 columnIndex:(NSInteger)arg2;
-- (void)setSplitTable:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setPrevRowIndex:(int)arg1 columnIndex:(int)arg2;
+- (void)setSplitTable:(bool)arg1;
 - (void)setSplitTableIndex:(long)arg1;
 - (void)setTable:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)splitTable;
+- (bool)splitTable;
 - (id)table;
 
 @end

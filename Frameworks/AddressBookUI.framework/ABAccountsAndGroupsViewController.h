@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABAccountsAndGroupDataSource;
+@class ABAccountsAndGroupDataSource, UITableView;
 
 @interface ABAccountsAndGroupsViewController : ABAbstractViewController <UITableViewDelegate> {
     ABAccountsAndGroupDataSource *_dataSource;
@@ -10,13 +10,14 @@
     BOOL _tableViewNeedsReloadAfterResume;
 }
 
-@property(readonly) ABAccountsAndGroupDataSource *dataSource;
-@property(readonly) UITableView *tableView;
+@property(readonly) ABAccountsAndGroupDataSource * dataSource;
 @property BOOL hidesSearchableStores;
+@property(readonly) UITableView * tableView;
 
 - (void)_applyAccessibilityFontChanges;
+- (void)_applyStylesToTableView:(id)arg1;
 - (void)_showMembersWithModel:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
-- (NSInteger)abViewControllerType;
+- (int)abViewControllerType;
 - (void)accessibilityLargeTextDidChange;
 - (void)applicationDidResume;
 - (void)cancel:(id)arg1;
@@ -26,7 +27,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (BOOL)hidesSearchableStores;
-- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
+- (void)iTunesSyncHasCompleted:(int)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)initWithModel:(id)arg1;
 - (void)loadView;
@@ -37,14 +38,15 @@
 - (void)reselectLastSelectedCellIfNeeded;
 - (void)setHidesSearchableStores:(BOOL)arg1;
 - (void)setModel:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
 - (BOOL)shouldShowGroups;
 - (void)showMembersOfGroup:(void*)arg1 animate:(BOOL)arg2;
 - (void)showMembersOfGroupWrapper:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
 - (void)showMembersOfGroupWrapper:(id)arg1 animate:(BOOL)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView;
 - (void)updateNavigationButtons;
 - (void)viewDidAppear:(BOOL)arg1;

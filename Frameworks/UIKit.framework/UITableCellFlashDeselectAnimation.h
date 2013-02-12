@@ -3,7 +3,7 @@
  */
 
 @interface UITableCellFlashDeselectAnimation : UIAnimation {
-    NSInteger _flashCount;
+    int _flashCount;
 }
 
 - (void)setProgress:(float)arg1;

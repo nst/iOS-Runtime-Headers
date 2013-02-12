@@ -9,6 +9,7 @@
     MPAudioDeviceController *_audioDeviceController;
     BOOL _hidesRouteLabelWhenNoRouteChoice;
     UIButton *_routeButton;
+    BOOL _routeDiscoveryEnabled;
     UILabel *_routeLabel;
     MPAudioVideoRoutingPopoverController *_routePopoverController;
     BOOL _showingButton;
@@ -16,7 +17,7 @@
     BOOL _showingSlider;
     BOOL _showsRouteButton;
     BOOL _showsVolumeSlider;
-    NSInteger _style;
+    int _style;
     MPVolumeSlider *_volumeSlider;
     BOOL _volumeSliderShrinksFromBothEnds;
 }

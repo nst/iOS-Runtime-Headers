@@ -5,10 +5,11 @@
 @class AVCaptureSession;
 
 @interface AVCaptureDeviceInternal : NSObject {
-    NSInteger _configLockPid;
-    NSInteger _configLockRefCount;
-    NSInteger _openRefCount;
+    int _configLockPid;
+    int _configLockRefCount;
+    int _openRefCount;
     AVCaptureSession *_session;
+    BOOL _subjectMonitoringEnabled;
     BOOL _usingDevice;
 }
 

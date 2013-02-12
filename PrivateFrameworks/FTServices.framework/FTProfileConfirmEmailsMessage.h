@@ -9,8 +9,8 @@
     NSString *_vettingToken;
 }
 
-@property(copy) NSString *emailAddress;
-@property(copy) NSString *vettingToken;
+@property(copy) NSString * emailAddress;
+@property(copy) NSString * vettingToken;
 
 - (id)bagKey;
 - (void)dealloc;

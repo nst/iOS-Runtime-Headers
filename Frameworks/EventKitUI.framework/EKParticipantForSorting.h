@@ -11,7 +11,7 @@
     EKParticipant *_participant;
 }
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)displayName;
 - (id)firstName;

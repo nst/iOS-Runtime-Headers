@@ -8,11 +8,11 @@
 + (void)_initializeSafeCategory;
 
 - (id)accessibilityContainer;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (BOOL)accessibilityIsIgnored;
 - (id)accessibilityObject;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 
 @end

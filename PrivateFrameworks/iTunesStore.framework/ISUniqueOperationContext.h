@@ -11,7 +11,7 @@
 
 - (void)addOperation:(id)arg1;
 - (BOOL)containsOperation:(id)arg1;
-- (NSUInteger)countOfOperations;
+- (unsigned int)countOfOperations;
 - (void)dealloc;
 - (id)init;
 - (void)removeOperation:(id)arg1;

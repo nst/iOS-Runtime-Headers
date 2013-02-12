@@ -10,11 +10,11 @@
     UITableView *_table;
 }
 
-@property(copy) NSString *eventLocation;
-@property(copy) NSString *eventTitle;
+@property(copy) NSString * eventLocation;
+@property(copy) NSString * eventTitle;
 
 - (void)_textFieldEndEditingOnReturn:(id)arg1;
-- (id)_textViewForRow:(NSInteger)arg1;
+- (id)_textViewForRow:(int)arg1;
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;
 - (id)eventLocation;
@@ -24,17 +24,17 @@
 - (BOOL)resignFirstResponder;
 - (void)setEventLocation:(id)arg1;
 - (void)setEventTitle:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (BOOL)tableView:(id)arg1 wantsHeaderForSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 wantsHeaderForSection:(int)arg2;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

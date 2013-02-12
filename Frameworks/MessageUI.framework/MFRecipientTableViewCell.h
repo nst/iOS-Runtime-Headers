@@ -16,7 +16,7 @@
 
 - (id)accessibilityLabel;
 - (void)dealloc;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)recipient;
 - (void)setRecipient:(id)arg1;
 

@@ -8,24 +8,15 @@
     ML3MusicLibrary *_library3;
 }
 
-+ (void)_dbSaveCoalesceBegin;
-+ (void)_dbSaveCoalesceEnd;
 + (void)_dbSyncAlreadyActive;
 + (void)_dbSyncDidEnd;
 + (void)_dbSyncWillBegin;
-+ (id)geniusDatabasePath;
-+ (Class)implClassForEvaluatingQuery:(id)arg1;
-+ (BOOL)isPersistentIDForPlaylist:(long long)arg1;
 + (void)recursiveEvaluationLockLock;
 + (void)recursiveEvaluationLockUnlock;
 + (unsigned long long)syncGenerationID;
 
 - (void)addStringToSortMap:(id)arg1;
-- (void)beginPreloadingItems;
 - (void)dealloc;
-- (void)endPreloadingItems;
-- (id)getRepresentativeTrackForAlbumPID:(unsigned long long)arg1;
 - (id)initWithBasePath:(id)arg1;
-- (void)mediaFolderPathDidChangeNotification:(id)arg1;
 
 @end

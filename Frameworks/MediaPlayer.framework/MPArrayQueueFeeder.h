@@ -8,15 +8,15 @@
     NSArray *_queueItems;
 }
 
-@property(readonly) NSArray *items;
+@property(readonly) NSArray * items;
 
-- (double)bookmarkTimeForIndex:(NSUInteger)arg1;
-- (id)copyRawItemAtIndex:(NSUInteger)arg1;
+- (double)bookmarkTimeForIndex:(unsigned int)arg1;
+- (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
 - (id)items;
-- (NSUInteger)numberOfPaths;
-- (id)pathAtIndex:(NSUInteger)arg1;
-- (id)playbackInfoAtIndex:(NSUInteger)arg1;
+- (unsigned int)numberOfPaths;
+- (id)pathAtIndex:(unsigned int)arg1;
+- (id)playbackInfoAtIndex:(unsigned int)arg1;
 
 @end

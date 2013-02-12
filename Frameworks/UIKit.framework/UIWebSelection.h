@@ -15,13 +15,13 @@
     UITextSelection *_textSelection;
 }
 
-@property(retain) <UIWebSelectionBlock> *base;
-@property(readonly) UIWebDocumentView *documentView;
-@property(retain) <UIWebSelectionBlock> *extent;
-@property(readonly) UITextSelection *textSelection;
-@property(readonly) CGRect boundingRect;
-@property CGSize desiredSize;
+@property(retain) <UIWebSelectionBlock> * base;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } boundingRect;
+@property struct CGSize { float width; float height; } desiredSize;
+@property(readonly) UIWebDocumentView * documentView;
+@property(retain) <UIWebSelectionBlock> * extent;
 @property(getter=isTextOnly,readonly) BOOL textOnly;
+@property(readonly) UITextSelection * textSelection;
 @property(readonly) BOOL valid;
 
 - (void)adjustSelectionFromPoint:(struct CGPoint { float x1; float x2; })arg1 towardsPoint:(struct CGPoint { float x1; float x2; })arg2 withNewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
@@ -36,25 +36,25 @@
 - (void)dealloc;
 - (id)description;
 - (struct CGSize { float x1; float x2; })desiredSize;
-- (float)distanceBetweenFirstRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 second:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 edge:(NSInteger)arg3;
+- (float)distanceBetweenFirstRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 second:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 edge:(int)arg3;
 - (id)documentView;
 - (id)domDocument;
 - (id)duplicate;
 - (id)elementAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)extent;
-- (void)growFromEdge:(NSInteger)arg1;
+- (void)growFromEdge:(int)arg1;
 - (void)growSelectionTowardsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithDocumentView:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToSelection:(id)arg1;
 - (BOOL)isTextOnly;
-- (void)moveEdge:(NSInteger)arg1 outwards:(BOOL)arg2;
+- (void)moveEdge:(int)arg1 outwards:(BOOL)arg2;
 - (void)selectionChanged;
 - (void)setBase:(id)arg1;
 - (void)setDesiredSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setExtent:(id)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)shrinkFromEdge:(NSInteger)arg1;
+- (void)shrinkFromEdge:(int)arg1;
 - (void)shrinkSelectionFromPoint:(struct CGPoint { float x1; float x2; })arg1 towardsPoint:(struct CGPoint { float x1; float x2; })arg2 withNewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)textRepresentation;
 - (id)textSelection;

@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSAuthenticationContext;
+@class <SSAuthenticateRequestDelegate>, SSAuthenticationContext;
 
 @interface SSAuthenticateRequest : SSRequest {
     SSAuthenticationContext *_authenticationContext;
 }
 
-@property(readonly) SSAuthenticationContext *authenticationContext;
-@property <SSAuthenticateRequestDelegate> *delegate;
+@property(readonly) SSAuthenticationContext * authenticationContext;
+@property <SSAuthenticateRequestDelegate> * delegate;
 
 - (void)_sendResponseToDelegate:(id)arg1;
 - (id)authenticationContext;

@@ -2,22 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDReference, EDResources, EDWorksheet;
 
 @interface EDColumnInfo : NSObject <NSCopying, EDKeyedObject> {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+    boolmHidden;
     unsigned char mOutlineLevel;
     EDReference *mRange;
     EDResources *mResources;
-    NSUInteger mStyleIndex;
-    NSInteger mWidth;
+    unsigned int mStyleIndex;
+    int mWidth;
     EDWorksheet *mWorksheet;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHidden;
 }
 
 + (id)columnInfoWithResources:(id)arg1 worksheet:(id)arg2;
@@ -25,21 +19,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHidden;
-- (NSUInteger)key;
+- (bool)isHidden;
+- (unsigned int)key;
 - (unsigned char)outlineLevel;
 - (id)range;
-- (void)setHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setOutlineLevel:(unsigned char)arg1;
 - (void)setRange:(id)arg1;
-- (void)setRangeWithFirstColumn:(NSInteger)arg1 lastColumn:(NSInteger)arg2;
+- (void)setRangeWithFirstColumn:(int)arg1 lastColumn:(int)arg2;
 - (void)setStyle:(id)arg1;
-- (void)setStyleIndex:(NSUInteger)arg1;
+- (void)setStyleIndex:(unsigned int)arg1;
 - (void)setWidth:(double)arg1;
-- (void)setWidthInXlUnits:(NSInteger)arg1;
+- (void)setWidthInXlUnits:(int)arg1;
 - (id)style;
-- (NSUInteger)styleIndex;
+- (unsigned int)styleIndex;
 - (double)width;
-- (NSInteger)widthInXlUnits;
+- (int)widthInXlUnits;
 
 @end

@@ -11,8 +11,8 @@
 
 - (struct __CFString { }*)createStringValue;
 - (void)dealloc;
-- (NSInteger)readAttributesForNCell:(struct _xmlTextReader { }*)arg1;
-- (NSInteger)readAttributesForNumberCell:(struct _xmlTextReader { }*)arg1;
+- (int)readAttributesForNCell:(struct _xmlTextReader { }*)arg1;
+- (int)readAttributesForNumberCell:(struct _xmlTextReader { }*)arg1;
 - (double)value;
 
 @end

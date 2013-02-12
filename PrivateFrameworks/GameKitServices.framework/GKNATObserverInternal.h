@@ -10,7 +10,7 @@
     <GKNATObserverDelegate> *_delegate;
     struct __SCDynamicStore { } *_dynamicStore;
     BOOL _fNATCheckQueued;
-    NSInteger _lastReportedNATType;
+    int _lastReportedNATType;
     struct dispatch_group_s { } *_natCheckGroup;
     struct dispatch_queue_s { } *_natCheckQueue;
     BOOL _nonCellularInterfacesOnly;
@@ -19,15 +19,15 @@
     NSRecursiveLock *_xNATCheck;
 }
 
-- (void)NATCheckWithIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1 useCache:(BOOL)arg2;
+- (void)NATCheckWithIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1 useCache:(BOOL)arg2;
 - (void)cacheNATFlags:(id)arg1 forNetwork:(id)arg2;
-- (struct tagCommNATInfo { NSUInteger x1; NSUInteger x2; unsigned short x3[3]; NSUInteger x4; }*)callCommNATTestFromIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
+- (struct tagCommNATInfo { unsigned int x1; unsigned int x2; unsigned short x3[3]; unsigned int x4; }*)callCommNATTestFromIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithOptions:(id)arg1;
 - (id)lookupCachedNATFlagsForNetwork:(id)arg1;
-- (id)nameForNetworkWithIPPort:(struct tagIPPORT { NSInteger x1; BOOL x2[16]; union { NSUInteger x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
+- (id)nameForNetworkWithIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (void)registerForNetworkChanges;
 - (void)release;
 - (void)reportNATType;

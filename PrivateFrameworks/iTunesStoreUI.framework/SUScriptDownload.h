@@ -9,8 +9,8 @@
     NSString *_phase;
 }
 
-@property(getter=_adamID,retain) NSNumber *adamID; /* unknown property attribute: Sset_adamID: */
-@property(getter=_phase,retain) NSString *phase; /* unknown property attribute: Sset_phase: */
+@property(getter=_adamID,setter=set_adamID:,retain) NSNumber * adamID;
+@property(getter=_phase,setter=set_phase:,retain) NSString * phase;
 
 + (id)phaseStringForDownload:(id)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;

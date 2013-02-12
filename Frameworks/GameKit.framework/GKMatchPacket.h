@@ -8,17 +8,17 @@
     unsigned short _checksum;
     NSData *_data;
     unsigned char _packetType;
-    NSUInteger _sequenceNumber;
-    NSUInteger _totalLength;
+    unsigned int _sequenceNumber;
+    unsigned int _totalLength;
     BOOL _valid;
     unsigned char _version;
 }
 
-@property(retain) NSData *data;
 @property unsigned short checksum;
+@property(retain) NSData * data;
 @property unsigned char packetType;
-@property NSUInteger sequenceNumber;
-@property NSUInteger totalLength;
+@property unsigned int sequenceNumber;
+@property unsigned int totalLength;
 @property BOOL valid;
 @property unsigned char version;
 
@@ -29,15 +29,15 @@
 - (id)initWithMessage:(id)arg1;
 - (id)message;
 - (unsigned char)packetType;
-- (NSUInteger)sequenceNumber;
+- (unsigned int)sequenceNumber;
 - (void)setChecksum:(unsigned short)arg1;
 - (void)setData:(id)arg1;
 - (void)setPacketType:(unsigned char)arg1;
-- (void)setSequenceNumber:(NSUInteger)arg1;
-- (void)setTotalLength:(NSUInteger)arg1;
+- (void)setSequenceNumber:(unsigned int)arg1;
+- (void)setTotalLength:(unsigned int)arg1;
 - (void)setValid:(BOOL)arg1;
 - (void)setVersion:(unsigned char)arg1;
-- (NSUInteger)totalLength;
+- (unsigned int)totalLength;
 - (BOOL)valid;
 - (unsigned char)version;
 

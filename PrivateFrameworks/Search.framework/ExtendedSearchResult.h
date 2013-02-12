@@ -6,22 +6,22 @@
 
 @interface ExtendedSearchResult : NSObject <SPSearchResult> {
     void *_content;
-    NSUInteger _domain;
+    unsigned int _domain;
     NSString *_query;
     NSString *_resultDisplayID;
-    NSUInteger _resultDomain;
+    unsigned int _resultDomain;
 }
 
 - (const char *)URLUTF8String;
 - (const char *)auxiliarySubtitleUTF8String;
 - (const char *)auxiliaryTitleUTF8String;
 - (void)dealloc;
-- (NSInteger)domain;
+- (int)domain;
 - (unsigned long long)identifier;
-- (id)initWithContent:(void*)arg1 inDomain:(NSUInteger)arg2 query:(id)arg3;
-- (id)initWithContent:(void*)arg1 inDomain:(NSUInteger)arg2 withResultDomain:(NSUInteger)arg3 resultDisplayIdentifier:(id)arg4 query:(id)arg5;
+- (id)initWithContent:(void*)arg1 inDomain:(unsigned int)arg2 query:(id)arg3;
+- (id)initWithContent:(void*)arg1 inDomain:(unsigned int)arg2 withResultDomain:(unsigned int)arg3 resultDisplayIdentifier:(id)arg4 query:(id)arg5;
 - (const char *)resultDisplayIdentifierUTF8String;
-- (NSInteger)resultDomain;
+- (int)resultDomain;
 - (const char *)subtitleUTF8String;
 - (const char *)summaryUTF8String;
 - (const char *)titleUTF8String;

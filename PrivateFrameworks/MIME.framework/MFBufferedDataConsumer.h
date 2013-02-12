@@ -6,12 +6,12 @@
 
 @interface MFBufferedDataConsumer : NSObject <MFCollectingDataConsumer> {
     NSMutableData *_data;
-    NSInteger _fd;
+    int _fd;
     NSString *_path;
     NSArray *_stack;
 }
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;

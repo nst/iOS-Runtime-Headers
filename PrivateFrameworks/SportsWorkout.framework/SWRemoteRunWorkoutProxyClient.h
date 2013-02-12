@@ -10,7 +10,7 @@
     NSString *_goalType;
     BOOL _hasEverStarted;
     BOOL _hasPowerSong;
-    NSInteger _musicSelection;
+    int _musicSelection;
     NSString *_powerSongName;
     NSString *_presetGoal;
     NSString *_sensorSearchState;
@@ -20,17 +20,17 @@
     NSString *_workoutState;
 }
 
-@property(readonly) NSString *currentSongName;
-@property(readonly) NSString *goalType;
-@property(readonly) NSString *powerSongName;
-@property(readonly) NSString *presetGoal;
-@property(readonly) NSString *sensorSearchState;
-@property(readonly) NSDictionary *workoutData;
-@property(readonly) NSString *workoutState;
+@property(readonly) NSString * currentSongName;
 @property(readonly) float goal;
+@property(readonly) NSString * goalType;
 @property(readonly) BOOL hasPowerSong;
-@property(readonly) NSInteger musicSelection;
+@property(readonly) int musicSelection;
+@property(readonly) NSString * powerSongName;
+@property(readonly) NSString * presetGoal;
+@property(readonly) NSString * sensorSearchState;
 @property(readonly) BOOL shouldControlMusic;
+@property(readonly) NSDictionary * workoutData;
+@property(readonly) NSString * workoutState;
 
 - (void)_checkinWithServer;
 - (void)_handlePropertyUpdateNotification:(id)arg1;
@@ -49,7 +49,7 @@
 - (id)goalType;
 - (BOOL)hasPowerSong;
 - (id)init;
-- (NSInteger)musicSelection;
+- (int)musicSelection;
 - (void)pauseMusic;
 - (void)pauseWorkout;
 - (void)playMusic;

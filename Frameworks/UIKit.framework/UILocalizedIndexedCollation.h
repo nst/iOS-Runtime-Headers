@@ -13,16 +13,16 @@
     NSString *_transform;
 }
 
-@property(readonly) NSArray *sectionIndexTitles;
-@property(readonly) NSArray *sectionTitles;
+@property(readonly) NSArray * sectionIndexTitles;
+@property(readonly) NSArray * sectionTitles;
 
 + (id)collationWithDictionary:(id)arg1;
 + (id)currentCollation;
 
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-- (NSInteger)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;
-- (NSInteger)sectionForSectionIndexTitleAtIndex:(NSInteger)arg1;
+- (int)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;
+- (int)sectionForSectionIndexTitleAtIndex:(int)arg1;
 - (id)sectionIndexTitles;
 - (id)sectionTitles;
 - (id)sortedArrayFromArray:(id)arg1 collationStringSelector:(SEL)arg2;

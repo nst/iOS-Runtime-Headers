@@ -13,11 +13,11 @@
 
 - (void)_parseDataWithContentsOfFile:(id)arg1;
 - (id)availableFormats;
-- (id)bakedThumbnailsForFormat:(NSInteger)arg1;
+- (id)bakedThumbnailsForFormat:(int)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithContentsOfFile:(id)arg1;
 - (void)saveToFile:(id)arg1;
-- (void)setBakedThumbnails:(id)arg1 forFormat:(NSInteger)arg2;
+- (void)setBakedThumbnails:(id)arg1 forFormat:(int)arg2;
 
 @end

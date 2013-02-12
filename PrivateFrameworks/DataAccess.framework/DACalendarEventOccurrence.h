@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+@class DACalendarEvent, NSDate;
+
 @interface DACalendarEventOccurrence : DACalendarObject {
 }
 
-@property(readonly) NSDate *date;
-@property(readonly) DACalendarEvent *event;
 @property(readonly) BOOL canBeDetached;
+@property(readonly) NSDate * date;
+@property(readonly) DACalendarEvent * event;
 
 - (BOOL)canBeDetached;
 - (id)date;

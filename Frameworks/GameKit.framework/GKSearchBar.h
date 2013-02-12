@@ -8,7 +8,7 @@
     GKUITheme *_theme;
 }
 
-@property(retain) GKUITheme *theme;
+@property(retain) GKUITheme * theme;
 
 + (id)searchBarWithTheme:(id)arg1;
 

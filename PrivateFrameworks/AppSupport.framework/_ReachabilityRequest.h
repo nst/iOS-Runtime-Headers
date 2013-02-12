@@ -5,7 +5,7 @@
 @class NSLock, NSString;
 
 @interface _ReachabilityRequest : NSObject {
-    NSUInteger _flags;
+    unsigned int _flags;
     NSString *_hostname;
     BOOL _isReachable;
     NSLock *_lock;
@@ -14,7 +14,7 @@
     BOOL _receivedAtLeastOneCallback;
 }
 
-@property NSString *hostname;
+@property NSString * hostname;
 
 - (void)addObserver:(id)arg1 selector:(SEL)arg2;
 - (void)dealloc;
@@ -22,7 +22,7 @@
 - (BOOL)hasObservers;
 - (id)hostname;
 - (id)initWithHostname:(id)arg1;
-- (void)reachabilityChangedWithFlags:(NSUInteger)arg1;
+- (void)reachabilityChangedWithFlags:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)setHostname:(id)arg1;
 

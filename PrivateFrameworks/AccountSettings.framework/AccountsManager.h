@@ -7,7 +7,7 @@
 @interface AccountsManager : NSObject {
     NSMutableDictionary *_childAccountIDToParentAccountID;
     NSMutableDictionary *_childAccountsByID;
-    NSUInteger _dataVersion;
+    unsigned int _dataVersion;
     NSMutableArray *_orderedTopLevelAccounts;
     NSMutableDictionary *_originalAccountsByID;
     NSArray *_runtimeFixers;
@@ -20,7 +20,7 @@
 + (void)_setShouldSkipNotifications:(BOOL)arg1;
 + (BOOL)accountSettingsNeedsToBeMigrated;
 + (id)createAndLockMigrationLock;
-+ (NSUInteger)currentVersion;
++ (unsigned int)currentVersion;
 + (id)displayNameForGroupOfAccountType:(id)arg1 forBeginningOfSentence:(BOOL)arg2;
 + (id)fullPathToAccountSettingsPlist;
 + (void)killDataAccessIfNecessary;
@@ -29,7 +29,7 @@
 + (void)shouldMigrateOldMailAccounts:(BOOL*)arg1 oldDAAccounts:(BOOL*)arg2 newAccountSettings:(BOOL*)arg3;
 + (void)waitForMigrationToFinish;
 
-- (void)_addNotificationToDictionary:(id)arg1 forChangeType:(NSInteger)arg2 originalProperties:(id)arg3 currentProperties:(id)arg4;
+- (void)_addNotificationToDictionary:(id)arg1 forChangeType:(int)arg2 originalProperties:(id)arg3 currentProperties:(id)arg4;
 - (id)_createRuntimeFixers;
 - (id)_initWithAccountsInfo:(id)arg1;
 - (void)_loadChildrenFromAccount:(id)arg1;
@@ -45,15 +45,16 @@
 - (id)allBasicSyncableAccounts;
 - (id)allMailAccounts;
 - (id)basicAccountsWithTypes:(id)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countOfBasicAccountsWithTypes:(id)arg1;
-- (NSUInteger)dataVersion;
+- (unsigned int)count;
+- (unsigned int)countOfBasicAccountsWithTypes:(id)arg1;
+- (unsigned int)dataVersion;
 - (void)dealloc;
 - (void)deleteAccount:(id)arg1;
 - (void)deleteAccountWithIdentifier:(id)arg1;
 - (id)displayAccountWithSyncIdentifier:(id)arg1;
 - (id)fullAccountWithIdentifier:(id)arg1 loader:(id)arg2;
 - (id)fullDeviceLocalAccount;
+- (BOOL)hasActiveBookmarkDAVChildAccounts;
 - (BOOL)hasActiveCalDAVChildAccounts;
 - (BOOL)hasActiveCardDAVChildAccounts;
 - (BOOL)hasActiveDAMMeAccounts;
@@ -67,7 +68,7 @@
 - (void)replaceAccount:(id)arg1 withAccount:(id)arg2;
 - (void)replaceAccountsWithTypes:(id)arg1 withAccounts:(id)arg2;
 - (void)saveAllAccounts;
-- (void)setDataVersion:(NSUInteger)arg1;
+- (void)setDataVersion:(unsigned int)arg1;
 - (void)setLegacyAccounts:(id)arg1;
 - (id)syncableAccountWithSyncIdentifier:(id)arg1;
 - (void)updateAccount:(id)arg1;

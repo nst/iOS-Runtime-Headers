@@ -2,36 +2,27 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDDataValuesCollection : NSObject {
-     /* Encoded args for previous method: B12@0:4@8 */
-     /* Encoded args for previous method: ^{CHDDataPoint=I{EDValue=i($_611=Bd@Ii)}I}12@0:4I8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: ^{CHDDataPoint=I{EDValue=i($_611=Bd@Ii)}I}12@0:4I8 */
-     /* Encoded args for previous method: B12@0:4^{CHDDataPoint=I{EDValue=i($_611=Bd@Ii)}I}8 */
-    NSUInteger mDataValueCount;
+    boolmContainsStringValue;
+    unsigned int mDataValueCount;
     struct __CFDictionary { } *mIndexToDataValueMap;
     struct __CFData { } *mPackedValues;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mContainsStringValue;
 }
 
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)addDataPoint:(struct CHDDataPoint { NSUInteger x1; struct EDValue { NSInteger x_2_1_1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_2_1; double x_2_2_2; id x_2_2_3; NSUInteger x_2_2_4; NSInteger x_2_2_5; } x_2_1_2; } x2; NSUInteger x3; }*)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)addDataValue:(id)arg1;
+- (bool)addDataPoint:(struct CHDDataPoint { unsigned int x1; struct EDValue { int x_2_1_1; union $_604 { boolx_2_2_1; double x_2_2_2; id x_2_2_3; unsigned int x_2_2_4; int x_2_2_5; } x_2_1_2; } x2; unsigned int x3; }*)arg1;
+- (bool)addDataValue:(id)arg1;
 - (void)cleanup;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)containsStringValue;
-- (NSUInteger)count;
-- (struct CHDDataPoint { NSUInteger x1; struct EDValue { NSInteger x_2_1_1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_2_1; double x_2_2_2; id x_2_2_3; NSUInteger x_2_2_4; NSInteger x_2_2_5; } x_2_1_2; } x2; NSUInteger x3; }*)dataPointAtIndex:(NSUInteger)arg1;
-- (struct CHDDataPoint { NSUInteger x1; struct EDValue { NSInteger x_2_1_1; union $_611 { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_2_1; double x_2_2_2; id x_2_2_3; NSUInteger x_2_2_4; NSInteger x_2_2_5; } x_2_1_2; } x2; NSUInteger x3; }*)dataPointWithIndex:(NSUInteger)arg1;
-- (id)dataValueAtIndex:(NSUInteger)arg1;
-- (id)dataValueWithIndex:(NSUInteger)arg1;
+- (bool)containsStringValue;
+- (unsigned int)count;
+- (struct CHDDataPoint { unsigned int x1; struct EDValue { int x_2_1_1; union $_604 { boolx_2_2_1; double x_2_2_2; id x_2_2_3; unsigned int x_2_2_4; int x_2_2_5; } x_2_1_2; } x2; unsigned int x3; }*)dataPointAtIndex:(unsigned int)arg1;
+- (struct CHDDataPoint { unsigned int x1; struct EDValue { int x_2_1_1; union $_604 { boolx_2_2_1; double x_2_2_2; id x_2_2_3; unsigned int x_2_2_4; int x_2_2_5; } x_2_1_2; } x2; unsigned int x3; }*)dataPointWithIndex:(unsigned int)arg1;
+- (id)dataValueAtIndex:(unsigned int)arg1;
+- (id)dataValueWithIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (void)finishReading;
 - (id)init;
-- (id)initWithDataPointCount:(NSUInteger)arg1;
-- (void)resetWithDataPointCount:(NSUInteger)arg1;
-- (void)setupBufferForValues:(NSUInteger)arg1;
+- (id)initWithDataPointCount:(unsigned int)arg1;
+- (void)resetWithDataPointCount:(unsigned int)arg1;
+- (void)setupBufferForValues:(unsigned int)arg1;
 
 @end

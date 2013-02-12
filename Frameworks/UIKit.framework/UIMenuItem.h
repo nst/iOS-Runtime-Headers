@@ -9,8 +9,8 @@
     NSString *_title;
 }
 
-@property(copy) NSString *title;
 @property SEL action;
+@property(copy) NSString * title;
 
 - (SEL)action;
 - (id)initWithTitle:(id)arg1 action:(SEL)arg2;

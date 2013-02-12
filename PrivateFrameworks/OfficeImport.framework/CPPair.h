@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)first;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithFirst:(id)arg1 andSecond:(id)arg2;
 - (id)initWithFirst:(id)arg1 andSecondPointer:(id)arg2;
 - (id)initWithFirstPointer:(id)arg1 andSecond:(id)arg2;

@@ -9,13 +9,13 @@
     SUSubtitledButton *_button;
     BOOL _hideAccountButton;
     float _rightMargin;
-    NSInteger _style;
+    int _style;
     SULinkControl *_termsAndConditionsControl;
 }
 
 @property BOOL hideAccountButton;
 @property float rightMargin;
-@property NSInteger style;
+@property int style;
 
 + (void)_initializeSafeCategory;
 
@@ -24,11 +24,11 @@
 - (void)_buttonAction:(id)arg1;
 - (void)_clearButtonSelection:(id)arg1;
 - (void)_destroyButton;
-- (NSInteger)_linkStyleForStyle:(NSInteger)arg1;
+- (int)_linkStyleForStyle:(int)arg1;
 - (void)_termsAndConditionsAction:(id)arg1;
 - (id)_termsAndConditionsControl;
 - (void)_updateButton;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)dealloc;
 - (BOOL)hideAccountButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -36,8 +36,8 @@
 - (float)rightMargin;
 - (void)setHideAccountButton:(BOOL)arg1;
 - (void)setRightMargin:(float)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (void)sizeToFit;
-- (NSInteger)style;
+- (int)style;
 
 @end

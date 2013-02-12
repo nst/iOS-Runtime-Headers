@@ -9,8 +9,8 @@
     NSString *mName;
 }
 
-@property(readonly) NSData *data;
-@property(readonly) NSString *name;
+@property(readonly) NSData * data;
+@property(readonly) NSString * name;
 
 + (id)namedDataWithData:(id)arg1 named:(id)arg2;
 

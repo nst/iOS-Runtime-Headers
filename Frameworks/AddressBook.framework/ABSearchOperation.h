@@ -11,24 +11,24 @@
     void *_internalSearchAddressBook;
     NSPredicate *_predicate;
     NSArray *_prefetchProperties;
-    NSUInteger _sortOrdering;
+    unsigned int _sortOrdering;
 }
 
-@property void *addressBook;
-@property void *context;
-@property <ABSearchOperationDelegate> *delegate;
-@property void *internalSearchAddressBook;
-@property(retain) NSPredicate *predicate;
-@property(copy) NSArray *prefetchProperties;
-@property NSUInteger sortOrdering;
+@property void* addressBook;
+@property void* context;
+@property <ABSearchOperationDelegate> * delegate;
+@property void* internalSearchAddressBook;
+@property(retain) NSPredicate * predicate;
+@property(copy) NSArray * prefetchProperties;
+@property unsigned int sortOrdering;
 
-+ (id)personPredicateWithAnyValueForProperty:(NSInteger)arg1 addressBook:(void*)arg2;
++ (id)personPredicateWithAnyValueForProperty:(int)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithGroup:(void*)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameLike:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameLike:(id)arg1 inAccount:(id)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithNameLike:(id)arg1 inGroup:(void*)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithNameLike:(id)arg1 inSource:(void*)arg2 addressBook:(void*)arg3;
-+ (id)personPredicateWithValue:(id)arg1 comparison:(long)arg2 forProperty:(NSInteger)arg3 addressBook:(void*)arg4;
++ (id)personPredicateWithValue:(id)arg1 comparison:(long)arg2 forProperty:(int)arg3 addressBook:(void*)arg4;
 
 - (void)_mainThread_tellDelegateSearchFoundMatch:(void*)arg1;
 - (void*)addressBook;
@@ -48,7 +48,7 @@
 - (void)setInternalSearchAddressBook:(void*)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setPrefetchProperties:(id)arg1;
-- (void)setSortOrdering:(NSUInteger)arg1;
-- (NSUInteger)sortOrdering;
+- (void)setSortOrdering:(unsigned int)arg1;
+- (unsigned int)sortOrdering;
 
 @end

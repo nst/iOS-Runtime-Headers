@@ -10,7 +10,7 @@
     OADStyleMatrix *mStyleMatrix;
 }
 
-@property(retain) OADFontScheme *fontScheme;
+@property(retain) OADFontScheme * fontScheme;
 
 - (id)colorScheme;
 - (void)dealloc;

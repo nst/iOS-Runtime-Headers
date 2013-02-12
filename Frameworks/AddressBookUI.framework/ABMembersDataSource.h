@@ -23,12 +23,12 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property void *addressBook;
-@property <ABMembersDataSourceDelegate> *delegate;
-@property(retain) ABModel *model;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property void* addressBook;
+@property <ABMembersDataSourceDelegate> * delegate;
+@property(retain) ABModel * model;
 @property BOOL shouldPickBestImage;
 @property BOOL shouldShowImages;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (void*)addressBook;
 - (void)createAllDisplayableSectionIndexAndHeaderCaches;
@@ -37,7 +37,7 @@
 - (id)displayableSectionHeaderFromSectionHeader:(id)arg1;
 - (id)displayableSectionIndexFromSectionIndex:(id)arg1;
 - (id)model;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void*)personImageLoadingAddressBook;
 - (id)personImageLoadingCache;
 - (id)personImageLoadingQueue;
@@ -59,9 +59,12 @@
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(NSInteger)arg3;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableView:(id)arg1 frameForSectionIndexGivenProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)titleForHeaderInSection:(int)arg1;
 
 @end

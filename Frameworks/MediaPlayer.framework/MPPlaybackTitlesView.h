@@ -10,13 +10,13 @@
     NSArray *_titles;
 }
 
-@property(retain) NSArray *titles;
 @property BOOL showingLoadingUI;
+@property(retain) NSArray * titles;
 
 + (void)_initializeSafeCategory;
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_addLabel:(NSUInteger)arg1;
+- (id)_addLabel:(unsigned int)arg1;
 - (id)_addLoadingLabel;
 - (void)_layoutLabels;
 - (void)_layoutLoadingUI;

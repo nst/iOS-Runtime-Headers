@@ -8,7 +8,7 @@
     WDText *mText;
 }
 
-- (NSInteger)blockType;
+- (int)blockType;
 - (void)clearProperties;
 - (id)document;
 - (id)init;
@@ -17,6 +17,6 @@
 - (id)newRunIterator;
 - (id)runIterator;
 - (id)text;
-- (NSInteger)textType;
+- (int)textType;
 
 @end

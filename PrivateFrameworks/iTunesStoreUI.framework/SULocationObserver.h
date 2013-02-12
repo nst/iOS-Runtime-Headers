@@ -5,14 +5,14 @@
 @class CLLocationManager, ISOperation, NSArray;
 
 @interface SULocationObserver : NSObject <CLLocationManagerDelegate, ISOperationDelegate> {
-    NSInteger _distanceFilter;
+    int _distanceFilter;
     CLLocationManager *_locationManager;
     NSArray *_locationSections;
-    NSInteger _observeCount;
+    int _observeCount;
     ISOperation *_operation;
 }
 
-@property(retain) NSArray *locationSections;
+@property(retain) NSArray * locationSections;
 @property(getter=isObservingLocation,readonly) BOOL observingLocation;
 
 - (void)_cancelOperation;
@@ -21,7 +21,7 @@
 - (void)_handleLoadSectionsReseponse:(id)arg1;
 - (void)_loadSectionsForLocation:(id)arg1;
 - (void)_registerForLocationCallbacks;
-- (void)_setDistanceFilter:(NSInteger)arg1;
+- (void)_setDistanceFilter:(int)arg1;
 - (void)_unregisterForLocationCallbacks;
 - (void)beginObservingLocation;
 - (void)dealloc;

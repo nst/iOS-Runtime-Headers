@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImage, UIImageView, UIView<PLStackableImage>;
+@class PLImageView, UIImage, UIImageView, UIView, UIView<PLStackableImage>;
 
 @interface PLStackItemView : UIView {
     struct CGSize { 
@@ -14,17 +14,17 @@
     BOOL _didHaveSourceView;
     } _lastItemSize;
     UIView<PLStackableImage> *_sourceView;
-    NSInteger _stackLevel;
+    int _stackLevel;
     float _stackedAngle;
 }
 
-@property(retain) UIImage *badgeImage;
-@property(readonly) UIView *badgeView;
-@property(readonly) PLImageView *imageView;
-@property(retain) UIView<PLStackableImage> *sourceView;
-@property NSUInteger imageIndex;
+@property(retain) UIImage * badgeImage;
+@property(readonly) UIView * badgeView;
+@property unsigned int imageIndex;
+@property(readonly) PLImageView * imageView;
 @property(getter=isShadowEnabled) BOOL shadowEnabled;
 @property BOOL showBadge;
+@property(retain) UIView<PLStackableImage> * sourceView;
 @property float stackedAngle;
 
 + (void)_initializeSafeCategory;
@@ -36,7 +36,7 @@
 - (id)badgeImage;
 - (id)badgeView;
 - (void)dealloc;
-- (NSUInteger)imageIndex;
+- (unsigned int)imageIndex;
 - (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
@@ -44,12 +44,12 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)resetToInitialSizeAndAngle;
 - (void)setBadgeImage:(id)arg1;
-- (void)setImageIndex:(NSUInteger)arg1;
+- (void)setImageIndex:(unsigned int)arg1;
 - (void)setShadowEnabled:(BOOL)arg1;
 - (void)setShowBadge:(BOOL)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 angle:(float)arg2;
 - (void)setSourceView:(id)arg1;
-- (void)setStackLevel:(NSInteger)arg1;
+- (void)setStackLevel:(int)arg1;
 - (void)setStackedAngle:(float)arg1;
 - (void)setStackedDepthFraction:(float)arg1;
 - (BOOL)showBadge;

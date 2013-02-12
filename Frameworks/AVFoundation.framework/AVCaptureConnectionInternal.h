@@ -18,7 +18,7 @@
     BOOL videoMirrored;
     BOOL videoMirroredIsSetByClient;
     BOOL videoMirroringSupported;
-    NSInteger videoOrientation;
+    int videoOrientation;
     BOOL videoOrientationIsSetByClient;
     BOOL videoOrientationSupported;
     float videoScaleAndCropFactor;

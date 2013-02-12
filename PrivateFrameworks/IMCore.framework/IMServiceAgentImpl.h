@@ -12,8 +12,8 @@
 + (void)_determineStatusImageAppearance;
 + (void)_statusImageAppearanceChanged:(id)arg1;
 + (void)forgetStatusImageAppearance;
-+ (id)imageNameForStatus:(NSUInteger)arg1;
-+ (id)imageURLForStatus:(NSUInteger)arg1;
++ (id)imageNameForStatus:(unsigned int)arg1;
++ (id)imageURLForStatus:(unsigned int)arg1;
 + (void)initialize;
 + (id)notificationCenter;
 + (id)sharedAgent;
@@ -23,7 +23,7 @@
 - (void)_daemonDisconnected:(id)arg1;
 - (void)_processAccountStatusChange;
 - (void)_statusImageAppearanceChanged:(id)arg1;
-- (oneway void)account:(id)arg1 loginStatusChanged:(NSUInteger)arg2 message:(id)arg3 reason:(NSUInteger)arg4 properties:(id)arg5;
+- (oneway void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(unsigned int)arg4 properties:(id)arg5;
 - (oneway void)activeAccountsChanged:(id)arg1 forService:(id)arg2;
 - (oneway void)centerDidRemoveObserver;
 - (oneway void)centerWillAddObserver;
@@ -38,7 +38,7 @@
 - (id)notificationCenter;
 - (id)serviceWithName:(id)arg1;
 - (id)serviceWithNameNonBlocking:(id)arg1;
-- (void)setMyStatus:(NSUInteger)arg1 message:(id)arg2;
+- (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (oneway void)setupComplete;
 - (unsigned long long)vcCapabilities;
 - (oneway void)vcCapabilitiesChanged:(unsigned long long)arg1;

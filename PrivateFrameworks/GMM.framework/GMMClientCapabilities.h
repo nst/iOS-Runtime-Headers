@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface GMMClientCapabilities : PBCodable {
-    NSInteger _availableImageMemory;
+    int _availableImageMemory;
     BOOL _embedImages;
     BOOL _hasAvailableImageMemory;
     BOOL _hasEmbedImages;
@@ -13,13 +13,12 @@
     BOOL _hasMaxImageHeight;
     BOOL _hasMaxImageWidth;
     BOOL _htmlBodyOnly;
-    NSInteger _maxImageHeight;
-    NSInteger _maxImageWidth;
+    int _maxImageHeight;
+    int _maxImageWidth;
     NSMutableArray *_preferredImageFormats;
 }
 
-@property(retain) NSMutableArray *preferredImageFormats;
-@property NSInteger availableImageMemory;
+@property int availableImageMemory;
 @property BOOL embedImages;
 @property(readonly) BOOL hasAvailableImageMemory;
 @property(readonly) BOOL hasEmbedImages;
@@ -27,15 +26,16 @@
 @property(readonly) BOOL hasMaxImageHeight;
 @property(readonly) BOOL hasMaxImageWidth;
 @property BOOL htmlBodyOnly;
-@property NSInteger maxImageHeight;
-@property NSInteger maxImageWidth;
-@property(readonly) NSInteger preferredImageFormatsCount;
+@property int maxImageHeight;
+@property int maxImageWidth;
+@property(retain) NSMutableArray * preferredImageFormats;
+@property(readonly) int preferredImageFormatsCount;
 
 + (id)searchCapabilities;
 + (id)standardCapabilities;
 
-- (void)addPreferredImageFormat:(NSInteger)arg1;
-- (NSInteger)availableImageMemory;
+- (void)addPreferredImageFormat:(int)arg1;
+- (int)availableImageMemory;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -47,18 +47,18 @@
 - (BOOL)hasMaxImageWidth;
 - (BOOL)htmlBodyOnly;
 - (id)init;
-- (NSInteger)maxImageHeight;
-- (NSInteger)maxImageWidth;
-- (NSInteger)preferredImageFormatAtIndex:(NSUInteger)arg1;
+- (int)maxImageHeight;
+- (int)maxImageWidth;
+- (int)preferredImageFormatAtIndex:(unsigned int)arg1;
 - (id)preferredImageFormats;
-- (NSInteger)preferredImageFormatsCount;
+- (int)preferredImageFormatsCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAvailableImageMemory:(NSInteger)arg1;
+- (void)setAvailableImageMemory:(int)arg1;
 - (void)setEmbedImages:(BOOL)arg1;
 - (void)setHtmlBodyOnly:(BOOL)arg1;
-- (void)setMaxImageHeight:(NSInteger)arg1;
-- (void)setMaxImageWidth:(NSInteger)arg1;
-- (void)setPreferredImageFormat:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
+- (void)setMaxImageHeight:(int)arg1;
+- (void)setMaxImageWidth:(int)arg1;
+- (void)setPreferredImageFormat:(int)arg1 atIndex:(unsigned int)arg2;
 - (void)setPreferredImageFormats:(id)arg1;
 - (void)writeTo:(id)arg1;
 

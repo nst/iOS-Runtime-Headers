@@ -9,13 +9,11 @@
     BOOL _shouldUseCache;
 }
 
-@property(readonly) SUSectionsResponse *sectionsResponse;
+@property(readonly) SUSectionsResponse * sectionsResponse;
 @property BOOL shouldUseCache;
 
-- (void)_applyDefaultSearchFieldConfigurationsToSections:(id)arg1;
 - (id)_baseCachePath;
 - (id)_cachePathForVersion:(id)arg1 create:(BOOL)arg2;
-- (void)_fixSearchFieldConfigurations;
 - (BOOL)_loadArtworkForSections:(id)arg1 fromCacheDirectory:(id)arg2;
 - (BOOL)_loadDefaultSections;
 - (BOOL)_loadFromDictionary:(id)arg1;

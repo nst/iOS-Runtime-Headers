@@ -8,7 +8,7 @@
     SUScriptMediaItemCollection *_collection;
 }
 
-@property(getter=_collection,retain,readonly) SUScriptMediaItemCollection *collection;
+@property(getter=_collection,retain,readonly) SUScriptMediaItemCollection * collection;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 

@@ -2,57 +2,57 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSMutableArray, NSMutableDictionary;
+@class ICSDate, ICSDuration, ICSTrigger, ICSUserAddress, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 
 @interface ICSComponent : NSObject <ICSWriting> {
     NSMutableArray *_components;
     NSMutableDictionary *_properties;
 }
 
-@property(retain) NSArray *attach;
-@property(retain) NSArray *attendee;
-@property(retain) NSArray *components;
-@property(retain) ICSDate *created;
-@property(retain) NSString *description;
-@property(retain) ICSDate *dtend;
-@property(retain) ICSDate *dtstamp;
-@property(retain) ICSDate *dtstart;
-@property(retain) ICSDuration *duration;
-@property(retain) NSArray *exdate;
-@property(retain) NSArray *exrule;
-@property(retain) ICSDate *last_modified;
-@property(retain) NSString *location;
-@property(retain) ICSUserAddress *organizer;
-@property(retain) NSArray *rdate;
-@property(retain) ICSDate *recurrence_id;
-@property(retain) NSArray *rrule;
-@property(retain) NSString *summary;
-@property(retain) ICSTrigger *trigger;
-@property(retain) NSString *uid;
-@property(retain) NSURL *url;
-@property(retain) NSString *x_apple_dropbox;
-@property(retain) NSString *x_apple_ews_changekey;
-@property(retain) NSString *x_apple_ews_itemid;
-@property(retain) NSString *x_apple_ews_permission;
-@property NSInteger classification;
-@property NSUInteger sequence;
-@property NSInteger status;
+@property(retain) NSArray * attach;
+@property(retain) NSArray * attendee;
+@property int classification;
+@property(retain) NSArray * components;
+@property(retain) ICSDate * created;
+@property(retain) NSString * description;
+@property(retain) ICSDate * dtend;
+@property(retain) ICSDate * dtstamp;
+@property(retain) ICSDate * dtstart;
+@property(retain) ICSDuration * duration;
+@property(retain) NSArray * exdate;
+@property(retain) NSArray * exrule;
+@property(retain) ICSDate * last_modified;
+@property(retain) NSString * location;
+@property(retain) ICSUserAddress * organizer;
+@property(retain) NSArray * rdate;
+@property(retain) ICSDate * recurrence_id;
+@property(retain) NSArray * rrule;
+@property unsigned int sequence;
+@property int status;
+@property(retain) NSString * summary;
+@property(retain) ICSTrigger * trigger;
+@property(retain) NSString * uid;
+@property(retain) NSURL * url;
+@property(retain) NSString * x_apple_dropbox;
+@property(retain) NSString * x_apple_ews_changekey;
+@property(retain) NSString * x_apple_ews_itemid;
 @property BOOL x_apple_ews_needsserverconfirmation;
+@property(retain) NSString * x_apple_ews_permission;
 @property BOOL x_apple_ignore_on_restore;
-@property NSInteger x_calendarserver_access;
+@property int x_calendarserver_access;
 
 + (id)inheritanceKeywords;
 + (id)name;
 + (id)newUID;
 
-- (void)ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
-- (id)ICSStringWithOptions:(NSUInteger)arg1;
+- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)addComponent:(id)arg1;
 - (void)addProperty:(id)arg1 withValue:(id)arg2;
 - (id)allProperties;
 - (id)attach;
 - (id)attendee;
-- (NSInteger)classification;
+- (int)classification;
 - (id)components;
 - (id)created;
 - (void)dealloc;
@@ -84,10 +84,10 @@
 - (void)removeComponent:(id)arg1;
 - (void)removePropertiesForName:(id)arg1;
 - (id)rrule;
-- (NSUInteger)sequence;
+- (unsigned int)sequence;
 - (void)setAttach:(id)arg1;
 - (void)setAttendee:(id)arg1;
-- (void)setClassification:(NSInteger)arg1;
+- (void)setClassification:(int)arg1;
 - (void)setComponents:(id)arg1;
 - (void)setCreated:(id)arg1;
 - (void)setDescription:(id)arg1;
@@ -103,12 +103,12 @@
 - (void)setProperties:(id)arg1 forName:(id)arg2;
 - (void)setProperty:(id)arg1 forName:(id)arg2;
 - (void)setPropertyValue:(id)arg1 forName:(id)arg2;
-- (void)setPropertyValue:(id)arg1 type:(NSInteger)arg2 forName:(id)arg3;
+- (void)setPropertyValue:(id)arg1 type:(int)arg2 forName:(id)arg3;
 - (void)setRdate:(id)arg1;
 - (void)setRecurrence_id:(id)arg1;
 - (void)setRrule:(id)arg1;
-- (void)setSequence:(NSUInteger)arg1;
-- (void)setStatus:(NSInteger)arg1;
+- (void)setSequence:(unsigned int)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setSummary:(id)arg1;
 - (void)setTrigger:(id)arg1;
 - (void)setUid:(id)arg1;
@@ -119,8 +119,8 @@
 - (void)setX_apple_ews_needsserverconfirmation:(BOOL)arg1;
 - (void)setX_apple_ews_permission:(id)arg1;
 - (void)setX_apple_ignore_on_restore:(BOOL)arg1;
-- (void)setX_calendarserver_access:(NSInteger)arg1;
-- (NSInteger)status;
+- (void)setX_calendarserver_access:(int)arg1;
+- (int)status;
 - (id)summary;
 - (id)trigger;
 - (id)uid;
@@ -132,6 +132,6 @@
 - (BOOL)x_apple_ews_needsserverconfirmation;
 - (id)x_apple_ews_permission;
 - (BOOL)x_apple_ignore_on_restore;
-- (NSInteger)x_calendarserver_access;
+- (int)x_calendarserver_access;
 
 @end

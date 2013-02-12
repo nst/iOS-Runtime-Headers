@@ -10,7 +10,7 @@
     BOOL _isZoomingFromMin;
     UIImageView *_maxImageView;
     UIImageView *_minImageView;
-    NSInteger _orientation;
+    int _orientation;
     NSTimer *_visibilityTimer;
     BOOL _watchingOrientationChanges;
 }
@@ -23,15 +23,14 @@
 
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_postHideZoomSliderAnimation;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(NSInteger)arg1;
-- (void)_setDeviceOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(int)arg1;
+- (void)_setDeviceOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)addEndCapImageViewsWithMinImage:(id)arg1 maxImage:(id)arg2;
 - (BOOL)autorotationEnabled;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)clearZoomingFromEndcap;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (void)didMoveToSuperview;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)hideZoomSlider:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -39,7 +38,7 @@
 - (BOOL)isZoomingFromEndcap;
 - (BOOL)isZoomingFromMax;
 - (BOOL)isZoomingFromMin;
-- (NSInteger)locationOfTouch:(id)arg1;
+- (int)locationOfTouch:(id)arg1;
 - (void)makeInvisible;
 - (void)makeVisible;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -47,7 +46,7 @@
 - (void)setHidden:(BOOL)arg1;
 - (void)setIsZoomingFromMax:(BOOL)arg1;
 - (void)setIsZoomingFromMin:(BOOL)arg1;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)startVisibilityTimer;
 - (void)startWatchingDeviceOrientationChanges;
 - (void)stopVisibilityTimer;

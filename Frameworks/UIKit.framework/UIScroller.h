@@ -218,7 +218,7 @@
 - (float)directionalScrollingAngle;
 - (void)displayScrollerIndicators;
 - (struct CGPoint { float x1; float x2; })dragStartOffset;
-- (NSInteger)eventMode;
+- (int)eventMode;
 - (void)gestureChanged:(struct __GSEvent { }*)arg1;
 - (void)gestureEnded:(struct __GSEvent { }*)arg1;
 - (void)gestureStarted:(struct __GSEvent { }*)arg1;
@@ -237,7 +237,7 @@
 - (struct CGPoint { float x1; float x2; })offset;
 - (BOOL)releaseRubberBandIfNecessary;
 - (void)removeFromSuperview;
-- (float)rubberBandValueForEdge:(NSUInteger)arg1;
+- (float)rubberBandValueForEdge:(unsigned int)arg1;
 - (void)scrollByDelta:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)scrollByDelta:(struct CGSize { float x1; float x2; })arg1;
 - (float)scrollDecelerationFactor;
@@ -247,7 +247,7 @@
 - (void)scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (double)scrollToPointAnimationDuration;
-- (NSInteger)scrollerIndicatorStyle;
+- (int)scrollerIndicatorStyle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })scrollerIndicatorSubrect;
 - (BOOL)scrollerIndicatorsPinToContent;
 - (BOOL)scrollingEnabled;
@@ -264,17 +264,17 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDirectionalScrolling:(BOOL)arg1;
 - (void)setDirectionalScrollingAngle:(float)arg1;
-- (void)setEventMode:(NSInteger)arg1;
+- (void)setEventMode:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGridSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setHighlightContentImmediately:(BOOL)arg1;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setOffsetForDragOffset:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2 duration:(float)arg3;
-- (void)setRubberBand:(float)arg1 forEdges:(NSUInteger)arg2;
+- (void)setRubberBand:(float)arg1 forEdges:(unsigned int)arg2;
 - (void)setScrollDecelerationFactor:(float)arg1;
 - (void)setScrollHysteresis:(float)arg1;
 - (void)setScrollToPointAnimationDuration:(double)arg1;
-- (void)setScrollerIndicatorStyle:(NSInteger)arg1;
+- (void)setScrollerIndicatorStyle:(int)arg1;
 - (void)setScrollerIndicatorSubrect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setScrollerIndicatorsPinToContent:(BOOL)arg1;
 - (void)setScrollingEnabled:(BOOL)arg1;
@@ -284,7 +284,7 @@
 - (void)setThumbDetectionEnabled:(BOOL)arg1;
 - (BOOL)showBackgroundShadow;
 - (BOOL)showScrollerIndicators;
-- (NSInteger)swipe:(NSInteger)arg1 withEvent:(struct __GSEvent { }*)arg2;
+- (int)swipe:(int)arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)thumbDetectionEnabled;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

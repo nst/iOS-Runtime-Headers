@@ -11,29 +11,29 @@
     CPDistributedMessagingCallout *_currentCallout;
     BOOL _delayedReply;
     NSLock *_lock;
-    NSUInteger _parkedServerPort;
+    unsigned int _parkedServerPort;
     BOOL _portPassing;
-    NSUInteger _replyPort;
+    unsigned int _replyPort;
     NSString *_requiredEntitlement;
-    NSUInteger _sendPort;
+    unsigned int _sendPort;
     struct __CFRunLoopSource { } *_serverSource;
 }
 
 + (id)centerNamed:(id)arg1;
 
-- (void)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 auditToken:(struct { NSUInteger x1[8]; }*)arg4;
+- (void)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 auditToken:(struct { unsigned int x1[8]; }*)arg4;
 - (id)_initAnonymousServer;
-- (id)_initClientWithPort:(NSUInteger)arg1;
+- (id)_initClientWithPort:(unsigned int)arg1;
 - (id)_initWithServerName:(id)arg1;
-- (BOOL)_isTaskEntitled:(struct { NSUInteger x1[8]; }*)arg1;
+- (BOOL)_isTaskEntitled:(struct { unsigned int x1[8]; }*)arg1;
 - (id)_requiredEntitlement;
 - (BOOL)_sendMessage:(id)arg1 userInfo:(id)arg2 receiveReply:(id*)arg3 error:(id*)arg4 toTarget:(id)arg5 selector:(SEL)arg6 context:(void*)arg7 nonBlocking:(BOOL)arg8;
 - (BOOL)_sendMessage:(id)arg1 userInfo:(id)arg2 receiveReply:(id*)arg3 error:(id*)arg4 toTarget:(id)arg5 selector:(SEL)arg6 context:(void*)arg7;
 - (BOOL)_sendMessage:(id)arg1 userInfoData:(id)arg2 oolKey:(id)arg3 oolData:(id)arg4 makeServer:(BOOL)arg5 receiveReply:(id*)arg6 nonBlocking:(BOOL)arg7 error:(id*)arg8;
-- (NSUInteger)_sendPort;
-- (void)_sendReplyMessage:(id)arg1 portPassing:(BOOL)arg2 onMachPort:(NSUInteger)arg3;
-- (NSUInteger)_serverPort;
-- (void)_setSendPort:(NSUInteger)arg1;
+- (unsigned int)_sendPort;
+- (void)_sendReplyMessage:(id)arg1 portPassing:(BOOL)arg2 onMachPort:(unsigned int)arg3;
+- (unsigned int)_serverPort;
+- (void)_setSendPort:(unsigned int)arg1;
 - (void)_setupInvalidationSource;
 - (void)dealloc;
 - (id)delayReply;

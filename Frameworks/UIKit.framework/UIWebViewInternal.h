@@ -13,7 +13,7 @@
     unsigned int drawInWebThread : 1;
     UIWebBrowserView *browserView;
     UICheckeredPatternView *checkeredPatternView;
-    NSInteger clickedAlertButtonIndex;
+    int clickedAlertButtonIndex;
     <UIWebViewDelegate> *delegate;
     NSURLRequest *request;
     UIScrollView *scroller;

@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class AVCamera, NSString, NSURL;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class AVCamera, CALayer, NSArray, NSDictionary, NSString, NSURL;
 
 @interface AVCapture : NSObject {
     NSString *_captureMode;
@@ -14,26 +19,17 @@
     AVCamera *_sourceCamera;
 }
 
-@property(readonly) NSArray *audioLevel;
-@property(retain) NSString *captureMode;
-@property(retain) NSString *faceDetectionMode;
-@property(retain) NSURL *fileURLForRecording;
-@property(retain) NSString *flashMode;
-@property(copy) NSDictionary *metadata;
-@property(retain,readonly) NSString *noiseReductionMethodName;
-@property(retain) NSString *orientation;
-@property(retain) NSString *qualityPreset;
-@property(retain) AVCamera *sourceCamera;
-@property(retain) NSString *torchMode;
-@property(retain) CALayer *videoPreviewLayer;
-@property(retain) NSString *videoPreviewLayerOrientation;
-@property(retain) NSString *videoPreviewLayerScalingMode;
-@property NSUInteger audioCaptureFormat;
+@property unsigned int audioCaptureFormat;
+@property(readonly) NSArray * audioLevel;
 @property BOOL audioMeteringEnabled;
 @property float autoExposureTarget;
+@property(retain) NSString * captureMode;
 @property BOOL chapterMarkersEnabled;
 @property float contrast;
 @property BOOL dumpSensorInfo;
+@property(retain) NSString * faceDetectionMode;
+@property(retain) NSURL * fileURLForRecording;
+@property(retain) NSString * flashMode;
 @property long long freeDiskSpaceLimit;
 @property(readonly) BOOL isCapturingPhoto;
 @property(readonly) BOOL isHighDynamicRangeAvailable;
@@ -44,20 +40,29 @@
 @property BOOL locationMetadataTrackEnabled;
 @property BOOL lockAutoExposure;
 @property BOOL lockAutoWhiteBalance;
-@property(readonly) NSInteger maxJPEGSize;
+@property(readonly) int maxJPEGSize;
+@property(copy) NSDictionary * metadata;
 @property BOOL mirrorPreview;
 @property BOOL monitorSubjectArea;
-@property NSInteger noiseReductionMethod;
-@property(readonly) NSInteger noiseReductionMethodCount;
+@property int noiseReductionMethod;
+@property(readonly) int noiseReductionMethodCount;
+@property(retain,readonly) NSString * noiseReductionMethodName;
+@property(retain) NSString * orientation;
 @property BOOL pauseRecordingOnInterruption;
+@property(retain) NSString * qualityPreset;
 @property(readonly) double recordedDuration;
 @property double recordedDurationLimit;
 @property(readonly) long long recordedFileSizeBytes;
 @property long long recordedFileSizeBytesLimit;
 @property float saturation;
+@property(retain) AVCamera * sourceCamera;
 @property BOOL suspendPreviewOnPhotoCapture;
+@property(retain) NSString * torchMode;
 @property BOOL useFlashAFAssist;
 @property BOOL useFlashRedEyeReduction;
+@property(retain) CALayer * videoPreviewLayer;
+@property(retain) NSString * videoPreviewLayerOrientation;
+@property(retain) NSString * videoPreviewLayerScalingMode;
 @property float whiteBalance;
 
 + (id)avOrientationMap;
@@ -73,12 +78,11 @@
 + (id)updateMetadataInFile:(id)arg1 withMetadata:(id)arg2;
 
 - (BOOL)addChapterMarker:(id)arg1 atTime:(double)arg2;
-- (NSUInteger)audioCaptureFormat;
+- (unsigned int)audioCaptureFormat;
 - (void)audioInputDevicesDidChangeHandler:(id)arg1;
 - (id)audioLevel;
 - (BOOL)audioMeteringEnabled;
 - (float)autoExposureTarget;
-- (void)backgroundStateChangedHandler:(id)arg1;
 - (id)captureFormatForCaptureMode:(id)arg1 qualityPreset:(id)arg2;
 - (id)captureMode;
 - (BOOL)capturePhoto:(id)arg1;
@@ -112,12 +116,12 @@
 - (BOOL)locationMetadataTrackEnabled;
 - (BOOL)lockAutoExposure;
 - (BOOL)lockAutoWhiteBalance;
-- (NSInteger)maxJPEGSize;
+- (int)maxJPEGSize;
 - (id)metadata;
 - (BOOL)mirrorPreview;
 - (BOOL)monitorSubjectArea;
-- (NSInteger)noiseReductionMethod;
-- (NSInteger)noiseReductionMethodCount;
+- (int)noiseReductionMethod;
+- (int)noiseReductionMethodCount;
 - (id)noiseReductionMethodName;
 - (id)objectForMetadataKey:(id)arg1;
 - (id)optionsForCaptureMode:(id)arg1 qualityPreset:(id)arg2;
@@ -134,7 +138,7 @@
 - (BOOL)resumePreview;
 - (BOOL)resumeRecording;
 - (float)saturation;
-- (void)setAudioCaptureFormat:(NSUInteger)arg1;
+- (void)setAudioCaptureFormat:(unsigned int)arg1;
 - (void)setAudioMeteringEnabled:(BOOL)arg1;
 - (void)setAutoExposureTarget:(float)arg1;
 - (BOOL)setCaptureMode:(id)arg1 qualityPreset:(id)arg2;
@@ -153,7 +157,7 @@
 - (void)setMetadata:(id)arg1;
 - (void)setMirrorPreview:(BOOL)arg1;
 - (void)setMonitorSubjectArea:(BOOL)arg1;
-- (void)setNoiseReductionMethod:(NSInteger)arg1;
+- (void)setNoiseReductionMethod:(int)arg1;
 - (void)setObject:(id)arg1 forMetadataKey:(id)arg2;
 - (void)setOrientation:(id)arg1;
 - (void)setPauseRecordingOnInterruption:(BOOL)arg1;

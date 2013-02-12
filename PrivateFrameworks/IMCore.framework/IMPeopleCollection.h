@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface IMPeopleCollection : IMPeople {
     NSMutableArray *_collectedPeople;
 }
 
-@property(readonly) NSArray *collectedIMPeople;
+@property(readonly) NSArray * collectedIMPeople;
 
 - (void)_collectionNotification:(id)arg1;
 - (void)addIMPeople:(id)arg1;

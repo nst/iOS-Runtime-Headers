@@ -3,15 +3,15 @@
  */
 
 @interface NSSubstringPredicateOperator : NSStringPredicateOperator {
-    NSUInteger _position;
+    unsigned int _position;
 }
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 variant:(NSUInteger)arg3 position:(NSUInteger)arg4;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 position:(unsigned int)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
-- (NSUInteger)position;
+- (unsigned int)position;
 - (SEL)selector;
 - (id)symbol;
 

@@ -7,9 +7,9 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)dismissModalOverlayViewController;
-- (void)dismissModalViewControllerWithTransition:(NSInteger)arg1;
-- (void)presentModalViewController:(id)arg1 withTransition:(NSInteger)arg2;
+- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (void)dismissModalViewControllerWithTransition:(int)arg1;
+- (void)presentModalViewController:(id)arg1 withTransition:(int)arg2;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

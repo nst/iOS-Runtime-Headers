@@ -20,6 +20,6 @@
 - (void)release;
 - (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

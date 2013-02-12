@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSDictionary;
+@class NSArray, NSDictionary;
 
 @interface IMServiceAgent : NSObject {
     NSDictionary *_currentAVChatInfo;
 }
 
-@property(readonly) NSDictionary *currentAVChatInfo;
-@property(readonly) NSArray *myAvailableMessages;
-@property(readonly) NSArray *myAwayMessages;
-@property(readonly) NSUInteger requestAudioReflectorStart;
-@property(readonly) NSUInteger requestAudioReflectorStop;
+@property(readonly) NSDictionary * currentAVChatInfo;
+@property(readonly) NSArray * myAvailableMessages;
+@property(readonly) NSArray * myAwayMessages;
+@property(readonly) unsigned int requestAudioReflectorStart;
+@property(readonly) unsigned int requestAudioReflectorStop;
 @property(readonly) unsigned long long vcCapabilities;
 
 + (oneway void)forgetStatusImageAppearance;
-+ (id)imageNameForStatus:(NSUInteger)arg1;
-+ (id)imageURLForStatus:(NSUInteger)arg1;
++ (id)imageNameForStatus:(unsigned int)arg1;
++ (id)imageURLForStatus:(unsigned int)arg1;
 + (id)notificationCenter;
-+ (NSInteger)serviceAgentCapabilities;
-+ (oneway void)setServiceAgentCapabilities:(NSInteger)arg1;
++ (int)serviceAgentCapabilities;
++ (oneway void)setServiceAgentCapabilities:(int)arg1;
 + (id)sharedAgent;
 
 - (id)currentAVChatInfo;
@@ -30,12 +30,12 @@
 - (id)myAwayMessages;
 - (id)myPictureData;
 - (id)notificationCenter;
-- (NSUInteger)requestAudioReflectorStart;
-- (NSUInteger)requestAudioReflectorStop;
-- (NSUInteger)requestVideoStillForPerson:(id)arg1;
+- (unsigned int)requestAudioReflectorStart;
+- (unsigned int)requestAudioReflectorStop;
+- (unsigned int)requestVideoStillForPerson:(id)arg1;
 - (id)serviceWithName:(id)arg1;
 - (id)serviceWithNameNonBlocking:(id)arg1;
-- (oneway void)setMyStatus:(NSUInteger)arg1 message:(id)arg2;
+- (oneway void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (unsigned long long)vcCapabilities;
 
 @end

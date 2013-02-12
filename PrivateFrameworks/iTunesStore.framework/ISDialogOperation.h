@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISDialog, ISDialogButton, NSArray;
+@class <ISDialogOperationDelegate>, ISDialog, ISDialogButton, NSArray;
 
 @interface ISDialogOperation : ISOperation {
     ISDialog *_dialog;
@@ -12,11 +12,11 @@
     id _userNotification;
 }
 
-@property <ISDialogOperationDelegate> *delegate;
-@property(retain) ISDialog *dialog;
-@property(retain) ISDialogButton *selectedButton;
-@property(readonly) NSArray *textFieldValues;
+@property <ISDialogOperationDelegate> * delegate;
+@property(retain) ISDialog * dialog;
 @property BOOL performDefaultActions;
+@property(retain) ISDialogButton * selectedButton;
+@property(readonly) NSArray * textFieldValues;
 @property(retain) id userNotification;
 
 + (id)operationWithDialog:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)dialog;
-- (void)handleButtonSelected:(NSInteger)arg1 withResponseDictionary:(id)arg2;
+- (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
 - (id)init;
 - (BOOL)performDefaultActions;
 - (void)run;

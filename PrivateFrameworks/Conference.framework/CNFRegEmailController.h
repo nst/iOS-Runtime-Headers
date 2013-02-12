@@ -13,7 +13,7 @@
     NSTimer *_validationTimeoutTimer;
 }
 
-@property(copy) NSString *pendingAlias;
+@property(copy) NSString * pendingAlias;
 
 - (void)_buildActionGroupSpecifierCache:(id)arg1;
 - (void)_buildCheckMailSpecifierCache:(id)arg1;

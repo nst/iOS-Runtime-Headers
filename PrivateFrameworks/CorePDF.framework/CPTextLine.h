@@ -6,10 +6,15 @@
    See Warning(s) below.
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class CPCharSequence, NSArray;
 
 @interface CPTextLine : CPTextObject <CPDisposable> {
-    struct { NSUInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; struct CGRect { 
+    struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { 
             struct CGPoint { 
                 float x; 
                 float y; 
@@ -22,50 +27,50 @@
     float baseline;
     CPCharSequence *charSequence;
     NSArray *columnBreaks;
-    NSInteger columnNumber;
+    int columnNumber;
     BOOL disposed;
     BOOL hasBeenProcessed;
     BOOL hasBeenSplit;
     BOOL hasTabs;
-    struct CPInlineContainer { NSUInteger x1; id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; unsigned char x4; void*x5; unsigned char x6; void*x7; void*x8; in void*x9; void*x10; struct CPInlineContainer {} *x11; } *inlineList;
+    struct CPInlineContainer { unsigned int x1; id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; unsigned char x4; void*x5; unsigned char x6; void*x7; void*x8; in void*x9; void*x10; struct CPInlineContainer {} *x11; } *inlineList;
     BOOL irregular;
     BOOL isListItem;
-    NSUInteger leftSpacerIndex;
-    NSInteger levels;
+    unsigned int leftSpacerIndex;
+    int levels;
     BOOL lineBreakAfter;
-    NSInteger lineNumber;
-    NSUInteger listSpacerIndex;
+    int lineNumber;
+    unsigned int listSpacerIndex;
     float maximumLetterGap;
     float maximumWordGap;
     BOOL maySplit;
     float minimumOffset;
     float monospaceWidth;
-    NSUInteger rightSpacerIndex;
-    NSUInteger *spacesBefore;
-    NSInteger tabsBefore;
-    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; NSInteger x9; float x10; id x11; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x12; unsigned char x13; void*x14; void*x15; out in void*x16; void*x17; float x18; struct CPPDFStyle {} *x19; } *uniformStyle;
+    unsigned int rightSpacerIndex;
+    unsigned int *spacesBefore;
+    int tabsBefore;
+    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; int x9; float x10; id x11; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x12; unsigned char x13; void*x14; void*x15; out in void*x16; void*x17; float x18; struct CPPDFStyle {} *x19; } *uniformStyle;
     unsigned short uniformStyleFlags;
         } x5; } *wordArray;
-    NSUInteger wordCount;
+    unsigned int wordCount;
     NSArray *xsegments;
 }
 
 @property BOOL isListItem;
-@property NSUInteger leftSpacerIndex;
+@property unsigned int leftSpacerIndex;
 @property BOOL lineBreakAfter;
-@property NSUInteger listSpacerIndex;
-@property NSUInteger rightSpacerIndex;
+@property unsigned int listSpacerIndex;
+@property unsigned int rightSpacerIndex;
 
 - (void)accept:(id)arg1;
-- (NSInteger)align;
+- (int)align;
 - (struct CGPoint { float x1; float x2; })anchor;
-- (void)anchorChunk:(id)arg1 atWordIndex:(NSUInteger)arg2;
+- (void)anchorChunk:(id)arg1 atWordIndex:(unsigned int)arg2;
 - (id)attributes;
-- (NSInteger)baseLineAscending:(id)arg1;
-- (NSInteger)baseLineDescending:(id)arg1;
+- (int)baseLineAscending:(id)arg1;
+- (int)baseLineDescending:(id)arg1;
 - (float)baseline;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfWordAtIndex:(NSUInteger)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfWordAtIndex:(unsigned int)arg1;
 - (BOOL)changesFontAt:(id)arg1;
 - (id)charSequence;
 - (id)columnBreaks;
@@ -73,7 +78,7 @@
 - (void)dealloc;
 - (void)dispose;
 - (void)finalize;
-- (struct { NSUInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)firstWord;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)firstWord;
 - (void)fitBoundsToChildren;
 - (BOOL)hasBeenProcessed;
 - (BOOL)hasBeenSplit;
@@ -82,17 +87,17 @@
 - (BOOL)hasTabs;
 - (BOOL)hyphenated;
 - (id)init;
-- (NSUInteger)inlineCount;
-- (struct CPInlineContainer { NSUInteger x1; id x2; struct CPInlineContainer {} *x3; }*)inlineList;
+- (unsigned int)inlineCount;
+- (struct CPInlineContainer { unsigned int x1; id x2; struct CPInlineContainer {} *x3; }*)inlineList;
 - (BOOL)irregular;
 - (BOOL)isIndivisible;
 - (BOOL)isListItem;
 - (BOOL)isMonospaced;
-- (struct { NSUInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)lastWord;
-- (NSUInteger)leftSpacerIndex;
-- (NSInteger)levels;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)lastWord;
+- (unsigned int)leftSpacerIndex;
+- (int)levels;
 - (BOOL)lineBreakAfter;
-- (NSUInteger)listSpacerIndex;
+- (unsigned int)listSpacerIndex;
 - (BOOL)mapToWordPairs:(int (*)())arg1 passing:(void*)arg2;
 - (BOOL)mapToWordPairsWithIndex:(int (*)())arg1 passing:(void*)arg2;
 - (BOOL)mapToWords:(int (*)())arg1 passing:(void*)arg2;
@@ -101,14 +106,14 @@
 - (float)maximumWordGap;
 - (float)medianFontSize;
 - (float)monospaceWidth;
-- (id)newTextLineFromWordAt:(NSUInteger)arg1 lengthInWords:(NSUInteger)arg2;
+- (id)newTextLineFromWordAt:(unsigned int)arg1 lengthInWords:(unsigned int)arg2;
 - (BOOL)overlapsHorizontally:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)overlapsWith:(id)arg1;
 - (id)properties;
 - (void)recomputeBaseline;
 - (void)recomputeLevels;
 - (BOOL)removeTextLines:(id)arg1 whereTrue:(int (*)())arg2 passing:(void*)arg3;
-- (NSUInteger)rightSpacerIndex;
+- (unsigned int)rightSpacerIndex;
 - (void)setBaseline:(float)arg1;
 - (void)setBaselineToNull;
 - (void)setCharSequence:(id)arg1;
@@ -118,24 +123,24 @@
 - (void)setHasTabs:(BOOL)arg1;
 - (void)setIrregular:(BOOL)arg1;
 - (void)setIsListItem:(BOOL)arg1;
-- (void)setLeftSpacerIndex:(NSUInteger)arg1;
-- (void)setLevels:(NSInteger)arg1;
+- (void)setLeftSpacerIndex:(unsigned int)arg1;
+- (void)setLevels:(int)arg1;
 - (void)setLineBreakAfter:(BOOL)arg1;
-- (void)setListSpacerIndex:(NSUInteger)arg1;
+- (void)setListSpacerIndex:(unsigned int)arg1;
 - (void)setMaximumLetterGap:(float)arg1;
 - (void)setMaximumWordGap:(float)arg1;
-- (void)setRightSpacerIndex:(NSUInteger)arg1;
-- (void)setSpaces:(NSUInteger)arg1 beforeWordAtIndex:(NSUInteger)arg2;
-- (void)setTabsBefore:(NSInteger)arg1;
-- (NSUInteger)spacesBeforeWordAtIndex:(NSUInteger)arg1;
+- (void)setRightSpacerIndex:(unsigned int)arg1;
+- (void)setSpaces:(unsigned int)arg1 beforeWordAtIndex:(unsigned int)arg2;
+- (void)setTabsBefore:(int)arg1;
+- (unsigned int)spacesBeforeWordAtIndex:(unsigned int)arg1;
 - (BOOL)styleIsUniform:(struct CPPDFStyle {}**)arg1 styleFlags:(unsigned short)arg2;
-- (NSInteger)tabsBefore;
-- (NSInteger)topIsAbove:(id)arg1;
+- (int)tabsBefore;
+- (int)topIsAbove:(id)arg1;
 - (void)translateObjectYBy:(float)arg1;
-- (struct { NSUInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordArray;
-- (struct { NSUInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordArrayOfSize:(NSUInteger)arg1;
-- (struct { NSUInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordAtIndex:(NSUInteger)arg1;
-- (NSUInteger)wordCount;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordArray;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordArrayOfSize:(unsigned int)arg1;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordAtIndex:(unsigned int)arg1;
+- (unsigned int)wordCount;
 - (long)zOrder;
 
 @end

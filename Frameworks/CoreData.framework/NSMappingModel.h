@@ -21,8 +21,8 @@
 + (id)inferredMappingModelForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id*)arg3;
 + (void)initialize;
 + (id)mappingModelFromBundles:(id)arg1 forSourceModel:(id)arg2 destinationModel:(id)arg3;
-+ (NSInteger)migrationDebugLevel;
-+ (void)setMigrationDebugLevel:(NSInteger)arg1;
++ (int)migrationDebugLevel;
++ (void)setMigrationDebugLevel:(int)arg1;
 
 - (void)_addEntityMapping:(id)arg1;
 - (void)_createCachesAndOptimizeState;

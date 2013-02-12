@@ -9,15 +9,15 @@
     <CNFRegChangeAccountPasswordDelegate> *_delegate;
 }
 
-@property(copy) NSString *appleID;
-@property <CNFRegChangeAccountPasswordDelegate> *delegate;
+@property(copy) NSString * appleID;
+@property <CNFRegChangeAccountPasswordDelegate> * delegate;
 
 - (id)appleID;
 - (id)bagKey;
 - (void)cancelTapped;
 - (void)dealloc;
 - (id)delegate;
-- (void)doHandoffWithStatus:(NSInteger)arg1 appleId:(id)arg2 password:(id)arg3;
+- (void)doHandoffWithStatus:(int)arg1 appleId:(id)arg2 password:(id)arg3;
 - (id)initWithAppleID:(id)arg1;
 - (id)logName;
 - (id)overrideURLForURL:(id)arg1;

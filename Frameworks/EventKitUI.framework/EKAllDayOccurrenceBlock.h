@@ -6,31 +6,31 @@
 
 @interface EKAllDayOccurrenceBlock : NSObject {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
-    NSUInteger _calendarOrder;
+        unsigned int location; 
+        unsigned int length; 
+    unsigned int _calendarOrder;
     } _dayRange;
-    NSUInteger _eventIndex;
+    unsigned int _eventIndex;
     EKDayOccurrenceView *_occurrenceView;
 }
 
-@property(retain) EKDayOccurrenceView *occurrenceView;
-@property(readonly) NSUInteger calendarOrder;
-@property(readonly) NSUInteger eventIndex;
-@property(readonly) NSUInteger length;
-@property(readonly) NSUInteger rangeEnd;
-@property(readonly) NSUInteger rangeStart;
+@property(readonly) unsigned int calendarOrder;
+@property(readonly) unsigned int eventIndex;
+@property(readonly) unsigned int length;
+@property(retain) EKDayOccurrenceView * occurrenceView;
+@property(readonly) unsigned int rangeEnd;
+@property(readonly) unsigned int rangeStart;
 
-- (NSUInteger)calendarOrder;
+- (unsigned int)calendarOrder;
 - (void)dealloc;
-- (NSUInteger)eventIndex;
-- (NSUInteger)gapBetweenBlock:(id)arg1;
-- (id)initWithEventIndex:(NSUInteger)arg1 calendarOrder:(NSUInteger)arg2 dayRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
-- (NSUInteger)length;
+- (unsigned int)eventIndex;
+- (unsigned int)gapBetweenBlock:(id)arg1;
+- (id)initWithEventIndex:(unsigned int)arg1 calendarOrder:(unsigned int)arg2 dayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (unsigned int)length;
 - (id)lengthForSorting;
 - (id)occurrenceView;
-- (NSUInteger)rangeEnd;
-- (NSUInteger)rangeStart;
+- (unsigned int)rangeEnd;
+- (unsigned int)rangeStart;
 - (void)setOccurrenceView:(id)arg1;
 
 @end

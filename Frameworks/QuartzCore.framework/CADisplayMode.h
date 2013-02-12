@@ -6,24 +6,24 @@
 
 @interface CADisplayMode : NSObject {
     CADisplay *_dpy;
-    NSUInteger _height;
+    unsigned int _height;
     void *_priv;
-    NSUInteger _width;
+    unsigned int _width;
 }
 
-@property(readonly) NSUInteger height;
+@property(readonly) unsigned int height;
 @property(readonly) float pixelAspectRatio;
-@property(readonly) NSUInteger width;
+@property(readonly) unsigned int width;
 
-+ (id)_displayModeWithMode:(NSInteger)arg1 display:(id)arg2;
++ (id)_displayModeWithMode:(int)arg1 display:(id)arg2;
 
 - (id)_display;
-- (id)_initWithMode:(NSInteger)arg1 display:(id)arg2;
-- (NSInteger)_mode;
+- (id)_initWithMode:(int)arg1 display:(id)arg2;
+- (int)_mode;
 - (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (unsigned long)height;
 - (BOOL)isEqual:(id)arg1;
 - (float)pixelAspectRatio;

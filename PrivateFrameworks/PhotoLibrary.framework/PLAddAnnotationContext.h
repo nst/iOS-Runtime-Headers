@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray, NSMutableSet;
+@class NSArray, NSMutableArray, NSMutableSet;
 
 @interface PLAddAnnotationContext : NSObject {
     NSMutableArray *_animationOnlyAnnotations;
@@ -11,9 +11,9 @@
     NSMutableSet *_contextSet;
 }
 
-@property(copy) NSArray *animationOnlyAnnotations;
-@property(copy) NSArray *annotationsToRemoveWhenAddAnimationEnds;
-@property(copy) NSArray *annotationsToRemoveWhenAddAnimationStarts;
+@property(copy) NSArray * animationOnlyAnnotations;
+@property(copy) NSArray * annotationsToRemoveWhenAddAnimationEnds;
+@property(copy) NSArray * annotationsToRemoveWhenAddAnimationStarts;
 
 + (id)contextWithPlaces:(id)arg1;
 

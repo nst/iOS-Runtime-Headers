@@ -9,7 +9,7 @@
 }
 
 + (id)_allowedDefaults;
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (BOOL)_checkForValidDefaults:(id)arg1 outError:(id*)arg2;

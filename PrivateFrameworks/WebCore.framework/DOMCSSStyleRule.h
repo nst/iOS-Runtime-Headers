@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMCSSStyleDeclaration, NSString;
+
 @interface DOMCSSStyleRule : DOMCSSRule {
 }
 
-@property(copy) NSString *selectorText;
-@property(retain,readonly) DOMCSSStyleDeclaration *style;
+@property(copy) NSString * selectorText;
+@property(retain,readonly) DOMCSSStyleDeclaration * style;
 
 - (id)selectorText;
 - (void)setSelectorText:(id)arg1;

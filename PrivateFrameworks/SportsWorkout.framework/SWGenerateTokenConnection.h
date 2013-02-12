@@ -9,8 +9,8 @@
     <SWSyncServiceConnectionDelegate><SWGenerateTokenConnectionDelegate> *_delegate;
 }
 
-@property(readonly) NSString *PIN;
-@property <SWSyncServiceConnectionDelegate><SWGenerateTokenConnectionDelegate> *delegate;
+@property(readonly) NSString * PIN;
+@property <SWSyncServiceConnectionDelegate><SWGenerateTokenConnectionDelegate> * delegate;
 
 - (id)PIN;
 - (void)dealloc;

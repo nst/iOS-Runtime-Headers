@@ -12,10 +12,10 @@
     UIToolbar *_toolbar;
 }
 
-@property <PLCropPhotoControllerDelegate> *delegate;
-@property UIToolbar *toolbar;
+@property <PLCropPhotoControllerDelegate> * delegate;
+@property UIToolbar * toolbar;
 
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)cancel:(id)arg1;
 - (void)cropPhoto:(id)arg1;
 - (void)dealloc;

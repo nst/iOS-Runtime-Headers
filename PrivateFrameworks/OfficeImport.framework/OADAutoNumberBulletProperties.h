@@ -3,13 +3,13 @@
  */
 
 @interface OADAutoNumberBulletProperties : OADBulletProperties {
-    NSInteger mSchemeType;
-    NSInteger mStartIndex;
+    int mSchemeType;
+    int mStartIndex;
 }
 
-- (NSInteger)autoNumberSchemeType;
-- (id)initWithAutoNumberSchemeType:(NSInteger)arg1 startIndex:(NSUInteger)arg2;
+- (int)autoNumberSchemeType;
+- (id)initWithAutoNumberSchemeType:(int)arg1 startIndex:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)startIndex;
+- (unsigned int)startIndex;
 
 @end

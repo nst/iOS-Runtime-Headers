@@ -7,7 +7,7 @@
 @interface UIKeyboardLanguageIndicator : UIView {
     UIImage *m_image;
     BOOL m_portrait;
-    NSInteger m_style;
+    int m_style;
     float m_textSize;
 }
 
@@ -21,7 +21,7 @@
 - (BOOL)isPortrait;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setPortrait:(BOOL)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setTextSize:(float)arg1;
 - (float)textSize;
 

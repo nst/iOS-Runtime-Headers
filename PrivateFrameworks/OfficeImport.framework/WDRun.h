@@ -14,6 +14,6 @@
 - (id)initWithParagraph:(id)arg1;
 - (BOOL)isEmpty;
 - (id)paragraph;
-- (NSInteger)runType;
+- (int)runType;
 
 @end

@@ -2,21 +2,23 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class NSDictionary;
+
 @interface AVPixelBufferAttributesVideoOutputSettings : AVVideoOutputSettings <AVDecodedVideoSettingsForFig> {
 }
 
-@property(readonly) NSDictionary *pixelBufferAttributes;
-@property(readonly) NSInteger height;
-@property(readonly) NSInteger width;
+@property(readonly) int height;
+@property(readonly) NSDictionary * pixelBufferAttributes;
+@property(readonly) int width;
 
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)eligibleOutputSettingsDictionaryKeys;
 
-- (NSInteger)height;
+- (int)height;
 - (id)initWithPixelBufferAttributes:(id)arg1 exceptionReason:(id*)arg2;
 - (BOOL)isDictionaryFullyFormed;
 - (id)pixelBufferAttributes;
-- (NSInteger)width;
+- (int)width;
 - (BOOL)willYieldCompressedSamples;
 
 @end

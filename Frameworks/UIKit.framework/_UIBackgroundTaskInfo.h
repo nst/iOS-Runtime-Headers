@@ -7,10 +7,10 @@
  */
 
 @interface _UIBackgroundTaskInfo : NSObject {
-    NSInteger _count;
+    int _count;
     id _expireHandler;
     struct SBSProcessAssertion { } *_processAssertion;
-    NSUInteger _taskId;
+    unsigned int _taskId;
 }
 
 - (void)dealloc;

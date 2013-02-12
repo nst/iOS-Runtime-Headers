@@ -8,7 +8,7 @@
     UIView<UITextSelectingContainer> *_textView;
 }
 
-@property UIView<UITextSelectingContainer> *textView;
+@property UIView<UITextSelectingContainer> * textView;
 
 - (void)invalidate;
 - (BOOL)isCloseToCaret;

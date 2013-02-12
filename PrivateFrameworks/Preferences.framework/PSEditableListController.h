@@ -13,8 +13,8 @@
 - (BOOL)performDeletionActionForSpecifier:(id)arg1;
 - (void)pushController:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
-- (void)tableView:(id)arg1 commitEditingStyle:(NSInteger)arg2 forRowAtIndexPath:(id)arg3;
-- (NSInteger)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 

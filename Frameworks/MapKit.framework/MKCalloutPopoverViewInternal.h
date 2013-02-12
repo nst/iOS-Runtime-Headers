@@ -5,7 +5,7 @@
 @class NSDictionary, UIImageView, UIView, UIViewController;
 
 @interface MKCalloutPopoverViewInternal : NSObject {
-    NSInteger animationsCount;
+    int animationsCount;
     UIImageView *bottomLeft;
     UIImageView *bottomMiddleLeft;
     UIImageView *bottomMiddleRight;
@@ -28,7 +28,7 @@
     SEL queuedAnimation;
     UIImageView *rightAnchor;
     UIView *rightBarButton;
-    NSInteger slideDirection;
+    int slideDirection;
     UIImageView *topLeft;
     UIImageView *topMiddleLeft;
     UIImageView *topMiddleRight;

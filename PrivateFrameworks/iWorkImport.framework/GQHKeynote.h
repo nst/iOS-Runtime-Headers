@@ -5,12 +5,12 @@
 @interface GQHKeynote : NSObject <GQKeynoteGenerator> {
 }
 
-+ (NSInteger)beginPresentation:(id)arg1 state:(id)arg2;
-+ (NSInteger)beginSlide:(id)arg1 state:(id)arg2;
-+ (NSInteger)endPresentation:(id)arg1 state:(id)arg2;
-+ (NSInteger)endSlide:(id)arg1 state:(id)arg2;
++ (int)beginPresentation:(id)arg1 state:(id)arg2;
++ (int)beginSlide:(id)arg1 state:(id)arg2;
++ (int)endPresentation:(id)arg1 state:(id)arg2;
++ (int)endSlide:(id)arg1 state:(id)arg2;
 + (Class)enterSlideDrawables:(id)arg1 state:(id)arg2;
-+ (NSInteger)handleSlideSize:(id)arg1 state:(id)arg2;
-+ (NSInteger)handleThemeStylesheet:(id)arg1 state:(id)arg2;
++ (int)handleSlideSize:(id)arg1 state:(id)arg2;
++ (int)handleThemeStylesheet:(id)arg1 state:(id)arg2;
 
 @end

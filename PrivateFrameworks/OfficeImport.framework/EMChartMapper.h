@@ -20,7 +20,7 @@
     BOOL mIsStacked;
     CHDSeries *mMainSeries;
     CHDChartType *mMainType;
-    NSUInteger mPieIndex;
+    unsigned int mPieIndex;
     } mPlotInfos;
     CHDAxis *mPrimaryAxis;
     EDResources *mResources;

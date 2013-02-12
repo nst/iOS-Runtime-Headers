@@ -2,33 +2,41 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+@class NSString;
+
 @interface MPMediaPropertyPredicate : MPMediaPredicate {
-    void *_internal;
+    struct MPMediaPropertyPredicateInternal { 
+        NSString *_property; 
+        id _value; 
+        int _comparisonType; 
+    } _internal;
 }
 
-@property(copy) NSString *property;
-@property NSInteger comparisonType;
+@property struct MPMediaPropertyPredicateInternal { NSString *_property; id _value; int _comparisonType; } _internal;
+@property int comparisonType;
+@property(copy) NSString * property;
 @property(copy) id value;
 
-+ (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(NSInteger)arg3;
++ (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(int)arg3;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;
 
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
 - (id)_ML3PredicateForML3EntityProperty:(id)arg1;
-- (NSInteger)comparisonType;
+- (struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; })_internal;
+- (int)comparisonType;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionOfValue:(id)arg1 forProperty:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
-- (id)init;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)property;
-- (void)setComparisonType:(NSInteger)arg1;
+- (void)setComparisonType:(int)arg1;
 - (void)setProperty:(id)arg1;
 - (void)setValue:(id)arg1;
+- (void)set_internal:(struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; })arg1;
 - (id)value;
 
 @end

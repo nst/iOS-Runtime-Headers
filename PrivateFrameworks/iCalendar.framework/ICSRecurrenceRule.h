@@ -2,34 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSMutableDictionary;
+@class ICSDateValue, NSArray, NSMutableDictionary, NSNumber;
 
 @interface ICSRecurrenceRule : NSObject <NSCoding, ICSWriting> {
-    NSInteger _freq;
+    int _freq;
     NSMutableDictionary *_parameters;
 }
 
-@property(retain) NSArray *byday;
-@property(retain) NSArray *byhour;
-@property(retain) NSArray *byminute;
-@property(retain) NSArray *bymonth;
-@property(retain) NSArray *bymonthday;
-@property(retain) NSArray *bysecond;
-@property(retain) NSArray *bysetpos;
-@property(retain) NSArray *byweekno;
-@property(retain) NSArray *byyearday;
-@property NSNumber *count;
-@property NSNumber *interval;
-@property(retain) ICSDateValue *until;
-@property NSNumber *wkst;
-@property NSInteger freq;
+@property(retain) NSArray * byday;
+@property(retain) NSArray * byhour;
+@property(retain) NSArray * byminute;
+@property(retain) NSArray * bymonth;
+@property(retain) NSArray * bymonthday;
+@property(retain) NSArray * bysecond;
+@property(retain) NSArray * bysetpos;
+@property(retain) NSArray * byweekno;
+@property(retain) NSArray * byyearday;
+@property NSNumber * count;
+@property int freq;
+@property NSNumber * interval;
+@property(retain) ICSDateValue * until;
+@property NSNumber * wkst;
 
 + (id)recurrenceRuleFromICSCString:(const char *)arg1;
 + (id)recurrenceRuleFromICSString:(id)arg1;
 
-- (void)ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
-- (id)ICSStringWithOptions:(NSUInteger)arg1;
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (id)ICSStringWithOptions:(unsigned int)arg1;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)byday;
 - (id)byhour;
 - (id)byminute;
@@ -43,9 +43,9 @@
 - (id)count;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (NSInteger)freq;
+- (int)freq;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrequency:(NSInteger)arg1;
+- (id)initWithFrequency:(int)arg1;
 - (id)interval;
 - (id)occurrencesForStartDate:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 inTimeZone:(id)arg4;
 - (id)parameterValueForName:(id)arg1;
@@ -60,7 +60,7 @@
 - (void)setByweekno:(id)arg1;
 - (void)setByyearday:(id)arg1;
 - (void)setCount:(id)arg1;
-- (void)setFreq:(NSInteger)arg1;
+- (void)setFreq:(int)arg1;
 - (void)setInterval:(id)arg1;
 - (void)setParameterValue:(id)arg1 forName:(id)arg2;
 - (void)setUntil:(id)arg1;

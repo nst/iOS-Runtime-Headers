@@ -5,30 +5,30 @@
 @class <MPNowPlayingItemQueueInfoButtonDelegate>, NSURL, UIImage;
 
 @interface MPNowPlayingItemQueueInfoButton : UIButton {
-    NSUInteger _allowedDisplayTypes;
+    unsigned int _allowedDisplayTypes;
     <MPNowPlayingItemQueueInfoButtonDelegate> *_delegate;
     UIImage *_infoCircleImage;
-    NSUInteger _infoFeederCount;
-    NSInteger _infoTypeForLayout;
+    unsigned int _infoFeederCount;
+    int _infoTypeForLayout;
     NSURL *_infoURL;
     BOOL _infoURLIsTimed;
-    NSInteger _layoutDisabledCount;
-    NSUInteger _minSizingPositionInQueue;
+    int _layoutDisabledCount;
+    unsigned int _minSizingPositionInQueue;
     float _minSizingTextWidth;
 }
 
-@property <MPNowPlayingItemQueueInfoButtonDelegate> *delegate;
-@property(retain) NSURL *infoURL;
-@property NSUInteger allowedDisplayTypes;
-@property(readonly) NSInteger infoDisplayType;
+@property unsigned int allowedDisplayTypes;
+@property <MPNowPlayingItemQueueInfoButtonDelegate> * delegate;
+@property(readonly) int infoDisplayType;
+@property(retain) NSURL * infoURL;
 
-- (NSInteger)_activeDisplayType;
-- (NSInteger)_infoDisplayTypeForURL:(id)arg1 urlIsTimed:(BOOL)arg2 feederCount:(NSUInteger)arg3 askDelegate:(BOOL)arg4;
+- (int)_activeDisplayType;
+- (int)_infoDisplayTypeForURL:(id)arg1 urlIsTimed:(BOOL)arg2 feederCount:(unsigned int)arg3 askDelegate:(BOOL)arg4;
 - (float)_minSizingTextWidth;
 - (BOOL)_shouldDisplaysInfoCircleImage;
 - (void)_updateFeederCountInfo:(id)arg1;
-- (NSUInteger)allowedDisplayTypes;
-- (NSInteger)buttonType;
+- (unsigned int)allowedDisplayTypes;
+- (int)buttonType;
 - (void)clearWeakReferencesToObject:(id)arg1;
 - (void)clicked:(id)arg1;
 - (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
@@ -36,11 +36,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)infoDisplayType;
+- (int)infoDisplayType;
 - (id)infoURL;
 - (id)init;
 - (void)layoutSubviews;
-- (void)setAllowedDisplayTypes:(NSUInteger)arg1;
+- (void)setAllowedDisplayTypes:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInfoURL:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

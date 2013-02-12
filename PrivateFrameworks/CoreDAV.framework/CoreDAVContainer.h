@@ -6,6 +6,7 @@
 
 @interface CoreDAVContainer : NSObject {
     NSURL *_addMemberURL;
+    NSDictionary *_bulkRequests;
     NSString *_containerTitle;
     BOOL _isUnauthenticated;
     NSURL *_owner;
@@ -20,21 +21,9 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL *addMemberURL;
-@property(retain) NSString *containerTitle;
-@property(retain) NSURL *owner;
-@property(retain) NSSet *privileges;
-@property(readonly) NSSet *privilegesAsStringSet;
-@property(retain) NSString *pushKey;
-@property(retain) NSDictionary *pushTransports;
-@property(retain) NSString *quotaAvailable;
-@property(retain) NSString *quotaUsed;
-@property(retain) NSURL *resourceID;
-@property(retain) CoreDAVResourceTypeItem *resourceType;
-@property(readonly) NSSet *resourceTypeAsStringSet;
-@property(retain) NSSet *supportedReports;
-@property(readonly) NSSet *supportedReportsAsStringSet;
-@property(retain) NSURL *url;
+@property(retain) NSURL * addMemberURL;
+@property(retain) NSDictionary * bulkRequests;
+@property(retain) NSString * containerTitle;
 @property(readonly) BOOL hasReadPrivileges;
 @property(readonly) BOOL hasWriteContentPrivileges;
 @property(readonly) BOOL hasWritePropertiesPrivileges;
@@ -43,14 +32,28 @@
 @property(readonly) BOOL isSearchAddressBook;
 @property(readonly) BOOL isSharedAddressBook;
 @property BOOL isUnauthenticated;
+@property(retain) NSURL * owner;
+@property(retain) NSSet * privileges;
+@property(readonly) NSSet * privilegesAsStringSet;
+@property(retain) NSString * pushKey;
+@property(retain) NSDictionary * pushTransports;
+@property(retain) NSString * quotaAvailable;
+@property(retain) NSString * quotaUsed;
+@property(retain) NSURL * resourceID;
+@property(retain) CoreDAVResourceTypeItem * resourceType;
+@property(readonly) NSSet * resourceTypeAsStringSet;
+@property(retain) NSSet * supportedReports;
+@property(readonly) NSSet * supportedReportsAsStringSet;
 @property(readonly) BOOL supportsPrincipalPropertySearchReport;
 @property(readonly) BOOL supportsSyncCollectionReport;
+@property(retain) NSURL * url;
 
 + (id)convertPushTransportsForNSServerNotificationCenter:(id)arg1;
 + (id)copyPropertyMappingsForParser;
 
 - (id)addMemberURL;
 - (void)applyParsedProperties:(id)arg1;
+- (id)bulkRequests;
 - (id)containerTitle;
 - (void)dealloc;
 - (id)description;
@@ -74,6 +77,7 @@
 - (id)resourceType;
 - (id)resourceTypeAsStringSet;
 - (void)setAddMemberURL:(id)arg1;
+- (void)setBulkRequests:(id)arg1;
 - (void)setContainerTitle:(id)arg1;
 - (void)setIsUnauthenticated:(BOOL)arg1;
 - (void)setOwner:(id)arg1;

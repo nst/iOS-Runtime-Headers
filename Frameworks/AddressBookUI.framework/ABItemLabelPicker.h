@@ -11,8 +11,8 @@
     id _delegate;
     BOOL _didCreateNewLabel;
     id _editedItem;
-    NSInteger _itemIndex;
-    NSInteger _property;
+    int _itemIndex;
+    int _property;
     ABPropertyGroup *_propertyGroup;
     NSString *_savedLabel;
     NSString *_selectedLabel;
@@ -25,19 +25,19 @@
     UITableView *_tableView;
 }
 
-@property void *addressBook;
-@property(retain) ABStyleProvider *styleProvider;
-@property(readonly) UITableView *tableView;
 @property(getter=isAddLabelDisabled) BOOL addLabelDisabled;
+@property void* addressBook;
 @property BOOL didCreateNewLabel;
+@property(retain) ABStyleProvider * styleProvider;
+@property(readonly) UITableView * tableView;
 
-+ (id)_defaultLabelsForProperty:(NSInteger)arg1 person:(void*)arg2 propertyGroup:(id)arg3 index:(NSInteger)arg4 addressBook:(void*)arg5 outBestLabelIndex:(NSInteger*)arg6 forceIncludeLabels:(id)arg7;
-+ (id)builtInLabelsForProperty:(NSInteger)arg1;
-+ (struct __CFDictionary { }*)copyLabelUsageForProperty:(NSInteger)arg1 person:(void*)arg2;
++ (id)_defaultLabelsForProperty:(int)arg1 person:(void*)arg2 propertyGroup:(id)arg3 index:(int)arg4 addressBook:(void*)arg5 outBestLabelIndex:(int*)arg6 forceIncludeLabels:(id)arg7;
++ (id)builtInLabelsForProperty:(int)arg1;
++ (struct __CFDictionary { }*)copyLabelUsageForProperty:(int)arg1 person:(void*)arg2;
 + (struct __CFDictionary { }*)copyLabelUsageForPropertyGroup:(id)arg1 person:(void*)arg2;
-+ (id)defaultLabelsForProperty:(NSInteger)arg1 person:(void*)arg2 addressBook:(void*)arg3 outBestLabelIndex:(NSInteger*)arg4 forceIncludeLabels:(id)arg5;
-+ (id)defaultLabelsForProperty:(NSInteger)arg1 policy:(void*)arg2;
-+ (id)defaultLabelsForPropertyGroup:(id)arg1 index:(NSInteger)arg2 addressBook:(void*)arg3 outBestLabelIndex:(NSInteger*)arg4 forceIncludeLabels:(id)arg5;
++ (id)defaultLabelsForProperty:(int)arg1 person:(void*)arg2 addressBook:(void*)arg3 outBestLabelIndex:(int*)arg4 forceIncludeLabels:(id)arg5;
++ (id)defaultLabelsForProperty:(int)arg1 policy:(void*)arg2;
++ (id)defaultLabelsForPropertyGroup:(id)arg1 index:(int)arg2 addressBook:(void*)arg3 outBestLabelIndex:(int*)arg4 forceIncludeLabels:(id)arg5;
 
 - (void)_didEndPickingAndConfirmed:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)_matchSelectedPathWithSelectedLabel;
@@ -55,7 +55,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAddLabelDisabled;
 - (BOOL)isEditing;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadData;
 - (void)reloadItemLabels;
 - (void)resetLabelCaches;
@@ -68,7 +68,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDidCreateNewLabel:(BOOL)arg1;
 - (void)setIsEditing:(BOOL)arg1 animate:(BOOL)arg2;
-- (void)setPropertyGroup:(id)arg1 itemIndex:(NSInteger)arg2;
+- (void)setPropertyGroup:(id)arg1 itemIndex:(int)arg2;
 - (void)setSavedLabel:(id)arg1;
 - (void)setSelectedLabel:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
@@ -78,10 +78,10 @@
 - (id)styleProvider;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(NSInteger)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)tableView;

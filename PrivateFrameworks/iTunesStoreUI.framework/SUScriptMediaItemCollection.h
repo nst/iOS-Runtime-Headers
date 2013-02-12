@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, SUScriptMediaItem;
+@class MPMediaItemCollection, NSArray, SUScriptMediaItem;
 
 @interface SUScriptMediaItemCollection : SUScriptObject {
-    NSInteger _count;
+    int _count;
     NSArray *_items;
     NSArray *_mediaTypes;
     SUScriptMediaItem *_representativeItem;
     BOOL _watchingLibrary;
 }
 
-@property(getter=_items,retain,readonly) NSArray *items;
-@property(getter=_mediaTypes,retain,readonly) NSArray *mediaTypes;
-@property(readonly) MPMediaItemCollection *nativeCollection;
-@property(getter=_representativeItem,retain,readonly) SUScriptMediaItem *representativeItem;
-@property(getter=_count,readonly) NSInteger count;
+@property(getter=_count,readonly) int count;
+@property(getter=_items,retain,readonly) NSArray * items;
+@property(getter=_mediaTypes,retain,readonly) NSArray * mediaTypes;
+@property(readonly) MPMediaItemCollection * nativeCollection;
+@property(getter=_representativeItem,retain,readonly) SUScriptMediaItem * representativeItem;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 
@@ -25,17 +25,17 @@
 - (id)_copyItems;
 - (id)_copyMediaTypes;
 - (id)_copyRepresentativeItem;
-- (NSInteger)_count;
+- (int)_count;
 - (id)_items;
 - (void)_libraryChangedNotification:(id)arg1;
-- (NSInteger)_mainThreadCount;
+- (int)_mainThreadCount;
 - (id)_mediaTypes;
 - (id)_representativeItem;
 - (void)_setItems:(id)arg1;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
 - (id)nativeCollection;
-- (void)set_count:(NSInteger)arg1;
+- (void)set_count:(int)arg1;
 - (void)set_items:(id)arg1;
 - (void)set_mediaTypes:(id)arg1;
 - (void)set_representativeItem:(id)arg1;

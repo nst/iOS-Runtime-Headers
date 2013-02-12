@@ -16,14 +16,14 @@
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } m_password; 
-        NSInteger m_persistence; 
+        int m_persistence; 
         struct RetainPtr<__SecIdentity*> { 
             struct __SecIdentity {} *m_ptr; 
         } m_identity; 
         struct RetainPtr<const __CFArray*> { 
             struct __CFArray {} *m_ptr; 
         } m_certificates; 
-        NSInteger m_type; 
+        int m_type; 
     BOOL m_allowStoredCredentials;
     NSMutableData *m_data;
     NSError *m_error;

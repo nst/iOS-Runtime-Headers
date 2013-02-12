@@ -3,26 +3,26 @@
  */
 
 @interface GMMPixelPoint : PBCodable {
-    NSInteger _pixelX;
-    NSInteger _pixelY;
-    NSInteger _zoomLevel;
+    int _pixelX;
+    int _pixelY;
+    int _zoomLevel;
 }
 
-@property NSInteger pixelX;
-@property NSInteger pixelY;
-@property NSInteger zoomLevel;
+@property int pixelX;
+@property int pixelY;
+@property int zoomLevel;
 
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)init;
-- (NSInteger)pixelX;
-- (NSInteger)pixelY;
+- (int)pixelX;
+- (int)pixelY;
 - (BOOL)readFrom:(id)arg1;
-- (void)setPixelX:(NSInteger)arg1;
-- (void)setPixelY:(NSInteger)arg1;
-- (void)setZoomLevel:(NSInteger)arg1;
+- (void)setPixelX:(int)arg1;
+- (void)setPixelY:(int)arg1;
+- (void)setZoomLevel:(int)arg1;
 - (void)writeTo:(id)arg1;
-- (NSInteger)zoomLevel;
+- (int)zoomLevel;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSLock, NSMutableArray, NSMutableSet, NSString, SUScriptNativeObject, SUScriptObject, SUScriptObjectInvocationBatch;
+@class NSLock, NSMutableArray, NSMutableSet, NSString, SUScriptNativeObject, SUScriptObject, SUScriptObjectInvocationBatch, SUWebImagePool;
 
 @interface SUScriptObject : NSObject {
     unsigned int _checkOutWhenHidden : 1;
@@ -16,12 +16,12 @@
     NSMutableSet *_scriptObjects;
 }
 
-@property(getter=_className,readonly) NSString *className;
-@property(readonly) OpaqueJSContext *copyJavaScriptContext;
-@property(readonly) SUWebImagePool *imagePool;
-@property(retain) SUScriptNativeObject *nativeObject;
-@property SUScriptObject *parentScriptObject;
-@property(readonly) NSMutableArray *scriptAttributeKeys;
+@property(getter=_className,readonly) NSString * className;
+@property(readonly) struct OpaqueJSContext { }* copyJavaScriptContext;
+@property(readonly) SUWebImagePool * imagePool;
+@property(retain) SUScriptNativeObject * nativeObject;
+@property SUScriptObject * parentScriptObject;
+@property(readonly) NSMutableArray * scriptAttributeKeys;
 @property(readonly) BOOL sourceIsTrusted;
 
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;

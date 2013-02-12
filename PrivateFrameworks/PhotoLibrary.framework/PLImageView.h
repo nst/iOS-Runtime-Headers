@@ -19,13 +19,13 @@
     PLVideoView *_videoView;
 }
 
-@property(copy) NSString *name;
-@property(retain) PLVideoView *videoView;
 @property float borderAlpha;
 @property(getter=isBorderVisible) BOOL borderVisible;
 @property(getter=isDimmed) BOOL dimmed;
+@property(copy) NSString * name;
 @property(getter=isShadowEnabled) BOOL shadowEnabled;
 @property float transitionProgress;
+@property(retain) PLVideoView * videoView;
 
 + (void)initialize;
 + (BOOL)shouldDrawShadows;

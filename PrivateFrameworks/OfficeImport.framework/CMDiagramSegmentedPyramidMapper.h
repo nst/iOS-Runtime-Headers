@@ -5,11 +5,11 @@
 @interface CMDiagramSegmentedPyramidMapper : CMDiagramShapeMapper {
 }
 
-- (id)_suggestedBoundsForPyramidLayerWithIndex:(NSUInteger)arg1 inLayer:(NSUInteger)arg2 andSlice:(NSUInteger)arg3;
-- (NSUInteger)layerCount;
+- (id)_suggestedBoundsForPyramidLayerWithIndex:(unsigned int)arg1 inLayer:(unsigned int)arg2 andSlice:(unsigned int)arg3;
+- (unsigned int)layerCount;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapChildrenAt:(id)arg1 withState:(id)arg2;
-- (NSInteger)pointCount;
-- (struct CGSize { float x1; float x2; })sizeForNode:(id)arg1 atIndex:(NSUInteger)arg2;
+- (int)pointCount;
+- (struct CGSize { float x1; float x2; })sizeForNode:(id)arg1 atIndex:(unsigned int)arg2;
 
 @end

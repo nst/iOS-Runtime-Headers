@@ -3,18 +3,18 @@
  */
 
 @interface EMEnumProperty : CMProperty {
-    NSInteger wdValue;
+    int wdValue;
 }
 
-+ (id)mapHorizontalAlignmentValue:(NSInteger)arg1;
-+ (id)mapUnderlineValue:(NSInteger)arg1;
-+ (id)mapVerticalAlignmentValue:(NSInteger)arg1;
++ (id)mapHorizontalAlignmentValue:(int)arg1;
++ (id)mapUnderlineValue:(int)arg1;
++ (id)mapVerticalAlignmentValue:(int)arg1;
 
 - (id)cssStringForName:(id)arg1;
-- (id)initWithEnum:(NSInteger)arg1;
+- (id)initWithEnum:(int)arg1;
 - (id)mapHorizontalAlignment;
 - (id)mapUnderline;
 - (id)mapVerticalAlignment;
-- (NSInteger)value;
+- (int)value;
 
 @end

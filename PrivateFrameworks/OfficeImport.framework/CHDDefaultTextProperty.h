@@ -2,54 +2,42 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDResources, EDRunsCollection;
 
 @interface CHDDefaultTextProperty : NSObject <EDKeyedObject> {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSUInteger mContentFormatId;
-    NSInteger mDefaultTextType;
-    NSInteger mLabelPosition;
+    boolmShowCategoryLabel;
+    boolmShowPercentageLabel;
+    boolmShowSeriesLabel;
+    boolmShowValueLabel;
+    unsigned int mContentFormatId;
+    int mDefaultTextType;
+    int mLabelPosition;
     EDResources *mResources;
     EDRunsCollection *mRuns;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowCategoryLabel;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowPercentageLabel;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowSeriesLabel;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowValueLabel;
 }
 
 + (id)defaultTextPropertyWithResources:(id)arg1;
 
 - (id)contentFormat;
-- (NSUInteger)contentFormatId;
+- (unsigned int)contentFormatId;
 - (void)dealloc;
-- (NSInteger)defaultTextType;
+- (int)defaultTextType;
 - (id)initWithResources:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowCategoryLabel;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowPercentageLabel;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowSeriesLabel;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowValueLabel;
-- (NSUInteger)key;
-- (NSInteger)labelPosition;
+- (bool)isShowCategoryLabel;
+- (bool)isShowPercentageLabel;
+- (bool)isShowSeriesLabel;
+- (bool)isShowValueLabel;
+- (unsigned int)key;
+- (int)labelPosition;
 - (id)runs;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(NSUInteger)arg1;
-- (void)setDefaultTextType:(NSInteger)arg1;
-- (void)setIsShowCategoryLabel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setIsShowPercentageLabel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setIsShowSeriesLabel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setIsShowValueLabel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setLabelPosition:(NSInteger)arg1;
+- (void)setContentFormatId:(unsigned int)arg1;
+- (void)setDefaultTextType:(int)arg1;
+- (void)setIsShowCategoryLabel:(bool)arg1;
+- (void)setIsShowPercentageLabel:(bool)arg1;
+- (void)setIsShowSeriesLabel:(bool)arg1;
+- (void)setIsShowValueLabel:(bool)arg1;
+- (void)setLabelPosition:(int)arg1;
 - (void)setRuns:(id)arg1;
 
 @end

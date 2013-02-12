@@ -17,6 +17,7 @@
     BOOL _showsDefault;
     BOOL _showsNone;
     BOOL _showsNothingSelected;
+    BOOL _showsRingtonesStore;
     BOOL _startedInteruption;
 }
 
@@ -25,7 +26,7 @@
 - (void)_setRingtoneManager:(id)arg1;
 - (void)addRingtonesInDirectory:(id)arg1 toArray:(id)arg2 fileExtension:(id)arg3;
 - (id)avController;
-- (NSInteger)compareRingtoneWithIdentifier:(id)arg1 toRingtoneWithIdentifier:(id)arg2;
+- (int)compareRingtoneWithIdentifier:(id)arg1 toRingtoneWithIdentifier:(id)arg2;
 - (id)copyCurrentPhoneRingtoneIdentifier;
 - (id)copyCurrentPhoneRingtoneName;
 - (id)copyCurrentPhoneTextToneIdentifier;
@@ -34,17 +35,20 @@
 - (void)finishedWithPicker;
 - (id)identifierOfRingtoneAtIndexPath:(id)arg1;
 - (id)indexPathForDefaultGroup;
+- (id)indexPathForFirstRingtoneGroup;
 - (id)indexPathForNoneGroup;
 - (id)indexPathForRingtoneWithIdentifier:(id)arg1;
+- (id)indexPathForRingtonesStoreGroup;
 - (id)indexPathForSelectedRingtone;
 - (id)init;
 - (id)initWithAVController:(id)arg1 asRingtoneController:(BOOL)arg2;
 - (id)initWithAVController:(id)arg1;
 - (BOOL)isDefaultGroupAtIndexPath:(id)arg1;
 - (BOOL)isNoneGroupAtIndexPath:(id)arg1;
+- (BOOL)isRingtonesStoreGroupAtIndexPath:(id)arg1;
 - (BOOL)isTextTone;
 - (void)loadTextTonesFromPlist;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)playRingtoneWithIdentifier:(id)arg1;
 - (void)processNewRingtoneSelected:(id)arg1;
 - (void)reloadRingtones;
@@ -57,12 +61,13 @@
 - (void)setShowsDefault:(BOOL)arg1;
 - (void)setShowsNone:(BOOL)arg1;
 - (void)setShowsNothingSelected:(BOOL)arg1;
+- (void)setShowsRingtonesStore:(BOOL)arg1;
 - (void)stopPlaying;
 - (void)stopPlayingWithFadeOut:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)togglePlayWithRingtoneWithIdentifier:(id)arg1;
 
 @end

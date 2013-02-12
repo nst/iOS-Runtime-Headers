@@ -8,7 +8,7 @@
     <EKCellShortener> *_shortener;
 }
 
-@property <EKCellShortener> *shortener;
+@property <EKCellShortener> * shortener;
 
 - (void)_checkValueWidth;
 - (void)layoutSubviews;

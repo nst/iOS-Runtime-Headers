@@ -3,25 +3,25 @@
  */
 
 @interface ODDIteratorAttributes : NSObject {
-    NSInteger mAxis;
-    NSUInteger mCount;
+    int mAxis;
+    unsigned int mCount;
     BOOL mHideLastTransition;
-    NSInteger mPointType;
-    NSInteger mStart;
-    NSInteger mStep;
+    int mPointType;
+    int mStart;
+    int mStep;
 }
 
-- (NSInteger)axis;
-- (NSUInteger)count;
+- (int)axis;
+- (unsigned int)count;
 - (BOOL)hideLastTransition;
-- (NSInteger)pointType;
-- (void)setAxis:(NSInteger)arg1;
-- (void)setCount:(NSUInteger)arg1;
+- (int)pointType;
+- (void)setAxis:(int)arg1;
+- (void)setCount:(unsigned int)arg1;
 - (void)setHideLastTransition:(BOOL)arg1;
-- (void)setPointType:(NSInteger)arg1;
-- (void)setStart:(NSInteger)arg1;
-- (void)setStep:(NSInteger)arg1;
-- (NSInteger)start;
-- (NSInteger)step;
+- (void)setPointType:(int)arg1;
+- (void)setStart:(int)arg1;
+- (void)setStep:(int)arg1;
+- (int)start;
+- (int)step;
 
 @end

@@ -6,19 +6,19 @@
 
 @interface PDAnimateColorBehavior : PDCommonBehaviorData {
     OADColor *mBy;
-    NSInteger mColorSpace;
-    NSInteger mDirection;
+    int mColorSpace;
+    int mDirection;
     OADColor *mFrom;
     OADColor *mTo;
 }
 
 - (id)by;
-- (NSInteger)colorSpace;
-- (NSInteger)direction;
+- (int)colorSpace;
+- (int)direction;
 - (id)from;
 - (void)setBy:(id)arg1;
-- (void)setColorSpace:(NSInteger)arg1;
-- (void)setDirection:(NSInteger)arg1;
+- (void)setColorSpace:(int)arg1;
+- (void)setDirection:(int)arg1;
 - (void)setFrom:(id)arg1;
 - (void)setTo:(id)arg1;
 - (id)to;

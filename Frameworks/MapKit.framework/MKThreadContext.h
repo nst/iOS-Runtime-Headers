@@ -3,7 +3,7 @@
  */
 
 @interface MKThreadContext : NSObject {
-    NSInteger _CA_disableActionsCounter;
+    int _CA_disableActionsCounter;
 }
 
 + (id)currentContext;

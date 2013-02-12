@@ -3,13 +3,13 @@
  */
 
 @interface WebUIModalAlertSheet : UIModalView {
-    NSInteger _clickedButton;
+    int _clickedButton;
 }
 
-+ (id)modalAlertSheetWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3;
++ (id)modalAlertSheetWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3;
 
-- (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
-- (NSInteger)clickedButton;
-- (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(NSInteger)arg3;
+- (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
+- (int)clickedButton;
+- (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3;
 
 @end

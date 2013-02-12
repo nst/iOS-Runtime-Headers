@@ -9,12 +9,12 @@
                     SEL mCompareSelector; 
                 } _M_key_compare; 
                 struct _Rb_tree_node_base { 
-                    NSInteger _M_color; 
+                    int _M_color; 
                     struct _Rb_tree_node_base {} *_M_parent; 
                     struct _Rb_tree_node_base {} *_M_left; 
                     struct _Rb_tree_node_base {} *_M_right; 
                 } _M_header; 
-                NSUInteger _M_node_count; 
+                unsigned int _M_node_count; 
             } _M_impl; 
         } x1; } *mWrapPointSet;
 }

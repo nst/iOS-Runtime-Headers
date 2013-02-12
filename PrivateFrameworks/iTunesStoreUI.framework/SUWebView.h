@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, SSAuthenticationContext, SUScriptDebugDelegate, SUScriptInterface, SUWebViewDelegateProxy;
+@class <SUWebViewDelegate>, NSMutableArray, NSString, SSAuthenticationContext, SUScriptDebugDelegate, SUScriptInterface, SUWebViewDelegateProxy, WebDataSource, WebView;
 
 @interface SUWebView : UIWebView <SUScriptInterfaceDelegate> {
     unsigned int _openURLsExternally : 1;
@@ -13,19 +13,19 @@
     SUWebViewDelegateProxy *_delegateProxy;
     SUScriptInterface *_scriptInterface;
     NSMutableArray *_scrollRequests;
-    NSInteger _synchronousLayoutCount;
+    int _synchronousLayoutCount;
 }
 
-@property(copy) SSAuthenticationContext *authenticationContext;
-@property <SUWebViewDelegate> *delegate;
-@property(readonly) OpaqueJSContext *globalExecutionContext;
-@property(readonly) SUScriptInterface *scriptInterface;
-@property(readonly) NSString *title;
-@property(readonly) WebDataSource *webDataSource;
-@property(readonly) WebView *webView;
+@property(copy) SSAuthenticationContext * authenticationContext;
+@property <SUWebViewDelegate> * delegate;
+@property(readonly) struct OpaqueJSContext { }* globalExecutionContext;
 @property BOOL openURLsExternally;
+@property(readonly) SUScriptInterface * scriptInterface;
 @property(getter=isScrollingEnabled) BOOL scrollingEnabled;
 @property BOOL sourceIsTrusted;
+@property(readonly) NSString * title;
+@property(readonly) WebDataSource * webDataSource;
+@property(readonly) WebView * webView;
 @property(readonly) id windowScriptObject;
 
 + (void)_initializeSafeCategory;
@@ -59,8 +59,8 @@
 - (void)reloadWindowScriptObject:(id)arg1;
 - (void)resetScriptInterface;
 - (void)scriptInterface:(id)arg1 animatePurchaseForIdentifier:(id)arg2;
-- (void)scriptInterface:(id)arg1 parsedPropertyList:(id)arg2 ofType:(NSInteger)arg3;
-- (void)scriptInterface:(id)arg1 receivedEventOfType:(NSInteger)arg2 userInfo:(id)arg3;
+- (void)scriptInterface:(id)arg1 parsedPropertyList:(id)arg2 ofType:(int)arg3;
+- (void)scriptInterface:(id)arg1 receivedEventOfType:(int)arg2 userInfo:(id)arg3;
 - (id)scriptInterface;
 - (void)scrollElementToVisible:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;

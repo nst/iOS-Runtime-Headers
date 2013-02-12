@@ -7,7 +7,7 @@
 @interface PLVideoRemaker : NSObject {
     id _delegate;
     double _duration;
-    NSInteger _mode;
+    int _mode;
     float _percentComplete;
     NSTimer *_progressTimer;
     PLProgressView *_progressView;
@@ -19,10 +19,10 @@
 }
 
 + (void)_initializeSafeCategory;
-+ (long long)approximateByteSizeForMode:(NSInteger)arg1 duration:(double)arg2;
-+ (NSInteger)getHDRemakerModeForMode:(NSInteger)arg1;
-+ (NSInteger)getSDRemakerModeForMode:(NSInteger)arg1;
-+ (double)maximumDurationForTrimMode:(NSInteger)arg1;
++ (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
++ (int)getHDRemakerModeForMode:(int)arg1;
++ (int)getSDRemakerModeForMode:(int)arg1;
++ (double)maximumDurationForTrimMode:(int)arg1;
 
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;
 - (void)_remakerDidFinish:(id)arg1;
@@ -35,12 +35,12 @@
 - (double)duration;
 - (id)initWithURL:(id)arg1;
 - (id)messageForRemakingProgress;
-- (NSInteger)mode;
+- (int)mode;
 - (id)progressView;
 - (void)remake;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setMode:(NSInteger)arg1;
+- (void)setMode:(int)arg1;
 - (void)setTrimEndTime:(double)arg1;
 - (void)setTrimStartTime:(double)arg1;
 - (double)trimEndTime;

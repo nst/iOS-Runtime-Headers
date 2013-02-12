@@ -5,25 +5,25 @@
 @class DOMRange, UIView<UITextSelectingContainer>;
 
 @interface UITextSelection : NSObject {
-    NSInteger _affinity;
+    int _affinity;
     DOMRange *_base;
-    NSInteger _granularity;
+    int _granularity;
     DOMRange *_initialExtent;
     DOMRange *_selectedRange;
     UIView<UITextSelectingContainer> *_view;
 }
 
-@property(retain) DOMRange *base;
-@property(retain) DOMRange *initialExtent;
-@property(retain) DOMRange *selectedRange;
-@property(readonly) UIView<UITextSelectingContainer> *view;
-@property NSInteger affinity;
-@property NSInteger granularity;
-@property(readonly) NSInteger state;
+@property int affinity;
+@property(retain) DOMRange * base;
+@property int granularity;
+@property(retain) DOMRange * initialExtent;
+@property(retain) DOMRange * selectedRange;
+@property(readonly) int state;
+@property(readonly) UIView<UITextSelectingContainer> * view;
 
-- (NSInteger)affinity;
+- (int)affinity;
 - (void)aggressivelyExpandSelectionToWordContainingCaretSelection;
-- (void)alterSelection:(struct CGPoint { float x1; float x2; })arg1 granularity:(NSInteger)arg2;
+- (void)alterSelection:(struct CGPoint { float x1; float x2; })arg1 granularity:(int)arg2;
 - (id)base;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (void)clearRangedSelectionInitialExtent;
@@ -32,21 +32,21 @@
 - (void)collapseSelection;
 - (void)commit;
 - (void)dealloc;
-- (NSInteger)granularity;
+- (int)granularity;
 - (BOOL)hasEditableSelection;
 - (id)initWithView:(id)arg1;
 - (id)initialExtent;
 - (void)moveCaretToBoundaryOfWhitespaceOrLine;
-- (NSUInteger)offsetInMarkedText;
+- (unsigned int)offsetInMarkedText;
 - (BOOL)pointAtEndOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)pointAtStartOfLine:(struct CGPoint { float x1; float x2; })arg1;
 - (id)selectedRange;
 - (id)selectedText;
 - (void)selectionChanged;
 - (id)selectionRects;
-- (void)setAffinity:(NSInteger)arg1;
+- (void)setAffinity:(int)arg1;
 - (void)setBase:(id)arg1;
-- (void)setGranularity:(NSInteger)arg1;
+- (void)setGranularity:(int)arg1;
 - (void)setInitialExtent:(id)arg1;
 - (void)setRangedSelectionBaseToCurrentSelection;
 - (void)setRangedSelectionBaseToCurrentSelectionEnd;
@@ -60,8 +60,8 @@
 - (void)setSelectionWithFirstPoint:(struct CGPoint { float x1; float x2; })arg1 secondPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)simpleSmartExtendDownstream:(BOOL)arg1 start:(id)arg2 end:(id)arg3 initialExtent:(id)arg4;
-- (void)smartExtendRangedSelection:(NSInteger)arg1 downstream:(BOOL)arg2;
-- (NSInteger)state;
+- (void)smartExtendRangedSelection:(int)arg1 downstream:(BOOL)arg2;
+- (int)state;
 - (id)view;
 - (id)wordContainingCaretSelection;
 

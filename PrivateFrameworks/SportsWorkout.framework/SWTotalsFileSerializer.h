@@ -7,31 +7,31 @@
 @interface SWTotalsFileSerializer : NSObject <NSXMLParserDelegate> {
     float _farthestMile;
     NSMutableString *_foundCharacters;
-    NSUInteger _mostCalories;
-    NSUInteger _total10K;
-    NSUInteger _total5K;
-    NSUInteger _totalCalories;
+    unsigned int _mostCalories;
+    unsigned int _total10K;
+    unsigned int _total5K;
+    unsigned int _totalCalories;
     float _totalDistanceMiles;
-    NSUInteger _totalHalfMarathon;
-    NSUInteger _totalMarathon;
-    NSUInteger _totalSeconds;
-    NSUInteger _totalWeightWorkouts;
-    NSUInteger _totalWorkouts;
+    unsigned int _totalHalfMarathon;
+    unsigned int _totalMarathon;
+    unsigned int _totalSeconds;
+    unsigned int _totalWeightWorkouts;
+    unsigned int _totalWorkouts;
     NSURL *_url;
     double _weight;
 }
 
 @property(readonly) float farthestMile;
-@property(readonly) NSUInteger mostCalories;
-@property(readonly) NSUInteger total10K;
-@property(readonly) NSUInteger total5K;
-@property(readonly) NSUInteger totalCalories;
+@property(readonly) unsigned int mostCalories;
+@property(readonly) unsigned int total10K;
+@property(readonly) unsigned int total5K;
+@property(readonly) unsigned int totalCalories;
 @property(readonly) float totalDistanceMiles;
-@property(readonly) NSUInteger totalHalfMarathon;
-@property(readonly) NSUInteger totalMarathon;
-@property(readonly) NSUInteger totalSeconds;
-@property(readonly) NSUInteger totalWeightWorkouts;
-@property(readonly) NSUInteger totalWorkouts;
+@property(readonly) unsigned int totalHalfMarathon;
+@property(readonly) unsigned int totalMarathon;
+@property(readonly) unsigned int totalSeconds;
+@property(readonly) unsigned int totalWeightWorkouts;
+@property(readonly) unsigned int totalWorkouts;
 @property(readonly) double weight;
 
 + (void)initialize;
@@ -40,7 +40,7 @@
 - (float)farthestMile;
 - (id)init;
 - (id)initWithContentsOfURL:(id)arg1;
-- (NSUInteger)mostCalories;
+- (unsigned int)mostCalories;
 - (void)parseFarthestMile;
 - (void)parseMostCalories;
 - (void)parseTotal10K;
@@ -58,15 +58,15 @@
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parserDidStartDocument:(id)arg1;
 - (void)reset;
-- (NSUInteger)total10K;
-- (NSUInteger)total5K;
-- (NSUInteger)totalCalories;
+- (unsigned int)total10K;
+- (unsigned int)total5K;
+- (unsigned int)totalCalories;
 - (float)totalDistanceMiles;
-- (NSUInteger)totalHalfMarathon;
-- (NSUInteger)totalMarathon;
-- (NSUInteger)totalSeconds;
-- (NSUInteger)totalWeightWorkouts;
-- (NSUInteger)totalWorkouts;
+- (unsigned int)totalHalfMarathon;
+- (unsigned int)totalMarathon;
+- (unsigned int)totalSeconds;
+- (unsigned int)totalWeightWorkouts;
+- (unsigned int)totalWorkouts;
 - (id)url;
 - (double)weight;
 

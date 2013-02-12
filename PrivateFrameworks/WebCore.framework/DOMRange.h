@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMNode, NSString;
+
 @interface DOMRange : DOMObject <UIWebSelectionBlock> {
 }
 
-@property(retain,readonly) DOMNode *commonAncestorContainer;
-@property(retain,readonly) DOMNode *endContainer;
-@property(retain,readonly) DOMNode *startContainer;
-@property(copy,readonly) NSString *text;
 @property(readonly) BOOL collapsed;
-@property(readonly) NSInteger endOffset;
-@property(readonly) NSInteger startOffset;
+@property(retain,readonly) DOMNode * commonAncestorContainer;
+@property(retain,readonly) DOMNode * endContainer;
+@property(readonly) int endOffset;
+@property(retain,readonly) DOMNode * startContainer;
+@property(readonly) int startOffset;
+@property(copy,readonly) NSString * text;
 
 + (id)rangeForFirstPosition:(id)arg1 second:(id)arg2;
 
@@ -29,7 +31,7 @@
 - (short)compareBoundaryPoints:(unsigned short)arg1 :(id)arg2;
 - (short)compareBoundaryPoints:(unsigned short)arg1 sourceRange:(id)arg2;
 - (short)compareNode:(id)arg1;
-- (short)comparePoint:(id)arg1 offset:(NSInteger)arg2;
+- (short)comparePoint:(id)arg1 offset:(int)arg2;
 - (BOOL)containsBlock:(id)arg1;
 - (BOOL)containsRange:(id)arg1;
 - (id)createContextualFragment:(id)arg1;
@@ -40,39 +42,39 @@
 - (id)enclosingDocument;
 - (id)enclosingWordRange;
 - (id)endContainer;
-- (NSInteger)endOffset;
+- (int)endOffset;
 - (id)endPosition;
 - (void)expand:(id)arg1;
-- (void)extend:(unsigned long)arg1 inDirection:(NSInteger)arg2;
+- (void)extend:(unsigned long)arg1 inDirection:(int)arg2;
 - (id)extractContents;
 - (void)finalize;
 - (void)insertNode:(id)arg1;
 - (BOOL)intersectsNode:(id)arg1;
 - (BOOL)isEquivalentToCollapsedRange;
-- (BOOL)isPointInRange:(id)arg1 offset:(NSInteger)arg2;
+- (BOOL)isPointInRange:(id)arg1 offset:(int)arg2;
 - (BOOL)isSameBlock:(id)arg1;
 - (id)largerParent;
 - (id)lineBoxRects;
 - (id)markupString;
 - (id)mf_attachmentURLs;
 - (id)mf_stringValue;
-- (void)move:(unsigned long)arg1 inDirection:(NSInteger)arg2;
+- (void)move:(unsigned long)arg1 inDirection:(int)arg2;
 - (id)parentBlock;
 - (id)rangeOfContents;
 - (BOOL)rendersAsBlock;
 - (void)selectNode:(id)arg1;
 - (void)selectNodeContents:(id)arg1;
 - (BOOL)selectable;
-- (void)setEnd:(id)arg1 :(NSInteger)arg2;
-- (void)setEnd:(id)arg1 offset:(NSInteger)arg2;
+- (void)setEnd:(id)arg1 :(int)arg2;
+- (void)setEnd:(id)arg1 offset:(int)arg2;
 - (void)setEndAfter:(id)arg1;
 - (void)setEndBefore:(id)arg1;
-- (void)setStart:(id)arg1 :(NSInteger)arg2;
-- (void)setStart:(id)arg1 offset:(NSInteger)arg2;
+- (void)setStart:(id)arg1 :(int)arg2;
+- (void)setStart:(id)arg1 offset:(int)arg2;
 - (void)setStartAfter:(id)arg1;
 - (void)setStartBefore:(id)arg1;
 - (id)startContainer;
-- (NSInteger)startOffset;
+- (int)startOffset;
 - (id)startPosition;
 - (BOOL)strictlyContainsBlock:(id)arg1;
 - (void)surroundContents:(id)arg1;

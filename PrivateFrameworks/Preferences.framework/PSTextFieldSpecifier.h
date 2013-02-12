@@ -9,7 +9,7 @@
     SEL bestGuess;
 }
 
-+ (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(NSInteger)arg6 edit:(Class)arg7;
++ (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(int)arg6 edit:(Class)arg7;
 
 - (void)dealloc;
 - (id)placeholder;

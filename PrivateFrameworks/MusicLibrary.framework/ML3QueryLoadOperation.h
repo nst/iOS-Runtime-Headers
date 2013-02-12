@@ -10,8 +10,8 @@
     NSLock *_statementLock;
 }
 
-@property(retain) ML3Query *query;
-@property sqlite3_stmt *statement;
+@property(retain) ML3Query * query;
+@property struct sqlite3_stmt { }* statement;
 
 - (void)cancel;
 - (void)dealloc;

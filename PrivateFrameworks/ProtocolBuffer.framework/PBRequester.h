@@ -29,45 +29,45 @@
     NSDictionary *_httpResponseHeaders;
     NSMutableArray *_internalRequests;
     NSMutableArray *_internalResponses;
-    NSUInteger _lastGoodDataOffset;
+    unsigned int _lastGoodDataOffset;
     NSString *_logEncodedRequestToFile;
     NSString *_logEncodedResponseToFile;
     NSString *_logRequestToFile;
     NSString *_logResponseToFile;
     NSMutableArray *_requests;
-    NSInteger _responseStatusCode;
+    int _responseStatusCode;
     NSMutableArray *_responses;
     BOOL _shouldHandleCookies;
     double _timeoutSeconds;
     struct __CFRunLoopTimer { } *_timeoutTimer;
-    NSUInteger _uploadPayloadSize;
+    unsigned int _uploadPayloadSize;
 }
 
-@property(retain) NSURL *URL;
-@property(retain) NSArray *clientCertificates;
-@property(retain) NSURLConnection *connection;
-@property(retain) NSDictionary *httpRequestHeaders;
-@property(retain) NSDictionary *httpResponseHeaders;
-@property(retain) NSString *logRequestToFile;
-@property(retain) NSString *logResponseToFile;
-@property(readonly) NSArray *requests;
+@property(retain) NSURL * URL;
+@property(retain) NSArray * clientCertificates;
+@property(retain) NSURLConnection * connection;
 @property id delegate;
+@property(retain) NSDictionary * httpRequestHeaders;
+@property(retain) NSDictionary * httpResponseHeaders;
 @property BOOL ignoresResponse;
 @property(getter=isLoading) BOOL loading;
+@property(retain) NSString * logRequestToFile;
+@property(retain) NSString * logResponseToFile;
 @property BOOL needsCancel;
+@property(readonly) NSArray * requests;
 @property BOOL shouldHandleCookies;
 @property BOOL silentLoading;
 @property double timeoutSeconds;
-@property(readonly) NSUInteger uploadPayloadSize;
+@property(readonly) unsigned int uploadPayloadSize;
 
 + (BOOL)usesEncodedMessages;
 
 - (id)URL;
 - (id)_applicationID;
-- (void)_cancelWithErrorDomain:(id)arg1 errorCode:(NSInteger)arg2;
+- (void)_cancelWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
 - (void)_cleanup;
 - (void)_failWithError:(id)arg1;
-- (void)_failWithErrorDomain:(id)arg1 errorCode:(NSInteger)arg2;
+- (void)_failWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
 - (id)_languageLocale;
 - (id)_osVersion;
 - (void)_removeTimeoutTimer;
@@ -79,7 +79,7 @@
 - (void)addInternalRequest:(id)arg1;
 - (void)addRequest:(id)arg1;
 - (void)cancel;
-- (void)cancelWithErrorCode:(NSInteger)arg1;
+- (void)cancelWithErrorCode:(int)arg1;
 - (id)clientCertificates;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -132,7 +132,7 @@
 - (void)start;
 - (double)timeoutSeconds;
 - (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
-- (NSUInteger)uploadPayloadSize;
+- (unsigned int)uploadPayloadSize;
 - (void)writeRequest:(id)arg1 into:(id)arg2;
 
 @end

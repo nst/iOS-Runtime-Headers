@@ -8,8 +8,8 @@
     NSString *_new_cohort;
 }
 
-@property(retain) NSString *new_cohort;
 @property(readonly) BOOL hasNew_cohort;
+@property(retain) NSString * new_cohort;
 
 - (void)dealloc;
 - (id)description;

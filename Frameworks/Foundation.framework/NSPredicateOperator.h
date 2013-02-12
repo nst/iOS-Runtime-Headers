@@ -3,31 +3,31 @@
  */
 
 @interface NSPredicateOperator : NSObject <NSCoding, NSCopying> {
-    NSUInteger _modifier;
-    NSUInteger _operatorType;
+    unsigned int _modifier;
+    unsigned int _operatorType;
 }
 
-+ (SEL)_getSelectorForType:(NSUInteger)arg1;
-+ (id)_getSymbolForType:(NSUInteger)arg1;
-+ (id)_newOperatorWithType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 options:(NSUInteger)arg3;
-+ (id)operatorWithCustomSelector:(SEL)arg1 modifier:(NSUInteger)arg2;
-+ (id)operatorWithType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 options:(NSUInteger)arg3;
++ (SEL)_getSelectorForType:(unsigned int)arg1;
++ (id)_getSymbolForType:(unsigned int)arg1;
++ (id)_newOperatorWithType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
++ (id)operatorWithCustomSelector:(SEL)arg1 modifier:(unsigned int)arg2;
++ (id)operatorWithType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
 
-- (void)_setModifier:(NSUInteger)arg1;
-- (void)_setOptions:(NSUInteger)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(NSUInteger)arg2;
+- (void)_setModifier:(unsigned int)arg1;
+- (void)_setOptions:(unsigned int)arg1;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 options:(NSUInteger)arg3;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2;
-- (id)initWithOperatorType:(NSUInteger)arg1;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2;
+- (id)initWithOperatorType:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)modifier;
-- (NSUInteger)operatorType;
-- (NSUInteger)options;
+- (unsigned int)modifier;
+- (unsigned int)operatorType;
+- (unsigned int)options;
 - (BOOL)performOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (id)predicateFormat;

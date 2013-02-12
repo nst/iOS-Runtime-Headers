@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class CMMotionManager, NSTimer;
@@ -12,23 +13,19 @@
     struct HashSet<WebCore::DeviceMotionClientIPhone*,WTF::PtrHash<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*> > { 
         struct HashTable<WebCore::DeviceMotionClientIPhone*,WebCore::DeviceMotionClientIPhone*,WTF::IdentityExtractor<WebCore::DeviceMotionClientIPhone*>,WTF::PtrHash<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*>,WTF::HashTraits<WebCore::DeviceMotionClientIPhone*> > { 
             struct DeviceMotionClientIPhone {} **m_table; 
-            NSInteger m_tableSize; 
-            NSInteger m_tableSizeMask; 
-            NSInteger m_keyCount; 
-            NSInteger m_deletedCount; 
+            int m_tableSize; 
+            int m_tableSizeMask; 
+            int m_keyCount; 
+            int m_deletedCount; 
         } m_impl; 
     struct HashSet<WebCore::DeviceOrientationClientIPhone*,WTF::PtrHash<WebCore::DeviceOrientationClientIPhone*>,WTF::HashTraits<WebCore::DeviceOrientationClientIPhone*> > { 
         struct HashTable<WebCore::DeviceOrientationClientIPhone*,WebCore::DeviceOrientationClientIPhone*,WTF::IdentityExtractor<WebCore::DeviceOrientationClientIPhone*>,WTF::PtrHash<WebCore::DeviceOrientationClientIPhone*>,WTF::HashTraits<WebCore::DeviceOrientationClientIPhone*>,WTF::HashTraits<WebCore::DeviceOrientationClientIPhone*> > { 
             struct DeviceOrientationClientIPhone {} **m_table; 
-            NSInteger m_tableSize; 
-            NSInteger m_tableSizeMask; 
-            NSInteger m_keyCount; 
-            NSInteger m_deletedCount; 
+            int m_tableSize; 
+            int m_tableSizeMask; 
+            int m_keyCount; 
+            int m_deletedCount; 
         } m_impl; 
-     /* Encoded args for previous method: v12@0:4^{DeviceOrientationClientIPhone=^^?@^{DeviceOrientationController}{RefPtr<WebCore::DeviceOrientation>=^{DeviceOrientation}}B}8 */
-     /* Encoded args for previous method: v12@0:4^{DeviceOrientationClientIPhone=^^?@^{DeviceOrientationController}{RefPtr<WebCore::DeviceOrientation>=^{DeviceOrientation}}B}8 */
-     /* Encoded args for previous method: v12@0:4^{DeviceMotionClientIPhone=^^?@^{DeviceMotionController}{RefPtr<WebCore::DeviceMotionData>=^{DeviceMotionData}}B}8 */
-     /* Encoded args for previous method: v12@0:4^{DeviceMotionClientIPhone=^^?@^{DeviceMotionController}{RefPtr<WebCore::DeviceMotionData>=^{DeviceMotionData}}B}8 */
     } m_deviceMotionClients;
     } m_deviceOrientationClients;
     BOOL m_gyroAvailable;
@@ -40,15 +37,15 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; }*)arg1;
-- (void)addOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; }*)arg1;
+- (void)addMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (void)addOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
 - (void)checkClientStatus;
 - (void)dealloc;
 - (BOOL)gyroAvailable;
 - (id)init;
 - (void)initializeOnMainThread;
-- (void)removeMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; }*)arg1;
-- (void)removeOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; }*)arg1;
+- (void)removeMotionClient:(struct DeviceMotionClientIPhone { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; boolx5; }*)arg1;
+- (void)removeOrientationClient:(struct DeviceOrientationClientIPhone { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x_4_1_1; } x4; boolx5; }*)arg1;
 - (void)sendAccelerometerData:(id)arg1;
 - (void)sendMotionData:(id)arg1;
 - (void)update;

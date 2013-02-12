@@ -2,23 +2,23 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableDictionary, NSMutableSet, NSString;
+@class NSArray, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface MKTransitIconCache : NSObject {
     NSMutableDictionary *_IDToImage;
     NSString *_cacheFolderPath;
     NSMutableSet *_iconIDs;
     float _iconScale;
-    NSUInteger _iconSize;
-    NSInteger _iconVersion;
+    unsigned int _iconSize;
+    int _iconVersion;
     BOOL _isEnabled;
 }
 
-@property(retain) NSString *cacheFolderPath;
-@property(readonly) NSArray *iconIDs;
+@property(retain) NSString * cacheFolderPath;
+@property(readonly) NSArray * iconIDs;
 @property float iconScale;
-@property NSUInteger iconSize;
-@property NSInteger iconVersion;
+@property unsigned int iconSize;
+@property int iconVersion;
 @property BOOL isEnabled;
 
 + (id)sharedTransitIconCache;
@@ -31,15 +31,15 @@
 - (id)iconForID:(long long)arg1;
 - (id)iconIDs;
 - (float)iconScale;
-- (NSUInteger)iconSize;
-- (NSInteger)iconVersion;
+- (unsigned int)iconSize;
+- (int)iconVersion;
 - (id)init;
 - (BOOL)isEnabled;
 - (void)setCacheFolderPath:(id)arg1;
 - (void)setIconData:(id)arg1 forID:(long long)arg2;
 - (void)setIconScale:(float)arg1;
-- (void)setIconSize:(NSUInteger)arg1;
-- (void)setIconVersion:(NSInteger)arg1;
+- (void)setIconSize:(unsigned int)arg1;
+- (void)setIconVersion:(int)arg1;
 - (void)setIsEnabled:(BOOL)arg1;
 
 @end

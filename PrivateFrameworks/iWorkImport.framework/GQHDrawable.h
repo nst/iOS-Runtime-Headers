@@ -6,12 +6,12 @@
 }
 
 + (void)aboutToGenerateDrawable:(id)arg1 htmlState:(id)arg2;
-+ (NSInteger)beginDrawables:(id)arg1;
++ (int)beginDrawables:(id)arg1;
 + (Class)beginTable:(id)arg1;
 + (void)doneGeneratingDrawable:(id)arg1 htmlState:(id)arg2;
-+ (NSInteger)endDrawables:(id)arg1;
-+ (NSInteger)handleDrawable:(id)arg1 state:(id)arg2;
-+ (NSInteger)handleFloatingDrawable:(id)arg1 htmlState:(id)arg2;
-+ (NSInteger)handleInlineDrawable:(id)arg1 htmlState:(id)arg2;
++ (int)endDrawables:(id)arg1;
++ (int)handleDrawable:(id)arg1 state:(id)arg2;
++ (int)handleFloatingDrawable:(id)arg1 htmlState:(id)arg2;
++ (int)handleInlineDrawable:(id)arg1 htmlState:(id)arg2;
 
 @end

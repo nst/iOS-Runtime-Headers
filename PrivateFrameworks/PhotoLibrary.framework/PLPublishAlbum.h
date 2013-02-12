@@ -8,9 +8,9 @@
     NSString *_title;
 }
 
-@property(retain) NSString *title;
+@property(retain) NSString * title;
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
 - (void)setTitle:(id)arg1;
 - (id)title;

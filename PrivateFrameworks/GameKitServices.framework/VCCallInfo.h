@@ -5,8 +5,8 @@
 @class NSData, NSDictionary, NSMutableDictionary, NSString;
 
 @interface VCCallInfo : NSObject {
-    NSUInteger auNumber;
-    NSInteger callID;
+    unsigned int auNumber;
+    int callID;
     NSData *connectionData;
     NSString *hardwareVersion;
     NSString *osVersion;
@@ -17,19 +17,19 @@
     NSDictionary *relayUpdate;
 }
 
-@property(retain) NSData *connectionData;
-@property(retain) NSString *hardwareVersion;
-@property(retain) NSString *osVersion;
-@property(retain) NSString *participantID;
-@property(retain) NSData *relayConnectionData;
-@property(retain) NSDictionary *relayRequest;
-@property(retain) NSMutableDictionary *relayRequestResponse;
-@property(retain) NSDictionary *relayUpdate;
-@property NSUInteger auNumber;
-@property NSInteger callID;
+@property unsigned int auNumber;
+@property int callID;
+@property(retain) NSData * connectionData;
+@property(retain) NSString * hardwareVersion;
+@property(retain) NSString * osVersion;
+@property(retain) NSString * participantID;
+@property(retain) NSData * relayConnectionData;
+@property(retain) NSDictionary * relayRequest;
+@property(retain) NSMutableDictionary * relayRequestResponse;
+@property(retain) NSDictionary * relayUpdate;
 
 - (unsigned long)auNumber;
-- (NSInteger)callID;
+- (int)callID;
 - (id)connectionData;
 - (void)dealloc;
 - (id)hardwareVersion;
@@ -41,7 +41,7 @@
 - (id)relayRequestResponse;
 - (id)relayUpdate;
 - (void)setAuNumber:(unsigned long)arg1;
-- (void)setCallID:(NSInteger)arg1;
+- (void)setCallID:(int)arg1;
 - (void)setConnectionData:(id)arg1;
 - (void)setHardwareVersion:(id)arg1;
 - (void)setOsVersion:(id)arg1;

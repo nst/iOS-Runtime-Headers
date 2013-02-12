@@ -10,7 +10,7 @@
     unsigned int _slideshowTimerIsScheduled : 1;
     unsigned int _paused : 1;
     PLCroppedImageView *_currentImageView;
-    NSUInteger _currentIndex;
+    unsigned int _currentIndex;
     PLImageCache *_imageCache;
     struct __CFArray { } *_imageIndexes;
     PLImageLoadingQueue *_imageLoadingQueue;
@@ -20,7 +20,7 @@
     MLPhoto *_requestedImage;
 }
 
-- (NSInteger)_albumImageIndexForSlideIndex:(NSInteger)arg1;
+- (int)_albumImageIndexForSlideIndex:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBounds;
 - (void)_crossFadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_didLoadImage:(id)arg1;

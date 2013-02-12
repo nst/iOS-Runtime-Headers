@@ -15,6 +15,7 @@
 
 - (void)_reloadData;
 - (void)buildUIWithAVController:(id)arg1;
+- (float)contentHeight;
 - (void)dealloc;
 - (id)delegate;
 - (void)displayScrollerIndicators;
@@ -33,6 +34,7 @@
 - (void)setShowsDefault:(BOOL)arg1;
 - (void)setShowsNone:(BOOL)arg1;
 - (void)setShowsNothingSelected:(BOOL)arg1;
+- (void)setShowsRingtonesStore:(BOOL)arg1;
 - (void)stopPlaying;
 - (void)stopPlayingWithFadeOut:(BOOL)arg1;
 

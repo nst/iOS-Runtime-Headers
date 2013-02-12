@@ -4,24 +4,24 @@
 
 @interface GMMDirectionsOptionValue : PBCodable {
     BOOL _hasValue;
-    NSInteger _iD;
-    NSInteger _value;
+    int _iD;
+    int _value;
 }
 
 @property(readonly) BOOL hasValue;
-@property NSInteger iD;
-@property NSInteger value;
+@property int iD;
+@property int value;
 
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasValue;
-- (NSInteger)iD;
+- (int)iD;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setID:(NSInteger)arg1;
-- (void)setValue:(NSInteger)arg1;
-- (NSInteger)value;
+- (void)setID:(int)arg1;
+- (void)setValue:(int)arg1;
+- (int)value;
 - (void)writeTo:(id)arg1;
 
 @end

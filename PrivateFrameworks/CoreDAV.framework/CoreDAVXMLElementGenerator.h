@@ -16,20 +16,20 @@
     CoreDAVItem *_parentElement;
     SEL _parentElementSetter;
     CoreDAVXMLElementGenerator *_parentGenerator;
-    NSInteger _parsingState;
+    int _parsingState;
 }
 
-@property(retain) NSURL *baseURL;
-@property(retain) NSMutableData *cDATA;
-@property(retain) NSDictionary *cachedElementParseRules;
-@property(retain) NSMutableData *characters;
-@property(retain) CoreDAVXMLElementGenerator *currentlyParsingSubItem;
-@property(retain) CoreDAVItem *element;
-@property CoreDAVXMLElementGenerator *parentGenerator;
+@property(retain) NSURL * baseURL;
+@property(retain) NSMutableData * cDATA;
+@property(retain) NSDictionary * cachedElementParseRules;
+@property(retain) NSMutableData * characters;
 @property BOOL checkedElementValidityIfRootElement;
+@property(retain) CoreDAVXMLElementGenerator * currentlyParsingSubItem;
+@property(retain) CoreDAVItem * element;
 @property BOOL isUnrecognized;
 @property SEL parentElementSetter;
-@property NSInteger parsingState;
+@property CoreDAVXMLElementGenerator * parentGenerator;
+@property int parsingState;
 
 - (id)baseURL;
 - (id)cDATA;
@@ -55,7 +55,7 @@
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
 - (void)parserDidEndDocument:(id)arg1;
-- (NSInteger)parsingState;
+- (int)parsingState;
 - (void)resumeParsingWithParser:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setCDATA:(id)arg1;
@@ -67,7 +67,7 @@
 - (void)setIsUnrecognized:(BOOL)arg1;
 - (void)setParentElementSetter:(SEL)arg1;
 - (void)setParentGenerator:(id)arg1;
-- (void)setParsingState:(NSInteger)arg1;
+- (void)setParsingState:(int)arg1;
 - (BOOL)tracksRootElement;
 
 @end

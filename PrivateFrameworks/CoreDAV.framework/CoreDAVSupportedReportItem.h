@@ -8,12 +8,12 @@
     CoreDAVItem *_report;
 }
 
-@property(retain) CoreDAVItem *report;
+@property(retain) CoreDAVItem * report;
 
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)init;
 - (id)report;
 - (void)setReport:(id)arg1;
 

@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMCSSRule, NSString;
+
 @interface DOMCSSStyleDeclaration : DOMObject {
 }
 
-@property(copy) NSString *cssText;
-@property(retain,readonly) DOMCSSRule *parentRule;
-@property(readonly) NSUInteger length;
+@property(copy) NSString * cssText;
+@property(readonly) unsigned int length;
+@property(retain,readonly) DOMCSSRule * parentRule;
 
 - (id)_fontSizeDelta;
 - (void)_setFontSizeDelta:(id)arg1;
@@ -74,9 +76,9 @@
 - (id)getPropertyValue:(id)arg1;
 - (id)height;
 - (BOOL)isPropertyImplicit:(id)arg1;
-- (id)item:(NSUInteger)arg1;
+- (id)item:(unsigned int)arg1;
 - (id)left;
-- (NSUInteger)length;
+- (unsigned int)length;
 - (id)letterSpacing;
 - (id)lineHeight;
 - (id)listStyle;

@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSArray, NSString;
 
 @interface VSRecognitionRecognizeAction : VSRecognitionAction {
@@ -34,8 +39,8 @@
 - (float)_inputLevel;
 - (BOOL)_isActivelyRecognizing;
 - (BOOL)_isRecognizing;
-- (id)_keywordAtIndex:(NSInteger)arg1;
-- (NSInteger)_keywordCount;
+- (id)_keywordAtIndex:(int)arg1;
+- (int)_keywordCount;
 - (BOOL)_keywordIndexChanged;
 - (id)_keywords;
 - (void)_releaseFromPrepare;
@@ -47,10 +52,10 @@
 - (BOOL)_setDebugDumpPath:(id)arg1;
 - (BOOL)_setEngineResetRequired:(BOOL)arg1;
 - (BOOL)_setInputLevelUpdateInterval:(double)arg1;
-- (BOOL)_setPreferredEngine:(NSInteger)arg1;
+- (BOOL)_setPreferredEngine:(int)arg1;
 - (void)_setResults:(id)arg1;
 - (id)cancel;
-- (NSInteger)completionType;
+- (int)completionType;
 - (void)dealloc;
 - (id)initWithModelIdentifier:(id)arg1;
 - (id)modelIdentifier;

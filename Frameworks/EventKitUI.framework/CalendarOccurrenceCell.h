@@ -28,14 +28,14 @@
 
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
 - (id)_scriptingInfo;
-- (id)accessibilityTableViewCellText;
+- (id)accessibilityLabel;
 - (void)dealloc;
-- (NSUInteger)designator;
+- (unsigned int)designator;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 location:(id)arg3 startDate:(double)arg4 allDay:(BOOL)arg5 tentative:(BOOL)arg6;
-- (NSUInteger)isAllDay;
-- (NSUInteger)isCancelled;
+- (unsigned int)isAllDay;
+- (unsigned int)isCancelled;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setDotColor:(id)arg1;
 - (void)setIndentsForMissingDot:(BOOL)arg1;

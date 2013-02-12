@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class <MFSASLSecurityLayer>, NSData, NSMutableString, _MFSocket;
 
 @interface Connection : NSObject {
@@ -9,15 +14,15 @@
     unsigned int _allowFallbacks : 1;
     unsigned int _compressionEnabled : 1;
     char *_buffer;
-    NSUInteger _bufferLength;
-    NSInteger _bufferRemainingBytes;
-    NSUInteger _bufferStart;
-    struct z_stream_s { char *x1; NSUInteger x2; NSUInteger x3; char *x4; NSUInteger x5; NSUInteger x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; NSInteger x12; NSUInteger x13; NSUInteger x14; } *_deflater;
-    NSUInteger _desiredBufferLength;
-    NSUInteger _dontLogReads;
-    struct z_stream_s { char *x1; NSUInteger x2; NSUInteger x3; char *x4; NSUInteger x5; NSUInteger x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; NSInteger x12; NSUInteger x13; NSUInteger x14; } *_inflater;
+    unsigned int _bufferLength;
+    int _bufferRemainingBytes;
+    unsigned int _bufferStart;
+    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_deflater;
+    unsigned int _desiredBufferLength;
+    unsigned int _dontLogReads;
+    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_inflater;
     NSData *_logData;
-    NSUInteger _readBytesNotLogged;
+    unsigned int _readBytesNotLogged;
     NSMutableString *_readBytesToLog;
     <MFSASLSecurityLayer> *_securityLayer;
     _MFSocket *_socket;
@@ -29,7 +34,7 @@
 + (id)logActivityOnHosts;
 + (id)logActivityOnPorts;
 + (BOOL)logAllSocketActivity;
-+ (void)logBytes:(const char *)arg1 length:(NSInteger)arg2;
++ (void)logBytes:(const char *)arg1 length:(int)arg2;
 + (id)logClasses;
 + (void)readLoggingDefaults;
 + (void)setLogActivityOnHosts:(id)arg1;
@@ -56,17 +61,17 @@
 - (BOOL)isForcedConnection;
 - (BOOL)isValid;
 - (double)lastUsedTime;
-- (void)logReadChars:(const char *)arg1 length:(NSUInteger)arg2;
+- (void)logReadChars:(const char *)arg1 length:(unsigned int)arg2;
 - (BOOL)loginDisabled;
-- (BOOL)readBytesIntoData:(id)arg1 desiredLength:(NSUInteger)arg2;
+- (BOOL)readBytesIntoData:(id)arg1 desiredLength:(unsigned int)arg2;
 - (BOOL)readLineIntoData:(id)arg1;
 - (void)setAllowsFallbacks:(BOOL)arg1;
-- (void)setDesiredReadBufferLength:(NSUInteger)arg1;
+- (void)setDesiredReadBufferLength:(unsigned int)arg1;
 - (void)setIsFetching:(BOOL)arg1;
 - (BOOL)startCompression;
 - (BOOL)startTLSForAccount:(id)arg1;
-- (BOOL)writeBytes:(const char *)arg1 length:(NSUInteger)arg2 dontLogBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
-- (BOOL)writeData:(id)arg1 dontLogBytesInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (BOOL)writeBytes:(const char *)arg1 length:(unsigned int)arg2 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)writeData:(id)arg1 dontLogBytesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)writeData:(id)arg1;
 
 @end

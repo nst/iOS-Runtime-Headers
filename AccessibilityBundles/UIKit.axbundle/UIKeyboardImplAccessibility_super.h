@@ -5,11 +5,13 @@
 @interface UIKeyboardImplAccessibility_super : UIAccessibilitySafeCategory {
 }
 
-- (BOOL)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2;
+- (BOOL)acceptWord:(id)arg1 firstDelete:(unsigned int)arg2;
 - (BOOL)callShouldDelete;
 - (BOOL)callShouldInsertText:(id)arg1;
 - (void)dismissKeyboard;
 - (void)hideKeyboard;
+- (void)insertText:(id)arg1;
+- (void)setInputMode:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)setInputModeToNextInPreferredList;
 - (void)showKeyboard;
 - (void)updateAutocorrectPrompt:(id)arg1;

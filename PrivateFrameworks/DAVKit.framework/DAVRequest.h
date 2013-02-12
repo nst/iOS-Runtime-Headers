@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/DAVKit.framework/DAVKit
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class DAVSession, NSData, NSDate, NSDictionary, NSMutableData, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface DAVRequest : AYOperation {
     struct { 
-        NSInteger version; 
+        int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
@@ -15,7 +20,7 @@
     NSMutableDictionary *_attemptDictionary;
     NSMutableSet *_bodyReaders;
     struct __CFReadStream { } *_bodyStream;
-    NSInteger _certificatePolicy;
+    int _certificatePolicy;
     BOOL _checkedServerTrust;
     } _clientContext;
     long long _contentLength;
@@ -25,7 +30,7 @@
     NSDictionary *_headers;
     NSMutableData *_httpResponseBody;
     NSString *_httpStatus;
-    NSUInteger _httpStatusCode;
+    unsigned int _httpStatusCode;
     NSString *_method;
     long long _putLength;
     long long _readLength;
@@ -40,10 +45,10 @@
     BOOL _useKerberos;
 }
 
-@property(retain) NSDate *dispatchDate;
+@property(retain) NSDate * dispatchDate;
 
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
-+ (NSInteger)defaultCertificatePolicy;
++ (int)defaultCertificatePolicy;
 + (void)initialize;
 + (BOOL)logHTTPActivity;
 + (BOOL)logRequestSynopsis;
@@ -63,23 +68,25 @@
 + (id)requestWithSession:(id)arg1 method:(id)arg2 path:(id)arg3;
 + (id)requestWithURL:(id)arg1 method:(id)arg2;
 + (void)setAllowsAnyHTTPSCertificateForHost:(id)arg1 value:(BOOL)arg2;
-+ (void)setDefaultCertificatePolicy:(NSInteger)arg1;
++ (void)setDefaultCertificatePolicy:(int)arg1;
 + (void)setLogHTTPActivity:(BOOL)arg1;
 + (void)setLogRequestSynopsis:(BOOL)arg1;
 
 - (unsigned char)_bodyStreamCanRead;
-- (unsigned char)_bodyStreamOpen:(struct { NSInteger x1; NSInteger x2; }*)arg1 openComplete:(char *)arg2;
-- (long)_bodyStreamRead:(char *)arg1 bufferLength:(long)arg2 error:(struct { NSInteger x1; NSInteger x2; }*)arg3 atEOF:(char *)arg4;
+- (unsigned char)_bodyStreamOpen:(struct { int x1; int x2; }*)arg1 openComplete:(char *)arg2;
+- (long)_bodyStreamRead:(char *)arg1 bufferLength:(long)arg2 error:(struct { int x1; int x2; }*)arg3 atEOF:(char *)arg4;
 - (BOOL)_computeHeaders;
 - (void)_initForPropFindWithDepth:(id)arg1 lookingForProps:(id)arg2;
 - (void)_initForPropPatchWithPatchDict:(id)arg1 deleteProperties:(id)arg2;
 - (BOOL)_initHTTPRequest;
 - (void)_initReaderWithClass:(Class)arg1;
+- (id)_nonceFromAuthHeader:(id)arg1;
+- (BOOL)_nonceIsStale:(id)arg1;
 - (void)_readStreamEvent:(unsigned long)arg1;
 - (id)acceptingReaders;
 - (void)addResponseBodyReader:(id)arg1;
-- (NSInteger)attemptForHTTPCode:(NSInteger)arg1;
-- (NSInteger)certificatePolicy;
+- (int)attemptForHTTPCode:(int)arg1;
+- (int)certificatePolicy;
 - (void)dealloc;
 - (id)description;
 - (void)dispatch;
@@ -93,7 +100,7 @@
 - (void)grantRequestWithLockToken:(id)arg1;
 - (void)grantRequestWithLockTokens:(id)arg1;
 - (id)httpStatus;
-- (NSInteger)httpStatusCode;
+- (int)httpStatusCode;
 - (BOOL)initAuthGSS;
 - (void)initBeforeDispatch;
 - (id)initMultiStatusRequestWithSession:(id)arg1 method:(id)arg2 URI:(id)arg3 responseClass:(Class)arg4;
@@ -132,15 +139,15 @@
 - (long long)responseContentLength;
 - (id)responseHeaders;
 - (id)responses;
-- (id)retryOperationAfterSSLError:(NSInteger)arg1;
+- (id)retryOperationAfterSSLError:(int)arg1;
 - (id)session;
-- (void)setCertificatePolicy:(NSInteger)arg1;
+- (void)setCertificatePolicy:(int)arg1;
 - (BOOL)setCertificatePolicyOnStream:(struct __CFReadStream { }*)arg1;
 - (void)setDispatchDate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeader:(id)arg1 withValue:(id)arg2;
 - (void)setRequestBodyWithData:(id)arg1;
-- (void)setRequestBodyWithString:(id)arg1 encoding:(NSUInteger)arg2;
+- (void)setRequestBodyWithString:(id)arg1 encoding:(unsigned int)arg2;
 - (void)setSSLPropertiesOnReadStream;
 - (void)setTrustedCertsOnReadStream:(id)arg1;
 - (void)setUsername:(id)arg1 andPassword:(id)arg2;

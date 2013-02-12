@@ -8,7 +8,7 @@
     <EKPadAllDayViewContentsDelegate> *_delegate;
 }
 
-@property <EKPadAllDayViewContentsDelegate> *delegate;
+@property <EKPadAllDayViewContentsDelegate> * delegate;
 
 - (id)delegate;
 - (void)setDelegate:(id)arg1;

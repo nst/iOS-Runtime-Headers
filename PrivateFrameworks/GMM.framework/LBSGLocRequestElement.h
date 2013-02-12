@@ -10,12 +10,12 @@
     LBSGLocation *_location;
 }
 
-@property(retain) LBSGCellularProfile *cellularProfile;
-@property(retain) LBSGGeocodeRequest *geocode;
-@property(retain) LBSGLocation *location;
+@property(retain) LBSGCellularProfile * cellularProfile;
+@property(retain) LBSGGeocodeRequest * geocode;
 @property(readonly) BOOL hasCellularProfile;
 @property(readonly) BOOL hasGeocode;
 @property(readonly) BOOL hasLocation;
+@property(retain) LBSGLocation * location;
 
 - (id)cellularProfile;
 - (void)dealloc;

@@ -12,10 +12,15 @@
 + (id)defaultConditionalContext;
 + (void)setDefaultConditionalContext:(id)arg1;
 
+- (id)_arrayByEvaluatingChildrenOfArray:(id)arg1 withForcedValue:(int)arg2;
 - (BOOL)_checkConditions:(id)arg1 withOperator:(id)arg2;
-- (NSInteger)_logicalOperatorForString:(id)arg1;
+- (id)_dictionaryByEvaluatingChildrenOfDictionary:(id)arg1 withForcedValue:(int)arg2;
+- (id)_dictionaryByEvaluatingDictionary:(id)arg1 withForcedValue:(int)arg2;
+- (id)_dictionaryByEvaluatingWithForcedValue:(int)arg1;
+- (int)_logicalOperatorForString:(id)arg1;
 - (void)dealloc;
 - (id)dictionaryByEvaluatingConditions;
+- (id)dictionaryByRemovingConditions;
 - (id)init;
 - (id)initWithDictionary:(id)arg1 conditionalContext:(id)arg2;
 - (id)initWithDictionary:(id)arg1;

@@ -13,9 +13,9 @@
 - (void)_close;
 - (void)addItem:(id)arg1;
 - (id)backItem;
-- (NSInteger)backListCount;
-- (id)backListWithLimit:(NSInteger)arg1;
-- (NSInteger)capacity;
+- (int)backListCount;
+- (id)backListWithLimit:(int)arg1;
+- (int)capacity;
 - (BOOL)containsItem:(id)arg1;
 - (id)currentItem;
 - (void)dealloc;
@@ -23,18 +23,18 @@
 - (id)dictionaryRepresentation;
 - (void)finalize;
 - (id)forwardItem;
-- (NSInteger)forwardListCount;
-- (id)forwardListWithLimit:(NSInteger)arg1;
+- (int)forwardListCount;
+- (id)forwardListWithLimit:(int)arg1;
 - (void)goBack;
 - (void)goForward;
 - (void)goToItem:(id)arg1;
 - (id)init;
 - (id)initWithBackForwardList:(struct PassRefPtr<WebCore::BackForwardList> { struct BackForwardList {} *x1; })arg1;
-- (id)itemAtIndex:(NSInteger)arg1;
-- (NSUInteger)pageCacheSize;
+- (id)itemAtIndex:(int)arg1;
+- (unsigned int)pageCacheSize;
 - (void)removeItem:(id)arg1;
-- (void)setCapacity:(NSInteger)arg1;
-- (void)setPageCacheSize:(NSUInteger)arg1;
+- (void)setCapacity:(int)arg1;
+- (void)setPageCacheSize:(unsigned int)arg1;
 - (void)setToMatchDictionaryRepresentation:(id)arg1;
 
 @end

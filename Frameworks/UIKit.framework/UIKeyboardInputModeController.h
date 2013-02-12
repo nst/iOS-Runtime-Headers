@@ -8,7 +8,7 @@
     UIKeyboardInputMode *_currentInputMode;
 }
 
-@property(retain) UIKeyboardInputMode *currentInputMode;
+@property(retain) UIKeyboardInputMode * currentInputMode;
 
 + (id)sharedInputModeController;
 

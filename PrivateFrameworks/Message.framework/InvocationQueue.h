@@ -20,10 +20,10 @@
 - (void)dealloc;
 - (void)didCancel:(id)arg1;
 - (id)init;
-- (NSUInteger)invocationCount;
-- (NSUInteger)maxThreadCount;
+- (unsigned int)invocationCount;
+- (unsigned int)maxThreadCount;
 - (void)removeAllItems;
-- (void)setMaxThreadCount:(NSUInteger)arg1;
+- (void)setMaxThreadCount:(unsigned int)arg1;
 - (void)setThreadRecycleTimeout:(double)arg1;
 - (double)threadRecycleTimeout;
 

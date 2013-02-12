@@ -5,21 +5,21 @@
 @class OADRotation3D;
 
 @interface OADLightRig : NSObject <NSCopying> {
-    NSInteger mDirection;
+    int mDirection;
     OADRotation3D *mRotation;
-    NSInteger mType;
+    int mType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSInteger)direction;
-- (NSUInteger)hash;
+- (int)direction;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)rotation;
-- (void)setDirection:(NSInteger)arg1;
+- (void)setDirection:(int)arg1;
 - (void)setRotation:(id)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

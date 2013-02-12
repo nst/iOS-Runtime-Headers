@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKLeaderboardCategoryViewController, GKLeaderboardViewControllerPrivate;
+@class <GKLeaderboardViewControllerDelegate>, GKLeaderboardCategoryViewController, GKLeaderboardViewControllerPrivate, NSString;
 
 @interface GKLeaderboardViewController : UINavigationController {
     GKLeaderboardCategoryViewController *_categoryController;
     GKLeaderboardViewControllerPrivate *_privateViewController;
 }
 
-@property(retain) NSString *category;
-@property(retain) GKLeaderboardCategoryViewController *categoryController;
-@property <GKLeaderboardViewControllerDelegate> *leaderboardDelegate;
-@property(retain) GKLeaderboardViewControllerPrivate *privateViewController;
-@property NSInteger timeScope;
+@property(retain) NSString * category;
+@property(retain) GKLeaderboardCategoryViewController * categoryController;
+@property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
+@property(retain) GKLeaderboardViewControllerPrivate * privateViewController;
+@property int timeScope;
 
 - (void)authenticatedStatusChanged;
 - (id)category;
@@ -28,9 +28,9 @@
 - (void)setGame:(id)arg1;
 - (void)setLeaderboardDelegate:(id)arg1;
 - (void)setPrivateViewController:(id)arg1;
-- (void)setTimeScope:(NSInteger)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (NSInteger)timeScope;
+- (void)setTimeScope:(int)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (int)timeScope;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

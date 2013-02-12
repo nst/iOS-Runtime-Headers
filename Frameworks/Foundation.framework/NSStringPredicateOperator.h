@@ -3,17 +3,17 @@
  */
 
 @interface NSStringPredicateOperator : NSPredicateOperator {
-    NSUInteger _flags;
+    unsigned int _flags;
 }
 
 - (id)_modifierString;
-- (void)_setOptions:(NSUInteger)arg1;
+- (void)_setOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)flags;
+- (unsigned int)flags;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 variant:(NSUInteger)arg3;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)options;
+- (unsigned int)options;
 
 @end

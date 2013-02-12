@@ -7,15 +7,15 @@
 @interface IMReachability : NSObject {
     <IMReachabilityDelegate> *_delegate;
     NSString *_description;
-    NSUInteger _flags;
+    unsigned int _flags;
     BOOL _gettingFlags;
     void *_reachabilityRef;
 }
 
-@property <IMReachabilityDelegate> *delegate;
 @property(readonly) BOOL connectionRequired;
-@property(readonly) NSUInteger flags;
-@property(readonly) NSUInteger status;
+@property <IMReachabilityDelegate> * delegate;
+@property(readonly) unsigned int flags;
+@property(readonly) unsigned int status;
 
 + (id)reachabilityForInternetConnection;
 + (id)reachabilityForLocalWiFi;
@@ -30,10 +30,10 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (NSUInteger)flags;
+- (unsigned int)flags;
 - (id)initWithLocalSocketAddress:(id)arg1 remoteSocketAddress:(id)arg2 delegate:(id)arg3;
 - (id)initWithRemoteHost:(id)arg1 delegate:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (NSUInteger)status;
+- (unsigned int)status;
 
 @end

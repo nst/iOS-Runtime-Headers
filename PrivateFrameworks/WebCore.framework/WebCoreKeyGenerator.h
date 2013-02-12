@@ -8,7 +8,7 @@
 + (id)sharedGenerator;
 
 - (id)init;
-- (id)signedPublicKeyAndChallengeStringWithStrengthIndex:(NSUInteger)arg1 challenge:(id)arg2 pageURL:(id)arg3;
+- (id)signedPublicKeyAndChallengeStringWithStrengthIndex:(unsigned int)arg1 challenge:(id)arg2 pageURL:(id)arg3;
 - (id)strengthMenuItemTitles;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface GKGameMatchFlowRateRequest : GKDataRequest {
-    NSUInteger _activity;
+    unsigned int _activity;
 }
 
-@property NSUInteger activity;
+@property unsigned int activity;
 
-- (NSUInteger)activity;
+- (unsigned int)activity;
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
-- (void)setActivity:(NSUInteger)arg1;
+- (void)setActivity:(unsigned int)arg1;
 
 @end

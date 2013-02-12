@@ -10,7 +10,7 @@
     NSArray *_primaryKeys;
     NSDictionary *_propertyMappings;
     NSString *_subentityColumn;
-    NSUInteger _subentityID;
+    unsigned int _subentityID;
 }
 
 - (id)attributeColumnDefinitions;
@@ -33,8 +33,8 @@
 - (void)setPropertyMappings:(id)arg1;
 - (void)setSingleTableEntity:(BOOL)arg1;
 - (void)setSubentityColumn:(id)arg1;
-- (void)setSubentityID:(NSUInteger)arg1;
+- (void)setSubentityID:(unsigned int)arg1;
 - (id)subentityColumn;
-- (NSUInteger)subentityID;
+- (unsigned int)subentityID;
 
 @end

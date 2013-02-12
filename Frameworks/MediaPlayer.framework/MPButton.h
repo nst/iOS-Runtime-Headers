@@ -13,7 +13,7 @@
     double _holdDelayInterval;
 }
 
-@property UIEdgeInsets hitRectInsets;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } hitRectInsets;
 @property double holdDelayInterval;
 
 + (void)_initializeSafeCategory;

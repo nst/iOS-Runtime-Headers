@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
+@class NSArray, NSString;
+
 @interface CKMessageComposition : NSObject {
 }
 
-@property(copy) NSString *markupString;
-@property(retain) NSArray *resources;
-@property(copy) NSString *subject;
-@property(copy) NSString *textString;
 @property(readonly) BOOL hasContent;
 @property BOOL isTextOnly;
+@property(copy) NSString * markupString;
+@property(retain) NSArray * resources;
+@property(copy) NSString * subject;
+@property(copy) NSString * textString;
 
 + (void)deleteFileWithPrefix:(id)arg1 path:(id)arg2;
 + (id)messageCompositionFromFileWithPrefix:(id)arg1 path:(id)arg2;

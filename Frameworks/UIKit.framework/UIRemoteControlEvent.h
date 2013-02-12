@@ -3,14 +3,14 @@
  */
 
 @interface UIRemoteControlEvent : UIInternalEvent {
-    NSInteger _subtype;
+    int _subtype;
 }
 
 - (id)_init;
-- (void)_setSubtype:(NSInteger)arg1;
+- (void)_setSubtype:(int)arg1;
 - (void)_simpleRemoteActionNotification:(id)arg1;
 - (void)dealloc;
-- (NSInteger)subtype;
-- (NSInteger)type;
+- (int)subtype;
+- (int)type;
 
 @end

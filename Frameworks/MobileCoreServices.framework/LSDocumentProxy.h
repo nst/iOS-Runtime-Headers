@@ -10,14 +10,14 @@
     NSString *_typeIdentifier;
 }
 
-@property(readonly) NSString *MIMEType;
-@property(readonly) NSString *name;
-@property(readonly) NSString *typeIdentifier;
+@property(readonly) NSString * MIMEType;
+@property(readonly) NSString * name;
+@property(readonly) NSString * typeIdentifier;
 
 + (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;
 
 - (id)MIMEType;
-- (struct { NSInteger x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(NSInteger)arg1;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(int)arg1;
 - (void)bind;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;

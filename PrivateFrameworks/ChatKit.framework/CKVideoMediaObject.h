@@ -13,9 +13,9 @@
 + (id)mimeTypesToFileExtensions;
 
 - (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
-- (id)_newPreviewImageForIncomingVideoWithTailStyle:(NSInteger)arg1;
-- (id)_newPreviewImageWithTailStyle:(NSInteger)arg1;
-- (id)_newVideoPreviewImageForImage:(id)arg1 withTailStyle:(NSInteger)arg2;
+- (id)_newPreviewImageForIncomingVideoWithTailStyle:(int)arg1;
+- (id)_newPreviewImageWithTailStyle:(int)arg1;
+- (id)_newVideoPreviewImageForImage:(id)arg1 withTailStyle:(int)arg2;
 - (id)_transcodeOptions;
 - (float)balloonHeightWithPreviewData:(id)arg1;
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
@@ -24,8 +24,8 @@
 - (void)dealloc;
 - (id)effectiveExportedFilename;
 - (id)filenameForMedia;
-- (NSInteger)mediaType;
-- (id)newPreview:(NSInteger)arg1 highlight:(BOOL)arg2;
+- (int)mediaType;
+- (id)newPreview:(int)arg1 highlight:(BOOL)arg2;
 - (id)optionsForMedia;
 - (BOOL)shouldGeneratePreviewInBackground;
 - (BOOL)shouldTranscodeForMMS;

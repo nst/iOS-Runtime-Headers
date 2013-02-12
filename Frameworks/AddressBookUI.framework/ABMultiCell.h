@@ -4,13 +4,13 @@
 
 @class ABMultiCellContentView;
 
-@interface ABMultiCell : UITableViewCell {
+@interface ABMultiCell : ABChameleonCell {
     ABMultiCellContentView *_abMultiCellContentView;
     BOOL _editingDisabled;
 }
 
-@property(retain) ABMultiCellContentView *multiCellContentView;
 @property(getter=isEditingDisabled) BOOL editingDisabled;
+@property(retain) ABMultiCellContentView * multiCellContentView;
 
 + (void)_initializeSafeCategory;
 
@@ -23,6 +23,7 @@
 - (BOOL)isEditingDisabled;
 - (void)layoutSubviews;
 - (id)multiCellContentView;
+- (void)setAbCellStyle:(int)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditingDisabled:(BOOL)arg1;
 - (void)setMultiCellContentView:(id)arg1;

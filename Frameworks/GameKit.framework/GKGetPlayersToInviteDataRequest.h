@@ -8,7 +8,7 @@
     NSArray *_players;
 }
 
-@property(readonly) NSArray *players;
+@property(readonly) NSArray * players;
 
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;

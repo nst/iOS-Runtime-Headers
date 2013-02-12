@@ -7,18 +7,18 @@
 @interface CalEventMetadata : NSObject <NSCoding> {
     NSArray *_attach;
     NSArray *_categories;
-    NSInteger _classification;
+    int _classification;
     ICSDate *_created;
     NSArray *_priority;
     NSDictionary *_x_props;
 }
 
-@property(retain) NSArray *attach;
-@property(retain) NSArray *categories;
-@property(retain) ICSDate *created;
-@property(retain) NSArray *priority;
-@property(retain) NSDictionary *x_props;
-@property NSInteger classification;
+@property(retain) NSArray * attach;
+@property(retain) NSArray * categories;
+@property int classification;
+@property(retain) ICSDate * created;
+@property(retain) NSArray * priority;
+@property(retain) NSDictionary * x_props;
 
 + (id)metadataWithData:(id)arg1;
 + (id)metadataWithICSEvent:(id)arg1;
@@ -26,7 +26,7 @@
 - (void)applyToEvent:(id)arg1;
 - (id)attach;
 - (id)categories;
-- (NSInteger)classification;
+- (int)classification;
 - (id)created;
 - (id)dataRepresentationWithExistingMetaData:(id)arg1;
 - (void)dealloc;
@@ -37,7 +37,7 @@
 - (id)priority;
 - (void)setAttach:(id)arg1;
 - (void)setCategories:(id)arg1;
-- (void)setClassification:(NSInteger)arg1;
+- (void)setClassification:(int)arg1;
 - (void)setCreated:(id)arg1;
 - (void)setPriority:(id)arg1;
 - (void)setX_props:(id)arg1;

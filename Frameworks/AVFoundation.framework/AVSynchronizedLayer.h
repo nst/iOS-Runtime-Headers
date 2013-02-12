@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVSynchronizedLayerInternal;
+@class AVPlayerItem, AVSynchronizedLayerInternal;
 
 @interface AVSynchronizedLayer : CALayer {
     AVSynchronizedLayerInternal *_syncLayer;
 }
 
-@property(retain) AVPlayerItem *playerItem;
+@property(retain) AVPlayerItem * playerItem;
 
 + (id)synchronizedLayerWithPlayerItem:(id)arg1;
 

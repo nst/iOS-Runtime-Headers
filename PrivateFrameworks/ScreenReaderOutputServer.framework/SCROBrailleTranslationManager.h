@@ -21,7 +21,7 @@
 - (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setTranslationTableWithTableIdentifier:(id)arg1;
 - (id)tableIdentifier;
 - (BOOL)tableSupportsContractedBraille;

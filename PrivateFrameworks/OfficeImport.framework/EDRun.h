@@ -5,26 +5,26 @@
 @class EDResources;
 
 @interface EDRun : NSObject <EDKeyedObject> {
-    NSUInteger mCharIndex;
-    NSUInteger mFontIndex;
+    unsigned int mCharIndex;
+    unsigned int mFontIndex;
     EDResources *mResources;
 }
 
-+ (id)runWithCharIndex:(NSUInteger)arg1 font:(id)arg2 resources:(id)arg3;
-+ (id)runWithCharIndex:(NSUInteger)arg1 fontIndex:(NSUInteger)arg2 resources:(id)arg3;
++ (id)runWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
++ (id)runWithCharIndex:(unsigned int)arg1 fontIndex:(unsigned int)arg2 resources:(id)arg3;
 + (id)runWithResources:(id)arg1;
 
-- (NSUInteger)charIndex;
+- (unsigned int)charIndex;
 - (id)font;
-- (NSUInteger)fontIndex;
-- (id)initWithCharIndex:(NSUInteger)arg1 font:(id)arg2 resources:(id)arg3;
-- (id)initWithCharIndex:(NSUInteger)arg1 fontIndex:(NSUInteger)arg2 resources:(id)arg3;
+- (unsigned int)fontIndex;
+- (id)initWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
+- (id)initWithCharIndex:(unsigned int)arg1 fontIndex:(unsigned int)arg2 resources:(id)arg3;
 - (id)initWithResources:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToRun:(id)arg1;
-- (NSUInteger)key;
-- (void)setCharIndex:(NSUInteger)arg1;
+- (unsigned int)key;
+- (void)setCharIndex:(unsigned int)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(NSUInteger)arg1;
+- (void)setFontIndex:(unsigned int)arg1;
 
 @end

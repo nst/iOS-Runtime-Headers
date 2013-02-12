@@ -8,7 +8,7 @@
     TIWordSearch *_kbws;
 }
 
-@property(retain,readonly) TIWordSearch *kbws;
+@property(retain,readonly) TIWordSearch * kbws;
 
 - (void)dealloc;
 - (id)initWithTIWordSearch:(id)arg1;

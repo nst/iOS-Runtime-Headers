@@ -7,15 +7,15 @@
     unsigned int _transactionHasChanges : 1;
     unsigned int _transactionHasNonContentsChanges : 1;
     struct sqlite3 {} **_dbStack;
-    NSUInteger _dbStackCurrentIndex;
+    unsigned int _dbStackCurrentIndex;
     void *_iTunesExtensions;
     struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
     struct __CFDictionary { } *_statementCache;
 }
 
-@property(readonly) sqlite3 *db;
-@property(readonly) iPhoneSortKeyBuilder *sortKeyBuilder;
+@property(readonly) struct sqlite3 { }* db;
 @property BOOL isInTransaction;
+@property(readonly) struct iPhoneSortKeyBuilder { }* sortKeyBuilder;
 @property BOOL transactionHasChanges;
 @property BOOL transactionHasNonContentsChanges;
 

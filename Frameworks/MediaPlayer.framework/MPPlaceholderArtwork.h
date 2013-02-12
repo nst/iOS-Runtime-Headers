@@ -6,21 +6,21 @@
 }
 
 + (void)_initializeSafeCategory;
-+ (NSUInteger)currentScreenFormatIDFrom1XFormatID:(NSUInteger)arg1;
++ (unsigned int)currentScreenFormatIDFrom1XFormatID:(unsigned int)arg1;
 + (id)noArtPlaceholderAudioBookImage;
-+ (id)noArtPlaceholderImageForMediaType:(NSInteger)arg1 withFormat:(NSUInteger)arg2;
-+ (id)noArtPlaceholderImageForMediaType:(NSInteger)arg1;
++ (id)noArtPlaceholderImageForMediaType:(int)arg1 withFormat:(unsigned int)arg2;
++ (id)noArtPlaceholderImageForMediaType:(int)arg1;
 + (id)noArtPlaceholderMusicImage;
 + (id)noArtPlaceholderPodcastImage;
 + (id)noArtPlaceholderVideoImage;
-+ (id)scaleImage:(id)arg1 withFormat:(NSUInteger)arg2;
-+ (id)scaledNoArtPlaceholderAudioBookImageWithFormat:(NSUInteger)arg1;
-+ (id)scaledNoArtPlaceholderMusicImageWithFormat:(NSUInteger)arg1;
-+ (id)scaledNoArtPlaceholderPodcastImageWithFormat:(NSUInteger)arg1;
-+ (id)scaledNoArtPlaceholderVideoImageWithFormat:(NSUInteger)arg1;
-+ (struct CGSize { float x1; float x2; })unscaledArtworkSizeForFormatID:(NSUInteger)arg1;
++ (id)scaleImage:(id)arg1 withFormat:(unsigned int)arg2;
++ (id)scaledNoArtPlaceholderAudioBookImageWithFormat:(unsigned int)arg1;
++ (id)scaledNoArtPlaceholderMusicImageWithFormat:(unsigned int)arg1;
++ (id)scaledNoArtPlaceholderPodcastImageWithFormat:(unsigned int)arg1;
++ (id)scaledNoArtPlaceholderVideoImageWithFormat:(unsigned int)arg1;
++ (struct CGSize { float x1; float x2; })unscaledArtworkSizeForFormatID:(unsigned int)arg1;
 + (id)wildcatNoArtPlaceholderAudioBookImage;
-+ (id)wildcatNoArtPlaceholderImageForMediaType:(NSInteger)arg1;
++ (id)wildcatNoArtPlaceholderImageForMediaType:(int)arg1;
 + (id)wildcatNoArtPlaceholderMusicImage;
 + (id)wildcatNoArtPlaceholderPodcastImage;
 + (id)wildcatNoArtPlaceholderVideoImage;

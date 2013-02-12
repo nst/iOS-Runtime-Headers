@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderInternal;
+@class AVAsset, AVAssetReaderInternal, NSArray, NSError;
 
 @interface AVAssetReader : NSObject {
     AVAssetReaderInternal *_priv;
 }
 
-@property(retain,readonly) AVAsset *asset;
-@property(readonly) NSError *error;
-@property(getter=_figAssetReader,readonly) OpaqueFigAssetReader *figAssetReader;
-@property(readonly) NSArray *outputs;
-@property(readonly) NSInteger status;
-@property ? timeRange;
+@property(retain,readonly) AVAsset * asset;
+@property(readonly) NSError * error;
+@property(getter=_figAssetReader,readonly) struct OpaqueFigAssetReader { }* figAssetReader;
+@property(readonly) NSArray * outputs;
+@property(readonly) int status;
+@property struct { struct { long long value; int timescale; unsigned int flags; long long epoch; } start; struct { long long value; int timescale; unsigned int flags; long long epoch; } duration; } timeRange;
 
 + (id)assetReaderWithAsset:(id)arg1 error:(id*)arg2;
 + (void)initialize;
@@ -21,7 +21,7 @@
 - (BOOL)_canAddOutput:(id)arg1 exceptionReason:(id*)arg2;
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (void)_handleServerDiedNotification;
-- (void)_transitionToStatus:(NSInteger)arg1 failureError:(id)arg2;
+- (void)_transitionToStatus:(int)arg1 failureError:(id)arg2;
 - (void)addOutput:(id)arg1;
 - (id)asset;
 - (BOOL)canAddOutput:(id)arg1;
@@ -36,9 +36,9 @@
 - (id)outputs;
 - (void)release;
 - (id)retain;
-- (void)setTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (BOOL)startReading;
-- (NSInteger)status;
-- (struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (int)status;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 
 @end

@@ -7,28 +7,28 @@
 @interface OADBlipRef : NSObject <NSCopying> {
     OADBlip *mBlip;
     NSMutableArray *mEffects;
-    NSInteger mIndex;
+    int mIndex;
     NSString *mName;
 }
 
-+ (NSInteger)blipTypeForExtension:(id)arg1;
++ (int)blipTypeForExtension:(id)arg1;
 + (id)inflatedExtensionForGzippedExtension:(id)arg1;
 
 - (void)addEffect:(id)arg1;
 - (id)blip;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)effectAtIndex:(NSUInteger)arg1;
-- (NSUInteger)effectCount;
+- (id)effectAtIndex:(unsigned int)arg1;
+- (unsigned int)effectCount;
 - (id)effects;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (long)index;
 - (id)init;
 - (id)initWithIndex:(long)arg1 name:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNull;
 - (id)name;
-- (void)removeEffectAtIndex:(NSUInteger)arg1;
+- (void)removeEffectAtIndex:(unsigned int)arg1;
 - (void)setBlip:(id)arg1;
 - (void)setFilename:(id)arg1 data:(id)arg2;
 - (void)setFilenameAndDelayedContext:(id)arg1 context:(id)arg2 targetSize:(long)arg3;

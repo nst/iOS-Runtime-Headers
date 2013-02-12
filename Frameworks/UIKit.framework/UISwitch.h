@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UIColor;
+
 @interface UISwitch : UIControl <NSCoding> {
     id _control;
 }
 
-@property(getter=_onTintColor,retain) UIColor *onTintColor; /* unknown property attribute: S_setOnTintColor: */
-@property(getter=_onColor,retain) UIColor *onColor; /* unknown property attribute: S_setOnColor: */
 @property(getter=isOn) BOOL on;
+@property(getter=_onColor,setter=_setOnColor:,retain) UIColor * onColor;
+@property(getter=_onTintColor,setter=_setOnTintColor:,retain) UIColor * onTintColor;
 
 + (void)_initializeSafeCategory;
 
@@ -18,7 +20,7 @@
 - (id)_customColoredOnButtonImage;
 - (void)_handlePan:(id)arg1;
 - (void)_handleTap:(id)arg1;
-- (id)_imageForState:(NSInteger)arg1;
+- (id)_imageForState:(int)arg1;
 - (void)_onAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_onColor;
 - (id)_onTintColor;

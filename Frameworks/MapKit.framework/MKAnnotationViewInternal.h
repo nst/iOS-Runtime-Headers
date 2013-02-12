@@ -31,16 +31,16 @@
     } calloutOffset;
     UICalloutView *calloutView;
     } centerOffset;
-    NSUInteger dragState;
+    unsigned int dragState;
     } flags;
     UIImage *image;
     UIView *leftCalloutAccessoryView;
     } mapTransform;
-    NSUInteger mapType;
+    unsigned int mapType;
     NSString *reuseIdentifier;
     UIView *rightCalloutAccessoryView;
     MKSearchResult *searchResult;
-    NSUInteger zIndex;
+    unsigned int zIndex;
 }
 
 @end

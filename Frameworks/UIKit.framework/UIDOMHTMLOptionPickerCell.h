@@ -7,5 +7,7 @@
 
 - (id)initCommon;
 - (id)initWithHTMLOptionNode:(id)arg1;
+- (void)layoutSubviews;
+- (float)textWidth;
 
 @end

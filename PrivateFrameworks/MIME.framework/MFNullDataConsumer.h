@@ -5,7 +5,7 @@
 @interface MFNullDataConsumer : NSObject <MFDataConsumer> {
 }
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (id)description;
 - (void)done;
 

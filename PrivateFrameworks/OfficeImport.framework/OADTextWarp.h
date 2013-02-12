@@ -5,7 +5,7 @@
 @interface OADTextWarp : NSObject {
 }
 
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 
 @end

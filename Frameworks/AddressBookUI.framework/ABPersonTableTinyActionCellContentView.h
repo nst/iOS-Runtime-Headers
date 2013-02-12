@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonTableTinyActionCell, NSMutableArray, UIButton;
+@class ABPersonTableTinyActionCell, NSArray, NSMutableArray, UIButton;
 
 @interface ABPersonTableTinyActionCellContentView : UIView {
     NSMutableArray *_actions;
@@ -11,8 +11,8 @@
     UIButton *_highlightedButton;
 }
 
-@property(readonly) NSArray *actions;
-@property ABPersonTableTinyActionCell *cell;
+@property(readonly) NSArray * actions;
+@property ABPersonTableTinyActionCell * cell;
 
 - (id)actions;
 - (id)cell;

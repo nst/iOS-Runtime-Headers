@@ -31,19 +31,19 @@
 - (void)animationDidStop:(id)arg1;
 - (void)beganNetworkActivity;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
-- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(NSInteger)arg2;
+- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
 - (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
 - (void)composeRecipientViewReturnPressed:(id)arg1;
-- (void)consumeSearchResults:(id)arg1 type:(NSInteger)arg2 taskID:(id)arg3;
+- (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (void)endedNetworkActivity;
-- (void)finishedSearchingForType:(NSInteger)arg1;
+- (void)finishedSearchingForType:(int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (void)handleAddressBookChangedNotification:(id)arg1;
 - (BOOL)hasText;
@@ -58,7 +58,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)toField;
 
 @end

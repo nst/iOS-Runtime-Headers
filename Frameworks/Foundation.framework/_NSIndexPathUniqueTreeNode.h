@@ -4,7 +4,7 @@
 
 @interface _NSIndexPathUniqueTreeNode : NSObject {
     id _childNodes;
-    NSUInteger _index;
+    unsigned int _index;
     id _indexPath;
     id _nextSibling;
 }
@@ -13,6 +13,6 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
-- (id)nextSiblingWithIndex:(NSUInteger)arg1;
+- (id)nextSiblingWithIndex:(unsigned int)arg1;
 
 @end

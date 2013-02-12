@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+@class NSData;
+
 @interface PLImage : PLItem {
 }
 
-@property(readonly) NSData *imageData;
+@property(readonly) NSData * imageData;
 
 + (Class)_internalClass;
 
@@ -15,7 +17,7 @@
 - (id)initWithData:(id)arg1 pathExtension:(id)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (NSInteger)itemType;
+- (int)itemType;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

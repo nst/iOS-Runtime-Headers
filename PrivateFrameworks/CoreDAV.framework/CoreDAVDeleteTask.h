@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString;
+@class <CoreDAVTaskDelegate>, NSString;
 
 @interface CoreDAVDeleteTask : CoreDAVTask {
     NSString *_previousETag;
 }
 
-@property <CoreDAVTaskDelegate> *delegate;
-@property(retain) NSString *previousETag;
+@property <CoreDAVTaskDelegate> * delegate;
+@property(retain) NSString * previousETag;
 
 - (id)additionalHeaderValues;
 - (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithURL:(id)arg1;
 - (id)previousETag;
 - (id)requestBody;
 - (void)setPreviousETag:(id)arg1;

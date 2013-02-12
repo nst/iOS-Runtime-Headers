@@ -26,15 +26,15 @@
 - (id)_fullNameIncludingAuxiliaryElements:(BOOL)arg1;
 - (BOOL)_isCompany;
 - (id)_realCompositeName;
-- (BOOL)_showField:(NSUInteger)arg1 identifier:(NSInteger)arg2;
-- (BOOL)_showField:(NSUInteger)arg1;
+- (BOOL)_showField:(unsigned int)arg1 identifier:(int)arg2;
+- (BOOL)_showField:(unsigned int)arg1;
 - (id)_vCardKeyForAddressLabel:(id)arg1 vCard3:(BOOL)arg2;
 - (struct __CFString { }*)_vCardKeyForEmailLabel:(id)arg1;
 - (struct __CFString { }*)_vCardKeyForGenericLabel:(id)arg1;
 - (id)_vCardKeysForPhoneLabel:(id)arg1;
 - (id)alternateName;
 - (void)appendLabel:(id)arg1 toVCardRep:(id)arg2 inGroup:(id)arg3;
-- (void*)copyValueForProperty:(NSUInteger)arg1;
+- (void*)copyValueForProperty:(unsigned int)arg1;
 - (id)dataForInstantMessageProperties;
 - (void)dealloc;
 - (id)encodedDataForValue:(id)arg1 charsetName:(id*)arg2;
@@ -44,14 +44,14 @@
 - (id)initWithRecord:(void*)arg1;
 - (id)initWithVCardRepresentation:(id)arg1;
 - (id)newISO8061StringFromDate:(id)arg1;
-- (id)propertyLineForGenericABProperty21:(NSUInteger)arg1 vCardProperty:(id)arg2;
-- (id)propertyLineForGenericABProperty:(NSUInteger)arg1 vCardProperty:(id)arg2 is21:(BOOL)arg3 groupCount:(NSInteger*)arg4;
+- (id)propertyLineForGenericABProperty21:(unsigned int)arg1 vCardProperty:(id)arg2;
+- (id)propertyLineForGenericABProperty:(unsigned int)arg1 vCardProperty:(id)arg2 is21:(BOOL)arg3 groupCount:(int*)arg4;
 - (id)propertyLineForIMHandles:(id)arg1 labels:(id)arg2 vCardProperty:(id)arg3;
-- (id)propertyLineForInstantMessageHandles:(id)arg1 groupCount:(NSInteger*)arg2;
+- (id)propertyLineForInstantMessageHandles:(id)arg1 groupCount:(int*)arg2;
 - (void*)record;
-- (BOOL)setValue:(void*)arg1 forProperty:(NSUInteger)arg2;
+- (BOOL)setValue:(void*)arg1 forProperty:(unsigned int)arg2;
 - (BOOL)useThumbnailImageFormatIfAvailable;
-- (id)vCardRepresentationForMode:(NSInteger)arg1;
-- (void*)valueForProperty:(NSUInteger)arg1;
+- (id)vCardRepresentationForMode:(int)arg1;
+- (void*)valueForProperty:(unsigned int)arg1;
 
 @end

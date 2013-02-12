@@ -6,12 +6,12 @@
 
 @interface UIPrinterTableViewCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
-    NSInteger _printerState;
+    int _printerState;
 }
 
-@property NSInteger printerState;
+@property int printerState;
 
-- (NSInteger)printerState;
-- (void)setPrinterState:(NSInteger)arg1;
+- (int)printerState;
+- (void)setPrinterState:(int)arg1;
 
 @end

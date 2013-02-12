@@ -2,23 +2,25 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
+@class ALAssetsGroupPrivate;
+
 @interface ALAssetsGroup : NSObject {
     id _internal;
 }
 
-@property(retain) ALAssetsGroupPrivate *internal;
+@property(retain) ALAssetsGroupPrivate * internal;
 
-- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(NSUInteger)arg2 usingBlock:(id)arg3;
+- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (id)_typeAsString;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateAssetsAtIndexes:(id)arg1 options:(NSUInteger)arg2 usingBlock:(id)arg3;
+- (void)enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
 - (void)enumerateAssetsUsingBlock:(id)arg1;
-- (void)enumerateAssetsWithOptions:(NSUInteger)arg1 usingBlock:(id)arg2;
-- (id)initWithPhotoAlbum:(id)arg1 library:(id)arg2 type:(NSUInteger)arg3;
+- (void)enumerateAssetsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (id)initWithPhotoAlbum:(id)arg1 library:(id)arg2 type:(unsigned int)arg3;
 - (id)internal;
 - (BOOL)isValid;
-- (NSInteger)numberOfAssets;
+- (int)numberOfAssets;
 - (struct CGImage { }*)posterImage;
 - (void)setAssetsFilter:(id)arg1;
 - (void)setInternal:(id)arg1;

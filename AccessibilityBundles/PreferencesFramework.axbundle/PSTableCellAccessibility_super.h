@@ -5,7 +5,7 @@
 @interface PSTableCellAccessibility_super : UIAccessibilitySafeCategory {
 }
 
-+ (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 type:(NSInteger)arg3;
++ (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 type:(int)arg3;
 + (void)_initializeSafeCategory;
 + (id)cellWithSpecifier:(id)arg1;
 
@@ -20,7 +20,7 @@
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (BOOL)isAccessibilityElement;
 
 @end

@@ -5,7 +5,7 @@
 @interface STSStgObject : NSObject {
 }
 
-+ (void)throwIfError:(NSInteger)arg1;
++ (void)throwIfError:(int)arg1;
 
 - (void)dealloc;
 - (id)init;

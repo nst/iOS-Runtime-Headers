@@ -6,18 +6,18 @@
 
 @interface MFContactsSearchManager : NSObject <DASearchQueryConsumer> {
     void *_addressBook;
-    NSUInteger _genNumber;
+    unsigned int _genNumber;
     NSSet *_properties;
     NSOperationQueue *_queue;
     NSArray *_searchAccountIDs;
-    NSUInteger _searchTypes;
+    unsigned int _searchTypes;
     NSMutableDictionary *_taskContextsByTaskID;
     struct __CFDictionary { } *_taskIDsBySearchQuery;
 }
 
-@property(retain) NSArray *searchAccountIDs;
+@property(retain) NSArray * searchAccountIDs;
 
-- (void)_handleLocalSearchResults:(id)arg1 type:(NSInteger)arg2 operation:(id)arg3 taskID:(id)arg4;
+- (void)_handleLocalSearchResults:(id)arg1 type:(int)arg2 operation:(id)arg3 taskID:(id)arg4;
 - (void)_handleSearchQueries:(id)arg1 forAccountIDs:(id)arg2 operation:(id)arg3 taskID:(id)arg4;
 - (void)_handleSearchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)_handleSearchQuery:(id)arg1 returnedResults:(id)arg2;
@@ -25,12 +25,12 @@
 - (void)_handleTaskFinished:(id)arg1 context:(id)arg2;
 - (void)cancelTaskWithID:(id)arg1;
 - (void)dealloc;
-- (id)initWithAddressBook:(void*)arg1 properties:(NSInteger*)arg2 propertyCount:(NSUInteger)arg3;
+- (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3;
 - (id)searchAccountIDs;
 - (id)searchForText:(id)arg1 consumer:(id)arg2;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
 - (void)setSearchAccountIDs:(id)arg1;
-- (void)setSearchTypes:(NSUInteger)arg1;
+- (void)setSearchTypes:(unsigned int)arg1;
 
 @end

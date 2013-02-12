@@ -11,16 +11,16 @@
     CoreDAVLeafItem *_status;
 }
 
-@property(retain) CoreDAVErrorItem *errorItem;
-@property(retain) CoreDAVItem *prop;
-@property(retain) CoreDAVLeafItem *responseDescription;
-@property(retain) CoreDAVLeafItem *status;
+@property(retain) CoreDAVErrorItem * errorItem;
+@property(retain) CoreDAVItem * prop;
+@property(retain) CoreDAVLeafItem * responseDescription;
+@property(retain) CoreDAVLeafItem * status;
 
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)errorItem;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)init;
 - (id)prop;
 - (id)responseDescription;
 - (void)setErrorItem:(id)arg1;

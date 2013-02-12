@@ -7,6 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
+- (id)accessibilityLabel;
 - (float)layoutHeaderForWidth:(float)arg1;
 - (void)setEditButtonVisibility:(BOOL)arg1;
 

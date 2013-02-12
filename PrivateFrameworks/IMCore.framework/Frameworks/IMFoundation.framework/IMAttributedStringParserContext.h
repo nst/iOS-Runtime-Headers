@@ -2,23 +2,23 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSAttributedString;
+@class NSArray, NSAttributedString, NSString;
 
 @interface IMAttributedStringParserContext : NSObject {
     NSAttributedString *_inString;
 }
 
-@property(retain,readonly) NSAttributedString *inString;
-@property(retain,readonly) NSString *name;
-@property(retain,readonly) NSArray *resultsForLogging;
+@property(retain,readonly) NSAttributedString * inString;
+@property(retain,readonly) NSString * name;
+@property(retain,readonly) NSArray * resultsForLogging;
 @property(readonly) BOOL shouldPreprocess;
 
 - (void)dealloc;
 - (id)inString;
 - (id)initWithAttributedString:(id)arg1;
 - (id)name;
-- (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
-- (id)parser:(id)arg1 preprocessedAttributesForAttributes:(id)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
+- (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (id)parser:(id)arg1 preprocessedAttributesForAttributes:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)parserDidEnd:(id)arg1;
 - (void)parserDidStart:(id)arg1;
 - (id)resultsForLogging;

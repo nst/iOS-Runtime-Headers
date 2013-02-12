@@ -8,7 +8,7 @@
     SUMaskProvider *_maskProvider;
 }
 
-@property(retain) SUMaskProvider *maskProvider;
+@property(retain) SUMaskProvider * maskProvider;
 
 + (void)_initializeSafeCategory;
 

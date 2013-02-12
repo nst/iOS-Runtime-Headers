@@ -10,30 +10,30 @@
     unsigned int _dontChangeStatusBar : 1;
     unsigned int _toolbarWasHiddenWhenSelfWasPushed : 1;
     unsigned int _viewWillDisappear : 1;
-    NSUInteger _itemIndex;
+    unsigned int _itemIndex;
     NSArray *_items;
     UINavigationItem *_navItem;
-    NSInteger _previousInterfaceOrientation;
+    int _previousInterfaceOrientation;
 }
 
-@property NSUInteger visibleItemIndex;
+@property unsigned int visibleItemIndex;
 
 - (void)_forceRotationToPortaitIfNecessary;
-- (id)_initWithAlbum:(id)arg1 lockStatusBar:(BOOL)arg2 currentImageIndex:(NSInteger)arg3;
-- (void)_setCurrentImageIndex:(NSUInteger)arg1;
+- (id)_initWithAlbum:(id)arg1 lockStatusBar:(BOOL)arg2 currentImageIndex:(int)arg3;
+- (void)_setCurrentImageIndex:(unsigned int)arg1;
 - (BOOL)_visibleItemAllowsRotation;
 - (void)albumDidChange:(id)arg1;
 - (void)dealloc;
-- (void)didMoveToPhotoAtIndex:(NSUInteger)arg1;
+- (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
 - (BOOL)dontChangeStatusBar;
 - (id)initWithItems:(id)arg1;
-- (id)itemAtIndex:(NSUInteger)arg1;
+- (id)itemAtIndex:(unsigned int)arg1;
 - (void)loadView;
 - (id)navigationItem;
 - (void)setDontChangeStatusBar:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
-- (void)setVisibleItemIndex:(NSUInteger)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (void)setVisibleItemIndex:(unsigned int)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)startSettingWallpaper;
 - (id)toolbarItems;
 - (void)updateNavigationItemTitle;
@@ -41,6 +41,6 @@
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (NSUInteger)visibleItemIndex;
+- (unsigned int)visibleItemIndex;
 
 @end

@@ -10,6 +10,6 @@
 - (BOOL)isDirectoryWrapper;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (NSInteger)sourceType;
+- (int)sourceType;
 
 @end

@@ -11,7 +11,7 @@
     <WifiListenerDelegate> *wifiListenerDelegate;
 }
 
-@property <WifiListenerDelegate> *wifiListenerDelegate;
+@property <WifiListenerDelegate> * wifiListenerDelegate;
 
 - (void)dealloc;
 - (BOOL)determineWifiState;

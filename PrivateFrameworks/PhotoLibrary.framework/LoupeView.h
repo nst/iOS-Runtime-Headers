@@ -6,16 +6,16 @@
 
 @interface LoupeView : UIView {
     UIImageView *_background;
-    NSUInteger _displayedIndex;
+    unsigned int _displayedIndex;
     UIImageView *_foreground;
 }
 
-@property NSUInteger displayedIndex;
+@property unsigned int displayedIndex;
 
-- (NSUInteger)displayedIndex;
+- (unsigned int)displayedIndex;
 - (id)image;
 - (id)init;
-- (void)setDisplayedIndex:(NSUInteger)arg1;
+- (void)setDisplayedIndex:(unsigned int)arg1;
 - (void)setImage:(id)arg1;
 
 @end

@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSArray;
 
 @interface SUPurchaseBatch : NSObject {
@@ -12,16 +17,16 @@
     NSArray *_validPurchases;
 }
 
-@property(retain) NSArray *continuations;
-@property(retain) NSArray *errors;
-@property(readonly) NSArray *items;
-@property(retain) NSArray *validPurchases;
+@property(retain) NSArray * continuations;
+@property(retain) NSArray * errors;
+@property(readonly) NSArray * items;
 @property BOOL storeShouldExitWhenFinished;
+@property(retain) NSArray * validPurchases;
 
 - (int (*)())errorEqualCallback;
 - (id)_copyModifiedErrorsFromDictionary:(struct __CFDictionary { }*)arg1;
 - (id)_copyUniqueErrorsFromErrors:(id)arg1;
-- (id)_copyValidPurchasesForItems:(id)arg1;
+- (id)_copyValidPurchasesForItems:(id)arg1 shouldExit:(BOOL*)arg2;
 - (void)_validateItems;
 - (id)continuations;
 - (id)copyContinuationsForPurchases:(id)arg1;
@@ -31,7 +36,7 @@
 - (id)everythingFailedErrorForError:(id)arg1;
 - (id)initWithItems:(id)arg1;
 - (id)items;
-- (id)mergedErrorForError:(id)arg1 withCount:(NSInteger)arg2;
+- (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
 - (void)setContinuations:(id)arg1;
 - (void)setDocumentTargetIdentifier:(id)arg1;
 - (void)setErrors:(id)arg1;

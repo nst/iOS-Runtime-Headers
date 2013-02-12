@@ -7,15 +7,15 @@
  */
 
 @interface NSMatchingPredicateOperator : NSStringPredicateOperator {
-    NSInteger _contextLock;
-    struct { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const NSInteger x6; in void*x7; void*x8; void *x9; } *_regexContext;
+    int _contextLock;
+    struct { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const int x6; in void*x7; void*x8; void *x9; } *_regexContext;
 }
 
 - (void)_clearContext;
 - (BOOL)_shouldEscapeForLike;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 variant:(NSUInteger)arg3;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (SEL)selector;
 - (id)symbol;

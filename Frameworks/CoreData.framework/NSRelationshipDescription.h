@@ -5,7 +5,7 @@
 @class NSEntityDescription, NSRelationshipDescription, NSString;
 
 @interface NSRelationshipDescription : NSPropertyDescription {
-    NSUInteger _deleteRule;
+    unsigned int _deleteRule;
     NSEntityDescription *_destinationEntity;
     NSRelationshipDescription *_inverseRelationship;
     NSString *_lazyDestinationEntityName;
@@ -23,7 +23,7 @@
 - (BOOL)_isRelationship;
 - (BOOL)_isToManyRelationship;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
-- (NSUInteger)_propertyType;
+- (unsigned int)_propertyType;
 - (void)_setLazyDestinationEntityName:(id)arg1;
 - (void)_updateInverse:(id)arg1;
 - (BOOL)_validateValuesAreOfDestinationEntity:(id)arg1 source:(id)arg2;
@@ -31,7 +31,7 @@
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSUInteger)deleteRule;
+- (unsigned int)deleteRule;
 - (id)description;
 - (id)destinationEntity;
 - (void)encodeWithCoder:(id)arg1;
@@ -41,13 +41,13 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIndexed;
 - (BOOL)isToMany;
-- (NSUInteger)maxCount;
-- (NSUInteger)minCount;
-- (void)setDeleteRule:(NSUInteger)arg1;
+- (unsigned int)maxCount;
+- (unsigned int)minCount;
+- (void)setDeleteRule:(unsigned int)arg1;
 - (void)setDestinationEntity:(id)arg1;
 - (void)setInverseRelationship:(id)arg1;
-- (void)setMaxCount:(NSUInteger)arg1;
-- (void)setMinCount:(NSUInteger)arg1;
+- (void)setMaxCount:(unsigned int)arg1;
+- (void)setMinCount:(unsigned int)arg1;
 - (id)versionHash;
 
 @end

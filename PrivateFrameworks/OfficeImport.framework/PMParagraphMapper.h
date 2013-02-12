@@ -10,7 +10,7 @@
 
 - (void)addEndCharacterStyleToStyle:(id)arg1;
 - (id)createParagraphStyleWithState:(id)arg1;
-- (NSInteger)firstTextRunFontSize;
+- (int)firstTextRunFontSize;
 - (id)fontScheme;
 - (id)initWithOadParagraph:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;

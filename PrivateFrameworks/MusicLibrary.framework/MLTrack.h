@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+@class NSString;
+
 @interface MLTrack : NSObject <NSCopying> {
     void *_trackInfoContext;
 }
 
-@property(copy) NSString *lyrics;
+@property(copy) NSString * lyrics;
 
-- (id)_getImageDataForImageType:(NSInteger)arg1 artworkFormatID:(NSUInteger)arg2 size:(struct CGSize { float x1; float x2; })arg3 timeInMS:(NSUInteger)arg4 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg5;
+- (id)_getImageDataForImageType:(int)arg1 artworkFormatID:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 timeInMS:(unsigned int)arg4 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg5;
 - (BOOL)_isFilePathPlayable;
 - (unsigned long long)accountID;
 - (id)album;
@@ -18,9 +20,9 @@
 - (unsigned long long)artistPID;
 - (unsigned long)audibleDRMGroupID;
 - (id)audioBookName;
-- (id)availableArtworkForImageType:(NSInteger)arg1 formatIDsForTimeInMS:(NSUInteger)arg2;
-- (id)bestImageDataForImageType:(NSInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2 timeInMS:(NSUInteger)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
-- (id)bestImageDataForImageType:(NSInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)availableArtworkForImageType:(int)arg1 formatIDsForTimeInMS:(unsigned int)arg2;
+- (id)bestImageDataForImageType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2 timeInMS:(unsigned int)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
+- (id)bestImageDataForImageType:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (unsigned long)bpm;
 - (id)chapterTOC;
 - (void)clearLastPlayedBookmarkTime;
@@ -29,7 +31,7 @@
 - (id)contentRatingInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyright;
-- (NSInteger)customStopTimeInMS;
+- (int)customStopTimeInMS;
 - (void)dealloc;
 - (double)demoRentalDuration;
 - (double)demoRentalPlaybackDuration;
@@ -37,28 +39,28 @@
 - (double)demoRentalStartTime;
 - (id)description;
 - (unsigned long)discNumber;
-- (NSInteger)duration;
-- (NSInteger)durationInMS;
-- (NSUInteger)episodeNumber;
+- (int)duration;
+- (int)durationInMS;
+- (unsigned int)episodeNumber;
 - (id)eqPreset;
 - (id)eqPresetName;
 - (BOOL)fakeAsDemoRental;
 - (id)filePath;
 - (unsigned long long)fileSize;
-- (void)gaplessHeuristicInfo:(NSUInteger*)arg1 duration:(NSUInteger*)arg2 lastPacketsResync:(NSUInteger*)arg3 encodingDelay:(NSUInteger*)arg4 encodingDrain:(NSUInteger*)arg5;
+- (void)gaplessHeuristicInfo:(unsigned int*)arg1 duration:(unsigned int*)arg2 lastPacketsResync:(unsigned int*)arg3 encodingDelay:(unsigned int*)arg4 encodingDrain:(unsigned int*)arg5;
 - (id)genre;
 - (unsigned long long)genreID;
 - (unsigned long long)globalID;
 - (id)grouping;
 - (BOOL)hasChapterArtwork;
 - (BOOL)hasChapterData;
-- (BOOL)hasDataForArtworkType:(NSInteger)arg1;
+- (BOOL)hasDataForArtworkType:(int)arg1;
 - (BOOL)hasLastPlayedBookmarkTime;
 - (BOOL)hasLyrics;
 - (BOOL)hasNominalAmountBeenPlayed;
 - (BOOL)hasVideoData;
-- (unsigned long)imageDBRecordID:(NSInteger)arg1;
-- (id)imageDataForImageType:(NSInteger)arg1 artworkFormatID:(NSUInteger)arg2 timeInMS:(NSUInteger)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
+- (long long)imageDBRecordID:(int)arg1;
+- (id)imageDataForImageType:(int)arg1 artworkFormatID:(unsigned int)arg2 timeInMS:(unsigned int)arg3 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg4;
 - (void)incrementPlayCountForPlayingToEnd;
 - (BOOL)incrementPlayCountForStopTime:(double)arg1;
 - (void)incrementSkipCount;
@@ -91,7 +93,7 @@
 - (unsigned long)numberOfTracksInAlbum;
 - (id)path;
 - (unsigned long long)persistentUID;
-- (NSUInteger)playCount;
+- (unsigned int)playCount;
 - (id)podcastDirectStoreURL;
 - (id)podcastName;
 - (id)podcastURL;
@@ -99,38 +101,37 @@
 - (unsigned long)ratingLevel;
 - (double)releaseDate;
 - (id)seasonDisplayName;
-- (NSUInteger)seasonNumber;
+- (unsigned int)seasonNumber;
 - (id)seriesDisplayName;
 - (void)setLastPlayedBookmarkTimeInSeconds:(double)arg1;
 - (void)setLyrics:(id)arg1;
 - (void)setRating:(BOOL)arg1;
-- (void)setVideoAudioTrackID:(NSUInteger)arg1;
-- (void)setVideoSubtitleTrackID:(NSUInteger)arg1;
-- (BOOL)sharesArtworkWithTrack:(id)arg1 artworkType:(NSInteger)arg2 formatID:(NSUInteger)arg3 timeInMS:(NSUInteger)arg4 missingAlwaysComparesEqual:(BOOL)arg5;
+- (void)setVideoAudioTrackID:(unsigned int)arg1;
+- (void)setVideoSubtitleTrackID:(unsigned int)arg1;
+- (BOOL)sharesArtworkWithTrack:(id)arg1 artworkType:(int)arg2 formatID:(unsigned int)arg3 timeInMS:(unsigned int)arg4 missingAlwaysComparesEqual:(BOOL)arg5;
 - (BOOL)shouldBookmarkLastPlayedTime;
-- (NSUInteger)skipCount;
+- (unsigned int)skipCount;
 - (id)sortAlbum;
 - (id)sortAlbumArtist;
 - (id)sortArtist;
 - (id)sortComposer;
 - (id)sortSeriesDisplayName;
 - (id)sortTitle;
-- (NSInteger)startTimeInMS;
-- (NSInteger)stopTimeInMS;
+- (int)startTimeInMS;
+- (int)stopTimeInMS;
 - (unsigned long long)storeItemAdamID;
 - (unsigned long long)storePlaylistAdamID;
 - (id)stringValueForProperty:(unsigned long)arg1;
 - (double)timeValueForProperty:(unsigned long)arg1;
 - (id)title;
-- (NSInteger)totalTimeInMS;
+- (int)totalTimeInMS;
 - (unsigned long)trackIndexInAlbum;
 - (void*)trackInfoContext;
-- (unsigned long)uniqueID;
 - (unsigned long long)unsignedValueForProperty:(unsigned long)arg1;
-- (NSUInteger)videoAudioTrackID;
+- (unsigned int)videoAudioTrackID;
 - (BOOL)videoHasAlternateAudio;
 - (BOOL)videoHasSubtitles;
-- (NSUInteger)videoSubtitleTrackID;
+- (unsigned int)videoSubtitleTrackID;
 - (float)volumeAdjustment;
 - (float)volumeNormalization;
 - (unsigned long)year;

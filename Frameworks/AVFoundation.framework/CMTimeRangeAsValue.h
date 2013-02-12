@@ -6,22 +6,22 @@
     struct { 
         struct { 
             long long value; 
-            NSInteger timescale; 
-            NSUInteger flags; 
+            int timescale; 
+            unsigned int flags; 
             long long epoch; 
         } start; 
         struct { 
             long long value; 
-            NSInteger timescale; 
-            NSUInteger flags; 
+            int timescale; 
+            unsigned int flags; 
             long long epoch; 
         } duration; 
     } _timeRange;
 }
 
-+ (id)valueWithCMTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg1;
++ (id)valueWithCMTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 
-- (struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })CMTimeRangeValue;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })CMTimeRangeValue;
 - (void)getValue:(void*)arg1;
 - (const char *)objCType;
 

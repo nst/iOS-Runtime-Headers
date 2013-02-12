@@ -7,7 +7,7 @@
     void *_reserved;
 }
 
-@property NSUInteger tag;
+@property unsigned int tag;
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
@@ -29,18 +29,18 @@
 - (BOOL)isReady;
 - (void)main;
 - (void*)observationInfo;
-- (NSInteger)queuePriority;
+- (int)queuePriority;
 - (void)release;
 - (void)removeDependency:(id)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setObservationInfo:(void*)arg1;
-- (void)setQueuePriority:(NSInteger)arg1;
-- (void)setTag:(NSUInteger)arg1;
+- (void)setQueuePriority:(int)arg1;
+- (void)setTag:(unsigned int)arg1;
 - (void)setThreadPriority:(double)arg1;
 - (void)start;
-- (NSUInteger)tag;
+- (unsigned int)tag;
 - (double)threadPriority;
 - (void)waitUntilFinished;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;

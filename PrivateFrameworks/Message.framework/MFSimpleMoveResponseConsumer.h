@@ -10,9 +10,9 @@
     NSDictionary *messagesByMessageID;
 }
 
-@property(retain) MFError *error;
+@property(retain) MFError * error;
 
-- (void)actionFailed:(NSInteger)arg1 forTask:(id)arg2 error:(id)arg3;
+- (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)dealloc;
 - (id)error;
 - (void)resultsForMessageMove:(id)arg1;

@@ -2,29 +2,31 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSOperationQueue, NSString;
+@class NSArray, NSDictionary, NSLock, NSOperationQueue, NSString;
 
 @interface AAAccount : BasicAccount <ASDynamicAccountClassLoader> {
     NSString *_cachedCommerceToken;
     NSString *_cachedPassword;
     NSString *_cachedToken;
+    NSLock *_passwordLock;
     NSOperationQueue *_requesterQueue;
+    NSLock *_tokenLock;
     NSString *_unsavedToken;
 }
 
-@property(readonly) NSString *authToken;
-@property(readonly) NSString *commerceToken;
-@property(readonly) NSDictionary *dataclassProperties;
-@property(readonly) NSString *firstName;
-@property(readonly) NSString *lastName;
-@property(copy) NSString *password;
-@property(readonly) NSString *personID;
-@property(readonly) NSString *primaryEmail;
-@property(readonly) NSArray *provisionedDataclasses;
-@property(copy) NSString *username;
-@property(readonly) NSInteger mobileMeAccountStatus;
+@property(readonly) NSString * authToken;
+@property(readonly) NSString * commerceToken;
+@property(readonly) NSDictionary * dataclassProperties;
+@property(readonly) NSString * firstName;
+@property(readonly) NSString * lastName;
+@property(readonly) int mobileMeAccountStatus;
 @property(readonly) BOOL needsRegistration;
+@property(copy) NSString * password;
+@property(readonly) NSString * personID;
+@property(readonly) NSString * primaryEmail;
 @property(readonly) BOOL primaryEmailVerified;
+@property(readonly) NSArray * provisionedDataclasses;
+@property(copy) NSString * username;
 
 + (id)accountTypeString;
 + (id)accountWithBasicAccount:(id)arg1;
@@ -60,7 +62,10 @@
 - (BOOL)isConfiguredSyncAccount;
 - (BOOL)isProvisionedForDataclass:(id)arg1;
 - (id)lastName;
-- (NSInteger)mobileMeAccountStatus;
+- (id)mobileMeAccountFirstDisplayAlert;
+- (id)mobileMeAccountFooterButton;
+- (id)mobileMeAccountFooterText;
+- (int)mobileMeAccountStatus;
 - (BOOL)needsRegistration;
 - (id)password;
 - (id)personID;

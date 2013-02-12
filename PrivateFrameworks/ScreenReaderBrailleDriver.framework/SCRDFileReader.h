@@ -8,7 +8,7 @@
     <SCRDFileReaderDelegate> *_delegate;
     NSFileHandle *_fileHandle;
     NSThread *_readerThread;
-    NSInteger _threadStartCount;
+    int _threadStartCount;
 }
 
 - (void)_readHandler:(id)arg1;

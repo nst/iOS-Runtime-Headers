@@ -7,15 +7,15 @@
 @interface _DAVLockBodyReader : NSObject <DAVResponseBodyReader> {
     NSString *lockToken;
     NSMutableData *readData;
-    NSInteger timeout;
+    int timeout;
 }
 
 - (void)_calculateLockInfos;
 - (void)dealloc;
 - (id)init;
-- (NSInteger)lockTimeout;
+- (int)lockTimeout;
 - (id)lockToken;
-- (BOOL)request:(id)arg1 acceptResponseWithHTTPStatusCode:(NSInteger)arg2;
+- (BOOL)request:(id)arg1 acceptResponseWithHTTPStatusCode:(int)arg2;
 - (void)request:(id)arg1 readResponseBody:(id)arg2;
 
 @end

@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray;
 
 @interface GMMTrafficTile : NSObject {
-     /* Encoded args for previous method: c16@0:4^{InputDataStream=*IIBB}8r^{?=b6b26b26b6}12 */
     BOOL empty;
     double expirationTime;
     NSMutableArray *roadsAtSpeed[4];
@@ -25,12 +20,12 @@
 - (void)dealloc;
 - (id)description;
 - (double)expirationTime;
-- (id)getRoadsAtSpeed:(NSInteger)arg1;
+- (id)getRoadsAtSpeed:(int)arg1;
 - (id)init;
 - (void)invalidate;
 - (BOOL)isEmpty;
 - (BOOL)isExpired;
 - (BOOL)isSoonExpired;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1 tilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg2;
+- (BOOL)readFromStream:(struct InputDataStream { char *x1; unsigned int x2; unsigned int x3; boolx4; boolx5; }*)arg1 tilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg2;
 
 @end

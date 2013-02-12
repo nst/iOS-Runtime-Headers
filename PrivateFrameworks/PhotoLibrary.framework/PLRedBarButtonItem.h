@@ -2,11 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+@class UIView;
+
 @interface PLRedBarButtonItem : UIBarButtonItem {
+    UIView *_buttonView;
 }
 
 + (Class)classForNavigationButton;
 
+- (id)createViewForToolbar:(id)arg1;
 - (id)initWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setTitle:(id)arg1;
 
 @end

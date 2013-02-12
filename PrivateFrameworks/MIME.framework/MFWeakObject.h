@@ -10,6 +10,6 @@
 - (void)objectWillBeDeallocated:(id)arg1;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

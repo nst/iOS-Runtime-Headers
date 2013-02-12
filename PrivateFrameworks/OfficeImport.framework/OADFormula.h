@@ -6,18 +6,18 @@
 
 @interface OADFormula : NSObject {
     struct OADFormulaArg { 
-        NSInteger type; 
-        NSInteger value; 
+        int type; 
+        int value; 
     } mArgs[3];
     NSString *mName;
-    NSInteger mType;
+    int mType;
 }
 
-- (struct OADFormulaArg { NSInteger x1; NSInteger x2; })argAtIndex:(NSUInteger)arg1;
+- (struct OADFormulaArg { int x1; int x2; })argAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (id)initWithType:(NSInteger)arg1 arg0:(struct OADFormulaArg { NSInteger x1; NSInteger x2; })arg2 arg1:(struct OADFormulaArg { NSInteger x1; NSInteger x2; })arg3 arg2:(struct OADFormulaArg { NSInteger x1; NSInteger x2; })arg4;
+- (id)initWithType:(int)arg1 arg0:(struct OADFormulaArg { int x1; int x2; })arg2 arg1:(struct OADFormulaArg { int x1; int x2; })arg3 arg2:(struct OADFormulaArg { int x1; int x2; })arg4;
 - (id)name;
 - (void)setName:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

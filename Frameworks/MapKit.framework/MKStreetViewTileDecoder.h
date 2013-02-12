@@ -6,7 +6,7 @@
 
 @interface MKStreetViewTileDecoder : NSObject {
     struct TextureNode { 
-        NSUInteger texture; 
+        unsigned int texture; 
         struct TextureNode {} *next; 
     EAGLContext *_context;
     BOOL _converterDie;
@@ -15,31 +15,33 @@
     struct __IOSurface { } *_converterSrcSurface;
     <MKStreetViewTileDecoderDelegate> *_delegate;
     BOOL _die;
-    struct TextureNode { NSUInteger x1; struct TextureNode {} *x2; } *_firstEmptyNode;
-    struct TextureNode { NSUInteger x1; struct TextureNode {} *x2; } *_firstFreeTexture;
+    struct TextureNode { unsigned int x1; struct TextureNode {} *x2; } *_firstEmptyNode;
+    struct TextureNode { unsigned int x1; struct TextureNode {} *x2; } *_firstFreeTexture;
     NSLock *_freeTextureLock;
     } _freeTextureNodes[8];
-    NSUInteger _height;
-    struct TextureNode { NSUInteger x1; struct TextureNode {} *x2; } *_lastFreeTexture;
+    unsigned int _height;
+    struct TextureNode { unsigned int x1; struct TextureNode {} *x2; } *_lastFreeTexture;
     NSConditionLock *_queueLock;
     NSMutableArray *_requestQueue;
     MKStreetView *_view;
-    NSUInteger _width;
+    unsigned int _width;
 }
 
-@property <MKStreetViewTileDecoderDelegate> *delegate;
+@property <MKStreetViewTileDecoderDelegate> * delegate;
 
-- (NSUInteger)_decodeTileData:(id)arg1 context:(struct CGContext { }*)arg2 bytes:(unsigned short*)arg3 level:(NSUInteger)arg4;
+- (unsigned int)_decodeTileData:(id)arg1 context:(struct CGContext { }*)arg2 bytes:(unsigned short*)arg3 path:(int)arg4 extendRight:(int)arg5 extendDown:(int)arg6;
 - (void)_runHardwareConverterWithSurfaceProperties:(id)arg1;
 - (void)_runHardwareDecoder:(id)arg1;
 - (void)_runSoftwareDecoder;
-- (void)addFreeTexture:(NSUInteger)arg1;
+- (void)addFreeTexture:(unsigned int)arg1;
 - (void)dealloc;
-- (NSUInteger)decodeTileData:(id)arg1;
+- (unsigned int)decodeCubicSupertileData:(id)arg1 originalSize:(struct CGSize { float x1; float x2; }*)arg2 paddedSize:(struct CGSize { float x1; float x2; }*)arg3;
+- (unsigned int)decodeTileData:(id)arg1 extendRight:(int)arg2 extendDown:(int)arg3;
+- (unsigned int)decodeTileData:(id)arg1;
 - (id)delegate;
 - (void)enqueueDecodeRequests:(id)arg1;
-- (NSInteger)freeTextureCount;
-- (NSUInteger)getFreeTexture;
+- (int)freeTextureCount;
+- (unsigned int)getFreeTexture;
 - (id)initWithView:(id)arg1 sharegroup:(id)arg2;
 - (void)purgeFreeTextures;
 - (void)purgeRequests;

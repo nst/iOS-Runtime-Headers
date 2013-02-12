@@ -9,15 +9,15 @@
     UIColor *_roadOverlayColor;
     NSString *_streetRange;
     NSString *_text;
-    NSInteger _type;
+    int _type;
     double _yaw;
 }
 
-@property(readonly) NSString *panoramaID;
-@property(readonly) UIColor *roadOverlayColor;
-@property(readonly) NSString *streetRange;
-@property(readonly) NSString *text;
-@property NSInteger type;
+@property(readonly) NSString * panoramaID;
+@property(readonly) UIColor * roadOverlayColor;
+@property(readonly) NSString * streetRange;
+@property(readonly) NSString * text;
+@property int type;
 @property(readonly) double yaw;
 
 - (void)dealloc;
@@ -25,10 +25,10 @@
 - (id)initWithLink:(id)arg1;
 - (id)panoramaID;
 - (id)roadOverlayColor;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (id)streetRange;
 - (id)text;
-- (NSInteger)type;
+- (int)type;
 - (double)yaw;
 
 @end

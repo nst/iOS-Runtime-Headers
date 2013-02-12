@@ -6,33 +6,33 @@
 
 @interface GKLeaderboard : NSObject {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     NSString *_category;
-    NSInteger _loadingCount;
+    int _loadingCount;
     GKScore *_localPlayerScore;
-    NSUInteger _maxRange;
+    unsigned int _maxRange;
     NSArray *_playerIDs;
-    NSInteger _playerScope;
+    int _playerScope;
     } _range;
     NSArray *_scores;
-    NSInteger _sequenceNumber;
-    NSInteger _timeScope;
+    int _sequenceNumber;
+    int _timeScope;
     NSString *_title;
 }
 
-@property(retain) NSString *category;
-@property(retain) GKScore *localPlayerScore;
-@property(retain) NSArray *playerIDs;
-@property(retain) NSArray *scores;
-@property(retain) NSString *title;
+@property(retain) NSString * category;
 @property(getter=isLoading,readonly) BOOL loading;
-@property NSInteger loadingCount;
-@property NSUInteger maxRange;
-@property NSInteger playerScope;
-@property _NSRange range;
-@property NSInteger sequenceNumber;
-@property NSInteger timeScope;
+@property int loadingCount;
+@property(retain) GKScore * localPlayerScore;
+@property unsigned int maxRange;
+@property(retain) NSArray * playerIDs;
+@property int playerScope;
+@property struct _NSRange { unsigned int location; unsigned int length; } range;
+@property(retain) NSArray * scores;
+@property int sequenceNumber;
+@property int timeScope;
+@property(retain) NSString * title;
 
 + (void)loadCategoriesForGame:(id)arg1 withCompletionHandler:(id)arg2;
 + (void)loadCategoriesWithCompletionHandler:(id)arg1;
@@ -45,26 +45,26 @@
 - (BOOL)isLoading;
 - (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)loadScoresWithCompletionHandler:(id)arg1;
-- (NSInteger)loadingCount;
+- (int)loadingCount;
 - (id)localPlayerScore;
-- (NSUInteger)maxRange;
+- (unsigned int)maxRange;
 - (id)playerIDs;
-- (NSInteger)playerScope;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
+- (int)playerScope;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)scores;
-- (NSInteger)sequenceNumber;
+- (int)sequenceNumber;
 - (void)setCategory:(id)arg1;
-- (void)setLoadingCount:(NSInteger)arg1;
+- (void)setLoadingCount:(int)arg1;
 - (void)setLocalPlayerScore:(id)arg1;
-- (void)setMaxRange:(NSUInteger)arg1;
+- (void)setMaxRange:(unsigned int)arg1;
 - (void)setPlayerIDs:(id)arg1;
-- (void)setPlayerScope:(NSInteger)arg1;
-- (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)setPlayerScope:(int)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setScores:(id)arg1;
-- (void)setSequenceNumber:(NSInteger)arg1;
-- (void)setTimeScope:(NSInteger)arg1;
+- (void)setSequenceNumber:(int)arg1;
+- (void)setTimeScope:(int)arg1;
 - (void)setTitle:(id)arg1;
-- (NSInteger)timeScope;
+- (int)timeScope;
 - (id)title;
 
 @end

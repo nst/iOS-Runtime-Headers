@@ -2,22 +2,23 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKUserLocationInternal;
+@class CLLocation, MKUserLocationInternal, NSString;
 
 @interface MKUserLocation : NSObject <MKAnnotation> {
     MKUserLocationInternal *_internal;
 }
 
-@property(readonly) CLLocation *location;
-@property(retain) NSString *subtitle;
-@property(retain) NSString *title;
-@property(readonly) ? coordinate;
+@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property(readonly) CLLocation * location;
+@property(retain) NSString * subtitle;
+@property(retain) NSString * title;
 @property(getter=isUpdating,readonly) BOOL updating;
 
 - (void)_updateCoordinate;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)fixedLocation;
+- (id)heading;
 - (id)init;
 - (BOOL)isEqualToLocation:(id)arg1;
 - (BOOL)isUpdating;
@@ -27,15 +28,16 @@
 - (id)searchResult;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setFixedLocation:(id)arg1;
+- (void)setHeading:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPredictedLocation:(id)arg1;
-- (void)setSource:(NSInteger)arg1;
+- (void)setSource:(int)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUpdating:(BOOL)arg1;
 - (id)shortDescription;
-- (NSInteger)source;
+- (int)source;
 - (id)subtitle;
 - (double)timestamp;
 - (id)title;

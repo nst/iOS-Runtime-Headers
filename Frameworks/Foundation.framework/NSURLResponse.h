@@ -31,9 +31,9 @@
 - (long long)expectedContentLength;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(NSInteger)arg3 textEncodingName:(id)arg4;
+- (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(int)arg3 textEncodingName:(id)arg4;
 - (long long)maxExpectedContentLength;
-- (NSInteger)statusCode;
+- (int)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;
 

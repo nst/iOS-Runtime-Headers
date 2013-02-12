@@ -7,42 +7,44 @@
 @interface UIWebSelectTableViewController : UITableViewController <UIKeyInput> {
     BOOL _allowsMultipleSelection;
     NSArray *_cachedItems;
+    float _fontSize;
+    float _maximumTextWidth;
     UIWebSelectPopover *_popover;
     DOMHTMLSelectElement *_selectionNode;
-    NSUInteger _singleSelectionIndex;
+    unsigned int _singleSelectionIndex;
 }
 
-@property(retain) NSArray *_cachedItems;
-@property UIWebSelectPopover *_popover;
-@property(retain) DOMHTMLSelectElement *_selectionNode;
-@property NSUInteger _singleSelectionIndex;
-@property NSInteger autocapitalizationType;
-@property NSInteger autocorrectionType;
+@property(retain) NSArray * _cachedItems;
+@property UIWebSelectPopover * _popover;
+@property(retain) DOMHTMLSelectElement * _selectionNode;
+@property unsigned int _singleSelectionIndex;
+@property int autocapitalizationType;
+@property int autocorrectionType;
 @property BOOL enablesReturnKeyAutomatically;
-@property NSInteger keyboardAppearance;
-@property NSInteger keyboardType;
-@property NSInteger returnKeyType;
+@property int keyboardAppearance;
+@property int keyboardType;
+@property int returnKeyType;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 
 - (id)_cachedItems;
 - (BOOL)_hasItems;
 - (id)_popover;
 - (id)_selectionNode;
-- (NSUInteger)_singleSelectionIndex;
+- (unsigned int)_singleSelectionIndex;
 - (void)dealloc;
 - (void)deleteBackward;
 - (BOOL)hasText;
 - (float)heightForItems;
-- (id)initWithDOMHTMLSelectNode:(id)arg1 cachedItems:(id)arg2 singleSelectionIndex:(NSUInteger)arg3 multipleSelection:(BOOL)arg4;
+- (id)initWithDOMHTMLSelectNode:(id)arg1 cachedItems:(id)arg2 singleSelectionIndex:(unsigned int)arg3 multipleSelection:(BOOL)arg4;
 - (void)insertText:(id)arg1;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)set_cachedItems:(id)arg1;
 - (void)set_popover:(id)arg1;
 - (void)set_selectionNode:(id)arg1;
-- (void)set_singleSelectionIndex:(NSUInteger)arg1;
+- (void)set_singleSelectionIndex:(unsigned int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

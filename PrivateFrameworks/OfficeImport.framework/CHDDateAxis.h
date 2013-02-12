@@ -2,35 +2,28 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDDateAxis : CHDAxis {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-    NSInteger mBaseTimeUnit;
-    NSInteger mMajorTimeUnit;
+    boolmAutomatic;
+    int mBaseTimeUnit;
+    int mMajorTimeUnit;
     double mMajorUnitValue;
-    NSInteger mMinorTimeUnit;
+    int mMinorTimeUnit;
     double mMinorUnitValue;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mAutomatic;
 }
 
-- (NSInteger)baseTimeUnit;
+- (int)baseTimeUnit;
 - (id)initWithResources:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isAutomatic;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isDate;
-- (NSInteger)majorTimeUnit;
+- (bool)isAutomatic;
+- (bool)isDate;
+- (int)majorTimeUnit;
 - (double)majorUnitValue;
-- (NSInteger)minorTimeUnit;
+- (int)minorTimeUnit;
 - (double)minorUnitValue;
-- (void)setAutomatic:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setBaseTimeUnit:(NSInteger)arg1;
-- (void)setMajorTimeUnit:(NSInteger)arg1;
+- (void)setAutomatic:(bool)arg1;
+- (void)setBaseTimeUnit:(int)arg1;
+- (void)setMajorTimeUnit:(int)arg1;
 - (void)setMajorUnitValue:(double)arg1;
-- (void)setMinorTimeUnit:(NSInteger)arg1;
+- (void)setMinorTimeUnit:(int)arg1;
 - (void)setMinorUnitValue:(double)arg1;
 
 @end

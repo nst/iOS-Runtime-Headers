@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSMutableDictionary, NSMutableString;
 
 @interface RTF_CMProgressiveArchiveManager : RTF_CMArchiveManager {

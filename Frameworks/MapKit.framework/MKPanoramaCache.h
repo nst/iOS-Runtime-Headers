@@ -3,7 +3,7 @@
  */
 
 @interface MKPanoramaCache : MKCache {
-    NSUInteger _compactPass;
+    unsigned int _compactPass;
 }
 
 - (BOOL)canStopCompaction;

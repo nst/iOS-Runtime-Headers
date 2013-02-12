@@ -8,12 +8,12 @@
     NSString *_property;
 }
 
-@property(copy) NSString *property;
+@property(copy) NSString * property;
 
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperty:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -7,27 +7,27 @@
 @interface EKEventDetailGroup : NSObject {
     NSString *_headerTitle;
     NSArray *_items;
-    NSInteger _tag;
+    int _tag;
 }
 
-@property(retain) NSString *headerTitle;
-@property(retain) NSArray *items;
-@property NSInteger tag;
+@property(retain) NSString * headerTitle;
+@property(retain) NSArray * items;
+@property int tag;
 
-- (id)_itemAtIndex:(NSInteger)arg1 rowOffset:(NSInteger*)arg2;
-- (id)cellForSubitemAtIndex:(NSInteger)arg1;
+- (id)_itemAtIndex:(int)arg1 rowOffset:(int*)arg2;
+- (id)cellForSubitemAtIndex:(int)arg1;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(NSInteger)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
 - (id)description;
-- (BOOL)hasSubitemForIndexPathRow:(NSUInteger)arg1;
+- (BOOL)hasSubitemForIndexPathRow:(unsigned int)arg1;
 - (id)headerTitle;
-- (id)initWithTag:(NSInteger)arg1 headerTitle:(id)arg2;
-- (id)itemAtIndex:(NSInteger)arg1;
+- (id)initWithTag:(int)arg1 headerTitle:(id)arg2;
+- (id)itemAtIndex:(int)arg1;
 - (id)items;
-- (NSInteger)numberOfRows;
+- (int)numberOfRows;
 - (void)setHeaderTitle:(id)arg1;
 - (void)setItems:(id)arg1;
-- (void)setTag:(NSInteger)arg1;
-- (NSInteger)tag;
+- (void)setTag:(int)arg1;
+- (int)tag;
 
 @end

@@ -9,13 +9,13 @@
     NSURL *_url;
 }
 
-@property(retain) UIImage *image;
-@property(retain) NSURL *url;
+@property(retain) UIImage * image;
+@property(retain) NSURL * url;
 
 - (BOOL)authenticationRequired;
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (void)dealloc;
 - (id)demarshalResponseData:(id)arg1;
 - (id)errorForResponse:(id)arg1;

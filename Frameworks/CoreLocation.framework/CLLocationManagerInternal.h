@@ -6,7 +6,7 @@
 
 @interface CLLocationManagerInternal : NSObject {
     struct { 
-        NSInteger suitability; 
+        int suitability; 
         struct { 
             double latitude; 
             double longitude; 
@@ -17,9 +17,9 @@
         double speed; 
         double course; 
         double timestamp; 
-        NSInteger confidence; 
+        int confidence; 
         double lifespan; 
-        NSInteger type; 
+        int type; 
     struct { 
         double bestAccuracy; 
     struct { 
@@ -33,7 +33,7 @@
         double temperature; 
         double magnitude; 
         double inclination; 
-        NSInteger calibration; 
+        int calibration; 
     } fCapabilities;
     BOOL fCapabilitiesValid;
     struct __CLClient { } *fClient;
@@ -42,7 +42,7 @@
     double fDistanceFilter;
     } fHeading;
     double fHeadingFilter;
-    NSInteger fHeadingOrientation;
+    int fHeadingOrientation;
     } fLocation;
     BOOL fUpdatingHeading;
     BOOL fUpdatingLocation;

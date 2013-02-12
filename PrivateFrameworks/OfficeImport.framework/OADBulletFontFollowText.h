@@ -5,7 +5,7 @@
 @interface OADBulletFontFollowText : OADBulletFont {
 }
 
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface GSCRequester : PBRequester {
-    NSInteger _encryptionSelector;
+    int _encryptionSelector;
     void *_handle;
 }
 
@@ -12,6 +12,6 @@
 - (void)dealloc;
 - (id)decodeResponseData:(id)arg1;
 - (void)encodeRequestData:(id)arg1 startRequestCallback:(id)arg2;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 encryption:(NSInteger)arg3;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 encryption:(int)arg3;
 
 @end

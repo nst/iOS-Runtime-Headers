@@ -15,6 +15,6 @@
 - (void)_setSelected:(BOOL)arg1;
 - (id)accessibilityLabel;
 - (void)dealloc;
-- (id)initWithTitle:(id)arg1 selectedTitle:(id)arg2 withFont:(id)arg3 withBarStyle:(NSInteger)arg4 withStyle:(NSInteger)arg5 withTitleWidth:(float)arg6 possibleTitles:(id)arg7 withTintColor:(id)arg8;
+- (id)initWithTitle:(id)arg1 selectedTitle:(id)arg2 withFont:(id)arg3 withBarStyle:(int)arg4 withStyle:(int)arg5 withTitleWidth:(float)arg6 possibleTitles:(id)arg7 withTintColor:(id)arg8;
 
 @end

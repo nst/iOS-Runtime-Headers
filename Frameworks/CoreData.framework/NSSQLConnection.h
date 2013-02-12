@@ -7,7 +7,7 @@
 @interface NSSQLConnection : NSObject {
     NSSQLAdapter *_adapter;
     NSArray *_columnsToFetch;
-    NSInteger _debug;
+    int _debug;
     NSArray *_metadataColumns;
     NSSQLStatement *_sqlStatement;
     BOOL _transactionIsOpen;
@@ -45,12 +45,12 @@
 - (void)execute;
 - (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (id)fetchMetadata;
-- (NSInteger)fetchResultSet:(void*)arg1 usingFetchPlan:(void*)arg2;
+- (int)fetchResultSet:(void*)arg1 usingFetchPlan:(void*)arg2;
 - (id)fetchTableCreationSQL;
 - (id)fetchTableNames;
 - (void)finalize;
 - (void)forceTransactionClosed;
-- (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(NSUInteger)arg2;
+- (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
 - (BOOL)hasMetadataTable;
 - (BOOL)hasOpenTransaction;
 - (BOOL)hasPrimaryKeyTable;

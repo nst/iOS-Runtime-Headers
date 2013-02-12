@@ -7,25 +7,25 @@
 @interface WDListDefinition : NSObject {
     WDDocument *mDocument;
     NSMutableArray *mLevels;
-    NSInteger mListId;
+    int mListId;
     WDStyle *mListStyle;
     WDStyle *mListStyleLink;
-    NSInteger mType;
+    int mType;
 }
 
 - (id)addLevel;
 - (void)dealloc;
 - (id)document;
 - (id)initWithDocument:(id)arg1;
-- (id)levelAt:(NSInteger)arg1;
-- (NSInteger)levelCount;
-- (NSInteger)listId;
+- (id)levelAt:(int)arg1;
+- (int)levelCount;
+- (int)listId;
 - (id)listStyle;
 - (id)listStyleLink;
-- (void)setListId:(NSInteger)arg1;
+- (void)setListId:(int)arg1;
 - (void)setListStyle:(id)arg1;
 - (void)setListStyleLink:(id)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
+@class NSString;
+
 @interface CLRegion : NSObject <NSCopying, NSCoding> {
     id _internal;
 }
 
-@property(readonly) NSString *identifier;
-@property(readonly) ? center;
-@property(readonly) ? clientRegion;
+@property(readonly) struct { double latitude; double longitude; } center;
+@property(readonly) struct { struct { double latitude; double longitude; } center; double radius; BOOL identifier[512]; } clientRegion;
+@property(readonly) NSString * identifier;
 @property(readonly) double radius;
 
 - (struct { double x1; double x2; })center;

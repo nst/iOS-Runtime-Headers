@@ -8,7 +8,7 @@
     SUGradientButton *_button;
 }
 
-@property(readonly) SUGradientButton *button;
+@property(readonly) SUGradientButton * button;
 
 - (id)button;
 - (void)dealloc;

@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLUListElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *type;
 @property BOOL compact;
+@property(copy) NSString * type;
 
 - (BOOL)compact;
 - (void)setCompact:(BOOL)arg1;

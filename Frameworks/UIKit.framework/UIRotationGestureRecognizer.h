@@ -9,7 +9,7 @@
         float x; 
         float y; 
     } _anchorPoint;
-    NSInteger _currentRotationCount;
+    int _currentRotationCount;
     double _currentTouchAngle;
     double _initialTouchAngle;
     double _initialTouchDistance;

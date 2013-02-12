@@ -5,6 +5,6 @@
 @interface ODICycle4 : ODICycle3 {
 }
 
-+ (NSUInteger)nodeCountWithState:(id)arg1;
++ (unsigned int)nodeCountWithState:(id)arg1;
 
 @end

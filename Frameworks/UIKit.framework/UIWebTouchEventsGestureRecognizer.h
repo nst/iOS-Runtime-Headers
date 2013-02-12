@@ -21,26 +21,26 @@
     NSMutableArray *_touchLocations;
     NSMutableArray *_touchPhases;
     id _touchTarget;
-    NSInteger _type;
+    int _type;
 }
 
-@property(retain) NSMutableArray *touchIdentifiers;
-@property(retain) NSMutableArray *touchLocations;
-@property(retain) NSMutableArray *touchPhases;
 @property(getter=isDefaultPrevented) BOOL defaultPrevented;
 @property(readonly) BOOL inJavaScriptGesture;
-@property(readonly) CGPoint locationInWindow;
+@property(readonly) struct CGPoint { float x; float y; } locationInWindow;
 @property(readonly) float rotation;
 @property(readonly) float scale;
-@property(readonly) NSInteger type;
+@property(retain) NSMutableArray * touchIdentifiers;
+@property(retain) NSMutableArray * touchLocations;
+@property(retain) NSMutableArray * touchPhases;
+@property(readonly) int type;
 
 - (BOOL)_hitTestTouches:(id)arg1;
 - (id)_identifiersDescription;
 - (id)_locationsDescription;
-- (id)_phaseDescription:(NSInteger)arg1;
+- (id)_phaseDescription:(int)arg1;
 - (id)_phasesDescription;
-- (void)_processTouches:(id)arg1 withEvent:(id)arg2 type:(NSInteger)arg3;
-- (void)_recordTouches:(id)arg1 type:(NSInteger)arg2;
+- (void)_processTouches:(id)arg1 withEvent:(id)arg2 type:(int)arg3;
+- (void)_recordTouches:(id)arg1 type:(int)arg2;
 - (void)_reset;
 - (void)_resetGestureRecognizer;
 - (id)_typeDescription;
@@ -64,6 +64,6 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (NSInteger)type;
+- (int)type;
 
 @end

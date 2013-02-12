@@ -7,22 +7,22 @@
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
     MLAlbum *_album;
     ALAssetsFilter *_assetsFilter;
-    NSUInteger _groupType;
+    unsigned int _groupType;
     BOOL _isValid;
     ALAssetsLibrary *_library;
     BOOL _loadedAssets;
 }
 
-@property(retain) MLAlbum *album;
-@property(retain) ALAssetsFilter *assetsFilter;
-@property ALAssetsLibrary *library;
-@property NSUInteger groupType;
+@property(retain) MLAlbum * album;
+@property(retain) ALAssetsFilter * assetsFilter;
+@property unsigned int groupType;
 @property BOOL isValid;
+@property ALAssetsLibrary * library;
 
 - (id)album;
 - (id)assetsFilter;
 - (void)dealloc;
-- (NSUInteger)groupType;
+- (unsigned int)groupType;
 - (id)initWithAlbum:(id)arg1 library:(id)arg2;
 - (BOOL)isValid;
 - (id)library;
@@ -32,7 +32,7 @@
 - (void)resetAssets;
 - (void)setAlbum:(id)arg1;
 - (void)setAssetsFilter:(id)arg1;
-- (void)setGroupType:(NSUInteger)arg1;
+- (void)setGroupType:(unsigned int)arg1;
 - (void)setIsValid:(BOOL)arg1;
 - (void)setLibrary:(id)arg1;
 

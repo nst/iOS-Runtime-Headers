@@ -2,41 +2,41 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMBuddyListPresence, IMPeopleListGroup, NSAttributedString, NSDate, NSString;
+@class IMBuddyListPresence, IMHandle, IMPeopleListGroup, NSAttributedString, NSDate, NSMutableAttributedString, NSString;
 
 @interface IMPeopleListItem : IMDirectlyObservableObject <NSCopying, IMDirectlyObservableObjectObserver> {
     NSAttributedString *_attributedStatusMessage;
-    NSUInteger _currentStatus;
+    unsigned int _currentStatus;
     float _currentTransitionTime;
     id _delegate;
     NSString *_displayName;
     IMPeopleListGroup *_group;
     BOOL _inTransition;
     BOOL _isGroup;
-    NSInteger _minutesIdle;
+    int _minutesIdle;
     IMBuddyListPresence *_presence;
-    NSUInteger _previousStatus;
+    unsigned int _previousStatus;
     NSString *_statusMessage;
     NSDate *_transitionStartTime;
     NSDate *_whenStatusChanged;
 }
 
-@property(retain) IMBuddyListPresence *buddyListPresence;
-@property(readonly) NSMutableAttributedString *displayName;
-@property(readonly) NSAttributedString *displayStatusMessage;
-@property(readonly) NSString *group;
-@property(readonly) IMHandle *imHandle;
-@property(retain) IMPeopleListGroup *peopleListGroup;
+@property(retain) IMBuddyListPresence * buddyListPresence;
 @property(readonly) BOOL canTransition;
-@property(readonly) NSUInteger currentStatus;
+@property(readonly) unsigned int currentStatus;
 @property id delegate;
-@property(readonly) NSUInteger effectiveStatus;
+@property(readonly) NSMutableAttributedString * displayName;
+@property(readonly) NSAttributedString * displayStatusMessage;
+@property(readonly) unsigned int effectiveStatus;
+@property(readonly) NSString * group;
+@property(readonly) IMHandle * imHandle;
 @property(readonly) BOOL inStatusTransition;
 @property(readonly) BOOL isGroup;
 @property(readonly) BOOL isIMHandle;
 @property(readonly) BOOL isPulseTransition;
-@property(readonly) NSUInteger previousStatus;
-@property(readonly) NSUInteger sortOrder;
+@property(retain) IMPeopleListGroup * peopleListGroup;
+@property(readonly) unsigned int previousStatus;
+@property(readonly) unsigned int sortOrder;
 @property(readonly) double timeSinceStatusChanged;
 
 + (id)displayNameForString:(id)arg1;
@@ -45,7 +45,7 @@
 + (id)selectors;
 
 - (void)_cacheCurrentState;
-- (NSInteger)_compareIMHandlesWith:(id)arg1 withSortParameters:(struct { NSInteger x1[3]; NSInteger x2; BOOL x3; }*)arg2;
+- (int)_compareIMHandlesWith:(id)arg1 withSortParameters:(struct { int x1[3]; int x2; BOOL x3; }*)arg2;
 - (BOOL)_currentInfoDiffersFromCache;
 - (BOOL)_currentStatusDiffersFromCache;
 - (void)_observePresence:(id)arg1;
@@ -67,15 +67,15 @@
 - (id)buddyListPresence;
 - (BOOL)canTransition;
 - (void)clearAttributedStatusMessageCache;
-- (NSInteger)compare:(id)arg1 withSortParameters:(struct { NSInteger x1[3]; NSInteger x2; BOOL x3; }*)arg2;
+- (int)compare:(id)arg1 withSortParameters:(struct { int x1[3]; int x2; BOOL x3; }*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)currentStatus;
+- (unsigned int)currentStatus;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)displayName;
 - (id)displayStatusMessage;
-- (NSUInteger)effectiveStatus;
+- (unsigned int)effectiveStatus;
 - (id)group;
 - (id)imHandle;
 - (BOOL)inStatusTransition;
@@ -87,16 +87,16 @@
 - (BOOL)isPulseTransition;
 - (void)objectDidPostDirectNotification:(id)arg1;
 - (id)peopleListGroup;
-- (NSUInteger)previousStatus;
+- (unsigned int)previousStatus;
 - (void)setBuddyListPresence:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPeopleListGroup:(id)arg1;
-- (NSUInteger)sortOrder;
+- (unsigned int)sortOrder;
 - (void)startPulse;
 - (void)stopTransition;
 - (double)timeSinceStatusChanged;
 - (id)tooltipString;
-- (float)transitionAlphaTo:(float)arg1 from:(float)arg2 throbs:(NSUInteger)arg3;
+- (float)transitionAlphaTo:(float)arg1 from:(float)arg2 throbs:(unsigned int)arg3;
 - (float)transitionPhase:(float)arg1;
 
 @end

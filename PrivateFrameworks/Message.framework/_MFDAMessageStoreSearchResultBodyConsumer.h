@@ -10,11 +10,11 @@
     <MFDAStreamingContentConsumer> *_streamConsumer;
 }
 
-@property(retain) MFError *error;
-@property(retain) <MFDAStreamingContentConsumer> *streamConsumer;
+@property(retain) MFError * error;
+@property(retain) <MFDAStreamingContentConsumer> * streamConsumer;
 
-- (void)actionFailed:(NSInteger)arg1 forTask:(id)arg2 error:(id)arg3;
-- (void)consumeData:(char *)arg1 length:(NSInteger)arg2 format:(NSInteger)arg3 mailMessage:(id)arg4;
+- (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
+- (void)consumeData:(char *)arg1 length:(int)arg2 format:(int)arg3 mailMessage:(id)arg4;
 - (void)dealloc;
 - (void)didEndStreamingForMailMessage:(id)arg1;
 - (id)error;
@@ -22,7 +22,7 @@
 - (void)searchResultFetchedWithResponses:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setStreamConsumer:(id)arg1;
-- (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(NSInteger)arg2;
+- (BOOL)shouldBeginStreamingForMailMessage:(id)arg1 format:(int)arg2;
 - (id)streamConsumer;
 - (void)waitUntilDone;
 - (BOOL)waitUntilDoneBeforeDate:(id)arg1;

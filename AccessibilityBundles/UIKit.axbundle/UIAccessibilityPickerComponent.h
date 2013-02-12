@@ -3,13 +3,12 @@
  */
 
 @interface UIAccessibilityPickerComponent : UIAccessibilityElement {
-    NSUInteger _component;
+    unsigned int _component;
 }
 
-@property NSUInteger component;
+@property unsigned int component;
 
-- (BOOL)_accessibilityIsScrollAncestor;
-- (void)_accessibilityMoveSelection:(NSInteger)arg1;
+- (void)_accessibilityMoveSelection:(int)arg1;
 - (id)_accessibilityScrollStatus;
 - (id)_accessibilityUserTestingChildren;
 - (void)_actuallySelectRow:(id)arg1;
@@ -19,11 +18,10 @@
 - (id)accessibilityHint;
 - (void)accessibilityIncrement;
 - (id)accessibilityLabel;
-- (void)accessibilityScrollDownPage;
-- (void)accessibilityScrollUpPage;
+- (BOOL)accessibilityScroll:(int)arg1;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
-- (NSUInteger)component;
-- (void)setComponent:(NSUInteger)arg1;
+- (unsigned int)component;
+- (void)setComponent:(unsigned int)arg1;
 
 @end

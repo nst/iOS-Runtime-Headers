@@ -5,25 +5,25 @@
 @class LBSGRectangle;
 
 @interface LBSGGeocodeRequest : PBRequest {
-    NSInteger _addressLinesLimit;
+    int _addressLinesLimit;
     LBSGRectangle *_boundingBox;
     BOOL _hasAddressLinesLimit;
     BOOL _hasIncludeBoundingBoxes;
     BOOL _hasNumFeatureLimit;
     BOOL _includeBoundingBoxes;
-    NSUInteger _numFeatureLimit;
+    unsigned int _numFeatureLimit;
 }
 
-@property(retain) LBSGRectangle *boundingBox;
-@property NSInteger addressLinesLimit;
+@property int addressLinesLimit;
+@property(retain) LBSGRectangle * boundingBox;
 @property(readonly) BOOL hasAddressLinesLimit;
 @property(readonly) BOOL hasBoundingBox;
 @property(readonly) BOOL hasIncludeBoundingBoxes;
 @property(readonly) BOOL hasNumFeatureLimit;
 @property BOOL includeBoundingBoxes;
-@property NSUInteger numFeatureLimit;
+@property unsigned int numFeatureLimit;
 
-- (NSInteger)addressLinesLimit;
+- (int)addressLinesLimit;
 - (id)boundingBox;
 - (void)dealloc;
 - (id)description;
@@ -33,14 +33,14 @@
 - (BOOL)hasNumFeatureLimit;
 - (BOOL)includeBoundingBoxes;
 - (id)init;
-- (NSUInteger)numFeatureLimit;
+- (unsigned int)numFeatureLimit;
 - (BOOL)readFrom:(id)arg1;
-- (NSUInteger)requestTypeCode;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setAddressLinesLimit:(NSInteger)arg1;
+- (void)setAddressLinesLimit:(int)arg1;
 - (void)setBoundingBox:(id)arg1;
 - (void)setIncludeBoundingBoxes:(BOOL)arg1;
-- (void)setNumFeatureLimit:(NSUInteger)arg1;
+- (void)setNumFeatureLimit:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface PDInOutDirectionOptions : PDTransitionOptions {
-    NSInteger mInOut;
+    int mInOut;
 }
 
-- (NSInteger)inOut;
-- (void)setInOut:(NSInteger)arg1;
+- (int)inOut;
+- (void)setInOut:(int)arg1;
 
 @end

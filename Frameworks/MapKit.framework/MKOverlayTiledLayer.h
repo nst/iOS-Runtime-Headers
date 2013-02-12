@@ -5,6 +5,6 @@
 @interface MKOverlayTiledLayer : MKTiledLayer {
 }
 
-+ (NSUInteger)prefetchedTiles;
++ (unsigned int)prefetchedTiles;
 
 @end

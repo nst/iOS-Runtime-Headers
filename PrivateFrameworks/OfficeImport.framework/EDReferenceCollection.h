@@ -2,28 +2,21 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDReferenceCollection : EDCollection {
-     /* Encoded args for previous method: @16@0:4I8B12 */
-     /* Encoded args for previous method: @12@0:4B8 */
-     /* Encoded args for previous method: B16@0:4i8i12 */
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mCoalesce;
+    boolmCoalesce;
 }
 
 + (id)coalesceCollection;
 + (id)noCoalesceCollection;
 
-- (NSUInteger)addObject:(id)arg1;
+- (unsigned int)addObject:(id)arg1;
 - (void)coalesce;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)coalesceReferenceAtIndex1:(NSInteger)arg1 index2:(NSInteger)arg2;
-- (NSUInteger)countOfCellsBeingReferenced;
+- (bool)coalesceReferenceAtIndex1:(int)arg1 index2:(int)arg2;
+- (unsigned int)countOfCellsBeingReferenced;
 - (id)init;
 - (id)initWihNoCoalesce;
-- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
-- (id)referenceToCellWithIndex:(NSUInteger)arg1 byRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-- (id)reverseReferencesByRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)referenceToCellWithIndex:(unsigned int)arg1 byRow:(bool)arg2;
+- (id)reverseReferencesByRow:(bool)arg1;
 
 @end

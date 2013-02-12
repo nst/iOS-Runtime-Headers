@@ -8,22 +8,22 @@
     struct CGPoint { 
         float x; 
         float y; 
-    NSUInteger mAuthorId;
+    unsigned int mAuthorId;
     NSString *mDate;
-    NSUInteger mIndex;
+    unsigned int mIndex;
     } mPosition;
     NSString *mText;
 }
 
-- (NSUInteger)authorId;
+- (unsigned int)authorId;
 - (id)date;
 - (void)dealloc;
-- (NSUInteger)index;
+- (unsigned int)index;
 - (id)init;
 - (struct CGPoint { float x1; float x2; })position;
-- (void)setAuthorId:(NSUInteger)arg1;
+- (void)setAuthorId:(unsigned int)arg1;
 - (void)setDate:(id)arg1;
-- (void)setIndex:(NSUInteger)arg1;
+- (void)setIndex:(unsigned int)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (id)text;

@@ -27,24 +27,24 @@
 - (void)_loadList;
 - (void)_loadListWithAddressBook:(void*)arg1;
 - (void)_postChangeNotification;
-- (void)_removeEntryFromMap:(id)arg1 withUid:(NSInteger)arg2;
+- (void)_removeEntryFromMap:(id)arg1 withUid:(int)arg2;
 - (void)_scheduleSave;
 - (BOOL)_writeFavoritesToFile:(id)arg1;
 - (void)addEntry:(id)arg1;
-- (BOOL)addEntryForPerson:(void*)arg1 property:(NSInteger)arg2 withIdentifier:(NSInteger)arg3;
-- (BOOL)containsEntryWithIdentifier:(NSInteger)arg1 forPerson:(void*)arg2;
-- (BOOL)containsEntryWithType:(NSInteger)arg1 forPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)addEntryForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
+- (BOOL)containsEntryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
+- (BOOL)containsEntryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)dealloc;
 - (id)entries;
 - (id)entriesForPerson:(void*)arg1;
-- (BOOL)entryIsDuplicateAndThusRemoved:(id)arg1 oldUid:(NSInteger)arg2;
-- (id)entryWithIdentifier:(NSInteger)arg1 forPerson:(void*)arg2;
-- (id)entryWithType:(NSInteger)arg1 forPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)entryIsDuplicateAndThusRemoved:(id)arg1 oldUid:(int)arg2;
+- (id)entryWithIdentifier:(int)arg1 forPerson:(void*)arg2;
+- (id)entryWithType:(int)arg1 forPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)initWithAddressBook:(void*)arg1;
 - (BOOL)isFull;
-- (void)moveEntryAtIndex:(NSInteger)arg1 toIndex:(NSInteger)arg2;
+- (void)moveEntryAtIndex:(int)arg1 toIndex:(int)arg2;
 - (void)recacheIdentitiesSoon;
-- (void)removeEntryAtIndex:(NSInteger)arg1;
+- (void)removeEntryAtIndex:(int)arg1;
 - (void)save;
 
 @end

@@ -10,9 +10,9 @@
     id _userInfo;
 }
 
-@property(getter=_enabled) BOOL enabled; /* unknown property attribute: Sset_enabled: */
-@property(getter=_title,retain) NSString *title; /* unknown property attribute: Sset_title: */
-@property(getter=_userInfo,retain) id userInfo; /* unknown property attribute: Sset_userInfo: */
+@property(getter=_enabled,setter=set_enabled:) BOOL enabled;
+@property(getter=_title,setter=set_title:,retain) NSString * title;
+@property(getter=_userInfo,setter=set_userInfo:,retain) id userInfo;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 

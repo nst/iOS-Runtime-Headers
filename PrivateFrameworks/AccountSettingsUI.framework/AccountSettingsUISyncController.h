@@ -22,6 +22,7 @@
     BOOL _isSavingSyncSettingsInBackground;
     BOOL _isUpdateSetup;
     BOOL _mergedDataOnAccountDelete;
+    NSArray *_preEnabledDataclasses;
     UIView *_reallyConfirmEnableSyncSheet;
     UIView *_reallyConfirmKeepLocalDataSheet;
     BOOL _shouldSaveDeviceLocalAccount;
@@ -34,6 +35,7 @@
 @property BOOL didDeleteAccount;
 @property BOOL didFinishFirstSetup;
 @property(getter=isFirstSetup) BOOL firstSetup;
+@property(retain) NSArray * preEnabledDataclasses;
 @property BOOL showsDeleteAccountButton;
 @property(getter=isUpdateSetup) BOOL updateSetup;
 
@@ -92,7 +94,7 @@
 - (id)confirmationTitleForDataclassToEnable:(id)arg1;
 - (id)confirmationTitleForDataclassToReallyEnable:(id)arg1;
 - (id)confirmationTitleForDataclassToReallyKeepLocalData:(id)arg1;
-- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)confirmationView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)createAccounts;
 - (void)dealloc;
 - (void)deleteAccount;
@@ -127,6 +129,7 @@
 - (id)newAccount;
 - (id)otherSetupSpecifiers;
 - (id)otherSpecifiers;
+- (id)preEnabledDataclasses;
 - (void)preconditionMetToDisableDataclass:(id)arg1;
 - (void)preconditionMetToEnableDataclass:(id)arg1;
 - (BOOL)preconditionNeedsToBeMetToDisableDataclass:(id)arg1;
@@ -143,6 +146,7 @@
 - (void)setDidFinishFirstSetup:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (void)setFirstSetup:(BOOL)arg1;
+- (void)setPreEnabledDataclasses:(id)arg1;
 - (void)setShowsDeleteAccountButton:(BOOL)arg1;
 - (void)setSwitchForDataclass:(id)arg1 to:(id)arg2;
 - (void)setUpdateSetup:(BOOL)arg1;

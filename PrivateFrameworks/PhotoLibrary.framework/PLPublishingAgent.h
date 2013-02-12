@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSData, NSMutableArray, NSString, PLVideoRemaker, UINavigationController;
+@class <PLPublishingAgentDelegate>, NSData, NSMutableArray, NSString, PLVideoRemaker, UINavigationController;
 
 @interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate> {
     unsigned int _remakingWasCancelled : 1;
@@ -33,9 +33,9 @@
     float _percentComplete;
     float _progressMultiplier;
     PLVideoRemaker *_remaker;
-    NSInteger _remakerMode;
+    int _remakerMode;
     float _remakingPercentComplete;
-    NSInteger _selectedOption;
+    int _selectedOption;
     BOOL _shouldCancelPublish;
     NSMutableArray *_snapshotTimes;
     NSMutableArray *_snapshotValues;
@@ -43,17 +43,17 @@
     id _userInfo;
 }
 
-@property <PLPublishingAgentDelegate> *delegate;
 @property BOOL allowsHDOver3GUpload;
 @property long long approximateHDUploadSize;
 @property long long approximateSDUploadSize;
+@property <PLPublishingAgentDelegate> * delegate;
 @property BOOL enableHDUpload;
 @property BOOL mediaIsHDVideo;
 @property BOOL needsTrimming;
 @property BOOL ownerIsCamera;
 @property float progressMultiplier;
-@property NSInteger remakerMode;
-@property NSInteger selectedOption;
+@property int remakerMode;
+@property int selectedOption;
 @property BOOL shouldCancelPublish;
 
 + (id)publishingAgentForBundleNamed:(id)arg1 toPublishMedia:(id)arg2;
@@ -62,7 +62,7 @@
 - (void)_cancelRemaking:(id)arg1;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)_remakerDidFinish:(id)arg1;
-- (NSInteger)_remakerModeForSelectedOption;
+- (int)_remakerModeForSelectedOption;
 - (void)_setApproximateVideoUploadSizes;
 - (void)_setUpPublishingParams;
 - (void)_startNetworkObservation;
@@ -101,10 +101,10 @@
 - (float)progressMultiplier;
 - (id)progressViewMessageDuringRemake;
 - (void)publish;
-- (NSInteger)remakerMode;
+- (int)remakerMode;
 - (float)remakingPercentComplete;
 - (void)resignPublishingSheetResponders;
-- (NSInteger)selectedOption;
+- (int)selectedOption;
 - (id)serviceName;
 - (void)setAllowsHDOver3GUpload:(BOOL)arg1;
 - (void)setApproximateHDUploadSize:(long long)arg1;
@@ -119,10 +119,10 @@
 - (void)setOwnerIsCamera:(BOOL)arg1;
 - (void)setProgressMultiplier:(float)arg1;
 - (void)setPublishing:(BOOL)arg1;
-- (void)setRemakerMode:(NSInteger)arg1;
-- (void)setSelectedOption:(NSInteger)arg1;
+- (void)setRemakerMode:(int)arg1;
+- (void)setSelectedOption:(int)arg1;
 - (void)setShouldCancelPublish:(BOOL)arg1;
-- (void)setTotalBytesWritten:(NSInteger)arg1 totalBytes:(NSInteger)arg2;
+- (void)setTotalBytesWritten:(int)arg1 totalBytes:(int)arg2;
 - (void)setTrimStartTime:(double)arg1 andEndTime:(double)arg2;
 - (void)setUserInfo:(id)arg1;
 - (BOOL)shouldCancelPublish;

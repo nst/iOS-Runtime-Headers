@@ -8,12 +8,12 @@
     BOOL _addingNotRemoving;
     void *_additionContext;
     NSObject *_additionObserver;
-    NSUInteger _additionOptions;
+    unsigned int _additionOptions;
     NSObject *_additionOriginalObservable;
     NSKeyValueProperty *_additionProperty;
     NSKeyValueObservationInfo *_baseObservationInfo;
     NSKeyValueObservance *_removalObservance;
-    NSUInteger _removalObservanceIndex;
+    unsigned int _removalObservanceIndex;
 }
 
 @end

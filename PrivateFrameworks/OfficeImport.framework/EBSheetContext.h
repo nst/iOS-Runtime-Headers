@@ -2,20 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EBReaderSheetState;
 
 @interface EBSheetContext : NSObject <OCDDelayedNodeContext> {
-     /* Encoded args for previous method: B12@0:4@8 */
-    NSUInteger mSheetIndex;
+    unsigned int mSheetIndex;
     EBReaderSheetState *mSheetState;
 }
 
 - (void)dealloc;
-- (id)initWithSheetIndex:(NSUInteger)arg1 state:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)loadDelayedNode:(id)arg1;
+- (id)initWithSheetIndex:(unsigned int)arg1 state:(id)arg2;
+- (bool)loadDelayedNode:(id)arg1;
 
 @end

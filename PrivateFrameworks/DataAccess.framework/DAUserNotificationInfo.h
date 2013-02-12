@@ -13,7 +13,7 @@
     id _handler;
 }
 
-@property(copy) NSString *groupIdentifier;
+@property(copy) NSString * groupIdentifier;
 
 - (void)dealloc;
 - (id)groupIdentifier;

@@ -10,9 +10,9 @@
     NSArray *_recipients;
 }
 
-@property(copy) NSString *body;
-@property <MFMessageComposeViewControllerDelegate> *messageComposeDelegate;
-@property(copy) NSArray *recipients;
+@property(copy) NSString * body;
+@property <MFMessageComposeViewControllerDelegate> * messageComposeDelegate;
+@property(copy) NSArray * recipients;
 
 + (BOOL)canSendText;
 

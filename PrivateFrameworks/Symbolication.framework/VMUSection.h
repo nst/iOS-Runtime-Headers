@@ -6,30 +6,30 @@
 
 @interface VMUSection : NSObject {
     unsigned long long _addr;
-    NSUInteger _align;
-    NSUInteger _flags;
-    NSUInteger _nreloc;
-    NSUInteger _offset;
-    NSUInteger _reloff;
-    NSUInteger _reserved1;
-    NSUInteger _reserved2;
+    unsigned int _align;
+    unsigned int _flags;
+    unsigned int _nreloc;
+    unsigned int _offset;
+    unsigned int _reloff;
+    unsigned int _reserved1;
+    unsigned int _reserved2;
     NSString *_sectionName;
     NSString *_segmentName;
     unsigned long long _size;
 }
 
 - (unsigned long long)addr;
-- (NSUInteger)align;
+- (unsigned int)align;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)flags;
+- (unsigned int)flags;
 - (BOOL)isSection32;
 - (BOOL)isSection64;
-- (NSUInteger)nreloc;
-- (NSUInteger)offset;
-- (NSUInteger)reloff;
-- (NSUInteger)reserved1;
-- (NSUInteger)reserved2;
+- (unsigned int)nreloc;
+- (unsigned int)offset;
+- (unsigned int)reloff;
+- (unsigned int)reserved1;
+- (unsigned int)reserved2;
 - (id)sectionName;
 - (id)segmentName;
 - (unsigned long long)size;

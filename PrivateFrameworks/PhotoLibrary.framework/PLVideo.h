@@ -10,13 +10,13 @@
 - (id)URL;
 - (id)_MLPhoto;
 - (void)_applicationWillTerminate:(id)arg1;
-- (id)_createVideoView;
 - (void)_deleteTemporaryFiles;
+- (id)_newVideoView;
 - (void)dealloc;
 - (id)initWithData:(id)arg1 pathExtension:(id)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (NSInteger)itemType;
+- (int)itemType;
 - (id)pathForVideoFile;
 - (void)setPathForVideoFile:(id)arg1;
 - (void)setPathForVideoPreviewFile:(id)arg1;

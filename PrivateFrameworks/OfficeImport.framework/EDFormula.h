@@ -2,69 +2,50 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDFormula : NSObject {
-     /* Encoded args for previous method: B24@0:4I8I12I16I20 */
-     /* Encoded args for previous method: B20@0:4i8I12I16 */
-     /* Encoded args for previous method: B16@0:4I8@12 */
-     /* Encoded args for previous method: B12@0:4^{XlPtg=*iiIS}8 */
-     /* Encoded args for previous method: B12@0:4I8 */
-     /* Encoded args for previous method: B20@0:4I8@12I16 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
     struct __CFData { } *mPackedData;
 }
 
 + (id)formula;
-+ (id)messageForWarning:(NSInteger)arg1;
++ (id)messageForWarning:(int)arg1;
 
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)addToken:(NSInteger)arg1 extendedDataLength:(NSUInteger)arg2 extendedDataCount:(NSUInteger)arg3;
-- (char *)addToken:(NSInteger)arg1 extendedDataLength:(NSUInteger)arg2;
+- (bool)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2 extendedDataCount:(unsigned int)arg3;
+- (char *)addToken:(int)arg1 extendedDataLength:(unsigned int)arg2;
 - (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)copyTokenAtIndex:(NSUInteger)arg1 fromFormula:(id)arg2;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)copyTokenFromXlPtg:(struct XlPtg { char *x1; NSInteger x2; NSInteger x3; NSUInteger x4; unsigned short x5; }*)arg1;
+- (bool)copyTokenAtIndex:(unsigned int)arg1 fromFormula:(id)arg2;
+- (bool)copyTokenFromXlPtg:(struct XlPtg { char *x1; int x2; int x3; unsigned int x4; unsigned short x5; }*)arg1;
 - (void)dealloc;
-- (char *)extendedDataForTokenAtIndex:(NSUInteger)arg1 extendedDataIndex:(NSUInteger)arg2 length:(NSUInteger*)arg3;
+- (char *)extendedDataForTokenAtIndex:(unsigned int)arg1 extendedDataIndex:(unsigned int)arg2 length:(unsigned int*)arg3;
 - (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isBaseFormula;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isCleaned;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isCleanedWithEvaluationStack;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isContainsRelativeReferences;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isSharedFormula;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isSupportedFormula;
-- (char *)lastExtendedDataForTokenAtIndex:(NSUInteger)arg1 length:(NSUInteger*)arg2;
+- (bool)isBaseFormula;
+- (bool)isCleaned;
+- (bool)isCleanedWithEvaluationStack;
+- (bool)isContainsRelativeReferences;
+- (bool)isSharedFormula;
+- (bool)isSupportedFormula;
+- (char *)lastExtendedDataForTokenAtIndex:(unsigned int)arg1 length:(unsigned int*)arg2;
 - (id)originalFormulaString;
-- (void)populateXlPtg:(struct XlPtg { char *x1; NSInteger x2; NSInteger x3; NSUInteger x4; unsigned short x5; }*)arg1 index:(NSUInteger)arg2;
+- (void)populateXlPtg:(struct XlPtg { char *x1; int x2; int x3; unsigned int x4; unsigned short x5; }*)arg1 index:(unsigned int)arg2;
 - (void)removeAllTokens;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)removeTokenAtIndex:(NSUInteger)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)replaceTokenAtIndex:(NSUInteger)arg1 withFormula:(id)arg2 formulaTokenIndex:(NSUInteger)arg3;
-- (void)replaceTokenTypeAtIndex:(NSUInteger)arg1 withType:(NSInteger)arg2;
-- (void)setCleaned:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (char *)setExtendedDataAtIndex:(NSUInteger)arg1 extendedDataIndex:(NSUInteger)arg2 length:(NSUInteger)arg3;
+- (bool)removeTokenAtIndex:(unsigned int)arg1;
+- (bool)replaceTokenAtIndex:(unsigned int)arg1 withFormula:(id)arg2 formulaTokenIndex:(unsigned int)arg3;
+- (void)replaceTokenTypeAtIndex:(unsigned int)arg1 withType:(int)arg2;
+- (void)setCleaned:(bool)arg1;
+- (char *)setExtendedDataAtIndex:(unsigned int)arg1 extendedDataIndex:(unsigned int)arg2 length:(unsigned int)arg3;
 - (void)setOriginalFormulaString:(id)arg1;
-- (void)setWarning:(NSInteger)arg1;
+- (void)setWarning:(int)arg1;
 - (void)setWarningParameter:(id)arg1;
-- (void)setupExtendedDataForTokenAtIndex:(NSUInteger)arg1 extendedDataLength:(NSUInteger)arg2 extendedDataCount:(NSUInteger)arg3;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)setupTokensWithTokensCount:(NSUInteger)arg1 tokensWithDataCount:(NSUInteger)arg2 extendedDataLength:(NSUInteger)arg3 extendedDataCount:(NSUInteger)arg4;
-- (struct EDToken { unsigned short x1; NSUInteger x2; }*)tokenAtIndex:(NSUInteger)arg1;
-- (NSUInteger)tokenCount;
-- (NSInteger)tokenTypeAtIndex:(NSUInteger)arg1;
-- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(NSUInteger*)arg2;
-- (void)updateCleanedWithEvaluationStack:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)updateContainsRelativeReferences:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setupExtendedDataForTokenAtIndex:(unsigned int)arg1 extendedDataLength:(unsigned int)arg2 extendedDataCount:(unsigned int)arg3;
+- (bool)setupTokensWithTokensCount:(unsigned int)arg1 tokensWithDataCount:(unsigned int)arg2 extendedDataLength:(unsigned int)arg3 extendedDataCount:(unsigned int)arg4;
+- (struct EDToken { unsigned short x1; unsigned int x2; }*)tokenAtIndex:(unsigned int)arg1;
+- (unsigned int)tokenCount;
+- (int)tokenTypeAtIndex:(unsigned int)arg1;
+- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
+- (void)updateCleanedWithEvaluationStack:(bool)arg1;
+- (void)updateContainsRelativeReferences:(bool)arg1;
 - (id)warning;
 - (id)warningParameter;
-- (NSInteger)warningType;
-- (struct ChVector<XlPtg*> { struct XlPtg {} **x1; struct XlPtg {} **x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)xlPtgs;
+- (int)warningType;
+- (struct ChVector<XlPtg*> { struct XlPtg {} **x1; struct XlPtg {} **x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xlPtgs;
 
 @end

@@ -10,10 +10,10 @@
     GMMDocumentInfo *_sourceDocument;
 }
 
-@property(retain) GMMDocumentInfo *sourceDocument;
 @property(readonly) BOOL hasIsUserCreated;
 @property(readonly) BOOL hasSourceDocument;
 @property BOOL isUserCreated;
+@property(retain) GMMDocumentInfo * sourceDocument;
 
 - (void)dealloc;
 - (id)description;

@@ -8,11 +8,11 @@
 }
 
 @property BOOL landscape;
-@property(readonly) CGSize paperSize;
-@property(readonly) CGRect printableRect;
+@property(readonly) struct CGSize { float width; float height; } paperSize;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } printableRect;
 
-+ (id)_defaultPaperForOuptutType:(NSInteger)arg1;
-+ (id)_paperListForPrinter:(id)arg1 withDuplexMode:(NSInteger)arg2;
++ (id)_defaultPaperForOuptutType:(int)arg1;
++ (id)_paperListForPrinter:(id)arg1 withDuplexMode:(int)arg2;
 + (id)bestPaperForPageSize:(struct CGSize { float x1; float x2; })arg1 withPapersFromArray:(id)arg2;
 
 - (id)_initWithPrintKitPaper:(id)arg1;

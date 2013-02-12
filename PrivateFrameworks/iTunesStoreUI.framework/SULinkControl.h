@@ -8,7 +8,7 @@
     unsigned int _sizeIsDirty : 1;
     UILabel *_label;
     BOOL _shouldDrawUnderline;
-    NSInteger _style;
+    int _style;
 }
 
 @property BOOL shouldDrawUnderline;
@@ -20,7 +20,7 @@
 - (void)layoutSubviews;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setShouldDrawUnderline:(BOOL)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setText:(id)arg1;
 - (BOOL)shouldDrawUnderline;
 - (void)sizeToFit;

@@ -5,7 +5,7 @@
 @class EDReference;
 
 @interface EDPane : NSObject {
-    NSInteger mActivePane;
+    int mActivePane;
     EDReference *mTopLeftCell;
     double mXSplitPosition;
     double mYSplitPosition;
@@ -13,10 +13,10 @@
 
 + (id)pane;
 
-- (NSInteger)activePane;
+- (int)activePane;
 - (void)dealloc;
 - (id)init;
-- (void)setActivePane:(NSInteger)arg1;
+- (void)setActivePane:(int)arg1;
 - (void)setTopLeftCell:(id)arg1;
 - (void)setXSplitPosition:(double)arg1;
 - (void)setYSplitPosition:(double)arg1;

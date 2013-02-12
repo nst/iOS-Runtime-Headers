@@ -7,21 +7,21 @@
 @interface CALayerArray : NSArray {
     struct _CALayerArrayIvars { 
         CALayer **layers; 
-        NSUInteger count; 
-        NSUInteger capacity; 
+        unsigned int count; 
+        unsigned int capacity; 
         unsigned long mutations; 
         BOOL retained; 
     } _ivars;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
-- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getObjects:(id*)arg1;
 - (id)initWithLayers:(id*)arg1 count:(unsigned long)arg2 retain:(BOOL)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)objectAtIndex:(NSUInteger)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 
 @end

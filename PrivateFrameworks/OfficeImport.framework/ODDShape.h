@@ -6,17 +6,17 @@
 
 @interface ODDShape : ODDLayoutObject {
     NSMutableArray *mAdjustments;
-    NSInteger mPresetType;
-    NSInteger mType;
+    int mPresetType;
+    int mType;
 }
 
 - (void)addAdjustment:(id)arg1;
 - (id)adjustments;
 - (void)dealloc;
 - (id)init;
-- (NSInteger)presetType;
-- (void)setPresetType:(NSInteger)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (int)presetType;
+- (void)setPresetType:(int)arg1;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

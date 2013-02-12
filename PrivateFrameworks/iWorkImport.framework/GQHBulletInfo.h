@@ -5,33 +5,33 @@
 @class GQDSStyle;
 
 @interface GQHBulletInfo : NSObject {
-    NSInteger mBulletIndent;
+    int mBulletIndent;
     struct __CFString { } *mChar;
     BOOL mHasNumber;
-    NSInteger mLabelType;
-    NSInteger mNumber;
+    int mLabelType;
+    int mNumber;
     GQDSStyle *mStyle;
-    NSInteger mTextIndent;
-    NSInteger mType;
+    int mTextIndent;
+    int mType;
 }
 
 - (struct __CFString { }*)bulletChar;
-- (NSInteger)bulletIndent;
+- (int)bulletIndent;
 - (struct __CFString { }*)createTierStringNumber;
 - (void)dealloc;
 - (BOOL)hasNumber;
-- (NSInteger)labelType;
-- (NSInteger)number;
+- (int)labelType;
+- (int)number;
 - (void)setBulletChar:(struct __CFString { }*)arg1;
-- (void)setBulletIndent:(NSInteger)arg1;
+- (void)setBulletIndent:(int)arg1;
 - (void)setHasNumber:(BOOL)arg1;
-- (void)setLabelType:(NSInteger)arg1;
-- (void)setNumber:(NSInteger)arg1;
+- (void)setLabelType:(int)arg1;
+- (void)setNumber:(int)arg1;
 - (void)setStyle:(id)arg1;
-- (void)setTextIndent:(NSInteger)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setTextIndent:(int)arg1;
+- (void)setType:(int)arg1;
 - (id)style;
-- (NSInteger)textIndent;
-- (NSInteger)type;
+- (int)textIndent;
+- (int)type;
 
 @end

@@ -13,10 +13,10 @@
     float _lastLayoutWidth;
     float _lastMaxY;
     UILabel *_locationView;
-    NSInteger _style;
+    int _style;
     UIView *_timeClippingView;
     StrikethroughLabel *_titleView;
-    NSUInteger _visibleHeaderItems;
+    unsigned int _visibleHeaderItems;
 }
 
 + (void)_initializeSafeCategory;
@@ -25,10 +25,11 @@
 - (id)_editButton;
 - (id)_locationView;
 - (id)_titleView;
+- (id)accessibilityLabel;
 - (void)dealloc;
 - (id)editButton;
-- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(NSInteger)arg3 opaque:(BOOL)arg4;
-- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(NSInteger)arg3;
+- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3 opaque:(BOOL)arg4;
+- (id)initWithEvent:(id)arg1 color:(id)arg2 style:(int)arg3;
 - (void)layoutForWidth:(float)arg1;
 - (float)layoutHeaderForWidth:(float)arg1;
 - (void)setEditButtonVisibility:(BOOL)arg1;

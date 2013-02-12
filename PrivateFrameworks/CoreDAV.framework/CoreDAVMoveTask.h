@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString;
+@class <CoreDAVMoveTaskDelegate>, NSString;
 
 @interface CoreDAVMoveTask : CoreDAVCopyOrMoveTask {
     NSString *_previousETag;
 }
 
-@property <CoreDAVMoveTaskDelegate> *delegate;
-@property(retain) NSString *previousETag;
+@property <CoreDAVMoveTaskDelegate> * delegate;
+@property(retain) NSString * previousETag;
 
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (id)additionalHeaderValues;

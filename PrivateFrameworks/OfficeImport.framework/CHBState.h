@@ -2,65 +2,53 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class <CHAutoStyling>, CHDChart;
 
 @interface CHBState : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: I16@0:4i8B12 */
+    boolmHasPrimaryMixedArea;
+    boolmHasPrimaryMixedColumn;
+    boolmHasPrimaryMixedLine;
+    boolmHasSecondaryMixedArea;
+    boolmHasSecondaryMixedColumn;
+    boolmHasSecondaryMixedLine;
     <CHAutoStyling> *mAutoStyling;
     CHDChart *mChart;
     struct __CFArray { } *mXlChartDataSeriesCollection;
-    NSInteger mXlCurrentSeriesIndex;
-    NSInteger mXlSeriesCount;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHasPrimaryMixedArea;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHasPrimaryMixedColumn;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHasPrimaryMixedLine;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHasSecondaryMixedArea;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHasSecondaryMixedColumn;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHasSecondaryMixedLine;
+    int mXlCurrentSeriesIndex;
+    int mXlSeriesCount;
 }
 
-- (struct XlChartDataSeries { int (**x1)(); struct XlChartSeries {} *x2; unsigned short x3; unsigned short x4; unsigned short x5; struct ChVector<XlChartSeriesFormat*> { struct XlChartSeriesFormat {} **x_6_1_1; struct XlChartSeriesFormat {} **x_6_1_2; NSUInteger x_6_1_3; NSUInteger x_6_1_4; NSUInteger x_6_1_5; } x6; struct ChVector<XlChartSeriesFormat*> { struct XlChartSeriesFormat {} **x_7_1_1; struct XlChartSeriesFormat {} **x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; } x7; struct ChVector<XlChartCustomLabelText*> { struct XlChartCustomLabelText {} **x_8_1_1; struct XlChartCustomLabelText {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; struct ChVector<long unsigned int> { unsigned long *x_9_1_1; unsigned long *x_9_1_2; NSUInteger x_9_1_3; NSUInteger x_9_1_4; NSUInteger x_9_1_5; } x9; struct ChVector<long int> { long *x_10_1_1; long *x_10_1_2; NSUInteger x_10_1_3; NSUInteger x_10_1_4; NSUInteger x_10_1_5; } x10; struct XlChartLinkedData {} *x11; struct XlChartLinkedData {} *x12; struct XlChartLinkedData {} *x13; struct XlChartLinkedData {} *x14; struct ChVector<XlChartCustomLegend*> { struct XlChartCustomLegend {} **x_15_1_1; struct XlChartCustomLegend {} **x_15_1_2; NSUInteger x_15_1_3; NSUInteger x_15_1_4; NSUInteger x_15_1_5; } x15; }*)xlChartDataSeriesAtIndex:(NSInteger)arg1;
-- (struct XlChartDataSeries { int (**x1)(); struct XlChartSeries {} *x2; unsigned short x3; unsigned short x4; unsigned short x5; struct ChVector<XlChartSeriesFormat*> { struct XlChartSeriesFormat {} **x_6_1_1; struct XlChartSeriesFormat {} **x_6_1_2; NSUInteger x_6_1_3; NSUInteger x_6_1_4; NSUInteger x_6_1_5; } x6; struct ChVector<XlChartSeriesFormat*> { struct XlChartSeriesFormat {} **x_7_1_1; struct XlChartSeriesFormat {} **x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; } x7; struct ChVector<XlChartCustomLabelText*> { struct XlChartCustomLabelText {} **x_8_1_1; struct XlChartCustomLabelText {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; struct ChVector<long unsigned int> { unsigned long *x_9_1_1; unsigned long *x_9_1_2; NSUInteger x_9_1_3; NSUInteger x_9_1_4; NSUInteger x_9_1_5; } x9; struct ChVector<long int> { long *x_10_1_1; long *x_10_1_2; NSUInteger x_10_1_3; NSUInteger x_10_1_4; NSUInteger x_10_1_5; } x10; struct XlChartLinkedData {} *x11; struct XlChartLinkedData {} *x12; struct XlChartLinkedData {} *x13; struct XlChartLinkedData {} *x14; struct ChVector<XlChartCustomLegend*> { struct XlChartCustomLegend {} **x_15_1_1; struct XlChartCustomLegend {} **x_15_1_2; NSUInteger x_15_1_3; NSUInteger x_15_1_4; NSUInteger x_15_1_5; } x15; }*)xlCurrentChartDataSeries;
+- (struct XlChartDataSeries { int (**x1)(); struct XlChartSeries {} *x2; unsigned short x3; unsigned short x4; unsigned short x5; struct ChVector<XlChartSeriesFormat*> { struct XlChartSeriesFormat {} **x_6_1_1; struct XlChartSeriesFormat {} **x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned int x_6_1_5; } x6; struct ChVector<XlChartSeriesFormat*> { struct XlChartSeriesFormat {} **x_7_1_1; struct XlChartSeriesFormat {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; struct ChVector<XlChartCustomLabelText*> { struct XlChartCustomLabelText {} **x_8_1_1; struct XlChartCustomLabelText {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; struct ChVector<long unsigned int> { unsigned long *x_9_1_1; unsigned long *x_9_1_2; unsigned int x_9_1_3; unsigned int x_9_1_4; unsigned int x_9_1_5; } x9; struct ChVector<long int> { long *x_10_1_1; long *x_10_1_2; unsigned int x_10_1_3; unsigned int x_10_1_4; unsigned int x_10_1_5; } x10; struct XlChartLinkedData {} *x11; struct XlChartLinkedData {} *x12; struct XlChartLinkedData {} *x13; struct XlChartLinkedData {} *x14; struct ChVector<XlChartCustomLegend*> { struct XlChartCustomLegend {} **x_15_1_1; struct XlChartCustomLegend {} **x_15_1_2; unsigned int x_15_1_3; unsigned int x_15_1_4; unsigned int x_15_1_5; } x15; }*)xlChartDataSeriesAtIndex:(int)arg1;
+- (struct XlChartDataSeries { int (**x1)(); struct XlChartSeries {} *x2; unsigned short x3; unsigned short x4; unsigned short x5; struct ChVector<XlChartSeriesFormat*> { struct XlChartSeriesFormat {} **x_6_1_1; struct XlChartSeriesFormat {} **x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned int x_6_1_5; } x6; struct ChVector<XlChartSeriesFormat*> { struct XlChartSeriesFormat {} **x_7_1_1; struct XlChartSeriesFormat {} **x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; } x7; struct ChVector<XlChartCustomLabelText*> { struct XlChartCustomLabelText {} **x_8_1_1; struct XlChartCustomLabelText {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; struct ChVector<long unsigned int> { unsigned long *x_9_1_1; unsigned long *x_9_1_2; unsigned int x_9_1_3; unsigned int x_9_1_4; unsigned int x_9_1_5; } x9; struct ChVector<long int> { long *x_10_1_1; long *x_10_1_2; unsigned int x_10_1_3; unsigned int x_10_1_4; unsigned int x_10_1_5; } x10; struct XlChartLinkedData {} *x11; struct XlChartLinkedData {} *x12; struct XlChartLinkedData {} *x13; struct XlChartLinkedData {} *x14; struct ChVector<XlChartCustomLegend*> { struct XlChartCustomLegend {} **x_15_1_1; struct XlChartCustomLegend {} **x_15_1_2; unsigned int x_15_1_3; unsigned int x_15_1_4; unsigned int x_15_1_5; } x15; }*)xlCurrentChartDataSeries;
 - (id)autoStyling;
 - (id)chart;
-- (NSUInteger)chartGroupIndexForType:(NSInteger)arg1 isForPrimary:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
+- (unsigned int)chartGroupIndexForType:(int)arg1 isForPrimary:(bool)arg2;
 - (void)dealloc;
 - (void)deleteXlChartDataSeriesCollection;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasPrimaryMixedArea;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasPrimaryMixedColumn;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasPrimaryMixedLine;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasSecondaryMixedArea;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasSecondaryMixedColumn;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)hasSecondaryMixedLine;
+- (bool)hasPrimaryMixedArea;
+- (bool)hasPrimaryMixedColumn;
+- (bool)hasPrimaryMixedLine;
+- (bool)hasSecondaryMixedArea;
+- (bool)hasSecondaryMixedColumn;
+- (bool)hasSecondaryMixedLine;
 - (id)init;
 - (void)readAndCacheXlChartDataSeries;
 - (id)resources;
 - (void)setChart:(id)arg1;
-- (void)setHasPrimaryMixedArea:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setHasPrimaryMixedColumn:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setHasPrimaryMixedLine:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setHasSecondaryMixedArea:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setHasSecondaryMixedColumn:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setHasSecondaryMixedLine:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setXlCurrentSeriesIndex:(NSInteger)arg1;
+- (void)setHasPrimaryMixedArea:(bool)arg1;
+- (void)setHasPrimaryMixedColumn:(bool)arg1;
+- (void)setHasPrimaryMixedLine:(bool)arg1;
+- (void)setHasSecondaryMixedArea:(bool)arg1;
+- (void)setHasSecondaryMixedColumn:(bool)arg1;
+- (void)setHasSecondaryMixedLine:(bool)arg1;
+- (void)setXlCurrentSeriesIndex:(int)arg1;
 - (id)workbook;
-- (NSInteger)xlCurrentChartDataSeriesIndex;
-- (NSInteger)xlSeriesCount;
+- (int)xlCurrentChartDataSeriesIndex;
+- (int)xlSeriesCount;
 
 @end

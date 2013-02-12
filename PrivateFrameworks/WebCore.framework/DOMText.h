@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMText : DOMCharacterData {
 }
 
-@property(copy,readonly) NSString *wholeText;
+@property(copy,readonly) NSString * wholeText;
 
 - (id)replaceWholeText:(id)arg1;
-- (id)splitText:(NSUInteger)arg1;
+- (id)splitText:(unsigned int)arg1;
 - (id)wholeText;
 
 @end

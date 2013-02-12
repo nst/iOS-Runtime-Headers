@@ -11,6 +11,7 @@
 + (void)setEnableRouteDiscovery:(BOOL)arg1;
 + (void)setShouldRepeatMusic:(BOOL)arg1;
 + (void)startMusicForAlbum:(id)arg1;
++ (void)startMusicWithSettings:(id)arg1;
 + (void)stopMusic;
 + (void)stopRoutingMusicToAirTunes;
 

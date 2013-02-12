@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface ALCity : NSObject {
     NSString *_countryName;
     NSString *_countryOverride;
-    NSInteger _identifier;
+    int _identifier;
     NSString *_identifierForCPCity;
     float _latitude;
     NSString *_localeCode;
@@ -21,20 +21,20 @@
     NSString *_yahooCode;
 }
 
-@property(readonly) NSString *classicIdentifier;
-@property(retain) NSString *countryName;
-@property(retain) NSString *countryOverride;
-@property(retain) NSString *localeCode;
-@property(retain) NSString *name;
-@property(readonly) NSDictionary *properties;
-@property(retain) NSString *timeZone;
-@property(retain) NSString *unlocalizedCountryName;
-@property(retain) NSString *unlocalizedCountryOverride;
-@property(retain) NSString *unlocalizedName;
-@property(retain) NSString *yahooCode;
-@property NSInteger identifier;
+@property(readonly) NSString * classicIdentifier;
+@property(retain) NSString * countryName;
+@property(retain) NSString * countryOverride;
+@property int identifier;
 @property float latitude;
+@property(retain) NSString * localeCode;
 @property float longitude;
+@property(retain) NSString * name;
+@property(readonly) NSDictionary * properties;
+@property(retain) NSString * timeZone;
+@property(retain) NSString * unlocalizedCountryName;
+@property(retain) NSString * unlocalizedCountryOverride;
+@property(retain) NSString * unlocalizedName;
+@property(retain) NSString * yahooCode;
 
 - (id)classicIdentifier;
 - (id)countryName;
@@ -43,8 +43,8 @@
 - (id)description;
 - (id)displayNameIncludingCountry:(BOOL)arg1;
 - (void)ensureLocalized;
-- (NSUInteger)hash;
-- (NSInteger)identifier;
+- (unsigned int)hash;
+- (int)identifier;
 - (id)init;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithSQLRow:(char **)arg1;
@@ -56,7 +56,7 @@
 - (id)properties;
 - (void)setCountryName:(id)arg1;
 - (void)setCountryOverride:(id)arg1;
-- (void)setIdentifier:(NSInteger)arg1;
+- (void)setIdentifier:(int)arg1;
 - (void)setLatitude:(float)arg1;
 - (void)setLocaleCode:(id)arg1;
 - (void)setLongitude:(float)arg1;

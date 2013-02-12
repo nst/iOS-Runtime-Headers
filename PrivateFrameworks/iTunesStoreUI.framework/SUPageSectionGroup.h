@@ -5,25 +5,26 @@
 @class NSArray;
 
 @interface SUPageSectionGroup : NSObject <NSCopying> {
-    NSInteger _defaultSectionIndex;
+    int _defaultSectionIndex;
     NSArray *_sections;
-    NSInteger _style;
+    int _style;
 }
 
-@property(retain) NSArray *sections;
-@property NSInteger defaultSectionIndex;
-@property NSInteger style;
+@property int defaultSectionIndex;
+@property(retain) NSArray * sections;
+@property int style;
 
-- (NSInteger)_sectionStyleForString:(id)arg1;
+- (int)_sectionStyleForString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSInteger)defaultSectionIndex;
+- (int)defaultSectionIndex;
+- (id)initWithSectionsDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)loadFromDictionary:(id)arg1;
 - (id)sections;
-- (void)setDefaultSectionIndex:(NSInteger)arg1;
+- (void)setDefaultSectionIndex:(int)arg1;
 - (void)setSections:(id)arg1;
-- (void)setStyle:(NSInteger)arg1;
-- (NSInteger)style;
+- (void)setStyle:(int)arg1;
+- (int)style;
 
 @end

@@ -9,8 +9,8 @@
     Message *_message;
 }
 
-@property(retain) MessageLibrary *library;
-@property(retain) Message *message;
+@property(retain) MessageLibrary * library;
+@property(retain) Message * message;
 
 - (id)dataConsumerForPart:(id)arg1;
 - (void)dealloc;

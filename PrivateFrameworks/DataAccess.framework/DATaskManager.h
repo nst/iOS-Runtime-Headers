@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class <DATask>, DAAccount, NSMutableArray, NSMutableSet;
+@class <DATask>, DAAccount, NSArray, NSMutableArray, NSMutableSet;
 
 @interface DATaskManager : NSObject {
     DAAccount *_account;
@@ -16,16 +16,16 @@
     NSMutableArray *_queuedExclusiveTasks;
     NSMutableArray *_queuedModalTasks;
     NSMutableArray *_queuedTasks;
-    NSInteger _state;
+    int _state;
 }
 
-@property DAAccount *account;
-@property(readonly) <DATask> *activeModalTask;
-@property(readonly) <DATask> *activeQueuedTask;
-@property(readonly) NSArray *allTasks;
-@property(readonly) NSArray *queuedTasks;
+@property DAAccount * account;
+@property(readonly) <DATask> * activeModalTask;
+@property(readonly) <DATask> * activeQueuedTask;
+@property(readonly) NSArray * allTasks;
+@property(readonly) NSArray * queuedTasks;
 
-- (void)_cancelTasksWithReason:(NSInteger)arg1;
+- (void)_cancelTasksWithReason:(int)arg1;
 - (id)_getHeldIndependentTasks;
 - (id)_getIndependentTasks;
 - (id)_getModalHeldIndependentTasks;
@@ -37,7 +37,7 @@
 - (void)_populateVersionDescriptions;
 - (void)_reactivateHeldTasks;
 - (void)_releasePowerAssertionForTask:(id)arg1;
-- (void)_requestCancelTasksWithReason:(NSInteger)arg1;
+- (void)_requestCancelTasksWithReason:(int)arg1;
 - (void)_retainPowerAssertionForTask:(id)arg1;
 - (void)_schedulePerformTask:(id)arg1;
 - (void)_scheduleSelector:(SEL)arg1 withArgument:(id)arg2;
@@ -61,7 +61,7 @@
 - (id)init;
 - (id)initWithAccount:(id)arg1;
 - (id)password;
-- (NSInteger)port;
+- (int)port;
 - (id)queuedTasks;
 - (id)scheme;
 - (id)server;

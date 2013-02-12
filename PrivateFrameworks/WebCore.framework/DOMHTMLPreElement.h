@@ -5,12 +5,12 @@
 @interface DOMHTMLPreElement : DOMHTMLElement {
 }
 
-@property NSInteger width;
+@property int width;
 @property BOOL wrap;
 
-- (void)setWidth:(NSInteger)arg1;
+- (void)setWidth:(int)arg1;
 - (void)setWrap:(BOOL)arg1;
-- (NSInteger)width;
+- (int)width;
 - (BOOL)wrap;
 
 @end

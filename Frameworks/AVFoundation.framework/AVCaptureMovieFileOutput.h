@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureMovieFileOutputInternal;
+@class AVCaptureMovieFileOutputInternal, NSArray;
 
 @interface AVCaptureMovieFileOutput : AVCaptureFileOutput {
     AVCaptureMovieFileOutputInternal *_internal;
 }
 
-@property(copy) NSArray *metadata;
-@property ? movieFragmentInterval;
+@property(copy) NSArray * metadata;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } movieFragmentInterval;
 
 + (BOOL)consolidateMovieFragmentsInFile:(id)arg1 error:(id*)arg2;
 + (void)initialize;
@@ -29,12 +29,14 @@
 - (BOOL)isRecording;
 - (BOOL)isRecordingPaused;
 - (id)metadata;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })movieFragmentInterval;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (id)outputFileURL;
 - (void)pauseRecording;
 - (void)resumeRecording;
+- (BOOL)sendsLastVideoPreviewFrame;
 - (void)setMetadata:(id)arg1;
-- (void)setMovieFragmentInterval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setSendsLastVideoPreviewFrame:(BOOL)arg1;
 - (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
 - (void)stopRecording;
 

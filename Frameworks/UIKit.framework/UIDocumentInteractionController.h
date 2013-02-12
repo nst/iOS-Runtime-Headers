@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIDocumentInteractionControllerDelegate>, NSArray, NSString, NSURL, UIActionSheet, UIBarButtonItem, UIPopoverController, UIView, UIViewController;
+@class <UIDocumentInteractionControllerDelegate>, NSArray, NSString, NSURL, UIActionSheet, UIBarButtonItem, UIPopoverController, UIView, UIViewController, _UIPreviewItemProxy;
 
 @interface UIDocumentInteractionController : NSObject <UIActionSheetDelegate> {
     struct CGRect { 
@@ -36,12 +36,12 @@
         unsigned int delegateShouldRemoveUnzippedDocument : 1; 
         unsigned int delegateDidUnzipDocumentAtURL : 1; 
     NSString *_UTI;
-    NSInteger _alternateOpenButtonIndex;
+    int _alternateOpenButtonIndex;
     id _annotation;
     id _applicationToOpen;
     NSArray *_availableApplications;
-    NSInteger _copyButtonIndex;
-    NSInteger _defaultOpenButtonIndex;
+    int _copyButtonIndex;
+    int _defaultOpenButtonIndex;
     <UIDocumentInteractionControllerDelegate> *_delegate;
     } _documentInteractionControllerFlags;
     NSArray *_gestureRecognizers;
@@ -57,25 +57,25 @@
     UIViewController *_presentingViewController;
     id _previewController;
     id _previewItemProxy;
-    NSInteger _printButtonIndex;
-    NSInteger _quickLookButtonIndex;
+    int _printButtonIndex;
+    int _quickLookButtonIndex;
     BOOL _shouldUnzipDocument;
     NSString *_uniqueIdentifier;
     NSURL *_unzippedDocumentURL;
 }
 
-@property(retain) NSURL *URL;
-@property(copy) NSString *UTI;
-@property <UIDocumentInteractionControllerDelegate> *delegate;
-@property(readonly) NSArray *gestureRecognizers;
-@property(readonly) NSArray *icons;
-@property(copy) NSString *name;
-@property(readonly) UIPopoverController *popoverController;
-@property(readonly) _UIPreviewItemProxy *previewItemProxy;
-@property(retain) NSString *uniqueIdentifier;
+@property(retain) NSURL * URL;
+@property(copy) NSString * UTI;
 @property(retain) id annotation;
+@property <UIDocumentInteractionControllerDelegate> * delegate;
+@property(readonly) NSArray * gestureRecognizers;
+@property(readonly) NSArray * icons;
+@property(copy) NSString * name;
+@property(readonly) UIPopoverController * popoverController;
 @property(readonly) id previewController;
+@property(readonly) _UIPreviewItemProxy * previewItemProxy;
 @property BOOL shouldUnzipDocument;
+@property(retain) NSString * uniqueIdentifier;
 
 + (void)initialize;
 + (id)interactionControllerWithURL:(id)arg1;
@@ -107,11 +107,11 @@
 - (void)_unzipDocumentToDirectory:(id)arg1;
 - (id)_unzippedDocumentURL;
 - (void)_zipOperationCompleted;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)actionSheetCancel:(id)arg1;
 - (id)annotation;
-- (NSUInteger)applicationCount;
+- (unsigned int)applicationCount;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissMenuAnimated:(BOOL)arg1;
@@ -120,7 +120,7 @@
 - (id)icons;
 - (id)initWithURL:(id)arg1;
 - (id)name;
-- (NSInteger)numberOfPreviewItemsInPreviewController:(id)arg1;
+- (int)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (void)openDocumentWithDefaultApplication;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
 - (id)popoverController;
@@ -132,7 +132,7 @@
 - (BOOL)presentPreviewAnimated:(BOOL)arg1;
 - (id)presentingNavigationController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
-- (id)previewController:(id)arg1 previewItemAtIndex:(NSInteger)arg2;
+- (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
 - (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
 - (id)previewController;
 - (void)previewControllerDidDismiss:(id)arg1;

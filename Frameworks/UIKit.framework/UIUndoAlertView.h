@@ -5,20 +5,20 @@
 @class NSUndoManager;
 
 @interface UIUndoAlertView : UIAlertView {
-    NSInteger _redoButtonIndex;
-    NSInteger _undoButtonIndex;
+    int _redoButtonIndex;
+    int _undoButtonIndex;
     NSUndoManager *_undoManager;
 }
 
-@property(readonly) NSUndoManager *undoManager;
-@property(readonly) NSInteger redoButtonIndex;
-@property(readonly) NSInteger undoButtonIndex;
+@property(readonly) int redoButtonIndex;
+@property(readonly) int undoButtonIndex;
+@property(readonly) NSUndoManager * undoManager;
 
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 undoManager:(id)arg2;
-- (NSInteger)redoButtonIndex;
+- (int)redoButtonIndex;
 - (void)show;
-- (NSInteger)undoButtonIndex;
+- (int)undoButtonIndex;
 - (id)undoManager;
 
 @end

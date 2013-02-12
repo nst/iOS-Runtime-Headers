@@ -5,7 +5,7 @@
 @class NSSQLCore;
 
 @interface NSSQLRowCache : NSPersistentStoreCache {
-    NSInteger _debug;
+    int _debug;
     NSSQLCore *_sqlCore;
 }
 

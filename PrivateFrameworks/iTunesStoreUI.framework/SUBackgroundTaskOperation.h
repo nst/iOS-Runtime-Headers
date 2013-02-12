@@ -7,11 +7,11 @@
 @interface SUBackgroundTaskOperation : ISOperation {
     ISOperation *_operation;
     NSString *_permissionIdentifier;
-    NSUInteger _taskIdentifier;
+    unsigned int _taskIdentifier;
 }
 
-@property(readonly) ISOperation *operation;
-@property(readonly) NSString *permissionIdentifier;
+@property(readonly) ISOperation * operation;
+@property(readonly) NSString * permissionIdentifier;
 
 - (void)_cancelBackgroundAssertion;
 - (void)_removeBackgroundAssertion;

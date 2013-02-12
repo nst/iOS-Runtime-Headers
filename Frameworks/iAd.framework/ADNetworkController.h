@@ -5,7 +5,7 @@
 @class NSTimer;
 
 @interface ADNetworkController : NSObject {
-    NSInteger _networkType;
+    int _networkType;
     NSTimer *_notificationTimer;
     struct __SCDynamicStore { } *_store;
 }
@@ -15,7 +15,7 @@
 - (void)_checkForNetwork;
 - (void)_checkForNetworkAndNotify;
 - (void)_scheduleCheckForNetwork;
-- (NSInteger)networkType;
+- (int)networkType;
 - (void)start;
 
 @end

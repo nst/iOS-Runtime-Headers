@@ -2,45 +2,93 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
+@class CMMotionManager;
+
 @interface FigCoreMotionDelegate : NSObject {
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSInteger accelRingIndex;
+    struct { 
+        float x; 
+        float y; 
+        float z; 
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    struct { 
+        float x; 
+        float y; 
+        float z; 
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    struct { 
+        double timestamp; 
+        float x; 
+        float y; 
+        float z; 
+    struct { 
+        double timestamp; 
+        float x; 
+        float y; 
+        float z; 
+    int accelRingIndex;
     double accelRingTime[64];
     float accelRingX[64];
     float accelRingY[64];
     float accelRingZ[64];
-    NSInteger attRingIndex;
-    float attRingPitch[64];
-    float attRingRoll[64];
-    double attRingTime[64];
-    float attRingYaw[64];
+    BOOL computingPosition;
+    BOOL copyingAllData;
+    } currentQuaternion;
+    double dBaseTimestamp;
+    double dGyroUpdateInterval;
+    double dLatestFusedMotionCopied;
+    double dLatestTimestamp;
+    } fusedRingAccel[64];
+    int fusedRingIndex;
+    } fusedRingPosition[64];
+    } fusedRingQuaternion[64];
+    BOOL fusedRingSync[64];
+    double fusedRingTime[64];
+    BOOL gettingAttitudeChange;
     BOOL manageAccel;
-    BOOL manageAttitude;
-    BOOL manageRotation;
+    BOOL manageFusedMotion;
+    CMMotionManager *motionManager;
+    } position;
+    } previousQuaternion;
     } ringMutex;
-    NSInteger rotRingIndex;
-    double rotRingTime[64];
-    float rotRingX[64];
-    float rotRingY[64];
-    float rotRingZ[64];
+    } velocity;
 }
 
-- (id)copyAccelerationData;
-- (id)copyAttitudeData;
-- (id)copyRotationData;
+- (id)copyAllFusedMotionData;
+- (id)copyNewFusedMotionData;
 - (void)dealloc;
-- (void)deferOnRunloop_initManagerUsingIOHID;
-- (void)deferOnRunloop_stopEvents;
-- (void)didUpdateAccelerationWithEventInfo:(struct { double x1; double x2; double x3; double x4; }*)arg1;
-- (void)didUpdateRotationRateWithEventInfo:(struct { double x1; double x2; double x3; NSUInteger x4; double x5; }*)arg1;
-- (void)getAttitude:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
-- (void)getRotation:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
+- (void)didUpdateAcceleration:(struct { float x1; float x2; float x3; })arg1 time:(double)arg2;
+- (void)didUpdateFusedMotionWithDeviceMotion:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })arg1 time:(double)arg2 ifsync:(BOOL)arg3;
+- (void)didUpdatePositionWithAcceleration:(struct { float x1; float x2; float x3; }*)arg1 forTimeStamp:(double)arg2;
+- (void)didUpdatePositionWithTimeStamp:(double)arg1;
+- (void)didUpdateVelocityWithAcceleration:(struct { float x1; float x2; float x3; }*)arg1 forTimeStamp:(double)arg2;
+- (void)getCurrentAttitude:(double*)arg1 :(double*)arg2 :(double*)arg3;
+- (void)getCurrentDeltaAttitude:(double*)arg1 :(double*)arg2 :(double*)arg3;
+- (void)getCurrentDeltaQuaternion:(struct { double x1; double x2; double x3; double x4; }*)arg1;
+- (void)getCurrentQuaternion:(struct { double x1; double x2; double x3; double x4; }*)arg1;
+- (void)getFusedVector:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
+- (void)getPosition:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
 - (void)getVector:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
 - (id)init;
-- (id)initWithOptions:(BOOL)arg1 enableRotation:(BOOL)arg2 enableAttitude:(BOOL)arg3;
+- (id)initWithAccelerometer:(BOOL)arg1 fusedMotion:(BOOL)arg2;
+- (BOOL)isCopyingAllData;
 - (BOOL)managingAccel;
-- (BOOL)managingRotation;
+- (BOOL)managingFusedMotion;
+- (void)updateCurrentQuaternionForTimeStamp:(double)arg1;
 
 @end

@@ -8,6 +8,6 @@
 
 - (struct __CFString { }*)bookmark;
 - (void)dealloc;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 
 @end

@@ -13,25 +13,25 @@
 }
 
 - (void)accept:(id)arg1;
-- (void)add:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)add:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)add:(id)arg1;
 - (void)addChildren:(id)arg1;
 - (void)addChildrenOf:(id)arg1;
 - (id)ancestorOfClass:(Class)arg1;
-- (id)childAtIndex:(NSUInteger)arg1;
+- (id)childAtIndex:(unsigned int)arg1;
 - (id)children;
 - (id)childrenNotOfClass:(Class)arg1;
 - (void)childrenOfClass:(Class)arg1 into:(id)arg2;
 - (id)childrenOfClass:(Class)arg1;
 - (void)clearCachedInfo;
-- (id)copyAndSplitChildrenAtIndex:(NSUInteger)arg1;
+- (id)copyAndSplitChildrenAtIndex:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithoutChildren;
-- (NSUInteger)count;
-- (NSUInteger)countOfClass:(Class)arg1;
-- (NSUInteger)countOfFirstDescendantsOfClass:(Class)arg1;
+- (unsigned int)count;
+- (unsigned int)countOfClass:(Class)arg1;
+- (unsigned int)countOfFirstDescendantsOfClass:(Class)arg1;
 - (void)dealloc;
-- (NSInteger)depth;
+- (int)depth;
 - (id)descendantsOfClass:(Class)arg1 deep:(BOOL)arg2;
 - (id)descendantsOfClass:(Class)arg1 omitTraversing:(Class)arg2;
 - (void)descendantsOfClass:(Class)arg1 to:(id)arg2;
@@ -42,7 +42,7 @@
 - (id)firstDescendantOfClass:(Class)arg1;
 - (id)firstDescendantsOfClass:(Class)arg1;
 - (id)firstSibling;
-- (NSUInteger)indexOf:(id)arg1;
+- (unsigned int)indexOf:(id)arg1;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastChild;
@@ -65,7 +65,7 @@
 - (void)removeAll;
 - (void)removeFirstChild;
 - (void)removeLastChild;
-- (void)removeObjectAtIndex:(NSUInteger)arg1;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)setDocument:(id)arg1;
 - (void)setPage:(id)arg1;
 - (void)setParent:(id)arg1;

@@ -9,6 +9,6 @@
 + (char *)generatedNameSuffix;
 
 - (id)initWithPK64:(long long)arg1;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

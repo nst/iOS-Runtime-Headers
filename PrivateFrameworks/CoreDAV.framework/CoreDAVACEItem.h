@@ -13,12 +13,12 @@
     CoreDAVItemWithNoChildren *_protectedItem;
 }
 
-@property(retain) CoreDAVDenyItem *deny;
-@property(retain) CoreDAVGrantItem *grant;
-@property(retain) CoreDAVItemWithHrefChildItem *inherited;
-@property(retain) CoreDAVInvertItem *invert;
-@property(retain) CoreDAVPrincipalItem *principal;
-@property(retain) CoreDAVItemWithNoChildren *protectedItem;
+@property(retain) CoreDAVDenyItem * deny;
+@property(retain) CoreDAVGrantItem * grant;
+@property(retain) CoreDAVItemWithHrefChildItem * inherited;
+@property(retain) CoreDAVInvertItem * invert;
+@property(retain) CoreDAVPrincipalItem * principal;
+@property(retain) CoreDAVItemWithNoChildren * protectedItem;
 
 + (id)privilegeItemWithNameSpace:(id)arg1 andName:(id)arg2;
 
@@ -29,8 +29,7 @@
 - (id)grant;
 - (id)inherited;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
-- (id)initWithPrincipal:(id)arg1 shouldInvert:(BOOL)arg2 action:(NSInteger)arg3 withPrivileges:(id)arg4;
+- (id)initWithPrincipal:(id)arg1 shouldInvert:(BOOL)arg2 action:(int)arg3 withPrivileges:(id)arg4;
 - (id)invert;
 - (id)principal;
 - (id)protectedItem;

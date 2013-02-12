@@ -2,15 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class <OCDReader>, <OCDWriter>, OCDSummary;
 
 @interface OCDDocument : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
     <OCDReader> *mReader;
     OCDSummary *mSummary;
     <OCDWriter> *mWriter;
@@ -18,8 +12,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isFromBinaryFile;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isToBinaryFile;
+- (bool)isFromBinaryFile;
+- (bool)isToBinaryFile;
 - (id)reader;
 - (void)setReader:(id)arg1;
 - (void)setWriter:(id)arg1;

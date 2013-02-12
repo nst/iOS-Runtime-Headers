@@ -18,13 +18,13 @@
     UITouch *_touch;
 }
 
-@property(retain) UITouch *touch;
 @property double angle;
 @property double maximumDeviation;
 @property double minimumDistance;
 @property BOOL restrictsToAngle;
 @property double startAngle;
-@property CGPoint startPosition;
+@property struct CGPoint { float x; float y; } startPosition;
+@property(retain) UITouch * touch;
 
 - (void)_resetGestureRecognizer;
 - (double)angle;

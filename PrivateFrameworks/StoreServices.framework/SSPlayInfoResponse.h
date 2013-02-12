@@ -9,8 +9,8 @@
     NSData *_playInfoData;
 }
 
-@property(readonly) NSError *error;
-@property(readonly) NSData *playInfoData;
+@property(readonly) NSError * error;
+@property(readonly) NSData * playInfoData;
 
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

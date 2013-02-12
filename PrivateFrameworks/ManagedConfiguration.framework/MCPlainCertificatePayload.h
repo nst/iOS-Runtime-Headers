@@ -7,22 +7,22 @@
 @interface MCPlainCertificatePayload : MCCertificatePayload {
     NSData *_certificateData;
     NSString *_certificateFileName;
-    NSInteger _dataEncoding;
+    int _dataEncoding;
     NSString *_password;
 }
 
-@property(readonly) NSData *certificateData;
-@property(readonly) NSString *certificateFileName;
-@property(readonly) NSString *password;
-@property(readonly) NSInteger dataEncoding;
+@property(readonly) NSData * certificateData;
+@property(readonly) NSString * certificateFileName;
+@property(readonly) int dataEncoding;
+@property(readonly) NSString * password;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (id)certificateData;
 - (id)certificateFileName;
 - (struct __SecCertificate { }*)copyCertificate;
-- (NSInteger)dataEncoding;
+- (int)dataEncoding;
 - (void)dealloc;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;

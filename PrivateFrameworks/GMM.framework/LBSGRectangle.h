@@ -9,8 +9,8 @@
     LBSGLatLng *_upperRight;
 }
 
-@property(retain) LBSGLatLng *lowerLeft;
-@property(retain) LBSGLatLng *upperRight;
+@property(retain) LBSGLatLng * lowerLeft;
+@property(retain) LBSGLatLng * upperRight;
 
 - (void)dealloc;
 - (id)description;

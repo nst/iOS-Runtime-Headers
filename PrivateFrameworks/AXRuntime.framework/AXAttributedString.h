@@ -11,11 +11,11 @@
 
 - (void)appendAXAttributedString:(id)arg1;
 - (void)appendString:(id)arg1;
-- (id)attributedSubstringFromRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (id)attributesAtIndex:(NSInteger)arg1 effectiveRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg2;
+- (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)attributesAtIndex:(int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)axAttributedStringDescription;
 - (struct __CFAttributedString { }*)cfAttributedString;
-- (unsigned short)characterAtIndex:(NSUInteger)arg1;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (id)coalescedFontAttributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -24,13 +24,13 @@
 - (id)initWithCFAttributedString:(struct __CFAttributedString { }*)arg1;
 - (id)initWithString:(id)arg1;
 - (BOOL)isAXAttributedString;
-- (NSUInteger)length;
+- (unsigned int)length;
 - (void)replaceString:(struct __CFString { }*)arg1;
-- (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
+- (void)setAttribute:(id)arg1 forKey:(id)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
-- (void)setAttributes:(id)arg1 withRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)setAttributes:(id)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setAttributes:(id)arg1;
 - (id)string;
-- (id)substringFromIndex:(NSUInteger)arg1;
+- (id)substringFromIndex:(unsigned int)arg1;
 
 @end

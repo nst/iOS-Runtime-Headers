@@ -9,10 +9,10 @@
     GKPlayer *_player;
 }
 
-@property(retain) NSString *handle;
-@property(retain) GKPlayer *player;
+@property(retain) NSString * handle;
+@property(retain) GKPlayer * player;
 
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (void)dealloc;
 - (id)handle;
 - (id)invalidateCacheKeys;

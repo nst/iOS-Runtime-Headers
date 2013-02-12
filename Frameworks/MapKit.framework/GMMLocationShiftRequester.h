@@ -8,7 +8,7 @@
     CLLocation *_location;
 }
 
-@property(retain) CLLocation *location;
+@property(retain) CLLocation * location;
 
 - (void)dealloc;
 - (id)location;

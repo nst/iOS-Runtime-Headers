@@ -11,10 +11,10 @@
     NSString *_username;
 }
 
-@property(retain) NSDictionary *alertDictionary;
-@property(retain) NSString *password;
-@property(retain) NSString *username;
+@property(retain) NSDictionary * alertDictionary;
 @property BOOL loginDisabled;
+@property(retain) NSString * password;
+@property(retain) NSString * username;
 
 - (id)alertDictionary;
 - (BOOL)authenticationRequired;
@@ -28,6 +28,7 @@
 - (void)setLoginDisabled:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
+- (BOOL)shouldProcessInBackground;
 - (id)username;
 
 @end

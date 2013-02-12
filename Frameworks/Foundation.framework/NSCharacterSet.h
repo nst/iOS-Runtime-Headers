@@ -11,7 +11,7 @@
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)characterSetWithCharactersInString:(id)arg1;
 + (id)characterSetWithContentsOfFile:(id)arg1;
-+ (id)characterSetWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
++ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)controlCharacterSet;
 + (id)decimalDigitCharacterSet;
 + (id)decomposableCharacterSet;
@@ -35,10 +35,10 @@
 - (id)bitmapRepresentation;
 - (BOOL)characterIsMember:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)invertedSet;

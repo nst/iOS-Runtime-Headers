@@ -7,8 +7,8 @@
 @interface _UIImageViewExtendedStorage : NSObject {
     double _animationDuration;
     NSArray *_animationImages;
-    NSInteger _animationRepeatCount;
-    NSInteger _drawMode;
+    int _animationRepeatCount;
+    int _drawMode;
     BOOL _highlighted;
     NSArray *_highlightedAnimationImages;
     UIImage *_highlightedImage;

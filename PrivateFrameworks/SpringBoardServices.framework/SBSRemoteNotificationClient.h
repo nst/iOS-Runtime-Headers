@@ -5,13 +5,13 @@
 @interface SBSRemoteNotificationClient : NSObject {
 }
 
-+ (NSInteger)enabledRemoteNotificationTypes;
++ (int)enabledRemoteNotificationTypes;
 + (id)getPendingNotificationUserInfo;
 + (void)getSupportedTypes:(id*)arg1 enabledTypes:(id*)arg2;
 + (BOOL)hasRegisteredBundleIdentifiers;
 + (BOOL)isSystemwideEnabled;
-+ (void)registerForRemoteNotificationTypes:(NSInteger)arg1;
-+ (void)setEnabledNotificationTypes:(NSInteger)arg1 forBundleIdentifier:(id)arg2;
++ (void)registerForRemoteNotificationTypes:(int)arg1;
++ (void)setEnabledNotificationTypes:(int)arg1 forBundleIdentifier:(id)arg2;
 + (void)setSystemwideEnabled:(BOOL)arg1;
 
 @end

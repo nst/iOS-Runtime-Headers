@@ -10,7 +10,7 @@
     BOOL _direct;
     NSSQLRelationship *_relationship;
     NSString *_sourceAlias;
-    NSUInteger _type;
+    unsigned int _type;
 }
 
 + (id)createJoinIntermediatesForKeypath:(id)arg1 startEntity:(id)arg2 startAlias:(id)arg3 forScope:(id)arg4 inFetchIntermediate:(id)arg5 inContext:(id)arg6;
@@ -33,7 +33,7 @@
 - (id)relationship;
 - (void)setDestinationAlias:(id)arg1;
 - (void)setDirect:(BOOL)arg1;
-- (void)setJoinType:(NSUInteger)arg1;
+- (void)setJoinType:(unsigned int)arg1;
 - (void)setSourceAlias:(id)arg1;
 - (id)sourceAlias;
 - (id)sourceEntity;

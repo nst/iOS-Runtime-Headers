@@ -6,31 +6,31 @@
 
 @interface UITextInputArrowKeyHistory : NSObject {
     BOOL affinityDownstream;
-    NSInteger amount;
-    NSInteger anchor;
+    int amount;
+    int anchor;
     UITextPosition *cursor;
     UITextPosition *end;
     UITextPosition *start;
     UITextPosition *startPosition;
 }
 
-@property(retain) UITextPosition *cursor;
-@property(retain) UITextPosition *end;
-@property(retain) UITextPosition *start;
-@property(retain) UITextPosition *startPosition;
 @property BOOL affinityDownstream;
-@property NSInteger amount;
-@property NSInteger anchor;
+@property int amount;
+@property int anchor;
+@property(retain) UITextPosition * cursor;
+@property(retain) UITextPosition * end;
+@property(retain) UITextPosition * start;
+@property(retain) UITextPosition * startPosition;
 
 - (BOOL)affinityDownstream;
-- (NSInteger)amount;
-- (NSInteger)anchor;
+- (int)amount;
+- (int)anchor;
 - (id)cursor;
 - (void)dealloc;
 - (id)end;
 - (void)setAffinityDownstream:(BOOL)arg1;
-- (void)setAmount:(NSInteger)arg1;
-- (void)setAnchor:(NSInteger)arg1;
+- (void)setAmount:(int)arg1;
+- (void)setAnchor:(int)arg1;
 - (void)setCursor:(id)arg1;
 - (void)setEnd:(id)arg1;
 - (void)setStart:(id)arg1;

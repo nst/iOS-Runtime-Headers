@@ -10,7 +10,7 @@
     NSString *file;
     Class isa;
     id realObject;
-    NSInteger refCount;
+    int refCount;
 }
 
 + (id)alloc;
@@ -28,6 +28,6 @@
 - (void)reallyDealloc;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

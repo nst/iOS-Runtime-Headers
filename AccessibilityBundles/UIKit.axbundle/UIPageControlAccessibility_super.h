@@ -6,12 +6,12 @@
 }
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (NSInteger)_accessibilityPageControlCount;
-- (NSInteger)_accessibilityPageControlIndex;
+- (int)_accessibilityPageControlCount;
+- (int)_accessibilityPageControlIndex;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)isAccessibilityElement;
-- (void)setCurrentPage:(NSInteger)arg1;
+- (void)setCurrentPage:(int)arg1;
 
 @end

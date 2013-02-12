@@ -9,15 +9,14 @@
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) CoreDAVHrefItem *href;
-@property(retain) CoreDAVItemWithNoChildren *unauthenticated;
+@property(retain) CoreDAVHrefItem * href;
+@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
-- (id)attributes;
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
 - (id)href;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)init;
 - (void)setHref:(id)arg1;
 - (void)setUnauthenticated:(id)arg1;
 - (id)unauthenticated;

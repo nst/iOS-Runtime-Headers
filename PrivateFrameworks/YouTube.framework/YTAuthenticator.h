@@ -5,10 +5,10 @@
 @class <YTAuthenticatorDelegate>, NSMutableArray;
 
 @interface YTAuthenticator : NSObject {
-    NSInteger _accountAuthState;
+    int _accountAuthState;
     NSMutableArray *_deferredRequests;
     <YTAuthenticatorDelegate> *_delegate;
-    NSInteger _deviceAuthState;
+    int _deviceAuthState;
 }
 
 + (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;

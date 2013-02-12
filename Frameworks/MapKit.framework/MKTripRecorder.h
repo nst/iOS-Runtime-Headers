@@ -12,11 +12,11 @@
     NSDate *_timeStampDate;
 }
 
-@property(retain) NSMutableString *buffer;
-@property(retain) NSDate *lastRecordingDate;
-@property(retain) NSDate *startDate;
-@property(retain) NSDate *timeStampDate;
+@property(retain) NSMutableString * buffer;
 @property BOOL isRecording;
+@property(retain) NSDate * lastRecordingDate;
+@property(retain) NSDate * startDate;
+@property(retain) NSDate * timeStampDate;
 
 - (void)_writeVersion;
 - (void)addAbsoluteTimeCommentIfNeeded;

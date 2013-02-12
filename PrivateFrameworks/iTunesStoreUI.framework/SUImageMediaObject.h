@@ -2,13 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class UIImage;
+
 @interface SUImageMediaObject : SUMediaObject {
 }
 
-- (id)_pickedImage;
-- (id)_thumbnailImageForImageData:(id)arg1 size:(float)arg2 orientation:(NSInteger)arg3;
+@property(readonly) UIImage * pickedImage;
+
+- (id)_fullSizeImage;
+- (id)_thumbnailImageForImageData:(id)arg1 size:(float)arg2 orientation:(int)arg3;
 - (id)inputSourceMIMEType;
 - (id)newInputSource;
 - (id)newThumbnailImageWithMaximumSize:(float)arg1;
+- (id)pickedImage;
+- (void)saveToLibraryWithCompletionBlock:(id)arg1;
 
 @end

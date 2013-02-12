@@ -2,16 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableString, NSString;
 
 @interface EMNumberFormatter : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
+    boolmIsNegativeRed;
     NSString *excelFormatString;
-    NSInteger formatType;
+    int formatType;
     NSMutableString *icuFormatString;
     struct __CFNumberFormatter { } *mBigNumberFormatter;
     struct __CFNumberFormatter { } *mCurrencyFormatter;
@@ -19,7 +15,6 @@
     struct __CFDateFormatter { } *mDateFormatter;
     struct __CFNumberFormatter { } *mGenericFormatter;
     struct __CFNumberFormatter { } *mSmallNumberFormatter;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsNegativeRed;
 }
 
 + (id)formatterForFormat:(id)arg1;
@@ -44,11 +39,11 @@
 - (id)formatFraction:(double)arg1;
 - (id)formatPercent:(double)arg1;
 - (id)formatPhoneNumber:(double)arg1;
-- (NSInteger)formatType;
+- (int)formatType;
 - (id)icuFormatString;
 - (id)initWithDefaultFormatString;
 - (id)initWithExcelFormatString:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isNegativeRed;
+- (bool)isNegativeRed;
 - (void)preprocessIcuString;
 
 @end

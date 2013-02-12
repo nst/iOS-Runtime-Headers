@@ -13,12 +13,12 @@
     NSString *_responseUserID;
 }
 
-@property(copy) NSString *deviceID;
-@property(copy) NSArray *emailAddresses;
-@property(copy) NSData *pushToken;
-@property(copy) NSDictionary *responseAliasInfo;
-@property(copy) NSString *responseSignature;
-@property(copy) NSString *responseUserID;
+@property(copy) NSString * deviceID;
+@property(copy) NSArray * emailAddresses;
+@property(copy) NSData * pushToken;
+@property(copy) NSDictionary * responseAliasInfo;
+@property(copy) NSString * responseSignature;
+@property(copy) NSString * responseUserID;
 
 - (id)bagKey;
 - (void)dealloc;

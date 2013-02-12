@@ -17,7 +17,7 @@
 - (id)personForUniqueID:(id)arg1;
 - (void)registerPerson:(id)arg1;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)unregisterPerson:(id)arg1;
 
 @end

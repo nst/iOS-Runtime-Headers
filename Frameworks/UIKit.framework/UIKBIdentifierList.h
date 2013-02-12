@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString;
 
 @interface UIKBIdentifierList : NSObject <NSCoding, NSCopying> {
     BOOL m_explicit;
@@ -10,14 +10,14 @@
     NSString *m_name;
 }
 
-@property(readonly) NSArray *list;
-@property(copy) NSString *name;
-@property(readonly) NSUInteger count;
+@property(readonly) unsigned int count;
 @property BOOL explicit;
+@property(readonly) NSArray * list;
+@property(copy) NSString * name;
 
 - (void)addIdentifier:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

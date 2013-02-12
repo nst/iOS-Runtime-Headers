@@ -7,14 +7,14 @@
 @interface SUOverlayTransition : NSObject <NSCoding, NSCopying> {
     double _duration;
     SUDOMElement *_sourceElement;
-    NSInteger _type;
+    int _type;
 }
 
-@property(retain) SUDOMElement *sourceElement;
 @property double duration;
-@property NSInteger type;
+@property(retain) SUDOMElement * sourceElement;
+@property int type;
 
-+ (NSInteger)transitionTypeFromString:(id)arg1;
++ (int)transitionTypeFromString:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -24,8 +24,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setSourceElement:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (id)sourceElement;
-- (NSInteger)type;
+- (int)type;
 
 @end

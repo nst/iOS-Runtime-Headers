@@ -11,13 +11,13 @@
     id _delegate;
     BOOL _invalidatedToken;
     BOOL _isLoading;
-    NSUInteger _startIndex;
-    NSUInteger _totalResults;
+    unsigned int _startIndex;
+    unsigned int _totalResults;
     NSMutableArray *_videos;
-    NSUInteger _videosPerPage;
+    unsigned int _videosPerPage;
 }
 
-+ (NSInteger)partialFeedType;
++ (int)partialFeedType;
 
 - (void)_didAuthenticate:(id)arg1;
 - (void)_failedToAuthenticate:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)loadRequest:(id)arg1 withDelegate:(id)arg2 accountAuthRequired:(BOOL)arg3;
 - (void)loadRequest:(id)arg1;
-- (NSInteger)parseData:(id)arg1;
+- (int)parseData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

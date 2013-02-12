@@ -3,13 +3,13 @@
  */
 
 @interface PDSplitDirectionOptions : PDTransitionOptions {
-    NSInteger mInOut;
-    NSInteger mOrientation;
+    int mInOut;
+    int mOrientation;
 }
 
-- (NSInteger)inOut;
-- (NSInteger)orientation;
-- (void)setInOut:(NSInteger)arg1;
-- (void)setOrientation:(NSInteger)arg1;
+- (int)inOut;
+- (int)orientation;
+- (void)setInOut:(int)arg1;
+- (void)setOrientation:(int)arg1;
 
 @end

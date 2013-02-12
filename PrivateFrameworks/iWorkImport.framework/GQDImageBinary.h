@@ -8,15 +8,15 @@
         float height; 
     struct __CFURL { } *mAbsoluteUrl;
     struct __CFString { } *mPath;
-    NSInteger mResourceType;
+    int mResourceType;
     } mSize;
 }
 
 - (struct __CFURL { }*)absoluteUrlForState:(id)arg1;
 - (void)dealloc;
-- (NSInteger)readDataAttributesFromReader:(struct _xmlTextReader { }*)arg1;
+- (int)readDataAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (struct __CFString { }*)relativePath;
-- (NSInteger)resourceType;
+- (int)resourceType;
 - (struct CGSize { float x1; float x2; })size;
 
 @end

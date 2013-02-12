@@ -7,13 +7,13 @@
 @interface SUReviewsButton : SUGradientButton {
     UIImageView *_disclosureView;
     float _userRating;
-    NSInteger _userRatingCount;
+    int _userRatingCount;
     NSString *_userRatingCountString;
 }
 
-@property(retain) NSString *userRatingCountString;
 @property float userRating;
-@property NSInteger userRatingCount;
+@property int userRatingCount;
+@property(retain) NSString * userRatingCountString;
 
 + (void)_initializeSafeCategory;
 
@@ -25,11 +25,11 @@
 - (void)layoutSubviews;
 - (void)reloadView;
 - (void)setUserRating:(float)arg1;
-- (void)setUserRatingCount:(NSInteger)arg1;
+- (void)setUserRatingCount:(int)arg1;
 - (void)setUserRatingCountString:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)userRating;
-- (NSInteger)userRatingCount;
+- (int)userRatingCount;
 - (id)userRatingCountString;
 
 @end

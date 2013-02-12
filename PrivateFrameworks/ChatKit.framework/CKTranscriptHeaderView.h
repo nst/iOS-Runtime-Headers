@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIPlacardButton;
+@class <CKTranscriptHeaderDelegate>, UIPlacardButton;
 
 @interface CKTranscriptHeaderView : UIView {
     UIPlacardButton *_callButton;
@@ -15,7 +15,7 @@
     UIPlacardButton *_loadMoreButton;
 }
 
-@property <CKTranscriptHeaderDelegate> *delegate;
+@property <CKTranscriptHeaderDelegate> * delegate;
 @property BOOL faceTimeAvailable;
 @property BOOL hasContact;
 @property(readonly) BOOL isGroupMessage;

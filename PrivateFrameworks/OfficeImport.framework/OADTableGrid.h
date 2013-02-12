@@ -9,8 +9,8 @@
 }
 
 - (id)addColumn;
-- (id)columnAtIndex:(NSUInteger)arg1;
-- (NSUInteger)columnCount;
+- (id)columnAtIndex:(unsigned int)arg1;
+- (unsigned int)columnCount;
 - (void)dealloc;
 - (id)init;
 

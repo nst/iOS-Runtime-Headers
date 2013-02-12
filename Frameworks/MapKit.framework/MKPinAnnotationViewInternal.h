@@ -7,9 +7,9 @@
 @interface MKPinAnnotationViewInternal : MKAnnotationViewInternal {
     BOOL animatesDrop;
     id delegate;
-    NSInteger pinType;
+    int pinType;
     UIImageView *shadowView;
-    NSInteger state;
+    int state;
 }
 
 @end

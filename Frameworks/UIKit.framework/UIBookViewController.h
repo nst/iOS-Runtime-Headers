@@ -10,7 +10,7 @@
         float left; 
         float bottom; 
         float right; 
-    NSInteger _animatedPageTurns;
+    int _animatedPageTurns;
     } _contentInset;
     UIView *_contentView;
     <UIBookViewControllerDelegate> *_delegate;
@@ -18,15 +18,15 @@
     UIViewController *_newEvenPage;
     UIViewController *_newOddPage;
     UIViewController *_oddPage;
-    NSInteger _turnCount;
+    int _turnCount;
     double _turnDuration;
     float _turnMargin;
 }
 
-@property <UIBookViewControllerDelegate> *delegate;
-@property(retain) UIViewController *evenPage;
-@property(retain) UIViewController *oddPage;
-@property UIEdgeInsets contentInset;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInset;
+@property <UIBookViewControllerDelegate> * delegate;
+@property(retain) UIViewController * evenPage;
+@property(retain) UIViewController * oddPage;
 @property double turnDuration;
 @property float turnMargin;
 
@@ -54,7 +54,7 @@
 - (void)setTurnMargin:(float)arg1;
 - (double)turnDuration;
 - (float)turnMargin;
-- (void)turnPages:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)turnPages:(int)arg1 animated:(BOOL)arg2;
 - (id)view;
 
 @end

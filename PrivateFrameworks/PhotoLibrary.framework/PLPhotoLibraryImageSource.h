@@ -6,18 +6,18 @@
 
 @interface PLPhotoLibraryImageSource : PLImageSource {
     NSString *_identifier;
-    NSInteger _imageFormat;
+    int _imageFormat;
 }
 
 + (void)_initializeSafeCategory;
 
-- (id)createImageForObject:(id)arg1 createMetadata:(id*)arg2;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)identifier;
-- (NSInteger)imageFormat;
-- (id)initWithImageFormat:(NSInteger)arg1;
+- (int)imageFormat;
+- (id)initWithImageFormat:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)newImageForObject:(id)arg1 createMetadata:(id*)arg2;
 
 @end

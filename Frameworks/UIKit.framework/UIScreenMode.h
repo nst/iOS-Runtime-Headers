@@ -7,7 +7,7 @@
 }
 
 @property(readonly) float pixelAspectRatio;
-@property(readonly) CGSize size;
+@property(readonly) struct CGSize { float width; float height; } size;
 
 + (id)screenModeForDisplayMode:(id)arg1;
 

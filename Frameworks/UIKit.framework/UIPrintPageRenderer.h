@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface UIPrintPageRenderer : NSObject {
     struct CGRect { 
@@ -25,38 +25,38 @@
         } size; 
     float _footerHeight;
     float _headerHeight;
-    NSInteger _pageCount;
+    int _pageCount;
     } _paperRect;
     struct CGContext { } *_printContext;
     NSMutableArray *_printFormatters;
     } _printableRect;
 }
 
-@property(copy) NSArray *printFormatters;
 @property float footerHeight;
 @property float headerHeight;
-@property CGRect paperRect;
-@property CGRect printableRect;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } paperRect;
+@property(copy) NSArray * printFormatters;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } printableRect;
 
-- (void)_drawPage:(NSInteger)arg1;
+- (void)_drawPage:(int)arg1;
 - (void)_endPrintContext:(id)arg1 success:(BOOL)arg2;
-- (NSInteger)_maxFormatterPage;
+- (int)_maxFormatterPage;
 - (void)_removePrintFormatter:(id)arg1;
 - (BOOL)_startPrintContext:(id)arg1 printSettings:(id)arg2;
-- (void)addPrintFormatter:(id)arg1 startingAtPageAtIndex:(NSInteger)arg2;
+- (void)addPrintFormatter:(id)arg1 startingAtPageAtIndex:(int)arg2;
 - (void)dealloc;
-- (void)drawContentForPageAtIndex:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawFooterForPageAtIndex:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawHeaderForPageAtIndex:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawPageAtIndex:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawPrintFormatter:(id)arg1 forPageAtIndex:(NSInteger)arg2;
+- (void)drawContentForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawFooterForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawHeaderForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawPrintFormatter:(id)arg1 forPageAtIndex:(int)arg2;
 - (float)footerHeight;
 - (float)headerHeight;
-- (NSInteger)numberOfPages;
+- (int)numberOfPages;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paperRect;
-- (void)prepareForDrawingPages:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)printFormatters;
-- (id)printFormattersForPageAtIndex:(NSInteger)arg1;
+- (id)printFormattersForPageAtIndex:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })printableRect;
 - (void)setFooterHeight:(float)arg1;
 - (void)setHeaderHeight:(float)arg1;

@@ -8,7 +8,7 @@
     NSString *_urlString;
 }
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (void)dealloc;

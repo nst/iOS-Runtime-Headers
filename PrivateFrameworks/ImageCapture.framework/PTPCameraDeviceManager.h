@@ -12,7 +12,7 @@
 - (void)ejectImp:(id)arg1;
 - (void)getMetadataOfFileImp:(id)arg1;
 - (void)getThumbnailOfFileImp:(id)arg1;
-- (NSInteger)handleEvent:(id)arg1 onDevice:(id)arg2 contextInfo:(void*)arg3;
+- (int)handleEvent:(id)arg1 onDevice:(id)arg2 contextInfo:(void*)arg3;
 - (void)handleEventImp:(id)arg1;
 - (void)openDeviceImp:(id)arg1;
 - (void)openSessionImp:(id)arg1;

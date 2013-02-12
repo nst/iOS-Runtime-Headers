@@ -14,10 +14,10 @@
     id _context;
     NSData *_currentBoundary;
     MimePart *_currentPart;
-    NSUInteger _cursor;
+    unsigned int _cursor;
     NSMutableData *_data;
     id _delegate;
-    NSUInteger _lastLength;
+    unsigned int _lastLength;
     } _parserFlags;
     NSArray *_preserveHeaders;
     MimePart *_topLevelPart;
@@ -35,7 +35,7 @@
 - (id)data;
 - (void)dealloc;
 - (id)initWithBodyData:(id)arg1 topLevelHeaders:(id)arg2 headersToPreserve:(id)arg3;
-- (void)noteDataLengthChanged:(NSUInteger)arg1;
+- (void)noteDataLengthChanged:(unsigned int)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)start;

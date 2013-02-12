@@ -4,16 +4,16 @@
 
 @interface CMDrawingAction : NSObject {
     float _floatValue;
-    NSInteger _type;
+    int _type;
     id _value;
 }
 
 - (void)dealloc;
 - (id)description;
 - (float)floatValue;
-- (id)initWithType:(NSInteger)arg1 andFloatValue:(float)arg2;
-- (id)initWithType:(NSInteger)arg1 andValue:(id)arg2;
-- (NSInteger)type;
+- (id)initWithType:(int)arg1 andFloatValue:(float)arg2;
+- (id)initWithType:(int)arg1 andValue:(id)arg2;
+- (int)type;
 - (id)value;
 
 @end

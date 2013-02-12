@@ -4,31 +4,31 @@
 
 @interface NSSimpleCString : NSString {
     char *bytes;
-    NSInteger numBytes;
+    int numBytes;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (const char *)_fastCStringContents:(BOOL)arg1;
-- (id)_newSubstringWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 zone:(struct _NSZone { }*)arg2;
-- (NSUInteger)cStringLength;
-- (BOOL)canBeConvertedToEncoding:(NSUInteger)arg1;
-- (unsigned short)characterAtIndex:(NSUInteger)arg1;
-- (NSInteger)compare:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
+- (id)_newSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
+- (unsigned int)cStringLength;
+- (BOOL)canBeConvertedToEncoding:(unsigned int)arg1;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (NSUInteger)fastestEncoding;
+- (unsigned int)fastestEncoding;
 - (void)finalize;
-- (BOOL)getBytes:(void*)arg1 maxLength:(NSUInteger)arg2 usedLength:(NSUInteger*)arg3 encoding:(NSUInteger)arg4 options:(NSUInteger)arg5 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg6 remainingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg7;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (BOOL)getBytes:(void*)arg1 maxLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 encoding:(unsigned int)arg4 options:(unsigned int)arg5 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg7;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)hasPrefix:(id)arg1;
 - (BOOL)hasSuffix:(id)arg1;
-- (NSUInteger)hash;
-- (id)initWithCStringNoCopy:(char *)arg1 length:(NSUInteger)arg2;
+- (unsigned int)hash;
+- (id)initWithCStringNoCopy:(char *)arg1 length:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
-- (NSUInteger)length;
-- (NSUInteger)smallestEncoding;
+- (unsigned int)length;
+- (unsigned int)smallestEncoding;
 - (id)stringByAppendingString:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUPurchaseManagerDelegate>, NSMutableArray, NSMutableSet, SUAuthenticationObserver;
+@class <SUPurchaseManagerDelegate>, NSMutableArray, NSMutableSet, NSSet, SUAuthenticationObserver;
 
 @interface SUPurchaseManager : NSObject <SUAuthenticationDelegate, SUContinuationDelegate, SSDownloadQueueObserver, SSPurchaseRequestDelegate> {
     SUAuthenticationObserver *_authenticationObserver;
@@ -16,18 +16,20 @@
     NSMutableSet *_purchasedIdentifiers;
     BOOL _shouldExitWhenFinished;
     BOOL _showingErrorDialogs;
-    NSInteger _updatesCount;
+    int _updatesCount;
     BOOL _waitingForAuthentication;
 }
 
-@property <SUPurchaseManagerDelegate> *delegate;
-@property(readonly) NSSet *futurePurchases;
-@property(readonly) NSSet *purchasedItemIdentifiers;
-@property(readonly) NSInteger numberOfPendingPurchases;
+@property <SUPurchaseManagerDelegate> * delegate;
+@property(readonly) NSSet * futurePurchases;
+@property(readonly) int numberOfPendingPurchases;
+@property(readonly) NSSet * purchasedItemIdentifiers;
 
 + (void)setSharedManager:(id)arg1;
 + (id)sharedManager;
 
+- (id)_accountForPurchase:(id)arg1;
+- (void)_addBatchForPurchases:(id)arg1 options:(id)arg2;
 - (id)_authenticationObserver;
 - (void)_dialogDidFinish:(id)arg1;
 - (id)_downloadQueueForDownloadKind:(id)arg1;
@@ -40,6 +42,7 @@
 - (id)_newExternalDownloadWithDictionary:(id)arg1;
 - (id)_newExternalDownloadWithDownloadDictionary:(id)arg1;
 - (id)_newExternalDownloadWithItemDictionary:(id)arg1;
+- (id)_newPurchaseBatchForPurchases:(id)arg1;
 - (void)_performNextAction;
 - (void)_removePlaceholdersForPurchase:(id)arg1;
 - (void)_removePurchaseRequest:(id)arg1;
@@ -47,6 +50,7 @@
 - (void)_startContinuations:(id)arg1;
 - (void)_startPurchases:(id)arg1;
 - (void)addExternalDownloads:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
+- (void)addExternalDownloads:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (void)addFuturePurchase:(id)arg1;
 - (BOOL)addPurchaseBatch:(id)arg1;
 - (void)addPurchasedItemIdentifier:(unsigned long long)arg1;
@@ -68,9 +72,10 @@
 - (BOOL)itemIdentifierIsPurchased:(unsigned long long)arg1;
 - (BOOL)itemIdentifierIsPurchasing:(unsigned long long)arg1;
 - (id)newPurchaseBatchForItems:(id)arg1;
-- (NSInteger)numberOfPendingPurchases;
+- (int)numberOfPendingPurchases;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
+- (void)purchaseScriptObject:(id)arg1 withOptions:(id)arg2;
 - (void)purchaseScriptObject:(id)arg1;
 - (id)purchasedItemIdentifiers;
 - (void)removePurchasedItemIdentifier:(unsigned long long)arg1;

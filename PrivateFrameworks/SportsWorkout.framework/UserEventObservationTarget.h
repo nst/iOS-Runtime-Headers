@@ -8,7 +8,7 @@
     NSString *_event;
 }
 
-@property(retain) NSString *event;
+@property(retain) NSString * event;
 
 + (id)targetWithEvent:(id)arg1 selector:(SEL)arg2;
 

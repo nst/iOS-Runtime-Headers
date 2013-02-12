@@ -3,24 +3,24 @@
  */
 
 @interface ICSDateTimeValue : ICSDateValue <NSCoding> {
-    NSInteger _hour;
-    NSInteger _minute;
-    NSInteger _second;
+    int _hour;
+    int _minute;
+    int _second;
 }
 
-@property(readonly) NSInteger hour;
-@property(readonly) NSInteger minute;
-@property(readonly) NSInteger second;
+@property(readonly) int hour;
+@property(readonly) int minute;
+@property(readonly) int second;
 
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)components;
-- (NSInteger)dateType;
+- (int)dateType;
 - (void)encodeWithCoder:(id)arg1;
-- (NSInteger)hour;
+- (int)hour;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithYear:(NSInteger)arg1 month:(NSInteger)arg2 day:(NSInteger)arg3 hour:(NSInteger)arg4 minute:(NSInteger)arg5 second:(NSInteger)arg6;
-- (id)initWithYear:(NSInteger)arg1 month:(NSInteger)arg2 day:(NSInteger)arg3;
-- (NSInteger)minute;
-- (NSInteger)second;
+- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6;
+- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
+- (int)minute;
+- (int)second;
 
 @end

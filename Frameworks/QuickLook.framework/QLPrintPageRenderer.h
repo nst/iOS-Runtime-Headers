@@ -11,7 +11,7 @@
     NSURLRequest *_request;
 }
 
-@property(retain) QLPreviewConverter *previewConverter;
+@property(retain) QLPreviewConverter * previewConverter;
 
 + (BOOL)_isXPathType:(id)arg1;
 + (BOOL)isSpreadsheetType:(id)arg1;

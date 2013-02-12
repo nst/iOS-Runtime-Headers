@@ -2,41 +2,34 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDPhoneticInfo, EDRunsCollection, NSString;
 
 @interface EDString : NSObject <NSCopying, EDImmutableObject> {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
+    boolmDoNotModify;
     EDPhoneticInfo *mPhoneticInfo;
     EDRunsCollection *mRuns;
     NSString *mString;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDoNotModify;
 }
 
 + (id)edStringWithString:(id)arg1 runs:(id)arg2;
 + (id)edStringWithString:(id)arg1;
 + (id)string;
 
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)areThereRuns;
+- (bool)areThereRuns;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)firstRunFont;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithString:(id)arg1 runs:(id)arg2;
 - (id)initWithString:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isEmpty;
+- (bool)isEmpty;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEDString:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
 - (id)phoneticInfo;
 - (id)runs;
-- (void)setDoNotModify:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDoNotModify:(bool)arg1;
 - (void)setPhoneticInfo:(id)arg1;
 - (void)setRuns:(id)arg1;
 - (void)setString:(id)arg1;

@@ -46,9 +46,9 @@
     <MFAddressAtomDelegate> *_delegate;
     NSString *_displayString;
     NSString *_fullAddress;
-    NSInteger _identifier;
+    int _identifier;
     MFSlicedImageView *_leftCap;
-    NSUInteger _maxWidth;
+    unsigned int _maxWidth;
     void *_person;
     MFSlicedImageView *_rightCap;
 }
@@ -57,7 +57,7 @@
 + (void)initialize;
 
 - (void*)ABPerson;
-- (NSInteger)ABPropertyType;
+- (int)ABPropertyType;
 - (void)_addressBookRecordDidChange;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_registerForNotifications;
@@ -69,14 +69,14 @@
 - (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (id)displayString;
-- (NSInteger)identifier;
+- (int)identifier;
 - (id)initWithAddress:(id)arg1 isPhoneNumber:(BOOL)arg2 maxWidth:(float)arg3 useDisplayString:(BOOL)arg4;
 - (BOOL)isAccessibilityElement;
 - (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setMaxWidth:(NSUInteger)arg1;
+- (void)setMaxWidth:(unsigned int)arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)sizeToFit;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

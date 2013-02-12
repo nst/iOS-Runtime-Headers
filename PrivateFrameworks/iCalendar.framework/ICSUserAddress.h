@@ -2,37 +2,39 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
+@class NSString;
+
 @interface ICSUserAddress : ICSProperty {
 }
 
-@property(retain) NSString *cn;
-@property(retain) NSString *dir;
-@property(retain) NSString *email;
-@property NSInteger cutype;
-@property NSInteger partstat;
-@property NSInteger role;
+@property(retain) NSString * cn;
+@property int cutype;
+@property(retain) NSString * dir;
+@property(retain) NSString * email;
+@property int partstat;
+@property int role;
 @property BOOL rsvp;
-@property NSInteger scheduleagent;
-@property NSInteger scheduleforcesend;
-@property NSInteger schedulestatus;
+@property int scheduleagent;
+@property int scheduleforcesend;
+@property int schedulestatus;
 @property BOOL x_apple_self_invited;
 
-+ (id)ICSStringFromCalendarUser:(NSInteger)arg1;
-+ (id)ICSStringFromParticipationStatus:(NSInteger)arg1;
-+ (id)ICSStringFromRole:(NSInteger)arg1;
-+ (id)ICSStringFromScheduleAgent:(NSInteger)arg1;
-+ (id)ICSStringFromScheduleForceSend:(NSInteger)arg1;
-+ (id)ICSStringFromScheduleStatus:(NSInteger)arg1;
++ (id)ICSStringFromCalendarUser:(int)arg1;
++ (id)ICSStringFromParticipationStatus:(int)arg1;
++ (id)ICSStringFromRole:(int)arg1;
++ (id)ICSStringFromScheduleAgent:(int)arg1;
++ (id)ICSStringFromScheduleForceSend:(int)arg1;
++ (id)ICSStringFromScheduleStatus:(int)arg1;
 + (id)URLForNoMail;
-+ (NSInteger)calendarUserFromICSString:(id)arg1;
-+ (NSInteger)participationStatusFromICSString:(id)arg1;
-+ (NSInteger)roleFromICSString:(id)arg1;
-+ (NSInteger)scheduleAgentFromICSString:(id)arg1;
-+ (NSInteger)scheduleForceSendFromICSString:(id)arg1;
-+ (NSInteger)scheduleStatusFromICSString:(id)arg1;
++ (int)calendarUserFromICSString:(id)arg1;
++ (int)participationStatusFromICSString:(id)arg1;
++ (int)roleFromICSString:(id)arg1;
++ (int)scheduleAgentFromICSString:(id)arg1;
++ (int)scheduleForceSendFromICSString:(id)arg1;
++ (int)scheduleStatusFromICSString:(id)arg1;
 
 - (id)cn;
-- (NSInteger)cutype;
+- (int)cutype;
 - (id)dir;
 - (id)displayName;
 - (id)email;
@@ -44,22 +46,22 @@
 - (BOOL)isEmailAddress;
 - (BOOL)isHTTPAddress;
 - (BOOL)isHTTPSAddress;
-- (NSInteger)partstat;
-- (NSInteger)role;
+- (int)partstat;
+- (int)role;
 - (BOOL)rsvp;
-- (NSInteger)scheduleagent;
-- (NSInteger)scheduleforcesend;
-- (NSInteger)schedulestatus;
+- (int)scheduleagent;
+- (int)scheduleforcesend;
+- (int)schedulestatus;
 - (void)setCn:(id)arg1;
-- (void)setCutype:(NSInteger)arg1;
+- (void)setCutype:(int)arg1;
 - (void)setDir:(id)arg1;
 - (void)setEmail:(id)arg1;
-- (void)setPartstat:(NSInteger)arg1;
-- (void)setRole:(NSInteger)arg1;
+- (void)setPartstat:(int)arg1;
+- (void)setRole:(int)arg1;
 - (void)setRsvp:(BOOL)arg1;
-- (void)setScheduleagent:(NSInteger)arg1;
-- (void)setScheduleforcesend:(NSInteger)arg1;
-- (void)setSchedulestatus:(NSInteger)arg1;
+- (void)setScheduleagent:(int)arg1;
+- (void)setScheduleforcesend:(int)arg1;
+- (void)setSchedulestatus:(int)arg1;
 - (void)setURL:(id)arg1;
 - (void)setX_apple_self_invited:(BOOL)arg1;
 - (void)setX_calendarserver_email:(id)arg1;

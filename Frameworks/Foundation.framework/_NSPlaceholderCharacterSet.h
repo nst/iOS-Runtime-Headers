@@ -22,7 +22,7 @@
 - (BOOL)characterIsMember:(unsigned short)arg1;
 - (void)dealloc;
 - (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (id)initWithSet:(id)arg1 options:(NSUInteger)arg2;
+- (id)initWithSet:(id)arg1 options:(unsigned int)arg2;
 - (id)invertedSet;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
@@ -33,6 +33,6 @@
 - (id)replacementObjectForCoder:(id)arg1;
 - (id)replacementObjectForKeyedArchiver:(id)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

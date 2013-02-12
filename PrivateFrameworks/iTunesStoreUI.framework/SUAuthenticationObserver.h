@@ -8,10 +8,10 @@
     <SUAuthenticationDelegate> *_delegate;
     double _timeout;
     NSTimer *_timeoutTimer;
-    NSInteger _watchingAuthenticationCount;
+    int _watchingAuthenticationCount;
 }
 
-@property <SUAuthenticationDelegate> *delegate;
+@property <SUAuthenticationDelegate> * delegate;
 @property double timeout;
 @property(getter=isWatchingForAuthentication,readonly) BOOL watchingForAuthentication;
 

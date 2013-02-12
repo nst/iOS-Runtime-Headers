@@ -9,8 +9,8 @@
     NSNumber *_reason;
 }
 
-@property(copy) NSArray *peers;
-@property(copy) NSNumber *reason;
+@property(copy) NSArray * peers;
+@property(copy) NSNumber * reason;
 
 - (id)bagKey;
 - (void)dealloc;

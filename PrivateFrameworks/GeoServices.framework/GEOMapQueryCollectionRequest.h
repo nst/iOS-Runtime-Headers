@@ -8,20 +8,20 @@
     NSMutableArray *_requestElementss;
 }
 
-@property(retain) NSMutableArray *requestElementss;
-@property(readonly) NSInteger requestElementssCount;
+@property(retain) NSMutableArray * requestElementss;
+@property(readonly) int requestElementssCount;
 
 - (void)addRequestElements:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (id)requestElementsAtIndex:(NSUInteger)arg1;
+- (id)requestElementsAtIndex:(unsigned int)arg1;
 - (id)requestElementss;
-- (NSInteger)requestElementssCount;
-- (NSUInteger)requestTypeCode;
+- (int)requestElementssCount;
+- (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setRequestElements:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setRequestElements:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setRequestElementss:(id)arg1;
 - (void)writeTo:(id)arg1;
 

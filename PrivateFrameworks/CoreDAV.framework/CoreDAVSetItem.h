@@ -8,12 +8,12 @@
     CoreDAVItem *_prop;
 }
 
-@property(retain) CoreDAVItem *prop;
+@property(retain) CoreDAVItem * prop;
 
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)init;
 - (id)prop;
 - (void)setProp:(id)arg1;
 

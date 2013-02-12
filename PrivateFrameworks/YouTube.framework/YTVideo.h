@@ -6,7 +6,7 @@
 
 @interface YTVideo : NSObject {
     NSString *_author;
-    NSInteger _batchStatus;
+    int _batchStatus;
     NSString *_category;
     NSURL *_commentsURL;
     NSCalendarDate *_dateAdded;
@@ -16,9 +16,9 @@
     NSURL *_infoURL;
     BOOL _isProcessing;
     NSString *_notificationName;
-    NSUInteger _numDislikes;
-    NSUInteger _numLikes;
-    NSUInteger _numberOfViews;
+    unsigned int _numDislikes;
+    unsigned int _numLikes;
+    unsigned int _numberOfViews;
     NSURL *_ratingsURL;
     NSString *_shortID;
     NSArray *_tags;
@@ -51,7 +51,7 @@
 - (id)anyVideoReference;
 - (id)archiveDictionary;
 - (id)author;
-- (NSInteger)batchStatus;
+- (int)batchStatus;
 - (id)bestVideoReference;
 - (id)category;
 - (id)commentsURL;
@@ -62,18 +62,18 @@
 - (id)description;
 - (id)editURL;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)infoURL;
 - (id)initFromArchiveDictionary:(id)arg1;
-- (id)initWithID:(id)arg1 title:(id)arg2 dateUpdated:(id)arg3 dateAdded:(id)arg4 videoReferences:(id)arg5 infoURL:(id)arg6 videoDescription:(id)arg7 category:(id)arg8 tags:(id)arg9 author:(id)arg10 thumbnailURL:(id)arg11 numLikes:(NSUInteger)arg12 numDislikes:(NSUInteger)arg13 numberOfViews:(NSUInteger)arg14 batchStatus:(NSInteger)arg15 commentsURL:(id)arg16 editURL:(id)arg17 ratingsURL:(id)arg18 shortID:(id)arg19 unplayable:(id)arg20 isProcessing:(BOOL)arg21;
+- (id)initWithID:(id)arg1 title:(id)arg2 dateUpdated:(id)arg3 dateAdded:(id)arg4 videoReferences:(id)arg5 infoURL:(id)arg6 videoDescription:(id)arg7 category:(id)arg8 tags:(id)arg9 author:(id)arg10 thumbnailURL:(id)arg11 numLikes:(unsigned int)arg12 numDislikes:(unsigned int)arg13 numberOfViews:(unsigned int)arg14 batchStatus:(int)arg15 commentsURL:(id)arg16 editURL:(id)arg17 ratingsURL:(id)arg18 shortID:(id)arg19 unplayable:(id)arg20 isProcessing:(BOOL)arg21;
 - (BOOL)isBookmarked;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPlayable;
 - (BOOL)isProcessing;
 - (struct CGImage { }*)largeThumbnailLoadIfAbsent:(BOOL)arg1;
-- (NSUInteger)numDislikes;
-- (NSUInteger)numLikes;
-- (NSUInteger)numberOfViews;
+- (unsigned int)numDislikes;
+- (unsigned int)numLikes;
+- (unsigned int)numberOfViews;
 - (struct CGImage { }*)pluginThumbnailLoadIfAbsent:(BOOL)arg1;
 - (BOOL)positiveRating;
 - (id)ratingPercentageString;
@@ -87,6 +87,6 @@
 - (id)title;
 - (id)unplayable;
 - (id)videoDescription;
-- (id)videoReferenceForProfile:(NSInteger)arg1;
+- (id)videoReferenceForProfile:(int)arg1;
 
 @end

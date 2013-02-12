@@ -2,29 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISURLCache, NSString;
-
 @interface SURemoteNotificationController : NSObject {
-    NSInteger _enabledNotificationTypes;
-    NSString *_registerFailureBagKey;
-    NSString *_registerSuccessBagKey;
-    ISURLCache *_soundFileURLCache;
 }
 
-@property(readonly) NSInteger enabledNotificationTypes;
+@property(readonly) int enabledNotificationTypes;
 
 + (id)sharedInstance;
 
-- (void)_accountsDidChangeNotification:(id)arg1;
-- (void)_downloadSoundFileWithURL:(id)arg1 name:(id)arg2;
-- (void)_memoryWarningNotification:(id)arg1;
-- (void)_reloadFromURLBag;
-- (void)_reloadSoundFilesWithArray:(id)arg1;
-- (void)_reloadWithClientConfiguration:(id)arg1;
-- (id)_soundsDirectoryPath;
-- (void)_urlBagDidLoadNotification:(id)arg1;
-- (void)dealloc;
-- (NSInteger)enabledNotificationTypes;
+- (int)enabledNotificationTypes;
 - (void)handleNotificationDictionary:(id)arg1;
 - (void)handleRegistrationFailureWithError:(id)arg1;
 - (void)handleRegistrationSuccessWithToken:(id)arg1;

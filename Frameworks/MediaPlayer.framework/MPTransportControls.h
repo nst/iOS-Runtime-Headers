@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPButton, NSMutableIndexSet, UILabel;
+@class MPAVItem, MPButton, NSMutableIndexSet, NSString;
 
 @interface MPTransportControls : UIView {
     unsigned int _playing : 1;
@@ -10,9 +10,9 @@
     MPButton *_alternatesButton;
     MPButton *_bookmarkButton;
     MPButton *_chaptersButton;
-    NSUInteger _desiredParts;
+    unsigned int _desiredParts;
     MPButton *_devicePickerButton;
-    NSUInteger _disabledParts;
+    unsigned int _disabledParts;
     MPButton *_emailButton;
     NSMutableIndexSet *_heldParts;
     MPAVItem *_item;
@@ -20,60 +20,58 @@
     MPButton *_playButton;
     MPButton *_previousButton;
     MPButton *_rewind30SecondsButton;
-    UILabel *_routeNameLabel;
     MPButton *_scaleButton;
     id _target;
     MPButton *_toggleFullscreenButton;
-    NSUInteger _visibleParts;
+    unsigned int _visibleParts;
     id _volumeSlider;
 }
 
-@property(retain) MPAVItem *item;
-@property(readonly) NSString *pauseButtonImage;
-@property(readonly) NSString *playButtonImage;
-@property(readonly) NSString *playPauseButtonImage;
 @property BOOL allowsWirelessPlayback;
-@property NSUInteger desiredParts;
-@property NSUInteger disabledParts;
+@property unsigned int desiredParts;
+@property unsigned int disabledParts;
+@property(retain) MPAVItem * item;
+@property(readonly) NSString * pauseButtonImage;
+@property(readonly) NSString * playButtonImage;
+@property(readonly) NSString * playPauseButtonImage;
 @property id target;
-@property NSUInteger visibleParts;
+@property unsigned int visibleParts;
 
 + (void)_initializeSafeCategory;
-+ (NSUInteger)defaultVisibleParts;
++ (unsigned int)defaultVisibleParts;
 
 - (BOOL)_accessibilityObscuresScreen;
 - (void)_alternateTypesChangedNotification:(id)arg1;
 - (void)_applyDesiredPartsWithAnimation:(BOOL)arg1;
-- (NSUInteger)_applyPossibleVisiblePartsToParts:(NSUInteger)arg1;
+- (unsigned int)_applyPossibleVisiblePartsToParts:(unsigned int)arg1;
 - (void)_availableRoutesChangedNotification:(id)arg1;
 - (void)_destinationChangedNotification:(id)arg1;
-- (void)_handleHoldForPart:(NSUInteger)arg1;
-- (void)_handleReleaseForPart:(NSUInteger)arg1;
-- (void)_handleTapForPart:(NSUInteger)arg1;
+- (void)_handleHoldForPart:(unsigned int)arg1;
+- (void)_handleReleaseForPart:(unsigned int)arg1;
+- (void)_handleTapForPart:(unsigned int)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
 - (void)_reloadViewWithAnimation:(BOOL)arg1;
-- (id)_updateAdditions:(id)arg1 removals:(id)arg2 forPart:(NSUInteger)arg3;
+- (id)_updateAdditions:(id)arg1 removals:(id)arg2 forPart:(unsigned int)arg3;
 - (void)_updateEnabledStates:(BOOL)arg1;
 - (void)_validityChangedNotification:(id)arg1;
 - (BOOL)allowsWirelessPlayback;
 - (BOOL)allowsWirelessPlaybackForCurrentItem;
 - (BOOL)alwaysHidesSystemVolumeHUD;
 - (void)buttonDown:(id)arg1;
-- (id)buttonForPart:(NSUInteger)arg1;
+- (id)buttonForPart:(unsigned int)arg1;
 - (void)buttonHeld:(id)arg1;
 - (void)buttonHoldReleased:(id)arg1;
-- (id)buttonImageForPart:(NSUInteger)arg1;
+- (id)buttonImageForPart:(unsigned int)arg1;
 - (void)buttonUp:(id)arg1;
-- (id)createButtonForPart:(NSUInteger)arg1;
-- (id)createRouteNameLabel;
+- (id)createButtonForPart:(unsigned int)arg1;
 - (id)createVolumeSlider;
 - (void)dealloc;
-- (NSUInteger)desiredParts;
+- (unsigned int)desiredParts;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
-- (NSUInteger)disabledParts;
-- (id)highlightedButtonImageForPart:(NSUInteger)arg1;
+- (unsigned int)disabledParts;
+- (id)highlightedButtonImageForPart:(unsigned int)arg1;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)item;
@@ -83,17 +81,17 @@
 - (void)reloadForAdditions:(id)arg1 removals:(id)arg2 animate:(BOOL)arg3;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
-- (void)setDesiredParts:(NSUInteger)arg1 animated:(BOOL)arg2;
-- (void)setDesiredParts:(NSUInteger)arg1;
-- (void)setDisabledParts:(NSUInteger)arg1;
+- (void)setDesiredParts:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned int)arg1;
+- (void)setDisabledParts:(unsigned int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setTarget:(id)arg1;
-- (void)setVisibleParts:(NSUInteger)arg1 animated:(BOOL)arg2;
-- (void)setVisibleParts:(NSUInteger)arg1;
+- (void)setVisibleParts:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned int)arg1;
 - (BOOL)showsVolumeSliderWhenNoVolumeControlAvailable;
 - (id)target;
-- (NSUInteger)visibleParts;
+- (unsigned int)visibleParts;
 
 @end

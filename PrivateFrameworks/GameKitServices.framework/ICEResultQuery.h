@@ -3,71 +3,71 @@
  */
 
 @interface ICEResultQuery : NSObject {
-    struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { 
-            NSInteger iFlags; 
+    struct tagCONNRESULT { int x1; int x2; int x3; int x4; unsigned short x5; unsigned short x6; struct tagIPPORT { 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } x7; struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } x8; struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } x9; struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } x10; struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
         } x11; struct tagIPPORT { 
-            NSInteger iFlags; 
+            int iFlags; 
             BOOL szIfName[16]; 
             union { 
-                NSUInteger dwIPv4; 
+                unsigned int dwIPv4; 
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
-    NSInteger callID;
+    int callID;
     BOOL isQueryAnswered;
-        } x12; NSUInteger x13; } *result;
+        } x12; unsigned int x13; } *result;
 }
 
-@property tagCONNRESULT *result;
-@property NSInteger callID;
+@property int callID;
 @property BOOL isQueryAnswered;
+@property struct tagCONNRESULT { int x1; int x2; int x3; int x4; unsigned short x5; unsigned short x6; struct tagIPPORT { int iFlags; BOOL szIfName[16]; union { unsigned int dwIPv4; unsigned char abIPv6[16]; } IP; unsigned short wPort; } x7; struct tagIPPORT { int iFlags; BOOL szIfName[16]; union { unsigned int dwIPv4; unsigned char abIPv6[16]; } IP; unsigned short wPort; } x8; struct tagIPPORT { int iFlags; BOOL szIfName[16]; union { unsigned int dwIPv4; unsigned char abIPv6[16]; } IP; unsigned short wPort; } x9; struct tagIPPORT { int iFlags; BOOL szIfName[16]; union { unsigned int dwIPv4; unsigned char abIPv6[16]; } IP; unsigned short wPort; } x10; struct tagIPPORT { int iFlags; BOOL szIfName[16]; union { unsigned int dwIPv4; unsigned char abIPv6[16]; } IP; unsigned short wPort; } x11; struct tagIPPORT { int iFlags; BOOL szIfName[16]; union { unsigned int dwIPv4; unsigned char abIPv6[16]; } IP; unsigned short wPort; } x12; unsigned int x13; }* result;
 
-- (NSInteger)callID;
+- (int)callID;
 - (void)dealloc;
-- (id)initWithCallID:(NSInteger)arg1;
-- (id)initWithResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; }*)arg1;
+- (id)initWithCallID:(int)arg1;
+- (id)initWithResult:(struct tagCONNRESULT { int x1; int x2; int x3; int x4; unsigned short x5; unsigned short x6; struct tagIPPORT { int x_7_1_1; BOOL x_7_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { int x_8_1_1; BOOL x_8_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { int x_9_1_1; BOOL x_9_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { int x_10_1_1; BOOL x_10_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { int x_11_1_1; BOOL x_11_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { int x_12_1_1; BOOL x_12_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; unsigned int x13; }*)arg1;
 - (BOOL)isQueryAnswered;
-- (struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; }*)result;
-- (void)setCallID:(NSInteger)arg1;
+- (struct tagCONNRESULT { int x1; int x2; int x3; int x4; unsigned short x5; unsigned short x6; struct tagIPPORT { int x_7_1_1; BOOL x_7_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { int x_8_1_1; BOOL x_8_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { int x_9_1_1; BOOL x_9_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { int x_10_1_1; BOOL x_10_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { int x_11_1_1; BOOL x_11_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { int x_12_1_1; BOOL x_12_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; unsigned int x13; }*)result;
+- (void)setCallID:(int)arg1;
 - (void)setIsQueryAnswered:(BOOL)arg1;
-- (void)setResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; }*)arg1;
+- (void)setResult:(struct tagCONNRESULT { int x1; int x2; int x3; int x4; unsigned short x5; unsigned short x6; struct tagIPPORT { int x_7_1_1; BOOL x_7_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { int x_8_1_1; BOOL x_8_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { int x_9_1_1; BOOL x_9_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { int x_10_1_1; BOOL x_10_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { int x_11_1_1; BOOL x_11_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { int x_12_1_1; BOOL x_12_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; unsigned int x13; }*)arg1;
 
 @end

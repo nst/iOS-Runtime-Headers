@@ -13,14 +13,14 @@
     BOOL _precomposed;
 }
 
-@property(readonly) NSURL *URL;
-@property(readonly) NSData *iconData;
-@property(readonly) NSString *label;
+@property(readonly) NSURL * URL;
 @property(readonly) BOOL fullScreen;
+@property(readonly) NSData * iconData;
 @property(readonly) BOOL isRemovable;
+@property(readonly) NSString * label;
 @property(readonly) BOOL precomposed;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (id)URL;

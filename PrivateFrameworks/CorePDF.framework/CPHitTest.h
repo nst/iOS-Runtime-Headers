@@ -11,12 +11,12 @@
 }
 
 - (id)column:(struct CGPoint { float x1; float x2; })arg1;
-- (NSUInteger)columnsAt:(struct CGPoint { float x1; float x2; })arg1;
-- (NSInteger)compareByReadingOrder:(struct CGPoint { float x1; float x2; })arg1 to:(struct CGPoint { float x1; float x2; })arg2;
+- (unsigned int)columnsAt:(struct CGPoint { float x1; float x2; })arg1;
+- (int)compareByReadingOrder:(struct CGPoint { float x1; float x2; })arg1 to:(struct CGPoint { float x1; float x2; })arg2;
 - (void)dealloc;
 - (id)findBestMatch:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)findClickableObjects:(BOOL)arg1;
-- (id)findObjectIn:(id)arg1 at:(struct CGPoint { float x1; float x2; })arg2 count:(NSInteger*)arg3;
+- (id)findObjectIn:(id)arg1 at:(struct CGPoint { float x1; float x2; })arg2 count:(int*)arg3;
 - (BOOL)hitTestGraphicObject:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)hitTestParagraph:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2;
 - (id)initWithPage:(id)arg1;

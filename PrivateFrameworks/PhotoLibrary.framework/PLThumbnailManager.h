@@ -17,30 +17,30 @@
     PLImageTable *_wildcatStackThumbs;
 }
 
-@property PLPhotoLibrary *photoLibrary;
+@property PLPhotoLibrary * photoLibrary;
 
 + (void)removeImageTables;
 + (void)removeObsoleteMetadata;
-+ (NSInteger)thumbnailFormat;
-+ (NSInteger)thumbnailVersion;
++ (int)thumbnailFormat;
++ (int)thumbnailVersion;
 
-- (id)_bakedThumbnailForPhoto:(id)arg1 format:(NSInteger)arg2 width:(NSInteger*)arg3 height:(NSInteger*)arg4 bytesPerRow:(NSInteger*)arg5 dataWidth:(NSInteger*)arg6 dataHeight:(NSInteger*)arg7 imageDataOffset:(NSInteger*)arg8;
-- (id)_dataForPhoto:(id)arg1 format:(NSInteger)arg2 width:(NSInteger*)arg3 height:(NSInteger*)arg4 bytesPerRow:(NSInteger*)arg5 dataWidth:(NSInteger*)arg6 dataHeight:(NSInteger*)arg7 imageDataOffset:(NSInteger*)arg8 imageDataFormat:(NSInteger*)arg9 preheat:(BOOL)arg10;
+- (id)_bakedThumbnailForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
+- (id)_dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8 imageDataFormat:(int*)arg9 preheat:(BOOL)arg10;
 - (id)compactImageTables;
-- (NSInteger)count;
-- (id)createImageForPhoto:(id)arg1 withFormat:(NSInteger)arg2 outImageProperties:(const struct __CFDictionary {}**)arg3;
-- (id)dataForPhoto:(id)arg1 format:(NSInteger)arg2 width:(NSInteger*)arg3 height:(NSInteger*)arg4 bytesPerRow:(NSInteger*)arg5 dataWidth:(NSInteger*)arg6 dataHeight:(NSInteger*)arg7 imageDataOffset:(NSInteger*)arg8;
+- (int)count;
+- (id)dataForPhoto:(id)arg1 format:(int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (void)dealloc;
-- (void)deleteThumbnailsAtIndex:(NSInteger)arg1;
+- (void)deleteThumbnailsAtIndex:(int)arg1;
 - (void)deleteThumbnailsForPhoto:(id)arg1;
-- (void)ensureIndexExists:(NSInteger)arg1;
-- (BOOL)entryAtIndexIsPlaceholder:(NSInteger)arg1;
+- (void)ensureIndexExists:(int)arg1;
+- (BOOL)entryAtIndexIsPlaceholder:(int)arg1;
 - (id)initWithWeakPhotoLibrary:(id)arg1;
+- (id)newImageForPhoto:(id)arg1 withFormat:(int)arg2 outImageProperties:(const struct __CFDictionary {}**)arg3;
 - (id)photoLibrary;
 - (id)photoUUIDToIndexMap;
 - (id)preflightImageTableCompactionForPhotos:(id)arg1;
-- (void)preheatImageDataForImages:(id)arg1 withFormat:(NSInteger)arg2;
-- (void)rotateThumbnailsForPhoto:(id)arg1 byDegrees:(NSInteger)arg2;
+- (void)preheatImageDataForImages:(id)arg1 withFormat:(int)arg2;
+- (void)rotateThumbnailsForPhoto:(id)arg1 byDegrees:(int)arg2;
 - (void)setPhotoLibrary:(id)arg1;
 - (void)thumbnailTablesChangedExternally;
 - (void)updateThumbnailsForPhoto:(id)arg1 previewImage:(id)arg2 thumbnailImage:(id)arg3;

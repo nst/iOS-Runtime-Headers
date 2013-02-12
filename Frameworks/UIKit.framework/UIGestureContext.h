@@ -14,26 +14,26 @@
     } _currentLocation;
     } _startLocation;
     float _startTimestamp;
-    NSInteger _state;
+    int _state;
     UITouch *_touch;
 }
 
-@property(retain) UITouch *touch;
-@property CGPoint currentLocation;
-@property CGPoint startLocation;
+@property struct CGPoint { float x; float y; } currentLocation;
+@property struct CGPoint { float x; float y; } startLocation;
 @property float startTimestamp;
-@property NSInteger state;
+@property int state;
+@property(retain) UITouch * touch;
 
 - (struct CGPoint { float x1; float x2; })currentLocation;
 - (id)initWithTouch:(id)arg1 inView:(id)arg2;
 - (void)setCurrentLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setStartTimestamp:(float)arg1;
-- (void)setState:(NSInteger)arg1;
+- (void)setState:(int)arg1;
 - (void)setTouch:(id)arg1;
 - (struct CGPoint { float x1; float x2; })startLocation;
 - (float)startTimestamp;
-- (NSInteger)state;
+- (int)state;
 - (id)touch;
 
 @end

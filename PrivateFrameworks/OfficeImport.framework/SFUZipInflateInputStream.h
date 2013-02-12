@@ -2,31 +2,36 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class <SFUBufferedInputStream>;
 
 @interface SFUZipInflateInputStream : NSObject <SFUInputStream> {
     struct z_stream_s { 
         char *next_in; 
-        NSUInteger avail_in; 
-        NSUInteger total_in; 
+        unsigned int avail_in; 
+        unsigned int total_in; 
         char *next_out; 
-        NSUInteger avail_out; 
-        NSUInteger total_out; 
+        unsigned int avail_out; 
+        unsigned int total_out; 
         char *msg; 
         struct internal_state {} *state; 
         int (*zalloc)(); 
         int (*zfree)(); 
         void *opaque; 
-        NSInteger data_type; 
-        NSUInteger adler; 
-        NSUInteger reserved; 
-    NSUInteger mCalculatedCrc;
-    NSUInteger mCheckCrc;
+        int data_type; 
+        unsigned int adler; 
+        unsigned int reserved; 
+    unsigned int mCalculatedCrc;
+    unsigned int mCheckCrc;
     <SFUBufferedInputStream> *mInput;
     BOOL mIsFromZip;
     long long mOffset;
     char *mOutBuffer;
-    NSUInteger mOutBufferSize;
+    unsigned int mOutBufferSize;
     BOOL mReachedEnd;
     } mStream;
 }

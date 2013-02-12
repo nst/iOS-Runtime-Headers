@@ -7,7 +7,7 @@
 @interface SFUCryptoOutputStream : NSObject <SFUOutputStream> {
     <SFUOutputStream> *mBaseStream;
     BOOL mComputeCrc32;
-    NSUInteger mCrc32;
+    unsigned int mCrc32;
     SFUCryptor *mCryptor;
     BOOL mIsClosed;
 }
@@ -18,13 +18,13 @@
 - (BOOL)canSeek;
 - (void)close;
 - (id)closeLocalStream;
-- (NSUInteger)crc32;
+- (unsigned int)crc32;
 - (void)dealloc;
 - (id)initForEncryptionWithOutputStream:(id)arg1 key:(id)arg2 computeCrc32:(BOOL)arg3;
 - (id)initForEncryptionWithOutputStream:(id)arg1 key:(id)arg2;
 - (id)inputStream;
 - (long long)offset;
-- (void)seekToOffset:(long long)arg1 whence:(NSInteger)arg2;
+- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

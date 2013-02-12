@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface ProfilerServer : NSObject {
-    NSUInteger _listenerCount;
+    unsigned int _listenerCount;
     NSString *_serverName;
 }
 

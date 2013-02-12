@@ -8,7 +8,7 @@
     UIImage *_icon;
 }
 
-@property(retain) UIImage *icon;
+@property(retain) UIImage * icon;
 
 + (id)IconEffectsImage;
 + (id)IconMaskImage;

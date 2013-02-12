@@ -10,9 +10,9 @@
     SUSectionsResponse *_sectionsResponse;
 }
 
-@property(retain) ISStoreURLOperation *baseOperation;
-@property(retain) NSString *expectedVersionString;
-@property(readonly) SUSectionsResponse *sectionsResponse;
+@property(retain) ISStoreURLOperation * baseOperation;
+@property(retain) NSString * expectedVersionString;
+@property(readonly) SUSectionsResponse * sectionsResponse;
 
 - (id)_copyLoadedItemImage:(id)arg1 returningError:(id*)arg2;
 - (id)_itemImageForSection:(id)arg1 imageKind:(id)arg2;

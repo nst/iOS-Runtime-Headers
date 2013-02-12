@@ -12,7 +12,7 @@
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
-- (void)dismissWithClickedButtonIndex:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)isAccessibilityElement;
 
 @end

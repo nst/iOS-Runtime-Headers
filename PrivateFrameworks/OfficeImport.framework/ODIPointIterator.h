@@ -5,13 +5,13 @@
 @interface ODIPointIterator : NSObject {
 }
 
-+ (BOOL)addPoint:(id)arg1 state:(struct ODIPointIteratorState { NSInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; id x5; }*)arg2;
-+ (BOOL)isDoneForState:(struct ODIPointIteratorState { NSInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; id x5; }*)arg1;
-+ (BOOL)isPoint:(id)arg1 ofType:(NSInteger)arg2;
++ (BOOL)addPoint:(id)arg1 state:(struct ODIPointIteratorState { int x1; unsigned int x2; int x3; int x4; id x5; }*)arg2;
++ (BOOL)isDoneForState:(struct ODIPointIteratorState { int x1; unsigned int x2; int x3; int x4; id x5; }*)arg1;
++ (BOOL)isPoint:(id)arg1 ofType:(int)arg2;
 + (id)pointsForSpecification:(id)arg1 startingPoint:(id)arg2 isLast:(BOOL)arg3;
 + (id)processAttributes:(id)arg1 startingPoint:(id)arg2 isLast:(BOOL)arg3;
-+ (void)processChildAxisFromPoint:(id)arg1 state:(struct ODIPointIteratorState { NSInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; id x5; }*)arg2;
-+ (void)processFollowingSiblingAxisFromPoint:(id)arg1 state:(struct ODIPointIteratorState { NSInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; id x5; }*)arg2;
-+ (void)processSelfAxisFromPoint:(id)arg1 state:(struct ODIPointIteratorState { NSInteger x1; NSUInteger x2; NSInteger x3; NSInteger x4; id x5; }*)arg2;
++ (void)processChildAxisFromPoint:(id)arg1 state:(struct ODIPointIteratorState { int x1; unsigned int x2; int x3; int x4; id x5; }*)arg2;
++ (void)processFollowingSiblingAxisFromPoint:(id)arg1 state:(struct ODIPointIteratorState { int x1; unsigned int x2; int x3; int x4; id x5; }*)arg2;
++ (void)processSelfAxisFromPoint:(id)arg1 state:(struct ODIPointIteratorState { int x1; unsigned int x2; int x3; int x4; id x5; }*)arg2;
 
 @end

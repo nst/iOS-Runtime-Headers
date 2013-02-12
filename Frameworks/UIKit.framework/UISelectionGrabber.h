@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UISelectionGrabberDot;
+@class UISelectionGrabberDot, UITextRangeView;
 
 @interface UISelectionGrabber : UIView {
     BOOL m_activeFlattened;
@@ -14,10 +14,10 @@
     BOOL m_navigationTransitionFlattened;
 }
 
-@property(readonly) UITextRangeView *hostView;
 @property BOOL activeFlattened;
 @property BOOL alertFlattened;
 @property BOOL animating;
+@property(readonly) UITextRangeView * hostView;
 @property BOOL isDotted;
 @property BOOL isStart;
 @property BOOL navigationTransitionFlattened;

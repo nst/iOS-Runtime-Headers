@@ -2,45 +2,44 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class <OCCancelDelegate>, ESDContainer, ESDObject, ESDRoot, NSMutableArray, NSMutableDictionary, OADTheme, PBOfficeArtReaderState, PBOutlineBulletDictionary, PBSlideState, PDPresentation, PDSlideBase, SFUNoCopyDictionary;
 
 @interface PBPresentationReaderState : NSObject {
-    struct PptBinaryReader { int (**x1)(); int (**x2)(); struct EshObjectFactory {} *x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; char *x5; NSUInteger x6; struct __sFILE {} *x7; struct SsrwOORootStorage { 
+    struct PptBinaryReader { int (**x1)(); int (**x2)(); struct EshObjectFactory {} *x3; boolx4; char *x5; unsigned int x6; struct __sFILE {} *x7; struct SsrwOORootStorage { 
             struct _Storage {} *m_pStorage; 
             unsigned short m_pBuffer[36]; 
             struct _RootStorage {} *m_pRootStorage; 
-        } x8; struct SsrwOOStorage {} *x9; struct SsrwOOStorage {} *x10; struct SsrwOOStream {} *x11; struct SsrwOOStream {} *x12; NSInteger x13; void*x14; struct PptEshReader {} *x15; struct PptEshReader {} *x16; struct PptParserVisitor {} *x17; struct PptPersistDir {} *x18; struct EshHeader {} *x19; struct EshObject {} *x20; NSUInteger x21; NSUInteger x22; NSUInteger x23; NSUInteger x24; NSUInteger x25; NSUInteger x26; struct ChMap<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int> > { 
+        } x8; struct SsrwOOStorage {} *x9; struct SsrwOOStorage {} *x10; struct SsrwOOStream {} *x11; struct SsrwOOStream {} *x12; int x13; boolx14; struct PptEshReader {} *x15; struct PptEshReader {} *x16; struct PptParserVisitor {} *x17; struct PptPersistDir {} *x18; struct EshHeader {} *x19; struct EshObject {} *x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; struct ChMap<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int> > { 
             struct map<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { 
                 struct _Rb_tree<long unsigned int,std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS>,std::_Select1st<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> >,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { 
                     struct _Rb_tree_impl<CsLess<long unsigned int>,false> { 
                         struct CsLess<long unsigned int> { } _M_key_compare; 
                         struct _Rb_tree_node_base { 
-                            NSInteger _M_color; 
+                            int _M_color; 
                             struct _Rb_tree_node_base {} *_M_parent; 
                             struct _Rb_tree_node_base {} *_M_left; 
                             struct _Rb_tree_node_base {} *_M_right; 
                         } _M_header; 
-                        NSUInteger _M_node_count; 
+                        unsigned int _M_node_count; 
                     } _M_impl; 
                 } _M_t; 
             } m_map; 
-        } x27; struct PptObjectFactory {} *x28; struct EshMark {} *x29; NSInteger x30; struct ChVector<ChPair<long unsigned int, EscherObjectEnums> > { 
+        } x27; struct PptObjectFactory {} *x28; struct EshMark {} *x29; int x30; struct ChVector<ChPair<long unsigned int, EscherObjectEnums> > { 
             struct ChPair<long unsigned int,EscherObjectEnums> {} *m_vector; 
             struct ChPair<long unsigned int,EscherObjectEnums> {} *m_tmpVector; 
-            NSUInteger m_count; 
-            NSUInteger m_size; 
-            NSUInteger m_blockSize; 
-     /* Encoded args for previous method: ^{PptBinaryReader=^^?^^?^{EshObjectFactory}B*I^{__sFILE}{SsrwOORootStorage=^{_Storage}[36S]^{_RootStorage}}^{SsrwOOStorage}^{SsrwOOStorage}^{SsrwOOStream}^{SsrwOOStream}iB^{PptEshReader}^{PptEshReader}^{PptParserVisitor}^{PptPersistDir}^{EshHeader}^{EshObject}IIIIII{ChMap<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int> >={map<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > >={_Rb_tree<long unsigned int,std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS>,std::_Select1st<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> >,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > >={_Rb_tree_impl<CsLess<long unsigned int>,false>={CsLess<long unsigned int>=}{_Rb_tree_node_base=i^{_Rb_tree_node_base}^{_Rb_tree_node_base}^{_Rb_tree_node_base}}I}}}}^{PptObjectFactory}^{EshMark}i{ChVector<ChPair<long unsigned int, EscherObjectEnums> >=^{ChPair<long unsigned int,EscherObjectEnums>}^{ChPair<long unsigned int,EscherObjectEnums>}III}}8@0:4 */
-     /* Encoded args for previous method: @16@0:4^{PptBinaryReader=^^?^^?^{EshObjectFactory}B*I^{__sFILE}{SsrwOORootStorage=^{_Storage}[36S]^{_RootStorage}}^{SsrwOOStorage}^{SsrwOOStorage}^{SsrwOOStream}^{SsrwOOStream}iB^{PptEshReader}^{PptEshReader}^{PptParserVisitor}^{PptPersistDir}^{EshHeader}^{EshObject}IIIIII{ChMap<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int> >={map<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > >={_Rb_tree<long unsigned int,std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS>,std::_Select1st<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> >,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > >={_Rb_tree_impl<CsLess<long unsigned int>,false>={CsLess<long unsigned int>=}{_Rb_tree_node_base=i^{_Rb_tree_node_base}^{_Rb_tree_node_base}^{_Rb_tree_node_base}}I}}}}^{PptObjectFactory}^{EshMark}i{ChVector<ChPair<long unsigned int, EscherObjectEnums> >=^{ChPair<long unsigned int,EscherObjectEnums>}^{ChPair<long unsigned int,EscherObjectEnums>}III}}8@12 */
-    NSUInteger mBulletIndex;
+            unsigned int m_count; 
+            unsigned int m_size; 
+            unsigned int m_blockSize; 
+    unsigned int mBulletIndex;
     <OCCancelDelegate> *mCancel;
     ESDObject *mCurrentBulletStyle;
     ESDObject *mCurrentMacCharStyle;
-    struct ChVector<int> { NSInteger *x1; NSInteger *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; } *mCurrentSlideTextBlockStartIndexVector;
+    struct ChVector<int> { int *x1; int *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mCurrentSlideTextBlockStartIndexVector;
     OADTheme *mDefaultTheme;
     ESDRoot *mDocumentRoot;
     NSMutableArray *mFontEntities;
@@ -54,52 +53,52 @@
     NSMutableArray *mSlideIndexes;
     SFUNoCopyDictionary *mSlideMasterToMasterStyles;
     PBSlideState *mSlideState;
-    struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; } *mSrcCurrentMasterStyleInfoVector;
-    struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; } *mSrcDocMasterStyleInfoVector;
-    NSUInteger mSrcSlideId;
+    struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mSrcCurrentMasterStyleInfoVector;
+    struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mSrcDocMasterStyleInfoVector;
+    unsigned int mSrcSlideId;
     ESDContainer *mSrcSlideListHolder;
     NSMutableDictionary *mTargetShapeToSourceTextBoxContainerHolderMap;
-    NSUInteger mTextLength;
+    unsigned int mTextLength;
     PDPresentation *mTgtPresentation;
     PDSlideBase *mTgtSlide;
 }
 
-@property(retain) <OCCancelDelegate> *cancelDelegate;
-@property ESDContainer *sourceSlideListHolder;
+@property(retain) <OCCancelDelegate> * cancelDelegate;
 @property BOOL hasSlideNumberPlaceholder;
+@property ESDContainer * sourceSlideListHolder;
 
-- (struct PptBinaryReader { int (**x1)(); int (**x2)(); struct EshObjectFactory {} *x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; char *x5; NSUInteger x6; struct __sFILE {} *x7; struct SsrwOORootStorage { struct _Storage {} *x_8_1_1; unsigned short x_8_1_2[36]; struct _RootStorage {} *x_8_1_3; } x8; struct SsrwOOStorage {} *x9; struct SsrwOOStorage {} *x10; struct SsrwOOStream {} *x11; struct SsrwOOStream {} *x12; NSInteger x13; void*x14; struct PptEshReader {} *x15; struct PptEshReader {} *x16; struct PptParserVisitor {} *x17; struct PptPersistDir {} *x18; struct EshHeader {} *x19; struct EshObject {} *x20; NSUInteger x21; NSUInteger x22; NSUInteger x23; NSUInteger x24; NSUInteger x25; NSUInteger x26; struct ChMap<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int> > { struct map<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { struct _Rb_tree<long unsigned int,std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS>,std::_Select1st<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> >,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { struct _Rb_tree_impl<CsLess<long unsigned int>,false> { struct CsLess<long unsigned int> { } x_1_4_1; struct _Rb_tree_node_base { NSInteger x_2_5_1; struct _Rb_tree_node_base {} *x_2_5_2; struct _Rb_tree_node_base {} *x_2_5_3; struct _Rb_tree_node_base {} *x_2_5_4; } x_1_4_2; NSUInteger x_1_4_3; } x_1_3_1; } x_1_2_1; } x_27_1_1; } x27; struct PptObjectFactory {} *x28; struct EshMark {} *x29; NSInteger x30; struct ChVector<ChPair<long unsigned int, EscherObjectEnums> > { struct ChPair<long unsigned int,EscherObjectEnums> {} *x_31_1_1; struct ChPair<long unsigned int,EscherObjectEnums> {} *x_31_1_2; NSUInteger x_31_1_3; NSUInteger x_31_1_4; NSUInteger x_31_1_5; } x31; }*)reader;
-- (void)addFontEntity:(id)arg1 charSet:(NSInteger)arg2 type:(NSInteger)arg3 family:(NSInteger)arg4;
-- (void)addSlideIndex:(NSInteger)arg1;
+- (struct PptBinaryReader { int (**x1)(); int (**x2)(); struct EshObjectFactory {} *x3; boolx4; char *x5; unsigned int x6; struct __sFILE {} *x7; struct SsrwOORootStorage { struct _Storage {} *x_8_1_1; unsigned short x_8_1_2[36]; struct _RootStorage {} *x_8_1_3; } x8; struct SsrwOOStorage {} *x9; struct SsrwOOStorage {} *x10; struct SsrwOOStream {} *x11; struct SsrwOOStream {} *x12; int x13; boolx14; struct PptEshReader {} *x15; struct PptEshReader {} *x16; struct PptParserVisitor {} *x17; struct PptPersistDir {} *x18; struct EshHeader {} *x19; struct EshObject {} *x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; struct ChMap<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int> > { struct map<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { struct _Rb_tree<long unsigned int,std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS>,std::_Select1st<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> >,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { struct _Rb_tree_impl<CsLess<long unsigned int>,false> { struct CsLess<long unsigned int> { } x_1_4_1; struct _Rb_tree_node_base { int x_2_5_1; struct _Rb_tree_node_base {} *x_2_5_2; struct _Rb_tree_node_base {} *x_2_5_3; struct _Rb_tree_node_base {} *x_2_5_4; } x_1_4_2; unsigned int x_1_4_3; } x_1_3_1; } x_1_2_1; } x_27_1_1; } x27; struct PptObjectFactory {} *x28; struct EshMark {} *x29; int x30; struct ChVector<ChPair<long unsigned int, EscherObjectEnums> > { struct ChPair<long unsigned int,EscherObjectEnums> {} *x_31_1_1; struct ChPair<long unsigned int,EscherObjectEnums> {} *x_31_1_2; unsigned int x_31_1_3; unsigned int x_31_1_4; unsigned int x_31_1_5; } x31; }*)reader;
+- (void)addFontEntity:(id)arg1 charSet:(int)arg2 type:(int)arg3 family:(int)arg4;
+- (void)addSlideIndex:(int)arg1;
 - (id)baseTextListStyle;
-- (NSUInteger)bulletIndex;
+- (unsigned int)bulletIndex;
 - (id)cancelDelegate;
 - (id)currentBulletStyle;
 - (id)currentMacCharStyle;
-- (struct ChVector<int> { NSInteger *x1; NSInteger *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)currentSlideTextBlockStartIndexVector;
-- (struct PBReaderMasterStyleInfo { struct PptTxMasterStyleAtom {} *x1; struct PptMasterBulletStyleAtom {} *x2; }*)currentSourceMasterStyleInfoOfType:(NSInteger)arg1;
+- (struct ChVector<int> { int *x1; int *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)currentSlideTextBlockStartIndexVector;
+- (struct PBReaderMasterStyleInfo { struct PptTxMasterStyleAtom {} *x1; struct PptMasterBulletStyleAtom {} *x2; }*)currentSourceMasterStyleInfoOfType:(int)arg1;
 - (void)dealloc;
 - (id)defaultTheme;
-- (struct PBReaderMasterStyleInfo { struct PptTxMasterStyleAtom {} *x1; struct PptMasterBulletStyleAtom {} *x2; }*)docSourceMasterStyleInfoOfType:(NSInteger)arg1;
+- (struct PBReaderMasterStyleInfo { struct PptTxMasterStyleAtom {} *x1; struct PptMasterBulletStyleAtom {} *x2; }*)docSourceMasterStyleInfoOfType:(int)arg1;
 - (id)documentRoot;
-- (id)fontEntityAtIndex:(NSUInteger)arg1;
-- (NSUInteger)fontEntityCount;
-- (NSInteger)getSlideIndexAt:(NSInteger)arg1;
+- (id)fontEntityAtIndex:(unsigned int)arg1;
+- (unsigned int)fontEntityCount;
+- (int)getSlideIndexAt:(int)arg1;
 - (BOOL)hasCharacterPropertyBulletIndex;
 - (BOOL)hasCurrentSourceMasterStyleInfoVector;
 - (BOOL)hasSlideNumberPlaceholder;
 - (id)hyperlinkInfoWithId:(unsigned long)arg1 createIfAbsent:(BOOL)arg2;
-- (id)initWithReader:(struct PptBinaryReader { int (**x1)(); int (**x2)(); struct EshObjectFactory {} *x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; char *x5; NSUInteger x6; struct __sFILE {} *x7; struct SsrwOORootStorage { struct _Storage {} *x_8_1_1; unsigned short x_8_1_2[36]; struct _RootStorage {} *x_8_1_3; } x8; struct SsrwOOStorage {} *x9; struct SsrwOOStorage {} *x10; struct SsrwOOStream {} *x11; struct SsrwOOStream {} *x12; NSInteger x13; void*x14; struct PptEshReader {} *x15; struct PptEshReader {} *x16; struct PptParserVisitor {} *x17; struct PptPersistDir {} *x18; struct EshHeader {} *x19; struct EshObject {} *x20; NSUInteger x21; NSUInteger x22; NSUInteger x23; NSUInteger x24; NSUInteger x25; NSUInteger x26; struct ChMap<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int> > { struct map<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { struct _Rb_tree<long unsigned int,std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS>,std::_Select1st<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> >,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { struct _Rb_tree_impl<CsLess<long unsigned int>,false> { struct CsLess<long unsigned int> { } x_1_4_1; struct _Rb_tree_node_base { NSInteger x_2_5_1; struct _Rb_tree_node_base {} *x_2_5_2; struct _Rb_tree_node_base {} *x_2_5_3; struct _Rb_tree_node_base {} *x_2_5_4; } x_1_4_2; NSUInteger x_1_4_3; } x_1_3_1; } x_1_2_1; } x_27_1_1; } x27; struct PptObjectFactory {} *x28; struct EshMark {} *x29; NSInteger x30; struct ChVector<ChPair<long unsigned int, EscherObjectEnums> > { struct ChPair<long unsigned int,EscherObjectEnums> {} *x_31_1_1; struct ChPair<long unsigned int,EscherObjectEnums> {} *x_31_1_2; NSUInteger x_31_1_3; NSUInteger x_31_1_4; NSUInteger x_31_1_5; } x31; }*)arg1 tgtPresentation:(id)arg2;
+- (id)initWithReader:(struct PptBinaryReader { int (**x1)(); int (**x2)(); struct EshObjectFactory {} *x3; boolx4; char *x5; unsigned int x6; struct __sFILE {} *x7; struct SsrwOORootStorage { struct _Storage {} *x_8_1_1; unsigned short x_8_1_2[36]; struct _RootStorage {} *x_8_1_3; } x8; struct SsrwOOStorage {} *x9; struct SsrwOOStorage {} *x10; struct SsrwOOStream {} *x11; struct SsrwOOStream {} *x12; int x13; boolx14; struct PptEshReader {} *x15; struct PptEshReader {} *x16; struct PptParserVisitor {} *x17; struct PptPersistDir {} *x18; struct EshHeader {} *x19; struct EshObject {} *x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; struct ChMap<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int> > { struct map<long unsigned int,PptBinaryReader::SKIP_CONDITIONS,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { struct _Rb_tree<long unsigned int,std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS>,std::_Select1st<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> >,CsLess<long unsigned int>,std::allocator<std::pair<const long unsigned int, PptBinaryReader::SKIP_CONDITIONS> > > { struct _Rb_tree_impl<CsLess<long unsigned int>,false> { struct CsLess<long unsigned int> { } x_1_4_1; struct _Rb_tree_node_base { int x_2_5_1; struct _Rb_tree_node_base {} *x_2_5_2; struct _Rb_tree_node_base {} *x_2_5_3; struct _Rb_tree_node_base {} *x_2_5_4; } x_1_4_2; unsigned int x_1_4_3; } x_1_3_1; } x_1_2_1; } x_27_1_1; } x27; struct PptObjectFactory {} *x28; struct EshMark {} *x29; int x30; struct ChVector<ChPair<long unsigned int, EscherObjectEnums> > { struct ChPair<long unsigned int,EscherObjectEnums> {} *x_31_1_1; struct ChPair<long unsigned int,EscherObjectEnums> {} *x_31_1_2; unsigned int x_31_1_3; unsigned int x_31_1_4; unsigned int x_31_1_5; } x31; }*)arg1 tgtPresentation:(id)arg2;
 - (BOOL)isCancelled;
 - (id)masterStyles:(id)arg1;
-- (NSInteger)numberOfSlideIndexes;
+- (int)numberOfSlideIndexes;
 - (id)officeArtState;
 - (void)resetSlideState;
-- (void)setBulletIndex:(NSUInteger)arg1;
+- (void)setBulletIndex:(unsigned int)arg1;
 - (void)setCancelDelegate:(id)arg1;
 - (void)setCurrentBulletStyle:(id)arg1 macCharStyle:(id)arg2;
-- (void)setCurrentSourceMasterStyleInfoVector:(struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)arg1;
-- (void)setCurrentTextType:(NSInteger)arg1 placeholderIndex:(unsigned long)arg2;
+- (void)setCurrentSourceMasterStyleInfoVector:(struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1;
+- (void)setCurrentTextType:(int)arg1 placeholderIndex:(unsigned long)arg2;
 - (void)setDefaultTheme:(id)arg1;
 - (void)setDocumentRoot:(id)arg1;
 - (void)setHasCharacterPropertyBulletIndex:(BOOL)arg1;
@@ -110,13 +109,13 @@
 - (void)setSourceSlideId:(unsigned long)arg1;
 - (void)setSourceSlideListHolder:(id)arg1;
 - (void)setSourceTextBoxContainerHolder:(id)arg1 forTargetShape:(id)arg2;
-- (void)setTextLength:(NSUInteger)arg1;
+- (void)setTextLength:(unsigned int)arg1;
 - (void)setTgtSlide:(id)arg1;
 - (id)slideIndexesRef;
 - (id)slideState;
 - (id)sourceSlideListHolder;
 - (id)sourceTextBoxContainerHolderForTargetShape:(id)arg1;
-- (NSUInteger)textLength;
+- (unsigned int)textLength;
 - (id)tgtPresentation;
 - (id)tgtSlide;
 

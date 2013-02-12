@@ -2,24 +2,58 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MediaControlClient, NSNetService, NSString;
+@class AirPlayRemoteSlideshow, MCMediaControlClientRemote, MediaControlClient, NSDictionary, NSNetService, NSString;
 
 @interface PLAirTunesService : NSObject <NSNetServiceDelegate> {
+    NSString *_deviceID;
+    struct _DNSServiceRef_t { } *_dnsService;
     NSString *_ipAddress;
     MediaControlClient *_mediaControlClient;
     NSNetService *_netService;
+    NSString *_password;
+    double _playStartTime;
+    MCMediaControlClientRemote *_remoteMediaControlClient;
+    AirPlayRemoteSlideshow *_remoteSlideshow;
+    NSDictionary *_remoteSlideshowAvailableFeatures;
+    BOOL _requiresPassword;
+    BOOL _sentPhoto;
+    BOOL _streamingPhotos;
+    BOOL _streamingSlideshow;
+    BOOL _streamingVideo;
+    BOOL _validPassword;
 }
 
-@property(readonly) NSNetService *netService;
+@property(readonly) NSString * deviceID;
+@property(retain) NSString * ipAddress;
+@property(readonly) NSNetService * netService;
+@property(retain) NSString * password;
+@property(retain) AirPlayRemoteSlideshow * remoteSlideshow;
+@property(retain) NSDictionary * remoteSlideshowAvailableFeatures;
+@property BOOL requiresPassword;
+@property BOOL validPassword;
 
++ (void)_beginNetworkAssertion;
++ (void)_endNetworkAssertion;
 + (BOOL)canDisplayMedia:(id)arg1;
 
 - (void)_backgroundGetScaledImageDataForPhotoStreamJob:(id)arg1;
+- (void)_cancelResolve;
+- (id)_fixLegacyEvent:(id)arg1;
 - (void)_generatingImageDataDone:(id)arg1;
+- (void)_invalidatePassword;
 - (void)_reallySendPhotoData:(id)arg1 withTransition:(id)arg2;
+- (void)_resolveWithTimeout:(double)arg1;
+- (void)_setDeviceID:(id)arg1;
+- (BOOL)_streaming;
+- (void)_validateWithCompletionBlock:(id)arg1;
 - (void)dealloc;
-- (NSUInteger)hash;
+- (id)description;
+- (id)deviceID;
+- (void)getRemoteFeatures;
+- (void)getVideoPosition:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithNSNetService:(id)arg1;
+- (void)invalidateStreaming;
 - (id)ipAddress;
 - (BOOL)isAvailable;
 - (BOOL)isEqual:(id)arg1;
@@ -27,7 +61,28 @@
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (id)netService;
 - (void)netServiceDidResolveAddress:(id)arg1;
+- (id)password;
+- (void)playVideo:(id)arg1 startTime:(double)arg2 stateChangedBlock:(id)arg3;
+- (id)remoteLocalizationForSlideshowThemeKey:(id)arg1;
+- (id)remoteSlideshow;
+- (id)remoteSlideshowAvailableFeatures;
+- (BOOL)requiresPassword;
+- (void)setIpAddress:(id)arg1;
+- (void)setPassword:(id)arg1;
+- (void)setRate:(float)arg1;
+- (void)setRemoteSlideshow:(id)arg1;
+- (void)setRemoteSlideshowAvailableFeatures:(id)arg1;
+- (void)setRequiresPassword:(BOOL)arg1;
+- (void)setValidPassword:(BOOL)arg1;
+- (void)setVideoPosition:(double)arg1;
+- (void)startRemoteSlideshowWithTheme:(id)arg1 remoteSlideshowDelegate:(id)arg2;
+- (void)stopRemoteSlideshow;
 - (void)stopStreaming;
+- (void)stopStreamingWithCompletionBlock:(id)arg1;
 - (void)streamPhoto:(id)arg1 withTransition:(id)arg2;
+- (id)supportedRemoteSlideshowThemes;
+- (BOOL)supportsRemoteSlideshow;
+- (BOOL)validPassword;
+- (void)validate;
 
 @end

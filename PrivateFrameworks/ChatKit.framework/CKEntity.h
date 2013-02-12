@@ -2,42 +2,42 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKService;
+@class CKService, NSString;
 
 @interface CKEntity : NSObject {
     void *_abRecord;
-    NSInteger _addressBookUID;
+    int _addressBookUID;
     BOOL _foundABNameForSender;
-    NSInteger _identifier;
-    NSInteger _propertyType;
+    int _identifier;
+    int _propertyType;
     BOOL _senderIsVoicemail;
     CKService *_service;
 }
 
-@property(readonly) void *abRecord;
-@property(readonly) NSString *name;
-@property(readonly) NSString *rawAddress;
-@property(readonly) CKService *service;
-@property NSInteger addressBookUID;
+@property(readonly) void* abRecord;
+@property int addressBookUID;
 @property(readonly) BOOL foundABNameForSender;
-@property NSInteger identifier;
-@property NSInteger propertyType;
+@property int identifier;
+@property(readonly) NSString * name;
+@property int propertyType;
+@property(readonly) NSString * rawAddress;
 @property(readonly) BOOL senderIsVoicemail;
+@property(readonly) CKService * service;
 
 - (id)_initWithService:(id)arg1;
 - (void*)abRecord;
-- (NSInteger)addressBookUID;
+- (int)addressBookUID;
 - (void)dealloc;
 - (BOOL)foundABNameForSender;
-- (NSInteger)identifier;
+- (int)identifier;
 - (id)name;
-- (NSInteger)propertyType;
+- (int)propertyType;
 - (id)rawAddress;
 - (void)resetCaches;
 - (BOOL)senderIsVoicemail;
 - (id)service;
-- (void)setAddressBookUID:(NSInteger)arg1;
-- (void)setIdentifier:(NSInteger)arg1;
-- (void)setPropertyType:(NSInteger)arg1;
+- (void)setAddressBookUID:(int)arg1;
+- (void)setIdentifier:(int)arg1;
+- (void)setPropertyType:(int)arg1;
 
 @end

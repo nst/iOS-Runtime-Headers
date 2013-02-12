@@ -8,16 +8,16 @@
     NSString *_certUIService;
     struct __CFString { } *_connectionServiceType;
     NSString *_hostname;
-    NSUInteger _portNumber;
+    unsigned int _portNumber;
     NSString *_serviceName;
     BOOL _tryDirectSSLConnection;
     BOOL _usesSSL;
 }
 
-@property(copy) NSString *certUIService;
-@property(copy) NSString *hostname;
-@property(copy) NSString *serviceName;
-@property NSUInteger portNumber;
+@property(copy) NSString * certUIService;
+@property(copy) NSString * hostname;
+@property unsigned int portNumber;
+@property(copy) NSString * serviceName;
 @property BOOL tryDirectSSL;
 @property BOOL usesSSL;
 
@@ -27,12 +27,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)hostname;
-- (NSUInteger)portNumber;
+- (unsigned int)portNumber;
 - (id)serviceName;
 - (void)setCertUIService:(id)arg1;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setHostname:(id)arg1;
-- (void)setPortNumber:(NSUInteger)arg1;
+- (void)setPortNumber:(unsigned int)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)setTryDirectSSL:(BOOL)arg1;
 - (void)setUsesSSL:(BOOL)arg1;

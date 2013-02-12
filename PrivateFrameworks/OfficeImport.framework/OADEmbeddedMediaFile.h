@@ -9,8 +9,8 @@
     NSString *mName;
 }
 
-@property(retain) NSData *data;
-@property(retain) NSString *name;
+@property(retain) NSData * data;
+@property(retain) NSString * name;
 
 - (id)data;
 - (void)dealloc;

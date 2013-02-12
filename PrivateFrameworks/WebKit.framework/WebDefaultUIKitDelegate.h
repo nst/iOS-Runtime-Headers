@@ -21,7 +21,7 @@
 - (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didHideFullScreenForPlugInView:(id)arg2;
-- (void)webView:(id)arg1 didObserveDeferredContentChange:(NSInteger)arg2 forFrame:(id)arg3;
+- (void)webView:(id)arg1 didObserveDeferredContentChange:(int)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didReceiveDocTypeForFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)webView:(id)arg1 didReceiveViewportArguments:(id)arg2 forFrame:(id)arg3;
@@ -36,6 +36,7 @@
 - (void)webView:(id)arg1 willAddPlugInView:(id)arg2;
 - (void)webView:(id)arg1 willCloseFrame:(id)arg2;
 - (void)webView:(id)arg1 willShowFullScreenForPlugInView:(id)arg2;
+- (void)webViewDidDrawTiles:(id)arg1;
 - (void)webViewDidLayout:(id)arg1;
 - (void)webViewDidNotSimulateClick:(id)arg1;
 - (void)webViewDidPreventDefaultForEvent:(id)arg1;

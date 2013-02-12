@@ -3,12 +3,12 @@
  */
 
 @interface SUScriptWindowContext : NSObject {
-    NSInteger _tag;
+    int _tag;
 }
 
-@property(readonly) NSInteger tag;
+@property(readonly) int tag;
 
 - (id)init;
-- (NSInteger)tag;
+- (int)tag;
 
 @end

@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMStyleSheet, NSString;
+
 @interface DOMHTMLStyleElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *media;
-@property(retain,readonly) DOMStyleSheet *sheet;
-@property(copy) NSString *type;
 @property BOOL disabled;
+@property(copy) NSString * media;
+@property(retain,readonly) DOMStyleSheet * sheet;
+@property(copy) NSString * type;
 
 - (BOOL)disabled;
 - (id)media;

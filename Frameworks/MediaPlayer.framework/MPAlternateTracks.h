@@ -5,7 +5,6 @@
 @class MPAVItem, NSDictionary, NSMutableDictionary;
 
 @interface MPAlternateTracks : NSObject {
-    NSMutableDictionary *_ac3TracksByLanguage;
     NSDictionary *_alternateTracks;
     MPAVItem *_item;
     NSMutableDictionary *_trackChangeDictionary;
@@ -13,18 +12,18 @@
 
 @property(getter=isLoaded,readonly) BOOL loaded;
 
-- (id)_keyForTrackType:(NSUInteger)arg1;
+- (id)_keyForTrackType:(unsigned int)arg1;
 - (void)beginTrackChanges;
 - (void)commitTrackChanges;
-- (id)currentTrackForType:(NSUInteger)arg1;
+- (id)currentTrackForType:(unsigned int)arg1;
 - (void)dealloc;
-- (BOOL)hasTracksForTypes:(NSUInteger)arg1;
-- (NSUInteger)indexOfCurrentTrackForType:(NSUInteger)arg1;
+- (BOOL)hasTracksForTypes:(unsigned int)arg1;
+- (unsigned int)indexOfCurrentTrackForType:(unsigned int)arg1;
 - (id)initWithItem:(id)arg1;
 - (BOOL)isLoaded;
 - (void)reloadData;
-- (void)setTrack:(id)arg1 forType:(NSUInteger)arg2;
-- (NSUInteger)trackCountForTypes:(NSUInteger)arg1;
-- (id)tracksForType:(NSUInteger)arg1;
+- (void)setTrack:(id)arg1 forType:(unsigned int)arg2;
+- (unsigned int)trackCountForTypes:(unsigned int)arg1;
+- (id)tracksForType:(unsigned int)arg1;
 
 @end

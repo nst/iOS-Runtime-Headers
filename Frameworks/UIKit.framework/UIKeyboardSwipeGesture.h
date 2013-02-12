@@ -13,18 +13,18 @@
     float _maximumVerticalMovement;
     float _minimumHorizontalMovement;
     float _minimumVerticalMovement;
-    NSInteger _numberOfFingers;
+    int _numberOfFingers;
     double _startTime;
     float _verticalScale;
 }
 
 @property float minimumVerticalMovement;
-@property NSInteger numberOfFingers;
+@property int numberOfFingers;
 
 - (void)_resetGestureRecognizer;
 - (void)clearTimer;
 - (void)dealloc;
-- (NSInteger)determineStateForTouch:(id)arg1 atTimeInterval:(double)arg2;
+- (int)determineStateForTouch:(id)arg1 atTimeInterval:(double)arg2;
 - (id)infoForTouch:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (float)maximumHorizontalMovementForTimeInterval:(double)arg1;
@@ -33,11 +33,11 @@
 - (float)minimumHorizontalMovementForTimeInterval:(double)arg1;
 - (float)minimumVerticalMovement;
 - (float)minimumVerticalMovementForTimeInterval:(double)arg1;
-- (NSInteger)numberOfFingers;
-- (NSInteger)overallState;
+- (int)numberOfFingers;
+- (int)overallState;
 - (void)setMinimumVerticalMovement:(float)arg1;
-- (void)setNumberOfFingers:(NSInteger)arg1;
-- (void)setState:(NSInteger)arg1;
+- (void)setNumberOfFingers:(int)arg1;
+- (void)setState:(int)arg1;
 - (void)startTimer:(double)arg1;
 - (void)tooManyFingers;
 - (void)tooSlow:(id)arg1;

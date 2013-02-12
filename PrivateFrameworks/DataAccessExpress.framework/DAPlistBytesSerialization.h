@@ -4,12 +4,12 @@
 
 @interface DAPlistBytesSerialization : NSObject {
     char *_buffer;
-    NSUInteger _length;
+    unsigned int _length;
 }
 
 - (char *)bytes;
 - (void)dealloc;
 - (id)initWithPropertyList:(id)arg1 error:(id*)arg2;
-- (NSUInteger)length;
+- (unsigned int)length;
 
 @end

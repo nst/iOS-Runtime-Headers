@@ -4,7 +4,7 @@
 
 @class ABModel, AccountsManager, NSArray, NSDictionary, NSMutableDictionary;
 
-@interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource, UITableViewDelegate> {
+@interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource> {
     NSArray *_accountDisplayNames;
     NSArray *_accountIdentifiers;
     AccountsManager *_accountsManager;
@@ -14,15 +14,15 @@
     ABModel *_model;
 }
 
-@property(retain) AccountsManager *accountsManager;
-@property(retain) ABModel *model;
+@property(retain) AccountsManager * accountsManager;
 @property BOOL hidesSearchableStores;
+@property(retain) ABModel * model;
 
-- (id)accountDisplayNameAtIndex:(NSInteger)arg1;
+- (id)accountDisplayNameAtIndex:(int)arg1;
 - (id)accountGroupWrappers;
 - (id)accountsManager;
-- (void)cacheHeaderView:(id)arg1 forSection:(NSUInteger)arg2;
-- (id)cachedHeaderViewForSection:(NSUInteger)arg1;
+- (void)cacheHeaderView:(id)arg1 forSection:(unsigned int)arg2;
+- (id)cachedHeaderViewForSection:(unsigned int)arg1;
 - (void)cancelScheduledRefresh;
 - (void)dealloc;
 - (id)defaultGroupWrapper;
@@ -33,11 +33,11 @@
 - (id)indexPathForGroupWrapper:(id)arg1;
 - (id)init;
 - (id)model;
-- (NSInteger)numberOfAccounts;
-- (NSInteger)numberOfGroupsForAccountIdentifier:(id)arg1;
-- (NSInteger)numberOfGroupsInAccountAtIndex:(NSInteger)arg1;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
-- (NSInteger)preferredTableViewStyle;
+- (int)numberOfAccounts;
+- (int)numberOfGroupsForAccountIdentifier:(id)arg1;
+- (int)numberOfGroupsInAccountAtIndex:(int)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (int)preferredTableViewStyle;
 - (void)reloadData;
 - (void)reloadDataIncludingAccountsManager:(BOOL)arg1;
 - (void)scheduleRefresh;
@@ -46,8 +46,6 @@
 - (void)setModel:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

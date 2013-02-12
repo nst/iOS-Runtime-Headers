@@ -12,8 +12,8 @@
     /* Warning: unhandled struct encoding: '{?="state"@"itemsPtr"^@"mutationsPtr"^L"extra"[5@]}' */ struct { 
         id state; 
         mutationsPtr **itemsPtr; 
-    NSUInteger _count;
-    NSUInteger _mut;
+    unsigned int _count;
+    unsigned int _mut;
     <NSFastEnumeration> *_obj;
     id _origObj;
     } _state;

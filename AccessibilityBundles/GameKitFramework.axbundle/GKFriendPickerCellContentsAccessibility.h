@@ -7,7 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
-- (NSInteger)accessibilityElementCount;
+- (int)accessibilityElementCount;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 

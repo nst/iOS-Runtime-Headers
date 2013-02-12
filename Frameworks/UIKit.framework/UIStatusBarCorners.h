@@ -3,12 +3,12 @@
  */
 
 @interface UIStatusBarCorners : UIView {
-    NSInteger _cornerStyle;
+    int _cornerStyle;
 }
 
-- (void)_addCornersForAlignment:(NSInteger)arg1 style:(NSInteger)arg2;
-- (id)_imageForCorner:(NSInteger)arg1 withStyle:(NSInteger)arg2;
-- (NSInteger)cornerStyle;
-- (id)initForOrientation:(NSInteger)arg1 alignment:(NSInteger)arg2 style:(NSInteger)arg3;
+- (void)_addCornersForAlignment:(int)arg1 style:(int)arg2;
+- (id)_imageForCorner:(int)arg1 withStyle:(int)arg2;
+- (int)cornerStyle;
+- (id)initForOrientation:(int)arg1 alignment:(int)arg2 style:(int)arg3;
 
 @end

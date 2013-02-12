@@ -10,14 +10,14 @@
     float _labelSpacing;
     UILabel *_leftLabel;
     UILabel *_rightLabel;
-    NSInteger _textAlignment;
+    int _textAlignment;
 }
 
-@property(readonly) UILabel *leftLabel;
-@property(readonly) UILabel *rightLabel;
 @property float labelSpacing;
+@property(readonly) UILabel * leftLabel;
 @property BOOL reversesLabels;
-@property NSInteger textAlignment;
+@property(readonly) UILabel * rightLabel;
+@property int textAlignment;
 
 + (void)_initializeSafeCategory;
 
@@ -36,9 +36,9 @@
 - (void)setLabelSpacing:(float)arg1;
 - (void)setNeedsDisplay;
 - (void)setReversesLabels:(BOOL)arg1;
-- (void)setTextAlignment:(NSInteger)arg1;
+- (void)setTextAlignment:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
-- (NSInteger)textAlignment;
+- (int)textAlignment;
 
 @end

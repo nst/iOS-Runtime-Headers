@@ -10,9 +10,9 @@
     NSMutableArray *_internalDevices;
 }
 
-@property(retain) NSMutableArray *internalDevices;
 @property(getter=isBrowsing) BOOL browsing;
 @property id delegate;
+@property(retain) NSMutableArray * internalDevices;
 
 - (void)dealloc;
 - (id)delegate;

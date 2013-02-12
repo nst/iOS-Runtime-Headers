@@ -8,10 +8,10 @@
     UIView<UITextSelectingContainer> *_textView;
 }
 
-@property UIView<UITextSelectingContainer> *textView;
+@property UIView<UITextSelectingContainer> * textView;
 
 - (BOOL)isCloseToSelection;
-- (void)setState:(NSInteger)arg1;
+- (void)setState:(int)arg1;
 - (void)setTextView:(id)arg1;
 - (id)textView;
 

@@ -10,9 +10,9 @@
     NSURL *_previewURLOverride;
 }
 
-@property(copy) NSString *previewItemTitle;
-@property(copy) NSURL *previewItemURL;
-@property(copy) NSURL *previewItemURLOverride;
+@property(copy) NSString * previewItemTitle;
+@property(copy) NSURL * previewItemURL;
+@property(copy) NSURL * previewItemURLOverride;
 
 - (void)dealloc;
 - (id)previewItemTitle;

@@ -6,6 +6,7 @@
 
 @interface CoreDAVCalendarServerTransportItem : CoreDAVItem {
     CoreDAVLeafItem *_apsBundleID;
+    CoreDAVLeafItem *_apsEnv;
     CoreDAVLeafItem *_courierServer;
     CoreDAVItemWithHrefChildItem *_subscriptionURL;
     CoreDAVItemWithHrefChildItem *_tokenURL;
@@ -13,20 +14,23 @@
     CoreDAVLeafItem *_xmppURI;
 }
 
-@property(retain) CoreDAVLeafItem *apsBundleID;
-@property(retain) CoreDAVLeafItem *courierServer;
-@property(retain) CoreDAVItemWithHrefChildItem *subscriptionURL;
-@property(retain) CoreDAVItemWithHrefChildItem *tokenURL;
-@property(retain) CoreDAVLeafItem *xmppServer;
-@property(retain) CoreDAVLeafItem *xmppURI;
+@property(retain) CoreDAVLeafItem * apsBundleID;
+@property(retain) CoreDAVLeafItem * apsEnv;
+@property(retain) CoreDAVLeafItem * courierServer;
+@property(retain) CoreDAVItemWithHrefChildItem * subscriptionURL;
+@property(retain) CoreDAVItemWithHrefChildItem * tokenURL;
+@property(retain) CoreDAVLeafItem * xmppServer;
+@property(retain) CoreDAVLeafItem * xmppURI;
 
 - (id)apsBundleID;
+- (id)apsEnv;
 - (id)copyParseRules;
 - (id)courierServer;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)init;
 - (void)setApsBundleID:(id)arg1;
+- (void)setApsEnv:(id)arg1;
 - (void)setCourierServer:(id)arg1;
 - (void)setSubscriptionURL:(id)arg1;
 - (void)setTokenURL:(id)arg1;

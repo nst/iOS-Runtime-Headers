@@ -5,8 +5,8 @@
 @interface WBBookmark : NSObject {
 }
 
-+ (void)readFrom:(id)arg1 index:(unsigned long)arg2 type:(NSInteger)arg3 paragraph:(id)arg4;
++ (void)readFrom:(id)arg1 index:(unsigned long)arg2 type:(int)arg3 paragraph:(id)arg4;
 
-- (NSInteger)runType;
+- (int)runType;
 
 @end

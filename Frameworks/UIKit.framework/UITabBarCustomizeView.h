@@ -12,7 +12,7 @@
     UITabBarItem *_draggingItem;
     UITabBarItemProxy *_draggingProxy;
     NSMutableArray *_fixedItems;
-    NSInteger _gridCount;
+    int _gridCount;
     float _gridOffset;
     NSMutableArray *_proxies;
     UITabBarItem *_replaceItem;

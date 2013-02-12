@@ -21,13 +21,13 @@
 - (void)dealloc;
 - (id)initWithImageCache:(id)arg1;
 - (BOOL)recreateCachedFilesIfNecessary;
-- (id)stackView:(id)arg1 dataForImageAtIndex:(NSInteger)arg2 imageData:(struct { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; NSInteger x5; NSInteger x6; BOOL x7; }*)arg3;
-- (void)stackView:(id)arg1 invalidateCachedImagesForIndex:(NSInteger)arg2;
-- (id)stackView:(id)arg1 itemViewAtIndex:(NSInteger)arg2 loadImagesSynchronously:(BOOL)arg3;
+- (id)stackView:(id)arg1 dataForImageAtIndex:(int)arg2 imageData:(struct { int x1; int x2; int x3; int x4; int x5; int x6; BOOL x7; }*)arg3;
+- (void)stackView:(id)arg1 invalidateCachedImagesForIndex:(int)arg2;
+- (id)stackView:(id)arg1 itemViewAtIndex:(int)arg2 loadImagesSynchronously:(BOOL)arg3;
 - (void)stackView:(id)arg1 saveStackedImage:(id)arg2 options:(id)arg3;
-- (id)stackView:(id)arg1 textBadgeStringForImageAtIndex:(NSInteger)arg2;
-- (NSInteger)stackViewItemCount:(id)arg1;
-- (NSInteger)stackViewPosterItemIndex:(id)arg1;
+- (id)stackView:(id)arg1 textBadgeStringForImageAtIndex:(int)arg2;
+- (int)stackViewItemCount:(id)arg1;
+- (int)stackViewPosterItemIndex:(id)arg1;
 - (id)stackedImageForStackView:(id)arg1 options:(id*)arg2;
 
 @end

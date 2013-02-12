@@ -10,7 +10,7 @@
     BOOL isTextRegion;
     id link;
     CPRegion *nextRegion;
-    NSInteger order;
+    int order;
 }
 
 - (void)accept:(id)arg1;
@@ -32,12 +32,12 @@
 - (BOOL)isZone;
 - (id)link;
 - (id)nextRegion;
-- (NSInteger)order;
+- (int)order;
 - (void)setIsCompoundShape:(BOOL)arg1;
 - (void)setIsImageRegion:(BOOL)arg1;
 - (void)setIsTextRegion:(BOOL)arg1;
 - (void)setLink:(id)arg1;
 - (void)setNextRegion:(id)arg1;
-- (void)setOrder:(NSInteger)arg1;
+- (void)setOrder:(int)arg1;
 
 @end

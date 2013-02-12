@@ -15,15 +15,15 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateMatchesInString:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3 usingBlock:(id)arg4;
+- (void)enumerateMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPattern:(id)arg1 options:(NSUInteger)arg2 error:(id*)arg3;
+- (id)initWithPattern:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)initWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (NSUInteger)numberOfCaptureGroups;
-- (NSUInteger)options;
+- (unsigned int)numberOfCaptureGroups;
+- (unsigned int)options;
 - (id)pattern;
 
 @end

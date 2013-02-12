@@ -2,29 +2,29 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKMatchDelegate>, GKConnection, GKSession, NSData, NSMutableDictionary;
+@class <GKMatchDelegate>, GKConnection, GKSession, NSArray, NSData, NSMutableDictionary;
 
 @interface GKMatch : NSObject {
     GKConnection *_connection;
     <GKMatchDelegate> *_delegate;
-    NSUInteger _expectedPlayerCount;
+    unsigned int _expectedPlayerCount;
     <GKMatchDelegate> *_inviteDelegate;
-    NSUInteger _packetSequenceNumber;
+    unsigned int _packetSequenceNumber;
     NSMutableDictionary *_playerEventQueues;
     NSData *_selfBlob;
     GKSession *_session;
     unsigned char _version;
 }
 
-@property(retain) GKConnection *connection;
-@property <GKMatchDelegate> *delegate;
-@property <GKMatchDelegate> *inviteDelegate;
-@property(retain) NSMutableDictionary *playerEventQueues;
-@property(readonly) NSArray *playerIDs;
-@property(retain) NSData *selfBlob;
-@property(retain) GKSession *session;
-@property(readonly) NSUInteger expectedPlayerCount;
-@property NSUInteger packetSequenceNumber;
+@property(retain) GKConnection * connection;
+@property <GKMatchDelegate> * delegate;
+@property(readonly) unsigned int expectedPlayerCount;
+@property <GKMatchDelegate> * inviteDelegate;
+@property unsigned int packetSequenceNumber;
+@property(retain) NSMutableDictionary * playerEventQueues;
+@property(readonly) NSArray * playerIDs;
+@property(retain) NSData * selfBlob;
+@property(retain) GKSession * session;
 @property unsigned char version;
 
 - (void)acceptRelayResponse:(id)arg1 playerID:(id)arg2;
@@ -33,10 +33,10 @@
 - (id)connection;
 - (id)dataFromBase64String:(id)arg1;
 - (void)dealloc;
-- (void)deferStateCallbackForPlayer:(id)arg1 state:(NSInteger)arg2;
+- (void)deferStateCallbackForPlayer:(id)arg1 state:(int)arg2;
 - (id)delegate;
 - (void)disconnect;
-- (NSUInteger)expectedPlayerCount;
+- (unsigned int)expectedPlayerCount;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
 - (id)init;
 - (void)initRelayConnectionForPlayer:(id)arg1;
@@ -45,9 +45,9 @@
 - (void)initRelayInfoFromServerResponse:(id)arg1 forPlayer:(id)arg2;
 - (void)initRelayResponse:(id)arg1 playerID:(id)arg2;
 - (id)inviteDelegate;
-- (void)inviteeComboMatched:(NSInteger)arg1;
+- (void)inviteeComboMatched:(int)arg1;
 - (id)packet:(unsigned char)arg1 data:(id)arg2;
-- (NSUInteger)packetSequenceNumber;
+- (unsigned int)packetSequenceNumber;
 - (id)peerFromPlayer:(id)arg1;
 - (id)playerEventQueues;
 - (id)playerFromPeer:(id)arg1;
@@ -62,23 +62,23 @@
 - (void)requestRelayUpdateForPlayer:(id)arg1;
 - (id)selfBlob;
 - (void)sendData:(id)arg1 fromPlayer:(id)arg2;
-- (BOOL)sendData:(id)arg1 toPlayers:(id)arg2 withDataMode:(NSInteger)arg3 error:(id*)arg4;
-- (BOOL)sendDataToAllPlayers:(id)arg1 withDataMode:(NSInteger)arg2 error:(id*)arg3;
+- (BOOL)sendData:(id)arg1 toPlayers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
+- (BOOL)sendDataToAllPlayers:(id)arg1 withDataMode:(int)arg2 error:(id*)arg3;
 - (BOOL)sendInviteData:(id)arg1 error:(id*)arg2;
 - (void)sendQueuedPacketsForPlayer:(id)arg1;
-- (void)sendStateCallbackForPlayer:(id)arg1 state:(NSInteger)arg2;
+- (void)sendStateCallbackForPlayer:(id)arg1 state:(int)arg2;
 - (void)sendVersionData:(unsigned char)arg1 toPeer:(id)arg2;
 - (void)sendVersionData:(unsigned char)arg1;
 - (void)session:(id)arg1 connectionWithPeerFailed:(id)arg2 withError:(id)arg3;
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
 - (void)session:(id)arg1 initiateRelay:(id)arg2 forPeer:(id)arg3;
-- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(NSInteger)arg3;
+- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 - (void)session:(id)arg1 updateRelay:(id)arg2 forPeer:(id)arg3;
 - (id)session;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInviteDelegate:(id)arg1;
-- (void)setPacketSequenceNumber:(NSUInteger)arg1;
+- (void)setPacketSequenceNumber:(unsigned int)arg1;
 - (void)setPlayerEventQueues:(id)arg1;
 - (void)setSelfBlob:(id)arg1;
 - (void)setSession:(id)arg1;
@@ -87,7 +87,7 @@
 - (void)updateRelayConnectionForPlayer:(id)arg1;
 - (void)updateRelayInfo:(id)arg1 forPlayer:(id)arg2;
 - (void)updateRelayInfoFromCallback:(id)arg1 forPlayer:(id)arg2;
-- (void)updateStateForPlayer:(id)arg1 state:(NSInteger)arg2;
+- (void)updateStateForPlayer:(id)arg1 state:(int)arg2;
 - (unsigned char)version;
 - (id)voiceChatWithName:(id)arg1;
 

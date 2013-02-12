@@ -10,7 +10,7 @@
     BOOL _hasHadLocation;
 }
 
-@property(retain) GMMAdEventReportRequest *adRequest;
+@property(retain) GMMAdEventReportRequest * adRequest;
 @property BOOL hadLocation;
 @property(readonly) BOOL hasAdRequest;
 @property(readonly) BOOL hasHadLocation;

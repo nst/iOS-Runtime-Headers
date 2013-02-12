@@ -29,8 +29,8 @@
     } _valueViewRect;
 }
 
-@property(readonly) UILabel *label;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property(readonly) UILabel * label;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 + (void)_initializeSafeCategory;
 + (void)computeLabelViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 valueViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forSize:(struct CGSize { float x1; float x2; })arg3 styleProvider:(id)arg4;

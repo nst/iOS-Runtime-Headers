@@ -12,10 +12,10 @@
     unsigned int _reserved : 28;
     NSTimer *_autoscrollTimer;
     UIShadowView *_bottomShadowView;
-    NSUInteger _emptySpaceRow;
-    NSUInteger _lastVisibleRowLocation;
+    unsigned int _emptySpaceRow;
+    unsigned int _lastVisibleRowLocation;
     NSArray *_reorderedCells;
-    NSUInteger _reorderedRow;
+    unsigned int _reorderedRow;
     UIShadowView *_topShadowView;
 }
 

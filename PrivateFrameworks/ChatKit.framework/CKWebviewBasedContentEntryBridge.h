@@ -5,7 +5,7 @@
 @class NSMutableArray, NSMutableSet;
 
 @interface CKWebviewBasedContentEntryBridge : CKContentEntryBridge {
-    NSInteger _composeResourcePoolID;
+    int _composeResourcePoolID;
     NSMutableSet *_imageDeletionSet;
     NSMutableArray *_resources;
 }
@@ -17,7 +17,7 @@
 - (id)_textView;
 - (id)attachments;
 - (void)dealloc;
-- (id)documentFragmentForPasteboardItemAtIndex:(NSInteger)arg1 inTextContentView:(id)arg2;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
 - (BOOL)hasContent;
 - (id)init;
 - (void)insertMessagePart:(id)arg1;

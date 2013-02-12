@@ -9,29 +9,29 @@
     NSDate *_date;
     GKGame *_game;
     BOOL _isHidden;
-    NSInteger _percentComplete;
+    int _percentComplete;
 }
 
-@property(retain) NSString *achievementID;
-@property(retain) NSDate *date;
-@property(retain) GKGame *game;
+@property(retain) NSString * achievementID;
+@property(retain) NSDate * date;
+@property(retain) GKGame * game;
 @property BOOL isHidden;
-@property NSInteger percentComplete;
+@property int percentComplete;
 
 - (id)achievementID;
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (id)date;
 - (void)dealloc;
 - (id)game;
 - (id)invalidateCacheKeys;
 - (BOOL)isHidden;
 - (id)key;
-- (NSInteger)percentComplete;
+- (int)percentComplete;
 - (id)request;
 - (void)setAchievementID:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)setIsHidden:(BOOL)arg1;
-- (void)setPercentComplete:(NSInteger)arg1;
+- (void)setPercentComplete:(int)arg1;
 
 @end

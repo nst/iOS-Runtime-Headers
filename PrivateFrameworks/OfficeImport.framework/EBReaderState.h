@@ -2,270 +2,271 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class ECColumnWidthConvertor, OABReaderState;
 
 @interface EBReaderState : EBState {
-    struct XlBinaryReader { int (**x1)(); int (**x2)(); int (**x3)(); struct EshObjectFactory {} *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; struct SsrwOORootStorage {} *x6; struct SsrwOOStorage {} *x7; struct XlEshBinaryReader { 
+    struct XlBinaryReader { int (**x1)(); int (**x2)(); int (**x3)(); struct EshObjectFactory {} *x4; boolx5; struct SsrwOORootStorage {} *x6; struct SsrwOOStorage {} *x7; struct XlEshBinaryReader { 
             int (**_vptr$EshBinaryReader)(); 
             struct SsrwOOStream {} *m_pStream; 
             struct EshParserVisitor {} *m_pParserVisitor; 
             struct EshObjectFactory {} *m_pObjectFactory; 
-            NSUInteger m_ulStartPos; 
-            NSUInteger m_ulEndPos; 
+            unsigned int m_ulStartPos; 
+            unsigned int m_ulEndPos; 
             struct ChStack<EshHeader> { 
                 struct EshHeader {} *m_stack; 
                 struct EshHeader {} *m_tmpStack; 
-                NSUInteger m_count; 
-                NSUInteger m_size; 
-                NSUInteger m_blockSize; 
+                unsigned int m_count; 
+                unsigned int m_size; 
+                unsigned int m_blockSize; 
             } m_containers; 
-            NSUInteger m_ulCrtPos; 
+            unsigned int m_ulCrtPos; 
             struct EshHeader { 
-                NSInteger m_lLength; 
-                NSUInteger m_ulOffset; 
+                int m_lLength; 
+                unsigned int m_ulOffset; 
                 short m_nInstance; 
                 unsigned short m_unType; 
                 unsigned char m_bVersion; 
             } m_nextHeader; 
-            void*m_isLowLevel; 
-            void*m_isPatriarchRead; 
-            NSUInteger m_ulFragmentBoundary; 
+            boolm_isLowLevel; 
+            boolm_isPatriarchRead; 
+            unsigned int m_ulFragmentBoundary; 
             struct XlReadStgStream {} *m_pBiffStream; 
-        } x8; struct XlStringExtractor {} *x9; struct XlSheetInfoTable {} *x10; NSInteger x11; NSInteger x12; NSInteger x13; NSInteger x14; NSInteger x15; NSInteger x16; NSInteger x17; NSInteger x18; NSInteger x19; NSInteger x20; NSInteger x21; NSInteger x22; NSInteger x23; NSInteger x24; NSInteger x25; NSInteger x26; NSInteger x27; NSInteger x28; NSInteger x29; NSInteger x30; NSInteger x31; NSInteger x32; NSInteger x33; NSInteger x34; NSInteger x35; NSInteger x36; NSInteger x37; NSInteger x38; NSInteger x39; NSInteger x40; void*x41; void*x42; void*x43; struct ChVector<long int> { 
+        } x8; struct XlStringExtractor {} *x9; struct XlSheetInfoTable {} *x10; int x11; int x12; int x13; int x14; int x15; int x16; int x17; int x18; int x19; int x20; int x21; int x22; int x23; int x24; int x25; int x26; int x27; int x28; int x29; int x30; int x31; int x32; int x33; int x34; int x35; int x36; int x37; int x38; int x39; int x40; boolx41; boolx42; boolx43; struct ChVector<long int> { 
             long *m_vector; 
             long *m_tmpVector; 
-            NSUInteger m_count; 
-            NSUInteger m_size; 
-            NSUInteger m_blockSize; 
+            unsigned int m_count; 
+            unsigned int m_size; 
+            unsigned int m_blockSize; 
         } x44; struct ChVector<long int> { 
             long *m_vector; 
             long *m_tmpVector; 
-            NSUInteger m_count; 
-            NSUInteger m_size; 
-            NSUInteger m_blockSize; 
+            unsigned int m_count; 
+            unsigned int m_size; 
+            unsigned int m_blockSize; 
         } x45; struct ChVector<long int> { 
             long *m_vector; 
             long *m_tmpVector; 
-            NSUInteger m_count; 
-            NSUInteger m_size; 
-            NSUInteger m_blockSize; 
-        } x46; struct XlIndex {} *x47; struct XlRow {} *x48; struct XlRecord {} *x49; NSInteger x50; NSInteger x51; short x52; NSInteger x53; NSInteger x54; struct ChVector<XlCell*> { 
+            unsigned int m_count; 
+            unsigned int m_size; 
+            unsigned int m_blockSize; 
+        } x46; struct XlIndex {} *x47; struct XlRow {} *x48; struct XlRecord {} *x49; int x50; int x51; short x52; int x53; int x54; struct ChVector<XlCell*> { 
             struct XlCell {} **m_vector; 
             struct XlCell {} **m_tmpVector; 
-            NSUInteger m_count; 
-            NSUInteger m_size; 
-            NSUInteger m_blockSize; 
-        } x55; NSInteger x56; unsigned char x57; NSInteger x58; struct XlWorksheetProperties { 
+            unsigned int m_count; 
+            unsigned int m_size; 
+            unsigned int m_blockSize; 
+        } x55; int x56; unsigned char x57; int x58; struct XlWorksheetProperties { 
             int (**_vptr$XlWorksheetProperties)(); 
             unsigned short m_unDefaultColWidth; 
-            NSInteger m_lStandardColWidth; 
+            int m_lStandardColWidth; 
             unsigned short m_unDefaultRowHeight; 
-            void*m_isGridChanged; 
+            boolm_isGridChanged; 
             unsigned short m_unRowGutter; 
             unsigned short m_unColGutter; 
             unsigned short m_unRowOutlineMax; 
             unsigned short m_unColOutlineMax; 
-            void*m_isUndefRowUnsynced; 
-            void*m_isUndefRowZero; 
-            void*m_isUndefRowExAscent; 
-            void*m_isUndefRowExDescent; 
-            void*m_isShowAutoPgBreaks; 
-            void*m_isIntlMacro; 
-            void*m_isDialog; 
-            void*m_isOutlineAutoStyle; 
-            void*m_isRowSumsBelow; 
-            void*m_isColSumsRight; 
-            void*m_isFitToPage; 
-            void*m_isDisplayGuts; 
-            void*m_isAltExprEval; 
-            void*m_isAltFmlaEntry; 
-            void*m_isPrintHeadings; 
-            void*m_isPrintGrid; 
+            boolm_isUndefRowUnsynced; 
+            boolm_isUndefRowZero; 
+            boolm_isUndefRowExAscent; 
+            boolm_isUndefRowExDescent; 
+            boolm_isShowAutoPgBreaks; 
+            boolm_isIntlMacro; 
+            boolm_isDialog; 
+            boolm_isOutlineAutoStyle; 
+            boolm_isRowSumsBelow; 
+            boolm_isColSumsRight; 
+            boolm_isFitToPage; 
+            boolm_isDisplayGuts; 
+            boolm_isAltExprEval; 
+            boolm_isAltFmlaEntry; 
+            boolm_isPrintHeadings; 
+            boolm_isPrintGrid; 
             short m_nTabColorIdx; 
             struct ChVector<XlBrk*> { 
                 struct XlBrk {} **m_vector; 
                 struct XlBrk {} **m_tmpVector; 
-                NSUInteger m_count; 
-                NSUInteger m_size; 
-                NSUInteger m_blockSize; 
+                unsigned int m_count; 
+                unsigned int m_size; 
+                unsigned int m_blockSize; 
             } m_pHorizPgBreaks; 
             struct ChVector<XlBrk*> { 
                 struct XlBrk {} **m_vector; 
                 struct XlBrk {} **m_tmpVector; 
-                NSUInteger m_count; 
-                NSUInteger m_size; 
-                NSUInteger m_blockSize; 
+                unsigned int m_count; 
+                unsigned int m_size; 
+                unsigned int m_blockSize; 
             } m_pVertPgBreaks; 
             struct OcText { 
                 int (**_vptr$OcText)(); 
-                NSInteger m_encoding; 
-                NSUInteger m_ulStartCP; 
-                NSUInteger m_ulCharacterCount; 
-                NSUInteger m_ulBufferSize; 
+                int m_encoding; 
+                unsigned int m_ulStartCP; 
+                unsigned int m_ulCharacterCount; 
+                unsigned int m_ulBufferSize; 
                 char *m_pBuffer; 
                 char *m_pTempBuffer; 
-                void*m_isMyBuffer; 
+                boolm_isMyBuffer; 
             } m_objectName; 
         } x59; struct XlWorksheetProtection { 
             int (**_vptr$XlWorksheetProtection)(); 
-            void*m_isLockContent; 
-            void*m_isLockScenario; 
-            void*m_isLockObj; 
-            void*m_isEditObjects; 
-            void*m_isEditScenarios; 
-            void*m_isChangeCellFormatting; 
-            void*m_isChangeColumnFormatting; 
-            void*m_isChangeRowFormatting; 
-            void*m_isInsertColumns; 
-            void*m_isInsertRow; 
-            void*m_isInsertHyperlinks; 
-            void*m_isDeleteColumns; 
-            void*m_isDeleteRows; 
-            void*m_isSelectLockedCells; 
-            void*m_isSortCellRange; 
-            void*m_isEditAutoFilters; 
-            void*m_isEditPivotTables; 
-            void*m_isSelectUnlockedCells; 
+            boolm_isLockContent; 
+            boolm_isLockScenario; 
+            boolm_isLockObj; 
+            boolm_isEditObjects; 
+            boolm_isEditScenarios; 
+            boolm_isChangeCellFormatting; 
+            boolm_isChangeColumnFormatting; 
+            boolm_isChangeRowFormatting; 
+            boolm_isInsertColumns; 
+            boolm_isInsertRow; 
+            boolm_isInsertHyperlinks; 
+            boolm_isDeleteColumns; 
+            boolm_isDeleteRows; 
+            boolm_isSelectLockedCells; 
+            boolm_isSortCellRange; 
+            boolm_isEditAutoFilters; 
+            boolm_isEditPivotTables; 
+            boolm_isSelectUnlockedCells; 
             short m_nPassword; 
         } x60; struct XlCalculationProperties { 
             int (**_vptr$XlCalculationProperties)(); 
             double m_dIncrementMax; 
-            NSInteger m_autoRecalcMode; 
+            int m_autoRecalcMode; 
             short m_nIterationMax; 
-            void*m_isIterationOn; 
-            NSInteger m_referenceStyle; 
-            void*m_isRecalcSave; 
+            boolm_isIterationOn; 
+            int m_referenceStyle; 
+            boolm_isRecalcSave; 
         } x61; struct XlSortInfo { 
             int (**_vptr$XlSortInfo)(); 
-            void*m_isSortLtoR; 
-            void*m_isKey1Dsc; 
-            void*m_isKey2Dsc; 
-            void*m_isKey3Dsc; 
-            void*m_isCaseSensitive; 
-            void*m_isAltMethod; 
+            boolm_isSortLtoR; 
+            boolm_isKey1Dsc; 
+            boolm_isKey2Dsc; 
+            boolm_isKey3Dsc; 
+            boolm_isCaseSensitive; 
+            boolm_isAltMethod; 
             unsigned char m_bOrderIndex; 
             struct OcText { 
                 int (**_vptr$OcText)(); 
-                NSInteger m_encoding; 
-                NSUInteger m_ulStartCP; 
-                NSUInteger m_ulCharacterCount; 
-                NSUInteger m_ulBufferSize; 
+                int m_encoding; 
+                unsigned int m_ulStartCP; 
+                unsigned int m_ulCharacterCount; 
+                unsigned int m_ulBufferSize; 
                 char *m_pBuffer; 
                 char *m_pTempBuffer; 
-                void*m_isMyBuffer; 
+                boolm_isMyBuffer; 
             } m_key1String; 
             struct OcText { 
                 int (**_vptr$OcText)(); 
-                NSInteger m_encoding; 
-                NSUInteger m_ulStartCP; 
-                NSUInteger m_ulCharacterCount; 
-                NSUInteger m_ulBufferSize; 
+                int m_encoding; 
+                unsigned int m_ulStartCP; 
+                unsigned int m_ulCharacterCount; 
+                unsigned int m_ulBufferSize; 
                 char *m_pBuffer; 
                 char *m_pTempBuffer; 
-                void*m_isMyBuffer; 
+                boolm_isMyBuffer; 
             } m_key2String; 
             struct OcText { 
                 int (**_vptr$OcText)(); 
-                NSInteger m_encoding; 
-                NSUInteger m_ulStartCP; 
-                NSUInteger m_ulCharacterCount; 
-                NSUInteger m_ulBufferSize; 
+                int m_encoding; 
+                unsigned int m_ulStartCP; 
+                unsigned int m_ulCharacterCount; 
+                unsigned int m_ulBufferSize; 
                 char *m_pBuffer; 
                 char *m_pTempBuffer; 
-                void*m_isMyBuffer; 
+                boolm_isMyBuffer; 
             } m_key3String; 
         } x62; struct XlDocumentInfo { 
             int (**_vptr$XlDocumentInfo)(); 
             unsigned short m_unBuildID; 
             unsigned short m_unBuildYear; 
-            NSInteger m_lLowestVersion; 
-            void*m_isWrittenByWin; 
-            void*m_isWrittenByRisc; 
-            void*m_isWrittenByBeta; 
-            void*m_isEditedByWin; 
-            void*m_isEditedByMac; 
-            void*m_isEditedByBeta; 
-            void*m_isEditedByRisc; 
-            void*m_is0x40; 
+            int m_lLowestVersion; 
+            boolm_isWrittenByWin; 
+            boolm_isWrittenByRisc; 
+            boolm_isWrittenByBeta; 
+            boolm_isEditedByWin; 
+            boolm_isEditedByMac; 
+            boolm_isEditedByBeta; 
+            boolm_isEditedByRisc; 
+            boolm_is0x40; 
         } x63; struct XlDocumentProtection { 
             int (**_vptr$XlDocumentProtection)(); 
-            void*m_isLockContent; 
-            void*m_isLockWindow; 
-            void*m_isLockShare; 
+            boolm_isLockContent; 
+            boolm_isLockWindow; 
+            boolm_isLockShare; 
             short m_nPassword; 
             short m_nSharePassword; 
         } x64; struct XlFileProtection { 
             int (**_vptr$XlFileProtection)(); 
-            NSInteger m_lFilePassword; 
-            void*m_isWriteProtected; 
-            void*m_isReadOnlyLoad; 
+            int m_lFilePassword; 
+            boolm_isWriteProtected; 
+            boolm_isReadOnlyLoad; 
             short m_nWritePassword; 
             struct OcText { 
                 int (**_vptr$OcText)(); 
-                NSInteger m_encoding; 
-                NSUInteger m_ulStartCP; 
-                NSUInteger m_ulCharacterCount; 
-                NSUInteger m_ulBufferSize; 
+                int m_encoding; 
+                unsigned int m_ulStartCP; 
+                unsigned int m_ulCharacterCount; 
+                unsigned int m_ulBufferSize; 
                 char *m_pBuffer; 
                 char *m_pTempBuffer; 
-                void*m_isMyBuffer; 
+                boolm_isMyBuffer; 
             } m_creatorName; 
             struct OcText { 
                 int (**_vptr$OcText)(); 
-                NSInteger m_encoding; 
-                NSUInteger m_ulStartCP; 
-                NSUInteger m_ulCharacterCount; 
-                NSUInteger m_ulBufferSize; 
+                int m_encoding; 
+                unsigned int m_ulStartCP; 
+                unsigned int m_ulCharacterCount; 
+                unsigned int m_ulBufferSize; 
                 char *m_pBuffer; 
                 char *m_pTempBuffer; 
-                void*m_isMyBuffer; 
+                boolm_isMyBuffer; 
             } m_ownerName; 
             char *m_pTempBuffer; 
-        } x65; NSInteger x66; NSInteger x67; struct XlDocumentProperties { 
+        } x65; int x66; int x67; struct XlDocumentProperties { 
             int (**_vptr$XlDocumentProperties)(); 
             unsigned short m_unDateBase; 
             short m_nCodePage; 
-            NSInteger m_nCountry; 
-            void*m_isExcel9File; 
-            void*m_isUsingElfs; 
-            void*m_isFullPrecision; 
-            void*m_isRefreshAll; 
-            void*m_isNoSaveSupp; 
-            void*m_hasMailEnvelope; 
-            void*m_isMailEnvelopeVisible; 
-            void*m_isVBProject; 
-            NSInteger m_lRecalcEngineID; 
+            int m_nCountry; 
+            boolm_isExcel9File; 
+            boolm_isUsingElfs; 
+            boolm_isFullPrecision; 
+            boolm_isRefreshAll; 
+            boolm_isNoSaveSupp; 
+            boolm_hasMailEnvelope; 
+            boolm_isMailEnvelopeVisible; 
+            boolm_isVBProject; 
+            int m_lRecalcEngineID; 
             short m_nTabCount; 
             short *m_pTabIdTable; 
             struct OcText { 
                 int (**_vptr$OcText)(); 
-                NSInteger m_encoding; 
-                NSUInteger m_ulStartCP; 
-                NSUInteger m_ulCharacterCount; 
-                NSUInteger m_ulBufferSize; 
+                int m_encoding; 
+                unsigned int m_ulStartCP; 
+                unsigned int m_ulCharacterCount; 
+                unsigned int m_ulBufferSize; 
                 char *m_pBuffer; 
                 char *m_pTempBuffer; 
-                void*m_isMyBuffer; 
+                boolm_isMyBuffer; 
             } m_workbookName; 
-            NSInteger m_objectShow; 
+            int m_objectShow; 
             struct XlRef { 
                 unsigned short m_nRowFirst; 
                 unsigned short m_nRowLast; 
                 short m_nColFirst; 
                 short m_nColLast; 
-                void*m_isCompact; 
+                boolm_isCompact; 
             } m_oleSize; 
-            void*m_isHaveOleSize; 
+            boolm_isHaveOleSize; 
         } x68; struct XlSubstreamProperties { 
             int (**_vptr$XlSubstreamProperties)(); 
             struct XlSheetInfo { 
                 int (**_vptr$XlSheetInfo)(); 
-                NSInteger m_substreamType; 
-                NSInteger m_lRowBlockCount; 
+                int m_substreamType; 
+                int m_lRowBlockCount; 
             } m_subStreamInfo; 
             struct XlPageProperties { 
                 int (**_vptr$XlPageProperties)(); 
@@ -275,21 +276,21 @@
                 double m_dRightMargin; 
                 struct OcText {} *m_pHeaderString; 
                 struct OcText {} *m_pFooterString; 
-                void*m_isHorizCentered; 
-                void*m_isVertCentered; 
+                boolm_isHorizCentered; 
+                boolm_isVertCentered; 
                 short m_nPaperSize; 
                 short m_nScaleFactor; 
                 short m_nPageStartNumber; 
                 short m_nPrintFitToWidth; 
                 short m_nPrintFitToHeight; 
-                void*m_isPrintLeftToRight; 
-                NSInteger m_printLandscape; 
-                void*m_isPrintNoPls; 
-                void*m_isPrintNoColor; 
-                void*m_isPrintDraft; 
-                void*m_isPrintNotes; 
-                void*m_isPrintNoOrient; 
-                void*m_isPrintPageNoAuto; 
+                boolm_isPrintLeftToRight; 
+                int m_printLandscape; 
+                boolm_isPrintNoPls; 
+                boolm_isPrintNoColor; 
+                boolm_isPrintDraft; 
+                boolm_isPrintNotes; 
+                boolm_isPrintNoOrient; 
+                boolm_isPrintPageNoAuto; 
                 short m_nPrintResolution; 
                 short m_nPrintVertResolution; 
                 short m_nPrintCopyCount; 
@@ -299,42 +300,40 @@
             } m_pageInfo; 
             struct XlCellTableInfo { 
                 int (**_vptr$XlCellTableInfo)(); 
-                NSInteger m_lRowMin; 
-                NSInteger m_lRowMax; 
+                int m_lRowMin; 
+                int m_lRowMax; 
                 unsigned short m_unColumnMin; 
                 unsigned short m_unColumnMax; 
             } m_cellTableInfo; 
-            NSInteger m_lGraphicsLoc; 
-            NSInteger m_lEsherLoc; 
+            int m_lGraphicsLoc; 
+            int m_lEsherLoc; 
     struct XlSheetInfoTable { int (**x1)(); struct CsSimpleHeapVector<XlRecord> { 
             struct ChVector<XlRecord*> { 
                 struct XlRecord {} **m_vector; 
                 struct XlRecord {} **m_tmpVector; 
-                NSUInteger m_count; 
-                NSUInteger m_size; 
-                NSUInteger m_blockSize; 
+                unsigned int m_count; 
+                unsigned int m_size; 
+                unsigned int m_blockSize; 
             } m_pointerVector; 
-     /* Encoded args for previous method: @20@0:4^{XlBinaryReader=^^?^^?^^?^{EshObjectFactory}B^{SsrwOORootStorage}^{SsrwOOStorage}{XlEshBinaryReader=^^?^{SsrwOOStream}^{EshParserVisitor}^{EshObjectFactory}II{ChStack<EshHeader>=^{EshHeader}^{EshHeader}III}I{EshHeader=iIsSC}BBI^{XlReadStgStream}}^{XlStringExtractor}^{XlSheetInfoTable}iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiBBB{ChVector<long int>=^l^lIII}{ChVector<long int>=^l^lIII}{ChVector<long int>=^l^lIII}^{XlIndex}^{XlRow}^{XlRecord}iisii{ChVector<XlCell*>=^^{XlCell}^^{XlCell}III}iCi{XlWorksheetProperties=^^?SiSBSSSSBBBBBBBBBBBBBBBBs{ChVector<XlBrk*>=^^{XlBrk}^^{XlBrk}III}{ChVector<XlBrk*>=^^{XlBrk}^^{XlBrk}III}{OcText=^^?iIII**B}}{XlWorksheetProtection=^^?BBBBBBBBBBBBBBBBBBs}{XlCalculationProperties=^^?disBiB}{XlSortInfo=^^?BBBBBBC{OcText=^^?iIII**B}{OcText=^^?iIII**B}{OcText=^^?iIII**B}}{XlDocumentInfo=^^?SSiBBBBBBBB}{XlDocumentProtection=^^?BBBss}{XlFileProtection=^^?iBBs{OcText=^^?iIII**B}{OcText=^^?iIII**B}*}ii{XlDocumentProperties=^^?SsiBBBBBBBBis^s{OcText=^^?iIII**B}i{XlRef=SSssB}B}{XlSubstreamProperties=^^?{XlSheetInfo=^^?ii}{XlPageProperties=^^?dddd^{OcText}^{OcText}BBsssssBiBBBBBBsssdds}{XlCellTableInfo=^^?iiSS}ii}^{XlRecord}^{SsrwOOStream}C^{XlObjectFactory}^{XlParserVisitor}B^^?^{EshObjectFactory}}8@12@16 */
-     /* Encoded args for previous method: ^{XlBinaryReader=^^?^^?^^?^{EshObjectFactory}B^{SsrwOORootStorage}^{SsrwOOStorage}{XlEshBinaryReader=^^?^{SsrwOOStream}^{EshParserVisitor}^{EshObjectFactory}II{ChStack<EshHeader>=^{EshHeader}^{EshHeader}III}I{EshHeader=iIsSC}BBI^{XlReadStgStream}}^{XlStringExtractor}^{XlSheetInfoTable}iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiBBB{ChVector<long int>=^l^lIII}{ChVector<long int>=^l^lIII}{ChVector<long int>=^l^lIII}^{XlIndex}^{XlRow}^{XlRecord}iisii{ChVector<XlCell*>=^^{XlCell}^^{XlCell}III}iCi{XlWorksheetProperties=^^?SiSBSSSSBBBBBBBBBBBBBBBBs{ChVector<XlBrk*>=^^{XlBrk}^^{XlBrk}III}{ChVector<XlBrk*>=^^{XlBrk}^^{XlBrk}III}{OcText=^^?iIII**B}}{XlWorksheetProtection=^^?BBBBBBBBBBBBBBBBBBs}{XlCalculationProperties=^^?disBiB}{XlSortInfo=^^?BBBBBBC{OcText=^^?iIII**B}{OcText=^^?iIII**B}{OcText=^^?iIII**B}}{XlDocumentInfo=^^?SSiBBBBBBBB}{XlDocumentProtection=^^?BBBss}{XlFileProtection=^^?iBBs{OcText=^^?iIII**B}{OcText=^^?iIII**B}*}ii{XlDocumentProperties=^^?SsiBBBBBBBBis^s{OcText=^^?iIII**B}i{XlRef=SSssB}B}{XlSubstreamProperties=^^?{XlSheetInfo=^^?ii}{XlPageProperties=^^?dddd^{OcText}^{OcText}BBsssssBiBBBBBBsssdds}{XlCellTableInfo=^^?iiSS}ii}^{XlRecord}^{SsrwOOStream}C^{XlObjectFactory}^{XlParserVisitor}B^^?^{EshObjectFactory}}8@0:4 */
     ECColumnWidthConvertor *mColumnWidthConvertor;
     OABReaderState *mOAState;
-    NSUInteger mTotalCellsWithContentCount;
-    struct XlEshObjectFactory { int (**x1)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; } *mXlEshObjectFactory;
-        } x69; struct XlRecord {} *x70; struct SsrwOOStream {} *x71; unsigned char x72; struct XlObjectFactory {} *x73; struct XlParserVisitor {} *x74; void*x75; int (**x76)(); struct EshObjectFactory {} *x77; } *mXlReader;
+    unsigned int mTotalCellsWithContentCount;
+    struct XlEshObjectFactory { int (**x1)(); boolx2; } *mXlEshObjectFactory;
+        } x69; struct XlRecord {} *x70; struct SsrwOOStream {} *x71; unsigned char x72; struct XlObjectFactory {} *x73; struct XlParserVisitor {} *x74; boolx75; int (**x76)(); struct EshObjectFactory {} *x77; } *mXlReader;
         } x2; char *x3; } *mXlSheetInfoTable;
 }
 
-- (struct XlBinaryReader { int (**x1)(); int (**x2)(); int (**x3)(); struct EshObjectFactory {} *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; struct SsrwOORootStorage {} *x6; struct SsrwOOStorage {} *x7; struct XlEshBinaryReader { int (**x_8_1_1)(); struct SsrwOOStream {} *x_8_1_2; struct EshParserVisitor {} *x_8_1_3; struct EshObjectFactory {} *x_8_1_4; NSUInteger x_8_1_5; NSUInteger x_8_1_6; struct ChStack<EshHeader> { struct EshHeader {} *x_7_2_1; struct EshHeader {} *x_7_2_2; NSUInteger x_7_2_3; NSUInteger x_7_2_4; NSUInteger x_7_2_5; } x_8_1_7; NSUInteger x_8_1_8; struct EshHeader { NSInteger x_9_2_1; NSUInteger x_9_2_2; short x_9_2_3; unsigned short x_9_2_4; unsigned char x_9_2_5; } x_8_1_9; void*x_8_1_10; void*x_8_1_11; NSUInteger x_8_1_12; struct XlReadStgStream {} *x_8_1_13; } x8; struct XlStringExtractor {} *x9; struct XlSheetInfoTable {} *x10; NSInteger x11; NSInteger x12; NSInteger x13; NSInteger x14; NSInteger x15; NSInteger x16; NSInteger x17; NSInteger x18; NSInteger x19; NSInteger x20; NSInteger x21; NSInteger x22; NSInteger x23; NSInteger x24; NSInteger x25; NSInteger x26; NSInteger x27; NSInteger x28; NSInteger x29; NSInteger x30; NSInteger x31; NSInteger x32; NSInteger x33; NSInteger x34; NSInteger x35; NSInteger x36; NSInteger x37; NSInteger x38; NSInteger x39; NSInteger x40; void*x41; void*x42; void*x43; struct ChVector<long int> { long *x_44_1_1; long *x_44_1_2; NSUInteger x_44_1_3; NSUInteger x_44_1_4; NSUInteger x_44_1_5; } x44; struct ChVector<long int> { long *x_45_1_1; long *x_45_1_2; NSUInteger x_45_1_3; NSUInteger x_45_1_4; NSUInteger x_45_1_5; } x45; struct ChVector<long int> { long *x_46_1_1; long *x_46_1_2; NSUInteger x_46_1_3; NSUInteger x_46_1_4; NSUInteger x_46_1_5; } x46; struct XlIndex {} *x47; struct XlRow {} *x48; struct XlRecord {} *x49; NSInteger x50; NSInteger x51; short x52; NSInteger x53; NSInteger x54; struct ChVector<XlCell*> { struct XlCell {} **x_55_1_1; struct XlCell {} **x_55_1_2; NSUInteger x_55_1_3; NSUInteger x_55_1_4; NSUInteger x_55_1_5; } x55; NSInteger x56; unsigned char x57; NSInteger x58; struct XlWorksheetProperties { int (**x_59_1_1)(); unsigned short x_59_1_2; NSInteger x_59_1_3; unsigned short x_59_1_4; void*x_59_1_5; unsigned short x_59_1_6; unsigned short x_59_1_7; unsigned short x_59_1_8; unsigned short x_59_1_9; void*x_59_1_10; void*x_59_1_11; void*x_59_1_12; void*x_59_1_13; void*x_59_1_14; void*x_59_1_15; void*x_59_1_16; void*x_59_1_17; void*x_59_1_18; void*x_59_1_19; void*x_59_1_20; void*x_59_1_21; void*x_59_1_22; void*x_59_1_23; void*x_59_1_24; void*x_59_1_25; short x_59_1_26; struct ChVector<XlBrk*> { struct XlBrk {} **x_27_2_1; struct XlBrk {} **x_27_2_2; NSUInteger x_27_2_3; NSUInteger x_27_2_4; NSUInteger x_27_2_5; } x_59_1_27; struct ChVector<XlBrk*> { struct XlBrk {} **x_28_2_1; struct XlBrk {} **x_28_2_2; NSUInteger x_28_2_3; NSUInteger x_28_2_4; NSUInteger x_28_2_5; } x_59_1_28; struct OcText { int (**x_29_2_1)(); NSInteger x_29_2_2; NSUInteger x_29_2_3; NSUInteger x_29_2_4; NSUInteger x_29_2_5; char *x_29_2_6; char *x_29_2_7; void*x_29_2_8; } x_59_1_29; } x59; struct XlWorksheetProtection { int (**x_60_1_1)(); void*x_60_1_2; void*x_60_1_3; void*x_60_1_4; void*x_60_1_5; void*x_60_1_6; void*x_60_1_7; void*x_60_1_8; void*x_60_1_9; void*x_60_1_10; void*x_60_1_11; void*x_60_1_12; void*x_60_1_13; void*x_60_1_14; void*x_60_1_15; void*x_60_1_16; void*x_60_1_17; void*x_60_1_18; void*x_60_1_19; short x_60_1_20; } x60; struct XlCalculationProperties { int (**x_61_1_1)(); double x_61_1_2; NSInteger x_61_1_3; short x_61_1_4; void*x_61_1_5; NSInteger x_61_1_6; void*x_61_1_7; } x61; struct XlSortInfo { int (**x_62_1_1)(); void*x_62_1_2; void*x_62_1_3; void*x_62_1_4; void*x_62_1_5; void*x_62_1_6; void*x_62_1_7; unsigned char x_62_1_8; struct OcText { int (**x_9_2_1)(); NSInteger x_9_2_2; NSUInteger x_9_2_3; NSUInteger x_9_2_4; NSUInteger x_9_2_5; char *x_9_2_6; char *x_9_2_7; void*x_9_2_8; } x_62_1_9; struct OcText { int (**x_10_2_1)(); NSInteger x_10_2_2; NSUInteger x_10_2_3; NSUInteger x_10_2_4; NSUInteger x_10_2_5; char *x_10_2_6; char *x_10_2_7; void*x_10_2_8; } x_62_1_10; struct OcText { int (**x_11_2_1)(); NSInteger x_11_2_2; NSUInteger x_11_2_3; NSUInteger x_11_2_4; NSUInteger x_11_2_5; char *x_11_2_6; char *x_11_2_7; void*x_11_2_8; } x_62_1_11; } x62; struct XlDocumentInfo { int (**x_63_1_1)(); unsigned short x_63_1_2; unsigned short x_63_1_3; NSInteger x_63_1_4; void*x_63_1_5; void*x_63_1_6; void*x_63_1_7; void*x_63_1_8; void*x_63_1_9; void*x_63_1_10; void*x_63_1_11; void*x_63_1_12; } x63; struct XlDocumentProtection { int (**x_64_1_1)(); void*x_64_1_2; void*x_64_1_3; void*x_64_1_4; short x_64_1_5; short x_64_1_6; } x64; struct XlFileProtection { int (**x_65_1_1)(); NSInteger x_65_1_2; void*x_65_1_3; void*x_65_1_4; short x_65_1_5; struct OcText { int (**x_6_2_1)(); NSInteger x_6_2_2; NSUInteger x_6_2_3; NSUInteger x_6_2_4; NSUInteger x_6_2_5; char *x_6_2_6; char *x_6_2_7; void*x_6_2_8; } x_65_1_6; struct OcText { int (**x_7_2_1)(); NSInteger x_7_2_2; NSUInteger x_7_2_3; NSUInteger x_7_2_4; NSUInteger x_7_2_5; char *x_7_2_6; char *x_7_2_7; void*x_7_2_8; } x_65_1_7; char *x_65_1_8; } x65; NSInteger x66; NSInteger x67; struct XlDocumentProperties { int (**x_68_1_1)(); unsigned short x_68_1_2; short x_68_1_3; NSInteger x_68_1_4; void*x_68_1_5; void*x_68_1_6; void*x_68_1_7; void*x_68_1_8; void*x_68_1_9; void*x_68_1_10; void*x_68_1_11; void*x_68_1_12; NSInteger x_68_1_13; short x_68_1_14; short *x_68_1_15; struct OcText { int (**x_16_2_1)(); NSInteger x_16_2_2; NSUInteger x_16_2_3; NSUInteger x_16_2_4; NSUInteger x_16_2_5; char *x_16_2_6; char *x_16_2_7; void*x_16_2_8; } x_68_1_16; NSInteger x_68_1_17; struct XlRef { unsigned short x_18_2_1; unsigned short x_18_2_2; short x_18_2_3; short x_18_2_4; void*x_18_2_5; } x_68_1_18; void*x_68_1_19; } x68; struct XlSubstreamProperties { int (**x_69_1_1)(); struct XlSheetInfo { int (**x_2_2_1)(); NSInteger x_2_2_2; NSInteger x_2_2_3; } x_69_1_2; struct XlPageProperties { int (**x_3_2_1)(); double x_3_2_2; double x_3_2_3; double x_3_2_4; double x_3_2_5; struct OcText {} *x_3_2_6; struct OcText {} *x_3_2_7; void*x_3_2_8; void*x_3_2_9; short x_3_2_10; short x_3_2_11; short x_3_2_12; short x_3_2_13; short x_3_2_14; void*x_3_2_15; NSInteger x_3_2_16; void*x_3_2_17; void*x_3_2_18; void*x_3_2_19; void*x_3_2_20; void*x_3_2_21; void*x_3_2_22; short x_3_2_23; short x_3_2_24; short x_3_2_25; double x_3_2_26; double x_3_2_27; short x_3_2_28; } x_69_1_3; struct XlCellTableInfo { int (**x_4_2_1)(); NSInteger x_4_2_2; NSInteger x_4_2_3; unsigned short x_4_2_4; unsigned short x_4_2_5; } x_69_1_4; NSInteger x_69_1_5; NSInteger x_69_1_6; } x69; struct XlRecord {} *x70; struct SsrwOOStream {} *x71; unsigned char x72; struct XlObjectFactory {} *x73; struct XlParserVisitor {} *x74; void*x75; int (**x76)(); struct EshObjectFactory {} *x77; }*)xlReader;
-- (struct XlSheetInfoTable { int (**x1)(); struct CsSimpleHeapVector<XlRecord> { struct ChVector<XlRecord*> { struct XlRecord {} **x_1_2_1; struct XlRecord {} **x_1_2_2; NSUInteger x_1_2_3; NSUInteger x_1_2_4; NSUInteger x_1_2_5; } x_2_1_1; } x2; char *x3; }*)xlSheetInfoTable;
-- (NSUInteger)cellsWithContentCount;
+- (struct XlBinaryReader { int (**x1)(); int (**x2)(); int (**x3)(); struct EshObjectFactory {} *x4; boolx5; struct SsrwOORootStorage {} *x6; struct SsrwOOStorage {} *x7; struct XlEshBinaryReader { int (**x_8_1_1)(); struct SsrwOOStream {} *x_8_1_2; struct EshParserVisitor {} *x_8_1_3; struct EshObjectFactory {} *x_8_1_4; unsigned int x_8_1_5; unsigned int x_8_1_6; struct ChStack<EshHeader> { struct EshHeader {} *x_7_2_1; struct EshHeader {} *x_7_2_2; unsigned int x_7_2_3; unsigned int x_7_2_4; unsigned int x_7_2_5; } x_8_1_7; unsigned int x_8_1_8; struct EshHeader { int x_9_2_1; unsigned int x_9_2_2; short x_9_2_3; unsigned short x_9_2_4; unsigned char x_9_2_5; } x_8_1_9; boolx_8_1_10; boolx_8_1_11; unsigned int x_8_1_12; struct XlReadStgStream {} *x_8_1_13; } x8; struct XlStringExtractor {} *x9; struct XlSheetInfoTable {} *x10; int x11; int x12; int x13; int x14; int x15; int x16; int x17; int x18; int x19; int x20; int x21; int x22; int x23; int x24; int x25; int x26; int x27; int x28; int x29; int x30; int x31; int x32; int x33; int x34; int x35; int x36; int x37; int x38; int x39; int x40; boolx41; boolx42; boolx43; struct ChVector<long int> { long *x_44_1_1; long *x_44_1_2; unsigned int x_44_1_3; unsigned int x_44_1_4; unsigned int x_44_1_5; } x44; struct ChVector<long int> { long *x_45_1_1; long *x_45_1_2; unsigned int x_45_1_3; unsigned int x_45_1_4; unsigned int x_45_1_5; } x45; struct ChVector<long int> { long *x_46_1_1; long *x_46_1_2; unsigned int x_46_1_3; unsigned int x_46_1_4; unsigned int x_46_1_5; } x46; struct XlIndex {} *x47; struct XlRow {} *x48; struct XlRecord {} *x49; int x50; int x51; short x52; int x53; int x54; struct ChVector<XlCell*> { struct XlCell {} **x_55_1_1; struct XlCell {} **x_55_1_2; unsigned int x_55_1_3; unsigned int x_55_1_4; unsigned int x_55_1_5; } x55; int x56; unsigned char x57; int x58; struct XlWorksheetProperties { int (**x_59_1_1)(); unsigned short x_59_1_2; int x_59_1_3; unsigned short x_59_1_4; boolx_59_1_5; unsigned short x_59_1_6; unsigned short x_59_1_7; unsigned short x_59_1_8; unsigned short x_59_1_9; boolx_59_1_10; boolx_59_1_11; boolx_59_1_12; boolx_59_1_13; boolx_59_1_14; boolx_59_1_15; boolx_59_1_16; boolx_59_1_17; boolx_59_1_18; boolx_59_1_19; boolx_59_1_20; boolx_59_1_21; boolx_59_1_22; boolx_59_1_23; boolx_59_1_24; boolx_59_1_25; short x_59_1_26; struct ChVector<XlBrk*> { struct XlBrk {} **x_27_2_1; struct XlBrk {} **x_27_2_2; unsigned int x_27_2_3; unsigned int x_27_2_4; unsigned int x_27_2_5; } x_59_1_27; struct ChVector<XlBrk*> { struct XlBrk {} **x_28_2_1; struct XlBrk {} **x_28_2_2; unsigned int x_28_2_3; unsigned int x_28_2_4; unsigned int x_28_2_5; } x_59_1_28; struct OcText { int (**x_29_2_1)(); int x_29_2_2; unsigned int x_29_2_3; unsigned int x_29_2_4; unsigned int x_29_2_5; char *x_29_2_6; char *x_29_2_7; boolx_29_2_8; } x_59_1_29; } x59; struct XlWorksheetProtection { int (**x_60_1_1)(); boolx_60_1_2; boolx_60_1_3; boolx_60_1_4; boolx_60_1_5; boolx_60_1_6; boolx_60_1_7; boolx_60_1_8; boolx_60_1_9; boolx_60_1_10; boolx_60_1_11; boolx_60_1_12; boolx_60_1_13; boolx_60_1_14; boolx_60_1_15; boolx_60_1_16; boolx_60_1_17; boolx_60_1_18; boolx_60_1_19; short x_60_1_20; } x60; struct XlCalculationProperties { int (**x_61_1_1)(); double x_61_1_2; int x_61_1_3; short x_61_1_4; boolx_61_1_5; int x_61_1_6; boolx_61_1_7; } x61; struct XlSortInfo { int (**x_62_1_1)(); boolx_62_1_2; boolx_62_1_3; boolx_62_1_4; boolx_62_1_5; boolx_62_1_6; boolx_62_1_7; unsigned char x_62_1_8; struct OcText { int (**x_9_2_1)(); int x_9_2_2; unsigned int x_9_2_3; unsigned int x_9_2_4; unsigned int x_9_2_5; char *x_9_2_6; char *x_9_2_7; boolx_9_2_8; } x_62_1_9; struct OcText { int (**x_10_2_1)(); int x_10_2_2; unsigned int x_10_2_3; unsigned int x_10_2_4; unsigned int x_10_2_5; char *x_10_2_6; char *x_10_2_7; boolx_10_2_8; } x_62_1_10; struct OcText { int (**x_11_2_1)(); int x_11_2_2; unsigned int x_11_2_3; unsigned int x_11_2_4; unsigned int x_11_2_5; char *x_11_2_6; char *x_11_2_7; boolx_11_2_8; } x_62_1_11; } x62; struct XlDocumentInfo { int (**x_63_1_1)(); unsigned short x_63_1_2; unsigned short x_63_1_3; int x_63_1_4; boolx_63_1_5; boolx_63_1_6; boolx_63_1_7; boolx_63_1_8; boolx_63_1_9; boolx_63_1_10; boolx_63_1_11; boolx_63_1_12; } x63; struct XlDocumentProtection { int (**x_64_1_1)(); boolx_64_1_2; boolx_64_1_3; boolx_64_1_4; short x_64_1_5; short x_64_1_6; } x64; struct XlFileProtection { int (**x_65_1_1)(); int x_65_1_2; boolx_65_1_3; boolx_65_1_4; short x_65_1_5; struct OcText { int (**x_6_2_1)(); int x_6_2_2; unsigned int x_6_2_3; unsigned int x_6_2_4; unsigned int x_6_2_5; char *x_6_2_6; char *x_6_2_7; boolx_6_2_8; } x_65_1_6; struct OcText { int (**x_7_2_1)(); int x_7_2_2; unsigned int x_7_2_3; unsigned int x_7_2_4; unsigned int x_7_2_5; char *x_7_2_6; char *x_7_2_7; boolx_7_2_8; } x_65_1_7; char *x_65_1_8; } x65; int x66; int x67; struct XlDocumentProperties { int (**x_68_1_1)(); unsigned short x_68_1_2; short x_68_1_3; int x_68_1_4; boolx_68_1_5; boolx_68_1_6; boolx_68_1_7; boolx_68_1_8; boolx_68_1_9; boolx_68_1_10; boolx_68_1_11; boolx_68_1_12; int x_68_1_13; short x_68_1_14; short *x_68_1_15; struct OcText { int (**x_16_2_1)(); int x_16_2_2; unsigned int x_16_2_3; unsigned int x_16_2_4; unsigned int x_16_2_5; char *x_16_2_6; char *x_16_2_7; boolx_16_2_8; } x_68_1_16; int x_68_1_17; struct XlRef { unsigned short x_18_2_1; unsigned short x_18_2_2; short x_18_2_3; short x_18_2_4; boolx_18_2_5; } x_68_1_18; boolx_68_1_19; } x68; struct XlSubstreamProperties { int (**x_69_1_1)(); struct XlSheetInfo { int (**x_2_2_1)(); int x_2_2_2; int x_2_2_3; } x_69_1_2; struct XlPageProperties { int (**x_3_2_1)(); double x_3_2_2; double x_3_2_3; double x_3_2_4; double x_3_2_5; struct OcText {} *x_3_2_6; struct OcText {} *x_3_2_7; boolx_3_2_8; boolx_3_2_9; short x_3_2_10; short x_3_2_11; short x_3_2_12; short x_3_2_13; short x_3_2_14; boolx_3_2_15; int x_3_2_16; boolx_3_2_17; boolx_3_2_18; boolx_3_2_19; boolx_3_2_20; boolx_3_2_21; boolx_3_2_22; short x_3_2_23; short x_3_2_24; short x_3_2_25; double x_3_2_26; double x_3_2_27; short x_3_2_28; } x_69_1_3; struct XlCellTableInfo { int (**x_4_2_1)(); int x_4_2_2; int x_4_2_3; unsigned short x_4_2_4; unsigned short x_4_2_5; } x_69_1_4; int x_69_1_5; int x_69_1_6; } x69; struct XlRecord {} *x70; struct SsrwOOStream {} *x71; unsigned char x72; struct XlObjectFactory {} *x73; struct XlParserVisitor {} *x74; boolx75; int (**x76)(); struct EshObjectFactory {} *x77; }*)xlReader;
+- (struct XlSheetInfoTable { int (**x1)(); struct CsSimpleHeapVector<XlRecord> { struct ChVector<XlRecord*> { struct XlRecord {} **x_1_2_1; struct XlRecord {} **x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_2_1_1; } x2; char *x3; }*)xlSheetInfoTable;
+- (unsigned int)cellsWithContentCount;
 - (id)columnWidthConvertor;
 - (void)dealloc;
 - (void)incrementCellsWithContentCount;
-- (id)initWithXlReader:(struct XlBinaryReader { int (**x1)(); int (**x2)(); int (**x3)(); struct EshObjectFactory {} *x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; struct SsrwOORootStorage {} *x6; struct SsrwOOStorage {} *x7; struct XlEshBinaryReader { int (**x_8_1_1)(); struct SsrwOOStream {} *x_8_1_2; struct EshParserVisitor {} *x_8_1_3; struct EshObjectFactory {} *x_8_1_4; NSUInteger x_8_1_5; NSUInteger x_8_1_6; struct ChStack<EshHeader> { struct EshHeader {} *x_7_2_1; struct EshHeader {} *x_7_2_2; NSUInteger x_7_2_3; NSUInteger x_7_2_4; NSUInteger x_7_2_5; } x_8_1_7; NSUInteger x_8_1_8; struct EshHeader { NSInteger x_9_2_1; NSUInteger x_9_2_2; short x_9_2_3; unsigned short x_9_2_4; unsigned char x_9_2_5; } x_8_1_9; void*x_8_1_10; void*x_8_1_11; NSUInteger x_8_1_12; struct XlReadStgStream {} *x_8_1_13; } x8; struct XlStringExtractor {} *x9; struct XlSheetInfoTable {} *x10; NSInteger x11; NSInteger x12; NSInteger x13; NSInteger x14; NSInteger x15; NSInteger x16; NSInteger x17; NSInteger x18; NSInteger x19; NSInteger x20; NSInteger x21; NSInteger x22; NSInteger x23; NSInteger x24; NSInteger x25; NSInteger x26; NSInteger x27; NSInteger x28; NSInteger x29; NSInteger x30; NSInteger x31; NSInteger x32; NSInteger x33; NSInteger x34; NSInteger x35; NSInteger x36; NSInteger x37; NSInteger x38; NSInteger x39; NSInteger x40; void*x41; void*x42; void*x43; struct ChVector<long int> { long *x_44_1_1; long *x_44_1_2; NSUInteger x_44_1_3; NSUInteger x_44_1_4; NSUInteger x_44_1_5; } x44; struct ChVector<long int> { long *x_45_1_1; long *x_45_1_2; NSUInteger x_45_1_3; NSUInteger x_45_1_4; NSUInteger x_45_1_5; } x45; struct ChVector<long int> { long *x_46_1_1; long *x_46_1_2; NSUInteger x_46_1_3; NSUInteger x_46_1_4; NSUInteger x_46_1_5; } x46; struct XlIndex {} *x47; struct XlRow {} *x48; struct XlRecord {} *x49; NSInteger x50; NSInteger x51; short x52; NSInteger x53; NSInteger x54; struct ChVector<XlCell*> { struct XlCell {} **x_55_1_1; struct XlCell {} **x_55_1_2; NSUInteger x_55_1_3; NSUInteger x_55_1_4; NSUInteger x_55_1_5; } x55; NSInteger x56; unsigned char x57; NSInteger x58; struct XlWorksheetProperties { int (**x_59_1_1)(); unsigned short x_59_1_2; NSInteger x_59_1_3; unsigned short x_59_1_4; void*x_59_1_5; unsigned short x_59_1_6; unsigned short x_59_1_7; unsigned short x_59_1_8; unsigned short x_59_1_9; void*x_59_1_10; void*x_59_1_11; void*x_59_1_12; void*x_59_1_13; void*x_59_1_14; void*x_59_1_15; void*x_59_1_16; void*x_59_1_17; void*x_59_1_18; void*x_59_1_19; void*x_59_1_20; void*x_59_1_21; void*x_59_1_22; void*x_59_1_23; void*x_59_1_24; void*x_59_1_25; short x_59_1_26; struct ChVector<XlBrk*> { struct XlBrk {} **x_27_2_1; struct XlBrk {} **x_27_2_2; NSUInteger x_27_2_3; NSUInteger x_27_2_4; NSUInteger x_27_2_5; } x_59_1_27; struct ChVector<XlBrk*> { struct XlBrk {} **x_28_2_1; struct XlBrk {} **x_28_2_2; NSUInteger x_28_2_3; NSUInteger x_28_2_4; NSUInteger x_28_2_5; } x_59_1_28; struct OcText { int (**x_29_2_1)(); NSInteger x_29_2_2; NSUInteger x_29_2_3; NSUInteger x_29_2_4; NSUInteger x_29_2_5; char *x_29_2_6; char *x_29_2_7; void*x_29_2_8; } x_59_1_29; } x59; struct XlWorksheetProtection { int (**x_60_1_1)(); void*x_60_1_2; void*x_60_1_3; void*x_60_1_4; void*x_60_1_5; void*x_60_1_6; void*x_60_1_7; void*x_60_1_8; void*x_60_1_9; void*x_60_1_10; void*x_60_1_11; void*x_60_1_12; void*x_60_1_13; void*x_60_1_14; void*x_60_1_15; void*x_60_1_16; void*x_60_1_17; void*x_60_1_18; void*x_60_1_19; short x_60_1_20; } x60; struct XlCalculationProperties { int (**x_61_1_1)(); double x_61_1_2; NSInteger x_61_1_3; short x_61_1_4; void*x_61_1_5; NSInteger x_61_1_6; void*x_61_1_7; } x61; struct XlSortInfo { int (**x_62_1_1)(); void*x_62_1_2; void*x_62_1_3; void*x_62_1_4; void*x_62_1_5; void*x_62_1_6; void*x_62_1_7; unsigned char x_62_1_8; struct OcText { int (**x_9_2_1)(); NSInteger x_9_2_2; NSUInteger x_9_2_3; NSUInteger x_9_2_4; NSUInteger x_9_2_5; char *x_9_2_6; char *x_9_2_7; void*x_9_2_8; } x_62_1_9; struct OcText { int (**x_10_2_1)(); NSInteger x_10_2_2; NSUInteger x_10_2_3; NSUInteger x_10_2_4; NSUInteger x_10_2_5; char *x_10_2_6; char *x_10_2_7; void*x_10_2_8; } x_62_1_10; struct OcText { int (**x_11_2_1)(); NSInteger x_11_2_2; NSUInteger x_11_2_3; NSUInteger x_11_2_4; NSUInteger x_11_2_5; char *x_11_2_6; char *x_11_2_7; void*x_11_2_8; } x_62_1_11; } x62; struct XlDocumentInfo { int (**x_63_1_1)(); unsigned short x_63_1_2; unsigned short x_63_1_3; NSInteger x_63_1_4; void*x_63_1_5; void*x_63_1_6; void*x_63_1_7; void*x_63_1_8; void*x_63_1_9; void*x_63_1_10; void*x_63_1_11; void*x_63_1_12; } x63; struct XlDocumentProtection { int (**x_64_1_1)(); void*x_64_1_2; void*x_64_1_3; void*x_64_1_4; short x_64_1_5; short x_64_1_6; } x64; struct XlFileProtection { int (**x_65_1_1)(); NSInteger x_65_1_2; void*x_65_1_3; void*x_65_1_4; short x_65_1_5; struct OcText { int (**x_6_2_1)(); NSInteger x_6_2_2; NSUInteger x_6_2_3; NSUInteger x_6_2_4; NSUInteger x_6_2_5; char *x_6_2_6; char *x_6_2_7; void*x_6_2_8; } x_65_1_6; struct OcText { int (**x_7_2_1)(); NSInteger x_7_2_2; NSUInteger x_7_2_3; NSUInteger x_7_2_4; NSUInteger x_7_2_5; char *x_7_2_6; char *x_7_2_7; void*x_7_2_8; } x_65_1_7; char *x_65_1_8; } x65; NSInteger x66; NSInteger x67; struct XlDocumentProperties { int (**x_68_1_1)(); unsigned short x_68_1_2; short x_68_1_3; NSInteger x_68_1_4; void*x_68_1_5; void*x_68_1_6; void*x_68_1_7; void*x_68_1_8; void*x_68_1_9; void*x_68_1_10; void*x_68_1_11; void*x_68_1_12; NSInteger x_68_1_13; short x_68_1_14; short *x_68_1_15; struct OcText { int (**x_16_2_1)(); NSInteger x_16_2_2; NSUInteger x_16_2_3; NSUInteger x_16_2_4; NSUInteger x_16_2_5; char *x_16_2_6; char *x_16_2_7; void*x_16_2_8; } x_68_1_16; NSInteger x_68_1_17; struct XlRef { unsigned short x_18_2_1; unsigned short x_18_2_2; short x_18_2_3; short x_18_2_4; void*x_18_2_5; } x_68_1_18; void*x_68_1_19; } x68; struct XlSubstreamProperties { int (**x_69_1_1)(); struct XlSheetInfo { int (**x_2_2_1)(); NSInteger x_2_2_2; NSInteger x_2_2_3; } x_69_1_2; struct XlPageProperties { int (**x_3_2_1)(); double x_3_2_2; double x_3_2_3; double x_3_2_4; double x_3_2_5; struct OcText {} *x_3_2_6; struct OcText {} *x_3_2_7; void*x_3_2_8; void*x_3_2_9; short x_3_2_10; short x_3_2_11; short x_3_2_12; short x_3_2_13; short x_3_2_14; void*x_3_2_15; NSInteger x_3_2_16; void*x_3_2_17; void*x_3_2_18; void*x_3_2_19; void*x_3_2_20; void*x_3_2_21; void*x_3_2_22; short x_3_2_23; short x_3_2_24; short x_3_2_25; double x_3_2_26; double x_3_2_27; short x_3_2_28; } x_69_1_3; struct XlCellTableInfo { int (**x_4_2_1)(); NSInteger x_4_2_2; NSInteger x_4_2_3; unsigned short x_4_2_4; unsigned short x_4_2_5; } x_69_1_4; NSInteger x_69_1_5; NSInteger x_69_1_6; } x69; struct XlRecord {} *x70; struct SsrwOOStream {} *x71; unsigned char x72; struct XlObjectFactory {} *x73; struct XlParserVisitor {} *x74; void*x75; int (**x76)(); struct EshObjectFactory {} *x77; }*)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
+- (id)initWithXlReader:(struct XlBinaryReader { int (**x1)(); int (**x2)(); int (**x3)(); struct EshObjectFactory {} *x4; boolx5; struct SsrwOORootStorage {} *x6; struct SsrwOOStorage {} *x7; struct XlEshBinaryReader { int (**x_8_1_1)(); struct SsrwOOStream {} *x_8_1_2; struct EshParserVisitor {} *x_8_1_3; struct EshObjectFactory {} *x_8_1_4; unsigned int x_8_1_5; unsigned int x_8_1_6; struct ChStack<EshHeader> { struct EshHeader {} *x_7_2_1; struct EshHeader {} *x_7_2_2; unsigned int x_7_2_3; unsigned int x_7_2_4; unsigned int x_7_2_5; } x_8_1_7; unsigned int x_8_1_8; struct EshHeader { int x_9_2_1; unsigned int x_9_2_2; short x_9_2_3; unsigned short x_9_2_4; unsigned char x_9_2_5; } x_8_1_9; boolx_8_1_10; boolx_8_1_11; unsigned int x_8_1_12; struct XlReadStgStream {} *x_8_1_13; } x8; struct XlStringExtractor {} *x9; struct XlSheetInfoTable {} *x10; int x11; int x12; int x13; int x14; int x15; int x16; int x17; int x18; int x19; int x20; int x21; int x22; int x23; int x24; int x25; int x26; int x27; int x28; int x29; int x30; int x31; int x32; int x33; int x34; int x35; int x36; int x37; int x38; int x39; int x40; boolx41; boolx42; boolx43; struct ChVector<long int> { long *x_44_1_1; long *x_44_1_2; unsigned int x_44_1_3; unsigned int x_44_1_4; unsigned int x_44_1_5; } x44; struct ChVector<long int> { long *x_45_1_1; long *x_45_1_2; unsigned int x_45_1_3; unsigned int x_45_1_4; unsigned int x_45_1_5; } x45; struct ChVector<long int> { long *x_46_1_1; long *x_46_1_2; unsigned int x_46_1_3; unsigned int x_46_1_4; unsigned int x_46_1_5; } x46; struct XlIndex {} *x47; struct XlRow {} *x48; struct XlRecord {} *x49; int x50; int x51; short x52; int x53; int x54; struct ChVector<XlCell*> { struct XlCell {} **x_55_1_1; struct XlCell {} **x_55_1_2; unsigned int x_55_1_3; unsigned int x_55_1_4; unsigned int x_55_1_5; } x55; int x56; unsigned char x57; int x58; struct XlWorksheetProperties { int (**x_59_1_1)(); unsigned short x_59_1_2; int x_59_1_3; unsigned short x_59_1_4; boolx_59_1_5; unsigned short x_59_1_6; unsigned short x_59_1_7; unsigned short x_59_1_8; unsigned short x_59_1_9; boolx_59_1_10; boolx_59_1_11; boolx_59_1_12; boolx_59_1_13; boolx_59_1_14; boolx_59_1_15; boolx_59_1_16; boolx_59_1_17; boolx_59_1_18; boolx_59_1_19; boolx_59_1_20; boolx_59_1_21; boolx_59_1_22; boolx_59_1_23; boolx_59_1_24; boolx_59_1_25; short x_59_1_26; struct ChVector<XlBrk*> { struct XlBrk {} **x_27_2_1; struct XlBrk {} **x_27_2_2; unsigned int x_27_2_3; unsigned int x_27_2_4; unsigned int x_27_2_5; } x_59_1_27; struct ChVector<XlBrk*> { struct XlBrk {} **x_28_2_1; struct XlBrk {} **x_28_2_2; unsigned int x_28_2_3; unsigned int x_28_2_4; unsigned int x_28_2_5; } x_59_1_28; struct OcText { int (**x_29_2_1)(); int x_29_2_2; unsigned int x_29_2_3; unsigned int x_29_2_4; unsigned int x_29_2_5; char *x_29_2_6; char *x_29_2_7; boolx_29_2_8; } x_59_1_29; } x59; struct XlWorksheetProtection { int (**x_60_1_1)(); boolx_60_1_2; boolx_60_1_3; boolx_60_1_4; boolx_60_1_5; boolx_60_1_6; boolx_60_1_7; boolx_60_1_8; boolx_60_1_9; boolx_60_1_10; boolx_60_1_11; boolx_60_1_12; boolx_60_1_13; boolx_60_1_14; boolx_60_1_15; boolx_60_1_16; boolx_60_1_17; boolx_60_1_18; boolx_60_1_19; short x_60_1_20; } x60; struct XlCalculationProperties { int (**x_61_1_1)(); double x_61_1_2; int x_61_1_3; short x_61_1_4; boolx_61_1_5; int x_61_1_6; boolx_61_1_7; } x61; struct XlSortInfo { int (**x_62_1_1)(); boolx_62_1_2; boolx_62_1_3; boolx_62_1_4; boolx_62_1_5; boolx_62_1_6; boolx_62_1_7; unsigned char x_62_1_8; struct OcText { int (**x_9_2_1)(); int x_9_2_2; unsigned int x_9_2_3; unsigned int x_9_2_4; unsigned int x_9_2_5; char *x_9_2_6; char *x_9_2_7; boolx_9_2_8; } x_62_1_9; struct OcText { int (**x_10_2_1)(); int x_10_2_2; unsigned int x_10_2_3; unsigned int x_10_2_4; unsigned int x_10_2_5; char *x_10_2_6; char *x_10_2_7; boolx_10_2_8; } x_62_1_10; struct OcText { int (**x_11_2_1)(); int x_11_2_2; unsigned int x_11_2_3; unsigned int x_11_2_4; unsigned int x_11_2_5; char *x_11_2_6; char *x_11_2_7; boolx_11_2_8; } x_62_1_11; } x62; struct XlDocumentInfo { int (**x_63_1_1)(); unsigned short x_63_1_2; unsigned short x_63_1_3; int x_63_1_4; boolx_63_1_5; boolx_63_1_6; boolx_63_1_7; boolx_63_1_8; boolx_63_1_9; boolx_63_1_10; boolx_63_1_11; boolx_63_1_12; } x63; struct XlDocumentProtection { int (**x_64_1_1)(); boolx_64_1_2; boolx_64_1_3; boolx_64_1_4; short x_64_1_5; short x_64_1_6; } x64; struct XlFileProtection { int (**x_65_1_1)(); int x_65_1_2; boolx_65_1_3; boolx_65_1_4; short x_65_1_5; struct OcText { int (**x_6_2_1)(); int x_6_2_2; unsigned int x_6_2_3; unsigned int x_6_2_4; unsigned int x_6_2_5; char *x_6_2_6; char *x_6_2_7; boolx_6_2_8; } x_65_1_6; struct OcText { int (**x_7_2_1)(); int x_7_2_2; unsigned int x_7_2_3; unsigned int x_7_2_4; unsigned int x_7_2_5; char *x_7_2_6; char *x_7_2_7; boolx_7_2_8; } x_65_1_7; char *x_65_1_8; } x65; int x66; int x67; struct XlDocumentProperties { int (**x_68_1_1)(); unsigned short x_68_1_2; short x_68_1_3; int x_68_1_4; boolx_68_1_5; boolx_68_1_6; boolx_68_1_7; boolx_68_1_8; boolx_68_1_9; boolx_68_1_10; boolx_68_1_11; boolx_68_1_12; int x_68_1_13; short x_68_1_14; short *x_68_1_15; struct OcText { int (**x_16_2_1)(); int x_16_2_2; unsigned int x_16_2_3; unsigned int x_16_2_4; unsigned int x_16_2_5; char *x_16_2_6; char *x_16_2_7; boolx_16_2_8; } x_68_1_16; int x_68_1_17; struct XlRef { unsigned short x_18_2_1; unsigned short x_18_2_2; short x_18_2_3; short x_18_2_4; boolx_18_2_5; } x_68_1_18; boolx_68_1_19; } x68; struct XlSubstreamProperties { int (**x_69_1_1)(); struct XlSheetInfo { int (**x_2_2_1)(); int x_2_2_2; int x_2_2_3; } x_69_1_2; struct XlPageProperties { int (**x_3_2_1)(); double x_3_2_2; double x_3_2_3; double x_3_2_4; double x_3_2_5; struct OcText {} *x_3_2_6; struct OcText {} *x_3_2_7; boolx_3_2_8; boolx_3_2_9; short x_3_2_10; short x_3_2_11; short x_3_2_12; short x_3_2_13; short x_3_2_14; boolx_3_2_15; int x_3_2_16; boolx_3_2_17; boolx_3_2_18; boolx_3_2_19; boolx_3_2_20; boolx_3_2_21; boolx_3_2_22; short x_3_2_23; short x_3_2_24; short x_3_2_25; double x_3_2_26; double x_3_2_27; short x_3_2_28; } x_69_1_3; struct XlCellTableInfo { int (**x_4_2_1)(); int x_4_2_2; int x_4_2_3; unsigned short x_4_2_4; unsigned short x_4_2_5; } x_69_1_4; int x_69_1_5; int x_69_1_6; } x69; struct XlRecord {} *x70; struct SsrwOOStream {} *x71; unsigned char x72; struct XlObjectFactory {} *x73; struct XlParserVisitor {} *x74; boolx75; int (**x76)(); struct EshObjectFactory {} *x77; }*)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
 - (id)oaState;
 - (void)pauseReading;
 - (void)readGlobalXlObjects;
-- (void)reportWarning:(struct CPTaggedMessageStructure { NSInteger x1; id x2; }*)arg1;
+- (void)reportWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (void)resumeReading;
 
 @end

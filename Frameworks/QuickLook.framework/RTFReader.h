@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSData, NSMapTable, NSMutableDictionary, NSMutableString, NSURL, RTFCPZArchive, RTFHTMLWriter, RTFNSColor, RTFReaderState, RTF_CMArchiveManager;
 
 @interface RTFReader : NSObject {
@@ -11,17 +16,17 @@
     struct _NSRTFPriv { 
         void *reader; 
         char *rtfInput; 
-        NSUInteger rtfInputLength; 
-        NSUInteger rtfInputLocation; 
-        NSUInteger rtfHeaderEndLocation; 
-        NSInteger pushedChar; 
-        NSInteger pushedClass; 
-        NSInteger pushedMajor; 
-        NSInteger pushedMinor; 
-        NSInteger pushedParam; 
+        unsigned int rtfInputLength; 
+        unsigned int rtfInputLocation; 
+        unsigned int rtfHeaderEndLocation; 
+        int pushedChar; 
+        int pushedClass; 
+        int pushedMajor; 
+        int pushedMinor; 
+        int pushedParam; 
         BOOL pushedTextBuf[1024]; 
-        NSInteger prevChar; 
-        NSInteger bumpLine; 
+        int prevChar; 
+        int bumpLine; 
         struct RTFFont {} *fontList; 
         struct RTFColor {} *colorList; 
         struct RTFStyle {} *styleList; 
@@ -32,18 +37,18 @@
         int (*msgProc)(); 
         int (*panicProc)(); 
         BOOL textBuf[1024]; 
-        NSInteger textLen; 
-        NSInteger tokenClass; 
-        NSInteger major; 
-        NSInteger minor; 
-        NSInteger param; 
-        NSInteger lineNum; 
-        NSInteger linePos; 
-        NSInteger groupState; 
+        int textLen; 
+        int tokenClass; 
+        int major; 
+        int minor; 
+        int param; 
+        int lineNum; 
+        int linePos; 
+        int groupState; 
     RTF_CMArchiveManager *_archiver;
     NSMapTable *_cachedRTFFontTable;
-    NSInteger _cocoaSubVersion;
-    NSInteger _cocoaVersion;
+    int _cocoaSubVersion;
+    int _cocoaVersion;
     BOOL _currentRowIsLast;
     NSMutableString *_currentString;
     float _defaultTabInterval;
@@ -57,23 +62,23 @@
     BOOL _limitReached;
     NSURL *_packageURL;
     } _private;
-    NSInteger _readLimit;
-    NSInteger _readOnly;
+    int _readLimit;
+    int _readOnly;
     RTFReaderState *_readerState;
     NSData *_rtfData;
-    NSInteger _rtfVersion;
+    int _rtfVersion;
     } _textBuffer;
     BOOL _textBufferContentsIsFat;
-    NSUInteger _textBufferIndex;
-    NSInteger _thumbnailLimit;
+    unsigned int _textBufferIndex;
+    int _thumbnailLimit;
     NSMutableString *_topString;
     RTFCPZArchive *_zipArchive;
 }
 
 - (id)_initWithArchiver:(id)arg1;
 - (void)_insertAttachmentNamed:(id)arg1;
-- (NSInteger)cocoaSubVersion;
-- (NSInteger)cocoaVersion;
+- (int)cocoaSubVersion;
+- (int)cocoaVersion;
 - (void)dealloc;
 - (float)defaultTabInterval;
 - (float)floatCocoaVersion;
@@ -82,10 +87,10 @@
 - (id)initWithZippedRTFD:(id)arg1 archiver:(id)arg2;
 - (void)read;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setCocoaSubVersion:(NSInteger)arg1;
-- (void)setCocoaVersion:(NSInteger)arg1;
+- (void)setCocoaSubVersion:(int)arg1;
+- (void)setCocoaVersion:(int)arg1;
 - (void)setDefaultTabInterval:(float)arg1;
 - (void)setHyphenationFactor:(float)arg1;
-- (void)setReadOnly:(NSInteger)arg1;
+- (void)setReadOnly:(int)arg1;
 
 @end

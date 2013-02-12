@@ -6,13 +6,13 @@
     struct CGPoint { 
         float x; 
         float y; 
-    NSUInteger _identifier;
+    unsigned int _identifier;
     } _location;
 }
 
 - (id)description;
-- (NSUInteger)identifier;
-- (id)initWithIdentifier:(NSUInteger)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
+- (unsigned int)identifier;
+- (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })location;
 
 @end

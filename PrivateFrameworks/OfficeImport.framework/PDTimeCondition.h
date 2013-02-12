@@ -5,20 +5,20 @@
 @class PDAnimationTargetElement;
 
 @interface PDTimeCondition : NSObject {
-    NSInteger mDelay;
+    int mDelay;
     BOOL mHasDelay;
     PDAnimationTargetElement *mTgtElement;
-    NSInteger mTriggerEvent;
+    int mTriggerEvent;
 }
 
 - (void)dealloc;
-- (NSInteger)delay;
+- (int)delay;
 - (BOOL)hasDelay;
 - (id)init;
-- (void)setDelay:(NSInteger)arg1;
+- (void)setDelay:(int)arg1;
 - (void)setTgtElement:(id)arg1;
-- (void)setTriggerEvent:(NSInteger)arg1;
+- (void)setTriggerEvent:(int)arg1;
 - (id)tgtElement;
-- (NSInteger)triggerEvent;
+- (int)triggerEvent;
 
 @end

@@ -12,17 +12,18 @@
     NSString *_username;
 }
 
-@property(copy) NSString *password;
-@property(copy) NSDictionary *responseAlertInfo;
-@property(copy) NSString *responseAuthorizationToken;
-@property(copy) NSString *responseProfileID;
-@property(copy) NSString *username;
+@property(copy) NSString * password;
+@property(copy) NSDictionary * responseAlertInfo;
+@property(copy) NSString * responseAuthorizationToken;
+@property(copy) NSString * responseProfileID;
+@property(copy) NSString * username;
 
 - (id)bagKey;
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
 - (id)messageBody;
 - (id)password;
+- (BOOL)payloadCanBeLogged;
 - (id)requiredKeys;
 - (id)responseAlertInfo;
 - (id)responseAuthorizationToken;

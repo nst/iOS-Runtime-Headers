@@ -44,7 +44,7 @@
 - (void)setRootController:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (void)showLeftButton:(id)arg1 withStyle:(NSInteger)arg2 rightButton:(id)arg3 withStyle:(NSInteger)arg4;
+- (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
 - (id)specifier;
 - (id)specifiers;
 - (void)statusBarWillAnimateByHeight:(float)arg1;

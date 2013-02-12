@@ -3,14 +3,14 @@
  */
 
 @interface SUGridTableViewCell : SUTableCell {
-    NSInteger _gridPosition;
+    int _gridPosition;
 }
 
-@property NSInteger gridPosition;
+@property int gridPosition;
 
 - (void)deleteConfirmationControlWasClicked:(id)arg1;
-- (NSInteger)gridPosition;
+- (int)gridPosition;
 - (void)removeControl:(id)arg1 willRemoveTarget:(id)arg2;
-- (void)setGridPosition:(NSInteger)arg1;
+- (void)setGridPosition:(int)arg1;
 
 @end

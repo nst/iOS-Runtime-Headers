@@ -26,12 +26,12 @@
 - (BOOL)isEncrypted;
 - (id)passphraseHint;
 - (id)passphraseVerifier;
-- (struct SFUZipEndOfCentralDirectory { NSUInteger x1; long long x2; long long x3; })readEndOfCentralDirectoryFromInputStream:(id)arg1;
+- (struct SFUZipEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readEndOfCentralDirectoryFromInputStream:(id)arg1;
 - (void)readEntries;
 - (void)readExtraFieldFromBuffer:(const char *)arg1 size:(unsigned long)arg2 entry:(id)arg3;
 - (id)readFilenameFromBuffer:(const char *)arg1 size:(unsigned long)arg2;
-- (struct SFUZipEndOfCentralDirectory { NSUInteger x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromInputStream:(id)arg1 eocdOffset:(long long)arg2;
-- (struct SFUZipEndOfCentralDirectory { NSUInteger x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromInputStream:(id)arg1 offset:(long long)arg2;
+- (struct SFUZipEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromInputStream:(id)arg1 eocdOffset:(long long)arg2;
+- (struct SFUZipEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromInputStream:(id)arg1 offset:(long long)arg2;
 - (const char *)searchForEndOfCentralDirectoryFromInputStream:(id)arg1 offset:(long long*)arg2;
 - (void)setCryptoKey:(id)arg1;
 

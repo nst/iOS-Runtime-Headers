@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableArray, NSString, SUSection, UIViewController;
+@class <SUTabBarControllerDelegate>, NSArray, NSMutableArray, NSString, SUSection, UIViewController;
 
 @interface SUTabBarController : UITabBarController {
     NSArray *_cachedControllers;
@@ -10,15 +10,15 @@
     NSString *_moreListTitle;
     NSMutableArray *_overlayBackgroundViewControllers;
     UIViewController *_preTransientSelectedViewController;
-    NSInteger _reloadingUnderneathTransientControllerCount;
+    int _reloadingUnderneathTransientControllerCount;
     NSArray *_sections;
     BOOL _trackingNetworkType;
 }
 
-@property <SUTabBarControllerDelegate> *delegate;
-@property(retain) NSString *moreListTitle;
-@property(retain) NSArray *sections;
-@property(retain) NSString *selectedIdentifier;
+@property <SUTabBarControllerDelegate> * delegate;
+@property(retain) NSString * moreListTitle;
+@property(retain) NSArray * sections;
+@property(retain) NSString * selectedIdentifier;
 
 - (void)_applyMoreListTitle;
 - (id)_archivedContextsForViewController:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)_fixupTabBarSelection;
 - (void)_fixupViewControllers;
 - (BOOL)_isReloadingUnderneathTransientViewController;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_locationChanged:(id)arg1;
 - (void)_partnerChanged:(id)arg1;
 - (void)_reloadViewControllersFromSections:(id)arg1 animated:(BOOL)arg2;
@@ -49,10 +49,10 @@
 - (id)_viewControllerForContext:(id)arg1;
 - (void)cancelTransientViewController:(id)arg1;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
-- (void)dismissModalViewControllerWithTransition:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)dismissModalViewControllerWithTransition:(int)arg1;
 - (void)dismissOverlayBackgroundViewController;
-- (NSUInteger)indexOfViewControllerWithSectionType:(NSInteger)arg1;
+- (unsigned int)indexOfViewControllerWithSectionType:(int)arg1;
 - (id)init;
 - (BOOL)loadFromDefaults;
 - (void)loadView;
@@ -71,7 +71,7 @@
 - (void)scriptOverlayBackgroundDidDismiss:(id)arg1;
 - (id)sections;
 - (void)selectDefaultSection;
-- (void)selectSectionOfType:(NSInteger)arg1;
+- (void)selectSectionOfType:(int)arg1;
 - (id)selectedIdentifier;
 - (id)selectedViewController;
 - (void)setMoreListTitle:(id)arg1;
@@ -82,13 +82,13 @@
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (id)viewControllerForSectionIdentifier:(id)arg1;
-- (id)viewControllerForSectionType:(NSInteger)arg1;
+- (id)viewControllerForSectionType:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(NSInteger)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 
 @end

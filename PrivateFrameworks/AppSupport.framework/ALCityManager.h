@@ -10,7 +10,7 @@
     struct sqlite3 { } *_localizedDb;
 }
 
-@property(readonly) CPSearchMatcher *citySearchMatcher;
+@property(readonly) CPSearchMatcher * citySearchMatcher;
 
 + (struct __CFArray { }*)legacyCityForCity:(id)arg1;
 + (id)newCitiesByIdentifierMap:(id)arg1;
@@ -25,7 +25,7 @@
 - (id)cityForClassicIdentifier:(id)arg1;
 - (id)citySearchMatcher;
 - (void)dealloc;
-- (id)defaultCitiesForLocaleCode:(id)arg1 options:(NSInteger)arg2;
+- (id)defaultCitiesForLocaleCode:(id)arg1 options:(int)arg2;
 - (id)defaultCitiesForLocaleCode:(id)arg1;
 - (id)defaultCityForTimeZone:(id)arg1;
 - (id)init;

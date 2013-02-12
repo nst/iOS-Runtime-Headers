@@ -18,7 +18,7 @@
         unsigned int delegateZoomAnimationDelay : 1; 
         unsigned int needsReload : 1; 
         unsigned int editing : 1; 
-        NSUInteger editingHandle; 
+        unsigned int editingHandle; 
         unsigned int zoomIsDisabled : 1; 
     NSDictionary *_childThumbnailViews;
     <UIMovieScrubberTrackViewDataSource> *_dataSource;
@@ -44,8 +44,8 @@
     float _zoomWidthDelta;
 }
 
-@property <UIMovieScrubberTrackViewDataSource> *dataSource;
-@property <UIMovieScrubberTrackViewDelegate> *delegate;
+@property <UIMovieScrubberTrackViewDataSource> * dataSource;
+@property <UIMovieScrubberTrackViewDelegate> * delegate;
 
 - (id)_createImageViewForTimestamp:(id)arg1;
 - (void)_reallyReloadData;

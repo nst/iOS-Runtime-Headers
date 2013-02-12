@@ -6,7 +6,7 @@
 
 @interface EKPreviewSection : NSObject {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -16,16 +16,16 @@
     NSArray *_events;
 }
 
-@property(readonly) NSArray *events;
-@property ? date;
+@property struct { int year; BOOL month; BOOL day; BOOL hour; BOOL minute; double second; } date;
+@property(readonly) NSArray * events;
 
-+ (id)sectionWithDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
++ (id)sectionWithDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 
 - (void)addEvent:(id)arg1;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })date;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })date;
 - (void)dealloc;
 - (id)events;
-- (id)initWithDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (void)setDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (id)initWithDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 
 @end

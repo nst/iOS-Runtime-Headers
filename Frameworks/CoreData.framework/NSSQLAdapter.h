@@ -40,7 +40,7 @@
 - (id)newUpdateStatementWithRow:(id)arg1;
 - (void)registerConnection:(id)arg1;
 - (id)sqlCore;
-- (NSUInteger)sqlTypeForExpressionConstantValue:(id)arg1;
+- (unsigned int)sqlTypeForExpressionConstantValue:(id)arg1;
 - (Class)statementClass;
 - (BOOL)supportsCorrelatedSubqueries;
 - (id)type;

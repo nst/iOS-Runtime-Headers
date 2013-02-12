@@ -15,7 +15,7 @@
 + (void)endDownloadQueueSessionForQueue:(id)arg1;
 + (void)endPreOrderQueueSessionWithDownloadKinds:(id)arg1;
 + (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
-+ (void)exitStoreWithReason:(NSInteger)arg1;
++ (void)exitStoreWithReason:(int)arg1;
 + (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
 + (id)imageCache;
 + (id)imagePool;

@@ -9,7 +9,7 @@
     } _coordinate;
 }
 
-@property ? coordinate;
+@property struct { double latitude; double longitude; } coordinate;
 @property(readonly) Class viewClass;
 
 - (struct { double x1; double x2; })coordinate;

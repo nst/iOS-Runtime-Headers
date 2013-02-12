@@ -7,7 +7,7 @@
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
-+ (NSInteger)version;
++ (int)version;
 
 - (id)URIRepresentation;
 - (BOOL)_isPersistentStoreAlive;

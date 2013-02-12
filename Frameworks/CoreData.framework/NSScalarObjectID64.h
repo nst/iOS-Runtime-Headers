@@ -3,7 +3,7 @@
  */
 
 @interface NSScalarObjectID64 : _NSScalarObjectID {
-    NSInteger _cd_rc;
+    int _cd_rc;
     long long _referenceData64;
 }
 

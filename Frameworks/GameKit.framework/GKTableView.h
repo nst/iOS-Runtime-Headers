@@ -9,35 +9,35 @@
         float width; 
         float height; 
     UIImage *_backgroundImage;
-    NSInteger _backgroundStyle;
+    int _backgroundStyle;
     NSArray *_backgroundTiles;
     BOOL _becomeFirstResponderOnTouch;
     float _shadowInset;
-    NSInteger _shadowStyle;
+    int _shadowStyle;
     } _statusOffsetShift;
 }
 
-@property(retain) UIImage *backgroundImage;
-@property(retain) NSArray *backgroundTiles;
-@property NSInteger backgroundStyle;
+@property(retain) UIImage * backgroundImage;
+@property int backgroundStyle;
+@property(retain) NSArray * backgroundTiles;
 @property BOOL becomeFirstResponderOnTouch;
 @property float shadowInset;
-@property NSInteger shadowStyle;
-@property CGSize statusOffsetShift;
+@property int shadowStyle;
+@property struct CGSize { float width; float height; } statusOffsetShift;
 
 - (float)_backgroundInset;
 - (id)backgroundImage;
-- (NSInteger)backgroundStyle;
+- (int)backgroundStyle;
 - (id)backgroundTiles;
 - (BOOL)becomeFirstResponderOnTouch;
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)layoutSubviews;
 - (void)layoutTilesWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 offset:(struct CGSize { float x1; float x2; })arg2;
 - (void)setBackgroundImage:(id)arg1;
-- (void)setBackgroundStyle:(NSInteger)arg1;
+- (void)setBackgroundStyle:(int)arg1;
 - (void)setBackgroundTiles:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBecomeFirstResponderOnTouch:(BOOL)arg1;
@@ -45,10 +45,10 @@
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setShadowInset:(float)arg1;
-- (void)setShadowStyle:(NSInteger)arg1;
+- (void)setShadowStyle:(int)arg1;
 - (void)setStatusOffsetShift:(struct CGSize { float x1; float x2; })arg1;
 - (float)shadowInset;
-- (NSInteger)shadowStyle;
+- (int)shadowStyle;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })statusOffsetShift;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

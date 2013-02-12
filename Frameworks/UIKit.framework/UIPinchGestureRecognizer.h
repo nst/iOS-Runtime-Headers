@@ -28,8 +28,8 @@
     float _velocity;
 }
 
-@property(getter=_hysteresis) float hysteresis; /* unknown property attribute: S_setHysteresis: */
-@property(readonly) CGPoint anchorPoint;
+@property(readonly) struct CGPoint { float x; float y; } anchorPoint;
+@property(getter=_hysteresis,setter=_setHysteresis:) float hysteresis;
 @property float scale;
 @property float scaleThreshold;
 @property(readonly) float velocity;

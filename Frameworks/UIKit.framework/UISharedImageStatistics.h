@@ -3,24 +3,24 @@
  */
 
 @interface UISharedImageStatistics : NSObject {
-    NSUInteger _flushes;
+    unsigned int _flushes;
     double _loadTime;
     double _requestTime;
-    NSUInteger _requests;
+    unsigned int _requests;
 }
 
-@property NSUInteger flushes;
+@property unsigned int flushes;
 @property double loadTime;
 @property double requestTime;
-@property NSUInteger requests;
+@property unsigned int requests;
 
-- (NSUInteger)flushes;
+- (unsigned int)flushes;
 - (double)loadTime;
 - (double)requestTime;
-- (NSUInteger)requests;
-- (void)setFlushes:(NSUInteger)arg1;
+- (unsigned int)requests;
+- (void)setFlushes:(unsigned int)arg1;
 - (void)setLoadTime:(double)arg1;
 - (void)setRequestTime:(double)arg1;
-- (void)setRequests:(NSUInteger)arg1;
+- (void)setRequests:(unsigned int)arg1;
 
 @end

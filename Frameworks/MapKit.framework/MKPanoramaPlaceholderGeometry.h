@@ -3,8 +3,8 @@
  */
 
 @interface MKPanoramaPlaceholderGeometry : MKPanoramaSphereGeometry {
-    NSUInteger _groundTexture;
-    NSUInteger _skyTexture;
+    unsigned int _groundTexture;
+    unsigned int _skyTexture;
 }
 
 - (void)draw;

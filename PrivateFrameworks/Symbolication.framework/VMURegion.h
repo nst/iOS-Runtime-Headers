@@ -12,12 +12,12 @@
 + (id)regionWithOwner:(id)arg1 name:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3;
 
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })addressRange;
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOwner:(id)arg1 name:(id)arg2 addressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg3;
 - (BOOL)isEqual:(id)arg1;

@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface CHBView3D : NSObject {
 }
 
-+ (id)readFrom:(const struct XlChart3D { int (**x1)(); struct XlHeader { NSUInteger x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; short x3; short x4; short x5; short x6; short x7; short x8; short x9; }*)arg1;
++ (id)readFrom:(const struct XlChart3D { int (**x1)(); struct XlHeader { unsigned int x_2_1_1; short x_2_1_2; unsigned char x_2_1_3; } x2; short x3; short x4; short x5; short x6; short x7; short x8; short x9; }*)arg1;
 
 @end

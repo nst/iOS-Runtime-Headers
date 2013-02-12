@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCalendar, EKGroupInfo, UIColor;
+@class EKCalendar, EKGroupInfo, NSString, UIColor;
 
 @interface EKCalendarInfo : NSObject {
     EKCalendar *_calendar;
@@ -11,18 +11,18 @@
     BOOL _selected;
 }
 
-@property(retain) EKCalendar *calendar;
-@property(retain) UIColor *color;
-@property EKGroupInfo *group;
-@property(copy,readonly) NSString *title;
-@property(readonly) NSInteger displayOrder;
+@property(retain) EKCalendar * calendar;
+@property(retain) UIColor * color;
+@property(readonly) int displayOrder;
+@property EKGroupInfo * group;
 @property(readonly) BOOL isSubscribed;
 @property BOOL selected;
+@property(copy,readonly) NSString * title;
 
 - (id)calendar;
 - (id)color;
 - (void)dealloc;
-- (NSInteger)displayOrder;
+- (int)displayOrder;
 - (id)group;
 - (id)initWithCalendar:(id)arg1;
 - (BOOL)isSubscribed;

@@ -6,7 +6,7 @@
 
 @interface PLCameraImageWellView : UIView {
     UIImageView *_containerImageView;
-    NSInteger _deviceOrientation;
+    int _deviceOrientation;
     UIImage *_thumbnailImage;
     UIImage *_thumbnailImageSelected;
     UIImageView *_thumbnailImageView;
@@ -29,7 +29,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
-- (void)setButtonOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
@@ -40,6 +40,5 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)willMoveToSuperview:(id)arg1;
 
 @end

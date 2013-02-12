@@ -6,15 +6,19 @@
 
 @interface CoreDAVErrorItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_numberOfMatchesWithinLimits;
+    CoreDAVItemWithNoChildren *_validSyncToken;
 }
 
-@property(retain) CoreDAVItemWithNoChildren *numberOfMatchesWithinLimits;
+@property(retain) CoreDAVItemWithNoChildren * numberOfMatchesWithinLimits;
+@property(retain) CoreDAVItemWithNoChildren * validSyncToken;
 
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)init;
 - (id)numberOfMatchesWithinLimits;
 - (void)setNumberOfMatchesWithinLimits:(id)arg1;
+- (void)setValidSyncToken:(id)arg1;
+- (id)validSyncToken;
 
 @end

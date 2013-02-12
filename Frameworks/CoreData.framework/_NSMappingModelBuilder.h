@@ -11,10 +11,10 @@
     NSManagedObjectModel *_sourceModel;
 }
 
-+ (NSInteger)migrationDebugLevel;
-+ (void)setMigrationDebugLevel:(NSInteger)arg1;
++ (int)migrationDebugLevel;
++ (void)setMigrationDebugLevel:(int)arg1;
 
-- (BOOL)_canTransformSourceAttributeType:(NSUInteger)arg1 toDestinationAttributeType:(NSUInteger)arg2;
+- (BOOL)_canTransformSourceAttributeType:(unsigned int)arg1 toDestinationAttributeType:(unsigned int)arg2;
 - (void)_resetCaches;
 - (void)dealloc;
 - (BOOL)inferPropertyMappingsForEntityMapping:(id)arg1;

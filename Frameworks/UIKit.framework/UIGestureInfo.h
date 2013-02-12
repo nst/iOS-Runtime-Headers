@@ -41,7 +41,7 @@
         unsigned int isAnimatingZoomFailure : 1; 
     } centerRect;
     id delegate;
-    NSInteger enabledGestures;
+    int enabledGestures;
     float endDegrees;
     float endScale;
     } endScrollPoint;
@@ -50,11 +50,11 @@
     float maxScale;
     float minDegrees;
     float minScale;
-    NSInteger panState;
+    int panState;
     float recentRotationDegrees;
     UIGestureAnimation *rotationAnimation;
     float rotationDegrees;
-    NSInteger rotationState;
+    int rotationState;
     UIScrollAnimation *scrollAnimation;
     float startDegrees;
     } startGestureInner;
@@ -69,9 +69,9 @@
     float zoomFailureStartScale;
     } zoomFailureWindowPoint;
     float zoomMultiplier;
-    NSInteger zoomRubberBandHysteresisCount;
+    int zoomRubberBandHysteresisCount;
     float zoomScale;
-    NSInteger zoomState;
+    int zoomState;
 }
 
 - (void)dealloc;

@@ -13,7 +13,7 @@
 - (id)_shadowHighlightedColor;
 - (id)enabledIcon;
 - (id)highlightedIcon;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setChecked:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;

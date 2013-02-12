@@ -3,25 +3,25 @@
  */
 
 @interface EKRecurrenceDayOfWeek : NSObject <NSCopying> {
-    NSInteger _dayOfTheWeek;
-    NSInteger _weekNumber;
+    int _dayOfTheWeek;
+    int _weekNumber;
 }
 
-@property(readonly) NSInteger dayOfTheWeek;
-@property(readonly) NSInteger weekNumber;
+@property(readonly) int dayOfTheWeek;
+@property(readonly) int weekNumber;
 
-+ (id)dayOfWeek:(NSInteger)arg1 weekNumber:(NSInteger)arg2;
-+ (id)dayOfWeek:(NSInteger)arg1;
++ (id)dayOfWeek:(int)arg1 weekNumber:(int)arg2;
++ (id)dayOfWeek:(int)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSInteger)dayOfTheWeek;
+- (int)dayOfTheWeek;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)iCalendarDescription;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDayOfTheWeek:(NSInteger)arg1 weekNumber:(NSInteger)arg2;
+- (id)initWithDayOfTheWeek:(int)arg1 weekNumber:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)weekNumber;
+- (int)weekNumber;
 
 @end

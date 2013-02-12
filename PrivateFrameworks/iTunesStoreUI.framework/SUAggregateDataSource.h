@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface SUAggregateDataSource : SUTableDataSource {
     NSMutableArray *_headerViews;
     NSMutableArray *_sources;
-    NSInteger _tableViewStyle;
+    int _tableViewStyle;
 }
 
-@property(readonly) NSArray *sources;
-@property NSInteger tableViewStyle;
+@property(readonly) NSArray * sources;
+@property int tableViewStyle;
 
-- (NSInteger)_localIndexForSectionIndex:(NSInteger)arg1;
+- (int)_localIndexForSectionIndex:(int)arg1;
 - (void)addDataSource:(id)arg1 withHeaderView:(id)arg2;
 - (BOOL)canDeleteIndexPath:(id)arg1;
 - (BOOL)canDoubleTapIndexPath:(id)arg1;
@@ -24,16 +24,16 @@
 - (id)dataSourceForIndexPath:(id)arg1;
 - (void)dealloc;
 - (BOOL)deleteIndexPath:(id)arg1;
-- (id)headerViewForSection:(NSInteger)arg1;
-- (id)indexPathForRowIndex:(NSUInteger)arg1 inSectionIndex:(NSUInteger)arg2;
-- (NSInteger)numberOfColumnsInSection:(NSInteger)arg1;
-- (NSInteger)numberOfRowsInSection:(NSInteger)arg1;
-- (NSInteger)numberOfSections;
+- (id)headerViewForSection:(int)arg1;
+- (id)indexPathForRowIndex:(unsigned int)arg1 inSectionIndex:(unsigned int)arg2;
+- (int)numberOfColumnsInSection:(int)arg1;
+- (int)numberOfRowsInSection:(int)arg1;
+- (int)numberOfSections;
 - (void)reloadCellContexts;
 - (void)reloadData;
 - (void)setCellReuseSource:(id)arg1;
-- (void)setTableViewStyle:(NSInteger)arg1;
+- (void)setTableViewStyle:(int)arg1;
 - (id)sources;
-- (NSInteger)tableViewStyle;
+- (int)tableViewStyle;
 
 @end

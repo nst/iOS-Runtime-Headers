@@ -11,8 +11,8 @@
         unsigned int useAlternateColors : 1; 
         unsigned int skipValueChangedAction : 1; 
     } _switchFlags;
-    NSInteger imageState;
-    UIImage **images;
+    int imageState;
+    UIImage *images[8];
     UIView *leftEdgeView;
     CALayer *maskLayer;
     UIColor *onButtonColor;
@@ -21,7 +21,6 @@
 }
 
 - (void)dealloc;
-- (id)init;
-- (void)setMinimumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 
 @end

@@ -26,7 +26,7 @@
 - (id)cancelAllImports;
 - (void)checkDirectoriesInOrphanChecklist;
 - (void)dealloc;
-- (NSInteger)identifierForNewImportSession;
+- (int)identifierForNewImportSession;
 - (id)init;
 - (BOOL)isAudioFileExtension:(id)arg1;
 - (BOOL)isImageFileExtension:(id)arg1;
@@ -37,10 +37,10 @@
 - (void)notifyFailureOnMainThread:(id)arg1;
 - (void)notifyOnMainThread:(id)arg1;
 - (void)notifySuccessOnMainThread:(id)arg1;
-- (NSInteger)priorityForFileExtension:(id)arg1;
-- (void)queueImportFileAtPath:(id)arg1 intoEvent:(id)arg2 progress:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg3 importSessionIdentifier:(NSInteger)arg4;
-- (void)queueImportFilesAtDirectoryPath:(id)arg1 baseName:(id)arg2 extensions:(id)arg3 intoEvent:(id)arg4 progress:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg5 importSessionIdentifier:(NSInteger)arg6;
-- (NSInteger)queuedImportCount;
+- (int)priorityForFileExtension:(id)arg1;
+- (void)queueImportFileAtPath:(id)arg1 intoEvent:(id)arg2 progress:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg3 importSessionIdentifier:(int)arg4;
+- (void)queueImportFilesAtDirectoryPath:(id)arg1 baseName:(id)arg2 extensions:(id)arg3 intoEvent:(id)arg4 progress:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg5 importSessionIdentifier:(int)arg6;
+- (int)queuedImportCount;
 - (void)removeDirectoryFromOrphanChecklist:(id)arg1;
 - (void)workerThread:(id)arg1;
 

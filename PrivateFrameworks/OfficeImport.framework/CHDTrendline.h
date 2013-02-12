@@ -2,28 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class CHDTrendlineLabel, EDString, OADGraphicProperties;
 
 @interface CHDTrendline : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
+    boolmDisplayEquation;
+    boolmDisplayRSquaredValue;
     double mBackward;
     double mForward;
     OADGraphicProperties *mGraphicProperties;
     double mInterceptYAxis;
     CHDTrendlineLabel *mLabel;
-    NSInteger mMovingAveragePeriod;
+    int mMovingAveragePeriod;
     EDString *mName;
-    NSInteger mPolynomialOrder;
-    NSInteger mType;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDisplayEquation;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDisplayRSquaredValue;
+    int mPolynomialOrder;
+    int mType;
 }
 
 + (id)trendline;
@@ -35,23 +27,23 @@
 - (id)graphicProperties;
 - (id)init;
 - (double)interceptYAxis;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isDisplayEquation;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isDisplayRSquaredValue;
+- (bool)isDisplayEquation;
+- (bool)isDisplayRSquaredValue;
 - (id)label;
-- (NSInteger)movingAveragePeriod;
+- (int)movingAveragePeriod;
 - (id)name;
-- (NSInteger)polynomialOrder;
+- (int)polynomialOrder;
 - (void)setBackward:(double)arg1;
-- (void)setDisplayEquation:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setDisplayRSquaredValue:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDisplayEquation:(bool)arg1;
+- (void)setDisplayRSquaredValue:(bool)arg1;
 - (void)setForward:(double)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (void)setInterceptYAxis:(double)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMovingAveragePeriod:(NSInteger)arg1;
+- (void)setMovingAveragePeriod:(int)arg1;
 - (void)setName:(id)arg1;
-- (void)setPolynomialOrder:(NSInteger)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setPolynomialOrder:(int)arg1;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

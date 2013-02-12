@@ -5,20 +5,20 @@
 @class NSArray, NSHashTable;
 
 @interface NSKeyValueObservationInfo : NSObject {
-    NSUInteger _cachedHash;
+    unsigned int _cachedHash;
     BOOL _cachedIsShareable;
     NSHashTable *_observables;
     NSArray *_observances;
-    NSInteger _retainCountMinusOne;
+    int _retainCountMinusOne;
 }
 
-- (id)_initWithObservances:(id*)arg1 count:(NSUInteger)arg2;
+- (id)_initWithObservances:(id*)arg1 count:(unsigned int)arg2;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSData, NSDate, NSMutableArray, NSMutableDictionary, NSProtocolChecker, NSString;
+@class NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSProtocolChecker, NSString;
 
 @interface IMDaemonListener : NSObject {
     NSMutableArray *_deferredChatMessages;
@@ -11,7 +11,7 @@
     NSDate *_myIdleSince;
     NSString *_myNowPlayingString;
     NSData *_myPicture;
-    NSUInteger _myStatus;
+    unsigned int _myStatus;
     NSString *_myStatusMessage;
     NSMutableDictionary *_persistentProperties;
     NSMutableDictionary *_properties;
@@ -21,15 +21,15 @@
     unsigned long long _vcCapabilities;
 }
 
-@property(readonly) NSArray *allServices;
-@property(readonly) NSArray *handlers;
-@property(readonly) NSString *myStatusMessage;
-@property(readonly) NSDictionary *persistentProperties;
-@property(readonly) NSDictionary *properties;
+@property(readonly) NSArray * allServices;
+@property(readonly) NSArray * handlers;
 @property(readonly) BOOL isHoldingChatMessages;
 @property(readonly) BOOL isSetupComplete;
-@property(readonly) NSUInteger myIdleTime;
-@property(readonly) NSUInteger myStatus;
+@property(readonly) unsigned int myIdleTime;
+@property(readonly) unsigned int myStatus;
+@property(readonly) NSString * myStatusMessage;
+@property(readonly) NSDictionary * persistentProperties;
+@property(readonly) NSDictionary * properties;
 @property(readonly) BOOL shouldHoldChatMessages;
 @property(readonly) unsigned long long vcCapabilities;
 
@@ -43,7 +43,7 @@
 - (oneway void)account:(id)arg1 allowListChanged:(id)arg2;
 - (oneway void)account:(id)arg1 blockIdleStatusChanged:(BOOL)arg2;
 - (oneway void)account:(id)arg1 blockListChanged:(id)arg2;
-- (oneway void)account:(id)arg1 blockingModeChanged:(NSUInteger)arg2;
+- (oneway void)account:(id)arg1 blockingModeChanged:(unsigned int)arg2;
 - (oneway void)account:(id)arg1 buddyPictureChanged:(id)arg2 imageData:(id)arg3 imageHash:(id)arg4;
 - (oneway void)account:(id)arg1 buddyProperties:(id)arg2 buddyPictures:(id)arg3;
 - (oneway void)account:(id)arg1 buddyPropertiesChanged:(id)arg2;
@@ -53,9 +53,9 @@
 - (oneway void)account:(id)arg1 defaultsChanged:(id)arg2;
 - (oneway void)account:(id)arg1 groupsChanged:(id)arg2 error:(id)arg3;
 - (oneway void)account:(id)arg1 handleSubscriptionRequestFrom:(id)arg2 withMessage:(id)arg3;
-- (oneway void)account:(id)arg1 loginStatusChanged:(NSUInteger)arg2 message:(id)arg3 reason:(NSUInteger)arg4 properties:(id)arg5;
+- (oneway void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(unsigned int)arg4 properties:(id)arg5;
 - (oneway void)account:(id)arg1 postedError:(id)arg2;
-- (oneway void)account:(id)arg1 status:(id)arg2 capabilities:(unsigned long long)arg3 serviceLoginStatus:(NSUInteger)arg4 loginStatusMessage:(id)arg5;
+- (oneway void)account:(id)arg1 status:(id)arg2 capabilities:(unsigned long long)arg3 serviceLoginStatus:(unsigned int)arg4 loginStatusMessage:(id)arg5;
 - (oneway void)account:(id)arg1 statusChanged:(id)arg2;
 - (oneway void)accountAdded:(id)arg1 defaults:(id)arg2 service:(id)arg3;
 - (oneway void)accountRemoved:(id)arg1;
@@ -76,7 +76,7 @@
 - (BOOL)isSetupComplete;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (unsigned long)myIdleTime;
-- (NSUInteger)myStatus;
+- (unsigned int)myStatus;
 - (id)myStatusMessage;
 - (id)persistentProperties;
 - (oneway void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;

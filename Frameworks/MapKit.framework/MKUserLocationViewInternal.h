@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CALayer, MKAccuracyLayer, MKUserLocationLayer, MKUserLocationView;
+@class CALayer, MKAccuracyLayer, MKHoverAnimation, MKUserLocationLayer, MKUserLocationPositionAnimation, MKUserLocationView;
 
 @interface MKUserLocationViewInternal : NSObject {
     struct { 
@@ -29,14 +29,12 @@
     double headingAccuracy;
     CALayer *headingLayer;
     MKUserLocationLayer *layer;
-    NSUInteger mapType;
+    unsigned int mapType;
     CALayer *userLayer;
     MKUserLocationView *view;
-    NSInteger zoomDirection;
+    int zoomDirection;
 }
 
-@property(readonly) MKHoverAnimation *hoverAnimation;
-@property(readonly) MKUserLocationPositionAnimation *positionAnimation;
 @property float accuracy;
 @property BOOL animatedSublayers;
 @property(readonly) BOOL canHalo;
@@ -49,18 +47,20 @@
 @property(readonly) BOOL hasHalo;
 @property(readonly) BOOL hasQuiesced;
 @property double headingAccuracy;
+@property(readonly) MKHoverAnimation * hoverAnimation;
 @property(getter=isHovering,readonly) BOOL hovering;
-@property NSUInteger mapType;
+@property unsigned int mapType;
 @property(readonly) BOOL needsHalo;
-@property CADoublePoint position;
+@property struct CADoublePoint { double x; double y; } position;
+@property(readonly) MKUserLocationPositionAnimation * positionAnimation;
 @property BOOL shouldDisplayAccuracy;
 @property BOOL shouldDisplayEffects;
 @property BOOL shouldDisplayHalo;
 @property BOOL shouldDisplayHeading;
 @property(getter=isStale) BOOL stale;
-@property NSInteger zoomDirection;
+@property int zoomDirection;
 
-+ (float)accuracyDiameter:(float)arg1 level:(NSUInteger)arg2;
++ (float)accuracyDiameter:(float)arg1 level:(unsigned int)arg2;
 + (id)bounceImages;
 + (id)dotImage;
 + (id)dotPressedImage;
@@ -104,7 +104,7 @@
 - (double)headingAccuracy;
 - (id)headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (id)hoverAnimation;
-- (NSUInteger)indexForSubLayer:(id)arg1;
+- (unsigned int)indexForSubLayer:(id)arg1;
 - (id)initWithView:(id)arg1;
 - (void)insertSublayer:(id)arg1 animated:(BOOL)arg2;
 - (void)insertSublayer:(id)arg1;
@@ -114,7 +114,7 @@
 - (BOOL)isHovering;
 - (BOOL)isStale;
 - (BOOL)isZooming;
-- (NSUInteger)mapType;
+- (unsigned int)mapType;
 - (BOOL)needsHalo;
 - (void)orderInDotLayer;
 - (void)orderInLayer:(id)arg1 beginTime:(double)arg2;
@@ -136,15 +136,15 @@
 - (void)setDisableAccuracyDidUpdate:(BOOL)arg1;
 - (void)setEffectsVisible:(BOOL)arg1;
 - (void)setHeadingAccuracy:(double)arg1;
-- (void)setMapType:(NSUInteger)arg1;
+- (void)setMapType:(unsigned int)arg1;
 - (void)setPosition:(struct CADoublePoint { double x1; double x2; })arg1;
 - (void)setShouldDisplayAccuracy:(BOOL)arg1;
 - (void)setShouldDisplayEffects:(BOOL)arg1;
 - (void)setShouldDisplayHalo:(BOOL)arg1;
 - (void)setShouldDisplayHeading:(BOOL)arg1;
 - (void)setStale:(BOOL)arg1;
-- (void)setZoomDirection:(NSInteger)arg1 deltaScale:(float)arg2;
-- (void)setZoomDirection:(NSInteger)arg1;
+- (void)setZoomDirection:(int)arg1 deltaScale:(float)arg2;
+- (void)setZoomDirection:(int)arg1;
 - (BOOL)shouldDisplayAccuracy;
 - (void)shouldDisplayAccuracyDidChange;
 - (BOOL)shouldDisplayEffects;
@@ -163,6 +163,6 @@
 - (void)userLocationAccuracyDidUpdate;
 - (void)userLocationViewAccuracyDidUpdate;
 - (void)userLocationViewDidUpdate;
-- (NSInteger)zoomDirection;
+- (int)zoomDirection;
 
 @end

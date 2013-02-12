@@ -10,9 +10,9 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property(retain) NSMutableArray *assets;
-@property(retain) PLPhotoLibrary *photoLibrary;
+@property(retain) NSMutableArray * assets;
 @property BOOL isValid;
+@property(retain) PLPhotoLibrary * photoLibrary;
 
 - (id)assets;
 - (void)dealloc;

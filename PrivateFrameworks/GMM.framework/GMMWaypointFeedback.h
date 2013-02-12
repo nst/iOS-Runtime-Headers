@@ -5,16 +5,16 @@
 @class NSMutableArray, NSString;
 
 @interface GMMWaypointFeedback : PBCodable {
-    NSInteger _status;
+    int _status;
     NSString *_streetViewPanoId;
     NSMutableArray *_waypoints;
 }
 
-@property(retain) NSString *streetViewPanoId;
-@property(retain) NSMutableArray *waypoints;
 @property(readonly) BOOL hasStreetViewPanoId;
-@property NSInteger status;
-@property(readonly) NSInteger waypointsCount;
+@property int status;
+@property(retain) NSString * streetViewPanoId;
+@property(retain) NSMutableArray * waypoints;
+@property(readonly) int waypointsCount;
 
 - (void)addWaypoint:(id)arg1;
 - (void)dealloc;
@@ -24,15 +24,15 @@
 - (BOOL)hasStreetViewPanoId;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setStatus:(NSInteger)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setStreetViewPanoId:(id)arg1;
-- (void)setWaypoint:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setWaypoint:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setWaypoints:(id)arg1;
-- (NSInteger)status;
+- (int)status;
 - (id)streetViewPanoId;
-- (id)waypointAtIndex:(NSUInteger)arg1;
+- (id)waypointAtIndex:(unsigned int)arg1;
 - (id)waypoints;
-- (NSInteger)waypointsCount;
+- (int)waypointsCount;
 - (void)writeTo:(id)arg1;
 
 @end

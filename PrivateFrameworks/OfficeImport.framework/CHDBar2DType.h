@@ -2,27 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDBar2DType : CHDChartTypeWithGrouping {
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-    NSInteger mGapWidth;
-    NSInteger mOverlap;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mColumn;
+    boolmColumn;
+    int mGapWidth;
+    int mOverlap;
 }
 
-- (NSInteger)defaultLabelPosition;
-- (NSInteger)gapWidth;
+- (int)defaultLabelPosition;
+- (int)gapWidth;
 - (id)initWithChart:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isColumn;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHorizontal;
-- (NSInteger)overlap;
-- (void)setColumn:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setGapWidth:(NSInteger)arg1;
-- (void)setOverlap:(NSInteger)arg1;
+- (bool)isColumn;
+- (bool)isHorizontal;
+- (int)overlap;
+- (void)setColumn:(bool)arg1;
+- (void)setGapWidth:(int)arg1;
+- (void)setOverlap:(int)arg1;
 
 @end

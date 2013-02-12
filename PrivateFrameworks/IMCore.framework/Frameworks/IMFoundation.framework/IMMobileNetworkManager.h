@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSLock, NSMutableSet;
+@class NSLock, NSMutableSet, NSNumber;
 
 @interface IMMobileNetworkManager : IMNetworkManager {
     NSMutableSet *_autoAssociationTokens;
@@ -13,14 +13,14 @@
     void *_wifiManager;
 }
 
-@property BOOL isDataConnectionActive; /* unknown property attribute: SsetDataConnectionActive: */
-@property(retain,readonly) NSNumber *wiFiScaledRSSI;
-@property(retain,readonly) NSNumber *wiFiScaledRate;
-@property(retain,readonly) NSNumber *wiFiSignalStrength;
 @property(readonly) BOOL autoAssociateWiFi;
 @property(readonly) BOOL dataConnectionExists;
+@property(setter=setDataConnectionActive:) BOOL isDataConnectionActive;
 @property(readonly) BOOL isWiFiAssociated;
 @property(readonly) BOOL isWiFiEnabled;
+@property(retain,readonly) NSNumber * wiFiScaledRSSI;
+@property(retain,readonly) NSNumber * wiFiScaledRate;
+@property(retain,readonly) NSNumber * wiFiSignalStrength;
 @property(readonly) BOOL willTryToAutoAssociateWiFiNetwork;
 @property(readonly) BOOL willTryToSearchForWiFiNetwork;
 

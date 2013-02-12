@@ -6,10 +6,12 @@
 
 @interface AVPropertyStorage : NSObject {
     NSMutableDictionary *_propertyStorage;
+    struct dispatch_queue_s { } *_storageAccessWorkQueue;
 }
 
 - (void)dealloc;
 - (void)didAccessKVOForKey:(id)arg1;
+- (void)finalize;
 - (id)init;
 - (id)objectForKey:(id)arg1 defaultObjectBlock:(id)arg2;
 - (id)objectForKey:(id)arg1;

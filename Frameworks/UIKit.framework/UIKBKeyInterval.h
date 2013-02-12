@@ -9,8 +9,8 @@
     UIKBKey *_key;
 }
 
-@property(retain) UIKBKey *key;
 @property double interval;
+@property(retain) UIKBKey * key;
 
 - (void)dealloc;
 - (id)initWithKey:(id)arg1 interval:(double)arg2;

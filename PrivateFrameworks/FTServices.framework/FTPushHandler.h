@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSArray;
+@class <FTPushHandlerDelegate>, NSArray, NSData;
 
 @interface FTPushHandler : NSObject {
     id _delegate;
@@ -10,10 +10,10 @@
     NSArray *_topics;
 }
 
-@property <FTPushHandlerDelegate> *delegate;
-@property(readonly) NSData *pushToken;
-@property(readonly) NSArray *topics;
+@property <FTPushHandlerDelegate> * delegate;
+@property(readonly) NSData * pushToken;
 @property BOOL registered;
+@property(readonly) NSArray * topics;
 
 + (id)alloc;
 

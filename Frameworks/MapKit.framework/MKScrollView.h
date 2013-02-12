@@ -5,7 +5,7 @@
 @class CALayer, MKUserLocationView, NSArray;
 
 @interface MKScrollView : UIScrollView {
-    struct $_717 { 
+    struct $_710 { 
         unsigned int shouldHandleTouchesMoved : 1; 
         unsigned int layoutScrollViewSubviews : 1; 
         unsigned int touchesBegan : 1; 
@@ -17,16 +17,16 @@
     } _delegateImplements;
     BOOL _displayingHitDetectionLayer;
     BOOL _enableBoundsHitDetection;
-    NSUInteger _gestureCount;
+    unsigned int _gestureCount;
     double _lastGestureEndedInterval;
     id _mk_delegate;
     MKUserLocationView *_userLocationView;
 }
 
-@property(retain) MKUserLocationView *userLocationView;
 @property BOOL enableBoundsHitDetection;
-@property(readonly) NSUInteger gestureCount;
+@property(readonly) unsigned int gestureCount;
 @property(readonly) double lastGestureEndedInterval;
+@property(retain) MKUserLocationView * userLocationView;
 
 + (void)_initializeSafeCategory;
 
@@ -49,7 +49,7 @@
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (BOOL)enableBoundsHitDetection;
-- (NSUInteger)gestureCount;
+- (unsigned int)gestureCount;
 - (void)hideBoundsHitDetectionLayers;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (double)lastGestureEndedInterval;
@@ -60,6 +60,7 @@
 - (void)setEnableBoundsHitDetection:(BOOL)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setUserLocationView:(id)arg1;
+- (void)stopSmoothScroll;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

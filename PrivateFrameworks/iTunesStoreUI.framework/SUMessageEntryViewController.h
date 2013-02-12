@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUMessageEntryViewControllerDelegate>, NSArray, SUMessageEntryView, UIImagePickerController;
+@class <SUMessageEntryViewControllerDelegate>, NSArray, NSString, SUMessageEntryView, UIImagePickerController;
 
 @interface SUMessageEntryViewController : SUViewController <SUMessageEntryViewDelegate> {
     <SUMessageEntryViewControllerDelegate> *_delegate;
@@ -11,11 +11,11 @@
     SUMessageEntryView *_messageEntryView;
 }
 
-@property <SUMessageEntryViewControllerDelegate> *delegate;
-@property(copy) NSArray *imagePickerMediaTypes;
-@property(copy) NSString *sendButtonTitle;
+@property <SUMessageEntryViewControllerDelegate> * delegate;
+@property(copy) NSArray * imagePickerMediaTypes;
 @property(getter=isPhotoButtonEnabled) BOOL photoButtonEnabled;
 @property(getter=isSendButtonEnabled) BOOL sendButtonEnabled;
+@property(copy) NSString * sendButtonTitle;
 
 - (BOOL)_allowsCamera;
 - (BOOL)_allowsVideoCamera;
@@ -23,8 +23,8 @@
 - (id)_messageEntryView;
 - (void)_promptForSourceType;
 - (void)_reloadMessageEntryView;
-- (void)_showImagePickerForSourceType:(NSUInteger)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)_showImagePickerForSourceType:(unsigned int)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)clearMessage;
 - (id)copyMessagePartsWithUTI:(id)arg1;
 - (id)copyScriptViewController;

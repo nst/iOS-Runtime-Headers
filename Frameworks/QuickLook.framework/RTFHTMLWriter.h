@@ -11,7 +11,7 @@
     RTF_OIXMLElement *_currentTableParagraph;
     BOOL _inited;
     NSMutableArray *_rowStack;
-    NSInteger _state;
+    int _state;
     NSMutableArray *_tableStack;
     NSMutableArray *_textBuffer;
 }

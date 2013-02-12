@@ -18,8 +18,8 @@
 
 - (void)_dismissSavingDataAlert;
 - (void)_presentNotesController;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)booleanPropertyWithSpecifier:(id)arg1;
 - (void)dealloc;
 - (id)diagnosticSpecifiers;

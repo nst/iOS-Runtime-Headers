@@ -16,10 +16,10 @@
     NSString *_text;
 }
 
-@property(retain) UIImage *image;
-@property(retain) NSString *text;
-@property CGSize contentsSize;
+@property struct CGSize { float width; float height; } contentsSize;
+@property(retain) UIImage * image;
 @property BOOL labelIsVisible;
+@property(retain) NSString * text;
 
 + (void)_initializeSafeCategory;
 

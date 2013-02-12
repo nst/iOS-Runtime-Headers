@@ -8,7 +8,7 @@
     NSString *_key;
     SEL _selector;
     id _selectorOrBlock;
-    NSUInteger _sortDescriptorFlags;
+    unsigned int _sortDescriptorFlags;
 }
 
 + (id)_defaultSelectorName;
@@ -24,7 +24,7 @@
 - (void)_setSelectorName:(id)arg1;
 - (BOOL)ascending;
 - (id)comparator;
-- (NSInteger)compareObject:(id)arg1 toObject:(id)arg2;
+- (int)compareObject:(id)arg1 toObject:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

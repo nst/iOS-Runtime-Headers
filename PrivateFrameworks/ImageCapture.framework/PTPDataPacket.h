@@ -11,12 +11,12 @@
     long long _bufferSize;
     long long _bytesTransferred;
     id _data;
-    NSInteger _fd;
+    int _fd;
     NSString *_filepath;
     long long _offsetInBuffer;
     unsigned short _operationCode;
     } _range;
-    NSUInteger _transactionID;
+    unsigned int _transactionID;
 }
 
 - (long long)bufferSize;
@@ -41,7 +41,7 @@
 - (void)setBytesTransferred:(long long)arg1;
 - (void)setData:(id)arg1;
 - (void)setOperationCode:(unsigned short)arg1;
-- (NSInteger)setRange:(struct _PTPRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (int)setRange:(struct _PTPRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTransactionID:(unsigned long)arg1;
 - (unsigned long)transactionID;
 

@@ -5,7 +5,7 @@
 @interface CFXPreferencesSource : NSObject {
     struct __CFDictionary { } *_dict;
     BOOL _disabled;
-    NSInteger _generationCount;
+    int _generationCount;
 }
 
 - (struct __CFDictionary { }*)copyDictionary;

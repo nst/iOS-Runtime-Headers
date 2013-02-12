@@ -5,7 +5,7 @@
 @class WDTableCellProperties, WDTableRow, WDText;
 
 @interface WDTableCell : NSObject {
-    NSInteger mIndex;
+    int mIndex;
     WDTableCellProperties *mProperties;
     WDTableRow *mRow;
     WDText *mText;
@@ -14,10 +14,10 @@
 
 - (double)cellWidth;
 - (void)clearProperties;
-- (NSInteger)compareIndex:(id)arg1;
+- (int)compareIndex:(id)arg1;
 - (void)dealloc;
-- (NSInteger)index;
-- (id)initWithRow:(id)arg1 at:(NSInteger)arg2;
+- (int)index;
+- (id)initWithRow:(id)arg1 at:(int)arg2;
 - (id)properties;
 - (id)row;
 - (void)setUseTrackedProperties:(BOOL)arg1;

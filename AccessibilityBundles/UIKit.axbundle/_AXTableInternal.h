@@ -9,8 +9,8 @@
     NSMutableDictionary *_children;
 }
 
-@property(readonly) NSMutableDictionary *children;
 @property id accessoryView;
+@property(readonly) NSMutableDictionary * children;
 
 - (id)accessoryView;
 - (id)children;

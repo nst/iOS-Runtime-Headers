@@ -12,14 +12,15 @@
 
 - (void)_clearName;
 - (BOOL)_isNameCached;
-- (void)acceptSSP:(NSInteger)arg1;
+- (void)acceptSSP:(int)arg1;
 - (id)address;
-- (NSInteger)batteryLevel;
-- (NSInteger)compare:(id)arg1;
+- (int)batteryLevel;
+- (int)compare:(id)arg1;
 - (void)connect;
+- (void)connectWithServices:(unsigned int)arg1;
 - (BOOL)connected;
-- (NSUInteger)connectedServices;
-- (NSUInteger)connectedServicesCount;
+- (unsigned int)connectedServices;
+- (unsigned int)connectedServicesCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -28,22 +29,22 @@
 - (void)endVoiceCommand;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
 - (BOOL)isAccessory;
-- (BOOL)isServiceSupported:(NSUInteger)arg1;
-- (NSUInteger)majorClass;
-- (NSUInteger)minorClass;
+- (BOOL)isServiceSupported:(unsigned int)arg1;
+- (unsigned int)majorClass;
+- (unsigned int)minorClass;
 - (id)name;
 - (BOOL)paired;
 - (id)scoUID;
-- (void)setAuthorizedServices:(NSUInteger)arg1;
+- (void)setAuthorizedServices:(unsigned int)arg1;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
 - (void)setPIN:(id)arg1;
-- (void)setSyncGroup:(NSInteger)arg1 enabled:(BOOL)arg2;
+- (void)setSyncGroup:(int)arg1 enabled:(BOOL)arg2;
 - (void)setSyncSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })arg1;
 - (void)startVoiceCommand;
 - (BOOL)supportsBatteryLevel;
 - (id)syncGroups;
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })syncSettings;
-- (NSInteger)type;
+- (int)type;
 - (void)unpair;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface CHDBar3DSeries : CHDSeries {
-    NSInteger mShapeType;
+    int mShapeType;
 }
 
 - (id)init;
-- (void)setShapeType:(NSInteger)arg1;
+- (void)setShapeType:(int)arg1;
 - (id)shallowCopy;
-- (NSInteger)shapeType;
+- (int)shapeType;
 
 @end

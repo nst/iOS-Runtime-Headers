@@ -4,8 +4,8 @@
 
 @interface SCROBrailleDisplayHistory : NSObject {
     struct __CFArray { } *_announcements;
-    NSInteger _currentIndex;
-    NSInteger _unreadCount;
+    int _currentIndex;
+    int _unreadCount;
     struct __CFArray { } *_unreadSnapshot;
 }
 

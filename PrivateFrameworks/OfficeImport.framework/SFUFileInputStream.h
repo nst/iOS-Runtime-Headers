@@ -5,7 +5,7 @@
 @interface SFUFileInputStream : NSObject <SFUInputStream> {
     long long mCurrentOffset;
     long long mEndOffset;
-    NSInteger mFd;
+    int mFd;
     BOOL mIsCachingDisabled;
     long long mStartOffset;
 }
@@ -16,7 +16,7 @@
 - (void)dealloc;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
-- (id)initWithFileDescriptor:(NSInteger)arg1 offset:(long long)arg2 length:(long long)arg3;
+- (id)initWithFileDescriptor:(int)arg1 offset:(long long)arg2 length:(long long)arg3;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2 length:(long long)arg3;
 - (id)initWithPath:(id)arg1 offset:(long long)arg2;
 - (long long)offset;

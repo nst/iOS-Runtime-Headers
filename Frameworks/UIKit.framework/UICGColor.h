@@ -12,7 +12,7 @@
 - (id)colorWithAlphaComponent:(float)arg1;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPatternColor;

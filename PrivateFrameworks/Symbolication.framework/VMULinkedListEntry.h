@@ -7,7 +7,7 @@
 @interface VMULinkedListEntry : NSObject {
     VMULinkedListEntry *_next;
     VMULinkedListEntry *_prev;
-    NSUInteger _size;
+    unsigned int _size;
     VMUSymbolOwner *_symbolOwner;
 }
 
@@ -20,7 +20,7 @@
 - (id)prev;
 - (void)setNext:(id)arg1;
 - (void)setPrev:(id)arg1;
-- (NSUInteger)size;
+- (unsigned int)size;
 - (id)symbolOwner;
 
 @end

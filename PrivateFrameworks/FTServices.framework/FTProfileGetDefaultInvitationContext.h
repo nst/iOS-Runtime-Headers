@@ -11,9 +11,9 @@
     BOOL _responseValidated;
 }
 
-@property(copy) NSString *responseBasePhoneNumber;
-@property(copy) NSDictionary *responseExtraInfo;
-@property(copy) NSString *responseRegionID;
+@property(copy) NSString * responseBasePhoneNumber;
+@property(copy) NSDictionary * responseExtraInfo;
+@property(copy) NSString * responseRegionID;
 @property BOOL responseValidated;
 
 - (id)bagKey;

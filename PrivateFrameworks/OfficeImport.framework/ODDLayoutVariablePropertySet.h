@@ -3,15 +3,15 @@
  */
 
 @interface ODDLayoutVariablePropertySet : OADProperties {
-    NSInteger mDirection;
+    int mDirection;
     BOOL mHasDirection;
 }
 
 + (id)defaultProperties;
 
-- (NSInteger)direction;
+- (int)direction;
 - (BOOL)hasDirection;
 - (id)initWithDefaults;
-- (void)setDirection:(NSInteger)arg1;
+- (void)setDirection:(int)arg1;
 
 @end

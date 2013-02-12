@@ -5,24 +5,26 @@
 @interface ABTabletStyleProvider : ABStyleProvider {
 }
 
-- (NSInteger)cardActionButtonType;
+- (int)abCellStyleForGroupsTablePlain;
+- (int)abCellStyleForMembersTable;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonImageInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonTitleSingleLineInsets;
 - (id)cardTableCellBorderColor;
-- (NSInteger)composeModalPresentationStyle;
+- (int)composeModalPresentationStyle;
 - (id)editorViewColor;
 - (id)editorViewLargeFont;
 - (id)editorViewSmallFont;
-- (NSInteger)headerViewBorderStyle;
 - (BOOL)labelPickerShouldPushCustomLabelCreator;
+- (id)membersHeaderBackgroundColor;
+- (BOOL)membersSearchBarScrolls;
 - (id)personActionColor;
 - (id)personActionFont;
 - (float)personEditorFieldVerticalInset;
 - (id)personHeaderPasteboardColor;
 - (id)personHeaderShadowColor;
-- (struct CGSize { float x1; float x2; })personHeaderShadowOffset;
 - (id)personLabelColor;
 - (id)personLabelFont;
 - (float)personLabelFontMinSize;
-- (BOOL)personTableHasTopShadow;
 - (id)personValueColor;
 - (id)personValueEmphasizedColor;
 - (float)personValueFontMinSize;
@@ -31,7 +33,8 @@
 - (float)personViewHorizontalCellInset;
 - (BOOL)searchControllerForceKeyboardDisplayEnabled;
 - (BOOL)searchIsAlwaysActive;
+- (int)separatorStyleForCellStyle:(int)arg1;
 - (BOOL)serverSearchNavigationBarHidingEnabled;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

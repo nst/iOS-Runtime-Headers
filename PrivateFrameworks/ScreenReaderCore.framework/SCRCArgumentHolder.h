@@ -11,9 +11,9 @@
 - (SEL)action;
 - (id)argument;
 - (id)argumentDescription;
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (void)dealloc;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isRequired;

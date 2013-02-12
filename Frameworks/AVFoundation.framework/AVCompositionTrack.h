@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCompositionTrackInternal;
+@class AVCompositionTrackInternal, NSArray;
 
 @interface AVCompositionTrack : AVAssetTrack {
     AVCompositionTrackInternal *_priv;
 }
 
-@property(copy,readonly) NSArray *segments;
+@property(copy,readonly) NSArray * segments;
 
-- (id)_initWithAsset:(id)arg1 trackID:(NSInteger)arg2 trackIndex:(long)arg3;
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (void)dealloc;
 - (void)finalize;

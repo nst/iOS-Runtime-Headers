@@ -7,7 +7,7 @@
 @interface AVCaptureSessionInternal : NSObject {
     NSMutableArray *activeConnections;
     AVCaptureFigAudioDevice *audioDevice;
-    NSInteger beginConfigRefCount;
+    int beginConfigRefCount;
     NSMutableDictionary *captureOptions;
     NSMutableArray *connections;
     NSMutableArray *inputs;
@@ -27,7 +27,6 @@
     BOOL waitingForRecorderDidStopPreviewing;
     BOOL waitingForRecorderDidStopRecording;
     BOOL waitingForRecorderDidStopSource;
-    BOOL wasPreviewingWhenInterrupted;
     AVWeakReference *weakReference;
 }
 

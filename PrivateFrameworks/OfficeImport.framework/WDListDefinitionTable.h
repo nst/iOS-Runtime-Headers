@@ -9,18 +9,18 @@
     WDListDefinition *mLastKnownGoodListDefinition;
     struct __CFDictionary { } *mListDefinitionMap;
     NSMutableArray *mListDefinitions;
-    NSUInteger mNextIdIndex;
+    unsigned int mNextIdIndex;
 }
 
-- (id)addDefinition:(NSInteger)arg1;
+- (id)addDefinition:(int)arg1;
 - (id)addDefinition;
 - (void)dealloc;
-- (id)definitionAt:(NSInteger)arg1;
-- (NSInteger)definitionCount;
-- (id)definitionWithId:(NSInteger)arg1;
+- (id)definitionAt:(int)arg1;
+- (int)definitionCount;
+- (id)definitionWithId:(int)arg1;
 - (id)document;
 - (id)initWithDocument:(id)arg1;
-- (NSInteger)nextId;
+- (int)nextId;
 - (void)setLastKnowGoodListDefinition:(id)arg1;
 
 @end

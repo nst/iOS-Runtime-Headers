@@ -11,7 +11,7 @@
 - (void)dealloc;
 - (id)initWithParticipant:(id)arg1;
 - (void)setParticipant:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 
 @end

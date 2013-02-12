@@ -8,7 +8,7 @@
     NSArray *_columnCells;
 }
 
-@property(retain) NSArray *columnCells;
+@property(retain) NSArray * columnCells;
 
 - (id)columnCells;
 - (void)dealloc;

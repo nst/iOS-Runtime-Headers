@@ -2,51 +2,40 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDAlignmentInfo : NSObject <NSCopying, EDImmutableObject> {
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-    NSInteger mHorizontalAlignment;
-    NSInteger mIndent;
-    NSInteger mTextRotation;
-    NSInteger mVerticalAlignment;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDoNotModify;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHorizontalAlignOverridden;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIndentOverridden;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mTextWrapped;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mTextWrappedOveridden;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mVerticalAlignOverridden;
+    boolmDoNotModify;
+    boolmHorizontalAlignOverridden;
+    boolmIndentOverridden;
+    boolmTextWrapped;
+    boolmTextWrappedOveridden;
+    boolmVerticalAlignOverridden;
+    int mHorizontalAlignment;
+    int mIndent;
+    int mTextRotation;
+    int mVerticalAlignment;
 }
 
 + (id)alignmentInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
-- (NSInteger)horizontalAlignment;
-- (NSInteger)indent;
+- (unsigned int)hash;
+- (int)horizontalAlignment;
+- (int)indent;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToAlignmentInfo:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHorizontalAlignOverridden;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isIndentOverridden;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isTextWrapped;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isTextWrappedOverridden;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isVerticalAlignOverridden;
-- (void)setDoNotModify:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setHorizontalAlignment:(NSInteger)arg1;
-- (void)setIndent:(NSInteger)arg1;
-- (void)setTextRotation:(NSInteger)arg1;
-- (void)setTextWrapped:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setVerticalAlignment:(NSInteger)arg1;
-- (NSInteger)textRotation;
-- (NSInteger)verticalAlignment;
+- (bool)isHorizontalAlignOverridden;
+- (bool)isIndentOverridden;
+- (bool)isTextWrapped;
+- (bool)isTextWrappedOverridden;
+- (bool)isVerticalAlignOverridden;
+- (void)setDoNotModify:(bool)arg1;
+- (void)setHorizontalAlignment:(int)arg1;
+- (void)setIndent:(int)arg1;
+- (void)setTextRotation:(int)arg1;
+- (void)setTextWrapped:(bool)arg1;
+- (void)setVerticalAlignment:(int)arg1;
+- (int)textRotation;
+- (int)verticalAlignment;
 
 @end

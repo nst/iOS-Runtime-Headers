@@ -8,8 +8,8 @@
     NSMutableArray *_routes;
 }
 
-@property(retain) NSMutableArray *routes;
-@property(readonly) NSInteger routesCount;
+@property(retain) NSMutableArray * routes;
+@property(readonly) int routesCount;
 
 - (void)addRoute:(id)arg1;
 - (void)dealloc;
@@ -18,10 +18,10 @@
 - (id)dictionaryRepresentation;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (id)routeAtIndex:(NSUInteger)arg1;
+- (id)routeAtIndex:(unsigned int)arg1;
 - (id)routes;
-- (NSInteger)routesCount;
-- (void)setRoute:(id)arg1 atIndex:(NSUInteger)arg2;
+- (int)routesCount;
+- (void)setRoute:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setRoutes:(id)arg1;
 - (void)writeTo:(id)arg1;
 

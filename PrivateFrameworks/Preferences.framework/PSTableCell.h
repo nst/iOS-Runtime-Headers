@@ -8,18 +8,18 @@
     UIView *_bottomEtchLine;
     BOOL _etch;
     UIView *_topEtchLine;
-    NSInteger _type;
+    int _type;
     PSSpecifier *_userInfo;
 }
 
-@property NSInteger type;
+@property int type;
 
 + (id)NewBottomEtchLineView;
 + (id)NewTopEtchLineView;
-+ (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 type:(NSInteger)arg3;
++ (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 type:(int)arg3;
 + (void)_initializeSafeCategory;
 + (void)_setAccessibilityData:(id)arg1 onCell:(id)arg2;
-+ (NSInteger)cellTypeFromString:(id)arg1;
++ (int)cellTypeFromString:(id)arg1;
 + (id)cellWithSpecifier:(id)arg1;
 + (id)groupHeaderCellWithSpecifier:(id)arg1;
 + (void)refreshCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
@@ -48,7 +48,7 @@
 - (id)accessibilityValue;
 - (BOOL)canReload;
 - (void)dealloc;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
@@ -56,11 +56,11 @@
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setIcon:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
 - (id)titleTextLabel;
-- (NSInteger)type;
+- (int)type;
 - (id)userInfo;
 - (void)willMoveToSuperview:(id)arg1;
 

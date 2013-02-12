@@ -6,7 +6,7 @@
     id _internal;
 }
 
-@property(readonly) ? acceleration;
+@property(readonly) struct { double x; double y; double z; } acceleration;
 
 - (struct { double x1; double x2; double x3; })acceleration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

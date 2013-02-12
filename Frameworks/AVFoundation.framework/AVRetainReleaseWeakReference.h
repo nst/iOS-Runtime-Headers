@@ -8,7 +8,7 @@
     NSString *_cachedReferencedObjectDescription;
     struct dispatch_queue_s { } *_readWriteDispatchQueue;
     id _referencedObject;
-    NSInteger _referencedObjectRetainCount;
+    int _referencedObjectRetainCount;
 }
 
 - (void)dealloc;

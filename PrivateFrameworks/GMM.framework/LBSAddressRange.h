@@ -15,20 +15,20 @@
     NSString *_suffix;
 }
 
-@property(retain) NSMutableArray *numbers;
-@property(retain) NSMutableArray *parameters;
-@property(retain) NSString *prefix;
-@property(retain) NSString *suffix;
 @property(readonly) BOOL hasParameter_is_synthesized;
 @property(readonly) BOOL hasPrefix;
 @property(readonly) BOOL hasSame_parity;
 @property(readonly) BOOL hasSuffix;
-@property(readonly) NSInteger numbersCount;
+@property(retain) NSMutableArray * numbers;
+@property(readonly) int numbersCount;
 @property BOOL parameter_is_synthesized;
-@property(readonly) NSInteger parametersCount;
+@property(retain) NSMutableArray * parameters;
+@property(readonly) int parametersCount;
+@property(retain) NSString * prefix;
 @property BOOL same_parity;
+@property(retain) NSString * suffix;
 
-- (void)addNumber:(NSInteger)arg1;
+- (void)addNumber:(int)arg1;
 - (void)addParameter:(float)arg1;
 - (void)dealloc;
 - (id)description;
@@ -38,19 +38,19 @@
 - (BOOL)hasSame_parity;
 - (BOOL)hasSuffix;
 - (id)init;
-- (NSInteger)numberAtIndex:(NSUInteger)arg1;
+- (int)numberAtIndex:(unsigned int)arg1;
 - (id)numbers;
-- (NSInteger)numbersCount;
-- (float)parameterAtIndex:(NSUInteger)arg1;
+- (int)numbersCount;
+- (float)parameterAtIndex:(unsigned int)arg1;
 - (BOOL)parameter_is_synthesized;
 - (id)parameters;
-- (NSInteger)parametersCount;
+- (int)parametersCount;
 - (id)prefix;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)same_parity;
-- (void)setNumber:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
+- (void)setNumber:(int)arg1 atIndex:(unsigned int)arg2;
 - (void)setNumbers:(id)arg1;
-- (void)setParameter:(float)arg1 atIndex:(NSUInteger)arg2;
+- (void)setParameter:(float)arg1 atIndex:(unsigned int)arg2;
 - (void)setParameter_is_synthesized:(BOOL)arg1;
 - (void)setParameters:(id)arg1;
 - (void)setPrefix:(id)arg1;

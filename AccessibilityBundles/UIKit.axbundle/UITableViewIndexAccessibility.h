@@ -8,6 +8,7 @@
 + (void)_initializeSafeCategory;
 
 - (void)_accessibilityBumpValue:(BOOL)arg1;
+- (id)_accessibilityIndexData;
 - (void)_selectSectionForTouch:(id)arg1 withEvent:(id)arg2;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
 - (void)accessibilityDecrement;

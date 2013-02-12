@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GMMNewRoute, MKRouteStep, NSMutableArray;
+@class GMMNewRoute, MKDate, MKRouteStep, MKSearchResult, NSArray, NSDictionary, NSMutableArray, NSString;
 
 @interface MKRoute : NSObject <MKOverlay> {
     struct { 
@@ -17,8 +17,8 @@
     } _boundingMapRect;
     BOOL _displaysDistanceInMetric;
     struct { double x1; double x2; } *_mapPoints;
-    NSInteger _mode;
-    NSUInteger _pointCount;
+    int _mode;
+    unsigned int _pointCount;
     struct { double x1; double x2; } *_points;
     MKRouteStep *_previousStep;
     GMMNewRoute *_route;
@@ -27,40 +27,40 @@
     NSMutableArray *_steps;
 }
 
-@property(readonly) NSString *abbreviatedTravelTime;
-@property(readonly) NSString *abbreviatedTravelTimeWithTraffic;
-@property(readonly) MKDate *arrivalDate;
-@property(readonly) NSString *cost;
-@property(readonly) MKDate *departureDate;
-@property(readonly) NSDictionary *dictionaryRepresentation;
-@property(readonly) NSString *distanceSummary;
-@property(readonly) MKSearchResult *endSearchResult;
-@property(readonly) NSString *expandedDistance;
-@property(readonly) NSString *expandedTravelTime;
-@property(readonly) NSString *expandedTravelTimeWithTraffic;
-@property(readonly) MKRouteStep *firstMiddleStep;
-@property(readonly) MKRouteStep *lastMiddleStep;
-@property(readonly) ? *mapPoints;
-@property(readonly) ? *points;
-@property(readonly) MKRouteStep *previousStep;
-@property(readonly) NSArray *simplifiedSteps;
-@property(readonly) MKSearchResult *startSearchResult;
-@property(retain) MKRouteStep *step;
-@property(readonly) NSArray *steps;
-@property(readonly) ? boundingMapRect;
-@property(readonly) ? coordinate;
-@property(readonly) NSInteger durationSeconds;
-@property(readonly) ? endCoordinate;
+@property(readonly) NSString * abbreviatedTravelTime;
+@property(readonly) NSString * abbreviatedTravelTimeWithTraffic;
+@property(readonly) MKDate * arrivalDate;
+@property(readonly) struct { struct { double x; double y; } origin; struct { double width; double height; } size; } boundingMapRect;
+@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property(readonly) NSString * cost;
+@property(readonly) MKDate * departureDate;
+@property(readonly) NSDictionary * dictionaryRepresentation;
+@property(readonly) NSString * distanceSummary;
+@property(readonly) int durationSeconds;
+@property(readonly) struct { double latitude; double longitude; } endCoordinate;
+@property(readonly) MKSearchResult * endSearchResult;
+@property(readonly) NSString * expandedDistance;
+@property(readonly) NSString * expandedTravelTime;
+@property(readonly) NSString * expandedTravelTimeWithTraffic;
+@property(readonly) MKRouteStep * firstMiddleStep;
 @property(readonly) BOOL hasTraffic;
-@property(readonly) NSInteger mode;
-@property(readonly) NSUInteger pointCount;
-@property(readonly) ? startCoordinate;
+@property(readonly) MKRouteStep * lastMiddleStep;
+@property(readonly) struct { double x1; double x2; }* mapPoints;
+@property(readonly) int mode;
+@property(readonly) unsigned int pointCount;
+@property(readonly) struct { double x1; double x2; }* points;
+@property(readonly) MKRouteStep * previousStep;
+@property(readonly) NSArray * simplifiedSteps;
+@property(readonly) struct { double latitude; double longitude; } startCoordinate;
+@property(readonly) MKSearchResult * startSearchResult;
+@property(retain) MKRouteStep * step;
+@property(readonly) NSArray * steps;
 
 - (void)_createSteps;
 - (BOOL)_createTransitStepsWithEndSearchResult:(id)arg1;
 - (id)_initWithRoute:(id)arg1 response:(id)arg2 startSearchResult:(id)arg3 endSearchResult:(id)arg4 dictionaryRepresentation:(id)arg5;
 - (id)_initWithRoute:(id)arg1 response:(id)arg2 startSearchResult:(id)arg3 endSearchResult:(id)arg4;
-- (id)_timeForSeconds:(NSUInteger)arg1 withTraffic:(BOOL)arg2 abbreviated:(BOOL)arg3;
+- (id)_timeForSeconds:(unsigned int)arg1 withTraffic:(BOOL)arg2 abbreviated:(BOOL)arg3;
 - (id)abbreviatedTravelTime;
 - (id)abbreviatedTravelTimeWithTraffic;
 - (id)arrivalDate;
@@ -74,7 +74,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)distanceSummary;
-- (NSInteger)durationSeconds;
+- (int)durationSeconds;
 - (struct { double x1; double x2; })endCoordinate;
 - (id)endSearchResult;
 - (id)expandedDistance;
@@ -85,8 +85,8 @@
 - (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)lastMiddleStep;
 - (struct { double x1; double x2; }*)mapPoints;
-- (NSInteger)mode;
-- (NSUInteger)pointCount;
+- (int)mode;
+- (unsigned int)pointCount;
 - (struct { double x1; double x2; }*)points;
 - (id)previousStep;
 - (void)resetStep;

@@ -13,10 +13,10 @@
     struct __SCDynamicStore { } *_store;
 }
 
-@property(readonly) __SCDynamicStore *getDynamicStore;
-@property(readonly) NSString *myIPAddress;
-@property(readonly) NSArray *myIPAddresses;
+@property(readonly) struct __SCDynamicStore { }* getDynamicStore;
 @property(readonly) BOOL isNetworkUp;
+@property(readonly) NSString * myIPAddress;
+@property(readonly) NSArray * myIPAddresses;
 @property(readonly) unsigned short nextAvailablePort;
 
 + (void)disableNotifications;

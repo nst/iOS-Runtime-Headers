@@ -2,21 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSString;
+@class MPMediaQuery, NSArray, NSString;
 
 @interface SUScriptMediaQuery : SUScriptObject {
     NSArray *_collections;
     NSArray *_filterPredicates;
-    NSString *_groupingType;
     NSArray *_items;
     BOOL _watchingLibrary;
 }
 
-@property(getter=_filterPredicates,retain) id filterPredicates; /* unknown property attribute: Sset_filterPredicates: */
-@property(getter=_groupingType,retain) NSString *groupingType; /* unknown property attribute: Sset_groupingType: */
-@property(getter=_collections,retain,readonly) NSArray *collections;
-@property(getter=_items,retain,readonly) NSArray *items;
-@property(readonly) MPMediaQuery *nativeQuery;
+@property(readonly) NSArray * collections;
+@property(readonly) NSString * comparisonTypeContains;
+@property(readonly) NSString * comparisonTypeEquals;
+@property(copy) id filterPredicates;
+@property(copy) NSString * groupingType;
+@property(readonly) NSString * groupingTypeAlbum;
+@property(readonly) NSString * groupingTypeAlbumArtist;
+@property(readonly) NSString * groupingTypeArtist;
+@property(readonly) NSString * groupingTypeComposer;
+@property(readonly) NSString * groupingTypeGenre;
+@property(readonly) NSString * groupingTypePlaylist;
+@property(readonly) NSString * groupingTypePodcastTitle;
+@property(readonly) NSString * groupingTypeTitle;
+@property(readonly) NSArray * items;
+@property(readonly) MPMediaQuery * nativeQuery;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
@@ -25,28 +34,38 @@
 - (void)_beginWatchingLibraryIfNecessary;
 - (BOOL)_canFilterByProperty:(id)arg1;
 - (id)_className;
-- (id)_collections;
 - (id)_copyCollections;
 - (id)_copyFilterPredicates;
 - (id)_copyGroupingType;
 - (id)_copyItems;
-- (id)_filterPredicates;
-- (id)_groupingType;
-- (id)_items;
 - (void)_libraryChangedNotification:(id)arg1;
 - (void)_removeFilterPredicate:(id)arg1;
 - (void)_resetCaches;
 - (void)_setFilterPredicates:(id)arg1;
 - (void)_setGroupingType:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
+- (id)attributeKeys;
 - (id)canFilterByProperty:(id)arg1;
+- (id)collections;
+- (id)comparisonTypeContains;
+- (id)comparisonTypeEquals;
 - (void)dealloc;
+- (id)filterPredicates;
+- (id)groupingType;
+- (id)groupingTypeAlbum;
+- (id)groupingTypeAlbumArtist;
+- (id)groupingTypeArtist;
+- (id)groupingTypeComposer;
+- (id)groupingTypeGenre;
+- (id)groupingTypePlaylist;
+- (id)groupingTypePodcastTitle;
+- (id)groupingTypeTitle;
+- (id)items;
 - (id)makeFilterPredicateWithProperty:(id)arg1 value:(id)arg2 comparisonType:(id)arg3;
 - (id)nativeQuery;
 - (void)removeFilterPredicate:(id)arg1;
-- (void)set_collections:(id)arg1;
-- (void)set_filterPredicates:(id)arg1;
-- (void)set_groupingType:(id)arg1;
-- (void)set_items:(id)arg1;
+- (id)scriptAttributeKeys;
+- (void)setFilterPredicates:(id)arg1;
+- (void)setGroupingType:(id)arg1;
 
 @end

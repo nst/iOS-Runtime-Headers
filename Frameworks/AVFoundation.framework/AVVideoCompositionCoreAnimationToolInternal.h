@@ -6,9 +6,9 @@
 
 @interface AVVideoCompositionCoreAnimationToolInternal : NSObject {
     CALayer *animationLayer;
-    NSInteger auxiliaryTrackID;
+    int auxiliaryTrackID;
     CALayer *postProcessingVideoLayer;
-    NSInteger way;
+    int way;
 }
 
 @end

@@ -9,7 +9,7 @@
     BOOL automaticallyDetectsCacheModel;
     BOOL autosaves;
     NSString *identifier;
-    NSUInteger numWebViews;
+    unsigned int numWebViews;
     NSMutableDictionary *values;
 }
 

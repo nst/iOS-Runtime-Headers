@@ -9,8 +9,8 @@
     NSString *m_name;
 }
 
-@property(retain) NSMutableArray *keylists;
-@property(retain) NSString *name;
+@property(retain) NSMutableArray * keylists;
+@property(retain) NSString * name;
 
 + (id)keyset;
 

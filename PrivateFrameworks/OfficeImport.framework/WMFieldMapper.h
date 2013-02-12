@@ -6,8 +6,8 @@
 
 @interface WMFieldMapper : WMParagraphMapper {
     NSMutableString *mLinkRef;
-    NSInteger mMode;
-    NSUInteger mType;
+    int mMode;
+    unsigned int mType;
 }
 
 - (id)initWithWDFieldMarker:(id)arg1 parent:(id)arg2;

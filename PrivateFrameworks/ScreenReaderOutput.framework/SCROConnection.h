@@ -4,11 +4,11 @@
 
 @interface SCROConnection : NSObject {
     id _delegate;
-    NSInteger _handlerType;
-    NSUInteger _identifier;
+    int _handlerType;
+    unsigned int _identifier;
     struct __CFRunLoopSource { } *_invalidationSource;
     BOOL _isConnectionStarted;
-    NSUInteger _pingPort;
+    unsigned int _pingPort;
     struct __CFRunLoopSource { } *_pingSource;
 }
 
@@ -22,13 +22,13 @@
 - (void)_startConnection;
 - (void)_stopConnection;
 - (void)dealloc;
-- (id)handlerValueForKey:(NSInteger)arg1 withObject:(id)arg2;
-- (id)handlerValueForKey:(NSInteger)arg1;
-- (id)initWithHandlerType:(NSInteger)arg1 delegate:(id)arg2;
+- (id)handlerValueForKey:(int)arg1 withObject:(id)arg2;
+- (id)handlerValueForKey:(int)arg1;
+- (id)initWithHandlerType:(int)arg1 delegate:(id)arg2;
 - (void)invalidate;
-- (NSInteger)performHandlerActionForKey:(NSInteger)arg1;
-- (NSInteger)registerHandlerCallbackForKey:(NSInteger)arg1;
-- (NSInteger)sendEvent:(id)arg1;
-- (NSInteger)setHandlerValue:(id)arg1 forKey:(NSInteger)arg2;
+- (int)performHandlerActionForKey:(int)arg1;
+- (int)registerHandlerCallbackForKey:(int)arg1;
+- (int)sendEvent:(id)arg1;
+- (int)setHandlerValue:(id)arg1 forKey:(int)arg2;
 
 @end

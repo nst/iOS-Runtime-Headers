@@ -5,6 +5,6 @@
 @interface GQDSStyleProperties : NSObject {
 }
 
-+ (NSInteger)propertyFromString:(const char *)arg1;
++ (int)propertyFromString:(const char *)arg1;
 
 @end

@@ -6,12 +6,12 @@
 
 @interface CPListItem : NSObject <CPDisposable> {
     CPList *list;
-    NSInteger number;
+    int number;
     struct __CFArray { } *paragraphs;
 }
 
-@property(retain) CPList *list;
-@property NSInteger number;
+@property(retain) CPList * list;
+@property int number;
 
 - (void)addParagraph:(id)arg1;
 - (void)dealloc;
@@ -19,10 +19,10 @@
 - (void)finalize;
 - (id)init;
 - (id)list;
-- (NSInteger)number;
-- (id)paragraphAtIndex:(NSUInteger)arg1;
-- (NSUInteger)paragraphCount;
+- (int)number;
+- (id)paragraphAtIndex:(unsigned int)arg1;
+- (unsigned int)paragraphCount;
 - (void)setList:(id)arg1;
-- (void)setNumber:(NSInteger)arg1;
+- (void)setNumber:(int)arg1;
 
 @end

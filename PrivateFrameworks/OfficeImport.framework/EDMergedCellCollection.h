@@ -5,8 +5,8 @@
 @interface EDMergedCellCollection : EDCollection {
 }
 
-- (NSUInteger)addObject:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
-- (id)referenceContainingRow:(NSInteger)arg1 column:(NSInteger)arg2;
+- (unsigned int)addObject:(id)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)referenceContainingRow:(int)arg1 column:(int)arg2;
 
 @end

@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class <SUMessageTextContentViewDelegate>;
+
 @interface SUMessageTextContentView : UITextContentView {
 }
 
-@property <SUMessageTextContentViewDelegate> *delegate;
+@property <SUMessageTextContentViewDelegate> * delegate;
 
 - (void)_collapseIfNecessary;
 - (BOOL)_hasImages;

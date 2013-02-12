@@ -6,14 +6,14 @@
 
 @interface WebUIGeolocationSupport : NSObject {
     BOOL _allowed;
-    NSInteger _challengeCount;
+    int _challengeCount;
     NSString *_key;
     NSMutableDictionary *_sites;
 }
 
 + (id)sharedWebUIGeolocationSupport;
 
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)clear;
 - (void)load;
 - (void)save;

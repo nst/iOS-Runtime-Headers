@@ -5,6 +5,6 @@
 @interface WBObjectFactory : NSObject {
 }
 
-+ (struct WrdObject { }*)create:(NSInteger)arg1;
++ (struct WrdObject { }*)create:(int)arg1;
 
 @end

@@ -12,15 +12,15 @@
     NSString *_queryRefinementToken;
 }
 
-@property(retain) GMMGeometry *geocode;
-@property(retain) NSString *query;
-@property(retain) NSString *queryRefinementToken;
-@property(readonly) ? coordinate;
+@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property(retain) GMMGeometry * geocode;
 @property(readonly) BOOL hasGeocode;
 @property(readonly) BOOL hasIsVia;
 @property(readonly) BOOL hasQuery;
 @property(readonly) BOOL hasQueryRefinementToken;
 @property BOOL isVia;
+@property(retain) NSString * query;
+@property(retain) NSString * queryRefinementToken;
 
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;

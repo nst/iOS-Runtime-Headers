@@ -5,7 +5,7 @@
 @class NSArray, NSString;
 
 @interface _CPPowerAssertion : NSObject {
-    NSUInteger _assertion;
+    unsigned int _assertion;
     NSString *_identifier;
     NSArray *_stack;
     double _timeout;

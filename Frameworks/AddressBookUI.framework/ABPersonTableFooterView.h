@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, ABPersonTableAction, UIButton, UIView;
+@class <ABStyleProvider>, ABPersonTableAction, NSString, UIButton, UIView;
 
 @interface ABPersonTableFooterView : UIView <ABPersonTableActionDelegate> {
     UIView *_accessoryView;
@@ -13,10 +13,10 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) UIView *accessoryView;
-@property(readonly) NSString *attribution;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property(retain) UIView * accessoryView;
+@property(readonly) NSString * attribution;
 @property(getter=isAttributionEnabled,readonly) BOOL attributionEnabled;
+@property(retain) <ABStyleProvider> * styleProvider;
 @property(getter=isEditing) BOOL tableEditing;
 
 - (id)accessoryView;

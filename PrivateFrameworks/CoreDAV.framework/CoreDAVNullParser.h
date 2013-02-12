@@ -8,11 +8,11 @@
     NSError *_parserError;
 }
 
-@property(readonly) NSError *parserError;
+@property(readonly) NSError * parserError;
 
 - (void)dealloc;
-- (id)init;
 - (id)parserError;
 - (BOOL)processData:(id)arg1;
+- (BOOL)task:(id)arg1 receivedData:(id)arg2;
 
 @end

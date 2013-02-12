@@ -10,23 +10,24 @@
         float d; 
         float tx; 
         float ty; 
-    NSInteger _newStatusBarMode;
+    int _newStatusBarMode;
     } _previewViewTransform;
-    NSInteger _previousStatusBarMode;
+    int _previousStatusBarMode;
 }
 
-- (NSUInteger)_cameraCaptureMode;
-- (NSUInteger)_cameraDevice;
-- (NSInteger)_cameraFlashMode;
+- (unsigned int)_cameraCaptureMode;
+- (unsigned int)_cameraDevice;
+- (int)_cameraFlashMode;
 - (id)_cameraOverlayView;
 - (id)_cameraView;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_cameraViewTransform;
+- (void)_deviceOrientationChanged;
 - (BOOL)_displaysFullScreen;
 - (void)_editabilityChanged:(id)arg1;
-- (NSInteger)_imagePickerStatusBarMode;
-- (void)_setCameraCaptureMode:(NSUInteger)arg1;
-- (void)_setCameraDevice:(NSUInteger)arg1;
-- (void)_setCameraFlashMode:(NSInteger)arg1;
+- (int)_imagePickerStatusBarMode;
+- (void)_setCameraCaptureMode:(unsigned int)arg1;
+- (void)_setCameraDevice:(unsigned int)arg1;
+- (void)_setCameraFlashMode:(int)arg1;
 - (void)_setCameraOverlayView:(id)arg1;
 - (void)_setCameraViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
@@ -45,6 +46,7 @@
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setWantsImageData:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

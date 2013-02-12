@@ -9,10 +9,10 @@
     NSString *_title;
 }
 
-@property(readonly) NSString *URLTarget;
-@property(readonly) NSString *buttonAction;
-@property(readonly) NSString *buttonTitle;
+@property(readonly) NSString * URLTarget;
 @property(readonly) id actionParameter;
+@property(readonly) NSString * buttonAction;
+@property(readonly) NSString * buttonTitle;
 
 - (id)URLTarget;
 - (id)actionParameter;

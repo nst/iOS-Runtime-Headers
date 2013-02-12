@@ -5,15 +5,15 @@
 @class IMReachability;
 
 @interface IMNetworkConnectionMonitor : IMConnectionMonitor <IMSystemMonitorListener, IMReachabilityDelegate> {
-    NSUInteger _hostFlags;
+    unsigned int _hostFlags;
     IMReachability *_hostReachability;
-    NSUInteger _ipFlags;
+    unsigned int _ipFlags;
     IMReachability *_ipReachability;
     BOOL _isConnected;
     BOOL _isSleeping;
 }
 
-- (void)_clearReachability:(id*)arg1 flags:(NSUInteger*)arg2;
+- (void)_clearReachability:(id*)arg1 flags:(unsigned int*)arg2;
 - (void)_doCallbackLater;
 - (void)_doCallbackNow;
 - (void)_setup;

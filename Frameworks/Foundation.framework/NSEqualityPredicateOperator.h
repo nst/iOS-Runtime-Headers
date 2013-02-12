@@ -4,18 +4,18 @@
 
 @interface NSEqualityPredicateOperator : NSPredicateOperator {
     BOOL _negate;
-    NSUInteger _options;
+    unsigned int _options;
 }
 
-- (void)_setOptions:(NSUInteger)arg1;
+- (void)_setOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 negate:(BOOL)arg3 options:(NSUInteger)arg4;
-- (id)initWithOperatorType:(NSUInteger)arg1 modifier:(NSUInteger)arg2 negate:(BOOL)arg3;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3 options:(unsigned int)arg4;
+- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 negate:(BOOL)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNegation;
-- (NSUInteger)options;
+- (unsigned int)options;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (id)predicateFormat;
 - (void)setNegation:(BOOL)arg1;

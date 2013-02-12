@@ -3,7 +3,7 @@
  */
 
 @interface MFObjectCache : NSObject {
-    NSInteger _arrayCapacity;
+    int _arrayCapacity;
     struct __CFArray { } *_keysAndValues;
     BOOL _useIsEqual;
 }

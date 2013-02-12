@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSMutableArray, UICalloutBarOverlay;
+@class NSArray, NSDictionary, NSMutableArray, UICalloutBarOverlay, UIResponder;
 
 @interface UICalloutBar : UIView {
     struct CGPoint { 
@@ -32,7 +32,7 @@
             float width; 
             float height; 
         } size; 
-    NSInteger m_arrowDirection;
+    int m_arrowDirection;
     NSMutableArray *m_buttons;
     } m_controlFrame;
     id m_delegate;
@@ -47,24 +47,24 @@
     id m_responderTarget;
     BOOL m_shouldAppear;
     BOOL m_showExtras;
-    NSInteger m_targetDirection;
+    int m_targetDirection;
     } m_targetPoint;
     } m_targetRect;
     BOOL m_updateVisibleItems;
 }
 
-@property(copy) NSArray *extraItems;
-@property(readonly) NSArray *rectsToEvade;
-@property(copy) NSDictionary *replacements;
-@property UIResponder *responderTarget;
-@property NSInteger arrowDirection;
-@property CGRect controlFrame;
+@property int arrowDirection;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } controlFrame;
 @property id delegate;
-@property CGPoint pointAboveControls;
-@property CGPoint pointBelowControls;
-@property NSInteger targetDirection;
-@property CGPoint targetPoint;
-@property CGRect targetRect;
+@property(copy) NSArray * extraItems;
+@property struct CGPoint { float x; float y; } pointAboveControls;
+@property struct CGPoint { float x; float y; } pointBelowControls;
+@property(readonly) NSArray * rectsToEvade;
+@property(copy) NSDictionary * replacements;
+@property UIResponder * responderTarget;
+@property int targetDirection;
+@property struct CGPoint { float x; float y; } targetPoint;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } targetRect;
 @property(readonly) BOOL visible;
 
 + (void)_initializeSafeCategory;
@@ -81,7 +81,7 @@
 - (void)addRectToEvade:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)appear;
 - (void)appearAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (NSInteger)arrowDirection;
+- (int)arrowDirection;
 - (void)buttonHighlighted:(id)arg1 highlighted:(BOOL)arg2;
 - (void)buttonPressed:(id)arg1;
 - (BOOL)calculateControlFrameForPointAboveControls:(float)arg1;
@@ -109,7 +109,7 @@
 - (void)removeFromSuperview;
 - (id)replacements;
 - (id)responderTarget;
-- (void)setArrowDirection:(NSInteger)arg1;
+- (void)setArrowDirection:(int)arg1;
 - (void)setControlFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExtraItems:(id)arg1;
@@ -117,16 +117,16 @@
 - (void)setPointBelowControls:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setReplacements:(id)arg1;
 - (void)setResponderTarget:(id)arg1;
-- (void)setTargetDirection:(NSInteger)arg1;
+- (void)setTargetDirection:(int)arg1;
 - (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowDirection:(NSInteger)arg2;
+- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowDirection:(int)arg2;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 pointBelowControls:(struct CGPoint { float x1; float x2; })arg2 pointAboveControls:(struct CGPoint { float x1; float x2; })arg3;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)targetDirection;
+- (int)targetDirection;
 - (id)targetForAction:(SEL)arg1;
 - (struct CGPoint { float x1; float x2; })targetPoint;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetRect;
-- (NSInteger)textEffectsVisibilityLevel;
+- (int)textEffectsVisibilityLevel;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textEffectsWindowBoundsWithoutStatusBar;
 - (BOOL)visible;
 - (id)visibleButtons;

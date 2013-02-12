@@ -7,24 +7,24 @@
 @interface SUWebViewDelegate : NSObject {
     NSLock *_lock;
     NSMutableSet *_mediaURLs;
-    NSInteger _modalAlertClickedIndex;
+    int _modalAlertClickedIndex;
     id _originalFrameLoadDelegate;
     id _originalPolicyDelegate;
     id _originalResourceLoadDelegate;
     id _originalUIDelegate;
-    NSInteger _usingNetworkCount;
+    int _usingNetworkCount;
     SUWebView *_webView;
 }
 
-@property SUWebView *webView;
 @property(retain) id originalFrameLoadDelegate;
 @property(retain) id originalPolicyDelegate;
 @property(retain) id originalResourceLoadDelegate;
 @property(retain) id originalUIDelegate;
+@property SUWebView * webView;
 
 - (id)_newAlertWithMessage:(id)arg1;
 - (id)_userIdentifier;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)beginUsingNetwork;
 - (void)cancelUsingNetwork;
 - (void)clearWeakReferences;

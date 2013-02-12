@@ -8,7 +8,7 @@
     AVAsset *asset;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
     struct __CFNumber { } *mediaTypeRef;
-    NSInteger trackID;
+    int trackID;
     AVWeakReference *weakReferenceToPlayerItem;
 }
 

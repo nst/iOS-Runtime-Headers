@@ -3,10 +3,10 @@
  */
 
 @interface PDOrientationOptions : PDTransitionOptions {
-    NSInteger mOrientation;
+    int mOrientation;
 }
 
-- (NSInteger)orientation;
-- (void)setOrientation:(NSInteger)arg1;
+- (int)orientation;
+- (void)setOrientation:(int)arg1;
 
 @end

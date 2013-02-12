@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)drawable;
 - (id)groupId;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithDrawable:(id)arg1 groupId:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

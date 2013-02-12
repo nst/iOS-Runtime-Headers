@@ -27,27 +27,27 @@
     UIPopoverController *_popoverController;
     UISearchBar *_searchBar;
     } _searchDisplayControllerFlags;
-    NSInteger _searchResultsTableViewStyle;
+    int _searchResultsTableViewStyle;
     UITableView *_tableView;
     <UITableViewDataSource> *_tableViewDataSource;
     <UITableViewDelegate> *_tableViewDelegate;
     UIViewController *_viewController;
 }
 
-@property(getter=_isCancelButtonManagementDisabled) BOOL cancelButtonManagementDisabled; /* unknown property attribute: S_setCancelButtonManagementDisabled: */
-@property <UISearchDisplayDelegate> *delegate;
-@property(copy) NSString *noResultsMessage;
-@property(readonly) UISearchBar *searchBar;
-@property(readonly) UIViewController *searchContentsController;
-@property <UITableViewDataSource> *searchResultsDataSource;
-@property <UITableViewDelegate> *searchResultsDelegate;
-@property(readonly) UITableView *searchResultsTableView;
 @property(getter=isActive) BOOL active;
 @property BOOL automaticallyShowsNoResultsMessage;
+@property(getter=_isCancelButtonManagementDisabled,setter=_setCancelButtonManagementDisabled:) BOOL cancelButtonManagementDisabled;
+@property <UISearchDisplayDelegate> * delegate;
 @property BOOL dimTableViewOnEmptySearchString;
 @property(readonly) BOOL hidNavigationBar;
 @property(getter=isNavigationBarHidingEnabled) BOOL navigationBarHidingEnabled;
+@property(copy) NSString * noResultsMessage;
 @property BOOL noResultsMessageVisible;
+@property(readonly) UISearchBar * searchBar;
+@property(readonly) UIViewController * searchContentsController;
+@property <UITableViewDataSource> * searchResultsDataSource;
+@property <UITableViewDelegate> * searchResultsDelegate;
+@property(readonly) UITableView * searchResultsTableView;
 
 + (void)_initializeSafeCategory;
 
@@ -89,7 +89,7 @@
 - (BOOL)hidNavigationBar;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2 searchResultsTableViewStyle:(NSInteger)arg3;
+- (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2 searchResultsTableViewStyle:(int)arg3;
 - (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2;
 - (BOOL)isActive;
 - (BOOL)isNavigationBarHidingEnabled;
@@ -97,8 +97,8 @@
 - (void)navigationControllerWillShowViewController:(id)arg1;
 - (id)noResultsMessage;
 - (BOOL)noResultsMessageVisible;
-- (void)popoverController:(id)arg1 animationCompleted:(NSInteger)arg2;
-- (void)searchBar:(id)arg1 selectedScopeButtonIndexDidChange:(NSInteger)arg2;
+- (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
+- (void)searchBar:(id)arg1 selectedScopeButtonIndexDidChange:(int)arg2;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (id)searchBar;
 - (void)searchBarCancelButtonClicked:(id)arg1;

@@ -2,19 +2,19 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureVideoPreviewLayerInternal;
+@class AVCaptureSession, AVCaptureVideoPreviewLayerInternal, NSString;
 
 @interface AVCaptureVideoPreviewLayer : CALayer {
     AVCaptureVideoPreviewLayerInternal *_internal;
 }
 
-@property(retain) AVCaptureSession *session;
-@property(copy) NSString *videoGravity;
 @property BOOL automaticallyAdjustsMirroring;
 @property(getter=isMirrored) BOOL mirrored;
 @property(getter=isMirroringSupported,readonly) BOOL mirroringSupported;
-@property NSInteger orientation;
+@property int orientation;
 @property(getter=isOrientationSupported,readonly) BOOL orientationSupported;
+@property(retain) AVCaptureSession * session;
+@property(copy) NSString * videoGravity;
 
 + (void)initialize;
 + (id)layerWithSession:(id)arg1;
@@ -40,14 +40,14 @@
 - (void)layoutSublayers;
 - (id)notReadyError;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (NSInteger)orientation;
+- (int)orientation;
 - (void)removeConnection:(id)arg1;
 - (id)session;
 - (void)setAutomaticallyAdjustsMirroring:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setMirrored:(BOOL)arg1;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setSession:(id)arg1;
 - (void)setVideoGravity:(id)arg1;

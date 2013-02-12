@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface SUDelayedQuitController : NSObject {
-    NSInteger _delayTerminateCount;
+    int _delayTerminateCount;
     NSMutableArray *_longLivedViewControllers;
 }
 

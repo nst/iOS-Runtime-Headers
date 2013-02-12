@@ -12,8 +12,8 @@
     float _spacerWidth;
 }
 
-@property(retain) UIImage *spacerImage;
 @property BOOL separatorIsVisible;
+@property(retain) UIImage * spacerImage;
 @property float spacerWidth;
 
 - (void)_reloadContents;

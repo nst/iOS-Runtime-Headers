@@ -7,27 +7,27 @@
 @interface GMMDirectionsIconResponse : PBCodable {
     BOOL _hasIconVersion;
     NSMutableArray *_iconDefinitions;
-    NSInteger _iconVersion;
+    int _iconVersion;
 }
 
-@property(retain) NSMutableArray *iconDefinitions;
 @property(readonly) BOOL hasIconVersion;
-@property(readonly) NSInteger iconDefinitionsCount;
-@property NSInteger iconVersion;
+@property(retain) NSMutableArray * iconDefinitions;
+@property(readonly) int iconDefinitionsCount;
+@property int iconVersion;
 
 - (void)addIconDefinition:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasIconVersion;
-- (id)iconDefinitionAtIndex:(NSUInteger)arg1;
+- (id)iconDefinitionAtIndex:(unsigned int)arg1;
 - (id)iconDefinitions;
-- (NSInteger)iconDefinitionsCount;
-- (NSInteger)iconVersion;
+- (int)iconDefinitionsCount;
+- (int)iconVersion;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setIconDefinition:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setIconDefinition:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setIconDefinitions:(id)arg1;
-- (void)setIconVersion:(NSInteger)arg1;
+- (void)setIconVersion:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

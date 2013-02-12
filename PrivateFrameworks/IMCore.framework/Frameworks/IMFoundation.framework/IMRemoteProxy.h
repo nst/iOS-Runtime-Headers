@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSProtocolChecker, NSString;
+@class NSProtocolChecker, NSString, Protocol;
 
 @interface IMRemoteProxy : NSObject {
     NSString *_identifier;
@@ -11,9 +11,9 @@
     id _target;
 }
 
-@property(copy) NSString *identifier;
-@property(copy) Protocol *remoteProtocol;
 @property SEL action;
+@property(copy) NSString * identifier;
+@property(copy) Protocol * remoteProtocol;
 @property id target;
 
 - (SEL)action;

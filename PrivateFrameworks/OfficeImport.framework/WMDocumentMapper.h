@@ -11,14 +11,14 @@
 }
 
 - (id)archiver;
-- (id)blipAtIndex:(NSUInteger)arg1;
+- (id)blipAtIndex:(unsigned int)arg1;
 - (float)bottomMargin;
 - (struct CGSize { float x1; float x2; })contentSizeForDevice;
 - (void)dealloc;
-- (NSInteger)defaultTabWidth;
+- (int)defaultTabWidth;
 - (id)documentTitle;
 - (id)fileName;
-- (BOOL)hasSessionBreakAtIndex:(NSUInteger)arg1;
+- (BOOL)hasSessionBreakAtIndex:(unsigned int)arg1;
 - (float)headerMargin;
 - (id)initWithWDom:(id)arg1 archiver:(id)arg2;
 - (float)leftMargin;

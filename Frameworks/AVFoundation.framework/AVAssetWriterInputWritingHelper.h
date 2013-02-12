@@ -10,12 +10,12 @@
     struct __CVPixelBufferPool { } *_pixelBufferPool;
 }
 
-@property(getter=_assetWriterTrack,readonly) AVFigAssetWriterTrack *assetWriterTrack;
+@property(getter=_assetWriterTrack,readonly) AVFigAssetWriterTrack * assetWriterTrack;
 
 + (id)keyPathsForValuesAffectingReadyForMoreMediaData;
 
 - (id)_assetWriterTrack;
-- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg2;
+- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (BOOL)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)dealloc;
 - (void)finalize;
@@ -26,7 +26,7 @@
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (BOOL)prepareToFinishWritingReturningError:(id*)arg1;
 - (void)requestMediaDataWhenReadyOnQueue:(struct dispatch_queue_s { }*)arg1 usingBlock:(id)arg2;
-- (NSInteger)status;
-- (void)transitionToTerminalStatus:(NSInteger)arg1;
+- (int)status;
+- (void)transitionToTerminalStatus:(int)arg1;
 
 @end

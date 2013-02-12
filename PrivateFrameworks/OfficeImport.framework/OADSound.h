@@ -2,22 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSData, NSString;
 
 @interface OADSound : OCDDelayedMedia {
-     /* Encoded args for previous method: B8@0:4 */
     NSString *mName;
-    NSInteger mSizeInBytes;
+    int mSizeInBytes;
     NSData *mSoundData;
 }
 
 - (void)dealloc;
 - (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isLoaded;
+- (bool)isLoaded;
 - (id)name;
 - (void)setName:(id)arg1;
 - (void)setSizeInBytes:(long)arg1;

@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class <DOMNodeFilter>, DOMNode;
+
 @interface DOMNodeIterator : DOMObject {
 }
 
-@property(retain,readonly) <DOMNodeFilter> *filter;
-@property(retain,readonly) DOMNode *referenceNode;
-@property(retain,readonly) DOMNode *root;
 @property(readonly) BOOL expandEntityReferences;
+@property(retain,readonly) <DOMNodeFilter> * filter;
 @property(readonly) BOOL pointerBeforeReferenceNode;
-@property(readonly) NSUInteger whatToShow;
+@property(retain,readonly) DOMNode * referenceNode;
+@property(retain,readonly) DOMNode * root;
+@property(readonly) unsigned int whatToShow;
 
 - (void)dealloc;
 - (void)detach;
@@ -22,6 +24,6 @@
 - (id)previousNode;
 - (id)referenceNode;
 - (id)root;
-- (NSUInteger)whatToShow;
+- (unsigned int)whatToShow;
 
 @end

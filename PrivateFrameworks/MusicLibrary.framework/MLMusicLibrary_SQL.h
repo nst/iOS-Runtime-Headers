@@ -2,108 +2,32 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableArray;
-
 @interface MLMusicLibrary_SQL : MusicLibrary <MLMusicLibrarySubclassImpl> {
     long long _lastRowid;
-    BOOL _markAndDeleteTracksInProgress;
-    NSMutableArray *_markAndDeleteTracksPendingQueue;
     struct CPRecordStore { } *_storeRef;
 }
 
-+ (void)_dbSaveCoalesceBegin;
-+ (void)_dbSaveCoalesceEnd;
 + (void)_dbSyncAlreadyActive;
 + (void)_dbSyncDidEnd;
 + (void)_dbSyncWillBegin;
-+ (id)_nextFilepathForPlaylistOfType:(NSInteger)arg1;
-+ (struct CPRecordStore { }*)_sharedInstanceStoreRef;
 + (void)beginDatabaseMigrationIfNecessary;
++ (void)commitAllDeferredWork;
 + (BOOL)databaseDataFilesExist;
-+ (id)geniusDatabasePath;
-+ (BOOL)hasContent;
-+ (Class)implClassForEvaluatingQuery:(id)arg1;
 + (BOOL)isDatabaseSchemaUnsupported:(id*)arg1;
-+ (void)noteItemTableWasModified;
 + (void)noteSharedRecordStoreChangedToStoreRef:(struct CPRecordStore { }*)arg1;
 + (void)recursiveEvaluationLockLock;
 + (void)recursiveEvaluationLockUnlock;
-+ (void)resetLibraryImpl;
 + (unsigned long long)syncGenerationID;
 
-- (id)_activeDistinguishedPlaylistOfType:(NSInteger)arg1 localizedName:(NSInteger)arg2 localizedNameFallbackFormat:(NSInteger)arg3;
 - (void)_dbSyncDidEnd;
-- (BOOL)_hasEntitiesWithMediaType:(unsigned long)arg1 whenGroupedByProperty:(unsigned long)arg2 additionalPredicates:(id)arg3;
-- (BOOL)_hasEntitiesWithMediaType:(unsigned long)arg1 whenGroupedByProperty:(unsigned long)arg2;
-- (BOOL)_hasPlaylistOfDistinguishedKind:(NSInteger)arg1 hidden:(BOOL)arg2;
 - (void)_loadMainStore;
-- (void)_preloadNextItemChunk;
-- (void)_savePlaylists;
-- (void)_saveTrackMetadata;
 - (struct CPRecordStore { }*)_storeRef;
-- (void)_updateTrackDict:(id)arg1 withInformationFromTrackWithPersisentID:(id)arg2;
-- (id)activeGeniusPlaylist;
-- (id)activeOnTheGoPlaylist;
-- (id)addPlaylistWithName:(id)arg1;
-- (void)addRecordIDsForTracksFromQuery:(id)arg1 entityRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 toArray:(struct __CPRecordIDArray { }*)arg3;
-- (void)addStringToSortMap:(id)arg1;
-- (id)availableArtworkFormatIDsForTrack:(id)arg1 artworkType:(NSInteger)arg2 chapterIndex:(NSUInteger)arg3 chapterTOC:(id)arg4;
-- (id)availableArtworkFormatIDsForTrack:(id)arg1 artworkType:(NSInteger)arg2;
-- (void)beginPreloadingItems;
 - (void)commitAllDeferredWork;
 - (void)dealloc;
-- (BOOL)deletePlaylists:(id)arg1;
-- (void)endPreloadingItems;
-- (BOOL)flushImplNow;
 - (void)flushPreparedStatementCacheImpl;
-- (id)getPlaylistWithPersistentUID:(unsigned long long)arg1 visibleOnly:(BOOL)arg2;
-- (id)getPlaylistWithUniqueID:(NSUInteger)arg1 visibleOnly:(BOOL)arg2;
-- (id)getRepresentativeTrackForAlbumPID:(unsigned long long)arg1;
-- (id)getTrackWithGlobalID:(unsigned long long)arg1 visibleOnly:(BOOL)arg2;
-- (id)getTrackWithPersistentID:(unsigned long long)arg1 visibleOnly:(BOOL)arg2;
-- (BOOL)hasAlbums;
-- (BOOL)hasAnyVideos;
-- (BOOL)hasArtists;
-- (BOOL)hasAudibleAudioBooks;
-- (BOOL)hasAudioBooks;
-- (BOOL)hasCompilations;
-- (BOOL)hasComposers;
-- (BOOL)hasGeniusMixes;
-- (BOOL)hasGenres;
-- (BOOL)hasITunesUContent;
-- (BOOL)hasMovieRentals;
-- (BOOL)hasMovies;
-- (BOOL)hasMusicVideos;
-- (BOOL)hasPlaylists;
-- (BOOL)hasPodcasts;
-- (BOOL)hasSongs;
-- (BOOL)hasTVShows;
-- (BOOL)hasVideoPodcasts;
-- (id)imageDataForTrack:(id)arg1 artworkType:(NSInteger)arg2 artworkFormatID:(NSUInteger)arg3 size:(struct CGSize { float x1; float x2; })arg4 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg5;
-- (id)imageDataForTrack:(id)arg1 artworkType:(NSInteger)arg2 artworkFormatID:(NSUInteger)arg3 size:(struct CGSize { float x1; float x2; })arg4 chapterIndex:(NSUInteger)arg5 chapterTOC:(id)arg6 artworkInstanceInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { NSUInteger x_1_1_1; NSUInteger x_1_1_2; NSUInteger x_1_1_3; NSUInteger x_1_1_4; NSInteger x_1_1_5; NSInteger x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg7;
 - (id)initWithBasePath:(id)arg1;
-- (id)insertItemFromPurchaseFolder:(id)arg1 withItemProperties:(id)arg2;
 - (void)jetsamMemoryImpl;
-- (void)loadArtwork;
-- (BOOL)markAndDeleteTracks:(id)arg1;
 - (void)memoryLevelDidChange;
-- (void)mutatePlaylistChangeGroupBegin;
-- (void)mutatePlaylistChangeGroupEnd;
-- (void)mutatePlaylistImpl:(id)arg1 insertEntitiesFromQuery:(id)arg2 entityIndexes:(id)arg3 atIndex:(NSUInteger)arg4 postNotifications:(BOOL)arg5;
-- (void)mutatePlaylistImpl:(id)arg1 insertTracks:(id)arg2 atIndex:(NSUInteger)arg3;
-- (void)mutatePlaylistImpl:(id)arg1 insertTracksWithRecordIDs:(struct __CPRecordIDArray { }*)arg2 atIndex:(NSUInteger)arg3;
-- (void)mutatePlaylistImpl:(id)arg1 moveEntitiesFromRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 toIndex:(NSUInteger)arg3;
-- (void)mutatePlaylistImpl:(id)arg1 removeTracksInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)noteSharedRecordStoreChangedToStoreRef:(struct CPRecordStore { }*)arg1;
-- (id)preferredAudioTracks;
-- (id)preferredSubtitleTracks;
-- (void)purchasedContentFolder:(id)arg1 didProcessItemWithXMLFilenames:(id)arg2;
-- (BOOL)purchasedContentFolder:(id)arg1 loadItemWithProperties:(id)arg2 propertiesToSave:(id*)arg3;
-- (void)purchasedContentFolder:(id)arg1 willProcessItemWithXMLFilenames:(id)arg2;
-- (id)purchasedItemsPlaylist;
-- (void)trackDynamicPropertyDidChange:(id)arg1 propertySelector:(SEL)arg2;
-- (void)unloadArtwork;
-- (void)updateActivePlaylistNamesForCurrentLanguage;
-- (void)writePlaylistToSavedFile:(id)arg1;
 
 @end

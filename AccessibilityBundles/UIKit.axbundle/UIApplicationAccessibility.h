@@ -8,7 +8,7 @@
 + (void)_initializeSafeCategory;
 
 - (BOOL)_accessibilityAllowsNotificationsDuringSuspension;
-- (NSInteger)_accessibilityApplicationForPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (int)_accessibilityApplicationForPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_accessibilityBundleIdentifier;
 - (id)_accessibilityElementFirst:(BOOL)arg1 last:(BOOL)arg2;
 - (BOOL)_accessibilityEscape;
@@ -22,6 +22,7 @@
 - (id)_accessibilityNextElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityResponderElement;
+- (void)_accessibilityShouldExitToReloadAccessibility;
 - (BOOL)_accessibilitySoftwareKeyboardActive;
 - (id)_accessibilitySummaryElement;
 - (id)_accessibilityTitleBarElement;
@@ -31,11 +32,13 @@
 - (id)_findContainerAccessibleElement:(id)arg1 first:(BOOL)arg2;
 - (id)_firstStatusBarElement;
 - (id)_lastStatusBarElement;
-- (id)accessibilityAttributeValue:(NSInteger)arg1;
+- (id)accessibilityAttributeValue:(int)arg1;
 - (void)accessibilityDisable;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLabel;
+- (BOOL)accessibilityStartStopToggle;
 - (void)dealloc;
 - (void)handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (BOOL)openURL:(id)arg1;
 
 @end

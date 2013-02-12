@@ -6,40 +6,40 @@
 
 @interface NSAutoCalendar : NSCalendar {
     NSCalendar *cal;
-    NSUInteger changedFirstWeekday;
+    unsigned int changedFirstWeekday;
     NSDate *changedGregorianStartDate;
     NSLocale *changedLocale;
-    NSUInteger changedMinimumDaysinFirstWeek;
+    unsigned int changedMinimumDaysinFirstWeek;
     NSTimeZone *changedTimeZone;
 }
 
 - (void)_update:(id)arg1;
 - (id)calendarIdentifier;
 - (Class)classForCoder;
-- (id)components:(NSUInteger)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(NSUInteger)arg4;
-- (id)components:(NSUInteger)arg1 fromDate:(id)arg2;
+- (id)components:(unsigned int)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(unsigned int)arg4;
+- (id)components:(unsigned int)arg1 fromDate:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(NSUInteger)arg3;
+- (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
 - (id)dateFromComponents:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)firstWeekday;
+- (unsigned int)firstWeekday;
 - (id)gregorianStartDate;
 - (id)init;
 - (id)initWithCalendarIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)locale;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })maximumRangeOfUnit:(NSUInteger)arg1;
-- (NSUInteger)minimumDaysInFirstWeek;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })minimumRangeOfUnit:(NSUInteger)arg1;
-- (NSUInteger)ordinalityOfUnit:(NSUInteger)arg1 inUnit:(NSUInteger)arg2 forDate:(id)arg3;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })rangeOfUnit:(NSUInteger)arg1 inUnit:(NSUInteger)arg2 forDate:(id)arg3;
-- (BOOL)rangeOfUnit:(NSUInteger)arg1 startDate:(id*)arg2 interval:(double*)arg3 forDate:(id)arg4;
-- (void)setFirstWeekday:(NSUInteger)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })maximumRangeOfUnit:(unsigned int)arg1;
+- (unsigned int)minimumDaysInFirstWeek;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })minimumRangeOfUnit:(unsigned int)arg1;
+- (unsigned int)ordinalityOfUnit:(unsigned int)arg1 inUnit:(unsigned int)arg2 forDate:(id)arg3;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfUnit:(unsigned int)arg1 inUnit:(unsigned int)arg2 forDate:(id)arg3;
+- (BOOL)rangeOfUnit:(unsigned int)arg1 startDate:(id*)arg2 interval:(double*)arg3 forDate:(id)arg4;
+- (void)setFirstWeekday:(unsigned int)arg1;
 - (void)setGregorianStartDate:(id)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setMinimumDaysInFirstWeek:(NSUInteger)arg1;
+- (void)setMinimumDaysInFirstWeek:(unsigned int)arg1;
 - (void)setTimeZone:(id)arg1;
 - (id)timeZone;
 

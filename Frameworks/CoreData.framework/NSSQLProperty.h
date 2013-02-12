@@ -8,7 +8,7 @@
     NSSQLEntity *_entity;
     NSString *_name;
     NSPropertyDescription *_propertyDescription;
-    NSUInteger _propertyType;
+    unsigned int _propertyType;
 }
 
 - (void)_setName:(id)arg1;
@@ -33,9 +33,9 @@
 - (BOOL)isToOne;
 - (id)name;
 - (id)propertyDescription;
-- (NSUInteger)propertyType;
+- (unsigned int)propertyType;
 - (void)setEntityForReadOnlyFetch:(id)arg1;
 - (void)setPropertyDescription:(id)arg1;
-- (NSUInteger)slot;
+- (unsigned int)slot;
 
 @end

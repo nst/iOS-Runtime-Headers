@@ -10,9 +10,9 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL *URL;
-@property(readonly) SUItemContentRating *contentRating;
-@property(readonly) NSString *title;
+@property(readonly) NSURL * URL;
+@property(readonly) SUItemContentRating * contentRating;
+@property(readonly) NSString * title;
 
 - (id)URL;
 - (id)contentRating;

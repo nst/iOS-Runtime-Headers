@@ -9,8 +9,8 @@
     NSSet *_directoryGatewayURLs;
 }
 
-@property(readonly) NSSet *addressBookHomes;
-@property(readonly) NSSet *directoryGatewayURLs;
+@property(readonly) NSSet * addressBookHomes;
+@property(readonly) NSSet * directoryGatewayURLs;
 
 - (id)_copyAccountPropertiesPropFindElements;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;

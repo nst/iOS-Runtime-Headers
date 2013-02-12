@@ -5,6 +5,9 @@
 @class MKPanorama, MKPanoramaLoader;
 
 @interface MKPanoramaLoaderRequest : MKPanoramaRequest {
+    struct { 
+        double latitude; 
+        double longitude; 
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
@@ -14,26 +17,28 @@
     BOOL prefetch;
     MKPanorama *relativePanorama;
     double relativeYaw;
-    NSInteger type;
+    } thumbnailCoordinate;
+    int type;
 }
 
-@property MKPanoramaLoader *loader;
-@property(retain) MKPanorama *panorama;
-@property(retain) MKPanorama *relativePanorama;
+@property MKPanoramaLoader * loader;
 @property(getter=isNetworkBound) BOOL networkBound;
+@property(retain) MKPanorama * panorama;
 @property(getter=isPrefetch) BOOL prefetch;
+@property(retain) MKPanorama * relativePanorama;
 @property double relativeYaw;
-@property NSInteger type;
+@property struct { double latitude; double longitude; } thumbnailCoordinate;
+@property int type;
 
-+ (id)createWithPanorama:(id)arg1 type:(NSInteger)arg2 invocation:(id)arg3;
-+ (NSInteger)requestTypeForSelector:(SEL)arg1 request:(BOOL*)arg2;
++ (id)createWithPanorama:(id)arg1 type:(int)arg2 invocation:(id)arg3;
++ (int)requestTypeForSelector:(SEL)arg1 request:(BOOL*)arg2;
 
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
-- (id)initWithPanorama:(id)arg1 type:(NSInteger)arg2 tilePath:(NSInteger)arg3;
-- (id)initWithPanorama:(id)arg1 type:(NSInteger)arg2;
+- (unsigned int)hash;
+- (id)initWithPanorama:(id)arg1 type:(int)arg2 tilePath:(int)arg3;
+- (id)initWithPanorama:(id)arg1 type:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNetworkBound;
 - (BOOL)isPrefetch;
@@ -46,7 +51,9 @@
 - (void)setPrefetch:(BOOL)arg1;
 - (void)setRelativePanorama:(id)arg1;
 - (void)setRelativeYaw:(double)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setThumbnailCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setType:(int)arg1;
+- (struct { double x1; double x2; })thumbnailCoordinate;
+- (int)type;
 
 @end

@@ -8,7 +8,7 @@
     SSPurchaseValidationContext *_context;
 }
 
-@property(readonly) SSPurchaseValidationContext *purchaseValidationContext;
+@property(readonly) SSPurchaseValidationContext * purchaseValidationContext;
 
 - (BOOL)_checkDiskSpaceForPurchases:(id)arg1 response:(id)arg2;
 - (BOOL)_checkNetworkConstraintsForPurchases:(id)arg1 response:(id)arg2;

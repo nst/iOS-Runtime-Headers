@@ -22,13 +22,13 @@
 - (void)_accessibilityUpdateRemoveControl;
 - (void)_releaseRemoveControl;
 - (void)_setAccessibilityMockParent:(id)arg1;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (id)accessibilityTableViewCellText;
 - (unsigned long long)accessibilityTraits;
 - (id)createRemoveControl;
 - (void)dealloc;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 - (void)registerMockChild:(id)arg1;
 - (void)unregisterAllChildren;

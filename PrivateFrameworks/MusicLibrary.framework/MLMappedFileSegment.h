@@ -6,8 +6,8 @@
 
 @interface MLMappedFileSegment : NSObject {
     BOOL _dying;
-    NSUInteger _index;
-    NSUInteger _length;
+    unsigned int _index;
+    unsigned int _length;
     MLMappedFile *_mappedFile;
     void *_ptr;
 }

@@ -10,7 +10,7 @@
     NSLock *_lock;
 }
 
-@property <PLImageLoadingQueueDelegate> *delegate;
+@property <PLImageLoadingQueueDelegate> * delegate;
 
 - (void)cancelLoadFromSource:(id)arg1 forObject:(id)arg2;
 - (void)dealloc;
@@ -20,8 +20,8 @@
 - (void)invalidateImageFromSource:(id)arg1 forObject:(id)arg2;
 - (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 completion:(id)arg4;
 - (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 loadIfNeeded:(BOOL)arg4;
-- (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 priority:(NSInteger)arg4 completion:(id)arg5;
-- (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 priority:(NSInteger)arg4;
+- (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 priority:(int)arg4 completion:(id)arg5;
+- (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 priority:(int)arg4;
 - (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3;
 - (void)pauseLoading;
 - (void)resumeLoading;

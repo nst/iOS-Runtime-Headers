@@ -6,9 +6,9 @@
 
 @interface UIWebTiledView : UIView {
     BOOL _didFirstTileLayout;
-    NSInteger _inGestureType;
+    int _inGestureType;
     BOOL _layoutTilesInMainThread;
-    NSInteger _tilingArea;
+    int _tilingArea;
     BOOL _tilingModeIsLocked;
     WAKWindow *_wakWindow;
 }
@@ -16,7 +16,7 @@
 - (void)_didScroll;
 - (void)_screenChanged:(id)arg1;
 - (void)_updateForScreen:(id)arg1;
-- (NSUInteger)adjustedMaxTileCount;
+- (unsigned int)adjustedMaxTileCount;
 - (void)dealloc;
 - (BOOL)drawsGrid;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -28,14 +28,14 @@
 - (void)layoutTilesNowOnWebThread;
 - (void)lockTilingMode;
 - (BOOL)logsTilingChanges;
-- (NSUInteger)maxTileCount;
+- (unsigned int)maxTileCount;
 - (void)removeAllNonVisibleTiles;
 - (void)removeAllTiles;
 - (void)setDrawsGrid:(BOOL)arg1;
-- (void)setInGesture:(NSInteger)arg1;
+- (void)setInGesture:(int)arg1;
 - (void)setLayoutTilesInMainThread:(BOOL)arg1;
 - (void)setLogsTilingChanges:(BOOL)arg1;
-- (void)setMaxTileCount:(NSUInteger)arg1;
+- (void)setMaxTileCount:(unsigned int)arg1;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayout;
@@ -43,18 +43,18 @@
 - (void)setTileMinificationFilter:(id)arg1;
 - (void)setTileSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTilesOpaque:(BOOL)arg1;
-- (void)setTilingArea:(NSInteger)arg1;
+- (void)setTilingArea:(int)arg1;
 - (void)setTilingEnabled:(BOOL)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (BOOL)tileDrawingEnabled;
 - (struct CGSize { float x1; float x2; })tileSize;
 - (BOOL)tilesOpaque;
-- (NSInteger)tilingArea;
+- (int)tilingArea;
 - (void)unlockTilingMode;
 - (void)updateTilingMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (id)wakWindow;
 - (void)willMoveToWindow:(id)arg1;
-- (struct WKWindow { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct WKView {} *x6; struct CGSize { float x_7_1_1; float x_7_1_2; } x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; float x9; unsigned int x10 : 1; }*)wkWindow;
+- (struct WKWindow { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct WKView {} *x4; struct WKView {} *x5; struct WKView {} *x6; struct CGSize { float x_7_1_1; float x_7_1_2; } x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; float x9; unsigned int x10 : 1; }*)wkWindow;
 
 @end

@@ -8,7 +8,7 @@
     SEL _action;
     BOOL _isMouseInside;
     NSString *_label;
-    NSInteger _location;
+    int _location;
     id _target;
 }
 
@@ -19,6 +19,6 @@
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setLocation:(NSInteger)arg1;
+- (void)setLocation:(int)arg1;
 
 @end

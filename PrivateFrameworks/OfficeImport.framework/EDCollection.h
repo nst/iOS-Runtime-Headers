@@ -11,20 +11,20 @@
 + (id)collection;
 + (id)collectionWithObject:(id)arg1;
 
-- (NSUInteger)addObject:(id)arg1;
-- (NSUInteger)addOrEquivalentObject:(id)arg1;
+- (unsigned int)addObject:(id)arg1;
+- (unsigned int)addOrEquivalentObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
-- (NSUInteger)hash;
-- (NSUInteger)indexOfObject:(id)arg1;
+- (unsigned int)hash;
+- (unsigned int)indexOfObject:(id)arg1;
 - (id)init;
 - (id)initWithObject:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToCollection:(id)arg1;
-- (id)objectAtIndex:(NSUInteger)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (void)removeAllObjects;
-- (void)removeObjectAtIndex:(NSUInteger)arg1;
+- (void)removeObjectAtIndex:(unsigned int)arg1;
 
 @end

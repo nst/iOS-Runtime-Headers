@@ -5,15 +5,16 @@
 @class NSArray, NSDictionary, NSString;
 
 @interface ConditionalProduction : GenericProduction {
-    NSString *delimiter;
-    NSDictionary *expansions;
-    NSArray *signature;
+    NSString *_delimiter;
+    NSDictionary *_expansions;
+    NSArray *_signature;
 }
 
-@property(readonly) NSString *delimiter;
-@property(readonly) NSDictionary *expansions;
-@property(readonly) NSArray *signature;
+@property(readonly) NSString * delimiter;
+@property(readonly) NSDictionary * expansions;
+@property(readonly) NSArray * signature;
 
+- (void)dealloc;
 - (id)delimiter;
 - (id)description;
 - (id)expansions;

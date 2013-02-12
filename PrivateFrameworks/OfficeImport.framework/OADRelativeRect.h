@@ -11,7 +11,7 @@
 
 - (float)bottom;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithLeft:(float)arg1 top:(float)arg2 right:(float)arg3 bottom:(float)arg4;
 - (BOOL)isEqual:(id)arg1;

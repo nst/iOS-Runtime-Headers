@@ -8,9 +8,9 @@
     BOOL _hasLoaded;
     NSError *_lastError;
     YTSearchRequest *_searchRequest;
-    NSUInteger _startIndex;
+    unsigned int _startIndex;
     NSMutableArray *_videos;
-    NSUInteger _videosRemaining;
+    unsigned int _videosRemaining;
 }
 
 + (void)saveDataSources;
@@ -33,13 +33,13 @@
 - (id)lastError;
 - (void)loadFromDefaults;
 - (void)loadMore;
-- (NSUInteger)maxVideosToSave;
+- (unsigned int)maxVideosToSave;
 - (void)reloadData;
 - (void)removeAllVideos;
-- (void)removeVideoAtIndex:(NSInteger)arg1;
+- (void)removeVideoAtIndex:(int)arg1;
 - (void)searchRequest:(id)arg1 didFailWithError:(id)arg2;
-- (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(NSUInteger)arg3 videosRemaining:(NSUInteger)arg4;
+- (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(unsigned int)arg3 videosRemaining:(unsigned int)arg4;
 - (id)videos;
-- (NSUInteger)videosRemaining;
+- (unsigned int)videosRemaining;
 
 @end

@@ -5,7 +5,7 @@
 @class <MKMapTileViewDelegate>, MKMapTileNormalizerView, MKMapTileView, MKTilePathArray, MKTiledLayer, MKTrafficHighlightView, NSHashTable, NSTimer;
 
 @interface MKMapTileViewImp : NSObject {
-    struct $_1160 { 
+    struct $_1157 { 
         unsigned int canDrawOnMainThread : 1; 
         unsigned int canDisplayTraffic : 1; 
         unsigned int drawing : 1; 
@@ -25,8 +25,8 @@
     } flags;
     double lastTileRequestTime;
     MKTiledLayer *layer;
-    NSUInteger loadingTileCount;
-    NSUInteger mapType;
+    unsigned int loadingTileCount;
+    unsigned int mapType;
     MKMapTileNormalizerView *normalizerView;
     MKTilePathArray *requestTiles;
     NSHashTable *requesters;
@@ -38,6 +38,6 @@
 }
 
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(NSInteger)arg3;
+- (BOOL)tiledLayer:(id)arg1 canDrawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 levelOfDetail:(int)arg3;
 
 @end

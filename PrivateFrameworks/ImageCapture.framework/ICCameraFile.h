@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+@class NSMutableDictionary;
+
 @interface ICCameraFile : ICCameraItem {
     void *_fileProperties;
 }
 
-@property(retain) NSMutableDictionary *metadata_hidden;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
 @property long long fileSize;
 @property(readonly) BOOL hasOverriddenOrientation;
-@property NSUInteger orientation;
+@property(retain) NSMutableDictionary * metadata_hidden;
+@property unsigned int orientation;
 @property(getter=isRaw) BOOL raw;
 
 - (void)dealloc;
@@ -32,8 +34,8 @@
 - (BOOL)isRaw;
 - (id)metadata;
 - (id)metadata_hidden;
-- (NSUInteger)orientation;
-- (void)overrideOrientation:(NSUInteger)arg1;
+- (unsigned int)orientation;
+- (void)overrideOrientation:(unsigned int)arg1;
 - (id)parentFolderName;
 - (BOOL)raw;
 - (void)requestMetadata;
@@ -44,7 +46,7 @@
 - (void)setHasMetadata:(BOOL)arg1;
 - (void)setHasThumbnail:(BOOL)arg1;
 - (void)setMetadata_hidden:(id)arg1;
-- (void)setOrientation:(NSUInteger)arg1;
+- (void)setOrientation:(unsigned int)arg1;
 - (void)setRaw:(BOOL)arg1;
 - (struct CGImage { }*)thumbnail;
 

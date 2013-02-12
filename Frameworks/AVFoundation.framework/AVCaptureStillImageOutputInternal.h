@@ -8,10 +8,16 @@
     struct CGSize { 
         float width; 
         float height; 
-    NSUInteger imageDataFormatType;
+    BOOL EV0CaptureEnabled;
+    BOOL HDRCaptureEnabled;
+    BOOL chromaNoiseReductionEnabled;
+    unsigned int imageDataFormatType;
+    long long imageMaxDataSize;
+    BOOL isCapturingPhoto;
     NSDictionary *outputSettings;
     } previewImageSize;
     NSMutableArray *stillImageRequests;
+    BOOL suspendsVideoProcessingDuringCapture;
 }
 
 - (void)dealloc;

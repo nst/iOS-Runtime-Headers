@@ -2,58 +2,60 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+@class NSString;
+
 @interface MSCameraFile : ICCameraFile {
     void *_msCameraFileProperties;
 }
 
-@property(copy) NSString *exifCreationDateTime;
-@property(copy) NSString *exifModificationDateTime;
-@property NSInteger bitsPerPixel;
-@property(readonly) timespec fsCreationTime;
-@property(readonly) timespec fsModificationTime;
+@property int bitsPerPixel;
+@property(copy) NSString * exifCreationDateTime;
+@property(copy) NSString * exifModificationDateTime;
+@property(readonly) struct timespec { int tv_sec; long tv_nsec; } fsCreationTime;
+@property(readonly) struct timespec { int tv_sec; long tv_nsec; } fsModificationTime;
 @property(readonly) unsigned long long fsSN;
 @property(readonly) long long fsSize;
-@property NSInteger imgHeight;
-@property NSInteger imgWidth;
-@property NSInteger thmHeight;
-@property NSInteger thmOffset;
-@property NSInteger thmSize;
-@property NSInteger thmWidth;
-@property NSUInteger type;
+@property int imgHeight;
+@property int imgWidth;
+@property int thmHeight;
+@property int thmOffset;
+@property int thmSize;
+@property int thmWidth;
+@property unsigned int type;
 @property BOOL updatedBasicMetadata;
 
-- (NSInteger)bitsPerPixel;
+- (int)bitsPerPixel;
 - (void)dealloc;
 - (id)exifCreationDateTime;
 - (id)exifModificationDateTime;
 - (void)finalize;
-- (struct timespec { NSInteger x1; long x2; })fsCreationTime;
-- (struct timespec { NSInteger x1; long x2; })fsModificationTime;
+- (struct timespec { int x1; long x2; })fsCreationTime;
+- (struct timespec { int x1; long x2; })fsModificationTime;
 - (unsigned long long)fsSN;
 - (long long)fsSize;
-- (NSInteger)imgHeight;
-- (NSInteger)imgWidth;
-- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned long long)arg4 fsCreationTime:(struct timespec { NSInteger x1; long x2; })arg5 fsModificationTime:(struct timespec { NSInteger x1; long x2; })arg6 fsSize:(long long)arg7 fsFlags:(NSUInteger)arg8;
+- (int)imgHeight;
+- (int)imgWidth;
+- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned long long)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(long long)arg7 fsFlags:(unsigned int)arg8;
 - (id)metadataDict;
-- (void)setBitsPerPixel:(NSInteger)arg1;
+- (void)setBitsPerPixel:(int)arg1;
 - (void)setExifCreationDateTime:(id)arg1;
 - (void)setExifModificationDateTime:(id)arg1;
-- (void)setImgHeight:(NSInteger)arg1;
-- (void)setImgWidth:(NSInteger)arg1;
-- (void)setThmHeight:(NSInteger)arg1;
-- (void)setThmOffset:(NSInteger)arg1;
-- (void)setThmSize:(NSInteger)arg1;
-- (void)setThmWidth:(NSInteger)arg1;
-- (void)setType:(NSUInteger)arg1;
+- (void)setImgHeight:(int)arg1;
+- (void)setImgWidth:(int)arg1;
+- (void)setThmHeight:(int)arg1;
+- (void)setThmOffset:(int)arg1;
+- (void)setThmSize:(int)arg1;
+- (void)setThmWidth:(int)arg1;
+- (void)setType:(unsigned int)arg1;
 - (void)setUpdatedBasicMetadata:(BOOL)arg1;
-- (NSInteger)thmHeight;
-- (NSInteger)thmOffset;
-- (NSInteger)thmSize;
-- (NSInteger)thmWidth;
+- (int)thmHeight;
+- (int)thmOffset;
+- (int)thmSize;
+- (int)thmWidth;
 - (id)thumbData;
-- (NSUInteger)type;
+- (unsigned int)type;
 - (void)updateBasicMetadata;
 - (BOOL)updatedBasicMetadata;
-- (long)writeDataToFile:(NSInteger)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
+- (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
 
 @end

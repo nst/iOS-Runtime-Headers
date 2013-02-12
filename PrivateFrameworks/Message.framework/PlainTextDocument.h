@@ -10,12 +10,12 @@
 }
 
 - (void)appendArchivedRepresentation:(id)arg1;
-- (void)appendString:(id)arg1 withQuoteLevel:(NSUInteger)arg2;
+- (void)appendString:(id)arg1 withQuoteLevel:(unsigned int)arg2;
 - (id)archivedRepresentation;
 - (void)dealloc;
-- (NSUInteger)fragmentCount;
+- (unsigned int)fragmentCount;
 - (void)getFormatFlowedString:(id*)arg1 insertedTrailingSpaces:(BOOL*)arg2 encoding:(unsigned long)arg3;
-- (void)getString:(id*)arg1 quoteLevel:(NSUInteger*)arg2 ofFragmentAtIndex:(NSInteger)arg3;
+- (void)getString:(id*)arg1 quoteLevel:(unsigned int*)arg2 ofFragmentAtIndex:(int)arg3;
 - (id)quotedString:(unsigned long)arg1;
 - (id)string;
 

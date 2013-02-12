@@ -5,6 +5,6 @@
 @interface NSDirInfoSerializer : NSAKSerializer {
 }
 
-- (NSUInteger)serializePListValueIn:(id)arg1 key:(id)arg2 value:(id)arg3;
+- (unsigned int)serializePListValueIn:(id)arg1 key:(id)arg2 value:(id)arg3;
 
 @end

@@ -18,7 +18,7 @@
 - (id)initWithCoder:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (id)valueForKey:(id)arg1;
 
 @end

@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Marco.framework/Marco
  */
 
-@class IMRemoteObject;
+@class <MarcoLogServerProtocol>, IMRemoteObject;
 
 @interface MarcoClient : NSObject {
     IMRemoteObject *_remoteObject;
 }
 
-@property(readonly) <MarcoLogServerProtocol> *remoteServer;
 @property(readonly) BOOL connect;
 @property(readonly) BOOL isConnected;
+@property(readonly) <MarcoLogServerProtocol> * remoteServer;
 
 - (BOOL)connect;
 - (BOOL)disconnect;

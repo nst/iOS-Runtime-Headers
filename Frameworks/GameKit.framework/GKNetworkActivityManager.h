@@ -3,7 +3,7 @@
  */
 
 @interface GKNetworkActivityManager : NSObject {
-    NSInteger _count;
+    int _count;
     BOOL _enabled;
 }
 

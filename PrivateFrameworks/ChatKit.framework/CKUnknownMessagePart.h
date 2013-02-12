@@ -5,6 +5,6 @@
 @interface CKUnknownMessagePart : CKMessagePart {
 }
 
-- (NSInteger)type;
+- (int)type;
 
 @end

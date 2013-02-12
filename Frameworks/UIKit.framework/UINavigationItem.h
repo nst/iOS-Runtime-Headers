@@ -18,18 +18,18 @@
     UINavigationBar *_navigationBar;
     NSString *_prompt;
     UIBarButtonItem *_rightBarButtonItem;
-    NSInteger _tag;
+    int _tag;
     NSString *_title;
     UIView *_titleView;
 }
 
-@property(retain) UIBarButtonItem *backBarButtonItem;
-@property(retain) UIBarButtonItem *leftBarButtonItem;
-@property(copy) NSString *prompt;
-@property(retain) UIBarButtonItem *rightBarButtonItem;
-@property(copy) NSString *title;
-@property(retain) UIView *titleView;
+@property(retain) UIBarButtonItem * backBarButtonItem;
 @property BOOL hidesBackButton;
+@property(retain) UIBarButtonItem * leftBarButtonItem;
+@property(copy) NSString * prompt;
+@property(retain) UIBarButtonItem * rightBarButtonItem;
+@property(copy) NSString * title;
+@property(retain) UIView * titleView;
 
 + (void)_initializeSafeCategory;
 + (id)defaultFont;
@@ -45,7 +45,7 @@
 - (void)_removeCustomRightView;
 - (void)_removeTitleAndButtonViews;
 - (id)_rightBarButtonItem;
-- (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(NSInteger)arg2;
+- (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(int)arg2;
 - (void)_setCustomLeftView:(id)arg1;
 - (void)_setCustomRightView:(id)arg1;
 - (void)_setLeftBarButtonItem:(id)arg1;
@@ -69,6 +69,7 @@
 - (id)existingBackButtonView;
 - (id)font;
 - (BOOL)hidesBackButton;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1;
 - (id)leftBarButtonItem;
@@ -99,11 +100,11 @@
 - (void)setPrompt:(id)arg1;
 - (void)setRightBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightBarButtonItem:(id)arg1;
-- (void)setTag:(NSInteger)arg1;
+- (void)setTag:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleView:(id)arg1;
 - (void)setWidth:(float)arg1;
-- (NSInteger)tag;
+- (int)tag;
 - (id)title;
 - (id)titleView;
 - (void)updateNavigationBarButtonsAnimated:(BOOL)arg1;

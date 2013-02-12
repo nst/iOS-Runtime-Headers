@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
+@class MKPolygon;
+
 @interface MKPolygonView : MKOverlayPathView {
 }
 
-@property(readonly) MKPolygon *polygon;
+@property(readonly) MKPolygon * polygon;
 
 - (void)createPath;
 - (void)fillPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;

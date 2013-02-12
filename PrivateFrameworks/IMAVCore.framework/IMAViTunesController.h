@@ -14,6 +14,6 @@
 - (void)pause;
 - (oneway void)release;
 - (void)resume;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

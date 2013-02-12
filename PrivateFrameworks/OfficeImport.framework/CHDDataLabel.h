@@ -2,73 +2,55 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDResources, OADGraphicProperties;
 
 @interface CHDDataLabel : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-    NSUInteger mContentFormatId;
+    boolmIsPositionAffineTransform;
+    boolmShowCategoryName;
+    boolmShowLeaderLines;
+    boolmShowLegendKey;
+    boolmShowPercent;
+    boolmShowSeriesName;
+    boolmShowValue;
+    unsigned int mContentFormatId;
     OADGraphicProperties *mGraphicProperties;
-    NSInteger mPosition;
+    int mPosition;
     EDResources *mResources;
     double mRotation;
-    NSUInteger mStringIndex;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsPositionAffineTransform;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowCategoryName;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowLeaderLines;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowLegendKey;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowPercent;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowSeriesName;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShowValue;
+    unsigned int mStringIndex;
 }
 
 + (id)dataLabelWithResources:(id)arg1;
 
 - (id)contentFormat;
-- (NSUInteger)contentFormatId;
+- (unsigned int)contentFormatId;
 - (void)dealloc;
 - (id)graphicProperties;
 - (id)initWithResources:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPositionAffineTransform;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowCategoryName;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowLeaderLines;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowLegendKey;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowPercent;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowSeriesName;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isShowValue;
-- (NSInteger)position;
+- (bool)isPositionAffineTransform;
+- (bool)isShowCategoryName;
+- (bool)isShowLeaderLines;
+- (bool)isShowLegendKey;
+- (bool)isShowPercent;
+- (bool)isShowSeriesName;
+- (bool)isShowValue;
+- (int)position;
 - (double)rotationAngle;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(NSUInteger)arg1;
+- (void)setContentFormatId:(unsigned int)arg1;
 - (void)setGraphicProperties:(id)arg1;
-- (void)setIsPositionAffineTransform:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setPosition:(NSInteger)arg1;
+- (void)setIsPositionAffineTransform:(bool)arg1;
+- (void)setPosition:(int)arg1;
 - (void)setRotationAngle:(double)arg1;
-- (void)setShowCategoryName:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setShowLeaderLines:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setShowLegendKey:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setShowPercent:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setShowSeriesName:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setShowValue:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setShowCategoryName:(bool)arg1;
+- (void)setShowLeaderLines:(bool)arg1;
+- (void)setShowLegendKey:(bool)arg1;
+- (void)setShowPercent:(bool)arg1;
+- (void)setShowSeriesName:(bool)arg1;
+- (void)setShowValue:(bool)arg1;
 - (void)setString:(id)arg1;
-- (void)setStringIndex:(NSUInteger)arg1;
+- (void)setStringIndex:(unsigned int)arg1;
 - (id)string;
-- (NSUInteger)stringIndex;
+- (unsigned int)stringIndex;
 
 @end

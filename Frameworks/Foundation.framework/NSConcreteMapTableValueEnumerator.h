@@ -5,7 +5,7 @@
 @class NSConcreteMapTable;
 
 @interface NSConcreteMapTableValueEnumerator : NSEnumerator {
-    NSUInteger counter;
+    unsigned int counter;
     NSConcreteMapTable *mapTable;
 }
 

@@ -7,17 +7,25 @@
 @interface GKAccountEditedRequest : GKDataRequest {
     NSString *_accountName;
     NSString *_alias;
+    NSString *_firstName;
+    NSString *_lastName;
 }
 
-@property(retain) NSString *accountName;
-@property(retain) NSString *alias;
+@property(retain) NSString * accountName;
+@property(retain) NSString * alias;
+@property(retain) NSString * firstName;
+@property(retain) NSString * lastName;
 
 - (id)accountName;
 - (id)alias;
 - (void)dealloc;
+- (id)firstName;
 - (id)key;
+- (id)lastName;
 - (id)request;
 - (void)setAccountName:(id)arg1;
 - (void)setAlias:(id)arg1;
+- (void)setFirstName:(id)arg1;
+- (void)setLastName:(id)arg1;
 
 @end

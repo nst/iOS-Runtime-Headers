@@ -6,30 +6,30 @@
     float _flatness;
     struct CGPath { } *_immutablePath;
     BOOL _immutablePathIsValid;
-    NSInteger _lineCapStyle;
+    int _lineCapStyle;
     float *_lineDashPattern;
-    NSUInteger _lineDashPatternCount;
+    unsigned int _lineDashPatternCount;
     float _lineDashPhase;
-    NSInteger _lineJoinStyle;
+    int _lineJoinStyle;
     float _lineWidth;
     float _miterLimit;
     struct CGPath { } *_path;
     BOOL _usesEvenOddFillRule;
 }
 
-@property CGPath *CGPath;
-@property(readonly) CGRect bounds;
-@property(readonly) CGPoint currentPoint;
+@property struct CGPath { }* CGPath;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property(readonly) struct CGPoint { float x; float y; } currentPoint;
 @property(getter=isEmpty,readonly) BOOL empty;
 @property float flatness;
-@property NSInteger lineCapStyle;
-@property NSInteger lineJoinStyle;
+@property int lineCapStyle;
+@property int lineJoinStyle;
 @property float lineWidth;
 @property float miterLimit;
 @property BOOL usesEvenOddFillRule;
 
-+ (id)_bezierPathWithRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 byRoundingCorners:(NSUInteger)arg2 cornerRadius:(float)arg3;
-+ (id)_roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(NSInteger)arg2 cornerRadius:(float)arg3 segments:(NSInteger)arg4;
++ (id)_bezierPathWithRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 byRoundingCorners:(unsigned int)arg2 cornerRadius:(float)arg3;
++ (id)_roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(int)arg2 cornerRadius:(float)arg3 segments:(int)arg4;
 + (id)bezierPath;
 + (id)bezierPathForBottomOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCornerRadius:(float)arg2;
 + (id)bezierPathForTopOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCornerRadius:(float)arg2;
@@ -37,13 +37,13 @@
 + (id)bezierPathWithCGPath:(struct CGPath { }*)arg1;
 + (id)bezierPathWithOvalInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)bezierPathWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-+ (id)bezierPathWithRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 byRoundingCorners:(NSUInteger)arg2 cornerRadii:(struct CGSize { float x1; float x2; })arg3;
++ (id)bezierPathWithRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 byRoundingCorners:(unsigned int)arg2 cornerRadii:(struct CGSize { float x1; float x2; })arg3;
 + (id)bezierPathWithRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;
-+ (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(NSInteger)arg2 withCornerRadii:(id)arg3;
-+ (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(NSInteger)arg2 withCornerRadius:(float)arg3;
-+ (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedEdges:(NSInteger)arg2;
++ (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(int)arg2 withCornerRadii:(id)arg3;
++ (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedCorners:(int)arg2 withCornerRadius:(float)arg3;
++ (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedEdges:(int)arg2;
 + (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTopCornerRadius:(float)arg2 withBottomCornerRadius:(float)arg3;
-+ (id)shadowBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedEdges:(NSInteger)arg2;
++ (id)shadowBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedEdges:(int)arg2;
 
 - (struct CGPath { }*)CGPath;
 - (struct CGPath { }*)_createMutablePathByDecodingData:(id)arg1;
@@ -71,14 +71,14 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fill;
-- (void)fillWithBlendMode:(NSInteger)arg1 alpha:(float)arg2;
+- (void)fillWithBlendMode:(int)arg1 alpha:(float)arg2;
 - (float)flatness;
-- (void)getLineDash:(float*)arg1 count:(NSInteger*)arg2 phase:(float*)arg3;
+- (void)getLineDash:(float*)arg1 count:(int*)arg2 phase:(float*)arg3;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEmpty;
-- (NSInteger)lineCapStyle;
-- (NSInteger)lineJoinStyle;
+- (int)lineCapStyle;
+- (int)lineJoinStyle;
 - (void)lineToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)lineWidth;
 - (float)miterLimit;
@@ -86,14 +86,14 @@
 - (void)removeAllPoints;
 - (void)setCGPath:(struct CGPath { }*)arg1;
 - (void)setFlatness:(float)arg1;
-- (void)setLineCapStyle:(NSInteger)arg1;
-- (void)setLineDash:(const float*)arg1 count:(NSInteger)arg2 phase:(float)arg3;
-- (void)setLineJoinStyle:(NSInteger)arg1;
+- (void)setLineCapStyle:(int)arg1;
+- (void)setLineDash:(const float*)arg1 count:(int)arg2 phase:(float)arg3;
+- (void)setLineJoinStyle:(int)arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setMiterLimit:(float)arg1;
 - (void)setUsesEvenOddFillRule:(BOOL)arg1;
 - (void)stroke;
-- (void)strokeWithBlendMode:(NSInteger)arg1 alpha:(float)arg2;
+- (void)strokeWithBlendMode:(int)arg1 alpha:(float)arg2;
 - (BOOL)usesEvenOddFillRule;
 
 @end

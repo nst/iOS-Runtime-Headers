@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView, UIView;
+@class UIImage, UIImageView, UIView;
 
 @interface MPVideoBackgroundView : UIView {
     UIImageView *_backgroundPlaceholderImageView;
@@ -11,19 +11,19 @@
     UIImageView *_customBackgroundImageView;
     UIImageView *_iconView;
     UIImageView *_imageView;
-    NSInteger _interfaceOrientation;
+    int _interfaceOrientation;
+    BOOL _showDestinationPlaceholder;
 }
 
-@property(retain) UIImage *backgroundPlaceholderImage;
-@property(retain) UIView *backgroundPlaceholderPosterImageView;
-@property(readonly) UIView *backgroundPlaceholderView;
-@property NSInteger interfaceOrientation;
+@property(retain) UIImage * backgroundPlaceholderImage;
+@property(retain) UIView * backgroundPlaceholderPosterImageView;
+@property(readonly) UIView * backgroundPlaceholderView;
+@property int interfaceOrientation;
 
 + (void)_initializeSafeCategory;
 
-- (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(NSInteger)arg3;
+- (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(int)arg3;
 - (void)_destinationDidChangeNotification:(id)arg1;
-- (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
 - (void)_updateDestinationBackgroundViewAnimated:(BOOL)arg1;
 - (id)accessibilityLabel;
@@ -34,14 +34,15 @@
 - (id)backgroundPlaceholderView;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)interfaceOrientation;
+- (int)interfaceOrientation;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (id)qtIcon;
 - (void)setBackgroundPlaceholderImage:(id)arg1;
 - (void)setBackgroundPlaceholderPosterImageView:(id)arg1;
 - (void)setCustomBackgroundImage:(id)arg1;
-- (void)setInterfaceOrientation:(NSInteger)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
+- (void)setShowDestinationPlaceholder:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowQTAudioOnlyUI:(BOOL)arg1;
 
 @end

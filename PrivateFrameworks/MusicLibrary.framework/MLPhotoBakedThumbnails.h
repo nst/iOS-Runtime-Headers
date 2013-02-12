@@ -8,56 +8,56 @@
     struct CGSize { 
         float width; 
         float height; 
-    NSInteger _count;
+    int _count;
     BOOL _dataIsMutable;
-    NSInteger _format;
+    int _format;
     BOOL _missingHeader;
     NSMutableDictionary *_options;
     BOOL _optionsAccessed;
-    NSInteger _singleThumbnailImageLength;
+    int _singleThumbnailImageLength;
     } _size;
     NSData *_thumbnailData;
     NSMutableArray *_thumbnailImages;
 }
 
-@property(retain,readonly) NSMutableDictionary *options;
-@property(readonly) NSUInteger bitmapInfo;
-@property(readonly) NSInteger bitsPerComponent;
-@property(readonly) NSInteger bytesPerPixel;
-@property(readonly) NSInteger format;
-@property(readonly) CGRect imageRect;
-@property(readonly) CGSize size;
+@property(readonly) unsigned int bitmapInfo;
+@property(readonly) int bitsPerComponent;
+@property(readonly) int bytesPerPixel;
+@property(readonly) int format;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } imageRect;
+@property(retain,readonly) NSMutableDictionary * options;
+@property(readonly) struct CGSize { float width; float height; } size;
 
-+ (BOOL)saveBakedThumbnailsOfAlbumVideoImages:(id)arg1 toFile:(id)arg2 format:(NSInteger)arg3 orientation:(NSInteger*)arg4 options:(id)arg5 delegate:(id)arg6;
-+ (BOOL)saveBakedThumbnailsOfImages:(id)arg1 toFile:(id)arg2 format:(NSInteger)arg3 orientation:(NSInteger*)arg4 options:(id)arg5 delegate:(id)arg6;
-+ (id)thumbnailsForAlbumVideo:(id)arg1 format:(NSInteger)arg2;
-+ (id)thumbnailsWithContentsOfFile:(id)arg1 format:(NSInteger)arg2;
++ (BOOL)saveBakedThumbnailsOfAlbumVideoImages:(id)arg1 toFile:(id)arg2 format:(int)arg3 orientation:(int*)arg4 options:(id)arg5 delegate:(id)arg6;
++ (BOOL)saveBakedThumbnailsOfImages:(id)arg1 toFile:(id)arg2 format:(int)arg3 orientation:(int*)arg4 options:(id)arg5 delegate:(id)arg6;
++ (id)thumbnailsForAlbumVideo:(id)arg1 format:(int)arg2;
++ (id)thumbnailsWithContentsOfFile:(id)arg1 format:(int)arg2;
 
 - (id)_thumbnailData;
-- (NSUInteger)bitmapInfo;
-- (NSInteger)bitsPerComponent;
-- (NSInteger)bytesPerPixel;
-- (NSInteger)count;
+- (unsigned int)bitmapInfo;
+- (int)bitsPerComponent;
+- (int)bytesPerPixel;
+- (int)count;
 - (void)dealloc;
 - (id)description;
-- (NSInteger)format;
+- (int)format;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
-- (id)initWithAlbumVideo:(id)arg1 format:(NSInteger)arg2;
-- (id)initWithAlbumVideoImages:(id)arg1 format:(NSInteger)arg2 orientation:(NSInteger*)arg3 options:(id)arg4 delegate:(id)arg5;
-- (id)initWithContentsOfFile:(id)arg1 format:(NSInteger)arg2 readOnly:(BOOL)arg3;
-- (id)initWithContentsOfFile:(id)arg1 format:(NSInteger)arg2;
-- (id)initWithData:(id)arg1 format:(NSInteger)arg2 readOnly:(BOOL)arg3;
-- (id)initWithData:(id)arg1 format:(NSInteger)arg2;
-- (id)initWithImages:(id)arg1 format:(NSInteger)arg2 orientation:(NSInteger*)arg3 options:(id)arg4 delegate:(id)arg5;
+- (id)initWithAlbumVideo:(id)arg1 format:(int)arg2;
+- (id)initWithAlbumVideoImages:(id)arg1 format:(int)arg2 orientation:(int*)arg3 options:(id)arg4 delegate:(id)arg5;
+- (id)initWithContentsOfFile:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
+- (id)initWithContentsOfFile:(id)arg1 format:(int)arg2;
+- (id)initWithData:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
+- (id)initWithData:(id)arg1 format:(int)arg2;
+- (id)initWithImages:(id)arg1 format:(int)arg2 orientation:(int*)arg3 options:(id)arg4 delegate:(id)arg5;
 - (id)options;
 - (BOOL)saveToAlbumVideoFile:(id)arg1;
 - (BOOL)saveToFile:(id)arg1;
 - (id)serializedData;
 - (struct CGSize { float x1; float x2; })size;
-- (char *)thumbnailBytesAtIndex:(NSInteger)arg1;
-- (id)thumbnailDataAtIndex:(NSInteger)arg1;
-- (struct CGImage { }*)thumbnailImageAtIndex:(NSInteger)arg1;
+- (char *)thumbnailBytesAtIndex:(int)arg1;
+- (id)thumbnailDataAtIndex:(int)arg1;
+- (struct CGImage { }*)thumbnailImageAtIndex:(int)arg1;
 - (unsigned long)thumbnailLength;
-- (BOOL)writeBorderedThumbnailOfImage:(struct CGImage { }*)arg1 toBuffer:(void*)arg2 orientation:(NSInteger*)arg3 format:(NSInteger)arg4 formatInfo:(const struct { NSInteger x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; NSUInteger x5; NSInteger x6; NSInteger x7; float x8[4]; float x9[4]; NSUInteger x10; }*)arg5 delegate:(id)arg6;
+- (BOOL)writeBorderedThumbnailOfImage:(struct CGImage { }*)arg1 toBuffer:(void*)arg2 orientation:(int*)arg3 format:(int)arg4 formatInfo:(const struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; float x8[4]; float x9[4]; unsigned int x10; }*)arg5 delegate:(id)arg6;
 
 @end

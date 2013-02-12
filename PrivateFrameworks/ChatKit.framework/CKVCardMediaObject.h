@@ -9,7 +9,7 @@
 
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
-- (NSInteger)mediaType;
+- (int)mediaType;
 - (BOOL)shouldTranscodeForMMS;
 
 @end

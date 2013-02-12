@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView;
+@class UIImage, UIImageView;
 
 @interface PLCroppedImageView : UIView {
     struct CGRect { 
@@ -18,8 +18,8 @@
     UIImageView *_imageView;
 }
 
-@property(retain) UIImage *image;
-@property CGRect cropRect;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } cropRect;
+@property(retain) UIImage * image;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (void)dealloc;

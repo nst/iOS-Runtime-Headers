@@ -7,14 +7,14 @@
 @interface GKCollapsableImageView : UIView {
     BOOL _highlighted;
     UIImage *_image;
-    NSInteger _layoutStyle;
+    int _layoutStyle;
     NSArray *_pieces;
 }
 
-@property(retain) UIImage *image;
-@property(retain) NSArray *pieces;
 @property(getter=isHighlighted) BOOL highlighted;
-@property NSInteger layoutStyle;
+@property(retain) UIImage * image;
+@property int layoutStyle;
+@property(retain) NSArray * pieces;
 
 - (void)dealloc;
 - (id)image;
@@ -22,13 +22,13 @@
 - (BOOL)isHighlighted;
 - (void)layoutFourPiece;
 - (void)layoutOnePiece;
-- (NSInteger)layoutStyle;
+- (int)layoutStyle;
 - (void)layoutSubviews;
 - (void)layoutTwoPieceHorizontal:(BOOL)arg1;
 - (id)pieces;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
-- (void)setLayoutStyle:(NSInteger)arg1;
+- (void)setLayoutStyle:(int)arg1;
 - (void)setPieces:(id)arg1;
 - (void)setupFourPiece;
 - (void)setupOnePiece;

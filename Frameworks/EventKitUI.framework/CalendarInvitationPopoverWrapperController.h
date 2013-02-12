@@ -9,11 +9,11 @@
     CalendarModel *_model;
 }
 
-@property(retain) EKEventViewController *eventViewController;
+@property(retain) EKEventViewController * eventViewController;
 
 - (void)dealloc;
 - (id)eventViewController;
-- (id)initForEventUID:(NSInteger)arg1;
+- (id)initForEventUID:(int)arg1;
 - (void)setEventViewController:(id)arg1;
 
 @end

@@ -11,19 +11,19 @@
 }
 
 - (void)addComment:(id)arg1;
-- (id)commentAtIndex:(NSUInteger)arg1;
-- (NSUInteger)commentCount;
+- (id)commentAtIndex:(unsigned int)arg1;
+- (unsigned int)commentCount;
 - (void)dealloc;
 - (id)defaultTheme;
 - (void)doneWithContent;
-- (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
+- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
 - (id)notesSlide;
-- (id)parentShapePropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
+- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
 - (id)parentSlideBase;
-- (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
-- (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
+- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
+- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
-- (void)setInheritedTextStyle:(id)arg1 placeholderType:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
+- (void)setInheritedTextStyle:(id)arg1 placeholderType:(int)arg2 defaultTextListStyle:(id)arg3;
 - (void)setNotesSlide:(id)arg1;
 - (void)setSlideLayout:(id)arg1;
 - (id)slideLayout;

@@ -11,8 +11,8 @@
     UIWebSelectTableViewController *_tableViewController;
 }
 
-@property(retain) UIPopoverController *_popoverController;
-@property(retain) UIWebSelectTableViewController *_tableViewController;
+@property(retain) UIPopoverController * _popoverController;
+@property(retain) UIWebSelectTableViewController * _tableViewController;
 
 - (id)_popoverController;
 - (void)_popoverDismissed;
@@ -22,7 +22,7 @@
 - (id)controlView;
 - (void)dealloc;
 - (void)didRotate:(id)arg1;
-- (id)initWithDOMHTMLSelectElement:(id)arg1 cachedItems:(id)arg2 singleSelectionItem:(id)arg3 singleSelectionIndex:(NSUInteger)arg4 multipleSelection:(BOOL)arg5;
+- (id)initWithDOMHTMLSelectElement:(id)arg1 cachedItems:(id)arg2 singleSelectionItem:(id)arg3 singleSelectionIndex:(unsigned int)arg4 multipleSelection:(BOOL)arg5;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)set_popoverController:(id)arg1;
 - (void)set_tableViewController:(id)arg1;

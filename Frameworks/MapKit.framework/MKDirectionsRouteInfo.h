@@ -13,12 +13,12 @@
     MKSearchResult *_startSearchResultRef;
 }
 
-@property(retain) MKSearchResult *endSearchResultRef;
-@property(retain) MKDate *initialTransitRequestDate;
-@property(retain) NSMutableArray *responses;
-@property(retain) MKSearchResult *routeEndSearchResult;
-@property(retain) MKSearchResult *routeStartSearchResult;
-@property(retain) MKSearchResult *startSearchResultRef;
+@property(retain) MKSearchResult * endSearchResultRef;
+@property(retain) MKDate * initialTransitRequestDate;
+@property(retain) NSMutableArray * responses;
+@property(retain) MKSearchResult * routeEndSearchResult;
+@property(retain) MKSearchResult * routeStartSearchResult;
+@property(retain) MKSearchResult * startSearchResultRef;
 
 + (id)routeInfo;
 

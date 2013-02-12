@@ -5,9 +5,9 @@
 @class NSMutableArray, RTFTextTable;
 
 @interface RTFReaderTableState : NSObject {
-    NSInteger _currentColumn;
-    NSInteger _currentDefinitionColumn;
-    NSInteger _currentRow;
+    int _currentColumn;
+    int _currentDefinitionColumn;
+    int _currentRow;
     NSMutableArray *_currentRowArray;
     BOOL _currentRowIsLast;
     RTFTextTable *_currentTable;

@@ -23,38 +23,38 @@
                 float width; 
                 float height; 
             } size; 
-        } x1; NSUInteger x2; struct CPPDFGraphicState {} *x3; struct CPPDFGraphicState {} *x4; struct CGPDFContentStream {} *x5[250]; NSUInteger x6; struct PrimitiveBuffer { 
+        } x1; unsigned int x2; struct CPPDFGraphicState {} *x3; struct CPPDFGraphicState {} *x4; struct CGPDFContentStream {} *x5[250]; unsigned int x6; struct PrimitiveBuffer { 
             void *data; 
             void *pos; 
             void *limit; 
-            NSUInteger size; 
-            NSUInteger previousSize; 
-            NSUInteger count; 
-            NSUInteger previousCount; 
-            NSInteger index; 
+            unsigned int size; 
+            unsigned int previousSize; 
+            unsigned int count; 
+            unsigned int previousCount; 
+            int index; 
         } x7; struct PrimitiveBuffer { 
             void *data; 
             void *pos; 
             void *limit; 
-            NSUInteger size; 
-            NSUInteger previousSize; 
-            NSUInteger count; 
-            NSUInteger previousCount; 
-            NSInteger index; 
+            unsigned int size; 
+            unsigned int previousSize; 
+            unsigned int count; 
+            unsigned int previousCount; 
+            int index; 
         } x8; struct PrimitiveBuffer { 
             void *data; 
             void *pos; 
             void *limit; 
-            NSUInteger size; 
-            NSUInteger previousSize; 
-            NSUInteger count; 
-            NSUInteger previousCount; 
-            NSInteger index; 
+            unsigned int size; 
+            unsigned int previousSize; 
+            unsigned int count; 
+            unsigned int previousCount; 
+            int index; 
         } x9; struct CPPDFClipBuffer { 
-            NSUInteger top; 
-            NSUInteger currentIndex; 
-            NSUInteger *data; 
-            NSUInteger size; 
+            unsigned int top; 
+            unsigned int currentIndex; 
+            unsigned int *data; 
+            unsigned int size; 
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
@@ -73,18 +73,18 @@
     long maxLayoutZOrder;
     } mutex;
     } pageCropBox;
-    NSInteger pageNumber;
-        } x10; struct __CFDictionary {} *x11; struct __CFDictionary {} *x12; struct CPPDFStyle {} *x13; NSInteger *x14; NSUInteger x15; NSUInteger x16; NSUInteger x17; NSInteger x18; NSInteger x19; NSInteger x20; NSUInteger *x21; struct CGPath {} **x22; BOOL x23; } *pdfContext;
+    int pageNumber;
+        } x10; struct __CFDictionary {} *x11; struct __CFDictionary {} *x12; struct CPPDFStyle {} *x13; int *x14; unsigned int x15; unsigned int x16; unsigned int x17; int x18; int x19; int x20; unsigned int *x21; struct CGPath {} **x22; BOOL x23; } *pdfContext;
     struct CGPDFPage { } *pdfPage;
     BOOL reconstructed;
-    NSInteger rotation;
+    int rotation;
     NSMutableArray *shapesOnPage;
     NSMutableArray *textLinesOnPage;
 }
 
 + (void)sortByReadingOrder:(id)arg1;
 
-- (struct CPPDFContext { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; NSUInteger x2; struct CPPDFGraphicState {} *x3; struct CPPDFGraphicState {} *x4; struct CGPDFContentStream {} *x5[250]; NSUInteger x6; struct PrimitiveBuffer { void *x_7_1_1; void *x_7_1_2; void *x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; NSUInteger x_7_1_6; NSUInteger x_7_1_7; NSInteger x_7_1_8; } x7; struct PrimitiveBuffer { void *x_8_1_1; void *x_8_1_2; void *x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; NSUInteger x_8_1_6; NSUInteger x_8_1_7; NSInteger x_8_1_8; } x8; struct PrimitiveBuffer { void *x_9_1_1; void *x_9_1_2; void *x_9_1_3; NSUInteger x_9_1_4; NSUInteger x_9_1_5; NSUInteger x_9_1_6; NSUInteger x_9_1_7; NSInteger x_9_1_8; } x9; struct CPPDFClipBuffer { NSUInteger x_10_1_1; NSUInteger x_10_1_2; NSUInteger *x_10_1_3; NSUInteger x_10_1_4; } x10; struct __CFDictionary {} *x11; struct __CFDictionary {} *x12; struct CPPDFStyle {} *x13; NSInteger *x14; NSUInteger x15; NSUInteger x16; NSUInteger x17; NSInteger x18; NSInteger x19; NSInteger x20; NSUInteger *x21; struct CGPath {} **x22; BOOL x23; }*)PDFContext;
+- (struct CPPDFContext { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; unsigned int x2; struct CPPDFGraphicState {} *x3; struct CPPDFGraphicState {} *x4; struct CGPDFContentStream {} *x5[250]; unsigned int x6; struct PrimitiveBuffer { void *x_7_1_1; void *x_7_1_2; void *x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; unsigned int x_7_1_7; int x_7_1_8; } x7; struct PrimitiveBuffer { void *x_8_1_1; void *x_8_1_2; void *x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; unsigned int x_8_1_6; unsigned int x_8_1_7; int x_8_1_8; } x8; struct PrimitiveBuffer { void *x_9_1_1; void *x_9_1_2; void *x_9_1_3; unsigned int x_9_1_4; unsigned int x_9_1_5; unsigned int x_9_1_6; unsigned int x_9_1_7; int x_9_1_8; } x9; struct CPPDFClipBuffer { unsigned int x_10_1_1; unsigned int x_10_1_2; unsigned int *x_10_1_3; unsigned int x_10_1_4; } x10; struct __CFDictionary {} *x11; struct __CFDictionary {} *x12; struct CPPDFStyle {} *x13; int *x14; unsigned int x15; unsigned int x16; unsigned int x17; int x18; int x19; int x20; unsigned int *x21; struct CGPath {} **x22; BOOL x23; }*)PDFContext;
 - (void)accept:(id)arg1;
 - (void)addColumns:(id)arg1;
 - (void)addImage:(id)arg1;
@@ -110,29 +110,29 @@
 - (void)layDownObjectsOnPageOld;
 - (struct CGPDFLayout { }*)layout;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageCropBox;
-- (NSInteger)pageNumber;
+- (int)pageNumber;
 - (id)parent;
 - (struct CGPDFPage { }*)pdfPage;
 - (BOOL)populatePDFLayout:(struct CGPDFLayout { }*)arg1;
 - (void)reconstruct;
 - (void)restoreBackGroundObjectToPage;
-- (NSInteger)rotation;
+- (int)rotation;
 - (void)setBackground:(id)arg1;
-- (NSUInteger)setCellPositionsOf:(id)arg1 from:(NSUInteger)arg2;
+- (unsigned int)setCellPositionsOf:(id)arg1 from:(unsigned int)arg2;
 - (void)setComplexity:(float)arg1;
-- (NSUInteger)setGraphicPositions:(id)arg1 from:(NSUInteger)arg2;
+- (unsigned int)setGraphicPositions:(id)arg1 from:(unsigned int)arg2;
 - (void)setHasTextLines:(BOOL)arg1;
 - (void)setHasZones:(BOOL)arg1;
 - (void)setIsStartOfSection:(BOOL)arg1;
-- (void)setPDFContext:(struct CPPDFContext { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; NSUInteger x2; struct CPPDFGraphicState {} *x3; struct CPPDFGraphicState {} *x4; struct CGPDFContentStream {} *x5[250]; NSUInteger x6; struct PrimitiveBuffer { void *x_7_1_1; void *x_7_1_2; void *x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; NSUInteger x_7_1_6; NSUInteger x_7_1_7; NSInteger x_7_1_8; } x7; struct PrimitiveBuffer { void *x_8_1_1; void *x_8_1_2; void *x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; NSUInteger x_8_1_6; NSUInteger x_8_1_7; NSInteger x_8_1_8; } x8; struct PrimitiveBuffer { void *x_9_1_1; void *x_9_1_2; void *x_9_1_3; NSUInteger x_9_1_4; NSUInteger x_9_1_5; NSUInteger x_9_1_6; NSUInteger x_9_1_7; NSInteger x_9_1_8; } x9; struct CPPDFClipBuffer { NSUInteger x_10_1_1; NSUInteger x_10_1_2; NSUInteger *x_10_1_3; NSUInteger x_10_1_4; } x10; struct __CFDictionary {} *x11; struct __CFDictionary {} *x12; struct CPPDFStyle {} *x13; NSInteger *x14; NSUInteger x15; NSUInteger x16; NSUInteger x17; NSInteger x18; NSInteger x19; NSInteger x20; NSUInteger *x21; struct CGPath {} **x22; BOOL x23; }*)arg1;
+- (void)setPDFContext:(struct CPPDFContext { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; unsigned int x2; struct CPPDFGraphicState {} *x3; struct CPPDFGraphicState {} *x4; struct CGPDFContentStream {} *x5[250]; unsigned int x6; struct PrimitiveBuffer { void *x_7_1_1; void *x_7_1_2; void *x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; unsigned int x_7_1_7; int x_7_1_8; } x7; struct PrimitiveBuffer { void *x_8_1_1; void *x_8_1_2; void *x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; unsigned int x_8_1_6; unsigned int x_8_1_7; int x_8_1_8; } x8; struct PrimitiveBuffer { void *x_9_1_1; void *x_9_1_2; void *x_9_1_3; unsigned int x_9_1_4; unsigned int x_9_1_5; unsigned int x_9_1_6; unsigned int x_9_1_7; int x_9_1_8; } x9; struct CPPDFClipBuffer { unsigned int x_10_1_1; unsigned int x_10_1_2; unsigned int *x_10_1_3; unsigned int x_10_1_4; } x10; struct __CFDictionary {} *x11; struct __CFDictionary {} *x12; struct CPPDFStyle {} *x13; int *x14; unsigned int x15; unsigned int x16; unsigned int x17; int x18; int x19; int x20; unsigned int *x21; struct CGPath {} **x22; BOOL x23; }*)arg1;
 - (void)setPageCropBox:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPageNumber:(NSInteger)arg1;
-- (NSUInteger)setPositionsOf:(id)arg1 from:(NSUInteger)arg2;
-- (NSUInteger)setReadingOrder:(id)arg1 from:(NSUInteger)arg2;
-- (void)setRotation:(NSInteger)arg1;
+- (void)setPageNumber:(int)arg1;
+- (unsigned int)setPositionsOf:(id)arg1 from:(unsigned int)arg2;
+- (unsigned int)setReadingOrder:(id)arg1 from:(unsigned int)arg2;
+- (void)setRotation:(int)arg1;
 - (id)shapesOnPage;
 - (void)sortByReadingOrder;
 - (id)textLinesOnPage;
-- (NSUInteger)traverse:(id)arg1 ordinal:(NSUInteger)arg2;
+- (unsigned int)traverse:(id)arg1 ordinal:(unsigned int)arg2;
 
 @end

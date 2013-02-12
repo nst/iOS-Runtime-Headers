@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/DAVKit.framework/DAVKit
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSArray, NSData;
 
 @interface AYHost : AYOperation {
     struct CFHostClientContext { 
-        NSInteger version; 
+        int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
@@ -14,7 +19,7 @@
     NSArray *_addresses;
     } _context;
     struct __CFHost { } *_hostRef;
-    NSInteger _infoType;
+    int _infoType;
     NSData *_isReachable;
     NSArray *_names;
     id _origin;
@@ -24,8 +29,8 @@
 + (id)hostWithAddress:(id)arg1;
 + (id)hostWithName:(id)arg1;
 
-- (void)_handleInfoResolutionEventWithType:(NSInteger)arg1 error:(const struct { NSInteger x1; NSInteger x2; }*)arg2;
-- (void)_launchInfoResolutionWithType:(NSInteger)arg1;
+- (void)_handleInfoResolutionEventWithType:(int)arg1 error:(const struct { int x1; int x2; }*)arg2;
+- (void)_launchInfoResolutionWithType:(int)arg1;
 - (void)_setClient;
 - (id)addresses;
 - (void)checkReachability;
@@ -36,7 +41,7 @@
 - (id)initHostWithAddress:(id)arg1;
 - (id)initHostWithName:(id)arg1;
 - (id)names;
-- (NSUInteger)reachability;
+- (unsigned int)reachability;
 - (void)resolveAddresses;
 - (void)resolveNames;
 

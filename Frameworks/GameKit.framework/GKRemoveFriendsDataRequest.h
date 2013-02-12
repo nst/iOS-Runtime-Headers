@@ -8,9 +8,9 @@
     GKPlayer *_player;
 }
 
-@property(retain) GKPlayer *player;
+@property(retain) GKPlayer * player;
 
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (void)dealloc;
 - (id)invalidateCacheKeys;
 - (id)key;

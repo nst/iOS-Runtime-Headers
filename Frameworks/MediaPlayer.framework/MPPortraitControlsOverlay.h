@@ -26,16 +26,16 @@
 
 - (BOOL)_accessibilityObscuresScreen;
 - (void)_hideScrubInstructionOverlayAnimationDidEnd;
-- (NSInteger)_layoutStyle;
+- (int)_layoutStyle;
 - (void)_resetStateAfterSliderTrackingDone:(id)arg1;
 - (void)_showScrubInstructionOverlayAnimationDidEnd;
 - (void)_sizeToFitAnimationDidEnd;
 - (float)_sizeToFitForCurrentStateAnimated:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)createButtonForPart:(NSUInteger)arg1;
+- (id)createButtonForPart:(unsigned int)arg1;
 - (id)createProgressIndicator;
 - (void)dealloc;
-- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(NSInteger)arg2;
+- (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
@@ -46,7 +46,7 @@
 - (void)layoutSubviews_Short;
 - (void)layoutSubviews_Tall;
 - (void)resetDetailSlider:(id)arg1;
-- (void)setVisibleParts:(NSUInteger)arg1;
+- (void)setVisibleParts:(unsigned int)arg1;
 - (void)updateForEndOfDetailScrubbing;
 
 @end

@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface ESDMetafileBlipContext : ESDBlipContext {
-     /* Encoded args for previous method: B12@0:4@8 */
-    NSUInteger defaultHeaderSize;
-    NSUInteger mCb;
+    unsigned int defaultHeaderSize;
+    unsigned int mCb;
 }
 
-@property NSUInteger defaultHeaderSize;
+@property unsigned int defaultHeaderSize;
 
 - (unsigned long)defaultHeaderSize;
-- (id)initWithOffset:(NSUInteger)arg1 byteCount:(NSUInteger)arg2 uncompressed:(unsigned long)arg3 stream:(struct SsrwOOStream { int (**x1)(); }*)arg4 streamID:(NSUInteger)arg5;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)loadDelayedNode:(id)arg1;
+- (id)initWithOffset:(unsigned int)arg1 byteCount:(unsigned int)arg2 uncompressed:(unsigned long)arg3 stream:(struct SsrwOOStream { int (**x1)(); }*)arg4 streamID:(unsigned int)arg5;
+- (bool)loadDelayedNode:(id)arg1;
 - (void)setDefaultHeaderSize:(unsigned long)arg1;
 
 @end

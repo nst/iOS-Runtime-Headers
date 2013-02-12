@@ -18,19 +18,19 @@
     NSString *_username;
 }
 
-@property(readonly) NSString *accountDescription;
-@property(copy) NSString *accountPersistentUUID;
-@property(readonly) NSData *certificate;
-@property(readonly) NSString *certificateName;
-@property(copy) NSString *certificatePassword;
-@property(copy) NSString *emailAddress;
-@property(readonly) NSString *hostname;
-@property(readonly) NSNumber *mailNumberOfPastDaysToSync;
-@property(copy) NSString *password;
-@property(copy) NSString *username;
+@property(readonly) NSString * accountDescription;
+@property(copy) NSString * accountPersistentUUID;
+@property(readonly) NSData * certificate;
+@property(readonly) NSString * certificateName;
+@property(copy) NSString * certificatePassword;
+@property(copy) NSString * emailAddress;
+@property(readonly) NSString * hostname;
+@property(readonly) NSNumber * mailNumberOfPastDaysToSync;
+@property(copy) NSString * password;
 @property(readonly) BOOL useSSL;
+@property(copy) NSString * username;
 
-+ (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
++ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
 + (id)typeStrings;
 
 - (id)accountDescription;

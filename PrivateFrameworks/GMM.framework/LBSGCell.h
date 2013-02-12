@@ -3,39 +3,39 @@
  */
 
 @interface LBSGCell : PBCodable {
-    NSInteger _age;
-    NSInteger _cellid;
+    int _age;
+    int _cellid;
     BOOL _hasAge;
     BOOL _hasMcc;
     BOOL _hasMnc;
     BOOL _hasPrimaryScramblingCode;
     BOOL _hasRssi;
     BOOL _hasTimingAdvance;
-    NSInteger _lac;
-    NSInteger _mcc;
-    NSInteger _mnc;
-    NSInteger _primaryScramblingCode;
-    NSInteger _rssi;
-    NSInteger _timingAdvance;
+    int _lac;
+    int _mcc;
+    int _mnc;
+    int _primaryScramblingCode;
+    int _rssi;
+    int _timingAdvance;
 }
 
-@property NSInteger age;
-@property NSInteger cellid;
+@property int age;
+@property int cellid;
 @property(readonly) BOOL hasAge;
 @property(readonly) BOOL hasMcc;
 @property(readonly) BOOL hasMnc;
 @property(readonly) BOOL hasPrimaryScramblingCode;
 @property(readonly) BOOL hasRssi;
 @property(readonly) BOOL hasTimingAdvance;
-@property NSInteger lac;
-@property NSInteger mcc;
-@property NSInteger mnc;
-@property NSInteger primaryScramblingCode;
-@property NSInteger rssi;
-@property NSInteger timingAdvance;
+@property int lac;
+@property int mcc;
+@property int mnc;
+@property int primaryScramblingCode;
+@property int rssi;
+@property int timingAdvance;
 
-- (NSInteger)age;
-- (NSInteger)cellid;
+- (int)age;
+- (int)cellid;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -46,21 +46,21 @@
 - (BOOL)hasRssi;
 - (BOOL)hasTimingAdvance;
 - (id)init;
-- (NSInteger)lac;
-- (NSInteger)mcc;
-- (NSInteger)mnc;
-- (NSInteger)primaryScramblingCode;
+- (int)lac;
+- (int)mcc;
+- (int)mnc;
+- (int)primaryScramblingCode;
 - (BOOL)readFrom:(id)arg1;
-- (NSInteger)rssi;
-- (void)setAge:(NSInteger)arg1;
-- (void)setCellid:(NSInteger)arg1;
-- (void)setLac:(NSInteger)arg1;
-- (void)setMcc:(NSInteger)arg1;
-- (void)setMnc:(NSInteger)arg1;
-- (void)setPrimaryScramblingCode:(NSInteger)arg1;
-- (void)setRssi:(NSInteger)arg1;
-- (void)setTimingAdvance:(NSInteger)arg1;
-- (NSInteger)timingAdvance;
+- (int)rssi;
+- (void)setAge:(int)arg1;
+- (void)setCellid:(int)arg1;
+- (void)setLac:(int)arg1;
+- (void)setMcc:(int)arg1;
+- (void)setMnc:(int)arg1;
+- (void)setPrimaryScramblingCode:(int)arg1;
+- (void)setRssi:(int)arg1;
+- (void)setTimingAdvance:(int)arg1;
+- (int)timingAdvance;
 - (void)writeTo:(id)arg1;
 
 @end

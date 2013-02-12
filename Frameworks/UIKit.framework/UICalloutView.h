@@ -14,7 +14,7 @@
             float x; 
             float y; 
         } offset; 
-        NSInteger position; 
+        int position; 
         struct CGPoint { 
             float x; 
             float y; 
@@ -65,8 +65,6 @@
     UIImageView *_topAnchor;
 }
 
-@property(retain) UIView *leftView;
-@property(retain) UIView *rightView;
 @property(readonly) float UICalloutViewButtonPadding;
 @property(readonly) float UICalloutViewCapHeight;
 @property(readonly) float UICalloutViewCapPaddingTop;
@@ -76,11 +74,13 @@
 @property(readonly) float UICalloutViewMinimumWidth;
 @property(readonly) float UICalloutViewVerticalMargin;
 @property BOOL canAnchorFromBottom;
+@property(retain) UIView * leftView;
 @property float maximumWidth;
-@property NSInteger subtitleLineBreakMode;
-@property NSInteger subtitleTextAlignment;
-@property NSInteger titleLineBreakMode;
-@property NSInteger titleTextAlignment;
+@property(retain) UIView * rightView;
+@property int subtitleLineBreakMode;
+@property int subtitleTextAlignment;
+@property int titleLineBreakMode;
+@property int titleTextAlignment;
 
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
@@ -120,7 +120,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)fadeOutWithDuration:(float)arg1;
-- (void)getActualAnchorPoint:(struct CGPoint { float x1; float x2; }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 position:(NSInteger*)arg3 forDesiredAnchorPoint:(struct CGPoint { float x1; float x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
+- (void)getActualAnchorPoint:(struct CGPoint { float x1; float x2; }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 position:(int*)arg3 forDesiredAnchorPoint:(struct CGPoint { float x1; float x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -140,18 +140,18 @@
 - (void)setRightView:(id)arg1;
 - (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)setSubtitle:(id)arg1;
-- (void)setSubtitleLineBreakMode:(NSInteger)arg1;
-- (void)setSubtitleTextAlignment:(NSInteger)arg1;
+- (void)setSubtitleLineBreakMode:(int)arg1;
+- (void)setSubtitleTextAlignment:(int)arg1;
 - (void)setTemporaryTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleLineBreakMode:(NSInteger)arg1;
-- (void)setTitleTextAlignment:(NSInteger)arg1;
+- (void)setTitleLineBreakMode:(int)arg1;
+- (void)setTitleTextAlignment:(int)arg1;
 - (id)subtitle;
-- (NSInteger)subtitleLineBreakMode;
-- (NSInteger)subtitleTextAlignment;
+- (int)subtitleLineBreakMode;
+- (int)subtitleTextAlignment;
 - (id)temporaryTitle;
 - (id)title;
-- (NSInteger)titleLineBreakMode;
-- (NSInteger)titleTextAlignment;
+- (int)titleLineBreakMode;
+- (int)titleTextAlignment;
 
 @end

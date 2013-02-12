@@ -7,6 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
+- (BOOL)_accessibilityUsesSpecialKeyboardDismiss;
 - (BOOL)isAccessibilityElement;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 

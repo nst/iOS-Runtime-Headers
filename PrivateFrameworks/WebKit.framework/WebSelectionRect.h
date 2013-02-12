@@ -18,7 +18,7 @@
     BOOL m_isLastOnLine;
     BOOL m_isLineBreak;
     } m_rect;
-    NSInteger m_writingDirection;
+    int m_writingDirection;
 }
 
 @property BOOL containsEnd;
@@ -26,8 +26,8 @@
 @property BOOL isFirstOnLine;
 @property BOOL isLastOnLine;
 @property BOOL isLineBreak;
-@property CGRect rect;
-@property NSInteger writingDirection;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } rect;
+@property int writingDirection;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endEdge:(id)arg1;
 + (id)selectionRect;
@@ -48,7 +48,7 @@
 - (void)setIsLastOnLine:(BOOL)arg1;
 - (void)setIsLineBreak:(BOOL)arg1;
 - (void)setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setWritingDirection:(NSInteger)arg1;
-- (NSInteger)writingDirection;
+- (void)setWritingDirection:(int)arg1;
+- (int)writingDirection;
 
 @end

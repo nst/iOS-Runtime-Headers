@@ -22,7 +22,7 @@
     unsigned int _truncatesTitleBeforeValue : 1;
     unsigned int _checkStyle : 4;
     SEL _action;
-    NSInteger _cellOutline;
+    int _cellOutline;
     UIImageView *_checkedImageView;
     UIBezierPath *_fillPath;
     UIBezierPath *_strokePath;
@@ -65,7 +65,7 @@
 - (id)accessibilityValue;
 - (SEL)action;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })buttonBounds;
-- (NSInteger)cellOutline;
+- (int)cellOutline;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 - (id)createRemoveControl;
 - (void)dealloc;
@@ -94,9 +94,9 @@
 - (void)removeControlWillShowRemoveButton:(id)arg1 animated:(BOOL)arg2;
 - (void)removeFromSuperview;
 - (void)setAction:(SEL)arg1;
-- (void)setCellOutline:(NSInteger)arg1;
-- (void)setCheckPosition:(NSInteger)arg1;
-- (void)setCheckStyle:(NSInteger)arg1;
+- (void)setCellOutline:(int)arg1;
+- (void)setCheckPosition:(int)arg1;
+- (void)setCheckStyle:(int)arg1;
 - (void)setChecked:(BOOL)arg1;
 - (void)setDrawsBackground:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

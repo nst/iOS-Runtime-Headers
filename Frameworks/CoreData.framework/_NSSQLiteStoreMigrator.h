@@ -22,12 +22,12 @@
     NSMutableDictionary *_transformedEntityMigrations;
 }
 
-@property(readonly) NSSQLAdapter *adapter;
+@property(readonly) NSSQLAdapter * adapter;
 
 + (BOOL)_annotatesMigrationMetadata;
 + (void)_setAnnotatesMigrationMetadata:(BOOL)arg1;
 
-- (void)_addEntityMigration:(id)arg1 toTableMigrationForRootEntity:(id)arg2 migrationType:(NSInteger)arg3;
+- (void)_addEntityMigration:(id)arg1 toTableMigrationForRootEntity:(id)arg2 migrationType:(int)arg3;
 - (void)_addReindexedProperty:(id)arg1 toSetForEntity:(id)arg2;
 - (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;
 - (void)_determineReindexedEntitiesAndAffectedProperties;

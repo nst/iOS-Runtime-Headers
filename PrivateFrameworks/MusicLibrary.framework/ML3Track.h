@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+@class MLChapterTOC;
+
 @interface ML3Track : ML3Entity {
 }
 
-@property(readonly) MLChapterTOC *chapterTOC;
+@property(readonly) MLChapterTOC * chapterTOC;
 
 + (id)TVShowEpisodesDefaultOrderingProperties;
 + (id)albumAllArtistsDefaultOrderingProperties;
@@ -38,9 +40,11 @@
 
 - (id)chapterTOC;
 - (BOOL)deleteFromLibrary;
-- (unsigned long)imageDBRecordID:(NSInteger)arg1;
+- (long long)imageDBRecordID:(int)arg1;
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2;
 - (BOOL)isOTAPurchasedContent;
-- (unsigned long long)persistentUID;
+- (BOOL)populateArtworkCacheWithArtworkData:(id)arg1;
+- (void)populateChapterDataWithImportChapters:(id)arg1;
+- (void)populateLocationPropertiesWithPath:(id)arg1;
 
 @end

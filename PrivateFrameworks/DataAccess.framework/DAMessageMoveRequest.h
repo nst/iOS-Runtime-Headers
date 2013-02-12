@@ -11,10 +11,10 @@
     NSString *_toFolder;
 }
 
-@property(readonly) NSString *fromFolder;
-@property(readonly) NSString *message;
-@property(readonly) NSString *toFolder;
 @property(retain) id context;
+@property(readonly) NSString * fromFolder;
+@property(readonly) NSString * message;
+@property(readonly) NSString * toFolder;
 
 - (id)context;
 - (void)dealloc;

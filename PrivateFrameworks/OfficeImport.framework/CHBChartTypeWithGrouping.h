@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHBChartTypeWithGrouping : NSObject {
-     /* Encoded args for previous method: v20@0:4@8B12B16 */
 }
 
-+ (void)setGrouping:(id)arg1 stacked:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2 categoryPercentage:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
++ (void)setGrouping:(id)arg1 stacked:(bool)arg2 categoryPercentage:(bool)arg3;
 
 @end

@@ -12,7 +12,7 @@
 }
 
 - (void)_createCachesAndOptimizeState;
-- (NSUInteger)_propertyType;
+- (unsigned int)_propertyType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

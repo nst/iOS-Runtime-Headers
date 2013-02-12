@@ -2,92 +2,126 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary_SQLiteDatabaseContext, NSDictionary, NSString;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class ML3CacheGenerator, ML3Container, ML3MusicLibrary_SQLiteDatabaseContext, NSArray, NSString;
 
 @interface ML3MusicLibrary : NSObject {
     ML3MusicLibrary_SQLiteDatabaseContext *_backgroundDatabaseContext;
     struct dispatch_queue_s { } *_backgroundQueue;
+    int _downloadFinishedNotifyToken;
     BOOL _enableWrites;
+    BOOL _hasEverConnectedToDatabase;
     ML3MusicLibrary_SQLiteDatabaseContext *_mainDatabaseContext;
     id _mcSettingsObserver;
     NSString *_nonContentsNotifyName;
-    NSInteger _nonContentsNotifyToken;
+    int _nonContentsNotifyToken;
     NSString *_notifyName;
-    NSInteger _notifyToken;
+    int _notifyToken;
     NSString *_path;
-    NSDictionary *_purchasedContentFolderMap;
     id _revertToBackupObserver;
 }
 
-@property(readonly) ML3CacheGenerator *cacheGenerator;
-@property(copy,readonly) NSArray *localizedSectionIndexTitles;
-@property(copy,readonly) NSString *path;
-@property(readonly) NSArray *preferredAudioTracks;
-@property(readonly) NSArray *preferredSubtitleTracks;
-@property(readonly) ML3Container *purchasedTracksPlaylist;
+@property(readonly) ML3CacheGenerator * cacheGenerator;
+@property(readonly) BOOL hasEverConnectedToDatabase;
+@property(copy,readonly) NSArray * localizedSectionIndexTitles;
 @property(readonly) BOOL mediaRestrictionEnabled;
+@property(copy,readonly) NSString * path;
+@property(readonly) NSArray * preferredAudioTracks;
+@property(readonly) NSArray * preferredSubtitleTracks;
+@property(readonly) ML3Container * purchasedTracksPlaylist;
 @property(readonly) BOOL requiresPostProcessing;
+@property(readonly) BOOL requiresiTunesCommandsProcessing;
+@property(readonly) unsigned long long syncGenerationID;
 
 + (void)attachAuxiliaryDatabases:(struct sqlite3 { }*)arg1;
++ (void)buildDatabaseFromHomeSharingConnection:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3 progressHandler:(id)arg4;
++ (void)buildDatabaseFromHomeSharingConnection:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3;
++ (void)buildDatabaseTablesUsingHandle:(struct sqlite3 { }*)arg1;
++ (void)closeDatabaseHandle:(struct sqlite3 { }*)arg1;
++ (BOOL)createContainerTriggersUsingHandle:(struct sqlite3 { }*)arg1;
++ (BOOL)createItemTriggersUsingHandle:(struct sqlite3 { }*)arg1;
++ (void)createTriggersUsingHandle:(struct sqlite3 { }*)arg1;
++ (BOOL)dropOldContainerTriggersUsingHandle:(struct sqlite3 { }*)arg1;
++ (BOOL)dropOldItemTriggersUsingHandle:(struct sqlite3 { }*)arg1;
++ (void)dropOldTriggersUsingHandle:(struct sqlite3 { }*)arg1;
 + (void)ensureIndexExists:(id)arg1 onHandle:(struct sqlite3 { }*)arg2 entityClass:(Class)arg3 indexableSQL:(id)arg4;
 + (void)ensureIndexExists:(id)arg1 onHandle:(struct sqlite3 { }*)arg2 entityClass:(Class)arg3 properties:(id)arg4;
 + (void)ensureIndicesExistOnHandle:(struct sqlite3 { }*)arg1;
 + (void)ensureSectionAndListIndicesExist:(id)arg1 onHandle:(struct sqlite3 { }*)arg2 entityClass:(Class)arg3 filteredProperties:(id)arg4 sectionProperties:(id)arg5 orderingProperties:(id)arg6 representativeItemProperty:(id)arg7;
 + (void)enumerateSortMapTablesUsingBlock:(id)arg1;
 + (BOOL)executeSQL:(id)arg1 usingHandle:(struct sqlite3 { }*)arg2;
++ (BOOL)executeUsingHandle:(struct sqlite3 { }*)arg1 eachSQL:(id)arg2;
++ (BOOL)importationEnabled;
 + (void)initialize;
 + (void)limitCacheSize:(struct sqlite3 { }*)arg1;
 + (id)mainLibraryPath;
 + (void)mediaFolderPathDidChangeNotification:(id)arg1;
++ (void)prepareStatementForSQL:(id)arg1 usingHandle:(struct sqlite3 { }*)arg2 block:(id)arg3;
 + (void)registerCustomCallbacksOnHandle:(struct sqlite3 { }*)arg1;
 + (void)registerFunctionsOnHandle:(struct sqlite3 { }*)arg1;
++ (id)selectStatementValueForSQL:(id)arg1 defaultValue:(id)arg2 usingHandle:(struct sqlite3 { }*)arg3;
++ (void)setImportationEnabled:(BOOL)arg1;
 + (id)sharedLibrary;
 + (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
 + (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
 + (void)stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(BOOL*)arg2 didFinish:(BOOL*)arg3;
-+ (struct __CFDictionary { }*)threadLocalCFMutableDictionaryForKey:(id)arg1 withValueCallbacks:(const struct { NSInteger x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
++ (struct __CFDictionary { }*)threadLocalCFMutableDictionaryForKey:(id)arg1 withValueCallbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 + (BOOL)updateSortMapOnHandle:(struct sqlite3 { }*)arg1;
 
 - (void)_debugLoggingOptionsDidChangeNotification:(id)arg1;
-- (BOOL)_mustExecuteiTunesCommands;
+- (int)_executediTunesCommandsVersion;
 - (BOOL)_mustProcessLanguageChange;
+- (BOOL)_schemaHasDefinedTable:(id)arg1;
 - (void)accessDatabaseContextUsingBlock:(id)arg1;
 - (void)accessSortKeyBuilder:(id)arg1;
 - (long long)addStringToSortMap:(id)arg1;
 - (id)backgroundQueue_backgroundDatabaseContext;
 - (id)cacheGenerator;
 - (BOOL)canWriteToDatabase;
+- (void)checkForChangesOnConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)createTriggers;
 - (void)dealloc;
+- (void)dropOldTriggers;
+- (void)ensureIndicesExist;
 - (id)entityForClass:(Class)arg1 persistentID:(long long)arg2;
+- (void)executeITDBPostProcessing;
+- (BOOL)executeITunesCommands;
 - (BOOL)executeSQL:(id)arg1;
+- (void)fillContainerForHomeSharingConnection:(id)arg1 containerID:(long long)arg2 completionHandler:(id)arg3;
+- (BOOL)hasEverConnectedToDatabase;
 - (id)initWithPath:(id)arg1 enableWrites:(BOOL)arg2;
-- (id)insertItemFromPurchaseFolder:(id)arg1 withItemProperties:(id)arg2;
 - (long long)insertStringIntoSortMapNoTransaction:(id)arg1;
-- (id)localizedSectionHeaderForSectionIndex:(NSUInteger)arg1;
+- (id)localizedSectionHeaderForSectionIndex:(unsigned int)arg1;
 - (id)localizedSectionIndexTitles;
 - (BOOL)mediaRestrictionEnabled;
 - (id)newDatabaseContext;
 - (void)notifyContentsDidChange;
 - (void)notifyNonContentsPropertyDidChange;
-- (NSInteger)openDatabaseHandle:(struct sqlite3 {}**)arg1;
+- (int)openDatabaseHandle:(struct sqlite3 {}**)arg1;
 - (id)path;
 - (void)performOperationInBackground:(id)arg1;
 - (void)performTransactionWithBlock:(id)arg1;
+- (void)populateStaticItemsOfDynamicContainers;
 - (void)postChangeNotificationAndScheduleFlush;
 - (void)postNonContentsChangeNotificationAndScheduleFlush;
 - (id)preferredAudioTracks;
 - (id)preferredSubtitleTracks;
 - (void)prepareStatementForSQL:(id)arg1 usingBlock:(id)arg2;
-- (void)purchasedContentFolder:(id)arg1 didProcessItemWithXMLFilenames:(id)arg2;
-- (BOOL)purchasedContentFolder:(id)arg1 loadItemWithProperties:(id)arg2 propertiesToSave:(id*)arg3;
-- (void)purchasedContentFolder:(id)arg1 willProcessItemWithXMLFilenames:(id)arg2;
 - (id)purchasedTracksPlaylist;
 - (void)reconnectToDatabase;
-- (BOOL)reloadPurchasedContent;
 - (BOOL)requiresPostProcessing;
+- (BOOL)requiresiTunesCommandsProcessing;
 - (void)savePlaylists;
 - (void)saveTrackMetadata;
-- (NSUInteger)sectionIndexTitleIndexForSectionIndex:(NSUInteger)arg1;
-- (void)updateSortMap;
+- (unsigned int)sectionIndexTitleIndexForSectionIndex:(unsigned int)arg1;
+- (id)selectStatementValueForSQL:(id)arg1 defaultValue:(id)arg2;
+- (unsigned long long)syncGenerationID;
+- (void)updateActivePlaylistNamesForCurrentLanguage;
+- (void)updateOrderingLanguagesForCurrentLangauge;
+- (BOOL)updateSortMap;
 
 @end

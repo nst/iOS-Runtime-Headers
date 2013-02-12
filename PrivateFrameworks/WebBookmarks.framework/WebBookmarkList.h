@@ -5,21 +5,22 @@
 @class NSMutableArray, WebBookmarkCollection;
 
 @interface WebBookmarkList : NSObject {
-    NSUInteger _bookmarkCount;
+    unsigned int _bookmarkCount;
     NSMutableArray *_bookmarks;
     WebBookmarkCollection *_collection;
-    NSUInteger _folderID;
-    NSUInteger _skipOffset;
+    unsigned int _folderID;
+    BOOL _includeHidden;
+    unsigned int _skipOffset;
 }
 
-@property(readonly) NSUInteger folderID;
+@property(readonly) unsigned int folderID;
 
-- (void)_moveBookmarkAtIndex:(NSUInteger)arg1 toIndex:(NSUInteger)arg2;
-- (id)bookmarkAtIndex:(NSUInteger)arg1;
-- (NSUInteger)bookmarkCount;
+- (void)_moveBookmarkAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (id)bookmarkAtIndex:(unsigned int)arg1;
+- (unsigned int)bookmarkCount;
 - (void)dealloc;
-- (NSUInteger)folderID;
-- (id)initWithFolderID:(NSUInteger)arg1 inCollection:(id)arg2 bookmarkCount:(NSUInteger)arg3 skipOffset:(NSUInteger)arg4;
-- (BOOL)stepThroughIndex:(NSUInteger)arg1;
+- (unsigned int)folderID;
+- (id)initWithFolderID:(unsigned int)arg1 inCollection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4 includeHidden:(BOOL)arg5;
+- (BOOL)stepThroughIndex:(unsigned int)arg1;
 
 @end

@@ -5,15 +5,15 @@
 @class CKSMSMessageDelivery, NSMutableArray;
 
 @interface CKSMSMessage : CKMessage {
-    NSInteger _associationID;
+    int _associationID;
     CKSMSMessageDelivery *_delivery;
     NSMutableArray *_messages;
-    NSInteger _rowID;
+    int _rowID;
 }
 
-@property(retain) CKSMSMessageDelivery *delivery;
-@property(readonly) NSInteger associationID;
-@property(readonly) NSInteger rowID;
+@property(readonly) int associationID;
+@property(retain) CKSMSMessageDelivery * delivery;
+@property(readonly) int rowID;
 
 - (double)_loadDate;
 - (void)_loadFailedSendCount;
@@ -27,34 +27,35 @@
 - (void)addMessage:(struct __CKSMSRecord { }*)arg1;
 - (id)address;
 - (id)alertImageData;
-- (NSInteger)associationID;
+- (int)associationID;
 - (BOOL)containsDisplayableMessageParts;
 - (void)dealloc;
 - (void)deleteMessagePart:(id)arg1;
-- (void)deliveredSubpart:(NSInteger)arg1 totalSubparts:(NSInteger)arg2 success:(BOOL)arg3;
+- (void)deliveredSubpart:(int)arg1 totalSubparts:(int)arg2 success:(BOOL)arg3;
 - (id)delivery;
 - (void)deliveryCompletedForMessage:(id)arg1;
 - (void)deliveryFailedForMessage:(id)arg1;
 - (void)deliveryPartiallyFailedForMessage:(id)arg1;
 - (BOOL)hasBeenRead;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCTMessage:(struct __CKSMSRecord { }*)arg1 messageParts:(id)arg2;
 - (id)initWithCTMessages:(id)arg1 messageParts:(id)arg2;
-- (id)initWithRowID:(NSInteger)arg1;
+- (id)initWithRowID:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isForward;
 - (BOOL)isOnlyDisplayableMessagePart:(id)arg1;
 - (BOOL)isPlaceholder;
 - (void)markAsRead;
-- (NSInteger)messageCount;
+- (int)messageCount;
 - (id)messages;
 - (void)permanentlyRemoveMessage;
 - (void)prepareToResend;
-- (NSInteger)rowID;
+- (BOOL)receivedDeliveryReceipt;
+- (int)rowID;
 - (id)sender;
-- (NSInteger)sentCount;
+- (int)sentCount;
 - (void)setDelivery:(id)arg1;
 - (void)setMessages:(id)arg1;
-- (NSInteger)totalMessageCount;
+- (int)totalMessageCount;
 
 @end

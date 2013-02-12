@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
+@class NSString;
+
 @interface MNFNoteProperty : NSManagedObject {
 }
 
-@property(retain) NSString *propertyKey;
+@property(retain) NSString * propertyKey;
 @property(retain) id propertyValue;
 
 @end

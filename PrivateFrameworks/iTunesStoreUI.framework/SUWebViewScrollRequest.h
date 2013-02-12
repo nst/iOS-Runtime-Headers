@@ -14,9 +14,9 @@
     SUDOMElement *_element;
 }
 
-@property(copy) ? *completionHandler;
-@property(retain) SUDOMElement *element;
 @property BOOL animated;
+@property(copy) id completionHandler;
+@property(retain) SUDOMElement * element;
 
 - (BOOL)animated;
 - (id)completionHandler;

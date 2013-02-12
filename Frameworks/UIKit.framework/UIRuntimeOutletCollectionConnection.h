@@ -8,7 +8,7 @@
     NSString *runtimeCollectionClassName;
 }
 
-@property(copy) NSString *runtimeCollectionClassName;
+@property(copy) NSString * runtimeCollectionClassName;
 
 - (void)connect;
 - (void)connectForSimulator;

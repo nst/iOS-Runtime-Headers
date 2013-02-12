@@ -5,6 +5,9 @@
 @class <DADataclassLockWatcher>, NSMutableArray, NSMutableSet;
 
 @interface DALocalDBGateKeeper : NSObject {
+    <DADataclassLockWatcher> *_bookmarksLockHolder;
+    NSMutableArray *_bookmarksWaiters;
+    BOOL _claimedOwnershipOfBookmarks;
     BOOL _claimedOwnershipOfContacts;
     BOOL _claimedOwnershipOfEvents;
     BOOL _claimedOwnershipOfNotes;
@@ -14,6 +17,7 @@
     NSMutableArray *_eventsWaiters;
     <DADataclassLockWatcher> *_notesLockHolder;
     NSMutableArray *_notesWaiters;
+    NSMutableSet *_waiterIDsExpectingBookmarksLock;
     NSMutableSet *_waiterIDsExpectingContactsLock;
     NSMutableSet *_waiterIDsExpectingEventsLock;
     NSMutableSet *_waiterIDsExpectingNotesLock;
@@ -21,9 +25,9 @@
 
 + (id)sharedGateKeeper;
 
-- (void)claimedOwnershipOfDataclasses:(NSInteger)arg1;
-- (void)registerWaiter:(id)arg1 forDataclassLocks:(NSInteger)arg2 context:(void*)arg3;
-- (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(NSInteger)arg2 moreComing:(BOOL)arg3;
+- (void)claimedOwnershipOfDataclasses:(int)arg1;
+- (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
+- (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(int)arg2 moreComing:(BOOL)arg3;
 - (id)stateString;
 - (void)unregisterWaiterForDataclassLocks:(id)arg1;
 

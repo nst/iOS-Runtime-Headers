@@ -14,7 +14,7 @@
 - (id)initWithData:(id)arg1 pathExtension:(id)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (NSInteger)itemType;
+- (int)itemType;
 - (id)pathForVideoFile;
 - (void)setTitle:(id)arg1;
 - (id)title;

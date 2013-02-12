@@ -10,7 +10,7 @@
 }
 
 - (BOOL)allowDownload;
-- (NSUInteger)approximateSize;
+- (unsigned int)approximateSize;
 - (id)cachedValueForKey:(id)arg1;
 - (id)contentType;
 - (id)contentTypeAndMimeType:(id*)arg1;
@@ -19,7 +19,7 @@
 - (id)fileWrapper;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
 - (BOOL)hasBeenDownloaded;
-- (NSUInteger)imageScalingFlags;
+- (unsigned int)imageScalingFlags;
 - (id)init;
 - (id)initWithWrapper:(id)arg1;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2 ignoreCachedData:(BOOL)arg3;
@@ -34,14 +34,14 @@
 - (BOOL)isRestrictedMimeType:(id)arg1;
 - (BOOL)isSinglePagePDFThatIsAllowedToBeInline;
 - (id)mf_copyMarkupURL;
-- (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(NSInteger)arg1;
-- (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(NSInteger)arg3;
+- (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(int)arg1;
+- (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(int)arg3;
 - (id)mimePart;
-- (void)scaleImageToFit:(NSInteger)arg1;
+- (void)scaleImageToFit:(int)arg1;
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;
 - (void)setDisplayableInline:(BOOL)arg1;
 - (void)setFileWrapper:(id)arg1;
-- (void)setImageScalingFlags:(NSUInteger)arg1;
+- (void)setImageScalingFlags:(unsigned int)arg1;
 - (BOOL)shouldDownloadAttachmentOnDisplay;
 
 @end

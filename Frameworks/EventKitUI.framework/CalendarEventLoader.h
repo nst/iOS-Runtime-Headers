@@ -6,28 +6,28 @@
 
 @interface CalendarEventLoader : NSObject {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
         BOOL minute; 
         double second; 
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
         BOOL minute; 
         double second; 
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
         BOOL minute; 
         double second; 
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -35,7 +35,7 @@
         double second; 
     NSPredicate *_backgroundPredicate;
     NSMutableArray *_backgroundResults;
-    NSInteger _backgroundSeed;
+    int _backgroundSeed;
     <CalendarEventLoaderDelegate> *_delegate;
     double _end;
     } _endGr;
@@ -44,11 +44,11 @@
     BOOL _loadsBlocked;
     struct dispatch_queue_s { } *_lock;
     NSMutableArray *_occurrences;
-    NSUInteger _paddingMonthsToLoad;
+    unsigned int _paddingMonthsToLoad;
     NSPredicate *_predicate;
     BOOL _processingReload;
     struct dispatch_queue_s { } *_queue;
-    NSInteger _seed;
+    int _seed;
     double _selectedDate;
     } _selectedDateGr;
     NSMutableArray *_selectedDateOccurrences;
@@ -58,10 +58,10 @@
     EKEventStore *_store;
 }
 
-@property <CalendarEventLoaderDelegate> *delegate;
-@property(retain) CalFilter *filter;
+@property <CalendarEventLoaderDelegate> * delegate;
+@property(retain) struct CalFilter { }* filter;
 @property BOOL loadsBlocked;
-@property NSUInteger paddingMonthsToLoad;
+@property unsigned int paddingMonthsToLoad;
 
 - (BOOL)_backgroundLoadCompleted:(id)arg1;
 - (void)_beginBackgroundLoadForPredicate:(id)arg1;
@@ -70,27 +70,27 @@
 - (void)_notifyDelegateThatOccurrencesDidUpdate;
 - (void)_reload:(BOOL)arg1;
 - (void)_reloadOccurrences;
-- (void)_setDisplayedDateRange:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 end:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 loadMethod:(NSInteger)arg3;
+- (void)_setDisplayedDateRange:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 end:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 loadMethod:(int)arg3;
 - (void)_updatePredicate;
 - (void)cancelBackgroundLoad;
 - (void)dealloc;
 - (id)delegate;
-- (void)displayedDateRange:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1 end:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg2;
+- (void)displayedDateRange:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1 end:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg2;
 - (id)displayedOccurrences:(BOOL)arg1;
 - (struct CalFilter { }*)filter;
 - (id)initWithEventStore:(id)arg1;
 - (BOOL)loadsBlocked;
-- (id)occurrencesForDay:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 waitForLoad:(BOOL)arg2;
-- (id)occurrencesForStartDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 waitForLoad:(BOOL)arg3;
-- (NSUInteger)paddingMonthsToLoad;
-- (struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDate;
+- (id)occurrencesForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 waitForLoad:(BOOL)arg2;
+- (id)occurrencesForStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 waitForLoad:(BOOL)arg3;
+- (unsigned int)paddingMonthsToLoad;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDate;
 - (id)selectedDateOccurrences:(BOOL)arg1 loadIsComplete:(BOOL*)arg2;
 - (id)selectedDateOccurrences:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilter:(struct CalFilter { }*)arg1;
 - (void)setLoadsBlocked:(BOOL)arg1;
-- (void)setPaddingMonthsToLoad:(NSUInteger)arg1;
-- (void)setSelectedDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 loadMethod:(NSInteger)arg2;
+- (void)setPaddingMonthsToLoad:(unsigned int)arg1;
+- (void)setSelectedDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 loadMethod:(int)arg2;
 - (void)timeZoneChanged;
 - (BOOL)waitForBackgroundLoad;
 

@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
+@class <CoreDAVOptionsTaskDelegate>;
+
 @interface CoreDAVOptionsTask : CoreDAVTask {
 }
 
-@property <CoreDAVOptionsTaskDelegate> *delegate;
+@property <CoreDAVOptionsTaskDelegate> * delegate;
 
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

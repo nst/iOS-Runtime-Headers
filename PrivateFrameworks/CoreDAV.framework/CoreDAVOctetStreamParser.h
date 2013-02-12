@@ -9,8 +9,8 @@
     NSError *_parserError;
 }
 
-@property(retain) NSMutableData *octetStreamData;
-@property(readonly) NSError *parserError;
+@property(retain) NSMutableData * octetStreamData;
+@property(readonly) NSError * parserError;
 
 - (void)dealloc;
 - (id)description;
@@ -19,5 +19,6 @@
 - (id)parserError;
 - (BOOL)processData:(id)arg1;
 - (void)setOctetStreamData:(id)arg1;
+- (BOOL)task:(id)arg1 receivedData:(id)arg2;
 
 @end

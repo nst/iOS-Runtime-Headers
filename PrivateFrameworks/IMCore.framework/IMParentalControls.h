@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableSet;
+@class NSMutableSet, NSSet;
 
 @interface IMParentalControls : NSObject {
     unsigned int _active : 1;
@@ -20,10 +20,8 @@
     NSMutableSet *_subnetWhitelist;
 }
 
-@property(readonly) NSSet *aimWhitelist;
-@property(readonly) NSSet *jabberWhitelist;
-@property(readonly) NSSet *subnetWhitelist;
 @property(readonly) BOOL active;
+@property(readonly) NSSet * aimWhitelist;
 @property(readonly) BOOL disableAV;
 @property(readonly) BOOL disableAimService;
 @property(readonly) BOOL disableJabberService;
@@ -32,6 +30,8 @@
 @property(readonly) BOOL forceChatLogging;
 @property(readonly) BOOL forceJabberWhitelist;
 @property(readonly) BOOL forceSubnetWhitelist;
+@property(readonly) NSSet * jabberWhitelist;
+@property(readonly) NSSet * subnetWhitelist;
 
 + (id)objectForKey:(id)arg1;
 + (id)standardControls;
@@ -56,7 +56,7 @@
 - (id)jabberWhitelist;
 - (BOOL)okToConnectAccount:(id)arg1;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)setShouldPostNotifications:(BOOL)arg1;
 - (id)subnetWhitelist;
 

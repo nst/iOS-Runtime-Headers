@@ -12,25 +12,25 @@
 }
 
 + (id)predicateWithLeftExpression:(id)arg1 rightExpression:(id)arg2 customSelector:(SEL)arg3;
-+ (id)predicateWithLeftExpression:(id)arg1 rightExpression:(id)arg2 modifier:(NSUInteger)arg3 type:(NSUInteger)arg4 options:(NSUInteger)arg5;
++ (id)predicateWithLeftExpression:(id)arg1 rightExpression:(id)arg2 modifier:(unsigned int)arg3 type:(unsigned int)arg4 options:(unsigned int)arg5;
 + (id)predicateWithPredicateOperator:(id)arg1 leftExpression:(id)arg2 rightExpression:(id)arg3;
 + (id)predicateWithPredicateOperator:(id)arg1 leftKeyPath:(id)arg2 rightKeyPath:(id)arg3;
 + (id)predicateWithPredicateOperator:(id)arg1 leftKeyPath:(id)arg2 rightValue:(id)arg3;
 
-- (void)_acceptExpressions:(id)arg1 flags:(NSUInteger)arg2;
-- (void)_acceptOperator:(id)arg1 flags:(NSUInteger)arg2;
+- (void)_acceptExpressions:(id)arg1 flags:(unsigned int)arg2;
+- (void)_acceptOperator:(id)arg1 flags:(unsigned int)arg2;
 - (BOOL)_isForeignObjectExpression:(id)arg1 givenContext:(id)arg2;
-- (void)acceptVisitor:(id)arg1 flags:(NSUInteger)arg2;
-- (NSUInteger)comparisonPredicateModifier;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (unsigned int)comparisonPredicateModifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (SEL)customSelector;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLeftExpression:(id)arg1 rightExpression:(id)arg2 customSelector:(SEL)arg3;
-- (id)initWithLeftExpression:(id)arg1 rightExpression:(id)arg2 modifier:(NSUInteger)arg3 type:(NSUInteger)arg4 options:(NSUInteger)arg5;
+- (id)initWithLeftExpression:(id)arg1 rightExpression:(id)arg2 modifier:(unsigned int)arg3 type:(unsigned int)arg4 options:(unsigned int)arg5;
 - (id)initWithPredicateOperator:(id)arg1 leftExpression:(id)arg2 rightExpression:(id)arg3;
 - (id)initWithPredicateOperator:(id)arg1 leftKeyPath:(id)arg2 rightKeyPath:(id)arg3;
 - (id)initWithPredicateOperator:(id)arg1 leftKeyPath:(id)arg2 rightValue:(id)arg3;
@@ -38,10 +38,10 @@
 - (id)keyPathExpressionForString:(id)arg1;
 - (id)leftExpression;
 - (id)minimalFormInContext:(id)arg1;
-- (NSUInteger)options;
+- (unsigned int)options;
 - (id)predicateFormat;
 - (id)predicateOperator;
-- (NSUInteger)predicateOperatorType;
+- (unsigned int)predicateOperatorType;
 - (id)predicateWithSubstitutionVariables:(id)arg1;
 - (id)rightExpression;
 - (void)setPredicateOperator:(id)arg1;

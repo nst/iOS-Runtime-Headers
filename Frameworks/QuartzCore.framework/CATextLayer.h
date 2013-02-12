@@ -2,6 +2,13 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSString;
+
 @interface CATextLayer : CALayer {
     struct CATextLayerPrivate { struct Mutex { 
             struct _opaque_pthread_mutex_t { 
@@ -11,13 +18,13 @@
         } x1; struct __CTTypesetter {} *x2; } *_state;
 }
 
-@property(copy) NSString *alignmentMode;
-@property void *font;
-@property CGColor *foregroundColor;
-@property(copy) NSString *truncationMode;
+@property(copy) NSString * alignmentMode;
 @property BOOL allowsFontSubpixelQuantization;
+@property void* font;
 @property float fontSize;
+@property struct CGColor { }* foregroundColor;
 @property(copy) id string;
+@property(copy) NSString * truncationMode;
 @property(copy) id truncationString;
 @property(getter=isWrapped) BOOL wrapped;
 

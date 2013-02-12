@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+@class <ICDeviceBrowserDelegate>, NSArray;
+
 @interface ICDeviceBrowser : NSObject {
     id _privateData;
 }
 
-@property <ICDeviceBrowserDelegate> *delegate;
-@property(readonly) NSArray *devices;
 @property(getter=isBrowsing,readonly) BOOL browsing;
+@property <ICDeviceBrowserDelegate> * delegate;
+@property(readonly) NSArray * devices;
 
 - (void)dealloc;
 - (id)delegate;
@@ -18,7 +20,7 @@
 - (id)internalDevices;
 - (BOOL)isBrowsing;
 - (void)setDelegate:(id)arg1;
-- (NSInteger)start;
+- (int)start;
 - (void)stop;
 
 @end

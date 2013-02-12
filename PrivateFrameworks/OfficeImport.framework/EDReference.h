@@ -2,56 +2,45 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDReference : NSObject <NSCopying> {
     struct EDAreaReference { 
-        NSInteger firstRow; 
-        NSInteger firstColumn; 
-        NSInteger lastRow; 
-        NSInteger lastColumn; 
-     /* Encoded args for previous method: B16@0:4i8i12 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B12@0:4@8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
+        int firstRow; 
+        int firstColumn; 
+        int lastRow; 
+        int lastColumn; 
     } mAreaReference;
 }
 
 + (id)reference;
-+ (id)referenceWithAreaReference:(struct EDAreaReference { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)arg1;
-+ (id)referenceWithFirstRow:(NSInteger)arg1 lastRow:(NSInteger)arg2 firstColumn:(NSInteger)arg3 lastColumn:(NSInteger)arg4;
++ (id)referenceWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
++ (id)referenceWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 
-- (struct EDAreaReference { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; })areaReference;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)containsRow:(NSInteger)arg1 column:(NSInteger)arg2;
+- (struct EDAreaReference { int x1; int x2; int x3; int x4; })areaReference;
+- (bool)containsRow:(int)arg1 column:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)countOfCellsBeingReferenced;
-- (NSInteger)firstColumn;
-- (NSInteger)firstRow;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)fullyAdjacentToReference:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)countOfCellsBeingReferenced;
+- (int)firstColumn;
+- (int)firstRow;
+- (bool)fullyAdjacentToReference:(id)arg1;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithAreaReference:(struct EDAreaReference { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)arg1;
-- (id)initWithFirstRow:(NSInteger)arg1 lastRow:(NSInteger)arg2 firstColumn:(NSInteger)arg3 lastColumn:(NSInteger)arg4;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isCellReference;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isColumnReference;
+- (id)initWithAreaReference:(struct EDAreaReference { int x1; int x2; int x3; int x4; }*)arg1;
+- (id)initWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
+- (bool)isCellReference;
+- (bool)isColumnReference;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToReference:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isRowReference;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isValidAreaReference;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isValidCellReference;
-- (NSInteger)lastColumn;
-- (NSInteger)lastRow;
-- (void)setFirstColumn:(NSInteger)arg1;
-- (void)setFirstRow:(NSInteger)arg1;
-- (void)setLastColumn:(NSInteger)arg1;
-- (void)setLastRow:(NSInteger)arg1;
-- (void)unionWithFirstRow:(NSInteger)arg1 lastRow:(NSInteger)arg2 firstColumn:(NSInteger)arg3 lastColumn:(NSInteger)arg4;
+- (bool)isRowReference;
+- (bool)isValidAreaReference;
+- (bool)isValidCellReference;
+- (int)lastColumn;
+- (int)lastRow;
+- (void)setFirstColumn:(int)arg1;
+- (void)setFirstRow:(int)arg1;
+- (void)setLastColumn:(int)arg1;
+- (void)setLastRow:(int)arg1;
+- (void)unionWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 - (void)unionWithReference:(id)arg1;
-- (void)unionWithRow:(NSInteger)arg1 column:(NSInteger)arg2;
+- (void)unionWithRow:(int)arg1 column:(int)arg2;
 
 @end

@@ -9,7 +9,7 @@
     id _delegate;
     NSMutableURLRequest *_postRequest;
     NSMutableData *_rawData;
-    NSInteger _type;
+    int _type;
     BOOL _validResponse;
 }
 

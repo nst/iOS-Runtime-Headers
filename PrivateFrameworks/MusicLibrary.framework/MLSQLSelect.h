@@ -2,19 +2,24 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface MLSQLSelect : MLSQLCode {
 }
 
 + (id)expressionToken;
 
-- (BOOL)_performReadFromStore:(struct CPRecordStore { }*)arg1 uint64Result:(unsigned long long*)arg2 uint32Result:(NSUInteger*)arg3;
-- (BOOL)_performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1 uint64Result:(unsigned long long*)arg2 uint32Result:(NSUInteger*)arg3;
+- (BOOL)_performReadFromStore:(struct CPRecordStore { }*)arg1 uint64Result:(unsigned long long*)arg2 uint32Result:(unsigned int*)arg3;
+- (BOOL)_performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; unsigned int x8; }*)arg1 uint64Result:(unsigned long long*)arg2 uint32Result:(unsigned int*)arg3;
 - (BOOL)allowsJoins;
-- (BOOL)performReadFromStore:(struct CPRecordStore { }*)arg1 uint32Result:(NSUInteger*)arg2;
+- (BOOL)performReadFromStore:(struct CPRecordStore { }*)arg1 uint32Result:(unsigned int*)arg2;
 - (BOOL)performReadFromStore:(struct CPRecordStore { }*)arg1 uint64Result:(unsigned long long*)arg2;
-- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1 copyDataResult:(id*)arg2;
-- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1 rowHandler:(int (*)())arg2 context:(void*)arg3;
-- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1 uint32Result:(NSUInteger*)arg2;
-- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; NSUInteger x8; }*)arg1 uint64Result:(unsigned long long*)arg2;
+- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; unsigned int x8; }*)arg1 copyDataResult:(id*)arg2;
+- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; unsigned int x8; }*)arg1 rowHandler:(int (*)())arg2 context:(void*)arg3;
+- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; unsigned int x8; }*)arg1 uint32Result:(unsigned int*)arg2;
+- (BOOL)performWithConnection:(struct CPSqliteConnection { struct CPSqliteDatabase {} *x1; struct sqlite3 {} *x2; struct __CFDictionary {} *x3; void *x4; int (*x5)(); int (*x6)(); void *x7; unsigned int x8; }*)arg1 uint64Result:(unsigned long long*)arg2;
 
 @end

@@ -6,14 +6,14 @@
 
 @interface CalendarCustomTimeView : UIView {
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
         BOOL minute; 
         double second; 
     struct { 
-        NSInteger year; 
+        int year; 
         BOOL month; 
         BOOL day; 
         BOOL hour; 
@@ -47,29 +47,29 @@
     float _startTimeDesignatorX;
     NSString *_startTimeString;
     float _startTimeX;
-    NSInteger _style;
+    int _style;
     UIFont *_timeFont;
     float _yTextOffset;
 }
 
-- (id)_dateString:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (NSInteger)_designatorForTime:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 use24Hr:(BOOL)arg2;
+- (id)_dateString:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (int)_designatorForTime:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 use24Hr:(BOOL)arg2;
 - (BOOL)_isTwoLinesHigh;
 - (void)_localeChanged;
 - (void)_rebuildStrings;
-- (id)_timeString:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 use24Hr:(BOOL)arg2;
+- (id)_timeString:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 use24Hr:(BOOL)arg2;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)fullTextHeight;
 - (float)fullTextWidth;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (BOOL)isHighlighted;
 - (void)relayoutText;
 - (void)setForceSingleLine:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIsAllDay:(BOOL)arg1;
 - (void)setShowDates:(BOOL)arg1;
-- (void)setStartDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { NSInteger x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2;
+- (void)setStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2;
 - (BOOL)showDates;
 
 @end

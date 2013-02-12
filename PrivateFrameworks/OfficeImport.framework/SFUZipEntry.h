@@ -7,8 +7,8 @@
 @interface SFUZipEntry : SFUDataRepresentation {
     SFUDataRepresentation<SFUZipArchiveDataRepresentation> *mArchiveDataRepresentation;
     unsigned long long mCompressedSize;
-    NSInteger mCompressionMethod;
-    NSUInteger mCrc;
+    int mCompressionMethod;
+    unsigned int mCrc;
     SFUCryptoKey *mCryptoKey;
     unsigned long long mDataOffset;
     unsigned long long mEncodedLength;
@@ -22,14 +22,14 @@
 - (id)backingFilePath;
 - (unsigned long long)calculateEncodedLength;
 - (void)copyToFile:(id)arg1;
-- (NSUInteger)crc;
+- (unsigned int)crc;
 - (id)data;
 - (long long)dataLength;
 - (unsigned long long)dataOffset;
 - (void)dealloc;
 - (long long)encodedLength;
 - (id)initFromCentralFileHeader:(const char *)arg1 dataRepresentation:(id)arg2;
-- (id)initWithDataRepresentation:(id)arg1 compressionMethod:(NSInteger)arg2 compressedSize:(unsigned long long)arg3 uncompressedSize:(unsigned long long)arg4 offset:(unsigned long long)arg5 crc:(NSUInteger)arg6;
+- (id)initWithDataRepresentation:(id)arg1 compressionMethod:(int)arg2 compressedSize:(unsigned long long)arg3 uncompressedSize:(unsigned long long)arg4 offset:(unsigned long long)arg5 crc:(unsigned int)arg6;
 - (id)inputStream;
 - (BOOL)isBackedByFile;
 - (BOOL)isCompressed;

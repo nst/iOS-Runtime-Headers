@@ -9,10 +9,10 @@
     id _delegate;
     UIDocumentInteractionController *_documentInteractionController;
     BOOL _inRotation;
-    NSInteger _popOverState;
+    int _popOverState;
 }
 
-@property NSInteger popOverState;
+@property int popOverState;
 
 - (void)dealloc;
 - (void)didRotate;
@@ -25,13 +25,13 @@
 - (void)documentInteractionControllerWillPresentOpenInMenu:(id)arg1;
 - (void)documentInteractionControllerWillPresentOptionsMenu:(id)arg1;
 - (id)initWithDocumentInteractionController:(id)arg1 delegate:(id)arg2;
-- (NSInteger)popOverState;
+- (int)popOverState;
 - (void)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentPrintMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)printInteractionControllerDidDismissPrinterOptions:(id)arg1;
 - (void)printInteractionControllerWillPresentPrinterOptions:(id)arg1;
-- (void)setPopOverState:(NSInteger)arg1;
+- (void)setPopOverState:(int)arg1;
 - (void)willRotate;
 
 @end

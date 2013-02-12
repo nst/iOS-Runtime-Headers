@@ -5,10 +5,10 @@
 @class <SKRequestDelegate>, NSString;
 
 @interface SKRequestInternal : NSObject {
-    NSInteger _backgroundTaskIdentifier;
+    int _backgroundTaskIdentifier;
     <SKRequestDelegate> *_delegate;
     NSString *_identifier;
-    NSInteger _state;
+    int _state;
 }
 
 - (void)dealloc;

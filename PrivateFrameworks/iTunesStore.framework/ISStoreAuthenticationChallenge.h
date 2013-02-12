@@ -5,7 +5,7 @@
 @class <NSURLAuthenticationChallengeSender>, NSString;
 
 @interface ISStoreAuthenticationChallenge : ISAuthenticationChallenge {
-    NSInteger _failureCount;
+    int _failureCount;
     BOOL _hasPassword;
     NSString *_password;
     <NSURLAuthenticationChallengeSender> *_sender;
@@ -13,20 +13,20 @@
     BOOL _userNameIsEditable;
 }
 
-@property(retain) NSString *password;
-@property <NSURLAuthenticationChallengeSender> *sender;
-@property(retain) NSString *user;
-@property NSInteger failureCount;
+@property int failureCount;
 @property BOOL hasPassword;
+@property(retain) NSString * password;
+@property <NSURLAuthenticationChallengeSender> * sender;
+@property(retain) NSString * user;
 @property BOOL userNameIsEditable;
 
 - (void)dealloc;
-- (NSInteger)failureCount;
+- (int)failureCount;
 - (BOOL)hasPassword;
 - (id)init;
 - (id)password;
 - (id)sender;
-- (void)setFailureCount:(NSInteger)arg1;
+- (void)setFailureCount:(int)arg1;
 - (void)setHasPassword:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setSender:(id)arg1;

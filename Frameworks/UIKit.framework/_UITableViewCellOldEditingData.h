@@ -10,8 +10,8 @@
     UIView *_separator;
 }
 
-@property(retain) UIControl *reorderControl;
-@property(retain) UIView *separatorView;
+@property(retain) UIControl * reorderControl;
+@property(retain) UIView * separatorView;
 
 - (BOOL)dataRequired;
 - (void)dealloc;

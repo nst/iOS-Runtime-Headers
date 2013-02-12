@@ -15,11 +15,11 @@
     UITouch *_touch;
 }
 
-@property(retain) UIKBKey *key;
-@property(retain) UIKBKeyplane *keyplane;
-@property(retain) UIKBKey *slidOffKey;
-@property(retain) UITouch *touch;
-@property CGPoint initialPoint;
+@property struct CGPoint { float x; float y; } initialPoint;
+@property(retain) UIKBKey * key;
+@property(retain) UIKBKeyplane * keyplane;
+@property(retain) UIKBKey * slidOffKey;
+@property(retain) UITouch * touch;
 
 - (void)dealloc;
 - (struct CGPoint { float x1; float x2; })initialPoint;

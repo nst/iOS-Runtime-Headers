@@ -2,23 +2,20 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class <AVAudioRecorderDelegate>, NSDictionary, NSURL;
 
 @interface AVAudioRecorder : NSObject {
-     /* Encoded args for previous method: ^{AudioRecorderImpl=@@@@I{AudioStreamBasicDescription=dIIIIIIII}^{OpaqueAudioFileID}^{OpaqueAudioQueue}qqqdddI*I^{AudioFormatListItem}BBBBBBB^{AudioQueueLevelMeterState}[4^{AudioQueueBuffer}]^{AudioQueueBuffer}BIB}8@0:4 */
     void *_impl;
 }
 
-@property <AVAudioRecorderDelegate> *delegate;
-@property(readonly) NSDictionary *settings;
-@property(readonly) NSURL *url;
 @property(readonly) double currentTime;
+@property <AVAudioRecorderDelegate> * delegate;
 @property(getter=isMeteringEnabled) BOOL meteringEnabled;
 @property(getter=isRecording,readonly) BOOL recording;
+@property(readonly) NSDictionary * settings;
+@property(readonly) NSURL * url;
 
-- (float)averagePowerForChannel:(NSUInteger)arg1;
+- (float)averagePowerForChannel:(unsigned int)arg1;
 - (id)baseInit;
 - (void)baseInitFailed;
 - (void)beginInterruption;
@@ -30,12 +27,12 @@
 - (void)endInterruptionWithFlags;
 - (void)finalize;
 - (void)finishedRecording;
-- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; NSUInteger x5; struct AudioStreamBasicDescription { double x_6_1_1; NSUInteger x_6_1_2; NSUInteger x_6_1_3; NSUInteger x_6_1_4; NSUInteger x_6_1_5; NSUInteger x_6_1_6; NSUInteger x_6_1_7; NSUInteger x_6_1_8; NSUInteger x_6_1_9; } x6; struct OpaqueAudioFileID {} *x7; struct OpaqueAudioQueue {} *x8; long long x9; long long x10; long long x11; double x12; double x13; double x14; NSUInteger x15; char *x16; NSUInteger x17; struct AudioFormatListItem {} *x18; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; struct AudioQueueLevelMeterState {} *x26; struct AudioQueueBuffer {} *x27[4]; struct AudioQueueBuffer {} *x28; void*x29; NSUInteger x30; void*x31; }*)impl;
+- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; unsigned int x5; struct AudioStreamBasicDescription { double x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; unsigned int x_6_1_5; unsigned int x_6_1_6; unsigned int x_6_1_7; unsigned int x_6_1_8; unsigned int x_6_1_9; } x6; struct OpaqueAudioFileID {} *x7; struct OpaqueAudioQueue {} *x8; long long x9; long long x10; long long x11; double x12; double x13; double x14; unsigned int x15; char *x16; unsigned int x17; struct AudioFormatListItem {} *x18; boolx19; boolx20; boolx21; boolx22; boolx23; boolx24; boolx25; struct AudioQueueLevelMeterState {} *x26; struct AudioQueueBuffer {} *x27[4]; struct AudioQueueBuffer {} *x28; boolx29; unsigned int x30; boolx31; }*)impl;
 - (id)initWithURL:(id)arg1 settings:(id)arg2 error:(id*)arg3;
 - (BOOL)isMeteringEnabled;
 - (BOOL)isRecording;
 - (void)pause;
-- (float)peakPowerForChannel:(NSUInteger)arg1;
+- (float)peakPowerForChannel:(unsigned int)arg1;
 - (BOOL)prepareToRecord;
 - (void)privCommonCleanup;
 - (BOOL)record;

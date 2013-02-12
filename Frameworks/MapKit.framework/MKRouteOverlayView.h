@@ -2,19 +2,26 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
+@class MKOverlayViewDisplayPromise, MKRoute;
+
 @interface MKRouteOverlayView : MKPolylineView {
+    unsigned int _mapType;
 }
 
-@property(readonly) MKOverlayViewDisplayPromise *displayPromiseForStepChange;
-@property(readonly) MKRoute *route;
+@property(readonly) MKOverlayViewDisplayPromise * displayPromiseForStepChange;
+@property unsigned int mapType;
+@property(readonly) MKRoute * route;
 
 + (BOOL)_useMiniTiledLayer;
 
 - (void)_displayInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
+- (void)_forceRedisplay;
 - (BOOL)canDrawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (id)displayPromiseForStepChange;
 - (void)drawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2 inContext:(struct CGContext { }*)arg3;
 - (id)initWithRoute:(id)arg1;
+- (unsigned int)mapType;
 - (id)route;
+- (void)setMapType:(unsigned int)arg1;
 
 @end

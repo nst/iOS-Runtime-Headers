@@ -7,5 +7,6 @@
 
 - (id)key;
 - (id)request;
+- (BOOL)shouldProcessInBackground;
 
 @end

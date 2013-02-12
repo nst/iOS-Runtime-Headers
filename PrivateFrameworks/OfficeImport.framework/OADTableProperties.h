@@ -25,9 +25,9 @@
 - (id)effects;
 - (BOOL)firstColumn;
 - (BOOL)firstRow;
-- (BOOL)hasBandsNormalToDir:(NSInteger)arg1;
+- (BOOL)hasBandsNormalToDir:(int)arg1;
 - (BOOL)hasEffects;
-- (BOOL)hasVectorNormalToDir:(NSInteger)arg1 atExtremePos:(NSInteger)arg2;
+- (BOOL)hasVectorNormalToDir:(int)arg1 atExtremePos:(int)arg2;
 - (id)initWithDefaults;
 - (BOOL)lastColumn;
 - (BOOL)lastRow;

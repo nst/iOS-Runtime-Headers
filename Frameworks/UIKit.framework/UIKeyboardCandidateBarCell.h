@@ -19,7 +19,7 @@
 
 @property BOOL highlighted;
 @property(readonly) BOOL isArrow;
-@property(readonly) CGSize stringSize;
+@property(readonly) struct CGSize { float width; float height; } stringSize;
 
 + (void)_initializeSafeCategory;
 + (id)font;
@@ -31,7 +31,7 @@
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)highlighted;
-- (id)initWithCandidate:(id)arg1 tag:(NSInteger)arg2 target:(id)arg3 action:(SEL)arg4;
+- (id)initWithCandidate:(id)arg1 tag:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isArrow;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

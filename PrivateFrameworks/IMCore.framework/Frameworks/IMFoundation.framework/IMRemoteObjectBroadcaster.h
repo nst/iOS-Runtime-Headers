@@ -13,6 +13,6 @@
 - (void)flushProxy:(id)arg1;
 - (BOOL)isSendQueueEmpty;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

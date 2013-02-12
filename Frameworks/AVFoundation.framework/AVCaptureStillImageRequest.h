@@ -6,49 +6,56 @@
    See Warning(s) below.
  */
 
-@class <AVCaptureStillImageOutputDelegate>;
-
-@interface AVCaptureStillImageRequest : NSObject {
+@interface AVCaptureStillImageRequest : NSObject <NSCopying> {
     struct CGSize { 
         float width; 
         float height; 
-    id _completionBlock;
-    <AVCaptureStillImageOutputDelegate> *_delegate;
-    NSUInteger _imageDataFormatType;
+    BOOL _chromaNoiseReductionEnabled;
+    unsigned int _imageDataFormatType;
+    id _iosurfaceCompletionBlock;
+    BOOL _isEV0Image;
+    BOOL _isHDRImage;
     } _previewImageSize;
-    BOOL _sentPreviewImage;
+    id _sbufCompletionBlock;
     BOOL _stillImageMirrored;
-    NSInteger _stillImageOrientation;
+    int _stillImageOrientation;
+    BOOL _suspendsVideoProcessing;
 }
 
-@property(copy) ? *completionBlock;
-@property <AVCaptureStillImageOutputDelegate> *delegate;
-@property NSUInteger imageDataFormatType;
-@property CGSize previewImageSize;
-@property BOOL sentPreviewImage;
+@property BOOL chromaNoiseReductionEnabled;
+@property unsigned int imageDataFormatType;
+@property(copy) id iosurfaceCompletionBlock;
+@property BOOL isEV0Image;
+@property BOOL isHDRImage;
+@property struct CGSize { float width; float height; } previewImageSize;
+@property(copy) id sbufCompletionBlock;
 @property(getter=isStillImageMirrored) BOOL stillImageMirrored;
-@property NSInteger stillImageOrientation;
-@property(readonly) BOOL wantsImageData;
-@property(readonly) BOOL wantsPreviewImage;
+@property int stillImageOrientation;
+@property BOOL suspendsVideoProcessing;
 
 + (id)request;
 
-- (id)completionBlock;
+- (BOOL)chromaNoiseReductionEnabled;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)delegate;
 - (unsigned long)imageDataFormatType;
+- (id)iosurfaceCompletionBlock;
+- (BOOL)isEV0Image;
+- (BOOL)isHDRImage;
 - (BOOL)isStillImageMirrored;
 - (struct CGSize { float x1; float x2; })previewImageSize;
-- (BOOL)sentPreviewImage;
-- (void)setCompletionBlock:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)sbufCompletionBlock;
+- (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (void)setImageDataFormatType:(unsigned long)arg1;
+- (void)setIosurfaceCompletionBlock:(id)arg1;
+- (void)setIsEV0Image:(BOOL)arg1;
+- (void)setIsHDRImage:(BOOL)arg1;
 - (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSentPreviewImage:(BOOL)arg1;
+- (void)setSbufCompletionBlock:(id)arg1;
 - (void)setStillImageMirrored:(BOOL)arg1;
-- (void)setStillImageOrientation:(NSInteger)arg1;
-- (NSInteger)stillImageOrientation;
-- (BOOL)wantsImageData;
-- (BOOL)wantsPreviewImage;
+- (void)setStillImageOrientation:(int)arg1;
+- (void)setSuspendsVideoProcessing:(BOOL)arg1;
+- (int)stillImageOrientation;
+- (BOOL)suspendsVideoProcessing;
 
 @end

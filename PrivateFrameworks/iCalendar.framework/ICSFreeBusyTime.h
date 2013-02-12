@@ -5,10 +5,10 @@
 @interface ICSFreeBusyTime : ICSProperty {
 }
 
-@property NSInteger fbtype;
+@property int fbtype;
 
-- (NSInteger)fbtype;
+- (int)fbtype;
 - (id)initWithPeriod:(id)arg1;
-- (void)setFbtype:(NSInteger)arg1;
+- (void)setFbtype:(int)arg1;
 
 @end

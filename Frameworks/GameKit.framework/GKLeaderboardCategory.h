@@ -6,35 +6,35 @@
 
 @interface GKLeaderboardCategory : NSObject {
     NSString *_categoryID;
-    NSInteger _friendCount;
+    int _friendCount;
     NSString *_localizedTitle;
-    NSInteger _overallRank;
-    NSInteger _overallRankCount;
-    NSInteger _rankAmongFriends;
+    int _overallRank;
+    int _overallRankCount;
+    int _rankAmongFriends;
 }
 
-@property(retain) NSString *categoryID;
-@property(retain) NSString *localizedTitle;
-@property NSInteger friendCount;
-@property NSInteger overallRank;
-@property NSInteger overallRankCount;
-@property NSInteger rankAmongFriends;
+@property(retain) NSString * categoryID;
+@property int friendCount;
+@property(retain) NSString * localizedTitle;
+@property int overallRank;
+@property int overallRankCount;
+@property int rankAmongFriends;
 
 + (id)categoryWithDictionary:(id)arg1;
 
 - (id)categoryID;
 - (void)dealloc;
 - (id)description;
-- (NSInteger)friendCount;
+- (int)friendCount;
 - (id)localizedTitle;
-- (NSInteger)overallRank;
-- (NSInteger)overallRankCount;
-- (NSInteger)rankAmongFriends;
+- (int)overallRank;
+- (int)overallRankCount;
+- (int)rankAmongFriends;
 - (void)setCategoryID:(id)arg1;
-- (void)setFriendCount:(NSInteger)arg1;
+- (void)setFriendCount:(int)arg1;
 - (void)setLocalizedTitle:(id)arg1;
-- (void)setOverallRank:(NSInteger)arg1;
-- (void)setOverallRankCount:(NSInteger)arg1;
-- (void)setRankAmongFriends:(NSInteger)arg1;
+- (void)setOverallRank:(int)arg1;
+- (void)setOverallRankCount:(int)arg1;
+- (void)setRankAmongFriends:(int)arg1;
 
 @end

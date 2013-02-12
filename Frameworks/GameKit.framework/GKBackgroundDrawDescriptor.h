@@ -12,20 +12,24 @@
         float right; 
     UIImage *_borderImage;
     } _borderInsets;
-    NSInteger _sectionLocation;
+    BOOL _drawOutline;
+    int _sectionLocation;
 }
 
-@property(retain) UIImage *borderImage;
-@property UIEdgeInsets borderInsets;
-@property NSInteger sectionLocation;
+@property(retain) UIImage * borderImage;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } borderInsets;
+@property BOOL drawOutline;
+@property int sectionLocation;
 
 - (id)borderImage;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
 - (void)dealloc;
 - (id)description;
-- (NSInteger)sectionLocation;
+- (BOOL)drawOutline;
+- (int)sectionLocation;
 - (void)setBorderImage:(id)arg1;
 - (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setSectionLocation:(NSInteger)arg1;
+- (void)setDrawOutline:(BOOL)arg1;
+- (void)setSectionLocation:(int)arg1;
 
 @end

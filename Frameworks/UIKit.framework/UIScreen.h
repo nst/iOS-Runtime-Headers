@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSArray, UIScreen, UIScreenMode;
+
 @interface UIScreen : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -23,10 +25,12 @@
     } _screenFlags;
 }
 
-@property(copy,readonly) NSArray *availableModes;
-@property(retain) UIScreenMode *currentMode;
-@property(readonly) CGRect applicationFrame;
-@property(readonly) CGRect bounds;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } applicationFrame;
+@property(copy,readonly) NSArray * availableModes;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
+@property(retain) UIScreenMode * currentMode;
+@property(retain,readonly) UIScreen * mirroredScreen;
+@property(retain,readonly) UIScreenMode * preferredMode;
 @property(readonly) float scale;
 
 + (void)_videoOutSettingsChanged;
@@ -40,31 +44,34 @@
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForScreenOriginRotation:(float)arg1;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToRotateScreen:(float)arg1;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(NSInteger)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(int)arg1;
 - (void)_computeMetrics;
-- (id)_defaultScreenMode;
 - (BOOL)_hasStatusBar;
 - (float)_horizontalPixelScale;
-- (NSInteger)_imageOrientation;
+- (int)_imageOrientation;
+- (BOOL)_isCloned;
 - (BOOL)_isMainScreen;
 - (id)_name;
+- (id)_preferredMode;
 - (void)_prepareForWindow;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_realDisplayBounds;
 - (float)_rotation;
 - (void)_setScale:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationFrame;
 - (id)availableModes;
-- (NSInteger)bitsPerComponent;
+- (int)bitsPerComponent;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)currentMode;
 - (void)dealloc;
 - (id)description;
 - (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 - (id)initWithDisplay:(id)arg1;
+- (id)mirroredScreen;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)preferredMode;
 - (float)scale;
-- (NSInteger)screenType;
-- (void)setBitsPerComponent:(NSInteger)arg1;
+- (int)screenType;
+- (void)setBitsPerComponent:(int)arg1;
 - (void)setCurrentMode:(id)arg1;
 
 @end

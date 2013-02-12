@@ -5,32 +5,32 @@
 @class NSString, NSURL;
 
 @interface SSItemArtworkImage : NSObject <NSCopying> {
-    NSInteger _height;
+    int _height;
     NSString *_imageKind;
-    NSInteger _imageOrientation;
+    int _imageOrientation;
     float _imageScale;
     BOOL _prerendered;
     NSURL *_url;
-    NSInteger _width;
+    int _width;
 }
 
-@property(retain) NSURL *URL;
-@property(copy) NSString *imageKind;
-@property(readonly) NSInteger height;
-@property NSInteger imageOrientation;
+@property(retain) NSURL * URL;
+@property(readonly) int height;
+@property(copy) NSString * imageKind;
+@property int imageOrientation;
 @property float imageScale;
-@property(readonly) CGSize imageSize;
+@property(readonly) struct CGSize { float width; float height; } imageSize;
 @property(getter=isPrerendered) BOOL prerendered;
-@property(readonly) NSInteger width;
+@property(readonly) int width;
 
 - (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
-- (NSInteger)height;
+- (unsigned int)hash;
+- (int)height;
 - (id)imageKind;
-- (NSInteger)imageOrientation;
+- (int)imageOrientation;
 - (float)imageScale;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithArtworkDictionary:(id)arg1;
@@ -38,10 +38,10 @@
 - (BOOL)isPrerendered;
 - (void)setImageKind:(id)arg1;
 - (void)setImageKindWithTypeName:(id)arg1 variantName:(id)arg2;
-- (void)setImageOrientation:(NSInteger)arg1;
+- (void)setImageOrientation:(int)arg1;
 - (void)setImageScale:(float)arg1;
 - (void)setPrerendered:(BOOL)arg1;
 - (void)setURL:(id)arg1;
-- (NSInteger)width;
+- (int)width;
 
 @end

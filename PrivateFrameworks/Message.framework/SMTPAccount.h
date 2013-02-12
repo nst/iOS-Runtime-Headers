@@ -10,7 +10,7 @@
     unsigned int _useCellDataOnly : 1;
     MFSMTPConnection *_connection;
     Class _deliveryClass;
-    NSInteger _lastTimerSetTime;
+    int _lastTimerSetTime;
     NSTimer *_timer;
 }
 
@@ -22,9 +22,9 @@
 + (void)registerAppleServiceDeliveryHostname:(id)arg1;
 + (id)saslProfileName;
 
-- (id)_defaultSettingsWithPort:(NSUInteger)arg1 useSSL:(BOOL)arg2 directSSL:(BOOL)arg3;
+- (id)_defaultSettingsWithPort:(unsigned int)arg1 useSSL:(BOOL)arg2 directSSL:(BOOL)arg3;
 - (BOOL)_isAppleServiceDeliveryHostname:(id)arg1;
-- (BOOL)_shouldTryDirectSSLConnectionOnPort:(NSUInteger)arg1;
+- (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
 - (id)alternateConnectionSettings;
 - (id)authenticatedConnection:(BOOL)arg1;
 - (BOOL)canBeFallbackAccount;
@@ -36,12 +36,12 @@
 - (id)connectionSettingsForAuthentication:(BOOL)arg1 secure:(id)arg2 insecure:(id)arg3;
 - (id)customAuthenticationErrorStringForError:(id)arg1 authScheme:(id)arg2;
 - (void)dealloc;
-- (NSUInteger)defaultPortNumber;
+- (unsigned int)defaultPortNumber;
 - (Class)deliveryClass;
 - (void)disconnect:(id)arg1;
 - (id)insecureConnectionSettings;
-- (BOOL)isCommonPortNumber:(NSUInteger)arg1;
-- (NSUInteger)keychainPortNumber;
+- (BOOL)isCommonPortNumber:(unsigned int)arg1;
+- (unsigned int)keychainPortNumber;
 - (id)passwordFromKeychain;
 - (id)preferredAuthScheme;
 - (void)releaseAllConnections;

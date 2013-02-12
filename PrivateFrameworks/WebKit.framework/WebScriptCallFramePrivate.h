@@ -2,31 +2,32 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @class WebScriptCallFrame, WebScriptObject;
 
 @interface WebScriptCallFramePrivate : NSObject {
     struct DebuggerCallFrame { struct ExecState {} *x1; struct JSValue { 
-            union $_684 { 
+            union $_715 { 
                 long long asEncodedJSValue; 
                 double asDouble; 
-                struct $_685 { 
-                    NSInteger payload; 
-                    NSInteger tag; 
+                struct $_716 { 
+                    int payload; 
+                    int tag; 
                 } asBits; 
             } u; 
     struct WebScriptDebugger { int (**x1)(); struct HashSet<JSC::JSGlobalObject*,WTF::PtrHash<JSC::JSGlobalObject*>,WTF::HashTraits<JSC::JSGlobalObject*> > { 
             struct HashTable<JSC::JSGlobalObject*,JSC::JSGlobalObject*,WTF::IdentityExtractor<JSC::JSGlobalObject*>,WTF::PtrHash<JSC::JSGlobalObject*>,WTF::HashTraits<JSC::JSGlobalObject*>,WTF::HashTraits<JSC::JSGlobalObject*> > { 
                 struct JSGlobalObject {} **m_table; 
-                NSInteger m_tableSize; 
-                NSInteger m_tableSizeMask; 
-                NSInteger m_keyCount; 
-                NSInteger m_deletedCount; 
+                int m_tableSize; 
+                int m_tableSizeMask; 
+                int m_keyCount; 
+                int m_deletedCount; 
             } m_impl; 
-        } x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct RetainPtr<WebScriptCallFrame> { 
+        } x2; boolx3; struct RetainPtr<WebScriptCallFrame> { 
             WebScriptCallFrame *m_ptr; 
         } x4; struct ProtectedPtr<JSC::JSGlobalObject> { 
             struct JSGlobalObject {} *m_ptr; 

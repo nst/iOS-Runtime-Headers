@@ -18,9 +18,9 @@
 - (BOOL)isCollection;
 - (BOOL)isFolder;
 - (id)properties;
-- (id)propertiesWithStatusCode:(NSInteger)arg1;
+- (id)propertiesWithStatusCode:(int)arg1;
 - (id)propertyForKey:(id)arg1;
 - (id)ressourceType;
-- (NSInteger)statusCodeForKey:(id)arg1;
+- (int)statusCodeForKey:(id)arg1;
 
 @end

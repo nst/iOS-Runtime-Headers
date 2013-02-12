@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKSource, NSMutableArray;
+@class EKSource, NSArray, NSMutableArray, NSSet, NSString;
 
 @interface EKGroupInfo : NSObject {
     NSMutableArray *_calendars;
@@ -10,20 +10,20 @@
     EKSource *_source;
 }
 
-@property(retain,readonly) NSArray *calendarInfos;
-@property(copy,readonly) NSSet *calendarSet;
-@property(copy,readonly) NSSet *selectedCalendarSet;
-@property(retain) EKSource *source;
-@property(copy,readonly) NSString *title;
-@property(copy,readonly) NSString *typeTitle;
+@property(retain,readonly) NSArray * calendarInfos;
+@property(copy,readonly) NSSet * calendarSet;
 @property(readonly) BOOL isSubscribed;
-@property(readonly) NSInteger numCalendars;
-@property(readonly) NSInteger numSelectedCalendars;
+@property(readonly) int numCalendars;
+@property(readonly) int numSelectedCalendars;
 @property BOOL selected;
+@property(copy,readonly) NSSet * selectedCalendarSet;
 @property(readonly) BOOL showCalendarNameIfSolitary;
-@property(readonly) NSInteger sortOrder;
+@property(readonly) int sortOrder;
+@property(retain) EKSource * source;
+@property(copy,readonly) NSString * title;
+@property(copy,readonly) NSString * typeTitle;
 
-- (id)calendarAtIndex:(NSInteger)arg1;
+- (id)calendarAtIndex:(int)arg1;
 - (id)calendarInfos;
 - (id)calendarSet;
 - (id)copyCalendars;
@@ -32,8 +32,8 @@
 - (id)initWithSource:(id)arg1;
 - (void)insertCalendarInfo:(id)arg1;
 - (BOOL)isSubscribed;
-- (NSInteger)numCalendars;
-- (NSInteger)numSelectedCalendars;
+- (int)numCalendars;
+- (int)numSelectedCalendars;
 - (void)removeCalendar:(id)arg1;
 - (void)selectAll;
 - (void)selectNone;
@@ -42,7 +42,7 @@
 - (void)setSelected:(BOOL)arg1;
 - (void)setSource:(id)arg1;
 - (BOOL)showCalendarNameIfSolitary;
-- (NSInteger)sortOrder;
+- (int)sortOrder;
 - (id)source;
 - (id)title;
 - (id)titleForBeginningOfSentence:(BOOL)arg1;

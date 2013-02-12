@@ -9,9 +9,9 @@
     NSData *_relativePoints;
 }
 
-@property(retain) GMMGeometry *absolutePoint;
-@property(retain) NSData *relativePoints;
+@property(retain) GMMGeometry * absolutePoint;
 @property(readonly) BOOL hasRelativePoints;
+@property(retain) NSData * relativePoints;
 
 - (id)absolutePoint;
 - (void)dealloc;

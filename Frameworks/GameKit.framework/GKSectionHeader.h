@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKUITheme, UIImageView, UILabel;
+@class GKUITheme, NSString, UIImageView, UILabel;
 
 @interface GKSectionHeader : UIView <GKTableViewCellContents> {
     float _bottomOffset;
@@ -11,20 +11,22 @@
     UIImageView *_leftOrnamentView;
     UILabel *_rightLabel;
     UIImageView *_rightOrnamentView;
-    NSInteger _style;
+    int _style;
     GKUITheme *_theme;
 }
 
-@property(retain) UILabel *leftLabel;
-@property(retain) UIImageView *leftOrnamentView;
-@property(retain) NSString *primaryText;
-@property(retain) UILabel *rightLabel;
-@property(retain) UIImageView *rightOrnamentView;
-@property(retain) NSString *secondaryText;
-@property(retain) GKUITheme *theme;
 @property float bottomOffset;
 @property float fontSize;
-@property NSInteger style;
+@property(retain) UILabel * leftLabel;
+@property(retain) UIImageView * leftOrnamentView;
+@property int primaryLineBreakMode;
+@property(retain) NSString * primaryText;
+@property(retain) UILabel * rightLabel;
+@property(retain) UIImageView * rightOrnamentView;
+@property int secondaryLineBreakMode;
+@property(retain) NSString * secondaryText;
+@property int style;
+@property(retain) GKUITheme * theme;
 
 - (float)bottomOffset;
 - (void)dealloc;
@@ -33,23 +35,27 @@
 - (void)layoutSubviews;
 - (id)leftLabel;
 - (id)leftOrnamentView;
-- (float)preferredHeightForOrientation:(NSInteger)arg1;
+- (float)preferredHeightForOrientation:(int)arg1;
 - (void)prepareForReuse;
+- (int)primaryLineBreakMode;
 - (id)primaryText;
 - (id)rightLabel;
 - (id)rightOrnamentView;
+- (int)secondaryLineBreakMode;
 - (id)secondaryText;
 - (void)setBottomOffset:(float)arg1;
 - (void)setFontSize:(float)arg1;
 - (void)setLeftLabel:(id)arg1;
 - (void)setLeftOrnamentView:(id)arg1;
+- (void)setPrimaryLineBreakMode:(int)arg1;
 - (void)setPrimaryText:(id)arg1;
 - (void)setRightLabel:(id)arg1;
 - (void)setRightOrnamentView:(id)arg1;
+- (void)setSecondaryLineBreakMode:(int)arg1;
 - (void)setSecondaryText:(id)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setTheme:(id)arg1;
-- (NSInteger)style;
+- (int)style;
 - (id)theme;
 
 @end

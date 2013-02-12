@@ -12,10 +12,10 @@
     NSData *_data;
 }
 
-@property(copy) NSString *contentId;
-@property(copy) NSString *contentLocation;
-@property(copy) NSString *contentType;
-@property(copy) NSData *data;
+@property(copy) NSString * contentId;
+@property(copy) NSString * contentLocation;
+@property(copy) NSString * contentType;
+@property(copy) NSData * data;
 
 - (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
 - (id)allContentTypeParameterNames;

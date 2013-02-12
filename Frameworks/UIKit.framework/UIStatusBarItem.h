@@ -2,34 +2,36 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString;
+
 @interface UIStatusBarItem : NSObject {
-    NSInteger _type;
+    int _type;
 }
 
-@property(readonly) NSString *indicatorName;
-@property(readonly) NSInteger leftOrder;
-@property(readonly) NSInteger priority;
-@property(readonly) NSInteger rightOrder;
-@property(readonly) NSInteger type;
+@property(readonly) NSString * indicatorName;
+@property(readonly) int leftOrder;
+@property(readonly) int priority;
+@property(readonly) int rightOrder;
+@property(readonly) int type;
 @property(readonly) Class viewClass;
 
-+ (BOOL)itemType:(NSInteger)arg1 canBeEnabledForData:(struct { BOOL x1[22]; BOOL x2[64]; NSInteger x3; NSInteger x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; NSUInteger x9; NSInteger x10; NSInteger x11; NSUInteger x12; NSInteger x13; NSUInteger x14; BOOL x15[150]; NSInteger x16; NSInteger x17; unsigned int x18 : 1; BOOL x19[256]; unsigned int x20 : 1; BOOL x21[100]; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg2;
-+ (id)itemWithType:(NSInteger)arg1;
-+ (BOOL)typeIsValid:(NSInteger)arg1;
++ (BOOL)itemType:(int)arg1 canBeEnabledForData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg2;
++ (id)itemWithType:(int)arg1;
++ (BOOL)typeIsValid:(int)arg1;
 
-- (BOOL)appearsInRegion:(NSInteger)arg1;
+- (BOOL)appearsInRegion:(int)arg1;
 - (BOOL)appearsOnLeft;
 - (BOOL)appearsOnRight;
-- (NSInteger)compareLeftOrder:(id)arg1;
-- (NSInteger)comparePriority:(id)arg1;
-- (NSInteger)compareRightOrder:(id)arg1;
+- (int)compareLeftOrder:(id)arg1;
+- (int)comparePriority:(id)arg1;
+- (int)compareRightOrder:(id)arg1;
 - (id)description;
 - (id)indicatorName;
-- (id)initWithType:(NSInteger)arg1;
-- (NSInteger)leftOrder;
-- (NSInteger)priority;
-- (NSInteger)rightOrder;
-- (NSInteger)type;
+- (id)initWithType:(int)arg1;
+- (int)leftOrder;
+- (int)priority;
+- (int)rightOrder;
+- (int)type;
 - (Class)viewClass;
 
 @end

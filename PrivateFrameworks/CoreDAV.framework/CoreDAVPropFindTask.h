@@ -2,28 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVMultiStatusItem, NSSet;
+@class <CoreDAVTaskDelegate>;
 
-@interface CoreDAVPropFindTask : CoreDAVTask {
-    CoreDAVMultiStatusItem *_multiStatus;
-    NSSet *_propertiesToFind;
+@interface CoreDAVPropFindTask : CoreDAVPropertyFindBaseTask {
 }
 
-@property <CoreDAVTaskDelegate> *delegate;
-@property(retain) CoreDAVMultiStatusItem *multiStatus;
-@property(retain) NSSet *propertiesToFind;
+@property <CoreDAVTaskDelegate> * delegate;
 
-- (id)copyDefaultParserForContentType:(id)arg1;
-- (void)dealloc;
-- (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithPropertiesToFind:(id)arg1 atURL:(id)arg2 withDepth:(NSInteger)arg3;
-- (id)multiStatus;
-- (id)propertiesToFind;
+- (id)initWithPropertiesToFind:(id)arg1 atURL:(id)arg2 withDepth:(int)arg3;
 - (id)requestBody;
-- (void)setMultiStatus:(id)arg1;
-- (void)setPropertiesToFind:(id)arg1;
-- (id)successfulValueForNameSpace:(id)arg1 elementName:(id)arg2;
 
 @end

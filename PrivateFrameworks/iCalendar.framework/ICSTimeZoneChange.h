@@ -4,14 +4,14 @@
 
 @interface ICSTimeZoneChange : NSObject {
     double _interval;
-    NSInteger _tzOffsetTo;
+    int _tzOffsetTo;
 }
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)description;
-- (id)initWithTimeInterval:(double)arg1 tzOffsetTo:(NSInteger)arg2;
+- (id)initWithTimeInterval:(double)arg1 tzOffsetTo:(int)arg2;
 - (double)interval;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)tzOffsetTo;
+- (int)tzOffsetTo;
 
 @end

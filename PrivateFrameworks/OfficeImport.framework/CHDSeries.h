@@ -2,18 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class CHDChart, CHDChartType, CHDData, CHDDataLabel, CHDDataValue, CHDErrorBar, CHDFormula, EDCollection, EDKeyedCollection, OADGraphicProperties;
 
 @interface CHDSeries : NSObject <EDKeyedObject> {
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
+    boolmDateTimeFormattingFlag;
+    boolmHiddenFlag;
     CHDData *mCategoryData;
     CHDChart *mChart;
     CHDChartType *mChartType;
@@ -24,12 +17,10 @@
     OADGraphicProperties *mGraphicProperties;
     CHDDataValue *mLastCachedName;
     CHDFormula *mName;
-    NSInteger mOrder;
-    NSInteger mStyleIndex;
+    int mOrder;
+    int mStyleIndex;
     EDCollection *mTrendlinesCollection;
     CHDData *mValueData;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDateTimeFormattingFlag;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHiddenFlag;
 }
 
 + (id)seriesWithChart:(id)arg1;
@@ -41,36 +32,36 @@
 - (id)dataValuePropertiesCollection;
 - (void)dealloc;
 - (id)defaultDataLabel;
-- (id)defaultSeriesNameForIndex:(NSInteger)arg1;
+- (id)defaultSeriesNameForIndex:(int)arg1;
 - (id)errorBarXAxis;
 - (id)errorBarYAxis;
 - (id)graphicProperties;
 - (id)initWithChart:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isDateTimeFormattingFlag;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isEmpty;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHidden;
-- (NSUInteger)key;
+- (bool)isDateTimeFormattingFlag;
+- (bool)isEmpty;
+- (bool)isHidden;
+- (unsigned int)key;
 - (id)lastCachedName;
 - (id)name;
-- (NSInteger)order;
+- (int)order;
 - (void)setCategoryData:(id)arg1;
 - (void)setChartType:(id)arg1;
 - (void)setDataValuePropertiesCollection:(id)arg1;
-- (void)setDateTimeFormattingFlag:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setDateTimeFormattingFlag:(bool)arg1;
 - (void)setDefaultDataLabel:(id)arg1;
 - (void)setErrorBar:(id)arg1;
 - (void)setErrorBarXAxis:(id)arg1;
 - (void)setErrorBarYAxis:(id)arg1;
 - (void)setGraphicProperties:(id)arg1;
-- (void)setHiddenFlag:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setHiddenFlag:(bool)arg1;
 - (void)setLastCachedName:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setOrder:(NSInteger)arg1;
-- (void)setStyleIndex:(NSInteger)arg1;
+- (void)setOrder:(int)arg1;
+- (void)setStyleIndex:(int)arg1;
 - (void)setTrendlinesCollection:(id)arg1;
 - (void)setValueData:(id)arg1;
 - (id)shallowCopy;
-- (NSInteger)styleIndex;
+- (int)styleIndex;
 - (id)trendlinesCollection;
 - (id)valueData;
 

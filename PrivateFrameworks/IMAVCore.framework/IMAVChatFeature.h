@@ -8,17 +8,17 @@
     IMAVChat *_avChat;
 }
 
-@property IMAVChat *avChat; /* unknown property attribute: SsetAVChat: */
+@property(setter=setAVChat:) IMAVChat * avChat;
 
-- (NSUInteger)addStatusForIMHandle:(id)arg1 asVideo:(BOOL)arg2 ardRole:(NSInteger)arg3;
+- (unsigned int)addStatusForIMHandle:(id)arg1 asVideo:(BOOL)arg2 ardRole:(int)arg3;
 - (id)avChat;
-- (void)conferenceEndedWithReason:(NSUInteger)arg1 andError:(NSInteger)arg2;
+- (void)conferenceEndedWithReason:(unsigned int)arg1 andError:(int)arg2;
 - (void)dealloc;
 - (void)delegateChangedTo:(id)arg1;
-- (BOOL)handleGenericAVMessageFromParticipant:(id)arg1 type:(NSUInteger)arg2 userInfo:(id)arg3;
-- (BOOL)hasAddableParticipantsOtherwiseStatus:(NSUInteger*)arg1;
+- (BOOL)handleGenericAVMessageFromParticipant:(id)arg1 type:(unsigned int)arg2 userInfo:(id)arg3;
+- (BOOL)hasAddableParticipantsOtherwiseStatus:(unsigned int*)arg1;
 - (id)initWithAVChat:(id)arg1;
-- (void)participant:(id)arg1 changedFromState:(NSUInteger)arg2 toState:(NSUInteger)arg3;
+- (void)participant:(id)arg1 changedFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)participantInvited:(id)arg1;
 - (void)participantRemoved:(id)arg1;
 - (void)setAVChat:(id)arg1;

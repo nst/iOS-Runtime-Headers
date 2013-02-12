@@ -8,7 +8,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2;
-- (void)reloadSpecifierAtIndex:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)reloadSpecifierAtIndex:(int)arg1 animated:(BOOL)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

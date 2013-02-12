@@ -6,12 +6,12 @@
 
 @interface _MFOutgoingMessageBody : MessageBody <MFCollectingDataConsumer> {
     MFBufferedDataConsumer *_consumer;
-    NSUInteger _count;
+    unsigned int _count;
     BOOL _lastNewLine;
     NSData *_rawData;
 }
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (unsigned long)count;
 - (id)data;
 - (void)dealloc;

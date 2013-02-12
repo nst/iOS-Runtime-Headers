@@ -2,26 +2,26 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKPlacemarkInternal;
+@class MKPlacemarkInternal, NSDictionary, NSString;
 
 @interface MKPlacemark : NSObject <MKAnnotation> {
     MKPlacemarkInternal *_internal;
 }
 
-@property(readonly) NSDictionary *addressDictionary;
-@property(readonly) NSString *administrativeArea;
-@property(readonly) NSString *country;
-@property(readonly) NSString *countryCode;
-@property(readonly) NSString *locality;
-@property(readonly) NSString *postalCode;
-@property(readonly) NSString *subAdministrativeArea;
-@property(readonly) NSString *subLocality;
-@property(readonly) NSString *subThoroughfare;
-@property(readonly) NSString *thoroughfare;
-@property(readonly) ? coordinate;
+@property(readonly) NSDictionary * addressDictionary;
+@property(readonly) NSString * administrativeArea;
+@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property(readonly) NSString * country;
+@property(readonly) NSString * countryCode;
+@property(readonly) NSString * locality;
+@property(readonly) NSString * postalCode;
+@property(readonly) NSString * subAdministrativeArea;
+@property(readonly) NSString * subLocality;
+@property(readonly) NSString * subThoroughfare;
+@property(readonly) NSString * thoroughfare;
 
 - (id)_formattedAddressLines;
-- (NSUInteger)_mapkit_cache_accessTime;
+- (unsigned int)_mapkit_cache_accessTime;
 - (id)_mapkit_cache_key;
 - (id)_mergedThoroughfare;
 - (id)addressDictionary;
@@ -31,10 +31,11 @@
 - (id)countryCode;
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 addressDictionary:(id)arg2;
 - (id)locality;
 - (id)postalCode;
-- (void)set_mapkit_cache_accessTime:(NSUInteger)arg1;
+- (void)set_mapkit_cache_accessTime:(unsigned int)arg1;
 - (id)subAdministrativeArea;
 - (id)subLocality;
 - (id)subThoroughfare;

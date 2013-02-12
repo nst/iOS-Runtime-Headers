@@ -3,21 +3,14 @@
  */
 
 @interface ISSpringBoardUtility : NSObject {
-    struct dispatch_queue_s { } *_dispatchQueue;
 }
 
 + (id)sharedInstance;
 
-- (void)_badgeValuesChangedExternally;
-- (void)_reallySetBadgeString:(id)arg1 forIdentifier:(id)arg2;
-- (void)_updateBadgeValues;
 - (void)addDownloadingIconWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2;
-- (id)badgeStringForIdentifier:(id)arg1;
 - (void)cancelDownloadingIconForIdentifier:(id)arg1;
-- (void)dealloc;
-- (id)init;
 - (void)removeDefaultPNGSnapshotsForIdentifier:(id)arg1;
-- (void)setBadgeString:(id)arg1 forIdentifier:(id)arg2;
+- (void)setBadgeValue:(id)arg1 forIdentifier:(id)arg2;
 - (void)suspendFrontApplication;
 
 @end

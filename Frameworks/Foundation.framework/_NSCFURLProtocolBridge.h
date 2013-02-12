@@ -13,7 +13,7 @@
     NSLock *clientMutex;
     NSLock *eventMutex;
     NSMutableArray *events;
-    NSUInteger flags;
+    unsigned int flags;
     NSURLAuthenticationChallenge *nsChallenge;
     NSURLProtocol *nsProt;
 }
@@ -28,7 +28,7 @@
 - (void)URLProtocol:(id)arg1 didLoadData:(id)arg2 lengthReceived:(long long)arg3;
 - (void)URLProtocol:(id)arg1 didLoadData:(id)arg2;
 - (void)URLProtocol:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (void)URLProtocol:(id)arg1 didReceiveResponse:(id)arg2 cacheStoragePolicy:(NSUInteger)arg3;
+- (void)URLProtocol:(id)arg1 didReceiveResponse:(id)arg2 cacheStoragePolicy:(unsigned int)arg3;
 - (void)URLProtocol:(id)arg1 wasRedirectedToRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)URLProtocolDidFinishLoading:(id)arg1;
 - (void)_forgetClient;
@@ -40,16 +40,16 @@
 - (void)didLoadData:(id)arg1 lengthReceived:(long long)arg2;
 - (void)didReceiveAuthenticationChallenge:(id)arg1;
 - (void)didReceiveResponse:(id)arg1;
-- (void)dispatchInstruction:(NSInteger)arg1;
+- (void)dispatchInstruction:(int)arg1;
 - (void)dispatchInstructions;
 - (void)finalize;
 - (void)halt;
 - (id)initWithCFURLProtocol:(struct _CFURLProtocol { }*)arg1;
-- (void)marshalEvent:(NSInteger)arg1 obj:(id)arg2 obj2:(id)arg3;
+- (void)marshalEvent:(int)arg1 obj:(id)arg2 obj2:(id)arg3;
 - (void)processEventQ;
 - (void)resume;
 - (void)schedule:(struct __CFRunLoop { }*)arg1 mode:(struct __CFString { }*)arg2;
-- (void)sendInstruction:(NSInteger)arg1;
+- (void)sendInstruction:(int)arg1;
 - (void)start;
 - (void)stop;
 - (void)unschedule:(struct __CFRunLoop { }*)arg1 mode:(struct __CFString { }*)arg2;

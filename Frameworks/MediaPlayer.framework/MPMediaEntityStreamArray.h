@@ -2,57 +2,55 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, MPMediaQuerySectionInfo, NSMutableArray;
+@class MPMediaLibrary, MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSMutableArray;
 
-@interface MPMediaEntityStreamArray : NSArray <NSCopying, NSMutableCopying, NSCoding> {
+@interface MPMediaEntityStreamArray : NSArray <NSCopying> {
     unsigned int _hasCountAndSectionInfo : 1;
     unsigned int _isEmpty : 1;
     unsigned int _hasIsEmpty : 1;
     unsigned int _hasStartedLoadingIsEmpty : 1;
     unsigned int _hasStartedLoadingEntities : 1;
-    NSInteger _containedMediaTypes;
-    NSUInteger _count;
+    int _containedMediaTypes;
+    unsigned int _count;
     struct __CFArray { } *_countAndSectionInfoSemaphores;
     NSMutableArray *_entities;
-    NSUInteger _entitiesSemaphoreIndex;
+    unsigned int _entitiesSemaphoreIndex;
     struct __CFArray { } *_entitiesSemaphores;
-    NSInteger _entityType;
+    int _entityType;
     struct __CFArray { } *_isEmptySemaphores;
-    MPMediaQuery *_query;
+    MPMediaLibrary *_library;
+    MPMediaQueryCriteria *_queryCriteria;
     struct dispatch_queue_s { } *_queue;
+    int _retainCount;
     MPMediaQuerySectionInfo *_sectionInfo;
 }
 
-@property(readonly) MPMediaLibrary *library;
-@property(readonly) MPMediaQuery *mediaQuery;
-@property(copy,readonly) MPMediaQuerySectionInfo *sectionInfo;
-@property NSInteger containedMediaTypes;
+@property int containedMediaTypes;
+@property(readonly) MPMediaLibrary * library;
+@property(readonly) MPMediaQueryCriteria * queryCriteria;
+@property(copy,readonly) MPMediaQuerySectionInfo * sectionInfo;
 
 - (BOOL)MPIsEmpty;
 - (void)_commonInitMPMediaEntityStreamArray;
-- (id)_copyWithZone:(struct _NSZone { }*)arg1 class:(Class)arg2;
 - (void)_onQueueAddObject:(id)arg1;
 - (void)_onQueueStartLoadingEntities;
 - (void)_onQueueStartLoadingIsEmpty;
-- (void)addCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(NSInteger)arg4;
+- (void)addCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3 grouping:(int)arg4;
 - (void)addItemWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
-- (Class)classForCoder;
-- (NSInteger)containedMediaTypes;
+- (int)containedMediaTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEntityType:(NSInteger)arg1 query:(id)arg2;
+- (id)initWithEntityType:(int)arg1 queryCriteria:(id)arg2 library:(id)arg3;
 - (id)library;
-- (id)mediaQuery;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)objectAtIndex:(NSUInteger)arg1;
+- (id)objectAtIndex:(unsigned int)arg1;
 - (id)propertiesToFetch;
+- (id)queryCriteria;
 - (id)sectionInfo;
-- (void)setContainedMediaTypes:(NSInteger)arg1;
-- (void)setCount:(NSUInteger)arg1 sectionInfo:(id)arg2;
+- (void)setContainedMediaTypes:(int)arg1;
+- (void)setCount:(unsigned int)arg1 sectionInfo:(id)arg2;
 - (void)setIsEmpty:(BOOL)arg1;
 
 @end

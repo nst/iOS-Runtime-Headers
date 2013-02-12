@@ -5,7 +5,7 @@
 @class NSArray, NSTimer;
 
 @interface SWSDAFakeRunSensorDelegate : NSObject {
-    NSUInteger _packetIndex;
+    unsigned int _packetIndex;
     NSTimer *_packetTimer;
     NSArray *_packets;
 }
@@ -21,6 +21,6 @@
 - (void)cancelSearchingForFakeSensor:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (NSUInteger)remainingBatteryLifetimeInHoursForFakeSensor:(id)arg1;
+- (unsigned int)remainingBatteryLifetimeInHoursForFakeSensor:(id)arg1;
 
 @end

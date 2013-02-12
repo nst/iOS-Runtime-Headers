@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)setSelectedIndex:(NSInteger)arg1;
+- (void)setSelectedIndex:(int)arg1;
 
 @end

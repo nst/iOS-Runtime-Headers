@@ -5,7 +5,7 @@
 @class CPListItem;
 
 @interface CPParagraph : CPRegion {
-    NSUInteger alignment;
+    unsigned int alignment;
     BOOL below;
     id flowProperties;
     BOOL hasDropCap;
@@ -14,17 +14,17 @@
     float preformatWidth;
 }
 
-@property(retain) CPListItem *listItem;
+@property(retain) CPListItem * listItem;
 
 - (void)accept:(id)arg1;
-- (NSUInteger)alignment;
+- (unsigned int)alignment;
 - (BOOL)below;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)explode;
 - (id)flowProperties;
 - (BOOL)hasDropCap;
-- (NSUInteger)index;
+- (unsigned int)index;
 - (id)init;
 - (BOOL)isBoxRegion;
 - (BOOL)isGraphicalRegion;
@@ -39,7 +39,7 @@
 - (BOOL)noIndentation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })reducedBounds;
 - (float)selectionBottom;
-- (void)setAlignment:(NSUInteger)arg1;
+- (void)setAlignment:(unsigned int)arg1;
 - (void)setBelow:(BOOL)arg1;
 - (void)setFlowProperties:(id)arg1;
 - (void)setHasDropCap:(BOOL)arg1;

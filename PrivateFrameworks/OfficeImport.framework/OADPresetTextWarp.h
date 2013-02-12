@@ -3,12 +3,12 @@
  */
 
 @interface OADPresetTextWarp : OADTextWarp {
-    NSInteger mPresetTextWarpType;
+    int mPresetTextWarpType;
 }
 
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)presetTextWarpType;
-- (void)setPresetTextWarpType:(NSInteger)arg1;
+- (int)presetTextWarpType;
+- (void)setPresetTextWarpType:(int)arg1;
 
 @end

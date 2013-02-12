@@ -7,6 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
+- (id)_accessibilityAutomaticIdentifier;
 - (void)_accessibilitySetValue:(id)arg1;
 - (BOOL)_accessibilitySupportsActivateAction;
 - (void)accessibilityActivate;

@@ -7,43 +7,42 @@
 @interface ABActionsController : NSObject {
     struct __CFArray { } *_actionsForProperty;
     void *_context;
-    NSInteger _lastPropertyForActions;
-    NSInteger _multiValueIdentifier;
+    int _lastPropertyForActions;
+    int _multiValueIdentifier;
     void *_person;
-    NSInteger _property;
-    NSInteger _recordID;
+    int _property;
+    int _recordID;
     NSString *_stringValue;
     id _value;
 }
 
-+ (NSInteger)defaultActionForProperty:(NSInteger)arg1;
-+ (id)newActionsControllerForProperty:(NSInteger)arg1;
++ (int)defaultActionForProperty:(int)arg1;
++ (id)newActionsControllerForProperty:(int)arg1;
 
-- (NSInteger)_actionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
-- (struct __CFArray { }*)_actionsForProperty:(NSInteger)arg1;
-- (void)_performAction:(NSInteger)arg1 forProperty:(NSInteger)arg2;
-- (NSInteger)actionsCountForProperty:(NSInteger)arg1;
+- (int)_actionAtIndex:(int)arg1 forProperty:(int)arg2;
+- (struct __CFArray { }*)_actionsForProperty:(int)arg1;
+- (void)_performAction:(int)arg1 forProperty:(int)arg2;
+- (int)actionsCountForProperty:(int)arg1;
 - (void*)context;
 - (void)dealloc;
-- (NSInteger)defaultAction;
-- (id)imageNameAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
+- (int)defaultAction;
 - (id)init;
-- (id)initWithProperty:(NSInteger)arg1;
-- (void)performAction:(NSInteger)arg1;
-- (void)performActionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
+- (id)initWithProperty:(int)arg1;
+- (void)performAction:(int)arg1;
+- (void)performActionAtIndex:(int)arg1 forProperty:(int)arg2;
 - (void)performDefaultAction;
 - (void*)person;
 - (void)resetPrimaryPropertyActions;
 - (void)setContext:(void*)arg1;
-- (void)setMultiValueIdentifier:(NSInteger)arg1;
+- (void)setMultiValueIdentifier:(int)arg1;
 - (void)setPerson:(void*)arg1;
-- (void)setRecordID:(NSInteger)arg1;
+- (void)setRecordID:(int)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)stringValue;
-- (id)titleAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
-- (id)titleForAction:(NSInteger)arg1;
-- (id)urlForAction:(NSInteger)arg1 forProperty:(NSInteger)arg2;
+- (id)titleAtIndex:(int)arg1 forProperty:(int)arg2;
+- (id)titleForAction:(int)arg1;
+- (id)urlForAction:(int)arg1 forProperty:(int)arg2;
 - (id)value;
 
 @end

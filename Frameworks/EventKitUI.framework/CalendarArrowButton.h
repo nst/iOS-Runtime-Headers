@@ -13,9 +13,9 @@
 - (void)_performDownRepeat;
 - (void)_repeatCancelled;
 - (void)_scheduleDownRepeat;
-- (NSInteger)arrowType;
+- (int)arrowType;
 - (void)dealloc;
-- (id)initWithArrowType:(NSInteger)arg1;
+- (id)initWithArrowType:(int)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setDelegate:(id)arg1;
 

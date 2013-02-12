@@ -7,27 +7,24 @@
 @interface PSEditableTableCell : PreferencesTextTableCell {
     id _realTarget;
     SEL _targetSetter;
-    NSInteger _type;
+    int _type;
     PSSpecifier *_userInfo;
     BOOL _valueChanged;
 }
 
-@property NSInteger type;
-
-+ (void)_initializeSafeCategory;
+@property int type;
 
 - (void)_saveForExit;
 - (void)_setValueChanged;
 - (BOOL)canReload;
 - (void)controlChanged:(id)arg1;
 - (void)dealloc;
-- (BOOL)isAccessibilityElement;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

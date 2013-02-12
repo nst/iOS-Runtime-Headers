@@ -20,19 +20,19 @@
     NSString *_selectedCategoryID;
 }
 
-@property(retain) GKLeaderboardCategory *aggregateCategory;
-@property(retain) NSArray *categories;
-@property GKLeaderboardViewController *controllerForDelegate;
-@property <GKLeaderboardCategoryPopoverDelegate> *delegate;
-@property(retain) GKGameDetails *details;
-@property(retain) GKGame *game;
-@property <GKLeaderboardViewControllerDelegate> *leaderboardDelegate;
-@property(retain) GKPlayer *player;
-@property(retain,readonly) GKLeaderboardViewControllerPrivate *privateLeaderboard;
-@property GKLeaderboardViewController *publicLeaderboard;
-@property(copy) NSString *selectedCategoryID;
+@property(retain) GKLeaderboardCategory * aggregateCategory;
+@property(retain) NSArray * categories;
+@property GKLeaderboardViewController * controllerForDelegate;
+@property <GKLeaderboardCategoryPopoverDelegate> * delegate;
+@property(retain) GKGameDetails * details;
+@property(retain) GKGame * game;
 @property BOOL hasAggregate;
 @property BOOL isInPopover;
+@property <GKLeaderboardViewControllerDelegate> * leaderboardDelegate;
+@property(retain) GKPlayer * player;
+@property(retain,readonly) GKLeaderboardViewControllerPrivate * privateLeaderboard;
+@property GKLeaderboardViewController * publicLeaderboard;
+@property(copy) NSString * selectedCategoryID;
 
 - (void)_gkRefreshContents;
 - (id)aggregateCategory;
@@ -48,7 +48,7 @@
 - (id)initWithGame:(id)arg1 player:(id)arg2;
 - (BOOL)isInPopover;
 - (id)leaderboardDelegate;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)player;
 - (id)privateLeaderboard;
 - (id)publicLeaderboard;
@@ -65,10 +65,10 @@
 - (void)setPlayer:(id)arg1;
 - (void)setPublicLeaderboard:(id)arg1;
 - (void)setSelectedCategoryID:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewDidLoad;
 
 @end

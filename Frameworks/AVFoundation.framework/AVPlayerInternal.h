@@ -7,11 +7,10 @@
 @interface AVPlayerInternal : NSObject {
     CALayer *caLayer;
     AVPlayerItem *currentItem;
-    BOOL didSetInitialVideoCompositor;
     NSArray *displaysUsedForPlayback;
     NSError *error;
     struct OpaqueFigPlayer { } *figPlayer;
-    NSInteger figPlayerType;
+    int figPlayerType;
     NSMutableSet *items;
     AVPlayerItem *lastItem;
     BOOL logPerformanceData;
@@ -19,7 +18,7 @@
     NSMutableDictionary *pendingFigPlayerProperties;
     AVPropertyStorage *propertyStorage;
     struct dispatch_queue_s { } *stateDispatchQueue;
-    NSInteger status;
+    int status;
     BOOL waitsUntilItemsAreReadyForInspectionBeforeEnqueuingIntoFigPlayer;
     AVWeakReference *weakReference;
 }

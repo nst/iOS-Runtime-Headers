@@ -7,26 +7,26 @@
         unsigned char sin6_len; 
         unsigned char sin6_family; 
         unsigned short sin6_port; 
-        NSUInteger sin6_flowinfo; 
+        unsigned int sin6_flowinfo; 
         struct in6_addr { 
             union { 
                 unsigned char __u6_addr8[16]; 
                 unsigned short __u6_addr16[8]; 
-                NSUInteger __u6_addr32[4]; 
+                unsigned int __u6_addr32[4]; 
             } __u6_addr; 
         } sin6_addr; 
-        NSUInteger sin6_scope_id; 
+        unsigned int sin6_scope_id; 
     } _saddr;
 }
 
-- (id)URLToAddressWithScheme:(id)arg1 andPort:(NSInteger)arg2 URI:(id)arg3;
+- (id)URLToAddressWithScheme:(id)arg1 andPort:(int)arg2 URI:(id)arg3;
 - (id)addressAsData;
 - (id)addressAsString;
 - (void)dumpInternal;
-- (void)getAddressAsSockAddr:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 length:(NSInteger*)arg2;
+- (void)getAddressAsSockAddr:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 length:(int*)arg2;
 - (id)initWithSockaddrBuffer:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
 - (BOOL)isLocalAddressConnectingTo:(id)arg1;
-- (NSInteger)port;
+- (int)port;
 - (id)type;
 
 @end

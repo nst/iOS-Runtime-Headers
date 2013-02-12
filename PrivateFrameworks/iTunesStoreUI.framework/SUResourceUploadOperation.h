@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISURLRequest, NSDictionary;
+@class NSDictionary, SSURLRequestProperties;
 
 @interface SUResourceUploadOperation : ISOperation {
     NSDictionary *_responseDictionary;
-    ISURLRequest *_urlRequest;
+    SSURLRequestProperties *_urlRequestProperties;
 }
 
-@property(readonly) ISURLRequest *URLRequest;
-@property(readonly) NSDictionary *responseDictionary;
+@property(readonly) SSURLRequestProperties * URLRequestProperties;
+@property(readonly) NSDictionary * responseDictionary;
 
-- (id)URLRequest;
+- (id)URLRequestProperties;
 - (void)_setResponseDictionary:(id)arg1;
 - (void)dealloc;
-- (id)initWithURLRequest:(id)arg1;
+- (id)initWithURLRequestProperties:(id)arg1;
 - (id)responseDictionary;
 - (void)run;
 

@@ -6,7 +6,7 @@
 
 @interface WDList : NSObject {
     WDDocument *mDocument;
-    NSInteger mIndex;
+    int mIndex;
     NSMutableArray *mLevelOverrides;
     WDListDefinition *mListDefinition;
 }
@@ -14,13 +14,13 @@
 - (id)addLevelOverride;
 - (void)dealloc;
 - (id)document;
-- (NSInteger)index;
+- (int)index;
 - (id)initWithDocument:(id)arg1 listDefinition:(id)arg2;
-- (id)levelOverrideAt:(NSInteger)arg1;
-- (NSInteger)levelOverrideCount;
+- (id)levelOverrideAt:(int)arg1;
+- (int)levelOverrideCount;
 - (id)levelOverrides;
 - (id)listDefinition;
-- (NSInteger)listId;
-- (void)setIndex:(NSInteger)arg1;
+- (int)listId;
+- (void)setIndex:(int)arg1;
 
 @end

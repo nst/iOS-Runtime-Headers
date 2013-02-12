@@ -7,20 +7,22 @@
 @interface IMExtendedOperation : NSOperation {
     NSMutableSet *_childOperations;
     NSString *_operationName;
-    NSUInteger _operationState;
+    unsigned int _operationState;
     NSThread *_operationThread;
     double _operationTimeout;
 }
 
-@property(retain) NSString *name;
-@property(readonly) NSUInteger state;
+@property(retain) NSString * name;
+@property(readonly) unsigned int state;
 @property double timeout;
 
-- (NSUInteger)_maxChildOperationState;
-- (NSUInteger)_minChildOperationState;
-- (void)_setState:(NSUInteger)arg1;
++ (id)runLoopModes;
+
+- (unsigned int)_maxChildOperationState;
+- (unsigned int)_minChildOperationState;
+- (void)_setState:(unsigned int)arg1;
 - (void)_startThread;
-- (void)_stopWithState:(NSUInteger)arg1;
+- (void)_stopWithState:(unsigned int)arg1;
 - (void)_threadedMain;
 - (void)_timeout;
 - (void)addChildOperation:(id)arg1;
@@ -37,7 +39,7 @@
 - (void)setName:(id)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)start;
-- (NSUInteger)state;
+- (unsigned int)state;
 - (double)timeout;
 
 @end

@@ -2,20 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface EDContentFormatsCollection : EDKeyedCollection {
-     /* Encoded args for previous method: B8@0:4 */
-    NSUInteger mNextContentFormatId;
+    unsigned int mNextContentFormatId;
 }
 
-- (void)addDefaultWithNSString:(id)arg1 formatId:(NSUInteger)arg2;
-- (NSUInteger)addObject:(id)arg1;
-- (NSUInteger)addOrEquivalentObject:(id)arg1;
+- (void)addDefaultWithNSString:(id)arg1 formatId:(unsigned int)arg2;
+- (unsigned int)addObject:(id)arg1;
+- (unsigned int)addOrEquivalentObject:(id)arg1;
 - (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isOverwritingKeyOK;
+- (bool)isOverwritingKeyOK;
 - (void)setupDefaults;
 
 @end

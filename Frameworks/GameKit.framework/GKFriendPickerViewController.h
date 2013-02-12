@@ -18,26 +18,26 @@
     GKTableView *_friendTable;
     NSArray *_friends;
     BOOL _loadingFriendsFailed;
-    NSInteger _maxPlayers;
+    int _maxPlayers;
     GKGameInviteMessageViewController *_messageViewController;
     UILabel *_navPlayersLabel;
     UILabel *_navTitleLabel;
     UIView *_navView;
-    NSInteger _numSelected;
+    int _numSelected;
     NSMutableDictionary *_ranks;
     UISearchBar *_searchBar;
     NSMutableArray *_searchFriends;
     GKUITheme *_theme;
 }
 
-@property(retain) NSMutableDictionary *avatarImages;
-@property <GKFriendPickerViewControllerDelegate> *delegate;
-@property(retain) NSArray *pickableFriends;
-@property(retain) NSMutableDictionary *ranks;
-@property(retain) GKUITheme *theme;
-@property UIEdgeInsets formSheetInsets;
+@property(retain) NSMutableDictionary * avatarImages;
+@property <GKFriendPickerViewControllerDelegate> * delegate;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } formSheetInsets;
 @property BOOL loadingFriendsFailed;
-@property NSInteger maxPlayers;
+@property int maxPlayers;
+@property(retain) NSArray * pickableFriends;
+@property(retain) NSMutableDictionary * ranks;
+@property(retain) GKUITheme * theme;
 
 - (id)avatarImages;
 - (void)dealloc;
@@ -53,8 +53,8 @@
 - (void)loadView;
 - (BOOL)loadingFriendsFailed;
 - (float)marginForTableView:(id)arg1;
-- (NSInteger)maxPlayers;
-- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (int)maxPlayers;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)pickableFriends;
 - (id)ranks;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
@@ -69,27 +69,27 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFormSheetInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLoadingFriendsFailed:(BOOL)arg1;
-- (void)setMaxPlayers:(NSInteger)arg1;
+- (void)setMaxPlayers:(int)arg1;
 - (void)setPickableFriends:(id)arg1;
 - (void)setPlayerRangeText;
 - (void)setRanks:(id)arg1;
 - (void)setSearchBarHidden:(BOOL)arg1;
 - (void)setTheme:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showMessageViewController;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)theme;
-- (void)updateNavViewLayoutForOrientation:(NSInteger)arg1;
+- (void)updateNavViewLayoutForOrientation:(int)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

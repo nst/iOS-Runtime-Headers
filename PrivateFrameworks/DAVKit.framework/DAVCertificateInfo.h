@@ -6,7 +6,7 @@
 
 @interface DAVCertificateInfo : NSObject {
     NSString *_message;
-    NSInteger _returnCode;
+    int _returnCode;
     NSString *_title;
     struct __SecTrust { } *_trustRef;
 }
@@ -14,8 +14,8 @@
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 trustRef:(struct __SecTrust { }*)arg3;
 - (id)message;
-- (NSInteger)returnCode;
-- (void)setReturnCode:(NSInteger)arg1;
+- (int)returnCode;
+- (void)setReturnCode:(int)arg1;
 - (id)title;
 - (struct __SecTrust { }*)trustRef;
 

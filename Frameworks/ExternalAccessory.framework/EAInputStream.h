@@ -2,23 +2,23 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class EAAccessory, EASession, NSLock, NSMutableData, NSThread;
+@class EAAccessory, EASession, NSCondition, NSMutableData, NSThread;
 
 @interface EAInputStream : NSInputStream {
     EAAccessory *_accessory;
     id _delegate;
     BOOL _hasNewBytesAvailable;
     char *_inputFromAccBuffer;
+    NSCondition *_inputFromAccCondition;
     NSMutableData *_inputFromAccData;
-    NSInteger _inputFromAccFd;
-    NSLock *_inputFromAccLock;
+    int _inputFromAccFd;
     NSThread *_inputFromAccThread;
     BOOL _isAtEndEventSent;
     BOOL _isOpenCompletedEventSent;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_runLoopSource;
     EASession *_session;
-    NSUInteger _streamStatus;
+    unsigned int _streamStatus;
 }
 
 - (void)_accessoryDidDisconnect:(id)arg1;
@@ -29,17 +29,17 @@
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)getBuffer:(char **)arg1 length:(NSUInteger*)arg2;
+- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
 - (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
 - (void)open;
 - (id)propertyForKey:(id)arg1;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (NSUInteger)streamStatus;
+- (unsigned int)streamStatus;
 
 @end

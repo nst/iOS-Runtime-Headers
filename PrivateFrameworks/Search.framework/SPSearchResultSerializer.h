@@ -3,9 +3,9 @@
  */
 
 @interface SPSearchResultSerializer : PBDataWriter {
-    NSUInteger _byteVector;
-    NSUInteger _byteVectorCapacity;
-    NSUInteger _byteVectorCnt;
+    unsigned int _byteVector;
+    unsigned int _byteVectorCapacity;
+    unsigned int _byteVectorCnt;
     BOOL _inProc;
     Class _lastResultClass;
     BOOL _respondsToAuxiliarySubtitleUTF8String;
@@ -21,16 +21,16 @@
     BOOL _respondsToURL;
 }
 
-- (NSUInteger)_allocateSize:(NSUInteger)arg1;
+- (unsigned int)_allocateSize:(unsigned int)arg1;
 - (BOOL)appendResult:(id)arg1;
-- (NSUInteger)byteVector;
-- (NSUInteger)byteVectorCount;
+- (unsigned int)byteVector;
+- (unsigned int)byteVectorCount;
 - (void)dealloc;
 - (id)init;
-- (id)initForDomain:(NSInteger)arg1 andDisplayIdentifier:(id)arg2 andCategory:(id)arg3 withInitialCapacity:(NSUInteger)arg4 inProc:(BOOL)arg5;
-- (id)initForDomain:(NSInteger)arg1 andDisplayIdentifier:(id)arg2 andCategory:(id)arg3 withInitialCapacity:(NSUInteger)arg4;
-- (id)initForDomain:(NSInteger)arg1 andDisplayIdentifier:(id)arg2 withInitialCapacity:(NSUInteger)arg3;
-- (NSInteger)write:(const char *)arg1 maxLength:(NSUInteger)arg2;
+- (id)initForDomain:(int)arg1 andDisplayIdentifier:(id)arg2 andCategory:(id)arg3 withInitialCapacity:(unsigned int)arg4 inProc:(BOOL)arg5;
+- (id)initForDomain:(int)arg1 andDisplayIdentifier:(id)arg2 andCategory:(id)arg3 withInitialCapacity:(unsigned int)arg4;
+- (id)initForDomain:(int)arg1 andDisplayIdentifier:(id)arg2 withInitialCapacity:(unsigned int)arg3;
+- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 - (void)writeCString:(const char *)arg1 forTag:(unsigned short)arg2;
 
 @end

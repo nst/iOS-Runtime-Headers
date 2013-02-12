@@ -19,12 +19,12 @@
 + (id)_systemID;
 
 - (id)_crashLogPathForDate:(id)arg1;
-- (void)addDistribution:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg1 forKey:(id)arg2;
+- (void)addDistribution:(struct { double x1; double x2; double x3; double x4; int x5; }*)arg1 forKey:(id)arg2;
 - (void)addScalar:(long long)arg1 forKey:(id)arg2;
-- (NSInteger)daysSince1970ForLastCrashLogSerialized;
+- (int)daysSince1970ForLastCrashLogSerialized;
 - (void)dealloc;
 - (id)initWithCrashLogPathPrefix:(id)arg1;
 - (id)initWithDefaultCrashLogPath;
-- (void)serializeWithDate:(NSInteger)arg1;
+- (void)serializeWithDate:(int)arg1;
 
 @end

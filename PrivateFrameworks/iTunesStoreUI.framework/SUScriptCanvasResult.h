@@ -7,8 +7,8 @@
     struct CGPath { } *_path;
 }
 
-@property(readonly) CGImage *canvasImage;
-@property(readonly) CGPath *canvasPath;
+@property(readonly) struct CGImage { }* canvasImage;
+@property(readonly) struct CGPath { }* canvasPath;
 
 - (id)_initWithCanvas:(id)arg1;
 - (struct CGImage { }*)canvasImage;

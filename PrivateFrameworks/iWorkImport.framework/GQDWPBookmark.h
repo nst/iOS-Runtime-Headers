@@ -12,6 +12,6 @@
 - (BOOL)isHidden;
 - (BOOL)isRanged;
 - (struct __CFString { }*)name;
-- (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 
 @end

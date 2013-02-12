@@ -3,17 +3,17 @@
  */
 
 @interface PTPOperationResponsePacket : NSObject {
-    NSInteger _numParameters;
-    NSUInteger _parameters[5];
+    int _numParameters;
+    unsigned int _parameters[5];
     unsigned short _responseCode;
-    NSUInteger _transactionID;
+    unsigned int _transactionID;
 }
 
 - (id)contentForTCP;
 - (id)contentForUSB;
 - (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
 - (id)description;
-- (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 numParameters:(unsigned long)arg3 parameters:(NSUInteger*)arg4;
+- (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 numParameters:(unsigned long)arg3 parameters:(unsigned int*)arg4;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5 parameter4:(unsigned long)arg6 parameter5:(unsigned long)arg7;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5 parameter4:(unsigned long)arg6;
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 parameter1:(unsigned long)arg3 parameter2:(unsigned long)arg4 parameter3:(unsigned long)arg5;
@@ -22,7 +22,7 @@
 - (id)initWithResponseCode:(unsigned short)arg1 transactionID:(unsigned long)arg2;
 - (id)initWithTCPBuffer:(void*)arg1;
 - (id)initWithUSBBuffer:(void*)arg1;
-- (NSInteger)numParameters;
+- (int)numParameters;
 - (unsigned long)parameter1;
 - (unsigned long)parameter2;
 - (unsigned long)parameter3;

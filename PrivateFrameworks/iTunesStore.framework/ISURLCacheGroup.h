@@ -10,7 +10,7 @@
     NSLock *_lock;
 }
 
-@property(readonly) NSString *clientIdentifier;
+@property(readonly) NSString * clientIdentifier;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
@@ -20,21 +20,21 @@
 - (void)_reloadForNewCaches:(id)arg1;
 - (id)cachedResponseForRequest:(id)arg1;
 - (id)clientIdentifier;
-- (NSUInteger)currentDiskUsage;
-- (NSUInteger)currentMemoryUsage;
+- (unsigned int)currentDiskUsage;
+- (unsigned int)currentMemoryUsage;
 - (void)dealloc;
-- (NSUInteger)diskCapacity;
+- (unsigned int)diskCapacity;
 - (id)init;
 - (id)initWithClientIdentifier:(id)arg1;
-- (id)initWithMemoryCapacity:(NSUInteger)arg1 diskCapacity:(NSUInteger)arg2 diskPath:(id)arg3;
-- (NSUInteger)memoryCapacity;
+- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
+- (unsigned int)memoryCapacity;
 - (void)purgeMemoryCache;
 - (void)removeAllCachedResponses;
 - (void)removeCachedResponseForRequest:(id)arg1;
 - (void)saveMemoryCacheToDisk;
 - (void)setCachesFromPropertyList:(id)arg1;
-- (void)setDiskCapacity:(NSUInteger)arg1;
-- (void)setMemoryCapacity:(NSUInteger)arg1;
+- (void)setDiskCapacity:(unsigned int)arg1;
+- (void)setMemoryCapacity:(unsigned int)arg1;
 - (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
 
 @end

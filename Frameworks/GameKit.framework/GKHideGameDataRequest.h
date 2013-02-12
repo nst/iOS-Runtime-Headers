@@ -9,10 +9,10 @@
     BOOL _hidden;
 }
 
-@property(retain) GKGame *game;
+@property(retain) GKGame * game;
 @property BOOL hidden;
 
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (void)dealloc;
 - (id)game;
 - (BOOL)hidden;

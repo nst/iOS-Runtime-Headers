@@ -29,12 +29,12 @@
             float width; 
             float height; 
         } size; 
-    struct BillingPointTracker { NSInteger x1; NSInteger x2; struct MapPoint { 
-            NSInteger latitude_; 
-            NSInteger longitude_; 
-            NSInteger x_pixels_at_max_zoom_; 
-            NSInteger y_pixels_at_max_zoom_; 
-    struct $_1096 { 
+    struct BillingPointTracker { int x1; int x2; struct MapPoint { 
+            int latitude_; 
+            int longitude_; 
+            int x_pixels_at_max_zoom_; 
+            int y_pixels_at_max_zoom_; 
+    struct $_1092 { 
         unsigned int animateFlagWhileSuspendedResultProcessing : 1; 
         unsigned int callsDelegateForAllRegionChanges : 1; 
         unsigned int changingRegion : 1; 
@@ -45,9 +45,6 @@
         unsigned int didStartSmoothScrolling : 1; 
         unsigned int drawGridBackground : 1; 
         unsigned int hasUserSpecifiedZoomLevel : 1; 
-        unsigned int headingEnabled : 1; 
-        unsigned int headingSupported : 1; 
-        unsigned int headingTrackingEnabled : 1; 
         unsigned int hot : 1; 
         unsigned int ignoreHeadingUpdates : 1; 
         unsigned int ignoreLocationUpdates : 1; 
@@ -56,8 +53,6 @@
         unsigned int isSuspended : 1; 
         unsigned int levelCrossFade : 1; 
         unsigned int liveTrackingAutoSelectZoomLevel : 1; 
-        unsigned int liveTrackingEnabled : 1; 
-        unsigned int liveTrackingSupported : 1; 
         unsigned int longPressing : 1; 
         unsigned int needsPerspectiveUpdate : 1; 
         unsigned int needToShowRoute : 1; 
@@ -85,6 +80,7 @@
         unsigned int wasZooming : 1; 
         unsigned int inSetZoomScale : 1; 
         unsigned int annotationViewsAreAddedImmediately : 1; 
+        unsigned int nextPositioningChangeIsInstant : 1; 
         unsigned int delegateShouldReceiveTouch : 1; 
         unsigned int delegateWillChangeRotation : 1; 
         unsigned int delegateWillChangeRotationAnimation : 1; 
@@ -94,14 +90,16 @@
         unsigned int delegateDidChangeRegion : 1; 
         unsigned int delegateDidStartMapRendering : 1; 
         unsigned int delegateDidFinishMapRendering : 1; 
+        unsigned int delegateDidChangeUserTrackingMode : 1; 
+        unsigned int delegateDidChangeUserTrackingModeButton : 1; 
     float angularVelocity;
-    NSInteger animationType;
-    NSInteger animationTypeHistory;
+    int animationType;
+    int animationTypeHistory;
     MKAnnotationContainerView *annotationContainer;
     NSTimer *annotationTimer;
     double annotationViewPerspectiveHeading;
     UIImageView *badgeView;
-        } x3; NSInteger x4; NSInteger x5; unsigned char x6; } *billingPointTracker;
+        } x3; int x4; int x5; unsigned char x6; } *billingPointTracker;
     } centeringRect;
     UIView *contentView;
     UILabel *copyrightLabel;
@@ -114,8 +112,8 @@
     NSTimer *displayPromiseTimer;
     NSMutableArray *displayPromises;
     UITapGestureRecognizer *doubleTapGestureRecognizer;
-    NSUInteger eventMode;
-    NSUInteger eventModeHistory;
+    unsigned int eventMode;
+    unsigned int eventModeHistory;
     } flags;
     } futureCenterPoint;
     float futureDuration;
@@ -125,26 +123,26 @@
     double heading;
     NSTimer *hoverExpirationTimer;
     double hoverStartTime;
-    NSUInteger lastCopyrightMapType;
-    NSUInteger levelViewLoadingCount;
-    NSUInteger levelViewTrafficLoadingCount;
+    unsigned int lastCopyrightMapType;
+    unsigned int levelViewLoadingCount;
+    unsigned int levelViewTrafficLoadingCount;
     UIColor *lightCopyrightShadowColor;
     UIColor *lightCopyrightTextColor;
     UILongPressGestureRecognizer *longPressGestureRecognizer;
     MKMapTileView *mapTileView;
-    NSUInteger mapType;
+    unsigned int mapType;
     MKOverlayContainerView *overlayContainer;
     MKMapViewPositioningChange *positioningChange;
     NSTimer *positioningChangeTimer;
-    NSInteger rotationDirection;
-    NSInteger rotationState;
+    int rotationDirection;
+    int rotationState;
     } routeBottomRightCoordinate;
     } routeCenterCoordinate;
     MKRouteLoader *routeLoader;
     UIImageView *routePositionView;
     } routePositionViewCoordinate;
-    NSUInteger routeStepIndex;
-    NSInteger routeSummaryZoomLevel;
+    unsigned int routeStepIndex;
+    int routeSummaryZoomLevel;
     } routeTopLeftCoordinate;
     MKRouteOverlayView *routeView;
     MKRouteOverlayView *routeViewB;
@@ -153,19 +151,20 @@
     UITouch *savedTouchBegan;
     NSTimer *scrollToReCenterUserTimer;
     MKScrollView *scrollView;
-    NSInteger scrollViewTouchCount;
-    NSInteger searchMode;
+    int scrollViewTouchCount;
+    int searchMode;
     NSArray *searchResultsWhileSuspendedResultProcessing;
     MKSearchResult *selectedSearchResultWhileSuspendedResultProcessing;
     NSTimer *startIdleTimer;
-    NSUInteger suspendedIdleCount;
+    unsigned int suspendedIdleCount;
     NSTimer *tapAndHoldTimer;
     UITapGestureRecognizer *tapGestureRecognizer;
-    NSUInteger tileCount;
+    unsigned int tileCount;
     MKAnnotationView *touchRecepientAnnotationView;
     NSTimer *trafficAvailabilityTimer;
-    NSInteger trafficStatus;
+    int trafficStatus;
     UITapGestureRecognizer *twoFingerTapGestureRecognizer;
+    int userTrackingMode;
     MKMapView *view;
 }
 

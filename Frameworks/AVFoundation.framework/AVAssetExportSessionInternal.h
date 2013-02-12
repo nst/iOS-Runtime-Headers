@@ -12,14 +12,14 @@
     struct { 
         struct { 
             long long value; 
-            NSInteger timescale; 
-            NSUInteger flags; 
+            int timescale; 
+            unsigned int flags; 
             long long epoch; 
         } start; 
         struct { 
             long long value; 
-            NSInteger timescale; 
-            NSUInteger flags; 
+            int timescale; 
+            unsigned int flags; 
             long long epoch; 
         } duration; 
     AVURLAsset *asset;
@@ -38,7 +38,7 @@
     struct dispatch_queue_s { } *readWriteQueue;
     struct OpaqueFigRemaker { } *remaker;
     struct dispatch_queue_s { } *remakerNotificationSerializationQueue;
-    NSInteger status;
+    int status;
     } timeRange;
     AVVideoComposition *videoComposition;
     AVWeakReference *weakReference;

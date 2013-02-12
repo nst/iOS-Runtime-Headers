@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
+@class <SKRequestDelegate>;
+
 @interface SKRequest : NSObject {
     id _requestInternal;
 }
 
-@property <SKRequestDelegate> *delegate;
+@property <SKRequestDelegate> * delegate;
 
 - (void)_beginBackgroundTask;
 - (void)_daemonExited:(id)arg1;

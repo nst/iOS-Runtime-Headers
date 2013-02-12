@@ -3,19 +3,19 @@
  */
 
 @interface ML3ContainsPersistentIDsPredicate : ML3Predicate {
-    NSUInteger _count;
+    unsigned int _count;
     long long *_persistentIDs;
 }
 
-+ (id)predicateWithPersistentIDs:(long long*)arg1 count:(NSUInteger)arg2;
++ (id)predicateWithPersistentIDs:(long long*)arg1 count:(unsigned int)arg2;
 
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
+- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPersistentIDs:(long long*)arg1 count:(NSUInteger)arg2;
+- (id)initWithPersistentIDs:(long long*)arg1 count:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

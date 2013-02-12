@@ -17,18 +17,18 @@
     struct _DNSServiceRef_t { } *universalBrowserRef;
 }
 
-@property <PKPrinterBrowserDelegate> *delegate;
-@property(retain) NSFileHandle *handle;
-@property(retain) NSMutableArray *pendingList;
-@property(retain) NSMutableDictionary *printers;
-@property(readonly) dispatch_queue_s *printersQueue;
+@property <PKPrinterBrowserDelegate> * delegate;
+@property(retain) NSFileHandle * handle;
+@property(retain) NSMutableArray * pendingList;
+@property(retain) NSMutableDictionary * printers;
+@property(readonly) struct dispatch_queue_s { }* printersQueue;
 
 + (id)browserWithDelegate:(id)arg1;
 
 - (void)addBlockToPendingList:(id)arg1;
 - (void)addLimboPrinter:(id)arg1;
 - (void)addQueryResult:(id)arg1 toPrinter:(id)arg2;
-- (void)browseCallback:(NSUInteger)arg1 interface:(NSUInteger)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
+- (void)browseCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
 - (void)dealloc;
 - (id)delegate;
 - (id)handle;
@@ -37,7 +37,8 @@
 - (id)pendingList;
 - (id)printers;
 - (struct dispatch_queue_s { }*)printersQueue;
-- (void)queryCallback:(NSInteger)arg1 flags:(NSUInteger)arg2 fullName:(const char *)arg3 rdlen:(unsigned short)arg4 rdata:(const void*)arg5;
+- (void)queryCallback:(int)arg1 flags:(unsigned int)arg2 fullName:(const char *)arg3 rdlen:(unsigned short)arg4 rdata:(const void*)arg5;
+- (void)reissueTXTQuery:(id)arg1;
 - (void)removePrinter:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHandle:(id)arg1;

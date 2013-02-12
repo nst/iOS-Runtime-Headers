@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class <DOMNodeFilter>, DOMNode;
+
 @interface DOMTreeWalker : DOMObject {
 }
 
-@property(retain) DOMNode *currentNode;
-@property(retain,readonly) <DOMNodeFilter> *filter;
-@property(retain,readonly) DOMNode *root;
+@property(retain) DOMNode * currentNode;
 @property(readonly) BOOL expandEntityReferences;
-@property(readonly) NSUInteger whatToShow;
+@property(retain,readonly) <DOMNodeFilter> * filter;
+@property(retain,readonly) DOMNode * root;
+@property(readonly) unsigned int whatToShow;
 
 - (id)currentNode;
 - (void)dealloc;
@@ -25,6 +27,6 @@
 - (id)previousSibling;
 - (id)root;
 - (void)setCurrentNode:(id)arg1;
-- (NSUInteger)whatToShow;
+- (unsigned int)whatToShow;
 
 @end

@@ -10,16 +10,16 @@
     BOOL _fakeScore;
     NSString *_formattedValue;
     NSString *_playerID;
-    NSInteger _rank;
+    int _rank;
     long long _value;
 }
 
-@property(retain) NSString *category;
-@property(retain) NSDate *date;
-@property(retain) NSString *formattedValue;
-@property(retain) NSString *playerID;
+@property(retain) NSString * category;
+@property(retain) NSDate * date;
 @property BOOL fakeScore;
-@property NSInteger rank;
+@property(retain) NSString * formattedValue;
+@property(retain) NSString * playerID;
+@property int rank;
 @property long long value;
 
 - (id)category;
@@ -34,14 +34,14 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)playerID;
-- (NSInteger)rank;
+- (int)rank;
 - (void)reportScoreWithCompletionHandler:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setFakeScore:(BOOL)arg1;
 - (void)setFormattedValue:(id)arg1;
 - (void)setPlayerID:(id)arg1;
-- (void)setRank:(NSInteger)arg1;
+- (void)setRank:(int)arg1;
 - (void)setValue:(long long)arg1;
 - (long long)value;
 

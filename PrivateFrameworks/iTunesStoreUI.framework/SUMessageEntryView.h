@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUMessageEntryViewDelegate>, NSMutableSet, SUMessageTextContentView, SUWebImagePool, UIButton, UIImageView, UIScrollView;
+@class <SUMessageEntryViewDelegate>, NSMutableSet, NSString, SUMessageTextContentView, SUWebImagePool, UIButton, UIImageView, UIScrollView;
 
 @interface SUMessageEntryView : UIView <SUMessageTextContentViewDelegate> {
     UIImageView *_backgroundView;
@@ -10,7 +10,7 @@
     NSMutableSet *_deletedImages;
     SUWebImagePool *_imagePool;
     UIImageView *_inputFieldBackgroundView;
-    NSInteger _mediaPartCount;
+    int _mediaPartCount;
     struct __CFDictionary { } *_mediaParts;
     UIButton *_photoButton;
     UIScrollView *_scrollView;
@@ -18,14 +18,14 @@
     SUMessageTextContentView *_textContentView;
 }
 
-@property <SUMessageEntryViewDelegate> *delegate;
-@property(copy) NSString *sendButtonTitle;
+@property <SUMessageEntryViewDelegate> * delegate;
 @property(getter=isPhotoButtonEnabled) BOOL photoButtonEnabled;
 @property(getter=isPhotoButtonHidden) BOOL photoButtonHidden;
 @property(getter=isSendButtonEnabled) BOOL sendButtonEnabled;
+@property(copy) NSString * sendButtonTitle;
 
 - (id)_copyMessageParts;
-- (BOOL)_isImageIdentifierDeleted:(NSInteger)arg1;
+- (BOOL)_isImageIdentifierDeleted:(int)arg1;
 - (id)_newHTMLStringForString:(id)arg1;
 - (id)_newPhotoButton;
 - (id)_newScrollView;

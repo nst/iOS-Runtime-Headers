@@ -10,11 +10,11 @@
     <MPMediaPickerControllerDelegate> *_delegate;
     CALayerHost *_layerHost;
     UIWindow *_layerHostProxyWindow;
-    NSInteger _mediaTypes;
+    int _mediaTypes;
     NSString *_prompt;
-    NSUInteger _replyPort;
+    unsigned int _replyPort;
     struct __CFRunLoopSource { } *_replyPortRunLoopSource;
-    NSUInteger _serverPort;
+    unsigned int _serverPort;
 }
 
 @end

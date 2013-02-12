@@ -7,7 +7,7 @@
 @interface PCMultiStageGrowthAlgorithm : NSObject <PCGrowthAlgorithm> {
     NSString *_algorithmName;
     double _currentKeepAliveInterval;
-    NSInteger _growthStage;
+    int _growthStage;
     double _highWatermark;
     double _initialGrowthStageHighWatermark;
     double _initialGrowthStageLastAttempt;
@@ -18,23 +18,23 @@
     double _minimumKeepAliveInterval;
 }
 
-@property(readonly) NSString *loggingIdentifier;
 @property(readonly) double currentKeepAliveInterval;
+@property(readonly) NSString * loggingIdentifier;
 @property double maximumKeepAliveInterval;
 @property double minimumKeepAliveInterval;
 
 + (void)_loadDefaultValue:(double*)arg1 forKey:(struct __CFString { }*)arg2;
 + (void)_loadDefaults;
 
-- (void)_processBackoffAction:(NSInteger)arg1;
-- (void)_processInitialGrowthAction:(NSInteger)arg1;
-- (void)_processRefinedGrowthAction:(NSInteger)arg1;
-- (void)_processSteadyStateAction:(NSInteger)arg1;
+- (void)_processBackoffAction:(int)arg1;
+- (void)_processInitialGrowthAction:(int)arg1;
+- (void)_processRefinedGrowthAction:(int)arg1;
+- (void)_processSteadyStateAction:(int)arg1;
 - (void)_resetAlgorithmToInterval:(double)arg1;
 - (void)_setCurrentKeepAliveInterval:(double)arg1;
 - (double)_steadyStateTimeout;
-- (id)_stringForAction:(NSInteger)arg1;
-- (id)_stringForStage:(NSInteger)arg1;
+- (id)_stringForAction:(int)arg1;
+- (id)_stringForStage:(int)arg1;
 - (double)currentKeepAliveInterval;
 - (void)dealloc;
 - (id)description;
@@ -42,7 +42,7 @@
 - (id)loggingIdentifier;
 - (double)maximumKeepAliveInterval;
 - (double)minimumKeepAliveInterval;
-- (void)processNextAction:(NSInteger)arg1;
+- (void)processNextAction:(int)arg1;
 - (void)setMaximumKeepAliveInterval:(double)arg1;
 - (void)setMinimumKeepAliveInterval:(double)arg1;
 

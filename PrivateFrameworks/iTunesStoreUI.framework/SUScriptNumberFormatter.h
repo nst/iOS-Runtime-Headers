@@ -10,8 +10,8 @@
     NSString *_style;
 }
 
-@property(getter=_localeIdentifier,retain) NSString *localeIdentifier; /* unknown property attribute: Sset_localeIdentifier: */
-@property(getter=_style,retain) NSString *style; /* unknown property attribute: Sset_style: */
+@property(getter=_localeIdentifier,setter=set_localeIdentifier:,retain) NSString * localeIdentifier;
+@property(getter=_style,setter=set_style:,retain) NSString * style;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

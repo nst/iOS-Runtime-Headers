@@ -8,23 +8,23 @@
     EDWorksheet *edWorksheet;
     double *mColumnGrid;
     ECColumnWidthConvertor *mColumnWidthConvertor;
-    NSInteger mHeight;
-    NSUInteger mMaxPopulatedColumn;
-    NSUInteger mMaxPopulatedRow;
+    int mHeight;
+    unsigned int mMaxPopulatedColumn;
+    unsigned int mMaxPopulatedRow;
     double *mRowGrid;
     CMStyle *mStyle;
-    NSInteger mWidth;
+    int mWidth;
 }
 
 - (void)_initWithState:(id)arg1;
-- (NSInteger)columnCount;
+- (int)columnCount;
 - (double*)columnGrid;
 - (id)columnWidthConvertor;
 - (void)countRowsAndColumnsWithState:(id)arg1;
 - (void)dealloc;
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
-- (NSInteger)height;
+- (int)height;
 - (id)initWithEDWorksheet:(id)arg1 parent:(id)arg2;
 - (BOOL)isVisible;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
@@ -33,13 +33,13 @@
 - (void)mapGridAt:(id)arg1;
 - (void)mapTableAt:(id)arg1 withState:(id)arg2;
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
-- (NSInteger)maxRowNumber;
-- (NSInteger)preprocessHeightWithState:(id)arg1;
+- (int)maxRowNumber;
+- (int)preprocessHeightWithState:(id)arg1;
 - (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
-- (NSInteger)preprocessWidthWithState:(id)arg1;
+- (int)preprocessWidthWithState:(id)arg1;
 - (double*)rowGrid;
 - (void)setRowGrid;
-- (NSInteger)width;
+- (int)width;
 - (double)xlColumnWidthToPoints:(double)arg1;
 
 @end

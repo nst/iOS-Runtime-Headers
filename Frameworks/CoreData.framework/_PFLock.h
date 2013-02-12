@@ -6,8 +6,8 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSInteger _cd_rc;
-    NSUInteger _count;
+    int _cd_rc;
+    unsigned int _count;
     } _lock;
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[596]; } *_owner;
 }

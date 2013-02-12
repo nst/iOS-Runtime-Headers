@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableData;
+@class NSData, NSMutableData;
 
 @interface SUDataBufferConsumer : NSObject <SUCollectingDataConsumer> {
     NSMutableData *_buffer;
 }
 
-@property(readonly) NSData *consumedData;
+@property(readonly) NSData * consumedData;
 
-- (NSInteger)consumeData:(id)arg1;
+- (int)consumeData:(id)arg1;
 - (id)consumedData;
 - (void)finish;
 - (id)init;

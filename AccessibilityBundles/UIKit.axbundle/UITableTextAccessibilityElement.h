@@ -8,6 +8,8 @@
     SEL _selector;
 }
 
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilitySelectedTextRange;
+- (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)_accessibilitySupportsActivateAction;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_tableViewCellAttributeDelegate;

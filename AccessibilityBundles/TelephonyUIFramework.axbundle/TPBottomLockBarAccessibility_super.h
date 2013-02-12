@@ -7,6 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (BOOL)_accessibilitySupportsActivateAction;
 - (void)accessibilityActivate;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;

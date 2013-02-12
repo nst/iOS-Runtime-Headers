@@ -13,7 +13,7 @@
     UIView *_containerView;
     NSArray *_customizableViewControllers;
     <UITabBarControllerDelegate> *_delegate;
-    NSUInteger _maxItems;
+    unsigned int _maxItems;
     UINavigationController *_moreNavigationController;
     UIViewController *_selectedViewController;
     UIViewController *_selectedViewControllerDuringWillAppear;
@@ -25,13 +25,13 @@
     NSMutableArray *_viewControllers;
 }
 
-@property(copy) NSArray *customizableViewControllers;
-@property <UITabBarControllerDelegate> *delegate;
-@property(readonly) UINavigationController *moreNavigationController;
-@property UIViewController *selectedViewController;
-@property(readonly) UITabBar *tabBar;
-@property(copy) NSArray *viewControllers;
-@property NSUInteger selectedIndex;
+@property(copy) NSArray * customizableViewControllers;
+@property <UITabBarControllerDelegate> * delegate;
+@property(readonly) UINavigationController * moreNavigationController;
+@property unsigned int selectedIndex;
+@property UIViewController * selectedViewController;
+@property(readonly) UITabBar * tabBar;
+@property(copy) NSArray * viewControllers;
 
 + (void)_initializeSafeCategory;
 + (Class)_moreNavigationControllerClass;
@@ -40,14 +40,14 @@
 - (BOOL)_allowsAutorotation;
 - (BOOL)_allowsCustomizing;
 - (void)_configureTargetActionForTabBarItem:(id)arg1;
-- (BOOL)_doAllViewControllersSupportInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_doAllViewControllersSupportInterfaceOrientation:(int)arg1;
 - (void)_ensureSelectedViewControllerIsDisplayed;
 - (id)_existingMoreNavigationController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (void)_gkRefreshContents;
 - (BOOL)_isBarHidden;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_layoutViewController:(id)arg1;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
 - (void)_prepareTabBar;
@@ -55,7 +55,7 @@
 - (void)_rebuildTabBarItemsAnimated:(BOOL)arg1;
 - (void)_rebuildTabBarItemsIfNeeded;
 - (id)_selectedViewControllerInTabBar;
-- (void)_setMaximumNumberOfItems:(NSUInteger)arg1;
+- (void)_setMaximumNumberOfItems:(unsigned int)arg1;
 - (void)_setSelectedTabBarItem:(id)arg1;
 - (void)_setSelectedViewController:(id)arg1;
 - (BOOL)_shouldPersistViewWhenCoding;
@@ -72,24 +72,24 @@
 - (id)customizableViewControllers;
 - (void)dealloc;
 - (id)delegate;
-- (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(NSInteger)arg1;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)hideBarWithTransition:(NSInteger)arg1;
+- (void)hideBarWithTransition:(int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)moreNavigationController;
-- (void)purgeMemoryForReason:(NSInteger)arg1;
+- (void)purgeMemoryForReason:(int)arg1;
 - (void)revealTabBarSelection;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
-- (NSUInteger)selectedIndex;
+- (unsigned int)selectedIndex;
 - (id)selectedNavigationController;
 - (id)selectedViewController;
 - (void)setCustomizableViewControllers:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSelectedIndex:(NSUInteger)arg1;
+- (void)setSelectedIndex:(unsigned int)arg1;
 - (void)setSelectedViewController:(id)arg1;
 - (void)setShowsEditButtonOnLeft:(BOOL)arg1;
 - (void)setTabBar:(id)arg1;
@@ -97,15 +97,15 @@
 - (void)setTransientViewController:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)setViewControllers:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (void)showBarWithTransition:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)showBarWithTransition:(int)arg1;
 - (BOOL)showsEditButtonOnLeft;
 - (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (void)tabBar:(id)arg1 willBeginCustomizingItems:(id)arg2;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (id)tabBar;
 - (id)transientViewController;
-- (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 transition:(NSInteger)arg3 shouldSetSelected:(BOOL)arg4;
+- (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 transition:(int)arg3 shouldSetSelected:(BOOL)arg4;
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (void)updateTabBarItemForViewController:(id)arg1;
@@ -115,9 +115,9 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

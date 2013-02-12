@@ -6,20 +6,20 @@
 
 @interface MFPen : NSObject <MFObject> {
     NSColorStub *m_colour;
-    NSInteger m_penStyle;
-    NSInteger m_penWidth;
+    int m_penStyle;
+    int m_penWidth;
     double *m_userStyleArray;
 }
 
 + (id)pen;
-+ (id)penWithStyle:(NSInteger)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
++ (id)penWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 
 - (void)dealloc;
 - (id)getColor;
-- (NSInteger)getStyle;
+- (int)getStyle;
 - (long)getWidth;
 - (id)init;
-- (id)initWithStyle:(NSInteger)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
-- (NSInteger)selectInto:(id)arg1;
+- (id)initWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
+- (int)selectInto:(id)arg1;
 
 @end

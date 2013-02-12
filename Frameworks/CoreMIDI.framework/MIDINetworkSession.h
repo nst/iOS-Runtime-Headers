@@ -6,27 +6,27 @@
    See Warning(s) below.
  */
 
-@class NSMutableSet;
+@class NSMutableSet, NSString;
 
 @interface MIDINetworkSession : NSObject {
-    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; inout unsigned short x6; unsigned short x7; void*x8; const NSInteger x9; in void*x10; void*x11; id x12; void*x13; inout unsigned short x14; void*x15; void*x16; void*x17; void*x18; unsigned int x19/* : ? */; long x20; void*x21; void*x22; NSInteger x23; BOOL x24; void*x25; NSInteger x26; out in void*x27; const void*x28; void*x29; struct ContactOrConnectionSet { 
-            void*mItemsAreConnections; 
+    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; inout unsigned short x6; unsigned short x7; void*x8; const int x9; in void*x10; void*x11; id x12; void*x13; inout unsigned short x14; void*x15; void*x16; void*x17; void*x18; unsigned int x19/* : ? */; long x20; void*x21; void*x22; int x23; BOOL x24; void*x25; int x26; out in void*x27; const void*x28; void*x29; struct ContactOrConnectionSet { 
+            boolmItemsAreConnections; 
             NSMutableSet *mSet; 
         } x30; } *_impl;
 }
 
-@property(readonly) NSString *localName;
-@property(readonly) NSString *networkName;
-@property NSUInteger connectionPolicy;
+@property unsigned int connectionPolicy;
 @property(getter=isEnabled) BOOL enabled;
-@property(readonly) NSUInteger networkPort;
+@property(readonly) NSString * localName;
+@property(readonly) NSString * networkName;
+@property(readonly) unsigned int networkPort;
 
 + (id)defaultSession;
 
 - (BOOL)addConnection:(id)arg1;
 - (BOOL)addContact:(id)arg1;
 - (BOOL)addOrRemoveConnection:(id)arg1 add:(BOOL)arg2;
-- (NSUInteger)connectionPolicy;
+- (unsigned int)connectionPolicy;
 - (id)connections;
 - (id)contacts;
 - (void)contactsChanged;
@@ -36,11 +36,11 @@
 - (BOOL)isEnabled;
 - (id)localName;
 - (id)networkName;
-- (NSUInteger)networkPort;
+- (unsigned int)networkPort;
 - (BOOL)removeConnection:(id)arg1;
 - (BOOL)removeContact:(id)arg1;
 - (void)sessionChanged;
-- (void)setConnectionPolicy:(NSUInteger)arg1;
+- (void)setConnectionPolicy:(unsigned int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setStateToEntity;
 - (struct OpaqueMIDIEndpoint { }*)sourceEndpoint;

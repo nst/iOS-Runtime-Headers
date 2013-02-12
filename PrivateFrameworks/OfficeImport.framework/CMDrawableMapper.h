@@ -31,14 +31,14 @@
     BOOL mIsSupported;
     NSString *mName;
     OADOrientedBounds *mOrientedBounds;
-    NSInteger mResourceType;
+    int mResourceType;
     float mRotation;
     NSString *mSourcePath;
     CMDrawableStyle *mStyle;
     } mUncroppedBox;
 }
 
-- (id)blipAtIndex:(NSUInteger)arg1;
+- (id)blipAtIndex:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
 - (void)calculateUncroppedBox:(id)arg1;
 - (id)convertMetafileToPdf;
@@ -52,7 +52,7 @@
 - (void)mapShapeGraphicsAt:(id)arg1 withState:(id)arg2;
 - (void)mapTextBoxAt:(id)arg1 withState:(id)arg2;
 - (float)rotation;
-- (id)saveResourceAndReturnPath:(id)arg1 withType:(NSInteger)arg2;
+- (id)saveResourceAndReturnPath:(id)arg1 withType:(int)arg2;
 - (void)setBoundingBox;
 - (void)setRotation:(float)arg1;
 - (void)setWithOadImage:(id)arg1;

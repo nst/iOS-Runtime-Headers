@@ -12,24 +12,24 @@
     } m_drawOrigin;
     UIKBKey *m_key;
     UIKBKeyboard *m_keyboard;
-    NSInteger m_state;
+    int m_state;
 }
 
-@property(readonly) UIKBKey *key;
-@property(readonly) UIKBKeyboard *keyboard;
-@property CGPoint drawOrigin;
-@property(readonly) NSInteger state;
+@property struct CGPoint { float x; float y; } drawOrigin;
+@property(readonly) UIKBKey * key;
+@property(readonly) UIKBKeyboard * keyboard;
+@property(readonly) int state;
 
 - (id)cacheKey;
 - (void)dealloc;
 - (void)displayLayer:(id)arg1;
 - (struct CGPoint { float x1; float x2; })drawOrigin;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(NSInteger)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
 - (id)key;
 - (id)keyboard;
 - (void)setDrawOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)shouldCache;
-- (NSInteger)state;
+- (int)state;
 
 @end

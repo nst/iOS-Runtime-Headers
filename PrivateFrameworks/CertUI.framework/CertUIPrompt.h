@@ -16,22 +16,23 @@
     struct __SecTrust { } *_trust;
 }
 
-@property(copy) NSString *connectionDisplayName;
-@property(retain) NSString *host;
-@property(retain) NSString *service;
+@property(copy) NSString * connectionDisplayName;
+@property(retain) NSString * host;
+@property(retain) NSString * service;
 
 + (struct dispatch_queue_s { }*)promptQueue;
-+ (id)stringForResponse:(NSInteger)arg1;
++ (id)stringForResponse:(int)arg1;
 
 - (id)_copyPropertiesFromTrust:(struct __SecTrust { }*)arg1;
+- (id)_digestFromTrust:(struct __SecTrust { }*)arg1;
 - (id)_expirationFromTrust:(struct __SecTrust { }*)arg1;
-- (void)_informConsumerOfResponse:(NSInteger)arg1;
+- (void)_informConsumerOfResponse:(int)arg1;
 - (id)_messagingCenter;
 - (id)_newUserInfoForDisplayName:(id)arg1 hostname:(id)arg2 trust:(struct __SecTrust { }*)arg3;
 - (id)_propertyNamed:(id)arg1 ofType:(id)arg2 inProperties:(id)arg3;
 - (id)_purposeFromTrustProperties:(id)arg1;
-- (NSInteger)_responseFromReplyDict:(id)arg1;
-- (NSInteger)_sendRemoteMessage;
+- (int)_responseFromReplyDict:(id)arg1;
+- (int)_sendRemoteMessage;
 - (id)_sendablePropertiesFromProperties:(id)arg1;
 - (id)_sendablePropertiesFromTrust:(struct __SecTrust { }*)arg1;
 - (id)_sendablePropertyFromProperty:(id)arg1;
@@ -46,7 +47,7 @@
 - (void)setHost:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setTrust:(struct __SecTrust { }*)arg1;
-- (NSInteger)showAndWaitForResponse;
+- (int)showAndWaitForResponse;
 - (void)showPromptWithResponseBlock:(id)arg1;
 - (struct __SecTrust { }*)trust;
 

@@ -6,38 +6,38 @@
 }
 
 @property(readonly) BOOL altKey;
-@property(readonly) NSInteger clientX;
-@property(readonly) NSInteger clientY;
+@property(readonly) int clientX;
+@property(readonly) int clientY;
 @property(readonly) BOOL ctrlKey;
 @property(readonly) BOOL isHorizontal;
 @property(readonly) BOOL metaKey;
-@property(readonly) NSInteger offsetX;
-@property(readonly) NSInteger offsetY;
-@property(readonly) NSInteger screenX;
-@property(readonly) NSInteger screenY;
+@property(readonly) int offsetX;
+@property(readonly) int offsetY;
+@property(readonly) int screenX;
+@property(readonly) int screenY;
 @property(readonly) BOOL shiftKey;
-@property(readonly) NSInteger wheelDelta;
-@property(readonly) NSInteger wheelDeltaX;
-@property(readonly) NSInteger wheelDeltaY;
-@property(readonly) NSInteger x;
-@property(readonly) NSInteger y;
+@property(readonly) int wheelDelta;
+@property(readonly) int wheelDeltaX;
+@property(readonly) int wheelDeltaY;
+@property(readonly) int x;
+@property(readonly) int y;
 
 - (BOOL)altKey;
-- (NSInteger)clientX;
-- (NSInteger)clientY;
+- (int)clientX;
+- (int)clientY;
 - (BOOL)ctrlKey;
-- (void)initWheelEvent:(NSInteger)arg1 wheelDeltaY:(NSInteger)arg2 view:(id)arg3 screenX:(NSInteger)arg4 screenY:(NSInteger)arg5 clientX:(NSInteger)arg6 clientY:(NSInteger)arg7 ctrlKey:(BOOL)arg8 altKey:(BOOL)arg9 shiftKey:(BOOL)arg10 metaKey:(BOOL)arg11;
+- (void)initWheelEvent:(int)arg1 wheelDeltaY:(int)arg2 view:(id)arg3 screenX:(int)arg4 screenY:(int)arg5 clientX:(int)arg6 clientY:(int)arg7 ctrlKey:(BOOL)arg8 altKey:(BOOL)arg9 shiftKey:(BOOL)arg10 metaKey:(BOOL)arg11;
 - (BOOL)isHorizontal;
 - (BOOL)metaKey;
-- (NSInteger)offsetX;
-- (NSInteger)offsetY;
-- (NSInteger)screenX;
-- (NSInteger)screenY;
+- (int)offsetX;
+- (int)offsetY;
+- (int)screenX;
+- (int)screenY;
 - (BOOL)shiftKey;
-- (NSInteger)wheelDelta;
-- (NSInteger)wheelDeltaX;
-- (NSInteger)wheelDeltaY;
-- (NSInteger)x;
-- (NSInteger)y;
+- (int)wheelDelta;
+- (int)wheelDeltaX;
+- (int)wheelDeltaY;
+- (int)x;
+- (int)y;
 
 @end

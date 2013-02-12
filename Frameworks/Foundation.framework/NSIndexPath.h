@@ -3,45 +3,45 @@
  */
 
 @interface NSIndexPath : NSObject <NSCopying, NSCoding> {
-    NSUInteger _hash;
-    NSUInteger *_indexes;
-    NSUInteger _length;
+    unsigned int _hash;
+    unsigned int *_indexes;
+    unsigned int _length;
     void *_reserved;
 }
 
-@property(readonly) NSUInteger gridColumn;
-@property(readonly) NSUInteger gridRow;
-@property(readonly) NSUInteger gridSection;
-@property(readonly) NSUInteger row;
-@property(readonly) NSUInteger section;
+@property(readonly) unsigned int gridColumn;
+@property(readonly) unsigned int gridRow;
+@property(readonly) unsigned int gridSection;
+@property(readonly) unsigned int row;
+@property(readonly) unsigned int section;
 
 + (id)_fastUniquer;
 + (id)_uniquer;
-+ (id)indexPathForRow:(NSUInteger)arg1 column:(NSUInteger)arg2 inSection:(NSUInteger)arg3;
-+ (id)indexPathForRow:(NSUInteger)arg1 inSection:(NSUInteger)arg2;
-+ (id)indexPathWithIndex:(NSUInteger)arg1;
-+ (id)indexPathWithIndexes:(NSUInteger*)arg1 length:(NSUInteger)arg2;
++ (id)indexPathForRow:(unsigned int)arg1 column:(unsigned int)arg2 inSection:(unsigned int)arg3;
++ (id)indexPathForRow:(unsigned int)arg1 inSection:(unsigned int)arg2;
++ (id)indexPathWithIndex:(unsigned int)arg1;
++ (id)indexPathWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
 
-- (NSInteger)compare:(id)arg1;
+- (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
-- (void)getIndexes:(NSUInteger*)arg1;
-- (NSUInteger)gridColumn;
-- (NSUInteger)gridRow;
-- (NSUInteger)gridSection;
-- (NSUInteger)indexAtPosition:(NSUInteger)arg1;
-- (id)indexPathByAddingIndex:(NSUInteger)arg1;
+- (void)getIndexes:(unsigned int*)arg1;
+- (unsigned int)gridColumn;
+- (unsigned int)gridRow;
+- (unsigned int)gridSection;
+- (unsigned int)indexAtPosition:(unsigned int)arg1;
+- (id)indexPathByAddingIndex:(unsigned int)arg1;
 - (id)indexPathByRemovingLastIndex;
-- (id)indexPathBySettingSection:(NSUInteger)arg1;
+- (id)indexPathBySettingSection:(unsigned int)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIndex:(NSUInteger)arg1;
-- (id)initWithIndexes:(NSUInteger*)arg1 length:(NSUInteger)arg2;
-- (NSUInteger)length;
-- (NSUInteger)row;
-- (NSUInteger)section;
+- (id)initWithIndex:(unsigned int)arg1;
+- (id)initWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
+- (unsigned int)length;
+- (unsigned int)row;
+- (unsigned int)section;
 
 @end

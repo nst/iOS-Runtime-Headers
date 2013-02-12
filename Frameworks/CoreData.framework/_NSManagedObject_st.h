@@ -7,15 +7,15 @@
 @interface _NSManagedObject_st : NSObject {
     id _cd_entity;
     id _cd_faultHandler;
-    NSUInteger _cd_lockingInfo;
+    unsigned int _cd_lockingInfo;
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;
     id _cd_observationInfo;
     id _cd_queueReference;
     id _cd_rawData;
-    NSInteger _cd_rc;
+    int _cd_rc;
     id *_cd_snapshots;
-    NSUInteger _cd_stateFlags;
+    unsigned int _cd_stateFlags;
 }
 
 @end

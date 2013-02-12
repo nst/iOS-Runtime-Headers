@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface SUItemValidator : NSObject {
     NSMutableArray *_collectionTests;
     NSMutableArray *_itemTests;
 }
 
-@property(readonly) NSArray *validationTests;
+@property(readonly) NSArray * validationTests;
 
 + (id)purchaseValidatorWithItems:(id)arg1;
 

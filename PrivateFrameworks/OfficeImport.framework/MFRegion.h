@@ -5,10 +5,10 @@
 @interface MFRegion : NSObject <MFObject> {
 }
 
-- (NSInteger)fill:(id)arg1 :(id)arg2;
-- (NSInteger)frame:(id)arg1 :(id)arg2;
-- (NSInteger)invert:(id)arg1;
-- (NSInteger)selectInto:(id)arg1;
-- (NSInteger)setClip:(id)arg1 :(NSInteger)arg2;
+- (int)fill:(id)arg1 :(id)arg2;
+- (int)frame:(id)arg1 :(id)arg2;
+- (int)invert:(id)arg1;
+- (int)selectInto:(id)arg1;
+- (int)setClip:(id)arg1 :(int)arg2;
 
 @end

@@ -8,7 +8,7 @@
     BOOL _deferItemSelection;
     PSSpecifier *_lastSelectedSpecifier;
     BOOL _restrictionList;
-    NSInteger _rowToSelect;
+    int _rowToSelect;
 }
 
 - (void)_addStaticText:(id)arg1;

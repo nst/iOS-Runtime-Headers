@@ -2,27 +2,18 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class CHDChart, CHDDataLabel, CHDSeriesCollection, EDCollection;
 
 @interface CHDChartType : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
+    boolmVaryColors;
     EDCollection *mAxisIds;
     CHDChart *mChart;
     CHDDataLabel *mDefaultDataLabel;
     CHDSeriesCollection *mSeries;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mVaryColors;
 }
 
 + (id)chartTypeWithChart:(id)arg1;
-+ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)is3DType;
++ (bool)is3DType;
 
 - (id)axes;
 - (id)axisForClass:(Class)arg1;
@@ -31,15 +22,15 @@
 - (id)contentFormat;
 - (void)dealloc;
 - (id)defaultDataLabel;
-- (NSInteger)defaultLabelPosition;
+- (int)defaultLabelPosition;
 - (id)defaultTitleWithResources:(id)arg1;
 - (id)initWithChart:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHorizontal;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isPlotedOnSecondaryAxis;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isVaryColors;
+- (bool)isHorizontal;
+- (bool)isPlotedOnSecondaryAxis;
+- (bool)isVaryColors;
 - (id)seriesCollection;
 - (void)setDefaultDataLabel:(id)arg1;
 - (void)setSeriesCollection:(id)arg1;
-- (void)setVaryColors:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setVaryColors:(bool)arg1;
 
 @end

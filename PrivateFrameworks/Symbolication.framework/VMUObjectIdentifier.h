@@ -6,39 +6,39 @@
 
 @interface VMUObjectIdentifier : NSObject {
     struct _CSTypeRef { 
-        NSUInteger _opaque_1; 
-        NSUInteger _opaque_2; 
-    NSUInteger _cPlusPlusClassCount;
-    NSUInteger _cfTypeCount;
+        unsigned int _opaque_1; 
+        unsigned int _opaque_2; 
+    unsigned int _cPlusPlusClassCount;
+    unsigned int _cfTypeCount;
     NSMapTable *_cfTypeIDtoClassInfo;
     NSHashTable *_classAddresses;
     NSHashTable *_invalidPointers;
     NSMapTable *_isaToClassInfo;
-    NSUInteger _objcClassCount;
+    unsigned int _objcClassCount;
     NSMutableSet *_objcRuntimeMallocBlocks;
     NSHashTable *_objcRuntimeMallocBlocksHash;
     } _symbolicator;
     VMURangeArray *_targetProcessVMranges;
-    NSUInteger _task;
-    NSInteger peeksAtRemoteObjectIsa;
+    unsigned int _task;
+    int peeksAtRemoteObjectIsa;
 }
 
-- (NSUInteger)CFTypeCount;
-- (NSUInteger)CPlusPlusClassCount;
-- (NSUInteger)ObjCclassCount;
-- (id)classInfoForCFType:(struct __CFRuntimeBase { NSUInteger x1; unsigned char x2[4]; }*)arg1;
-- (id)classInfoForIsaPointer:(NSUInteger)arg1;
-- (id)classInfoForObject:(NSUInteger)arg1;
+- (unsigned int)CFTypeCount;
+- (unsigned int)CPlusPlusClassCount;
+- (unsigned int)ObjCclassCount;
+- (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned int x1; unsigned char x2[4]; }*)arg1;
+- (id)classInfoForIsaPointer:(unsigned int)arg1;
+- (id)classInfoForObject:(unsigned int)arg1;
 - (void)dealloc;
 - (void)findCFTypes;
 - (void)findObjCclasses;
 - (void)findTargetProcessVMranges;
-- (id)initWithTask:(NSUInteger)arg1 symbolicator:(id)arg2;
-- (id)initWithTask:(NSUInteger)arg1;
-- (BOOL)isValidRemotePointer:(NSUInteger)arg1;
+- (id)initWithTask:(unsigned int)arg1 symbolicator:(id)arg2;
+- (id)initWithTask:(unsigned int)arg1;
+- (BOOL)isValidRemotePointer:(unsigned int)arg1;
 - (id)objcRuntimeMallocBlocks;
 - (id)objcRuntimeMallocBlocksHash;
-- (id)readClassNameString:(NSUInteger)arg1;
+- (id)readClassNameString:(unsigned int)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
 
 @end

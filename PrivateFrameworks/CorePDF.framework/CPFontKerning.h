@@ -6,8 +6,8 @@
     char *dataPtr;
     struct __CFDictionary { } *kernDictionary;
     struct __CFData { } *kernTable;
-    NSUInteger kernTableLength;
-    NSUInteger offset;
+    unsigned int kernTableLength;
+    unsigned int offset;
     BOOL override;
     BOOL valid;
 }
@@ -28,7 +28,7 @@
 - (id)initWithKernData:(struct __CFData { }*)arg1;
 - (unsigned char)readByte;
 - (short)readShort;
-- (NSUInteger)readUnsignedLong;
+- (unsigned int)readUnsignedLong;
 - (unsigned short)readUnsignedShort;
 
 @end

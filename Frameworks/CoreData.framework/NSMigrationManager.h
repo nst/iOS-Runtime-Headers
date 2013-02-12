@@ -27,8 +27,8 @@
 }
 
 + (BOOL)_performSanityCheckForMapping:(id)arg1 fromSourceModel:(id)arg2 toDestinationModel:(id)arg3;
-+ (NSInteger)migrationDebugLevel;
-+ (void)setMigrationDebugLevel:(NSInteger)arg1;
++ (int)migrationDebugLevel;
++ (void)setMigrationDebugLevel:(int)arg1;
 
 - (void)_doCleanupOnFailure:(id)arg1;
 - (BOOL)_doFirstPassForMapping:(id)arg1 error:(id*)arg2;

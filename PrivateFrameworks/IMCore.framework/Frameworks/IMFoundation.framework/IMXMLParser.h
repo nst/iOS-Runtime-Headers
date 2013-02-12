@@ -9,7 +9,7 @@
     struct __CFDictionary { } *_framespace;
     NSMutableArray *_otherFrames;
     NSXMLParser *_parser;
-    struct _TidyDoc { NSInteger x1; } *_tidyDoc;
+    struct _TidyDoc { int x1; } *_tidyDoc;
     IMXMLParserFrame *_topFrame;
 }
 
@@ -26,6 +26,6 @@
 - (void)parser:(id)arg1 foundIgnorableWhitespace:(id)arg2;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (oneway void)release;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

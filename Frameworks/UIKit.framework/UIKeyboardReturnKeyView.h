@@ -3,15 +3,15 @@
  */
 
 @interface UIKeyboardReturnKeyView : UIKeyboardKeyView {
-    NSInteger m_originalStyle;
-    NSInteger m_subtype;
+    int m_originalStyle;
+    int m_subtype;
 }
 
 - (struct __CFData { }*)createCacheKey;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(NSInteger)arg2 style:(NSInteger)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 style:(int)arg3;
 - (id)localizedString;
-- (void)setSubtype:(NSInteger)arg1;
-- (NSInteger)subtype;
+- (void)setSubtype:(int)arg1;
+- (int)subtype;
 - (id)symbolString;
 
 @end

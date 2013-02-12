@@ -9,7 +9,7 @@
     GKUITheme *_theme;
 }
 
-@property(retain) GKUITheme *theme;
+@property(retain) GKUITheme * theme;
 
 - (void)dealloc;
 - (void)setTheme:(id)arg1;

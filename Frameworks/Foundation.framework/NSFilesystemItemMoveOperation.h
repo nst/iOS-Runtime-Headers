@@ -11,7 +11,7 @@
     NSString *_sourcePath;
 }
 
-+ (id)_errorWithErrno:(NSInteger)arg1 sourcePath:(id)arg2 destinationPath:(id)arg3;
++ (id)_errorWithErrno:(int)arg1 sourcePath:(id)arg2 destinationPath:(id)arg3;
 + (id)filesystemItemMoveOperationWithSourcePath:(id)arg1 destinationPath:(id)arg2;
 
 - (void)_setError:(id)arg1;

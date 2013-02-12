@@ -8,12 +8,12 @@
     NSKeyValueGetter *_valueGetter;
 }
 
-+ (struct { NSUInteger x1; id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
 
 - (id)_nonNilSetValueWithSelector:(SEL)arg1;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (void)_proxyNonGCFinalize;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (id)member:(id)arg1;
 - (id)objectEnumerator;
 

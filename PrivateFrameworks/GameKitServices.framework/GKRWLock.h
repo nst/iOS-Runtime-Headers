@@ -12,7 +12,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)rdlock;
-- (NSInteger)tryrdlock;
+- (int)tryrdlock;
 - (void)unlock;
 - (void)wrlock;
 

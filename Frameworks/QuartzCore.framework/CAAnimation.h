@@ -2,14 +2,19 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class CAMediaTimingFunction, NSString;
+
 @interface CAAnimation : NSObject <NSMutableCopying, CAPropertyInfo, NSCoding, NSCopying, CAMediaTiming, CAAction> {
     void *_attr;
-    NSUInteger _flags;
+    unsigned int _flags;
 }
 
-@property(copy) NSString *fillMode;
-@property(retain) CAMediaTimingFunction *timingFunction;
-@property NSInteger _mapkit_ID;
+@property int _mapkit_ID;
 @property(readonly) BOOL _mapkit_isHeadingRotationAnimation;
 @property(readonly) BOOL _mapkit_isScrollingAnimation;
 @property BOOL autoreverses;
@@ -17,29 +22,31 @@
 @property(retain) id delegate;
 @property double duration;
 @property(getter=isEnabled) BOOL enabled;
+@property(copy) NSString * fillMode;
 @property double frameInterval;
 @property(getter=isRemovedOnCompletion) BOOL removedOnCompletion;
 @property float repeatCount;
 @property double repeatDuration;
 @property float speed;
 @property double timeOffset;
+@property(retain) CAMediaTimingFunction * timingFunction;
 
-+ (int (*)())CA_getterForType:(NSInteger)arg1;
-+ (int (*)())CA_setterForType:(NSInteger)arg1;
++ (int (*)())CA_getterForType:(int)arg1;
++ (int (*)())CA_setterForType:(int)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
-+ (BOOL)CA_encodePropertyConditionally:(NSUInteger)arg1 type:(NSInteger)arg2;
++ (BOOL)CA_encodePropertyConditionally:(unsigned int)arg1 type:(int)arg2;
 + (id)animation;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (id)properties;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
-- (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (NSInteger)_mapkit_ID;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (int)_mapkit_ID;
 - (BOOL)_mapkit_isHeadingRotationAnimation;
 - (BOOL)_mapkit_isScrollingAnimation;
-- (NSUInteger)_propertyFlagsForLayer:(id)arg1;
-- (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; NSUInteger x7; NSUInteger x8; }*)arg1 layer:(id)arg2;
+- (unsigned int)_propertyFlagsForLayer:(id)arg1;
+- (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)arg1 layer:(id)arg2;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (BOOL)autoreverses;
 - (double)beginTime;
@@ -76,7 +83,7 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (void)set_mapkit_ID:(NSInteger)arg1;
+- (void)set_mapkit_ID:(int)arg1;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
 - (float)speed;
 - (double)timeOffset;

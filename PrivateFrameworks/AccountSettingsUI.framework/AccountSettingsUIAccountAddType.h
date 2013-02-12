@@ -10,9 +10,9 @@
     PSSpecifier *_specifier;
 }
 
-@property(retain) NSArray *dataclasses;
-@property(retain) NSString *otherDataclassHeader;
-@property(retain) PSSpecifier *specifier;
+@property(retain) NSArray * dataclasses;
+@property(retain) NSString * otherDataclassHeader;
+@property(retain) PSSpecifier * specifier;
 
 - (id)dataclasses;
 - (void)dealloc;

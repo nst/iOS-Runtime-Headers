@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHDPie3DType : CHDPie2DType {
-     /* Encoded args for previous method: B8@0:4 */
 }
 
-+ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)is3DType;
++ (bool)is3DType;
 
 @end

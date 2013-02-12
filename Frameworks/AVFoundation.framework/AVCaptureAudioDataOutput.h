@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureAudioDataOutputInternal;
+@class <AVCaptureAudioDataOutputSampleBufferDelegate>, AVCaptureAudioDataOutputInternal;
 
 @interface AVCaptureAudioDataOutput : AVCaptureOutput {
     AVCaptureAudioDataOutputInternal *_internal;
 }
 
-@property(readonly) dispatch_queue_s *sampleBufferCallbackQueue;
-@property(readonly) <AVCaptureAudioDataOutputSampleBufferDelegate> *sampleBufferDelegate;
+@property(readonly) struct dispatch_queue_s { }* sampleBufferCallbackQueue;
+@property(readonly) <AVCaptureAudioDataOutputSampleBufferDelegate> * sampleBufferDelegate;
 
 + (void)initialize;
 

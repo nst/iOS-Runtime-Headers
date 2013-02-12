@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MediaControl.framework/MediaControl
  */
 
-@class <MediaControlServerDelegate>;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class <MediaControlServerDelegate>, AirPlayLocalSlideshow;
 
 @interface MediaControlServer : NSObject {
     struct MediaControlServerImp { struct HTTPServer { 
             struct { 
-                NSUInteger serverSize; 
-                NSUInteger connectionSize; 
+                unsigned int serverSize; 
+                unsigned int connectionSize; 
                 int (*doServerFree)(); 
                 int (*doServerStart)(); 
                 int (*doServerStop)(); 
@@ -16,27 +21,35 @@
                 int (*doConnectionFree)(); 
                 int (*doProcessRequest)(); 
                 int (*doInitResponse)(); 
-                NSInteger listenerPort; 
-                NSInteger socketBufferSize; 
+                int listenerPort; 
+                int socketBufferSize; 
                 void *userData; 
             } config; 
             struct dispatch_queue_s {} *serverQueue; 
             struct dispatch_semaphore_s {} *stopSemaphore; 
-            NSInteger listenerPort; 
+            int listenerPort; 
             struct { 
                 struct dispatch_source_s {} *source; 
-                NSInteger socket; 
+                int socket; 
                 struct HTTPServer {} *server; 
             } listenerIPv4; 
             struct { 
                 struct dispatch_source_s {} *source; 
-                NSInteger socket; 
+                int socket; 
                 struct HTTPServer {} *server; 
             } listenerIPv6; 
             struct HTTPServerConnection {} *connectionList; 
             struct LogCategory {} *ucatRequest; 
             struct LogCategory {} *ucatResponse; 
+            struct LogCategory {} *ucatConnections; 
+            struct __CFString {} *megaBytesPerSecKey; 
         } x1; struct { 
+            void *userData; 
+            int (*photoDataFunc)(); 
+            int (*photoFileFunc)(); 
+            int (*copySlideshowFeaturesFunc)(); 
+            int (*copySlideshowInfoFunc)(); 
+            int (*setSlideshowInfoFunc)(); 
             int (*playFunc)(); 
             int (*stopFunc)(); 
             int (*rateSetFunc)(); 
@@ -44,16 +57,15 @@
             int (*scrubSetFunc)(); 
             int (*volumeGetFunc)(); 
             int (*volumeSetFunc)(); 
-            int (*photoDataFunc)(); 
-            int (*photoFileFunc)(); 
-            void *userData; 
+            int (*playbackInfoFunc)(); 
     <MediaControlServerDelegate> *_delegate;
     struct dispatch_queue_s { } *_dispatchQueue;
-        } x2; NSUInteger x3; struct _DNSServiceRef_t {} *x4; struct _DNSServiceRef_t {} *x5; } *_server;
+        } x2; unsigned int x3; struct _DNSServiceRef_t {} *x4; struct _DNSServiceRef_t {} *x5; BOOL x6[16]; char *x7; unsigned char x8; } *_server;
+    AirPlayLocalSlideshow *_slideshow;
 }
 
-@property <MediaControlServerDelegate> *delegate;
-@property NSUInteger supportedFeatures;
+@property <MediaControlServerDelegate> * delegate;
+@property unsigned int supportedFeatures;
 
 - (void)dealloc;
 - (id)delegate;
@@ -61,9 +73,11 @@
 - (void)postEvent:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDispatchQueue:(struct dispatch_queue_s { }*)arg1;
-- (void)setSupportedFeatures:(NSUInteger)arg1;
+- (long)setPassword:(id)arg1;
+- (void)setSupportedFeatures:(unsigned int)arg1;
+- (void)slideshowRequestAssetWithInfo:(id)arg1 sessionUUID:(const char *)arg2 completion:(id)arg3;
 - (long)start;
 - (void)stop;
-- (NSUInteger)supportedFeatures;
+- (unsigned int)supportedFeatures;
 
 @end

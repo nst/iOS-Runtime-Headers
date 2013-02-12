@@ -24,16 +24,16 @@
 @property BOOL shouldNotifyDidCompleteImmediately;
 
 + (void)_initializeSafeCategory;
-+ (double)defaultDurationForTransition:(NSInteger)arg1;
++ (double)defaultDurationForTransition:(int)arg1;
 
 - (void)_didCompleteTransition:(BOOL)arg1;
 - (void)_didStartTransition;
 - (BOOL)_isTransitioningFromFromView:(id)arg1;
-- (void)_startTransition:(NSInteger)arg1 withDuration:(float)arg2;
+- (void)_startTransition:(int)arg1 withDuration:(float)arg2;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (double)durationForTransition:(NSInteger)arg1;
+- (double)durationForTransition:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fromView;
 - (BOOL)ignoresInteractionEvents;
@@ -48,7 +48,7 @@
 - (void)setShouldNotifyDidCompleteImmediately:(BOOL)arg1;
 - (BOOL)shouldNotifyDidCompleteImmediately;
 - (id)toView;
-- (BOOL)transition:(NSInteger)arg1 fromView:(id)arg2 toView:(id)arg3;
-- (BOOL)transition:(NSInteger)arg1 toView:(id)arg2;
+- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3;
+- (BOOL)transition:(int)arg1 toView:(id)arg2;
 
 @end

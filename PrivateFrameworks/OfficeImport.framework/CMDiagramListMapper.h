@@ -8,11 +8,11 @@
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapChildrenAt:(id)arg1 withState:(id)arg2;
-- (void)mapListItemAt:(id)arg1 index:(NSInteger)arg2 withState:(id)arg3;
+- (void)mapListItemAt:(id)arg1 index:(int)arg2 withState:(id)arg3;
 - (void)setDefaultFonSize;
-- (float)setFonSizeForChildNode:(id)arg1 atIndex:(NSUInteger)arg2 level:(NSInteger)arg3;
-- (struct CGSize { float x1; float x2; })sizeForNode:(id)arg1 atIndex:(NSUInteger)arg2;
-- (id)suggestedBoundsForHListItemWithIndex:(NSInteger)arg1;
+- (float)setFonSizeForChildNode:(id)arg1 atIndex:(unsigned int)arg2 level:(int)arg3;
+- (struct CGSize { float x1; float x2; })sizeForNode:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)suggestedBoundsForHListItemWithIndex:(int)arg1;
 - (struct CGSize { float x1; float x2; })textSize;
 
 @end

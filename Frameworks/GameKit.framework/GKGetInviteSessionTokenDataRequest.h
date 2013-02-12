@@ -8,7 +8,7 @@
     NSData *_inviteSessionToken;
 }
 
-@property(readonly) NSData *inviteSessionToken;
+@property(readonly) NSData * inviteSessionToken;
 
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;

@@ -2,23 +2,30 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class CALayer, NSArray, NSString;
+
 @interface CAMatchMoveAnimation : CAAnimation {
 }
 
-@property(copy) NSString *keyPath;
-@property(retain) CALayer *sourceLayer;
-@property(copy) NSArray *sourcePoints;
 @property(getter=isAdditive) BOOL additive;
 @property BOOL appliesRotation;
 @property BOOL appliesScale;
 @property BOOL appliesX;
 @property BOOL appliesY;
+@property(copy) NSString * keyPath;
+@property(retain) CALayer * sourceLayer;
+@property(copy) NSArray * sourcePoints;
 @property BOOL targetsSuperlayer;
 
 + (id)defaultValueForKey:(id)arg1;
 
-- (struct Animation { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; NSUInteger x7; NSUInteger x8; }*)_copyRenderAnimationForLayer:(id)arg1;
-- (NSUInteger)_propertyFlagsForLayer:(id)arg1;
+- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (unsigned int)_propertyFlagsForLayer:(id)arg1;
 - (BOOL)appliesRotation;
 - (BOOL)appliesScale;
 - (BOOL)appliesX;

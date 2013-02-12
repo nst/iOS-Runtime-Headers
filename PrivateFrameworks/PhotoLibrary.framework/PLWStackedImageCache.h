@@ -14,15 +14,15 @@
 + (id)absolutePathToCachesDirectory;
 + (id)sharedInstance;
 
-- (id)_bakedStackedImageFilenameForWithKey:(NSUInteger)arg1;
+- (id)_bakedStackedImageFilenameForWithKey:(unsigned int)arg1;
 - (BOOL)_createBaseDirectoryForStackedImagesCache;
-- (id)_pathToBakedCachedStackedImageWithKey:(NSUInteger)arg1;
+- (id)_pathToBakedCachedStackedImageWithKey:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)invalidateAll;
-- (void)invalidateEntryForKey:(NSUInteger)arg1;
-- (void)prefetchStackedImagesWithKey1:(NSUInteger)arg1 key2:(NSUInteger)arg2 key3:(NSUInteger)arg3 key4:(NSUInteger)arg4;
-- (void)setStackedImage:(id)arg1 forKey:(NSUInteger)arg2 options:(id)arg3;
-- (id)stackedImageWithKey:(NSUInteger)arg1 options:(id*)arg2;
+- (void)invalidateEntryForKey:(unsigned int)arg1;
+- (void)prefetchStackedImagesWithKey1:(unsigned int)arg1 key2:(unsigned int)arg2 key3:(unsigned int)arg3 key4:(unsigned int)arg4;
+- (void)setStackedImage:(id)arg1 forKey:(unsigned int)arg2 options:(id)arg3;
+- (id)stackedImageWithKey:(unsigned int)arg1 options:(id*)arg2;
 
 @end

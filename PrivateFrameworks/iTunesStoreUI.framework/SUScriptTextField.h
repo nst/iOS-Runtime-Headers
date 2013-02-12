@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUScriptFunction;
+@class NSNumber, NSString, SUScriptFunction, WebScriptObject;
 
 @interface SUScriptTextField : SUScriptObject <SUScriptNavigationItem> {
     SUScriptFunction *_shouldFocusFunction;
     NSString *_style;
 }
 
-@property(retain) NSString *autocapitalizationType;
-@property(retain) NSString *autocorrectionType;
-@property(retain) NSString *keyboardType;
-@property(retain) NSString *placeholder;
-@property(retain) WebScriptObject *shouldFocusFunction;
-@property(readonly) NSString *style;
-@property(retain) NSString *value;
-@property(retain) NSNumber *width;
+@property(retain) NSString * autocapitalizationType;
+@property(retain) NSString * autocorrectionType;
+@property(retain) NSString * keyboardType;
 @property(retain) id nativeTextField;
+@property(retain) NSString * placeholder;
+@property(retain) WebScriptObject * shouldFocusFunction;
+@property(readonly) NSString * style;
+@property(retain) NSString * value;
+@property(retain) NSNumber * width;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;

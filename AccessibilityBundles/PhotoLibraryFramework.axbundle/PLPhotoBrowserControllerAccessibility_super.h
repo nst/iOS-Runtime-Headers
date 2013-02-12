@@ -8,13 +8,13 @@
 + (void)_initializeSafeCategory;
 
 - (void)_dismissCropOverlay;
-- (id)_getButtonForAirTunesMode:(NSInteger)arg1;
+- (id)_getButtonForAirTunesMode:(int)arg1;
 - (void)_removeProgressView;
 - (void)_showMMSComposeSheet;
-- (void)_transcodeVideoUsingMode:(NSInteger)arg1;
+- (void)_transcodeVideoUsingMode:(int)arg1;
 - (void)hideOverlays;
 - (void)sendViaMMSClicked;
-- (void)showNextImageWithTransition:(NSInteger)arg1;
+- (void)showNextImageWithTransition:(int)arg1;
 - (void)updateProgressView;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
 

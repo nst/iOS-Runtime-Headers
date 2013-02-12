@@ -11,12 +11,12 @@
     NSMutableArray *_values;
 }
 
-@property(retain) NSMutableArray *keys;
-@property(retain) NSString *source;
-@property(retain) NSString *url;
-@property(retain) NSMutableArray *values;
-@property(readonly) NSInteger keysCount;
-@property(readonly) NSInteger valuesCount;
+@property(retain) NSMutableArray * keys;
+@property(readonly) int keysCount;
+@property(retain) NSString * source;
+@property(retain) NSString * url;
+@property(retain) NSMutableArray * values;
+@property(readonly) int valuesCount;
 
 - (void)addKey:(id)arg1;
 - (void)addValue:(id)arg1;
@@ -25,21 +25,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)init;
-- (id)keyAtIndex:(NSUInteger)arg1;
+- (id)keyAtIndex:(unsigned int)arg1;
 - (id)keys;
-- (NSInteger)keysCount;
+- (int)keysCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setKey:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setKey:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setKeys:(id)arg1;
 - (void)setSource:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (void)setValue:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setValues:(id)arg1;
 - (id)source;
 - (id)url;
-- (id)valueAtIndex:(NSUInteger)arg1;
+- (id)valueAtIndex:(unsigned int)arg1;
 - (id)values;
-- (NSInteger)valuesCount;
+- (int)valuesCount;
 - (void)writeTo:(id)arg1;
 
 @end

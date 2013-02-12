@@ -8,19 +8,19 @@
     NSArray *_certs;
     BOOL _forMe;
     NSString *_screenName;
-    NSUInteger _usage;
+    unsigned int _usage;
 }
 
-@property(readonly) NSArray *certificates;
-@property(readonly) NSString *screenName;
+@property(readonly) NSArray * certificates;
+@property(readonly) NSString * screenName;
 
-+ (id)gatherCertsForScreenName:(id)arg1 usage:(NSUInteger)arg2 forMyUse:(BOOL)arg3;
++ (id)gatherCertsForScreenName:(id)arg1 usage:(unsigned int)arg2 forMyUse:(BOOL)arg3;
 
 - (void)_workerThread;
 - (void)_workerThreadFinished;
 - (id)certificates;
 - (void)dealloc;
-- (id)initWithScreenName:(id)arg1 usage:(NSUInteger)arg2 forMyUse:(BOOL)arg3;
+- (id)initWithScreenName:(id)arg1 usage:(unsigned int)arg2 forMyUse:(BOOL)arg3;
 - (id)screenName;
 
 @end

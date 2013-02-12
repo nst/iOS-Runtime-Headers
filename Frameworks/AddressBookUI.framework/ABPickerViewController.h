@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPickerViewControllerDelegate>, <ABPickerViewControllerDismissDelegate>, <ABStyleProvider>;
+@class <ABPickerViewControllerDelegate>, <ABPickerViewControllerDismissDelegate>, <ABStyleProvider>, UIBarButtonItem;
 
 @interface ABPickerViewController : UITableViewController {
     void *_context;
@@ -12,16 +12,16 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(readonly) UIBarButtonItem *cancelBarButtonItem;
-@property void *context;
-@property <ABPickerViewControllerDelegate> *delegate;
-@property <ABPickerViewControllerDismissDelegate> *dismissDelegate;
-@property(readonly) UIBarButtonItem *doneBarButtonItem;
-@property(retain) <ABStyleProvider> *styleProvider;
+@property(readonly) UIBarButtonItem * cancelBarButtonItem;
+@property void* context;
+@property <ABPickerViewControllerDelegate> * delegate;
+@property <ABPickerViewControllerDismissDelegate> * dismissDelegate;
+@property(readonly) UIBarButtonItem * doneBarButtonItem;
 @property SEL selectionAction;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (BOOL)_allowsAutorotation;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)attemptDismissAfterSelectingItem:(id)arg1;
 - (id)cancelBarButtonItem;

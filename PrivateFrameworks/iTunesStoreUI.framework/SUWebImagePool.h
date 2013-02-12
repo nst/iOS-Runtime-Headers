@@ -5,22 +5,22 @@
 @interface SUWebImagePool : NSObject {
     struct dispatch_queue_s { } *_dispatchQueue;
     struct __CFDictionary { } *_images;
-    NSInteger _poolIdentifier;
+    int _poolIdentifier;
 }
 
-+ (id)_poolImageForPoolIdentifier:(NSInteger)arg1 imageIdentifier:(NSInteger)arg2;
++ (id)_poolImageForPoolIdentifier:(int)arg1 imageIdentifier:(int)arg2;
 + (id)_poolImageForURL:(id)arg1;
 + (void)addWebImagePool:(id)arg1;
 + (id)imageForURL:(id)arg1;
 + (void)removeWebImagePool:(id)arg1;
 
-- (NSInteger)_poolIdentifier;
-- (id)_poolImageForImageIdentifier:(NSInteger)arg1;
-- (id)addImage:(id)arg1 withMIMEType:(id)arg2 identifier:(NSInteger)arg3;
+- (int)_poolIdentifier;
+- (id)_poolImageForImageIdentifier:(int)arg1;
+- (id)addImage:(id)arg1 withMIMEType:(id)arg2 identifier:(int)arg3;
 - (void)dealloc;
-- (id)imageForImageIdentifier:(NSInteger)arg1;
-- (id)imageURLForImageIdentifier:(NSInteger)arg1;
+- (id)imageForImageIdentifier:(int)arg1;
+- (id)imageURLForImageIdentifier:(int)arg1;
 - (id)init;
-- (void)removeImageForIdentifier:(NSInteger)arg1;
+- (void)removeImageForIdentifier:(int)arg1;
 
 @end

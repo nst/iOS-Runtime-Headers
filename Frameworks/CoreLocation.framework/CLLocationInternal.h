@@ -4,7 +4,7 @@
 
 @interface CLLocationInternal : NSObject {
     struct { 
-        NSInteger suitability; 
+        int suitability; 
         struct { 
             double latitude; 
             double longitude; 
@@ -15,14 +15,14 @@
         double speed; 
         double course; 
         double timestamp; 
-        NSInteger confidence; 
+        int confidence; 
         double lifespan; 
-        NSInteger type; 
+        int type; 
     } fLocation;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithClientLocation:(struct { NSInteger x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; NSInteger x9; double x10; NSInteger x11; })arg1;
+- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; int x9; double x10; int x11; })arg1;
 - (id)initWithIso6709Notation:(id)arg1;
 
 @end

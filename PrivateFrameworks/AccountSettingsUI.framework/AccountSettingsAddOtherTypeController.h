@@ -5,7 +5,7 @@
 @interface AccountSettingsAddOtherTypeController : AccountSettingsUIAddTypeController {
 }
 
-- (NSInteger)numAddControllersInStack;
+- (int)numAddControllersInStack;
 - (id)specifiers;
 
 @end

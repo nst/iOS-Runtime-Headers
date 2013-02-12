@@ -17,9 +17,9 @@
 - (id)initForKeys:(id)arg1;
 - (id)initWithSearchStrategy:(id)arg1;
 - (const id)mapping;
-- (void)setValue:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setValues:(id*)arg1;
-- (id)valueAtIndex:(NSUInteger)arg1;
+- (id)valueAtIndex:(unsigned int)arg1;
 - (const id*)values;
 
 @end

@@ -8,7 +8,7 @@
     NSArray *_responseEmails;
 }
 
-@property(copy) NSArray *responseEmailAddresses;
+@property(copy) NSArray * responseEmailAddresses;
 
 - (id)bagKey;
 - (void)dealloc;

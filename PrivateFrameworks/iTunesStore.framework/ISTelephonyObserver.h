@@ -14,8 +14,8 @@
     struct __CFRunLoop { } *_runLoop;
 }
 
-@property(readonly) NSString *dataStatusIndicator;
-@property(readonly) NSString *operatorName;
+@property(readonly) NSString * dataStatusIndicator;
+@property(readonly) NSString * operatorName;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;

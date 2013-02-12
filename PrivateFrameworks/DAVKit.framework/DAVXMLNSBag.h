@@ -6,7 +6,7 @@
 
 @interface DAVXMLNSBag : NSObject {
     NSMutableDictionary *allNS;
-    NSUInteger nsCounter;
+    unsigned int nsCounter;
     void *reserved1;
     NSMutableDictionary *tagMapping;
 }

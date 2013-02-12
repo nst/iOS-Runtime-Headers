@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
+@class UIKeyboard, UIView;
 
 @interface UIInputViewSet : NSObject {
     UIView *_inputAccessoryView;
@@ -10,10 +10,10 @@
     BOOL _isKeyboard;
 }
 
-@property(retain) UIView *inputAccessoryView;
-@property(retain) UIView *inputView;
-@property(readonly) UIKeyboard *keyboard;
 @property(getter=isEmpty,readonly) BOOL empty;
+@property(retain) UIView * inputAccessoryView;
+@property(retain) UIView * inputView;
+@property(readonly) UIKeyboard * keyboard;
 
 + (id)emptyInputSet;
 + (id)inputSetWithInputView:(id)arg1 accessoryView:(id)arg2;
@@ -22,6 +22,7 @@
 - (BOOL)containsResponder:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (BOOL)inSyncWithOrientation:(int)arg1 forKeyboard:(id)arg2;
 - (id)initWithInputView:(id)arg1 accessoryView:(id)arg2 isKeyboard:(BOOL)arg3;
 - (id)inputAccessoryView;
 - (id)inputView;
@@ -29,6 +30,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isStrictSupersetOfViewSet:(id)arg1;
 - (id)keyboard;
+- (int)keyboardOrientation:(id)arg1;
 - (void)setInputAccessoryView:(id)arg1;
 - (void)setInputView:(id)arg1;
 - (BOOL)usesKeyClicks;

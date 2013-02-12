@@ -4,20 +4,20 @@
 
 @interface ML3QuerySection : NSObject {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
-    NSUInteger _sectionIndex;
+    unsigned int _sectionIndex;
 }
 
-@property _NSRange range;
-@property NSUInteger sectionIndex;
+@property struct _NSRange { unsigned int location; unsigned int length; } range;
+@property unsigned int sectionIndex;
 
 - (void)dealloc;
 - (id)description;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
-- (NSUInteger)sectionIndex;
-- (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (void)setSectionIndex:(NSUInteger)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (unsigned int)sectionIndex;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSectionIndex:(unsigned int)arg1;
 
 @end

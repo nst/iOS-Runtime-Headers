@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+@class NSArray;
+
 @interface ICCameraFolder : ICCameraItem {
     void *_folderProperties;
 }
 
-@property(readonly) NSArray *contents;
+@property(readonly) NSArray * contents;
 
 - (void)addFile:(id)arg1;
 - (void)addFolder:(id)arg1;

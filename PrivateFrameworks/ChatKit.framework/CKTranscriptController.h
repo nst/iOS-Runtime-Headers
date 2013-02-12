@@ -2,11 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ABPeoplePickerNavigationController, CKBalloonView, CKContentOffsetAnimation, CKConversation, CKLinksController, CKMessage, CKMessageComposition, CKMessageEncodingInfo, CKMessageEntryView, CKRecipientGenerator, CKRecipientListView, CKRecipientSelectionView, CKService, CKTranscriptBubbleData, CKTranscriptStatusController, CKTranscriptTableView, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSNotification, NSOperationQueue, PLPhotoScrollerViewController, UIBarButtonItem, UIFrameAnimation, UINavigationController, UINavigationItem, UIToolbar, UIView;
+@class ABPeoplePickerNavigationController, CKBalloonView, CKContentOffsetAnimation, CKConversation, CKLinksController, CKMessage, CKMessageComposition, CKMessageEncodingInfo, CKMessageEntryView, CKRecipientGenerator, CKRecipientListView, CKRecipientSelectionView, CKService, CKTranscriptBubbleData, CKTranscriptStatusController, CKTranscriptTableView, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSNotification, NSNumber, NSOperationQueue, PLPhotoScrollerViewController, UIBarButtonItem, UIFrameAnimation, UINavigationController, UINavigationItem, UIToolbar, UIView;
 
 @interface CKTranscriptController : UIViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDataSource, UITableViewDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, CKTranscriptHeaderDelegate> {
     struct CGRect { 
@@ -59,8 +55,8 @@
     CKConversation *_conversation;
     CKService *_currentService;
     CKMessageEntryView *_entryView;
-    NSInteger _finishedBubbs;
-    NSInteger _finishedThrows;
+    int _finishedBubbs;
+    int _finishedThrows;
     NSMutableSet *_hiddenIndexPaths;
     NSIndexPath *_indexPathOfHighlightedCell;
     BOOL _isReplying;
@@ -84,25 +80,25 @@
     CKRecipientSelectionView *_recipientSelectionView;
     NSMutableArray *_recipients;
     NSMutableArray *_replacementMessageLayers;
-    NSUInteger _rotationBlockingAnimationCount;
+    unsigned int _rotationBlockingAnimationCount;
     CKMessage *_smartForwardMessage;
     CKTranscriptStatusController *_statusBar;
     BOOL _storedStatusBarIsHidden;
-    NSInteger _storedStatusBarStyle;
+    int _storedStatusBarStyle;
     CKMessageEncodingInfo *_textMessageEncodingInfo;
     NSMutableArray *_throwAnimations;
     CKContentOffsetAnimation *_transcriptAnimation;
     CKTranscriptTableView *_transcriptTable;
     float _transcriptTableBottomOffset;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*_canSafelyDismissImagePicker;
+    bool_canSafelyDismissImagePicker;
 }
 
-@property NSNumber *canSafelyDismissImagePicker;
-@property CKService *currentService;
-@property(retain) CKMessage *messageToThrow;
-@property(retain) NSMutableArray *presetMessageParts;
-@property(retain) CKMessage *smartForwardMessage;
+@property NSNumber * canSafelyDismissImagePicker;
 @property id composeDelegate;
+@property CKService * currentService;
+@property(retain) CKMessage * messageToThrow;
+@property(retain) NSMutableArray * presetMessageParts;
+@property(retain) CKMessage * smartForwardMessage;
 
 + (void)_initializeSafeCategory;
 + (void)_sendDidFinishSavingImageNotificationWithImage:(id)arg1 error:(id)arg2 context:(void*)arg3;
@@ -111,16 +107,16 @@
 + (id)tableColor;
 
 - (void)CKTranscriptHeaderView:(id)arg1 buttonClicked:(short)arg2;
-- (id)_abPersonViewControllerForPerson:(void*)arg1 property:(NSInteger)arg2 withIdentifier:(NSInteger)arg3;
+- (id)_abPersonViewControllerForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
 - (id)_actionsToolbar;
 - (void)_actuallyClearCurrentMessageThread;
 - (void)_addPart:(id)arg1;
 - (void)_addPreviewGeneratorObject:(id)arg1;
-- (void)_adjustCustomTitleViewFrame:(NSInteger)arg1;
+- (void)_adjustCustomTitleViewFrame:(int)arg1;
 - (void)_adjustMessageEntryViewHeightDelta:(float)arg1 animate:(BOOL)arg2 animationLength:(float)arg3 fastAnimate:(BOOL)arg4;
 - (void)_adjustTranscriptContentOffset:(struct CGPoint { float x1; float x2; })arg1 animate:(BOOL)arg2 animationLength:(float)arg3 fastAnimate:(BOOL)arg4;
-- (float)_bottomPaddingForBubbleRow:(NSInteger)arg1;
-- (void)_calculateTopVisibleRow:(NSInteger*)arg1 andOffset:(float*)arg2 forTransitionToEditing:(BOOL)arg3;
+- (float)_bottomPaddingForBubbleRow:(int)arg1;
+- (void)_calculateTopVisibleRow:(int*)arg1 andOffset:(float*)arg2 forTransitionToEditing:(BOOL)arg3;
 - (BOOL)_canReloadView;
 - (void)_cancelMessageSendAnimations;
 - (void)_changedStatusBarFrame:(id)arg1;
@@ -132,8 +128,9 @@
 - (void)_decrementRotationBlockingAnimationCount;
 - (void)_deleteMessagesAtIndexPaths:(id)arg1;
 - (void)_deleteSelectedMessages:(id)arg1;
+- (void)_deliveryReceiptsEnabledDidChangeNotification:(id)arg1;
 - (void)_didEndResumeAnimation:(id)arg1;
-- (BOOL)_disclosureSupportsMediaType:(NSInteger)arg1;
+- (BOOL)_disclosureSupportsMediaType:(int)arg1;
 - (void)_displayABPersonViewController:(id)arg1;
 - (BOOL)_editableAtIndexPath:(id)arg1;
 - (void)_enteredForeground:(id)arg1;
@@ -145,7 +142,7 @@
 - (void)_flashHighlightedCell;
 - (void)_forwardSelectedMessages:(id)arg1;
 - (void)_generatePreviewsForMediaObject:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (void)_handleAddressBookChangedNotification:(id)arg1;
 - (void)_hideAccessoryView;
 - (void)_hideRecipientListView;
@@ -157,13 +154,14 @@
 - (void)_makeContentEntryViewActive;
 - (void)_makeFieldForFocusActive;
 - (void)_makeRecipientEntryViewActive;
-- (float)_maxHeightForOverlayView:(id)arg1 entryViewResize:(NSInteger)arg2;
+- (float)_maxHeightForOverlayView:(id)arg1 entryViewResize:(int)arg2;
 - (float)_maximumContentOffset;
-- (void*)_newPersonWithValue:(struct __CFString { }*)arg1 forMultiValueProperty:(NSInteger)arg2;
-- (struct CGPoint { float x1; float x2; })_offsetForRow:(NSInteger)arg1 withInternalOffset:(float)arg2;
+- (void*)_newPersonWithValue:(struct __CFString { }*)arg1 forMultiValueProperty:(int)arg2;
+- (struct CGPoint { float x1; float x2; })_offsetForRow:(int)arg1 withInternalOffset:(float)arg2;
 - (id)_overlayView;
 - (float)_overlayViewMinHeight;
 - (id)_personViewControllerForProps:(id)arg1;
+- (void)_receivedReceiptForMessage:(id)arg1;
 - (id)_recipientGenerator;
 - (void)_reflowTranscriptCells;
 - (void)_refreshTranscript:(BOOL)arg1;
@@ -184,14 +182,14 @@
 - (BOOL)_shouldUseDefaultFirstResponder;
 - (BOOL)_shouldUseKeyWindowStack;
 - (BOOL)_shouldUseNextFirstResponder;
-- (void)_showMediaForTranscriptStartingAtRow:(NSInteger)arg1;
+- (void)_showMediaForTranscriptStartingAtRow:(int)arg1;
 - (void)_showMediaSourceSelectionSheet;
-- (void)_showPhotoPickerWithSourceType:(NSUInteger)arg1;
-- (void)_showPhotoScrollerForTranscriptStartingAtRow:(NSInteger)arg1;
+- (void)_showPhotoPickerWithSourceType:(unsigned int)arg1;
+- (void)_showPhotoScrollerForTranscriptStartingAtRow:(int)arg1;
 - (void)_showRecipientListView;
 - (void)_showTranscriptButtons;
-- (void)_showVCalViewerForRow:(NSInteger)arg1;
-- (void)_showVCardViewerForRow:(NSInteger)arg1;
+- (void)_showVCalViewerForRow:(int)arg1;
+- (void)_showVCardViewerForRow:(int)arg1;
 - (void)_shrinkRecipientList;
 - (void)_startCreatingNewMessageForSending:(id)arg1;
 - (id)_statusBar;
@@ -200,14 +198,14 @@
 - (void)_stopThrowAnimations:(BOOL)arg1;
 - (void)_stopTranscriptAnimation:(BOOL)arg1;
 - (id)_supportedMediaTypesForPhotoPicker;
-- (float)_topPaddingForBubbleRow:(NSInteger)arg1;
-- (float)_topPaddingForRow:(NSInteger)arg1 forEditing:(BOOL)arg2;
+- (float)_topPaddingForBubbleRow:(int)arg1;
+- (float)_topPaddingForRow:(int)arg1 forEditing:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })_transcriptScrollToBottomOffsetWithHeightDelta:(float)arg1;
 - (id)_unknownPersonViewControllerForProps:(id)arg1;
 - (void)_updateActionsToolbarItems;
-- (void)_updateActionsToolbarItemsForRotation:(NSInteger)arg1;
+- (void)_updateActionsToolbarItemsForRotation:(int)arg1;
 - (void)_updateCharacterCount;
-- (void)_updateCharacterCountReplacingCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 replacementText:(id)arg2;
+- (void)_updateCharacterCountReplacingCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;
 - (void)_updateFirstResponder;
 - (void)_updatePhotoButtonEnabled;
 - (void)_updateRecipientListView:(BOOL)arg1;
@@ -218,19 +216,19 @@
 - (void)accessibilityLargeTextDidChange;
 - (void)actionButtonClicked:(id)arg1;
 - (id)actionItem;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)addMedia:(id)arg1;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })addOutboundMessage:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })addOutboundMessage:(id)arg1;
 - (void)addPresetMessagePart:(id)arg1;
-- (void)addRecipient:(void*)arg1 identifier:(NSInteger)arg2 phoneNumber:(id)arg3 makingContentEntryViewActive:(BOOL)arg4;
-- (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
+- (void)addRecipient:(void*)arg1 identifier:(int)arg2 phoneNumber:(id)arg3 makingContentEntryViewActive:(BOOL)arg4;
+- (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)animator:(id)arg1 startAnimation:(id)arg2;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (void)applicationWillSuspend;
 - (void)balloonWillResignFirstResponder:(id)arg1;
-- (struct CGPoint { float x1; float x2; })bestVisibleOffsetForBubbleAtIndex:(NSInteger)arg1;
+- (struct CGPoint { float x1; float x2; })bestVisibleOffsetForBubbleAtIndex:(int)arg1;
 - (void)bubbilizationAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)bubbleData;
 - (BOOL)canBecomeFirstResponder;
@@ -247,12 +245,12 @@
 - (id)composition;
 - (id)conversation;
 - (void)conversationUpdate:(id)arg1;
-- (NSUInteger)countOfRecipientsIfSendingMessageNow;
+- (unsigned int)countOfRecipientsIfSendingMessageNow;
 - (id)currentService;
 - (void)dealloc;
 - (id)defaultFirstResponder;
 - (void)didBeginSendingComposition:(id)arg1 message:(id)arg2;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)dismissAlertSheet:(id)arg1;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void)dismissPeoplePicker:(id)arg1;
@@ -260,8 +258,8 @@
 - (void)displayAlertSheet:(id)arg1;
 - (void)entryDebugClear;
 - (void)entryDebugSliderChange:(id)arg1;
-- (BOOL)entryField:(id)arg1 shouldChangeContentTextInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementText:(id)arg3;
-- (BOOL)entryField:(id)arg1 shouldChangeSubjectTextInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementText:(id)arg3;
+- (BOOL)entryField:(id)arg1 shouldChangeContentTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
+- (BOOL)entryField:(id)arg1 shouldChangeSubjectTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (BOOL)entryField:(id)arg1 shouldInsertMediaObject:(id)arg2;
 - (void)entryFieldAttachmentsChanged:(id)arg1;
 - (void)entryFieldContentChanged:(id)arg1;
@@ -288,15 +286,15 @@
 - (void)moveCursorToEnd;
 - (id)navigationItem;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
-- (NSInteger)numberOfRows;
+- (int)numberOfRows;
 - (void)peoplePickerNavigationController:(id)arg1 displayedMembersOfGroup:(void*)arg2;
 - (void)peoplePickerNavigationController:(id)arg1 insertEditorDidConfirm:(BOOL)arg2 forPerson:(void*)arg3;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(NSInteger*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(int*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)peoplePickerNavigationControllerDisplayedGroups:(id)arg1;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)photoBrowserController:(id)arg1 willShowActionSheetInView:(id)arg2;
 - (BOOL)photoBrowserControllerShouldShowActionItem:(id)arg1;
 - (void)prepareForSuspend;
@@ -308,7 +306,7 @@
 - (void)recipientSelectionView:(id)arg1 isShowingSearchResults:(BOOL)arg2;
 - (BOOL)recipientSelectionView:(id)arg1 isValidAddress:(id)arg2;
 - (id)recipientSelectionView:(id)arg1 recipientForAddress:(id)arg2;
-- (id)recipientSelectionView:(id)arg1 recipientForRecord:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (id)recipientSelectionView:(id)arg1 recipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)recipientSelectionView:(id)arg1 recipientsForText:(id)arg2;
 - (void)recipientSelectionView:(id)arg1 showPeoplePickerWithDelegate:(id)arg2;
 - (void)recipientSelectionViewFinishedWithPeoplePicker:(id)arg1;
@@ -321,8 +319,8 @@
 - (void)restoreBalloonStateAfterRotation:(id)arg1;
 - (void)restoreEntryViewCursor;
 - (id)rotatingFooterView;
-- (void)scrollBubbleIndexToVisible:(NSInteger)arg1;
-- (void)scrollToMessageRowID:(NSInteger)arg1 partRowID:(NSInteger)arg2;
+- (void)scrollBubbleIndexToVisible:(int)arg1;
+- (void)scrollToMessageRowID:(int)arg1 partRowID:(int)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)send:(id)arg1;
 - (void)sendMessage:(id)arg1;
@@ -338,9 +336,9 @@
 - (void)setPresetMessageParts:(id)arg1;
 - (void)setSmartForwardMessage:(id)arg1;
 - (void)setupForNewRecipient;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showABCardForLinkProperties:(id)arg1;
-- (void)showABCardForPerson:(void*)arg1 highlightedProperty:(NSInteger)arg2 identifier:(NSInteger)arg3;
+- (void)showABCardForPerson:(void*)arg1 highlightedProperty:(int)arg2 identifier:(int)arg3;
 - (void)showAddToExistingContactViewForEntity:(id)arg1;
 - (void)showKeyboardForReply;
 - (void)showNewContactViewForEntity:(id)arg1;
@@ -352,10 +350,10 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (struct CGPoint { float x1; float x2; })tableView:(id)arg1 newContentOffsetAfterUpdate:(struct CGPoint { float x1; float x2; })arg2 context:(id)arg3;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
@@ -377,7 +375,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

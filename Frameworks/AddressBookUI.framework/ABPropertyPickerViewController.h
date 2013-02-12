@@ -8,11 +8,11 @@
     struct __CFArray { } *_properties;
 }
 
-@property void *addressBook;
-@property void *person;
-@property __CFArray *properties;
+@property void* addressBook;
+@property void* person;
+@property struct __CFArray { }* properties;
 
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void*)addressBook;
 - (void)dealloc;
@@ -20,7 +20,7 @@
 - (void)loadView;
 - (void*)person;
 - (struct __CFArray { }*)properties;
-- (void)propertyPicker:(id)arg1 selectedProperty:(NSInteger)arg2;
+- (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2;
 - (id)propertyPicker;
 - (void)setAddressBook:(void*)arg1;
 - (void)setPerson:(void*)arg1;

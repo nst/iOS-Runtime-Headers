@@ -10,6 +10,6 @@
 - (char *)bytes;
 - (void)dealloc;
 - (id)initWithPropertyList:(id)arg1 error:(id*)arg2;
-- (NSUInteger)length;
+- (unsigned int)length;
 
 @end

@@ -2,16 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface EBString : NSObject {
-     /* Encoded args for previous method: ^{XlString=^^?{OcText=^^?iIII**B}{ChVector<ChSINT2*>=^^s^^sIII}^{XlPhoneticInfo}i^s}16@0:4@8@12 */
-     /* Encoded args for previous method: @16@0:4r^{XlString=^^?{OcText=^^?iIII**B}{ChVector<ChSINT2*>=^^s^^sIII}^{XlPhoneticInfo}i^s}8@12 */
 }
 
-+ (struct XlString { int (**x1)(); struct OcText { int (**x_2_1_1)(); NSInteger x_2_1_2; NSUInteger x_2_1_3; NSUInteger x_2_1_4; NSUInteger x_2_1_5; char *x_2_1_6; char *x_2_1_7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_8; } x2; struct ChVector<ChSINT2*> { short **x_3_1_1; short **x_3_1_2; NSUInteger x_3_1_3; NSUInteger x_3_1_4; NSUInteger x_3_1_5; } x3; struct XlPhoneticInfo {} *x4; NSInteger x5; short *x6; }*)xlStringFromEDString:(id)arg1 state:(id)arg2;
-+ (id)edStringFromXlString:(const struct XlString { int (**x1)(); struct OcText { int (**x_2_1_1)(); NSInteger x_2_1_2; NSUInteger x_2_1_3; NSUInteger x_2_1_4; NSUInteger x_2_1_5; char *x_2_1_6; char *x_2_1_7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_8; } x2; struct ChVector<ChSINT2*> { short **x_3_1_1; short **x_3_1_2; NSUInteger x_3_1_3; NSUInteger x_3_1_4; NSUInteger x_3_1_5; } x3; struct XlPhoneticInfo {} *x4; NSInteger x5; short *x6; }*)arg1 edResources:(id)arg2;
++ (struct XlString { int (**x1)(); struct OcText { int (**x_2_1_1)(); int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; char *x_2_1_6; char *x_2_1_7; boolx_2_1_8; } x2; struct ChVector<ChSINT2*> { short **x_3_1_1; short **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; struct XlPhoneticInfo {} *x4; int x5; short *x6; }*)xlStringFromEDString:(id)arg1 state:(id)arg2;
++ (id)edStringFromXlString:(const struct XlString { int (**x1)(); struct OcText { int (**x_2_1_1)(); int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; char *x_2_1_6; char *x_2_1_7; boolx_2_1_8; } x2; struct ChVector<ChSINT2*> { short **x_3_1_1; short **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; struct XlPhoneticInfo {} *x4; int x5; short *x6; }*)arg1 edResources:(id)arg2;
 
 @end

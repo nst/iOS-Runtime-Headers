@@ -53,7 +53,7 @@
     float m_initialDistance;
     } m_initialExtentPoint;
     BOOL m_magnifying;
-    NSInteger m_mode;
+    int m_mode;
     NSMutableArray *m_rectViews;
     NSArray *m_rects;
     BOOL m_rotating;
@@ -65,31 +65,31 @@
     } m_touchOffset;
 }
 
-@property(retain) UITouch *activeTouch;
-@property(readonly) UIView<UITextSelectingContainer> *container;
-@property(retain) UISelectionGrabber *endGrabber;
-@property(copy) NSArray *rects;
-@property(readonly) UITextSelectionView *selectionView;
-@property(retain) UISelectionGrabber *startGrabber;
+@property(retain) UITouch * activeTouch;
 @property BOOL animateUpdate;
 @property(readonly) BOOL autoscrolled;
 @property BOOL baseIsStart;
-@property CGPoint basePoint;
+@property struct CGPoint { float x; float y; } basePoint;
 @property BOOL commandsWereShowing;
-@property CGRect endEdge;
-@property CGPoint extentPoint;
+@property(readonly) UIView<UITextSelectingContainer> * container;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } endEdge;
+@property(retain) UISelectionGrabber * endGrabber;
+@property struct CGPoint { float x; float y; } extentPoint;
 @property double firstMovedTime;
 @property BOOL inGesture;
-@property CGPoint initialBasePoint;
+@property struct CGPoint { float x; float y; } initialBasePoint;
 @property float initialDistance;
-@property CGPoint initialExtentPoint;
+@property struct CGPoint { float x; float y; } initialExtentPoint;
 @property BOOL isScrolling;
 @property BOOL magnifying;
-@property NSInteger mode;
+@property int mode;
+@property(copy) NSArray * rects;
 @property BOOL rotating;
 @property BOOL scaling;
-@property CGRect startEdge;
-@property CGPoint touchOffset;
+@property(readonly) UITextSelectionView * selectionView;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } startEdge;
+@property(retain) UISelectionGrabber * startGrabber;
+@property struct CGPoint { float x; float y; } touchOffset;
 
 - (id)activeTouch;
 - (BOOL)animateUpdate;
@@ -119,7 +119,7 @@
 - (BOOL)isScrolling;
 - (struct CGPoint { float x1; float x2; })magnifierPoint;
 - (BOOL)magnifying;
-- (NSInteger)mode;
+- (int)mode;
 - (BOOL)pointCloserToEnd:(struct CGPoint { float x1; float x2; })arg1 startEdge:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 endEdge:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)prepareForMagnification;
@@ -147,7 +147,7 @@
 - (void)setInitialExtentPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setIsScrolling:(BOOL)arg1;
 - (void)setMagnifying:(BOOL)arg1;
-- (void)setMode:(NSInteger)arg1;
+- (void)setMode:(int)arg1;
 - (void)setRects:(id)arg1;
 - (void)setRotating:(BOOL)arg1;
 - (void)setScaling:(BOOL)arg1;

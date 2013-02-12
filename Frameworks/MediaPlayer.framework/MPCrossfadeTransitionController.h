@@ -3,7 +3,7 @@
  */
 
 @interface MPCrossfadeTransitionController : MPTransitionController {
-    NSInteger _statusBarHidden;
+    int _statusBarHidden;
 }
 
 @property BOOL statusBarHidden;
@@ -12,6 +12,6 @@
 - (id)init;
 - (void)setStatusBarHidden:(BOOL)arg1;
 - (BOOL)statusBarHidden;
-- (void)transition:(NSUInteger)arg1;
+- (void)transition:(unsigned int)arg1;
 
 @end

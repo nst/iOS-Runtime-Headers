@@ -13,9 +13,9 @@
 - (id)headers;
 - (id)messageBody;
 - (id)messageBodyIfAvailable;
-- (BOOL)messageData:(id*)arg1 messageSize:(NSUInteger*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
+- (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (id)messageData;
-- (NSUInteger)messageSize;
+- (unsigned int)messageSize;
 - (id)messageStore;
 - (id)mutableHeaders;
 - (void)setMessageBody:(id)arg1;

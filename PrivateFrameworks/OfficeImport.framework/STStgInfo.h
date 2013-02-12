@@ -6,38 +6,38 @@
 
 @interface STStgInfo : NSObject {
     struct { 
-        NSUInteger m_data1; 
+        unsigned int m_data1; 
         unsigned short m_data2; 
         unsigned short m_data3; 
         unsigned char m_data4[8]; 
-    NSInteger m_accessMode;
+    int m_accessMode;
     } m_clsid;
-    NSInteger m_creationTime;
-    NSInteger m_modificationTime;
+    int m_creationTime;
+    int m_modificationTime;
     NSString *m_pstrName;
     unsigned long m_size;
-    NSInteger m_type;
+    int m_type;
     unsigned long m_userFlags;
 }
 
 - (void)dealloc;
-- (NSInteger)getAccessMode;
-- (struct { NSUInteger x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })getCLSID;
+- (int)getAccessMode;
+- (struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })getCLSID;
 - (long)getCreationTime;
 - (long)getModificationTime;
 - (id)getName;
 - (unsigned long)getSize;
-- (NSInteger)getType;
+- (int)getType;
 - (unsigned long)getUserFlags;
 - (id)init;
-- (id)initWithStgInfo:(struct _StgInfo { NSInteger *x1; NSInteger x2; NSUInteger x3; unsigned long long x4; NSInteger x5; NSInteger x6; NSInteger x7; struct _SSRW_GUID { NSUInteger x_8_1_1; unsigned short x_8_1_2; unsigned short x_8_1_3; unsigned char x_8_1_4[8]; } x8; }*)arg1;
-- (void)setAccessMode:(NSInteger)arg1;
-- (void)setCLSID:(struct { NSUInteger x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
+- (id)initWithStgInfo:(struct _StgInfo { int *x1; int x2; unsigned int x3; unsigned long long x4; int x5; int x6; int x7; struct _SSRW_GUID { unsigned int x_8_1_1; unsigned short x_8_1_2; unsigned short x_8_1_3; unsigned char x_8_1_4[8]; } x8; }*)arg1;
+- (void)setAccessMode:(int)arg1;
+- (void)setCLSID:(struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
 - (void)setCreationTime:(long)arg1;
 - (void)setModificationTime:(long)arg1;
 - (void)setName:(id)arg1;
 - (void)setSize:(unsigned long)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (void)setUserFlags:(unsigned long)arg1;
 
 @end

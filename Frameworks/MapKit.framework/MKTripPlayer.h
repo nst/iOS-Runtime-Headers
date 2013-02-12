@@ -9,7 +9,7 @@
     double _heading;
     double _headingAccuracy;
     NSTimer *_headingTimer;
-    NSUInteger _index;
+    unsigned int _index;
     BOOL _isPlaying;
     double _lastTimeCL;
     CLLocation *_prevLocation;
@@ -20,16 +20,16 @@
     float _version;
 }
 
-@property(retain) NSString *filePath;
-@property(retain) NSTimer *headingTimer;
-@property(retain) CLLocation *prevLocation;
-@property(retain) NSDate *startDate;
-@property(retain) NSTimer *timer;
-@property(retain) MKTripPoint *tripPoint;
-@property(retain) NSArray *tripPoints;
 @property(readonly) double bestAccuracy;
+@property(retain) NSString * filePath;
 @property(readonly) BOOL hasSpeed;
+@property(retain) NSTimer * headingTimer;
 @property BOOL isPlaying;
+@property(retain) CLLocation * prevLocation;
+@property(retain) NSDate * startDate;
+@property(retain) NSTimer * timer;
+@property(retain) MKTripPoint * tripPoint;
+@property(retain) NSArray * tripPoints;
 
 - (BOOL)_readVersion:(id*)arg1;
 - (double)bestAccuracy;

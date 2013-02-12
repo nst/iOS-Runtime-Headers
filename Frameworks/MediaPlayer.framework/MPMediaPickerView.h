@@ -8,7 +8,7 @@
     MPMediaPickerController *_parentController;
 }
 
-@property MPMediaPickerController *parentController;
+@property MPMediaPickerController * parentController;
 
 + (void)_initializeSafeCategory;
 

@@ -2,35 +2,39 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
+@class NSDictionary, NSNumber, NSString;
+
 @interface SSMutableAuthenticationContext : SSAuthenticationContext <NSCopying, NSMutableCopying> {
 }
 
-@property(copy) NSString *accountName;
-@property(copy) NSString *clientIdentifierHeader;
-@property(copy) NSString *preferredITunesStoreClient;
-@property(copy) NSDictionary *requestParameters;
-@property(retain) NSNumber *requiredUniqueIdentifier;
-@property(copy) NSDictionary *signupRequestParameters;
+@property(copy) NSString * accountName;
 @property(getter=isAccountNameEditable) BOOL accountNameEditable;
-@property NSInteger accountScope;
+@property int accountScope;
 @property BOOL canCreateNewAccount;
+@property(copy) NSString * clientIdentifierHeader;
 @property(getter=isDemoAccount) BOOL demoAccount;
-@property NSInteger promptStyle;
+@property(copy) NSString * preferredITunesStoreClient;
+@property int promptStyle;
+@property(copy) NSDictionary * requestParameters;
+@property(retain) NSNumber * requiredUniqueIdentifier;
 @property BOOL shouldFollowAccountButtons;
+@property(copy) NSDictionary * signupRequestParameters;
+@property int tokenType;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAccountName:(id)arg1;
 - (void)setAccountNameEditable:(BOOL)arg1;
-- (void)setAccountScope:(NSInteger)arg1;
+- (void)setAccountScope:(int)arg1;
 - (void)setCanCreateNewAccount:(BOOL)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;
 - (void)setDemoAccount:(BOOL)arg1;
 - (void)setPreferredITunesStoreClient:(id)arg1;
-- (void)setPromptStyle:(NSInteger)arg1;
+- (void)setPromptStyle:(int)arg1;
 - (void)setRequestParameters:(id)arg1;
 - (void)setRequiredUniqueIdentifier:(id)arg1;
 - (void)setShouldFollowAccountButtons:(BOOL)arg1;
 - (void)setSignupRequestParameters:(id)arg1;
+- (void)setTokenType:(int)arg1;
 
 @end

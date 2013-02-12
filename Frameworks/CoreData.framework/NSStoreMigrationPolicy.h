@@ -24,8 +24,8 @@
     NSURL *_sourceURL;
 }
 
-+ (NSInteger)migrationDebugLevel;
-+ (void)setMigrationDebugLevel:(NSInteger)arg1;
++ (int)migrationDebugLevel;
++ (void)setMigrationDebugLevel:(int)arg1;
 
 - (id)_gatherDataAndPerformMigration:(id*)arg1;
 - (id)addMigratedStoreToCoordinator:(id)arg1 withType:(id)arg2 configuration:(id)arg3 URL:(id)arg4 options:(id)arg5 error:(id*)arg6;

@@ -6,8 +6,8 @@
 
 @interface GQPSectionDrawable : NSObject {
     struct { 
-        NSInteger location; 
-        NSInteger length; 
+        int location; 
+        int length; 
     } mPageRange;
     GQDSStyle *mStyle;
 }

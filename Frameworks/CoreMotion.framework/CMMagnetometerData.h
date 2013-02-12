@@ -6,7 +6,7 @@
     id _internal;
 }
 
-@property(readonly) ? magneticField;
+@property(readonly) struct { double x; double y; double z; } magneticField;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

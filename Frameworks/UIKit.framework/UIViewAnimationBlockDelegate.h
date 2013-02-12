@@ -14,7 +14,7 @@
     id _start;
 }
 
-+ (void)setAnimationBlockDelegateWithDuration:(double)arg1 options:(NSUInteger)arg2 start:(id)arg3 completion:(id)arg4;
++ (void)setAnimationBlockDelegateWithDuration:(double)arg1 options:(unsigned int)arg2 start:(id)arg3 completion:(id)arg4;
 
 - (void)_didEndBlockAnimation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_sendDeferredCompletion:(id)arg1;

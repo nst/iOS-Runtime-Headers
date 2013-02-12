@@ -5,8 +5,8 @@
 @class NSEntityDescription;
 
 @interface NSTemporaryObjectID : NSManagedObjectID {
-    NSInteger _cd_rc;
-    NSInteger _counter;
+    int _cd_rc;
+    int _counter;
     NSEntityDescription *_entity;
 }
 
@@ -16,7 +16,7 @@
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (NSUInteger)allocateBatch:(id*)arg1 forEntity:(id)arg2 count:(NSUInteger)arg3;
++ (unsigned int)allocateBatch:(id*)arg1 forEntity:(id)arg2 count:(unsigned int)arg3;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (Class)classForStore:(id)arg1;
 + (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
@@ -25,7 +25,7 @@
 + (void)release;
 + (id)retain;
 + (void)setObjectStoreIdentifier:(id)arg1;
-+ (NSInteger)version;
++ (int)version;
 
 - (id)URIRepresentation;
 - (BOOL)_isPersistentStoreAlive;
@@ -36,7 +36,7 @@
 - (void)dealloc;
 - (id)entity;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 - (id)initWithEntity:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -44,6 +44,6 @@
 - (id)persistentStore;
 - (void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 
 @end

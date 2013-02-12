@@ -5,29 +5,29 @@
 @class OADColor, OADFontReference;
 
 @interface OADTableTextStyle : NSObject {
-    NSInteger mBold;
+    int mBold;
     OADColor *mColor;
     OADFontReference *mFontReference;
-    NSInteger mItalic;
+    int mItalic;
 }
 
-+ (NSInteger)defaultBold;
++ (int)defaultBold;
 + (id)defaultColor;
 + (id)defaultFontReference;
-+ (NSInteger)defaultItalic;
++ (int)defaultItalic;
 + (id)defaultStyle;
 
 - (void)applyOverridesFrom:(id)arg1;
-- (NSInteger)bold;
+- (int)bold;
 - (id)color;
 - (void)dealloc;
 - (id)fontReference;
 - (id)init;
-- (NSInteger)italic;
-- (void)setBold:(NSInteger)arg1;
+- (int)italic;
+- (void)setBold:(int)arg1;
 - (void)setColor:(id)arg1;
 - (void)setFontReference:(id)arg1;
-- (void)setItalic:(NSInteger)arg1;
+- (void)setItalic:(int)arg1;
 - (id)shallowCopy;
 
 @end

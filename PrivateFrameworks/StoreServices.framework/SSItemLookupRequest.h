@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary;
+@class <SSItemLookupRequestDelegate>, NSMutableDictionary;
 
 @interface SSItemLookupRequest : SSRequest {
     NSMutableDictionary *_parameters;
 }
 
-@property <SSItemLookupRequestDelegate> *delegate;
+@property <SSItemLookupRequestDelegate> * delegate;
 
 - (id)_convertedValueForValue:(id)arg1;
 - (id)_copyItemsFromResponse:(id)arg1 userInfo:(id)arg2;
 - (id)_copyStringParameters;
-- (id)_errorForStatusCode:(NSInteger)arg1;
+- (id)_errorForStatusCode:(int)arg1;
 - (void)_sendItemsToDelegate:(id)arg1;
 - (void)dealloc;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;

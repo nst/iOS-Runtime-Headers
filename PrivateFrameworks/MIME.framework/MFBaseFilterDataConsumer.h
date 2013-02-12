@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface MFBaseFilterDataConsumer : NSObject <MFDataConsumer> {
     NSMutableArray *_consumers;
     BOOL _serialAppend;
 }
 
-@property(readonly) NSArray *consumers;
+@property(readonly) NSArray * consumers;
 @property(getter=isSerialAppend) BOOL serialAppend;
 
 + (id)filterWithConsumer:(id)arg1;
 + (id)filterWithConsumers:(id)arg1;
 
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (id)consumers;
 - (void)dealloc;
 - (void)done;

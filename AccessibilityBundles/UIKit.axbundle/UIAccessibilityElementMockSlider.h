@@ -9,8 +9,8 @@
     UIView *_view;
 }
 
-@property(retain) UIView *view;
 @property id delegate;
+@property(retain) UIView * view;
 
 - (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
 - (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;

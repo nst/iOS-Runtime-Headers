@@ -2,33 +2,33 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface MKRenderTile : NSObject {
-    NSInteger _dataCopyrightYear;
+    int _dataCopyrightYear;
     NSMutableArray *_dataCopyrights;
-    NSInteger _imageCopyrightYear;
+    int _imageCopyrightYear;
     NSMutableArray *_imageCopyrights;
     id _renderObject;
 }
 
-@property(readonly) NSArray *dataCopyrights;
-@property(readonly) NSArray *imageCopyrights;
-@property NSInteger dataCopyrightYear;
-@property NSInteger imageCopyrightYear;
+@property int dataCopyrightYear;
+@property(readonly) NSArray * dataCopyrights;
+@property int imageCopyrightYear;
+@property(readonly) NSArray * imageCopyrights;
 @property(retain) id renderObject;
 
 + (void)initialize;
 
-- (NSInteger)dataCopyrightYear;
+- (int)dataCopyrightYear;
 - (id)dataCopyrights;
 - (void)dealloc;
-- (NSInteger)imageCopyrightYear;
+- (int)imageCopyrightYear;
 - (id)imageCopyrights;
 - (id)initWithRenderObject:(id)arg1 mapTileInfo:(id)arg2;
 - (id)renderObject;
-- (void)setDataCopyrightYear:(NSInteger)arg1;
-- (void)setImageCopyrightYear:(NSInteger)arg1;
+- (void)setDataCopyrightYear:(int)arg1;
+- (void)setImageCopyrightYear:(int)arg1;
 - (void)setRenderObject:(id)arg1;
 
 @end

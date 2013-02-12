@@ -3,8 +3,8 @@
  */
 
 @interface GKRingBuffer : NSObject {
-    NSUInteger capacity;
-    NSUInteger endTime;
+    unsigned int capacity;
+    unsigned int endTime;
     void *ringBufRef;
 }
 

@@ -5,8 +5,8 @@
 @interface NSStream : NSObject {
 }
 
-+ (id)errorForCFStreamError:(struct { NSInteger x1; NSInteger x2; })arg1;
-+ (void)getStreamsToHost:(id)arg1 port:(NSInteger)arg2 inputStream:(id*)arg3 outputStream:(id*)arg4;
++ (id)errorForCFStreamError:(struct { int x1; int x2; })arg1;
++ (void)getStreamsToHost:(id)arg1 port:(int)arg2 inputStream:(id*)arg3 outputStream:(id*)arg4;
 
 - (id)betterStreamError;
 - (void)close;
@@ -18,6 +18,6 @@
 - (void)setDelegate:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
-- (NSUInteger)streamStatus;
+- (unsigned int)streamStatus;
 
 @end

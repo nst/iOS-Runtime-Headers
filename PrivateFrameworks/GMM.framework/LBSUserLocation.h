@@ -5,16 +5,16 @@
 @class LBSAddress, LBSPoint, NSMutableArray, NSString;
 
 @interface LBSUserLocation : PBCodable {
-    NSInteger _accuracy;
+    int _accuracy;
     LBSAddress *_address;
-    NSInteger _confidence;
+    int _confidence;
     NSMutableArray *_features;
     BOOL _hasAccuracy;
     BOOL _hasConfidence;
     BOOL _hasLocType;
     BOOL _hasObsolete;
     LBSPoint *_latLng;
-    NSInteger _locType;
+    int _locType;
     NSString *_locationString;
     NSString *_misc;
     BOOL _obsolete;
@@ -22,15 +22,11 @@
     long long _timestamp;
 }
 
-@property(retain) LBSAddress *address;
-@property(retain) NSMutableArray *features;
-@property(retain) LBSPoint *latLng;
-@property(retain) NSString *locationString;
-@property(retain) NSString *misc;
-@property(retain) NSString *source;
-@property NSInteger accuracy;
-@property NSInteger confidence;
-@property(readonly) NSInteger featuresCount;
+@property int accuracy;
+@property(retain) LBSAddress * address;
+@property int confidence;
+@property(retain) NSMutableArray * features;
+@property(readonly) int featuresCount;
 @property(readonly) BOOL hasAccuracy;
 @property(readonly) BOOL hasAddress;
 @property(readonly) BOOL hasConfidence;
@@ -40,20 +36,24 @@
 @property(readonly) BOOL hasMisc;
 @property(readonly) BOOL hasObsolete;
 @property(readonly) BOOL hasSource;
-@property NSInteger locType;
+@property(retain) LBSPoint * latLng;
+@property int locType;
+@property(retain) NSString * locationString;
+@property(retain) NSString * misc;
 @property BOOL obsolete;
+@property(retain) NSString * source;
 @property long long timestamp;
 
-- (NSInteger)accuracy;
+- (int)accuracy;
 - (void)addFeature:(id)arg1;
 - (id)address;
-- (NSInteger)confidence;
+- (int)confidence;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)featureAtIndex:(NSUInteger)arg1;
+- (id)featureAtIndex:(unsigned int)arg1;
 - (id)features;
-- (NSInteger)featuresCount;
+- (int)featuresCount;
 - (BOOL)hasAccuracy;
 - (BOOL)hasAddress;
 - (BOOL)hasConfidence;
@@ -65,18 +65,18 @@
 - (BOOL)hasSource;
 - (id)init;
 - (id)latLng;
-- (NSInteger)locType;
+- (int)locType;
 - (id)locationString;
 - (id)misc;
 - (BOOL)obsolete;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAccuracy:(NSInteger)arg1;
+- (void)setAccuracy:(int)arg1;
 - (void)setAddress:(id)arg1;
-- (void)setConfidence:(NSInteger)arg1;
-- (void)setFeature:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setConfidence:(int)arg1;
+- (void)setFeature:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setFeatures:(id)arg1;
 - (void)setLatLng:(id)arg1;
-- (void)setLocType:(NSInteger)arg1;
+- (void)setLocType:(int)arg1;
 - (void)setLocationString:(id)arg1;
 - (void)setMisc:(id)arg1;
 - (void)setObsolete:(BOOL)arg1;

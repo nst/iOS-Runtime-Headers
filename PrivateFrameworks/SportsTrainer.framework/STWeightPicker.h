@@ -2,33 +2,35 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
+@class <STWeightPickerDelegate>;
+
 @interface STWeightPicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate> {
     float _actualWeight;
-    NSInteger _selectedWeightUnit;
+    int _selectedWeightUnit;
     id _weightPickerDelegate;
 }
 
-@property <STWeightPickerDelegate> *weightPickerDelegate;
-@property(readonly) NSInteger selectedWeightUnit;
+@property(readonly) int selectedWeightUnit;
 @property(readonly) float weightInKg;
 @property float weightInLbs;
+@property <STWeightPickerDelegate> * weightPickerDelegate;
 
 + (void)_initializeSafeCategory;
 + (float)kgForLbs:(float)arg1;
 + (float)lbsForKg:(float)arg1;
 + (id)weightFormatter;
 
-- (float)_weightForRow:(NSInteger)arg1;
-- (float)_weightFractionForRow:(NSInteger)arg1;
+- (float)_weightForRow:(int)arg1;
+- (float)_weightFractionForRow:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)numberOfComponentsInPickerView:(id)arg1;
+- (int)numberOfComponentsInPickerView:(id)arg1;
 - (id)pickerImageNamePrefix;
-- (void)pickerView:(id)arg1 didSelectRow:(NSInteger)arg2 inComponent:(NSInteger)arg3;
-- (NSInteger)pickerView:(id)arg1 numberOfRowsInComponent:(NSInteger)arg2;
-- (id)pickerView:(id)arg1 viewForRow:(NSInteger)arg2 forComponent:(NSInteger)arg3 reusingView:(id)arg4;
-- (float)pickerView:(id)arg1 widthForComponent:(NSInteger)arg2;
+- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
+- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
+- (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
+- (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (void)saveCurrentWeight;
-- (NSInteger)selectedWeightUnit;
+- (int)selectedWeightUnit;
 - (void)setWeightInLbs:(float)arg1 animated:(BOOL)arg2;
 - (void)setWeightInLbs:(float)arg1;
 - (void)setWeightPickerDelegate:(id)arg1;

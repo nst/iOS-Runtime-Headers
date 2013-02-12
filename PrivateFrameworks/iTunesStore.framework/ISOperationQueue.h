@@ -16,7 +16,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)operations;
-- (void)setMaxConcurrentOperationCount:(NSInteger)arg1;
+- (void)setMaxConcurrentOperationCount:(int)arg1;
 - (void)setSuspended:(BOOL)arg1;
 
 @end

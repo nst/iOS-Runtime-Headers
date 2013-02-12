@@ -6,13 +6,13 @@
 
 @interface WMOfficeArtMapper : CMDrawableMapper {
     WDAContent *mContent;
-    NSUInteger mCurrentPage;
+    unsigned int mCurrentPage;
     BOOL mFloating;
     BOOL mIsInsideGroup;
     BOOL mIsMapped;
 }
 
-- (id)blipAtIndex:(NSUInteger)arg1;
+- (id)blipAtIndex:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })expandedSizeForTextBox:(id)arg1 withState:(id)arg2;
 - (id)initWithOadDrawable:(id)arg1 asFloating:(BOOL)arg2 origin:(struct CGPoint { float x1; float x2; })arg3 parent:(id)arg4;
 - (id)initWithWdOfficeArt:(id)arg1 parent:(id)arg2;
@@ -25,7 +25,7 @@
 - (void)mapOfficeArtTextboxAt:(id)arg1 withState:(id)arg2;
 - (void)mapTextBoxAt:(id)arg1 withState:(id)arg2;
 - (void)setBoundingBox;
-- (void)setCurrentPage:(NSUInteger)arg1;
+- (void)setCurrentPage:(unsigned int)arg1;
 - (void)setIsInsideGroup:(BOOL)arg1;
 - (void)setWithClientData:(id)arg1 state:(id)arg2;
 

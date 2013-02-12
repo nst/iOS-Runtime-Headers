@@ -3,8 +3,8 @@
  */
 
 @interface ODIBending : NSObject {
-    NSUInteger mMaxColumnCount;
-    NSUInteger mMaxNodeCount;
+    unsigned int mMaxColumnCount;
+    unsigned int mMaxNodeCount;
     float mRectHeight;
     float mSpaceHeight;
     float mSpaceWidth;
@@ -12,12 +12,12 @@
 }
 
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;
-+ (NSUInteger)mapLogicalBoundsWithShapeSize:(struct CGSize { float x1; float x2; })arg1 spaceSize:(struct CGSize { float x1; float x2; })arg2 maxNodeCount:(NSUInteger)arg3 maxColumnCount:(NSUInteger)arg4 state:(id)arg5;
++ (unsigned int)mapLogicalBoundsWithShapeSize:(struct CGSize { float x1; float x2; })arg1 spaceSize:(struct CGSize { float x1; float x2; })arg2 maxNodeCount:(unsigned int)arg3 maxColumnCount:(unsigned int)arg4 state:(id)arg5;
 
 - (id)initWithArrows:(BOOL)arg1;
 - (void)mapWithState:(id)arg1;
-- (void)setMaxColumnCount:(NSUInteger)arg1;
-- (void)setMaxNodeCount:(NSUInteger)arg1;
+- (void)setMaxColumnCount:(unsigned int)arg1;
+- (void)setMaxNodeCount:(unsigned int)arg1;
 - (void)setRectHeight:(float)arg1;
 
 @end

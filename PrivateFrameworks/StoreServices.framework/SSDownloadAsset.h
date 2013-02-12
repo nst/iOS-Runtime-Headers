@@ -13,25 +13,25 @@
     NSLock *_lock;
     long long _numberOfBytesToHash;
     NSString *_processedPath;
-    NSInteger _type;
+    int _type;
     NSURLRequest *_urlRequest;
 }
 
-@property(retain) NSURLRequest *URLRequest;
-@property(retain) NSString *downloadFileName;
-@property(readonly) NSString *downloadInformationKey;
-@property(readonly) NSString *downloadPath;
-@property(retain) NSString *finalizedFileName;
-@property(readonly) NSString *finalizedPath;
-@property(retain) NSArray *hashes;
-@property(retain) NSString *processedPath;
-@property(readonly) NSString *purchaseManifestKey;
+@property(retain) NSURLRequest * URLRequest;
+@property(retain) NSString * downloadFileName;
+@property(readonly) NSString * downloadInformationKey;
+@property(readonly) NSString * downloadPath;
 @property(getter=isExternal) BOOL external;
 @property long long fileSize;
+@property(retain) NSString * finalizedFileName;
+@property(readonly) NSString * finalizedPath;
+@property(retain) NSArray * hashes;
 @property long long numberOfBytesToHash;
-@property NSInteger type;
+@property(retain) NSString * processedPath;
+@property(readonly) NSString * purchaseManifestKey;
+@property int type;
 
-+ (id)assetWithURL:(id)arg1 type:(NSInteger)arg2;
++ (id)assetWithURL:(id)arg1 type:(int)arg2;
 
 - (id)URLRequest;
 - (id)copyPropertyListEncoding;
@@ -47,7 +47,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPropertyListEncoding:(id)arg1;
-- (id)initWithURLRequest:(id)arg1 type:(NSInteger)arg2;
+- (id)initWithURLRequest:(id)arg1 type:(int)arg2;
 - (BOOL)isExternal;
 - (long long)numberOfBytesToHash;
 - (id)processedPath;
@@ -60,8 +60,8 @@
 - (void)setLocalFileNameFromBase:(id)arg1;
 - (void)setNumberOfBytesToHash:(long long)arg1;
 - (void)setProcessedPath:(id)arg1;
-- (void)setType:(NSInteger)arg1;
+- (void)setType:(int)arg1;
 - (void)setURLRequest:(id)arg1;
-- (NSInteger)type;
+- (int)type;
 
 @end

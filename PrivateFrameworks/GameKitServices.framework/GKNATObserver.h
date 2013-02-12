@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
+@class <GKNATObserverDelegate>;
+
 @interface GKNATObserver : NSObject {
 }
 
-@property <GKNATObserverDelegate> *delegate;
+@property <GKNATObserverDelegate> * delegate;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

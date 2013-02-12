@@ -8,23 +8,23 @@
     BOOL _padding[3];
     NSArray *contents;
     BOOL cross;
-    NSUInteger depth;
+    unsigned int depth;
     NSFileAttributes *directoryAttributes;
-    NSUInteger idx;
+    unsigned int idx;
     NSString *path;
     NSString *pathToLastReportedItem;
     NSString *prepend;
     NSAllDescendantPathsEnumerator *under;
 }
 
-+ (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(BOOL)arg4 depth:(NSUInteger)arg5;
++ (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(BOOL)arg4 depth:(unsigned int)arg5;
 
 - (id)_under;
 - (id)currentSubdirectoryAttributes;
 - (void)dealloc;
 - (id)directoryAttributes;
 - (id)fileAttributes;
-- (NSUInteger)level;
+- (unsigned int)level;
 - (id)nextObject;
 - (void)skipDescendants;
 - (void)skipDescendents;

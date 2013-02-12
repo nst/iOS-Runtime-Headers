@@ -15,7 +15,7 @@
 
 - (id)columnInfo;
 - (id)createColumnInfo;
-- (id)createStopArrayForRow:(NSUInteger)arg1;
+- (id)createStopArrayForRow:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithWDTable:(id)arg1 parent:(id)arg2;
 - (id)insideBorders;

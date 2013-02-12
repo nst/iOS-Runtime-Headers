@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSString, UIColor, UIFont;
+
 @interface UISimpleTextPrintFormatter : UIPrintFormatter {
 }
 
-@property(retain) UIColor *color;
-@property(retain) UIFont *font;
-@property(copy) NSString *text;
-@property NSInteger textAlignment;
+@property(retain) UIColor * color;
+@property(retain) UIFont * font;
+@property(copy) NSString * text;
+@property int textAlignment;
 
 - (id)initWithText:(id)arg1;
 

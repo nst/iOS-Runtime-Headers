@@ -9,8 +9,8 @@
     UIImage *_maskImage;
 }
 
-@property(retain) UIImage *maskFinalImage;
-@property(retain) UIImage *maskImage;
+@property(retain) UIImage * maskFinalImage;
+@property(retain) UIImage * maskImage;
 
 - (void)dealloc;
 - (void)layoutSubviews;

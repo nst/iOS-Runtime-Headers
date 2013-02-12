@@ -40,10 +40,10 @@
 - (void)handleBrailleTableFailedToLoad:(id)arg1;
 - (void)handleDisplayModeChanged:(id)arg1;
 - (void)handleFailedToLoadBluetoothDevice:(id)arg1;
-- (NSInteger)handleGetValue:(id*)arg1 forKey:(NSInteger)arg2 withObject:(id)arg3 trusted:(BOOL)arg4;
-- (NSInteger)handlePerformActionForKey:(NSInteger)arg1 trusted:(BOOL)arg2;
-- (NSInteger)handleRegisterCallbackForKey:(NSInteger)arg1 trusted:(BOOL)arg2;
-- (NSInteger)handleSetValue:(id)arg1 forKey:(NSInteger)arg2 trusted:(BOOL)arg3;
+- (int)handleGetValue:(id*)arg1 forKey:(int)arg2 withObject:(id)arg3 trusted:(BOOL)arg4;
+- (int)handlePerformActionForKey:(int)arg1 trusted:(BOOL)arg2;
+- (int)handleRegisterCallbackForKey:(int)arg1 trusted:(BOOL)arg2;
+- (int)handleSetValue:(id)arg1 forKey:(int)arg2 trusted:(BOOL)arg3;
 - (id)initWithBrailleDisplayManager:(id)arg1;
 - (void)invalidate;
 

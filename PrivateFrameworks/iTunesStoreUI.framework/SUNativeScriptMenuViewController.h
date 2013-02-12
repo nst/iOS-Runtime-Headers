@@ -9,18 +9,18 @@
     NSArray *_menuItems;
 }
 
-@property(retain) SUScriptFunction *action;
-@property(retain) NSArray *menuItems;
+@property(retain) SUScriptFunction * action;
+@property(retain) NSArray * menuItems;
 
 - (id)action;
 - (id)copyScriptViewController;
 - (void)dealloc;
-- (BOOL)isMenuItemEnabledAtIndex:(NSInteger)arg1;
+- (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
 - (id)menuItems;
-- (NSInteger)numberOfMenuItems;
-- (void)performActionForMenuItemAtIndex:(NSInteger)arg1;
+- (int)numberOfMenuItems;
+- (void)performActionForMenuItemAtIndex:(int)arg1;
 - (void)setAction:(id)arg1;
 - (void)setMenuItems:(id)arg1;
-- (id)titleOfMenuItemAtIndex:(NSInteger)arg1;
+- (id)titleOfMenuItemAtIndex:(int)arg1;
 
 @end

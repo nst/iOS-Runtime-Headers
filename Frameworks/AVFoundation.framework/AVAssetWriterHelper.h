@@ -2,27 +2,28 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterConfigurationState, AVWeakReference;
+@class AVAssetWriterConfigurationState, AVMediaFileType, AVWeakReference, NSArray, NSError, NSURL;
 
 @interface AVAssetWriterHelper : NSObject {
     AVAssetWriterConfigurationState *_configurationState;
     AVWeakReference *_weakReferenceToAssetWriter;
 }
 
-@property(readonly) NSArray *availableMediaTypes;
-@property(readonly) AVAssetWriterConfigurationState *configurationState;
-@property(readonly) NSError *error;
-@property(readonly) NSArray *inputs;
-@property(readonly) AVMediaFileType *mediaFileType;
-@property(copy) NSArray *metadata;
-@property(readonly) NSURL *outputURL;
-@property(retain) AVWeakReference *weakReferenceToAssetWriter;
-@property ? movieFragmentInterval;
+@property(readonly) NSArray * availableMediaTypes;
+@property(readonly) AVAssetWriterConfigurationState * configurationState;
+@property(readonly) NSError * error;
+@property(readonly) NSArray * inputs;
+@property(readonly) AVMediaFileType * mediaFileType;
+@property(copy) NSArray * metadata;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } movieFragmentInterval;
+@property int movieTimeScale;
+@property(readonly) NSURL * outputURL;
 @property BOOL shouldOptimizeForNetworkUse;
-@property(readonly) NSInteger status;
+@property(readonly) int status;
+@property(retain) AVWeakReference * weakReferenceToAssetWriter;
 
 - (BOOL)_canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2 exceptionReason:(id*)arg3;
-- (void)_transitionToClientInitiatedTerminalStatus:(NSInteger)arg1;
+- (void)_transitionToClientInitiatedTerminalStatus:(int)arg1;
 - (void)addInput:(id)arg1;
 - (id)availableMediaTypes;
 - (BOOL)canAddInput:(id)arg1;
@@ -30,7 +31,7 @@
 - (void)cancelWriting;
 - (id)configurationState;
 - (void)dealloc;
-- (void)endSessionAtSourceTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)error;
 - (void)finishWriting;
 - (id)init;
@@ -38,16 +39,18 @@
 - (id)inputs;
 - (id)mediaFileType;
 - (id)metadata;
-- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })movieFragmentInterval;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
+- (int)movieTimeScale;
 - (id)outputURL;
 - (void)setMetadata:(id)arg1;
-- (void)setMovieFragmentInterval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMovieTimeScale:(int)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (void)setWeakReferenceToAssetWriter:(id)arg1;
 - (BOOL)shouldOptimizeForNetworkUse;
-- (void)startSessionAtSourceTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1;
+- (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)startWriting;
-- (NSInteger)status;
+- (int)status;
 - (void)transitionToFailedStatusWithError:(id)arg1;
 - (id)weakReferenceToAssetWriter;
 

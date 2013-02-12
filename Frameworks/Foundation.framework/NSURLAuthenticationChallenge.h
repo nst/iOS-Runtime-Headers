@@ -16,8 +16,8 @@
 - (id)failureResponse;
 - (id)init;
 - (id)initWithAuthenticationChallenge:(id)arg1 sender:(id)arg2;
-- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(NSInteger)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
-- (NSInteger)previousFailureCount;
+- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
+- (int)previousFailureCount;
 - (id)proposedCredential;
 - (id)protectionSpace;
 - (id)sender;

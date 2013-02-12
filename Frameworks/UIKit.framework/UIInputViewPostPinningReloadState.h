@@ -8,7 +8,7 @@
     UIResponder *_responderPreventedFromSettingInputViews;
 }
 
-@property(retain) UIResponder *responderToReload;
+@property(retain) UIResponder * responderToReload;
 
 + (id)stateWithResponder:(id)arg1;
 

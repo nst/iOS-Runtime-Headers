@@ -7,9 +7,9 @@
 @interface VMUSegmentLoadCommand : VMULoadCommand {
     unsigned long long _fileoff;
     unsigned long long _filesize;
-    NSUInteger _flags;
-    NSInteger _initprot;
-    NSInteger _maxprot;
+    unsigned int _flags;
+    int _initprot;
+    int _maxprot;
     NSString *_name;
     NSArray *_sections;
     unsigned long long _vmaddr;
@@ -20,10 +20,10 @@
 - (id)description;
 - (unsigned long long)fileoff;
 - (unsigned long long)filesize;
-- (NSUInteger)flags;
-- (NSInteger)initprot;
+- (unsigned int)flags;
+- (int)initprot;
 - (BOOL)isSegment;
-- (NSInteger)maxprot;
+- (int)maxprot;
 - (id)name;
 - (id)sectionNamed:(id)arg1;
 - (id)sections;

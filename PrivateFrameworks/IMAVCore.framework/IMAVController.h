@@ -11,7 +11,6 @@
 + (void)_setServiceVCCaps:(unsigned long long)arg1 toCaps:(unsigned long long)arg2;
 + (BOOL)_shouldHandleInvites;
 + (BOOL)_shouldRunConferences;
-+ (void)_updateOverallChatState;
 + (BOOL)ardMuxingSupported;
 + (BOOL)blockARDCapable;
 + (BOOL)blockAudioOnlyCalls;
@@ -23,8 +22,8 @@
 + (BOOL)canUseSmallDataBlobs;
 + (void)cancelVCRequestWithBuddy:(id)arg1 vcProps:(id)arg2 forAccount:(id)arg3 conferenceID:(id)arg4;
 + (void)currentAVChatInfoChanged:(id)arg1;
-+ (void)declineVCRequestWithBuddy:(id)arg1 response:(NSUInteger)arg2 vcProps:(id)arg3 conferenceID:(id)arg4;
-+ (void)declineVCRequestWithBuddy:(id)arg1 response:(NSUInteger)arg2 vcProps:(id)arg3 forAccount:(id)arg4 conferenceID:(id)arg5;
++ (void)declineVCRequestWithBuddy:(id)arg1 response:(unsigned int)arg2 vcProps:(id)arg3 conferenceID:(id)arg4;
++ (void)declineVCRequestWithBuddy:(id)arg1 response:(unsigned int)arg2 vcProps:(id)arg3 forAccount:(id)arg4 conferenceID:(id)arg5;
 + (id)delegate;
 + (void)dumpCaps;
 + (BOOL)hasActiveConference;
@@ -32,7 +31,7 @@
 + (BOOL)microphoneConnected;
 + (BOOL)multiAudioCapable;
 + (BOOL)multiVideoCapable;
-+ (NSUInteger)overallChatState;
++ (unsigned int)overallChatState;
 + (void)pushCachedVCCapsToDaemon;
 + (void)requestPendingVCInvitations;
 + (void)setBlockARDCapable:(BOOL)arg1;
@@ -41,7 +40,7 @@
 + (void)setBlockMicrophoneCapable:(BOOL)arg1;
 + (void)setDelegate:(id)arg1;
 + (void)setHasActiveConference:(BOOL)arg1;
-+ (void)setIMAVCapabilities:(NSInteger)arg1 toCaps:(NSInteger)arg2;
++ (void)setIMAVCapabilities:(int)arg1 toCaps:(int)arg2;
 + (void)setSoftwareCameraEnabled:(BOOL)arg1;
 + (void)setSoftwareMicrophoneEnabled:(BOOL)arg1;
 + (void)setupIMAVController;
@@ -49,7 +48,7 @@
 + (BOOL)softwareMicrophoneEnabled;
 + (void)updateActiveConference;
 + (void)vcCapabilitiesChanged:(unsigned long long)arg1;
-+ (id)vcResponseInfoWithSessionID:(NSUInteger)arg1 ICEData:(id)arg2 natType:(id)arg3 natIP:(id)arg4 ardChannelInfo:(id)arg5 forParticipant:(id)arg6 relaySupported:(BOOL)arg7;
-+ (id)vcResponseInfoWithSessionID:(NSUInteger)arg1;
++ (id)vcResponseInfoWithSessionID:(unsigned int)arg1 ICEData:(id)arg2 natType:(id)arg3 natIP:(id)arg4 ardChannelInfo:(id)arg5 forParticipant:(id)arg6 relaySupported:(BOOL)arg7;
++ (id)vcResponseInfoWithSessionID:(unsigned int)arg1;
 
 @end

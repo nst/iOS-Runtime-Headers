@@ -3,18 +3,18 @@
  */
 
 @interface CTMessageStatus : NSObject {
-    NSUInteger _messageId;
-    NSInteger _messageType;
-    NSInteger _result;
+    unsigned int _messageId;
+    int _messageType;
+    int _result;
 }
 
-@property(readonly) NSUInteger messageId;
-@property(readonly) NSInteger messageType;
-@property(readonly) NSInteger result;
+@property(readonly) unsigned int messageId;
+@property(readonly) int messageType;
+@property(readonly) int result;
 
-- (id)initWithMessageId:(NSUInteger)arg1 messageType:(NSInteger)arg2 result:(NSInteger)arg3;
-- (NSUInteger)messageId;
-- (NSInteger)messageType;
-- (NSInteger)result;
+- (id)initWithMessageId:(unsigned int)arg1 messageType:(int)arg2 result:(int)arg3;
+- (unsigned int)messageId;
+- (int)messageType;
+- (int)result;
 
 @end

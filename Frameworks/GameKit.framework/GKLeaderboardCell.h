@@ -2,45 +2,38 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, NSMutableArray;
+@class GKLeaderboardCellBackgroundView, NSArray;
 
 @interface GKLeaderboardCell : GKMultiColumnTableViewCell {
-    NSInteger _bottomEdgeStyle;
-    NSMutableArray *_dividerArray;
+    int _bottomEdgeStyle;
     NSArray *_leaderboardCellStyles;
     NSArray *_leaderboardSectionLocations;
-    NSInteger _topEdgeStyle;
+    int _topEdgeStyle;
 }
 
-@property(retain) NSMutableArray *dividerArray;
-@property(readonly) GKLeaderboardCellBackgroundView *leaderboardBackgroundView;
-@property(retain) NSArray *leaderboardCellStyles;
-@property(retain) NSArray *leaderboardSectionLocations;
-@property(readonly) GKLeaderboardCellBackgroundView *selectedLeaderboardBackgroundView;
-@property NSInteger bottomEdgeStyle;
-@property NSInteger topEdgeStyle;
+@property int bottomEdgeStyle;
+@property(readonly) GKLeaderboardCellBackgroundView * leaderboardBackgroundView;
+@property(retain) NSArray * leaderboardCellStyles;
+@property(retain) NSArray * leaderboardSectionLocations;
+@property(readonly) GKLeaderboardCellBackgroundView * selectedLeaderboardBackgroundView;
+@property int topEdgeStyle;
 
-- (NSInteger)bottomEdgeStyle;
+- (int)bottomEdgeStyle;
 - (void)configureBackgroundView;
 - (float)contentsMargin;
-- (id)createDividerView;
 - (void)dealloc;
 - (id)description;
-- (id)dividerArray;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(NSInteger)arg3 backgroundStyle:(NSInteger)arg4;
-- (void)layoutSubviews;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (id)leaderboardBackgroundView;
 - (id)leaderboardCellStyles;
 - (id)leaderboardSectionLocations;
 - (id)selectedLeaderboardBackgroundView;
-- (void)setBottomEdgeStyle:(NSInteger)arg1;
-- (void)setContentsArray:(id)arg1;
-- (void)setDividerArray:(id)arg1;
+- (void)setBottomEdgeStyle:(int)arg1;
 - (void)setLeaderboardCellStyles:(id)arg1;
 - (void)setLeaderboardSectionLocations:(id)arg1;
-- (void)setSectionLocation:(NSInteger)arg1 animated:(BOOL)arg2;
-- (void)setTopEdgeStyle:(NSInteger)arg1;
-- (NSInteger)topEdgeStyle;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (void)setTopEdgeStyle:(int)arg1;
+- (int)topEdgeStyle;
 - (void)updateBackgroundViews;
 
 @end

@@ -7,11 +7,12 @@
 
 + (void)_initializeSafeCategory;
 
+- (void)_accessibilityCurrentPage:(int*)arg1 totalPages:(int*)arg2;
 - (void)_accessibilityInformDelegateScrollViewDidEndDecelerating;
 - (BOOL)_accessibilityIsScrollAncestor;
 - (float)_accessibilityScrollAnimationDurationDelay;
 - (float)_accessibilityScrollHeightDistance;
-- (void)_accessibilityScrollPageInDirection:(NSInteger)arg1;
+- (void)_accessibilityScrollPageInDirection:(int)arg1;
 - (id)_accessibilityScrollStatus;
 - (void)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
 - (BOOL)_accessibilityScrollToTopWithAnnouncement:(BOOL)arg1;

@@ -9,26 +9,26 @@
     BOOL _pad1;
     BOOL _pad2;
     BOOL _pad3;
-    NSUInteger currentDiskUsage;
-    NSUInteger currentMemoryUsage;
+    unsigned int currentDiskUsage;
+    unsigned int currentMemoryUsage;
     NSLock *diskCacheGuard;
-    NSUInteger diskCacheItemLengthThreshold;
+    unsigned int diskCacheItemLengthThreshold;
     struct NSLRUFileList { } *diskCacheLRUList;
     BOOL diskCacheLeftoverFilesRemovedFlag;
     NSURLQueue *diskCachePendingOperations;
     NSMutableSet *diskCachePendingRemovals;
     NSMutableDictionary *diskCachePendingWrites;
     double diskCacheTouchTime;
-    NSUInteger diskCapacity;
+    unsigned int diskCapacity;
     NSString *diskPath;
     NSMutableDictionary *memoryCache;
     NSLock *memoryCacheGuard;
-    NSUInteger memoryCacheItemLengthThreshold;
+    unsigned int memoryCacheItemLengthThreshold;
     NSURLCacheNode *memoryCacheLRUHead;
     NSURLCacheNode *memoryCacheLRUTail;
-    NSUInteger memoryCapacity;
-    NSUInteger syncSkipCount;
-    NSUInteger timerResetCount;
+    unsigned int memoryCapacity;
+    unsigned int syncSkipCount;
+    unsigned int timerResetCount;
 }
 
 - (void)dealloc;

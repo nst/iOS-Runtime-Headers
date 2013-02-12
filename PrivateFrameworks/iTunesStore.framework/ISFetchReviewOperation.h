@@ -5,35 +5,35 @@
 @class ISReview, NSURL;
 
 @interface ISFetchReviewOperation : ISOperation {
-    NSInteger _assetType;
+    int _assetType;
     BOOL _backgroundReview;
     unsigned long long _itemIdentifier;
     ISReview *_review;
-    NSUInteger _softwareVersionIdentifier;
+    unsigned int _softwareVersionIdentifier;
     NSURL *_url;
 }
 
-@property(retain) ISReview *review;
-@property(retain) NSURL *url;
-@property NSInteger assetType;
+@property int assetType;
 @property(getter=isBackgroundReview) BOOL backgroundReview;
 @property unsigned long long itemIdentifier;
-@property NSUInteger softwareVersionIdentifier;
+@property(retain) ISReview * review;
+@property unsigned int softwareVersionIdentifier;
+@property(retain) NSURL * url;
 
 - (void)_fetchReviewInformation;
-- (NSInteger)assetType;
+- (int)assetType;
 - (void)dealloc;
 - (BOOL)isBackgroundReview;
 - (unsigned long long)itemIdentifier;
 - (id)review;
 - (void)run;
-- (void)setAssetType:(NSInteger)arg1;
+- (void)setAssetType:(int)arg1;
 - (void)setBackgroundReview:(BOOL)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setReview:(id)arg1;
-- (void)setSoftwareVersionIdentifier:(NSUInteger)arg1;
+- (void)setSoftwareVersionIdentifier:(unsigned int)arg1;
 - (void)setUrl:(id)arg1;
-- (NSUInteger)softwareVersionIdentifier;
+- (unsigned int)softwareVersionIdentifier;
 - (id)url;
 
 @end

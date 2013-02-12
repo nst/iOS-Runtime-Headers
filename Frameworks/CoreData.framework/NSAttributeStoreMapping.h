@@ -3,21 +3,21 @@
  */
 
 @interface NSAttributeStoreMapping : NSPropertyStoreMapping {
-    NSUInteger _externalPrecision;
-    NSInteger _externalScale;
-    NSInteger _externalType;
+    unsigned int _externalPrecision;
+    int _externalScale;
+    int _externalType;
 }
 
 - (id)attribute;
 - (id)columnDefinition;
-- (NSUInteger)externalPrecision;
-- (NSInteger)externalScale;
-- (NSInteger)externalType;
+- (unsigned int)externalPrecision;
+- (int)externalScale;
+- (int)externalType;
 - (id)initWithProperty:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (void)setExternalPrecision:(NSUInteger)arg1;
-- (void)setExternalScale:(NSInteger)arg1;
-- (void)setExternalType:(NSInteger)arg1;
+- (void)setExternalPrecision:(unsigned int)arg1;
+- (void)setExternalScale:(int)arg1;
+- (void)setExternalType:(int)arg1;
 - (id)sqlType;
 
 @end

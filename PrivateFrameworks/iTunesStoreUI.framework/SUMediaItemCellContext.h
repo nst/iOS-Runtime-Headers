@@ -3,12 +3,12 @@
  */
 
 @interface SUMediaItemCellContext : SUItemCellContext {
-    NSInteger _hiddenMediaIconTypes;
+    int _hiddenMediaIconTypes;
 }
 
-@property NSInteger hiddenMediaIconTypes;
+@property int hiddenMediaIconTypes;
 
-- (NSInteger)hiddenMediaIconTypes;
-- (void)setHiddenMediaIconTypes:(NSInteger)arg1;
+- (int)hiddenMediaIconTypes;
+- (void)setHiddenMediaIconTypes:(int)arg1;
 
 @end

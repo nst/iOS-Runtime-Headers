@@ -2,26 +2,28 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+@class NSDate;
+
 @interface DACalendarRecurrence : DACalendarObject {
 }
 
-@property(retain) NSDate *endDate;
-@property NSUInteger count;
-@property NSInteger frequency;
-@property NSUInteger interval;
-@property(readonly) NSInteger uid;
-@property NSInteger weekStart;
+@property unsigned int count;
+@property(retain) NSDate * endDate;
+@property int frequency;
+@property unsigned int interval;
+@property(readonly) int uid;
+@property int weekStart;
 
-- (NSUInteger)count;
+- (unsigned int)count;
 - (id)endDate;
-- (NSInteger)frequency;
-- (NSUInteger)interval;
-- (void)setCount:(NSUInteger)arg1;
+- (int)frequency;
+- (unsigned int)interval;
+- (void)setCount:(unsigned int)arg1;
 - (void)setEndDate:(id)arg1;
-- (void)setFrequency:(NSInteger)arg1;
-- (void)setInterval:(NSUInteger)arg1;
-- (void)setWeekStart:(NSInteger)arg1;
-- (NSInteger)uid;
-- (NSInteger)weekStart;
+- (void)setFrequency:(int)arg1;
+- (void)setInterval:(unsigned int)arg1;
+- (void)setWeekStart:(int)arg1;
+- (int)uid;
+- (int)weekStart;
 
 @end

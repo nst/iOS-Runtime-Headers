@@ -9,7 +9,7 @@
     NSOperationQueue *_operationQueue;
 }
 
-@property(readonly) SUMessage *message;
+@property(readonly) SUMessage * message;
 
 - (id)_copyResourcesByUploadingParts:(id*)arg1;
 - (id)_copyResourcesForLocalPart:(id)arg1;

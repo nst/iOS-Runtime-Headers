@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILongPressGestureRecognizer, UITapAndAHalfRecognizer, UIWebDocumentView, UIWebSelectionView;
+@class UILongPressGestureRecognizer, UITapAndAHalfRecognizer, UIWebDocumentView, UIWebSelection, UIWebSelectionView;
 
 @interface UIWebSelectionAssistant : NSObject <UILongPressGestureRecognizerDelegate> {
     BOOL _enabled;
@@ -12,9 +12,9 @@
     UIWebDocumentView *_webView;
 }
 
-@property(readonly) UIWebSelection *selection;
 @property BOOL enabled;
-@property(readonly) CGRect selectionFrame;
+@property(readonly) UIWebSelection * selection;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } selectionFrame;
 
 - (void)clearSelection;
 - (void)dealloc;

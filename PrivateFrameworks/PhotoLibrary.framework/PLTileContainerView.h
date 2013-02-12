@@ -8,7 +8,7 @@
     PLPhotoTileViewController *_photoTileViewController;
 }
 
-@property PLPhotoTileViewController *photoTileViewController;
+@property PLPhotoTileViewController * photoTileViewController;
 
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;

@@ -12,7 +12,7 @@
     BOOL mIsVisited;
     NSString *mTargetFrame;
     NSURL *mTargetLocation;
-    NSInteger mTargetMode;
+    int mTargetMode;
     NSString *mTooltip;
 }
 
@@ -24,7 +24,7 @@
 - (void)dealloc;
 - (BOOL)doAddToHistory;
 - (BOOL)doEndSound;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (id)invalidUrl;
 - (BOOL)isEqual:(id)arg1;
@@ -36,11 +36,11 @@
 - (void)setIsVisited:(BOOL)arg1;
 - (void)setTargetFrame:(id)arg1;
 - (void)setTargetLocation:(id)arg1;
-- (void)setTargetMode:(NSInteger)arg1;
+- (void)setTargetMode:(int)arg1;
 - (void)setTooltip:(id)arg1;
 - (id)targetFrame;
 - (id)targetLocation;
-- (NSInteger)targetMode;
+- (int)targetMode;
 - (id)tooltip;
 
 @end

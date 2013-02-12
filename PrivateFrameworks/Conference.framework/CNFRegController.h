@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class IMAccount, NSMutableArray, NSTimer;
+@class IMAccount, IMServiceImpl, NSArray, NSMutableArray, NSTimer;
 
 @interface CNFRegController : NSObject {
     struct { 
@@ -32,28 +32,28 @@
     unsigned char _originalWifiFlag;
     id _profileChangedBlock;
     id _profileStatusChangedBlock;
-    NSInteger _requiredWifiCount;
+    int _requiredWifiCount;
     id _resetBlock;
     NSTimer *_wifiAlertWatchTimer;
 }
 
-@property(retain) IMAccount *account;
-@property(copy) ? *accountAddedBlock;
-@property(copy) ? *accountAuthorizationChangedBlock;
-@property(copy) ? *accountRegistrationBlock;
-@property(copy) ? *accountRemovedBlock;
-@property(copy) ? *alertHandler;
-@property(copy) ? *aliasAddedBlock;
-@property(copy) ? *aliasRemovedBlock;
-@property(copy) ? *aliasStatusChangedBlock;
-@property(retain,readonly) NSArray *aliases;
-@property(copy) ? *displayNameChangedBlock;
-@property(retain,readonly) NSMutableArray *mutableAliases;
-@property(copy) ? *profileChangedBlock;
-@property(copy) ? *profileStatusChangedBlock;
-@property(copy) ? *resetBlock;
-@property(retain,readonly) IMServiceImpl *service;
+@property(retain) IMAccount * account;
+@property(copy) id accountAddedBlock;
+@property(copy) id accountAuthorizationChangedBlock;
+@property(copy) id accountRegistrationBlock;
+@property(copy) id accountRemovedBlock;
+@property(copy) id alertHandler;
+@property(copy) id aliasAddedBlock;
+@property(copy) id aliasRemovedBlock;
+@property(copy) id aliasStatusChangedBlock;
+@property(retain,readonly) NSArray * aliases;
+@property(copy) id displayNameChangedBlock;
 @property(getter=isFaceTimeEnabled) BOOL faceTimeEnabled;
+@property(retain,readonly) NSMutableArray * mutableAliases;
+@property(copy) id profileChangedBlock;
+@property(copy) id profileStatusChangedBlock;
+@property(copy) id resetBlock;
+@property(retain,readonly) IMServiceImpl * service;
 
 + (BOOL)deviceSupportsRegistrationInterface;
 + (id)sharedInstance;
@@ -73,11 +73,11 @@
 - (void)accountRegistrationChanged:(id)arg1;
 - (void)accountRemoved:(id)arg1;
 - (id)accountRemovedBlock;
-- (NSUInteger)accountState;
+- (unsigned int)accountState;
 - (BOOL)activateAccount:(id)arg1;
 - (BOOL)addAlias:(id)arg1;
 - (id)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)aliasAddedBlock;
 - (id)aliasRemovedBlock;
 - (void)aliasStatusChanged:(id)arg1;
@@ -105,6 +105,7 @@
 - (void)handleAliasStatusChanged:(id)arg1 withError:(id)arg2;
 - (BOOL)hasAlias:(id)arg1;
 - (BOOL)hasFailedLogin;
+- (BOOL)hasFailedLoginDueToBadLogin;
 - (BOOL)hasRegisteredAccount;
 - (BOOL)hasValidatedAlias;
 - (BOOL)hasValidatedLocale;
@@ -119,7 +120,7 @@
 - (id)profileRegionID;
 - (id)profileStatusChangedBlock;
 - (void)profileValidationStateChanged:(id)arg1;
-- (NSInteger)profileValidationStatus;
+- (int)profileValidationStatus;
 - (BOOL)refreshAuthorizationCredentials;
 - (void)reloadAliases;
 - (BOOL)removeAlias:(id)arg1;
@@ -154,6 +155,6 @@
 - (void)stopRequiringWifi;
 - (id)useableAliases;
 - (BOOL)validateAlias:(id)arg1;
-- (NSInteger)validationStatusForAlias:(id)arg1;
+- (int)validationStatusForAlias:(id)arg1;
 
 @end

@@ -10,9 +10,9 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL *URL;
-@property(copy) NSString *targetIdentifier;
 @property(getter=isITunesStoreURL) BOOL ITunesStoreURL;
+@property(retain) NSURL * URL;
+@property(copy) NSString * targetIdentifier;
 
 + (id)openURLRequestWithURL:(id)arg1;
 

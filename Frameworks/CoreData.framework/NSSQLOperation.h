@@ -6,7 +6,7 @@
 
 @interface NSSQLOperation : NSObject {
     NSMutableArray *_adapterOps;
-    NSUInteger _databaseOperator;
+    unsigned int _databaseOperator;
     NSSQLRow *_dbSnapshot;
     NSMutableDictionary *_mtmDeltas;
     NSManagedObject *_object;
@@ -16,7 +16,7 @@
 - (id)adapterOperations;
 - (void)addAdapterOperation:(id)arg1;
 - (void)addDelta:(id)arg1 forManyToManyKey:(id)arg2;
-- (NSUInteger)databaseOperator;
+- (unsigned int)databaseOperator;
 - (id)dbSnapshot;
 - (void)dealloc;
 - (id)description;
@@ -27,7 +27,7 @@
 - (void)removeAdapterOperation:(id)arg1;
 - (id)rowForUpdate;
 - (void)setDBSnapshot:(id)arg1;
-- (void)setDatabaseOperator:(NSUInteger)arg1;
+- (void)setDatabaseOperator:(unsigned int)arg1;
 - (void)setRowForUpdate:(id)arg1;
 
 @end

@@ -7,9 +7,9 @@
 @interface UIAnimator : NSObject {
     NSMutableArray *_animations;
     double _lastUpdateTime;
-    NSInteger _lcdCount;
+    int _lcdCount;
     struct __GSHeartbeat { } *_lcdHeartbeat;
-    NSInteger _tvCount;
+    int _tvCount;
     struct __GSHeartbeat { } *_tvHeartbeat;
 }
 

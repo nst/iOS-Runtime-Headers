@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UIPeripheralHostLayer;
+
 @interface UIPeripheralHostView : UIView {
-    NSInteger _explicitLayoutCount;
+    int _explicitLayoutCount;
 }
 
-@property(retain,readonly) UIPeripheralHostLayer *layer;
+@property(retain,readonly) UIPeripheralHostLayer * layer;
 
 + (void)_initializeSafeCategory;
 + (Class)layerClass;
@@ -21,6 +23,6 @@
 - (id)layer;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (NSInteger)textEffectsVisibilityLevel;
+- (int)textEffectsVisibilityLevel;
 
 @end

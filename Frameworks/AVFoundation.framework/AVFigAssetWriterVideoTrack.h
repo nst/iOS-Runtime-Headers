@@ -5,6 +5,6 @@
 @interface AVFigAssetWriterVideoTrack : AVFigAssetWriterTrack {
 }
 
-- (NSInteger)_attachToFigAssetWriterUsingOutputSettings:(id)arg1 sourcePixelBufferAttributes:(id)arg2 error:(id*)arg3;
+- (int)_attachToFigAssetWriterUsingOutputSettings:(id)arg1 sourcePixelBufferAttributes:(id)arg2 error:(id*)arg3;
 
 @end

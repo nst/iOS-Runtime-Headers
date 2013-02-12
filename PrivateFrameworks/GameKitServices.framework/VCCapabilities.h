@@ -3,8 +3,8 @@
  */
 
 @interface VCCapabilities : NSObject {
-    NSUInteger actualAudioCodec;
-    NSUInteger actualVideoCodec;
+    unsigned int actualAudioCodec;
+    unsigned int actualVideoCodec;
     BOOL isAudioEnabled;
     BOOL isAudioPausedToStart;
     BOOL isDuplexAudioOnly;
@@ -14,13 +14,13 @@
     BOOL isRelayForced;
     BOOL isVideoEnabled;
     BOOL isVideoPausedToStart;
-    NSUInteger preferredAudioCodec;
-    NSUInteger preferredVideoCodec;
+    unsigned int preferredAudioCodec;
+    unsigned int preferredVideoCodec;
     BOOL requiresWifi;
 }
 
-@property NSUInteger actualAudioCodec;
-@property NSUInteger actualVideoCodec;
+@property unsigned int actualAudioCodec;
+@property unsigned int actualVideoCodec;
 @property BOOL isAudioEnabled;
 @property BOOL isAudioPausedToStart;
 @property BOOL isDuplexAudioOnly;
@@ -30,15 +30,15 @@
 @property BOOL isRelayForced;
 @property BOOL isVideoEnabled;
 @property BOOL isVideoPausedToStart;
-@property NSUInteger preferredAudioCodec;
-@property NSUInteger preferredVideoCodec;
+@property unsigned int preferredAudioCodec;
+@property unsigned int preferredVideoCodec;
 @property BOOL requiresWifi;
 
 + (id)AudioOnlyVCCapabilities;
 + (id)VideoOnlyVCCapabilities;
 
-- (NSUInteger)actualAudioCodec;
-- (NSUInteger)actualVideoCodec;
+- (unsigned int)actualAudioCodec;
+- (unsigned int)actualVideoCodec;
 - (id)description;
 - (id)init;
 - (BOOL)isAudioEnabled;
@@ -50,11 +50,11 @@
 - (BOOL)isRelayForced;
 - (BOOL)isVideoEnabled;
 - (BOOL)isVideoPausedToStart;
-- (NSUInteger)preferredAudioCodec;
-- (NSUInteger)preferredVideoCodec;
+- (unsigned int)preferredAudioCodec;
+- (unsigned int)preferredVideoCodec;
 - (BOOL)requiresWifi;
-- (void)setActualAudioCodec:(NSUInteger)arg1;
-- (void)setActualVideoCodec:(NSUInteger)arg1;
+- (void)setActualAudioCodec:(unsigned int)arg1;
+- (void)setActualVideoCodec:(unsigned int)arg1;
 - (void)setIsAudioEnabled:(BOOL)arg1;
 - (void)setIsAudioPausedToStart:(BOOL)arg1;
 - (void)setIsDuplexAudioOnly:(BOOL)arg1;
@@ -64,8 +64,8 @@
 - (void)setIsRelayForced:(BOOL)arg1;
 - (void)setIsVideoEnabled:(BOOL)arg1;
 - (void)setIsVideoPausedToStart:(BOOL)arg1;
-- (void)setPreferredAudioCodec:(NSUInteger)arg1;
-- (void)setPreferredVideoCodec:(NSUInteger)arg1;
+- (void)setPreferredAudioCodec:(unsigned int)arg1;
+- (void)setPreferredVideoCodec:(unsigned int)arg1;
 - (void)setRequiresWifi:(BOOL)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItemWithNoChildren;
+@class CoreDAVItemWithNoChildren, NSSet;
 
 @interface CoreDAVResourceTypeItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_addressBook;
@@ -13,25 +13,36 @@
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) CoreDAVItemWithNoChildren *addressBook;
-@property(retain) CoreDAVItemWithNoChildren *collection;
-@property(retain) CoreDAVItemWithNoChildren *principal;
-@property(retain) CoreDAVItemWithNoChildren *searchAddressBook;
-@property(retain) CoreDAVItemWithNoChildren *shared;
-@property(readonly) NSSet *stringSet;
-@property(retain) CoreDAVItemWithNoChildren *unauthenticated;
+@property(retain) CoreDAVItemWithNoChildren * addressBook;
+@property(retain) CoreDAVItemWithNoChildren * bookmarkBarFolder;
+@property(retain) CoreDAVItemWithNoChildren * bookmarkFolder;
+@property(retain) CoreDAVItemWithNoChildren * bookmarkMenuFolder;
+@property(retain) CoreDAVItemWithNoChildren * collection;
+@property(retain) CoreDAVItemWithNoChildren * principal;
+@property(retain) CoreDAVItemWithNoChildren * searchAddressBook;
+@property(retain) CoreDAVItemWithNoChildren * shared;
+@property(readonly) NSSet * stringSet;
+@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
 
 - (id)addressBook;
+- (id)bookmarkBarFolder;
+- (id)bookmarkFolder;
+- (id)bookmarkMenuFolder;
 - (id)collection;
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)extraChildWithNameSpace:(id)arg1 name:(id)arg2;
+- (id)init;
 - (BOOL)isTypeWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)principal;
 - (id)searchAddressBook;
 - (void)setAddressBook:(id)arg1;
+- (void)setBookmarkBarFolder:(id)arg1;
+- (void)setBookmarkFolder:(id)arg1;
+- (void)setBookmarkMenuFolder:(id)arg1;
 - (void)setCollection:(id)arg1;
+- (void)setExtraChild:(id)arg1 forNameSpace:(id)arg2 name:(id)arg3;
 - (void)setPrincipal:(id)arg1;
 - (void)setSearchAddressBook:(id)arg1;
 - (void)setShared:(id)arg1;

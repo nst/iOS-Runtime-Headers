@@ -9,7 +9,7 @@
 }
 
 - (void)dealloc;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
-- (void)setImageCount:(NSUInteger)arg1 videoCount:(NSUInteger)arg2 otherCount:(NSUInteger)arg3;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setImageCount:(unsigned int)arg1 videoCount:(unsigned int)arg2 otherCount:(unsigned int)arg3;
 
 @end

@@ -17,13 +17,13 @@
     NSArray *_toRecipients;
 }
 
-@property(readonly) MFGenericAttachmentStore *attachments;
-@property(copy) NSArray *bccRecipients;
-@property(copy) NSArray *ccRecipients;
-@property(copy) NSString *sendingAddress;
-@property(copy) NSString *subject;
-@property(copy) NSArray *toRecipients;
+@property(readonly) MFGenericAttachmentStore * attachments;
+@property(copy) NSArray * bccRecipients;
+@property(copy) NSArray * ccRecipients;
+@property(copy) NSString * sendingAddress;
 @property BOOL showKeyboardImmediately;
+@property(copy) NSString * subject;
+@property(copy) NSArray * toRecipients;
 
 + (id)MFMailCompositionContextWithURL:(id)arg1;
 

@@ -8,9 +8,9 @@
     GKScore *_score;
 }
 
-@property(retain) GKScore *score;
+@property(retain) GKScore * score;
 
-- (NSInteger)cacheType;
+- (int)cacheType;
 - (void)dealloc;
 - (id)invalidateCacheKeys;
 - (id)key;

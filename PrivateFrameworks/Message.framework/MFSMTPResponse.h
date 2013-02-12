@@ -7,13 +7,13 @@
     unsigned int _statusSubject : 10;
     unsigned int _statusDetail : 10;
     id _lastResponseLine;
-    NSInteger _status;
+    int _status;
 }
 
-@property(readonly) NSInteger status;
-@property(readonly) NSUInteger statusClass;
-@property(readonly) NSUInteger statusDetail;
-@property(readonly) NSUInteger statusSubject;
+@property(readonly) int status;
+@property(readonly) unsigned int statusClass;
+@property(readonly) unsigned int statusDetail;
+@property(readonly) unsigned int statusSubject;
 
 + (void)initialize;
 
@@ -21,14 +21,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
-- (NSInteger)failureReason;
-- (id)initWithStatus:(NSInteger)arg1;
+- (int)failureReason;
+- (id)initWithStatus:(int)arg1;
 - (id)lastResponseLine;
 - (void)setLastResponseLine:(id)arg1;
-- (void)setStatus:(NSInteger)arg1;
-- (NSInteger)status;
-- (NSUInteger)statusClass;
-- (NSUInteger)statusDetail;
-- (NSUInteger)statusSubject;
+- (void)setStatus:(int)arg1;
+- (int)status;
+- (unsigned int)statusClass;
+- (unsigned int)statusDetail;
+- (unsigned int)statusSubject;
 
 @end

@@ -6,27 +6,27 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    NSUInteger _count;
-    NSUInteger *_items;
+    unsigned int _count;
+    unsigned int *_items;
     } _lock;
-    NSUInteger _size;
+    unsigned int _size;
 }
 
-@property(readonly) NSUInteger count;
+@property(readonly) unsigned int count;
 
-- (void)addID:(NSUInteger)arg1;
+- (void)addID:(unsigned int)arg1;
 - (void)addIDsFromList:(id)arg1;
 - (id)allMatchingObjectsFromTable:(id)arg1;
 - (void)copyItemsInto:(id)arg1;
 - (unsigned long)count;
 - (void)dealloc;
-- (BOOL)hasID:(NSUInteger)arg1;
+- (BOOL)hasID:(unsigned int)arg1;
 - (id)init;
 - (id)initWithSize:(unsigned long)arg1;
 - (void)lock;
 - (void)print;
 - (void)removeAllIDs;
-- (void)removeID:(NSUInteger)arg1;
+- (void)removeID:(unsigned int)arg1;
 - (void)unlock;
 
 @end

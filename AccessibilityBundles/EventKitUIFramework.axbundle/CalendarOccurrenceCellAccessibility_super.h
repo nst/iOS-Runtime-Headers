@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)accessibilityTableViewCellText;
+- (id)accessibilityLabel;
 
 @end

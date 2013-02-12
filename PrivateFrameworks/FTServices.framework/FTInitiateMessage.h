@@ -16,15 +16,15 @@
     NSData *_selfPushToken;
 }
 
-@property(copy) NSData *aliasSignature;
-@property(copy) NSString *aliasUserID;
-@property(copy) NSArray *canonicalizedPeers;
-@property(copy) NSArray *peers;
-@property(copy) NSDictionary *regionInformation;
-@property(copy) NSData *selfBlob;
-@property(copy) NSNumber *selfNATType;
-@property(copy) NSData *selfNatIP;
-@property(copy) NSData *selfPushToken;
+@property(copy) NSData * aliasSignature;
+@property(copy) NSString * aliasUserID;
+@property(copy) NSArray * canonicalizedPeers;
+@property(copy) NSArray * peers;
+@property(copy) NSDictionary * regionInformation;
+@property(copy) NSData * selfBlob;
+@property(copy) NSNumber * selfNATType;
+@property(copy) NSData * selfNatIP;
+@property(copy) NSData * selfPushToken;
 
 - (id)additionalMessageHeaders;
 - (id)aliasSignature;

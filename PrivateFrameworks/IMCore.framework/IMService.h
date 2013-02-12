@@ -8,20 +8,20 @@
 + (id)aimService;
 + (id)allServices;
 + (id)allServicesNonBlocking;
-+ (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(NSInteger)arg2;
++ (id)canonicalFormOfID:(id)arg1 withIDSensitivity:(int)arg2;
 + (id)facetimeService;
 + (void)forgetStatusImageAppearance;
-+ (id)imageNameForStatus:(NSUInteger)arg1;
-+ (id)imageURLForStatus:(NSUInteger)arg1;
++ (id)imageNameForStatus:(unsigned int)arg1;
++ (id)imageURLForStatus:(unsigned int)arg1;
 + (BOOL)isEmailAddress:(id)arg1 inDomains:(id)arg2;
 + (id)jabberService;
 + (id)myIdleTime;
-+ (NSUInteger)myStatus;
++ (unsigned int)myStatus;
 + (id)notificationCenter;
 + (id)serviceWithName:(id)arg1;
 + (id)serviceWithNameNonBlocking:(id)arg1;
-+ (NSUInteger)statusForABPerson:(id)arg1;
-+ (NSUInteger)statusForIMPerson:(id)arg1;
++ (unsigned int)statusForABPerson:(id)arg1;
++ (unsigned int)statusForIMPerson:(id)arg1;
 + (id)subnetService;
 
 - (id)canonicalFormOfID:(id)arg1;
@@ -42,6 +42,6 @@
 - (id)name;
 - (id)peopleWithScreenName:(id)arg1;
 - (id)screenNamesForPerson:(id)arg1;
-- (NSUInteger)status;
+- (unsigned int)status;
 
 @end

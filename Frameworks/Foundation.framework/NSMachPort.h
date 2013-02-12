@@ -4,35 +4,35 @@
 
 @interface NSMachPort : NSPort {
     id _delegate;
-    NSUInteger _flags;
-    NSUInteger _machPort;
-    NSUInteger _reserved;
+    unsigned int _flags;
+    unsigned int _machPort;
+    unsigned int _reserved;
 }
 
 + (void)_fixNSMachPortLeak;
 + (id)port;
-+ (id)portWithMachPort:(NSUInteger)arg1 options:(NSUInteger)arg2;
-+ (id)portWithMachPort:(NSUInteger)arg1;
++ (id)portWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
++ (id)portWithMachPort:(unsigned int)arg1;
 + (void)resetAllPorts;
 
 - (unsigned long)_cfTypeID;
 - (void)dealloc;
 - (id)delegate;
 - (void)finalize;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithMachPort:(NSUInteger)arg1 options:(NSUInteger)arg2;
-- (id)initWithMachPort:(NSUInteger)arg1;
+- (id)initWithMachPort:(unsigned int)arg1 options:(unsigned int)arg2;
+- (id)initWithMachPort:(unsigned int)arg1;
 - (void)invalidate;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;
 - (BOOL)isMemberOfClass:(Class)arg1;
 - (BOOL)isValid;
-- (NSUInteger)machPort;
+- (unsigned int)machPort;
 - (oneway void)release;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)retain;
-- (NSUInteger)retainCount;
+- (unsigned int)retainCount;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
 

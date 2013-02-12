@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMMediaList, DOMNode, DOMStyleSheet, NSString;
+
 @interface DOMStyleSheet : DOMObject {
 }
 
-@property(copy,readonly) NSString *href;
-@property(retain,readonly) DOMMediaList *media;
-@property(retain,readonly) DOMNode *ownerNode;
-@property(retain,readonly) DOMStyleSheet *parentStyleSheet;
-@property(copy,readonly) NSString *title;
-@property(copy,readonly) NSString *type;
 @property BOOL disabled;
+@property(copy,readonly) NSString * href;
+@property(retain,readonly) DOMMediaList * media;
+@property(retain,readonly) DOMNode * ownerNode;
+@property(retain,readonly) DOMStyleSheet * parentStyleSheet;
+@property(copy,readonly) NSString * title;
+@property(copy,readonly) NSString * type;
 
 - (void)dealloc;
 - (BOOL)disabled;

@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3;
+- (id)table:(id)arg1 cellForRow:(int)arg2 column:(id)arg3;
 
 @end

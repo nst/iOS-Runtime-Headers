@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhoto, PLImageView;
+@class MLPhoto, NSString, PLImageView, PLVideoView, UIImageView;
 
 @interface PLExpandableImageView : PLExpandableView <PLStackableImage> {
     struct CGRect { 
@@ -54,7 +54,7 @@
     } _contractedFrame;
     float _currentAngle;
     } _exImageFlags;
-    NSInteger _imageID;
+    int _imageID;
     float _imageRotationAngle;
     PLImageView *_imageView;
     } _initialExpandingFrame;
@@ -68,16 +68,16 @@
     float _pinchWidth;
 }
 
-@property(readonly) UIImageView *imageView;
-@property(copy) NSString *name;
-@property(retain) MLPhoto *photo;
-@property(retain) PLVideoView *videoView;
 @property(getter=borderIsVisible) BOOL borderVisible;
-@property CGRect contractedFrame;
-@property(readonly) CGSize imageSize;
+@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } contractedFrame;
+@property(readonly) struct CGSize { float width; float height; } imageSize;
+@property(readonly) UIImageView * imageView;
 @property(readonly) BOOL isBeingManipulated;
+@property(copy) NSString * name;
+@property(retain) MLPhoto * photo;
 @property(getter=isShadowEnabled) BOOL shadowEnabled;
 @property float transitionProgress;
+@property(retain) PLVideoView * videoView;
 
 + (void)_initializeSafeCategory;
 + (float)imageBorderWidth;
@@ -100,7 +100,7 @@
 - (unsigned long long)accessibilityTraits;
 - (void)beginTrackingPinch:(id)arg1;
 - (BOOL)borderIsVisible;
-- (float)completeTrackingPinch:(id)arg1 toState:(NSInteger)arg2 duration:(double)arg3;
+- (float)completeTrackingPinch:(id)arg1 toState:(int)arg2 duration:(double)arg3;
 - (float)continueTrackingPinch:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contractedFrame;
 - (void)dealloc;
@@ -108,8 +108,8 @@
 - (float)imageRotationAngle;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2 withBorder:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 withBorder:(BOOL)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isBeingManipulated;

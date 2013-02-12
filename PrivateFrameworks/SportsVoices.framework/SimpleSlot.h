@@ -5,10 +5,10 @@
 @class Cell;
 
 @interface SimpleSlot : Slot {
-    Cell *cell;
+    Cell *_cell;
 }
 
-@property(retain) Cell *cell;
+@property(retain) Cell * cell;
 
 + (id)blank;
 + (id)empty;
@@ -18,6 +18,7 @@
 - (id)attributeForKey:(id)arg1;
 - (id)cell;
 - (id)content;
+- (void)dealloc;
 - (id)description;
 - (id)initFromPlist:(id)arg1;
 - (id)initWithCell:(id)arg1;

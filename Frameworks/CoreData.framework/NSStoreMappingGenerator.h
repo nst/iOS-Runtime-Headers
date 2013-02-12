@@ -10,8 +10,8 @@
 
 - (id)externalNameForEntityName:(id)arg1;
 - (id)externalNameForPropertyName:(id)arg1;
-- (id)internalNameForEntityName:(id)arg1 version:(NSInteger)arg2;
-- (id)internalNameForPropertyName:(id)arg1 version:(NSInteger)arg2;
+- (id)internalNameForEntityName:(id)arg1 version:(int)arg2;
+- (id)internalNameForPropertyName:(id)arg1 version:(int)arg2;
 - (id)joinsForRelationship:(id)arg1;
 - (id)mappingForAttribute:(id)arg1 forConfigurationWithName:(id)arg2;
 - (id)mappingForEntity:(id)arg1 forConfigurationWithName:(id)arg2;

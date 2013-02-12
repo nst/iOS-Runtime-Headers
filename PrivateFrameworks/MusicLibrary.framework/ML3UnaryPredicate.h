@@ -8,15 +8,15 @@
     ML3Predicate *_predicate;
 }
 
-@property(retain) ML3Predicate *predicate;
+@property(retain) ML3Predicate * predicate;
 
 + (id)predicateWithPredicate:(id)arg1;
 
 - (id)SQLJoinClausesForClass:(Class)arg1;
-- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
+- (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPredicate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

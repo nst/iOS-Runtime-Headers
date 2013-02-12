@@ -2,19 +2,26 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSDictionary, NSString;
+
 @interface CATransition : CAAnimation {
 }
 
-@property(copy) NSDictionary *options;
-@property(copy) NSString *subtype;
-@property(copy) NSString *type;
 @property float endProgress;
 @property(retain) id filter;
+@property(copy) NSDictionary * options;
 @property float startProgress;
-@property NSUInteger transitionFlags;
+@property(copy) NSString * subtype;
+@property unsigned int transitionFlags;
+@property(copy) NSString * type;
 
-- (struct Animation { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; NSUInteger x7; NSUInteger x8; }*)_copyRenderAnimationForLayer:(id)arg1;
-- (NSUInteger)_propertyFlagsForLayer:(id)arg1;
+- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; unsigned int x7; unsigned int x8; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (unsigned int)_propertyFlagsForLayer:(id)arg1;
 - (float)endProgress;
 - (id)filter;
 - (id)options;
@@ -23,11 +30,11 @@
 - (void)setOptions:(id)arg1;
 - (void)setStartProgress:(float)arg1;
 - (void)setSubtype:(id)arg1;
-- (void)setTransitionFlags:(NSUInteger)arg1;
+- (void)setTransitionFlags:(unsigned int)arg1;
 - (void)setType:(id)arg1;
 - (float)startProgress;
 - (id)subtype;
-- (NSUInteger)transitionFlags;
+- (unsigned int)transitionFlags;
 - (id)type;
 
 @end

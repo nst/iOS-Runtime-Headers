@@ -2,27 +2,18 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CHPCategoryAndSeriesReordering : EDProcessor {
-     /* Encoded args for previous method: B16@0:4@8B12 */
-     /* Encoded args for previous method: v20@0:4@8I12B16 */
-     /* Encoded args for previous method: v20@0:4@8I12B16 */
-     /* Encoded args for previous method: v20@0:4@8I12B16 */
-     /* Encoded args for previous method: B12@0:4@8 */
 }
 
 - (void)applyCategoryReorderingPreprocessor:(id)arg1;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
 - (void)applySeriesReorderingPreprocessor:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isObjectSupported:(id)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isObjectSupportedForSeriesReorderingPreprocessor:(id)arg1 isCategoryOrderReversed:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-- (void)reorderData:(id)arg1 dataPointCount:(NSUInteger)arg2 byRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
-- (void)reorderDataFormula:(id)arg1 dataPointCount:(NSUInteger)arg2 byRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
-- (void)reorderDataValues:(id)arg1 dataPointCount:(NSUInteger)arg2;
-- (void)reorderSeriesCategory:(id)arg1 dataPointCount:(NSUInteger)arg2 byRow:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
-- (void)reorderValueProperties:(id)arg1 dataPointCount:(NSUInteger)arg2;
+- (bool)isObjectSupported:(id)arg1;
+- (bool)isObjectSupportedForSeriesReorderingPreprocessor:(id)arg1 isCategoryOrderReversed:(bool)arg2;
+- (void)reorderData:(id)arg1 dataPointCount:(unsigned int)arg2 byRow:(bool)arg3;
+- (void)reorderDataFormula:(id)arg1 dataPointCount:(unsigned int)arg2 byRow:(bool)arg3;
+- (void)reorderDataValues:(id)arg1 dataPointCount:(unsigned int)arg2;
+- (void)reorderSeriesCategory:(id)arg1 dataPointCount:(unsigned int)arg2 byRow:(bool)arg3;
+- (void)reorderValueProperties:(id)arg1 dataPointCount:(unsigned int)arg2;
 
 @end

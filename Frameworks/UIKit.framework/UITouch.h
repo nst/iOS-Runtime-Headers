@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIView, UIWindow;
+@class NSArray, NSMutableArray, UIView, UIWindow;
 
 @interface UITouch : NSObject {
     struct CGPoint { 
@@ -23,40 +23,40 @@
     unsigned char _pathIdentity;
     unsigned char _pathIndex;
     float _pathMajorRadius;
-    NSInteger _phase;
+    int _phase;
     } _previousLocationInWindow;
-    NSInteger _savedPhase;
-    NSUInteger _tapCount;
+    int _savedPhase;
+    unsigned int _tapCount;
     double _timestamp;
     } _touchFlags;
     UIView *_view;
     UIWindow *_window;
 }
 
-@property float _pathMajorRadius; /* unknown property attribute: S_setPathMajorRadius: */
-@property unsigned char _pathIdentity; /* unknown property attribute: S_setPathIdentity: */
-@property unsigned char _pathIndex; /* unknown property attribute: S_setPathIndex: */
-@property(copy,readonly) NSArray *gestureRecognizers;
-@property(retain) UIView *gestureView;
-@property(retain) UIView *view;
-@property(retain,readonly) UIView *view;
-@property(retain) UIWindow *window;
-@property(retain,readonly) UIWindow *window;
+@property(setter=_setPathIdentity:) unsigned char _pathIdentity;
+@property(setter=_setPathIndex:) unsigned char _pathIndex;
+@property(setter=_setPathMajorRadius:) float _pathMajorRadius;
+@property(copy,readonly) NSArray * gestureRecognizers;
+@property(retain) UIView * gestureView;
 @property BOOL isTap;
 @property BOOL isWarped;
-@property NSInteger phase;
-@property(readonly) NSInteger phase;
+@property int phase;
+@property(readonly) int phase;
 @property BOOL sentTouchesEnded;
-@property NSUInteger tapCount;
-@property(readonly) NSUInteger tapCount;
+@property unsigned int tapCount;
+@property(readonly) unsigned int tapCount;
 @property double timestamp;
 @property(readonly) double timestamp;
+@property(retain) UIView * view;
+@property(retain,readonly) UIView * view;
+@property(retain) UIWindow * window;
+@property(retain,readonly) UIWindow * window;
 
-+ (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(NSInteger)arg2 view:(id)arg3;
++ (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(int)arg2 view:(id)arg3;
 
 - (void)_addGestureRecognizer:(id)arg1;
 - (void)_clearGestureRecognizers;
-- (NSInteger)_compareIndex:(id)arg1;
+- (int)_compareIndex:(id)arg1;
 - (id)_gestureRecognizers;
 - (BOOL)_isFirstTouchForView;
 - (void)_loadStateFromTouch:(id)arg1;
@@ -67,7 +67,7 @@
 - (float)_pathMajorRadius;
 - (id)_phaseDescription;
 - (void)_popPhase;
-- (void)_pushPhase:(NSInteger)arg1;
+- (void)_pushPhase:(int)arg1;
 - (void)_removeGestureRecognizer:(id)arg1;
 - (void)_setIsFirstTouchForView:(BOOL)arg1;
 - (void)_setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1 resetPrevious:(BOOL)arg2;
@@ -78,25 +78,25 @@
 - (id)description;
 - (id)gestureRecognizers;
 - (id)gestureView;
-- (NSInteger)info;
+- (int)info;
 - (BOOL)isDelayed;
 - (BOOL)isTap;
 - (BOOL)isWarped;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (NSInteger)phase;
+- (int)phase;
 - (struct CGPoint { float x1; float x2; })previousLocationInView:(id)arg1;
 - (BOOL)sentTouchesEnded;
 - (void)setGestureView:(id)arg1;
 - (void)setIsDelayed:(BOOL)arg1;
 - (void)setIsTap:(BOOL)arg1;
 - (void)setIsWarped:(BOOL)arg1;
-- (void)setPhase:(NSInteger)arg1;
+- (void)setPhase:(int)arg1;
 - (void)setSentTouchesEnded:(BOOL)arg1;
-- (void)setTapCount:(NSUInteger)arg1;
+- (void)setTapCount:(unsigned int)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setView:(id)arg1;
 - (void)setWindow:(id)arg1;
-- (NSUInteger)tapCount;
+- (unsigned int)tapCount;
 - (double)timestamp;
 - (id)view;
 - (id)window;

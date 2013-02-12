@@ -9,7 +9,7 @@
     BOOL _networkNotified;
     struct __CFDictionary { } *_networkObservers;
     struct __SCNetworkReachability { } *_networkReach;
-    NSUInteger _networkReachability;
+    unsigned int _networkReachability;
     BOOL _networkReachable;
     NSMutableDictionary *_reachabilityRequests;
     BOOL _wifiEnabled;
@@ -21,9 +21,9 @@
 + (id)sharedNetworkObserver;
 
 - (void)_networkObserversInitialize;
-- (void)_networkReachableCallBack:(NSUInteger)arg1;
+- (void)_networkReachableCallBack:(unsigned int)arg1;
 - (void)_networkReachableFirstCallBack:(id)arg1;
-- (void)_wifiCallBack:(NSUInteger)arg1;
+- (void)_wifiCallBack:(unsigned int)arg1;
 - (void)_wifiFirstCallBack:(id)arg1;
 - (void)_wifiObserversInitialize;
 - (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;

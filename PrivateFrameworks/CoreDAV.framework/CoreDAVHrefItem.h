@@ -8,12 +8,12 @@
     NSURL *_baseURL;
 }
 
-@property(retain) NSURL *baseURL;
+@property(retain) NSURL * baseURL;
 
 - (id)baseURL;
 - (void)dealloc;
+- (id)description;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (void)parserSuggestsBaseURL:(id)arg1;
 - (id)payloadAsFullURL;

@@ -3,20 +3,20 @@
  */
 
 @interface ISExternalApplicationObserver : NSObject {
-    NSUInteger _ignoreCount;
-    NSInteger _lock;
-    NSUInteger _syncCount;
-    NSUInteger _watchCount;
+    unsigned int _ignoreCount;
+    int _lock;
+    unsigned int _syncCount;
+    unsigned int _watchCount;
 }
 
 + (id)sharedInstance;
 
 - (void)_handleExternalApplicationChange;
 - (void)_reallyHandleExternalApplicationChange;
-- (void)beginIgnoringChanges:(NSUInteger)arg1;
-- (void)cancelIgnoringChanges:(NSUInteger)arg1;
+- (void)beginIgnoringChanges:(unsigned int)arg1;
+- (void)cancelIgnoringChanges:(unsigned int)arg1;
 - (void)dealloc;
-- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
+- (void)iTunesSyncHasCompleted:(int)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)init;
 - (BOOL)isWatching;

@@ -28,8 +28,8 @@
 - (void)dealloc;
 - (void)frameWillBeRemoved:(id)arg1;
 - (id)init;
-- (void)performActionNumber:(NSInteger)arg1 forURL:(id)arg2 forFrame:(id)arg3 inView:(id)arg4 interactionDelegate:(id)arg5;
-- (void)performActionNumber:(NSInteger)arg1 forURL:(id)arg2 forFrame:(id)arg3 withPopoverController:(id)arg4 interactionDelegate:(id)arg5;
+- (void)performActionNumber:(int)arg1 forURL:(id)arg2 forFrame:(id)arg3 inView:(id)arg4 interactionDelegate:(id)arg5;
+- (void)performActionNumber:(int)arg1 forURL:(id)arg2 forFrame:(id)arg3 withPopoverController:(id)arg4 interactionDelegate:(id)arg5;
 - (void)performDefaultActionForURL:(id)arg1 forFrame:(id)arg2 inView:(id)arg3;
 - (void)performDefaultActionForURL:(id)arg1 inFrame:(id)arg2;
 - (void)resetResultsForFrame:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)setIgnoreUIKitNotifications:(BOOL)arg1 forFrame:(id)arg2;
 - (void)setResults:(struct __CFArray { }*)arg1 forFrame:(id)arg2;
 - (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1 forFrame:(id)arg2;
-- (void)startURLificationForFrame:(id)arg1 detectedTypes:(NSUInteger)arg2 options:(NSInteger)arg3;
-- (void)startURLificationForFrame:(id)arg1 detectedTypes:(NSUInteger)arg2;
+- (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned int)arg2 options:(int)arg3;
+- (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned int)arg2;
 
 @end

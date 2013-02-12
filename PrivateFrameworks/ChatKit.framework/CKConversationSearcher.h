@@ -6,17 +6,17 @@
 
 @interface CKConversationSearcher : NSObject <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, SPDaemonQueryDelegate> {
     struct _CKSpotlightSearchResultList { 
-        NSUInteger length; 
-        NSUInteger capacity; 
+        unsigned int length; 
+        unsigned int capacity; 
         struct _CKSpotlightSearchResult {} *array; 
     struct _CKSpotlightSearchResultList { 
-        NSUInteger length; 
-        NSUInteger capacity; 
+        unsigned int length; 
+        unsigned int capacity; 
         struct _CKSpotlightSearchResult {} *array; 
     } _allSearchResults;
     <CKConversationSearcherDelegate> *_delegate;
     SPSearchResultDeserializer *_deserializer;
-    NSUInteger _deserializerIndex;
+    unsigned int _deserializerIndex;
     } _perConversationSearchResults;
     SPDaemonQueryToken *_queryToken;
     NSTimer *_resultProcessor;
@@ -25,7 +25,7 @@
     BOOL _shouldDisplayNoResults;
 }
 
-@property(readonly) UISearchDisplayController *searchController;
+@property(readonly) UISearchDisplayController * searchController;
 
 - (void)_cancel;
 - (void)_processSearchResults;
@@ -43,7 +43,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

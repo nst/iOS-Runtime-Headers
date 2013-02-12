@@ -12,7 +12,7 @@
     UIImageView *_stillImage;
 }
 
-@property CGSize originalImageSize;
+@property struct CGSize { float width; float height; } originalImageSize;
 
 + (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (struct CGPoint { float x1; float x2; })offsetForBubbleInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;

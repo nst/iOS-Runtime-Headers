@@ -13,9 +13,9 @@
     UIViewController *_presentedViewController;
 }
 
-@property(retain) UIView *baseView;
-@property(retain) UIPopoverController *popoverController;
+@property(retain) UIView * baseView;
 @property(retain) id interactionDelegate;
+@property(retain) UIPopoverController * popoverController;
 
 - (void)_augmentRecord:(void*)arg1 withResult:(struct __DDResult { }*)arg2;
 - (void)_cleanup;
@@ -25,25 +25,25 @@
 - (void)_presentCurrentViewControllerInWindow:(id)arg1;
 - (void)_presentEventCreationPanelForResult:(struct __DDResult { }*)arg1 context:(id)arg2;
 - (void)_presentNewPerson:(void*)arg1;
-- (void)_presentPeoplePickerForValue:(id)arg1 property:(NSInteger)arg2;
+- (void)_presentPeoplePickerForValue:(id)arg1 property:(int)arg2;
 - (id)actionNamesForResult:(struct __DDResult { }*)arg1;
 - (id)actionNamesForURL:(id)arg1;
 - (id)baseView;
 - (void)dealloc;
 - (void)dismissCurrentController;
-- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
+- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)fallBackViewControllerWasDismissed:(id)arg1;
 - (id)init;
 - (id)interactionDelegate;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (void)peoplePickerNavigationController:(id)arg1 insertEditorDidConfirm:(BOOL)arg2 forPerson:(void*)arg3;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(NSInteger*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(int*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)performActionNumber:(NSInteger)arg1 forResult:(struct __DDResult { }*)arg2 isDefaultAction:(BOOL)arg3 context:(id)arg4;
-- (void)performActionNumber:(NSInteger)arg1 forURL:(id)arg2 isDefaultAction:(BOOL)arg3 context:(id)arg4;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (void)performActionNumber:(int)arg1 forResult:(struct __DDResult { }*)arg2 isDefaultAction:(BOOL)arg3 context:(id)arg4;
+- (void)performActionNumber:(int)arg1 forURL:(id)arg2 isDefaultAction:(BOOL)arg3 context:(id)arg4;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setBaseView:(id)arg1;

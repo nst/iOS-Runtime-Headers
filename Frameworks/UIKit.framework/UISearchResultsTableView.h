@@ -8,7 +8,7 @@
     UISearchDisplayController *_controller;
 }
 
-@property UISearchDisplayController *controller;
+@property UISearchDisplayController * controller;
 
 + (void)_initializeSafeCategory;
 

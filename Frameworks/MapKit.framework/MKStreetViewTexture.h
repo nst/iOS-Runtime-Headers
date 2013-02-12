@@ -6,25 +6,25 @@
     struct CGSize { 
         float width; 
         float height; 
-    NSInteger _height;
+    int _height;
     } _imageSize;
-    NSUInteger _textureName;
-    NSInteger _width;
+    unsigned int _textureName;
+    int _width;
 }
 
-@property(readonly) NSInteger height;
-@property(readonly) CGSize imageSize;
-@property(readonly) NSUInteger textureName;
-@property(readonly) NSInteger width;
+@property(readonly) int height;
+@property(readonly) struct CGSize { float width; float height; } imageSize;
+@property(readonly) unsigned int textureName;
+@property(readonly) int width;
 
 - (void)dealloc;
-- (NSInteger)height;
+- (int)height;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
 - (id)initWithImageName:(id)arg1;
 - (BOOL)loadCGImage:(struct CGImage { }*)arg1;
 - (BOOL)loadImageWithName:(id)arg1;
-- (NSUInteger)textureName;
-- (NSInteger)width;
+- (unsigned int)textureName;
+- (int)width;
 
 @end

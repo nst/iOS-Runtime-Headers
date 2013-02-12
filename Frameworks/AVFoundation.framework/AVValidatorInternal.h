@@ -10,14 +10,15 @@
 
 @interface AVValidatorInternal : NSObject {
     id clientValidatorHandler;
+    int figError;
     struct OpaqueFigSimpleMutex { } *figMediaValidatorMutex;
     struct FigOpaqueMediaValidator { } *figMediaValidatorRef;
+    unsigned int flags;
     NSURL *initialURL;
     float progress;
     NSURL *resolvedURL;
-    BOOL resourceIsInspectable;
     BOOL resourceIsPlayable;
-    NSInteger status;
+    int status;
     NSDictionary *validationPlist;
 }
 

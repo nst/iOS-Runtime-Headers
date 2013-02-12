@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKContentEntryBridge, CKTextContentView, NSMutableArray, UITapGestureRecognizer, UIView;
+@class CKContentEntryBridge, CKTextContentView, NSArray, NSMutableArray, UITapGestureRecognizer, UIView;
 
 @interface CKContentEntryView : UIScrollView <CKEntryField, UITextContentViewDelegate, CKContentEntryBridgeClient, UIGestureRecognizerDelegate> {
     unsigned int _showsSubject : 1;
@@ -18,8 +18,8 @@
     CKTextContentView *_textView;
 }
 
-@property(readonly) NSArray *contentViews;
-@property(readonly) NSUInteger displayedLines;
+@property(readonly) NSArray * contentViews;
+@property(readonly) unsigned int displayedLines;
 @property BOOL showsSubject;
 
 + (void)_initializeSafeCategory;
@@ -39,18 +39,18 @@
 - (void)clearMessage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentEntryFrame:(BOOL)arg1;
 - (id)contentViews;
-- (NSInteger)cursorPosition;
+- (int)cursorPosition;
 - (void)dealloc;
 - (void)disableEditing;
-- (NSUInteger)displayedLines;
-- (id)documentFragmentForPasteboardItemAtIndex:(NSInteger)arg1 inTextContentView:(id)arg2;
+- (unsigned int)displayedLines;
+- (id)documentFragmentForPasteboardItemAtIndex:(int)arg1 inTextContentView:(id)arg2;
 - (id)entryFieldDelegate;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)hasContent;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertMessagePart:(id)arg1;
 - (BOOL)isActive;
-- (NSInteger)lastCursorPosition;
+- (int)lastCursorPosition;
 - (void)loadSubviews;
 - (void)makeActive;
 - (id)messageComposition;
@@ -65,7 +65,7 @@
 - (void)setContentHidden:(BOOL)arg1 subjectHidden:(BOOL)arg2;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setCursorPosition:(NSInteger)arg1;
+- (void)setCursorPosition:(int)arg1;
 - (void)setEntryFieldDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIgnoreAnimations:(BOOL)arg1;
@@ -80,7 +80,7 @@
 - (void)tapGesture:(id)arg1;
 - (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)textContentView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementText:(id)arg3;
+- (BOOL)textContentView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (void)textContentViewDidBeginEditing:(id)arg1;
 - (void)textContentViewDidChange:(id)arg1;
 - (BOOL)textContentViewShouldBeginEditing:(id)arg1;

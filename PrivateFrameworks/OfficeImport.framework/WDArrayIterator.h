@@ -6,7 +6,7 @@
 
 @interface WDArrayIterator : WDIterator {
     NSArray *mArray;
-    NSUInteger mNextIndex;
+    unsigned int mNextIndex;
 }
 
 - (BOOL)hasNext;

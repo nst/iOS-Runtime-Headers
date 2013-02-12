@@ -10,8 +10,8 @@
     BOOL _footerVisible;
 }
 
-@property(retain) UIView *contentView;
-@property(retain) UIView *footerView;
+@property(retain) UIView * contentView;
+@property(retain) UIView * footerView;
 @property(getter=isFooterVisible) BOOL footerVisible;
 
 - (id)contentView;

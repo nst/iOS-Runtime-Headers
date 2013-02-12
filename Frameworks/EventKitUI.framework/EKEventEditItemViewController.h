@@ -17,12 +17,12 @@
     <EKEventEditItemViewControllerDelegate> *_editDelegate;
     } _initialFrame;
     BOOL _modal;
-    NSInteger _subitem;
+    int _subitem;
 }
 
-@property <EKEventEditItemViewControllerDelegate> *editDelegate;
+@property <EKEventEditItemViewControllerDelegate> * editDelegate;
 @property BOOL modal;
-@property NSInteger subitem;
+@property int subitem;
 
 - (void)_saveAndDismissWithForce:(BOOL)arg1;
 - (void)cancel;
@@ -36,9 +36,9 @@
 - (void)saveAndDismissWithExtremePrejudice;
 - (void)setEditDelegate:(id)arg1;
 - (void)setModal:(BOOL)arg1;
-- (void)setSubitem:(NSInteger)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (NSInteger)subitem;
+- (void)setSubitem:(int)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (int)subitem;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

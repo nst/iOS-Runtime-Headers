@@ -14,13 +14,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
-- (id)localizedName:(NSInteger)arg1 locale:(id)arg2;
+- (id)localizedName:(int)arg1 locale:(id)arg2;
 - (id)name;
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
 - (oneway void)release;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)retain;
-- (NSUInteger)retainCount;
-- (NSInteger)secondsFromGMTForDate:(id)arg1;
+- (unsigned int)retainCount;
+- (int)secondsFromGMTForDate:(id)arg1;
 
 @end

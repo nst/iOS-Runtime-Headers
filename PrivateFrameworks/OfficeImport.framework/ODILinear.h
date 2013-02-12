@@ -9,7 +9,7 @@
     BOOL mIsHorizontal;
     BOOL mIsTextCenteredHorizontally;
     BOOL mIsTextCenteredVertically;
-    NSUInteger mMaxPointCount;
+    unsigned int mMaxPointCount;
     float mPadding;
     float mPointHeight;
     ODIState *mState;
@@ -33,7 +33,7 @@
 - (void)setIsTextCenteredHorizontally:(BOOL)arg1;
 - (void)setIsTextCenteredVertically:(BOOL)arg1;
 - (void)setLogicalBounds;
-- (void)setMaxPointCount:(NSUInteger)arg1;
+- (void)setMaxPointCount:(unsigned int)arg1;
 - (void)setPadding:(float)arg1;
 - (void)setPointHeight:(float)arg1;
 - (void)setStretch:(BOOL)arg1;

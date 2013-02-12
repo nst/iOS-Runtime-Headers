@@ -6,8 +6,8 @@
 
 @interface NSSubrangeData : NSData {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     unsigned int _retainCount : 29;
     unsigned int _reserved : 3;
     NSData *_data;
@@ -18,11 +18,11 @@
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)getBytes:(void*)arg1 length:(NSUInteger)arg2;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getBytes:(void*)arg1;
 - (id)init;
-- (id)initWithData:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
-- (NSUInteger)length;
+- (id)initWithData:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)length;
 
 @end

@@ -6,21 +6,21 @@
 
 @interface ValidationObject : IMThreadedWorkUnit {
     NSArray *_certs;
-    NSUInteger _result;
+    unsigned int _result;
     NSString *_screenName;
-    NSUInteger _usage;
+    unsigned int _usage;
 }
 
-@property(readonly) NSArray *certificates;
-@property(readonly) NSUInteger result;
+@property(readonly) NSArray * certificates;
+@property(readonly) unsigned int result;
 
-+ (id)validateCerts:(id)arg1 screenName:(id)arg2 usage:(NSUInteger)arg3;
++ (id)validateCerts:(id)arg1 screenName:(id)arg2 usage:(unsigned int)arg3;
 
 - (void)_workerThread;
 - (void)_workerThreadFinished;
 - (id)certificates;
 - (void)dealloc;
-- (id)initWithCerts:(id)arg1 screenName:(id)arg2 usage:(NSUInteger)arg3;
+- (id)initWithCerts:(id)arg1 screenName:(id)arg2 usage:(unsigned int)arg3;
 - (unsigned long)result;
 - (void)startThread;
 - (void)stopWatchingThread;

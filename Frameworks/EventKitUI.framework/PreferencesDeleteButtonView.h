@@ -8,7 +8,7 @@
     UIButton *_button;
 }
 
-@property(retain,readonly) UIButton *button;
+@property(retain,readonly) UIButton * button;
 
 + (float)defaultHeight;
 

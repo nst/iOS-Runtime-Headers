@@ -6,33 +6,33 @@
 
 @interface ICCameraFileProperties : NSObject {
     BOOL _fetchingMetadata;
-    NSInteger _fetchingMetadataLock;
+    int _fetchingMetadataLock;
     BOOL _fetchingThumbnail;
-    NSInteger _fetchingThumbnailLock;
+    int _fetchingThumbnailLock;
     long long _fileSize;
     BOOL _hasMetadata;
     BOOL _hasOverriddenOrientation;
     BOOL _hasThumbnail;
     NSMutableDictionary *_metadata;
     NSMutableDictionary *_metadata_hidden;
-    NSUInteger _orientation;
+    unsigned int _orientation;
     struct CGImage { } *_originalThumbnail;
     BOOL _raw;
     struct CGImage { } *_thumbnail;
 }
 
-@property(retain) NSMutableDictionary *metadata;
-@property(retain) NSMutableDictionary *metadata_hidden;
-@property CGImage *originalThumbnail;
-@property CGImage *thumbnail;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
 @property long long fileSize;
 @property BOOL hasMetadata;
 @property BOOL hasOverriddenOrientation;
 @property BOOL hasThumbnail;
-@property NSUInteger orientation;
+@property(retain) NSMutableDictionary * metadata;
+@property(retain) NSMutableDictionary * metadata_hidden;
+@property unsigned int orientation;
+@property struct CGImage { }* originalThumbnail;
 @property(getter=isRaw) BOOL raw;
+@property struct CGImage { }* thumbnail;
 
 - (void)dealloc;
 - (BOOL)fetchingMetadata;
@@ -45,7 +45,7 @@
 - (BOOL)isRaw;
 - (id)metadata;
 - (id)metadata_hidden;
-- (NSUInteger)orientation;
+- (unsigned int)orientation;
 - (struct CGImage { }*)originalThumbnail;
 - (void)setFetchingMetadata:(BOOL)arg1;
 - (void)setFetchingThumbnail:(BOOL)arg1;
@@ -55,7 +55,7 @@
 - (void)setHasThumbnail:(BOOL)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setMetadata_hidden:(id)arg1;
-- (void)setOrientation:(NSUInteger)arg1;
+- (void)setOrientation:(unsigned int)arg1;
 - (void)setOriginalThumbnail:(struct CGImage { }*)arg1;
 - (void)setRaw:(BOOL)arg1;
 - (void)setThumbnail:(struct CGImage { }*)arg1;

@@ -13,17 +13,17 @@
     NSString *_uniqueId;
 }
 
-@property(retain) NSString *creativeLine1;
-@property(retain) NSString *creativeLine2;
-@property(retain) NSString *headline;
-@property(retain) NSString *linkText;
-@property(retain) NSString *linkUrl;
-@property(retain) NSString *uniqueId;
+@property(retain) NSString * creativeLine1;
+@property(retain) NSString * creativeLine2;
 @property(readonly) BOOL hasCreativeLine1;
 @property(readonly) BOOL hasCreativeLine2;
 @property(readonly) BOOL hasHeadline;
 @property(readonly) BOOL hasLinkText;
 @property(readonly) BOOL hasLinkUrl;
+@property(retain) NSString * headline;
+@property(retain) NSString * linkText;
+@property(retain) NSString * linkUrl;
+@property(retain) NSString * uniqueId;
 
 - (id)creativeLine1;
 - (id)creativeLine2;

@@ -20,34 +20,36 @@
     NSString *_localizedShortName;
     NSString *_name;
     NSDictionary *_personToIDMap;
-    NSUInteger _screenNameSensitivity;
+    unsigned int _screenNameSensitivity;
     NSDictionary *_serviceDefaults;
     NSDictionary *_serviceProps;
+    BOOL _supportsPhoneNumberMapping;
     BOOL _supportsSMS;
 }
 
-@property(retain,readonly) NSArray *accountIDs;
-@property(retain,readonly) NSArray *addressBookProperties;
-@property(retain,readonly) NSString *addressBookProperty;
-@property(retain,readonly) NSDictionary *cardMap;
-@property(retain) NSDictionary *defaultAccountSettings;
-@property(retain,readonly) NSString *description;
-@property(retain,readonly) NSArray *emailDomains;
-@property(retain,readonly) NSString *internalName;
-@property(retain,readonly) NSString *name;
-@property(retain) NSDictionary *serviceDefaults;
-@property(retain,readonly) NSData *serviceImageData;
-@property(retain) NSDictionary *serviceProperties;
-@property(retain,readonly) NSString *shortName;
-@property(readonly) NSUInteger IDSensitivity;
+@property(readonly) unsigned int IDSensitivity;
 @property(readonly) Class accountClass;
+@property(retain,readonly) NSArray * accountIDs;
+@property(retain,readonly) NSArray * addressBookProperties;
+@property(retain,readonly) NSString * addressBookProperty;
 @property(readonly) BOOL allowsMultipleConnections;
-@property(readonly) NSInteger buddyNotesMaxByteLength;
+@property(readonly) int buddyNotesMaxByteLength;
+@property(retain,readonly) NSDictionary * cardMap;
+@property(retain) NSDictionary * defaultAccountSettings;
+@property(retain,readonly) NSString * description;
+@property(retain,readonly) NSArray * emailDomains;
 @property(readonly) BOOL handlesChatInvites;
+@property(retain,readonly) NSString * internalName;
 @property(readonly) BOOL isPersistent;
 @property(readonly) BOOL isPlugInService;
+@property(retain,readonly) NSString * name;
+@property(retain) NSDictionary * serviceDefaults;
+@property(retain,readonly) NSData * serviceImageData;
+@property(retain) NSDictionary * serviceProperties;
+@property(retain,readonly) NSString * shortName;
 @property(readonly) BOOL supportsAdding;
 @property(readonly) BOOL supportsAuthorization;
+@property(readonly) BOOL supportsIDNormalization;
 @property(readonly) BOOL supportsRegistration;
 
 + (Class)serviceClass;
@@ -56,7 +58,7 @@
 + (id)supportedCountryCodes;
 + (BOOL)systemSupportsSMSSending;
 
-- (NSUInteger)IDSensitivity;
+- (unsigned int)IDSensitivity;
 - (id)_IDsToMapForIMPerson:(id)arg1;
 - (id)_abPropertiesBySanitizingABProperties:(id)arg1;
 - (void)_addAddressBookCards:(id)arg1 toMap:(id)arg2;
@@ -73,11 +75,11 @@
 - (id)addressBookProperties;
 - (id)addressBookProperty;
 - (BOOL)allowsMultipleConnections;
-- (NSInteger)buddyNotesMaxByteLength;
+- (int)buddyNotesMaxByteLength;
 - (id)canonicalFormOfID:(id)arg1;
 - (id)cardMap;
 - (void)clearIDToCardMap;
-- (NSInteger)compareNames:(id)arg1;
+- (int)compareNames:(id)arg1;
 - (void)dealloc;
 - (id)defaultAccountSettings;
 - (id)defaultImageDataForID:(id)arg1;
@@ -85,7 +87,7 @@
 - (id)description;
 - (void)disconnect;
 - (void)doneSetup;
-- (NSUInteger)emailDomainOfID:(id)arg1;
+- (unsigned int)emailDomainOfID:(id)arg1;
 - (id)emailDomains;
 - (BOOL)equalID:(id)arg1 andID:(id)arg2;
 - (BOOL)handlesChatInvites;
@@ -104,6 +106,7 @@
 - (id)myScreenNames;
 - (id)name;
 - (id)newIDToCardMap;
+- (id)normalizedFormOfID:(id)arg1;
 - (id)peopleWithScreenName:(id)arg1;
 - (id)screenNamesForIMPerson:(id)arg1;
 - (id)screenNamesForPerson:(id)arg1;
@@ -114,11 +117,12 @@
 - (void)setServiceDefaults:(id)arg1;
 - (void)setServiceProperties:(id)arg1;
 - (id)shortName;
-- (NSUInteger)status;
-- (void)statusChangedForAccount:(id)arg1 from:(NSUInteger)arg2 to:(NSUInteger)arg3;
+- (unsigned int)status;
+- (void)statusChangedForAccount:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
 - (id)subtypeInformationForAccount:(id)arg1;
 - (BOOL)supportsAdding;
 - (BOOL)supportsAuthorization;
+- (BOOL)supportsIDNormalization;
 - (BOOL)supportsRegistration;
 - (void)updateIDToCardMapWithNotification:(id)arg1;
 

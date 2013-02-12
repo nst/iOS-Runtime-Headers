@@ -2,57 +2,80 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class NSString;
+@class NSData, NSDictionary, NSString;
 
 @interface WebBookmark : NSObject {
     NSString *_UUID;
     BOOL _deletable;
     BOOL _editable;
+    NSDictionary *_extraAttributes;
     BOOL _folder;
-    NSUInteger _id;
+    BOOL _hidden;
+    unsigned int _id;
     BOOL _inserted;
-    NSUInteger _orderIndex;
-    NSUInteger _parentID;
-    NSUInteger _specialID;
+    unsigned int _orderIndex;
+    unsigned int _parentID;
+    NSString *_serverID;
+    unsigned int _specialID;
+    NSData *_syncData;
+    NSString *_syncKey;
     NSString *_title;
     NSString *_url;
 }
 
-@property(readonly) NSString *UUID;
-@property(retain) NSString *address;
-@property(retain) NSString *title;
+@property(readonly) NSString * UUID;
+@property(retain) NSString * address;
 @property(getter=isDeletable,readonly) BOOL deletable;
 @property(getter=isEditable,readonly) BOOL editable;
+@property(retain) NSDictionary * extraAttributes;
 @property(getter=isFolder,readonly) BOOL folder;
-@property(readonly) NSUInteger identifier;
+@property(getter=isHidden,readonly) BOOL hidden;
+@property(readonly) unsigned int identifier;
 @property(getter=isInserted,readonly) BOOL inserted;
-@property(readonly) NSUInteger parentID;
-@property(readonly) NSUInteger specialID;
+@property(readonly) unsigned int parentID;
+@property(retain) NSString * serverID;
+@property(readonly) unsigned int specialID;
+@property(retain) NSData * syncData;
+@property(retain) NSString * syncKey;
+@property(retain) NSString * title;
 
 - (id)UUID;
 - (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1;
-- (void)_markSpecial:(NSUInteger)arg1;
-- (NSUInteger)_orderIndex;
-- (void)_setID:(NSUInteger)arg1;
+- (void)_markSpecial:(unsigned int)arg1;
+- (unsigned int)_orderIndex;
+- (void)_setHidden:(BOOL)arg1;
+- (void)_setID:(unsigned int)arg1;
 - (void)_setInserted:(BOOL)arg1;
-- (void)_setOrderIndex:(NSUInteger)arg1;
-- (void)_setParentID:(NSUInteger)arg1;
+- (void)_setOrderIndex:(unsigned int)arg1;
+- (void)_setParentID:(unsigned int)arg1;
+- (void)_setUUID:(id)arg1;
 - (id)address;
 - (void)dealloc;
-- (NSUInteger)identifier;
+- (id)description;
+- (id)extraAttributes;
+- (unsigned int)identifier;
 - (id)init;
-- (id)initFolderWithParentID:(NSUInteger)arg1;
+- (id)initFolderWithParentID:(unsigned int)arg1;
 - (id)initStaticWithTitle:(id)arg1 address:(id)arg2;
 - (id)initWithTitle:(id)arg1 address:(id)arg2;
 - (BOOL)isDeletable;
 - (BOOL)isEditable;
 - (BOOL)isFolder;
+- (BOOL)isHidden;
 - (BOOL)isInserted;
 - (id)localizedTitle;
-- (NSUInteger)parentID;
+- (unsigned int)parentID;
+- (id)serverID;
 - (void)setAddress:(id)arg1;
+- (void)setExtraAttributes:(id)arg1;
+- (void)setServerID:(id)arg1;
+- (void)setSyncData:(id)arg1;
+- (void)setSyncKey:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (NSUInteger)specialID;
+- (id)shortTypeDescription;
+- (unsigned int)specialID;
+- (id)syncData;
+- (id)syncKey;
 - (id)title;
 
 @end

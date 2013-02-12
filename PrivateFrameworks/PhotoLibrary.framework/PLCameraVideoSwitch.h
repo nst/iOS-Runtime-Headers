@@ -27,7 +27,7 @@
     UIImage *_handleImage;
     UIImageView *_handleImageView;
     } _hitRect;
-    NSInteger _orientation;
+    int _orientation;
     float _trackingHorizontalLocation;
     UIImage *_videoImage;
     UIImageView *_videoImageView;
@@ -44,7 +44,7 @@
 - (void)_animateImageView:(id)arg1 toTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 withImage:(id)arg3 animated:(BOOL)arg4;
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_loadImages;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(NSInteger)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransformForDeviceOrientation:(int)arg1;
 - (void)_setOn:(BOOL)arg1 animationDuration:(float)arg2;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)_stopWatchingDeviceOrientationChanges;
@@ -63,13 +63,12 @@
 - (BOOL)isAccessibilityElement;
 - (BOOL)isOn;
 - (void)layoutSubviews;
-- (NSInteger)orientation;
+- (int)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setButtonOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setLockEnabled:(BOOL)arg1;
 - (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOn:(BOOL)arg1;
-- (void)willMoveToSuperview:(id)arg1;
 
 @end

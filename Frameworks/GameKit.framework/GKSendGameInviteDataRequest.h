@@ -13,12 +13,12 @@
     NSData *_sessionToken;
 }
 
-@property(retain) NSData *connectionData;
-@property(retain) NSString *message;
-@property(retain) NSArray *players;
-@property(retain) NSString *rid;
-@property(retain) NSData *sessionToken;
+@property(retain) NSData * connectionData;
 @property BOOL hosted;
+@property(retain) NSString * message;
+@property(retain) NSArray * players;
+@property(retain) NSString * rid;
+@property(retain) NSData * sessionToken;
 
 - (id)connectionData;
 - (void)dealloc;

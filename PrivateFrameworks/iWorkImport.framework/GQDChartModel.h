@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (long)direction;
 - (BOOL)hasFloatValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(float*)arg3;
-- (BOOL)hasIntValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(NSInteger*)arg3;
+- (BOOL)hasIntValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(int*)arg3;
 - (BOOL)hasStringValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(const struct __CFString {}**)arg3;
 - (BOOL)hasValueForProperty:(struct __CFString { }*)arg1 forSeriesAtIndex:(long)arg2 value:(const void**)arg3;
 - (BOOL)isFormulaChart;

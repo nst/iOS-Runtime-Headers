@@ -2,31 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, NSMutableDictionary, NSString;
 
 @interface SUSectionsResponse : NSObject {
     BOOL _cacheable;
-    NSInteger _responseType;
+    NSDictionary *_rawResponseDictionary;
+    int _responseType;
     NSArray *_sections;
-    NSDictionary *_sectionsDictionary;
+    NSMutableDictionary *_sectionsCache;
     BOOL _shouldResetUserOrdering;
 }
 
-@property(readonly) NSString *moreListTitle;
-@property(readonly) NSArray *sections;
-@property(readonly) NSDictionary *sectionsDictionary;
-@property(readonly) NSString *versionString;
+@property(readonly) NSArray * allSections;
 @property(getter=isCacheable) BOOL cacheable;
-@property(readonly) NSInteger responseType;
+@property(readonly) NSString * moreListTitle;
+@property(readonly) NSDictionary * rawResponseDictionary;
+@property(readonly) int responseType;
+@property(readonly) NSArray * sections;
+@property(readonly) NSDictionary * sectionsDictionary;
 @property BOOL shouldResetUserOrdering;
+@property(readonly) NSString * versionString;
 
+- (void)_applyDefaultSearchFieldConfigurationsToSections:(id)arg1;
 - (id)_newSectionsFromDictionary:(id)arg1;
+- (id)allSections;
 - (void)dealloc;
 - (id)init;
-- (id)initWithSectionsDictionary:(id)arg1 responseType:(NSInteger)arg2;
+- (id)initWithSectionsDictionary:(id)arg1 responseType:(int)arg2;
 - (BOOL)isCacheable;
 - (id)moreListTitle;
-- (NSInteger)responseType;
+- (id)rawResponseDictionary;
+- (int)responseType;
 - (id)sections;
 - (id)sectionsDictionary;
 - (void)setCacheable:(BOOL)arg1;

@@ -6,8 +6,8 @@
 }
 
 + (id)_convertStringToNumber:(id)arg1;
-+ (NSUInteger)_getCommonTypeFor:(id)arg1;
-+ (NSUInteger)_getITypeFor:(const char *)arg1;
++ (unsigned int)_getCommonTypeFor:(id)arg1;
++ (unsigned int)_getITypeFor:(const char *)arg1;
 + (BOOL)_isReservedWordInParser:(id)arg1;
 + (id)_parserableCollectionDescription:(id)arg1;
 + (id)_parserableDateDescription:(id)arg1;

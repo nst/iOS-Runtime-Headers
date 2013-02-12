@@ -13,7 +13,7 @@
     float _titleImagePadding;
     float _titleImageRightMargin;
     float _titleVerticalOffset;
-    NSInteger _tpcolor;
+    int _tpcolor;
 }
 
 + (void)_initializeSafeCategory;
@@ -22,26 +22,26 @@
 + (id)declineButtonImage;
 + (id)declineVideoButtonImage;
 + (float)defaultHeight;
-+ (float)defaultHeightForColor:(NSInteger)arg1;
-+ (void)preloadImagesForColor:(NSInteger)arg1;
++ (float)defaultHeightForColor:(int)arg1;
++ (void)preloadImagesForColor:(int)arg1;
 
 - (struct CGPoint { float x1; float x2; })_titleOriginForTitleSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)accessibilityLabel;
 - (void)dealloc;
-- (void)drawButtonPart:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawButtonPart:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawImageAtPoint:(struct CGPoint { float x1; float x2; })arg1 fraction:(float)arg2;
 - (void)drawTitleAtPoint:(struct CGPoint { float x1; float x2; })arg1 width:(float)arg2;
 - (BOOL)imageIsOptional;
-- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(NSInteger)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 imageIsOptional:(BOOL)arg5;
-- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(NSInteger)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 imageIsOptional:(BOOL)arg5;
+- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (float)minTitleMargin;
-- (NSInteger)pushButtonColor;
+- (int)pushButtonColor;
 - (void)setIconAlpha:(float)arg1;
 - (void)setIconVerticalOffset:(float)arg1;
 - (void)setImageIsOptional:(BOOL)arg1;
 - (void)setMinimumTitleFontSize:(float)arg1;
 - (void)setPlusSeparatedTitle:(id)arg1;
-- (void)setPushButtonColor:(NSInteger)arg1;
+- (void)setPushButtonColor:(int)arg1;
 - (void)setTitleImagePadding:(float)arg1;
 - (void)setTitleImageRightMargin:(float)arg1;
 - (void)setTitleVerticalOffset:(float)arg1;

@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class DOMNode, NSString;
+
 @interface DOMMutationEvent : DOMEvent {
 }
 
-@property(copy,readonly) NSString *attrName;
-@property(copy,readonly) NSString *newValue;
-@property(copy,readonly) NSString *prevValue;
-@property(retain,readonly) DOMNode *relatedNode;
 @property(readonly) unsigned short attrChange;
+@property(copy,readonly) NSString * attrName;
+@property(copy,readonly) NSString * newValue;
+@property(copy,readonly) NSString * prevValue;
+@property(retain,readonly) DOMNode * relatedNode;
 
 - (unsigned short)attrChange;
 - (id)attrName;

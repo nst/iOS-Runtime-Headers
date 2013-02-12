@@ -5,7 +5,7 @@
 @interface ABMapsTabletStyleProvider : ABTabletStyleProvider {
 }
 
-- (NSInteger)cardActionButtonType;
+- (int)cardActionButtonType;
 - (id)cardCellBackgroundColor;
 
 @end

@@ -5,7 +5,7 @@
 @class PDSlideMaster;
 
 @interface PDSlideLayout : PDSlideChild {
-    NSInteger mSlideLayoutType;
+    int mSlideLayoutType;
     PDSlideMaster *mSlideMaster;
 }
 
@@ -13,15 +13,15 @@
 - (id)defaultTheme;
 - (void)doneWithContent;
 - (id)initWithSlideMaster:(id)arg1;
-- (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
-- (id)parentShapePropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
+- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
+- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
 - (id)parentSlideBase;
-- (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
-- (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
+- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2;
+- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
-- (void)setSlideLayoutType:(NSInteger)arg1;
+- (void)setSlideLayoutType:(int)arg1;
 - (void)setSlideMaster:(id)arg1;
-- (NSInteger)slideLayoutType;
+- (int)slideLayoutType;
 - (id)slideMaster;
 
 @end

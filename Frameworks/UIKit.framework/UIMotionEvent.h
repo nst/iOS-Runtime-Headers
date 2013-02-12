@@ -6,43 +6,43 @@
 
 @interface UIMotionEvent : UIInternalEvent {
     double _highLevelTime;
-    NSUInteger _highPassStateIndex;
+    unsigned int _highPassStateIndex;
     float _highPassState[2];
     NSTimer *_idleTimer;
     double _lastMovementTime;
     double _lowEndTimeout;
-    NSUInteger _lowPassStateIndex;
+    unsigned int _lowPassStateIndex;
     float _lowPassState[10];
     id _motionAccelerometer;
     BOOL _sentMotionBegan;
     double _shakeStartTime;
-    NSInteger _shakeState;
-    NSInteger _stateMachineState;
-    NSInteger _subtype;
-    NSInteger notifyToken;
+    int _shakeState;
+    int _stateMachineState;
+    int _subtype;
+    int notifyToken;
 }
 
-@property NSInteger shakeState;
+@property int shakeState;
 
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
-- (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 z:(float)arg3 currentState:(NSInteger)arg4;
+- (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 z:(float)arg3 currentState:(int)arg4;
 - (void)_enablePeakDetectionIfNecessary;
-- (NSInteger)_feedStateMachine:(float)arg1 currentState:(NSInteger)arg2 timestamp:(double)arg3;
+- (int)_feedStateMachine:(float)arg1 currentState:(int)arg2 timestamp:(double)arg3;
 - (float)_highPass:(float)arg1;
 - (void)_idleTimerFired;
 - (id)_init;
 - (float)_lowPass:(float)arg1;
 - (void)_resetLowPassState;
-- (void)_setSubtype:(NSInteger)arg1;
-- (NSInteger)_shakeState;
+- (void)_setSubtype:(int)arg1;
+- (int)_shakeState;
 - (void)_willResume;
 - (void)_willSuspend;
-- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(NSInteger)arg6;
+- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (void)dealloc;
 - (id)description;
-- (void)setShakeState:(NSInteger)arg1;
-- (NSInteger)shakeState;
-- (NSInteger)subtype;
-- (NSInteger)type;
+- (void)setShakeState:(int)arg1;
+- (int)shakeState;
+- (int)subtype;
+- (int)type;
 
 @end

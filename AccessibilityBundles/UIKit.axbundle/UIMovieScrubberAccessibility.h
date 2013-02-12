@@ -11,8 +11,8 @@
 - (void)_accessibilityIncrementMockSlider:(id)arg1;
 - (void)_accessibilityNotifyDelegateEditingEndValueDidChange:(double)arg1;
 - (void)_accessibilityNotifyDelegateEditingStartValueDidChange:(double)arg1;
-- (void)_accessibilityNotifyDelegateScrubberDidBeginScrubbingWithHandle:(NSInteger)arg1;
-- (void)_accessibilityNotifyDelegateScrubberDidEndScrubbingWithHandle:(NSInteger)arg1;
+- (void)_accessibilityNotifyDelegateScrubberDidBeginScrubbingWithHandle:(int)arg1;
+- (void)_accessibilityNotifyDelegateScrubberDidEndScrubbingWithHandle:(int)arg1;
 - (void)_accessibilityNotifyDelegateWillBeginEditing;
 - (double)_accessibilitySliderDeltaForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_initSubviews;

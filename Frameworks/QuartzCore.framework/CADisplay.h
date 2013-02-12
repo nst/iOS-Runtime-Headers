@@ -2,46 +2,56 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
+@class CADisplayMode, NSArray, NSString;
+
 @interface CADisplay : NSObject {
-     /* Encoded args for previous method: @12@0:4^{Display=^^?@^{__CFString}^{__CFString}I{ModeSet=I[1I]}i{Bounds=iiii}BBBBI}8 */
     void *_impl;
 }
 
-@property(readonly) NSArray *availableModes;
-@property(retain) CADisplayMode *currentMode;
-@property(readonly) NSString *deviceName;
-@property(readonly) NSString *name;
-@property(readonly) CGRect bounds;
+@property(readonly) NSArray * availableModes;
+@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } bounds;
 @property(getter=isCloned,readonly) BOOL cloned;
-@property(readonly) NSUInteger displayId;
+@property(getter=isCloningSupported,readonly) BOOL cloningSupported;
+@property(copy) NSString * colorMode;
+@property(retain) CADisplayMode * currentMode;
+@property(readonly) NSString * deviceName;
+@property(readonly) unsigned int displayId;
 @property(getter=isExternal,readonly) BOOL external;
+@property(readonly) NSString * name;
 @property(getter=isOverscanned,readonly) BOOL overscanned;
+@property(readonly) CADisplayMode * preferredMode;
 @property(getter=isSupported,readonly) BOOL supported;
-@property(readonly) NSInteger tag;
+@property(readonly) int tag;
 
 + (id)TVOutDisplay;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)displays;
 + (id)mainDisplay;
 
-- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; NSUInteger x5; struct ModeSet { NSUInteger x_6_1_1; NSUInteger x_6_1_2[1]; } x6; NSInteger x7; struct Bounds { NSInteger x_8_1_1; NSInteger x_8_1_2; NSInteger x_8_1_3; NSInteger x_8_1_4; } x8; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x9; void*x10; void*x11; void*x12; NSUInteger x13; }*)arg1;
+- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; unsigned int x5; struct ModeSet { unsigned int x_6_1_1; unsigned int x_6_1_2[1]; } x6; int x7; int x8; int x9; struct Bounds { int x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; unsigned int x11; unsigned int x12; boolx13; boolx14; boolx15; boolx16; boolx17; unsigned int x18; boolx19; }*)arg1;
+- (void)_invalidate;
 - (void)_update;
 - (id)availableModes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)colorMode;
 - (id)currentMode;
 - (id)description;
 - (id)deviceName;
-- (NSUInteger)displayId;
+- (unsigned int)displayId;
 - (BOOL)isCloned;
+- (BOOL)isCloningSupported;
 - (BOOL)isExternal;
 - (BOOL)isOverscanned;
 - (BOOL)isSupported;
 - (id)name;
+- (id)preferredMode;
+- (void)setColorMode:(id)arg1;
 - (void)setCurrentMode:(id)arg1;
-- (NSInteger)tag;
+- (int)tag;
 
 @end

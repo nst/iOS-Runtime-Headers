@@ -10,28 +10,28 @@
 
 @interface LibraryMessage : MailMessage {
     id _deallocationHandler;
-    NSUInteger _libraryID;
-    NSUInteger _mailboxID;
+    unsigned int _libraryID;
+    unsigned int _mailboxID;
     NSString *_messageID;
     NSMutableDictionary *_metadata;
     NSMutableSet *_metadataChangedKeys;
     MFLock *_metadataLock;
-    NSUInteger _originalMailboxID;
+    unsigned int _originalMailboxID;
     NSString *_remoteID;
-    NSUInteger _size;
-    NSUInteger _uid;
+    unsigned int _size;
+    unsigned int _uid;
 }
 
-@property(copy) ? *deallocationHandler;
+@property(copy) id deallocationHandler;
 
-+ (id)messageWithLibraryID:(NSUInteger)arg1;
++ (id)messageWithLibraryID:(unsigned int)arg1;
 
 - (id)_attachmentStorageLocation;
 - (void)_updateUID;
 - (id)account;
 - (BOOL)canBeDeleted;
 - (void)commit;
-- (NSInteger)compareByUidWithMessage:(id)arg1;
+- (int)compareByUidWithMessage:(id)arg1;
 - (id)copyMessageInfo;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (id)dataPathForMimePart:(id)arg1;
@@ -39,26 +39,26 @@
 - (id)deallocationHandler;
 - (id)description;
 - (BOOL)hasTemporaryUid;
-- (NSUInteger)hash;
-- (id)initWithLibraryID:(NSUInteger)arg1;
+- (unsigned int)hash;
+- (id)initWithLibraryID:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLibraryMessage;
 - (BOOL)isMessageContentsLocallyAvailable;
 - (BOOL)isPartial;
 - (id)library;
-- (NSUInteger)libraryID;
+- (unsigned int)libraryID;
 - (id)mailbox;
-- (NSUInteger)mailboxID;
+- (unsigned int)mailboxID;
 - (id)mailboxName;
 - (void)markAsForwarded;
 - (void)markAsNotViewed;
 - (void)markAsReplied;
 - (void)markAsViewed;
 - (id)messageID;
-- (NSUInteger)messageSize;
+- (unsigned int)messageSize;
 - (id)messageStore;
 - (id)metadataValueForKey:(id)arg1;
-- (NSUInteger)originalMailboxID;
+- (unsigned int)originalMailboxID;
 - (id)originalMailboxURL;
 - (id)path;
 - (id)persistentID;
@@ -69,17 +69,17 @@
 - (void)setFlags:(unsigned long long)arg1;
 - (void)setHasTemporaryUid:(BOOL)arg1;
 - (void)setIsPartial:(BOOL)arg1;
-- (void)setLibraryID:(NSUInteger)arg1;
-- (void)setMailboxID:(NSUInteger)arg1;
+- (void)setLibraryID:(unsigned int)arg1;
+- (void)setMailboxID:(unsigned int)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(BOOL)arg2;
 - (void)setMessageFlags:(unsigned long long)arg1;
 - (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
-- (void)setMessageSize:(NSUInteger)arg1;
+- (void)setMessageSize:(unsigned int)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setMutableInfoFromMessage:(id)arg1;
-- (void)setOriginalMailboxID:(NSUInteger)arg1;
+- (void)setOriginalMailboxID:(unsigned int)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
-- (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(NSUInteger)arg3 mailboxID:(NSUInteger)arg4 originalMailboxID:(NSUInteger)arg5;
+- (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(unsigned int)arg3 mailboxID:(unsigned int)arg4 originalMailboxID:(unsigned int)arg5;
 - (void)setRemoteID:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (void)setUid:(unsigned long)arg1;

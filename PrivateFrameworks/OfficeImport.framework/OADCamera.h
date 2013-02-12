@@ -5,21 +5,21 @@
 @class OADRotation3D;
 
 @interface OADCamera : NSObject <NSCopying> {
-    NSInteger mCameraType;
+    int mCameraType;
     float mFieldOfView;
     OADRotation3D *mRotation;
     float mZoom;
 }
 
-- (NSInteger)cameraType;
+- (int)cameraType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (float)fieldOfView;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)rotation;
-- (void)setCameraType:(NSInteger)arg1;
+- (void)setCameraType:(int)arg1;
 - (void)setFieldOfView:(float)arg1;
 - (void)setRotation:(id)arg1;
 - (void)setZoom:(float)arg1;

@@ -6,7 +6,7 @@
 
 @interface MFSqliteMessageIDStore : NSObject {
     MailMessageLibrary *_library;
-    NSInteger _mailboxRowid;
+    int _mailboxRowid;
     NSString *_url;
 }
 
@@ -18,6 +18,6 @@
 - (id)initWithLibrary:(id)arg1 URLString:(id)arg2;
 - (id)knownMessageIDsFromSet:(id)arg1;
 - (id)messageIDsAddedBeforeDate:(double)arg1;
-- (NSUInteger)numberOfMessageIDs;
+- (unsigned int)numberOfMessageIDs;
 
 @end

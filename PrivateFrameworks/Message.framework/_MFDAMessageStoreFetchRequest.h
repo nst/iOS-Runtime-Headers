@@ -6,7 +6,7 @@
 
 @interface _MFDAMessageStoreFetchRequest : DAMailboxFetchMessageRequest <MFDAMailAccountRequest> {
     <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory> *consumer;
-    NSInteger format;
+    int format;
     Message *message;
     MimePart *part;
     BOOL partial;
@@ -14,7 +14,7 @@
 }
 
 - (unsigned long long)generationNumber;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)shouldSend;
 

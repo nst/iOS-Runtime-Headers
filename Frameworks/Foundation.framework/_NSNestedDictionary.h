@@ -9,7 +9,7 @@
 
 - (id)_recursiveAllKeys;
 - (id)_recursiveAllValues;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (id)keyEnumerator;
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;

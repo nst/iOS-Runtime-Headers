@@ -14,37 +14,37 @@
     float _maximumContentHeight;
     float _maximumContentWidth;
     BOOL _needsRecalc;
-    NSInteger _pageCount;
+    int _pageCount;
     UIPrintPageRenderer *_printPageRenderer;
-    NSInteger _startPage;
+    int _startPage;
 }
 
-@property UIPrintPageRenderer *printPageRenderer;
-@property UIEdgeInsets contentInsets;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsets;
 @property float maximumContentHeight;
 @property float maximumContentWidth;
-@property(readonly) NSInteger pageCount;
-@property NSInteger startPage;
+@property(readonly) int pageCount;
+@property UIPrintPageRenderer * printPageRenderer;
+@property int startPage;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pageContentRect:(BOOL)arg1;
 - (void)_recalcIfNecessary;
-- (NSInteger)_recalcPageCount;
+- (int)_recalcPageCount;
 - (void)_setNeedsRecalc;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forPageAtIndex:(NSInteger)arg2;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forPageAtIndex:(int)arg2;
 - (id)init;
 - (float)maximumContentHeight;
 - (float)maximumContentWidth;
-- (NSInteger)pageCount;
+- (int)pageCount;
 - (id)printPageRenderer;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageAtIndex:(NSInteger)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageAtIndex:(int)arg1;
 - (void)removeFromPrintPageRenderer;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMaximumContentHeight:(float)arg1;
 - (void)setMaximumContentWidth:(float)arg1;
 - (void)setPrintPageRenderer:(id)arg1;
-- (void)setStartPage:(NSInteger)arg1;
-- (NSInteger)startPage;
+- (void)setStartPage:(int)arg1;
+- (int)startPage;
 
 @end

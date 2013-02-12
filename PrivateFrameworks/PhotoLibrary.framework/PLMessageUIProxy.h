@@ -9,8 +9,8 @@
 + (Class)MailCompositionContextClass;
 + (void)_initializeSafeCategory;
 + (BOOL)canSendMail;
-+ (id)createComposeViewController;
-+ (id)createComposeViewControllerWithComposition:(id)arg1;
-+ (id)createMailCompositionContext;
++ (id)newComposeViewController;
++ (id)newComposeViewControllerWithComposition:(id)arg1;
++ (id)newMailCompositionContext;
 
 @end

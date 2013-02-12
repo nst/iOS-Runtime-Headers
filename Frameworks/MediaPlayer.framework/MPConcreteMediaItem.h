@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaLibrary, NSMutableDictionary;
+@class MPMediaLibrary, NSArray, NSNumber;
 
 @interface MPConcreteMediaItem : MPMediaItem {
+    NSArray *_chapters;
     MPMediaLibrary *_library;
     unsigned long long _persistentID;
-    NSMutableDictionary *_properties;
+    NSNumber *_physicalOrder;
 }
-
-@property(readonly) MPMediaLibrary *library;
 
 - (void)clearBookmarkTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)didReceiveMemoryWarning;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (BOOL)existsInLibrary;
@@ -25,11 +23,11 @@
 - (void)incrementSkipCount;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPersistentID:(unsigned long long)arg1 properties:(id)arg2 library:(id)arg3;
+- (id)initWithPersistentID:(unsigned long long)arg1 physicalOrder:(id)arg2 library:(id)arg3;
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)library;
 - (void)markNominalAmountHasBeenPlayed;
+- (id)mediaLibrary;
 - (double)nominalHasBeenPlayedThreshold;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL*)arg2;
 - (unsigned long long)persistentID;

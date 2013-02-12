@@ -7,36 +7,39 @@
 @interface SSAuthenticationContext : NSObject <NSCopying, NSMutableCopying> {
     NSString *_accountName;
     BOOL _accountNameEditable;
-    NSInteger _accountScope;
+    int _accountScope;
     BOOL _canCreateNewAccount;
     NSString *_clientIdentifierHeader;
     BOOL _demoAccount;
     NSString *_preferredITunesStoreClient;
-    NSInteger _promptStyle;
+    int _promptStyle;
     NSDictionary *_requestParameters;
     NSNumber *_requiredUniqueIdentifier;
     BOOL _shouldFollowAccountButtons;
     NSDictionary *_signupRequestParameters;
+    int _tokenType;
 }
 
-@property(copy,readonly) NSString *accountName;
-@property(copy,readonly) NSString *clientIdentifierHeader;
-@property(copy,readonly) NSString *preferredITunesStoreClient;
-@property(copy,readonly) NSDictionary *requestParameters;
-@property(retain,readonly) NSNumber *requiredUniqueIdentifier;
-@property(copy,readonly) NSDictionary *signupRequestParameters;
+@property(copy,readonly) NSString * accountName;
 @property(getter=isAccountNameEditable,readonly) BOOL accountNameEditable;
-@property(readonly) NSInteger accountScope;
+@property(readonly) int accountScope;
 @property(readonly) BOOL canCreateNewAccount;
+@property(copy,readonly) NSString * clientIdentifierHeader;
 @property(getter=isDemoAccount,readonly) BOOL demoAccount;
-@property(readonly) NSInteger promptStyle;
+@property(copy,readonly) NSString * preferredITunesStoreClient;
+@property(readonly) int promptStyle;
+@property(copy,readonly) NSDictionary * requestParameters;
+@property(retain,readonly) NSNumber * requiredUniqueIdentifier;
 @property(readonly) BOOL shouldFollowAccountButtons;
+@property(copy,readonly) NSDictionary * signupRequestParameters;
+@property(readonly) int tokenType;
 
 + (id)contextForSignIn;
 
 - (void)_copyIvarsToCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
+- (id)_initSSAuthenticationContext;
 - (id)accountName;
-- (NSInteger)accountScope;
+- (int)accountScope;
 - (BOOL)canCreateNewAccount;
 - (id)clientIdentifierHeader;
 - (id)copyPropertyListEncoding;
@@ -51,10 +54,11 @@
 - (BOOL)isDemoAccount;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)preferredITunesStoreClient;
-- (NSInteger)promptStyle;
+- (int)promptStyle;
 - (id)requestParameters;
 - (id)requiredUniqueIdentifier;
 - (BOOL)shouldFollowAccountButtons;
 - (id)signupRequestParameters;
+- (int)tokenType;
 
 @end

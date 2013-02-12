@@ -5,7 +5,7 @@
 @interface CHDArea2DType : CHDChartTypeWithGrouping {
 }
 
-- (NSInteger)defaultLabelPosition;
+- (int)defaultLabelPosition;
 - (id)initWithChart:(id)arg1;
 
 @end

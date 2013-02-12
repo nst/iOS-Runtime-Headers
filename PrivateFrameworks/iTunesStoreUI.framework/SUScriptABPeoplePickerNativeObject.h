@@ -5,9 +5,9 @@
 @interface SUScriptABPeoplePickerNativeObject : SUScriptViewControllerNativeObject <ABPeoplePickerNavigationControllerDelegate> {
 }
 
-- (void)_dispatchPickEventWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
+- (void)_dispatchPickEventWithPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (void)destroyNativeObject;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)setupNativeObject;

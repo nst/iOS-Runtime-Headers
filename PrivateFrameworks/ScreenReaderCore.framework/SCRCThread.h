@@ -20,7 +20,7 @@
 }
 
 + (double)_performSelector:(SEL)arg1 withThreadKey:(id)arg2 onTarget:(id)arg3 waitTime:(double)arg4 cancelMask:(unsigned long)arg5 count:(unsigned long)arg6 firstObject:(id)arg7 moreObjects:(void*)arg8;
-+ (NSInteger)activeThreadCount;
++ (int)activeThreadCount;
 + (id)activity;
 + (void)initialize;
 + (void)invalidateForKey:(id)arg1;

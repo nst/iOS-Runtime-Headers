@@ -6,16 +6,16 @@
 
 @interface PBMasterInfo : NSObject {
     NSDictionary *mLayoutMap;
-    NSUInteger mMainPbRef;
+    unsigned int mMainPbRef;
     PDSlideMaster *mSlideMaster;
-    struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; } *mSrcTextStyling;
+    struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mSrcTextStyling;
     NSMutableArray *mTgtSlideLayoutArray;
-    NSUInteger mTitlePbRef;
+    unsigned int mTitlePbRef;
 }
 
 - (id)allTargetLayoutTypes;
 - (void)cacheSlideLayouts;
-- (void)cacheTargetLayoutType:(NSInteger)arg1;
+- (void)cacheTargetLayoutType:(int)arg1;
 - (void)dealloc;
 - (id)init;
 - (unsigned long)mainPbRef;
@@ -24,7 +24,7 @@
 - (void)setTitlePbRef:(unsigned long)arg1;
 - (id)slideLayoutForSlideHolder:(id)arg1;
 - (id)slideMaster;
-- (struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)sourceTextStyling;
+- (struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)sourceTextStyling;
 - (unsigned long)titlePbRef;
 
 @end

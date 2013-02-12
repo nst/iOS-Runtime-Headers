@@ -11,10 +11,10 @@
     NSDictionary *_description;
 }
 
-@property(readonly) NSString *avatarURL;
-@property(retain) UIColor *color;
-@property(retain) NSData *data;
-@property(retain) NSDictionary *description;
+@property(readonly) NSString * avatarURL;
+@property(retain) UIColor * color;
+@property(retain) NSData * data;
+@property(retain) NSDictionary * description;
 
 - (id)avatarURL;
 - (id)color;

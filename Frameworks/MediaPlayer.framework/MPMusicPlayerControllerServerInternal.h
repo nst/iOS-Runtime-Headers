@@ -6,11 +6,11 @@
 
 @interface MPMusicPlayerControllerServerInternal : MPServerObject <MPMusicPlayerController> {
     unsigned int _queuePrepared : 1;
-    NSInteger _activeClientPID;
+    int _activeClientPID;
     NSMutableArray *_clientPorts;
     NSMutableDictionary *_clientPortsForPIDs;
     NSMutableDictionary *_clientStateForPIDs;
-    NSInteger _extendedModeNotifyToken;
+    int _extendedModeNotifyToken;
     MPVideoViewController *_videoViewController;
 }
 
@@ -20,20 +20,21 @@
 - (void)_appDefaultsChangedNotification:(id)arg1;
 - (void)_applicationStateChangedNotification:(id)arg1;
 - (id)_avController;
-- (id)_avControllerForClientPID:(NSInteger)arg1 ignoreExtendedMode:(BOOL)arg2;
-- (id)_avControllerForClientPID:(NSInteger)arg1;
-- (BOOL)_clientPIDHasPermissionToPlay:(NSInteger)arg1;
+- (id)_avControllerForClientPID:(int)arg1 ignoreExtendedMode:(BOOL)arg2;
+- (id)_avControllerForClientPID:(int)arg1;
+- (BOOL)_clientPIDHasPermissionToPlay:(int)arg1;
 - (void)_clientPortInvalidated:(id)arg1;
 - (void)_clientPortInvalidatedNotification:(id)arg1;
 - (id)_clientState;
-- (id)_clientStateForPID:(NSInteger)arg1;
+- (id)_clientStateForPID:(int)arg1;
 - (BOOL)_currentClientPIDHasPermissionToPlay;
 - (void)_endPlayback;
-- (void)_endPlaybackForClientIfNecessary:(NSInteger)arg1;
+- (void)_endPlaybackForClientIfNecessary:(int)arg1;
 - (void)_itemDidChangeNotification:(id)arg1;
+- (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_prepareQueueIfNecessary;
-- (void)_registerClientPort:(NSUInteger)arg1 forProcessID:(NSInteger)arg2;
+- (void)_registerClientPort:(unsigned int)arg1 forProcessID:(int)arg2;
 - (void)_setQueueWithQuery:(id)arg1;
 - (void)_tearDownVideoView;
 - (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
@@ -82,6 +83,7 @@
 - (void)skipToNextItem;
 - (void)skipToPreviousChapter;
 - (void)skipToPreviousItem;
+- (id)springboardNowPlayingInfo;
 - (void)stop;
 - (id)unshuffledIndexOfNowPlayingItem;
 - (BOOL)useApplicationSpecificQueue;

@@ -11,11 +11,11 @@
 + (id)paletteWithColours:(id)arg1;
 
 - (void)dealloc;
-- (id)getColour:(NSInteger)arg1;
+- (id)getColour:(int)arg1;
 - (id)init;
 - (id)initWithColours:(id)arg1;
-- (BOOL)resize:(NSInteger)arg1;
-- (NSInteger)selectInto:(id)arg1;
-- (BOOL)setEntries:(NSInteger)arg1 :(id)arg2;
+- (BOOL)resize:(int)arg1;
+- (int)selectInto:(id)arg1;
+- (BOOL)setEntries:(int)arg1 :(id)arg2;
 
 @end

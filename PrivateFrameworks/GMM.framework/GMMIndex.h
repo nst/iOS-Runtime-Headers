@@ -3,29 +3,29 @@
  */
 
 @interface GMMIndex : PBCodable {
-    NSInteger _face;
+    int _face;
     BOOL _hasFace;
-    NSInteger _tileXIndex;
-    NSInteger _tileYIndex;
+    int _tileXIndex;
+    int _tileYIndex;
 }
 
-@property NSInteger face;
+@property int face;
 @property(readonly) BOOL hasFace;
-@property NSInteger tileXIndex;
-@property NSInteger tileYIndex;
+@property int tileXIndex;
+@property int tileYIndex;
 
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (NSInteger)face;
+- (int)face;
 - (BOOL)hasFace;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setFace:(NSInteger)arg1;
-- (void)setTileXIndex:(NSInteger)arg1;
-- (void)setTileYIndex:(NSInteger)arg1;
-- (NSInteger)tileXIndex;
-- (NSInteger)tileYIndex;
+- (void)setFace:(int)arg1;
+- (void)setTileXIndex:(int)arg1;
+- (void)setTileYIndex:(int)arg1;
+- (int)tileXIndex;
+- (int)tileYIndex;
 - (void)writeTo:(id)arg1;
 
 @end

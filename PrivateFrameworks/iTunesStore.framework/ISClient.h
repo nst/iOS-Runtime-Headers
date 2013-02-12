@@ -15,13 +15,13 @@
     NSString *_softwareLibraryIdentifier;
 }
 
-@property(retain) NSString *appleClientApplication;
-@property(readonly) NSString *appleClientVersions;
-@property(retain) NSString *identifier;
-@property(readonly) NSString *mediaLibraryIdentifier;
-@property(retain) NSString *partnerHeader;
-@property(retain) NSString *softwareLibraryIdentifier;
+@property(retain) NSString * appleClientApplication;
+@property(readonly) NSString * appleClientVersions;
+@property(retain) NSString * identifier;
+@property(readonly) NSString * mediaLibraryIdentifier;
+@property(retain) NSString * partnerHeader;
 @property BOOL prefersHighQuality;
+@property(retain) NSString * softwareLibraryIdentifier;
 
 + (id)currentClient;
 

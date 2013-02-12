@@ -5,29 +5,29 @@
 @class NSString;
 
 @interface GMMLocation : NSObject {
-    NSInteger _accuracy;
-    NSInteger _confidence;
+    int _accuracy;
+    int _confidence;
     NSString *_geo_string;
-    struct MapPoint { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; } *_point;
-    NSInteger _responseCode;
+    struct MapPoint { int x1; int x2; int x3; int x4; } *_point;
+    int _responseCode;
 }
 
-@property(retain) NSString *geo_string;
-@property MapPoint *point;
-@property NSInteger accuracy;
-@property NSInteger confidence;
-@property NSInteger responseCode;
+@property int accuracy;
+@property int confidence;
+@property(retain) NSString * geo_string;
+@property struct MapPoint { int x1; int x2; int x3; int x4; }* point;
+@property int responseCode;
 
-- (NSInteger)accuracy;
-- (NSInteger)confidence;
+- (int)accuracy;
+- (int)confidence;
 - (void)dealloc;
 - (id)geo_string;
-- (struct MapPoint { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)point;
-- (NSInteger)responseCode;
-- (void)setAccuracy:(NSInteger)arg1;
-- (void)setConfidence:(NSInteger)arg1;
+- (struct MapPoint { int x1; int x2; int x3; int x4; }*)point;
+- (int)responseCode;
+- (void)setAccuracy:(int)arg1;
+- (void)setConfidence:(int)arg1;
 - (void)setGeo_string:(id)arg1;
-- (void)setPoint:(struct MapPoint { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)arg1;
-- (void)setResponseCode:(NSInteger)arg1;
+- (void)setPoint:(struct MapPoint { int x1; int x2; int x3; int x4; }*)arg1;
+- (void)setResponseCode:(int)arg1;
 
 @end

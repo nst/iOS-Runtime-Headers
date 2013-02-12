@@ -2,32 +2,32 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADBannerViewURLActionHandlerDelegate>, NSDictionary, NSURL;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSDictionary, NSURL;
 
 @interface ADBannerViewURLActionHandler : NSObject {
-    <ADBannerViewURLActionHandlerDelegate> *_delegate;
     NSDictionary *_dialogOverrides;
-    BOOL _shouldReply;
+    id _didFinishBlock;
     NSURL *_url;
 }
 
-@property <ADBannerViewURLActionHandlerDelegate> *delegate;
-@property(retain) NSDictionary *dialogOverrides;
-@property(retain) NSURL *url;
-@property BOOL shouldReply;
+@property(retain) NSDictionary * dialogOverrides;
+@property(copy) id didFinishBlock;
+@property(retain) NSURL * url;
 
-+ (id)bannerViewURLActionHandlerWithURL:(id)arg1 dialogOverrides:(id)arg2 delegate:(id)arg3 shouldReply:(BOOL)arg4;
++ (id)bannerViewURLActionHandlerWithURL:(id)arg1 dialogOverrides:(id)arg2 didFinishBlock:(id)arg3;
 
 - (void)dealloc;
-- (id)delegate;
 - (id)dialogOverrides;
+- (id)didFinishBlock;
 - (void)handle;
 - (id)normalizedURL;
-- (void)setDelegate:(id)arg1;
 - (void)setDialogOverrides:(id)arg1;
-- (void)setShouldReply:(BOOL)arg1;
+- (void)setDidFinishBlock:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (BOOL)shouldReply;
 - (id)url;
 
 @end

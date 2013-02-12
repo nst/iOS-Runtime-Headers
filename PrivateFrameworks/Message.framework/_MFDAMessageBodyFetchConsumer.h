@@ -11,9 +11,9 @@
     BOOL _succeeded;
 }
 
-@property(retain) NSData *data;
-@property(retain) MFError *error;
-@property(retain) <MFDAStreamingContentConsumer> *streamConsumer;
+@property(retain) NSData * data;
+@property(retain) MFError * error;
+@property(retain) <MFDAStreamingContentConsumer> * streamConsumer;
 @property(readonly) BOOL succeeded;
 
 - (id)data;

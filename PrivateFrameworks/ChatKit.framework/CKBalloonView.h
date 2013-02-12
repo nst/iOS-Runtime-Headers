@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKMessagePart, NSString;
+@class CKMessagePart, NSString, UIAnimation, UITapGestureRecognizer;
 
 @interface CKBalloonView : UIView {
     unsigned int _hasURLs : 1;
@@ -14,16 +14,20 @@
     unsigned int _calloutRegistered : 1;
     unsigned int _tapEnabled : 1;
     id _delegate;
+    BOOL _hasReceipt;
     CKMessagePart *_messagePart;
-    NSInteger _orientation;
+    int _orientation;
+    UIAnimation *_receiptAnimation;
+    UITapGestureRecognizer *_singleTapGestureRecognizer;
     NSString *_subject;
     id _tapDelegate;
     float _tightenedWidth;
     float _topMargin;
 }
 
-@property(copy) NSString *subject;
 @property id delegate;
+@property BOOL hasReceipt;
+@property(copy) NSString * subject;
 @property id tapDelegate;
 
 + (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -36,6 +40,7 @@
 + (float)heightForText:(id)arg1 width:(float)arg2;
 + (float)heightForText:(id)arg1;
 + (struct CGPoint { float x1; float x2; })offsetForBubbleInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)receiptBadgeForMedia:(BOOL)arg1;
 + (struct CGContext { }*)sharedSizingContext;
 + (BOOL)shouldHaveAccessoryDiclosure;
 + (BOOL)showsSubject;
@@ -43,7 +48,9 @@
 + (struct CGSize { float x1; float x2; })sizeForMessagePart:(id)arg1 width:(float)arg2;
 
 - (BOOL)_becomeFirstResponderWhenPossible;
+- (void)_drawReceiptBadgeForMedia:(BOOL)arg1;
 - (void)_hideCopyCallout;
+- (float)_receiptSpace;
 - (void)_setBalloonHighlight:(BOOL)arg1;
 - (void)_showCopyCallout;
 - (void)_stopIgnoringSingleTapGesture;
@@ -53,6 +60,7 @@
 - (void)_windowBecameKey;
 - (void)_windowResignedKey;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })balloonBounds;
 - (float)balloonContentBottomMargin;
 - (float)balloonContentHeadMargin;
@@ -70,6 +78,7 @@
 - (void)drawBalloonImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)flashHighlight;
+- (BOOL)hasReceipt;
 - (BOOL)hasURLs;
 - (float)heightForWidth:(float)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
@@ -78,17 +87,20 @@
 - (void)longPressGesture:(id)arg1;
 - (id)messagePart;
 - (void)oneFingerDoubleTap:(id)arg1;
-- (NSInteger)orientation;
+- (int)orientation;
 - (void)prepareForReuse;
+- (void)receiptAnimationProgress:(float)arg1;
 - (BOOL)resignFirstResponder;
 - (void)restoreBalloonStateAfterRotation;
 - (void)setComposition:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDraws:(BOOL)arg1;
+- (void)setEnableSingleTap:(BOOL)arg1;
 - (void)setForceTighten:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHasReceipt:(BOOL)arg1;
 - (void)setMessagePart:(id)arg1;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1;
 - (void)setPreview:(BOOL)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTapDelegate:(id)arg1;
@@ -103,5 +115,6 @@
 - (struct CGSize { float x1; float x2; })textSizeInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2;
 - (void)tighten;
 - (float)tightenedWidth;
+- (void)updateForReceiptNotification;
 
 @end

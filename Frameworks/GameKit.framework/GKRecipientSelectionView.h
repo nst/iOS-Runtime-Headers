@@ -5,6 +5,7 @@
 @class ABSearchOperation, GKComposeRecipientView, GKComposeSuggestedContactsController, GKUITheme, NSArray, NSMutableArray, UIButton, UIImageView, UIPopoverController, UIScrollView;
 
 @interface GKRecipientSelectionView : UIView <GKComposeRecipientViewDelegate, ABSearchOperationDelegate, GKComposeSuggestedContactsControllerDelegate> {
+    void *_ABAddressBook;
     NSArray *_abProperties;
     UIButton *_addContactButton;
     UIImageView *_backgroundView;
@@ -22,17 +23,19 @@
     UIScrollView *_toFieldScrollingView;
 }
 
-@property(retain,readonly) UIButton *addContactButton;
-@property(retain) UIPopoverController *composePopoverController;
-@property(retain) GKComposeSuggestedContactsController *suggestedContactsController;
-@property(retain) GKUITheme *theme;
+@property(readonly) void* ABAddressBook;
+@property(retain,readonly) UIButton * addContactButton;
+@property(retain) UIPopoverController * composePopoverController;
 @property id delegate;
 @property BOOL duringRotation;
 @property BOOL peoplePickerVisible;
 @property(getter=isShowingSearchResults,readonly) BOOL showingSearchResults;
+@property(retain) GKComposeSuggestedContactsController * suggestedContactsController;
+@property(retain) GKUITheme * theme;
 
 + (void)_initializeSafeCategory;
 
+- (void*)ABAddressBook;
 - (void)_hideSearchResults:(BOOL)arg1;
 - (void)_searchWithText:(id)arg1;
 - (void)_showSearchResults:(BOOL)arg1;
@@ -42,9 +45,9 @@
 - (id)addContactButton;
 - (id)composePopoverController;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
-- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(NSInteger)arg2;
+- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
 - (void)composeRecipientViewBeganEditing:(id)arg1;
 - (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
@@ -53,7 +56,7 @@
 - (void)composeRecipientViewReturnPressed:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (BOOL)duringRotation;
 - (BOOL)hasText;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ABProperties:(id)arg2 theme:(id)arg3;
@@ -75,6 +78,6 @@
 - (id)suggestedContactsController;
 - (id)theme;
 - (id)toField;
-- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

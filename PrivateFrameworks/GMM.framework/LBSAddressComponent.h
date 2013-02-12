@@ -6,45 +6,45 @@
 
 @interface LBSAddressComponent : PBCodable {
     LBSFeatureId *_feature_id;
-    NSInteger _feature_type;
+    int _feature_type;
     BOOL _hasFeature_type;
     NSMutableArray *_parsed_names;
     LBSAddressRange *_range;
-    NSInteger _type;
+    int _type;
 }
 
-@property(retain) LBSFeatureId *feature_id;
-@property(retain) NSMutableArray *parsed_names;
-@property(retain) LBSAddressRange *range;
-@property NSInteger feature_type;
+@property(retain) LBSFeatureId * feature_id;
+@property int feature_type;
 @property(readonly) BOOL hasFeature_id;
 @property(readonly) BOOL hasFeature_type;
 @property(readonly) BOOL hasRange;
-@property(readonly) NSInteger parsed_namesCount;
-@property NSInteger type;
+@property(retain) NSMutableArray * parsed_names;
+@property(readonly) int parsed_namesCount;
+@property(retain) LBSAddressRange * range;
+@property int type;
 
 - (void)addParsed_name:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feature_id;
-- (NSInteger)feature_type;
+- (int)feature_type;
 - (BOOL)hasFeature_id;
 - (BOOL)hasFeature_type;
 - (BOOL)hasRange;
 - (id)init;
-- (id)parsed_nameAtIndex:(NSUInteger)arg1;
+- (id)parsed_nameAtIndex:(unsigned int)arg1;
 - (id)parsed_names;
-- (NSInteger)parsed_namesCount;
+- (int)parsed_namesCount;
 - (id)range;
 - (BOOL)readFrom:(id)arg1;
 - (void)setFeature_id:(id)arg1;
-- (void)setFeature_type:(NSInteger)arg1;
-- (void)setParsed_name:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setFeature_type:(int)arg1;
+- (void)setParsed_name:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setParsed_names:(id)arg1;
 - (void)setRange:(id)arg1;
-- (void)setType:(NSInteger)arg1;
-- (NSInteger)type;
+- (void)setType:(int)arg1;
+- (int)type;
 - (void)writeTo:(id)arg1;
 
 @end

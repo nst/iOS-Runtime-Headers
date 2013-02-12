@@ -6,19 +6,19 @@
 
 @interface GKSetPlayerRatingRequest : GKSetPlayerDataRequest {
     GKPlayer *_player;
-    NSInteger _rating;
+    int _rating;
 }
 
-@property(retain) GKPlayer *player;
-@property NSInteger rating;
+@property(retain) GKPlayer * player;
+@property int rating;
 
 - (id)cacheKey;
 - (void)dealloc;
 - (id)key;
 - (id)player;
-- (NSInteger)rating;
+- (int)rating;
 - (id)request;
 - (void)setPlayer:(id)arg1;
-- (void)setRating:(NSInteger)arg1;
+- (void)setRating:(int)arg1;
 
 @end

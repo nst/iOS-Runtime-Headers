@@ -3,32 +3,32 @@
  */
 
 @interface CLSimulationManager : NSObject {
-    NSInteger _locationDeliveryBehavior;
+    int _locationDeliveryBehavior;
     double _locationDistance;
     double _locationInterval;
-    NSInteger _locationRepeatBehavior;
+    int _locationRepeatBehavior;
     double _locationSpeed;
 }
 
-@property NSInteger locationDeliveryBehavior;
+@property int locationDeliveryBehavior;
 @property double locationDistance;
 @property double locationInterval;
-@property NSInteger locationRepeatBehavior;
+@property int locationRepeatBehavior;
 @property double locationSpeed;
 
 - (void)appendSimulatedLocation:(id)arg1;
 - (void)clearSimulatedCells;
 - (void)clearSimulatedLocations;
 - (id)init;
-- (NSInteger)locationDeliveryBehavior;
+- (int)locationDeliveryBehavior;
 - (double)locationDistance;
 - (double)locationInterval;
-- (NSInteger)locationRepeatBehavior;
+- (int)locationRepeatBehavior;
 - (double)locationSpeed;
-- (void)setLocationDeliveryBehavior:(NSInteger)arg1;
+- (void)setLocationDeliveryBehavior:(int)arg1;
 - (void)setLocationDistance:(double)arg1;
 - (void)setLocationInterval:(double)arg1;
-- (void)setLocationRepeatBehavior:(NSInteger)arg1;
+- (void)setLocationRepeatBehavior:(int)arg1;
 - (void)setLocationSpeed:(double)arg1;
 - (void)setSimulatedCell:(id)arg1;
 - (void)setSimulatedCellRegistrationStatus:(BOOL)arg1;

@@ -10,17 +10,17 @@
 + (id)durationFromICSString:(id)arg1;
 + (id)durationFromRFC2445UTF8String:(const char *)arg1;
 
-- (id)ICSStringWithOptions:(NSUInteger)arg1;
-- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
-- (NSInteger)days;
+- (id)ICSStringWithOptions:(unsigned int)arg1;
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (int)days;
 - (void)encodeWithCoder:(id)arg1;
-- (NSInteger)hours;
+- (int)hours;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithWeeks:(NSInteger)arg1 days:(NSInteger)arg2 hours:(NSInteger)arg3 minutes:(NSInteger)arg4 seconds:(NSInteger)arg5;
+- (id)initWithWeeks:(int)arg1 days:(int)arg2 hours:(int)arg3 minutes:(int)arg4 seconds:(int)arg5;
 - (BOOL)isNegative;
-- (NSInteger)minutes;
-- (NSInteger)seconds;
+- (int)minutes;
+- (int)seconds;
 - (double)timeInterval;
-- (NSInteger)weeks;
+- (int)weeks;
 
 @end

@@ -13,8 +13,8 @@
 - (void)_showActions:(id)arg1;
 - (void)_showRemakerProgressView:(BOOL)arg1;
 - (void)_showTextMessageComposition:(id)arg1;
-- (id)albumView:(id)arg1 accessibilityHintForPhotoAtIndex:(NSUInteger)arg2;
-- (id)albumView:(id)arg1 accessibilityLabelForPhotoAtIndex:(NSUInteger)arg2;
-- (unsigned long long)albumView:(id)arg1 accessibilityTraitsForPhotoAtIndex:(NSUInteger)arg2;
+- (id)albumView:(id)arg1 accessibilityHintForPhotoAtIndex:(unsigned int)arg2;
+- (id)albumView:(id)arg1 accessibilityLabelForPhotoAtIndex:(unsigned int)arg2;
+- (unsigned long long)albumView:(id)arg1 accessibilityTraitsForPhotoAtIndex:(unsigned int)arg2;
 
 @end

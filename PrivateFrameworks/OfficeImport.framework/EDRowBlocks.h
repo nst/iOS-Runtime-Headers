@@ -2,47 +2,41 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class EDCollection, EDWorksheet, NSMutableArray, NSRecursiveLock, NSString;
 
 @interface EDRowBlocks : NSObject <TSUFlushable> {
-     /* Encoded args for previous method: B16@0:4I8@12 */
-     /* Encoded args for previous method: @20@0:4I8@12B16 */
     NSString *mFileName;
     EDCollection *mFormulas;
-    NSInteger mLockCount;
-    NSUInteger mMaxPopulatedColumn;
-    NSUInteger mMaxPopulatedRow;
+    int mLockCount;
+    unsigned int mMaxPopulatedColumn;
+    unsigned int mMaxPopulatedRow;
     NSMutableArray *mRowBlocks;
     NSRecursiveLock *mSaveLoadLock;
     EDWorksheet *mWorksheet;
 }
 
-- (struct EDCellHeader { unsigned short x1; NSUInteger x2; }*)cellWithRowNumber:(NSUInteger)arg1 columnNumber:(NSInteger)arg2;
+- (struct EDCellHeader { unsigned short x1; unsigned int x2; }*)cellWithRowNumber:(unsigned int)arg1 columnNumber:(int)arg2;
 - (Class)classForFormulaType:(unsigned char)arg1;
 - (void)dealloc;
-- (NSUInteger)expectedIndexOfRowBlockForRowNumber:(NSUInteger)arg1;
+- (unsigned int)expectedIndexOfRowBlockForRowNumber:(unsigned int)arg1;
 - (id)fileNameForPersistingRowBlocks;
 - (void)flush;
 - (unsigned char)formulaTypeForFormula:(id)arg1;
 - (id)formulas;
-- (NSUInteger)indexOfRowBlockForRowNumber:(NSUInteger)arg1;
+- (unsigned int)indexOfRowBlockForRowNumber:(unsigned int)arg1;
 - (id)initWithWorksheet:(id)arg1;
 - (void)load;
 - (void)lock;
-- (NSUInteger)maxPopulatedColumn;
-- (NSUInteger)maxPopulatedRow;
-- (void)removeRowBlockAtIndex:(NSUInteger)arg1;
-- (id)rowBlockAtIndex:(NSUInteger)arg1;
-- (NSUInteger)rowBlockCount;
-- (id)rowBlockForRowNumber:(NSUInteger)arg1 currentRowBlock:(id)arg2 createIfNil:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
-- (id)rowBlockForRowNumber:(NSUInteger)arg1 currentRowBlock:(id)arg2;
+- (unsigned int)maxPopulatedColumn;
+- (unsigned int)maxPopulatedRow;
+- (void)removeRowBlockAtIndex:(unsigned int)arg1;
+- (id)rowBlockAtIndex:(unsigned int)arg1;
+- (unsigned int)rowBlockCount;
+- (id)rowBlockForRowNumber:(unsigned int)arg1 currentRowBlock:(id)arg2 createIfNil:(bool)arg3;
+- (id)rowBlockForRowNumber:(unsigned int)arg1 currentRowBlock:(id)arg2;
 - (void)save;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)spaceForRowNumber:(NSUInteger)arg1 rowBlock:(id)arg2;
+- (bool)spaceForRowNumber:(unsigned int)arg1 rowBlock:(id)arg2;
 - (void)unlock;
-- (void)updateMaxPopulatedRow:(NSUInteger)arg1 column:(NSUInteger)arg2;
+- (void)updateMaxPopulatedRow:(unsigned int)arg1 column:(unsigned int)arg2;
 
 @end

@@ -8,32 +8,32 @@
     NSString *_categoryTitle;
     GKGame *_game;
     GKLeaderboard *_leaderboard;
-    NSUInteger _maxRange;
+    unsigned int _maxRange;
     NSDictionary *_playerScore;
     NSString *_scoreType;
     NSArray *_scores;
 }
 
-@property(readonly) NSString *categoryTitle;
-@property(retain) GKGame *game;
-@property(retain) GKLeaderboard *leaderboard;
-@property(readonly) NSDictionary *playerScore;
-@property(readonly) NSString *scoreType;
-@property(readonly) NSArray *scores;
-@property(readonly) NSUInteger maxRange;
+@property(readonly) NSString * categoryTitle;
+@property(retain) GKGame * game;
+@property(retain) GKLeaderboard * leaderboard;
+@property(readonly) unsigned int maxRange;
+@property(readonly) NSDictionary * playerScore;
+@property(readonly) NSString * scoreType;
+@property(readonly) NSArray * scores;
 
-- (id)_playerScope:(NSInteger)arg1;
-- (id)_timeScope:(NSInteger)arg1;
+- (id)_playerScope:(int)arg1;
+- (id)_timeScope:(int)arg1;
 - (id)cacheKey;
-- (NSInteger)cachePriority;
-- (NSInteger)cacheType;
+- (int)cachePriority;
+- (int)cacheType;
 - (id)categoryTitle;
 - (void)dealloc;
 - (id)game;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)key;
 - (id)leaderboard;
-- (NSUInteger)maxRange;
+- (unsigned int)maxRange;
 - (id)playerScore;
 - (id)request;
 - (id)scoreType;

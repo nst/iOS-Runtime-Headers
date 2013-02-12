@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface IMDirectlyObservableObject : NSObject {
     NSMutableArray *_observers;
 }
 
-@property(retain) NSArray *observers;
+@property(retain) NSArray * observers;
 
 - (void)_objectDidPostNotification:(id)arg1;
 - (void)addObserver:(id)arg1;

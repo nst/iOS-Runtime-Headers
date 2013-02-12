@@ -11,7 +11,7 @@
     UITextView *_notesView;
 }
 
-@property(retain) UIFont *_font;
+@property(retain) UIFont * _font;
 @property BOOL isTruncatingNotes;
 
 + (void)_initializeSafeCategory;
@@ -25,7 +25,7 @@
 - (void)dealloc;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isTruncatingNotes;
-- (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (void)setIsTruncatingNotes:(BOOL)arg1;
 - (void)set_font:(id)arg1;
 - (BOOL)update;

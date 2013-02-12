@@ -11,7 +11,7 @@
     NSString *_linkDestination;
     NSString *_path;
     NSString *_preferredFilename;
-    NSInteger _type;
+    int _type;
     NSString *_url;
 }
 
@@ -28,7 +28,7 @@
 - (id)fileWrappers;
 - (id)filename;
 - (unsigned short)finderFlags;
-- (NSUInteger)imageBytes;
+- (unsigned int)imageBytes;
 - (id)inferredMimeType;
 - (id)initRegularFileWithContents:(id)arg1;
 - (id)initSymbolicLinkWithDestination:(id)arg1;

@@ -2,56 +2,48 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSString;
 
 @interface MFFont : NSObject <MFObject> {
-     /* Encoded args for previous method: @68@0:4l8l12l16l20l24B28B32B36i40i44C48i52i56i60@64 */
-     /* Encoded args for previous method: @96@0:4l8l12l16l20l24B28B32B36i40i44C48i52i56i60@64@68@72I76I80I84I88I92 */
-     /* Encoded args for previous method: @96@0:4l8l12l16l20l24B28B32B36i40i44C48i52i56i60@64@68@72I76I80I84I88I92 */
-     /* Encoded args for previous method: @68@0:4l8l12l16l20l24B28B32B36i40i44C48i52i56i60@64 */
-    NSUInteger m_elfCulture;
+    boolm_lfItalic;
+    boolm_lfStrikeOut;
+    boolm_lfUnderline;
+    unsigned int m_elfCulture;
     NSString *m_elfFullName;
-    NSUInteger m_elfMatch;
+    unsigned int m_elfMatch;
     NSString *m_elfStyle;
-    NSUInteger m_elfStyleSize;
-    NSUInteger m_elfVendorId;
-    NSUInteger m_elfVersion;
-    NSInteger m_family;
-    NSInteger m_lfCharSet;
+    unsigned int m_elfStyleSize;
+    unsigned int m_elfVendorId;
+    unsigned int m_elfVersion;
+    int m_family;
+    int m_lfCharSet;
     unsigned char m_lfClipPrecision;
-    NSInteger m_lfEscapement;
+    int m_lfEscapement;
     NSString *m_lfFaceName;
-    NSInteger m_lfHeight;
-    NSInteger m_lfOrientation;
-    NSInteger m_lfOutPrecision;
-    NSInteger m_lfQuality;
-    NSInteger m_lfWeight;
-    NSInteger m_lfWidth;
-    NSInteger m_pitch;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_lfItalic;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_lfStrikeOut;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_lfUnderline;
+    int m_lfHeight;
+    int m_lfOrientation;
+    int m_lfOutPrecision;
+    int m_lfQuality;
+    int m_lfWeight;
+    int m_lfWidth;
+    int m_pitch;
 }
 
-+ (id)fontWithExtendedFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg6 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg7 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg8 :(NSInteger)arg9 :(NSInteger)arg10 :(unsigned char)arg11 :(NSInteger)arg12 :(NSInteger)arg13 :(NSInteger)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(NSUInteger)arg18 :(NSUInteger)arg19 :(NSUInteger)arg20 :(NSUInteger)arg21 :(NSUInteger)arg22;
-+ (id)fontWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg6 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg7 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg8 :(NSInteger)arg9 :(NSInteger)arg10 :(unsigned char)arg11 :(NSInteger)arg12 :(NSInteger)arg13 :(NSInteger)arg14 :(id)arg15;
-+ (id)fontWithStockFont:(NSInteger)arg1;
++ (id)fontWithExtendedFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
++ (id)fontWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
++ (id)fontWithStockFont:(int)arg1;
 
 - (void)dealloc;
 - (double)escapement;
 - (id)faceName;
 - (double)fontHeight;
-- (NSInteger)getCharset;
-- (id)initWithAllFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg6 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg7 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg8 :(NSInteger)arg9 :(NSInteger)arg10 :(unsigned char)arg11 :(NSInteger)arg12 :(NSInteger)arg13 :(NSInteger)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(NSUInteger)arg18 :(NSUInteger)arg19 :(NSUInteger)arg20 :(NSUInteger)arg21 :(NSUInteger)arg22;
-- (id)initWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg6 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg7 :(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg8 :(NSInteger)arg9 :(NSInteger)arg10 :(unsigned char)arg11 :(NSInteger)arg12 :(NSInteger)arg13 :(NSInteger)arg14 :(id)arg15;
-- (id)initWithStockFont:(NSInteger)arg1;
-- (NSInteger)selectInto:(id)arg1;
+- (int)getCharset;
+- (id)initWithAllFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
+- (id)initWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
+- (id)initWithStockFont:(int)arg1;
+- (int)selectInto:(id)arg1;
 - (BOOL)strikeout;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textExtent:(id)arg1 :(NSInteger)arg2 :(NSInteger*)arg3 :(NSInteger)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textExtent:(id)arg1 :(int)arg2 :(int*)arg3 :(int)arg4;
 - (BOOL)underline;
 
 @end

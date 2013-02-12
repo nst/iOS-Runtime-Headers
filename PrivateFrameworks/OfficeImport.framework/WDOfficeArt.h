@@ -2,21 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class OADDrawable, WDCharacterProperties;
 
 @interface WDOfficeArt : WDRun {
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
+    boolmFloating;
     OADDrawable *mDrawable;
     WDCharacterProperties *mProperties;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mFloating;
 }
 
-+ (NSInteger)textBoxTextTypeForRegularTextType:(NSInteger)arg1;
++ (int)textBoxTextTypeForRegularTextType:(int)arg1;
 
 - (void)checkForFloating:(id)arg1;
 - (void)clearDrawable;
@@ -28,15 +22,15 @@
 - (id)imageName;
 - (id)initWithParagraph:(id)arg1;
 - (BOOL)isDrawableOverridden;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isFloating;
+- (bool)isFloating;
 - (id)overrideDrawable;
 - (void)propagateTextTypeToDrawables;
 - (id)properties;
-- (NSInteger)runType;
+- (int)runType;
 - (void)setDrawable:(id)arg1;
-- (void)setFloating:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
+- (void)setFloating:(bool)arg1;
 - (void)setImageBlipRef:(id)arg1;
 - (void)setProperties:(id)arg1;
-- (void)setTextType:(NSInteger)arg1 recursivelyToDrawable:(id)arg2;
+- (void)setTextType:(int)arg1 recursivelyToDrawable:(id)arg2;
 
 @end

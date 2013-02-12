@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, NSString, NSURL;
+@class <CoreDAVGetAccountPropertiesTaskGroupDelegate>, NSSet, NSString, NSURL;
 
 @interface CoreDAVGetAccountPropertiesTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate, CoreDAVOptionsTaskDelegate, CoreDAVPrincipalSearchPropertySetTaskDelegate> {
     NSSet *_collections;
     NSString *_displayName;
     NSSet *_emailAddresses;
-    BOOL _executingPrincipalSearchProperties;
     BOOL _fetchPrincipalSearchProperties;
     BOOL _isExpandPropertyReportSupported;
     NSURL *_newServerURL;
@@ -17,16 +16,16 @@
     NSURL *_resourceID;
 }
 
-@property(readonly) NSSet *collections;
-@property <CoreDAVGetAccountPropertiesTaskGroupDelegate> *delegate;
-@property(readonly) NSString *displayName;
-@property(readonly) NSSet *emailAddresses;
-@property(retain) NSURL *newServerURL;
-@property(readonly) NSSet *principalSearchProperties;
-@property(readonly) NSURL *principalURL;
-@property(readonly) NSURL *resourceID;
+@property(readonly) NSSet * collections;
+@property <CoreDAVGetAccountPropertiesTaskGroupDelegate> * delegate;
+@property(readonly) NSString * displayName;
+@property(readonly) NSSet * emailAddresses;
 @property BOOL fetchPrincipalSearchProperties;
 @property(readonly) BOOL isExpandPropertyReportSupported;
+@property(retain) NSURL * newServerURL;
+@property(readonly) NSSet * principalSearchProperties;
+@property(readonly) NSURL * principalURL;
+@property(readonly) NSURL * resourceID;
 
 - (id)_copyAccountPropertiesPropFindElements;
 - (void)_parseDAVHeader:(id)arg1;

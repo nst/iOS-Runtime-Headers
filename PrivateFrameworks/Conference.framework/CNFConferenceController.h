@@ -15,7 +15,7 @@
     NSTimer *_waitingForFirstRemoteFrameTimer;
 }
 
-@property(readonly) IMAVChat *avChat;
+@property(readonly) IMAVChat * avChat;
 @property(readonly) BOOL isFullConferenceCapable;
 
 + (BOOL)conferencingIsEnabled;
@@ -39,16 +39,16 @@
 - (void)_cancelWaitingForFirstRemoteFrameTimer;
 - (void)_cleanUpAfterAVChat;
 - (void)_fakeFirstRemoteFrameNotification:(id)arg1;
-- (void)_handleAVChatStateChangeFromState:(NSUInteger)arg1 to:(NSUInteger)arg2 withReason:(NSUInteger)arg3;
+- (void)_handleAVChatStateChangeFromState:(unsigned int)arg1 to:(unsigned int)arg2 withReason:(unsigned int)arg3;
 - (void)_handleAccountNotRegisteredForURL:(id)arg1 registrationInProgress:(BOOL)arg2;
 - (void)_handleChangeForRemoteIsMuted:(BOOL)arg1;
 - (void)_handleChangeForRemoteIsPaused:(BOOL)arg1;
 - (void)_handleConferenceConnected:(id)arg1;
 - (void)_handleConferenceConnecting:(id)arg1;
 - (void)_handleConferenceDidStart;
-- (void)_handleConferenceEnded:(id)arg1 withReason:(NSUInteger)arg2 withError:(NSInteger)arg3;
+- (void)_handleConferenceEnded:(id)arg1 withReason:(unsigned int)arg2 withError:(int)arg3;
 - (void)_handleConferenceInviteSent:(id)arg1;
-- (void)_handleEndConferenceWithReason:(NSUInteger)arg1 error:(NSInteger)arg2;
+- (void)_handleEndConferenceWithReason:(unsigned int)arg1 error:(int)arg2;
 - (void)_handleInitiationOfAVConference;
 - (void)_handleInvitationFrom:(id)arg1 conferenceID:(id)arg2;
 - (void)_handleMissedInvitationFrom:(id)arg1 conferenceID:(id)arg2;
@@ -61,14 +61,16 @@
 - (void)_updateEnabledStatusChanged;
 - (void)acceptConferenceInvitationFrom:(id)arg1 conferenceID:(id)arg2;
 - (BOOL)accountsAreLoggedIn;
+- (int)activationState;
 - (void)avChat:(id)arg1 didSendInvitationForParticipant:(id)arg2;
-- (void)avChat:(id)arg1 remoteOrientationChanged:(NSUInteger)arg2;
+- (void)avChat:(id)arg1 remoteOrientationChanged:(unsigned int)arg2;
 - (void)avChat:(id)arg1 remoteParticipant:(id)arg2 muteChanged:(BOOL)arg3;
 - (void)avChat:(id)arg1 remoteParticipant:(id)arg2 pauseChanged:(BOOL)arg3;
-- (void)avChat:(id)arg1 stateChanged:(NSUInteger)arg2;
+- (void)avChat:(id)arg1 stateChanged:(unsigned int)arg2;
 - (id)avChat;
-- (void)avChatStateChangedFrom:(NSUInteger)arg1 to:(NSUInteger)arg2 reason:(NSUInteger)arg3;
+- (void)avChatStateChangedFrom:(unsigned int)arg1 to:(unsigned int)arg2 reason:(unsigned int)arg3;
 - (id)availableFaceTimeURLs;
+- (int)cameraType;
 - (BOOL)canInitiateConferenceForDestinationID:(id)arg1;
 - (BOOL)canInitiateConferenceForPhoneNumber:(id)arg1;
 - (BOOL)canInitiateFaceTimeForDestinationID:(id)arg1;
@@ -95,7 +97,7 @@
 - (void)iChatAgentConnected;
 - (void)iChatAgentDisconnected;
 - (id)init;
-- (void)inviteFailedFromIMHandle:(id)arg1 reason:(NSInteger)arg2;
+- (void)inviteFailedFromIMHandle:(id)arg1 reason:(int)arg2;
 - (void)invitedToIMAVChat:(id)arg1;
 - (BOOL)isFullConferenceCapable;
 - (BOOL)isInConference;
@@ -103,8 +105,9 @@
 - (void)receivedFirstRemoteFrameForAVChat:(id)arg1;
 - (void)rejectConferenceInvitationFrom:(id)arg1 conferenceID:(id)arg2;
 - (void)remoteCameraBeingChangedForAVChat:(id)arg1;
-- (void)remoteCameraDidChangeForAVChat:(id)arg1 newCameraType:(NSUInteger)arg2;
+- (void)remoteCameraDidChangeForAVChat:(id)arg1 newCameraType:(unsigned int)arg2;
 - (void)sendConferenceInvitationTo:(id)arg1;
+- (void)setCameraType:(int)arg1;
 - (void)setConferenceMuted:(BOOL)arg1;
 - (void)setConferencePaused:(BOOL)arg1;
 - (void)setHavePreviouslyConferenced:(BOOL)arg1 withID:(id)arg2;

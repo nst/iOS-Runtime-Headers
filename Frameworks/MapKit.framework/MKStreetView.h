@@ -2,41 +2,41 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKStreetViewInternal;
+@class MKPanorama, MKSearchResult, MKStreetViewInternal, NSString, NSURL;
 
 @interface MKStreetView : UIView {
     MKStreetViewInternal *_internal;
 }
 
-@property(copy) NSString *copyright;
-@property void *introSurfaceBufferRef;
-@property(retain) MKPanorama *panorama;
-@property(readonly) NSURL *panoramaTakeDownURL;
-@property(retain) MKSearchResult *searchResult;
+@property(copy) NSString * copyright;
 @property id delegate;
 @property BOOL enablePrefetching;
 @property BOOL enableUserImmersiveInteraction;
 @property(getter=isEntering,readonly) BOOL entering;
 @property(getter=isExiting,readonly) BOOL exiting;
 @property double initialYaw;
-@property CGPoint introZoomPoint;
-@property NSInteger mapOrientation;
-@property NSUInteger maxZoomLevel;
+@property void* introSurfaceBufferRef;
+@property struct CGPoint { float x; float y; } introZoomPoint;
+@property int mapOrientation;
+@property unsigned int maxZoomLevel;
 @property float maxZoomScaleFactor;
+@property(retain) MKPanorama * panorama;
+@property(readonly) NSURL * panoramaTakeDownURL;
 @property double pitch;
-@property NSInteger renderOrientation;
+@property int renderOrientation;
+@property(retain) MKSearchResult * searchResult;
 @property BOOL showsAnnotations;
 @property BOOL showsCopyright;
 @property BOOL showsMinimap;
 @property BOOL showsPegman;
-@property NSInteger streetViewOrientation;
+@property int streetViewOrientation;
 @property double yaw;
 
 + (void)_initializeSafeCategory;
 + (void)_sortTilePathArray:(id)arg1 reverse:(BOOL)arg2;
-+ (NSInteger)interfaceRotationFromOrientation:(NSInteger)arg1 toOrientation:(NSInteger)arg2;
++ (int)interfaceRotationFromOrientation:(int)arg1 toOrientation:(int)arg2;
 + (Class)layerClass;
-+ (NSInteger)renderRotationFromOrientation:(NSInteger)arg1 toOrientation:(NSInteger)arg2;
++ (int)renderRotationFromOrientation:(int)arg1 toOrientation:(int)arg2;
 
 - (void)_addPanoramaToReport;
 - (void)_cameraOrientationForLocation:(struct CGPoint { float x1; float x2; })arg1 pitch:(float*)arg2 yaw:(float*)arg3;
@@ -49,9 +49,9 @@
 - (void)_destroyFramebuffer;
 - (void)_didLoadPanoramaMapIcon;
 - (void)_didLoadPanoramaMetadata;
-- (void)_didLoadPanoramaTilePath:(NSInteger)arg1;
+- (void)_didLoadPanoramaTilePath:(int)arg1;
 - (void)_drawMinimapWithYaw:(double)arg1 opacity:(float)arg2 brightness:(float)arg3;
-- (void)_drawPanorama:(id)arg1 withSphere:(id)arg2 textures:(id)arg3 lines:(id)arg4 opacity:(float)arg5 stretch:(float)arg6;
+- (void)_drawPanorama:(id)arg1 withSky:(id)arg2 textures:(id)arg3 lines:(id)arg4 opacity:(float)arg5 stretch:(float)arg6;
 - (void)_endMapTransitionAnimation;
 - (void)_endPanoRotation;
 - (void)_endPanoramaTransitionAnimation;
@@ -61,6 +61,7 @@
 - (void)_notifyDidClose;
 - (void)_notifyWillChangeOrientation;
 - (void)_notifyWillClose;
+- (void)_rayForLocation:(struct CGPoint { float x1; float x2; })arg1 x:(float*)arg2 y:(float*)arg3 z:(float*)arg4;
 - (void)_resetTouchLocations;
 - (void)_runAnimations;
 - (void)_scheduleUserDidHighlight;
@@ -72,9 +73,9 @@
 - (void)_smoothScrollAtTime:(double)arg1;
 - (void)_sortTilePathArray:(id)arg1 reverse:(BOOL)arg2;
 - (void)_sphericalCoordinatesForLocation:(struct CGPoint { float x1; float x2; })arg1 correctPitch:(BOOL)arg2 theta:(float*)arg3 phi:(float*)arg4;
-- (void)_startPanoRotationToOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)_startPanoRotationToOrientation:(int)arg1 duration:(double)arg2;
 - (void)_startPanoramaTransitionAnimation;
-- (void)_startTransition:(NSInteger)arg1;
+- (void)_startTransition:(int)arg1;
 - (void)_startTransitionFromMapAnimation;
 - (void)_startTransitionToMapAnimation;
 - (void)_startZoomAnimationToFov:(float)arg1;
@@ -110,8 +111,8 @@
 - (void)loader:(id)arg1 didServiceRequest:(id)arg2;
 - (void)loader:(id)arg1 didServiceRequests:(id)arg2;
 - (void)loader:(id)arg1 willProcessRequests:(id)arg2 needSort:(BOOL)arg3;
-- (NSInteger)mapOrientation;
-- (NSUInteger)maxZoomLevel;
+- (int)mapOrientation;
+- (unsigned int)maxZoomLevel;
 - (float)maxZoomScaleFactor;
 - (id)panorama;
 - (void)panoramaGeometryDidUpdate:(id)arg1;
@@ -119,7 +120,8 @@
 - (id)panoramaTakeDownURL;
 - (double)pitch;
 - (BOOL)pointInsideMinimap:(struct CGPoint { float x1; float x2; })arg1;
-- (NSInteger)renderOrientation;
+- (id)projectionDebugView;
+- (int)renderOrientation;
 - (id)searchResult;
 - (void)setCopyright:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -128,26 +130,26 @@
 - (void)setInitialYaw:(double)arg1;
 - (void)setIntroSurfaceBufferRef:(void*)arg1;
 - (void)setIntroZoomPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setMapOrientation:(NSInteger)arg1;
-- (void)setMaxZoomLevel:(NSUInteger)arg1;
+- (void)setMapOrientation:(int)arg1;
+- (void)setMaxZoomLevel:(unsigned int)arg1;
 - (void)setMaxZoomScaleFactor:(float)arg1;
-- (void)setPanorama:(id)arg1 animation:(NSInteger)arg2 heading:(double)arg3 yawAdjust:(double)arg4 duration:(double)arg5;
+- (void)setPanorama:(id)arg1 animation:(int)arg2 heading:(double)arg3 yawAdjust:(double)arg4 duration:(double)arg5;
 - (void)setPanorama:(id)arg1;
 - (void)setPitch:(double)arg1;
-- (void)setRenderOrientation:(NSInteger)arg1;
+- (void)setRenderOrientation:(int)arg1;
 - (void)setSearchResult:(id)arg1;
 - (void)setShowsAnnotations:(BOOL)arg1;
 - (void)setShowsCopyright:(BOOL)arg1;
 - (void)setShowsMinimap:(BOOL)arg1;
 - (void)setShowsPegman:(BOOL)arg1;
-- (void)setStreetViewOrientation:(NSInteger)arg1 duration:(double)arg2;
-- (void)setStreetViewOrientation:(NSInteger)arg1;
+- (void)setStreetViewOrientation:(int)arg1 duration:(double)arg2;
+- (void)setStreetViewOrientation:(int)arg1;
 - (void)setYaw:(double)arg1;
 - (BOOL)showsAnnotations;
 - (BOOL)showsCopyright;
 - (BOOL)showsMinimap;
 - (BOOL)showsPegman;
-- (NSInteger)streetViewOrientation;
+- (int)streetViewOrientation;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

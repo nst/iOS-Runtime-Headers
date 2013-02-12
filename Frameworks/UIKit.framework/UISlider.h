@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView;
+@class UIImage, UIImageView;
 
 @interface UISlider : UIControl <NSCoding> {
     struct { 
@@ -27,14 +27,14 @@
     float _value;
 }
 
-@property(readonly) UIImage *currentMaximumTrackImage;
-@property(readonly) UIImage *currentMinimumTrackImage;
-@property(readonly) UIImage *currentThumbImage;
-@property(retain) UIImage *maximumValueImage;
-@property(retain) UIImage *minimumValueImage;
 @property(getter=isContinuous) BOOL continuous;
+@property(readonly) UIImage * currentMaximumTrackImage;
+@property(readonly) UIImage * currentMinimumTrackImage;
+@property(readonly) UIImage * currentThumbImage;
 @property float maximumValue;
+@property(retain) UIImage * maximumValueImage;
 @property float minimumValue;
+@property(retain) UIImage * minimumValueImage;
 @property float value;
 
 + (void)_initializeSafeCategory;
@@ -48,7 +48,7 @@
 - (float)_accessibilityMinValue;
 - (void)_accessibilitySetValue:(id)arg1;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
-- (id)_contentForState:(NSUInteger)arg1;
+- (id)_contentForState:(unsigned int)arg1;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
 - (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
@@ -59,23 +59,23 @@
 - (void)_initSubviews;
 - (BOOL)_isThumbEnabled;
 - (void)_layoutSubviewsForBoundsChange:(BOOL)arg1;
-- (id)_maximumTrackImageForState:(NSUInteger)arg1;
-- (id)_minimumTrackImageForState:(NSUInteger)arg1;
+- (id)_maximumTrackImageForState:(unsigned int)arg1;
+- (id)_minimumTrackImageForState:(unsigned int)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_scriptingInfo;
 - (void)_sendDelayedActions;
-- (void)_setContent:(id)arg1 forState:(NSUInteger)arg2;
-- (void)_setMaximumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
-- (void)_setMinimumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)_setContent:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
+- (void)_setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setMinimumTrackVisible:(BOOL)arg1 withDuration:(double)arg2;
 - (void)_setThumbEnabled:(BOOL)arg1;
-- (void)_setThumbImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)_setThumbImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setTrackEnabled:(BOOL)arg1;
 - (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
 - (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_sliderAnimationWillStart:(id)arg1 context:(void*)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_thumbHitEdgeInsets;
-- (id)_thumbImageForState:(NSUInteger)arg1;
+- (id)_thumbImageForState:(unsigned int)arg1;
 - (BOOL)_trackEnabled;
 - (void)_updateAppearanceForEnabled:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
@@ -108,11 +108,11 @@
 - (BOOL)isContinuous;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
-- (id)maximumTrackImageForState:(NSUInteger)arg1;
+- (id)maximumTrackImageForState:(unsigned int)arg1;
 - (float)maximumValue;
 - (id)maximumValueImage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maximumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)minimumTrackImageForState:(NSUInteger)arg1;
+- (id)minimumTrackImageForState:(unsigned int)arg1;
 - (float)minimumValue;
 - (id)minimumValueImage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -122,22 +122,22 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setMaximumTrackImage:(id)arg1 forState:(NSUInteger)arg2;
-- (void)setMaximumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)setMaximumTrackImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setMaximumValue:(float)arg1;
 - (void)setMaximumValueImage:(id)arg1;
-- (void)setMinimumTrackImage:(id)arg1 forState:(NSUInteger)arg2;
-- (void)setMinimumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)setMinimumTrackImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setMinimumValue:(float)arg1;
 - (void)setMinimumValueImage:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setShowValue:(BOOL)arg1;
-- (void)setThumbImage:(id)arg1 forState:(NSUInteger)arg2;
-- (void)setThumbImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)setThumbImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setThumbImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)setValue:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)thumbImageForState:(NSUInteger)arg1;
+- (id)thumbImageForState:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)value;

@@ -6,35 +6,35 @@
 
 @interface GKMatchRequest : NSObject {
     BOOL _attributesSet;
-    NSUInteger _maxPlayers;
-    NSUInteger _minPlayers;
-    NSUInteger _playerAttributes;
-    NSUInteger _playerGroup;
+    unsigned int _maxPlayers;
+    unsigned int _minPlayers;
+    unsigned int _playerAttributes;
+    unsigned int _playerGroup;
     NSArray *_playersToInvite;
 }
 
-@property(retain) NSArray *playersToInvite;
 @property BOOL attributesSet;
-@property NSUInteger maxPlayers;
-@property NSUInteger minPlayers;
-@property NSUInteger playerAttributes;
-@property NSUInteger playerGroup;
+@property unsigned int maxPlayers;
+@property unsigned int minPlayers;
+@property unsigned int playerAttributes;
+@property unsigned int playerGroup;
+@property(retain) NSArray * playersToInvite;
 
 - (BOOL)attributesSet;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isValidForHosted:(BOOL)arg1;
-- (NSUInteger)maxPlayers;
-- (NSUInteger)minPlayers;
-- (NSUInteger)playerAttributes;
-- (NSUInteger)playerGroup;
+- (unsigned int)maxPlayers;
+- (unsigned int)minPlayers;
+- (unsigned int)playerAttributes;
+- (unsigned int)playerGroup;
 - (id)playersToInvite;
 - (void)setAttributesSet:(BOOL)arg1;
-- (void)setMaxPlayers:(NSUInteger)arg1;
-- (void)setMinPlayers:(NSUInteger)arg1;
-- (void)setPlayerAttributes:(NSUInteger)arg1;
-- (void)setPlayerGroup:(NSUInteger)arg1;
+- (void)setMaxPlayers:(unsigned int)arg1;
+- (void)setMinPlayers:(unsigned int)arg1;
+- (void)setPlayerAttributes:(unsigned int)arg1;
+- (void)setPlayerGroup:(unsigned int)arg1;
 - (void)setPlayersToInvite:(id)arg1;
 
 @end

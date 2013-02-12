@@ -8,12 +8,12 @@
     EDFormula *mFormula;
     TSUPointerKeyDictionary *mMaxWorksheetReferences;
     EDString *mNameString;
-    NSUInteger mSheetIndex;
+    unsigned int mSheetIndex;
 }
 
 - (void)dealloc;
 - (id)formula;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEDName:(id)arg1;
@@ -22,7 +22,7 @@
 - (id)nameString;
 - (void)setFormula:(id)arg1 workbook:(id)arg2;
 - (void)setNameString:(id)arg1;
-- (void)setSheetIndex:(NSUInteger)arg1;
-- (NSUInteger)sheetIndex;
+- (void)setSheetIndex:(unsigned int)arg1;
+- (unsigned int)sheetIndex;
 
 @end

@@ -8,7 +8,7 @@
     <SWSyncServiceConnectionDelegate><SWGeneratePINConnectionDelegate> *_delegate;
 }
 
-@property <SWSyncServiceConnectionDelegate><SWGeneratePINConnectionDelegate> *delegate;
+@property <SWSyncServiceConnectionDelegate><SWGeneratePINConnectionDelegate> * delegate;
 
 - (void)dealloc;
 - (id)delegate;

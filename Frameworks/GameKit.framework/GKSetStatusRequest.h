@@ -8,7 +8,7 @@
     NSString *_status;
 }
 
-@property(copy) NSString *status;
+@property(copy) NSString * status;
 
 - (void)dealloc;
 - (id)key;

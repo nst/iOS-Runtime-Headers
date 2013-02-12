@@ -8,28 +8,28 @@
     void *_context;
     id _delegate;
     UIRemoteView *_remoteView;
-    NSInteger _returnCode;
+    int _returnCode;
     SEL _selector;
     UIView *_sheetView;
 }
 
-@property void *context;
-@property(retain) UIRemoteView *remoteView;
-@property(retain) UIView *sheetView;
+@property void* context;
 @property id delegate;
-@property NSInteger returnCode;
+@property(retain) UIRemoteView * remoteView;
+@property int returnCode;
 @property SEL selector;
+@property(retain) UIView * sheetView;
 
 - (void*)context;
 - (void)dealloc;
 - (id)delegate;
 - (id)remoteView;
-- (NSInteger)returnCode;
+- (int)returnCode;
 - (SEL)selector;
 - (void)setContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRemoteView:(id)arg1;
-- (void)setReturnCode:(NSInteger)arg1;
+- (void)setReturnCode:(int)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setSheetView:(id)arg1;
 - (id)sheetView;

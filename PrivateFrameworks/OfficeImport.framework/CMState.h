@@ -5,7 +5,7 @@
 @class NSMutableDictionary, NSString, OADColorMap, OADColorScheme;
 
 @interface CMState : NSObject {
-    NSInteger _textLevel;
+    int _textLevel;
     NSMutableDictionary *components;
     NSMutableDictionary *htmlResource;
     OADColorMap *mColorMap;
@@ -14,7 +14,7 @@
     BOOL mIsThumbnail;
     NSString *mResourceUrlPrefix;
     id mResources;
-    NSInteger mSrcFormat;
+    int mSrcFormat;
 }
 
 - (id)colorMap;
@@ -39,8 +39,8 @@
 - (void)setIsThumbnail:(BOOL)arg1;
 - (void)setResourceUrlPrefix:(id)arg1;
 - (void)setResources:(id)arg1;
-- (void)setSrcFormat:(NSInteger)arg1;
-- (NSInteger)sourceFormat;
-- (NSInteger)textLevel;
+- (void)setSrcFormat:(int)arg1;
+- (int)sourceFormat;
+- (int)textLevel;
 
 @end

@@ -10,11 +10,11 @@
 
 @interface SUDataInputSource : SUInputSource {
     NSData *_data;
-    NSInteger _offset;
+    int _offset;
     id _promiseBlock;
 }
 
-@property(readonly) NSData *data;
+@property(readonly) NSData * data;
 
 - (id)copyAllData:(id*)arg1;
 - (id)data;
@@ -24,6 +24,6 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithDataPromise:(id)arg1;
 - (BOOL)open:(id*)arg1;
-- (NSInteger)read:(char *)arg1 maxLength:(NSUInteger)arg2 error:(id*)arg3;
+- (int)read:(char *)arg1 maxLength:(unsigned int)arg2 error:(id*)arg3;
 
 @end

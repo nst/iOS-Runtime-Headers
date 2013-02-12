@@ -11,7 +11,7 @@
     NSString *_text;
 }
 
-@property(copy) NSString *text;
+@property(copy) NSString * text;
 
 - (id)_loadingString;
 - (void)dealloc;

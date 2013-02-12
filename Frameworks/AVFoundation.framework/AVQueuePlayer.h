@@ -13,7 +13,7 @@
 + (id)playerWithURL:(id)arg1;
 + (id)queuePlayerWithItems:(id)arg1;
 
-- (NSInteger)_defaultActionAtItemEnd;
+- (int)_defaultActionAtItemEnd;
 - (void)_enqueueModification:(id)arg1;
 - (BOOL)_shouldEnqueueModifications;
 - (void)advanceToNextItem;
@@ -27,6 +27,6 @@
 - (id)items;
 - (void)removeAllItems;
 - (void)removeItem:(id)arg1;
-- (void)setActionAtItemEnd:(NSInteger)arg1;
+- (void)setActionAtItemEnd:(int)arg1;
 
 @end

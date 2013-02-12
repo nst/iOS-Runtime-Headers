@@ -6,12 +6,17 @@
    See Warning(s) below.
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSString, WebInspectorWindowController, WebView;
 
 @interface WebInspectorWindowController : NSObject {
     struct WebInspectorFrontendClient { int (**x1)(); struct InspectorController {} *x2; struct Page {} *x3; struct ExecState {} *x4; struct RefPtr<WebCore::InspectorFrontendHost> { 
             struct InspectorFrontendHost {} *m_ptr; 
-        } x5; id x6; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x7; void*x8; void*x9; unsigned int x10/* : ? */; oneway NSInteger x11; void*x12; void*x13; void*x14; struct RetainPtr<WebInspectorWindowController> { 
+        } x5; id x6; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x7; void*x8; void*x9; unsigned int x10/* : ? */; oneway int x11; void*x12; void*x13; void*x14; struct RetainPtr<WebInspectorWindowController> { 
             WebInspectorWindowController *m_ptr; 
         } x15; struct String { 
             struct RefPtr<WebCore::StringImpl> { 
@@ -24,8 +29,8 @@
     WebView *_webView;
 }
 
-@property(retain) NSString *title;
-@property(readonly) WebView *webView;
+@property(retain) NSString * title;
+@property(readonly) WebView * webView;
 
 - (void)dealloc;
 - (void)destroyInspectorView;

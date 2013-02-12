@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSTimer, UIImageView, UILabel;
+@class <MPDetailSliderDelegate>, NSString, NSTimer, UIImageView, UILabel;
 
 @interface MPDetailSlider : UISlider {
     struct CGPoint { 
@@ -42,24 +42,24 @@
     float _maxTrackWidth;
     float _minScale;
     } _previousLocationInView;
-    NSInteger _scrubValue;
-    NSInteger _style;
+    int _scrubValue;
+    int _style;
     UIImageView *_thumbImageView;
     } _timeLabelInsets;
-    NSInteger _timeLabelStyle;
+    int _timeLabelStyle;
     float _trackInset;
 }
 
-@property <MPDetailSliderDelegate> *delegate;
-@property(readonly) NSString *localizedScrubSpeedText;
 @property(getter=isActive) BOOL active;
 @property BOOL allowsDetailScrubbing;
 @property double availableDuration;
+@property <MPDetailSliderDelegate> * delegate;
 @property(readonly) BOOL detailScrubbingAvailableForCurrentDuration;
 @property float detailScrubbingVerticalRange;
 @property double duration;
-@property UIEdgeInsets timeLabelInsets;
-@property NSInteger timeLabelStyle;
+@property(readonly) NSString * localizedScrubSpeedText;
+@property struct UIEdgeInsets { float top; float left; float bottom; float right; } timeLabelInsets;
+@property int timeLabelStyle;
 
 + (void)_initializeSafeCategory;
 + (float)defaultHeight;
@@ -100,8 +100,8 @@
 - (float)detailScrubbingVerticalRange;
 - (double)duration;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2 maxTrackWidth:(float)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isActive;
 - (BOOL)isTracking;
@@ -115,11 +115,11 @@
 - (void)setDuration:(double)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTimeLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setTimeLabelStyle:(NSInteger)arg1;
+- (void)setTimeLabelStyle:(int)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })timeLabelInsets;
-- (NSInteger)timeLabelStyle;
+- (int)timeLabelStyle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

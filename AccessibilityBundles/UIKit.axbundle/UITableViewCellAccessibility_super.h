@@ -6,17 +6,21 @@
 }
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (BOOL)_accessibilityIsTableCell;
+- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (id)accessibilityElementAtIndex:(int)arg1;
+- (int)accessibilityElementCount;
 - (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)dealloc;
 - (void)deleteConfirmationControlWasCancelled:(id)arg1;
 - (void)deleteConfirmationControlWasClicked:(id)arg1;
 - (void)editControlWasClicked:(id)arg1;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
+- (int)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 - (void)paste:(id)arg1;
+- (void)setAccessoryView:(id)arg1;
 
 @end

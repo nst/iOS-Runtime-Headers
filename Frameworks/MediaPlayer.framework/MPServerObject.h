@@ -3,19 +3,19 @@
  */
 
 @interface MPServerObject : NSObject {
-    struct { NSUInteger x1[8]; } *_clientAuditToken;
-    NSInteger _clientPID;
+    struct { unsigned int x1[8]; } *_clientAuditToken;
+    int _clientPID;
 }
 
-@property(readonly) ? *clientAuditToken;
-@property(readonly) NSInteger clientPID;
+@property(readonly) struct { unsigned int x1[8]; }* clientAuditToken;
+@property(readonly) int clientPID;
 
 + (id)_center;
 
-- (id)_forwardMessage:(id)arg1 userInfo:(id)arg2 auditToken:(struct { NSUInteger x1[8]; }*)arg3;
+- (id)_forwardMessage:(id)arg1 userInfo:(id)arg2 auditToken:(struct { unsigned int x1[8]; }*)arg3;
 - (void)_registerNotificationsForSelectors;
-- (struct { NSUInteger x1[8]; }*)clientAuditToken;
-- (NSInteger)clientPID;
+- (struct { unsigned int x1[8]; }*)clientAuditToken;
+- (int)clientPID;
 - (id)init;
 
 @end

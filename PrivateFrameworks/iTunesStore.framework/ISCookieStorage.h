@@ -7,11 +7,11 @@
 @interface ISCookieStorage : NSObject {
     struct dispatch_queue_s { } *_dispatchQueue;
     void *_processAssertion;
-    NSInteger _processAssertionCount;
+    int _processAssertionCount;
     NSURL *_storageLocation;
 }
 
-@property(readonly) NSURL *storageLocation;
+@property(readonly) NSURL * storageLocation;
 
 + (id)sharedInstance;
 + (id)sharedStorage;

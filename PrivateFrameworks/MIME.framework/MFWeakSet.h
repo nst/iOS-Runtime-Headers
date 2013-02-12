@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface MFWeakSet : MFWeakObject <MFWeakReferenceHolder> {
     struct __CFSet { } *_set;
 }

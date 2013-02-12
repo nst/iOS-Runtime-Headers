@@ -8,7 +8,7 @@
     NSArray *_emails;
 }
 
-@property(retain) NSArray *emails;
+@property(retain) NSArray * emails;
 
 - (void)dealloc;
 - (id)emails;

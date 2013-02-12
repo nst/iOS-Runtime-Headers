@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMNotation : DOMNode {
 }
 
-@property(copy,readonly) NSString *publicId;
-@property(copy,readonly) NSString *systemId;
+@property(copy,readonly) NSString * publicId;
+@property(copy,readonly) NSString * systemId;
 
 - (id)publicId;
 - (id)systemId;

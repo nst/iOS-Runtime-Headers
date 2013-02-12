@@ -2,19 +2,32 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class CNFHUDButton;
+@class NSArray;
 
 @interface CNFHUDView : UIView {
-    CNFHUDButton *_buttons[3];
+    NSArray *_buttons;
     id _delegate;
+    int _style;
 }
 
+@property id delegate;
+@property(readonly) int style;
+
+- (id)_buttonForButtonTag:(int)arg1;
+- (int)_buttonPositionForButton:(id)arg1;
 - (void)_buttonPressed:(id)arg1;
+- (struct CGSize { float x1; float x2; })_defaultButtonSizeForButton:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForStyle:(int)arg1;
 - (void)dealloc;
-- (void)setButton:(NSInteger)arg1 isEnabled:(BOOL)arg2;
-- (void)setButton:(NSInteger)arg1 isSelected:(BOOL)arg2;
+- (id)delegate;
+- (id)initWithStyle:(int)arg1 buttons:(id)arg2;
+- (void)layoutSubviews;
+- (void)setButton:(int)arg1 isEnabled:(BOOL)arg2;
+- (void)setButton:(int)arg1 isSelected:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setOrientation:(NSInteger)arg1;
-- (void)setTitle:(id)arg1 image:(id)arg2 forPosition:(NSInteger)arg3;
+- (void)setOrientation:(int)arg1;
+- (void)setTitle:(id)arg1 image:(id)arg2 forButtonTag:(int)arg3;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (int)style;
 
 @end

@@ -11,15 +11,15 @@
     UIView *_tinyActionContentView;
 }
 
-@property(retain) ABPersonTableActionDataSource *actionDataSource;
-@property <ABPersonTableTinyActionDelegate> *delegate;
-@property(retain) <ABStyleProvider> *styleProvider;
-@property(readonly) NSUInteger actionsCount;
+@property(retain) ABPersonTableActionDataSource * actionDataSource;
+@property(readonly) unsigned int actionsCount;
+@property <ABPersonTableTinyActionDelegate> * delegate;
+@property(retain) <ABStyleProvider> * styleProvider;
 
 - (void)_resizeInnerContentView;
 - (id)_tinyActionContentView;
 - (id)actionDataSource;
-- (NSUInteger)actionsCount;
+- (unsigned int)actionsCount;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;

@@ -2,42 +2,42 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSFetchedResultsController, NSString;
+@class NSArray, NSFetchedResultsController, NSString;
 
 @interface _NSDefaultSectionInfo : NSObject <NSFetchedResultsSectionInfo> {
     NSFetchedResultsController *_controller;
     NSString *_indexTitle;
     NSString *_name;
-    NSUInteger _numberOfObjects;
-    NSUInteger _oldSectionNumber;
+    unsigned int _numberOfObjects;
+    unsigned int _oldSectionNumber;
     id _sectionObjects;
-    NSUInteger _sectionOffset;
+    unsigned int _sectionOffset;
 }
 
-@property(readonly) NSString *indexTitle;
-@property(readonly) NSString *name;
-@property(readonly) NSArray *objects;
-@property(readonly) NSUInteger numberOfObjects;
-@property NSUInteger oldSectionNumber;
-@property(readonly) NSUInteger sectionNumber;
-@property(readonly) NSUInteger sectionOffset;
+@property(readonly) NSString * indexTitle;
+@property(readonly) NSString * name;
+@property(readonly) unsigned int numberOfObjects;
+@property(readonly) NSArray * objects;
+@property unsigned int oldSectionNumber;
+@property(readonly) unsigned int sectionNumber;
+@property(readonly) unsigned int sectionOffset;
 
 - (void)clearSectionObjectsCache;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)indexOfObject:(id)arg1;
+- (unsigned int)indexOfObject:(id)arg1;
 - (id)indexTitle;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithController:(id)arg1 name:(id)arg2 indexTitle:(id)arg3 sectionOffset:(NSUInteger)arg4;
+- (id)initWithController:(id)arg1 name:(id)arg2 indexTitle:(id)arg3 sectionOffset:(unsigned int)arg4;
 - (id)name;
-- (NSUInteger)numberOfObjects;
+- (unsigned int)numberOfObjects;
 - (id)objects;
-- (NSUInteger)oldSectionNumber;
-- (NSUInteger)sectionNumber;
-- (NSUInteger)sectionOffset;
+- (unsigned int)oldSectionNumber;
+- (unsigned int)sectionNumber;
+- (unsigned int)sectionOffset;
 - (void)setController:(id)arg1;
-- (void)setNumberOfObjects:(NSUInteger)arg1;
-- (void)setOldSectionNumber:(NSUInteger)arg1;
-- (void)setSectionOffset:(NSUInteger)arg1;
+- (void)setNumberOfObjects:(unsigned int)arg1;
+- (void)setOldSectionNumber:(unsigned int)arg1;
+- (void)setSectionOffset:(unsigned int)arg1;
 
 @end

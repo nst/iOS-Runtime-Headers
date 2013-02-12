@@ -5,9 +5,9 @@
 @class NewProduction, SlotsInContext;
 
 @interface Rule : GrammarPart {
-    SlotsInContext *leftHandSide;
-    BOOL repeat;
-    NewProduction *rightHandSide;
+    SlotsInContext *_leftHandSide;
+    BOOL _repeat;
+    NewProduction *_rightHandSide;
 }
 
 + (id)instanceFromPlist:(id)arg1;
@@ -15,6 +15,7 @@
 + (id)test;
 
 - (id)appliedTo:(id)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)initFromPlist:(id)arg1;
 - (id)initWithLeftHandSide:(id)arg1 rightHandSide:(id)arg2;

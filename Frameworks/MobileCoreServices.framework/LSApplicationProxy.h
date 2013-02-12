@@ -2,31 +2,34 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class LSApplicationProxy, NSArray;
+@class LSApplicationProxy, NSArray, NSString;
 
 @interface LSApplicationProxy : LSResourceProxy {
+    unsigned int _flags;
     NSArray *_privateDocumentIconNames;
     LSApplicationProxy *_privateDocumentTypeOwner;
 }
 
-@property(readonly) NSString *applicationIdentifier;
-@property(readonly) NSString *roleIdentifier;
+@property(readonly) NSString * applicationIdentifier;
+@property(readonly) NSString * roleIdentifier;
 
 + (id)applicationProxyForIdentifier:(id)arg1 roleIdentifier:(id)arg2;
 + (id)applicationProxyForIdentifier:(id)arg1;
 
-- (struct { NSInteger x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(NSInteger)arg1;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(int)arg1;
 - (id)_initWithApplicationIdentifier:(id)arg1 roleIdentifier:(id)arg2 name:(id)arg3 resourcesDirectoryURL:(id)arg4 iconFileNames:(id)arg5 iconIsPrerendered:(BOOL)arg6;
 - (id)applicationIdentifier;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedName;
+- (BOOL)privateDocumentIconAllowOverride;
 - (id)privateDocumentIconNames;
 - (id)privateDocumentTypeOwner;
 - (id)resourcesDirectoryURL;
 - (id)roleIdentifier;
+- (void)setPrivateDocumentIconAllowOverride:(BOOL)arg1;
 - (void)setPrivateDocumentIconNames:(id)arg1;
 - (void)setPrivateDocumentTypeOwner:(id)arg1;
 

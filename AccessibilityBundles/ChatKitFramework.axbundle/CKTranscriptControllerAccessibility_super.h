@@ -8,9 +8,10 @@
 + (void)_initializeSafeCategory;
 
 - (void)_reloadTranscriptLayer;
-- (void)_showPhotoPickerWithSourceType:(NSUInteger)arg1;
-- (void)_showPhotoScrollerForTranscriptStartingAtRow:(NSInteger)arg1;
-- (void)_showVCalViewerForRow:(NSInteger)arg1;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)_showPhotoPickerWithSourceType:(unsigned int)arg1;
+- (void)_showPhotoScrollerForTranscriptStartingAtRow:(int)arg1;
+- (void)_showVCalViewerForRow:(int)arg1;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)messageEntryViewSendButtonHit:(id)arg1;
 
 @end

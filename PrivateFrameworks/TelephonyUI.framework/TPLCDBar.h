@@ -8,21 +8,22 @@
     UIImage *_barBackground;
 }
 
-@property(retain) UIImage *barBackground;
+@property(retain) UIImage * barBackground;
 
 + (id)backgroundImage;
 + (id)backgroundImageName;
 + (float)defaultHeight;
-+ (float)defaultHeightForOrientation:(NSInteger)arg1;
++ (float)defaultHeightForOrientation:(int)arg1;
 + (void)preloadImages;
 
 - (id)barBackground;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentStretchRect;
 - (void)dealloc;
 - (id)initWithDefaultSize;
-- (id)initWithDefaultSizeForOrientation:(NSInteger)arg1;
+- (id)initWithDefaultSizeForOrientation:(int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBarBackground:(id)arg1;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
+- (void)setOrientation:(int)arg1;
 
 @end

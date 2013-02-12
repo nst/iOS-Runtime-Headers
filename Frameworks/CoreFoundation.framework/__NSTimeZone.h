@@ -4,7 +4,7 @@
 
 @interface __NSTimeZone : NSTimeZone {
     struct __CFData { } *_data;
-    NSInteger _lock;
+    int _lock;
     struct __CFString { } *_name;
     void **_ucal;
 }
@@ -20,9 +20,9 @@
 - (void)dealloc;
 - (void)finalize;
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
-- (id)localizedName:(NSInteger)arg1 locale:(id)arg2;
+- (id)localizedName:(int)arg1 locale:(id)arg2;
 - (id)name;
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
-- (NSInteger)secondsFromGMTForDate:(id)arg1;
+- (int)secondsFromGMTForDate:(id)arg1;
 
 @end

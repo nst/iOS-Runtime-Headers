@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABServerSearchDataSource, UISearchBar, UISearchDisplayController, UIViewController;
+@class <ABStyleProvider>, ABGroupWrapper, ABServerSearchDataSource, UISearchBar, UISearchDisplayController, UIView, UIViewController;
 
 @interface ABServerSearchController : ABContentController <ABServerSearchDataSourceDelegate, UITextFieldDelegate, UISearchDisplayDelegate, UISearchBarDelegate> {
     struct { 
@@ -15,11 +15,12 @@
     UISearchDisplayController *_searchController;
 }
 
-@property(retain) ABServerSearchDataSource *dataSource;
-@property(readonly) UIView *navigationTitleView;
-@property(retain) ABGroupWrapper *selectedGroupWrapper;
-@property(readonly) <ABStyleProvider> *styleProvider;
+@property(retain) ABServerSearchDataSource * dataSource;
+@property(readonly) UIView * navigationTitleView;
+@property(retain) ABGroupWrapper * selectedGroupWrapper;
+@property(readonly) <ABStyleProvider> * styleProvider;
 
+- (void)_applyStylesToTableView:(id)arg1;
 - (void)_clearSearchResults;
 - (void)_deselectAllRowsWithAnimation:(BOOL)arg1;
 - (BOOL)_shouldDeactivateOnCancelButtonClicked;
@@ -27,10 +28,12 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
+- (void)makeMainTableViewVisible;
 - (id)navigationTitleView;
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
+- (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
 - (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
 - (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
@@ -46,6 +49,6 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -7,6 +7,8 @@
 @interface UIITunesStoreURLResolver : UIURLResolver {
     NSArray *_appStoreHostPatterns;
     NSArray *_appStorePathPatterns;
+    NSArray *_appleStoreHostPatterns;
+    NSArray *_appleStorePathPatterns;
     NSArray *_bookStoreHostPatterns;
     NSArray *_bookStorePathPatterns;
     NSArray *_hostWhiteList;
@@ -19,6 +21,7 @@
 
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-- (NSInteger)storeURLTypeForURL:(id)arg1;
+- (BOOL)isAppleStoreURL:(id)arg1;
+- (int)storeURLTypeForURL:(id)arg1;
 
 @end

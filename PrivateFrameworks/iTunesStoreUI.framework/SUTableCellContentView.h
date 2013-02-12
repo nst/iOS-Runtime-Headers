@@ -7,19 +7,21 @@
 @interface SUTableCellContentView : UIView <SUCellConfigurationView> {
     unsigned int _drawAsDisabled : 1;
     unsigned int _highlighted : 1;
+    unsigned int _highlightsOnlyContentView : 1;
     unsigned int _useSubviewLayout : 1;
-    NSInteger _clipCorners;
+    int _clipCorners;
     UIBezierPath *_clipPath;
     SUCellConfiguration *_configuration;
     UIView *_overlayView;
     NSMutableArray *_subviews;
 }
 
-@property(retain) SUCellConfiguration *configuration;
-@property NSInteger clipCorners;
+@property int clipCorners;
+@property(retain) SUCellConfiguration * configuration;
 @property(getter=isDeleteConfirmationVisible) BOOL deleteConfirmationVisisble;
 @property BOOL drawAsDisabled;
 @property(getter=isHighlighted) BOOL highlighted;
+@property BOOL highlightsOnlyContentView;
 @property BOOL usesSubviews;
 
 + (void)_initializeSafeCategory;
@@ -37,23 +39,25 @@
 - (id)accessibilityLabel;
 - (id)accessibilityLanguage;
 - (unsigned long long)accessibilityTraits;
-- (NSInteger)clipCorners;
+- (int)clipCorners;
 - (id)configuration;
 - (void)dealloc;
 - (id)description;
 - (BOOL)drawAsDisabled;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)highlightsOnlyContentView;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isDeleteConfirmationVisible;
 - (BOOL)isHighlighted;
 - (void)layoutSubviews;
 - (void)reloadView;
-- (void)setClipCorners:(NSInteger)arg1;
+- (void)setClipCorners:(int)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDeleteConfirmationVisisble:(BOOL)arg1;
 - (void)setDrawAsDisabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlightsOnlyContentView:(BOOL)arg1;
 - (void)setUsesSubviews:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setUsesSubviews:(BOOL)arg1;
 - (BOOL)usesSubviews;

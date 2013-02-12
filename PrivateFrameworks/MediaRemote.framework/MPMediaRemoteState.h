@@ -9,22 +9,29 @@
 @interface MPMediaRemoteState : NSObject {
     BOOL _canBeNowPlayingApp;
     id _commandHandlerBlock;
+    BOOL _includeVideoRoutes;
     BOOL _isOverrideApp;
-    NSInteger _notifyLaunchedToken;
+    int _notifyLaunchedToken;
+    unsigned int _routeDiscoveryCount;
 }
 
-@property(copy) ? *commandHandlerBlock;
 @property BOOL canBeNowPlayingApp;
+@property(copy) id commandHandlerBlock;
+@property BOOL includeVideoRoutes;
 @property BOOL isOverrideApp;
 
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
+- (void)beginRouteDiscovery;
 - (BOOL)canBeNowPlayingApp;
 - (id)commandHandlerBlock;
 - (void)dealloc;
+- (void)endRouteDiscovery;
+- (BOOL)includeVideoRoutes;
 - (id)init;
 - (BOOL)isOverrideApp;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
 - (void)setCommandHandlerBlock:(id)arg1;
+- (void)setIncludeVideoRoutes:(BOOL)arg1;
 - (void)setIsOverrideApp:(BOOL)arg1;
 
 @end

@@ -5,6 +5,6 @@
 @interface MFSniffer : NSObject {
 }
 
-+ (NSInteger)fileType:(id)arg1;
++ (int)fileType:(id)arg1;
 
 @end

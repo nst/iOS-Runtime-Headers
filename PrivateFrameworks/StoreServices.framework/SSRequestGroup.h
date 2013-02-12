@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableSet, NSString;
+@class NSArray, NSMutableSet, NSString;
 
 @interface SSRequestGroup : NSObject {
     NSString *_identifier;
@@ -10,8 +10,8 @@
     NSMutableSet *_requests;
 }
 
-@property(readonly) NSString *groupIdentifier;
-@property(readonly) NSArray *requests;
+@property(readonly) NSString * groupIdentifier;
+@property(readonly) NSArray * requests;
 
 - (void)_daemonExited:(id)arg1;
 - (void)_mainThreadDaemonExited:(id)arg1;

@@ -5,16 +5,16 @@
 @class NSString;
 
 @interface WMListLevelTextToken : NSObject {
-    NSInteger m_level;
+    int m_level;
     NSString *m_string;
 }
 
-+ (id)tokenWithString:(id)arg1 andLevel:(NSInteger)arg2;
++ (id)tokenWithString:(id)arg1 andLevel:(int)arg2;
 
 - (void)dealloc;
-- (id)initWithString:(id)arg1 andLevel:(NSInteger)arg2;
-- (NSInteger)level;
+- (id)initWithString:(id)arg1 andLevel:(int)arg2;
+- (int)level;
 - (id)string;
-- (id)stringForIndex:(NSInteger)arg1 withFormat:(NSInteger)arg2 initialNumber:(NSInteger)arg3;
+- (id)stringForIndex:(int)arg1 withFormat:(int)arg2 initialNumber:(int)arg3;
 
 @end

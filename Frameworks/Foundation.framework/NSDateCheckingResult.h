@@ -6,8 +6,8 @@
 
 @interface NSDateCheckingResult : NSTextCheckingResult {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     NSDate *_date;
     double _duration;
     } _range;
@@ -16,25 +16,25 @@
     id _underlyingResult;
 }
 
-@property(readonly) NSDate *referenceDate;
-@property(readonly) NSTimeZone *timeZone;
-@property(readonly) void *underlyingResult;
 @property(readonly) double duration;
+@property(readonly) NSDate * referenceDate;
+@property(readonly) NSTimeZone * timeZone;
+@property(readonly) void* underlyingResult;
 
-- (BOOL)_adjustRangesWithOffset:(NSInteger)arg1;
+- (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5 underlyingResult:(void*)arg6;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4;
-- (id)initWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 date:(id)arg2;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5 underlyingResult:(void*)arg6;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)referenceDate;
-- (id)resultByAdjustingRangesWithOffset:(NSInteger)arg1;
+- (id)resultByAdjustingRangesWithOffset:(int)arg1;
 - (unsigned long long)resultType;
 - (id)timeZone;
 - (void*)underlyingResult;

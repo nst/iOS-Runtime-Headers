@@ -6,37 +6,37 @@
 
 @interface DADSearchQuery : NSObject <NSCopying> {
     struct _NSRange { 
-        NSUInteger location; 
-        NSUInteger length; 
+        unsigned int location; 
+        unsigned int length; 
     } _range;
     NSString *_searchString;
-    NSInteger _state;
-    NSUInteger _timeLimit;
+    int _state;
+    unsigned int _timeLimit;
 }
 
-@property(readonly) NSString *searchString;
-@property NSUInteger maxResults;
-@property _NSRange range;
-@property NSUInteger timeLimit;
+@property unsigned int maxResults;
+@property struct _NSRange { unsigned int location; unsigned int length; } range;
+@property(readonly) NSString * searchString;
+@property unsigned int timeLimit;
 
 - (void)_copyProperties:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSearchString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDADSearchQuery:(id)arg1;
 - (BOOL)isQueryRunning;
-- (NSUInteger)maxResults;
-- (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
+- (unsigned int)maxResults;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)searchString;
-- (void)setMaxResults:(NSUInteger)arg1;
-- (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
-- (void)setState:(NSInteger)arg1;
-- (void)setTimeLimit:(NSUInteger)arg1;
-- (NSInteger)state;
-- (NSUInteger)timeLimit;
+- (void)setMaxResults:(unsigned int)arg1;
+- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setState:(int)arg1;
+- (void)setTimeLimit:(unsigned int)arg1;
+- (int)state;
+- (unsigned int)timeLimit;
 
 @end

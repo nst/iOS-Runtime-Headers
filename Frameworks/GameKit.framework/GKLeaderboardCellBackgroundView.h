@@ -6,24 +6,26 @@
 
 @interface GKLeaderboardCellBackgroundView : GKCellBackgroundView {
     NSArray *_leaderboardCellStyles;
-    float _rankAvailableWidth;
+    NSArray *_rankWidths;
 }
 
-@property(retain) NSArray *leaderboardCellStyles;
-@property float rankAvailableWidth;
+@property(retain) NSArray * leaderboardCellStyles;
+@property(retain) NSArray * rankWidths;
 
-+ (id)cellBackgroundWithTheme:(id)arg1 tableViewStyle:(NSInteger)arg2;
-+ (id)selectedCellBackgroundWithTheme:(id)arg1 tableViewStyle:(NSInteger)arg2;
++ (id)cellBackgroundWithTheme:(id)arg1 tableViewStyle:(int)arg2;
++ (id)selectedCellBackgroundWithTheme:(id)arg1 tableViewStyle:(int)arg2;
 
+- (float)_rankWidthForCellIndex:(int)arg1;
 - (void)dealloc;
-- (void)drawFillInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLeaderboardStyle:(NSInteger)arg2 cellIndex:(NSInteger)arg3;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawScaledFillImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 context:(struct CGContext { }*)arg3;
+- (void)drawFillInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLeaderboardStyle:(int)arg2 cellIndex:(int)arg3;
+- (void)drawFillInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPath { }*)fillPathForCell:(unsigned int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)leaderboardCellStyles;
-- (float)rankAvailableWidth;
+- (id)rankWidths;
 - (void)setLeaderboardCellStyles:(id)arg1;
-- (void)setRankAvailableWidth:(float)arg1;
-- (void)setSectionLocation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)setRankWidths:(id)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (void)updateContentStretchForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

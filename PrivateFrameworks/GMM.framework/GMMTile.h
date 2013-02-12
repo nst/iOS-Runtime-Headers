@@ -5,18 +5,18 @@
 @class NSData;
 
 @interface GMMTile : PBCodable {
-    NSInteger _face;
+    int _face;
     BOOL _hasFace;
     NSData *_tileData;
-    NSInteger _tileXIndex;
-    NSInteger _tileYIndex;
+    int _tileXIndex;
+    int _tileYIndex;
 }
 
-@property(retain) NSData *tileData;
-@property NSInteger face;
+@property int face;
 @property(readonly) BOOL hasFace;
-@property NSInteger tileXIndex;
-@property NSInteger tileYIndex;
+@property(retain) NSData * tileData;
+@property int tileXIndex;
+@property int tileYIndex;
 
 + (void*)createImageRefFromTileData:(const char *)arg1 length:(unsigned long)arg2;
 + (void*)createImageRefFromTileData:(id)arg1 isCompact:(BOOL)arg2;
@@ -24,17 +24,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (NSInteger)face;
+- (int)face;
 - (BOOL)hasFace;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setFace:(NSInteger)arg1;
+- (void)setFace:(int)arg1;
 - (void)setTileData:(id)arg1;
-- (void)setTileXIndex:(NSInteger)arg1;
-- (void)setTileYIndex:(NSInteger)arg1;
+- (void)setTileXIndex:(int)arg1;
+- (void)setTileYIndex:(int)arg1;
 - (id)tileData;
-- (NSInteger)tileXIndex;
-- (NSInteger)tileYIndex;
+- (int)tileXIndex;
+- (int)tileYIndex;
 - (void)writeTo:(id)arg1;
 
 @end

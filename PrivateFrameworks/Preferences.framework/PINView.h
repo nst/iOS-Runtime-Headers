@@ -27,7 +27,7 @@
 - (void)setStringValue:(id)arg1;
 - (void)setTitle:(id)arg1 font:(id)arg2;
 - (void)showError:(id)arg1 animate:(BOOL)arg2;
-- (void)showFailedAttempts:(NSInteger)arg1;
+- (void)showFailedAttempts:(int)arg1;
 - (id)stringValue;
 
 @end

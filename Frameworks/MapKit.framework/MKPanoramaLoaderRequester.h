@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface MKPanoramaLoaderRequester : GMMRequester {
     NSMutableArray *_panoramaLoaderRequests;
 }
 
-@property(readonly) NSArray *panoramaLoaderRequests;
+@property(readonly) NSArray * panoramaLoaderRequests;
 
 + (void)_mapRequests:(id)arg1 requester:(id)arg2;
 + (void)_unMapRequest:(id)arg1 requester:(id)arg2;

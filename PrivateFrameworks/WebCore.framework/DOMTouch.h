@@ -2,27 +2,29 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class <DOMEventTarget>;
+
 @interface DOMTouch : DOMObject {
 }
 
-@property(retain,readonly) <DOMEventTarget> *target;
-@property(readonly) NSInteger clientX;
-@property(readonly) NSInteger clientY;
-@property(readonly) NSUInteger identifier;
-@property(readonly) NSInteger pageX;
-@property(readonly) NSInteger pageY;
-@property(readonly) NSInteger screenX;
-@property(readonly) NSInteger screenY;
+@property(readonly) int clientX;
+@property(readonly) int clientY;
+@property(readonly) unsigned int identifier;
+@property(readonly) int pageX;
+@property(readonly) int pageY;
+@property(readonly) int screenX;
+@property(readonly) int screenY;
+@property(retain,readonly) <DOMEventTarget> * target;
 
-- (NSInteger)clientX;
-- (NSInteger)clientY;
+- (int)clientX;
+- (int)clientY;
 - (void)dealloc;
 - (void)finalize;
-- (NSUInteger)identifier;
-- (NSInteger)pageX;
-- (NSInteger)pageY;
-- (NSInteger)screenX;
-- (NSInteger)screenY;
+- (unsigned int)identifier;
+- (int)pageX;
+- (int)pageY;
+- (int)screenX;
+- (int)screenY;
 - (id)target;
 
 @end

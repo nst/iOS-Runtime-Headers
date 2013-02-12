@@ -14,7 +14,7 @@
     MimeBody *_mimeBody;
     NSDictionary *_partsByFilename;
     NSDictionary *_partsByURL;
-    NSUInteger _preferredCharset;
+    unsigned int _preferredCharset;
 }
 
 - (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;

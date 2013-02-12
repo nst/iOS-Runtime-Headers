@@ -2,29 +2,31 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
+@class NSArray, NSData, NSString;
+
 @interface IMPerson : NSObject {
     void *_abRecordRef;
     BOOL _registered;
 }
 
-@property(readonly) void *abRecordRef;
-@property(readonly) NSArray *allEmails;
-@property(readonly) NSString *companyName;
-@property(retain,readonly) NSString *displayName;
-@property(copy) NSArray *emails;
-@property(copy) NSString *firstName;
-@property(retain,readonly) NSString *fullName;
-@property(retain,readonly) NSArray *groups;
-@property(retain) NSData *imageData;
-@property(readonly) NSData *imageDataWithoutLoading;
-@property(copy) NSString *lastName;
-@property(readonly) NSArray *mobileNumbers;
-@property(copy) NSString *nickname;
-@property(readonly) NSArray *phoneNumbers;
-@property(readonly) NSString *uniqueID;
+@property(readonly) void* abRecordRef;
+@property(readonly) NSArray * allEmails;
+@property(readonly) NSString * companyName;
+@property(retain,readonly) NSString * displayName;
+@property(copy) NSArray * emails;
+@property(copy) NSString * firstName;
+@property(retain,readonly) NSString * fullName;
+@property(retain,readonly) NSArray * groups;
+@property(retain) NSData * imageData;
+@property(readonly) NSData * imageDataWithoutLoading;
 @property(readonly) BOOL isCompany;
 @property(readonly) BOOL isInAddressBook;
-@property(readonly) NSUInteger status;
+@property(copy) NSString * lastName;
+@property(readonly) NSArray * mobileNumbers;
+@property(copy) NSString * nickname;
+@property(readonly) NSArray * phoneNumbers;
+@property(readonly) unsigned int status;
+@property(readonly) NSString * uniqueID;
 
 + (id)allPeople;
 + (id)existingABPersonForPerson:(id)arg1;
@@ -49,7 +51,7 @@
 - (id)firstName;
 - (id)fullName;
 - (id)groups;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)imHandleRegistrarGUID;
 - (id)imageData;
 - (id)imageDataWithoutLoading;
@@ -72,7 +74,7 @@
 - (void)setNickname:(id)arg1;
 - (void)setValues:(id)arg1 forIMProperty:(id)arg2;
 - (void)setValues:(id)arg1 forProperty:(id)arg2;
-- (NSUInteger)status;
+- (unsigned int)status;
 - (id)uniqueID;
 - (id)valuesForIMProperty:(id)arg1;
 - (id)valuesForProperty:(id)arg1;

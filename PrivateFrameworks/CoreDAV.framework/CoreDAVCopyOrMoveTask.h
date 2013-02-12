@@ -6,13 +6,13 @@
 
 @interface CoreDAVCopyOrMoveTask : CoreDAVTask {
     NSURL *_destinationURL;
-    NSInteger _overwrite;
+    int _overwrite;
 }
 
-@property(retain) NSURL *destinationURL;
-@property NSInteger overwrite;
+@property(retain) NSURL * destinationURL;
+@property int overwrite;
 
-+ (id)stringFromOverwriteValue:(NSInteger)arg1;
++ (id)stringFromOverwriteValue:(int)arg1;
 
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (id)additionalHeaderValues;
@@ -20,12 +20,12 @@
 - (id)description;
 - (id)destinationURL;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(NSInteger)arg3;
+- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(int)arg3;
 - (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (NSInteger)overwrite;
+- (int)overwrite;
 - (id)requestBody;
 - (void)setDestinationURL:(id)arg1;
-- (void)setOverwrite:(NSInteger)arg1;
+- (void)setOverwrite:(int)arg1;
 
 @end

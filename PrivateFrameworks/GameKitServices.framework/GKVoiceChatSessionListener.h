@@ -16,6 +16,6 @@
 - (void)receivedNewVoiceChatOOBMessage:(id)arg1 fromPeerID:(id)arg2;
 - (void)registerNewGKVoiceChatSession:(id)arg1;
 - (void)removeSession:(id)arg1;
-- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(NSInteger)arg3;
+- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 
 @end

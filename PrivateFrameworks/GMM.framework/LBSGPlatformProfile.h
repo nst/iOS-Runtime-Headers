@@ -14,19 +14,19 @@
     NSString *_version;
 }
 
-@property(retain) NSString *distributionChannel;
-@property(retain) NSString *ip;
-@property(retain) NSString *locale;
-@property(retain) NSString *platform;
-@property(retain) NSString *platformKey;
-@property(retain) NSString *userAgent;
-@property(retain) NSString *version;
+@property(retain) NSString * distributionChannel;
 @property(readonly) BOOL hasDistributionChannel;
 @property(readonly) BOOL hasIp;
 @property(readonly) BOOL hasLocale;
 @property(readonly) BOOL hasPlatform;
 @property(readonly) BOOL hasPlatformKey;
 @property(readonly) BOOL hasUserAgent;
+@property(retain) NSString * ip;
+@property(retain) NSString * locale;
+@property(retain) NSString * platform;
+@property(retain) NSString * platformKey;
+@property(retain) NSString * userAgent;
+@property(retain) NSString * version;
 
 - (void)dealloc;
 - (id)description;

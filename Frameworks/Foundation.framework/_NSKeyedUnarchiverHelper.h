@@ -5,7 +5,7 @@
 @class NSArray;
 
 @interface _NSKeyedUnarchiverHelper : NSObject {
-    NSUInteger _lastRef;
+    unsigned int _lastRef;
     NSArray *_white;
 }
 

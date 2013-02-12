@@ -3,20 +3,20 @@
  */
 
 @interface MFBase64Encoder : MFBaseFilterDataConsumer {
-    NSUInteger _left;
+    unsigned int _left;
     unsigned char _leftovers[3];
-    NSUInteger _line;
-    NSUInteger _lineBreak;
+    unsigned int _line;
+    unsigned int _lineBreak;
     BOOL _padChar;
     char *_table;
 }
 
 @property BOOL allowSlash;
-@property NSUInteger lineBreak;
+@property unsigned int lineBreak;
 @property BOOL padChar;
 
 - (BOOL)allowSlash;
-- (NSInteger)appendData:(id)arg1;
+- (int)appendData:(id)arg1;
 - (void)done;
 - (id)initWithConsumers:(id)arg1;
 - (unsigned long)lineBreak;

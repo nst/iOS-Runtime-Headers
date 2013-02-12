@@ -17,7 +17,7 @@
 - (void)dealloc;
 - (BOOL)hasCustomLayout;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
+- (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (BOOL)shouldDisplayForEditModel;
 - (BOOL)update;
 

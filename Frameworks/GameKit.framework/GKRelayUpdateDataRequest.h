@@ -8,7 +8,7 @@
     NSDictionary *_updateRelayRequest;
 }
 
-@property(retain) NSDictionary *updateRelayRequest;
+@property(retain) NSDictionary * updateRelayRequest;
 
 - (void)dealloc;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;

@@ -22,7 +22,7 @@
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (NSUInteger)retainCount;
-- (NSInteger)secondsFromGMTForDate:(id)arg1;
+- (unsigned int)retainCount;
+- (int)secondsFromGMTForDate:(id)arg1;
 
 @end

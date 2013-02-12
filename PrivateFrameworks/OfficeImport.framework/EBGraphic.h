@@ -2,23 +2,22 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
  */
 
 @interface EBGraphic : NSObject {
-     /* Encoded args for previous method: v20@0:4@8^{XlGraphicsInfo=^^?isBBBB{ChVector<XlGraphicsInfo::XlObjData*>=^^{XlObjData}^^{XlObjData}III}Bi^{XlString}iiiBSSS*IIBIIiiB^{XlString}}12@16 */
-     /* Encoded args for previous method: v20@0:4@8^{XlGraphicsInfo=^^?isBBBB{ChVector<XlGraphicsInfo::XlObjData*>=^^{XlObjData}^^{XlObjData}III}Bi^{XlString}iiiBSSS*IIBIIiiB^{XlString}}12@16 */
 }
 
-+ (NSInteger)objectTypeForShape:(id)arg1;
-+ (void)readChart:(id)arg1 chartIndex:(NSInteger)arg2 state:(id)arg3;
++ (int)objectTypeForShape:(id)arg1;
++ (void)readChart:(id)arg1 chartIndex:(int)arg2 state:(id)arg3;
 + (id)readGraphicWithDictionary:(id)arg1 state:(id)arg2;
 + (void)readGraphicsInChart:(id)arg1 state:(id)arg2;
 + (void)readGraphicsWithState:(id)arg1;
-+ (void)readImage:(id)arg1 xlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); NSInteger x2; short x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; void*x9; NSInteger x10; struct XlString {} *x11; NSInteger x12; NSInteger x13; NSInteger x14; void*x15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; NSUInteger x20; NSUInteger x21; void*x22; NSUInteger x23; NSUInteger x24; NSInteger x25; NSInteger x26; void*x27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
++ (void)readImage:(id)arg1 xlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
 + (id)readMainChartWithState:(id)arg1;
 + (void)readNotesWithDictionary:(id)arg1 state:(id)arg2;
-+ (void)readOle:(id)arg1 xlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); NSInteger x2; short x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; void*x9; NSInteger x10; struct XlString {} *x11; NSInteger x12; NSInteger x13; NSInteger x14; void*x15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; NSUInteger x20; NSUInteger x21; void*x22; NSUInteger x23; NSUInteger x24; NSInteger x25; NSInteger x26; void*x27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
++ (void)readOle:(id)arg1 xlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); int x2; short x3; boolx4; boolx5; boolx6; boolx7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; unsigned int x_8_1_3; unsigned int x_8_1_4; unsigned int x_8_1_5; } x8; boolx9; int x10; struct XlString {} *x11; int x12; int x13; int x14; boolx15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; unsigned int x20; unsigned int x21; boolx22; unsigned int x23; unsigned int x24; int x25; int x26; boolx27; struct XlString {} *x28; }*)arg2 state:(id)arg3;
 
 @end

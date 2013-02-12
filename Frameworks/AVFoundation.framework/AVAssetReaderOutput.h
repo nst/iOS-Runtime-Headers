@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderOutputInternal;
+@class AVAssetReaderOutputInternal, AVWeakReference, NSDictionary, NSString;
 
 @interface AVAssetReaderOutput : NSObject {
     AVAssetReaderOutputInternal *_internal;
 }
 
-@property(getter=_extractionID) NSInteger extractionID; /* unknown property attribute: S_setExtractionID: */
-@property(getter=_figAssetReaderExtractionOptions,readonly) NSDictionary *figAssetReaderExtractionOptions;
-@property(readonly) NSString *mediaType;
-@property(getter=_weakReferenceToAssetReader,readonly) AVWeakReference *weakReferenceToAssetReader;
-@property(getter=_status,readonly) NSInteger status;
+@property(getter=_extractionID,setter=_setExtractionID:) int extractionID;
+@property(getter=_figAssetReaderExtractionOptions,readonly) NSDictionary * figAssetReaderExtractionOptions;
+@property(readonly) NSString * mediaType;
+@property(getter=_status,readonly) int status;
 @property(getter=_trimsSampleDurations,readonly) BOOL trimsSampleDurations;
+@property(getter=_weakReferenceToAssetReader,readonly) AVWeakReference * weakReferenceToAssetReader;
 
 + (void)initialize;
 
@@ -21,17 +21,18 @@
 - (void)_attachToWeakReferenceToAssetReader:(id)arg1;
 - (void)_cancelReading;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (NSInteger)_extractionID;
+- (int)_extractionID;
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (void)_figAssetReaderDecodeError;
 - (id)_figAssetReaderExtractionOptions;
-- (void)_figAssetReaderSampleBufferDidBecomeAvailableForExtractionID:(NSInteger)arg1;
+- (void)_figAssetReaderFailed;
+- (void)_figAssetReaderSampleBufferDidBecomeAvailableForExtractionID:(int)arg1;
 - (BOOL)_isFinished;
 - (void)_markAsFinished;
 - (BOOL)_prepareForReadingReturningError:(id*)arg1;
-- (void)_setExtractionID:(NSInteger)arg1;
+- (void)_setExtractionID:(int)arg1;
 - (void)_setFigAssetReader:(struct OpaqueFigAssetReader { }*)arg1;
-- (NSInteger)_status;
+- (int)_status;
 - (BOOL)_trimsSampleDurations;
 - (id)_weakReferenceToAssetReader;
 - (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;

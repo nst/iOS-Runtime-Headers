@@ -3,18 +3,18 @@
  */
 
 @interface ABAnyValuePredicate : ABPredicate {
-    NSInteger _property;
+    int _property;
 }
 
-@property NSInteger property;
+@property int property;
 
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(NSInteger*)arg2 predicateIdentifier:(NSInteger)arg3;
+- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)init;
 - (BOOL)isValid;
-- (NSInteger)property;
+- (int)property;
 - (id)queryGroupByProperties;
 - (id)queryJoinsInCompound:(BOOL)arg1;
 - (id)queryWhereString;
-- (void)setProperty:(NSInteger)arg1;
+- (void)setProperty:(int)arg1;
 
 @end

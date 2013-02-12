@@ -13,24 +13,25 @@
 
 + (id)sharedServer;
 
-- (void)_acknowledgeMessageWithKey:(NSInteger)arg1;
-- (void)_addRecord:(NSInteger)arg1 forAssociationID:(NSInteger)arg2;
-- (NSInteger)_associationIDForRecord:(NSInteger)arg1;
+- (void)_acknowledgeMessageWithKey:(int)arg1;
+- (void)_addRecord:(int)arg1 forAssociationID:(int)arg2;
+- (int)_associationIDForRecord:(int)arg1;
 - (void)_checkAddressBook:(void*)arg1;
 - (void)_checkAddressBookAfterQuiescence;
 - (BOOL)_checkMMSEnablement;
 - (void)_clearPendingIncomingMessageQueue;
 - (void)_ingestIncomingCTMessage:(id)arg1;
 - (void)_mobileSMSDidResume;
+- (void)_processReceivedMessageReceiptWithInfo:(struct __CFDictionary { }*)arg1;
 - (void)_processReceivedMessageWithInfo:(struct __CFDictionary { }*)arg1;
 - (unsigned char)_readMMSUserOverride;
-- (void)_reallySendSMSRequest:(struct __CFDictionary { }*)arg1 withProcessedParts:(struct __CFArray { }*)arg2 recordID:(NSUInteger)arg3;
+- (void)_reallySendSMSRequest:(struct __CFDictionary { }*)arg1 withProcessedParts:(struct __CFArray { }*)arg2 recordID:(unsigned int)arg3;
 - (void)_registerForCTNotifications;
 - (void)_registerForClientCompositionNotifications;
-- (void)_removeAssociationSetForRecord:(NSInteger)arg1;
-- (BOOL)_removeRecordFromAssociations:(NSInteger)arg1;
+- (void)_removeAssociationSetForRecord:(int)arg1;
+- (BOOL)_removeRecordFromAssociations:(int)arg1;
 - (id)_sendClientComposedMessage:(id)arg1 userInfo:(id)arg2;
-- (void)_sendCompleted:(unsigned char)arg1 forRecord:(NSUInteger)arg2;
+- (void)_sendCompleted:(unsigned char)arg1 forRecord:(unsigned int)arg2;
 - (void)_significantTimeChanged;
 - (void)_unregisterForClientCompositionNotifications;
 - (void)dealloc;

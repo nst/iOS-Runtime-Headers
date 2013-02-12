@@ -10,19 +10,19 @@
     <EKDayAllDayViewDataSource> *_dataSource;
     <EKDayAllDayViewDelegate> *_delegate;
     BOOL _dimsNonSelectedItems;
-    NSInteger _maxVisibleItems;
+    int _maxVisibleItems;
     float _occurrenceInset;
     NSMutableArray *_occurrenceViews;
     UIScrollView *_scroller;
-    NSUInteger _selectedEventIndex;
+    unsigned int _selectedEventIndex;
     BOOL _showSelection;
 }
 
-@property <EKDayAllDayViewDataSource> *dataSource;
-@property <EKDayAllDayViewDelegate> *delegate;
 @property BOOL allowsOccurrenceSelection;
+@property <EKDayAllDayViewDataSource> * dataSource;
+@property <EKDayAllDayViewDelegate> * delegate;
 @property BOOL dimsNonSelectedItems;
-@property NSInteger maxVisibleItems;
+@property int maxVisibleItems;
 @property BOOL showsSelection;
 
 - (BOOL)allowsOccurrenceSelection;
@@ -32,22 +32,22 @@
 - (id)delegate;
 - (void)didMoveToWindow;
 - (BOOL)dimsNonSelectedItems;
-- (NSUInteger)eventIndexForView:(id)arg1;
+- (unsigned int)eventIndexForView:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)maxVisibleItems;
+- (int)maxVisibleItems;
 - (void)reloadData;
 - (void)removeAllOccurrenceViews;
-- (void)selectItemWithEventIndex:(NSUInteger)arg1;
-- (NSUInteger)selectedEventIndex;
+- (void)selectItemWithEventIndex:(unsigned int)arg1;
+- (unsigned int)selectedEventIndex;
 - (void)setAllowsOccurrenceSelection:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimsNonSelectedItems:(BOOL)arg1;
-- (void)setMaxVisibleItems:(NSInteger)arg1;
+- (void)setMaxVisibleItems:(int)arg1;
 - (void)setOccurrenceInset:(float)arg1 labelInset:(float)arg2;
 - (void)setShowsSelection:(BOOL)arg1;
 - (BOOL)showsSelection;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)viewForEventIndex:(NSUInteger)arg1;
+- (id)viewForEventIndex:(unsigned int)arg1;
 
 @end

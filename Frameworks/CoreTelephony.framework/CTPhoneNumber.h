@@ -10,8 +10,8 @@
     BOOL _isShortCode;
 }
 
-@property(readonly) NSString *countryCode;
-@property(readonly) NSString *digits;
+@property(readonly) NSString * countryCode;
+@property(readonly) NSString * digits;
 @property BOOL isShortCode;
 
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
@@ -25,7 +25,7 @@
 - (id)formatForCallingCountry:(id)arg1;
 - (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
 - (BOOL)isShortCode;
-- (NSInteger)numberOfDigitsForShortCodeNumber;
+- (int)numberOfDigitsForShortCodeNumber;
 - (void)setIsShortCode:(BOOL)arg1;
 
 @end

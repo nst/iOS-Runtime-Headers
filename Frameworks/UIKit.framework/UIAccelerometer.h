@@ -13,7 +13,7 @@
     double _updateInterval;
 }
 
-@property <UIAccelerometerDelegate> *delegate;
+@property <UIAccelerometerDelegate> * delegate;
 @property double updateInterval;
 
 + (id)sharedAccelerometer;

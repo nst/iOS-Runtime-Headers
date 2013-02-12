@@ -18,15 +18,15 @@
     UIImageView *_rightImageView;
     UIImageView *_rightStretchImageView;
     UILabel *_streamingLabel;
-    NSInteger _style;
+    int _style;
     UIImageView *_trackImageView;
     MPInlineAudioTransportControls *_transportControls;
     MPVideoViewController *_videoViewController;
 }
 
-@property(copy) NSString *playbackErrorDescription;
-@property MPVideoViewController *videoViewController;
-@property NSInteger style;
+@property(copy) NSString * playbackErrorDescription;
+@property int style;
+@property MPVideoViewController * videoViewController;
 
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInBackgroundViewForDescriptionLabel:(id)arg1;
@@ -42,9 +42,9 @@
 - (void)setCurrentTime:(double)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPlaybackErrorDescription:(id)arg1;
-- (void)setStyle:(NSInteger)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setVideoViewController:(id)arg1;
-- (NSInteger)style;
+- (int)style;
 - (id)videoViewController;
 
 @end

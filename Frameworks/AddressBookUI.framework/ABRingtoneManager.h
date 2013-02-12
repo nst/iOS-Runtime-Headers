@@ -38,7 +38,7 @@
 - (id)deviceITunesRingtoneDirectory;
 - (BOOL)hasAdditionalTextTones;
 - (id)iTunesRingtoneDirectory;
-- (void)iTunesSyncHasCompleted:(NSInteger)arg1;
+- (void)iTunesSyncHasCompleted:(int)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)init;
 - (id)initWithITunesRingtonePlistAtPath:(id)arg1;

@@ -10,9 +10,9 @@
     NSString *_selectedCountryCode;
 }
 
-@property(retain) NSString *selectedCountryCode;
+@property(retain) NSString * selectedCountryCode;
 
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)countryCodePicker:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
 - (id)countryCodePicker;

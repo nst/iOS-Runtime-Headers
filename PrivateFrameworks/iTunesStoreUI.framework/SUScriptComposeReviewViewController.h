@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
+@class SUScriptReview;
+
 @interface SUScriptComposeReviewViewController : SUScriptViewController {
 }
 
-@property(readonly) SUScriptReview *review;
+@property(readonly) SUScriptReview * review;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 

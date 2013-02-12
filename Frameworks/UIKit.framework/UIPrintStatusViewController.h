@@ -9,7 +9,7 @@
     <UIPrintStatusDelegate> *_printStatusDelegate;
 }
 
-@property <UIPrintStatusDelegate> *printStatusDelegate;
+@property <UIPrintStatusDelegate> * printStatusDelegate;
 
 - (void)dealloc;
 - (void)dismissAnimated:(BOOL)arg1;
@@ -19,7 +19,7 @@
 - (id)printStatusDelegate;
 - (id)printStatusView;
 - (void)setPrintStatusDelegate:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

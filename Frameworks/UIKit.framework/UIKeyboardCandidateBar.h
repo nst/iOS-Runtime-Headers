@@ -5,29 +5,45 @@
 @class NSArray, NSMutableArray, NSObject, NSString;
 
 @interface UIKeyboardCandidateBar : UIView <UIKeyboardCandidateList> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     NSArray *m_candidates;
     NSMutableArray *m_cells;
-    NSUInteger m_currentCandidateIndex;
-    NSUInteger m_currentLimit;
-    NSUInteger m_currentOffset;
-    NSInteger m_currentPage;
+    unsigned int m_currentCandidateIndex;
+    unsigned int m_currentLimit;
+    unsigned int m_currentOffset;
+    int m_currentPage;
     NSObject *m_delegate;
+    } m_inlineRect;
     NSString *m_inlineText;
+    BOOL m_largeUIShowing;
+    float m_maxX;
     void *m_pageIndex;
+    BOOL m_phone;
 }
 
++ (float)candidateBarHeight;
 + (id)sharedInstance;
-+ (id)sharedInstanceWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 - (void)_cellSelected:(id)arg1;
 - (void)_clearAll;
 - (void)_clearCells;
-- (void)candidateAcceptedAtIndex:(NSUInteger)arg1;
-- (id)candidateAtIndex:(NSUInteger)arg1;
+- (void)_showLargeCandidateList;
+- (void)candidateAcceptedAtIndex:(unsigned int)arg1;
+- (id)candidateAtIndex:(unsigned int)arg1;
+- (void)candidateListAcceptCandidate:(id)arg1;
+- (void)candidateListSelectionDidChange:(id)arg1;
 - (void)configureKeyboard:(id)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (id)currentCandidate;
-- (NSUInteger)currentIndex;
+- (unsigned int)currentIndex;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -35,10 +51,10 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
-- (void)showCandidateAtIndex:(NSUInteger)arg1;
+- (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)showNextCandidate;
 - (void)showNextPage;
-- (void)showPageAtIndex:(NSUInteger)arg1;
+- (void)showPageAtIndex:(unsigned int)arg1;
 - (void)showPreviousCandidate;
 - (void)showPreviousPage;
 

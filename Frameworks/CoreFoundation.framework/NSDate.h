@@ -2,13 +2,18 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSDate : NSObject <NSCopying, NSCoding> {
 }
 
 + (id)_mapkit_dateWithAbsoluteTime:(double)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)date;
-+ (id)dateForDaysSince1970:(NSInteger)arg1;
++ (id)dateForDaysSince1970:(int)arg1;
 + (id)dateWithDate:(id)arg1;
 + (id)dateWithISOFormatString:(id)arg1;
 + (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
@@ -19,8 +24,8 @@
 + (id)dateWithTimeIntervalSince1970:(double)arg1;
 + (id)dateWithTimeIntervalSinceNow:(double)arg1;
 + (id)dateWithTimeIntervalSinceReferenceDate:(double)arg1;
-+ (id)dateWithWordDate:(const struct WrdDateTime { int (**x1)(); NSInteger x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
-+ (NSInteger)daysSince1970;
++ (id)dateWithWordDate:(const struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
++ (int)daysSince1970;
 + (id)distantFuture;
 + (id)distantPast;
 + (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
@@ -29,12 +34,13 @@
 
 - (unsigned long)_cfTypeID;
 - (id)_web_RFC1123DateString;
-- (NSInteger)_web_compareDay:(id)arg1;
+- (int)_web_compareDay:(id)arg1;
 - (BOOL)_web_isToday;
 - (id)addTimeInterval:(double)arg1;
 - (Class)classForCoder;
-- (NSInteger)compare:(id)arg1;
-- (void)copyToWordDate:(struct WrdDateTime { int (**x1)(); NSInteger x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
+- (int)compare:(id)arg1;
+- (id)copyPropertyListEncoding;
+- (void)copyToWordDate:(struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateByAddingTimeInterval:(double)arg1;
 - (id)dateForDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
@@ -43,18 +49,19 @@
 - (id)dateForEndOfDayInTimeZone:(id)arg1;
 - (id)dateInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateWithCalendarFormat:(id)arg1 timeZone:(id)arg2;
-- (NSInteger)dayComponent;
-- (NSInteger)daysAgo;
+- (int)dayComponent;
+- (int)daysAgo;
 - (id)description;
 - (id)descriptionWithCalendarFormat:(id)arg1 timeZone:(id)arg2 locale:(id)arg3;
 - (id)descriptionWithLocale:(id)arg1;
 - (id)earlierDate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)hash;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDate:(id)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (id)initWithTimeInterval:(double)arg1 sinceDate:(id)arg2;
 - (id)initWithTimeIntervalSince1970:(double)arg1;

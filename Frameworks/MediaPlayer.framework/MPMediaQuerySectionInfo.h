@@ -9,16 +9,16 @@
     NSArray *_sections;
 }
 
-@property(copy) NSArray *sectionIndexTitles;
-@property(copy,readonly) NSArray *sections;
-@property(readonly) NSUInteger count;
+@property(readonly) unsigned int count;
+@property(copy) NSArray * sectionIndexTitles;
+@property(copy,readonly) NSArray * sections;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (NSUInteger)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (NSUInteger)indexOfSectionForSectionIndexTitleAtIndex:(NSUInteger)arg1;
+- (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)sectionIndexTitles;

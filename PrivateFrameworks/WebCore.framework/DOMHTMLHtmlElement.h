@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+@class NSString;
+
 @interface DOMHTMLHtmlElement : DOMHTMLElement {
 }
 
-@property(copy) NSString *version;
+@property(copy) NSString * version;
 
 - (void)setVersion:(id)arg1;
 - (id)version;

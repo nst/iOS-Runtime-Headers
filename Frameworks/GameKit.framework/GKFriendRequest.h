@@ -11,10 +11,10 @@
     NSString *_requestID;
 }
 
-@property(retain) NSDate *date;
-@property(retain) NSString *message;
-@property(retain) GKPlayer *player;
-@property(retain) NSString *requestID;
+@property(retain) NSDate * date;
+@property(retain) NSString * message;
+@property(retain) GKPlayer * player;
+@property(retain) NSString * requestID;
 
 + (id)friendRequestWithDictionary:(id)arg1;
 + (id)friendRequestsWithDictionaries:(id)arg1;

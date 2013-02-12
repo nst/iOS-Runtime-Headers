@@ -6,43 +6,43 @@
 
 @interface MPMusicPlayerClientState : NSObject {
     BOOL _allowsRemoteUIAccess;
-    NSInteger _backgroundPlaybackAccess;
+    int _backgroundPlaybackAccess;
     MPMediaItem *_firstItem;
     MPMediaQuery *_query;
-    NSInteger _repeatMode;
+    int _repeatMode;
     BOOL _seeking;
-    NSInteger _shuffleMode;
+    int _shuffleMode;
     BOOL _useApplicationSpecificQueue;
     BOOL _videoPlaybackEnabled;
 }
 
-@property(retain) MPMediaItem *firstItem;
-@property(retain) MPMediaQuery *query;
 @property BOOL allowsRemoteUIAccess;
-@property NSInteger backgroundPlaybackAccess;
-@property NSInteger repeatMode;
+@property int backgroundPlaybackAccess;
+@property(retain) MPMediaItem * firstItem;
+@property(retain) MPMediaQuery * query;
+@property int repeatMode;
 @property BOOL seeking;
-@property NSInteger shuffleMode;
+@property int shuffleMode;
 @property BOOL useApplicationSpecificQueue;
 @property BOOL videoPlaybackEnabled;
 
 - (BOOL)allowsRemoteUIAccess;
-- (NSInteger)backgroundPlaybackAccess;
+- (int)backgroundPlaybackAccess;
 - (void)dealloc;
 - (id)firstItem;
 - (id)query;
-- (NSInteger)repeatMode;
+- (int)repeatMode;
 - (BOOL)seeking;
 - (void)setAllowsRemoteUIAccess:(BOOL)arg1;
-- (void)setBackgroundPlaybackAccess:(NSInteger)arg1;
+- (void)setBackgroundPlaybackAccess:(int)arg1;
 - (void)setFirstItem:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setRepeatMode:(NSInteger)arg1;
+- (void)setRepeatMode:(int)arg1;
 - (void)setSeeking:(BOOL)arg1;
-- (void)setShuffleMode:(NSInteger)arg1;
+- (void)setShuffleMode:(int)arg1;
 - (void)setUseApplicationSpecificQueue:(BOOL)arg1;
 - (void)setVideoPlaybackEnabled:(BOOL)arg1;
-- (NSInteger)shuffleMode;
+- (int)shuffleMode;
 - (BOOL)useApplicationSpecificQueue;
 - (BOOL)videoPlaybackEnabled;
 

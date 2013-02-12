@@ -32,7 +32,7 @@
 - (void)_activeTileGroupChanged:(id)arg1;
 - (void)_asyncDecodeTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 completion:(id)arg3;
 - (id)_decodeTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2;
-- (void)_loadTilesFromServer:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3;
+- (void)_loadTilesFromServer:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3 requireWiFi:(BOOL)arg4;
 - (id)_pendingLoadForNetworkLoadList:(id)arg1 acquireLock:(BOOL)arg2;
 - (id)_pendingLoadForOriginalList:(id)arg1 acquireLock:(BOOL)arg2;
 - (void)_preempt:(id)arg1;
@@ -53,7 +53,7 @@
 - (int)memoryHits;
 - (int)networkHits;
 - (void)openDatabase;
-- (void)preloadTiles:(id)arg1 progress:(id)arg2 finished:(id)arg3 error:(id)arg4;
+- (void)preloadTiles:(id)arg1 requireWiFi:(BOOL)arg2 progress:(id)arg3 finished:(id)arg4 error:(id)arg5;
 - (void)registerTileDecoder:(id)arg1;
 - (void)registerTileLoader:(Class)arg1;
 - (id)renderDataForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 asyncHandler:(id)arg2;

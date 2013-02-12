@@ -38,6 +38,7 @@
 - (void)setRightBarButtonItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setShouldDelayChanges:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitleView:(id)arg1 animated:(BOOL)arg2;
 - (void)setTitleView:(id)arg1;
 - (void)setWrappedNavigationItem:(id)arg1;
 - (BOOL)shouldDelayChanges;

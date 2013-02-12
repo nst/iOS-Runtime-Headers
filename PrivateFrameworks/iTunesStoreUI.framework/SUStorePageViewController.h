@@ -35,6 +35,7 @@
     SUPageSectionGroup *_sectionsGroup;
     SUSegmentedControl *_segmentedControl;
     SSMutableURLRequestProperties *_urlRequestProperties;
+    BOOL _useWebViewFastPath;
 }
 
 @property(copy) SSURLRequestProperties * URLRequestProperties;
@@ -66,6 +67,7 @@
 - (void)_fetchPage:(BOOL)arg1;
 - (void)_finishHandlingFailure;
 - (void)_finishSuccessfulLoad;
+- (void)_finishWebViewLoadWithResult:(BOOL)arg1 error:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForActiveViewController;
 - (void)_handleFailureWithError:(id)arg1;
 - (void)_handleViewControllerBecameReady:(id)arg1;
@@ -91,6 +93,7 @@
 - (BOOL)_reloadWithURLRequestProperties:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)_reloadWithURLRequestProperties:(id)arg1 preserveSectionControl:(BOOL)arg2;
 - (BOOL)_reloadsWhenCacheExpired;
+- (void)_renderStorePage:(id)arg1 withType:(int)arg2 viewController:(id)arg3 block:(id)arg4;
 - (void)_repositionForChildViewController:(id)arg1;
 - (void)_scriptEventNotification:(id)arg1;
 - (void)_sectionControlAction:(id)arg1;

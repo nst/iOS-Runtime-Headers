@@ -13,10 +13,12 @@
 @property int priority;
 @property(copy) NSDateComponents * startDateComponents;
 
++ (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
 + (id)reminderWithEventStore:(id)arg1;
 
 - (id)_persistentReminder;
 - (void)_sendModifiedNote;
+- (id)bestDisplayAlarm;
 - (void)clearParentID;
 - (BOOL)commit:(id*)arg1;
 - (id)completionDate;

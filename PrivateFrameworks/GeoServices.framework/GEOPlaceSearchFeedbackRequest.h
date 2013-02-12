@@ -11,12 +11,14 @@
         unsigned int businessID : 1; 
         unsigned int timestamp : 1; 
         unsigned int feedbackType : 1; 
+        unsigned int localSearchProviderID : 1; 
         unsigned int numberOfResults : 1; 
         unsigned int positionInResults : 1; 
         unsigned int sequenceNumber : 1; 
     long long _businessID;
     int _feedbackType;
     } _has;
+    int _localSearchProviderID;
     int _numberOfResults;
     int _positionInResults;
     int _sequenceNumber;
@@ -28,11 +30,13 @@
 @property int feedbackType;
 @property BOOL hasBusinessID;
 @property BOOL hasFeedbackType;
+@property BOOL hasLocalSearchProviderID;
 @property BOOL hasNumberOfResults;
 @property BOOL hasPositionInResults;
 @property BOOL hasSequenceNumber;
 @property BOOL hasSessionGUID;
 @property BOOL hasTimestamp;
+@property int localSearchProviderID;
 @property int numberOfResults;
 @property int positionInResults;
 @property int sequenceNumber;
@@ -47,6 +51,7 @@
 - (int)feedbackType;
 - (BOOL)hasBusinessID;
 - (BOOL)hasFeedbackType;
+- (BOOL)hasLocalSearchProviderID;
 - (BOOL)hasNumberOfResults;
 - (BOOL)hasPositionInResults;
 - (BOOL)hasSequenceNumber;
@@ -54,6 +59,7 @@
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (int)localSearchProviderID;
 - (int)numberOfResults;
 - (int)positionInResults;
 - (BOOL)readFrom:(id)arg1;
@@ -65,11 +71,13 @@
 - (void)setFeedbackType:(int)arg1;
 - (void)setHasBusinessID:(BOOL)arg1;
 - (void)setHasFeedbackType:(BOOL)arg1;
+- (void)setHasLocalSearchProviderID:(BOOL)arg1;
 - (void)setHasNumberOfResults:(BOOL)arg1;
 - (void)setHasPositionInResults:(BOOL)arg1;
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (void)setHasSessionGUID:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setLocalSearchProviderID:(int)arg1;
 - (void)setNumberOfResults:(int)arg1;
 - (void)setPositionInResults:(int)arg1;
 - (void)setSequenceNumber:(int)arg1;

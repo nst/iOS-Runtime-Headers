@@ -9,6 +9,7 @@
     UIImage *_artworkImage;
     IUPortraitControlsOverlay *_controlsView;
     <IUPortraitInfoOverlayDelegate> *_delegate;
+    unsigned long long _disabledParts;
     MPTextView *_displayableTextView;
     MPAVItem *_item;
     MPNowPlayingItemQueueInfoButton *_itemQueueInfoButton;
@@ -22,6 +23,7 @@
 @property(retain) UIImage * artworkImage;
 @property(readonly) IUPortraitControlsOverlay * controlsView;
 @property <IUPortraitInfoOverlayDelegate> * delegate;
+@property unsigned long long disabledParts;
 @property(retain) MPAVItem * item;
 @property(retain) MPAVController * player;
 @property int style;
@@ -56,6 +58,7 @@
 - (id)delegate;
 - (void)didMoveToSuperview;
 - (void)didTransition;
+- (unsigned long long)disabledParts;
 - (BOOL)hide;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)item;
@@ -66,6 +69,7 @@
 - (void)setAlpha:(float)arg1;
 - (void)setArtworkImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setStyle:(int)arg1;

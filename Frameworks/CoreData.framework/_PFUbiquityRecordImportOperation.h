@@ -24,11 +24,12 @@
     PFUbiquityTransactionLog *_transactionLog;
     NSMutableSet *_updatedObjectIDs;
     PFUbiquityKnowledgeVector *_updatedStoreKnowledgeVector;
+    BOOL _wroteKV;
 }
 
 @property NSObject<_PFUbiquityRecordImportOperationDelegate> * delegate;
 @property(readonly) NSMutableSet * deletedObjectIDs;
-@property(readonly) PFUbiquityImportContext * importContext;
+@property(retain) PFUbiquityImportContext * importContext;
 @property(readonly) PFUbiquityKnowledgeVector * initialStoreKnowledgeVector;
 @property(readonly) NSMutableSet * insertedObjectIDs;
 @property(readonly) NSString * localPeerID;
@@ -43,7 +44,8 @@
 @property(readonly) BOOL transactionDidRollBack;
 @property(readonly) PFUbiquityTransactionLog * transactionLog;
 @property(readonly) NSMutableSet * updatedObjectIDs;
-@property(readonly) PFUbiquityKnowledgeVector * updatedStoreKnowledgeVector;
+@property(retain) PFUbiquityKnowledgeVector * updatedStoreKnowledgeVector;
+@property(readonly) BOOL wroteKV;
 
 - (BOOL)applyChangesFromStoreSaveSnapshot:(id)arg1 withImportContext:(id)arg2 withError:(id*)arg3;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
@@ -73,13 +75,16 @@
 - (void)respondToStoreTransactionStateChangeNotification:(id)arg1;
 - (id)retainedDelegate;
 - (void)setDelegate:(id)arg1;
+- (void)setImportContext:(id)arg1;
 - (void)setLockedExistingCoord:(BOOL)arg1;
 - (void)setLogScore:(id)arg1;
+- (void)setUpdatedStoreKnowledgeVector:(id)arg1;
 - (id)store;
 - (BOOL)success;
 - (BOOL)transactionDidRollBack;
 - (id)transactionLog;
 - (id)updatedObjectIDs;
 - (id)updatedStoreKnowledgeVector;
+- (BOOL)wroteKV;
 
 @end

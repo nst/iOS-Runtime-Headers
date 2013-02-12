@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class WLImage;
+@class PKImage;
 
-@interface WLCardPreviewImages : WLCardImages {
-    WLImage *_iconImage;
+@interface WLCardPreviewImages : PKPassImages {
+    PKImage *_iconImage;
 }
 
-@property(retain) WLImage * iconImage;
+@property(retain) PKImage * iconImage;
 
 + (id)archiveName;
 + (int)currentVersion;

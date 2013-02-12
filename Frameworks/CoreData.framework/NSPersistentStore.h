@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMutableDictionary, NSPersistentStoreCoordinator, NSString, NSURL;
+@class NSDictionary, NSPersistentStoreCoordinator, NSString, NSURL;
 
 @interface NSPersistentStore : NSObject {
     struct _objectStoreFlags { 
@@ -15,7 +15,7 @@
     id _defaultFaultHandler;
     id _externalRecordsMonitor;
     } _flags;
-    NSMutableDictionary *_oidFactories;
+    id *_oidFactories;
     NSDictionary *_options;
     void *_reserved3;
     void *_temporaryIDClass;
@@ -41,6 +41,7 @@
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)_rawMetadata__;
 - (void)_setMetadataDirty:(BOOL)arg1;
+- (id)_storeInfoForEntityDescription:(id)arg1;
 - (BOOL)_unload:(id*)arg1;
 - (void)_updateMetadata;
 - (id)_updatedMetadataWithSeed:(id)arg1 includeVersioning:(BOOL)arg2;

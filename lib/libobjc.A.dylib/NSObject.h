@@ -207,6 +207,7 @@
 - (id)_accessibilityContainingParentForOrdering;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityContentFrame;
 - (unsigned int)_accessibilityContextId;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityConvertFrameForRemoteView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2;
 - (struct CGPoint { float x1; float x2; })_accessibilityConvertPointToViewSpace:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_accessibilityCut;
 - (id)_accessibilityDOMAttributes;
@@ -333,7 +334,7 @@
 - (BOOL)_accessibilityScrollPreviousPage;
 - (void)_accessibilityScrollRightPage;
 - (id)_accessibilityScrollStatus;
-- (void)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
+- (BOOL)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
 - (void)_accessibilityScrollToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_accessibilityScrollToVisible;
 - (void)_accessibilityScrollUpPage;

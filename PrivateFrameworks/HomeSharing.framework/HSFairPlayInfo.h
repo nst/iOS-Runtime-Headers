@@ -2,17 +2,18 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSArray, NSString;
+@class NSMutableSet, NSString;
 
 @interface HSFairPlayInfo : NSObject {
     BOOL _hasValidMescalSession;
     void *_hwInfo;
-    NSArray *_requestsToSign;
+    NSMutableSet *_requestsToSign;
     void *_session;
 }
 
 @property(readonly) NSString * deviceGUID;
 
+- (void)_addRequestsToSign:(id)arg1;
 - (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
 - (id)_hexStringForData:(id)arg1;
 - (id)beginNegotiation;

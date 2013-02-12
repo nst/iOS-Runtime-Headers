@@ -2,27 +2,20 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, VKPGenericShieldStyleInfo;
+@class NSMutableArray, NSString, VKPGenericShieldStyleInfo;
 
 @interface VKPShield : PBCodable {
-    struct { 
-        int *list; 
-        unsigned int count; 
-        unsigned int size; 
     VKPGenericShieldStyleInfo *_genericShieldStyleInfo;
-    } _identifiers;
+    NSString *_identifier;
     NSMutableArray *_variants;
 }
 
 @property(retain) VKPGenericShieldStyleInfo * genericShieldStyleInfo;
 @property(readonly) BOOL hasGenericShieldStyleInfo;
-@property(readonly) int* identifiers;
-@property(readonly) unsigned int identifiersCount;
+@property(retain) NSString * identifier;
 @property(retain) NSMutableArray * variants;
 
-- (void)addIdentifier:(int)arg1;
 - (void)addVariants:(id)arg1;
-- (void)clearIdentifiers;
 - (void)clearVariants;
 - (void)copyTo:(id)arg1;
 - (void)dealloc;
@@ -31,13 +24,11 @@
 - (id)genericShieldStyleInfo;
 - (BOOL)hasGenericShieldStyleInfo;
 - (unsigned int)hash;
-- (int)identifierAtIndex:(unsigned int)arg1;
-- (int*)identifiers;
-- (unsigned int)identifiersCount;
+- (id)identifier;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setGenericShieldStyleInfo:(id)arg1;
-- (void)setIdentifiers:(int*)arg1 count:(unsigned int)arg2;
+- (void)setIdentifier:(id)arg1;
 - (void)setVariants:(id)arg1;
 - (id)variants;
 - (id)variantsAtIndex:(unsigned int)arg1;

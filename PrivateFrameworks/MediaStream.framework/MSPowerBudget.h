@@ -22,8 +22,11 @@
 }
 
 @property <MSPowerBudgetDelegate> * delegate;
+@property(getter=isFileTransferAllowed,readonly) BOOL fileTransferAllowed;
 @property(retain) NSString * focusAlbumGUID;
 @property(retain) NSString * focusAssetCollectionGUID;
+@property(getter=hasForegroundFocus,readonly) BOOL foregroundFocus;
+@property(readonly) BOOL hasActiveTimers;
 @property double maxActiveTimeAfterGlobalResetSync;
 @property double maxActiveTimeAfterLossOfForeground;
 @property double maxActiveTimeAfterPush;
@@ -48,6 +51,8 @@
 - (void)didReceivePushNotification;
 - (id)focusAlbumGUID;
 - (id)focusAssetCollectionGUID;
+- (BOOL)hasActiveTimers;
+- (BOOL)hasForegroundFocus;
 - (id)init;
 - (BOOL)isFileTransferAllowed;
 - (double)maxActiveTimeAfterGlobalResetSync;

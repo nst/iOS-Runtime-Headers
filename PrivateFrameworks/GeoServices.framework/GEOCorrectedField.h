@@ -5,15 +5,21 @@
 @class NSString;
 
 @interface GEOCorrectedField : PBCodable {
+    struct { 
+        unsigned int isMarkedIncorrect : 1; 
     NSString *_correctedValue;
     NSString *_displayName;
+    } _has;
+    BOOL _isMarkedIncorrect;
     NSString *_objectName;
 }
 
 @property(retain) NSString * correctedValue;
 @property(retain) NSString * displayName;
 @property(readonly) BOOL hasCorrectedValue;
+@property BOOL hasIsMarkedIncorrect;
 @property(readonly) BOOL hasObjectName;
+@property BOOL isMarkedIncorrect;
 @property(retain) NSString * objectName;
 
 - (void)copyTo:(id)arg1;
@@ -23,13 +29,17 @@
 - (id)dictionaryRepresentation;
 - (id)displayName;
 - (BOOL)hasCorrectedValue;
+- (BOOL)hasIsMarkedIncorrect;
 - (BOOL)hasObjectName;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isMarkedIncorrect;
 - (id)objectName;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCorrectedValue:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setHasIsMarkedIncorrect:(BOOL)arg1;
+- (void)setIsMarkedIncorrect:(BOOL)arg1;
 - (void)setObjectName:(id)arg1;
 - (void)writeTo:(id)arg1;
 

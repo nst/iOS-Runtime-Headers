@@ -34,7 +34,7 @@
 - (void)endPreloadSession;
 - (void)flushPendingWrites;
 - (id)init;
-- (void)loadTiles:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3 bundleIdentifier:(id)arg4 bundleVersion:(id)arg5;
+- (void)loadTiles:(id)arg1 checkDisk:(BOOL)arg2 allowNetworking:(BOOL)arg3 requireWiFi:(BOOL)arg4 bundleIdentifier:(id)arg5 bundleVersion:(id)arg6;
 - (void)openCacheConnection;
 - (void)reportCorruptTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)setDelegate:(id)arg1;

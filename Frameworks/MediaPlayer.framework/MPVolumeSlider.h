@@ -35,8 +35,9 @@
 - (void)_commitVolumeChange;
 - (void)_endBlinkingWarningView;
 - (void)_endTracking;
-- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
+- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (BOOL)_isOffScreen;
+- (BOOL)_isPlayerInValidState;
 - (void)_layoutForAvailableRoutes;
 - (void)_layoutMaskForThumb;
 - (void)_layoutVolumeWarningView;

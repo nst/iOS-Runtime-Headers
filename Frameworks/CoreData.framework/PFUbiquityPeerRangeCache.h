@@ -30,6 +30,7 @@
 - (id)cachedRangeForLocalPrimaryKey:(unsigned int)arg1 ofEntityNamed:(id)arg2;
 - (id)cachedRangeForOwningPeerID:(id)arg1 andEntityName:(id)arg2 withPrimaryKey:(unsigned int)arg3;
 - (id)createGlobalObjectIDForManagedObjectID:(id)arg1;
+- (id)createMapOfManagedObjectIDsForGlobalIDs:(id)arg1 error:(id*)arg2;
 - (id)createMapOfManagedObjectIDsForStoreSaveSnapshot:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)initWithPrivateStore:(id)arg1 storeName:(id)arg2 ubiquityRootLocation:(id)arg3 andLocalPeerID:(id)arg4;

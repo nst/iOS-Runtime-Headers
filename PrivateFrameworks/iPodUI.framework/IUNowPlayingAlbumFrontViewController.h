@@ -4,7 +4,7 @@
 
 @class ADBannerView, IUPortraitInfoOverlay, MPAVItem, MPImageCacheRequest, MPReflectionImageView, MPSwipableView;
 
-@interface IUNowPlayingAlbumFrontViewController : MPViewController <IUPortraitInfoOverlayDelegate, MPSwipableViewDelegate> {
+@interface IUNowPlayingAlbumFrontViewController : MPViewController <IUPortraitInfoOverlayDelegate, MCProfileConnectionObserver, MPSwipableViewDelegate> {
     ADBannerView *_adView;
     MPReflectionImageView *_artworkView;
     MPSwipableView *_backstopView;
@@ -12,7 +12,7 @@
     float _filteredX;
     float _filteredZ;
     MPAVItem *_imageRequestPendingItem;
-    id _motionManagerObserver;
+    BOOL _isInAppPurchaseAllowed;
     IUPortraitInfoOverlay *_overlayView;
     int _style;
 }
@@ -29,6 +29,8 @@
 - (id)_overlayView;
 - (void)_removeOverlayView;
 - (void)_updateArtworkForTime:(double)arg1;
+- (void)_updateIsInAppPurchaseAllowedForProfileConnection:(id)arg1;
+- (void)_updateOverlayVisiblePartsForStyle;
 - (void)artworkDidZoomIn;
 - (void)artworkDidZoomOut;
 - (void)artworkWillZoomIn;
@@ -46,6 +48,7 @@
 - (BOOL)infoOverlayShouldDisplayQueuePositionUI:(id)arg1;
 - (id)init;
 - (void)loadView;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)setItem:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)startTicking;

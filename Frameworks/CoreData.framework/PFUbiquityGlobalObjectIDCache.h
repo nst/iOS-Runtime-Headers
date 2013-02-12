@@ -17,6 +17,9 @@
 + (id)stringValueFromArray:(id)arg1 atIndexDescribedByStringNumber:(id)arg2;
 
 - (id)createGlobalIDForCompressedString:(id)arg1 withEntityNames:(id)arg2 primaryKeys:(id)arg3 peerIDs:(id)arg4;
+- (id)createGlobalIDForGlobalIDString:(id)arg1;
+- (id)createGlobalIDForPrimarKey:(unsigned int)arg1 entityName:(id)arg2 andOwningPeerID:(id)arg3;
+- (id)createGlobalIDForPrimaryKeyString:(id)arg1 entityName:(id)arg2 andOwningPeerID:(id)arg3;
 - (void)dealloc;
 - (id)init;
 - (id)initWithLocalPeerID:(id)arg1 forStoreName:(id)arg2;

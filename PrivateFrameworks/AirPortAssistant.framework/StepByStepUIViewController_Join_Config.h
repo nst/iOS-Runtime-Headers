@@ -5,9 +5,11 @@
 @class NSString, UILabel, UIView;
 
 @interface StepByStepUIViewController_Join_Config : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
+    int deviceKind;
     UIView *justTextContainerView;
     UILabel *justTextLabel;
     NSString *personalizedBaseName;
+    unsigned int productID;
     UIView *tableHeaderContainerView;
 }
 
@@ -18,6 +20,7 @@
 
 - (id)devicePickerLabel;
 - (id)deviceTableLabel;
+- (BOOL)isAirPlayDevice;
 - (id)justTextContainerView;
 - (id)justTextLabel;
 - (id)personalizedBaseName;
@@ -33,6 +36,7 @@
 - (void)setupHeaderAndFooter;
 - (void)setupTable;
 - (BOOL)shouldChangeTextField:(id)arg1 atIndexPath:(id)arg2 forTextIndex:(unsigned int)arg3 toString:(id)arg4;
+- (BOOL)showMoreOptions;
 - (void)syncTopoUIForTarget:(id)arg1 andSource:(id)arg2 andNetwork:(id)arg3 connectionType:(id)arg4;
 - (id)tableHeaderContainerView;
 - (void)textFieldDidChangeAtIndexPath:(id)arg1;

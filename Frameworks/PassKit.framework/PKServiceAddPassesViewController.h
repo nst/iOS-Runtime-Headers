@@ -2,22 +2,22 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, NSMutableData, NSURLConnection, PKIngestibleCard, PKPassLibrary, PKUIServiceView, UINavigationBar, UIProgressView, WLCardGroupStackView, WLCardGroupsController;
+@class NSMutableArray, NSMutableData, NSURLConnection, PKLocalPass, PKPassGroupStackView, PKPassGroupsController, PKPassLibrary, PKUIServiceView, UINavigationBar, UIProgressView;
 
-@interface PKServiceAddPassesViewController : UIViewController <WLXPCProxyTarget, WLCardStackViewDelegate, WLCardStackViewDatasource, WLCardGroupsControllerDelegate, UIScrollViewDelegate, PKServiceAddPassesViewControllerProtocol> {
-    WLCardGroupsController *_cardGroupsController;
-    WLCardGroupStackView *_cardStackView;
-    int _containsCard;
+@interface PKServiceAddPassesViewController : UIViewController <WLXPCProxyTarget, PKPassGroupStackViewDelegate, PKPassGroupStackViewDatasource, WLCardGroupsControllerDelegate, UIScrollViewDelegate, PKServiceAddPassesViewControllerProtocol> {
+    PKPassGroupsController *_cardGroupsController;
+    PKPassGroupStackView *_cardStackView;
+    int _containmentStatus;
     NSMutableData *_downloadPassData;
     long long _downloadPassExpectedBytes;
     NSURLConnection *_downloadPassURLConnection;
     BOOL _giveUpOnPreppingCards;
     BOOL _haveKickedOffCardFetch;
-    BOOL _haveStartedIngestibleCardAnimation;
-    PKIngestibleCard *_ingestibleCard;
+    BOOL _haveStartedCardAnimation;
+    PKLocalPass *_localPass;
     NSMutableArray *_minimumCardHeightFromHereToTop;
     UINavigationBar *_navigationBar;
-    PKPassLibrary *_passesStore;
+    PKPassLibrary *_passLibrary;
     int _presentationState;
     UIProgressView *_progressView;
     id _remoteViewControllerProxy;
@@ -25,15 +25,15 @@
     BOOL _viewAppeared;
 }
 
-@property(retain) WLCardGroupsController * cardGroupsController;
-@property(retain) WLCardGroupStackView * cardStackView;
+@property(retain) PKPassGroupsController * cardGroupsController;
+@property(retain) PKPassGroupStackView * cardStackView;
 @property BOOL giveUpOnPreppingCards;
 @property BOOL haveKickedOffCardFetch;
-@property BOOL haveStartedIngestibleCardAnimation;
-@property(retain) PKIngestibleCard * ingestibleCard;
+@property BOOL haveStartedCardAnimation;
+@property(retain) PKLocalPass * localPass;
 @property(retain) NSMutableArray * minimumCardHeightFromHereToTop;
 @property(retain) UINavigationBar * navigationBar;
-@property(retain) PKPassLibrary * passesStore;
+@property(retain) PKPassLibrary * passLibrary;
 @property int presentationState;
 @property(retain) UIProgressView * progressView;
 @property(retain) id remoteViewControllerProxy;
@@ -48,7 +48,6 @@
 - (void)cancelCard:(id)arg1;
 - (void)cardBackSwitchesDidChangeNotification:(id)arg1;
 - (id)cardGroupsController;
-- (void)cardStackView:(id)arg1 deleteConfirmedForCard:(id)arg2;
 - (void)cardStackView:(id)arg1 didAnimateToState:(int)arg2;
 - (id)cardStackView;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
@@ -59,23 +58,24 @@
 - (BOOL)giveUpOnPreppingCards;
 - (id)groupAtIndex:(unsigned int)arg1;
 - (float)groupHeightAtIndex:(unsigned int)arg1;
+- (void)groupStackView:(id)arg1 deleteConfirmedForPass:(id)arg2;
 - (void)groupsController:(id)arg1 didInsertGroup:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)groupsController:(id)arg1 didMoveGroup:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
 - (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned int)arg3;
 - (BOOL)haveKickedOffCardFetch;
-- (BOOL)haveStartedIngestibleCardAnimation;
+- (BOOL)haveStartedCardAnimation;
 - (unsigned int)indexOfGroup:(id)arg1;
 - (void)ingestCardAtURL:(id)arg1;
 - (void)ingestCardWithData:(id)arg1;
-- (id)ingestibleCard;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
+- (id)localPass;
 - (id)minimumCardHeightFromHereToTop;
 - (float)minimumItemHeightStartingAtIndex:(unsigned int)arg1;
 - (id)navigationBar;
 - (unsigned int)numberOfGroups;
+- (id)passLibrary;
 - (BOOL)passesGrowWhenFlipped;
-- (id)passesStore;
 - (int)presentationState;
 - (id)progressView;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
@@ -85,11 +85,11 @@
 - (void)setCardStackView:(id)arg1;
 - (void)setGiveUpOnPreppingCards:(BOOL)arg1;
 - (void)setHaveKickedOffCardFetch:(BOOL)arg1;
-- (void)setHaveStartedIngestibleCardAnimation:(BOOL)arg1;
-- (void)setIngestibleCard:(id)arg1;
+- (void)setHaveStartedCardAnimation:(BOOL)arg1;
+- (void)setLocalPass:(id)arg1;
 - (void)setMinimumCardHeightFromHereToTop:(id)arg1;
 - (void)setNavigationBar:(id)arg1;
-- (void)setPassesStore:(id)arg1;
+- (void)setPassLibrary:(id)arg1;
 - (void)setPresentationState:(int)arg1;
 - (void)setProgressView:(id)arg1;
 - (void)setRemoteViewControllerProxy:(id)arg1;

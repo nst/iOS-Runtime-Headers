@@ -28,5 +28,6 @@
 - (id)rentalKeyIdentifier;
 - (id)sinfs;
 - (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithConnectionResponseBlock:(id)arg1;
 
 @end

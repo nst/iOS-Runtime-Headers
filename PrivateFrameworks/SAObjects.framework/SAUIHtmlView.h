@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface SAUIHtmlView : SAAceView {
 }
 
+@property(copy) NSArray * commands;
+@property(copy) NSString * descriptionText;
 @property(copy) NSString * html;
 
 + (id)htmlView;
 + (id)htmlViewWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)commands;
+- (id)descriptionText;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)html;
+- (void)setCommands:(id)arg1;
+- (void)setDescriptionText:(id)arg1;
 - (void)setHtml:(id)arg1;
 
 @end

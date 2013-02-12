@@ -151,6 +151,7 @@
 - (int)_exitReasonForMPViewControllerExitReason:(int)arg1;
 - (void)_finishInitializeActiveViewController:(id)arg1 forTransition:(BOOL)arg2;
 - (void)_initializeVideoViewController:(id)arg1 orientation:(int)arg2;
+- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)_itemDurationAvailableNotification:(id)arg1;
 - (void)_itemPlaybackDidEndNotification:(id)arg1;

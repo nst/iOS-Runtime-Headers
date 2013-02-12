@@ -31,11 +31,11 @@
 @property <GEOResourceManifestServerProxyDelegate> * delegate;
 
 - (void)_cancelConnection;
-- (void)_changeActiveTileGroup:(id)arg1;
+- (void)_changeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2;
 - (void)_cleanupConnection;
 - (void)_considerChangingActiveTileGroup;
 - (void)_countryProvidersDidChange:(id)arg1;
-- (void)_forceChangeActiveTileGroup:(id)arg1;
+- (void)_forceChangeActiveTileGroup:(id)arg1 flushTileCache:(BOOL)arg2;
 - (void)_loadFromDisk;
 - (id)_manifestURL;
 - (void)_reachabilityChanged:(id)arg1;

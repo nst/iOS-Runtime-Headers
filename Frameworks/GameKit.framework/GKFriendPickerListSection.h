@@ -5,8 +5,8 @@
 @class NSDictionary, NSMutableDictionary;
 
 @interface GKFriendPickerListSection : GKTableSection {
+    NSMutableDictionary *_cellStatusDict;
     unsigned int _headerTitle;
-    NSMutableDictionary *_inviteStatusDict;
     int _maxPlayers;
     int _numSelected;
     NSDictionary *_ranks;
@@ -14,14 +14,15 @@
     float _topMargin;
 }
 
+@property(retain) NSMutableDictionary * cellStatusDict;
 @property unsigned int headerTitle;
-@property(retain) NSMutableDictionary * inviteStatusDict;
 @property int maxPlayers;
 @property int numSelected;
 @property(retain) NSDictionary * ranks;
 @property unsigned int scope;
 @property float topMargin;
 
+- (id)cellStatusDict;
 - (int)columnCountInTableView:(id)arg1;
 - (void)dealloc;
 - (void)filterWithSearchText:(id)arg1;
@@ -29,14 +30,13 @@
 - (float)heightForFooterInTableView:(id)arg1;
 - (float)heightForHeaderInTableView:(id)arg1;
 - (id)init;
-- (id)inviteStatusDict;
 - (int)maxPlayers;
 - (int)numSelected;
 - (id)ranks;
 - (unsigned int)scope;
 - (id)sectionReuseIdentifierInTableView:(id)arg1;
+- (void)setCellStatusDict:(id)arg1;
 - (void)setHeaderTitle:(unsigned int)arg1;
-- (void)setInviteStatusDict:(id)arg1;
 - (void)setMaxPlayers:(int)arg1;
 - (void)setNumSelected:(int)arg1;
 - (void)setRanks:(id)arg1;

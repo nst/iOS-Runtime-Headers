@@ -2,111 +2,43 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class NSString, UIImage;
 
-@class GKInviteButton, GKTouchInterceptView, NSString, UIActivityIndicatorView, UIImage;
-
-@interface GKFriendPickerCellContents : GKPlayerCellContentView <GKMultilineLayoutProtocol> {
-    struct CGSize { 
-        float width; 
-        float height; 
-    UIActivityIndicatorView *_activityView;
-    BOOL _enabled;
-    } _firstLineOffset;
-    unsigned int _index;
-    GKInviteButton *_inviteButton;
-    id _inviteButtonHandler;
-    int _inviteStatus;
-    BOOL _padsForInvisibleSelectionIcon;
+@interface GKFriendPickerCellContents : GKPlayerCellContentView {
     NSString *_rankString;
     UIImage *_selectionIcon;
     BOOL _shouldShowRank;
-    BOOL _showingActivityIndicator;
-    BOOL _showingConfirmButton;
-    BOOL _showingInviteButton;
-    BOOL _showsInviteButton;
-    BOOL _showsInviteStatus;
-    BOOL _showsSelectionIcon;
-    BOOL _showsUninviteButton;
-    GKTouchInterceptView *_touchInterceptView;
-    id _uninviteButtonHandler;
+    int _status;
 }
 
-@property BOOL enabled;
-@property unsigned int index;
-@property(readonly) GKInviteButton * inviteButton;
-@property(copy) id inviteButtonHandler;
-@property int inviteStatus;
-@property BOOL padsForInvisibleSelectionIcon;
+@property(readonly) BOOL isSelected;
+@property(readonly) BOOL isShowingSelectionIcon;
 @property(retain) NSString * rankString;
 @property(retain) UIImage * selectionIcon;
 @property BOOL shouldShowRank;
-@property(readonly) BOOL showingInviteButton;
-@property(readonly) BOOL showingUninviteButton;
-@property BOOL showsInviteButton;
-@property BOOL showsInviteStatus;
-@property BOOL showsSelectionIcon;
-@property BOOL showsUninviteButton;
-@property(retain) GKTouchInterceptView * touchInterceptView;
-@property(copy) id uninviteButtonHandler;
+@property int status;
 
 - (unsigned long long)accessibilityTraits;
-- (void)createInviteMatchConfirmButton;
 - (void)dealloc;
-- (void)drawLineIndex:(unsigned int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 highlighted:(BOOL)arg3;
+- (void)drawImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)enabled;
-- (BOOL)hasStatusForInviteButton;
-- (BOOL)hasStatusForUninviteButton;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)index;
 - (id)initWithNumberOfLines:(unsigned int)arg1;
-- (id)inviteButton;
-- (id)inviteButtonHandler;
-- (void)inviteButtonPushed;
-- (int)inviteStatus;
-- (void)layoutInviteButton;
-- (void)layoutInviteButtonAnimated:(BOOL)arg1;
+- (BOOL)isSelected;
+- (BOOL)isShowingSelectionIcon;
 - (void)layoutSubviews;
-- (BOOL)padsForInvisibleSelectionIcon;
-- (void)prepareForReuse;
 - (id)rankString;
-- (void)removeFromSuperview;
 - (id)selectionIcon;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionIconRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setConfirmButtonHidden:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setIndex:(unsigned int)arg1;
-- (void)setInviteButtonHandler:(id)arg1;
-- (void)setInviteStatus:(int)arg1;
-- (void)setPadsForInvisibleSelectionIcon:(BOOL)arg1;
 - (void)setRankString:(id)arg1;
 - (void)setSelectionIcon:(id)arg1;
 - (void)setShouldShowRank:(BOOL)arg1;
-- (void)setShowingActivityIndicator:(BOOL)arg1;
-- (void)setShowsInviteButton:(BOOL)arg1;
-- (void)setShowsInviteStatus:(BOOL)arg1;
-- (void)setShowsSelectionIcon:(BOOL)arg1;
-- (void)setShowsUninviteButton:(BOOL)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setTheme:(id)arg1;
-- (void)setTouchInterceptView:(id)arg1;
-- (void)setTouchesIntercepted:(BOOL)arg1;
-- (void)setUninviteButtonHandler:(id)arg1;
 - (BOOL)shouldShowRank;
-- (BOOL)showingInviteButton;
-- (BOOL)showingUninviteButton;
-- (BOOL)showsInviteButton;
-- (BOOL)showsInviteStatus;
-- (BOOL)showsSelectionIcon;
-- (BOOL)showsUninviteButton;
+- (int)status;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)touchInterceptView;
-- (id)uninviteButtonHandler;
-- (void)updateInviteButton;
-- (void)updateInviteButtonAnimated:(BOOL)arg1;
+- (void)updateAttributesForStatus;
 - (void)updateLines;
 
 @end

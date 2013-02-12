@@ -23,7 +23,7 @@
 @property(readonly) UIImage * backgroundImage;
 @property(retain) IUPropertyLayoutStorage * buttonStorage;
 @property(readonly) BOOL canDisplayShuffleButton;
-@property(retain) IUMediaListDataSource * dataSource;
+@property IUMediaListDataSource * dataSource;
 @property(retain) IUPropertyLayoutStorage * labelStorage;
 @property struct CGSize { float x1; float x2; } layoutSize;
 @property(readonly) unsigned int numberOfButtons;
@@ -40,6 +40,7 @@
 - (id)backgroundImage;
 - (id)buttonStorage;
 - (BOOL)canDisplayShuffleButton;
+- (void)clearWeakReferencesToObject:(id)arg1;
 - (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)dataSource;
 - (void)dealloc;

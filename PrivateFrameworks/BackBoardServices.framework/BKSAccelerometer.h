@@ -10,9 +10,10 @@
     <BKSAccelerometerDelegate> *_delegate;
     double _interval;
     NSLock *_lock;
+    int _orientationCheckToken;
     BOOL _orientationEventsEnabled;
     NSThread *_orientationEventsThread;
-    int _orientationEventsToken;
+    int _orientationNotificationsToken;
     float _xThreshold;
     float _yThreshold;
     float _zThreshold;

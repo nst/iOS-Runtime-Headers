@@ -6,6 +6,7 @@
 
 @interface QLServicePreviewContentController : UIViewController <XPCProxyTarget, QLRemotePreviewContentControllerProtocol, QLPreviewContentDataSource, QLPreviewContentDelegate> {
     BOOL _blockRemoteImages;
+    int _clientInterfaceOrientation;
     _UIHostedWindow *_hostedWindow;
     int _numberOfPreviewItems;
     QLPreviewContentController *_previewContentController;
@@ -25,9 +26,10 @@
 - (void)_getPDFPreviewDataWithHandler:(id)arg1;
 - (void)_prepareForDrawingPages:(id)arg1;
 - (void)_setContentFrame:(id)arg1;
-- (void)_setHostedFullScreenFrame:(id)arg1;
 - (void)_setNumberOfPreviewItems:(int)arg1;
 - (void)_setPreviewItems:(id)arg1;
+- (void)_updateHostedWindowFrame;
+- (void)_willAnimateRotationTo:(int)arg1;
 - (void)beginScrubbing;
 - (id)clientProcessAlertViewForPreviewContentController:(id)arg1;
 - (void)configureWithParameters:(id)arg1;

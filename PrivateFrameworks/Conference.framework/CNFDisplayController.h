@@ -353,6 +353,7 @@
 - (void)startPreview;
 - (void)stopPreview;
 - (BOOL)supportsAutoRotation;
+- (BOOL)supportsBackFacingCamera;
 - (void)toggleLocalCameraType;
 - (id)topBar;
 - (void)updateAudioButton:(BOOL)arg1;

@@ -28,6 +28,7 @@
     unsigned int _referenceRestrictions;
     BOOL _shouldMatchDataInCacheByURLPathComponentOnly;
     BOOL _shouldMatchDataInCacheByURLWithoutQueryComponent;
+    BOOL _shouldOptimizeAccessForLinearMoviePlayback;
     NSDictionary *_validationPlist;
 }
 
@@ -51,6 +52,7 @@
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (struct OpaqueFigSemaphore { }*)_playabilityValidationSemaphore;
 - (void)_removeFigAssetNotifications;
+- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)assetCache;
 - (id)assetInspector;
 - (void)cancelLoading;

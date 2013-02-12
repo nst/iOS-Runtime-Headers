@@ -34,11 +34,6 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     NSURL *URL;
     AVAsset *asset;
     AVAsset *assetWithFigPlaybackItem;
@@ -69,7 +64,6 @@
     BOOL initialContinuesPlayingDuringPrerollForRateChange;
     BOOL initialContinuesPlayingDuringPrerollForSeek;
     NSDate *initialDate;
-    } initialDuration;
     NSDate *initialEstimatedDate;
     struct __CFString { } *initialFigTimePitchAlgorithm;
     } initialForwardPlaybackEndTime;

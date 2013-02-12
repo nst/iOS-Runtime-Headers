@@ -257,11 +257,11 @@
 - (void)gestureControllerDidStopPanning:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)gestureControllerDidStopPanningDecelerating:(id)arg1;
 - (void)gestureControllerDidStopUserInteraction:(id)arg1;
-- (void)gestureControllerDidStopZooming:(id)arg1 willDecelerate:(BOOL)arg2;
-- (void)gestureControllerDidStopZoomingDecelerating:(id)arg1;
+- (void)gestureControllerDidStopZooming:(id)arg1 direction:(int)arg2 willDecelerate:(BOOL)arg3;
+- (void)gestureControllerDidStopZoomingDecelerating:(id)arg1 direction:(int)arg2;
 - (void)gestureControllerWillStartPanning:(id)arg1;
 - (void)gestureControllerWillStartUserInteraction:(id)arg1;
-- (void)gestureControllerWillStartZooming:(id)arg1;
+- (void)gestureControllerWillStartZooming:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

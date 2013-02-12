@@ -9,12 +9,13 @@
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
-    double _lastSessionCreationTime;
     } _probeID;
+    double _sessionCreationTime;
     } _sessionID;
 }
 
 @property(readonly) struct { unsigned long long x1; unsigned long long x2; } probeID;
+@property(readonly) double sessionCreationTime;
 @property(readonly) struct { unsigned long long x1; unsigned long long x2; } sessionID;
 
 + (id)sharedInstance;
@@ -22,6 +23,7 @@
 - (void)_updateWithNewUUIDForSessionID:(struct { unsigned long long x1; unsigned long long x2; }*)arg1;
 - (id)init;
 - (struct { unsigned long long x1; unsigned long long x2; })probeID;
+- (double)sessionCreationTime;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 
 @end

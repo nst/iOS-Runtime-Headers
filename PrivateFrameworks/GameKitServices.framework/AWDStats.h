@@ -16,6 +16,7 @@
     unsigned int avgRate;
     unsigned int avgRateCount;
     unsigned int basebandCount;
+    unsigned int callNonce;
     double currentCellTechDuration;
     NSString *currentInterface;
     unsigned int downlinkEstimateAvg;
@@ -23,6 +24,7 @@
     void *gksDiagnosticSubmissionHandle;
     NSDictionary *histogramDict;
     NSString *interfaceName;
+    BOOL isSender;
     unsigned int lastVRAWidth;
     float localVideoDegradeTime;
     double previousCellTechDuration;
@@ -35,6 +37,7 @@
     unsigned int rxFrameRateMin;
     unsigned int rxHeight;
     unsigned int rxWidth;
+    long startTime;
     unsigned int targetFramerate;
     unsigned int terminationReason;
     double timeSinceLastCellTech;
@@ -75,7 +78,7 @@
 - (void)addVRAWidth:(unsigned int)arg1;
 - (void)addValue:(unsigned int)arg1 toHistogram:(id)arg2;
 - (void)callEnd;
-- (void)callStart;
+- (void)callStartIsSender:(bool)arg1 forTime:(long)arg2;
 - (void)dealloc;
 - (void)finishCellTech;
 - (void)finishVRA;

@@ -73,8 +73,9 @@
 - (void)_firstVideoFrameDisplayedNotification:(id)arg1;
 - (id)_hostedWindow;
 - (unsigned int)_hostedWindowContextID;
-- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
 - (BOOL)_isDeallocating;
+- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
+- (BOOL)_isNavigationBarHidden;
 - (BOOL)_isReadyForDisplay;
 - (BOOL)_isTVOutEnabled;
 - (void)_itemDidChangeNotification:(id)arg1;
@@ -116,6 +117,7 @@
 - (void)_setMovieSubtitle:(id)arg1;
 - (void)_setMovieTitle:(id)arg1;
 - (void)_setMovies:(id)arg1;
+- (void)_setNavigationBarHidden:(BOOL)arg1;
 - (void)_setNowPlayingMovie:(id)arg1;
 - (void)_setShouldEnforceHDCP:(BOOL)arg1;
 - (void)_setUseApplicationAudioSession:(BOOL)arg1;

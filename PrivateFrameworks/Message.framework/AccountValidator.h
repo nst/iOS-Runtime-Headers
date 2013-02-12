@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class Account, ActivityMonitor, MFError, NSArray;
 
 @interface AccountValidator : NSObject {
@@ -14,6 +18,7 @@
         unsigned int unused : 27; 
     Account *_account;
     ActivityMonitor *_accountValidationActivity;
+    id _completionBlock;
     id _delegate;
     } _flags;
     NSArray *_incomingServerAuthSchemes;
@@ -39,7 +44,9 @@
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)stop;
+- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id)arg3;
 - (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
+- (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id)arg2;
 - (void)validateAccountWithoutFallbacks:(id)arg1;
 
 @end

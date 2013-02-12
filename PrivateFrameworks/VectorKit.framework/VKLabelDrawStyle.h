@@ -294,6 +294,15 @@
             char *extra; 
         } u; 
         unsigned char count; 
+    struct VKProfileSparseRamp<signed char> { 
+        union { 
+            struct VKProfileSparseRampValue { 
+                BOOL value; 
+                unsigned char hi; 
+            } v[2]; 
+            char *extra; 
+        } u; 
+        unsigned char count; 
     struct VKProfileSparseRamp<float> { 
         union { 
             struct VKProfileSparseRampValue { 
@@ -562,6 +571,7 @@
     } roadWidth;
     } shieldRank;
     } shieldVisibility;
+    } showShieldTextAsLabel;
     } smallCaps;
     } spacingLarge;
     } spacingMedium;
@@ -580,15 +590,16 @@
 - (BOOL)arrowVisibleAtZoom:(float)arg1;
 - (void)dealloc;
 - (unsigned char)dedupeRank;
-- (void)getLabelStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (void)getLabelStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; BOOL x23; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
 - (void)getLabelTextGlyphStyle:(struct { float x1; BOOL x2; BOOL x3; id x4; }*)arg1 atZoom:(int)arg2 scaleFactor:(int)arg3;
-- (void)getNavShieldStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
-- (void)getRoadSignStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
-- (void)getShieldStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (void)getNavShieldStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; BOOL x23; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (void)getRoadSignStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; BOOL x23; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (void)getShieldStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; BOOL x23; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
 - (id)init;
 - (double)mapWidthInEmsForZoom:(int)arg1 scaleFactor:(int)arg2;
 - (double)minimumRoadArrowSpacingForZoom:(int)arg1;
 - (double)minimumRoadLabelSpacingForZoom:(int)arg1 scaleFactor:(int)arg2;
+- (BOOL)showShieldTextAsLabelAtZoom:(float)arg1;
 - (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2;
 - (void)takeFromZoomInvariantProperties:(id)arg1;
 - (BOOL)visibleAtMaxZoom:(float)arg1;

@@ -31,6 +31,7 @@
 - (void)setConnectionMedium:(id)arg1;
 - (void)setSortedDevices:(id)arg1;
 - (void)setupPickerTable;
+- (BOOL)showMoreOptions;
 - (id)sortedDevices;
 - (void)touchInCellAtIndexPath:(id)arg1;
 - (void)updateSelections;

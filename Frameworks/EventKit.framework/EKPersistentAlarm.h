@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKPersistentLocation, NSData, NSDate, NSString, NSTimeZone;
+@class EKPersistentAlarm, EKPersistentLocation, NSData, NSDate, NSSet, NSString, NSTimeZone;
 
 @interface EKPersistentAlarm : EKPersistentObject <NSCopying> {
 }
@@ -16,8 +16,10 @@
 @property(copy) NSString * externalID;
 @property(readonly) BOOL isAbsolute;
 @property(copy) EKPersistentLocation * location;
+@property(retain) EKPersistentAlarm * originalAlarm;
 @property int proximity;
 @property double relativeOffset;
+@property(copy) NSSet * snoozedAlarms;
 @property(copy) NSTimeZone * timeZone;
 
 + (id)defaultPropertiesToLoad;
@@ -36,6 +38,7 @@
 - (BOOL)isAbsolute;
 - (BOOL)isDefaultAlarm;
 - (id)location;
+- (id)originalAlarm;
 - (id)owner;
 - (int)proximity;
 - (double)relativeOffset;
@@ -46,10 +49,13 @@
 - (void)setExternalData:(id)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setOriginalAlarm:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setProximity:(int)arg1;
 - (void)setRelativeOffset:(double)arg1;
+- (void)setSnoozedAlarms:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (id)snoozedAlarms;
 - (id)timeZone;
 - (BOOL)validate:(id*)arg1;
 

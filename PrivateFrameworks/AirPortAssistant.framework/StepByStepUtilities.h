@@ -10,6 +10,8 @@
 + (id)findSourceConfigByName:(id)arg1 fromParamDict:(id)arg2;
 + (id)findSourceNetworkByName:(id)arg1 fromParamDict:(id)arg2;
 + (void)formatRecommendation:(id)arg1 fromParamDict:(id)arg2 forStep:(int)arg3 restoreString:(id*)arg4 restoreSpecificString:(id*)arg5 dontRecommendString:(id*)arg6;
++ (int)getDeviceKindFromParamDict:(id)arg1;
++ (unsigned int)getProductIDFromParamDict:(id)arg1;
 + (id)getProductLocalizedStringWithFormat:(id)arg1 fromParamDict:(id)arg2;
 + (int)matrixTagToSelectorChoice:(int)arg1;
 + (id)nameForNetworkOrDevice:(id)arg1;

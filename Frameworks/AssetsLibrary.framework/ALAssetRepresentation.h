@@ -5,9 +5,11 @@
 @class ALAssetRepresentationPrivate;
 
 @interface ALAssetRepresentation : NSObject {
+    BOOL _ignoreRead;
     id _internal;
 }
 
+@property BOOL ignoreRead;
 @property(retain) ALAssetRepresentationPrivate * internal;
 
 - (struct CGImage { }*)CGImageWithOptions:(id)arg1 format:(int)arg2 bakeInOrientation:(int)arg3;
@@ -22,12 +24,14 @@
 - (struct CGImage { }*)fullResolutionImage;
 - (struct CGImage { }*)fullScreenImage;
 - (unsigned int)getBytes:(char *)arg1 fromOffset:(long long)arg2 length:(unsigned int)arg3 error:(id*)arg4;
+- (BOOL)ignoreRead;
 - (id)initWithManagedAsset:(id)arg1 sidecar:(id)arg2 extension:(id)arg3 library:(id)arg4;
 - (id)internal;
 - (BOOL)isValid;
 - (id)metadata;
 - (int)orientation;
 - (float)scale;
+- (void)setIgnoreRead:(BOOL)arg1;
 - (void)setInternal:(id)arg1;
 - (long long)size;
 - (id)url;

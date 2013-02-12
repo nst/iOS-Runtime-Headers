@@ -2,17 +2,28 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSCache, NSMapTable, VKShieldAtlas;
+@class NSCache, NSMapTable, VKPShieldIndex, VKShieldAtlas;
 
 @interface VKShieldManager : NSObject {
     VKShieldAtlas *_defaultAtlas;
+    VKShieldAtlas *_defaultAtlasExtraLarge;
     VKShieldAtlas *_defaultAtlasLarge;
     VKShieldAtlas *_defaultAtlasMedium;
+    VKPShieldIndex *_defaultIndex;
+    VKPShieldIndex *_defaultIndexExtraLarge;
+    VKPShieldIndex *_defaultIndexLarge;
+    VKPShieldIndex *_defaultIndexMedium;
     NSCache *_genericArtworks;
     BOOL _hasLoadedDefaultAtlas;
+    BOOL _hasLoadedDefaultAtlasExtraLarge;
     BOOL _hasLoadedDefaultAtlasLarge;
     BOOL _hasLoadedDefaultAtlasMedium;
+    BOOL _hasLoadedDefaultIndex;
+    BOOL _hasLoadedDefaultIndexExtraLarge;
+    BOOL _hasLoadedDefaultIndexLarge;
+    BOOL _hasLoadedDefaultIndexMedium;
     NSMapTable *_regionalAtlases;
+    NSMapTable *_regionalIndexes;
 }
 
 + (id)sharedManager;
@@ -20,7 +31,9 @@
 - (void)_activeTileGroupChanged:(id)arg1;
 - (id)_atlasForName:(id)arg1;
 - (id)_defaultAtlasForMode:(int)arg1;
+- (id)_defaultIndexForMode:(int)arg1;
 - (void)_didReceiveMemoryWarning:(id)arg1;
+- (id)_indexForName:(id)arg1;
 - (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 mode:(int)arg4;
 - (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 resourceNames:(id)arg4 style:(id)arg5 mode:(int)arg6;
 - (void)dealloc;

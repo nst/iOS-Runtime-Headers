@@ -2,31 +2,22 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class NSMutableDictionary, NSMutableSet, NSString, NSTimer;
+@class NSMutableDictionary, NSMutableSet, NSString;
 
 @interface ADSession : NSObject {
+    BOOL _applicationCanReceiveBackgroundAds;
     NSMutableDictionary *_bannerControllers;
     NSMutableDictionary *_bannerControllersByAdType;
-    BOOL _creatingControllers;
-    BOOL _isInBackground;
     double _lastControllerCreationTime;
     NSMutableSet *_pendingOpenControllers;
     NSMutableSet *_reassignmentScheduledAdTypes;
-    unsigned int _recentlyCreatedControllers;
     NSMutableDictionary *_recipientsByAdType;
     id _remoteSession;
     NSString *_serverURL;
-    double _visibilitySlowCheckTime;
-    NSTimer *_visibilityTimer;
 }
 
-@property BOOL creatingControllers;
-@property BOOL isInBackground;
-@property unsigned int recentlyCreatedControllers;
 @property(retain) id remoteSession;
 @property(retain) NSString * serverURL;
-@property double visibilitySlowCheckTime;
-@property(retain) NSTimer * visibilityTimer;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedInstance;
@@ -42,30 +33,21 @@
 - (void)_reassignBannerControllersForAdType:(id)arg1 pool:(id)arg2;
 - (id)_unassignedBannerControllerForAdType:(id)arg1;
 - (void)adRecipientPriorityChanged:(id)arg1;
+- (BOOL)applicationStateAllowsAds;
 - (id)autorelease;
 - (void)bannerControllerDidClose:(id)arg1;
 - (void)bannerControllerDidOpen:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)creatingControllers;
 - (void)forwardShakeEventToAdSheet;
 - (id)init;
-- (BOOL)isInBackground;
-- (unsigned int)recentlyCreatedControllers;
 - (void)registerAdRecipient:(id)arg1;
 - (oneway void)release;
 - (id)remoteSession;
 - (id)retain;
 - (unsigned int)retainCount;
 - (id)serverURL;
-- (void)setCreatingControllers:(BOOL)arg1;
-- (void)setIsInBackground:(BOOL)arg1;
-- (void)setRecentlyCreatedControllers:(unsigned int)arg1;
 - (void)setRemoteSession:(id)arg1;
 - (void)setServerURL:(id)arg1;
-- (void)setVisibilitySlowCheckTime:(double)arg1;
-- (void)setVisibilityTimer:(id)arg1;
 - (void)unregisterAdRecipient:(id)arg1;
-- (double)visibilitySlowCheckTime;
-- (id)visibilityTimer;
 
 @end

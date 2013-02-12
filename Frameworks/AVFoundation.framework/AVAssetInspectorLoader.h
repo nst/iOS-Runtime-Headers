@@ -28,6 +28,7 @@
 @property(readonly) NSURL * resolvedURL;
 @property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
 @property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
+@property(getter=_shouldOptimizeAccessForLinearMoviePlayback,readonly) BOOL shouldOptimizeAccessForLinearMoviePlayback;
 @property(getter=_isStreaming,readonly) BOOL streaming;
 @property(getter=_weakReference,readonly) AVWeakReference * weakReference;
 
@@ -41,6 +42,7 @@
 - (id)_mapFigErrorCodeToNSError:(long)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_serverHasDied;
+- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
 - (id)_weakReference;
 - (id)assetCache;
 - (id)assetInspector;

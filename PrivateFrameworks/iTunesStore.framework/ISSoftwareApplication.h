@@ -13,6 +13,7 @@
     NSString *_containerPath;
     SSItemContentRating *_contentRating;
     NSNumber *_itemIdentifier;
+    NSString *_itemName;
     BOOL _profileValidated;
     NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
@@ -28,6 +29,7 @@
 @property(copy) NSString * containerPath;
 @property(copy) SSItemContentRating * contentRating;
 @property(retain) NSNumber * itemIdentifier;
+@property(copy) NSString * itemName;
 @property(getter=isProfileValidated) BOOL profileValidated;
 @property(copy) NSString * softwareType;
 @property(retain) NSNumber * storeFrontIdentifier;
@@ -51,6 +53,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isProfileValidated;
 - (id)itemIdentifier;
+- (id)itemName;
 - (void)setAccountDSID:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
@@ -59,6 +62,7 @@
 - (void)setContainerPath:(id)arg1;
 - (void)setContentRating:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
+- (void)setItemName:(id)arg1;
 - (void)setProfileValidated:(BOOL)arg1;
 - (void)setSoftwareType:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;

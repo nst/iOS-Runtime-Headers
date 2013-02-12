@@ -23,7 +23,7 @@
 - (void)_updateTimerFired:(id)arg1;
 - (id)_usageURL;
 - (void)captureDirectionsFeedbackCollection:(id)arg1;
-- (void)captureSearchFeedbackCollection:(id)arg1;
+- (void)captureMapsUsageFeedbackCollection:(id)arg1;
 - (void)captureTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
 - (void)captureUsageDataForTiles:(id)arg1;

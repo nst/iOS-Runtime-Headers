@@ -14,8 +14,11 @@
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     unsigned long long _daemonConfiguration;
+    NSMutableSet *_knownArtworkIDs;
+    NSObject<OS_dispatch_queue> *_knownArtworkIDsQueue;
     NSMutableSet *_pendingArtworkRequests;
     NSObject<OS_dispatch_queue> *_pendingArtworkRequestsQueue;
+    long long _preferredVideoQuality;
     id _updateInProgressChangedHandler;
 }
 
@@ -38,6 +41,9 @@
 - (void)isAuthenticatedWithCompletionHandler:(id)arg1;
 - (void)isAuthenticatedWithQueue:(id)arg1 completionHandler:(id)arg2;
 - (void)isExpiredWithCompletionHandler:(id)arg1;
+- (void)loadArtworkDataForPurchaseHistoryID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)loadArtworkDataForPurchaseHistoryID:(unsigned long long)arg1;
+- (void)loadArtworkDataForPurchaseHistoryIDs:(id)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForSagaID:(unsigned long long)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
@@ -48,8 +54,11 @@
 - (void)resignActive;
 - (void)setDaemonConfiguration:(unsigned long long)arg1;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
+- (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setUpdateInProgressChangedHandler:(id)arg1;
 - (id)updateInProgressChangedHandler;
+- (void)updateJaliscoLibraryWithCompletionHandler:(id)arg1;
+- (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
 - (void)updateSagaLibraryWithCompletionHandler:(id)arg1;
 - (void)uploadItemProperties;

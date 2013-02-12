@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSArray, NSDictionary, NSString, RUITableView, RUIWebView, UIBarButtonItem, UIToolbar, UIView;
+@class NSArray, NSDictionary, NSMutableArray, NSString, RUIObjectModel, RUIPage, RUITableView, RUIWebView, UIBarButtonItem, UIToolbar, UIView;
 
 @interface RUIPage : UIViewController <UIWebViewDelegate> {
+    NSMutableArray *_childPages;
     UIView *_containerView;
-    id _delegate;
     BOOL _hidesBackButton;
     BOOL _isLoading;
     UIBarButtonItem *_leftFlexSpace;
@@ -16,7 +16,9 @@
     NSString *_loadingTitle;
     UIBarButtonItem *_middleFlexSpace;
     NSString *_navTitle;
+    RUIObjectModel *_objectModel;
     NSString *_pageID;
+    RUIPage *_parentPage;
     NSDictionary *_rightNavigationBarButton;
     NSDictionary *_rightToolbarButton;
     UIBarButtonItem *_rightToolbarItem;
@@ -27,6 +29,7 @@
 }
 
 @property(readonly) NSArray * buttons;
+@property(readonly) NSArray * childPages;
 @property(readonly) UIView * containerView;
 @property BOOL hidesBackButton;
 @property(retain) NSDictionary * leftNavigationBarButton;
@@ -34,7 +37,9 @@
 @property(retain) UIBarButtonItem * leftToolbarItem;
 @property(copy) NSString * loadingTitle;
 @property(copy) NSString * navTitle;
+@property RUIObjectModel * objectModel;
 @property(copy) NSString * pageID;
+@property(readonly) RUIPage * parentPage;
 @property(retain) NSDictionary * rightNavigationBarButton;
 @property(retain) NSDictionary * rightToolbarButton;
 @property(retain) UIBarButtonItem * rightToolbarItem;
@@ -43,6 +48,7 @@
 @property(retain) NSString * validationFunction;
 @property(readonly) RUIWebView * webViewOM;
 
+- (void)_addChildPage:(id)arg1;
 - (id)_barButtonItemForDict:(id)arg1 action:(SEL)arg2;
 - (void)_barButtonPressed:(id)arg1 isRight:(BOOL)arg2 isNavbar:(BOOL)arg3;
 - (float)_getKeyboardIntersectionHeight;
@@ -53,13 +59,16 @@
 - (void)_rightNavigationBarButtonPressed:(id)arg1;
 - (void)_rightToolbarButtonPressed:(id)arg1;
 - (void)_setContentInset:(float)arg1;
+- (void)_setParentPage:(id)arg1;
 - (void)_updateNavItemTitle;
+- (void)_updateParentPage;
 - (void)_updateToolbar;
+- (void)_updateWithCompletedChild:(id)arg1;
 - (id)buttons;
+- (id)childPages;
 - (id)containerView;
 - (id)contentScrollView;
 - (void)dealloc;
-- (id)delegate;
 - (id)description;
 - (BOOL)hasTableView;
 - (BOOL)hasWebView;
@@ -70,13 +79,14 @@
 - (id)leftToolbarItem;
 - (id)loadingTitle;
 - (id)navTitle;
+- (id)objectModel;
 - (id)pageID;
+- (id)parentPage;
 - (void)populatePostbackDictionary:(id)arg1;
 - (id)rightNavigationBarButton;
 - (id)rightToolbarButton;
 - (id)rightToolbarItem;
 - (void)setButton:(id)arg1 enabled:(BOOL)arg2;
-- (void)setDelegate:(id)arg1;
 - (void)setHasToolbar;
 - (void)setHidesBackButton:(BOOL)arg1;
 - (void)setLeftNavigationBarButton:(id)arg1;
@@ -84,6 +94,7 @@
 - (void)setLeftToolbarItem:(id)arg1;
 - (void)setLoadingTitle:(id)arg1;
 - (void)setNavTitle:(id)arg1;
+- (void)setObjectModel:(id)arg1;
 - (void)setPageID:(id)arg1;
 - (void)setRightNavigationBarButton:(id)arg1;
 - (void)setRightToolbarButton:(id)arg1;

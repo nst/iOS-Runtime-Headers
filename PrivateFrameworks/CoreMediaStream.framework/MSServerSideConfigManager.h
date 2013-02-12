@@ -19,6 +19,7 @@
 
 + (void)abortAllActivities;
 + (id)configManagerForPersonID:(id)arg1;
++ (double)doubleValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(double)arg3;
 + (id)existingConfigManagerForPersonID:(id)arg1;
 + (void)forgetPersonID:(id)arg1;
 + (int)intValueForParameter:(id)arg1 forPersonID:(id)arg2 defaultValue:(int)arg3;

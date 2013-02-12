@@ -107,6 +107,7 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setContentOffsetLockCount:(unsigned int)arg1;
+- (void)setDataSource:(id)arg1;
 - (void)setDefaultColumnWidth:(float)arg1;
 - (void)setDisableOffsetAndBoundsHacks:(BOOL)arg1;
 - (void)setDisplayedSectionMetrics:(id)arg1;

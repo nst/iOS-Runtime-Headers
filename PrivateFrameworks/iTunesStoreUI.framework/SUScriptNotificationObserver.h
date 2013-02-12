@@ -9,6 +9,11 @@
     struct __CFSet { } *_receivers;
 }
 
+- (void)_accessibilityPerformEscape;
+- (void)_accessibilityPerformScrollDown;
+- (void)_accessibilityPerformScrollLeft;
+- (void)_accessibilityPerformScrollRight;
+- (void)_accessibilityPerformScrollUp;
 - (void)_audioSessionsChangedNotification:(id)arg1;
 - (void)_beginObservingNotifications;
 - (void)_dispatchEvent:(id)arg1 forName:(id)arg2;

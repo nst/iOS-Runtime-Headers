@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUDownloadActionConfiguration, IUFlipperButton, IUPortraitTransportControls, MPImageCache, MPImageCacheRequest, MPViewController, UIBarButtonItem, UINavigationBar, UINavigationButton, UITransitionView, UIView;
+@class IUFlipperButton, IUPortraitTransportControls, MPImageCache, MPImageCacheRequest, MPViewController, UIBarButtonItem, UINavigationBar, UINavigationButton, UITransitionView, UIView;
 
 @interface IUNowPlayingPortraitViewController : MPViewController <UIActionSheetDelegate, IUCoverFlowTransitionViewController, MPVideoTransferViewController> {
     UIView *_albumHighlight;
     UIBarButtonItem *_backBarButtonItem;
     BOOL _didZoom;
     UIBarButtonItem *_doneBarButtonItem;
-    IUDownloadActionConfiguration *_downloadActionConfiguration;
     float _filteredAlbumHighlightX;
     float _filteredNavigationBarHighlightX;
     UIView *_flipContainerView;
@@ -37,8 +36,6 @@
 
 - (void)_backAction:(id)arg1;
 - (id)_backBarButtonItem;
-- (id)_buyButton;
-- (void)_buyButtonAction:(id)arg1;
 - (void)_didDisplayVideoNotification:(id)arg1;
 - (id)_doneBarButtonItem;
 - (void)_exitNowPlaying;
@@ -51,8 +48,6 @@
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (id)_navigationBar;
 - (void)_reloadForChangeFromItem:(id)arg1 toItem:(id)arg2;
-- (void)_reportIssueCancelAction:(id)arg1;
-- (void)_reportIssueDoneAction:(id)arg1;
 - (void)_scaleModeButtonAction:(id)arg1;
 - (void)_setExistingNavigationItem:(id)arg1;
 - (void)_setFlipperButtonImageWithItem:(id)arg1 time:(double)arg2;
@@ -61,8 +56,6 @@
 - (void)_updateViewControllerForChangeFromItem:(id)arg1 toItem:(id)arg2 animate:(BOOL)arg3;
 - (Class)_viewControllerClassForItem:(id)arg1;
 - (id)_viewControllerForChangeFromItem:(id)arg1 toItem:(id)arg2 withAvailableController:(id)arg3;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
 - (id)coverFlowControllerInitialTransitionImage:(id)arg1;

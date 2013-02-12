@@ -7,6 +7,7 @@
 @interface MKMapItem : NSObject {
     NSArray *_attributions;
     NSString *_businessID;
+    NSString *_localSearchProviderID;
     NSString *_yelpID;
     NSArray *entryPoints;
     NSString *extSessionGuid;
@@ -31,6 +32,8 @@
 @property(copy) NSString * extSessionGuid;
 @property(readonly) BOOL isBusiness;
 @property BOOL isCurrentLocation;
+@property(retain) NSString * localSearchProviderID;
+@property(copy) NSString * localSearchProviderID;
 @property(copy) NSString * name;
 @property(retain) NSNumber * numberOfRatings;
 @property(copy) NSNumber * numberOfRatings;
@@ -66,6 +69,7 @@
 - (id)initWithPlacemark:(id)arg1;
 - (BOOL)isBusiness;
 - (BOOL)isCurrentLocation;
+- (id)localSearchProviderID;
 - (id)name;
 - (id)numberOfRatings;
 - (id)numberOfReviews;
@@ -80,6 +84,7 @@
 - (void)setEntryPoints:(id)arg1;
 - (void)setExtSessionGuid:(id)arg1;
 - (void)setIsCurrentLocation:(BOOL)arg1;
+- (void)setLocalSearchProviderID:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNumberOfRatings:(id)arg1;
 - (void)setNumberOfReviews:(id)arg1;

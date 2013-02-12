@@ -21,7 +21,7 @@
 
 @property(readonly) BOOL continueCheckingDownload;
 @property(readonly) BOOL continueCheckingUpload;
-@property(readonly) PFUbiquityLocation * currentLocation;
+@property(retain) PFUbiquityLocation * currentLocation;
 @property(readonly) NSError * downloadError;
 @property(readonly) BOOL downloadSuccess;
 @property(readonly) BOOL existsAtPermanentLocation;

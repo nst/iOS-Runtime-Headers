@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@class <UIAccessibilityRemoteElementChildrenDelegate>, NSString;
+@class <UIAccessibilityRemoteElementChildrenDelegate>, NSMutableSet, NSString;
 
 @interface UIAccessibilityRemoteElement : NSObject {
+    NSMutableSet *_allChildren;
     unsigned int _contextId;
     BOOL _onClientSide;
     id _remoteChildrenDelegate;

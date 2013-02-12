@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class WLImage;
+@class PKImage;
 
-@interface WLCardFrontFaceImages : WLCardImages {
+@interface WLCardFrontFaceImages : PKPassImages {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -32,13 +32,13 @@
             float width; 
             float height; 
         } size; 
-    WLImage *_faceImage;
+    PKImage *_faceImage;
     } _logoRect;
     } _stripRect;
     } _thumbnailRect;
 }
 
-@property(retain) WLImage * faceImage;
+@property(retain) PKImage * faceImage;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } logoRect;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } stripRect;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } thumbnailRect;

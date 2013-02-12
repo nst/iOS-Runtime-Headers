@@ -26,7 +26,6 @@
 @property BOOL usingVideoOut;
 @property BOOL wantsVideoLayer;
 
-- (void)_accessorySplashViewWillAppearNotification:(id)arg1;
 - (void)_backButtonAction:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_itemChangedNotification:(id)arg1;
@@ -46,7 +45,6 @@
 - (void)deviceOrientationChanged:(int)arg1;
 - (void)endIgnoringChangeTypes:(unsigned int)arg1;
 - (void)exitPlayerAnimated:(BOOL)arg1;
-- (void)exitPlayerForAccessorySplash;
 - (BOOL)exited;
 - (id)init;
 - (int)interfaceOrientation;

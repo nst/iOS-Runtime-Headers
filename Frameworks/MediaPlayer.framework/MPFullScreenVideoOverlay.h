@@ -17,6 +17,7 @@
     MPNowPlayingItemQueueInfoButton *_itemQueueInfoButton;
     MPCenteringNavigationBar *_navigationBar;
     UIImageView *_navigationBarBackground;
+    BOOL _navigationBarHidden;
     UIImageView *_navigationBarShadow;
     UINavigationItem *_navigationItem;
     MPAVController *_player;
@@ -40,6 +41,7 @@
 @property int interfaceOrientation;
 @property(retain) MPAVItem * item;
 @property(readonly) UINavigationBar * navigationBar;
+@property BOOL navigationBarHidden;
 @property(retain) MPAVController * player;
 @property(readonly) MPTransportControls * transportControls;
 @property <MPVideoControllerProtocol> * videoViewController;
@@ -53,7 +55,7 @@
 - (void)_hideScrubInstructions;
 - (void)_initNavigationBar;
 - (void)_initNavigationBarBackground;
-- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
+- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (id)_newLoadingMovieTitleViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_newStreamingTitleViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_newTitleViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 text:(id)arg2 showSpinner:(BOOL)arg3;
@@ -94,6 +96,7 @@
 - (id)item;
 - (void)layoutSubviews;
 - (id)navigationBar;
+- (BOOL)navigationBarHidden;
 - (int)nowPlayingItemQueueInfoButton:(id)arg1 willDisplayInfoType:(int)arg2;
 - (id)player;
 - (void)registerForPlayerNotifications;
@@ -108,6 +111,7 @@
 - (void)setHidden:(BOOL)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setItem:(id)arg1;
+- (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (void)setVideoViewController:(id)arg1;

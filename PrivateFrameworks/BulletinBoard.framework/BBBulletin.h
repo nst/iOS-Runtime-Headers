@@ -152,7 +152,7 @@
 - (void)dealloc;
 - (id)defaultAction;
 - (id)defaultActionBlock;
-- (id)defaultActionBlockWithOrigin:(int)arg1 canBypassPinLock:(BOOL*)arg2 requiresUnlock:(BOOL*)arg3 suitabilityFilter:(id)arg4;
+- (id)defaultActionBlockWithOrigin:(int)arg1 canBypassPinLock:(BOOL*)arg2 requiresUnlock:(BOOL*)arg3 shouldDeactivateAwayController:(BOOL*)arg4 suitabilityFilter:(id)arg5;
 - (id)defaultActionBlockWithOrigin:(int)arg1;
 - (void)deliverResponse:(id)arg1;
 - (id)description;

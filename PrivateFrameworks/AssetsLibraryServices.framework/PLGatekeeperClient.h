@@ -46,6 +46,7 @@
 - (unsigned long long)purgeableSharedAssetsSpace;
 - (void)recalculateCachedAlbumCounts;
 - (void)recoverFromCrashIfNeeded;
+- (void)repairPotentialModelCorruption;
 - (void)repairSingletonObjects;
 - (id)replyQueue;
 - (void)requestAccessWithHandler:(id)arg1;

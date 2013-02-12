@@ -10,8 +10,8 @@
         float g; 
         float b; 
         float a; 
-    int _canvasHeight;
-    int _canvasWidth;
+    unsigned int _canvasHeight;
+    unsigned int _canvasWidth;
     BOOL _forceRecreateFramebuffer;
     BOOL _forceRecreateFramebufferAndKeepMultisampleFramebuffer;
     } _glClearColor;

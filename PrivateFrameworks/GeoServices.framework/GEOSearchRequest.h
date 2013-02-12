@@ -8,6 +8,7 @@
 
 @property unsigned short provider;
 
+- (id)_mapkit_initWithLocalSearchRequest:(id)arg1;
 - (id)init;
 - (unsigned short)provider;
 - (Class)responseClass;

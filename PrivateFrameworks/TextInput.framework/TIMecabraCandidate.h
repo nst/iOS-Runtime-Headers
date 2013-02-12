@@ -23,6 +23,7 @@
 - (id)initConversionCandidateWithSurface:(id)arg1 andInput:(id)arg2;
 - (id)initWithMecabraCandidate:(const void*)arg1;
 - (id)input;
+- (BOOL)isEmojiCandidate;
 - (BOOL)isExtensionCandidate;
 - (BOOL)isForShortcutConversion;
 - (void*)mecabraCandidate;

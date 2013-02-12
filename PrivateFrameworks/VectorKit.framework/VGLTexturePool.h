@@ -21,5 +21,6 @@
 - (id)checkoutTexture;
 - (void)dealloc;
 - (id)initWithCapacity:(int)arg1 textureSize:(struct CGSize { float x1; float x2; })arg2 scale:(int)arg3 context:(id)arg4;
+- (void)purge;
 
 @end

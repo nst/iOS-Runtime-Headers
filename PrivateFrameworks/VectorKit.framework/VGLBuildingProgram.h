@@ -12,13 +12,20 @@
         float x; 
         float y; 
         float z; 
+        float w; 
+    struct { 
+        float x; 
+        float y; 
+        float z; 
     } _cameraPositionInTileSpace;
     } _color;
+    } _oneMinusScale;
     float _scale;
     int _textureSampler;
     int _uAlpha;
     int _uCameraPositionInTileSpace;
     int _uColor;
+    int _uOneMinusScale;
     int _uScale;
     int _uTextureSampler;
 }
@@ -29,6 +36,7 @@
 @property int textureSampler;
 
 + (id)program;
++ (id)realisticProgram;
 
 - (struct { float x1; float x2; float x3; })cameraPositionInTileSpace;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;

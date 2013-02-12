@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, SSAuthenticationContext, SUClientInterface, SUScriptAccount, SUScriptAccountManager, SUScriptAppleAccountStore, SUScriptApplication, SUScriptDevice, SUScriptKeyValueStore, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptPreviewOverlay, SUScriptProtocol, SUScriptPurchaseManager, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, SUWebImagePool, WebFrame;
+@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, SSAuthenticationContext, SUClientInterface, SUScriptAccount, SUScriptAccountManager, SUScriptAppleAccountStore, SUScriptApplication, SUScriptDevice, SUScriptFairPlayContext, SUScriptKeyValueStore, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptPreviewOverlay, SUScriptProtocol, SUScriptPurchaseManager, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, SUWebImagePool, WebFrame;
 
 @interface SUScriptInterface : SUScriptObject {
     SUScriptAccountManager *_accountManager;
@@ -23,6 +23,7 @@
     SUWebImagePool *_webImagePool;
 }
 
+@property(readonly) SUScriptFairPlayContext * accountCreationSecureContext;
 @property(readonly) NSArray * accounts;
 @property(readonly) NSString * actionTypeReturnToLibrary;
 @property(readonly) SUScriptAppleAccountStore * appleAccountStore;
@@ -68,6 +69,8 @@
 - (void)_globalEventNotification:(id)arg1;
 - (void)_scriptUserInfoDidChangeNotification:(id)arg1;
 - (void)accessibilityPostLayoutChange;
+- (void)accessibilityPostScreenChange;
+- (id)accountCreationSecureContext;
 - (id)accountDSID;
 - (id)accountForDSID:(id)arg1;
 - (id)accountName;

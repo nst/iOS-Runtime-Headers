@@ -82,7 +82,6 @@
 - (id)_gkMD5HashString;
 - (id)_gkSHA1HashData;
 - (id)_gkSHA1HashString;
-- (id)_iAd_truncatedDescription;
 - (id)_replaceCString:(const char *)arg1 withCString:(const char *)arg2;
 - (id)_web_guessedMIMEType;
 - (id)_web_guessedMIMETypeForExtension:(id)arg1;

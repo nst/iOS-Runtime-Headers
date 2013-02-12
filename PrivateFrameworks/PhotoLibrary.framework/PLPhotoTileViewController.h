@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <PLPhotoTileViewControllerDelegate>, PLCommentsViewController, PLExpandableImageView, PLImageScrollView, PLManagedAsset, PLPhotoTilePlaceholderView, PLVideoView, UIGestureRecognizer, UIImage, UIImageView;
+@class <PLPhotoTileViewControllerDelegate>, NSObject<OS_dispatch_source>, PLCommentsViewController, PLExpandableImageView, PLImageScrollView, PLManagedAsset, PLPhotoTilePlaceholderView, PLVideoView, UIGestureRecognizer, UIImage, UIImageView;
 
 @interface PLPhotoTileViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, PLCommentsViewControllerDelegate> {
     struct CGSize { 
@@ -74,11 +74,15 @@
     } _cropRectBeforeDragging;
     float _cropRectZoomScale;
     id _didEndZoomingBlock;
+    double _dispatchStartTime;
+    double _dispatchTimeElapsed;
+    NSObject<OS_dispatch_source> *_dispatchTimer;
     UIGestureRecognizer *_doubleTapGestureRecognizer;
     float _doubleTapZoomScale;
     BOOL _force1XCroppedImage;
     BOOL _forceNativeScreenScale;
     UIImageView *_gradientView;
+    BOOL _hasNotedZoom;
     UIImageView *_hdrBadgeImageView;
     UIImage *_image;
     int _imageOrientation;
@@ -143,12 +147,15 @@
 - (void)_setPhoto:(id)arg1;
 - (void)_setupHDRBadge;
 - (void)_showHDRBadgeIfAppropriate;
+- (void)_teardownDispatchTimer;
 - (void)_updateAggdKeys;
 - (void)_updateContentInset;
 - (void)_updateGradientImageForOrientation:(int)arg1;
 - (void)_updateModelPhotoWithImage:(id)arg1;
 - (void)_updatePlaceholderViewAnimated:(BOOL)arg1;
 - (BOOL)allowsEditing;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (void)applicationWillResignActive:(id)arg1;
 - (BOOL)centerContentVertically;
 - (void)commentsControllerDidDisplayUnreadComment:(id)arg1;
 - (void)commentsControllerDidExitEditMode:(id)arg1;

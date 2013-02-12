@@ -11,6 +11,7 @@
 @property(retain) SAMPMediaItem * listeningToItem;
 @property(copy) NSNumber * listeningToMusicApplication;
 @property(copy) NSString * refId;
+@property(copy) NSString * source;
 @property int state;
 
 + (id)getStateResponse;
@@ -22,7 +23,9 @@
 - (id)listeningToMusicApplication;
 - (void)setListeningToItem:(id)arg1;
 - (void)setListeningToMusicApplication:(id)arg1;
+- (void)setSource:(id)arg1;
 - (void)setState:(int)arg1;
+- (id)source;
 - (int)state;
 
 @end

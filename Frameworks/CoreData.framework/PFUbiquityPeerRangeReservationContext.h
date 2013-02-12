@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (id)globalObjectIDs;
 - (id)init;
-- (id)initWithPersistentStore:(id)arg1 andStoreSaveSnapshot:(id)arg2;
+- (id)initWithPersistentStore:(id)arg1 andGlobalObjectIDs:(id)arg2;
 - (id)moc;
 - (unsigned int)numRangesToReserve;
 - (void)prepareForRangeReservationWithRangeStart:(id)arg1 andGlobalID:(id)arg2 andEntityName:(id)arg3;

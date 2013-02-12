@@ -2,30 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISSQLiteDatabase, NSObject<OS_dispatch_queue>, NSURL;
+@class NSObject<OS_dispatch_queue>, NSURL, SSSQLiteDatabase;
 
 @interface ISCookieStorage : NSObject {
-    ISSQLiteDatabase *_db;
+    SSSQLiteDatabase *_db;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    void *_processAssertion;
-    int _processAssertionCount;
     NSURL *_storageLocation;
-    BOOL _usesTaskCompletionAssertions;
 }
 
 @property(readonly) NSURL * storageLocation;
 
-+ (void)_setUsesTaskCompletionAssertions:(BOOL)arg1;
 + (BOOL)_setupCookieDatabase:(id)arg1;
 + (id)sharedInstance;
 + (id)sharedStorage;
 
-- (void)_beginProcessAssertion;
 - (void)_bindInsertStatement:(struct sqlite3_stmt { }*)arg1 forCookie:(id)arg2 userIdentifier:(id)arg3;
 - (BOOL)_bindStatement:(struct sqlite3_stmt { }*)arg1 withValues:(id)arg2;
 - (id)_columnNameForCookieProperty:(id)arg1;
 - (id)_copyPrivateCookiesForURL:(id)arg1 userIdentifier:(id)arg2;
-- (void)_endProcessAssertion;
 - (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)init;

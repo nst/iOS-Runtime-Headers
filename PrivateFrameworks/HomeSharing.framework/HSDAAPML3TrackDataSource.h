@@ -10,9 +10,9 @@
         void *bytes; 
         unsigned int encodedLength; 
         int valueType; 
-    unsigned int _idx;
+    int _idx;
     NSData *_itemsResponseData;
-    int _parsedValuesPropertyIndex[83];
+    int _parsedValuesPropertyIndex[105];
     } _parsedValues[256];
     NSArray *_rawItems;
 }
@@ -32,9 +32,13 @@
 - (id)currentTrackCategory;
 - (id)currentTrackChapterData;
 - (BOOL)currentTrackChosenByAutoFill;
+- (int)currentTrackCodecSubtype;
+- (int)currentTrackCodecType;
 - (id)currentTrackComment;
 - (id)currentTrackComposer;
 - (int)currentTrackContentRating;
+- (int)currentTrackDataKind;
+- (id)currentTrackDataURL;
 - (double)currentTrackDateAdded;
 - (double)currentTrackDateLastUsed;
 - (double)currentTrackDateModified;
@@ -48,6 +52,7 @@
 - (BOOL)currentTrackExcludeFromShuffle;
 - (id)currentTrackFeedURL;
 - (id)currentTrackFilePath;
+- (id)currentTrackFormat;
 - (long long)currentTrackGaplessEncodingDelay;
 - (long long)currentTrackGaplessEncodingDrain;
 - (long long)currentTrackGaplessHeuristicInfo;
@@ -57,12 +62,14 @@
 - (long long)currentTrackGlobalID;
 - (BOOL)currentTrackHasAlternateAudio;
 - (BOOL)currentTrackHasBeenPlayed;
+- (BOOL)currentTrackHasChapterData;
 - (BOOL)currentTrackHasSubtitles;
+- (BOOL)currentTrackHasVideo;
+- (BOOL)currentTrackIsAlarm;
 - (BOOL)currentTrackIsAudibleAudioBook;
 - (BOOL)currentTrackIsCompilation;
 - (BOOL)currentTrackIsDemoRental;
 - (int)currentTrackIsDownloading;
-- (BOOL)currentTrackIsHD;
 - (BOOL)currentTrackIsHidden;
 - (BOOL)currentTrackIsITunesU;
 - (BOOL)currentTrackIsOTAPurchased;
@@ -70,12 +77,15 @@
 - (BOOL)currentTrackIsRental;
 - (BOOL)currentTrackIsTemporaryCloudDownload;
 - (BOOL)currentTrackIsUserDisabled;
+- (int)currentTrackJaliscoToken;
+- (int)currentTrackKeyID2;
 - (id)currentTrackKind;
 - (unsigned long)currentTrackMediaType;
 - (long long)currentTrackPendingGeniusChecksum;
 - (long long)currentTrackPersistentID;
 - (int)currentTrackPlayCountRecent;
 - (int)currentTrackPlayCountUser;
+- (long long)currentTrackPurchaseHistoryID;
 - (long long)currentTrackRatingLevel;
 - (double)currentTrackRelativeVolume;
 - (BOOL)currentTrackRememberBookmarkTime;
@@ -122,6 +132,7 @@
 - (int)currentTrackTrackNumber;
 - (int)currentTrackUserAlbumRating;
 - (int)currentTrackUserRating;
+- (int)currentTrackVideoQuality;
 - (long long)currentTrackVolumeNormalization;
 - (int)currentTrackYear;
 - (void)dealloc;
@@ -131,12 +142,14 @@
 - (void)getCurrentTrackCollectionDescription:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackComment:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackCopyright:(struct sqlite3_context { }*)arg1;
+- (void)getCurrentTrackDataURL:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackDescription:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackDownloadIdentifier:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackEQPreset:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackEpisodeID:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackExtendedContentRating:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackFeedURL:(struct sqlite3_context { }*)arg1;
+- (void)getCurrentTrackFormat:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackGrouping:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackIntegrity:(struct sqlite3_context { }*)arg1;
 - (void)getCurrentTrackLongDescription:(struct sqlite3_context { }*)arg1;

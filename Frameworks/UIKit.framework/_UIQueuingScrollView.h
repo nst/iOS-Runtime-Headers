@@ -61,6 +61,7 @@
 - (BOOL)_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_invalidateOffscreenViews;
 - (BOOL)_isDeceleratingInOppositionToNavigationDirection:(int)arg1;
+- (BOOL)_isScrollInProgress:(BOOL)arg1;
 - (int)_navigationDirectionForActiveScroll:(BOOL)arg1;
 - (int)_navigationDirectionFromCurrentOffset;
 - (void)_notifyDelegateDidBailoutOfScrollAndRevealedView:(id)arg1;

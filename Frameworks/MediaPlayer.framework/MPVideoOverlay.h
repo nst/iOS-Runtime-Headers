@@ -27,6 +27,7 @@
 @property int interfaceOrientation;
 @property(retain) MPAVItem * item;
 @property(readonly) UINavigationBar * navigationBar;
+@property BOOL navigationBarHidden;
 @property(retain) MPAVController * player;
 @property <MPVideoControllerProtocol> * videoViewController;
 @property unsigned long long visibleParts;
@@ -54,6 +55,7 @@
 - (id)item;
 - (void)layoutSubviews;
 - (id)navigationBar;
+- (BOOL)navigationBarHidden;
 - (void)performSelector:(SEL)arg1 whenTickingPastTime:(double)arg2;
 - (id)player;
 - (void)registerForPlayerNotifications;
@@ -64,6 +66,7 @@
 - (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setItem:(id)arg1;
+- (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setVideoViewController:(id)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;

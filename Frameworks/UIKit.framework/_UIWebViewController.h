@@ -41,6 +41,7 @@
 - (void)_setTitle:(id)arg1;
 - (void)_setURLString:(id)arg1;
 - (void)_updateBarButtonItems;
+- (void)_webContentSizeWithReplyHandler:(id)arg1;
 - (id)backBarButtonItem;
 - (BOOL)canGoBack;
 - (BOOL)canGoForward;
@@ -53,6 +54,7 @@
 - (void)goForward;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isLoading;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadRequest:(id)arg1;
 - (void)loadView;
 - (id)pageTitle;

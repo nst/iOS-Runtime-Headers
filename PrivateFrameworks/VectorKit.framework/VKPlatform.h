@@ -34,6 +34,7 @@
 - (BOOL)roadsWithSimpleLineMeshesAvailable;
 - (BOOL)shouldDrawWhenReady;
 - (BOOL)shouldUseTrafficAlphaHack;
+- (BOOL)supportsHiResRTT;
 - (unsigned int)tileMaximumLimit;
 - (unsigned int)tileReserveLimit;
 

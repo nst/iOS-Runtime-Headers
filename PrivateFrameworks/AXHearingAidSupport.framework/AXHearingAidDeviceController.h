@@ -57,10 +57,13 @@
 - (id)disUUID;
 - (void)disconnectFromPeripheral:(id)arg1;
 - (id)fakeHearingAids;
+- (id)firmwareVersionUUID;
+- (id)hardwareVersionUUID;
 - (id)hearingAidForPeripheral:(id)arg1;
 - (id)hearingAidsForUUID:(id)arg1;
 - (id)init;
 - (BOOL)isBluetoothAvailable;
+- (BOOL)isScanning;
 - (id)leaHearingAidUUID;
 - (id)loadedDevices;
 - (id)manufacturerUUID;

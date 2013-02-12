@@ -13,6 +13,7 @@
     GKConnection *_connection;
     <GKMatchDelegate> *_delegateWeak;
     unsigned int _expectedPlayerCount;
+    BOOL _hostScoreForQuery;
     NSMutableDictionary *_hostScores;
     <GKMatchDelegate> *_inviteDelegateWeak;
     BOOL _needHostScore;
@@ -33,6 +34,7 @@
 @property(retain) GKConnection * connection;
 @property <GKMatchDelegate> * delegate;
 @property(readonly) unsigned int expectedPlayerCount;
+@property BOOL hostScoreForQuery;
 @property(retain) NSMutableDictionary * hostScores;
 @property <GKMatchDelegate> * inviteDelegate;
 @property BOOL needHostScore;
@@ -52,7 +54,7 @@
 - (void)acceptRelayResponse:(id)arg1 playerID:(id)arg2;
 - (void)addHostScore:(int)arg1 forPlayer:(id)arg2;
 - (id)allIDs;
-- (void)calculateAndSendHostScore;
+- (void)calculateHostScore;
 - (void)chooseBestHostPlayerWithCompletionHandler:(id)arg1;
 - (id)chooseHostCompletion;
 - (void)conditionallyReinvitePlayer:(id)arg1 sessionToken:(id)arg2;
@@ -69,6 +71,8 @@
 - (void)disconnect;
 - (unsigned int)expectedPlayerCount;
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
+- (BOOL)haveAllHostScores;
+- (BOOL)hostScoreForQuery;
 - (id)hostScores;
 - (id)init;
 - (void)initRelayConnectionForPlayer:(id)arg1;
@@ -93,6 +97,7 @@
 - (void)preemptRelay:(id)arg1;
 - (void)queueData:(id)arg1 forPlayer:(id)arg2;
 - (void)receiveData:(id)arg1 fromPeer:(id)arg2 inSession:(id)arg3 context:(void*)arg4;
+- (void)receivedChooseHostData:(id)arg1 fromPlayer:(id)arg2;
 - (id)reinvitedPlayers;
 - (void)reinviteeAcceptedNotification:(id)arg1;
 - (void)reinviteeDeclinedNotification:(id)arg1;
@@ -103,11 +108,12 @@
 - (void)rematchWithCompletionHandler:(id)arg1;
 - (void)requestRelayInitForPlayer:(id)arg1;
 - (void)requestRelayUpdateForPlayer:(id)arg1;
-- (void)selectHostIfAllScored;
+- (BOOL)selectHostIfRequestedAndAllScored;
 - (id)selfBlob;
 - (void)sendData:(id)arg1 fromPlayer:(id)arg2;
 - (BOOL)sendData:(id)arg1 toPlayers:(id)arg2 withDataMode:(int)arg3 error:(id*)arg4;
 - (BOOL)sendDataToAllPlayers:(id)arg1 withDataMode:(int)arg2 error:(id*)arg3;
+- (void)sendHostScoreAsQuery:(BOOL)arg1;
 - (BOOL)sendInviteData:(id)arg1 error:(id*)arg2;
 - (void)sendQueuedPacketsForPlayer:(id)arg1;
 - (void)sendStateCallbackForPlayer:(id)arg1 state:(int)arg2;
@@ -123,6 +129,7 @@
 - (void)setChooseHostCompletion:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHostScoreForQuery:(BOOL)arg1;
 - (void)setHostScores:(id)arg1;
 - (void)setInviteDelegate:(id)arg1;
 - (void)setNeedHostScore:(BOOL)arg1;

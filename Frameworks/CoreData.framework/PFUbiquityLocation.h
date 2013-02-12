@@ -77,7 +77,7 @@
 - (id)description;
 - (id)exportingPeerID;
 - (BOOL)fileExistsAtLocation;
-- (BOOL)fileExistsAtLocationWithLocalPeerID:(id)arg1;
+- (BOOL)fileExistsAtLocationWithLocalPeerID:(id)arg1 error:(id*)arg2;
 - (id)filename;
 - (unsigned int)hash;
 - (id)init;

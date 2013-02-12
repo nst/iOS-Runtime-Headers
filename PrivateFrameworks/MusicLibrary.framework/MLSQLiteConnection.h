@@ -32,6 +32,7 @@
 @property(readonly) int activeTransactionKind;
 @property(retain) MLSQLiteConnectionQueue * connectionQueue;
 @property(readonly) struct sqlite3 { }* db;
+@property(readonly) NSString * path;
 @property int profilingLevel;
 
 - (void).cxx_destruct;
@@ -69,6 +70,7 @@
 - (id)initForWritingWithPath:(id)arg1;
 - (id)initForWritingWithURL:(id)arg1;
 - (void*)moduleContextForModuleName:(id)arg1;
+- (id)path;
 - (BOOL)performTransactionKind:(int)arg1 withBlock:(id)arg2;
 - (BOOL)performTransactionKind:(int)arg1 withBusyHandler:(id)arg2 block:(id)arg3;
 - (BOOL)performTransactionWithBlock:(id)arg1;

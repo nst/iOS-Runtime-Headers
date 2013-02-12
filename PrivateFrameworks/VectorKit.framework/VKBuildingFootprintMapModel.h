@@ -61,6 +61,7 @@
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
 - (double)maxTileHeightAtPoint:(struct { double x1; double x2; double x3; })arg1;
+- (void)preloadRealisticResourcesWithContext:(id)arg1;
 - (void)removePersistingExitingTiles:(id)arg1;
 - (void)reset;
 - (void)setActive:(BOOL)arg1;

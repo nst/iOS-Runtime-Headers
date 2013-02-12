@@ -79,6 +79,7 @@
     double _seekRevSlop;
     unsigned int _seeklessState;
     BOOL _shouldEnforceHDCP;
+    BOOL _shouldSkipToNextTrackOnResumeFromInterruption;
     unsigned int _stallBackgroundTaskIdentifier;
     NSObject<OS_dispatch_source> *_stallTimerSource;
     unsigned int _state;
@@ -117,15 +118,15 @@
 @property BOOL disallowsAMRAudio;
 @property unsigned int displayOverridePlaybackState;
 @property(readonly) double durationOfCurrentItemIfAvailable;
+@property(readonly) int externalPlaybackType;
 @property(copy) NSString * externalPlaybackVideoGravity;
 @property(readonly) MPQueueFeeder * feeder;
 @property int feederMode;
 @property BOOL forceSynchronousQueueFilling;
 @property(getter=isFullScreenVideoMode,readonly) BOOL fullScreenVideoMode;
 @property(readonly) BOOL hasVolumeControl;
-@property(readonly) BOOL isAirPlayVideoActive;
 @property(readonly) BOOL isCurrentItemReady;
-@property(readonly) BOOL isInExtendedMode;
+@property(readonly) BOOL isExternalPlaybackActive;
 @property BOOL managesSystemDownloads;
 @property(readonly) BOOL muted;
 @property double nextFadeOutDuration;
@@ -137,6 +138,7 @@
 @property(getter=isRewindHoldingAtStart,readonly) BOOL rewindHoldingAtStart;
 @property(readonly) NSString * routeNameForVolumeControl;
 @property BOOL shouldEnforceHDCP;
+@property BOOL shouldSkipToNextTrackOnResumeFromInterruption;
 @property(readonly) BOOL showPlaybackStateOverlaysOnTVOut;
 @property unsigned int shuffleType;
 @property(getter=isShuffled,readonly) BOOL shuffled;
@@ -191,11 +193,11 @@
 - (void)_endSeekAndChangeRate:(BOOL)arg1;
 - (id)_extractImageFromMetadata:(id)arg1;
 - (void)_firstVideoFrameDisplayed:(id)arg1;
-- (void)_isAirPlayVideoActiveDidChange:(id)arg1;
 - (BOOL)_isChangingQueueContents;
 - (BOOL)_isCloudItem:(id)arg1;
 - (BOOL)_isDownloadingCloudItem:(id)arg1;
-- (BOOL)_isDownloadingCloudOrTiltItem:(id)arg1;
+- (BOOL)_isDownloadingCloudOrOtherItem:(id)arg1;
+- (void)_isExternalPlaybackActiveDidChange:(id)arg1;
 - (BOOL)_isVideoLayerAttachedToPlayer;
 - (void)_itemAssetIsLoadedNotification:(id)arg1;
 - (void)_itemDidChange:(id)arg1;
@@ -209,6 +211,7 @@
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 - (void)_pauseBookkeepingTimer;
 - (void)_pausePlaybackIfNecessary;
+- (void)_pausePlaybackIfNecessaryIgnoringVideoLayerAttachment:(BOOL)arg1;
 - (void)_pauseTickTimer;
 - (void)_playbackFailedWithError:(id)arg1 canResolve:(BOOL)arg2;
 - (unsigned int)_playbackIndexForDelta:(int)arg1 fromIndex:(unsigned int)arg2 ignoreElapsedTime:(BOOL)arg3;
@@ -232,7 +235,6 @@
 - (void)_setAVControllerQueueFeeder:(id)arg1 startQueueIndex:(unsigned int)arg2;
 - (void)_setActionAtEndAttributeForState:(unsigned int)arg1;
 - (void)_setBufferingState:(unsigned int)arg1;
-- (void)_setFeeder:(id)arg1;
 - (void)_setItemErrorResolver:(id)arg1;
 - (BOOL)_setRate:(float)arg1 forScanning:(BOOL)arg2;
 - (void)_setState:(unsigned int)arg1;
@@ -266,7 +268,7 @@
 - (unsigned int)activeRepeatType;
 - (unsigned int)activeShuffleType;
 - (void)airPlayVideoEnded;
-- (BOOL)allowsAirPlayVideo;
+- (BOOL)allowsExternalPlayback;
 - (BOOL)alwaysPlayWheneverPossible;
 - (void)applicationDidReceiveMemoryWarningAsUrgent:(BOOL)arg1;
 - (void)applicationWillTerminate;
@@ -286,10 +288,13 @@
 - (BOOL)canPlayFastReverse;
 - (BOOL)canSeekBackwards;
 - (BOOL)canSeekForwards;
+- (BOOL)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3 allowSkippingAds:(BOOL)arg4 error:(id*)arg5;
+- (void)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3 allowSkippingAds:(BOOL)arg4;
 - (void)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2 ignoreElapsedTime:(BOOL)arg3;
 - (void)changePlaybackIndexBy:(int)arg1 deltaType:(int)arg2;
 - (void)changePlaybackIndexBy:(int)arg1;
 - (BOOL)closedCaptioningEnabled;
+- (void)contentInvalidated;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)currentItem;
@@ -318,6 +323,7 @@
 - (void)ensureFeederIsSubclass:(Class)arg1;
 - (void)ensureHasAVPlaylistManager;
 - (void)errorResolver:(id)arg1 didResolveError:(id)arg2 withResolution:(int)arg3;
+- (int)externalPlaybackType;
 - (id)externalPlaybackVideoGravity;
 - (BOOL)fadeOutForQuit;
 - (id)feeder;
@@ -328,10 +334,9 @@
 - (BOOL)forceSynchronousQueueFilling;
 - (BOOL)hasVolumeControl;
 - (id)init;
-- (BOOL)isAirPlayVideoActive;
 - (BOOL)isCurrentItemReady;
+- (BOOL)isExternalPlaybackActive;
 - (BOOL)isFullScreenVideoMode;
-- (BOOL)isInExtendedMode;
 - (BOOL)isLiveStreaming;
 - (BOOL)isPlaying;
 - (BOOL)isRewindHoldingAtStart;
@@ -388,6 +393,7 @@
 - (void)setRateForScanning:(float)arg1;
 - (void)setRepeatType:(unsigned int)arg1;
 - (void)setShouldEnforceHDCP:(BOOL)arg1;
+- (void)setShouldSkipToNextTrackOnResumeFromInterruption:(BOOL)arg1;
 - (void)setShuffleType:(unsigned int)arg1;
 - (void)setState:(unsigned int)arg1;
 - (void)setStopAtEnd:(BOOL)arg1;
@@ -399,6 +405,7 @@
 - (BOOL)shouldDisplayAsPlaying;
 - (BOOL)shouldEnforceHDCP;
 - (BOOL)shouldHaveNoActionAtEndForState:(unsigned int)arg1;
+- (BOOL)shouldSkipToNextTrackOnResumeFromInterruption;
 - (BOOL)showPlaybackStateOverlaysOnTVOut;
 - (unsigned int)shuffleType;
 - (void)skipToSeekableEnd;

@@ -15,7 +15,6 @@
 + (id)newFileCoordinatorForUbiquityRootLocation:(id)arg1;
 
 - (void)coordinateReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 retryOnError:(BOOL)arg3 error:(id*)arg4 byAccessor:(id)arg5;
-- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 retryOnError:(BOOL)arg3 error:(id*)arg4 byAccessor:(id)arg5;
 - (void)dealloc;
 - (id)initWithFilePresenter:(id)arg1;
 - (id)localPeerID;

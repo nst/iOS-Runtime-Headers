@@ -16,7 +16,6 @@
 + (Class)dataMessageStoreToUse;
 + (unsigned int)displayablePriorityForPriority:(int)arg1;
 + (id)forwardedMessagePrefixWithSpacer:(BOOL)arg1;
-+ (id)replyPrefixWithSpacer:(BOOL)arg1;
 + (unsigned int)validatePriority:(int)arg1;
 
 - (id)URL;

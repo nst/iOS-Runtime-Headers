@@ -26,6 +26,7 @@
     BOOL _gotData;
     } _key;
     _GEOTileDownloadOp *_localizationTile;
+    BOOL _requireWiFi;
     unsigned int _tileEdition;
     NSURL *_url;
     BOOL _useCookies;
@@ -42,6 +43,7 @@
 @property(readonly) BOOL finished;
 @property struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; } key;
 @property(retain) _GEOTileDownloadOp * localizationTile;
+@property BOOL requireWiFi;
 @property unsigned int tileEdition;
 @property(retain) NSURL * url;
 @property BOOL useCookies;
@@ -63,6 +65,7 @@
 - (BOOL)finished;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })key;
 - (id)localizationTile;
+- (BOOL)requireWiFi;
 - (void)setBaseTile:(id)arg1;
 - (void)setConn:(id)arg1;
 - (void)setData:(id)arg1;
@@ -70,6 +73,7 @@
 - (void)setEditionHeader:(id)arg1;
 - (void)setKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;
 - (void)setLocalizationTile:(id)arg1;
+- (void)setRequireWiFi:(BOOL)arg1;
 - (void)setTileEdition:(unsigned int)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUseCookies:(BOOL)arg1;

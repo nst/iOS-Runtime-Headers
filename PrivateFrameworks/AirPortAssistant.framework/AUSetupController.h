@@ -19,12 +19,15 @@
 @property <SetupConnectionDelegate> * connectionDelegate;
 @property id context;
 @property(retain) NSDictionary * lastInstrumentation;
+@property BOOL rememberBasePassword;
+@property BOOL rememberWiFiPassword;
 @property(retain) NSDictionary * restoreRecommendation;
 @property(readonly) NSMutableSet * setupDelegates;
 
 + (id)setupController;
 
 - (id)autoGuessSetupRecommendation;
+- (id)bestKeychainMACAddress;
 - (id)bonjourRecord;
 - (struct _BaseStation { }*)bsRef;
 - (long)cancelSetup;
@@ -41,6 +44,8 @@
 - (id)lastInstrumentation;
 - (long)readAllPropertiesFromBaseAsync;
 - (long)readPropertyListFromBaseAsync:(id)arg1;
+- (BOOL)rememberBasePassword;
+- (BOOL)rememberWiFiPassword;
 - (long)removeKeychainBasePassword;
 - (long)rpcDisconnectAllDiskUsersWithMessageAsync:(id)arg1;
 - (long)rpcRefreshBSSettingAsync:(int)arg1;
@@ -55,6 +60,8 @@
 - (void)setContext:(id)arg1;
 - (void)setLastInstrumentation:(id)arg1;
 - (long)setMonitorForChanges:(BOOL)arg1;
+- (void)setRememberBasePassword:(BOOL)arg1;
+- (void)setRememberWiFiPassword:(BOOL)arg1;
 - (long)setValue:(id)arg1 forBSSetting:(int)arg2;
 - (long)setValue:(id)arg1 forSettingPath:(id)arg2;
 - (void)setupConnectionStatusUpdatedResult:(long)arg1 withOptions:(id)arg2;

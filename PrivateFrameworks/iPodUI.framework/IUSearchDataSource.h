@@ -36,6 +36,7 @@
 - (void)_playlistContentsDidChangeNotification:(id)arg1;
 - (void)_postResultsChangedNotification:(id)arg1;
 - (void)_postResultsDoneNotification;
+- (void)_restrictionsDidChangeNotification:(id)arg1;
 - (void)_searchPerformOperation:(id)arg1 didProduceQuery:(id)arg2 forSearchIdentifier:(id)arg3;
 - (void)_updateDataInBackground;
 - (BOOL)canContinueSearchInITunesStore;

@@ -30,6 +30,7 @@
         unsigned int supportsPanorama : 1; 
         unsigned int supportsVideoStillCapture : 1; 
         unsigned int hasFlash : 1; 
+        unsigned int hasBackCamera : 1; 
         unsigned int hasFrontCamera : 1; 
         unsigned int deferStartVideoCapture : 1; 
         unsigned int inCall : 1; 
@@ -283,6 +284,7 @@
 - (BOOL)hasFlash;
 - (BOOL)hasFrontCamera;
 - (BOOL)hasInheritedForegroundState;
+- (BOOL)hasRearCamera;
 - (id)imageOutput;
 - (BOOL)imageWriterQueueIsAvailable;
 - (BOOL)inCall;

@@ -25,6 +25,7 @@
 - (id)UUID;
 - (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
 - (id)_locationRelation;
+- (id)_originalAlarmRelation;
 - (id)absoluteDate;
 - (id)acknowledgedDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -43,6 +44,7 @@
 - (id)locationRelation;
 - (id)longLocalizedAllDayDescription;
 - (id)longLocalizedDescription;
+- (id)originalAlarm;
 - (id)owner;
 - (id)ownerUUID;
 - (int)proximity;

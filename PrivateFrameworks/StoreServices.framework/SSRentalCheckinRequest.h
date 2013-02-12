@@ -20,5 +20,6 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)rentalKeyIdentifier;
 - (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithConnectionResponseBlock:(id)arg1;
 
 @end

@@ -19,6 +19,7 @@
 @property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) int naturalTimeScale;
 @property(readonly) float preferredRate;
+@property(readonly) float preferredSoundCheckVolumeNormalization;
 @property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property(readonly) float preferredVolume;
 @property(readonly) BOOL providesPreciseDurationAndTiming;
@@ -43,6 +44,7 @@
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)preferredRate;
+- (float)preferredSoundCheckVolumeNormalization;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (BOOL)providesPreciseDurationAndTiming;

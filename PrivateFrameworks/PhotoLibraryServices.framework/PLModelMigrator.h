@@ -31,6 +31,7 @@
 + (id)modelMigrator;
 + (void)recalculateCachedCounts;
 + (void)recreateThumbnailTablesIfNecessary;
++ (void)repairPotentialModelCorruption;
 + (void)repairSingletonObjectsInDatabaseWithCompletionHandler:(id)arg1;
 + (BOOL)restartingAfterOTAMigration;
 + (BOOL)restartingAfterRestoreFromBackup;
@@ -59,6 +60,7 @@
 - (id)photoLibrary;
 - (void)recalculateCachedCountsWithSemaphore:(id)arg1;
 - (void)recreateThumbnailTablesIfNecessary;
+- (void)repairPotentialModelCorruption;
 - (void)resumePhotoStreams;
 - (long long)secondsNeededToCleanupModelAfteriTunesRestore;
 - (void)setFileManager:(id)arg1;

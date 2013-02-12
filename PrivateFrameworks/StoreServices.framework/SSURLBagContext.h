@@ -27,6 +27,7 @@
 @property BOOL usesCachedBagsOnly;
 
 + (id)contextWithBagType:(int)arg1;
++ (id)diskCacheDirectoryPath;
 
 - (id)allHTTPHeaders;
 - (int)allowedRetryCount;

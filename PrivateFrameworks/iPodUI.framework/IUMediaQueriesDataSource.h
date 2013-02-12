@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class IUMediaQueriesDataSource, MPMediaLibrary, MPMediaQuery, MPStoreCompletionOffering, NSArray, NSMutableArray;
+@class IUMediaQueriesDataSource, MPMediaLibrary, MPMediaQuery, MPStoreCompletionOffering, NSArray, NSMutableArray, SKStoreProductViewController;
 
 @interface IUMediaQueriesDataSource : IUMediaListDataSource <SKStoreProductViewControllerDelegate> {
     unsigned int _reloading : 1;
@@ -21,6 +21,7 @@
     unsigned long long _nowPlayingItemPersistentID;
     IUMediaQueriesDataSource *_overlayDataSource;
     id _overlayDataSourceLoadBlock;
+    SKStoreProductViewController *_productViewController;
     NSArray *_queries;
     BOOL _queriesAreEmpty;
     NSArray *_queriesBeforeOverlay;
@@ -62,6 +63,7 @@
 - (void)_handleTrackDynamicPropertiesChanged;
 - (BOOL)_hasGreaterThanOrEqualEntityCount:(unsigned int)arg1 playbackQuery:(BOOL)arg2;
 - (void)_invalidateWithOverlayDataSourceLoadBlock:(id)arg1;
+- (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 - (id)_newContextForAllAlbums;
@@ -88,7 +90,7 @@
 - (id)deleteConfirmationAlertViewForIndex:(unsigned int)arg1;
 - (id)deleteConfirmationSheetForIndex:(unsigned int)arg1;
 - (BOOL)deleteIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)downloadCloudAssets;
+- (void)downloadCloudAssetsWithOptions:(int)arg1;
 - (id)entitiesForQuery:(id)arg1;
 - (id)entityAtIndex:(unsigned int)arg1 localEntityIndex:(unsigned int*)arg2 localEntityCount:(unsigned int*)arg3 query:(id*)arg4;
 - (id)entityAtIndex:(unsigned int)arg1;

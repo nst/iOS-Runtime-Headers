@@ -9,10 +9,12 @@
         unsigned int uID : 1; 
         unsigned int totalNumberOfPhotos : 1; 
         unsigned int version : 1; 
+        unsigned int canBeCorrectedByBusinessOwner : 1; 
         unsigned int isClosed : 1; 
         unsigned int isUnverified : 1; 
     NSMutableArray *_attributeKeyValues;
     NSMutableArray *_attributions;
+    BOOL _canBeCorrectedByBusinessOwner;
     NSMutableArray *_categorys;
     GEOLatLng *_center;
     } _has;
@@ -38,8 +40,10 @@
 
 @property(retain) NSMutableArray * attributeKeyValues;
 @property(retain) NSMutableArray * attributions;
+@property BOOL canBeCorrectedByBusinessOwner;
 @property(retain) NSMutableArray * categorys;
 @property(retain) GEOLatLng * center;
+@property BOOL hasCanBeCorrectedByBusinessOwner;
 @property(readonly) BOOL hasCenter;
 @property BOOL hasIsClosed;
 @property BOOL hasIsUnverified;
@@ -87,6 +91,7 @@
 - (id)attributionAtIndex:(unsigned int)arg1;
 - (id)attributions;
 - (unsigned int)attributionsCount;
+- (BOOL)canBeCorrectedByBusinessOwner;
 - (id)categoryAtIndex:(unsigned int)arg1;
 - (id)categorys;
 - (unsigned int)categorysCount;
@@ -104,6 +109,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasCanBeCorrectedByBusinessOwner;
 - (BOOL)hasCenter;
 - (BOOL)hasIsClosed;
 - (BOOL)hasIsUnverified;
@@ -141,8 +147,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setAttributeKeyValues:(id)arg1;
 - (void)setAttributions:(id)arg1;
+- (void)setCanBeCorrectedByBusinessOwner:(BOOL)arg1;
 - (void)setCategorys:(id)arg1;
 - (void)setCenter:(id)arg1;
+- (void)setHasCanBeCorrectedByBusinessOwner:(BOOL)arg1;
 - (void)setHasIsClosed:(BOOL)arg1;
 - (void)setHasIsUnverified:(BOOL)arg1;
 - (void)setHasTotalNumberOfPhotos:(BOOL)arg1;

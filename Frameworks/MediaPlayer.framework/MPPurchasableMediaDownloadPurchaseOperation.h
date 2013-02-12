@@ -2,29 +2,43 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPPurchasableMediaDownloadPurchaseOperationDelegate>, MPMediaEntity, NSObject<OS_dispatch_queue>, SSPurchase, SSPurchaseRequest;
+@class <MPPurchasableMediaDownloadPurchaseOperationDelegate>, NSDictionary, NSObject<OS_dispatch_queue>, NSString, SSPurchase, SSPurchaseRequest;
 
 @interface MPPurchasableMediaDownloadPurchaseOperation : NSOperation <SSDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
+    BOOL _backgroundRequest;
+    NSString *_buyParameters;
     <MPPurchasableMediaDownloadPurchaseOperationDelegate> *_delegate;
-    MPMediaEntity *_mediaEntity;
+    int _options;
     SSPurchase *_purchase;
-    int _purchaseReason;
     SSPurchaseRequest *_purchaseRequest;
+    int _purchaseType;
+    NSDictionary *_purchaseValuesForDownloadProperties;
+    BOOL _shouldPurgeIfNeeded;
 }
 
+@property(getter=isBackgroundRequest) BOOL backgroundRequest;
+@property(readonly) NSString * buyParameters;
 @property(readonly) <MPPurchasableMediaDownloadPurchaseOperationDelegate> * delegate;
-@property(readonly) MPMediaEntity * mediaEntity;
+@property(readonly) int options;
 @property(readonly) SSPurchase * purchase;
-@property(readonly) int purchaseReason;
+@property(readonly) int purchaseType;
+@property(readonly) NSDictionary * purchaseValuesForDownloadProperties;
+@property BOOL shouldPurgeIfNeeded;
 
+- (id)buyParameters;
 - (void)cancel;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithMediaEntity:(id)arg1 purchaseReason:(int)arg2 delegate:(id)arg3;
+- (id)initWithPurchaseType:(int)arg1 options:(int)arg2 buyParameters:(id)arg3 purchaseValuesForDownloadProperties:(id)arg4 delegate:(id)arg5;
+- (BOOL)isBackgroundRequest;
 - (void)main;
-- (id)mediaEntity;
+- (int)options;
 - (id)purchase;
-- (int)purchaseReason;
+- (int)purchaseType;
+- (id)purchaseValuesForDownloadProperties;
+- (void)setBackgroundRequest:(BOOL)arg1;
+- (void)setShouldPurgeIfNeeded:(BOOL)arg1;
+- (BOOL)shouldPurgeIfNeeded;
 
 @end

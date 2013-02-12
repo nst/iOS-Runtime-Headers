@@ -22,6 +22,7 @@
 @property(readonly) NSString * signingSessionURL;
 @property(readonly) NSString * updateAppleIDURL;
 @property(readonly) NSString * upgradeIOSTermsUI;
+@property(readonly) NSString * upgradeStatusURL;
 @property(readonly) NSString * xmlUI;
 
 - (void).cxx_destruct;
@@ -40,6 +41,7 @@
 - (id)signingSessionURL;
 - (id)updateAppleIDURL;
 - (id)upgradeIOSTermsUI;
+- (id)upgradeStatusURL;
 - (id)xmlUI;
 
 @end

@@ -27,7 +27,7 @@
 @property NSObject<OS_dispatch_queue> * _bagQueue;
 @property(retain) NSNumber * _cacheTime;
 @property(setter=_setCachedBag:,retain) NSDictionary * _cachedBag;
-@property(retain) NSString * _cachedHash;
+@property(setter=_setCachedHash:,retain) NSString * _cachedHash;
 @property(setter=_setCachedURLString:,retain) NSString * _cachedURLString;
 @property(retain) NSData * _certData;
 @property(retain) IMConnectionMonitor * _connectionMonitor;
@@ -39,6 +39,7 @@
 @property BOOL allowUnsignedBags;
 @property(retain) NSString * apsEnvironmentName;
 @property(retain) NSURL * bagURL;
+@property(readonly) BOOL isInDebilitatedMode;
 @property(readonly) BOOL isLoaded;
 @property(readonly) BOOL isLoading;
 @property(readonly) BOOL isServerAvailable;
@@ -76,6 +77,7 @@
 - (void)_saveToCache;
 - (void)_setBag:(id)arg1;
 - (void)_setCachedBag:(id)arg1;
+- (void)_setCachedHash:(id)arg1;
 - (void)_setCachedURLString:(id)arg1;
 - (void)_setTrustStatus:(int)arg1;
 - (void)_startBagLoad:(BOOL)arg1;
@@ -88,6 +90,7 @@
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)dealloc;
 - (void)forceBagLoad;
+- (BOOL)isInDebilitatedMode;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
 - (BOOL)isServerAvailable;
@@ -98,7 +101,6 @@
 - (void)setBagURL:(id)arg1;
 - (void)set_bagQueue:(id)arg1;
 - (void)set_cacheTime:(id)arg1;
-- (void)set_cachedHash:(id)arg1;
 - (void)set_certData:(id)arg1;
 - (void)set_connectionMonitor:(id)arg1;
 - (void)set_loadDate:(id)arg1;

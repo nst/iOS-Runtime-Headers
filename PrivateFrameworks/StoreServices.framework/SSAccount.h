@@ -45,6 +45,7 @@
 - (void)addAvailableServiceTypes:(int)arg1;
 - (void)addEnabledServiceTypes:(int)arg1;
 - (int)availableServiceTypes;
+- (id)copyLockdownRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (id)creditsString;
@@ -54,12 +55,14 @@
 - (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
 - (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id)arg2;
 - (id)init;
+- (id)initDemoAccount;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isActive;
 - (BOOL)isActiveLockerAccount;
 - (BOOL)isAuthenticated;
 - (BOOL)isDemoAccount;
 - (BOOL)isSocialEnabled;
+- (BOOL)mergeValuesFromAccount:(id)arg1;
 - (void)removeAvailableServiceTypes:(int)arg1;
 - (void)removeEnabledServiceTypes:(int)arg1;
 - (void)resetTransientData;

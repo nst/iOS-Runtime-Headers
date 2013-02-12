@@ -16,6 +16,7 @@
 - (void)_remotelyDispatchDidDismissViewController;
 - (void)_remotelyDispatchWillPresentViewControllerWithCompletionHandler:(id)arg1;
 - (void)_setupRemoteInspectorDetailsForRequestingProcess;
+- (void)_webContentSizeWithReplyHandler:(id)arg1;
 - (void)browserLoadingController:(id)arg1 didFinishLoadingWithError:(id)arg2 dataSource:(id)arg3;
 - (void)browserLoadingControllerDidStartLoading:(id)arg1;
 - (void)browserLoadingControllerDidUpdateBackForward:(id)arg1;
@@ -29,6 +30,7 @@
 - (void)goForward;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadEncodedRequest:(id)arg1;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadUserTypedAddress:(id)arg1;
 - (void)loadView;
 - (id)localizedApplicationNameForProcess:(int)arg1;

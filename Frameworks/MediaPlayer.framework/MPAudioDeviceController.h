@@ -55,6 +55,7 @@
 - (int)indexOfPickedRoute;
 - (id)init;
 - (BOOL)isPickedRouteDistinctFromRoute:(id)arg1;
+- (void)logCurrentRoutes;
 - (id)nameOfPickedRoute;
 - (unsigned int)numberOfAudioRoutes;
 - (BOOL)pickBestDeviceRoute;

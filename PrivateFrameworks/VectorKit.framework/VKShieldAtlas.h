@@ -10,7 +10,7 @@
     VKPShieldPack *_shieldPack;
 }
 
-- (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 extraScale:(float)arg4 mode:(int)arg5;
+- (id)artworkForShieldIdentifier:(id)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 extraScale:(float)arg4 mode:(int)arg5;
 - (void)dealloc;
 - (id)initWithShieldPack:(id)arg1;
 - (void)purge;

@@ -32,6 +32,7 @@
 @property(readonly) NSString * UUID;
 @property(retain) NSString * address;
 @property int archiveStatus;
+@property int databaseWriteTestValue;
 @property(retain) NSDate * dateAdded;
 @property(retain) NSDate * dateLastArchived;
 @property(retain) NSDate * dateLastFetched;
@@ -80,6 +81,7 @@
 - (void)cleanupRedundantPreviewText;
 - (void)clearArchive;
 - (void)clearArchiveSynchronously;
+- (int)databaseWriteTestValue;
 - (id)dateAdded;
 - (id)dateLastArchived;
 - (id)dateLastFetched;
@@ -114,6 +116,7 @@
 - (id)serverID;
 - (void)setAddress:(id)arg1;
 - (void)setArchiveStatus:(int)arg1;
+- (void)setDatabaseWriteTestValue:(int)arg1;
 - (void)setDateAdded:(id)arg1;
 - (void)setDateLastArchived:(id)arg1;
 - (void)setDateLastFetched:(id)arg1;

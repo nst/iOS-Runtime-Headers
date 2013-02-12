@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
+@class NSData, NSURL;
 
 @interface SAUIImageResource : AceObject <SAAceSerializable> {
 }
 
+@property(copy) NSData * imageData;
 @property double pointHeight;
 @property double pointWidth;
 @property(copy) NSURL * resourceUrl;
@@ -17,10 +18,12 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)imageData;
 - (double)pointHeight;
 - (double)pointWidth;
 - (id)resourceUrl;
 - (double)scaleFactor;
+- (void)setImageData:(id)arg1;
 - (void)setPointHeight:(double)arg1;
 - (void)setPointWidth:(double)arg1;
 - (void)setResourceUrl:(id)arg1;

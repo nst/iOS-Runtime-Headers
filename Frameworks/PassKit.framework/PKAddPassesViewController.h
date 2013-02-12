@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKAddPassesViewControllerDelegate>, NSDate, NSURL, PKIngestibleCard, PKRemoteAddPassesViewController, _UIAsyncInvocation;
+@class <PKAddPassesViewControllerDelegate>, NSDate, NSURL, PKLocalPass, PKRemoteAddPassesViewController, _UIAsyncInvocation;
 
 @interface PKAddPassesViewController : UIViewController {
     NSURL *_URL;
     _UIAsyncInvocation *_cancelViewServiceRequest;
-    PKIngestibleCard *_card;
+    PKLocalPass *_card;
     <PKAddPassesViewControllerDelegate> *_delegate;
     NSDate *_perfTestingForIngestion;
     int _previousStatusBarStyle;
@@ -17,7 +17,7 @@
 
 @property(getter=_URL,setter=_setURL:,retain) NSURL * _URL;
 @property(getter=_cancelViewServiceRequest,setter=_setCancelViewServiceRequest:,retain) _UIAsyncInvocation * _cancelViewServiceRequest;
-@property(getter=_card,setter=_setCard:,retain) PKIngestibleCard * _card;
+@property(getter=_card,setter=_setCard:,retain) PKLocalPass * _card;
 @property(getter=_previousStatusBarStyle,setter=_setPreviousStatusBarStyle:) int _previousStatusBarStyle;
 @property(getter=_remoteViewController,setter=_setRemoteViewController:,retain) PKRemoteAddPassesViewController * _remoteViewController;
 @property <PKAddPassesViewControllerDelegate> * delegate;
@@ -38,7 +38,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)ingestionDidFinishWithResult:(int)arg1;
-- (id)initWithData:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPass:(id)arg1 orURL:(id)arg2;
 - (id)initWithPass:(id)arg1;

@@ -11,7 +11,6 @@
     NSMutableDictionary *_clientPortsForPIDs;
     NSMutableDictionary *_clientStateForPIDs;
     <MPMusicPlayerControllerServerDelegate> *_delegate;
-    int _extendedModeNotifyToken;
     MPMusicPlayerControllerServer *_musicPlayerServer;
     MPVideoViewController *_videoViewController;
 }
@@ -20,7 +19,6 @@
 
 - (void)_applicationStateChangedNotification:(id)arg1;
 - (id)_avController;
-- (id)_avControllerForClientPID:(int)arg1 ignoreExtendedMode:(BOOL)arg2;
 - (id)_avControllerForClientPID:(int)arg1;
 - (BOOL)_clientPIDHasPermissionToPlay:(int)arg1;
 - (void)_clientPortInvalidated:(id)arg1;
@@ -84,6 +82,7 @@
 - (void)setUseApplicationSpecificQueue:(id)arg1;
 - (void)shuffle;
 - (id)shuffleMode;
+- (id)skipInDirection:(id)arg1;
 - (void)skipToBeginning;
 - (void)skipToBeginningOrPreviousItem;
 - (void)skipToNextChapter;

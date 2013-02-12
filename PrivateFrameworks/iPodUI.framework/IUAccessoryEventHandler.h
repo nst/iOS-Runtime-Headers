@@ -2,24 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iPodUI.framework/iPodUI
  */
 
-@class IUAccessorySplashViewController, UIImage;
-
 @interface IUAccessoryEventHandler : NSObject {
-    unsigned int _wantsSplash : 1;
     unsigned int _accessoryEventKeyHeldHandled : 1;
     unsigned int _accessoryKeyRepeatTimerActive : 1;
     unsigned int _accessoryKeyTimerIsForKeyHeld : 1;
     double _accessoryEventButtonDownTime;
     unsigned int _accessoryEventRepeatCount;
+    void *_commandObserver;
     BOOL _handlingSimpleRemoteEvent;
-    IUAccessorySplashViewController *_splashViewController;
 }
 
 @property(getter=isHandlingRemoteEvent,readonly) BOOL handlingRemoteEvent;
 @property(getter=isHandlingSimpleRemoteEvent,readonly) BOOL handlingSimpleRemoteEvent;
 @property(getter=isPlayingSingleMovie,readonly) BOOL playingSingleMovie;
-@property(retain) UIImage * splashViewImage;
-@property(readonly) BOOL wantsSplashView;
 
 + (id)sharedInstance;
 
@@ -50,15 +45,9 @@
 - (BOOL)handleStopEvent;
 - (BOOL)handleTogglePlaybackEvent;
 - (void)handleUpArrowEvent;
-- (void)hideSplashView;
 - (id)init;
 - (BOOL)isHandlingRemoteEvent;
 - (BOOL)isHandlingSimpleRemoteEvent;
 - (BOOL)isPlayingSingleMovie;
-- (void)setSplashViewImage:(id)arg1;
-- (void)showSplashView:(BOOL)arg1;
-- (id)splashViewImage;
-- (void)tearDownSplashView;
-- (BOOL)wantsSplashView;
 
 @end

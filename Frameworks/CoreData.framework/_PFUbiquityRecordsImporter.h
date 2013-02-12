@@ -6,7 +6,6 @@
 
 @interface _PFUbiquityRecordsImporter : NSObject <_PFUbiquityRecordImportOperationDelegate, NSManagedObjectContextFaultingDelegate, PFUbiquityImportScanOperationDelegate, PFUbiquityBaselineRollOperationDelegate, PFUbiquityBaselineRecoveryOperationDelegate, PFUbiquityBaselineRollResponseOperationDelegate> {
     BOOL _allowBaselineRoll;
-    NSSet *_failedPendingTransactionLogLocations;
     NSMutableSet *_failedPendingTransactionLogs;
     BOOL _hasScheduledFailedLogsBlock;
     BOOL _hasScheduledPendingLogsBlock;
@@ -49,7 +48,9 @@
 - (void)baselineRollOperationEncounteredAnInconsistentBaselineState:(id)arg1;
 - (void)baselineRollOperationWasUnableToLockPersistentStore:(id)arg1;
 - (BOOL)canProcessTransactionLogWithScore:(id)arg1 afterLogWithScore:(id)arg2;
+- (void)cancelAllOperationsForStoreName:(id)arg1;
 - (BOOL)checkSchedulingContextForMissingLocalPeerOperations:(id)arg1 error:(id*)arg2;
+- (void)checkStoresAndContainer;
 - (int)compareScoreKnowledgeVector:(id)arg1 withScoreDictionary:(id)arg2;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (id)createDictionaryOfStoreNameToLocations:(id)arg1;

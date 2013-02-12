@@ -135,6 +135,7 @@
 - (BOOL)shouldHoldPowerAssertion;
 - (BOOL)shouldLogIncomingData;
 - (BOOL)shouldReportTimeInNetwork;
+- (BOOL)shouldStallAfterCannotFindHost;
 - (void)startModal;
 - (int)taskID;
 - (id)taskManager;

@@ -39,8 +39,8 @@
 - (id)spinnerWithStatusBelowView;
 - (void)stepByStepUpdateProgress:(id)arg1 forState:(int)arg2;
 - (void)syncTopoUIForTarget:(id)arg1 andSource:(id)arg2 andNetwork:(id)arg3 connectionType:(id)arg4;
-- (void)syncTopoUIForTargetProductID:(id)arg1 targetName:(id)arg2 sourceProductID:(id)arg3 sourceName:(id)arg4 networkName:(id)arg5 connectionType:(id)arg6;
-- (id)syncTopoUIInLayer:(id)arg1 withLayout:(id)arg2 targetProductID:(id)arg3 targetName:(id)arg4 sourceProductID:(id)arg5 sourceName:(id)arg6 networkName:(id)arg7 connectionType:(id)arg8;
+- (void)syncTopoUIForTargetProductID:(id)arg1 targetDeviceKind:(id)arg2 targetName:(id)arg3 sourceProductID:(id)arg4 sourceDeviceKind:(id)arg5 sourceName:(id)arg6 networkName:(id)arg7 connectionType:(id)arg8;
+- (id)syncTopoUIInLayer:(id)arg1 withLayout:(id)arg2 targetProductID:(id)arg3 targetDeviceKind:(id)arg4 targetName:(id)arg5 sourceProductID:(id)arg6 sourceDeviceKind:(id)arg7 sourceName:(id)arg8 networkName:(id)arg9 connectionType:(id)arg10;
 - (id)tableFooterContainerView;
 - (id)topoContainerView;
 - (id)topoLayout;

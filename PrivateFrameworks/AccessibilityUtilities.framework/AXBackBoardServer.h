@@ -27,6 +27,7 @@
 - (id)registerZoomLevelChangeHandler:(id)arg1;
 - (void)removeEventListener:(struct NSString { Class x1; }*)arg1;
 - (void)removeZoomLevelHandler:(id)arg1;
+- (void)setHearingAidControlIsVisible:(BOOL)arg1;
 - (void)setLockScreenDimTimerEnabled:(BOOL)arg1;
 - (void)setVoiceOverItemChooserVisible:(BOOL)arg1;
 - (void)userEventOccurred;

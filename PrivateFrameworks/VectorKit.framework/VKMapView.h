@@ -46,6 +46,7 @@
 @property(readonly) double pitch;
 @property(getter=isPitched,readonly) BOOL pitched;
 @property(readonly) double presentationYaw;
+@property BOOL rendersInBackground;
 @property(retain) <VKRoutePreloadSession> * routePreloadSession;
 @property(readonly) VKLabelMarker * selectedLabelMarker;
 @property(getter=isShowingFlyover,readonly) BOOL showingFlyover;
@@ -177,6 +178,7 @@
 - (void)removeAnnotationMarker:(id)arg1;
 - (void)removeOverlay:(id)arg1;
 - (void)removePersistentOverlay:(id)arg1;
+- (BOOL)rendersInBackground;
 - (BOOL)restoreViewportFromInfo:(id)arg1;
 - (BOOL)roadClassDisabled:(int)arg1;
 - (BOOL)roadsDisabled;
@@ -241,6 +243,7 @@
 - (void)setTrafficEnabled:(BOOL)arg1;
 - (void)setYaw:(double)arg1 animated:(BOOL)arg2;
 - (void)showSearchResultAnimationAtCoordinate:(struct { double x1; double x2; })arg1 withMapRegion:(id)arg2;
+- (id)snapshotImage;
 - (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -273,6 +276,7 @@
 - (void)updateTrackingForPointOfReference:(struct { double x1; double x2; })arg1 referenceHeading:(double)arg2 pointOfFocus:(struct { double x1; double x2; })arg3 pointsOfInterest:(id)arg4 viewStyle:(int)arg5 focusStyle:(int)arg6 animated:(BOOL)arg7;
 - (id)viewportInfo;
 - (id)visibleTileSets;
+- (BOOL)writeVisibleTrafficTilesToDirectory:(id)arg1 error:(id*)arg2;
 - (double)yaw;
 - (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id)arg3;
 

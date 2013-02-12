@@ -19,6 +19,7 @@
 @property(retain) UIViewController * referenceViewController;
 
 + (id)applicationActivitiesForMode:(int)arg1 interfaceIdiom:(int)arg2;
++ (void)trackUserActivity:(id)arg1 forAssets:(id)arg2;
 
 - (void)_cleanupWithSuccess:(BOOL)arg1;
 - (void)_performActivity:(id)arg1;

@@ -80,6 +80,7 @@
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
+- (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didParseSource:(id)arg2 fromURL:(id)arg3 sourceId:(long)arg4 forWebFrame:(id)arg5;
 - (void)webView:(id)arg1 didReceiveTitle:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;

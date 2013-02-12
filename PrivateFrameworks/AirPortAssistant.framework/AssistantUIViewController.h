@@ -108,7 +108,7 @@
 - (id)macAddress;
 - (id)mainTableView;
 - (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 newLayout:(id)arg3;
-- (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 targetProductID:(id)arg3 targetName:(id)arg4 targetWiFiName:(id)arg5 sourceProductID:(id)arg6 sourceName:(id)arg7 sourceWiFiName:(id)arg8 connectionType:(id)arg9;
+- (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 targetProductID:(id)arg3 targetDeviceKind:(id)arg4 targetName:(id)arg5 targetWiFiName:(id)arg6 sourceProductID:(id)arg7 sourceDeviceKind:(id)arg8 sourceName:(id)arg9 sourceWiFiName:(id)arg10 connectionType:(id)arg11;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)newStepByStepControllerForStep:(int)arg1;
 - (id)nextButton;
@@ -158,11 +158,13 @@
 - (void)setupCompleteShowPasswords:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showAskUserForPPPoECredentialsForStatus:(long)arg1 paramDict:(id)arg2;
+- (void)showAskUserPluginAudioCablingForStatus:(long)arg1 paramDict:(id)arg2;
 - (void)showAskUserSwapCablingForStatus:(long)arg1 paramDict:(id)arg2;
 - (void)showTellUserToFixTheirInternetConnection;
 - (void)showTellUserToPlugInEthernetForStatus:(long)arg1 paramDict:(id)arg2;
 - (void)showTellUserToResetBroadbandDeviceForStatus:(long)arg1 paramDict:(id)arg2;
 - (void)showUIForSetupStatus;
+- (void)skipPluginAudioCabling;
 - (void)skipWANPort;
 - (id)spinnerWithStatusAdjacentLabel;
 - (id)spinnerWithStatusAdjacentSpinner;

@@ -16,6 +16,7 @@
     BOOL _routeDiscoveryEnabled;
     UILabel *_routeLabel;
     MPAudioVideoRoutingPopoverController *_routePopoverController;
+    unsigned int _routePopoverPermittedArrowDirections;
     BOOL _showingButton;
     BOOL _showingLabel;
     BOOL _showingSlider;
@@ -30,6 +31,7 @@
 @property(readonly) BOOL isShowingRouteButton;
 @property(readonly) BOOL isVisible;
 @property BOOL routeButtonShowsTouchWhenHighlighted;
+@property unsigned int routePopoverPermittedArrowDirections;
 @property BOOL showsRouteButton;
 @property BOOL showsVolumeSlider;
 @property(readonly) int style;
@@ -66,6 +68,7 @@
 - (id)routeButtonImageForState:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })routeButtonRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)routeButtonShowsTouchWhenHighlighted;
+- (unsigned int)routePopoverPermittedArrowDirections;
 - (void)setAlpha:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
@@ -74,6 +77,7 @@
 - (void)setMinimumVolumeSliderImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setRouteButtonImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setRouteButtonShowsTouchWhenHighlighted:(BOOL)arg1;
+- (void)setRoutePopoverPermittedArrowDirections:(unsigned int)arg1;
 - (void)setShowsRouteButton:(BOOL)arg1;
 - (void)setShowsVolumeSlider:(BOOL)arg1;
 - (void)setVolumeSliderShrinksFromBothEnds:(BOOL)arg1;

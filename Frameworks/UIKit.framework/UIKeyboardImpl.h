@@ -356,6 +356,7 @@
 - (BOOL)hasAutoRepeat;
 - (BOOL)hasEditableMarkedText;
 - (BOOL)hasMarkedText;
+- (BOOL)hasUpToDateCandidates;
 - (BOOL)hideAccessoryViewsDuringSplit;
 - (void)hideKeyboard;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -588,6 +589,7 @@
 - (void)updateReturnKey;
 - (void)updateShiftState;
 - (void)updateTextCandidateView;
+- (BOOL)userSelectedCurrentCandidate;
 - (void)willReplaceTextInRangedSelectionWithKeyboardInput;
 
 @end

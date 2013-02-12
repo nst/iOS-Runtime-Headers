@@ -78,6 +78,7 @@
 - (void)setUseCachedPlaybackState:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (int)shuffleMode;
+- (BOOL)skipInDirection:(int)arg1 error:(id*)arg2;
 - (void)stop;
 - (unsigned int)unshuffledIndexOfNowPlayingItem;
 - (float)volume;

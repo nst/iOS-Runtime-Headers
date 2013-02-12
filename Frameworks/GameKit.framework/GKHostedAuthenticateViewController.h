@@ -31,6 +31,7 @@
 - (id)error;
 - (void)finishAuthenticationWithError:(id)arg1;
 - (id)hostSideViewControllerClassName;
+- (id)init;
 - (void)saveActiveTextField;
 - (id)serviceSideViewControllerClassName;
 - (void)setAlert:(id)arg1;

@@ -33,7 +33,6 @@
     MPClosedCaptionDisplay *_captionView;
     unsigned long long _desiredParts;
     unsigned long long _disabledParts;
-    int _extendedModeNotifyToken;
     unsigned int _itemTypeOverride;
     UIActivityIndicatorView *_loadingIndicator;
     UIImage *_posterImage;
@@ -119,7 +118,7 @@
 - (void)_videoView_availableRoutesDidChangeNotification:(id)arg1;
 - (void)_videoView_batteryStateDidChangeNotification:(id)arg1;
 - (void)_videoView_effectiveScaleModeChangedNotification:(id)arg1;
-- (void)_videoView_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
+- (void)_videoView_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)_videoView_playbackErrorNotification:(id)arg1;
 - (void)_videoView_resumeEventsOnlyNotification:(id)arg1;
 - (void)_videoView_scaleModeChangedNotification:(id)arg1;

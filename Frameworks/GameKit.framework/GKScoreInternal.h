@@ -13,6 +13,7 @@
     NSString *_playerID;
     unsigned int _rank;
     long long _value;
+    BOOL _valueSet;
 }
 
 @property(retain) NSString * category;
@@ -23,6 +24,7 @@
 @property(retain) NSString * playerID;
 @property unsigned int rank;
 @property long long value;
+@property BOOL valueSet;
 
 + (id)codedPropertyKeys;
 + (BOOL)supportsSecureCoding;
@@ -50,6 +52,8 @@
 - (void)setPlayerID:(id)arg1;
 - (void)setRank:(unsigned int)arg1;
 - (void)setValue:(long long)arg1;
+- (void)setValueSet:(BOOL)arg1;
 - (long long)value;
+- (BOOL)valueSet;
 
 @end

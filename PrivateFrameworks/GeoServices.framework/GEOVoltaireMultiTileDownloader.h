@@ -16,6 +16,7 @@
     GEONetworkDataReader *_reader;
     GEOTileKeyList *_receivedKeys;
     NSURL *_requestURL;
+    BOOL _requireWiFi;
     GEOTileKeyList *_requiresLocalization;
     NSString *_sharedPrefix;
     BOOL _useStatusCodes;
@@ -24,6 +25,7 @@
 
 @property <GEOVoltaireMultiTileDownloaderDelegate> * delegate;
 @property(readonly) NSURL * requestURL;
+@property BOOL requireWiFi;
 @property BOOL useStatusCodes;
 @property(retain) NSString * userAgent;
 
@@ -46,7 +48,9 @@
 - (id)initWithURL:(id)arg1 keyList:(id)arg2;
 - (void)logDownloadDetails;
 - (id)requestURL;
+- (BOOL)requireWiFi;
 - (void)setDelegate:(id)arg1;
+- (void)setRequireWiFi:(BOOL)arg1;
 - (void)setUseStatusCodes:(BOOL)arg1;
 - (void)setUserAgent:(id)arg1;
 - (void)start;

@@ -14,6 +14,7 @@
     float _leftMicrophoneVolume;
     float _leftStreamVolume;
     float _leftVolume;
+    AXTimer *_propertyWriteTimer;
     AXTimer *_rightInvalidationTimer;
     float _rightMicrophoneVolume;
     float _rightStreamVolume;
@@ -25,22 +26,28 @@
     BOOL isPaired;
     BOOL isPersistent;
     float leftBatteryLevel;
+    NSString *leftFirmwareVersion;
+    NSString *leftHardwareVersion;
     int leftLoadedProperties;
     CBPeripheral *leftPeripheral;
     NSString *leftPeripheralUUID;
     NSArray *leftPrograms;
     NSMutableDictionary *leftPropertiesLoadCount;
     NSString *leftUUID;
+    int leftWriteRequestProperties;
     NSString *manufacturer;
     NSString *model;
     NSString *name;
     float rightBatteryLevel;
+    NSString *rightFirmwareVersion;
+    NSString *rightHardwareVersion;
     int rightLoadedProperties;
     CBPeripheral *rightPeripheral;
     NSString *rightPeripheralUUID;
     NSArray *rightPrograms;
     NSMutableDictionary *rightPropertiesLoadCount;
     NSString *rightUUID;
+    int rightWriteRequestProperties;
 }
 
 @property AXHearingAidMode * currentLeftProgram;
@@ -51,6 +58,8 @@
 @property BOOL isPersistent;
 @property BOOL keepInSync;
 @property float leftBatteryLevel;
+@property(retain) NSString * leftFirmwareVersion;
+@property(retain) NSString * leftHardwareVersion;
 @property int leftLoadedProperties;
 @property float leftMicrophoneVolume;
 @property(retain) CBPeripheral * leftPeripheral;
@@ -60,10 +69,13 @@
 @property float leftStreamVolume;
 @property(retain) NSString * leftUUID;
 @property float leftVolume;
+@property int leftWriteRequestProperties;
 @property(retain) NSString * manufacturer;
 @property(retain) NSString * model;
 @property(retain) NSString * name;
 @property float rightBatteryLevel;
+@property(retain) NSString * rightFirmwareVersion;
+@property(retain) NSString * rightHardwareVersion;
 @property int rightLoadedProperties;
 @property float rightMicrophoneVolume;
 @property(retain) CBPeripheral * rightPeripheral;
@@ -73,10 +85,12 @@
 @property float rightStreamVolume;
 @property(retain) NSString * rightUUID;
 @property float rightVolume;
+@property int rightWriteRequestProperties;
 
 + (id)characteristicsUUIDs;
 
 - (void)_init;
+- (void)_sendDelayedWrites;
 - (BOOL)addPeripheral:(id)arg1;
 - (void)connect;
 - (void)connectionDidChange;
@@ -84,6 +98,7 @@
 - (id)currentLeftProgram;
 - (id)currentRightProgram;
 - (void)dealloc;
+- (void)delayWriteProperty:(int)arg1 forPeripheral:(id)arg2;
 - (id)description;
 - (struct CGImage { }*)devicePhoto;
 - (void)didCommunicateWithPeripheral:(id)arg1;
@@ -99,6 +114,8 @@
 - (BOOL)keepInSync;
 - (BOOL)leftAvailable;
 - (float)leftBatteryLevel;
+- (id)leftFirmwareVersion;
+- (id)leftHardwareVersion;
 - (int)leftLoadedProperties;
 - (float)leftMicrophoneVolume;
 - (id)leftPeripheral;
@@ -109,10 +126,12 @@
 - (float)leftStreamVolume;
 - (id)leftUUID;
 - (float)leftVolume;
+- (int)leftWriteRequestProperties;
 - (void)loadBasicProperties;
 - (void)loadFailedProperties;
 - (void)loadProperties:(int)arg1 forPeripheral:(id)arg2 withRetryPeriod:(float)arg3;
 - (void)loadRequiredProperties;
+- (void)logCharacteristic:(id)arg1 andPeripheral:(id)arg2;
 - (id)manufacturer;
 - (void)mateWithDevice:(id)arg1;
 - (id)model;
@@ -134,6 +153,8 @@
 - (void)reloadPropertiesForPeripheral:(id)arg1 withLoadCount:(id)arg2;
 - (BOOL)rightAvailable;
 - (float)rightBatteryLevel;
+- (id)rightFirmwareVersion;
+- (id)rightHardwareVersion;
 - (int)rightLoadedProperties;
 - (float)rightMicrophoneVolume;
 - (id)rightPeripheral;
@@ -144,6 +165,7 @@
 - (float)rightStreamVolume;
 - (id)rightUUID;
 - (float)rightVolume;
+- (int)rightWriteRequestProperties;
 - (id)rssi;
 - (void)selectProgram:(id)arg1;
 - (id)selectedProgramIndexes;
@@ -156,6 +178,8 @@
 - (void)setIsPersistent:(BOOL)arg1;
 - (void)setKeepInSync:(BOOL)arg1;
 - (void)setLeftBatteryLevel:(float)arg1;
+- (void)setLeftFirmwareVersion:(id)arg1;
+- (void)setLeftHardwareVersion:(id)arg1;
 - (void)setLeftLoadedProperties:(int)arg1;
 - (void)setLeftMicrophoneVolume:(float)arg1;
 - (void)setLeftPeripheral:(id)arg1;
@@ -166,11 +190,14 @@
 - (void)setLeftStreamVolume:(float)arg1;
 - (void)setLeftUUID:(id)arg1;
 - (void)setLeftVolume:(float)arg1;
+- (void)setLeftWriteRequestProperties:(int)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNotify:(BOOL)arg1 forPeripheral:(id)arg2;
 - (void)setRightBatteryLevel:(float)arg1;
+- (void)setRightFirmwareVersion:(id)arg1;
+- (void)setRightHardwareVersion:(id)arg1;
 - (void)setRightLoadedProperties:(int)arg1;
 - (void)setRightMicrophoneVolume:(float)arg1;
 - (void)setRightPeripheral:(id)arg1;
@@ -181,6 +208,8 @@
 - (void)setRightStreamVolume:(float)arg1;
 - (void)setRightUUID:(id)arg1;
 - (void)setRightVolume:(float)arg1;
+- (void)setRightWriteRequestProperties:(int)arg1;
+- (unsigned char)volumeValueForProperty:(int)arg1 andPeripheral:(id)arg2;
 - (void)writeInt:(unsigned char)arg1 toPeripheral:(id)arg2 forProperty:(int)arg3;
 - (void)writeVolume:(float)arg1 toPeripheral:(id)arg2 forProperty:(int)arg3;
 

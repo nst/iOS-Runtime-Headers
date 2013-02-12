@@ -4,7 +4,6 @@
 
 @interface IUiPodAVController : MPAVController {
     unsigned int _scheduledTrackExpirationCallback : 1;
-    int _extendedModeNotifyToken;
 }
 
 + (id)sharedIPCAppInstance;
@@ -12,16 +11,19 @@
 
 - (void)_appDefaultsChangedNotification:(id)arg1;
 - (void)_availableMediaLibrariesDidChangeNotification:(id)arg1;
+- (void)_downloadCancelledNotification:(id)arg1;
+- (void)_endPlaybackIfNeededForCurrentNetwork;
 - (void)_itemReadyToPlay:(id)arg1;
 - (void)_itemWillChange:(id)arg1;
+- (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
 - (void)_movieExpirationCheckCallback;
+- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_scheduleExpirationTimerIfNecessary;
 - (void)_setRentalIsPlaying:(BOOL)arg1 forItem:(id)arg2;
 - (void)airPlayVideoEnded;
 - (BOOL)currentItemIsRental;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isInExtendedMode;
 - (void)play;
 - (BOOL)showPlaybackStateOverlaysOnTVOut;
 

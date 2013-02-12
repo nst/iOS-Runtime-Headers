@@ -127,6 +127,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setDataUpdateDelegate:(id)arg1;
 - (void)setDefaultLeaderboard:(id)arg1 handler:(id)arg2;
+- (void)setNearbyMultiplayerOverride:(id)arg1;
 - (void)setPhotoData:(id)arg1 handler:(id)arg2;
 - (void)setStatus:(id)arg1 handler:(id)arg2;
 - (void)setupAccountForParameters:(id)arg1 handler:(id)arg2;

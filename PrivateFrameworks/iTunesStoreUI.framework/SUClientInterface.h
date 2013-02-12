@@ -38,6 +38,7 @@
 - (void)_exitStoreWithReason:(int)arg1;
 - (void)_hidePreviewOverlayAnimated:(BOOL)arg1;
 - (BOOL)_ignoresExpectedClientsProtocol;
+- (void)_mediaPlayerViewControllerWillDismiss:(id)arg1 animated:(BOOL)arg2;
 - (id)_newScriptInterface;
 - (void)_presentDialog:(id)arg1;
 - (void)_presentViewController:(id)arg1 fromViewController:(id)arg2 withTransition:(int)arg3;

@@ -51,8 +51,7 @@
 - (void)_handleHoldForPart:(unsigned long long)arg1;
 - (void)_handleReleaseForPart:(unsigned long long)arg1;
 - (void)_handleTapForPart:(unsigned long long)arg1;
-- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
-- (void)_isLikedDidChangeNotification:(id)arg1;
+- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
 - (void)_reloadViewWithAnimation:(BOOL)arg1;
@@ -74,6 +73,7 @@
 - (unsigned long long)desiredParts;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
+- (id)disabledButtonImageForPart:(unsigned long long)arg1;
 - (unsigned long long)disabledParts;
 - (id)highlightedButtonImageForPart:(unsigned long long)arg1;
 - (id)init;

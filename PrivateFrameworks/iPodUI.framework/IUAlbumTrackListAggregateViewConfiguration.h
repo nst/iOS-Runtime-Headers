@@ -16,14 +16,16 @@
 
 - (id)_albumArtistString;
 - (id)_albumString;
+- (void)_canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
 - (id)_cloudDownloadButton;
 - (void)_cloudDownloadButtonAction:(id)arg1;
 - (id)_copyrightInfoString;
 - (id)_findAggregateView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForCloudDownloadButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForShuffleButton;
+- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
-- (void)_networkTypeDidChangeNotification:(id)arg1;
+- (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 - (void)_purchasableMediaDidChangeNotification:(id)arg1;
 - (id)_releaseDateString;
 - (id)_shuffleButton;

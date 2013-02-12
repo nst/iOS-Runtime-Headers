@@ -9,6 +9,7 @@
         unsigned int geoId : 1; 
         unsigned int uID : 1; 
         unsigned int addressGeocodeAccuracy : 1; 
+        unsigned int localSearchProviderID : 1; 
         unsigned int type : 1; 
         unsigned int version : 1; 
         unsigned int isDisputed : 1; 
@@ -20,6 +21,7 @@
     long long _geoId;
     } _has;
     BOOL _isDisputed;
+    int _localSearchProviderID;
     GEOMapRegion *_mapRegion;
     NSString *_name;
     GEOAddress *_phoneticAddress;
@@ -40,6 +42,7 @@
 @property(readonly) BOOL hasCenter;
 @property BOOL hasGeoId;
 @property BOOL hasIsDisputed;
+@property BOOL hasLocalSearchProviderID;
 @property(readonly) BOOL hasMapRegion;
 @property(readonly) BOOL hasName;
 @property(readonly) BOOL hasPhoneticAddress;
@@ -48,6 +51,7 @@
 @property BOOL hasUID;
 @property BOOL hasVersion;
 @property BOOL isDisputed;
+@property int localSearchProviderID;
 @property(retain) GEOMapRegion * mapRegion;
 @property(retain) NSString * name;
 @property(retain) GEOAddress * phoneticAddress;
@@ -83,6 +87,7 @@
 - (BOOL)hasCenter;
 - (BOOL)hasGeoId;
 - (BOOL)hasIsDisputed;
+- (BOOL)hasLocalSearchProviderID;
 - (BOOL)hasMapRegion;
 - (BOOL)hasName;
 - (BOOL)hasPhoneticAddress;
@@ -94,6 +99,7 @@
 - (unsigned int)hash;
 - (BOOL)isDisputed;
 - (BOOL)isEqual:(id)arg1;
+- (int)localSearchProviderID;
 - (id)mapRegion;
 - (id)name;
 - (id)phoneticAddress;
@@ -108,10 +114,12 @@
 - (void)setHasAddressGeocodeAccuracy:(BOOL)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
 - (void)setHasIsDisputed:(BOOL)arg1;
+- (void)setHasLocalSearchProviderID:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setHasUID:(BOOL)arg1;
 - (void)setHasVersion:(BOOL)arg1;
 - (void)setIsDisputed:(BOOL)arg1;
+- (void)setLocalSearchProviderID:(int)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneticAddress:(id)arg1;

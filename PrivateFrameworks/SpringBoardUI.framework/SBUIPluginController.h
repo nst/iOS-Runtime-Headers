@@ -16,6 +16,7 @@
 - (void)cancelPendingActivationEvent:(int)arg1;
 - (struct CGSize { float x1; float x2; })desiredSizeForRevealMode:(int)arg1;
 - (BOOL)handleActivationEvent:(int)arg1 context:(void*)arg2;
+- (void)handleBluetoothDismissal;
 - (BOOL)handledMenuButtonDownEvent;
 - (BOOL)handledMenuButtonTap;
 - (BOOL)handledPasscodeUnlockWithCompletion:(id)arg1;

@@ -114,6 +114,8 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)existingBackButtonView;
+- (void)fadeInTitleView;
+- (void)fadeOutTitleView;
 - (id)font;
 - (BOOL)hidesBackButton;
 - (id)initWithCoder:(id)arg1;
@@ -156,6 +158,7 @@
 - (void)setRightBarButtonItems:(id)arg1;
 - (void)setTag:(int)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitleView:(id)arg1 animated:(BOOL)arg2;
 - (void)setTitleView:(id)arg1;
 - (void)setWidth:(float)arg1;
 - (void)set_customLeftView:(id)arg1;

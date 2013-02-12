@@ -27,7 +27,7 @@
 - (void)_endPlayback;
 - (void)_endPlaybackByPausing;
 - (void)_firstVideoFrameDisplayedNotification:(id)arg1;
-- (void)_isAirPlayVideoActiveDidChangeNotification:(id)arg1;
+- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_itemReadyToPlayNotification:(id)arg1;
 - (void)_removeFillerImageView;

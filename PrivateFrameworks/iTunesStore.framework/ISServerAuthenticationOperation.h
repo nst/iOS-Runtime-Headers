@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISAuthenticationContext, ISDialog, NSNumber, NSURL;
+@class ISDialog, NSNumber, NSURL, SSAuthenticationContext;
 
 @interface ISServerAuthenticationOperation : ISOperation {
     NSNumber *_authenticatedAccountDSID;
-    ISAuthenticationContext *_authenticationContext;
+    SSAuthenticationContext *_authenticationContext;
     ISDialog *_dialog;
     NSURL *_redirectURL;
 }
 
 @property(retain) NSNumber *authenticatedAccountDSID;
-@property(retain) ISAuthenticationContext *authenticationContext;
+@property(retain) SSAuthenticationContext *authenticationContext;
 @property(retain) ISDialog *dialog;
 @property(retain) NSURL *redirectURL;
 
-- (id)_authenticationContext;
 - (BOOL)_copyAccountIdentifier:(id*)arg1 returningError:(id*)arg2;
+- (id)_copyAuthenticationContext;
 - (id)_copyButtonForDialogSkip;
 - (BOOL)_copySelectedButton:(id*)arg1 returningError:(id*)arg2;
 - (BOOL)_handleSelectedButton:(id)arg1;

@@ -10,6 +10,6 @@
 - (id)guessPasswordForURL:(id)arg1;
 - (id)loadKeychainInformationsForURL:(id)arg1;
 - (void)removeKeychainInformationsForURL:(id)arg1;
-- (BOOL)saveKeychainInformationsForURL:(id)arg1 andPassword:(id)arg2;
+- (BOOL)saveKeychainInformationsForURL:(id)arg1 andPassword:(id)arg2 withAccessibility:(NSInteger)arg3;
 
 @end

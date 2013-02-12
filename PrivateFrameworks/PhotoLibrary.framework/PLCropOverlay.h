@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCropLCDLayer, PLCropOverlayBottomBar, PLCropOverlayCropView, PLToolbar, TPBottomDualButtonBar, TPCameraPushButton, TPPushButton, UIImageView, UIProgressHUD, UIView;
+@class PLCropOverlayBottomBar, PLCropOverlayCropView, PLToolbar, TPBottomDualButtonBar, TPCameraPushButton, TPPushButton, UIButton, UIImageView, UILabel, UIProgressHUD, UIView;
 
 @interface PLCropOverlay : UIView {
     struct CGRect { 
@@ -20,25 +20,34 @@
     unsigned int _showsCropRegion : 1;
     unsigned int _controlsAreVisible : 1;
     PLCropOverlayBottomBar *_bottomBar;
-    TPPushButton *_cancelButton;
+    UIImageView *_bottomShineView;
+    UIButton *_cancelButton;
+    TPPushButton *_cancelPushButton;
     } _cropRect;
     PLCropOverlayCropView *_cropView;
     PLToolbar *_customToolbar;
     id _delegate;
     UIProgressHUD *_hud;
-    PLCropLCDLayer *_lcd;
-    UIImageView *_lcdImage;
     NSInteger _mode;
-    TPCameraPushButton *_okButton;
+    UIButton *_okButton;
+    TPCameraPushButton *_okPushButton;
     TPBottomDualButtonBar *_oldBottomBar;
     UIView *_overlayContainerView;
     UIImageView *_shadowView;
     float _statusBarHeight;
+    UILabel *_titleLabel;
+    UIImageView *_topShineView;
+    UIView *_wildcatPickerBottomView;
+    UIView *_wildcatPickerTopView;
 }
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)_accessibilityAllowsSiblingsWhenOvergrown;
 - (void)_backgroundSavePhoto:(id)arg1;
 - (void)_createCropView;
 - (void)_fadeOutCompleted:(id)arg1;
+- (id)_newOverlayViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lighterEdgeOnTop:(BOOL)arg2;
 - (void)_pauseButtonPressed:(id)arg1;
 - (void)_playButtonPressed:(id)arg1;
 - (void)_savePhotoFinished:(id)arg1;
@@ -54,18 +63,17 @@
 - (void)cropOverlayBottomBarPlayButtonClicked:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (void)dealloc;
-- (id)dictionaryWithCropResultsFromImageScroller:(id)arg1 withOptions:(NSInteger)arg2;
 - (void)didCapturePhoto;
 - (void)didCaptureVideo;
 - (void)didPauseVideo;
 - (void)didPlayVideo;
 - (void)dismiss;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(NSInteger)arg2 offsettingStatusBar:(BOOL)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(NSInteger)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertIrisView:(id)arg1;
+- (void)layoutSubviews;
 - (NSInteger)mode;
 - (id)modeSwitch;
 - (void)okButtonClicked:(id)arg1;
@@ -86,6 +94,7 @@
 - (void)setShowsCropRegion:(BOOL)arg1;
 - (void)setTitle:(id)arg1 okButtonTitle:(id)arg2;
 - (void)setTitle:(id)arg1;
+- (void)setTitleHidden:(BOOL)arg1 animationDuration:(float)arg2;
 - (id)shutterButton;
 - (void)statusBarHeightDidChange:(id)arg1;
 

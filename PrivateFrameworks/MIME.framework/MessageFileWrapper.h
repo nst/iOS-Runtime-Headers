@@ -22,6 +22,7 @@
 - (unsigned long)creator;
 - (void)dealloc;
 - (id)description;
+- (id)eventUniqueID;
 - (id)fileAttributes;
 - (id)fileWrappers;
 - (id)filename;
@@ -38,19 +39,20 @@
 - (BOOL)isPlaceholder;
 - (BOOL)isRegularFile;
 - (BOOL)isSymbolicLink;
-- (id)meetingID;
+- (id)meetingStorePersistentID;
 - (id)messageID;
 - (id)mimeType;
 - (float)minimumZoomFontSize;
 - (id)preferredFilename;
-- (id)preferredFilenameStrippingZip;
+- (id)preferredFilenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
 - (id)regularFileContents;
 - (void)setContentID:(id)arg1;
 - (void)setCreator:(unsigned long)arg1;
+- (void)setEventUniqueID:(id)arg1;
 - (void)setFileAttributes:(id)arg1;
 - (void)setFilename:(id)arg1;
 - (void)setFinderFlags:(unsigned short)arg1;
-- (void)setMeetingID:(id)arg1;
+- (void)setMeetingStorePersistentID:(id)arg1;
 - (void)setMessageID:(id)arg1;
 - (void)setMimeType:(id)arg1;
 - (void)setPreferredFilename:(id)arg1;
@@ -58,6 +60,5 @@
 - (void)setURL:(id)arg1;
 - (id)symbolicLinkDestination;
 - (unsigned long)type;
-- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2 updateFilenames:(BOOL)arg3;
 
 @end

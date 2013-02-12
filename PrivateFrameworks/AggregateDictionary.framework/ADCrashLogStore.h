@@ -20,7 +20,7 @@
 
 - (id)_crashLogPathForDate:(id)arg1;
 - (void)addDistribution:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg1 forKey:(id)arg2;
-- (void)addScalar:(NSInteger)arg1 forKey:(id)arg2;
+- (void)addScalar:(long long)arg1 forKey:(id)arg2;
 - (NSInteger)daysSince1970ForLastCrashLogSerialized;
 - (void)dealloc;
 - (id)initWithCrashLogPathPrefix:(id)arg1;

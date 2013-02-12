@@ -8,7 +8,6 @@
 @property(readonly) DACalendar *calendar;
 @property(retain) NSString *description;
 @property(retain) NSDate *endDate;
-@property(retain) NSString *externalIdentificationTag;
 @property(retain) NSString *externalModificationTag;
 @property(readonly) ICSCalendar *icsCalendar;
 @property(retain) NSString *location;
@@ -17,6 +16,7 @@
 @property(readonly) NSDate *startDate;
 @property(readonly) NSTimeZone *startTimeZone;
 @property(retain) NSString *summary;
+@property(retain) NSString *uniqueIdentifier;
 @property BOOL isAllDay;
 @property(readonly) NSInteger uid;
 
@@ -24,7 +24,6 @@
 - (id)calendar;
 - (id)description;
 - (id)endDate;
-- (id)externalIdentificationTag;
 - (id)externalModificationTag;
 - (id)icsCalendar;
 - (BOOL)isAllDay;
@@ -36,15 +35,16 @@
 - (void)remove;
 - (void)setDescription:(id)arg1;
 - (void)setEndDate:(id)arg1;
-- (void)setExternalIdentificationTag:(id)arg1;
 - (void)setExternalModificationTag:(id)arg1;
 - (void)setIsAllDay:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setStartDate:(id)arg1 timeZone:(id)arg2;
 - (void)setSummary:(id)arg1;
+- (void)setUniqueIdentifier:(id)arg1;
 - (id)startDate;
 - (id)startTimeZone;
 - (id)summary;
 - (NSInteger)uid;
+- (id)uniqueIdentifier;
 
 @end

@@ -13,18 +13,21 @@
 @property(readonly) long long persistentID;
 
 + (id)aggregateQueryWithUnitQuery:(id)arg1 foreignPersistentIDProperty:(id)arg2;
-+ (id)collatedSQLForProperty:(id)arg1;
-+ (id)disambiguatedAndCollatedSQLForProperty:(id)arg1;
++ (id)directCollectionQueryWithAggregateQuery:(id)arg1 predicate:(id)arg2 usingSections:(BOOL)arg3;
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (id)indexableSQLForProperties:(id)arg1;
 + (id)newWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
-+ (id)orderingSQLForProperties:(id)arg1;
++ (id)orderingSQLForProperties:(id)arg1 directionality:(id)arg2;
 + (void)performValueRequestsForLibrary:(id)arg1;
++ (void)predisambiguateProperties:(id)arg1 toDictionary:(id)arg2;
++ (id)predisambiguatedProperties;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 usingSections:(BOOL)arg4;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 usingSections:(BOOL)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2;
 + (id)representativeEntityOfEntity:(id)arg1 persistentIDProperty:(id)arg2 foreignPersistentIDProperty:(id)arg3;
++ (id)subselectPropertyForProperty:(id)arg1;
++ (id)subselectStatementForProperty:(id)arg1;
 
 - (id)cachedValueForProperty:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

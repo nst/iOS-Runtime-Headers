@@ -12,5 +12,6 @@
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
 - (id)newPreview:(NSInteger)arg1 highlight:(BOOL)arg2;
+- (BOOL)shouldGeneratePreviewInBackground;
 
 @end

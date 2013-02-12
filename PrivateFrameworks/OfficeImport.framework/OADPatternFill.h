@@ -19,10 +19,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)fgColor;
+- (NSUInteger)hash;
 - (id)initWithDefaults;
 - (BOOL)isBgColorOverridden;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFgColorOverridden;
 - (BOOL)isPatternOverridden;
+- (id)namedImageDataWithDrawingGroup:(id)arg1;
 - (id)pattern;
 - (void)setBgColor:(id)arg1;
 - (void)setColor:(id)arg1;

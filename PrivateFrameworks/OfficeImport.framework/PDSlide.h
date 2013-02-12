@@ -15,6 +15,7 @@
 - (NSUInteger)commentCount;
 - (void)dealloc;
 - (id)defaultTheme;
+- (void)doneWithContent;
 - (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)notesSlide;
 - (id)parentShapePropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
@@ -22,6 +23,7 @@
 - (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
+- (void)setInheritedTextStyle:(id)arg1 placeholderType:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
 - (void)setNotesSlide:(id)arg1;
 - (void)setSlideLayout:(id)arg1;
 - (id)slideLayout;

@@ -5,8 +5,8 @@
 @interface ABTableViewHelper : NSObject {
 }
 
-+ (id)createOverlayLabel;
-+ (void)prepareCell:(id)arg1 asSelectedCell:(BOOL)arg2;
-+ (void)syncTableView:(id)arg1 withIndexPath:(id)arg2 animated:(BOOL)arg3;
++ (id)newOverlayLabel;
++ (void)prepareCell:(id)arg1 asSelectedCell:(BOOL)arg2 styleProvider:(id)arg3;
++ (void)syncTableView:(id)arg1 withIndexPath:(id)arg2 animated:(BOOL)arg3 styleProvider:(id)arg4;
 
 @end

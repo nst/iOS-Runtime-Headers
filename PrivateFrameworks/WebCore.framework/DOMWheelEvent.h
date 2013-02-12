@@ -11,10 +11,16 @@
 @property(readonly) BOOL ctrlKey;
 @property(readonly) BOOL isHorizontal;
 @property(readonly) BOOL metaKey;
+@property(readonly) NSInteger offsetX;
+@property(readonly) NSInteger offsetY;
 @property(readonly) NSInteger screenX;
 @property(readonly) NSInteger screenY;
 @property(readonly) BOOL shiftKey;
 @property(readonly) NSInteger wheelDelta;
+@property(readonly) NSInteger wheelDeltaX;
+@property(readonly) NSInteger wheelDeltaY;
+@property(readonly) NSInteger x;
+@property(readonly) NSInteger y;
 
 - (BOOL)altKey;
 - (NSInteger)clientX;

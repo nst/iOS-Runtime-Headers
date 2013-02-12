@@ -6,7 +6,7 @@
 }
 
 - (id)init;
-- (id)initWithSection:(id)arg1;
 - (void)loadView;
+- (void)setSection:(id)arg1;
 
 @end

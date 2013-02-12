@@ -2,9 +2,53 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIView;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class UIColor, UIImage, UIView;
 
 @interface UISegment : UIView {
+    struct { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; void*x3; NSUInteger x4; void*x5; out in void*x6; void*x7; float x8; float x9; struct { 
+            UIImage *background; 
+            UIImage *leftDivider; 
+            UIImage *rightDivider; 
+            UIColor *textColor; 
+            UIColor *shadowColor; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } shadowOffset; 
+        } x10; struct { 
+            UIImage *background; 
+            UIImage *leftDivider; 
+            UIImage *rightDivider; 
+            UIColor *textColor; 
+            UIColor *shadowColor; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } shadowOffset; 
+        } x11; struct { 
+            UIImage *background; 
+            UIImage *leftDivider; 
+            UIImage *rightDivider; 
+            UIColor *textColor; 
+            UIColor *shadowColor; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } shadowOffset; 
+        } x12; struct { 
+            UIImage *background; 
+            UIImage *leftDivider; 
+            UIImage *rightDivider; 
+            UIColor *textColor; 
+            UIColor *shadowColor; 
+            struct CGSize { 
+                float width; 
+                float height; 
+            } shadowOffset; 
     struct CGSize { 
         float width; 
         float height; 
@@ -18,6 +62,7 @@
         unsigned int isDisclosure : 1; 
         unsigned int position : 3; 
         unsigned int autosizeText : 1; 
+        } x13; BOOL x14; } *_appearance;
     NSInteger _barStyle;
     } _contentOffset;
     UIView *_info;
@@ -30,6 +75,9 @@
 @property(getter=isHighlighted) BOOL highlighted;
 @property(getter=isSelected) BOOL selected;
 
++ (void)_initializeSafeCategory;
+
+- (void)_commonInitWithInfo:(id)arg1 position:(NSUInteger)arg2 autosizeText:(BOOL)arg3;
 - (id)_dividerImageForRight:(BOOL)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionInfo;
@@ -40,20 +88,27 @@
 - (void)_updateBackgroundImage;
 - (void)_updateTextColors;
 - (void)_updateTexturedBackgroundImage;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
+- (id)accessibilityLanguage;
+- (unsigned long long)accessibilityTraits;
 - (void)animateAdd:(BOOL)arg1;
 - (void)animateRemoveForWidth:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (NSInteger)controlSize;
 - (void)dealloc;
+- (id)disabledTextColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)info;
 - (id)infoName;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithInfo:(id)arg1 appearance:(struct { id x1; float x2; float x3; struct { id x_4_1_1; id x_4_1_2; id x_4_1_3; id x_4_1_4; id x_4_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_4_1_6; } x4; struct { id x_5_1_1; id x_5_1_2; id x_5_1_3; id x_5_1_4; id x_5_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_5_1_6; } x5; struct { id x_6_1_1; id x_6_1_2; id x_6_1_3; id x_6_1_4; id x_6_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_6_1_6; } x6; struct { id x_7_1_1; id x_7_1_2; id x_7_1_3; id x_7_1_4; id x_7_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_7_1_6; } x7; BOOL x8; }*)arg2 position:(NSUInteger)arg3 autosizeText:(BOOL)arg4;
 - (id)initWithInfo:(id)arg1 style:(NSInteger)arg2 size:(NSInteger)arg3 barStyle:(NSInteger)arg4 tintColor:(id)arg5 position:(NSUInteger)arg6 isDisclosure:(BOOL)arg7 autosizeText:(BOOL)arg8;
 - (void)insertDividerView;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isHighlighted;
 - (BOOL)isSelected;
 - (void)setAutosizeText:(BOOL)arg1;
@@ -70,5 +125,6 @@
 - (void)setShowDivider:(BOOL)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)updateDividerViewToMatchSegment:(id)arg1;
+- (BOOL)useBlockyMagnificationInClassic;
 
 @end

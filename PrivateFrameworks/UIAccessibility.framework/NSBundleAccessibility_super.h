@@ -5,4 +5,8 @@
 @interface NSBundleAccessibility_super : UIAccessibilitySafeCategory {
 }
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)loadAndReturnError:(id*)arg1;
+
 @end

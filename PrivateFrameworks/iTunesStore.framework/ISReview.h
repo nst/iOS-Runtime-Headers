@@ -4,11 +4,14 @@
 
 @class NSString, NSURL;
 
-@interface ISReview : NSObject <NSCopying> {
+@interface ISReview : NSObject <NSCoding, NSCopying> {
+    NSInteger _assetType;
     NSString *_body;
     NSUInteger _bodyMaxLength;
-    BOOL _metadataIsValid;
+    NSURL *_infoURL;
+    unsigned long long _itemIdentifier;
     NSString *_nickname;
+    BOOL _nicknameIsConfirmed;
     NSUInteger _nicknameMaxLength;
     float _rating;
     NSURL *_submitURL;
@@ -17,27 +20,47 @@
 }
 
 @property(retain) NSString *body;
+@property(retain) NSURL *infoURL;
 @property(retain) NSString *nickname;
 @property(retain) NSURL *submitURL;
 @property(retain) NSString *title;
+@property NSInteger assetType;
 @property NSUInteger bodyMaxLength;
-@property(readonly) BOOL metadataIsValid;
+@property(readonly) BOOL hasSavedDraft;
+@property unsigned long long itemIdentifier;
+@property BOOL nicknameIsConfirmed;
 @property NSUInteger nicknameMaxLength;
 @property float rating;
 @property NSUInteger titleMaxLength;
 
+- (id)_draftFileName;
+- (id)_draftsDirectoryPath;
+- (NSInteger)assetType;
 - (id)body;
 - (NSUInteger)bodyMaxLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasSavedDraft;
+- (id)infoURL;
+- (id)initWithCoder:(id)arg1;
+- (unsigned long long)itemIdentifier;
 - (void)loadFromDictionary:(id)arg1;
-- (BOOL)metadataIsValid;
+- (void)mergeWithReview:(id)arg1 preferLocalValues:(BOOL)arg2;
 - (id)nickname;
+- (BOOL)nicknameIsConfirmed;
 - (NSUInteger)nicknameMaxLength;
 - (float)rating;
+- (BOOL)removeDraft;
+- (BOOL)restoreFromDraft;
+- (BOOL)saveAsDraft;
+- (void)setAssetType:(NSInteger)arg1;
 - (void)setBody:(id)arg1;
 - (void)setBodyMaxLength:(NSUInteger)arg1;
+- (void)setInfoURL:(id)arg1;
+- (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setNickname:(id)arg1;
+- (void)setNicknameIsConfirmed:(BOOL)arg1;
 - (void)setNicknameMaxLength:(NSUInteger)arg1;
 - (void)setRating:(float)arg1;
 - (void)setSubmitURL:(id)arg1;

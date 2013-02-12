@@ -9,6 +9,7 @@
 + (id)outputStreamToBuffer:(char *)arg1 capacity:(NSUInteger)arg2;
 + (id)outputStreamToFileAtPath:(id)arg1 append:(BOOL)arg2;
 + (id)outputStreamToMemory;
++ (id)outputStreamWithURL:(id)arg1 append:(BOOL)arg2;
 
 - (struct { NSInteger x1; NSInteger x2; })_cfStreamError;
 - (unsigned long)_cfTypeID;

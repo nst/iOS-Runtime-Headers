@@ -13,6 +13,7 @@
 @property(readonly) float weightInKg;
 @property float weightInLbs;
 
++ (void)_initializeSafeCategory;
 + (float)kgForLbs:(float)arg1;
 + (float)lbsForKg:(float)arg1;
 + (id)weightFormatter;

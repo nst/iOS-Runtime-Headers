@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDParagraph, WXState;
+@class NSMutableDictionary, WDParagraph, WXState;
 
 @interface WXOAVState : OAVState {
+    NSMutableDictionary *mNextVmlShapeIdToTextBoxMap;
     WDParagraph *mParagraph;
     WXState *mWxState;
 }
 
 - (id)currentParagraph;
+- (void)dealloc;
 - (id)initWithWXState:(id)arg1;
+- (id)nextVmlShapeIdToTextBoxMap;
 - (void)setCurrentParagraph:(id)arg1;
 - (id)wxState;
 

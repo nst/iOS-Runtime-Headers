@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTableRow;
+@class OADTable, OADTableRow;
 
 @interface PMTableRowMapper : CMMapper {
     OADTableRow *mRow;
     NSUInteger mRowIndex;
+    OADTable *mTable;
 }
 
+- (NSUInteger)cellCount;
 - (float)height;
-- (id)initWithOadTableRow:(id)arg1 rowIndex:(NSUInteger)arg2 parent:(id)arg3;
+- (id)initWithOadTable:(id)arg1 rowIndex:(NSUInteger)arg2 parent:(id)arg3;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 
 @end

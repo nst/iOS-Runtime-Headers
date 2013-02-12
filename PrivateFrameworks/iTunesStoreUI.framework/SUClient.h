@@ -2,34 +2,84 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUClientDelegate>, ISURLOperationCache, SUViewControllerFactory;
+@class <SUClientDelegate>, ISURLOperationPool, NSLock, NSMutableArray, NSString, SUImageCache, SUScriptExecutionContext, SUViewControllerFactory;
 
 @interface SUClient : NSObject {
+    struct __CFArray { } *_assetTypes;
+    NSString *_clientIdentifier;
     <SUClientDelegate> *_delegate;
-    ISURLOperationCache *_imageCache;
+    BOOL _dontSaveNavigationPath;
+    NSMutableArray *_downloadQueues;
+    SUImageCache *_imageCache;
+    ISURLOperationPool *_imagePool;
+    NSLock *_lock;
+    NSMutableArray *_preOrderQueues;
+    SUScriptExecutionContext *_scriptExecutionContext;
+    NSString *_searchHintsURLBagKey;
+    NSString *_searchURLBagKey;
     SUViewControllerFactory *_viewControllerFactory;
 }
 
+@property(retain) NSString *clientIdentifier;
 @property <SUClientDelegate> *delegate;
-@property(retain) ISURLOperationCache *imageCache;
+@property(retain) SUImageCache *imageCache;
+@property(retain) ISURLOperationPool *imagePool;
+@property(readonly) SUScriptExecutionContext *scriptExecutionContext;
+@property(retain) NSString *searchHintsURLBagKey;
+@property(retain) NSString *searchURLBagKey;
 @property(retain) SUViewControllerFactory *viewControllerFactory;
+@property BOOL dontSaveNavigationPath;
 
-+ (id)imageCache;
++ (id)imagePool;
 + (void)setSharedClient:(id)arg1;
 + (id)sharedClient;
 + (id)viewControllerFactory;
 
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_bagDidLoadNotification:(id)arg1;
 - (void)_memoryWarningNotification:(id)arg1;
+- (id)_newAccountViewControllerForButtonAction:(id)arg1;
+- (id)_newComposeReviewViewControllerForButtonAction:(id)arg1;
+- (void)_ntsEndQueueSession:(id)arg1 fromArray:(id)arg2;
+- (id)_ntsQueueSessionWithDownloadKinds:(id)arg1 fromArray:(id)arg2;
+- (id)_ntsQueueSessionWithQueue:(id)arg1 fromArray:(id)arg2;
 - (BOOL)_presentModalViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)_purgeCaches;
+- (void)_reloadScriptExecutionContext;
+- (struct __CFArray { }*)assetTypes;
+- (id)beginDownloadQueueSessionForDownloadKind:(id)arg1;
+- (id)beginDownloadQueueSessionWithDownloadKinds:(id)arg1;
+- (id)beginPreOrderQueueSessionWithDownloadKinds:(id)arg1;
+- (id)clientIdentifier;
+- (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)dismissTopViewControllerAnimated:(BOOL)arg1;
+- (BOOL)dontSaveNavigationPath;
+- (id)downloadQueueForDownloadKind:(id)arg1;
+- (void)endDownloadQueueSessionForQueue:(id)arg1;
+- (void)endDownloadQueueSessionWithDownloadKinds:(id)arg1;
+- (void)endPreOrderQueueSessionWithDownloadKinds:(id)arg1;
+- (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)imageCache;
+- (id)imagePool;
 - (id)init;
+- (BOOL)openExternalURL:(id)arg1;
+- (BOOL)openInternalURL:(id)arg1;
+- (BOOL)openURL:(id)arg1 inClientApplication:(id)arg2;
+- (id)scriptExecutionContext;
+- (id)searchHintsURLBagKey;
+- (id)searchURLBagKey;
+- (BOOL)sendActionForDialog:(id)arg1 button:(id)arg2;
+- (void)setAssetTypes:(struct __CFArray { }*)arg1;
+- (void)setClientIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDontSaveNavigationPath:(BOOL)arg1;
 - (void)setImageCache:(id)arg1;
+- (void)setImagePool:(id)arg1;
+- (void)setSearchHintsURLBagKey:(id)arg1;
+- (void)setSearchURLBagKey:(id)arg1;
 - (void)setViewControllerFactory:(id)arg1;
-- (BOOL)showCodeEntryWithCode:(id)arg1 url:(id)arg2;
 - (id)viewControllerFactory;
 
 @end

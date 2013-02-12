@@ -8,6 +8,9 @@
     struct _NSRange { 
         NSUInteger location; 
         NSUInteger length; 
+    struct __sqlentityFlags { 
+        unsigned int _hasAttributesWithExternalDataReferences : 1; 
+        unsigned int _reserved : 31; 
     NSMutableArray *_attrColumns;
     NSMutableArray *_columnsToFetch;
     NSSQLStatement *_deletionStatementCache;
@@ -22,6 +25,7 @@
     NSSQLStoreMappingGenerator *_mappingGenerator;
     long long _maxPK;
     NSSQLModel *_model;
+    void *_odiousHashHackStorage;
     NSSQLOptLockKey *_optLockKey;
     NSUInteger _pkCount;
     NSSQLPrimaryKey *_primaryKey;
@@ -31,6 +35,7 @@
     NSArray *_propertyManyToManyCache;
     NSKnownKeysMappingStrategy *_propertyMapping;
     NSSQLEntity *_rootEntity;
+    } _sqlentityFlags;
     NSMutableArray *_subentities;
     NSUInteger _subentityMaxID;
     NSSQLEntity *_superentity;
@@ -43,9 +48,11 @@
 - (void)_addRootColumnToFetch:(id)arg1;
 - (void)_addSubentity:(id)arg1;
 - (id)_addVirtualToOneForToMany:(id)arg1 withInheritedProperty:(id)arg2;
+- (void)_doPostModelGenerationCleanup;
 - (NSUInteger)_generateIDWithSuperEntity:(id)arg1 nextID:(NSUInteger)arg2;
 - (void)_generateInverseRelationshipsAndMore;
 - (void)_generateProperties;
+- (void*)_odiousHashHack;
 - (NSUInteger)_pkCount;
 - (id)_propertySearchMapping;
 - (void)_resetPKCount;
@@ -76,6 +83,7 @@
 - (void)finalize;
 - (id)foreignEntityKeyColumns;
 - (id)foreignKeyColumns;
+- (BOOL)hasAttributesWithExternalDataReferences;
 - (BOOL)hasInheritance;
 - (BOOL)hasSubentities;
 - (id)initWithModel:(id)arg1 entityDescription:(id)arg2;

@@ -5,8 +5,10 @@
 @interface SUCompletionCellConfiguration : SUArrayCellConfiguration {
 }
 
++ (void)_initializeSafeCategory;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
+- (id)accessibilityLabel;
 - (id)colorForLabelAtIndex:(NSUInteger)arg1 withModifiers:(NSUInteger)arg2;
 - (id)fontForLabelAtIndex:(NSUInteger)arg1;
 - (id)init;

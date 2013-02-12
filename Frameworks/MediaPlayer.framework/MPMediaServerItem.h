@@ -5,7 +5,7 @@
 @class MLTrack, NSDictionary;
 
 @interface MPMediaServerItem : NSObject <NSCoding> {
-    NSDictionary *_commonProperties;
+    NSDictionary *_fetchedProperties;
     MLTrack *_track;
 }
 
@@ -13,14 +13,19 @@
 @property(readonly) NSDictionary *commonProperties;
 
 - (id)MLTrack;
+- (id)_newTimeMarkersFromChapterTOC:(id)arg1;
 - (id)albumArtist;
+- (id)albumID;
 - (id)albumTitle;
 - (id)albumTrackCount;
 - (id)albumTrackNumber;
 - (id)artist;
 - (id)artwork;
+- (id)artworkDataForSize:(struct CGSize { float x1; float x2; })arg1 atPlaybackTime:(double)arg2;
 - (id)artworkDataForSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)bpm;
+- (id)assetURL;
+- (id)beatsPerMinute;
+- (id)chapterDictionaries;
 - (id)comments;
 - (id)commonProperties;
 - (id)composer;
@@ -29,6 +34,8 @@
 - (id)discNumber;
 - (void)encodeWithCoder:(id)arg1;
 - (id)episodeNumber;
+- (void)fetchProperty:(id)arg1;
+- (id)filePath;
 - (id)genre;
 - (id)globalID;
 - (id)grouping;
@@ -38,16 +45,25 @@
 - (id)initWithMLTrack:(id)arg1;
 - (id)isCompilation;
 - (BOOL)isEqual:(id)arg1;
+- (id)isRental;
 - (id)lastPlayedDate;
 - (id)lyrics;
 - (id)mediaType;
 - (id)playCount;
 - (id)playbackDuration;
+- (id)playbackTimesForChapterArtwork;
 - (id)podcastTitle;
 - (id)rating;
+- (id)releaseDate;
 - (id)seasonNumber;
 - (id)seriesName;
 - (id)skipCount;
+- (id)sortAlbumArtist;
+- (id)sortAlbumTitle;
+- (id)sortArtist;
+- (id)sortComposer;
+- (id)sortTitle;
+- (id)storeItemAdamID;
 - (id)title;
 - (id)year;
 

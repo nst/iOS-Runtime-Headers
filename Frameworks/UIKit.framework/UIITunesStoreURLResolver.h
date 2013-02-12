@@ -7,6 +7,8 @@
 @interface UIITunesStoreURLResolver : NSObject {
     NSArray *_appStoreHostPatterns;
     NSArray *_appStorePathPatterns;
+    NSArray *_bookStoreHostPatterns;
+    NSArray *_bookStorePathPatterns;
     NSArray *_hostWhiteList;
     NSArray *_musicStoreHostPatterns;
     NSArray *_musicStorePathPatterns;

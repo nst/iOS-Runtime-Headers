@@ -25,7 +25,7 @@
 @property NSInteger shakeState;
 
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
-- (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 currentState:(NSInteger)arg3;
+- (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 z:(float)arg3 currentState:(NSInteger)arg4;
 - (void)_enablePeakDetectionIfNecessary;
 - (NSInteger)_feedStateMachine:(float)arg1 currentState:(NSInteger)arg2 timestamp:(double)arg3;
 - (float)_highPass:(float)arg1;

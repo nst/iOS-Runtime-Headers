@@ -2,34 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISAuthenticationContext, NSNumber;
+@class NSNumber, SSAuthenticateRequest;
 
 @interface ISStoreAuthenticateOperation : ISOperation {
     NSNumber *_authenticatedDSID;
-    ISAuthenticationContext *_context;
-    BOOL _usingNetwork;
+    SSAuthenticateRequest *_request;
 }
 
-@property(retain) NSNumber *authenticatedDSID;
-@property(retain,readonly) ISAuthenticationContext *context;
-@property(getter=isUsingNetwork) BOOL usingNetwork;
+@property(readonly) SSAuthenticationContext *authenticationContext;
 
-- (void)_authenticateFailed:(id)arg1;
-- (void)_authenticateFinished:(id)arg1;
-- (void)_authenticateSubmitted:(id)arg1;
-- (void)_daemonExited:(id)arg1;
-- (void)_requestAuthentication;
-- (void)_runAuthentication;
-- (void)_timer:(id)arg1;
+- (id)_authenticatedDSID;
+- (void)_setAuthenticatedDSID:(id)arg1;
+- (void)authenticateRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)authenticatedAccountDSID;
-- (id)authenticatedDSID;
-- (id)context;
+- (id)authenticationContext;
 - (void)dealloc;
 - (id)initWithAuthenticationContext:(id)arg1;
-- (BOOL)isUsingNetwork;
+- (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)run;
-- (void)setAuthenticatedDSID:(id)arg1;
-- (void)setUsingNetwork:(BOOL)arg1;
 - (id)uniqueKey;
 
 @end

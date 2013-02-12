@@ -19,10 +19,11 @@
 - (void)_done:(id)arg1;
 - (void)_hideNavigationAndStatusBars;
 - (void)_hideNavigationBarAnimationDidFinish:(id)arg1;
-- (NSInteger)_orientation;
+- (NSInteger)_interfaceOrientation;
 - (void)_restoreOriginalNavigationViews:(BOOL)arg1;
 - (void)_showChapterGuideNavigationViews;
 - (void)dealloc;
+- (BOOL)leaveSpaceForStatusBarAndNavigationBarInOrientation:(NSInteger)arg1;
 - (id)navigationBar;
 - (BOOL)playAfterFlip;
 - (void)setNavigationBar:(id)arg1;

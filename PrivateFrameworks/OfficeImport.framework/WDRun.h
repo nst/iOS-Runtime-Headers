@@ -8,6 +8,7 @@
     WDParagraph *mParagraph;
 }
 
+- (void)clearProperties;
 - (void)dealloc;
 - (id)init;
 - (id)initWithParagraph:(id)arg1;

@@ -17,7 +17,7 @@
     NSRecursiveLock *_lock;
     } _naturalSize;
     NSMutableArray *_outstandingIdentifiers;
-    struct { id x1; float x2; struct __CFArray {} *x3; float x4; } *_progressStack;
+    struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; NSString *x6; } *_progressStack;
 }
 
 @property(readonly) AVController *avController;
@@ -37,10 +37,10 @@
 - (id)filePath;
 - (struct CGImage { }*)getCGImageAtTime:(double)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (struct CGSize { float x1; float x2; })naturalSize;
-- (struct { id x1; float x2; struct __CFArray {} *x3; float x4; }*)progressStack;
+- (struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)progressStack;
 - (void)requestAsyncCGImagesAtTimes:(id)arg1 requestIDs:(id)arg2 withImageOptions:(id)arg3 outTimes:(id*)arg4 outImages:(id*)arg5 outRequestIDs:(id*)arg6;
 - (void)setFilePath:(id)arg1;
-- (void)setProgressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; }*)arg1;
+- (void)setProgressStack:(struct { id x1; float x2; struct __CFArray {} *x3; float x4; BOOL x5; id x6; }*)arg1;
 - (void)setup;
 - (void)teardown;
 

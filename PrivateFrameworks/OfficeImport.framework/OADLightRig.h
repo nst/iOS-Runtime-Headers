@@ -13,7 +13,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (NSInteger)direction;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (id)rotation;
 - (void)setDirection:(NSInteger)arg1;
 - (void)setRotation:(id)arg1;

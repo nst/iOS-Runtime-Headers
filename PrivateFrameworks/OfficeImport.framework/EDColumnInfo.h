@@ -6,14 +6,12 @@
    See Warning(s) below.
  */
 
-@class EDConditionalFormatting, EDHyperlink, EDReference, EDResources, EDWorksheet;
+@class EDReference, EDResources, EDWorksheet;
 
 @interface EDColumnInfo : NSObject <NSCopying, EDKeyedObject> {
-     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
-    EDConditionalFormatting *mConditionalFormatting;
-    EDHyperlink *mHyperlink;
-    EDReference *mMergedCells;
+     /* Encoded args for previous method: B8@0:4 */
+    unsigned char mOutlineLevel;
     EDReference *mRange;
     EDResources *mResources;
     NSUInteger mStyleIndex;
@@ -24,19 +22,15 @@
 
 + (id)columnInfoWithResources:(id)arg1 worksheet:(id)arg2;
 
-- (id)conditionalFormatting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)hyperlink;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isHidden;
-- (NSInteger)key;
-- (id)mergedCells;
+- (NSUInteger)key;
+- (unsigned char)outlineLevel;
 - (id)range;
-- (void)setConditionalFormatting:(id)arg1;
 - (void)setHidden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setHyperlink:(id)arg1;
-- (void)setMergedCells:(id)arg1;
+- (void)setOutlineLevel:(unsigned char)arg1;
 - (void)setRange:(id)arg1;
 - (void)setRangeWithFirstColumn:(NSInteger)arg1 lastColumn:(NSInteger)arg2;
 - (void)setStyle:(id)arg1;

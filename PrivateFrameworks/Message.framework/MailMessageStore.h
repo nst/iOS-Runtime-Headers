@@ -9,7 +9,6 @@
         unsigned int isReadOnly : 1; 
         unsigned int hasUnsavedChangesToMessageData : 1; 
         unsigned int haveOpenLockFile : 1; 
-        unsigned int rebuildingTOC : 1; 
         unsigned int compacting : 1; 
         unsigned int cancelInvalidation : 1; 
         unsigned int forceInvalidation : 1; 
@@ -19,7 +18,6 @@
         unsigned int reserved : 22; 
     MailAccount *_account;
     NSMutableArray *_allMessages;
-    NSUInteger _allMessagesSize;
     NSUInteger _deletedMessageCount;
     NSUInteger _deletedMessagesSize;
     } _flags;
@@ -34,7 +32,6 @@
 }
 
 + (void)_autosaveMessageStore:(void*)arg1;
-+ (BOOL)cheapStoreAtPathIsEmpty:(id)arg1;
 + (Class)classForMimePart;
 + (NSInteger)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(BOOL)arg3 deleteOriginals:(BOOL)arg4 isDeletion:(BOOL)arg5 unsuccessfulOnes:(id)arg6;
 + (BOOL)createEmptyStoreForPath:(id)arg1;
@@ -47,8 +44,8 @@
 - (id)_fetchHeaderDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;
 - (void)_flushAllMessageData;
 - (void)_rebuildTableOfContentsSynchronously;
-- (void)_setFlagsAndColorForMessages:(id)arg1;
-- (void)_setFlagsForMessages:(id)arg1 mask:(unsigned long)arg2;
+- (void)_setFlagsForMessages:(id)arg1 mask:(unsigned long long)arg2;
+- (void)_setFlagsForMessages:(id)arg1;
 - (void)_setNeedsAutosave;
 - (id)_setOrGetBody:(id)arg1 forMessage:(id)arg2 updateFlags:(BOOL)arg3;
 - (BOOL)_shouldChangeComponentMessageFlags;
@@ -62,6 +59,7 @@
 - (NSInteger)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2;
 - (BOOL)canCompact;
 - (BOOL)canDeleteMessage:(id)arg1;
+- (BOOL)canFetchMessageIDs;
 - (BOOL)canFetchSearchResults;
 - (BOOL)canRebuild;
 - (void)cancelOpen;
@@ -80,16 +78,12 @@
 - (id)description;
 - (void)didOpen;
 - (id)displayName;
-- (const char *)displayNameForLogging;
 - (void)doCompact;
 - (NSInteger)fetchMessagesMatchingCriterion:(id)arg1 limit:(NSUInteger)arg2;
-- (NSInteger)fetchMessagesReceivedBetween:(id)arg1 and:(id)arg2 synchronize:(BOOL)arg3;
+- (NSInteger)fetchMessagesWithMessageIDs:(id)arg1 andSetFlags:(unsigned long long)arg2;
 - (NSInteger)fetchMobileSynchronously:(NSUInteger)arg1 preservingUID:(id)arg2 compact:(BOOL)arg3;
 - (NSInteger)fetchMobileSynchronously:(NSUInteger)arg1;
-- (NSInteger)fetchNewMessagesAndSynchronizeOldMessages:(BOOL)arg1;
-- (NSInteger)fetchNumMessages:(NSUInteger)arg1 beforeUID:(NSUInteger)arg2 synchronize:(BOOL)arg3;
-- (NSInteger)fetchNumMessages:(NSUInteger)arg1 preservingUID:(id)arg2 beforeUID:(NSUInteger)arg3 synchronize:(BOOL)arg4 compact:(BOOL)arg5;
-- (NSInteger)fetchSynchronously;
+- (NSInteger)fetchNumMessages:(NSUInteger)arg1 preservingUID:(id)arg2 fetchType:(NSInteger)arg3 synchronize:(BOOL)arg4 compact:(BOOL)arg5;
 - (id)finishRoutingMessages:(id)arg1 routed:(id)arg2;
 - (BOOL)hasCachedDataForMimePart:(id)arg1;
 - (BOOL)hasMessageForAccount:(id)arg1;
@@ -100,7 +94,8 @@
 - (BOOL)isDrafts;
 - (BOOL)isOpened;
 - (BOOL)isReadOnly;
-- (BOOL)isTrash;
+- (id)lastViewedMessage;
+- (id)lastViewedMessageDate;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (id)mailboxUid;
@@ -113,7 +108,7 @@
 - (void)messagesWereCompacted:(id)arg1;
 - (void)messagesWereDeleted:(id)arg1;
 - (id)mutableCopyOfAllMessages;
-- (NSUInteger)nonDeletedCount;
+- (NSUInteger)nonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
 - (void)openAsynchronously;
 - (void)openSynchronously;
 - (void)purgeMessagesBeyond:(NSUInteger)arg1;
@@ -124,24 +119,22 @@
 - (void)setData:(id)arg1 forMimePart:(id)arg2 isComplete:(BOOL)arg3;
 - (void)setFlag:(id)arg1 state:(BOOL)arg2 forMessages:(id)arg3;
 - (void)setFlagsCancelled:(id)arg1 forMessages:(id)arg2;
-- (id)setFlagsFromDictionary:(id)arg1 forMessage:(id)arg2;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (id)setFlagsLocallyFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setLibrary:(id)arg1;
 - (void)setNumberOfAttachments:(NSUInteger)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (BOOL)setPreferredEncoding:(unsigned long)arg1 forMessage:(id)arg2;
+- (BOOL)shouldDeleteInPlace;
 - (BOOL)shouldDownloadBodyDataForMessage:(id)arg1;
 - (BOOL)shouldSetSummaryForMessage:(id)arg1;
-- (void)startSynchronization;
 - (id)status;
 - (id)storePathRelativeToAccount;
 - (void)structureDidChange;
-- (void)syncOlderMessages;
 - (NSUInteger)totalCount;
-- (NSUInteger)totalMessageSize;
 - (void)undeleteMessages:(id)arg1;
 - (NSUInteger)unreadCount;
 - (void)updateBodyFlagsForMessage:(id)arg1 body:(id)arg2;
-- (void)updateMessages:(id)arg1 updateColor:(BOOL)arg2 updateNumberOfAttachments:(BOOL)arg3;
+- (void)updateMessages:(id)arg1 updateNumberOfAttachments:(BOOL)arg2;
 - (void)updateUserInfoToLatestValues;
 - (id)willSetFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)writeUpdatedMessageDataToDisk;

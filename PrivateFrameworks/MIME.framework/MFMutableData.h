@@ -17,7 +17,7 @@
 }
 
 - (void)_flushToDisk:(NSUInteger)arg1 capacity:(NSUInteger)arg2;
-- (id)_initImmutableWithFd:(NSInteger)arg1 path:(id)arg2;
+- (id)_initWithFd:(NSInteger)arg1 path:(id)arg2 mutable:(BOOL)arg3;
 - (void)_mapMutableData:(BOOL)arg1;
 - (void)appendBytes:(const void*)arg1 length:(NSUInteger)arg2;
 - (void)appendData:(id)arg1;

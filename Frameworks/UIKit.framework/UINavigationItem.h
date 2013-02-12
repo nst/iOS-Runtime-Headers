@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIBarButtonItem, UINavigationBar, UIView;
+@class NSString, UIBarButtonItem, UIImageView, UINavigationBar, UIView;
 
 @interface UINavigationItem : NSObject <NSCoding> {
     UIBarButtonItem *_backBarButtonItem;
@@ -12,6 +12,7 @@
     UIView *_customLeftView;
     UIView *_customRightView;
     UIView *_defaultTitleView;
+    UIImageView *_frozenTitleView;
     BOOL _hidesBackButton;
     UIBarButtonItem *_leftBarButtonItem;
     UINavigationBar *_navigationBar;
@@ -30,15 +31,24 @@
 @property(retain) UIView *titleView;
 @property BOOL hidesBackButton;
 
++ (void)_initializeSafeCategory;
 + (id)defaultFont;
 
 - (id)_automationID;
+- (void)_cleanupFrozenTitleView;
+- (void)_freezeCurrentTitleView;
+- (void)_removeBackButtonView;
 - (void)_removeTitleAndButtonViews;
+- (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(NSInteger)arg2;
+- (void)_setTitle:(id)arg1 animated:(BOOL)arg2;
+- (void)_setTitleAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_titleView;
+- (void)_updateViewsForBarSizeChangeIfNecessary;
 - (id)backBarButtonItem;
 - (id)backButtonTitle;
 - (id)backButtonView;
 - (id)context;
+- (id)currentBackButtonTitle;
 - (id)customLeftItem;
 - (id)customLeftView;
 - (id)customRightItem;

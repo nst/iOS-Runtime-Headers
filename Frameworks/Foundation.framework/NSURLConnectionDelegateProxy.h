@@ -18,6 +18,7 @@
 - (id)connection:(id)arg1 willCacheResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;
+- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setDelegate:(id)arg1;
 

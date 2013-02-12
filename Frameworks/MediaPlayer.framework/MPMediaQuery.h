@@ -4,7 +4,7 @@
 
 @class MPMediaQueryInternal;
 
-@interface MPMediaQuery : NSObject <NSCoding> {
+@interface MPMediaQuery : NSObject <NSCoding, NSCopying> {
     MPMediaQueryInternal *_internal;
 }
 
@@ -18,6 +18,7 @@
 + (id)audiobooksQuery;
 + (id)compilationsQuery;
 + (id)composersQuery;
++ (id)geniusMixesQuery;
 + (id)genresQuery;
 + (id)playlistsQuery;
 + (id)podcastsQuery;
@@ -25,9 +26,12 @@
 + (id)songsQuery;
 + (id)videosQuery;
 
+- (void)_clearCachedItemsAndCollections;
 - (void)_didReceiveMemoryWarning:(id)arg1;
 - (void)addFilterPredicate:(id)arg1;
+- (id)collectionSections;
 - (id)collections;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)countOfCollections;
 - (NSUInteger)countOfItems;
 - (void)dealloc;
@@ -38,11 +42,16 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFilterPredicates:(id)arg1;
+- (id)itemSections;
 - (id)items;
 - (BOOL)prefetchProperties;
+- (id)propertiesToFetch;
 - (void)removeFilterPredicate:(id)arg1;
 - (void)setFilterPredicates:(id)arg1;
 - (void)setGroupingType:(NSInteger)arg1;
 - (void)setPrefetchProperties:(BOOL)arg1;
+- (void)setPropertiesToFetch:(id)arg1;
+- (void)setSortItems:(BOOL)arg1;
+- (BOOL)sortItems;
 
 @end

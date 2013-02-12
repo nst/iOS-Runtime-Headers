@@ -8,11 +8,10 @@
     struct { 
         double latitude; 
         double longitude; 
+    NSUInteger accessTime;
     NSDictionary *address;
     } coordinate;
     GMMMapPoint *gmmMapPoint;
-    NSUInteger heapTime;
-    NSUInteger updateTime;
 }
 
 @end

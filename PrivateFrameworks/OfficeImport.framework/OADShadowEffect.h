@@ -16,8 +16,10 @@
 - (id)color;
 - (void)dealloc;
 - (float)distance;
+- (NSUInteger)hash;
 - (id)initWithShadowEffect:(id)arg1 type:(NSInteger)arg2;
 - (id)initWithType:(NSInteger)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setAngle:(float)arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setColor:(id)arg1;

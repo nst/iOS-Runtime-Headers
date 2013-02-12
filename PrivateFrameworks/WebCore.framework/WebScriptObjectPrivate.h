@@ -7,10 +7,11 @@
  */
 
 @interface WebScriptObjectPrivate : NSObject {
-    struct JSObject { int (**x1)(); struct Structure {} *x2; struct RefPtr<JSC::Structure> { 
+    struct JSObject { int (**x1)(); struct Structure {} *x2; union $_674 { 
+            long long *m_externalStorage; 
+            long long m_inlineStorage[4]; 
+        } x3; struct RefPtr<JSC::Structure> { 
             struct Structure {} *m_ptr; 
-        } x3; struct JSValuePtr {} *x4; struct JSValuePtr { 
-            struct JSCell {} *m_ptr; 
     struct RootObject { NSInteger x1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; void *x3; struct ProtectedPtr<JSC::JSGlobalObject> { 
             struct JSGlobalObject {} *m_ptr; 
         } x4; struct HashCountedSet<JSC::JSObject*,WTF::PtrHash<JSC::JSObject*>,WTF::HashTraits<JSC::JSObject*> > { 
@@ -51,7 +52,7 @@
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x5[2]; } *imp;
+        } x4; } *imp;
     BOOL isCreatedByDOMWrapper;
         } x6; } *originRootObject;
         } x6; } *rootObject;

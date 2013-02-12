@@ -2,54 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableSet;
-
-@interface UITextTapRecognizer : UIGestureRecognizer {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    NSMutableSet *_activeTouches;
-    float _allowableMovement;
-    NSInteger _currentNumberOfFingers;
-    NSInteger _currentNumberOfTaps;
-    } _location;
-    BOOL _noNewTouches;
-    NSInteger _numberOfFingers;
-    NSInteger _numberOfTaps;
-    } _startPoint;
-    NSInteger _timerOn;
-    NSMutableArray *_touches;
+@interface UITextTapRecognizer : UITapGestureRecognizer {
 }
 
-@property(readonly) NSArray *touches;
-@property float allowableMovement;
-@property(readonly) CGPoint centroid;
-@property(readonly) CGPoint location;
-@property NSInteger numberOfFingers;
-@property NSInteger numberOfTaps;
-
-- (BOOL)_shouldSaveGestureFromExclusion:(id)arg1;
-- (float)allowableMovement;
-- (struct CGPoint { float x1; float x2; })centroid;
-- (void)clearTapTimer;
-- (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { float x1; float x2; })location;
-- (NSInteger)numberOfFingers;
-- (NSInteger)numberOfTaps;
-- (void)reset;
-- (void)setAllowableMovement:(float)arg1;
-- (void)setNumberOfFingers:(NSInteger)arg1;
-- (void)setNumberOfTaps:(NSInteger)arg1;
-- (void)startTapTimer:(double)arg1;
-- (void)tooSlow:(id)arg1;
-- (id)touches;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

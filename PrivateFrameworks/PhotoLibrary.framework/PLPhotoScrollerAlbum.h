@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLPhotoScrollerAlbum : MLPhotoAlbum {
+@interface PLPhotoScrollerAlbum : MLAlbum {
 }
 
 - (BOOL)canCreateMetadata;

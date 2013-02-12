@@ -2,26 +2,34 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression, NSSQLColumn, NSSQLEntity, NSSQLFetchIntermediate, NSString;
+@class NSExpression, NSMutableArray, NSMutableString, NSSQLColumn, NSSQLEntity, NSSQLFetchIntermediate, NSSQLJoinIntermediate, NSString;
 
 @interface NSSQLSubqueryExpressionIntermediate : NSSQLExpressionIntermediate {
     BOOL _allowMoreToMany;
     BOOL _allowTrailingKeypath;
     NSSQLFetchIntermediate *_fetchIntermediate;
     NSSQLEntity *_governingEntityForVariable;
+    BOOL _isCount;
+    NSMutableArray *_keypathsToPromote;
+    BOOL _onlyTrailIsCount;
     NSString *_selectEntityAlias;
+    NSMutableString *_selectFromCorrelationTarget;
     NSSQLEntity *_selectFromEntity;
+    BOOL _subqueryHasTruePredicate;
     NSExpression *_trailingKeypath;
     BOOL _useDistinct;
     NSString *_variableAlias;
     NSSQLColumn *_variableColumn;
     NSExpression *_variableExpression;
+    NSSQLJoinIntermediate *_variableJoin;
 }
 
 - (void)_createCollectionJoinsForFetchInContext:(id)arg1;
 - (void)_createSelectClauseInFetchWithContext:(id)arg1;
 - (id)_generateSQLForVariableExpression:(id)arg1 inContext:(id)arg2;
 - (BOOL)_isKeypathScopedToSubquery:(id)arg1;
+- (void)_promoteJoinsForSubqueryScopedKeypath:(id)arg1;
+- (void)_promoteJoinsForSubqueryScopedKeypaths;
 - (void)_setVariableColumn:(id)arg1;
 - (void)dealloc;
 - (id)fetchIntermediateForKeypathExpression:(id)arg1;

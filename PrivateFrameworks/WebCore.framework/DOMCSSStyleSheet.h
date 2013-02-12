@@ -7,6 +7,7 @@
 
 @property(retain,readonly) DOMCSSRuleList *cssRules;
 @property(retain,readonly) DOMCSSRule *ownerRule;
+@property(retain,readonly) DOMCSSRuleList *rules;
 
 - (NSInteger)addRule:(id)arg1 style:(id)arg2 index:(NSUInteger)arg3;
 - (id)cssRules;

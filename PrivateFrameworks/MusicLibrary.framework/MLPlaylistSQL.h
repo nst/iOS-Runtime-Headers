@@ -31,6 +31,7 @@
 - (id)name;
 - (unsigned long long)persistentUID;
 - (NSInteger)playlistType;
+- (void)prepareForSaving;
 - (unsigned long long)seedTrackPersistentID;
 - (void)setName:(id)arg1;
 - (void)setSeedTrack:(id)arg1;

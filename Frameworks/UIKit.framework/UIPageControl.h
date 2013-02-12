@@ -19,6 +19,11 @@
 @property BOOL hidesForSinglePage;
 @property NSInteger numberOfPages;
 
++ (void)_initializeSafeCategory;
+
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (NSInteger)_accessibilityPageControlCount;
+- (NSInteger)_accessibilityPageControlIndex;
 - (void)_commonPageControlInit;
 - (NSInteger)_displayedPage;
 - (id)_pageIndicatorCurrentImageForPage:(NSInteger)arg1;
@@ -27,6 +32,9 @@
 - (void)_setCurrentPage:(NSInteger)arg1;
 - (void)_setDisplayedPage:(NSInteger)arg1;
 - (void)_updateCurrentPageDisplay;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (NSInteger)currentPage;
 - (void)dealloc;
 - (BOOL)defersCurrentPageDisplay;
@@ -36,6 +44,7 @@
 - (BOOL)hidesForSinglePage;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
 - (NSInteger)numberOfPages;

@@ -5,7 +5,6 @@
 @class MPMediaServerItem, MPMediaServerQuery, NSArray;
 
 @interface MPMediaServerItemCollection : NSObject <NSCoding> {
-    NSInteger _containedMediaTypes;
     NSArray *_items;
     NSUInteger _itemsCount;
     MPMediaServerQuery *_itemsQuery;
@@ -13,12 +12,16 @@
 }
 
 @property(readonly) MPMediaServerQuery *itemsQuery;
+@property(readonly) MPMediaServerItem *representativeItem;
+@property(readonly) NSUInteger itemsCount;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItems:(id)arg1 representativeItem:(id)arg2 containedMediaTypes:(NSInteger)arg3;
-- (id)initWithItemsQuery:(id)arg1 itemsCount:(NSUInteger)arg2 representativeItem:(id)arg3 containedMediaTypes:(NSInteger)arg4;
+- (id)initWithItems:(id)arg1 representativeItem:(id)arg2;
+- (id)initWithItemsQuery:(id)arg1 itemsCount:(NSUInteger)arg2 representativeItem:(id)arg3;
+- (NSUInteger)itemsCount;
 - (id)itemsQuery;
+- (id)representativeItem;
 
 @end

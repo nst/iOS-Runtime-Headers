@@ -25,6 +25,7 @@
 - (id)name;
 - (unsigned long long)persistentUID;
 - (NSInteger)playlistType;
+- (void)prepareForSaving;
 - (void)removeTracksInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)replaceTracksInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withTracks:(id)arg2;
 - (id)representativeAlbumTrack;

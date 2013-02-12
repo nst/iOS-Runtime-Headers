@@ -11,7 +11,7 @@
     struct __CKSMSAddress { } *_smsAddress;
 }
 
-@property(readonly) __CKSMSAddress *smsAddress;
+@property __CKSMSAddress *smsAddress;
 
 + (id)copyAllSMSEntities;
 
@@ -33,6 +33,7 @@
 - (NSInteger)propertyType;
 - (id)rawAddress;
 - (void)resetCaches;
+- (void)setSmsAddress:(struct __CKSMSAddress { }*)arg1;
 - (struct __CKSMSAddress { }*)smsAddress;
 
 @end

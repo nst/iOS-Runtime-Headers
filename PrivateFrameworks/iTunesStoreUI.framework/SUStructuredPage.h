@@ -2,68 +2,57 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISItem, ISItemInfoDataSource, NSNumber, NSString, SUItemList, SUPageSectionGroup;
+@class NSString, SUItem, SUItemList, SUPageSectionGroup, SUStorePageProtocol;
 
-@interface SUStructuredPage : NSObject {
-    NSString *_clientApplication;
-    NSString *_copyright;
+@interface SUStructuredPage : NSObject <NSCopying> {
     BOOL _didShowDialog;
-    BOOL _excludeFromNavigationHistory;
-    NSNumber *_focusedItemIdentifier;
-    ISItem *_item;
-    ISItemInfoDataSource *_itemInfoDataSource;
+    NSInteger _displayStyle;
+    SUItem *_item;
     SUItemList *_itemList;
-    NSString *_rootSectionIdentifier;
+    SUStorePageProtocol *_protocol;
     SUPageSectionGroup *_sectionsGroup;
     NSString *_title;
     NSInteger _type;
+    BOOL _wantsIndexBar;
 }
 
-@property(retain) NSString *clientApplication;
-@property(retain) NSString *copyright;
-@property(retain) NSNumber *focusedItemIdentifier;
-@property(retain) ISItem *item;
-@property(retain) ISItemInfoDataSource *itemInfoDataSource;
+@property(retain) SUItem *item;
 @property(retain) SUItemList *itemList;
-@property(retain) NSString *rootSectionIdentifier;
+@property(retain) SUStorePageProtocol *protocol;
 @property(retain) SUPageSectionGroup *sectionsGroup;
 @property(retain) NSString *title;
 @property(readonly) BOOL didShowDialog;
+@property(readonly) NSInteger displayStyle;
 @property(readonly) BOOL hasDisplayableContent;
-@property BOOL shouldExcludeFromNavigationHistory;
 @property NSInteger type;
+@property(readonly) BOOL wantsIndexBar;
+
++ (NSInteger)_pageTypeForString:(id)arg1;
++ (NSInteger)pageTypeForStorePageDictionary:(id)arg1;
 
 - (id)_copyItemFromDictionary:(id)arg1;
+- (NSInteger)_displayStyleForString:(id)arg1;
 - (void)_parseItemsFromDictionary:(id)arg1;
-- (void)_parsePageTypeFromDictionary:(id)arg1;
 - (void)_parseProtocolFromDictionary:(id)arg1;
-- (NSInteger)_typeForString:(id)arg1;
-- (id)clientApplication;
-- (id)copyright;
+- (void)_parseTemplateParametersFromDictionary:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)didShowDialog;
-- (id)focusedItemIdentifier;
+- (NSInteger)displayStyle;
 - (BOOL)hasDisplayableContent;
-- (id)init;
 - (id)item;
-- (id)itemInfoDataSource;
 - (id)itemList;
 - (BOOL)loadFromDictionary:(id)arg1;
-- (id)rootSectionIdentifier;
+- (id)protocol;
 - (id)sectionsGroup;
-- (void)setClientApplication:(id)arg1;
-- (void)setCopyright:(id)arg1;
-- (void)setFocusedItemIdentifier:(id)arg1;
 - (void)setItem:(id)arg1;
-- (void)setItemInfoDataSource:(id)arg1;
 - (void)setItemList:(id)arg1;
-- (void)setRootSectionIdentifier:(id)arg1;
+- (void)setProtocol:(id)arg1;
 - (void)setSectionsGroup:(id)arg1;
-- (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setType:(NSInteger)arg1;
-- (BOOL)shouldExcludeFromNavigationHistory;
 - (id)title;
 - (NSInteger)type;
+- (BOOL)wantsIndexBar;
 
 @end

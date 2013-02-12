@@ -17,7 +17,7 @@
 + (void)_dequeueNextTranscodeOnMainThread;
 + (void)initialize;
 + (double)maxMMSTrimDurationForMediaType:(NSInteger)arg1;
-+ (id)transcodeOptionsWithMaxBytes:(NSInteger)arg1;
++ (id)transcodeOptionsWithMaxBytes:(NSInteger)arg1 forMediaType:(NSInteger)arg2;
 
 - (void)_beginRemakingOnMainThreadWithOptions:(id)arg1;
 - (void)_determineDurationOnMainThreadWithFile:(id)arg1;

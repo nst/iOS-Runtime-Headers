@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextMagnifierTimeWeightedPoint, UIView, UIView<UITextSelectingContainer>;
+@class UITextMagnifierTimeWeightedPoint, UITextSelection, UIView, UIView<UITextSelectingContainer>;
 
 @interface UITextMagnifierCaret : UIView <UITextMagnifier> {
     struct CGPoint { 
@@ -16,11 +16,13 @@
     } _magnificationPoint;
     UIView *_magnifierRenderer;
     } _offset;
+    UITextSelection *_selection;
     UIView<UITextSelectingContainer> *_target;
     UITextMagnifierTimeWeightedPoint *_weightedPoint;
     float _yOffset;
 }
 
+@property(retain) UITextSelection *selection;
 @property(retain) UIView<UITextSelectingContainer> *target;
 @property CGPoint animationPoint;
 @property CGPoint magnificationPoint;
@@ -35,7 +37,7 @@
 - (void)animateToMagnifierRenderer;
 - (struct CGPoint { float x1; float x2; })animationPoint;
 - (void)autoscrollWillNotStart;
-- (void)beginMagnifyingTarget:(id)arg1 magnificationPoint:(struct CGPoint { float x1; float x2; })arg2 offset:(struct CGPoint { float x1; float x2; })arg3 animated:(BOOL)arg4;
+- (void)beginMagnifyingSelection:(id)arg1 magnificationPoint:(struct CGPoint { float x1; float x2; })arg2 offset:(struct CGPoint { float x1; float x2; })arg3 animated:(BOOL)arg4;
 - (void)dealloc;
 - (void)detectLostTouches:(id)arg1;
 - (id)initWithDefaultFrame;
@@ -43,12 +45,14 @@
 - (struct CGPoint { float x1; float x2; })offset;
 - (void)postAutoscrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)remove;
+- (id)selection;
 - (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAutoscrollDirections:(NSInteger)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setNeedsDisplay;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSelection:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setToMagnifierRenderer;
 - (void)setYOffset:(float)arg1;

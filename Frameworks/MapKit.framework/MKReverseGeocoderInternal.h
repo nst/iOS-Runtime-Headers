@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKReverseGeocoderDelegate>, GMMRequester;
+@class <MKReverseGeocoderDelegate>, GMMRequester, MKPlacemark;
 
 @interface MKReverseGeocoderInternal : NSObject {
     struct { 
@@ -11,6 +11,7 @@
     } coordinate;
     <MKReverseGeocoderDelegate> *delegate;
     GMMRequester *requester;
+    MKPlacemark *storedPlacemark;
 }
 
 @end

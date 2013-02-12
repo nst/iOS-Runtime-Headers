@@ -14,6 +14,7 @@
     <VMUMemory> *_strMem;
 }
 
++ (unsigned long long)constantClassAttributeWithMemoryView:(id)arg1 form:(unsigned long long)arg2;
 + (id)dwarfExtractorWithMachOHeader:(id)arg1;
 
 - (void)dealloc;

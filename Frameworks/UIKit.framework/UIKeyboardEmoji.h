@@ -16,6 +16,9 @@
 @property(retain) NSString *name;
 @property unsigned short unicodeCharacter;
 
++ (void)_initializeSafeCategory;
+
+- (id)accessibilityLabel;
 - (id)codePoint;
 - (void)dealloc;
 - (id)image;

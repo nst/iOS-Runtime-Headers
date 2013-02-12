@@ -5,25 +5,34 @@
 @class OADHyperlink, OADOrientedBounds;
 
 @interface OADDrawableProperties : OADProperties {
-    BOOL mAspectRatioLocked;
+    unsigned int mHasAspectRatioLocked : 1;
+    unsigned int mAspectRatioLocked : 1;
+    unsigned int mHasWrdInline : 1;
+    unsigned int mWrdInline : 1;
     OADHyperlink *mClickHyperlink;
-    BOOL mHasAspectRatioLocked;
     OADHyperlink *mHoverHyperlink;
     OADOrientedBounds *mOrientedBounds;
 }
 
-- (BOOL)areOrientedBoundsOverridden;
 - (id)clickHyperlink;
 - (void)dealloc;
 - (BOOL)hasAspectRatioLocked;
+- (BOOL)hasClickHyperlink;
+- (BOOL)hasHoverHyperlink;
 - (BOOL)hasOrientedBounds;
+- (BOOL)hasWrdInline;
+- (NSUInteger)hash;
 - (id)hoverHyperlink;
 - (id)initWithDefaults;
 - (BOOL)isAspectRatioLocked;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isWrdInline;
 - (id)orientedBounds;
+- (void)removeUnnecessaryOverrides;
 - (void)setAspectRatioLocked:(BOOL)arg1;
 - (void)setClickHyperlink:(id)arg1;
 - (void)setHoverHyperlink:(id)arg1;
 - (void)setOrientedBounds:(id)arg1;
+- (void)setWrdInline:(BOOL)arg1;
 
 @end

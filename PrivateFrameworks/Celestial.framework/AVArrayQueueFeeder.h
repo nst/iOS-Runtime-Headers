@@ -12,6 +12,8 @@
 - (id)init;
 - (id)initWithArray:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (NSUInteger)itemCount;
+- (id)itemForIndex:(NSUInteger)arg1;
 - (NSUInteger)numberOfPaths;
 - (id)pathAtIndex:(NSUInteger)arg1;
 - (void)removeObjectAtIndex:(NSUInteger)arg1;

@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSPort;
 
 @interface NSConcreteTask : NSTask {
     NSMutableDictionary *_dictionary;
-    struct __CFFileDescriptor { } *_f;
+    struct dispatch_source_s { } *_dsrc;
     BOOL _hasExeced;
+    BOOL _hasPostedDeathNotification;
     BOOL _isRunning;
-    BOOL _padding[2];
+    BOOL _padding[1];
     NSInteger _pid;
     NSInteger _platformExitInfo;
     NSInteger _suspendCount;
+    NSPort *_tmpPort;
 }
 
 - (NSInteger)_platformExitInformation;
@@ -28,12 +30,14 @@
 - (void)launch;
 - (id)launchPath;
 - (void)launchWithDictionary:(id)arg1;
+- (id)preferredArchitectures;
 - (NSInteger)processIdentifier;
 - (BOOL)resume;
 - (void)setArguments:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setLaunchPath:(id)arg1;
+- (void)setPreferredArchitectures:(id)arg1;
 - (void)setStandardError:(id)arg1;
 - (void)setStandardInput:(id)arg1;
 - (void)setStandardOutput:(id)arg1;

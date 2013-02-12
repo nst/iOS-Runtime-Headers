@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface Account : BasicAccount <WeaklyReferencedObject> {
+@interface Account : BasicAccount <WeaklyReferencedObject, ASDynamicAccountClassLoader, AccountCreationProtocol> {
     unsigned int _isOffline : 1;
     unsigned int _autosynchronizingEnabled : 1;
     unsigned int _isActive : 2;
@@ -10,9 +10,9 @@
 
 + (id)accountPropertiesValueForKey:(id)arg1 value:(id)arg2;
 + (id)accountTypeString;
++ (id)accountWithBasicAccount:(id)arg1;
 + (BOOL)allObjectsInArrayAreOffline:(id)arg1;
 + (id)basicAccountProperties;
-+ (id)createAccountWithDictionary:(id)arg1;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
 + (BOOL)haveAccountsBeenConfigured;
@@ -20,8 +20,13 @@
 + (void)initialize;
 + (BOOL)isPredefinedAccountType;
 + (BOOL)isSSLEditable;
++ (void*)keychainProtocol;
++ (void)loadBundleForAccountClass:(id)arg1;
++ (BOOL)loadBundleForAccountWithProperties:(id)arg1;
 + (id)myFullName;
++ (id)newAccountWithDictionary:(id)arg1;
 + (id)predefinedValueForKey:(id)arg1;
++ (id)propertiesWhichRequireValidation;
 + (id)readAccountsUsingKey:(id)arg1;
 + (id)saslProfileName;
 + (void)saveAccountInfoToDefaults;
@@ -29,9 +34,8 @@
 + (id)supportedDataclasses;
 
 - (BOOL)_connectAndAuthenticate:(id)arg1;
-- (id)_createConnection;
-- (id)_initWithProperties:(id)arg1;
 - (void)_initializeState;
+- (id)_newConnection;
 - (void)_queueAccountInfoDidChange;
 - (void)_removePasswordInKeychain;
 - (void)_setAccountProperties:(id)arg1;
@@ -42,6 +46,7 @@
 - (void)applySettingsAsDefault:(id)arg1;
 - (id)authenticatedConnection;
 - (BOOL)canGoOffline;
+- (id)certUIService;
 - (Class)connectionClass;
 - (struct __CFString { }*)connectionServiceType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -57,12 +62,13 @@
 - (BOOL)enableAccount;
 - (id)hostname;
 - (id)init;
-- (id)initWithBasicAccount:(id)arg1;
+- (id)initWithProperties:(id)arg1;
 - (id)insecureConnectionSettings;
 - (BOOL)isActive;
 - (BOOL)isCommonPortNumber:(NSUInteger)arg1;
 - (BOOL)isOffline;
 - (BOOL)isPasswordMissing;
+- (void*)keychainAccessibility;
 - (NSUInteger)keychainPortNumber;
 - (id)managedTag;
 - (id)missingPasswordErrorWithTitle:(id)arg1;
@@ -97,9 +103,7 @@
 - (void)setPasswordInKeychain:(id)arg1;
 - (void)setPortNumber:(NSUInteger)arg1;
 - (void)setPreferredAuthScheme:(id)arg1;
-- (void)setTemporaryPassword:(id)arg1;
 - (void)setTryDirectSSL:(BOOL)arg1;
-- (void)setUserApprovedCertificateDigest:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (void)setUsesSSL:(BOOL)arg1;
 - (void)setValueInAccountProperties:(id)arg1 forKey:(id)arg2;
@@ -108,7 +112,6 @@
 - (BOOL)storesPassword;
 - (id)syncStoreIdentifier;
 - (id)uniqueId;
-- (id)userApprovedCertificateDigest;
 - (id)username;
 - (BOOL)usesSSL;
 - (void)validateConnections;

@@ -16,7 +16,9 @@
 - (id)camera;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (id)lightRig;
 - (void)setBackdrop:(id)arg1;
 - (void)setCamera:(id)arg1;

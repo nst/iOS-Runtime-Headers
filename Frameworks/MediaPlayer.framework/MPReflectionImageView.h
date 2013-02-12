@@ -2,18 +2,34 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView;
+@class UIGradient, UIImageView;
 
 @interface MPReflectionImageView : UIView {
+    unsigned int _nonSquareImage : 1;
     UIImageView *_imageView;
     UIImageView *_reflection;
+    UIGradient *_reflectionGradient;
+    float _reflectionHeight;
 }
 
+@property(retain) UIGradient *reflectionGradient;
+@property BOOL squareImage;
+
++ (void)_initializeSafeCategory;
+
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (id)albumArtImage;
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })imageSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
+- (id)reflectionGradient;
 - (void)setAlbumAlpha:(float)arg1 reflectionAlpha:(float)arg2;
-- (void)setAlbumArtImage:(id)arg1 maxSize:(float)arg2;
+- (void)setAlbumArtImage:(id)arg1;
+- (void)setReflectionGradient:(id)arg1;
 - (void)setReflectionVisible:(BOOL)arg1 withDuration:(float)arg2;
+- (void)setSquareImage:(BOOL)arg1;
+- (BOOL)squareImage;
 
 @end

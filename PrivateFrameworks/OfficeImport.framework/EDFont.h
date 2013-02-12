@@ -6,30 +6,32 @@
    See Warning(s) below.
  */
 
-@class EDColorReference, EDResources, NSFontStub, NSString;
+@class EDColorReference, EDResources, NSString;
 
 @interface EDFont : NSObject <NSCopying, EDImmutableObject> {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: @20@0:4@8B12B16 */
+     /* Encoded args for previous method: @20@0:4@8B12B16 */
+     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
+     /* Encoded args for previous method: B8@0:4 */
     NSInteger mCharSet;
     EDColorReference *mColorReference;
     NSInteger mFamily;
     double mHeightInTwips;
-    NSFontStub *mNSFont;
     NSString *mName;
     EDResources *mResources;
     NSInteger mScript;
@@ -41,15 +43,18 @@
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mHeightOverridden;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mItalic;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mItalicOverridden;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mNSFontValid;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mOutline;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mShadow;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mStrike;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mStrikeOverridden;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mUnderlineOverridden;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mWeightOverridden;
 }
 
++ (id)filterFontName:(id)arg1;
++ (id)fontNameWithFamilyName:(id)arg1 bold:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2 italic:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
 + (id)fontWithResources:(id)arg1;
++ (id)lassoNameForFontName:(id)arg1 bold:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2 italic:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg3;
 
 - (NSInteger)charSet;
 - (id)color;
@@ -57,6 +62,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (NSInteger)family;
+- (id)filteredName;
 - (double)height;
 - (id)initWithResources:(id)arg1;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isBold;
@@ -71,8 +77,9 @@
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isStrike;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isStrikeOverridden;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isUnderlineOverridden;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isWeightOverridden;
+- (id)lassoName;
 - (id)name;
-- (id)nsFont;
 - (NSInteger)script;
 - (void)setBold:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setCharSet:(NSInteger)arg1;

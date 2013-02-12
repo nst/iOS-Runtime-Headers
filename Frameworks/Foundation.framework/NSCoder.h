@@ -5,6 +5,11 @@
 @interface NSCoder : NSObject {
 }
 
+- (BOOL)CA_decodeCGFloatArray:(float*)arg1 count:(unsigned long)arg2 forKey:(id)arg3;
+- (id)CA_decodeObjectForKey:(id)arg1;
+- (void)CA_encodeCGFloatArray:(const float*)arg1 count:(unsigned long)arg2 forKey:(id)arg3;
+- (void)CA_encodeObject:(id)arg1 forKey:(id)arg2 conditional:(BOOL)arg3;
+- (id)_copyDecodedObjectForKey:(id)arg1 ofClass:(Class)arg2;
 - (BOOL)allowsKeyedCoding;
 - (BOOL)containsValueForKey:(id)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(NSUInteger)arg2 at:(void*)arg3;
@@ -15,6 +20,9 @@
 - (struct CGPoint { float x1; float x2; })decodeCGPointForKey:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })decodeCGSizeForKey:(id)arg1;
+- (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })decodeCMTimeForKey:(id)arg1;
+- (struct { struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })decodeCMTimeMappingForKey:(id)arg1;
+- (struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })decodeCMTimeRangeForKey:(id)arg1;
 - (id)decodeDataObject;
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
@@ -23,7 +31,6 @@
 - (NSInteger)decodeIntForKey:(id)arg1;
 - (NSInteger)decodeIntegerForKey:(id)arg1;
 - (long)decodeLongForKey:(id)arg1;
-- (unsigned long)decodeMessageFlags;
 - (id)decodeObject;
 - (id)decodeObjectForKey:(id)arg1;
 - (struct CGPoint { float x1; float x2; })decodePoint;
@@ -45,6 +52,9 @@
 - (void)encodeCGPoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (void)encodeCGSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCMTime:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg1 forKey:(id)arg2;
+- (void)encodeCMTimeMapping:(struct { struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; NSInteger x_1_2_2; NSUInteger x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; NSInteger x_2_2_2; NSUInteger x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)encodeCMTimeRange:(struct { struct { long long x_1_1_1; NSInteger x_1_1_2; NSUInteger x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; NSInteger x_2_1_2; NSUInteger x_2_1_3; long long x_2_1_4; } x2; })arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeConditionalObject:(id)arg1;
 - (void)encodeDataObject:(id)arg1;
@@ -68,6 +78,7 @@
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)encodeValuesOfObjCTypes:(const char *)arg1;
 - (struct _NSZone { }*)objectZone;
+- (void)safeEncodeUIColor:(id)arg1 forKey:(id)arg2;
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)systemVersion;
 - (NSInteger)versionForClassName:(id)arg1;

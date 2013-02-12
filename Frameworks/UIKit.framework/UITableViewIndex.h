@@ -27,9 +27,17 @@
 @property(readonly) BOOL pastTop;
 @property(readonly) NSInteger selectedSection;
 
++ (void)_initializeSafeCategory;
+
+- (void)_accessibilityBumpValue:(BOOL)arg1;
 - (id)_createTouchesWithMouseEvent:(struct __GSEvent { }*)arg1 phase:(NSInteger)arg2;
 - (id)_displayTitles;
 - (void)_selectSectionForTouch:(id)arg1 withEvent:(id)arg2;
+- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (void)accessibilityDecrement;
+- (void)accessibilityIncrement;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -38,6 +46,7 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)font;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (NSUInteger)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;

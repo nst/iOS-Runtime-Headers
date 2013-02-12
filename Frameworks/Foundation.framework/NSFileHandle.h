@@ -6,19 +6,24 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)createFileAtPath:(id)arg1 flags:(NSInteger)arg2 mode:(NSInteger)arg3;
 + (id)fileHandleForReadingAtPath:(id)arg1;
-+ (id)fileHandleForTempFile:(id*)arg1 atPath:(id)arg2 mode:(NSInteger)arg3;
++ (id)fileHandleForReadingFromURL:(id)arg1 error:(id*)arg2;
 + (id)fileHandleForUpdatingAtPath:(id)arg1;
++ (id)fileHandleForUpdatingURL:(id)arg1 error:(id*)arg2;
 + (id)fileHandleForWritingAtPath:(id)arg1;
++ (id)fileHandleForWritingToURL:(id)arg1 error:(id*)arg2;
 + (id)fileHandleWithNullDevice;
 + (id)fileHandleWithStandardError;
 + (id)fileHandleWithStandardInput;
 + (id)fileHandleWithStandardOutput;
++ (void)initialize;
++ (id)mf_createFileAtPath:(id)arg1 flags:(NSInteger)arg2 mode:(NSInteger)arg3;
++ (id)mf_fileHandleForTempFile:(id*)arg1 atPath:(id)arg2 mode:(NSInteger)arg3;
 
 - (id)availableData;
 - (void)closeFile;
 - (NSInteger)fileDescriptor;
+- (id)initWithPath:(id)arg1 flags:(NSInteger)arg2 createMode:(NSInteger)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(NSInteger)arg2 createMode:(NSInteger)arg3;
 - (unsigned long long)offsetInFile;
 - (id)readDataOfLength:(NSUInteger)arg1;

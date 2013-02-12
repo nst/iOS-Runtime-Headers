@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCameraFocusView, UIView;
+@class <PLPreviewViewDelegate>, PLCameraFocusView, UIView;
 
 @interface PLPreviewView : UIView {
     struct CGPoint { 
@@ -11,24 +11,40 @@
     unsigned int _canShowFocus : 1;
     unsigned int _controlsAreVisible : 1;
     PLCameraFocusView *_autoFocusView;
+    <PLPreviewViewDelegate> *_delegate;
     UIView *_disabledView;
     PLCameraFocusView *_focusView;
+    UIView *_snapshotView;
     } _touchLocation;
 }
 
+@property <PLPreviewViewDelegate> *delegate;
+
++ (void)_initializeSafeCategory;
+
 - (void)_focusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_handleDoubleTap:(id)arg1;
+- (void)_handleSingleTap:(id)arg1;
+- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canResignFirstResponder;
 - (void)dealloc;
+- (id)delegate;
 - (void)focusDidEnd;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (void)motionEnded:(NSInteger)arg1 withEvent:(id)arg2;
 - (void)removeFocusView;
+- (void)setCameraIsChangingModes:(BOOL)arg1;
 - (void)setControlsAreVisible:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDontShowFocus:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)showAutofocusView;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)showAutofocusViewWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unzoomedFrame;
+- (void)zoomFromFactor:(float)arg1 toFactor:(float)arg2;
 
 @end

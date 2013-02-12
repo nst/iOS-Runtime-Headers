@@ -14,9 +14,9 @@
         unsigned int reserved : 27; 
     void *_NSUndoManagerReserved1;
     void *_NSUndoManagerReserved2;
-    void *_NSUndoManagerReserved3;
     NSInteger _disabled;
     } _flags;
+    id _proxy;
     id _redoStack;
     NSArray *_runLoopModes;
     id _target;
@@ -24,12 +24,20 @@
 }
 
 + (void)_endTopLevelGroupings;
++ (void)_initializeSafeCategory;
 + (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(BOOL)arg1;
 
+- (void)_cancelAutomaticTopLevelGroupEnding;
+- (void)_commitUndoGrouping;
+- (BOOL)_endUndoGroupRemovingIfEmpty:(BOOL)arg1;
+- (void)_forwardTargetInvocation:(id)arg1;
+- (id)_methodSignatureForTargetSelector:(SEL)arg1;
 - (void)_postCheckpointNotification;
 - (void)_prepareEventGrouping;
 - (void)_processEndOfEventNotification:(id)arg1;
 - (void)_registerUndoObject:(id)arg1;
+- (void)_rollbackUndoGrouping;
+- (void)_scheduleAutomaticTopLevelGroupEnding;
 - (void)_setGroupIdentifier:(id)arg1;
 - (BOOL)_shouldCoalesceTypingForText:(id)arg1 :(id)arg2;
 - (id)_undoStack;
@@ -40,8 +48,6 @@
 - (void)disableUndoRegistration;
 - (void)enableUndoRegistration;
 - (void)endUndoGrouping;
-- (void)finalize;
-- (void)forwardInvocation:(id)arg1;
 - (NSInteger)groupingLevel;
 - (BOOL)groupsByEvent;
 - (id)init;
@@ -49,7 +55,6 @@
 - (BOOL)isUndoRegistrationEnabled;
 - (BOOL)isUndoing;
 - (NSUInteger)levelsOfUndo;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (id)prepareWithInvocationTarget:(id)arg1;
 - (void)redo;
 - (id)redoActionName;

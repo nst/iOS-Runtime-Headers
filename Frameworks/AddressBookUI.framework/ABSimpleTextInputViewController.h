@@ -2,25 +2,27 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABSimpleTextInputViewControllerDelegate>, NSString;
+@class <ABSimpleTextInputViewControllerDelegate>, <ABStyleProvider>, NSString;
 
 @interface ABSimpleTextInputViewController : UITableViewController <ABPropertyEditingTableViewCellDelegate> {
     <ABSimpleTextInputViewControllerDelegate> *_delegate;
     NSString *_placeholder;
+    <ABStyleProvider> *_styleProvider;
     id _value;
 }
 
 @property <ABSimpleTextInputViewControllerDelegate> *delegate;
 @property(copy) NSString *placeholder;
 @property(copy) NSString *stringValue;
+@property(retain) <ABStyleProvider> *styleProvider;
 
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (float)ab_heightToFitForViewInPopoverView;
 - (void)cancel:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (void)loadView;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (id)placeholder;
 - (void)propertyEditingTableViewCell:(id)arg1 valueDidChange:(id)arg2;
@@ -28,16 +30,17 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (void)setStringValue:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
 - (void)setTitleLocalizationKey:(id)arg1;
 - (id)stringValue;
+- (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (void)updateEdgeInsetsForOrientation:(NSInteger)arg1;
 - (void)updateSaveButton;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

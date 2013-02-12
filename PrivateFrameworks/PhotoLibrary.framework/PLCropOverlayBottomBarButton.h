@@ -6,7 +6,6 @@
 }
 
 - (id)initWithTitle:(id)arg1 isDoneButton:(BOOL)arg2;
-- (void)layoutSubviews;
-- (void)setTitle:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

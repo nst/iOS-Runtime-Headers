@@ -35,6 +35,16 @@
 @property float minimumValue;
 @property float value;
 
++ (void)_initializeSafeCategory;
+
+- (id)_accessibilityAbsoluteValue;
+- (void)_accessibilityBumpValue:(BOOL)arg1;
+- (float)_accessibilityIncreaseAmount:(BOOL)arg1;
+- (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
+- (float)_accessibilityMaxValue;
+- (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
+- (float)_accessibilityMinValue;
+- (void)_accessibilitySetValue:(id)arg1;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (id)_contentForState:(NSUInteger)arg1;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
@@ -64,6 +74,11 @@
 - (id)_thumbImageForState:(NSUInteger)arg1;
 - (BOOL)_trackEnabled;
 - (void)_updateAppearanceForEnabled:(BOOL)arg1;
+- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (void)accessibilityDecrement;
+- (void)accessibilityIncrement;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)cancelMouseTracking;
@@ -75,12 +90,14 @@
 - (id)currentMinimumTrackImage;
 - (id)currentThumbImage;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isAnimatingValueChange;
 - (BOOL)isContinuous;

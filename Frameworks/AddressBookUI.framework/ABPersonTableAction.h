@@ -4,27 +4,31 @@
 
 @class <ABPersonTableActionDelegate>, NSString, UIButton;
 
-@interface ABPersonTableAction : NSObject {
+@interface ABPersonTableAction : NSObject <ABStyleProviding> {
     BOOL _allowDifferentiationSheet;
     UIButton *_button;
     <ABPersonTableActionDelegate> *_delegate;
-    BOOL _deleteStyle;
+    NSString *_detailText;
     NSString *_differentiationSheetTitle;
     BOOL _displaysShortTitle;
     NSInteger _grouping;
+    NSString *_imageName;
     NSInteger _ordering;
     struct __CFArray { } *_properties;
     NSInteger _property;
     SEL _selector;
     NSString *_shortTitle;
+    NSInteger _style;
     id _target;
     NSString *_title;
 }
 
 @property(readonly) UIButton *button;
 @property <ABPersonTableActionDelegate> *delegate;
+@property(readonly) NSString *detailText;
 @property(copy) NSString *differentiationSheetTitle;
 @property(readonly) UIButton *existingButton;
+@property(copy) NSString *imageName;
 @property __CFArray *properties;
 @property(readonly) NSString *shortTitle;
 @property(readonly) UITableViewCell *tableViewCell;
@@ -35,9 +39,8 @@
 @property NSInteger ordering;
 @property(readonly) NSInteger property;
 @property(readonly) SEL selector;
+@property(readonly) NSInteger style;
 @property(readonly) id target;
-
-+ (BOOL)array:(id)arg1 containsActionWithTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(NSInteger)arg5 ordering:(NSInteger)arg6 outIndex:(NSInteger*)arg7;
 
 - (BOOL)allowDifferentiationSheet;
 - (id)button;
@@ -46,16 +49,20 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
+- (id)detailText;
 - (id)differentiationSheetTitle;
 - (BOOL)displaysShortTitle;
 - (id)existingButton;
 - (NSInteger)grouping;
-- (id)initWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(NSInteger)arg5 deleteStyle:(BOOL)arg6;
+- (id)imageName;
+- (id)initWithTitle:(id)arg1 detailText:(id)arg2 style:(NSInteger)arg3 target:(id)arg4 selector:(SEL)arg5;
+- (id)initWithTitle:(id)arg1 shortTitle:(id)arg2 detailText:(id)arg3 style:(NSInteger)arg4 target:(id)arg5 selector:(SEL)arg6 property:(NSInteger)arg7;
 - (id)initWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(NSInteger)arg5;
-- (id)initWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 deleteStyle:(BOOL)arg4;
-- (id)initWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(NSInteger)arg4 deleteStyle:(BOOL)arg5;
+- (id)initWithTitle:(id)arg1 style:(NSInteger)arg2 target:(id)arg3 selector:(SEL)arg4;
+- (void)modifyDetailText:(id)arg1;
 - (NSInteger)ordering;
-- (void)performWithSender:(id)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
+- (void)performWithSender:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (void)prepareButton:(id)arg1 forValueAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
 - (void)prepareTableViewCell:(id)arg1;
 - (struct __CFArray { }*)properties;
 - (NSInteger)property;
@@ -65,9 +72,12 @@
 - (void)setDifferentiationSheetTitle:(id)arg1;
 - (void)setDisplaysShortTitle:(BOOL)arg1;
 - (void)setGrouping:(NSInteger)arg1;
+- (void)setImageName:(id)arg1;
 - (void)setOrdering:(NSInteger)arg1;
 - (void)setProperties:(struct __CFArray { }*)arg1;
 - (id)shortTitle;
+- (NSInteger)style;
+- (id)styleProvider;
 - (id)tableViewCell;
 - (id)target;
 - (id)title;

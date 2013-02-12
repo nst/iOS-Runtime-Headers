@@ -16,6 +16,7 @@
 + (id)collectionWithItems:(id)arg1;
 
 - (id)_init;
+- (id)_initWithItemsQuery:(id)arg1 itemsCount:(NSUInteger)arg2 representativeItem:(id)arg3;
 - (NSUInteger)count;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

@@ -5,4 +5,25 @@
 @interface __NSCFArray : NSMutableArray {
 }
 
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+
+- (void)addObject:(id)arg1;
+- (Class)classForCoder;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)count;
+- (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
+- (void)finalize;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (NSUInteger)hash;
+- (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)objectAtIndex:(NSUInteger)arg1;
+- (oneway void)release;
+- (void)removeLastObject;
+- (void)removeObjectAtIndex:(NSUInteger)arg1;
+- (void)replaceObjectAtIndex:(NSUInteger)arg1 withObject:(id)arg2;
+- (id)retain;
+- (NSUInteger)retainCount;
+
 @end

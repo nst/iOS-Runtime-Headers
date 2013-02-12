@@ -9,6 +9,7 @@
 
 + (id)anyArchitecture;
 + (id)architectureWithCpuType:(NSInteger)arg1 cpuSubtype:(NSInteger)arg2;
++ (id)armArchitecture;
 + (id)currentArchitecture;
 + (id)i386Architecture;
 + (void)initialize;

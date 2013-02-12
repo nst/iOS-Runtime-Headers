@@ -8,6 +8,7 @@
     BOOL _padding[3];
     NSArray *contents;
     BOOL cross;
+    NSUInteger depth;
     NSFileAttributes *directoryAttributes;
     NSUInteger idx;
     NSString *path;
@@ -16,14 +17,16 @@
     NSAllDescendantPathsEnumerator *under;
 }
 
-+ (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(BOOL)arg4;
++ (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(BOOL)arg4 depth:(NSUInteger)arg5;
 
 - (id)_under;
 - (id)currentSubdirectoryAttributes;
 - (void)dealloc;
 - (id)directoryAttributes;
 - (id)fileAttributes;
+- (NSUInteger)level;
 - (id)nextObject;
+- (void)skipDescendants;
 - (void)skipDescendents;
 
 @end

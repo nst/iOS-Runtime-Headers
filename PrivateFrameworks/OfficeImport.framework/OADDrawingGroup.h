@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, OADShapeProperties;
+@class NSMutableArray, OADShapeProperties;
 
 @interface OADDrawingGroup : NSObject {
-    NSMutableDictionary *mBlips;
+    NSMutableArray *mBlips;
     OADShapeProperties *mShapeDefaults;
 }
 
-- (void)addBlip:(id)arg1 atIndex:(long)arg2;
+- (unsigned long)addBlip:(id)arg1;
 - (id)blipAtIndex:(long)arg1;
+- (unsigned long)blipCount;
+- (id)blips;
 - (void)dealloc;
 - (id)init;
 - (id)shapeDefaults;

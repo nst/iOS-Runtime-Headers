@@ -13,5 +13,6 @@
 
 - (void)dealloc;
 - (id)init;
+- (id)initWithStorageLocation:(id)arg1;
 
 @end

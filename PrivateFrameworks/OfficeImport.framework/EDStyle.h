@@ -9,19 +9,19 @@
 @class EDProtection, EDResources;
 
 @interface EDStyle : NSObject <NSCopying, EDImmutableObject> {
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
-     /* Encoded args for previous method: v12@0:4B8 */
     NSUInteger mAlignmentInfoIndex;
     NSUInteger mBordersIndex;
     NSUInteger mContentFormatId;
@@ -85,7 +85,7 @@
 - (void)setFont:(id)arg1;
 - (void)setFontIndex:(NSUInteger)arg1;
 - (void)setFontOverridden:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
-- (void)setIndex:(NSInteger)arg1;
+- (void)setIndex:(NSUInteger)arg1;
 - (void)setParent:(id)arg1;
 - (void)setParentIndex:(NSUInteger)arg1;
 - (void)setProtection:(id)arg1;

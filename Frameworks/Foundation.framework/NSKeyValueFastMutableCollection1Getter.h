@@ -10,7 +10,6 @@
 }
 
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithContainerClassID:(id)arg1 key:(id)arg2 nonmutatingMethods:(id)arg3 mutatingMethods:(id)arg4 proxyClass:(Class)arg5;
 - (id)mutatingMethods;
 - (id)nonmutatingMethods;

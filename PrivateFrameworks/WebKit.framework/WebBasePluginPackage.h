@@ -25,6 +25,7 @@
 - (id)MIMETypeForExtension:(id)arg1;
 - (oneway void)_webcore_releaseOnWebThread;
 - (id)bundle;
+- (void)createPropertyListFile;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionForMIMEType:(id)arg1;

@@ -2,57 +2,104 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, SUViewControllerContext;
+@class NSMutableArray, SUViewControllerContext, SUViewControllerScriptProperties, UIViewController;
 
 @interface SUViewController : UIViewController <ISOperationDelegate> {
-    BOOL _beganTransitionSafety;
+    SUViewControllerScriptProperties *_cachedScriptProperties;
+    NSMutableArray *_cancelOnDeallocOperations;
     BOOL _excludeFromNavigationHistory;
-    SUViewControllerContext *_jetsamContext;
+    UIViewController *_footerViewController;
     BOOL _loading;
+    SUViewControllerContext *_memoryPurgeContext;
     NSMutableArray *_operations;
     NSMutableArray *_pendingDialogs;
     SUViewControllerContext *_restoredContext;
+    BOOL _shouldInvalidateForMemoryPurge;
+    NSInteger _transitionSafetyCount;
 }
 
 @property(readonly) NSString *defaultPNGName;
+@property(readonly) UIViewController *footerViewController;
+@property(retain,readonly) SUNavigationItem *navigationItem;
+@property(readonly) double defaultPNGExpirationTime;
 @property(getter=isLoading) BOOL loading;
 @property BOOL shouldExcludeFromNavigationHistory;
+@property BOOL shouldInvalidateForMemoryPurge;
 @property(readonly) NSInteger statusBarStyle;
+@property(getter=isVisible,readonly) BOOL visible;
+@property(getter=isVisibleAndFrontmost,readonly) BOOL visibleAndFrontmost;
 
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (BOOL)_canReloadView;
 - (void)_dialogFinishedNotification:(id)arg1;
-- (void)_updateTabBarItem:(id)arg1 withCount:(NSInteger)arg2 animated:(BOOL)arg3 blink:(BOOL)arg4;
+- (void)_dismissFooterAnimationDidStop:(id)arg1;
+- (id)_existingNavigationItem;
+- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (void)_keyboardDidHideNotification:(id)arg1;
+- (void)_keyboardDidShowNotification:(id)arg1;
+- (void)_keyboardWillHideNotification:(id)arg1;
+- (void)_keyboardWillShowNotification:(id)arg1;
+- (NSInteger)_preferredInterfaceOrientationGivenCurrentOrientation:(NSInteger)arg1;
+- (void)_presentFooterAnimationDidStop;
+- (void)_setExistingNavigationItem:(id)arg1;
+- (void)applicationDidEnterBackground;
 - (void)applicationDidResume;
+- (void)applicationWillEnterForeground;
 - (void)applicationWillSuspend;
 - (void)cancelOperations;
 - (id)copyArchivableContext;
+- (id)copyChildViewControllersForReason:(NSInteger)arg1;
+- (id)copyDefaultScriptProperties;
+- (id)copyScriptProperties;
 - (void)dealloc;
+- (double)defaultPNGExpirationTime;
 - (id)defaultPNGName;
+- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (void)dismissAfterDialogs;
-- (void)enqueueOperation:(id)arg1;
+- (void)dismissFooterViewControllerAnimated:(BOOL)arg1;
+- (void)enqueueOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
+- (id)footerViewController;
 - (void)handleApplicationURL:(id)arg1;
+- (id)init;
 - (id)initWithSection:(id)arg1;
+- (NSInteger)interfaceOrientation;
+- (void)invalidateForMemoryPurge;
 - (BOOL)isLoading;
+- (BOOL)isVisible;
+- (BOOL)isVisibleAndFrontmost;
 - (void)loadView;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
+- (id)navigationItem;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operationFinished:(id)arg1;
-- (void)presentDialog:(id)arg1 pendUntilVisible:(BOOL)arg2;
-- (void)presentDialogForError:(id)arg1 pendUntilVisible:(BOOL)arg2;
+- (BOOL)presentDialog:(id)arg1 pendUntilVisible:(BOOL)arg2;
+- (BOOL)presentDialogForError:(id)arg1 pendUntilVisible:(BOOL)arg2;
+- (void)presentFooterViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)purgeMemoryForReason:(NSInteger)arg1;
 - (void)reload;
+- (void)reloadContentSizeForViewInPopover;
 - (void)resetRestoredContext;
 - (void)restoreArchivableContext:(id)arg1;
-- (void)setBadgeCount:(NSInteger)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (void)setLoading:(BOOL)arg1;
+- (void)setParentViewController:(id)arg1;
+- (void)setScriptProperties:(id)arg1;
+- (void)setSection:(id)arg1;
 - (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
+- (void)setShouldInvalidateForMemoryPurge:(BOOL)arg1;
+- (void)setTitle:(id)arg1;
 - (BOOL)shouldExcludeFromNavigationHistory;
+- (BOOL)shouldInvalidateForMemoryPurge;
 - (NSInteger)statusBarStyle;
-- (void)trackOperation:(id)arg1;
+- (void)storePageProtocolDidChange;
+- (void)trackOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(NSInteger)arg2;
 
 @end

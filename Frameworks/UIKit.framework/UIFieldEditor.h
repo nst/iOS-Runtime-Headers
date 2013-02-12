@@ -8,15 +8,14 @@
     unsigned int _changingView : 1;
     unsigned int _mouseWasDragged : 1;
     unsigned int _disableNotifications : 1;
-    unsigned int _shouldMaintainFirstResponderWhenEndEditing : 1;
     unsigned int _isResigningFirstResponder : 1;
     unsigned int _delegateRespondsToFieldEditorDidChange : 1;
     unsigned int _delegateRespondsToShouldInsertText : 1;
     unsigned int _delegateRespondsToShouldReplaceWithText : 1;
     unsigned int _fieldEditorReentrancyGuard : 1;
     unsigned int _reserved : 22;
+    NSString *_currentStyle;
     DOMDocument *_document;
-    NSString *_initialStyle;
     NSString *_initialText;
     UIView *_proxiedView;
     DOMHTMLElement *_sizeElement;
@@ -25,21 +24,19 @@
 
 @property CGPoint autoscrollContentOffset;
 
++ (void)_initializeSafeCategory;
 + (id)activeFieldEditor;
 + (void)releaseSharedInstance;
 + (id)sharedFieldEditor;
 
-- (id)_parentTextViewForLoupe;
 - (id)_responderForBecomeFirstResponder;
+- (void)_selectNSRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)_setTextElementString:(id)arg1;
 - (void)_setTextElementStyle:(id)arg1;
-- (BOOL)_usesSingleLineSelectionBehavior;
 - (id)automaticallySelectedOverlay;
 - (struct CGPoint { float x1; float x2; })autoscrollContentOffset;
 - (void)autoscrollWillNotStart;
 - (void)becomeFieldEditorForView:(id)arg1;
-- (BOOL)becomeFirstResponder;
-- (BOOL)canResignFirstResponder;
 - (NSUInteger)characterOffsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameForView:(id)arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
@@ -47,19 +44,17 @@
 - (void)dealloc;
 - (BOOL)hasMarkedText;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isProxyFor:(id)arg1;
-- (NSInteger)keyboardInput:(id)arg1 positionForAutocorrection:(id)arg2;
+- (id)interactionAssistant;
+- (BOOL)isAccessibilityElement;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (BOOL)keyboardInputChanged:(id)arg1;
 - (void)keyboardInputChangedSelection:(id)arg1;
 - (BOOL)keyboardInputShouldDelete:(id)arg1;
-- (void)maintainFieldEditorWhenEndEditingForView:(id)arg1;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (BOOL)mouseEventsChangeSelection;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (id)proxiedView;
-- (BOOL)resignFirstResponder;
 - (void)resumeWithNotification:(id)arg1;
 - (void)revealSelection;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
@@ -81,7 +76,7 @@
 - (void)setStyle:(id)arg1;
 - (void)setText:(id)arg1 andSetCaretSelectionAfterText:(BOOL)arg2;
 - (void)setTextSelectionBehavior:(NSInteger)arg1;
-- (BOOL)shouldChangeSelectionForEvent:(struct __GSEvent { }*)arg1;
+- (id)sizeStyleForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
 - (id)style;
 - (id)text;

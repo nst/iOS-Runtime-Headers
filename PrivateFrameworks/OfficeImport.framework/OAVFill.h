@@ -5,10 +5,11 @@
 @interface OAVFill : NSObject {
 }
 
-+ (id)readBlipRefFromManager:(id)arg1;
-+ (id)readFromManager:(id)arg1;
++ (void)addStopsFromArray:(const struct OAVGradientStop { id x1; float x2; }*)arg1 stopCount:(NSInteger)arg2 inverted:(BOOL)arg3 startPos:(float)arg4 endPos:(float)arg5 toGradientFill:(id)arg6 manager:(id)arg7;
++ (id)readBlipRefFromManager:(id)arg1 state:(id)arg2;
++ (id)readFromManager:(id)arg1 state:(id)arg2;
 + (void)readGradientFill:(id)arg1 fromManager:(id)arg2;
-+ (void)readImageFill:(id)arg1 fromManager:(id)arg2;
++ (void)readImageFill:(id)arg1 fromManager:(id)arg2 state:(id)arg3;
 + (id)targetBgColorWithManager:(id)arg1;
 + (id)targetFgColorWithManager:(id)arg1;
 

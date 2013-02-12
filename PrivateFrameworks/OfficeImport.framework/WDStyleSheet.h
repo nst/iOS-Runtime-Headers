@@ -20,6 +20,7 @@
 - (void)addStyle:(id)arg1 name:(id)arg2;
 - (void)createDefaultStyles;
 - (id)createStyleWithId:(id)arg1 type:(NSInteger)arg2;
+- (id)createStyleWithName:(id)arg1 type:(NSInteger)arg2;
 - (void)dealloc;
 - (id)defaultCharacterProperties;
 - (id)defaultCharacterStyle;
@@ -30,6 +31,7 @@
 - (id)document;
 - (id)initWithDocument:(id)arg1;
 - (void)initializeDefaultProperties;
+- (id)paragraphStyleWithStartingName:(id)arg1;
 - (void)removeStyleWithId:(id)arg1;
 - (void)setDefaultCharacterStyle:(id)arg1;
 - (void)setDefaultListStyle:(id)arg1;
@@ -39,6 +41,7 @@
 - (NSInteger)styleCount;
 - (id)styleIdForName:(id)arg1;
 - (id)styleIdFromStyleName:(id)arg1;
+- (id)styleNameToId:(id)arg1;
 - (id)styleWithId:(id)arg1;
 - (id)styleWithName:(id)arg1;
 - (id)styles;

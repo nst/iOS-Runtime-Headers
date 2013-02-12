@@ -21,5 +21,7 @@
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapColumnGridAt:(id)arg1 withState:(id)arg2;
 - (void)mapTablePropertiesWithState:(id)arg1;
+- (NSUInteger)rowCount;
+- (id)tableBorderStyle;
 
 @end

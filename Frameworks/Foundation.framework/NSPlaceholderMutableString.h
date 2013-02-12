@@ -18,7 +18,7 @@
 - (id)initWithFormat:(id)arg1 locale:(id)arg2 arguments:(void*)arg3;
 - (id)initWithString:(id)arg1;
 - (NSUInteger)length;
-- (void)release;
+- (oneway void)release;
 - (void)replaceCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withString:(id)arg2;
 - (id)retain;
 - (NSUInteger)retainCount;

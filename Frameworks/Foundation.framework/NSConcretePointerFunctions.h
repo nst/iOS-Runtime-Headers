@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSWeakCallback;
+
 @interface NSConcretePointerFunctions : NSPointerFunctions {
     struct NSSlice { 
         void **items; 
@@ -18,12 +20,7 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        struct auto_weak_callback_block { 
-            struct auto_weak_callback_block {} *next; 
-            int (*callback_function)(); 
-            void *arg1; 
-            void *arg2; 
-        } block; 
+        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -35,13 +32,13 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-     /* Encoded args for previous method: v16@0:4^{NSSlice=^^vccccccccc{auto_weak_callback_block=^{auto_weak_callback_block}^?^v^v}^?^?^?^?^?^?^?^?^?^?^?}8B12 */
-     /* Encoded args for previous method: B16@0:4^{NSSlice=^^vccccccccc{auto_weak_callback_block=^{auto_weak_callback_block}^?^v^v}^?^?^?^?^?^?^?^?^?^?^?}8I12 */
+     /* Encoded args for previous method: B16@0:4^{NSSlice=^^vccccccccc@^?^?^?^?^?^?^?^?^?^?^?}8I12 */
+     /* Encoded args for previous method: v16@0:4^{NSSlice=^^vccccccccc@^?^?^?^?^?^?^?^?^?^?^?}8B12 */
     } slice;
 }
 
-+ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; struct auto_weak_callback_block { struct auto_weak_callback_block {} *x_11_1_1; int (*x_11_1_2)(); void *x_11_1_3; void *x_11_1_4; } x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 sentinel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-+ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; struct auto_weak_callback_block { struct auto_weak_callback_block {} *x_11_1_1; int (*x_11_1_2)(); void *x_11_1_3; void *x_11_1_4; } x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 withOptions:(NSUInteger)arg2;
++ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 sentinel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
++ (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); }*)arg1 withOptions:(NSUInteger)arg2;
 
 - (int (*)())acquireFunction;
 - (int (*)())descriptionFunction;

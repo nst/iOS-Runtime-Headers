@@ -7,7 +7,9 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
 - (id)initWithType:(NSInteger)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setStyleColor:(id)arg1;
 - (NSInteger)type;
 

@@ -13,6 +13,7 @@
 + (float)heightForText:(id)arg1 width:(float)arg2 includeBuffers:(BOOL)arg3;
 + (BOOL)shouldHaveAccessoryDiclosure;
 
+- (void)_fontSizeDidChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_webLayerBounds;
 - (void)cancelInteraction;
 - (void)dealloc;
@@ -24,6 +25,7 @@
 - (void)setMessagePart:(id)arg1;
 - (void)setNeedsDisplay;
 - (void)setOrientation:(NSInteger)arg1;
+- (void)setTapEnabled:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 - (void)tighten;

@@ -2,33 +2,45 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UILongPressGestureRecognizerDelegate>, NSArray, NSMutableSet, UIDelayedAction;
+@class NSArray, NSMutableSet;
 
 @interface UILongPressGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
         float x; 
         float y; 
+    unsigned int _gotTouchEnd : 1;
+    unsigned int _gotTooMany : 1;
+    unsigned int _gotEnoughTaps : 1;
+    unsigned int _cancelPastAllowableMovement : 1;
     NSMutableSet *_activeTouches;
     float _allowableMovement;
     double _delay;
-    <UILongPressGestureRecognizerDelegate> *_delegate;
-    UIDelayedAction *_enoughTimeElapsed;
-    BOOL _gotTooMany;
-    BOOL _gotTouchEnd;
-    NSInteger _numberOfFingers;
+    id _enoughTimeElapsed;
+    id _imp;
+    NSInteger _numberOfTouchesRequired;
     } _startPointScreen;
+    id _tooMuchTimeElapsed;
     NSArray *_touches;
 }
 
 @property <UILongPressGestureRecognizerDelegate> *delegate;
-@property(retain) NSArray *touches;
+@property(retain,readonly) NSArray *touches;
 @property float allowableMovement;
+@property BOOL cancelPastAllowableMovement;
 @property(readonly) CGPoint centroid;
 @property double delay;
-@property NSInteger numberOfFingers;
+@property double minimumPressDuration;
+@property NSInteger numberOfTapsRequired;
+@property NSInteger numberOfTouchesRequired;
 @property(readonly) CGPoint startPoint;
 
++ (void)addLongPressGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 minimumPressDuration:(double)arg4;
+
+- (void)_resetGestureRecognizer;
+- (void)_startTapFinishedTimer;
 - (float)allowableMovement;
+- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (BOOL)cancelPastAllowableMovement;
 - (struct CGPoint { float x1; float x2; })centroid;
 - (struct CGPoint { float x1; float x2; })centroidScreen;
 - (void)clearTimer;
@@ -37,15 +49,28 @@
 - (id)delegate;
 - (void)enoughTimeElapsed:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (NSInteger)numberOfFingers;
-- (void)reset;
+- (void)invalidate;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(NSUInteger)arg1 inView:(id)arg2;
+- (double)minimumPressDuration;
+- (NSInteger)numberOfTapsRequired;
+- (NSUInteger)numberOfTouches;
+- (NSInteger)numberOfTouchesRequired;
 - (void)setAllowableMovement:(float)arg1;
+- (void)setCancelPastAllowableMovement:(BOOL)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setNumberOfFingers:(NSInteger)arg1;
+- (void)setMinimumPressDuration:(double)arg1;
+- (void)setNumberOfTapsRequired:(NSInteger)arg1;
+- (void)setNumberOfTouchesRequired:(NSInteger)arg1;
 - (void)setTouches:(id)arg1;
+- (void)setView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })startPoint;
 - (void)startTimer;
+- (BOOL)tapIsPossibleForTapRecognizer:(id)arg1;
+- (void)tapRecognizerFailedToRecognizeTap:(id)arg1;
+- (void)tapRecognizerRecognizedTap:(id)arg1;
+- (void)tooMuchElapsed:(id)arg1;
 - (id)touches;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

@@ -22,8 +22,8 @@
         unsigned int forceFullHeightInLandscape : 1; 
         unsigned int isLocked : 1; 
         unsigned int shouldUpdatePromptAfterTransition : 1; 
-        unsigned int roundedCorners : 1; 
         unsigned int crossfadeItems : 1; 
+        unsigned int autoAdjustTitle : 1; 
     UIView *_accessoryView;
     id _delegate;
     NSMutableArray *_itemStack;
@@ -45,6 +45,7 @@
 @property id delegate;
 @property(getter=isTranslucent) BOOL translucent;
 
++ (void)_initializeSafeCategory;
 + (id)defaultPromptFont;
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(NSInteger)arg1;
@@ -54,7 +55,10 @@
 + (id)standardNavigationBar;
 + (id)standardNavigationBarWithTitle:(id)arg1;
 
+- (BOOL)_accessibilityAlwaysOrderedFirst;
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_adjustVisibleItemsByDelta:(float)arg1;
+- (id)_allViews;
 - (void)_backgroundFadeDidFinish:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (NSInteger)_barStyle:(BOOL)arg1;
 - (float)_barWidth;
@@ -65,14 +69,18 @@
 - (id)_defaultTitleFont;
 - (BOOL)_didVisibleItemsChangeWithNewItems:(id)arg1 oldItems:(id)arg2;
 - (void)_drawPrompt:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 barStyle:(NSInteger)arg4;
+- (void)_fadeAllViewsIn;
+- (void)_fadeAllViewsOut;
 - (void)_fadeViewOut:(id)arg1;
 - (void)_fadeViewsIn:(id)arg1;
 - (void)_fadeViewsOut:(id)arg1;
-- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 rightViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 rightViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 forViews:(id*)arg4 forItemAtIndex:(NSUInteger)arg5;
+- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 rightViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 forViews:(id*)arg4;
 - (void)_handleMouseDownAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_handleMouseUpAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_hasBackButton;
 - (void)_hideButtonsAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (id)_itemStack;
 - (void)_navBarButtonPressed:(id)arg1;
 - (void)_navigationAnimationDidFinish:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_popNavigationItemWithTransition:(NSInteger)arg1;
@@ -82,9 +90,11 @@
 - (void)_pushNavigationItem:(id)arg1 transition:(NSInteger)arg2;
 - (void)_removeAccessoryView;
 - (void)_removeItemsFromSuperview:(id)arg1;
+- (void)_setAutoAdjustTitle:(BOOL)arg1;
 - (void)_setItems:(id)arg1 transition:(NSInteger)arg2;
 - (void)_setLeftView:(id)arg1 rightView:(id)arg2;
 - (void)_setupTopNavItem:(id)arg1 oldTopNavItem:(id)arg2;
+- (BOOL)_shouldShowBackButtonForNavigationItem:(id)arg1;
 - (void)_showLeftRightButtonsAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_startBarStyleAnimation:(NSInteger)arg1 withTintColor:(id)arg2;
 - (void)_startPopAnimationFromItems:(id)arg1 fromBarStyle:(NSInteger)arg2 toItems:(id)arg3 toBarStyle:(NSInteger)arg4;
@@ -93,10 +103,14 @@
 - (void)_updateNavigationBarItem:(id)arg1 forStyle:(NSInteger)arg2;
 - (void)_updateNavigationBarItemsForStyle:(NSInteger)arg1;
 - (void)_updateOpacity;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (NSUInteger)animationDisabledCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })availableTitleArea;
 - (id)backItem;
 - (NSInteger)barStyle;
+- (id)buttonItemShadowColor;
+- (id)buttonItemTextColor;
 - (id)createButtonWithContents:(id)arg1 width:(float)arg2 barStyle:(NSInteger)arg3 buttonStyle:(NSInteger)arg4 isRight:(BOOL)arg5;
 - (id)currentBackButton;
 - (id)currentLeftView;
@@ -113,7 +127,6 @@
 - (void)enableAnimation;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)forceFullHeightInLandscape;
-- (BOOL)hasRoundedCorners;
 - (void)hideButtons;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -145,7 +158,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setForceFullHeightInLandscape:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHasRoundedCorners:(BOOL)arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
 - (void)setLocked:(BOOL)arg1;
@@ -155,17 +167,20 @@
 - (void)setTintColor:(id)arg1;
 - (void)setTitleAutoresizesToFit:(BOOL)arg1;
 - (void)setTitleView:(id)arg1;
+- (void)setTopItemAlpha:(float)arg1;
 - (void)setTranslucent:(BOOL)arg1;
 - (void)showBackButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showButtonsWithLeft:(id)arg1 right:(id)arg2 leftBack:(BOOL)arg3;
 - (void)showButtonsWithLeftTitle:(id)arg1 rightTitle:(id)arg2 leftBack:(BOOL)arg3;
 - (void)showButtonsWithLeftTitle:(id)arg1 rightTitle:(id)arg2;
+- (void)showHideBackButtomAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)showLeftButton:(id)arg1 withStyle:(NSInteger)arg2 rightButton:(id)arg3 withStyle:(NSInteger)arg4;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (NSInteger)state;
 - (id)tintColor;
 - (BOOL)titleAutoresizesToFit;
 - (id)topItem;
+- (float)topItemAlpha;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

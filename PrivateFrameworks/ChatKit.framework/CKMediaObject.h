@@ -48,6 +48,7 @@
 - (id)optionsForMedia;
 - (id)previewTitle;
 - (void)setDuration:(double)arg1;
+- (BOOL)shouldGeneratePreviewInBackground;
 - (BOOL)shouldTranscodeForMMS;
 - (unsigned long long)sizeInBytes;
 - (id)sizeInBytesString;

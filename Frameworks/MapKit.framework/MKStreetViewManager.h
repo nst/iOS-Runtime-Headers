@@ -18,6 +18,7 @@
 - (void)_notifyStreetViewDelegateRequest:(id)arg1 response:(id)arg2;
 - (void)_requestPanoramaInfoForObject:(id)arg1 delegate:(id)arg2;
 - (void)_requestPanoramaInfoForObject:(id)arg1 withPanoramaID:(id)arg2 delegate:(id)arg3;
+- (void)_requesterCanceledLoadingLocatableObject:(id)arg1;
 - (void)_requesterFailedLoadingLocatableObject:(id)arg1;
 - (id)_storedPanoramaForObject:(id)arg1;
 - (void)dealloc;
@@ -29,5 +30,6 @@
 - (void)requestPanoramaInfoForObjects:(id)arg1 delegate:(id)arg2;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
+- (void)requesterDidCancel:(id)arg1;
 
 @end

@@ -7,26 +7,42 @@
     void *_reserved;
 }
 
+@property NSUInteger tag;
+
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
-+ (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
+- (void)NSOperationAdditions_dealloc;
 - (id)_implicitObservationInfo;
 - (void)addDependency:(id)arg1;
 - (void)cancel;
+- (id)completionBlock;
 - (void)dealloc;
 - (id)dependencies;
 - (void)finalize;
 - (id)init;
+- (BOOL)isAsynchronous;
 - (BOOL)isCancelled;
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (BOOL)isReady;
 - (void)main;
+- (void*)observationInfo;
 - (NSInteger)queuePriority;
+- (void)release;
 - (void)removeDependency:(id)arg1;
+- (id)retain;
+- (NSUInteger)retainCount;
+- (void)setCompletionBlock:(id)arg1;
+- (void)setObservationInfo:(void*)arg1;
 - (void)setQueuePriority:(NSInteger)arg1;
+- (void)setTag:(NSUInteger)arg1;
+- (void)setThreadPriority:(double)arg1;
 - (void)start;
+- (NSUInteger)tag;
+- (double)threadPriority;
+- (void)waitUntilFinished;
+- (void)waitUntilFinishedOrTimeout:(double)arg1;
 
 @end

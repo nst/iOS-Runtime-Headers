@@ -5,7 +5,7 @@
 @class NSMutableArray;
 
 @interface OADCustomDash : OADDash {
-    BOOL mAreStopsOverridden;
+    unsigned int mAreStopsOverridden : 1;
     NSMutableArray *mStops;
 }
 
@@ -16,7 +16,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)dashAtIndex:(NSUInteger)arg1;
 - (void)dealloc;
+- (NSUInteger)hash;
 - (id)initWithDefaults;
+- (BOOL)isEqual:(id)arg1;
 - (void)setStops:(id)arg1;
 - (float)spaceAtIndex:(NSUInteger)arg1;
 - (NSUInteger)stopCount;

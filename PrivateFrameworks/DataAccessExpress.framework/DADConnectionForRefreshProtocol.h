@@ -10,9 +10,9 @@
 
 + (id)accountToRefreshForBasicAccount:(id)arg1;
 
+- (id)_initWithBasicAccount:(id)arg1;
 - (void)dealloc;
 - (id)defaultContainerIdentifierForDataclass:(id)arg1;
-- (id)initWithBasicAccount:(id)arg1;
 - (BOOL)refreshContainerListForDataclass:(id)arg1;
 - (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2;
 - (BOOL)refreshContainersForDataclass:(id)arg1;

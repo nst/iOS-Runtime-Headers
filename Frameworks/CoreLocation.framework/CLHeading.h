@@ -25,7 +25,7 @@
 - (BOOL)hasGeomagneticVector;
 - (double)heading;
 - (double)headingAccuracy;
-- (id)initWithClientHeading:(struct { double x1; double x2; double x3; NSInteger x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; })arg1;
+- (id)initWithClientHeading:(struct { double x1; double x2; double x3; NSInteger x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHeading:(double)arg1 accuracy:(double)arg2;
 - (double)magneticHeading;

@@ -55,6 +55,7 @@
     UIImageView *_leftBackground;
     UIImageView *_leftCap;
     UIView *_leftView;
+    float _maximumWidth;
     UIImageView *_rightBackground;
     UIImageView *_rightCap;
     UIView *_rightView;
@@ -66,7 +67,16 @@
 
 @property(retain) UIView *leftView;
 @property(retain) UIView *rightView;
+@property(readonly) float UICalloutViewButtonPadding;
+@property(readonly) float UICalloutViewCapHeight;
+@property(readonly) float UICalloutViewCapPaddingTop;
+@property(readonly) float UICalloutViewHorizontalMargin;
+@property(readonly) float UICalloutViewHorizontalPadding;
+@property(readonly) float UICalloutViewLayoutDuration;
+@property(readonly) float UICalloutViewMinimumWidth;
+@property(readonly) float UICalloutViewVerticalMargin;
 @property BOOL canAnchorFromBottom;
+@property float maximumWidth;
 @property NSInteger subtitleLineBreakMode;
 @property NSInteger subtitleTextAlignment;
 @property NSInteger titleLineBreakMode;
@@ -74,12 +84,23 @@
 
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
++ (void)_initializeSafeCategory;
 + (id)_leftCapImage;
 + (id)_rightCapImage;
 + (id)_topAnchorImage;
 + (float)defaultHeight;
 + (id)sharedCalloutView;
 
+- (float)UICalloutViewButtonPadding;
+- (float)UICalloutViewCapHeight;
+- (float)UICalloutViewCapPaddingTop;
+- (float)UICalloutViewHorizontalMargin;
+- (float)UICalloutViewHorizontalPadding;
+- (float)UICalloutViewLayoutDuration;
+- (float)UICalloutViewMinimumWidth;
+- (float)UICalloutViewVerticalMargin;
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_fadeViewsIn:(BOOL)arg1;
 - (void)_layoutAnimation;
 - (void)_layoutSubviews:(BOOL)arg1;
@@ -104,6 +125,7 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)leftView;
+- (float)maximumWidth;
 - (struct CGPoint { float x1; float x2; })offset;
 - (void)removeTarget:(id)arg1;
 - (id)rightView;
@@ -112,6 +134,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1;
+- (void)setMaximumWidth:(float)arg1;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightView:(id)arg1;

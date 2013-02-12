@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSLock, NSMutableDictionary, NSOperationQueue, NSString;
+@class CPDistributedMessagingCallout, NSLock, NSMutableDictionary, NSOperationQueue, NSString;
 
 @interface CPDistributedMessagingCenter : NSObject {
     NSOperationQueue *_asyncQueue;
     NSMutableDictionary *_callouts;
     NSString *_centerName;
+    CPDistributedMessagingCallout *_currentCallout;
+    BOOL _delayedReply;
     struct __CFMachPort { } *_invalidationPort;
     NSLock *_lock;
+    NSUInteger _parkedServerPort;
+    BOOL _portPassing;
+    NSUInteger _replyPort;
     NSString *_requiredEntitlement;
     NSUInteger _sendPort;
     struct __CFRunLoopSource { } *_serverSource;
@@ -18,22 +23,33 @@
 + (id)centerNamed:(id)arg1;
 
 - (void)_dispatchMessageNamed:(id)arg1 userInfo:(id)arg2 reply:(id*)arg3 auditToken:(struct { NSUInteger x1[8]; }*)arg4;
+- (id)_initAnonymousServer;
+- (id)_initClientWithPort:(NSUInteger)arg1;
 - (id)_initWithServerName:(id)arg1;
 - (BOOL)_isTaskEntitled:(struct { NSUInteger x1[8]; }*)arg1;
 - (id)_requiredEntitlement;
+- (BOOL)_sendMessage:(id)arg1 userInfo:(id)arg2 receiveReply:(id*)arg3 error:(id*)arg4 toTarget:(id)arg5 selector:(SEL)arg6 context:(void*)arg7 nonBlocking:(BOOL)arg8;
 - (BOOL)_sendMessage:(id)arg1 userInfo:(id)arg2 receiveReply:(id*)arg3 error:(id*)arg4 toTarget:(id)arg5 selector:(SEL)arg6 context:(void*)arg7;
-- (BOOL)_sendMessage:(id)arg1 userInfoData:(id)arg2 oolKey:(id)arg3 oolData:(id)arg4 receiveReply:(id*)arg5 error:(id*)arg6;
+- (BOOL)_sendMessage:(id)arg1 userInfoData:(id)arg2 oolKey:(id)arg3 oolData:(id)arg4 makeServer:(BOOL)arg5 receiveReply:(id*)arg6 nonBlocking:(BOOL)arg7 error:(id*)arg8;
 - (NSUInteger)_sendPort;
+- (void)_sendReplyMessage:(id)arg1 portPassing:(BOOL)arg2 onMachPort:(NSUInteger)arg3;
+- (NSUInteger)_serverPort;
 - (void)_serverPortInvalidated;
+- (void)_setSendPort:(NSUInteger)arg1;
+- (void)_setupInvalidationPort;
 - (void)dealloc;
+- (id)delayReply;
+- (BOOL)doesServerExist;
 - (id)name;
 - (void)registerForMessageName:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)runServerOnCurrentThread;
 - (void)runServerOnCurrentThreadProtectedByEntitlement:(id)arg1;
+- (void)sendDelayedReply:(id)arg1 dictionary:(id)arg2;
 - (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 error:(id*)arg3;
 - (void)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2 toTarget:(id)arg3 selector:(SEL)arg4 context:(void*)arg5;
 - (id)sendMessageAndReceiveReplyName:(id)arg1 userInfo:(id)arg2;
 - (BOOL)sendMessageName:(id)arg1 userInfo:(id)arg2;
+- (BOOL)sendNonBlockingMessageName:(id)arg1 userInfo:(id)arg2;
 - (void)stopServer;
 - (void)unregisterForMessageName:(id)arg1;
 

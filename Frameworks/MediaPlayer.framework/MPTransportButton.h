@@ -5,6 +5,11 @@
 @interface MPTransportButton : MPButton {
 }
 
++ (void)_initializeSafeCategory;
+
 - (id)_automationID;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 
 @end

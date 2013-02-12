@@ -8,5 +8,6 @@
 + (void)_execute:(id)arg1;
 + (void)addInvocationToQueue:(id)arg1;
 + (void)initialize;
++ (void)setWorkerThreadRecycleTimeout:(double)arg1;
 
 @end

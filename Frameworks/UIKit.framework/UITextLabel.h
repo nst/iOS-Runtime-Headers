@@ -5,6 +5,9 @@
 @interface UITextLabel : UILabel {
 }
 
++ (void)_initializeSafeCategory;
+
+- (id)accessibilityLabel;
 - (NSInteger)alignment;
 - (BOOL)centersHorizontally;
 - (id)color;
@@ -14,6 +17,7 @@
 - (NSInteger)ellipsisStyle;
 - (struct CGSize { float x1; float x2; })ellipsizedTextSize;
 - (id)highlightedColor;
+- (BOOL)isAccessibilityElement;
 - (float)minFontSize;
 - (void)setAlignment:(NSInteger)arg1;
 - (void)setCentersHorizontally:(BOOL)arg1;

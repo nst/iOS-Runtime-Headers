@@ -5,30 +5,62 @@
 @class UIView;
 
 @interface SBAwayViewPluginController : NSObject {
+    BOOL _alwaysFullscreen;
+    BOOL _fullscreen;
+    NSInteger _orientation;
     UIView *_view;
+    BOOL _viewCanBeDisplayed;
 }
 
 @property(retain) UIView *view;
+@property(getter=isAlwaysFullscreen,readonly) BOOL alwaysFullscreen;
+@property(getter=isFullscreen,readonly) BOOL fullscreen;
+@property NSInteger orientation;
+@property BOOL viewCanBeDisplayed;
 
 + (void)disableBundleNamed:(id)arg1;
 + (void)enableBundleNamed:(id)arg1;
 
+- (void)alwaysFullscreenValueHasChanged;
 - (BOOL)animateResumingToApplicationWithIdentifier:(id)arg1;
+- (BOOL)canBeAlwaysFullscreen;
+- (BOOL)canScreenDim;
 - (void)dealloc;
+- (void)deviceLockViewDidHide;
+- (void)deviceLockViewWillShow;
 - (void)disable;
 - (BOOL)handleGesture:(NSInteger)arg1 fingerCount:(NSUInteger)arg2;
 - (BOOL)handleMenuButtonDoubleTap;
 - (BOOL)handleMenuButtonHeld;
 - (BOOL)handleMenuButtonTap;
+- (id)init;
+- (BOOL)isAlwaysFullscreen;
+- (BOOL)isFullscreen;
 - (void)loadView;
+- (NSInteger)orientation;
 - (NSInteger)pluginPriority;
 - (void)purgeView;
+- (BOOL)retainsPriorityWhileInactive;
+- (void)setAlwaysFullscreen:(BOOL)arg1;
+- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
+- (void)setOrientation:(NSInteger)arg1;
 - (void)setView:(id)arg1;
+- (void)setViewCanBeDisplayed:(BOOL)arg1;
+- (BOOL)shouldDisableOnRelock;
+- (BOOL)shouldDisableOnUnlock;
+- (BOOL)shouldShowLockStatusBarTime;
 - (BOOL)showAwayItems;
+- (BOOL)showDateView;
 - (id)view;
+- (BOOL)viewCanBeDisplayed;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (double)viewFadeInDuration;
+- (BOOL)viewWantsFullscreenLayout;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (BOOL)wantsAutomaticFullscreenTimer;
+- (BOOL)wantsSwipeGestureRecognizer;
 
 @end

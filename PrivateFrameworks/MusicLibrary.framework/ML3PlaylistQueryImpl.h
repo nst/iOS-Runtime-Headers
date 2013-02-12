@@ -3,8 +3,10 @@
  */
 
 @interface ML3PlaylistQueryImpl : ML3QueryImpl {
+    long long _containerPersistentID;
 }
 
+- (id)containingPlaylist;
 - (void)evaluate;
 - (void)playlistContentsDidChangeNotification:(id)arg1;
 

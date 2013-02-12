@@ -2,25 +2,30 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSMutableSet, OCPPackagePart;
+@class NSMutableDictionary, NSMutableSet, OAXDrawingState, OCPPackagePart;
 
 @interface OAVState : NSObject {
     Class mClient;
     NSMutableSet *mDualDrawables;
+    OAXDrawingState *mOAXState;
     OCPPackagePart *mPackagePart;
     NSMutableDictionary *mShapeIdMap;
     NSMutableDictionary *mShapeTypes;
 }
 
 - (void)addDualDrawable:(id)arg1;
+- (id)blipRefForURL:(id)arg1;
 - (Class)client;
 - (void)dealloc;
-- (id)drawableForShapeId:(id)arg1;
+- (id)drawableForVmlShapeId:(id)arg1;
 - (id)initWithClient:(Class)arg1 packagePart:(id)arg2;
 - (BOOL)isDualDrawable:(id)arg1;
+- (id)oaxState;
+- (unsigned long)officeArtShapeIdWithVmlShapeId:(id)arg1;
 - (id)packagePart;
 - (void)reset;
-- (void)setDrawable:(id)arg1 forShapeId:(id)arg2;
+- (void)setDrawable:(id)arg1 forVmlShapeId:(id)arg2;
+- (void)setOAXState:(id)arg1;
 - (void)setPackagePart:(id)arg1;
 - (void)setShapeType:(unsigned short)arg1 forId:(id)arg2;
 - (unsigned short)shapeTypeForId:(id)arg1;

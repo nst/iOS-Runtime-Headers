@@ -12,6 +12,8 @@
 @property(retain,readonly) UIKBKey *key;
 @property(retain,readonly) UIKBKeyplane *keyplane;
 
++ (id)entryWithKey:(id)arg1 keyPlane:(id)arg2;
+
 - (id)initWithKey:(id)arg1 keyPlane:(id)arg2;
 - (id)key;
 - (id)keyplane;

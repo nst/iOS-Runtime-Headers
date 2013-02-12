@@ -13,7 +13,9 @@
 - (id)anchor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (id)normal;
 - (void)setAnchor:(id)arg1;
 - (void)setNormal:(id)arg1;

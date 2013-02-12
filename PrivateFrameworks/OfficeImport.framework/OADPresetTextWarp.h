@@ -6,6 +6,8 @@
     NSInteger mPresetTextWarpType;
 }
 
+- (NSUInteger)hash;
+- (BOOL)isEqual:(id)arg1;
 - (NSInteger)presetTextWarpType;
 - (void)setPresetTextWarpType:(NSInteger)arg1;
 

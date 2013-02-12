@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMFile : DOMObject {
+@interface DOMFile : DOMBlob {
 }
 
 @property(copy,readonly) NSString *fileName;
+@property(copy,readonly) NSString *name;
 @property(readonly) unsigned long long fileSize;
 
-- (void)dealloc;
 - (id)fileName;
 - (unsigned long long)fileSize;
-- (void)finalize;
+- (id)name;
 
 @end

@@ -2,35 +2,38 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUCompletionTableDelegate>, NSString;
+@class <SUCompletionTableDelegate>, NSString, SUSearchFieldConfiguration;
 
 @interface SUCompletionTableViewController : SUTableViewController {
-    NSInteger _assetTypesForSearchParameters;
     <SUCompletionTableDelegate> *_delegate;
+    SUSearchFieldConfiguration *_searchFieldConfiguration;
     NSString *_stringToComplete;
-    NSString *_urlBagKey;
 }
 
 @property <SUCompletionTableDelegate> *delegate;
+@property(retain) SUSearchFieldConfiguration *searchFieldConfiguration;
 @property(retain) NSString *stringToComplete;
-@property(retain) NSString *urlBagKey;
-@property NSInteger assetTypesForSearchParameters;
+@property(readonly) NSInteger numberOfCompletions;
 
 - (void)_dismissWithPickedItem:(id)arg1;
 - (void)_fetchCompletions;
-- (NSInteger)assetTypesForSearchParameters;
+- (void)_setCompletions:(id)arg1;
+- (void)cancelOperations;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(NSInteger)arg2;
 - (id)init;
 - (void)loadView;
+- (struct CGSize { float x1; float x2; })maximumViewSize;
+- (struct CGSize { float x1; float x2; })minimumViewSize;
+- (NSInteger)numberOfCompletions;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (void)setAssetTypesForSearchParameters:(NSInteger)arg1;
+- (void)reloadData;
+- (id)searchFieldConfiguration;
 - (void)setDelegate:(id)arg1;
+- (void)setSearchFieldConfiguration:(id)arg1;
 - (void)setStringToComplete:(id)arg1;
-- (void)setUrlBagKey:(id)arg1;
 - (id)stringToComplete;
-- (id)urlBagKey;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

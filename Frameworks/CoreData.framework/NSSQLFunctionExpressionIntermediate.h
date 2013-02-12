@@ -18,5 +18,6 @@
 - (id)generateType1SQLString:(id)arg1 inContext:(id)arg2;
 - (id)generateType2SQLString:(id)arg1 inContext:(id)arg2;
 - (id)generateType3SQLString:(id)arg1 keypathOnly:(BOOL)arg2 inContext:(id)arg3;
+- (BOOL)isFunctionScoped;
 
 @end

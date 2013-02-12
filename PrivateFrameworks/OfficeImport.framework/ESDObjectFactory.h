@@ -8,10 +8,13 @@
 
 @interface ESDObjectFactory : NSObject {
      /* Encoded args for previous method: v12@0:4^{EshObjectFactory=^^?B}8 */
+     /* Encoded args for previous method: v12@0:4^{EshObjectFactory=^^?B}8 */
 }
 
 + (struct EshObject { }*)createObjectWithType:(unsigned short)arg1 version:(unsigned short)arg2;
 + (struct EshObject { }*)createObjectWithType:(unsigned short)arg1;
++ (void)replaceHostEshFactoryWith:(struct EshObjectFactory { int (**x1)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; }*)arg1;
++ (void)restoreHostEshFactory;
 + (void)setEshFactory:(struct EshObjectFactory { int (**x1)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x2; }*)arg1;
 
 @end

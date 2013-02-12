@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADBaseStyles, OADDefaultProperties, OADFontScheme;
+@class OADBaseStyles, OADDefaultProperties;
 
 @interface OADTheme : NSObject {
     OADBaseStyles *mBaseStyles;
-    OADFontScheme *mFontScheme;
     OADDefaultProperties *mLineDefaults;
     OADDefaultProperties *mShapeDefaults;
     OADDefaultProperties *mTextDefaults;
 }
 
+- (void)addDefaults;
 - (id)addLineDefaults;
 - (id)addShapeDefaults;
 - (id)addTextDefaults;
 - (id)baseStyles;
 - (void)dealloc;
-- (id)fontScheme;
 - (id)init;
 - (id)lineDefaults;
 - (id)shapeDefaults;

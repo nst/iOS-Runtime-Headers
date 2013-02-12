@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary, OADColorMap, OADTextListStyle, OADTheme;
+@class NSMutableArray, OADColorMap, OADTextListStyle, OADTheme;
 
 @interface PDSlideMaster : PDSlideBase {
     OADTextListStyle *mBodyTextStyle;
     OADColorMap *mColorMap;
-    NSMutableDictionary *mMasterStyles;
     OADTextListStyle *mOtherTextStyle;
     NSMutableArray *mSlideLayouts;
     OADTheme *mTheme;
     OADTextListStyle *mTitleTextStyle;
 }
 
-- (void)addMasterStyle:(id)arg1 forPlaceholderType:(NSInteger)arg2;
 - (void)addSlideLayout:(id)arg1;
 - (id)addSlideLayout;
 - (id)bodyTextStyle;
@@ -22,7 +20,11 @@
 - (id)colorScheme;
 - (void)dealloc;
 - (id)defaultTheme;
+- (void)doneWithContent;
+- (id)drawingTheme;
+- (id)fontScheme;
 - (id)init;
+- (id)initWithDefaults;
 - (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)otherTextStyle;
 - (id)parentShapePropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
@@ -31,9 +33,12 @@
 - (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
 - (id)parentTextStyleForTables;
 - (id)placeholderWithType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
+- (void)setBodyTextStyle:(id)arg1;
 - (void)setTheme:(id)arg1;
+- (void)setTitleTextStyle:(id)arg1;
 - (id)slideLayoutAtIndex:(NSUInteger)arg1;
 - (NSUInteger)slideLayoutCount;
+- (id)slideLayoutOfType:(NSInteger)arg1;
 - (id)styleMatrix;
 - (id)theme;
 - (id)titleTextStyle;

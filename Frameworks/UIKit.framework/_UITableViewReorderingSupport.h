@@ -7,7 +7,7 @@
 @interface _UITableViewReorderingSupport : NSObject {
     unsigned int _oldShowHorizontalScrollIndicator : 1;
     unsigned int _oldShowVerticalScrollIndicator : 1;
-    unsigned int _bottomShadowNeedsToMove : 1;
+    unsigned int _reloadDataCalled : 1;
     unsigned int _reserved : 29;
     NSTimer *_autoscrollTimer;
     UIShadowView *_bottomShadowView;

@@ -12,6 +12,7 @@
 + (BOOL)ignoresRoamingSwitch;
 + (id)messageNotificationFallbackTimeout;
 + (id)retryIntervals;
++ (BOOL)supportsDetachedStorage;
 + (BOOL)supportsGreetingChanges;
 + (BOOL)supportsPasswordChanges;
 

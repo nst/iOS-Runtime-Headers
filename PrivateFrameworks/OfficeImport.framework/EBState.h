@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class EDResources, EDWorkbook;
+@class <OCCancelDelegate>, CPTracing, EDResources, EDWorkbook;
 
 @interface EBState : NSObject {
     struct XlLinkTable { int (**x1)(); struct XlLinkLookupTable { 
@@ -50,27 +50,31 @@
             NSUInteger m_blockSize; 
      /* Encoded args for previous method: ^{XlLinkTable=^^?{XlLinkLookupTable=^^?B{ChVector<XlXti*>=^^{XlXti}^^{XlXti}III}}{ChVector<XlLink*>=^^{XlLink}^^{XlLink}III}}8@0:4 */
      /* Encoded args for previous method: ^{XlNameTable=^^?{CsSimpleHeapVector<XlRecord>={ChVector<XlRecord*>=^^{XlRecord}^^{XlRecord}III}}[14{OcText=^^?iIII**B}]}8@0:4 */
-     /* Encoded args for previous method: ^{XlFormulaProcessor=^^?^{XlFormulaParser}^{XlBaseFormulaTable}{ChVector<CsString*>=^^{CsString}^^{CsString}III}^{XlNameTable}^{ChVector<OcText>}^{XlLinkTable}II[64c]^S*BI}8@0:4 */
-    NSUInteger mCurrentSheetIndex;
+     /* Encoded args for previous method: ^{XlFormulaProcessor=^^?^{XlFormulaParser}^{XlBaseFormulaTable}{ChVector<CsString*>=^^{CsString}^^{CsString}III}^{XlNameTable}^{ChVector<OcText>}^{XlLinkTable}II[64c]^S*BISS}8@0:4 */
+    <OCCancelDelegate> *mCancelDelegate;
     EDResources *mResources;
     struct ChVector<OcText> { struct OcText {} *x1; struct OcText {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; } *mSheetNames;
+    CPTracing *mTracing;
     EDWorkbook *mWorkbook;
-        } x4; struct XlNameTable {} *x5; struct ChVector<OcText> {} *x6; struct XlLinkTable {} *x7; NSUInteger x8; NSUInteger x9; BOOL x10[64]; unsigned short *x11; char *x12; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x13; NSUInteger x14; } *mXlFormulaProcessor;
+        } x4; struct XlNameTable {} *x5; struct ChVector<OcText> {} *x6; struct XlLinkTable {} *x7; NSUInteger x8; NSUInteger x9; BOOL x10[64]; unsigned short *x11; char *x12; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x13; NSUInteger x14; unsigned short x15; unsigned short x16; } *mXlFormulaProcessor;
         } x3; } *mXlLinkTable;
         } x3[14]; } *mXlNameTable;
 }
 
+@property(readonly) <OCCancelDelegate> *cancelDelegate;
+
 - (struct XlNameTable { int (**x1)(); struct CsSimpleHeapVector<XlRecord> { struct ChVector<XlRecord*> { struct XlRecord {} **x_1_2_1; struct XlRecord {} **x_1_2_2; NSUInteger x_1_2_3; NSUInteger x_1_2_4; NSUInteger x_1_2_5; } x_2_1_1; } x2; struct OcText { int (**x_3_1_1)(); NSInteger x_3_1_2; NSUInteger x_3_1_3; NSUInteger x_3_1_4; NSUInteger x_3_1_5; char *x_3_1_6; char *x_3_1_7; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_3_1_8; } x3[14]; }*)xlNameTable;
-- (struct XlFormulaProcessor { int (**x1)(); struct XlFormulaParser {} *x2; struct XlBaseFormulaTable {} *x3; struct ChVector<CsString*> { struct CsString {} **x_4_1_1; struct CsString {} **x_4_1_2; NSUInteger x_4_1_3; NSUInteger x_4_1_4; NSUInteger x_4_1_5; } x4; struct XlNameTable {} *x5; struct ChVector<OcText> {} *x6; struct XlLinkTable {} *x7; NSUInteger x8; NSUInteger x9; BOOL x10[64]; unsigned short *x11; char *x12; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x13; NSUInteger x14; }*)xlFormulaProcessor;
+- (struct XlFormulaProcessor { int (**x1)(); struct XlFormulaParser {} *x2; struct XlBaseFormulaTable {} *x3; struct ChVector<CsString*> { struct CsString {} **x_4_1_1; struct CsString {} **x_4_1_2; NSUInteger x_4_1_3; NSUInteger x_4_1_4; NSUInteger x_4_1_5; } x4; struct XlNameTable {} *x5; struct ChVector<OcText> {} *x6; struct XlLinkTable {} *x7; NSUInteger x8; NSUInteger x9; BOOL x10[64]; unsigned short *x11; char *x12; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x13; NSUInteger x14; unsigned short x15; unsigned short x16; }*)xlFormulaProcessor;
 - (struct XlLinkTable { int (**x1)(); struct XlLinkLookupTable { int (**x_2_1_1)(); /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_2_1_2; struct ChVector<XlXti*> { struct XlXti {} **x_3_2_1; struct XlXti {} **x_3_2_2; NSUInteger x_3_2_3; NSUInteger x_3_2_4; NSUInteger x_3_2_5; } x_2_1_3; } x2; struct ChVector<XlLink*> { struct XlLink {} **x_3_1_1; struct XlLink {} **x_3_1_2; NSUInteger x_3_1_3; NSUInteger x_3_1_4; NSUInteger x_3_1_5; } x3; }*)xlLinkTable;
-- (NSUInteger)currentSheetIndex;
+- (id)cancelDelegate;
 - (void)dealloc;
-- (id)init;
+- (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
+- (BOOL)isCancelled;
 - (id)resources;
-- (void)setCurrentSheetIndex:(NSUInteger)arg1;
 - (void)setResources:(id)arg1;
 - (void)setWorkbook:(id)arg1;
 - (struct ChVector<OcText> { struct OcText {} *x1; struct OcText {} *x2; NSUInteger x3; NSUInteger x4; NSUInteger x5; }*)sheetNames;
+- (id)tracing;
 - (id)workbook;
 
 @end

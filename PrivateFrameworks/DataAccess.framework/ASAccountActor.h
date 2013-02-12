@@ -2,15 +2,11 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class ASClientAccount;
-
 @interface ASAccountActor : AKActor <ASAccountActorMessages> {
-    ASClientAccount *_account;
 }
 
 - (oneway void)_accountPasswordChanged;
 - (oneway void)_daemonDiedNotification:(id)arg1;
-- (void)_findScheduler;
 - (oneway void)_folderHierarchyChanged;
 - (oneway void)_folderUpdatedNotification:(id)arg1;
 - (oneway void)_foldersThatExternalClientsCareAboutChanged;
@@ -18,9 +14,8 @@
 - (oneway void)cancelAllSearchQueries;
 - (oneway void)cancelSearchQuery:(id)arg1;
 - (oneway void)cancelTaskWithID:(NSInteger)arg1;
-- (void)dealloc;
 - (id)deletedItemsFolder;
-- (id)folderIDsThatExternalClientsCareAboutForType:(NSInteger)arg1 withTag:(id*)arg2;
+- (id)folderIDsThatExternalClientsCareAboutForDataclasses:(NSInteger)arg1 withTag:(id*)arg2;
 - (id)folderIDsThatExternalClientsCareAboutWithTag:(id*)arg1;
 - (id)foldersTag;
 - (id)inboxFolder;
@@ -36,7 +31,7 @@
 - (oneway void)performSearchQuery:(id)arg1 consumer:(id)arg2;
 - (BOOL)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
 - (BOOL)searchQueriesRunning;
-- (NSInteger)sendMessageWithRFC822Data:(id)arg1 consumer:(id)arg2 context:(void*)arg3;
+- (NSInteger)sendMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(NSInteger)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 consumer:(id)arg8 context:(void*)arg9;
 - (id)sentItemsFolder;
 - (oneway void)setAccount:(id)arg1;
 - (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3;

@@ -5,8 +5,10 @@
 @interface OAVTextBodyProperties : NSObject {
 }
 
-+ (void)initialize;
++ (NSInteger)readAnchor:(id)arg1;
 + (void)readFromManager:(id)arg1 toShape:(id)arg2 state:(id)arg3;
++ (NSInteger)readRotation:(id)arg1;
++ (NSInteger)readWrapStyle:(id)arg1;
 + (NSInteger)verticalTypeWithLayoutFlowString:(id)arg1 altLayoutFlowString:(id)arg2;
 
 @end

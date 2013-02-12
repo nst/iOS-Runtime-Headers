@@ -8,6 +8,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)inputStreamWithData:(id)arg1;
 + (id)inputStreamWithFileAtPath:(id)arg1;
++ (id)inputStreamWithURL:(id)arg1;
 
 - (struct { NSInteger x1; NSInteger x2; })_cfStreamError;
 - (unsigned long)_cfTypeID;

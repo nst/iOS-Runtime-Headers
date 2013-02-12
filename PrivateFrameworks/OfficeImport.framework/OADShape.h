@@ -9,10 +9,12 @@
     OADTextBody *mTextBody;
 }
 
+- (void)createPresetGeometryWithShapeType:(NSInteger)arg1;
 - (void)dealloc;
 - (void)flattenProperties;
 - (id)geometry;
 - (id)init;
+- (void)removeUnnecessaryOverrides;
 - (void)setGeometry:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (void)setTextBody:(id)arg1;

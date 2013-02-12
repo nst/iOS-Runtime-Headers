@@ -24,7 +24,9 @@
 - (void)dealloc;
 - (id)extrusionColor;
 - (float)extrusionHeight;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (NSInteger)material;
 - (void)setBottomBevel:(id)arg1;
 - (void)setContourColor:(id)arg1;

@@ -17,9 +17,9 @@
 @property(readonly) BOOL secondDelayElapsed;
 @property id userData;
 
+- (void)_resetGestureRecognizer;
 - (void)clearTimer;
 - (id)containerView;
-- (void)reset;
 - (double)secondDelay;
 - (void)secondDelayElapsed:(id)arg1;
 - (BOOL)secondDelayElapsed;

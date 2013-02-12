@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSData, NSURL;
+@class NSData, NSURL, UIImage;
 
-@interface PLImageInternal : MLPhoto {
+@interface PLImageInternal : MLPhotoMemoryStorage {
     NSData *_data;
-    struct CGImageSource { } *_imageSource;
+    UIImage *_previewImage;
     NSURL *_url;
+    NSData *_urlData;
 }
 
 - (id)_data;
-- (struct CGImageSource { }*)_imageSource;
-- (struct CGImage { }*)createFullScreenCGImageRef:(NSInteger*)arg1 properties:(const struct __CFDictionary {}**)arg2;
-- (struct CGImage { }*)createFullSizeCGImageRef:(NSInteger*)arg1;
-- (struct CGImage { }*)createLowResolutionFullScreenCGImageRef;
-- (struct CGImage { }*)createThumbnailCGImageRef;
 - (void)dealloc;
 - (BOOL)hasFullSizeImage;
+- (NSInteger)imageID;
+- (id)imageWithFormat:(NSInteger)arg1;
 - (id)title;
 
 @end

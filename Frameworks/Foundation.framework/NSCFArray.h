@@ -27,6 +27,7 @@
 - (void)removeObjectAtIndex:(NSUInteger)arg1;
 - (void)removeObjectsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)replaceObjectAtIndex:(NSUInteger)arg1 withObject:(id)arg2;
+- (void)replaceObjectsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withObjects:(id*)arg2 count:(NSUInteger)arg3;
 - (id)retain;
 - (NSUInteger)retainCount;
 - (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2;

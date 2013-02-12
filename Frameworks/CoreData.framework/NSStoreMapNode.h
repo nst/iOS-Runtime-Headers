@@ -27,7 +27,7 @@
 - (id)initWithObjectID:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
-- (id*)knownKeyValuesPointer;
+- (const id*)knownKeyValuesPointer;
 - (id)objectID;
 - (void)setDestinations:(id)arg1 forRelationship:(id)arg2;
 

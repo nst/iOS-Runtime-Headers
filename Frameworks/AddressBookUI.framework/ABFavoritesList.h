@@ -22,6 +22,7 @@
 - (void)_delayedLookup;
 - (void)_entryIdentityChanged:(id)arg1;
 - (void)_initializeList;
+- (void)_initializeListWithSharedAddressBook:(void*)arg1;
 - (void)_listChangedExternally;
 - (void)_postChangeNotification;
 - (void)_removeEntryFromMap:(id)arg1 withUid:(NSInteger)arg2;

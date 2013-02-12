@@ -189,8 +189,12 @@
     SCRCTargetSelectorTimer *_tapTimer;
     double _tapVelocityThreshold;
     float _thumbRegion;
+    float _thumbRejectionDistance;
+    BOOL _thumbRejectionEnabled;
     SCRCTargetSelectorTimer *_trackingTimer;
 }
+
+@property BOOL thumbRejectionEnabled;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_currentTapRect;
 - (void)_down:(id)arg1;
@@ -225,6 +229,7 @@
 - (void)setFlickSpeed:(float)arg1;
 - (void)setOrientation:(NSInteger)arg1;
 - (void)setTapSpeed:(float)arg1;
+- (void)setThumbRejectionEnabled:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })startLocation;
 - (NSUInteger)tapCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tapFrame;
@@ -233,6 +238,7 @@
 - (struct CGPoint { float x1; float x2; })tapPoint;
 - (struct CGPoint { float x1; float x2; })tapPointWeightedToSides;
 - (float)tapSpeed;
+- (BOOL)thumbRejectionEnabled;
 - (float)vector;
 - (float)velocity;
 

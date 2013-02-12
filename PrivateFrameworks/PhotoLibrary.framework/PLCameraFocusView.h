@@ -5,8 +5,10 @@
 @class CAKeyframeAnimation, NSArray;
 
 @interface PLCameraFocusView : UIView {
+    double _animationStartTime;
     CAKeyframeAnimation *_boundsAnimation;
     CAKeyframeAnimation *_contentsAnimation;
+    BOOL _fadingOut;
     NSArray *_images;
 }
 
@@ -17,6 +19,7 @@
 - (void)dealloc;
 - (void)focusDidEnd;
 - (id)init:(BOOL)arg1;
+- (void)scaleFrame:(float)arg1 reposition:(BOOL)arg2;
 - (void)startAnimating;
 - (void)stopAnimating;
 

@@ -31,10 +31,13 @@
 - (BOOL)isServiceSupported:(NSUInteger)arg1;
 - (id)name;
 - (BOOL)paired;
+- (id)scoUID;
+- (void)setAuthorizedServices:(NSUInteger)arg1;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
 - (void)setPIN:(id)arg1;
 - (void)setSyncGroup:(NSInteger)arg1 enabled:(BOOL)arg2;
 - (void)setSyncSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })arg1;
+- (void)startVoiceCommand;
 - (BOOL)supportsBatteryLevel;
 - (id)syncGroups;
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })syncSettings;

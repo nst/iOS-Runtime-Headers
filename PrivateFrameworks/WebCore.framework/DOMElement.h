@@ -5,10 +5,18 @@
 @interface DOMElement : DOMNode {
 }
 
+@property(retain,readonly) DOMElement *firstElementChild;
+@property(copy,readonly) NSString *innerText;
+@property(retain,readonly) DOMElement *lastElementChild;
+@property(retain,readonly) DOMElement *nextElementSibling;
 @property(retain,readonly) DOMElement *offsetParent;
+@property(retain,readonly) DOMElement *previousElementSibling;
 @property(retain,readonly) DOMCSSStyleDeclaration *style;
 @property(copy,readonly) NSString *tagName;
+@property(readonly) NSUInteger childElementCount;
 @property(readonly) NSInteger clientHeight;
+@property(readonly) NSInteger clientLeft;
+@property(readonly) NSInteger clientTop;
 @property(readonly) NSInteger clientWidth;
 @property(readonly) NSInteger offsetHeight;
 @property(readonly) NSInteger offsetLeft;
@@ -21,10 +29,8 @@
 
 + (BOOL)isRichTextStyle:(id)arg1;
 
-- (void*)_NPObject;
 - (struct __GSFont { }*)_font;
 - (id)_getURLAttribute:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_windowClipRect;
 - (void)blur;
 - (NSUInteger)childElementCount;
 - (NSInteger)clientHeight;
@@ -50,6 +56,7 @@
 - (BOOL)hasAttributeNS:(id)arg1 :(id)arg2;
 - (BOOL)hasAttributeNS:(id)arg1 localName:(id)arg2;
 - (BOOL)hasCustomLineHeight;
+- (BOOL)hasMarginsOfZero;
 - (BOOL)inDocument;
 - (id)innerText;
 - (BOOL)isFocused;
@@ -57,6 +64,7 @@
 - (BOOL)isRichTextElement;
 - (BOOL)isRichTextElementType;
 - (id)lastElementChild;
+- (NSInteger)mf_quoteLevelDelta;
 - (id)nextElementSibling;
 - (NSInteger)offsetHeight;
 - (NSInteger)offsetLeft;
@@ -66,7 +74,6 @@
 - (id)previousElementSibling;
 - (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;
-- (NSInteger)quoteLevelDelta;
 - (void)recursivelyRemoveMailAttributes;
 - (void)removeAttribute:(id)arg1;
 - (void)removeAttributeNS:(id)arg1 :(id)arg2;
@@ -89,9 +96,11 @@
 - (id)setAttributeNodeNS:(id)arg1;
 - (void)setScrollLeft:(NSInteger)arg1;
 - (void)setScrollTop:(NSInteger)arg1;
+- (NSInteger)structuralComplexityContribution;
 - (id)style;
 - (id)tagName;
 - (id)tapHighlightColor;
 - (BOOL)touchCalloutEnabled;
+- (BOOL)webkitMatchesSelector:(id)arg1;
 
 @end

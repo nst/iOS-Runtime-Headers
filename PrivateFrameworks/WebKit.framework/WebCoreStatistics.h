@@ -5,8 +5,11 @@
 @interface WebCoreStatistics : NSObject {
 }
 
++ (NSInteger)autoreleasedPageCount;
 + (unsigned long)cachedFontDataCount;
 + (unsigned long)cachedFontDataInactiveCount;
++ (NSInteger)cachedFrameCount;
++ (NSInteger)cachedPageCount;
 + (void)emptyCache;
 + (void)garbageCollectJavaScriptObjects;
 + (void)garbageCollectJavaScriptObjectsOnAlternateThreadForDebugging:(BOOL)arg1;

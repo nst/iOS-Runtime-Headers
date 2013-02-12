@@ -5,19 +5,20 @@
 @class WDCharacterProperties;
 
 @interface WDFieldMarker : WDRun {
+    unsigned int mZombieEmbed : 1;
+    unsigned int mResultDirty : 1;
+    unsigned int mResultEdited : 1;
+    unsigned int mLocked : 1;
+    unsigned int mPrivateResult : 1;
+    unsigned int mNested : 1;
+    unsigned int mHasSeparator : 1;
     NSInteger mFieldPosition;
     unsigned char mFieldType;
-    BOOL mHasSeparator;
-    BOOL mLocked;
     NSInteger mMarkerType;
-    BOOL mNested;
-    BOOL mPrivateResult;
     WDCharacterProperties *mProperties;
-    BOOL mResultDirty;
-    BOOL mResultEdited;
-    BOOL mZombieEmbed;
 }
 
+- (void)clearProperties;
 - (void)dealloc;
 - (NSInteger)fieldMarkerType;
 - (long)fieldPosition;

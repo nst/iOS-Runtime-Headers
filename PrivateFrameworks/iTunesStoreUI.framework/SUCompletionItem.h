@@ -9,14 +9,13 @@
     NSURL *_url;
 }
 
-@property(retain) NSString *title;
-@property(retain) NSURL *url;
+@property(readonly) NSURL *URL;
+@property(readonly) NSString *title;
 
+- (id)URL;
 - (void)dealloc;
+- (id)init;
 - (id)initWithPropertyList:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setUrl:(id)arg1;
 - (id)title;
-- (id)url;
 
 @end

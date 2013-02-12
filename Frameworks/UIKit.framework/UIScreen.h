@@ -12,17 +12,57 @@
             float width; 
             float height; 
         } size; 
+    struct { 
+        unsigned int bitsPerComponent : 4; 
+        unsigned int initialized : 1; 
+        unsigned int connected : 1; 
     } _bounds;
+    id _display;
+    float _horizontalScale;
+    float _scale;
+    } _screenFlags;
 }
 
+@property(copy,readonly) NSArray *availableModes;
+@property(retain) UIScreenMode *currentMode;
 @property(readonly) CGRect applicationFrame;
 @property(readonly) CGRect bounds;
+@property(readonly) float scale;
 
++ (void)_videoOutSettingsChanged;
++ (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromView:(id)arg2;
++ (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toView:(id)arg2;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromView:(id)arg2;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toView:(id)arg2;
++ (void)initialize;
 + (id)mainScreen;
++ (id)screens;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForScreenOriginRotation:(float)arg1;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToRotateScreen:(float)arg1;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_applicationFrameForInterfaceOrientation:(NSInteger)arg1;
+- (void)_computeMetrics;
+- (id)_defaultScreenMode;
+- (BOOL)_hasStatusBar;
+- (float)_horizontalPixelScale;
+- (BOOL)_isMainScreen;
+- (id)_name;
+- (void)_prepareForWindow;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_realDisplayBounds;
+- (float)_rotation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationFrame;
+- (id)availableModes;
+- (NSInteger)bitsPerComponent;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)init;
+- (id)currentMode;
+- (void)dealloc;
+- (id)description;
+- (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
+- (id)initWithDisplay:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (float)scale;
+- (NSInteger)screenType;
+- (void)setBitsPerComponent:(NSInteger)arg1;
+- (void)setCurrentMode:(id)arg1;
 
 @end

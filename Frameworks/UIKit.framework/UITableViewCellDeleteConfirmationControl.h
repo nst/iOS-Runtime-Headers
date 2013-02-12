@@ -8,12 +8,15 @@
 
 @property(getter=isVisible) BOOL visible;
 
++ (void)_initializeSafeCategory;
 + (struct CGSize { float x1; float x2; })defaultSizeForTitle:(id)arg1;
 
 - (void)_confirmationAnimationDidEnd;
 - (id)_interceptEvent:(id)arg1;
 - (id)_interceptMouseEvent:(struct __GSEvent { }*)arg1;
 - (void)_setInterceptMouseEvent:(BOOL)arg1;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -21,6 +24,7 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithTitle:(id)arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isVisible;
 - (void)layoutSubviews;
 - (void)removeFromSuperview;

@@ -27,7 +27,6 @@
 @property float zThreshold;
 
 - (void)_checkIn;
-- (void)_checkInInBackground;
 - (void)_checkOut;
 - (void)_orientationDidChange;
 - (id)_orientationEventsThread;

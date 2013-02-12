@@ -12,7 +12,9 @@
 - (NSInteger)blendMode;
 - (void)dealloc;
 - (id)fill;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)setBlendMode:(NSInteger)arg1;
 - (void)setFill:(id)arg1;
 

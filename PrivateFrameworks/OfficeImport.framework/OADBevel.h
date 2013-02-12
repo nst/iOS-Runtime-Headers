@@ -9,8 +9,10 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
 - (float)height;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (void)setHeight:(float)arg1;
 - (void)setType:(NSInteger)arg1;
 - (void)setWidth:(float)arg1;

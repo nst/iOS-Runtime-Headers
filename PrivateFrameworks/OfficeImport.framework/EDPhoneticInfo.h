@@ -2,18 +2,24 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class EDCollection, EDResources, NSString;
 
-@interface EDPhoneticInfo : NSObject {
+@interface EDPhoneticInfo : NSObject <EDImmutableObject> {
+     /* Encoded args for previous method: v12@0:4B8 */
     NSInteger mAlign;
     NSUInteger mFontIndex;
     EDResources *mResources;
     EDCollection *mRuns;
     NSString *mString;
     NSInteger mType;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mDoNotModify;
 }
 
-+ (id)infoWithResources:(id)arg1;
++ (id)phoneticInfoWithResources:(id)arg1;
 
 - (NSInteger)align;
 - (void)dealloc;
@@ -25,6 +31,7 @@
 - (BOOL)isEqualToEDPhoneticInfo:(id)arg1;
 - (id)runs;
 - (void)setAlign:(NSInteger)arg1;
+- (void)setDoNotModify:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setFont:(id)arg1;
 - (void)setFontIndex:(NSUInteger)arg1;
 - (void)setString:(id)arg1;

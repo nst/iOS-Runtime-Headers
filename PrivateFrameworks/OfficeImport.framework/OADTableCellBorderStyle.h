@@ -19,13 +19,14 @@
 + (id)defaultObliqueStroke;
 + (id)defaultStyle;
 
+- (void)applyOverridesFrom:(id)arg1;
 - (id)bottomLeftToTopRightStroke;
 - (id)bottomStroke;
 - (void)dealloc;
 - (id)horzInsideStroke;
 - (id)leftStroke;
 - (id)rightStroke;
-- (void)setBottomLeftToTopRightStrokeStroke:(id)arg1;
+- (void)setBottomLeftToTopRightStroke:(id)arg1;
 - (void)setBottomStroke:(id)arg1;
 - (void)setHorzInsideStroke:(id)arg1;
 - (void)setLeftStroke:(id)arg1;
@@ -33,6 +34,7 @@
 - (void)setTopLeftToBottomRightStroke:(id)arg1;
 - (void)setTopStroke:(id)arg1;
 - (void)setVertInsideStroke:(id)arg1;
+- (id)shallowCopy;
 - (id)stroke:(NSInteger)arg1;
 - (id)topLeftToBottomRightStroke;
 - (id)topStroke;

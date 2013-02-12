@@ -9,6 +9,7 @@
 
 - (void)dealloc;
 - (id)ratingImageForRating:(float)arg1 style:(NSInteger)arg2;
+- (void)resetLayoutCaches;
 - (struct CGSize { float x1; float x2; })sizeForString:(id)arg1 font:(id)arg2 constrainedToSize:(struct CGSize { float x1; float x2; })arg3;
 
 @end

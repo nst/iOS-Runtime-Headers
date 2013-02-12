@@ -8,12 +8,16 @@
     MPMediaPlaylistInternal *_playlistInternal;
 }
 
++ (void)_createFilterableDictionary;
++ (BOOL)_isValidPlaylistProperty:(id)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
 
+- (id)_initWithMLPlaylist:(id)arg1;
 - (NSUInteger)count;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)geniusMixArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)items;
 - (NSInteger)mediaTypes;

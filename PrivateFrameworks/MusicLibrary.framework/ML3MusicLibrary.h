@@ -2,48 +2,58 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSOperationQueue, NSString;
+@class NSOperationQueue, NSString, NSThread;
 
 @interface ML3MusicLibrary : NSObject {
     NSOperationQueue *_backgroundOperationQueue;
+    NSThread *_backgroundThread;
     BOOL _enableWrites;
     NSString *_path;
 }
 
 @property(retain,readonly) NSOperationQueue *backgroundOperationQueue;
+@property(readonly) ML3MusicLibrary_SQLiteDatabaseContext *threadLocalDatabaseContext;
 
 + (void)attachAuxiliaryDatabases:(struct sqlite3 { }*)arg1;
++ (void)ensureIndexExists:(id)arg1 onHandle:(struct sqlite3 { }*)arg2 entityClass:(Class)arg3 indexableSQL:(id)arg4;
 + (void)ensureIndexExists:(id)arg1 onHandle:(struct sqlite3 { }*)arg2 entityClass:(Class)arg3 properties:(id)arg4;
 + (void)ensureIndicesExistOnHandle:(struct sqlite3 { }*)arg1;
 + (void)ensureSectionAndListIndicesExist:(id)arg1 onHandle:(struct sqlite3 { }*)arg2 entityClass:(Class)arg3 filteredProperties:(id)arg4 sectionProperties:(id)arg5 orderingProperties:(id)arg6 representativeItemProperty:(id)arg7;
-+ (void)ensureSectionColumnsCorrectOnHandle:(struct sqlite3 { }*)arg1;
++ (void)enumerateSortMapTablesUsingBlock:(id)arg1;
 + (BOOL)executeSQL:(id)arg1 usingHandle:(struct sqlite3 { }*)arg2;
 + (void)initialize;
 + (void)limitCacheSize:(struct sqlite3 { }*)arg1;
-+ (void)load;
 + (id)mainLibraryPath;
 + (void)mediaFolderPathDidChangeNotification:(id)arg1;
-+ (void)registerCollationsOnHandle:(struct sqlite3 { }*)arg1;
 + (void)registerCustomCallbacksOnHandle:(struct sqlite3 { }*)arg1;
 + (void)registerFunctionsOnHandle:(struct sqlite3 { }*)arg1;
 + (id)sharedLibrary;
 + (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
 + (struct __CFDictionary { }*)threadLocalCFMutableDictionaryForKey:(id)arg1 withValueCallbacks:(const struct { NSInteger x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
-+ (id)threadLocalSectionCollator;
++ (BOOL)updateSortMapOnHandle:(struct sqlite3 { }*)arg1;
 
 - (void)_debugLoggingOptionsDidChangeNotification:(id)arg1;
+- (long long)addStringToSortMap:(id)arg1;
 - (id)backgroundOperationQueue;
+- (void)clearThreadLocalStatementCache;
 - (void)dealloc;
 - (id)entityForClass:(Class)arg1 persistentID:(long long)arg2;
 - (BOOL)executeSQL:(id)arg1;
 - (id)initWithPath:(id)arg1 enableWrites:(BOOL)arg2;
+- (long long)insertStringIntoSortMapNoTransaction:(id)arg1;
 - (NSInteger)openDatabaseHandle:(struct sqlite3 {}**)arg1;
+- (void)performOperationInBackground:(id)arg1;
+- (void)popThreadLocalDatabaseHandle;
 - (struct sqlite3_stmt { }*)preparedStatementForSQL:(id)arg1;
+- (void)pushThreadLocalDatabaseHandle:(struct sqlite3 { }*)arg1;
 - (id)threadLocalCollectionForKey:(id)arg1 entityClass:(Class)arg2 collectionClass:(Class)arg3;
+- (id)threadLocalDatabaseContext;
 - (struct sqlite3 { }*)threadLocalDatabaseHandle;
 - (id)threadLocalEntityRequestsForEntityClass:(Class)arg1;
 - (id)threadLocalPropertyCacheForEntityClass:(Class)arg1;
 - (id)threadLocalPropertyRequestsForEntityClass:(Class)arg1;
+- (struct iPhoneSortKeyBuilder { }*)threadLocalSortKeyBuilder;
 - (struct sqlite3_stmt { }*)threadLocalStatementForSQL:(id)arg1;
+- (void)updateSortMap;
 
 @end

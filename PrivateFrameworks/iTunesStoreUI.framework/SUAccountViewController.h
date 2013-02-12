@@ -11,10 +11,10 @@
 
 - (id)_authenticationQueryParametersForStyle:(NSInteger)arg1;
 - (id)_bagKeyForStyle:(NSInteger)arg1;
-- (id)createFetchOperation;
-- (id)createPlaceholderViewController;
-- (id)createViewControllerForPage:(id)arg1 ofType:(NSInteger)arg2 returningError:(id*)arg3;
 - (void)handleFailureWithError:(id)arg1;
+- (id)init;
+- (id)newFetchOperation;
+- (id)newViewControllerForPage:(id)arg1 ofType:(NSInteger)arg2 returningError:(id*)arg3;
 - (void)setStyle:(NSInteger)arg1;
 - (NSInteger)style;
 - (void)viewDidDisappear:(BOOL)arg1;

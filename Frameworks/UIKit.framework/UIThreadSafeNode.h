@@ -10,6 +10,8 @@
 
 + (id)threadSafeNodeWithNode:(id)arg1;
 
+- (id)_realNode;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;

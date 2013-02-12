@@ -5,25 +5,34 @@
 @class NSKnownKeysDictionary, NSManagedObjectModel, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface NSSQLModel : NSStoreMapping {
+    NSUInteger _brokenHashVersion;
     NSMutableDictionary *_cachedFabricatedEntities;
     NSString *_configuration;
     NSMutableArray *_entities;
     NSKnownKeysDictionary *_entitiesByName;
+    BOOL _modelHasPrecomputedKeyOrder;
     NSManagedObjectModel *_mom;
-    BOOL _useBrokenHashing;
+    BOOL _retainLeopardStyleDictionaries;
 }
 
 - (void)_addIndexedEntity:(id)arg1;
 - (id)_entityMapping;
 - (void)_generateModel:(id)arg1;
-- (BOOL)_useBrokenHashing;
+- (BOOL)_modelHasPrecomputedKeyOrder;
+- (id)_precomputedKeyOrderForEntity:(id)arg1;
+- (BOOL)_retainHashHack;
+- (BOOL)_useLeopardStyleHashing;
+- (BOOL)_useSnowLeopardStyleHashing;
 - (id)configurationName;
 - (void)dealloc;
 - (id)entities;
+- (id)entitiesByName;
 - (id)entityForID:(unsigned long)arg1;
 - (unsigned long)entityIDForName:(id)arg1;
 - (id)entityNamed:(id)arg1;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 useBrokenHashing:(BOOL)arg3;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 brokenHashVersion:(NSUInteger)arg3;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3 brokenHashVersion:(NSUInteger)arg4;
+- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
 - (id)managedObjectModel;
 

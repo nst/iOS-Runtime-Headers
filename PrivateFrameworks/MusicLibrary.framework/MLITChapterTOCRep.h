@@ -37,5 +37,6 @@
 - (NSUInteger)totalTimeInMS;
 - (id)urlPropertyOfChapterAtIndex:(NSUInteger)arg1;
 - (id)urlTitlePropertyOfChapterAtIndex:(NSUInteger)arg1;
+- (id)urlTitleTrimmingCharacterSet;
 
 @end

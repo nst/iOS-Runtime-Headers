@@ -449,13 +449,13 @@
             int (*tex_image3D)(); 
             int (*tex_sub_image3D)(); 
             int (*copy_tex_sub_image3D)(); 
-            int (*combiner_parameterfv_NV)(); 
-            int (*combiner_parameterf_NV)(); 
-            int (*combiner_parameteriv_NV)(); 
-            int (*combiner_parameteri_NV)(); 
-            int (*combiner_input_NV)(); 
-            int (*combiner_output_NV)(); 
-            int (*final_combiner_input_NV)(); 
+            int (*get_uniform_indices)(); 
+            int (*get_active_uniformsiv)(); 
+            int (*get_active_uniform_name)(); 
+            int (*get_uniform_block_index)(); 
+            int (*get_active_uniform_blockiv)(); 
+            int (*get_active_uniform_block_name)(); 
+            int (*uniform_block_binding)(); 
             int (*get_combiner_input_parameterfv_NV)(); 
             int (*get_combiner_input_parameteriv_NV)(); 
             int (*get_combiner_output_parameterfv_NV)(); 
@@ -769,6 +769,22 @@
             int (*end_conditional_render_NV)(); 
             int (*get_attached_shaders)(); 
             int (*provoking_vertex_EXT)(); 
+            int (*vertex_attrib_divisor)(); 
+            int (*draw_arrays_instanced)(); 
+            int (*draw_elements_instanced)(); 
+            int (*draw_elements_base_vertex)(); 
+            int (*draw_range_elements_base_vertex)(); 
+            int (*draw_elements_instanced_base_vertex)(); 
+            int (*multi_draw_elements_base_vertex)(); 
+            int (*bind_vertex_array_ARB)(); 
+            int (*delete_vertex_arrays_ARB)(); 
+            int (*gen_vertex_arrays_ARB)(); 
+            int (*is_vertex_array_ARB)(); 
+            int (*vertex_point_sizef_APPLE)(); 
+            int (*tex_image2D_multisample)(); 
+            int (*tex_image3D_multisample)(); 
+            int (*get_multisamplefv)(); 
+            int (*sample_maski)(); 
             int (*alpha_funcx)(); 
             int (*clear_colorx)(); 
             int (*clear_depthf)(); 
@@ -830,6 +846,9 @@
             int (*shader_binary_OES)(); 
             int (*get_shader_precision_format_OES)(); 
             int (*release_shader_compiler_OES)(); 
+            int (*discard_framebuffer_EXT)(); 
+            int (*framebuffer_parameteri_APPLE)(); 
+            int (*resolve_multisample_framebuffer_APPLE)(); 
         } x29; struct __GLIFunctionDispatchRec { 
             int (*accum)(); 
             int (*alpha_func)(); 
@@ -1272,13 +1291,13 @@
             int (*tex_image3D)(); 
             int (*tex_sub_image3D)(); 
             int (*copy_tex_sub_image3D)(); 
-            int (*combiner_parameterfv_NV)(); 
-            int (*combiner_parameterf_NV)(); 
-            int (*combiner_parameteriv_NV)(); 
-            int (*combiner_parameteri_NV)(); 
-            int (*combiner_input_NV)(); 
-            int (*combiner_output_NV)(); 
-            int (*final_combiner_input_NV)(); 
+            int (*get_uniform_indices)(); 
+            int (*get_active_uniformsiv)(); 
+            int (*get_active_uniform_name)(); 
+            int (*get_uniform_block_index)(); 
+            int (*get_active_uniform_blockiv)(); 
+            int (*get_active_uniform_block_name)(); 
+            int (*uniform_block_binding)(); 
             int (*get_combiner_input_parameterfv_NV)(); 
             int (*get_combiner_input_parameteriv_NV)(); 
             int (*get_combiner_output_parameterfv_NV)(); 
@@ -1592,6 +1611,22 @@
             int (*end_conditional_render_NV)(); 
             int (*get_attached_shaders)(); 
             int (*provoking_vertex_EXT)(); 
+            int (*vertex_attrib_divisor)(); 
+            int (*draw_arrays_instanced)(); 
+            int (*draw_elements_instanced)(); 
+            int (*draw_elements_base_vertex)(); 
+            int (*draw_range_elements_base_vertex)(); 
+            int (*draw_elements_instanced_base_vertex)(); 
+            int (*multi_draw_elements_base_vertex)(); 
+            int (*bind_vertex_array_ARB)(); 
+            int (*delete_vertex_arrays_ARB)(); 
+            int (*gen_vertex_arrays_ARB)(); 
+            int (*is_vertex_array_ARB)(); 
+            int (*vertex_point_sizef_APPLE)(); 
+            int (*tex_image2D_multisample)(); 
+            int (*tex_image3D_multisample)(); 
+            int (*get_multisamplefv)(); 
+            int (*sample_maski)(); 
             int (*alpha_funcx)(); 
             int (*clear_colorx)(); 
             int (*clear_depthf)(); 
@@ -1653,6 +1688,9 @@
             int (*shader_binary_OES)(); 
             int (*get_shader_precision_format_OES)(); 
             int (*release_shader_compiler_OES)(); 
+            int (*discard_framebuffer_EXT)(); 
+            int (*framebuffer_parameteri_APPLE)(); 
+            int (*resolve_multisample_framebuffer_APPLE)(); 
         } x30; } *_private;
 }
 
@@ -1665,14 +1703,16 @@
 - (NSUInteger)API;
 - (BOOL)attachImage:(NSUInteger)arg1 toCoreSurface:(struct __IOSurface { }*)arg2 invertedRender:(BOOL)arg3;
 - (void)dealloc;
-- (void)getParameter:(NSUInteger)arg1 to:(NSInteger*)arg2;
+- (NSUInteger)getParameter:(NSUInteger)arg1 to:(NSInteger*)arg2;
 - (id)initWithAPI:(NSUInteger)arg1 properties:(id)arg2;
 - (id)initWithAPI:(NSUInteger)arg1 sharegroup:(id)arg2;
 - (id)initWithAPI:(NSUInteger)arg1;
 - (BOOL)presentRenderbuffer:(NSUInteger)arg1;
 - (BOOL)renderbufferStorage:(NSUInteger)arg1 fromDrawable:(id)arg2;
-- (void)setParameter:(NSUInteger)arg1 to:(NSInteger*)arg2;
+- (void)sendNotification:(NSUInteger)arg1 forTransaction:(NSUInteger)arg2 onLayer:(NSUInteger)arg3;
+- (NSUInteger)setParameter:(NSUInteger)arg1 to:(NSInteger*)arg2;
 - (id)sharegroup;
 - (void)swapNotification:(struct __IOMobileFramebuffer { }*)arg1 forTransaction:(NSUInteger)arg2 onLayer:(NSUInteger)arg3;
+- (BOOL)texImageIOSurface:(struct __IOSurface { }*)arg1 target:(NSUInteger)arg2 internalFormat:(NSUInteger)arg3 width:(NSUInteger)arg4 height:(NSUInteger)arg5 format:(NSUInteger)arg6 type:(NSUInteger)arg7 plane:(NSUInteger)arg8 invert:(BOOL)arg9;
 
 @end

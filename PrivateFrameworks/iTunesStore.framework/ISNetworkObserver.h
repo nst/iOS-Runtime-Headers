@@ -2,60 +2,54 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSLock, NSString, NSTimer;
+@class NSLock, NSMutableSet;
 
-@interface ISNetworkObserver : NSObject <ISSingleton> {
-    NSInteger _activeAssetTypes;
-    NSInteger _assetActivityFilter;
-    NSTimer *_dataStatusChangeTimer;
-    NSUInteger _lastNetworkTypeFromDataStatus;
+@interface ISNetworkObserver : NSObject <ISSingleton, SSDownloadQueueObserver> {
+    double _lastNetworkTypeChangeTime;
     NSLock *_lock;
-    NSUInteger _networkType;
+    NSInteger _networkType;
     NSInteger _networkUsageCount;
     struct __CFBag { } *_networkUsageCountByAsset;
-    NSString *_operatorName;
-    struct __SCDynamicStore { } *_store;
+    NSMutableSet *_observedDownloadQueues;
+    struct __SCNetworkReachability { } *_reachability;
 }
 
-@property(retain,readonly) NSString *connectionTypeHeader;
-@property(retain) NSString *operatorName;
-@property NSUInteger networkType;
+@property(readonly) NSString *connectionTypeHeader;
+@property(readonly) double lastNetworkTypeChangeTime;
+@property NSInteger networkType;
 @property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
 @property(getter=isWiFiEnabled,readonly) BOOL wifiEnabled;
 
 + (void)set3GEnabled:(BOOL)arg1;
-+ (void)setAirportEnabled:(BOOL)arg1;
++ (void)setAirplaneModeEnabled:(BOOL)arg1;
 + (void)setSharedInstance:(id)arg1;
++ (void)setWiFiEnabled:(BOOL)arg1;
 + (id)sharedInstance;
 
-- (void)_assetActivityChangedNotification:(id)arg1;
-- (void)_daemonExitedNotification:(id)arg1;
-- (void)_delayedDataStatusChange:(id)arg1;
-- (BOOL)_interfaceIsVPN:(struct __CFString { }*)arg1;
-- (void)_mainThreadDaemonExitedNotification:(id)arg1;
-- (NSUInteger)_networkTypeForPPPStore:(struct __SCDynamicStore { }*)arg1 service:(struct __CFString { }*)arg2;
-- (NSUInteger)_networkTypeFromCommCenter;
-- (NSUInteger)_networkTypeFromDataIndicator:(id)arg1;
+- (void)_dataStatusChangedNotification:(id)arg1;
+- (NSInteger)_networkTypeFromDataIndicator:(id)arg1;
+- (BOOL)_ntsIsUsingNetwork;
+- (void)_postUsageChangedToValue:(BOOL)arg1;
 - (void)_reloadNetworkType;
-- (void)_reloadOperatorName;
-- (void)_startWatchingDaemon;
-- (void)_startWatchingDynamicStore;
-- (void)_stopDataStatusTimer;
-- (void)_stopWatchingDaemon;
-- (void)_updateNetworkTypeForDataStatusChange:(id)arg1;
+- (void)_startReachability;
+- (void)_telephonyObserverAvailableNotification:(id)arg1;
+- (void)beginObservingDownloadQueue:(id)arg1;
 - (void)beginUsingNetwork;
 - (void)beginUsingNetworkForAssetType:(NSInteger)arg1;
 - (id)connectionTypeHeader;
+- (id)copyActiveAssetTypes;
 - (void)dealloc;
+- (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
+- (void)downloadQueueNetworkUsageChanged:(id)arg1;
+- (void)endObservingDownloadQueue:(id)arg1;
 - (void)endUsingNetwork;
 - (void)endUsingNetworkForAssetType:(NSInteger)arg1;
 - (id)init;
 - (BOOL)isUsingNetwork;
 - (BOOL)isWiFiEnabled;
-- (NSUInteger)networkType;
-- (id)operatorName;
-- (void)setAssetNetworkActivityFilter:(NSInteger)arg1;
-- (void)setNetworkType:(NSUInteger)arg1;
-- (void)setOperatorName:(id)arg1;
+- (double)lastNetworkTypeChangeTime;
+- (NSInteger)networkType;
+- (void)reloadNetworkType;
+- (void)setNetworkType:(NSInteger)arg1;
 
 @end

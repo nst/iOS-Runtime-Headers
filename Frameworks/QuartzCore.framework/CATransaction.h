@@ -10,12 +10,14 @@
 + (void)begin;
 + (BOOL)beginWithoutBlocking;
 + (void)commit;
++ (id)completionBlock;
 + (NSUInteger)currentState;
 + (BOOL)disableActions;
 + (void)flush;
 + (void)lock;
 + (void)setAnimationDuration:(double)arg1;
 + (void)setAnimationTimingFunction:(id)arg1;
++ (void)setCompletionBlock:(id)arg1;
 + (void)setDisableActions:(BOOL)arg1;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (void)synchronize;

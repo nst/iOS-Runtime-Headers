@@ -12,6 +12,7 @@
 + (id)defaultQueue;
 
 - (void)_addLocalTransactionForPayment:(id)arg1;
+- (void)_applicationBecameActiveNotification:(id)arg1;
 - (id)_copyRemovalsFromUnmergedIndexSet:(id)arg1;
 - (id)_copyTransactionsFromNotification:(id)arg1;
 - (void)_daemonExited:(id)arg1;

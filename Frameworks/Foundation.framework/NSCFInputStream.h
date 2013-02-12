@@ -19,6 +19,7 @@
 - (NSUInteger)hash;
 - (id)initWithData:(id)arg1;
 - (id)initWithFileAtPath:(id)arg1;
+- (id)initWithURL:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)open;
 - (id)propertyForKey:(id)arg1;

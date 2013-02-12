@@ -2,40 +2,39 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCachedVideoFilesManager, PLPhotoLibrary;
+@class PLPhotoLibrary;
 
 @interface PLLibraryViewController : UIViewController {
     struct { 
         unsigned int albumsInvalid : 1; 
         unsigned int visible : 1; 
         unsigned int filter : 3; 
-        unsigned int didSetPreviousStatusBarMode : 1; 
+        unsigned int syncing : 1; 
         unsigned int reserved : 26; 
-    PLCachedVideoFilesManager *_cachedVideoFileManager;
+    NSInteger _contentMode;
     PLPhotoLibrary *_library;
     } _libraryControllerFlags;
-    NSInteger _newStatusBarMode;
-    NSInteger _previousStatusBarMode;
 }
 
-- (NSInteger)_imagePickerStatusBarMode;
+@property(readonly) NSInteger contentMode;
+
 - (id)_library;
 - (void)_reloadLibrary;
-- (void)_runVideoPostProcessIfNecessary;
 - (void)_updateAlbumsIfNecessary;
+- (void)albumDidChange:(id)arg1;
+- (NSInteger)contentMode;
 - (id)contentScrollView;
 - (void)dealloc;
 - (NSInteger)filter;
 - (void)iTunesSyncDidFinish;
 - (void)iTunesSyncDidStart;
-- (void)iTunesSyncPhaseDidFinish:(NSInteger)arg1 reason:(NSInteger)arg2;
-- (void)iTunesSyncPhaseWillStart:(NSInteger)arg1;
 - (id)init;
+- (void)libraryDidChange:(id)arg1;
 - (void)loadView;
+- (void)setContentMode:(NSInteger)arg1;
 - (void)setFilter:(NSInteger)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

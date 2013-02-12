@@ -2,25 +2,28 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MessageStore, NSData, NSString;
+@class MessageStore, NSArray, NSData, NSString;
 
 @interface Message : NSObject {
     unsigned int _calculatedAttachmentInfo : 1;
-    NSString *_cc;
+    NSArray *_bcc;
+    NSArray *_cc;
     NSString *_contentType;
+    NSString *_conversationID;
     NSUInteger _dateReceivedInterval;
     NSUInteger _dateSentInterval;
-    double _generationTime;
+    NSString *_externalID;
+    unsigned long long _generationNumber;
     NSData *_inReplyToHeaderDigest;
     NSData *_messageIDHeaderDigest;
     unsigned short _numberOfAttachments;
     NSUInteger _preferredEncoding;
-    NSString *_sender;
+    NSArray *_sender;
     NSString *_senderAddressComment;
     MessageStore *_store;
     NSString *_subject;
     NSString *_summary;
-    NSString *_to;
+    NSArray *_to;
 }
 
 + (void)initialize;
@@ -34,6 +37,10 @@
 - (id)_messageIDHeaderDigestIvar;
 - (void)_setDateReceivedFromHeaders:(id)arg1;
 - (void)_setDateSentFromHeaders:(id)arg1;
+- (id)additionalHeadersForForward;
+- (id)additionalHeadersForReply;
+- (id)bcc;
+- (id)bccIfCached;
 - (id)bestAlternativeInPart:(id)arg1;
 - (id)bodyData;
 - (id)bodyDataIsComplete:(BOOL*)arg1;
@@ -44,6 +51,7 @@
 - (id)cc;
 - (id)ccIfCached;
 - (id)contentType;
+- (id)conversationID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
@@ -56,8 +64,10 @@
 - (double)dateSentAsTimeIntervalSince1970;
 - (void)dealloc;
 - (id)defaultAlternativeInPart:(id)arg1;
+- (id)externalID;
+- (id)firstSender;
 - (NSInteger)generationCompare:(id)arg1;
-- (double)generationTime;
+- (unsigned long long)generationNumber;
 - (id)headerData;
 - (id)headers;
 - (id)headersIfAvailable;
@@ -76,6 +86,7 @@
 - (id)messageID;
 - (id)messageIDHeader;
 - (id)messageIDHeaderDigest;
+- (id)messageIDHeaderInFortyBytesOrLess;
 - (NSUInteger)messageSize;
 - (id)messageStore;
 - (BOOL)needsDateReceived;
@@ -85,18 +96,21 @@
 - (id)preferredEmailAddressToReplyWith;
 - (unsigned long)preferredEncoding;
 - (id)remoteID;
-- (id)sender;
 - (id)senderAddressComment;
-- (id)senderIfCached;
+- (id)senders;
+- (id)sendersIfCached;
+- (void)setBcc:(id)arg1;
 - (void)setCc:(id)arg1;
 - (void)setContentType:(id)arg1;
+- (void)setConversationID:(id)arg1;
 - (void)setDateReceivedTimeIntervalSince1970:(double)arg1;
 - (void)setDateSentTimeIntervalSince1970:(double)arg1;
-- (void)setGenerationTime:(double)arg1;
+- (void)setExternalID:(id)arg1;
+- (void)setGenerationNumber:(unsigned long long)arg1;
 - (void)setInReplyToHeaderDigest:(id)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(BOOL)arg2;
 - (void)setMessageIDHeaderDigest:(id)arg1;
-- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 sender:(id)arg4 dateReceivedTimeIntervalSince1970:(double)arg5 dateSentTimeIntervalSince1970:(double)arg6 messageIDHeaderDigest:(id)arg7 inReplyToHeaderDigest:(id)arg8 summary:(id)arg9;
+- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHeaderDigest:(id)arg8 inReplyToHeaderDigest:(id)arg9 conversationID:(id)arg10 summary:(id)arg11;
 - (void)setMessageInfoFromMessage:(id)arg1;
 - (void)setMessageStore:(id)arg1;
 - (void)setNumberOfAttachments:(NSUInteger)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3;
@@ -110,6 +124,7 @@
 - (id)to;
 - (id)toIfCached;
 - (unsigned long)uid;
+- (id)uniqueArray:(id)arg1 withStore:(id)arg2;
 - (void)unlockedSetInReplyToHeaderDigest:(id)arg1;
 - (void)unlockedSetMessageIDHeaderDigest:(id)arg1;
 

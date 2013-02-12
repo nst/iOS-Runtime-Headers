@@ -2,17 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MLPlaylist;
+@class MLPlaylist, MPGeniusMix;
 
 @interface MPMediaServerPlaylist : NSObject <NSCoding> {
-    NSUInteger _entityProperty;
+    MPGeniusMix *_geniusMix;
     MLPlaylist *_playlist;
-    id _value;
 }
 
 - (id)count;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (struct CGImage { }*)geniusMixArtworkOfSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)geniusMixRepresentativeArtists;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMLPlaylist:(id)arg1;
 - (id)isWorkoutMix;

@@ -9,7 +9,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)editingStringForObjectValue:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
+- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3 error:(out id*)arg4;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;

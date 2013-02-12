@@ -6,8 +6,10 @@
 
 @interface NSAttributeDescription : NSPropertyDescription {
     struct __attributeDescriptionFlags { 
-        unsigned int _useForLocking : 1; 
-        unsigned int _reservedAttributeDescription : 31; 
+        unsigned int _hasMaxValueInExtraIvars : 1; 
+        unsigned int _hasMinValueInExtraIvars : 1; 
+        unsigned int _storeBinaryDataExternally : 1; 
+        unsigned int _reservedAttributeDescription : 29; 
     } _attributeDescriptionFlags;
     Class _attributeValueClass;
     NSString *_attributeValueClassName;
@@ -20,15 +22,17 @@
 + (void)initialize;
 
 - (Class)_attributeValueClass;
+- (NSInteger)_canConvertPredicate:(id)arg1 andWarning:(id)arg2;
+- (BOOL)_comparePredicatesAndWarnings:(id)arg1;
+- (BOOL)_comparePredicatesAndWarningsWithUnoptimizedAttributeDescription:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (id)_initWithName:(id)arg1 type:(NSUInteger)arg2 withClassName:(id)arg3;
 - (id)_initWithName:(id)arg1 type:(NSUInteger)arg2;
 - (id)_initWithType:(NSUInteger)arg1;
-- (BOOL)_isUsedForLocking;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (NSUInteger)_propertyType;
-- (void)_setUsedForLocking:(BOOL)arg1;
 - (void)_versionHash:(char *)arg1;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
 - (NSUInteger)attributeType;
 - (id)attributeValueClassName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,7 +46,9 @@
 - (void)setAttributeType:(NSUInteger)arg1;
 - (void)setAttributeValueClassName:(id)arg1;
 - (void)setDefaultValue:(id)arg1;
+- (void)setStoresBinaryDataExternally:(BOOL)arg1;
 - (void)setValueTransformerName:(id)arg1;
+- (BOOL)storesBinaryDataExternally;
 - (id)valueTransformerName;
 - (id)versionHash;
 

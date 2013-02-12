@@ -11,6 +11,7 @@
 }
 
 - (void)dealloc;
+- (id)getDocumentProperty:(NSInteger)arg1 withId:(NSInteger)arg2 PropType:(NSInteger*)arg3 throwOnError:(BOOL)arg4;
 - (id)getDocumentProperty:(NSInteger)arg1 withId:(NSInteger)arg2 PropType:(NSInteger*)arg3;
 - (long)getLongDocumentPropertyWithId:(NSInteger)arg1 givenPropStream:(NSInteger)arg2;
 - (short)getShortDocumentPropertyWithId:(NSInteger)arg1 givenPropStream:(NSInteger)arg2;

@@ -4,7 +4,7 @@
 
 @class DOMHTMLOptionElement;
 
-@interface UIDOMHTMLOptionSelectedItem : NSObject <UISelectedItemPrivate> {
+@interface UIDOMHTMLOptionSelectedItem : NSObject <UIWebSelectedItemPrivate> {
     DOMHTMLOptionElement *_node;
     BOOL _selected;
 }

@@ -24,7 +24,7 @@
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3 transformFunction:(id)arg4;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(NSInteger)arg3;
 
-- (id)SQLForEntityClass:(Class)arg1;
+- (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (void)bindToSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
 - (BOOL)caseInsensitive;
 - (NSInteger)comparison;

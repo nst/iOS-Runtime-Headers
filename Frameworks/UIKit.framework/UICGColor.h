@@ -7,6 +7,7 @@
 }
 
 - (struct CGColor { }*)CGColor;
+- (float)alphaComponent;
 - (id)colorSpaceName;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (void)dealloc;

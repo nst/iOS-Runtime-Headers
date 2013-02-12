@@ -7,7 +7,11 @@
 
 @property(retain,readonly) DOMHTMLFormElement *form;
 
+- (BOOL)checkValidity;
 - (id)form;
+- (void)setCustomValidity:(id)arg1;
+- (id)validationMessage;
+- (id)validity;
 - (BOOL)willValidate;
 
 @end

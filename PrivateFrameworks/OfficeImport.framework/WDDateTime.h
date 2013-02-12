@@ -9,6 +9,7 @@
     WDCharacterProperties *mProperties;
 }
 
+- (void)clearProperties;
 - (id)date;
 - (void)dealloc;
 - (id)initWithParagraph:(id)arg1 date:(id)arg2;

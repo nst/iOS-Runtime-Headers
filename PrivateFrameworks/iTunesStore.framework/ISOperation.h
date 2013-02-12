@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class <ISOperationDelegate>, ISOperation, ISOperationProgress, NSError, NSLock, NSRunLoop, NSString;
+@class <ISOperationDelegate>, ISOperation, NSArray, NSError, NSLock, NSRunLoop, NSString, SSOperationProgress;
 
 @interface ISOperation : NSOperation {
     <ISOperationDelegate> *_delegate;
@@ -11,7 +11,8 @@
     NSRunLoop *_operationRunLoop;
     ISOperation *_parentOperation;
     NSString *_powerAssertionIdentifier;
-    ISOperationProgress *_progress;
+    SSOperationProgress *_progress;
+    NSArray *_serializationLockIdentifiers;
     BOOL _shouldMessageMainThread;
     ISOperation *_subOperation;
     BOOL _success;
@@ -24,7 +25,8 @@
 @property(retain) NSRunLoop *operationRunLoop;
 @property(retain) ISOperation *parentOperation;
 @property(retain) NSString *powerAssertionIdentifier;
-@property(readonly) ISOperationProgress *progress;
+@property(readonly) SSOperationProgress *progress;
+@property(copy) NSArray *serializationLockIdentifiers;
 @property(retain) ISOperation *subOperation;
 @property(readonly) NSString *uniqueKey;
 @property(readonly) NSInteger progressWeight;
@@ -33,6 +35,7 @@
 @property NSInteger threadPriority;
 @property(readonly) id threadSafeDelegate;
 
+- (void)_dispatchCompletionBlock;
 - (void)_failAfterException;
 - (void)_main:(BOOL)arg1;
 - (void)_sendErrorToDelegate:(id)arg1;
@@ -41,12 +44,14 @@
 - (id)authenticatedAccountDSID;
 - (void)cancel;
 - (BOOL)copyAccountID:(id*)arg1 byAuthenticatingWithContext:(id)arg2 returningError:(id*)arg3;
+- (id)copyActivePowerAssertionIdentifiers;
+- (id)copySerializationLocks;
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
 - (id)init;
 - (BOOL)loadSoftwareMapReturningError:(id*)arg1;
-- (BOOL)loadURLBagWithContext:(id)arg1 waitForNetwork:(BOOL)arg2 returningError:(id*)arg3;
+- (BOOL)loadURLBagWithContext:(id)arg1 returningError:(id*)arg2;
 - (void)lock;
 - (void)main;
 - (id)operationRunLoop;
@@ -58,13 +63,16 @@
 - (void)run;
 - (long)runRunLoopUntilStopped;
 - (BOOL)runSubOperation:(id)arg1 returningError:(id*)arg2;
+- (void)sendCompletionCallback:(id)arg1;
 - (void)sendProgressToDelegate;
+- (id)serializationLockIdentifiers;
 - (void)setDelegate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setOperationRunLoop:(id)arg1;
 - (void)setParentOperation:(id)arg1;
 - (void)setPowerAssertionIdentifier:(id)arg1;
-- (void)setScriptPostOptions:(id)arg1;
+- (void)setScriptOptions:(id)arg1;
+- (void)setSerializationLockIdentifiers:(id)arg1;
 - (void)setShouldMessageMainThread:(BOOL)arg1;
 - (void)setSubOperation:(id)arg1;
 - (void)setSuccess:(BOOL)arg1;

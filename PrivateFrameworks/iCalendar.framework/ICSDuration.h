@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSDuration : NSObject {
+@interface ICSDuration : NSObject <NSCoding> {
     double _duration;
 }
 
 + (id)durationFromICSString:(id)arg1;
++ (id)durationFromICSString:(id)arg1;
 + (id)durationFromRFC2445UTF8String:(const char *)arg1;
 
+- (id)ICSStringWithOptions:(NSUInteger)arg1;
 - (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
 - (NSInteger)days;
 - (void)encodeWithCoder:(id)arg1;

@@ -10,7 +10,7 @@
     void *_addressBook;
     NSString *_cachedName;
     void *_group;
-    void *_store;
+    void *_source;
 }
 
 @property(readonly) NSString *_accountDescriptionBasedOnIdentifier;
@@ -19,13 +19,18 @@
 @property(readonly) void *addressBook;
 @property(readonly) void *group;
 @property(readonly) NSString *name;
-@property(readonly) void *store;
-@property(readonly) void *storeForNewRecords;
-@property(readonly) NSInteger storeType;
+@property(readonly) void *source;
+@property(readonly) void *sourceForNewRecords;
+@property(readonly) BOOL isEditable;
+@property(readonly) NSUInteger numberOfContacts;
+@property(readonly) BOOL showLinkedPeople;
+@property(readonly) NSInteger sourceType;
 
-+ (id)createGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
-+ (id)createGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3;
-+ (id)createGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;
++ (id)newGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3 excludingSearchableStores:(BOOL)arg4 isSoleAccount:(BOOL)arg5;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 excludingSearchableStores:(BOOL)arg3;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;
 
 - (id)_accountDescriptionBasedOnIdentifier;
 - (id)accountIdentifier;
@@ -37,16 +42,19 @@
 - (void)dealloc;
 - (id)description;
 - (void*)group;
-- (id)initWithAddressBook:(void*)arg1 accountIdentifier:(id)arg2 store:(void*)arg3 group:(void*)arg4;
+- (id)initWithAddressBook:(void*)arg1 accountIdentifier:(id)arg2 source:(void*)arg3 group:(void*)arg4;
 - (BOOL)isContainerWrapper;
 - (BOOL)isDirectoryWrapper;
+- (BOOL)isEditable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGlobalWrapper;
 - (id)name;
+- (NSUInteger)numberOfContacts;
 - (NSInteger)score;
 - (void)setAccountsManager:(id)arg1;
-- (void*)store;
-- (void*)storeForNewRecords;
-- (NSInteger)storeType;
+- (BOOL)showLinkedPeople;
+- (void*)source;
+- (void*)sourceForNewRecords;
+- (NSInteger)sourceType;
 
 @end

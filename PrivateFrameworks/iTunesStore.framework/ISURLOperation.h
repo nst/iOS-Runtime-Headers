@@ -2,82 +2,73 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISDataProvider, NSCountedSet, NSData, NSDictionary, NSHTTPURLResponse, NSMutableData, NSString, NSURL, NSURLConnection;
+@class ISDataProvider, ISURLRequest, NSCountedSet, NSMutableData, NSURLConnection, NSURLRequest, NSURLResponse;
 
 @interface ISURLOperation : ISOperation {
-    NSData *_body;
-    NSUInteger _cachePolicy;
+    NSURLRequest *_activeURLRequest;
     NSURLConnection *_connection;
-    NSDictionary *_customHeaders;
+    long long _contentLength;
     NSMutableData *_dataBuffer;
     ISDataProvider *_dataProvider;
-    NSString *_method;
-    NSUInteger _minimumNetworkType;
     NSInteger _networkRetryCount;
-    NSDictionary *_queryStringDictionary;
     NSCountedSet *_redirectURLs;
-    NSHTTPURLResponse *_response;
-    NSURL *_url;
-    BOOL _waitForMinimumNetworkType;
+    ISURLRequest *_request;
+    NSURLResponse *_response;
 }
 
-@property(retain) NSData *body;
-@property(retain) NSDictionary *customHeaders;
 @property(retain) ISDataProvider *dataProvider;
 @property <ISURLOperationDelegate> *delegate;
-@property(retain) NSString *method;
-@property(retain) NSDictionary *queryStringDictionary;
-@property(retain) NSHTTPURLResponse *response;
-@property(retain) NSURL *url;
-@property NSUInteger cachePolicy;
-@property NSUInteger minimumNetworkType;
-@property BOOL shouldWaitForMinimumNetworkType;
+@property(copy) ISURLRequest *request;
+@property(retain) NSURLResponse *response;
 
 + (id)copyUserAgent;
 
+- (id)_activeURL;
+- (long long)_contentLength;
 - (id)_copyAcceptLanguageString;
+- (id)_copyConnectionProperties;
 - (id)_copyQueryStringDictionaryForRedirect:(id)arg1;
-- (void)_logHeadersForRequest:(id)arg1;
+- (void)_handleFinishedLoading;
+- (void)_handleReceivedData:(id)arg1;
+- (void)_handleReceivedResponse:(id)arg1;
+- (id)_handleRedirectRequest:(id)arg1 response:(id)arg2;
+- (void)_logRequest:(id)arg1;
+- (void)_logResponseBody:(id)arg1;
+- (id)_networkConstraints;
 - (void)_networkTypeChanged:(id)arg1;
+- (BOOL)_preflightWithURL:(id)arg1 error:(id*)arg2;
+- (id)_request;
 - (void)_retry;
 - (void)_run;
+- (BOOL)_runRequestWithURL:(id)arg1;
+- (BOOL)_runWithURL:(id)arg1;
+- (void)_sendContentLengthToDelegate:(long long)arg1;
 - (void)_sendOutputToDelegate:(id)arg1;
+- (void)_sendRequestToDelegate:(id)arg1;
 - (void)_sendResponseToDelegate:(id)arg1;
+- (void)_setActiveURLRequest:(id)arg1;
+- (void)_setContentLength:(long long)arg1;
 - (void)_stopConnection;
 - (void)_updateProgress;
-- (BOOL)_waitForMinimumNetworkTypeWithError:(id*)arg1;
-- (id)body;
-- (NSUInteger)cachePolicy;
+- (BOOL)_validateContentLength:(long long)arg1 error:(id*)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (id)createRequest;
-- (id)customHeaders;
 - (id)dataProvider;
 - (void)dealloc;
 - (BOOL)handleRedirectFromDataProvider:(id)arg1;
 - (void)handleResponse:(id)arg1;
 - (id)init;
-- (id)method;
-- (NSUInteger)minimumNetworkType;
-- (id)queryStringDictionary;
+- (id)newRequestWithURL:(id)arg1;
+- (id)request;
 - (id)response;
 - (void)run;
-- (void)setBody:(id)arg1;
-- (void)setCachePolicy:(NSUInteger)arg1;
-- (void)setCustomHeaders:(id)arg1;
 - (void)setDataProvider:(id)arg1;
-- (void)setMethod:(id)arg1;
-- (void)setMinimumNetworkType:(NSUInteger)arg1;
-- (void)setQueryStringDictionary:(id)arg1;
+- (void)setRequest:(id)arg1;
 - (void)setResponse:(id)arg1;
-- (void)setShouldWaitForMinimumNetworkType:(BOOL)arg1;
-- (void)setUrl:(id)arg1;
 - (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
-- (BOOL)shouldWaitForMinimumNetworkType;
-- (id)url;
 
 @end

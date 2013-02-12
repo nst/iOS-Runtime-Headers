@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)differentialStyle;
 - (id)initWithResources:(id)arg1;
-- (NSInteger)key;
+- (NSUInteger)key;
 - (void)setBandSize:(NSUInteger)arg1;
 - (void)setDifferentialStyle:(id)arg1;
 - (void)setDifferentialStyleWithIndex:(NSUInteger)arg1;

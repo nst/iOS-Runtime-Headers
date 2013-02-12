@@ -4,46 +4,45 @@
 
 @class NSLock, NSString;
 
-@interface ISClient : NSObject <NSCoding> {
+@interface ISClient : NSObject {
+    NSString *_appleClientApplication;
+    NSString *_appleClientVersions;
     NSString *_identifier;
     NSLock *_lock;
+    NSString *_mediaLibraryIdentifier;
     NSString *_partnerHeader;
     BOOL _prefersHighQuality;
-    NSString *_storeFrontID;
+    NSString *_softwareLibraryIdentifier;
 }
 
+@property(retain) NSString *appleClientApplication;
+@property(readonly) NSString *appleClientVersions;
 @property(retain) NSString *identifier;
 @property(readonly) NSString *mediaLibraryIdentifier;
 @property(retain) NSString *partnerHeader;
 @property(retain) NSString *softwareLibraryIdentifier;
-@property(retain) NSString *storeFrontID;
 @property BOOL prefersHighQuality;
 
 + (id)currentClient;
 
-- (id)_copyDefaultStoreFrontID;
 - (BOOL)_defaultPrefersHighQuality;
-- (void)_handleStoreFrontChangedNotification;
-- (void)_postStoreFrontChangedNotifications;
-- (void)_postStoreFrontChangedToValue:(id)arg1;
-- (void)_registerForStoreFrontChangeNotification;
-- (BOOL)_setStoreFrontID:(id)arg1 updateLockdown:(BOOL)arg2;
-- (id)_storeFrontIDForBase:(id)arg1;
+- (void)_registerForMainThreadNotifications;
+- (void)_softwareMapInvalidatedNotification:(id)arg1;
+- (void)_syncDidEndNotification:(id)arg1;
+- (id)appleClientApplication;
+- (id)appleClientVersions;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)localStoreFrontID;
 - (id)mediaLibraryIdentifier;
 - (id)partnerHeader;
 - (BOOL)prefersHighQuality;
-- (void)resetStoreFrontForSignOut;
+- (void)setAppleClientApplication:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPartnerHeader:(id)arg1;
 - (void)setPrefersHighQuality:(BOOL)arg1;
 - (void)setSoftwareLibraryIdentifier:(id)arg1;
-- (void)setStoreFrontID:(id)arg1;
 - (id)softwareLibraryIdentifier;
-- (id)storeFrontID;
 
 @end

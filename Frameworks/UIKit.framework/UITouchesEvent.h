@@ -5,12 +5,16 @@
 @class NSMutableSet;
 
 @interface UITouchesEvent : UIInternalEvent {
+    struct __CFDictionary { } *_gestureRecognizersByWindow;
     struct __CFDictionary { } *_keyedTouches;
     NSMutableSet *_touches;
 }
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)_accessibilityHitTestsAnyElement;
 - (BOOL)_addGestureRecognizersForView:(id)arg1 toTouch:(id)arg2;
-- (void)_addTouch:(id)arg1;
+- (void)_addTouch:(id)arg1 forDelayedDelivery:(BOOL)arg2;
 - (id)_allTouches;
 - (void)_clearTouches;
 - (void)_clearViewForTouch:(id)arg1;
@@ -20,11 +24,12 @@
 - (id)_init;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
 - (id)_initWithTouches:(id)arg1 keyedTouches:(struct __CFDictionary { }*)arg2;
+- (void)_invalidateGestureRecognizerForWindowCache;
 - (void)_moveTouchesFromView:(id)arg1 toView:(id)arg2;
 - (void)_removeTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (void)_removeTouch:(id)arg1;
 - (void)_removeTouchesForKey:(id)arg1;
-- (id)_sortedGestureRecognizersForWindow:(id)arg1;
+- (void)_setAccessibilityHitTestsAnyElement:(BOOL)arg1;
 - (void)_touchesForGesture:(id)arg1 withPhase:(NSInteger)arg2 intoSet:(id)arg3;
 - (id)_touchesForGesture:(id)arg1 withPhase:(NSInteger)arg2;
 - (id)_touchesForGestureRecognizer:(id)arg1;
@@ -35,6 +40,7 @@
 - (id)allTouches;
 - (void)dealloc;
 - (id)description;
+- (id)touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
 - (NSInteger)type;

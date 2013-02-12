@@ -12,13 +12,14 @@
         unsigned int wasEnabled : 1; 
         unsigned int customized : 1; 
         unsigned int downButtonSentAction : 1; 
-        unsigned int roundedCorners : 1; 
         unsigned int isTranslucent : 1; 
+        unsigned int forceTopBarAppearance : 1; 
     NSArray *_buttonItems;
     NSInteger _currentButtonGroup;
     NSArray *_customizationItems;
     UIView *_customizeView;
     id _delegate;
+    float _extraEdgeInsets;
     struct __CFDictionary { } *_groups;
     struct __CFArray { } *_hiddenItems;
     NSArray *_items;
@@ -35,6 +36,7 @@
 @property(getter=isTranslucent) BOOL translucent;
 
 + (float)_buttonGap;
++ (void)_initializeSafeCategory;
 + (Class)defaultButtonClass;
 + (id)defaultButtonFont;
 + (float)defaultHeight;
@@ -42,8 +44,8 @@
 + (float)defaultSelectionModeHeight;
 + (Class)defaultTextButtonClass;
 
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_adjustButtonSelection:(id)arg1;
-- (void)_alertDidHide;
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
 - (void)_buttonBarFinishedAnimating;
 - (void)_buttonCancel:(id)arg1;
@@ -61,19 +63,26 @@
 - (id)_descriptionForTag:(NSInteger)arg1;
 - (void)_didFinishHidingRetainedOldItems:(id)arg1;
 - (void)_dismissCustomizeSheet:(BOOL)arg1;
+- (float)_edgeMarginForBorderedItem:(BOOL)arg1;
 - (void)_finishButtonAnimation:(NSInteger)arg1 forButton:(NSInteger)arg2;
 - (void)_finishCustomizeAnimation:(id)arg1;
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfBarButtonItem:(id)arg1;
 - (BOOL)_isHidden:(id)arg1;
+- (BOOL)_isPositionedHiddenForAlert;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (id)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 actuallyRepositionButtons:(BOOL)arg3;
 - (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
+- (void)_setForceTopBarAppearance:(BOOL)arg1;
 - (void)_showButtons:(NSInteger*)arg1 withCount:(NSInteger)arg2 group:(NSInteger)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(NSInteger)arg6;
 - (void)_updateItemsForNewFrame:(id)arg1;
 - (void)_updateOpacity;
 - (void)_updateScriptingInfo:(id)arg1 view:(id)arg2;
+- (unsigned long long)accessibilityTraits;
 - (void)animateToolbarItemIndex:(NSUInteger)arg1 duration:(double)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (void)animateWithDuration:(float)arg1 forButton:(NSInteger)arg2;
+- (id)barButtonItemWithTag:(NSInteger)arg1;
 - (NSInteger)barStyle;
 - (void)beginCustomizingItems:(id)arg1;
 - (id)buttonItems;
@@ -87,8 +96,8 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)endCustomizingAnimated:(BOOL)arg1;
+- (float)extraEdgeInsets;
 - (void)getVisibleButtonTags:(NSInteger*)arg1 count:(NSUInteger*)arg2 maxItems:(NSUInteger)arg3;
-- (BOOL)hasRoundedCorners;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initInView:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withItemList:(id)arg3;
@@ -115,14 +124,15 @@
 - (void)setBadgeAnimated:(BOOL)arg1 forButton:(NSInteger)arg2;
 - (void)setBadgeGlyph:(id)arg1 forButton:(NSInteger)arg2;
 - (void)setBadgeValue:(id)arg1 forButton:(NSInteger)arg2;
+- (void)setBarStyle:(NSInteger)arg1 force:(BOOL)arg2;
 - (void)setBarStyle:(NSInteger)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setButtonBarTrackingMode:(NSInteger)arg1;
 - (void)setButtonItems:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setExtraEdgeInsets:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHasRoundedCorners:(BOOL)arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
 - (void)setMode:(NSInteger)arg1;

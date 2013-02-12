@@ -2,18 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColorMap, OADThemeOverrides, PDNotesMaster;
+@class PDNotesMaster;
 
-@interface PDNotesSlide : PDSlideBase {
-    OADColorMap *mColorMapOverride;
+@interface PDNotesSlide : PDSlideChild {
     PDNotesMaster *mNotesMaster;
-    OADThemeOverrides *mThemeOverrides;
 }
 
-- (id)colorMap;
-- (id)colorMapOverride;
-- (id)colorScheme;
 - (void)dealloc;
+- (void)doneWithContent;
 - (id)init;
 - (id)masterGraphicForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)notesMaster;
@@ -21,9 +17,6 @@
 - (id)parentSlideBase;
 - (id)parentTextBodyPropertiesForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2;
 - (id)parentTextStyleForPlaceholderType:(NSInteger)arg1 placeholderTypeIndex:(NSInteger)arg2 defaultTextListStyle:(id)arg3;
-- (void)setColorMapOverride:(id)arg1;
 - (void)setNotesMaster:(id)arg1;
-- (id)styleMatrix;
-- (id)themeOverrides;
 
 @end

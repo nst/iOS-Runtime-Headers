@@ -8,6 +8,8 @@
     NSString *runtimeResourceName;
 }
 
++ (void)_initializeSafeCategory;
+
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

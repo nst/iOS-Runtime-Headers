@@ -9,7 +9,7 @@
     UIImage *_image;
     NSData *_imageData;
     UIImagePickerController *_imagePickerController;
-    struct CGImage { } *_videoPreviewCGImage;
+    UIImage *_videoPreviewImage;
 }
 
 @property(retain) NSDictionary *editingInfo;

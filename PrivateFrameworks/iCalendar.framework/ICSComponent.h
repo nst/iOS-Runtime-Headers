@@ -49,6 +49,7 @@
 - (id)ICSStringWithOptions:(NSUInteger)arg1;
 - (void)addComponent:(id)arg1;
 - (void)addProperty:(id)arg1 withValue:(id)arg2;
+- (id)allProperties;
 - (id)attach;
 - (id)attendee;
 - (NSInteger)classification;

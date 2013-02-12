@@ -31,8 +31,8 @@
 - (void)clearWeakReference:(id)arg1;
 - (NSUInteger)countOfPurchasedContent;
 - (void)dealloc;
+- (id)description;
 - (id)initWithBasePath:(id)arg1 delegate:(id)arg2;
-- (id)mobileArtworkDBPath;
 - (id)purchasedContentXMLFilenames;
 - (BOOL)reloadPurchasedContentData;
 - (void)removeReferencesToAssetFilename:(id)arg1;

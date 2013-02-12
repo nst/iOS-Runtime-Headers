@@ -41,6 +41,7 @@
 - (id)deleteMessageAtIndex:(NSInteger)arg1;
 - (id)entityAtIndex:(NSInteger)arg1;
 - (NSInteger)heightAtIndex:(NSInteger)arg1;
+- (NSUInteger)indexForMessageRowID:(NSInteger)arg1 partRowID:(NSInteger)arg2;
 - (BOOL)isMessageContinuationAtIndex:(NSInteger)arg1;
 - (BOOL)isSubjectPlaceholderAtIndex:(NSInteger)arg1;
 - (id)messageAtIndex:(NSInteger)arg1;

@@ -2,99 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class MFMailComposeViewController, NSDictionary, NSMutableArray, NSURL, SUClient, SULocationObserver, SUPurchaseManager, SUSectionController, SUTabBarController, UIWindow;
+@class UIWindow;
 
-@interface SUApplication : UIApplication <SUClientDelegate, SUPurchaseManagerDelegate, SUSectionControllerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
-    SUClient *_client;
-    NSInteger _delayTerminateCount;
-    BOOL _dontSaveNavigationPath;
-    NSURL *_launchURL;
-    SULocationObserver *_locationObserver;
-    NSMutableArray *_longLivedViewControllers;
-    MFMailComposeViewController *_mailComposeViewController;
-    SUPurchaseManager *_purchaseManager;
-    BOOL _reloadForStorefrontChangeAfterAccountSetup;
-    NSInteger _requiredAssetTypes;
-    SUSectionController *_sectionController;
-    NSDictionary *_storeFrontLanguages;
-    SUTabBarController *_tabBarController;
+@interface SUApplication : UIApplication <UIApplicationDelegate> {
+    BOOL _terminateOnNextSuspend;
     UIWindow *_window;
 }
 
-@property(readonly) NSString *defaultPNGNameForSuspend;
-@property(retain) NSURL *launchURL;
-@property(readonly) SUTabBarController *tabBarController;
-@property(readonly) UINavigationController *topNavigationController;
-@property(getter=isDelayingTerminate,readonly) BOOL delayingTerminate;
-@property NSInteger requiredAssetTypes;
-@property(readonly) NSInteger statusBarStyleForSuspend;
++ (void)_initializeSafeCategory;
 
-+ (void)loadMessageUIIfNecessary;
-
-- (void)_accountControllerDisappearedNotification:(id)arg1;
-- (void)_bagDidLoadNotification:(id)arg1;
-- (void)_cancelSuspendAfterDialogsDismissed;
-- (void)_dialogDidFinishNotification:(id)arg1;
-- (BOOL)_isAccountViewControllerVisible;
-- (void)_presentSectionFetchUI;
-- (void)_reloadForStorefrontChange;
-- (id)_resumableViewController;
-- (void)_saveArchivedNavigationPath;
-- (id)_sectionController;
-- (void)_selectFooterSectionNotification:(id)arg1;
+- (id)_accessibilityContentLanguage;
+- (void)_exitForStoreNotAvailable;
+- (void)_exitIfStoreNotAvailable;
+- (void)_runScriptTestWithOptions:(id)arg1;
 - (void)_setupUI;
-- (void)_showAssetTypeLockoutUI;
-- (void)_showAssetTypeLockoutUIIfNecessary;
-- (void)_storeFrontChangedNotification:(id)arg1;
+- (void)_storeEnabledChangeNotification:(id)arg1;
 - (void)_teardownUI;
 - (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
+- (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationDidFinishLaunching:(id)arg1;
-- (void)applicationDidReceiveMemoryWarning:(id)arg1;
-- (void)applicationResume:(struct __GSEvent { }*)arg1 settings:(id)arg2;
-- (BOOL)applicationSuspend:(struct __GSEvent { }*)arg1 settings:(id)arg2;
-- (void)beginDelayingTerminate;
-- (void)beginPPTWithName:(id)arg1;
-- (void)checkInLongLivedViewController:(id)arg1;
-- (void)checkOutLongLivedViewController:(id)arg1;
-- (BOOL)client:(id)arg1 presentModalViewController:(id)arg2 animated:(BOOL)arg3;
-- (BOOL)client:(id)arg1 presentRedeemCodeViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)composeEmailByRestoringAutosavedMessage;
-- (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
-- (BOOL)composeReviewWithURL:(id)arg1 itemIdentifier:(unsigned long long)arg2 assetType:(NSInteger)arg3;
-- (id)createWindow;
+- (void)applicationWillEnterForeground:(id)arg1;
 - (void)dealloc;
-- (id)defaultPNGNameForSuspend;
-- (void)endCurrentPPT;
-- (void)endDelayingTerminate;
-- (BOOL)enterAccountFlowWithURL:(id)arg1 style:(NSInteger)arg2 queryStringDictionary:(id)arg3;
-- (BOOL)gotoStoreURL:(id)arg1 needsAuthentication:(BOOL)arg2 withContext:(id)arg3;
-- (void)handleApplicationURL:(id)arg1;
+- (double)defaultImageSnapshotExpiration;
 - (id)init;
-- (BOOL)isComposingEmail;
-- (BOOL)isDelayingTerminate;
-- (id)launchURL;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(NSInteger)arg2 error:(id)arg3;
-- (BOOL)openURL:(id)arg1 inClientApplication:(id)arg2;
-- (BOOL)popTopViewController;
-- (void)purchaseManager:(id)arg1 didAddPurchases:(id)arg2;
-- (void)purchaseManager:(id)arg1 failedToAddPurchases:(id)arg2;
-- (void)purchaseManager:(id)arg1 willAddPurchases:(id)arg2;
-- (void)reloadForNetworkTypeChange;
-- (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
-- (NSInteger)requiredAssetTypes;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
 - (void)runTestInvocation:(id)arg1;
-- (void)sectionController:(id)arg1 failedWithError:(id)arg2;
-- (void)sectionControllerFinished:(id)arg1;
-- (BOOL)selectSectionWithIdentifier:(id)arg1;
-- (void)setLaunchURL:(id)arg1;
-- (void)setRequiredAssetTypes:(NSInteger)arg1;
-- (void)setupUI;
-- (NSInteger)statusBarStyleForSuspend;
-- (id)storeContentLanguage;
-- (void)suspendAfterDialogsDismissed;
-- (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
-- (id)tabBarController;
-- (id)topNavigationController;
 
 @end

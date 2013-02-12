@@ -8,9 +8,11 @@
 }
 
 + (void)_ay_prepareForInterThreadMessages;
++ (id)_mapkit_backgroundDrawingThread;
 + (id)_mapkit_networkIOThread;
 + (void)_mapkit_runThread:(id)arg1;
 + (id)callStackReturnAddresses;
++ (id)callStackSymbols;
 + (id)currentThread;
 + (void)detachNewThreadSelector:(SEL)arg1 toTarget:(id)arg2 withObject:(id)arg3;
 + (void)exit;
@@ -18,7 +20,6 @@
 + (BOOL)isMainThread;
 + (BOOL)isMultiThreaded;
 + (id)mainThread;
-+ (id)mainThread_FOUNDATION;
 + (BOOL)setThreadPriority:(double)arg1;
 + (void)sleepForTimeInterval:(double)arg1;
 + (void)sleepUntilDate:(id)arg1;
@@ -26,7 +27,6 @@
 + (double)threadPriority;
 
 - (void)_nq:(id)arg1;
-- (id)_rl;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
@@ -38,16 +38,18 @@
 - (BOOL)isFinished;
 - (BOOL)isMainThread;
 - (void)main;
+- (void)mf_performOneway:(BOOL)arg1 result:(void*)arg2 withTarget:(id)arg3 selector:(SEL)arg4;
 - (id)name;
-- (void)performOneway:(BOOL)arg1 result:(void*)arg2 withTarget:(id)arg3 selector:(SEL)arg4;
 - (void)registerForStopNotification;
 - (id)runLoop;
 - (void)setName:(id)arg1;
 - (void)setStackSize:(NSUInteger)arg1;
+- (void)setThreadPriority:(double)arg1;
 - (BOOL)shouldStop;
 - (NSUInteger)stackSize;
 - (void)start;
 - (id)threadDictionary;
+- (double)threadPriority;
 - (void)unregisterForStopNotification;
 
 @end

@@ -13,22 +13,24 @@
     id _value;
 }
 
-+ (id)createActionsControllerForProperty:(NSInteger)arg1;
 + (NSInteger)defaultActionForProperty:(NSInteger)arg1;
++ (id)newActionsControllerForProperty:(NSInteger)arg1;
 
 - (NSInteger)_actionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
 - (void)_performAction:(NSInteger)arg1 forProperty:(NSInteger)arg2;
 - (BOOL)_shouldShowAddToFavorites;
+- (BOOL)_shouldShowConferencing;
 - (NSInteger)actionsCountForProperty:(NSInteger)arg1;
 - (void)dealloc;
 - (NSInteger)defaultAction;
-- (id)initWithProperty:(NSInteger)arg1 person:(void*)arg2;
+- (id)init;
 - (id)initWithProperty:(NSInteger)arg1;
 - (void)performAction:(NSInteger)arg1;
 - (void)performActionAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
 - (void)performDefaultAction;
 - (void*)person;
 - (void)setMultiValueIdentifier:(NSInteger)arg1;
+- (void)setPerson:(void*)arg1;
 - (void)setRecordID:(NSInteger)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setValue:(id)arg1;

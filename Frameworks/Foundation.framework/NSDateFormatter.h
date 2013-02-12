@@ -10,14 +10,18 @@
     struct __CFDateFormatter { } *_formatter;
 }
 
++ (id)dateFormatFromTemplate:(id)arg1 options:(NSUInteger)arg2 locale:(id)arg3;
 + (NSUInteger)defaultFormatterBehavior;
 + (void)initialize;
++ (id)localizedStringFromDate:(id)arg1 dateStyle:(NSUInteger)arg2 timeStyle:(NSUInteger)arg3;
++ (id)mf_formatDate:(id)arg1 shortStyle:(BOOL)arg2;
 + (void)setDefaultFormatterBehavior:(NSUInteger)arg1;
 
 - (id)AMSymbol;
 - (id)PMSymbol;
 - (id)_dateFormat;
 - (void)_regenerateFormatter;
+- (void)_reset;
 - (void)_setDateFormat:(id)arg1;
 - (void)_setIsLenient:(BOOL)arg1;
 - (id)calendar;
@@ -27,13 +31,14 @@
 - (NSUInteger)dateStyle;
 - (void)dealloc;
 - (id)defaultDate;
+- (BOOL)doesRelativeDateFormatting;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eraSymbols;
 - (void)finalize;
 - (NSUInteger)formatterBehavior;
 - (BOOL)generatesCalendarDates;
-- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
-- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3 error:(id*)arg4;
+- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg3 error:(out id*)arg4;
 - (id)gregorianStartDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -47,6 +52,7 @@
 - (void)setDateFormat:(id)arg1;
 - (void)setDateStyle:(NSUInteger)arg1;
 - (void)setDefaultDate:(id)arg1;
+- (void)setDoesRelativeDateFormatting:(BOOL)arg1;
 - (void)setEraSymbols:(id)arg1;
 - (void)setFormatterBehavior:(NSUInteger)arg1;
 - (void)setGeneratesCalendarDates:(BOOL)arg1;

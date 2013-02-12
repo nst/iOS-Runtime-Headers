@@ -13,7 +13,6 @@
 - (id)description;
 - (id)displayedMimePart;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
-- (id)initWithMimePart:(id)arg1 andFileWrapper:(id)arg2;
 - (id)initWithMimePart:(id)arg1;
 - (id)mimePart;
 - (void)setFileWrapper:(id)arg1;

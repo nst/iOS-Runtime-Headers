@@ -5,15 +5,24 @@
 @class MLQuery;
 
 @interface MPMediaServerQuery : NSObject <NSCoding> {
+    BOOL _excludeGeniusMixes;
+    BOOL _isFilteringDisabled;
     BOOL _prefetchProperties;
     MLQuery *_query;
 }
 
 @property(readonly) MLQuery *MLQuery;
+@property(readonly) BOOL isFilteringDisabled;
 
 - (id)MLQuery;
+- (BOOL)_isValidPlaylist:(id)arg1;
 - (void)_sanitizeQuery:(id)arg1;
+- (id)_sections;
+- (void)_setQuery:(id)arg1;
+- (id)collectionSections;
 - (id)collections;
+- (id)collectionsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (NSInteger)containedMediaTypes;
 - (NSUInteger)countOfCollections;
 - (NSUInteger)countOfItems;
 - (void)dealloc;
@@ -21,6 +30,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMLQuery:(id)arg1;
+- (BOOL)isFilteringDisabled;
+- (id)itemSections;
 - (id)items;
+- (id)itemsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 includingProperties:(id)arg2;
+- (id)itemsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 
 @end

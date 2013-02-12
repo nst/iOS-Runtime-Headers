@@ -19,9 +19,9 @@
 - (void)dealloc;
 - (id)description;
 - (void)invoke;
+- (BOOL)mf_shouldLogInvocation;
 - (id)monitor;
 - (void)setMonitor:(id)arg1;
 - (void)setShouldLogInvocation:(BOOL)arg1;
-- (BOOL)shouldLogInvocation;
 
 @end

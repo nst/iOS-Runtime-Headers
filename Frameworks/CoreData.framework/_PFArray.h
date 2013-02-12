@@ -34,6 +34,7 @@
 - (id)initWithObjects:(const id*)arg1 count:(NSUInteger)arg2;
 - (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2 andFlags:(NSUInteger)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(NSUInteger)arg1;
 - (void)release;
 - (id)retain;

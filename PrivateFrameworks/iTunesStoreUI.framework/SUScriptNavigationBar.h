@@ -2,37 +2,51 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSLock, SUScriptNavigationBarButton, UINavigationBar;
-
-@interface SUScriptNavigationBar : NSObject {
-    SUScriptNavigationBarButton *_leftButton;
-    NSLock *_lock;
-    UINavigationBar *_navigationBar;
-    SUScriptNavigationBarButton *_rightButton;
+@interface SUScriptNavigationBar : SUScriptObject {
 }
 
-@property(getter=_leftButton,retain) SUScriptNavigationBarButton *leftButton; /* unknown property attribute: Sset_leftButton: */
-@property(getter=_rightButton,retain) SUScriptNavigationBarButton *rightButton; /* unknown property attribute: Sset_rightButton: */
-@property(retain) UINavigationBar *navigationBar;
+@property(readonly) SUScriptNavigationItem *backNavigationItem;
+@property(retain) SUScriptButton *leftButton;
+@property(retain) <SUScriptNavigationItem> *leftItem;
+@property(readonly) NSArray *navigationItems;
+@property(retain) NSString *prompt;
+@property(retain) SUScriptButton *rightButton;
+@property(retain) <SUScriptNavigationItem> *rightItem;
+@property(readonly) SUScriptNavigationItem *topNavigationItem;
 
-+ (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (void)_applyLeftButton:(id)arg1 animated:(BOOL)arg2;
-- (void)_applyRightButton:(id)arg1 animated:(BOOL)arg2;
-- (id)_leftButton;
-- (id)_rightButton;
-- (void)_synchronizeNavigationBar;
+- (id)_className;
+- (id)_copyBackNavigationItem;
+- (id)_copyNavigationItems;
+- (id)_copyTopNavigationItem;
+- (id)_nativeNavigationBar;
+- (id)_topNavigationItem;
+- (id)attributeKeys;
+- (id)backNavigationItem;
 - (id)buttonWithTitle:(id)arg1 style:(id)arg2 target:(id)arg3 action:(id)arg4;
-- (void)dealloc;
 - (id)init;
-- (id)navigationBar;
+- (id)initWithNativeNavigationBar:(id)arg1;
+- (id)leftButton;
+- (id)leftItem;
+- (id)navigationItems;
+- (id)prompt;
+- (id)rightButton;
+- (id)rightItem;
+- (id)scriptAttributeKeys;
+- (void)setBackNavigationItem:(id)arg1;
 - (void)setLeftButton:(id)arg1 animated:(BOOL)arg2;
-- (void)setNavigationBar:(id)arg1;
+- (void)setLeftButton:(id)arg1;
+- (void)setLeftItem:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftItem:(id)arg1;
+- (void)setNavigationItems:(id)arg1;
+- (void)setPrompt:(id)arg1;
 - (void)setRightButton:(id)arg1 animated:(BOOL)arg2;
-- (void)set_leftButton:(id)arg1;
-- (void)set_rightButton:(id)arg1;
+- (void)setRightButton:(id)arg1;
+- (void)setRightItem:(id)arg1 animated:(BOOL)arg2;
+- (void)setRightItem:(id)arg1;
+- (void)setTopNavigationItem:(id)arg1;
+- (id)topNavigationItem;
 
 @end

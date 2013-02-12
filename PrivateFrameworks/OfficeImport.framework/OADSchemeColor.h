@@ -9,7 +9,9 @@
 + (id)schemeColorWithIndex:(NSInteger)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithSchemeColorIndex:(NSUInteger)arg1;
-- (NSUInteger)schemeColorIndex;
+- (NSUInteger)hash;
+- (id)initWithSchemeColorIndex:(NSInteger)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (NSInteger)schemeColorIndex;
 
 @end

@@ -11,7 +11,6 @@
 + (void)_postNotificationName:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultCenter;
-+ (void)setNotificationCenterSerializeRemoves:(BOOL)arg1;
 
 - (void)_ay_postNotification:(id)arg1 inThread:(id)arg2 beforeDate:(id)arg3;
 - (void)_ay_postNotification:(id)arg1 inThread:(id)arg2;
@@ -20,13 +19,14 @@
 - (void)_ay_postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3 inThread:(id)arg4 beforeDate:(id)arg5;
 - (void)_ay_postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3 inThread:(id)arg4;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
+- (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id)arg4;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
 - (id)init;
 - (BOOL)isEmpty;
+- (void)mf_postNotificationInMainThread:(id)arg1;
 - (void)postNotification:(id)arg1;
-- (void)postNotificationInMainThread:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
 - (void)postNotificationOnMainThreadWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3 waitUntilDone:(BOOL)arg4;

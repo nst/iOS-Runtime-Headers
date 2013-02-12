@@ -6,6 +6,7 @@
 }
 
 @property(copy,readonly) NSString *keyIdentifier;
+@property(readonly) BOOL altGraphKey;
 @property(readonly) BOOL altKey;
 @property(readonly) NSInteger charCode;
 @property(readonly) BOOL ctrlKey;

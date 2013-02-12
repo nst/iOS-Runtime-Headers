@@ -4,7 +4,7 @@
 
 @class NSArray, NSString;
 
-@interface UIKBKeylistReference : NSObject <NSCoding> {
+@interface UIKBKeylistReference : NSObject <NSCoding, NSCopying> {
     NSInteger m_endKeyIndex;
     NSUInteger m_flags;
     NSString *m_name;
@@ -32,6 +32,7 @@
 
 + (id)referenceWithName:(id)arg1 value:(id)arg2 flags:(NSUInteger)arg3;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

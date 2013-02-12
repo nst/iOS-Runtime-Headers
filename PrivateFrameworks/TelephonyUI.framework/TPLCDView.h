@@ -4,7 +4,7 @@
 
 @class TPLCDSubImageView, TPLCDTextView;
 
-@interface TPLCDView : UIImageView {
+@interface TPLCDView : TPLCDBar {
     unsigned int _layoutAsLabelled : 1;
     TPLCDSubImageView *_imageView;
     TPLCDTextView *_labelView;
@@ -12,20 +12,19 @@
     TPLCDTextView *_textView;
 }
 
-+ (id)backgroundImage;
-+ (float)defaultHeight;
++ (void)_initializeSafeCategory;
 + (float)labelFontSize;
-+ (void)preloadImages;
 + (float)textFontSize;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_text1Frame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_text2Frame;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (void)blinkLabel;
 - (void)dealloc;
 - (void)didFinishAnimatingLCDLabelFadeOut:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (id)initWithDefaultSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (id)label;
 - (void)layoutSubviews;
 - (id)secondLineText;

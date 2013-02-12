@@ -2,17 +2,23 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSString;
+@class NSArray, NSMutableArray, NSString;
 
 @interface CPMessageEntry : NSObject {
+    NSMutableArray *m_affectedObjects;
     NSInteger m_count;
     NSArray *m_parameters;
     NSInteger m_tag;
     NSString *m_text;
+    NSInteger m_timeStamp;
 }
+
+@property NSInteger timeStamp;
 
 + (void)initialize;
 
+- (void)addAffectedObject:(id)arg1;
+- (id)affectedObjects;
 - (void)dealloc;
 - (id)description;
 - (NSInteger)getCount;
@@ -20,9 +26,13 @@
 - (id)getMessageText;
 - (id)getParameter:(NSUInteger)arg1;
 - (NSInteger)getParameterCount;
-- (id)initWithTag:(NSInteger)arg1 text:(id)arg2 parameters:(void*)arg3;
+- (NSUInteger)hash;
+- (id)initWithTag:(NSInteger)arg1 affectedObject:(id)arg2 text:(id)arg3 parameters:(void*)arg4;
 - (BOOL)isEqual:(id)arg1;
-- (void)logWithLevel:(NSInteger)arg1;
+- (void)logWithCat:(id)arg1;
 - (void)mergeEntries:(id)arg1;
+- (void)setTimeStamp:(NSInteger)arg1;
+- (NSInteger)timeStamp;
+- (NSInteger)timeStampCompare:(id)arg1;
 
 @end

@@ -8,11 +8,15 @@
     NSUInteger _byteVectorCnt;
     BOOL _inProc;
     Class _lastResultClass;
+    BOOL _respondsToAuxiliarySubtitleUTF8String;
+    BOOL _respondsToAuxiliaryTitleUTF8String;
     BOOL _respondsToBadgeValue;
     BOOL _respondsToDate;
     BOOL _respondsToIdentifier;
-    BOOL _respondsToSubtitleCount;
+    BOOL _respondsToResultDisplayIdentifierUTF8String;
+    BOOL _respondsToResultDomain;
     BOOL _respondsToSubtitleUTF8String;
+    BOOL _respondsToSummaryUTF8String;
     BOOL _respondsToTitleUTF8String;
     BOOL _respondsToURL;
 }
@@ -23,7 +27,8 @@
 - (NSUInteger)byteVectorCount;
 - (void)dealloc;
 - (id)init;
-- (id)initForDomain:(NSInteger)arg1 andDisplayIdentifier:(id)arg2 withInitialCapacity:(NSUInteger)arg3 inProc:(BOOL)arg4;
+- (id)initForDomain:(NSInteger)arg1 andDisplayIdentifier:(id)arg2 andCategory:(id)arg3 withInitialCapacity:(NSUInteger)arg4 inProc:(BOOL)arg5;
+- (id)initForDomain:(NSInteger)arg1 andDisplayIdentifier:(id)arg2 andCategory:(id)arg3 withInitialCapacity:(NSUInteger)arg4;
 - (id)initForDomain:(NSInteger)arg1 andDisplayIdentifier:(id)arg2 withInitialCapacity:(NSUInteger)arg3;
 - (NSInteger)write:(const char *)arg1 maxLength:(NSUInteger)arg2;
 - (void)writeCString:(const char *)arg1 forTag:(unsigned short)arg2;

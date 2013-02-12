@@ -10,11 +10,21 @@
     NSUInteger _style;
 }
 
+@property UIColor *textColor;
+@property UIColor *textShadowColor;
+@property NSInteger activityIndicatorStyle;
+
 - (void)_updateLabel:(id)arg1;
-- (id)createProgressIndicator;
+- (NSInteger)activityIndicatorStyle;
 - (id)createTextLabel;
 - (void)dealloc;
 - (id)init;
+- (id)newProgressIndicator;
+- (void)setActivityIndicatorStyle:(NSInteger)arg1;
 - (void)setStyle:(NSUInteger)arg1;
+- (void)setTextColor:(id)arg1;
+- (void)setTextShadowColor:(id)arg1;
+- (id)textColor;
+- (id)textShadowColor;
 
 @end

@@ -35,6 +35,7 @@
 - (double)progress;
 - (void)removeListeners;
 - (void)setRangeStartTime:(double)arg1 endTime:(double)arg2;
+- (id)settingForFigRemaker;
 - (double)sourceDuration;
 - (id)start;
 - (id)videoPropertiesForItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2;

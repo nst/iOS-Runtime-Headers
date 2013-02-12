@@ -10,10 +10,11 @@
         unsigned int _invalidToOnes : 1; 
         unsigned int _hasTemporaryID : 1; 
         unsigned int _backgroundDealloc : 1; 
-        unsigned int _externalReferenceCount : 16; 
+        unsigned int _reservedFlags2 : 16; 
     double _birth;
     NSInteger _cd_rc;
     } _externalRefFlags;
+    NSInteger _externalReferenceCount;
     id _toManyMap;
 }
 
@@ -22,6 +23,7 @@
 - (void)dealloc;
 - (NSInteger)decrementRefCount;
 - (NSInteger)externalReferenceCount;
+- (void)incrementExternalReferenceCount:(NSInteger)arg1;
 - (void)incrementRefCount;
 - (id)initWithOptions:(NSUInteger)arg1 andTimestamp:(double)arg2;
 - (NSUInteger)options;
@@ -31,7 +33,6 @@
 - (void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
-- (void)setExternalReferenceCount:(NSInteger)arg1;
 - (void)setRelatedIDs:(id)arg1 forKey:(id)arg2 options:(NSUInteger)arg3 andTimestamp:(double)arg4;
 - (void)setRelationshipCaches:(id)arg1;
 - (void)setTimestamp:(double)arg1;

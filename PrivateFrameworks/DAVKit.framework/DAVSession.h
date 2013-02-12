@@ -20,6 +20,8 @@
     NSString *_host;
     NSInteger _numWorkerThread;
     NSString *_password;
+    id _passwordDelegate;
+    NSMutableDictionary *_permanentRedirects;
     NSInteger _port;
     NSMutableDictionary *_privateInfos;
     NSUInteger _readTimeOut;
@@ -92,6 +94,7 @@
 - (void)setUseKerberos:(BOOL)arg1;
 - (void)setUserAgent:(id)arg1;
 - (void)setUsername:(id)arg1 andPassword:(id)arg2;
+- (void)setUsername:(id)arg1 andPasswordDelegate:(id)arg2;
 - (BOOL)supportsDigest;
 - (id)trustedCerts;
 - (BOOL)useAuth;

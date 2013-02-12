@@ -2,17 +2,20 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@interface VMURangeArray : NSObject {
+@interface VMURangeArray : NSObject <NSCopying> {
     NSUInteger _count;
     NSUInteger _max;
     struct _VMURange { unsigned long long x1; unsigned long long x2; } *_ranges;
+    BOOL _sorted;
 }
 
 - (void)addRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)addRanges:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)count;
 - (void)dealloc;
 - (id)description;
+- (NSUInteger)indexForLocation:(unsigned long long)arg1;
 - (id)init;
 - (id)initWithRanges:(const struct _VMURange { unsigned long long x1; unsigned long long x2; }*)arg1 count:(NSUInteger)arg2;
 - (void)insertRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 atIndex:(NSUInteger)arg2;
@@ -27,6 +30,7 @@
 - (void)removeAllRanges;
 - (void)removeRangeAtIndex:(NSUInteger)arg1;
 - (void)setCapacity:(NSUInteger)arg1;
+- (void)sort;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })subrangeNotExcludedBySelfForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned long long)sumLengths;
 

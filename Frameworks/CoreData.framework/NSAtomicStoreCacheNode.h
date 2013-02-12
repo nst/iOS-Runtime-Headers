@@ -20,7 +20,7 @@
 - (id)init;
 - (id)initWithObjectID:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id*)knownKeyValuesPointer;
+- (const id*)knownKeyValuesPointer;
 - (id)objectID;
 - (id)propertyCache;
 - (void)setPropertyCache:(id)arg1;

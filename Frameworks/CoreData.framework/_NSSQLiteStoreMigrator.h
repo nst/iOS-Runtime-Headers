@@ -34,7 +34,7 @@
 - (void)_populateEntityMigrationDescriptionsAndEntityMap;
 - (void)_populateTableMigrationDescriptions;
 - (id)adapter;
-- (id)createEntityMigrationStatements:(id*)arg1;
+- (id)createEntityMigrationStatements;
 - (id)createIndexStatementsForEntity:(id)arg1;
 - (id)createStatementsForUpdatingEntityKeys;
 - (void)dealloc;

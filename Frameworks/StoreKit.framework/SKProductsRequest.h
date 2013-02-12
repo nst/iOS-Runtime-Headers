@@ -8,7 +8,7 @@
 
 @property <SKProductsRequestDelegate> *delegate;
 
-- (id)_createResponseFromDictionary:(id)arg1;
+- (id)_newResponseFromDictionary:(id)arg1;
 - (void)dealloc;
 - (BOOL)handleFinishResponse:(id)arg1 returningError:(id*)arg2;
 - (id)init;

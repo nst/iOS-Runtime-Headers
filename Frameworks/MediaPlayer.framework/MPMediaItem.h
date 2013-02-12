@@ -8,15 +8,25 @@
     MPMediaItemInternal *_internal;
 }
 
+@property(readonly) NSArray *chapters;
+
++ (void)_createFilterableDictionary;
++ (BOOL)_isValidItemProperty:(id)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
 
+- (void)_cacheValuesForProperties:(id)arg1;
 - (void)_didReceiveMemoryWarning:(id)arg1;
+- (BOOL)_hasCachedValueForProperty:(id)arg1;
+- (id)chapters;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
 - (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithPersistentID:(unsigned long long)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)playbackTimesForChapterArtwork;
 - (id)valueForProperty:(id)arg1;
 
 @end

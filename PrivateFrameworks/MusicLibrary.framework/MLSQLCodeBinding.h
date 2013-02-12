@@ -5,7 +5,7 @@
 @class NSData, NSString;
 
 @interface MLSQLCodeBinding : NSObject {
-    union $_166 { 
+    union $_617 { 
         NSString *stringValue; 
         NSData *dataValue; 
         NSUInteger uint32Value; 

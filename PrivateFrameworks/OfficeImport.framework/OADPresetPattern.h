@@ -8,9 +8,14 @@
 }
 
 + (id)defaultProperties;
++ (id)nameForPresetPatternType:(NSInteger)arg1;
++ (id)namedBitmapDataForPresetPatternType:(NSInteger)arg1;
++ (id)presetPatternHeader;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
 - (id)initWithDefaults;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isTypeOverridden;
 - (void)setType:(NSInteger)arg1;
 - (NSInteger)type;

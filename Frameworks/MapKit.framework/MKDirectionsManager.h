@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GMMMapInfo, GMMRequester, MKAddressBookAddress, MKDirectionsResponse, MKSearchResult, NSCalendarDate, NSMutableArray, NSString;
+@class GMMMapInfo, GMMRequester, MKAddressBookAddress, MKCache, MKDirectionsResponse, MKDirectionsRouteInfo, MKSearchResult, NSMutableArray, NSString;
 
 @interface MKDirectionsManager : NSObject <PBRequesterDelegate> {
     BOOL _appendingNewTransitResponses;
     NSInteger _defaultMode;
+    BOOL _enableRouteCache;
     MKAddressBookAddress *_endAddress;
     NSString *_endAddressString;
     MKSearchResult *_endSearchResult;
-    NSCalendarDate *_initialTransitRequestDate;
     BOOL _isDisplayed;
     BOOL _isLoadingTransitOnly;
     BOOL _isUpdatingCurrentLocation;
@@ -20,7 +20,8 @@
     NSMutableArray *_observers;
     MKDirectionsResponse *_previousTransitResponse;
     GMMRequester *_requester;
-    NSMutableArray *_responses;
+    MKDirectionsRouteInfo *_routeInfo;
+    MKCache *_routeInfoCache;
     MKAddressBookAddress *_startAddress;
     NSString *_startAddressString;
     MKSearchResult *_startSearchResult;
@@ -38,6 +39,9 @@
 @property(readonly) NSArray *receivedResponses;
 @property(retain) GMMRequester *requester;
 @property(retain) MKRoute *route;
+@property(retain) MKSearchResult *routeEndSearchResult;
+@property(retain) MKDirectionsRouteInfo *routeInfo;
+@property(retain) MKSearchResult *routeStartSearchResult;
 @property(readonly) NSArray *routes;
 @property(retain) MKAddressBookAddress *startAddress;
 @property(retain) NSString *startAddressString;
@@ -46,9 +50,11 @@
 @property(readonly) NSArray *steps;
 @property(readonly) NSUInteger availableModes;
 @property NSInteger defaultMode;
+@property BOOL enableRouteCache;
 @property(readonly) BOOL hasEnd;
 @property(readonly) BOOL hasReceivedResponse;
 @property(readonly) BOOL hasStart;
+@property(readonly) BOOL isActive;
 @property BOOL isDisplayed;
 @property(readonly) BOOL isLoading;
 @property(readonly) BOOL isTransitEnabled;
@@ -69,7 +75,6 @@
 - (id)_endLocation;
 - (void)_loadEnded;
 - (void)_loadResponseFromDictionaryRepresentation:(id)arg1;
-- (void)_makeObserversPerformSelector:(SEL)arg1;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_reportErrorCode:(NSInteger)arg1;
 - (id)_requestWithMode:(NSInteger)arg1;
@@ -78,7 +83,10 @@
 - (id)_response;
 - (id)_responseForIndex:(NSUInteger)arg1;
 - (id)_responseForMode:(NSInteger)arg1;
+- (BOOL)_restoreRouteFromCacheForMode:(NSInteger)arg1;
+- (void)_restoreSearchResults:(id)arg1;
 - (BOOL)_routeAvailableForMode:(NSInteger)arg1;
+- (void)_saveRouteToCache;
 - (void)_setResponses:(id)arg1;
 - (void)_setResponsesUpdated;
 - (void)_setRouteUnavailableForMode:(NSInteger)arg1;
@@ -92,11 +100,14 @@
 - (NSUInteger)availableModes;
 - (void)cancelLoad;
 - (void)clearEnd;
+- (void)clearRouteCache;
+- (void)clearRouteCacheForSearchResult:(id)arg1;
 - (void)clearStart;
 - (void)dealloc;
 - (NSInteger)defaultMode;
 - (id)departureTimeZone;
 - (id)dictionaryRepresentation;
+- (BOOL)enableRouteCache;
 - (id)endAddress;
 - (id)endAddressString;
 - (id)endSearchResult;
@@ -105,13 +116,15 @@
 - (BOOL)hasReceivedResponse;
 - (BOOL)hasStart;
 - (id)init;
+- (BOOL)isActive;
 - (BOOL)isDisplayed;
 - (BOOL)isLoading;
 - (BOOL)isTransitEnabled;
-- (void)loadFromDictionaryRepresentation:(id)arg1;
+- (void)loadFromDictionaryRepresentation:(id)arg1 restoreSearchResults:(id)arg2;
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
 - (void)locationManagerUpdatedLocation:(id)arg1;
+- (void)logRequestForMode:(NSInteger)arg1;
 - (id)mapInfo;
 - (NSInteger)mode;
 - (BOOL)needsSave;
@@ -122,12 +135,17 @@
 - (void)removeObserver:(id)arg1;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (id)requester;
+- (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)reset;
 - (id)route;
+- (id)routeEndSearchResult;
+- (id)routeInfo;
+- (id)routeStartSearchResult;
 - (id)routes;
 - (id)searchResultMatchingSearchResult:(id)arg1;
 - (void)setDefaultMode:(NSInteger)arg1;
+- (void)setEnableRouteCache:(BOOL)arg1;
 - (void)setEndAddress:(id)arg1;
 - (void)setEndAddressString:(id)arg1;
 - (void)setEndSearchResult:(id)arg1;
@@ -137,11 +155,16 @@
 - (void)setMode:(NSInteger)arg1;
 - (void)setRequester:(id)arg1;
 - (void)setRoute:(id)arg1;
+- (void)setRouteEndSearchResult:(id)arg1;
+- (void)setRouteInfo:(id)arg1;
+- (void)setRouteStartSearchResult:(id)arg1;
 - (void)setStartAddress:(id)arg1;
 - (void)setStartAddressString:(id)arg1;
 - (void)setStartSearchResult:(id)arg1;
 - (void)setStep:(id)arg1;
 - (void)setStepIndex:(NSUInteger)arg1;
+- (void)setUserEndSearchResult:(id)arg1;
+- (void)setUserStartSearchResult:(id)arg1;
 - (id)startAddress;
 - (id)startAddressString;
 - (BOOL)startAndEndAreEqual;
@@ -158,5 +181,6 @@
 - (id)transitAgencyForRouteStep:(id)arg1;
 - (id)transitRequestDate;
 - (BOOL)transitRequestDateIsDeparture;
+- (void)useStartAndEndSearchResultsFromRoute;
 
 @end

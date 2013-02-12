@@ -6,25 +6,19 @@
 
 @interface ISPostReviewOperation : ISOperation <ISStoreURLOperationDelegate> {
     BOOL _backgroundReview;
-    unsigned long long _itemIdentifier;
     ISReview *_review;
 }
 
 @property(retain) ISReview *review;
 @property(getter=isBackgroundReview) BOOL backgroundReview;
-@property unsigned long long itemIdentifier;
-
-+ (BOOL)setRating:(float)arg1 forApplicationAtPath:(id)arg2;
 
 - (id)_httpBody;
 - (void)dealloc;
 - (BOOL)isBackgroundReview;
-- (unsigned long long)itemIdentifier;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)review;
 - (void)run;
 - (void)setBackgroundReview:(BOOL)arg1;
-- (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setReview:(id)arg1;
 
 @end

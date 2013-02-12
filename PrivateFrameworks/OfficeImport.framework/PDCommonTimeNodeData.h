@@ -51,6 +51,7 @@
 - (void)setDuration:(double)arg1;
 - (void)setEndTimeConditions:(id)arg1;
 - (void)setGroupId:(id)arg1;
+- (void)setGroupIdValue:(NSInteger)arg1;
 - (void)setIterate:(id)arg1;
 - (void)setPresetId:(NSInteger)arg1;
 - (void)setPresetSubType:(NSInteger)arg1;

@@ -34,8 +34,14 @@
                 float height; 
             } size; 
         } right; 
+    struct CGSize { 
+        float width; 
+        float height; 
     } _bkgndSlices;
+    } _titleOffset;
 }
+
+@property CGSize titleOffset;
 
 + (id)defaultFont;
 
@@ -47,5 +53,7 @@
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundSlices:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
 - (void)setPressedBackgroundImage:(id)arg1;
+- (void)setTitleOffset:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })titleOffset;
 
 @end

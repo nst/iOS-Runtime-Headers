@@ -6,6 +6,7 @@
     id _target;
 }
 
+- (id)adjustedTargetForSelector:(SEL)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithTarget:(id)arg1;

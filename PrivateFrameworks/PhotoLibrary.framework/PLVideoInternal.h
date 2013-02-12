@@ -2,29 +2,30 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class AVController, AVItem, NSString, NSURL, PLVideoFileGroup;
+@class AVController, AVItem, NSString, NSURL;
 
-@interface PLVideoInternal : MLPhoto {
+@interface PLVideoInternal : MLPhotoMemoryStorage {
     unsigned int _canCreateImages : 1;
+    unsigned int _previewImageIsTemporary : 1;
     AVController *_avController;
     AVItem *_avItem;
+    NSString *_previewImagePath;
     NSString *_temporaryPath;
     NSURL *_url;
-    PLVideoFileGroup *_videoFileGroup;
     NSUInteger _videoWasCaptured;
 }
 
-- (struct CGImage { }*)_createCGImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_createImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_ensureAVItemIsLoaded;
-- (struct CGImage { }*)createFullScreenCGImageRef:(NSInteger*)arg1 properties:(const struct __CFDictionary {}**)arg2;
-- (struct CGImage { }*)createFullSizeCGImageRef:(NSInteger*)arg1;
-- (struct CGImage { }*)createLowResolutionFullScreenCGImageRef;
-- (struct CGImage { }*)createThumbnailCGImageRef;
+- (id)createFullScreenImage:(const struct __CFDictionary {}**)arg1;
+- (id)createFullSizeImage;
+- (id)createLowResolutionFullScreenImage;
 - (void)dealloc;
-- (id)fileGroup;
+- (void)deletePreviewImageIfNecessary;
 - (BOOL)hasFullSizeImage;
+- (NSInteger)imageID;
+- (id)imageWithFormat:(NSInteger)arg1;
 - (BOOL)isVideo;
-- (id)pathForVideoFile;
 - (id)pathForVideoPreviewFile;
 - (void)setPathForVideoPreviewFile:(id)arg1;
 - (void)setVideoWasCaptured:(BOOL)arg1;

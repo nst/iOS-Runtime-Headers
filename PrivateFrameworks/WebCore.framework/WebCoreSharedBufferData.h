@@ -3,25 +3,19 @@
  */
 
 @interface WebCoreSharedBufferData : NSData {
-    struct SharedBuffer { NSInteger x1; struct Vector<char,0ul> { 
-            NSUInteger m_size; 
-            struct VectorBuffer<char,0ul> { 
-                char *m_buffer; 
-                NSUInteger m_capacity; 
-            } m_buffer; 
-        } x2; struct OwnPtr<WebCore::PurgeableBuffer> { 
-            struct PurgeableBuffer {} *m_ptr; 
-        } x3; struct RetainPtr<const __CFData*> { 
-            struct __CFData {} *m_ptr; 
-        } x4; } *sharedBuffer;
+    struct RefPtr<WebCore::SharedBuffer> { 
+        struct SharedBuffer {} *m_ptr; 
+    } sharedBuffer;
 }
 
 + (void)initialize;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (const void*)bytes;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithSharedBuffer:(struct SharedBuffer { NSInteger x1; struct Vector<char,0ul> { NSUInteger x_2_1_1; struct VectorBuffer<char,0ul> { char *x_2_2_1; NSUInteger x_2_2_2; } x_2_1_2; } x2; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_3_1_1; } x3; struct RetainPtr<const __CFData*> { struct __CFData {} *x_4_1_1; } x4; }*)arg1;
+- (id)initWithSharedBuffer:(struct SharedBuffer { NSInteger x1; NSUInteger x2; struct Vector<char,0ul> { NSUInteger x_3_1_1; struct VectorBuffer<char,0ul> { char *x_2_2_1; NSUInteger x_2_2_2; } x_3_1_2; } x3; struct Vector<char*,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<char*,0ul> { char **x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; struct OwnPtr<WebCore::PurgeableBuffer> { struct PurgeableBuffer {} *x_5_1_1; } x5; struct RetainPtr<const __CFData*> { struct __CFData {} *x_6_1_1; } x6; }*)arg1;
 - (NSUInteger)length;
 
 @end

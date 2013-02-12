@@ -18,7 +18,7 @@
 - (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(NSUInteger)arg3;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
-- (void)release;
+- (oneway void)release;
 - (void)removeObjectForKey:(id)arg1;
 - (id)retain;
 - (NSUInteger)retainCount;

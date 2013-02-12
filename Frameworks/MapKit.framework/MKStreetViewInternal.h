@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class EAGLContext, GMMStreetViewReportRequest, MKPanorama, MKPanoramaAnnotationGeometry, MKPanoramaLoader, MKPanoramaPlaceholderGeometry, MKPanoramaSphereGeometry, MKPanoramaTextures, MKSearchResult, MKStreetViewGeometry, MKStreetViewLabelCache, MKStreetViewMinimapGeometry, MKStreetViewTexture, MKStreetViewTileDecoder, NSMutableDictionary, NSString, NSTimer;
+@class CADisplayLink, EAGLContext, GMMStreetViewReportRequest, MKPanorama, MKPanoramaAnnotationGeometry, MKPanoramaLoader, MKPanoramaPlaceholderGeometry, MKPanoramaSphereGeometry, MKPanoramaTextures, MKSearchResult, MKStreetView, MKStreetViewGeometry, MKStreetViewLabelCache, MKStreetViewMinimapGeometry, MKStreetViewTexture, MKStreetViewTileDecoder, NSMutableDictionary, NSString, NSTimer, UIImageView;
 
 @interface MKStreetViewInternal : NSObject {
     struct CGPoint { 
@@ -14,7 +14,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct $_534 { 
+    struct $_899 { 
         unsigned int panoramaWillChange : 1; 
         unsigned int panoramaDidChange : 1; 
         unsigned int streetViewWillClose : 1; 
@@ -26,12 +26,11 @@
         unsigned int streetViewDidChangeOrientation : 1; 
     float anchorAngle;
     float anchorFov;
-    float anchorNearX;
-    float anchorNearY;
+    float anchorNearH;
+    float anchorNearV;
     float anchorPhi;
     float anchorTheta;
     NSMutableDictionary *anchorTouches;
-    NSTimer *animationTimer;
     MKPanoramaAnnotationGeometry *annotationGeometry;
     float bounceCenter;
     float bounceInitialOffset;
@@ -44,17 +43,20 @@
     NSString *copyright;
     id delegate;
     } delegateImplements;
+    CADisplayLink *displayLink;
     BOOL dragging;
-    NSTimer *fadeTimer;
+    BOOL enablePrefetching;
+    BOOL enableUserImmersiveInteraction;
     float far;
     float fov;
     NSUInteger framebuffer;
     GMMStreetViewReportRequest *gmmReport;
     MKStreetViewGeometry *googleQuad;
     MKStreetViewTexture *googleTexture;
-    BOOL hasRequestedAllTiles;
     BOOL hasTouched;
+    float hfov;
     void *introSurfaceBufferRef;
+    BOOL introSurfaceForce2D;
     MKStreetViewGeometry *introSurfaceQuad;
     NSUInteger introSurfaceTarget;
     NSUInteger introSurfaceTexture;
@@ -62,7 +64,7 @@
     MKStreetViewLabelCache *labelCache;
     double lastScrollTime;
     double lastTouchTime;
-    double mapTransitionStartTime;
+    NSInteger mapOrientation;
     NSUInteger maxZoomLevel;
     float maxZoomScaleFactor;
     MKStreetViewMinimapGeometry *minimap;
@@ -72,12 +74,19 @@
     MKStreetViewTexture *minimapRotatorTexture;
     MKStreetViewTexture *minimapTexture;
     float near;
-    float nearx;
-    float neary;
+    float nearH;
+    float nearV;
     NSUInteger nextValidTapCount;
-    double panoTransitionStartTime;
+    float panoRotationEndAngle;
+    float panoRotationEndPipX;
+    float panoRotationEndPipY;
+    float panoRotationStartAngle;
+    float panoRotationStartPipX;
+    float panoRotationStartPipY;
     MKPanorama *panorama;
     MKPanoramaLoader *panoramaLoader;
+    UIImageView *pegmanView;
+    BOOL pendingFade;
     BOOL pipPressed;
     double pitch;
     BOOL pitchLocked;
@@ -89,14 +98,24 @@
     MKPanoramaSphereGeometry *previousSphere;
     MKPanoramaTextures *previousTextures;
     float previousYawVelocity;
+    NSInteger renderOrientation;
     NSUInteger renderbuffer;
     BOOL reverseMapTransition;
+    BOOL rotating;
+    double rotationDuration;
+    double rotationStartTime;
     float screenHeight;
     float screenWidth;
     MKSearchResult *searchResult;
+    BOOL showsAnnotations;
     BOOL showsCopyright;
     BOOL showsMinimap;
+    BOOL showsPegman;
+    float sizeH;
+    float sizeV;
+    BOOL smoothScrolling;
     MKPanoramaSphereGeometry *sphere;
+    NSInteger streetViewOrientation;
     } tapPoint;
     NSTimer *tapTimer;
     MKPanoramaTextures *textures;
@@ -105,14 +124,16 @@
     float transitionDirectionY;
     float transitionDirectionZ;
     double transitionDuration;
+    double transitionStartTime;
+    NSInteger transitionType;
     float transitionYawAdjust;
     float vfov;
+    MKStreetView *view;
     double yaw;
     float yawTolerance;
     float yawVelocity;
     float zoomEndFov;
     float zoomStartFov;
-    double zoomTransitionStartTime;
     BOOL zooming;
 }
 
@@ -139,6 +160,7 @@
 - (id)previousPanorama;
 - (id)previousSphere;
 - (id)previousTextures;
+- (void)runAnimations;
 - (id)searchResult;
 - (void)setAnnotationGeometry:(id)arg1;
 - (void)setCopyright:(id)arg1;

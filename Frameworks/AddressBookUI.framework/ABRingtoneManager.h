@@ -11,13 +11,11 @@
     NSDictionary *_identifierForPath;
     NSDictionary *_nameForIdentifier;
     NSDictionary *_pathForIdentifier;
-    BOOL _showRingtones;
 }
 
 + (id)deviceITunesRingtoneDirectory;
 + (id)iTunesRingtoneDirectory;
 + (id)sharedRingtoneManager;
-+ (id)systemAlarmSoundDirectory;
 + (id)systemRingtoneDirectory;
 + (id)userRingtoneDirectory;
 
@@ -29,7 +27,6 @@
 - (id)copyNameOfRingtoneWithIdentifier:(id)arg1;
 - (id)copyPathOfRingtoneWithIdentifier:(id)arg1 isValid:(BOOL*)arg2;
 - (id)copyPathOfRingtoneWithIdentifier:(id)arg1;
-- (id)createAVItemWithRingtoneIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)defaultRingtoneIdentifier;
 - (id)defaultRingtoneName;
@@ -37,12 +34,12 @@
 - (void)iTunesSyncHasCompleted:(NSInteger)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)init;
-- (id)initWithAlarmSoundPlistAtPath:(id)arg1;
 - (id)initWithITunesRingtonePlistAtPath:(id)arg1;
-- (void)loadAlarmSoundPlistAtPath:(id)arg1;
+- (BOOL)isRingtonePurchased:(id)arg1;
 - (void)loadITunesInfoPlistAtPath:(id)arg1;
 - (id)localizedRingtoneNameWithIdentifier:(id)arg1;
 - (id)nameFromRingtonePath:(id)arg1;
+- (id)newAVItemWithRingtoneIdentifier:(id)arg1;
 - (id)pathFromIdentifier:(id)arg1 withPrefix:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (BOOL)shouldShowAlarmSounds;

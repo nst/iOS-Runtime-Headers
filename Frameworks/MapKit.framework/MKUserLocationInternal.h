@@ -19,7 +19,7 @@
 @property(retain) CLLocation *fixedLocation;
 @property(retain) CLLocation *location;
 @property(retain) CLLocation *predictedLocation;
-@property(retain) MKUserLocationSearchResult *searchResult;
+@property(readonly) MKUserLocationSearchResult *searchResult;
 @property(retain) NSString *subtitle;
 @property(retain) NSString *title;
 @property NSInteger source;
@@ -34,7 +34,6 @@
 - (void)setFixedLocation:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPredictedLocation:(id)arg1;
-- (void)setSearchResult:(id)arg1;
 - (void)setSource:(NSInteger)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTimestamp:(double)arg1;

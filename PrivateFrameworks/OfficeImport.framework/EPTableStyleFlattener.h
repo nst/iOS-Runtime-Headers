@@ -9,8 +9,8 @@
 @class EDTable;
 
 @interface EPTableStyleFlattener : EPStyleFlattener {
-     /* Encoded args for previous method: B12@0:4@8 */
      /* Encoded args for previous method: i16@0:4i8B12 */
+     /* Encoded args for previous method: B12@0:4@8 */
     NSUInteger mHeaderRowCount;
     EDTable *mTable;
     NSUInteger mTotalsRowCount;

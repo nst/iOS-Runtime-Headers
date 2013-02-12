@@ -5,8 +5,10 @@
 @interface NSMergePolicy : NSObject {
     void *_reserved2;
     void *_reserved3;
-    NSInteger _type;
+    NSUInteger _type;
 }
+
+@property(readonly) NSUInteger type;
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)load;
@@ -17,9 +19,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTypeCode:(NSInteger)arg1;
+- (id)initWithType:(NSUInteger)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)resolveConflict:(id)arg1;
-- (BOOL)resolveConflicts:(id)arg1;
+- (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
+- (NSUInteger)type;
 
 @end

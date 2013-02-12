@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableURLRequest, NSURLConnection;
+@class NSMutableData, NSMutableURLRequest, NSURLConnection;
 
 @interface YTAuthenticatedAccountPost : NSObject {
     NSURLConnection *_connection;
     id _delegate;
     NSMutableURLRequest *_postRequest;
+    NSMutableData *_rawData;
     NSInteger _type;
     BOOL _validResponse;
 }
@@ -18,12 +19,11 @@
 - (void)_failedToAuthenticate:(id)arg1;
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
 - (void)_removePS:(id)arg1;
-- (void)addVideo:(id)arg1 toPlaylist:(id)arg2;
 - (void)addVideoToFavorites:(id)arg1;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (void)createPlaylistNamed:(id)arg1;
 - (void)dealloc;
 - (void)failWithError:(id)arg1;
 - (void)fileComplaintForVideo:(id)arg1;

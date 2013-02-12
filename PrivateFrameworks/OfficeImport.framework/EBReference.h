@@ -7,8 +7,8 @@
  */
 
 @interface EBReference : NSObject {
-     /* Encoded args for previous method: @12@0:4r^{XlRef=SSssB}8 */
      /* Encoded args for previous method: ^{XlRef=SSssB}12@0:4@8 */
+     /* Encoded args for previous method: @12@0:4r^{XlRef=SSssB}8 */
 }
 
 + (id)edReferenceFromXlRef:(const struct XlRef { unsigned short x1; unsigned short x2; short x3; short x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; }*)arg1;

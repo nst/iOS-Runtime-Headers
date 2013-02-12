@@ -7,9 +7,12 @@
     void *typeInfo;
 }
 
++ (void)initialize;
+
 - (const void*)_value;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (void)getValue:(void*)arg1;
 - (NSUInteger)hash;
 - (BOOL)isEqualToValue:(id)arg1;

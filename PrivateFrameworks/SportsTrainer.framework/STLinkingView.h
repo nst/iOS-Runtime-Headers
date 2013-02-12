@@ -25,10 +25,12 @@
 @property BOOL bordered;
 @property NSInteger linkingType;
 
-- (id)_createButton;
++ (void)_initializeSafeCategory;
+
 - (void)_done;
 - (void)_linkNewEmped;
 - (void)_linkNewRemote;
+- (id)_newButton;
 - (void)_receiverHideAnimationDidStop;
 - (void)_rescanForEmped;
 - (void)_rescanForRemote;

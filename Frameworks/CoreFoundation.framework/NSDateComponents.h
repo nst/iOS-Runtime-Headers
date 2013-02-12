@@ -9,16 +9,22 @@
 
 - (id)calendar;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)date;
 - (NSInteger)day;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (NSInteger)era;
 - (NSUInteger)hash;
 - (NSInteger)hour;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (NSInteger)minute;
 - (NSInteger)month;
+- (NSInteger)nanosecond;
+- (NSInteger)quarter;
 - (NSInteger)second;
 - (void)setCalendar:(id)arg1;
 - (void)setDay:(NSInteger)arg1;
@@ -26,11 +32,15 @@
 - (void)setHour:(NSInteger)arg1;
 - (void)setMinute:(NSInteger)arg1;
 - (void)setMonth:(NSInteger)arg1;
+- (void)setNanosecond:(NSInteger)arg1;
+- (void)setQuarter:(NSInteger)arg1;
 - (void)setSecond:(NSInteger)arg1;
+- (void)setTimeZone:(id)arg1;
 - (void)setWeek:(NSInteger)arg1;
 - (void)setWeekday:(NSInteger)arg1;
 - (void)setWeekdayOrdinal:(NSInteger)arg1;
 - (void)setYear:(NSInteger)arg1;
+- (id)timeZone;
 - (NSInteger)week;
 - (NSInteger)weekday;
 - (NSInteger)weekdayOrdinal;

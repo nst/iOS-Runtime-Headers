@@ -10,6 +10,7 @@
 + (id)hashTableWithOptions:(NSUInteger)arg1;
 + (id)hashTableWithWeakObjects;
 
+- (void)_mapkit_removeObjects:(id)arg1;
 - (void)addObject:(id)arg1;
 - (id)allObjects;
 - (id)anyObject;
@@ -21,7 +22,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void*)getItem:(const void*)arg1;
-- (NSUInteger)getKeys:(void**)arg1;
+- (void)getKeys:(void**)arg1 count:(NSUInteger*)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOptions:(NSUInteger)arg1 capacity:(NSUInteger)arg2;

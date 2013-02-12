@@ -10,11 +10,14 @@
     id _delegate;
     BOOL _deleteAfterPublishing;
     double _estimatedTimeRemaining;
+    BOOL _isMediaVideo;
     long long _maxValue;
     NSData *_mediaData;
     NSString *_mediaPath;
+    NSString *_mimeType;
     long long _normalizedCurrentValue;
     long long _normalizedMaxValue;
+    BOOL _ownerIsCamera;
     UINavigationController *_parentNavigationController;
     float _percentComplete;
     NSMutableArray *_snapshotTimes;
@@ -23,10 +26,10 @@
 }
 
 @property <PLPublishingAgentDelegate> *delegate;
+@property BOOL ownerIsCamera;
 
 + (id)publishingAgentForBundleNamed:(id)arg1;
 
-- (void)_snapshot;
 - (void)_updateStatisticsFromSnapshots;
 - (void)cancelButtonClicked;
 - (void)dataArrayInputStreamBytesWereRead:(id)arg1;
@@ -37,22 +40,29 @@
 - (void)doneButtonClicked;
 - (double)estimatedTimeRemaining;
 - (id)initWithMediaPath:(id)arg1;
+- (BOOL)isVideoMedia;
 - (double)maximumVideoDuration;
 - (id)mediaData;
 - (id)mediaPath;
 - (id)mediaTitle;
 - (id)mediaURL;
 - (id)navigationController;
+- (BOOL)ownerIsCamera;
 - (id)parentNavigationController;
 - (float)percentComplete;
 - (void)presentModalSheetInNavigationController:(id)arg1;
 - (void)publish;
+- (void)resignPublishingSheetResponders;
 - (id)serviceName;
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteMediaFileAfterPublishing:(BOOL)arg1;
 - (void)setMediaData:(id)arg1;
 - (void)setMediaPath:(id)arg1;
+- (void)setOwnerIsCamera:(BOOL)arg1;
+- (void)setTotalBytesWritten:(NSInteger)arg1 totalBytes:(NSInteger)arg2;
 - (void)setUserInfo:(id)arg1;
+- (void)snapshot;
+- (id)tellAFriendBody;
 - (id)tellAFriendSubject;
 - (id)tellAFriendURL;
 - (id)userInfo;

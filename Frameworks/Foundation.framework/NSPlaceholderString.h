@@ -21,7 +21,7 @@
 - (id)initWithFormat:(id)arg1 locale:(id)arg2 arguments:(void*)arg3;
 - (id)initWithString:(id)arg1;
 - (NSUInteger)length;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
 

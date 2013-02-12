@@ -7,7 +7,7 @@
  */
 
 @interface AVItem : NSObject {
-    struct AVItemPrivate { id x1; id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; inout unsigned short x4; unsigned short x5; void*x6; const NSInteger x7; in void*x8; void*x9; double x10; float x11; float x12; float x13; NSUInteger x14; BOOL x15; BOOL x16; id x17; void*x18; inout unsigned short x19; void*x20; NSInteger x21; BOOL x22; void*x23; NSInteger x24; out in void*x25; const void*x26; void*x27; NSInteger x28; long long x29; long long x30; BOOL x31; id x32; void*x33; inout unsigned short x34; void*x35; NSInteger x36; BOOL x37; void*x38; NSInteger x39; out in void*x40; const void*x41; void*x42; id x43; void*x44; inout unsigned short x45; void*x46; NSInteger x47; BOOL x48; void*x49; NSInteger x50; out in void*x51; const void*x52; void*x53; id x54; void*x55; inout unsigned short x56; void*x57; void*x58; unsigned long x59; void*x60; id x61; void*x62; inout unsigned short x63; void*x64; NSInteger x65; BOOL x66; void*x67; NSInteger x68; out in void*x69; const void*x70; void*x71; struct OpaqueMD5CheckProgress {} *x72; struct OpaqueFigThread {} *x73; struct OpaqueFigByteStream {} *x74; NSInteger x75; } *_priv;
+    struct AVItemPrivate { id x1; id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; inout unsigned short x4; unsigned short x5; void*x6; const NSInteger x7; in void*x8; void*x9; double x10; float x11; float x12; float x13; NSUInteger x14; BOOL x15; BOOL x16; id x17; void*x18; inout unsigned short x19; void*x20; NSInteger x21; BOOL x22; void*x23; NSInteger x24; out in void*x25; const void*x26; void*x27; NSInteger x28; long long x29; long long x30; BOOL x31; id x32; void*x33; inout unsigned short x34; void*x35; NSInteger x36; BOOL x37; void*x38; NSInteger x39; out in void*x40; const void*x41; void*x42; id x43; void*x44; inout unsigned short x45; void*x46; void*x47; unsigned long x48; void*x49; id x50; void*x51; inout unsigned short x52; void*x53; NSInteger x54; BOOL x55; void*x56; NSInteger x57; out in void*x58; const void*x59; void*x60; struct OpaqueMD5CheckProgress {} *x61; struct OpaqueFigThread {} *x62; struct OpaqueFigByteStream {} *x63; NSInteger x64; } *_priv;
 }
 
 + (id)avItem;
@@ -17,6 +17,7 @@
 - (void)addPlaybackPropertyWithValue:(id)arg1 forKey:(id)arg2;
 - (id)attributeForKey:(id)arg1;
 - (long)beginDownloading;
+- (void)cancelDownload;
 - (id)chapterImageForImageID:(NSInteger)arg1;
 - (void)dealloc;
 - (float)downloadProgress;
@@ -25,6 +26,7 @@
 - (double)duration;
 - (NSInteger)eqPreset;
 - (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(NSInteger)arg3;
+- (id)formatDetailsForTracks;
 - (id)init;
 - (id)initWithError:(id*)arg1;
 - (id)initWithPath:(id)arg1 error:(id*)arg2;

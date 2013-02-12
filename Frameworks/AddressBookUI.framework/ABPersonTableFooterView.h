@@ -2,54 +2,37 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTableFooterViewDelegate>, ABPersonTableAction, NSMutableArray, UIButton, UIView;
+@class <ABStyleProvider>, ABPersonTableAction, UIButton, UIView;
 
 @interface ABPersonTableFooterView : UIView <ABPersonTableActionDelegate> {
-    NSMutableArray *_actions;
-    UIView *_actionsView;
     UIButton *_attributionButton;
-    <ABPersonTableFooterViewDelegate> *_delegate;
     ABPersonTableAction *_deleteAction;
     UIView *_deleteView;
     BOOL _editing;
-    void *_person;
+    <ABStyleProvider> *_styleProvider;
 }
 
 @property(readonly) NSString *attribution;
-@property <ABPersonTableFooterViewDelegate> *delegate;
-@property void *person;
+@property(retain) <ABStyleProvider> *styleProvider;
 @property(getter=isAttributionEnabled,readonly) BOOL attributionEnabled;
-@property(getter=isEditing) BOOL editing;
+@property(getter=isEditing) BOOL tableEditing;
 
-- (void)_addAction:(id)arg1 withOrdering:(NSInteger)arg2;
-- (void)_removeActionAtIndex:(NSInteger)arg1;
-- (id)actionsView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })actionsViewFrame;
-- (void)addAction:(id)arg1 withOrdering:(NSInteger)arg2;
-- (id)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(NSInteger)arg5 ordering:(NSInteger)arg6 animated:(BOOL)arg7;
 - (id)attribution;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attributionFrame;
 - (void)dealloc;
-- (id)delegate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteViewFrame;
-- (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(NSInteger)arg4 ordering:(NSInteger)arg5 outIndex:(NSInteger*)arg6;
-- (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(NSInteger)arg4 ordering:(NSInteger)arg5;
-- (BOOL)hasActions;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAttributionEnabled;
 - (BOOL)isEditing;
 - (void)layoutSubviews;
-- (void*)person;
-- (void)presentDifferentiationSheetForAction:(id)arg1;
-- (void)removeAction:(id)arg1 withOrdering:(NSInteger)arg2;
-- (void)removeActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(NSInteger)arg4 ordering:(NSInteger)arg5 animated:(BOOL)arg6;
 - (void)removeDeleteAction;
 - (void)setAttribution:(id)arg1 enabled:(BOOL)arg2 target:(id)arg3 action:(SEL)arg4;
-- (void)setDelegate:(id)arg1;
-- (void)setDeleteActionWithTarget:(id)arg1 selector:(SEL)arg2 animated:(BOOL)arg3;
+- (void)setDeleteActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 animated:(BOOL)arg4;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPerson:(void*)arg1;
-- (void)sizeToFit;
+- (void)setStyleProvider:(id)arg1;
+- (void)setTableEditing:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)styleProvider;
 
 @end

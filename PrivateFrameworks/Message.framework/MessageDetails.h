@@ -2,28 +2,33 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MessageLibrary;
+@class MessageLibrary, NSString;
 
 @interface MessageDetails : NSObject {
+    NSUInteger conversationHash;
     NSUInteger dateReceived;
     NSUInteger encoding;
+    NSString *externalID;
     BOOL isInvalid;
     MessageLibrary *library;
     NSUInteger libraryID;
     NSInteger mailboxID;
-    NSUInteger messageFlags;
+    unsigned long long messageFlags;
     NSUInteger uid;
 }
 
+- (id)copyMessageInfo;
 - (double)dateReceivedAsTimeIntervalSince1970;
+- (void)dealloc;
 - (id)description;
+- (id)externalID;
 - (NSUInteger)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (NSUInteger)libraryID;
 - (id)mailbox;
 - (NSUInteger)mailboxID;
-- (unsigned long)messageFlags;
+- (unsigned long long)messageFlags;
 - (id)messageID;
 - (id)remoteID;
 - (unsigned long)uid;

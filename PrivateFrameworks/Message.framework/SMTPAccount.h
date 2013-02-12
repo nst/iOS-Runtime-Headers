@@ -2,23 +2,24 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSTimer, SMTPConnection;
+@class MFSMTPConnection, NSTimer;
 
 @interface SMTPAccount : DeliveryAccount {
     unsigned int _supportsPipelining : 1;
     unsigned int _supportsOutboxCopy : 1;
     unsigned int _useCellDataOnly : 1;
-    SMTPConnection *_connection;
+    MFSMTPConnection *_connection;
     Class _deliveryClass;
     NSInteger _lastTimerSetTime;
     NSTimer *_timer;
 }
 
 + (id)accountTypeString;
-+ (id)basicAccountProperties;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
++ (void*)keychainProtocol;
 + (id)newDefaultInstance;
++ (void)registerAppleServiceDeliveryHostname:(id)arg1;
 + (id)saslProfileName;
 
 - (id)_defaultSettingsWithPort:(NSUInteger)arg1 useSSL:(BOOL)arg2 directSSL:(BOOL)arg3;
@@ -27,6 +28,7 @@
 - (id)alternateConnectionSettings;
 - (id)authenticatedConnection:(BOOL)arg1;
 - (BOOL)canBeFallbackAccount;
+- (id)certUIService;
 - (void)checkInConnection:(id)arg1;
 - (Class)connectionClass;
 - (void)connectionExpired:(id)arg1;

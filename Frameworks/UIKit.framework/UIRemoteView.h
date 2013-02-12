@@ -7,6 +7,7 @@
 @interface UIRemoteView : UIView {
     BOOL _captureAllWindows;
     NSString *_remoteViewIdentifier;
+    BOOL _remoteViewOpaque;
     UIRemoteWindow *_remoteWindow;
 }
 
@@ -14,6 +15,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 captureAllWindows:(BOOL)arg2;
 - (void)registerWithIdentifier:(id)arg1;
 - (id)remoteViewIdentifier;
+- (void)setRemoteViewOpaque:(BOOL)arg1;
 - (void)unregister;
 
 @end

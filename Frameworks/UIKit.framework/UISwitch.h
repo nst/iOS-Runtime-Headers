@@ -8,15 +8,26 @@
 
 @property(getter=isOn) BOOL on;
 
++ (void)_initializeSafeCategory;
+
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_scriptingInfo;
+- (void)_swipeLeft:(id)arg1;
+- (void)_swipeRight:(id)arg1;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (id)actionsForTarget:(id)arg1 forControlEvent:(NSUInteger)arg2;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(NSUInteger)arg3;
+- (NSUInteger)allControlEvents;
+- (id)allTargets;
 - (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isEnabled;
@@ -24,6 +35,7 @@
 - (BOOL)isOn;
 - (BOOL)isSelected;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(NSUInteger)arg3;
+- (void)sendActionsForControlEvents:(NSUInteger)arg1;
 - (void)setAlternateColors:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

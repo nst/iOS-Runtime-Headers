@@ -9,8 +9,8 @@
 @class <NSFastEnumeration>, mutationsPtr;
 
 @interface __NSFastEnumerationEnumerator : NSEnumerator {
-    /* Warning: unhandled struct encoding: '{?="state"L"itemsPtr"^@"mutationsPtr"^L"extra"[5L]}' */ struct { 
-        unsigned long state; 
+    /* Warning: unhandled struct encoding: '{?="state"@"itemsPtr"^@"mutationsPtr"^L"extra"[5@]}' */ struct { 
+        id state; 
         mutationsPtr **itemsPtr; 
     NSUInteger _count;
     NSUInteger _mut;

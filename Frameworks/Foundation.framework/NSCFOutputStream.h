@@ -19,6 +19,7 @@
 - (id)initToBuffer:(char *)arg1 capacity:(NSUInteger)arg2;
 - (id)initToFileAtPath:(id)arg1 append:(BOOL)arg2;
 - (id)initToMemory;
+- (id)initWithURL:(id)arg1 append:(BOOL)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (void)open;
 - (id)propertyForKey:(id)arg1;

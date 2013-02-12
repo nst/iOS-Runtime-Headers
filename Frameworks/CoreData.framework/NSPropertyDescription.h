@@ -13,13 +13,14 @@
         unsigned int _skipValidation : 1; 
         unsigned int _isIndexedBySpotlight : 1; 
         unsigned int _isStoredInExternalRecord : 1; 
-        unsigned int _reservedPropertyDescription : 25; 
+        unsigned int _extraIvarsAreInDataBlob : 1; 
+        unsigned int _reservedPropertyDescription : 24; 
     NSEntityDescription *_entity;
     long _entitysReferenceIDForProperty;
     void *_extraIvars;
     NSString *_name;
     } _propertyDescriptionFlags;
-    void *_reserved;
+    id _underlyingProperty;
     NSMutableDictionary *_userInfo;
     NSArray *_validationPredicates;
     NSArray *_validationWarnings;
@@ -29,14 +30,19 @@
 
 + (void)initialize;
 
+- (void)_appendPropertyFieldsToData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
+- (BOOL)_comparePredicatesAndWarnings:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (long)_entitysReferenceID;
+- (struct _NSExtraPropertyIVars { id x1; long long x2; long long x3; }*)_extraIVars;
 - (id)_initWithName:(id)arg1;
+- (void)_initializeExtraIVars;
 - (BOOL)_isEditable;
 - (BOOL)_isRelationship;
 - (BOOL)_isToManyRelationship;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (NSUInteger)_propertyType;
+- (void)_replaceValidationPredicates:(id)arg1 andWarnings:(id)arg2;
 - (void)_restoreValidation;
 - (void)_setEntity:(id)arg1;
 - (void)_setEntitysReferenceID:(long)arg1;
@@ -44,6 +50,7 @@
 - (void)_stripForMigration;
 - (void)_throwIfNotEditable;
 - (void)_versionHash:(char *)arg1;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

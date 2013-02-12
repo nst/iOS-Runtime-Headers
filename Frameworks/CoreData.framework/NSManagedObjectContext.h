@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSMutableSet, NSPersistentStoreCoordinator, NSUndoManager;
+@class NSMutableSet, NSUndoManager;
 
 @interface NSManagedObjectContext : NSObject <NSCoding, NSLocking> {
     struct _managedObjectContextFlags { 
@@ -21,44 +21,47 @@
         unsigned int _propagatingDeletes : 1; 
         unsigned int _isNSEditorEditing : 1; 
         unsigned int _isMainThreadBlessed : 1; 
-        unsigned int _reservedFlags : 17; 
+        unsigned int _isImportContext : 1; 
+        unsigned int _isParentContext : 1; 
+        unsigned int _preflightSaveInProgress : 1; 
+        unsigned int _reservedFlags : 14; 
     id *_cachedObsInfoByEntity;
     NSInteger _cd_rc;
     NSMutableSet *_changedObjects;
-    NSMutableArray *_children;
+    id _childObjectStores;
     id *_debuggingRecords;
     id _delegate;
     NSMutableSet *_deletedObjects;
+    void *_dispatchQueue;
     id _editors;
     double _fetchTimestamp;
     } _flags;
-    long _ignoreChangeNotification;
+    NSInteger _ignoreChangeNotification;
     id _infoByGID;
     NSMutableSet *_insertedObjects;
     id _lock;
     long _lockCount;
     NSMutableSet *_lockedObjects;
     id _mergePolicy;
-    NSPersistentStoreCoordinator *_objectStore;
     long _objectStoreLockCount;
+    id _parentObjectStore;
     id _referenceQueue;
     NSMutableSet *_refreshedObjects;
-    void *_reserved1;
     void *_reserved2;
-    NSInteger _reserved3;
     NSInteger _spinLock;
     NSUndoManager *_undoManager;
     short _undoTransactionID;
     NSMutableSet *_unprocessedChanges;
     NSMutableSet *_unprocessedDeletes;
     NSMutableSet *_unprocessedInserts;
+    id _userinfo;
 }
 
-+ (id)_arrayExcludingObjectsInArray:(id)arg1 array:(id)arg2;
 + (BOOL)_handleError:(id)arg1 withError:(id*)arg2;
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
 
+- (BOOL)_attemptCoalesceChangesForFetch;
 - (NSUInteger)_batchRetainedObjects:(id*)arg1 forCount:(NSUInteger)arg2 withIDs:(id*)arg3 optionalHandler:(id)arg4 withInlineStorage:(BOOL)arg5;
 - (void)_changeIDsForManagedObjects:(id)arg1 toIDs:(id)arg2;
 - (void)_changeIDsForManagedObjects:(id)arg1;
@@ -74,6 +77,7 @@
 - (void)_clearUnprocessedUpdates;
 - (void)_clearUpdates;
 - (id)_committedSnapshotForObject:(id)arg1;
+- (void)_copyChildObject:(id)arg1 toParentObject:(id)arg2 fromChildContext:(id)arg3;
 - (NSUInteger)_countWithMergedChangesForRequest:(id)arg1 possibleChanges:(id)arg2 possibleDeletes:(id)arg3 error:(id*)arg4;
 - (NSUInteger)_countWithNoChangesForRequest:(id)arg1 error:(id*)arg2;
 - (void)_createAndPostChangeNotification:(id)arg1 withDeletions:(id)arg2 withUpdates:(id)arg3 withRefreshes:(id)arg4;
@@ -102,12 +106,15 @@
 - (void)_informParentStore:(id)arg1 ofInterestInObjects:(id)arg2;
 - (void)_initWithParentObjectStore:(id)arg1;
 - (void)_insertObjectWithGlobalID:(id)arg1 globalID:(id)arg2;
-- (id)_localStoreContainingObjectID:(id)arg1;
+- (BOOL)_isImportContext;
+- (BOOL)_isPreflightSaveInProgress;
 - (void)_managedObjectContextEditor:(id)arg1 didCommit:(BOOL)arg2 contextInfo:(struct { id x1; SEL x2; void *x3; }*)arg3;
 - (id)_newSaveRequestForCurrentState;
 - (id)_newUnchangedLockedObjects;
 - (void)_noop:(id)arg1;
 - (void)_objectsChangedInStore:(id)arg1;
+- (id)_parentObjectsForFetchRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
+- (id)_parentProcessSaveRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 - (void)_postObjectsDidChangeNotificationWithUserInfo:(id)arg1;
 - (void)_postRefreshedObjectsNotificationAndClearList;
 - (BOOL)_prepareForPushChanges:(id*)arg1;
@@ -133,16 +140,18 @@
 - (void)_registerUndoForInsertedObjects:(id)arg1;
 - (void)_registerUndoForModifiedObjects:(id)arg1;
 - (void)_registerUndoForOperation:(SEL)arg1 withObjects:(id)arg2 withExtraArguments:(id)arg3;
-- (id)_registeredObjects;
 - (void)_resetAllChanges;
 - (id)_retainedObjectWithID:(id)arg1 error:(id*)arg2;
 - (id)_retainedObjectWithID:(id)arg1 optionalHandler:(id)arg2 withInlineStorage:(BOOL)arg3;
 - (id)_retainedObjectWithID:(id)arg1;
 - (id)_retainedObjectsFromRemovedStore:(id)arg1;
+- (id)_retainedRegisteredObjects;
 - (void)_sendCommitEditingSelectorToTarget:(id)arg1 sender:(id)arg2 selector:(SEL)arg3 flag:(BOOL)arg4 contextInfo:(void*)arg5 delayed:(BOOL)arg6;
 - (void)_sendOrEnqueueNotification:(id)arg1 selector:(SEL)arg2;
+- (void)_setIsUbiquityImportContext:(BOOL)arg1;
 - (void)_setStopsValidationAfterFirstError:(BOOL)arg1;
 - (void)_startObservingUndoManagerNotifications;
+- (void)_stopConflictDetectionForObject:(id)arg1;
 - (void)_stopObservingUndoManagerNotifications;
 - (BOOL)_stopsValidationAfterFirstError;
 - (void)_storeConfigurationChanged:(id)arg1;
@@ -168,24 +177,34 @@
 - (void)discardEditing;
 - (void)encodeWithCoder:(id)arg1;
 - (id)executeFetchRequest:(id)arg1 error:(id*)arg2;
+- (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
 - (void)finalize;
 - (BOOL)hasChanges;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCoordinator:(id)arg1;
+- (id)initWithType:(NSUInteger)arg1;
 - (void)insertObject:(id)arg1;
 - (id)insertedObjects;
 - (BOOL)isEditing;
 - (void)lock;
 - (void)lockObjectStore;
+- (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
+- (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
 - (void)mergeChangesFromContextDidSaveNotification:(id)arg1;
 - (id)mergePolicy;
+- (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
+- (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (void)objectDidBeginEditing:(id)arg1;
 - (void)objectDidEndEditing:(id)arg1;
 - (id)objectRegisteredForID:(id)arg1;
 - (id)objectWithID:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
+- (id)parentContext;
+- (void)perform:(id)arg1;
+- (void)performAndWait:(id)arg1;
 - (id)persistentStoreCoordinator;
 - (void)processPendingChanges;
 - (BOOL)propagatesDeletesAtEndOfEvent;
@@ -200,6 +219,7 @@
 - (void)rollback;
 - (BOOL)save:(id*)arg1;
 - (void)setMergePolicy:(id)arg1;
+- (void)setParentContext:(id)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
 - (void)setPropagatesDeletesAtEndOfEvent:(BOOL)arg1;
 - (void)setRetainsRegisteredObjects:(BOOL)arg1;
@@ -212,5 +232,6 @@
 - (void)unlock;
 - (void)unlockObjectStore;
 - (id)updatedObjects;
+- (id)userInfo;
 
 @end

@@ -23,7 +23,7 @@
 + (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 + (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 + (id)performSelector:(SEL)arg1;
-+ (void)release;
++ (oneway void)release;
 + (BOOL)respondsToSelector:(SEL)arg1;
 + (id)retain;
 + (NSUInteger)retainCount;
@@ -52,7 +52,7 @@
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)performSelector:(SEL)arg1;
-- (void)release;
+- (oneway void)release;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)retain;
 - (NSUInteger)retainCount;

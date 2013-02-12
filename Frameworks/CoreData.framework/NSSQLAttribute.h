@@ -5,7 +5,7 @@
 @interface NSSQLAttribute : NSSQLColumn {
 }
 
-- (NSUInteger)_sqlTypeForAttributeType:(NSUInteger)arg1;
+- (NSUInteger)_sqlTypeForAttributeType:(NSUInteger)arg1 flags:(NSUInteger)arg2;
 - (id)attributeDescription;
 - (id)initForReadOnlyFetchWithExpression:(id)arg1;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;

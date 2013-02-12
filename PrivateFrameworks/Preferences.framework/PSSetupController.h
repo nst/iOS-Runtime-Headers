@@ -2,33 +2,34 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSBaseView>, NSDictionary;
+@class NSDictionary, PSRootController, UIViewController<PSController>;
 
 @interface PSSetupController : PSRootController {
-    <PSBaseView> *_parentController;
+    UIViewController<PSController> *_parentController;
+    PSRootController *_parentRootController;
     NSDictionary *_rootInfo;
 }
 
-+ (BOOL)isOverlay;
++ (void)_initializeSafeCategory;
 
 - (id)controller;
 - (void)dealloc;
-- (void)didFinishTransition;
 - (void)dismiss;
+- (void)dismissAnimated:(BOOL)arg1;
 - (void)forwardInvocation:(id)arg1;
-- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)navigationBar:(id)arg1 buttonClicked:(NSInteger)arg2;
 - (id)parentController;
 - (void)popControllerOnParent;
+- (BOOL)popupStyleIsModal;
 - (void)pushController:(id)arg1;
 - (void)pushControllerOnParentWithSpecifier:(id)arg1;
 - (void)setParentController:(id)arg1;
-- (void)setPrompt:(id)arg1;
-- (void)setupRootListForSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)showNavigationBarButtons:(id)arg1 :(id)arg2;
-- (void)updateNavButtons;
-- (id)view;
+- (void)setupController;
+- (void)statusBarWillChangeHeight:(id)arg1;
+- (BOOL)usePopupStyle;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillBecomeVisible:(void*)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

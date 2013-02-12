@@ -18,7 +18,6 @@
 + (id)sharedDataSource;
 + (BOOL)shouldRemoveOldDefaults;
 
-- (void)_addVideos:(id)arg1;
 - (void)_clearVideos;
 - (id)_deprecatedVideosDefaultsKey;
 - (void)_didChange;
@@ -26,6 +25,7 @@
 - (void)_searchRequestLoadingStatusDidChange;
 - (void)_setLastError:(id)arg1;
 - (void)_setVideos:(id)arg1;
+- (void)addVideos:(id)arg1 toTop:(BOOL)arg2;
 - (void)dealloc;
 - (BOOL)hasLoaded;
 - (id)init;
@@ -35,6 +35,7 @@
 - (void)loadMore;
 - (NSUInteger)maxVideosToSave;
 - (void)reloadData;
+- (void)removeAllVideos;
 - (void)removeVideoAtIndex:(NSInteger)arg1;
 - (void)searchRequest:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(NSUInteger)arg3 videosRemaining:(NSUInteger)arg4;

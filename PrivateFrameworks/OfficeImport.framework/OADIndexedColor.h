@@ -10,7 +10,9 @@
 
 - (id)colorFromPalette:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
 - (NSInteger)index;
 - (id)initWithIndex:(NSInteger)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

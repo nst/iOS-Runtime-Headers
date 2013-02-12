@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextMagnifierTimeWeightedPoint, UIView, UIView<UITextSelectingContainer>;
+@class UITextMagnifierTimeWeightedPoint, UITextSelection, UIView, UIView<UITextSelectingContainer>;
 
 @interface UITextMagnifierRanged : UIView <UITextMagnifier> {
-    struct CGPoint { 
-        float x; 
-        float y; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -17,18 +14,19 @@
     } _animationPoint;
     NSInteger _autoscrollDirections;
     UIView *_autoscrollRenderer;
-    BOOL _inPlace;
     } _magnificationPoint;
+    float _magnifierOffsetFromTouch;
     UIView *_magnifierRenderer;
-    } _offset;
+    UITextSelection *_selection;
     UIView<UITextSelectingContainer> *_target;
+    float _touchOffsetFromMagnificationPoint;
     UITextMagnifierTimeWeightedPoint *_weightedPoint;
 }
 
+@property(retain) UITextSelection *selection;
 @property(retain) UIView<UITextSelectingContainer> *target;
 @property CGPoint animationPoint;
 @property CGPoint magnificationPoint;
-@property CGPoint offset;
 @property(readonly) CGPoint terminalPoint;
 @property(readonly) BOOL terminalPointPlacedCarefully;
 
@@ -38,23 +36,23 @@
 - (void)animateToMagnifierRenderer;
 - (struct CGPoint { float x1; float x2; })animationPoint;
 - (void)autoscrollWillNotStart;
-- (void)beginMagnifyingTarget:(id)arg1 magnificationPoint:(struct CGPoint { float x1; float x2; })arg2 offset:(struct CGPoint { float x1; float x2; })arg3 animated:(BOOL)arg4;
-- (float)currentOffset;
+- (void)beginMagnifyingSelection:(id)arg1 magnificationPoint:(struct CGPoint { float x1; float x2; })arg2 offset:(struct CGPoint { float x1; float x2; })arg3 animated:(BOOL)arg4;
 - (void)dealloc;
 - (void)detectLostTouches:(id)arg1;
 - (NSInteger)horizontalMovement;
 - (NSInteger)horizontalMovementAtTime:(double)arg1;
 - (id)initWithDefaultFrame;
 - (struct CGPoint { float x1; float x2; })magnificationPoint;
-- (struct CGPoint { float x1; float x2; })offset;
+- (float)offsetFromMagnificationPoint;
 - (void)postAutoscrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)remove;
+- (id)selection;
 - (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAutoscrollDirections:(NSInteger)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setNeedsDisplay;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSelection:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setToMagnifierRenderer;
 - (struct CGPoint { float x1; float x2; })snappedPoint:(struct CGPoint { float x1; float x2; })arg1;

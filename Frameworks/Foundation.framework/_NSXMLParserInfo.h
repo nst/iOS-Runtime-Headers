@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSError, NSMutableArray;
+@class NSError, NSMapTable, NSMutableArray;
 
 @interface _NSXMLParserInfo : NSObject {
     struct _xmlParserCtxt { struct _xmlSAXHandler {} *x1; void *x2; struct _xmlDoc {} *x3; NSInteger x4; NSInteger x5; char *x6; char *x7; NSInteger x8; NSInteger x9; struct _xmlParserInput {} *x10; NSInteger x11; NSInteger x12; struct _xmlParserInput {} **x13; struct _xmlNode {} *x14; NSInteger x15; NSInteger x16; struct _xmlNode {} **x17; NSInteger x18; struct _xmlParserNodeInfoSeq { 
@@ -46,6 +46,7 @@
         } x80; NSInteger x81; unsigned long x82; unsigned long x83; } *parserContext;
     NSUInteger parserFlags;
     struct _xmlSAXHandler { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); int (*x24)(); int (*x25)(); int (*x26)(); int (*x27)(); NSUInteger x28; void *x29; int (*x30)(); int (*x31)(); int (*x32)(); } *saxHandler;
+    NSMapTable *slowStringMap;
 }
 
 @end

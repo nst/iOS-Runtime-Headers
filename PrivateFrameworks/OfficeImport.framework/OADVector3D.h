@@ -12,6 +12,8 @@
 - (float)dx;
 - (float)dy;
 - (float)dz;
+- (NSUInteger)hash;
 - (id)initWithDx:(float)arg1 dy:(float)arg2 dz:(float)arg3;
+- (BOOL)isEqual:(id)arg1;
 
 @end

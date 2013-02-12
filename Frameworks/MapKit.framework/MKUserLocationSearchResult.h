@@ -3,12 +3,19 @@
  */
 
 @interface MKUserLocationSearchResult : MKSearchResult {
+    struct { 
+        double latitude; 
+        double longitude; 
+    } _lastUserLocationCoordinate;
+    double _lastUserLocationUpdateTime;
 }
 
 + (id)searchResult;
 
 - (struct CGPoint { float x1; float x2; })longLat;
 - (BOOL)needsReverseGeocodeCheck;
+- (BOOL)performsReverseGeocodeCheck;
 - (BOOL)requiresPanoramaIDCheck;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
 
 @end

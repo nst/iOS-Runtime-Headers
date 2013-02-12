@@ -15,12 +15,15 @@
 
 - (void)_rehash;
 - (void)addObject:(id)arg1;
+- (id)arrayFromObjectIDs;
 - (NSUInteger)count;
 - (void)dealloc;
+- (void)finalize;
 - (NSUInteger)indexOfManagedObjectForObjectID:(id)arg1;
 - (id)initWithPFArray:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
 - (id)managedObjectIDAtIndex:(NSUInteger)arg1;
+- (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(NSUInteger)arg1;
 - (void)release;
 - (void)removeLastObject;

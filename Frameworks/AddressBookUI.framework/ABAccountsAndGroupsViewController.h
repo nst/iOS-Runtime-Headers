@@ -2,39 +2,56 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABAccountsAndGroupDataSource;
+@class <ABStyleProvider>, ABAccountsAndGroupDataSource;
 
 @interface ABAccountsAndGroupsViewController : ABAbstractViewController <UITableViewDelegate> {
     ABAccountsAndGroupDataSource *_dataSource;
     BOOL _needsReload;
+    <ABStyleProvider> *_styleProvider;
     BOOL _tableViewNeedsReloadAfterResume;
 }
 
+@property(readonly) ABAccountsAndGroupDataSource *dataSource;
 @property(retain) ABModel *model;
+@property(retain) <ABStyleProvider> *styleProvider;
+@property(readonly) UITableView *tableView;
+@property BOOL hidesSearchableStores;
 
+- (void)_applyAccessibilityFontChanges;
 - (void)_refreshIfNeeded;
 - (void)_showMembersWithModel:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
 - (NSInteger)abViewControllerType;
+- (void)accessibilityLargeTextDidChange;
 - (void)applicationDidResume;
 - (void)cancel:(id)arg1;
+- (id)copyMembersViewControllerWithModel:(id)arg1;
+- (id)copyServerSearchViewControllerWithModel:(id)arg1;
+- (id)dataSource;
 - (id)dataSource;
 - (void)dealloc;
+- (BOOL)hidesSearchableStores;
 - (void)iTunesSyncHasCompleted:(NSInteger)arg1;
 - (void)iTunesSyncRequestedStart;
-- (id)init;
+- (id)initWithModel:(id)arg1;
 - (void)loadView;
 - (id)model;
 - (void)modelDatabaseChange:(id)arg1;
+- (BOOL)preservesSelection;
 - (void)reloadData;
 - (void)reselectLastSelectedCellIfNeeded;
+- (void)setHidesSearchableStores:(BOOL)arg1;
 - (void)setModel:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (BOOL)shouldShowGroups;
 - (void)showMembersOfGroup:(void*)arg1 animate:(BOOL)arg2;
 - (void)showMembersOfGroupWrapper:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
 - (void)showMembersOfGroupWrapper:(id)arg1 animate:(BOOL)arg2;
+- (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
+- (id)tableView;
 - (void)updateNavigationButtons;
 - (void)viewDidLoad;
 - (void)viewDidUnload;

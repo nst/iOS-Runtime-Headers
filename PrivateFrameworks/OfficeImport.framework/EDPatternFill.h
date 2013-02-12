@@ -28,6 +28,7 @@
 - (id)foreColorReference;
 - (NSUInteger)hash;
 - (id)initWithResources:(id)arg1;
+- (id)initWithType:(NSInteger)arg1 foreColor:(id)arg2 backColor:(id)arg3 resources:(id)arg4;
 - (id)initWithType:(NSInteger)arg1 foreColorReference:(id)arg2 backColorReference:(id)arg3 resources:(id)arg4;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isEmpty;
 - (BOOL)isEqual:(id)arg1;

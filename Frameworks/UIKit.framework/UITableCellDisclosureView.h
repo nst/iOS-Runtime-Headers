@@ -5,6 +5,10 @@
 @interface UITableCellDisclosureView : UIPushButton {
 }
 
++ (void)_initializeSafeCategory;
+
 - (BOOL)_alwaysHandleScrollerMouseEvent;
+- (id)accessibilityLabel;
+- (BOOL)isAccessibilityElement;
 
 @end

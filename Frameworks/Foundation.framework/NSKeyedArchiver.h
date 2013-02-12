@@ -10,16 +10,16 @@
     id _conditionals;
     id _containers;
     id _delegate;
+    NSUInteger _estimatedCount;
     NSUInteger _flags;
     NSUInteger _genericKey;
     id _objRefMap;
     id _objects;
     id _replacementMap;
     void *_reserved0;
-    void *_reserved1;
     void *_reserved2;
-    void *_reserved3;
     void *_stream;
+    id _visited;
 }
 
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;

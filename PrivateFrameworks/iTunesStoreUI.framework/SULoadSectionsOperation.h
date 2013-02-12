@@ -2,40 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray;
+@class SUSectionsResponse;
 
 @interface SULoadSectionsOperation : ISOperation <ISURLOperationDelegate> {
-    NSArray *_sections;
-    BOOL _shouldResetUserOrdering;
+    SUSectionsResponse *_sectionsResponse;
     BOOL _shouldUseCache;
-    BOOL _usedCache;
 }
 
-@property(retain) NSArray *sections;
-@property BOOL shouldResetUserOrdering;
+@property(readonly) SUSectionsResponse *sectionsResponse;
 @property BOOL shouldUseCache;
-@property BOOL usedCache;
 
+- (void)_applyDefaultSearchFieldConfigurationsToSections:(id)arg1;
 - (id)_baseCachePath;
 - (id)_cachePathForVersion:(id)arg1 create:(BOOL)arg2;
-- (id)_copySectionsDictionaryFromPath:(id)arg1;
+- (void)_fixSearchFieldConfigurations;
 - (BOOL)_loadArtworkForSections:(id)arg1 fromCacheDirectory:(id)arg2;
 - (BOOL)_loadDefaultSections;
+- (BOOL)_loadFromDictionary:(id)arg1;
 - (BOOL)_loadSectionsFromCacheForVersion:(id)arg1;
 - (BOOL)_loadSectionsFromNetworkWithDictionary:(id)arg1;
 - (BOOL)_loadSectionsFromPath:(id)arg1;
+- (id)_newImageForIdentifier:(id)arg1 variant:(id)arg2 cacheDirectory:(id)arg3;
+- (void)_setSectionsResponse:(id)arg1;
 - (void)_writeImage:(id)arg1 toCachePath:(id)arg2 forIdentifier:(id)arg3 variant:(id)arg4;
 - (void)_writeSectionsToCache:(id)arg1 forVersion:(id)arg2 withOriginalDictionary:(id)arg3;
 - (void)dealloc;
 - (id)init;
 - (void)run;
-- (id)sections;
-- (void)setSections:(id)arg1;
-- (void)setShouldResetUserOrdering:(BOOL)arg1;
+- (id)sectionsResponse;
 - (void)setShouldUseCache:(BOOL)arg1;
-- (void)setUsedCache:(BOOL)arg1;
-- (BOOL)shouldResetUserOrdering;
 - (BOOL)shouldUseCache;
-- (BOOL)usedCache;
 
 @end

@@ -4,7 +4,7 @@
 
 @class MimeBody, MimePart, NSData, NSDictionary, NSMutableDictionary;
 
-@interface WebMessageDocument : WebAttachmentSource {
+@interface WebMessageDocument : MFWebAttachmentSource {
     unsigned int _downloadRemoteURLs : 1;
     unsigned int _containsRemoteContent : 1;
     NSMutableDictionary *_attachmentsByURL;
@@ -17,6 +17,7 @@
     NSUInteger _preferredCharset;
 }
 
+- (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;
 - (void)appendHTMLData:(id)arg1;
 - (id)attachmentForURL:(id)arg1;
 - (id)attachmentsInDocument;

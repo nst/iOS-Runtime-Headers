@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString, UIKBKeyset;
 
-@interface UIKBKeylayout : UIKBShape <NSCoding> {
+@interface UIKBKeylayout : UIKBShape <NSCoding, NSCopying> {
     UIKBKeyset *m_keyset;
     NSString *m_name;
     NSMutableArray *m_refs;
@@ -16,6 +16,7 @@
 
 + (id)keylayout;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

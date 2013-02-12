@@ -16,6 +16,9 @@
 
 @property <UIKeyboardEmojiController> *controller;
 
++ (void)_initializeSafeCategory;
+
+- (void)_accessibilityDelayedPost;
 - (void)clearPages;
 - (id)controller;
 - (NSInteger)currentPage;

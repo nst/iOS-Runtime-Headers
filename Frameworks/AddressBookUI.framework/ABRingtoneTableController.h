@@ -10,12 +10,12 @@
     NSMutableArray *_customRingtoneIdentifiers;
     id _delegate;
     NSString *_noneString;
-    void *_person;
     NSMutableArray *_purchasedRingtoneIdentifiers;
     ABRingtoneManager *_ringtoneManager;
     NSInteger _selectedRingtoneIndex;
     BOOL _showsDefault;
     BOOL _showsNone;
+    BOOL _showsNothingSelected;
     BOOL _startedInteruption;
     NSMutableArray *_systemRingtoneIdentifiers;
 }
@@ -34,7 +34,6 @@
 - (id)init;
 - (id)initWithAVController:(id)arg1;
 - (NSInteger)numberOfGroupsInPreferencesTable:(id)arg1;
-- (void*)person;
 - (void)playRingtoneWithIdentifier:(id)arg1;
 - (id)preferencesTable:(id)arg1 cellForRow:(NSInteger)arg2 inGroup:(NSInteger)arg3;
 - (BOOL)preferencesTable:(id)arg1 isRadioGroup:(NSInteger)arg2;
@@ -48,10 +47,10 @@
 - (void)setAVController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNoneString:(id)arg1;
-- (void)setPerson:(void*)arg1;
 - (void)setSelectedRingtoneIdentifier:(id)arg1;
 - (void)setShowsDefault:(BOOL)arg1;
 - (void)setShowsNone:(BOOL)arg1;
+- (void)setShowsNothingSelected:(BOOL)arg1;
 - (void)stopPlaying;
 - (void)stopPlayingWithFadeOut:(BOOL)arg1;
 - (NSInteger)tableGroupTypeAtIndex:(NSInteger)arg1;

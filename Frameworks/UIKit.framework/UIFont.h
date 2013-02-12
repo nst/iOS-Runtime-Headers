@@ -10,11 +10,12 @@
 @property(readonly) float ascender;
 @property(readonly) float capHeight;
 @property(readonly) float descender;
-@property(readonly) float leading;
+@property(readonly) float lineHeight;
 @property(readonly) float pointSize;
 @property(readonly) float xHeight;
 
-+ (id)__dummy;
++ (id)__newDummy;
++ (id)abMoreLabelFont;
 + (id)boldSystemFontOfSize:(float)arg1;
 + (float)buttonFontSize;
 + (id)familyNames;
@@ -42,6 +43,7 @@
 - (id)initWithName:(id)arg1 size:(float)arg2;
 - (BOOL)isFixedPitch;
 - (float)leading;
+- (float)lineHeight;
 - (id)markupDescription;
 - (float)pointSize;
 - (NSInteger)traits;

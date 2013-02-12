@@ -20,6 +20,7 @@
 - (id)allTouches;
 - (NSInteger)subtype;
 - (double)timestamp;
+- (id)touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
 - (NSInteger)type;

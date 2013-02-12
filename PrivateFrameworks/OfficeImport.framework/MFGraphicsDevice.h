@@ -9,10 +9,10 @@
 @class MFDeviceContext, MFObjectTable, NSDictionary, NSMutableArray, NSObject<MFDeviceDriver>;
 
 @interface MFGraphicsDevice : NSObject {
-     /* Encoded args for previous method: i24@0:4B8i12i16i20 */
-     /* Encoded args for previous method: i12@0:4B8 */
      /* Encoded args for previous method: i68@0:4l8l12l16l20l24B28B32B36i40i44C48i52i56i60@64 */
      /* Encoded args for previous method: i100@0:4l8l12l16l20l24B28B32B36i40i44C48i52i56i60@64@68@72I76I80I84I88I92I96 */
+     /* Encoded args for previous method: i24@0:4B8i12i16i20 */
+     /* Encoded args for previous method: i12@0:4B8 */
      /* Encoded args for previous method: i16@0:4B8B12 */
     NSDictionary *m_colorMap;
     MFDeviceContext *m_currentDC;

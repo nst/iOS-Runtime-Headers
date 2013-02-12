@@ -10,14 +10,16 @@
     ABRingtoneTableController *_tableController;
 }
 
+@property id delegate;
+
 - (void)_reloadData;
 - (void)buildUIWithAVController:(id)arg1;
 - (void)dealloc;
+- (id)delegate;
 - (void)displayScrollerIndicators;
 - (void)finishedWithPicker;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avController:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void*)person;
 - (void)ringtoneManagerContentsChanged:(id)arg1;
 - (void)ringtoneTableController:(id)arg1 selectedRingtoneWithIdentifier:(id)arg2;
 - (void)ringtoneTableController:(id)arg1 willPlayRingtoneWithIdentifier:(id)arg2;
@@ -25,10 +27,10 @@
 - (void)setAVController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNoneString:(id)arg1;
-- (void)setPerson:(void*)arg1;
 - (void)setSelectedRingtoneIdentifier:(id)arg1;
 - (void)setShowsDefault:(BOOL)arg1;
 - (void)setShowsNone:(BOOL)arg1;
+- (void)setShowsNothingSelected:(BOOL)arg1;
 - (void)stopPlaying;
 - (void)stopPlayingWithFadeOut:(BOOL)arg1;
 

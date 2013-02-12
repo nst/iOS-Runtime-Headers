@@ -2,17 +2,27 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKSearchResult, NSArray, NSCalendarDate, NSString, UIImage;
+@class MKDate, MKSearchResult, NSArray, NSString, UIImage;
 
 @interface MKRouteStep : NSObject <MKAnnotation> {
     struct { 
         double latitude; 
         double longitude; 
+    struct { 
+        struct { 
+            double x; 
+            double y; 
+        } origin; 
+        struct { 
+            double width; 
+            double height; 
+        } size; 
     NSString *_arrivalAddress;
-    NSCalendarDate *_arrivalDate;
+    MKDate *_arrivalDate;
+    } _boundingMapRect;
     } _coordinate;
     NSString *_departureAddress;
-    NSCalendarDate *_departureDate;
+    MKDate *_departureDate;
     NSInteger _departureIntervalSeconds;
     NSString *_direction;
     BOOL _displaysDistanceInMetric;
@@ -26,14 +36,15 @@
     NSArray *_notices;
     NSUInteger _pointIndex;
     MKSearchResult *_searchResult;
+    NSUInteger _stepIndex;
     NSInteger _transitAgencyIndex;
     NSInteger _type;
 }
 
 @property(readonly) NSString *arrivalAddress;
-@property(readonly) NSCalendarDate *arrivalDate;
+@property(readonly) MKDate *arrivalDate;
 @property(readonly) NSString *departureAddress;
-@property(readonly) NSCalendarDate *departureDate;
+@property(readonly) MKDate *departureDate;
 @property(readonly) NSString *direction;
 @property(readonly) NSString *distance;
 @property(readonly) UIImage *icon;
@@ -43,6 +54,7 @@
 @property(readonly) MKSearchResult *searchResult;
 @property(readonly) NSString *shortInstructions;
 @property(readonly) NSString *tripDescription;
+@property ? boundingMapRect;
 @property(readonly) ? coordinate;
 @property(readonly) NSInteger departureIntervalSeconds;
 @property(readonly) NSInteger distanceMeters;
@@ -50,6 +62,7 @@
 @property(readonly) BOOL hasTransitAgencyIndex;
 @property(readonly) NSInteger mode;
 @property(readonly) NSUInteger pointIndex;
+@property NSUInteger stepIndex;
 @property(readonly) NSInteger transitAgencyIndex;
 @property(readonly) NSInteger type;
 
@@ -61,11 +74,13 @@
 - (id)_transitDuration;
 - (id)arrivalAddress;
 - (id)arrivalDate;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)departureAddress;
 - (id)departureDate;
 - (NSInteger)departureIntervalSeconds;
+- (id)description;
 - (id)direction;
 - (id)distance;
 - (NSInteger)distanceMeters;
@@ -80,8 +95,11 @@
 - (id)notices;
 - (NSUInteger)pointIndex;
 - (id)searchResult;
+- (void)setBoundingMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNonCacheableIcon:(id)arg1;
+- (void)setStepIndex:(NSUInteger)arg1;
 - (id)shortInstructions;
+- (NSUInteger)stepIndex;
 - (id)subtitle;
 - (id)title;
 - (NSInteger)transitAgencyIndex;

@@ -9,6 +9,7 @@
     NSString *_abDatabaseUUID;
     NSInteger _abIdentifier;
     NSInteger _abUid;
+    void *_addressBook;
     NSString *_label;
     NSString *_name;
     NSInteger _property;
@@ -29,6 +30,7 @@
 - (id)dictionaryRepresentation;
 - (id)displayName;
 - (NSInteger)identifier;
+- (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(void*)arg2;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
 - (BOOL)isEqual:(id)arg1;

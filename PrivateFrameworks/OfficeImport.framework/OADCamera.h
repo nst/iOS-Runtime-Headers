@@ -15,7 +15,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (float)fieldOfView;
+- (NSUInteger)hash;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (id)rotation;
 - (void)setCameraType:(NSInteger)arg1;
 - (void)setFieldOfView:(float)arg1;

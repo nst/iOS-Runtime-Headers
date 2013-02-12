@@ -6,13 +6,15 @@
     NSUInteger _cnt;
     void **_frames;
     NSUInteger _ignore;
+    char **_pcstrs;
+    BOOL _wantSyms;
 }
 
-+ (id)arrayWithFrames:(void**)arg1 count:(NSUInteger)arg2;
++ (id)arrayWithFrames:(void**)arg1 count:(NSUInteger)arg2 symbols:(BOOL)arg3;
 
 - (NSUInteger)count;
 - (void)dealloc;
-- (id)descriptionWithLocale:(id)arg1;
+- (id)descriptionWithLocale:(id)arg1 indent:(NSUInteger)arg2;
 - (void)finalize;
 - (id)objectAtIndex:(NSUInteger)arg1;
 

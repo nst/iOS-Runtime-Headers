@@ -2,31 +2,25 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSArray, NSDictionary, NSMutableArray;
+@class NSArray;
 
 @interface PLMobileMeHelper : NSObject {
     NSArray *_likelyValidUsernames;
-    BOOL _performedFullAccountScan;
-    NSDictionary *_usernameMap;
-    NSMutableArray *_usernamesToCheck;
+    NSArray *_usernames;
 }
 
-+ (id)_copyPasswordForUsername:(id)arg1;
-+ (id)_createAlbumFetchRequestForUsernames:(id)arg1 includeTimeStamp:(BOOL)arg2;
-+ (id)dotMacUsernames;
-+ (void)initialize;
-+ (id)languageString;
 + (id)preferredUsername;
 + (id)serviceName;
 + (id)sharedInstance;
 + (id)userAgentString;
 
-- (id)_accountsWeThinkAreValid;
-- (BOOL)canPostToDotMac;
-- (BOOL)canValidateAlbums;
+- (id)_passwordForUsername:(id)arg1;
+- (id)_usernames;
+- (id)_validUsernames;
 - (void)dealloc;
-- (id)init;
-- (id)passwordForUsername:(id)arg1;
-- (id)usernames;
+- (BOOL)getUsername:(id*)arg1 andPassword:(id*)arg2;
+- (BOOL)hasMobileMeAccounts;
+- (BOOL)hasValidMobileMeAccounts;
+- (void)invalidateUserAccounts;
 
 @end

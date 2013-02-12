@@ -9,10 +9,16 @@
     NSString *_prompt;
 }
 
++ (void)_initializeSafeCategory;
+
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityLabel;
 - (void)clearWeakReference:(id)arg1;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithPrompt:(id)arg1 navBar:(id)arg2;
+- (BOOL)isAccessibilityElement;
 - (id)prompt;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })promptBounds;
 - (void)setPrompt:(id)arg1;

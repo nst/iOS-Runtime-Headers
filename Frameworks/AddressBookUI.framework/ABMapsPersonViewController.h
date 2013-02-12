@@ -15,16 +15,22 @@
 @property BOOL shouldShowRemovePin;
 @property BOOL shouldShowShareLocation;
 
-- (void)addToBookmarks:(id)arg1 identifier:(id)arg2;
+- (BOOL)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
+- (void)addToBookmarks:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (BOOL)allowsAddingToAddressBook;
 - (id)attribution;
 - (void)attributionSelected:(id)arg1;
-- (void)directionsFrom:(id)arg1 identifier:(id)arg2;
-- (void)directionsTo:(id)arg1 identifier:(id)arg2;
+- (void)directionsFrom:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (void)directionsTo:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
+- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isAttributionEnabled;
 - (id)mapsPersonViewControllerDelegate;
 - (BOOL)personViewControllerHelper:(id)arg1 shouldContinueAfterSelectingPropertyAtIndex:(NSInteger)arg2 inPropertyGroup:(id)arg3;
+- (void)presentAddToContactsSheetIfNeeded:(id)arg1;
+- (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)presentNewContactViewControllerForAddToContacts;
+- (void)presentPeoplePickerNavigationControllerForMergeToContact;
 - (void)reloadImageData;
 - (void)removePin:(id)arg1;
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;
@@ -34,7 +40,7 @@
 - (void)setShouldShowDirections:(BOOL)arg1;
 - (void)setShouldShowRemovePin:(BOOL)arg1;
 - (void)setShouldShowShareLocation:(BOOL)arg1;
-- (void)shareLocation:(id)arg1 identifier:(id)arg2;
+- (void)shareLocation:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (BOOL)shouldShowAddToBookmarks;
 - (BOOL)shouldShowDirections;
 - (BOOL)shouldShowRemovePin;

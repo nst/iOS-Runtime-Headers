@@ -6,5 +6,6 @@
 }
 
 + (void)readFromSlideContainer:(id)arg1 toSlide:(id)arg2 state:(id)arg3;
++ (void)readNotesFromSlideContainer:(id)arg1 forSlide:(id)arg2 slideMasterMap:(id)arg3 state:(id)arg4;
 
 @end

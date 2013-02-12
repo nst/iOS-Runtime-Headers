@@ -18,8 +18,9 @@
 
 + (id)buttonWithTitle:(id)arg1;
 
+- (id)_accountURLForURL:(id)arg1;
 - (NSInteger)_actionTypeForString:(id)arg1;
-- (void)_openAccountURL:(id)arg1;
+- (void)_openURLWithRequest:(id)arg1;
 - (NSInteger)_urlTypeForString:(id)arg1;
 - (NSInteger)actionType;
 - (void)dealloc;

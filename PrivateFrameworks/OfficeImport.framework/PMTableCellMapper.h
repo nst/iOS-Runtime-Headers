@@ -17,6 +17,7 @@
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapBordersWithState:(id)arg1;
 - (void)mapCellPropertiesWithState:(id)arg1 textAnchor:(NSInteger)arg2;
+- (id)rowMapper;
 - (id)tableMapper;
 - (float)widthWithState:(id)arg1;
 

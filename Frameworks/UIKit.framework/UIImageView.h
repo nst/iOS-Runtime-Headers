@@ -16,10 +16,14 @@
 @property(getter=isHighlighted) BOOL highlighted;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 
++ (void)_initializeSafeCategory;
 + (id)backgroundImageViewForImage:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 - (BOOL)_canDrawContent;
+- (BOOL)_shouldDrawImage:(id)arg1;
 - (void)_updateState;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (double)animationDuration;
 - (id)animationImages;
 - (NSInteger)animationRepeatCount;
@@ -36,6 +40,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
 - (id)initWithImage:(id)arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isAnimating;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
@@ -44,6 +49,7 @@
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationImages:(id)arg1;
 - (void)setAnimationRepeatCount:(NSInteger)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCGImageRef:(struct CGImage { }*)arg1;
 - (void)setDrawMode:(NSInteger)arg1;
@@ -55,5 +61,6 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
+- (BOOL)useBlockyMagnificationInClassic;
 
 @end

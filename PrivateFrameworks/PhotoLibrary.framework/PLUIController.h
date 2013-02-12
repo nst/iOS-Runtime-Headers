@@ -2,78 +2,27 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSDictionary, NSString, PLCameraButtonBar, PLCameraView, PLPhotoLibrary, UITransitionView, UIWindow;
+@class NSDictionary, UITransitionView;
 
 @interface PLUIController : NSObject {
     struct { 
         unsigned int showingCamera : 1; 
-        unsigned int allowsAlbumSelection : 1; 
-        unsigned int allowsPlayingSlideshow : 1; 
-        unsigned int allowsFullSizeImageDisplay : 1; 
-        unsigned int displayingPhotoPicker : 1; 
-        unsigned int allowsZoomingWhenCropping : 1; 
-        unsigned int cropPhotoAfterSelection : 1; 
-        unsigned int showCancelInNavBar : 1; 
-        unsigned int showingCameraPreview : 1; 
-        unsigned int hasStartedLocation : 1; 
-        unsigned int wantsThrowViewOnSave : 1; 
-    NSInteger _barStyle;
-    PLCameraButtonBar *_cameraRollButtonBar;
-    PLCameraView *_cameraView;
     NSDictionary *_configuration;
-    NSString *_cropButtonTitle;
-    NSString *_cropSubtitle;
-    NSString *_cropTitle;
     id _delegate;
     } _flags;
     UITransitionView *_fullScreenTransitionView;
-    PLPhotoLibrary *_model;
-    UIWindow *_window;
 }
 
-+ (BOOL)runningPhotosApplication;
 + (id)sharedInstance;
 
-- (NSInteger)_statusBarOrientationForDeviceOrientation:(NSInteger)arg1;
-- (void)_updateCameraPhotoSavingOptions;
-- (void)_updateCameraViewGestures;
-- (void)_updateLocationRunState;
-- (void)activeStateChanged:(id)arg1;
-- (NSInteger)allowedImageViewGestures;
-- (BOOL)allowsFullSizeImageDisplay;
-- (BOOL)allowsPlayingSlideshow;
-- (BOOL)allowsZoomingWhenCropping;
-- (NSInteger)barStyle;
-- (id)cameraButtonBar;
 - (id)configuration;
 - (id)contentViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)cropButtonTitle;
-- (BOOL)cropPhotoAfterSelection;
-- (id)cropSubtitle;
-- (id)cropTitle;
 - (void)dealloc;
 - (id)defaultPNGName;
-- (BOOL)displayingPhotoPicker;
-- (double)durationForTransition:(NSInteger)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullScreenRect;
-- (void)imageWasSelected:(id)arg1;
 - (id)init;
-- (id)mainWindow;
-- (void)photoWasCroppedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fullSizeImageData:(id)arg2 fullScreenImageData:(id)arg3 croppedImageData:(id)arg4 imageView:(id)arg5;
-- (void)setAllowsFullSizeImageDisplay:(BOOL)arg1;
-- (void)setAllowsPlayingSlideshow:(BOOL)arg1;
-- (void)setAllowsZoomingWhenCropping:(BOOL)arg1;
-- (void)setBarStyle:(NSInteger)arg1;
 - (void)setConfiguration:(id)arg1;
-- (void)setCropPhotoAfterSelection:(BOOL)arg1;
-- (void)setCropTitle:(id)arg1 subtitle:(id)arg2 cropButtonTitle:(id)arg3;
 - (void)setDelegate:(id)arg1;
-- (void)setDisplayingPhotoPicker:(BOOL)arg1;
-- (void)setMainWindow:(id)arg1;
 - (void)setShowCamera:(BOOL)arg1;
-- (void)setWantsThrowViewOnSave:(BOOL)arg1;
 - (BOOL)showCamera;
-- (BOOL)showingCameraPreview;
-- (BOOL)wantsThrowViewOnSave;
 
 @end

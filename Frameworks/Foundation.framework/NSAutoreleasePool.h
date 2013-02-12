@@ -31,7 +31,7 @@
 - (void)drain;
 - (id)init;
 - (id)initWithCapacity:(NSUInteger)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
 

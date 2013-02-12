@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSMutableSet, NSSQLEntity, NSString;
+@class NSMutableDictionary, NSMutableSet, NSSQLEntity, NSSQLiteStatement, NSString;
 
 @interface NSSQLiteConnection : NSSQLConnection {
     struct __sqliteConnectionFlags { 
@@ -12,7 +12,9 @@
         unsigned int _proxyLocking : 1; 
         unsigned int _vacuumSetupNeeded : 1; 
         unsigned int _reserved : 26; 
+    NSSQLiteStatement *_beginStatement;
     struct __CFDictionary { } *_cachedEntityUpdateStatements;
+    NSSQLiteStatement *_commitStatement;
     struct sqlite3 { } *_db;
     NSString *_dbPathRegisteredWithBackupd;
     void *_extraBuffersForRegisteredFunctions[5];
@@ -22,6 +24,7 @@
     NSUInteger _lastEntityKey;
     NSString *_pathname;
     NSMutableDictionary *_pragmaSettings;
+    NSSQLiteStatement *_rollbackStatement;
     NSInteger _rowsProcessedCount;
     } _sqliteConnectionFlags;
     double _timeOutOption;
@@ -44,6 +47,7 @@
 - (void)_clearBindVariablesForInsertedRow;
 - (void)_clearBindVariablesForUpdateStatement:(id)arg1 forDeltasMask:(struct __CFBitVector { }*)arg2;
 - (void)_clearCachedStatements;
+- (void)_clearOtherStatements;
 - (void)_clearTransactionCaches;
 - (void)_configureAutoVacuum;
 - (void)_configureIntegrityCheck;

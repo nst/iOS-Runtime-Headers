@@ -18,6 +18,7 @@
     } mTo;
 }
 
+- (id).cxx_construct;
 - (struct EDCellAnchorMarker { NSInteger x1; float x2; NSInteger x3; float x4; })from;
 - (BOOL)isRelative;
 - (void)setFrom:(struct EDCellAnchorMarker { NSInteger x1; float x2; NSInteger x3; float x4; })arg1;

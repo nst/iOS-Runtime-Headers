@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GMMRequester;
+@class <MKSearchRequesterDelegate>, GMMRequester;
 
 @interface MKSearchRequester : NSObject <PBRequesterDelegate> {
-    id _delegate;
+    NSInteger _defaultSearchResultType;
+    <MKSearchRequesterDelegate> *_delegate;
     GMMRequester *_requester;
 }
 
@@ -16,8 +17,10 @@
 - (id)delegate;
 - (id)initWithSearchDelegate:(id)arg1;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
+- (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)startWithRequest:(id)arg1 defaultSearchResultType:(NSInteger)arg2;
 - (void)startWithRequest:(id)arg1;
 
 @end

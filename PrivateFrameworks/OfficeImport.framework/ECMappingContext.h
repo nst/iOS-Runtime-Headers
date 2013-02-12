@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMapTable, NSMutableArray, NSMutableDictionary;
+@class NSMutableArray, NSMutableDictionary;
 
 @interface ECMappingContext : NSObject {
-    NSMapTable *mIndexToMappedIndex;
+    struct __CFDictionary { } *mIndexToMappedIndex;
     NSMutableArray *mMappingInfos;
-    NSMapTable *mObjectToMappingInfo;
+    struct __CFDictionary { } *mObjectToMappingInfo;
     NSMutableDictionary *mSheetNameToMappedIndex;
 }
+
++ (id)mappingContext;
 
 - (void)associateMappingInfo:(id)arg1 withSheetName:(id)arg2 andSheetIndex:(NSUInteger)arg3 andObject:(id)arg4;
 - (void)dealloc;

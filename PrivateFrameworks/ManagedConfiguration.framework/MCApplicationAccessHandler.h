@@ -2,37 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSDictionary;
-
-@interface MCApplicationAccessHandler : MCPayloadHandler {
-    NSDictionary *_appAccessInformation;
-    NSDictionary *_capabilitiesInformation;
-    BOOL _needsPreparePhase;
+@interface MCApplicationAccessHandler : NSObject {
 }
 
-+ (id)currentAppAccess;
-+ (id)currentCapabilities;
-+ (void)deleteManagedApplicationAccess;
-+ (void)deleteManagedCapabilities;
-+ (id)descriptionForPayloadCount:(NSUInteger)arg1;
-+ (void)initialize;
 + (BOOL)isCameraAllowed;
-+ (BOOL)isScreenShotAllowed;
-+ (void)parentalControlsChanged;
-+ (id)whiteListKeys;
-+ (BOOL)writeResultingApplicationAccessInfo:(id)arg1;
-+ (BOOL)writeResultingCapabilitiesInfo:(id)arg1;
-
-- (id)accessRestrictions;
-- (id)appAccess;
-- (id)capabilities;
-- (id)createDictionaryWithAppAccessInfoFromPayload:(id)arg1;
-- (id)createDictionaryWithCapabilitiesInfoFromPayload:(id)arg1;
-- (void)dealloc;
-- (id)deleteApplicationAccessInfo;
-- (id)initWithPayload:(id)arg1;
-- (id)installApplicationAccessInfoWithTruth:(id)arg1;
-- (BOOL)needsPreparationWithRoot:(id)arg1 truth:(id)arg2;
-- (id)performInstallStep:(NSInteger)arg1 withRoot:(id)arg2 truth:(id)arg3;
 
 @end

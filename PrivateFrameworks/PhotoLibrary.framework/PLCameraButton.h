@@ -4,7 +4,7 @@
 
 @class NSArray, UIImage, UIImageView, UIView;
 
-@interface PLCameraButton : UIThreePartButton {
+@interface PLCameraButton : UIButton {
     UIImage *_cameraIcon;
     UIImage *_cameraIconLandscape;
     BOOL _dontDrawDisabled;
@@ -19,16 +19,20 @@
     BOOL _watchingOrientationChanges;
 }
 
++ (void)_initializeSafeCategory;
+
 - (void)_deviceOrientationChanged:(id)arg1;
-- (void)_setDeviceOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (void)_setIcon:(id)arg1;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)_stopWatchingDeviceOrientationChanges;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (id)initWithDefaultSize;
 - (NSInteger)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setButtonOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)setDontShowDisabledState:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setLockEnabled:(BOOL)arg1;

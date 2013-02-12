@@ -13,8 +13,6 @@
 - (void)didFinishTransition;
 - (void)finishedAccountSetup;
 - (void)forceMailSetup;
-- (void)navigationBar:(id)arg1 buttonClicked:(NSInteger)arg2;
 - (id)syncControllerSpecifierNamed:(id)arg1 account:(id)arg2;
-- (void)updateNavButtons;
 
 @end

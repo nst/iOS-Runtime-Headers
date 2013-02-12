@@ -4,7 +4,7 @@
 
 @class DAMailAccount, NSString;
 
-@interface DARequestQueue : RequestQueue {
+@interface DARequestQueue : MFRequestQueue {
     double _invalidSyncKeyTimestamp;
     DAMailAccount *account;
     NSString *folderID;

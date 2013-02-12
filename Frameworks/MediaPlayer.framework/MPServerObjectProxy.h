@@ -4,6 +4,8 @@
 
 @interface MPServerObjectProxy : NSObject {
     unsigned int _didPrepareForRemoteSelectorInvocation : 1;
+    unsigned int _lastPrepareForRemoteSelectorInvocationTimedOut : 1;
+    double _lastPrepareAttemptTime;
 }
 
 + (id)_center;
@@ -13,10 +15,12 @@
 - (id)_performRemoteSelectorAndReceiveReply:(SEL)arg1 userInfo:(id)arg2 timeout:(double)arg3;
 - (void)_serverConnectionDied;
 - (void)dealloc;
+- (void)didPrepareForRemoteSelectorInvocation;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
 - (void)prepareForDecodingWithCoder:(id)arg1;
-- (void)prepareForRemoteSelectorInvocation;
+- (BOOL)prepareForRemoteSelectorInvocation;
+- (BOOL)prepareForRemoteSelectorInvocationWithTimeout:(double*)arg1;
 - (void)serverConnectionDied;
 
 @end

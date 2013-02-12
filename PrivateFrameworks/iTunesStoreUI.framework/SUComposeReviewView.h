@@ -2,43 +2,54 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUComposeReviewViewDelegate>, ISReview, SUComposeReviewHeaderView, SULoadingView, SUTextContentView, UIKeyboard, UIScrollView;
+@class <SUComposeReviewViewDelegate>, ISReview, SUComposeReviewHeaderView, SULoadingView, SUTextContentView, UIControl, UILabel, UIScrollView;
 
 @interface SUComposeReviewView : UIView <UITextContentViewDelegate> {
     unsigned int _loading : 1;
     NSInteger _currentBodyLength;
     <SUComposeReviewViewDelegate> *_delegate;
     SUComposeReviewHeaderView *_headerView;
-    UIKeyboard *_keyboard;
     SULoadingView *_loadingView;
     ISReview *_review;
+    UIControl *_reviewCountControl;
+    UILabel *_reviewCountLabel;
     UIScrollView *_scrollView;
+    NSInteger _style;
     SUTextContentView *_textContentView;
 }
 
 @property <SUComposeReviewViewDelegate> *delegate;
+@property(readonly) NSInteger composeReviewStyle;
 @property(getter=isLoading) BOOL loading;
 @property float rating;
 @property(getter=isValid,readonly) BOOL valid;
 
 - (id)_body;
+- (void)_delayedUpdateReviewLength;
+- (BOOL)_isReviewTextOptional;
+- (void)_keyboardVisibilityDidChangeNotification:(id)arg1;
 - (void)_layoutComposeView;
 - (void)_layoutLoadingView;
+- (void)_reviewCountAction:(id)arg1;
+- (id)_reviewCountString;
 - (id)_reviewPlaceholder;
 - (void)_showComposeView;
 - (void)_showLoadingView;
 - (void)_updateContentSize;
 - (void)composeHeaderViewValidityDidChange:(id)arg1;
 - (void)composeHeaderViewValuesDidChange:(id)arg1;
+- (NSInteger)composeReviewStyle;
 - (id)copyReview;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
 - (BOOL)isLoading;
 - (BOOL)isValid;
 - (void)layoutSubviews;
 - (float)rating;
+- (void)reloadData;
 - (void)setDelegate:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setRating:(float)arg1;
 - (void)setReview:(id)arg1;

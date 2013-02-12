@@ -2,37 +2,42 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISItemInfoDataSource, NSDictionary, NSMutableArray;
+@class NSDictionary, NSMutableArray;
 
-@interface SUItemList : NSObject {
+@interface SUItemList : NSObject <NSCopying> {
     NSMutableArray *_groups;
     NSDictionary *_hintText;
-    ISItemInfoDataSource *_itemInfoDataSource;
-    NSMutableArray *_items;
+    BOOL _ignoresEmptySections;
 }
 
-@property(retain) ISItemInfoDataSource *itemInfoDataSource;
-@property(retain,readonly) NSArray *items;
+@property(readonly) NSArray *sectionIndexTitles;
+@property BOOL ignoresEmptySections;
+@property(readonly) NSInteger numberOfItems;
 @property(readonly) NSInteger numberOfSections;
 
-- (id)_copyItemsFromPropertyList:(id)arg1;
-- (NSUInteger)_globalIndexForIndexPath:(id)arg1;
-- (id)_indexPathForGlobalIndex:(NSUInteger)arg1;
-- (void)_loadGroupsFromItems;
+- (id)_groupAtExternalIndex:(NSInteger)arg1;
+- (void)_removeHiddenItemsFromArray:(id)arg1;
+- (id)copyItems;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)enumerateItemsUsingBlock:(id)arg1;
 - (id)hintTextForKey:(id)arg1;
+- (BOOL)ignoresEmptySections;
+- (id)indexPathOfItem:(id)arg1;
 - (id)indexPathOfItemWithIdentifier:(unsigned long long)arg1;
 - (void)insertItems:(id)arg1 atIndexPath:(id)arg2;
 - (id)itemAtIndexPath:(id)arg1;
-- (id)itemInfoDataSource;
-- (id)items;
-- (BOOL)loadFromArray:(id)arg1;
-- (NSInteger)numberOfItemsInSection:(NSInteger)arg1;
+- (id)itemsForSectionAtIndex:(NSInteger)arg1;
+- (NSInteger)numberOfItems;
 - (NSInteger)numberOfSections;
 - (void)removeItemAtIndexPath:(id)arg1;
 - (void)replaceItemAtIndexPath:(id)arg1 withItems:(id)arg2;
+- (NSInteger)sectionIndexForIndexTitle:(id)arg1 atIndex:(NSInteger)arg2;
+- (id)sectionIndexTitles;
+- (id)sectionItemForSectionAtIndex:(NSInteger)arg1;
 - (void)setHintText:(id)arg1;
-- (void)setItemInfoDataSource:(id)arg1;
-- (id)titleForSection:(NSInteger)arg1;
+- (void)setIgnoresEmptySections:(BOOL)arg1;
+- (void)setItems:(id)arg1;
+- (void)setItemsFromPropertyList:(id)arg1;
 
 @end

@@ -2,23 +2,31 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class CPLRUDictionaryNode, NSMutableDictionary;
+@class CPLRUDictionaryNode;
 
 @interface CPLRUDictionary : NSObject {
-    NSMutableDictionary *_dictionary;
+    struct __CFDictionary { } *_dictionary;
     CPLRUDictionaryNode *_head;
     NSUInteger _maxCount;
     CPLRUDictionaryNode *_tail;
 }
+
++ (id)dictionaryWithMaximumCapacity:(NSUInteger)arg1;
 
 - (void)_addNodeToFront:(id)arg1;
 - (void)_moveNodeToFront:(id)arg1;
 - (void)_removeNode:(id)arg1;
 - (void)_removeNodeFromLinkedList:(id)arg1;
 - (id)allKeys;
+- (id)allKeysInLRUOrder;
+- (id)allValuesInLRUOrder;
 - (NSUInteger)count;
+- (void)dealloc;
+- (id)description;
 - (id)initWithMaximumCapacity:(NSUInteger)arg1;
+- (NSUInteger)linkedListCount;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKeyWithoutAffectingLRU:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

@@ -19,6 +19,7 @@
 - (void)dealloc;
 - (id)initWithTableHeight:(float)arg1;
 - (void)reset;
+- (void)resetLayoutCaches;
 - (void)setCellContext:(id)arg1;
 
 @end

@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, UIImage;
 
 @interface CKVideoMediaObject : CKAVMediaObject {
     NSDictionary *_transcodeOptions;
     NSString *_transcodePath;
-    struct CGImage { } *_videoPreviewCGImage;
+    UIImage *_videoPreviewImage;
 }
 
 + (id)mimeTypesToFileExtensions;
 
 - (void)_generatePreviewOnMainThreadForVideoFile:(id)arg1;
-- (struct CGImage { }*)_newPreviewImageForIncomingVideoWithTailStyle:(NSInteger)arg1;
-- (struct CGImage { }*)_newPreviewImageWithTailStyle:(NSInteger)arg1;
-- (struct CGImage { }*)_newVideoPreviewImageForImage:(struct CGImage { }*)arg1 withTailStyle:(NSInteger)arg2;
+- (id)_newPreviewImageForIncomingVideoWithTailStyle:(NSInteger)arg1;
+- (id)_newPreviewImageWithTailStyle:(NSInteger)arg1;
+- (id)_newVideoPreviewImageForImage:(id)arg1 withTailStyle:(NSInteger)arg2;
 - (id)_transcodeOptions;
 - (float)balloonHeightWithPreviewData:(id)arg1;
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
@@ -26,6 +26,7 @@
 - (NSInteger)mediaType;
 - (id)newPreview:(NSInteger)arg1 highlight:(BOOL)arg2;
 - (id)optionsForMedia;
+- (BOOL)shouldGeneratePreviewInBackground;
 - (BOOL)shouldTranscodeForMMS;
 - (unsigned long long)sizeInBytes;
 - (double)transcodeDuration;

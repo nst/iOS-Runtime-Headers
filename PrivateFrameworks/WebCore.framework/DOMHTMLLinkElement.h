@@ -12,10 +12,12 @@
 @property(copy) NSString *media;
 @property(copy) NSString *rel;
 @property(copy) NSString *rev;
+@property(retain,readonly) DOMStyleSheet *sheet;
 @property(copy) NSString *target;
 @property(copy) NSString *type;
 @property BOOL disabled;
 
+- (BOOL)_mediaQueryMatchesForOrientation:(NSInteger)arg1;
 - (id)absoluteLinkURL;
 - (id)charset;
 - (BOOL)disabled;

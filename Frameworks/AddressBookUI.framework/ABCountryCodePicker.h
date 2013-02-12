@@ -4,7 +4,7 @@
 
 @class NSArray, NSIndexPath, NSString, UITableView;
 
-@interface ABCountryCodePicker : UIView <UITableViewDataSource, UITableViewDelegate> {
+@interface ABCountryCodePicker : UIView <UITableViewDataSource, UITableViewDelegate, ABStyleProviding> {
     id _delegate;
     id _editedItem;
     NSString *_selectedCountryCode;
@@ -12,6 +12,8 @@
     NSArray *_sortedRegions;
     UITableView *_tableView;
 }
+
+@property(readonly) UITableView *tableView;
 
 - (void)_didEndPickingAndConfirmed:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)_setSelectedCountryCode:(id)arg1 atPath:(id)arg2;
@@ -25,11 +27,13 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEditedItem:(id)arg1;
 - (void)setSelectedCountryCode:(id)arg1;
+- (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (id)tableView;
 
 @end

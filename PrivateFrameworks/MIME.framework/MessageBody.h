@@ -4,7 +4,7 @@
 
 @class Message;
 
-@interface MessageBody : WRObject {
+@interface MessageBody : MFWeakObject {
     Message *_message;
 }
 

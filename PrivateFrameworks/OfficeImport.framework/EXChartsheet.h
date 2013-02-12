@@ -13,5 +13,7 @@
 + (id)edSheetWithState:(id)arg1;
 + (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)readDistinctSheetElementsFrom:(struct _xmlTextReader { }*)arg1 state:(id)arg2;
 + (void)readOtherSheetComponentsWithState:(id)arg1;
++ (void)readTables:(id)arg1;
++ (void)setupProcessors:(id)arg1;
 
 @end

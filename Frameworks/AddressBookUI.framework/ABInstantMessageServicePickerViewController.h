@@ -4,25 +4,19 @@
 
 @class NSArray, NSIndexPath, NSString;
 
-@interface ABInstantMessageServicePickerViewController : UITableViewController <ABSimpleTextInputViewControllerDelegate> {
+@interface ABInstantMessageServicePickerViewController : ABPickerViewController {
     NSString *_customService;
     NSArray *_defaultServices;
-    id _delegate;
     NSIndexPath *_selectedIndexPath;
     NSString *_selectedService;
 }
 
 @property(copy) NSString *selectedService;
-@property id delegate;
 
-- (BOOL)_allowsAutorotation;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
 - (void)dealloc;
-- (id)delegate;
 - (id)init;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (id)selectedService;
-- (void)setDelegate:(id)arg1;
 - (void)setSelectedService:(id)arg1;
 - (void)simpleTextInputViewController:(id)arg1 didCompleteWithValue:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

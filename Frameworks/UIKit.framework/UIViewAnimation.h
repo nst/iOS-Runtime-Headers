@@ -21,6 +21,7 @@
     float _endFraction;
     } _endRect;
     NSIndexPath *_indexPath;
+    BOOL _shouldAnimateShadow;
     BOOL _shouldDeleteAfterAnimation;
     float _startFraction;
     UIView *_view;
@@ -34,6 +35,7 @@
 @property(readonly) float endAlpha;
 @property(readonly) float endFraction;
 @property(readonly) CGRect endRect;
+@property BOOL shouldAnimateShadow;
 @property(readonly) BOOL shouldDeleteAfterAnimation;
 @property(readonly) float startFraction;
 
@@ -47,6 +49,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endRect;
 - (id)indexPath;
 - (id)initWithView:(id)arg1 indexPath:(id)arg2 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 endAlpha:(float)arg4 startFraction:(float)arg5 endFraction:(float)arg6 curve:(NSInteger)arg7 animateFromCurrentPosition:(BOOL)arg8 shouldDeleteAfterAnimation:(BOOL)arg9 editing:(BOOL)arg10;
+- (void)setShouldAnimateShadow:(BOOL)arg1;
+- (BOOL)shouldAnimateShadow;
 - (BOOL)shouldDeleteAfterAnimation;
 - (float)startFraction;
 - (id)view;

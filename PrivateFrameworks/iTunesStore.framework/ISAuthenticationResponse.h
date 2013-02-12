@@ -2,29 +2,45 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSNumber, NSString;
+@class NSDictionary, NSNumber, NSString;
 
 @interface ISAuthenticationResponse : NSObject {
-    NSString *_accountIdentifier;
     NSInteger _accountKind;
-    NSString *_creditString;
-    NSNumber *_dsID;
+    NSString *_accountName;
+    NSNumber *_accountUniqueIdentifier;
+    NSString *_creditsString;
+    NSNumber *_failureType;
+    NSDictionary *_responseDictionary;
     NSString *_token;
+    NSInteger _urlBagType;
+    NSString *_userMessage;
 }
 
-@property(readonly) NSString *accountIdentifier;
-@property(readonly) NSString *creditString;
-@property(readonly) NSNumber *dsID;
+@property(readonly) NSString *accountName;
+@property(readonly) NSNumber *accountUniqueIdentifier;
+@property(readonly) NSString *creditsString;
+@property(readonly) NSNumber *failureType;
+@property(readonly) NSDictionary *responseDictionary;
 @property(readonly) NSString *token;
+@property(readonly) NSString *userMessage;
+@property NSInteger URLBagType;
 @property(readonly) NSInteger accountKind;
+@property(readonly) NSInteger responseType;
 
-- (BOOL)_loadFromDictionary:(id)arg1;
-- (id)accountIdentifier;
+- (NSInteger)URLBagType;
+- (void)_loadFromDictionary:(id)arg1;
 - (NSInteger)accountKind;
-- (id)creditString;
+- (id)accountName;
+- (id)accountUniqueIdentifier;
+- (id)creditsString;
 - (void)dealloc;
-- (id)dsID;
+- (id)failureType;
 - (id)initWithDictionary:(id)arg1;
+- (id)newAccount;
+- (id)responseDictionary;
+- (NSInteger)responseType;
+- (void)setURLBagType:(NSInteger)arg1;
 - (id)token;
+- (id)userMessage;
 
 @end

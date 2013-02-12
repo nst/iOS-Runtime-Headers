@@ -5,7 +5,7 @@
 @interface UIHardware : NSObject {
 }
 
-+ (float)TVHorizontalPixelScale;
++ (float)TVAspectRatio;
 + (BOOL)TVOutCapable;
 + (BOOL)TVOutCapableAndPreferred;
 + (void)TVOutResetPreferred;
@@ -13,7 +13,6 @@
 + (BOOL)_TVOutStatus:(BOOL)arg1;
 + (void)_playSystemSound:(unsigned long)arg1;
 + (void)_registerForSystemSounds:(id)arg1;
-+ (void)_setStatusBarHeight:(float)arg1;
 + (void)_unregisterForSystemSounds:(id)arg1;
 + (void)_updateSystemSoundActiveStatus:(id)arg1;
 + (void)accessoryAvailabilityChanged;

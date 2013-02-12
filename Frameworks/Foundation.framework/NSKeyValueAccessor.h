@@ -20,7 +20,6 @@
 - (void*)extraArgument1;
 - (void*)extraArgument2;
 - (NSUInteger)extraArgumentCount;
-- (void)finalize;
 - (id)initWithContainerClassID:(id)arg1 key:(id)arg2 implementation:(int (*)())arg3 selector:(SEL)arg4 extraArguments:(void*[3])arg5 count:(NSUInteger)arg6;
 - (id)key;
 - (SEL)selector;

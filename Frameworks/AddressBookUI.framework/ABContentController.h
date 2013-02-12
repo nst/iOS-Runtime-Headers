@@ -18,6 +18,7 @@
 - (BOOL)contentViewIsVisible;
 - (void)dealloc;
 - (void)displayScrollerIndicators;
+- (id)init;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
 - (void)preloadController;
 - (void)reload;

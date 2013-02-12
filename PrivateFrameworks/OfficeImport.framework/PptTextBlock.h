@@ -39,31 +39,31 @@
             short m_nInstance; 
             unsigned short m_unType; 
             unsigned char m_bVersion; 
-        } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; struct ChVector<PptTab*> { 
-            struct PptTab {} **m_vector; 
-            struct PptTab {} **m_tmpVector; 
+        } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; struct ChVector<PptTab> { 
+            struct PptTab {} *m_vector; 
+            struct PptTab {} *m_tmpVector; 
             NSUInteger m_count; 
             NSUInteger m_size; 
             NSUInteger m_blockSize; 
-     /* Encoded args for previous method: ^{PptTextRulerAtom=^^?S{EshHeader=iIsSC}^^?iB{ChVector<PptTab*>=^^{PptTab}^^{PptTab}III}[5S][5S]iSs}8@0:4 */
-     /* Encoded args for previous method: ^{PptParaRun=^^?is{PptParaProperty={ChVector<PptTab*>=^^{PptTab}^^{PptTab}III}ISSss{PptColor={CsColour=SSSS}i}issssssisssBsssss}B}12@0:4i8 */
+     /* Encoded args for previous method: ^{PptTextRulerAtom=^^?S{EshHeader=iIsSC}^^?iB{ChVector<PptTab>=^{PptTab}^{PptTab}III}[5S][5S]iSs}8@0:4 */
     NSMutableArray *mBookmarks;
     NSMutableArray *mHyperlinks;
     NSMutableArray *mMetaCharacterFields;
-        } x8; short x9; } *mStyleText;
+        } x8; NSUInteger x9; } *mStyleText;
     NSMutableString *mText;
         } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; NSInteger x7; } *mTextHeader;
         } x7; unsigned short x8[5]; unsigned short x9[5]; NSInteger x10; unsigned short x11; short x12; } *mTextRuler;
 }
 
-- (struct PptParaRun { int (**x1)(); NSInteger x2; short x3; struct PptParaProperty { struct ChVector<PptTab*> { struct PptTab {} **x_1_2_1; struct PptTab {} **x_1_2_2; NSUInteger x_1_2_3; NSUInteger x_1_2_4; NSUInteger x_1_2_5; } x_4_1_1; NSUInteger x_4_1_2; unsigned short x_4_1_3; unsigned short x_4_1_4; short x_4_1_5; short x_4_1_6; struct PptColor { struct CsColour { unsigned short x_1_3_1; unsigned short x_1_3_2; unsigned short x_1_3_3; unsigned short x_1_3_4; } x_7_2_1; NSInteger x_7_2_2; } x_4_1_7; NSInteger x_4_1_8; short x_4_1_9; short x_4_1_10; short x_4_1_11; short x_4_1_12; short x_4_1_13; short x_4_1_14; NSInteger x_4_1_15; short x_4_1_16; short x_4_1_17; short x_4_1_18; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_4_1_19; short x_4_1_20; short x_4_1_21; short x_4_1_22; short x_4_1_23; short x_4_1_24; } x4; void*x5; }*)paragraphRunAtIndex:(NSInteger)arg1;
-- (struct PptCharRun { int (**x1)(); NSInteger x2; struct PptCharProperty { int (**x_3_1_1)(); unsigned short x_3_1_2; unsigned short x_3_1_3; short x_3_1_4; short x_3_1_5; short x_3_1_6; short x_3_1_7; short x_3_1_8; short x_3_1_9; struct PptColor { struct CsColour { unsigned short x_1_3_1; unsigned short x_1_3_2; unsigned short x_1_3_3; unsigned short x_1_3_4; } x_10_2_1; NSInteger x_10_2_2; } x_3_1_10; short x_3_1_11; } x3; }*)characterRunAtIndex:(NSInteger)arg1;
-- (struct PptTextRulerAtom { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; struct ChVector<PptTab*> { struct PptTab {} **x_7_1_1; struct PptTab {} **x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; } x7; unsigned short x8[5]; unsigned short x9[5]; NSInteger x10; unsigned short x11; short x12; }*)textRuler;
+- (struct PptTextRulerAtom { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; struct ChVector<PptTab> { struct PptTab {} *x_7_1_1; struct PptTab {} *x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; } x7; unsigned short x8[5]; unsigned short x9[5]; NSInteger x10; unsigned short x11; short x12; }*)textRuler;
+- (id)bookmarks;
+- (struct PptCharRun { NSInteger x1; struct PptCharProperty { struct $_721 { unsigned int x_1_2_1 : 1; unsigned int x_1_2_2 : 1; unsigned int x_1_2_3 : 1; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 1; unsigned int x_1_2_6 : 1; unsigned int x_1_2_7 : 1; unsigned int x_1_2_8 : 1; unsigned int x_1_2_9 : 1; unsigned int x_1_2_10 : 1; unsigned int x_1_2_11 : 1; unsigned int x_1_2_12 : 1; unsigned int x_1_2_13 : 1; unsigned int x_1_2_14 : 1; unsigned int x_1_2_15 : 1; unsigned int x_1_2_16 : 1; unsigned int x_1_2_17 : 1; unsigned int x_1_2_18 : 4; } x_2_1_1; unsigned int x_2_1_2 : 1; unsigned int x_2_1_3 : 1; unsigned int x_2_1_4 : 1; unsigned int x_2_1_5 : 1; unsigned int x_2_1_6 : 1; unsigned int x_2_1_7 : 1; unsigned int x_2_1_8 : 1; unsigned int x_2_1_9 : 1; unsigned int x_2_1_10 : 1; unsigned int x_2_1_11 : 1; unsigned int x_2_1_12 : 4; unsigned int x_2_1_13 : 1; unsigned short x_2_1_14; unsigned short x_2_1_15; unsigned short x_2_1_16; unsigned short x_2_1_17; unsigned short x_2_1_18; struct PptColor { struct CsColour { unsigned short x_1_3_1; unsigned short x_1_3_2; unsigned short x_1_3_3; unsigned short x_1_3_4; } x_19_2_1; NSInteger x_19_2_2; } x_2_1_19; short x_2_1_20; } x2; }*)characterRunAtIndex:(NSInteger)arg1;
 - (NSInteger)characterRunCount;
 - (void)dealloc;
 - (id)hyperlinks;
 - (id)init;
 - (id)metaCharacterFields;
+- (struct PptParaRun { NSInteger x1; short x2; struct PptParaProperty { struct $_720 { unsigned int x_1_2_1 : 1; unsigned int x_1_2_2 : 1; unsigned int x_1_2_3 : 1; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 1; unsigned int x_1_2_6 : 1; unsigned int x_1_2_7 : 1; unsigned int x_1_2_8 : 1; unsigned int x_1_2_9 : 1; unsigned int x_1_2_10 : 1; unsigned int x_1_2_11 : 1; unsigned int x_1_2_12 : 1; unsigned int x_1_2_13 : 1; unsigned int x_1_2_14 : 1; unsigned int x_1_2_15 : 1; unsigned int x_1_2_16 : 1; unsigned int x_1_2_17 : 1; unsigned int x_1_2_18 : 1; unsigned int x_1_2_19 : 1; unsigned int x_1_2_20 : 1; unsigned int x_1_2_21 : 1; } x_3_1_1; unsigned int x_3_1_2 : 1; unsigned int x_3_1_3 : 1; unsigned int x_3_1_4 : 1; unsigned int x_3_1_5 : 1; unsigned int x_3_1_6 : 1; unsigned int x_3_1_7 : 1; unsigned int x_3_1_8 : 1; unsigned int x_3_1_9 : 1; unsigned int x_3_1_10 : 4; unsigned int x_3_1_11 : 2; unsigned short x_3_1_12; unsigned short x_3_1_13; short x_3_1_14; struct PptColor { struct CsColour { unsigned short x_1_3_1; unsigned short x_1_3_2; unsigned short x_1_3_3; unsigned short x_1_3_4; } x_15_2_1; NSInteger x_15_2_2; } x_3_1_15; short x_3_1_16; short x_3_1_17; short x_3_1_18; short x_3_1_19; short x_3_1_20; short x_3_1_21; struct ChVector<PptTab> {} *x_3_1_22; } x3; }*)paragraphRunAtIndex:(NSInteger)arg1;
 - (NSInteger)paragraphRunCount;
 - (void)readMetaCharacterFieldsBookmarksAndHyperlinks:(id)arg1;
 - (void)readString:(id)arg1;
@@ -72,5 +72,6 @@
 - (id)text;
 - (unsigned long)textIndex;
 - (NSInteger)textType;
+- (void)writeTextBlock:(id)arg1;
 
 @end

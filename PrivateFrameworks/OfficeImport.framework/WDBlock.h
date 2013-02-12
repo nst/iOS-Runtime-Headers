@@ -9,11 +9,12 @@
 }
 
 - (NSInteger)blockType;
-- (void)dealloc;
+- (void)clearProperties;
 - (id)document;
 - (id)init;
 - (id)initWithText:(id)arg1;
 - (BOOL)isEmpty;
+- (id)newRunIterator;
 - (id)runIterator;
 - (id)text;
 - (NSInteger)textType;

@@ -16,7 +16,9 @@
 + (void)initialize;
 
 - (void)_coreCreationForKeys:(const id*)arg1 count:(unsigned long)arg2;
+- (void)_coreDealloc:(BOOL)arg1;
 - (struct __CFArray { }*)_makeBranchTableForKeys:(const char **)arg1 count:(unsigned long)arg2;
+- (id)allKeys;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;

@@ -9,18 +9,28 @@
 @class NSMutableArray;
 
 @interface GMMTrafficTile : NSObject {
-     /* Encoded args for previous method: c16@0:4^{InputDataStream=*IIBB}8r^{Tile=CCiii}12 */
+     /* Encoded args for previous method: c16@0:4^{InputDataStream=*IIBB}8r^{?=b6b26b26b6}12 */
+    BOOL empty;
     double expirationTime;
     NSMutableArray *roadsAtSpeed[4];
 }
 
+@property(getter=isEmpty,readonly) BOOL empty;
+@property(readonly) double expirationTime;
+@property(getter=isExpired,readonly) BOOL expired;
+@property(getter=isSoonExpired,readonly) BOOL soonExpired;
+
 + (double)defaultExpirationTime;
 
 - (void)dealloc;
+- (id)description;
 - (double)expirationTime;
 - (id)getRoadsAtSpeed:(NSInteger)arg1;
 - (id)init;
 - (void)invalidate;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1 tile:(const struct Tile { unsigned char x1; unsigned char x2; NSInteger x3; NSInteger x4; NSInteger x5; }*)arg2;
+- (BOOL)isEmpty;
+- (BOOL)isExpired;
+- (BOOL)isSoonExpired;
+- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1 tilePath:(const struct { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; }*)arg2;
 
 @end

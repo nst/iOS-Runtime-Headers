@@ -4,7 +4,9 @@
 
 @class NSMutableDictionary, NSMutableSet, NSString;
 
-@interface CMArchiveManager : NSObject {
+@interface CMArchiveManager : NSObject <OCCancelDelegate> {
+    BOOL mAutoCommit;
+    float mCommitInterval;
     NSMutableDictionary *mDrawableCache;
     NSInteger mHeight;
     BOOL mIsThumbnail;
@@ -19,6 +21,7 @@
 + (id)resourceTypeToExtension:(NSInteger)arg1;
 + (id)resourceTypeToMIME:(NSInteger)arg1;
 
+- (id)_validateData:(id)arg1 withType:(NSInteger*)arg2;
 - (void)addCssStyle:(id)arg1 withName:(id)arg2;
 - (id)addCssStyle:(id)arg1;
 - (id)addResource:(id)arg1 withName:(id)arg2;
@@ -33,6 +36,7 @@
 - (id)cssStylesheetString;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isCancelled;
 - (BOOL)isProgressive;
 - (BOOL)isThumbnail;
 - (NSUInteger)pageCount;
@@ -44,6 +48,8 @@
 - (NSInteger)resourceCount;
 - (id)resourcePathPrefix;
 - (void)restartProgressiveMappingOnPath:(id)arg1;
+- (void)setAutoCommit:(BOOL)arg1;
+- (void)setCommitInterval:(float)arg1;
 - (void)setHTMLHeight:(NSInteger)arg1;
 - (void)setHTMLWidth:(NSInteger)arg1;
 - (void)setIsThumbnail:(BOOL)arg1;

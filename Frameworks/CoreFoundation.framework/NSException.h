@@ -12,13 +12,13 @@
 }
 
 + (id)exceptionWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
-+ (void)oi_errnoRaise:(id)arg1 format:(id)arg2;
 + (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (void)raise:(id)arg1 format:(id)arg2;
 
 - (id)_crashReporterString;
 - (BOOL)_installStackTraceKeyIfNeeded;
 - (id)callStackReturnAddresses;
+- (id)callStackSymbols;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

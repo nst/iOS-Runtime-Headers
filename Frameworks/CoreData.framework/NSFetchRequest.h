@@ -4,7 +4,7 @@
 
 @class NSArray, NSEntityDescription, NSPredicate;
 
-@interface NSFetchRequest : NSObject <NSCoding, NSCopying, NSPersistentStoreRequest> {
+@interface NSFetchRequest : NSObject <NSCoding, NSCopying> {
     struct _fetchRequestFlags { 
         unsigned int distinctValuesOnly : 1; 
         unsigned int includesSubentities : 1; 
@@ -13,26 +13,29 @@
         unsigned int returnsObjectsAsFaults : 1; 
         unsigned int excludePendingChanges : 1; 
         unsigned int isInUse : 1; 
-        unsigned int _RESERVED : 23; 
+        unsigned int entityIsName : 1; 
+        unsigned int _RESERVED : 22; 
     NSArray *_affectedStores;
     NSUInteger _batchSize;
     NSEntityDescription *_entity;
     unsigned long _fetchLimit;
     } _flags;
+    NSArray *_groupByProperties;
+    NSPredicate *_havingPredicate;
     NSUInteger _offset;
     NSPredicate *_predicate;
     NSArray *_relationshipKeyPathsForPrefetching;
-    void *_reserved2;
-    void *_reserved;
     NSArray *_sortDescriptors;
     NSArray *_valuesToFetch;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
++ (id)fetchRequestWithEntityName:(id)arg1;
 + (void)initialize;
 
 - (void)_incrementInUseCounter;
 - (BOOL)_isEditable;
+- (void)_resolveEntityWithContext:(id)arg1;
 - (void)_throwIfNotEditable;
 - (id)affectedStores;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -40,16 +43,20 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
+- (id)entityName;
 - (NSUInteger)fetchBatchSize;
 - (NSUInteger)fetchLimit;
 - (NSUInteger)fetchOffset;
+- (id)groupByProperties;
 - (BOOL)hasChanges;
 - (NSUInteger)hash;
+- (id)havingPredicate;
 - (BOOL)includesPendingChanges;
 - (BOOL)includesPropertyValues;
 - (BOOL)includesSubentities;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithEntityName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicate;
 - (id)propertiesToFetch;
@@ -63,6 +70,8 @@
 - (void)setFetchBatchSize:(NSUInteger)arg1;
 - (void)setFetchLimit:(NSUInteger)arg1;
 - (void)setFetchOffset:(NSUInteger)arg1;
+- (void)setGroupByProperties:(id)arg1;
+- (void)setHavingPredicate:(id)arg1;
 - (void)setIncludesPendingChanges:(BOOL)arg1;
 - (void)setIncludesPropertyValues:(BOOL)arg1;
 - (void)setIncludesSubentities:(BOOL)arg1;

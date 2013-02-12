@@ -2,21 +2,25 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
+@class MPItem, NSString;
 
 @interface MPArrayQueueItem : NSObject {
     NSString *_path;
+    MPItem *_rawItem;
     double _startTime;
     double _stopTime;
 }
 
 @property(retain) NSString *path;
+@property(retain) MPItem *rawItem;
 @property double startTime;
 @property double stopTime;
 
 - (void)dealloc;
 - (id)path;
+- (id)rawItem;
 - (void)setPath:(id)arg1;
+- (void)setRawItem:(id)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;
 - (double)startTime;

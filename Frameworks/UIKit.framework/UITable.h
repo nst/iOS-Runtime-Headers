@@ -68,8 +68,15 @@
     } _visibleRows;
 }
 
++ (void)_initializeSafeCategory;
 + (id)standardTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
+- (id)_accessibilityAccessoryView;
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_accessibilityInternalData;
+- (id)_accessibilityScrollStatus;
+- (id)_accessibilitySupplementaryHeaderViews;
+- (void)_accessibilityUpdateVisibleCellFrames;
 - (void)_addSubview:(id)arg1 atTop:(BOOL)arg2;
 - (void)_adjustCountLabel;
 - (void)_adjustExtraSeparators;
@@ -127,6 +134,11 @@
 - (BOOL)_userCanDeleteRows;
 - (void)_userSelectRow:(NSInteger)arg1;
 - (void)_willDeleteRow:(NSInteger)arg1 forTableCell:(id)arg2 viaEdge:(NSInteger)arg3 animateOthers:(BOOL)arg4;
+- (id)accessibilityElementAtIndex:(NSInteger)arg1;
+- (NSInteger)accessibilityElementCount;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityLabel;
+- (void)accessibilityUpdateVisibleCellFrames;
 - (id)accessoryView;
 - (void)addTableColumn:(id)arg1;
 - (struct { float x1; float x2; float x3; float x4; })adornmentMargins;
@@ -171,8 +183,10 @@
 - (void)highlightView:(id)arg1 state:(BOOL)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertRows:(id)arg1 deleteRows:(id)arg2 reloadRows:(id)arg3;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isRowDeletionEnabled;
 - (NSInteger)lastHighlightedRow;
 - (void)layoutSubviews;
@@ -233,6 +247,7 @@
 - (id)visibleCellForRow:(NSInteger)arg1 column:(NSInteger)arg2;
 - (id)visibleCells;
 - (id)visibleCellsWithoutUpdatingLayout;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })visibleRows;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })visibleRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

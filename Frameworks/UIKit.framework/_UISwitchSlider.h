@@ -15,9 +15,14 @@
     } _switchFlags;
 }
 
++ (void)_initializeSafeCategory;
+
 - (void)_initImages;
 - (void)_initSubviews;
+- (void)_initSwitchImages;
 - (void)_layoutSubviewsForBoundsChange:(BOOL)arg1;
+- (void)_makeSnapshotIfNecessaryForEnabled:(BOOL)arg1;
+- (void)_updateAppearanceForEnabled:(BOOL)arg1;
 - (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)cancelMouseTracking;
@@ -31,6 +36,7 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (void)sendAction:(SEL)arg1 to:(id)arg2 forEvent:(id)arg3;
 - (void)sendAction:(SEL)arg1 toTarget:(id)arg2 forEvent:(struct __GSEvent { }*)arg3;

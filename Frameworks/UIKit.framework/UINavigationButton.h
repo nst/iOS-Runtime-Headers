@@ -5,9 +5,13 @@
 @class NSSet, UIColor;
 
 @interface UINavigationButton : UIButton {
+    struct CGSize { 
+        float width; 
+        float height; 
     unsigned int _size : 2;
     unsigned int _pad : 30;
     NSInteger _barStyle;
+    } _boundsAdjustment;
     NSSet *_possibleTitles;
     NSInteger _style;
     UIColor *_tintColor;
@@ -20,10 +24,19 @@
 @property NSInteger controlSize;
 @property NSInteger style;
 
++ (void)_initializeSafeCategory;
 + (id)defaultFont;
 
+- (void)_adjustBounds;
 - (BOOL)_canHandleStatusBarMouseEvents:(struct __GSEvent { }*)arg1;
+- (struct CGPoint { float x1; float x2; })_offsetForMiniBarState:(BOOL)arg1;
+- (id)_scriptingInfo;
+- (void)_setBoundsAdjustment:(struct CGSize { float x1; float x2; })arg1;
+- (void)_updateContentInsets;
 - (void)_updateStyle;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (NSInteger)barStyle;
 - (BOOL)contentsEqualTo:(id)arg1 withStyle:(NSInteger)arg2;
 - (NSInteger)controlSize;
@@ -38,6 +51,7 @@
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(NSInteger)arg3 barStyle:(NSInteger)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
 - (void)setBarStyle:(NSInteger)arg1;
 - (void)setControlSize:(NSInteger)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1;
 - (void)setStyle:(NSInteger)arg1;
 - (void)setTintColor:(id)arg1;

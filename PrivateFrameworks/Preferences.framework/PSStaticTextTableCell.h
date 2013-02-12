@@ -5,6 +5,9 @@
 @interface PSStaticTextTableCell : PSTableCell {
 }
 
++ (void)_initializeSafeCategory;
+
 - (void)_setDrawAsLabel:(BOOL)arg1;
+- (unsigned long long)accessibilityTraits;
 
 @end

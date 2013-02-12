@@ -7,9 +7,9 @@
  */
 
 @interface PBMasterStyle : NSObject {
-     /* Encoded args for previous method: v28@0:4@8@12@16@20B24 */
+     /* Encoded args for previous method: v28@0:4^{PptTxMasterStyleAtom=^^?S{EshHeader=iIsSC}^^?iB{ChVector<PptTxMasterStyleAtom::Level*>=^^{Level}^^{Level}III}}8^{PptTxMasterStyleAtom=^^?S{EshHeader=iIsSC}^^?iB{ChVector<PptTxMasterStyleAtom::Level*>=^^{Level}^^{Level}III}}12^{PptMasterBulletStyleAtom=^^?S{EshHeader=iIsSC}^^?iB{ChVector<PptMasterBulletStyleAtom::Level*>=^^{Level}^^{Level}III}}16@20@24 */
 }
 
-+ (void)readMasterStyle:(id)arg1 masterBulletStyle:(id)arg2 textListStyle:(id)arg3 state:(id)arg4 isInheritedByLevel:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg5;
++ (void)readMasterStyleAtom:(struct PptTxMasterStyleAtom { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; struct ChVector<PptTxMasterStyleAtom::Level*> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; } x7; }*)arg1 baseMasterStyleAtom:(struct PptTxMasterStyleAtom { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; struct ChVector<PptTxMasterStyleAtom::Level*> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; } x7; }*)arg2 masterBulletStyleAtom:(struct PptMasterBulletStyleAtom { int (**x1)(); unsigned short x2; struct EshHeader { NSInteger x_3_1_1; NSUInteger x_3_1_2; short x_3_1_3; unsigned short x_3_1_4; unsigned char x_3_1_5; } x3; int (**x4)(); NSInteger x5; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x6; struct ChVector<PptMasterBulletStyleAtom::Level*> { struct Level {} **x_7_1_1; struct Level {} **x_7_1_2; NSUInteger x_7_1_3; NSUInteger x_7_1_4; NSUInteger x_7_1_5; } x7; }*)arg3 textListStyle:(id)arg4 state:(id)arg5;
 
 @end

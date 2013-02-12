@@ -9,13 +9,16 @@
     NSUInteger _preferredEncoding;
 }
 
++ (id)addressListFromEncodedString:(id)arg1;
 + (id)basicHeaders;
++ (id)encodedDataForAddressList:(id)arg1 splittingAtLength:(NSUInteger)arg2 firstLineBuffer:(NSUInteger)arg3;
 + (BOOL)isStructuredHeaderKey:(id)arg1;
++ (BOOL)shouldDecodeHeaderForKey:(id)arg1;
 + (id)uniqueHeaderKeyStringForString:(id)arg1;
 
-- (void)_appendAddressList:(id)arg1 toData:(id)arg2;
-- (void)_appendHeaderData:(id)arg1 andRecipients:(id)arg2 expandPrivate:(BOOL)arg3 includeComment:(BOOL)arg4;
 - (id)_capitalizedKeyForKey:(id)arg1;
+- (id)_copyAddressListForKey:(id)arg1;
+- (id)_copyEncodedHeaderStringForKey:(id)arg1;
 - (id)_copyHeaderValueForKey:(id)arg1 offset:(NSUInteger*)arg2 decoded:(BOOL)arg3;
 - (id)_copyHeaderValueForKey:(id)arg1;
 - (id)_decodeHeaderKeysFromData:(id)arg1;
@@ -25,7 +28,18 @@
 - (void)_setCapitalizedKey:(id)arg1 forKey:(id)arg2;
 - (id)allHeaderKeys;
 - (void)appendHeaderData:(id)arg1 andRecipients:(id)arg2;
+- (id)copyAddressListForBcc;
+- (id)copyAddressListForCc;
+- (id)copyAddressListForReplyTo;
+- (id)copyAddressListForResentFrom;
+- (id)copyAddressListForSender;
+- (id)copyAddressListForTo;
 - (id)copyDecodedStringFromHeaderData:(id)arg1 withRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (id)copyEncodedStringForBcc;
+- (id)copyEncodedStringForCc;
+- (id)copyEncodedStringForResentFrom;
+- (id)copyEncodedStringForSender;
+- (id)copyEncodedStringForTo;
 - (id)copyFirstHeaderForKey:(id)arg1;
 - (id)copyFirstNonDecodedHeaderForKey:(id)arg1;
 - (id)copyFirstStringValueForKey:(id)arg1;
@@ -34,14 +48,17 @@
 - (void)dealloc;
 - (id)encodedHeaders;
 - (id)firstHeaderForKey:(id)arg1;
+- (id)firstSenderAddress;
 - (BOOL)hasHeaderForKey:(id)arg1;
 - (id)headerData;
 - (id)headersForKey:(id)arg1;
+- (id)init;
 - (id)initWithHeaderData:(id)arg1 encoding:(unsigned long)arg2;
 - (id)isoLatin1CharsetHint;
 - (BOOL)messageIsFromEntourage;
 - (id)mutableCopy;
 - (unsigned long)preferredEncoding;
+- (id)references;
 - (void)setPreferredEncoding:(unsigned long)arg1;
 
 @end

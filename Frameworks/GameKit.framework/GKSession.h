@@ -17,9 +17,12 @@
 @property(readonly) NSInteger sessionMode;
 @property BOOL wifiEnabled;
 
++ (void)initialize;
+
 - (BOOL)acceptConnectionFromPeer:(id)arg1 error:(id*)arg2;
 - (void)cancelConnectToPeer:(id)arg1;
 - (void)connectToPeer:(id)arg1 withTimeout:(double)arg2;
+- (id)connection;
 - (void)dealloc;
 - (id)delegate;
 - (void)denyConnectionFromPeer:(id)arg1;
@@ -29,6 +32,7 @@
 - (double)disconnectTimeout;
 - (id)displayName;
 - (id)displayNameForPeer:(id)arg1;
+- (id)initWithConnection:(id)arg1 delegate:(id)arg2;
 - (id)initWithSessionID:(id)arg1 displayName:(id)arg2 sessionMode:(NSInteger)arg3;
 - (BOOL)isAvailable;
 - (BOOL)isBusy;
@@ -36,6 +40,7 @@
 - (id)peerID;
 - (id)peersWithConnectionState:(NSInteger)arg1;
 - (id)privateDelegate;
+- (id)privateImpl;
 - (id)searchCriteria;
 - (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(NSInteger)arg3 error:(id*)arg4;
 - (BOOL)sendDataToAllPeers:(id)arg1 withDataMode:(NSInteger)arg2 error:(id*)arg3;

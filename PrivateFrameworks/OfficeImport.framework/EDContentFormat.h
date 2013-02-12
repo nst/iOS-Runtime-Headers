@@ -11,8 +11,8 @@
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying> {
      /* Encoded args for previous method: @20@0:4@8I12B16 */
      /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: B8@0:4 */
      /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B8@0:4 */
     NSUInteger mFormatId;
     EDString *mFormatString;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mBuiltIn;
@@ -32,7 +32,7 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToContentFormat:(id)arg1;
-- (NSInteger)key;
+- (NSUInteger)key;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)referenced;
 - (void)setFormatId:(NSUInteger)arg1;
 - (void)setReferenced:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;

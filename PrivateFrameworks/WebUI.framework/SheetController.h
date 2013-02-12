@@ -14,7 +14,6 @@
 
 - (void)_showSheetForAlert:(id)arg1 inView:(id)arg2 withClass:(Class)arg3;
 - (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
-- (BOOL)allowsRotation;
 - (void)dealloc;
 - (void)didDismissAlertSheet:(id)arg1;
 - (void)hideSheet;
@@ -22,7 +21,7 @@
 - (NSInteger)numberOfRowsInTable:(id)arg1;
 - (NSInteger)panelState;
 - (NSInteger)panelType;
-- (BOOL)pausesPages;
+- (NSInteger)pausesPages;
 - (void)setDelegate:(id)arg1;
 - (void)showSheetForAlert:(id)arg1 inView:(id)arg2;
 - (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3;

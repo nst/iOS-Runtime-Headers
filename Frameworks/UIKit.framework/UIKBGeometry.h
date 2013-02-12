@@ -65,6 +65,7 @@
 - (struct { float x1; NSInteger x2; })h;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithName:(id)arg1 rect:(struct { struct { float x_1_1_1; NSInteger x_1_1_2; } x1[4]; })arg2 padding:(struct { struct { float x_1_1_1; NSInteger x_1_1_2; } x1[4]; })arg3;
 - (id)name;
 - (id)overrideGeometry:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrameWithContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

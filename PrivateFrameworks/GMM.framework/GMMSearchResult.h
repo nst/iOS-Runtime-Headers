@@ -10,6 +10,7 @@
     NSString *_attributionText;
     NSString *_attributionUrl;
     unsigned long long _cid;
+    NSString *_directionsPlacemarkToken;
     NSMutableArray *_enhancedContents;
     GMMGeometry *_geometry;
     BOOL _hasCid;
@@ -43,6 +44,7 @@
 @property(retain) NSMutableArray *addressLines;
 @property(retain) NSString *attributionText;
 @property(retain) NSString *attributionUrl;
+@property(retain) NSString *directionsPlacemarkToken;
 @property(retain) NSMutableArray *enhancedContents;
 @property(retain) GMMGeometry *geometry;
 @property(retain) NSMutableArray *images;
@@ -63,6 +65,7 @@
 @property(readonly) BOOL hasAttributionText;
 @property(readonly) BOOL hasAttributionUrl;
 @property(readonly) BOOL hasCid;
+@property(readonly) BOOL hasDirectionsPlacemarkToken;
 @property(readonly) BOOL hasGeometry;
 @property(readonly) BOOL hasInexactPosition;
 @property(readonly) BOOL hasKmlInfo;
@@ -103,6 +106,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)directionsPlacemarkToken;
 - (id)enhancedContentAtIndex:(NSUInteger)arg1;
 - (id)enhancedContents;
 - (NSInteger)enhancedContentsCount;
@@ -111,6 +115,7 @@
 - (BOOL)hasAttributionText;
 - (BOOL)hasAttributionUrl;
 - (BOOL)hasCid;
+- (BOOL)hasDirectionsPlacemarkToken;
 - (BOOL)hasGeometry;
 - (BOOL)hasInexactPosition;
 - (BOOL)hasKmlInfo;
@@ -152,6 +157,7 @@
 - (void)setAttributionText:(id)arg1;
 - (void)setAttributionUrl:(id)arg1;
 - (void)setCid:(unsigned long long)arg1;
+- (void)setDirectionsPlacemarkToken:(id)arg1;
 - (void)setEnhancedContent:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setEnhancedContents:(id)arg1;
 - (void)setGeometry:(id)arg1;

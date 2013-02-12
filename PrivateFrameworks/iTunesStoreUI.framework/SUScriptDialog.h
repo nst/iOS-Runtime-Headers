@@ -2,19 +2,43 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISDialog;
+@class NSNumber, NSString;
 
-@interface SUScriptDialog : NSObject {
-    NSInteger _buttonIndex;
-    ISDialog *_dialog;
+@interface SUScriptDialog : SUScriptObject {
+    NSString *_body;
+    id _buttons;
+    NSNumber *_cancelButtonIndex;
+    id _textFields;
+    NSString *_title;
 }
 
-+ (id)titleForURL:(id)arg1;
+@property(getter=_body,retain) NSString *body; /* unknown property attribute: Sset_body: */
+@property(getter=_buttons,retain) id buttons; /* unknown property attribute: Sset_buttons: */
+@property(getter=_cancelButtonIndex,retain) NSNumber *cancelButtonIndex; /* unknown property attribute: Sset_cancelButtonIndex: */
+@property(getter=_textFields,retain) id textFields; /* unknown property attribute: Sset_textFields: */
+@property(getter=_title,retain) NSString *title; /* unknown property attribute: Sset_title: */
 
-- (id)_copyResponseByRunningModal;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
-- (id)copyResponseByRunningModal;
++ (id)webScriptNameForKey:(const char *)arg1;
++ (id)webScriptNameForSelector:(SEL)arg1;
+
+- (id)_body;
+- (id)_buttons;
+- (id)_cancelButtonIndex;
+- (id)_className;
+- (void)_dismiss;
+- (id)_nativeDialog;
+- (void)_show;
+- (void)_showFromDOMElement:(id)arg1;
+- (id)_textFields;
+- (id)_title;
 - (void)dealloc;
-- (id)initWithDialog:(id)arg1;
+- (void)dismiss;
+- (void)set_body:(id)arg1;
+- (void)set_buttons:(id)arg1;
+- (void)set_cancelButtonIndex:(id)arg1;
+- (void)set_textFields:(id)arg1;
+- (void)set_title:(id)arg1;
+- (void)show;
+- (void)showFromDOMElement:(id)arg1;
 
 @end

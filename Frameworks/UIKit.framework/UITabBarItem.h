@@ -43,9 +43,13 @@
 @property id target;
 @property BOOL viewIsCustom;
 
++ (void)_initializeSafeCategory;
+
 - (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2;
 - (id)_internalTemplateImage;
 - (id)_internalTitle;
+- (void)_setInternalTemplateImage:(id)arg1;
+- (void)_setInternalTitle:(id)arg1;
 - (void)_updateView;
 - (SEL)action;
 - (BOOL)animatedBadge;

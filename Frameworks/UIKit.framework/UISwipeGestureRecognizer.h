@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSMutableArray;
+
 @interface UISwipeGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
         float x; 
@@ -9,44 +11,66 @@
     struct CGPoint { 
         float x; 
         float y; 
-    unsigned int _trackingTouch : 1;
     unsigned int _tableViewGesture : 1;
+    unsigned int _failed : 1;
+    NSInteger _direction;
     double _maximumDuration;
-    float _maximumHorizontalMovement;
-    float _maximumVerticalMovement;
-    float _minimumHorizontalMovement;
-    float _minimumVerticalMovement;
+    float _maximumPrimaryMovement;
+    float _maximumSecondaryMovement;
+    float _minimumPrimaryMovement;
+    float _minimumSecondaryMovement;
+    NSUInteger _numberOfTouchesRequired;
     float _rateOfMaximumMovementDecay;
     float _rateOfMinimumMovementDecay;
     } _startContentOffset;
     } _startLocation;
+    struct CGPoint { float x1; float x2; } *_startLocations;
     double _startTime;
+    NSMutableArray *_touches;
 }
 
+@property NSInteger direction;
 @property double maximumDuration;
-@property float maximumHorizontalMovement;
-@property float maximumVerticalMovement;
-@property float minimumHorizontalMovement;
-@property float minimumVerticalMovement;
+@property float maximumPrimaryMovement;
+@property float maximumSecondaryMovement;
+@property float minimumPrimaryMovement;
+@property float minimumSecondaryMovement;
+@property NSUInteger numberOfTouchesRequired;
 @property float rateOfMaximumMovementDecay;
 @property float rateOfMinimumMovementDecay;
 @property(readonly) CGPoint startPoint;
+@property(getter=isTableViewGesture) BOOL tableViewGesture;
 
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(NSInteger)arg4 touchCount:(NSUInteger)arg5;
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(NSInteger)arg4;
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 touchCount:(NSUInteger)arg4;
++ (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
+
+- (void)_appendSubclassDescription:(id)arg1;
+- (BOOL)_checkForSwipeWithDelta:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;
+- (void)_resetGestureRecognizer;
+- (void)dealloc;
+- (NSInteger)direction;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (BOOL)isTableViewGesture;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(NSUInteger)arg1 inView:(id)arg2;
 - (double)maximumDuration;
-- (float)maximumHorizontalMovement;
-- (float)maximumVerticalMovement;
-- (float)minimumHorizontalMovement;
-- (float)minimumVerticalMovement;
+- (float)maximumPrimaryMovement;
+- (float)maximumSecondaryMovement;
+- (float)minimumPrimaryMovement;
+- (float)minimumSecondaryMovement;
+- (NSUInteger)numberOfTouches;
+- (NSUInteger)numberOfTouchesRequired;
 - (float)rateOfMaximumMovementDecay;
 - (float)rateOfMinimumMovementDecay;
-- (void)reset;
+- (void)setDirection:(NSInteger)arg1;
 - (void)setMaximumDuration:(double)arg1;
-- (void)setMaximumHorizontalMovement:(float)arg1;
-- (void)setMaximumVerticalMovement:(float)arg1;
-- (void)setMinimumHorizontalMovement:(float)arg1;
-- (void)setMinimumVerticalMovement:(float)arg1;
+- (void)setMaximumPrimaryMovement:(float)arg1;
+- (void)setMaximumSecondaryMovement:(float)arg1;
+- (void)setMinimumPrimaryMovement:(float)arg1;
+- (void)setMinimumSecondaryMovement:(float)arg1;
+- (void)setNumberOfTouchesRequired:(NSUInteger)arg1;
 - (void)setRateOfMaximumMovementDecay:(float)arg1;
 - (void)setRateOfMinimumMovementDecay:(float)arg1;
 - (void)setTableViewGesture:(BOOL)arg1;

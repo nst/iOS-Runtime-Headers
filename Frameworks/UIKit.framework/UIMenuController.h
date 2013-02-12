@@ -12,20 +12,29 @@
             float width; 
             float height; 
         } size; 
+    NSInteger _arrowDirection;
     } _targetRect;
 }
 
+@property(copy) NSArray *menuItems;
+@property NSInteger arrowDirection;
 @property(readonly) CGRect menuFrame;
 @property(getter=isMenuVisible) BOOL menuVisible;
 
 + (id)sharedMenuController;
 
 - (BOOL)_update:(BOOL)arg1;
+- (void)_windowWillRotate:(id)arg1;
+- (NSInteger)arrowDirection;
 - (void)calloutBarDidFinishAnimation:(id)arg1;
 - (void)calloutBarWillStartAnimation:(id)arg1;
+- (void)dealloc;
 - (id)init;
 - (BOOL)isMenuVisible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })menuFrame;
+- (id)menuItems;
+- (void)setArrowDirection:(NSInteger)arg1;
+- (void)setMenuItems:(id)arg1;
 - (void)setMenuVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setMenuVisible:(BOOL)arg1;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;

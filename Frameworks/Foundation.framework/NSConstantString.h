@@ -24,7 +24,7 @@
 - (BOOL)isEqualToString:(id)arg1;
 - (NSUInteger)length;
 - (const char *)lossyCString;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
 - (NSUInteger)smallestEncoding;

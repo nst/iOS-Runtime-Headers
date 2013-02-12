@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebSelectionBlock>, DOMRange, UIWebDocumentView;
+@class <UIWebSelectionBlock>, UITextSelection, UIWebDocumentView;
 
 @interface UIWebSelection : NSObject {
     struct CGSize { 
@@ -12,13 +12,13 @@
     } _desiredSize;
     UIWebDocumentView *_documentView;
     <UIWebSelectionBlock> *_extent;
-    DOMRange *_textSelection;
+    UITextSelection *_textSelection;
 }
 
 @property(retain) <UIWebSelectionBlock> *base;
 @property(readonly) UIWebDocumentView *documentView;
 @property(retain) <UIWebSelectionBlock> *extent;
-@property(retain) DOMRange *textSelection;
+@property(readonly) UITextSelection *textSelection;
 @property(readonly) CGRect boundingRect;
 @property CGSize desiredSize;
 @property(getter=isTextOnly,readonly) BOOL textOnly;
@@ -29,6 +29,7 @@
 - (id)asDomRange;
 - (id)base;
 - (id)blockAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)blockContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)blockOfSameWidthAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingTextSelectionRect;
@@ -42,9 +43,9 @@
 - (float)distanceBetweenFirstRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 second:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 edge:(NSInteger)arg3;
 - (id)documentView;
 - (id)domDocument;
+- (id)duplicate;
 - (id)elementAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)extent;
-- (id)getCopy;
 - (void)growFromEdge:(NSInteger)arg1;
 - (void)growSelectionTowardsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithDocumentView:(id)arg1;
@@ -57,7 +58,6 @@
 - (void)setDesiredSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setExtent:(id)arg1;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTextSelection:(id)arg1;
 - (void)shrinkFromEdge:(NSInteger)arg1;
 - (void)shrinkSelectionFromPoint:(struct CGPoint { float x1; float x2; })arg1 towardsPoint:(struct CGPoint { float x1; float x2; })arg2 withNewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)textRepresentation;

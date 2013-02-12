@@ -19,7 +19,7 @@
 - (void)bindToPersistentIDsSqlite3Statement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout NSInteger*)arg2;
 - (id)container;
 - (void)dealloc;
-- (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3;
+- (id)initWithEntityClass:(Class)arg1 container:(id)arg2 predicate:(id)arg3 orderingProperties:(id)arg4;
 - (NSUInteger)limitCount;
 - (BOOL)requiresSmartLimiting;
 - (id)selectLimitingSQL;

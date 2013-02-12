@@ -9,24 +9,25 @@
 @class NSMutableArray;
 
 @interface EDLinksCollection : NSObject {
-     /* Encoded args for previous method: B8@0:4 */
-     /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B20@0:4I8^I12^I16 */
     NSMutableArray *mLinks;
     NSMutableArray *mReferences;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*mIsModified;
 }
 
 - (NSUInteger)addLink:(id)arg1;
+- (void)addOrEquivalentExternalAddInName:(id)arg1 linkReferenceIndex:(NSUInteger*)arg2 nameIndex:(NSUInteger*)arg3;
+- (NSUInteger)addOrEquivalentInternalLinkReferenceWithFirstSheetIndex:(NSUInteger)arg1 lastSheetIndex:(NSUInteger)arg2;
+- (NSUInteger)addOrEquivalentLinkReferenceOfType:(NSInteger)arg1 firstSheetIndex:(NSUInteger)arg2 lastSheetIndex:(NSUInteger)arg3;
 - (NSUInteger)addReference:(id)arg1;
+- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)convertLinkReferenceIndex:(NSUInteger)arg1 firstSheetIndex:(NSUInteger*)arg2 lastSheetIndex:(NSUInteger*)arg3;
 - (void)dealloc;
 - (NSUInteger)indexOfFirstLinkWithType:(NSInteger)arg1;
 - (NSUInteger)indexOfReference:(id)arg1;
 - (id)init;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isModified;
 - (id)linkAtIndex:(NSUInteger)arg1;
+- (NSUInteger)linkIndexCreateIfNeededWithType:(NSInteger)arg1;
 - (NSUInteger)linksCount;
 - (id)referenceAtIndex:(NSUInteger)arg1;
 - (NSUInteger)referencesCount;
-- (void)setIsModified:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 
 @end

@@ -24,6 +24,7 @@
 - (id)HTTPMethod;
 - (id)HTTPReferrer;
 - (BOOL)HTTPShouldHandleCookies;
+- (BOOL)HTTPShouldUsePipelining;
 - (id)HTTPUserAgent;
 - (id)URL;
 - (struct _CFURLRequest { }*)_CFURLRequest;
@@ -38,6 +39,7 @@
 - (BOOL)_web_isConditionalRequest;
 - (id)allHTTPHeaderFields;
 - (NSUInteger)cachePolicy;
+- (id)contentDispositionEncodingFallbackArray;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -50,6 +52,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)mainDocumentURL;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)networkServiceType;
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
 

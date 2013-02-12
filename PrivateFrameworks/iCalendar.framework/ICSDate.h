@@ -8,6 +8,7 @@
 @property(retain) NSString *tzid;
 
 - (id)components;
+- (id)description;
 - (BOOL)hasFloatingTimeZone;
 - (BOOL)hasTimeComponent;
 - (id)initWithValue:(id)arg1;

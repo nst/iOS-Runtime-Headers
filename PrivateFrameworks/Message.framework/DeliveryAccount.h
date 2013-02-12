@@ -36,6 +36,7 @@
 - (void)setShouldUseAuthentication:(BOOL)arg1;
 - (void)setUsername:(id)arg1;
 - (BOOL)shouldUseAuthentication;
+- (BOOL)shouldUseSaveSentForAccount:(id)arg1;
 - (BOOL)supportsOutboxCopy;
 - (BOOL)supportsSoftBankCodePoints;
 

@@ -2,33 +2,27 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyPickerViewControllerDelegate>;
-
-@interface ABPropertyPickerViewController : UIViewController {
+@interface ABPropertyPickerViewController : ABPickerViewController <ABCardPropertyPickerDelegate> {
     void *_addressBook;
-    <ABPropertyPickerViewControllerDelegate> *_delegate;
     void *_person;
     struct __CFArray { } *_properties;
 }
 
 @property void *addressBook;
-@property <ABPropertyPickerViewControllerDelegate> *delegate;
 @property void *person;
 @property __CFArray *properties;
 
-- (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (float)ab_heightToFitForViewInPopoverView;
 - (void*)addressBook;
 - (void)dealloc;
-- (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (void*)person;
 - (struct __CFArray { }*)properties;
 - (void)propertyPicker:(id)arg1 selectedProperty:(NSInteger)arg2;
+- (id)propertyPicker;
 - (void)setAddressBook:(void*)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setPerson:(void*)arg1;
 - (void)setProperties:(struct __CFArray { }*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

@@ -8,6 +8,7 @@
 @property(copy) NSString *acceptCharset;
 @property(copy) NSString *action;
 @property(retain,readonly) DOMHTMLCollection *elements;
+@property(copy) NSString *encoding;
 @property(copy) NSString *enctype;
 @property(copy) NSString *method;
 @property(copy) NSString *name;
@@ -18,12 +19,14 @@
 - (id)action;
 - (BOOL)autocapitalize;
 - (BOOL)autocorrect;
+- (BOOL)checkValidity;
 - (id)elements;
 - (id)encoding;
 - (id)enctype;
 - (NSInteger)length;
 - (id)method;
 - (id)name;
+- (BOOL)noValidate;
 - (void)reset;
 - (void)setAcceptCharset:(id)arg1;
 - (void)setAction:(id)arg1;
@@ -33,6 +36,7 @@
 - (void)setEnctype:(id)arg1;
 - (void)setMethod:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setNoValidate:(BOOL)arg1;
 - (void)setTarget:(id)arg1;
 - (NSInteger)structuralComplexityContribution;
 - (void)submit;

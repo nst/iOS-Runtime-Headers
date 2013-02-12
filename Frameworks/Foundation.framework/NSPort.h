@@ -21,7 +21,6 @@
 - (NSUInteger)machPort;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)replacementObjectForCoder:(id)arg1;
-- (id)replacementObjectForPortCoder:(id)arg1;
 - (NSUInteger)reservedSpaceLength;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (BOOL)sendBeforeDate:(id)arg1 components:(id)arg2 from:(id)arg3 reserved:(NSUInteger)arg4;

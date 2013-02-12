@@ -15,6 +15,7 @@
 
 - (id)_alertView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)alertViewCancel:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)dialog;

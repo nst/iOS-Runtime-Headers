@@ -6,8 +6,6 @@
 
 @interface STEmpedLinkingManager : NSObject {
     unsigned int _isLinking : 1;
-    unsigned int _startLinkingWhenResourcesAreReady : 1;
-    unsigned int _startRemoteLinkingWhenResourcesAreReady : 1;
     <STEmpedLinkingManagerDelegate> *_delegate;
 }
 
@@ -18,14 +16,8 @@
 + (void)_stopLinking;
 
 - (void)_empedLinkingStateChanged:(id)arg1;
-- (void)_externalReceiverDisconnected:(id)arg1;
 - (void)_fakeEmpedLinkingStateChanged:(BOOL)arg1 afterDelay:(double)arg2;
-- (void)_fakeReceiverStateChange:(NSInteger)arg1 afterDelay:(double)arg2;
-- (void)_fakeSensorStateChange:(NSInteger)arg1 afterDelay:(double)arg2;
-- (void)_receiverStateChanged:(id)arg1;
 - (void)_remoteLinkingStateChanged:(id)arg1;
-- (void)_resourcesReadyStateChanged:(id)arg1;
-- (void)_sensorStateChanged:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

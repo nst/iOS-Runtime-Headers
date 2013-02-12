@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPanoramaStoreDelegate>, MKCache, NSMutableDictionary;
+@class <MKPanoramaStoreDelegate>, MKPanoramaCache, NSMutableDictionary;
 
 @interface MKPanoramaStore : NSObject {
     <MKPanoramaStoreDelegate> *_delegate;
-    MKCache *_idPanoramaCache;
+    MKPanoramaCache *_idPanoramaCache;
     NSMutableDictionary *_mapPointIdDictionary;
     NSUInteger _maxByteCapacity;
 }
@@ -19,15 +19,16 @@
 
 - (void)addPanorama:(id)arg1 forMapPoint:(id)arg2;
 - (id)allPanoramas;
+- (void)compact;
 - (NSUInteger)count;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isFull;
 - (NSUInteger)maxByteCapacity;
 - (id)panoramaWithCoordinate:(struct { double x1; double x2; })arg1;
 - (id)panoramaWithId:(id)arg1 shouldCreate:(BOOL)arg2;
 - (id)panoramaWithId:(id)arg1;
+- (void)removeAllPanoramas;
 - (void)setDelegate:(id)arg1;
 - (void)setMaxByteCapacity:(NSUInteger)arg1;
 

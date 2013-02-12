@@ -8,6 +8,7 @@
     unsigned int _finishedSearchingForRecentRecipients : 1;
     unsigned int _finishedSearchingForLocalContacts : 1;
     unsigned int _finishedSearchingForRemoteContacts : 1;
+    unsigned int _favorMobileNumbers : 1;
     NSMutableDictionary *_localSearchResultsByAddress;
     NSMutableArray *_recentSearchResults;
     NSMutableDictionary *_recipientsByAddress;
@@ -20,6 +21,8 @@
 - (void)addResults:(id)arg1 ofType:(NSInteger)arg2;
 - (void)dealloc;
 - (void)finishedAddingResultsOfType:(NSInteger)arg1;
+- (id)init;
+- (id)initWithFavorMobileNumbers:(BOOL)arg1;
 - (void)resetIncludingResults:(BOOL)arg1;
 - (id)results;
 

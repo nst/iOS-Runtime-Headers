@@ -11,7 +11,7 @@
     NSUInteger _queryResultsSimplePropertyType;
 }
 
-- (id)_copyAlbumQueryForEntityAtIndex:(NSUInteger)arg1;
+- (id)_copyAlbumQueryForEntityAtIndex:(NSUInteger)arg1 sorted:(BOOL)arg2;
 - (NSUInteger)countOfEntitiesGroupedByEntityAtIndex:(NSUInteger)arg1;
 - (void)evaluate;
 - (void)freeQueryResults;

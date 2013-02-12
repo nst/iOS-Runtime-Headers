@@ -9,6 +9,7 @@
 }
 
 @property <MKReverseGeocoderDelegate> *delegate;
+@property(readonly) MKPlacemark *placemark;
 @property(readonly) ? coordinate;
 @property(getter=isQuerying,readonly) BOOL querying;
 
@@ -25,8 +26,10 @@
 - (id)delegate;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
 - (BOOL)isQuerying;
+- (id)placemark;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
+- (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;

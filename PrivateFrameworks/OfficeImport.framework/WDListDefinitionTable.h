@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMapTable, NSMutableArray, WDDocument;
+@class NSMutableArray, WDDocument, WDListDefinition;
 
 @interface WDListDefinitionTable : NSObject {
     WDDocument *mDocument;
-    NSMapTable *mListDefinitionMap;
+    WDListDefinition *mLastKnownGoodListDefinition;
+    struct __CFDictionary { } *mListDefinitionMap;
     NSMutableArray *mListDefinitions;
     NSUInteger mNextIdIndex;
 }
@@ -20,5 +21,6 @@
 - (id)document;
 - (id)initWithDocument:(id)arg1;
 - (NSInteger)nextId;
+- (void)setLastKnowGoodListDefinition:(id)arg1;
 
 @end

@@ -7,18 +7,22 @@
 
 + (struct __CFArray { }*)copyAllProperties;
 + (struct __CFArray { }*)copyDefaultDisplayedProperties;
-+ (struct __CFArray { }*)copyNameProperties;
++ (struct __CFArray { }*)copyNamePropertiesForEditing:(BOOL)arg1 includeRequiredNameProperties:(BOOL)arg2 people:(id)arg3;
 + (struct __CFArray { }*)copyNamePropertiesForEditing:(BOOL)arg1 includeRequiredNameProperties:(BOOL)arg2 person:(void*)arg3;
 + (struct __CFArray { }*)copyNamePropertiesForEditing:(BOOL)arg1 person:(void*)arg2;
++ (struct __CFArray { }*)copyNamePropertiesWithCurrentNameFormat;
 + (struct __CFArray { }*)copyOptionalJobProperties;
 + (struct __CFArray { }*)copyOptionalNameAffixProperties;
 + (struct __CFArray { }*)copyOptionalNameProperties;
 + (struct __CFArray { }*)copyOptionalProperties;
++ (struct __CFArray { }*)copyProperties:(struct __CFArray { }*)arg1 excludingProperties:(struct __CFArray { }*)arg2;
 + (BOOL)isNameProperty:(NSInteger)arg1;
 + (void)person:(void*)arg1 allowsLabels:(BOOL*)arg2 customLabels:(BOOL*)arg3 forProperty:(NSInteger)arg4;
 + (BOOL)person:(void*)arg1 hasProperty:(NSInteger)arg2;
 + (BOOL)personAllowsCustomLabels:(void*)arg1 forProperty:(NSInteger)arg2;
 + (BOOL)personAllowsLabels:(void*)arg1 forProperty:(NSInteger)arg2;
 + (BOOL)personHasRingtone:(void*)arg1;
++ (BOOL)personIsReadonly:(void*)arg1;
++ (BOOL)updatePersonKindFromName:(void*)arg1 recordIsNew:(BOOL)arg2;
 
 @end

@@ -15,6 +15,7 @@
 - (id)init;
 - (BOOL)isEmpty;
 - (id)paragraphProperties;
+- (void)removeUnnecessaryOverrides;
 - (void)setId:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;

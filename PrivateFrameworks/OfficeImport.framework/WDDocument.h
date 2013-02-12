@@ -2,13 +2,23 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ESDContainer, NSDate, NSMutableArray, NSString, OADBackground, OADDrawingGroup, OADTheme, OCDSummary, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
+@class NSDate, NSMutableArray, NSString, OADBackground, OADDrawingGroup, OADTheme, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
 
-@interface WDDocument : NSObject {
-    BOOL mAutoHyphenate;
-    BOOL mBookFold;
-    BOOL mBorderSurroundFooter;
-    BOOL mBorderSurroundHeader;
+@interface WDDocument : OCDDocument {
+    unsigned int mMirrorMargins : 1;
+    unsigned int mBorderSurroundHeader : 1;
+    unsigned int mBorderSurroundFooter : 1;
+    unsigned int mAutoHyphenate : 1;
+    unsigned int mEvenAndOddHeaders : 1;
+    unsigned int mGraphicsInHeaderFooter : 1;
+    unsigned int mBookFold : 1;
+    unsigned int mShowMarkup : 1;
+    unsigned int mShowComments : 1;
+    unsigned int mTrackChanges : 1;
+    unsigned int mShowRevisionMarksOnScreen : 1;
+    unsigned int mShowInsertionsAndDeletions : 1;
+    unsigned int mShowFormatting : 1;
+    unsigned int mShowOutline : 1;
     NSMutableArray *mChangeTrackingEditAuthors;
     NSMutableArray *mChangeTrackingEditDates;
     NSDate *mCreationDate;
@@ -22,12 +32,6 @@
     NSInteger mEndnotePosition;
     NSInteger mEndnoteRestart;
     WDText *mEndnoteSeparator;
-    BOOL mEvenAndOddHeaders;
-    ESDContainer *mExportDrawingGroup;
-    ESDContainer *mExportHeadersDrawing;
-    NSMutableArray *mExportHeadersStories;
-    ESDContainer *mExportMainDrawing;
-    NSMutableArray *mExportMainStories;
     WDFontTable *mFontTable;
     WDText *mFootnoteContinuationNotice;
     WDText *mFootnoteContinuationSeparator;
@@ -41,20 +45,11 @@
     NSMutableArray *mImageBullets;
     WDListDefinitionTable *mListDefinitionTable;
     WDListTable *mListTable;
-    BOOL mMirrorMargins;
     NSString *mOleFilename;
     WDRevisionAuthorTable *mRevisionAuthorTable;
     NSMutableArray *mSections;
-    BOOL mShowComments;
-    BOOL mShowFormatting;
-    BOOL mShowInsertionsAndDeletions;
-    BOOL mShowMarkup;
-    BOOL mShowRevisionMarksOnScreen;
     WDStyleSheet *mStyleSheet;
-    OCDSummary *mSummary;
-    NSMutableArray *mTextBoxes;
     OADTheme *mTheme;
-    BOOL mTrackChanges;
     NSString *mVersion;
     NSInteger mZIndexTotalForHeaderFooterText;
     NSInteger mZIndexTotalForMainText;
@@ -70,8 +65,6 @@
 - (id)addListDefinition;
 - (void)addRevisionAuthor:(id)arg1;
 - (id)addSection;
-- (id)addStoryForShape:(id)arg1;
-- (void)addTextBox:(id)arg1;
 - (id)annotationBlockIterator;
 - (id)annotationIterator;
 - (id)applicationName;
@@ -95,13 +88,6 @@
 - (NSInteger)endnoteRestart;
 - (id)endnoteSeparator;
 - (BOOL)evenAndOddHeaders;
-- (id)existingExportDrawingGroup;
-- (id)existingExportHeadersDrawing;
-- (id)existingExportMainDrawing;
-- (id)exportHeadersStories;
-- (id)exportHeadersStoriesIterator;
-- (id)exportMainStories;
-- (id)exportMainStoriesIterator;
 - (id)fontTable;
 - (id)footnoteBlockIterator;
 - (id)footnoteContinuationNotice;
@@ -112,12 +98,14 @@
 - (NSInteger)footnotePosition;
 - (NSInteger)footnoteRestart;
 - (id)footnoteSeparator;
+- (BOOL)graphicsInHeaderFooter;
 - (NSInteger)gutterPosition;
 - (id)imageBulletParagraph;
 - (id)imageBulletText;
 - (id)imageBulletWithCharacterOffset:(NSInteger)arg1;
 - (id)imageBullets;
 - (id)init;
+- (BOOL)isFromBinary;
 - (id)lastSection;
 - (id)listAt:(NSInteger)arg1;
 - (NSInteger)listCount;
@@ -129,6 +117,15 @@
 - (id)mainBlocksIterator;
 - (id)mainRunsIterator;
 - (BOOL)mirrorMargins;
+- (id)newAnnotationBlockIterator;
+- (id)newAnnotationIterator;
+- (id)newEndnoteBlockIterator;
+- (id)newEndnoteIterator;
+- (id)newFootnoteBlockIterator;
+- (id)newFootnoteIterator;
+- (id)newMainBlocksIterator;
+- (id)newMainRunsIterator;
+- (id)newSectionIterator;
 - (id)oleFilename;
 - (void)removeEmptySections;
 - (NSInteger)revisionAuthorAddLookup:(id)arg1;
@@ -150,13 +147,11 @@
 - (void)setEndnotePosition:(NSInteger)arg1;
 - (void)setEndnoteRestart:(NSInteger)arg1;
 - (void)setEvenAndOddHeaders:(BOOL)arg1;
-- (void)setExportDrawingGroup:(id)arg1;
-- (void)setExportHeadersDrawing:(id)arg1;
-- (void)setExportMainDrawing:(id)arg1;
 - (void)setFootnoteNumberFormat:(NSInteger)arg1;
 - (void)setFootnoteNumberingStart:(unsigned short)arg1;
 - (void)setFootnotePosition:(NSInteger)arg1;
 - (void)setFootnoteRestart:(NSInteger)arg1;
+- (void)setGraphicsInHeaderFooter:(BOOL)arg1;
 - (void)setGutterPosition:(NSInteger)arg1;
 - (void)setMirrorMargins:(BOOL)arg1;
 - (void)setOleFilename:(id)arg1;
@@ -164,6 +159,7 @@
 - (void)setShowFormatting:(BOOL)arg1;
 - (void)setShowInsertionsAndDeletions:(BOOL)arg1;
 - (void)setShowMarkup:(BOOL)arg1;
+- (void)setShowOutline:(BOOL)arg1;
 - (void)setShowRevisionMarksOnScreen:(BOOL)arg1;
 - (void)setTrackChanges:(BOOL)arg1;
 - (void)setVersion:(id)arg1;
@@ -174,11 +170,9 @@
 - (BOOL)showFormatting;
 - (BOOL)showInsertionsAndDeletions;
 - (BOOL)showMarkup;
+- (BOOL)showOutline;
 - (BOOL)showRevisionMarksOnScreen;
 - (id)styleSheet;
-- (id)summary;
-- (id)textBoxAtIndex:(NSInteger)arg1;
-- (NSInteger)textBoxesCount;
 - (id)theme;
 - (BOOL)trackChanges;
 - (id)version;

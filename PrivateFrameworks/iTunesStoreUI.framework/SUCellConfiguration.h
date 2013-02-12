@@ -25,6 +25,7 @@
 @property(readonly) NSUInteger numberOfLabels;
 @property(retain) id representedObject;
 
++ (void)_initializeSafeCategory;
 + (id)copyDefaultContext;
 + (float)minimumRowHeight;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;

@@ -96,13 +96,12 @@
     UIKeyboardGenericKeyView *_prevPageButton;
     NSInteger _promptTextType;
     UIScroller *_scrollView;
-    BOOL _selectedInAll;
     UIView *_shadowView;
     BOOL _showControls;
     BOOL _showScroller;
-    BOOL _showingAll;
     UIKeyboardGenericKeyView *_subviewButton;
     } _windowFrame;
+    NSInteger _windowType;
     } m_caretRect;
     BOOL m_caretShowingNow;
     NSTimer *m_caretTimer;
@@ -111,18 +110,25 @@
     BOOL m_showingCompletions;
 }
 
++ (void)_initializeSafeCategory;
 + (void)releaseSharedInstance;
 + (id)sharedInstance;
 
 - (void)_adjustFrameSizeForCandidateLines:(NSInteger)arg1;
+- (float)_adjustedCandidateFrameWidth;
 - (void)_animateInlineCandidate;
 - (void)_clearInlineCandidate;
 - (void)_fadeInlineCandidate;
 - (void)_hideBackground;
+- (id)_inlineView;
 - (BOOL)_layoutNextLine;
+- (BOOL)_layoutNextLineWithMarginLeft:(float)arg1 marginRight:(float)arg2 candidateFrameWidth:(float)arg3;
 - (void)_periodicLayoutNextPage:(id)arg1;
 - (void)_setInlineText:(id)arg1;
+- (void)_setupButton:(id)arg1;
 - (void)_showBackground;
+- (void)_showCandidateListBottom;
+- (void)_showCandidateListInline;
 - (void)_startBackgroundLayoutIfNeeded;
 - (void)_stopBackgroundLayout;
 - (void)adjustForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(NSInteger)arg2;
@@ -131,6 +137,7 @@
 - (void)candidateAcceptedAtIndex:(NSUInteger)arg1;
 - (id)candidateAtIndex:(NSUInteger)arg1;
 - (void)candidateListAcceptCandidate:(id)arg1;
+- (id)cellAtIndex:(NSUInteger)arg1;
 - (void)cellSelected:(id)arg1;
 - (void)clearLayout;
 - (void)configureKeyboard:(id)arg1;
@@ -145,12 +152,13 @@
 - (void)inlineCandidateClicked:(id)arg1;
 - (void)installLandscapeSafetyNetView;
 - (void)layout;
-- (void)layoutOneCandidateAtIndex:(NSUInteger)arg1;
+- (void)layoutWithWindowType:(NSInteger)arg1;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (BOOL)needsWebDocumentViewEventsDirectly;
 - (void)nextPageButtonSelected:(id)arg1;
 - (void)obsoleteCandidates;
+- (BOOL)obstructsView;
 - (NSInteger)orientation;
 - (void)prevPageButtonSelected:(id)arg1;
 - (void)removeLandscapeSafetyNetView;
@@ -173,6 +181,7 @@
 - (void)showNextCandidate;
 - (void)showNextPage;
 - (void)showPageAtIndex:(NSUInteger)arg1;
+- (void)showPreviousCandidate;
 - (void)showPreviousPage;
 - (NSInteger)textEffectsVisibilityLevel;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

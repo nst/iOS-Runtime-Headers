@@ -26,13 +26,13 @@
 @property double startAngle;
 @property CGPoint startPosition;
 
+- (void)_resetGestureRecognizer;
 - (double)angle;
 - (void)clearTimer;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (double)maximumDeviation;
 - (double)minimumDistance;
-- (void)reset;
 - (BOOL)restrictsToAngle;
 - (void)setAngle:(double)arg1;
 - (void)setMaximumDeviation:(double)arg1;

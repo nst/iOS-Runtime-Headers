@@ -2,12 +2,15 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSMutableDictionary, NSSQLEntity, NSSQLLimitIntermediate, NSSQLOffsetIntermediate, NSSQLOrderIntermediate, NSSQLSelectIntermediate, NSSQLWhereIntermediate, NSString;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLEntity, NSSQLGroupByIntermediate, NSSQLHavingIntermediate, NSSQLLimitIntermediate, NSSQLOffsetIntermediate, NSSQLOrderIntermediate, NSSQLSelectIntermediate, NSSQLWhereIntermediate, NSString;
 
 @interface NSSQLFetchIntermediate : NSSQLIntermediate {
     NSString *_correlationToken;
     NSString *_governingAlias;
     NSSQLEntity *_governingEntity;
+    NSSQLGroupByIntermediate *_groupByClause;
+    NSMutableSet *_groupByKeypaths;
+    NSSQLHavingIntermediate *_havingClause;
     NSMutableArray *_joinIntermediates;
     NSMutableDictionary *_joinKeypaths;
     NSSQLLimitIntermediate *_limitClause;
@@ -18,26 +21,34 @@
 }
 
 - (id)_generateJoinSQLStringInContext:(id)arg1;
-- (void)addJoinIntermediate:(id)arg1 atKeypath:(id)arg2;
+- (void)addGroupByKeypath:(id)arg1;
+- (void)addJoinIntermediate:(id)arg1 atKeypathWithComponents:(id)arg2;
 - (void)dealloc;
-- (id)fetchContext;
+- (id)fetchIntermediate;
 - (id)fetchIntermediateForKeypathExpression:(id)arg1;
-- (id)finalJoinForKeypath:(id)arg1;
+- (id)finalJoinForKeypathWithComponents:(id)arg1;
 - (id)generateSQLStringInContext:(id)arg1;
 - (id)governingAlias;
 - (id)governingAliasForKeypathExpression:(id)arg1;
 - (id)governingEntity;
 - (id)governingEntityForKeypathExpression:(id)arg1;
+- (BOOL)groupByClauseContainsKeypath:(id)arg1;
+- (id)groupByIntermediate;
+- (id)havingIntermediate;
 - (id)initWithEntity:(id)arg1 alias:(id)arg2 inScope:(id)arg3;
 - (id)initWithScope:(id)arg1;
 - (id)joinIntermediates;
 - (BOOL)keypathExpressionIsSafeLHSForIn:(id)arg1;
 - (id)limitIntermediate;
+- (void)promoteToOuterJoinAtKeypathWithComponents:(id)arg1;
+- (void)promoteToOuterJoinsAlongKeypathWithComponents:(id)arg1;
 - (void)selectDistinct;
 - (id)selectIntermediate;
 - (void)setCorrelationToken:(id)arg1;
 - (void)setGoverningAlias:(id)arg1;
 - (void)setGoverningEntity:(id)arg1;
+- (void)setGroupByIntermediate:(id)arg1;
+- (void)setHavingIntermediate:(id)arg1;
 - (void)setLimitIntermediate:(id)arg1;
 - (void)setOffsetIntermediate:(id)arg1;
 - (void)setOrderIntermediate:(id)arg1;

@@ -2,58 +2,24 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhotoDCFFileGroup, UIImage;
+@class UIImage;
 
-@interface PLCameraImage : MLPhoto {
-    unsigned int _didSetHasJPEGData : 1;
-    unsigned int _didSetDuration : 1;
-    double _duration;
-    MLPhotoDCFFileGroup *_fileGroup;
-    BOOL _hasJPEGData;
-    UIImage *_thumbnailImage;
+@interface PLCameraImage : PLPhoto {
+    unsigned int _didSetPhotoData : 1;
+    UIImage *_indexSheetImage;
+    UIImage *_previewThumbnailImage;
 }
 
-@property(readonly) NSString *title;
+@property(retain) UIImage *previewThumbnailImage;
 
-+ (NSInteger)imageIDForFileGroup:(id)arg1;
-+ (void)setMaxImageSize:(NSInteger)arg1;
-
-- (struct CGImage { }*)_createCGImageForFormat:(NSInteger)arg1 orientation:(NSInteger*)arg2 ignoringSizeCaps:(BOOL)arg3 properties:(const struct __CFDictionary {}**)arg4;
-- (void)addExtension:(id)arg1;
-- (void)checkForVideoFile;
-- (NSInteger)compare:(id)arg1;
-- (struct CGImage { }*)createFullScreenCGImageRef:(NSInteger*)arg1 properties:(const struct __CFDictionary {}**)arg2;
-- (struct CGImage { }*)createFullSizeCGImageRef:(NSInteger*)arg1;
-- (struct CGImage { }*)createFullSizeCGImageRefForImagePickerClient:(NSInteger*)arg1;
-- (struct CGImage { }*)createLowResolutionFullScreenCGImageRef;
 - (void)dealloc;
-- (void)deleteFiles;
-- (id)description;
-- (double)duration;
-- (id)fileGroup;
-- (void)fileGroupDidFinishSaving:(id)arg1 jobType:(id)arg2;
-- (void)fileGroupWillBeginSaving:(id)arg1;
-- (id)fullSizeJPEGPath;
-- (BOOL)hasFullSizeImage;
-- (BOOL)hasFullSizeJPEGData;
-- (NSUInteger)hash;
-- (id)initWithDCFFileGroup:(id)arg1;
-- (BOOL)isAudio;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isWritePending;
-- (id)pathForFullSizeImage;
-- (id)pathForPrebakedLandscapeScrubberThumbnails;
-- (id)pathForPrebakedPortraitScrubberThumbnails;
-- (id)pathForPrebakedThumbnail;
-- (id)pathForThumbnailFile;
-- (id)pathForTrimmedVideoFile;
-- (id)pathForVideoFile;
-- (id)pathForVideoPreviewFile;
-- (id)posterImagePath;
-- (void)setDate:(id)arg1;
-- (void)setThumbnailImage:(id)arg1;
-- (void)setWriteIsPending:(BOOL)arg1;
-- (id)thumbnailImage;
-- (id)title;
+- (BOOL)didSetPhotoData;
+- (BOOL)hasFullSizeImageData;
+- (id)imageWithFormat:(NSInteger)arg1;
+- (id)indexSheetImage;
+- (id)initWithPath:(id)arg1 thumbnailImage:(id)arg2;
+- (id)previewThumbnailImage;
+- (void)setPhotoData;
+- (void)setPreviewThumbnailImage:(id)arg1;
 
 @end

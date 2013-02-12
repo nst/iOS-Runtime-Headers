@@ -6,6 +6,7 @@
 }
 
 + (id)accountTypeString;
++ (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)localAccount;
 
 - (id)_URLScheme;
@@ -14,10 +15,10 @@
 - (BOOL)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
 - (void)_synchronouslyLoadListingForParent:(id)arg1;
 - (BOOL)canFetch;
+- (BOOL)canGoOffline;
+- (BOOL)deleteInPlaceForMailbox:(id)arg1;
 - (id)displayName;
-- (NSInteger)fetchSynchronously;
-- (id)initWithPath:(id)arg1;
-- (BOOL)isOffline;
+- (id)initWithLibrary:(id)arg1 properties:(id)arg2;
 - (id)mailboxPathExtension;
 - (id)mailboxUidForFileSystemPath:(id)arg1;
 - (id)password:(BOOL)arg1;
@@ -26,7 +27,6 @@
 - (void)setHostname:(id)arg1;
 - (void)setIsOffline:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
-- (void)setPath:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (Class)storeClass;
 - (id)uniqueId;

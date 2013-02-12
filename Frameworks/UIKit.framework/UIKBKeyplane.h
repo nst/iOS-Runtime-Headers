@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSString, UIKBAttributeList;
+@class NSArray, NSMutableArray, NSString, UIKBAttributeList, UIKBIdentifierList;
 
-@interface UIKBKeyplane : NSObject <NSCoding> {
+@interface UIKBKeyplane : NSObject <NSCoding, NSCopying> {
     UIKBAttributeList *m_attributes;
     NSMutableArray *m_keylayouts;
     NSArray *m_keys;
     NSString *m_name;
-    NSMutableArray *m_supportedTypes;
+    UIKBIdentifierList *m_supportedTypes;
 }
 
 @property(copy) UIKBAttributeList *attributes;
@@ -17,22 +17,25 @@
 @property(readonly) NSArray *keys;
 @property(readonly) NSArray *keysOrderedByPosition;
 @property(retain) NSString *name;
-@property(copy) NSArray *supportedTypes;
+@property(copy) UIKBIdentifierList *supportedTypes;
 
 + (id)keyplane;
 
 - (id)alternateKeyplaneName;
 - (id)attributes;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithName:(id)arg1 keylayouts:(id)arg2 attributes:(id)arg3 supportedTypes:(id)arg4;
 - (BOOL)isShiftKeyPlaneChooser;
 - (BOOL)isShiftKeyplane;
 - (id)keylayoutWithName:(id)arg1;
 - (id)keylayouts;
 - (id)keys;
+- (id)keysByKeyName:(id)arg1;
 - (id)keysOrderedByPosition;
 - (void)layoutInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)looksLike:(id)arg1;
@@ -48,5 +51,6 @@
 - (BOOL)supportsType:(NSInteger)arg1;
 - (BOOL)usesAdaptiveKeys;
 - (BOOL)usesAutoShift;
+- (BOOL)usesKeyCharging;
 
 @end

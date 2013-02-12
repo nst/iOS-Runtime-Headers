@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAMailMessage : NSObject {
+@interface DAMailMessage : NSObject <NSCoding> {
 }
 
 - (id)attachments;
@@ -10,20 +10,28 @@
 - (NSInteger)bodySize;
 - (NSInteger)bodyTruncated;
 - (id)cc;
+- (id)conversationId;
+- (id)conversationIndex;
 - (id)date;
 - (id)displayTo;
+- (void)encodeWithCoder:(id)arg1;
+- (id)folderID;
 - (id)from;
 - (NSInteger)importance;
+- (id)initWithCoder:(id)arg1;
+- (NSInteger)lastVerb;
 - (id)longID;
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;
 - (id)messageClass;
 - (BOOL)read;
+- (BOOL)readIsSet;
 - (id)remoteID;
 - (id)replyTo;
 - (id)rfc822Data;
 - (id)subject;
 - (id)threadTopic;
 - (id)to;
+- (BOOL)verbIsSet;
 
 @end

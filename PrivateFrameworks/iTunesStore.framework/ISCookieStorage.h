@@ -2,15 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
+@class NSLock;
+
 @interface ISCookieStorage : NSObject {
     struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
+    NSLock *_lock;
+    struct __CFArray { } *_sessionCookies;
 }
 
 + (id)sharedInstance;
 
+- (void)_addSessionCookies:(struct __CFArray { }*)arg1;
 - (void)_addSessionCookiesNotification:(id)arg1;
 - (id)_archivedDataForSessionOnlyCookiesFromCookies:(struct __CFArray { }*)arg1;
+- (BOOL)_cookie:(struct OpaqueCFHTTPCookie { }*)arg1 isEqualToCookie:(struct OpaqueCFHTTPCookie { }*)arg2;
 - (void)_handleSessionOnlyCookiesFromCookies:(struct __CFArray { }*)arg1;
+- (void)_restoreSessionCookies;
 - (id)archivedPropertiesDataForSessionOnlyCookies;
 - (id)copyRequestHeaderFieldsForURL:(id)arg1;
 - (void)dealloc;

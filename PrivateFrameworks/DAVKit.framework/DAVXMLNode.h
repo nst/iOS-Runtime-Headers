@@ -26,6 +26,7 @@
 - (id)dataUsingEncoding:(NSUInteger)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)hrefChildren;
 - (id)initWithName:(id)arg1 attributes:(id)arg2;
 - (BOOL)isNamed:(id)arg1;
 - (id)name;

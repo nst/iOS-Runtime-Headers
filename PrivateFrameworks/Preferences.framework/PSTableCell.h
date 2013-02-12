@@ -2,31 +2,65 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSTableCell : UIPreferencesTableCell {
-    BOOL _checked;
-    id _userInfo;
+@class PSSpecifier, UIView;
+
+@interface PSTableCell : PreferencesTableCell {
+    UIView *_bottomEtchLine;
+    BOOL _etch;
+    UIView *_topEtchLine;
+    NSInteger _type;
+    PSSpecifier *_userInfo;
 }
 
-+ (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-+ (NSInteger)cellTypeFromString:(id)arg1;
-+ (id)cellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
-+ (id)groupHeaderCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
-+ (id)segmentCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
-+ (id)sliderCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
-+ (id)staticTextCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
-+ (id)switchCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
-+ (id)textFieldCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
-+ (id)textViewCellWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
+@property NSInteger type;
 
++ (id)NewBottomEtchLineView;
++ (id)NewTopEtchLineView;
++ (id)_cellForSpecifier:(id)arg1 defaultClass:(Class)arg2 type:(NSInteger)arg3;
++ (void)_initializeSafeCategory;
++ (void)_setAccessibilityData:(id)arg1 onCell:(id)arg2;
++ (NSInteger)cellTypeFromString:(id)arg1;
++ (id)cellWithSpecifier:(id)arg1;
++ (id)groupHeaderCellWithSpecifier:(id)arg1;
++ (void)refreshCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
++ (void)refreshSliderCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
++ (void)refreshSwitchCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
++ (void)refreshTextFieldCellContentsWithSpecifier:(id)arg1 andCell:(id)arg2;
++ (id)segmentCellWithSpecifier:(id)arg1;
++ (id)sliderCellWithSpecifier:(id)arg1;
++ (id)staticTextCellWithSpecifier:(id)arg1;
++ (id)switchCellWithSpecifier:(id)arg1;
++ (id)textFieldCellWithSpecifier:(id)arg1;
++ (id)textViewCellWithSpecifier:(id)arg1;
+
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
+- (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
+- (id)_accessibilityUserTestingChildren;
 - (id)_automationID;
-- (void)cellClicked:(id)arg1;
+- (void)_updateEtchState:(BOOL)arg1;
+- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (void)accessibilityDecrement;
+- (id)accessibilityHint;
+- (void)accessibilityIncrement;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
+- (BOOL)canReload;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 specifier:(id)arg2;
+- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (id)scriptingInfoWithChildren;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setIcon:(id)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setType:(NSInteger)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
 - (id)titleTextLabel;
+- (NSInteger)type;
 - (id)userInfo;
 - (void)willMoveToSuperview:(id)arg1;
 

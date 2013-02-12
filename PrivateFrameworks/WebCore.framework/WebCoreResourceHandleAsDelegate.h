@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSURL;
+@class NSFileHandle;
 
-@interface WebCoreResourceHandleAsDelegate : NSObject <NSURLAuthenticationChallengeSender> {
-    struct ResourceHandle { NSInteger x1; struct OwnPtr<WebCore::ResourceHandleInternal> { 
+@interface WebCoreResourceHandleAsDelegate : NSObject {
+    struct ResourceHandle { int (**x1)(); NSInteger x2; struct OwnPtr<WebCore::ResourceHandleInternal> { 
             struct ResourceHandleInternal {} *m_ptr; 
     id m_converter;
     BOOL m_finishedLoadingDataIntoConverter;
-        } x2; } *m_handle;
-    NSURL *m_url;
+        } x3; } *m_handle;
+    NSFileHandle *m_quicklookFileHandle;
 }
 
-- (void)cancelAuthenticationChallenge:(id)arg1;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
@@ -26,10 +25,7 @@
 - (void)connection:(id)arg1 willStopBufferingData:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
-- (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (void)dealloc;
 - (void)detachHandle;
-- (id)initWithHandle:(struct ResourceHandle { NSInteger x1; struct OwnPtr<WebCore::ResourceHandleInternal> { struct ResourceHandleInternal {} *x_2_1_1; } x2; }*)arg1;
-- (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
+- (id)initWithHandle:(struct ResourceHandle { int (**x1)(); NSInteger x2; struct OwnPtr<WebCore::ResourceHandleInternal> { struct ResourceHandleInternal {} *x_3_1_1; } x3; }*)arg1;
 
 @end

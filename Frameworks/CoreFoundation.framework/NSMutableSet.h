@@ -5,10 +5,11 @@
 @interface NSMutableSet : NSSet {
 }
 
++ (id)nonRetainingSet;
 + (id)setWithCapacity:(NSUInteger)arg1;
 
-- (void)_replaceObject:(id)arg1;
 - (void)_setObject:(id)arg1;
+- (void)addMessageEntry:(id)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (Class)classForCoder;
@@ -20,6 +21,8 @@
 - (void)minusSet:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
+- (void)removeObjectsInArray:(id)arg1;
+- (void)replaceObject:(id)arg1;
 - (void)setSet:(id)arg1;
 - (void)unionSet:(id)arg1;
 

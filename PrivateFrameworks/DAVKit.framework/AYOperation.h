@@ -28,12 +28,11 @@
 + (BOOL)_dispatchNextOperationInQueue;
 + (void)_initCurrentThread;
 + (void)_initMainThread;
-+ (void)_launchOneThread;
 + (void)_lockForAllThreads;
 + (BOOL)_lockWaitingForOperation;
 + (void)_noLockForThread:(id)arg1;
++ (void)_queueOneBlock;
 + (void)_setCurrentOperation:(id)arg1;
-+ (void)_workerThread;
 + (id)currentOperation;
 + (void)endAllPendingOperationsOfGroup:(id)arg1 withError:(id)arg2;
 + (void)initialize;

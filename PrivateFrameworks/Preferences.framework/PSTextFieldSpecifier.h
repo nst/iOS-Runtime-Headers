@@ -6,7 +6,6 @@
 
 @interface PSTextFieldSpecifier : PSSpecifier {
     NSString *_placeholder;
-    NSString *_suffix;
     SEL bestGuess;
 }
 
@@ -15,7 +14,5 @@
 - (void)dealloc;
 - (id)placeholder;
 - (void)setPlaceholder:(id)arg1;
-- (void)setSuffix:(id)arg1;
-- (id)suffix;
 
 @end

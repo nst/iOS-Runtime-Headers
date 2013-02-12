@@ -14,9 +14,14 @@
 
 + (id)processInfo;
 
+- (void)_exitIfSuddenTerminationEnabledWithStatus:(NSInteger)arg1;
+- (void)_exitWhenSuddenTerminationEnabledWithStatus:(NSInteger)arg1;
+- (NSInteger)_suddenTerminationDisablingCount;
 - (NSUInteger)activeProcessorCount;
 - (id)arguments;
 - (void)dealloc;
+- (void)disableSuddenTermination;
+- (void)enableSuddenTermination;
 - (id)environment;
 - (id)globallyUniqueString;
 - (id)hostName;
@@ -30,6 +35,7 @@
 - (NSUInteger)processorCount;
 - (void)setArguments:(id)arg1;
 - (void)setProcessName:(id)arg1;
+- (double)systemUptime;
 - (id)userFullName;
 - (id)userHomeDirectory;
 - (id)userName;

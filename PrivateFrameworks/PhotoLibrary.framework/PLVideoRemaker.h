@@ -18,8 +18,10 @@
     NSString *_trimmedPath;
 }
 
++ (void)_initializeSafeCategory;
 + (double)maximumDurationForTrimMode:(NSInteger)arg1;
 
+- (void)_didEndRemakingWithTemporaryPath:(id)arg1;
 - (void)_remakerDidFinish:(id)arg1;
 - (void)_removeProgressTimer;
 - (void)_resetProgressTimer;

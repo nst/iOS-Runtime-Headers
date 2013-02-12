@@ -12,11 +12,17 @@
 @property NSInteger activityIndicatorViewStyle;
 @property BOOL hidesWhenStopped;
 
++ (void)_initializeSafeCategory;
 + (void)_loadResourcesForStyle:(NSInteger)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForStyle:(NSInteger)arg1;
 + (struct CGSize { float x1; float x2; })size;
 
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (void)_setUpAnimation;
+- (void)_tearDownAnimation;
+- (id)accessibilityValue;
 - (NSInteger)activityIndicatorViewStyle;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -24,6 +30,7 @@
 - (id)initWithActivityIndicatorStyle:(NSInteger)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
 - (BOOL)isAnimating;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)setActivityIndicatorViewStyle:(NSInteger)arg1;

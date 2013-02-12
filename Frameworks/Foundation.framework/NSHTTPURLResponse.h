@@ -19,7 +19,6 @@
 - (id)_peerCertificateChain;
 - (struct __SecTrust { }*)_peerTrust;
 - (void)_setPeerTrust:(struct __SecTrust { }*)arg1;
-- (id)_webcore_MIMEType;
 - (id)allHeaderFields;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

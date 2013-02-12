@@ -13,5 +13,11 @@
 + (id)readLineEndWithType:(NSInteger)arg1 width:(NSInteger)arg2 length:(NSInteger)arg3;
 + (NSInteger)readPresetDashStyle:(NSInteger)arg1;
 + (id)readStrokeFromShapeBaseManager:(id)arg1 colorPalette:(id)arg2;
++ (NSInteger)writeCapStyle:(NSInteger)arg1;
++ (NSInteger)writeCompoundType:(NSInteger)arg1;
++ (NSInteger)writeLineEndLength:(NSInteger)arg1;
++ (NSInteger)writeLineEndType:(NSInteger)arg1;
++ (NSInteger)writeLineEndWidth:(NSInteger)arg1;
++ (NSInteger)writePresetDashStyle:(NSInteger)arg1;
 
 @end

@@ -6,12 +6,12 @@
    See Warning(s) below.
  */
 
-@class NSMapTable;
+@class TSUPointerKeyDictionary;
 
 @interface EDKeyedCollection : EDCollection {
      /* Encoded args for previous method: B12@0:4@8 */
      /* Encoded args for previous method: B8@0:4 */
-    NSMapTable *mMap;
+    TSUPointerKeyDictionary *mMap;
 }
 
 - (NSUInteger)addObject:(id)arg1;
@@ -21,7 +21,6 @@
 - (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isObjectInMap:(id)arg1;
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)isOverwritingKeyOK;
-- (NSInteger)keyFromObject:(id)arg1;
 - (id)objectWithKey:(NSInteger)arg1;
 - (void)removeAllObjects;
 - (void)removeFromMap:(id)arg1;

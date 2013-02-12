@@ -4,23 +4,25 @@
 
 @interface PLDiskController : NSObject {
     struct { 
-        unsigned int dontWarnOfDiskSpace : 1; 
+        unsigned int needToCheckDiskSpace : 1; 
         unsigned int probablyLowOnDiskSpace : 1; 
-        unsigned int didSetFreeDiskSpaceThreshold : 1; 
-        unsigned int extra : 29; 
+        unsigned int isPhotosApp : 1; 
+        unsigned int extra : 28; 
+    unsigned long _bytesRequiredForPhoto;
     } _flags;
-    long long _freeDiskSpaceThreshold;
     double _lastFSCheck;
 }
 
++ (long long)diskSpaceAvailableForUse;
++ (long long)freeDiskSpaceThreshold;
 + (id)sharedInstance;
 
-- (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
-- (long long)diskSpaceAvailableForUse;
-- (long long)freeDiskSpaceThreshold;
+- (void)_actuallyUpdateCookie;
+- (void)_diskSpaceDidBecomeLow;
+- (void)_updateCookie;
+- (void)dealloc;
 - (BOOL)hasEnoughDiskToTakePicture;
 - (id)init;
-- (void)noteFileSystemChanged:(id)arg1;
-- (void)presentDiskSpaceWarningIfNecessary:(BOOL)arg1;
+- (void)updateAvailableDiskSpace;
 
 @end

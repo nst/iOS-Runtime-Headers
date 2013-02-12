@@ -2,31 +2,27 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
+@class MFMessageInfo;
+
 @interface MailMessage : Message {
-    struct { 
-        unsigned int colorHasBeenEvaluated : 1; 
-        unsigned int colorWasSetManually : 1; 
-        unsigned int redColor : 8; 
-        unsigned int greenColor : 8; 
-        unsigned int blueColor : 8; 
-        unsigned int loadingBody : 1; 
-        unsigned int unused : 5; 
-    } _flags;
-    NSUInteger _messageFlags;
+    MFMessageInfo *_info;
+    unsigned long long _messageFlags;
+    unsigned long long _modSequenceNumber;
     unsigned char _subjectPrefixLength;
 }
+
+@property unsigned long long modSequenceNumber;
 
 + (NSUInteger)displayablePriorityForPriority:(NSInteger)arg1;
 + (id)forwardedMessagePrefixWithSpacer:(BOOL)arg1;
 + (id)messageWithRFC822Data:(id)arg1;
 + (id)replyPrefixWithSpacer:(BOOL)arg1;
-+ (void)setMessageClassForStore:(id)arg1;
 + (NSUInteger)validatePriority:(NSInteger)arg1;
 
 - (id)URL;
 - (id)account;
-- (BOOL)colorHasBeenEvaluated;
-- (id)init;
+- (id)copyMessageInfo;
+- (void)dealloc;
 - (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
 - (id)loadMeetingData;
 - (id)loadMeetingExternalID;
@@ -35,17 +31,17 @@
 - (void)markAsNotViewed;
 - (void)markAsReplied;
 - (void)markAsViewed;
-- (unsigned long)messageFlags;
+- (unsigned long long)messageFlags;
 - (id)messageStore;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 8; unsigned int x4 : 8; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 5; })moreMessageFlags;
+- (unsigned long long)modSequenceNumber;
 - (unsigned short)numberOfAttachments;
 - (id)originalMailboxURL;
 - (NSInteger)priority;
 - (id)remoteMailboxURL;
-- (void)setColorHasBeenEvaluated:(BOOL)arg1;
-- (void)setMessageFlags:(unsigned long)arg1;
-- (void)setMessageFlagsWithoutCommitting:(unsigned long)arg1;
-- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 sender:(id)arg4 dateReceivedTimeIntervalSince1970:(double)arg5 dateSentTimeIntervalSince1970:(double)arg6 messageIDHeaderDigest:(id)arg7 inReplyToHeaderDigest:(id)arg8 summary:(id)arg9;
+- (void)setMessageFlags:(unsigned long long)arg1;
+- (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
+- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHeaderDigest:(id)arg8 inReplyToHeaderDigest:(id)arg9 conversationID:(id)arg10 summary:(id)arg11;
+- (void)setModSequenceNumber:(unsigned long long)arg1;
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setPriorityFromHeaders:(id)arg1;
 - (void)setSubject:(id)arg1;

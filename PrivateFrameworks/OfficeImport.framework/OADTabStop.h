@@ -3,13 +3,14 @@
  */
 
 @interface OADTabStop : NSObject {
-    NSInteger mAlign;
+    unsigned char mAlign;
     NSInteger mPosition;
 }
 
 - (NSInteger)align;
-- (NSUInteger)position;
+- (NSUInteger)hash;
+- (NSInteger)position;
 - (void)setAlign:(NSInteger)arg1;
-- (void)setPosition:(NSUInteger)arg1;
+- (void)setPosition:(NSInteger)arg1;
 
 @end

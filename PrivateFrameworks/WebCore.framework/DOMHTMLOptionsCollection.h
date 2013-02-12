@@ -6,6 +6,7 @@
 }
 
 @property NSUInteger length;
+@property NSInteger selectedIndex;
 
 - (void)add:(id)arg1 index:(NSUInteger)arg2;
 - (void)dealloc;

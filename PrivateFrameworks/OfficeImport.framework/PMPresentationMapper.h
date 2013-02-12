@@ -2,27 +2,36 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMArchiveManager, NSMutableArray, NSString, PDPresentation;
+@class CMArchiveManager, NSMutableArray, NSString, OIXMLDocument, OIXMLElement, PDPresentation;
 
 @interface PMPresentationMapper : CMMapper <CMMapperRoot> {
     CMArchiveManager *mArchiver;
+    OIXMLElement *mBodyElement;
+    NSUInteger mCurrentSlide;
+    BOOL mHasPushedFirstSlides;
+    NSUInteger mNextCommit;
     PDPresentation *mPresentation;
     NSString *mResourceUrlPrefix;
     NSString *mResourceUrlProtocol;
     NSMutableArray *mSlideGuids;
     NSMutableArray *mSlideNames;
+    float mSlideOriginY;
     NSInteger mWidth;
+    OIXMLDocument *mXhtmlDoc;
 }
 
+- (void)_pushEmptySlideWithMessage:(id)arg1;
 - (id)archiver;
 - (id)blipAtIndex:(NSUInteger)arg1;
 - (void)dealloc;
 - (id)documentTitle;
+- (void)finishMappingWithState:(id)arg1;
 - (id)initWithPDPresentation:(id)arg1 archiver:(id)arg2;
 - (void)mapDefaultCssStylesAt:(id)arg1;
-- (void)mapWithState:(id)arg1;
+- (void)mapElement:(id)arg1 atIndex:(NSUInteger)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
 - (void)setHtmlDocumentSizeInArchiver;
 - (struct CGSize { float x1; float x2; })slideSize;
+- (void)startMappingWithState:(id)arg1;
 
 @end

@@ -10,7 +10,7 @@
         int (*release)(); 
         int (*describe)(); 
     } _callBacks;
-    struct __CFSet { } *_table;
+    struct __CFBasicHash { } *_ht;
 }
 
 - (void)addObject:(id)arg1;
@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)description;
 - (void*)getItem:(const void*)arg1;
-- (NSUInteger)getKeys:(const void**)arg1;
+- (void)getKeys:(const void**)arg1 count:(NSUInteger*)arg2;
 - (NSUInteger)hash;
 - (id)init;
 - (void)insertItem:(const void*)arg1;

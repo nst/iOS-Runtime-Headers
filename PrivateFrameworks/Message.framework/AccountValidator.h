@@ -26,9 +26,9 @@
 - (BOOL)_incomingServerValid;
 - (id)_ispAccountInfo;
 - (BOOL)_outgoingServerValid;
-- (void)_updateValidationStatusForAccount:(id)arg1 status:(id)arg2;
 - (void)_validateAccount:(id)arg1;
-- (void)_validateAccountInBackground:(id)arg1;
+- (void)_validateAccountInBackground:(id)arg1 withFallbacks:(BOOL)arg2;
+- (void)_validateAccountWithoutFallbacks:(id)arg1;
 - (id)account;
 - (BOOL)accountIsValid;
 - (BOOL)accountSupportsSSL;
@@ -40,5 +40,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)stop;
 - (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
+- (void)validateAccountWithoutFallbacks:(id)arg1;
 
 @end

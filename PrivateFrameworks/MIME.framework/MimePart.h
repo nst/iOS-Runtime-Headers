@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFData, MimePart, NSData, NSMutableDictionary, NSString, PartialNetworkData;
+@class MFData, MFPartialNetworkData, MimePart, NSData, NSMutableDictionary, NSString;
 
-@interface MimePart : WRObject <WeakReferenceHolder> {
+@interface MimePart : MFWeakObject <MFWeakReferenceHolder> {
     struct _NSRange { 
         NSUInteger location; 
         NSUInteger length; 
@@ -15,7 +15,7 @@
     MimePart *_nextPart;
     NSMutableDictionary *_otherIvars;
     id _parentOrBody;
-    PartialNetworkData *_partialData;
+    MFPartialNetworkData *_partialData;
     } _range;
     NSString *_subtype;
     NSString *_type;
@@ -26,7 +26,6 @@
 + (BOOL)isRecognizedClassForContent:(id)arg1;
 + (BOOL)parseContentTypeHeader:(id)arg1 type:(id*)arg2 subtype:(id*)arg3;
 
-- (id)YahooXMLContent;
 - (id)_fullMimeTypeEvenInsideAppleDouble;
 - (id)_partThatIsAttachment;
 - (BOOL)_shouldContinueDecodingProcess;

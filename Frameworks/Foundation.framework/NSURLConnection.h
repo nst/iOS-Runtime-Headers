@@ -9,8 +9,8 @@
 @class NSURLConnectionInternal;
 
 @interface NSURLConnection : NSObject <NSURLAuthenticationChallengeSender> {
-     /* Encoded args for previous method: B12@0:4^{_CFURLProtectionSpace=}8 */
      /* Encoded args for previous method: v12@0:4B8 */
+     /* Encoded args for previous method: B12@0:4^{_CFURLProtectionSpace=}8 */
     NSURLConnectionInternal *_internal;
 }
 
@@ -43,7 +43,6 @@
 - (void)dealloc;
 - (BOOL)defersCallbacks;
 - (id)description;
-- (void)finalize;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2 priority:(float)arg3;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;

@@ -7,6 +7,7 @@
 
 @property(copy) NSString *scrollMode;
 
++ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
 
 - (void)_scrollPoint:(struct CGPoint { float x1; float x2; })arg1 fromLayer:(id)arg2;

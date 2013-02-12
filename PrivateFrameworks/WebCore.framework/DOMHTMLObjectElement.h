@@ -62,5 +62,6 @@
 - (id)useMap;
 - (NSInteger)vspace;
 - (id)width;
+- (BOOL)willValidate;
 
 @end

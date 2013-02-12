@@ -23,23 +23,23 @@
 - (BOOL)argumentsRetained;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)debugDescription;
-- (void)finalize;
 - (void)getArgument:(void*)arg1 atIndex:(NSInteger)arg2;
 - (void)getReturnValue:(void*)arg1;
 - (id)init;
 - (void)invoke;
+- (void)invokeSuper;
 - (void)invokeWithTarget:(id)arg1;
 - (id)methodSignature;
 - (void)mf_invokeWithObject:(id)arg1;
+- (BOOL)mf_shouldLogInvocation;
 - (void)retainArguments;
 - (SEL)selector;
 - (void)setArgument:(void*)arg1 atIndex:(NSInteger)arg2;
 - (void)setReturnValue:(void*)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;
-- (BOOL)shouldLogInvocation;
 - (id)target;
+- (BOOL)wantsReturnValue;
 - (id)withProtocol:(id)arg1;
 
 @end

@@ -30,7 +30,7 @@
 - (id)initWithUnsignedLong:(unsigned long)arg1;
 - (id)initWithUnsignedLongLong:(unsigned long long)arg1;
 - (id)initWithUnsignedShort:(unsigned short)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
 

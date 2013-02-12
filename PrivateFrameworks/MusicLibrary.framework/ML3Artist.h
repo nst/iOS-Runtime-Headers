@@ -9,7 +9,7 @@
 + (id)defaultOrderingProperties;
 + (void)initialize;
 + (id)joinClauseForProperty:(id)arg1;
-+ (id)orderingCollationForProperty:(id)arg1;
++ (id)predisambiguatedProperties;
 + (id)sectionPropertyForProperty:(id)arg1;
 
 @end

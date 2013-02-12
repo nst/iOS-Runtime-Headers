@@ -9,7 +9,10 @@
     BOOL _showingPlaceholder;
 }
 
++ (void)_initializeSafeCategory;
+
 - (id)_placeholder;
+- (id)accessibilityLabel;
 - (void)dealloc;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPlaceholderText:(id)arg1;

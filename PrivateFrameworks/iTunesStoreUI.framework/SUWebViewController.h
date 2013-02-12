@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISItem, NSNumber, NSString, NSURL, SUStructuredPage, SUTableViewController, SUWebView;
+@class NSURL, SUDelayedNavigationItem, SUItem, SUObjectPool, SUStorePageProtocol, SUStructuredPage, SUTableViewController, SUWebView;
 
 @interface SUWebViewController : SUViewController <SUWebViewDelegate> {
-    NSString *_copyright;
-    NSNumber *_itemIdentifierToSelect;
-    ISItem *_rootItem;
-    NSString *_rootSectionIdentifier;
+    SUDelayedNavigationItem *_delayedNavigationItem;
+    BOOL _hasEverAppeared;
+    NSInteger _lastKnownOrientation;
+    SUObjectPool *_objectPool;
+    SUItem *_rootItem;
+    NSInteger _rotationState;
+    NSInteger _scheduledOrientation;
+    SUStorePageProtocol *_storePageProtocol;
     NSInteger _style;
     SUStructuredPage *_trackList;
     SUTableViewController *_trackListController;
@@ -17,38 +21,71 @@
     SUWebView *_webView;
 }
 
+@property(retain,readonly) SUWebView *webView;
 @property NSInteger style;
 @property BOOL viewIsReady;
 
++ (void)_initializeSafeCategory;
+
+- (void)_addPlaceholderBackgroundView;
+- (void)_applyScriptProperties:(id)arg1;
 - (void)_handleProtocol:(id)arg1;
 - (void)_handleRootObject:(id)arg1;
 - (void)_handleTrackList:(id)arg1;
-- (void)_priceButtonAction:(id)arg1;
+- (BOOL)_orientationAffectsWebViewFrame;
+- (void)_performScheduledRotation;
+- (id)_placeholderBackgroundView;
+- (void)_reloadObjectPool;
+- (void)_reloadPlaceholderBackgroundView;
 - (void)_reloadUI;
+- (void)_removePlaceholderBackgroundView;
+- (void)_scheduleRotationToInterfaceOrientation:(NSInteger)arg1;
 - (void)_selectTrackListItemWithIdentifier:(id)arg1;
-- (void)_setCopyright:(id)arg1;
+- (void)_sendOrientationWillChangeToInterfaceOrientation:(NSInteger)arg1;
+- (void)_setExistingNavigationItem:(id)arg1;
 - (void)_setTrackListController:(id)arg1;
-- (void)_showPurchaseConfirmationForButton:(id)arg1;
-- (void)_touchCaptureAction:(id)arg1;
 - (void)_updateTrackListRootItem;
-- (id)_webView;
-- (id)createDataProviderToProcessProtocol;
-- (id)createViewControllerForTrackList:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_webViewFrameForOrientation:(NSInteger)arg1;
+- (unsigned long long)accessibilityTraits;
+- (id)copyDefaultScriptProperties;
+- (id)copyObjectForScriptFromPoolWithClass:(Class)arg1;
+- (id)copyScriptProperties;
 - (void)dealloc;
+- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
+- (void)invalidateForMemoryPurge;
+- (void)keyboardDidHideWithInfo:(id)arg1;
+- (void)keyboardWillShowWithInfo:(id)arg1;
 - (void)loadView;
+- (struct CGSize { float x1; float x2; })minimumViewSize;
+- (id)navigationItemForScriptInterface;
+- (id)newDataProviderToProcessProtocol;
+- (id)newViewControllerForTrackList:(id)arg1;
 - (void)operationFinished:(id)arg1;
+- (id)parentViewControllerForWebView:(id)arg1;
+- (void)parentViewControllerHierarchyDidChange;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
-- (id)rootSectionIdentifier;
+- (void)setScriptProperties:(id)arg1;
+- (void)setStorePageProtocol:(id)arg1;
 - (void)setStyle:(NSInteger)arg1;
 - (void)setViewIsReady:(BOOL)arg1;
+- (id)storePageProtocol;
+- (void)storePageProtocolDidChange;
 - (NSInteger)style;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (BOOL)viewIsReady;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (BOOL)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webView:(id)arg1 foundPropertyList:(id)arg2 ofType:(NSInteger)arg3;
 - (void)webView:(id)arg1 performPurchaseAnimationWithView:(id)arg2;
 - (void)webView:(id)arg1 receivedEventOfType:(NSInteger)arg2 userInfo:(id)arg3;
-- (id)webView:(id)arg1 viewForWidget:(id)arg2;
 - (void)webView:(id)arg1 willInjectScriptObject:(id)arg2;
+- (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
+- (void)webViewDidStartLoad:(id)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(NSInteger)arg2;
 
 @end

@@ -30,10 +30,10 @@
 - (id)initWithDefaultPath;
 - (id)initWithPath:(id)arg1;
 - (void)insertDistribution:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg1 forKey:(id)arg2 withDaysSince1970:(NSInteger)arg3;
-- (void)insertScalar:(NSInteger)arg1 forKey:(id)arg2 withDaysSince1970:(NSInteger)arg3;
-- (NSInteger)scalar:(NSInteger*)arg1 forKey:(id)arg2 withDaysSince1970:(NSInteger)arg3;
+- (void)insertScalar:(long long)arg1 forKey:(id)arg2 withDaysSince1970:(NSInteger)arg3;
+- (NSInteger)scalar:(long long*)arg1 forKey:(id)arg2 withDaysSince1970:(NSInteger)arg3;
 - (BOOL)scalarsForKeyPrefix:(id)arg1 minDaysSince1970:(NSInteger)arg2 maxDaysSince1970:(NSInteger)arg3 withConsumer:(id)arg4;
 - (void)updateDistribution:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg1 forID:(NSInteger)arg2;
-- (void)updateScalar:(NSInteger)arg1 forID:(NSInteger)arg2;
+- (void)updateScalar:(long long)arg1 forID:(NSInteger)arg2;
 
 @end

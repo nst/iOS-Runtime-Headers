@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIActionSheetDelegate>, NSMutableArray, UILabel, UIToolbar, UIView, UIWindow;
+@class <UIActionSheetDelegate>, NSMutableArray, UILabel, UIPopoverController, UIToolbar, UIView, UIWindow;
 
 @interface UIActionSheet : UIView {
     struct { 
@@ -30,6 +30,8 @@
         unsigned int showMinTableContent : 1; 
         unsigned int bodyTextTruncated : 1; 
         unsigned int orientation : 3; 
+        unsigned int popupFromPoint : 1; 
+        unsigned int inPopover : 1; 
         unsigned int delegateBodyTextAlignment : 1; 
         unsigned int delegateClickedButtonAtIndex : 1; 
         unsigned int delegateClickedButtonAtIndex2 : 1; 
@@ -43,6 +45,11 @@
         unsigned int delegateWillDismiss2 : 1; 
         unsigned int delegateDidDismiss : 1; 
         unsigned int delegateDidDismiss2 : 1; 
+        unsigned int dontCallDismissDelegate : 1; 
+        unsigned int useAutomaticKB : 1; 
+        unsigned int twoColumnsLayoutMode : 7; 
+        unsigned int shouldHandleFirstKeyUpEvent : 1; 
+        unsigned int cancelWhenDoneAnimating : 1; 
     NSInteger _actionSheetStyle;
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
@@ -59,6 +66,7 @@
     UIView *_keyboard;
     } _modalViewFlags;
     UIWindow *_originalWindow;
+    UIPopoverController *_popoverController;
     float _startY;
     UILabel *_subtitleLabel;
     NSInteger _suspendTag;
@@ -78,9 +86,12 @@
 @property(readonly) NSInteger numberOfButtons;
 @property(getter=isVisible,readonly) BOOL visible;
 
++ (void)_initializeSafeCategory;
 + (id)_popupAlertBackground;
 + (struct CGSize { float x1; float x2; })minimumSize;
 
+- (void)_actionSheetHidingAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_actionSheetRepresentingAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitle:(id)arg1;
 - (void)_adjustLabelFontSizes;
@@ -93,6 +104,7 @@
 - (void)_buttonClicked:(id)arg1;
 - (float)_buttonHeight;
 - (BOOL)_canShowAlerts;
+- (void)_cancelAnimated:(BOOL)arg1;
 - (void)_cleanupAfterPopupAnimation;
 - (void)_createBodyTextLabelIfNeeded;
 - (void)_createSubtitleLabelIfNeeded;
@@ -100,9 +112,17 @@
 - (void)_createTitleLabelIfNeeded;
 - (NSInteger)_currentOrientation;
 - (id)_dimView;
+- (id)_dimViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_dimsBackground;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)_hideActionSheetInsidePopOverAnimated:(BOOL)arg1;
+- (void)_hideHostingPopOverViewAnimated:(BOOL)arg1;
 - (BOOL)_isAnimating;
+- (BOOL)_isHostedByPopOver;
+- (BOOL)_isInsidePopOverContent;
+- (void)_keyboardWillHide:(id)arg1;
+- (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
 - (void)_layoutPopupAlertWithOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (float)_maxHeight;
@@ -110,28 +130,41 @@
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1;
 - (void)_performPopup:(BOOL)arg1;
 - (void)_popoutAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_popoverHiddingAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_popoverRepresentationAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_presentFromBarButtonItem:(id)arg1 orFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(NSInteger)arg4 allowInteractionWithViews:(id)arg5 backgroundStyle:(NSInteger)arg6 animated:(BOOL)arg7;
+- (void)_presentPopoverInCenterOfWindowForView:(id)arg1;
 - (void)_presentSheetFromView:(id)arg1 above:(BOOL)arg2;
+- (void)_presentSheetStartingFromYCoordinate:(double)arg1 inView:(id)arg2;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1;
+- (id)_relinquishPopoverController;
 - (void)_removeAlertWindowOrShowAnOldAlert;
 - (void)_repopup;
+- (void)_repopupNoAnimation;
+- (void)_representActionSheetInsidePopOverAnimated:(BOOL)arg1;
+- (void)_representHostingPopOverViewAnimated:(BOOL)arg1;
 - (void)_rotatingAnimationDidStop:(id)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(NSInteger)arg1;
 - (void)_setupInitialFrame;
 - (void)_setupTitleStyle;
+- (BOOL)_shouldOrderInAutomaticKeyboard;
 - (void)_slideSheetOut:(BOOL)arg1;
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
 - (float)_titleHorizontalInset;
 - (id)_titleLabel;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
+- (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
 - (NSInteger)actionSheetStyle;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
+- (NSInteger)addButtonWithTitle:(id)arg1 tag:(id)arg2;
 - (NSInteger)addButtonWithTitle:(id)arg1;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (NSInteger)alertSheetStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
+- (BOOL)becomeFirstResponder;
 - (BOOL)blocksInteraction;
 - (NSInteger)bodyMaxLineCount;
 - (id)bodyText;
@@ -139,6 +172,7 @@
 - (NSInteger)buttonCount;
 - (id)buttonTitleAtIndex:(NSInteger)arg1;
 - (id)buttons;
+- (BOOL)canBecomeFirstResponder;
 - (NSInteger)cancelButtonIndex;
 - (id)context;
 - (void)dealloc;
@@ -163,17 +197,24 @@
 - (void)layout;
 - (void)layoutAnimated:(BOOL)arg1;
 - (id)message;
+- (struct CGSize { float x1; float x2; })minimumSize;
 - (NSInteger)numberOfButtons;
 - (NSInteger)numberOfLinesInTitle;
 - (NSInteger)numberOfRows;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)popupAlertAnimated:(BOOL)arg1 atOffset:(float)arg2;
 - (void)popupAlertAnimated:(BOOL)arg1;
+- (void)presentFromBarButtonItem:(id)arg1 direction:(NSInteger)arg2 allowInteractionWithViews:(id)arg3 backgroundStyle:(NSInteger)arg4 animated:(BOOL)arg5;
+- (void)presentFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(NSInteger)arg3 allowInteractionWithViews:(id)arg4 backgroundStyle:(NSInteger)arg5 animated:(BOOL)arg6;
 - (void)presentSheetFromAboveView:(id)arg1;
 - (void)presentSheetFromBehindView:(id)arg1;
 - (void)presentSheetFromButtonBar:(id)arg1;
+- (void)presentSheetInContentView:(id)arg1;
+- (void)presentSheetInPopoverView:(id)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (void)presentSheetToAboveView:(id)arg1;
 - (BOOL)requiresPortraitOrientation;
+- (BOOL)resignFirstResponder;
 - (BOOL)runsModal;
 - (void)setActionSheetStyle:(NSInteger)arg1;
 - (void)setAlertSheetStyle:(NSInteger)arg1;
@@ -189,6 +230,7 @@
 - (void)setDestructiveButtonIndex:(NSInteger)arg1;
 - (void)setDimView:(id)arg1;
 - (void)setDimsBackground:(BOOL)arg1;
+- (void)setInPopover:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNumberOfRows:(NSInteger)arg1;
 - (void)setRunsModal:(BOOL)arg1;
@@ -199,6 +241,11 @@
 - (void)setTaglineText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleMaxLineCount:(NSInteger)arg1;
+- (void)setTwoColumnsLayoutMode:(NSInteger)arg1;
+- (void)setUseTwoColumnsButtonsLayout:(BOOL)arg1;
+- (void)showFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
+- (void)showFromBarButtonItem:(id)arg1;
+- (void)showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (void)showFromTabBar:(id)arg1;
 - (void)showFromToolbar:(id)arg1;
 - (void)showInView:(id)arg1;
@@ -210,11 +257,14 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (id)tagForButtonIndex:(NSInteger)arg1;
 - (id)textField;
 - (id)textFieldAtIndex:(NSInteger)arg1;
 - (NSInteger)textFieldCount;
 - (id)title;
 - (NSInteger)titleMaxLineCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
+- (NSInteger)twoColumnsLayoutMode;
+- (BOOL)useTwoColumnsButtonsLayout;
 
 @end

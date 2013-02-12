@@ -10,11 +10,12 @@
     NSInteger _trackID;
 }
 
-+ (id)createOffTrack;
++ (id)copyOffTrack;
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
 
 - (NSInteger)compare:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)humanReadableLanguage;
 - (id)initWithDictionary:(id)arg1;
 - (id)languageCode;

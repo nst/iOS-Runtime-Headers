@@ -20,7 +20,6 @@
 - (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithLength:(NSUInteger)arg1;
 - (void)mf_appendCString:(const char *)arg1;
-- (void)mf_appendQuotedPrintableDataForHeaderBytes:(const char *)arg1 length:(NSUInteger)arg2;
 - (void)mf_appendRFC2231CompliantValue:(id)arg1 forKey:(id)arg2;
 - (void)mf_convertNetworkLineEndingsToUnix;
 - (void)mf_convertNetworkLineEndingsToUnixInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;

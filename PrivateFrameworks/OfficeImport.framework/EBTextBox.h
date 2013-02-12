@@ -7,11 +7,9 @@
  */
 
 @interface EBTextBox : NSObject {
-     /* Encoded args for previous method: @16@0:4^{XlGraphicsInfo=^^?isBBBB{ChVector<XlGraphicsInfo::XlObjData*>=^^{XlObjData}^^{XlObjData}III}B^{XlString}iiiBSSS*IIBIIiiB^{XlString}}8@12 */
-     /* Encoded args for previous method: v20@0:4@8^{XlGraphicsInfo=^^?isBBBB{ChVector<XlGraphicsInfo::XlObjData*>=^^{XlObjData}^^{XlObjData}III}B^{XlString}iiiBSSS*IIBIIiiB^{XlString}}12@16 */
+     /* Encoded args for previous method: @16@0:4^{XlGraphicsInfo=^^?isBBBB{ChVector<XlGraphicsInfo::XlObjData*>=^^{XlObjData}^^{XlObjData}III}Bi^{XlString}iiiBSSS*IIBIIiiB^{XlString}}8@12 */
 }
 
-+ (id)edTextBoxFromXlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); NSInteger x2; short x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; void*x9; struct XlString {} *x10; NSInteger x11; NSInteger x12; NSInteger x13; void*x14; unsigned short x15; unsigned short x16; unsigned short x17; char *x18; NSUInteger x19; NSUInteger x20; void*x21; NSUInteger x22; NSUInteger x23; NSInteger x24; NSInteger x25; void*x26; struct XlString {} *x27; }*)arg1 edResources:(id)arg2;
-+ (void)writeTextBox:(id)arg1 toXlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); NSInteger x2; short x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; void*x9; struct XlString {} *x10; NSInteger x11; NSInteger x12; NSInteger x13; void*x14; unsigned short x15; unsigned short x16; unsigned short x17; char *x18; NSUInteger x19; NSUInteger x20; void*x21; NSUInteger x22; NSUInteger x23; NSInteger x24; NSInteger x25; void*x26; struct XlString {} *x27; }*)arg2 edResources:(id)arg3;
++ (id)edTextBoxFromXlGraphicsInfo:(struct XlGraphicsInfo { int (**x1)(); NSInteger x2; short x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; struct ChVector<XlGraphicsInfo::XlObjData*> { struct XlObjData {} **x_8_1_1; struct XlObjData {} **x_8_1_2; NSUInteger x_8_1_3; NSUInteger x_8_1_4; NSUInteger x_8_1_5; } x8; void*x9; NSInteger x10; struct XlString {} *x11; NSInteger x12; NSInteger x13; NSInteger x14; void*x15; unsigned short x16; unsigned short x17; unsigned short x18; char *x19; NSUInteger x20; NSUInteger x21; void*x22; NSUInteger x23; NSUInteger x24; NSInteger x25; NSInteger x26; void*x27; struct XlString {} *x28; }*)arg1 edResources:(id)arg2;
 
 @end

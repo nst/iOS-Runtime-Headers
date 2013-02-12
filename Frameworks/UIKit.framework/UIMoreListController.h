@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIMoreListCellLayoutManager, UITableView;
+@class NSArray, UIBarButtonItem, UIMoreListCellLayoutManager, UITableView;
 
 @interface UIMoreListController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     BOOL _allowsCustomizing;
     UIMoreListCellLayoutManager *_layoutManager;
+    UIBarButtonItem *_moreEditButtonItem;
     NSArray *_moreViewControllers;
     UITableView *_table;
 }

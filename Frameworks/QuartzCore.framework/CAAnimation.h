@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CAAnimation : NSObject <NSCopying, CAMediaTiming, CAAction, NSMutableCopying, CAPropertyInfo> {
-    struct _CAAttrList { } *_attr;
+@interface CAAnimation : NSObject <NSMutableCopying, CAPropertyInfo, NSCoding, NSCopying, CAMediaTiming, CAAction> {
+    void *_attr;
     NSUInteger _flags;
 }
 
@@ -26,7 +26,10 @@
 
 + (int (*)())CA_getterForType:(NSInteger)arg1;
 + (int (*)())CA_setterForType:(NSInteger)arg1;
++ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (BOOL)CA_encodePropertyConditionally:(NSUInteger)arg1 type:(NSInteger)arg2;
 + (id)animation;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (id)properties;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
@@ -43,10 +46,11 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
-- (void)didChangeValueForKey:(id)arg1;
 - (double)duration;
+- (void)encodeWithCoder:(id)arg1;
 - (id)fillMode;
 - (double)frameInterval;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabled;
 - (BOOL)isRemovedOnCompletion;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -71,12 +75,12 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (BOOL)shouldArchiveValueForKey:(id)arg1;
 - (float)speed;
 - (double)timeOffset;
 - (id)timingFunction;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
-- (void)willChangeValueForKey:(id)arg1;
 
 @end

@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSMutableSet, ObjectCache;
+@class MFObjectCache, NSMutableSet;
 
-@interface MessageStore : WRObject {
+@interface MessageStore : MFWeakObject {
     union { 
         struct { 
-            ObjectCache *_headerDataCache; 
-            ObjectCache *_headerCache; 
-            ObjectCache *_bodyDataCache; 
-            ObjectCache *_bodyCache; 
+            MFObjectCache *_headerDataCache; 
+            MFObjectCache *_headerCache; 
+            MFObjectCache *_bodyDataCache; 
+            MFObjectCache *_bodyCache; 
         } objectCaches; 
         struct { 
             struct __CFDictionary {} *_headerDataCache; 
@@ -31,30 +31,23 @@
 - (id)_cachedHeaderDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(BOOL)arg3 partial:(BOOL*)arg4;
-- (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (id)_fetchBodyForMessage:(id)arg1 updateFlags:(BOOL)arg2;
 - (id)_fetchBodyForMessage:(id)arg1;
 - (void)_flushAllCaches;
+- (void)_flushAllCachesLocking:(BOOL)arg1;
 - (void)_flushAllMessageData;
 - (id)_setOrGetBody:(id)arg1 forMessage:(id)arg2 updateFlags:(BOOL)arg3;
-- (id)_setOrGetBody:(id)arg1 forMessage:(id)arg2;
-- (id)bestAlternativeForMessage:(id)arg1 inPart:(id)arg2;
+- (id)additionalHeadersForForwardOfMessage:(id)arg1;
+- (id)additionalHeadersForReplyOfMessage:(id)arg1;
+- (id)bestAlternativeForPart:(id)arg1;
 - (id)bodyDataForMessage:(id)arg1 isComplete:(BOOL*)arg2 downloadIfNecessary:(BOOL)arg3;
-- (id)bodyDataForMessage:(id)arg1;
 - (id)bodyForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 updateFlags:(BOOL)arg3;
-- (id)bodyForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
-- (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 isComplete:(BOOL*)arg3;
-- (id)dataForMimePart:(id)arg1;
 - (void)dealloc;
-- (id)defaultAlternativeForMessage:(id)arg1 inPart:(id)arg2;
+- (id)defaultAlternativeForPart:(id)arg1;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
-- (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2;
-- (id)fullBodyDataForMessage:(id)arg1;
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;
-- (id)headerDataForMessage:(id)arg1;
 - (id)headersForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2;
-- (id)headersForMessage:(id)arg1;
 - (void)setMessageClass:(Class)arg1;
 - (void)setNumberOfAttachments:(NSUInteger)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)uniquedString:(id)arg1;

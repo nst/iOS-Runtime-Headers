@@ -2,23 +2,25 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCountryCodePicker, ABEditorModel;
+@class ABCountryCodePicker, ABEditorModel, NSString;
 
-@interface ABCountryPickerViewController : UIViewController {
+@interface ABCountryPickerViewController : ABPickerViewController <ABCountryCodePickerDelegate> {
     ABCountryCodePicker *_countryPicker;
-    id _delegate;
     ABEditorModel *_editorModel;
+    NSString *_selectedCountryCode;
 }
 
-- (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+@property(retain) NSString *selectedCountryCode;
+
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (float)ab_heightToFitForViewInPopoverView;
 - (void)countryCodePicker:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
 - (id)countryCodePicker;
 - (void)dealloc;
 - (id)initWithEditedItem:(id)arg1;
 - (void)loadView;
-- (void)setDelegate:(id)arg1;
+- (id)selectedCountryCode;
+- (void)setSelectedCountryCode:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

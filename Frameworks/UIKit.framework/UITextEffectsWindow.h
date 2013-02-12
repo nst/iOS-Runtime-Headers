@@ -2,27 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
-@interface UITextEffectsWindow : UIWindow {
+@interface UITextEffectsWindow : UIAutoRotatingWindow {
     NSUInteger _activeEffectsCount;
-    NSInteger _interfaceOrientation;
-    NSMutableArray *_touchableSubviews;
+    BOOL _inDealloc;
 }
 
++ (void)_initializeSafeCategory;
++ (void)_releaseSharedInstances;
 + (id)sharedTextEffectsWindow;
 + (id)sharedTextEffectsWindowAboveStatusBar;
 
 - (void)_didRemoveSubview:(id)arg1;
-- (BOOL)_isTextEffectsWindow;
-- (void)_subviewInteractivityChanged:(id)arg1;
-- (BOOL)acceptsGlobalPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_disableViewScaling;
 - (void)bringSubviewToFront:(id)arg1;
 - (void)dealloc;
+- (void)delayHideWindow;
 - (void)didAddSubview:(id)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 output:(NSInteger)arg2 bitsPerComponent:(NSInteger)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isInternalWindow;
 - (void)matchDeviceOrientation;
+- (void)orderFront:(id)arg1;
 - (void)sendSubviewToBack:(id)arg1;
 - (void)sortSubviews;
 - (void)updateForOrientation:(NSInteger)arg1;

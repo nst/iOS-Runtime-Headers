@@ -2,23 +2,32 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemCollection, MPMediaQuery;
+@class MPMediaItemCollection, MPMediaQuery, MPMusicPlayerController;
 
 @interface MPMusicPlayerControllerInternal : MPServerObjectProxy <MPMusicPlayerController> {
     unsigned int _didCheckIn : 1;
     unsigned int _useApplicationSpecificQueue : 1;
     unsigned int _useCachedPlaybackState : 1;
     unsigned int _cachedPlaybackStateIsValid : 1;
+    unsigned int _allowsRemoteUIAccess : 1;
     NSUInteger _clientPort;
+    NSInteger _inBlockHandlingPlaybackStateChangedMessageFromServer;
     MPMediaItemCollection *_itemCollection;
+    MPMusicPlayerController *_musicPlayerController;
     NSInteger _playbackNotificationObservers;
     NSInteger _playbackState;
     MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
 }
 
+@property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;
+
+- (void)didPrepareForRemoteSelectorInvocation;
+- (BOOL)inBlockHandlingPlaybackStateChangedMessageFromServer;
+- (id)initWithMusicPlayerController:(id)arg1;
 - (void)prepareForDecodingWithCoder:(id)arg1;
-- (void)prepareForRemoteSelectorInvocation;
+- (BOOL)prepareForRemoteSelectorInvocation;
 - (void)serverConnectionDied;
+- (void)setInBlockHandlingPlaybackStateChangedMessageFromServer:(BOOL)arg1;
 
 @end

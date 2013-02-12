@@ -9,6 +9,7 @@
 + (void)initialize;
 + (NSUInteger)phoneNumberTypesForMessagesApp;
 + (BOOL)urlIfyNode:(id)arg1 phoneNumberTypes:(NSUInteger)arg2;
++ (id)urlIfyNode:(id)arg1 usingScanner:(struct __DDScanner { }*)arg2 phoneNumberTypes:(NSUInteger)arg3;
 + (BOOL)urlIfyNode:(id)arg1;
 + (id)urlMatchesForString:(id)arg1 includingTel:(BOOL)arg2;
 + (id)urlMatchesForString:(id)arg1 phoneNumberTypes:(NSUInteger)arg2;

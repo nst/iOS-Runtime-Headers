@@ -10,16 +10,26 @@
 @property(retain,readonly) DOMHTMLOptionsCollection *options;
 @property(copy,readonly) NSString *type;
 @property(copy) NSString *value;
+@property BOOL autofocus;
 @property BOOL disabled;
 @property(readonly) NSInteger length;
 @property BOOL multiple;
 @property NSInteger selectedIndex;
 @property NSInteger size;
+@property(readonly) BOOL willValidate;
 
 - (void)_activateItemAtIndex:(NSInteger)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_ensureVisibleRectForFrame:(id)arg1;
+- (BOOL)_isAssistable;
+- (BOOL)_requiresAccessoryView;
+- (BOOL)_requiresInputView;
+- (void)_startAssistingDocumentView:(id)arg1;
+- (void)_stopAssistingDocumentView:(id)arg1;
+- (BOOL)_supportsAutoFill;
 - (void)add:(id)arg1 :(id)arg2;
 - (void)add:(id)arg1 before:(id)arg2;
 - (BOOL)autofocus;
+- (BOOL)checkValidity;
 - (NSUInteger)completeLength;
 - (id)createPeripheral;
 - (BOOL)disabled;
@@ -35,6 +45,7 @@
 - (void)remove:(NSInteger)arg1;
 - (NSInteger)selectedIndex;
 - (void)setAutofocus:(BOOL)arg1;
+- (void)setCustomValidity:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setMultiple:(BOOL)arg1;
 - (void)setName:(id)arg1;
@@ -44,6 +55,8 @@
 - (NSInteger)size;
 - (NSInteger)structuralComplexityContribution;
 - (id)type;
+- (id)validationMessage;
+- (id)validity;
 - (id)value;
 - (BOOL)willValidate;
 

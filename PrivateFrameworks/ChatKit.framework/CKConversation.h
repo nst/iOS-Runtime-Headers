@@ -57,6 +57,7 @@
 - (id)latestIncomingMessage;
 - (id)latestMessage;
 - (void)loadAllMessages;
+- (void)loadLastMessage;
 - (void)loadMoreMessages;
 - (void)markAllMessagesAsRead;
 - (id)messages;

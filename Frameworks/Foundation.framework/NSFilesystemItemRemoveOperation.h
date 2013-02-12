@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
-- (void)initWithPath:(id)arg1;
+- (id)initWithPath:(id)arg1;
 - (void)main;
 - (void)setDelegate:(id)arg1;
 

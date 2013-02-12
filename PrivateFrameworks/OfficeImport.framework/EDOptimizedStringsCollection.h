@@ -9,6 +9,7 @@
 }
 
 - (NSUInteger)addObject:(id)arg1;
+- (NSUInteger)addOrEquivalentObject:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

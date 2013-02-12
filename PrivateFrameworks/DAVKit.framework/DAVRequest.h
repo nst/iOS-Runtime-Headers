@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DAVKit.framework/DAVKit
  */
 
-@class DAVSession, NSData, NSDictionary, NSMutableData, NSMutableDictionary, NSMutableSet, NSString;
+@class DAVSession, NSData, NSDate, NSDictionary, NSMutableData, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface DAVRequest : AYOperation {
     struct { 
@@ -21,6 +21,7 @@
     long long _contentLength;
     void *_davReserved;
     id _delegate;
+    NSDate *_dispatchDate;
     NSDictionary *_headers;
     NSMutableData *_httpResponseBody;
     NSString *_httpStatus;
@@ -39,9 +40,13 @@
     BOOL _useKerberos;
 }
 
+@property(retain) NSDate *dispatchDate;
+
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (NSInteger)defaultCertificatePolicy;
 + (void)initialize;
++ (BOOL)logHTTPActivity;
++ (BOOL)logRequestSynopsis;
 + (id)multiStatusRequestWithSession:(id)arg1 method:(id)arg2 URI:(id)arg3 responseClass:(Class)arg4;
 + (id)multiStatusRequestWithSession:(id)arg1 method:(id)arg2 URI:(id)arg3;
 + (id)multiStatusRequestWithSession:(id)arg1 method:(id)arg2 path:(id)arg3 responseClass:(Class)arg4;
@@ -59,6 +64,8 @@
 + (id)requestWithURL:(id)arg1 method:(id)arg2;
 + (void)setAllowsAnyHTTPSCertificateForHost:(id)arg1 value:(BOOL)arg2;
 + (void)setDefaultCertificatePolicy:(NSInteger)arg1;
++ (void)setLogHTTPActivity:(BOOL)arg1;
++ (void)setLogRequestSynopsis:(BOOL)arg1;
 
 - (unsigned char)_bodyStreamCanRead;
 - (unsigned char)_bodyStreamOpen:(struct { NSInteger x1; NSInteger x2; }*)arg1 openComplete:(char *)arg2;
@@ -76,6 +83,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)dispatch;
+- (id)dispatchDate;
 - (void)displayCertPanel:(id)arg1;
 - (void)endOperationWithError:(id)arg1;
 - (void)finalize;
@@ -128,6 +136,7 @@
 - (id)session;
 - (void)setCertificatePolicy:(NSInteger)arg1;
 - (BOOL)setCertificatePolicyOnStream:(struct __CFReadStream { }*)arg1;
+- (void)setDispatchDate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeader:(id)arg1 withValue:(id)arg2;
 - (void)setRequestBodyWithData:(id)arg1;

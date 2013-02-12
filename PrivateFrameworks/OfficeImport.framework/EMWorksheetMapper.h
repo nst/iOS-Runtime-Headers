@@ -6,20 +6,21 @@
 
 @interface EMWorksheetMapper : EMSheetMapper {
     EDWorksheet *edWorksheet;
-    NSUInteger mColumnCount;
     double *mColumnGrid;
     ECColumnWidthConvertor *mColumnWidthConvertor;
     NSInteger mHeight;
-    NSUInteger mRowCount;
+    NSUInteger mMaxPopulatedColumn;
+    NSUInteger mMaxPopulatedRow;
     double *mRowGrid;
     CMStyle *mStyle;
     NSInteger mWidth;
 }
 
+- (void)_initWithState:(id)arg1;
 - (NSInteger)columnCount;
 - (double*)columnGrid;
 - (id)columnWidthConvertor;
-- (void)countRowsAndColumns;
+- (void)countRowsAndColumnsWithState:(id)arg1;
 - (void)dealloc;
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
@@ -33,8 +34,8 @@
 - (void)mapTableAt:(id)arg1 withState:(id)arg2;
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
 - (NSInteger)maxRowNumber;
-- (NSInteger)preprocessHeight;
-- (NSInteger)preprocessWidth;
+- (NSInteger)preprocessHeightWithState:(id)arg1;
+- (NSInteger)preprocessWidthWithState:(id)arg1;
 - (double*)rowGrid;
 - (void)setRowGrid;
 - (NSInteger)width;

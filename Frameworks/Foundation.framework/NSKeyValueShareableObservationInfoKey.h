@@ -9,6 +9,7 @@
     void *_additionContext;
     NSObject *_additionObserver;
     NSUInteger _additionOptions;
+    NSObject *_additionOriginalObservable;
     NSKeyValueProperty *_additionProperty;
     NSKeyValueObservationInfo *_baseObservationInfo;
     NSKeyValueObservance *_removalObservance;

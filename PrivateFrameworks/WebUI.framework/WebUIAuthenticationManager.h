@@ -2,37 +2,25 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class AuthenticationView, NSMutableArray, NSURLCredential, UIKeyboard;
+@class NSMutableArray, NSURLCredential, UIAlertView;
 
 @interface WebUIAuthenticationManager : NSObject {
-    NSInteger _actionAfterDismissingView;
     NSMutableArray *_authenticationChallenges;
-    AuthenticationView *_authenticationView;
-    BOOL _cannotUseAutomaticKeyboard;
+    UIAlertView *_authenticationView;
     NSURLCredential *_credentials;
     id _delegate;
     BOOL _isShowingAuthenticationPanel;
-    BOOL _isShowingKeyboard;
-    UIKeyboard *_keyboard;
 }
 
-- (void)_hideKeyboard;
-- (void)_showKeyboard;
+- (void)addAuthenticationChallenge:(id)arg1 displayPanel:(BOOL)arg2;
 - (void)addAuthenticationChallenge:(id)arg1;
-- (void)animateLayer:(id)arg1 fromPoint:(struct CGPoint { float x1; float x2; })arg2 toPoint:(struct CGPoint { float x1; float x2; })arg3 inLayer:(id)arg4 belowLayer:(id)arg5 currentAnimation:(NSInteger)arg6;
-- (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
 - (id)authenticationChallenge;
-- (id)authenticationView;
-- (void)cancelFromAuthenticationView:(id)arg1;
+- (void)cancelAuthentication;
 - (void)dealloc;
-- (struct CGPoint { float x1; float x2; })defaultKeyboardOrigin;
-- (id)keyboard;
-- (id)keyboardSuperview;
-- (void)logInFromAuthenticationView:(id)arg1 withCredential:(id)arg2;
 - (void)removeAuthenticationChallenge:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShowingAuthentication:(BOOL)arg1;
-- (void)setUsesAutomaticKeyboard:(BOOL)arg1;
-- (void)showKeyboard:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 inLayer:(id)arg3 belowLayer:(id)arg4;
+- (void)sheetReturnKeyPressed:(id)arg1;
 
 @end

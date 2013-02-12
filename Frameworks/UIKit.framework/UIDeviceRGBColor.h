@@ -12,6 +12,7 @@
 
 - (struct CGColor { }*)CGColor;
 - (struct CGColor { }*)_createCGColorWithAlpha:(float)arg1;
+- (float)alphaComponent;
 - (id)colorSpaceName;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (void)dealloc;

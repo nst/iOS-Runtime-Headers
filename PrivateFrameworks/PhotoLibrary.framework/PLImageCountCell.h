@@ -8,7 +8,8 @@
     UILabel *_titleLabel;
 }
 
-- (void)setTextAlignment:(NSInteger)arg1;
-- (void)setTitleText:(id)arg1;
+- (void)dealloc;
+- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
+- (void)setImageCount:(NSUInteger)arg1 videoCount:(NSUInteger)arg2 otherCount:(NSUInteger)arg3;
 
 @end

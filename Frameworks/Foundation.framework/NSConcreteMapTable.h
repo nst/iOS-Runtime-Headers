@@ -6,6 +6,8 @@
    See Warning(s) below.
  */
 
+@class NSWeakCallback;
+
 @interface NSConcreteMapTable : NSMapTable {
     struct NSSlice { 
         void **items; 
@@ -18,12 +20,7 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        struct auto_weak_callback_block { 
-            struct auto_weak_callback_block {} *next; 
-            int (*callback_function)(); 
-            void *arg1; 
-            void *arg2; 
-        } block; 
+        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -46,12 +43,7 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        struct auto_weak_callback_block { 
-            struct auto_weak_callback_block {} *next; 
-            int (*callback_function)(); 
-            void *arg1; 
-            void *arg2; 
-        } block; 
+        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -89,7 +81,7 @@
 - (id)description;
 - (id)dump;
 - (void)encodeWithCoder:(id)arg1;
-- (const void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
+- (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
 - (void)finalize;
 - (NSUInteger)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (void)grow;

@@ -8,6 +8,10 @@
     NSString *mSheetName;
 }
 
+@property(readonly) NSString *sheetName;
+@property(readonly) NSInteger columnOffset;
+@property(readonly) NSInteger rowOffset;
+
 + (id)mappingInfoWithSheetName:(id)arg1;
 
 - (NSInteger)columnOffset;

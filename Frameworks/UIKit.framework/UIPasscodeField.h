@@ -2,34 +2,47 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableString, UIPushButton;
+@class NSMutableArray, NSMutableString, UIButton;
 
 @interface UIPasscodeField : UIView <UITextFieldDelegate> {
     BOOL _centerHorizontally;
     id _delegate;
+    NSInteger _emptyContentReturnKeyType;
     NSMutableArray *_entryBackgrounds;
     NSMutableArray *_entryFields;
     NSInteger _keyboardAppearance;
     NSInteger _keyboardType;
-    UIPushButton *_okButton;
+    UIButton *_okButton;
     BOOL _opaqueBackground;
     NSMutableString *_value;
 }
 
++ (void)_initializeSafeCategory;
 + (float)defaultHeight;
++ (Class)textFieldClass;
 
+- (id)_accessibilityChildren;
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)_accessibilitySetValue:(id)arg1;
 - (void)_textDidChange;
 - (void)_updateFields;
+- (id)accessibilityElementAtIndex:(NSInteger)arg1;
+- (NSInteger)accessibilityElementCount;
+- (id)accessibilityLabel;
 - (void)appendString:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;
 - (void)deleteLastCharacter;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
+- (BOOL)isFirstResponder;
 - (NSInteger)numberOfEntryFields;
 - (void)okButtonClicked:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setKeyboardType:(NSInteger)arg1 appearance:(NSInteger)arg2 emptyContentReturnKeyType:(NSInteger)arg3;
 - (void)setKeyboardType:(NSInteger)arg1 appearance:(NSInteger)arg2;
 - (void)setKeyboardType:(NSInteger)arg1;
 - (void)setNumberOfEntryFields:(NSInteger)arg1 opaqueBackground:(BOOL)arg2;

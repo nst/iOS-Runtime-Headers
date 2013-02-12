@@ -5,16 +5,18 @@
 @class OADFill, OADStroke;
 
 @interface OADUnderline : NSObject {
+    unsigned int mIsUsingTextFill : 1;
+    unsigned int mIsUsingTextStroke : 1;
     OADFill *mFill;
-    BOOL mIsUsingTextFill;
-    BOOL mIsUsingTextStroke;
     OADStroke *mStroke;
-    NSInteger mType;
+    unsigned char mType;
 }
 
 - (void)dealloc;
 - (id)fill;
+- (NSUInteger)hash;
 - (id)initWithStroke:(id)arg1 fill:(id)arg2 type:(NSInteger)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isUsingTextFill;
 - (BOOL)isUsingTextStroke;
 - (void)setFill:(id)arg1;

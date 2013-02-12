@@ -16,11 +16,14 @@
 @property CGPoint calloutOffset;
 @property BOOL canShowCallout;
 @property CGPoint centerOffset;
+@property NSUInteger dragState;
+@property(getter=isDraggable) BOOL draggable;
 @property(getter=isEnabled) BOOL enabled;
 @property(getter=isHighlighted) BOOL highlighted;
 @property(getter=isSelected) BOOL selected;
 
 + (id)_disclosureCalloutButton;
++ (void)_initializeSafeCategory;
 + (NSUInteger)_selectedZIndex;
 + (id)_streetViewButtonDisabledImage;
 + (id)_streetViewButtonImage;
@@ -29,6 +32,9 @@
 + (NSUInteger)_zIndex;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (id)_accessibilityChildren;
+- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_annotationContainer;
 - (NSInteger)_annotationViewType;
 - (id)_calloutView;
 - (BOOL)_canChangeOrientation;
@@ -38,9 +44,9 @@
 - (id)_contentLayer;
 - (BOOL)_hasAlternateOrientation;
 - (BOOL)_hasSearchResult;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_mapTransform;
 - (NSUInteger)_mapType;
 - (NSUInteger)_orientationCount;
-- (id)_overlayView;
 - (void)_resetZIndex;
 - (void)_resetZIndexNotify:(BOOL)arg1;
 - (id)_searchResult;
@@ -54,16 +60,25 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (void)_updateZIndex;
 - (NSUInteger)_zIndex;
+- (id)accessibilityElementAtIndex:(NSInteger)arg1;
+- (NSInteger)accessibilityElementCount;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
 - (id)annotation;
 - (struct CGPoint { float x1; float x2; })calloutOffset;
 - (BOOL)canShowCallout;
 - (struct CGPoint { float x1; float x2; })centerOffset;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
+- (NSUInteger)dragState;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)image;
+- (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
+- (BOOL)isDraggable;
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;
 - (BOOL)isSelected;
@@ -71,12 +86,15 @@
 - (id)leftCalloutAccessoryView;
 - (id)panoramaID;
 - (void)prepareForReuse;
+- (oneway void)release;
 - (id)reuseIdentifier;
 - (id)rightCalloutAccessoryView;
 - (void)setAnnotation:(id)arg1;
 - (void)setCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCanShowCallout:(BOOL)arg1;
 - (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setDragState:(NSUInteger)arg1;
+- (void)setDraggable:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
@@ -85,5 +103,6 @@
 - (void)setRightCalloutAccessoryView:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (void)set_mapTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 
 @end

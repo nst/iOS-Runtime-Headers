@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKContentEntryBridge, CKTextContentView, NSMutableArray, UIView;
+@class CKContentEntryBridge, CKTextContentView, NSMutableArray, UITapGestureRecognizer, UIView;
 
-@interface CKContentEntryView : UIScrollView <CKEntryField, UITextContentViewDelegate, CKContentEntryBridgeClient> {
+@interface CKContentEntryView : UIScrollView <CKEntryField, UITextContentViewDelegate, CKContentEntryBridgeClient, UIGestureRecognizerDelegate> {
     unsigned int _showsSubject : 1;
     unsigned int _viewsLoaded : 1;
     CKTextContentView *_activeView;
@@ -12,20 +12,26 @@
     NSMutableArray *_contentViews;
     id _entryFieldDelegate;
     BOOL _needsScrollToVisible;
+    UITapGestureRecognizer *_singleTap;
     UIView *_subjectLine;
     CKTextContentView *_subjectView;
 }
 
 @property(readonly) NSArray *contentViews;
+@property(readonly) NSUInteger displayedLines;
 @property BOOL showsSubject;
+
++ (void)_initializeSafeCategory;
 
 - (void)_addContentView:(id)arg1;
 - (void)_adjustAllContent;
+- (struct CGSize { float x1; float x2; })_contentSize;
 - (void)_loadEntryViews;
 - (void)_reloadEntryViewsIfLoaded;
 - (void)_removeContentView:(id)arg1;
 - (void)_scrollViewAnimationEnded;
 - (void)_setupGestureRecognizers;
+- (id)activeView;
 - (id)attachments;
 - (void)attachmentsDidChange;
 - (BOOL)canPasteObject:(id)arg1;
@@ -35,8 +41,10 @@
 - (NSInteger)cursorPosition;
 - (void)dealloc;
 - (void)disableEditing;
+- (NSUInteger)displayedLines;
 - (id)documentFragmentForPasteboardItemAtIndex:(NSInteger)arg1 inTextContentView:(id)arg2;
 - (id)entryFieldDelegate;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)hasContent;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertMessagePart:(id)arg1;
@@ -45,11 +53,11 @@
 - (void)loadSubviews;
 - (void)makeActive;
 - (id)messageComposition;
+- (id)messageCompositionIfTextOnly;
 - (id)messageParts;
 - (void)moveCursorToEnd;
 - (void)reflowContent;
 - (void)removeFromSuperview;
-- (void)resetKeyboardDelegate:(id)arg1;
 - (void)restoreCursorPosition;
 - (void)saveCursorPosition;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
@@ -66,8 +74,8 @@
 - (void)setSubject:(id)arg1;
 - (void)showSubjectLinesAndDefaultText:(BOOL)arg1;
 - (BOOL)showsSubject;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subject;
-- (id)supportedPasteboardTypesInTextContentView:(id)arg1;
 - (void)tapGesture:(id)arg1;
 - (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
@@ -77,5 +85,6 @@
 - (BOOL)textContentViewShouldBeginEditing:(id)arg1;
 - (BOOL)textContentViewShouldEndEditing:(id)arg1;
 - (void)updateCandidateDisplay;
+- (void)updateFontSize;
 
 @end

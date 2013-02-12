@@ -2,19 +2,30 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
+@class UIColor, UIImageView, UIView<GKTableViewCellContents>;
+
 @interface GKTableViewCell : UITableViewCell {
-    BOOL _topSeparator;
+    UIView<GKTableViewCellContents> *_contents;
+    UIImageView *_disclosureIndicator;
+    UIColor *_tintColor;
+    BOOL _useButtonStyle;
 }
 
-@property BOOL topSeparator;
+@property(retain) UIView<GKTableViewCellContents> *contents;
+@property(retain) UIColor *tintColor;
+@property BOOL useButtonStyle;
 
-+ (void)initialize;
-+ (float)separatorHeight;
-
+- (void)configureBackgroundView;
+- (id)contents;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
-- (void)setTopSeparator:(BOOL)arg1;
-- (BOOL)topSeparator;
+- (void)layoutSubviews;
+- (void)prepareForReuse;
+- (void)setAccessoryType:(NSInteger)arg1;
+- (void)setContents:(id)arg1;
+- (void)setTintColor:(id)arg1;
+- (void)setUseButtonStyle:(BOOL)arg1;
+- (id)tintColor;
+- (BOOL)useButtonStyle;
 
 @end

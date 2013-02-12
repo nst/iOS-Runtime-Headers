@@ -22,6 +22,7 @@
 - (NSInteger)index;
 - (id)itemTitle;
 - (id)label;
+- (void)populateCell:(id)arg1;
 - (BOOL)selected;
 - (void)setDefaultSelected:(BOOL)arg1;
 - (void)setDisabled:(BOOL)arg1;

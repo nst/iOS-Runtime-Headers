@@ -2,23 +2,38 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIFont, UINavigationItem;
+@class UIFont, UINavigationItem, UIView;
 
 @interface UINavigationItemView : UIView {
+    UIView *_bottomCrossView;
     UIFont *_font;
+    BOOL _isCrossFading;
     UINavigationItem *_item;
+    NSInteger _lineBreakMode;
     BOOL _titleAutosizesToFit;
     float _titleWidth;
+    UIView *_topCrossView;
 }
 
++ (void)_initializeSafeCategory;
+
+- (BOOL)_accessibilityIsTitleElement;
+- (void)_cleanUpCrossView;
+- (void)_crossFadeHiddingButton:(BOOL)arg1;
 - (id)_defaultFont;
+- (void)_prepareCrossViewsForNewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_resetTitleWidth;
 - (id)_scriptingInfo;
+- (void)_setLineBreakMode:(NSInteger)arg1;
 - (float)_titleWidth;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawText:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 isButtonText:(BOOL)arg3 barStyle:(NSInteger)arg4;
 - (void)drawText:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)font;
 - (id)initWithNavigationItem:(id)arg1;
+- (BOOL)isAccessibilityElement;
 - (id)navigationItem;
 - (void)setFont:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

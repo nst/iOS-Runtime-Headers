@@ -24,12 +24,17 @@
     NSInteger textFieldType;
 }
 
++ (void)_initializeSafeCategory;
 + (NSInteger)autoCapsTypeForString:(id)arg1;
++ (NSInteger)autoCorrectionTypeForNumber:(id)arg1;
++ (id)buttonSpecifierWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3 confirmationInfo:(id)arg4;
 + (id)emptyGroupSpecifier;
 + (id)groupSpecifierWithName:(id)arg1;
 + (NSInteger)keyboardTypeForString:(id)arg1;
 + (id)preferenceSpecifierNamed:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(NSInteger)arg6 edit:(Class)arg7;
++ (id)switchSpecifierWithTitle:(id)arg1 target:(id)arg2 setter:(SEL)arg3 getter:(SEL)arg4 key:(id)arg5;
 
+- (id)accessibilityIdentification;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;

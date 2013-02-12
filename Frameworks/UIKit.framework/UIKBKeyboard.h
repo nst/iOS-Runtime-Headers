@@ -4,13 +4,14 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
-@interface UIKBKeyboard : UIKBShape <NSCoding> {
+@interface UIKBKeyboard : UIKBShape <NSCoding, UIKBCacheKey> {
     NSMutableDictionary *m_keyCache;
     NSMutableArray *m_keyplanes;
     NSString *m_name;
     NSString *m_visualStyle;
 }
 
+@property(readonly) NSString *cacheKey;
 @property(retain) NSDictionary *keyCache;
 @property(retain) NSArray *keyplanes;
 @property(retain) NSString *name;
@@ -19,6 +20,8 @@
 + (id)keyboard;
 
 - (void)cacheKey:(id)arg1 onKeyplane:(id)arg2;
+- (id)cacheKey;
+- (id)cachedKeysByKeyName:(id)arg1 onKeyplane:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -28,6 +31,7 @@
 - (id)keyplaneWithName:(id)arg1;
 - (id)keyplanes;
 - (void)layout;
+- (void)makeLikeOther:(id)arg1;
 - (id)name;
 - (void)setKeyCache:(id)arg1;
 - (void)setKeyplanes:(id)arg1;

@@ -28,6 +28,8 @@
 - (id)initWithDocument:(id)arg1 textType:(NSInteger)arg2;
 - (BOOL)isEmpty;
 - (id)lastBlock;
+- (id)newBlockIterator;
+- (id)newRunIterator;
 - (void)removeLastBlock;
 - (void)removeLastCharacter:(unsigned short)arg1;
 - (id)runIterator;

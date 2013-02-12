@@ -17,7 +17,7 @@
 @property NSInteger tileSize;
 @property NSInteger zoom;
 
-+ (id)outgoingTileForPaths:(id)arg1;
++ (id)outgoingTileForTilePaths:(id)arg1;
 + (id)outgoingTileForZoomLevel:(NSUInteger)arg1;
 
 - (void)addIndex:(id)arg1;

@@ -2,57 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <WebCaretChangeListener>, <WebFormDelegate>, NSMutableSet, NSString, NSURL, WAKWindow, WebInspector, WebNodeHighlight, WebPreferences;
+@class <WebCaretChangeListener>, <WebFormDelegate>, <WebGeolocationProvider>, NSMutableSet, NSString, NSTimer, NSURL, WAKWindow, WebEvent, WebInspector, WebNodeHighlight, WebPreferences, WebVideoFullscreenController;
 
 @interface WebViewPrivate : NSObject {
-    struct Page { struct OwnPtr<WTF::HashSet<WTF::RefPtr<WebCore::SchedulePair>, WebCore::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WebCore::SchedulePair> > > > { 
-            struct HashSet<WTF::RefPtr<WebCore::SchedulePair>,WebCore::SchedulePairHash,WTF::HashTraits<WTF::RefPtr<WebCore::SchedulePair> > > {} *m_ptr; 
-        } x1; struct OwnPtr<WebCore::Chrome> { 
-            struct Chrome {} *m_ptr; 
-        } x2; struct OwnPtr<WebCore::SelectionController> { 
-            struct SelectionController {} *m_ptr; 
-        } x3; struct OwnPtr<WebCore::FocusController> { 
-            struct FocusController {} *m_ptr; 
-        } x4; struct OwnPtr<WebCore::Settings> { 
-            struct Settings {} *m_ptr; 
-        } x5; struct OwnPtr<WebCore::ProgressTracker> { 
-            struct ProgressTracker {} *m_ptr; 
-        } x6; struct RefPtr<WebCore::BackForwardList> { 
-            struct BackForwardList {} *m_ptr; 
-        } x7; struct RefPtr<WebCore::Frame> { 
-            struct Frame {} *m_ptr; 
-        } x8; struct RefPtr<WebCore::HistoryItem> { 
-            struct HistoryItem {} *m_ptr; 
-        } x9; struct RefPtr<WebCore::PluginData> { 
-            struct PluginData {} *m_ptr; 
-        } x10; struct EditorClient {} *x11; NSInteger x12; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x13; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; float x19; void*x20; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x21; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x22; void*x23; NSInteger x24; struct OwnPtr<WebCore::PageGroup> { 
-            struct PageGroup {} *m_ptr; 
-        } x25; struct PageGroup {} *x26; struct Debugger {} *x27; NSUInteger x28; NSUInteger x29; double x30; NSInteger x31; struct RefPtr<WebCore::SessionStorage> { 
-            struct SessionStorage {} *m_ptr; 
     struct String { 
         struct RefPtr<WebCore::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
-    struct _WebResourceDelegateImplementationCache { 
+    struct WebResourceDelegateImplementationCache { 
         int (*didCancelAuthenticationChallengeFunc)(); 
         int (*didReceiveAuthenticationChallengeFunc)(); 
         int (*canAuthenticateAgainstProtectionSpaceFunc)(); 
+        int (*connectionPropertiesFunc)(); 
         int (*webThreadDidFinishLoadingFromDataSourceFunc)(); 
         int (*webThreadDidFailLoadingWithErrorFromDataSourceFunc)(); 
         int (*webThreadIdentifierForRequestFunc)(); 
@@ -66,14 +27,19 @@
         int (*willCacheResponseFunc)(); 
         int (*plugInFailedWithErrorFunc)(); 
         int (*shouldUseCredentialStorageFunc)(); 
-    struct _WebFrameLoadDelegateImplementationCache { 
+    struct WebFrameLoadDelegateImplementationCache { 
         int (*didClearWindowObjectForFrameFunc)(); 
+        int (*didClearWindowObjectForFrameInScriptWorldFunc)(); 
+        int (*didClearInspectorWindowObjectForFrameFunc)(); 
         int (*windowScriptObjectAvailableFunc)(); 
         int (*didHandleOnloadEventsForFrameFunc)(); 
         int (*didReceiveServerRedirectForProvisionalLoadForFrameFunc)(); 
         int (*didCancelClientRedirectForFrameFunc)(); 
         int (*willPerformClientRedirectToURLDelayFireDateForFrameFunc)(); 
         int (*didChangeLocationWithinPageForFrameFunc)(); 
+        int (*didPushStateWithinPageForFrameFunc)(); 
+        int (*didReplaceStateWithinPageForFrameFunc)(); 
+        int (*didPopStateWithinPageForFrameFunc)(); 
         int (*willCloseFrameFunc)(); 
         int (*didStartProvisionalLoadForFrameFunc)(); 
         int (*didReceiveTitleForFrameFunc)(); 
@@ -84,7 +50,9 @@
         int (*didFirstLayoutInFrameFunc)(); 
         int (*didFirstVisuallyNonEmptyLayoutInFrameFunc)(); 
         int (*didFinishDocumentLoadForFrameFunc)(); 
-    struct _WebScriptDebugDelegateImplementationCache { 
+        int (*didDisplayInsecureContentFunc)(); 
+        int (*didRunInsecureContentFunc)(); 
+    struct WebScriptDebugDelegateImplementationCache { 
         BOOL didParseSourceExpectsBaseLineNumber; 
         int (*didParseSourceFunc)(); 
         int (*failedToParseSourceFunc)(); 
@@ -92,6 +60,12 @@
         int (*willExecuteStatementFunc)(); 
         int (*willLeaveCallFrameFunc)(); 
         int (*exceptionWasRaisedFunc)(); 
+    struct WebHistoryDelegateImplementationCache { 
+        int (*navigatedFunc)(); 
+        int (*clientRedirectFunc)(); 
+        int (*serverRedirectFunc)(); 
+        int (*setTitleFunc)(); 
+        int (*populateVisitedLinksFunc)(); 
     struct CGSize { 
         float width; 
         float height; 
@@ -103,6 +77,9 @@
             NSInteger m_keyCount; 
             NSInteger m_deletedCount; 
         } m_impl; 
+    struct CGSize { 
+        float width; 
+        float height; 
     id UIDelegate;
     id UIDelegateForwarder;
     id UIKitDelegate;
@@ -110,17 +87,21 @@
     id WebMailDelegate;
     <WebCaretChangeListener> *_caretChangeListener;
     NSMutableSet *_caretChangeListeners;
+    <WebGeolocationProvider> *_geolocationProvider;
     NSInteger _keyboardUIMode;
     BOOL _keyboardUIModeAccessed;
     BOOL allowsMessaging;
     BOOL allowsUndo;
     NSString *applicationNameForUserAgent;
+    NSTimer *autoscrollTimer;
+    WebEvent *autoscrollTriggerEvent;
     struct CGColor { } *backgroundColor;
     BOOL becomingFirstResponder;
     BOOL becomingFirstResponderFromOutside;
     BOOL catchesDelegateExceptions;
     BOOL closed;
     BOOL closing;
+    BOOL cssAnimationsSuspended;
     WebNodeHighlight *currentNodeHighlight;
     id downloadDelegate;
     BOOL drawsBackground;
@@ -133,20 +114,30 @@
     id frameLoadDelegate;
     id frameLoadDelegateForwarder;
     } frameLoadDelegateImplementations;
+    WebVideoFullscreenController *fullscreenController;
+    BOOL handlingMouseDownEvent;
     BOOL hasSpellCheckerDocumentTag;
+    id historyDelegate;
+    } historyDelegateImplementations;
     WAKWindow *hostWindow;
     BOOL hoverFeedbackSuspended;
     } identifierMap;
+    BOOL ignoringMouseDraggedEvents;
     WebInspector *inspector;
     BOOL isStopping;
+    WebEvent *keyDownEvent;
+    } lastLayoutSize;
+    struct __CFRunLoopObserver { } *layerSyncRunLoopObserver;
     BOOL mainFrameDocumentReady;
     BOOL mainViewIsScrollingOrZooming;
     NSString *mediaStyle;
+    WebEvent *mouseDownEvent;
     BOOL needsOneShotDrawingSynchronization;
     void *observationInfo;
-        } x32; } *page;
+    struct Page { } *page;
     id policyDelegate;
     id policyDelegateForwarder;
+    BOOL postsAcceleratedCompositingNotifications;
     WebPreferences *preferences;
     NSInteger programmaticFocusCount;
     } resourceLoadDelegateImplementations;
@@ -160,14 +151,13 @@
     BOOL smartInsertDeleteEnabled;
     NSInteger spellCheckerDocumentTag;
     BOOL tabKeyCyclesThroughElementsChanged;
-    BOOL useDocumentViews;
     BOOL useSiteSpecificSpoofing;
     } userAgent;
     BOOL userAgentOverridden;
     NSURL *userStyleSheetLocation;
+    BOOL usesDocumentViews;
     BOOL usesLoaderCache;
     BOOL usesPageCache;
-    struct __CFRunLoopObserver { } *viewUpdateRunLoopObserver;
     float zoomMultiplier;
 }
 
@@ -175,7 +165,6 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_clearViewUpdateRunLoopObserver;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;

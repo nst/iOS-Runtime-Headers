@@ -5,4 +5,6 @@
 @interface OADMasterBackground : OADBackground {
 }
 
++ (id)masterBackground;
+
 @end

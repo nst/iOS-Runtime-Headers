@@ -9,6 +9,8 @@
     BOOL _dontShowSecondLevelOtherAccountTypes;
     BOOL _forceMailSetup;
     NSArray *_plugins;
+    unsigned char originalCellFlag;
+    unsigned char originalWifiFlag;
 }
 
 @property(retain) NSArray *allowedDataclasses;
@@ -19,6 +21,7 @@
 - (void)dontShowSecondLevelOtherAccountTypes;
 - (void)finishedAccountSetup;
 - (void)forceMailSetup;
+- (id)init;
 - (NSInteger)numAddControllersInStack;
 - (id)plugins;
 - (void)popOutOfAddControllers;
@@ -26,6 +29,5 @@
 - (void)setPlugins:(id)arg1;
 - (id)specifierForAccountType:(id)arg1;
 - (id)specifiers;
-- (void)viewWillBecomeVisible:(void*)arg1;
 
 @end

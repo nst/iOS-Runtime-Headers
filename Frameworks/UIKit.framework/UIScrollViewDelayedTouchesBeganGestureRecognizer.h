@@ -5,18 +5,23 @@
 @class UIDelayedAction;
 
 @interface UIScrollViewDelayedTouchesBeganGestureRecognizer : UIGestureRecognizer {
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _startScreenLocation;
     UIDelayedAction *_touchDelay;
 }
 
-- (BOOL)_shouldSaveGestureFromExclusion:(id)arg1;
+- (void)_resetGestureRecognizer;
+- (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (void)clearTimer;
 - (void)dealloc;
-- (void)enoughTimeElapsed:(id)arg1;
-- (void)reset;
+- (void)sendDelayedTouches;
 - (void)sendTouchesShouldBeginForDelayedTouches:(id)arg1;
 - (void)sendTouchesShouldBeginForTouches:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

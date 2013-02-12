@@ -13,6 +13,7 @@
     NSLock *_backgroundLoadingLock;
     NSMutableArray *_cachedModelRecords;
     struct __CFArray { } *_databaseChangeDelegates;
+    id _delayedNotificationHandler;
     NSUInteger _displayOrdering;
     NSMutableArray *_displayedGroups;
     } _displayedMemberPreparedRange;
@@ -25,17 +26,22 @@
     NSUInteger _numberOfDisplayedMembers;
     struct { struct { /* ? */ } *x1; NSInteger x2; NSInteger x3; } *_sectionLists;
     ABGroupWrapper *_selectedGroupWrapper;
-    void *_selectedPerson;
+    NSMutableArray *_selectedPeople;
 }
+
+@property void *addressBook;
+@property(retain) ABGroupWrapper *selectedGroupWrapper;
 
 + (void)initialize;
 + (NSUInteger)sortOrdering;
 
 - (void)_cachePeople:(struct __CFArray { }*)arg1 atEnd:(BOOL)arg2;
-- (id)_createModelRecordFromRecord:(void*)arg1;
+- (struct __CFArray { }*)_copyArrayOfPeopleInSelectedGroupWrapperForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (struct __CFArray { }*)_databaseChangeDelegates;
 - (id)_displayedGroupMembersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)_loadMembersInBackground:(id)arg1;
 - (void)_modelDatabaseChanged:(struct __CFDictionary { }*)arg1;
+- (id)_newModelRecordFromRecord:(void*)arg1;
 - (void)_notifyDelegatesOfDatabaseChangeWithDeletedGroup:(BOOL)arg1 deletedPerson:(BOOL)arg2;
 - (id)_partialDisplayedGroupMembersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)_startBackgroundThreadIfNecessaryScanningForward:(BOOL)arg1;
@@ -62,10 +68,13 @@
 - (void)prepareDisplayedMembersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)removeDatabaseChangeDelegate:(id)arg1;
 - (void)removeDisplayedMember:(void*)arg1;
+- (long)resetFullSectionList:(struct __CFDictionary { }*)arg1 maximumSectionCount:(NSInteger)arg2;
+- (long)resetPartialSectionListWithMaximumCount:(NSInteger)arg1 headerSortKeyToHeaderString:(struct __CFDictionary { }*)arg2;
 - (void)resetSectionList;
 - (void)resetSortKeyToHeaderStringDictionary;
 - (void*)selectedGroup;
 - (id)selectedGroupWrapper;
+- (id)selectedPeople;
 - (void*)selectedPerson;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAutoInvalidateOnDatabaseChange:(BOOL)arg1;
@@ -74,8 +83,11 @@
 - (void)setLastSelectedGroupWrapper:(id)arg1;
 - (void)setSelectedGroup:(void*)arg1;
 - (void)setSelectedGroupWrapper:(id)arg1;
+- (void)setSelectedPeople:(id)arg1;
 - (void)setSelectedPerson:(void*)arg1;
 - (void)setSortOrdering:(NSUInteger)arg1;
 - (BOOL)shouldUsePartialLoadingForGroupWrapper:(id)arg1;
+- (void)startDelayingNotificationsForDatabaseChangeDelegate:(id)arg1;
+- (void)stopDelayingNotificationsForDatabaseChangeDelegate:(id)arg1 andDeliverDelayedNotifications:(BOOL)arg2;
 
 @end

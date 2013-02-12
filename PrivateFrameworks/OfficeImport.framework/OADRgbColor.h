@@ -10,13 +10,21 @@
 
 + (id)black;
 + (id)rgbColorWithNSColor:(id)arg1;
++ (id)rgbColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
++ (id)rgbColorWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
 + (id)white;
 
 - (float)blue;
+- (unsigned char)blueByte;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)green;
+- (unsigned char)greenByte;
+- (NSUInteger)hash;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 - (id)initWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (float)red;
+- (unsigned char)redByte;
+- (id)rgbColorWithFraction:(float)arg1 ofRgbColor:(id)arg2;
 
 @end

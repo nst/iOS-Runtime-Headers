@@ -6,6 +6,7 @@
 
 @interface _NSCFURLProtocolBridge : NSObject <NSURLProtocolClient> {
     struct _CFURLProtocol { } *_cfProt;
+    BOOL _loading;
     struct __CFRunLoopSource { } *_rlSrc;
     struct _CFURLAuthChallenge { } *cfChallenge;
     NSMutableArray *clientInstructions;
@@ -30,6 +31,7 @@
 - (void)URLProtocol:(id)arg1 didReceiveResponse:(id)arg2 cacheStoragePolicy:(NSUInteger)arg3;
 - (void)URLProtocol:(id)arg1 wasRedirectedToRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)URLProtocolDidFinishLoading:(id)arg1;
+- (void)_forgetClient;
 - (void)cachedResponseIsValid:(id)arg1;
 - (void)dealloc;
 - (id)description;

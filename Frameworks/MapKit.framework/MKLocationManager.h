@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLHeading, CLLocation, CLLocationManager, GMMLocationShiftRequester, MKLocationShiftFunction, MKRouteStep, MKTripRecorder, NSDictionary, NSHashTable, NSMutableArray, NSString, NSTimer;
+@class CLHeading, CLLocation, CLLocationManager, GMMLocationShiftRequester, MKLocationShiftFunction, MKRouteStep, MKTripRecorder, NSHashTable, NSMutableArray, NSString, NSTimer;
 
 @interface MKLocationManager : NSObject <CLLocationManagerDelegateInternal, PBRequesterDelegate> {
     double _GPSStartTime;
@@ -22,7 +22,6 @@
     BOOL _isLocationServicesDenied;
     CLLocation *_lastLocation;
     double _lastLocationReportTime;
-    NSDictionary *_lastLocationSourceInfo;
     double _lastLocationUpdateTime;
     double _locationAccuracyUpdateTime;
     NSHashTable *_locationObservers;
@@ -41,7 +40,6 @@
 
 @property(readonly) CLHeading *heading;
 @property(readonly) CLLocation *lastLocation;
-@property(readonly) NSDictionary *lastLocationSourceInfo;
 @property(retain) MKRouteStep *routeStep;
 @property(retain) MKLocationShiftFunction *shiftFunction;
 @property(retain) GMMLocationShiftRequester *shiftFunctionRequester;
@@ -53,6 +51,7 @@
 @property(readonly) BOOL hasHiFiCapability;
 @property(readonly) BOOL hasLocation;
 @property id headingObserver;
+@property NSInteger headingOrientation;
 @property(readonly) double headingUpdateTimeInterval;
 @property(readonly) BOOL isHeadingServicesAvailable;
 @property(readonly) BOOL isLastLocationRouteCorrected;
@@ -61,17 +60,16 @@
 @property(readonly) BOOL isLocationServicesAvailable;
 @property(readonly) BOOL isLocationServicesDenied;
 @property(readonly) BOOL isLocationServicesEnabled;
+@property(readonly) BOOL isLocationServicesPossiblyAvailable;
 @property(readonly) NSInteger lastLocationSource;
 @property(readonly) CGPoint longLat;
 @property BOOL shouldThrottleHeading;
 @property double userLocationCacheDuration;
 @property BOOL usesRouteCorrection;
 
-+ (NSInteger)locationMKLocationSourceFromSupportInfo:(id)arg1;
 + (id)sharedLocationManager;
-+ (id)supportInfoFromLocationMKLocationSource:(NSInteger)arg1;
 
-- (id)_applyChinaLocationShift:(id)arg1 supportInfo:(id)arg2;
+- (id)_applyChinaLocationShift:(id)arg1;
 - (BOOL)_isTimeToResetOnResume;
 - (void)_reportHeadingFailureWithError:(id)arg1;
 - (void)_reportHeadingSuccess;
@@ -81,6 +79,7 @@
 - (void)_reportLocationSuccess;
 - (id)_routeCorrectedLocationForLocation:(id)arg1 routeStep:(id*)arg2;
 - (void)_setDelayedDeliveryTimer:(id)arg1;
+- (void)_setLocationServicesDenied:(BOOL)arg1;
 - (void)_setTrackingHeading:(BOOL)arg1;
 - (void)_setTrackingLocation:(BOOL)arg1;
 - (void)_startCoalescingUpdates:(NSInteger)arg1;
@@ -88,7 +87,6 @@
 - (double)accuracy;
 - (void)applicationResumed:(id)arg1;
 - (void)applicationSuspended:(id)arg1;
-- (NSInteger)bestLocationSource;
 - (BOOL)chinaShiftEnabled;
 - (id)clLocationManager;
 - (void)dampenGPSLocationAccuracy:(id*)arg1 oldLocationSource:(NSInteger)arg2;
@@ -98,6 +96,7 @@
 - (BOOL)hasLocation;
 - (id)heading;
 - (id)headingObserver;
+- (NSInteger)headingOrientation;
 - (double)headingUpdateTimeInterval;
 - (id)init;
 - (BOOL)isGPSWarmingUp;
@@ -108,21 +107,23 @@
 - (BOOL)isLocationServicesAvailable;
 - (BOOL)isLocationServicesDenied;
 - (BOOL)isLocationServicesEnabled;
+- (BOOL)isLocationServicesPossiblyAvailable;
 - (id)lastLocation;
 - (NSInteger)lastLocationSource;
-- (id)lastLocationSourceInfo;
 - (void)loadRecording:(id)arg1;
 - (void)loadRecordings:(id)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3 usingSupportInfo:(id)arg4;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
 - (struct CGPoint { float x1; float x2; })longLat;
+- (void)refreshLocationServicesApproval;
 - (void)reportCoalescedUpdated;
 - (void)repostLastKnownLocation;
-- (void)requestShiftFunctionForLocation:(id)arg1 supportInfo:(id)arg2 wrap:(BOOL)arg3;
+- (void)requestShiftFunctionForLocation:(id)arg1 wrap:(BOOL)arg2;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requester:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3;
+- (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)reset;
 - (id)routeStep;
@@ -132,8 +133,8 @@
 - (void)setExpectedTimeTillNextUpdate:(double)arg1;
 - (void)setHeading:(id)arg1;
 - (void)setHeadingObserver:(id)arg1;
+- (void)setHeadingOrientation:(NSInteger)arg1;
 - (void)setLastLocation:(id)arg1;
-- (void)setLastLocationSourceInfo:(id)arg1;
 - (void)setRouteStep:(id)arg1;
 - (void)setShiftFunction:(id)arg1;
 - (void)setShiftFunctionRequester:(id)arg1;
@@ -145,8 +146,8 @@
 - (id)shiftFunction;
 - (id)shiftFunctionRequester;
 - (BOOL)shouldCoalesceUpdates;
-- (BOOL)shouldStartCoalescingLocation:(id)arg1 supportInfo:(id)arg2;
-- (BOOL)shouldStopCoalescingLocation:(id)arg1 supportInfo:(id)arg2;
+- (BOOL)shouldStartCoalescingLocation:(id)arg1;
+- (BOOL)shouldStopCoalescingLocation:(id)arg1;
 - (BOOL)shouldThrottleHeading;
 - (void)startHeadingUpdateWithObserver:(id)arg1;
 - (void)startLocationUpdateWithObserver:(id)arg1;

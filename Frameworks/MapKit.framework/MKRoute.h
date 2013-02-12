@@ -4,8 +4,19 @@
 
 @class GMMNewRoute, MKRouteStep, NSMutableArray;
 
-@interface MKRoute : NSObject {
+@interface MKRoute : NSObject <MKOverlay> {
+    struct { 
+        struct { 
+            double x; 
+            double y; 
+        } origin; 
+        struct { 
+            double width; 
+            double height; 
+        } size; 
+    } _boundingMapRect;
     BOOL _displaysDistanceInMetric;
+    struct { double x1; double x2; } *_mapPoints;
     NSInteger _mode;
     NSUInteger _pointCount;
     struct { double x1; double x2; } *_points;
@@ -18,9 +29,9 @@
 
 @property(readonly) NSString *abbreviatedTravelTime;
 @property(readonly) NSString *abbreviatedTravelTimeWithTraffic;
-@property(readonly) NSCalendarDate *arrivalDate;
+@property(readonly) MKDate *arrivalDate;
 @property(readonly) NSString *cost;
-@property(readonly) NSCalendarDate *departureDate;
+@property(readonly) MKDate *departureDate;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 @property(readonly) NSString *distanceSummary;
 @property(readonly) MKSearchResult *endSearchResult;
@@ -29,12 +40,15 @@
 @property(readonly) NSString *expandedTravelTimeWithTraffic;
 @property(readonly) MKRouteStep *firstMiddleStep;
 @property(readonly) MKRouteStep *lastMiddleStep;
+@property(readonly) ? *mapPoints;
 @property(readonly) ? *points;
 @property(readonly) MKRouteStep *previousStep;
 @property(readonly) NSArray *simplifiedSteps;
 @property(readonly) MKSearchResult *startSearchResult;
 @property(retain) MKRouteStep *step;
 @property(readonly) NSArray *steps;
+@property(readonly) ? boundingMapRect;
+@property(readonly) ? coordinate;
 @property(readonly) NSInteger durationSeconds;
 @property(readonly) ? endCoordinate;
 @property(readonly) BOOL hasTraffic;
@@ -50,6 +64,9 @@
 - (id)abbreviatedTravelTime;
 - (id)abbreviatedTravelTimeWithTraffic;
 - (id)arrivalDate;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingRectForStep:(id)arg1;
+- (struct { double x1; double x2; })coordinate;
 - (id)cost;
 - (void)dealloc;
 - (id)departureDate;
@@ -64,11 +81,14 @@
 - (id)expandedTravelTimeWithTraffic;
 - (id)firstMiddleStep;
 - (BOOL)hasTraffic;
+- (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)lastMiddleStep;
+- (struct { double x1; double x2; }*)mapPoints;
 - (NSInteger)mode;
 - (NSUInteger)pointCount;
 - (struct { double x1; double x2; }*)points;
 - (id)previousStep;
+- (void)resetStep;
 - (id)route;
 - (void)setStep:(id)arg1;
 - (id)simplifiedSteps;

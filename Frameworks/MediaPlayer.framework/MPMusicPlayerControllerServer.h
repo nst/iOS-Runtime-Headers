@@ -8,6 +8,7 @@
     MPMusicPlayerControllerServerInternal *_internal;
 }
 
++ (void)initialize;
 + (id)sharedInstance;
 + (void)startMusicPlayerControllerServer;
 

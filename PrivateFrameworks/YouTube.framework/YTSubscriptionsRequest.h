@@ -16,17 +16,18 @@
 + (BOOL)isSubscription:(id)arg1 channelOfUser:(id)arg2;
 
 - (void)_didAuthenticate:(id)arg1;
-- (void)_doRequestWithDelegate:(id)arg1 URL:(id)arg2;
+- (void)_doRequestWithURL:(id)arg1;
 - (void)_failedToAuthenticate:(id)arg1;
 - (void)_listenForAuthenticationNotifications:(BOOL)arg1;
-- (void)clearDelegate;
+- (void)createPlaylistNamed:(id)arg1;
 - (void)dealloc;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (id)init;
 - (void)loadRequest:(id)arg1;
 - (NSInteger)parseData:(id)arg1;
-- (void)requestPlaylistsWithDelegate:(id)arg1;
-- (void)requestSubscriptionsWithDelegate:(id)arg1;
+- (void)requestPlaylists;
+- (void)requestSubscriptions;
+- (void)setDelegate:(id)arg1;
 
 @end

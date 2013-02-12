@@ -2,29 +2,36 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSData, NSString;
+@class NSString;
 
 @interface ConnectionSettings : NSObject {
-    unsigned int _usesSSL : 1;
-    unsigned int _tryDirectSSLConnection : 1;
+    NSString *_certUIService;
     struct __CFString { } *_connectionServiceType;
     NSString *_hostname;
     NSUInteger _portNumber;
-    NSData *_serverCertificateDigest;
     NSString *_serviceName;
+    BOOL _tryDirectSSLConnection;
+    BOOL _usesSSL;
 }
 
+@property(copy) NSString *certUIService;
+@property(copy) NSString *hostname;
+@property(copy) NSString *serviceName;
+@property NSUInteger portNumber;
+@property BOOL tryDirectSSL;
+@property BOOL usesSSL;
+
+- (id)certUIService;
 - (struct __CFString { }*)connectionServiceType;
 - (void)dealloc;
 - (id)description;
 - (id)hostname;
 - (NSUInteger)portNumber;
-- (id)serverCertificateDigest;
 - (id)serviceName;
+- (void)setCertUIService:(id)arg1;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setHostname:(id)arg1;
 - (void)setPortNumber:(NSUInteger)arg1;
-- (void)setServerCertificateDigest:(id)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)setTryDirectSSL:(BOOL)arg1;
 - (void)setUsesSSL:(BOOL)arg1;

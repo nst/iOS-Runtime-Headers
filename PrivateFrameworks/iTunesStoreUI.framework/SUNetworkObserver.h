@@ -16,17 +16,18 @@
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
-- (void)_applicationFinishedLaunching:(id)arg1;
 - (void)_cancelPartnerDetect;
 - (void)_cancelStartupTimer;
 - (void)_handleNetworkTypeChange:(id)arg1;
 - (void)_handleUsingNetworkChange:(id)arg1;
 - (void)_mainThreadHandleNetworkTypeChange:(id)arg1;
+- (void)_mainThreadScheduleNetworkActivityUpdate;
 - (void)_mainThreadSetPartnerIdentifier:(id)arg1;
 - (void)_networkTypeChanged:(id)arg1;
 - (void)_networkUsageStatedChanged:(id)arg1;
 - (void)_partnerHeaderChanged:(id)arg1;
 - (void)_startupTimer:(id)arg1;
+- (void)_updateNetworkActivityIndicator;
 - (void)checkPartnerAvailability;
 - (void)dealloc;
 - (id)init;
@@ -35,5 +36,6 @@
 - (id)partnerIdentifier;
 - (void)setPartnerIdentifier:(id)arg1;
 - (void)setPartnersEnabled:(BOOL)arg1;
+- (void)startNetworkAvailabilityTimer;
 
 @end

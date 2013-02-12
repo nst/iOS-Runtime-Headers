@@ -9,9 +9,9 @@
 }
 
 - (void)dealloc;
-- (NSUInteger)dim;
-- (NSUInteger)indexOfInt:(NSUInteger)arg1;
+- (NSInteger)dim;
+- (NSInteger)indexOfInt:(NSInteger)arg1;
 - (id)initWithIntSet:(id)arg1;
-- (NSUInteger)intAtIndex:(NSUInteger)arg1;
+- (NSInteger)intAtIndex:(NSInteger)arg1;
 
 @end

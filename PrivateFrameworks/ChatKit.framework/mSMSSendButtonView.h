@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface mSMSSendButtonView : UIThreePartButton {
+@interface mSMSSendButtonView : UIButton {
 }
 
-- (void)drawTitleAtPoint:(struct CGPoint { float x1; float x2; })arg1 width:(float)arg2;
-- (float)minTitleMargin;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
++ (void)_initializeSafeCategory;
+
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

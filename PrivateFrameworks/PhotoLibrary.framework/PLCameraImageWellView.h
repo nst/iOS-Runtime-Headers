@@ -2,41 +2,43 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImage, UIImageView, UIView;
+@class UIImage, UIImageView;
 
-@interface PLCameraImageWellView : UIButton {
+@interface PLCameraImageWellView : UIView {
+    UIImageView *_containerImageView;
     NSInteger _deviceOrientation;
-    UIImageView *_innerShadowImageView;
-    UIView *_maskContainerView;
-    UIImage *_shadowImage;
-    UIImageView *_staticMaskView;
     UIImage *_thumbnailImage;
     UIImage *_thumbnailImageSelected;
     UIImageView *_thumbnailImageView;
     BOOL _watchingOrientationChanges;
 }
 
++ (void)_initializeSafeCategory;
+
+- (void)_albumChangedInLibrary:(id)arg1;
 - (void)_computeSelectedThumbnailImage;
 - (void)_deviceOrientationChanged:(id)arg1;
-- (void)_irisAnimationDidFinish:(id)arg1;
-- (void)_irisAnimationWillStart:(id)arg1;
 - (void)_previewImageDidChange:(id)arg1;
-- (void)_setDeviceOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)_stopWatchingDeviceOrientationChanges;
+- (id)accessibilityLabel;
 - (void)addMaskedSubview:(id)arg1;
 - (void)beginContentFadeOutWithDuration:(float)arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElement;
+- (void)layoutSubviews;
+- (void)setButtonOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setImage:(id)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setThumbnailImage:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailFrame;
+- (id)thumbnailImage;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

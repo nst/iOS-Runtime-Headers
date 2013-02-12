@@ -20,6 +20,10 @@
         unsigned int hideBackground : 1; 
         unsigned int combinesLandscapeBars : 1; 
         unsigned int usesEmbeddedAppearance : 1; 
+        unsigned int showsSearchResultsButton : 1; 
+        unsigned int searchResultsButtonSelected : 1; 
+        unsigned int pretendsIsInBar : 1; 
+        unsigned int disabled : 1; 
     UIView *_background;
     UIButton *_cancelButton;
     NSString *_cancelButtonText;
@@ -46,17 +50,25 @@
 @property NSInteger autocorrectionType;
 @property NSInteger barStyle;
 @property NSInteger keyboardType;
+@property(getter=isSearchResultsButtonSelected) BOOL searchResultsButtonSelected;
 @property NSInteger selectedScopeButtonIndex;
 @property BOOL showsBookmarkButton;
 @property BOOL showsCancelButton;
 @property BOOL showsScopeBar;
+@property BOOL showsSearchResultsButton;
 @property(getter=isTranslucent) BOOL translucent;
+
++ (void)_initializeSafeCategory;
 
 - (void)_bookmarkButtonPressed;
 - (void)_cancelButtonPressed;
 - (void)_destroyCancelButton;
 - (void)_hideShowAnimationDidFinish;
+- (BOOL)_isEnabled;
+- (BOOL)_isInBar;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)_resultsListButtonPressed;
+- (id)_scopeBar;
 - (void)_scopeChanged:(id)arg1;
 - (void)_searchFieldBeginEditing;
 - (void)_searchFieldEditingChanged;
@@ -64,6 +76,8 @@
 - (void)_searchFieldReturnPressed;
 - (void)_setAutoDisableCancelButton:(BOOL)arg1;
 - (void)_setCancelButtonText:(id)arg1;
+- (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setEnabled:(BOOL)arg1;
 - (void)_setShowsCancelButton:(BOOL)arg1;
 - (void)_setShowsSeparator:(BOOL)arg1;
 - (void)_setUpScopeBar;
@@ -71,6 +85,7 @@
 - (void)_setupPromptLabel;
 - (void)_setupSearchField;
 - (void)_updateOpacity;
+- (void)_updateRightView;
 - (void)_updateSearchFieldArt;
 - (NSInteger)autocapitalizationType;
 - (NSInteger)autocorrectionType;
@@ -91,11 +106,13 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isFirstResponder;
+- (BOOL)isSearchResultsButtonSelected;
 - (BOOL)isTranslucent;
 - (NSInteger)keyboardType;
 - (void)layoutSubviews;
 - (void)movedToSuperview:(id)arg1;
 - (id)placeholder;
+- (BOOL)pretendsIsInBar;
 - (id)prompt;
 - (BOOL)resignFirstResponder;
 - (id)scopeButtonTitles;
@@ -113,13 +130,16 @@
 - (void)setDrawsBackground:(BOOL)arg1;
 - (void)setKeyboardType:(NSInteger)arg1;
 - (void)setPlaceholder:(id)arg1;
+- (void)setPretendsIsInBar:(BOOL)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)setScopeButtonTitles:(id)arg1;
+- (void)setSearchResultsButtonSelected:(BOOL)arg1;
 - (void)setSelectedScopeButtonIndex:(NSInteger)arg1;
 - (void)setShowsBookmarkButton:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsScopeBar:(BOOL)arg1;
+- (void)setShowsSearchResultsButton:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
@@ -127,6 +147,7 @@
 - (BOOL)showsBookmarkButton;
 - (BOOL)showsCancelButton;
 - (BOOL)showsScopeBar;
+- (BOOL)showsSearchResultsButton;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)text;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementString:(id)arg3;

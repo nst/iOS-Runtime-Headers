@@ -26,13 +26,11 @@
 - (double)preferredHardwareSampleRate;
 - (double)preferredIOBufferDuration;
 - (void)privateBeginInterruption;
-- (void)privateCategoryChanged:(id)arg1;
-- (void)privateCurrentHardwareInputNumberOfChannelsChanged:(id)arg1;
-- (void)privateCurrentHardwareOutputNumberOfChannelsChanged:(id)arg1;
-- (void)privateCurrentHardwareSampleRateChanged:(id)arg1;
 - (void)privateEndInterruption;
+- (void)privateEndInterruptionWithFlags:(id)arg1;
 - (void)privateInputIsAvailableChanged:(id)arg1;
 - (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
+- (BOOL)setActive:(BOOL)arg1 withFlags:(NSInteger)arg2 error:(id*)arg3;
 - (BOOL)setCategory:(id)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
 - (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;

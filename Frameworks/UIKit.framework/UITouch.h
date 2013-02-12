@@ -20,6 +20,9 @@
     NSMutableArray *_gestureRecognizers;
     UIView *_gestureView;
     } _locationInWindow;
+    unsigned char _pathIdentity;
+    unsigned char _pathIndex;
+    float _pathMajorRadius;
     NSInteger _phase;
     } _previousLocationInWindow;
     NSInteger _savedPhase;
@@ -30,6 +33,10 @@
     UIWindow *_window;
 }
 
+@property float _pathMajorRadius; /* unknown property attribute: S_setPathMajorRadius: */
+@property unsigned char _pathIdentity; /* unknown property attribute: S_setPathIdentity: */
+@property unsigned char _pathIndex; /* unknown property attribute: S_setPathIndex: */
+@property(copy,readonly) NSArray *gestureRecognizers;
 @property(retain) UIView *gestureView;
 @property(retain) UIView *view;
 @property(retain,readonly) UIView *view;
@@ -49,16 +56,24 @@
 
 - (void)_addGestureRecognizer:(id)arg1;
 - (void)_clearGestureRecognizers;
+- (NSInteger)_compareIndex:(id)arg1;
 - (id)_gestureRecognizers;
 - (BOOL)_isFirstTouchForView;
 - (void)_loadStateFromTouch:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_locationInWindow:(id)arg1;
 - (id)_mk_delayedCopy;
+- (unsigned char)_pathIdentity;
+- (unsigned char)_pathIndex;
+- (float)_pathMajorRadius;
+- (id)_phaseDescription;
 - (void)_popPhase;
 - (void)_pushPhase:(NSInteger)arg1;
 - (void)_removeGestureRecognizer:(id)arg1;
 - (void)_setIsFirstTouchForView:(BOOL)arg1;
 - (void)_setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1 resetPrevious:(BOOL)arg2;
+- (void)_setPathIdentity:(unsigned char)arg1;
+- (void)_setPathIndex:(unsigned char)arg1;
+- (void)_setPathMajorRadius:(float)arg1;
 - (BOOL)_touchesBeganWasDelayed;
 - (void)dealloc;
 - (id)description;

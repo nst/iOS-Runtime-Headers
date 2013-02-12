@@ -2,10 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ITSync.framework/ITSync
  */
 
+@class NSConditionLock;
+
 @interface ITSyncFileLocker : NSObject {
     unsigned int _exclusive : 1;
     unsigned int _needsDidAcquireCallback : 1;
     id _delegate;
+    NSConditionLock *_hasLockLock;
     NSUInteger _uid;
 }
 
@@ -15,9 +18,13 @@
 + (id)iTunesSyncingLockfilePath;
 
 - (void)_blockingLockWasAcquired;
+- (NSInteger)_heldLockfd;
+- (id)_lockfilePath;
 - (void)_releaseLockNoSpinLock;
+- (id)_taskAssertion;
 - (BOOL)acquireLockBlockingOnNewThreadIfNecessary;
 - (BOOL)acquireLockTryNow;
+- (BOOL)acquireLockWithTimeout:(double)arg1;
 - (void)clearDelegate;
 - (void)dealloc;
 - (id)description;

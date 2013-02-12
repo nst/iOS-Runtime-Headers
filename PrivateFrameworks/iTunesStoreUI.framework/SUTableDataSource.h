@@ -6,23 +6,30 @@
 
 @interface SUTableDataSource : NSObject {
     id _cellReuseSource;
+    NSInteger _columnCount;
     SUVariableCellConfigurationCache *_configurationCache;
     NSInteger _preferringUserInteractionCount;
 }
 
-@property(readonly) ISURLOperationCache *imageCache;
+@property(readonly) SUImageCache *imageCache;
+@property(readonly) ISURLOperationPool *imagePool;
+@property(readonly) NSArray *sectionIndexTitles;
 @property id cellReuseSource;
+@property NSInteger columnCount;
 @property(readonly) NSInteger numberOfSections;
 @property(getter=isPreferringUserInteraction,readonly) BOOL preferringUserInteraction;
+@property(readonly) NSInteger tableViewStyle;
 
 - (void)beginPreferringUserInteraction;
 - (id)cachedConfigurationForClass:(Class)arg1 index:(NSInteger)arg2;
 - (BOOL)canDeleteIndexPath:(id)arg1;
 - (BOOL)canDoubleTapIndexPath:(id)arg1;
 - (BOOL)canSelectIndexPath:(id)arg1;
+- (id)cellContextForConfigurationClass:(Class)arg1;
 - (id)cellForIndexPath:(id)arg1;
 - (float)cellHeightForIndexPath:(id)arg1;
 - (id)cellReuseSource;
+- (NSInteger)columnCount;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)configurePlaceholderCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)dealloc;
@@ -33,14 +40,23 @@
 - (id)headerViewForSection:(NSInteger)arg1;
 - (float)heightForPlaceholderCells;
 - (id)imageCache;
+- (id)imagePool;
+- (id)init;
 - (BOOL)isPreferringUserInteraction;
-- (NSInteger)numberOfItemsInSection:(NSInteger)arg1;
+- (NSInteger)numberOfColumnsInSection:(NSInteger)arg1;
+- (NSInteger)numberOfRowsInSection:(NSInteger)arg1;
 - (NSInteger)numberOfSections;
 - (id)placeholderCellForIndexPath:(id)arg1;
 - (void)reloadCellContexts;
 - (void)reloadData;
 - (void)resetCaches;
+- (void)resetLayoutCaches;
+- (NSInteger)sectionIndexForIndexTitle:(id)arg1 atIndex:(NSInteger)arg2;
+- (id)sectionIndexTitles;
 - (void)setCellReuseSource:(id)arg1;
+- (void)setColumnCount:(NSInteger)arg1;
+- (NSInteger)tableViewStyle;
 - (id)titleForDeleteConfirmationForIndexPath:(id)arg1;
+- (id)titleForHeaderInSection:(NSInteger)arg1;
 
 @end

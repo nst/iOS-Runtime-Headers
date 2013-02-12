@@ -2,48 +2,74 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class NSArray, WebFrame;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class DOMNode, NSArray, WebFrame;
 
 @interface DDOperation : NSOperation {
+     /* Encoded args for previous method: ^{__DDScanner={__CFRuntimeBase=I[4C]}^{__DDLRTable}^{__DDLexer}^{__DDLookupTable}^{__DDCache}^{__DDTokenCache}^{__DDLexemCache}^{__DDScanQuery}^{__DDScanQuery}^{__CFArray}^{__CFArray}iii*@?b1b1}12@0:4I8 */
+    DOMNode *_endNode;
+    NSInteger _endOffset;
     WebFrame *_frame;
     NSInteger _generationNumber;
     BOOL _isCurrentlyUsingTheScanner;
     BOOL _isDiscarded;
+    BOOL _needContinuation;
     NSInteger _needsLayoutTryCount;
     struct __DDScanQuery { } *_query;
     NSArray *_results;
+    DOMNode *_startNode;
+    NSInteger _startOffset;
     NSInteger _tryCount;
     NSUInteger _types;
 }
 
+@property(retain) DOMNode *endNode;
 @property(retain) WebFrame *frame;
 @property(retain) NSArray *results;
+@property(retain) DOMNode *startNode;
 @property NSUInteger detectionTypes;
+@property NSInteger endOffset;
 @property NSInteger generationNumber;
 @property BOOL isDiscarded;
+@property BOOL needContinuation;
+@property NSInteger startOffset;
 @property NSInteger tryCount;
 
-+ (struct __DDScanner { struct __CFRuntimeBase { NSUInteger x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDLRTable {} *x2; struct __DDLexer {} *x3; struct __DDLookupTable {} *x4; struct __DDCache {} *x5; struct __CFCharacterSet {} *x6; struct __CFCharacterSet {} *x7; struct __DDTokenCache {} *x8; struct __DDLexemCache {} *x9; struct __DDScanQuery {} *x10; struct __DDScanQuery {} *x11; struct __CFArray {} *x12; struct __CFArray {} *x13; NSInteger x14; NSInteger x15; char *x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)_sharedScannerForTypes:(NSUInteger)arg1;
++ (struct __DDScanner { struct __CFRuntimeBase { NSUInteger x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDLRTable {} *x2; struct __DDLexer {} *x3; struct __DDLookupTable {} *x4; struct __DDCache {} *x5; struct __DDTokenCache {} *x6; struct __DDLexemCache {} *x7; struct __DDScanQuery {} *x8; struct __DDScanQuery {} *x9; struct __CFArray {} *x10; struct __CFArray {} *x11; NSInteger x12; NSInteger x13; NSInteger x14; char *x15; id x16; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x17; unsigned int x18 : 1; unsigned int x19 : 1; }*)_sharedScannerForTypes:(NSUInteger)arg1;
 
-- (void)_createScanQueryOnWebThread;
+- (void)_createScanQueryOnWebThreadStartAfterRange:(id)arg1;
+- (BOOL)_doURLificationOnDocument;
 - (void)_setScanQuery:(struct __DDScanQuery { }*)arg1;
 - (void)cancel;
 - (void)cleanup;
 - (void)dealloc;
 - (NSUInteger)detectionTypes;
+- (id)endNode;
+- (NSInteger)endOffset;
 - (id)frame;
 - (NSInteger)generationNumber;
 - (id)init;
 - (BOOL)isDiscarded;
 - (void)main;
+- (BOOL)needContinuation;
 - (id)results;
 - (struct __DDScanQuery { }*)scanQuery;
 - (void)setDetectionTypes:(NSUInteger)arg1;
+- (void)setEndNode:(id)arg1;
+- (void)setEndOffset:(NSInteger)arg1;
 - (void)setFrame:(id)arg1;
 - (void)setGenerationNumber:(NSInteger)arg1;
 - (void)setIsDiscarded:(BOOL)arg1;
+- (void)setNeedContinuation:(BOOL)arg1;
 - (void)setResults:(id)arg1;
+- (void)setStartNode:(id)arg1;
+- (void)setStartOffset:(NSInteger)arg1;
 - (void)setTryCount:(NSInteger)arg1;
+- (id)startNode;
+- (NSInteger)startOffset;
 - (NSInteger)tryCount;
 
 @end

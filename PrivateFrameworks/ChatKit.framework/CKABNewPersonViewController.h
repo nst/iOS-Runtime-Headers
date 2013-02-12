@@ -5,6 +5,9 @@
 @interface CKABNewPersonViewController : ABNewPersonViewController {
 }
 
+- (BOOL)_shouldUseDefaultFirstResponder;
+- (BOOL)_shouldUseKeyWindowStack;
+- (BOOL)_shouldUseNextFirstResponder;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 
 @end

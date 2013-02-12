@@ -3,7 +3,7 @@
  */
 
 @interface NSConcreteData : NSData {
-    unsigned int _inline : 1;
+    unsigned int _isInline : 1;
     unsigned int _shouldFree : 1;
     unsigned int _hasVM : 1;
     unsigned int _retainCount : 29;

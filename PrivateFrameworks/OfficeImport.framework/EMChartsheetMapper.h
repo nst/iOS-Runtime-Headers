@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDChart, EDChartSheet;
+@class EDChartSheet;
 
 @interface EMChartsheetMapper : EMSheetMapper {
     struct CGRect { 
@@ -15,12 +15,13 @@
             float height; 
         } size; 
     } mBox;
-    EDChart *mChart;
     EDChartSheet *mChartSheet;
 }
 
 - (id)initWithChartSheet:(id)arg1 parent:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (NSInteger)preprocessHeightWithState:(id)arg1;
+- (NSInteger)preprocessWidthWithState:(id)arg1;
 - (NSInteger)width;
 
 @end

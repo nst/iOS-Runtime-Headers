@@ -6,17 +6,16 @@
     BOOL _editable;
 }
 
-- (void)_updateNavigationBar:(BOOL)arg1;
+- (void)_updateNavigationBar;
+- (void)editDoneTapped;
 - (BOOL)editable;
-- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)navigationBarButtonClicked:(NSInteger)arg1;
+- (id)init;
 - (BOOL)performDeletionActionForSpecifier:(id)arg1;
-- (void)preferencesTable:(id)arg1 deleteRow:(NSInteger)arg2 inGroup:(NSInteger)arg3 outDeletionItemCopy:(id*)arg4;
 - (void)pushController:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
-- (BOOL)table:(id)arg1 canDeleteRow:(NSInteger)arg2;
-- (BOOL)table:(id)arg1 canSelectRow:(NSInteger)arg2;
-- (void)viewWillBecomeVisible:(void*)arg1;
-- (void)viewWillRedisplay;
+- (void)tableView:(id)arg1 commitEditingStyle:(NSInteger)arg2 forRowAtIndexPath:(id)arg3;
+- (NSInteger)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

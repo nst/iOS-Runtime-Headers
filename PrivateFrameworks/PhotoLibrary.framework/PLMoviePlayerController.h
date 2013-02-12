@@ -6,11 +6,15 @@
     id _playerDelegate;
 }
 
++ (BOOL)movieWillBecomeReady;
 + (void)reset;
++ (void)setMovieWillBecomeReady:(BOOL)arg1;
++ (void)setVideoIsRemaking:(BOOL)arg1;
 + (id)sharedMoviePlayerController;
 
 - (void)dealloc;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
+- (void)setMovieWithPath:(id)arg1;
 
 @end

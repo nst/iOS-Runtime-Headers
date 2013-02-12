@@ -6,6 +6,7 @@
 }
 
 @property(copy) NSString *data;
+@property(retain,readonly) DOMStyleSheet *sheet;
 @property(copy,readonly) NSString *target;
 
 - (id)data;

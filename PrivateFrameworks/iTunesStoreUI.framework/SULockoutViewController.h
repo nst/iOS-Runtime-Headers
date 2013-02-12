@@ -14,6 +14,7 @@
 @property(retain) NSString *messageBody;
 @property(retain) NSString *messageTitle;
 
+- (id)copyArchivableContext;
 - (void)dealloc;
 - (id)image;
 - (id)init;

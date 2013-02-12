@@ -21,7 +21,6 @@
 - (id)newCountStatementWithFetchRequest:(id)arg1;
 - (id)newCreateIndexStatementForColumn:(id)arg1;
 - (id)newCreateIndexStatementForColumnWithName:(id)arg1 inTableWithName:(id)arg2;
-- (id)newCreateIndexStatementsForManyToMany:(id)arg1;
 - (id)newCreatePrimaryKeyTableStatement;
 - (id)newCreateTableStatementForEntity:(id)arg1;
 - (id)newCreateTableStatementForManyToMany:(id)arg1;

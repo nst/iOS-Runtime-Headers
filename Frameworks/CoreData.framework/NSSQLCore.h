@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLAdapter, NSSQLConnection, NSSQLEntity, NSSQLModel, NSSQLRow, NSSQLRowCache, NSSaveChangesRequest, NSSet;
+@class NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLAdapter, NSSQLConnection, NSSQLEntity, NSSQLModel, NSSQLRow, NSSQLRowCache, NSSaveChangesRequest, NSSet, NSString;
 
 @interface NSSQLCore : NSPersistentStore {
     struct _sqlCoreFlags { 
@@ -26,6 +26,9 @@
     struct __CFDictionary { } *_dbOperationsByGlobalID;
     NSInteger _debug;
     struct __CFSet { } *_deleteTable;
+    NSString *_externalDataReferencesDirectory;
+    NSMutableArray *_externalDataReferencesToDelete;
+    NSMutableArray *_externalDataReferencesToSave;
     NSSQLEntity *_lastEntity;
     NSInteger _lazyFaultDebugLevel;
     NSSet *_lockedObjects;
@@ -60,7 +63,7 @@
 - (id)_availableChannel;
 - (id)_availableChannelFromRegisteredChannels;
 - (void)_beginTransaction:(id)arg1;
-- (void)_checkAndRepairCorrelationTables:(BOOL)arg1;
+- (void)_checkAndRepairCorrelationTables:(BOOL)arg1 storeVersionNumber:(id)arg2;
 - (void)_cleanUpAfterSave;
 - (void)_cleanUpAfterTransaction;
 - (id)_collectSkewedComponents:(id*)arg1;
@@ -81,7 +84,6 @@
 - (id)_newRowsForFetchPlan:(struct { void *x1; void *x2; NSUInteger x3; void *x4; void *x5; void *x6; void *x7; void *x8; int (*x9)(); struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 3; unsigned int x_10_1_4 : 27; } x10; }*)arg1 selectedBy:(SEL)arg2 withArgument:(id)arg3;
 - (Class)_objectIDClass;
 - (id)_obtainOpenChannel;
-- (BOOL)_obtainPermanentIDsForObjects:(id)arg1 withContext:(id)arg2;
 - (void)_performChangesWithAdapterOps:(id)arg1;
 - (id)_performExhaustiveConflictDetectionForObjects:(id)arg1 withChannel:(id)arg2;
 - (BOOL)_performFastConflictDetectionForObjects:(id)arg1 withChannel:(id)arg2;
@@ -94,7 +96,7 @@
 - (id)_prepareResultsFromResultSet:(struct { NSInteger x1; NSInteger x2; double x3; NSInteger x4; NSUInteger x5; void **x6; void *x7; void *x8; struct FetchResultsRow_st {} *x9; struct FetchResultsRow_st {} *x10; struct FetchResultsRowListHeader_st {} **x11; struct { unsigned int x_12_1_1 : 1; unsigned int x_12_1_2 : 31; } x12; }*)arg1 usingFetchPlan:(struct { void *x1; void *x2; NSUInteger x3; void *x4; void *x5; void *x6; void *x7; void *x8; int (*x9)(); struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 3; unsigned int x_10_1_4 : 27; } x10; }*)arg2 withMatchingRows:(id*)arg3;
 - (void)_purgeRowCache;
 - (void)_registerForAdapterContextNotifications:(id)arg1;
-- (void)_repairDatabaseCorrelationTables:(id)arg1 brokenHashModel:(id)arg2 recurse:(BOOL)arg3;
+- (void)_repairDatabaseCorrelationTables:(id)arg1 brokenHashModel:(id)arg2 storeVersionNumber:(id)arg3 recurse:(BOOL)arg4;
 - (void)_rollbackTransaction:(id)arg1;
 - (struct __CFArray { }*)_rowsForConflictDetection:(id)arg1 withChannel:(id)arg2;
 - (void)_setMetadata:(id)arg1;
@@ -103,8 +105,6 @@
 - (id)availableChannel;
 - (void)beginTransaction;
 - (id)channels;
-- (void)childContext:(id)arg1 didForgetObjectsWithObjectIDs:(id)arg2;
-- (void)childContext:(id)arg1 didRememberObjectsWithObjectIDs:(id)arg2;
 - (void)commitChanges:(id)arg1;
 - (void)commitTransaction;
 - (id)connection;
@@ -116,11 +116,15 @@
 - (id)databaseOperationForObject:(id)arg1;
 - (id)databaseUUID;
 - (void)dealloc;
+- (void)deleteExternalDataReferences:(id)arg1;
 - (id)entityForEntityDescription:(id)arg1;
 - (id)entityForFetchRequest:(id)arg1;
 - (id)entityForObject:(id)arg1;
 - (id)entityNameOrderingArrayForEntities:(id)arg1;
-- (id)executeRequest:(id)arg1 withContext:(id)arg2;
+- (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
+- (id)externalDataReferencesDirectory;
+- (id)externalDataReferencesToDelete;
+- (id)externalDataReferencesToSave;
 - (id)fetchRowForObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
 - (void)forgetSnapshotForGlobalID:(id)arg1;
 - (void)forgetSnapshotsForGlobalIDs:(id)arg1;
@@ -131,9 +135,11 @@
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (void)insertEntity:(id)arg1 intoOrderingArray:(id)arg2 withDependencies:(id)arg3 processingSet:(id)arg4;
 - (void)invalidateObjectsWithGlobalIDs:(id)arg1;
-- (id*)knownKeyValuesForObjectID:(id)arg1 withContext:(id)arg2;
+- (const id*)knownKeyValuesForObjectID:(id)arg1 withContext:(id)arg2;
 - (BOOL)load:(id*)arg1;
 - (id)localSnapshotForGlobalID:(id)arg1;
+- (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
+- (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
 - (id)metadata;
 - (id)missingObjectGlobalIDs;
 - (id)model;
@@ -144,9 +150,12 @@
 - (struct _NSScalarObjectID { Class x1; }*)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
 - (id)newObjectIDSetsForToManyPrefetchingRequest:(id)arg1 andSourceObjectIDs:(id)arg2;
 - (id)newRowsForFetchPlan:(void*)arg1;
+- (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
+- (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)objectIDFactoryForEntity:(id)arg1;
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (id)objectsForFetchRequest:(id)arg1 inContext:(id)arg2;
+- (id)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 - (id)orderAdapterOperations;
 - (BOOL)ownsGlobalID:(id)arg1;
 - (BOOL)ownsObject:(id)arg1;
@@ -166,8 +175,6 @@
 - (void)recordValuesForInsertedObject:(id)arg1;
 - (id)refreshObjects:(id)arg1;
 - (void)registerChannel:(id)arg1;
-- (id)retainedDataForObjectID:(id)arg1 withContext:(id)arg2;
-- (id)retainedRelationshipDataWithSourceID:(id)arg1 forRelationship:(id)arg2 withContext:(id)arg3;
 - (void)rollbackChanges;
 - (void)rollbackTransaction;
 - (id)rowCache;
@@ -181,5 +188,6 @@
 - (void)setURL:(id)arg1;
 - (id)type;
 - (void)unregisterChannel:(id)arg1;
+- (id)writeExternalDataReferences;
 
 @end

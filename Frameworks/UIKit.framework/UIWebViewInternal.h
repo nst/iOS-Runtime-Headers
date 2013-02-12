@@ -2,28 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebViewDelegate>, NSURLRequest, UICheckeredPatternView, UIScroller, UIWebDocumentView, UIWebViewWebViewDelegate;
+@class <UIWebViewDelegate>, NSURLRequest, UICheckeredPatternView, UIScrollView, UIWebBrowserView, UIWebViewWebViewDelegate;
 
-@interface UIWebViewInternal : NSObject <UIFormAssistantDelegate> {
+@interface UIWebViewInternal : NSObject {
     unsigned int scalesPageToFit : 1;
     unsigned int isLoading : 1;
     unsigned int drawsCheckeredPattern : 1;
     unsigned int usedGeolocation : 1;
     unsigned int webSelectionEnabled : 1;
     unsigned int drawInWebThread : 1;
-    unsigned int allowsPopUps : 1;
+    UIWebBrowserView *browserView;
     UICheckeredPatternView *checkeredPatternView;
     NSInteger clickedAlertButtonIndex;
     <UIWebViewDelegate> *delegate;
-    UIWebDocumentView *documentView;
+    float lastAdjustmentForScroller;
     NSURLRequest *request;
-    UIScroller *scroller;
+    UIScrollView *scroller;
     UIWebViewWebViewDelegate *webViewDelegate;
 }
-
-- (void)_updateScrollerContentSize:(BOOL)arg1;
-- (void)_updateScrollerIndicatorSubrectForEditingForms:(BOOL)arg1;
-- (void)formAssistant:(id)arg1 didBeginEditingFormNode:(id)arg2;
-- (void)formAssistant:(id)arg1 didEndEditingFormNode:(id)arg2;
 
 @end

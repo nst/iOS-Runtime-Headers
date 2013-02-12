@@ -6,5 +6,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (NSUInteger)hash;
+- (BOOL)isEqual:(id)arg1;
 
 @end

@@ -6,8 +6,10 @@
 }
 
 @property(retain,readonly) <DOMNodeFilter> *filter;
+@property(retain,readonly) DOMNode *referenceNode;
 @property(retain,readonly) DOMNode *root;
 @property(readonly) BOOL expandEntityReferences;
+@property(readonly) BOOL pointerBeforeReferenceNode;
 @property(readonly) NSUInteger whatToShow;
 
 - (void)dealloc;

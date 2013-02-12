@@ -76,7 +76,6 @@
 - (id)_accessibilityInternalData;
 - (id)_accessibilityScrollStatus;
 - (id)_accessibilitySupplementaryHeaderViews;
-- (void)_accessibilityUpdateVisibleCellFrames;
 - (void)_addSubview:(id)arg1 atTop:(BOOL)arg2;
 - (void)_adjustCountLabel;
 - (void)_adjustExtraSeparators;
@@ -138,7 +137,6 @@
 - (NSInteger)accessibilityElementCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityLabel;
-- (void)accessibilityUpdateVisibleCellFrames;
 - (id)accessoryView;
 - (void)addTableColumn:(id)arg1;
 - (struct { float x1; float x2; float x3; float x4; })adornmentMargins;

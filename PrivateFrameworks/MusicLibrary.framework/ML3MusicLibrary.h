@@ -2,18 +2,31 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSOperationQueue, NSString, NSThread;
+@class ML3MusicLibrary_SQLiteDatabaseContext, NSDictionary, NSString;
 
 @interface ML3MusicLibrary : NSObject {
-    NSOperationQueue *_backgroundOperationQueue;
-    NSThread *_backgroundThread;
+    ML3MusicLibrary_SQLiteDatabaseContext *_backgroundDatabaseContext;
+    struct dispatch_queue_s { } *_backgroundQueue;
     BOOL _enableWrites;
+    ML3MusicLibrary_SQLiteDatabaseContext *_mainDatabaseContext;
+    id _mcSettingsObserver;
+    NSString *_nonContentsNotifyName;
+    NSInteger _nonContentsNotifyToken;
+    NSString *_notifyName;
+    NSInteger _notifyToken;
     NSString *_path;
+    NSDictionary *_purchasedContentFolderMap;
+    id _revertToBackupObserver;
 }
 
-@property(retain,readonly) NSOperationQueue *backgroundOperationQueue;
+@property(readonly) ML3CacheGenerator *cacheGenerator;
+@property(copy,readonly) NSArray *localizedSectionIndexTitles;
 @property(copy,readonly) NSString *path;
-@property(readonly) ML3MusicLibrary_SQLiteDatabaseContext *threadLocalDatabaseContext;
+@property(readonly) NSArray *preferredAudioTracks;
+@property(readonly) NSArray *preferredSubtitleTracks;
+@property(readonly) ML3Container *purchasedTracksPlaylist;
+@property(readonly) BOOL mediaRestrictionEnabled;
+@property(readonly) BOOL requiresPostProcessing;
 
 + (void)attachAuxiliaryDatabases:(struct sqlite3 { }*)arg1;
 + (void)ensureIndexExists:(id)arg1 onHandle:(struct sqlite3 { }*)arg2 entityClass:(Class)arg3 indexableSQL:(id)arg4;
@@ -29,33 +42,52 @@
 + (void)registerCustomCallbacksOnHandle:(struct sqlite3 { }*)arg1;
 + (void)registerFunctionsOnHandle:(struct sqlite3 { }*)arg1;
 + (id)sharedLibrary;
++ (BOOL)statementDidFinishAfterStepping:(struct sqlite3_stmt { }*)arg1;
 + (BOOL)statementHasRowAfterStepping:(struct sqlite3_stmt { }*)arg1;
++ (void)stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(BOOL*)arg2 didFinish:(BOOL*)arg3;
 + (struct __CFDictionary { }*)threadLocalCFMutableDictionaryForKey:(id)arg1 withValueCallbacks:(const struct { NSInteger x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 + (BOOL)updateSortMapOnHandle:(struct sqlite3 { }*)arg1;
 
 - (void)_debugLoggingOptionsDidChangeNotification:(id)arg1;
+- (BOOL)_mustExecuteiTunesCommands;
+- (BOOL)_mustProcessLanguageChange;
+- (void)accessDatabaseContextUsingBlock:(id)arg1;
+- (void)accessSortKeyBuilder:(id)arg1;
 - (long long)addStringToSortMap:(id)arg1;
-- (id)backgroundOperationQueue;
-- (void)clearThreadLocalStatementCache;
+- (id)backgroundQueue_backgroundDatabaseContext;
+- (id)cacheGenerator;
+- (BOOL)canWriteToDatabase;
 - (void)dealloc;
 - (id)entityForClass:(Class)arg1 persistentID:(long long)arg2;
 - (BOOL)executeSQL:(id)arg1;
 - (id)initWithPath:(id)arg1 enableWrites:(BOOL)arg2;
+- (id)insertItemFromPurchaseFolder:(id)arg1 withItemProperties:(id)arg2;
 - (long long)insertStringIntoSortMapNoTransaction:(id)arg1;
+- (id)localizedSectionHeaderForSectionIndex:(NSUInteger)arg1;
+- (id)localizedSectionIndexTitles;
+- (BOOL)mediaRestrictionEnabled;
+- (id)newDatabaseContext;
+- (void)notifyContentsDidChange;
+- (void)notifyNonContentsPropertyDidChange;
 - (NSInteger)openDatabaseHandle:(struct sqlite3 {}**)arg1;
 - (id)path;
 - (void)performOperationInBackground:(id)arg1;
-- (void)popThreadLocalDatabaseHandle;
-- (struct sqlite3_stmt { }*)preparedStatementForSQL:(id)arg1;
-- (void)pushThreadLocalDatabaseHandle:(struct sqlite3 { }*)arg1;
-- (id)threadLocalCollectionForKey:(id)arg1 entityClass:(Class)arg2 collectionClass:(Class)arg3;
-- (id)threadLocalDatabaseContext;
-- (struct sqlite3 { }*)threadLocalDatabaseHandle;
-- (id)threadLocalEntityRequestsForEntityClass:(Class)arg1;
-- (id)threadLocalPropertyCacheForEntityClass:(Class)arg1;
-- (id)threadLocalPropertyRequestsForEntityClass:(Class)arg1;
-- (struct iPhoneSortKeyBuilder { }*)threadLocalSortKeyBuilder;
-- (struct sqlite3_stmt { }*)threadLocalStatementForSQL:(id)arg1;
+- (void)performTransactionWithBlock:(id)arg1;
+- (void)postChangeNotificationAndScheduleFlush;
+- (void)postNonContentsChangeNotificationAndScheduleFlush;
+- (id)preferredAudioTracks;
+- (id)preferredSubtitleTracks;
+- (void)prepareStatementForSQL:(id)arg1 usingBlock:(id)arg2;
+- (void)purchasedContentFolder:(id)arg1 didProcessItemWithXMLFilenames:(id)arg2;
+- (BOOL)purchasedContentFolder:(id)arg1 loadItemWithProperties:(id)arg2 propertiesToSave:(id*)arg3;
+- (void)purchasedContentFolder:(id)arg1 willProcessItemWithXMLFilenames:(id)arg2;
+- (id)purchasedTracksPlaylist;
+- (void)reconnectToDatabase;
+- (BOOL)reloadPurchasedContent;
+- (BOOL)requiresPostProcessing;
+- (void)savePlaylists;
+- (void)saveTrackMetadata;
+- (NSUInteger)sectionIndexTitleIndexForSectionIndex:(NSUInteger)arg1;
 - (void)updateSortMap;
 
 @end

@@ -15,6 +15,7 @@
 - (void*)copyParsedRecordWithSource:(void*)arg1 outRecordType:(NSUInteger*)arg2;
 - (id)initWithGroup:(void*)arg1 removeExistingProperties:(BOOL)arg2;
 - (id)initWithPerson:(void*)arg1 removeExistingProperties:(BOOL)arg2;
+- (BOOL)setImageData:(id)arg1;
 - (void)setRecordIsGroup:(BOOL)arg1;
 - (BOOL)setValue:(void*)arg1 forProperty:(NSUInteger)arg2;
 

@@ -7,13 +7,13 @@
 
 + (void)_accountActivationChanged:(id)arg1;
 + (void)_accountLoginStateChanged:(id)arg1;
-+ (void)_accountRegistrationStateChanged:(id)arg1;
++ (void)_accountRegistrationStatusChanged:(id)arg1;
 + (void)_aliasValidationStatusChanged:(id)arg1;
 + (void)_configureDaemon;
 + (void)_daemonConnectedNotification:(id)arg1;
 + (void)_daemonDisconnectedNotification:(id)arg1;
-+ (void)_ensureActivationStateInSync;
-+ (BOOL)conferencingAutoRegistersAccount;
++ (void)activateFaceTime;
++ (unsigned long long)capabilities;
 + (BOOL)conferencingHasValidatedAliasForAccount:(id)arg1;
 + (BOOL)conferencingIsAvailable;
 + (BOOL)conferencingIsRegisteredForAccount:(id)arg1;
@@ -21,20 +21,23 @@
 + (BOOL)conferencingIsSupported;
 + (BOOL)connect:(BOOL)arg1;
 + (BOOL)connect;
++ (void)deactivateFaceTime;
 + (BOOL)disconnect;
++ (BOOL)invitationListener;
 + (BOOL)isConnected;
 + (BOOL)isConnecting;
++ (BOOL)isFaceTimeActivated;
++ (void)setCapabilities:(unsigned long long)arg1;
++ (void)setInvitationListener:(BOOL)arg1;
 + (void)updateConferencingIsAvailable;
 
 - (id)_accountDomainForAccount:(id)arg1;
 - (void)_handlePeopleChanged:(id)arg1;
 - (void)_handleStatusChanged:(id)arg1;
-- (id)availableConferenceURLs;
+- (id)availableFaceTimeURLs;
 - (void)dealloc;
 - (id)imAccountForAVURL:(id)arg1;
 - (id)init;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (id)services;
 
 @end

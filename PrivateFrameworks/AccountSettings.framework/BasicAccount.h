@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AccountSettings.framework/AccountSettings
  */
 
-@class <AccountFullAccountProtocol>, <AccountRefreshProtocol>, NSMutableDictionary;
+@class <AccountFullAccountProtocol>, <AccountRefreshProtocol>, BasicAccount, NSMutableDictionary;
 
 @interface BasicAccount : NSObject <AccountFullAccountProtocol> {
     <AccountFullAccountProtocol> *_fullAccount;
+    BasicAccount *_parentAccount;
     NSMutableDictionary *_properties;
     <AccountRefreshProtocol> *_syncAccount;
 }
@@ -34,12 +35,15 @@
 - (void)_forcedSetAccountProperty:(id)arg1 forKey:(id)arg2;
 - (void)_forcedSetEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (id)_initWithType:(id)arg1 class:(id)arg2;
+- (id)_orderedDataclasses:(id)arg1;
 - (id)accountClass;
 - (BOOL)accountClassStringIsIMAPSubclass;
+- (BOOL)accountPropertiesHaveCalDAVEnabled:(id)arg1;
 - (id)accountPropertyForKey:(id)arg1;
 - (BOOL)accountTypeStringCanOwnCalDAVAccounts;
 - (BOOL)accountTypeStringCanOwnCardDAVAccounts;
 - (BOOL)accountTypeStringIsIMAPSubclass;
+- (BOOL)accountTypeStringOwnsIMAPChild;
 - (id)childAccountPropertiesArrayBySettingChildProperties:(id)arg1 forChildAccountType:(id)arg2;
 - (id)childPropertiesForAccountType:(id)arg1 defaultProperties:(id)arg2 outParentNeedsSave:(BOOL*)arg3;
 - (void)dealloc;
@@ -52,12 +56,17 @@
 - (id)init;
 - (id)initWithProperties:(id)arg1;
 - (BOOL)isEnabledForDataclass:(id)arg1;
+- (BOOL)isMailAccount;
+- (BOOL)isMobileMeAccount;
 - (BOOL)isValidCalDAVChildAccount;
 - (BOOL)isValidCardDAVChildAccount;
 - (BOOL)isValidDAMMeAccount;
 - (BOOL)isValidIMAPNotesAccount;
+- (id)parentAccount;
+- (id)parentAccountIdentifier;
 - (id)properties;
 - (id)propertiesToSave;
+- (id)provisionedDataclasses;
 - (BOOL)refreshContainerListForDataclass:(id)arg1;
 - (BOOL)refreshContainerWithIdentifier:(id)arg1 forDataclass:(id)arg2;
 - (BOOL)refreshContainersForDataclass:(id)arg1;
@@ -69,6 +78,7 @@
 - (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
 - (void)setEnabledForDataclasses:(id)arg1;
 - (void)setFullAccount:(id)arg1;
+- (void)setParentAccount:(id)arg1;
 - (id)shortTypeString;
 - (id)subscribedCalendarRecords;
 - (id)supportedDataclasses;

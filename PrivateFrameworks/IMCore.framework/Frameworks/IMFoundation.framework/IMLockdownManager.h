@@ -7,12 +7,21 @@
 @interface IMLockdownManager : NSObject {
     BOOL _hasShownMismatchedSIM;
     BOOL _hasShownWaitingAlertThisSession;
+    NSString *_inverseDeviceIdentifier;
     BOOL _isBricked;
+    BOOL _isCarrierInstall;
     BOOL _isInternalInstall;
     BOOL _settingUpActivationState;
     NSInteger _state;
     NSString *_unqiueDeviceIdentifier;
 }
+
+@property(readonly) NSString *inverseDeviceIdentifier;
+@property(readonly) NSString *uniqueDeviceIdentifier;
+@property(readonly) BOOL brickedDevice;
+@property(readonly) BOOL isCarrierInstall;
+@property(readonly) BOOL isInternalInstall;
+@property(readonly) NSInteger lockdownState;
 
 + (id)sharedInstance;
 
@@ -26,6 +35,8 @@
 - (BOOL)brickedDevice;
 - (void)dealloc;
 - (id)init;
+- (id)inverseDeviceIdentifier;
+- (BOOL)isCarrierInstall;
 - (BOOL)isInternalInstall;
 - (NSInteger)lockdownState;
 - (oneway void)release;

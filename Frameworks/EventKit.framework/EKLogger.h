@@ -15,11 +15,9 @@
     NSString *_logName;
     NSString *_logPath;
     struct dispatch_queue_s { } *_logQueue;
-    NSString *_logRollFormat;
     NSInteger _maxLogFiles;
     NSString *_outputDefaultName;
     NSInteger _outputLevel;
-    NSString *_prefix;
 }
 
 @property(retain) NSFileHandle *fh;

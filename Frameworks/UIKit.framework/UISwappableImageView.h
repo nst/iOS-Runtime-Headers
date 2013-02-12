@@ -12,6 +12,7 @@
     UIToolbar *_buttonBar;
     NSInteger _buttonTag;
     NSInteger _currentAnimation;
+    BOOL _didDisableWindowAutorotation;
     SEL _didFinishSelector;
     id _didFinishTarget;
     BOOL _flipped;
@@ -22,6 +23,7 @@
     id _value;
 }
 
+- (void)_willMoveToWindow:(id)arg1;
 - (void)animateImage:(float)arg1 withButtonBar:(id)arg2 withTag:(NSInteger)arg3 target:(id)arg4 didFinishSelector:(SEL)arg5;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;

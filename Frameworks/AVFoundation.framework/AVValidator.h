@@ -17,6 +17,7 @@
 
 + (BOOL)_containsStreamingResource:(id)arg1;
 + (void)initialize;
++ (BOOL)isPlayableResource:(id)arg1 accordingToValidationPlist:(id)arg2;
 + (BOOL)isPlayableResource:(id)arg1;
 + (BOOL)isSupportedMIMEType:(id)arg1;
 + (BOOL)isSupportedType:(id)arg1;
@@ -30,7 +31,9 @@
 - (id)resolvedURL;
 - (BOOL)resourceIsInspectable;
 - (BOOL)resourceIsPlayable;
+- (void)setValidationPlist:(id)arg1;
 - (NSInteger)status;
 - (void)validateAsynchronouslyWithCompletionHandler:(id)arg1;
+- (id)validationPlist;
 
 @end

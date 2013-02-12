@@ -34,8 +34,8 @@
 - (BOOL)isRestrictedMimeType:(id)arg1;
 - (BOOL)isSinglePagePDFThatIsAllowedToBeInline;
 - (id)mf_copyMarkupURL;
-- (struct CGSize { float x1; float x2; })mf_markupSize;
-- (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(NSInteger)arg1;
+- (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(NSInteger)arg3;
 - (id)mimePart;
 - (void)scaleImageToFit:(NSInteger)arg1;
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;

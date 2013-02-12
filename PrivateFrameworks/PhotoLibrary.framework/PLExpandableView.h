@@ -2,9 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLExpandableViewDelegate>, NSSet, UITouch, UIView;
+@class <PLExpandableViewDelegate>;
 
 @interface PLExpandableView : UIView {
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -21,13 +30,9 @@
         unsigned int state : 3; 
         unsigned int prevState : 3; 
         unsigned int tracking : 1; 
-        unsigned int forwardedTo : 1; 
-        unsigned int delayTouchesBeganUntilMultipleFingersDown : 1; 
-        unsigned int fingersAreDown : 1; 
-        unsigned int didSendTouchesBegan : 1; 
-        unsigned int ignoreSingleTouch : 1; 
         unsigned int autorotationDisabled : 1; 
         unsigned int animationDisabled : 1; 
+        unsigned int allowsExpansion : 1; 
         unsigned int delegateExpandedFrame : 1; 
         unsigned int delegateWillBeginExpanding : 1; 
         unsigned int delegateWillCompleteExpanding : 1; 
@@ -40,22 +45,25 @@
         unsigned int delegateWillCancelCollapsing : 1; 
         unsigned int delegateDidCancelCollapsing : 1; 
         unsigned int delegateExpandedFractionChanged : 1; 
-    UIView *_contentView;
     <PLExpandableViewDelegate> *_delegate;
     } _expandFlags;
     } _expandedFrame;
     float _expansionFraction;
-    UIView *_forwardingView;
-    NSUInteger _lastDownCount;
-    UITouch *_leftTouch;
-    UITouch *_rightTouch;
-    } _touchDownLocation;
-    NSSet *_touches;
+    NSUInteger _leftTouchIndex;
+    } _leftTouchLocation;
+    float _pinchVelocity;
+    } _previousLeftLocation;
+    } _previousRightLocation;
+    NSUInteger _rightTouchIndex;
+    } _rightTouchLocation;
+    double _trackingTimeInterval;
 }
+
+@property BOOL allowsExpansion;
 
 + (void)_initializeSafeCategory;
 
-- (void)_finishTouches;
+- (BOOL)_canPinch;
 - (void)_notifyDidCancelCollapsing;
 - (void)_notifyDidCancelExpanding;
 - (void)_notifyDidCompleteCollapsing;
@@ -66,13 +74,9 @@
 - (void)_notifyWillCancelExpandingWithDuration:(double)arg1;
 - (void)_notifyWillCompleteCollapsingWithDuration:(double)arg1;
 - (void)_notifyWillCompleteExpandingWithDuration:(double)arg1;
-- (void)_removeForwardingViewForEvent:(id)arg1 touches:(id)arg2;
 - (void)_setAutorotationDisabled:(BOOL)arg1;
 - (void)_setExpansionFraction:(float)arg1;
-- (void)_setForwardedByExpandableView:(BOOL)arg1;
 - (void)_setState:(NSInteger)arg1 withDuration:(double)arg2;
-- (void)_touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (id)_touchesForMe:(id)arg1 withEvent:(id)arg2;
 - (void)_transitionFromCancelContract:(NSInteger)arg1 withDuration:(double)arg2;
 - (void)_transitionFromCancelExpand:(NSInteger)arg1 withDuration:(double)arg2;
 - (void)_transitionFromCompleteContract:(NSInteger)arg1 withDuration:(double)arg2;
@@ -81,44 +85,33 @@
 - (void)_transitionFromContracting:(NSInteger)arg1 withDuration:(double)arg2;
 - (void)_transitionFromExpanded:(NSInteger)arg1 withDuration:(double)arg2;
 - (void)_transitionFromExpanding:(NSInteger)arg1 withDuration:(double)arg2;
-- (id)beginTrackingState:(NSInteger)arg1 withTouches:(id)arg2 event:(id)arg3;
-- (void)collapse:(BOOL)arg1;
-- (void)collapseWithDuration:(double)arg1;
-- (float)completeTrackingToState:(NSInteger)arg1 withTouches:(id)arg2 duration:(double)arg3 event:(id)arg4;
-- (id)contentView;
-- (float)continueTrackingState:(NSInteger)arg1 withTouches:(id)arg2 event:(id)arg3;
-- (void)dealloc;
+- (BOOL)allowsExpansion;
+- (void)beginTrackingPinch:(id)arg1;
+- (void)canceledPinch:(id)arg1;
+- (void)collapseWithAnimation:(BOOL)arg1;
+- (float)completeTrackingPinch:(id)arg1 toState:(NSInteger)arg2 duration:(double)arg3;
+- (float)continueTrackingPinch:(id)arg1;
+- (void)continuedPinch:(id)arg1;
 - (id)delegate;
-- (void)didMoveToSuperview;
-- (void)expand;
-- (void)expandWithDuration:(double)arg1;
+- (void)expandWithAnimation:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedContentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedFrame;
+- (float)expansionFraction;
 - (void)finishTransitionToState:(NSInteger)arg1;
-- (void)firstTouchBegan:(id)arg1 withEvent:(id)arg2;
+- (void)finishedPinch:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTracking;
-- (id)navigationBar;
 - (void)notifyExpansionFraction:(float)arg1 force:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pinchRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 insetTouches:(BOOL)arg3;
 - (NSInteger)previousState;
-- (void)setDelayTouchesBeganUntilMultipleFingersDown:(BOOL)arg1;
+- (void)setAllowsExpansion:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExpandedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIgnoreSingleTouch:(BOOL)arg1;
-- (id)singleTapForwardingViewForPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (NSInteger)snapState;
+- (NSInteger)snapState:(BOOL)arg1;
+- (void)startedPinch:(id)arg1;
 - (NSInteger)state;
 - (void)stateDidChangeFrom:(NSInteger)arg1;
-- (NSInteger)touchCount;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2 usingProvidedTouches:(BOOL)arg3;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesDidEnd;
-- (void)touchesDidMove:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)updateVelocitiesWithTouches:(id)arg1 withEvent:(id)arg2;
-- (void)willBeginForwardingTouchesToView:(id)arg1;
+- (void)updatePinchState:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 

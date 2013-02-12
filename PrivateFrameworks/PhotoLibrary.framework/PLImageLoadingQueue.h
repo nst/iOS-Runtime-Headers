@@ -15,10 +15,12 @@
 - (void)cancelLoadFromSource:(id)arg1 forObject:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)imageIsAvailable:(id)arg1 forObject:(id)arg2 fromSource:(id)arg3;
+- (void)imageIsAvailable:(id)arg1 forObject:(id)arg2 fromSource:(id)arg3 completionBlocks:(id)arg4;
 - (id)initWithImageCache:(id)arg1;
 - (void)invalidateImageFromSource:(id)arg1 forObject:(id)arg2;
+- (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 completion:(id)arg4;
 - (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 loadIfNeeded:(BOOL)arg4;
+- (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 priority:(NSInteger)arg4 completion:(id)arg5;
 - (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3 priority:(NSInteger)arg4;
 - (id)loadImageSynchronously:(BOOL)arg1 fromSource:(id)arg2 forObject:(id)arg3;
 - (void)pauseLoading;

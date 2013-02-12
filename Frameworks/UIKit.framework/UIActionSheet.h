@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIActionSheetDelegate>, NSMutableArray, UILabel, UIPopoverController, UIToolbar, UIView, UIWindow;
+@class <UIActionSheetDelegate>, NSMutableArray, UIImage, UILabel, UIPopoverController, UIToolbar, UIView, UIWindow;
 
 @interface UIActionSheet : UIView {
     struct { 
@@ -50,11 +50,17 @@
         unsigned int twoColumnsLayoutMode : 7; 
         unsigned int shouldHandleFirstKeyUpEvent : 1; 
         unsigned int cancelWhenDoneAnimating : 1; 
+        unsigned int useThreePartButtons : 1; 
+        unsigned int useTwoPartButtons : 1; 
+        unsigned int displaySelectedButtonGlyph : 1; 
+        unsigned int indexOfSelectedButton : 7; 
+        unsigned int useCustomSelectedButtonGlyph : 1; 
     NSInteger _actionSheetStyle;
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
     UIView *_buttonTableView;
     NSMutableArray *_buttons;
+    NSMutableArray *_buttonsInTable;
     NSInteger _cancelButton;
     id _context;
     NSInteger _defaultButton;
@@ -63,10 +69,17 @@
     UIWindow *_dimWindow;
     NSInteger _dismissButtonIndex;
     NSInteger _firstOtherButton;
+    float _fontSizeInTableView;
+    float _iconOffset;
     UIView *_keyboard;
+    float _labelOffset;
+    float _labelWidth;
     } _modalViewFlags;
+    BOOL _oldIgnoreTapsValue;
     UIWindow *_originalWindow;
     UIPopoverController *_popoverController;
+    UIImage *_selectedButtonGlyphHighlightedImage;
+    UIImage *_selectedButtonGlyphImage;
     float _startY;
     UILabel *_subtitleLabel;
     NSInteger _suspendTag;
@@ -74,6 +87,7 @@
     UILabel *_taglineTextLabel;
     NSMutableArray *_textFields;
     UILabel *_titleLabel;
+    float _titleWidth;
     UIToolbar *_toolbar;
 }
 
@@ -125,6 +139,7 @@
 - (void)_layoutIfNeeded;
 - (void)_layoutPopupAlertWithOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (float)_maxHeight;
+- (struct CGSize { float x1; float x2; })_maxSize;
 - (BOOL)_needsKeyboard;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1;
 - (void)_performPopup:(BOOL)arg1;
@@ -136,6 +151,7 @@
 - (void)_presentSheetFromView:(id)arg1 above:(BOOL)arg2;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1 inView:(id)arg2;
 - (void)_presentSheetStartingFromYCoordinate:(double)arg1;
+- (id)_presentingViewForView:(id)arg1;
 - (id)_relinquishPopoverController;
 - (void)_removeAlertWindowOrShowAnOldAlert;
 - (void)_repopup;
@@ -160,6 +176,7 @@
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (NSInteger)addButtonWithTitle:(id)arg1 tag:(id)arg2;
 - (NSInteger)addButtonWithTitle:(id)arg1;
+- (id)addMediaButtonWithTitle:(id)arg1 iconView:(id)arg2 andTableIconView:(id)arg3;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (NSInteger)alertSheetStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
@@ -230,9 +247,12 @@
 - (void)setDimView:(id)arg1;
 - (void)setDimsBackground:(BOOL)arg1;
 - (void)setInPopover:(BOOL)arg1;
+- (void)setIndexOfSelectedButton:(NSInteger)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNumberOfRows:(NSInteger)arg1;
 - (void)setRunsModal:(BOOL)arg1;
+- (void)setSelectedButtonGlyphHighlightedImage:(id)arg1;
+- (void)setSelectedButtonGlyphImage:(id)arg1;
 - (void)setShowsOverSpringBoardAlerts:(BOOL)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSuspendTag:(NSInteger)arg1;
@@ -256,6 +276,8 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView;
 - (id)tagForButtonIndex:(NSInteger)arg1;
 - (id)textField;
 - (id)textFieldAtIndex:(NSInteger)arg1;

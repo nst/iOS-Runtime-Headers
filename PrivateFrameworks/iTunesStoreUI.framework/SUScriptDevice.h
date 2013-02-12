@@ -5,6 +5,9 @@
 @interface SUScriptDevice : SUScriptObject {
 }
 
+@property(readonly) NSString *UTIImage;
+@property(readonly) NSString *UTIMovie;
+@property(readonly) NSString *UTIText;
 @property(readonly) NSString *capabilityNameEmail;
 @property(readonly) NSString *capabilityNameExplicitMedia;
 @property(readonly) NSString *capabilityNameHDVideo;
@@ -39,10 +42,15 @@
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
+- (id)UTIForURL:(id)arg1;
+- (id)UTIImage;
+- (id)UTIMovie;
+- (id)UTIText;
 - (id)_className;
 - (NSInteger)_deviceCapabilityForString:(id)arg1;
 - (void)_showDialogForCapabilities:(id)arg1 mismatches:(id)arg2;
 - (NSInteger)activeNetworkType;
+- (id)applicationsForUTI:(id)arg1;
 - (id)attributeKeys;
 - (id)capabilityNameEmail;
 - (id)capabilityNameExplicitMedia;

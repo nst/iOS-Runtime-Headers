@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewControllerDataSource>, <QLPreviewItem>, NSTimer, NSURLRequest, QLPreviewView, UIBarButtonItem, UIDocumentInteractionController, UIImageView, UINavigationController, UITapGestureRecognizer, UIToolbar, UIView, UIViewController;
+@class <QLPreviewControllerDataSource>, <QLPreviewItem>, NSOperation, NSTimer, NSURLRequest, QLPopOverState, QLPreviewView, UIBarButtonItem, UIDocumentInteractionController, UIImageView, UINavigationController, UITapGestureRecognizer, UIView, UIViewController;
 
 @interface QLPreviewControllerReserved : NSObject {
     struct CGRect { 
@@ -16,14 +16,12 @@
         } size; 
     unsigned int isHTMLContent : 1;
     unsigned int statusBarWasHidden : 1;
-    unsigned int isMobal : 1;
     unsigned int isInCustomTransition : 1;
     unsigned int isZoomingIn : 1;
     unsigned int useZoomAnimation : 1;
     unsigned int useTransitionImage : 1;
-    unsigned int isInOpenMenu : 1;
-    unsigned int isOpeningDocument : 1;
-    UIBarButtonItem *actionButton;
+    UIBarButtonItem *actionBarButtonItem;
+    BOOL actionMenuEnabled;
     BOOL blockRemoteImages;
     <QLPreviewItem> *cachedPreviewItem;
     UIView *clippingView;
@@ -31,17 +29,19 @@
     NSInteger currentPreviewItemIndex;
     <QLPreviewControllerDataSource> *dataSource;
     id delegate;
-    UIToolbar *footerToolBar;
-    UIView *fullScreenView;
     UITapGestureRecognizer *headerTapRecognizer;
     UIImageView *iconView;
     NSTimer *idleTimer;
     UIDocumentInteractionController *interactionController;
     UIBarButtonItem *leftArrowItem;
+    UIView *mainView;
+    NSInteger mode;
     UINavigationController *navigationController;
     NSUInteger numberOfPreviewItems;
+    NSOperation *openOperation;
     NSInteger overlayState;
     UIView *parentControllerView;
+    QLPopOverState *popOverState;
     <QLPreviewItem> *previewItem;
     NSURLRequest *previewRequest;
     QLPreviewView *previewView;

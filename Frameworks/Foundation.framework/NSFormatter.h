@@ -5,6 +5,7 @@
 @interface NSFormatter : NSObject <NSCopying, NSCoding> {
 }
 
+- (void)_gkUpdateLocale;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)editingStringForObjectValue:(id)arg1;

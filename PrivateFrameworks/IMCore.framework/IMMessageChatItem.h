@@ -5,6 +5,8 @@
 @interface IMMessageChatItem : IMChatItem {
 }
 
+@property(readonly) IMMessage *message;
+
 - (id)description;
 - (id)initWithMessage:(id)arg1;
 - (id)message;

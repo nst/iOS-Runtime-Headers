@@ -9,10 +9,10 @@
 + (id)setWithCapacity:(NSUInteger)arg1;
 
 - (void)_setObject:(id)arg1;
+- (void)addItemParserMappingWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
 - (void)addMessageEntry:(id)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
-- (void)addPropFindElementWithNameSpace:(const char *)arg1 elementName:(const char *)arg2 parseClass:(Class)arg3;
 - (Class)classForCoder;
 - (void)filterUsingPredicate:(id)arg1;
 - (id)initWithCapacity:(NSUInteger)arg1;

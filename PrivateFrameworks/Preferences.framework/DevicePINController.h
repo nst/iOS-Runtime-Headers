@@ -64,7 +64,7 @@
 - (void)suspend;
 - (BOOL)useProgressiveDelays;
 - (BOOL)validatePIN:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willUnlock;
 

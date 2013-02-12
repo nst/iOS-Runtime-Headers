@@ -35,7 +35,7 @@
 - (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2;
 - (BOOL)saveFileAtPath:(id)arg1 toDirectory:(id)arg2 withExtension:(id)arg3 error:(id*)arg4;
 - (void)saveLogsWithNotes:(id)arg1;
-- (void)saveNotes:(id)arg1;
+- (void)saveNotesInBackground:(id)arg1;
 - (id)savedLogsDirectoryNameForSpecifier:(id)arg1;
 - (void)setBooleanProperty:(id)arg1 withSpecifier:(id)arg2;
 - (void)setLoggingEnabled:(BOOL)arg1 forSpecifier:(id)arg2;

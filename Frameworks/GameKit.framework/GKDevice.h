@@ -7,6 +7,7 @@
 @interface GKDevice : NSObject {
     NSString *_buildVersion;
     NSString *_deviceName;
+    BOOL _gameCenterSupported;
     NSString *_gameKitVersion;
     NSString *_osVersion;
     NSDictionary *_screenCapabilities;
@@ -19,6 +20,7 @@
 @property(readonly) NSString *osVersion;
 @property(readonly) NSDictionary *screenCapabilities;
 @property(readonly) NSString *udid;
+@property(getter=isGameCenterSupported,readonly) BOOL gameCenterSupported;
 
 + (id)currentDevice;
 
@@ -28,6 +30,7 @@
 - (id)deviceName;
 - (id)gameKitVersion;
 - (id)init;
+- (BOOL)isGameCenterSupported;
 - (id)osVersion;
 - (id)processNameHeader;
 - (id)protocolVersionHeader;

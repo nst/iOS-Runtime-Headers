@@ -30,7 +30,7 @@
 
 - (id)SQLExpressionWithContext:(struct { NSUInteger x1; NSUInteger x2; BOOL x3; BOOL x4; }*)arg1 depth:(NSUInteger)arg2;
 - (id)SQLExpressionWithTables:(NSUInteger*)arg1 baseTable:(NSUInteger)arg2;
-- (id)_criterionForSQLWithAddressBook:(void*)arg1;
+- (id)_criterionForSQL;
 - (BOOL)_evaluateAccountCriterion:(id)arg1;
 - (BOOL)_evaluateAddressBookCriterion:(id)arg1;
 - (BOOL)_evaluateAddressHistoryCriterion:(id)arg1;
@@ -48,8 +48,9 @@
 - (BOOL)allCriteriaMustBeSatisfied;
 - (NSUInteger)bestBaseTable;
 - (id)criteria;
-- (id)criterionByExpandingAddressCriteriaWithAddressBook:(void*)arg1;
-- (id)criterionForSQLWithAddressBook:(void*)arg1;
+- (id)criterionByAddingEmailCriteria;
+- (id)criterionByExpandingAddressCriteria;
+- (id)criterionForSQL;
 - (id)criterionIdentifier;
 - (NSInteger)criterionType;
 - (BOOL)dateIsRelative;
@@ -61,7 +62,7 @@
 - (BOOL)doesMessageSatisfyCriterion:(id)arg1;
 - (id)emailAddressesForGroupCriterion;
 - (id)expression;
-- (id)fixOnceWithAddressBook:(void*)arg1;
+- (id)fixOnce;
 - (BOOL)hasNumberCriterion;
 - (BOOL)includesCriterionSatisfyingPredicate:(int (*)())arg1 restrictive:(BOOL)arg2;
 - (id)init;

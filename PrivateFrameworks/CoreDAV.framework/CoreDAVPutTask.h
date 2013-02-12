@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSData, NSString;
+@class NSString;
 
-@interface CoreDAVPutTask : CoreDAVTask {
-    NSString *_dataContentType;
-    NSData *_dataPayload;
-    NSString *_previousETag;
+@interface CoreDAVPutTask : CoreDAVPostOrPutTask {
+    NSString *_newETag;
 }
 
-@property <CoreDAVPutTaskDelegate> *delegate;
+@property <CoreDAVTaskDelegate> *delegate;
+@property(retain) NSString *newETag;
 
-- (id)additionalHeaderValues;
 - (void)dealloc;
+- (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atRelativeURI:(id)arg3 previousETag:(id)arg4;
-- (id)requestBody;
+- (id)newETag;
+- (void)setNewETag:(id)arg1;
 
 @end

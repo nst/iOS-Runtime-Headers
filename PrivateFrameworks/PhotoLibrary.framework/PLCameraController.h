@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLCameraControllerDelegate>, AVCapture, NSString, PLPreviewView, SBSAccelerometer;
+@class <PLCameraControllerDelegate>, AVCapture, NSString, NSTimer, PLPreviewView, SBSAccelerometer;
 
 @interface PLCameraController : NSObject <SBSAccelerometerDelegate> {
     struct CGSize { 
@@ -52,6 +52,8 @@
         unsigned int torchIsDisabled : 1; 
         unsigned int isCameraApp : 1; 
         unsigned int logFocusInfo : 1; 
+        unsigned int logPreviewInfo : 1; 
+        unsigned int logCaptureInfo : 1; 
         unsigned int videoDurationIsValid : 1; 
         unsigned int delegateModeWillChange : 1; 
         unsigned int delegateModeDidChange : 1; 
@@ -75,12 +77,14 @@
     NSInteger _cameraOrientation;
     NSInteger _captureOrientation;
     NSInteger _captureQuality;
+    double _captureStartTime;
     <PLCameraControllerDelegate> *_delegate;
     NSInteger _expectedPhotoCaptures;
     NSInteger _flashMode;
     NSInteger _focusCount;
     BOOL _hdrCaptureIncludesEV0Image;
     BOOL _hdrEnabled;
+    NSTimer *_idleTimerTimer;
     BOOL _isPreviewing;
     double _maximumCaptureDuration;
     NSInteger _photoCaptureCount;
@@ -90,7 +94,6 @@
     PLPreviewView *_previewView;
     NSInteger _previewZoomMode;
     NSUInteger _previousSimpleRemotePriority;
-    double _startTime;
     NSString *_videoCapturePath;
     float _zoomFactor;
 }
@@ -123,6 +126,8 @@
 - (void)_capturedPhoto:(id)arg1;
 - (void)_capturedPhotoWithDictionary:(id)arg1;
 - (void)_commonFocusFinished;
+- (void)_conferenceConnectionChanged:(id)arg1;
+- (void)_delayIdleTimerByTimeInterval:(double)arg1;
 - (void)_destroyAVCapture;
 - (void)_didStopCapture;
 - (void)_didTakePhoto:(id)arg1;
@@ -136,23 +141,28 @@
 - (void)_interruptionEnded:(id)arg1;
 - (BOOL)_isPreviewZoomModeAllowed:(NSInteger)arg1;
 - (void)_previewDidStart:(id)arg1;
+- (void)_previewFailedToStart:(id)arg1;
 - (void)_previewStarted:(id)arg1;
 - (void)_previewStopped:(id)arg1;
 - (void)_recordingStopped:(id)arg1;
+- (void)_resetIdleTimer;
 - (void)_resetPreviewView;
 - (void)_sendIsReady;
 - (void)_sendModeDidChange;
 - (void)_serverDied:(id)arg1;
 - (void)_setCameraMode:(NSInteger)arg1 cameraDevice:(NSInteger)arg2 force:(BOOL)arg3;
 - (void)_setFlashMode:(NSInteger)arg1 force:(BOOL)arg2;
+- (void)_setIsPreviewing:(BOOL)arg1;
 - (void)_setLocationEnabled:(BOOL)arg1;
 - (void)_setOrientation;
 - (void)_setOrientationEventsEnabled:(BOOL)arg1;
 - (void)_setPreviewZoomMode:(NSInteger)arg1 force:(BOOL)arg2;
+- (void)_setResumePreviewing:(BOOL)arg1;
 - (void)_setVideoCapturePath:(id)arg1;
 - (void)_setVideoPreviewLayer;
 - (BOOL)_setupCamera;
 - (void)_sourceStarted:(id)arg1;
+- (void)_startPreviewAfterAVCaptureInitializationFailure;
 - (void)_stopPreview;
 - (void)_stopVideoCaptureAndPausePreview:(id)arg1;
 - (void)_tearDownCamera;

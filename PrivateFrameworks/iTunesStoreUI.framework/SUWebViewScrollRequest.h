@@ -2,24 +2,28 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUWebViewScrollDelegate>, SUDOMElement;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class SUDOMElement;
 
 @interface SUWebViewScrollRequest : NSObject {
     BOOL _animated;
+    id _completionHandler;
     SUDOMElement *_element;
-    <SUWebViewScrollDelegate> *_scrollDelegate;
 }
 
+@property(copy) ? *completionHandler;
 @property(retain) SUDOMElement *element;
-@property(retain) <SUWebViewScrollDelegate> *scrollDelegate;
 @property BOOL animated;
 
 - (BOOL)animated;
+- (id)completionHandler;
 - (void)dealloc;
 - (id)element;
-- (id)scrollDelegate;
 - (void)setAnimated:(BOOL)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setElement:(id)arg1;
-- (void)setScrollDelegate:(id)arg1;
 
 @end

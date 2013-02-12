@@ -39,7 +39,7 @@
         NSMutableString *brailleString; 
         NSMutableArray *brailleStringModifiers; 
         double lastBrailleChordPosted; 
-        double brailleCharWeightedMean; 
+        double brailleCharExponentialMovingAverage; 
         double brailleTranslationTimeout; 
     struct __CFRunLoopTimer { } *_blinkerEventTimer;
     BOOL _blinkingEnabled;

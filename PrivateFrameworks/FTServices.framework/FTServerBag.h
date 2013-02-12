@@ -4,9 +4,9 @@
 
 @class IMConnectionMonitor, NSData, NSDictionary, NSMutableData, NSMutableURLRequest, NSString, NSURL, NSURLConnection, NSURLResponse;
 
-@interface FTServerBag : NSObject <IMConnectionMonitorDelegate> {
-    unsigned int _allowSelfSignedCertificates : 1;
-    unsigned int _allowUnsignedBags : 1;
+@interface FTServerBag : NSObject {
+    BOOL _allowSelfSignedCertificates;
+    BOOL _allowUnsignedBags;
     NSString *_apsEnvironmentName;
     NSDictionary *_bag;
     NSURL *_bagURL;

@@ -2,20 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
+@class CoreDAVItemWithNoChildren;
+
 @interface CoreDAVErrorItem : CoreDAVItem {
-    NSInteger _errorValue;
+    CoreDAVItemWithNoChildren *_numberOfMatchesWithinLimits;
 }
 
-@property NSInteger errorValue;
+@property(retain) CoreDAVItemWithNoChildren *numberOfMatchesWithinLimits;
 
-+ (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)errorOnUnknownChildren;
-+ (BOOL)parsingWithSubItems;
-
-- (id)copyCoreDAVParseRules;
+- (id)copyParseRules;
+- (void)dealloc;
 - (id)description;
-- (NSInteger)errorValue;
-- (void)setErrorValue:(NSInteger)arg1;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)numberOfMatchesWithinLimits;
 - (void)setNumberOfMatchesWithinLimits:(id)arg1;
 
 @end

@@ -25,9 +25,11 @@
         unsigned int disabledDimsImage : 1; 
         unsigned int alwaysHandleScrollerMouseEvent : 1; 
         unsigned int drawsImageOnRight : 1; 
+        unsigned int drawContentsCenteredHorizontally : 1; 
     UIFont *_font;
     } _imageOffset;
     struct __CFDictionary { } *_info;
+    float _minimumFontPointSize;
     } _pushButtonFlags;
     } _shadowOffset;
     NSString *_title;
@@ -73,11 +75,13 @@
 - (BOOL)isAccessibilityElement;
 - (BOOL)isPressed;
 - (BOOL)isSelected;
+- (float)minimumFontSize;
 - (struct CGPoint { float x1; float x2; })pressFeedbackPosition;
 - (void)setAutosizesToFit:(BOOL)arg1;
 - (void)setBackground:(id)arg1 forState:(NSUInteger)arg2;
 - (void)setDisabledDimsImage:(BOOL)arg1;
 - (void)setDrawContentsCentered:(BOOL)arg1;
+- (void)setDrawContentsCenteredHorizontally:(BOOL)arg1;
 - (void)setDrawsImageOnRight:(BOOL)arg1;
 - (void)setDrawsShadow:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
@@ -87,6 +91,7 @@
 - (void)setImage:(id)arg1 forState:(NSUInteger)arg2;
 - (void)setImage:(id)arg1;
 - (void)setImageOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMinimumFontSize:(float)arg1;
 - (void)setNeedsDisplay;
 - (void)setPressedImage:(id)arg1;
 - (void)setReverseShadowDirectionWhenHighlighted:(BOOL)arg1;

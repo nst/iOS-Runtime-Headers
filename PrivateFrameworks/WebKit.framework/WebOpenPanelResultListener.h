@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface WebOpenPanelResultListener : NSObject <WebOpenPanelResultListener> {
     struct FileChooser { NSInteger x1; struct FileChooserClient {} *x2; struct Vector<WebCore::String,0ul> { 
             NSUInteger m_size; 
@@ -11,7 +15,7 @@
             } m_buffer; 
         } x3; struct RefPtr<WebCore::Icon> { 
             struct Icon {} *m_ptr; 
-        } x4; } *_chooser;
+        } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; } *_chooser;
 }
 
 - (void)cancel;

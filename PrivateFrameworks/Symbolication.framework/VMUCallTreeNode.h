@@ -22,18 +22,19 @@
 + (void)compareChildrenOf:(id)arg1 toChildrenOf:(id)arg2 storeDiffIn:(id)arg3;
 + (id)makeFakeRootForNode:(id)arg1;
 + (id)rootForCompare:(id)arg1 to:(id)arg2;
-+ (id)rootForNonWaitingSamples:(id)arg1 symbolicator:(id)arg2;
 + (id)rootForSampleFile:(struct __sFILE { char *x1; NSInteger x2; NSInteger x3; short x4; short x5; struct __sbuf { char *x_6_1_1; NSInteger x_6_1_2; } x6; NSInteger x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; NSInteger x_13_1_2; } x13; struct __sFILEX {} *x14; NSInteger x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; NSInteger x_18_1_2; } x18; NSInteger x19; long long x20; }*)arg1;
-+ (id)rootForSamples:(id)arg1 symbolicator:(id)arg2;
++ (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg2 sampler:(id)arg3 options:(NSUInteger)arg4;
++ (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg2;
 + (id)rootForTraceData:(id)arg1;
 
-- (void)addStackEntry:(id)arg1 symbolicator:(id)arg2 numBytes:(NSUInteger)arg3 threadTable:(id)arg4;
+- (void)addStackEntry:(id)arg1 symbolicator:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg2 sampler:(id)arg3 numBytes:(NSUInteger)arg4 options:(NSUInteger)arg5 uniqueStrings:(id)arg6 addressToSymbolNameMap:(id)arg7 threadPortToNameMap:(id)arg8 dispatchQueueSerialNumToNameMap:(id)arg9;
 - (char *)addSubTreeFromFile:(struct __sFILE { char *x1; NSInteger x2; NSInteger x3; short x4; short x5; struct __sbuf { char *x_6_1_1; NSInteger x_6_1_2; } x6; NSInteger x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; NSInteger x_13_1_2; } x13; struct __sFILEX {} *x14; NSInteger x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; NSInteger x_18_1_2; } x18; NSInteger x19; long long x20; }*)arg1 withIndent:(NSInteger)arg2 withLine:(char *)arg3 withLen:(NSUInteger*)arg4;
 - (void)addTraceEvent:(id)arg1 forTraceData:(id)arg2;
 - (NSUInteger)address;
 - (id)browserName;
 - (NSInteger)compare:(id)arg1;
 - (NSInteger)compareNames:(id)arg1;
+- (NSInteger)comparePuttingMainThreadFirst:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)count;
 - (void)dealloc;
@@ -41,6 +42,7 @@
 - (id)filterOutSymbols:(id)arg1;
 - (id)filterOutWaiting;
 - (id)findNodeMatching:(id)arg1 searchForward:(BOOL)arg2 ignoreCase:(BOOL)arg3 wholeWords:(BOOL)arg4;
+- (id)findOrAddChildWithName:(id)arg1 address:(NSUInteger)arg2 compareSymbolNames:(BOOL)arg3;
 - (id)findOrAddChildWithName:(id)arg1 address:(NSUInteger)arg2;
 - (id)fullOutputWithThreshold:(NSUInteger)arg1;
 - (id)invertedNode;

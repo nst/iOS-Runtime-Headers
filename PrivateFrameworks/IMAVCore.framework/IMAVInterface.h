@@ -6,6 +6,38 @@
     id _delegate;
 }
 
+@property(readonly) NSString *externalIPAddress;
+@property void *localVideoBackLayer;
+@property void *localVideoLayer;
+@property(readonly) NSNumber *natType;
+@property void *remoteVideoBackLayer;
+@property void *remoteVideoLayer;
+@property NSUInteger cameraOrientation;
+@property NSUInteger cameraType;
+@property(readonly) unsigned long long capabilities;
+@property(readonly) unsigned long long capabilitiesOfCPU;
+@property(readonly) unsigned long long capabilitiesOfNetwork;
+@property(readonly) id controller;
+@property id delegate;
+@property(readonly) NSUInteger externalSIPPort;
+@property(readonly) BOOL isAVInterfaceReady;
+@property(readonly) NSUInteger overallChatState;
+@property(readonly) BOOL supportsLayers;
+@property(readonly) BOOL supportsRelay;
+@property(readonly) BOOL systemCanARD;
+@property(readonly) BOOL systemCanAudioChat;
+@property(readonly) BOOL systemCanHostARD;
+@property(readonly) BOOL systemCanHostMultiwayAudio;
+@property(readonly) BOOL systemCanHostMultiwayVideo;
+@property(readonly) BOOL systemCanReceiveHighRes;
+@property(readonly) BOOL systemCanReceiveWidescreen;
+@property(readonly) BOOL systemCanRecordAudio;
+@property(readonly) BOOL systemCanRecordVideo;
+@property(readonly) BOOL systemCanSendHighRes;
+@property(readonly) BOOL systemCanSendWidescreen;
+@property(readonly) BOOL systemCanVideoChat;
+@property(readonly) BOOL systemIsFullHDSendCapable;
+
 + (id)alloc;
 + (id)sharedInstance;
 

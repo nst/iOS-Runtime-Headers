@@ -6,6 +6,6 @@
 }
 
 - (void)addFiltersToXMLData:(id)arg1;
-- (id)initWithSearchTerms:(id)arg1 searchLimit:(NSUInteger)arg2 atRelativeURI:(id)arg3 appSpecificDataItemClass:(Class)arg4;
+- (id)initWithSearchTerms:(id)arg1 searchLimit:(NSUInteger)arg2 atURL:(id)arg3 appSpecificDataItemClass:(Class)arg4;
 
 @end

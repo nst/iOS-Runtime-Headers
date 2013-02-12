@@ -5,15 +5,22 @@
 @class <IMFileCopierDelegate>, NSURL;
 
 @interface IMFileCopier : NSObject {
-    unsigned int _inProgress : 1;
-    unsigned int _shouldCancel : 1;
-    unsigned int _didErrorOccur : 1;
     <IMFileCopierDelegate> *_delegate;
+    BOOL _didErrorOccur;
     id _identifier;
+    BOOL _inProgress;
     NSURL *_inputURL;
     NSUInteger _operation;
     NSURL *_outputURL;
+    BOOL _shouldCancel;
 }
+
+@property <IMFileCopierDelegate> *delegate;
+@property(readonly) NSURL *inputURL;
+@property(readonly) NSURL *outputURL;
+@property(readonly) BOOL didErrorOccur;
+@property(readonly) id identifier;
+@property(readonly) BOOL wasCancelled;
 
 - (void)_fillOutputURLFromInputURL;
 - (void)_main_copierFinishedWithResult:(id)arg1;

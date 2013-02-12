@@ -22,7 +22,7 @@
 
 - (void)addListeners;
 - (long long)approximateByteSize;
-- (id)audioPropertiesForItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2;
+- (id)audioPropertiesForTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (struct CGSize { float x1; float x2; })calculateDimensionsOfSource;
 - (BOOL)canPassThroughAudio:(id)arg1;
 - (BOOL)canPassThroughVideo:(id)arg1;
@@ -33,12 +33,14 @@
 - (id)fileFormatForURL:(id)arg1;
 - (id)initWithSource:(id)arg1 dest:(id)arg2 mode:(id)arg3 options:(id)arg4;
 - (double)maxDurationWithinLimits;
+- (BOOL)multipleNonEmptyEditsInTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 - (double)progress;
 - (void)removeListeners;
 - (void)setRangeStartTime:(double)arg1 endTime:(double)arg2;
 - (id)settingForFigRemaker;
 - (double)sourceDuration;
+- (BOOL)sourceHasPortraitOrientationVideo;
 - (id)start;
-- (id)videoPropertiesForItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2;
+- (id)videoPropertiesForTrackReader:(struct OpaqueFigTrackReader { }*)arg1;
 
 @end

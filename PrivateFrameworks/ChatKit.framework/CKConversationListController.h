@@ -51,6 +51,7 @@
 - (void)enableConversationListUpdates;
 - (BOOL)hasUnreadConversations;
 - (void)hideNewMessageCompositionPanel:(BOOL)arg1;
+- (void)hideSearchUI;
 - (id)initWithNavigationController:(id)arg1 service:(id)arg2;
 - (BOOL)isShowingCompositionPanel;
 - (BOOL)isShowingEmptyCompositionPanel;

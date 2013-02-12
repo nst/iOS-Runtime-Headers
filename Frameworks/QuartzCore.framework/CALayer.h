@@ -68,6 +68,7 @@
 @property(getter=isFrozen) BOOL frozen;
 @property(getter=isGeometryFlipped) BOOL geometryFlipped;
 @property(getter=isHidden) BOOL hidden;
+@property BOOL invertsShadow;
 @property BOOL masksToBounds;
 @property float mass;
 @property float minificationFilterBias;
@@ -112,6 +113,7 @@
 - (BOOL)_canDisplayConcurrently;
 - (void)_cancelAnimationTimer;
 - (void)_dealloc;
+- (void)_didCommitLayer:(struct Transaction { struct Shared {} *x1; NSInteger x2; struct HashTable<CALayer*,uintptr_t*> {} *x3; struct SpinLock {} *x4; NSUInteger x5; struct Level {} *x6; struct Command {} *x7; struct Deleted {} *x8; struct List<const void*> {} *x9; struct Context {} *x10; struct HashTable<CALayer*,CALayer*> {} *x11; struct __CFRunLoop {} *x12; struct __CFRunLoopObserver {} *x13; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; }*)arg1;
 - (void)_display;
 - (id)_implicitActionForKey:(id)arg1;
 - (id)_mapKit_mapLayer;
@@ -204,6 +206,7 @@
 - (void)insertSublayer:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)insertSublayer:(id)arg1 below:(id)arg2;
 - (void)invalidateContents;
+- (BOOL)invertsShadow;
 - (BOOL)isDescendantOf:(id)arg1;
 - (BOOL)isDoubleSided;
 - (BOOL)isFlipped;
@@ -292,6 +295,7 @@
 - (void)setFrozen:(BOOL)arg1;
 - (void)setGeometryFlipped:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
+- (void)setInvertsShadow:(BOOL)arg1;
 - (void)setMagnificationFilter:(id)arg1;
 - (void)setMask:(id)arg1;
 - (void)setMasksToBounds:(BOOL)arg1;

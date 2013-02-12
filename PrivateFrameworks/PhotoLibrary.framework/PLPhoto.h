@@ -17,15 +17,18 @@
     double _latitude;
     double _longitude;
     BOOL _orientation;
+    NSString *_originalPath;
     NSInteger _primaryKey;
     double _recordModDate;
     NSInteger _thumbnailIndex;
     NSString *_title;
     BOOL _type;
     BOOL _userRating;
+    struct __CFUUID { } *_uuid;
     short _width;
 }
 
+@property(readonly) __CFUUID *uuid;
 @property NSInteger HDRType;
 
 + (id)abbreviatedMetadataDirectoryForDirectory:(id)arg1;
@@ -36,14 +39,12 @@
 + (id)photoWithValuesFromDictionary:(id)arg1;
 
 - (NSInteger)HDRType;
-- (id)_createImageForFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (void)_setPrimaryKey:(NSInteger)arg1;
 - (BOOL)allowsRotation;
 - (void)assignDatabaseValuesFromDictionary:(id)arg1;
 - (double)captureTime;
 - (NSUInteger)changeFlags;
 - (void)clearChangeFlags;
-- (id)dataForFormat:(NSInteger)arg1 width:(NSInteger*)arg2 height:(NSInteger*)arg3 bytesPerRow:(NSInteger*)arg4 dataWidth:(NSInteger*)arg5 dataHeight:(NSInteger*)arg6 imageDataOffset:(NSInteger*)arg7;
 - (id)databaseValuesAsDictionary;
 - (void)dealloc;
 - (id)description;
@@ -54,20 +55,19 @@
 - (id)fileExtensions;
 - (id)filename;
 - (BOOL)flagged;
-- (id)fullSizeImagePath;
 - (BOOL)hasFullSizeImageData;
+- (BOOL)hasXMPFile;
 - (short)height;
 - (NSInteger)imageID;
 - (struct CGSize { float x1; float x2; })imageSize;
-- (id)imageSourceTypeHint;
 - (id)init;
 - (id)initWithStepData:(struct sqlite3_stmt { }*)arg1;
 - (BOOL)isEditable;
 - (double)latitude;
 - (double)longitude;
 - (NSInteger)orientation;
-- (id)pathForFullSizeImage;
-- (id)pathForImageFormat:(NSInteger)arg1;
+- (id)pathForImageFile;
+- (id)pathForLargeThumbnailFile;
 - (id)pathForLowResolutionFile;
 - (id)pathForMetadataDirectory;
 - (id)pathForMetadataWithExtension:(id)arg1;
@@ -75,11 +75,12 @@
 - (id)pathForPrebakedLandscapeScrubberThumbnails;
 - (id)pathForPrebakedPortraitScrubberThumbnails;
 - (id)pathForPrebakedThumbnail;
+- (id)pathForPrebakedWildcatThumbnailsFile;
 - (id)pathForThumbnailFile;
 - (id)pathForTrimmedVideoFile;
 - (id)pathForVideoFile;
 - (id)pathForVideoPreviewFile;
-- (id)pathToLargeThumbnail;
+- (id)pathForXMPFile;
 - (NSInteger)photoType;
 - (NSInteger)primaryKey;
 - (double)recordModDate;
@@ -108,6 +109,7 @@
 - (NSInteger)type;
 - (void)updateWithAuxStepData:(struct sqlite3_stmt { }*)arg1;
 - (BOOL)userRating;
+- (struct __CFUUID { }*)uuid;
 - (short)width;
 
 @end

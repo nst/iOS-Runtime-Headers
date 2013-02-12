@@ -39,7 +39,6 @@
 - (BOOL)processingUserGesture;
 - (void)setDataSource:(id)arg1;
 - (void)showStatus:(id)arg1;
-- (void)showURL:(id)arg1 inFrame:(id)arg2;
 - (void)startAllPlugins;
 - (void)stopAllPlugins;
 - (void)stopOnePlugin:(id)arg1;

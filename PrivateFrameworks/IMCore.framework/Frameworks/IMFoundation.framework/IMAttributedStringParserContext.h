@@ -8,6 +8,11 @@
     NSAttributedString *_inString;
 }
 
+@property(retain,readonly) NSAttributedString *inString;
+@property(retain,readonly) NSString *name;
+@property(retain,readonly) NSArray *resultsForLogging;
+@property(readonly) BOOL shouldPreprocess;
+
 - (void)dealloc;
 - (id)inString;
 - (id)initWithAttributedString:(id)arg1;

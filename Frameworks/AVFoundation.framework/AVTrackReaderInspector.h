@@ -34,6 +34,7 @@
 - (id)init;
 - (BOOL)isEnabled;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isExcludedFromAutoselectionInTrackGroup;
 - (BOOL)isSelfContained;
 - (id)languageCode;
 - (id)mediaType;

@@ -6,21 +6,34 @@
     id _control;
 }
 
+@property(getter=_onTintColor,retain) UIColor *onTintColor; /* unknown property attribute: S_setOnTintColor: */
+@property(getter=_onColor,retain) UIColor *onColor; /* unknown property attribute: S_setOnColor: */
 @property(getter=isOn) BOOL on;
 
 + (void)_initializeSafeCategory;
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)_animateToOn:(BOOL)arg1 withDuration:(float)arg2 sendAction:(BOOL)arg3;
+- (void)_commonInit;
+- (id)_customColoredOnButtonImage;
+- (void)_handlePan:(id)arg1;
+- (void)_handleTap:(id)arg1;
+- (id)_imageForState:(NSInteger)arg1;
+- (void)_onAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (id)_onColor;
+- (id)_onTintColor;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)_resetImages;
 - (id)_scriptingInfo;
-- (void)_swipeLeft:(id)arg1;
-- (void)_swipeRight:(id)arg1;
+- (void)_setOnColor:(id)arg1;
+- (void)_setOnTintColor:(id)arg1;
+- (void)_setPressed:(BOOL)arg1;
+- (void)_setThumbPosition:(float)arg1;
+- (void)_setupMask;
+- (void)_updateImage;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
-- (id)actionsForTarget:(id)arg1 forControlEvent:(NSUInteger)arg2;
-- (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(NSUInteger)arg3;
-- (NSUInteger)allControlEvents;
-- (id)allTargets;
+- (id)accessibilityValue;
 - (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)encodeWithCoder:(id)arg1;
@@ -30,20 +43,16 @@
 - (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (BOOL)isEnabled;
-- (BOOL)isHighlighted;
 - (BOOL)isOn;
-- (BOOL)isSelected;
-- (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(NSUInteger)arg3;
-- (void)sendActionsForControlEvents:(NSUInteger)arg1;
+- (void)setAlpha:(float)arg1;
 - (void)setAlternateColors:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHighlighted:(BOOL)arg1;
 - (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOn:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (NSUInteger)state;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

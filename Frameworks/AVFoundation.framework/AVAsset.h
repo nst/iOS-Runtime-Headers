@@ -8,6 +8,7 @@
     AVAssetInternal *_assetInternal;
 }
 
+@property(readonly) NSArray *availableChapterLocales;
 @property(readonly) ? duration;
 @property(readonly) CGSize naturalSize;
 @property(readonly) float preferredRate;
@@ -20,20 +21,27 @@
 - (struct __CFURL { }*)_URL;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
+- (id)_comparisonToken;
+- (id)_firstTrackGroupWithMediaType:(id)arg1;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
+- (BOOL)_isReadyForBasicInspection;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_serverHasDied;
 - (void)_tracksDidChange;
 - (id)_weakReference;
 - (id)alternateTrackGroups;
+- (id)audioAlternatesTrackGroup;
+- (id)availableChapterLocales;
 - (id)availableMetadataFormats;
 - (void)cancelLoading;
+- (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
 - (id)commonMetadata;
 - (id)compatibleTrackForCompositionTrack:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
+- (BOOL)hasProtectedContent;
 - (NSUInteger)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
@@ -50,6 +58,8 @@
 - (id)retain;
 - (NSInteger)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (NSInteger)statusOfValueForKey:(id)arg1;
+- (id)subtitleAlternatesTrackGroup;
+- (id)trackGroups;
 - (id)trackReferences;
 - (id)trackWithTrackID:(NSInteger)arg1;
 - (id)tracks;

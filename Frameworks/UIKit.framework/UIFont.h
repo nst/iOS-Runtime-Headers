@@ -15,17 +15,18 @@
 @property(readonly) float xHeight;
 
 + (id)__newDummy;
-+ (id)abMoreLabelFont;
 + (id)boldSystemFontOfSize:(float)arg1;
 + (float)buttonFontSize;
 + (id)familyNames;
 + (id)fontNamesForFamilyName:(id)arg1;
 + (id)fontWithFamilyName:(id)arg1 traits:(NSInteger)arg2 size:(float)arg3;
 + (id)fontWithMarkupDescription:(id)arg1;
++ (id)fontWithName:(id)arg1 size:(float)arg2 traits:(NSInteger)arg3;
 + (id)fontWithName:(id)arg1 size:(float)arg2;
 + (id)italicSystemFontOfSize:(float)arg1;
 + (float)labelFontSize;
 + (float)smallSystemFontSize;
++ (id)systemFontOfSize:(float)arg1 traits:(NSInteger)arg2;
 + (id)systemFontOfSize:(float)arg1;
 + (float)systemFontSize;
 
@@ -33,6 +34,7 @@
 - (float)capHeight;
 - (Class)classForCoder;
 - (float)descender;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)familyName;
 - (id)fontName;
@@ -42,6 +44,7 @@
 - (id)initWithMarkupDescription:(id)arg1;
 - (id)initWithName:(id)arg1 size:(float)arg2;
 - (BOOL)isFixedPitch;
+- (BOOL)isSystemFont;
 - (float)leading;
 - (float)lineHeight;
 - (id)markupDescription;

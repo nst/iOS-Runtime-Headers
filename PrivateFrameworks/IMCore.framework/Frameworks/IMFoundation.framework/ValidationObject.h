@@ -11,6 +11,9 @@
     NSUInteger _usage;
 }
 
+@property(readonly) NSArray *certificates;
+@property(readonly) NSUInteger result;
+
 + (id)validateCerts:(id)arg1 screenName:(id)arg2 usage:(NSUInteger)arg3;
 
 - (void)_workerThread;

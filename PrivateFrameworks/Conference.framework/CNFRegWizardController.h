@@ -7,38 +7,51 @@
 @interface CNFRegWizardController : PSSetupController {
     struct { 
         unsigned int automaticKeyboardWasDisabled : 1; 
+        unsigned int shouldListenForSuspension : 1; 
         unsigned int canStartNested : 1; 
         unsigned int canShowSplashScreen : 1; 
+        unsigned int reloadOnViewWillAppear : 1; 
     <CNFRegWizardControllerDelegate> *_firstRunDelegate;
+    id _resignListener;
+    id _resumeListener;
     } _wizardFlags;
 }
 
 @property <CNFRegWizardControllerDelegate> *firstRunDelegate;
 @property BOOL canShowSplashScreen;
 @property BOOL canStartNested;
+@property(readonly) NSInteger currentControllerDisplayStyle;
+@property BOOL reloadOnViewWillAppear;
 
 + (NSInteger)_firstRunState;
-+ (BOOL)popToFirstRunControllerForStack:(id)arg1 withParent:(id)arg2 andSpecifier:(id)arg3 withCompletionControllerClass:(Class)arg4 depth:(NSUInteger)arg5;
 + (BOOL)shouldShowFirstRunController:(BOOL)arg1;
 + (BOOL)shouldShowFirstRunController;
 
+- (void)_startListeningForResignResume;
+- (void)_stopListeningForResignResume;
 - (BOOL)canShowSplashScreen;
 - (BOOL)canStartNested;
+- (id)controllerClassesToShow:(BOOL)arg1;
 - (id)controllerToShow:(BOOL)arg1;
 - (id)controllerToShow;
 - (id)controllersToShow:(BOOL)arg1;
 - (id)controllersToShow;
+- (NSInteger)currentControllerDisplayStyle;
 - (void)dealloc;
 - (void)dismiss:(BOOL)arg1 aliased:(BOOL)arg2;
 - (void)dismissWithState:(NSUInteger)arg1;
 - (void)firstRunController:(id)arg1 finishedWithState:(NSUInteger)arg2;
 - (id)firstRunDelegate;
+- (id)init;
+- (BOOL)reloadOnViewWillAppear;
 - (void)setCanShowSplashScreen:(BOOL)arg1;
 - (void)setCanStartNested:(BOOL)arg1;
 - (void)setFirstRunDelegate:(id)arg1;
+- (void)setReloadOnViewWillAppear:(BOOL)arg1;
 - (void)setupController;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

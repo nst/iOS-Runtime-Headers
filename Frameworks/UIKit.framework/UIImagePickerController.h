@@ -58,7 +58,7 @@
 - (void)_imagePickerDidCancel;
 - (void)_imagePickerDidCompleteWithInfo:(id)arg1;
 - (NSUInteger)_imagePickerSavingOptions;
-- (id)_initWithSourceImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)_initWithSourceImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_initializeProperties;
 - (BOOL)_isCameraCaptureModeValid:(NSUInteger)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;

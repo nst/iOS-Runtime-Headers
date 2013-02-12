@@ -5,9 +5,18 @@
 @class NSMutableArray;
 
 @interface IMAccountController : NSObject {
-    unsigned int _isReadOnly : 1;
     NSMutableArray *_accounts;
+    BOOL _isReadOnly;
 }
+
+@property(readonly) NSArray *accounts;
+@property(readonly) NSArray *activeAccounts;
+@property(readonly) NSArray *connectedAccounts;
+@property(readonly) id aimAccount;
+@property(readonly) id bestAccountForStatus;
+@property(readonly) id jabberAccount;
+@property(readonly) id mostLoggedInAccount;
+@property(readonly) NSInteger numberOfAccounts;
 
 + (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;

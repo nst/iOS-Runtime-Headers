@@ -5,17 +5,16 @@
 @class IMAccount, NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
 
 @interface IMServiceImpl : IMService {
-    unsigned int _handlesChatInvites : 1;
-    unsigned int _supportsSMS : 1;
-    unsigned int _defaultBuddyImageDataChecked : 1;
-    unsigned int _iconChecked : 1;
     NSArray *_abProperties;
     IMAccount *_bestAccount;
     NSMutableDictionary *_cardMap;
     NSArray *_defaultBuddyImageData;
+    BOOL _defaultBuddyImageDataChecked;
     NSDictionary *_defaultSettings;
     NSArray *_emailDomains;
+    BOOL _handlesChatInvites;
     id _icon;
+    BOOL _iconChecked;
     NSData *_imageData;
     NSString *_localizedName;
     NSString *_localizedShortName;
@@ -24,7 +23,32 @@
     NSUInteger _screenNameSensitivity;
     NSDictionary *_serviceDefaults;
     NSDictionary *_serviceProps;
+    BOOL _supportsSMS;
 }
+
+@property(retain,readonly) NSArray *accountIDs;
+@property(retain,readonly) NSArray *addressBookProperties;
+@property(retain,readonly) NSString *addressBookProperty;
+@property(retain,readonly) NSDictionary *cardMap;
+@property(retain) NSDictionary *defaultAccountSettings;
+@property(retain,readonly) NSString *description;
+@property(retain,readonly) NSArray *emailDomains;
+@property(retain,readonly) NSString *internalName;
+@property(retain,readonly) NSString *name;
+@property(retain) NSDictionary *serviceDefaults;
+@property(retain,readonly) NSData *serviceImageData;
+@property(retain) NSDictionary *serviceProperties;
+@property(retain,readonly) NSString *shortName;
+@property(readonly) NSUInteger IDSensitivity;
+@property(readonly) Class accountClass;
+@property(readonly) BOOL allowsMultipleConnections;
+@property(readonly) NSInteger buddyNotesMaxByteLength;
+@property(readonly) BOOL handlesChatInvites;
+@property(readonly) BOOL isPersistent;
+@property(readonly) BOOL isPlugInService;
+@property(readonly) BOOL supportsAdding;
+@property(readonly) BOOL supportsAuthorization;
+@property(readonly) BOOL supportsRegistration;
 
 + (Class)serviceClass;
 + (id)serviceWithInternalName:(id)arg1;

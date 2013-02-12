@@ -12,6 +12,7 @@
     NSMutableArray *connections;
     BOOL disableActions;
     NSString *gravity;
+    BOOL isPaused;
     BOOL isPresentationLayer;
     BOOL mirrored;
     NSInteger orientation;

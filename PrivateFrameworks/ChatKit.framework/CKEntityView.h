@@ -9,11 +9,14 @@
     UILabel *_label;
 }
 
-+ (float)defaultHeight;
++ (float)defaultWidth;
++ (struct CGSize { float x1; float x2; })sizeForEntity:(id)arg1 withWidth:(float)arg2;
++ (struct CGSize { float x1; float x2; })sizeForEntity:(id)arg1;
 
 - (void)dealloc;
 - (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2;
 - (void)setEntity:(id)arg1;
 - (void)sizeToFit;
+- (void)updateFontSize;
 
 @end

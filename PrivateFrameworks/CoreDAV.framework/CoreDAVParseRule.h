@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSDictionary, NSString;
+@class NSString;
 
 @interface CoreDAVParseRule : NSObject {
     NSString *_elementName;
@@ -10,30 +10,23 @@
     NSInteger _minimumNumber;
     NSString *_nameSpace;
     Class _objectClass;
-    NSDictionary *_propertyRuleSet;
     SEL _setterMethod;
 }
 
 @property(readonly) NSString *elementName;
 @property(readonly) NSString *nameSpace;
-@property(retain) NSDictionary *propertyRuleSet;
 @property(readonly) NSInteger maximumNumber;
 @property(readonly) NSInteger minimumNumber;
 @property(readonly) Class objectClass;
 @property(readonly) SEL setterMethod;
 
-- (id)autorelease;
 - (void)dealloc;
 - (id)elementName;
-- (id)initWithMinimumNumber:(NSInteger)arg1 maximumNumber:(NSInteger)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6 propertyRuleSet:(id)arg7;
+- (id)initWithMinimumNumber:(NSInteger)arg1 maximumNumber:(NSInteger)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6;
 - (NSInteger)maximumNumber;
 - (NSInteger)minimumNumber;
 - (id)nameSpace;
 - (Class)objectClass;
-- (id)propertyRuleSet;
-- (oneway void)release;
-- (id)retain;
-- (void)setPropertyRuleSet:(id)arg1;
 - (SEL)setterMethod;
 
 @end

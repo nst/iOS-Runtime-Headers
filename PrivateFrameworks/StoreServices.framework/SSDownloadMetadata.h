@@ -14,6 +14,7 @@
 @property(retain) NSString *collectionName;
 @property(retain) NSString *copyright;
 @property(retain) NSDictionary *dictionary;
+@property(copy) NSString *documentTargetIdentifier;
 @property(retain) NSString *downloadKey;
 @property(retain) NSNumber *durationInMilliseconds;
 @property(retain) NSData *epubRightsData;
@@ -27,6 +28,7 @@
 @property(retain) NSString *sortCollectionName;
 @property(retain) NSString *sortTitle;
 @property(retain) NSString *subtitle;
+@property(readonly) SSItemImageCollection *thumbnailImageCollection;
 @property(retain) NSURL *thumbnailImageURL;
 @property(retain) NSString *title;
 @property(retain) NSString *transactionIdentifier;
@@ -37,6 +39,7 @@
 @property(getter=isSample) BOOL sample;
 @property BOOL shouldDownloadAutomatically;
 
+- (id)_newImageCollectionWithURLString:(id)arg1;
 - (id)_valueForFirstAvailableKey:(id)arg1;
 - (id)applicationIdentifier;
 - (BOOL)artworkIsPrerendered;
@@ -47,6 +50,7 @@
 - (id)copyright;
 - (void)dealloc;
 - (id)dictionary;
+- (id)documentTargetIdentifier;
 - (id)downloadKey;
 - (id)durationInMilliseconds;
 - (void)encodeWithCoder:(id)arg1;
@@ -72,6 +76,7 @@
 - (void)setCollectionName:(id)arg1;
 - (void)setCopyright:(id)arg1;
 - (void)setDictionary:(id)arg1;
+- (void)setDocumentTargetIdentifier:(id)arg1;
 - (void)setDownloadKey:(id)arg1;
 - (void)setDurationInMilliseconds:(id)arg1;
 - (void)setEpubRightsData:(id)arg1;
@@ -100,6 +105,7 @@
 - (id)sortCollectionName;
 - (id)sortTitle;
 - (id)subtitle;
+- (id)thumbnailImageCollection;
 - (id)thumbnailImageURL;
 - (id)title;
 - (id)transactionIdentifier;

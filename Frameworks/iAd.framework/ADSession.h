@@ -2,27 +2,31 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADSessionDelegate>, ADBannerView, ADDistributedMessagingCenter, ADHostWindowController, CPDistributedMessagingCenter, NSMutableArray, NSString;
+@class ADBannerView, ADBannerViewURLActionHandler, ADHostWindowController, CPDistributedMessagingCenter, NSMutableDictionary, NSString;
 
 @interface ADSession : NSObject <ADMessageProxyItem> {
-    <ADSessionDelegate> *_delegate;
+    ADBannerView *_bannerView;
+    BOOL _bannerWillLeaveApplication;
+    ADBannerViewURLActionHandler *_currentURLHandler;
     ADHostWindowController *_hostWindowController;
+    struct dispatch_queue_s { } *_ipcReplyQueue;
     BOOL _isOpen;
-    ADDistributedMessagingCenter *_localMessageCenter;
-    ADBannerView *_owner;
     NSString *_proxyItemIdentifier;
     CPDistributedMessagingCenter *_remoteMessageCenter;
-    NSMutableArray *_temporaryObjects;
+    BOOL _serverReachable;
+    NSMutableDictionary *_windowHosting;
 }
 
-@property <ADSessionDelegate> *delegate;
+@property ADBannerView *bannerView;
+@property(retain) ADBannerViewURLActionHandler *currentURLHandler;
 @property(retain) ADHostWindowController *hostWindowController;
-@property(retain) ADDistributedMessagingCenter *localMessageCenter;
-@property ADBannerView *owner;
+@property dispatch_queue_s *ipcReplyQueue;
 @property(readonly) NSString *proxyItemIdentifier;
 @property(retain) CPDistributedMessagingCenter *remoteMessageCenter;
-@property(readonly) NSMutableArray *temporaryObjects;
+@property(retain) NSMutableDictionary *windowHosting;
+@property(readonly) BOOL bannerWillLeaveApplication;
 @property(readonly) BOOL isOpen;
+@property(readonly) BOOL serverReachable;
 
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
@@ -30,45 +34,55 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)bannerFrameDidChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(NSInteger)arg2 hidden:(BOOL)arg3;
 - (void)bannerKeysDidChange:(id)arg1;
+- (id)bannerView;
 - (void)bannerViewActionDidFinishMessage:(id)arg1 userInfo:(id)arg2;
-- (void)bannerViewActionShouldBeginMessage:(id)arg1 userInfo:(id)arg2;
 - (void)bannerViewDidFailToReceiveAddWithErrorMessage:(id)arg1 userInfo:(id)arg2;
 - (void)bannerViewDidLoadAdMessage:(id)arg1 userInfo:(id)arg2;
+- (void)bannerViewReachbilityChanged:(id)arg1 userInfo:(id)arg2;
 - (void)bannerViewURLActionHandlerDidFinish:(id)arg1 userHitOK:(BOOL)arg2;
 - (void)bannerViewUrlActionMessage:(id)arg1 userInfo:(id)arg2;
+- (BOOL)bannerWillLeaveApplication;
 - (void)cancelBannerViewAction;
 - (void)checkForSessionOpenTimeout;
 - (void)close;
+- (id)currentURLHandler;
 - (void)dealloc;
-- (id)delegate;
 - (void)deviceOrientationDidChangeNotification:(id)arg1;
 - (void)dismissHostWindowController;
+- (void)executeBannerViewActionFrom:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withClickLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)handleBannerVisibilityHeartbeatNotification:(id)arg1;
 - (id)hostWindowController;
 - (id)init;
+- (struct dispatch_queue_s { }*)ipcReplyQueue;
 - (BOOL)isOpen;
 - (void)loadDebuggerFromPath:(id)arg1 portName:(id)arg2;
 - (void)loadLocalAd:(id)arg1;
-- (id)localMessageCenter;
+- (id)newHostWindow:(id)arg1;
 - (void)open;
-- (id)owner;
 - (id)proxyItemIdentifier;
+- (void)refuseBannerViewAction;
 - (id)remoteMessageCenter;
 - (void)sendMessageName:(id)arg1 userInfo:(id)arg2;
 - (void)serverCenterDidTerminate;
+- (BOOL)serverReachable;
 - (void)sessionDidOpenMesssage:(id)arg1 userInfo:(id)arg2;
 - (double)sessionOpenTimeoutInterval;
-- (void)setDelegate:(id)arg1;
+- (void)setBannerView:(id)arg1;
+- (void)setCurrentURLHandler:(id)arg1;
 - (void)setHostWindowController:(id)arg1;
-- (void)setLocalMessageCenter:(id)arg1;
-- (void)setOwner:(id)arg1;
+- (void)setIpcReplyQueue:(struct dispatch_queue_s { }*)arg1;
 - (void)setRemoteMessageCenter:(id)arg1;
+- (void)setWindowHosting:(id)arg1;
+- (void)storyboardHostWindowsMessage:(id)arg1 userInfo:(id)arg2;
 - (void)storyboardOpenURLMessage:(id)arg1 userInfo:(id)arg2;
+- (void)storyboardUnhostWindowsMessage:(id)arg1 userInfo:(id)arg2;
+- (void)storyboardUpdateWindowsMessage:(id)arg1 userInfo:(id)arg2;
 - (void)storyboardWindowContextAvailableMessage:(id)arg1 userInfo:(id)arg2;
 - (void)storyboardWindowIsActive:(id)arg1 userInfo:(id)arg2;
 - (void)storyboardWindowIsOnscreenMessage:(id)arg1 userInfo:(id)arg2;
 - (void)storyboardWindowWillDeactivate:(id)arg1 userInfo:(id)arg2;
-- (id)temporaryObjects;
 - (void)updateSpecification;
+- (void)updateWindow:(id)arg1 withInfo:(id)arg2;
+- (id)windowHosting;
 
 @end

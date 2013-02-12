@@ -28,7 +28,10 @@
 @property BOOL sourceIsTrusted;
 @property(readonly) id windowScriptObject;
 
++ (void)_initializeSafeCategory;
+
 - (id)_DOMDocument;
+- (BOOL)_accessibilityIsScrollAncestor;
 - (id)_callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
 - (void)_finishActiveScrollRequest;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForElement:(id)arg1;
@@ -37,6 +40,7 @@
 - (id)_newLabelForElement:(id)arg1 withText:(id)arg2;
 - (void)_performNextScrollRequest;
 - (void)_setRichTextReaderViewportSettings;
+- (void)accessibilityScrollRightPage;
 - (id)authenticationContext;
 - (void)beginSynchronousLayout;
 - (id)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
@@ -58,7 +62,7 @@
 - (void)scriptInterface:(id)arg1 parsedPropertyList:(id)arg2 ofType:(NSInteger)arg3;
 - (void)scriptInterface:(id)arg1 receivedEventOfType:(NSInteger)arg2 userInfo:(id)arg3;
 - (id)scriptInterface;
-- (void)scrollElementToVisible:(id)arg1 animated:(BOOL)arg2 delegate:(id)arg3;
+- (void)scrollElementToVisible:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setOpenURLsExternally:(BOOL)arg1;
@@ -68,6 +72,7 @@
 - (void)stopLoading;
 - (id)superviewForImageSheetForWebView:(id)arg1;
 - (id)title;
+- (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)webDataSource;
 - (id)webView;
 - (id)windowScriptObject;

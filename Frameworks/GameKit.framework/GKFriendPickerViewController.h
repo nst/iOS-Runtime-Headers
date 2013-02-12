@@ -2,16 +2,22 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKFriendPickerViewControllerDelegate>, GKGameInviteMessageViewController, GKImageBackgroundView, GKUITheme, NSArray, NSMutableArray, NSMutableDictionary, UILabel, UISearchBar, UITableView, UIView;
+@class <GKFriendPickerViewControllerDelegate>, GKGameInviteMessageViewController, GKImageBackgroundView, GKTableView, GKUITheme, NSArray, NSMutableArray, NSMutableDictionary, UILabel, UISearchBar, UIView;
 
 @interface GKFriendPickerViewController : GKTableViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate> {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     NSArray *_allFriends;
     NSMutableDictionary *_avatarImages;
     GKImageBackgroundView *_backgroundView;
     <GKFriendPickerViewControllerDelegate> *_delegate;
-    UITableView *_friendTable;
+    } _formSheetInsets;
+    GKTableView *_friendTable;
     NSArray *_friends;
-    BOOL _lockedToPortrait;
+    BOOL _loadingFriendsFailed;
     NSInteger _maxPlayers;
     GKGameInviteMessageViewController *_messageViewController;
     UILabel *_navPlayersLabel;
@@ -29,48 +35,59 @@
 @property(retain) NSArray *pickableFriends;
 @property(retain) NSMutableDictionary *ranks;
 @property(retain) GKUITheme *theme;
-@property(getter=isLockedToPortrait) BOOL lockedToPortrait;
+@property UIEdgeInsets formSheetInsets;
+@property BOOL loadingFriendsFailed;
 @property NSInteger maxPlayers;
 
 - (id)avatarImages;
-- (void)cancel;
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
 - (void)done;
 - (void)donePickingPlayersWithMessage:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })formSheetInsets;
 - (void)gameInviteMessageViewController:(id)arg1 didFinishWithMessage:(id)arg2;
 - (id)initWithTheme:(id)arg1;
-- (BOOL)isLockedToPortrait;
+- (void)keyboardWillHideShow:(id)arg1;
 - (void)loadImageForCellAtIndexPath:(id)arg1;
 - (void)loadView;
+- (BOOL)loadingFriendsFailed;
+- (float)marginForTableView:(id)arg1;
 - (NSInteger)maxPlayers;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (id)pickableFriends;
 - (id)ranks;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
+- (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
+- (void)searchBarTextDidEndEditing:(id)arg1;
 - (void)searchTableViewForText:(id)arg1;
 - (void)selectFriends:(id)arg1;
 - (id)selectedPlayers;
 - (void)setAvatarImages:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLockedToPortrait:(BOOL)arg1;
+- (void)setFormSheetInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setLoadingFriendsFailed:(BOOL)arg1;
 - (void)setMaxPlayers:(NSInteger)arg1;
 - (void)setPickableFriends:(id)arg1;
 - (void)setPlayerRangeText;
 - (void)setRanks:(id)arg1;
+- (void)setSearchBarHidden:(BOOL)arg1;
 - (void)setTheme:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)showMessageViewController;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)theme;
 - (void)updateNavViewLayoutForOrientation:(NSInteger)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;

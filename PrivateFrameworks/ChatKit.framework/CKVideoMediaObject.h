@@ -20,6 +20,7 @@
 - (float)balloonHeightWithPreviewData:(id)arg1;
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
+- (void)copyToPasteboard:(id)arg1;
 - (void)dealloc;
 - (id)effectiveExportedFilename;
 - (id)filenameForMedia;

@@ -2,30 +2,36 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSLock;
+@class NSURL;
 
 @interface ISCookieStorage : NSObject {
-    struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
-    NSLock *_lock;
-    struct __CFArray { } *_sessionCookies;
+    struct dispatch_queue_s { } *_dispatchQueue;
+    void *_processAssertion;
+    NSInteger _processAssertionCount;
+    NSURL *_storageLocation;
 }
 
-+ (id)sharedInstance;
+@property(readonly) NSURL *storageLocation;
 
-- (void)_addSessionCookies:(struct __CFArray { }*)arg1;
-- (void)_addSessionCookiesNotification:(id)arg1;
-- (BOOL)_cookie:(struct OpaqueCFHTTPCookie { }*)arg1 isEqualToCookie:(struct OpaqueCFHTTPCookie { }*)arg2;
-- (id)_copyPropertyListForSessionOnlyCookies:(struct __CFArray { }*)arg1;
-- (void)_handleSessionOnlyCookiesFromCookies:(struct __CFArray { }*)arg1;
-- (void)_restoreSessionCookies;
-- (id)copyPropertyListForSessionOnlyCookies;
-- (id)copyRequestHeaderFieldsForURL:(id)arg1;
++ (id)sharedInstance;
++ (id)sharedStorage;
+
+- (void)_beginProcessAssertion;
+- (void)_bindInsertStatement:(struct sqlite3_stmt { }*)arg1 forCookie:(id)arg2 userIdentifier:(id)arg3;
+- (BOOL)_bindStatement:(struct sqlite3_stmt { }*)arg1 withValues:(id)arg2;
+- (id)_columnNameForCookieProperty:(id)arg1;
+- (id)_cookieForSelectStatement:(struct sqlite3_stmt { }*)arg1;
+- (struct __CFSet { }*)_copyPrivateCookiesForURL:(id)arg1 userIdentifier:(id)arg2;
+- (void)_endProcessAssertion;
+- (id)cookieHeadersForURL:(id)arg1 userIdentifier:(id)arg2;
 - (void)dealloc;
-- (void)deleteAllCookies;
-- (void)handleResponseHeaderFields:(id)arg1 forURL:(id)arg2;
 - (id)init;
-- (void)setCookiesFromPropertyList:(id)arg1;
+- (id)initWithStorageLocation:(id)arg1;
+- (void)removeAllCookies;
+- (void)removeCookiesWithProperties:(id)arg1;
+- (void)setCookies:(id)arg1 forUserIdentifier:(id)arg2;
+- (void)setCookiesForHTTPResponse:(id)arg1 userIdentifier:(id)arg2;
+- (id)storageLocation;
 - (void)synchronizeCookies;
-- (void)synchronizeSessionCookies;
 
 @end

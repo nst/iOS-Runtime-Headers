@@ -30,11 +30,14 @@
     NSMutableArray *_internalRequests;
     NSMutableArray *_internalResponses;
     NSUInteger _lastGoodDataOffset;
+    NSString *_logEncodedRequestToFile;
+    NSString *_logEncodedResponseToFile;
     NSString *_logRequestToFile;
     NSString *_logResponseToFile;
     NSMutableArray *_requests;
     NSInteger _responseStatusCode;
     NSMutableArray *_responses;
+    BOOL _shouldHandleCookies;
     double _timeoutSeconds;
     struct __CFRunLoopTimer { } *_timeoutTimer;
     NSUInteger _uploadPayloadSize;
@@ -45,7 +48,6 @@
 @property(retain) NSURLConnection *connection;
 @property(retain) NSDictionary *httpRequestHeaders;
 @property(retain) NSDictionary *httpResponseHeaders;
-@property(readonly) NSArray *internalRequests;
 @property(retain) NSString *logRequestToFile;
 @property(retain) NSString *logResponseToFile;
 @property(readonly) NSArray *requests;
@@ -53,9 +55,12 @@
 @property BOOL ignoresResponse;
 @property(getter=isLoading) BOOL loading;
 @property BOOL needsCancel;
+@property BOOL shouldHandleCookies;
 @property BOOL silentLoading;
 @property double timeoutSeconds;
 @property(readonly) NSUInteger uploadPayloadSize;
+
++ (BOOL)usesEncodedMessages;
 
 - (id)URL;
 - (id)_applicationID;
@@ -67,6 +72,7 @@
 - (id)_osVersion;
 - (void)_removeTimeoutTimer;
 - (void)_resetTimeoutTimer;
+- (void)_sendPayload:(id)arg1;
 - (void)_startTimeoutTimer;
 - (void)_timeoutTimerFired;
 - (BOOL)_tryParseData;
@@ -81,8 +87,9 @@
 - (id)connection;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
+- (id)decodeResponseData:(id)arg1;
 - (id)delegate;
-- (id)encodeData:(id)arg1;
+- (void)encodeRequestData:(id)arg1 startRequestCallback:(id)arg2;
 - (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
 - (id)httpRequestHeaders;
 - (id)httpResponseHeaders;
@@ -91,6 +98,8 @@
 - (id)internalRequests;
 - (BOOL)isLoading;
 - (BOOL)isPaused;
+- (id)logEncodedRequestToFile;
+- (id)logEncodedResponseToFile;
 - (id)logRequestToFile;
 - (id)logResponseToFile;
 - (BOOL)needsCancel;
@@ -108,13 +117,17 @@
 - (void)setHttpResponseHeaders:(id)arg1;
 - (void)setIgnoresResponse:(BOOL)arg1;
 - (void)setLoading:(BOOL)arg1;
+- (void)setLogEncodedRequestToFile:(id)arg1;
+- (void)setLogEncodedResponseToFile:(id)arg1;
 - (void)setLogRequestToFile:(id)arg1;
 - (void)setLogResponseToFile:(id)arg1;
 - (void)setNeedsCancel:(BOOL)arg1;
 - (void)setNeedsCancel;
+- (void)setShouldHandleCookies:(BOOL)arg1;
 - (void)setSilentLoading:(BOOL)arg1;
 - (void)setTimeoutSeconds:(double)arg1;
 - (void)setURL:(id)arg1;
+- (BOOL)shouldHandleCookies;
 - (BOOL)silentLoading;
 - (void)start;
 - (double)timeoutSeconds;

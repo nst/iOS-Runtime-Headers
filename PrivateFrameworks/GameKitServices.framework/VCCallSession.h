@@ -56,6 +56,15 @@
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
+        } mbRemoteSrc; 
+        struct tagIPPORT { 
+            NSInteger iFlags; 
+            BOOL szIfName[16]; 
+            union { 
+                NSUInteger dwIPv4; 
+                unsigned char abIPv6[16]; 
+            } IP; 
+            unsigned short wPort; 
         } mbRelayExt; 
         NSUInteger dwRTT; 
     struct _opaque_pthread_mutex_t { 
@@ -109,7 +118,7 @@
     unsigned char inputMeter;
     BOOL isAttemptingRelay;
     BOOL isAudioRunning;
-    BOOL isRemoteDevice40;
+    BOOL isRemoteDevice4x;
     BOOL isWaitingForICEResult;
     NSUInteger lastReceived;
     double lastReceivedAudio;
@@ -237,8 +246,8 @@
 - (BOOL)canBundleAudio;
 - (BOOL)choosePayload:(NSInteger*)arg1 count:(NSInteger)arg2;
 - (BOOL)chooseVideoPayload:(NSInteger*)arg1 count:(NSInteger)arg2;
-- (struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; })connectionResult;
-- (NSUInteger)connectionResultCallback:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; }*)arg1 didReceiveICEPacket:(BOOL)arg2 didUseRelay:(BOOL)arg3;
+- (struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; })connectionResult;
+- (NSUInteger)connectionResultCallback:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; }*)arg1 didReceiveICEPacket:(BOOL)arg2 didUseRelay:(BOOL)arg3;
 - (BOOL)createConnectionDataForParticipantID:(id)arg1 pCallID:(NSInteger*)arg2 error:(id*)arg3 useRelay:(BOOL)arg4;
 - (BOOL)createConnectionDataForParticipantID:(id)arg1 pCallID:(NSInteger*)arg2 error:(id*)arg3;
 - (id)createInitiateRelayDictionary;
@@ -318,7 +327,7 @@
 - (void)setBandwidthUpstream:(NSInteger)arg1;
 - (void)setBundledPackets:(NSInteger)arg1;
 - (void)setCanBundleAudio:(BOOL)arg1;
-- (void)setConnectionResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; NSUInteger x12; })arg1;
+- (void)setConnectionResult:(struct tagCONNRESULT { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; unsigned short x5; unsigned short x6; struct tagIPPORT { NSInteger x_7_1_1; BOOL x_7_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_7_1_3; unsigned short x_7_1_4; } x7; struct tagIPPORT { NSInteger x_8_1_1; BOOL x_8_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { NSInteger x_9_1_1; BOOL x_9_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { NSInteger x_10_1_1; BOOL x_10_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { NSInteger x_11_1_1; BOOL x_11_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { NSInteger x_12_1_1; BOOL x_12_1_2[16]; union { NSUInteger x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; NSUInteger x13; })arg1;
 - (void)setDecodeHandle:(struct tagHANDLE { NSInteger x1; }*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidUseICE:(BOOL)arg1;

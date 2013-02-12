@@ -26,7 +26,6 @@
 - (id)accessibilityLabel;
 - (void)accessibilityScrollToVisible;
 - (unsigned long long)accessibilityTraits;
-- (void)accessibilityUpdateChildrenFrames;
 - (id)accessibilityValue;
 - (NSUInteger)column;
 - (void)dealloc;

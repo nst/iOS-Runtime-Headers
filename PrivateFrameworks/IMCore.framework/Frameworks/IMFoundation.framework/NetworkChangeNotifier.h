@@ -5,13 +5,19 @@
 @class IMConnectionMonitor, NSArray, NSString;
 
 @interface NetworkChangeNotifier : NSObject <IMSystemMonitorListener, IMConnectionMonitorDelegate> {
-    unsigned int _lastPostedNetworkUp : 1;
     IMConnectionMonitor *_connectionMonitor;
+    BOOL _lastPostedNetworkUp;
     NSString *_myIP;
     NSArray *_myIPs;
     struct __CFRunLoopSource { } *_runLoopSource;
     struct __SCDynamicStore { } *_store;
 }
+
+@property(readonly) __SCDynamicStore *getDynamicStore;
+@property(readonly) NSString *myIPAddress;
+@property(readonly) NSArray *myIPAddresses;
+@property(readonly) BOOL isNetworkUp;
+@property(readonly) unsigned short nextAvailablePort;
 
 + (void)disableNotifications;
 + (BOOL)enableNotifications;

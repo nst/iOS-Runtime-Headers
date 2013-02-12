@@ -5,10 +5,9 @@
 @class NSData, NSDate, NSMutableArray, NSMutableDictionary, NSProtocolChecker, NSString;
 
 @interface IMDaemonListener : NSObject {
-    unsigned int _setupComplete : 1;
-    unsigned int _holdingChatMessages : 1;
     NSMutableArray *_deferredChatMessages;
     NSMutableArray *_handlers;
+    BOOL _holdingChatMessages;
     NSDate *_myIdleSince;
     NSString *_myNowPlayingString;
     NSData *_myPicture;
@@ -18,8 +17,21 @@
     NSMutableDictionary *_properties;
     NSProtocolChecker *_protocol;
     NSMutableDictionary *_services;
+    BOOL _setupComplete;
     unsigned long long _vcCapabilities;
 }
+
+@property(readonly) NSArray *allServices;
+@property(readonly) NSArray *handlers;
+@property(readonly) NSString *myStatusMessage;
+@property(readonly) NSDictionary *persistentProperties;
+@property(readonly) NSDictionary *properties;
+@property(readonly) BOOL isHoldingChatMessages;
+@property(readonly) BOOL isSetupComplete;
+@property(readonly) NSUInteger myIdleTime;
+@property(readonly) NSUInteger myStatus;
+@property(readonly) BOOL shouldHoldChatMessages;
+@property(readonly) unsigned long long vcCapabilities;
 
 - (void)_cacheValue:(id)arg1 forPersistentProperty:(id)arg2;
 - (void)_cacheValue:(id)arg1 forProperty:(id)arg2;

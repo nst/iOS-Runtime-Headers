@@ -5,12 +5,16 @@
 @class NSData;
 
 @interface GMMTile : PBCodable {
+    NSInteger _face;
+    BOOL _hasFace;
     NSData *_tileData;
     NSInteger _tileXIndex;
     NSInteger _tileYIndex;
 }
 
 @property(retain) NSData *tileData;
+@property NSInteger face;
+@property(readonly) BOOL hasFace;
 @property NSInteger tileXIndex;
 @property NSInteger tileYIndex;
 
@@ -20,8 +24,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (NSInteger)face;
+- (BOOL)hasFace;
 - (id)init;
 - (BOOL)readFrom:(id)arg1;
+- (void)setFace:(NSInteger)arg1;
 - (void)setTileData:(id)arg1;
 - (void)setTileXIndex:(NSInteger)arg1;
 - (void)setTileYIndex:(NSInteger)arg1;

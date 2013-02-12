@@ -46,12 +46,16 @@
 
 + (short)addressPointerFromBlob:(id)arg1;
 + (id)externalAddressForSelfConnectionBlob:(id)arg1;
++ (void)startAudioSession;
++ (void)stopAudioSession;
 
 - (void)addGKSCallEvent:(id)arg1 sessionID:(id)arg2;
 - (void)addTransaction:(id)arg1 outputDictionary:(id*)arg2;
 - (void)applyServerInfo:(id)arg1;
 - (NSUInteger)cameraType;
 - (id)connectionBlobForParticipantID:(id)arg1 callID:(NSInteger*)arg2 error:(id*)arg3;
+- (id)convertBlobtoNewBlob:(id)arg1;
+- (id)convertBlobtoOldBlob:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)genericObserver;

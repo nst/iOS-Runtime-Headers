@@ -12,6 +12,12 @@
     NSString *_outContent;
 }
 
+@property(retain,readonly) NSString *_inContent;
+@property(readonly) NSDictionary *attributesToMerge;
+@property(readonly) NSArray *attributesToPreserve;
+@property(readonly) NSError *error;
+@property(readonly) NSString *outContent;
+
 - (id)_inContent;
 - (void)_setOutContent:(id)arg1 error:(id)arg2;
 - (id)attributesToMerge;

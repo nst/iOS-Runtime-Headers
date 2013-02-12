@@ -17,6 +17,7 @@
     BOOL handlingMouseDownEvent;
     NSMutableDictionary *highlighters;
     BOOL ignoringMouseDraggedEvents;
+    BOOL inScrollPositionChanged;
     struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; BOOL x2; BOOL x3; BOOL x4; } *interpretKeyEventsParameters;
     WebEvent *keyDownEvent;
     } lastScrollPosition;

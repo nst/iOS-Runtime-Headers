@@ -2,27 +2,32 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADBannerViewURLActionHandlerDelegate>, ADAdResponse, NSURL;
+@class <ADBannerViewURLActionHandlerDelegate>, NSDictionary, NSURL;
 
 @interface ADBannerViewURLActionHandler : NSObject {
-    ADAdResponse *_adResponse;
     <ADBannerViewURLActionHandlerDelegate> *_delegate;
+    NSDictionary *_dialogOverrides;
+    BOOL _shouldReply;
     NSURL *_url;
 }
 
-@property(retain) ADAdResponse *adResponse;
 @property <ADBannerViewURLActionHandlerDelegate> *delegate;
+@property(retain) NSDictionary *dialogOverrides;
 @property(retain) NSURL *url;
+@property BOOL shouldReply;
 
-+ (id)bannerViewURLActionHandlerWithURL:(id)arg1 response:(id)arg2 delegate:(id)arg3;
++ (id)bannerViewURLActionHandlerWithURL:(id)arg1 dialogOverrides:(id)arg2 delegate:(id)arg3 shouldReply:(BOOL)arg4;
 
-- (id)adResponse;
 - (void)dealloc;
 - (id)delegate;
+- (id)dialogOverrides;
 - (void)handle;
-- (void)setAdResponse:(id)arg1;
+- (id)normalizedURL;
 - (void)setDelegate:(id)arg1;
+- (void)setDialogOverrides:(id)arg1;
+- (void)setShouldReply:(BOOL)arg1;
 - (void)setUrl:(id)arg1;
+- (BOOL)shouldReply;
 - (id)url;
 
 @end

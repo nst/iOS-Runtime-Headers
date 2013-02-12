@@ -15,6 +15,7 @@
 - (void)addOptions;
 - (NSInteger)compare:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)formattedHelpFooter;
 - (id)formattedHelpHeader;
 - (NSUInteger)hash;

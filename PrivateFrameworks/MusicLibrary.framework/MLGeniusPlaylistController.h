@@ -18,12 +18,16 @@
 + (BOOL)hasGeniusFeatureEnabled;
 + (void)ignoreUnusedWarnings;
 + (id)playlistControllerWithSeedTracks:(id)arg1 error:(id*)arg2;
++ (BOOL)populateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
 + (BOOL)populatePlaylist:(id)arg1 withSeedTrack:(id)arg2 playlistItemMin:(NSUInteger)arg3 playlistItemMax:(NSUInteger)arg4 error:(id*)arg5;
 + (BOOL)useFakeGeniusData;
 
+- (BOOL)_canIncludeTrackInGeniusContainer:(id)arg1;
 - (BOOL)_canIncludeTrackInGeniusPlaylist:(id)arg1;
 - (BOOL)_createClusterPlaylistWithSeedTracks:(id)arg1 error:(id*)arg2;
+- (BOOL)_fakePopulateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
 - (BOOL)_fakePopulatePlaylist:(id)arg1 seedTrack:(id)arg2 playlistItemMin:(NSUInteger)arg3 playlistItemMax:(NSUInteger)arg4 error:(id*)arg5;
+- (BOOL)_populateContainer:(id)arg1 seedTrack:(id)arg2 error:(id*)arg3;
 - (BOOL)_populatePlaylist:(id)arg1 seedTrack:(id)arg2 playlistItemMin:(NSUInteger)arg3 playlistItemMax:(NSUInteger)arg4 error:(id*)arg5;
 - (id)_sharedBlobMutableData;
 - (id)_tracksFromClusterForPlaylistItemMax:(NSUInteger)arg1 error:(id*)arg2;

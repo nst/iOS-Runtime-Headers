@@ -2,19 +2,14 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CMMotionManager : NSObject {
-     /* Encoded args for previous method: B12@0:4^f8 */
     id _internal;
 }
 
 @property(readonly) CMAccelerometerData *accelerometerData;
 @property(readonly) CMDeviceMotion *deviceMotion;
 @property(readonly) CMGyroData *gyroData;
-@property(readonly) __CLClient *internalClient;
+@property(readonly) CMMagnetometerData *magnetometerData;
 @property(getter=isAccelerometerActive,readonly) BOOL accelerometerActive;
 @property(getter=isAccelerometerAvailable,readonly) BOOL accelerometerAvailable;
 @property double accelerometerUpdateInterval;
@@ -24,63 +19,66 @@
 @property(getter=isGyroActive,readonly) BOOL gyroActive;
 @property(getter=isGyroAvailable,readonly) BOOL gyroAvailable;
 @property double gyroUpdateInterval;
-@property BOOL supportInfo;
-
-+ (id)sharedManager;
+@property(getter=isMagnetometerActive,readonly) BOOL magnetometerActive;
+@property(getter=isMagnetometerAvailable,readonly) BOOL magnetometerAvailable;
+@property double magnetometerUpdateInterval;
 
 - (id)accelerometerData;
 - (double)accelerometerUpdateInterval;
-- (void)broadcast;
 - (void)dealloc;
+- (void)deallocPrivate;
 - (id)deviceMotion;
 - (double)deviceMotionUpdateInterval;
 - (void)didBecomeActive:(id)arg1;
+- (void)didBecomeActivePrivate:(id)arg1;
 - (void)dummySelector:(id)arg1;
-- (void)feedGyroBias:(float*)arg1 andVariance:(float*)arg2;
-- (void)feedGyroBiasSlope:(float*)arg1 andOffset:(float*)arg2;
-- (void)getDeviceMotionFromFilter:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; double x4; }*)arg1;
-- (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)getGyroTemperature:(float*)arg1;
-- (struct { double x1; double x2; double x3; double x4; })getLatestAccelerometerSample;
 - (id)gyroData;
 - (double)gyroUpdateInterval;
 - (id)init;
-- (struct __CLClient { }*)internalClient;
-- (void)internalFeedGyroBias:(float*)arg1 andVariance:(float*)arg2;
-- (void)internalFeedGyroBiasSlope:(float*)arg1 andOffset:(float*)arg2;
-- (void)internalStartAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
-- (void)internalStartDeviceMotionUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
-- (void)internalStartGyroUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (id)initPrivate;
 - (BOOL)isAccelerometerActive;
 - (BOOL)isAccelerometerAvailable;
 - (BOOL)isDeviceMotionActive;
 - (BOOL)isDeviceMotionAvailable;
 - (BOOL)isGyroActive;
 - (BOOL)isGyroAvailable;
-- (void)onAccelerometer:(struct { double x1; double x2; double x3; double x4; }*)arg1;
-- (void)onClientEvent:(NSInteger)arg1 supportInfo:(id)arg2;
-- (void)onClientEventError:(id)arg1;
-- (void)onClientEventGyroBias:(id)arg1;
-- (void)onClientEventRegistered:(id)arg1;
-- (void)onGyro:(struct { double x1; double x2; double x3; double x4; }*)arg1 subType:(NSUInteger)arg2;
-- (void)onIoHidRls;
-- (void)setAccelerometerIoHidUpdateInterval;
-- (void)setAccelerometerRls:(struct __CFRunLoopSource { }*)arg1 andRunloop:(struct __CFRunLoop { }*)arg2;
+- (BOOL)isMagnetometerActive;
+- (BOOL)isMagnetometerAvailable;
+- (id)magnetometerData;
+- (double)magnetometerUpdateInterval;
+- (void)onAccelerometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
+- (void)onDeviceMotion:(const struct Sample { double x1; struct { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; }*)arg1;
+- (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
+- (void)onMagnetometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
 - (void)setAccelerometerUpdateInterval:(double)arg1;
+- (void)setAccelerometerUpdateIntervalPrivate:(double)arg1;
 - (void)setDeviceMotionUpdateInterval:(double)arg1;
-- (void)setGyroIoHidUpdateInterval;
+- (void)setDeviceMotionUpdateIntervalPrivate:(double)arg1;
 - (void)setGyroUpdateInterval:(double)arg1;
-- (void)setSupportInfo:(BOOL)arg1;
+- (void)setGyroUpdateIntervalPrivate:(double)arg1;
+- (void)setMagnetometerUpdateInterval:(double)arg1;
+- (void)setMagnetometerUpdateIntervalPrivate:(double)arg1;
 - (void)startAccelerometerUpdates;
+- (void)startAccelerometerUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startDeviceMotionUpdates;
+- (void)startDeviceMotionUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startDeviceMotionUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startGyroUpdates;
+- (void)startGyroUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)startGyroUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (void)startMagnetometerUpdates;
+- (void)startMagnetometerUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
+- (void)startMagnetometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
 - (void)stopAccelerometerUpdates;
+- (void)stopAccelerometerUpdatesPrivate;
 - (void)stopDeviceMotionUpdates;
+- (void)stopDeviceMotionUpdatesPrivate;
 - (void)stopGyroUpdates;
-- (BOOL)supportInfo;
-- (void)waitForIoHidThread;
+- (void)stopGyroUpdatesPrivate;
+- (void)stopMagnetometerUpdates;
+- (void)stopMagnetometerUpdatesPrivate;
 - (void)willResignActive:(id)arg1;
+- (void)willResignActivePrivate:(id)arg1;
 
 @end

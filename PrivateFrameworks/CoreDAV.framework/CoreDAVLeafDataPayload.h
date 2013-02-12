@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSData, NSString;
+@class NSData, NSString, NSURL;
 
 @interface CoreDAVLeafDataPayload : NSObject <CoreDAVLeafDataPayload> {
     NSData *_dataPayload;
-    NSString *_serverID;
+    NSURL *_serverID;
     NSString *_syncKey;
 }
 
 @property(readonly) NSData *dataPayload;
-@property(retain) NSString *serverID;
+@property(retain) NSURL *serverID;
 @property(readonly) NSString *syncKey;
 
 - (id)dataPayload;
 - (void)dealloc;
-- (id)initWithHREF:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithRelativeURI:(id)arg4 withAccountInfoProvider:(id)arg5;
+- (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
 - (id)serverID;
 - (void)setServerID:(id)arg1;
 - (id)syncKey;

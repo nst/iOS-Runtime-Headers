@@ -39,6 +39,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)documentCannotOpenDialog;
+- (id)documentRequiredHandlers;
+- (id)documentUTI;
 - (long long)estimatedDiskSpaceNeeded;
 - (id)init;
 - (id)initWithOfferIdentifier:(id)arg1 dictionary:(id)arg2;

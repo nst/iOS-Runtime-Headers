@@ -6,6 +6,7 @@
 
 @interface SSAccountStore : NSObject {
     NSArray *_accounts;
+    BOOL _accountsValid;
     NSLock *_lock;
 }
 
@@ -14,12 +15,15 @@
 @property(getter=isExpired,readonly) BOOL expired;
 
 + (id)defaultStore;
++ (id)existingDefaultStore;
 + (BOOL)isExpired;
 + (void)resetExpiration;
 + (void)setDefaultStore:(id)arg1;
 
+- (id)_accountWithUniqueIdentifier:(id)arg1;
+- (void)_invalidateAccounts;
 - (void)_postAccountStoreChanged;
-- (BOOL)_reloadAccountsFromDaemon;
+- (BOOL)_reloadAccountsIfNeeded;
 - (void)_setAccounts:(id)arg1;
 - (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
 - (id)accountWithUniqueIdentifier:(id)arg1;
@@ -29,6 +33,7 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isExpired;
+- (void)reloadAccounts;
 - (void)resetExpiration;
 - (void)setAccountCreditsWithDictionary:(id)arg1;
 - (void)signOutAllAccounts;

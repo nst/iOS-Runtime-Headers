@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPItem, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay, MPTextView;
+@class MPAVItem, MPNowPlayingItemQueueInfoButton, MPPortraitControlsOverlay, MPTextView;
 
 @interface MPPortraitInfoOverlay : UIView <MPPlaybackControlsDelegate> {
     unsigned int _transitioning : 1;
@@ -10,12 +10,12 @@
     MPPortraitControlsOverlay *_controlsView;
     id _delegate;
     MPTextView *_displayableTextView;
-    MPItem *_item;
+    MPAVItem *_item;
     MPNowPlayingItemQueueInfoButton *_itemQueueInfoButton;
     NSUInteger _visibleParts;
 }
 
-@property(retain) MPItem *item;
+@property(retain) MPAVItem *item;
 @property BOOL allowsDetailScrubbing;
 @property id delegate;
 @property NSUInteger visibleParts;
@@ -58,6 +58,7 @@
 - (void)setVisibleParts:(NSUInteger)arg1;
 - (void)startTicking;
 - (void)stopTicking;
+- (void)updateArtworkToTime:(double)arg1;
 - (NSUInteger)visibleParts;
 - (void)willTransition;
 

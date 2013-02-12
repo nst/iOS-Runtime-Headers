@@ -28,12 +28,19 @@
 
 - (id)_copyHeaderPatternsFromDictionary:(id)arg1;
 - (id)_copyNetworkConstraintsFromDictionary:(id)arg1;
+- (id)_copyNetworkConstraintsFromURLBag:(id)arg1;
 - (BOOL)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
+- (id)_networkConstraintsCachePath;
+- (id)_newDefaultExternalNetworkConstraints;
+- (id)_newExternalNetworkConstraints;
+- (void)_setDictionary:(id)arg1;
+- (void)_writeNetworkConstraintsCacheFile;
 - (void)_writeURLResolutionCacheFile;
 - (id)copyExtraHeadersForURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithRawDictionary:(id)arg1;
+- (id)initWithURLBagContext:(id)arg1;
 - (double)invalidationTime;
 - (BOOL)isValid;
 - (BOOL)loadFromDictionary:(id)arg1 returningError:(id*)arg2;

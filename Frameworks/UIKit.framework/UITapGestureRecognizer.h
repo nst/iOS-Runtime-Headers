@@ -6,6 +6,7 @@
     struct CGPoint { 
         float x; 
         float y; 
+    NSUInteger _delaysRecognitionForGreaterTapCounts;
     id _imp;
     } _locationInView;
 }
@@ -21,7 +22,10 @@
 + (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 
 - (void)_appendSubclassDescription:(id)arg1;
+- (BOOL)_delaysRecognitionForGreaterTapCounts;
 - (void)_resetGestureRecognizer;
+- (void)_setDelaysRecognitionForGreaterTapCounts:(BOOL)arg1;
+- (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
 - (float)allowableMovement;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (struct CGPoint { float x1; float x2; })centroid;

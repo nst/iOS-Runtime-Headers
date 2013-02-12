@@ -31,8 +31,11 @@
 - (id)_initWithType:(NSUInteger)arg1;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (NSUInteger)_propertyType;
+- (id)_rawValidationPredicates;
+- (id)_rawValidationWarnings;
 - (void)_versionHash:(char *)arg1;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
+- (BOOL)allowsExternalBinaryDataStorage;
 - (NSUInteger)attributeType;
 - (id)attributeValueClassName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -43,12 +46,15 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIndexed;
+- (void)setAllowsExternalBinaryDataStorage:(BOOL)arg1;
 - (void)setAttributeType:(NSUInteger)arg1;
 - (void)setAttributeValueClassName:(id)arg1;
 - (void)setDefaultValue:(id)arg1;
 - (void)setStoresBinaryDataExternally:(BOOL)arg1;
 - (void)setValueTransformerName:(id)arg1;
 - (BOOL)storesBinaryDataExternally;
+- (id)validationPredicates;
+- (id)validationWarnings;
 - (id)valueTransformerName;
 - (id)versionHash;
 

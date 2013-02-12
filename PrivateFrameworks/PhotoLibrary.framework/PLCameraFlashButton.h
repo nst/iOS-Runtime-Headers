@@ -37,6 +37,7 @@
 
 + (void)_initializeSafeCategory;
 
+- (void)_accessibilityUpdateCurrentLabel;
 - (void)_cancelCollapse;
 - (void)_collapseAndSetMode:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)_collapseAnimated;

@@ -25,6 +25,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
+- (id)_newSubArrayInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 asMutable:(BOOL)arg2;
 - (id)arrayFromObjectIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)count;
@@ -33,13 +34,20 @@
 - (id)description;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)getObjects:(id*)arg1;
+- (NSUInteger)indexOfManagedObjectForObjectID:(id)arg1;
+- (NSUInteger)indexOfObject:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (NSUInteger)indexOfObject:(id)arg1;
+- (NSUInteger)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (NSUInteger)indexOfObjectIdenticalTo:(id)arg1;
 - (id)initWithPFArray:(id)arg1 andRequest:(id)arg2 andContext:(id)arg3;
 - (BOOL)isEqualToArray:(id)arg1;
+- (id)managedObjectIDAtIndex:(NSUInteger)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(NSUInteger)arg1;
 - (void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
+- (id)subarrayWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 
 @end

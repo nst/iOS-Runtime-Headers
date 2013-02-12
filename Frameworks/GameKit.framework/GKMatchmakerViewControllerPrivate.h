@@ -2,24 +2,34 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKMatchmakerViewControllerDelegate>, GKFriendPickerViewController, GKInvite, GKMatch, GKMatchRequest, GKUITheme, NSArray, NSMutableArray, NSMutableDictionary, UIActivityIndicatorView, UIAlertView, UIButton, UILabel, UITableView, UIView;
+@class <GKMatchmakerViewControllerDelegate>, GKFriendPickerViewController, GKInvite, GKInviteHeaderView, GKMatch, GKMatchRequest, GKPlayer, GKTableView, GKUITheme, NSArray, NSMutableArray, NSMutableDictionary, UIActivityIndicatorView, UIAlertView, UIButton, UILabel, UIView;
 
 @interface GKMatchmakerViewControllerPrivate : GKTableViewController {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     GKInvite *_acceptedInvite;
     UIButton *_addPlayerButton;
     UIView *_addRemovePlayersView;
     UIAlertView *_alert;
     NSMutableDictionary *_avatarImages;
+    NSMutableArray *_declinedPlayers;
     <GKMatchmakerViewControllerDelegate> *_delegate;
     BOOL _didLayout;
+    GKPlayer *_emptyPlayer;
     UILabel *_footerLabel;
+    } _formSheetInsets;
     GKFriendPickerViewController *_friendPicker;
     NSMutableArray *_friendPlayers;
-    UITableView *_friendTable;
+    GKTableView *_friendTable;
     BOOL _geniusMatching;
+    GKInviteHeaderView *_headerView;
     BOOL _hosted;
     NSMutableArray *_invitedFriends;
     BOOL _loadingFriends;
+    BOOL _loadingFriendsFailed;
     GKMatch *_match;
     GKMatchRequest *_matchRequest;
     UIView *_matchingView;
@@ -41,13 +51,16 @@
 @property(retain) GKInvite *acceptedInvite;
 @property(retain) UIButton *addPlayerButton;
 @property(retain) UIView *addRemovePlayersView;
-@property(retain) UIAlertView *alert;
+@property UIAlertView *alert;
 @property(retain) NSMutableDictionary *avatarImages;
+@property(retain) NSMutableArray *declinedPlayers;
 @property <GKMatchmakerViewControllerDelegate> *delegate;
+@property(retain) GKPlayer *emptyPlayer;
 @property(retain) UILabel *footerLabel;
 @property(retain) GKFriendPickerViewController *friendPicker;
 @property(retain) NSMutableArray *friendPlayers;
-@property(retain) UITableView *friendTable;
+@property(retain) GKTableView *friendTable;
+@property(retain) GKInviteHeaderView *headerView;
 @property(retain) NSMutableArray *invitedFriends;
 @property(retain) GKMatch *match;
 @property(retain) GKMatchRequest *matchRequest;
@@ -62,9 +75,11 @@
 @property(retain) UIButton *removePlayerButton;
 @property(retain) GKUITheme *theme;
 @property BOOL didLayout;
+@property UIEdgeInsets formSheetInsets;
 @property BOOL geniusMatching;
 @property(getter=isHosted) BOOL hosted;
 @property BOOL loadingFriends;
+@property BOOL loadingFriendsFailed;
 @property NSInteger numberAccepted;
 @property NSInteger numberOfInvitesRemaining;
 @property BOOL reachable;
@@ -91,12 +106,15 @@
 - (void)cancelInviteForPlayerAtIndex:(NSUInteger)arg1;
 - (void)cancelPendingInvitesAndMarkInviteComplete:(BOOL)arg1;
 - (void)dealloc;
+- (id)declinedPlayers;
 - (id)delegate;
 - (BOOL)didLayout;
 - (void)didReceiveMemoryWarning;
 - (void)doneInvitingFindMorePlayers:(BOOL)arg1;
+- (id)emptyPlayer;
 - (void)failedToInvitePlayers:(id)arg1;
 - (id)footerLabel;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })formSheetInsets;
 - (id)friendPicker;
 - (void)friendPickerViewController:(id)arg1 didFinishWithPlayers:(id)arg2 inviteMessage:(id)arg3;
 - (id)friendPlayers;
@@ -104,6 +122,7 @@
 - (id)friendWithPlayerID:(id)arg1;
 - (BOOL)geniusMatching;
 - (BOOL)haveConnectingPlayers;
+- (id)headerView;
 - (NSInteger)indexOfPlayer:(id)arg1;
 - (id)initWithInvite:(id)arg1;
 - (id)initWithMatchRequest:(id)arg1;
@@ -121,7 +140,9 @@
 - (void)loadRanks;
 - (void)loadView;
 - (BOOL)loadingFriends;
+- (BOOL)loadingFriendsFailed;
 - (void)localPlayerAcceptedGameInvite:(id)arg1;
+- (float)marginForTableView:(id)arg1;
 - (void)match:(id)arg1 connectionWithPlayerFailed:(id)arg2 withError:(id)arg3;
 - (void)match:(id)arg1 didFailWithError:(id)arg2;
 - (void)match:(id)arg1 didReceiveData:(id)arg2 fromPlayer:(id)arg3;
@@ -159,17 +180,22 @@
 - (void)setAddRemovePlayersView:(id)arg1;
 - (void)setAlert:(id)arg1;
 - (void)setAvatarImages:(id)arg1;
+- (void)setDeclinedPlayers:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidLayout:(BOOL)arg1;
+- (void)setEmptyPlayer:(id)arg1;
 - (void)setFooterLabel:(id)arg1;
+- (void)setFormSheetInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setFriendPicker:(id)arg1;
 - (void)setFriendPlayers:(id)arg1;
 - (void)setFriendTable:(id)arg1;
 - (void)setGeniusMatching:(BOOL)arg1;
+- (void)setHeaderView:(id)arg1;
 - (void)setHosted:(BOOL)arg1;
 - (void)setHostedPlayerReady:(id)arg1;
 - (void)setInvitedFriends:(id)arg1;
 - (void)setLoadingFriends:(BOOL)arg1;
+- (void)setLoadingFriendsFailed:(BOOL)arg1;
 - (void)setMatch:(id)arg1;
 - (void)setMatchRequest:(id)arg1;
 - (void)setMatchingView:(id)arg1;
@@ -203,6 +229,7 @@
 - (void)updateCellForPlayer:(id)arg1;
 - (void)updateNavViewLayoutForOrientation:(NSInteger)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

@@ -115,6 +115,7 @@
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
 - (void)_layoutPopupAlertWithOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (BOOL)_manualKeyboardIsVisible;
 - (float)_maxHeight;
 - (BOOL)_needsKeyboard;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1;
@@ -222,6 +223,7 @@
 - (NSInteger)suspendTag;
 - (id)table;
 - (BOOL)tableShouldShowMinimumContent;
+- (id)tableView;
 - (id)taglineTextView;
 - (id)textField;
 - (id)textFieldAtIndex:(NSInteger)arg1;

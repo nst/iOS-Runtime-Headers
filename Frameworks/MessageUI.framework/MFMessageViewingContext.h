@@ -64,5 +64,6 @@
 - (void)setMessageBody:(id)arg1;
 - (void)setOutgoingMessage:(BOOL)arg1;
 - (id)uniqueID;
+- (void)unload;
 
 @end

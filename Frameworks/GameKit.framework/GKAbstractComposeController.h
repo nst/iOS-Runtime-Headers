@@ -2,79 +2,85 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class ABPeoplePickerNavigationController, GKImageBackgroundView, GKRecipientGenerator, GKRecipientListView, GKRecipientSelectionView, GKUITheme, NSDictionary, NSMutableArray, NSString, UIFrameAnimation, UIImageView, UINavigationController, UINavigationItem, UITextContentView;
+@class ABPeoplePickerNavigationController, GKImageBackgroundView, GKRecipientGenerator, GKRecipientSelectionView, GKUITheme, NSDictionary, NSMutableArray, NSString, UIImageView, UINavigationController, UINavigationItem, UIPopoverController, UIResponder, UITextView;
 
-@interface GKAbstractComposeController : UIViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UITextContentViewDelegate> {
+@interface GKAbstractComposeController : UIViewController <UIActionSheetDelegate, UIModalViewDelegate, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, UITextViewDelegate, UIPopoverControllerDelegate> {
     struct _NSRange { 
         NSUInteger location; 
         NSUInteger length; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     unsigned int _needsSetupForNewRecipient : 1;
     unsigned int _visible : 1;
     unsigned int _sending : 1;
     unsigned int _newRecipient : 1;
-    unsigned int _willRotateView : 1;
-    unsigned int _ignoresOverlayViewsForLayout : 1;
     NSDictionary *_abPropertiesCache;
     GKImageBackgroundView *_backPlacard;
     UIImageView *_beneathMessageView;
     id _composeDelegate;
+    UIPopoverController *_composePopoverController;
     NSString *_lastMessage;
     } _lastSelectedRange;
-    UITextContentView *_messageEntryView;
-    UIFrameAnimation *_messageEntryViewAnimation;
+    UITextView *_messageEntryView;
     UIImageView *_messageView;
     UINavigationItem *_navItem;
     UINavigationController *_navigationController;
     ABPeoplePickerNavigationController *_peoplePickerController;
+    } _previousKeyboardFrame;
     GKRecipientGenerator *_recipientGenerator;
-    GKRecipientListView *_recipientListView;
     GKRecipientSelectionView *_recipientSelectionView;
     NSMutableArray *_recipients;
-    UIImageView *_shadowView;
+    UIResponder *_savedFirstResponder;
+    NSInteger _savedStatusBarStyle;
     GKUITheme *_theme;
 }
 
-@property(readonly) UITextContentView *messageEntryView;
+@property(readonly) UIImageView *beneathMessageView;
+@property(retain) UIPopoverController *composePopoverController;
+@property(retain) NSString *lastMessage;
+@property(readonly) UITextView *messageEntryView;
 @property(readonly) ABPeoplePickerNavigationController *peoplePickerController;
-@property(readonly) GKRecipientListView *recipientListView;
 @property(readonly) GKRecipientSelectionView *recipientSelectionView;
 @property(readonly) NSMutableArray *recipients;
-@property(retain) UIImageView *shadowView;
+@property(retain) UIResponder *savedFirstResponder;
 @property(retain) GKUITheme *theme;
 @property id composeDelegate;
-@property NSUInteger sending;
+@property CGRect previousKeyboardFrame;
+@property NSInteger savedStatusBarStyle;
+@property BOOL sending;
 
-+ (id)tableColor;
-
-- (BOOL)_canReloadView;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
-- (void)_hideRecipientListView;
 - (void)_localeChanged:(id)arg1;
-- (float)_maxHeightForOverlayView:(id)arg1 entryViewResize:(NSInteger)arg2;
-- (id)_overlayView;
-- (float)_overlayViewMinHeight;
 - (id)_recipientGenerator;
 - (void)_resetEntryViewSize;
-- (void)_resetEntryViewSizeForInterfaceOrientation:(NSInteger)arg1;
+- (void)_resetEntryViewSizeForInterfaceOrientation:(NSInteger)arg1 withKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_setEntryViewVisible:(BOOL)arg1;
 - (void)_setupRecipientSelectionView;
-- (void)_showRecipientListView;
-- (void)_stopEntryViewAnimation:(BOOL)arg1;
-- (void)_updateRecipientListView;
 - (void)_updateUI;
 - (void)addRecipient:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3 address:(id)arg4 makingContentEntryViewActive:(BOOL)arg5;
 - (void)addRecipients:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (id)beneathMessageView;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)composeControllerCancelled:(id)arg1;
 - (id)composeDelegate;
+- (id)composePopoverController;
 - (void)dealloc;
+- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void)dismissPeoplePicker:(id)arg1;
 - (void)dismissPeoplePicker;
 - (id)gkBackgroundView;
 - (id)initWithNavigationController:(id)arg1;
 - (BOOL)isNewRecipient;
+- (void)keyboardWillShow:(id)arg1;
+- (id)lastMessage;
 - (void)layoutSubviewsForOrientation:(NSInteger)arg1;
 - (void)loadView;
 - (void)makeContentEntryViewActive;
@@ -84,16 +90,17 @@
 - (id)messageEntryView;
 - (id)navigationItem;
 - (id)peoplePickerController;
-- (void)peoplePickerNavigationController:(id)arg1 displayedMembersOfGroup:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldDismissAfterInsertEditorConfirmed:(BOOL)arg2 withPerson:(void*)arg3;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldShowInsertEditorForPerson:(void*)arg2 insertProperty:(NSInteger*)arg3 copyInsertValue:(id*)arg4 copyInsertLabel:(id*)arg5;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void)peoplePickerNavigationControllerDisplayedGroups:(id)arg1;
+- (void)popFirstResponder;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousKeyboardFrame;
 - (id)proposedRecipients;
-- (id)recipientListView;
+- (void)pushFirstResponder;
 - (void)recipientSelectionView:(id)arg1 contentSizeChanged:(struct CGSize { float x1; float x2; })arg2;
 - (void)recipientSelectionView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)recipientSelectionView:(id)arg1 isValidAddress:(id)arg2;
@@ -108,29 +115,34 @@
 - (void)recipientSelectionViewTextChanged:(id)arg1;
 - (id)recipients;
 - (void)reload:(BOOL)arg1;
+- (id)savedFirstResponder;
+- (NSInteger)savedStatusBarStyle;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (NSUInteger)sending;
+- (BOOL)sending;
 - (void)setComposeDelegate:(id)arg1;
-- (void)setSending:(NSUInteger)arg1;
-- (void)setShadowView:(id)arg1;
+- (void)setComposePopoverController:(id)arg1;
+- (void)setLastMessage:(id)arg1;
+- (void)setPreviousKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSavedFirstResponder:(id)arg1;
+- (void)setSavedStatusBarStyle:(NSInteger)arg1;
+- (void)setSending:(BOOL)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setupForNewRecipient;
-- (id)shadowView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)showPeoplePickerWithDelegate:(id)arg1;
-- (void)tearDownPeoplePicker;
-- (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)textContentViewDidBeginEditing:(id)arg1;
-- (void)textContentViewDidChange:(id)arg1;
+- (void)textViewDidBeginEditing:(id)arg1;
+- (void)textViewDidChange:(id)arg1;
 - (id)theme;
 - (void)transcriptController:(id)arg1 showPeoplePickerWithDelegate:(id)arg2;
 - (void)updateEnablednessOfSendButton;
 - (void)updateNavigationButtons;
 - (void)updateTitle;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

@@ -14,6 +14,8 @@
 @property BOOL forHeader;
 @property BOOL forTextPart;
 
++ (unsigned long)requiredSizeToEncodeHeaderBytes:(const char *)arg1 length:(unsigned long)arg2;
+
 - (NSInteger)appendData:(id)arg1;
 - (void)done;
 - (BOOL)forHeader;

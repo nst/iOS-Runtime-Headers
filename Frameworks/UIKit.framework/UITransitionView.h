@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder, UIView, UIWindow;
+@class NSMutableArray, UIResponder, UIView, UIWindow;
 
 @interface UITransitionView : UIView <NSCoding> {
     struct { 
@@ -15,6 +15,7 @@
     id _delegate;
     UIResponder *_firstResponderToRemember;
     UIView *_fromView;
+    NSMutableArray *_frozenSubviews;
     UIWindow *_originalWindow;
     UIView *_toView;
     } _transitionViewFlags;
@@ -27,7 +28,7 @@
 
 - (void)_didCompleteTransition:(BOOL)arg1;
 - (void)_didStartTransition;
-- (BOOL)_isContainedByTransitioningView;
+- (BOOL)_isTransitioningFromFromView:(id)arg1;
 - (void)_startTransition:(NSInteger)arg1 withDuration:(float)arg2;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
 - (void)dealloc;

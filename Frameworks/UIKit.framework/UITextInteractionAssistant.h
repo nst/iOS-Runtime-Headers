@@ -90,7 +90,6 @@
 - (void)oneFingerTapInUneditable:(id)arg1;
 - (void)oneFingerTapSelectsAll:(id)arg1;
 - (void)oneFingerTripleTap:(id)arg1;
-- (void)phraseBoundaryGesture:(id)arg1;
 - (struct CGPoint { float x1; float x2; })pointFromContainerToContent:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })pointFromContentToContainer:(struct CGPoint { float x1; float x2; })arg1;
 - (id)rangeForTextReplacement:(id)arg1;

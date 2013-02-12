@@ -43,7 +43,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)error;
+- (BOOL)handleAuthenticateAgainstProtectionSpace:(id)arg1 withConnection:(id)arg2;
+- (BOOL)handleAuthenticateAgainstProtectionSpace:(id)arg1;
 - (BOOL)handleCertificateError:(id)arg1;
+- (BOOL)handleShouldUseCredentialStorage;
+- (BOOL)handleTrustChallenge:(id)arg1 withConnection:(id)arg2;
 - (BOOL)handleTrustChallenge:(id)arg1;
 - (id)host;
 - (id)identityPersist;
@@ -71,6 +75,7 @@
 - (void)setUser:(id)arg1;
 - (void)setUserAgentHeader:(id)arg1;
 - (BOOL)shouldFailAllTasks;
+- (BOOL)shouldTurnModalOnBadPassword;
 - (BOOL)started;
 - (id)url;
 - (id)user;

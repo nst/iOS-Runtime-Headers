@@ -6,17 +6,18 @@
 
 @interface QLPreviewViewReserved : NSObject {
     unsigned int displayBundleVisible : 1;
-    unsigned int errorVisible : 1;
-    unsigned int itemReloaded : 1;
-    unsigned int isHTMLContent : 1;
-    unsigned int isPreviewReady : 1;
+    unsigned int refreshStarted : 1;
     unsigned int isZooming : 1;
+    unsigned int wasCancelled : 1;
+    unsigned int hasFailed : 1;
+    unsigned int shouldShowProgress : 1;
     QLPreviewConverter *converter;
+    QLDisplayBundle *currentDisplayBundle;
     id delegate;
-    QLDisplayBundle *displayBundle;
     QLErrorLayer *errorLayer;
     <QLPreviewItem> *previewItem;
     NSURLRequest *previewRequest;
+    QLDisplayBundle *previousDisplayBundle;
     QLProgressLayer *progressLayer;
     UIViewController *viewController;
 }

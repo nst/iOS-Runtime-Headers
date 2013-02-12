@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSURL;
+@class NSDictionary, NSURL;
 
 @interface AVValidatorInternal : NSObject {
     id clientValidatorHandler;
@@ -18,6 +18,7 @@
     BOOL resourceIsInspectable;
     BOOL resourceIsPlayable;
     NSInteger status;
+    NSDictionary *validationPlist;
 }
 
 @end

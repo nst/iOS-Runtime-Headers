@@ -7,7 +7,7 @@
  */
 
 @interface WebScriptObjectPrivate : NSObject {
-    struct JSObject { int (**x1)(); struct Structure {} *x2; union $_674 { 
+    struct JSObject { int (**x1)(); struct Structure {} *x2; union $_676 { 
             long long *m_externalStorage; 
             long long m_inlineStorage[4]; 
         } x3; struct RefPtr<JSC::Structure> { 
@@ -24,9 +24,17 @@
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_impl; 
-        } x5; struct HashSet<JSC::RuntimeObjectImp*,WTF::PtrHash<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*> > { 
-            struct HashTable<JSC::RuntimeObjectImp*,JSC::RuntimeObjectImp*,WTF::IdentityExtractor<JSC::RuntimeObjectImp*>,WTF::PtrHash<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*> > { 
-                struct RuntimeObjectImp {} **m_table; 
+        } x5; struct HashSet<JSC::Bindings::RuntimeObject*,WTF::PtrHash<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*> > { 
+            struct HashTable<JSC::Bindings::RuntimeObject*,JSC::Bindings::RuntimeObject*,WTF::IdentityExtractor<JSC::Bindings::RuntimeObject*>,WTF::PtrHash<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*> > { 
+                struct RuntimeObject {} **m_table; 
+                NSInteger m_tableSize; 
+                NSInteger m_tableSizeMask; 
+                NSInteger m_keyCount; 
+                NSInteger m_deletedCount; 
+            } m_impl; 
+        } x6; struct HashSet<JSC::Bindings::RootObject::InvalidationCallback*,WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*> > { 
+            struct HashTable<JSC::Bindings::RootObject::InvalidationCallback*,JSC::Bindings::RootObject::InvalidationCallback*,WTF::IdentityExtractor<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*> > { 
+                struct InvalidationCallback {} **m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
@@ -44,9 +52,17 @@
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_impl; 
-        } x5; struct HashSet<JSC::RuntimeObjectImp*,WTF::PtrHash<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*> > { 
-            struct HashTable<JSC::RuntimeObjectImp*,JSC::RuntimeObjectImp*,WTF::IdentityExtractor<JSC::RuntimeObjectImp*>,WTF::PtrHash<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*>,WTF::HashTraits<JSC::RuntimeObjectImp*> > { 
-                struct RuntimeObjectImp {} **m_table; 
+        } x5; struct HashSet<JSC::Bindings::RuntimeObject*,WTF::PtrHash<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*> > { 
+            struct HashTable<JSC::Bindings::RuntimeObject*,JSC::Bindings::RuntimeObject*,WTF::IdentityExtractor<JSC::Bindings::RuntimeObject*>,WTF::PtrHash<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*>,WTF::HashTraits<JSC::Bindings::RuntimeObject*> > { 
+                struct RuntimeObject {} **m_table; 
+                NSInteger m_tableSize; 
+                NSInteger m_tableSizeMask; 
+                NSInteger m_keyCount; 
+                NSInteger m_deletedCount; 
+            } m_impl; 
+        } x6; struct HashSet<JSC::Bindings::RootObject::InvalidationCallback*,WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*> > { 
+            struct HashTable<JSC::Bindings::RootObject::InvalidationCallback*,JSC::Bindings::RootObject::InvalidationCallback*,WTF::IdentityExtractor<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*>,WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback*> > { 
+                struct InvalidationCallback {} **m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
@@ -54,8 +70,8 @@
             } m_impl; 
         } x4; } *imp;
     BOOL isCreatedByDOMWrapper;
-        } x6; } *originRootObject;
-        } x6; } *rootObject;
+        } x7; } *originRootObject;
+        } x7; } *rootObject;
 }
 
 @end

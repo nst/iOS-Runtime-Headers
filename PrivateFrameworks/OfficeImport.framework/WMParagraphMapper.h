@@ -7,6 +7,7 @@
 @interface WMParagraphMapper : CMMapper {
     OIXMLElement *mActiveNode;
     WMParagraphMapper *mCurrentMapper;
+    BOOL mIsDeleted;
     WDParagraph *wdParagraph;
 }
 

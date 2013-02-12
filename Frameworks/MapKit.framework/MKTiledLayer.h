@@ -3,7 +3,7 @@
  */
 
 @interface MKTiledLayer : CATiledLayer {
-    struct $_841 { 
+    struct $_846 { 
         unsigned int displayBaseTiles : 1; 
         unsigned int delegateDisplayBaseTiles : 1; 
         unsigned int delegateRenderLayer : 1; 

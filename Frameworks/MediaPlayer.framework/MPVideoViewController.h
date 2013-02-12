@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, UIAlertView, UIColor, UIProgressIndicator;
+@class MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, UIAlertView, UIColor, UIImage, UIProgressIndicator;
 
 @interface MPVideoViewController : MPViewController <MPSwipableViewDelegate, MPVideoTransferViewController, UIModalViewDelegate> {
     unsigned int _tvOutEnabled : 1;
@@ -17,8 +17,10 @@
     unsigned int _allowsDetailScrubbing : 1;
     unsigned int _attemptAutoPlayWhenControlsHidden : 1;
     unsigned int _alwaysAllowHidingControlsOverlay : 1;
-    unsigned int _usePosterForEmbeddedArtwork : 1;
+    unsigned int _hasShownFirstVideoFrame : 1;
+    unsigned int _allowsWirelessPlayback : 1;
     UIAlertView *_alertSheet;
+    NSInteger _artworkImageStyle;
     MPVideoBackgroundView *_backgroundView;
     UIColor *_backstopColor;
     MPSwipableView *_backstopView;
@@ -26,18 +28,22 @@
     NSUInteger _disabledParts;
     NSUInteger _itemTypeOverride;
     UIProgressIndicator *_loadingIndicator;
+    UIImage *_posterImage;
     NSUInteger _scaleMode;
     MPTVOutWindow *_tvOutWindow;
     NSUInteger _visibleParts;
 }
 
+@property(readonly) UIView *artworkImageView;
 @property(readonly) UIView *backgroundView;
 @property(retain) UIColor *backstopColor;
-@property(readonly) UIView *posterImageView;
+@property(retain) UIImage *posterImage;
 @property(retain,readonly) MPVideoView *videoView;
 @property BOOL TVOutEnabled;
 @property BOOL allowsDetailScrubbing;
+@property BOOL allowsWirelessPlayback;
 @property BOOL alwaysAllowHidingControlsOverlay;
+@property NSInteger artworkImageStyle;
 @property BOOL attemptAutoPlayWhenControlsHidden;
 @property(readonly) CGRect backgroundViewSnapshotFrame;
 @property BOOL canAnimateControlsOverlay;
@@ -54,13 +60,15 @@
 @property NSUInteger itemTypeOverride;
 @property BOOL ownsStatusBar;
 @property NSUInteger scaleMode;
-@property BOOL usePosterForEmbeddedArtwork;
-@property(readonly) BOOL usePosterForTVOut;
+@property(readonly) BOOL showArtworkForTVOut;
+@property(readonly) BOOL showArtworkInImageView;
+@property(getter=isTransitioningFromFullscreen,readonly) BOOL transitioningFromFullscreen;
+@property(getter=isTransitioningToFullscreen,readonly) BOOL transitioningToFullscreen;
 @property(readonly) BOOL viewControllerWillRequestExit;
 @property NSUInteger visibleParts;
 
 + (void)_initializeSafeCategory;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculatePosterImageViewFrameInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateArtworkImageViewFrameInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (BOOL)isPlayingToTVOut;
 + (id)sharedVideoView:(BOOL)arg1;
 + (BOOL)supportsFullscreenDisplay;
@@ -70,10 +78,12 @@
 - (void)_delayedShowLoading;
 - (void)_delayedUpdateBackgroundView;
 - (void)_exitPlayerForPlaybackError;
-- (void)_hideLoadingForStateChange:(id)arg1;
+- (void)_firstVideoFrameDisplayedNotification:(id)arg1;
 - (void)_hideLoadingIndicator;
 - (void)_itemDurationDidChange:(id)arg1;
 - (void)_itemEmbeddedArtworkAvailableNotification:(id)arg1;
+- (NSUInteger)_itemTypeWithActualTypePreference;
+- (NSUInteger)_itemTypeWithOverrideTypePreference;
 - (void)_orderOutTVOutWindow;
 - (void)_popForTimeJump:(id)arg1;
 - (void)_scheduleLoadingIndicatorIfNeeded;
@@ -95,18 +105,22 @@
 - (void)_videoView_validityChangedNotification:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 - (BOOL)allowsDetailScrubbing;
+- (BOOL)allowsWirelessPlayback;
 - (BOOL)alwaysAllowHidingControlsOverlay;
+- (NSInteger)artworkImageStyle;
+- (id)artworkImageView;
 - (BOOL)attemptAutoPlayWhenControlsHidden;
 - (id)backgroundView;
 - (void)backgroundViewDidUpdate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundViewSnapshotFrame;
 - (id)backstopColor;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculatePosterImageViewFrame;
+- (void)bufferingStateChangedNotification:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateArtworkImageViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateFullScreenArtworkImageViewFrame;
 - (BOOL)canAnimateControlsOverlay;
 - (BOOL)canChangeScaleMode;
 - (BOOL)canHideOverlay:(BOOL)arg1;
 - (BOOL)canShowControlsOverlay;
-- (BOOL)canShowPosterArtwork;
 - (BOOL)canShowQTAudioOnlyUI;
 - (void)chapterList:(id)arg1 selectedChapter:(NSUInteger)arg2;
 - (void)chapterListDidDisappear:(id)arg1;
@@ -117,6 +131,8 @@
 - (NSUInteger)desiredParts;
 - (BOOL)disableControlsAutohide;
 - (NSUInteger)disabledParts;
+- (NSUInteger)disabledPartsForProposedParts:(NSUInteger)arg1;
+- (NSInteger)displayArtworkImageStyle;
 - (void)displayFreshVideoViewContents;
 - (BOOL)displayPlaybackErrorAlerts;
 - (void)displayVideoView;
@@ -126,17 +142,23 @@
 - (BOOL)infoOverlayShouldDisplayQueuePositionUI:(id)arg1;
 - (id)init;
 - (BOOL)isFullscreen;
+- (BOOL)isFullscreenForLayoutPurposes;
+- (BOOL)isTransitioningFromFullscreen;
+- (BOOL)isTransitioningToFullscreen;
 - (NSUInteger)itemTypeOverride;
 - (void)loadView;
 - (id)newAlternateTracksTransition;
 - (void)noteIgnoredChangeTypes:(NSUInteger)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)ownsStatusBar;
-- (id)posterImageView;
-- (void)reloadPosterImageView;
+- (id)posterImage;
+- (void)reloadArtworkImageView;
 - (void)removeChildViewController:(id)arg1;
 - (NSUInteger)scaleMode;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlwaysAllowHidingControlsOverlay:(BOOL)arg1;
+- (void)setArtworkImageStyle:(NSInteger)arg1;
 - (void)setAttemptAutoPlayWhenControlsHidden:(BOOL)arg1;
 - (void)setBackstopColor:(id)arg1;
 - (void)setCanAnimateControlsOverlay:(BOOL)arg1;
@@ -154,21 +176,21 @@
 - (void)setFullscreen:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setItemTypeOverride:(NSUInteger)arg1;
-- (void)setOrientation:(NSInteger)arg1;
+- (void)setOrientation:(NSInteger)arg1 animate:(BOOL)arg2;
 - (void)setOwnsStatusBar:(BOOL)arg1;
 - (void)setOwnsVideoView:(BOOL)arg1;
+- (void)setPosterImage:(id)arg1;
 - (void)setScaleMode:(NSUInteger)arg1 animated:(BOOL)arg2;
 - (void)setScaleMode:(NSUInteger)arg1;
 - (void)setTVOutEnabled:(BOOL)arg1;
-- (void)setUsePosterForEmbeddedArtwork:(BOOL)arg1;
 - (void)setVisibleParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setVisibleParts:(NSUInteger)arg1;
 - (void)showAlternateTracksController:(id)arg1;
+- (BOOL)showArtworkForTVOut;
+- (BOOL)showArtworkInImageView;
 - (void)showChaptersController;
 - (void)showChaptersControllerAndFadeViews:(id)arg1;
 - (void)toggleScaleMode:(BOOL)arg1;
-- (BOOL)usePosterForEmbeddedArtwork;
-- (BOOL)usePosterForTVOut;
 - (id)videoView;
 - (void)videoView_resumeEventsOnlyNotification:(id)arg1;
 - (BOOL)viewControllerWillRequestExit;
@@ -177,5 +199,6 @@
 - (void)viewDidUnload;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (NSUInteger)visibleParts;
+- (NSUInteger)visiblePartsForProposedParts:(NSUInteger)arg1;
 
 @end

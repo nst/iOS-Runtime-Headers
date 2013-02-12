@@ -7,6 +7,8 @@
 
 + (void)_initializeSafeCategory;
 
+- (void)_setTableViewVisible:(BOOL)arg1 inView:(id)arg2;
+- (id)searchResultsTableView;
 - (void)setActive:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

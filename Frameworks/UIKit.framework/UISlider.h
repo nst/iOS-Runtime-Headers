@@ -8,10 +8,12 @@
     struct { 
         unsigned int continuous : 1; 
         unsigned int animating : 1; 
+        unsigned int preparingToAnimate : 1; 
         unsigned int showValue : 1; 
         unsigned int trackEnabled : 1; 
         unsigned int creatingSnapshot : 1; 
         unsigned int thumbDisabled : 1; 
+        unsigned int minTrackHidden : 1; 
     struct __CFDictionary { } *_contentLookup;
     float _hitOffset;
     UIImageView *_maxTrackView;
@@ -65,12 +67,14 @@
 - (void)_setContent:(id)arg1 forState:(NSUInteger)arg2;
 - (void)_setMaximumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setMinimumTrackImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)_setMinimumTrackVisible:(BOOL)arg1 withDuration:(double)arg2;
 - (void)_setThumbEnabled:(BOOL)arg1;
 - (void)_setThumbImage:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setTrackEnabled:(BOOL)arg1;
 - (void)_setValue:(float)arg1 andSendAction:(BOOL)arg2;
 - (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_sliderAnimationWillStart:(id)arg1 context:(void*)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_thumbHitEdgeInsets;
 - (id)_thumbImageForState:(NSUInteger)arg1;
 - (BOOL)_trackEnabled;
 - (void)_updateAppearanceForEnabled:(BOOL)arg1;
@@ -90,6 +94,7 @@
 - (id)currentMinimumTrackImage;
 - (id)currentThumbImage;
 - (void)dealloc;
+- (id)description;
 - (void)didMoveToWindow;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;

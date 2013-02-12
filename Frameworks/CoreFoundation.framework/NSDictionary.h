@@ -5,6 +5,9 @@
 @interface NSDictionary : NSObject <NSCopying, NSMutableCopying, NSCoding, NSFastEnumeration> {
 }
 
+@property(readonly) unsigned short fileHFSFlags;
+@property(readonly) unsigned long long fileHFSResourceForkSize;
+
 + (id)_dictionaryWithData:(id)arg1 isPlist:(BOOL)arg2 allowedClasses:(id)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)dictionary;
@@ -21,6 +24,7 @@
 + (id)dictionaryWithPlistData:(id)arg1;
 + (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
 
+- (struct KeyValueArray { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; NSUInteger x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
 - (id)DAObjectForKeyCaseInsensitive:(id)arg1;
 - (id)MCDeepCopy;
 - (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
@@ -30,6 +34,9 @@
 - (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(NSInteger)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
 - (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(NSInteger)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(NSInteger)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
 - (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(NSInteger)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(NSInteger)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
+- (id)ML3NumberForKey:(id)arg1 fallbackKey:(id)arg2;
+- (id)ML3NumberForKey:(id)arg1;
+- (id)ML3StringForKey:(id)arg1;
 - (void)_apply:(int (*)())arg1 context:(void*)arg2;
 - (BOOL)_boolForKey:(id)arg1;
 - (unsigned long)_cfTypeID;
@@ -144,7 +151,7 @@
 - (id)objectForIntegerKey:(NSInteger)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyCaseInsensitive:(id)arg1;
-- (id)objectForKeyWithNameSpace:(const char *)arg1 elementName:(const char *)arg2;
+- (id)objectForKeyWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)objectsForIntegerKeys:(id)arg1;
 - (id)objectsForIntegerKeys:(id)arg1;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
@@ -152,6 +159,7 @@
 - (id)plistData;
 - (id)scriptEntry;
 - (id)scriptPath;
+- (id)setOfKeysForAlteredValuesComparedTo:(id)arg1;
 - (SEL)setupSelector;
 - (BOOL)shouldTriggerDownloadQueueCheck;
 - (id)sourceURL;

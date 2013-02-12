@@ -10,13 +10,18 @@
     unsigned int _isFromEntourage : 1;
     unsigned int _isStoppedAndCleared : 1;
     NSString *_currentUUID;
+    NSInteger _messageDisplayStyle;
     <MFMessageWebLayerDelegate> *_mwlDelegate;
+    BOOL _prePrintDataDetectionPending;
 }
+
+@property BOOL prePrintDataDetectionPending;
 
 + (void)beginBlockingRemoteImagesExceptForMessageWebLayer:(id)arg1;
 + (void)endBlockingRemoteImages;
 + (void)initialize;
 
+- (void)_frameDidFinishPrePrintURLification:(id)arg1;
 - (id)_rescaleDocument:(id)arg1 andBody:(id)arg2 withChangedNodes:(id)arg3;
 - (void)_restoreDrawingAndUpdateSizeOnMainThread;
 - (void)_restoreDrawingOnMainThread;
@@ -29,20 +34,24 @@
 - (void)appendMarkupString:(id)arg1 baseURL:(id)arg2;
 - (void)dealloc;
 - (void)defaultMouseDragged:(struct __GSEvent { }*)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleSize:(struct CGSize { float x1; float x2; })arg2 viewportWidth:(float)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)hasPluginWithUninitializedSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleSize:(struct CGSize { float x1; float x2; })arg2 viewportWidth:(float)arg3 displayStyle:(NSInteger)arg4;
 - (BOOL)isCancelled;
 - (void)loadFragments:(id)arg1 withDDContext:(id)arg2;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
+- (NSInteger)messageDisplayStyle;
+- (id)messageWebLayerDelegate;
 - (BOOL)notifyDelegateToDisplayContextualMenu:(id)arg1;
 - (void)notifyDelegateToDisplayInSeparateView:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 sender:(id)arg3;
 - (void)notifyDelegateToLoad:(id)arg1 client:(id)arg2;
+- (BOOL)prePrintDataDetectionPending;
 - (void)prepareLoading;
 - (void)rescaleMessage:(id)arg1;
 - (void)rollBackChanges:(id)arg1 inDocument:(id)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMessageIsFromEntourage:(BOOL)arg1;
 - (void)setMessageWebLayerDelegate:(id)arg1;
+- (void)setPrePrintDataDetectionPending:(BOOL)arg1;
 - (BOOL)shouldChangeForBody:(id)arg1 inDocument:(id)arg2 shouldContinue:(BOOL*)arg3;
 - (BOOL)standardDeviationOfWidths:(float*)arg1 andMean:(float*)arg2 withMax:(NSInteger*)arg3 forBody:(id)arg4 inDocument:(id)arg5;
 - (void)stopLoadingAndClear;

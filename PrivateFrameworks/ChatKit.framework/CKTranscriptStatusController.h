@@ -31,7 +31,6 @@
 - (id)_localizedTitleForSendingPart:(NSInteger)arg1 ofPart:(NSInteger)arg2;
 - (void)_refreshNavigationItemView;
 - (void)_refreshNavigationItemViewAnimate:(BOOL)arg1;
-- (void)_resetProgress;
 - (void)_startUpdatingProgress;
 - (id)_statusView;
 - (id)_title;
@@ -44,6 +43,7 @@
 - (id)delegate;
 - (void)refresh;
 - (void)reset;
+- (void)resetProgress;
 - (void)setConversation:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTitle:(id)arg1;

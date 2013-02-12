@@ -9,7 +9,7 @@
 @class WebHTMLViewPrivate;
 
 @interface WebHTMLView : WAKView <WebDocumentSelection, WebDocumentIncrementalSearching, WebDocumentElement, WebMultipleTextMatches, WebDocumentView, WebDocumentSearching> {
-     /* Encoded args for previous method: c12@0:4^{KeyboardEvent=^^?i{AtomicString={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}}BBBBBBS^{EventTarget}{RefPtr<WebCore::EventTarget>=^{EventTarget}}Q{RefPtr<WebCore::Event>=^{Event}}{RefPtr<WebCore::DOMWindow>=^{DOMWindow}}ib1b1b1b1{OwnPtr<WebCore::PlatformKeyboardEvent>=^{PlatformKeyboardEvent}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}Ib1{Vector<WebCore::KeypressCommand,0ul>=I{VectorBuffer<WebCore::KeypressCommand,0ul>=^{KeypressCommand}I}}}8 */
+     /* Encoded args for previous method: c12@0:4^{KeyboardEvent=^^?i{AtomicString={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}}BBBBBBBS^{EventTarget}{RefPtr<WebCore::EventTarget>=^{EventTarget}}Q{RefPtr<WebCore::Event>=^{Event}}{RefPtr<WebCore::DOMWindow>=^{DOMWindow}}ib1b1b1b1{OwnPtr<WebCore::PlatformKeyboardEvent>=^{PlatformKeyboardEvent}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}Ib1{Vector<WebCore::KeypressCommand,0ul>=I{VectorBuffer<WebCore::KeypressCommand,0ul>=^{KeypressCommand}I}}}8 */
     WebHTMLViewPrivate *_private;
 }
 
@@ -25,7 +25,8 @@
 - (void)_applyParagraphStyleToSelection:(id)arg1 withUndoAction:(NSInteger)arg2;
 - (void)_applyStyleToSelection:(id)arg1 withUndoAction:(NSInteger)arg2;
 - (void)_autoscroll;
-- (BOOL)_beginPrintModeWithPageWidth:(float)arg1 shrinkToFit:(BOOL)arg2;
+- (BOOL)_beginPrintModeWithMinimumPageWidth:(float)arg1 height:(float)arg2 maximumPageWidth:(float)arg3;
+- (BOOL)_beginPrintModeWithPageWidth:(float)arg1 height:(float)arg2 shrinkToFit:(BOOL)arg3;
 - (BOOL)_canAlterCurrentSelection;
 - (BOOL)_canDecreaseSelectionListLevel;
 - (BOOL)_canEdit;
@@ -44,7 +45,7 @@
 - (id)_frame;
 - (void)_frameOrBoundsChanged;
 - (id)_frameView;
-- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); NSInteger x2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; unsigned short x10; struct EventTarget {} *x11; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_12_1_1; } x12; unsigned long long x13; struct RefPtr<WebCore::Event> { struct Event {} *x_14_1_1; } x14; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_15_1_1; } x15; NSInteger x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; struct OwnPtr<WebCore::PlatformKeyboardEvent> { struct PlatformKeyboardEvent {} *x_21_1_1; } x21; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_22_1_1; } x22; NSUInteger x23; unsigned int x24 : 1; struct Vector<WebCore::KeypressCommand,0ul> { NSUInteger x_25_1_1; struct VectorBuffer<WebCore::KeypressCommand,0ul> { struct KeypressCommand {} *x_2_2_1; NSUInteger x_2_2_2; } x_25_1_2; } x25; }*)arg1;
+- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); NSInteger x2; struct AtomicString { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; unsigned short x11; struct EventTarget {} *x12; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_13_1_1; } x13; unsigned long long x14; struct RefPtr<WebCore::Event> { struct Event {} *x_15_1_1; } x15; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_16_1_1; } x16; NSInteger x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct OwnPtr<WebCore::PlatformKeyboardEvent> { struct PlatformKeyboardEvent {} *x_22_1_1; } x22; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_23_1_1; } x23; NSUInteger x24; unsigned int x25 : 1; struct Vector<WebCore::KeypressCommand,0ul> { NSUInteger x_26_1_1; struct VectorBuffer<WebCore::KeypressCommand,0ul> { struct KeypressCommand {} *x_2_2_1; NSUInteger x_2_2_2; } x_26_1_2; } x26; }*)arg1;
 - (BOOL)_hasHTMLDocument;
 - (BOOL)_hasInsertionPoint;
 - (BOOL)_hasSelection;
@@ -72,7 +73,7 @@
 - (void)_setAsideSubviews;
 - (void)_setHighlighter:(id)arg1 ofType:(id)arg2;
 - (void)_setMouseDownEvent:(id)arg1;
-- (void)_setPrinting:(BOOL)arg1 minimumPageWidth:(float)arg2 maximumPageWidth:(float)arg3 adjustViewSize:(BOOL)arg4;
+- (void)_setPrinting:(BOOL)arg1 minimumPageWidth:(float)arg2 height:(float)arg3 maximumPageWidth:(float)arg4 adjustViewSize:(BOOL)arg5;
 - (void)_setToolTip:(id)arg1;
 - (void)_setTransparentBackground:(BOOL)arg1;
 - (BOOL)_shouldDeleteRange:(id)arg1;
@@ -113,6 +114,7 @@
 - (void)copy:(id)arg1;
 - (struct Command { struct RefPtr<WebCore::Frame> { struct Frame {} *x_1_1_1; } x1; struct EditorInternalCommand {} *x2; NSInteger x3; })coreCommandByName:(const char *)arg1;
 - (struct Command { struct RefPtr<WebCore::Frame> { struct Frame {} *x_1_1_1; } x1; struct EditorInternalCommand {} *x2; NSInteger x3; })coreCommandBySelector:(SEL)arg1;
+- (NSUInteger)countMatchesForText:(id)arg1 caseSensitive:(BOOL)arg2 limit:(NSUInteger)arg3 markMatches:(BOOL)arg4;
 - (void)cut:(id)arg1;
 - (void)dataSourceUpdated:(id)arg1;
 - (void)dealloc;
@@ -157,7 +159,7 @@
 - (void)keyUp:(id)arg1;
 - (void)layout;
 - (void)layoutIfNeeded;
-- (void)layoutToMinimumPageWidth:(float)arg1 maximumPageWidth:(float)arg2 adjustingViewSize:(BOOL)arg3;
+- (void)layoutToMinimumPageWidth:(float)arg1 height:(float)arg2 maximumPageWidth:(float)arg3 adjustingViewSize:(BOOL)arg4;
 - (void)lowercaseWord:(id)arg1;
 - (BOOL)maintainsInactiveSelection;
 - (void)makeBaseWritingDirectionNatural:(id)arg1;
@@ -244,7 +246,7 @@
 - (void)setMark:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)setMarkedTextMatchesAreHighlighted:(BOOL)arg1;
-- (void)setNeedsDisplay:(BOOL)arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayout:(BOOL)arg1;
 - (void)setNeedsToApplyStyles:(BOOL)arg1;
 - (void)setScale:(float)arg1;

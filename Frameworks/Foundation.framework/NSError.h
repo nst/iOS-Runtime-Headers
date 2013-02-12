@@ -32,9 +32,8 @@
 + (id)_web_errorWithDomain:(id)arg1 code:(NSInteger)arg2 failingURL:(id)arg3;
 + (void)_webkit_addErrorsWithCodesAndDescriptions:(id)arg1 inDomain:(id)arg2;
 + (id)_webkit_errorWithDomain:(id)arg1 code:(NSInteger)arg2 URL:(id)arg3;
-+ (id)errorWithCode:(NSInteger)arg1 calendar:(id)arg2;
++ (id)errorWithCADResult:(NSInteger)arg1;
 + (id)errorWithCode:(NSInteger)arg1 description:(id)arg2;
-+ (id)errorWithCode:(NSInteger)arg1 param:(id)arg2;
 + (id)errorWithCode:(NSInteger)arg1;
 + (id)errorWithDomain:(id)arg1 code:(NSInteger)arg2 localizedDescription:(id)arg3;
 + (id)errorWithDomain:(id)arg1 code:(NSInteger)arg2 userInfo:(id)arg3;

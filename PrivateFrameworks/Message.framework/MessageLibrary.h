@@ -44,6 +44,7 @@
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2;
 - (id)getDetailsForAllMessagesFromMailbox:(id)arg1;
 - (id)getDetailsForMessagesWithRemoteIDInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 fromMailbox:(id)arg2;
+- (BOOL)hasCompleteDataForMimePart:(id)arg1;
 - (id)headerDataForMessage:(id)arg1;
 - (id)hiddenPOPUIDsInMailbox:(id)arg1;
 - (id)initWithPath:(id)arg1;
@@ -57,10 +58,9 @@
 - (NSUInteger)mailboxIDForURLString:(id)arg1;
 - (id)mailboxUidForMessage:(id)arg1;
 - (NSUInteger)maximumRemoteIDForMailbox:(id)arg1;
-- (id)messageWithLibraryID:(NSUInteger)arg1 options:(NSUInteger)arg2;
-- (id)messageWithLibraryID:(NSUInteger)arg1;
+- (id)messageWithLibraryID:(NSUInteger)arg1 options:(NSUInteger)arg2 inMailbox:(id)arg3;
 - (id)messageWithMessageID:(id)arg1 inMailbox:(id)arg2;
-- (id)messageWithMessageID:(id)arg1;
+- (id)messageWithMessageID:(id)arg1 options:(NSUInteger)arg2 inMailbox:(id)arg3;
 - (id)messageWithRemoteID:(id)arg1 inRemoteMailbox:(id)arg2;
 - (id)messagesForMailbox:(id)arg1 olderThanNumberOfDays:(NSInteger)arg2;
 - (id)messagesMatchingCriterion:(id)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
@@ -70,6 +70,7 @@
 - (id)messagesWithSummariesForMailbox:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (id)messagesWithoutSummariesForMailbox:(id)arg1 fromRowID:(NSUInteger)arg2 limit:(NSUInteger)arg3;
 - (id)messagesWithoutSummariesForMailbox:(id)arg1;
+- (id)metadataForMessage:(id)arg1 key:(id)arg2;
 - (NSUInteger)minimumRemoteIDForMailbox:(id)arg1;
 - (NSUInteger)nonDeletedCountForMailbox:(id)arg1 includeServerSearchResults:(BOOL)arg2 includeThreadSearchResults:(BOOL)arg3;
 - (NSUInteger)nonDeletedCountForMailbox:(id)arg1;
@@ -102,6 +103,7 @@
 - (NSInteger)threadPriority;
 - (NSUInteger)totalCountForMailbox:(id)arg1;
 - (NSUInteger)unreadCountForMailbox:(id)arg1;
+- (oneway void)updateMessage:(id)arg1 withMetadata:(id)arg2;
 - (void)updateRecipientsForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (NSUInteger)updateSequenceNumber;
 - (void)updateThreadingInfoForMessage:(id)arg1 fromHeaders:(id)arg2;

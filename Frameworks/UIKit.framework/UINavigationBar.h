@@ -24,6 +24,7 @@
         unsigned int shouldUpdatePromptAfterTransition : 1; 
         unsigned int crossfadeItems : 1; 
         unsigned int autoAdjustTitle : 1; 
+        unsigned int disableCustomTint : 1; 
     UIView *_accessoryView;
     id _appearance;
     id _delegate;
@@ -57,6 +58,8 @@
 + (id)standardNavigationBarWithTitle:(id)arg1;
 
 - (BOOL)_accessibilityAlwaysOrderedFirst;
+- (id)_accessibilityFuzzyHitTestElements;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_adjustVisibleItemsByDelta:(float)arg1;
 - (id)_allViews;
@@ -68,6 +71,7 @@
 - (BOOL)_canHandleStatusBarMouseEvents:(struct __GSEvent { }*)arg1;
 - (void)_cancelInProgressPushOrPop;
 - (id)_commonHitTest:(struct CGPoint { float x1; float x2; })arg1 forView:(id)arg2;
+- (void)_customViewChangedForButtonItem:(id)arg1;
 - (id)_defaultTitleFont;
 - (BOOL)_didVisibleItemsChangeWithNewItems:(id)arg1 oldItems:(id)arg2;
 - (void)_drawPrompt:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 barStyle:(NSInteger)arg4;
@@ -78,6 +82,8 @@
 - (void)_fadeViewsOut:(id)arg1;
 - (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 rightViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 forViews:(id*)arg4 forItemAtIndex:(NSUInteger)arg5;
 - (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 rightViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 forViews:(id*)arg4;
+- (void)_gkApplyTheme:(id)arg1 navbarStyle:(NSInteger)arg2;
+- (void)_gkApplyTheme:(id)arg1;
 - (void)_handleMouseDownAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_handleMouseUpAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_hasBackButton;
@@ -96,6 +102,8 @@
 - (void)_setBackButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(NSUInteger)arg3;
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(NSUInteger)arg3;
+- (void)_setButtonItemTextColor:(id)arg1 shadowColor:(id)arg2;
+- (void)_setDisableCustomTint:(BOOL)arg1;
 - (void)_setItems:(id)arg1 transition:(NSInteger)arg2;
 - (void)_setLeftView:(id)arg1 rightView:(id)arg2;
 - (void)_setupTopNavItem:(id)arg1 oldTopNavItem:(id)arg2;
@@ -105,13 +113,14 @@
 - (void)_startPopAnimationFromItems:(id)arg1 fromBarStyle:(NSInteger)arg2 toItems:(id)arg3 toBarStyle:(NSInteger)arg4;
 - (void)_startPushAnimationFromItems:(id)arg1 fromBarStyle:(NSInteger)arg2;
 - (NSInteger)_transitionForOldItems:(id)arg1 newItems:(id)arg2;
+- (void)_updateNavigationBarItem:(id)arg1 forStyle:(NSInteger)arg2 previousTintColor:(id)arg3;
 - (void)_updateNavigationBarItem:(id)arg1 forStyle:(NSInteger)arg2;
+- (void)_updateNavigationBarItemsForStyle:(NSInteger)arg1 previousTintColor:(id)arg2;
 - (void)_updateNavigationBarItemsForStyle:(NSInteger)arg1;
 - (void)_updateOpacity;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (NSUInteger)animationDisabledCount;
-- (void)applyTheme:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })availableTitleArea;
 - (id)backItem;
 - (NSInteger)barStyle;

@@ -13,6 +13,7 @@
 
 + (void)_dbSaveCoalesceBegin;
 + (void)_dbSaveCoalesceEnd;
++ (void)_dbSyncAlreadyActive;
 + (void)_dbSyncDidEnd;
 + (void)_dbSyncWillBegin;
 + (id)_nextFilepathForPlaylistOfType:(NSInteger)arg1;
@@ -22,7 +23,7 @@
 + (id)geniusDatabasePath;
 + (BOOL)hasContent;
 + (Class)implClassForEvaluatingQuery:(id)arg1;
-+ (BOOL)isDatabaseSchemaUnsupported;
++ (BOOL)isDatabaseSchemaUnsupported:(id*)arg1;
 + (void)noteItemTableWasModified;
 + (void)noteSharedRecordStoreChangedToStoreRef:(struct CPRecordStore { }*)arg1;
 + (void)recursiveEvaluationLockLock;
@@ -36,7 +37,6 @@
 - (BOOL)_hasEntitiesWithMediaType:(unsigned long)arg1 whenGroupedByProperty:(unsigned long)arg2;
 - (BOOL)_hasPlaylistOfDistinguishedKind:(NSInteger)arg1 hidden:(BOOL)arg2;
 - (void)_loadMainStore;
-- (void)_loadPurchaseData;
 - (void)_preloadNextItemChunk;
 - (void)_savePlaylists;
 - (void)_saveTrackMetadata;
@@ -66,7 +66,6 @@
 - (BOOL)hasArtists;
 - (BOOL)hasAudibleAudioBooks;
 - (BOOL)hasAudioBooks;
-- (BOOL)hasAudioOnlyPodcasts;
 - (BOOL)hasCompilations;
 - (BOOL)hasComposers;
 - (BOOL)hasGeniusMixes;
@@ -87,7 +86,6 @@
 - (void)jetsamMemoryImpl;
 - (void)loadArtwork;
 - (BOOL)markAndDeleteTracks:(id)arg1;
-- (BOOL)markHiddenTracks:(id)arg1 hidden:(BOOL)arg2;
 - (void)memoryLevelDidChange;
 - (void)mutatePlaylistChangeGroupBegin;
 - (void)mutatePlaylistChangeGroupEnd;
@@ -97,7 +95,6 @@
 - (void)mutatePlaylistImpl:(id)arg1 moveEntitiesFromRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 toIndex:(NSUInteger)arg3;
 - (void)mutatePlaylistImpl:(id)arg1 removeTracksInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)noteSharedRecordStoreChangedToStoreRef:(struct CPRecordStore { }*)arg1;
-- (void)postInitSetup;
 - (id)preferredAudioTracks;
 - (id)preferredSubtitleTracks;
 - (void)purchasedContentFolder:(id)arg1 didProcessItemWithXMLFilenames:(id)arg2;

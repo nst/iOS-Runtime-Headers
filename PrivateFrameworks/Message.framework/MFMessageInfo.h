@@ -6,7 +6,7 @@
     NSUInteger _conversationHash;
     NSUInteger _dateReceivedInterval;
     BOOL _deleted;
-    unsigned long long _generationNumber;
+    long long _generationNumber;
     BOOL _hasAttachments;
     NSUInteger _mailboxID;
     BOOL _read;
@@ -18,19 +18,21 @@
 @property NSUInteger conversationHash;
 @property NSUInteger dateReceivedInterval;
 @property BOOL deleted;
-@property(readonly) unsigned long long generationNumber;
+@property(readonly) long long generationNumber;
 @property(getter=isKnownToHaveAttachments) BOOL knownToHaveAttachments;
 @property NSUInteger mailboxID;
 @property BOOL read;
 @property NSUInteger uid;
 @property BOOL uidIsLibraryID;
 
++ (long long)newGenerationNumber;
+
 - (NSUInteger)conversationHash;
 - (NSUInteger)dateReceivedInterval;
 - (BOOL)deleted;
 - (id)description;
 - (NSInteger)generationCompare:(id)arg1;
-- (unsigned long long)generationNumber;
+- (long long)generationNumber;
 - (NSUInteger)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

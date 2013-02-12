@@ -66,7 +66,6 @@
 + (id)_hitTestToPoint:(struct CGPoint { float x1; float x2; })arg1 pathIndex:(NSInteger)arg2 forEvent:(id)arg3;
 + (void)_initializeSafeCategory;
 + (id)_ioSurfacePropertyDictionaryForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usePurpleGfx:(BOOL)arg2;
-+ (id)_keyWindowStack;
 + (NSUInteger)_keyWindowStackSize;
 + (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2;
 + (void)_popKeyWindow;
@@ -90,6 +89,7 @@
 - (void)_addRotationViewController:(id)arg1;
 - (BOOL)_becomeFirstResponderWhenPossible;
 - (void)_beginModalSession;
+- (BOOL)_canStealStatusBarTap:(struct __GSEvent { }*)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)_clearMouseView;
 - (void)_clearPendingKeyboardChanges;
 - (id)_clientsForRotation;
@@ -120,6 +120,7 @@
 - (void)_handleStatusBarOrientationChange:(id)arg1;
 - (BOOL)_hasContext;
 - (BOOL)_ignoresHitTest;
+- (BOOL)_isAnyWindowRotating;
 - (BOOL)_isClassicControllerWindow;
 - (BOOL)_isScrollingEnabledForView:(id)arg1;
 - (BOOL)_isSettingFirstResponder;
@@ -138,6 +139,7 @@
 - (void)_sendGesturesForEvent:(id)arg1;
 - (void)_sendTouchesForEvent:(id)arg1;
 - (void)_setCancelScroller:(BOOL)arg1;
+- (void)_setClassicZoomScale:(float)arg1;
 - (void)_setExclusiveTouchView:(id)arg1;
 - (void)_setFirstResponder:(id)arg1;
 - (void)_setHidden:(BOOL)arg1 forced:(BOOL)arg2;
@@ -146,13 +148,16 @@
 - (void)_setMouseDownView:(id)arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (void)_setMouseEnteredView:(id)arg1;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(NSInteger)arg2 duration:(double)arg3 force:(BOOL)arg4;
+- (void)_setRotatableClient:(id)arg1 toOrientation:(NSInteger)arg2 updateStatusBar:(BOOL)arg3 duration:(double)arg4 force:(BOOL)arg5;
 - (void)_setRotatableViewOrientation:(NSInteger)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)_setRotatableViewOrientation:(NSInteger)arg1 duration:(double)arg2;
 - (BOOL)_shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)_slideFooterFromOrientation:(NSInteger)arg1 toOrientation:(NSInteger)arg2 startSnapshot:(id)arg3 endSnapshot:(id)arg4 duration:(double)arg5;
 - (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(BOOL)arg3 forInterfaceOrientation:(NSInteger)arg4;
+- (void)_springBoardWorkaroundRemoveFromKeyWindowStack;
 - (void)_statusBarMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_statusBarMouseUp:(struct __GSEvent { }*)arg1;
+- (void)_tagAsSpringboardPresentationWindow;
 - (id)_touchData;
 - (struct CGPoint { float x1; float x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_unregisterChargedView:(id)arg1;
@@ -165,6 +170,7 @@
 - (void)_updateToInterfaceOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)_updateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)_updateTransformLayer;
+- (void)_updateTransformLayerForClassicPresentation;
 - (id)_window;
 - (BOOL)accessibilityIsWindow;
 - (unsigned long long)accessibilityTraits;

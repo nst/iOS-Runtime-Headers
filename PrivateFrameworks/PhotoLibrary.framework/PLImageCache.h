@@ -16,6 +16,7 @@
 - (id)_cachedImageFromSource:(id)arg1 forObject:(id)arg2;
 - (id)_imageLoader;
 - (void)_uncacheImage:(id)arg1;
+- (id)cachedImageFromSource:(id)arg1 forObject:(id)arg2 loadIfNeeded:(BOOL)arg3 synchronously:(BOOL)arg4 priority:(NSInteger)arg5 forImageLoadingQueue:(id)arg6 completion:(id)arg7;
 - (id)cachedImageFromSource:(id)arg1 forObject:(id)arg2 loadIfNeeded:(BOOL)arg3 synchronously:(BOOL)arg4 priority:(NSInteger)arg5 forImageLoadingQueue:(id)arg6;
 - (void)cancelLoadFromSource:(id)arg1 forObject:(id)arg2 forImageLoadingQueue:(id)arg3;
 - (id)createCachedImageWithImageContents:(void*)arg1 orientation:(NSInteger)arg2 metadata:(id)arg3 fromSource:(id)arg4 object:(id)arg5;

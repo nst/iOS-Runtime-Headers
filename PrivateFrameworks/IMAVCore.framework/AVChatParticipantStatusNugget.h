@@ -18,6 +18,19 @@
     NSString *_vcPartyID;
 }
 
+@property(readonly) NSString *ID;
+@property(readonly) NSDictionary *dictionaryDescription;
+@property(readonly) NSString *invitedBy;
+@property(readonly) NSString *name;
+@property(readonly) NSString *vcPartyID;
+@property(readonly) NSUInteger ardRole;
+@property(readonly) NSInteger error;
+@property(readonly) BOOL isUsingICE;
+@property(readonly) NSUInteger reason;
+@property(readonly) BOOL sendingAudio;
+@property(readonly) BOOL sendingVideo;
+@property(readonly) NSUInteger state;
+
 + (id)filterNuggets:(id)arg1 filterEndedState:(BOOL)arg2 convertFromDict:(BOOL)arg3;
 + (id)nuggetWithDictionaryDescription:(id)arg1;
 

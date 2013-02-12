@@ -12,7 +12,6 @@
 - (NSUInteger)chapterIndexForGroupIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
 - (NSUInteger)countOfChapters;
 - (NSUInteger)countOfGroupsForProperty:(NSInteger)arg1;
-- (NSUInteger)durationInMSOfChapterAtIndex:(NSUInteger)arg1;
 - (NSUInteger)durationInMSOfGroupAtIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
 - (NSUInteger)groupIndexAtTimeLocationInMS:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;
 - (NSUInteger)groupIndexForChapterIndex:(NSUInteger)arg1 groupingProperty:(NSInteger)arg2;

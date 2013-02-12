@@ -25,6 +25,7 @@
 - (void)cancelLinking;
 - (void)cancelSearching;
 - (id)checkpointRegistrationValue;
+- (void)deactivate;
 - (void)dealloc;
 - (id)init;
 - (id)linkState;

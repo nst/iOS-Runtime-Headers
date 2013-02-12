@@ -5,7 +5,7 @@
 @interface UIKeyboardImplAccessibility_super : UIAccessibilitySafeCategory {
 }
 
-- (void)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2 addString:(id)arg3;
+- (BOOL)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2;
 - (BOOL)callShouldDelete;
 - (BOOL)callShouldInsertText:(id)arg1;
 - (void)dismissKeyboard;

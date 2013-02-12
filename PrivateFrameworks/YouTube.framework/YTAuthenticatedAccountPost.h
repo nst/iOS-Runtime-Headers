@@ -33,10 +33,9 @@
 - (void)removeVideoFromFavorites:(id)arg1;
 - (void)removeVideoFromPlaylist:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRating:(NSUInteger)arg1 forVideo:(id)arg2;
+- (void)setRating:(BOOL)arg1 forVideo:(id)arg2;
 - (void)submitRequest;
 - (void)submitRequestOfType:(id)arg1;
-- (void)subscribeToUser:(id)arg1;
 - (void)unsubscribeToSubscription:(id)arg1;
 
 @end

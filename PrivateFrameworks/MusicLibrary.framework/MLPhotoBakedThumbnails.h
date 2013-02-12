@@ -58,6 +58,6 @@
 - (id)thumbnailDataAtIndex:(NSInteger)arg1;
 - (struct CGImage { }*)thumbnailImageAtIndex:(NSInteger)arg1;
 - (unsigned long)thumbnailLength;
-- (BOOL)writeBorderedThumbnailOfImage:(struct CGImage { }*)arg1 toBuffer:(void*)arg2 orientation:(NSInteger*)arg3 format:(NSInteger)arg4 formatInfo:(const struct BorderedFormatInfo { NSInteger x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; NSUInteger x5; NSInteger x6; NSInteger x7; float x8[4]; float x9[4]; NSUInteger x10; }*)arg5 delegate:(id)arg6;
+- (BOOL)writeBorderedThumbnailOfImage:(struct CGImage { }*)arg1 toBuffer:(void*)arg2 orientation:(NSInteger*)arg3 format:(NSInteger)arg4 formatInfo:(const struct { NSInteger x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; NSUInteger x5; NSInteger x6; NSInteger x7; float x8[4]; float x9[4]; NSUInteger x10; }*)arg5 delegate:(id)arg6;
 
 @end

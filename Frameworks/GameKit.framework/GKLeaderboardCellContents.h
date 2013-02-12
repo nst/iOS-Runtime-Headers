@@ -17,7 +17,9 @@
     GKAnimatingLabelView *_animatingLabelView;
     } _animatingLabelViewFrame;
     BOOL _crossfadeAliasAndName;
+    NSInteger _disclosureStyle;
     GKPlayer *_player;
+    float _rankWidth;
     GKScore *_score;
     GKUITheme *_theme;
     NSUInteger _totalScores;
@@ -26,8 +28,10 @@
 @property(retain) GKPlayer *player;
 @property(retain) GKScore *score;
 @property(retain) GKUITheme *theme;
+@property(readonly) float contentsMargin;
+@property NSInteger disclosureStyle;
 @property(readonly) float rankAvailableWidth;
-@property(readonly) float separatorOffset;
+@property float rankWidth;
 @property NSUInteger totalScores;
 
 + (void)_initializeSafeCategory;
@@ -35,17 +39,21 @@
 - (id)accessibilityLabel;
 - (void)dealloc;
 - (NSInteger)digits;
+- (NSInteger)disclosureStyle;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)fontSizeForRank;
 - (id)init;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (id)player;
+- (float)preferredHeightForOrientation:(NSInteger)arg1;
 - (void)prepareForReuse;
 - (float)rankAvailableWidth;
+- (float)rankWidth;
 - (id)score;
-- (float)separatorOffset;
+- (void)setDisclosureStyle:(NSInteger)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setRankWidth:(float)arg1;
 - (void)setScore:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setTotalScores:(NSUInteger)arg1;

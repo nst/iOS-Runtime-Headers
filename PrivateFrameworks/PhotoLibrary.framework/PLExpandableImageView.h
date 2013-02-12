@@ -4,7 +4,7 @@
 
 @class MLPhoto, PLImageView;
 
-@interface PLExpandableImageView : PLExpandableView {
+@interface PLExpandableImageView : PLExpandableView <PLStackableImage> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -49,9 +49,7 @@
         unsigned int alwaysDoLayout : 1; 
         unsigned int didComputeCenterOffset : 1; 
         unsigned int imageIsFullScreen : 1; 
-        unsigned int allowsExpansion : 1; 
     } _anchorPoint;
-    double _angularVelocity;
     } _centerOffset;
     } _contractedFrame;
     float _currentAngle;
@@ -64,23 +62,22 @@
     } _originalBounds;
     } _originalSize;
     float _originalWidth;
-    float _peakPinchVelocity;
     MLPhoto *_photo;
     float _pinchAngle;
     float _pinchScale;
-    float _pinchVelocity;
     float _pinchWidth;
-    double _touchTime;
 }
 
-@property(readonly) PLImageView *imageView;
+@property(readonly) UIImageView *imageView;
 @property(copy) NSString *name;
 @property(retain) MLPhoto *photo;
 @property(retain) PLVideoView *videoView;
-@property BOOL allowsExpansion;
 @property(getter=borderIsVisible) BOOL borderVisible;
 @property CGRect contractedFrame;
 @property(readonly) CGSize imageSize;
+@property(readonly) BOOL isBeingManipulated;
+@property(getter=isShadowEnabled) BOOL shadowEnabled;
+@property float transitionProgress;
 
 + (void)_initializeSafeCategory;
 + (float)imageBorderWidth;
@@ -88,28 +85,25 @@
 - (float)_borderAlphaForExpansionFraction:(float)arg1;
 - (void)_bounceBack:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_bounceToPlace:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (id)_contentView;
 - (float)_currentScale;
 - (float)_expandedScale;
 - (float)_expansionFraction;
 - (float)_expansionFractionForBorderAlpha:(BOOL)arg1;
 - (void)_finishedState;
 - (struct CGSize { float x1; float x2; })_newSizeFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_resetVelocities;
 - (void)_setOriginalSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_snappedExpandedFrame;
 - (void)_updateBorderAlpha;
-- (void)_updatePinchVelocitiesWithCurrentVelocity:(float)arg1;
 - (void)_updatePinchWidthAndScaleWithLeftPoint:(struct CGPoint { float x1; float x2; })arg1 rightPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
-- (BOOL)allowsExpansion;
-- (id)beginTrackingState:(NSInteger)arg1 withTouches:(id)arg2 event:(id)arg3;
+- (void)beginTrackingPinch:(id)arg1;
 - (BOOL)borderIsVisible;
-- (float)completeTrackingToState:(NSInteger)arg1 withTouches:(id)arg2 duration:(double)arg3 event:(id)arg4;
-- (float)continueTrackingState:(NSInteger)arg1 withTouches:(id)arg2 event:(id)arg3;
+- (float)completeTrackingPinch:(id)arg1 toState:(NSInteger)arg2 duration:(double)arg3;
+- (float)continueTrackingPinch:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contractedFrame;
 - (void)dealloc;
-- (void)firstTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (id)image;
 - (float)imageRotationAngle;
 - (struct CGSize { float x1; float x2; })imageSize;
@@ -118,11 +112,13 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(NSInteger)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
+- (BOOL)isBeingManipulated;
+- (BOOL)isShadowEnabled;
 - (void)layoutSubviews;
 - (id)name;
 - (id)photo;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setAllowsExpansion:(BOOL)arg1;
+- (void)renderSnapshotInContext:(struct CGContext { }*)arg1;
 - (void)setBorderVisible:(BOOL)arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setContractedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -132,14 +128,13 @@
 - (void)setName:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)setPosterImage:(id)arg1 regionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)setShadowEnabled:(BOOL)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1 angle:(float)arg2;
+- (void)setTextBadgeString:(id)arg1;
 - (void)setTransformAndCenterForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTransitionProgress:(float)arg1;
 - (void)setVideoView:(id)arg1;
-- (NSInteger)snapState;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesDidMove:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)updateVelocitiesWithTouches:(id)arg1 withEvent:(id)arg2;
+- (float)transitionProgress;
 - (id)videoView;
 - (void)willMoveToSuperview:(id)arg1;
 

@@ -14,6 +14,7 @@
 @property(copy,readonly) NSArray *segments;
 @property(getter=isEnabled,readonly) BOOL enabled;
 @property(readonly) float estimatedDataRate;
+@property(getter=isExcludedFromAutoselectionInTrackGroup,readonly) BOOL excludedFromAutoselectionInTrackGroup;
 @property(readonly) CGSize naturalSize;
 @property(readonly) NSInteger naturalTimeScale;
 @property(readonly) float nominalFrameRate;
@@ -32,6 +33,7 @@
 - (id)extendedLanguageTag;
 - (id)formatDescriptions;
 - (BOOL)isEnabled;
+- (BOOL)isExcludedFromAutoselectionInTrackGroup;
 - (BOOL)isSelfContained;
 - (id)languageCode;
 - (id)mediaType;

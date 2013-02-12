@@ -5,8 +5,8 @@
 @class UIKBKey;
 
 @interface UIKBKeyInterval : NSObject {
-    double m_interval;
-    UIKBKey *m_key;
+    double _interval;
+    UIKBKey *_key;
 }
 
 @property(retain) UIKBKey *key;

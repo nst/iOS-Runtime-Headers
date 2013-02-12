@@ -11,15 +11,16 @@
 @property(readonly) AVAssetTrack *assetTrack;
 @property(getter=isEnabled) BOOL enabled;
 
-+ (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2 asset:(id)arg3;
++ (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2 asset:(id)arg3 playerItem:(id)arg4;
 
 - (void)_addLayer:(id)arg1;
 - (id)_audioVolumeCurve;
-- (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2 asset:(id)arg3;
+- (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(NSInteger)arg2 asset:(id)arg3 playerItem:(id)arg4;
 - (void)_removeLayer:(id)arg1;
 - (void)_setAudioVolumeCurve:(id)arg1;
 - (id)assetTrack;
 - (void)dealloc;
+- (id)fallbackTrack;
 - (void)finalize;
 - (BOOL)isEnabled;
 - (void)setEnabled:(BOOL)arg1;

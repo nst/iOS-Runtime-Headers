@@ -9,6 +9,8 @@
     NSMutableDictionary *_children;
     NSMutableDictionary *_indexMap;
     BOOL _reusableCellsEnabled;
+    BOOL _searchControllerDimmingViewVisible;
+    BOOL _searchTableViewVisible;
     NSMutableDictionary *_sectionFooters;
     NSMutableDictionary *_sectionHeaders;
 }
@@ -19,6 +21,8 @@
 @property(readonly) NSMutableDictionary *sectionHeaders;
 @property NSInteger accessibleElementCount;
 @property BOOL reusableCellsEnabled;
+@property BOOL searchControllerDimmingViewVisible;
+@property BOOL searchTableViewVisible;
 
 - (NSInteger)accessibleElementCount;
 - (id)children;
@@ -26,9 +30,13 @@
 - (id)indexMap;
 - (id)init;
 - (BOOL)reusableCellsEnabled;
+- (BOOL)searchControllerDimmingViewVisible;
+- (BOOL)searchTableViewVisible;
 - (id)sectionFooters;
 - (id)sectionHeaders;
 - (void)setAccessibleElementCount:(NSInteger)arg1;
 - (void)setReusableCellsEnabled:(BOOL)arg1;
+- (void)setSearchControllerDimmingViewVisible:(BOOL)arg1;
+- (void)setSearchTableViewVisible:(BOOL)arg1;
 
 @end

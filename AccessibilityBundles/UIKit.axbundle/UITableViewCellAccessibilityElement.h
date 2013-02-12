@@ -16,6 +16,7 @@
 @property(retain) UITableViewCell *tableViewCell;
 
 - (float)_accessibilityAllowedGeometryOverlap;
+- (BOOL)_accessibilityBackingElementIsValid;
 - (void)_accessibilityCopy;
 - (void)_accessibilityCut;
 - (BOOL)_accessibilityHasTextOperations;
@@ -47,7 +48,6 @@
 - (id)accessibilityLiteContent;
 - (void)accessibilityScrollToVisible;
 - (unsigned long long)accessibilityTraits;
-- (void)accessibilityUpdateChildrenFrames;
 - (id)accessibilityValue;
 - (void)dealloc;
 - (id)description;

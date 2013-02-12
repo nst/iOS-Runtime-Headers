@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@interface WebDownloadInternal : NSObject {
+@interface WebDownloadInternal : NSObject <NSURLDownloadDelegate> {
     id realDelegate;
 }
 

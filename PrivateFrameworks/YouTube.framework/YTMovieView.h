@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSArray, NSURL, UIImageView, UIMoviePlayerController, YTSearchRequest, YTVideo;
+@class NSArray, NSURL, UIImageView, UILabel, UIMoviePlayerController, YTSearchRequest, YTVideo;
 
 @interface YTMovieView : UIView {
     UIImageView *_bugView;
@@ -10,8 +10,10 @@
     BOOL _controlsShown;
     id _delegate;
     UIImageView *_gradientView;
+    UILabel *_logLabel;
     UIMoviePlayerController *_moviePlayer;
     double _seekTime;
+    BOOL _showControlsAfterFullscreenExit;
     BOOL _shownFromExternalURL;
     BOOL _switchingVideos;
     BOOL _useSmallLogo;
@@ -29,6 +31,7 @@
 - (void)_hideOverlay;
 - (void)_loadVideoFromURL:(BOOL)arg1;
 - (void)_loadVideoInfoWithID:(id)arg1;
+- (BOOL)_loggingEnabled;
 - (void)_presentAlertForError:(id)arg1 reasonCode:(id)arg2;
 - (void)_setupBackground;
 - (void)_switchToVideo:(id)arg1;

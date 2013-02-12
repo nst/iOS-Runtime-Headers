@@ -34,6 +34,7 @@
 @property NSUInteger selectedIndex;
 
 + (void)_initializeSafeCategory;
++ (Class)_moreNavigationControllerClass;
 
 - (BOOL)_allowSelectionWithinMoreList;
 - (BOOL)_allowsAutorotation;
@@ -44,6 +45,7 @@
 - (id)_existingMoreNavigationController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; NSInteger x5; float x6; }*)arg1;
+- (void)_gkRefreshContents;
 - (BOOL)_isBarHidden;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
 - (void)_layoutViewController:(id)arg1;

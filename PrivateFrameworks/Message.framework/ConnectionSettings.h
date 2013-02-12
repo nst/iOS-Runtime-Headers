@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface ConnectionSettings : NSObject {
+@interface ConnectionSettings : NSObject <NSCopying> {
     NSString *_certUIService;
     struct __CFString { } *_connectionServiceType;
     NSString *_hostname;
@@ -23,6 +23,7 @@
 
 - (id)certUIService;
 - (struct __CFString { }*)connectionServiceType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)hostname;

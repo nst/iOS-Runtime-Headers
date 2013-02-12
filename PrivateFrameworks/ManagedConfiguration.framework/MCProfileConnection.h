@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class <MCInteractionDelegate>, CPDistributedMessagingCenter, NSCountedSet, NSData, NSDate, NSDictionary, NSMutableArray, NSTimer;
+@class <MCInteractionDelegate>, CPDistributedMessagingCenter, NSData, NSDate, NSDictionary, NSMutableArray, NSTimer;
 
 @interface MCProfileConnection : NSObject {
     <MCInteractionDelegate> *_interactionDelegate;
@@ -13,7 +13,7 @@
     BOOL _needToRestoreOriginalProfileData;
     struct dispatch_queue_s { } *_notificationSyncQueue;
     NSMutableArray *_notificationTokens;
-    NSCountedSet *_observers;
+    struct __CFBag { } *_observers;
     NSData *_originalProfileData;
     NSDictionary *_preflightResponse;
     NSInteger _userInputTimeoutType;
@@ -29,6 +29,7 @@
 - (void)__passcodePolicyDidChange;
 - (void)__profileListDidChange;
 - (void)__restrictionDidChange;
+- (void)_applyToObservers:(id)arg1;
 - (void)_cancelUserInputTimeout;
 - (void)_detectProfiledCrashes;
 - (void)_doMCICDidBeginInstallingNextProfileData:(id)arg1 params:(id)arg2;
@@ -50,7 +51,6 @@
 - (void)_restrictionDidChange;
 - (void)_setTimeoutWaitingForUserInputType:(NSInteger)arg1;
 - (void)_tearDownInteractionServer;
-- (void)_triggerMDMPollingIfNecessary;
 - (void)_userInputTimerFired;
 - (id)acceptedFileExtensions;
 - (id)acceptedMIMETypes;
@@ -59,6 +59,7 @@
 - (NSInteger)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 complianceBlocking:(NSInteger)arg6 displayImmediateAlert:(BOOL)arg7 outRestrictionChanged:(BOOL*)arg8 outEffectiveSettingsChanged:(BOOL*)arg9 outError:(id*)arg10;
 - (BOOL)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 localizedClientDescription:(id)arg4 localizedWarningMessage:(id)arg5 outRestrictionChanged:(BOOL*)arg6 outEffectiveSettingsChanged:(BOOL*)arg7 outError:(id*)arg8;
 - (BOOL)applyRestrictionDictionary:(id)arg1 clientType:(id)arg2 clientUUID:(id)arg3 outRestrictionChanged:(BOOL*)arg4 outEffectiveSettingsChanged:(BOOL*)arg5 outError:(id*)arg6;
+- (NSInteger)boolRestrictionForFeature:(id)arg1;
 - (void)cancelUserInputResponses;
 - (BOOL)changePasscodeFrom:(id)arg1 to:(id)arg2 outError:(id*)arg3;
 - (void)checkIn;
@@ -71,6 +72,7 @@
 - (id)defaultParametersForBoolSetting:(id)arg1;
 - (id)defaultParametersForValueSetting:(id)arg1;
 - (id)defaultValueForSetting:(id)arg1;
+- (NSInteger)effectiveBoolValueForSetting:(id)arg1;
 - (id)effectiveParametersForBoolSetting:(id)arg1;
 - (id)effectiveParametersForValueSetting:(id)arg1;
 - (NSInteger)effectiveRestrictedBoolValueForSetting:(id)arg1;
@@ -101,8 +103,10 @@
 - (id)managedWiFiNetworkNames;
 - (void)migratePostDataMigrator;
 - (NSInteger)newPasscodeEntryScreenType;
+- (void)notifyClientsToRecomputeCompliance;
 - (void)notifyUserHasSeenComplianceMessageWithLastLockDate:(id)arg1;
 - (id)objectForFeature:(id)arg1;
+- (id)objectRestrictionForFeature:(id)arg1;
 - (id)parametersForBoolSetting:(id)arg1;
 - (id)parametersForValueSetting:(id)arg1;
 - (BOOL)passcode:(id)arg1 meetsCurrentConstraintsOutError:(id*)arg2;
@@ -159,5 +163,6 @@
 - (BOOL)validatePasscode:(id)arg1 andUnlockContentProtectedDevice:(BOOL)arg2;
 - (BOOL)validatePasscode:(id)arg1;
 - (id)valueForFeature:(id)arg1;
+- (id)valueRestrictionForFeature:(id)arg1;
 
 @end

@@ -67,6 +67,7 @@
 - (id)captureOptions;
 - (void)commitConfiguration;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)inputWithClass:(Class)arg1;
 - (id)inputs;

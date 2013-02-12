@@ -28,6 +28,7 @@
 - (id)parentRegion;
 - (id)regionID;
 - (id)regionWithID:(id)arg1;
+- (BOOL)search:(id)arg1 withResults:(id)arg2;
 - (id)subRegions;
 
 @end

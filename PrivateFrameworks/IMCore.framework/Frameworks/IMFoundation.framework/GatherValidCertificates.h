@@ -11,6 +11,9 @@
     NSUInteger _usage;
 }
 
+@property(readonly) NSArray *certificates;
+@property(readonly) NSString *screenName;
+
 + (id)gatherCertsForScreenName:(id)arg1 usage:(NSUInteger)arg2 forMyUse:(BOOL)arg3;
 
 - (void)_workerThread;

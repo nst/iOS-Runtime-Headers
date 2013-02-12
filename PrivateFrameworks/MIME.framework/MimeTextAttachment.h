@@ -13,10 +13,9 @@
 - (id)description;
 - (id)displayedMimePart;
 - (id)fileWrapperForcingDownload:(BOOL)arg1;
+- (BOOL)hasBeenDownloaded;
 - (id)initWithMimePart:(id)arg1;
 - (id)mimePart;
-- (void)setFileWrapper:(id)arg1;
 - (void)setMimePart:(id)arg1;
-- (BOOL)shouldDownloadAttachmentOnDisplay;
 
 @end

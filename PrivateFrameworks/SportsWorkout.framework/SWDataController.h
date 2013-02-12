@@ -2,25 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class <SWDataControllerSyncDelegate>, NSManagedObjectContext, NSMutableArray, NSPersistentStoreCoordinator, NSString, SWSyncHost, SWSyncServiceConnection;
+@class NSManagedObjectContext, NSPersistentStoreCoordinator;
 
 @interface SWDataController : NSObject {
-    SWSyncServiceConnection *_currentSyncConnection;
-    NSString *_currentlySyncingWorkoutFilePath;
     struct dispatch_queue_s { } *_dispatchQueue;
-    NSMutableArray *_empedDirectoriesToSync;
     BOOL _isPerformingMigration;
     NSManagedObjectContext *_managedObjectContext;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
     NSInteger _priorMigrationVersionKey;
-    <SWDataControllerSyncDelegate> *_syncDelegate;
-    SWSyncHost *_syncHost;
-    NSString *_syncPin;
-    NSMutableArray *_workoutFilesToSync;
 }
 
 @property(readonly) NSDictionary *achievements;
-@property <SWDataControllerSyncDelegate> *syncDelegate;
 
 + (id)sharedDataController;
 
@@ -53,24 +45,12 @@
 - (void)_saveRunWorkout:(id)arg1 xmlFileName:(id)arg2;
 - (void)_setCalibrationData:(id)arg1 forSensorSerialNumber:(id)arg2 walkCalibrationDate:(id)arg3 runCalibrationDate:(id)arg4;
 - (id)_snapshotForDictionary:(id)arg1;
-- (id)_syncHost;
-- (void)_syncNextWorkout;
-- (void)_syncWorkoutsForNextEmpedDirectory;
 - (BOOL)_workoutIsSynced:(id)arg1;
 - (void)_writeBestsForSensorSerialNumber:(id)arg1;
 - (id)achievements;
 - (id)allWorkouts;
 - (id)calibrationDataForSensorSerialNumber:(id)arg1 walkCalibrationDate:(id*)arg2 runCalibrationDate:(id*)arg3;
 - (void)clearAchievementForName:(id)arg1;
-- (void)connection:(id)arg1 didConfirmEmail:(id)arg2 screenName:(id)arg3;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didGeneratePIN:(id)arg2;
-- (void)connection:(id)arg1 didGenerateToken:(id)arg2;
-- (void)connection:(id)arg1 didReplaceOldPINWithNewPIN:(id)arg2;
-- (void)connectionDidCompleteSync:(id)arg1;
-- (void)connectionDidReturnStatusInvalid:(id)arg1;
-- (void)connectionDidReturnStatusUnconfirmed:(id)arg1;
-- (void)connectionDidSyncWorkout:(id)arg1;
 - (void)dealloc;
 - (void)deleteAllWorkouts;
 - (void)deleteWorkoutForGUID:(id)arg1;
@@ -81,11 +61,7 @@
 - (void)saveRunWorkout:(id)arg1 preset:(id)arg2;
 - (void)saveWorkoutSnapshot:(id)arg1 preset:(id)arg2;
 - (void)setCalibrationData:(id)arg1 forSensorSerialNumber:(id)arg2 date:(id)arg3 isWalk:(BOOL)arg4;
-- (void)setSyncDelegate:(id)arg1;
-- (void)syncAllWorkouts;
-- (id)syncDelegate;
 - (id)syncedWorkouts;
 - (id)unsyncedWorkouts;
-- (void)visitNikeWebSite;
 
 @end

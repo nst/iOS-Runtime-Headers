@@ -26,6 +26,7 @@
 - (void*)context;
 - (void)dealloc;
 - (NSInteger)defaultAction;
+- (id)imageNameAtIndex:(NSInteger)arg1 forProperty:(NSInteger)arg2;
 - (id)init;
 - (id)initWithProperty:(NSInteger)arg1;
 - (void)performAction:(NSInteger)arg1;

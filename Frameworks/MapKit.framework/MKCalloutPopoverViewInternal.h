@@ -11,6 +11,7 @@
     UIImageView *bottomMiddleRight;
     UIImageView *bottomRight;
     NSDictionary *contentSizeChangeInfo;
+    UIViewController *contentViewController;
     BOOL didFadeSubtitle;
     BOOL hidingNavigationButtons;
     BOOL isAnimatingToPopover;
@@ -32,7 +33,6 @@
     UIImageView *topMiddleLeft;
     UIImageView *topMiddleRight;
     UIImageView *topRight;
-    UIViewController *viewController;
 }
 
 @end

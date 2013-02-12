@@ -8,26 +8,28 @@
     MKCalloutPopoverViewInternal *_internal;
 }
 
-@property(retain) UIViewController *viewController;
+@property(retain) UIViewController *contentViewController;
 
++ (id)_arrowExtensionKeyFrameAnimation;
++ (id)_arrowRetractionKeyFrameAnimation;
 + (id)_downArrowRetractingCGImages;
++ (void)_initializeSafeCategory;
 + (id)_leftArrowExtendingCGImages;
 + (id)_leftArrowRetractingCGImages;
 + (id)_upArrowCGImages;
 + (float)totalHeightOfExpandedContainer;
 
-- (id)_arrowExtensionKeyFrameAnimation;
-- (id)_arrowRetractionKeyFrameAnimation;
 - (BOOL)_isExpanding;
 - (void)_layoutSubviews:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_leftButtonFrame;
 - (void)_performPopoverRevealDownAnimation;
 - (void)_performPopoverSlideAcrossAnimation;
-- (id)_revealDownAnimation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rightButtonFrame;
+- (void)_updateTitleSize;
 - (void)animateToPopover;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)animationWillStart:(id)arg1 context:(void*)arg2;
+- (id)contentViewController;
 - (void)dealloc;
 - (void)dismissModalAnimationDidStop:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1 callbackInfo:(id)arg2;
@@ -40,12 +42,12 @@
 - (float)popoverContentHeight;
 - (void)presentModalAnimationDidStop:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
 - (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setContentViewController:(id)arg1;
 - (void)setPopoverContentHeight:(float)arg1 animated:(BOOL)arg2 callbackInfo:(id)arg3;
 - (void)setPopoverContentHeight:(float)arg1 animated:(BOOL)arg2;
 - (void)setSubtitle:(id)arg1 animated:(BOOL)arg2;
-- (void)setViewController:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)unhideNavigationButtons;
 - (void)updateNavigationButtons;
-- (id)viewController;
 
 @end

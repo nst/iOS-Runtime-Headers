@@ -8,6 +8,7 @@
     BOOL _isTimerSourceRunning;
     AVPlayer *_player;
     struct dispatch_queue_s { } *_timerQueue;
+    BOOL _timerQueueIsPlayerStateDispatchQueue;
     struct dispatch_source_s { } *_timerSource;
     AVWeakReference *_weakReference;
 }

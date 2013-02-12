@@ -31,11 +31,12 @@
 - (void)setDelegate:(id)arg1;
 - (void)setImagePickerOptions:(id)arg1;
 - (void)setViewClass:(Class)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (id)uiipc_imagePickerController;
 - (id)uiipc_imagePickerOptions;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
 - (BOOL)videoViewCanCreateMetadata:(id)arg1;
 - (void)videoViewPlaybackDidFail:(id)arg1;
-- (float)videoViewScrubberYOrigin:(id)arg1;
+- (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(NSInteger)arg2;
 
 @end

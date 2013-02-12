@@ -10,6 +10,10 @@
      /* Encoded args for previous method: @12@0:4r^{OcBinaryData=^^?IIII*B^{SsrwOOStream}}8 */
 }
 
+@property(readonly) NSData *SHA1Data;
+@property(readonly) NSString *SHA1HexString;
+@property(readonly) __SecCertificate *certificateFromData;
+
 + (id)MCDataWithCFData:(struct __CFData { }*)arg1;
 + (id)MCDataWithHexString:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -55,6 +59,7 @@
 - (id)_asciiDescription;
 - (BOOL)_bytesAreVM;
 - (unsigned long)_cfTypeID;
+- (id)_iad_truncatedDescription;
 - (id)_replaceCString:(const char *)arg1 withCString:(const char *)arg2;
 - (id)_web_guessedMIMEType;
 - (id)_web_guessedMIMETypeForExtension:(id)arg1;
@@ -119,9 +124,9 @@
 - (id)mf_encodeBase64;
 - (id)mf_encodeBase64HeaderData;
 - (id)mf_encodeBase64WithoutLineBreaks;
-- (id)mf_encodeBase64WithoutLineBreaksOrPadding;
 - (id)mf_encodeModifiedBase64;
 - (BOOL)mf_immutable;
+- (id)mf_locationsOfUnixNewlinesNeedingConversion;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfByteFromSet:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfByteFromSet:(id)arg1;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })mf_rangeOfCString:(const char *)arg1 options:(NSUInteger)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;

@@ -5,14 +5,21 @@
 @class NSMutableArray, NSProtocolChecker;
 
 @interface IMInvocationQueue : NSObject {
-    unsigned int _holdQueue : 1;
     id _delegate;
     double _dequeueRate;
+    BOOL _holdQueue;
     NSMutableArray *_options;
     NSProtocolChecker *_protocolChecker;
     NSMutableArray *_queue;
     id _target;
 }
+
+@property(retain) Protocol *protocol;
+@property(readonly) NSUInteger count;
+@property id delegate;
+@property double dequeueRate;
+@property(readonly) BOOL isEmpty;
+@property id target;
 
 - (BOOL)_acceptsOptions:(NSUInteger)arg1;
 - (void)_checkQueue;

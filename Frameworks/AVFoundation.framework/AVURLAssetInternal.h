@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspectorLoader, NSArray, NSURL;
+@class AVAssetInspectorLoader, NSArray, NSString, NSURL;
 
 @interface AVURLAssetInternal : NSObject {
     NSURL *URL;
+    NSString *anchorChapterType;
+    NSArray *chapterGroupInfo;
     AVAssetInspectorLoader *loader;
     NSArray *tracks;
 }

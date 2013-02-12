@@ -44,6 +44,7 @@
 - (id)newlyVIsibleAnnotations;
 - (id)places;
 - (void)reset;
+- (void)setMapView:(id)arg1;
 - (void)setupPlacesForRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)unaffectedAnnotations;
 - (void)updatePlacesFromRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 viaZoom:(BOOL)arg3;

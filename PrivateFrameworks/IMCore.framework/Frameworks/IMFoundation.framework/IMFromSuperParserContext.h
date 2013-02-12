@@ -9,6 +9,9 @@
     NSMutableArray *_standaloneFileTransferGUIDs;
 }
 
+@property(readonly) NSArray *inlinedFileTransferGUIDs;
+@property(readonly) NSArray *standaloneFileTransferGUIDs;
+
 - (void)dealloc;
 - (id)initWithAttributedString:(id)arg1;
 - (id)inlinedFileTransferGUIDs;

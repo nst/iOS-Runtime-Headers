@@ -18,9 +18,9 @@
      /* Encoded args for previous method: @16@0:4^{CalDatabase={__CFRuntimeBase=I[4C]}i^{CPRecordStore}^{CalEventOccurrenceCache}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}BBII^{__CFString}ii^{__CFString}}8@12 */
         } x6; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x7; void*x8; NSUInteger x9; NSUInteger x10; struct __CFString {} *x11; NSInteger x12; NSInteger x13; struct __CFString {} *x14; } *_database;
     EKAlarmEngine *_engine;
-    NSInteger _lastCheckpoint;
+    double _lastCheckpoint;
     NSLock *_lock;
-    NSInteger _nextFireDate;
+    double _nextFireDate;
     NSMutableSet *_notifiedSet;
     NSThread *_thread;
     PCPersistentTimer *_timer;

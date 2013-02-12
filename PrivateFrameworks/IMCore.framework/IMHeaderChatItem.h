@@ -5,6 +5,8 @@
 @interface IMHeaderChatItem : IMChatItem {
 }
 
+@property(readonly) NSString *stringValue;
+
 - (id)description;
 - (id)initWithString:(id)arg1 date:(id)arg2;
 - (id)stringValue;

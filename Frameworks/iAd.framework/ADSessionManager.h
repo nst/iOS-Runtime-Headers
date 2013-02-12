@@ -5,6 +5,7 @@
 @class ADDistributedMessagingCenter, ADMessageProxy, CPDistributedMessagingCenter, NSDate, NSMutableArray, NSString, NSTimer;
 
 @interface ADSessionManager : NSObject {
+    struct dispatch_queue_s { } *_ipcReplyQueue;
     BOOL _isBootstrapped;
     BOOL _isInBackground;
     NSDate *_lastTermination;
@@ -16,6 +17,7 @@
     NSTimer *_visibilityTimer;
 }
 
+@property(readonly) dispatch_queue_s *ipcReplyQueue;
 @property(retain) NSDate *lastTermination;
 @property(retain) ADDistributedMessagingCenter *localMessagingCenter;
 @property(retain) NSMutableArray *pendingRequests;
@@ -41,7 +43,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createSession;
 - (void)dealloc;
+- (void)deviceOrientationDidChangeNotification:(id)arg1;
 - (id)init;
+- (struct dispatch_queue_s { }*)ipcReplyQueue;
 - (BOOL)isAdSheetRunning;
 - (BOOL)isBootstrapped;
 - (BOOL)isInBackground;
@@ -53,10 +57,13 @@
 - (void)registerForMessages;
 - (void)release;
 - (id)remoteMessagingCenter;
+- (void)requestAdSheetClearAdCache;
+- (void)requestAdSheetClearURLCache;
 - (void)resumeVisibilityCheck;
 - (id)retain;
 - (NSUInteger)retainCount;
 - (void)sendBootstrapApplicationRequestMessage;
+- (void)sendMessageName:(id)arg1 userInfo:(id)arg2;
 - (void)sendSetServerUrlMessage;
 - (void)serverCenterDidTerminate:(id)arg1;
 - (void)serverSessionDidCloseMessage:(id)arg1 userInfo:(id)arg2;
@@ -64,6 +71,7 @@
 - (void)sessionDidCloseNotification:(id)arg1;
 - (void)sessionForRecipient:(id)arg1;
 - (id)sessionProxy;
+- (void)setDefaultsValue:(id)arg1 forKey:(id)arg2 type:(id)arg3;
 - (void)setIsBootstrapped:(BOOL)arg1;
 - (void)setIsInBackground:(BOOL)arg1;
 - (void)setLastTermination:(id)arg1;

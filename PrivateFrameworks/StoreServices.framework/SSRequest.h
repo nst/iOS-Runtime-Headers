@@ -27,6 +27,7 @@
 - (void)_endBackgroundTask;
 - (void)_failWithError:(id)arg1;
 - (void)_finish;
+- (id)_initSSRequest;
 - (void)_mainThreadDaemonExited:(id)arg1;
 - (id)_newIdentifier;
 - (void)_requestFailedNotification:(id)arg1;

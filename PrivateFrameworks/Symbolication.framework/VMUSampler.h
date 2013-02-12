@@ -2,62 +2,95 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSConditionLock, NSMutableArray, VMUProcessDescription, VMUSymbolicator;
+@class NSConditionLock, NSMapTable, NSMutableArray, NSString, VMUProcessDescription, VMUTaskMemoryCache;
 
 @interface VMUSampler : NSObject {
+    struct _CSTypeRef { 
+        NSUInteger _opaque_1; 
+        NSUInteger _opaque_2; 
+    void *_cfi;
     id _delegate;
     double _interval;
+    NSMapTable *_lastThreadBacktraceMap;
+    NSUInteger _mainThread;
+    NSUInteger _maxPreviousThreadCount;
+    VMUTaskMemoryCache *_memCache;
     BOOL _needTaskPortDealloc;
+    NSUInteger _numberOfCopiedBacktraces;
+    NSUInteger _numberOfSamples;
     NSInteger _pid;
+    NSUInteger _previousThreadCount;
+    NSUInteger *_previousThreadList;
     VMUProcessDescription *_processDescription;
+    NSString *_processName;
+    BOOL _recordThreadStates;
     NSUInteger _sampleLimit;
     NSMutableArray *_samples;
     BOOL _sampling;
+    struct sampling_context_t { } *_samplingContext;
     NSUInteger _samplingThreadPort;
+    BOOL _shouldOutputSignature;
+    BOOL _showDispatchQueueNames;
     BOOL _stacksFixed;
     NSConditionLock *_stateLock;
-    VMUSymbolicator *_symbolicator;
+    } _symbolicator;
     NSUInteger _task;
     BOOL _taskIs64Bit;
     double _tbInterval;
     double _tbRate;
     double _timeLimit;
+    double _timeSpentSamplingWithCFI;
+    double _timeSpentSamplingWithoutCFI;
 }
 
++ (void)initialize;
 + (id)sampleAllThreadsOfPID:(NSInteger)arg1 withSymbolicator:(id)arg2;
++ (id)sampleAllThreadsOfPID:(NSInteger)arg1;
++ (id)sampleAllThreadsOfTask:(NSUInteger)arg1 symbolicate:(BOOL)arg2;
 + (id)sampleAllThreadsOfTask:(NSUInteger)arg1 withSymbolicator:(id)arg2 symbolicate:(BOOL)arg3;
 + (id)sampleAllThreadsOfTask:(NSUInteger)arg1 withSymbolicator:(id)arg2;
++ (id)sampleAllThreadsOfTask:(NSUInteger)arg1;
 
-- (void)_fixupStacks:(id)arg1 symbolicate:(BOOL)arg2;
+- (void)_fixupStacks:(id)arg1;
 - (void)_makeHighPriority;
 - (void)_makeTimeshare;
 - (void)_runSamplingThread;
-- (id)_systemVersionDescription;
 - (void)dealloc;
 - (id)delegate;
+- (id)dispatchQueueNameForSerialNumber:(unsigned long long)arg1 returnedConcurrentFlag:(BOOL*)arg2 returnedThreadId:(unsigned long long*)arg3;
+- (id)dispatchQueueNameForSerialNumber:(unsigned long long)arg1;
 - (void)finalize;
+- (void)flushData;
 - (void)forceStop;
-- (id)init;
+- (id)initWithPID:(NSInteger)arg1 options:(NSUInteger)arg2;
+- (id)initWithPID:(NSInteger)arg1 orTask:(NSUInteger)arg2 options:(NSUInteger)arg3;
 - (id)initWithPID:(NSInteger)arg1;
+- (id)initWithTask:(NSUInteger)arg1 options:(NSUInteger)arg2;
 - (id)initWithTask:(NSUInteger)arg1;
+- (NSUInteger)mainThread;
+- (void)parseCFI:(BOOL)arg1;
 - (void)preloadSymbols;
 - (BOOL)recordSampleTo:(id)arg1 beginTime:(double)arg2 endTime:(double)arg3;
-- (id)sampleAllThreadsOnce:(BOOL)arg1;
 - (id)sampleAllThreadsOnce;
+- (NSUInteger)sampleCount;
 - (void)sampleForDuration:(NSUInteger)arg1 interval:(NSUInteger)arg2;
 - (NSUInteger)sampleLimit;
+- (id)samples;
 - (double)samplingInterval;
 - (NSUInteger)samplingThread;
 - (void)setDelegate:(id)arg1;
+- (void)setRecordThreadStates:(BOOL)arg1;
 - (void)setSampleLimit:(NSUInteger)arg1;
 - (void)setSamplingInterval:(double)arg1;
-- (void)setSymbolicator:(id)arg1;
+- (void)setShouldOutputSignature:(BOOL)arg1;
 - (void)setTimeLimit:(double)arg1;
+- (BOOL)shouldOutputSignature;
 - (BOOL)start;
 - (BOOL)stop;
 - (void)stopSampling;
 - (id)stopSamplingAndReturnCallNode;
-- (id)symbolicator;
+- (id)threadNameForThread:(NSUInteger)arg1 returnedThreadId:(unsigned long long*)arg2 returnedDispatchQueueSerialNum:(unsigned long long*)arg3;
+- (id)threadNameForThread:(NSUInteger)arg1;
 - (double)timeLimit;
 - (BOOL)waitUntilDone;
 - (void)writeOutput:(id)arg1 append:(BOOL)arg2;

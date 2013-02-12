@@ -5,26 +5,42 @@
 @interface ML3Track : ML3Entity {
 }
 
+@property(readonly) MLChapterTOC *chapterTOC;
+
 + (id)TVShowEpisodesDefaultOrderingProperties;
 + (id)albumAllArtistsDefaultOrderingProperties;
 + (id)albumAndArtistDefaultOrderingProperties;
 + (id)albumsDefaultOrderingProperties;
 + (id)artistAllAlbumsDefaultOrderingProperties;
 + (id)artistsDefaultOrderingProperties;
++ (id)composersDefaultOrderingProperties;
 + (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
 + (id)containerQueryWithContainer:(id)arg1;
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
++ (id)extraTablesToDelete;
++ (id)foreignColumnForProperty:(id)arg1;
++ (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)genresDefaultOrderingProperties;
 + (void)initialize;
 + (id)joinClauseForProperty:(id)arg1;
++ (BOOL)libraryContentsChangeForProperty:(id)arg1;
 + (id)orderingPropertiesForITTGTrackOrder:(unsigned long)arg1;
++ (id)persistentIDColumnForTable:(id)arg1;
 + (id)podcastsDefaultOrderingProperties;
 + (id)podcastsEpisodesDefaultOrderingProperties;
 + (id)predisambiguatedProperties;
++ (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)subselectPropertyForProperty:(id)arg1;
 + (id)subselectStatementForProperty:(id)arg1;
+
+- (id)chapterTOC;
+- (BOOL)deleteFromLibrary;
+- (unsigned long)imageDBRecordID:(NSInteger)arg1;
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2;
+- (BOOL)isOTAPurchasedContent;
+- (unsigned long long)persistentUID;
 
 @end

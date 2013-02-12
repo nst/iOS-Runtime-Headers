@@ -13,7 +13,7 @@
 }
 
 + (id)convertHeaderToSymbolOwner:(id)arg1 allowLazySymbolOwners:(BOOL)arg2;
-+ (id)ignoreFunctionSymbols:(BOOL)arg1;
++ (void)ignoreFunctionSymbols:(BOOL)arg1;
 + (BOOL)isIgnoreFunctionSymbols;
 + (id)symbolicatorForMachTaskContainer:(id)arg1;
 + (id)symbolicatorForPath:(id)arg1 architecture:(id)arg2;
@@ -48,7 +48,6 @@
 - (id)sourceInfos;
 - (id)sourceInfosInAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)symbolForAddress:(unsigned long long)arg1;
-- (id)symbolForOneAddress:(unsigned long long)arg1;
 - (id)symbolOwnerForAddress:(unsigned long long)arg1;
 - (id)symbolOwnerForName:(id)arg1;
 - (id)symbolOwnerForPath:(id)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface MPCrossfadeTransitionController : MPTransitionController {
-    NSInteger _statusBarMode;
+    NSInteger _statusBarHidden;
 }
 
-@property NSInteger statusBarMode;
+@property BOOL statusBarHidden;
 
 - (void)_animationDidFinish:(id)arg1;
 - (id)init;
-- (void)setStatusBarMode:(NSInteger)arg1;
-- (NSInteger)statusBarMode;
+- (void)setStatusBarHidden:(BOOL)arg1;
+- (BOOL)statusBarHidden;
 - (void)transition:(NSUInteger)arg1;
 
 @end

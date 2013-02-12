@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSConditionLock, _SCRCThreadTask;
+@class NSConditionLock;
 
 @interface _SCRCThreadTask : NSObject {
     NSUInteger _count;
     NSUInteger _mask;
-    _SCRCThreadTask *_nextTask;
     void *_objects[4];
     SEL _selector;
     id _target;
@@ -17,8 +16,6 @@
 - (void)dealloc;
 - (void)fire;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 firstObject:(id)arg5 moreObjects:(void*)arg6;
-- (id)nextTask;
-- (void)setNextTask:(id)arg1;
 - (void)setWaitLock:(id)arg1;
 
 @end

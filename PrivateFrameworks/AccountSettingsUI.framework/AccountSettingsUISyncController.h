@@ -43,6 +43,7 @@
 - (id)_accountInfoSpecifier;
 - (void)_backgroundDeleteAccountData:(id)arg1;
 - (void)_backgroundSaveSyncSettings:(id)arg1;
+- (BOOL)_carrierBundleSaysHideFindMyiPhone;
 - (void)_clearAnchorsForDataclass:(id)arg1;
 - (void)_clearAnchorsForLocalDataclass:(id)arg1;
 - (void*)_createDeviceLocalSyncDataSourceForDataclass:(id)arg1;
@@ -71,10 +72,11 @@
 - (void)_showModalProgress;
 - (void)_showModalProgressWithText:(id)arg1 afterDelay:(double)arg2;
 - (id)_syncActionsAccount;
-- (id)_syncableDataclasses:(id)arg1;
 - (id)_viewForSheet;
 - (id)account;
 - (Class)accountInfoControllerClass;
+- (BOOL)accountInfoSpecifierEnabled;
+- (id)accountInfoUsername:(id)arg1;
 - (BOOL)backgroundDeleteAccountData;
 - (void)beginSaveSyncSettings;
 - (void)cancelAccountsCreation;
@@ -155,6 +157,7 @@
 - (id)specifiersForDataclasses:(id)arg1;
 - (void)syncDataclass:(id)arg1 withAction:(id)arg2;
 - (BOOL)syncSaveOperationsHasDataclass:(id)arg1;
+- (id)syncableDataclasses:(id)arg1;
 - (id)titleForAccountDeleteAction:(id)arg1 hasSyncDataclassesEnabled:(BOOL)arg2 supportsMerge:(BOOL)arg3;
 - (id)titleForAccountSettingsAction:(id)arg1;
 - (id)titleStyleTextForDataclass:(id)arg1;

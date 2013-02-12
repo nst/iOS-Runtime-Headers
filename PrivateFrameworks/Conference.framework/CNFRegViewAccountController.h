@@ -7,11 +7,15 @@
 @interface CNFRegViewAccountController : CNFRegAccountWebViewController {
     IMAccount *_account;
     <CNFRegViewAccountControllerDelegate> *_delegate;
+    BOOL _gotNewCredential;
+    BOOL _triedGettingNewCredentials;
 }
 
 @property(retain) IMAccount *account;
 @property <CNFRegViewAccountControllerDelegate> *delegate;
 
+- (void)_handleTimeout;
+- (void)_setupAccountHandlers;
 - (id)account;
 - (id)authIdHeaderValue;
 - (id)authTokenHeaderValue;
@@ -24,5 +28,7 @@
 - (id)logName;
 - (void)setAccount:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -22,6 +22,7 @@
 @property(readonly) UIColor *cardLabelTextColor;
 @property(readonly) UIFont *cardLabelTextFont;
 @property(readonly) UIView *cardNotesHeaderView;
+@property(readonly) UIImage *cardPhotoEditMultipleOverlayImage;
 @property(readonly) UIImage *cardPhotoEditMultiplePhotoBackdropImage;
 @property(readonly) UIImage *cardPhotoEditOverlayImage;
 @property(readonly) UIImage *cardPhotoEditPlaceholderImage;
@@ -32,7 +33,6 @@
 @property(readonly) UIColor *cardTableCellBorderColor;
 @property(readonly) UIColor *cardTaglineTextColor;
 @property(readonly) UIFont *cardTaglineTextFont;
-@property(readonly) UIImage *cardValueActionIndicatorImage;
 @property(readonly) UIColor *cardValueBackgroundColor;
 @property(readonly) UIColor *cardValueDisabledTextColor;
 @property(readonly) UIColor *cardValueHighlightedTextColor;
@@ -51,7 +51,6 @@
 @property(readonly) NSInteger cardCellSeparatorStyle;
 @property(readonly) float cardContentOccluderDefaultBottomFadingHeight;
 @property(readonly) float cardContentOccluderDefaultTopFadingHeight;
-@property(readonly) BOOL cardContentsAlignTextBaseline;
 @property(readonly) float cardHeaderDisplayImageLeftMargin;
 @property(readonly) float cardHeaderDisplayImageTopMargin;
 @property(readonly) float cardHeaderEditingImageLeftMargin;
@@ -65,6 +64,7 @@
 @property(readonly) float cardLinkingHeaderViewHeight;
 @property(readonly) NSUInteger cardNameNumberOfLines;
 @property(readonly) float cardNotesHeaderViewHeight;
+@property(readonly) BOOL cardNotesLabelIncludesSource;
 @property(readonly) BOOL cardPlaceholderImageShouldApplyMaskAndOverlay;
 @property(readonly) BOOL cardTableUsesRowFadeAnimation;
 @property(readonly) NSUInteger cardTagNumberOfLines;
@@ -73,8 +73,9 @@
 @property(readonly) NSInteger composeModalPresentationStyle;
 @property(readonly) BOOL datePickerHasNavigationTitle;
 @property(readonly) NSInteger headerViewBorderStyle;
-@property(readonly) BOOL isPopover;
 @property(readonly) BOOL labelPickerShouldPushCustomLabelCreator;
+@property(readonly) BOOL linkedPhotoLabelStringsDescribeSourceOnly;
+@property(readonly) BOOL linkedPhotoPickerIncludesCurrentPhoto;
 @property(readonly) float memberNameInterComponentSpacing;
 @property(readonly) float memberScrollBarInset;
 @property(readonly) NSUInteger membersCountToShowIndex;
@@ -87,7 +88,6 @@
 @property(readonly) BOOL searchControllerForceKeyboardDisplayEnabled;
 @property(readonly) BOOL searchIsAlwaysActive;
 @property(readonly) BOOL serverSearchNavigationBarHidingEnabled;
-@property(readonly) BOOL shouldTellDelegateTableViewDataSourceDidSetupCell;
 
 + (id)defaultStyleProvider;
 + (id)defaultStyleProviderForMaps;
@@ -96,7 +96,6 @@
 - (BOOL)cardAlwaysShowsNotes;
 - (id)cardCellBackgroundColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardCellBackgroundInsetsWhenEditing:(BOOL)arg1;
-- (float)cardCellDefaultHeight;
 - (id)cardCellDisabledBackgroundColor;
 - (id)cardCellDividerColorVertical:(BOOL)arg1;
 - (NSInteger)cardCellSeparatorStyle;
@@ -105,7 +104,6 @@
 - (float)cardContentOccluderDefaultBottomFadingHeight;
 - (float)cardContentOccluderDefaultTopFadingHeight;
 - (id)cardContentOccluderTopImage;
-- (BOOL)cardContentsAlignTextBaseline;
 - (float)cardDeleteButtonHeight;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardDeleteButtonInsets;
 - (id)cardHeaderBackgroundColor;
@@ -132,12 +130,12 @@
 - (float)cardLabelWidth;
 - (float)cardLinkingHeaderViewHeight;
 - (float)cardMaxHeightForSwellTextViewWhenEditing:(BOOL)arg1;
-- (id)cardMultiCellReuseIdentifierWhenEditing:(BOOL)arg1;
 - (id)cardNameDividerColor;
 - (NSUInteger)cardNameNumberOfLines;
-- (BOOL)cardNeedsAdjusterForKeyboardInOrientation:(NSInteger)arg1 inPopover:(BOOL)arg2;
 - (id)cardNotesHeaderView;
 - (float)cardNotesHeaderViewHeight;
+- (BOOL)cardNotesLabelIncludesSource;
+- (id)cardPhotoEditMultipleOverlayImage;
 - (id)cardPhotoEditMultiplePhotoBackdropImage;
 - (id)cardPhotoEditOverlayImage;
 - (id)cardPhotoEditPlaceholderImage;
@@ -156,7 +154,6 @@
 - (NSUInteger)cardTagNumberOfLines;
 - (id)cardTaglineTextColor;
 - (id)cardTaglineTextFont;
-- (id)cardValueActionIndicatorImage;
 - (id)cardValueBackgroundColor;
 - (id)cardValueDisabledTextColor;
 - (id)cardValueHighlightedTextColor;
@@ -172,8 +169,9 @@
 - (id)editorViewLargeFont;
 - (id)editorViewSmallFont;
 - (NSInteger)headerViewBorderStyle;
-- (BOOL)isPopover;
 - (BOOL)labelPickerShouldPushCustomLabelCreator;
+- (BOOL)linkedPhotoLabelStringsDescribeSourceOnly;
+- (BOOL)linkedPhotoPickerIncludesCurrentPhoto;
 - (id)memberNameBoldFont;
 - (id)memberNameDisabledTextColor;
 - (float)memberNameFontSize;
@@ -218,9 +216,6 @@
 - (float)personViewHeaderNameViewTextVerticalInset;
 - (float)personViewHeaderRightMargin;
 - (float)personViewHorizontalCellInset;
-- (float)personViewLabelRightPosition;
-- (float)personViewLabelValueSpacing;
-- (float)personViewValueLeftPosition;
 - (float)personViewVerticalCellInset;
 - (float)personViewVerticalSpacing;
 - (BOOL)presentDatePickerInPopover;
@@ -234,7 +229,6 @@
 - (BOOL)serverSearchNavigationBarHidingEnabled;
 - (BOOL)shouldAdjustTableView:(id)arg1 forKeyboardOrdering:(BOOL)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (BOOL)shouldTellDelegateTableViewDataSourceDidSetupCell;
 - (void)unselectAllCellParts:(id)arg1;
 - (BOOL)usesPhoneCardMetrics;
 

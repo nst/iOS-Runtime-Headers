@@ -19,7 +19,7 @@
 
 + (BOOL)isValidBase64:(id)arg1;
 
-- (unsigned long)_decodeBytes:(const char *)arg1 length:(unsigned long)arg2 into:(char *)arg3 length:(unsigned long)arg4 startingAt:(unsigned long)arg5 outEncodedOffset:(NSUInteger*)arg6;
+- (unsigned long)_decodeBytes:(const char *)arg1 end:(const char *)arg2 into:(char *)arg3 length:(unsigned long)arg4 startingAt:(unsigned long)arg5 outEncodedOffset:(NSUInteger*)arg6;
 - (NSInteger)appendData:(id)arg1;
 - (BOOL)convertCommas;
 - (void)dealloc;

@@ -5,9 +5,9 @@
 @class APSConnection, NSTimer;
 
 @interface FTNetworkSupport : NSObject {
-    unsigned int _enableCriticalReliability : 1;
-    unsigned int _criticalReliabilityEnabledState : 1;
     APSConnection *_apsConnection;
+    BOOL _criticalReliabilityEnabledState;
+    BOOL _enableCriticalReliability;
     NSTimer *_reliabilityAttemptTimer;
 }
 

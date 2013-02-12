@@ -4,7 +4,7 @@
 
 @class MPMoviePlayerController, MPMovieView, MPVideoViewController, NSArray, NSError, NSMutableArray, NSMutableDictionary;
 
-@interface MPMoviePlayerControllerNew : NSObject {
+@interface MPMoviePlayerControllerNew : NSObject <MPMediaPlayback> {
     BOOL _canPostDidFinishNotificationOnItemChange;
     BOOL _canShowControlsOverlayBeforeResignedActive;
     NSInteger _controlStyle;
@@ -39,6 +39,10 @@
     MPVideoViewController *_videoViewController;
     BOOL _wasPlayingBeforeSuspended;
 }
+
+@property float currentPlaybackRate;
+@property double currentPlaybackTime;
+@property(readonly) BOOL isPreparedToPlay;
 
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
 - (void)_clearPlaybackStateAfterTimeJumpIfNecessary;
@@ -80,6 +84,7 @@
 - (void)_willResignActiveNotification:(id)arg1;
 - (void)_willTerminateNotification:(id)arg1;
 - (void)_windowOrientationChangingNotification:(id)arg1;
+- (BOOL)allowsWirelessPlayback;
 - (id)backgroundView;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
@@ -110,6 +115,7 @@
 - (NSInteger)repeatMode;
 - (void)requestThumbnailImagesAtTimes:(id)arg1 timeOption:(NSInteger)arg2;
 - (NSInteger)scalingMode;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentURL:(id)arg1;
 - (void)setControlStyle:(NSInteger)arg1;

@@ -15,6 +15,7 @@
 @property void *font;
 @property CGColor *foregroundColor;
 @property(copy) NSString *truncationMode;
+@property BOOL allowsFontSubpixelQuantization;
 @property float fontSize;
 @property(copy) id string;
 @property(copy) id truncationString;
@@ -27,11 +28,13 @@
 - (void)_applyLinesToFunction:(int (*)())arg1 info:(void*)arg2;
 - (id)_createStringDict;
 - (struct __CTLine { }*)_createTruncationToken;
+- (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
 - (id)_implicitActionForKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })_preferredSize;
 - (void)_prepareContext:(struct CGContext { }*)arg1;
 - (struct __CTTypesetter { }*)_retainTypesetter;
 - (id)alignmentMode;
+- (BOOL)allowsFontSubpixelQuantization;
 - (void)dealloc;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
@@ -42,6 +45,7 @@
 - (id)initWithLayer:(id)arg1;
 - (BOOL)isWrapped;
 - (void)setAlignmentMode:(id)arg1;
+- (void)setAllowsFontSubpixelQuantization:(BOOL)arg1;
 - (void)setFont:(void*)arg1;
 - (void)setFontSize:(float)arg1;
 - (void)setForegroundColor:(struct CGColor { }*)arg1;

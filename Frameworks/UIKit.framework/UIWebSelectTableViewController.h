@@ -8,7 +8,6 @@
     BOOL _allowsMultipleSelection;
     NSArray *_cachedItems;
     UIWebSelectPopover *_popover;
-    float _popoverHeight;
     DOMHTMLSelectElement *_selectionNode;
     NSUInteger _singleSelectionIndex;
 }
@@ -16,7 +15,6 @@
 @property(retain) NSArray *_cachedItems;
 @property UIWebSelectPopover *_popover;
 @property(retain) DOMHTMLSelectElement *_selectionNode;
-@property float _popoverHeight;
 @property NSUInteger _singleSelectionIndex;
 @property NSInteger autocapitalizationType;
 @property NSInteger autocorrectionType;
@@ -27,20 +25,19 @@
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
 
 - (id)_cachedItems;
+- (BOOL)_hasItems;
 - (id)_popover;
-- (float)_popoverHeight;
 - (id)_selectionNode;
 - (NSUInteger)_singleSelectionIndex;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
 - (void)deleteBackward;
 - (BOOL)hasText;
+- (float)heightForItems;
 - (id)initWithDOMHTMLSelectNode:(id)arg1 cachedItems:(id)arg2 singleSelectionIndex:(NSUInteger)arg3 multipleSelection:(BOOL)arg4;
 - (void)insertText:(id)arg1;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (void)set_cachedItems:(id)arg1;
 - (void)set_popover:(id)arg1;
-- (void)set_popoverHeight:(float)arg1;
 - (void)set_selectionNode:(id)arg1;
 - (void)set_singleSelectionIndex:(NSUInteger)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

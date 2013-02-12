@@ -6,14 +6,17 @@
 
 @interface UIAccessibilityElementMockView : UIAccessibilityElement {
     <UIAccessibilityElementMockViewDelegateProtocol> *_delegate;
+    NSInteger _subviewIndex;
     UIView *_view;
 }
 
 @property <UIAccessibilityElementMockViewDelegateProtocol> *delegate;
 @property(retain) UIView *view;
+@property NSInteger subviewIndex;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityBoundsForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (id)_accessibilityLineNumberAndColumnForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })_accessibilityMaxScrubberPosition;
 - (struct CGPoint { float x1; float x2; })_accessibilityMinScrubberPosition;
@@ -50,7 +53,9 @@
 - (void)revalidate;
 - (void)setAccessibilityContainer:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setSubviewIndex:(NSInteger)arg1;
 - (void)setView:(id)arg1;
+- (NSInteger)subviewIndex;
 - (id)view;
 
 @end

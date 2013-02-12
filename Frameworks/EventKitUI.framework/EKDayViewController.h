@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayViewControllerDataSource>, <EKDayViewControllerDelegate>, EKDayAllDayView, EKDayBannerView, EKDayView, NSDate, NSTimeZone;
+@class <EKDayViewControllerDataSource>, <EKDayViewControllerDelegate>, CalendarOccurrencesCollection, EKDayBannerView, NSDate, NSTimeZone, UIView<EKDayViewProtocol>;
 
-@interface EKDayViewController : UIViewController <EKDayAllDayViewDelegate, EKDayViewDelegate> {
+@interface EKDayViewController : UIViewController <EKDayViewDelegate, EKDayViewDataSource> {
     struct { 
         NSInteger year; 
         BOOL month; 
@@ -12,19 +12,20 @@
         BOOL hour; 
         BOOL minute; 
         double second; 
-    EKDayAllDayView *_allDayView;
     BOOL _allowsDaySwitching;
     BOOL _allowsSelection;
     EKDayBannerView *_banner;
     <EKDayViewControllerDataSource> *_dataSource;
     double _dayEnd;
     double _dayStart;
-    EKDayView *_dayView;
+    UIView<EKDayViewProtocol> *_dayView;
     <EKDayViewControllerDelegate> *_delegate;
     BOOL _initialLoad;
     BOOL _instigatedDateChange;
+    CalendarOccurrencesCollection *_occurrences;
     NSDate *_selectedDate;
     } _selectedDateGr;
+    BOOL _shouldScrollToFirstEvent;
     BOOL _showsBanner;
     NSTimeZone *_timeZone;
 }
@@ -37,21 +38,22 @@
 @property BOOL allowsSelection;
 @property BOOL showsBanner;
 
-- (void)_createAllDayView;
 - (void)_createBannerView;
-- (void)_disposeAllDayView;
 - (void)_disposeBannerView;
 - (void)_localeChanged;
 - (void)_releaseViews;
-- (void)_timeChanged;
-- (void)allDayView:(id)arg1 didSelectEvent:(id)arg2;
 - (BOOL)allowsDaySwitching;
 - (BOOL)allowsSelection;
 - (void)bringEventToFront:(id)arg1;
 - (void)calendarDayBanner:(id)arg1 arrowClicked:(NSInteger)arg2;
 - (id)dataSource;
 - (void)dayView:(id)arg1 didChangeSelectedDate:(id)arg2;
-- (void)dayView:(id)arg1 didSelectEvent:(id)arg2;
+- (void)dayView:(id)arg1 didSelectItemAtPath:(id)arg2;
+- (double)dayView:(id)arg1 durationForItemPath:(id)arg2;
+- (id)dayView:(id)arg1 endDateForItemPath:(id)arg2;
+- (NSUInteger)dayView:(id)arg1 numberOfEventsInSection:(NSInteger)arg2;
+- (id)dayView:(id)arg1 occurrenceViewForItemPath:(id)arg2;
+- (id)dayView:(id)arg1 startDateForItemPath:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
@@ -59,6 +61,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)layoutContainerView:(id)arg1;
 - (void)loadView;
+- (void)longPress:(id)arg1;
 - (void)reloadData;
 - (void)scrollEventIntoView:(id)arg1 animated:(BOOL)arg2;
 - (id)selectedDate;

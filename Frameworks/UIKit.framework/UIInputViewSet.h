@@ -21,12 +21,13 @@
 
 - (BOOL)containsResponder:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)initWithInputView:(id)arg1 accessoryView:(id)arg2 isKeyboard:(BOOL)arg3;
 - (id)inputAccessoryView;
 - (id)inputView;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isSupersetOfViewSet:(id)arg1;
+- (BOOL)isStrictSupersetOfViewSet:(id)arg1;
 - (id)keyboard;
 - (void)setInputAccessoryView:(id)arg1;
 - (void)setInputView:(id)arg1;

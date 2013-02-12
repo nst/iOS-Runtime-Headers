@@ -7,19 +7,23 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)_accessibilityChildren;
+- (BOOL)_accessibilityEscape;
+- (BOOL)_accessibilityIsShowingPopover;
+- (BOOL)_accessibilitySupportsActivateAction;
 - (void)_accessibilityZoomAtPoint:(struct CGPoint { float x1; float x2; })arg1 zoomIn:(BOOL)arg2;
 - (id)_addViewForAnnotation:(id)arg1;
 - (void)_calloutAccessoryControlTapped:(id)arg1;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
+- (void)_updateGeocodeForAnnotationView:(id)arg1 bubble:(id)arg2 animated:(BOOL)arg3;
+- (void)accessibilityActivate;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityHint;
+- (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (void)accessibilityZoomInAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)accessibilityZoomOutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)addAnnotation:(id)arg1;
 - (void)addSubview:(id)arg1;
 - (void)dealloc;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (BOOL)isAccessibilityElement;
 - (void)removeAnnotation:(id)arg1;
 

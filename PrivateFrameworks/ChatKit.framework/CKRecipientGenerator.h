@@ -5,7 +5,6 @@
 @class NSArray;
 
 @interface CKRecipientGenerator : NSObject {
-    void *_addressBook;
     NSArray *_searchABPropertyTypes;
 }
 

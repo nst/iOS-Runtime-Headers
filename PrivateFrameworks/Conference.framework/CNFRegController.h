@@ -16,6 +16,7 @@
         unsigned int showedWifiFirstRunAlert : 1; 
     IMAccount *_account;
     id _accountAddedBlock;
+    id _accountAuthorizationChangedBlock;
     id _accountRegistrationBlock;
     id _accountRemovedBlock;
     id _alertHandler;
@@ -38,6 +39,7 @@
 
 @property(retain) IMAccount *account;
 @property(copy) ? *accountAddedBlock;
+@property(copy) ? *accountAuthorizationChangedBlock;
 @property(copy) ? *accountRegistrationBlock;
 @property(copy) ? *accountRemovedBlock;
 @property(copy) ? *alertHandler;
@@ -64,6 +66,7 @@
 - (id)account;
 - (void)accountAdded:(id)arg1;
 - (id)accountAddedBlock;
+- (id)accountAuthorizationChangedBlock;
 - (void)accountDisplayNameChanged:(id)arg1;
 - (id)accountLogin;
 - (id)accountRegistrationBlock;
@@ -81,6 +84,9 @@
 - (id)aliasStatusChangedBlock;
 - (id)aliases;
 - (void)aliasesChanged:(id)arg1;
+- (void)authorizationCredentialsChanged:(id)arg1;
+- (id)authorizationID;
+- (id)authorizationToken;
 - (void)clearAllCaches;
 - (void)connect:(BOOL)arg1;
 - (void)connect;
@@ -114,6 +120,7 @@
 - (id)profileStatusChangedBlock;
 - (void)profileValidationStateChanged:(id)arg1;
 - (NSInteger)profileValidationStatus;
+- (BOOL)refreshAuthorizationCredentials;
 - (void)reloadAliases;
 - (BOOL)removeAlias:(id)arg1;
 - (void)removeAllHandlers;
@@ -122,6 +129,7 @@
 - (id)service;
 - (void)setAccount:(id)arg1;
 - (void)setAccountAddedBlock:(id)arg1;
+- (void)setAccountAuthorizationChangedBlock:(id)arg1;
 - (void)setAccountRegistrationBlock:(id)arg1;
 - (void)setAccountRemovedBlock:(id)arg1;
 - (void)setAlertHandler:(id)arg1;

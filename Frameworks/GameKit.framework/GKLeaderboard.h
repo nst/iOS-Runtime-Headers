@@ -16,6 +16,7 @@
     NSInteger _playerScope;
     } _range;
     NSArray *_scores;
+    NSInteger _sequenceNumber;
     NSInteger _timeScope;
     NSString *_title;
 }
@@ -27,9 +28,10 @@
 @property(retain) NSString *title;
 @property(getter=isLoading,readonly) BOOL loading;
 @property NSInteger loadingCount;
-@property(readonly) NSUInteger maxRange;
+@property NSUInteger maxRange;
 @property NSInteger playerScope;
 @property _NSRange range;
+@property NSInteger sequenceNumber;
 @property NSInteger timeScope;
 
 + (void)loadCategoriesForGame:(id)arg1 withCompletionHandler:(id)arg2;
@@ -37,6 +39,7 @@
 
 - (id)category;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)initWithPlayerIDs:(id)arg1;
 - (BOOL)isLoading;
@@ -49,13 +52,16 @@
 - (NSInteger)playerScope;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
 - (id)scores;
+- (NSInteger)sequenceNumber;
 - (void)setCategory:(id)arg1;
 - (void)setLoadingCount:(NSInteger)arg1;
 - (void)setLocalPlayerScore:(id)arg1;
+- (void)setMaxRange:(NSUInteger)arg1;
 - (void)setPlayerIDs:(id)arg1;
 - (void)setPlayerScope:(NSInteger)arg1;
 - (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)setScores:(id)arg1;
+- (void)setSequenceNumber:(NSInteger)arg1;
 - (void)setTimeScope:(NSInteger)arg1;
 - (void)setTitle:(id)arg1;
 - (NSInteger)timeScope;

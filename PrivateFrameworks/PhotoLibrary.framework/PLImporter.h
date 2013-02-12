@@ -15,8 +15,6 @@
     NSThread *_workerThread;
 }
 
-+ (struct CGImage { }*)createSquareGenericThumbnailWithDimension:(float)arg1 iconImage:(id)arg2 labelString:(id)arg3;
-+ (struct CGImage { }*)createThumbnailWithDimensions:(struct CGSize { float x1; float x2; })arg1 image:(id)arg2 label:(id)arg3;
 + (BOOL)importInProgress;
 + (id)sharedImporter;
 

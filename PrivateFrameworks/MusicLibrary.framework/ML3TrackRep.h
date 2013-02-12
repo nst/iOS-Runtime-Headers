@@ -51,11 +51,12 @@
 - (id)initWithTrackContext:(void*)arg1;
 - (BOOL)isAudibleAudioBook;
 - (BOOL)isCompilationTrack;
+- (BOOL)isCurrentlyRestricted;
 - (BOOL)isDemoRental;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToTrack:(id)arg1;
 - (BOOL)isExcludedFromShuffle;
-- (BOOL)isExplicitBasedOnCurrentRestrictions;
+- (BOOL)isHidden;
 - (BOOL)isITunesU;
 - (BOOL)isOTAPurchasedContent;
 - (BOOL)isRental;
@@ -63,7 +64,6 @@
 - (double)lastPlayedDate;
 - (id)lyrics;
 - (BOOL)markAsDeleted;
-- (BOOL)markHidden:(BOOL)arg1;
 - (void)markNominalAmountHasBeenPlayed;
 - (unsigned long)mediaType;
 - (id)movieInfo;

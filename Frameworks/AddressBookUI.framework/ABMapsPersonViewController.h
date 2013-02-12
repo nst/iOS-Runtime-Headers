@@ -6,14 +6,12 @@
     BOOL _showAddToBookmarks;
     BOOL _showDirections;
     BOOL _showRemovePin;
-    BOOL _showShareLocation;
 }
 
 @property <ABMapsPersonViewControllerDelegate> *mapsPersonViewControllerDelegate;
 @property BOOL shouldShowAddToBookmarks;
 @property BOOL shouldShowDirections;
 @property BOOL shouldShowRemovePin;
-@property BOOL shouldShowShareLocation;
 
 - (BOOL)ab_wantsToPresentModalViewControllerWithoutAnyHelp;
 - (void)addToBookmarks:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
@@ -39,11 +37,8 @@
 - (void)setShouldShowAddToBookmarks:(BOOL)arg1;
 - (void)setShouldShowDirections:(BOOL)arg1;
 - (void)setShouldShowRemovePin:(BOOL)arg1;
-- (void)setShouldShowShareLocation:(BOOL)arg1;
-- (void)shareLocation:(id)arg1 person:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (BOOL)shouldShowAddToBookmarks;
 - (BOOL)shouldShowDirections;
 - (BOOL)shouldShowRemovePin;
-- (BOOL)shouldShowShareLocation;
 
 @end

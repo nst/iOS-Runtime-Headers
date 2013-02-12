@@ -5,17 +5,21 @@
 @class NSTimer;
 
 @interface YTNetworkController : NSObject {
+    BOOL _isCellular;
+    BOOL _isReachable;
     NSInteger _networkType;
     NSTimer *_notificationTimer;
-    struct __SCDynamicStore { } *_store;
+    BOOL _registered;
 }
 
 + (id)sharedNetworkController;
 
 - (void)_checkForNetwork;
 - (void)_checkForNetworkAndNotify;
+- (void)_reachabilityChanged:(id)arg1;
 - (void)_scheduleCheckForNetwork;
 - (NSInteger)networkType;
+- (BOOL)serviceIsReachable;
 - (void)start;
 
 @end

@@ -2,14 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIKeyboardZoomGesture, UITouch;
+@class NSMutableArray, UITouch;
 
 @interface UIKeyboardLayout : UIView <UIKeyboardLayoutProtocol> {
-    UITouch *m_activeTouch;
-    UITouch *m_shiftKeyTouch;
-    UITouch *m_swipeTouch;
-    NSMutableArray *m_uncommittedTouches;
-    UIKeyboardZoomGesture *m_zoomGesture;
+    UITouch *_activeTouch;
+    UITouch *_shiftKeyTouch;
+    UITouch *_swipeTouch;
+    NSMutableArray *_uncommittedTouches;
 }
 
 @property(retain) UITouch *activeTouch;
@@ -19,9 +18,10 @@
 - (id)activationIndicatorView;
 - (id)activeTouch;
 - (void)addSwipeRecognizer;
-- (void)addZoomRecognizer;
+- (id)baseKeyForString:(id)arg1;
 - (BOOL)canProduceString:(id)arg1;
 - (id)candidateList;
+- (void)changeToKeyplane:(id)arg1;
 - (void)commitTouchesBeforeTouch:(id)arg1;
 - (void)deactivateActiveKeys;
 - (void)dealloc;
@@ -32,6 +32,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isShiftKeyBeingHeld;
 - (BOOL)isShiftKeyPlaneChooser;
+- (id)keyplaneForKey:(id)arg1;
 - (void)longPressAction;
 - (BOOL)performReturnAction;
 - (void)phraseBoundaryDidChange;
@@ -50,7 +51,6 @@
 - (id)shiftKeyTouch;
 - (BOOL)shouldShowIndicator;
 - (void)showKeyboardType:(NSInteger)arg1 withAppearance:(NSInteger)arg2;
-- (void)superLongPress:(id)arg1;
 - (void)swipeGestureRecognized:(id)arg1;
 - (id)swipeTouch;
 - (void)touchCancelled:(id)arg1;
@@ -64,6 +64,5 @@
 - (void)updateLocalizedKeys;
 - (void)updateReturnKey;
 - (BOOL)usesAutoShift;
-- (void)zoomGestureRecognized:(id)arg1;
 
 @end

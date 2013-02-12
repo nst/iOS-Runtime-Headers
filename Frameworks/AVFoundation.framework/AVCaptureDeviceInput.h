@@ -14,6 +14,7 @@
 
 - (void)_setDevice:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)device;
 - (void)didStartForSession:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;

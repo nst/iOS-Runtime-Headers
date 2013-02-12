@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebFormAccessoryDelegate>, UIButton, UISegmentedControl;
+@class <UIWebFormAccessoryDelegate>, UIBarButtonItem, UISegmentedControl;
 
-@interface UIWebFormAccessory : UIImageView {
-    UIButton *_autofill;
-    UIButton *_done;
+@interface UIWebFormAccessory : UIToolbar {
+    UIBarButtonItem *_autofill;
     UISegmentedControl *_tab;
     <UIWebFormAccessoryDelegate> *delegate;
 }
 
-@property(retain) UIButton *_autofill;
-@property(retain) UIButton *_done;
+@property(retain) UIBarButtonItem *_autofill;
 @property(retain) UISegmentedControl *_tab;
 @property <UIWebFormAccessoryDelegate> *delegate;
 @property(getter=isAutoFillEnabled) BOOL autoFillEnabled;
@@ -20,8 +18,9 @@
 @property(getter=isPreviousEnabled) BOOL previousEnabled;
 
 - (id)_autofill;
-- (id)_done;
+- (void)_orientationDidChange:(id)arg1;
 - (id)_tab;
+- (void)_updateFrame;
 - (void)autoFill:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -30,13 +29,11 @@
 - (BOOL)isAutoFillEnabled;
 - (BOOL)isNextEnabled;
 - (BOOL)isPreviousEnabled;
-- (void)layoutSubviews;
 - (void)setAutoFillEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNextEnabled:(BOOL)arg1;
 - (void)setPreviousEnabled:(BOOL)arg1;
 - (void)set_autofill:(id)arg1;
-- (void)set_done:(id)arg1;
 - (void)set_tab:(id)arg1;
 - (void)tab:(id)arg1;
 

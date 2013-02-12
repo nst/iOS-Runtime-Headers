@@ -51,11 +51,9 @@
 - (void)setPreviousRequest:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (void)showFailureMessage;
+- (void)showMessageForError:(id)arg1;
 - (id)url;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(NSUInteger)arg3;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (void)webViewDidStartLoad:(id)arg1;
 
 @end

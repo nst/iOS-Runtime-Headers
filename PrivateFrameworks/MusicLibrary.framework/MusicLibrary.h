@@ -2,21 +2,26 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface MusicLibrary : NSObject {
     unsigned int _needsFlush : 1;
     unsigned int _disableExternalPlaylistNotifications : 1;
     unsigned int _autoflushScheduled : 1;
+    unsigned int _scheduledPostCoalescedDidChangeNotifications : 1;
+    unsigned int _changeNotificationCoalesceEnabled : 1;
     double _autoflushTargetTime;
     NSString *_basePath;
     void *_bridge;
+    NSMutableDictionary *_coalsescedDidChangeNotifications;
+    NSMutableSet *_coalsescedWillChangeNotifications;
     NSDictionary *_purchasedContentFolders;
 }
 
 + (void)_beginCreatingSharedInstance;
 + (void)_dumpDebuggingInfo;
 + (void)_endCreatingSharedInstance;
++ (BOOL)_isDBSyncActiveIncludePending;
 + (void)_mainThreadRestrictionsChangedNotification:(id)arg1;
 + (void)_postDatabaseChangeNotificationName:(id)arg1 changeType:(NSInteger)arg2;
 + (void)_restrictionsChangedNotification:(id)arg1;
@@ -30,8 +35,6 @@
 + (id)copyPurchaseContentFolderMapWithDelegate:(id)arg1;
 + (BOOL)databaseDataFilesExist;
 + (id)dbModDate;
-+ (void)dbSyncDidEnd;
-+ (void)dbSyncWillBegin;
 + (void)disableFlush;
 + (void)dumpDebuggingInfo;
 + (void)enableFlush;
@@ -44,12 +47,14 @@
 + (BOOL)importationEnabled;
 + (void)initialize;
 + (BOOL)isDBSyncActive;
-+ (BOOL)isDatabaseSchemaUnsupported;
++ (BOOL)isDatabaseSchemaUnsupported:(id*)arg1;
 + (BOOL)isFlushEnabled;
 + (BOOL)isTesting;
 + (void)jetsamMemory;
 + (id)mediaFolderRelativePath:(id)arg1;
-+ (void)noteDBSyncIsActive;
++ (void)noteSyncAlreadyActive;
++ (void)noteSyncDidEnd;
++ (void)noteSyncWillBegin;
 + (id)pathForResourceFileOrFolder:(NSInteger)arg1 basePath:(id)arg2 createParentFolderIfNecessary:(BOOL)arg3;
 + (id)pathForResourceFileOrFolder:(NSInteger)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 isFolder:(BOOL*)arg4;
 + (id)pathForResourceFileOrFolder:(NSInteger)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3;
@@ -57,10 +62,12 @@
 + (void)postDatabaseContentsDidChangeNotification:(NSInteger)arg1;
 + (void)postDatabaseContentsWillChangeNotification:(NSInteger)arg1;
 + (id)purchasedContentXMLFilenames;
++ (BOOL)requiresPostProcessing;
 + (void)resetLibrary;
 + (void)resetLibraryImpl;
 + (void)setImportationEnabled:(BOOL)arg1;
 + (void)setIsTesting:(BOOL)arg1;
++ (void)setSyncIsActive:(BOOL)arg1 alreadyInTargetState:(BOOL)arg2 withStateChangeHandlerBlock:(id)arg3;
 + (id)sharedMusicLibrary;
 + (Class)sharedMusicLibraryClass;
 + (Class)sharedMusicLibraryClass;
@@ -79,7 +86,10 @@
 - (void)_dumpDebuggingInfoAfterInit;
 - (id)_getPurchaseContentFolders;
 - (id)_preparedPlaylistChangeUserInfoForDeletionRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 insertionRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)_schedulePostCoalescedDidChangeNotifications;
+- (void)_setChangeNotificationCoalesceEnabled:(BOOL)arg1 postPendingImmediately:(BOOL)arg2;
 - (id)basePath;
+- (void)beginChangeNotificationCoalescing;
 - (void)commitAllDeferredWork;
 - (NSUInteger)countOfAllAudioTracks;
 - (BOOL)countOfAllAudioTracksIsNonZero;
@@ -88,6 +98,7 @@
 - (NSUInteger)countOfPurchasedContent;
 - (void)dealloc;
 - (void)debugLogPerfStatistics;
+- (void)endChangeNotificationCoalescingAndPostPendingImmediately:(BOOL)arg1;
 - (void)ensureSpecialUserPlaylistsExist;
 - (BOOL)flush;
 - (void)flushPreparedStatementCacheImpl;
@@ -123,6 +134,7 @@
 - (id)pathForResourceFileOrFolder:(NSInteger)arg1;
 - (void)postAvailablePlaylistsDidChangeWithUserInfo:(id)arg1;
 - (void)postAvailablePlaylistsWillChangeWithUserInfo:(id)arg1;
+- (void)postCoalescedDidChangeNotifications;
 - (void)prepareForSavingPlaylist:(id)arg1;
 - (id)purchasedContentFolderMap;
 - (id)purchasedContentFolders;

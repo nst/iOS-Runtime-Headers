@@ -5,10 +5,8 @@
 @class CALayer, MKUserLocationView, NSArray;
 
 @interface MKScrollView : UIScrollView {
-    struct $_712 { 
+    struct $_717 { 
         unsigned int shouldHandleTouchesMoved : 1; 
-        unsigned int scrollViewShouldHandlePinch : 1; 
-        unsigned int scrollViewWillHandlePinch : 1; 
         unsigned int layoutScrollViewSubviews : 1; 
         unsigned int touchesBegan : 1; 
         unsigned int touchesCancelled : 1; 
@@ -39,7 +37,6 @@
 - (float)_accessibilityScrollWidthDistance;
 - (BOOL)_accessibilityShouldAnimateScroll;
 - (BOOL)_accessibilityUsesScrollParentForOrdering;
-- (void)_cancelScrollingNotify:(BOOL)arg1;
 - (id)_hitTestForContentView:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateBoundsHitDetection;
@@ -53,7 +50,6 @@
 - (void)didMoveToWindow;
 - (BOOL)enableBoundsHitDetection;
 - (NSUInteger)gestureCount;
-- (void)handlePinch:(id)arg1;
 - (void)hideBoundsHitDetectionLayers;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (double)lastGestureEndedInterval;

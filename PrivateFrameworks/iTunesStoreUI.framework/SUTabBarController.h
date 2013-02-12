@@ -24,7 +24,6 @@
 - (id)_archivedContextsForViewController:(id)arg1;
 - (void)_beginReloadingUnderneathTransientViewController;
 - (void)_clearNetworkLockoutController;
-- (void)_configureStatusBarForTransitionToViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_destroyCachedControllers;
 - (void)_endReloadingUnderneathTransientViewController;
 - (void)_fixupTabBarSelection;
@@ -62,6 +61,7 @@
 - (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)presentOverlayBackgroundViewController:(id)arg1;
 - (void)reloadForNetworkTypeChange;
+- (void)resetToSystemDefaults;
 - (void)resetUserDefaults;
 - (void)rootTransientViewController:(id)arg1 inSectionWithIdentifier:(id)arg2;
 - (id)rotatingFooterView;

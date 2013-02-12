@@ -7,6 +7,9 @@
     id _second;
 }
 
+@property(retain) id first;
+@property(retain) id second;
+
 + (id)pairWithFirst:(id)arg1 second:(id)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -16,5 +19,7 @@
 - (id)initWithFirst:(id)arg1 second:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)second;
+- (void)setFirst:(id)arg1;
+- (void)setSecond:(id)arg1;
 
 @end

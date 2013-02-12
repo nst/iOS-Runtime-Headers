@@ -5,7 +5,6 @@
 @interface CoreDAVAddressBookInfoTaskGroup : CoreDAVContainerInfoTaskGroup {
 }
 
-- (id)_copyContainerHomeSetPropFindElements;
-- (id)initWithAccountInfoProvider:(id)arg1 containerPaths:(id)arg2 taskManager:(id)arg3;
+- (id)initWithAccountInfoProvider:(id)arg1 containerURLs:(id)arg2 taskManager:(id)arg3;
 
 @end

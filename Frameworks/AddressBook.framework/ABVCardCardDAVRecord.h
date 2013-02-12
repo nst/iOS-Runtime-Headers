@@ -7,4 +7,6 @@
 
 + (BOOL)includeNotesInVCards;
 
+- (BOOL)useThumbnailImageFormatIfAvailable;
+
 @end

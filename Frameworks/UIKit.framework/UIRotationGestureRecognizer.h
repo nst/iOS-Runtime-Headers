@@ -12,6 +12,7 @@
     NSInteger _currentRotationCount;
     double _currentTouchAngle;
     double _initialTouchAngle;
+    double _initialTouchDistance;
     double _lastTouchTime;
     float _previousVelocity;
     UITouch *_touches[2];

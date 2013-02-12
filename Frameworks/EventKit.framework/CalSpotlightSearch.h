@@ -6,48 +6,48 @@
    See Warning(s) below.
  */
 
-@class <CalSearchDataSink>;
+@class <CalSearchDataSink>, NSString;
 
 @interface CalSpotlightSearch : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-     /* Encoded args for previous method: v12@0:4^{CalEventSpotlightContext=BB^{__CFSet}^{__CFSet}^{__CFArray}^B^B^{CalDatabase}^?^viii^{__CFDictionary}ddd{CalSpotlightMatchedEventContext=i***ddi***^{__CFArray}i}}8 */
-     /* Encoded args for previous method: v12@0:4^{CalEventSpotlightContext=BB^{__CFSet}^{__CFSet}^{__CFArray}^B^B^{CalDatabase}^?^viii^{__CFDictionary}ddd{CalSpotlightMatchedEventContext=i***ddi***^{__CFArray}i}}8 */
-     /* Encoded args for previous method: ^{CalEventSpotlightContext=BB^{__CFSet}^{__CFSet}^{__CFArray}^B^B^{CalDatabase}^?^viii^{__CFDictionary}ddd{CalSpotlightMatchedEventContext=i***ddi***^{__CFArray}i}}8@0:4 */
-     /* Encoded args for previous method: v12@0:4^{CalEventSpotlightContext=BB^{__CFSet}^{__CFSet}^{__CFArray}^B^B^{CalDatabase}^?^viii^{__CFDictionary}ddd{CalSpotlightMatchedEventContext=i***ddi***^{__CFArray}i}}8 */
+     /* Encoded args for previous method: v16@0:4^{CalEventSpotlightContext=BB^{__CFSet}^{__CFSet}^{__CFArray}^B^B^{CalDatabase}^?^viii^{__CFDictionary}ddd{CalSpotlightMatchedEventContext=i***ddii***i^{__CFArray}i}}8@?12 */
+     /* Encoded args for previous method: v12@0:4^{CalEventSpotlightContext=BB^{__CFSet}^{__CFSet}^{__CFArray}^B^B^{CalDatabase}^?^viii^{__CFDictionary}ddd{CalSpotlightMatchedEventContext=i***ddii***i^{__CFArray}i}}8 */
+     /* Encoded args for previous method: ^{CalEventSpotlightContext=BB^{__CFSet}^{__CFSet}^{__CFArray}^B^B^{CalDatabase}^?^viii^{__CFDictionary}ddd{CalSpotlightMatchedEventContext=i***ddii***i^{__CFArray}i}}8@0:4 */
+     /* Encoded args for previous method: v12@0:4^{CalEventSpotlightContext=BB^{__CFSet}^{__CFSet}^{__CFArray}^B^B^{CalDatabase}^?^viii^{__CFDictionary}ddd{CalSpotlightMatchedEventContext=i***ddii***i^{__CFArray}i}}8 */
      /* Encoded args for previous method: v12@0:4^{CalParticipantIdsSearchContext=^{__CFArray}I^B^B^{CalDatabase}}8 */
      /* Encoded args for previous method: ^{CalParticipantIdsSearchContext=^{__CFArray}I^B^B^{CalDatabase}}8@0:4 */
      /* Encoded args for previous method: v12@0:4^{CalParticipantIdsSearchContext=^{__CFArray}I^B^B^{CalDatabase}}8 */
     struct __CFDictionary { } *_closestEventOccurrences;
     <CalSearchDataSink> *_dataSink;
-    } _dataSinkLock;
-    } _dataSourceDeallocLock;
     struct CalDatabase { } *_database;
+    NSString *_descriptionString;
+    NSString *_locationString;
     struct __CFSet { } *_matchedEventsSet;
     struct __CFSet { } *_matchedParticipantsSet;
     struct __CFArray { } *_partialResults;
-    struct __CFString { } *_searchString;
+    NSString *_participantString;
+    NSString *_titleString;
+    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*_cancelled;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*_implementsCancellationCallback;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*_moreResultsAvailable;
     /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*_onlySearchEvents;
-    /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*_stopLoadingResults;
 }
 
-- (struct CalEventSpotlightContext { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; void*x2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; void**x6; void**x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; NSInteger x11; NSInteger x12; NSInteger x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { NSInteger x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; NSInteger x_18_1_7; char *x_18_1_8; char *x_18_1_9; char *x_18_1_10; struct __CFArray {} *x_18_1_11; NSInteger x_18_1_12; } x18; }*)_createSpotlightEventsContext;
++ (struct __CFDictionary { }*)newQueryCache;
+
+- (struct CalEventSpotlightContext { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; void*x2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; void**x6; void**x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; NSInteger x11; NSInteger x12; NSInteger x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { NSInteger x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; NSInteger x_18_1_7; NSInteger x_18_1_8; char *x_18_1_9; char *x_18_1_10; char *x_18_1_11; NSInteger x_18_1_12; struct __CFArray {} *x_18_1_13; NSInteger x_18_1_14; } x18; }*)_createSpotlightEventsContext;
 - (void)_addMatchedParticipantIds:(struct __CFArray { }*)arg1;
 - (struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; NSUInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void**x3; void**x4; struct CalDatabase {} *x5; }*)_createParticipantIdsSearchContext;
 - (void)_deleteParticipantIdsSearchContext:(struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; NSUInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void**x3; void**x4; struct CalDatabase {} *x5; }*)arg1;
-- (void)_deleteSpotlightEventsContext:(struct CalEventSpotlightContext { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; void*x2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; void**x6; void**x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; NSInteger x11; NSInteger x12; NSInteger x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { NSInteger x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; NSInteger x_18_1_7; char *x_18_1_8; char *x_18_1_9; char *x_18_1_10; struct __CFArray {} *x_18_1_11; NSInteger x_18_1_12; } x18; }*)arg1;
+- (void)_deleteSpotlightEventsContext:(struct CalEventSpotlightContext { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; void*x2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; void**x6; void**x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; NSInteger x11; NSInteger x12; NSInteger x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { NSInteger x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; NSInteger x_18_1_7; NSInteger x_18_1_8; char *x_18_1_9; char *x_18_1_10; char *x_18_1_11; NSInteger x_18_1_12; struct __CFArray {} *x_18_1_13; NSInteger x_18_1_14; } x18; }*)arg1;
 - (void)_getParticipantsSearchResults:(struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; NSUInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void**x3; void**x4; struct CalDatabase {} *x5; }*)arg1;
-- (void)_getSpotlightEvents:(struct CalEventSpotlightContext { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; void*x2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; void**x6; void**x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; NSInteger x11; NSInteger x12; NSInteger x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { NSInteger x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; NSInteger x_18_1_7; char *x_18_1_8; char *x_18_1_9; char *x_18_1_10; struct __CFArray {} *x_18_1_11; NSInteger x_18_1_12; } x18; }*)arg1;
-- (void)_startLoadingResults;
-- (void)calculateSearchWindow:(struct CalEventSpotlightContext { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; void*x2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; void**x6; void**x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; NSInteger x11; NSInteger x12; NSInteger x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { NSInteger x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; NSInteger x_18_1_7; char *x_18_1_8; char *x_18_1_9; char *x_18_1_10; struct __CFArray {} *x_18_1_11; NSInteger x_18_1_12; } x18; }*)arg1;
+- (void)_getSpotlightEvents:(struct CalEventSpotlightContext { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; void*x2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; void**x6; void**x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; NSInteger x11; NSInteger x12; NSInteger x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { NSInteger x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; NSInteger x_18_1_7; NSInteger x_18_1_8; char *x_18_1_9; char *x_18_1_10; char *x_18_1_11; NSInteger x_18_1_12; struct __CFArray {} *x_18_1_13; NSInteger x_18_1_14; } x18; }*)arg1 callback:(id)arg2;
+- (void)_startLoadingResults:(id)arg1;
+- (void)calculateSearchWindow:(struct CalEventSpotlightContext { /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x1; void*x2; struct __CFSet {} *x3; struct __CFSet {} *x4; struct __CFArray {} *x5; void**x6; void**x7; struct CalDatabase {} *x8; int (*x9)(); void *x10; NSInteger x11; NSInteger x12; NSInteger x13; struct __CFDictionary {} *x14; double x15; double x16; double x17; struct CalSpotlightMatchedEventContext { NSInteger x_18_1_1; char *x_18_1_2; char *x_18_1_3; char *x_18_1_4; double x_18_1_5; double x_18_1_6; NSInteger x_18_1_7; NSInteger x_18_1_8; char *x_18_1_9; char *x_18_1_10; char *x_18_1_11; NSInteger x_18_1_12; struct __CFArray {} *x_18_1_13; NSInteger x_18_1_14; } x18; }*)arg1;
 - (void)dealloc;
 - (id)initWithDatabase:(struct CalDatabase { }*)arg1 searchString:(struct __CFString { }*)arg2 dataSink:(id)arg3 queryCache:(struct __CFDictionary { }*)arg4;
+- (id)initWithDatabase:(struct CalDatabase { }*)arg1 titleString:(id)arg2 locationString:(id)arg3 descriptionString:(id)arg4 participantString:(id)arg5 dataSink:(id)arg6 queryCache:(struct __CFDictionary { }*)arg7;
+- (id)initWithDatabase:(struct CalDatabase { }*)arg1 titleString:(id)arg2 locationString:(id)arg3 descriptionString:(id)arg4 participantString:(id)arg5 queryCache:(struct __CFDictionary { }*)arg6;
+- (void)performWithBlock:(id)arg1;
 - (void)startSearching;
 - (void)stopSearching;
 

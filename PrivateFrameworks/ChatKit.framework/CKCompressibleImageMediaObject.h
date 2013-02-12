@@ -12,6 +12,7 @@
 + (id)previewDataMIMEType;
 + (struct CGSize { float x1; float x2; })transcodeMaxSize;
 
+- (id)_newTranscodedMediaObjectWithMaxByteLength:(NSInteger)arg1 forceJPEG:(BOOL)arg2;
 - (id)_newTranscodedMediaObjectWithMaxByteLength:(NSInteger)arg1;
 - (float)balloonHeightWithPreviewData:(id)arg1;
 - (Class)balloonPreviewClassWithPreviewData:(id)arg1;

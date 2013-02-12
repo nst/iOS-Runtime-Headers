@@ -5,20 +5,18 @@
 @class IMAccount, IMMessage, NSDate, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface IMChat : NSObject <IMSecureObject> {
-    unsigned int _isFirstMessageInvitation : 1;
-    unsigned int _wasInvitationHandled : 1;
-    unsigned int _disabledEncryption : 1;
-    unsigned int _didSendAFinishedMessage : 1;
-    unsigned int _shouldAnnouncePeopleJoin : 1;
     IMAccount *_account;
     NSUInteger _chatItemChangeCount;
     NSMutableArray *_chatItems;
     NSMutableDictionary *_chatProperties;
     NSDate *_dateCreated;
     NSDate *_dateModified;
+    BOOL _didSendAFinishedMessage;
     NSInteger _directConnectionStatus;
+    BOOL _disabledEncryption;
     NSString *_guid;
     IMMessage *_invitationForPendingParticipants;
+    BOOL _isFirstMessageInvitation;
     NSInteger _joinState;
     double _joinedTimeInterval;
     NSMutableArray *_messagesPendingJoin;
@@ -29,10 +27,33 @@
     NSString *_roomName;
     NSString *_roomNameWithoutSuffix;
     NSInteger _securityLevel;
+    BOOL _shouldAnnouncePeopleJoin;
     unsigned char _style;
-    NSUInteger _suppressEncryptionChatItems;
+    BOOL _suppressEncryptionChatItems;
     NSMutableDictionary *_unfinishedChatItemMap;
+    BOOL _wasInvitationHandled;
 }
+
+@property BOOL suppressEncryptionChatItems; /* unknown property attribute: SsetSupressEncryptionChatItems: */
+@property(readonly) IMAccount *account;
+@property(readonly) NSString *chatIdentifier;
+@property(readonly) NSArray *chatItems;
+@property(readonly) NSDate *dateCreated;
+@property(readonly) NSDate *dateModified;
+@property(readonly) NSString *guid;
+@property(retain) IMMessage *invitationForPendingParticipants;
+@property(readonly) NSArray *participants;
+@property(retain) IMHandle *recipient;
+@property(readonly) NSString *roomName;
+@property(readonly) NSString *roomNameWithoutSuffix;
+@property(readonly) BOOL canBeSecure;
+@property(readonly) BOOL canHaveMultipleParticipants;
+@property(readonly) unsigned char chatStyle;
+@property(readonly) NSInteger directConnectionStatus;
+@property(readonly) BOOL hasUnhandledInvitation;
+@property(readonly) NSInteger joinState;
+@property(readonly) NSUInteger overallChatStatus;
+@property NSInteger securityLevel;
 
 - (void)_accountLoggedOut:(id)arg1;
 - (void)_addParticipant:(id)arg1;

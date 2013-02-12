@@ -24,6 +24,7 @@
     id _delegateOfDatePicker;
     NSInteger _expectedAMPM;
     UILabel *_hourLabel;
+    struct __CFDateFormatter { } *_localDateFormatter;
     NSLocale *_locale;
     NSDateComponents *_maxDateComponents;
     NSDate *_maximumDate;
@@ -71,6 +72,7 @@
 - (NSInteger)_incrementedAmountForValue:(NSInteger)arg1 withElement:(NSUInteger)arg2;
 - (void)_loadDateAnimated:(BOOL)arg1;
 - (void)_loadDesignatorStrings;
+- (struct __CFDateFormatter { }*)_localDateFormatter;
 - (NSInteger)_minuteForRow:(NSInteger)arg1;
 - (id)_minutesString;
 - (NSInteger)_monthForRow:(NSInteger)arg1;
@@ -108,6 +110,7 @@
 - (id)delegateOfDatePicker;
 - (NSInteger)hour;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (id)locale;
 - (id)maximumDate;
 - (id)minimumDate;
@@ -115,7 +118,6 @@
 - (NSInteger)minuteInterval;
 - (NSInteger)numberOfComponentsInPickerView:(id)arg1;
 - (id)pickerImageNamePrefix;
-- (void)pickerView:(id)arg1 createdTable:(id)arg2 forColumn:(NSInteger)arg3;
 - (void)pickerView:(id)arg1 didSelectRow:(NSInteger)arg2 inComponent:(NSInteger)arg3;
 - (NSInteger)pickerView:(id)arg1 numberOfRowsInComponent:(NSInteger)arg2;
 - (float)pickerView:(id)arg1 rowHeightForComponent:(NSInteger)arg2;
@@ -133,6 +135,7 @@
 - (void)setDatePickerMode:(NSInteger)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateOfDatePicker:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlightsToday:(BOOL)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setMaximumDate:(id)arg1;

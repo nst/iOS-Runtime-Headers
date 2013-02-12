@@ -17,6 +17,9 @@
 @property(copy) NSString *wallpaperTitle;
 @property BOOL saveWallpaperData;
 
++ (id)argsForSavingWallpaperFromTile:(id)arg1 mode:(NSInteger)arg2;
++ (void)setWallpaperFromArgs:(id)arg1;
+
 - (void)_adjustScrollViewGeometry;
 - (void)_backgroundCropWallpaper:(id)arg1;
 - (NSUInteger)_contentAutoresizingMask;

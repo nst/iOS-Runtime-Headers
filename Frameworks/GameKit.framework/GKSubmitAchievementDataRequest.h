@@ -12,8 +12,8 @@
     NSInteger _percentComplete;
 }
 
-@property NSString *achievementID;
-@property NSDate *date;
+@property(retain) NSString *achievementID;
+@property(retain) NSDate *date;
 @property(retain) GKGame *game;
 @property BOOL isHidden;
 @property NSInteger percentComplete;

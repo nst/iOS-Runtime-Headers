@@ -2,23 +2,19 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, ABAccountsAndGroupDataSource;
+@class ABAccountsAndGroupDataSource;
 
 @interface ABAccountsAndGroupsViewController : ABAbstractViewController <UITableViewDelegate> {
     ABAccountsAndGroupDataSource *_dataSource;
     BOOL _needsReload;
-    <ABStyleProvider> *_styleProvider;
     BOOL _tableViewNeedsReloadAfterResume;
 }
 
 @property(readonly) ABAccountsAndGroupDataSource *dataSource;
-@property(retain) ABModel *model;
-@property(retain) <ABStyleProvider> *styleProvider;
 @property(readonly) UITableView *tableView;
 @property BOOL hidesSearchableStores;
 
 - (void)_applyAccessibilityFontChanges;
-- (void)_refreshIfNeeded;
 - (void)_showMembersWithModel:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
 - (NSInteger)abViewControllerType;
 - (void)accessibilityLargeTextDidChange;
@@ -41,18 +37,17 @@
 - (void)reselectLastSelectedCellIfNeeded;
 - (void)setHidesSearchableStores:(BOOL)arg1;
 - (void)setModel:(id)arg1;
-- (void)setStyleProvider:(id)arg1;
 - (BOOL)shouldShowGroups;
 - (void)showMembersOfGroup:(void*)arg1 animate:(BOOL)arg2;
 - (void)showMembersOfGroupWrapper:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
 - (void)showMembersOfGroupWrapper:(id)arg1 animate:(BOOL)arg2;
-- (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(NSInteger)arg2;
 - (id)tableView;
 - (void)updateNavigationButtons;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;

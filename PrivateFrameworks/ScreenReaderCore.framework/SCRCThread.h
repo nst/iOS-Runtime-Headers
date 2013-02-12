@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSString, NSThread;
+@class NSString, NSThread, SCRCStackQueue;
 
 @interface SCRCThread : NSObject {
-    struct { 
-        id first; 
-        id last; 
     NSString *_description;
     BOOL _descriptionChanged;
     BOOL _isInvalid;
@@ -16,7 +13,7 @@
     id _key;
     double _lastStartTime;
     NSThread *_nsThread;
-    } _queue;
+    SCRCStackQueue *_queue;
     id _queueLock;
     struct __CFRunLoop { } *_runLoop;
     struct __CFRunLoopSource { } *_source;

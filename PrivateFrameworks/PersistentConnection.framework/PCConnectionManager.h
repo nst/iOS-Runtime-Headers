@@ -15,6 +15,7 @@
     BOOL _inCallback;
     PCPersistentTimer *_intervalTimer;
     BOOL _isInReconnectMode;
+    BOOL _isReachable;
     BOOL _isRunning;
     double _keepAliveGracePeriod;
     double _lastReachableTime;
@@ -63,8 +64,8 @@
 - (void)_releasePowerAssertion;
 - (void)_resolveStateWithAction:(NSInteger)arg1;
 - (void)_saveWWANKeepAliveInterval:(double)arg1;
-- (void)_setupKeepAliveForPoll;
 - (void)_setupKeepAliveForReconnect;
+- (void)_setupTimerForPoll;
 - (void)_setupTimerForPushWithKeepAliveInterval:(double)arg1;
 - (id)_stringForAction:(NSInteger)arg1;
 - (id)_stringForEvent:(NSInteger)arg1;

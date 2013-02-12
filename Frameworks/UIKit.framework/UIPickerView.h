@@ -53,8 +53,10 @@
 - (void)_sendCheckedRow:(NSInteger)arg1 inTable:(id)arg2 checked:(BOOL)arg3;
 - (void)_sendSelectionChangedForComponent:(NSInteger)arg1;
 - (void)_sendSelectionChangedFromTable:(id)arg1;
+- (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)_tableRowHeight;
 - (void)_updateSound;
+- (float)_wheelShift;
 - (id)accessibilityContainerElements;
 - (BOOL)allowsMultipleSelection;
 - (id)cellForRow:(NSInteger)arg1 column:(NSInteger)arg2;

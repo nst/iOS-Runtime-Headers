@@ -26,6 +26,8 @@
 @property BOOL privateMode;
 @property BOOL supportInfo;
 
++ (NSInteger)_authorizationStatus;
++ (NSInteger)authorizationStatus;
 + (BOOL)headingAvailable;
 + (BOOL)locationServicesEnabled;
 + (BOOL)regionMonitoringAvailable;
@@ -59,7 +61,7 @@
 - (double)maximumRegionMonitoringDistance;
 - (id)monitoredRegions;
 - (void)onClientEvent:(NSInteger)arg1 supportInfo:(id)arg2;
-- (void)onClientEventApproval:(id)arg1;
+- (void)onClientEventAuthStatus:(id)arg1;
 - (void)onClientEventError:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
 - (void)onClientEventHeadingCalibration:(id)arg1;

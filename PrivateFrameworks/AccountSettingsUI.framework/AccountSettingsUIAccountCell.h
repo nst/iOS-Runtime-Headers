@@ -20,6 +20,7 @@
 - (void)dealloc;
 - (id)enabledDataclassesTextForWidth:(float)arg1;
 - (void)layoutSubviews;
+- (void)setCellEnabled:(BOOL)arg1;
 - (void)setDetailsText:(id)arg1;
 - (void)setEnabledDataclasses:(id)arg1 supportedDataclasses:(id)arg2;
 

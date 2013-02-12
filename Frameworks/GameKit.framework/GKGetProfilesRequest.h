@@ -8,11 +8,13 @@
     BOOL _detailed;
     NSArray *_playerIDs;
     NSArray *_profiles;
+    BOOL _realName;
 }
 
 @property(retain) NSArray *playerIDs;
 @property(readonly) NSArray *profiles;
 @property BOOL detailed;
+@property BOOL realName;
 
 - (id)cacheKey;
 - (NSInteger)cachePriority;
@@ -23,8 +25,10 @@
 - (id)key;
 - (id)playerIDs;
 - (id)profiles;
+- (BOOL)realName;
 - (id)request;
 - (void)setDetailed:(BOOL)arg1;
 - (void)setPlayerIDs:(id)arg1;
+- (void)setRealName:(BOOL)arg1;
 
 @end

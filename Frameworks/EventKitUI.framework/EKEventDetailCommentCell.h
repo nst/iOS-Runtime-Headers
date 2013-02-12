@@ -2,15 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKEventDetailCommentCell : EKEventDetailCell <EKEventEditItemViewControllerDelegate> {
+@interface EKEventDetailCommentCell : EKEventDetailCell {
 }
 
-- (void)editItemViewController:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
-- (BOOL)eventEditItemViewControllerCommit:(id)arg1;
-- (BOOL)hasCustomLayout;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (BOOL)shouldDisplayForEditModel;
 - (BOOL)update;
-- (id)viewControllerForCell;
 
 @end

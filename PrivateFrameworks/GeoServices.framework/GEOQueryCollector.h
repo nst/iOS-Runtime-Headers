@@ -13,6 +13,6 @@
 - (void)cancelAllSubmissions;
 - (void)dealloc;
 - (id)init;
-- (void)submitQuery:(id)arg1 requestType:(NSInteger)arg2 centerCoordinate:(id)arg3 latSpan:(NSInteger)arg4 lonSpan:(NSInteger)arg5 zoomLevel:(NSInteger)arg6;
+- (void)submitQuery:(id)arg1 requestType:(NSInteger)arg2 centerCoordinate:(struct { double x1; double x2; })arg3 latSpan:(NSInteger)arg4 lonSpan:(NSInteger)arg5 zoomLevel:(NSInteger)arg6;
 
 @end

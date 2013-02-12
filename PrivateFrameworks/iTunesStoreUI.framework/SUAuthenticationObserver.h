@@ -17,6 +17,7 @@
 
 - (void)_authenticationTimeout:(id)arg1;
 - (void)_cancelTimeoutTimer;
+- (void)_daemonExited:(id)arg1;
 - (void)_sendFailureToDelegate;
 - (void)_sendSuccessToDelegate;
 - (void)_sendTimeoutToDelegate;

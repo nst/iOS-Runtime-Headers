@@ -5,6 +5,7 @@
 @interface SUScriptViewController : SUScriptObject {
 }
 
+@property(retain) SUScriptViewController *inputAccessoryViewController;
 @property(retain) NSString *modalPresentationStyle;
 @property(readonly) NSString *modalPresentationStyleNameFormSheet;
 @property(readonly) NSString *modalPresentationStyleNameFullScreen;
@@ -19,6 +20,7 @@
 @property(readonly) SUScriptViewController *volumeViewController;
 @property(retain) id backgroundColor;
 @property(retain) id topBackgroundColor;
+@property id wantsFullScreenLayout;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
@@ -57,6 +59,7 @@
 - (void)dismissModalViewControllerWithTransition:(id)arg1;
 - (void)dismissVolumeViewControllerAnimated:(id)arg1;
 - (BOOL)equals:(id)arg1;
+- (id)inputAccessoryViewController;
 - (id)modalPresentationStyle;
 - (id)modalPresentationStyleNameFormSheet;
 - (id)modalPresentationStyleNameFullScreen;
@@ -73,6 +76,7 @@
 - (id)scriptAttributeKeys;
 - (id)section;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setInputAccessoryViewController:(id)arg1;
 - (void)setModalPresentationStyle:(id)arg1;
 - (void)setModalViewController:(id)arg1;
 - (void)setNativeViewController:(id)arg1;
@@ -84,9 +88,11 @@
 - (void)setTopBackgroundColor:(id)arg1;
 - (void)setTransientViewController:(id)arg1;
 - (void)setVolumeViewController:(id)arg1;
+- (void)setWantsFullScreenLayout:(id)arg1;
 - (id)splitViewController;
 - (id)topBackgroundColor;
 - (id)transientViewController;
 - (id)volumeViewController;
+- (id)wantsFullScreenLayout;
 
 @end

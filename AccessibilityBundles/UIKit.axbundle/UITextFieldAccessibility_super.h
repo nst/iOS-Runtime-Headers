@@ -6,6 +6,7 @@
 }
 
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)_clearButtonClicked:(id)arg1;
@@ -14,6 +15,7 @@
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
 - (NSInteger)accessibilityElementCount;
 - (id)accessibilityLabel;
+- (id)accessibilityPlaceholderValue;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (void)copy:(id)arg1;

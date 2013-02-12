@@ -39,10 +39,12 @@
 - (BOOL)mf_isEmpty;
 - (id)mf_remove;
 - (NSUInteger)mf_removeObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
+- (void)moveItemFromIndex:(NSUInteger)arg1 toIndex:(NSUInteger)arg2;
 - (void)movePlacesWithOnePhotoInto:(id)arg1;
 - (id)pop;
 - (void)push:(id)arg1;
 - (void)removeAllObjects;
+- (void)removeItemAtIndex:(NSUInteger)arg1;
 - (void)removeLastObject;
 - (void)removeObject:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)removeObject:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 identical:(BOOL)arg3;

@@ -18,6 +18,7 @@
     float _sectionHeight;
     float _sectionOffset;
     BOOL _sectionOffsetValid;
+    NSInteger _sectionRowOffset;
     BOOL _valid;
 }
 
@@ -28,7 +29,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)deleteRowAtIndex:(NSInteger)arg1;
-- (id)description;
 - (void)insertRowAtIndex:(NSInteger)arg1 inSection:(NSInteger)arg2 rowHeight:(float)arg3 tableViewRowData:(id)arg4;
 - (void)invalidate;
 - (void)invalidateSectionOffset;

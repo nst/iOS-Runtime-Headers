@@ -5,12 +5,17 @@
 @class <IMReachabilityDelegate>, NSString;
 
 @interface IMReachability : NSObject {
-    unsigned int _gettingFlags : 1;
     <IMReachabilityDelegate> *_delegate;
     NSString *_description;
     NSUInteger _flags;
+    BOOL _gettingFlags;
     void *_reachabilityRef;
 }
+
+@property <IMReachabilityDelegate> *delegate;
+@property(readonly) BOOL connectionRequired;
+@property(readonly) NSUInteger flags;
+@property(readonly) NSUInteger status;
 
 + (id)reachabilityForInternetConnection;
 + (id)reachabilityForLocalWiFi;

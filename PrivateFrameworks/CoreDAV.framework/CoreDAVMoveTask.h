@@ -4,30 +4,19 @@
 
 @class NSString;
 
-@interface CoreDAVMoveTask : CoreDAVTask {
-    NSString *_destinationURL;
-    NSInteger _overwrite;
+@interface CoreDAVMoveTask : CoreDAVCopyOrMoveTask {
+    NSString *_previousETag;
 }
 
 @property <CoreDAVMoveTaskDelegate> *delegate;
-@property(retain) NSString *destinationURL;
-@property NSInteger overwrite;
+@property(retain) NSString *previousETag;
 
-+ (id)stringFromOverwriteValue:(NSInteger)arg1;
-
+- (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (id)additionalHeaderValues;
 - (void)dealloc;
 - (id)description;
-- (id)destinationURL;
-- (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithRelativeURI:(id)arg1;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 andOverwrite:(NSInteger)arg3;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2;
-- (NSInteger)overwrite;
-- (BOOL)processData:(id)arg1 withParser:(id)arg2;
-- (id)requestBody;
-- (void)setDestinationURL:(id)arg1;
-- (void)setOverwrite:(NSInteger)arg1;
+- (id)previousETag;
+- (void)setPreviousETag:(id)arg1;
 
 @end

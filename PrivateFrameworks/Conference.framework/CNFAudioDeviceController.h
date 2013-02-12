@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class AVController, NSArray, NSDictionary, NSString;
+@class <CNFAudioDeviceControllerProtocol>, AVController, NSArray, NSDictionary, NSString;
 
 @interface CNFAudioDeviceController : NSObject {
     AVController *_avController;
     NSString *_currentAudioRoute;
-    id _delegate;
+    <CNFAudioDeviceControllerProtocol> *_delegate;
     NSArray *_pickableRoutes;
     NSDictionary *_pickedRoute;
 }
@@ -15,7 +15,7 @@
 @property(retain) NSString *currentAudioRoute;
 
 - (void)_mediaServerDied;
-- (void)_pickRoute:(id)arg1;
+- (BOOL)_pickRoute:(id)arg1;
 - (id)_pickableRoutes;
 - (void)_pickableRoutesChanged;
 - (id)_pickedRoute;
@@ -32,6 +32,7 @@
 - (NSInteger)numberOfAudioRoutes;
 - (BOOL)pickHandsetRoute;
 - (void)pickRouteAtIndex:(NSUInteger)arg1;
+- (BOOL)pickRouteWithUID:(id)arg1;
 - (BOOL)pickSpeakerRoute;
 - (BOOL)receiverRouteIsPicked;
 - (void)restorePickedRoute;

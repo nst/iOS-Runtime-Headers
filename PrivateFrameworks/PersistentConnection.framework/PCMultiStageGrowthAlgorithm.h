@@ -11,6 +11,7 @@
     double _highWatermark;
     double _initialGrowthStageHighWatermark;
     double _initialGrowthStageLastAttempt;
+    double _lastKeepAliveInterval;
     NSDate *_leaveSteadyStateDate;
     NSString *_loggingIdentifier;
     double _maximumKeepAliveInterval;
@@ -21,6 +22,9 @@
 @property(readonly) double currentKeepAliveInterval;
 @property double maximumKeepAliveInterval;
 @property double minimumKeepAliveInterval;
+
++ (void)_loadDefaultValue:(double*)arg1 forKey:(struct __CFString { }*)arg2;
++ (void)_loadDefaults;
 
 - (void)_processBackoffAction:(NSInteger)arg1;
 - (void)_processInitialGrowthAction:(NSInteger)arg1;
@@ -35,7 +39,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithKeepAliveInterval:(double)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
-- (BOOL)isCalibrating;
 - (id)loggingIdentifier;
 - (double)maximumKeepAliveInterval;
 - (double)minimumKeepAliveInterval;

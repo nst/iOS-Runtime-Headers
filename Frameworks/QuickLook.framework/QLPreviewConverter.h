@@ -10,6 +10,7 @@
 }
 
 @property(readonly) NSString *previewFileName;
+@property(readonly) QLPreviewParts *previewParts;
 @property(readonly) NSURLRequest *previewRequest;
 @property(readonly) NSURLResponse *previewResponse;
 @property(readonly) NSString *previewUTI;
@@ -30,6 +31,7 @@
 - (BOOL)isCancelled;
 - (BOOL)isComputed;
 - (id)previewFileName;
+- (id)previewParts;
 - (id)previewRequest;
 - (id)previewResponse;
 - (id)previewUTI;

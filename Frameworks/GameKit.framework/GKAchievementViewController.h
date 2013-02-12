@@ -16,7 +16,7 @@
 - (id)initWithRootViewController:(id)arg1;
 - (void)setAchievementDelegate:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
-- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -12,6 +12,7 @@
     BOOL mIsFrame;
     BOOL mIsFrameEnd;
     BOOL mIsFrameStart;
+    BOOL mIsHeaderOrFooter;
     WDText *mLastFooter;
     WDText *mLastHeader;
     float mLeftMargin;
@@ -33,6 +34,7 @@
 - (BOOL)isFrame;
 - (BOOL)isFrameEnd;
 - (BOOL)isFrameStart;
+- (BOOL)isHeaderOrFooter;
 - (id)lastFooter;
 - (id)lastHeader;
 - (float)leftMargin;
@@ -47,6 +49,7 @@
 - (void)setIsFrame:(BOOL)arg1;
 - (void)setIsFrameEnd:(BOOL)arg1;
 - (void)setIsFrameStart:(BOOL)arg1;
+- (void)setIsHeaderOrFooter:(BOOL)arg1;
 - (void)setLastFooter:(id)arg1;
 - (void)setLastHeader:(id)arg1;
 - (void)setLeftMargin:(float)arg1;

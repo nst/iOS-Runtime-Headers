@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSNumber, NSString, SSAuthenticationContext;
+@class NSNumber, NSString;
 
 @interface ISStoreURLOperation : ISURLOperation {
     NSNumber *_authenticatedDSID;
-    SSAuthenticationContext *_authenticationContext;
     BOOL _needsAuthentication;
     BOOL _needsURLBag;
     NSString *_urlBagKey;
@@ -14,7 +13,6 @@
 }
 
 @property(retain) NSNumber *authenticatedDSID;
-@property(retain) SSAuthenticationContext *authenticationContext;
 @property <ISStoreURLOperationDelegate> *delegate;
 @property(retain) NSString *urlBagKey;
 @property BOOL needsAuthentication;
@@ -30,7 +28,6 @@
 + (id)propertyListOperationWithURLBagKey:(id)arg1;
 
 - (id)_account;
-- (id)_accountIdentifier;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
 - (BOOL)_authenticateReturningError:(id*)arg1;
 - (BOOL)_canSendTokenToURL:(id)arg1;
@@ -38,7 +35,6 @@
 - (void)_runURLOperation;
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
-- (id)authenticationContext;
 - (void)dealloc;
 - (BOOL)handleRedirectFromDataProvider:(id)arg1;
 - (void)handleResponse:(id)arg1;
@@ -48,7 +44,6 @@
 - (id)newRequestWithURL:(id)arg1;
 - (void)run;
 - (void)setAuthenticatedDSID:(id)arg1;
-- (void)setAuthenticationContext:(id)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setNeedsURLBag:(BOOL)arg1;
 - (void)setUrlBagKey:(id)arg1;

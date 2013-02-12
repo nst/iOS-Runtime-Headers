@@ -13,6 +13,7 @@
     BOOL _demo;
     NSLock *_lock;
     NSString *_secureToken;
+    BOOL _socialEnabled;
     NSNumber *_uniqueIdentifier;
 }
 
@@ -25,6 +26,7 @@
 @property(getter=isActive) BOOL active;
 @property(getter=isAuthenticated,readonly) BOOL authenticated;
 @property(getter=isDemoAccount) BOOL demoAccount;
+@property(getter=isSocialEnabled) BOOL socialEnabled;
 
 - (NSInteger)accountKind;
 - (id)accountName;
@@ -39,6 +41,7 @@
 - (BOOL)isActive;
 - (BOOL)isAuthenticated;
 - (BOOL)isDemoAccount;
+- (BOOL)isSocialEnabled;
 - (void)resetTransientData;
 - (id)secureToken;
 - (void)setAccountKind:(NSInteger)arg1;
@@ -48,6 +51,7 @@
 - (void)setCreditsString:(id)arg1;
 - (void)setDemoAccount:(BOOL)arg1;
 - (void)setSecureToken:(id)arg1;
+- (void)setSocialEnabled:(BOOL)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (id)uniqueIdentifier;
 

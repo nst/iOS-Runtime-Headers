@@ -14,6 +14,7 @@
     BOOL _okToSend;
     NSInteger _playerState;
     BOOL _relayInitiated;
+    NSUInteger _sequenceNumber;
 }
 
 @property(retain) NSMutableDictionary *connectionInfo;
@@ -25,6 +26,7 @@
 @property BOOL okToSend;
 @property NSInteger playerState;
 @property BOOL relayInitiated;
+@property NSUInteger sequenceNumber;
 
 - (id)connectionInfo;
 - (BOOL)counted;
@@ -37,6 +39,7 @@
 - (BOOL)okToSend;
 - (NSInteger)playerState;
 - (BOOL)relayInitiated;
+- (NSUInteger)sequenceNumber;
 - (void)setConnectionInfo:(id)arg1;
 - (void)setCounted:(BOOL)arg1;
 - (void)setDeferedPlayerState:(NSInteger)arg1;
@@ -46,5 +49,6 @@
 - (void)setOkToSend:(BOOL)arg1;
 - (void)setPlayerState:(NSInteger)arg1;
 - (void)setRelayInitiated:(BOOL)arg1;
+- (void)setSequenceNumber:(NSUInteger)arg1;
 
 @end

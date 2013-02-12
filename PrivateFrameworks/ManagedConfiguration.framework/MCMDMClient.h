@@ -18,6 +18,5 @@
 - (void)notifyNewConfiguration;
 - (void)scheduleTokenUpdate;
 - (void)simulatePush;
-- (void)triggerMDMDelaySeconds:(NSUInteger)arg1;
 
 @end

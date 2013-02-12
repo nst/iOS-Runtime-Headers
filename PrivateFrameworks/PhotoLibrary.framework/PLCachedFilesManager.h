@@ -23,6 +23,8 @@
     BOOL _recreateCachesAfterCancel;
 }
 
++ (BOOL)approximateCachesNeedToBeRecreated;
+
 - (void)_actuallyRecreateCaches;
 - (BOOL)_cachesDirectoryIsMissingOrIsEmpty;
 - (BOOL)_cameraRollNeedsToBeMigrated;

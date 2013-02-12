@@ -6,7 +6,6 @@
 }
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
-- (void)drawTitleAtPoint:(struct CGPoint { float x1; float x2; })arg1 width:(float)arg2;
 - (id)initWithTitle:(id)arg1;
 
 @end

@@ -5,8 +5,8 @@
 @class GKLeaderboardCategoryViewController, GKLeaderboardViewControllerPrivate;
 
 @interface GKLeaderboardViewController : UINavigationController {
-    GKLeaderboardCategoryViewController *categoryController;
-    GKLeaderboardViewControllerPrivate *privateViewController;
+    GKLeaderboardCategoryViewController *_categoryController;
+    GKLeaderboardViewControllerPrivate *_privateViewController;
 }
 
 @property(retain) NSString *category;
@@ -32,5 +32,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (NSInteger)timeScope;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

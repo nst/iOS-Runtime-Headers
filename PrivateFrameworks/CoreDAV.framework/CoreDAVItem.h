@@ -2,54 +2,49 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItem, CoreDAVParseRule, NSDictionary, NSMutableData, NSMutableDictionary, NSMutableString, NSString;
+@class NSData, NSMutableArray, NSMutableSet, NSString;
 
-@interface CoreDAVItem : NSObject {
-    NSMutableData *_cDATA;
-    NSMutableString *_characters;
-    NSDictionary *_coreDAVParseRules;
-    CoreDAVItem *_currentlyParsingSubItem;
-    NSString *_elementName;
+@interface CoreDAVItem : NSObject <CoreDAVItem> {
+    NSMutableSet *_attributes;
+    NSMutableArray *_extraChildItems;
+    NSString *_name;
     NSString *_nameSpace;
-    NSDictionary *_nodeAttributes;
-    CoreDAVItem *_parent;
-    SEL _parentSetter;
-    NSMutableDictionary *_parseRuleUsageNumbers;
-    NSInteger _parsingState;
-    CoreDAVItem *_root;
-    CoreDAVParseRule *_ruleForMe;
+    NSData *_payload;
 }
 
-@property(retain) CoreDAVItem *currentlyParsingSubItem;
-@property(readonly) NSString *elementName;
-@property(readonly) NSString *nameSpace;
-@property(readonly) CoreDAVItem *parent;
+@property(retain) NSMutableSet *attributes;
+@property(retain) NSMutableArray *extraChildItems;
+@property(retain) NSString *name;
+@property(retain) NSString *nameSpace;
+@property(retain) NSData *payload;
 
-+ (BOOL)acceptsTopLevelLeaves;
-+ (BOOL)errorOnUnknownChildren;
-+ (BOOL)parsingWithSubItems;
-
-- (id)_coreDAVParseRules;
-- (void)_noteChildCascadingFailure;
-- (BOOL)_validateProperEndNameSpace:(id)arg1 elementName:(id)arg2 withParser:(id)arg3;
-- (id)copyCoreDAVParseRules;
-- (id)currentlyParsingSubItem;
+- (id)attributes;
+- (id)copyParseRules;
 - (void)dealloc;
-- (id)elementName;
-- (void)ignoreThisContent:(id)arg1;
-- (id)initWithXMLParser:(id)arg1 nameSpace:(id)arg2 elementName:(id)arg3 nodeAttributes:(id)arg4 root:(id)arg5 parent:(id)arg6 parentSetter:(SEL)arg7 ruleForMe:(id)arg8;
+- (id)description;
+- (id)extraChildItems;
+- (void)generateItemTreeString:(id)arg1 withDepth:(NSUInteger)arg2;
+- (id)generateItemTreeString;
+- (id)generateStandardItemStringWithDepth:(NSUInteger)arg1;
+- (id)generateXMLString;
+- (id)hashString;
+- (id)init;
+- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
+- (id)name;
 - (id)nameSpace;
-- (void)noteIgnoredItem:(id)arg1;
-- (id)parent;
-- (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
-- (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
-- (void)parser:(id)arg1 foundCDATA:(id)arg2;
-- (void)parser:(id)arg1 foundCharacters:(id)arg2;
-- (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
-- (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
-- (NSInteger)parsingState;
+- (void)parserFoundAttributes:(id)arg1;
+- (void)parserFoundPayload:(id)arg1;
+- (void)parserFoundUnrecognizedElement:(id)arg1;
+- (void)parserSuggestsBaseURL:(id)arg1;
 - (id)payload;
-- (void)resumeParsingWithParser:(id)arg1;
-- (void)setCurrentlyParsingSubItem:(id)arg1;
+- (id)payloadAsString;
+- (void)setAttributes:(id)arg1;
+- (void)setExtraChildItems:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setNameSpace:(id)arg1;
+- (void)setPayload:(id)arg1;
+- (void)setPayloadAsString:(id)arg1;
+- (BOOL)validate;
+- (void)write:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGame, NSMutableArray, NSMutableDictionary;
+@class GKGame, GKTableViewCell, NSMutableArray, NSMutableDictionary;
 
 @interface GKAchievementViewControllerPrivate : GKTableViewController {
     struct { 
@@ -11,8 +11,10 @@
         unsigned int translucentNavBar : 1; 
         unsigned int reserved : 27; 
     NSMutableArray *_achievements;
+    GKTableViewCell *_detailHeaderCell;
     } _flags;
     GKGame *_game;
+    BOOL _isInFormSheet;
     NSUInteger _numberOfAchievementsAchieved;
     NSUInteger _pointsTally;
     NSMutableDictionary *_progressImageCache;
@@ -20,31 +22,39 @@
 }
 
 @property(retain) NSArray *achievements;
+@property(retain) GKTableViewCell *detailHeaderCell;
 @property(retain) GKGame *game;
 @property(retain) NSMutableDictionary *progressImageCache;
 @property(retain) NSMutableDictionary *tokenImageCache;
+@property BOOL isInFormSheet;
 @property NSUInteger numberOfAchievementsAchieved;
 @property(getter=isPlayButtonVisible) BOOL playButtonVisible;
 @property NSUInteger pointsTally;
 
+- (void)_gkRefreshContents;
 - (id)achievements;
+- (void)addNonAchievedAchievementsTo:(id)arg1 withAchievementDescription:(id)arg2;
 - (void)dealloc;
+- (id)detailHeaderCell;
 - (id)game;
 - (id)imageForPercentAchieved:(NSInteger)arg1;
 - (id)initWithGame:(id)arg1 withFriend:(id)arg2;
 - (id)initWithGame:(id)arg1;
+- (BOOL)isInFormSheet;
 - (BOOL)isPlayButtonVisible;
 - (void)loadView;
 - (void)localPlayerDidAuthenticate:(id)arg1;
+- (float)marginForTableView:(id)arg1;
 - (NSUInteger)numberOfAchievementsAchieved;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (void)playTapped;
 - (NSUInteger)pointsTally;
 - (id)progressImageCache;
-- (void)reloadData;
 - (void)reloadView;
 - (void)setAchievements:(id)arg1;
+- (void)setDetailHeaderCell:(id)arg1;
 - (void)setGame:(id)arg1;
+- (void)setIsInFormSheet:(BOOL)arg1;
 - (void)setNumberOfAchievementsAchieved:(NSUInteger)arg1;
 - (void)setPlayButtonVisible:(BOOL)arg1;
 - (void)setPointsTally:(NSUInteger)arg1;
@@ -59,8 +69,9 @@
 - (id)tokenImageCache;
 - (id)tokenImageForAchievement:(id)arg1 image:(id)arg2;
 - (void)updatePlayerGameAchievements:(id)arg1;
-- (void)updateStatus;
+- (void)updateStatusWithError:(id)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

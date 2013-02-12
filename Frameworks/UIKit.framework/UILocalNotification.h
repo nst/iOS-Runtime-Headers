@@ -21,6 +21,7 @@
 @property BOOL hideAlertTitle;
 @property BOOL interruptAudioAndLockDevice;
 @property NSUInteger repeatInterval;
+@property BOOL resumeApplicationInBackground;
 @property BOOL showAlarmStatusBarItem;
 @property BOOL soundNameIsARingtone;
 

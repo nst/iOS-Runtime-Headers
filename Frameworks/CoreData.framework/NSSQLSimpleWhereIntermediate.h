@@ -28,6 +28,7 @@
 - (BOOL)_isNilExpression:(id)arg1;
 - (id)_lastScopedItem;
 - (id)_sqlTokenForPredicateOperator:(NSUInteger)arg1 inContext:(id)arg2;
+- (id)_upperBoundSearchStringForString:(id)arg1 context:(id)arg2;
 - (void)dealloc;
 - (id)generateSQLStringInContext:(id)arg1;
 - (id)initWithPredicate:(id)arg1 inScope:(id)arg2;

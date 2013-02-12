@@ -4,27 +4,40 @@
 
 @class UIEvent, UITouch;
 
-@interface UIGestureDelayedTouch : NSObject {
+@interface UIGestureDelayedTouch : NSObject <NSCopying> {
+    BOOL _cloneForSecondDelivery;
+    NSInteger _delayCount;
     UIEvent *_event;
-    UITouch *_savedTouchState;
+    UITouch *_stateWhenDelayed;
+    UITouch *_stateWhenDelivered;
     UITouch *_touch;
-    UITouch *_touchState;
 }
 
 @property(retain) UIEvent *event;
-@property(retain) UITouch *savedTouchState;
+@property(retain) UITouch *stateWhenDelayed;
+@property(retain) UITouch *stateWhenDelivered;
 @property(retain) UITouch *touch;
-@property(retain) UITouch *touchState;
+@property BOOL cloneForSecondDelivery;
 
+- (BOOL)cloneForSecondDelivery;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (NSInteger)decrementDelayCount;
+- (NSInteger)delayCount;
+- (id)description;
 - (id)event;
+- (void)incrementDelayCount;
 - (id)init;
-- (id)savedTouchState;
+- (NSInteger)phaseForDelivery;
+- (void)saveCurrentTouchState;
+- (void)setCloneForSecondDelivery:(BOOL)arg1;
 - (void)setEvent:(id)arg1;
-- (void)setSavedTouchState:(id)arg1;
+- (void)setStateWhenDelayed:(id)arg1;
+- (void)setStateWhenDelivered:(id)arg1;
 - (void)setTouch:(id)arg1;
-- (void)setTouchState:(id)arg1;
+- (id)stateWhenDelayed;
+- (id)stateWhenDelivered;
+- (NSInteger)timestampForDelivery;
 - (id)touch;
-- (id)touchState;
 
 @end

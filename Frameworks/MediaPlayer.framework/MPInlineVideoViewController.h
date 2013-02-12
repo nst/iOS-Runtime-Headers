@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPInlineAudioOverlay, MPInlineVideoOverlay, NSString, NSTimer, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIView<MPVideoOverlay>;
+@class MPAudioVideoRoutingPopoverController, MPInlineAudioOverlay, MPInlineVideoOverlay, NSString, NSTimer, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIView<MPVideoOverlay>, UIWindow;
 
 @interface MPInlineVideoViewController : MPVideoViewController {
     struct CGRect { 
@@ -20,6 +20,7 @@
     unsigned int _statusBarWasHidden : 1;
     unsigned int _isFullscreen : 1;
     unsigned int _animatingFullscreenTransition : 1;
+    unsigned int _animatingFullscreenTransitionToInline : 1;
     unsigned int _contentViewDidClipToBounds : 1;
     unsigned int _fullscreenViewSizeIsExternallyManaged : 1;
     unsigned int _swallowNextTapGesture : 1;
@@ -41,9 +42,11 @@
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     NSString *_playbackErrorDescription;
     NSInteger _previousStatusBarStyle;
+    MPAudioVideoRoutingPopoverController *_routePopoverController;
     UIView *_superviewBeforeFullscreen;
     UITapGestureRecognizer *_tapGestureRecognizer;
     NSInteger _videoOverlayStyle;
+    UIWindow *_windowForDisablingAutorotation;
 }
 
 @property(readonly) UIView *fullscreenView;
@@ -64,6 +67,7 @@
 - (id)_overlayView;
 - (id)_overlayViewIfLoaded;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
+- (void)_removeCoverView;
 - (void)_resetOverlayIdleTimer;
 - (void)_showOverlayAnimated:(BOOL)arg1;
 - (void)_showOverlayDidEnd;
@@ -85,11 +89,15 @@
 - (id)fullscreenView;
 - (id)init;
 - (BOOL)isFullscreen;
+- (BOOL)isTransitioningFromFullscreen;
+- (BOOL)isTransitioningToFullscreen;
 - (void)loadView;
 - (void)overlayDidDismissAlternateTracksPopover:(id)arg1;
 - (void)overlayTappedBackButton:(id)arg1;
 - (void)overlayTappedScaleModeButton:(id)arg1;
 - (id)playbackErrorDescription;
+- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAudioOverlayStyle:(NSInteger)arg1;
 - (void)setControlsNeedLayout;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;

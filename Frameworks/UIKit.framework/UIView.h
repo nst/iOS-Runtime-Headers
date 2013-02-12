@@ -129,6 +129,7 @@
 - (void)_accessibilityFinalize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityFrameForView:(id)arg1;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)_accessibilityNextElementsWithCount:(unsigned long)arg1 originalElement:(id)arg2;
 - (id)_accessibilityObscuredScreenAllowedViews;
 - (BOOL)_accessibilityObscuresScreen;
@@ -138,6 +139,7 @@
 - (id)_accessibilityRetrieveLabelFromTableViewCell;
 - (id)_accessibilitySecureTextForString:(id)arg1;
 - (BOOL)_accessibilityShouldHitTestLayers;
+- (id)_accessibilitySubviews;
 - (unsigned long long)_accessibilityTextAreaTraits;
 - (id)_accessibilityUserTestingChildren;
 - (BOOL)_accessibilityUserTestingIsBackNavButton;
@@ -193,6 +195,9 @@
 - (id)_gestureInfo;
 - (id)_gestureRecognizers;
 - (id)_gestureTargetHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_gkAddFormSheetFrameImagesAtOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_gkParentCell;
+- (id)_gkTileBackgroundImage:(id)arg1 existingTiles:(id)arg2 withBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 offset:(struct CGSize { float x1; float x2; })arg4;
 - (id)_interceptEvent:(id)arg1;
 - (id)_interceptMouseEvent:(struct __GSEvent { }*)arg1;
 - (float)_internalScaleForScale:(float)arg1;
@@ -205,7 +210,6 @@
 - (BOOL)_isRubberBanding;
 - (BOOL)_isScrollingEnabled;
 - (id)_layer;
-- (void)_layoutSublayersOfLayer:(id)arg1;
 - (struct CGSize { float x1; float x2; })_mainScreenSizeForCurrentOrientation;
 - (void)_makeSubtreePerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3 copySublayers:(BOOL)arg4;
 - (void)_makeSubtreePerformSelector:(SEL)arg1 withObject:(id)arg2;
@@ -223,6 +227,7 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_postMovedFromSuperview:(id)arg1;
 - (id)_previousKeyResponder;
+- (Class)_printFormatterClass;
 - (void)_promoteDescendantToFirstResponderIfNecessary;
 - (void)_removeAllAnimations:(BOOL)arg1;
 - (void)_removeFirstResponderFromSubtree;
@@ -244,7 +249,6 @@
 - (void)_setChargeEnabled:(BOOL)arg1;
 - (void)_setContentImage:(id)arg1;
 - (void)_setContentsTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)_setForwardedByExpandableView:(BOOL)arg1;
 - (void)_setGestureInfoZoomScale:(float)arg1;
 - (void)_setInterceptMouseEvent:(BOOL)arg1;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
@@ -272,6 +276,7 @@
 - (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (void)_updateNeedsDisplayOnBoundsChange;
 - (BOOL)_usesDifferentHitTestForGestures;
+- (id)_viewControllerForAncestor;
 - (id)_viewDelegate;
 - (id)_viewIndexPath;
 - (void)_willMoveToWindow:(id)arg1 withAncestorView:(id)arg2;
@@ -285,15 +290,7 @@
 - (void)_zoomToScrollPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 event:(struct __GSEvent { }*)arg4;
 - (void)_zoomToWindowPoint:(struct CGPoint { float x1; float x2; })arg1 scale:(float)arg2 duration:(float)arg3 constrainScrollPoint:(BOOL)arg4 event:(struct __GSEvent { }*)arg5;
 - (BOOL)_zoomWithEvent:(struct __GSEvent { }*)arg1;
-- (id)abColorForProperty:(id)arg1 variety:(id)arg2 orientation:(NSInteger)arg3;
-- (id)abColorForProperty:(id)arg1 variety:(id)arg2;
-- (float)abFloatForProperty:(id)arg1 variety:(id)arg2 orientation:(NSInteger)arg3;
-- (float)abFloatForProperty:(id)arg1 variety:(id)arg2;
-- (id)abFontForProperty:(id)arg1 variety:(id)arg2 orientation:(NSInteger)arg3;
-- (id)abFontForProperty:(id)arg1 variety:(id)arg2;
 - (id)abIndexPathOfSubview:(id)arg1;
-- (struct CGSize { float x1; float x2; })abSizeForProperty:(id)arg1 variety:(id)arg2 orientation:(NSInteger)arg3;
-- (struct CGSize { float x1; float x2; })abSizeForProperty:(id)arg1 variety:(id)arg2;
 - (id)abSubviewAtIndexPath:(id)arg1;
 - (id)accessibilityContainer;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
@@ -341,6 +338,7 @@
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forViewPrintFormatter:(id)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)enabledGestures;
 - (void)encodeWithCoder:(id)arg1;
@@ -348,7 +346,6 @@
 - (void)exchangeSubviewAtIndex:(NSInteger)arg1 withSubviewAtIndex:(NSInteger)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extent;
 - (void)fadeToAlpha:(float)arg1 withDuration:(float)arg2;
-- (id)findSubviewWithClass:(Class)arg1;
 - (id)firstLabelSubview;
 - (id)firstScrollViewDescendant;
 - (void)forceDisplayIfNeeded;
@@ -389,6 +386,7 @@
 - (id)layer;
 - (void)layoutBelowIfNeeded;
 - (void)layoutIfNeeded;
+- (void)layoutSublayersOfLayer:(id)arg1;
 - (void)layoutSubviews;
 - (void)movedFromSuperview:(id)arg1;
 - (void)movedFromWindow:(id)arg1;
@@ -487,6 +485,7 @@
 - (id)valueForGestureAttribute:(NSInteger)arg1;
 - (void)viewDidMoveToSuperview;
 - (struct CGPoint { float x1; float x2; })viewFrameOrigin;
+- (id)viewPrintFormatter;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (id)viewWithTag:(NSInteger)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;

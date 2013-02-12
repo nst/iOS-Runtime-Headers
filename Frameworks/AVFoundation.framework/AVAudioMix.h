@@ -10,9 +10,10 @@
 
 @property(copy,readonly) NSArray *inputParameters;
 
-- (id)_audioVolumeCurveForTrack:(NSInteger)arg1;
+- (id)_audioVolumeCurveForTrackID:(NSInteger)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)finalize;
 - (id)init;
 - (id)inputParameters;

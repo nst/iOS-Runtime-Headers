@@ -12,5 +12,6 @@
 - (id)fileName;
 - (unsigned long long)fileSize;
 - (id)name;
+- (id)type;
 
 @end

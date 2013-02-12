@@ -5,8 +5,10 @@
 @interface UIImageViewAccessibility_super : UIAccessibilitySafeCategory {
 }
 
+- (BOOL)_accessibilityIgnoresMouseEvents;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
+- (id)description;
 - (id)initWithImage:(id)arg1;
 
 @end

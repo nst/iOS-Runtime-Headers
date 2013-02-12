@@ -3,20 +3,35 @@
  */
 
 @interface ML3MusicLibrary_SQLiteDatabaseContext : NSObject {
+    unsigned int _isInTransaction : 1;
+    unsigned int _transactionHasChanges : 1;
+    unsigned int _transactionHasNonContentsChanges : 1;
     struct sqlite3 {} **_dbStack;
     NSUInteger _dbStackCurrentIndex;
     void *_iTunesExtensions;
     struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
+    struct __CFDictionary { } *_statementCache;
 }
 
 @property(readonly) sqlite3 *db;
 @property(readonly) iPhoneSortKeyBuilder *sortKeyBuilder;
+@property BOOL isInTransaction;
+@property BOOL transactionHasChanges;
+@property BOOL transactionHasNonContentsChanges;
 
 - (struct sqlite3 { }*)db;
 - (void)dealloc;
+- (BOOL)executeSQL:(id)arg1;
 - (id)initWithDB:(struct sqlite3 { }*)arg1;
+- (BOOL)isInTransaction;
 - (void)popDB;
 - (void)pushDB:(struct sqlite3 { }*)arg1;
+- (void)setIsInTransaction:(BOOL)arg1;
+- (void)setTransactionHasChanges:(BOOL)arg1;
+- (void)setTransactionHasNonContentsChanges:(BOOL)arg1;
 - (struct iPhoneSortKeyBuilder { }*)sortKeyBuilder;
+- (struct sqlite3_stmt { }*)statementForSQL:(id)arg1;
+- (BOOL)transactionHasChanges;
+- (BOOL)transactionHasNonContentsChanges;
 
 @end

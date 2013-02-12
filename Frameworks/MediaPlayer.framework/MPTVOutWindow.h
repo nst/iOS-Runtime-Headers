@@ -13,6 +13,7 @@
 @property(retain) MPVideoView *videoView;
 
 - (void)_playbackStateChanged:(id)arg1;
+- (void)_setupTargetScreen:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setVideoView:(id)arg1;

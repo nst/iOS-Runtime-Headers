@@ -31,13 +31,20 @@
 - (void)dealloc;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)getObjects:(id*)arg1;
+- (NSUInteger)indexOfManagedObjectForObjectID:(id)arg1;
+- (NSUInteger)indexOfObject:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (NSUInteger)indexOfObject:(id)arg1;
+- (NSUInteger)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (NSUInteger)indexOfObjectIdenticalTo:(id)arg1;
 - (id)initWithObjects:(const id*)arg1 count:(NSUInteger)arg2;
 - (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2 andFlags:(NSUInteger)arg3;
+- (id)managedObjectIDAtIndex:(NSUInteger)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(NSUInteger)arg1;
 - (void)release;
 - (id)retain;
 - (NSUInteger)retainCount;
+- (id)subarrayWithRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 
 @end

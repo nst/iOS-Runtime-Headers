@@ -40,6 +40,7 @@
 - (id)accountWithIdentifier:(id)arg1;
 - (id)accountsWithTypes:(id)arg1 withLoader:(id)arg2;
 - (id)accountsWithTypes:(id)arg1;
+- (void)addChild:(id)arg1 toAccount:(id)arg2;
 - (id)allBasicAccounts;
 - (id)allBasicSyncableAccounts;
 - (id)allMailAccounts;
@@ -62,6 +63,8 @@
 - (id)initWithAccounsInfoArray:(id)arg1;
 - (void)insertAccount:(id)arg1;
 - (id)legacyAccounts;
+- (void)removeChildWithIdentifier:(id)arg1 fromAccount:(id)arg2;
+- (void)replaceAccount:(id)arg1 withAccount:(id)arg2;
 - (void)replaceAccountsWithTypes:(id)arg1 withAccounts:(id)arg2;
 - (void)saveAllAccounts;
 - (void)setDataVersion:(NSUInteger)arg1;

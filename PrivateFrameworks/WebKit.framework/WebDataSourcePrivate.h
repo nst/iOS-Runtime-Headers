@@ -415,7 +415,11 @@
             struct RefPtr<WebCore::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
-        } x23; struct NavigationAction { 
+        } x23; struct String { 
+            struct RefPtr<WebCore::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } x24; struct NavigationAction { 
             struct KURL { 
                 struct String { 
                     struct RefPtr<WebCore::StringImpl> { 
@@ -439,7 +443,7 @@
             struct RefPtr<WebCore::Event> { 
                 struct Event {} *m_ptr; 
             } m_event; 
-        } x24; struct ResourceRequest { 
+        } x25; struct ResourceRequest { 
             struct KURL { 
                 struct String { 
                     struct RefPtr<WebCore::StringImpl> { 
@@ -514,13 +518,13 @@
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
-        } x25; struct Vector<WebCore::ResourceResponse,0ul> { 
+        } x26; struct Vector<WebCore::ResourceResponse,0ul> { 
             NSUInteger m_size; 
             struct VectorBuffer<WebCore::ResourceResponse,0ul> { 
                 struct ResourceResponse {} *m_buffer; 
                 NSUInteger m_capacity; 
             } m_buffer; 
-        } x26; void*x27; struct HashMap<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > > { 
+        } x27; void*x28; struct HashMap<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > > { 
             struct HashTable<WTF::RefPtr<WebCore::ResourceLoader>,std::pair<WTF::RefPtr<WebCore::ResourceLoader>, WTF::RefPtr<WebCore::SubstituteResource> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::ResourceLoader>, WTF::RefPtr<WebCore::SubstituteResource> > >,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >, WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
                 struct pair<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource> > {} *m_table; 
                 NSInteger m_tableSize; 
@@ -528,7 +532,7 @@
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x28; struct Timer<WebCore::DocumentLoader> { 
+        } x29; struct Timer<WebCore::DocumentLoader> { 
             int (**_vptr$TimerBase)(); 
             double m_nextFireTime; 
             double m_repeatInterval; 
@@ -538,11 +542,11 @@
             struct { 
                 void**__pfn; 
             } m_function; 
-        } x29; struct OwnPtr<WebCore::ArchiveResourceCollection> { 
+        } x30; struct OwnPtr<WebCore::ArchiveResourceCollection> { 
             struct ArchiveResourceCollection {} *m_ptr; 
-        } x30; struct RefPtr<WebCore::SharedBuffer> { 
+        } x31; struct RefPtr<WebCore::SharedBuffer> { 
             struct SharedBuffer {} *m_ptr; 
-        } x31; struct HashSet<WebCore::String,WebCore::StringHash,WTF::HashTraits<WebCore::String> > { 
+        } x32; struct HashSet<WebCore::String,WebCore::StringHash,WTF::HashTraits<WebCore::String> > { 
             struct HashTable<WebCore::String,WebCore::String,WTF::IdentityExtractor<WebCore::String>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
                 struct String {} *m_table; 
                 NSInteger m_tableSize; 
@@ -550,23 +554,23 @@
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x32; struct Vector<WebCore::String,0ul> { 
+        } x33; struct Vector<WebCore::String,0ul> { 
             NSUInteger m_size; 
             struct VectorBuffer<WebCore::String,0ul> { 
                 struct String {} *m_buffer; 
                 NSUInteger m_capacity; 
             } m_buffer; 
-        } x33; struct String { 
+        } x34; struct String { 
             struct RefPtr<WebCore::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
-        } x34; void*x35; struct OwnPtr<WebCore::ApplicationCacheHost> { 
+        } x35; void*x36; struct OwnPtr<WebCore::ApplicationCacheHost> { 
             struct ApplicationCacheHost {} *m_ptr; 
-        } x36; id x37; void*x38; void*x39; void*x40; unsigned int x41/* : ? */; void*x42; void*x43; void*x44; void*x45; unsigned short x46; out void*x47; const BOOL x48; void*x49; void*x50; void*x51; struct RetainPtr<objc_object*> { 
+        } x37; id x38; void*x39; void*x40; void*x41; unsigned int x42/* : ? */; void*x43; void*x44; void*x45; void*x46; unsigned short x47; out void*x48; const BOOL x49; void*x50; void*x51; void*x52; struct RetainPtr<objc_object*> { 
             id m_ptr; 
-        } x52; struct RetainPtr<objc_object*> { 
+        } x53; struct RetainPtr<objc_object*> { 
             id m_ptr; 
-        } x53; struct HashSet<long unsigned int,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
+        } x54; struct HashSet<long unsigned int,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
             struct HashTable<long unsigned int,long unsigned int,WTF::IdentityExtractor<long unsigned int>,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
                 unsigned long *m_table; 
                 NSInteger m_tableSize; 
@@ -574,7 +578,8 @@
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x54; } *loader;
+    BOOL includedInWebKitStatistics;
+        } x55; } *loader;
     <WebDocumentRepresentation> *representation;
     BOOL representationFinishedLoading;
 }

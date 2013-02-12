@@ -10,14 +10,13 @@
 @property(getter=_playbackItem,readonly) OpaqueFigPlaybackItem *playbackItem;
 
 - (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(NSInteger*)arg1;
-- (id)_dictionaryOfSpecialTestsOfKeys;
+- (id)_dictionaryOfSpecialGettersForKeyValueStatus;
 - (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
 - (BOOL)_inspectionRequiresAFormatReader;
-- (BOOL)_loadValuesForKeys:(id)arg1;
-- (id)_lyrics;
+- (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (id)_playbackItemPropertiesForKeys:(id)arg1;
-- (void)_removePlaybackItemNotifications;
+- (void)_removeFigObjectNotifications;
 - (id)assetInspector;
 - (void)cancelLoading;
 - (void)dealloc;

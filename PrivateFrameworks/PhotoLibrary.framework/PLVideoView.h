@@ -39,6 +39,7 @@
     unsigned int _createPreviewPosterFrame : 1;
     unsigned int _startedDeliveringNotificationsToMainThread : 1;
     unsigned int _isTrimming : 1;
+    unsigned int _wasTrimmedInPlace : 1;
     unsigned int _remakingFailed : 1;
     MLPhotoBakedThumbnails *_bakedLandscapeThumbnails;
     MLPhotoBakedThumbnails *_bakedPortraitThumbnails;
@@ -246,6 +247,7 @@
 - (void)viewDidAppear;
 - (void)viewDidDisappear;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)wasTrimmedInPlace;
 - (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 - (void)willMoveToSuperview:(id)arg1;
 

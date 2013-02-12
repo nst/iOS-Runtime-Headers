@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoOverlayDelegate>, MPDetailSlider, MPItem, MPVideoViewController, NSMutableDictionary;
+@class <MPVideoOverlayDelegate>, MPAVItem, MPDetailSlider, MPVideoViewController, NSMutableDictionary;
 
 @interface MPVideoOverlay : UIView <MPVideoOverlay, MPDetailSliderDelegate> {
     BOOL _controlsAutohideDisabled;
@@ -10,7 +10,7 @@
     NSUInteger _desiredParts;
     NSUInteger _disabledParts;
     NSInteger _interfaceOrientation;
-    MPItem *_item;
+    MPAVItem *_item;
     double _lastTickTime;
     MPDetailSlider *_scrubControl;
     NSMutableDictionary *_tickTimeEvents;
@@ -20,8 +20,9 @@
 }
 
 @property <MPVideoOverlayDelegate> *delegate;
-@property(retain) MPItem *item;
+@property(retain) MPAVItem *item;
 @property MPVideoViewController *videoViewController;
+@property BOOL allowsWirelessPlayback;
 @property NSUInteger desiredParts;
 @property NSUInteger disabledParts;
 @property NSInteger interfaceOrientation;
@@ -31,6 +32,7 @@
 - (void)_itemDurationDidChangeNotification:(id)arg1;
 - (void)_tickNotification:(id)arg1;
 - (void)_updateTimeBasedValues;
+- (BOOL)allowsWirelessPlayback;
 - (void)cancelPreviousPerformTickEventsForSelector:(SEL)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -48,6 +50,7 @@
 - (id)item;
 - (void)layoutSubviews;
 - (void)performSelector:(SEL)arg1 whenTickingPastTime:(double)arg2;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(NSUInteger)arg1;

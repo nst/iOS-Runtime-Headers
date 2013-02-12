@@ -11,6 +11,8 @@
     BOOL _suppressGlow;
 }
 
+- (id)_baseImageForStyle:(NSInteger)arg1;
+- (id)_glowImageForStyle:(NSInteger)arg1;
 - (id)_imageNameForStyle:(NSInteger)arg1;
 - (void)_setGlowAnimationEnabled:(BOOL)arg1 waitForNextCycle:(BOOL)arg2;
 - (void)_startGlowAnimationWaitForNextCycle:(BOOL)arg1;

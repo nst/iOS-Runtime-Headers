@@ -4,8 +4,9 @@
 
 @class MPAVController;
 
-@interface MPQueueFeeder : AVQueueFeeder <NSCopying> {
+@interface MPQueueFeeder : AVQueueFeeder {
     MPAVController *_avController;
+    BOOL _deallocating;
     BOOL _fullScreenPlaybackQueue;
     BOOL _isSourceChangeInProgress;
     struct __CFSet { } *_itemsWithReferencesToClear;
@@ -18,6 +19,7 @@
 @property MPAVController *AVController;
 @property(retain,readonly) NSDictionary *preferredLanguages;
 @property(retain) <NSObject> *representedObject;
+@property(readonly) BOOL canShuffle;
 @property BOOL fullScreenPlaybackQueue;
 @property BOOL isSourceChangeInProgress;
 @property(readonly) Class itemClass;
@@ -36,15 +38,14 @@
 - (void)addReferenceToItem:(id)arg1;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (void)beginSourceChange;
+- (BOOL)canShuffle;
 - (void)clearReferencesToItem:(id)arg1;
 - (void)commitSourceChangeWithStartQueueIndex:(NSUInteger)arg1;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(NSUInteger)arg1;
 - (void)contentsDidChangeByInsertingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)copyRawItemAtIndex:(NSUInteger)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)dequeueOnDemandItem;
 - (id)errorResolverForItem:(id)arg1;
 - (BOOL)fullScreenPlaybackQueue;
 - (BOOL)isSourceChangeInProgress;
@@ -52,11 +53,12 @@
 - (id)itemForIndex:(NSUInteger)arg1;
 - (NSUInteger)itemTypeForIndex:(NSUInteger)arg1;
 - (id)localizedPositionInPlaylistString:(id)arg1;
-- (NSUInteger)onDemandItemIndex;
+- (unsigned long long)persistentIDForIndex:(NSUInteger)arg1;
 - (id)playbackInfoAtIndex:(NSUInteger)arg1;
 - (id)preferredLanguages;
 - (NSUInteger)realRepeatType;
 - (NSUInteger)realShuffleType;
+- (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
 - (BOOL)reloadWithDataSource:(id)arg1;
 - (NSUInteger)repeatType;
 - (id)representedObject;

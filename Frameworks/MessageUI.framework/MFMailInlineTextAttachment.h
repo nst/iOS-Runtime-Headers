@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSData, NSString;
+@class MimeTextAttachment, NSData, NSString;
 
 @interface MFMailInlineTextAttachment : MessageTextAttachment {
     struct CGSize { 
@@ -20,18 +20,18 @@
     unsigned int _isBeingLoaded : 1;
     unsigned int _cachedDataIsPlaceholder : 1;
     unsigned int _shouldNotLoadFully : 1;
+    unsigned int _shouldNotDisplayInline : 1;
+    unsigned int _hasBeenDownloaded : 1;
     NSData *_cachedImageData;
     } _cachedImageSize;
     NSString *_cachedMimeType;
     float _constrainedWidth;
     NSString *_encodingGuess;
-    NSString *_mimePartNumber;
     NSUInteger _numBytes;
+    MimeTextAttachment *_original;
     } _pluginFrame;
-    NSUInteger _shouldNotDisplayInline;
 }
 
-@property(retain) NSString *mimePartNumber;
 @property CGRect pluginFrame;
 
 - (void)_generateInlineData;
@@ -42,17 +42,17 @@
 - (NSUInteger)approximateSize;
 - (float)constrainedWidth;
 - (void)dealloc;
+- (id)fileWrapperForcingDownload:(BOOL)arg1;
+- (BOOL)hasBeenDownloaded;
 - (struct CGSize { float x1; float x2; })imageDimensions;
 - (id)initWithMimeTextAttachment:(id)arg1 shouldDownload:(BOOL)arg2 andMessageBody:(id)arg3;
 - (id)initWithWrapper:(id)arg1 shouldDownload:(BOOL)arg2;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2 ignoreCachedData:(BOOL)arg3;
 - (void)inlineDisplayData:(id*)arg1 mimeType:(id*)arg2;
 - (BOOL)isDisplayableInline;
-- (id)mimePartNumber;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pluginFrame;
 - (void)setDisplayableInline:(BOOL)arg1;
 - (void)setFileWrapper:(id)arg1;
-- (void)setMimePartNumber:(id)arg1;
 - (void)setPluginFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setupForComposition;
 - (BOOL)shouldDownloadAttachmentOnDisplay;

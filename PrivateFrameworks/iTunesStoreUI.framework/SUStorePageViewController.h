@@ -33,21 +33,25 @@
 @property(readonly) SUPageSectionGroup *sectionGroup;
 @property(readonly) UISegmentedControl *sectionSegmentedControl;
 @property(retain) NSString *urlBagKey;
+@property(readonly) CGRect documentBounds;
 @property(getter=isExternalRequest) BOOL externalRequest;
 @property BOOL needsAuthentication;
 
 + (void)_initializeSafeCategory;
 
 - (id)URLRequest;
+- (id)_activeChildViewController;
 - (id)_activePageSection;
 - (void)_applyPropertiesToViewController:(id)arg1;
 - (void)_delayedFetchPage;
 - (void)_dismissNavigationMenuViewController;
+- (void)_documentBoundsChangeNotification:(id)arg1;
 - (double)_expirationTime;
 - (void)_fetchPage:(BOOL)arg1;
 - (void)_finishHandlingFailure;
 - (void)_finishSuccessfulLoad;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForActiveViewController;
+- (void)_handleFailureWithError:(id)arg1;
 - (void)_handleViewControllerBecameReady:(id)arg1;
 - (BOOL)_isBlankPage;
 - (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
@@ -56,12 +60,14 @@
 - (void)_navigationButtonAction:(id)arg1;
 - (void)_navigationMenuButtonAction:(id)arg1;
 - (id)_newSegmentedControlWithItems:(id)arg1;
+- (void)_performActionForProtocolButton:(id)arg1;
 - (void)_reloadForAppearance:(BOOL)arg1;
 - (void)_reloadNavigationBar;
 - (void)_reloadNavigationButtons;
 - (void)_reloadNavigationMenus;
 - (void)_reloadSearchFieldWithSection:(id)arg1;
 - (void)_reloadSectionsControlWithGroup:(id)arg1;
+- (BOOL)_reloadWithURLRequest:(id)arg1 preserveSectionControl:(BOOL)arg2;
 - (void)_repositionForChildViewController:(id)arg1;
 - (void)_sectionControlAction:(id)arg1;
 - (void)_sendFailureAfterDialogsFinished:(id)arg1;
@@ -88,6 +94,7 @@
 - (double)defaultPNGExpirationTime;
 - (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (id)displayedURL;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
 - (void)handleApplicationURL:(id)arg1;
 - (void)handleFailureWithError:(id)arg1;
 - (id)init;
@@ -98,11 +105,13 @@
 - (BOOL)loadMoreWithURL:(id)arg1;
 - (void)loadView;
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(NSInteger)arg2;
+- (void)menuViewController:(id)arg1 didTapButton:(id)arg2;
 - (void)menuViewControllerDidCancel:(id)arg1;
 - (id)navigationItemForScriptInterface;
 - (BOOL)needsAuthentication;
 - (id)newFetchOperation;
 - (id)newPlaceholderViewController;
+- (id)newRotationController;
 - (id)newViewControllerForPage:(id)arg1 ofType:(NSInteger)arg2 returningError:(id*)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
@@ -118,6 +127,7 @@
 - (void)resetNavigationItem:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
 - (id)searchFieldController;
+- (void)searchFieldControllerDidChange:(id)arg1;
 - (id)sectionGroup;
 - (id)sectionSegmentedControl;
 - (void)setAuthenticationContext:(id)arg1;
@@ -137,6 +147,7 @@
 - (id)urlBagKey;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (BOOL)viewIsReady;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;

@@ -127,6 +127,7 @@
 - (id)_accessibilityRetrieveTableViewCellText;
 - (id)_accessibilityRetrieveTableViewIvarsText;
 - (void)_accessibilityReuseChildren:(id)arg1 forMockParent:(id)arg2;
+- (id)_accessibilitySubviewsForAdding;
 - (void)_accessibilitySwitchMockView:(id)arg1 toParent:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityTextElementFrame;
 - (id)_accessibilityTextElementText;
@@ -258,6 +259,7 @@
 - (void)deleteConfirmationControlWasCancelled:(id)arg1;
 - (void)deleteConfirmationControlWasClicked:(id)arg1;
 - (id)detailTextLabel;
+- (void)didAddSubview:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)didTransitionToState:(NSUInteger)arg1;
 - (BOOL)drawingEnabled;
@@ -316,6 +318,7 @@
 - (id)selectedBackgroundView;
 - (void)selectedBackgroundViewChange:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)selectedImage;
+- (id)selectedOverlayView;
 - (id)selectedTextColor;
 - (float)selectionFadeDuration;
 - (float)selectionPercent;
@@ -400,6 +403,7 @@
 - (void)unregisterMockChild:(id)arg1;
 - (BOOL)wasSwiped;
 - (void)willMoveToSuperview:(id)arg1;
+- (void)willRemoveSubview:(id)arg1;
 - (void)willTransitionToState:(NSUInteger)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class ICCameraDevice, NSMutableArray, NSMutableDictionary, PLCameraImportQueue, PLMutableCameraImportQueue;
+@class ICCameraDevice, NSMutableArray, NSMutableDictionary, PLCameraImportQueue, PLImportFileManager, PLMutableCameraImportQueue;
 
 @interface PLCameraImporter : NSObject <ICDeviceDelegate, ICCameraDeviceDelegate> {
     BOOL _autosplitEvents;
@@ -11,12 +11,15 @@
     PLCameraImportQueue *_deleteQueue;
     PLCameraImportQueue *_downloadQueue;
     NSInteger _eventSplitGranularity;
+    PLImportFileManager *_importFileManager;
     BOOL _importInProgress;
     PLCameraImportQueue *_importQueue;
     NSInteger _importSessionIdentifier;
     NSMutableArray *_items;
     NSMutableDictionary *_itemsMapping;
+    NSMutableArray *_orphanItems;
     NSMutableDictionary *_parentFolderMapping;
+    BOOL _stopAfterNextItemImport;
     PLMutableCameraImportQueue *_thumbnailQueue;
 }
 
@@ -74,6 +77,7 @@
 - (id)importItemForCameraFile:(id)arg1;
 - (void)importItems:(id)arg1;
 - (id)initWithDevice:(id)arg1 delegate:(id)arg2;
+- (BOOL)isImporting;
 - (id)items;
 - (id)itemsMapping;
 - (void)readImportItems;

@@ -8,6 +8,8 @@
     NSMutableArray *_observers;
 }
 
+@property(retain) NSArray *observers;
+
 - (void)_objectDidPostNotification:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
@@ -15,5 +17,6 @@
 - (id)init;
 - (id)observers;
 - (void)removeObserver:(id)arg1;
+- (void)setObservers:(id)arg1;
 
 @end

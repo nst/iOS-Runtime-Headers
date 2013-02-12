@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeViewDelegate>, <MFMailPopoverManagerDelegate>, ABPeoplePickerNavigationController, MFComposeBodyField, MFComposeFromView, MFComposeHeaderView, MFComposeScrollView, MFComposeSubjectView, MFContactsSearchManager, MFContactsSearchResultsModel, MFFromAddressViewController, NSInvocation, NSNumber, UIBarButtonItem, UIKeyboard, UINavigationItem, UIPickerView, UIResponder, UITableView, UITextContentView, UIToolbar, UIView, _MFComposeRecipientView;
+@class <MFMailComposeViewDelegate>, <MFMailPopoverManagerDelegate>, ABPeoplePickerNavigationController, MFComposeBodyField, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeRecipientAtom, MFComposeScrollView, MFComposeSubjectView, MFContactsSearchManager, MFContactsSearchResultsModel, MFFromAddressViewController, NSInvocation, NSNumber, UIBarButtonItem, UIKeyboard, UINavigationItem, UIPickerView, UIResponder, UITableView, UITextContentView, UIToolbar, UIView, _MFComposeRecipientView;
 
 @interface MFMailComposeView : UITransitionView <UITextContentViewDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MFContactsSearchConsumer, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, MFComposeBodyFieldDelegate, _MFComposeRecipientViewDelegate> {
     unsigned int _scheduledDeferedProgressMonitoring : 1;
@@ -17,6 +17,7 @@
     unsigned int _isRotating : 1;
     unsigned int _isClosing : 1;
     unsigned int _isShowingFromAddressPickerWheel : 1;
+    unsigned int _isShowingImageResizingBar : 1;
     _MFComposeRecipientView *_activeRecipientView;
     BOOL _animationDisabled;
     _MFComposeRecipientView *_bccField;
@@ -31,6 +32,8 @@
     NSInvocation *_delayedPopoverInvocation;
     SEL _dismissPeoplePickerAction;
     id _dismissPeoplePickerTarget;
+    SEL _dismissPersonCardAction;
+    id _dismissPersonCardTarget;
     float _finalCCHeight;
     float _finalToHeight;
     UIResponder *_firstResponderBeforeSheet;
@@ -38,12 +41,13 @@
     MFFromAddressViewController *_fromAddressViewController;
     MFComposeFromView *_fromField;
     UIView *_headerView;
+    MFComposeImageSizeView *_imageSizeField;
     BOOL _isForEditing;
     UIKeyboard *_keyboard;
     UIToolbar *_keyboardButtonBar;
     _MFComposeRecipientView *_lastChangedRecipientView;
     <MFMailComposeViewDelegate> *_mailComposeViewDelegate;
-    MFComposeHeaderView *_multiField;
+    MFComposeMultiView *_multiField;
     UINavigationItem *_navigationItem;
     NSInteger _nextOrientation;
     float _offsetBeforeSearch;
@@ -55,6 +59,7 @@
     id _presentPeoplePickerTarget;
     SEL _presentPersonCardAction;
     id _presentPersonCardTarget;
+    MFComposeRecipientAtom *_savedAddressAtom;
     MFContactsSearchResultsModel *_searchResultsModel;
     UITableView *_searchResultsTable;
     NSNumber *_searchTaskID;
@@ -81,7 +86,7 @@
 - (void)_finishUpRotationToInterfaceOrientation:(NSInteger)arg1;
 - (BOOL)_fixUpView:(id)arg1 changingView:(id)arg2 toSize:(struct CGSize { float x1; float x2; })arg3 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForFromAddressPicker;
-- (void)_getLabel:(id*)arg1 andAccountDescription:(id*)arg2 forState:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; })arg3;
+- (void)_getLabel:(id*)arg1 andAccountDescription:(id*)arg2 currentScaleImageSize:(id*)arg3 forState:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; })arg4;
 - (float)_heightForBottomView;
 - (void)_keyboardAnimationCompleted;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrameForInterfaceOrientation:(NSInteger)arg1 orderedIn:(BOOL)arg2;
@@ -99,7 +104,8 @@
 - (void)_setupField:(id)arg1 isNew:(BOOL)arg2 changingView:(id)arg3 toSize:(struct CGSize { float x1; float x2; })arg4 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5 visible:(BOOL)arg6;
 - (void)_setupField:(id*)arg1 withLabel:(id)arg2 navTitle:(id)arg3 property:(NSInteger)arg4 changingView:(id)arg5 toSize:(struct CGSize { float x1; float x2; })arg6 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg7 visible:(BOOL)arg8;
 - (void)_setupFromFieldChangingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 visible:(BOOL)arg4;
-- (void)_setupMultiFieldWithState:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; })arg1 changingView:(id)arg2 toSize:(struct CGSize { float x1; float x2; })arg3 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
+- (void)_setupImageSizeFieldChangingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 visible:(BOOL)arg4;
+- (void)_setupMultiFieldWithState:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; })arg1 changingView:(id)arg2 toSize:(struct CGSize { float x1; float x2; })arg3 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (void)_setupSubjectField:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (NSInteger)activeAddressField;
 - (BOOL)allowSend;
@@ -108,6 +114,7 @@
 - (id)bccField;
 - (void)beganNetworkActivity;
 - (id)bodyField;
+- (id)bodyScroller;
 - (id)bodyTextView;
 - (id)bottomView;
 - (id)ccField;
@@ -137,18 +144,18 @@
 - (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (void)dismissAlertSheet:(id)arg1 animate:(BOOL)arg2 willClose:(BOOL)arg3;
 - (void)dismissPeoplePicker;
+- (void)dismissPersonCard;
 - (void)displayAlertSheet:(id)arg1;
 - (BOOL)endEditing:(BOOL)arg1;
 - (void)endedNetworkActivity;
 - (void)finishedSearchingForType:(NSInteger)arg1;
 - (void)finishedTaskWithID:(id)arg1;
-- (void)flushRecipients;
 - (void)fromAddressPickerNeedsToBeRefreshed;
 - (void)fromAddressPickerPopoverWasDismissed;
 - (id)fromField;
-- (void)getOptionalFieldState:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; }*)arg1;
-- (void)hidePersonCardViewController:(id)arg1;
+- (void)getOptionalFieldState:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; }*)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)imageSizeField;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 navigationItem:(id)arg2 options:(NSUInteger)arg3 delegate:(id)arg4;
 - (BOOL)isForEditing;
 - (BOOL)isFromAddressPickerVisible;
@@ -156,6 +163,7 @@
 - (BOOL)isLoading;
 - (id)keyboard;
 - (void)layoutSubviews;
+- (id)multiField;
 - (void)parentDidClose;
 - (void)parentWillClose;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
@@ -180,9 +188,10 @@
 - (void)setCloseTarget:(id)arg1 action:(SEL)arg2;
 - (void)setComposeViewDelegate:(id)arg1;
 - (void)setDismissPeoplePickerTarget:(id)arg1 action:(SEL)arg2;
+- (void)setDismissPersonCardTarget:(id)arg1 action:(SEL)arg2;
 - (void)setEnabled:(BOOL)arg1 changingUI:(BOOL)arg2;
 - (void)setFromAddressPickerVisible:(BOOL)arg1;
-- (void)setInitialInterfaceOrientation:(NSInteger)arg1;
+- (void)setInterfaceOrientation:(NSInteger)arg1;
 - (void)setIsForEditing:(BOOL)arg1;
 - (void)setIsLoading:(BOOL)arg1;
 - (void)setKeyboardVisible:(BOOL)arg1 animate:(BOOL)arg2;
@@ -204,6 +213,7 @@
 - (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)textContentView:(id)arg1 shouldScrollForPendingContentSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)toField;
+- (void)toggleImageSizeFieldIfNecessary;
 - (void)transitionViewDidComplete:(id)arg1;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;

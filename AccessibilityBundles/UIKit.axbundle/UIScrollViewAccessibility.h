@@ -7,16 +7,22 @@
 
 + (void)_initializeSafeCategory;
 
+- (void)_accessibilityInformDelegateScrollViewDidEndDecelerating;
 - (BOOL)_accessibilityIsScrollAncestor;
 - (float)_accessibilityScrollAnimationDurationDelay;
 - (float)_accessibilityScrollHeightDistance;
+- (void)_accessibilityScrollPageInDirection:(NSInteger)arg1;
 - (id)_accessibilityScrollStatus;
 - (void)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
+- (BOOL)_accessibilityScrollToTopWithAnnouncement:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityScrollViewVisibleFrame;
 - (float)_accessibilityScrollWidthDistance;
+- (BOOL)_accessibilityScrollingEnabled;
 - (void)_accessibilitySendScrollStatus;
 - (BOOL)_accessibilityShouldAnimateScroll;
 - (void)_accessibilityZoomAtPoint:(struct CGPoint { float x1; float x2; })arg1 zoomIn:(BOOL)arg2;
+- (void)_announceDelayedStatus;
+- (BOOL)_scrollToTop;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (void)accessibilityScrollDownPage;
 - (void)accessibilityScrollLeftPage;

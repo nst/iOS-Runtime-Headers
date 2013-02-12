@@ -14,6 +14,7 @@
 }
 
 @property(retain) NSData *HTTPBody;
+@property(retain) NSInputStream *HTTPBodyStream;
 @property(retain) NSString *HTTPMethod;
 @property(retain) NSArray *URLs;
 @property(retain) NSString *appleClientApplication;
@@ -30,6 +31,7 @@
 + (id)requestWithURL:(id)arg1;
 
 - (id)HTTPBody;
+- (id)HTTPBodyStream;
 - (id)HTTPMethod;
 - (NSInteger)URLBagType;
 - (id)URLs;
@@ -49,6 +51,7 @@
 - (id)initWithURL:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)newURLRequestWithURL:(id)arg1 userIdentifier:(id)arg2;
 - (id)newURLRequestWithURL:(id)arg1;
 - (id)primaryURL;
 - (id)queryStringDictionary;
@@ -59,6 +62,7 @@
 - (void)setCustomHeaders:(id)arg1;
 - (void)setExpectedContentLength:(long long)arg1;
 - (void)setHTTPBody:(id)arg1;
+- (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPMethod:(id)arg1;
 - (void)setQueryStringDictionary:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;

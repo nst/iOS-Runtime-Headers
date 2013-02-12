@@ -17,6 +17,7 @@
 
 + (id)sharedCameraImportManager;
 
+- (void)_cameraImporterDidFinishImporting:(id)arg1;
 - (void)_stopListening;
 - (void)addImporter:(id)arg1;
 - (void)dealloc;

@@ -2,24 +2,28 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImage;
+@class NSDictionary, UIImage;
 
 @interface PLCameraImage : PLPhoto {
     unsigned int _didSetPhotoData : 1;
     UIImage *_indexSheetImage;
     UIImage *_previewThumbnailImage;
+    NSDictionary *_temporaryMetadata;
 }
 
 @property(retain) UIImage *previewThumbnailImage;
+@property(retain) NSDictionary *temporaryMetadata;
 
 - (void)dealloc;
 - (BOOL)didSetPhotoData;
 - (BOOL)hasFullSizeImageData;
 - (id)imageWithFormat:(NSInteger)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)indexSheetImage;
-- (id)initWithPath:(id)arg1 thumbnailImage:(id)arg2;
+- (id)initWithPath:(id)arg1 thumbnailImage:(id)arg2 metadata:(id)arg3;
 - (id)previewThumbnailImage;
 - (void)setPhotoData;
 - (void)setPreviewThumbnailImage:(id)arg1;
+- (void)setTemporaryMetadata:(id)arg1;
+- (id)temporaryMetadata;
 
 @end

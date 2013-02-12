@@ -10,12 +10,14 @@
     NSInteger _initialSelectedIndex;
     NSInteger _location;
     NSArray *_menuItems;
+    NSArray *_navigationButtons;
     NSString *_openTitle;
 }
 
 @property(readonly) NSString *cancelTitle;
 @property(readonly) NSString *closedTitle;
 @property(readonly) NSArray *menuItems;
+@property(readonly) NSArray *navigationButtons;
 @property(readonly) NSString *openTitle;
 @property(readonly) NSInteger initialSelectedIndex;
 @property NSInteger location;
@@ -23,6 +25,7 @@
 - (void)_loadFromDictionary:(id)arg1;
 - (NSInteger)_locationForString:(id)arg1;
 - (id)_newMenuItemsFromArray:(id)arg1;
+- (id)_newNavigationButtonsFromArray:(id)arg1;
 - (id)cancelTitle;
 - (id)closedTitle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,6 +35,8 @@
 - (NSInteger)initialSelectedIndex;
 - (NSInteger)location;
 - (id)menuItems;
+- (id)navigationButtonForLocation:(id)arg1;
+- (id)navigationButtons;
 - (id)openTitle;
 - (void)setLocation:(NSInteger)arg1;
 

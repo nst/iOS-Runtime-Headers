@@ -18,6 +18,7 @@
 + (void)_initializeSafeCategory;
 
 - (BOOL)_accessibilityIsTitleElement;
+- (BOOL)_accessibilityServesAsFirstElement;
 - (void)_cleanUpCrossView;
 - (void)_crossFadeHiddingButton:(BOOL)arg1;
 - (id)_defaultFont;

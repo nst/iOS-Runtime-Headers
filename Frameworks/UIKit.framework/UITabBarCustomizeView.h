@@ -35,6 +35,7 @@
 - (void)layoutSubviews;
 - (void)setTabBar:(id)arg1 currentItems:(id)arg2 availableItems:(id)arg3;
 - (void)tabBarTouchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)tabBarTouchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)tabBarTouchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)tabBarTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

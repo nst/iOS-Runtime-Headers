@@ -7,7 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)_flipAnimationDidStop;
+- (void)_toggleCameraButtonWasPressed:(id)arg1;
 - (void)_updateOverlayControls;
 - (BOOL)_zoomSliderIsAllowedVisible;
 - (void)cameraControllerVideoCaptureDidStart:(id)arg1;

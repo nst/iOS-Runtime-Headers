@@ -38,7 +38,7 @@
 @property(retain,readonly) NSString *bundleIdentifier;
 @property(retain,readonly) NSString *bundleVersion;
 @property(retain,readonly) NSString *cacheKey;
-@property(retain) NSString *defaultCategory;
+@property(retain) NSString *defaultCategoryID;
 @property(retain,readonly) NSString *externalVersion;
 @property(retain) NSDictionary *gameDescriptor;
 @property(retain) NSDictionary *iconURLs;
@@ -74,14 +74,17 @@
 - (id)bundleVersion;
 - (id)cacheKey;
 - (void)dealloc;
-- (id)defaultCategory;
+- (id)defaultCategoryID;
+- (id)description;
 - (id)externalVersion;
 - (id)gameDescriptor;
 - (BOOL)hasAggregateLeaderboard;
 - (BOOL)hasDetails;
+- (NSUInteger)hash;
 - (id)iconURLs;
 - (id)init;
 - (id)initWithGameDescriptor:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isPrerendered;
 - (BOOL)isSandboxed;
 - (void)itemLookupRequest:(id)arg1 didFindItems:(id)arg2;
@@ -95,7 +98,7 @@
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)setAchievementDescriptions:(id)arg1;
 - (void)setAchievementDescriptionsDictionary:(id)arg1;
-- (void)setDefaultCategory:(id)arg1;
+- (void)setDefaultCategoryID:(id)arg1;
 - (void)setDetail:(id)arg1;
 - (void)setGameDescriptor:(id)arg1;
 - (void)setHasAggregateLeaderboard:(BOOL)arg1;

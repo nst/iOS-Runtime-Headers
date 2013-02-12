@@ -11,11 +11,13 @@
 @property BOOL allowsRemoteUIAccess;
 @property NSUInteger currentChapterIndex;
 @property(readonly) NSUInteger indexOfNowPlayingItem;
+@property(readonly) BOOL isNowPlayingItemFromGeniusMix;
 @property NSInteger playbackSpeed;
 @property(readonly) NSUInteger unshuffledIndexOfNowPlayingItem;
 
 + (id)applicationMusicPlayer;
 + (id)iPodMusicPlayer;
++ (void)initialize;
 + (id)runLoopForNotifications;
 + (void)setRunLoopForNotifications:(id)arg1;
 
@@ -42,6 +44,7 @@
 - (NSUInteger)indexOfNowPlayingItem;
 - (id)init;
 - (BOOL)isGeniusAvailable;
+- (BOOL)isNowPlayingItemFromGeniusMix;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(NSUInteger)arg1;
@@ -50,6 +53,7 @@
 - (NSInteger)playbackSpeed;
 - (NSInteger)playbackState;
 - (NSInteger)repeatMode;
+- (BOOL)serverIsAlive;
 - (void)setAllowsRemoteUIAccess:(BOOL)arg1;
 - (void)setCurrentChapterIndex:(NSUInteger)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;

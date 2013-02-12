@@ -18,7 +18,6 @@
 - (void)didPrepareForRemoteSelectorInvocation;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
-- (void)prepareForDecodingWithCoder:(id)arg1;
 - (BOOL)prepareForRemoteSelectorInvocation;
 - (BOOL)prepareForRemoteSelectorInvocationWithTimeout:(double*)arg1;
 - (void)serverConnectionDied;

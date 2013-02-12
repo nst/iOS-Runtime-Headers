@@ -26,6 +26,7 @@
     NSString *_otherPerson;
     NSInteger _securityLevel;
     BOOL _shouldAttemptToResume;
+    BOOL _shouldForceArchive;
     NSDate *_startDate;
     unsigned long long _totalBytes;
     NSInteger _transferState;
@@ -33,6 +34,39 @@
     BOOL _wasRegisteredAsStandalone;
     BOOL _wasSaved;
 }
+
+@property(retain) NSString *localPath; /* unknown property attribute: S_setLocalPath: */
+@property(retain) NSURL *localURL; /* unknown property attribute: S_setLocalURL: */
+@property BOOL shouldForceArchive; /* unknown property attribute: S_setForceArchive: */
+@property BOOL wasRegisteredAsStandalone; /* unknown property attribute: SsetRegisteredAsStandalone: */
+@property(retain) NSString *errorDescription; /* unknown property attribute: S_setErrorDescription: */
+@property NSInteger error; /* unknown property attribute: S_setError: */
+@property NSInteger transferState; /* unknown property attribute: S_setTransferState: */
+@property(retain) NSDate *startDate; /* unknown property attribute: S_setStartDate: */
+@property double _lastAveragedInterval; /* unknown property attribute: S_setLastAveragedInterval: */
+@property double _lastUpdatedInterval; /* unknown property attribute: S_setLastUpdatedInterval: */
+@property(retain) NSString *accountID;
+@property(retain) NSDate *createdDate;
+@property(retain,readonly) NSString *displayName;
+@property(retain) NSString *filename;
+@property(retain) NSString *guid;
+@property(retain) NSData *localBookmark;
+@property(retain,readonly) NSURL *localURLWithoutBookmarkResolution;
+@property(retain) NSString *otherPerson;
+@property(retain) NSString *type;
+@property(readonly) unsigned long long _lastAveragedBytes;
+@property unsigned long long averageTransferRate;
+@property(readonly) BOOL canBeAccepted;
+@property unsigned long long currentBytes;
+@property(readonly) BOOL existsAtLocalPath;
+@property NSUInteger hfsCreator;
+@property unsigned short hfsFlags;
+@property NSUInteger hfsType;
+@property BOOL isDirectory;
+@property BOOL isIncoming;
+@property NSInteger securityLevel;
+@property BOOL shouldAttemptToResume;
+@property unsigned long long totalBytes;
 
 + (BOOL)_doesLocalURLRequireArchiving:(id)arg1;
 + (id)_invalidCharactersForFileTransferName;
@@ -50,6 +84,8 @@
 - (void)_setDirectory:(BOOL)arg1 hfsType:(unsigned long)arg2 hfsCreator:(unsigned long)arg3 hfsFlags:(unsigned short)arg4;
 - (void)_setError:(NSInteger)arg1;
 - (void)_setErrorDescription:(id)arg1;
+- (void)_setForceArchive:(BOOL)arg1;
+- (void)_setLastAveragedInterval:(double)arg1;
 - (void)_setLastUpdatedInterval:(double)arg1;
 - (void)_setLocalPath:(id)arg1;
 - (void)_setLocalURL:(id)arg1;
@@ -80,9 +116,26 @@
 - (id)localURLWithoutBookmarkResolution;
 - (id)otherPerson;
 - (NSInteger)securityLevel;
+- (void)setAccountID:(id)arg1;
+- (void)setAverageTransferRate:(unsigned long long)arg1;
+- (void)setCreatedDate:(id)arg1;
+- (void)setCurrentBytes:(unsigned long long)arg1;
+- (void)setFilename:(id)arg1;
+- (void)setGuid:(id)arg1;
+- (void)setHfsCreator:(unsigned long)arg1;
+- (void)setHfsFlags:(unsigned short)arg1;
+- (void)setHfsType:(unsigned long)arg1;
+- (void)setIsDirectory:(BOOL)arg1;
+- (void)setIsIncoming:(BOOL)arg1;
+- (void)setLocalBookmark:(id)arg1;
+- (void)setOtherPerson:(id)arg1;
 - (void)setRegisteredAsStandalone:(BOOL)arg1;
 - (void)setSecurityLevel:(NSInteger)arg1;
+- (void)setShouldAttemptToResume:(BOOL)arg1;
+- (void)setTotalBytes:(unsigned long long)arg1;
+- (void)setType:(id)arg1;
 - (BOOL)shouldAttemptToResume;
+- (BOOL)shouldForceArchive;
 - (id)startDate;
 - (unsigned long long)totalBytes;
 - (NSInteger)transferState;

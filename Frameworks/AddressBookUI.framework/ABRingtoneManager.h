@@ -2,47 +2,61 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSDictionary;
+@class NSDictionary, NSMutableDictionary;
 
 @interface ABRingtoneManager : NSObject {
-    NSDictionary *_additionalInformation;
     id _delegate;
     NSDictionary *_iTunesRingtonesByIdentifier;
-    NSDictionary *_identifierForPath;
-    NSDictionary *_nameForIdentifier;
-    NSDictionary *_pathForIdentifier;
+    NSMutableDictionary *_textTonesByIdentifier;
 }
 
-+ (id)deviceITunesRingtoneDirectory;
-+ (id)iTunesRingtoneDirectory;
 + (id)sharedRingtoneManager;
-+ (id)systemRingtoneDirectory;
-+ (id)userRingtoneDirectory;
 
 - (id)_copyITunesRingtonesFromManifestPath:(id)arg1 mediaDirectoryPath:(id)arg2;
 - (void)_deviceRingtonesChangedNotification;
 - (void)_reloadITunesRingtonesAfterExternalChange;
+- (id)copyCurrentRingtoneIdentifier;
+- (id)copyCurrentRingtoneName;
+- (id)copyCurrentTextToneIdentifier;
+- (id)copyCurrentTextToneName;
 - (id)copyIdentifierForRingtoneAtPath:(id)arg1 isValid:(BOOL*)arg2;
+- (id)copyNameOfIdentifier:(id)arg1 isValid:(BOOL*)arg2;
 - (id)copyNameOfRingtoneWithIdentifier:(id)arg1 isValid:(BOOL*)arg2;
 - (id)copyNameOfRingtoneWithIdentifier:(id)arg1;
+- (id)copyNameOfTextToneWithIdentifier:(id)arg1 isValid:(BOOL*)arg2;
 - (id)copyPathOfRingtoneWithIdentifier:(id)arg1 isValid:(BOOL*)arg2;
 - (id)copyPathOfRingtoneWithIdentifier:(id)arg1;
+- (id)currentRingtoneIdentifier;
+- (id)currentRingtoneName;
+- (unsigned long)currentTextToneSoundID;
 - (void)dealloc;
 - (id)defaultRingtoneIdentifier;
 - (id)defaultRingtoneName;
 - (id)defaultRingtonePath;
+- (id)defaultTextToneIdentifier;
+- (id)defaultTextToneName;
+- (id)deviceITunesRingtoneDirectory;
+- (BOOL)hasAdditionalTextTones;
+- (id)iTunesRingtoneDirectory;
 - (void)iTunesSyncHasCompleted:(NSInteger)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)init;
 - (id)initWithITunesRingtonePlistAtPath:(id)arg1;
 - (BOOL)isRingtonePurchased:(id)arg1;
-- (void)loadITunesInfoPlistAtPath:(id)arg1;
+- (BOOL)isValidTextToneIdentifier:(id)arg1;
+- (void)loadITunesRingtoneInfoPlistAtPath:(id)arg1;
+- (void)loadTextToneInfo;
+- (id)localizedNameWithIdentifier:(id)arg1;
 - (id)localizedRingtoneNameWithIdentifier:(id)arg1;
-- (id)nameFromRingtonePath:(id)arg1;
 - (id)newAVItemWithRingtoneIdentifier:(id)arg1;
+- (id)nullTextToneName;
 - (id)pathFromIdentifier:(id)arg1 withPrefix:(id)arg2;
+- (unsigned long)previewSoundIDForTextToneIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (BOOL)shouldShowAlarmSounds;
 - (BOOL)shouldShowRingtones;
+- (unsigned long)soundIDForTextToneIdentifier:(id)arg1 isValid:(BOOL*)arg2;
+- (unsigned long)soundIDForTextToneIdentifier:(id)arg1;
+- (id)systemRingtoneDirectory;
 
 @end

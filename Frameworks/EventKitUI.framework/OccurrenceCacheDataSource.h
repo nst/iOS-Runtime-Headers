@@ -25,13 +25,13 @@
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })cachedDayRange;
 - (struct CalEventOccurrence { }*)cachedOccurrenceAtIndex:(NSInteger)arg1;
 - (NSInteger)cachedOccurrenceCount;
-- (NSInteger)cachedOccurrenceCountOnOrAfterDate:(NSInteger)arg1;
+- (NSInteger)cachedOccurrenceCountOnOrAfterDate:(double)arg1;
 - (BOOL)cachedOccurrencesAreBeingGenerated;
 - (NSInteger)countOfOccurrencesOnDay:(double)arg1;
-- (NSInteger)dateForDayIndex:(NSInteger)arg1;
+- (double)dateForDayIndex:(NSInteger)arg1;
 - (NSInteger)dayCountBeforeDay:(double)arg1;
 - (BOOL)dayIndexAlreadyCached:(NSInteger)arg1;
-- (NSInteger)dayIndexForDay:(NSInteger)arg1;
+- (NSInteger)dayIndexForDay:(double)arg1;
 - (NSInteger)dayIndexOfCachedOccurrenceAtIndex:(NSInteger)arg1;
 - (NSInteger)dayIndexOfCachedOccurrenceIndex:(NSInteger)arg1;
 - (void)dealloc;
@@ -39,7 +39,7 @@
 - (NSInteger)indexOfFirstCachedOccurrence;
 - (NSInteger)indexOfFirstOccurrenceForDayIndex:(NSInteger)arg1;
 - (NSInteger)indexOfLastOccurrenceForDayIndex:(NSInteger)arg1;
-- (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2 model:(id)arg3;
+- (id)initWithDatabase:(struct CalDatabase { }*)arg1 filter:(struct CalFilter { }*)arg2;
 - (void)invalidate;
 - (void)invalidateCachedDayIndexes;
 - (void)invalidateCachedDays;

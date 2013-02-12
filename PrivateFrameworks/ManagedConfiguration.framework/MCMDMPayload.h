@@ -29,6 +29,7 @@
 + (id)typeStrings;
 
 - (id)_invalidRightsError;
+- (id)_invalidTopicError;
 - (NSInteger)accessRights;
 - (id)checkInURLString;
 - (void)dealloc;

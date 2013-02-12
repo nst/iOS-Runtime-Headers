@@ -16,7 +16,6 @@
 
 - (BOOL)_accessibilityAlwaysReturnsChild;
 - (void)_addMultiCellContentViewIfNeeded;
-- (void)_resizeMultiCellContentView;
 - (id)accessibilityLabel;
 - (id)accessibilityValue;
 - (void)dealloc;

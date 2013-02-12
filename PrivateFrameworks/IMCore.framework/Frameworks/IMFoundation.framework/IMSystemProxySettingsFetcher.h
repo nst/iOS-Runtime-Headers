@@ -15,11 +15,14 @@
     NSInteger _proxyProtocol;
 }
 
+@property id delegate;
+
 - (void)_callAccountSettingsDelegateMethod;
 - (void)_callProxySettingsDelegateMethod;
 - (void)_getProxyAccountAndPasswordFromKeychain;
 - (void)_takeProxySettingsFromDictionary:(struct __CFDictionary { }*)arg1;
 - (void)dealloc;
+- (id)delegate;
 - (id)initWithHost:(id)arg1 port:(unsigned short)arg2 delegate:(id)arg3;
 - (id)initWithProxyProtocol:(NSInteger)arg1 proxyHost:(id)arg2 proxyPort:(unsigned short)arg3 delegate:(id)arg4;
 - (void)retrieveProxyAccountSettings;

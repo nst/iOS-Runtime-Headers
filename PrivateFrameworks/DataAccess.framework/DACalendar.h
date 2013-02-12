@@ -16,6 +16,7 @@
 - (id)color;
 - (id)events;
 - (id)externalID;
+- (NSUInteger)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)remove;
 - (void)removeAllEvents;

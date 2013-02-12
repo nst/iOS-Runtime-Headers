@@ -19,25 +19,30 @@
             AccessibilityObjectWrapper *m_ptr; 
      /* Encoded args for previous method: @12@0:4^{AccessibilityObject=^^?iI{Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=^{RefPtr<WebCore::AccessibilityObject>}I}}Bi{RetainPtr<AccessibilityObjectWrapper>=@}}8 */
      /* Encoded args for previous method: ^{AccessibilityObject=^^?iI{Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=^{RefPtr<WebCore::AccessibilityObject>}I}}Bi{RetainPtr<AccessibilityObjectWrapper>=@}}8@0:4 */
+     /* Encoded args for previous method: ^{AccessibilityTableCell=^^?iI{Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=^{RefPtr<WebCore::AccessibilityObject>}I}}Bi{RetainPtr<AccessibilityObjectWrapper>=@}^{RenderObject}iBii}8@0:4 */
+     /* Encoded args for previous method: ^{AccessibilityTable=^^?iI{Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=^{RefPtr<WebCore::AccessibilityObject>}I}}Bi{RetainPtr<AccessibilityObjectWrapper>=@}^{RenderObject}iBi{Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=^{RefPtr<WebCore::AccessibilityObject>}I}}{Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=^{RefPtr<WebCore::AccessibilityObject>}I}}^{AccessibilityTableHeaderContainer}B}8@0:4 */
      /* Encoded args for previous method: c16@0:4^{AccessibilityObject=^^?iI{Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=I{VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul>=^{RefPtr<WebCore::AccessibilityObject>}I}}Bi{RetainPtr<AccessibilityObjectWrapper>=@}}8@12 */
     unsigned long long m_accessibilityTraitsFromAncestor;
-    id m_accessibilityWebDocumentView;
     NSInteger m_isAccessibilityElement;
         } x7; } *m_object;
 }
 
 + (void)_initializeSafeCategory;
 
+- (struct AccessibilityTableCell { int (**x1)(); NSInteger x2; NSUInteger x3; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { struct RefPtr<WebCore::AccessibilityObject> {} *x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; NSInteger x6; struct RetainPtr<AccessibilityObjectWrapper> { id x_7_1_1; } x7; struct RenderObject {} *x8; NSInteger x9; void*x10; NSInteger x11; NSInteger x12; }*)tableCellParent;
+- (struct AccessibilityTable { int (**x1)(); NSInteger x2; NSUInteger x3; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { struct RefPtr<WebCore::AccessibilityObject> {} *x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; NSInteger x6; struct RetainPtr<AccessibilityObjectWrapper> { id x_7_1_1; } x7; struct RenderObject {} *x8; NSInteger x9; void*x10; NSInteger x11; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { NSUInteger x_12_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { struct RefPtr<WebCore::AccessibilityObject> {} *x_2_2_1; NSUInteger x_2_2_2; } x_12_1_2; } x12; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { NSUInteger x_13_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { struct RefPtr<WebCore::AccessibilityObject> {} *x_2_2_1; NSUInteger x_2_2_2; } x_13_1_2; } x13; struct AccessibilityTableHeaderContainer {} *x14; void*x15; }*)tableParent;
 - (struct AccessibilityObject { int (**x1)(); NSInteger x2; NSUInteger x3; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { struct RefPtr<WebCore::AccessibilityObject> {} *x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; NSInteger x6; struct RetainPtr<AccessibilityObjectWrapper> { id x_7_1_1; } x7; }*)accessibilityObject;
 - (void)_accessibilityActivate;
-- (id)_accessibilityAncestorForSiblings;
+- (id)_accessibilityAncestorForSiblingsWithTraits:(unsigned long long)arg1;
 - (id)_accessibilityConvertDataArrayToTextMarkerArray:(id)arg1;
 - (id)_accessibilityConvertTextMarkersToDataArray:(id)arg1;
 - (void)_accessibilityDecreaseSelection:(id)arg1;
 - (void)_accessibilityIncreaseSelection:(id)arg1;
 - (BOOL)_accessibilityIsFirstSibling;
+- (BOOL)_accessibilityIsFirstSiblingForTrait:(unsigned long long)arg1;
 - (BOOL)_accessibilityIsLandmarkRole:(NSInteger)arg1;
 - (BOOL)_accessibilityIsLastSibling;
+- (BOOL)_accessibilityIsLastSiblingForTrait:(unsigned long long)arg1;
 - (id)_accessibilityLandmarkAncestor;
 - (id)_accessibilityLineEndMarker:(id)arg1;
 - (id)_accessibilityLinePosition:(BOOL)arg1 withMarker:(id)arg2;
@@ -55,9 +60,12 @@
 - (id)_accessibilityPreviousElementsWithCount:(unsigned long)arg1;
 - (id)_accessibilityPreviousMarker:(id)arg1;
 - (void)_accessibilityScrollToVisible;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedNSRangeForObject;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_accessibilitySelectedTextRange;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3 sawAXElement:(BOOL*)arg4;
 - (BOOL)_accessibilitySiblingWithAncestor:(id)arg1 isFirst:(BOOL)arg2 isLast:(BOOL)arg3;
+- (BOOL)_accessibilitySupportsActivateAction;
 - (id)_accessibilityTableAncestor;
 - (id)_accessibilityTextMarkerRange;
 - (id)_accessibilityTextMarkerRangeForSelection;
@@ -70,18 +78,22 @@
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })_convertToNSRange:(struct Range { NSInteger x1; struct RefPtr<WebCore::Document> { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_3_1_1; NSInteger x_3_1_2; struct Node {} *x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_4_1_1; NSInteger x_4_1_2; struct Node {} *x_4_1_3; } x4; }*)arg1;
 - (BOOL)_isCheckBox;
 - (BOOL)_prepareAccessibilityCall;
+- (void)accessibilityActivate;
 - (id)accessibilityArrayOfTextForTextMarkers:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityBoundsForTextMarkers:(id)arg1;
 - (BOOL)accessibilityCanFuzzyHitTest;
 - (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })accessibilityColumnRange;
 - (id)accessibilityContainer;
 - (void)accessibilityDecreaseSelection:(NSInteger)arg1;
 - (id)accessibilityElementAtIndex:(NSInteger)arg1;
 - (NSInteger)accessibilityElementCount;
 - (void)accessibilityElementDidBecomeFocused;
+- (id)accessibilityElementForRow:(NSInteger)arg1 andColumn:(NSInteger)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityElementRect;
 - (id)accessibilityFocusedUIElement;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityHeaderElements;
 - (id)accessibilityHint;
 - (id)accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)accessibilityIncreaseSelection:(NSInteger)arg1;
@@ -90,8 +102,10 @@
 - (id)accessibilityLinkedElement;
 - (void)accessibilityModifySelection:(NSInteger)arg1 increase:(BOOL)arg2;
 - (id)accessibilityObjectForTextMarker:(id)arg1;
+- (id)accessibilityPlaceholderValue;
 - (id)accessibilityPostProcessHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)accessibilityPostedNotification:(NSInteger)arg1;
+- (struct _NSRange { NSUInteger x1; NSUInteger x2; })accessibilityRowRange;
 - (void)accessibilitySetPostedNotificationCallback:(int (*)())arg1 withContext:(void*)arg2;
 - (id)accessibilityStringForTextMarkers:(id)arg1;
 - (unsigned long long)accessibilityTraits;
@@ -113,18 +127,22 @@
 - (id)initWithAccessibilityObject:(struct AccessibilityObject { int (**x1)(); NSInteger x2; NSUInteger x3; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { NSUInteger x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::AccessibilityObject>,0ul> { struct RefPtr<WebCore::AccessibilityObject> {} *x_2_2_1; NSUInteger x_2_2_2; } x_4_1_2; } x4; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x5; NSInteger x6; struct RetainPtr<AccessibilityObjectWrapper> { id x_7_1_1; } x7; }*)arg1;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isAttachment;
+- (BOOL)isScreenReaderRunning;
 - (id)lineEndMarkerForMarker:(id)arg1;
 - (id)lineStartMarkerForMarker:(id)arg1;
 - (id)nextMarkerForMarker:(id)arg1;
 - (NSInteger)positionForTextMarker:(id)arg1;
 - (void)postFocusChangeNotification;
 - (void)postLayoutChangeNotification;
+- (void)postScreenChangeNotification;
 - (void)postSelectedTextChangeNotification;
 - (id)previousMarkerForMarker:(id)arg1;
+- (id)screenReaderVersion;
 - (id)selectedTextMarker;
 - (id)selectionRangeString;
 - (id)stringForRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)stringForTextMarkers:(id)arg1;
+- (BOOL)stringValueShouldBeUsedInLabel;
 - (id)textMarkerForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)textMarkerForPosition:(NSInteger)arg1;
 - (id)textMarkerRange;

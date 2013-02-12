@@ -7,7 +7,6 @@
 @interface ABServerSearchDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, DASearchQueryConsumer> {
     struct { 
         unsigned int isSearching : 1; 
-        unsigned int hasResults : 1; 
         unsigned int hasError : 1; 
     NSArray *_currentResultsAsPeople;
     DAContactsSearchQuery *_currentSearchQuery;

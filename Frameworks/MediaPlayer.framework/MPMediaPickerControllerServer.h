@@ -16,13 +16,11 @@
     struct __CFMachPort { } *_replyPortRef;
 }
 
-+ (void)_initializeSafeCategory;
 + (void)_setBarStyle:(NSInteger)arg1;
 + (NSInteger)barStyle;
 + (id)sharedInstance;
 + (void)startMediaPickerControllerServer;
 
-- (void)_makeRemoteContextVisible;
 - (void)_replyPortInvalidated;
 - (void)_updateBarStyleForViewControllers;
 - (void)cancel;
@@ -33,6 +31,7 @@
 - (void)modalContextDidDismiss:(id)arg1 withSuccess:(BOOL)arg2;
 - (void)orderFront;
 - (void)orderOut;
+- (void)orderOutAndFence:(BOOL)arg1;
 - (void)releaseRemoteView;
 - (void)runMigServer;
 - (void)scrollToTop;

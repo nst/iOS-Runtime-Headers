@@ -3,14 +3,22 @@
  */
 
 @interface GKTableViewButtonCell : GKTableViewCell {
+    BOOL _useHeaderViewAppearance;
 }
+
+@property BOOL useHeaderViewAppearance;
 
 + (float)preferredHeight;
 
 - (void)configureBackgroundView;
-- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(NSInteger)arg3;
+- (id)initWithStyle:(NSInteger)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(NSInteger)arg3 backgroundStyle:(NSInteger)arg4;
 - (void)layoutSubviews;
+- (void)setBackgroundStyle:(NSInteger)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setTheme:(id)arg1;
+- (void)setUseHeaderViewAppearance:(BOOL)arg1;
+- (void)updateFont;
+- (void)updateTitleColors;
+- (BOOL)useHeaderViewAppearance;
 
 @end

@@ -5,14 +5,36 @@
 @class IMHandle, NSMutableArray, NSMutableSet, NSString;
 
 @interface IMPresence : IMDirectlyObservableObject <IMDirectlyObservableObjectObserver> {
-    unsigned int _quiet : 1;
     NSMutableArray *_imHandles;
     NSMutableSet *_imHandlesSet;
     IMHandle *_mostAvailableIMHandle;
     NSUInteger _previousStatus;
+    BOOL _quiet;
     NSUInteger _status;
     NSString *_statusMessage;
 }
+
+@property(readonly) NSString *displayName;
+@property(readonly) NSString *firstName;
+@property(readonly) NSString *fullName;
+@property(readonly) NSSet *groups;
+@property(readonly) NSSet *imHandleSet;
+@property(readonly) NSArray *imHandles;
+@property(readonly) NSString *lastName;
+@property(readonly) NSString *mobileDeviceName;
+@property(readonly) IMHandle *mostAvailableIMHandle;
+@property(readonly) NSString *nameAndEmail;
+@property(readonly) NSString *nameOfStatus;
+@property(readonly) NSString *previousStatusMessage;
+@property(readonly) NSString *shortName;
+@property(readonly) NSString *statusMessage;
+@property(readonly) BOOL isMobile;
+@property BOOL isQuiet;
+@property(readonly) NSInteger numberOfIMHandles;
+@property(readonly) NSUInteger previousStatus;
+@property(readonly) NSUInteger status;
+@property(readonly) double timeSinceStatusChanged;
+@property(readonly) double timeSinceWentOffline;
 
 + (id)notifications;
 + (id)selectors;

@@ -21,14 +21,17 @@
 - (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(NSInteger)arg2;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(NSInteger)arg2;
 - (BOOL)eventEditItemViewControllerCommit:(id)arg1;
+- (void)eventEditItemViewControllerWantsKeyboardPinned:(BOOL)arg1;
 - (void)eventEditor:(id)arg1 didSelectSubitem:(NSInteger)arg2;
+- (BOOL)isInline;
 - (void)notifyDidEndEditing;
 - (void)notifyDidStartEditing;
 - (void)notifySubitemDidCommit:(NSInteger)arg1;
+- (void)notifyTextChanged;
 - (NSInteger)numberOfSubitems;
-- (void)presentValidationAlert:(id)arg1;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (id)selectedTextField;
 - (void)setDelegate:(id)arg1;
 - (void)setEvent:(id)arg1 store:(id)arg2;
 

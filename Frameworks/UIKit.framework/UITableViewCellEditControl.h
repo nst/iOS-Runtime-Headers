@@ -34,6 +34,7 @@
 - (void)_updateImageView;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (id)initWithTableViewCell:(id)arg1 editingStyle:(NSInteger)arg2;
 - (BOOL)isAccessibilityElement;
 - (BOOL)isHiding;

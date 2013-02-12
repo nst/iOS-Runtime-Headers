@@ -16,7 +16,7 @@
 - (void)_saveImage:(id)arg1 imageData:(id)arg2 properties:(id)arg3 completionBlock:(id)arg4;
 - (void)_saveVideoAtPath:(id)arg1 completionBlock:(id)arg2;
 - (void)_terminateAccess;
-- (id)createCameraImageWithPath:(id)arg1 thumbnailImage:(id)arg2;
+- (id)createCameraImageWithPath:(id)arg1 thumbnailImage:(id)arg2 metadata:(id)arg3;
 - (void)dealloc;
 - (id)defaultExtensionForAssetType:(NSInteger)arg1;
 - (id)pathForNewAssetOfType:(NSInteger)arg1 extension:(id)arg2;

@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemCollectionInternal;
-
-@interface MPMediaItemCollection : NSObject <NSCoding> {
-    MPMediaItemCollectionInternal *_internal;
+@interface MPMediaItemCollection : MPMediaEntity {
+    void *_internal;
 }
 
 @property(readonly) NSArray *items;
@@ -14,9 +12,10 @@
 @property(readonly) NSInteger mediaTypes;
 
 + (id)collectionWithItems:(id)arg1;
++ (id)representativePersistentIDPropertyForGroupingType:(NSInteger)arg1;
++ (id)titlePropertyForGroupingType:(NSInteger)arg1;
 
 - (id)_init;
-- (id)_initWithItemsQuery:(id)arg1 itemsCount:(NSUInteger)arg2 representativeItem:(id)arg3;
 - (NSUInteger)count;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -24,6 +23,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItems:(id)arg1;
 - (id)items;
+- (id)itemsQuery;
 - (NSInteger)mediaTypes;
 - (id)representativeItem;
 

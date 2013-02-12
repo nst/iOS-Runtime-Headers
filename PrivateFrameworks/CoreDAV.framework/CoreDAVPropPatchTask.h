@@ -2,28 +2,32 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet;
+@class CoreDAVResponseItem, NSSet;
 
 @interface CoreDAVPropPatchTask : CoreDAVTask {
     NSSet *_propPatchRemoveElements;
     NSSet *_propPatchSetElements;
+    CoreDAVResponseItem *_responseItem;
 }
 
 @property <CoreDAVPropPatchTaskDelegate> *delegate;
 @property(retain) NSSet *propPatchRemoveElements;
 @property(retain) NSSet *propPatchSetElements;
+@property(retain) CoreDAVResponseItem *responseItem;
 
+- (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithPropertiesToSet:(id)arg1 andRemove:(id)arg2 atRelativeURL:(id)arg3;
-- (id)initWithRelativeURI:(id)arg1;
-- (BOOL)processData:(id)arg1 withParser:(id)arg2;
+- (id)initWithPropertiesToSet:(id)arg1 andRemove:(id)arg2 atURL:(id)arg3;
+- (id)initWithURL:(id)arg1;
 - (id)propPatchRemoveElements;
 - (id)propPatchSetElements;
 - (id)requestBody;
+- (id)responseItem;
 - (void)setPropPatchRemoveElements:(id)arg1;
 - (void)setPropPatchSetElements:(id)arg1;
+- (void)setResponseItem:(id)arg1;
 
 @end

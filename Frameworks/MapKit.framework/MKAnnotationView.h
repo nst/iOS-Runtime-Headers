@@ -32,7 +32,6 @@
 + (NSUInteger)_zIndex;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (id)_accessibilityChildren;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_annotationContainer;
 - (NSInteger)_annotationViewType;
@@ -60,8 +59,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (void)_updateZIndex;
 - (NSUInteger)_zIndex;
-- (id)accessibilityElementAtIndex:(NSInteger)arg1;
-- (NSInteger)accessibilityElementCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
@@ -74,7 +71,6 @@
 - (NSUInteger)dragState;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)image;
-- (NSInteger)indexOfAccessibilityElement:(id)arg1;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
@@ -86,13 +82,13 @@
 - (id)leftCalloutAccessoryView;
 - (id)panoramaID;
 - (void)prepareForReuse;
-- (oneway void)release;
 - (id)reuseIdentifier;
 - (id)rightCalloutAccessoryView;
 - (void)setAnnotation:(id)arg1;
 - (void)setCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCanShowCallout:(BOOL)arg1;
 - (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setDragState:(NSUInteger)arg1 animated:(BOOL)arg2;
 - (void)setDragState:(NSUInteger)arg1;
 - (void)setDraggable:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;

@@ -23,9 +23,9 @@
 @property <APSConnectionDelegate> *delegate;
 @property(readonly) NSInteger serverPID;
 
++ (id)connectionsDebuggingState;
 + (struct __SecIdentity { }*)copyIdentity;
 + (double)keepAliveIntervalForEnvironmentName:(id)arg1;
-+ (void)launchDaemonWithNamedDelegatePort:(id)arg1;
 
 - (void)_connect;
 - (void)_connectionServerPortInvalidated;

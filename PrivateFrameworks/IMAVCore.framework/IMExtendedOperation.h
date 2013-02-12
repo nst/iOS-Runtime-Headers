@@ -12,6 +12,10 @@
     double _operationTimeout;
 }
 
+@property(retain) NSString *name;
+@property(readonly) NSUInteger state;
+@property double timeout;
+
 - (NSUInteger)_maxChildOperationState;
 - (NSUInteger)_minChildOperationState;
 - (void)_setState:(NSUInteger)arg1;

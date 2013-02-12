@@ -2,24 +2,25 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAudioDeviceController;
+@class MPAudioDeviceController, NSArray;
 
 @interface MPAudioRoutingPicker : UIAlertView {
     MPAudioDeviceController *_audioDeviceController;
     BOOL _ignoringInteractionEvents;
+    NSArray *_routes;
 }
 
+- (BOOL)_pickRouteAtIndex:(NSUInteger)arg1 withPassword:(id)arg2;
+- (id)_routes;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
-- (void)audioDeviceControllerMediaServerDied:(id)arg1;
 - (void)dealloc;
 - (id)initWithAVController:(id)arg1;
-- (NSInteger)numberOfRowsInTable:(id)arg1;
-- (void)pickRoute:(id)arg1;
 - (BOOL)requiresPortraitOrientation;
 - (void)setAVController:(id)arg1;
-- (BOOL)table:(id)arg1 canSelectRow:(NSInteger)arg2;
-- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3;
-- (void)tableSelectionDidChange:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

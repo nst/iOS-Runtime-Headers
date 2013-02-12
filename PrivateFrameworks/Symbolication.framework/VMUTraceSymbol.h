@@ -14,7 +14,7 @@
 
 - (id)filename;
 - (id)initWithCString:(char *)arg1 length:(long)arg2 withLine:(NSInteger)arg3;
-- (id)initWithPC:(NSUInteger)arg1 withSymbolicator:(id)arg2;
+- (id)initWithPC:(NSUInteger)arg1 withSymbolicator:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg2;
 - (id)library;
 - (NSInteger)lineNumber;
 - (id)name;

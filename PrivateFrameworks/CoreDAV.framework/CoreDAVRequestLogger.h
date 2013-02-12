@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVAccountInfoProvider>;
+@class <CoreDAVAccountInfoProvider>, NSArray;
 
 @interface CoreDAVRequestLogger : NSObject {
     <CoreDAVAccountInfoProvider> *_provider;
+    NSArray *_responseHeadersSortDescriptors;
 }
+
+@property(retain) NSArray *responseHeadersSortDescriptors;
 
 - (void)dealloc;
 - (void)finishCoreDAVResponse;
@@ -14,5 +17,7 @@
 - (void)logCoreDAVRequest:(id)arg1;
 - (void)logCoreDAVResponseHeaders:(id)arg1 andStatusCode:(NSInteger)arg2;
 - (void)logCoreDAVResponseSnippet:(id)arg1;
+- (id)responseHeadersSortDescriptors;
+- (void)setResponseHeadersSortDescriptors:(id)arg1;
 
 @end

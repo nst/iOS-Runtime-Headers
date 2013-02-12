@@ -14,7 +14,6 @@
 - (void)_addBakedThumbnailsForVideo:(id)arg1 toCollection:(id)arg2 sourceFormat:(NSInteger)arg3 bakedFormats:(id)arg4;
 - (void)_createNewVideoCachedFiles;
 - (void)_garbageCollectCachedFiles;
-- (void)_initUIComponents;
 - (id)_pathToVideosMetadataFile;
 - (void)_removeOldAlbumVideosBakedThumbnails;
 - (void)cancel;

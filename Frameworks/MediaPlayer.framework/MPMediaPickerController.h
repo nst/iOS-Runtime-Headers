@@ -15,13 +15,14 @@
 
 + (void)preheatMediaPicker;
 
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationWillTerminate:(id)arg1;
 - (BOOL)_canReloadView;
 - (void)_invalidateReplyPort;
-- (void)_moveLayerHostToLayer:(id)arg1;
+- (void)_orderFront;
+- (void)_orderOut;
 - (void)_pickerDidCancel;
 - (void)_pickerDidPickItems:(id)arg1;
-- (void)_serverPortInvalidated;
 - (void)_viewDidMoveToWindow;
 - (void)_viewSizeDidChange;
 - (void)_viewWillMoveFromWindow;

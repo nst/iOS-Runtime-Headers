@@ -56,6 +56,15 @@
                 unsigned char abIPv6[16]; 
             } IP; 
             unsigned short wPort; 
+        } mbRemoteSrc; 
+        struct tagIPPORT { 
+            NSInteger iFlags; 
+            BOOL szIfName[16]; 
+            union { 
+                NSUInteger dwIPv4; 
+                unsigned char abIPv6[16]; 
+            } IP; 
+            unsigned short wPort; 
         } mbRelayExt; 
         NSUInteger dwRTT; 
     NSInteger bundle;

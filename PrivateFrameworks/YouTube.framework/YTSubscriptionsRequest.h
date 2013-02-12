@@ -29,5 +29,6 @@
 - (void)requestPlaylists;
 - (void)requestSubscriptions;
 - (void)setDelegate:(id)arg1;
+- (void)subscribeToUser:(id)arg1;
 
 @end

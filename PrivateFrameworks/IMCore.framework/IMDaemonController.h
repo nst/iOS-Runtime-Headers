@@ -5,39 +5,50 @@
 @class IMDaemonListener, IMLocalObject, IMRemoteObject<FZDaemon>, NSMutableArray, NSProtocolChecker, NSString;
 
 @interface IMDaemonController : NSObject {
-    unsigned int _hasCheckedForDaemon : 1;
-    unsigned int _preventReconnect : 1;
-    unsigned int _connectingToDaemon : 1;
-    unsigned int _systemShuttingDown : 1;
+    BOOL _autoReconnect;
+    BOOL _connectingToDaemon;
     IMDaemonListener *_daemonListener;
     id _delegate;
     NSUInteger _gMyFZListenerCapabilities;
+    BOOL _hasCheckedForDaemon;
     NSString *_listenerID;
     IMLocalObject *_localObject;
+    BOOL _preventReconnect;
     NSProtocolChecker *_protocol;
     IMRemoteObject<FZDaemon> *_remoteObject;
     NSMutableArray *_services;
+    BOOL _systemShuttingDown;
 }
+
+@property NSUInteger _capabilities; /* unknown property attribute: S_setCapabilities: */
+@property(readonly) IMDaemonListener *listener;
+@property(readonly) NSPort *localPort;
+@property BOOL autoReconnect;
+@property NSUInteger capabilities;
+@property id delegate;
+@property(readonly) BOOL isConnected;
+@property(readonly) BOOL isConnecting;
 
 + (void)_blockUntilSendQueueIsEmpty;
 + (id)sharedController;
 
 - (oneway void)_addressBookChanged:(id)arg1;
 - (void)_agentDidLaunchNotification:(id)arg1;
-- (BOOL)_connectToDaemonWithLaunch:(BOOL)arg1;
+- (NSUInteger)_capabilities;
+- (BOOL)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned long long)arg2;
 - (void)_handleDaemonException:(id)arg1;
 - (void)_localObjectDiedNotification:(id)arg1;
-- (void)_loginAccount:(id)arg1 autoLogin:(BOOL)arg2;
 - (void)_makeConnectionWithLaunch:(BOOL)arg1;
 - (id)_remoteObject;
 - (void)_remoteObjectDiedNotification:(id)arg1;
 - (void)_setCapabilities:(NSUInteger)arg1;
 - (oneway void)addListener:(id)arg1 withListenerID:(id)arg2 capabilities:(NSUInteger)arg3;
-- (oneway void)autoLoginWithAccount:(id)arg1;
+- (BOOL)autoReconnect;
 - (id)autorelease;
 - (void)blockUntilConnected;
 - (NSUInteger)capabilities;
 - (BOOL)connectToDaemon;
+- (BOOL)connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(NSUInteger)arg2 blockUntilConnected:(BOOL)arg3;
 - (BOOL)connectToDaemonWithLaunch:(BOOL)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -55,12 +66,12 @@
 - (id)listener;
 - (void)localObjectDiedNotification:(id)arg1;
 - (id)localPort;
-- (oneway void)loginWithAccount:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (oneway void)release;
 - (void)remoteObjectDiedNotification:(id)arg1;
 - (NSUInteger)retainCount;
 - (void)sendABInformationToDaemon;
+- (void)setAutoReconnect:(BOOL)arg1;
 - (void)setCapabilities:(NSUInteger)arg1;
 - (void)setDaemonLogsOutWithoutStatusListeners:(BOOL)arg1;
 - (void)setDaemonTerminatesWithoutListeners:(BOOL)arg1;

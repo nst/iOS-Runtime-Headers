@@ -17,5 +17,6 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
+- (void)viewDidUnload;
 
 @end

@@ -5,10 +5,16 @@
 @class NSMutableArray;
 
 @interface IMPeople : NSObject {
-    unsigned int _hidePeople : 1;
     NSInteger _coalesceCount;
+    BOOL _hidePeople;
     NSMutableArray *_people;
 }
+
+@property BOOL hidePeople; /* unknown property attribute: SsetShouldHidePeople: */
+@property(readonly) NSArray *groups;
+@property(readonly) NSArray *people;
+@property(readonly) BOOL coalescingChanges;
+@property(readonly) NSUInteger count;
 
 - (void)_addedPeople:(id)arg1;
 - (BOOL)addIMHandle:(id)arg1;

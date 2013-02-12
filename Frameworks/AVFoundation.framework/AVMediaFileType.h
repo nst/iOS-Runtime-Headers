@@ -15,7 +15,7 @@
 @property(readonly) NSUInteger audioFileTypeID;
 
 + (id)_mediaFileTypeWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
-+ (id)allMediaFileTypes;
++ (id)allFileTypeIdentifiers;
 + (void)initialize;
 + (id)mediaFileTypeWithFileTypeIdentifier:(id)arg1;
 

@@ -12,6 +12,7 @@
     BOOL _hasInfoLevel;
     BOOL _hasInfoValue;
     BOOL _hasNumZoomLevels;
+    BOOL _hasScene;
     BOOL _hasTileHeight;
     BOOL _hasTileWidth;
     NSInteger _imageHeight;
@@ -24,6 +25,7 @@
     NSInteger _numZoomLevels;
     NSString *_panoId;
     NSInteger _radius;
+    NSInteger _scene;
     NSString *_streetRange;
     NSString *_text;
     NSInteger _tileHeight;
@@ -42,6 +44,7 @@
 @property(readonly) BOOL hasInfoLevel;
 @property(readonly) BOOL hasInfoValue;
 @property(readonly) BOOL hasNumZoomLevels;
+@property(readonly) BOOL hasScene;
 @property(readonly) BOOL hasStreetRange;
 @property(readonly) BOOL hasText;
 @property(readonly) BOOL hasTileHeight;
@@ -54,6 +57,7 @@
 @property NSInteger maxZoomLevel;
 @property NSInteger numZoomLevels;
 @property NSInteger radius;
+@property NSInteger scene;
 @property NSInteger tileHeight;
 @property NSInteger tileWidth;
 
@@ -68,6 +72,7 @@
 - (BOOL)hasInfoLevel;
 - (BOOL)hasInfoValue;
 - (BOOL)hasNumZoomLevels;
+- (BOOL)hasScene;
 - (BOOL)hasStreetRange;
 - (BOOL)hasText;
 - (BOOL)hasTileHeight;
@@ -84,6 +89,7 @@
 - (id)panoId;
 - (NSInteger)radius;
 - (BOOL)readFrom:(id)arg1;
+- (NSInteger)scene;
 - (void)setCopyright:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setImageHeight:(NSInteger)arg1;
@@ -96,6 +102,7 @@
 - (void)setNumZoomLevels:(NSInteger)arg1;
 - (void)setPanoId:(id)arg1;
 - (void)setRadius:(NSInteger)arg1;
+- (void)setScene:(NSInteger)arg1;
 - (void)setStreetRange:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setTileHeight:(NSInteger)arg1;

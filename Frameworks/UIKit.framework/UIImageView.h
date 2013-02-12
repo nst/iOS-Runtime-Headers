@@ -19,6 +19,7 @@
 + (void)_initializeSafeCategory;
 + (id)backgroundImageViewForImage:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
+- (BOOL)_accessibilityIgnoresMouseEvents;
 - (BOOL)_canDrawContent;
 - (BOOL)_shouldDrawImage:(id)arg1;
 - (void)_updateState;
@@ -29,6 +30,7 @@
 - (NSInteger)animationRepeatCount;
 - (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
+- (id)description;
 - (NSInteger)drawMode;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface UIKBKeylist : NSObject <NSCoding> {
+@interface UIKBKeylist : NSObject <NSCoding, NSCopying> {
     NSMutableArray *m_keys;
     NSString *m_name;
 }
@@ -15,6 +15,7 @@
 
 + (id)keylist;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)count;
 - (void)dealloc;
 - (id)description;

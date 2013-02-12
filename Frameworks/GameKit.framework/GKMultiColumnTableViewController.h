@@ -2,28 +2,57 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@interface GKMultiColumnTableViewController : GKTableViewController {
-    NSUInteger _columnCount;
+@class GKMultiColumnTableViewCell;
+
+@interface GKMultiColumnTableViewController : GKTableViewController <UILongPressGestureRecognizerDelegate> {
+    float _columnMinimumWidth;
     float _columnSeparatorWidth;
+    double _selectGestureStartTime;
+    GKMultiColumnTableViewCell *_selectedCell;
+    NSUInteger _selectedColumn;
 }
 
-@property NSUInteger columnCount;
+@property(retain) GKMultiColumnTableViewCell *selectedCell;
+@property float columnMinimumWidth;
 @property float columnSeparatorWidth;
+@property NSUInteger selectedColumn;
 
-- (NSUInteger)columnCount;
+- (id)bottomCapForSection:(NSInteger)arg1 tableView:(id)arg2;
+- (BOOL)canSelectIndexPath:(id)arg1 column:(NSInteger)arg2 tableView:(id)arg3;
+- (NSInteger)columnCountForTableView:(id)arg1;
+- (float)columnMinimumWidth;
 - (float)columnSeparatorWidth;
+- (id)contentsForItemAtIndex:(NSInteger)arg1 inSection:(NSInteger)arg2 tableView:(id)arg3 reusableContents:(id)arg4;
 - (id)contentsViewForIndexPath:(id)arg1 withExistingView:(id)arg2;
 - (void)dealloc;
-- (void)didSelectIndexPath:(id)arg1;
-- (void)handleTapGesture:(id)arg1;
+- (void)didSelectItemAtIndex:(NSInteger)arg1 inSection:(NSInteger)arg2 tableView:(id)arg3;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)handlePressGesture:(id)arg1;
+- (BOOL)hasBottomCapForSection:(NSInteger)arg1 tableView:(id)arg2;
+- (BOOL)hasTopCapForSection:(NSInteger)arg1 tableView:(id)arg2;
+- (float)heightForBottomCapInSection:(NSInteger)arg1 tableView:(id)arg2;
+- (float)heightForItemAtIndex:(NSInteger)arg1 inSection:(NSInteger)arg2 tableView:(id)arg3;
+- (float)heightForTopCapInSection:(NSInteger)arg1 tableView:(id)arg2;
 - (id)initWithStyle:(NSInteger)arg1;
+- (NSInteger)numberOfItemRowsInSection:(NSInteger)arg1 tableView:(id)arg2;
+- (NSInteger)numberOfItemsInSection:(NSInteger)arg1 tableView:(id)arg2;
+- (NSInteger)numberOfRowsInSection:(NSInteger)arg1 tableView:(id)arg2;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (id)reuseIdentifierForRowAtIndexPath:(id)arg1;
-- (void)setColumnCount:(NSUInteger)arg1;
+- (NSInteger)rowForItemAtIndex:(NSInteger)arg1 tableView:(id)arg2;
+- (void)selectColumnInCell:(id)arg1;
+- (id)selectedCell;
+- (NSUInteger)selectedColumn;
+- (void)setColumnMinimumWidth:(float)arg1;
 - (void)setColumnSeparatorWidth:(float)arg1;
+- (void)setSelectedCell:(id)arg1;
+- (void)setSelectedColumn:(NSUInteger)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (id)topCapForSection:(NSInteger)arg1 tableView:(id)arg2;
+- (BOOL)usesCrossfade;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

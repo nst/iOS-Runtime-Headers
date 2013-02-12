@@ -9,6 +9,5 @@
 + (id)wrapDOMRange:(id)arg1;
 
 - (id)_currentAccessoryView:(BOOL)arg1;
-- (id)titelForState:(NSInteger)arg1;
 
 @end

@@ -8,6 +8,7 @@
 + (void)_initializeSafeCategory;
 
 - (id)_accessibilityObscuredScreenAllowedViews;
+- (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)accessibilityTreeHidden;
 - (BOOL)isAccessibilityElement;

@@ -2,14 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMoviePlayerController : NSObject {
+@interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
     id _internal;
 }
 
 @property(readonly) UIView *backgroundView;
 @property(readonly) UIView *view;
 @property NSInteger controlStyle;
+@property float currentPlaybackRate;
+@property double currentPlaybackTime;
 @property(getter=isFullscreen) BOOL fullscreen;
+@property(readonly) BOOL isPreparedToPlay;
 @property(readonly) NSInteger loadState;
 @property(readonly) NSInteger playbackState;
 @property NSInteger repeatMode;
@@ -17,6 +20,10 @@
 @property BOOL shouldAutoplay;
 @property BOOL useApplicationAudioSession;
 
++ (void)allInstancesResignActive;
+
+- (void)_resignActive;
+- (BOOL)allowsWirelessPlayback;
 - (id)backgroundView;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
@@ -46,6 +53,7 @@
 - (void)prepareToPlay;
 - (NSInteger)repeatMode;
 - (NSInteger)scalingMode;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setContentURL:(id)arg1;
 - (void)setControlStyle:(NSInteger)arg1;
 - (void)setCurrentPlaybackRate:(float)arg1;

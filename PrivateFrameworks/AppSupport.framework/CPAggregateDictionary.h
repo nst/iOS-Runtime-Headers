@@ -2,35 +2,21 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class CPDistributedMessagingCenter, NSMutableArray;
-
 @interface CPAggregateDictionary : NSObject {
-    CPDistributedMessagingCenter *_center;
-    BOOL _enabled;
-    NSMutableArray *_queuedMessages;
-    NSInteger _queuedMessagesLock;
 }
 
 @property(getter=isEnabled,readonly) BOOL enabled;
 
 + (id)sharedAggregateDictionary;
 
-- (void)_queueMessageName:(id)arg1 userInfo:(id)arg2;
-- (BOOL)_sendAllQueuedMessages;
-- (void)_sendMessageName:(id)arg1 userInfo:(id)arg2;
 - (void)addValue:(long long)arg1 forKey:(id)arg2;
 - (void)clearDistributionKey:(id)arg1;
 - (void)clearScalarKey:(id)arg1;
-- (void)commit;
-- (void)dealloc;
+- (NSInteger)commit;
 - (void)decrementKey:(id)arg1;
 - (void)incrementKey:(id)arg1;
-- (id)init;
 - (BOOL)isEnabled;
 - (void)pushValue:(double)arg1 forKey:(id)arg2;
-- (void)sendMessageName:(id)arg1 key:(id)arg2 argument:(id)arg3;
-- (void)sendMessageName:(id)arg1 key:(id)arg2 arguments:(id)arg3;
-- (void)sendMessageName:(id)arg1 key:(id)arg2;
 - (void)setValue:(double)arg1 forDistributionKey:(id)arg2;
 - (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
 - (void)significantTimeChanged;

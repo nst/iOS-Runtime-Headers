@@ -26,7 +26,13 @@
 + (void)removeAllDynamicDictionaries;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(NSInteger)arg1;
 
+- (id)_baseKeyForRepresentedString:(id)arg1;
+- (void)_changeToKeyplane:(id)arg1;
+- (id)_getCurrentKeyboardName;
+- (id)_getCurrentKeyplaneName;
+- (id)_getLocalizedInputMode;
 - (BOOL)_isAutomaticKeyboard;
+- (id)_keyplaneForKey:(id)arg1;
 - (void)acceptAutocorrection;
 - (void)activate;
 - (BOOL)canDismiss;
@@ -47,6 +53,9 @@
 - (BOOL)isMinimized;
 - (void)keyboardMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)manualKeyboardWasOrderedIn;
+- (void)manualKeyboardWasOrderedOut;
+- (void)manualKeyboardWillBeOrderedIn;
+- (void)manualKeyboardWillBeOrderedOut;
 - (void)maximize;
 - (void)minimize;
 - (void)movedFromSuperview:(id)arg1;

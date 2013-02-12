@@ -34,6 +34,7 @@
 @property NSUInteger scaleMode;
 @property double startTime;
 @property double stopTime;
+@property float subtitlesFontSize;
 @property CGSize subtitlesMargin;
 @property CGSize subtitlesPadding;
 
@@ -103,6 +104,7 @@
 - (void)setScaleMode:(NSUInteger)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;
+- (void)setSubtitlesFontSize:(float)arg1;
 - (void)setSubtitlesMargin:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSubtitlesPadding:(struct CGSize { float x1; float x2; })arg1;
 - (double)startTime;
@@ -110,6 +112,7 @@
 - (double)stopTime;
 - (void)subtitlesDidClear:(id)arg1;
 - (void)subtitlesDidUpdate:(id)arg1;
+- (float)subtitlesFontSize;
 - (struct CGSize { float x1; float x2; })subtitlesMargin;
 - (struct CGSize { float x1; float x2; })subtitlesPadding;
 - (void)toggleScaleMode:(BOOL)arg1;

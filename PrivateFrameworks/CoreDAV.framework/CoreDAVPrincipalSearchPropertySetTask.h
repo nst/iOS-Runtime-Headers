@@ -5,10 +5,12 @@
 @interface CoreDAVPrincipalSearchPropertySetTask : CoreDAVTask {
 }
 
+@property <CoreDAVPrincipalSearchPropertySetTaskDelegate> *delegate;
+
+- (id)copyDefaultParserForContentType:(id)arg1;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithRelativeURI:(id)arg1;
-- (BOOL)processData:(id)arg1 withParser:(id)arg2;
+- (id)initWithURL:(id)arg1;
 - (id)requestBody;
 
 @end

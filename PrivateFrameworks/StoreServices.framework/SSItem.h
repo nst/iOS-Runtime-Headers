@@ -20,11 +20,13 @@
 @property(readonly) NSString *artistName;
 @property(readonly) SSItemOffer *defaultItemOffer;
 @property(readonly) NSDate *expirationDate;
+@property(readonly) SSItemImageCollection *imageCollection;
 @property(readonly) NSString *itemKind;
 @property(readonly) NSString *itemTitle;
 @property(readonly) NSArray *thumbnailImages;
 @property(readonly) NSURL *viewItemURL;
 @property(readonly) float averageUserRating;
+@property(getter=isGameCenterEnabled,readonly) BOOL gameCenterEnabled;
 @property(readonly) NSInteger numberOfUserRatings;
 @property(getter=isRestricted,readonly) BOOL restricted;
 
@@ -44,7 +46,9 @@
 - (id)defaultItemOffer;
 - (id)description;
 - (id)expirationDate;
+- (id)imageCollection;
 - (id)initWithItemDictionary:(id)arg1;
+- (BOOL)isGameCenterEnabled;
 - (BOOL)isRestricted;
 - (id)itemKind;
 - (id)itemOfferForIdentifier:(id)arg1;

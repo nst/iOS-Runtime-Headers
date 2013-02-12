@@ -6,7 +6,6 @@
 
 @interface ISDevice : NSObject <ISSingleton> {
     NSUInteger _daemonLaunchCount;
-    NSInteger _deferMemoryLevelSuicideCount;
     NSString *_guid;
     NSString *_hardwareModel;
     NSLock *_lock;
@@ -14,6 +13,7 @@
     NSInteger _type;
 }
 
+@property(readonly) NSString *deviceName;
 @property(retain,readonly) NSString *guid;
 @property(retain,readonly) NSString *hardwareModel;
 @property(retain,readonly) NSString *productVersion;
@@ -34,7 +34,6 @@
 - (BOOL)_isPodcastCapable;
 - (BOOL)_releasePowerAssertion:(id)arg1;
 - (void)_schedulePowerAssertionRelease:(id)arg1;
-- (void)beginDeferringMemoryLevelSuicide;
 - (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
 - (id)copyProtocolConditionalContext;
 - (id)copyPurchaseValidationContext;
@@ -42,7 +41,7 @@
 - (NSUInteger)daemonLaunchCount;
 - (void)daemonWillExitCleanly;
 - (void)dealloc;
-- (void)endDeferringMemoryLevelSuicide;
+- (id)deviceName;
 - (id)guid;
 - (id)hardwareModel;
 - (BOOL)hasCapability:(NSInteger)arg1;
@@ -50,7 +49,6 @@
 - (BOOL)isAnyIPhone;
 - (BOOL)isAnyIPod;
 - (BOOL)isAnyWildcat;
-- (BOOL)isDeferringMemoryLevelSuicide;
 - (id)productVersion;
 - (BOOL)releasePowerAssertion:(id)arg1;
 - (id)supportedOfferDeviceForDevices:(id)arg1;

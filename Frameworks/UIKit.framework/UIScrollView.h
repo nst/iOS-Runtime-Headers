@@ -27,7 +27,6 @@
         unsigned int horizontalBouncing : 1; 
         unsigned int bouncesZoom : 1; 
         unsigned int zoomBouncing : 1; 
-        unsigned int animatingZoom : 1; 
         unsigned int alwaysBounceHorizontal : 1; 
         unsigned int alwaysBounceVertical : 1; 
         unsigned int canCancelContentTouches : 1; 
@@ -84,6 +83,9 @@
         unsigned int pinnedYMax : 1; 
         unsigned int skipLinkChecks : 1; 
         unsigned int wasIgnoringTapsInDimmingView : 1; 
+        unsigned int isAnimatingScroll : 1; 
+        unsigned int isAnimatingZoom : 1; 
+        unsigned int staysCenteredDuringPinch : 1; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -161,6 +163,7 @@
     UIImageView *_verticalScrollIndicator;
     double _verticalVelocity;
     } _zoomAnchorPoint;
+    NSUInteger _zoomAnimationCount;
     NSInteger _zoomRubberBandHysteresisCount;
     UIView *_zoomView;
 }
@@ -180,6 +183,8 @@
 @property(getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;
 @property(getter=isDragging,readonly) BOOL dragging;
 @property NSInteger indicatorStyle;
+@property(getter=_isAnimatingScroll,readonly) BOOL isAnimatingScroll;
+@property(getter=_isAnimatingZoom,readonly) BOOL isAnimatingZoom;
 @property(getter=_isHorizontalBouncing,readonly) BOOL isHorizontalBouncing;
 @property(getter=_isVerticalBouncing,readonly) BOOL isVerticalBouncing;
 @property float maximumZoomScale;
@@ -203,13 +208,17 @@
 
 - (id)__original_forwardingTargetForSelector:(SEL)arg1;
 - (struct CGSize { float x1; float x2; })_accessibilityContentSize;
+- (void)_accessibilityInformDelegateScrollViewDidEndDecelerating;
 - (BOOL)_accessibilityIsScrollAncestor;
 - (float)_accessibilityScrollAnimationDurationDelay;
 - (float)_accessibilityScrollHeightDistance;
+- (void)_accessibilityScrollPageInDirection:(NSInteger)arg1;
 - (id)_accessibilityScrollStatus;
 - (void)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
+- (BOOL)_accessibilityScrollToTopWithAnnouncement:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityScrollViewVisibleFrame;
 - (float)_accessibilityScrollWidthDistance;
+- (BOOL)_accessibilityScrollingEnabled;
 - (void)_accessibilitySendScrollStatus;
 - (BOOL)_accessibilityShouldAnimateScroll;
 - (void)_accessibilityZoomAtPoint:(struct CGPoint { float x1; float x2; })arg1 zoomIn:(BOOL)arg2;
@@ -223,6 +232,7 @@
 - (void)_adjustScrollerIndicators:(BOOL)arg1 alwaysShowingThem:(BOOL)arg2;
 - (void)_adjustShadowsIfNecessary;
 - (void)_adjustShadowsIfNecessaryForOffset:(float)arg1;
+- (void)_announceDelayedStatus;
 - (id)_backgroundShadowForSlideAnimation;
 - (void)_beginTouchesInContentView:(id)arg1 touches:(id)arg2 withEvent:(id)arg3;
 - (BOOL)_beginTrackingWithEvent:(id)arg1;
@@ -244,6 +254,8 @@
 - (void)_endGesture:(id)arg1 withEvent:(id)arg2;
 - (void)_endPanWithEvent:(id)arg1;
 - (void)_forceDelegateScrollViewDidZoom:(BOOL)arg1;
+- (BOOL)_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)_gestureTargetHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)_getBouncingDecelerationOffset:(double*)arg1 forTimeInterval:(double)arg2 lastUpdateOffset:(double)arg3 min:(double)arg4 max:(double)arg5 decelerationFactor:(double)arg6 decelerationLnFactor:(double)arg7 velocity:(double*)arg8;
 - (id)_getDelegateZoomView;
@@ -255,6 +267,8 @@
 - (double)_horizontalVelocity;
 - (BOOL)_ignoreLinkedOnChecks;
 - (BOOL)_isAnimatingContentOffset;
+- (BOOL)_isAnimatingScroll;
+- (BOOL)_isAnimatingZoom;
 - (BOOL)_isAutoscrolling;
 - (BOOL)_isHorizontalBouncing;
 - (BOOL)_isIgnoringPopoverDimmingViewTaps;
@@ -301,6 +315,7 @@
 - (void)_setIgnoreLinkedOnChecks:(BOOL)arg1;
 - (void)_setIgnorePopoverDimmingViewTaps:(BOOL)arg1;
 - (void)_setShowsBackgroundShadow:(BOOL)arg1;
+- (void)_setStaysCenteredDuringPinch:(BOOL)arg1;
 - (void)_setZoomAnchorPoint:(struct CADoublePoint { double x1; double x2; })arg1;
 - (float)_shadowHeightOffset;
 - (void)_shiftOffset:(struct CGSize { float x1; float x2; })arg1;
@@ -309,6 +324,7 @@
 - (void)_smoothScroll:(double)arg1;
 - (void)_startGesture:(id)arg1 withEvent:(id)arg2;
 - (void)_startTimer:(BOOL)arg1;
+- (BOOL)_staysCenteredDuringPinch;
 - (struct CGPoint { float x1; float x2; })_stopOffset;
 - (void)_stopScrollDecelerationNotify:(BOOL)arg1;
 - (void)_stopScrollingNotify:(BOOL)arg1 dealloc:(BOOL)arg2 pin:(BOOL)arg3;
@@ -318,9 +334,10 @@
 - (id)_touchedContentView;
 - (void)_touchesEnded:(id)arg1 withEvent:(id)arg2 wasCancelled:(BOOL)arg3;
 - (void)_updatePagingGesture;
-- (BOOL)_updatePanWithStartDelta:(struct CGSize { float x1; float x2; })arg1 event:(id)arg2 gesture:(id)arg3 ignoringDirectionalScroll:(BOOL)arg4;
+- (void)_updatePanWithStartDelta:(struct CGSize { float x1; float x2; })arg1 gesture:(id)arg2 ignoringDirectionalScroll:(BOOL)arg3;
 - (void)_updatePinch:(id)arg1 forState:(NSInteger)arg2;
 - (void)_updatePinchGesture;
+- (BOOL)_updateTouchPanWithStartDelta:(struct CGSize { float x1; float x2; })arg1 event:(id)arg2 ignoringDirectionalScroll:(BOOL)arg3;
 - (BOOL)_usesDifferentHitTestForGestures;
 - (double)_verticalVelocity;
 - (void)_willMoveToWindow:(id)arg1;
@@ -371,6 +388,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)flashScrollIndicators;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)gestureRecognizerFailed:(id)arg1;
 - (void)handlePan:(id)arg1;

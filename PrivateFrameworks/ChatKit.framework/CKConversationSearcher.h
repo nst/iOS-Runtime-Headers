@@ -25,6 +25,8 @@
     BOOL _shouldDisplayNoResults;
 }
 
+@property(readonly) UISearchDisplayController *searchController;
+
 - (void)_cancel;
 - (void)_processSearchResults;
 - (void)dealloc;
@@ -33,6 +35,7 @@
 - (id)searchBar;
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;
+- (id)searchController;
 - (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
 - (void)searchDaemonQueryCompleted:(id)arg1;

@@ -12,6 +12,7 @@
 @property(readonly) NSArray *stackItemViews;
 
 + (void)_initializeSafeCategory;
++ (Class)layerClass;
 
 - (BOOL)_accessibilityAlwaysReturnsChild;
 - (void)addStackItemView:(id)arg1;
@@ -19,7 +20,6 @@
 - (void)dealloc;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)prepareForReuse;
 - (void)redrawStackItemView:(id)arg1;
 - (void)removeStackItemView:(id)arg1;

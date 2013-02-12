@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPItem, MPTransitionController, MPVideoView, MPVideoViewController, NSString, UIMovieSnapshotView, UINavigationController, UIView;
+@class MPAVItem, MPTransitionController, MPVideoView, MPVideoViewController, NSString, UIImage, UIMovieSnapshotView, UINavigationController, UIView;
 
 @interface UIMoviePlayerController : NSObject {
     struct CGRect { 
@@ -41,6 +41,8 @@
         unsigned int clientClearedMoviePath : 1; 
         unsigned int canCommitStatusBarAndOverlayChanges : 1; 
         unsigned int videoFrameDisplayOnResumeDisabled : 1; 
+        unsigned int usingDebugTestPath : 1; 
+        unsigned int allowsWirelessPlayback : 1; 
     MPVideoViewController *_activeVideoController;
     NSUInteger _audioControlsStyle;
     NSUInteger _autoRotationMask;
@@ -50,17 +52,18 @@
     struct __CFBag { } *_ignoredChangeTypes;
     NSInteger _interfaceOrientation;
     NSInteger _interfaceOrientationFromDevice;
-    MPItem *_item;
+    MPAVItem *_item;
     NSInteger _lastSetUIInterfaceOrientation;
     } _layoutRect;
     NSString *_moviePath;
     } _mpcBitfield;
     NSInteger _pendingInterfaceOrientation;
-    MPItem *_pendingItem;
-    MPItem *_pendingItemWithDifferentType;
+    MPAVItem *_pendingItem;
+    MPAVItem *_pendingItemWithDifferentType;
     NSUInteger _playableContentTypeOverride;
     NSString *_playbackErrorDescription;
     UINavigationController *_portraitNavigationController;
+    UIImage *_posterImage;
     UIMovieSnapshotView *_snapshotView;
     double _timeWhenResignedActive;
     UIView *_topmostView;
@@ -72,10 +75,11 @@
 
 @property(retain) UIImage *backgroundPlaceholderImage;
 @property(readonly) UIView *fullscreenView;
-@property(retain) MPItem *item;
+@property(retain) MPAVItem *item;
 @property(copy) NSString *moviePath;
 @property(readonly) MPVideoView *movieView;
 @property(copy) NSString *playbackErrorDescription;
+@property(retain) UIImage *posterImage;
 @property(readonly) UIView *view;
 @property BOOL alwaysAllowHidingControlsOverlay;
 @property NSUInteger audioControlsStyle;
@@ -104,6 +108,7 @@
 @property(readonly) BOOL videoOutActive;
 @property(readonly) float volume;
 
++ (void)allInstancesResignActive;
 + (struct CGSize { float x1; float x2; })fillSizeForMovieBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 movieNaturalSize:(struct CGSize { float x1; float x2; })arg2 orientation:(NSInteger)arg3 destinationTVOut:(BOOL)arg4;
 + (Class)preferredWindowClass;
 
@@ -133,7 +138,6 @@
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)_itemPlaybackDidFailNotification:(id)arg1;
 - (void)_itemReadyToPlayNotification:(id)arg1;
-- (void)_itemTypeAvailableNotification:(id)arg1;
 - (void)_moviePlayerDidBecomeActiveNotification:(id)arg1;
 - (void)_moviePlayerWillBecomeActiveNotification:(id)arg1;
 - (void)_mutedDidChangeNotification:(id)arg1;
@@ -160,6 +164,7 @@
 - (void)_serverDeathNotification:(id)arg1;
 - (void)_setActiveViewController:(id)arg1 forTransition:(BOOL)arg2;
 - (void)_setPortraitLoadingShowing:(BOOL)arg1;
+- (void)_setTVOutEnabled:(BOOL)arg1;
 - (BOOL)_shouldIgnoreChangeType:(NSUInteger)arg1;
 - (void)_simpleRemoteNotification:(id)arg1;
 - (void)_tearDownContainersForSwitchFromViewController:(id)arg1;
@@ -181,6 +186,7 @@
 - (void)_videoViewScaleModeDidChangeNotification:(id)arg1;
 - (void)_volumeDidChangeNotification:(id)arg1;
 - (void)_willBeginSuspendAnimationNotification:(id)arg1;
+- (void)_willEnterForegroundNotification:(id)arg1;
 - (void)_willResignNotification:(id)arg1;
 - (void)_willSuspendNotification:(id)arg1;
 - (void)_willTerminateNotification:(id)arg1;
@@ -239,11 +245,13 @@
 - (id)playerView;
 - (void)portraitDoneButtonAction:(id)arg1;
 - (void)portraitScaleButtonAction:(id)arg1;
+- (id)posterImage;
 - (void)prepareAndSetupUI;
 - (void)prepareForPlayback;
 - (double)seekableEndTime;
 - (double)seekableStartTime;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAlwaysAllowHidingControlsOverlay:(BOOL)arg1;
 - (void)setAttemptAutoPlayWhenControlsHidden:(BOOL)arg1;
 - (void)setAudioControlsStyle:(NSUInteger)arg1;
@@ -270,6 +278,7 @@
 - (BOOL)setOrientation:(NSInteger)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)setPlayableContentType:(NSUInteger)arg1;
 - (void)setPlaybackErrorDescription:(id)arg1;
+- (void)setPosterImage:(id)arg1;
 - (BOOL)setUIOrientation:(NSInteger)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)setUseLegacyControls:(BOOL)arg1;
 - (void)setVideoFrameDisplayOnResumeDisabled:(BOOL)arg1;

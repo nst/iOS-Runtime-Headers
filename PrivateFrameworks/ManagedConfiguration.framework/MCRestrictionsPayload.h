@@ -13,6 +13,7 @@
 + (id)localizedDescriptionForPayloadCount:(NSUInteger)arg1;
 + (id)typeStrings;
 
+- (id)_defaultMediaSettings;
 - (void)_insertRestrictedBoolForKey:(id)arg1 value:(id)arg2 preferenc:(BOOL)arg3;
 - (id)_invalidFieldErrorWithFieldName:(id)arg1;
 - (id)_localizedStrings;

@@ -2,30 +2,38 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVAccountInfoProvider>, <CoreDAVTaskManager>, NSMutableSet;
+@class <CoreDAVAccountInfoProvider>, <CoreDAVTaskGroupDelegate>, <CoreDAVTaskManager>, NSMutableSet;
 
 @interface CoreDAVTaskGroup : NSObject {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
-    id _delegate;
+    <CoreDAVTaskGroupDelegate> *_delegate;
     BOOL _isCancelling;
     NSMutableSet *_outstandingTasks;
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
 }
 
-@property id delegate;
+@property(readonly) <CoreDAVAccountInfoProvider> *accountInfoProvider;
+@property <CoreDAVTaskGroupDelegate> *delegate;
+@property(readonly) NSMutableSet *outstandingTasks;
+@property(readonly) <CoreDAVTaskManager> *taskManager;
 @property double timeoutInterval;
 
 - (void)_tearDownAllTasks;
+- (id)accountInfoProvider;
 - (void)bailWithError:(id)arg1;
+- (void)cancelTaskGroup;
 - (void)cancelTasks;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (id)outstandingTasks;
 - (void)setDelegate:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
+- (void)startTaskGroup;
 - (void)syncAway;
 - (void)taskGroupWillCancelWithError:(id)arg1;
+- (id)taskManager;
 - (double)timeoutInterval;
 
 @end

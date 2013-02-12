@@ -26,6 +26,15 @@
             float width; 
             float height; 
         } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     unsigned int _tentative : 1;
     unsigned int _cancelled : 1;
     unsigned int _selected : 1;
@@ -34,6 +43,7 @@
     unsigned int _colorType : 2;
     UIColor *_color;
     id _delegate;
+    } _fullTextRect;
     NSString *_location;
     NSIndexSet *_locationMetrics;
     } _locationRect;
@@ -48,6 +58,17 @@
     float _visibleHeight;
 }
 
+@property(copy) UIColor *color;
+@property(copy) NSString *location;
+@property(retain) EKEvent *occurrence;
+@property(copy) NSString *title;
+@property(getter=isCancelled) BOOL cancelled;
+@property BOOL darkensSelection;
+@property id delegate;
+@property BOOL dimmed;
+@property(getter=isSelected) BOOL selected;
+@property(getter=isTentative) BOOL tentative;
+
 + (id)_cachedImageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 height:(float)arg3;
 + (void)_clearViewCache;
 + (id)_imageForBackgroundColor:(id)arg1 foregroundColor:(id)arg2 height:(float)arg3;
@@ -57,7 +78,7 @@
 + (float)bottomShadowMargin;
 + (void)clearCaches;
 + (float)minimumHeight;
-+ (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tentative:(BOOL)arg2 cancelled:(BOOL)arg3 color:(id)arg4 selected:(BOOL)arg5 title:(id)arg6 location:(id)arg7;
++ (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (void)pushRoundedRectPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withCornerRadius:(float)arg3;
 
 - (void)_drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -65,15 +86,20 @@
 - (void)_invalidateMetrics;
 - (id)_locationFont;
 - (id)_locationMetrics;
+- (void)_prepareForReuse;
 - (id)_tentativeOutline;
 - (id)_titleFont;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
-- (BOOL)cancelled;
 - (id)color;
+- (BOOL)darkensSelection;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tentative:(BOOL)arg2 cancelled:(BOOL)arg3 color:(id)arg4 selected:(BOOL)arg5 title:(id)arg6 location:(id)arg7;
+- (id)delegate;
+- (BOOL)dimmed;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
+- (BOOL)isCancelled;
+- (BOOL)isTentative;
 - (id)location;
 - (id)occurrence;
 - (void)removeFromSuperview;
@@ -90,7 +116,6 @@
 - (void)setTitle:(id)arg1;
 - (void)setVisibleHeight:(float)arg1;
 - (BOOL)shouldTrack;
-- (BOOL)tentative;
 - (id)textColor;
 - (id)title;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

@@ -6,6 +6,6 @@
 }
 
 + (void)_initializeSafeCategory;
-+ (id)imageWithName:(id)arg1 pressed:(BOOL)arg2;
++ (id)imageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 name:(id)arg2 pressed:(BOOL)arg3;
 
 @end

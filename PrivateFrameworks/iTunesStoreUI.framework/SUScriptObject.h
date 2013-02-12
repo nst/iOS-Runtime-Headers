@@ -17,6 +17,8 @@
 }
 
 @property(getter=_className,readonly) NSString *className;
+@property(readonly) OpaqueJSContext *copyJavaScriptContext;
+@property(readonly) SUWebImagePool *imagePool;
 @property(retain) SUScriptNativeObject *nativeObject;
 @property SUScriptObject *parentScriptObject;
 @property(readonly) NSMutableArray *scriptAttributeKeys;
@@ -36,6 +38,7 @@
 - (void)checkOutBatchTarget:(id)arg1;
 - (void)checkOutScriptObject:(id)arg1;
 - (void)checkOutScriptObjects:(id)arg1;
+- (struct OpaqueJSContext { }*)copyJavaScriptContext;
 - (id)copyObjectForScriptFromPoolWithClass:(Class)arg1;
 - (void)dealloc;
 - (void)didPerformBatchedInvocations;
@@ -43,6 +46,7 @@
 - (void)dispatchEvent:(id)arg1 forName:(id)arg2;
 - (BOOL)equals:(id)arg1;
 - (void)finalizeForWebScript;
+- (id)imagePool;
 - (id)init;
 - (id)invocationBatch:(BOOL)arg1;
 - (BOOL)isVisible;

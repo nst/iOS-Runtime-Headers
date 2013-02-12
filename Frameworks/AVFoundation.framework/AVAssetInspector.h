@@ -33,6 +33,7 @@
 - (id)commonMetadata;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
+- (BOOL)hasProtectedContent;
 - (id)lyrics;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;

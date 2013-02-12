@@ -21,6 +21,7 @@
     UIView *_dimmingView;
     float _lastFooterAdjustment;
     float _lastKeyboardAdjustment;
+    id _navigationControllerBookkeeper;
     UILabel *_noResultsLabel;
     NSString *_noResultsMessage;
     UIPopoverController *_popoverController;
@@ -44,12 +45,14 @@
 @property(getter=isActive) BOOL active;
 @property BOOL automaticallyShowsNoResultsMessage;
 @property BOOL dimTableViewOnEmptySearchString;
+@property(readonly) BOOL hidNavigationBar;
 @property(getter=isNavigationBarHidingEnabled) BOOL navigationBarHidingEnabled;
 @property BOOL noResultsMessageVisible;
 
 + (void)_initializeSafeCategory;
 
 - (void)_adjustTableViewContentInsets;
+- (BOOL)_areSearchContentsSplitViewMaster;
 - (void)_cleanUpSearchBar;
 - (void)_clearViewController;
 - (void)_configureNewSearchBar;
@@ -83,6 +86,7 @@
 - (id)delegate;
 - (BOOL)dimTableViewOnEmptySearchString;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hidNavigationBar;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSearchBar:(id)arg1 contentsController:(id)arg2 searchResultsTableViewStyle:(NSInteger)arg3;

@@ -30,7 +30,7 @@
 
 - (id)_containerViewForView:(id)arg1;
 - (id)_dividerViewForView:(id)arg1;
-- (BOOL)_isContainedByTransitioningView;
+- (BOOL)_isTransitioningFromView:(id)arg1;
 - (void)_navigationTransitionDidStop;
 - (void)_removeContainerViewForView:(id)arg1;
 - (void)_removeDividerViewForView:(id)arg1;

@@ -16,6 +16,7 @@
     NSMutableSet *_purchasedIdentifiers;
     BOOL _shouldExitWhenFinished;
     BOOL _showingErrorDialogs;
+    NSInteger _updatesCount;
     BOOL _waitingForAuthentication;
 }
 
@@ -48,11 +49,11 @@
 - (void)addExternalDownloads:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (void)addFuturePurchase:(id)arg1;
 - (BOOL)addPurchaseBatch:(id)arg1;
-- (BOOL)addPurchaseBatchForItems:(id)arg1;
 - (void)addPurchasedItemIdentifier:(unsigned long long)arg1;
 - (void)authenticationDidFail:(id)arg1;
 - (void)authenticationDidFinish:(id)arg1;
 - (void)authenticationDidTimeout:(id)arg1;
+- (void)beginUpdates;
 - (void)cancelFuturePurchase:(id)arg1;
 - (void)continuation:(id)arg1 failedWithError:(id)arg2;
 - (void)continuationFinished:(id)arg1;
@@ -60,11 +61,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;
+- (void)endUpdates;
 - (void)enqueueScriptPurchases:(id)arg1;
 - (id)futurePurchases;
 - (id)init;
 - (BOOL)itemIdentifierIsPurchased:(unsigned long long)arg1;
 - (BOOL)itemIdentifierIsPurchasing:(unsigned long long)arg1;
+- (id)newPurchaseBatchForItems:(id)arg1;
 - (NSInteger)numberOfPendingPurchases;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;

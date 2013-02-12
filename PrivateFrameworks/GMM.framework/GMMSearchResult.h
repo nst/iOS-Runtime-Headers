@@ -10,10 +10,12 @@
     NSString *_attributionText;
     NSString *_attributionUrl;
     unsigned long long _cid;
+    BOOL _closedListing;
     NSString *_directionsPlacemarkToken;
     NSMutableArray *_enhancedContents;
     GMMGeometry *_geometry;
     BOOL _hasCid;
+    BOOL _hasClosedListing;
     BOOL _hasInexactPosition;
     BOOL _hasLocationSource;
     BOOL _hasSesameDetailsEditable;
@@ -60,11 +62,13 @@
 @property(retain) GMMStructuredAddress *structuredAddress;
 @property(readonly) NSInteger addressLinesCount;
 @property unsigned long long cid;
+@property BOOL closedListing;
 @property(readonly) NSInteger enhancedContentsCount;
 @property(readonly) BOOL hasAdInfo;
 @property(readonly) BOOL hasAttributionText;
 @property(readonly) BOOL hasAttributionUrl;
 @property(readonly) BOOL hasCid;
+@property(readonly) BOOL hasClosedListing;
 @property(readonly) BOOL hasDirectionsPlacemarkToken;
 @property(readonly) BOOL hasGeometry;
 @property(readonly) BOOL hasInexactPosition;
@@ -103,6 +107,7 @@
 - (id)attributionText;
 - (id)attributionUrl;
 - (unsigned long long)cid;
+- (BOOL)closedListing;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -115,6 +120,7 @@
 - (BOOL)hasAttributionText;
 - (BOOL)hasAttributionUrl;
 - (BOOL)hasCid;
+- (BOOL)hasClosedListing;
 - (BOOL)hasDirectionsPlacemarkToken;
 - (BOOL)hasGeometry;
 - (BOOL)hasInexactPosition;
@@ -157,6 +163,7 @@
 - (void)setAttributionText:(id)arg1;
 - (void)setAttributionUrl:(id)arg1;
 - (void)setCid:(unsigned long long)arg1;
+- (void)setClosedListing:(BOOL)arg1;
 - (void)setDirectionsPlacemarkToken:(id)arg1;
 - (void)setEnhancedContent:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setEnhancedContents:(id)arg1;

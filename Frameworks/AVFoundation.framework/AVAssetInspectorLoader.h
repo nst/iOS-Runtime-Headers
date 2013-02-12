@@ -2,65 +2,101 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspector, AVWeakReference, NSMutableArray, NSURL;
+@class AVAssetCache, AVAssetInspector, AVValidator, AVWeakReference, NSDictionary, NSMutableArray, NSURL;
 
 @interface AVAssetInspectorLoader : NSObject <NSCopying, AVAsynchronousKeyValueLoading> {
     NSURL *_URL;
+    AVAssetCache *_assetCache;
     AVAssetInspector *_assetInspector;
-    NSInteger _asyncDurationLoadingStatus;
-    NSInteger _asyncLyricsLoadingStatus;
     NSInteger _basicInspectionFailureCode;
+    NSInteger _chapterGroupInfoLoadingStatus;
+    NSInteger _durationLoadingStatus;
     struct OpaqueFigFormatReader { } *_formatReader;
     NSMutableArray *_keysAwaitingCompletion;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
+    NSInteger _lyricsLoadingStatus;
+    BOOL _playable;
+    NSInteger _playableLoadingStatus;
+    BOOL _shouldMatchDataInCacheByURLPathComponentOnly;
+    BOOL _shouldMatchDataInCacheByURLWithoutQueryComponent;
     NSInteger _status;
-    NSInteger _syncDurationLoadingStatus;
-    NSInteger _syncLyricsLoadingStatus;
+    NSInteger _tracksLoadingStatus;
+    NSDictionary *_validationPlist;
+    AVValidator *_validator;
     AVWeakReference *_weakReference;
 }
 
 @property(readonly) NSURL *URL;
+@property(readonly) AVAssetCache *assetCache;
+@property(readonly) NSArray *chapterGroupInfo;
 @property(getter=_formatReader,readonly) OpaqueFigFormatReader *formatReader;
 @property(getter=_formatReaderLoader,readonly) OpaqueFigFormatReaderLoader *formatReaderLoader;
 @property(readonly) NSString *lyrics;
 @property(getter=_playbackItem,readonly) OpaqueFigPlaybackItem *playbackItem;
 @property(readonly) ? duration;
+@property(readonly) BOOL hasProtectedContent;
+@property(getter=isPlayable,readonly) BOOL playable;
+@property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
+@property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
 
 - (id)URL;
+- (id)_chapterGroupInfo;
 - (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(NSInteger*)arg1;
-- (id)_dictionaryOfSpecialTestsOfKeys;
+- (id)_dictionaryOfSpecialGettersForKeyValueStatus;
+- (id)_dictionaryOfSpecialLoadingMethodsForKeys;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
-- (id)_getAndPruneCompletionsForKeysWhileMutexLockedWithStatus:(NSInteger)arg1;
+- (id)_getAndPruneCompletionsWhileMutexLocked;
 - (BOOL)_inspectionRequiresAFormatReader;
+- (void)_loadChapterGroupInfoSynchronously;
 - (void)_loadDurationSynchronously;
 - (void)_loadLyricsSynchronously;
-- (BOOL)_loadValuesForKeys:(id)arg1;
+- (void)_loadPlayabilitySynchronously;
+- (id)_loadPlayabilityWhileMutexLockedAsynchronously;
+- (void)_loadTracksSynchronously;
+- (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
+- (id)_loadValuesWhileMutexLockedForKeys:(id)arg1;
+- (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (id)_lyrics;
 - (id)_mapFigErrorCodeToNSError:(long)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (BOOL)_providesAccurateTiming;
 - (void)_serverHasDied;
-- (void)_setDurationStatus:(NSInteger)arg1;
-- (void)_setLyricsStatus:(NSInteger)arg1;
 - (void)_setStatus:(NSInteger)arg1 figErrorCode:(long)arg2;
-- (id)_testDurationWhileMutexLocked;
-- (NSInteger)_testKeyWhileMutexLocked:(id)arg1;
-- (BOOL)_testKeysWhileMutexLocked:(id)arg1;
-- (id)_testLyricsWhileMutexLocked;
+- (NSInteger)_status;
+- (id)_statusOfValueForKeyThatIsAlwaysLoaded;
+- (id)_statusOfValueOfChapterGroupInfoWhileMutexLocked;
+- (id)_statusOfValueOfDurationWhileMutexLocked;
+- (id)_statusOfValueOfLyricsWhileMutexLocked;
+- (id)_statusOfValueOfPlayableWhileMutexLocked;
+- (id)_statusOfValueOfTracksWhileMutexLocked;
+- (NSInteger)_statusOfValueWhileMutexLockedForKey:(id)arg1 returningFigErrorCode:(NSInteger*)arg2;
+- (BOOL)_statusOfValuesIsTerminalWhileMutexLockedForKeys:(id)arg1;
+- (void)_updateChapterGroupInfoStatusWhileMutexLocked:(NSInteger)arg1;
+- (void)_updateDurationStatusWhileMutexLocked:(NSInteger)arg1;
+- (void)_updateLyricsStatusWhileMutexLocked:(NSInteger)arg1;
+- (void)_updatePlayableStatusWhileMutexLocked:(NSInteger)arg1;
+- (BOOL)_updateStatusWhileMutexLocked:(NSInteger)arg1 figErrorCode:(long)arg2;
+- (void)_updateTracksStatusWhileMutexLocked:(NSInteger)arg1;
 - (id)_weakReference;
+- (id)assetCache;
 - (id)assetInspector;
 - (void)cancelLoading;
+- (id)chapterGroupInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })duration;
 - (void)finalize;
+- (BOOL)hasProtectedContent;
 - (id)init;
 - (id)initWithURL:(id)arg1;
+- (BOOL)isPlayable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)lyrics;
 - (void)release;
 - (id)retain;
+- (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
+- (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (NSInteger)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 
 @end

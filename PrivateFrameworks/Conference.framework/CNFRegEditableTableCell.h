@@ -4,11 +4,19 @@
 
 @interface CNFRegEditableTableCell : PSEditableTableCell {
     SEL _emptyStateSelector;
+    id _textChangeObserver;
+    BOOL _textFieldIsEmpty;
 }
 
+- (void)_handleTextChanged;
+- (void)_startListeningForTextChanges;
+- (void)_stopListeningForTextChanges;
+- (BOOL)_textFieldIsCurrentlyEmpty;
+- (void)_updateTextFieldOffsetWithDict:(id)arg1;
 - (void)dealloc;
+- (void)layoutSubviews;
 - (void)notifyTextFieldEmptyStateChanged:(BOOL)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 replacementString:(id)arg3;
 
 @end

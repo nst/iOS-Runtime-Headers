@@ -23,7 +23,6 @@
 - (void)okButtonPressed:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (void)setBlocked:(BOOL)arg1;
-- (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
 - (void)setStringValue:(id)arg1;
 - (void)showError:(id)arg1 animate:(BOOL)arg2;
 - (id)stringValue;

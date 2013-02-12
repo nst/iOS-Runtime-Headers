@@ -9,6 +9,7 @@
     NSInteger _connectedPeers;
     NSData *_connectionData;
     GKMatchRequest *_matchRequest;
+    unsigned char _matchVersion;
     NSArray *_matches;
     NSArray *_relayPushes;
     NSString *_rid;
@@ -24,6 +25,7 @@
 @property(retain) NSString *rid;
 @property(retain) NSData *sessionToken;
 @property NSInteger connectedPeers;
+@property unsigned char matchVersion;
 @property BOOL serverHosted;
 
 - (void)cancel;
@@ -35,6 +37,7 @@
 - (id)header;
 - (id)key;
 - (id)matchRequest;
+- (unsigned char)matchVersion;
 - (id)matches;
 - (id)relayPushes;
 - (id)request;
@@ -45,6 +48,7 @@
 - (void)setConnectedPeers:(NSInteger)arg1;
 - (void)setConnectionData:(id)arg1;
 - (void)setMatchRequest:(id)arg1;
+- (void)setMatchVersion:(unsigned char)arg1;
 - (void)setMatches:(id)arg1;
 - (void)setRelayPushes:(id)arg1;
 - (void)setRid:(id)arg1;

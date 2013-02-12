@@ -32,6 +32,7 @@
     NSInteger representedObjectProtection;
 }
 
+@property(readonly) NSSet *attachmentURLs;
 @property(retain) NSURLConnection *connection;
 @property(retain) NSData *data;
 @property(retain) NSString *fileName;
@@ -58,6 +59,7 @@
 - (id)_requestForURL:(id)arg1;
 - (id)_voidRequest;
 - (void)appendData:(id)arg1 forURL:(id)arg2 lastChunk:(BOOL)arg3;
+- (id)attachmentURLs;
 - (void)cancel;
 - (unsigned long)cfEncodingForAttachmentURL:(id)arg1;
 - (void)computePreview;

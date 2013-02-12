@@ -21,6 +21,7 @@
 + (void)_initializeSafeCategory;
 + (long long)approximateByteSizeForMode:(NSInteger)arg1 duration:(double)arg2;
 + (NSInteger)getHDRemakerModeForMode:(NSInteger)arg1;
++ (NSInteger)getSDRemakerModeForMode:(NSInteger)arg1;
 + (double)maximumDurationForTrimMode:(NSInteger)arg1;
 
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <GQZArchiveInputStream>, NSMutableDictionary;
+@class <GQZArchiveInputStream>, NSMutableDictionary, NSString;
 
 @interface GQZArchive : NSObject {
     NSMutableDictionary *mEntries;
+    NSString *mFilename;
     <GQZArchiveInputStream> *mInput;
     BOOL mIsEncrypted;
 }
@@ -14,6 +15,7 @@
 - (void)dealloc;
 - (id)entryNames;
 - (id)entryWithName:(id)arg1;
+- (id)filename;
 - (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (BOOL)isEncrypted;

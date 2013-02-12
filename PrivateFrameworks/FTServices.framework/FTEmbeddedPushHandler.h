@@ -6,6 +6,7 @@
 
 @interface FTEmbeddedPushHandler : FTPushHandler <APSConnectionDelegate> {
     APSConnection *_apsConnection;
+    BOOL _fastUserSwitched;
 }
 
 - (void)_acceptIncomingPushes;
@@ -26,5 +27,7 @@
 - (id)pushToken;
 - (void)requestKeepAlive;
 - (void)setRegistered:(BOOL)arg1;
+- (void)systemDidFastUserSwitchIn;
+- (void)systemDidFastUserSwitchOut;
 
 @end

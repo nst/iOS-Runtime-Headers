@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITableViewDataSource>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, UIColor, UITableViewCell, UIView;
+@class <UITableViewDataSource>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, UIColor, UISwipeGestureRecognizer, UITableViewCell, UIView;
 
-@interface UITableView : UIScrollView <NSCoding> {
+@interface UITableView : UIScrollView <UIGestureRecognizerDelegate, NSCoding> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -104,6 +104,7 @@
         unsigned int hideScrollIndicators : 1; 
         unsigned int sendReloadFinished : 1; 
         unsigned int keepFirstResponderWhenInteractionDisabled : 1; 
+        unsigned int keepFirstResponderVisibleOnBoundsChange : 1; 
     UIView *_backgroundView;
     UIColor *_checkmarkColor;
     id _countLabel;
@@ -145,6 +146,7 @@
     UIColor *_separatorColor;
     UIColor *_separatorTopShadowColor;
     NSInteger _style;
+    UISwipeGestureRecognizer *_swipeGestureRecognizer;
     NSInteger _swipeToDeleteRow;
     NSInteger _swipeToDeleteSection;
     NSInteger _tableDisplaySuspendedCount;
@@ -164,6 +166,7 @@
     } _visibleRows;
 }
 
+@property(getter=_keepsFirstResponderVisibleOnBoundsChange) BOOL keepsFirstResponderVisibleOnBoundsChange; /* unknown property attribute: S_setKeepsFirstResponderVisibleOnBoundsChange: */
 @property(retain) UIView *backgroundView;
 @property <UITableViewDataSource> *dataSource;
 @property <UITableViewDelegate> *delegate;
@@ -187,14 +190,22 @@
 
 - (void)_accessibilityClearChildren;
 - (id)_accessibilityFooterElement;
+- (id)_accessibilityFuzzyHitTest:(struct CGPoint { float x1; float x2; }*)arg1 withEvent:(id)arg2;
 - (id)_accessibilityHeaderElement;
 - (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_accessibilityInitializeInternalData;
 - (id)_accessibilityInternalData;
 - (id)_accessibilityScrollStatus;
+- (BOOL)_accessibilitySearchControllerDimmingViewVisible;
+- (id)_accessibilitySearchResultsTableView;
+- (BOOL)_accessibilitySearchTableViewVisible;
+- (BOOL)_accessibilityServesAsContainingParentForOrdering;
+- (id)_accessibilitySubviews;
 - (id)_accessibilitySupplementaryFooterViews;
 - (id)_accessibilitySupplementaryHeaderViews;
-- (void)_accessibilityUpdateVisibleCellFrames;
+- (id)_accessibilityUIScrollViewScrollStatus;
+- (id)_accessibilityUserTestingVisibleCells;
+- (id)_accessibilityUserTestingVisibleSections;
 - (void)_accessoryButtonAction:(id)arg1;
 - (NSInteger)_accessoryTypeForCell:(id)arg1 forRowAtIndexPath:(id)arg2;
 - (void)_addContentSubview:(id)arg1 atBack:(BOOL)arg2;
@@ -261,6 +272,7 @@
 - (void)_ensureRowDataIsLoaded;
 - (void)_finishedAnimatingCellReorder:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_finishedRemovingRemovalButtonForTableCell:(id)arg1;
+- (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (NSInteger)_globalReorderingRow;
 - (void)_handleDeviceOrientationChange:(id)arg1;
 - (BOOL)_hasSwipeToDeleteRow;
@@ -274,6 +286,7 @@
 - (BOOL)_isRowMultiSelect:(id)arg1;
 - (BOOL)_isShowingIndex;
 - (BOOL)_isTableHeaderViewHidden;
+- (BOOL)_keepsFirstResponderVisibleOnBoundsChange;
 - (void)_languageChanged;
 - (id)_newSectionViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSection:(NSInteger)arg2 isHeader:(BOOL)arg3;
 - (void)_numberOfRowsDidChange;
@@ -298,6 +311,7 @@
 - (void)_scheduleAdjustExtraSeparators;
 - (id)_scriptingInfo;
 - (void)_scroll;
+- (void)_scrollFirstResponderCellToVisible:(BOOL)arg1;
 - (void)_scrollToTopHidingTableHeader:(BOOL)arg1;
 - (void)_scrollToTopHidingTableHeaderIfNecessary:(BOOL)arg1;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
@@ -312,9 +326,14 @@
 - (void)_selectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(NSInteger)arg3 notifyDelegate:(BOOL)arg4;
 - (void)_sendDidEndEditingForIndexPath:(id)arg1;
 - (void)_sendWillBeginEditingForIndexPath:(id)arg1;
+- (void)_setAccessibilitySearchControllerDimmingViewHidden;
+- (void)_setAccessibilitySearchControllerDimmingViewVisible;
+- (void)_setAccessibilitySearchTableViewHidden;
+- (void)_setAccessibilitySearchTableViewVisible;
 - (void)_setBackgroundColor:(id)arg1 animated:(BOOL)arg2;
 - (void)_setHeightForTableHeaderViewHiding:(float)arg1;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
+- (void)_setKeepsFirstResponderVisibleOnBoundsChange:(BOOL)arg1;
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withFrames:(BOOL)arg2;
 - (void)_setRowCount:(NSInteger)arg1;
 - (void)_setTopSeparatorCell:(id)arg1;
@@ -360,7 +379,7 @@
 - (void)_updateVisibleCellsNow:(BOOL)arg1;
 - (void)_updateVisibleHeadersAndFootersNow:(BOOL)arg1;
 - (void)_updateWithItems:(id)arg1 withOldRowData:(id)arg2 oldRowRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3 newRowRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4 context:(id)arg5;
-- (void)_userSelectRowAtIndexPath:(id)arg1;
+- (void)_userSelectRowAtPendingSelectionIndexPath:(id)arg1;
 - (BOOL)_usesNewHeaderFooterBehavior;
 - (void)_validateCells;
 - (void)_validateSectionHeadersAndFooters;
@@ -389,7 +408,6 @@
 - (id)accessibilityTableViewSectionElementAtSection:(NSInteger)arg1 isHeader:(BOOL)arg2;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)accessibilityTreeHidden;
-- (void)accessibilityUpdateVisibleCellFrames;
 - (void)adjustIndexPaths:(id)arg1 forMoveOfIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (BOOL)allowsFooterViewsToFloat;
 - (BOOL)allowsHeaderViewsToFloat;
@@ -407,6 +425,7 @@
 - (void)deleteRowsAtIndexPaths:(id)arg1 withRowAnimation:(NSInteger)arg2;
 - (void)deleteSections:(id)arg1 withRowAnimation:(NSInteger)arg2;
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
+- (id)description;
 - (void)deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)didMoveToWindow;
 - (void)encodeWithCoder:(id)arg1;
@@ -457,7 +476,6 @@
 - (void)reloadSectionIndexTitles;
 - (void)reloadSections:(id)arg1 withRowAnimation:(NSInteger)arg2;
 - (void)resizeSubviewsWithOldSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)rowDataDescription;
 - (float)rowHeight;
 - (id)scrollTestParameters;
 - (void)scrollToNearestSelectedRowAtScrollPosition:(NSInteger)arg1 animated:(BOOL)arg2;

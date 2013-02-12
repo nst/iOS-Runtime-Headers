@@ -2,36 +2,46 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaLibrary : NSObject {
-    id _internal;
+@interface MPMediaLibrary : NSObject <NSCoding> {
+    void *_internal;
 }
 
 @property(readonly) NSDate *lastModifiedDate;
 
-+ (void)_clearDefaultMediaLibrary;
-+ (Class)_implementationClass;
++ (id)_libraryDataProviders;
++ (id)_libraryForDataProvider:(id)arg1;
++ (id)_mediaLibraries;
++ (void)addLibraryDataProvider:(id)arg1;
 + (id)defaultMediaLibrary;
++ (id)deviceMediaLibrary;
 + (BOOL)isLibraryServerDisabled;
-+ (id)runLoopForNotifications;
++ (id)libraryDataProviders;
++ (id)mediaLibraries;
++ (void)reloadDynamicPropertiesForLibraryDataProvider:(id)arg1;
++ (void)reloadLibraryDataProvider:(id)arg1;
++ (void)removeLibraryDataProvider:(id)arg1;
++ (void)setDefaultMediaLibrary:(id)arg1;
 + (void)setLibraryServerDisabled:(BOOL)arg1;
 + (void)setRunLoopForNotifications:(id)arg1;
 
+- (void)_clearCachedContentData;
 - (void)_didReceiveMemoryWarning:(id)arg1;
+- (id)_initWithLibraryDataProvider:(id)arg1;
 - (unsigned long long)_persistentIDForAssetURL:(id)arg1;
+- (void)_postDataProviderDidChangeITunesIsSyncingToValue:(BOOL)arg1;
+- (void)_postDataProviderWillChangeITunesIsSyncingToValue:(BOOL)arg1;
 - (void)_postLibraryDidChangeNotificationForSync;
-- (void)_postLibraryDidChangeNotificationWithUserInfo:(id)arg1;
+- (void)_reloadLibraryForContentsChangeWithNotificationInfo:(id)arg1;
+- (void)_reloadLibraryForDynamicPropertyChangeWithNotificationInfo:(id)arg1;
+- (id)addPlaylistWithName:(id)arg1 activeGeniusPlaylist:(BOOL)arg2;
+- (id)addPlaylistWithName:(id)arg1;
 - (void)beginGeneratingLibraryChangeNotifications;
-- (id)collectionSectionsForQuery:(id)arg1;
-- (id)collectionsForQuery:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
-- (NSInteger)containedMediaTypesForQuery:(id)arg1;
-- (NSUInteger)countOfCollectionsForQuery:(id)arg1;
-- (NSUInteger)countOfItemsForQuery:(id)arg1;
+- (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2;
 - (void)dealloc;
+- (id)description;
+- (void)disconnect;
+- (void)encodeWithCoder:(id)arg1;
 - (void)endGeneratingLibraryChangeNotifications;
-- (id)fetchArtworkForSize:(struct CGSize { float x1; float x2; })arg1 atPlaybackTime:(double)arg2 item:(id)arg3;
-- (id)fetchArtworkForSize:(struct CGSize { float x1; float x2; })arg1 inGeniusMixPlaylist:(id)arg2;
-- (id)fetchArtworkForSize:(struct CGSize { float x1; float x2; })arg1 item:(id)arg2;
-- (void)forwardInvocation:(id)arg1;
 - (BOOL)hasAlbums;
 - (BOOL)hasArtists;
 - (BOOL)hasAudiobooks;
@@ -39,24 +49,38 @@
 - (BOOL)hasGeniusMixes;
 - (BOOL)hasGenres;
 - (BOOL)hasMedia;
+- (BOOL)hasMediaOfType:(NSInteger)arg1;
 - (BOOL)hasPlaylists;
 - (BOOL)hasPodcasts;
 - (BOOL)hasSongs;
 - (void)iTunesSyncPhaseDidFinish:(NSInteger)arg1 reason:(NSInteger)arg2;
 - (void)iTunesSyncPhaseWillStart:(NSInteger)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isArtworkIdenticalForItem:(id)arg1 otherItem:(id)arg2 compareRepresentativeItemArtwork:(BOOL)arg3 missingAlwaysComparesEqual:(BOOL)arg4;
 - (BOOL)isFilteringDisabled;
+- (BOOL)isGeniusEnabled;
 - (BOOL)isSyncing;
 - (BOOL)isValidAssetURL:(id)arg1;
-- (BOOL)itemExistsWithIdentifier:(unsigned long long)arg1;
-- (id)itemSectionsForQuery:(id)arg1;
-- (id)itemsForQuery:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 includingProperties:(id)arg3;
-- (id)itemsForQuery:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
+- (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
+- (id)itemWithPersistentID:(unsigned long long)arg1 verifyExistence:(BOOL)arg2;
+- (id)itemWithPersistentID:(unsigned long long)arg1;
+- (id)lastModifiedDate;
+- (id)libraryDataProvider;
 - (BOOL)libraryHasBeenModifiedWithToken:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (id)modificationToken;
+- (id)name;
 - (id)pathForAssetURL:(id)arg1;
-- (BOOL)serverIsAlive;
+- (BOOL)performTransactionWithBlock:(id)arg1;
+- (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
+- (id)playlistWithPersistentID:(unsigned long long)arg1;
+- (id)preferredAudioLanguages;
+- (id)preferredSubtitleLanguages;
+- (BOOL)removeItems:(id)arg1;
+- (BOOL)removePlaylist:(id)arg1;
+- (BOOL)requiresAuthentication;
 - (void)setFilteringDisabled:(BOOL)arg1;
+- (unsigned long long)syncGenerationID;
+- (id)uniqueIdentifier;
 
 @end

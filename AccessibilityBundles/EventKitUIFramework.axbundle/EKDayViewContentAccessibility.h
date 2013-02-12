@@ -7,6 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)reloadOccurrenceViews;
+- (void)layoutSubviews;
 
 @end

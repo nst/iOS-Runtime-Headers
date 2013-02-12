@@ -46,6 +46,7 @@
 - (void)dealloc;
 - (id)defaultAlternativeForPart:(id)arg1;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
+- (BOOL)hasCompleteDataForMimePart:(id)arg1;
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)headersForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2;
 - (void)setMessageClass:(Class)arg1;

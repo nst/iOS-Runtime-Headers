@@ -40,6 +40,7 @@
 - (void)_networkUsageChanged:(id)arg1;
 - (void)_observeDaemon;
 - (void)_preOrdersChanged:(id)arg1;
+- (void)_registerAfterDaemonLaunch;
 - (void)_registerWithDaemon;
 - (void)_removeAllPlaceholders;
 - (void)_resetKindsUsingNetwork;

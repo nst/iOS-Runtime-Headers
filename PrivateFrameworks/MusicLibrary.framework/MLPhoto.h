@@ -17,14 +17,14 @@
 + (NSInteger)portraitScrubberThumbnailFormat;
 + (NSInteger)posterThumbnailFormat;
 + (NSInteger)posterThumbnailFormat;
++ (id)preferredFileExtensionForType:(id)arg1;
++ (id)preferredFileExtensionForType:(id)arg1;
 + (NSInteger)thumbnailFormat;
 + (NSInteger)thumbnailFormat;
 
 - (BOOL)_isValidFileExtension:(id)arg1 forService:(id)arg2;
 - (BOOL)_isValidMimeType:(id)arg1 forService:(id)arg2;
 - (id)_metadataPath;
-- (id)_mimeTypeForImageFileExtension:(id)arg1;
-- (id)_mimeTypeForVideoFileExtension:(id)arg1;
 - (void)_setFilenameFromFullSizeVideoPath:(id)arg1;
 - (void)_setMetadataPathFromFullSizeVideoPath:(id)arg1;
 - (id)accessibilityHint;
@@ -35,8 +35,6 @@
 - (double)captureTime;
 - (void)copyToPasteboard;
 - (void)copyToPasteboard;
-- (struct __CFData { }*)createEmailImageDataWithLargeImage:(id)arg1 withExtension:(id)arg2 scaledImage:(id*)arg3 maximumSize:(struct CGSize { float x1; float x2; })arg4;
-- (struct __CFData { }*)createEmailImageDataWithLargeImage:(id)arg1 withExtension:(id)arg2 scaledImage:(id*)arg3 maximumSize:(struct CGSize { float x1; float x2; })arg4;
 - (id)createFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (id)createFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (id)createFullSizeImage;
@@ -58,7 +56,6 @@
 - (id)fileExtensionForService:(id)arg1;
 - (id)fileExtensions;
 - (id)filenameWithoutExtension;
-- (id)fullSizeImagePath;
 - (BOOL)hasFullSizeImage;
 - (BOOL)hasFullSizeImage;
 - (BOOL)hasFullSizeImageData;
@@ -75,18 +72,17 @@
 - (BOOL)isImage;
 - (BOOL)isVideo;
 - (BOOL)isWritePending;
+- (id)largestAvailableDataRepresentationAndType:(id*)arg1;
+- (id)largestAvailableDataRepresentationAndType:(id*)arg1;
 - (double)latitude;
 - (double)longitude;
 - (id)mimeType;
 - (id)mimeTypeForService:(id)arg1;
-- (id)newEmailImageData:(id*)arg1;
-- (id)newEmailImageData:(id*)arg1;
-- (id)newEmailImageData;
-- (id)newEmailImageData;
-- (id)newImageData;
-- (id)newImageData;
 - (NSInteger)orientation;
+- (id)pathForImageFile;
 - (id)pathForImageFormat:(NSInteger)arg1;
+- (id)pathForLargeDisplayableImageFile;
+- (id)pathForLargeThumbnailFile;
 - (id)pathForOriginalFile;
 - (id)pathForPrebakedLandscapeScrubberThumbnails;
 - (id)pathForPrebakedPortraitScrubberThumbnails;
@@ -117,6 +113,7 @@
 - (id)textBadgeString;
 - (id)thumbnailFilename;
 - (id)title;
+- (id)utiType;
 - (id)videoPreviewFilename;
 
 @end

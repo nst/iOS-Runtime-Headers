@@ -29,7 +29,7 @@
 + (id)defaultPNGAlbum;
 + (id)libraryAlbum;
 
-- (id)_contentIndexesMatchingFilter:(NSInteger)arg1;
+- (id)_contentIndexesMatchingFilter:(NSInteger)arg1 albumContents:(id)arg2;
 - (void)_decrementPendingItems;
 - (void)_incrementPendingItems;
 - (void)_insertIndexInFilterCache:(NSUInteger)arg1;
@@ -50,6 +50,7 @@
 - (NSUInteger)countWithCurrentFilter;
 - (NSUInteger)countWithFilter:(NSInteger)arg1;
 - (NSInteger)currentFilter;
+- (id)date;
 - (void)dealloc;
 - (void)deleteItemAtIndex:(NSInteger)arg1;
 - (void)deleteItemsAtIndexes:(id)arg1;

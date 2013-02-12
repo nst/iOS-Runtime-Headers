@@ -6,6 +6,7 @@
 
 @interface SUStoreController : NSObject <SUClientDelegate, SUPurchaseManagerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate, MFMailComposeViewControllerDelegate> {
     SUClient *_client;
+    SUSectionsResponse *_lastBackgroundSectionsResponse;
     SUSectionsResponse *_lastSectionsResponse;
     NSURL *_launchURL;
     ISOperation *_loadSectionsOperation;
@@ -93,6 +94,8 @@
 - (void)purchaseManager:(id)arg1 didAddPurchases:(id)arg2;
 - (void)purchaseManager:(id)arg1 failedToAddPurchases:(id)arg2;
 - (void)purchaseManager:(id)arg1 willAddPurchases:(id)arg2;
+- (void)purchaseManagerDidEndUpdates:(id)arg1;
+- (void)purchaseManagerWillBeginUpdates:(id)arg1;
 - (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
 - (BOOL)reportAProblemForItemIdentifier:(unsigned long long)arg1;
 - (BOOL)selectSectionWithIdentifier:(id)arg1;

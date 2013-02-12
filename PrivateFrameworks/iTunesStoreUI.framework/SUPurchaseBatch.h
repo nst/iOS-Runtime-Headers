@@ -33,6 +33,7 @@
 - (id)items;
 - (id)mergedErrorForError:(id)arg1 withCount:(NSInteger)arg2;
 - (void)setContinuations:(id)arg1;
+- (void)setDocumentTargetIdentifier:(id)arg1;
 - (void)setErrors:(id)arg1;
 - (void)setPurchasesAndContinuationsFromPurchases:(id)arg1;
 - (void)setStoreShouldExitWhenFinished:(BOOL)arg1;

@@ -8,7 +8,7 @@
     NSUInteger _type;
 }
 
-@property(readonly) NSUInteger type;
+@property(readonly) NSUInteger mergeType;
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)load;
@@ -19,7 +19,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithMergeType:(NSUInteger)arg1;
 - (id)initWithType:(NSUInteger)arg1;
+- (NSUInteger)mergeType;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)resolveConflict:(id)arg1;
 - (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;

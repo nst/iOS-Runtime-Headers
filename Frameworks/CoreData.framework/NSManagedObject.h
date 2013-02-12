@@ -91,6 +91,8 @@
 - (void)_maintainInverseRelationship:(id)arg1 forProperty:(id)arg2 oldDestination:(id)arg3 newDestination:(id)arg4;
 - (id)_newAllPropertiesWithRelationshipFaultsIntact__;
 - (id)_newChangedValuesForRefresh__;
+- (id)_newCommittedSnapshotValues;
+- (id)_newPersistentPropertiesForConflictRecordFaultsIntact__;
 - (id)_newPersistentPropertiesWithRelationshipFaultsIntact__;
 - (id)_newPropertiesForRetainedTypes:(NSUInteger*)arg1 andCopiedTypes:(NSUInteger*)arg2 preserveFaults:(BOOL)arg3;
 - (id)_newSnapshotForUndo__;

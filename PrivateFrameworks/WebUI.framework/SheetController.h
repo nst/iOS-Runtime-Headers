@@ -16,6 +16,7 @@
 - (void)alertSheet:(id)arg1 buttonClicked:(NSInteger)arg2;
 - (void)dealloc;
 - (void)didDismissAlertSheet:(id)arg1;
+- (BOOL)disablesStatusBarPress;
 - (void)hideSheet;
 - (id)initWithDelegate:(id)arg1;
 - (NSInteger)numberOfRowsInTable:(id)arg1;

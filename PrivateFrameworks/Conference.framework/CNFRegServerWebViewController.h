@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CNFRegLoadingView, NSMutableDictionary, NSString, UIWebView;
+@class CNFRegLoadingView, NSMutableDictionary, NSString, NSTimer, UIWebView;
 
 @interface CNFRegServerWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
     struct { 
@@ -17,10 +17,12 @@
         unsigned int automaticKeyboardWasDisabled : 1; 
         unsigned int checkedLogState : 1; 
         unsigned int shouldLog : 1; 
+        NSUInteger timedOut; 
     id _alertHandler;
     NSString *_leftButtonAction;
     CNFRegLoadingView *_loadingView;
     NSString *_rightButtonAction;
+    NSTimer *_timeoutTimer;
     NSMutableDictionary *_urlHandlers;
     } _webControllerFlags;
     UIWebView *_webView;
@@ -30,20 +32,36 @@
 @property(copy) NSString *leftButtonAction;
 @property(copy) NSString *rightButtonAction;
 @property(retain) UIWebView *webView;
+@property(readonly) BOOL isLoaded;
+@property(readonly) BOOL isLoading;
+@property(readonly) BOOL timedOut;
 
+- (void)_clearLeftButtonTarget;
+- (void)_clearRightButtonTarget;
+- (void)_handleTimeout;
 - (BOOL)_shouldLog;
-- (id)acceptLanguageString;
+- (void)_startTimeoutWithDuration:(double)arg1;
+- (void)_stopTimeout;
+- (void)_timeoutFired:(id)arg1;
 - (void)addSelector:(SEL)arg1 forScheme:(id)arg2;
 - (id)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
+- (void)applicationWillSuspend;
 - (BOOL)boolForServerValue:(id)arg1 value:(BOOL*)arg2 defaultValue:(BOOL)arg3;
 - (void)clearUrlHandlers;
 - (void)dealloc;
+- (id)executeJavaScript:(id)arg1 error:(id*)arg2;
 - (id)executeJavaScript:(id)arg1;
 - (id)functionStringFromCallbackName:(id)arg1 withStringArgument:(id)arg2;
 - (id)functionStringFromCallbackName:(id)arg1;
+- (void)handleLeftButtonError:(id)arg1;
+- (void)handleRightButtonError:(id)arg1;
 - (void)hideSpinner;
 - (BOOL)intForServerValue:(id)arg1 value:(NSInteger*)arg2 defaultValue:(NSInteger)arg3;
+- (BOOL)isLoaded;
+- (BOOL)isLoading;
+- (struct OpaqueJSContext { }*)javaScriptExecutionContext;
+- (id)javaScriptStringForValue:(struct OpaqueJSValue { }*)arg1;
 - (id)leftButtonAction;
 - (void)leftButtonTapped:(id)arg1;
 - (void)loadURL:(id)arg1;
@@ -70,6 +88,7 @@
 - (void)showSpinner;
 - (void)startRequiringWifi;
 - (void)stopRequiringWifi;
+- (BOOL)timedOut;
 - (BOOL)uintForServerValue:(id)arg1 value:(NSUInteger*)arg2 defaultValue:(NSUInteger)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

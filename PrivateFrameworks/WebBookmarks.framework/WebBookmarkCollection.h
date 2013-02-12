@@ -58,7 +58,6 @@
 - (id)_uniqueExternalUUID;
 - (BOOL)_updateCachedChildCountForParentID:(NSUInteger)arg1 inDirection:(NSInteger)arg2;
 - (NSInteger)_userVersion;
-- (id)addressesWithPrefix:(id)arg1 maxCount:(NSUInteger)arg2;
 - (BOOL)beginSyncTransaction;
 - (id)bookmarkAtPath:(id)arg1;
 - (id)bookmarkWithID:(NSUInteger)arg1;

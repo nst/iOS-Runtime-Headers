@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKMapTileViewDelegate>, MKMapTileView, MKTilePathArray, MKTiledLayer, NSHashTable, NSTimer;
+@class <MKMapTileViewDelegate>, MKMapTileNormalizerView, MKMapTileView, MKTilePathArray, MKTiledLayer, MKTrafficHighlightView, NSHashTable, NSTimer;
 
 @interface MKMapTileViewImp : NSObject {
-    struct $_1134 { 
+    struct $_1160 { 
         unsigned int canDrawOnMainThread : 1; 
         unsigned int canDisplayTraffic : 1; 
         unsigned int drawing : 1; 
@@ -27,11 +27,13 @@
     MKTiledLayer *layer;
     NSUInteger loadingTileCount;
     NSUInteger mapType;
+    MKMapTileNormalizerView *normalizerView;
     MKTilePathArray *requestTiles;
     NSHashTable *requesters;
     float screenScale;
     NSTimer *tileExpirationTimer;
     NSTimer *tileRequestTimer;
+    MKTrafficHighlightView *trafficHighlightView;
     MKMapTileView *view;
 }
 

@@ -7,13 +7,9 @@
 
 @property <GKNATObserverDelegate> *delegate;
 
-+ (NSInteger)NATTypeForCommNATFlagDictionary:(id)arg1 wifiOnly:(BOOL)arg2;
-+ (NSInteger)NATTypeForCommNATFlags:(NSUInteger)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)dealloc;
 - (id)delegate;
-- (id)init;
 - (id)initWithOptions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

@@ -82,6 +82,7 @@
         } size; 
     } _cachedVisibleRect;
     CALayer *_hostLayer;
+    CALayer *_rootLayer;
         } x31; } *_tileCache;
         } x17; float x18; unsigned int x19 : 1; } *_wkWindow;
 }
@@ -112,12 +113,14 @@
 - (NSInteger)keyViewSelectionDirection;
 - (void)layoutTiles;
 - (void)layoutTilesNow;
+- (void)layoutTilesNowForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)makeFirstResponder:(id)arg1;
 - (void)makeKeyWindow;
 - (id)recursiveDescription;
 - (oneway void)release;
 - (void)removeAllNonVisibleTiles;
 - (void)removeAllTiles;
+- (id)rootLayer;
 - (float)screenScale;
 - (struct CGSize { float x1; float x2; })screenSize;
 - (void)sendEvent:(id)arg1 contentChange:(NSInteger*)arg2;
@@ -127,6 +130,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 display:(BOOL)arg2;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRootLayer:(id)arg1;
 - (void)setScreenScale:(float)arg1;
 - (void)setScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTileMinificationFilter:(id)arg1;

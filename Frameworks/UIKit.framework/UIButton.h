@@ -89,7 +89,7 @@
 - (void)_setTitle:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setTitleColor:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setupBackgroundView;
+- (id)_setupBackgroundView;
 - (void)_setupImageView;
 - (void)_setupTitleView;
 - (id)_shadowColorForState:(NSUInteger)arg1;

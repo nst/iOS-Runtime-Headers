@@ -11,6 +11,7 @@
     unsigned char external_pager;
     BOOL is_submap;
     NSUInteger mallocBlockCount;
+    NSUInteger mallocTypeFlag;
     NSUInteger maxProt;
     NSUInteger nesting_depth;
     NSUInteger object_id;
@@ -27,7 +28,7 @@
     unsigned char share_mode;
     BOOL summarized;
     NSString *type;
-    unsigned char user_tag;
+    NSUInteger user_tag;
     NSUInteger virtual_pages;
 }
 

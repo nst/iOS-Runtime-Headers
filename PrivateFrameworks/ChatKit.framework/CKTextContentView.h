@@ -8,15 +8,19 @@
     UILabel *_defaultTextView;
 }
 
++ (id)defaultFont;
 + (float)singleLineTextHeight;
 
 - (void)_adjustForSingleLineHeightIfNecessary;
+- (void)_updateCSSMargins;
 - (void)_updateDefaultText;
+- (void)_updateFontSize;
 - (BOOL)_wvHasImages;
 - (void)_wvReflow;
 - (void)_wvSetupCSSWithMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)automaticallySelectedOverlay;
 - (void)dealloc;
+- (void)fontSizeChanged;
 - (BOOL)hasImages;
 - (void)hideDefaultText:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -26,6 +30,5 @@
 - (void)setDefaultText:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)supportedPasteboardTypesForCurrentSelection;
-- (void)updateFontSize;
 
 @end

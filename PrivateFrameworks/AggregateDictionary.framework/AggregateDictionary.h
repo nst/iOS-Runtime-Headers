@@ -4,42 +4,45 @@
 
 @class ADCrashLogStore, ADDataStore, ADKeyStore;
 
-@interface AggregateDictionary : NSObject <ADDataStoreConsumer> {
-    NSUInteger _commitInterval;
-    BOOL _crashLogCopyingEnabled;
+@interface AggregateDictionary : NSObject {
+    NSInteger _commitInterval;
     ADCrashLogStore *_crashLogStore;
     ADDataStore *_dataStore;
     struct dispatch_queue_s { } *_dataStoreQueue;
     ADKeyStore *_keyStore;
-    BOOL _log;
+    BOOL _logsMessages;
     NSUInteger _messageCount;
 }
 
-+ (void)start;
+@property(readonly) NSString *dataStorePath;
+@property NSInteger commitInterval;
+@property BOOL logsMessages;
+
 + (void)startOnBackgroundThread;
 
-- (void)_addOrSubtractMessageReceived:(id)arg1 userInfo:(id)arg2 addOrSubtract:(BOOL)arg3;
 - (void)_addScalar:(long long)arg1 toKey:(id)arg2 useCurrentValue:(BOOL)arg3;
-- (id)_argumentsFromMessage:(id)arg1;
+- (BOOL)_crashLogCopyingEnabled;
+- (void)_executeIfDistributionKeyIsWhitelisted:(id)arg1 block:(id)arg2;
+- (void)_executeIfScalarKeyIsWhitelisted:(id)arg1 block:(id)arg2;
 - (void)_initializeDistribution:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg1 forDouble:(double)arg2;
-- (id)_keyFromMessage:(id)arg1;
-- (void)_messageWasReceived:(id)arg1;
+- (void)_keyModified:(id)arg1 byCommand:(SEL)arg2;
 - (void)_pushDouble:(double)arg1 ontoDistribution:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg2;
 - (void)_pushDouble:(double)arg1 ontoKey:(id)arg2 useCurrentValue:(BOOL)arg3;
-- (void)_registerForMessagesWithCenter:(id)arg1;
-- (void)_significantTimeChanged;
-- (void)addMessageReceived:(id)arg1 userInfo:(id)arg2;
-- (void)clearDistributionMessageReceived:(id)arg1 userInfo:(id)arg2;
-- (void)clearScalarMessageReceived:(id)arg1 userInfo:(id)arg2;
-- (id)commitMessageReceived:(id)arg1 userInfo:(id)arg2;
+- (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
+- (void)clearDistributionKey:(id)arg1;
+- (void)clearScalarKey:(id)arg1;
+- (NSInteger)commit;
+- (NSInteger)commitInterval;
+- (id)dataStorePath;
 - (void)dealloc;
-- (void)distributionReceived:(struct { double x1; double x2; double x3; double x4; NSInteger x5; }*)arg1 withDaysSince1970:(NSInteger)arg2 forKey:(id)arg3;
 - (id)init;
-- (void)pushMessageReceived:(id)arg1 userInfo:(id)arg2;
-- (void)scalarReceived:(long long)arg1 withDaysSince1970:(NSInteger)arg2 forKey:(id)arg3;
-- (void)setValueForDistributionMessageReceived:(id)arg1 userInfo:(id)arg2;
-- (void)setValueForScalarMessageReceived:(id)arg1 userInfo:(id)arg2;
-- (BOOL)shouldCancelQuery;
-- (void)subtractMessageReceived:(id)arg1 userInfo:(id)arg2;
+- (id)initWithStorePath:(id)arg1;
+- (BOOL)logsMessages;
+- (void)pushValue:(double)arg1 forDistributionKey:(id)arg2;
+- (void)setCommitInterval:(NSInteger)arg1;
+- (void)setLogsMessages:(BOOL)arg1;
+- (void)setValue:(double)arg1 forDistributionKey:(id)arg2;
+- (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
+- (void)significantTimeChanged;
 
 @end

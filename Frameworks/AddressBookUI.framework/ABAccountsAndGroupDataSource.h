@@ -23,6 +23,7 @@
 - (id)accountsManager;
 - (void)cacheHeaderView:(id)arg1 forSection:(NSUInteger)arg2;
 - (id)cachedHeaderViewForSection:(NSUInteger)arg1;
+- (void)cancelScheduledRefresh;
 - (void)dealloc;
 - (id)defaultGroupWrapper;
 - (id)groupNameForIndexPath:(id)arg1;
@@ -39,6 +40,7 @@
 - (NSInteger)preferredTableViewStyle;
 - (void)reloadData;
 - (void)reloadDataIncludingAccountsManager:(BOOL)arg1;
+- (void)scheduleRefresh;
 - (void)setAccountsManager:(id)arg1;
 - (void)setHidesSearchableStores:(BOOL)arg1;
 - (void)setModel:(id)arg1;

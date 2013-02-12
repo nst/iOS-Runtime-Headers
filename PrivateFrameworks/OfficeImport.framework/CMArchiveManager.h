@@ -9,6 +9,7 @@
     float mCommitInterval;
     NSMutableDictionary *mDrawableCache;
     NSInteger mHeight;
+    BOOL mIsOnPhone;
     BOOL mIsThumbnail;
     NSUInteger mPageCount;
     NSMutableSet *mPausedPaths;
@@ -37,6 +38,7 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isCancelled;
+- (BOOL)isOnPhone;
 - (BOOL)isProgressive;
 - (BOOL)isThumbnail;
 - (NSUInteger)pageCount;
@@ -52,6 +54,7 @@
 - (void)setCommitInterval:(float)arg1;
 - (void)setHTMLHeight:(NSInteger)arg1;
 - (void)setHTMLWidth:(NSInteger)arg1;
+- (BOOL)setIsOnPhone:(BOOL)arg1;
 - (void)setIsThumbnail:(BOOL)arg1;
 - (void)setPageCount:(NSUInteger)arg1;
 - (void)setResourcePathPrefix:(id)arg1;

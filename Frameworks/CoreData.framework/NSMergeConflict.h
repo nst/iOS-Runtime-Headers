@@ -21,12 +21,13 @@
 - (id)cachedSnapshot;
 - (void)dealloc;
 - (id)description;
-- (id)initWithSource:(id)arg1 newVersion:(NSUInteger)arg2 oldVersion:(NSUInteger)arg3 snapshot:(id)arg4 cachedSnapshot:(id)arg5 persistedSnapshot:(id)arg6;
+- (id)initWithSource:(id)arg1 newVersion:(NSUInteger)arg2 oldVersion:(NSUInteger)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
 - (NSUInteger)newVersionNumber;
 - (id)objectForKey:(id)arg1;
 - (id)objectSnapshot;
 - (NSUInteger)oldVersionNumber;
 - (id)persistedSnapshot;
 - (id)sourceObject;
+- (id)valueForKey:(id)arg1;
 
 @end

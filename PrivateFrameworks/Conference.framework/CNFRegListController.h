@@ -38,5 +38,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (BOOL)wantsWiFiChooser;
+- (void)willBecomeActive;
+- (void)willResignActive;
 
 @end

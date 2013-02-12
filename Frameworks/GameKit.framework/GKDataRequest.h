@@ -9,18 +9,20 @@
 @interface GKDataRequest : NSObject {
     id _completionBlock;
     struct dispatch_source_s { } *_replySource;
+    NSInteger _sequenceNumber;
     struct dispatch_source_s { } *_serverSource;
 }
 
 @property(readonly) NSString *cacheKey;
 @property(copy) ? *completionBlock;
 @property(readonly) NSDictionary *header;
-@property(readonly) NSArray *invalidateCacheKeys;
+@property(retain,readonly) NSArray *invalidateCacheKeys;
 @property(readonly) NSString *key;
 @property(readonly) NSDictionary *request;
 @property(readonly) BOOL authenticationRequired;
 @property(readonly) NSInteger cachePriority;
 @property(readonly) NSInteger cacheType;
+@property(readonly) NSInteger sequenceNumber;
 
 + (NSUInteger)bootstrapPort;
 + (id)protocolVersion;
@@ -28,6 +30,7 @@
 + (BOOL)useTestProtocol;
 
 - (void)_cleanupSources;
+- (void)_send;
 - (BOOL)authenticationRequired;
 - (id)cacheKey;
 - (NSInteger)cachePriority;
@@ -36,13 +39,16 @@
 - (id)completionBlock;
 - (void)dealloc;
 - (id)demarshalResponseData:(id)arg1;
+- (id)description;
 - (id)errorForResponse:(id)arg1;
 - (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
 - (id)header;
+- (id)init;
 - (id)invalidateCacheKeys;
 - (id)key;
 - (id)request;
 - (void)send;
+- (NSInteger)sequenceNumber;
 - (void)setCompletionBlock:(id)arg1;
 - (void)wasCancelledByServer;
 

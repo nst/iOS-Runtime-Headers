@@ -2,42 +2,41 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class VMUSymbolicator;
-
-@interface VMUBacktrace : NSObject {
+@interface VMUBacktrace : NSObject <NSCopying> {
     struct { 
         struct { 
             double t_begin; 
             double t_end; 
-            double weight; 
             NSInteger pid; 
-            NSUInteger thread_id; 
-            unsigned char cpu_num; 
-            BOOL supervisor; 
+            NSUInteger thread; 
+            NSInteger run_state; 
+            unsigned long long dispatch_queue_serial_num; 
         } context; 
         NSUInteger *frames; 
+        char *frame_types; 
         NSUInteger length; 
-        VMUSymbolicator *symbolLookup; 
-        double *counts; 
     } _callstack;
     NSInteger _flavor;
 }
 
-+ (void)flush;
-+ (void)initialize;
-
+- (struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })_symbolicator;
 - (NSUInteger*)backtrace;
 - (NSUInteger)backtraceLength;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)fixupStackWithTask:(NSUInteger)arg1 symbolicator:(id)arg2 symbolicate:(BOOL)arg3;
-- (void)fixupStackWithTask:(NSUInteger)arg1 symbolicator:(id)arg2;
+- (unsigned long long)dispatchQueueSerialNumber;
+- (void)fixupStackWithSamplingContext:(struct sampling_context_t { }*)arg1 symbolicator:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg2;
+- (void)fixupStackWithTask:(NSUInteger)arg1 symbolicator:(struct _CSTypeRef { NSUInteger x1; NSUInteger x2; })arg2 taskMemoryCache:(id)arg3;
 - (BOOL)hasSameCallstack:(id)arg1;
+- (id)initWithSamplingContext:(struct sampling_context_t { }*)arg1 thread:(NSUInteger)arg2;
+- (id)initWithTask:(NSUInteger)arg1 thread:(NSUInteger)arg2 is64Bit:(BOOL)arg3 taskMemoryCache:(id)arg4;
 - (id)initWithTask:(NSUInteger)arg1 thread:(NSUInteger)arg2 is64Bit:(BOOL)arg3;
 - (void)removeTopmostFrame;
 - (void)setEndTime:(double)arg1;
 - (void)setLengthTime:(double)arg1;
 - (void)setStartTime:(double)arg1;
+- (void)setThreadState:(NSInteger)arg1;
 - (NSUInteger)thread;
 - (NSInteger)threadState;
 - (NSUInteger)topmostFrame;

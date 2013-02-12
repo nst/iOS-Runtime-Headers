@@ -45,7 +45,8 @@
 + (float)defaultSelectionModeHeight;
 + (Class)defaultTextButtonClass;
 
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)_accessibilityFuzzyHitTestElements;
+- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (void)_adjustButtonSelection:(id)arg1;
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
 - (void)_buttonBarFinishedAnimating;
@@ -59,6 +60,7 @@
 - (void)_configureToolbarReplacingItem:(id)arg1 withNewItem:(id)arg2 dragging:(BOOL)arg3 swapping:(BOOL)arg4;
 - (id)_currentButtons;
 - (id)_customToolbarAppearance;
+- (void)_customViewChangedForButtonItem:(id)arg1;
 - (void)_customizeDoneButtonAction:(id)arg1;
 - (void)_customizeWithAvailableItems:(id)arg1;
 - (void)_customizeWithCurrentButtons:(id)arg1 availableButton:(id)arg2;
@@ -72,6 +74,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfBarButtonItem:(id)arg1;
 - (BOOL)_isHidden:(id)arg1;
 - (BOOL)_isPositionedHiddenForAlert;
+- (BOOL)_isTopBar;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2 actuallyRepositionButtons:(BOOL)arg3;
 - (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2;

@@ -7,8 +7,6 @@
 
 + (void)_initializeSafeCategory;
 
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 
 @end

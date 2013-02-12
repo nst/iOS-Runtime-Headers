@@ -20,6 +20,7 @@
 - (void)_resetTimerForPlayerNewRate:(float)arg1;
 - (void)_startObservingPlaybackItemNotificationsForCurrentItem;
 - (void)_stopObservingPlaybackItemNotifications;
+- (void)_stopRespondingToPlayerStateChanges;
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithPlayer:(id)arg1 interval:(struct { long long x1; NSInteger x2; NSUInteger x3; long long x4; })arg2 queue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;

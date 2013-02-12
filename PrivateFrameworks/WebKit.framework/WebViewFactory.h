@@ -10,6 +10,7 @@
 - (id)AXMenuListActionVerb;
 - (id)AXMenuListPopupActionVerb;
 - (id)copyImageUnknownFileLabel;
+- (id)crashedPluginText;
 - (id)defaultLanguageCode;
 - (id)fileButtonChooseFileLabel;
 - (id)fileButtonNoFileSelectedLabel;
@@ -21,6 +22,7 @@
 - (id)localizedMediaTimeDescription:(float)arg1;
 - (id)mediaElementLiveBroadcastStateText;
 - (id)mediaElementLoadingStateText;
+- (id)missingPluginText;
 - (id)multipleFileUploadTextForNumberOfFiles:(NSUInteger)arg1;
 - (id)pluginsInfo;
 - (void)refreshPlugins;

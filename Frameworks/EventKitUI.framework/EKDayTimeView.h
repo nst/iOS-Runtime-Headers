@@ -13,7 +13,6 @@
 + (float)hourHeight;
 + (float)hourSize;
 + (float)timeInset;
-+ (id)timeLineOverlayFadeImage;
 + (float)timeWidth;
 + (float)verticalPadding;
 

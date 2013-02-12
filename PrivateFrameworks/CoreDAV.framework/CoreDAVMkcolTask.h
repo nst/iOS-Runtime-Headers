@@ -5,21 +5,21 @@
 @class NSSet;
 
 @interface CoreDAVMkcolTask : CoreDAVTask {
-    NSSet *_setElements;
+    NSSet *_propertiesToSet;
 }
 
-@property <CoreDAVMkcolTaskDelegate> *delegate;
-@property(retain) NSSet *setElements;
+@property <CoreDAVTaskDelegate> *delegate;
+@property(retain) NSSet *propertiesToSet;
 
+- (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithPropertiesToSet:(id)arg1 atRelativeURL:(id)arg2;
-- (id)initWithRelativeURI:(id)arg1;
-- (BOOL)processData:(id)arg1 withParser:(id)arg2;
+- (id)initWithPropertiesToSet:(id)arg1 atURL:(id)arg2;
+- (id)initWithURL:(id)arg1;
+- (id)propertiesToSet;
 - (id)requestBody;
-- (id)setElements;
-- (void)setSetElements:(id)arg1;
+- (void)setPropertiesToSet:(id)arg1;
 
 @end

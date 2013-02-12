@@ -2,16 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSMutableArray;
+@class NSMapTable, NSMutableArray;
 
 @interface VMUVMRegionIdentifier : NSObject {
+    NSMapTable *_mallocZoneStatisticsMap;
     NSMutableArray *_regions;
 }
 
 - (void)dealloc;
+- (id)descriptionForMallocZoneTotalsWithOptions:(NSUInteger)arg1;
 - (id)descriptionForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 options:(NSUInteger)arg2;
 - (id)descriptionForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)descriptionForRegionTotalsWithOptions:(NSUInteger)arg1;
+- (id)initWithTask:(NSUInteger)arg1 options:(NSUInteger)arg2;
 - (id)initWithTask:(NSUInteger)arg1;
 - (id)regions;
 

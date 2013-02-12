@@ -16,8 +16,8 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithClientQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;
 - (void)multiplyByInverseOfAttitude:(id)arg1;
 - (double)pitch;
 - (struct { double x1; double x2; double x3; double x4; })quaternion;

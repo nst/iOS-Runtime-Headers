@@ -22,10 +22,11 @@
     NSError *stopError;
     AVCaptureFigVideoDevice *videoDevice;
     AVCaptureVideoPreviewLayer *videoPreviewLayer;
-    BOOL videoPreviewLayerDidChange;
+    BOOL waitingForRecorderDidStartPreviewing;
+    BOOL waitingForRecorderDidStartRecording;
     BOOL waitingForRecorderDidStopPreviewing;
     BOOL waitingForRecorderDidStopRecording;
-    BOOL waitingForRecorderStart;
+    BOOL waitingForRecorderDidStopSource;
     BOOL wasPreviewingWhenInterrupted;
     AVWeakReference *weakReference;
 }

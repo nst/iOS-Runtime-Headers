@@ -19,6 +19,7 @@
 - (id)attachmentForURL:(id)arg1;
 - (id)baseURL;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (NSInteger)priority;
 

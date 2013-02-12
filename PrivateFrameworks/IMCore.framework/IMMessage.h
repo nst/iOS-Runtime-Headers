@@ -5,17 +5,41 @@
 @class IMHandle, NSArray, NSAttributedString, NSDate, NSError, NSString;
 
 @interface IMMessage : NSObject {
-    unsigned int _isInvitationMessage : 1;
     NSError *_error;
     NSArray *_fileTransferGUIDs;
     NSUInteger _flags;
     NSString *_guid;
+    BOOL _isInvitationMessage;
     NSString *_plainBody;
     IMHandle *_sender;
     IMHandle *_subject;
     NSAttributedString *_text;
     NSDate *_time;
 }
+
+@property(retain) NSError *error;
+@property(retain) NSArray *fileTransferGUIDs;
+@property(readonly) NSString *guid;
+@property(readonly) NSArray *inlineAttachmentAttributesArray;
+@property(readonly) NSString *plainBody;
+@property(readonly) IMHandle *sender;
+@property(readonly) NSString *senderName;
+@property(readonly) IMHandle *subject;
+@property(readonly) NSString *summaryString;
+@property(retain) NSAttributedString *text;
+@property(readonly) NSDate *time;
+@property(readonly) BOOL finished;
+@property NSUInteger flags;
+@property(readonly) BOOL fromMe;
+@property(readonly) BOOL hasInlineAttachments;
+@property BOOL isAddressedToMe;
+@property(readonly) BOOL isAlert;
+@property(readonly) BOOL isAutoReply;
+@property(readonly) BOOL isDelayed;
+@property(readonly) BOOL isEmote;
+@property(readonly) BOOL isEmpty;
+@property BOOL isInvitationMessage;
+@property NSInteger securityLevel;
 
 + (id)fromMeIMHandle:(id)arg1 withText:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(NSUInteger)arg4;
 + (id)instantMessageWithText:(id)arg1 flags:(NSUInteger)arg2;

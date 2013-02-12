@@ -25,6 +25,7 @@
 - (id)cityForClassicIdentifier:(id)arg1;
 - (id)citySearchMatcher;
 - (void)dealloc;
+- (id)defaultCitiesForLocaleCode:(id)arg1 options:(NSInteger)arg2;
 - (id)defaultCitiesForLocaleCode:(id)arg1;
 - (id)defaultCityForTimeZone:(id)arg1;
 - (id)init;

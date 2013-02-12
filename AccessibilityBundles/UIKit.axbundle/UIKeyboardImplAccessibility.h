@@ -7,7 +7,7 @@
 
 + (void)_initializeSafeCategory;
 
-- (void)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2 addString:(id)arg3;
+- (void)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2;
 - (BOOL)callShouldDelete;
 - (BOOL)callShouldInsertText:(id)arg1;
 - (void)dismissKeyboard;

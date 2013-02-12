@@ -2,26 +2,33 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCurrentTimeMarkerView, NSTimer;
+@class EKCurrentTimeMarkerView, NSMutableArray, NSTimer, UIColor, UIView;
 
 @interface EKDayGridView : UIView {
     unsigned int _leftBorder : 1;
+    unsigned int _rightBorder : 1;
     unsigned int _drawsContent : 1;
     unsigned int _showsTimeMarker : 1;
     unsigned int _showsTimeLine : 1;
+    UIColor *_backgroundColor;
+    NSUInteger _daysToDisplay;
+    NSMutableArray *_leftBorderViews;
+    UIView *_rightBorderView;
     NSInteger _selected;
     EKCurrentTimeMarkerView *_timeMarker;
     NSTimer *_timeMarkerTimer;
     float _timeWidth;
 }
 
-@property(readonly) float defaultRectWidth;
+@property BOOL drawsContent;
 @property(getter=isSelected) BOOL selected;
 @property BOOL showsLeftBorder;
+@property BOOL showsRightBorder;
 @property BOOL showsTimeLine;
 @property BOOL showsTimeMarker;
 @property(readonly) float timeInset;
 @property(readonly) float timeWidth;
+@property(readonly) float widthForOccurrences;
 
 + (void)_clearCaches;
 + (void)_initializeSafeCategory;
@@ -36,10 +43,9 @@
 - (id)accessibilityContainerElements;
 - (unsigned long long)accessibilityTraits;
 - (void)dealloc;
-- (float)defaultRectWidth;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)drawsContent;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 numberOfDaysToDisplay:(NSUInteger)arg4;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 opaque:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
@@ -50,13 +56,16 @@
 - (void)setDrawsContent:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
+- (void)setShowsRightBorder:(BOOL)arg1;
 - (void)setShowsTimeLine:(BOOL)arg1;
 - (void)setShowsTimeMarker:(BOOL)arg1;
 - (BOOL)showsLeftBorder;
+- (BOOL)showsRightBorder;
 - (BOOL)showsTimeLine;
 - (BOOL)showsTimeMarker;
 - (float)timeInset;
 - (float)timeWidth;
 - (void)updateMarkerPosition;
+- (float)widthForOccurrences;
 
 @end

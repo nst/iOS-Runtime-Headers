@@ -23,6 +23,7 @@
 @property(retain) id originalUIDelegate;
 
 - (id)_newAlertWithMessage:(id)arg1;
+- (id)_userIdentifier;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 - (void)beginUsingNetwork;
 - (void)cancelUsingNetwork;
@@ -43,6 +44,7 @@
 - (void)setOriginalResourceLoadDelegate:(id)arg1;
 - (void)setOriginalUIDelegate:(id)arg1;
 - (void)setWebView:(id)arg1;
+- (void)webView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;

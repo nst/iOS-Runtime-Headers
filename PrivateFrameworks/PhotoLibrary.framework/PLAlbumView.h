@@ -15,6 +15,7 @@
         unsigned int delegateSelectionDidChange : 1; 
         unsigned int delegateDidTapPhoto : 1; 
         unsigned int delegatePreheatImageData : 1; 
+        unsigned int delegateShouldShowPhotoCount : 1; 
     NSMutableIndexSet *_activityIndexes;
     } _albumViewFlags;
     BOOL _allowsSelectionGestures;

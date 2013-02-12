@@ -6,17 +6,42 @@
 
 @interface IMAVTelephonyManager : NSObject {
     CTCallCenter *_callCenter;
+    struct __CTServerConnection { } *_ctServerConnection;
+    struct __CFMachPort { } *_ctServerMachPort;
+    struct __CFUUID { } *_ctToken;
+    struct __CTCall { } *_currentCallRef;
 }
+
+@property(readonly) NSUInteger callState;
 
 + (id)numberToDialForNumber:(id)arg1 dialAssist:(BOOL*)arg2;
 + (id)sharedInstance;
 
+- (void)_answerCall:(struct __CTCall { }*)arg1;
+- (void)_cleanupMachInfo;
+- (void)_dialRequested:(struct __CFDictionary { }*)arg1;
+- (BOOL)_disconnectCTServerConnection;
+- (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;
 - (void)_handleCallEvent:(id)arg1;
+- (void)_hangUpCall:(struct __CTCall { }*)arg1;
+- (BOOL)_reconnectCTServerConnectionIfNecessary;
+- (BOOL)_registerCTRequestService;
+- (void)_setCurrentCallStatus:(NSInteger)arg1;
+- (BOOL)_setupCTServerConnection;
+- (BOOL)_unregisterCTRequestService;
 - (id)autorelease;
 - (NSUInteger)callState;
 - (void)dealloc;
 - (id)init;
+- (void)notifyCallConnectedForChat:(id)arg1;
+- (void)notifyCallConnectingForChat:(id)arg1;
+- (void)notifyCallEndedForChat:(id)arg1;
+- (void)notifyCallStartedForChat:(id)arg1;
+- (void)notifyMissedCallForChat:(id)arg1;
 - (oneway void)release;
 - (NSUInteger)retainCount;
+- (void)startWatchingForCTRequests;
+- (void)stopWatchingForCTRequests;
+- (void)updateCallState;
 
 @end

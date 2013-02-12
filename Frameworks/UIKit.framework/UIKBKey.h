@@ -13,6 +13,7 @@
     NSString *m_displayType;
     NSUInteger m_displayTypeHint;
     NSArray *m_flicks;
+    BOOL m_ghost;
     NSString *m_interactionType;
     NSString *m_name;
     NSString *m_overrideDisplayString;
@@ -38,16 +39,19 @@
 @property(copy) NSString *tint;
 @property(copy) NSArray *variantKeys;
 @property(copy) NSString *variantType;
+@property(readonly) BOOL acceptsShiftLock;
 @property BOOL disabled;
 @property NSUInteger displayTypeHint;
 @property BOOL hidden;
 @property(readonly) BOOL isClientVariantOverride;
+@property BOOL isGhost;
 @property(readonly) BOOL modifiesKeyplane;
 @property BOOL visible;
 
 + (id)key;
 + (id)keyWithKey:(id)arg1;
 
+- (BOOL)acceptsShiftLock;
 - (id)attributes;
 - (BOOL)behavesAsShiftKey;
 - (id)cacheKey;
@@ -66,9 +70,11 @@
 - (BOOL)hidden;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithName:(id)arg1 representedString:(id)arg2 displayString:(id)arg3 displayType:(id)arg4 interactionType:(id)arg5 variantType:(id)arg6 attributes:(id)arg7 geometry:(id)arg8 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg9 paddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg10 ghost:(BOOL)arg11;
 - (id)initWithName:(id)arg1 representedString:(id)arg2 displayString:(id)arg3 displayType:(id)arg4 interactionType:(id)arg5 variantType:(id)arg6 attributes:(id)arg7 geometry:(id)arg8 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg9 paddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg10;
 - (id)interactionType;
 - (BOOL)isClientVariantOverride;
+- (BOOL)isGhost;
 - (void)mergeAttributes:(id)arg1;
 - (BOOL)modifiesKeyplane;
 - (id)name;
@@ -87,6 +93,7 @@
 - (void)setFlicks:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setInteractionType:(id)arg1;
+- (void)setIsGhost:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setOverrideDisplayString:(id)arg1;
 - (void)setRendering:(id)arg1;

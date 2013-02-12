@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray;
+@class <ABStyleProvider>, NSArray;
 
 @interface ABAbstractPropertyGroup : NSObject {
     BOOL _hasChanges;
     NSArray *_people;
+    <ABStyleProvider> *_styleProvider;
 }
 
 @property(retain) NSArray *people;
+@property(retain) <ABStyleProvider> *styleProvider;
 @property BOOL hasChanges;
 
 - (BOOL)canSave;
@@ -21,6 +23,8 @@
 - (void)reloadFromModel;
 - (void)setHasChanges:(BOOL)arg1;
 - (void)setPeople:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
+- (id)styleProvider;
 - (void)updateRecord;
 
 @end

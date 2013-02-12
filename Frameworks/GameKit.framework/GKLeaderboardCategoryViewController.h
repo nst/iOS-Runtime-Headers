@@ -2,50 +2,73 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKGame, GKGameDetails, GKLeaderboardViewController, GKLeaderboardViewControllerPrivate, GKPlayer, NSArray;
+@class <GKLeaderboardCategoryPopoverDelegate>, <GKLeaderboardViewControllerDelegate>, GKGame, GKGameDetails, GKLeaderboardCategory, GKLeaderboardViewController, GKLeaderboardViewControllerPrivate, GKPlayer, NSArray, NSString;
 
 @interface GKLeaderboardCategoryViewController : GKTableViewController {
+    GKLeaderboardCategory *_aggregateCategory;
     NSArray *_categories;
+    GKLeaderboardViewController *_controllerForDelegate;
+    <GKLeaderboardCategoryPopoverDelegate> *_delegate;
     GKGameDetails *_details;
     GKGame *_game;
     BOOL _hasAggregate;
+    BOOL _isInPopover;
+    <GKLeaderboardViewControllerDelegate> *_leaderboardDelegate;
     GKPlayer *_player;
     GKLeaderboardViewControllerPrivate *_privateLeaderboard;
     GKLeaderboardViewController *_publicLeaderboard;
-    NSArray *_titles;
+    NSString *_selectedCategoryID;
 }
 
+@property(retain) GKLeaderboardCategory *aggregateCategory;
 @property(retain) NSArray *categories;
+@property GKLeaderboardViewController *controllerForDelegate;
+@property <GKLeaderboardCategoryPopoverDelegate> *delegate;
 @property(retain) GKGameDetails *details;
 @property(retain) GKGame *game;
+@property <GKLeaderboardViewControllerDelegate> *leaderboardDelegate;
 @property(retain) GKPlayer *player;
 @property(retain,readonly) GKLeaderboardViewControllerPrivate *privateLeaderboard;
 @property GKLeaderboardViewController *publicLeaderboard;
-@property(retain) NSArray *titles;
+@property(copy) NSString *selectedCategoryID;
 @property BOOL hasAggregate;
+@property BOOL isInPopover;
 
+- (void)_gkRefreshContents;
+- (id)aggregateCategory;
 - (id)categories;
-- (void)configureCellContents:(id)arg1 withDetails:(id)arg2;
+- (void)configureCellContents:(id)arg1 category:(id)arg2;
+- (id)controllerForDelegate;
 - (void)dealloc;
+- (id)delegate;
 - (id)details;
+- (void)donePressed:(id)arg1;
 - (id)game;
 - (BOOL)hasAggregate;
 - (id)initWithGame:(id)arg1 player:(id)arg2;
+- (BOOL)isInPopover;
+- (id)leaderboardDelegate;
 - (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (id)player;
 - (id)privateLeaderboard;
 - (id)publicLeaderboard;
+- (id)selectedCategoryID;
+- (void)setAggregateCategory:(id)arg1;
 - (void)setCategories:(id)arg1;
+- (void)setControllerForDelegate:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDetails:(id)arg1;
 - (void)setGame:(id)arg1;
 - (void)setHasAggregate:(BOOL)arg1;
+- (void)setIsInPopover:(BOOL)arg1;
+- (void)setLeaderboardDelegate:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setPublicLeaderboard:(id)arg1;
-- (void)setTitles:(id)arg1;
+- (void)setSelectedCategoryID:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (id)titles;
 - (void)viewDidLoad;
 
 @end

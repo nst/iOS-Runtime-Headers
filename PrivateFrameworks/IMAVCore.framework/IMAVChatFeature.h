@@ -8,6 +8,8 @@
     IMAVChat *_avChat;
 }
 
+@property IMAVChat *avChat; /* unknown property attribute: SsetAVChat: */
+
 - (NSUInteger)addStatusForIMHandle:(id)arg1 asVideo:(BOOL)arg2 ardRole:(NSInteger)arg3;
 - (id)avChat;
 - (void)conferenceEndedWithReason:(NSUInteger)arg1 andError:(NSInteger)arg2;
@@ -15,7 +17,6 @@
 - (void)delegateChangedTo:(id)arg1;
 - (BOOL)handleGenericAVMessageFromParticipant:(id)arg1 type:(NSUInteger)arg2 userInfo:(id)arg3;
 - (BOOL)hasAddableParticipantsOtherwiseStatus:(NSUInteger*)arg1;
-- (id)init;
 - (id)initWithAVChat:(id)arg1;
 - (void)participant:(id)arg1 changedFromState:(NSUInteger)arg2 toState:(NSUInteger)arg3;
 - (void)participantInvited:(id)arg1;

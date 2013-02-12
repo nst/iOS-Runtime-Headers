@@ -18,6 +18,7 @@
 + (id)_supportedImageFileExtensions;
 
 - (id)URL;
+- (void)_isImage:(BOOL*)arg1 orPDFFile:(BOOL*)arg2;
 - (id)contentID;
 - (unsigned long)creator;
 - (void)dealloc;
@@ -36,6 +37,7 @@
 - (BOOL)isDisplayableByWebKit;
 - (BOOL)isImageFile;
 - (BOOL)isMedia;
+- (BOOL)isPDFFile;
 - (BOOL)isPlaceholder;
 - (BOOL)isRegularFile;
 - (BOOL)isSymbolicLink;
@@ -43,6 +45,7 @@
 - (id)messageID;
 - (id)mimeType;
 - (float)minimumZoomFontSize;
+- (id)path;
 - (id)preferredFilename;
 - (id)preferredFilenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
 - (id)regularFileContents;
@@ -55,6 +58,7 @@
 - (void)setMeetingStorePersistentID:(id)arg1;
 - (void)setMessageID:(id)arg1;
 - (void)setMimeType:(id)arg1;
+- (void)setPath:(id)arg1;
 - (void)setPreferredFilename:(id)arg1;
 - (void)setType:(unsigned long)arg1;
 - (void)setURL:(id)arg1;

@@ -9,7 +9,7 @@
         unsigned int allowsEditing : 1; 
         unsigned int allowsCancel : 1; 
         unsigned int allowsActions : 1; 
-        unsigned int allowsSound : 1; 
+        unsigned int allowsSounds : 1; 
         unsigned int hidesSearchableStores : 1; 
     void *_addressBook;
     NSInteger _behavior;
@@ -79,7 +79,6 @@
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
 - (void)popToDefaultViewController:(BOOL)arg1;
 - (id)promptForViewControllerType:(NSInteger)arg1;
-- (void)pushCleanGroupsAndMembersViewControllersAndLoadState:(BOOL)arg1;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)removeChildViewController:(id)arg1;
 - (void)saveState;
@@ -87,8 +86,10 @@
 - (void)setAllowsCancel:(BOOL)arg1;
 - (void)setAllowsCardEditing:(BOOL)arg1;
 - (void)setAllowsRingtone:(BOOL)arg1;
+- (void)setAllowsSounds:(BOOL)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setBehavior:(NSInteger)arg1;
+- (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDisplayedProperties:(id)arg1;
 - (void)setInsertionValue:(id)arg1 property:(NSInteger)arg2;
 - (void)setParentViewController:(id)arg1;

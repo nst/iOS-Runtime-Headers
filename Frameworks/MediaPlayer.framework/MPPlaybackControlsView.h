@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPButton, MPDetailSlider, MPItem, MPTimeMarker, UIActivityIndicatorView, UILabel, UIView;
+@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, UIActivityIndicatorView, UILabel, UIView;
 
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
     unsigned int _wantsTick : 1;
@@ -11,13 +11,16 @@
     unsigned int _playbackSpeedButtonDisabled : 1;
     unsigned int _mailButtonDisabled : 1;
     unsigned int _mailButtonHidden : 1;
+    unsigned int _socialLikeButtonHidden : 1;
+    unsigned int _socialLikeButtonSelected : 1;
+    unsigned int _socialPostButtonHidden : 1;
     unsigned int _useMediaDetailSlider : 1;
     unsigned int _detailScrubbing : 1;
     unsigned int _needsUpdateButtonVisibility : 1;
     UIActivityIndicatorView *_activityIndicator;
     <MPPlaybackControlsDelegate> *_delegate;
     MPButton *_geniusButton;
-    MPItem *_item;
+    MPAVItem *_item;
     MPButton *_mailButton;
     MPTimeMarker *_markerForProgressControlDuration;
     MPButton *_playbackSpeedButton;
@@ -29,13 +32,15 @@
     CABasicAnimation *_rewindOpacityAnimation;
     float _seekedToValue;
     MPButton *_shuffleButton;
+    MPButton *_socialLikeButton;
+    MPButton *_socialPostButton;
     double _tickInterval;
     UILabel *_trackInfoLabel;
     NSUInteger _visibleParts;
 }
 
 @property <MPPlaybackControlsDelegate> *delegate;
-@property(retain) MPItem *item;
+@property(retain) MPAVItem *item;
 @property(readonly) BOOL hideGeniusButton;
 @property(readonly) BOOL isScrubbing;
 @property(readonly) NSUInteger repeatType;
@@ -44,6 +49,8 @@
 
 + (NSUInteger)defaultVisibleParts;
 
+- (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;
 - (void)_contentsChangedNotification:(id)arg1;
@@ -63,6 +70,8 @@
 - (void)_shuffleButton:(id)arg1;
 - (id)_shuffleButtonImage;
 - (BOOL)_shuffleIsOn;
+- (void)_socialLikeButton:(id)arg1;
+- (void)_socialPostButton:(id)arg1;
 - (void)_tickNotification:(id)arg1;
 - (void)_updateButtonVisibility;
 - (void)_updateForPlaybackSpeed;
@@ -92,6 +101,7 @@
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)progressBarClipsToChapterDuration;
+- (void)reloadButtonVisibility;
 - (void)reloadView;
 - (NSUInteger)repeatType;
 - (void)resetDetailSlider:(id)arg1;

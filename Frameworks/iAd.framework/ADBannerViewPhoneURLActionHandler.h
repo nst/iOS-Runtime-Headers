@@ -6,5 +6,6 @@
 }
 
 - (void)handle;
+- (id)normalizedURL;
 
 @end

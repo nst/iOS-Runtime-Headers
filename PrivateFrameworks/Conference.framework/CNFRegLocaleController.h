@@ -65,6 +65,7 @@
 - (void)setRegionData:(id)arg1;
 - (void)showCountryPicker;
 - (id)specifiers;
+- (id)validationString;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

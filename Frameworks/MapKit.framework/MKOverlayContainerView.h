@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKOverlayContainerViewDelegate>, NSMapTable, NSMutableArray;
+@class <MKOverlayContainerViewDelegate>, NSMapTable, NSMutableArray, NSMutableSet;
 
 @interface MKOverlayContainerView : UIView {
     struct CGAffineTransform { 
@@ -14,6 +14,7 @@
         float ty; 
     <MKOverlayContainerViewDelegate> *_delegate;
     } _mapTransform;
+    NSMutableSet *_overlaySet;
     NSMapTable *_overlayToView;
     NSMutableArray *_overlays;
     NSMutableArray *_viewClusters;

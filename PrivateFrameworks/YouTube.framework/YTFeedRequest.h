@@ -17,6 +17,8 @@
     NSUInteger _videosPerPage;
 }
 
++ (NSInteger)partialFeedType;
+
 - (void)_didAuthenticate:(id)arg1;
 - (void)_failedToAuthenticate:(id)arg1;
 - (void)dealloc;

@@ -26,6 +26,7 @@
 - (id)_cancelButtonIndex;
 - (id)_className;
 - (void)_dismiss;
+- (void)_logSheetWarnings;
 - (id)_nativeDialog;
 - (void)_show;
 - (void)_showFromDOMElement:(id)arg1;
@@ -40,5 +41,6 @@
 - (void)set_title:(id)arg1;
 - (void)show;
 - (void)showFromDOMElement:(id)arg1;
+- (void)showSheet;
 
 @end

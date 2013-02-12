@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLLocation, MKAddressBookAddress, NSString, UIImage;
+@class CLLocation, MKAddressBookAddress, MKSearchResult, NSString, UIImage;
 
 @interface MKSearchResult : MKSearchResultRepr <NSCopying, MKLocatableObject, MKAnnotation> {
     struct { 
@@ -14,6 +14,7 @@
     BOOL _hasMergedFormattedAddress;
     CLLocation *_location;
     BOOL _originatedFromHistory;
+    MKSearchResult *_representedSearchResult;
     NSString *_resultIdentifier;
     NSString *_routeDistanceSummary;
     NSString *_singleLineAddress;
@@ -32,8 +33,10 @@
 @property(readonly) CLLocation *location;
 @property(readonly) NSString *locationTitle;
 @property(retain) NSString *panoramaID;
+@property(retain) MKSearchResult *representedSearchResult;
 @property(readonly) NSString *resultIdentifier;
 @property(retain) NSString *routeDistanceSummary;
+@property(readonly) BOOL canUseNameAsOrg;
 @property ? coordinate;
 @property(readonly) BOOL hasStructuredAddress;
 @property(readonly) BOOL isAd;
@@ -54,6 +57,21 @@
 + (id)distanceSortedResults:(id)arg1 fromPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (id)formatStringForMapsURLWithLatLon;
 + (id)formatStringForMapsURLWithName;
++ (id)keyPathsForValuesAffectingAddressDictionary;
++ (id)keyPathsForValuesAffectingAuthor;
++ (id)keyPathsForValuesAffectingDisplayTitle;
++ (id)keyPathsForValuesAffectingHasStructuredAddress;
++ (id)keyPathsForValuesAffectingIsValid;
++ (id)keyPathsForValuesAffectingLocation;
++ (id)keyPathsForValuesAffectingLocationTitle;
++ (id)keyPathsForValuesAffectingLooksLikeBusiness;
++ (id)keyPathsForValuesAffectingName;
++ (id)keyPathsForValuesAffectingReverseGeocoded;
++ (id)keyPathsForValuesAffectingRouteLocation;
++ (id)keyPathsForValuesAffectingSingleLineAddress;
++ (id)keyPathsForValuesAffectingSingleLineAddressWithHomeCountry;
++ (id)keyPathsForValuesAffectingSubtitle;
++ (id)keyPathsForValuesAffectingTitle;
 + (id)searchResultWithDictionaryRepresentation:(id)arg1 fileVersion:(NSInteger)arg2;
 + (id)searchResultWithDictionaryRepresentation:(id)arg1;
 
@@ -71,6 +89,8 @@
 - (id)author;
 - (void)becomeDefaultTypeIfAdType;
 - (void)becomeDefaultTypeIfCustomType;
+- (BOOL)canUseNameAsOrg;
+- (void)clearLocationInformation;
 - (NSInteger)color;
 - (struct { double x1; double x2; })coordinate;
 - (id)copyWithCoordinate:(struct { double x1; double x2; })arg1;
@@ -114,6 +134,7 @@
 - (BOOL)originatedFromHistory;
 - (BOOL)performsReverseGeocodeCheck;
 - (BOOL)readFrom:(id)arg1;
+- (id)representedSearchResult;
 - (BOOL)requiresPanoramaIDCheck;
 - (void)resetMetadata;
 - (id)resultIdentifier;
@@ -126,6 +147,7 @@
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setName:(id)arg1;
 - (void)setOriginatedFromHistory:(BOOL)arg1;
+- (void)setRepresentedSearchResult:(id)arg1;
 - (void)setReverseGeocoded:(BOOL)arg1;
 - (void)setRouteDistanceSummary:(id)arg1;
 - (id)singleLineAddress;

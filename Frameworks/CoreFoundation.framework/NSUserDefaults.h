@@ -11,7 +11,6 @@
 @property(getter=_mapkit_isHeadingRotationSticky,readonly) BOOL _mapkit_headingRotationSticky;
 @property(readonly) NSUInteger _mapkit_throttleFlags;
 @property(readonly) double _mapkit_throttleTimeInterval;
-@property(getter=isCompassEnabled) BOOL compassEnabled;
 
 + (id)CNFObjectForKey:(id)arg1;
 + (NSUInteger)CNFRegEmailValidationTimeout;
@@ -63,7 +62,6 @@
 - (id)init;
 - (id)initWithUser:(id)arg1;
 - (NSInteger)integerForKey:(id)arg1;
-- (BOOL)isCompassEnabled;
 - (long long)longForKey:(id)arg1;
 - (id)objectForKey:(id)arg1 inDomain:(id)arg2;
 - (id)objectForKey:(id)arg1;
@@ -79,8 +77,6 @@
 - (void)removeVolatileDomainForName:(id)arg1;
 - (id)searchList;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
-- (void)setCompassEnabled:(BOOL)arg1 changed:(BOOL*)arg2;
-- (void)setCompassEnabled:(BOOL)arg1;
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
 - (void)setFloat:(float)arg1 forKey:(id)arg2;
 - (void)setInteger:(NSInteger)arg1 forKey:(id)arg2;

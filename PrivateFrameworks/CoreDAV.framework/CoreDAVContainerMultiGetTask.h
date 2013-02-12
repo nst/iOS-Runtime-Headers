@@ -2,24 +2,34 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet;
+@class NSSet, NSString;
 
 @interface CoreDAVContainerMultiGetTask : CoreDAVTask {
+    NSSet *_additionalPropElements;
     Class _appSpecificDataItemClass;
-    char *_appSpecificDataProp;
-    char *_appSpecificMultiGetCommand;
-    char *_appSpecificNamespace;
-    NSSet *_hrefs;
+    NSString *_appSpecificDataProp;
+    NSString *_appSpecificMultiGetCommand;
+    NSString *_appSpecificNamespace;
+    BOOL _shouldIgnoreResponseErrors;
+    NSSet *_urls;
 }
 
+@property(retain) NSSet *additionalPropElements;
 @property <CoreDAVContainerMultiGetTaskDelegate> *delegate;
+@property BOOL shouldIgnoreResponseErrors;
 
-- (id)_initWithHREFs:(id)arg1 atRelativeURI:(id)arg2 appSpecificDataItemClass:(Class)arg3;
+- (id)_initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;
+- (id)additionalPropElements;
+- (id)copyAdditionalPropElements;
+- (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithHREFs:(id)arg1 atRelativeURI:(id)arg2 appSpecificDataItemClass:(Class)arg3;
-- (BOOL)processData:(id)arg1 withParser:(id)arg2;
+- (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;
 - (id)requestBody;
+- (void)setAdditionalPropElements:(id)arg1;
+- (void)setAdditionalProperties:(id)arg1 onDataItem:(id)arg2;
+- (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
+- (BOOL)shouldIgnoreResponseErrors;
 
 @end

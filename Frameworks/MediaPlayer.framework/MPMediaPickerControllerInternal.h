@@ -15,7 +15,6 @@
     NSUInteger _replyPort;
     struct __CFRunLoopSource { } *_replyPortRunLoopSource;
     NSUInteger _serverPort;
-    struct __CFMachPort { } *_serverPortRef;
 }
 
 @end

@@ -22,7 +22,9 @@
 - (void)cancelButtonClicked:(id)arg1;
 - (id)delegate;
 - (void)dismiss;
+- (void)loadView;
 - (void)send:(id)arg1;
+- (void)setDefaultMessageWithRealName;
 - (void)setDelegate:(id)arg1;
 - (void)setTextEntryContentsVisible:(BOOL)arg1;
 - (void)showAlertForError:(id)arg1;

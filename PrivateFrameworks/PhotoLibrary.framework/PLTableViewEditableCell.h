@@ -31,6 +31,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPlaceholderText:(id)arg1;
 - (void)setStyle:(NSInteger)arg1;
+- (void)setValue:(id)arg1;
 - (id)sizeTextLabel;
 - (NSInteger)style;
 - (void)textFieldDidBeginEditing:(id)arg1;

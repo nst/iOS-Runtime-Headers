@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVAccountInfoProvider>, <CoreDAVTaskManager>, CoreDAVItem, CoreDAVRequestLogger, CoreDAVXMLParser, NSDate, NSError, NSHTTPURLResponse, NSString, NSURLConnection, NSURLRequest;
+@class <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, <CoreDAVTaskManager>, CoreDAVItem, CoreDAVRequestLogger, NSDate, NSError, NSHTTPURLResponse, NSURL, NSURLConnection, NSURLRequest;
 
 @interface CoreDAVTask : NSObject {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
@@ -10,7 +10,7 @@
     void *_context;
     CoreDAVItem *_currentlyParsingItem;
     NSDate *_dateConnectionWentOut;
-    id _delegate;
+    <CoreDAVTaskDelegate> *_delegate;
     NSInteger _depth;
     BOOL _didCancel;
     BOOL _didFailWithError;
@@ -21,23 +21,24 @@
     BOOL _finished;
     CoreDAVRequestLogger *_logger;
     NSInteger _numDownloadedElements;
-    CoreDAVXMLParser *_parser;
     NSError *_passwordNotificationError;
     BOOL _receivedBadPasswordResponse;
-    NSString *_relativeURI;
     NSURLRequest *_request;
     NSHTTPURLResponse *_response;
+    <CoreDAVResponseBodyParser> *_responseBodyParser;
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
+    NSURL *_url;
 }
 
 @property <CoreDAVAccountInfoProvider> *accountInfoProvider;
 @property void *context;
 @property(retain) CoreDAVItem *currentlyParsingItem;
-@property(readonly) NSString *relativeURI;
-@property(readonly) NSDictionary *responseHeaders;
+@property <CoreDAVTaskDelegate> *delegate;
+@property(retain) <CoreDAVResponseBodyParser> *responseBodyParser;
+@property(retain,readonly) NSDictionary *responseHeaders;
 @property <CoreDAVTaskManager> *taskManager;
-@property id delegate;
+@property(retain,readonly) NSURL *url;
 @property NSInteger depth;
 @property double timeoutInterval;
 
@@ -58,7 +59,9 @@
 - (id)connection:(id)arg1 needNewBodyStream:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;
+- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (void*)context;
+- (id)copyDefaultParserForContentType:(id)arg1;
 - (id)currentlyParsingItem;
 - (void)dealloc;
 - (id)delegate;
@@ -66,22 +69,22 @@
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
-- (id)initWithRelativeURI:(id)arg1;
+- (id)initWithURL:(id)arg1;
 - (void)loadRequest:(id)arg1;
 - (NSInteger)numDownloadedElements;
 - (void)performCoreDAVTask;
-- (BOOL)processData:(id)arg1 withParser:(id)arg2;
-- (id)relativeURI;
 - (void)reportStatusWithError:(id)arg1;
 - (id)requestBody;
 - (id)requestBodyStream;
 - (void)reset;
+- (id)responseBodyParser;
 - (id)responseHeaders;
 - (void)setAccountInfoProvider:(id)arg1;
 - (void)setContext:(void*)arg1;
 - (void)setCurrentlyParsingItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDepth:(NSInteger)arg1;
+- (void)setResponseBodyParser:(id)arg1;
 - (void)setTaskManager:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)startModal;

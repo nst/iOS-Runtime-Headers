@@ -26,6 +26,7 @@
 - (void)beginObservingLocation;
 - (void)dealloc;
 - (void)endObserveringLocation;
+- (void)endObservingLocation;
 - (id)init;
 - (BOOL)isObservingLocation;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;

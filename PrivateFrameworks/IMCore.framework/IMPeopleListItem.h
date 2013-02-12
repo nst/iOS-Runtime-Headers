@@ -5,14 +5,14 @@
 @class IMBuddyListPresence, IMPeopleListGroup, NSAttributedString, NSDate, NSString;
 
 @interface IMPeopleListItem : IMDirectlyObservableObject <NSCopying, IMDirectlyObservableObjectObserver> {
-    unsigned int _inTransition : 1;
-    unsigned int _isGroup : 1;
     NSAttributedString *_attributedStatusMessage;
     NSUInteger _currentStatus;
     float _currentTransitionTime;
     id _delegate;
     NSString *_displayName;
     IMPeopleListGroup *_group;
+    BOOL _inTransition;
+    BOOL _isGroup;
     NSInteger _minutesIdle;
     IMBuddyListPresence *_presence;
     NSUInteger _previousStatus;
@@ -20,6 +20,24 @@
     NSDate *_transitionStartTime;
     NSDate *_whenStatusChanged;
 }
+
+@property(retain) IMBuddyListPresence *buddyListPresence;
+@property(readonly) NSMutableAttributedString *displayName;
+@property(readonly) NSAttributedString *displayStatusMessage;
+@property(readonly) NSString *group;
+@property(readonly) IMHandle *imHandle;
+@property(retain) IMPeopleListGroup *peopleListGroup;
+@property(readonly) BOOL canTransition;
+@property(readonly) NSUInteger currentStatus;
+@property id delegate;
+@property(readonly) NSUInteger effectiveStatus;
+@property(readonly) BOOL inStatusTransition;
+@property(readonly) BOOL isGroup;
+@property(readonly) BOOL isIMHandle;
+@property(readonly) BOOL isPulseTransition;
+@property(readonly) NSUInteger previousStatus;
+@property(readonly) NSUInteger sortOrder;
+@property(readonly) double timeSinceStatusChanged;
 
 + (id)displayNameForString:(id)arg1;
 + (id)displayStatusMessageForString:(id)arg1;

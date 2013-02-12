@@ -25,6 +25,7 @@
 - (id)description;
 - (id)endDate;
 - (id)externalModificationTag;
+- (NSUInteger)hash;
 - (id)icsCalendar;
 - (BOOL)isAllDay;
 - (BOOL)isEqual:(id)arg1;

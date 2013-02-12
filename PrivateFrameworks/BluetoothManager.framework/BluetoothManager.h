@@ -14,6 +14,7 @@
     struct BTLocalDeviceImpl { } *_localDevice;
     struct BTPairingAgentImpl { } *_pairingAgent;
     BOOL _scanningEnabled;
+    NSMutableDictionary *_seekingInProgressDict;
     struct BTSessionImpl { } *_session;
 }
 
@@ -30,7 +31,9 @@
 - (void)_powerChanged;
 - (void)_removeDevice:(id)arg1;
 - (void)_restartScan;
+- (void)_sendSeekStart:(id)arg1 forDevice:(id)arg2;
 - (BOOL)_setup:(struct BTSessionImpl { }*)arg1;
+- (void)_stopSeeking:(id)arg1 forDevice:(id)arg2;
 - (void)acceptSSP:(NSInteger)arg1 forDevice:(id)arg2;
 - (id)addDeviceIfNeeded:(struct BTDeviceImpl { }*)arg1;
 - (BOOL)audioConnected;

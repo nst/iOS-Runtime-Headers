@@ -18,7 +18,7 @@
     NSString *_value;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } borderInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
 @property(retain) NSString * label;
 @property unsigned int maxLength;
 @property(retain) NSString * placeholder;

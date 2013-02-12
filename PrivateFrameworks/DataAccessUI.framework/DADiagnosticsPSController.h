@@ -4,8 +4,7 @@
 
 @class UIAlertView;
 
-@interface DADiagnosticsPSController : PSListController <UIAlertViewDelegate> {
-    BOOL _ignoringInteractionEvents;
+@interface DADiagnosticsPSController : PSListController <DADiagnosticSaveNotesDelegate, UIAlertViewDelegate> {
     UIAlertView *_savingDataAlert;
     UIAlertView *_simpleAlert;
     SEL _simpleConfirmSheetDismissedSEL;
@@ -14,7 +13,6 @@
 + (BOOL)diagnosticsVisible;
 + (id)dumpRuntimeStateSpecifiers;
 + (id)linkSpecifier;
-+ (id)manageLogsSpecifiers;
 
 - (void)_dismissSavingDataAlert;
 - (void)_presentNotesController;

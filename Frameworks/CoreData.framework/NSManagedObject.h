@@ -11,7 +11,7 @@
 
 @interface NSManagedObject : NSObject {
     id _cd_entity;
-    id _cd_faultHandler;
+    unsigned int _cd_extraFlags;
     unsigned int _cd_lockingInfo;
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;
@@ -55,8 +55,10 @@
 - (int (*)())methodForSelector:(SEL)arg1;
 - (id)_allProperties__;
 - (int)_batch_release__;
+- (id)_calculateDiffsBetweenOrderedSet:(id)arg1 andOrderedSet:(id)arg2;
 - (void)_chainNewError:(id)arg1 toOriginalErrorDoublePointer:(id*)arg2;
 - (id)_changedTransientProperties__;
+- (id)_changedValuesForCurrentEvent;
 - (void)_clearAllChanges__;
 - (void)_clearPendingChanges__;
 - (void)_clearRawPropertiesWithHint:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -69,10 +71,10 @@
 - (id)_faultHandler__;
 - (id)_generateErrorDetailForKey:(id)arg1 withValue:(id)arg2;
 - (id)_generateErrorWithCode:(int)arg1 andMessage:(id)arg2 forKey:(id)arg3 andValue:(id)arg4 additionalDetail:(id)arg5;
+- (id)_genericMutableOrderedSetValueForKey:(id)arg1 withIndex:(long)arg2 flags:(long)arg3;
 - (id)_genericMutableSetValueForKey:(id)arg1 withIndex:(long)arg2 flags:(long)arg3;
 - (void)_genericUpdateFromSnapshot:(id)arg1;
 - (id)_genericValueForKey:(id)arg1 withIndex:(long)arg2 flags:(long)arg3;
-- (BOOL)_hasAnyChanges;
 - (BOOL)_hasAnyObservers__;
 - (BOOL)_hasPendingChanges;
 - (BOOL)_hasRetainedStoreResources__;
@@ -80,11 +82,11 @@
 - (id)_implicitObservationInfo;
 - (void)_includeObject:(id)arg1 intoPropertyWithKey:(id)arg2 andIndex:(unsigned int)arg3;
 - (id)_initWithEntity:(id)arg1 withID:(id)arg2 withHandler:(id)arg3 withContext:(id)arg4;
+- (BOOL)_isDeallocating;
 - (BOOL)_isKindOfEntity:(id)arg1;
 - (BOOL)_isPendingDeletion__;
 - (BOOL)_isPendingInsertion__;
 - (BOOL)_isPendingUpdate__;
-- (BOOL)_isReadOnly__;
 - (BOOL)_isSuppressingChangeNotifications__;
 - (BOOL)_isSuppressingKVO__;
 - (BOOL)_isUnprocessedDeletion__;
@@ -97,9 +99,11 @@
 - (id)_newAllPropertiesWithRelationshipFaultsIntact__;
 - (id)_newChangedValuesForRefresh__;
 - (id)_newCommittedSnapshotValues;
+- (id)_newNestedSaveChangedValuesForParent:(id)arg1;
 - (id)_newPersistentPropertiesForConflictRecordFaultsIntact__;
 - (id)_newPersistentPropertiesWithRelationshipFaultsIntact__;
 - (id)_newPropertiesForRetainedTypes:(unsigned int*)arg1 andCopiedTypes:(unsigned int*)arg2 preserveFaults:(BOOL)arg3;
+- (id)_newSetFromSet:(id)arg1 byApplyingDiffs:(id)arg2;
 - (id)_newSnapshotForUndo__;
 - (void)_nilOutReservedCurrentEventSnapshot__;
 - (id)_originalSnapshot__;
@@ -109,17 +113,14 @@
 - (void)_propagateDelete;
 - (id)_referenceQueue__;
 - (id)_reservedCurrentEventSnapshot;
-- (void)_setFaultHandler__:(id)arg1;
 - (void)_setGenericValue:(id)arg1 forKey:(id)arg2 withIndex:(long)arg3 flags:(long)arg4;
 - (void)_setHasRetainedStoreResources__:(BOOL)arg1;
 - (void)_setLastSnapshot__:(id)arg1;
-- (void)_setManagedObjectContext__:(id)arg1;
 - (void)_setObjectID__:(id)arg1;
 - (void)_setOriginalSnapshot__:(id)arg1;
 - (void)_setPendingDeletion__:(BOOL)arg1;
 - (void)_setPendingInsertion__:(BOOL)arg1;
 - (void)_setPendingUpdate__:(BOOL)arg1;
-- (void)_setReadOnly__:(BOOL)arg1;
 - (void)_setSuppressingChangeNotifications__:(BOOL)arg1;
 - (void)_setSuppressingKVO__:(BOOL)arg1;
 - (void)_setUnprocessedDeletion__:(BOOL)arg1;
@@ -129,9 +130,9 @@
 - (unsigned int)_stateFlags;
 - (id)_substituteEntityAndProperty:(id)arg1 inString:(id)arg2;
 - (id)_transientProperties__;
-- (void)_updateFromRefreshSnapshot:(id)arg1;
+- (BOOL)_tryRetain;
+- (void)_updateFromRefreshSnapshot:(id)arg1 includingTransients:(BOOL)arg2;
 - (void)_updateFromSnapshot:(id)arg1;
-- (void)_updateFromToManyAwareSnapshot:(id)arg1 forUndo:(BOOL)arg2;
 - (void)_updateFromUndoSnapshot:(id)arg1;
 - (void)_updateToManyRelationship:(id)arg1 from:(id)arg2 to:(id)arg3 with:(id)arg4;
 - (BOOL)_validateForSave:(id*)arg1;
@@ -155,9 +156,11 @@
 - (void)didRefresh:(BOOL)arg1;
 - (void)didSave;
 - (void)didTurnIntoFault;
+- (void)diffOrderedSets:(id)arg1 :(id)arg2 :(id*)arg3 :(id*)arg4 :(id*)arg5 :(id*)arg6 :(id*)arg7;
 - (id)entity;
 - (unsigned int)faultingState;
 - (void)finalize;
+- (BOOL)hasChanges;
 - (BOOL)hasFaultForRelationshipNamed:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)implementsSelector:(SEL)arg1;
@@ -171,12 +174,13 @@
 - (id)managedObjectContext;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)mutableArrayValueForKey:(id)arg1;
+- (id)mutableOrderedSetValueForKey:(id)arg1;
 - (id)mutableSetValueForKey:(id)arg1;
 - (id)objectID;
 - (id)observationInfo;
 - (void)prepareForDeletion;
 - (id)primitiveValueForKey:(id)arg1;
-- (void)release;
+- (oneway void)release;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)retain;
 - (unsigned int)retainCount;

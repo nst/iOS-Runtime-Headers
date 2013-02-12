@@ -9,7 +9,7 @@
     NSDictionary *_subparts;
 }
 
-@property(retain,readonly) NSArray * orderedSubparts;
+@property(readonly) NSArray * orderedSubparts;
 
 + (id)instanceFromPlist:(id)arg1;
 

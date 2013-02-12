@@ -13,18 +13,19 @@
     NSString *_configurationName;
     NSPersistentStoreCoordinator *_coordinator;
     id _defaultFaultHandler;
+    id _externalRecordsMonitor;
     } _flags;
     NSMutableDictionary *_oidFactories;
     NSDictionary *_options;
-    void *_reserved2;
     void *_reserved3;
     void *_temporaryIDClass;
     NSURL *_url;
 }
 
-+ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 error:(id*)arg2;
++ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (BOOL)accessInstanceVariablesDirectly;
-+ (BOOL)doURLStuff:(id)arg1 createdStubFile:(BOOL*)arg2 error:(id*)arg3 options:(id)arg4;
++ (BOOL)doURLStuff:(id)arg1 createdStubFile:(BOOL*)arg2 readOnly:(BOOL*)arg3 error:(id*)arg4 options:(id)arg5;
 + (void)initialize;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (Class)migrationManagerClass;
@@ -37,6 +38,7 @@
 - (Class)_objectIDClass;
 - (void)_preflightCrossCheck;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
+- (id)_rawMetadata__;
 - (void)_setMetadataDirty:(BOOL)arg1;
 - (BOOL)_unload:(id*)arg1;
 - (void)_updateMetadata;
@@ -44,6 +46,7 @@
 - (id)configurationName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)didAddToPersistentStoreCoordinator:(id)arg1;
 - (void)doFilesystemCleanupOnRemove:(BOOL)arg1;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;

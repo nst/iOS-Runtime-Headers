@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSHashTable, NSMapTable, NSMutableSet, VMURangeArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSHashTable, NSMutableSet, VMUClassInfoMap, VMUNonOverlappingRangeArray;
 
 @interface VMUObjectIdentifier : NSObject {
     struct _CSTypeRef { 
@@ -10,15 +14,15 @@
         unsigned int _opaque_2; 
     unsigned int _cPlusPlusClassCount;
     unsigned int _cfTypeCount;
-    NSMapTable *_cfTypeIDtoClassInfo;
-    NSHashTable *_classAddresses;
+    VMUClassInfoMap *_cfTypeIDtoClassInfo;
     NSHashTable *_invalidPointers;
-    NSMapTable *_isaToClassInfo;
+    VMUClassInfoMap *_isaToClassInfo;
+    id _memoryReader;
     unsigned int _objcClassCount;
     NSMutableSet *_objcRuntimeMallocBlocks;
     NSHashTable *_objcRuntimeMallocBlocksHash;
     } _symbolicator;
-    VMURangeArray *_targetProcessVMranges;
+    VMUNonOverlappingRangeArray *_targetProcessVMranges;
     unsigned int _task;
     int peeksAtRemoteObjectIsa;
 }
@@ -26,19 +30,20 @@
 - (unsigned int)CFTypeCount;
 - (unsigned int)CPlusPlusClassCount;
 - (unsigned int)ObjCclassCount;
+- (id)_classInfoForObject:(unsigned long long)arg1;
 - (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned int x1; unsigned char x2[4]; }*)arg1;
 - (id)classInfoForIsaPointer:(unsigned int)arg1;
-- (id)classInfoForObject:(unsigned int)arg1;
+- (id)classInfoForObject:(unsigned long long)arg1;
+- (id)classInfoForObjectWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)dealloc;
 - (void)findCFTypes;
 - (void)findObjCclasses;
-- (void)findTargetProcessVMranges;
 - (id)initWithTask:(unsigned int)arg1 symbolicator:(id)arg2;
 - (id)initWithTask:(unsigned int)arg1;
-- (BOOL)isValidRemotePointer:(unsigned int)arg1;
+- (BOOL)isValidRemotePointer:(unsigned long long)arg1;
+- (id)nullClassInfo;
 - (id)objcRuntimeMallocBlocks;
 - (id)objcRuntimeMallocBlocksHash;
-- (id)readClassNameString:(unsigned int)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
 
 @end

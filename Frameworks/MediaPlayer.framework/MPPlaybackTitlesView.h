@@ -2,33 +2,40 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray;
+@class NSArray, UIView;
 
 @interface MPPlaybackTitlesView : UIControl {
+    UIView *_contentView;
     NSArray *_labels;
+    unsigned int _marqueeScrollableIndex;
+    BOOL _marqueeScrollingActive;
     BOOL _showingLoadingUI;
     NSArray *_titles;
 }
 
+@property(readonly) UIView * contentView;
+@property unsigned int marqueeScrollableIndex;
+@property BOOL marqueeScrollingActive;
 @property BOOL showingLoadingUI;
 @property(retain) NSArray * titles;
 
-+ (void)_initializeSafeCategory;
-
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_addLabel:(unsigned int)arg1;
 - (id)_addLoadingLabel;
+- (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_layoutLabels;
 - (void)_layoutLoadingUI;
 - (void)_tearDownLabels;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
+- (void)_updateLabelMarqueeScrolling;
+- (id)contentView;
 - (void)dealloc;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
+- (unsigned int)marqueeScrollableIndex;
+- (BOOL)marqueeScrollingActive;
+- (void)setMarqueeScrollableIndex:(unsigned int)arg1;
+- (void)setMarqueeScrollingActive:(BOOL)arg1;
 - (void)setShowingLoadingUI:(BOOL)arg1;
 - (void)setTitles:(id)arg1;
 - (BOOL)showingLoadingUI;

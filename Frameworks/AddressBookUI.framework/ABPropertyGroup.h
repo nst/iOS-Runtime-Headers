@@ -6,7 +6,9 @@
 
 @interface ABPropertyGroup : ABAbstractPropertyGroup {
     ABActionsController *_actionsController;
+    BOOL _allowsVibrations;
     ABCapabilitiesManager *_capabilitiesManager;
+    void *_context;
     void *_defaultPolicy;
     NSString *_insertionLabel;
     NSMutableDictionary *_insertionRecordInfoDictionary;
@@ -23,6 +25,7 @@
     NSMutableDictionary *_recordInfoDictionaryForItemBeingDeleted;
     NSMutableDictionary *_valueForItemBeingDeleted;
     NSMutableDictionary *_valuesByPerson;
+    id _vibrationManager;
 }
 
 - (void)_addValuesToCache;
@@ -41,7 +44,6 @@
 - (BOOL)_isEmptyValue:(id)arg1 isPreinserted:(BOOL)arg2;
 - (id)_newLocalizedCountryNameForCountryCode:(id)arg1;
 - (id)_newLocalizedPlaceholder;
-- (void*)_policyForPerson:(void*)arg1;
 - (BOOL)_propertyIsDate;
 - (BOOL)_recordInfoDictionary:(id)arg1 containsPerson:(void*)arg2;
 - (id)_recordInfoDictionaryAtIndex:(int)arg1;
@@ -65,16 +67,20 @@
 - (BOOL)_updateCacheWithPropertyValue:(id)arg1 propertyLabel:(id)arg2 recordInfoDictionaryAtIndex:(unsigned int)arg3 shouldSetValue:(BOOL)arg4 shouldSetLabel:(BOOL)arg5;
 - (id)_valueForCheckingExistenceOfPropertyValue:(id)arg1;
 - (id)_valueFromCacheForPerson:(void*)arg1;
+- (id)_vibrationManager;
 - (id)actionsControllerPreparedWithValueAtIndex:(int)arg1;
 - (id)actualPropertyLabelAtIndex:(int)arg1 forPerson:(void*)arg2;
 - (void)addPreinsertedItem;
+- (int)alertIdentifierAtIndex:(int)arg1;
 - (id)allRecordInfosAtIndex:(int)arg1;
 - (BOOL)allowsAdding;
 - (BOOL)allowsAddingForPerson:(void*)arg1;
+- (BOOL)allowsVibrations;
 - (BOOL)areLabelsEditable;
 - (BOOL)canDeleteAtIndex:(int)arg1 editableFlag:(BOOL)arg2;
 - (BOOL)canSave;
 - (BOOL)canSaveAtIndex:(int)arg1 editableFlag:(BOOL)arg2;
+- (void*)context;
 - (id)countryCodeAtIndex:(int)arg1;
 - (void)dealloc;
 - (id)description;
@@ -82,12 +88,20 @@
 - (BOOL)editableFlagFromInfo:(id)arg1;
 - (void)getAnyIdentifier:(int*)arg1 andPerson:(const void**)arg2 atIndex:(int)arg3;
 - (void)getIndex:(int*)arg1 andEditableFlag:(BOOL*)arg2 forRow:(int)arg3 whenEditing:(BOOL)arg4;
-- (BOOL)hasMultipleSoundsAtIndex:(int)arg1;
+- (BOOL)hasCallVibration;
+- (BOOL)hasMultipleAlertsAtIndex:(int)arg1;
 - (BOOL)hasRingtone;
 - (BOOL)hasTextTone;
+- (BOOL)hasTextVibration;
+- (int)indexOfCallVibrationInAlertEquivalentMultiValue;
 - (int)indexOfIdentifier:(int)arg1 person:(void*)arg2;
-- (id)initWithProperty:(int)arg1;
+- (int)indexOfRingtoneInAlertEquivalentMultiValue;
+- (int)indexOfTextToneInAlertEquivalentMultiValue;
+- (int)indexOfTextVibrationInAlertEquivalentMultiValue;
+- (id)initWithProperty:(int)arg1 context:(void*)arg2;
 - (int)insertionIndex;
+- (BOOL)instantMessageServiceIsSupported;
+- (BOOL)instantMessageServiceIsSupportedForPerson:(void*)arg1;
 - (int)itemCount;
 - (id)keyboardSettingsForKey:(id)arg1 info:(id)arg2;
 - (id)labelTextForInfo:(id)arg1;
@@ -96,6 +110,7 @@
 - (id)localizedPropertyLabelAtIndex:(int)arg1;
 - (BOOL)multiCellContentView:(id)arg1 alwaysShowsClearButtonAtIndexPath:(id)arg2;
 - (id)placeholderTextForKey:(id)arg1 info:(id)arg2;
+- (void*)policyForPerson:(void*)arg1;
 - (void)prepareActionsController:(id)arg1 withValueAtIndex:(int)arg2;
 - (int)property;
 - (id)propertyLabelAtIndex:(int)arg1 forceUseReadonly:(BOOL)arg2;
@@ -103,6 +118,7 @@
 - (id)propertyValueAtIndex:(int)arg1 forceUseReadonly:(BOOL)arg2;
 - (id)propertyValueAtIndex:(int)arg1;
 - (id)propertyValueForInfo:(id)arg1;
+- (void)refreshVibrations;
 - (void)reloadFromModel;
 - (BOOL)removeItemAtRow:(int)arg1 whenEditing:(BOOL)arg2;
 - (BOOL)removeItemAtRow:(int)arg1;
@@ -111,6 +127,7 @@
 - (id)rowsToDeleteInTransition:(BOOL)arg1;
 - (id)rowsToInsertInTransition:(BOOL)arg1;
 - (id)serviceAtIndex:(int)arg1;
+- (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setCapabilitiesManager:(id)arg1;
 - (void)setCountryCode:(id)arg1 atIndex:(int)arg2;
 - (void)setDefaultPolicy:(void*)arg1;
@@ -122,9 +139,11 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2 forIndex:(int)arg3;
 - (id)shortServiceForService:(id)arg1;
 - (BOOL)shouldDisambiguateNotes;
+- (BOOL)shouldShowAlertsWhenEditing:(BOOL)arg1;
+- (BOOL)shouldShowCallVibrationWhenEditing:(BOOL)arg1;
 - (BOOL)shouldShowRingtoneWhenEditing:(BOOL)arg1;
-- (BOOL)shouldShowSoundsWhenEditing:(BOOL)arg1;
 - (BOOL)shouldShowTextToneWhenEditing:(BOOL)arg1;
+- (BOOL)shouldShowTextVibrationWhenEditing:(BOOL)arg1;
 - (id)stringValueAtIndex:(int)arg1;
 - (void)trimValueForCountryCodeAtIndex:(int)arg1;
 - (void)updateRecord;

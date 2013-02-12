@@ -13,6 +13,8 @@
 }
 
 - (id)_initWithObservances:(id*)arg1 count:(unsigned int)arg2;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;

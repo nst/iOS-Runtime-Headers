@@ -9,22 +9,17 @@
 
 @property(readonly) UIResponder * _editingDelegate;
 @property(readonly) UIResponder * _responderForEditing;
-@property(retain,readonly) UIView * inputAccessoryView;
-@property(retain,readonly) UIView * inputView;
+@property(readonly) UIView * inputAccessoryView;
+@property(readonly) UIView * inputView;
 @property(readonly) NSUndoManager * undoManager;
 
-- (BOOL)_accessibilityHasTextOperations;
-- (int)_accessibilityLineEndPosition;
-- (int)_accessibilityLinePosition:(BOOL)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityLineRangeForPosition:(unsigned int)arg1;
-- (int)_accessibilityLineStartPosition;
-- (id)_accessibilityTextOperations;
-- (id)_accessibilityTextViewTextOperationResponder;
 - (void)_becomeFirstResponder;
 - (void)_becomeFirstResponderAndMakeVisible;
 - (BOOL)_becomeFirstResponderWhenPossible;
 - (void)_beginPinningInputViews;
 - (void)_clearBecomeFirstResponderWhenCapable;
+- (void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3 index:(unsigned int)arg4;
+- (void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3;
 - (BOOL)_containedInAbsoluteResponderChain;
 - (BOOL)_containsResponder:(id)arg1;
 - (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
@@ -68,7 +63,9 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canResignFirstResponder;
 - (id)defaultFirstResponder;
+- (void)downloadAsset:(id)arg1 completionHandler:(id)arg2;
 - (id)firstResponder;
+- (id)firstViewControllerInResponderChain;
 - (void)gestureChanged:(struct __GSEvent { }*)arg1;
 - (void)gestureEnded:(struct __GSEvent { }*)arg1;
 - (void)gestureStarted:(struct __GSEvent { }*)arg1;

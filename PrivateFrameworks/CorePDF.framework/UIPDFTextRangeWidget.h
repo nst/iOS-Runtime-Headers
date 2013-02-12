@@ -2,36 +2,51 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CALayer, CAShapeLayer, UIPDFPageView, UIPDFSelection;
+@class CALayer, UIPDFPageView;
 
 @interface UIPDFTextRangeWidget : NSObject <UIPDFSelectionWidget> {
+    struct CGPoint { 
+        float x; 
+        float y; 
     CALayer *_fixedSelectionGrabber;
     float _handleHeight;
     float _handleWidth;
+    BOOL _hiDPI;
+    } _initialSelectionPointOnPage;
     CALayer *_leftBar;
+    CALayer *_leftHandle;
     CALayer *_leftSelectionGrabber;
+    float _offsetX;
+    float _offsetY;
     UIPDFPageView *_pageView;
     CALayer *_rightBar;
     CALayer *_rightHandle;
     CALayer *_rightSelectionGrabber;
-    UIPDFSelection *_selection;
-    CAShapeLayer *_textHighlighter;
 }
 
+@property(readonly) struct CGPoint { float x; float y; } currentSelectionPointOnPage;
+@property(readonly) struct CGPoint { float x; float y; } initialSelectionPointOnPage;
 @property UIPDFPageView * pageView;
 
-- (void)addToLayer:(id)arg1;
+- (struct CGPoint { float x1; float x2; })currentSelectionPointOnPage;
 - (void)dealloc;
-- (BOOL)hitLeft:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)hitRight:(struct CGPoint { float x1; float x2; })arg1;
+- (void)endTracking;
+- (void)hide;
 - (BOOL)hitTest:(struct CGPoint { float x1; float x2; })arg1 fixedPoint:(struct CGPoint { float x1; float x2; }*)arg2 preceeds:(BOOL*)arg3;
-- (BOOL)hitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)init;
+- (struct CGPoint { float x1; float x2; })initialSelectionPointOnPage;
+- (void)layout;
+- (void)layoutLeftSelectionGrabber:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 width:(float)arg3 extraHeight:(float)arg4 unitSize:(struct CGSize { float x1; float x2; })arg5;
+- (void)layoutRightSelectionGrabber:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 width:(float)arg3 extraHeight:(float)arg4 unitSize:(struct CGSize { float x1; float x2; })arg5;
+- (void)layoutWidget;
 - (id)pageView;
 - (void)remove;
 - (struct CGPoint { float x1; float x2; })selectedPointFor:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setNeedsDisplay;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionRectangle;
 - (void)setPageView:(id)arg1;
+- (void)setSelectedGrabber:(unsigned int)arg1;
 - (void)setSelection:(id)arg1;
+- (void)track:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })viewOffset;
 
 @end

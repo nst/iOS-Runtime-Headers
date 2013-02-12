@@ -5,7 +5,7 @@
 @interface SUMediaItemCellConfiguration : SUItemCellConfiguration {
 }
 
-@property(readonly) struct CGSize { float width; float height; } artworkSize;
+@property(readonly) struct CGSize { float x1; float x2; } artworkSize;
 @property(readonly) int mediaIconType;
 @property(readonly) BOOL showContentRating;
 
@@ -15,6 +15,7 @@
 - (float)alphaForImageAtIndex:(unsigned int)arg1 fromAlpha:(float*)arg2 withModifiers:(unsigned int)arg3;
 - (float)alphaForLabelAtIndex:(unsigned int)arg1 fromAlpha:(float*)arg2 withModifiers:(unsigned int)arg3;
 - (struct CGSize { float x1; float x2; })artworkSize;
+- (id)copyImageDataProvider;
 - (void)drawWithModifiers:(unsigned int)arg1;
 - (id)fontForLabelAtIndex:(unsigned int)arg1;
 - (id)initWithStringCount:(unsigned int)arg1 imageCount:(unsigned int)arg2;

@@ -2,51 +2,63 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UIButton;
+@class NSTimer, UIButton, UIImageView;
 
 @interface UIStepper : UIControl {
     BOOL _autorepeat;
     BOOL _continuous;
-    int _intValue;
-    int _maximumIntValue;
-    int _minimumIntValue;
+    BOOL _isRtoL;
+    double _maximumValue;
+    UIImageView *_middleView;
+    double _minimumValue;
     UIButton *_minusButton;
     UIButton *_plusButton;
     int _repeatCount;
     NSTimer *_repeatTimer;
+    double _stepValue;
+    double _value;
     BOOL _wraps;
 }
 
 @property BOOL autorepeat;
 @property(getter=isContinuous) BOOL continuous;
-@property int intValue;
-@property int maximumIntValue;
-@property int minimumIntValue;
+@property double maximumValue;
+@property double minimumValue;
+@property double stepValue;
+@property double value;
 @property BOOL wraps;
 
-+ (void)_initializeSafeCategory;
-
 - (void)_commonStepperInit;
+- (void)_populateArchivedSubviews:(id)arg1;
 - (void)_startTimer;
 - (void)_stopTimer;
 - (void)_updateButtonEnabled;
 - (void)_updateCount:(id)arg1;
+- (void)_updateHighlightingAtPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)autorepeat;
+- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)cancelTrackingWithEvent:(id)arg1;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)intValue;
 - (BOOL)isContinuous;
-- (int)maximumIntValue;
-- (int)minimumIntValue;
+- (double)maximumValue;
+- (double)minimumValue;
 - (void)setAutorepeat:(BOOL)arg1;
 - (void)setContinuous:(BOOL)arg1;
-- (void)setIntValue:(int)arg1;
-- (void)setMaximumIntValue:(int)arg1;
-- (void)setMinimumIntValue:(int)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setMaximumValue:(double)arg1;
+- (void)setMinimumValue:(double)arg1;
+- (void)setStepValue:(double)arg1;
+- (void)setValue:(double)arg1;
 - (void)setWraps:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (double)stepValue;
+- (double)value;
 - (BOOL)wraps;
 
 @end

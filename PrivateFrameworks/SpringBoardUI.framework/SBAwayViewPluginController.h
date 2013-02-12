@@ -61,6 +61,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (BOOL)wantsAutomaticFullscreenTimer;
+- (BOOL)wantsMenuButtonHeldEvent;
 - (BOOL)wantsSwipeGestureRecognizer;
 
 @end

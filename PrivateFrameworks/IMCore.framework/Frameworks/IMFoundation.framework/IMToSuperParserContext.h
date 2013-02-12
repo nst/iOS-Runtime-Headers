@@ -7,6 +7,7 @@
 @interface IMToSuperParserContext : IMXMLParserContext {
     NSString *_backgroundColor;
     NSMutableArray *_backgroundColorStack;
+    int _baseWritingDirection;
     NSMutableAttributedString *_body;
     unsigned int _boldCount;
     NSMutableDictionary *_currentAttributes;
@@ -16,20 +17,22 @@
     NSMutableArray *_fontSizeStack;
     NSString *_foregroundColor;
     NSMutableArray *_foregroundColorStack;
-    BOOL _isRightToLeft;
     unsigned int _italicCount;
     NSMutableArray *_linkStack;
+    unsigned int _messagePartNumber;
     unsigned int _strikethroughCount;
     unsigned int _underlineCount;
 }
 
 @property(retain) NSString * backgroundColor;
+@property int baseWritingDirection;
 @property(readonly) NSAttributedString * body;
 @property(retain) NSArray * fileTransferGUIDs;
 @property(retain) NSString * foregroundColor;
 @property(setter=setRightToLeft:) BOOL isRightToLeft;
 
 - (void)_clearIvars;
+- (void)_incrementMessagePartNumber;
 - (void)_initIvars;
 - (void)_popValueFromStack:(id)arg1 attributeName:(id)arg2;
 - (void)_pushValue:(id)arg1 ontoStack:(id)arg2 attributeName:(id)arg3;
@@ -39,6 +42,7 @@
 - (void)appendInlineImageWithGUID:(id)arg1 filename:(id)arg2 width:(int)arg3 height:(int)arg4;
 - (void)appendString:(id)arg1;
 - (id)backgroundColor;
+- (int)baseWritingDirection;
 - (id)body;
 - (void)dealloc;
 - (void)decrementBoldCount;
@@ -66,6 +70,7 @@
 - (void)reset;
 - (id)resultsForLogging;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setBaseWritingDirection:(int)arg1;
 - (void)setFileTransferGUIDs:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setRightToLeft:(BOOL)arg1;

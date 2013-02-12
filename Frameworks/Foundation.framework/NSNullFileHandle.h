@@ -11,10 +11,14 @@
 - (unsigned long long)offsetInFile;
 - (id)readDataOfLength:(unsigned int)arg1;
 - (id)readDataToEndOfFile;
+- (id)readabilityHandler;
 - (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
+- (void)setReadabilityHandler:(id)arg1;
+- (void)setWriteabilityHandler:(id)arg1;
 - (void)synchronizeFile;
 - (void)truncateFileAtOffset:(unsigned long long)arg1;
 - (void)writeData:(id)arg1;
+- (id)writeabilityHandler;
 
 @end

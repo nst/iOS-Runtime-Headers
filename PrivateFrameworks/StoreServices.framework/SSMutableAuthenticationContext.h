@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSNumber, NSString;
+@class NSArray, NSDictionary, NSNumber, NSString;
 
 @interface SSMutableAuthenticationContext : SSAuthenticationContext <NSCopying, NSMutableCopying> {
 }
 
+@property(copy) NSDictionary * HTTPHeaders;
 @property(copy) NSString * accountName;
 @property(getter=isAccountNameEditable) BOOL accountNameEditable;
 @property int accountScope;
@@ -18,8 +19,10 @@
 @property(copy) NSDictionary * requestParameters;
 @property(retain) NSNumber * requiredUniqueIdentifier;
 @property BOOL shouldFollowAccountButtons;
+@property BOOL shouldIgnoreProtocol;
 @property(copy) NSDictionary * signupRequestParameters;
 @property int tokenType;
+@property(copy) NSArray * userAgentComponents;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -29,12 +32,16 @@
 - (void)setCanCreateNewAccount:(BOOL)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;
 - (void)setDemoAccount:(BOOL)arg1;
+- (void)setHTTPHeaders:(id)arg1;
 - (void)setPreferredITunesStoreClient:(id)arg1;
 - (void)setPromptStyle:(int)arg1;
 - (void)setRequestParameters:(id)arg1;
 - (void)setRequiredUniqueIdentifier:(id)arg1;
 - (void)setShouldFollowAccountButtons:(BOOL)arg1;
+- (void)setShouldIgnoreProtocol:(BOOL)arg1;
 - (void)setSignupRequestParameters:(id)arg1;
 - (void)setTokenType:(int)arg1;
+- (void)setUserAgentComponents:(id)arg1;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 
 @end

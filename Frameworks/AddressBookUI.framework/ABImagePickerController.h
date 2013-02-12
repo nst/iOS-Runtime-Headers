@@ -23,11 +23,9 @@
 
 @property <ABPersonImageDataDelegate> * imageDataDelegate;
 
-+ (void)_initializeSafeCategory;
-
 - (id)_createImagePicker;
 - (id)_createImagePickerForEditingImageData:(id)arg1 shouldSaveFullSize:(BOOL)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (id)_formatStringForSourceType:(int)arg1 withSuffix:(BOOL)arg2 useAbbreviatedStrings:(BOOL)arg3;
+- (id)_formatStringForSource:(void*)arg1 withSuffix:(BOOL)arg2 useAbbreviatedStrings:(BOOL)arg3;
 - (BOOL)_hasMultipleWritablePeople;
 - (id)_removePreviousSheet;
 - (void)_showActionSheet:(id)arg1 previousOwner:(id)arg2;

@@ -19,7 +19,6 @@
 - (id)dictionaryRepresentation;
 - (int)height;
 - (id)imageData;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (void)setImageData:(id)arg1;

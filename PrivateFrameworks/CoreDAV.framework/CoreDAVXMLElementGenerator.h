@@ -4,7 +4,7 @@
 
 @class CoreDAVItem, CoreDAVXMLElementGenerator, NSDictionary, NSMutableData, NSURL;
 
-@interface CoreDAVXMLElementGenerator : NSObject {
+@interface CoreDAVXMLElementGenerator : NSObject <NSXMLParserDelegate> {
     NSURL *_baseURL;
     NSMutableData *_cDATA;
     NSDictionary *_cachedElementParseRules;

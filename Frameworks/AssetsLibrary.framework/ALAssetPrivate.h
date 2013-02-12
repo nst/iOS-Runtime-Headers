@@ -2,20 +2,24 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsLibrary, MLPhoto;
+@class ALAssetsLibrary, PLManagedAsset, PLPhotoLibrary;
 
 @interface ALAssetPrivate : NSObject <ALAssetsLibraryAsset> {
     BOOL _isValid;
     ALAssetsLibrary *_library;
-    MLPhoto *_photo;
+    PLManagedAsset *_photo;
+    PLPhotoLibrary *_photoLibrary;
 }
 
+@property(retain) PLPhotoLibrary * _photoLibrary;
 @property BOOL isValid;
 @property ALAssetsLibrary * library;
-@property(retain) MLPhoto * photo;
+@property(retain) PLManagedAsset * photo;
 
+- (void)_performBlockAndWait:(id)arg1;
+- (id)_photoLibrary;
 - (void)dealloc;
-- (id)initWithMLPhoto:(id)arg1 library:(id)arg2;
+- (id)initWithManagedAsset:(id)arg1 library:(id)arg2;
 - (BOOL)isValid;
 - (id)library;
 - (void)libraryDidChange;
@@ -24,5 +28,6 @@
 - (void)setIsValid:(BOOL)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPhoto:(id)arg1;
+- (void)set_photoLibrary:(id)arg1;
 
 @end

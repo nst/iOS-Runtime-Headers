@@ -2,45 +2,50 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString;
+@class NSString;
 
 @interface GMMRating : PBCodable {
-    BOOL _hasStarRatingAverage_E3;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    BOOL _hasStarRatingAverageE3;
     BOOL _hasTotalReviews;
-    NSMutableArray *_numReviewsStarRating1To5s;
+    } _numReviewsStarRating1To5s;
     NSString *_snippet;
-    int _starRatingAverage_E3;
+    int _starRatingAverageE3;
     int _totalReviews;
 }
 
 @property(readonly) BOOL hasSnippet;
-@property(readonly) BOOL hasStarRatingAverage_E3;
-@property(readonly) BOOL hasTotalReviews;
-@property(retain) NSMutableArray * numReviewsStarRating1To5s;
-@property(readonly) int numReviewsStarRating1To5sCount;
+@property BOOL hasStarRatingAverageE3;
+@property BOOL hasTotalReviews;
+@property(readonly) int* numReviewsStarRating1To5s;
+@property(readonly) unsigned int numReviewsStarRating1To5sCount;
 @property(retain) NSString * snippet;
-@property int starRatingAverage_E3;
+@property int starRatingAverageE3;
 @property int totalReviews;
 
 - (void)addNumReviewsStarRating1To5:(int)arg1;
+- (void)clearNumReviewsStarRating1To5s;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasSnippet;
-- (BOOL)hasStarRatingAverage_E3;
+- (BOOL)hasStarRatingAverageE3;
 - (BOOL)hasTotalReviews;
-- (id)init;
 - (int)numReviewsStarRating1To5AtIndex:(unsigned int)arg1;
-- (id)numReviewsStarRating1To5s;
-- (int)numReviewsStarRating1To5sCount;
+- (int*)numReviewsStarRating1To5s;
+- (unsigned int)numReviewsStarRating1To5sCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setNumReviewsStarRating1To5:(int)arg1 atIndex:(unsigned int)arg2;
-- (void)setNumReviewsStarRating1To5s:(id)arg1;
+- (void)setHasStarRatingAverageE3:(BOOL)arg1;
+- (void)setHasTotalReviews:(BOOL)arg1;
+- (void)setNumReviewsStarRating1To5s:(int*)arg1 count:(unsigned int)arg2;
 - (void)setSnippet:(id)arg1;
-- (void)setStarRatingAverage_E3:(int)arg1;
+- (void)setStarRatingAverageE3:(int)arg1;
 - (void)setTotalReviews:(int)arg1;
 - (id)snippet;
-- (int)starRatingAverage_E3;
+- (int)starRatingAverageE3;
 - (int)totalReviews;
 - (void)writeTo:(id)arg1;
 

@@ -12,6 +12,7 @@
 
 + (id)sharedAccountUtilities;
 
+- (void).cxx_destruct;
 - (void)accountsChanged;
 - (id)accountsManager;
 - (id)allDisplayAccounts;

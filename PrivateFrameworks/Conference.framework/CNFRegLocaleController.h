@@ -31,6 +31,7 @@
 - (void)_handleTimeout;
 - (void)_hideCountryPickerAnimated:(BOOL)arg1;
 - (void)_loadInitialValues;
+- (void)_loadRegionsIfNecessary;
 - (id)_phoneTextField;
 - (void)_refreshCountryFieldAnimated:(BOOL)arg1;
 - (void)_refreshPhoneFieldAnimated:(BOOL)arg1;
@@ -55,7 +56,7 @@
 - (id)currentRegionID;
 - (void)dealloc;
 - (void)hideCountryPicker;
-- (id)init;
+- (id)initWithRegController:(id)arg1;
 - (id)logName;
 - (void)regionChooser:(id)arg1 selectedRegionID:(id)arg2;
 - (id)regionData;
@@ -64,7 +65,7 @@
 - (void)setCurrentRegionID:(id)arg1;
 - (void)setRegionData:(id)arg1;
 - (void)showCountryPicker;
-- (id)specifiers;
+- (id)specifierList;
 - (id)validationString;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

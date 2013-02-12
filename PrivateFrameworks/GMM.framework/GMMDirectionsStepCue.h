@@ -15,7 +15,7 @@
 @property(readonly) BOOL hasIconText;
 @property(readonly) BOOL hasIconUrl;
 @property(readonly) BOOL hasName;
-@property(readonly) BOOL hasType;
+@property BOOL hasType;
 @property(retain) NSString * iconText;
 @property(retain) NSString * iconUrl;
 @property(retain) NSString * name;
@@ -30,9 +30,9 @@
 - (BOOL)hasType;
 - (id)iconText;
 - (id)iconUrl;
-- (id)init;
 - (id)name;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasType:(BOOL)arg1;
 - (void)setIconText:(id)arg1;
 - (void)setIconUrl:(id)arg1;
 - (void)setName:(id)arg1;

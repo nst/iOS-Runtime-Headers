@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSString;
 
-@interface FTGetRegionMetadataMessage : FTMessage {
+@interface FTGetRegionMetadataMessage : FTMessage <NSCopying> {
     NSString *_language;
     NSDictionary *_responseRegionInformation;
 }
@@ -13,13 +13,22 @@
 @property(copy) NSDictionary * responseRegionInformation;
 
 - (id)bagKey;
+- (int)command;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
+- (id)init;
 - (id)language;
 - (id)messageBody;
 - (id)requiredKeys;
+- (int)responseCommand;
 - (id)responseRegionInformation;
 - (void)setLanguage:(id)arg1;
 - (void)setResponseRegionInformation:(id)arg1;
+- (BOOL)wantsBagKey;
+- (BOOL)wantsBinaryPush;
+- (BOOL)wantsCompressedBody;
+- (BOOL)wantsHTTPGet;
+- (BOOL)wantsHTTPHeaders;
 
 @end

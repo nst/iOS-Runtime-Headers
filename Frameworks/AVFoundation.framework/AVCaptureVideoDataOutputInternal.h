@@ -13,7 +13,7 @@
     BOOL alwaysDiscardsLateVideoFrames;
     struct dispatch_queue_s { } *clientQueue;
     <AVCaptureVideoDataOutputSampleBufferDelegate> *delegate;
-    } minFrameDuration;
+    } deprecatedMinFrameDuration;
     unsigned int pixelFormatType;
     NSDictionary *videoSettings;
 }

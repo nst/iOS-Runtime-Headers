@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class NSDate, NSNumber, NSString;
+@class EKRecurrenceRule, NSDate, NSNumber, NSString;
 
 @interface ADCalendarEventJSO : ADJavaScriptObject {
     NSNumber *_allDay;
     NSDate *_end;
     NSString *_eventDescription;
     NSString *_location;
+    EKRecurrenceRule *_recurrence;
     NSDate *_start;
     NSString *_summary;
 }
@@ -17,6 +18,7 @@
 @property(retain) NSDate * end;
 @property(retain) NSString * eventDescription;
 @property(retain) NSString * location;
+@property(retain) EKRecurrenceRule * recurrence;
 @property(retain) NSDate * start;
 @property(retain) NSString * summary;
 
@@ -30,10 +32,12 @@
 - (id)eventDescription;
 - (id)initWithWebScriptObject:(id)arg1;
 - (id)location;
+- (id)recurrence;
 - (void)setAllDay:(id)arg1;
 - (void)setEnd:(id)arg1;
 - (void)setEventDescription:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setRecurrence:(id)arg1;
 - (void)setStart:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (id)start;

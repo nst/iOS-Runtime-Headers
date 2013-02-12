@@ -38,7 +38,6 @@
 
 - (id)URL;
 - (id)URLWithAttributeString:(id)arg1;
-- (id)_createRangeWithNode:(id)arg1;
 - (id)_documentRange;
 - (id)_focusableNodes;
 - (id)adoptNode:(id)arg1;
@@ -48,10 +47,12 @@
 - (id)caretRangeFromPoint:(int)arg1 y:(int)arg2;
 - (id)characterSet;
 - (id)charset;
+- (id)compatMode;
 - (id)cookie;
 - (id)createAttribute:(id)arg1;
 - (id)createAttributeNS:(id)arg1 :(id)arg2;
 - (id)createAttributeNS:(id)arg1 qualifiedName:(id)arg2;
+- (id)createBlockPlaceholder;
 - (id)createCDATASection:(id)arg1;
 - (id)createCSSStyleDeclaration;
 - (id)createComment:(id)arg1;
@@ -74,9 +75,7 @@
 - (id)createTouchList;
 - (id)createTreeWalker:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(BOOL)arg4;
 - (id)createTreeWalker:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
-- (struct __DDScanQuery { }*)dd_createScanQuery;
 - (void)dd_resetResults;
-- (BOOL)dd_urlifyResults:(id)arg1 operation:(id)arg2;
 - (id)defaultCharset;
 - (id)defaultView;
 - (id)doctype;
@@ -110,7 +109,6 @@
 - (id)inputEncoding;
 - (id)lastModified;
 - (id)links;
-- (id)mf_head;
 - (id)preferredStylesheetSet;
 - (BOOL)queryCommandEnabled:(id)arg1;
 - (BOOL)queryCommandIndeterm:(id)arg1;

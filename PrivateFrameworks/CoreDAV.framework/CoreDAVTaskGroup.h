@@ -14,6 +14,7 @@
     <CoreDAVTaskGroupDelegate> *_delegate;
     NSError *_error;
     BOOL _isCancelling;
+    BOOL _isTearingDown;
     NSMutableSet *_outstandingTasks;
     id _progressBlock;
     <CoreDAVTaskManager> *_taskManager;
@@ -33,7 +34,6 @@
 - (id)accountInfoProvider;
 - (void)bailWithError:(id)arg1;
 - (void)cancelTaskGroup;
-- (void)cancelTasks;
 - (id)completionBlock;
 - (void)dealloc;
 - (id)delegate;

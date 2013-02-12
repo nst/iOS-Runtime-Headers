@@ -14,7 +14,8 @@
         unsigned int _isIndexedBySpotlight : 1; 
         unsigned int _isStoredInExternalRecord : 1; 
         unsigned int _extraIvarsAreInDataBlob : 1; 
-        unsigned int _reservedPropertyDescription : 24; 
+        unsigned int _isOrdered : 1; 
+        unsigned int _reservedPropertyDescription : 23; 
     NSEntityDescription *_entity;
     long _entitysReferenceIDForProperty;
     void *_extraIvars;
@@ -38,6 +39,7 @@
 - (id)_initWithName:(id)arg1;
 - (void)_initializeExtraIVars;
 - (BOOL)_isEditable;
+- (BOOL)_isOrdered;
 - (BOOL)_isRelationship;
 - (BOOL)_isToManyRelationship;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
@@ -48,11 +50,12 @@
 - (void)_restoreValidation;
 - (void)_setEntity:(id)arg1;
 - (void)_setEntitysReferenceID:(long)arg1;
+- (void)_setOrdered:(BOOL)arg1;
 - (BOOL)_skipValidation;
 - (void)_stripForMigration;
 - (void)_throwIfNotEditable;
 - (void)_versionHash:(char *)arg1;
-- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6 fetchRequests:(id)arg7;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

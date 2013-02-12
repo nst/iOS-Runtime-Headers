@@ -2,34 +2,23 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIGradient, UIImageView;
+@class UIImageView;
 
-@interface MPReflectionImageView : UIView {
-    unsigned int _nonSquareImage : 1;
+@interface MPReflectionImageView : _UIReflectingView {
     UIImageView *_imageView;
-    UIImageView *_reflection;
-    UIGradient *_reflectionGradient;
-    float _reflectionHeight;
+    BOOL _squareImage;
 }
 
-@property(retain) UIGradient * reflectionGradient;
 @property BOOL squareImage;
 
-+ (void)_initializeSafeCategory;
 + (float)defaultReflectionHeight;
 
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (id)albumArtImage;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
-- (id)reflectionGradient;
-- (void)setAlbumAlpha:(float)arg1 reflectionAlpha:(float)arg2;
 - (void)setAlbumArtImage:(id)arg1;
+- (void)setAlbumVisible:(BOOL)arg1 reflectionVisible:(BOOL)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withReflectionHeight:(float)arg2;
-- (void)setReflectionGradient:(id)arg1;
 - (void)setReflectionVisible:(BOOL)arg1 withDuration:(float)arg2;
 - (void)setSquareImage:(BOOL)arg1;
 - (BOOL)squareImage;

@@ -20,6 +20,8 @@
 - (void)_performPostSaveTasks;
 - (void)_raiseOptimisticLockingExceptionWithReason:(id)arg1;
 - (id)adapter;
+- (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
+- (id)allPeerRanges;
 - (void)awake;
 - (void)beginTransaction;
 - (BOOL)canConnect;
@@ -45,9 +47,10 @@
 - (void)execute;
 - (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (id)fetchMetadata;
-- (int)fetchResultSet:(void*)arg1 usingFetchPlan:(void*)arg2;
+- (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
 - (id)fetchTableCreationSQL;
 - (id)fetchTableNames;
+- (id)fetchUbiqiutyKnowledgeVector;
 - (void)finalize;
 - (void)forceTransactionClosed;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
@@ -79,7 +82,10 @@
 - (void)transactionDidBegin;
 - (void)transactionDidCommit;
 - (void)transactionDidRollback;
+- (void)updateCorrelation:(id)arg1;
 - (void)updateRow:(id)arg1;
+- (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
+- (void)updateUbiquityKnowledgeVector:(id)arg1;
 - (void)willCreateSchema;
 
 @end

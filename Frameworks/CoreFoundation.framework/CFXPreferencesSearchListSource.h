@@ -6,16 +6,17 @@
     struct __CFArray { } *_sourceList;
 }
 
+- (void)_removeValueForKey:(struct __CFString { }*)arg1;
 - (void)addSource:(id)arg1;
 - (struct __CFDictionary { }*)copyDictionary;
 - (struct __CFArray { }*)copyKeyList;
 - (void)dealloc;
-- (void)finalize;
 - (long)generationCount;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (id)init;
 - (void)removeSource:(id)arg1;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (unsigned char)synchronize;
+- (void)synchronizeInBackgroundWithCompletionBlock:(id)arg1;
 
 @end

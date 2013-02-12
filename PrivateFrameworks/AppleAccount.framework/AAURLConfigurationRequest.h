@@ -7,7 +7,6 @@
 
 + (Class)responseClass;
 
-- (id)init;
-- (id)initWithSecondaryURL;
+- (id)urlString;
 
 @end

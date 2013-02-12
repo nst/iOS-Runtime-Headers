@@ -106,6 +106,7 @@
 - (void)setTickLabelPosition:(int)arg1;
 - (void)setTickLabelRotationAngle:(double)arg1;
 - (void)setTitle:(id)arg1;
+- (id)tickLabelColor;
 - (int)tickLabelColorIndex;
 - (int)tickLabelPosition;
 - (double)tickLabelRotationAngle;

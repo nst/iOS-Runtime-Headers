@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSArray, NSMutableArray;
+@class NSArray;
 
 @interface IMDirectlyObservableObject : NSObject {
-    NSMutableArray *_observers;
+    NSArray *_observers;
 }
 
 @property(retain) NSArray * observers;

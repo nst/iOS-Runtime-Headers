@@ -12,6 +12,12 @@
     NSMutableDictionary *_identifierToRunLoopSourcesMap;
 }
 
+@property(retain) NSMutableDictionary * identifierToBlockQueueMap;
+@property(retain) NSMutableDictionary * identifierToCFUserNotificationMap;
+@property(retain) NSMutableDictionary * identifierToIMUserNotificationQueueMap;
+@property(retain) NSMutableDictionary * identifierToListenerQueueMap;
+@property(retain) NSMutableDictionary * identifierToRunLoopSourcesMap;
+
 + (id)sharedInstance;
 
 - (void)_cancelActiveUserNotificationForIdentifier:(id)arg1;
@@ -28,13 +34,21 @@
 - (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id)arg3;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2;
-- (id)autorelease;
+- (BOOL)allowsWeakReference;
 - (unsigned int)countForIdentifier:(id)arg1;
 - (void)dealloc;
-- (id)init;
-- (oneway void)release;
+- (id)identifierToBlockQueueMap;
+- (id)identifierToCFUserNotificationMap;
+- (id)identifierToIMUserNotificationQueueMap;
+- (id)identifierToListenerQueueMap;
+- (id)identifierToRunLoopSourcesMap;
 - (void)removeAllListeners;
 - (void)removeListener:(id)arg1;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
+- (void)setIdentifierToBlockQueueMap:(id)arg1;
+- (void)setIdentifierToCFUserNotificationMap:(id)arg1;
+- (void)setIdentifierToIMUserNotificationQueueMap:(id)arg1;
+- (void)setIdentifierToListenerQueueMap:(id)arg1;
+- (void)setIdentifierToRunLoopSourcesMap:(id)arg1;
 
 @end

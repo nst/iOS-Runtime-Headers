@@ -13,11 +13,9 @@
     TPLCDTextView *_textView;
 }
 
-+ (void)_initializeSafeCategory;
 + (float)labelFontSize;
 + (float)textFontSize;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fullSizedContentViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (float)_labelVInset;
@@ -25,13 +23,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_text1Frame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_text2Frame;
 - (float)_textVInset;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (void)blinkLabel;
 - (void)dealloc;
 - (void)didFinishAnimatingLCDLabelFadeOut:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullSizedContentViewFrame;
 - (id)initWithDefaultSizeForOrientation:(int)arg1;
-- (BOOL)isAccessibilityElement;
 - (id)label;
 - (void)layoutSubviews;
 - (id)secondLineText;
@@ -43,6 +39,9 @@
 - (void)setShadowColor:(id)arg1;
 - (void)setSubImage:(id)arg1;
 - (void)setText:(id)arg1;
+- (BOOL)shouldCenterContentView;
+- (BOOL)shouldCenterText;
+- (BOOL)showImageViewOnLeftSide;
 - (id)subImage;
 - (id)text;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textFrame;

@@ -8,6 +8,8 @@
     NSString *_accountIdentifier;
     void *_addressBook;
     void *_group;
+    BOOL _matchNameOnly;
+    BOOL _matchWholeWords;
     NSString *_name;
     BOOL _showPersonLinks;
     void *_source;
@@ -18,6 +20,8 @@
 @property(copy) NSString * accountIdentifier;
 @property void* addressBook;
 @property void* group;
+@property BOOL matchNameOnly;
+@property BOOL matchWholeWords;
 @property(copy) NSString * name;
 @property BOOL showPersonLinks;
 @property void* source;
@@ -30,6 +34,8 @@
 - (void*)group;
 - (id)init;
 - (BOOL)isValid;
+- (BOOL)matchNameOnly;
+- (BOOL)matchWholeWords;
 - (id)name;
 - (id)predicateFormat;
 - (id)queryJoinsInCompound:(BOOL)arg1;
@@ -37,6 +43,8 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setGroup:(void*)arg1;
+- (void)setMatchNameOnly:(BOOL)arg1;
+- (void)setMatchWholeWords:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setShowPersonLinks:(BOOL)arg1;
 - (void)setSource:(void*)arg1;

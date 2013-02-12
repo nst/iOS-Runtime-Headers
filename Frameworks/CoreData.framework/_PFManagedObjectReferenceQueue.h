@@ -16,11 +16,13 @@
 
 - (BOOL)_GC_queueForDealloc:(id)arg1;
 - (void)_contextDidDealloc;
+- (BOOL)_isDeallocating;
 - (void)_processReferenceQueue:(BOOL)arg1;
 - (BOOL)_queueBatchForDealloc:(struct __CFArray { }*)arg1;
 - (int)_queueCount;
 - (BOOL)_queueForDealloc:(id)arg1;
 - (BOOL)_signal;
+- (BOOL)_tryRetain;
 - (void)_unregisterRunloopObservers;
 - (void)dealloc;
 - (void)finalize;

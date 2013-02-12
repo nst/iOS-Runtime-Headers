@@ -7,6 +7,7 @@
 @interface CKAVMediaObject : CKMediaObject {
     double _approximateDuration;
     NSString *_createdFilename;
+    BOOL _durationLoaded;
     BOOL _remakeDidEnd;
     BOOL _remakeSuccessful;
     AVRemaker *_remaker;
@@ -28,12 +29,14 @@
 - (void)configureBalloon:(id)arg1 withPreviewData:(id)arg2;
 - (void)copyToPasteboard:(id)arg1;
 - (void)dealloc;
+- (double)duration;
 - (id)effectiveExportedFilename;
 - (id)fileForDataWithExtension:(id)arg1;
 - (id)newTranscodingForMMSWithMaxByteLength:(int)arg1;
 - (void)prepareForTranscode;
 - (id)previewTitle;
 - (BOOL)remakeDidEnd;
+- (void)setDuration:(double)arg1;
 - (void)setRemakeDidEnd:(BOOL)arg1;
 - (BOOL)shouldTranscodeForMMS;
 - (double)transcodeDuration;

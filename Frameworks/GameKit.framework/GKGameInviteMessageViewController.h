@@ -2,21 +2,25 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKGameInviteMessageViewControllerDelegate>, NSArray;
+@class <GKGameInviteMessageViewControllerDelegate>, NSArray, NSString;
 
 @interface GKGameInviteMessageViewController : GKAbstractComposeController {
+    NSString *_defaultMessage;
     <GKGameInviteMessageViewControllerDelegate> *_delegate;
     NSArray *_players;
 }
 
+@property(retain) NSString * defaultMessage;
 @property <GKGameInviteMessageViewControllerDelegate> * delegate;
 @property(retain) NSArray * players;
 
 - (void)dealloc;
+- (id)defaultMessage;
 - (id)delegate;
 - (void)done;
 - (void)loadView;
 - (id)players;
+- (void)setDefaultMessage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPlayers:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;

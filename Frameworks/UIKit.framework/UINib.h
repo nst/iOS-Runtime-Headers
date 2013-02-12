@@ -9,16 +9,21 @@
 + (id)nibWithData:(id)arg1 bundle:(id)arg2;
 + (id)nibWithNibName:(id)arg1 bundle:(id)arg2;
 
+- (void)_registerForMemoryWarningIfNeeded;
+- (BOOL)captureEnclosingNIBBundleOnDecode;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (id)effectiveBundle;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithBundle:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithData:(id)arg1 bundle:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)instantiateWithOwner:(id)arg1 options:(id)arg2;
 - (BOOL)instantiatingForSimulator;
 - (id)lazyArchiveData;
+- (void)setCaptureEnclosingNIBBundleOnDecode:(BOOL)arg1;
 - (void)setInstantiatingForSimulator:(BOOL)arg1;
 - (id)unarchiverForInstantiatingReturningError:(id*)arg1;
 

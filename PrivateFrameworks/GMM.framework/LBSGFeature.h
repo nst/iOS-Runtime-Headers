@@ -29,7 +29,6 @@
 - (int)featureType;
 - (BOOL)hasBounds;
 - (BOOL)hasCenter;
-- (id)init;
 - (id)name;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAddress:(id)arg1;

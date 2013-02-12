@@ -30,7 +30,7 @@
 @property(retain) UIViewController * frontViewController;
 @property(retain) SUMaskProvider * maskProvider;
 @property(getter=isOnFront,readonly) BOOL onFront;
-@property struct CGSize { float width; float height; } overlaySize;
+@property struct CGSize { float x1; float x2; } overlaySize;
 @property(retain) SUOverlayTransition * presentationTransition;
 @property float shadowOpacity;
 @property float shadowRadius;

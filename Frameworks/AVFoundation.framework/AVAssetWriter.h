@@ -45,8 +45,6 @@
 - (int)movieTimeScale;
 - (id)outputFileType;
 - (id)outputURL;
-- (void)release;
-- (id)retain;
 - (void)setMetadata:(id)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTimeScale:(int)arg1;

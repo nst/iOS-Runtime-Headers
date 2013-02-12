@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSTrigger, NSArray, NSString;
+@class ICSStructuredLocation, ICSTrigger, NSArray, NSString;
 
 @interface ICSAlarm : ICSComponent {
 }
@@ -13,6 +13,8 @@
 @property(retain) NSString * description;
 @property(retain) NSString * summary;
 @property(retain) ICSTrigger * trigger;
+@property(retain) NSString * x_apple_proximity;
+@property(retain) ICSStructuredLocation * x_apple_structured_location;
 @property(retain) NSString * x_wr_alarmuid;
 
 + (id)ICSStringFromAction:(int)arg1;
@@ -22,7 +24,9 @@
 - (int)action;
 - (void)fixAlarm;
 - (void)setAction:(int)arg1;
+- (void)setX_apple_proximity:(id)arg1;
 - (void)setX_wr_alarmuid:(id)arg1;
+- (id)x_apple_proximity;
 - (id)x_wr_alarmuid;
 
 @end

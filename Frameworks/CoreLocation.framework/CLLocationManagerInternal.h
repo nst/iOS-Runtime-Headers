@@ -15,40 +15,33 @@
         double altitude; 
         double verticalAccuracy; 
         double speed; 
+        double speedAccuracy; 
         double course; 
+        double courseAccuracy; 
         double timestamp; 
         int confidence; 
         double lifespan; 
         int type; 
     struct { 
         double bestAccuracy; 
-    struct { 
-        double x; 
-        double y; 
-        double z; 
-        double magneticHeading; 
-        double trueHeading; 
-        double accuracy; 
-        double timestamp; 
-        double temperature; 
-        double magnitude; 
-        double inclination; 
-        int calibration; 
     } fCapabilities;
     BOOL fCapabilitiesValid;
     struct __CLClient { } *fClient;
     <CLLocationManagerDelegate> *fDelegate;
     double fDesiredAccuracy;
     double fDistanceFilter;
-    } fHeading;
     double fHeadingFilter;
     int fHeadingOrientation;
     } fLocation;
+    BOOL fLocationServicesPreferencesDialogEnabled;
+    BOOL fPersistentMonitoringEnabled;
+    int fPreviousAuthorizationStatus;
+    BOOL fPreviousAuthorizationStatusValid;
     BOOL fUpdatingHeading;
     BOOL fUpdatingLocation;
 }
 
 - (void)dealloc;
-- (id)initWithInfo:(id)arg1;
+- (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
 
 @end

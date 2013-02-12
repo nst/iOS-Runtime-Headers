@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKAnnotationView, MKMapTileView, MKQuadTrie, MKSearchResult, MKUserLocation, MKUserLocationView, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, UICalloutView;
+@class <MKAnnotation>, <MKAnnotationContainerViewDelegate>, MKAnnotationView, MKMapTileView, MKQuadTrie, MKUserLocation, MKUserLocationView, NSMapTable, NSMutableArray, NSMutableSet, UICalloutView;
 
 @interface MKAnnotationContainerViewInternal : NSObject {
     struct { 
@@ -20,9 +20,6 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct { 
-        double latitude; 
-        double longitude; 
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -31,7 +28,9 @@
         float tx; 
         float ty; 
     BOOL animationsEnabled;
+    <MKAnnotation> *annotationToSelect;
     NSMutableArray *annotationViews;
+    float annotationViewsRotationRadians;
     NSMapTable *annotationsToViews;
     MKQuadTrie *annotationsTrie;
     NSMutableArray *awaitingDropPins;
@@ -41,15 +40,12 @@
     BOOL calloutNeedsReset;
     Class calloutViewClass;
     BOOL clickedOnAnnotationView;
-    id delegate;
+    <MKAnnotationContainerViewDelegate> *delegate;
     BOOL didAddUserLocationView;
     BOOL didDragAnnotationView;
     MKAnnotationView *draggingAnnotationView;
-    } draggingAnnotationViewPosition;
+    } draggingAnnotationViewCenter;
     BOOL isAnimatingCallout;
-    BOOL isShowingTransitCallouts;
-    } lastMetaDataCoordinate;
-    double lastMetaDataUpdateTime;
     NSMutableArray *managedAnnotations;
     MKMapTileView *mapTileView;
     } mapTransform;
@@ -60,9 +56,7 @@
     int restoreUserLocationViewUpdateMode;
     NSMapTable *reusableAnnotationViews;
     NSMutableArray *searchResultPins;
-    MKSearchResult *searchResultToSelect;
     MKAnnotationView *selectedAnnotationView;
-    NSMutableDictionary *transitCallouts;
     MKUserLocation *userLocation;
     MKUserLocationView *userLocationView;
     int userLocationViewUpdateMode;

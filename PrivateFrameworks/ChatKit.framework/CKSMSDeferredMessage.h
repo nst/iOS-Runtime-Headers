@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface CKSMSDeferredMessage : CKMessage {
+@interface CKSMSDeferredMessage : CKSMSMessage {
     NSString *_address;
 }
 

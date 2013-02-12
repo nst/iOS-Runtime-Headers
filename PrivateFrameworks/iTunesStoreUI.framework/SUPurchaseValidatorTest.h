@@ -5,7 +5,7 @@
 @interface SUPurchaseValidatorTest : SUItemValidatorTest {
 }
 
-- (BOOL)validateItem:(id)arg1 error:(id*)arg2;
-- (BOOL)validateItems:(id)arg1 error:(id*)arg2;
+- (BOOL)validateItem:(id)arg1 offer:(id)arg2 error:(id*)arg3;
+- (BOOL)validateItems:(id)arg1 offers:(id)arg2 error:(id*)arg3;
 
 @end

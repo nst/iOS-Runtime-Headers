@@ -11,13 +11,14 @@
 
 @property(readonly) NSArray * validationTests;
 
-+ (id)purchaseValidatorWithItems:(id)arg1;
++ (id)purchaseValidator;
 
 - (void)addCollectionValidationTests:(id)arg1;
 - (void)addItemValidationTests:(id)arg1;
 - (void)dealloc;
 - (void)removeValidationTest:(id)arg1;
 - (BOOL)validateItems:(id)arg1 error:(id*)arg2;
+- (BOOL)validateItems:(id)arg1 offers:(id)arg2 error:(id*)arg3;
 - (id)validationTests;
 
 @end

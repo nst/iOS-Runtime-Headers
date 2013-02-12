@@ -25,6 +25,7 @@
 }
 
 + (int)migrationDebugLevel;
++ (id)migrationStoreOptionsFromStoreOptions:(id)arg1;
 + (void)setMigrationDebugLevel:(int)arg1;
 
 - (id)_gatherDataAndPerformMigration:(id*)arg1;

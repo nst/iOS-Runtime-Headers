@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSKnownKeysDictionary, NSManagedObjectModel, NSMutableArray, NSMutableDictionary, NSString;
+@class NSKnownKeysDictionary, NSManagedObjectModel, NSMutableArray, NSString;
 
 @interface NSSQLModel : NSStoreMapping {
     unsigned int _brokenHashVersion;
-    NSMutableDictionary *_cachedFabricatedEntities;
     NSString *_configuration;
     NSMutableArray *_entities;
     NSKnownKeysDictionary *_entitiesByName;
@@ -21,6 +20,7 @@
 - (BOOL)_modelHasPrecomputedKeyOrder;
 - (id)_precomputedKeyOrderForEntity:(id)arg1;
 - (BOOL)_retainHashHack;
+- (id)_sqlEntityWithRenamingIdentifier:(id)arg1;
 - (BOOL)_useLeopardStyleHashing;
 - (BOOL)_useSnowLeopardStyleHashing;
 - (id)configurationName;
@@ -30,6 +30,7 @@
 - (id)entityForID:(unsigned long)arg1;
 - (unsigned long)entityIDForName:(id)arg1;
 - (id)entityNamed:(id)arg1;
+- (void)finalize;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 brokenHashVersion:(unsigned int)arg3;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3 brokenHashVersion:(unsigned int)arg4;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(BOOL)arg3;

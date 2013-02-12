@@ -20,7 +20,7 @@
     NSString *chapterType;
     NSMutableArray *completions;
     } duration;
-    struct OpaqueFigFormatReaderLoader { } *loader;
+    struct OpaqueFigAsset { } *figAsset;
     NSLocale *locale;
     struct dispatch_queue_s { } *readWriteQueue;
     } time;

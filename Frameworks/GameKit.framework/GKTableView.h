@@ -2,28 +2,48 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSArray, UIImage;
+@class NSArray, UIImage, UIView;
 
 @interface GKTableView : UITableView {
     struct CGSize { 
         float width; 
         float height; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     UIImage *_backgroundImage;
     int _backgroundStyle;
     NSArray *_backgroundTiles;
     BOOL _becomeFirstResponderOnTouch;
+    float _defaultColumnWidth;
+    } _lastTouchStartedAt;
+    unsigned int _loadingSequenceNumber;
     float _shadowInset;
-    int _shadowStyle;
+    BOOL _shouldAdjustScrollInsetsForTableHeader;
+    BOOL _shouldOverrideTableFooterGroupPadding;
+    BOOL _shouldPinHeaderToTop;
+    BOOL _shouldPlaceShadowBelowTableHeader;
     } _statusOffsetShift;
+    float _tableHeaderPinnedHeight;
+    UIView *_topShadowView;
 }
 
 @property(retain) UIImage * backgroundImage;
 @property int backgroundStyle;
 @property(retain) NSArray * backgroundTiles;
 @property BOOL becomeFirstResponderOnTouch;
+@property(readonly) int defaultColumnCount;
+@property float defaultColumnWidth;
+@property(readonly) struct CGPoint { float x1; float x2; } lastTouchStartedAt;
+@property(readonly) unsigned int loadingSequenceNumber;
 @property float shadowInset;
-@property int shadowStyle;
-@property struct CGSize { float width; float height; } statusOffsetShift;
+@property BOOL shouldAdjustScrollInsetsForTableHeader;
+@property BOOL shouldOverrideTableFooterGroupPadding;
+@property BOOL shouldPinHeaderToTop;
+@property BOOL shouldPlaceShadowBelowTableHeader;
+@property struct CGSize { float x1; float x2; } statusOffsetShift;
+@property float tableHeaderPinnedHeight;
+@property(retain) UIView * topShadowView;
 
 - (float)_backgroundInset;
 - (id)backgroundImage;
@@ -31,29 +51,51 @@
 - (id)backgroundTiles;
 - (BOOL)becomeFirstResponderOnTouch;
 - (BOOL)canBecomeFirstResponder;
+- (id)capCellWithReuseIdentifier:(id)arg1 sectionHeaderStyle:(int)arg2 tableView:(id)arg3;
 - (void)dealloc;
+- (int)defaultColumnCount;
+- (float)defaultColumnWidth;
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (struct CGPoint { float x1; float x2; })lastTouchStartedAt;
 - (void)layoutSubviews;
 - (void)layoutTilesWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 offset:(struct CGSize { float x1; float x2; })arg2;
+- (id)loadingCapCellForSection:(int)arg1;
+- (unsigned int)loadingSequenceNumber;
+- (void)reloadData;
+- (id)sectionHeaderCapCellWithTitle:(id)arg1 section:(int)arg2;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundStyle:(int)arg1;
 - (void)setBackgroundTiles:(id)arg1;
-- (void)setBackgroundView:(id)arg1;
 - (void)setBecomeFirstResponderOnTouch:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setDefaultColumnWidth:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setShadowInset:(float)arg1;
-- (void)setShadowStyle:(int)arg1;
+- (void)setShouldAdjustScrollInsetsForTableHeader:(BOOL)arg1;
+- (void)setShouldOverrideTableFooterGroupPadding:(BOOL)arg1;
+- (void)setShouldPinHeaderToTop:(BOOL)arg1;
+- (void)setShouldPlaceShadowBelowTableHeader:(BOOL)arg1;
 - (void)setStatusOffsetShift:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTableHeaderPinnedHeight:(float)arg1;
+- (void)setTopShadowView:(id)arg1;
 - (float)shadowInset;
-- (int)shadowStyle;
+- (BOOL)shouldAdjustScrollInsetsForTableHeader;
+- (BOOL)shouldOverrideTableFooterGroupPadding;
+- (BOOL)shouldPinHeaderToTop;
+- (BOOL)shouldPlaceShadowBelowTableHeader;
+- (id)showMoreCapCellForSection:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })statusOffsetShift;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tableHeaderFrame;
+- (float)tableHeaderPinnedHeight;
+- (id)topShadowView;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateBackground;
 - (void)updateBackgroundImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)updateShadowViews;
+- (BOOL)usesVariableMargins;
 
 @end

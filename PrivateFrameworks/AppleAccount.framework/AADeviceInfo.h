@@ -2,18 +2,26 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
+@class APSConnection, NSData;
+
 @interface AADeviceInfo : NSObject {
+    APSConnection *_apsConnection;
+    NSData *_token;
+    BOOL _tokenDone;
+    struct dispatch_semaphore_s { } *_tokenSema;
     struct _lockdown_connection { } *connection;
 }
 
++ (id)apnsToken;
 + (id)clientInfoHeader;
-+ (id)deviceCredential;
 + (id)infoDictionary;
 + (id)osVersion;
 + (id)productVersion;
++ (id)serialNumber;
 + (id)signatureWithDictionary:(id)arg1;
 + (id)udid;
 
+- (id)apnsToken;
 - (id)buildVersion;
 - (void)dealloc;
 - (id)deviceInfoDictionary;

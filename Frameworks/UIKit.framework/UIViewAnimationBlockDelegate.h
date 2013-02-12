@@ -14,8 +14,11 @@
     id _start;
 }
 
+@property(readonly) BOOL _allowsUserInteraction;
+
 + (void)setAnimationBlockDelegateWithDuration:(double)arg1 options:(unsigned int)arg2 start:(id)arg3 completion:(id)arg4;
 
+- (BOOL)_allowsUserInteraction;
 - (void)_didEndBlockAnimation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_sendDeferredCompletion:(id)arg1;
 - (void)_willBeginBlockAnimation:(id)arg1 context:(void*)arg2;

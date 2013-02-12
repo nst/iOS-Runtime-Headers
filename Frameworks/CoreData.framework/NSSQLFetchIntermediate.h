@@ -11,6 +11,7 @@
     NSSQLGroupByIntermediate *_groupByClause;
     NSMutableSet *_groupByKeypaths;
     NSSQLHavingIntermediate *_havingClause;
+    BOOL _isDictionaryCountFetch;
     NSMutableArray *_joinIntermediates;
     NSMutableDictionary *_joinKeypaths;
     NSSQLLimitIntermediate *_limitClause;
@@ -37,6 +38,8 @@
 - (id)havingIntermediate;
 - (id)initWithEntity:(id)arg1 alias:(id)arg2 inScope:(id)arg3;
 - (id)initWithScope:(id)arg1;
+- (BOOL)isDictionaryCountFetch;
+- (BOOL)isFunctionScoped;
 - (id)joinIntermediates;
 - (BOOL)keypathExpressionIsSafeLHSForIn:(id)arg1;
 - (id)limitIntermediate;
@@ -45,6 +48,7 @@
 - (void)selectDistinct;
 - (id)selectIntermediate;
 - (void)setCorrelationToken:(id)arg1;
+- (void)setDictionaryCountFetch:(BOOL)arg1;
 - (void)setGoverningAlias:(id)arg1;
 - (void)setGoverningEntity:(id)arg1;
 - (void)setGroupByIntermediate:(id)arg1;

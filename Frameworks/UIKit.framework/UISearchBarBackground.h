@@ -4,7 +4,7 @@
 
 @class UIColor, UIImage;
 
-@interface UISearchBarBackground : UIView {
+@interface UISearchBarBackground : UIImageView {
     unsigned int _isTranslucent : 1;
     unsigned int _usesEmbeddedAppearance : 1;
     unsigned int _barStyle : 3;
@@ -18,14 +18,16 @@
 @property(getter=isTranslucent) BOOL translucent;
 @property BOOL usesEmbeddedAppearance;
 
-- (BOOL)_canDrawContent;
+- (void)_updateBackgroundImage;
 - (id)backgroundImage;
 - (int)barStyle;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTranslucent;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBarStyle:(int)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
 - (void)setUsesEmbeddedAppearance:(BOOL)arg1;

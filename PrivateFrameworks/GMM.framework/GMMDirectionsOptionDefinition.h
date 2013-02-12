@@ -5,36 +5,33 @@
 @class NSMutableArray, NSString;
 
 @interface GMMDirectionsOptionDefinition : PBCodable {
-    NSMutableArray *_allowableValuess;
+    NSMutableArray *_allowableValues;
     int _defaultValue;
-    int _iD;
+    int _optionID;
     NSString *_optionText;
     int _type;
 }
 
-@property(retain) NSMutableArray * allowableValuess;
-@property(readonly) int allowableValuessCount;
+@property(retain) NSMutableArray * allowableValues;
 @property int defaultValue;
-@property int iD;
+@property int optionID;
 @property(retain) NSString * optionText;
 @property int type;
 
 - (void)addAllowableValues:(id)arg1;
+- (id)allowableValues;
 - (id)allowableValuesAtIndex:(unsigned int)arg1;
-- (id)allowableValuess;
-- (int)allowableValuessCount;
+- (unsigned int)allowableValuesCount;
 - (void)dealloc;
 - (int)defaultValue;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)iD;
-- (id)init;
+- (int)optionID;
 - (id)optionText;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAllowableValues:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setAllowableValuess:(id)arg1;
+- (void)setAllowableValues:(id)arg1;
 - (void)setDefaultValue:(int)arg1;
-- (void)setID:(int)arg1;
+- (void)setOptionID:(int)arg1;
 - (void)setOptionText:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

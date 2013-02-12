@@ -24,7 +24,6 @@
 - (BOOL)hasText;
 - (BOOL)hasUrl;
 - (id)headline;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHeadline:(id)arg1;
 - (void)setText:(id)arg1;

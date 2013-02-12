@@ -2,54 +2,58 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSMutableArray, NSString;
+@class NSString;
 
 @interface LBSName : PBCodable {
-    NSMutableArray *_flags;
-    BOOL _hasRoute_direction;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _flags;
+    BOOL _hasRouteDirection;
     NSString *_language;
-    NSString *_raw_text;
-    int _route_direction;
-    NSString *_short_text;
+    NSString *_rawText;
+    int _routeDirection;
+    NSString *_shortText;
     NSString *_text;
 }
 
-@property(retain) NSMutableArray * flags;
-@property(readonly) int flagsCount;
+@property(readonly) int* flags;
+@property(readonly) unsigned int flagsCount;
 @property(readonly) BOOL hasLanguage;
-@property(readonly) BOOL hasRaw_text;
-@property(readonly) BOOL hasRoute_direction;
-@property(readonly) BOOL hasShort_text;
+@property(readonly) BOOL hasRawText;
+@property BOOL hasRouteDirection;
+@property(readonly) BOOL hasShortText;
 @property(retain) NSString * language;
-@property(retain) NSString * raw_text;
-@property int route_direction;
-@property(retain) NSString * short_text;
+@property(retain) NSString * rawText;
+@property int routeDirection;
+@property(retain) NSString * shortText;
 @property(retain) NSString * text;
 
 - (void)addFlag:(int)arg1;
+- (void)clearFlags;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)flagAtIndex:(unsigned int)arg1;
-- (id)flags;
-- (int)flagsCount;
+- (int*)flags;
+- (unsigned int)flagsCount;
 - (BOOL)hasLanguage;
-- (BOOL)hasRaw_text;
-- (BOOL)hasRoute_direction;
-- (BOOL)hasShort_text;
-- (id)init;
+- (BOOL)hasRawText;
+- (BOOL)hasRouteDirection;
+- (BOOL)hasShortText;
 - (id)language;
-- (id)raw_text;
+- (id)rawText;
 - (BOOL)readFrom:(id)arg1;
-- (int)route_direction;
-- (void)setFlag:(int)arg1 atIndex:(unsigned int)arg2;
-- (void)setFlags:(id)arg1;
+- (int)routeDirection;
+- (void)setFlags:(int*)arg1 count:(unsigned int)arg2;
+- (void)setHasRouteDirection:(BOOL)arg1;
 - (void)setLanguage:(id)arg1;
-- (void)setRaw_text:(id)arg1;
-- (void)setRoute_direction:(int)arg1;
-- (void)setShort_text:(id)arg1;
+- (void)setRawText:(id)arg1;
+- (void)setRouteDirection:(int)arg1;
+- (void)setShortText:(id)arg1;
 - (void)setText:(id)arg1;
-- (id)short_text;
+- (id)shortText;
 - (id)text;
 - (void)writeTo:(id)arg1;
 

@@ -8,6 +8,7 @@
 
 @property BOOL isInitialSync;
 
+- (Class)bulkChangeTaskClass;
 - (id)copyGetTaskWithURL:(id)arg1;
 - (id)copyMultiGetTaskWithURLs:(id)arg1;
 - (id)dataContentType;

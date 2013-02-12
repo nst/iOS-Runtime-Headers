@@ -3,21 +3,25 @@
  */
 
 @interface MFMessageInfo : NSObject {
-    unsigned int _conversationHash;
+    long long _conversationHash;
     unsigned int _dateReceivedInterval;
+    unsigned int _dateSentInterval;
     BOOL _deleted;
+    BOOL _flagged;
     long long _generationNumber;
     BOOL _hasAttachments;
     unsigned int _mailboxID;
     BOOL _read;
-    unsigned int _retainCount;
+    int _retainCount;
     unsigned int _uid;
     BOOL _uidIsLibraryID;
 }
 
-@property unsigned int conversationHash;
+@property long long conversationHash;
 @property unsigned int dateReceivedInterval;
+@property unsigned int dateSentInterval;
 @property BOOL deleted;
+@property BOOL flagged;
 @property(readonly) long long generationNumber;
 @property(getter=isKnownToHaveAttachments) BOOL knownToHaveAttachments;
 @property unsigned int mailboxID;
@@ -27,21 +31,29 @@
 
 + (long long)newGenerationNumber;
 
-- (unsigned int)conversationHash;
+- (long long)conversationHash;
 - (unsigned int)dateReceivedInterval;
+- (unsigned int)dateSentInterval;
 - (BOOL)deleted;
 - (id)description;
+- (BOOL)flagged;
 - (int)generationCompare:(id)arg1;
 - (long long)generationNumber;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithUid:(unsigned int)arg1 mailboxID:(unsigned int)arg2 dateReceivedInterval:(unsigned int)arg3 dateSentInterval:(unsigned int)arg4 conversationHash:(long long)arg5 read:(BOOL)arg6 knownToHaveAttachments:(BOOL)arg7 flagged:(BOOL)arg8;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKnownToHaveAttachments;
 - (unsigned int)mailboxID;
 - (BOOL)read;
-- (void)setConversationHash:(unsigned int)arg1;
+- (oneway void)release;
+- (id)retain;
+- (unsigned int)retainCount;
+- (void)setConversationHash:(long long)arg1;
 - (void)setDateReceivedInterval:(unsigned int)arg1;
+- (void)setDateSentInterval:(unsigned int)arg1;
 - (void)setDeleted:(BOOL)arg1;
+- (void)setFlagged:(BOOL)arg1;
 - (void)setKnownToHaveAttachments:(BOOL)arg1;
 - (void)setMailboxID:(unsigned int)arg1;
 - (void)setRead:(BOOL)arg1;

@@ -17,19 +17,13 @@
     UILabel *_progressMessage;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityBlocksInteraction;
-- (BOOL)_accessibilityObscuresScreen;
 - (id)_progressIndicator;
-- (id)accessibilityLabel;
 - (void)dealloc;
 - (void)done;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)hide;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithWindow:(id)arg1;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)setFontSize:(int)arg1;
 - (void)setShowsText:(BOOL)arg1;

@@ -10,6 +10,7 @@
 - (Class)cellClassForItem:(id)arg1 reuseIdentifier:(id*)arg2;
 - (Class)cellConfigurationClassForItem:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
+- (float)heightForFooterInSection:(int)arg1;
 - (id)newHeaderViewForSection:(int)arg1;
 - (void)reloadCellContexts;
 - (int)tableViewStyle;

@@ -18,10 +18,13 @@
 - (void)_setEntity:(id)arg1;
 - (void)_setEntitysReferenceID:(unsigned int)arg1;
 - (id)_underlyingProperty;
+- (void)_versionHash:(char *)arg1;
 - (Class)class;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)entity;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPropertyDescription:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;

@@ -14,6 +14,7 @@
 - (void*)container;
 - (void*)copyLocalObjectFromId:(int)arg1;
 - (struct __CFArray { }*)copyOfAllLocalObjectsInContainer;
+- (int)dataclass;
 - (void)dealloc;
 - (void)drainContainer;
 - (id)getDAObjectWithLocalItem:(void*)arg1 serverId:(id)arg2 account:(id)arg3;

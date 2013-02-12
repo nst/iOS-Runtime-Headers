@@ -5,6 +5,7 @@
 @interface _MFDAMessageStoreDeleteRequest : DAMailboxDeleteMessageRequest <MFDAMailAccountRequest> {
 }
 
+- (id)deferredOperation;
 - (unsigned long long)generationNumber;
 - (BOOL)shouldSend;
 

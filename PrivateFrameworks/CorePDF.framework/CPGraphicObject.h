@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPChunk, CPTextLine, NSMutableArray;
+@class CPChunk<CPGraphicUser>, CPParagraph, CPTextLine;
 
 @interface CPGraphicObject : CPChunk {
     struct CGRect { 
@@ -14,28 +14,28 @@
             float width; 
             float height; 
         } size; 
+    CPParagraph *anchoringParagraph;
     CPTextLine *anchoringTextLine;
     float baselineOffset;
     BOOL canContainText;
-    NSMutableArray *clips;
+    unsigned int clipIndex;
     BOOL isInZoneBorder;
     float margin;
     } renderedBounds;
-    CPChunk *user;
+    CPChunk<CPGraphicUser> *user;
     int wrapType;
     int zoneGraphicType;
 }
 
-- (void)addClipPath:(struct CGPath { }*)arg1 winding:(int)arg2;
+@property(retain) CPParagraph * anchoringParagraph;
+@property unsigned int clipIndex;
+
+- (id)anchoringParagraph;
 - (id)anchoringTextLine;
 - (float)baselineOffset;
 - (BOOL)canBeContainer;
 - (BOOL)canContainText;
-- (struct CGPath { }*)clipPathAtIndex:(unsigned int)arg1 winding:(int*)arg2;
-- (unsigned int)clipPathCount;
-- (BOOL)clipped;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (unsigned int)clipIndex;
 - (id)init;
 - (BOOL)isInZoneBorder;
 - (BOOL)isIndivisible;
@@ -43,9 +43,11 @@
 - (BOOL)isVisible;
 - (float)margin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })renderedBounds;
+- (void)setAnchoringParagraph:(id)arg1;
 - (void)setAnchoringTextLine:(id)arg1;
 - (void)setBaselineOffset:(float)arg1;
 - (void)setCanContainText:(BOOL)arg1;
+- (void)setClipIndex:(unsigned int)arg1;
 - (void)setIsInZoneBorder:(BOOL)arg1;
 - (void)setMargin:(float)arg1;
 - (void)setUser:(id)arg1;

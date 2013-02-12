@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKAnnotation>, MKSearchResult, NSString, UICalloutView, UIImage, UIView;
+@class <MKAnnotation>, NSString, UICalloutView, UIImage, UIView;
 
 @interface MKAnnotationViewInternal : NSObject {
     struct CGPoint { 
@@ -39,7 +39,6 @@
     unsigned int mapType;
     NSString *reuseIdentifier;
     UIView *rightCalloutAccessoryView;
-    MKSearchResult *searchResult;
     unsigned int zIndex;
 }
 

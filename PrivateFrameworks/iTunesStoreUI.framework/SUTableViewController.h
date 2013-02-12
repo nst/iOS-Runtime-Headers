@@ -35,6 +35,7 @@
 - (BOOL)indexPathIsPlaceholder:(id)arg1;
 - (id)init;
 - (void)loadView;
+- (id)newTableView;
 - (unsigned int)numberOfRows;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)purgeMemoryForReason:(int)arg1;
@@ -52,6 +53,7 @@
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

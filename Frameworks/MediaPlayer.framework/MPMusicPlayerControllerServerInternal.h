@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoViewController, NSMutableArray, NSMutableDictionary;
+@class <MPMusicPlayerControllerServerDelegate>, MPMusicPlayerControllerServer, MPVideoViewController, NSMutableArray, NSMutableDictionary;
 
 @interface MPMusicPlayerControllerServerInternal : MPServerObject <MPMusicPlayerController> {
     unsigned int _queuePrepared : 1;
@@ -10,14 +10,14 @@
     NSMutableArray *_clientPorts;
     NSMutableDictionary *_clientPortsForPIDs;
     NSMutableDictionary *_clientStateForPIDs;
+    <MPMusicPlayerControllerServerDelegate> *_delegate;
     int _extendedModeNotifyToken;
+    MPMusicPlayerControllerServer *_musicPlayerServer;
     MPVideoViewController *_videoViewController;
 }
 
 + (BOOL)_canSeedGeniusWithItem:(id)arg1;
 
-- (BOOL)_activeClientPIDHasPermissionToPlay;
-- (void)_appDefaultsChangedNotification:(id)arg1;
 - (void)_applicationStateChangedNotification:(id)arg1;
 - (id)_avController;
 - (id)_avControllerForClientPID:(int)arg1 ignoreExtendedMode:(BOOL)arg2;
@@ -34,7 +34,7 @@
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_prepareQueueIfNecessary;
-- (void)_registerClientPort:(unsigned int)arg1 forProcessID:(int)arg2;
+- (void)_registerClientPort:(unsigned int)arg1 forProcessID:(int)arg2 hasAudioBackgroundMode:(BOOL)arg3;
 - (void)_setQueueWithQuery:(id)arg1;
 - (void)_tearDownVideoView;
 - (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
@@ -68,6 +68,7 @@
 - (void)setCurrentPlaybackTime:(id)arg1;
 - (void)setNowPlayingItem:(id)arg1;
 - (void)setPlaybackSpeed:(id)arg1;
+- (void)setQueueWithGeniusMixPlaylist:(id)arg1;
 - (void)setQueueWithItemCollection:(id)arg1;
 - (void)setQueueWithQuery:(id)arg1 firstItem:(id)arg2;
 - (void)setQueueWithQuery:(id)arg1;
@@ -83,7 +84,6 @@
 - (void)skipToNextItem;
 - (void)skipToPreviousChapter;
 - (void)skipToPreviousItem;
-- (id)springboardNowPlayingInfo;
 - (void)stop;
 - (id)unshuffledIndexOfNowPlayingItem;
 - (BOOL)useApplicationSpecificQueue;

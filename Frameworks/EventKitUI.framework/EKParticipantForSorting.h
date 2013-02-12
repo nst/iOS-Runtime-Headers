@@ -5,6 +5,7 @@
 @class EKParticipant, NSString;
 
 @interface EKParticipantForSorting : NSObject {
+    NSString *_cachedDisplayName;
     NSString *_firstName;
     BOOL _isEmail;
     NSString *_lastName;
@@ -13,6 +14,7 @@
 
 - (int)compare:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)displayName;
 - (id)firstName;
 - (id)initWithEKParticipant:(id)arg1;

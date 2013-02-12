@@ -14,8 +14,10 @@
 
 + (id)sharedNetworkController;
 
+- (void)_carrierBundleChangeNotification:(id)arg1;
 - (void)_checkForNetworkWithDataStatus:(id)arg1;
 - (void)_reachabilityChanged:(id)arg1;
+- (BOOL)allowsHighQuality3GPlayback;
 - (int)networkType;
 - (void)recheckNetwork;
 - (BOOL)serviceIsReachable;

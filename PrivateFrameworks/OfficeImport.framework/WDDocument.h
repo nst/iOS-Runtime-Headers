@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDate, NSMutableArray, NSString, OADBackground, OADDrawingGroup, OADTheme, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
+@class NSDate, NSMutableArray, NSString, OADBackground, OADTheme, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
 
 @interface WDDocument : OCDDocument {
     unsigned int mMirrorMargins : 1;
@@ -25,7 +25,6 @@
     unsigned short mDefaultTabWidth;
     OADBackground *mDocumentBackground;
     NSMutableArray *mDocumentImages;
-    OADDrawingGroup *mDrawingGroup;
     WDText *mEndnoteContinuationNotice;
     WDText *mEndnoteContinuationSeparator;
     int mEndnoteNumberFormat;
@@ -78,7 +77,6 @@
 - (void)dealloc;
 - (unsigned short)defaultTabWidth;
 - (id)documentBackground;
-- (id)drawingGroup;
 - (id)endnoteBlockIterator;
 - (id)endnoteContinuationNotice;
 - (id)endnoteContinuationSeparator;

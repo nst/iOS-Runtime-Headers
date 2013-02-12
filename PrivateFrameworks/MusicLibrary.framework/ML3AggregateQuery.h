@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @class NSString;
 
 @interface ML3AggregateQuery : ML3Query {
@@ -26,10 +21,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUnitQuery:(id)arg1 aggregateEntityClass:(Class)arg2 foreignPersistentIDProperty:(id)arg3;
 - (id)persistentIDProperty;
-- (id)queryForUnitEntitiesAtIndex:(unsigned int)arg1 directCollectionQuery:(id)arg2 ordered:(BOOL)arg3 usingSections:(BOOL)arg4;
-- (id)queryForUnitEntitiesAtIndex:(unsigned int)arg1 usingSections:(BOOL)arg2;
-- (id)representativeUnitEntityAtIndex:(unsigned int)arg1;
 - (id)selectPersistentIDsSQLAndProperties:(id)arg1 ordered:(BOOL)arg2;
-- (void)visitGroupMembersOfEntityAtIndex:(unsigned int)arg1 visitor:(int (*)())arg2 context:(void*)arg3;
 
 @end

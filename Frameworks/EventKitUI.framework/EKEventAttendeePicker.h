@@ -22,6 +22,7 @@
     NSArray *_recipients;
     NSString *_searchAccountID;
     MFContactsSearchManager *_searchManager;
+    NSArray *_searchResults;
     MFContactsSearchResultsModel *_searchResultsModel;
     UITableView *_searchResultsView;
     MFSearchShadowView *_shadowView;

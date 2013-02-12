@@ -12,21 +12,15 @@
 }
 
 @property(retain) UIFont * _font;
-@property BOOL isTruncatingNotes;
-
-+ (void)_initializeSafeCategory;
+@property(readonly) BOOL isTruncatingNotes;
 
 - (id)_font;
 - (id)_notesTitleView;
 - (id)_notesView;
 - (struct CGSize { float x1; float x2; })_truncatedNotesViewSize:(float)arg1;
-- (id)accessibilityLabel;
-- (id)accessibilityValue;
 - (void)dealloc;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isTruncatingNotes;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
-- (void)setIsTruncatingNotes:(BOOL)arg1;
 - (void)set_font:(id)arg1;
 - (BOOL)update;
 

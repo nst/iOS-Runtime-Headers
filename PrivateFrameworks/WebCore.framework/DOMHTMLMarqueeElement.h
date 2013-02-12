@@ -5,7 +5,29 @@
 @interface DOMHTMLMarqueeElement : DOMHTMLElement {
 }
 
+- (id)behavior;
+- (id)bgColor;
+- (id)direction;
+- (id)height;
+- (unsigned int)hspace;
+- (int)loop;
+- (int)scrollAmount;
+- (int)scrollDelay;
+- (void)setBehavior:(id)arg1;
+- (void)setBgColor:(id)arg1;
+- (void)setDirection:(id)arg1;
+- (void)setHeight:(id)arg1;
+- (void)setHspace:(unsigned int)arg1;
+- (void)setLoop:(int)arg1;
+- (void)setScrollAmount:(int)arg1;
+- (void)setScrollDelay:(int)arg1;
+- (void)setTrueSpeed:(BOOL)arg1;
+- (void)setVspace:(unsigned int)arg1;
+- (void)setWidth:(id)arg1;
 - (void)start;
 - (void)stop;
+- (BOOL)trueSpeed;
+- (unsigned int)vspace;
+- (id)width;
 
 @end

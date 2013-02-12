@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
  */
 
-@class DAAccount, NSString, UIAlertView;
+@class DAAccount, NSArray, NSMutableDictionary, NSString, PSSpecifier, UIAlertView;
 
-@interface DASettingsAccountController : AccountSettingsUIDetailController <DAValidityCheckConsumer, DAAutoDiscoveryConsumer, UIActionSheetDelegate, UIAlertViewDelegate> {
+@interface DASettingsAccountController : AccountSettingsUIDetailController <AccountSettingsUIIdentityPickerControllerDelegate, DAValidityCheckConsumer, DAAutoDiscoveryConsumer, UIActionSheetDelegate, UIAlertViewDelegate> {
     DAAccount *_account;
     BOOL _accountNeedsAdd;
     BOOL _attemptedAutodiscovery;
@@ -12,11 +12,15 @@
     NSString *_chosenType;
     id _confirmDeleteAccountAlertOrSheet;
     id _confirmUnvalidatedAlertOrSheet;
+    BOOL _confirmedUnvalidatedAccount;
     BOOL _haveRegisteredForAccountsChanged;
+    NSArray *_identitySpecifiers;
     BOOL _needsSave;
     NSString *_placeHolder;
     int _purposeInLife;
+    PSSpecifier *_selectedIdentitySpecifier;
     BOOL _setupComplete;
+    NSMutableDictionary *_smimeAccountProperties;
     UIAlertView *_sslFailureView;
     BOOL _validatedSuccessfully;
     BOOL _validating;
@@ -32,7 +36,27 @@
 - (id)_defaultAccountDescription;
 - (void)_deleteAccount;
 - (void)_dismissAndUpdateParent;
+- (void)_doPostSaveActions;
+- (void)_handleTrustFromIdentity:(struct __SecIdentity { }*)arg1 handler:(id)arg2;
+- (void)_insertAdditionalSMIMESpecifiers;
+- (id)_persistentRefForIdentity:(struct __SecIdentity { }*)arg1;
+- (void)_removeAdditionalSMIMESpecifiersAnimated:(BOOL)arg1;
 - (void)_saveAccountDismissWhenDone:(BOOL)arg1;
+- (void)_setAccountSMIMEIdentityWithSpecifier:(id)arg1;
+- (void)_setSMIMEAccountPropertiesOnAccount;
+- (void)_setSMIMEAccountProperty:(id)arg1 forKey:(id)arg2;
+- (void)_setSMIMEAccountProperty:(id)arg1 withSpecifier:(id)arg2;
+- (void)_setSMIMEEnabled:(id)arg1 withSpecifier:(id)arg2;
+- (void)_setSMIMEIdentity:(struct __SecIdentity { }*)arg1 forKey:(id)arg2;
+- (id)_smimeAccountPropertyForKey:(id)arg1;
+- (id)_smimeAccountPropertyWithSpecifier:(id)arg1;
+- (BOOL)_smimeEnabled;
+- (id)_smimeEncryptSpecifier;
+- (struct __SecIdentity { }*)_smimeIdentityForKey:(id)arg1;
+- (id)_smimeSigningSpecifier;
+- (id)_smimeSpecifiers;
+- (BOOL)_specifierHasAccountSMIMEIdentity:(id)arg1;
+- (void)_updateCell:(id)arg1 forState:(BOOL)arg2;
 - (void)account:(id)arg1 isValid:(BOOL)arg2 validationError:(id)arg3;
 - (void)account:(id)arg1 wasAutoDiscovered:(BOOL)arg2 error:(id)arg3;
 - (id)account;
@@ -41,12 +65,15 @@
 - (id)accountPropertyWithSpecifier:(id)arg1;
 - (id)accountSpecifiers;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (BOOL)allowEditingForIdentityPickerController:(id)arg1;
 - (BOOL)attemptedValidation;
 - (BOOL)autodiscoverAccount;
 - (id)autodiscoverySpecifiers;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)confirmDeleteAccount:(id)arg1;
 - (void)confirmationView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (id)copyIdentitiesForIdentityPickerController:(id)arg1;
+- (struct __SecTrust { }*)copyTrustForIdentityPickerController:(id)arg1 identity:(struct __SecIdentity { }*)arg2;
 - (id)currentlyEditingCell;
 - (void)dealloc;
 - (void)didConfirmDeleteAccount:(BOOL)arg1;
@@ -54,10 +81,13 @@
 - (void)didConfirmTryWithoutSSL:(BOOL)arg1;
 - (BOOL)dismissesAfterInitialSetup;
 - (void)doneButtonClicked:(id)arg1;
+- (id)emailAddressesForIdentityPickerController:(id)arg1;
 - (void)finishedAccountSetup;
 - (BOOL)haveEnoughValues;
 - (void)hideProgressWithPrompt:(id)arg1 showButtons:(BOOL)arg2;
+- (void)identityPickerController:(id)arg1 setPropertyEnabled:(BOOL)arg2 withIdentity:(struct __SecIdentity { }*)arg3;
 - (int)indexOfCurrentlyEditingCell;
+- (BOOL)isPropertyEnabledForIdentityPickerController:(id)arg1;
 - (BOOL)isRunningFromMobileMailApp;
 - (id)lastGroupSpecifierInSpecifiers:(id)arg1;
 - (id)localizedAccountSetupTitleString;
@@ -67,12 +97,14 @@
 - (id)localizedDisablingAccountString;
 - (id)localizedEnablingAccountString;
 - (id)localizedEnterAccountInfoString;
+- (id)localizedSwitchNameForIdentityPickerController:(id)arg1;
 - (id)localizedValidationFailureTitleString;
 - (BOOL)needsSave;
 - (id)newDefaultAccount;
 - (void)propertyValueChanged:(id)arg1;
 - (void)reloadAccount;
 - (void)reloadAccountOnSpecifier;
+- (struct __SecIdentity { }*)selectedIdentityForIdentityPickerController:(id)arg1;
 - (void)setAccountBooleanProperty:(id)arg1 withSpecifier:(id)arg2;
 - (void)setAccountProperty:(id)arg1 withSpecifier:(id)arg2;
 - (void)setAttemptedValidation:(BOOL)arg1;

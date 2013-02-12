@@ -5,17 +5,9 @@
 @class NSArray;
 
 @interface NSUndoManager : NSObject {
-    struct { 
-        unsigned int undoing : 1; 
-        unsigned int redoing : 1; 
-        unsigned int registeredForCallback : 1; 
-        unsigned int postingCheckpointNotification : 1; 
-        unsigned int groupsByEvent : 1; 
-        unsigned int reserved : 27; 
-    void *_NSUndoManagerReserved1;
-    void *_NSUndoManagerReserved2;
-    int _disabled;
-    } _flags;
+    unsigned long long _NSUndoManagerPrivate1;
+    void *_NSUndoManagerPrivate2;
+    void *_NSUndoManagerPrivate3;
     id _proxy;
     id _redoStack;
     NSArray *_runLoopModes;
@@ -24,11 +16,11 @@
 }
 
 + (void)_endTopLevelGroupings;
-+ (void)_initializeSafeCategory;
 + (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(BOOL)arg1;
 
 - (void)_cancelAutomaticTopLevelGroupEnding;
 - (void)_commitUndoGrouping;
+- (void)_delayAutomaticTermination:(double)arg1;
 - (BOOL)_endUndoGroupRemovingIfEmpty:(BOOL)arg1;
 - (void)_forwardTargetInvocation:(id)arg1;
 - (id)_methodSignatureForTargetSelector:(SEL)arg1;
@@ -48,6 +40,7 @@
 - (void)disableUndoRegistration;
 - (void)enableUndoRegistration;
 - (void)endUndoGrouping;
+- (void)finalize;
 - (int)groupingLevel;
 - (BOOL)groupsByEvent;
 - (id)init;
@@ -57,6 +50,7 @@
 - (unsigned int)levelsOfUndo;
 - (id)prepareWithInvocationTarget:(id)arg1;
 - (void)redo;
+- (BOOL)redoActionIsDiscardable;
 - (id)redoActionName;
 - (id)redoMenuItemTitle;
 - (id)redoMenuTitleForUndoActionName:(id)arg1;
@@ -64,11 +58,13 @@
 - (void)removeAllActions;
 - (void)removeAllActionsWithTarget:(id)arg1;
 - (id)runLoopModes;
+- (void)setActionIsDiscardable:(BOOL)arg1;
 - (void)setActionName:(id)arg1;
 - (void)setGroupsByEvent:(BOOL)arg1;
 - (void)setLevelsOfUndo:(unsigned int)arg1;
 - (void)setRunLoopModes:(id)arg1;
 - (void)undo;
+- (BOOL)undoActionIsDiscardable;
 - (id)undoActionName;
 - (id)undoMenuItemTitle;
 - (id)undoMenuTitleForUndoActionName:(id)arg1;

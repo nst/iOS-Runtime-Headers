@@ -14,5 +14,6 @@
 @property(retain) NoteObject * owner;
 
 - (id)contentAsPlainText;
+- (id)contentAsPlainTextPreservingNewlines;
 
 @end

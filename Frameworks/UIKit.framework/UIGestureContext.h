@@ -18,8 +18,8 @@
     UITouch *_touch;
 }
 
-@property struct CGPoint { float x; float y; } currentLocation;
-@property struct CGPoint { float x; float y; } startLocation;
+@property struct CGPoint { float x1; float x2; } currentLocation;
+@property struct CGPoint { float x1; float x2; } startLocation;
 @property float startTimestamp;
 @property int state;
 @property(retain) UITouch * touch;

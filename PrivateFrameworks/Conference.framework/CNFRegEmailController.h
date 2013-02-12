@@ -22,7 +22,7 @@
 - (void)_failValidationWithError:(id)arg1;
 - (void)_finishValidation;
 - (void)_handleValidationModeCancelled;
-- (void)_returnKeyWasPressed;
+- (void)_returnKeyPressed;
 - (id)_rightButtonItem;
 - (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setupEventHandlers;
@@ -35,7 +35,6 @@
 - (void)emailFieldEmptyStateChanged:(id)arg1 forSpecifier:(id)arg2;
 - (BOOL)emailFieldIsEmpty;
 - (id)emailTextField;
-- (id)init;
 - (id)logName;
 - (void)nextTapped;
 - (id)pendingAlias;
@@ -44,7 +43,7 @@
 - (void)setPendingAlias:(id)arg1 forSpecifier:(id)arg2;
 - (void)setPendingAlias:(id)arg1;
 - (BOOL)showActionSpecifier:(id)arg1 animated:(BOOL)arg2;
-- (id)specifiers;
+- (id)specifierList;
 - (void)startValidationTimeoutTimer;
 - (void)stopValidationTimeoutTimer;
 - (double)timeoutDuration;

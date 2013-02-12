@@ -21,7 +21,7 @@
         float d; 
         float tx; 
         float ty; 
-    struct $_720 { 
+    struct { 
         unsigned int keepAlive : 1; 
         unsigned int levelCrossFade : 1; 
         unsigned int drawingDisabled : 1; 
@@ -41,6 +41,7 @@
 + (BOOL)_useMiniTiledLayer;
 + (Class)layerClass;
 
+- (id).cxx_construct;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_boundingMapRect;
 - (BOOL)_cachingCanDrawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (id)_canDrawCache;

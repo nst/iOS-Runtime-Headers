@@ -6,7 +6,7 @@
 }
 
 - (id)autorelease;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

@@ -10,9 +10,12 @@
 + (id)newQueryWithProperties:(id)arg1 joins:(id)arg2 whereString:(id)arg3 sortOrder:(unsigned int)arg4 groupByProperties:(id)arg5 addressBook:(void*)arg6 propertyIndices:(const struct __CFDictionary {}**)arg7;
 + (id)personPredicateWithAnyValueForProperty:(int)arg1;
 + (id)personPredicateWithGroup:(void*)arg1 source:(void*)arg2 account:(id)arg3;
++ (id)personPredicateWithName:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameLike:(id)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithNameLike:(id)arg1 group:(void*)arg2 source:(void*)arg3 account:(id)arg4 showingPersonLinks:(BOOL)arg5 addressBook:(void*)arg6;
++ (id)personPredicateWithNameLike:(id)arg1 group:(void*)arg2 source:(void*)arg3 account:(id)arg4 showingPersonLinks:(BOOL)arg5 includeSourceInResults:(BOOL)arg6 addressBook:(void*)arg7;
 + (id)personPredicateWithNameLike:(id)arg1 showingPersonLinks:(BOOL)arg2 addressBook:(void*)arg3;
++ (id)personPredicateWithNameOnly:(id)arg1 account:(id)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithPhoneLike:(id)arg1 countryHint:(id)arg2 addressBook:(void*)arg3;
 + (id)personPredicateWithValue:(id)arg1 comparison:(long)arg2 forProperty:(int)arg3;
 + (void)searchPeopleWithPredicate:(id)arg1 sortOrder:(unsigned int)arg2 inAddressBook:(void*)arg3 withDelegate:(id)arg4;
@@ -21,6 +24,7 @@
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (BOOL)ab_hasCallback;
 - (id)ab_newQueryWithSortOrder:(unsigned int)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;
+- (void)bindDouble:(double)arg1 toStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg2 withBindingOffset:(int*)arg3;
 - (void)bindString:(id)arg1 toStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg2 withBindingOffset:(int*)arg3;
 - (void*)callbackContext;
 - (void)dealloc;

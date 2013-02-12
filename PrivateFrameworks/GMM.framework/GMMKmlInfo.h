@@ -10,7 +10,7 @@
     GMMDocumentInfo *_sourceDocument;
 }
 
-@property(readonly) BOOL hasIsUserCreated;
+@property BOOL hasIsUserCreated;
 @property(readonly) BOOL hasSourceDocument;
 @property BOOL isUserCreated;
 @property(retain) GMMDocumentInfo * sourceDocument;
@@ -20,9 +20,9 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasIsUserCreated;
 - (BOOL)hasSourceDocument;
-- (id)init;
 - (BOOL)isUserCreated;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasIsUserCreated:(BOOL)arg1;
 - (void)setIsUserCreated:(BOOL)arg1;
 - (void)setSourceDocument:(id)arg1;
 - (id)sourceDocument;

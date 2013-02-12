@@ -7,6 +7,7 @@
 @interface AVCaptureDeviceInternal : NSObject {
     int _configLockPid;
     int _configLockRefCount;
+    BOOL _faceDetectionDrivenImageProcessingEnabled;
     int _openRefCount;
     AVCaptureSession *_session;
     BOOL _subjectMonitoringEnabled;

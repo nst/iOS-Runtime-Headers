@@ -5,15 +5,7 @@
 @interface CPBuilder : NSObject {
 }
 
-- (void)box:(id)arg1;
-- (void)boxLayoutInStraddler:(id)arg1;
-- (void)boxLayouts:(id)arg1 mainFlowZone:(id)arg2;
-- (void)boxLayoutsInStraddlers:(id)arg1;
 - (void)cluster:(id)arg1 andPutTextLinesInto:(id)arg2;
-- (void)deZone:(id)arg1;
-- (float)layoutsArea:(id)arg1;
-- (void)pickMainFlow:(id)arg1 maximum:(float*)arg2 result:(id*)arg3;
-- (id)pickMainFlowIn:(id)arg1;
 - (void)prepareZone:(id)arg1;
 
 @end

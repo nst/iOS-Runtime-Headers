@@ -9,8 +9,9 @@
 
 @class CPCharSequence, CPZoneProfile, NSArray, NSMutableArray;
 
-@interface CPZone : CPRegion {
+@interface CPZone : CPRegion <CPGraphicUser> {
     double area;
+    NSMutableArray *backgroundGraphics;
     CPCharSequence *charactersInZone;
     NSArray *graphicsInZone;
     NSArray *gutters;
@@ -21,6 +22,7 @@
     NSArray *spacers;
     struct CGPoint { float x1; float x2; } *swollenOuterVertices;
     NSMutableArray *textLinesInZone;
+    unsigned int usedGraphicCount;
     NSMutableArray *zoneBorders;
     CPZoneProfile *zoneProfile;
 }
@@ -29,18 +31,21 @@
 - (void)addContentFrom:(id)arg1;
 - (void)addPDFChar:(void*)arg1;
 - (double)area;
-- (id)background;
+- (id)backgroundGraphics;
 - (long)borderZOrder;
+- (BOOL)bordersWindClockwise;
 - (BOOL)canContain:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)charactersInZone;
 - (int)compareArea:(id)arg1;
 - (BOOL)contains:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (struct CGColor { }*)createBackgroundColor;
 - (void)dealloc;
 - (id)graphicsInZone;
 - (id)gutters;
 - (BOOL)hasBorders;
 - (BOOL)hasNeighborShape:(id)arg1;
+- (void)incrementUsedGraphicCount;
 - (id)init;
 - (BOOL)isRectangular;
 - (BOOL)isStraddleZone;
@@ -67,6 +72,7 @@
 - (struct CGPoint { float x1; float x2; }*)swollenOuterVertices;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })swollenZoneBounds;
 - (id)textLinesInZone;
+- (unsigned int)usedGraphicCount;
 - (unsigned int)vertexCount;
 - (unsigned int)wordCount;
 - (id)zoneBorders;

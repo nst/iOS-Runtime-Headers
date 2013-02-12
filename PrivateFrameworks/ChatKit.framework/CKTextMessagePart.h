@@ -14,6 +14,7 @@
 - (id)contentLocation;
 - (void)copyToPasteboard;
 - (void)dealloc;
+- (id)description;
 - (id)detachedCopy;
 - (id)initWithText:(id)arg1;
 - (BOOL)isDisplayable;

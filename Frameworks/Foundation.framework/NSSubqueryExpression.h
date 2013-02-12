@@ -10,6 +10,7 @@
     NSExpression *_variableExpression;
 }
 
+- (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (BOOL)_shouldUseParensWithDescription;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)collection;

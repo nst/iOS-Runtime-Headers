@@ -10,28 +10,24 @@
 }
 
 @property(retain) NSMutableArray * panoramaVisiteds;
-@property(readonly) int panoramaVisitedsCount;
 @property(retain) NSMutableArray * viewpoints;
-@property(readonly) int viewpointsCount;
 
 - (void)addPanoramaVisited:(id)arg1;
 - (void)addViewpoint:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)init;
+- (id)dictionaryRepresentation;
 - (id)panoramaVisitedAtIndex:(unsigned int)arg1;
 - (id)panoramaVisiteds;
-- (int)panoramaVisitedsCount;
+- (unsigned int)panoramaVisitedsCount;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setPanoramaVisited:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setPanoramaVisiteds:(id)arg1;
-- (void)setViewpoint:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setViewpoints:(id)arg1;
 - (id)viewpointAtIndex:(unsigned int)arg1;
 - (id)viewpoints;
-- (int)viewpointsCount;
+- (unsigned int)viewpointsCount;
 - (void)writeTo:(id)arg1;
 
 @end

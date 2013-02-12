@@ -23,24 +23,26 @@
 - (void)_daemonDisconnected:(id)arg1;
 - (void)_processAccountStatusChange;
 - (void)_statusImageAppearanceChanged:(id)arg1;
-- (oneway void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(unsigned int)arg4 properties:(id)arg5;
-- (oneway void)activeAccountsChanged:(id)arg1 forService:(id)arg2;
-- (oneway void)centerDidRemoveObserver;
-- (oneway void)centerWillAddObserver;
+- (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(unsigned int)arg4 properties:(id)arg5;
+- (void)activeAccountsChanged:(id)arg1 forService:(id)arg2;
+- (void)centerDidRemoveObserver;
+- (void)centerWillAddObserver;
 - (void)dealloc;
 - (void)finalize;
 - (void)imHandleInfoChangedNotification:(id)arg1;
 - (void)imHandleStatusChangedNotification:(id)arg1;
 - (id)init;
-- (oneway void)launchIfNecessary;
+- (void)launchIfNecessary;
 - (id)myAvailableMessages;
 - (id)myAwayMessages;
 - (id)notificationCenter;
 - (id)serviceWithName:(id)arg1;
 - (id)serviceWithNameNonBlocking:(id)arg1;
+- (void)setMyAvailableMessages:(id)arg1;
+- (void)setMyAwayMessages:(id)arg1;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
-- (oneway void)setupComplete;
+- (void)setupComplete;
 - (unsigned long long)vcCapabilities;
-- (oneway void)vcCapabilitiesChanged:(unsigned long long)arg1;
+- (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 
 @end

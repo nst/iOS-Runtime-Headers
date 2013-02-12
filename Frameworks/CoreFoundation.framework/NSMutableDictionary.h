@@ -7,12 +7,14 @@
 
 + (id)dictionaryWithCapacity:(unsigned int)arg1;
 + (id)nonRetainingDictionary;
++ (id)nonRetainingKeyAndValueDictionary;
 
 - (void)CDVAddObjectsAndKeys:(id)arg1;
 - (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
 - (void)MCDeepCopyMissingEntriesFromDictionary:(id)arg1;
+- (void)MCFixUpRestrictionsDictionaryForMDMReporting;
 - (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
-- (void)_adlib_setNullableObject:(id)arg1 forKey:(id)arg2;
+- (void)_mutate;
 - (void)_web_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_web_setInt:(int)arg1 forKey:(id)arg2;
 - (void)_web_setObject:(id)arg1 forUncopiedKey:(id)arg2;
@@ -23,9 +25,12 @@
 - (void)_webkit_setLongLong:(long long)arg1 forKey:(id)arg2;
 - (void)_webkit_setObject:(id)arg1 forUncopiedKey:(id)arg2;
 - (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
+- (void)_webkit_setUnsignedShort:(unsigned short)arg1 forKey:(id)arg2;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (void)addEntriesFromDictionaryWithRecursion:(id)arg1;
 - (void)addObject:(id)arg1 forKey:(id)arg2;
+- (void)addObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
+- (void)addObjects:(id)arg1 forKeys:(id)arg2;
 - (id)addToCacheAndReturnCssString:(id)arg1;
 - (Class)classForCoder;
 - (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
@@ -39,26 +44,29 @@
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
+- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)invert;
 - (void)mf_addObject:(id)arg1 forKey:(id)arg2;
 - (void)mf_fixupRFC2231Values;
 - (id)mf_objectForKey:(id)arg1 ofClass:(Class)arg2;
 - (void)mf_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)mf_setInteger:(int)arg1 forKey:(id)arg2;
+- (id)mutableCopyDeep;
 - (void)removeAllObjects;
+- (void)removeEntriesInDictionary:(id)arg1;
 - (void)removeKeysForObject:(id)arg1;
-- (void)removeObjectForIntegerKey:(int)arg1;
-- (void)removeObjectForIntegerKey:(int)arg1;
 - (void)removeObjectForKey:(id)arg1;
-- (void)removeObjectsForIntegerKeys:(id)arg1;
-- (void)removeObjectsForIntegerKeys:(id)arg1;
 - (void)removeObjectsForKeys:(id)arg1;
 - (void)replaceObject:(id)arg1 forKey:(id)arg2;
+- (void)replaceObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
+- (void)replaceObjects:(id)arg1 forKeys:(id)arg2;
 - (void)setDictionary:(id)arg1;
-- (void)setObject:(id)arg1 forIntegerKey:(int)arg2;
-- (void)setObject:(id)arg1 forIntegerKey:(int)arg2;
+- (void)setEntriesFromDictionary:(id)arg1;
+- (void)setObject:(id)arg1 forInt:(int)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
+- (void)setObjects:(id)arg1 forKeys:(id)arg2;
+- (void)setSafeObject:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 
 @end

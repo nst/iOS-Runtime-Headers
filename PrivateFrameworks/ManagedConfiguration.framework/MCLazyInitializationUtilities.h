@@ -6,5 +6,6 @@
 }
 
 + (void)initUIApplication;
++ (void)initVPNUtilities;
 
 @end

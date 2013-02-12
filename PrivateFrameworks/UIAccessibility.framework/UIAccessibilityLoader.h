@@ -13,6 +13,8 @@
 + (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2 forceLoad:(BOOL)arg3 loadSubbundles:(BOOL)arg4;
 + (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2;
 + (void)initialize;
++ (id)loadAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2 force:(BOOL)arg3;
 + (id)loadAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2;
++ (void)loadActualAccessibilityBundle:(id)arg1 didLoad:(BOOL*)arg2 loadSubbundles:(BOOL)arg3;
 
 @end

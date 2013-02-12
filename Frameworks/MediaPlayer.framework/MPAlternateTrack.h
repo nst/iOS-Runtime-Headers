@@ -17,7 +17,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)humanReadableLanguage;
-- (id)initWithDictionary:(id)arg1;
+- (id)initWithTrackID:(id)arg1 languageCode:(id)arg2 name:(id)arg3;
 - (id)languageCode;
 - (id)name;
 - (void)setName:(id)arg1;

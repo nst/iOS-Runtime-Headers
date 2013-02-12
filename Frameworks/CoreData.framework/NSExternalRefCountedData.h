@@ -4,13 +4,12 @@
 
 @interface NSExternalRefCountedData : NSObject {
     struct _externalRefFlags_st { 
-        unsigned int _shouldNotRefresh : 1; 
-        unsigned int _shouldNotPersist : 1; 
-        unsigned int _reservedFlags : 11; 
         unsigned int _invalidToOnes : 1; 
         unsigned int _hasTemporaryID : 1; 
         unsigned int _backgroundDealloc : 1; 
-        unsigned int _reservedFlags2 : 16; 
+        unsigned int _reservedFlags : 1; 
+        unsigned int _virtualfk_count : 14; 
+        unsigned int _ordkey_count : 14; 
     double _birth;
     int _cd_rc;
     } _externalRefFlags;
@@ -20,6 +19,8 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)dealloc;
 - (int)decrementRefCount;
 - (int)externalReferenceCount;
@@ -36,8 +37,6 @@
 - (void)setRelatedIDs:(id)arg1 forKey:(id)arg2 options:(unsigned int)arg3 andTimestamp:(double)arg4;
 - (void)setRelationshipCaches:(id)arg1;
 - (void)setTimestamp:(double)arg1;
-- (BOOL)shouldPersist;
-- (BOOL)shouldRefresh;
 - (double)timestamp;
 - (double)timestampForKey:(id)arg1;
 

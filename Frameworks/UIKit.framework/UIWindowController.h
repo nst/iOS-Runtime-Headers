@@ -16,6 +16,8 @@
     SEL _didEndSelector;
     } _endOriginForToView;
     UIViewController *_fromViewController;
+    BOOL _needsDidAppear;
+    BOOL _needsDidDisappear;
     BOOL _presenting;
     id _target;
     int _toModalStyle;
@@ -50,6 +52,7 @@
 - (id)transitionView;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (void)transitionViewDidStart:(id)arg1;
+- (BOOL)transitionViewShouldUseViewControllerCallbacks;
 - (id)window;
 
 @end

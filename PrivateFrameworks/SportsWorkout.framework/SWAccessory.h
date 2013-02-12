@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SportsWorkout.framework/SportsWorkout
  */
 
-@class NSNumber, NSString, SWVicFileLogger;
+@class NSString, SWVicFileLogger;
 
 @interface SWAccessory : NSObject {
-    NSNumber *_checkpointRegistrationValue;
     NSString *_linkState;
     NSString *_searchState;
     NSString *_serialNumber;
@@ -13,7 +12,6 @@
     SWVicFileLogger *_vicFileLogger;
 }
 
-@property(readonly) NSNumber * checkpointRegistrationValue;
 @property(readonly) NSString * linkState;
 @property(readonly) NSString * searchState;
 @property(readonly) NSString * serialNumber;
@@ -24,7 +22,6 @@
 - (void)beginSearching;
 - (void)cancelLinking;
 - (void)cancelSearching;
-- (id)checkpointRegistrationValue;
 - (void)deactivate;
 - (void)dealloc;
 - (id)init;

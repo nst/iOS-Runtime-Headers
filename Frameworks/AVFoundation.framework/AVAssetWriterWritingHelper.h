@@ -19,8 +19,6 @@
 - (void)finishWriting;
 - (id)initWithConfigurationState:(id)arg1 error:(id*)arg2;
 - (id)initWithConfigurationState:(id)arg1;
-- (void)release;
-- (id)retain;
 - (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (int)status;
 

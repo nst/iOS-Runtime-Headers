@@ -13,6 +13,7 @@
     NSArray *_continuations;
     NSArray *_errors;
     NSArray *_items;
+    NSArray *_offers;
     BOOL _shouldSuspendWhenFinished;
     NSArray *_validPurchases;
 }
@@ -20,6 +21,7 @@
 @property(retain) NSArray * continuations;
 @property(retain) NSArray * errors;
 @property(readonly) NSArray * items;
+@property(readonly) NSArray * offers;
 @property BOOL storeShouldExitWhenFinished;
 @property(retain) NSArray * validPurchases;
 
@@ -34,9 +36,11 @@
 - (void)dealloc;
 - (id)errors;
 - (id)everythingFailedErrorForError:(id)arg1;
+- (id)initWithItems:(id)arg1 offers:(id)arg2;
 - (id)initWithItems:(id)arg1;
 - (id)items;
 - (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
+- (id)offers;
 - (void)setContinuations:(id)arg1;
 - (void)setDocumentTargetIdentifier:(id)arg1;
 - (void)setErrors:(id)arg1;

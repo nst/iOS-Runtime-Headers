@@ -14,6 +14,7 @@
 @property(readonly) double currentHardwareSampleRate;
 @property <AVAudioSessionDelegate> * delegate;
 @property(readonly) BOOL inputIsAvailable;
+@property(readonly) NSString * mode;
 @property(readonly) double preferredHardwareSampleRate;
 @property(readonly) double preferredIOBufferDuration;
 
@@ -25,6 +26,7 @@
 - (double)currentHardwareSampleRate;
 - (id)delegate;
 - (BOOL)inputIsAvailable;
+- (id)mode;
 - (double)preferredHardwareSampleRate;
 - (double)preferredIOBufferDuration;
 - (void)privateBeginInterruption;
@@ -35,6 +37,7 @@
 - (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
 - (BOOL)setCategory:(id)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
+- (BOOL)setMode:(id)arg1 error:(id*)arg2;
 - (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
 - (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
 

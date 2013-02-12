@@ -9,7 +9,7 @@
     NSString *_title;
 }
 
-@property(readonly) struct { double latitude; double longitude; } coordinate;
+@property(readonly) struct { double x1; double x2; } coordinate;
 @property(copy) NSString * subtitle;
 @property(copy) NSString * title;
 

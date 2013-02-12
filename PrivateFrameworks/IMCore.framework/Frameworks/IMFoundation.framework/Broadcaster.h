@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/Frameworks/IMFoundation.framework/IMFoundation
  */
 
-@class IMRemoteObjectBroadcaster, NSArray, NSProtocolChecker, Protocol;
+@class IMRemoteObjectBroadcaster, NSArray, Protocol;
 
 @interface Broadcaster : NSProxy {
-    NSProtocolChecker *_checker;
     IMRemoteObjectBroadcaster *_parent;
     Protocol *_protocol;
     NSArray *_targets;

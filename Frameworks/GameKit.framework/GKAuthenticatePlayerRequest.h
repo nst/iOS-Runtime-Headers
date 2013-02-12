@@ -9,26 +9,31 @@
     BOOL _loginDisabled;
     NSString *_password;
     NSString *_username;
+    BOOL _validatePasswordOnly;
 }
 
 @property(retain) NSDictionary * alertDictionary;
 @property BOOL loginDisabled;
 @property(retain) NSString * password;
 @property(retain) NSString * username;
+@property BOOL validatePasswordOnly;
 
 - (id)alertDictionary;
 - (BOOL)authenticationRequired;
 - (void)dealloc;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (BOOL)loginDisabled;
 - (id)password;
 - (id)request;
+- (Class)responseClass;
 - (void)setAlertDictionary:(id)arg1;
 - (void)setLoginDisabled:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
+- (void)setValidatePasswordOnly:(BOOL)arg1;
 - (BOOL)shouldProcessInBackground;
 - (id)username;
+- (BOOL)validatePasswordOnly;
 
 @end

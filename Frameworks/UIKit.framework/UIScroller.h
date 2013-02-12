@@ -139,14 +139,9 @@
 
 @property BOOL scrollsToTop;
 
-+ (void)_initializeSafeCategory;
 + (void)_registerForNotifications;
 + (void)_unregisterForNotifications;
 
-- (struct CGSize { float x1; float x2; })_accessibilityContentSize;
-- (BOOL)_accessibilityIsScrollAncestor;
-- (id)_accessibilityScrollStatus;
-- (void)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
 - (void)_addScrollNotificationView:(id)arg1;
 - (void)_adjustBackgroundShadowsForContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_adjustEndOffset;
@@ -191,15 +186,11 @@
 - (void)_scrollerWillStartDragging;
 - (BOOL)_scrollsToMakeFirstResponderVisible;
 - (void)_setAutoscrolling:(BOOL)arg1;
-- (void)_smoothScroll:(double)arg1;
+- (void)_smoothScroll:(id)arg1;
 - (void)_startTimer:(BOOL)arg1;
 - (void)_stopScrollingNotify:(BOOL)arg1 dealloc:(BOOL)arg2 pin:(BOOL)arg3;
 - (id)_topSpecialView;
 - (BOOL)_usesDifferentHitTestForGestures;
-- (void)accessibilityScrollDownPage;
-- (void)accessibilityScrollLeftPage;
-- (void)accessibilityScrollRightPage;
-- (void)accessibilityScrollUpPage;
 - (BOOL)adjustForContentSizeChange;
 - (BOOL)adjustSmoothScrollEnd:(struct { double x1; double x2; })arg1;
 - (struct CGPoint { float x1; float x2; })autoscrollContentOffset;
@@ -211,6 +202,7 @@
 - (BOOL)cancelTouchTracking;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameForView:(id)arg1;
 - (void)contentMouseUpInView:(id)arg1 withEvent:(struct __GSEvent { }*)arg2;
+- (struct CGPoint { float x1; float x2; })contentOffset;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
 - (id)delegate;
@@ -228,7 +220,6 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDecelerating;
-- (BOOL)isScrollEnabled;
 - (BOOL)isScrollEnabled;
 - (BOOL)isScrolling;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;

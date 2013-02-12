@@ -2,30 +2,27 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet;
-
 @interface IMHandleRegistrar : NSObject {
-    NSMutableArray *_allIMHandles;
-    NSMutableDictionary *_candidateNamesMap;
-    NSMutableSet *_knownConflictingNames;
-    int _nameStyle;
-    NSMutableDictionary *_siblingsMap;
-    NSMutableDictionary *_usedUniqueNames;
+    id _internal;
 }
 
 @property int nameStyle;
 
 + (id)sharedInstance;
 
+- (id)_accountSiblingsForHandle:(id)arg1;
+- (void)_accountsChanged:(id)arg1;
 - (void)_addressBookChanged;
 - (void)_buildSiblingsForIMHandle:(id)arg1;
+- (void)_clearAccountSiblingsForGUID:(id)arg1;
 - (void)_clearSiblingsCacheForIMHandle:(id)arg1 rebuildAfter:(BOOL)arg2;
 - (void)_dumpOutAllIMHandles;
 - (void)_dumpOutAllIMHandlesForAccount:(id)arg1;
 - (void)_emptySiblingCacheForIMHandleGUID:(id)arg1;
+- (id)_existingAccountSiblingsForHandle:(id)arg1;
 - (void)_rebuildUniqueNameMapWithStyleChange:(BOOL)arg1;
 - (id)allIMHandles;
-- (id)autorelease;
+- (BOOL)allowsWeakReference;
 - (id)candidateUniqueNamesForIMHandle:(id)arg1;
 - (void)clearNameReservationsForObject:(id)arg1;
 - (void)clearSiblingCacheForIMHandle:(id)arg1;
@@ -37,8 +34,7 @@
 - (void)reassessIMHandleForUniqueName:(id)arg1;
 - (void)rebuildUniqueNameMap;
 - (void)registerIMHandle:(id)arg1;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)setNameStyle:(int)arg1;
 - (id)siblingsForIMHandle:(id)arg1;
 - (void)unregisterIMHandle:(id)arg1;

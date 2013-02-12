@@ -23,6 +23,8 @@
 - (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
 - (id)initWithParticipantID:(id)arg1;
 - (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
+- (id)networkStatistics;
+- (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
 - (void)preRelease;
 - (void)setEventDelegate:(id)arg1;
 - (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;

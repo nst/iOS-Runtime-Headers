@@ -14,8 +14,9 @@
     NSString *_unsavedToken;
 }
 
+@property(readonly) int accountServiceType;
+@property(readonly) NSArray * appleIDAliases;
 @property(readonly) NSString * authToken;
-@property(readonly) NSString * commerceToken;
 @property(readonly) NSDictionary * dataclassProperties;
 @property(readonly) NSString * firstName;
 @property(readonly) NSString * lastName;
@@ -23,15 +24,21 @@
 @property(readonly) BOOL needsRegistration;
 @property(copy) NSString * password;
 @property(readonly) NSString * personID;
+@property BOOL primaryAccount;
 @property(readonly) NSString * primaryEmail;
 @property(readonly) BOOL primaryEmailVerified;
 @property(readonly) NSArray * provisionedDataclasses;
+@property(readonly) BOOL serviceUnavailable;
+@property(readonly) NSDictionary * serviceUnavailableInfo;
 @property(copy) NSString * username;
 
 + (id)accountTypeString;
 + (id)accountWithBasicAccount:(id)arg1;
 + (id)basicAccountProperties;
++ (id)classicAccountTypeString;
 + (id)configuredSyncAccountName;
++ (id)dataclassesBoundToPrimaryAccount;
++ (id)dataclassesBoundToSingleAccount;
 + (id)dataclassesBoundToSyncAccount;
 + (BOOL)doesConfiguredSyncAccountExist;
 + (BOOL)isAOSEnabled;
@@ -41,16 +48,21 @@
 + (id)supportedDataclasses;
 
 - (id)_deviceSpecificLocalizedString:(id)arg1;
-- (void)_downloadURLConfiguration:(id)arg1;
 - (id)_errorWithDescriptionForResponseError:(id)arg1;
 - (id)_mailChildAccountProperties;
+- (void)_performiCloudMigration;
 - (void)_setToken:(id)arg1;
+- (id)accountFirstDisplayAlert;
+- (id)accountFooterButton;
+- (id)accountFooterText;
+- (int)accountServiceType;
 - (void)addChildAccount:(id)arg1;
+- (id)appleIDAliases;
 - (id)authToken;
 - (void)authenticateWithHandler:(id)arg1;
 - (BOOL)becomeConfiguredSyncAccount;
 - (void)cancelNetworkActivity;
-- (id)commerceToken;
+- (void)configureAppleIDCerts;
 - (id)dataclassProperties;
 - (void)dealloc;
 - (id)description;
@@ -62,28 +74,43 @@
 - (BOOL)isConfiguredSyncAccount;
 - (BOOL)isProvisionedForDataclass:(id)arg1;
 - (id)lastName;
-- (id)mobileMeAccountFirstDisplayAlert;
-- (id)mobileMeAccountFooterButton;
-- (id)mobileMeAccountFooterText;
 - (int)mobileMeAccountStatus;
+- (BOOL)needsEmailConfiguration;
 - (BOOL)needsRegistration;
+- (void)notifyUserOfQuotaDepletion;
 - (id)password;
 - (id)personID;
+- (void)presentQuotaDepletionAlertForDataclass:(id)arg1 withHandler:(id)arg2;
+- (void)presentQuotaDepletionAlertForDataclass:(id)arg1;
+- (BOOL)presentQuotaDepletionAlertForDataclassIfNecessary:(id)arg1 withHandler:(id)arg2;
+- (BOOL)presentQuotaDepletionAlertForDataclassIfNecessary:(id)arg1;
+- (BOOL)primaryAccount;
 - (id)primaryEmail;
 - (BOOL)primaryEmailVerified;
 - (id)propertiesForDataclass:(id)arg1;
 - (id)provisionedDataclasses;
 - (void)registerWithHandler:(id)arg1;
+- (void)removeAppleIDCerts;
 - (void)removeChildAccountWithIdentifier:(id)arg1;
 - (void)removePasswordFromKeychain;
 - (void)removeTokensFromKeychain;
 - (void)resendVerificationEmail:(id)arg1;
 - (void)savePasswordInKeychain;
 - (void)saveTokensInKeychain;
+- (BOOL)serviceUnavailable;
+- (id)serviceUnavailableInfo;
+- (void)setEnabled:(BOOL)arg1 forDataclass:(id)arg2;
+- (void)setLocationAuthorizationForDeviceLocator:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setPrimaryAccount:(BOOL)arg1;
+- (void)setUseCellular:(BOOL)arg1 forDataclass:(id)arg2;
 - (void)setUsername:(id)arg1;
+- (void)setupChildMailAccountAndEnable:(BOOL)arg1 withEmail:(id)arg2;
+- (void)signInWithHandler:(id)arg1;
 - (id)syncStoreIdentifier;
 - (void)updateAccountPropertiesWithHandler:(id)arg1;
+- (void)updateAccountWithProvisioningResponse:(id)arg1;
+- (BOOL)useCellularForDataclass:(id)arg1;
 - (id)username;
 
 @end

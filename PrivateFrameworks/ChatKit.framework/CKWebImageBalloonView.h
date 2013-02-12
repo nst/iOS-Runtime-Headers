@@ -14,8 +14,8 @@
 
 @property struct CGSize { float width; float height; } originalImageSize;
 
-+ (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-+ (struct CGPoint { float x1; float x2; })offsetForBubbleInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (float)entryFieldBalloonAdditionalHeight;
++ (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
 
 - (id)_htmlForImageWithData:(id)arg1 mimeType:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 - (id)_htmlForImageWithFilename:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
@@ -23,6 +23,7 @@
 - (void)_wvSetHTML:(id)arg1;
 - (void)dealloc;
 - (float)heightForWidth:(float)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
 - (struct CGSize { float x1; float x2; })originalImageSize;
 - (void)setImage:(id)arg1 mimeType:(id)arg2;
 - (void)setImageWithFilename:(id)arg1;

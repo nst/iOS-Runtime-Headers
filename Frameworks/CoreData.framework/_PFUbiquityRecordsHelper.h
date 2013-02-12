@@ -5,36 +5,40 @@
 @class NSDictionary, NSManagedObjectContext, NSMutableDictionary, NSNotification, NSPersistentStoreCoordinator, NSString;
 
 @interface _PFUbiquityRecordsHelper : NSObject {
-    NSMutableDictionary *_allWorkingObjectsByRecordUUID;
-    NSMutableDictionary *_deletedObjectsByRecordUUID;
+    NSMutableDictionary *_allWorkingObjectsByPK;
+    NSMutableDictionary *_deletedObjectsByPK;
     NSMutableDictionary *_externalAttributesByEntityName;
     NSString *_externalRecordsPath;
     NSMutableDictionary *_externalRelationshipsByEntityName;
     BOOL _importAllRecords;
     NSNotification *_importContextSaveNotification;
-    NSMutableDictionary *_insertedObjectsByRecordUUID;
+    NSMutableDictionary *_insertedObjectsByPK;
     NSManagedObjectContext *_managedObjectContext;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
+    NSString *_storeIdentifier;
     NSString *_transactionLogPath;
+    NSDictionary *_transactionObjectsData;
     NSDictionary *_transactionRecordContent;
     int _ubiquity_import_debug_level;
-    NSMutableDictionary *_updatedObjectsByRecordUUID;
+    NSMutableDictionary *_updatedObjectsByPK;
 }
 
-@property(readonly) NSDictionary * deletedObjectsByRecordUUID;
+@property(readonly) NSDictionary * deletedObjectsByPK;
 @property(retain) NSString * externalRecordsPath;
 @property BOOL importAllRecords;
 @property(retain) NSNotification * importContextSaveNotification;
-@property(readonly) NSDictionary * insertedObjectsByRecordUUID;
+@property(readonly) NSDictionary * insertedObjectsByPK;
 @property NSManagedObjectContext * managedObjectContext;
 @property NSPersistentStoreCoordinator * persistentStoreCoordinator;
+@property(retain) NSString * storeIdentifier;
 @property(retain) NSString * transactionLogPath;
+@property(retain) NSDictionary * transactionObjectsData;
 @property(retain) NSDictionary * transactionRecordContent;
-@property(readonly) NSDictionary * updatedObjectsByRecordUUID;
+@property(readonly) NSDictionary * updatedObjectsByPK;
 
-- (id)_fetchObjectsFromRecordUUIDs:(id)arg1 error:(id*)arg2;
 - (void)_importContextDidSave:(id)arg1;
-- (BOOL)_initializeTransactionRecord:(id*)arg1;
+- (id)_initializeTransactionRecord:(id*)arg1;
+- (id)_objectsWithPrimaryKeys:(id)arg1 error:(id*)arg2;
 - (id)_prepareFullImportTransactionContent:(id*)arg1;
 - (BOOL)_prepareTransactionObjects:(id*)arg1;
 - (BOOL)_processDeletedObjects:(id*)arg1;
@@ -42,28 +46,31 @@
 - (BOOL)_processUpdatedObjects:(id*)arg1;
 - (BOOL)_setStateForObject:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
-- (id)deletedObjectsByRecordUUID;
+- (id)deletedObjectsByPK;
 - (id)externalAttributesForEntity:(id)arg1;
-- (id)externalRecordPathForObject:(id)arg1;
 - (id)externalRecordsPath;
 - (id)externalRelationshipsForEntity:(id)arg1;
 - (BOOL)importAllRecords;
 - (id)importContextSaveNotification;
 - (id)importUbiquityExternalRecords:(id*)arg1;
 - (id)initForImportWithExternalRecordsPath:(id)arg1 persistentStoreCoordinator:(id)arg2;
-- (id)insertedObjectsByRecordUUID;
+- (id)insertedObjectsByPK;
 - (id)managedObjectContext;
-- (id)objectForExternalRecordUUIDString:(id)arg1;
+- (id)objectForEntityName:(id)arg1 primaryKey:(id)arg2;
 - (id)persistentStoreCoordinator;
 - (void)setExternalRecordsPath:(id)arg1;
 - (void)setImportAllRecords:(BOOL)arg1;
 - (void)setImportContextSaveNotification:(id)arg1;
 - (void)setManagedObjectContext:(id)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
+- (void)setStoreIdentifier:(id)arg1;
 - (void)setTransactionLogPath:(id)arg1;
+- (void)setTransactionObjectsData:(id)arg1;
 - (void)setTransactionRecordContent:(id)arg1;
+- (id)storeIdentifier;
 - (id)transactionLogPath;
+- (id)transactionObjectsData;
 - (id)transactionRecordContent;
-- (id)updatedObjectsByRecordUUID;
+- (id)updatedObjectsByPK;
 
 @end

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel;
+@class UILabel, UIMovieScrubber;
 
 @interface PLVideoEditingOverlayView : UIView {
     UILabel *_bodyLabel;
+    UIMovieScrubber *_scrubber;
     UILabel *_titleLabel;
 }
 

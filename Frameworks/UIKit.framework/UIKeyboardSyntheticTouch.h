@@ -20,8 +20,8 @@
 
 @property(readonly) unsigned char _pathIdentity;
 @property(readonly) unsigned char _pathIndex;
-@property(readonly) float _pathMajorRadius;
-@property struct CGPoint { float x; float y; } locationInWindow;
+@property float _pathMajorRadius;
+@property struct CGPoint { float x1; float x2; } locationInWindow;
 @property int phase;
 @property unsigned int tapCount;
 @property double timestamp;
@@ -43,6 +43,7 @@
 - (void)setTapCount:(unsigned int)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setWindow:(id)arg1;
+- (void)set_pathMajorRadius:(float)arg1;
 - (unsigned int)tapCount;
 - (double)timestamp;
 - (id)window;

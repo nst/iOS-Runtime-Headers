@@ -12,18 +12,15 @@
     } _downPoint;
 }
 
-+ (void)_initializeSafeCategory;
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (id)grabberImage;
 
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (id)grabberImage;
 - (id)initWithTableViewCell:(id)arg1;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldTrack;

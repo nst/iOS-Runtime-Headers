@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, PreferencesTable, UIActionSheet, UIAlertView, UIKeyboard, UIPopoverController;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString, UIActionSheet, UIAlertView, UIKeyboard, UIPopoverController, UITableView;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSViewControllerOffsetProtocol> {
     struct CGPoint { 
@@ -15,10 +15,12 @@
     BOOL _cachesCells;
     NSMutableDictionary *_cells;
     } _contentOffsetWithKeyboard;
+    BOOL _forceSynchronousIconLoadForCreatedCells;
     NSMutableArray *_groups;
     BOOL _hasAppeared;
     UIKeyboard *_keyboard;
     BOOL _keyboardWasVisible;
+    NSString *_offsetItemName;
     BOOL _popupIsDismissing;
     BOOL _popupIsModal;
     UIPopoverController *_popupStylePopoverController;
@@ -27,11 +29,13 @@
     NSString *_specifierID;
     NSArray *_specifiers;
     NSMutableDictionary *_specifiersByID;
-    PreferencesTable *_table;
+    BOOL _swapAlertButtons;
+    UITableView *_table;
     float _verticalContentOffset;
 }
 
-+ (void)_initializeSafeCategory;
+@property BOOL forceSynchronousIconLoadForCreatedCells;
+
 + (BOOL)displaysButtonBar;
 
 - (void)_addIdentifierForSpecifier:(id)arg1;
@@ -59,6 +63,7 @@
 - (void)addSpecifiersFromArray:(id)arg1 animated:(BOOL)arg2;
 - (void)addSpecifiersFromArray:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (Class)backgroundViewClass;
 - (void)beginUpdates;
 - (id)bundle;
 - (id)cachedCellForSpecifier:(id)arg1;
@@ -67,6 +72,7 @@
 - (void)confirmationViewAcceptedForSpecifier:(id)arg1;
 - (void)confirmationViewCancelledForSpecifier:(id)arg1;
 - (BOOL)containsSpecifier:(id)arg1;
+- (id)contentScrollView;
 - (id)controllerForRowAtIndexPath:(id)arg1;
 - (void)createGroupIndices;
 - (void)dealloc;
@@ -76,12 +82,14 @@
 - (void)dismissPopoverAnimated:(BOOL)arg1;
 - (void)endUpdates;
 - (id)findFirstVisibleResponder;
+- (BOOL)forceSynchronousIconLoadForCreatedCells;
 - (void)formSheetViewWillDisappear;
 - (BOOL)getGroup:(int*)arg1 row:(int*)arg2 ofSpecifier:(id)arg3;
 - (BOOL)getGroup:(int*)arg1 row:(int*)arg2 ofSpecifierAtIndex:(int)arg3;
 - (BOOL)getGroup:(int*)arg1 row:(int*)arg2 ofSpecifierID:(id)arg3;
 - (void)handleURL:(id)arg1;
 - (int)indexForIndexPath:(id)arg1;
+- (int)indexForRow:(int)arg1 inGroup:(int)arg2;
 - (int)indexOfGroup:(int)arg1;
 - (int)indexOfSpecifier:(id)arg1;
 - (int)indexOfSpecifierID:(id)arg1;
@@ -139,16 +147,20 @@
 - (void)removeSpecifierID:(id)arg1;
 - (void)replaceContiguousSpecifiers:(id)arg1 withSpecifiers:(id)arg2 animated:(BOOL)arg3;
 - (void)replaceContiguousSpecifiers:(id)arg1 withSpecifiers:(id)arg2;
+- (void)returnPressedAtEnd;
 - (int)rowsForGroup:(int)arg1;
 - (void)selectRowForSpecifier:(id)arg1;
 - (void)setCachesCells:(BOOL)arg1;
 - (void)setDesiredVerticalContentOffset:(float)arg1;
+- (void)setDesiredVerticalContentOffsetItemNamed:(id)arg1;
+- (void)setForceSynchronousIconLoadForCreatedCells:(BOOL)arg1;
 - (void)setSpecifierID:(id)arg1;
 - (void)setSpecifiers:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (BOOL)shouldSelectResponderOnAppearance;
 - (void)showConfirmationSheetForSpecifier:(id)arg1;
+- (void)showConfirmationViewForSpecifier:(id)arg1 useAlert:(BOOL)arg2 swapAlertButtons:(BOOL)arg3;
 - (void)showConfirmationViewForSpecifier:(id)arg1;
 - (void)showPINSheet:(id)arg1;
 - (id)specifier;
@@ -157,9 +169,11 @@
 - (id)specifierID;
 - (id)specifiers;
 - (id)specifiersInGroup:(int)arg1;
-- (void)statusBarWillAnimateByHeight:(float)arg1;
 - (id)table;
+- (id)tableBackgroundColor;
+- (int)tableStyle;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 detailTextForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;

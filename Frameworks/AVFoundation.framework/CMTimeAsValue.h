@@ -16,6 +16,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })CMTimeValue;
 - (BOOL)boolValue;
 - (BOOL)charValue;
+- (id)description;
 - (double)doubleValue;
 - (float)floatValue;
 - (void)getValue:(void*)arg1;

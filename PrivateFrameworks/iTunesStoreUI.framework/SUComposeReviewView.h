@@ -4,7 +4,7 @@
 
 @class <SUComposeReviewViewDelegate>, ISReview, SUComposeReviewHeaderView, SULoadingView, SUTextContentView, UIControl, UILabel, UIScrollView;
 
-@interface SUComposeReviewView : UIView <UITextContentViewDelegate> {
+@interface SUComposeReviewView : UIView <SUComposeReviewHeaderDelegate, UITextContentViewDelegate> {
     unsigned int _loading : 1;
     int _currentBodyLength;
     <SUComposeReviewViewDelegate> *_delegate;

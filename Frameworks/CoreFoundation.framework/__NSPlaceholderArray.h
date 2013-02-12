@@ -5,6 +5,7 @@
 @interface __NSPlaceholderArray : NSMutableArray {
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)immutablePlaceholder;
 + (void)initialize;
 + (id)mutablePlaceholder;
@@ -15,7 +16,7 @@
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (oneway void)release;

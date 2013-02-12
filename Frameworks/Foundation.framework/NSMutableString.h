@@ -28,10 +28,13 @@
 - (void)_trimWithCharacterSet:(id)arg1;
 - (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
 - (void)appendFormat:(id)arg1;
+- (void)appendString:(id)arg1 withSeparator:(id)arg2;
 - (void)appendString:(id)arg1;
 - (Class)classForCoder;
+- (void)convertLineEndingsTo:(id)arg1;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
+- (void)insertCharacter:(unsigned short)arg1 atIndex:(unsigned int)arg2;
 - (void)insertCharacter:(unsigned short)arg1 atIndex:(unsigned short)arg2;
 - (void)insertString:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)replaceAllSubstr:(id)arg1 with:(id)arg2 escStr:(id)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
@@ -43,8 +46,10 @@
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
 - (void)replaceNewlinesWithSpaces;
 - (unsigned int)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (void)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
 - (BOOL)replaceSubstr:(id)arg1 with:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)replaceSubstr:(id)arg1 with:(id)arg2;
+- (void)searchAndReplaceInString:(id)arg1 withString:(id)arg2;
 - (void)setString:(id)arg1;
 - (void)standardizeWhitespace;
 

@@ -9,29 +9,37 @@
     void *_reserved;
 }
 
+@property(readonly) int _gkColumn;
+@property(readonly) int _gkRow;
+@property(readonly) int _gkSection;
 @property(readonly) unsigned int gridColumn;
 @property(readonly) unsigned int gridRow;
 @property(readonly) unsigned int gridSection;
-@property(readonly) unsigned int row;
-@property(readonly) unsigned int section;
+@property(readonly) int row;
+@property(readonly) int section;
 
-+ (id)_fastUniquer;
-+ (id)_uniquer;
++ (id)indexPathForRow:(int)arg1 inSection:(int)arg2;
 + (id)indexPathForRow:(unsigned int)arg1 column:(unsigned int)arg2 inSection:(unsigned int)arg3;
-+ (id)indexPathForRow:(unsigned int)arg1 inSection:(unsigned int)arg2;
 + (id)indexPathWithIndex:(unsigned int)arg1;
 + (id)indexPathWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
 
+- (int)_gkColumn;
+- (id)_gkIndexPathWithColumn:(int)arg1;
+- (id)_gkIndexPathsForColumnCount:(int)arg1;
+- (id)_gkNormalizedIndexPath;
+- (int)_gkRow;
+- (int)_gkSection;
 - (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dd_stringValue;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalize;
 - (void)getIndexes:(unsigned int*)arg1;
 - (unsigned int)gridColumn;
 - (unsigned int)gridRow;
 - (unsigned int)gridSection;
+- (unsigned int)hash;
 - (unsigned int)indexAtPosition:(unsigned int)arg1;
 - (id)indexPathByAddingIndex:(unsigned int)arg1;
 - (id)indexPathByRemovingLastIndex;
@@ -40,8 +48,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIndex:(unsigned int)arg1;
 - (id)initWithIndexes:(unsigned int*)arg1 length:(unsigned int)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)length;
-- (unsigned int)row;
-- (unsigned int)section;
+- (int)row;
+- (int)section;
 
 @end

@@ -11,7 +11,10 @@
 
 - (id)attachmentName;
 - (void)dealloc;
+- (id)description;
+- (unsigned int)hash;
 - (id)initWithAttachmentName:(id)arg1 andMessageServerID:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)messageID;
 
 @end

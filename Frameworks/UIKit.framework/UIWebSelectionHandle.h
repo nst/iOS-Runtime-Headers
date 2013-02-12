@@ -14,18 +14,18 @@
     } _centerToSelectionPointOffset;
     UIImageView *_dragDotView;
     int _position;
+    UIWebSelectionView *_selectionView;
     int _textPosition;
-    UIWebSelectionView *_tintView;
     UITouch *_touch;
     } _touchToCenterOffset;
 }
 
-@property struct CGSize { float width; float height; } centerToSelectionPointOffset;
+@property struct CGSize { float x1; float x2; } centerToSelectionPointOffset;
 @property(readonly) BOOL hasTextPosition;
 @property int position;
 @property int textPosition;
 @property(retain) UITouch * touch;
-@property(readonly) struct CGSize { float width; float height; } touchToCenterOffset;
+@property(readonly) struct CGSize { float x1; float x2; } touchToCenterOffset;
 
 - (struct CGPoint { float x1; float x2; })applyCenterToSelectionPointOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })applyOffsetInDirectionOfHandle:(float)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
@@ -34,7 +34,7 @@
 - (void)dealloc;
 - (void)dropActiveTouch;
 - (BOOL)hasTextPosition;
-- (id)initWithPosition:(int)arg1 tintView:(id)arg2;
+- (id)initWithPosition:(int)arg1 selectionView:(id)arg2;
 - (float)offsetInDirectionOfHandleFromFirstPoint:(struct CGPoint { float x1; float x2; })arg1 toSecondPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)position;

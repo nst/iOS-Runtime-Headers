@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <EAAccessoryDelegate>, NSArray, NSDictionary, NSString;
+@class <EAAccessoryDelegate>, NSArray, NSDictionary, NSMutableArray, NSString;
 
 @interface EAAccessoryInternal : NSObject {
     int (*_cfAccessoryPortPropertyCallback)();
@@ -25,16 +25,16 @@
     NSString *_firmwareRevision;
     NSString *_hardwareRevision;
     int _iPodOutOptionsMask;
-    NSDictionary *_legacyLingoProperties;
     NSString *_manufacturer;
     NSString *_modelNumber;
     NSString *_name;
     NSString *_preferredApp;
     NSDictionary *_protocols;
     NSString *_serialNumber;
+    NSMutableArray *_sessionsList;
 }
 
-@property NSDictionary * audioPorts;
+@property(retain) NSDictionary * audioPorts;
 @property unsigned int capabilities;
 @property struct __CFAccessory { }* cfAccessory;
 @property int (* cfAccessoryPortPropertyCallback;
@@ -48,15 +48,16 @@
 @property(copy) NSString * firmwareRevision;
 @property(copy) NSString * hardwareRevision;
 @property int iPodOutOptionsMask;
-@property NSDictionary * legacyLingoProperties;
 @property(copy) NSString * manufacturer;
 @property(copy) NSString * modelNumber;
 @property(copy) NSString * name;
 @property(copy) NSString * preferredApp;
-@property NSDictionary * protocols;
+@property(retain) NSDictionary * protocols;
 @property(copy) NSString * serialNumber;
+@property(readonly) NSArray * sessionsList;
 
 - (int (*)())cfAccessoryPortPropertyCallback;
+- (void)addSession:(id)arg1;
 - (id)audioPorts;
 - (unsigned int)capabilities;
 - (struct __CFAccessory { }*)cfAccessory;
@@ -72,13 +73,14 @@
 - (id)hardwareRevision;
 - (int)iPodOutOptionsMask;
 - (id)init;
-- (id)legacyLingoProperties;
 - (id)manufacturer;
 - (id)modelNumber;
 - (id)name;
 - (id)preferredApp;
 - (id)protocols;
+- (void)removeSession:(id)arg1;
 - (id)serialNumber;
+- (id)sessionsList;
 - (void)setAudioPorts:(id)arg1;
 - (void)setCapabilities:(unsigned int)arg1;
 - (void)setCfAccessory:(struct __CFAccessory { }*)arg1;
@@ -93,7 +95,6 @@
 - (void)setFirmwareRevision:(id)arg1;
 - (void)setHardwareRevision:(id)arg1;
 - (void)setIPodOutOptionsMask:(int)arg1;
-- (void)setLegacyLingoProperties:(id)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModelNumber:(id)arg1;
 - (void)setName:(id)arg1;

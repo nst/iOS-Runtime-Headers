@@ -4,13 +4,26 @@
 
 @class NSString, UIImage;
 
-@interface UIBarItem : NSObject {
+@interface UIBarItem : NSObject <UIAppearance> {
+    BOOL _hasCustomizableInstanceAppearanceModifications;
 }
 
+@property(setter=_setHasCustomizableInstanceAppearanceModifications:) BOOL _hasCustomizableInstanceAppearanceModifications;
 @property(getter=isEnabled) BOOL enabled;
 @property(retain) UIImage * image;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } imageInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
+@property(retain) UIImage * landscapeImagePhone;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } landscapeImagePhoneInsets;
 @property int tag;
 @property(copy) NSString * title;
+
++ (id)_appearanceProxyViewClasses;
++ (id)appearance;
++ (id)appearanceWhenContainedIn:(Class)arg1;
+
+- (BOOL)_hasCustomizableInstanceAppearanceModifications;
+- (void)_setHasCustomizableInstanceAppearanceModifications:(BOOL)arg1;
+- (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (id)titleTextAttributesForState:(unsigned int)arg1;
 
 @end

@@ -14,7 +14,6 @@
 @property int status;
 @property(retain) NSString * streetViewPanoId;
 @property(retain) NSMutableArray * waypoints;
-@property(readonly) int waypointsCount;
 
 - (void)addWaypoint:(id)arg1;
 - (void)dealloc;
@@ -22,17 +21,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasStreetViewPanoId;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setStreetViewPanoId:(id)arg1;
-- (void)setWaypoint:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setWaypoints:(id)arg1;
 - (int)status;
 - (id)streetViewPanoId;
 - (id)waypointAtIndex:(unsigned int)arg1;
 - (id)waypoints;
-- (int)waypointsCount;
+- (unsigned int)waypointsCount;
 - (void)writeTo:(id)arg1;
 
 @end

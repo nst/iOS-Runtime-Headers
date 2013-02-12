@@ -20,6 +20,7 @@
 @property(retain) NSString * title;
 @property(retain) id userInfo;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)_className;

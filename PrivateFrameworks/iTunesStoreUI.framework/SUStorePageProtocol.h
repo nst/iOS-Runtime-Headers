@@ -16,6 +16,7 @@
     NSString *_rootSectionIdentifier;
     BOOL _shouldDisplayInOverlay;
     BOOL _shouldExcludeFromNavigationHistory;
+    BOOL _shouldReplaceRootViewController;
 }
 
 @property(retain) NSArray * allowedOrientations;
@@ -29,6 +30,7 @@
 @property(retain) NSString * rootSectionIdentifier;
 @property BOOL shouldDisplayInOverlay;
 @property BOOL shouldExcludeFromNavigationHistory;
+@property BOOL shouldReplaceRootViewController;
 
 - (id)_initCommon;
 - (id)_newNavigationButtonsFromArray:(id)arg1;
@@ -61,8 +63,10 @@
 - (void)setRootSectionIdentifier:(id)arg1;
 - (void)setShouldDisplayInOverlay:(BOOL)arg1;
 - (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
+- (void)setShouldReplaceRootViewController:(BOOL)arg1;
 - (void)setValuesFromStorePageDictionary:(id)arg1;
 - (BOOL)shouldDisplayInOverlay;
 - (BOOL)shouldExcludeFromNavigationHistory;
+- (BOOL)shouldReplaceRootViewController;
 
 @end

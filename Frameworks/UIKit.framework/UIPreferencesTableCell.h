@@ -31,7 +31,6 @@
     UITextLabel *_valueTextLabel;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)defaultTitleFont;
 + (Class)valueTextLabelClass;
 
@@ -60,9 +59,6 @@
 - (void)_setSuperviewsIsPrefTable:(BOOL)arg1;
 - (void)_unhighlight;
 - (void)_updateButtonSizeForRemoveControlVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)accessibilityTableViewCellText;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (SEL)action;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })buttonBounds;
 - (int)cellOutline;
@@ -118,7 +114,6 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)truncatesTitleBeforeValue;
 - (void)updateHighlightColors;
-- (BOOL)usesBlueDisclosureCircle;
 - (id)value;
 - (id)valueColor;
 - (id)valueTextLabel;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPMovieAccessLog, MPMovieErrorLog, MPTransitionController, MPVideoView, MPVideoViewController, NSString, UIImage, UIMovieSnapshotView, UINavigationController, UIView;
+@class MPAVController, MPAVItem, MPMovieAccessLog, MPMovieErrorLog, MPSystemNowPlayingController, MPTransitionController, MPVideoView, MPVideoViewController, NSArray, NSDate, NSString, UIImage, UIMovieSnapshotView, UINavigationController, UIView, UIViewController;
 
 @interface UIMoviePlayerController : NSObject {
     struct CGRect { 
@@ -46,6 +46,7 @@
     MPVideoViewController *_activeVideoController;
     unsigned int _audioControlsStyle;
     unsigned int _autoRotationMask;
+    NSArray *_closedCaptionData;
     id _delegate;
     unsigned int _desiredParts;
     unsigned int _displayableParts;
@@ -57,16 +58,19 @@
     } _layoutRect;
     NSString *_moviePath;
     } _mpcBitfield;
+    MPSystemNowPlayingController *_nowPlayingController;
     int _pendingInterfaceOrientation;
     MPAVItem *_pendingItem;
     MPAVItem *_pendingItemWithDifferentType;
     unsigned int _playableContentTypeOverride;
     NSString *_playbackErrorDescription;
+    MPAVController *_player;
     UINavigationController *_portraitNavigationController;
     UIImage *_posterImage;
     UIMovieSnapshotView *_snapshotView;
+    double _timeToSnapshot;
     double _timeWhenResignedActive;
-    UIView *_topmostView;
+    UIViewController *_topViewController;
     MPTransitionController *_transitionController;
     int _transitionCount;
     unsigned int _unmodifiedDisplayableParts;
@@ -76,11 +80,14 @@
 
 @property(readonly) MPMovieAccessLog * accessLog;
 @property BOOL alwaysAllowHidingControlsOverlay;
+@property(readonly) BOOL areClosedCaptionsAvailable;
 @property unsigned int audioControlsStyle;
 @property(retain) UIImage * backgroundPlaceholderImage;
 @property(readonly) unsigned int bufferingState;
 @property(readonly) BOOL canContinuePlayingInBackground;
 @property(readonly) BOOL canContinuePlayingWhenLocked;
+@property BOOL closedCaptioningEnabled;
+@property(readonly) NSDate * currentDate;
 @property double currentTime;
 @property id delegate;
 @property BOOL disallowsVideoOut;
@@ -92,9 +99,11 @@
 @property(readonly) BOOL isPreparedForPlayback;
 @property(retain) MPAVItem * item;
 @property(copy) NSString * moviePath;
+@property(copy) NSString * movieSubtitle;
+@property(copy) NSString * movieTitle;
 @property(readonly) MPVideoView * movieView;
 @property(readonly) BOOL muted;
-@property(readonly) struct CGSize { float width; float height; } naturalSize;
+@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property unsigned int options;
 @property unsigned int playableContentType;
 @property(readonly) double playableDuration;
@@ -106,6 +115,7 @@
 @property(retain) UIImage * posterImage;
 @property(readonly) double seekableEndTime;
 @property(readonly) double seekableStartTime;
+@property BOOL stopAtEnd;
 @property BOOL useLegacyControls;
 @property BOOL videoFrameDisplayOnResumeDisabled;
 @property(readonly) BOOL videoOutActive;
@@ -114,6 +124,7 @@
 @property(copy) NSString * youTubeVideoID;
 
 + (void)allInstancesResignActive;
++ (struct CGSize { float x1; float x2; })fillSizeForMovieBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 movieNaturalSize:(struct CGSize { float x1; float x2; })arg2 interfaceOrientation:(int)arg3 destinationTVOut:(BOOL)arg4;
 + (struct CGSize { float x1; float x2; })fillSizeForMovieBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 movieNaturalSize:(struct CGSize { float x1; float x2; })arg2 orientation:(int)arg3 destinationTVOut:(BOOL)arg4;
 + (Class)preferredWindowClass;
 
@@ -126,7 +137,6 @@
 - (void)_bufferingStateChangedNotification:(id)arg1;
 - (BOOL)_canAutoRotateToInterfaceOrientation:(int)arg1;
 - (void)_commitFinishInitializeActiveViewController:(id)arg1 animate:(BOOL)arg2;
-- (id)_containerViewForController:(id)arg1;
 - (unsigned int)_convertedPartsMask:(unsigned int)arg1;
 - (unsigned int)_convertedVisiblePartsMask:(unsigned int)arg1;
 - (void)_delayedShowPortraitLoading;
@@ -140,11 +150,12 @@
 - (void)_hideLoadingForStateChange:(id)arg1;
 - (void)_initializeVideoViewController:(id)arg1 orientation:(int)arg2;
 - (void)_itemChangedNotification:(id)arg1;
+- (void)_itemDurationAvailableNotification:(id)arg1;
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
-- (void)_itemPlaybackDidFailNotification:(id)arg1;
 - (void)_itemReadyToPlayNotification:(id)arg1;
 - (void)_moviePlayerDidBecomeActiveNotification:(id)arg1;
 - (void)_moviePlayerWillBecomeActiveNotification:(id)arg1;
+- (void)_movieTypeAvailableNotification:(id)arg1;
 - (void)_mutedDidChangeNotification:(id)arg1;
 - (BOOL)_noteStoppedIgnoringChangeType:(unsigned int)arg1;
 - (id)_parentViewControllerForController:(id)arg1;
@@ -164,7 +175,6 @@
 - (void)_registerForNotifications;
 - (void)_reloadForTransitionFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 animated:(BOOL)arg3;
 - (void)_removeSnapshotView;
-- (void)_resignActive;
 - (void)_schedulePortraitLoadingIndicatorIfNeeded;
 - (void)_serverDeathNotification:(id)arg1;
 - (void)_setActiveViewController:(id)arg1 forTransition:(BOOL)arg2;
@@ -179,7 +189,7 @@
 - (void)_timedMetadataAvailableNotification:(id)arg1;
 - (id)_titlesForPortraitNavigationBarAtTime:(double)arg1;
 - (id)_titlesViewForNavigationItem:(id)arg1;
-- (id)_topView;
+- (id)_topViewController;
 - (void)_transitionFinished:(id)arg1;
 - (void)_tvOutCapabilityChanged:(id)arg1;
 - (void)_unregisterForNotifications;
@@ -194,9 +204,9 @@
 - (void)_willEnterForegroundNotification:(id)arg1;
 - (void)_willResignNotification:(id)arg1;
 - (void)_willSuspendNotification:(id)arg1;
-- (void)_willTerminateNotification:(id)arg1;
 - (id)accessLog;
 - (BOOL)alwaysAllowHidingControlsOverlay;
+- (BOOL)areClosedCaptionsAvailable;
 - (unsigned int)audioControlsStyle;
 - (unsigned int)autoRotationMask;
 - (id)backgroundPlaceholderImage;
@@ -207,9 +217,11 @@
 - (unsigned int)bufferingState;
 - (BOOL)canContinuePlayingInBackground;
 - (BOOL)canContinuePlayingWhenLocked;
+- (BOOL)closedCaptioningEnabled;
 - (id)createTransitionControllerForChangeToInterfaceOrientation:(int)arg1 fromInterfaceOrientation:(int)arg2;
 - (id)createViewControllerForItem:(id)arg1 interfaceOrientation:(int)arg2 reusingController:(id)arg3;
 - (void)crossedChapterTimeMarker:(id)arg1;
+- (id)currentDate;
 - (double)currentTime;
 - (void)dealloc;
 - (void)debugSetup;
@@ -227,6 +239,7 @@
 - (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 isFullScreen:(BOOL)arg2;
 - (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1 options:(unsigned int)arg2;
 - (id)initWithPlayerSize:(struct CGSize { float x1; float x2; })arg1;
+- (int)interfaceOrientation;
 - (BOOL)isFullScreen;
 - (BOOL)isFullscreen;
 - (BOOL)isPreparedForPlayback;
@@ -235,6 +248,8 @@
 - (void)layoutUIInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)moviePath;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })moviePlaceholderImageRectForMovieWithAspectRatio:(float)arg1;
+- (id)movieSubtitle;
+- (id)movieTitle;
 - (id)movieView;
 - (BOOL)muted;
 - (struct CGSize { float x1; float x2; })naturalSize;
@@ -256,6 +271,8 @@
 - (id)posterImage;
 - (void)prepareAndSetupUI;
 - (void)prepareForPlayback;
+- (void)resignActive;
+- (BOOL)seekToDate:(id)arg1;
 - (double)seekableEndTime;
 - (double)seekableStartTime;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
@@ -268,6 +285,8 @@
 - (void)setBackgroundPlaceholderImage:(id)arg1;
 - (void)setCanAnimateControlsOverlay:(BOOL)arg1;
 - (void)setCanShowControlsOverlay:(BOOL)arg1;
+- (void)setClosedCaptioningEnabled:(BOOL)arg1;
+- (void)setClosedCaptions:(id)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 disableAutohide:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)setCurrentTime:(double)arg1 timeSnapOption:(unsigned int)arg2;
 - (void)setCurrentTime:(double)arg1;
@@ -279,15 +298,19 @@
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1;
 - (void)setInlinePlaybackUsesTVOut:(BOOL)arg1;
+- (BOOL)setInterfaceOrientation:(int)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)setItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setItem:(id)arg1;
 - (void)setManagesStatusBar:(BOOL)arg1;
 - (void)setMoviePath:(id)arg1;
+- (void)setMovieSubtitle:(id)arg1;
+- (void)setMovieTitle:(id)arg1;
 - (void)setOptions:(unsigned int)arg1;
 - (BOOL)setOrientation:(int)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)setPlayableContentType:(unsigned int)arg1;
 - (void)setPlaybackErrorDescription:(id)arg1;
 - (void)setPosterImage:(id)arg1;
+- (void)setStopAtEnd:(BOOL)arg1;
 - (BOOL)setUIOrientation:(int)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)setUseLegacyControls:(BOOL)arg1;
 - (void)setVideoFrameDisplayOnResumeDisabled:(BOOL)arg1;
@@ -295,6 +318,7 @@
 - (BOOL)shouldDisplayTitles;
 - (void)snapshotViewWasTapped:(id)arg1;
 - (void)stop;
+- (BOOL)stopAtEnd;
 - (void)tearDownUI;
 - (void)unlockMoviePlaybackResources;
 - (BOOL)useLegacyControls;
@@ -313,11 +337,10 @@
 - (void)videoControllerWillShowOverlay:(id)arg1;
 - (BOOL)videoFrameDisplayOnResumeDisabled;
 - (BOOL)videoOutActive;
-- (void)view:(id)arg1 didMoveToWindow:(id)arg2;
-- (void)view:(id)arg1 willMoveToWindow:(id)arg2;
 - (id)view;
 - (void)viewController:(id)arg1 beginIgnoringChangeTypes:(unsigned int)arg2;
 - (void)viewController:(id)arg1 endIgnoringChangeType:(unsigned int)arg2;
+- (void)viewControllerFailedToPlay:(id)arg1 withError:(id)arg2;
 - (void)viewControllerRequestsExit:(id)arg1 reason:(int)arg2;
 - (float)volume;
 - (id)youTubeVideoID;

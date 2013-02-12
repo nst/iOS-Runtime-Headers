@@ -2,20 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MessageStore, NSArray, NSData, NSString;
+@class MessageStore, NSArray, NSString;
 
 @interface Message : NSObject {
     unsigned int _calculatedAttachmentInfo : 1;
     NSArray *_bcc;
     NSArray *_cc;
     NSString *_contentType;
-    NSString *_conversationID;
+    long long _conversationID;
     unsigned int _dateReceivedInterval;
     unsigned int _dateSentInterval;
     NSString *_externalID;
     unsigned long long _generationNumber;
-    NSData *_inReplyToHeaderDigest;
-    NSData *_messageIDHeaderDigest;
+    long long _messageIDHeaderHash;
     unsigned short _numberOfAttachments;
     unsigned int _preferredEncoding;
     NSArray *_sender;
@@ -26,15 +25,15 @@
     NSArray *_to;
 }
 
-+ (void)initialize;
++ (Class)dataMessageStoreToUse;
++ (id)messageWithRFC822Data:(id)arg1;
 + (void)setMessageClassForStore:(id)arg1;
 
 - (void)_calculateAttachmentInfoFromBody:(id)arg1;
 - (id)_copyDateFromDateHeaderInHeaders:(id)arg1;
 - (id)_copyDateFromReceivedHeadersInHeaders:(id)arg1;
 - (BOOL)_doesDateAppearToBeSane:(id)arg1;
-- (id)_inReplyToHeaderDigestIvar;
-- (id)_messageIDHeaderDigestIvar;
+- (long long)_messageIDHeaderHashIvar;
 - (void)_setDateReceivedFromHeaders:(id)arg1;
 - (void)_setDateSentFromHeaders:(id)arg1;
 - (id)additionalHeadersForForward;
@@ -43,6 +42,7 @@
 - (id)bccIfCached;
 - (id)bestAlternativeInPart:(id)arg1;
 - (id)bodyData;
+- (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2;
 - (id)bodyDataIsComplete:(BOOL*)arg1;
 - (id)cachedAttributes;
 - (void)calculateAttachmentInfoFromBody:(id)arg1;
@@ -51,7 +51,7 @@
 - (id)cc;
 - (id)ccIfCached;
 - (id)contentType;
-- (id)conversationID;
+- (long long)conversationID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
@@ -71,7 +71,6 @@
 - (id)headerData;
 - (id)headers;
 - (id)headersIfAvailable;
-- (id)inReplyToHeaderDigest;
 - (id)init;
 - (BOOL)isLibraryMessage;
 - (BOOL)isMessageContentsLocallyAvailable;
@@ -84,8 +83,8 @@
 - (id)messageData;
 - (id)messageDataIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)messageID;
+- (long long)messageIDHash;
 - (id)messageIDHeader;
-- (id)messageIDHeaderDigest;
 - (id)messageIDHeaderInFortyBytesOrLess;
 - (unsigned int)messageSize;
 - (id)messageStore;
@@ -95,6 +94,7 @@
 - (id)persistentID;
 - (id)preferredEmailAddressToReplyWith;
 - (unsigned long)preferredEncoding;
+- (id)refreshedMessage;
 - (id)remoteID;
 - (id)senderAddressComment;
 - (id)senders;
@@ -102,21 +102,21 @@
 - (void)setBcc:(id)arg1;
 - (void)setCc:(id)arg1;
 - (void)setContentType:(id)arg1;
-- (void)setConversationID:(id)arg1;
+- (void)setConversationID:(long long)arg1;
 - (void)setDateReceivedTimeIntervalSince1970:(double)arg1;
 - (void)setDateSentTimeIntervalSince1970:(double)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setGenerationNumber:(unsigned long long)arg1;
-- (void)setInReplyToHeaderDigest:(id)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(BOOL)arg2;
-- (void)setMessageIDHeaderDigest:(id)arg1;
-- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHeaderDigest:(id)arg8 inReplyToHeaderDigest:(id)arg9 conversationID:(id)arg10 summary:(id)arg11;
+- (void)setMessageIDHash:(long long)arg1;
+- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHash:(long long)arg8 conversationID:(long long)arg9 summary:(id)arg10;
 - (void)setMessageInfoFromMessage:(id)arg1;
 - (void)setMessageStore:(id)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3;
 - (void)setNumberOfAttachments:(unsigned int)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
 - (void)setSender:(id)arg1;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setSubject:(id)arg1;
 - (void)setTo:(id)arg1;
 - (id)subject;
@@ -125,7 +125,5 @@
 - (id)toIfCached;
 - (unsigned long)uid;
 - (id)uniqueArray:(id)arg1 withStore:(id)arg2;
-- (void)unlockedSetInReplyToHeaderDigest:(id)arg1;
-- (void)unlockedSetMessageIDHeaderDigest:(id)arg1;
 
 @end

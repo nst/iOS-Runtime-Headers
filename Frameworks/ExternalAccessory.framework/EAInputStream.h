@@ -29,10 +29,12 @@
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
+- (void)endStream;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
 - (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
 - (void)open;
+- (void)openCompleted;
 - (id)propertyForKey:(id)arg1;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;

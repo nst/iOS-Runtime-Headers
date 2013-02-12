@@ -2,25 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber;
-
-@interface SSRingtonePurchase : SSPurchase <NSCoding, NSCopying> {
-    NSNumber *_assigneeIdentifier;
-    BOOL _shouldMakeDefaultRingtone;
+@interface SSRingtonePurchase : SSTonePurchase {
 }
-
-@property(retain) NSNumber * assigneeIdentifier;
-@property BOOL shouldMakeDefaultRingtone;
-
-- (id)assigneeIdentifier;
-- (id)copyPropertyListEncoding;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithPropertyListEncoding:(id)arg1;
-- (void)setAssigneeIdentifier:(id)arg1;
-- (void)setShouldMakeDefaultRingtone:(BOOL)arg1;
-- (BOOL)shouldMakeDefaultRingtone;
 
 @end

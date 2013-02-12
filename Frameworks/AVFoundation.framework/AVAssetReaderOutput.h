@@ -8,6 +8,7 @@
     AVAssetReaderOutputInternal *_internal;
 }
 
+@property BOOL alwaysCopiesSampleData;
 @property(getter=_extractionID,setter=_setExtractionID:) int extractionID;
 @property(getter=_figAssetReaderExtractionOptions,readonly) NSDictionary * figAssetReaderExtractionOptions;
 @property(readonly) NSString * mediaType;
@@ -35,12 +36,12 @@
 - (int)_status;
 - (BOOL)_trimsSampleDurations;
 - (id)_weakReferenceToAssetReader;
+- (BOOL)alwaysCopiesSampleData;
 - (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
 - (id)mediaType;
-- (void)release;
-- (id)retain;
+- (void)setAlwaysCopiesSampleData:(BOOL)arg1;
 
 @end

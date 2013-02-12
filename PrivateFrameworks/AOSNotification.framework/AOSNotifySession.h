@@ -13,7 +13,12 @@
 
 + (id)copySerialNum:(id*)arg1;
 + (id)copySetupToken:(id*)arg1;
++ (id)copyStoreAccount;
 
+- (void)_stopDeliveringNotifications;
+- (void)_topicNotified:(id)arg1;
+- (void)_vetFinished:(id)arg1;
+- (void)_vetResultReceived:(id)arg1;
 - (id)addAccount:(id)arg1;
 - (id)cancelEmailVet;
 - (void)dealloc;
@@ -24,9 +29,8 @@
 - (id)retrieveAllAccounts:(id*)arg1;
 - (id)retrieveCurrentAccountForService:(id)arg1 returningAccount:(id*)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)stopDeliveringNotifications;
+- (void)startListeningOnTopic:(id)arg1;
+- (void)stopListeningOnTopic:(id)arg1;
 - (id)vetEmailAccount:(id)arg1;
-- (void)vetFinished:(id)arg1;
-- (void)vetResultReceived:(id)arg1;
 
 @end

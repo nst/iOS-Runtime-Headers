@@ -67,6 +67,10 @@
             unsigned short wPort; 
         } mbRelayExt; 
         unsigned int dwRTT; 
+        int bIfLocalCellularQoS; 
+        int bIfRemoteCellularQoS; 
+        int iLocalCellTech; 
+        int iRemoteCellTech; 
     int bundle;
     int chatMode;
     <GKVoiceChatClient> *client;
@@ -123,7 +127,7 @@
 - (void)forceNoICE:(BOOL)arg1;
 - (double)getLocalBitrate;
 - (double)getLocalFramerate;
-- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(int)arg4;
+- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(long)arg4;
 - (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
 - (double)getRemoteBitrate;
 - (double)getRemoteFramerate;

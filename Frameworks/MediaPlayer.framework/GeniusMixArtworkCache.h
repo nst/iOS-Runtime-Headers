@@ -11,12 +11,11 @@
 
 @property(readonly) struct CGImage { }* artworkImage;
 @property(readonly) unsigned int coverCount;
-@property(readonly) struct CGSize { float width; float height; } coverSize;
+@property(readonly) struct CGSize { float x1; float x2; } coverSize;
 
 + (id)artworkCacheWithContentsOfFile:(id)arg1;
 + (id)artworkCacheWithCoverCount:(unsigned int)arg1 coverSize:(struct CGSize { float x1; float x2; })arg2 artworkData:(void*)arg3 length:(unsigned int)arg4;
 
-- (void)_cleanUpCachesInBackground;
 - (struct CGImage { }*)artworkImage;
 - (unsigned int)coverCount;
 - (struct CGSize { float x1; float x2; })coverSize;

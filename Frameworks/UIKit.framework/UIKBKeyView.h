@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBKey, UIKBKeyboard;
+@class UIKBTree;
 
 @interface UIKBKeyView : UIView {
     struct CGPoint { 
@@ -10,14 +10,14 @@
         float y; 
     struct __CFBoolean { } *m_allowsCaching;
     } m_drawOrigin;
-    UIKBKey *m_key;
-    UIKBKeyboard *m_keyboard;
+    UIKBTree *m_key;
+    UIKBTree *m_keyboard;
     int m_state;
 }
 
-@property struct CGPoint { float x; float y; } drawOrigin;
-@property(readonly) UIKBKey * key;
-@property(readonly) UIKBKeyboard * keyboard;
+@property struct CGPoint { float x1; float x2; } drawOrigin;
+@property(readonly) UIKBTree * key;
+@property(readonly) UIKBTree * keyboard;
 @property(readonly) int state;
 
 - (id)cacheKey;
@@ -31,5 +31,7 @@
 - (void)setDrawOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)shouldCache;
 - (int)state;
+- (int)textEffectsVisibilityLevel;
+- (void)updateForKeyboard:(id)arg1 key:(id)arg2;
 
 @end

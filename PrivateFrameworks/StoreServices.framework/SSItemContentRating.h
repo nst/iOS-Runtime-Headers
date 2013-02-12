@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSString, SSItemArtworkImage;
 
-@interface SSItemContentRating : NSObject <NSCopying> {
+@interface SSItemContentRating : NSObject <SSXPCCoding, NSCopying> {
     NSMutableDictionary *_dictionary;
 }
 
@@ -29,9 +29,11 @@
 - (void)_setValueCopy:(id)arg1 forProperty:(id)arg2;
 - (id)contentRatingDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (BOOL)isExplicitContent;
 - (BOOL)isRestricted;
 - (int)rank;

@@ -38,7 +38,6 @@
 - (BOOL)hasPlatform;
 - (BOOL)hasPlatformKey;
 - (BOOL)hasUserAgent;
-- (id)init;
 - (id)ip;
 - (id)locale;
 - (id)platform;

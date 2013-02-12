@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class <GKVoiceChatSessionDelegate>, GKRWLock, GKSessionInternal, GKVoiceChatServiceFocus, GKWifiListener, NSArray, NSMutableArray, NSMutableDictionary, NSString, VoiceChatMessageSendQueue, VoiceChatSessionRoster;
+@class <GKVoiceChatSessionDelegate>, GKRWLock, GKSessionInternal, GKVoiceChatServiceFocus, GKWifiListener, NSArray, NSMutableArray, NSMutableDictionary, NSString, VoiceChatSessionRoster;
 
 @interface GKVoiceChatSessionInternal : NSObject <GKSessionVoiceChatDelegate, GKVoiceChatClient, VideoConferenceSpeakingDelegate, WifiListenerDelegate> {
-    unsigned int _audioInputAvailable;
+    unsigned long _audioInputAvailable;
     unsigned int _conferenceID;
     NSMutableArray *_connectedFocusPeers;
     NSMutableArray *_connectedPeers;
@@ -20,7 +20,7 @@
     id _publicWrapper;
     VoiceChatSessionRoster *_roster;
     GKRWLock *_rwLock;
-    VoiceChatMessageSendQueue *_sendQueue;
+    struct dispatch_queue_s { } *_sendQueue;
     NSString *_sessionName;
     unsigned int _sessionState;
     GKVoiceChatServiceFocus *_vcService;
@@ -30,6 +30,7 @@
     <GKVoiceChatSessionDelegate> *delegate;
     BOOL focusCallbacks;
     int goodChannels;
+    BOOL isUsingSuppression;
     BOOL needsRecalculateGoodChannels;
     float sessionVolume;
     unsigned int talkingPeersLimit;
@@ -38,10 +39,13 @@
 @property(getter=isActiveSession) BOOL activeSession;
 @property(readonly) unsigned int conferenceID;
 @property <GKVoiceChatSessionDelegate> * delegate;
+@property BOOL isUsingSuppression;
 @property(readonly) NSArray * peerList;
 @property(readonly) NSString * sessionName;
 @property float sessionVolume;
 @property unsigned int talkingPeersLimit;
+
++ (void)brokenHash:(id)arg1 response:(char *)arg2;
 
 - (void)addPeerToFocusPausedList:(id)arg1;
 - (void)audioInputDidChange:(unsigned long)arg1;
@@ -66,6 +70,7 @@
 - (id)initWithGKSession:(id)arg1 publicWrapper:(id)arg2 sessionName:(id)arg3;
 - (BOOL)isActiveSession;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isUsingSuppression;
 - (void)lossRate:(float)arg1 forParticipantID:(id)arg2;
 - (void)parseConnectedPeers:(id)arg1;
 - (void)parseMutedPeers:(id)arg1 forPeer:(id)arg2;
@@ -85,6 +90,7 @@
 - (void)setActiveSession:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsUsingSuppression:(BOOL)arg1;
 - (void)setMute:(BOOL)arg1 forPeer:(id)arg2;
 - (void)setSessionVolume:(float)arg1;
 - (void)setTalkingPeersLimit:(unsigned int)arg1;

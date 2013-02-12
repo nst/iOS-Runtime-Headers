@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLCameraImporterDelegate>, ICCameraDevice, NSMutableArray, NSMutableDictionary, PLCameraImportQueue, PLImportFileManager, PLMutableCameraImportQueue;
+@class <PLCameraImporterDelegate>, ICCameraDevice, NSMutableArray, NSMutableDictionary, NSString, PLCameraImportQueue, PLImportFileManager, PLMutableCameraImportQueue;
 
 @interface PLCameraImporter : NSObject <ICDeviceDelegate, ICCameraDeviceDelegate> {
     BOOL _autosplitEvents;
@@ -15,17 +15,18 @@
     BOOL _importInProgress;
     BOOL _importItemInProgress;
     PLCameraImportQueue *_importQueue;
-    int _importSessionIdentifier;
     NSMutableArray *_items;
     NSMutableDictionary *_itemsMapping;
     NSMutableArray *_orphanItems;
     NSMutableDictionary *_parentFolderMapping;
     BOOL _stopAfterNextItemImport;
     PLMutableCameraImportQueue *_thumbnailQueue;
+    NSString *importSessionIdentifier;
 }
 
 @property(retain) ICCameraDevice * camera;
 @property <PLCameraImporterDelegate> * delegate;
+@property(copy) NSString * importSessionIdentifier;
 @property(retain) NSMutableArray * items;
 @property(retain) NSMutableDictionary * itemsMapping;
 
@@ -37,7 +38,8 @@
 - (void)_didFinishDeletingItems:(id)arg1;
 - (void)_didFinishImportingItems:(id)arg1;
 - (void)_downloadImportItems:(id)arg1;
-- (id)_nonPersistedEventWithDate:(id)arg1;
+- (id)_eventNameFromDate:(id)arg1;
+- (struct NSObject { Class x1; }*)_eventWithDate:(id)arg1;
 - (void)_photoLibraryFinishedImportForPhoto:(id)arg1 atPath:(id)arg2 error:(id)arg3;
 - (void)_removeImportItemForCameraFile:(id)arg1;
 - (void)_removeImportItemsAtPathsInBackground:(id)arg1;
@@ -77,6 +79,7 @@
 - (void)importImportItem:(id)arg1;
 - (id)importItemForCameraFile:(id)arg1;
 - (void)importItems:(id)arg1;
+- (id)importSessionIdentifier;
 - (id)initWithDevice:(id)arg1 delegate:(id)arg2;
 - (BOOL)isImporting;
 - (id)items;
@@ -88,6 +91,7 @@
 - (void)removeItems:(id)arg1;
 - (void)setCamera:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setImportSessionIdentifier:(id)arg1;
 - (void)setItems:(id)arg1;
 - (void)setItemsMapping:(id)arg1;
 - (void)stopImport;

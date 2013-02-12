@@ -13,6 +13,7 @@
         int breakType; 
         unsigned int pageWidth; 
         unsigned int pageHeight; 
+        unsigned int pageScale; 
         int pageOrientation; 
         unsigned int leftMargin; 
         unsigned int rightMargin; 
@@ -45,6 +46,7 @@
         unsigned int breakTypeOverridden : 1; 
         unsigned int pageWidthOverridden : 1; 
         unsigned int pageHeightOverridden : 1; 
+        unsigned int pageScaleOverridden : 1; 
         unsigned int pageOrientationOverridden : 1; 
         unsigned int leftMarginOverridden : 1; 
         unsigned int rightMarginOverridden : 1; 
@@ -84,6 +86,7 @@
         int breakType; 
         unsigned int pageWidth; 
         unsigned int pageHeight; 
+        unsigned int pageScale; 
         int pageOrientation; 
         unsigned int leftMargin; 
         unsigned int rightMargin; 
@@ -116,6 +119,7 @@
         unsigned int breakTypeOverridden : 1; 
         unsigned int pageWidthOverridden : 1; 
         unsigned int pageHeightOverridden : 1; 
+        unsigned int pageScaleOverridden : 1; 
         unsigned int pageOrientationOverridden : 1; 
         unsigned int leftMarginOverridden : 1; 
         unsigned int rightMarginOverridden : 1; 
@@ -217,6 +221,7 @@
 - (BOOL)isPageNumberRestartOverridden;
 - (BOOL)isPageNumberStartOverridden;
 - (BOOL)isPageOrientationOverridden;
+- (BOOL)isPageScaleOverridden;
 - (BOOL)isPageWidthOverridden;
 - (BOOL)isRightBorderOverridden;
 - (BOOL)isRightMarginOverridden;
@@ -241,6 +246,7 @@
 - (BOOL)pageNumberRestart;
 - (unsigned short)pageNumberStart;
 - (int)pageOrientation;
+- (unsigned long)pageScale;
 - (unsigned long)pageWidth;
 - (int)resolveMode;
 - (id)rightBorder;
@@ -270,6 +276,7 @@
 - (void)setPageNumberRestart:(BOOL)arg1;
 - (void)setPageNumberStart:(unsigned short)arg1;
 - (void)setPageOrientation:(int)arg1;
+- (void)setPageScale:(unsigned long)arg1;
 - (void)setPageWidth:(unsigned long)arg1;
 - (void)setResolveMode:(int)arg1;
 - (void)setRightMargin:(unsigned long)arg1;

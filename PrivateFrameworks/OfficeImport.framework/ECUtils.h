@@ -8,8 +8,10 @@
 + (id)dateFromXlDateTimeNumber:(double)arg1 edWorkbook:(id)arg2;
 + (void)incrementFormulaCellCount:(unsigned int*)arg1;
 + (void)incrementTotalCellCount:(unsigned int*)arg1;
++ (BOOL)isRenameFunction:(id)arg1;
 + (bool)isValidDateTime:(double)arg1 edWorkbook:(id)arg2;
 + (id)lassoStyleTableReferenceFromTableId:(id)arg1;
++ (id)renameFunction:(id)arg1;
 + (double)timeIntervalFromXlDateTimeNumber:(double)arg1 edWorkbook:(id)arg2;
 
 @end

@@ -33,13 +33,13 @@
 
 @property(retain) NSArray * backgroundDrawDescriptors;
 @property int backgroundStyle;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } borderInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
 @property unsigned int cellCount;
 @property float cellGapWidth;
 @property unsigned int columnCount;
 @property BOOL drawSelected;
 @property(retain) UIImage * fillImage;
-@property struct CGSize { float width; float height; } fillImagePhase;
+@property struct CGSize { float x1; float x2; } fillImagePhase;
 @property BOOL grouped;
 @property BOOL ignoreFillPhaseYOffset;
 @property int selectedCell;
@@ -54,7 +54,6 @@
 + (id)selectedCellBackgroundWithTheme:(id)arg1;
 
 - (void)_drawBorderOutlineInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cellIndex:(int)arg2;
-- (void)_drawFourPartBorderImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)backgroundDrawDescriptors;
 - (int)backgroundStyle;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;

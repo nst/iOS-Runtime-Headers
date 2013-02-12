@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AccountSettingsUI.framework/AccountSettingsUI
  */
 
-@class DeviceLocalAccount, NSArray, NSMutableDictionary, NSString, UIProgressHUD, UIView;
+@class AccountSettingsUISyncDataController, DeviceLocalAccount, NSArray, NSMutableDictionary, NSString, UIProgressHUD, UIView;
 
 @interface AccountSettingsUISyncController : AccountSettingsUIDetailController <UIActionSheetDelegate> {
     id _account;
+    BOOL _accountHasSeparateRemindersDataclass;
+    NSString *_accountIdentifier;
     UIView *_confirmDeleteAccountSheet;
     UIView *_confirmDisableSyncSheet;
     UIView *_confirmEnableSyncSheet;
@@ -28,10 +30,12 @@
     BOOL _shouldSaveDeviceLocalAccount;
     BOOL _showsDeleteAccountButton;
     id _syncActionsAccount;
+    AccountSettingsUISyncDataController *_syncDataController;
     NSMutableDictionary *_syncSaveOperationsByDataclass;
 }
 
 @property(retain) id account;
+@property(copy) id accountIdentifier;
 @property BOOL didDeleteAccount;
 @property BOOL didFinishFirstSetup;
 @property(getter=isFirstSetup) BOOL firstSetup;
@@ -43,39 +47,28 @@
 + (BOOL)shouldPresentAsModalSheet;
 
 - (id)_accountInfoSpecifier;
+- (id)_aggregateDictionaryKeyForDataclass:(id)arg1 enabled:(BOOL)arg2;
 - (void)_backgroundDeleteAccountData:(id)arg1;
 - (void)_backgroundSaveSyncSettings:(id)arg1;
 - (BOOL)_carrierBundleSaysHideFindMyiPhone;
-- (void)_clearAnchorsForDataclass:(id)arg1;
-- (void)_clearAnchorsForLocalDataclass:(id)arg1;
-- (void*)_createDeviceLocalSyncDataSourceForDataclass:(id)arg1;
-- (void)_createLocalDataSourceForDataclass:(id)arg1;
+- (void)_commitSyncSettings:(id)arg1 forAccount:(id)arg2;
 - (id)_dataclassesTextForDeleteConfirmationIncludingMail:(BOOL)arg1;
-- (id)_deviceLocalAccount;
 - (void)_disableDataclass:(id)arg1;
 - (void)_enableDataclass:(id)arg1;
-- (void)_enableTetheredSyncingForDataclass:(id)arg1;
 - (void)_hideHUD;
-- (void)_hideLocalStoreForDataclass:(id)arg1;
 - (void)_hideModalProgressAfterDelay:(double)arg1;
 - (id)_localizationKeyForDataclass:(id)arg1 withSuffix:(id)arg2;
 - (void)_mainThreadFinishedDeleteAccountDataWithSuccess:(id)arg1;
 - (void)_mainThreadFinishedSaveSyncSettings;
-- (void)_mergeLocalDataForDataclass:(id)arg1;
-- (void)_mergeSyncDataForDataclass:(id)arg1;
 - (id)_modalProgressTextForDataclass:(id)arg1 enabled:(BOOL)arg2;
 - (id)_navigationTitle;
 - (void)_reallyFinishedFirstSetup;
-- (void)_removeDataStoreForDataclass:(id)arg1;
-- (void)_removeLocalDataStoreForDataclass:(id)arg1;
-- (void)_saveDeviceLocalAccount;
-- (void)_setSyncActionsAccount:(id)arg1;
-- (void)_showLocalStoreIfAppropriateForDataclass:(id)arg1;
+- (id)_sanitizeSyncSettingsDictionary:(id)arg1 forAccount:(id)arg2;
 - (void)_showModalProgress;
 - (void)_showModalProgressWithText:(id)arg1 afterDelay:(double)arg2;
-- (id)_syncActionsAccount;
 - (id)_viewForSheet;
 - (id)account;
+- (id)accountIdentifier;
 - (Class)accountInfoControllerClass;
 - (BOOL)accountInfoSpecifierEnabled;
 - (id)accountInfoUsername:(id)arg1;
@@ -106,9 +99,14 @@
 - (void)didConfirmEnableSyncSettings:(id)arg1;
 - (void)didConfirmSaveSyncSettings:(BOOL)arg1;
 - (BOOL)didDeleteAccount;
+- (void)didFinishDeletingAccountInBackground;
 - (BOOL)didFinishFirstSetup;
+- (void)didFinishSavingSyncSettingsInBackground;
 - (void)didReallyConfirmEnableSyncSettings:(id)arg1;
 - (void)didReallyConfirmKeepLocalData:(id)arg1;
+- (void)didSaveSyncSettings:(id)arg1 forAccount:(id)arg2;
+- (id)displayedAccountTypeString;
+- (id)displayedShortAccountTypeString;
 - (void)doneButtonClicked:(id)arg1;
 - (void)ensurePreconditionIsMetToDisableDataclass:(id)arg1;
 - (void)ensurePreconditionIsMetToEnableDataclass:(id)arg1;
@@ -141,6 +139,7 @@
 - (void)saveSyncSettings:(id)arg1 forAccount:(id)arg2;
 - (void)saveSyncSettings;
 - (void)setAccount:(id)arg1;
+- (void)setAccountIdentifier:(id)arg1;
 - (void)setDataclassEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setDidDeleteAccount:(BOOL)arg1;
 - (void)setDidFinishFirstSetup:(BOOL)arg1;

@@ -20,6 +20,7 @@
         unsigned int customSelectedImage : 1; 
         unsigned int customUnselectedImage : 1; 
     SEL _action;
+    id _appearanceStorage;
     NSString *_badgeValue;
     UIImage *_image;
     } _imageInsets;
@@ -37,25 +38,29 @@
 @property BOOL animatedBadge;
 @property(copy) NSString * badgeValue;
 @property(retain) UIImage * selectedImage;
-@property int tag;
 @property id target;
 @property(retain) UIImage * unselectedImage;
 @property(retain) UIView * view;
 @property BOOL viewIsCustom;
 
-+ (void)_initializeSafeCategory;
++ (id)_appearanceProxyViewClasses;
 
+- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 withTint:(BOOL)arg3;
 - (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2;
 - (id)_internalTemplateImage;
 - (id)_internalTitle;
 - (void)_setInternalTemplateImage:(id)arg1;
 - (void)_setInternalTitle:(id)arg1;
+- (void)_setTitleTextAttributeValue:(id)arg1 forAttributeKey:(id)arg2 state:(unsigned int)arg3;
+- (id)_updateImageWithTintColor:(id)arg1 isSelected:(BOOL)arg2 getImageOffset:(struct UIOffset { float x1; float x2; }*)arg3;
 - (void)_updateView;
 - (SEL)action;
 - (BOOL)animatedBadge;
 - (id)badgeValue;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (id)finishedSelectedImage;
+- (id)finishedUnselectedImage;
 - (id)image;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (id)init;
@@ -71,12 +76,15 @@
 - (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (void)setBadgeValue:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setFinishedSelectedImage:(id)arg1 withFinishedUnselectedImage:(id)arg2;
 - (void)setImage:(id)arg1;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelectedImage:(id)arg1;
 - (void)setTag:(int)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)setUnselectedImage:(id)arg1;
 - (void)setView:(id)arg1;
 - (void)setViewIsCustom:(BOOL)arg1;
@@ -84,6 +92,8 @@
 - (int)tag;
 - (id)target;
 - (id)title;
+- (struct UIOffset { float x1; float x2; })titlePositionAdjustment;
+- (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)unselectedImage;
 - (id)view;
 - (BOOL)viewIsCustom;

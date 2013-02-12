@@ -14,9 +14,9 @@
     SSOperationProgress *_progress;
     NSArray *_serializationLockIdentifiers;
     BOOL _shouldMessageMainThread;
+    BOOL _shouldRunWithBackgroundPriority;
     ISOperation *_subOperation;
     BOOL _success;
-    int _threadPriority;
     id _threadSafeDelegate;
 }
 
@@ -29,9 +29,9 @@
 @property(readonly) int progressWeight;
 @property(copy) NSArray * serializationLockIdentifiers;
 @property BOOL shouldMessageMainThread;
+@property BOOL shouldRunWithBackgroundPriority;
 @property(retain) ISOperation * subOperation;
 @property BOOL success;
-@property int threadPriority;
 @property(readonly) id threadSafeDelegate;
 @property(readonly) NSString * uniqueKey;
 
@@ -40,7 +40,7 @@
 - (void)_main:(BOOL)arg1;
 - (void)_sendErrorToDelegate:(id)arg1;
 - (void)_sendSuccessToDelegate;
-- (BOOL)_setThreadPriority:(int)arg1 returningPreviousValue:(int*)arg2;
+- (void)_sendWillStartToDelegate;
 - (id)authenticatedAccountDSID;
 - (void)cancel;
 - (BOOL)copyAccountID:(id*)arg1 byAuthenticatingWithContext:(id)arg2 returningError:(id*)arg3;
@@ -62,6 +62,7 @@
 - (void)run:(BOOL)arg1;
 - (void)run;
 - (long)runRunLoopUntilStopped;
+- (BOOL)runSubOperation:(id)arg1 onQueue:(id)arg2 error:(id*)arg3;
 - (BOOL)runSubOperation:(id)arg1 returningError:(id*)arg2;
 - (void)sendCompletionCallback:(id)arg1;
 - (void)sendProgressToDelegate;
@@ -74,15 +75,15 @@
 - (void)setScriptOptions:(id)arg1;
 - (void)setSerializationLockIdentifiers:(id)arg1;
 - (void)setShouldMessageMainThread:(BOOL)arg1;
+- (void)setShouldRunWithBackgroundPriority:(BOOL)arg1;
 - (void)setSubOperation:(id)arg1;
 - (void)setSuccess:(BOOL)arg1;
-- (void)setThreadPriority:(int)arg1;
 - (BOOL)shouldFailAfterUniquePredecessorError:(id)arg1;
 - (BOOL)shouldMessageMainThread;
+- (BOOL)shouldRunWithBackgroundPriority;
 - (void)stopRunLoop;
 - (id)subOperation;
 - (BOOL)success;
-- (int)threadPriority;
 - (id)threadSafeDelegate;
 - (id)uniqueKey;
 - (void)unlock;

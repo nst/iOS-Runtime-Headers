@@ -14,7 +14,6 @@
 - (BOOL)isFirstLayout;
 - (BOOL)isGraphicalRegion;
 - (BOOL)isImageRegion;
-- (BOOL)isInMainFlow;
 - (BOOL)isRowRegion;
 - (BOOL)isShapeRegion;
 - (BOOL)isSimilarTo:(id)arg1;

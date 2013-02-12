@@ -11,6 +11,7 @@
     NSDictionary *userInfo;
 }
 
++ (void)errnoRaise:(id)arg1 format:(id)arg2;
 + (id)exceptionWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
 + (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (void)raise:(id)arg1 format:(id)arg2;
@@ -30,6 +31,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
+- (int)localErrno;
 - (id)name;
 - (void)raise;
 - (id)reason;

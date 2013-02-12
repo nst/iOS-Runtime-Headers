@@ -12,6 +12,8 @@
 + (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
 + (id)valueWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
 - (BOOL)boolValue;
 - (BOOL)charValue;
@@ -29,6 +31,7 @@
 - (long long)longLongValue;
 - (long)longValue;
 - (const char *)objCType;
+- (id)objectID;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

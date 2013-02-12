@@ -10,14 +10,20 @@
 
 @property(retain) ALAssetsLibraryPrivate * internal;
 
-- (void)_attachAux;
-- (void)_detachAux;
++ (id)_library;
+
+- (void)_addGroupForAlbum:(struct NSObject { Class x1; }*)arg1 ofType:(unsigned int)arg2 toArray:(id)arg3;
+- (id)_copyGroupForURL:(id)arg1;
 - (BOOL)_libraryIsAvailable;
-- (void)_writeImageToSavedPhotosAlbum:(id)arg1 imageData:(id)arg2 metadata:(id)arg3 completionBlock:(id)arg4;
+- (void)_performBlockAndWait:(id)arg1;
+- (void)_writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(int)arg2 imageData:(id)arg3 metadata:(id)arg4 internalProperties:(id)arg5 completionBlock:(id)arg6;
+- (void)_writeVideoAtPathToSavedPhotosAlbum:(id)arg1 internalProperties:(id)arg2 completionBlock:(id)arg3;
 - (void)addAsset:(id)arg1;
+- (void)addAssetsGroupAlbumWithName:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)assetForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)dealloc;
 - (void)enumerateGroupsWithTypes:(unsigned int)arg1 usingBlock:(id)arg2 failureBlock:(id)arg3;
+- (void)groupForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
 - (id)init;
 - (id)internal;
 - (BOOL)isValid;

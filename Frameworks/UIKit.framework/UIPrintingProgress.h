@@ -22,7 +22,6 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)dealloc;
-- (void)didEnterBackground;
 - (void)didPresentAlertView:(id)arg1;
 - (void)endProgress;
 - (void)hideProgressAnimated:(BOOL)arg1;

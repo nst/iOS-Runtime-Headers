@@ -16,11 +16,11 @@
 + (id)_pendingRecipientFile;
 + (id)sharedInstance;
 
+- (void)_clearDraftForConversation:(id)arg1;
 - (id)_draftForKey:(id)arg1;
 - (id)_pendingRecipients;
 - (void)_setDraft:(id)arg1 forKey:(id)arg2;
 - (void)_setPendingRecipients:(id)arg1;
-- (void)clearDraftForConversation:(id)arg1;
 - (void)clearDraftForPendingConversation;
 - (void)dealloc;
 - (id)draftForConversation:(id)arg1;

@@ -11,17 +11,18 @@
 }
 
 @property(readonly) BOOL hasReply;
-@property(readonly) BOOL hasStatus;
+@property BOOL hasStatus;
 @property(retain) LBSGLocResponse * reply;
 @property int status;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasReply;
 - (BOOL)hasStatus;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (id)reply;
+- (void)setHasStatus:(BOOL)arg1;
 - (void)setReply:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;

@@ -2,13 +2,19 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
+@class NSString;
+
 @interface _NSCoreDataException : NSException {
     long _code;
+    NSString *_domain;
 }
 
 + (id)exceptionWithName:(id)arg1 code:(long)arg2 reason:(id)arg3 userInfo:(id)arg4;
 
+- (void)_setDomain:(id)arg1;
 - (long)code;
+- (void)dealloc;
+- (id)domain;
 - (id)initWithName:(id)arg1 code:(long)arg2 reason:(id)arg3 userInfo:(id)arg4;
 - (id)initWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
 

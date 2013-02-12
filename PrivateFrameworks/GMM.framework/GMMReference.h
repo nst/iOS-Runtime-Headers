@@ -19,7 +19,6 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setTitle:(id)arg1;

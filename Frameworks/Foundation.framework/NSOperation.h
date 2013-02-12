@@ -3,8 +3,8 @@
  */
 
 @interface NSOperation : NSObject {
+    int _private1;
     id _private;
-    void *_reserved;
 }
 
 @property unsigned int tag;
@@ -13,7 +13,10 @@
 + (void)initialize;
 
 - (void)NSOperationAdditions_dealloc;
+- (id)__;
 - (id)_implicitObservationInfo;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)addDependency:(id)arg1;
 - (void)cancel;
 - (id)completionBlock;
@@ -30,7 +33,7 @@
 - (void)main;
 - (void*)observationInfo;
 - (int)queuePriority;
-- (void)release;
+- (oneway void)release;
 - (void)removeDependency:(id)arg1;
 - (id)retain;
 - (unsigned int)retainCount;

@@ -2,39 +2,40 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPage;
+@class NSString, UIPDFPage, UIPDFPageImageCache;
 
 @interface UIPDFDocument : NSObject {
     float _cachedWidth;
     struct CGPDFDocument { } *_cgDocument;
+    NSString *_documentName;
+    unsigned int _imageCacheCount;
+    int _imageCacheLock;
+    unsigned int _imageCacheLookAhead;
+    int _lock;
     unsigned int _numberOfPages;
     UIPDFPage **_pageArray;
+    UIPDFPageImageCache *_pageImageCache;
 }
 
-@property(readonly) struct CGPDFDocument { }* cgPDFDocument;
 @property(readonly) unsigned int numberOfPages;
+@property(retain) UIPDFPageImageCache * pageImageCache;
 
 + (id)documentNamed:(id)arg1;
 
 - (void)_clearCachedState;
-- (void)_setDocument:(struct CGPDFDocument { }*)arg1;
-- (unsigned long)cfCompareFlagsFromNSOptions:(unsigned int)arg1;
-- (struct CGPDFDocument { }*)cgPDFDocument;
+- (struct CGPDFDocument { }*)copyCGPDFDocument;
 - (void)dealloc;
-- (id)findString:(id)arg1 fromSelection:(id)arg2 options:(unsigned int)arg3;
-- (id)findString:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 options:(unsigned int)arg4;
-- (id)findStringBackward:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 compareFlags:(unsigned long)arg4;
-- (id)findStringForward:(id)arg1 onPage:(id)arg2 fromSelection:(id)arg3 compareFlags:(unsigned long)arg4;
-- (id)followingPage:(id)arg1;
-- (unsigned int)indexForPage:(id)arg1;
 - (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
 - (id)initWithURL:(id)arg1;
 - (float)maxHeight;
 - (float)maxWidth;
 - (unsigned int)numberOfPages;
 - (id)pageAtIndex:(unsigned int)arg1;
-- (id)previousPage:(id)arg1;
+- (id)pageImageCache;
 - (void)purgePagesBefore:(unsigned int)arg1;
+- (void)setCGPDFDocument:(struct CGPDFDocument { }*)arg1;
+- (void)setImageCacheCount:(unsigned int)arg1 lookAhead:(unsigned int)arg2;
+- (void)setPageImageCache:(id)arg1;
 - (float)sumHeight;
 - (float)sumWidth;
 

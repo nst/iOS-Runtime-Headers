@@ -4,7 +4,7 @@
 
 @class <SUMessageEntryViewControllerDelegate>, NSArray, NSString, SUMessageEntryView, UIImagePickerController;
 
-@interface SUMessageEntryViewController : SUViewController <SUMessageEntryViewDelegate> {
+@interface SUMessageEntryViewController : SUViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SUMessageEntryViewDelegate> {
     <SUMessageEntryViewControllerDelegate> *_delegate;
     UIImagePickerController *_imagePicker;
     NSArray *_imagePickerMediaTypes;

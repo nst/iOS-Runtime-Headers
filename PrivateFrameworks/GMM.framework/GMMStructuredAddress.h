@@ -43,7 +43,6 @@
 - (BOOL)hasPostalCode;
 - (BOOL)hasRegion;
 - (BOOL)hasThoroughfare;
-- (id)init;
 - (id)locality;
 - (id)postalCode;
 - (BOOL)readFrom:(id)arg1;

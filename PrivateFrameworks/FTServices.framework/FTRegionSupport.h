@@ -9,6 +9,8 @@
     NSArray *_regions;
 }
 
+@property(retain) FTMessageDelivery * _delivery;
+@property(retain) NSArray * _regions;
 @property(readonly) BOOL isLoaded;
 @property(readonly) BOOL isLoading;
 @property(readonly) NSArray * regions;
@@ -16,16 +18,18 @@
 + (id)sharedInstance;
 
 - (void)_buildMessageDeliveryIfNeeded;
-- (id)autorelease;
+- (id)_delivery;
+- (id)_regions;
+- (BOOL)allowsWeakReference;
 - (void)dealloc;
 - (void)flushRegions;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
-- (void)message:(id)arg1 deliveredWithError:(id)arg2 resultCode:(int)arg3 resultDictionary:(id)arg4;
 - (id)regionForID:(id)arg1;
 - (id)regions;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
+- (void)set_delivery:(id)arg1;
+- (void)set_regions:(id)arg1;
 - (void)startLoading;
 
 @end

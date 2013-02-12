@@ -4,22 +4,23 @@
 
 @class UILongPressGestureRecognizer, UITapAndAHalfRecognizer, UIWebDocumentView, UIWebSelection, UIWebSelectionView;
 
-@interface UIWebSelectionAssistant : NSObject <UILongPressGestureRecognizerDelegate> {
+@interface UIWebSelectionAssistant : NSObject <UIGestureRecognizerDelegate> {
     BOOL _enabled;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    UIWebSelectionView *_selectionView;
     UITapAndAHalfRecognizer *_tapAndAHalfGestureRecognizer;
-    UIWebSelectionView *_tintView;
     UIWebDocumentView *_webView;
 }
 
 @property BOOL enabled;
 @property(readonly) UIWebSelection * selection;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } selectionFrame;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
 
 - (void)clearSelection;
 - (void)dealloc;
+- (void)didEndScrollingOverflow;
+- (void)didEndScrollingPage;
 - (void)didRotate:(id)arg1;
-- (void)doneDragging;
 - (BOOL)enabled;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -28,7 +29,7 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 fromView:(id)arg3;
 - (id)initWithWebView:(id)arg1;
 - (BOOL)isSelectionGestureRecognizer:(id)arg1;
-- (void)layoutChanged;
+- (void)layoutChangedByScrolling:(BOOL)arg1;
 - (void)makeWebSelection:(id)arg1;
 - (void)resignedFirstResponder;
 - (void)scaleChanged;
@@ -38,7 +39,8 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setGestureRecognizers;
 - (void)tap:(id)arg1;
-- (void)willDrag;
 - (void)willRotate:(id)arg1;
+- (void)willStartScrollingOverflow;
+- (void)willStartScrollingPage;
 
 @end

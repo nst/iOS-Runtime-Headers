@@ -6,6 +6,7 @@
 
 @interface SFUFileDataRepresentation : SFUDataRepresentation {
     SFUCryptoKey *mCryptoKey;
+    BOOL mDeleteFileWhenDone;
     long long mFileLength;
     unsigned int mFileType;
     BOOL mHasFileAttributes;
@@ -16,6 +17,7 @@
 
 - (long long)dataLength;
 - (void)dealloc;
+- (void)deleteFileWhenDone;
 - (id)description;
 - (long long)encodedLength;
 - (unsigned long)fileType;

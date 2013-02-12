@@ -12,18 +12,22 @@
 }
 
 - (struct CGPDFSelection { }*)CGSelection;
+- (id)attributedStringAtIndex:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)containingTextLine;
 - (void)dealloc;
 - (id)description;
 - (void)extendToParagraph;
-- (void)getBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 index:(unsigned int)arg3;
+- (BOOL)getBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 index:(unsigned int)arg3;
+- (id)htmlAtIndex:(unsigned int)arg1;
 - (id)initWithPage:(id)arg1 cgSelection:(struct CGPDFSelection { }*)arg2;
 - (BOOL)isEmpty;
+- (BOOL)isNonEmpty;
 - (BOOL)isWord;
 - (unsigned int)numberOfRectangles;
 - (id)page;
 - (id)string;
+- (id)textAtIndex:(unsigned int)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 
 @end

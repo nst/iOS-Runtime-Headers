@@ -19,10 +19,6 @@
 @property BOOL resizesToFit;
 @property(retain,readonly) UILabel * titleLabel;
 
-+ (void)_initializeSafeCategory;
-
-- (id)accessibilityLabel;
-- (id)accessibilityValue;
 - (float)contentViewHeightOffset;
 - (float)contentViewOriginXOffset;
 - (float)contentViewWidthOffset;

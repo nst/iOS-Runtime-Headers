@@ -9,9 +9,11 @@
         unsigned int animationInProgress : 1; 
         unsigned int ignoresInteractionEvents : 1; 
         unsigned int shouldNotifyDidCompleteImmediately : 1; 
+        unsigned int useViewControllerAppearanceCallbacks : 1; 
         unsigned int shouldRestoreFromViewAlpha : 1; 
         unsigned int shouldRasterize : 1; 
-        unsigned int reserved : 27; 
+        unsigned int enableRotationAfterTransition : 1; 
+        unsigned int reserved : 25; 
     id _delegate;
     UIResponder *_firstResponderToRemember;
     UIView *_fromView;
@@ -23,7 +25,6 @@
 
 @property BOOL shouldNotifyDidCompleteImmediately;
 
-+ (void)_initializeSafeCategory;
 + (double)defaultDurationForTransition:(int)arg1;
 
 - (void)_didCompleteTransition:(BOOL)arg1;

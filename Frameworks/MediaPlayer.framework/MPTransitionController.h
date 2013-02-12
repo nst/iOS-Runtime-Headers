@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPViewController, NSMutableSet, UIView;
+@class MPViewController, NSMutableSet, UIView, UIViewController;
 
 @interface MPTransitionController : NSObject {
     float _duration;
@@ -12,6 +12,7 @@
     NSMutableSet *_persistentViewsToFadeIn;
     NSMutableSet *_persistentViewsToFadeOut;
     UIView *_rootView;
+    UIViewController *_toContainerViewController;
     int _toInterfaceOrientation;
     MPViewController *_toViewController;
     NSMutableSet *_viewsToFadeIn;
@@ -22,6 +23,7 @@
 @property int fromInterfaceOrientation;
 @property(retain) MPViewController * fromViewController;
 @property(retain) UIView * rootView;
+@property(retain) UIViewController * toContainerViewController;
 @property int toInterfaceOrientation;
 @property(retain) MPViewController * toViewController;
 
@@ -29,22 +31,27 @@
 - (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)addViewToFadeOut:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)dealloc;
+- (void)didFinishTransition:(BOOL)arg1;
 - (float)duration;
 - (void)fadeViewsForRestore:(BOOL)arg1;
 - (int)fromInterfaceOrientation;
 - (id)fromViewController;
 - (id)init;
 - (void)messageObserversWithSuccess:(BOOL)arg1;
+- (void)performTransition:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)rootView;
 - (void)setDuration:(float)arg1;
 - (void)setFromInterfaceOrientation:(int)arg1;
 - (void)setFromViewController:(id)arg1;
 - (void)setRootView:(id)arg1;
+- (void)setToContainerViewController:(id)arg1;
 - (void)setToInterfaceOrientation:(int)arg1;
 - (void)setToViewController:(id)arg1;
+- (id)toContainerViewController;
 - (int)toInterfaceOrientation;
 - (id)toViewController;
 - (void)transition:(unsigned int)arg1;
+- (void)willBeginTransition:(unsigned int)arg1;
 
 @end

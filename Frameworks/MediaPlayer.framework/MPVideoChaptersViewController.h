@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoView, NSArray, UIMovieChapterListView;
+@class MPImageCache, MPVideoView, NSArray, UIMovieChapterListView;
 
 @interface MPVideoChaptersViewController : MPViewController <UITableViewDataSource, UITableViewDelegate> {
     unsigned int _haveThumbnails : 1;
@@ -10,6 +10,7 @@
     UIMovieChapterListView *_chapterListView;
     NSArray *_chapterTimeMarkers;
     unsigned int _currentMarker;
+    MPImageCache *_imageCache;
     float _timeColumnWidth;
     MPVideoView *_videoView;
 }
@@ -27,6 +28,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)loadView;
+- (id)newImageRequestWithMediaEntity:(id)arg1 timeMarker:(id)arg2;
 - (void)setChapterTimeMarkers:(id)arg1;
 - (void)setCurrentMarker:(unsigned int)arg1;
 - (void)setCurrentMarkerIndex:(unsigned int)arg1;
@@ -38,7 +40,6 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (float)topPadding;
 - (BOOL)videoOutActive;
-- (void)videoView:(id)arg1 madeThumbnail:(id)arg2 forTime:(float)arg3;
 - (id)videoView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

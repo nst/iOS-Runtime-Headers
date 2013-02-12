@@ -13,19 +13,17 @@
     double _holdDelayInterval;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } hitRectInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitRectInsets;
 @property double holdDelayInterval;
 
-+ (void)_initializeSafeCategory;
++ (id)easyTouchButtonWithType:(int)arg1;
++ (float)easyTouchDefaultCharge;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })easyTouchDefaultHitRectInsets;
 
 - (void)_delayedTriggerHold;
 - (void)_handleTouchCancel;
 - (void)_handleTouchDown;
 - (void)_handleTouchUp;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

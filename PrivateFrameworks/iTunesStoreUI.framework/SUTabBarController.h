@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUTabBarControllerDelegate>, NSArray, NSMutableArray, NSString, SUSection, UIViewController;
+@class <SUTabBarControllerDelegate>, NSArray, NSMutableArray, NSString, UIViewController;
 
-@interface SUTabBarController : UITabBarController {
-    NSArray *_cachedControllers;
-    SUSection *_cachedControllersSection;
+@interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate> {
     NSString *_moreListTitle;
     NSMutableArray *_overlayBackgroundViewControllers;
     UIViewController *_preTransientSelectedViewController;
     int _reloadingUnderneathTransientControllerCount;
     NSArray *_sections;
-    BOOL _trackingNetworkType;
 }
 
 @property <SUTabBarControllerDelegate> * delegate;
@@ -20,17 +17,18 @@
 @property(retain) NSArray * sections;
 @property(retain) NSString * selectedIdentifier;
 
++ (Class)_moreNavigationControllerClass;
+
 - (void)_applyMoreListTitle;
 - (id)_archivedContextsForViewController:(id)arg1;
 - (void)_beginReloadingUnderneathTransientViewController;
-- (void)_clearNetworkLockoutController;
-- (void)_destroyCachedControllers;
 - (void)_endReloadingUnderneathTransientViewController;
 - (void)_fixupTabBarSelection;
 - (void)_fixupViewControllers;
 - (BOOL)_isReloadingUnderneathTransientViewController;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_locationChanged:(id)arg1;
+- (void)_moveTransientViewController:(id)arg1 toSectionWithIdentifier:(id)arg2 asRoot:(BOOL)arg3;
 - (void)_partnerChanged:(id)arg1;
 - (void)_reloadViewControllersFromSections:(id)arg1 animated:(BOOL)arg2;
 - (void)_restoreArchivedContexts:(id)arg1;
@@ -39,18 +37,15 @@
 - (id)_rootViewControllerForSection:(id)arg1;
 - (BOOL)_saveNavigationPathToDefaults;
 - (BOOL)_saveTransientNavigationPathToDefaults;
+- (id)_sectionForIdentifier:(id)arg1;
 - (id)_sectionForViewController:(id)arg1;
 - (void)_setSelectedViewController:(id)arg1;
 - (void)_transitionSafeHandleLocationChange:(id)arg1;
 - (void)_transitionSafeHandlePartnerChange:(id)arg1;
-- (void)_transitionSafeReloadForNetworkTypeChange;
-- (void)_updateLockoutVisibility;
-- (void)_updateLockoutVisibilityForMoreList;
 - (id)_viewControllerForContext:(id)arg1;
 - (void)cancelTransientViewController:(id)arg1;
 - (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dismissModalViewControllerWithTransition:(int)arg1;
 - (void)dismissOverlayBackgroundViewController;
 - (unsigned int)indexOfViewControllerWithSectionType:(int)arg1;
 - (id)init;
@@ -58,12 +53,10 @@
 - (void)loadView;
 - (id)moreListTitle;
 - (id)overlayBackgroundViewController;
-- (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)presentOverlayBackgroundViewController:(id)arg1;
-- (void)reloadForNetworkTypeChange;
+- (void)pushTransientViewController:(id)arg1 onSectionWithIdentifier:(id)arg2;
 - (void)resetToSystemDefaults;
 - (void)resetUserDefaults;
-- (void)rootTransientViewController:(id)arg1 inSectionWithIdentifier:(id)arg2;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
 - (BOOL)saveOrderingToDefaults;
@@ -79,6 +72,7 @@
 - (void)setSections:(id)arg1;
 - (void)setSelectedIdentifier:(id)arg1;
 - (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setTransientViewController:(id)arg1 onSectionWithIdentifier:(id)arg2;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (id)viewControllerForSectionIdentifier:(id)arg1;

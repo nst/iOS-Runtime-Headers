@@ -57,6 +57,7 @@
 - (int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4;
 - (int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3;
 - (int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2;
+- (int)archiveDestination;
 - (BOOL)canCompact;
 - (BOOL)canDeleteMessage:(id)arg1;
 - (BOOL)canFetchMessageIDs;
@@ -67,6 +68,7 @@
 - (id)copyMessagesMatchingCriterion:(id)arg1 options:(unsigned int)arg2;
 - (id)copyMessagesMatchingText:(id)arg1 options:(unsigned int)arg2;
 - (id)copyMessagesMatchingText:(id)arg1;
+- (id)copyMessagesWithRemoteIDs:(id)arg1 options:(unsigned int)arg2;
 - (id)copyOfAllMessages;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(unsigned int)arg1 limit:(unsigned int)arg2;
 - (id)copyOfAllMessagesWithOptions:(unsigned int)arg1;
@@ -103,7 +105,7 @@
 - (id)messageForMessageID:(id)arg1 options:(unsigned int)arg2;
 - (id)messageForRemoteID:(id)arg1;
 - (id)messageWithValue:(id)arg1 forHeader:(id)arg2 options:(unsigned int)arg3;
-- (void)messagesWereAdded:(id)arg1 forIncrementalLoading:(BOOL)arg2;
+- (void)messagesWereAdded:(id)arg1 forIncrementalLoading:(BOOL)arg2 earliestReceivedDate:(id)arg3;
 - (void)messagesWereAdded:(id)arg1;
 - (void)messagesWereCompacted:(id)arg1;
 - (void)messagesWereDeleted:(id)arg1;
@@ -113,6 +115,7 @@
 - (void)openSynchronously;
 - (void)purgeMessagesBeyondLimit:(unsigned int)arg1 keepingMessage:(id)arg2;
 - (void)rebuildTableOfContentsAsynchronously;
+- (id)remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2;
 - (unsigned int)serverMessageCount;
 - (unsigned int)serverUnreadCount;
 - (unsigned int)serverUnreadOnlyOnServerCount;
@@ -124,6 +127,7 @@
 - (void)setLibrary:(id)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (BOOL)setPreferredEncoding:(unsigned long)arg1 forMessage:(id)arg2;
+- (BOOL)shouldArchive;
 - (BOOL)shouldDeleteInPlace;
 - (BOOL)shouldDownloadBodyDataForMessage:(id)arg1;
 - (BOOL)shouldSetSummaryForMessage:(id)arg1;

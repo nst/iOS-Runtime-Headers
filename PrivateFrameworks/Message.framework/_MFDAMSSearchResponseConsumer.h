@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFConditionLock, NSDate;
+@class MFConditionLock, NSArray, NSDate, NSMutableArray;
 
-@interface _MFDAMSSearchResponseConsumer : _MFDAMSBasicConsumer <DADSearchQueryConsumer> {
+@interface _MFDAMSSearchResponseConsumer : _MFDAMSBasicConsumer <DASearchQueryConsumer> {
     MFConditionLock *doneCondition;
     NSDate *latestDateToAdd;
+    NSMutableArray *matchingRemoteIDs;
     double timeReceivedLastResponse;
     unsigned int totalCount;
 }
 
 @property(retain) NSDate * latestDateToAdd;
+@property(retain,readonly) NSArray * matchingRemoteIDs;
 
 - (void)dealloc;
 - (BOOL)handleItems:(id)arg1;
-- (id)init;
+- (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)latestDateToAdd;
+- (id)matchingRemoteIDs;
 - (void)resetDoneCondition;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 returnedResults:(id)arg2;

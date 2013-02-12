@@ -7,10 +7,11 @@
 @interface MPConcreteMediaItem : MPMediaItem {
     NSArray *_chapters;
     MPMediaLibrary *_library;
+    NSNumber *_mediaType;
     unsigned long long _persistentID;
-    NSNumber *_physicalOrder;
 }
 
+- (id)_nonBatchableValueForProperty:(id)arg1 isBatchable:(BOOL*)arg2;
 - (void)clearBookmarkTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -23,16 +24,14 @@
 - (void)incrementSkipCount;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPersistentID:(unsigned long long)arg1 physicalOrder:(id)arg2 library:(id)arg3;
+- (id)initWithPersistentID:(unsigned long long)arg1 valuesForProperties:(id)arg2 library:(id)arg3;
 - (id)initWithPersistentID:(unsigned long long)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (void)markNominalAmountHasBeenPlayed;
 - (id)mediaLibrary;
 - (double)nominalHasBeenPlayedThreshold;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL*)arg2;
 - (unsigned long long)persistentID;
 - (void)reallyIncrementPlayCount;
-- (void)setCachedPhysicalOrder:(long long)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 

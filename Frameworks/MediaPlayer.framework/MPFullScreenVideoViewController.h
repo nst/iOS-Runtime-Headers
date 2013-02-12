@@ -4,16 +4,14 @@
 
 @class MPFullScreenVideoOverlay;
 
-@interface MPFullScreenVideoViewController : MPAbstractFullScreenVideoViewController {
+@interface MPFullScreenVideoViewController : MPAbstractFullScreenVideoViewController <MPVideoOverlayDelegate> {
     int _autorotationState;
     BOOL _inhibitOverlay;
     MPFullScreenVideoOverlay *_overlayView;
 }
 
 @property int autorotationState;
-@property BOOL inhibitOverlay;
-
-+ (void)_initializeSafeCategory;
+@property(readonly) MPFullScreenVideoOverlay * overlayView;
 
 - (void)_hideOverlayAnimationFinished:(id)arg1;
 - (void)_reallyRemoveOverlay;
@@ -47,6 +45,8 @@
 - (id)swipableView:(id)arg1 overrideHitTest:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;
 - (void)transformVideoForInterfaceOrientation:(int)arg1 animate:(BOOL)arg2;
 - (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (id)videoOverlayView;
+- (id)videoOverlayViewIfLoaded;
 - (void)videoView_itemTypeAvailableNotification:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

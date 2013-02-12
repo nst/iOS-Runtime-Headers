@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSDate, ICSDuration, ICSUserAddress, NSArray, NSString, NSURL;
+@class ICSDate, ICSDuration, ICSStructuredLocation, ICSUserAddress, NSArray, NSString, NSURL;
 
 @interface ICSEvent : ICSComponent {
 }
@@ -10,6 +10,7 @@
 @property(retain) NSArray * attach;
 @property(retain) NSArray * attendee;
 @property int classification;
+@property(retain) NSArray * conferences;
 @property(retain) ICSDate * created;
 @property(retain) NSString * description;
 @property(retain) ICSDate * dtend;
@@ -18,6 +19,7 @@
 @property(retain) ICSDuration * duration;
 @property(retain) NSArray * exdate;
 @property(retain) NSArray * exrule;
+@property(readonly) BOOL isAllDay;
 @property(retain) ICSDate * last_modified;
 @property(retain) NSString * location;
 @property(retain) ICSUserAddress * organizer;
@@ -39,6 +41,7 @@
 @property(retain) NSString * x_apple_ews_permission;
 @property BOOL x_apple_ignore_on_restore;
 @property BOOL x_apple_needs_reply;
+@property(retain) ICSStructuredLocation * x_apple_structured_location;
 @property(retain) NSArray * x_calendarserver_attendee_comment;
 @property(retain) NSString * x_calendarserver_private_comment;
 @property BOOL x_wr_itipalreadysent;
@@ -49,7 +52,6 @@
 + (id)name;
 
 - (void)fixComponent;
-- (BOOL)isAllDay;
 - (void)setTransp:(int)arg1;
 - (void)setX_apple_dontschedule:(BOOL)arg1;
 - (void)setX_apple_ews_busystatus:(int)arg1;

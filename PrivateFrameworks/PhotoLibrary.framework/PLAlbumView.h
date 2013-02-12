@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLAlbumViewDataSource>, <PLAlbumViewDelegate>, NSIndexSet, NSMutableIndexSet, PLImageCountCell, UIGestureRecognizer, UILongPressGestureRecognizer, UITableView, UITapGestureRecognizer;
+@class <PLAlbumViewDataSource>, <PLAlbumViewDelegate>, NSIndexSet, NSMutableIndexSet, PLAlbumItemCountView, PLAlbumSelectionControlsView, PLAutoScroller, PLPhotosPickerSession, PLSyncProgressView, UIGestureRecognizer, UILongPressGestureRecognizer, UITableView, UITapGestureRecognizer, UIView;
 
-@interface PLAlbumView : UIView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate> {
+@interface PLAlbumView : UIView <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, PLPhotosPickerSessionParticipant> {
     struct CGPoint { 
         float x; 
         float y; 
+    struct CGSize { 
+        float width; 
+        float height; 
     struct { 
         unsigned int displayTextBadges : 1; 
         unsigned int canShowCopyCallout : 1; 
+        unsigned int usesViewBasedCells : 1; 
+        unsigned int allowsReordering : 1; 
         unsigned int delegateCanSelect : 1; 
         unsigned int delegateSelectionDidChange : 1; 
         unsigned int delegateDidTapPhoto : 1; 
@@ -19,19 +24,31 @@
     NSMutableIndexSet *_activityIndexes;
     } _albumViewFlags;
     BOOL _allowsSelectionGestures;
+    PLAutoScroller *_autoscroller;
     NSMutableIndexSet *_badgedPhotoIndexes;
     unsigned int _calloutBarSelectionIndex;
     unsigned int _columnsPerRow;
+    PLPhotosPickerSession *_currentPickerSession;
     <PLAlbumViewDataSource> *_dataSource;
     <PLAlbumViewDelegate> *_delegate;
-    PLImageCountCell *_imageCountCell;
+    unsigned int _dragItemCurrentPhotoIndex;
+    } _draggedItemOffset;
+    UIView *_draggedItemView;
+    PLAlbumItemCountView *_imageCountView;
     UILongPressGestureRecognizer *_longPressRecognizer;
+    NSMutableIndexSet *_pendingPhotoInsertIndexes;
+    NSMutableIndexSet *_pendingPhotoReloadIndexes;
+    NSMutableIndexSet *_pendingPhotoRemoveIndexes;
+    unsigned int _pendingUpdates;
     unsigned int _photoCount;
     unsigned int _photoIndexToBeSelected;
     } _previousContentOffset;
+    float _previousOffsetRatio;
     NSMutableIndexSet *_selectedPhotoIndexes;
+    PLAlbumSelectionControlsView *_selectionControlsView;
     int _selectionStyle;
     BOOL _swipeSelection;
+    PLSyncProgressView *_syncProgressView;
     UITableView *_tableView;
     unsigned int _tableViewRowCount;
     UIGestureRecognizer *_tapFailedRecognizer;
@@ -39,16 +56,20 @@
 }
 
 @property(copy) NSIndexSet * activityIndexes;
+@property BOOL allowsReordering;
 @property BOOL allowsSelectionGestures;
 @property(copy) NSIndexSet * badgedPhotoIndexes;
 @property float bottomInset;
 @property(readonly) unsigned int calloutPhotoIndex;
 @property BOOL canShowCopyCallout;
+@property(retain) PLPhotosPickerSession * currentPickerSession;
 @property <PLAlbumViewDataSource> * dataSource;
 @property <PLAlbumViewDelegate> * delegate;
 @property BOOL displaysTextBadges;
+@property(readonly) unsigned int photoCount;
 @property int photoSelectionStyle;
 @property(copy) NSIndexSet * selectedPhotoIndexes;
+@property BOOL usesViewBasedCells;
 
 - (unsigned int)_cellPhotoIndexForPhotoIndex:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })_cellSize;
@@ -56,37 +77,48 @@
 - (void)_changeBadgeStateOfPhotoAtIndex:(unsigned int)arg1;
 - (void)_changeSelectionOfPhotoAtIndex:(unsigned int)arg1 notifyDelegate:(BOOL)arg2;
 - (void)_changeSelectionOfPhotoAtPoint:(struct CGPoint { float x1; float x2; })arg1 notifyDelegate:(BOOL)arg2;
+- (void)_deselectAllPhotosNotifyingDelegate:(id)arg1;
+- (BOOL)_dragMove:(id)arg1;
+- (int)_firstPhotoIndexForRowIndexPath:(id)arg1;
+- (unsigned int)_leftPaddingForCellWidth:(float)arg1;
 - (void)_longPressGesture:(id)arg1;
 - (unsigned int)_photoIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_preheatImageDataForDownwardScroll:(BOOL)arg1;
+- (void)_processPendingUpdates;
 - (void)_selectAfterDelay;
+- (void)_selectAllPhotosNotifyingDelegate:(id)arg1;
 - (void)_setupTableView;
-- (BOOL)_shouldShowImageCountCell;
 - (unsigned int)_tableRowForPhotoIndex:(unsigned int)arg1;
 - (void)_tapFailedGesture:(id)arg1;
 - (void)_tapGesture:(id)arg1;
-- (void)_updateAutoscrollTimerWithScrollDirection:(id)arg1;
 - (void)_updateColumnsPerRow;
-- (void)_updateImageCountCell;
+- (void)_updateFooterView;
+- (void)_updateInstalledGestureRecognizers;
 - (void)_updatePhotoCount;
+- (void)_updateSelectionControls;
 - (void)_updateTableCell:(id)arg1 photoStartIndex:(unsigned int)arg2;
 - (void)_updateTableViewRowCount;
 - (id)activityIndexes;
+- (BOOL)allowsReordering;
 - (BOOL)allowsSelectionGestures;
 - (void)badgePhotoAtIndex:(unsigned int)arg1;
 - (id)badgedPhotoIndexes;
+- (void)beginUpdates;
 - (float)bottomInset;
 - (unsigned int)calloutPhotoIndex;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canShowCopyCallout;
 - (void)clearSelection;
+- (id)currentPickerSession;
 - (id)dataSource;
 - (void)dealloc;
 - (void)debadgePhotoAtIndex:(unsigned int)arg1;
 - (id)delegate;
 - (void)deselectPhotoAtIndex:(unsigned int)arg1;
+- (void)didMoveToWindow;
 - (BOOL)displaysTextBadges;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)endUpdates;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)hideActivityOnPhotoAtIndex:(unsigned int)arg1;
@@ -95,33 +127,40 @@
 - (void)insertPhotosAtIndexes:(id)arg1;
 - (BOOL)isPhotoVisibleAtIndex:(unsigned int)arg1;
 - (void)menuDidHideNotification:(id)arg1;
+- (unsigned int)photoCount;
 - (int)photoSelectionStyle;
 - (void)reloadData;
 - (void)reloadPhotoAtIndex:(unsigned int)arg1;
 - (void)removePhotoAtIndex:(unsigned int)arg1;
 - (void)removePhotosAtIndexes:(id)arg1;
-- (void)scrollToBottom;
-- (void)scrollToPhotoAtIndex:(unsigned int)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
+- (void)rotationDidStart;
+- (void)rotationWillStart;
+- (void)scrollToBottom:(BOOL)arg1;
+- (void)scrollToVisibleItemAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)selectPhotoAtIndex:(unsigned int)arg1;
 - (unsigned int)selectedPhotoIndex;
 - (id)selectedPhotoIndexes;
 - (void)setActivityIndexes:(id)arg1;
+- (void)setAllowsReordering:(BOOL)arg1;
 - (void)setAllowsSelectionGestures:(BOOL)arg1;
 - (void)setBadgedPhotoIndexes:(id)arg1;
 - (void)setBottomInset:(float)arg1;
 - (void)setCanShowCopyCallout:(BOOL)arg1;
+- (void)setCurrentPickerSession:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplaysTextBadges:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPhotoSelectionStyle:(int)arg1;
 - (void)setSelectedPhotoIndexes:(id)arg1;
+- (void)setUsesViewBasedCells:(BOOL)arg1;
 - (void)showActivityOnPhotoAtIndex:(unsigned int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView;
+- (void)toggleSelectAll:(id)arg1;
+- (BOOL)usesViewBasedCells;
 
 @end

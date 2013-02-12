@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class PKPrintSettings, PKPrinter, UIPrintInfo, UIPrintPageRenderer, UIPrintPanelViewController, UIPrintingProgress;
+@class PKPrintSettings, PKPrinter, UIPrintInfo, UIPrintPageRenderer, UIPrintPanelViewController, UIPrintPaper, UIPrintingProgress;
 
 @interface UIPrintInteractionControllerInternals : NSObject {
     struct _NSRange { 
@@ -13,6 +13,7 @@
     UIPrintPageRenderer *_formatterRenderer;
     int _pageCount;
     } _pageRange;
+    UIPrintPaper *_paper;
     int _printInfoState;
     UIPrintPanelViewController *_printPanelViewController;
     PKPrintSettings *_printSettings;

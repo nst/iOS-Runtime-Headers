@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSMutableDictionary, NSPort;
 
 @interface NSConcreteTask : NSTask {
@@ -10,10 +14,11 @@
     BOOL _hasExeced;
     BOOL _hasPostedDeathNotification;
     BOOL _isRunning;
-    BOOL _padding[1];
     int _pid;
     int _platformExitInfo;
     int _suspendCount;
+    id _terminationHandler;
+    BOOL _terminationRun;
     NSPort *_tmpPort;
 }
 
@@ -43,6 +48,7 @@
 - (void)setStandardOutput:(id)arg1;
 - (void)setStartsNewProcessGroup:(BOOL)arg1;
 - (void)setTaskDictionary:(id)arg1;
+- (void)setTerminationHandler:(id)arg1;
 - (id)standardError;
 - (id)standardInput;
 - (id)standardOutput;
@@ -51,6 +57,7 @@
 - (id)taskDictionary;
 - (void)terminate;
 - (void)terminateTask;
+- (id)terminationHandler;
 - (int)terminationReason;
 - (int)terminationStatus;
 - (void)waitUntilExit;

@@ -6,8 +6,12 @@
 }
 
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_alertTranslationForInterfaceOrientation:(int)arg1 andTranslation:(float)arg2;
++ (void)_applyAlertTransforms;
 + (void)addToStack:(id)arg1 dontDimBackground:(BOOL)arg2;
 + (void)alertWindowAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
++ (void)applyClientWindowTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
++ (void)applyInternalWindowTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })calculatedAlertTransform;
 + (BOOL)cancelAlertsAnimated:(BOOL)arg1;
 + (BOOL)cancelTopMostAlertAnimated:(BOOL)arg1;
 + (void)createAlertWindowIfNeeded:(BOOL)arg1 deferDisplay:(BOOL)arg2;

@@ -4,7 +4,7 @@
 
 @class NSArray, UITableViewController, UIViewController;
 
-@interface DDLinksController : UIViewController {
+@interface DDLinksController : UIViewController <UITableViewDataSource, UITableViewDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate> {
     UIViewController *_currentDisplayedViewController;
     NSArray *_dataDetectorsResults;
     struct __DDResult { } *_displayedResult;

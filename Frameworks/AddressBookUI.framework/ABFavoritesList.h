@@ -2,34 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableArray;
+@class ABFavoritesListManager;
 
 @interface ABFavoritesList : NSObject {
-    struct { 
-        unsigned int dirty : 1; 
-        unsigned int postCount : 1; 
-        unsigned int needsReload : 1; 
-        unsigned int unused : 29; 
-    void *_addressBook;
-    } _flags;
-    NSMutableArray *_list;
-    struct __CFDictionary { } *_uidToEntry;
+    ABFavoritesListManager *_favoritesListManager;
 }
 
 + (id)sharedInstance;
 + (id)sharedInstanceWithAddressBook:(void*)arg1;
 
-- (void)_addEntryToMap:(id)arg1;
 - (void)_applicationWillSuspend:(id)arg1;
-- (void)_delayedLookup;
-- (void)_entryIdentityChanged:(id)arg1;
-- (void)_listChangedExternally;
-- (void)_loadList;
-- (void)_loadListWithAddressBook:(void*)arg1;
-- (void)_postChangeNotification;
-- (void)_removeEntryFromMap:(id)arg1 withUid:(int)arg2;
-- (void)_scheduleSave;
-- (BOOL)_writeFavoritesToFile:(id)arg1;
 - (void)addEntry:(id)arg1;
 - (BOOL)addEntryForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
 - (BOOL)containsEntryWithIdentifier:(int)arg1 forPerson:(void*)arg2;

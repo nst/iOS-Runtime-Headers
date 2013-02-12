@@ -39,7 +39,7 @@
 @property BOOL classicMode;
 @property id delegate;
 @property BOOL fullScreen;
-@property(retain) UIImage * iconImage;
+@property(readonly) UIImage * iconImage;
 @property(readonly) NSString * iconImagePath;
 @property(readonly) BOOL iconIsPrecomposed;
 @property(readonly) BOOL iconIsPrerendered;
@@ -49,7 +49,7 @@
 @property(retain) NSURL * pageURL;
 @property BOOL removalDisallowed;
 @property float scale;
-@property struct CGPoint { float x; float y; } scrollPoint;
+@property struct CGPoint { float x1; float x2; } scrollPoint;
 @property(retain) UIImage * startupImage;
 @property(retain) NSURL * startupImageURL;
 @property(retain) UIImage * startupLandscapeImage;
@@ -62,6 +62,7 @@
 + (id)urlForWebClipWithIdentifier:(id)arg1;
 + (BOOL)webClipClassicModeValueForWebDocumentView:(id)arg1;
 + (BOOL)webClipFullScreenValueForWebDocumentView:(id)arg1;
++ (id)webClipIconsForWebDocumentView:(id)arg1;
 + (int)webClipStatusBarStyleForWebDocumentView:(id)arg1;
 + (id)webClipWithIdentifier:(id)arg1;
 + (id)webClipWithURL:(id)arg1;
@@ -77,6 +78,7 @@
 - (void)_reloadProperties;
 - (void)_setIconImage:(id)arg1 isPrecomposed:(BOOL)arg2 isScreenShotBased:(BOOL)arg3;
 - (BOOL)_writeImage:(id)arg1 toDiskWithFileName:(id)arg2;
+- (void)cancelMediaUpdate;
 - (BOOL)classicMode;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -88,7 +90,6 @@
 - (BOOL)fullScreen;
 - (id)generateIconImageForFormat:(int)arg1 scale:(float)arg2;
 - (id)getStartupImage:(int)arg1;
-- (id)getStartupImage;
 - (id)iconImage;
 - (id)iconImagePath;
 - (BOOL)iconIsPrecomposed;
@@ -99,10 +100,9 @@
 - (id)pageURL;
 - (BOOL)removalDisallowed;
 - (BOOL)removeFromDisk;
-- (void)requestCustomIconUpdateWithDelegate:(id)arg1;
-- (void)requestCustomStartupImageUpdateWithDelegate:(id)arg1;
-- (void)requestCustomStartupLandscapeImageUpdateWithDelegate:(id)arg1;
-- (void)requestCustomStartupPortraitImageUpdateWithDelegate:(id)arg1;
+- (void)requestCustomIconUpdate;
+- (void)requestCustomLandscapeStartupImageUpdate;
+- (void)requestCustomPortraitStartupImageUpdate;
 - (void)requestIconUpdateInSpringBoard;
 - (float)scale;
 - (struct CGPoint { float x1; float x2; })scrollPoint;
@@ -110,7 +110,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFullScreen:(BOOL)arg1;
 - (void)setIconImage:(id)arg1 isPrecomposed:(BOOL)arg2;
-- (void)setIconImage:(id)arg1;
 - (void)setIconImageFromScreenshot:(id)arg1;
 - (void)setIcons:(id)arg1;
 - (void)setIdentifier:(id)arg1;

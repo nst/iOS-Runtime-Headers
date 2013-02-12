@@ -15,7 +15,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)init;
 - (id)latLon;
 - (id)panoId;
 - (BOOL)readFrom:(id)arg1;

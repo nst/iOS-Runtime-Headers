@@ -4,7 +4,7 @@
 
 @class CPGraphicObject;
 
-@interface CPTable : CPChunk <CPDisposable> {
+@interface CPTable : CPChunk <CPDisposable, CPGraphicUser> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -32,7 +32,6 @@
 @property unsigned int rowCount;
 @property(readonly) float* rowY;
 @property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } tableBounds;
-@property(readonly) unsigned int usedGraphicCount;
 
 - (struct CGColor { }*)backgroundColor;
 - (id)backgroundGraphicAtIndex:(unsigned int)arg1;

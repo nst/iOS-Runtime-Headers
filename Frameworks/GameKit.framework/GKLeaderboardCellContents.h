@@ -2,49 +2,47 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKPlayer, GKScore, GKUITheme;
+@class GKScore, NSAttributedString, NSString;
 
-@interface GKLeaderboardCellContents : UIView <GKTableViewCellContents> {
+@interface GKLeaderboardCellContents : GKPlayerCellContentView {
     int _disclosureStyle;
-    GKPlayer *_player;
+    NSAttributedString *_displayName;
+    NSString *_placeholderString;
     float _rankWidth;
     GKScore *_score;
-    GKUITheme *_theme;
     unsigned int _totalScores;
 }
 
 @property(readonly) float contentsMargin;
 @property int disclosureStyle;
-@property(retain) GKPlayer * player;
+@property(retain) NSAttributedString * displayName;
+@property(retain) NSString * placeholderString;
 @property(readonly) float rankAvailableWidth;
 @property float rankWidth;
 @property(retain) GKScore * score;
-@property(retain) GKUITheme * theme;
 @property unsigned int totalScores;
 
-+ (void)_initializeSafeCategory;
-
-- (id)accessibilityLabel;
 - (void)dealloc;
 - (int)digits;
 - (int)disclosureStyle;
+- (id)displayName;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)fontSizeForRank;
+- (float)fontSizeForRank;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)init;
-- (BOOL)isAccessibilityElement;
-- (id)player;
-- (float)preferredHeightForOrientation:(int)arg1;
+- (id)placeholderString;
 - (void)prepareForReuse;
 - (float)rankAvailableWidth;
 - (float)rankWidth;
 - (id)score;
 - (void)setDisclosureStyle:(int)arg1;
-- (void)setPlayer:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (void)setPlaceholderString:(id)arg1;
 - (void)setRankWidth:(float)arg1;
 - (void)setScore:(id)arg1;
-- (void)setTheme:(id)arg1;
 - (void)setTotalScores:(unsigned int)arg1;
-- (id)theme;
+- (BOOL)shouldShowPhoto;
 - (unsigned int)totalScores;
+- (void)updateLines;
 
 @end

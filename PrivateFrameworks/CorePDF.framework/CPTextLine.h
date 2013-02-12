@@ -48,7 +48,7 @@
     unsigned int rightSpacerIndex;
     unsigned int *spacesBefore;
     int tabsBefore;
-    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; int x9; float x10; id x11; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x12; unsigned char x13; void*x14; void*x15; out in void*x16; void*x17; float x18; struct CPPDFStyle {} *x19; } *uniformStyle;
+    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; int x9; float x10; id x11; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x12; unsigned char x13; void*x14; void*x15; out in void*x16; void*x17; float x18; union { unsigned char x_19_1_1; void*x_19_1_2; void*x_19_1_3; void*x_19_1_4; void*x_19_1_5; bycopy unsigned int x_19_1_6/* : ? */; void*x_19_1_7; void*x_19_1_8; BOOL x_19_1_9; void*x_19_1_10; } *x19; union { unsigned char x_20_1_1; void*x_20_1_2; void*x_20_1_3; void*x_20_1_4; void*x_20_1_5; bycopy unsigned int x_20_1_6/* : ? */; void*x_20_1_7; void*x_20_1_8; BOOL x_20_1_9; void*x_20_1_10; } *x20; struct CGColor {} *x21; struct CPPDFStyle {} *x22; } *uniformStyle;
     unsigned short uniformStyleFlags;
         } x5; } *wordArray;
     unsigned int wordCount;

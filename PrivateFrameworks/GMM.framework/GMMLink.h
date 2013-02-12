@@ -16,8 +16,8 @@
 
 @property(readonly) BOOL hasLinkStreetRange;
 @property(readonly) BOOL hasLinkText;
-@property(readonly) BOOL hasRoadArgb;
-@property(readonly) BOOL hasYawDegreeE6;
+@property BOOL hasRoadArgb;
+@property BOOL hasYawDegreeE6;
 @property(retain) NSString * linkStreetRange;
 @property(retain) NSString * linkText;
 @property(retain) NSString * panoId;
@@ -31,12 +31,13 @@
 - (BOOL)hasLinkText;
 - (BOOL)hasRoadArgb;
 - (BOOL)hasYawDegreeE6;
-- (id)init;
 - (id)linkStreetRange;
 - (id)linkText;
 - (id)panoId;
 - (BOOL)readFrom:(id)arg1;
 - (int)roadArgb;
+- (void)setHasRoadArgb:(BOOL)arg1;
+- (void)setHasYawDegreeE6:(BOOL)arg1;
 - (void)setLinkStreetRange:(id)arg1;
 - (void)setLinkText:(id)arg1;
 - (void)setPanoId:(id)arg1;

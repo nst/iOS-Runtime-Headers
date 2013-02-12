@@ -18,7 +18,9 @@
 - (void)_fadeOutDidFinish;
 - (void)dealloc;
 - (void)focusDidEnd;
-- (id)init:(BOOL)arg1;
+- (id)init;
+- (id)nameForDarkImage;
+- (id)nameForLightImage;
 - (void)scaleFrame:(float)arg1 reposition:(BOOL)arg2;
 - (void)startAnimating;
 - (void)stopAnimating;

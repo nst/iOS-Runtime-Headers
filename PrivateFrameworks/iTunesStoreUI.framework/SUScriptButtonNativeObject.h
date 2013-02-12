@@ -8,6 +8,7 @@
     BOOL _loading;
     NSString *_styleString;
     NSString *_subtitle;
+    NSString *_systemItemString;
 }
 
 @property(readonly) int buttonType;
@@ -15,18 +16,21 @@
 @property(getter=isLoading) BOOL loading;
 @property(readonly) NSString * styleString;
 @property(retain) NSString * subtitle;
+@property(readonly) NSString * systemItemString;
 @property(retain) NSString * title;
 
-+ (id)objectWithDefaultButtonForScriptObject:(id)arg1;
++ (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 
 - (void)buttonAction:(id)arg1;
 - (int)buttonType;
 - (void)dealloc;
+- (id)initWithSystemItemString:(id)arg1;
 - (BOOL)isLoading;
 - (void)setLoading:(BOOL)arg1;
 - (void)setStyleFromString:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (id)styleString;
 - (id)subtitle;
+- (id)systemItemString;
 
 @end

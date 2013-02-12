@@ -12,7 +12,6 @@
 
 + (BOOL)loadBundleForAccountWithProperties:(id)arg1;
 + (id)sharedInstance;
-+ (void)vendDaemons;
 
 - (void)_addAccountInfo:(id)arg1 forFrameworkNamed:(id)arg2;
 - (BOOL)_loadFrameworkAtSubpath:(id)arg1;

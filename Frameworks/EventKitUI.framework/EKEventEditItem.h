@@ -2,37 +2,10 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventEditItemDelegate>, EKEvent, EKEventEditItemViewController, EKEventStore;
-
-@interface EKEventEditItem : NSObject <EKEventEditItemViewControllerDelegate> {
-    <EKEventEditItemDelegate> *_delegate;
-    EKEvent *_event;
-    EKEventStore *_store;
-    EKEventEditItemViewController *_viewController;
+@interface EKEventEditItem : EKCalendarItemEditItem {
 }
 
-@property <EKEventEditItemDelegate> * delegate;
-
-- (id)cellForSubitemAtIndex:(int)arg1;
-- (BOOL)configureForCalendarConstraints:(id)arg1;
-- (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
-- (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
-- (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (BOOL)eventEditItemViewControllerCommit:(id)arg1;
-- (void)eventEditItemViewControllerWantsKeyboardPinned:(BOOL)arg1;
-- (void)eventEditor:(id)arg1 didSelectSubitem:(int)arg2;
-- (BOOL)isInline;
-- (void)notifyDidEndEditing;
-- (void)notifyDidStartEditing;
-- (void)notifySubitemDidCommit:(int)arg1;
-- (void)notifyTextChanged;
-- (int)numberOfSubitems;
-- (void)reset;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (id)selectedTextField;
-- (void)setDelegate:(id)arg1;
-- (void)setEvent:(id)arg1 store:(id)arg2;
+- (id)event;
+- (void)setCalendarItem:(id)arg1 store:(id)arg2;
 
 @end

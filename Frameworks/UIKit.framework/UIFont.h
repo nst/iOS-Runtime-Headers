@@ -10,13 +10,15 @@
 @property(readonly) float ascender;
 @property(readonly) float capHeight;
 @property(readonly) float descender;
-@property(retain,readonly) NSString * familyName;
-@property(retain,readonly) NSString * fontName;
+@property(readonly) NSString * familyName;
+@property(readonly) NSString * fontName;
 @property(readonly) float lineHeight;
 @property(readonly) float pointSize;
 @property(readonly) float xHeight;
 
 + (id)__newDummy;
++ (id)_boldItalicSystemFontOfSize:(float)arg1;
++ (id)_systemFontsOfSize:(float)arg1 traits:(int)arg2;
 + (id)boldSystemFontOfSize:(float)arg1;
 + (float)buttonFontSize;
 + (id)familyNames;
@@ -32,6 +34,7 @@
 + (id)systemFontOfSize:(float)arg1;
 + (float)systemFontSize;
 
+- (id)_alternateSystemFonts;
 - (struct __CTFont { }*)_gkCTFont;
 - (float)ascender;
 - (float)capHeight;
@@ -40,6 +43,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)familyName;
+- (id)familyNameForCSSFontFamilyValue;
 - (id)fontName;
 - (id)fontWithSize:(float)arg1;
 - (id)initWithCoder:(id)arg1;

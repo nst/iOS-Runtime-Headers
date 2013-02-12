@@ -25,7 +25,10 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
+- (BOOL)_isDeallocating;
 - (id)_newSubArrayInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 asMutable:(BOOL)arg2;
+- (BOOL)_tryRetain;
+- (void)_turnAllBatchesIntoFaults;
 - (id)arrayFromObjectIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
@@ -45,7 +48,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(unsigned int)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

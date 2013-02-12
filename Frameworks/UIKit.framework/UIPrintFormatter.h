@@ -19,7 +19,7 @@
     int _startPage;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property float maximumContentHeight;
 @property float maximumContentWidth;
 @property(readonly) int pageCount;

@@ -5,12 +5,10 @@
 @class DAMailAccount, NSString;
 
 @interface DARequestQueue : MFRequestQueue {
-    double _invalidSyncKeyTimestamp;
-    DAMailAccount *account;
-    NSString *folderID;
+    DAMailAccount *_account;
+    NSString *_folderID;
 }
 
-- (void)_processRequests:(id)arg1 withConsumers:(id)arg2;
 - (void)dealloc;
 - (id)filterRequests:(id)arg1 consumers:(id)arg2 newConsumers:(id*)arg3;
 - (id)initWithAccount:(id)arg1 folderID:(id)arg2;

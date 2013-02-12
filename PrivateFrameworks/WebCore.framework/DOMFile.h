@@ -13,7 +13,7 @@
 
 - (id)fileName;
 - (unsigned long long)fileSize;
+- (double)lastModifiedDate;
 - (id)name;
-- (id)type;
 
 @end

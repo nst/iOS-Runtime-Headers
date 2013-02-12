@@ -14,26 +14,25 @@
     BOOL _labelIsVisible;
     struct CGImage { } *_labelVisibleContents;
     NSString *_text;
+    float backgroundAlpha;
 }
 
-@property struct CGSize { float width; float height; } contentsSize;
+@property float backgroundAlpha;
+@property struct CGSize { float x1; float x2; } contentsSize;
 @property(retain) UIImage * image;
 @property BOOL labelIsVisible;
 @property(retain) NSString * text;
 
-+ (void)_initializeSafeCategory;
-
 - (struct CGImage { }*)_newLabelImage:(BOOL)arg1;
 - (void)_reloadLabelContents;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
+- (float)backgroundAlpha;
 - (struct CGSize { float x1; float x2; })contentsSize;
 - (void)dealloc;
 - (id)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (BOOL)labelIsVisible;
+- (void)setBackgroundAlpha:(float)arg1;
 - (void)setContentsSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setImage:(id)arg1;
 - (void)setLabelIsVisible:(BOOL)arg1;

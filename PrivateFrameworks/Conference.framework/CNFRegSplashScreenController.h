@@ -2,29 +2,41 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class <CNFRegFirstRunDelegate>, CNFRegLearnMoreButton;
+@class <CNFRegFirstRunDelegate>, CNFRegController, CNFRegLearnMoreButton, UIBarButtonItem;
 
 @interface CNFRegSplashScreenController : PSViewController <CNFRegFirstRunExperience> {
     <CNFRegFirstRunDelegate> *_delegate;
     CNFRegLearnMoreButton *_learnMoreButton;
-    BOOL _requiresAlias;
+    CNFRegController *_regController;
 }
 
 @property(readonly) int currentAppearanceStyle;
+@property(retain) UIBarButtonItem * customLeftButton;
+@property(retain) UIBarButtonItem * customRightButton;
 @property <CNFRegFirstRunDelegate> * delegate;
-@property BOOL requiresAlias;
+@property(retain) CNFRegController * regController;
+@property BOOL showSplash;
 
 - (void)_getStartedPressed:(id)arg1;
 - (void)_learnMorePressed:(id)arg1;
-- (id)_shadowedLabelWithFont:(id)arg1 text:(id)arg2 y:(float)arg3;
+- (id)_shadowLabelColor;
+- (id)_shadowedLabelWithFont:(id)arg1 text:(id)arg2;
+- (float)_startingYOffset;
 - (int)currentAppearanceStyle;
+- (id)customLeftButton;
+- (id)customRightButton;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
+- (id)initWithRegController:(id)arg1 account:(id)arg2;
 - (void)loadView;
-- (BOOL)requiresAlias;
+- (id)regController;
+- (void)setCustomLeftButton:(id)arg1;
+- (void)setCustomRightButton:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRequiresAlias:(BOOL)arg1;
+- (void)setRegController:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (id)splashImage;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willBecomeActive;
 

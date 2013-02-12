@@ -2,22 +2,16 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <NSFastEnumeration>, mutationsPtr;
+@class <NSFastEnumeration>;
 
 @interface __NSFastEnumerationEnumerator : NSEnumerator {
-    /* Warning: unhandled struct encoding: '{?="state"@"itemsPtr"^@"mutationsPtr"^L"extra"[5@]}' */ struct { 
-        id state; 
-        mutationsPtr **itemsPtr; 
     unsigned int _count;
     unsigned int _mut;
     <NSFastEnumeration> *_obj;
     id _origObj;
-    } _state;
 }
+
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)dealloc;
 - (id)initWithObject:(id)arg1;

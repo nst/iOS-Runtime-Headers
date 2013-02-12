@@ -13,8 +13,8 @@
     } _locationInView;
 }
 
-@property(readonly) struct CGPoint { float x; float y; } centroid;
-@property(readonly) struct CGPoint { float x; float y; } location;
+@property(readonly) struct CGPoint { float x1; float x2; } centroid;
+@property(readonly) struct CGPoint { float x1; float x2; } location;
 @property unsigned int numberOfTapsRequired;
 @property unsigned int numberOfTouchesRequired;
 @property(readonly) NSArray * touches;
@@ -32,6 +32,8 @@
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (struct CGPoint { float x1; float x2; })centroid;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })location;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;

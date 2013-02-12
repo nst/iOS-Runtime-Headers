@@ -19,7 +19,6 @@
 - (BOOL)hasImage;
 - (long long)iconId;
 - (id)image;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setIconId:(long long)arg1;
 - (void)setImage:(id)arg1;

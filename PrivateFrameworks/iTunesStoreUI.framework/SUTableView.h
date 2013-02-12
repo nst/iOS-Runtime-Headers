@@ -8,9 +8,6 @@
 
 @property BOOL allowsHeaderAndFooterToFloat;
 
-+ (void)_initializeSafeCategory;
-
-- (id)_accessibilityScrollStatus;
 - (BOOL)allowsFooterViewsToFloat;
 - (BOOL)allowsHeaderAndFooterToFloat;
 - (BOOL)allowsHeaderViewsToFloat;

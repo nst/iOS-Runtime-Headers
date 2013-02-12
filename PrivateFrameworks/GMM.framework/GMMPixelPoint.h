@@ -15,7 +15,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)init;
 - (int)pixelX;
 - (int)pixelY;
 - (BOOL)readFrom:(id)arg1;

@@ -30,6 +30,7 @@
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
 - (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct String {} *x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Behavior {} *x9; }*)arg1;
+- (BOOL)allowsWeakReference;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
@@ -42,6 +43,7 @@
 - (void)release;
 - (id)retain;
 - (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setName:(id)arg1;

@@ -2,13 +2,64 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@interface AdSheetAppDelegate : NSObject <UIApplicationDelegate> {
+@class NSCountedSet, NSTimer, UIWindow;
+
+@interface AdSheetAppDelegate : NSObject <SBSAccelerometerDelegate, UIApplicationDelegate> {
+    NSCountedSet *_activeAssertions;
+    int _currentDeviceOrientation;
+    double _lastClientPowerAssertionReturned;
+    double _lastURLCachePersist;
+    struct dispatch_source_s { } *_memoryNotificationSource;
+    double _powerAssertionExpiration;
+    unsigned int _powerAssertionID;
+    NSTimer *_terminationTimer;
+    struct dispatch_queue_s { } *_watchdogDispatchQueue;
 }
 
+@property(retain) NSCountedSet * activeAssertions;
+@property(readonly) int currentDeviceOrientation;
+@property double lastClientPowerAssertionReturned;
+@property double lastURLCachePersist;
+@property struct dispatch_source_s { }* memoryNotificationSource;
+@property double powerAssertionExpiration;
+@property unsigned int powerAssertionID;
+@property(retain) NSTimer * terminationTimer;
+@property struct dispatch_queue_s { }* watchdogDispatchQueue;
+@property(retain) UIWindow * window;
+
++ (void)returnAssertion:(id)arg1;
++ (void)takeAssertion:(id)arg1 duration:(double)arg2;
++ (void)takeAssertion:(id)arg1;
+
 - (void)_postLaunchSetup;
+- (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
+- (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
+- (id)activeAssertions;
 - (void)application:(id)arg1 didFinishLaunchingSuspendedWithOptions:(id)arg2;
 - (void)applicationDidFinishLaunching:(id)arg1;
-- (void)considerExiting;
-- (void)eventLoggingCenterDidBecomeIdle:(id)arg1;
+- (int)currentDeviceOrientation;
+- (double)lastClientPowerAssertionReturned;
+- (double)lastURLCachePersist;
+- (void)managePowerAssertion;
+- (struct dispatch_source_s { }*)memoryNotificationSource;
+- (void)persistURLCache;
+- (double)powerAssertionExpiration;
+- (unsigned int)powerAssertionID;
+- (void)returnAssertion:(id)arg1;
+- (void)setActiveAssertions:(id)arg1;
+- (void)setLastClientPowerAssertionReturned:(double)arg1;
+- (void)setLastURLCachePersist:(double)arg1;
+- (void)setMemoryNotificationSource:(struct dispatch_source_s { }*)arg1;
+- (void)setPowerAssertionExpiration:(double)arg1;
+- (void)setPowerAssertionID:(unsigned int)arg1;
+- (void)setTerminationTimer:(id)arg1;
+- (void)setWatchdogDispatchQueue:(struct dispatch_queue_s { }*)arg1;
+- (void)shutdown;
+- (void)storyboardDismissed;
+- (void)storyboardPresentedWithPrecomposedErrorReport:(id)arg1 serverURL:(id)arg2;
+- (void)takeAssertion:(id)arg1 duration:(double)arg2;
+- (void)takeAssertion:(id)arg1;
+- (id)terminationTimer;
+- (struct dispatch_queue_s { }*)watchdogDispatchQueue;
 
 @end

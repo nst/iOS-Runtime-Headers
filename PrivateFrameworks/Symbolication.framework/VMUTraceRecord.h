@@ -3,18 +3,18 @@
  */
 
 @interface VMUTraceRecord : NSObject {
-    unsigned int address;
-    unsigned int argument;
+    unsigned long long address;
+    unsigned long long argument;
     unsigned int depth;
-    unsigned int *frames;
+    unsigned long long *frames;
     unsigned int seqnum;
     unsigned int type;
 }
 
-- (unsigned int)address;
-- (unsigned int)argument;
+- (unsigned long long)address;
+- (unsigned long long)argument;
 - (unsigned int)depth;
-- (unsigned int*)frames;
+- (unsigned long long*)frames;
 - (id)initWithBacktrace:(id)arg1 forTask:(unsigned int)arg2;
 - (id)initWithLoggingRecord:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 forTask:(unsigned int)arg2;
 - (id)initWithTraceRecord:(id)arg1 withDepth:(unsigned int)arg2;

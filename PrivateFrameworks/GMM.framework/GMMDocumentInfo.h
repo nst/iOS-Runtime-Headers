@@ -21,7 +21,6 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasAttributionUrl;
 - (BOOL)hasAuthor;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAttributionUrl:(id)arg1;
 - (void)setAuthor:(id)arg1;

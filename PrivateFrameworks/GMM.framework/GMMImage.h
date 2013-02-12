@@ -22,7 +22,6 @@
 - (BOOL)hasImageData;
 - (BOOL)hasKey;
 - (id)imageData;
-- (id)init;
 - (id)key;
 - (BOOL)readFrom:(id)arg1;
 - (void)setImageData:(id)arg1;

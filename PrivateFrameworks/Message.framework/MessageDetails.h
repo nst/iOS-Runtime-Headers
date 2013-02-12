@@ -5,8 +5,9 @@
 @class MessageLibrary, NSString;
 
 @interface MessageDetails : NSObject {
-    unsigned int conversationHash;
+    long long conversationHash;
     unsigned int dateReceived;
+    unsigned int dateSent;
     unsigned int encoding;
     NSString *externalID;
     BOOL isInvalid;
@@ -19,6 +20,7 @@
 
 - (id)copyMessageInfo;
 - (double)dateReceivedAsTimeIntervalSince1970;
+- (double)dateSentAsTimeIntervalSince1970;
 - (void)dealloc;
 - (id)description;
 - (id)externalID;

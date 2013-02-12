@@ -10,12 +10,14 @@
     AccountsManager *_accountsManager;
     NSDictionary *_groupsByAccountIdentifier;
     NSMutableDictionary *_headerViewsBySection;
-    BOOL _hidesSearchableStores;
+    BOOL _hidesGlobalGroupWrapper;
+    BOOL _hidesSearchableSources;
     ABModel *_model;
 }
 
 @property(retain) AccountsManager * accountsManager;
-@property BOOL hidesSearchableStores;
+@property BOOL hidesGlobalGroupWrapper;
+@property BOOL hidesSearchableSources;
 @property(retain) ABModel * model;
 
 - (id)accountDisplayNameAtIndex:(int)arg1;
@@ -29,7 +31,8 @@
 - (id)groupNameForIndexPath:(id)arg1;
 - (id)groupWrapperForIndexPath:(id)arg1;
 - (BOOL)hasMultipleAccountsOrGroups;
-- (BOOL)hidesSearchableStores;
+- (BOOL)hidesGlobalGroupWrapper;
+- (BOOL)hidesSearchableSources;
 - (id)indexPathForGroupWrapper:(id)arg1;
 - (id)init;
 - (id)model;
@@ -42,7 +45,8 @@
 - (void)reloadDataIncludingAccountsManager:(BOOL)arg1;
 - (void)scheduleRefresh;
 - (void)setAccountsManager:(id)arg1;
-- (void)setHidesSearchableStores:(BOOL)arg1;
+- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
+- (void)setHidesSearchableSources:(BOOL)arg1;
 - (void)setModel:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

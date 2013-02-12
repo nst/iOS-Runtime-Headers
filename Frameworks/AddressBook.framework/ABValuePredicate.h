@@ -15,6 +15,8 @@
 @property int property;
 @property(copy) NSObject * value;
 
++ (id)stringForComparison:(id)arg1 withComparision:(long)arg2;
+
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (long)comparison;
 - (void)dealloc;

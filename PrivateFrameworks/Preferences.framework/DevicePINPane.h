@@ -46,6 +46,7 @@
 @property int keyboardType;
 @property int returnKeyType;
 @property(getter=isSecureTextEntry) BOOL secureTextEntry;
+@property int spellCheckingType;
 
 - (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setPlaysKeyboardClicks:(BOOL)arg1;

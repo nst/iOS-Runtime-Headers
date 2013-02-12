@@ -9,7 +9,7 @@
 
 @interface NSXMLParser : NSObject {
     id _delegate;
-    void *_parser;
+    id _reserved0;
     id _reserved1;
     id _reserved2;
     id _reserved3;
@@ -26,10 +26,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)finalize;
+- (id)initForIncrementalParsing;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithData:(id)arg1;
+- (id)initWithStream:(id)arg1;
 - (int)lineNumber;
 - (BOOL)parse;
+- (BOOL)parseData:(id)arg1;
+- (BOOL)parseFromStream;
 - (id)parserError;
 - (id)publicID;
 - (void)setDelegate:(id)arg1;

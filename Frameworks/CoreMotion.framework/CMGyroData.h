@@ -6,7 +6,7 @@
     id _internal;
 }
 
-@property(readonly) struct { double x; double y; double z; } rotationRate;
+@property(readonly) struct { double x1; double x2; double x3; } rotationRate;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

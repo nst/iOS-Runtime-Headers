@@ -3,7 +3,7 @@
  */
 
 @interface MFPriorityDesignator : NSObject {
-    unsigned int _priority : 8;
+    int _priority;
 }
 
 + (id)currentDesignator;

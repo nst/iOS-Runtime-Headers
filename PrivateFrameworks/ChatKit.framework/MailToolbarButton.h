@@ -14,10 +14,7 @@
 
 @property BOOL usesAlternateButtonWidth;
 
-+ (void)_initializeSafeCategory;
-
 - (struct CGPoint { float x1; float x2; })_offsetForMiniBarState:(BOOL)arg1;
-- (id)accessibilityLabel;
 - (void)dealloc;
 - (id)initAsRed:(BOOL)arg1;
 - (void)layoutSubviews;

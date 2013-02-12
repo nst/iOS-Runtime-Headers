@@ -18,14 +18,13 @@
 - (id)_fullPathToConferenceSupportDirectory;
 - (void)_reloadHistory;
 - (void)_writeConferenceHistory;
-- (id)autorelease;
+- (BOOL)allowsWeakReference;
 - (void)dealloc;
 - (id)emailAddressHistory;
 - (BOOL)havePreviouslyConferencedWithID:(id)arg1;
 - (id)init;
 - (id)phoneNumberHistory;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)setEmailAddressHistory:(id)arg1;
 - (void)setHavePreviouslyConferenced:(BOOL)arg1 withID:(id)arg2;
 - (void)setPhoneNumberHistory:(id)arg1;

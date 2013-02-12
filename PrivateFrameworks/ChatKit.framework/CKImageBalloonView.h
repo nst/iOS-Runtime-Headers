@@ -9,22 +9,18 @@
     UIImage *_img;
 }
 
-+ (void)_initializeSafeCategory;
-+ (float)additionalHeightForBubbleWhenInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-+ (struct CGPoint { float x1; float x2; })offsetForBubbleInsetAtPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (float)entryFieldBalloonAdditionalHeight;
++ (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
++ (BOOL)usesColoredBalloon;
 
-- (BOOL)_accessibilitySupportsActivateAction;
 - (float)_receiptSpace;
-- (void)accessibilityActivate;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (id)balloonImage;
 - (void)copyToPasteboard;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)heightForWidth:(float)arg1;
-- (BOOL)isAccessibilityElement;
 - (void)setImage:(id)arg1;
+- (BOOL)shouldManuallyDrawBackground;
 - (void)tighten;
 - (float)tightenedWidth;
 

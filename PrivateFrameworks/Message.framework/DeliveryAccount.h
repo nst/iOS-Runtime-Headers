@@ -16,6 +16,7 @@
 + (id)deliveryAccounts;
 + (id)existingAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)newDefaultInstance;
++ (void)reloadDeliveryAccounts;
 + (void)removeDeliveryAccount:(id)arg1;
 + (void)saveAccountInfoToDefaults;
 + (void)setDeliveryAccounts:(id)arg1;

@@ -4,7 +4,7 @@
 
 @class Message;
 
-@interface MessageBody : MFWeakObject {
+@interface MessageBody : NSObject {
     Message *_message;
 }
 

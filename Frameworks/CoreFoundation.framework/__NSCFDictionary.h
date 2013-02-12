@@ -3,10 +3,17 @@
  */
 
 @interface __NSCFDictionary : NSMutableDictionary {
+    unsigned int _bits[4];
+    void *_callbacks;
+    unsigned char _cfinfo[4];
+    id *_keys;
+    id *_values;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;

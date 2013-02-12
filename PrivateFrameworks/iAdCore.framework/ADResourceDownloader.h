@@ -2,39 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class ADResourceDownloadJob, NSMutableArray, NSMutableData, NSURLConnection;
+@class NSMutableArray;
 
 @interface ADResourceDownloader : NSObject {
-    struct { 
-        unsigned int isDownloading : 1; 
-    NSURLConnection *currentConnection;
-    NSMutableData *currentData;
-    ADResourceDownloadJob *currentJob;
-    NSMutableArray *downloadQueue;
-    } flags;
+    NSMutableArray *_activeJobs;
+    NSMutableArray *_downloadQueue;
+    unsigned int _maxConcurrency;
 }
 
-@property(retain) NSURLConnection * currentConnection;
-@property(retain) NSMutableData * currentData;
-@property(retain) ADResourceDownloadJob * currentJob;
+@property(retain) NSMutableArray * activeJobs;
 @property(retain) NSMutableArray * downloadQueue;
+@property unsigned int maxConcurrency;
 
+- (void)_processNextJob;
+- (id)activeJobs;
+- (void)cancelAllRequests;
+- (void)cancelRequest:(id)arg1;
 - (void)cancelRequestForURL:(id)arg1;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
+- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (id)connection:(id)arg1 willCacheResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (id)currentConnection;
-- (id)currentData;
-- (id)currentJob;
 - (void)dealloc;
 - (id)downloadQueue;
-- (void)downloadRequest:(id)arg1 maximumSize:(unsigned int)arg2 success:(id)arg3 failure:(id)arg4;
+- (void)downloadRequestJob:(id)arg1;
 - (id)init;
-- (void)processNextJob;
-- (void)setCurrentConnection:(id)arg1;
-- (void)setCurrentData:(id)arg1;
-- (void)setCurrentJob:(id)arg1;
+- (id)jobForConnection:(id)arg1;
+- (unsigned int)maxConcurrency;
+- (void)setActiveJobs:(id)arg1;
 - (void)setDownloadQueue:(id)arg1;
+- (void)setMaxConcurrency:(unsigned int)arg1;
 
 @end

@@ -10,8 +10,8 @@
 
 - (void)_animationDidFinish:(id)arg1;
 - (id)init;
+- (void)performTransition:(unsigned int)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;
 - (BOOL)statusBarHidden;
-- (void)transition:(unsigned int)arg1;
 
 @end

@@ -22,11 +22,11 @@
     float _yOffset;
 }
 
-@property struct CGPoint { float x; float y; } animationPoint;
-@property struct CGPoint { float x; float y; } magnificationPoint;
-@property struct CGPoint { float x; float y; } offset;
+@property struct CGPoint { float x1; float x2; } animationPoint;
+@property struct CGPoint { float x1; float x2; } magnificationPoint;
+@property struct CGPoint { float x1; float x2; } offset;
 @property(retain) UIView * target;
-@property(readonly) struct CGPoint { float x; float y; } terminalPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } terminalPoint;
 @property(readonly) BOOL terminalPointPlacedCarefully;
 @property(retain) UIResponder<UITextInput> * text;
 @property float yOffset;

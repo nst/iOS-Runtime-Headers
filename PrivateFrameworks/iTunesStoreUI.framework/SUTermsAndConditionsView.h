@@ -17,11 +17,10 @@
 @property float rightMargin;
 @property int style;
 
-+ (void)_initializeSafeCategory;
-
 - (void)_accountsChangedNotification:(id)arg1;
 - (id)_button;
 - (void)_buttonAction:(id)arg1;
+- (float)_buttonHeightForStyle:(int)arg1;
 - (void)_clearButtonSelection:(id)arg1;
 - (void)_destroyButton;
 - (int)_linkStyleForStyle:(int)arg1;

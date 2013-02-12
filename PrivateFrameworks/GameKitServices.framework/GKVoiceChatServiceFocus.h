@@ -13,7 +13,7 @@
     int packetsPerBundle;
 }
 
-@property(retain) NSString * currentFocus;
+@property(copy) NSString * currentFocus;
 @property BOOL hasMic;
 @property int packetsPerBundle;
 
@@ -55,10 +55,12 @@
 - (void)setCurrentFocus:(id)arg1;
 - (void)setFocus:(BOOL)arg1;
 - (void)setHasMic:(BOOL)arg1;
+- (void)setIsUsingSuppression:(BOOL)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (void)setPacketsPerBundle:(int)arg1;
 - (void)setQualityDelegate:(id)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
+- (void)setShouldTimeoutPackets:(BOOL)arg1;
 - (void)setSpeakingDelegate:(id)arg1;
 - (void)setTalkingPeersLimit:(unsigned int)arg1;
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;

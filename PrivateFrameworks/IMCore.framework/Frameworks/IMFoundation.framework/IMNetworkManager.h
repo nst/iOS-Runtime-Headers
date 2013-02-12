@@ -8,8 +8,7 @@
 + (id)alloc;
 + (id)sharedInstance;
 
-- (id)autorelease;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)allowsWeakReference;
+- (BOOL)retainWeakReference;
 
 @end

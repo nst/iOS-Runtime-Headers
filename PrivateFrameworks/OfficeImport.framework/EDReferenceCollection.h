@@ -17,6 +17,7 @@
 - (id)initWihNoCoalesce;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)referenceToCellWithIndex:(unsigned int)arg1 byRow:(bool)arg2;
+- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (id)reverseReferencesByRow:(bool)arg1;
 
 @end

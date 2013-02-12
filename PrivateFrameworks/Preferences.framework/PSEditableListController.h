@@ -6,13 +6,19 @@
     BOOL _editable;
 }
 
+- (id)_editButtonBarItem;
+- (void)_setEditable:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)_showEditButtonUponAppearing;
 - (void)_updateNavigationBar;
+- (void)didLock;
 - (void)editDoneTapped;
 - (BOOL)editable;
 - (id)init;
 - (BOOL)performDeletionActionForSpecifier:(id)arg1;
 - (void)pushController:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
+- (void)setEditingButtonHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)suspend;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;

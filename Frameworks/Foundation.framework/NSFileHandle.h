@@ -17,8 +17,6 @@
 + (id)fileHandleWithStandardInput;
 + (id)fileHandleWithStandardOutput;
 + (void)initialize;
-+ (id)mf_createFileAtPath:(id)arg1 flags:(int)arg2 mode:(int)arg3;
-+ (id)mf_fileHandleForTempFile:(id*)arg1 atPath:(id)arg2 mode:(int)arg3;
 
 - (id)availableData;
 - (void)closeFile;
@@ -28,10 +26,14 @@
 - (unsigned long long)offsetInFile;
 - (id)readDataOfLength:(unsigned int)arg1;
 - (id)readDataToEndOfFile;
+- (id)readabilityHandler;
 - (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
+- (void)setReadabilityHandler:(id)arg1;
+- (void)setWriteabilityHandler:(id)arg1;
 - (void)synchronizeFile;
 - (void)truncateFileAtOffset:(unsigned long long)arg1;
 - (void)writeData:(id)arg1;
+- (id)writeabilityHandler;
 
 @end

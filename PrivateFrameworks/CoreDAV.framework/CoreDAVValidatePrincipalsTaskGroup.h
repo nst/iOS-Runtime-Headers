@@ -13,7 +13,7 @@
 
 @property(readonly) BOOL didReceiveAuthenticationError;
 @property(retain) NSMutableSet * principalURLs;
-@property(retain,readonly) NSSet * resultPrincipalURLs;
+@property(readonly) NSSet * resultPrincipalURLs;
 @property(retain) NSURL * urlBeingExamined;
 @property(retain) NSMutableSet * urlsToExamine;
 

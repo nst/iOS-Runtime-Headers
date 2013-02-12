@@ -4,7 +4,7 @@
 
 @class NSArray, NSNumber;
 
-@interface FTCancelMessage : FTMessage {
+@interface FTCancelMessage : FTFaceTimeMessage <NSCopying> {
     NSArray *_peers;
     NSNumber *_reason;
 }
@@ -13,6 +13,7 @@
 @property(copy) NSNumber * reason;
 
 - (id)bagKey;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)messageBody;
 - (id)peers;

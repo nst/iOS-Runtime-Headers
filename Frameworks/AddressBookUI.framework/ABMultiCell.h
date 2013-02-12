@@ -12,14 +12,9 @@
 @property(getter=isEditingDisabled) BOOL editingDisabled;
 @property(retain) ABMultiCellContentView * multiCellContentView;
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityAlwaysReturnsChild;
 - (void)_addMultiCellContentViewIfNeeded;
-- (id)accessibilityLabel;
-- (id)accessibilityValue;
+- (BOOL)_shouldSwallowTouches:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isEditingDisabled;
 - (void)layoutSubviews;
 - (id)multiCellContentView;
@@ -31,5 +26,6 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

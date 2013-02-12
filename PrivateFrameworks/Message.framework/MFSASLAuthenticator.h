@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class Account, AuthScheme;
+@class Account, AuthScheme, Connection;
 
 @interface MFSASLAuthenticator : NSObject {
     Account *_account;
     AuthScheme *_authScheme;
     int _authenticationState;
-    void *_context;
+    Connection *_connection;
 }
 
 - (id)account;
@@ -25,5 +25,6 @@
 - (id)securityLayer;
 - (void)setAuthenticationState:(int)arg1;
 - (void)setMissingPasswordError;
+- (BOOL)supportsInitialClientResponse;
 
 @end

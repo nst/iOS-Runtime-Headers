@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureVideoDataOutputSampleBufferDelegate>, AVCaptureVideoDataOutputInternal, NSDictionary;
+@class <AVCaptureVideoDataOutputSampleBufferDelegate>, AVCaptureVideoDataOutputInternal, NSArray, NSDictionary;
 
 @interface AVCaptureVideoDataOutput : AVCaptureOutput {
     AVCaptureVideoDataOutputInternal *_internal;
 }
 
 @property BOOL alwaysDiscardsLateVideoFrames;
+@property(readonly) NSArray * availableVideoCVPixelFormatTypes;
+@property(readonly) NSArray * availableVideoCodecTypes;
 @property struct { long long value; int timescale; unsigned int flags; long long epoch; } minFrameDuration;
 @property(readonly) struct dispatch_queue_s { }* sampleBufferCallbackQueue;
 @property(readonly) <AVCaptureVideoDataOutputSampleBufferDelegate> * sampleBufferDelegate;
@@ -18,6 +20,7 @@
 
 - (void)_AVCaptureVideoDataOutput_VideoDataBecameReady;
 - (id)_applyOverridesToCaptureOptions:(id)arg1;
+- (id)addConnection:(id)arg1 error:(id*)arg2;
 - (BOOL)alwaysDiscardsLateVideoFrames;
 - (id)availableVideoCVPixelFormatTypes;
 - (id)availableVideoCodecTypes;
@@ -25,7 +28,9 @@
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
+- (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)init;
+- (BOOL)isTheOnlyDataOutput;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
 - (struct dispatch_queue_s { }*)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;

@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSMutableDictionary, NSMutableSet, NSString;
+@class NSArray, NSMutableSet, NSString;
 
-@interface MKTransitIconCache : NSObject {
-    NSMutableDictionary *_IDToImage;
+@interface MKTransitIconCache : MKCache0 {
     NSString *_cacheFolderPath;
-    NSMutableSet *_iconIDs;
+    NSMutableSet *_gmmIconIDs;
     float _iconScale;
     unsigned int _iconSize;
     int _iconVersion;
@@ -15,7 +14,7 @@
 }
 
 @property(retain) NSString * cacheFolderPath;
-@property(readonly) NSArray * iconIDs;
+@property(readonly) NSArray * gmmIconIDs;
 @property float iconScale;
 @property unsigned int iconSize;
 @property int iconVersion;
@@ -23,20 +22,22 @@
 
 + (id)sharedTransitIconCache;
 
-- (void)_addImage:(id)arg1 withID:(long long)arg2;
-- (id)_iconPathForID:(long long)arg1;
+- (id)_iconPathForName:(id)arg1 canPurge:(BOOL*)arg2;
 - (id)_infoPath;
 - (void)_resetCache;
+- (void)_updateInfoPlist;
 - (id)cacheFolderPath;
-- (id)iconForID:(long long)arg1;
-- (id)iconIDs;
+- (void)dealloc;
+- (void)evictObject:(id)arg1;
+- (id)gmmIconIDs;
+- (id)iconForName:(id)arg1;
 - (float)iconScale;
 - (unsigned int)iconSize;
 - (int)iconVersion;
-- (id)init;
+- (id)initWithCapacity:(unsigned int)arg1 maxCapacity:(unsigned int)arg2;
 - (BOOL)isEnabled;
 - (void)setCacheFolderPath:(id)arg1;
-- (void)setIconData:(id)arg1 forID:(long long)arg2;
+- (void)setIconData:(id)arg1 forName:(id)arg2;
 - (void)setIconScale:(float)arg1;
 - (void)setIconSize:(unsigned int)arg1;
 - (void)setIconVersion:(int)arg1;

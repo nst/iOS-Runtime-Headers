@@ -23,6 +23,7 @@
 + (id)colorWithRGBBytes:(unsigned char)arg1 :(unsigned char)arg2 :(unsigned char)arg3;
 + (id)colorWithRGBValue:(long)arg1;
 + (id)colorWithSystemColorID:(int)arg1;
++ (id)stringForColor:(id)arg1;
 + (id)stringForSystemColorID:(int)arg1;
 + (id)whiteColor;
 

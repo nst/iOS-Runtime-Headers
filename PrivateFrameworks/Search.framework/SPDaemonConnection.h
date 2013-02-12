@@ -15,7 +15,6 @@
 
 - (BOOL)_appInstalled:(BOOL)arg1 withDisplayIdentifier:(id)arg2 withCategories:(id)arg3;
 - (void)_handleSendFailure:(int)arg1 inCodeNamed:(const char *)arg2;
-- (void)appWasSelected:(id)arg1 queryString:(id)arg2;
 - (void)cancelQuery:(id)arg1;
 - (void)dealloc;
 - (BOOL)endRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;
@@ -27,7 +26,7 @@
 - (void)registerApplication:(id)arg1 withCategories:(id)arg2;
 - (BOOL)requestRecordUpdatesForApplication:(id)arg1 category:(id)arg2 andIDs:(id)arg3;
 - (BOOL)retrieveUpdateList:(id*)arg1;
-- (void)searchResultWasSelected:(unsigned long long)arg1 inDomain:(unsigned int)arg2 queryString:(id)arg3;
+- (void)searchResultWasSelected:(id)arg1 inDomain:(unsigned int)arg2 queryString:(id)arg3;
 - (unsigned int)serverPort;
 - (id)startQuery:(id)arg1;
 - (BOOL)startRecordUpdatesForApplication:(id)arg1 andCategory:(id)arg2;

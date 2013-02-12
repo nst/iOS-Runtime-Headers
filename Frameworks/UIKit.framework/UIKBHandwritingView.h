@@ -2,17 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKBHandwritingDelegateProtocol>, UIKBKeyboard;
+@class <UIKBHandwritingDelegateProtocol>, UIKBTree;
 
 @interface UIKBHandwritingView : UIKBKeyView {
-    struct KBStrokeList { struct COWQueue<writing_point16_t> { 
-            unsigned int m_size; 
-            unsigned int m_capacity; 
-            struct SharedElements {} *m_elements; 
-        } x1; struct COWQueue<int> { 
-            unsigned int m_size; 
-            unsigned int m_capacity; 
-            struct SharedElements {} *m_elements; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -22,12 +14,13 @@
     BOOL _inGesture;
     struct CGColor { } *_inkColor;
     struct CGImage { } *_inkMask;
-    UIKBKeyboard *_keyboard;
+    UIKBTree *_keyboard;
     } _last;
     BOOL _stroked;
-        } x2; int x3; } *_strokes;
+    struct KBStrokeList { struct COWQueue<writing_point16_t> { unsigned int x_1_1_1; unsigned int x_1_1_2; struct SharedElements {} *x_1_1_3; } x1; struct COWQueue<int> { unsigned int x_2_1_1; unsigned int x_2_1_2; struct SharedElements {} *x_2_1_3; } x2; int x3; } *_strokes;
 }
 
+- (id).cxx_construct;
 - (BOOL)cancelTouchTracking;
 - (BOOL)clear;
 - (void)dealloc;
@@ -39,6 +32,6 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)updateKeyboard:(id)arg1 key:(id)arg2;
+- (void)updateForKeyboard:(id)arg1 key:(id)arg2;
 
 @end

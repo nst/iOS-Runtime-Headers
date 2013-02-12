@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UISearchBarDelegate>, NSArray, NSString, UIButton, UIColor, UIImageView, UILabel, UITextField, UIView;
+@class <UISearchBarDelegate>, NSArray, NSString, UIButton, UIColor, UIImage, UIImageView, UILabel, UITextField, UIView;
 
 @interface UISearchBar : UIView {
     struct UIEdgeInsets { 
@@ -24,7 +24,7 @@
         unsigned int searchResultsButtonSelected : 1; 
         unsigned int pretendsIsInBar : 1; 
         unsigned int disabled : 1; 
-    id _appearance;
+    id _appearanceStorage;
     UIView *_background;
     UIButton *_cancelButton;
     NSString *_cancelButtonText;
@@ -43,30 +43,38 @@
 
 @property int autocapitalizationType;
 @property int autocorrectionType;
+@property(retain) UIImage * backgroundImage;
 @property int barStyle;
 @property <UISearchBarDelegate> * delegate;
 @property int keyboardType;
 @property(copy) NSString * placeholder;
 @property(copy) NSString * prompt;
+@property(retain) UIImage * scopeBarBackgroundImage;
 @property(copy) NSArray * scopeButtonTitles;
+@property struct UIOffset { float x1; float x2; } searchFieldBackgroundPositionAdjustment;
 @property(getter=isSearchResultsButtonSelected) BOOL searchResultsButtonSelected;
+@property struct UIOffset { float x1; float x2; } searchTextPositionAdjustment;
 @property int selectedScopeButtonIndex;
 @property BOOL showsBookmarkButton;
 @property BOOL showsCancelButton;
 @property BOOL showsScopeBar;
 @property BOOL showsSearchResultsButton;
+@property int spellCheckingType;
 @property(copy) NSString * text;
 @property(retain) UIColor * tintColor;
 @property(getter=isTranslucent) BOOL translucent;
 
-+ (void)_initializeSafeCategory;
-
+- (float)_availableBoundsWidth;
 - (void)_bookmarkButtonPressed;
 - (void)_cancelButtonPressed;
+- (id)_currentSeparatorImage;
 - (void)_destroyCancelButton;
 - (void)_hideShowAnimationDidFinish;
+- (id)_imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2;
 - (BOOL)_isEnabled;
 - (BOOL)_isInBar;
+- (float)_landscapeScopeBarWidth;
+- (float)_landscapeSearchFieldWidth;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_resultsListButtonPressed;
 - (id)_scopeBar;
@@ -74,19 +82,23 @@
 - (void)_searchFieldBeginEditing;
 - (void)_searchFieldEditingChanged;
 - (void)_searchFieldEndEditing;
+- (float)_searchFieldHeight;
 - (void)_searchFieldReturnPressed;
 - (void)_setAutoDisableCancelButton:(BOOL)arg1;
-- (void)_setCancelButtonBackgroundImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setCancelButtonText:(id)arg1;
 - (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setEnabled:(BOOL)arg1;
+- (void)_setScopeBarHidden:(BOOL)arg1;
 - (void)_setShowsCancelButton:(BOOL)arg1;
 - (void)_setShowsSeparator:(BOOL)arg1;
+- (void)_setTintColor:(id)arg1 forceUpdate:(BOOL)arg2;
 - (void)_setUpScopeBar;
 - (void)_setupCancelButton;
+- (void)_setupCancelButtonWithAppearance:(id)arg1;
 - (void)_setupPromptLabel;
 - (void)_setupSearchField;
-- (void)_takeAppearanceFromNavigationBarAppearance:(id)arg1;
+- (BOOL)_shouldCombineLandscapeBars;
+- (void)_updateMagnifyingGlassView;
 - (void)_updateOpacity;
 - (void)_updateRightView;
 - (void)_updateSearchFieldArt;
@@ -105,6 +117,7 @@
 - (id)delegate;
 - (BOOL)drawsBackground;
 - (void)encodeWithCoder:(id)arg1;
+- (id)imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
@@ -115,11 +128,20 @@
 - (void)layoutSubviews;
 - (void)movedToSuperview:(id)arg1;
 - (id)placeholder;
+- (struct UIOffset { float x1; float x2; })positionAdjustmentForSearchBarIcon:(int)arg1;
 - (BOOL)pretendsIsInBar;
 - (id)prompt;
+- (void)reloadInputViews;
 - (BOOL)resignFirstResponder;
+- (id)scopeBarBackgroundImage;
+- (id)scopeBarButtonBackgroundImageForState:(unsigned int)arg1;
+- (id)scopeBarButtonDividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2;
+- (id)scopeBarButtonTitleTextAttributesForState:(unsigned int)arg1;
 - (id)scopeButtonTitles;
 - (id)searchField;
+- (id)searchFieldBackgroundImageForState:(unsigned int)arg1;
+- (struct UIOffset { float x1; float x2; })searchFieldBackgroundPositionAdjustment;
+- (struct UIOffset { float x1; float x2; })searchTextPositionAdjustment;
 - (int)selectedScopeButtonIndex;
 - (void)setAutocapitalizationType:(int)arg1;
 - (void)setAutocorrectionType:(int)arg1;
@@ -131,27 +153,40 @@
 - (void)setController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDrawsBackground:(BOOL)arg1;
+- (void)setImage:(id)arg1 forSearchBarIcon:(int)arg2 state:(unsigned int)arg3;
 - (void)setKeyboardType:(int)arg1;
 - (void)setPlaceholder:(id)arg1;
+- (void)setPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forSearchBarIcon:(int)arg2;
 - (void)setPretendsIsInBar:(BOOL)arg1;
 - (void)setPrompt:(id)arg1;
+- (void)setScopeBarBackgroundImage:(id)arg1;
+- (void)setScopeBarButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setScopeBarButtonDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3;
+- (void)setScopeBarButtonTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)setScopeButtonTitles:(id)arg1;
+- (void)setSearchFieldBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setSearchFieldBackgroundPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setSearchResultsButtonSelected:(BOOL)arg1;
+- (void)setSearchTextPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setSelectedScopeButtonIndex:(int)arg1;
+- (void)setShortcutConversionType:(int)arg1;
 - (void)setShowsBookmarkButton:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsScopeBar:(BOOL)arg1;
 - (void)setShowsSearchResultsButton:(BOOL)arg1;
+- (void)setSpellCheckingType:(int)arg1;
 - (void)setText:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
 - (void)setUsesEmbeddedAppearance:(BOOL)arg1;
+- (int)shortcutConversionType;
 - (BOOL)showsBookmarkButton;
 - (BOOL)showsCancelButton;
 - (BOOL)showsScopeBar;
 - (BOOL)showsSearchResultsButton;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (int)spellCheckingType;
 - (id)text;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;

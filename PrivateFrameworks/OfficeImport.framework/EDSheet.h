@@ -36,8 +36,8 @@
 - (unsigned int)drawableCount;
 - (id)drawableEnumerator;
 - (id)drawables;
-- (id)edCommentForESDObject:(id)arg1;
-- (id)edTextBoxForESDObject:(id)arg1;
+- (id)edCommentForShape:(id)arg1;
+- (id)edTextBoxForShape:(id)arg1;
 - (id)escherDrawing;
 - (id)headerFooter;
 - (id)initWithWorkbook:(id)arg1;
@@ -54,8 +54,8 @@
 - (void)setDefaultGridlineColorReference:(id)arg1;
 - (void)setDisplayFormulas:(bool)arg1;
 - (void)setDisplayGridlines:(bool)arg1;
-- (void)setEDComment:(id)arg1 forESDObject:(id)arg2;
-- (void)setEDTextBox:(id)arg1 forESDObject:(id)arg2;
+- (void)setEDComment:(id)arg1 forShape:(id)arg2;
+- (void)setEDTextBox:(id)arg1 forShape:(id)arg2;
 - (void)setEscherDrawing:(id)arg1;
 - (void)setHeaderFooter:(id)arg1;
 - (void)setHidden:(bool)arg1;

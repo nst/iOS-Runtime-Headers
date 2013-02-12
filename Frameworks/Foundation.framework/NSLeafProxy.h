@@ -2,9 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSDocInfo, NSString;
 
 @interface NSLeafProxy <NSCopying> {
+     /* Encoded args for previous method:  */
     NSString *dir;
     NSDocInfo *docInfo;
     NSString *file;
@@ -16,7 +21,10 @@
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)forwardInvocation:(id)arg1;
++ (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

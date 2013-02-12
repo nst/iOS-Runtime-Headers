@@ -10,6 +10,8 @@
 + (void)initialize;
 
 - (id)_initPrivate;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -19,7 +21,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicateFormat;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

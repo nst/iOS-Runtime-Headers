@@ -29,6 +29,7 @@
 - (id)parameter;
 - (void)performDefaultActionForDialog:(id)arg1;
 - (void)setActionType:(int)arg1;
+- (void)setActionTypeWithString:(id)arg1;
 - (void)setParameter:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrlType:(int)arg1;

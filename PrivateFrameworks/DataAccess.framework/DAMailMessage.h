@@ -15,6 +15,8 @@
 - (id)date;
 - (id)displayTo;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)flagged;
+- (BOOL)flaggedIsSet;
 - (id)folderID;
 - (id)from;
 - (int)importance;
@@ -29,6 +31,7 @@
 - (id)remoteID;
 - (id)replyTo;
 - (id)rfc822Data;
+- (int)smimeType;
 - (id)subject;
 - (id)threadTopic;
 - (id)to;

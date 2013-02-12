@@ -5,13 +5,16 @@
 @class NSDictionary, NSString;
 
 @interface AAAuthenticationResponse : AAResponse {
+    NSDictionary *_appleAccount;
     NSDictionary *_tokens;
 }
 
 @property(readonly) NSString * authToken;
+@property(readonly) NSString * personID;
 
 - (id)authToken;
 - (void)dealloc;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)personID;
 
 @end

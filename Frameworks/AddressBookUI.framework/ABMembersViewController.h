@@ -9,22 +9,19 @@
     int _insertionProperty;
     id _insertionValue;
     ABMembersController *_membersController;
-    struct __CFArray { } *_personViewControllers;
     int _rightButtonBehavior;
+    BOOL _shouldHandleExternalChangeOnPersonViewControllers;
+    BOOL _showsRefreshButton;
 }
 
 @property(readonly) BOOL allowsCancel;
 @property(readonly) BOOL allowsCardEditing;
 @property(readonly) BOOL shouldShowGroups;
 
-+ (void)_initializeSafeCategory;
-
 - (void)_applicationEnteringBackground;
 - (void)_applicationEnteringForeground;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
-- (void*)_personToUseForSavingState;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (int)abViewControllerType;
-- (id)ab_viewControllerToPresentCamera;
 - (void)addPerson:(id)arg1;
 - (BOOL)allowsCancel;
 - (BOOL)allowsCardEditing;
@@ -37,7 +34,7 @@
 - (void)dealloc;
 - (id)defaultPNGName;
 - (void)didReceiveMemoryWarning;
-- (void)imageUpdatedForPerson:(void*)arg1;
+- (void)handleExternalChangeOnPersonViewControllers;
 - (id)initWithModel:(id)arg1;
 - (void)insertProperty:(int*)arg1 insertValue:(id*)arg2 insertLabel:(id*)arg3;
 - (BOOL)isNavigationButtonEnabled:(int)arg1;
@@ -47,27 +44,31 @@
 - (id)localizedTitleForGroupWrapper:(id)arg1;
 - (void)membersController:(id)arg1 needsTitleUpdate:(id)arg2;
 - (void)membersController:(id)arg1 needsTitleViewUpdate:(id)arg2;
-- (BOOL)membersController:(id)arg1 shouldAllowSelectingPerson:(void*)arg2;
+- (BOOL)membersController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (id)membersController;
 - (void)membersControllerWillEndSearching:(id)arg1;
 - (void)membersControllerWillStartSearching:(id)arg1;
 - (id)model;
 - (void)modelDatabaseChange:(id)arg1;
-- (void)modelSelectedPersonWasDeleted:(id)arg1;
 - (void)nameUpdatedForPerson:(void*)arg1;
 - (BOOL)newContactViewControllerCompleted:(id)arg1 withNewPerson:(void*)arg2;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (void)peoplePickerNavigationControllerNavigationBarStoppedAnimating:(id)arg1;
 - (BOOL)personViewController:(id)arg1 shouldContinueAfterEditingConfirmed:(BOOL)arg2 forPerson:(void*)arg3;
-- (void)personViewControllerIsGoingAway:(id)arg1;
 - (void)personWasDeleted;
 - (void)personWasSelected:(void*)arg1;
 - (void)preferredPersonDidChangeToPerson:(void*)arg1;
+- (void)reallyHandleExternalChangeOnPersonViewControllers;
+- (void)refreshEverythingNow;
 - (void)resetInsertionData;
+- (void)setAddressBook:(void*)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (BOOL)shouldShowGroups;
+- (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2 selectAndScrollToPerson:(BOOL)arg3;
 - (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 selectAndScrollToPerson:(BOOL)arg4;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)showInsertEditorForPerson:(void*)arg1 animate:(BOOL)arg2;
 - (void)startRefreshingAccount;
@@ -75,6 +76,7 @@
 - (void)updateNavigationButtonsAnimated:(BOOL)arg1;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1;
+- (void)updateRefreshButton;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

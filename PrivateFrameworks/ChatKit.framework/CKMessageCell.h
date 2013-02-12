@@ -4,7 +4,7 @@
 
 @class CKBalloonView, UIButton;
 
-@interface CKMessageCell : UITableViewCell {
+@interface CKMessageCell : CKTranscriptCell {
     CKBalloonView *_balloonView;
     float _bottomPadding;
     UIButton *_failedButton;
@@ -18,24 +18,23 @@
 + (id)_exclamationGlyphImage;
 + (id)_failImage;
 + (id)_failPressedImage;
-+ (void)_initializeSafeCategory;
 
-- (BOOL)_accessibilitySupportsActivateAction;
-- (id)_accessibilityTextViewTextOperationResponder;
+- (void)__performTargetAction:(SEL)arg1;
 - (void)_failPressed:(id)arg1;
 - (id)_multiselectBackgroundColor;
 - (void)_resetBalloonFrame;
-- (void)accessibilityActivate;
-- (id)accessibilityLabel;
 - (void)addBalloonView:(id)arg1;
 - (id)balloonView;
+- (void)balloonViewDidTapBalloon:(id)arg1;
+- (void)balloonViewDidTapSendAsSMS:(id)arg1;
+- (BOOL)balloonViewShouldShowSendAsSMSAction:(id)arg1;
 - (void)dealloc;
-- (void)didTapBalloon:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })failedButtonFrame;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)replacementMessageBubbleData;
+- (void)setContactImage:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFailed:(BOOL)arg1;
 - (void)setReplacementMessageBubbleData:(id)arg1;

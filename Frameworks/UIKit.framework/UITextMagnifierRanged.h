@@ -23,10 +23,10 @@
     UITextMagnifierTimeWeightedPoint *_weightedPoint;
 }
 
-@property struct CGPoint { float x; float y; } animationPoint;
-@property struct CGPoint { float x; float y; } magnificationPoint;
+@property struct CGPoint { float x1; float x2; } animationPoint;
+@property struct CGPoint { float x1; float x2; } magnificationPoint;
 @property(retain) UIView * target;
-@property(readonly) struct CGPoint { float x; float y; } terminalPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } terminalPoint;
 @property(readonly) BOOL terminalPointPlacedCarefully;
 @property(retain) UIResponder<UITextInput> * text;
 

@@ -7,10 +7,12 @@
 
 @property(getter=isDelayingTerminate,readonly) id delayingTerminate;
 @property(retain) id iconBadgeNumber;
+@property(getter=wasLaunchedFromLibrary,readonly) id launchedFromLibrary;
 @property(getter=isRunningInStoreDemoMode,readonly) id runningInStoreDemoMode;
 @property(readonly) id screenHeight;
 @property(readonly) id screenWidth;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -21,13 +23,17 @@
 - (id)attributeKeys;
 - (void)beginDelayingTerminate;
 - (void)endDelayingTerminate;
+- (void)exitStore;
 - (id)iconBadgeNumber;
 - (id)init;
 - (id)isDelayingTerminate;
 - (id)isRunningInStoreDemoMode;
+- (void)returnToLibrary;
 - (id)screenHeight;
 - (id)screenWidth;
 - (id)scriptAttributeKeys;
 - (void)setIconBadgeNumber:(id)arg1;
+- (void)showNewsstand;
+- (id)wasLaunchedFromLibrary;
 
 @end

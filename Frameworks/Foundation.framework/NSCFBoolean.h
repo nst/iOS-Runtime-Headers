@@ -8,6 +8,8 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (unsigned long)_cfTypeID;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (BOOL)boolValue;
 - (BOOL)charValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

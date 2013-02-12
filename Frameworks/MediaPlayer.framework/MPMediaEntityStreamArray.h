@@ -16,7 +16,7 @@
     NSMutableArray *_entities;
     unsigned int _entitiesSemaphoreIndex;
     struct __CFArray { } *_entitiesSemaphores;
-    int _entityType;
+    Class _entityClass;
     struct __CFArray { } *_isEmptySemaphores;
     MPMediaLibrary *_library;
     MPMediaQueryCriteria *_queryCriteria;
@@ -28,14 +28,14 @@
 @property int containedMediaTypes;
 @property(readonly) MPMediaLibrary * library;
 @property(readonly) MPMediaQueryCriteria * queryCriteria;
-@property(copy,readonly) MPMediaQuerySectionInfo * sectionInfo;
+@property(readonly) MPMediaQuerySectionInfo * sectionInfo;
 
 - (BOOL)MPIsEmpty;
 - (void)_commonInitMPMediaEntityStreamArray;
 - (void)_onQueueAddObject:(id)arg1;
 - (void)_onQueueStartLoadingEntities;
 - (void)_onQueueStartLoadingIsEmpty;
-- (void)addCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3 grouping:(int)arg4;
+- (void)addCollectionWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQueryCriteria:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5;
 - (void)addItemWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2;
 - (int)containedMediaTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

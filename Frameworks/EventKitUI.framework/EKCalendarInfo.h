@@ -15,16 +15,21 @@
 @property(retain) UIColor * color;
 @property(readonly) int displayOrder;
 @property EKGroupInfo * group;
+@property(readonly) BOOL isEditable;
+@property(readonly) BOOL isShared;
 @property(readonly) BOOL isSubscribed;
 @property BOOL selected;
-@property(copy,readonly) NSString * title;
+@property(readonly) NSString * title;
 
 - (id)calendar;
 - (id)color;
 - (void)dealloc;
+- (id)description;
 - (int)displayOrder;
 - (id)group;
 - (id)initWithCalendar:(id)arg1;
+- (BOOL)isEditable;
+- (BOOL)isShared;
 - (BOOL)isSubscribed;
 - (BOOL)selected;
 - (void)setCalendar:(id)arg1;

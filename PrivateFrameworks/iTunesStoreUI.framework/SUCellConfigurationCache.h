@@ -11,8 +11,6 @@
 
 @property(retain) id cellContext;
 
-+ (void)_initializeSafeCategory;
-
 - (id)cellContext;
 - (id)configurationForRow:(unsigned int)arg1;
 - (void)dealloc;
@@ -20,6 +18,5 @@
 - (void)reset;
 - (void)resetLayoutCaches;
 - (void)setCellContext:(id)arg1;
-- (void)setCellReuseSource:(id)arg1;
 
 @end

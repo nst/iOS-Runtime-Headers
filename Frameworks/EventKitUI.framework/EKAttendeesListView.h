@@ -15,8 +15,6 @@
     BOOL _shouldShowStatusImages;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (id)_attendingImage;
 - (id)_imageForStatus:(int)arg1;
 - (id)_maybeImage;

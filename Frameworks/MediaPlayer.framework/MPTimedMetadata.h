@@ -14,7 +14,7 @@
 @property(readonly) double timestamp;
 @property(readonly) id value;
 
-- (id)_initWithMetadataDictionary:(id)arg1;
+- (id)_initWithMetadataItem:(id)arg1;
 - (id)allMetadata;
 - (void)dealloc;
 - (id)init;

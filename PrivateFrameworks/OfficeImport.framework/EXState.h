@@ -27,6 +27,7 @@
     struct __CFDictionary { } *mSharedFormulasMap;
     EDReference *mSheetDimension;
     unsigned int mTotalCellsWithContentCount;
+    unsigned int mTotalCellsWithFormulaCount;
     CPImportTracing *mTracing;
     EDWorkbook *mWorkbook;
     OCPPackagePart *mWorkbookPart;
@@ -47,6 +48,7 @@
 - (double)defaultColumnWidth;
 - (double)defaultRowHeight;
 - (void)incrementCellsWithContentCount;
+- (void)incrementCellsWithFormulaCount;
 - (id)initWithWorkbookPart:(id)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
 - (BOOL)isCancelled;
 - (bool)isPredefinedDxfsBeingRead;

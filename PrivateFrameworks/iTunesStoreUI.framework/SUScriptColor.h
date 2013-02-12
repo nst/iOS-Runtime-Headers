@@ -3,38 +3,33 @@
  */
 
 @interface SUScriptColor : SUScriptObject {
-    float _alpha;
-    float _blue;
     struct CGColor { } *_color;
-    float _green;
-    float _red;
 }
 
-@property(getter=_alpha,setter=set_alpha:) float alpha;
-@property(getter=_blue,setter=set_blue:) float blue;
-@property(getter=_green,setter=set_green:) float green;
-@property(getter=_red,setter=set_red:) float red;
+@property(readonly) float alpha;
+@property(readonly) float blue;
+@property(readonly) float green;
+@property(readonly) float red;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (float)_alpha;
-- (float)_blue;
 - (id)_className;
-- (float)_green;
 - (void)_ntsSetColor:(struct CGColor { }*)arg1;
-- (float)_red;
+- (float)alpha;
+- (id)attributeKeys;
+- (float)blue;
 - (struct CGColor { }*)copyCGColor;
 - (void)dealloc;
+- (float)green;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithStyleString:(id)arg1;
+- (float)red;
+- (id)scriptAttributeKeys;
 - (void)setHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 - (void)setRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (void)setWhite:(float)arg1 alpha:(float)arg2;
-- (void)set_alpha:(float)arg1;
-- (void)set_blue:(float)arg1;
-- (void)set_green:(float)arg1;
-- (void)set_red:(float)arg1;
 - (id)stringRepresentation;
 
 @end

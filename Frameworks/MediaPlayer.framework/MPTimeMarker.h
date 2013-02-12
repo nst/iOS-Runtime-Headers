@@ -9,7 +9,6 @@
     unsigned int _index;
     int _markerType;
     NSDictionary *_metadata;
-    id _thumbnail;
     double _time;
     NSString *_title;
     NSURL *_url;
@@ -17,11 +16,11 @@
 
 @property(readonly) double comparableTime;
 @property double duration;
+@property(readonly) BOOL hasArtworkAtPlaybackTime;
 @property unsigned int index;
 @property(readonly) int markerType;
 @property(readonly) double maxTime;
 @property(retain) NSDictionary * metadata;
-@property(retain) id thumbnail;
 @property double time;
 @property(retain) NSString * title;
 @property(retain) NSURL * url;
@@ -30,6 +29,7 @@
 - (void)dealloc;
 - (id)description;
 - (double)duration;
+- (BOOL)hasArtworkAtPlaybackTime;
 - (unsigned int)index;
 - (id)initWithMarkerType:(int)arg1;
 - (int)markerType;
@@ -38,11 +38,9 @@
 - (void)setDuration:(double)arg1;
 - (void)setIndex:(unsigned int)arg1;
 - (void)setMetadata:(id)arg1;
-- (void)setThumbnail:(id)arg1;
 - (void)setTime:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (id)thumbnail;
 - (double)time;
 - (id)title;
 - (id)url;

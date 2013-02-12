@@ -11,7 +11,6 @@
 @property(retain) UIImage * barBackground;
 
 + (id)backgroundImage;
-+ (id)backgroundImageName;
 + (float)defaultHeight;
 + (float)defaultHeightForOrientation:(int)arg1;
 + (void)preloadImages;

@@ -2,33 +2,34 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableDictionary;
-
-@interface SSNetworkConstraints : NSObject {
-    NSMutableDictionary *_dictionary;
+@interface SSNetworkConstraints : NSObject <SSCoding, SSXPCCoding, NSCopying> {
     struct dispatch_queue_s { } *_dispatchQueue;
-    int _networkType;
+    long long _sizeLimit2G;
+    long long _sizeLimit3G;
+    long long _sizeLimitWiFi;
 }
 
-@property(readonly) NSDictionary * constraintDictionary;
-@property int networkType;
+@property(getter=isAnyNetworkTypeEnabled,readonly) BOOL anyNetworkTypeEnabled;
 
-+ (id)disableEverythingConstraints;
-+ (id)enableEverythingConstraints;
++ (void)_addNetworkConstraintsToDictionary:(id)arg1 forNetworkType:(int)arg2 legacyDictionary:(id)arg3;
++ (id)_newLegacyNetworkConstraintsWithDictionary:(id)arg1;
++ (id)_newModernNetworkConstraintsWithArray:(id)arg1;
++ (id)newNetworkConstraintsByDownloadKindFromURLBag:(id)arg1;
 
-- (id)_initSSNetworkConstraints;
-- (id)constraintDictionary;
+- (void)_setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
+- (id)copyPropertyListEncoding;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)copyXPCEncoding;
 - (void)dealloc;
+- (id)description;
 - (id)init;
-- (id)initWithConstraintDictionary:(id)arg1 forNetworkType:(int)arg2;
-- (id)networkTooSlowErrorWithAssetType:(int)arg1 itemName:(id)arg2 canDownloadInITunes:(BOOL)arg3;
-- (id)networkTooSlowErrorWithAssetType:(int)arg1 itemName:(id)arg2;
-- (int)networkType;
-- (id)searchQueryParametersForAssetType:(int)arg1;
-- (void)setContentEnabled:(BOOL)arg1 forConstraintCategory:(id)arg2;
-- (void)setNetworkType:(int)arg1;
-- (void)setSearchQueryParameters:(id)arg1 forAssetType:(int)arg2;
-- (void)setSizeLimit:(long long)arg1 forAssetType:(int)arg2;
-- (long long)sizeLimitForAssetType:(int)arg1;
+- (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
+- (BOOL)isAnyNetworkTypeEnabled;
+- (BOOL)isEqual:(id)arg1;
+- (void)setAllNetworkTypesDisabled;
+- (void)setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
+- (void)setSizeLimitsWithStoreConstraintDictionary:(id)arg1;
+- (long long)sizeLimitForNetworkType:(int)arg1;
 
 @end

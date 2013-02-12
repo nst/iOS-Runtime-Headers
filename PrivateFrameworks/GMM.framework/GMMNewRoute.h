@@ -20,6 +20,7 @@
     NSMutableArray *_offsetPolylines;
     NSMutableArray *_steps;
     int _trafficDelaySeconds;
+    NSMutableArray *_viaWaypoints;
 }
 
 @property(retain) GMMDateTime * arrivalDateTime;
@@ -34,19 +35,20 @@
 @property(readonly) BOOL hasDepartureDateTime;
 @property(readonly) BOOL hasDeprecatedDistance;
 @property(readonly) BOOL hasDeprecatedDuration;
-@property(readonly) BOOL hasDistanceMeters;
-@property(readonly) BOOL hasDurationSeconds;
-@property(readonly) BOOL hasMode;
-@property(readonly) BOOL hasTrafficDelaySeconds;
+@property BOOL hasDistanceMeters;
+@property BOOL hasDurationSeconds;
+@property BOOL hasMode;
+@property BOOL hasTrafficDelaySeconds;
 @property int mode;
 @property(retain) NSMutableArray * offsetPolylines;
-@property(readonly) int offsetPolylinesCount;
 @property(retain) NSMutableArray * steps;
-@property(readonly) int stepsCount;
 @property int trafficDelaySeconds;
+@property(retain) NSMutableArray * viaWaypoints;
 
 - (void)addOffsetPolyline:(id)arg1;
 - (void)addStep:(id)arg1;
+- (void)addViaWaypoint:(id)arg1;
+- (id)altDescription;
 - (id)arrivalDateTime;
 - (id)cost;
 - (void)dealloc;
@@ -67,11 +69,10 @@
 - (BOOL)hasDurationSeconds;
 - (BOOL)hasMode;
 - (BOOL)hasTrafficDelaySeconds;
-- (id)init;
 - (int)mode;
 - (id)offsetPolylineAtIndex:(unsigned int)arg1;
 - (id)offsetPolylines;
-- (int)offsetPolylinesCount;
+- (unsigned int)offsetPolylinesCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArrivalDateTime:(id)arg1;
 - (void)setCost:(id)arg1;
@@ -80,16 +81,22 @@
 - (void)setDeprecatedDuration:(id)arg1;
 - (void)setDistanceMeters:(int)arg1;
 - (void)setDurationSeconds:(int)arg1;
+- (void)setHasDistanceMeters:(BOOL)arg1;
+- (void)setHasDurationSeconds:(BOOL)arg1;
+- (void)setHasMode:(BOOL)arg1;
+- (void)setHasTrafficDelaySeconds:(BOOL)arg1;
 - (void)setMode:(int)arg1;
-- (void)setOffsetPolyline:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setOffsetPolylines:(id)arg1;
-- (void)setStep:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setSteps:(id)arg1;
 - (void)setTrafficDelaySeconds:(int)arg1;
+- (void)setViaWaypoints:(id)arg1;
 - (id)stepAtIndex:(unsigned int)arg1;
 - (id)steps;
-- (int)stepsCount;
+- (unsigned int)stepsCount;
 - (int)trafficDelaySeconds;
+- (id)viaWaypointAtIndex:(unsigned int)arg1;
+- (id)viaWaypoints;
+- (unsigned int)viaWaypointsCount;
 - (void)writeTo:(id)arg1;
 
 @end

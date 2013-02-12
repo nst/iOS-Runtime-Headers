@@ -80,6 +80,8 @@
 - (void)setM43:(double)arg1;
 - (void)setM44:(double)arg1;
 - (void)setMatrixValue:(id)arg1;
+- (id)skewX:(double)arg1;
+- (id)skewY:(double)arg1;
 - (id)toString;
 - (id)translate:(double)arg1 y:(double)arg2 z:(double)arg3;
 

@@ -8,13 +8,12 @@
     NSString *_candidate;
 }
 
-+ (void)_initializeSafeCategory;
+@property(copy) NSString * candidate;
 
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithCandidate:(id)arg1;
+- (void)setCandidate:(id)arg1;
 
 @end

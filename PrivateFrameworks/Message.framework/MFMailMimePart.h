@@ -8,9 +8,7 @@
 + (Class)attachmentClass;
 + (BOOL)isRecognizedClassForContent:(id)arg1;
 
-- (void)_setDecryptedMessageBody:(id)arg1 isEncrypted:(BOOL)arg2 isSigned:(BOOL)arg3;
 - (BOOL)_shouldContinueDecodingProcess;
-- (id)availableBodyData;
 - (void)configureFileWrapper:(id)arg1;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 asHTML:(BOOL)arg4 isComplete:(BOOL*)arg5;
 - (id)decodeMessageDelivery_status;
@@ -18,7 +16,6 @@
 - (id)decodeMessagePartial;
 - (id)decodeMessageRfc822;
 - (id)decodeMultipartAppledouble;
-- (id)decodeMultipartSigned;
 - (id)decodeTextCalendar;
 - (id)decodeTextEnriched;
 - (id)decodeTextHtml;
@@ -29,7 +26,6 @@
 - (id)htmlContent;
 - (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (id)htmlContentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
-- (void)loadMoreHtmlContent;
 - (void)storeData:(id)arg1 inMessage:(id)arg2 isComplete:(BOOL)arg3;
 
 @end

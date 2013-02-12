@@ -9,32 +9,40 @@
     SEL _columnCountSetter;
     float _columnSeparatorWidth;
     NSArray *_contentsArray;
+    int _highlightedColumn;
     BOOL _multiCellEnabled;
     int _selectedColumn;
     SEL _selectedColumnSetter;
 }
 
+@property(readonly) int activeColumn;
 @property(readonly) GKCellBackgroundView * cellBackgroundView;
 @property unsigned int columnCount;
 @property SEL columnCountSetter;
 @property float columnSeparatorWidth;
 @property(copy) NSArray * contentsArray;
+@property int highlightedColumn;
 @property BOOL multiCellEnabled;
 @property(readonly) GKCellBackgroundView * selectedCellBackgroundView;
 @property int selectedColumn;
 @property SEL selectedColumnSetter;
 
+- (void)_multiColumnHighlight:(BOOL)arg1 view:(id)arg2;
 - (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
+- (int)activeColumn;
 - (id)cellBackgroundView;
 - (unsigned int)columnCount;
 - (SEL)columnCountSetter;
 - (float)columnSeparatorWidth;
+- (int)conditionalActiveColumn:(BOOL)arg1;
 - (void)configureBackgroundView;
 - (id)contentsArray;
 - (void)dealloc;
+- (int)highlightedColumn;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (void)layoutSubviews;
 - (BOOL)multiCellEnabled;
+- (void)multiColumnHighlight:(BOOL)arg1 view:(id)arg2;
 - (void)prepareForReuse;
 - (id)selectedCellBackgroundView;
 - (int)selectedColumn;
@@ -45,6 +53,8 @@
 - (void)setContentsArray:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlightedColumn:(int)arg1 highlighted:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)setHighlightedColumn:(int)arg1;
 - (void)setMultiCellEnabled:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelectedColumn:(int)arg1 animated:(BOOL)arg2;

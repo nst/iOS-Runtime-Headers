@@ -14,6 +14,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)calendarDate;
++ (id)combinedDateWithYMDFrom:(id)arg1 HMSFrom:(id)arg2 componentDatesTimezone:(id)arg3;
 + (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
 + (id)dateWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
 + (id)dateWithString:(id)arg1 calendarFormat:(id)arg2;
@@ -38,6 +39,8 @@
 - (id)ekmsuidGMTDateToDateInTimeZone:(id)arg1;
 - (id)ekmsuidStringForYearMonthDay;
 - (void)encodeWithCoder:(id)arg1;
+- (void)getGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1;
+- (id)gmtDateToDateInTimeZone:(id)arg1;
 - (int)hourOfDay;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -49,6 +52,7 @@
 - (int)microsecondOfSecond;
 - (int)minuteOfHour;
 - (int)monthOfYear;
+- (id)nearestMidnight;
 - (oneway void)release;
 - (int)secondOfMinute;
 - (void)setCalendarFormat:(id)arg1;
@@ -56,6 +60,7 @@
 - (double)timeIntervalSinceReferenceDate;
 - (id)timeZone;
 - (id)timeZoneDetail;
+- (id)tzDateToDateInGMT:(id)arg1;
 - (int)yearOfCommonEra;
 - (void)years:(int*)arg1 months:(int*)arg2 days:(int*)arg3 hours:(int*)arg4 minutes:(int*)arg5 seconds:(int*)arg6 sinceDate:(id)arg7;
 

@@ -27,8 +27,6 @@
 @property float endCapRadius;
 @property float hitRectExtension;
 
-+ (void)_initializeSafeCategory;
-
 - (void)_deviceOrientationChanged:(id)arg1;
 - (int)_modeForRotationFromOrientation:(int)arg1 toOrientation:(int)arg2;
 - (void)_setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1 rotationMode:(int)arg2;

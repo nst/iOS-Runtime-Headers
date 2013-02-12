@@ -5,14 +5,15 @@
 @class UIImageView;
 
 @interface MPMovieTVHUDView : UIView {
-    int _currentState;
+    unsigned int _currentState;
     UIImageView *_playbackMode;
 }
 
 - (void)_changeState;
 - (void)_fadeOut;
+- (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPlaybackState:(int)arg1;
 
 @end

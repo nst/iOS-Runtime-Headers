@@ -2,21 +2,24 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMusicPlayerControllerServerInternal;
+@class MPAVController, MPMusicPlayerControllerServerInternal;
 
 @interface MPMusicPlayerControllerServer : NSObject {
     MPMusicPlayerControllerServerInternal *_internal;
 }
 
+@property(readonly) MPAVController * player;
+
 + (void)initialize;
 + (BOOL)isMusicPlayerControllerServerRunning;
 + (id)sharedInstance;
-+ (void)startMusicPlayerControllerServer;
++ (void)startMusicPlayerControllerServerWithDelegate:(id)arg1;
 
 - (void)_runMigServer;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
-- (id)init;
+- (id)initWithDelegate:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)player;
 
 @end

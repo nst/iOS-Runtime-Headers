@@ -5,6 +5,16 @@
 @class GKCoreTextRenderer, NSAttributedString, NSString;
 
 @interface GKLabel : UILabel {
+    struct { 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } constraints; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } sizeThatFit; 
+        float fontSize; 
     NSAttributedString *_attributedString;
     NSAttributedString *_attributedText;
     GKCoreTextRenderer *_coreTextRenderer;
@@ -13,8 +23,10 @@
     BOOL _shouldDrawEmoji;
     BOOL _shouldQuoteText;
     BOOL _shouldSizeToTextImageBounds;
+    } _sizeThatFitsCache;
 }
 
+@property(readonly) unsigned int actualLineCount;
 @property(readonly) NSAttributedString * attributedString;
 @property(copy) NSAttributedString * attributedText;
 @property(readonly) float baselineYOffset;
@@ -27,11 +39,11 @@
 @property BOOL shouldSizeToTextImageBounds;
 @property(copy) NSString * truncationSymbol;
 
-+ (void)_initializeSafeCategory;
-
+- (unsigned int)actualLineCount;
 - (id)attributedString;
 - (id)attributedStringForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)attributedText;
+- (int)baselineAdjustment;
 - (float)baselineYOffset;
 - (id)contentPath;
 - (id)coreTextRenderer;
@@ -40,13 +52,14 @@
 - (BOOL)forceNaturalAlignment;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)invalidateAttributedString;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (float)leading;
+- (float)minimumFontSize;
 - (struct __CTParagraphStyle { }*)paragraphStyleWithLineHeight:(float)arg1;
 - (float)preferredHeightForWidth:(float)arg1;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setAttributedText:(id)arg1;
+- (void)setBaselineAdjustment:(int)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentPath:(id)arg1;
 - (void)setCoreTextRenderer:(id)arg1;
@@ -55,6 +68,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLeading:(float)arg1;
 - (void)setLineBreakMode:(int)arg1;
+- (void)setMinimumFontSize:(float)arg1;
 - (void)setNumberOfLines:(int)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;

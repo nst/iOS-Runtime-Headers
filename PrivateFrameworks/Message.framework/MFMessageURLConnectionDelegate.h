@@ -4,7 +4,7 @@
 
 @class NSError, NSMutableData, NSURLResponse;
 
-@interface MFMessageURLConnectionDelegate : NSObject {
+@interface MFMessageURLConnectionDelegate : NSObject <NSURLConnectionDelegate> {
     BOOL _done;
     NSError *_error;
     NSURLResponse *_response;

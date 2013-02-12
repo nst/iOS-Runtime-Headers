@@ -13,6 +13,7 @@
 @property BOOL allowsCustomizing;
 @property UIViewController * displayedViewController;
 @property(retain) NSArray * moreViewControllers;
+@property BOOL moreViewControllersChanged;
 
 - (id)_preparedViewController:(id)arg1;
 - (void)_restoreOriginalNavigationController;
@@ -22,9 +23,11 @@
 - (id)displayedViewController;
 - (id)init;
 - (id)moreViewControllers;
+- (BOOL)moreViewControllersChanged;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setAllowsCustomizing:(BOOL)arg1;
 - (void)setDisplayedViewController:(id)arg1;
 - (void)setMoreViewControllers:(id)arg1;
+- (void)setMoreViewControllersChanged:(BOOL)arg1;
 
 @end

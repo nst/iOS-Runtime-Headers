@@ -10,18 +10,20 @@
 
 @interface EKPredicateSearch : NSObject {
     id _callback;
+    Class _entityClass;
     BOOL _finished;
     NSPredicate *_predicate;
     unsigned int _previous;
     EKEventStore *_store;
 }
 
-+ (id)searchWithPredicate:(id)arg1 store:(id)arg2 callback:(id)arg3;
++ (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3 callback:(id)arg4;
 
-- (BOOL)_receivedData:(struct { void *x1; double x2; BOOL x3[2048]; }[50])arg1 count:(int)arg2;
+- (BOOL)_receivedData:(struct { struct { int x_1_1_1; int x_1_1_2; } x1; double x2; }[50])arg1 count:(int)arg2;
 - (void)dealloc;
-- (id)initWithPredicate:(id)arg1 store:(id)arg2 callback:(id)arg3;
+- (id)initWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3 callback:(id)arg4;
 - (void)run;
+- (id)startWithCompletion:(id)arg1;
 - (void)terminate;
 
 @end

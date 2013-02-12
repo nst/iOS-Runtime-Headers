@@ -39,7 +39,7 @@
 - (unsigned int)length;
 - (BOOL)mf_immutable;
 - (void)mf_makeImmutable;
-- (const void*)mutableBytes;
+- (void*)mutableBytes;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setLength:(unsigned int)arg1;
 - (void)setMappingThreshold:(unsigned int)arg1;

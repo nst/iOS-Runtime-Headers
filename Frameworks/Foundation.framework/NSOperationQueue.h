@@ -11,12 +11,15 @@
 + (id)currentQueue;
 + (id)mainQueue;
 
+- (void)__:(id)arg1;
+- (id)__;
 - (void)addInvocation:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (void)addOperationWithBlock:(id)arg1;
 - (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (void)cancelAllOperations;
 - (void)dealloc;
+- (id)description;
 - (void)executeAndWaitForBlock:(id)arg1;
 - (id)init;
 - (BOOL)isSuspended;
@@ -24,11 +27,10 @@
 - (id)name;
 - (unsigned int)operationCount;
 - (id)operations;
-- (void)release;
-- (id)retain;
-- (unsigned int)retainCount;
+- (BOOL)overcommitsOperations;
 - (void)setMaxConcurrentOperationCount:(int)arg1;
 - (void)setName:(id)arg1;
+- (void)setOvercommitsOperations:(BOOL)arg1;
 - (void)setSuspended:(BOOL)arg1;
 - (void)waitUntilAllOperationsAreFinished;
 

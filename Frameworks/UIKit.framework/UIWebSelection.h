@@ -16,8 +16,8 @@
 }
 
 @property(retain) <UIWebSelectionBlock> * base;
-@property(readonly) struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } boundingRect;
-@property struct CGSize { float width; float height; } desiredSize;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
+@property struct CGSize { float x1; float x2; } desiredSize;
 @property(readonly) UIWebDocumentView * documentView;
 @property(retain) <UIWebSelectionBlock> * extent;
 @property(getter=isTextOnly,readonly) BOOL textOnly;
@@ -32,7 +32,9 @@
 - (BOOL)blockContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)blockOfSameWidthAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectAndInsideFixedPosition:(int*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingTextSelectionRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingTextSelectionRectAndInsideFixedPosition:(int*)arg1;
 - (void)dealloc;
 - (id)description;
 - (struct CGSize { float x1; float x2; })desiredSize;

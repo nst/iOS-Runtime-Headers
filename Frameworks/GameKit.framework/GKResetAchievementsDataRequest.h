@@ -10,10 +10,8 @@
 
 @property(retain) GKGame * game;
 
-- (int)cacheType;
 - (void)dealloc;
 - (id)game;
-- (id)invalidateCacheKeys;
 - (id)key;
 - (void)setGame:(id)arg1;
 

@@ -8,8 +8,10 @@
     NSMutableArray *_collectedPeople;
 }
 
+@property NSMutableArray * _collectedPeople;
 @property(readonly) NSArray * collectedIMPeople;
 
+- (id)_collectedPeople;
 - (void)_collectionNotification:(id)arg1;
 - (void)addIMPeople:(id)arg1;
 - (id)collectedIMPeople;
@@ -20,5 +22,6 @@
 - (id)init;
 - (id)people;
 - (void)removeIMPeople:(id)arg1;
+- (void)set_collectedPeople:(id)arg1;
 
 @end

@@ -17,6 +17,8 @@
 
 - (void)_expandInverted;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
 - (id)bitmapRepresentation;
 - (BOOL)characterIsMember:(unsigned short)arg1;

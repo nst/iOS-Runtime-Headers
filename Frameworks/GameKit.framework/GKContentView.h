@@ -19,7 +19,7 @@
 
 @property(retain) UIActivityIndicatorView * activityIndicator;
 @property(retain) UIButton * cancelButton;
-@property(retain,readonly) NSArray * connectionButtons;
+@property(readonly) NSArray * connectionButtons;
 @property UIImage * icon;
 @property(retain) UIImageView * iconView;
 @property NSString * message;
@@ -28,7 +28,7 @@
 @property int numberOfMessageLines;
 @property int numberOfTitleLines;
 @property(retain) UIButton * otherButton;
-@property(retain,readonly) UITableView * table;
+@property(readonly) UITableView * table;
 @property NSString * title;
 @property(readonly) UIFont * titleFont;
 @property(retain) UILabel * titleLabel;
@@ -58,7 +58,7 @@
 - (id)otherButton;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setCancelButton:(id)arg1;
-- (void)setConnectionButtons:(unsigned int)arg1;
+- (void)setConnectionButtonTypes:(unsigned int)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIconView:(id)arg1;
 - (void)setMessage:(id)arg1;

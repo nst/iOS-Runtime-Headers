@@ -23,7 +23,7 @@
 @property(readonly) BOOL hasNavigationImage;
 @property(readonly) BOOL hasPanoId;
 @property(readonly) BOOL hasSignature;
-@property(readonly) BOOL hasThrottled;
+@property BOOL hasThrottled;
 @property(retain) GMMIncomingSuperTile * incomingSuperTile;
 @property(retain) GMMIncomingThumbnail * incomingThumbnail;
 @property(retain) GMMIncomingTile * incomingTile;
@@ -35,7 +35,7 @@
 
 - (void)dealloc;
 - (id)description;
-- (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasIncomingSuperTile;
 - (BOOL)hasIncomingThumbnail;
 - (BOOL)hasIncomingTile;
@@ -47,11 +47,11 @@
 - (id)incomingSuperTile;
 - (id)incomingThumbnail;
 - (id)incomingTile;
-- (id)init;
 - (id)metadata;
 - (id)navigationImage;
 - (id)panoId;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasThrottled:(BOOL)arg1;
 - (void)setIncomingSuperTile:(id)arg1;
 - (void)setIncomingThumbnail:(id)arg1;
 - (void)setIncomingTile:(id)arg1;

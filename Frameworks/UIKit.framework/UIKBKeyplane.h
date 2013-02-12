@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSString, UIKBAttributeList, UIKBIdentifierList;
 
-@interface UIKBKeyplane : NSObject <NSCoding, NSCopying, UIKeyboardRivenKeyplane> {
+@interface UIKBKeyplane : NSObject <NSCoding, NSCopying> {
     UIKBAttributeList *m_attributes;
     NSMutableArray *m_keylayouts;
     NSArray *m_keys;
@@ -41,6 +41,7 @@
 - (BOOL)looksLike:(id)arg1;
 - (BOOL)looksLikeShiftAlternate;
 - (id)name;
+- (BOOL)notUseCandidateSelection;
 - (void)setAttributes:(id)arg1;
 - (void)setKeylayouts:(id)arg1;
 - (void)setName:(id)arg1;

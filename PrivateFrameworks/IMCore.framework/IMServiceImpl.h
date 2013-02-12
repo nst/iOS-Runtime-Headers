@@ -6,16 +6,18 @@
 
 @interface IMServiceImpl : IMService {
     NSArray *_abProperties;
+    BOOL _allowsMultipleConnections;
     IMAccount *_bestAccount;
     NSMutableDictionary *_cardMap;
-    NSArray *_defaultBuddyImageData;
-    BOOL _defaultBuddyImageDataChecked;
     NSDictionary *_defaultSettings;
     NSArray *_emailDomains;
     BOOL _handlesChatInvites;
+    BOOL _hasLoadedServiceProperties;
     id _icon;
     BOOL _iconChecked;
     NSData *_imageData;
+    BOOL _isPersistent;
+    BOOL _isPlugInService;
     NSString *_localizedName;
     NSString *_localizedShortName;
     NSString *_name;
@@ -23,34 +25,39 @@
     unsigned int _screenNameSensitivity;
     NSDictionary *_serviceDefaults;
     NSDictionary *_serviceProps;
+    BOOL _shouldInternationalizeNumbers;
+    BOOL _supportsAdding;
+    BOOL _supportsAuthorization;
     BOOL _supportsPhoneNumberMapping;
+    BOOL _supportsRegistration;
     BOOL _supportsSMS;
 }
 
 @property(readonly) unsigned int IDSensitivity;
 @property(readonly) Class accountClass;
-@property(retain,readonly) NSArray * accountIDs;
-@property(retain,readonly) NSArray * addressBookProperties;
-@property(retain,readonly) NSString * addressBookProperty;
+@property(readonly) NSArray * accountIDs;
+@property(readonly) NSArray * addressBookProperties;
+@property(readonly) NSString * addressBookProperty;
 @property(readonly) BOOL allowsMultipleConnections;
 @property(readonly) int buddyNotesMaxByteLength;
-@property(retain,readonly) NSDictionary * cardMap;
+@property(readonly) NSDictionary * cardMap;
 @property(retain) NSDictionary * defaultAccountSettings;
-@property(retain,readonly) NSString * description;
-@property(retain,readonly) NSArray * emailDomains;
+@property(readonly) NSString * description;
+@property(readonly) NSArray * emailDomains;
 @property(readonly) BOOL handlesChatInvites;
-@property(retain,readonly) NSString * internalName;
+@property(readonly) NSString * internalName;
 @property(readonly) BOOL isPersistent;
 @property(readonly) BOOL isPlugInService;
-@property(retain,readonly) NSString * name;
+@property(readonly) NSString * name;
 @property(retain) NSDictionary * serviceDefaults;
-@property(retain,readonly) NSData * serviceImageData;
+@property(readonly) NSData * serviceImageData;
 @property(retain) NSDictionary * serviceProperties;
-@property(retain,readonly) NSString * shortName;
+@property(readonly) NSString * shortName;
 @property(readonly) BOOL supportsAdding;
 @property(readonly) BOOL supportsAuthorization;
-@property(readonly) BOOL supportsIDNormalization;
+@property(readonly) BOOL supportsPhoneNumberMapping;
 @property(readonly) BOOL supportsRegistration;
+@property(readonly) BOOL wantsInternationizedNumbers;
 
 + (Class)serviceClass;
 + (id)serviceWithInternalName:(id)arg1;
@@ -65,7 +72,8 @@
 - (void)_blockUntilInitialSyncPerformed;
 - (void)_calculateBestAccount;
 - (void)_dumpCardMap;
-- (void)_loadDefaultImageData;
+- (void)_loadPropertiesIfNeeded;
+- (id)_newIDToCardMap;
 - (id)_personToIDMap;
 - (void)_syncWithRemoteBuddies;
 - (Class)accountClass;
@@ -82,15 +90,15 @@
 - (int)compareNames:(id)arg1;
 - (void)dealloc;
 - (id)defaultAccountSettings;
-- (id)defaultImageDataForID:(id)arg1;
 - (void)defaultsChanged:(id)arg1;
 - (id)description;
 - (void)disconnect;
 - (void)doneSetup;
-- (unsigned int)emailDomainOfID:(id)arg1;
 - (id)emailDomains;
 - (BOOL)equalID:(id)arg1 andID:(id)arg2;
 - (BOOL)handlesChatInvites;
+- (id)imABPeopleWithScreenName:(id)arg1 countryCode:(id)arg2 identifier:(int*)arg3;
+- (id)imABPeopleWithScreenName:(id)arg1 identifier:(int*)arg2;
 - (id)imABPeopleWithScreenName:(id)arg1;
 - (id)infoForAllScreenNames;
 - (id)infoForPreferredScreenNames;
@@ -105,7 +113,6 @@
 - (id)localizedShortName;
 - (id)myScreenNames;
 - (id)name;
-- (id)newIDToCardMap;
 - (id)normalizedFormOfID:(id)arg1;
 - (id)peopleWithScreenName:(id)arg1;
 - (id)screenNamesForIMPerson:(id)arg1;
@@ -122,8 +129,9 @@
 - (id)subtypeInformationForAccount:(id)arg1;
 - (BOOL)supportsAdding;
 - (BOOL)supportsAuthorization;
-- (BOOL)supportsIDNormalization;
+- (BOOL)supportsPhoneNumberMapping;
 - (BOOL)supportsRegistration;
 - (void)updateIDToCardMapWithNotification:(id)arg1;
+- (BOOL)wantsInternationizedNumbers;
 
 @end

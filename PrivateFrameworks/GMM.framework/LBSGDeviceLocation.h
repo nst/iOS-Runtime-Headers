@@ -20,7 +20,6 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasCell;
 - (BOOL)hasLocation;
-- (id)init;
 - (id)location;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCell:(id)arg1;

@@ -8,6 +8,7 @@
     NSMutableArray *messages;
 }
 
+- (id)copyMessages;
 - (void)dealloc;
 - (id)init;
 - (id)messages;

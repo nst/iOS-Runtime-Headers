@@ -2,36 +2,45 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
+@class CPLRUDictionary, ML3NondurableWriteSet;
+
 @interface ML3MusicLibrary_SQLiteDatabaseContext : NSObject {
-    unsigned int _isInTransaction : 1;
     unsigned int _transactionHasChanges : 1;
     unsigned int _transactionHasNonContentsChanges : 1;
-    struct sqlite3 {} **_dbStack;
-    unsigned int _dbStackCurrentIndex;
-    void *_iTunesExtensions;
+    unsigned int _transactionHasDisplayValuesChanges : 1;
+    struct sqlite3 { } *_db;
+    const void *_iTunesExtensions;
+    ML3NondurableWriteSet *_nondurableWriteSet;
     struct iPhoneSortKeyBuilder { } *_sortKeyBuilder;
-    struct __CFDictionary { } *_statementCache;
+    CPLRUDictionary *_statementCache;
+    int _transactionKind;
+    unsigned int _writeStatementCount;
 }
 
 @property(readonly) struct sqlite3 { }* db;
-@property BOOL isInTransaction;
+@property(retain) ML3NondurableWriteSet * nondurableWriteSet;
 @property(readonly) struct iPhoneSortKeyBuilder { }* sortKeyBuilder;
 @property BOOL transactionHasChanges;
+@property BOOL transactionHasDisplayValuesChanges;
 @property BOOL transactionHasNonContentsChanges;
+@property int transactionKind;
 
+- (id)copyStatementForSQL:(id)arg1 cache:(BOOL)arg2;
 - (struct sqlite3 { }*)db;
 - (void)dealloc;
+- (BOOL)executeSQL:(id)arg1 waitIfBusy:(BOOL)arg2;
 - (BOOL)executeSQL:(id)arg1;
 - (id)initWithDB:(struct sqlite3 { }*)arg1;
-- (BOOL)isInTransaction;
-- (void)popDB;
-- (void)pushDB:(struct sqlite3 { }*)arg1;
-- (void)setIsInTransaction:(BOOL)arg1;
+- (id)nondurableWriteSet;
+- (void)setNondurableWriteSet:(id)arg1;
 - (void)setTransactionHasChanges:(BOOL)arg1;
+- (void)setTransactionHasDisplayValuesChanges:(BOOL)arg1;
 - (void)setTransactionHasNonContentsChanges:(BOOL)arg1;
+- (void)setTransactionKind:(int)arg1;
 - (struct iPhoneSortKeyBuilder { }*)sortKeyBuilder;
-- (struct sqlite3_stmt { }*)statementForSQL:(id)arg1;
 - (BOOL)transactionHasChanges;
+- (BOOL)transactionHasDisplayValuesChanges;
 - (BOOL)transactionHasNonContentsChanges;
+- (int)transactionKind;
 
 @end

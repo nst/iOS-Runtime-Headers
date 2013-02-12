@@ -15,10 +15,12 @@
 @property(copy) NSString * text;
 @property(copy) NSString * type;
 
+- (BOOL)async;
 - (id)charset;
 - (BOOL)defer;
 - (id)event;
 - (id)htmlFor;
+- (void)setAsync:(BOOL)arg1;
 - (void)setCharset:(id)arg1;
 - (void)setDefer:(BOOL)arg1;
 - (void)setEvent:(id)arg1;

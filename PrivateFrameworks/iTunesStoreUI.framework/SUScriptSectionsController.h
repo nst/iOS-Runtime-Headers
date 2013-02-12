@@ -5,13 +5,12 @@
 @class SUScriptSection;
 
 @interface SUScriptSectionsController : SUScriptObject {
-    id _sections;
-    SUScriptSection *_selectedSection;
 }
 
-@property(getter=_sections,setter=set_sections:,retain) id sections;
-@property(getter=_selectedSection,setter=set_selectedSection:,retain) SUScriptSection * selectedSection;
+@property(readonly) id sections;
+@property(retain) SUScriptSection * selectedSection;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -20,14 +19,16 @@
 - (id)_copySections;
 - (id)_copySelectedSection;
 - (id)_fixedSelectedIdentifier;
-- (id)_sections;
-- (id)_selectedSection;
 - (void)_setSelectedIdentifier:(id)arg1;
 - (void)_tabBarConfigurationChangedNotification:(id)arg1;
+- (id)attributeKeys;
 - (void)dealloc;
 - (id)init;
+- (id)scriptAttributeKeys;
 - (id)sectionWithIdentifier:(id)arg1;
-- (void)set_sections:(id)arg1;
-- (void)set_selectedSection:(id)arg1;
+- (id)sections;
+- (id)selectedSection;
+- (void)setRootViewController:(id)arg1 forSection:(id)arg2;
+- (void)setSelectedSection:(id)arg1;
 
 @end

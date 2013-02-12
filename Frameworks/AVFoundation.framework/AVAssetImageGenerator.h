@@ -11,6 +11,8 @@
 @property(copy) NSString * apertureMode;
 @property BOOL appliesPreferredTrackTransform;
 @property struct CGSize { float width; float height; } maximumSize;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } requestedTimeToleranceAfter;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } requestedTimeToleranceBefore;
 @property(copy) AVVideoComposition * videoComposition;
 
 + (id)assetImageGeneratorWithAsset:(id)arg1;
@@ -36,10 +38,8 @@
 - (id)init;
 - (id)initWithAsset:(id)arg1;
 - (struct CGSize { float x1; float x2; })maximumSize;
-- (void)release;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceAfter;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })requestedTimeToleranceBefore;
-- (id)retain;
 - (void)setApertureMode:(id)arg1;
 - (void)setAppliesPreferredTrackTransform:(BOOL)arg1;
 - (void)setMaximumSize:(struct CGSize { float x1; float x2; })arg1;

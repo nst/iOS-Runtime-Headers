@@ -24,7 +24,6 @@
     BOOL m_visible;
 }
 
-@property(readonly) BOOL acceptsShiftLock;
 @property(copy) UIKBAttributeList * attributes;
 @property(readonly) NSString * cacheKey;
 @property(copy) NSString * clientVariantActionName;
@@ -39,7 +38,6 @@
 @property(copy) NSString * interactionType;
 @property(readonly) BOOL isClientVariantOverride;
 @property BOOL isGhost;
-@property(readonly) BOOL modifiesKeyplane;
 @property(copy) NSString * name;
 @property(copy) NSString * overrideDisplayString;
 @property(copy) NSString * rendering;
@@ -53,7 +51,6 @@
 + (id)key;
 + (id)keyWithKey:(id)arg1;
 
-- (BOOL)acceptsShiftLock;
 - (id)attributes;
 - (BOOL)behavesAsShiftKey;
 - (id)cacheKey;
@@ -78,7 +75,6 @@
 - (BOOL)isClientVariantOverride;
 - (BOOL)isGhost;
 - (void)mergeAttributes:(id)arg1;
-- (BOOL)modifiesKeyplane;
 - (id)name;
 - (id)overrideDisplayString;
 - (void)removeClientVariantActionInfo;

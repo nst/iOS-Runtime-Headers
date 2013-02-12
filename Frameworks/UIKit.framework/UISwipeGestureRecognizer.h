@@ -33,7 +33,7 @@
 @property unsigned int numberOfTouchesRequired;
 @property float rateOfMaximumMovementDecay;
 @property float rateOfMinimumMovementDecay;
-@property(readonly) struct CGPoint { float x; float y; } startPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } startPoint;
 
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(int)arg4 touchCount:(unsigned int)arg5;
 + (void)addSwipeGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 direction:(int)arg4;
@@ -45,6 +45,8 @@
 - (void)_resetGestureRecognizer;
 - (void)dealloc;
 - (int)direction;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;

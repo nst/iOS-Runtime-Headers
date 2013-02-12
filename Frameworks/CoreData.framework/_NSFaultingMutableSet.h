@@ -20,6 +20,9 @@
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_shouldProcessKVOChange;
+- (BOOL)_tryRetain;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (id)allObjects;
@@ -33,11 +36,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (void)getObjects:(id*)arg1;
 - (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
 - (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 - (void)intersectSet:(id)arg1;
 - (BOOL)intersectsSet:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToSet:(id)arg1;
 - (BOOL)isFault;
 - (BOOL)isSubsetOfSet:(id)arg1;
@@ -47,8 +52,9 @@
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (id)relationship;
-- (void)release;
+- (oneway void)release;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;

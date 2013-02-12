@@ -7,11 +7,14 @@
 @interface ABAccountsAndGroupsViewController : ABAbstractViewController <UITableViewDelegate> {
     ABAccountsAndGroupDataSource *_dataSource;
     BOOL _needsReload;
+    BOOL _reselectLastSelectedCell;
+    BOOL _showsRefreshButton;
     BOOL _tableViewNeedsReloadAfterResume;
 }
 
 @property(readonly) ABAccountsAndGroupDataSource * dataSource;
-@property BOOL hidesSearchableStores;
+@property BOOL hidesGlobalGroupWrapper;
+@property BOOL hidesSearchableSources;
 @property(readonly) UITableView * tableView;
 
 - (void)_applyAccessibilityFontChanges;
@@ -22,21 +25,21 @@
 - (void)applicationDidResume;
 - (void)cancel:(id)arg1;
 - (id)copyMembersViewControllerWithModel:(id)arg1;
-- (id)copyServerSearchViewControllerWithModel:(id)arg1;
 - (id)dataSource;
 - (id)dataSource;
 - (void)dealloc;
-- (BOOL)hidesSearchableStores;
-- (void)iTunesSyncHasCompleted:(int)arg1;
-- (void)iTunesSyncRequestedStart;
+- (BOOL)hidesGlobalGroupWrapper;
+- (BOOL)hidesSearchableSources;
 - (id)initWithModel:(id)arg1;
 - (void)loadView;
 - (id)model;
 - (void)modelDatabaseChange:(id)arg1;
 - (BOOL)preservesSelection;
+- (void)refreshEverythingNow;
 - (void)reloadData;
 - (void)reselectLastSelectedCellIfNeeded;
-- (void)setHidesSearchableStores:(BOOL)arg1;
+- (void)setHidesGlobalGroupWrapper:(BOOL)arg1;
+- (void)setHidesSearchableSources:(BOOL)arg1;
 - (void)setModel:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (BOOL)shouldShowGroups;
@@ -49,9 +52,8 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView;
 - (void)updateNavigationButtons;
+- (void)updateRefreshButton;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

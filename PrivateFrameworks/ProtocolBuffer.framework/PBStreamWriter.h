@@ -16,6 +16,6 @@
 - (id)initWithOutputStream:(id)arg1;
 - (void)setStream:(id)arg1;
 - (id)stream;
-- (int)write:(char *)arg1 maxLength:(unsigned int)arg2;
+- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

@@ -2,35 +2,54 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface NSConcreteFileHandle : NSFileHandle {
     unsigned short _activity;
-    void *_avars;
+    struct dispatch_data_s { } *_anchor;
     struct dispatch_source_s { } *_dsrc;
     int _error;
     int _fd;
+    struct dispatch_queue_s { } *_fhLock;
     unsigned short _flags;
     void *_nativeHandle;
     BOOL _padding2[2];
     BOOL _padding[2];
+    struct dispatch_queue_s { } *_readMonitoringQueue;
+    struct dispatch_source_s { } *_readMonitoringSource;
+    id _readabilityHandler;
     void *_resultBytes;
-    unsigned int _resultLength;
+    unsigned long _resultLength;
     int _resultSocket;
     struct __CFRunLoop { } *_rl;
     struct __CFRunLoopSource { } *_source;
+    long long _weakRefCount;
+    struct dispatch_queue_s { } *_writeMonitoringQueue;
+    struct dispatch_source_s { } *_writeMonitoringSource;
+    id _writeabilityHandler;
 }
 
+- (void)_cancelDispatchSources;
+- (struct dispatch_source_s { }*)_monitor:(const struct dispatch_source_type_s { }*)arg1 source:(struct dispatch_source_s { }*)arg2 onQueue:(struct dispatch_queue_s { }*)arg3;
 - (void)acceptConnectionInBackgroundAndNotify;
 - (void)acceptConnectionInBackgroundAndNotifyForModes:(id)arg1;
 - (id)availableData;
+- (void)clearReadabilityHandler;
+- (void)clearWriteabilityHandler;
 - (void)closeFile;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (int)fileDescriptor;
 - (void)finalize;
+- (id)init;
 - (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)initWithFileDescriptor:(int)arg1;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
+- (void)lockedRelease;
+- (id)lockedRetain;
 - (unsigned long long)offsetInFile;
 - (void)performActivity:(int)arg1 modes:(id)arg2;
 - (id)port;
@@ -41,13 +60,19 @@
 - (void)readInBackgroundAndNotifyForModes:(id)arg1;
 - (void)readToEndOfFileInBackgroundAndNotify;
 - (void)readToEndOfFileInBackgroundAndNotifyForModes:(id)arg1;
+- (id)readabilityHandler;
+- (oneway void)release;
+- (id)retain;
 - (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
 - (void)setPort:(id)arg1;
+- (void)setReadabilityHandler:(id)arg1;
+- (void)setWriteabilityHandler:(id)arg1;
 - (void)synchronizeFile;
 - (void)truncateFileAtOffset:(unsigned long long)arg1;
 - (void)waitForDataInBackgroundAndNotify;
 - (void)waitForDataInBackgroundAndNotifyForModes:(id)arg1;
 - (void)writeData:(id)arg1;
+- (id)writeabilityHandler;
 
 @end

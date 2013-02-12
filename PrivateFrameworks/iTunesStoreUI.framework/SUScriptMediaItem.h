@@ -10,6 +10,7 @@
 @property(readonly) MPMediaItem * nativeItem;
 
 + (id)copyScriptMediaTypesForNativeMediaTypes:(int)arg1;
++ (void)initialize;
 + (int)nativeMediaTypesForScriptMediaTypes:(id)arg1;
 + (id)nativePropertyForScriptProperty:(id)arg1;
 + (id)scriptMediaTypeForNativeMediaType:(int)arg1;
@@ -18,7 +19,7 @@
 
 - (id)_className;
 - (id)_copyImageURLWithWidth:(int)arg1 height:(int)arg2;
-- (id)_valueForProperty:(id)arg1;
+- (id)_copyValueForProperty:(id)arg1;
 - (id)imageURLWithWidth:(id)arg1 height:(id)arg2;
 - (id)nativeItem;
 - (id)valueForProperty:(id)arg1;

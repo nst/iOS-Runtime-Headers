@@ -24,6 +24,7 @@
 @property(readonly) NSMutableArray * scriptAttributeKeys;
 @property(readonly) BOOL sourceIsTrusted;
 
++ (void)initialize;
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)arg1;
 + (id)webScriptNameForKey:(const char *)arg1;

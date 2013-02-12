@@ -2,30 +2,35 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVDestinationBrowser, MPAudioDeviceController, NSMutableArray;
+@class MPAudioDeviceController, NSMutableArray;
 
 @interface MPAudioVideoRoutingTableViewController : UITableViewController {
     int _airPlayPasswordAlertDidAppearToken;
     BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
     MPAudioDeviceController *_audioDeviceController;
+    unsigned int _avItemType;
+    BOOL _displayMirroringRoutes;
     NSMutableArray *_routes;
-    MPAVDestinationBrowser *_videoDestinationBrowser;
+    BOOL _wirelessDisplayCapableRouteIsPicked;
 }
 
 @property(readonly) MPAudioDeviceController * audioDeviceController;
-@property(readonly) MPAVDestinationBrowser * videoDestinationBrowser;
 
-- (void)_availableRoutesDidChangeNotification:(id)arg1;
-- (BOOL)_isDeviceVideoRoute:(id)arg1;
-- (BOOL)_isPotentialDeviceVideoRoute:(id)arg1;
++ (id)routesPreferringMirroring;
+
+- (id)_effectivePickedRouteReturningActualPickedRouteType:(int*)arg1;
+- (void)_mirroringSwitchValueDidChange:(id)arg1;
+- (id)_pickedRoute;
 - (id)_routes;
+- (BOOL)_wirelessDisplayCapableRouteIsPicked;
 - (id)audioDeviceController;
+- (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)dealloc;
-- (id)initWithAudioDeviceController:(id)arg1 videoDestinationBrowser:(id)arg2;
+- (id)initWithType:(unsigned int)arg1 displayMirroringRoutes:(BOOL)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)videoDestinationBrowser;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 
 @end

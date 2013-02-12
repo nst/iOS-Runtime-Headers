@@ -4,7 +4,7 @@
 
 @class NSMutableArray, UITableView;
 
-@interface EKEventAvailabilityEditViewController : EKEventEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface EKEventAvailabilityEditViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
     int _availability;
     NSMutableArray *_choices;
     unsigned int _supportedAvailabilities;

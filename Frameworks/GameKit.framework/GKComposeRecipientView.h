@@ -26,7 +26,7 @@
 }
 
 @property NSObject<GKComposeRecipientViewDelegate> * composeDelegate;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsetsWhileEditing;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsetsWhileEditing;
 @property(getter=isEditable) BOOL editable;
 @property(getter=isEditing) BOOL editing;
 

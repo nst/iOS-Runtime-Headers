@@ -11,6 +11,7 @@
 @property BOOL indentsForDots;
 @property(readonly) BOOL reusable;
 
+- (id)_backgroundImage;
 - (double)date;
 - (void)drawBackground:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -22,5 +23,6 @@
 - (void)setDate:(double)arg1;
 - (void)setIndentsForDots:(BOOL)arg1;
 - (void)setOpaque:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

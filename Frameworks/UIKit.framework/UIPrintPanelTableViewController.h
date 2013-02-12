@@ -5,18 +5,26 @@
 @class UIButton, UIPrintPanelViewController;
 
 @interface UIPrintPanelTableViewController : UITableViewController {
+    BOOL _contactingPrinter;
+    int _copiesRow;
+    int _duplexRow;
+    int _paperRow;
     UIButton *_printButton;
     UIPrintPanelViewController *_printPanelViewController;
-    BOOL _waitingForPrinterLookup;
+    int _rangeRow;
 }
 
 - (void)_setupPrintButtons;
-- (void)_update;
+- (void)_update:(BOOL)arg1;
+- (void)_updateSize;
+- (void)clearPrintPanelViewController;
 - (void)dealloc;
 - (id)initWithPrintPanelViewController:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)setShowContactingPrinter:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showCancelButton;
+- (void)showContacting;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

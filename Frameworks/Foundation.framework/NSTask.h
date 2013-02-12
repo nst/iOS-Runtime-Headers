@@ -5,6 +5,8 @@
 @interface NSTask : NSObject {
 }
 
+@property(copy) id terminationHandler;
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)currentTaskDictionary;
 + (id)launchedTaskWithDictionary:(id)arg1;
@@ -27,12 +29,14 @@
 - (void)setStandardError:(id)arg1;
 - (void)setStandardInput:(id)arg1;
 - (void)setStandardOutput:(id)arg1;
+- (void)setTerminationHandler:(id)arg1;
 - (id)standardError;
 - (id)standardInput;
 - (id)standardOutput;
 - (BOOL)suspend;
 - (int)suspendCount;
 - (void)terminate;
+- (id)terminationHandler;
 - (int)terminationReason;
 - (int)terminationStatus;
 

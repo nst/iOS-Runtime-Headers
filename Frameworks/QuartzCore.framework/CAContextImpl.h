@@ -17,14 +17,15 @@
                 long __sig; 
                 BOOL __opaque[40]; 
             } _m; 
-        } x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; unsigned char x6; void*x7; unsigned char x8; out in void*x9; void*x10; void*x11; void*x12; void*x13; unsigned int x14; unsigned int x15; id x16; void*x17; unsigned char x18; void*x19; unsigned long x20; void*x21; void*x22; void*x23; const void*x24; struct Context {} *x25; struct CGColorSpace {} *x26; struct __CFDictionary {} *x27; unsigned int x28; unsigned int x29; struct __CFMachPort {} *x30; struct __CFRunLoopSource {} *x31; struct Shmem {} *x32; struct Shmem {} *x33; float x34; struct Commit {} *x35; struct Generic { 
+        } x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; unsigned char x6; void*x7; unsigned char x8; out in void*x9; void*x10; void*x11; void*x12; void*x13; unsigned int x14; unsigned int x15; id x16; void*x17; unsigned char x18; void*x19; unsigned long x20; void*x21; void*x22; void*x23; const void*x24; struct Context {} *x25; struct CGColorSpace {} *x26; struct __CFDictionary {} *x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; struct __CFMachPort {} *x32; struct __CFRunLoopSource {} *x33; struct Shmem {} *x34; struct Shmem {} *x35; float x36; struct Commit {} *x37; struct Generic { 
             int (**_vptr$GenericContext)(); 
             struct Context {} *_c; 
-        } x36; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; } *_impl;
+        } x38; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; } *_impl;
 }
 
 - (struct CGColorSpace { }*)colorSpace;
 - (unsigned int)contextId;
+- (unsigned int)createFencePort;
 - (unsigned int)createSlot;
 - (void)dealloc;
 - (void)deleteSlot:(unsigned int)arg1;
@@ -33,11 +34,13 @@
 - (void)invalidate;
 - (id)layer;
 - (float)level;
+- (id)options;
 - (void)orderAbove:(unsigned int)arg1;
 - (void)orderBelow:(unsigned int)arg1;
 - (struct Context { }*)renderContext;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
 - (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
+- (void)setFencePort:(unsigned int)arg1;
 - (void)setLayer:(id)arg1;
 - (void)setLevel:(float)arg1;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;

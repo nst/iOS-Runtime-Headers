@@ -8,10 +8,11 @@
     NSUndoManager *_manager;
 }
 
+- (BOOL)_tryRetain;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithManager:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (void)superRelease;
 

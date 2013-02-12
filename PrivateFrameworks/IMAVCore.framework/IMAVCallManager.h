@@ -2,24 +2,30 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface IMAVCallManager : NSObject {
     unsigned int _callState;
     NSMutableArray *_chatArray;
     unsigned int _globalCallState;
     unsigned int _telephonyCallState;
+    int _token;
 }
 
+@property(readonly) NSArray * _FTCalls;
 @property(setter=_setCallState:) unsigned int _callState;
 @property(setter=_setTelephonyCallState:) unsigned int _telephonyCallState;
 @property(readonly) unsigned int callState;
+@property(readonly) NSArray * calls;
+@property(readonly) BOOL hasActiveCall;
 
 + (id)sharedInstance;
 
+- (id)_FTCalls;
 - (void)__setTelephonyCallState:(unsigned int)arg1;
 - (unsigned int)_callState;
-- (id)_chatList;
+- (BOOL)_hasActiveFaceTimeCall;
+- (BOOL)_hasActiveTelephonyCall;
 - (id)_nonRetainingChatList;
 - (void)_postStateChangeIfNecessary;
 - (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3;
@@ -27,10 +33,11 @@
 - (void)_setTelephonyCallState:(unsigned int)arg1;
 - (unsigned int)_telephonyCallState;
 - (void)_updateOverallChatState;
-- (id)autorelease;
+- (BOOL)allowsWeakReference;
 - (unsigned int)callState;
+- (id)calls;
+- (BOOL)hasActiveCall;
 - (id)init;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 
 @end

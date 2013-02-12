@@ -7,7 +7,9 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_isDeallocating;
 - (id)_prefs;
+- (BOOL)_tryRetain;
 - (id)displayNameForKey:(id)arg1 value:(id)arg2;
 - (void)finalize;
 - (unsigned int)hash;

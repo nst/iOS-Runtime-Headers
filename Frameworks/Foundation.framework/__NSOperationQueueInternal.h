@@ -6,18 +6,21 @@
 
 @interface __NSOperationQueueInternal : NSObject {
     int __actualMaxNumOps;
-    struct dispatch_queue_s { } *__dispatchQ;
     NSOperation *__firstOperation;
+    NSOperation *__firstPriOperation[5];
     NSOperation *__lastOperation;
+    NSOperation *__lastPriOperation[5];
     unsigned char __mainQ;
     int __maxNumOps;
-    BOOL __nameBuffer[165];
+    BOOL __nameBuffer[160];
     int __numExecOps;
-    int __outerRC;
-    int __pendingAddLock;
+    unsigned char __overcommit;
+    unsigned char __pad1[1];
     NSOperation *__pendingFirstOperation;
     NSOperation *__pendingLastOperation;
-    struct dispatch_semaphore_s { } *__poker;
+    struct dispatch_queue_s { } *__pending_barrier;
+    unsigned int __poke;
+    int __queueLock;
     unsigned char __suspended;
 }
 

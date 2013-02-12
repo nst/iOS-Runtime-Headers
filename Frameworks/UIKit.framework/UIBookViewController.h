@@ -23,7 +23,7 @@
     float _turnMargin;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInset;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property <UIBookViewControllerDelegate> * delegate;
 @property(retain) UIViewController * evenPage;
 @property(retain) UIViewController * oddPage;

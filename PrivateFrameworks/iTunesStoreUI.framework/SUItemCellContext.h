@@ -20,7 +20,7 @@
     struct __CFDictionary { } *_stringSizes;
 }
 
-@property struct { int version; int (*retain)(); int (*release)(); int (*copyDescription)(); int (*equal)(); int (*hash)(); } stringSizeCacheKeyCallBacks;
+@property struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); } stringSizeCacheKeyCallBacks;
 
 - (struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); })stringSizeCacheKeyCallBacks;
 - (void)dealloc;

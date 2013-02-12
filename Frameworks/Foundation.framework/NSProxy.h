@@ -31,6 +31,9 @@
 + (Class)superclass;
 
 - (id)_copyDescription;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
+- (BOOL)allowsWeakReference;
 - (id)autorelease;
 - (Class)class;
 - (BOOL)conformsToProtocol:(id)arg1;
@@ -56,6 +59,7 @@
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)retain;
 - (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (id)self;
 - (Class)superclass;
 - (struct _NSZone { }*)zone;

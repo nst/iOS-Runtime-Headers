@@ -22,6 +22,7 @@
 @property(copy) NSString * value;
 @property(readonly) BOOL willValidate;
 
+- (int)_autocapitalizeType;
 - (BOOL)_isEdited;
 - (BOOL)_requiresAccessoryView;
 - (BOOL)_requiresInputView;
@@ -30,7 +31,7 @@
 - (BOOL)_supportsAutoFill;
 - (id)_textFormElement;
 - (id)accessKey;
-- (BOOL)autocapitalize;
+- (id)autocapitalize;
 - (BOOL)autocorrect;
 - (BOOL)autofocus;
 - (BOOL)checkValidity;
@@ -40,6 +41,7 @@
 - (id)endPosition;
 - (id)form;
 - (BOOL)isTextControl;
+- (id)labels;
 - (int)maxLength;
 - (id)name;
 - (BOOL)nodeCanBecomeFirstResponder;
@@ -51,7 +53,7 @@
 - (int)selectionEnd;
 - (int)selectionStart;
 - (void)setAccessKey:(id)arg1;
-- (void)setAutocapitalize:(BOOL)arg1;
+- (void)setAutocapitalize:(id)arg1;
 - (void)setAutocorrect:(BOOL)arg1;
 - (void)setAutofocus:(BOOL)arg1;
 - (void)setCols:(int)arg1;

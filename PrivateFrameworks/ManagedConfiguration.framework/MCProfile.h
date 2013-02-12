@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSData, NSDate, NSMutableArray, NSString;
+@class NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSString;
 
 @interface MCProfile : NSObject {
     NSString *_UUID;
+    NSDictionary *_context;
     NSString *_displayName;
     BOOL _encrypted;
     NSDate *_expiryDate;
@@ -32,6 +33,7 @@
 
 @property(readonly) NSString * UUID;
 @property(readonly) NSString * UUIDHashFileName;
+@property(retain) NSDictionary * context;
 @property(retain) NSString * displayName;
 @property(readonly) NSDate * earliestCertificateExpiryDate;
 @property(getter=isEncrypted) BOOL encrypted;
@@ -68,8 +70,11 @@
 + (id)badFieldTypeErrorWithField:(id)arg1;
 + (BOOL)checkString:(id)arg1 isOneOfStrings:(id)arg2 key:(id)arg3 errorDomain:(id)arg4 errorCode:(int)arg5 errorString:(id)arg6 outError:(id*)arg7;
 + (int)evaluateTrustOfData:(id)arg1;
++ (id)missingFieldErrorWithField:(id)arg1;
 + (id)profileDictionaryFromProfileData:(id)arg1 outWasEncrypted:(BOOL*)arg2 outError:(id*)arg3;
-+ (id)profileWithData:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(BOOL)arg3 outError:(id*)arg4;
++ (id)profileWithData:(id)arg1 context:(id)arg2 fileName:(id)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
++ (id)profileWithData:(id)arg1 context:(id)arg2 fileName:(id)arg3 outError:(id*)arg4;
++ (id)profileWithData:(id)arg1 context:(id)arg2 outError:(id*)arg3;
 + (id)profileWithData:(id)arg1 fileName:(id)arg2 outError:(id*)arg3;
 + (id)profileWithData:(id)arg1 outError:(id*)arg2;
 + (id)profileWithDictionary:(id)arg1 fileName:(id)arg2 originalData:(id)arg3 wasEncrypted:(BOOL)arg4 allowEmptyPayload:(BOOL)arg5 outError:(id*)arg6;
@@ -82,6 +87,7 @@
 - (id)UUID;
 - (id)UUIDHashFileName;
 - (void)__evaluateSignerCertificates;
+- (id)context;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
@@ -103,6 +109,7 @@
 - (id)malformedProfileErrorWithError:(id)arg1;
 - (BOOL)needsReboot;
 - (id)organization;
+- (id)payloadWithUUID:(id)arg1;
 - (id)payloads;
 - (id)productBuildVersion;
 - (id)productVersion;
@@ -111,6 +118,7 @@
 - (id)profileIDHashFileName;
 - (id)removalPasscode;
 - (id)removalPasscode;
+- (void)setContext:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEncrypted:(BOOL)arg1;
 - (void)setInstallDate:(id)arg1;

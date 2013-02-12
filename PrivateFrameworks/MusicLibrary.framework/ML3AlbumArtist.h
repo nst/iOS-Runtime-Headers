@@ -2,15 +2,24 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3AlbumArtist : ML3Entity {
+@interface ML3AlbumArtist : ML3Collection {
 }
 
++ (id)allProperties;
++ (id)artworkCacheIDProperty;
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
++ (id)effectiveAlbumArtistNameForAlbumArtistName:(id)arg1 artistName:(id)arg2 seriesName:(id)arg3 compilation:(BOOL)arg4;
++ (id)effectiveAlbumArtistSortNameForAlbumArtistSortName:(id)arg1 albumArtistName:(id)arg2 artistSortName:(id)arg3 artistName:(id)arg4 compilation:(BOOL)arg5;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (void)initialize;
 + (id)joinClauseForProperty:(id)arg1;
 + (id)predisambiguatedProperties;
++ (id)propertiesForGroupingKey;
++ (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (id)sectionPropertyForProperty:(id)arg1;
++ (id)trackForeignPersistentID;
+
+- (void)updateTrackValues:(id)arg1;
 
 @end

@@ -16,6 +16,8 @@
 
 - (id)_asset;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
+- (BOOL)_prepareForReadingReturningError:(id*)arg1;
+- (BOOL)alwaysCopiesSampleData;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;

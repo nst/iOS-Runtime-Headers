@@ -9,6 +9,7 @@
     unsigned int _preferredEncoding;
 }
 
++ (id)addressListFromEncodedString:(id)arg1 encoding:(unsigned long)arg2;
 + (id)addressListFromEncodedString:(id)arg1;
 + (id)basicHeaders;
 + (id)encodedDataForAddressList:(id)arg1 splittingAtLength:(unsigned int)arg2 firstLineBuffer:(unsigned int)arg3;
@@ -17,6 +18,7 @@
 + (id)uniqueHeaderKeyStringForString:(id)arg1;
 
 - (id)_capitalizedKeyForKey:(id)arg1;
+- (unsigned long)_contentTypeEncoding;
 - (id)_copyAddressListForKey:(id)arg1;
 - (id)_copyEncodedHeaderStringForKey:(id)arg1;
 - (id)_copyHeaderValueForKey:(id)arg1 offset:(unsigned int*)arg2 decoded:(BOOL)arg3;

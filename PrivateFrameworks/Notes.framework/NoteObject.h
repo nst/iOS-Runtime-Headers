@@ -36,6 +36,7 @@
 
 - (id)content;
 - (id)contentAsPlainText;
+- (id)contentAsPlainTextPreservingNewlines;
 - (id)externalContentRef;
 - (id)externalRepresentation;
 - (unsigned long long)flags;

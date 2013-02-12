@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIColor, UIFont;
+@class NSString, UIColor, UIFont, UILabel;
 
 @interface SUTableHeaderView : UIView {
     struct UIEdgeInsets { 
@@ -10,28 +10,16 @@
         float left; 
         float bottom; 
         float right; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
     UIColor *_bottomBorderColor;
     } _edgeInsets;
     int _index;
-    UIColor *_shadowColor;
     int _style;
-    NSString *_subtitle;
-    UIFont *_subtitleFont;
-    } _subtitleSize;
-    UIColor *_textColor;
-    NSString *_title;
-    UIFont *_titleFont;
-    } _titleSize;
+    UILabel *_subtitleLabel;
+    UILabel *_titleLabel;
 }
 
 @property(retain) UIColor * bottomBorderColor;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } edgeInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property int index;
 @property(retain) UIColor * shadowColor;
 @property int style;
@@ -41,18 +29,13 @@
 @property(retain) NSString * title;
 @property(retain) UIFont * titleFont;
 
-+ (void)_initializeSafeCategory;
-
-- (struct CGSize { float x1; float x2; })_subtitleSize;
-- (struct CGSize { float x1; float x2; })_titleSize;
-- (id)accessibilityLabel;
 - (id)bottomBorderColor;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (int)index;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
+- (void)layoutSubviews;
 - (void)setBottomBorderColor:(id)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setIndex:(int)arg1;

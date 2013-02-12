@@ -22,14 +22,14 @@
 }
 
 @property int cameraPitchDegreeE6;
-@property(readonly) BOOL hasCameraPitchDegreeE6;
-@property(readonly) BOOL hasHorizontalFovE6;
-@property(readonly) BOOL hasMaxVisiblePitchE6;
-@property(readonly) BOOL hasMinVisiblePitchE6;
-@property(readonly) BOOL hasPanoYawDegreeE6;
-@property(readonly) BOOL hasProjectionType;
-@property(readonly) BOOL hasTiltPitchDegreeE6;
-@property(readonly) BOOL hasTiltYawDegreeE6;
+@property BOOL hasCameraPitchDegreeE6;
+@property BOOL hasHorizontalFovE6;
+@property BOOL hasMaxVisiblePitchE6;
+@property BOOL hasMinVisiblePitchE6;
+@property BOOL hasPanoYawDegreeE6;
+@property BOOL hasProjectionType;
+@property BOOL hasTiltPitchDegreeE6;
+@property BOOL hasTiltYawDegreeE6;
 @property int horizontalFovE6;
 @property int maxVisiblePitchE6;
 @property int minVisiblePitchE6;
@@ -51,13 +51,20 @@
 - (BOOL)hasTiltPitchDegreeE6;
 - (BOOL)hasTiltYawDegreeE6;
 - (int)horizontalFovE6;
-- (id)init;
 - (int)maxVisiblePitchE6;
 - (int)minVisiblePitchE6;
 - (int)panoYawDegreeE6;
 - (int)projectionType;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCameraPitchDegreeE6:(int)arg1;
+- (void)setHasCameraPitchDegreeE6:(BOOL)arg1;
+- (void)setHasHorizontalFovE6:(BOOL)arg1;
+- (void)setHasMaxVisiblePitchE6:(BOOL)arg1;
+- (void)setHasMinVisiblePitchE6:(BOOL)arg1;
+- (void)setHasPanoYawDegreeE6:(BOOL)arg1;
+- (void)setHasProjectionType:(BOOL)arg1;
+- (void)setHasTiltPitchDegreeE6:(BOOL)arg1;
+- (void)setHasTiltYawDegreeE6:(BOOL)arg1;
 - (void)setHorizontalFovE6:(int)arg1;
 - (void)setMaxVisiblePitchE6:(int)arg1;
 - (void)setMinVisiblePitchE6:(int)arg1;

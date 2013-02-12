@@ -2,43 +2,47 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSDate, NSString;
+@class GKAchievementInternal, NSDate, NSString;
 
 @interface GKAchievement : NSObject <NSCoding> {
-    BOOL _completed;
-    NSString *_identifier;
-    BOOL _isHidden;
-    NSDate *_lastReportedDate;
-    double _percentComplete;
+    BOOL _hidden;
+    GKAchievementInternal *_internal;
+    BOOL _showsCompletionBanner;
 }
 
-@property(getter=isCompleted) BOOL completed;
-@property(getter=isHidden,readonly) BOOL hidden;
+@property(getter=isCompleted,readonly) BOOL completed;
+@property(getter=isHidden) BOOL hidden;
 @property(retain) NSString * identifier;
+@property(retain) GKAchievementInternal * internal;
 @property(retain) NSDate * lastReportedDate;
 @property double percentComplete;
+@property BOOL showsCompletionBanner;
 
++ (id)allAchievementsForDescriptions:(id)arg1 achievements:(id)arg2;
 + (void)loadAchievementsForGame:(id)arg1 player:(id)arg2 withCompletionHandler:(id)arg3;
 + (void)loadAchievementsWithCompletionHandler:(id)arg1;
++ (id)nonHiddenAchievementsForDescriptions:(id)arg1 achievements:(id)arg2;
 + (void)resetAchievementsWithCompletionHandler:(id)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)identifier;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDescription:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
+- (id)initWithInternalRepresentation:(id)arg1;
+- (id)internal;
 - (BOOL)isCompleted;
 - (BOOL)isHidden;
-- (id)lastReportedDate;
-- (double)percentComplete;
 - (void)reportAchievementWithCompletionHandler:(id)arg1;
-- (void)setCompleted:(BOOL)arg1;
+- (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setHidden:(BOOL)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)setLastReportedDate:(id)arg1;
-- (void)setPercentComplete:(double)arg1;
+- (void)setInternal:(id)arg1;
+- (void)setShowsCompletionBanner:(BOOL)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (BOOL)showsCompletionBanner;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

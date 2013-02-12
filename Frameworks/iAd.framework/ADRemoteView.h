@@ -14,7 +14,7 @@
 }
 
 @property unsigned int remoteWindowContextId;
-@property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } userTransform;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } userTransform;
 
 + (Class)layerClass;
 

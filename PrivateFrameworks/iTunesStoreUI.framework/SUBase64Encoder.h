@@ -3,16 +3,16 @@
  */
 
 @interface SUBase64Encoder : SUFilteringDataConsumer {
-    unsigned int _left;
+    unsigned long _left;
     unsigned char _leftovers[3];
-    unsigned int _line;
-    unsigned int _lineBreakLength;
+    unsigned long _line;
+    unsigned long _lineBreakLength;
     BOOL _padChar;
-    char *_table;
+    const char *_table;
 }
 
 @property BOOL allowSlash;
-@property unsigned int lineBreakLength;
+@property unsigned long lineBreakLength;
 @property BOOL padChar;
 
 + (int)maxConsumeLengthForReadLength:(int)arg1;

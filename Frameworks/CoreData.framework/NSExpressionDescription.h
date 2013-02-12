@@ -19,11 +19,14 @@
 }
 
 - (unsigned int)_propertyType;
+- (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(const id)arg6 fetchRequests:(id)arg7;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)expression;
 - (unsigned int)expressionResultType;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (void)setExpression:(id)arg1;
 - (void)setExpressionResultType:(unsigned int)arg1;
 

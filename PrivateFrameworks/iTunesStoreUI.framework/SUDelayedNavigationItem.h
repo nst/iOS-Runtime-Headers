@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUNavigationItem, UIBarButtonItem, UIView;
+@class SUNavigationItem;
 
 @interface SUDelayedNavigationItem : SUNavigationItem {
-    UIBarButtonItem *_delayedLeftBarButtonItem;
-    UIBarButtonItem *_delayedRightBarButtonItem;
-    UIBarButtonItem *_delayedSecondaryLeftBarButtonItem;
-    UIView *_delayedTitleView;
+    id _delayedLeftBarButtonItem;
+    id _delayedRightBarButtonItem;
+    id _delayedSecondaryLeftBarButtonItem;
+    id _delayedTitleView;
     BOOL _shouldDelayChanges;
     SUNavigationItem *_wrappedNavigationItem;
 }

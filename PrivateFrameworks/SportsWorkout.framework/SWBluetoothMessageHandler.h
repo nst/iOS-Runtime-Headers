@@ -83,7 +83,7 @@
 - (void)activate;
 - (void)beginDeviceDiscovery:(int)arg1 serviceMask:(unsigned int)arg2;
 - (void)cancelConnectToDevice;
-- (void)connectToDeviceWithAddress:(struct { unsigned char x1[6]; })arg1;
+- (void)connectToDevice:(int)arg1 withAddress:(struct { unsigned char x1[6]; })arg2;
 - (void)deactivate;
 - (struct { unsigned char x1[6]; })deviceAddressForSensor;
 - (void)forgetSensorDevice;

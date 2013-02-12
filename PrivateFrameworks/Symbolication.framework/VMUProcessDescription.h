@@ -47,7 +47,7 @@
 - (id)_readDataFromMemory:(id)arg1 atAddress:(unsigned long long)arg2 size:(unsigned long)arg3;
 - (id)_sanitizeVersion:(id)arg1;
 - (id)_systemVersionDescription;
-- (id)binaryImageDictionaryForAddress:(unsigned int)arg1;
+- (id)binaryImageDictionaryForAddress:(unsigned long long)arg1;
 - (id)binaryImages;
 - (id)binaryImagesDescription;
 - (id)binaryImagesDescriptionForBacktraces:(id)arg1;

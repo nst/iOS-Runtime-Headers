@@ -6,6 +6,7 @@
 
 @interface ABPickerViewController : UITableViewController {
     void *_context;
+    id _defaultValue;
     <ABPickerViewControllerDelegate> *_delegate;
     <ABPickerViewControllerDismissDelegate> *_dismissDelegate;
     SEL _selectionAction;
@@ -14,6 +15,7 @@
 
 @property(readonly) UIBarButtonItem * cancelBarButtonItem;
 @property void* context;
+@property(retain) id defaultValue;
 @property <ABPickerViewControllerDelegate> * delegate;
 @property <ABPickerViewControllerDismissDelegate> * dismissDelegate;
 @property(readonly) UIBarButtonItem * doneBarButtonItem;
@@ -28,12 +30,13 @@
 - (void)cancelButtonClicked:(id)arg1;
 - (void*)context;
 - (void)dealloc;
+- (id)defaultValue;
 - (id)delegate;
 - (id)dismissDelegate;
 - (id)doneBarButtonItem;
-- (id)init;
 - (SEL)selectionAction;
 - (void)setContext:(void*)arg1;
+- (void)setDefaultValue:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissDelegate:(id)arg1;
 - (void)setSelectionAction:(SEL)arg1;

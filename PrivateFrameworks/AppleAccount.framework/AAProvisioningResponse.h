@@ -5,32 +5,26 @@
 @class NSArray, NSDictionary, NSNumber, NSString;
 
 @interface AAProvisioningResponse : AAAuthenticationResponse {
-    NSDictionary *_appleAccount;
-    NSDictionary *_mobileMe;
+    NSDictionary *_icloud;
 }
 
+@property(readonly) NSString * appleID;
+@property(readonly) NSArray * appleIDAliases;
 @property(readonly) NSDictionary * dataclassProperties;
 @property(readonly) NSString * firstName;
 @property(readonly) NSString * lastName;
-@property(readonly) NSDictionary * mobileMeAccountFirstDisplayAlert;
-@property(readonly) NSDictionary * mobileMeAccountFooterButton;
-@property(readonly) NSString * mobileMeAccountFooterText;
-@property(readonly) NSNumber * mobileMeAccountStatusCode;
-@property(readonly) NSString * personID;
 @property(readonly) NSString * primaryEmail;
 @property(readonly) NSNumber * primaryEmailVerified;
 @property(readonly) NSArray * provisionedDataclasses;
 
+- (id)appleID;
+- (id)appleIDAliases;
 - (id)dataclassProperties;
 - (void)dealloc;
 - (id)firstName;
+- (id)initWithDictionary:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)lastName;
-- (id)mobileMeAccountFirstDisplayAlert;
-- (id)mobileMeAccountFooterButton;
-- (id)mobileMeAccountFooterText;
-- (id)mobileMeAccountStatusCode;
-- (id)personID;
 - (id)primaryEmail;
 - (id)primaryEmailVerified;
 - (id)provisionedDataclasses;

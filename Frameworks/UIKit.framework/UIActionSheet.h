@@ -48,6 +48,7 @@
         unsigned int dontCallDismissDelegate : 1; 
         unsigned int useAutomaticKB : 1; 
         unsigned int twoColumnsLayoutMode : 7; 
+        unsigned int threeColumnsLayoutMode : 7; 
         unsigned int shouldHandleFirstKeyUpEvent : 1; 
         unsigned int cancelWhenDoneAnimating : 1; 
         unsigned int useThreePartButtons : 1; 
@@ -100,20 +101,23 @@
 @property(copy) NSString * title;
 @property(getter=isVisible,readonly) BOOL visible;
 
-+ (void)_initializeSafeCategory;
++ (Class)_popoverControllerClass;
 + (id)_popupAlertBackground;
 + (struct CGSize { float x1; float x2; })minimumSize;
 
 - (void)_actionSheetHidingAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_actionSheetRepresentingAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
+- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)_addButtonWithTitle:(id)arg1;
+- (id)_addMediaButtonWithTitle:(id)arg1 iconView:(id)arg2 andTableIconView:(id)arg3;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
 - (void)_appSuspended:(id)arg1;
 - (float)_bottomVerticalInset;
 - (void)_bubbleAnimationNormalDidStop:(id)arg1 finished:(id)arg2;
 - (void)_bubbleAnimationShrinkDidStop:(id)arg1 finished:(id)arg2;
+- (id)_buttonAtIndex:(int)arg1;
 - (void)_buttonClicked:(id)arg1;
 - (float)_buttonHeight;
 - (BOOL)_canShowAlerts;
@@ -127,6 +131,7 @@
 - (id)_dimView;
 - (id)_dimViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_dimsBackground;
+- (void)_doneScrolling:(id)arg1;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
 - (void)_hideActionSheetInsidePopOverAnimated:(BOOL)arg1;
@@ -134,6 +139,7 @@
 - (BOOL)_isAnimating;
 - (BOOL)_isHostedByPopOver;
 - (BOOL)_isInsidePopOverContent;
+- (BOOL)_isSBAlert;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
@@ -232,6 +238,7 @@
 - (BOOL)requiresPortraitOrientation;
 - (BOOL)resignFirstResponder;
 - (BOOL)runsModal;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setActionSheetStyle:(int)arg1;
 - (void)setAlertSheetStyle:(int)arg1;
 - (void)setBlocksInteraction:(BOOL)arg1;
@@ -258,12 +265,15 @@
 - (void)setSuspendTag:(int)arg1;
 - (void)setTableShouldShowMinimumContent:(BOOL)arg1;
 - (void)setTaglineText:(id)arg1;
+- (void)setThreeColumnsLayoutMode:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleMaxLineCount:(int)arg1;
 - (void)setTwoColumnsLayoutMode:(int)arg1;
+- (void)setUseThreeColumnsButtonsLayout:(BOOL)arg1;
 - (void)setUseTwoColumnsButtonsLayout:(BOOL)arg1;
 - (void)showFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)showFromBarButtonItem:(id)arg1;
+- (void)showFromObject:(id)arg1 animated:(BOOL)arg2;
 - (void)showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (void)showFromTabBar:(id)arg1;
 - (void)showFromToolbar:(id)arg1;
@@ -282,10 +292,12 @@
 - (id)textField;
 - (id)textFieldAtIndex:(int)arg1;
 - (int)textFieldCount;
+- (int)threeColumnsLayoutMode;
 - (id)title;
 - (int)titleMaxLineCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 - (int)twoColumnsLayoutMode;
+- (BOOL)useThreeColumnsButtonsLayout;
 - (BOOL)useTwoColumnsButtonsLayout;
 
 @end

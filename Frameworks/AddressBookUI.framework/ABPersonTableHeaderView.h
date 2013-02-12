@@ -11,6 +11,7 @@
     ABMultiCellContentView *_editingView;
     ABPersonNameEditingViewContainer *_editingViewContainer;
     UIView *_extraHeaderView;
+    BOOL _extraHeaderViewAlignsToImage;
     UIImageView *_imageShadowView;
     ABPersonImageView *_imageView;
     UIImageView *_multiplePhotoBackdropView;
@@ -27,6 +28,7 @@
 @property(readonly) ABMultiCellContentView * editingView;
 @property(readonly) UIView * editingViewContainer;
 @property(retain) UIView * extraHeaderView;
+@property BOOL extraHeaderViewAlignsToImage;
 @property(readonly) ABPersonImageView * imageView;
 @property(copy) NSString * message;
 @property(copy) NSString * messageDetail;
@@ -44,12 +46,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForWidth:(float)arg1;
 - (struct CGPoint { float x1; float x2; })_editingViewOrigin;
 - (float)_editingViewWidthForWidth:(float)arg1;
-- (float)_extraHeaderViewAvailableWidth;
+- (float)_extraHeaderViewAvailableWidthForWidth:(float)arg1 whenEditing:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })_extraHeaderViewOriginForWidth:(float)arg1 whenEditing:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForEditingView;
 - (id)_imageShadowView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrameWhenEditing:(BOOL)arg1;
 - (BOOL)_isSpecialInternalHeaderView;
+- (void)_layoutExtraHeaderView;
 - (id)_multiplePhotoBackdropView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_multiplePhotoBackdropViewFrame;
 - (id)_multiplePhotoBackdropViewImage;
@@ -69,6 +72,8 @@
 - (id)editingViewContainer;
 - (id)entryFieldForRow:(unsigned int)arg1;
 - (id)extraHeaderView;
+- (BOOL)extraHeaderViewAlignsToImage;
+- (float)extraHeaderViewHorizontalPaddingWhenEditing:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })extraHeaderViewOrigin;
 - (id)imageView;
 - (void)imageViewSelected:(id)arg1;
@@ -96,6 +101,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setExtraHeaderView:(id)arg1;
+- (void)setExtraHeaderViewAlignsToImage:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
 - (void)setMessageDetailFont:(id)arg1;

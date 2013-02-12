@@ -8,16 +8,18 @@
     NSMutableDictionary *_personMap;
 }
 
+@property(retain) NSMutableDictionary * _personMap;
+
 + (id)sharedInstance;
 
 - (void)_dumpAllPersons;
-- (id)autorelease;
+- (id)_personMap;
+- (BOOL)allowsWeakReference;
 - (void)dealloc;
-- (id)init;
 - (id)personForUniqueID:(id)arg1;
 - (void)registerPerson:(id)arg1;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
+- (void)set_personMap:(id)arg1;
 - (void)unregisterPerson:(id)arg1;
 
 @end

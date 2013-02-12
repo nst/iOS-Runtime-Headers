@@ -15,7 +15,7 @@
 }
 
 @property(retain) UIColor * color;
-@property struct CGSize { float width; float height; } offset;
+@property struct CGSize { float x1; float x2; } offset;
 @property float opacity;
 @property float radius;
 

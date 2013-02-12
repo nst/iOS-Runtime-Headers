@@ -15,20 +15,20 @@
 
 @property(retain) NSString * codePoint;
 @property(retain) NSString * imageName;
+@property(readonly) NSString * key;
 @property(retain) NSString * name;
 @property(retain) NSString * privateCodePoint;
 @property(retain) NSString * publicCodePoint;
 @property unsigned short unicodeCharacter;
 
-+ (void)_initializeSafeCategory;
 + (BOOL)shouldUsePublicCodePoints;
 
-- (id)accessibilityLabel;
 - (id)codePoint;
 - (void)dealloc;
 - (id)image;
 - (id)imageName;
 - (id)initWithName:(id)arg1 imageName:(id)arg2 codePoint:(unsigned short)arg3;
+- (id)key;
 - (id)name;
 - (id)privateCodePoint;
 - (id)publicCodePoint;

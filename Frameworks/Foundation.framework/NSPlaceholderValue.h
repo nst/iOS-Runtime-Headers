@@ -6,6 +6,8 @@
     struct _NSZone { } *zoneForInstance;
 }
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
 - (void)dealloc;
 - (void)finalize;

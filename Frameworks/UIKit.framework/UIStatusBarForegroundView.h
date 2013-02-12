@@ -2,26 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSData, NSString, UILabel, UIStatusBarLayoutManager;
+@class NSString, UILabel, UIStatusBarComposedData, UIStatusBarLayoutManager;
 
 @interface UIStatusBarForegroundView : UIView {
     UILabel *_doubleHeightLabel;
     int _foregroundStyle;
     int _ignoreDataLevel;
-    BOOL _itemIsEnabled[22];
+    BOOL _itemIsEnabled[23];
     UIStatusBarLayoutManager *_layoutManagers[3];
     int _pendedActions;
-    NSData *_pendedData;
+    UIStatusBarComposedData *_pendedData;
     BOOL _performedStyleChangeReflow;
     NSString *_statusString;
 }
 
 @property(readonly) int foregroundStyle;
 
-+ (void)_initializeSafeCategory;
-
-- (id)_accessibilityFuzzyHitTestElements;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
 - (void)_cleanUpAfterDataChange;
 - (void)_cleanUpAfterSimpleReflow;
 - (void)_computeVisibleItems:(id*)arg1 eitherSideItems:(id)arg2;
@@ -32,8 +28,7 @@
 - (BOOL)ignoringData;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 foregroundStyle:(int)arg2;
 - (void)reflowItemViews:(BOOL)arg1 suppressCenterAnimation:(BOOL)arg2;
-- (void)setDoubleHeightItemEnabled:(BOOL)arg1;
-- (void)setStatusBarData:(struct { BOOL x1[22]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; BOOL x20[256]; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 actions:(int)arg2 animated:(BOOL)arg3;
+- (void)setStatusBarData:(id)arg1 actions:(int)arg2 animated:(BOOL)arg3;
 - (void)startIgnoringData;
 - (void)stopIgnoringData:(BOOL)arg1;
 

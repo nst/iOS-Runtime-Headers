@@ -17,8 +17,6 @@
 @property(readonly) MPVolumeSlider * volumeSlider;
 @property BOOL volumeSliderShrinksFromBothEnds;
 
-+ (void)_initializeSafeCategory;
-
 - (void)_createSubviews;
 - (void)_displayAudioRoutePicker;
 - (void)_initWithStyle:(int)arg1;

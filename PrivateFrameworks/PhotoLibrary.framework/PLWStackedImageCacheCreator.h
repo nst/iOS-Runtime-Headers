@@ -2,26 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhotoLibrary, NSArray, PLImageCache, PLImageLoadingQueue, PLImageSource, PLWStackedImageCache;
+@class PLWStackedImageCache;
 
-@interface PLWStackedImageCacheCreator : NSObject <PLStackViewDataSource, PLCachedFilesManagerPlugin> {
-    NSArray *_albums;
-    BOOL _cancel;
-    PLImageCache *_imageCache;
-    PLImageLoadingQueue *_imageLoadingQueue;
-    MLPhotoLibrary *_library;
-    PLImageSource *_stackImageSource;
+@interface PLWStackedImageCacheCreator : NSObject <PLStackViewDataSource> {
     PLWStackedImageCache *_stackedImageCache;
 }
 
-- (id)_albums;
-- (void)cancel;
-- (void)createStackedImageForAlbum:(id)arg1 withNewlyInsertedPhoto:(id)arg2;
-- (void)createStackedImageForAlbumIndex:(id)arg1;
+- (struct NSObject { Class x1; }*)_albumForStack:(id)arg1;
+- (void)createStackedImageForAlbum:(id)arg1;
 - (void)dealloc;
-- (id)initWithImageCache:(id)arg1;
-- (BOOL)recreateCachedFilesIfNecessary;
-- (id)stackView:(id)arg1 dataForImageAtIndex:(int)arg2 imageData:(struct { int x1; int x2; int x3; int x4; int x5; int x6; BOOL x7; }*)arg3;
+- (id)init;
+- (id)stackView:(id)arg1 collapsedIndexesForCount:(unsigned int)arg2;
 - (void)stackView:(id)arg1 invalidateCachedImagesForIndex:(int)arg2;
 - (id)stackView:(id)arg1 itemViewAtIndex:(int)arg2 loadImagesSynchronously:(BOOL)arg3;
 - (void)stackView:(id)arg1 saveStackedImage:(id)arg2 options:(id)arg3;

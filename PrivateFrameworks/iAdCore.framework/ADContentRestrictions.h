@@ -25,13 +25,13 @@
 @property int appsRank;
 @property(retain) NSString * countryCode;
 @property BOOL denyExplicit;
-@property(readonly) BOOL hasAllowITunes;
-@property(readonly) BOOL hasAllowInstallApps;
-@property(readonly) BOOL hasAppsRank;
+@property BOOL hasAllowITunes;
+@property BOOL hasAllowInstallApps;
+@property BOOL hasAppsRank;
 @property(readonly) BOOL hasCountryCode;
-@property(readonly) BOOL hasDenyExplicit;
-@property(readonly) BOOL hasMoviesRank;
-@property(readonly) BOOL hasTvshowsRank;
+@property BOOL hasDenyExplicit;
+@property BOOL hasMoviesRank;
+@property BOOL hasTvshowsRank;
 @property int moviesRank;
 @property int tvshowsRank;
 
@@ -50,7 +50,6 @@
 - (BOOL)hasDenyExplicit;
 - (BOOL)hasMoviesRank;
 - (BOOL)hasTvshowsRank;
-- (id)init;
 - (int)moviesRank;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAllowITunes:(BOOL)arg1;
@@ -58,6 +57,12 @@
 - (void)setAppsRank:(int)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setDenyExplicit:(BOOL)arg1;
+- (void)setHasAllowITunes:(BOOL)arg1;
+- (void)setHasAllowInstallApps:(BOOL)arg1;
+- (void)setHasAppsRank:(BOOL)arg1;
+- (void)setHasDenyExplicit:(BOOL)arg1;
+- (void)setHasMoviesRank:(BOOL)arg1;
+- (void)setHasTvshowsRank:(BOOL)arg1;
 - (void)setMoviesRank:(int)arg1;
 - (void)setTvshowsRank:(int)arg1;
 - (int)tvshowsRank;

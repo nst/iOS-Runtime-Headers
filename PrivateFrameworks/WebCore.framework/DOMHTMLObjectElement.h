@@ -31,6 +31,7 @@
 - (id)align;
 - (id)archive;
 - (id)border;
+- (BOOL)checkValidity;
 - (id)code;
 - (id)codeBase;
 - (id)codeType;
@@ -48,6 +49,7 @@
 - (void)setCode:(id)arg1;
 - (void)setCodeBase:(id)arg1;
 - (void)setCodeType:(id)arg1;
+- (void)setCustomValidity:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setDeclare:(BOOL)arg1;
 - (void)setHeight:(id)arg1;
@@ -62,6 +64,8 @@
 - (id)standby;
 - (id)type;
 - (id)useMap;
+- (id)validationMessage;
+- (id)validity;
 - (int)vspace;
 - (id)width;
 - (BOOL)willValidate;

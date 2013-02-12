@@ -2,17 +2,24 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@class NSMutableDictionary, NSSet;
+@class NSArray, NSBundle, NSMutableDictionary, NSSet;
 
 @interface SCROMobileBrailleDisplayInputManager : NSObject {
     NSSet *_brailleKeys;
+    NSBundle *_bundle;
     NSMutableDictionary *_displayInfoDict;
+    NSArray *_eightDotCommands;
+    NSArray *_sixDotCommands;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)sharedManager;
 
+- (id)_bundle;
+- (id)_commandsFromBrailleInputMode:(int)arg1;
+- (id)_eightDotCommands;
+- (id)_sixDotCommands;
 - (id)autorelease;
 - (id)buttonNamesAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
 - (id)buttonNamesForInputIdentifier:(id)arg1 forDisplayWithToken:(long)arg2;

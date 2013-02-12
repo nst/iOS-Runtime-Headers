@@ -44,6 +44,7 @@
     struct __CFRunLoopTimer { } *_blinkerEventTimer;
     BOOL _blinkingEnabled;
     <SCROBrailleDriverProtocol> *_brailleDriver;
+    int _brailleInputMode;
     SCROBrailleLine *_brailleLine;
     NSLock *_contentLock;
     int _contractionMode;
@@ -84,8 +85,14 @@
 - (void)_delayedDisplayLoad;
 - (void)_delayedSleepNotification:(id)arg1;
 - (void)_delayedUnloadNotification;
+- (BOOL)_hasBrailleChord;
+- (BOOL)_hasKeyChord;
+- (BOOL)_hasPressedBrailleKeys;
 - (id)_initWithDriver:(id)arg1 driverIdentifier:(id)arg2 ioElement:(id)arg3 delegate:(id)arg4;
 - (void)_inputEventHandler;
+- (BOOL)_isMemorizingKeys;
+- (id)_newBrailleKeyForCurrentBrailleChord;
+- (id)_newBrailleKeyForCurrentKeyChord;
 - (void)_panHandler:(id)arg1;
 - (void)_processKeyEvents:(id)arg1;
 - (void)_runThread;
@@ -96,6 +103,7 @@
 - (void)_sleepNotification:(id)arg1;
 - (void)_statusDisplayHandler:(id)arg1;
 - (id)_statusStringWithDictionary:(id)arg1;
+- (void)_stopMemorization;
 - (void)_translateBrailleStringAndPostEvent;
 - (void)_unloadHandler;
 - (void)_unloadNotification:(id)arg1;
@@ -114,6 +122,7 @@
 - (id)ioElement;
 - (BOOL)isLoaded;
 - (BOOL)isValid;
+- (id)lineDescriptor;
 - (int)mainSize;
 - (long)masterStatusCellIndex;
 - (void)panLeft;

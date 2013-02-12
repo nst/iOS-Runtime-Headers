@@ -6,6 +6,8 @@
 }
 
 - (const char *)_fastCStringContents:(BOOL)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)autorelease;
 - (const char *)cString;
 - (unsigned int)cStringLength;

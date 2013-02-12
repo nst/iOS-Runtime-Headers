@@ -32,6 +32,7 @@
 - (id)accessKey;
 - (id)charset;
 - (id)coords;
+- (id)getParameter:(id)arg1;
 - (id)hashName;
 - (id)host;
 - (id)hostname;
@@ -39,6 +40,7 @@
 - (id)hreflang;
 - (id)name;
 - (id)pathname;
+- (id)ping;
 - (id)port;
 - (id)protocol;
 - (id)rel;
@@ -50,6 +52,7 @@
 - (void)setHref:(id)arg1;
 - (void)setHreflang:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPing:(id)arg1;
 - (void)setRel:(id)arg1;
 - (void)setRev:(id)arg1;
 - (void)setShape:(id)arg1;

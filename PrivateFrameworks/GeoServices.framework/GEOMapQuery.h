@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation, GEOMapRegion, GEOSessionID, NSString;
+@class GEOLocation, GEOMapRegion, GEOPlaceSearchRequest, GEOSessionID, NSString;
 
 @interface GEOMapQuery : PBCodable {
     int _clientImgFmt;
@@ -15,6 +15,7 @@
     BOOL _hasMapCenterY;
     BOOL _hasMapSpanX;
     BOOL _hasMapSpanY;
+    BOOL _hasRequestType;
     BOOL _hasTilesizeX;
     BOOL _hasTilesizeY;
     BOOL _hasZoomlevel;
@@ -23,6 +24,7 @@
     GEOMapRegion *_mapRegion;
     int _mapSpanX;
     int _mapSpanY;
+    GEOPlaceSearchRequest *_placeSearchRequest;
     NSString *_query;
     int _requestType;
     GEOSessionID *_sessionID;
@@ -35,24 +37,28 @@
 @property int clientImgFmt;
 @property int clientImgMaxHeight;
 @property int clientImgMaxWidth;
-@property(readonly) BOOL hasClientImgFmt;
-@property(readonly) BOOL hasClientImgMaxHeight;
-@property(readonly) BOOL hasClientImgMaxWidth;
-@property(readonly) BOOL hasMapCenterX;
-@property(readonly) BOOL hasMapCenterY;
+@property BOOL hasClientImgFmt;
+@property BOOL hasClientImgMaxHeight;
+@property BOOL hasClientImgMaxWidth;
+@property BOOL hasMapCenterX;
+@property BOOL hasMapCenterY;
 @property(readonly) BOOL hasMapRegion;
-@property(readonly) BOOL hasMapSpanX;
-@property(readonly) BOOL hasMapSpanY;
+@property BOOL hasMapSpanX;
+@property BOOL hasMapSpanY;
+@property(readonly) BOOL hasPlaceSearchRequest;
+@property(readonly) BOOL hasQuery;
+@property BOOL hasRequestType;
 @property(readonly) BOOL hasSessionID;
-@property(readonly) BOOL hasTilesizeX;
-@property(readonly) BOOL hasTilesizeY;
+@property BOOL hasTilesizeX;
+@property BOOL hasTilesizeY;
 @property(readonly) BOOL hasUserLocation;
-@property(readonly) BOOL hasZoomlevel;
+@property BOOL hasZoomlevel;
 @property int mapCenterX;
 @property int mapCenterY;
 @property(retain) GEOMapRegion * mapRegion;
 @property int mapSpanX;
 @property int mapSpanY;
+@property(retain) GEOPlaceSearchRequest * placeSearchRequest;
 @property(retain) NSString * query;
 @property int requestType;
 @property(retain) GEOSessionID * sessionID;
@@ -75,17 +81,20 @@
 - (BOOL)hasMapRegion;
 - (BOOL)hasMapSpanX;
 - (BOOL)hasMapSpanY;
+- (BOOL)hasPlaceSearchRequest;
+- (BOOL)hasQuery;
+- (BOOL)hasRequestType;
 - (BOOL)hasSessionID;
 - (BOOL)hasTilesizeX;
 - (BOOL)hasTilesizeY;
 - (BOOL)hasUserLocation;
 - (BOOL)hasZoomlevel;
-- (id)init;
 - (int)mapCenterX;
 - (int)mapCenterY;
 - (id)mapRegion;
 - (int)mapSpanX;
 - (int)mapSpanY;
+- (id)placeSearchRequest;
 - (id)query;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
@@ -93,11 +102,23 @@
 - (void)setClientImgFmt:(int)arg1;
 - (void)setClientImgMaxHeight:(int)arg1;
 - (void)setClientImgMaxWidth:(int)arg1;
+- (void)setHasClientImgFmt:(BOOL)arg1;
+- (void)setHasClientImgMaxHeight:(BOOL)arg1;
+- (void)setHasClientImgMaxWidth:(BOOL)arg1;
+- (void)setHasMapCenterX:(BOOL)arg1;
+- (void)setHasMapCenterY:(BOOL)arg1;
+- (void)setHasMapSpanX:(BOOL)arg1;
+- (void)setHasMapSpanY:(BOOL)arg1;
+- (void)setHasRequestType:(BOOL)arg1;
+- (void)setHasTilesizeX:(BOOL)arg1;
+- (void)setHasTilesizeY:(BOOL)arg1;
+- (void)setHasZoomlevel:(BOOL)arg1;
 - (void)setMapCenterX:(int)arg1;
 - (void)setMapCenterY:(int)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setMapSpanX:(int)arg1;
 - (void)setMapSpanY:(int)arg1;
+- (void)setPlaceSearchRequest:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRequestType:(int)arg1;
 - (void)setSessionID:(id)arg1;

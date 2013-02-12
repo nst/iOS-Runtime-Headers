@@ -13,6 +13,7 @@
     MFDAMessageStore *store;
 }
 
+- (id)deferredOperation;
 - (unsigned long long)generationNumber;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

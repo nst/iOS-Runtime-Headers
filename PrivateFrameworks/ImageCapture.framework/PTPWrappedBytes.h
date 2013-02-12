@@ -2,13 +2,22 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface PTPWrappedBytes : NSObject {
+    int (*_progressNotifier)();
     BOOL _allocatedBytes;
     char *_bytes;
     unsigned long long _capacity;
     unsigned long long _excessDataLength;
     int _fd;
+    int _lastNotifiedProgress;
     unsigned long long _offset;
+    double _progressNotificationTime;
+    void *_progressNotifierContext;
     BOOL _useByteBuffer;
 }
 
@@ -28,9 +37,11 @@
 - (id)initWithFileDescriptor:(int)arg1 capacity64:(unsigned long long)arg2;
 - (unsigned long long)length64;
 - (void*)mutableBytes;
+- (unsigned long long)offset;
 - (double)percentFull;
 - (unsigned long long)setCapacity64:(unsigned long long)arg1;
 - (void)setLength64:(unsigned long long)arg1;
+- (void)setProgressNotifierCallback:(int (*)())arg1 context:(void*)arg2;
 - (BOOL)wasInitWithFD;
 
 @end

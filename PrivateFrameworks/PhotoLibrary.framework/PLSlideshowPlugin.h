@@ -2,26 +2,28 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLSlideshowPluginDelegate>, MLAlbum, MLPhoto, NSArray;
+@class <PLSlideshowPluginDelegate>, NSArray, NSObject<PLAssetContainer>, PLManagedAsset;
 
 @interface PLSlideshowPlugin : NSObject {
-    MLAlbum *_album;
+    struct NSObject { Class x1; } *_album;
+    NSArray *_albumAssets;
     <PLSlideshowPluginDelegate> *_delegate;
-    NSArray *_filteredAlbumImages;
     double _secondsPerSlide;
     BOOL _shouldRepeat;
     BOOL _shuffleAlbum;
 }
 
-@property(retain) MLAlbum * album;
-@property(readonly) MLPhoto * currentPhoto;
+@property(retain) NSObject<PLAssetContainer> * album;
+@property(retain) NSArray * albumAssets;
+@property(readonly) PLManagedAsset * currentPhoto;
 @property <PLSlideshowPluginDelegate> * delegate;
 @property(readonly) NSArray * displayedPhotos;
 @property double secondsPerSlide;
 @property BOOL shouldRepeat;
 @property BOOL shuffleAlbum;
 
-- (id)album;
+- (struct NSObject { Class x1; }*)album;
+- (id)albumAssets;
 - (id)currentPhoto;
 - (void)dealloc;
 - (id)delegate;
@@ -30,7 +32,8 @@
 - (void)pauseSlideshow;
 - (void)resumeSlideshow;
 - (double)secondsPerSlide;
-- (void)setAlbum:(id)arg1;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)setAlbumAssets:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSecondsPerSlide:(double)arg1;
 - (void)setShouldRepeat:(BOOL)arg1;

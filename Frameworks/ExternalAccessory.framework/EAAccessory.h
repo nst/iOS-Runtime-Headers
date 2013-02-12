@@ -25,12 +25,17 @@
 @property(readonly) NSString * serialNumber;
 
 - (int (*)())cfAccessoryPortPropertyCallback;
+- (void)_addSession:(id)arg1;
+- (void)_endSession:(unsigned int)arg1;
 - (id)_initWithAccessory:(id)arg1;
+- (void)_openCompleteForSession:(unsigned int)arg1;
 - (id)_protocolIDForProtocolString:(id)arg1;
+- (void)_removeSession:(id)arg1;
 - (void)_setConnected:(BOOL)arg1;
 - (id)_shortDescription;
 - (void)_updateAccessoryInfo:(id)arg1;
 - (BOOL)accessoryHasNMEASentencesAvailable;
+- (id)allPublicProtocolStrings;
 - (id)audioPorts;
 - (struct __CFAccessory { }*)cfAccessory;
 - (void*)cfAccessoryPortPropertyContext;
@@ -49,7 +54,6 @@
 - (id)hardwareRevision;
 - (int)iPodOutOptionsMask;
 - (id)init;
-- (id)internalDescription;
 - (BOOL)isConnected;
 - (id)manufacturer;
 - (id)modelNumber;
@@ -69,10 +73,8 @@
 - (void)setIPodOutOptionsMask:(int)arg1;
 - (BOOL)setNMEASentencesToFilter:(id)arg1;
 - (BOOL)supportsAccessibility;
-- (BOOL)supportsIPodOut;
 - (BOOL)supportsLocation;
 - (BOOL)supportsPublicIap;
 - (void)updateSystemProperty:(int)arg1 withValue:(id)arg2;
-- (id)valueForLegacyLingoProperty:(id)arg1;
 
 @end

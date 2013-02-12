@@ -2,26 +2,31 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MLChapterTOC;
-
 @interface ML3Track : ML3Entity {
 }
 
-@property(readonly) MLChapterTOC * chapterTOC;
-
 + (id)TVShowEpisodesDefaultOrderingProperties;
++ (BOOL)_clearLocationFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
++ (BOOL)_deleteAssetAtPath:(id)arg1;
++ (void)_enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3 usingBlock:(id)arg4;
++ (id)_flattenedChapterDataWithImportChapters:(id)arg1 library:(id)arg2 trackPersistentID:(long long)arg3;
 + (id)albumAllArtistsDefaultOrderingProperties;
 + (id)albumAndArtistDefaultOrderingProperties;
 + (id)albumsDefaultOrderingProperties;
++ (id)allProperties;
 + (id)artistAllAlbumsDefaultOrderingProperties;
 + (id)artistsDefaultOrderingProperties;
++ (id)collectionClassesToUpdateBeforeDelete;
 + (id)composersDefaultOrderingProperties;
 + (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)containerQueryWithContainer:(id)arg1 predicate:(id)arg2;
 + (id)containerQueryWithContainer:(id)arg1;
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
++ (BOOL)deleteFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
 + (id)extraTablesToDelete;
++ (id)extraTablesToInsert;
++ (id)flattenedChapterDataFromSyncInfoDictionaries:(id)arg1 trackPersistentID:(long long)arg2;
 + (id)foreignColumnForProperty:(id)arg1;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)genresDefaultOrderingProperties;
@@ -32,19 +37,28 @@
 + (id)persistentIDColumnForTable:(id)arg1;
 + (id)podcastsDefaultOrderingProperties;
 + (id)podcastsEpisodesDefaultOrderingProperties;
++ (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (id)predisambiguatedProperties;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
++ (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)subselectPropertyForProperty:(id)arg1;
 + (id)subselectStatementForProperty:(id)arg1;
++ (BOOL)trackValueAreInTheCloud:(id)arg1;
++ (BOOL)trackWithPersistentID:(long long)arg1 existsInLibrary:(id)arg2;
++ (BOOL)unlinkRedownloadableAssetsFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3 deletedFileSize:(long long*)arg4;
++ (id)unsettableProperties;
 
+- (id)absoluteFilePath;
+- (id)artworkCacheIDAtPlaybackTime:(double)arg1;
 - (id)chapterTOC;
-- (BOOL)deleteFromLibrary;
-- (long long)imageDBRecordID:(int)arg1;
-- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2;
-- (BOOL)isOTAPurchasedContent;
+- (void)didChangeValueForProperties:(const id*)arg1 count:(unsigned int)arg2;
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 - (BOOL)populateArtworkCacheWithArtworkData:(id)arg1;
+- (void)populateChapterDataByImportingFromAsset;
 - (void)populateChapterDataWithImportChapters:(id)arg1;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
+- (void)updateCollectionCloudStatus;
+- (BOOL)updateIntegrity;
 
 @end

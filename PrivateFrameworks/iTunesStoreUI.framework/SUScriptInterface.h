@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, NSURL, SUScriptAccount, SUScriptAccountManager, SUScriptAddressBook, SUScriptApplication, SUScriptDevice, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptProtocol, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, SUWebImagePool, WebScriptObject;
+@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, NSURL, SUScriptAccount, SUScriptAccountManager, SUScriptAddressBook, SUScriptApplication, SUScriptDevice, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptProtocol, SUScriptPurchaseManager, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, SUWebImagePool, WebScriptObject;
 
 @interface SUScriptInterface : SUScriptObject {
     SUScriptAccountManager *_accountManager;
@@ -11,6 +11,7 @@
     NSURL *_mainFrameURL;
     SUScriptMediaLibrary *_mediaLibrary;
     SUScriptNotificationObserver *_notificationObserver;
+    SUScriptPurchaseManager *_purchaseManager;
     SUScriptOperationDelegate *_scriptOperationDelegate;
     SUScriptWindowContext *_scriptWindowContext;
     BOOL _sourceIsTrusted;
@@ -20,6 +21,7 @@
 }
 
 @property(readonly) NSArray * accounts;
+@property(readonly) NSString * actionTypeReturnToLibrary;
 @property(readonly) SUScriptAddressBook * addressBook;
 @property(readonly) SUScriptApplication * application;
 @property(copy) NSString * cookie;
@@ -33,7 +35,9 @@
 @property(readonly) SUScriptNavigationBar * navigationBar;
 @property(readonly) NSNumber * orientation;
 @property(retain) SUScriptAccount * primaryAccount;
+@property(retain) SUScriptAccount * primaryLockerAccount;
 @property(readonly) SUScriptProtocol * protocol;
+@property(readonly) SUScriptPurchaseManager * purchaseManager;
 @property(readonly) id screenReaderRunning;
 @property(retain) SUScriptWindowContext * scriptWindowContext;
 @property(readonly) SUScriptSectionsController * sectionsController;
@@ -42,6 +46,7 @@
 @property(readonly) SUScriptViewController * viewController;
 @property(readonly) SUScriptWindow * window;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -64,6 +69,7 @@
 - (id)accountForDSID:(id)arg1;
 - (id)accountName;
 - (id)accounts;
+- (id)actionTypeReturnToLibrary;
 - (id)activeNetworkType;
 - (void)addExternalDownloads:(id)arg1 options:(id)arg2;
 - (void)addExternalDownloads:(id)arg1;
@@ -116,12 +122,14 @@
 - (id)mainFrameURL;
 - (id)makeAccount;
 - (id)makeAccountPageWithURLs:(id)arg1;
+- (id)makeButtonWithSystemItemString:(id)arg1 action:(id)arg2;
 - (id)makeButtonWithTitle:(id)arg1 action:(id)arg2;
 - (id)makeCanvasWithWidth:(id)arg1 height:(id)arg2;
 - (id)makeColorWithHue:(id)arg1 saturation:(id)arg2 brightness:(id)arg3 alpha:(id)arg4;
 - (id)makeColorWithRed:(id)arg1 green:(id)arg2 blue:(id)arg3 alpha:(id)arg4;
 - (id)makeColorWithWhite:(id)arg1 alpha:(id)arg2;
 - (id)makeComposeReviewViewControllerWithReview:(id)arg1;
+- (id)makeDateFormatter;
 - (id)makeDialog;
 - (id)makeDocumentInteractionController;
 - (id)makeLinearGradientWithX0:(float)arg1 y0:(float)arg2 x1:(float)arg3 y1:(float)arg4;
@@ -134,6 +142,7 @@
 - (id)makeRadialGradientWithX0:(float)arg1 y0:(float)arg2 r0:(float)arg3 x1:(float)arg4 y1:(float)arg5 r1:(float)arg6;
 - (id)makeReportAProblemViewControllerWithAdamID:(id)arg1;
 - (id)makeReviewWithAdamID:(id)arg1;
+- (id)makeScriptActionWithType:(id)arg1;
 - (id)makeScriptImagePickerController;
 - (id)makeSegmentedControl;
 - (id)makeSplitViewController;
@@ -150,11 +159,14 @@
 - (void)performPurchaseAnimationForIdentifier:(id)arg1;
 - (void)pingURL:(id)arg1;
 - (id)primaryAccount;
+- (id)primaryLockerAccount;
 - (id)protocol;
+- (id)purchaseManager;
 - (void)redeemCode:(id)arg1;
 - (void)registerNavBarButtonWithTitle:(id)arg1 side:(id)arg2 function:(id)arg3;
 - (void)reloadFooterSection:(id)arg1 withURL:(id)arg2;
 - (void)reportAProblemForIdentifier:(id)arg1;
+- (void)retryAllRestoreDownloads;
 - (id)screenReaderRunning;
 - (id)scriptAttributeKeys;
 - (id)scriptWindowContext;
@@ -174,6 +186,7 @@
 - (void)setNavigationBar:(id)arg1;
 - (void)setOrientation:(id)arg1;
 - (void)setPrimaryAccount:(id)arg1;
+- (void)setPrimaryLockerAccount:(id)arg1;
 - (void)setProtocol:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
 - (void)setSectionsController:(id)arg1;
@@ -191,6 +204,29 @@
 - (id)softwareApplicationWithAdamID:(id)arg1;
 - (BOOL)sourceIsTrusted;
 - (void)startedTest:(id)arg1;
+- (id)systemItemAction;
+- (id)systemItemAdd;
+- (id)systemItemBookmarks;
+- (id)systemItemCamera;
+- (id)systemItemCancel;
+- (id)systemItemCompose;
+- (id)systemItemDone;
+- (id)systemItemEdit;
+- (id)systemItemFastForward;
+- (id)systemItemFixedSpace;
+- (id)systemItemFlexibleSpace;
+- (id)systemItemOrganize;
+- (id)systemItemPageCurl;
+- (id)systemItemPause;
+- (id)systemItemPlay;
+- (id)systemItemRedo;
+- (id)systemItemRefresh;
+- (id)systemItemReplay;
+- (id)systemItemRewind;
+- (id)systemItemSearch;
+- (id)systemItemStop;
+- (id)systemItemTrash;
+- (id)systemItemUndo;
 - (id)systemVersion;
 - (id)threadSafeDelegate;
 - (id)viewController;

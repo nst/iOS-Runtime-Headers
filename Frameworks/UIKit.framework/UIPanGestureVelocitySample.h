@@ -15,8 +15,8 @@
 }
 
 @property double dt;
-@property struct CGPoint { float x; float y; } end;
-@property struct CGPoint { float x; float y; } start;
+@property struct CGPoint { float x1; float x2; } end;
+@property struct CGPoint { float x1; float x2; } start;
 
 - (double)dt;
 - (struct CGPoint { float x1; float x2; })end;

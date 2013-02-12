@@ -77,7 +77,6 @@
 @property(copy) NSString * title;
 @property(getter=isVisible,readonly) BOOL visible;
 
-+ (void)_initializeSafeCategory;
 + (id)_popupAlertBackground;
 + (BOOL)atLeastOneAlertVisible;
 + (struct CGSize { float x1; float x2; })minimumSize;
@@ -87,6 +86,7 @@
 
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitle:(id)arg1;
+- (id)_addButtonWithTitleText:(id)arg1;
 - (void)_adjustLabelFontSizes;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
@@ -104,6 +104,7 @@
 - (void)_createTaglineTextLabelIfNeeded;
 - (void)_createTitleLabelIfNeeded;
 - (int)_currentOrientation;
+- (id)_defaultButton;
 - (id)_dimView;
 - (BOOL)_dimsBackground;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
@@ -111,6 +112,8 @@
 - (void)_hideAnimated:(BOOL)arg1;
 - (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (BOOL)_isAnimating;
+- (BOOL)_isSBAlert;
+- (BOOL)_isSBAlert;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
@@ -130,6 +133,7 @@
 - (void)_repopupNoAnimation;
 - (void)_rotatingAnimationDidStop:(id)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
+- (void)_setDefaultButton:(id)arg1;
 - (void)_setFirstOtherButtonIndex:(int)arg1;
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)_setupInitialFrame;
@@ -141,8 +145,6 @@
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
 - (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (int)addButtonWithTitle:(id)arg1;
@@ -174,7 +176,6 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isBodyTextTruncated;
 - (BOOL)isVisible;
 - (id)keyboard;

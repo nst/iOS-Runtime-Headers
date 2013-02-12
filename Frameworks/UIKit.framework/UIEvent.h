@@ -13,7 +13,6 @@
 - (struct __GSEvent { }*)_gsEvent;
 - (id)_init;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
-- (id)_mk_copyReplacingTouch:(id)arg1 withTouch:(id)arg2;
 - (void)_setTimestamp:(double)arg1;
 - (int)_shakeState;
 - (id)_touchesForGestureRecognizer:(id)arg1;

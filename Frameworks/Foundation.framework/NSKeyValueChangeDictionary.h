@@ -10,23 +10,20 @@
         NSObject *oldValue; 
         NSObject *newValue; 
         NSIndexSet *indexes; 
+        id extraData; 
     } _details;
     BOOL _isPriorNotification;
     BOOL _isRetainingObjects;
     NSObject *_originalObservable;
-    int _retainCountMinusOne;
 }
 
 - (unsigned int)count;
 - (void)dealloc;
-- (id)initWithDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; })arg1 originalObservable:(id)arg2 isPriorNotification:(BOOL)arg3;
+- (id)initWithDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2 isPriorNotification:(BOOL)arg3;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
 - (void)retainObjects;
-- (void)setDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; })arg1 originalObservable:(id)arg2;
+- (void)setDetailsNoCopy:(struct { unsigned int x1; id x2; id x3; id x4; id x5; })arg1 originalObservable:(id)arg2;
 - (void)setOriginalObservable:(id)arg1;
 
 @end

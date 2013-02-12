@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface DALocalDBHelper : NSObject {
     int _abConnectionCount;
     void *_abDB;
@@ -9,8 +13,7 @@
     void *_bookmarkDB;
     int _calConnectionCount;
     struct CalDatabase { } *_calDB;
-    id _calUnitTestCallbackObject;
-    SEL _calUnitTestCallbackSelector;
+    id _calUnitTestCallbackBlock;
 }
 
 + (void)abSetTestABDBDir:(id)arg1;
@@ -19,10 +22,13 @@
 + (id)calTestCalDBDir;
 + (id)sharedInstanceForAccountType:(id)arg1 creatingClass:(Class)arg2;
 
+- (void)_registerForAddressBookYieldNotifications;
+- (void)_registerForCalendarYieldNotifications;
 - (BOOL)abCloseDBAndSave:(BOOL)arg1;
 - (id)abConstraintPlistPath;
 - (void*)abDB;
 - (void)abOpenDB;
+- (void)abProcessAddedImages;
 - (void)abProcessAddedRecords;
 - (BOOL)abSaveDB;
 - (void)bookmarkCloseDBAndSave:(BOOL)arg1;
@@ -30,12 +36,13 @@
 - (BOOL)bookmarkOpenDB;
 - (void)bookmarkSaveDB;
 - (BOOL)calCloseDBAndSave:(BOOL)arg1;
+- (int)calConnectionCount;
 - (struct CalDatabase { }*)calDB;
 - (void)calOpenDB;
 - (void)calOpenDBWithChangeLogging;
 - (void)calProcessAddedRecords;
 - (BOOL)calSaveDB;
 - (BOOL)calSaveDBAndFlushCaches;
-- (void)calUnitTestsSetCallbackObjectForSave:(id)arg1 callbackSelector:(SEL)arg2;
+- (void)calUnitTestsSetCallbackBlockForSave:(id)arg1;
 
 @end

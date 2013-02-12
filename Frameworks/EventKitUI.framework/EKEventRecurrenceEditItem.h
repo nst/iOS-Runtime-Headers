@@ -2,33 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, PreferencesValueCell;
-
-@interface EKEventRecurrenceEditItem : EKEventEditItem <EKCellShortener> {
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    NSString *_customRepeatDescription;
-    PreferencesValueCell *_dateCell;
-    int _originalRepeatType;
-    } _repeatEndGr;
-    int _repeatType;
-    int _shorteningStatus;
+@interface EKEventRecurrenceEditItem : EKCalendarItemRecurrenceEditItem {
 }
 
-- (id)cellForSubitemAtIndex:(int)arg1;
-- (BOOL)configureForCalendarConstraints:(id)arg1;
-- (void)dealloc;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
-- (BOOL)eventEditItemViewControllerCommit:(id)arg1;
-- (int)numberOfSubitems;
-- (void)reset;
-- (void)setEvent:(id)arg1 store:(id)arg2;
-- (void)shortenCell:(id)arg1;
-- (BOOL)validateRecurrenceType:(id)arg1;
+- (id)event;
+- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })minRecurrenceEndDateGr;
+- (id)recurrenceDate;
+- (id)recurrenceTimeZone;
+- (void)setCalendarItem:(id)arg1 store:(id)arg2;
+- (id)stringForGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
 
 @end

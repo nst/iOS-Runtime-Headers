@@ -26,6 +26,7 @@
 - (id)paragraphEndCharacterProperties;
 - (id)plainText;
 - (id)properties;
+- (void)removeAllTextRuns;
 - (void)removeUnnecessaryOverrides;
 - (void)setParagraphEndCharacterProperties:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;

@@ -7,10 +7,12 @@
 @interface CoreDAVRequestLogger : NSObject {
     <CoreDAVAccountInfoProvider> *_provider;
     NSArray *_responseHeadersSortDescriptors;
+    int _snippetsLogged;
 }
 
 @property(retain) NSArray * responseHeadersSortDescriptors;
 
+- (id)_inflateRequestBody:(id)arg1;
 - (void)dealloc;
 - (void)finishCoreDAVResponse;
 - (id)initWithProvider:(id)arg1;

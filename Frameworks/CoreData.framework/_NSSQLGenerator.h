@@ -82,6 +82,7 @@
 - (void)prepareLike:(id)arg1;
 - (void)prepareMatches:(id)arg1;
 - (void)prepareSelectStatementWithFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2;
+- (void)prepareUpdateStatementWithCorrelation:(id)arg1;
 - (void)prepareUpdateStatementWithRow:(id)arg1 originalRow:(id)arg2;
 - (void)setAutoDistinct:(BOOL)arg1;
 - (id)sqlString;

@@ -13,6 +13,7 @@
 @property(retain) NSNumber * selectedIndex;
 @property(retain) NSString * title;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 

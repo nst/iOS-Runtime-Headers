@@ -26,6 +26,7 @@
 @property(retain) NSNumber * timeoutInterval;
 
 + (BOOL)copyURLStrings:(id*)arg1 forValue:(id)arg2;
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 

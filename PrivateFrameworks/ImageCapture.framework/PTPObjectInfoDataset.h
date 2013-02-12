@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableData, NSString;
+@class NSString;
 
 @interface PTPObjectInfoDataset : NSObject {
     unsigned int _associationDesc;
     unsigned short _associationType;
     NSString *_captureDate;
-    NSMutableData *_content;
-    BOOL _dirty;
     NSString *_filename;
     unsigned int _imageBitDepth;
     unsigned int _imagePixHeight;
@@ -21,7 +19,6 @@
     unsigned int _objectHandle;
     unsigned int _parentObject;
     unsigned short _protectionStatus;
-    BOOL _readOnlyObject;
     unsigned int _sequenceNumber;
     unsigned int _storageID;
     unsigned int _thmFileSize;
@@ -37,9 +34,6 @@
 - (id)captureDate;
 - (id)content64;
 - (id)content;
-- (unsigned long)contentSize64;
-- (unsigned long)contentSize;
-- (void)copyContent:(char *)arg1 ofSize:(unsigned long)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)filename;
@@ -47,9 +41,8 @@
 - (unsigned long)imagePixHeight;
 - (unsigned long)imagePixWidth;
 - (id)init;
+- (id)initWithData64:(id)arg1;
 - (id)initWithData:(id)arg1;
-- (id)initWithMutableData64:(id)arg1;
-- (id)initWithMutableData:(id)arg1;
 - (id)keywords;
 - (id)modificationDate;
 - (unsigned long long)objectCompressedSize64;
@@ -62,8 +55,6 @@
 - (void)setAssociationDesc:(unsigned long)arg1;
 - (void)setAssociationType:(unsigned short)arg1;
 - (void)setCaptureDate:(id)arg1;
-- (void)setContent64:(id)arg1;
-- (void)setContent:(id)arg1;
 - (void)setFilename:(id)arg1;
 - (void)setImageBitDepth:(unsigned long)arg1;
 - (void)setImagePixHeight:(unsigned long)arg1;
@@ -90,7 +81,5 @@
 - (unsigned long)thumbOffset;
 - (unsigned long)thumbPixHeight;
 - (unsigned long)thumbPixWidth;
-- (void)updateContent64;
-- (void)updateContent;
 
 @end

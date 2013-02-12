@@ -14,7 +14,6 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)high;
-- (id)init;
 - (unsigned long long)low;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHigh:(unsigned long long)arg1;

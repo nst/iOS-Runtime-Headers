@@ -5,6 +5,9 @@
 @interface IMAddressBook : NSObject {
 }
 
++ (void*)_abAddressBookRef;
++ (id)_threadedABAddressBookLock;
++ (void*)_threadedABAddressBookRef;
 + (id*)abAddressBook;
 + (void*)abAddressBookRef;
 

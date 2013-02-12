@@ -15,13 +15,12 @@
 }
 
 @property(retain) NSMutableArray * ads;
-@property(readonly) int adsCount;
 @property(retain) NSString * batchId;
 @property int error;
 @property(readonly) BOOL hasBatchId;
-@property(readonly) BOOL hasError;
+@property BOOL hasError;
 @property(readonly) BOOL hasOverrideDefaults;
-@property(readonly) BOOL hasSupplyMetrics;
+@property BOOL hasSupplyMetrics;
 @property(retain) ADAdDefaultsOverrides * overrideDefaults;
 @property BOOL supplyMetrics;
 
@@ -30,22 +29,23 @@
 - (id)adAtIndex:(unsigned int)arg1;
 - (void)addAd:(id)arg1;
 - (id)ads;
-- (int)adsCount;
+- (unsigned int)adsCount;
 - (id)batchId;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (int)error;
 - (BOOL)hasBatchId;
 - (BOOL)hasError;
 - (BOOL)hasOverrideDefaults;
 - (BOOL)hasSupplyMetrics;
-- (id)init;
 - (id)overrideDefaults;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAd:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setAds:(id)arg1;
 - (void)setBatchId:(id)arg1;
 - (void)setError:(int)arg1;
+- (void)setHasError:(BOOL)arg1;
+- (void)setHasSupplyMetrics:(BOOL)arg1;
 - (void)setOverrideDefaults:(id)arg1;
 - (void)setSupplyMetrics:(BOOL)arg1;
 - (BOOL)supplyMetrics;

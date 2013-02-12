@@ -41,6 +41,7 @@
         } x1; } *_sortedNewObjects;
         } x1; } *_sortedObjects;
     BOOL _stopFlushing;
+    BOOL _stopFlushingWhenQueueEmpty;
 }
 
 + (id)_singletonAlloc;
@@ -49,6 +50,7 @@
 
 - (void)_backgroundThread:(id)arg1;
 - (void)_didUseObject:(id)arg1;
+- (void)_flushAllEligible;
 - (void)_startFlushingObjects;
 - (void)_stopFlushingObjects;
 - (void)addObject:(id)arg1;
@@ -58,6 +60,7 @@
 - (BOOL)controlsInactiveObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)didEnterBackground;
 - (void)doneWithObject:(id)arg1;
 - (struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned int x5[2]; }*)eraseInfoForObject:(id)arg1;
 - (id)init;
@@ -74,5 +77,6 @@
 - (void)stopProtectingObject:(id)arg1;
 - (void)transferNewObjects;
 - (void)unsafeToFlush:(id)arg1;
+- (void)willEnterForeground;
 
 @end

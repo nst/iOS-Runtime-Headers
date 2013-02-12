@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIView, _UISegmentedControlAppearance;
+@class UIColor, UIView, _UISegmentedControlAppearanceStorage;
 
-@interface UISegment : UIView {
+@interface UISegment : UIImageView {
     struct CGSize { 
         float width; 
         float height; 
@@ -19,7 +19,7 @@
         unsigned int position : 3; 
         unsigned int autosizeText : 1; 
         unsigned int isMomentary : 1; 
-    _UISegmentedControlAppearance *_appearance;
+    _UISegmentedControlAppearanceStorage *_appearanceStorage;
     int _barStyle;
     } _contentOffset;
     UIView *_info;
@@ -29,29 +29,29 @@
 }
 
 @property int controlSize;
-@property(getter=isHighlighted) BOOL highlighted;
 @property(getter=isMomentary) BOOL momentary;
 @property(getter=isSelected) BOOL selected;
 
-+ (void)_initializeSafeCategory;
-
+- (float)_barHeight;
 - (void)_commonInitWithInfo:(id)arg1 position:(unsigned int)arg2 autosizeText:(BOOL)arg3;
+- (id)_currentOptionsStyleTextColor;
+- (id)_currentOptionsStyleTextShadowColor;
+- (id)_dividerImageForRight:(BOOL)arg1 isCustom:(BOOL*)arg2;
 - (id)_dividerImageForRight:(BOOL)arg1;
-- (BOOL)_needsUpdateOnSizeChange;
+- (float)_idealWidth;
+- (BOOL)_isInMiniBar;
+- (float)_paddingForLeft:(BOOL)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionInfo;
+- (unsigned int)_segmentState;
+- (void)_setEnabledAppearance:(BOOL)arg1;
 - (id)_texturedFillImage;
 - (id)_texturedLeftCapImage;
 - (id)_texturedRightCapImage;
 - (void)_tileImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_updateBackgroundImage;
-- (void)_updateCustomTiledBackgroundImage;
 - (void)_updateTextColors;
 - (void)_updateTexturedBackgroundImage;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
-- (id)accessibilityLanguage;
-- (unsigned long long)accessibilityTraits;
 - (void)animateAdd:(BOOL)arg1;
 - (void)animateRemoveForWidth:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
@@ -65,10 +65,8 @@
 - (id)info;
 - (id)infoName;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInfo:(id)arg1 appearance:(id)arg2 position:(unsigned int)arg3 autosizeText:(BOOL)arg4;
-- (id)initWithInfo:(id)arg1 style:(int)arg2 size:(int)arg3 barStyle:(int)arg4 tintColor:(id)arg5 position:(unsigned int)arg6 isDisclosure:(BOOL)arg7 autosizeText:(BOOL)arg8;
+- (id)initWithInfo:(id)arg1 style:(int)arg2 size:(int)arg3 barStyle:(int)arg4 tintColor:(id)arg5 appearanceStorage:(id)arg6 position:(unsigned int)arg7 isDisclosure:(BOOL)arg8 autosizeText:(BOOL)arg9;
 - (void)insertDividerView;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isHighlighted;
 - (BOOL)isMomentary;
 - (BOOL)isSelected;

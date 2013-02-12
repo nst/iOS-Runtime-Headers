@@ -2,19 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMusicPlayerControllerInternal, NSDictionary;
+@class MPMusicPlayerControllerInternal;
 
 @interface MPMusicPlayerController : NSObject {
     MPMusicPlayerControllerInternal *_internal;
 }
-
-@property BOOL allowsRemoteUIAccess;
-@property unsigned int currentChapterIndex;
-@property(readonly) unsigned int indexOfNowPlayingItem;
-@property(readonly) BOOL isNowPlayingItemFromGeniusMix;
-@property int playbackSpeed;
-@property(readonly) NSDictionary * springboardNowPlayingInfo;
-@property(readonly) unsigned int unshuffledIndexOfNowPlayingItem;
 
 + (id)applicationMusicPlayer;
 + (id)iPodMusicPlayer;
@@ -22,7 +14,7 @@
 + (id)runLoopForNotifications;
 + (void)setRunLoopForNotifications:(id)arg1;
 
-- (void)_clientCheckIn;
+- (void)_clientCheckInUsingExistencePort:(BOOL)arg1;
 - (void)_itemPlaybackDidEnd:(unsigned long long)arg1;
 - (void)_musicPlayerDidLaunch;
 - (void)_nowPlayingItemDidChange:(unsigned long long)arg1;
@@ -60,6 +52,7 @@
 - (void)setCurrentChapterIndex:(unsigned int)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
 - (void)setPlaybackSpeed:(int)arg1;
+- (void)setQueueWithGeniusMixPlaylist:(id)arg1;
 - (void)setQueueWithItemCollection:(id)arg1;
 - (void)setQueueWithQuery:(id)arg1 firstItem:(id)arg2;
 - (void)setQueueWithQuery:(id)arg1;
@@ -69,7 +62,6 @@
 - (void)setUseCachedPlaybackState:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (int)shuffleMode;
-- (id)springboardNowPlayingInfo;
 - (unsigned int)unshuffledIndexOfNowPlayingItem;
 - (float)volume;
 

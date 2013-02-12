@@ -6,6 +6,7 @@
 
 @interface GKLeaderboardCell : GKMultiColumnTableViewCell {
     int _bottomEdgeStyle;
+    NSArray *_leaderboardBorderStyles;
     NSArray *_leaderboardCellStyles;
     NSArray *_leaderboardSectionLocations;
     int _topEdgeStyle;
@@ -13,6 +14,7 @@
 
 @property int bottomEdgeStyle;
 @property(readonly) GKLeaderboardCellBackgroundView * leaderboardBackgroundView;
+@property(retain) NSArray * leaderboardBorderStyles;
 @property(retain) NSArray * leaderboardCellStyles;
 @property(retain) NSArray * leaderboardSectionLocations;
 @property(readonly) GKLeaderboardCellBackgroundView * selectedLeaderboardBackgroundView;
@@ -25,10 +27,12 @@
 - (id)description;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 tableViewStyle:(int)arg3 backgroundStyle:(int)arg4;
 - (id)leaderboardBackgroundView;
+- (id)leaderboardBorderStyles;
 - (id)leaderboardCellStyles;
 - (id)leaderboardSectionLocations;
 - (id)selectedLeaderboardBackgroundView;
 - (void)setBottomEdgeStyle:(int)arg1;
+- (void)setLeaderboardBorderStyles:(id)arg1;
 - (void)setLeaderboardCellStyles:(id)arg1;
 - (void)setLeaderboardSectionLocations:(id)arg1;
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;

@@ -7,4 +7,6 @@
 
 + (Class)responseClass;
 
+- (id)urlString;
+
 @end

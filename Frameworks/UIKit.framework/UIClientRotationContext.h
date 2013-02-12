@@ -9,9 +9,9 @@
         BOOL animateContentRotation; 
         BOOL preserveHeight; 
         BOOL avoidFadingBottomOfContent; 
+        BOOL skipSnapshotOfEndState; 
         float contentStretchRightEdgeInset; 
         int edgeClip; 
-        float contentBottomInset; 
     UISnapshotView *_contentSnapshotViewStart;
     float _contentTopAdjustmentStart;
     UIView *_contentView;
@@ -34,6 +34,7 @@
     BOOL _skipHeaderRotation;
     int _toOrientation;
     UIWindow *_window;
+    float contentBottomInset;
 }
 
 @property(readonly) UIView * contentView;

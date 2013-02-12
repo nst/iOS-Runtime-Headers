@@ -22,9 +22,6 @@
     UILabel *_scrubSpeedLabel;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityObscuresScreen;
 - (void)_hideScrubInstructionOverlayAnimationDidEnd;
 - (int)_layoutStyle;
 - (void)_resetStateAfterSliderTrackingDone:(id)arg1;
@@ -32,8 +29,6 @@
 - (void)_sizeToFitAnimationDidEnd;
 - (float)_sizeToFitForCurrentStateAnimated:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (id)createButtonForPart:(unsigned int)arg1;
-- (id)createProgressIndicator;
 - (void)dealloc;
 - (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
@@ -45,6 +40,8 @@
 - (void)layoutSubviews_Compact;
 - (void)layoutSubviews_Short;
 - (void)layoutSubviews_Tall;
+- (id)newButtonForPart:(unsigned int)arg1;
+- (id)newProgressIndicator;
 - (void)resetDetailSlider:(id)arg1;
 - (void)setVisibleParts:(unsigned int)arg1;
 - (void)updateForEndOfDetailScrubbing;

@@ -6,7 +6,7 @@
 }
 
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (BOOL)shouldDisplayForEditModel;
+- (BOOL)shouldDisplayForEvent;
 - (BOOL)update;
 
 @end

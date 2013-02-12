@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSString, NSURL, NSURLConnection;
 
-@interface YTImageLoad : NSObject {
+@interface YTImageLoad : NSObject <NSURLConnectionDelegate> {
     NSURL *_URL;
     NSURLConnection *_connection;
     NSMutableData *_imageData;

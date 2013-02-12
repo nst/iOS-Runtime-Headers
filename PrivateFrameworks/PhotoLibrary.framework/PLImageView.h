@@ -31,6 +31,7 @@
 + (BOOL)shouldDrawShadows;
 + (id)textBadgeForString:(id)arg1 photoSize:(struct CGSize { float x1; float x2; })arg2;
 
+- (void)_setShadowEnabled:(BOOL)arg1 force:(BOOL)arg2;
 - (void)_updateShadowPath;
 - (float)borderAlpha;
 - (void)dealloc;

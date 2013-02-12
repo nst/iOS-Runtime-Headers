@@ -23,7 +23,6 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasModel;
-- (id)init;
 - (id)model;
 - (id)projectionProperties;
 - (BOOL)readFrom:(id)arg1;

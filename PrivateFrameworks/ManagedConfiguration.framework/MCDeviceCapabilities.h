@@ -16,6 +16,6 @@
 - (id)init;
 - (BOOL)supportsBlockLevelEncryption;
 - (BOOL)supportsFileLevelEncryption;
-- (BOOL)validateCapabilitiesRequiredInTruth:(id)arg1 localizedIncompatibilityMessage:(id)arg2 outError:(id*)arg3;
+- (BOOL)validateCapabilitiesRequiredByRestrictions:(id)arg1 localizedIncompatibilityMessage:(id)arg2 outError:(id*)arg3;
 
 @end

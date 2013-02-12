@@ -2,9 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMNode, NSMutableArray, NSObject<UIFormPeripheral>, NSTimer, UIResponder, UIWebFormAccessory, UIWebFormDelegate, UIWebTouchEventsGestureRecognizer, WebPDFView;
+@class DOMNode, NSMutableArray, NSObject<UIFormPeripheral>, NSTimer, UIResponder, UIWebFormAccessory, UIWebFormDelegate, UIWebPDFView, UIWebTouchEventsGestureRecognizer;
 
 @interface UIWebBrowserView : UIWebDocumentView <UIWebFormAccessoryDelegate, UIBrowserDocumentController> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,16 +33,18 @@
         NSMutableArray *tip; 
         NSMutableArray *log; 
     struct { 
-        WebPDFView *view; 
+        UIWebPDFView *view; 
         NSTimer *timer; 
     unsigned int _accessoryEnabled : 1;
     unsigned int _forceInputView : 1;
     unsigned int _formIsAutoFilling : 1;
     unsigned int _inputViewObeysDOMFocus : 1;
     unsigned int _hasEditedTextField : 1;
-    unsigned int _requiresInputView : 1;
     UIWebFormAccessory *_accessory;
+    } _addressViewBounds;
     DOMNode *_currentAssistedNode;
+    NSMutableArray *_deferredTouchEvents;
+    unsigned int _dispatchedTouchEvents;
     UIResponder *_editingDelegateForEverythingExceptForms;
     UIWebFormDelegate *_formDelegate;
     NSObject<UIFormPeripheral> *_input;
@@ -51,53 +62,69 @@
 @property(getter=isAccessoryEnabled) BOOL accessoryEnabled;
 @property BOOL allowsInlineMediaPlayback;
 @property(readonly) BOOL hasEditedTextField;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } inputViewBounds;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputViewBounds;
 @property BOOL inputViewObeysDOMFocus;
+@property(readonly) BOOL isDispatchingTouchEvents;
 @property BOOL mediaPlaybackRequiresUserAction;
 
-+ (id)_PDFPageNumberLabel;
++ (id)_PDFPageNumberLabel:(BOOL)arg1;
 + (id)getUIWebBrowserViewForWebFrame:(id)arg1;
 + (BOOL)isAutoFillAllowed;
 + (float)preferredScrollDecelerationFactor;
 
+- (id)_absoluteUrlRelativeToDocumentURL:(id)arg1;
 - (id)_accessory;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_activeRectForRectToCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_autoFillFrame:(id)arg1;
 - (id)_buildVersion;
 - (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(int)arg4;
-- (void)_cleanUpPDF;
 - (void)_clearAllConsoleMessages;
 - (void)_clearSelectionAndUI;
 - (struct CGPoint { float x1; float x2; })_convertWindowPointToViewport:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_currentAssistedNode;
+- (struct CGSize { float x1; float x2; })_defaultScrollViewContentSize;
+- (void)_deferWebEvent:(id)arg1;
+- (void)_dispatchWebEvent:(id)arg1;
 - (void)_displayFormNodeInputView;
 - (BOOL)_domainIsWhitelistedForUDIDHeader:(id)arg1;
 - (void)_dumpWebArchiveAtPath:(id)arg1;
 - (id)_editingDelegate;
 - (id)_editingDelegateForEverythingExceptForms;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRect;
+- (void)_endDeferringEvents;
+- (unsigned int)_firstVisiblePDFPageNumber;
+- (void)_handleDeferredEvents;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
-- (void)_hidePDFPageNumberLabel;
 - (id)_input;
+- (void)_keyboardDidChangeFrame:(id)arg1;
 - (id)_keyboardResponder;
+- (void)_keyboardWillChangeFrame:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (void)_pdfPageNumberLabelAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_originForPDFPageLabelInSuperview:(id)arg1;
+- (void)_promptForReplace:(id)arg1;
 - (id)_requestWithUDIDHeaderIfAppropriate:(id)arg1;
 - (BOOL)_requiresKeyboardResetOnReload;
 - (BOOL)_requiresKeyboardWhenFirstResponder;
 - (void)_resetFormDataForFrame:(id)arg1;
+- (void)_rotateEnclosingScrollView:(id)arg1 toFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withVisibleHeight:(float)arg3 rotationDelegate:(id)arg4;
 - (void)_scrollCaretToVisible:(id)arg1;
+- (void)_setAddressViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setBrowserUserAgentProductVersion:(id)arg1 bundleVersion:(id)arg2;
-- (void)_setPDFView:(id)arg1;
+- (void)_setInputViewBoundsForAutomaticKeyboardInfo:(id)arg1 adjustScrollView:(BOOL)arg2;
 - (void)_setSelectedDOMRangeAndUpdateUI:(id)arg1;
 - (void)_setUIWebViewUserAgent;
+- (BOOL)_shouldDeferEvents;
 - (void)_startAssistingKeyboard;
-- (void)_startAssistingSelectForNode:(id)arg1;
+- (void)_startAssistingNode:(id)arg1;
+- (void)_startDeferringEvents;
 - (void)_startURLificationIfNeededCoalesce:(BOOL)arg1;
 - (void)_stopAssistingFormNode;
 - (void)_stopAssistingKeyboard;
-- (void)_stopAssistingSelectForNode:(id)arg1;
+- (void)_stopAssistingNode:(id)arg1;
 - (void)_updateAccessory;
+- (void)_updateFixedPositionContent;
+- (void)_updateFixedPositioningObjectsLayoutAfterScroll;
+- (void)_updateFixedPositioningObjectsLayoutSoon;
 - (void)_updatePDFPageNumberLabelWithUserScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateScrollerViewForInputView:(id)arg1;
 - (void)_webTouchEventsRecognized:(id)arg1;
@@ -107,19 +134,21 @@
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
 - (void)acceptedAutoFillWord:(id)arg1;
 - (void)accessoryAutoFill;
+- (void)accessoryClear;
 - (void)accessoryDone;
 - (void)accessoryTab:(BOOL)arg1;
 - (BOOL)allowsInlineMediaPlayback;
 - (void)assistFormNode:(id)arg1;
+- (void)assistFormNodeForTyping:(id)arg1;
 - (void)autoFillWithElementValue;
 - (BOOL)canAutoFill;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)clearMessagesMatchingMask:(int)arg1;
+- (void)copy:(id)arg1;
 - (void)dealloc;
 - (void)formDelegateHandleTextChangeWithAutoFillSuggestions:(BOOL)arg1;
 - (id)formElement;
 - (BOOL)hasEditedTextField;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithWebView:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)inputAccessoryView;
 - (id)inputView;
@@ -129,10 +158,11 @@
 - (BOOL)isAccessoryEnabled;
 - (BOOL)isAutoFillMode;
 - (BOOL)isAutoFilling;
+- (BOOL)isDispatchingTouchEvents;
+- (BOOL)isEditable;
 - (BOOL)mediaPlaybackRequiresUserAction;
 - (id)messagesMatchingMask:(int)arg1;
 - (BOOL)playsNicelyWithGestures;
-- (void)promptForReplace:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (void)setAccessoryEnabled:(BOOL)arg1;
 - (void)setAllowsInlineMediaPlayback:(BOOL)arg1;
@@ -145,13 +175,16 @@
 - (void)set_currentAssistedNode:(id)arg1;
 - (void)set_editingDelegateForEverythingExceptForms:(id)arg1;
 - (void)set_input:(id)arg1;
+- (id)textDocument;
 - (id)textFormElement;
-- (void)webView:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
+- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
+- (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
+- (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
-- (void)webView:(id)arg1 formStateDidBlurNode:(id)arg2;
-- (void)webView:(id)arg1 formStateDidFocusNode:(id)arg2;
+- (void)webView:(id)arg1 elementDidBlurNode:(id)arg2;
+- (void)webView:(id)arg1 elementDidFocusNode:(id)arg2;
 - (void)webView:(id)arg1 willCloseFrame:(id)arg2;
 - (void)webViewDidPreventDefaultForEvent:(id)arg1;
 - (void)webViewFormEditedStatusHasChanged:(id)arg1;

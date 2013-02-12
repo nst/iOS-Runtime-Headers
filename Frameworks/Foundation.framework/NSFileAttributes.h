@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary, NSMutableDictionary;
+@class NSDate, NSDictionary, NSMutableDictionary;
 
 @interface NSFileAttributes : NSDictionary {
     struct stat { 
@@ -38,10 +38,7 @@
         long long st_qspare[2]; 
     struct { 
         BOOL extensionHidden; 
-        struct timespec { 
-            int tv_sec; 
-            long tv_nsec; 
-        } creationDate; 
+        NSDate *creationDate; 
         struct _fields { 
             unsigned int extensionHidden : 1; 
             unsigned int creationDate : 1; 

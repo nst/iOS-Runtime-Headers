@@ -11,6 +11,7 @@
 @property(readonly) NSArray * mediaTypes;
 @property(retain) NSString * prompt;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (BOOL)_allowsPickingMultipleItems;

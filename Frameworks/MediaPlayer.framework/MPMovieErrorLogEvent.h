@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVItemErrorLogEvent, NSDate, NSString;
+@class AVPlayerItemErrorLogEvent, NSDate, NSString;
 
 @interface MPMovieErrorLogEvent : NSObject <NSCopying> {
     struct MPMovieErrorLogEventInternal { 
-        AVItemErrorLogEvent *event; 
+        AVPlayerItemErrorLogEvent *event; 
     } _internal;
 }
 
 @property(readonly) NSString * URI;
-@property struct MPMovieErrorLogEventInternal { AVItemErrorLogEvent *event; } _internal;
+@property struct MPMovieErrorLogEventInternal { id x1; } _internal;
 @property(readonly) NSDate * date;
 @property(readonly) NSString * errorComment;
 @property(readonly) NSString * errorDomain;

@@ -12,12 +12,6 @@
     NSArray *_values;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (BOOL)canReload;
 - (id)control;
 - (void)controlChanged:(id)arg1;

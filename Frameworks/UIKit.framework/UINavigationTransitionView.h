@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView, UIWindow;
+@class UIResponder, UIView, UIWindow;
 
 @interface UINavigationTransitionView : UIView <NSCoding> {
     unsigned int _isTransitioning : 1;
     unsigned int _popoverWillCleanUpNavigationTransition : 1;
     unsigned int _usesRoundedCorners : 1;
     id _delegate;
-    UIView *_firstResponderToRestore;
+    UIResponder *_firstResponderToRestore;
     UIView *_fromView;
     float _fromViewAlpha;
     UIWindow *_originalWindow;

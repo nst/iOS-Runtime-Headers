@@ -16,7 +16,6 @@
 - (id)description;
 - (BOOL)hasPrivilegeWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)privileges;
 - (void)setPrivileges:(id)arg1;
 

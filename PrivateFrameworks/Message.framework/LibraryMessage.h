@@ -50,7 +50,9 @@
 - (id)mailbox;
 - (unsigned int)mailboxID;
 - (id)mailboxName;
+- (void)markAsFlagged;
 - (void)markAsForwarded;
+- (void)markAsNotFlagged;
 - (void)markAsNotViewed;
 - (void)markAsReplied;
 - (void)markAsViewed;
@@ -63,7 +65,8 @@
 - (id)path;
 - (id)persistentID;
 - (id)preferredEmailAddressToReplyWith;
-- (void)release;
+- (id)refreshedMessage;
+- (oneway void)release;
 - (id)remoteID;
 - (void)setDeallocationHandler:(id)arg1;
 - (void)setFlags:(unsigned long long)arg1;

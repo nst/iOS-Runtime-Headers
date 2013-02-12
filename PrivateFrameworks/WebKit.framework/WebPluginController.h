@@ -37,11 +37,14 @@
 - (void)pluginViewCreated:(id)arg1;
 - (void)pluginViewFinishedLoading:(id)arg1;
 - (BOOL)processingUserGesture;
+- (void)restorePluginsFromCache;
 - (void)setDataSource:(id)arg1;
 - (void)showStatus:(id)arg1;
 - (void)startAllPlugins;
 - (void)stopAllPlugins;
 - (void)stopOnePlugin:(id)arg1;
+- (void)stopOnePluginForPageCache:(id)arg1;
+- (void)stopPluginsForPageCache;
 - (id)superlayerForPluginView:(id)arg1;
 - (id)webFrame;
 - (void)webPlugInContainerDidHideFullScreenForView:(id)arg1;

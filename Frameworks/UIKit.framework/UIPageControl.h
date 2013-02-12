@@ -19,11 +19,6 @@
 @property BOOL hidesForSinglePage;
 @property int numberOfPages;
 
-+ (void)_initializeSafeCategory;
-
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (int)_accessibilityPageControlCount;
-- (int)_accessibilityPageControlIndex;
 - (void)_commonPageControlInit;
 - (int)_displayedPage;
 - (id)_pageIndicatorCurrentImageForPage:(int)arg1;
@@ -32,9 +27,6 @@
 - (void)_setCurrentPage:(int)arg1;
 - (void)_setDisplayedPage:(int)arg1;
 - (void)_updateCurrentPageDisplay;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (int)currentPage;
 - (void)dealloc;
 - (BOOL)defersCurrentPageDisplay;
@@ -44,7 +36,6 @@
 - (BOOL)hidesForSinglePage;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
 - (int)numberOfPages;

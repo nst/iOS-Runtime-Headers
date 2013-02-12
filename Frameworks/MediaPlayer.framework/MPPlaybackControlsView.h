@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, UIActivityIndicatorView, UILabel, UIView;
+@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVController, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, UIActivityIndicatorView, UILabel, UIView;
 
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
     unsigned int _wantsTick : 1;
@@ -24,6 +24,7 @@
     MPButton *_mailButton;
     MPTimeMarker *_markerForProgressControlDuration;
     MPButton *_playbackSpeedButton;
+    MPAVController *_player;
     MPDetailSlider *_progressControl;
     double _progressOffset;
     MPButton *_repeatButton;
@@ -43,6 +44,7 @@
 @property(readonly) BOOL hideGeniusButton;
 @property(readonly) BOOL isScrubbing;
 @property(retain) MPAVItem * item;
+@property(retain) MPAVController * player;
 @property(readonly) unsigned int repeatType;
 @property(readonly) unsigned int shuffleType;
 @property unsigned int visibleParts;
@@ -78,8 +80,6 @@
 - (double)_updatedDisplayDurationForTime:(double)arg1;
 - (void)_validityChangedNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)createButtonForPart:(unsigned int)arg1;
-- (id)createProgressIndicator;
 - (void)crossedArtworkTimeMarker:(id)arg1;
 - (void)crossedChapterTimeMarker:(id)arg1;
 - (void)crossedURLTimeMarker:(id)arg1;
@@ -99,6 +99,9 @@
 - (BOOL)isScrubbing;
 - (id)item;
 - (void)layoutSubviews;
+- (id)newButtonForPart:(unsigned int)arg1;
+- (id)newProgressIndicator;
+- (id)player;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)progressBarClipsToChapterDuration;
 - (void)reloadButtonVisibility;
@@ -108,6 +111,7 @@
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)setVisibleParts:(unsigned int)arg1;
 - (unsigned int)shuffleType;
 - (void)startTicking;

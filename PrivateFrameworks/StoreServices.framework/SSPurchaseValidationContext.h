@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSIndexSet, NSString, SSNetworkConstraints;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSIndexSet, NSString;
 
 @interface SSPurchaseValidationContext : NSObject <NSCopying> {
     NSIndexSet *_allowedDeviceIdentifiers;
     long long _diskSpaceAvailable;
-    SSNetworkConstraints *_networkConstraints;
+    id _sizeLimitBlock;
     NSString *_systemName;
     NSString *_systemVersion;
 }
 
 @property(copy) NSIndexSet * allowedDeviceIdentifiers;
 @property long long diskSpaceAvailable;
-@property(retain) SSNetworkConstraints * networkConstraints;
+@property(copy) id sizeLimitBlock;
 @property(copy) NSString * systemName;
 @property(copy) NSString * systemVersion;
 
@@ -25,12 +29,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (long long)diskSpaceAvailable;
-- (id)networkConstraints;
 - (void)setAllowedDeviceIdentifiers:(id)arg1;
 - (void)setDiskSpaceAvailable:(long long)arg1;
-- (void)setNetworkConstraints:(id)arg1;
+- (void)setSizeLimitBlock:(id)arg1;
 - (void)setSystemName:(id)arg1;
 - (void)setSystemVersion:(id)arg1;
+- (id)sizeLimitBlock;
 - (id)systemName;
 - (id)systemVersion;
 

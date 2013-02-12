@@ -4,7 +4,7 @@
 
 @class NSThread;
 
-@interface GeoQueryCollectionRequester : PBRequester {
+@interface GEOQueryCollectionRequester : PBRequester {
     NSThread *_thread;
 }
 

@@ -2,52 +2,45 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class GKPlayer, NSArray, NSMutableDictionary, UIImage;
+@class GKAchievementCompareHeaderDataSourceSection, GKAchievementCompareViewSectionDataSource, GKGameRecord, GKPlayer, NSArray, UIImage;
 
 @interface GKAchievementCompareViewControllerPrivate : GKAchievementViewControllerPrivate {
+    GKAchievementCompareHeaderDataSourceSection *_achievementCompareFriendHeaderViewSection;
+    GKAchievementCompareHeaderDataSourceSection *_achievementCompareMeHeaderViewSection;
+    GKAchievementCompareViewSectionDataSource *_achievementCompareViewSection;
     UIImage *_compositeCheckMark;
     GKPlayer *_friend;
-    NSMutableDictionary *_friendAchievementDictionary;
     NSArray *_friendAchievements;
-    unsigned int _friendNumberOfAchievementsAchieved;
-    unsigned int _friendPointsTally;
+    GKGameRecord *_friendRecord;
 }
 
+@property(retain) GKAchievementCompareHeaderDataSourceSection * achievementCompareFriendHeaderViewSection;
+@property(retain) GKAchievementCompareHeaderDataSourceSection * achievementCompareMeHeaderViewSection;
+@property(retain) GKAchievementCompareViewSectionDataSource * achievementCompareViewSection;
 @property(retain) UIImage * compositeCheckMark;
-@property(retain) GKPlayer * friend;
-@property(retain) NSMutableDictionary * friendAchievementDictionary;
 @property(retain) NSArray * friendAchievements;
-@property unsigned int friendNumberOfAchievementsAchieved;
-@property unsigned int friendPointsTally;
+@property(retain) GKGameRecord * friendRecord;
 
-- (void)_gkRefreshContents;
-- (id)achievementCompareCellAtIndexPath:(id)arg1;
-- (void)addNonAchievedAchievementsTo:(id)arg1 withAchievementDescription:(id)arg2;
+- (void)_gkResetContents;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
+- (id)achievementCompareFriendHeaderViewSection;
+- (id)achievementCompareMeHeaderViewSection;
+- (id)achievementCompareViewSection;
 - (id)compositeCheckMark;
 - (void)dealloc;
-- (id)friend;
-- (id)friendAchievementDictionary;
 - (id)friendAchievements;
-- (unsigned int)friendNumberOfAchievementsAchieved;
-- (unsigned int)friendPointsTally;
-- (id)headerCellAtIndexPath:(id)arg1;
-- (id)initWithGame:(id)arg1 withFriend:(id)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)friendRecord;
+- (id)initWithGameRecord:(id)arg1 friendRecord:(id)arg2;
 - (void)playTapped;
+- (void)setAchievementCompareFriendHeaderViewSection:(id)arg1;
+- (void)setAchievementCompareMeHeaderViewSection:(id)arg1;
+- (void)setAchievementCompareViewSection:(id)arg1;
 - (void)setCompositeCheckMark:(id)arg1;
-- (void)setFriend:(id)arg1;
-- (void)setFriendAchievementDictionary:(id)arg1;
 - (void)setFriendAchievements:(id)arg1;
-- (void)setFriendNumberOfAchievementsAchieved:(unsigned int)arg1;
-- (void)setFriendPointsTally:(unsigned int)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)setFriendRecord:(id)arg1;
+- (void)setupSectionDataSource:(id)arg1;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)title;
-- (void)updateFriendGameAchievements:(id)arg1;
 - (void)updateStatusWithError:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;

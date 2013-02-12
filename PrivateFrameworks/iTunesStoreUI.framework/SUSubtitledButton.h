@@ -9,18 +9,15 @@
     UILabel *_subtitleView;
 }
 
-@property(retain,readonly) NSString * currentSubtitle;
-@property(retain,readonly) UIColor * currentSubtitleColor;
-@property(retain,readonly) UIColor * currentSubtitleShadowColor;
-@property(retain,readonly) UILabel * subtitleLabel;
-
-+ (void)_initializeSafeCategory;
+@property(readonly) NSString * currentSubtitle;
+@property(readonly) UIColor * currentSubtitleColor;
+@property(readonly) UIColor * currentSubtitleShadowColor;
+@property(readonly) UILabel * subtitleLabel;
 
 - (void)_setupSubtitleView;
 - (id)_subtitleFont;
 - (int)_subtitleLineBreakMode;
 - (id)_subtitledContentForState:(unsigned int)arg1;
-- (id)accessibilityLabel;
 - (void)configureFromScriptButton:(id)arg1;
 - (id)currentSubtitle;
 - (id)currentSubtitleColor;

@@ -19,6 +19,7 @@
 + (char *)generatedNameSuffix;
 + (void)initialize;
 + (id)managedObjectIDFromURIRepresentation:(id)arg1;
++ (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
 + (void)release;
 + (id)retain;
 + (void)setObjectStoreIdentifier:(id)arg1;

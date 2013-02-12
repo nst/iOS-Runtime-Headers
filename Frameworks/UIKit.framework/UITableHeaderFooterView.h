@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIImage, UITableHeaderFooterViewLabel, UITableView;
+@class NSString, UIImage, UILabel, UITableHeaderFooterViewLabel, UITableView;
 
 @interface UITableHeaderFooterView : UIView {
     struct CGRect { 
@@ -15,6 +15,8 @@
             float height; 
         } size; 
     UIImage *_backgroundImage;
+    UITableHeaderFooterViewLabel *_detailLabel;
+    BOOL _detailLabelBackgroundColorNeedsUpdate;
     } _frame;
     UITableHeaderFooterViewLabel *_label;
     BOOL _labelBackgroundColorNeedsUpdate;
@@ -25,30 +27,36 @@
     int _textAlignment;
 }
 
+@property(readonly) UILabel * detailTextLabel;
 @property float maxTitleWidth;
 @property BOOL sectionHeader;
 @property UITableView * tableView;
 @property int tableViewStyle;
 @property(retain) NSString * text;
 @property int textAlignment;
+@property(readonly) UILabel * textLabel;
 
 + (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
-+ (void)_initializeSafeCategory;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailLabelFrame;
+- (struct CGSize { float x1; float x2; })_detailTextSizeForWidth:(float)arg1;
+- (void)_invalidateDetailLabelBackgroundColor;
 - (void)_invalidateLabelBackgroundColor;
 - (id)_label:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
 - (id)_scriptingInfo;
 - (struct CGSize { float x1; float x2; })_textSizeForWidth:(float)arg1;
 - (void)_updateBackgroundImage;
+- (void)_updateDetailLabelBackgroundColor;
+- (void)_updateDetailLabelBackgroundColorIfNeeded;
 - (void)_updateLabelBackgroundColor;
 - (void)_updateLabelBackgroundColorIfNeeeded;
 - (void)_updateLayerContents;
-- (id)accessibilityLabel;
+- (BOOL)_useDetailText;
 - (void)dealloc;
+- (id)detailTextLabel;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
 - (float)maxTitleWidth;
 - (BOOL)sectionHeader;
@@ -65,5 +73,6 @@
 - (id)tableView;
 - (id)text;
 - (int)textAlignment;
+- (id)textLabel;
 
 @end

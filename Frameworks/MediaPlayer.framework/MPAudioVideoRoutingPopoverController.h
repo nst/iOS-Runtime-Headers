@@ -5,10 +5,9 @@
 @interface MPAudioVideoRoutingPopoverController : UIPopoverController {
 }
 
-- (id)_initWithAudioDeviceController:(id)arg1 videoDestinationBrowser:(id)arg2;
 - (id)_tableViewController;
 - (id)audioDeviceController;
+- (id)initWithType:(unsigned int)arg1 includeMirroring:(BOOL)arg2;
 - (id)initWithType:(unsigned int)arg1;
-- (id)videoDestinationBrowser;
 
 @end

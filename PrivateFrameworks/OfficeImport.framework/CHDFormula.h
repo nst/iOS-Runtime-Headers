@@ -17,6 +17,7 @@
 - (id)initWithReference:(id)arg1;
 - (id)initWithReferences:(id)arg1;
 - (id)initWithWorkbook:(id)arg1;
+- (bool)isConstantStringFormula;
 - (void)prepareTokens;
 - (id)references;
 - (id)referencesFromFormula;

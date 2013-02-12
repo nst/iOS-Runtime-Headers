@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class ActivityMonitor, MFDAMailbox, MFDAMessageStore, MFError, MailMessageLibrary;
+@class ActivityMonitor, MFDAMailbox, MFDAMessageStore, MFError, MFMailMessageLibrary;
 
 @interface _MFDAMSBasicConsumer : MFBufferedQueue {
     MFError *error;
-    MailMessageLibrary *library;
+    MFMailMessageLibrary *library;
     MFDAMailbox *mailbox;
     ActivityMonitor *monitor;
     int numNewMessages;
@@ -18,7 +18,7 @@
 
 - (void)dealloc;
 - (id)error;
-- (id)init;
+- (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)monitor;
 - (void)setError:(id)arg1;
 - (void)setMonitor:(id)arg1;

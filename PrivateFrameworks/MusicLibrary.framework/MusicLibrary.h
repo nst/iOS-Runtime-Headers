@@ -2,69 +2,51 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
+@class ML3MusicLibrary, NSString;
 
 @interface MusicLibrary : NSObject {
     unsigned int _autoflushScheduled : 1;
     unsigned int _needsFlush : 1;
     double _autoflushTargetTime;
     NSString *_basePath;
+    ML3MusicLibrary *_library3;
 }
 
++ (void)_dbSyncAlreadyActive;
++ (void)_dbSyncDidEnd;
++ (void)_dbSyncWillBegin;
 + (BOOL)_isDBSyncActiveIncludePending;
-+ (void)_setSharedMusicLibrary:(id)arg1;
 + (id)_sharedMusicLibrary:(BOOL)arg1;
 + (void)beginDatabaseMigrationIfNecessary;
 + (void)commitAllDeferredWork;
 + (id)controlDirectoryPathWithBasePath:(id)arg1;
-+ (id)copyLocalizedStringForITTGLocString:(int)arg1;
 + (BOOL)databaseDataFilesExist;
-+ (id)dbModDate;
 + (void)disableFlush;
 + (void)enableFlush;
-+ (int)filenameFormatResourceForPlaylistType:(int)arg1;
 + (BOOL)flush;
-+ (void)flushPreparedStatementCache;
-+ (id)iTunesLibraryPackageDBTempFolder;
 + (BOOL)isDBSyncActive;
-+ (BOOL)isDatabaseSchemaUnsupported:(id*)arg1;
 + (BOOL)isFlushEnabled;
-+ (BOOL)isTesting;
-+ (void)jetsamMemory;
++ (id)mediaFolderPath;
 + (id)mediaFolderRelativePath:(id)arg1;
 + (void)noteSyncAlreadyActive;
 + (void)noteSyncDidEnd;
 + (void)noteSyncWillBegin;
-+ (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 createParentFolderIfNecessary:(BOOL)arg3;
++ (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 createParentFolderIfNecessary:(BOOL)arg4;
 + (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 isFolder:(BOOL*)arg4;
-+ (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3;
 + (id)pathForResourceFileOrFolder:(int)arg1;
-+ (BOOL)requiresPostProcessing;
 + (void)resetLibrary;
-+ (void)setIsTesting:(BOOL)arg1;
++ (void)scheduleFlushDatabase;
 + (void)setSyncIsActive:(BOOL)arg1 alreadyInTargetState:(BOOL)arg2 withStateChangeHandlerBlock:(id)arg3;
 + (id)sharedMusicLibrary;
-+ (Class)sharedMusicLibraryClass;
 + (id)sharedMusicLibraryIfExists;
-+ (unsigned long long)syncGenerationID;
 
 - (void)_autoflush;
 - (void)_cancelAutoflush;
-- (id)_debugGetTracksStartingAtTrackWithPersistentID:(unsigned long long)arg1 maxTracks:(unsigned int)arg2 stride:(int)arg3;
+- (void)commitAllDeferredWork;
 - (void)dealloc;
 - (BOOL)flush;
-- (void)flushPreparedStatementCacheImpl;
-- (struct MLArtworkFormatSpec { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; int x6; })formatSpecForArtworkFormatID:(unsigned int)arg1;
 - (id)initWithBasePath:(id)arg1;
-- (void)jetsamMemoryImpl;
-- (id)localizedSectionHeaderForSectionHeader:(id)arg1;
-- (id)localizedSectionIndexForSectionHeader:(id)arg1;
 - (void)mainThread_scheduleFlushDatabase;
-- (id)pathForResourceFileOrFolder:(int)arg1 createParentFolderIfNecessary:(BOOL)arg2;
-- (id)pathForResourceFileOrFolder:(int)arg1;
 - (void)scheduleFlushDatabase;
-- (id)sectionIndexEllipsis;
-- (id)sectionIndexForSectionHeader:(id)arg1;
-- (id)sectionIndices;
 
 @end

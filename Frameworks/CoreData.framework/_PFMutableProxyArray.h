@@ -14,7 +14,9 @@
     NSMutableArray *_updatedObjectsArray;
 }
 
+- (BOOL)_isDeallocating;
 - (void)_rehash;
+- (BOOL)_tryRetain;
 - (void)addObject:(id)arg1;
 - (id)arrayFromObjectIDs;
 - (unsigned int)count;
@@ -31,7 +33,7 @@
 - (id)managedObjectIDAtIndex:(unsigned int)arg1;
 - (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(unsigned int)arg1;
-- (void)release;
+- (oneway void)release;
 - (void)removeLastObject;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;

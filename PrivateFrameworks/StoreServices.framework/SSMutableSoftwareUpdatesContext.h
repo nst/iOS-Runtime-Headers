@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface SSMutableSoftwareUpdatesContext : SSSoftwareUpdatesContext {
 }
 
 @property(copy) NSString * clientIdentifierHeader;
 @property(getter=isForced) BOOL forced;
+@property(copy) NSArray * softwareTypes;
 
 - (void)setClientIdentifierHeader:(id)arg1;
 - (void)setForced:(BOOL)arg1;
+- (void)setSoftwareTypes:(id)arg1;
 
 @end

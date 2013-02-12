@@ -12,21 +12,20 @@
 @property BOOL gmmInstalled;
 @property BOOL gmmInvokedViaMimeType;
 @property BOOL gmmInvokedViaUrl;
-@property(readonly) BOOL hasGmmInstalled;
+@property BOOL hasGmmInstalled;
 
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)gmmInstalled;
 - (BOOL)gmmInvokedViaMimeType;
 - (BOOL)gmmInvokedViaUrl;
 - (BOOL)hasGmmInstalled;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)requestTypeCode;
-- (Class)responseClass;
 - (void)setGmmInstalled:(BOOL)arg1;
 - (void)setGmmInvokedViaMimeType:(BOOL)arg1;
 - (void)setGmmInvokedViaUrl:(BOOL)arg1;
+- (void)setHasGmmInstalled:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

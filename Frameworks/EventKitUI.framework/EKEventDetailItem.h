@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventDetailItemDelegate>, EKEvent, EKEventEditItemViewController, EKEventStore;
+@class <EKEventDetailItemDelegate>, EKEvent, EKEventStore, UIViewController<EKEditItemViewControllerProtocol>;
 
-@interface EKEventDetailItem : NSObject <EKEventEditItemViewControllerDelegate> {
+@interface EKEventDetailItem : NSObject <EKEditItemViewControllerDelegate> {
     BOOL _allowsEditing;
     int _cellPosition;
     <EKEventDetailItemDelegate> *_delegate;
     EKEvent *_event;
     EKEventStore *_store;
-    EKEventEditItemViewController *_viewController;
+    UIViewController<EKEditItemViewControllerProtocol> *_viewController;
 }
 
 @property BOOL allowsEditing;
@@ -26,7 +26,7 @@
 - (id)delegate;
 - (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (BOOL)eventEditItemViewControllerCommit:(id)arg1;
+- (BOOL)editItemViewControllerCommit:(id)arg1;
 - (void)eventViewController:(id)arg1 didSelectSubitem:(int)arg2;
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
 - (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;

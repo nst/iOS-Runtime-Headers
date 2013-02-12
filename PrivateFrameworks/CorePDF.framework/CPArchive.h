@@ -6,6 +6,7 @@
 
 @interface CPArchive : NSObject <CPDisposable> {
     NSMutableString *htmlString;
+    NSMutableString *htmlStringNoImages;
     struct __CFArray { } *imageNodes;
     NSMutableString *plainText;
     struct __CFArray { } *selections;

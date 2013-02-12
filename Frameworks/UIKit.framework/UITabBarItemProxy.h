@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UITabBarItem;
+@class UITabBarItem, UIView;
 
 @interface UITabBarItemProxy : NSObject {
     UITabBarItem *_item;
-    UIImageView *_view;
+    UIView *_view;
 }
 
 - (void)dealloc;

@@ -9,6 +9,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (unsigned long)_cfTypeID;
+- (BOOL)allowsWeakReference;
 - (void)finalize;
 - (void)fire;
 - (id)fireDate;
@@ -21,6 +22,7 @@
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (void)setFireDate:(id)arg1;
 - (double)timeInterval;
 - (id)userInfo;

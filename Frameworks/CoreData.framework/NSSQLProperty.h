@@ -25,6 +25,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isForeignEntityKey;
 - (BOOL)isForeignKey;
+- (BOOL)isForeignOrderKey;
 - (BOOL)isManyToMany;
 - (BOOL)isOptLockKey;
 - (BOOL)isPrimaryKey;

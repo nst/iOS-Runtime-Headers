@@ -18,7 +18,7 @@
 
 @property(readonly) int cornerRadius;
 @property(readonly) BOOL shouldShowNavigationBar;
-@property(readonly) struct CGSize { float width; float height; } size;
+@property(readonly) struct CGSize { float x1; float x2; } size;
 @property(readonly) NSString * transitionName;
 
 - (int)cornerRadius;

@@ -12,7 +12,7 @@
     } _internal;
 }
 
-@property struct MPMediaPropertyPredicateInternal { NSString *_property; id _value; int _comparisonType; } _internal;
+@property struct MPMediaPropertyPredicateInternal { id x1; id x2; int x3; } _internal;
 @property int comparisonType;
 @property(copy) NSString * property;
 @property(copy) id value;

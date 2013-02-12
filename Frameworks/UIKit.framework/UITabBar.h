@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITabBarDelegate>, NSArray, UITabBarItem, UIView;
+@class <UITabBarDelegate>, NSArray, UIColor, UIImage, UITabBarItem, UIView;
 
 @interface UITabBar : UIView {
     struct { 
@@ -11,7 +11,9 @@
         unsigned int customized : 1; 
         unsigned int downButtonSentAction : 1; 
         unsigned int isLocked : 1; 
-    id _appearance;
+        unsigned int backgroundIsPattern : 1; 
+    id _appearanceStorage;
+    UIView *_backgroundView;
     NSArray *_buttonItems;
     NSArray *_customizationItems;
     UIView *_customizeView;
@@ -22,29 +24,30 @@
     } _tabBarFlags;
 }
 
+@property(retain) UIImage * backgroundImage;
 @property <UITabBarDelegate> * delegate;
 @property(copy) NSArray * items;
+@property(retain) UIColor * selectedImageTintColor;
 @property UITabBarItem * selectedItem;
+@property(retain) UIImage * selectionIndicatorImage;
+@property(retain) UIColor * tintColor;
 
 + (float)_buttonGap;
-+ (void)_initializeSafeCategory;
 + (float)defaultHeightForBarSize:(int)arg1;
 
-- (id)_accessibilityFuzzyHitTestElements;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
-- (BOOL)_accessibilityServesAsContainingParentForOrdering;
 - (void)_adjustButtonSelection:(id)arg1;
 - (void)_alertDidHide;
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
-- (id)_appearance;
+- (id)_appearanceStorage;
 - (void)_buttonCancel:(id)arg1;
 - (void)_buttonDown:(id)arg1;
 - (void)_buttonDownDelayed:(id)arg1;
 - (void)_buttonUp:(id)arg1;
+- (BOOL)_canDrawContent;
 - (void)_configureTabBarReplacingItem:(id)arg1 withNewItem:(id)arg2 dragging:(BOOL)arg3 swapping:(BOOL)arg4;
 - (void)_customizeDoneButtonAction:(id)arg1;
 - (void)_customizeWithAvailableItems:(id)arg1;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_dismissCustomizeSheet:(BOOL)arg1;
 - (void)_finishCustomizeAnimation:(id)arg1;
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(void*)arg3;
@@ -58,8 +61,11 @@
 - (void)_setLabelShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLabelTextColor:(id)arg1 selectedTextColor:(id)arg2;
 - (void)_setSelectionIndicatorImage:(id)arg1;
+- (BOOL)_subclassImplementsDrawRect;
 - (void)_tabBarFinishedAnimating;
-- (unsigned long long)accessibilityTraits;
+- (void)_updateBackgroundImage;
+- (void)_updateTintedImages:(id)arg1 selected:(BOOL)arg2;
+- (id)backgroundImage;
 - (void)beginCustomizingItems:(id)arg1;
 - (id)buttonItems;
 - (void)dealloc;
@@ -71,13 +77,16 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isCustomizing;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isLocked;
 - (id)items;
 - (void)layoutSubviews;
-- (BOOL)onStateForButton:(int)arg1;
+- (id)selectedImageTintColor;
 - (id)selectedItem;
+- (id)selectionIndicatorImage;
+- (void)setBackgroundImage:(id)arg1;
 - (void)setBadgeAnimated:(BOOL)arg1 forButton:(int)arg2;
 - (void)setBadgeGlyph:(id)arg1 forButton:(int)arg2;
 - (void)setBadgeValue:(id)arg1 forButton:(int)arg2;
@@ -85,12 +94,16 @@
 - (void)setButtonItems:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
 - (void)setLocked:(BOOL)arg1;
-- (void)setOnStateForButton:(BOOL)arg1 forButton:(int)arg2;
+- (void)setSelectedImageTintColor:(id)arg1;
 - (void)setSelectedItem:(id)arg1;
+- (void)setSelectionIndicatorImage:(id)arg1;
+- (void)setTintColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)tintColor;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

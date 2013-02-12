@@ -15,6 +15,7 @@
 @property float compactionFactor;
 @property(readonly) unsigned int count;
 @property(readonly) unsigned int maxCapacity;
+@property(readonly) NSArray * orderedObjects;
 
 - (id)_allObjects;
 - (id)allObjects;
@@ -33,6 +34,7 @@
 - (BOOL)needsCompaction;
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;
+- (id)orderedObjects;
 - (void)removeAllObjects;
 - (void)removeObjectsForKeys:(id)arg1;
 - (void)setCompactionFactor:(float)arg1;

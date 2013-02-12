@@ -18,7 +18,6 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)height;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (void)setThumbnailData:(id)arg1;

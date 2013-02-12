@@ -5,6 +5,7 @@
 @class NSMutableArray;
 
 @interface FigCaptionLayerPrivate : NSObject {
+    struct OpaqueFigSimpleMutex { } *renderMutex;
     struct OpaqueFigCFCaptionRenderer { } *renderer;
     NSMutableArray *rowLayers;
 }

@@ -8,36 +8,27 @@
 }
 
 @property BOOL _mapkit_enabledMapTilePathDrawing;
-@property(getter=_mapkit_isHeadingRotationSticky,readonly) BOOL _mapkit_headingRotationSticky;
-@property(readonly) unsigned int _mapkit_throttleFlags;
-@property(readonly) double _mapkit_throttleTimeInterval;
 
 + (id)CNFObjectForKey:(id)arg1;
++ (id)CNFRegCallerIDMap;
 + (unsigned int)CNFRegEmailValidationTimeout;
 + (id)CNFRegSavedAccountName;
 + (id)CNFRegServerURLOverride;
++ (id)_IMAgentObjectForKey:(id)arg1;
++ (id)_IMAppObjectForKey:(id)arg1;
++ (id)_IMObjectForKey:(id)arg1 inDomain:(id)arg2;
++ (void)_IMSetObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (void)_ensureAndLockPreferredLanguageLock;
-+ (struct __CFString { }*)_targetDomainWithDomain:(id)arg1;
 + (void)_web_addDefaultsChangeObserver;
 + (void)_web_defaultsDidChange;
 + (id)_web_preferredLanguageCode;
-+ (void)_webkit_addDefaultsChangeObserver;
-+ (void)_webkit_defaultsDidChange;
-+ (void)_webkit_ensureAndLockPreferredLanguageLock;
 + (id)_webkit_preferredLanguageCode;
-+ (id)agentObjectForKey:(id)arg1;
-+ (id)appObjectForKey:(id)arg1;
-+ (id)objectForKey:(id)arg1 inDomain:(id)arg2;
-+ (id)objectForKey:(id)arg1 inDomain:(id)arg2;
 + (void)resetStandardUserDefaults;
-+ (void)setAgentObject:(id)arg1 forKey:(id)arg2;
-+ (void)setAppObject:(id)arg1 forKey:(id)arg2;
 + (void)setCNFObject:(id)arg1 forKey:(id)arg2;
++ (void)setCNFRegCallerIDMap:(id)arg1;
 + (void)setCNFRegEmailValidationTimeout:(unsigned int)arg1;
 + (void)setCNFRegSavedAccountName:(id)arg1;
 + (void)setCNFRegServerURLOverride:(id)arg1;
-+ (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
-+ (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (void)setShouldShowCNFRegistrationServerLogs:(BOOL)arg1;
 + (void)setShouldShowCNFRegistrationSettingsUI:(BOOL)arg1;
 + (void)setStandardUserDefaults:(id)arg1;
@@ -46,19 +37,13 @@
 + (id)standardUserDefaults;
 
 - (id)URLForKey:(id)arg1;
-- (void)_adjustTimer:(id)arg1;
-- (void)_adjustTimerForAutosync;
 - (BOOL)_mapkit_enabledMapTilePathDrawing;
-- (BOOL)_mapkit_isHeadingRotationSticky;
 - (void)_mapkit_setTrackingAnimationDuration:(double)arg1;
-- (unsigned int)_mapkit_throttleFlags;
-- (double)_mapkit_throttleTimeInterval;
 - (double)_mapkit_trackingAnimationDuration;
 - (void)addSuiteNamed:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
 - (id)dataForKey:(id)arg1;
-- (void)dealloc;
 - (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryRepresentation;
 - (double)doubleForKey:(id)arg1;
@@ -74,6 +59,7 @@
 - (id)persistentDomainForName:(id)arg1;
 - (id)persistentDomainNames;
 - (void)registerDefaults:(id)arg1;
+- (oneway void)release;
 - (void)removeObjectForKey:(id)arg1 inDomain:(id)arg2;
 - (void)removeObjectForKey:(id)arg1;
 - (void)removePersistentDomainForName:(id)arg1;

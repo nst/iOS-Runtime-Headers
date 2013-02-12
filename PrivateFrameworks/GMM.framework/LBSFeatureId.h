@@ -3,21 +3,20 @@
  */
 
 @interface LBSFeatureId : PBCodable {
-    unsigned long long _cell_id;
+    unsigned long long _cellId;
     unsigned long long _fprint;
 }
 
-@property unsigned long long cell_id;
+@property unsigned long long cellId;
 @property unsigned long long fprint;
 
-- (unsigned long long)cell_id;
+- (unsigned long long)cellId;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)fprint;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCell_id:(unsigned long long)arg1;
+- (void)setCellId:(unsigned long long)arg1;
 - (void)setFprint:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 

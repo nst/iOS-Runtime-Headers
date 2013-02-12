@@ -2,37 +2,53 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKTranscriptHeaderDelegate>, UIPlacardButton;
+@class <CKTranscriptButtonViewDelegate>, UIPlacardButton;
 
-@interface CKTranscriptHeaderView : UIView {
+@interface CKTranscriptHeaderView : UIView <CKTranscriptButtonView> {
     UIPlacardButton *_callButton;
+    BOOL _callingAvailable;
     UIPlacardButton *_contactsButton;
-    id _delegate;
+    BOOL _disableFirstButtonRow;
     BOOL _faceTimeAvailable;
     UIPlacardButton *_faceTimeButton;
     BOOL _hasContact;
+    BOOL _hasMoreMessages;
     BOOL _isGroupMessage;
+    BOOL _isPhoneTranscript;
     UIPlacardButton *_loadMoreButton;
+    id _transcriptButtonDelegate;
 }
 
-@property <CKTranscriptHeaderDelegate> * delegate;
-@property BOOL faceTimeAvailable;
+@property(getter=isCallingAvailable) BOOL callingAvailable;
+@property BOOL disableFirstButtonRow;
+@property(getter=isFaceTimeAvailable) BOOL faceTimeAvailable;
 @property BOOL hasContact;
+@property BOOL hasMoreMessages;
 @property(readonly) BOOL isGroupMessage;
+@property <CKTranscriptButtonViewDelegate> * transcriptButtonDelegate;
 
 + (float)defaultHeight;
 
 - (void)_buttonClicked:(id)arg1;
+- (void)_updateCallButton;
 - (void)dealloc;
-- (id)delegate;
-- (BOOL)faceTimeAvailable;
+- (BOOL)disableFirstButtonRow;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForButton:(short)arg1;
 - (BOOL)hasContact;
+- (BOOL)hasMoreMessages;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isPhoneTranscript:(BOOL)arg2 displayLoadPrevious:(BOOL)arg3 isGroupMessage:(BOOL)arg4;
+- (BOOL)isCallingAvailable;
+- (BOOL)isFaceTimeAvailable;
 - (BOOL)isGroupMessage;
 - (void)layoutSubviews;
 - (void)setButtonsEnabled:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setCallingAvailable:(BOOL)arg1;
+- (void)setDisableFirstButtonRow:(BOOL)arg1;
 - (void)setFaceTimeAvailable:(BOOL)arg1;
 - (void)setHasContact:(BOOL)arg1;
+- (void)setHasMoreMessages:(BOOL)arg1;
+- (void)setTranscriptButtonDelegate:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)transcriptButtonDelegate;
 
 @end

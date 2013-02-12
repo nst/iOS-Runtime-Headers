@@ -26,6 +26,7 @@
 + (id)exp:(id)arg1;
 + (id)floor:(id)arg1;
 + (id)from:(id)arg1 subtract:(id)arg2;
++ (id)inverseOrderKey:(id)arg1;
 + (id)leftshift:(id)arg1 by:(id)arg2;
 + (id)ln:(id)arg1;
 + (id)log:(id)arg1;

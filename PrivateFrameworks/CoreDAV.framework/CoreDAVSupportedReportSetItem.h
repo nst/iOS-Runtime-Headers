@@ -15,7 +15,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setSupportedReports:(id)arg1;
 - (id)supportedReports;
 

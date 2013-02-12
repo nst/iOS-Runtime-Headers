@@ -2,20 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSLock, NSMutableArray, NSURLAuthenticationChallenge, NSURLProtocol;
+@class NSURLAuthenticationChallenge, NSURLProtocol;
 
 @interface _NSCFURLProtocolBridge : NSObject <NSURLProtocolClient> {
+    struct _CFURLAuthChallenge { } *_cfChallenge;
     struct _CFURLProtocol { } *_cfProt;
     BOOL _loading;
-    struct __CFRunLoopSource { } *_rlSrc;
-    struct _CFURLAuthChallenge { } *cfChallenge;
-    NSMutableArray *clientInstructions;
-    NSLock *clientMutex;
-    NSLock *eventMutex;
-    NSMutableArray *events;
-    unsigned int flags;
-    NSURLAuthenticationChallenge *nsChallenge;
-    NSURLProtocol *nsProt;
+    NSURLAuthenticationChallenge *_nsChallenge;
+    NSURLProtocol *_nsProt;
 }
 
 + (void)barRequest:(struct _CFURLRequest { }*)arg1;
@@ -32,6 +26,8 @@
 - (void)URLProtocol:(id)arg1 wasRedirectedToRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)URLProtocolDidFinishLoading:(id)arg1;
 - (void)_forgetClient;
+- (void)bridgeRelease;
+- (void)bridgeRetain;
 - (void)cachedResponseIsValid:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -40,16 +36,11 @@
 - (void)didLoadData:(id)arg1 lengthReceived:(long long)arg2;
 - (void)didReceiveAuthenticationChallenge:(id)arg1;
 - (void)didReceiveResponse:(id)arg1;
-- (void)dispatchInstruction:(int)arg1;
-- (void)dispatchInstructions;
-- (void)finalize;
 - (void)halt;
-- (id)initWithCFURLProtocol:(struct _CFURLProtocol { }*)arg1;
-- (void)marshalEvent:(int)arg1 obj:(id)arg2 obj2:(id)arg3;
-- (void)processEventQ;
+- (id)initWithCFURLProtocol:(struct _CFURLProtocol { }*)arg1 request:(id)arg2 protocolClass:(Class)arg3;
+- (void)pushEvent:(id)arg1 from:(const char *)arg2;
 - (void)resume;
 - (void)schedule:(struct __CFRunLoop { }*)arg1 mode:(struct __CFString { }*)arg2;
-- (void)sendInstruction:(int)arg1;
 - (void)start;
 - (void)stop;
 - (void)unschedule:(struct __CFRunLoop { }*)arg1 mode:(struct __CFString { }*)arg2;

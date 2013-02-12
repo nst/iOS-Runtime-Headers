@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSDictionary, NSMutableDictionary, NSNumber, NSString;
+@class NSDictionary, NSMutableDictionary, NSMutableSet, NSNumber, NSString;
 
 @interface PKPrinter : NSObject {
     struct _http_s { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; struct sockaddr_in { 
@@ -30,11 +30,16 @@
             int tv_sec; 
             int tv_usec; 
     int accessState;
+    BOOL hasIdentifyPrinterOp;
+    BOOL isLocal;
         } x39; } *job_http;
     int kind;
+    int maxCopies;
     int maxJPEGKBytes;
     int maxPDFKBytes;
+    NSMutableSet *mediaReady;
     NSString *name;
+    int preferred_landscape;
     NSDictionary *printInfoSupported;
     NSMutableDictionary *privateData;
     int type;
@@ -43,12 +48,19 @@
 @property(retain) NSDictionary * TXTRecord;
 @property int accessState;
 @property(readonly) int accessState;
+@property(readonly) BOOL hasIdentifyPrinterOp;
+@property(readonly) BOOL hasPrintInfoSupported;
 @property(retain) NSString * hostname;
+@property(readonly) BOOL isAdobeRGBSupported;
+@property(readonly) BOOL isIPPS;
+@property BOOL isLocal;
 @property(readonly) int kind;
 @property(readonly) NSString * name;
 @property(retain) NSNumber * port;
 @property(readonly) NSDictionary * printInfoSupported;
+@property(retain,readonly) NSString * scheme;
 @property(readonly) int type;
+@property(readonly) NSString * uuid;
 
 + (BOOL)printerLookupWithName:(id)arg1 andTimeout:(double)arg2;
 + (id)printerWithName:(id)arg1;
@@ -57,6 +69,7 @@
 - (int)abortJob;
 - (int)accessState;
 - (void)cancelUnlock;
+- (void)checkOperations:(struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)arg1;
 - (struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)createRequest:(id)arg1 ofType:(id)arg2 url:(id)arg3;
 - (void)dealloc;
 - (id)description;
@@ -64,11 +77,19 @@
 - (int)finalizeJob:(int)arg1;
 - (int)finishJob;
 - (struct ipp_s { int x1; union ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct ipp_attribute_s {} *x3; struct ipp_attribute_s {} *x4; struct ipp_attribute_s {} *x5; int x6; struct ipp_attribute_s {} *x7; int x8; }*)getPrinterAttributes;
+- (BOOL)hasIdentifyPrinterOp;
+- (BOOL)hasPrintInfoSupported;
 - (id)hostname;
+- (void)identifySelf;
 - (id)initWithName:(id)arg1 TXT:(id)arg2;
 - (id)initWithName:(id)arg1 TXTRecord:(id)arg2;
+- (BOOL)isAdobeRGBSupported;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isIPPS;
+- (BOOL)isLocal;
+- (BOOL)isPaperReady:(id)arg1;
 - (int)kind;
+- (BOOL)knowsReadyPaperList;
 - (id)localName;
 - (id)location;
 - (id)matchedPaper:(id)arg1 preferBorderless:(BOOL)arg2 withDuplexMode:(id)arg3 didMatch:(BOOL*)arg4;
@@ -82,9 +103,12 @@
 - (void)reconfirmWithForce:(BOOL)arg1;
 - (void)resolve;
 - (BOOL)resolveWithTimeout:(int)arg1;
+- (id)scheme;
 - (int)sendData:(const char *)arg1 ofLength:(int)arg2;
 - (void)setAccessState:(int)arg1;
+- (void)setAccessStateFromTXT:(id)arg1;
 - (void)setHostname:(id)arg1;
+- (void)setIsLocal:(BOOL)arg1;
 - (void)setPort:(id)arg1;
 - (void)setPrivateObject:(id)arg1 forKey:(id)arg2;
 - (void)setTXTRecord:(id)arg1;
@@ -92,5 +116,6 @@
 - (int)type;
 - (void)unlockWithCompletionHandler:(id)arg1;
 - (void)updateType;
+- (id)uuid;
 
 @end

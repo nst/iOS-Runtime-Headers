@@ -14,5 +14,6 @@
 - (id)owner;
 - (void)setOwner:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

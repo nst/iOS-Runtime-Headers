@@ -22,6 +22,7 @@
 - (id)installationWarnings;
 - (BOOL)isManagedByProfileService;
 - (id)localizedPayloadSummaryByType;
+- (id)payloadWithUUID:(id)arg1;
 - (id)payloads;
 - (void)setOTAProfile:(id)arg1;
 - (id)stubDictionary;

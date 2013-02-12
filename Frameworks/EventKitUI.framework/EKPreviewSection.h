@@ -16,7 +16,7 @@
     NSArray *_events;
 }
 
-@property struct { int year; BOOL month; BOOL day; BOOL hour; BOOL minute; double second; } date;
+@property struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } date;
 @property(readonly) NSArray * events;
 
 + (id)sectionWithDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;

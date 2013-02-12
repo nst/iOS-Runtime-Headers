@@ -5,6 +5,7 @@
 @interface CATransaction : NSObject {
 }
 
++ (void)activate;
 + (double)animationDuration;
 + (id)animationTimingFunction;
 + (void)begin;

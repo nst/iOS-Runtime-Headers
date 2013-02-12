@@ -11,12 +11,10 @@
     BOOL _useCustomDetailsText;
 }
 
-+ (void)_initializeSafeCategory;
 + (float)desiredRowHeight;
 + (void)initialize;
 
 - (id)_dataclassesLabel;
-- (id)accessibilityLabel;
 - (void)dealloc;
 - (id)enabledDataclassesTextForWidth:(float)arg1;
 - (void)layoutSubviews;

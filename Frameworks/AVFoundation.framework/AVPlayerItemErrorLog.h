@@ -10,6 +10,7 @@
 
 @property(readonly) NSArray * events;
 
+- (id)_errorLogArray;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

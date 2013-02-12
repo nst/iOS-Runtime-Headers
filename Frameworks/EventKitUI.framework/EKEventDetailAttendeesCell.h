@@ -8,11 +8,7 @@
     EKEventDetailAttendeesListView *_attendeesListView;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (id)_attendeesListView;
-- (id)_axStringForArray:(id)arg1;
-- (id)accessibilityLabel;
 - (void)dealloc;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;

@@ -14,10 +14,10 @@
     } _entityMappingFlags;
     NSString *_entityMigrationPolicyClassName;
     unsigned int _mappingType;
+    NSDictionary *_mappingsByName;
     NSString *_name;
     NSMutableArray *_relationshipMappings;
     void *_reserved1;
-    void *_reserved2;
     void *_reserved;
     NSString *_sourceEntityName;
     NSData *_sourceEntityVersionHash;
@@ -31,6 +31,7 @@
 - (void)_addRelationshipMapping:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (id)_initWithSourceEntityDescription:(id)arg1 destinationEntityDescription:(id)arg2;
+- (id)_mappingsByName;
 - (id)_migrationPolicy;
 - (void)_setIsEditable:(BOOL)arg1;
 - (void)_throwIfNotEditable;

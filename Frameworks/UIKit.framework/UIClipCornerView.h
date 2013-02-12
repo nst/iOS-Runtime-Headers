@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
+@class UIColor, UIImage;
 
 @interface UIClipCornerView : UIView {
     struct CGPoint { 
@@ -28,6 +28,7 @@
     } _backgroundImageSubrect;
     } _backgroundTransform;
     struct CGPath { } *_clipPath;
+    UIColor *_cornerMaskColor;
     float _cornerRadius;
     } _pathOrigin;
     int _rectCorner;
@@ -35,7 +36,8 @@
 }
 
 @property(retain) UIImage * backgroundImage;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } backgroundImageSubrect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } backgroundImageSubrect;
+@property(retain) UIColor * cornerMaskColor;
 @property float cornerRadius;
 @property BOOL useSnapshot;
 
@@ -43,12 +45,14 @@
 - (void)_updateSnapshot;
 - (id)backgroundImage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundImageSubrect;
+- (id)cornerMaskColor;
 - (float)cornerRadius;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithCornerRadius:(float)arg1 forCorner:(int)arg2;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundImageSubrect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCornerMaskColor:(id)arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setUseSnapshot:(BOOL)arg1;

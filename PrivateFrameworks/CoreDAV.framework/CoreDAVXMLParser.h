@@ -4,7 +4,7 @@
 
 @class CoreDAVErrorItem, CoreDAVItem, CoreDAVXMLElementGenerator, NSError, NSSet, NSURL;
 
-@interface CoreDAVXMLParser : NSXMLParser_CoreDAVFlavor <CoreDAVResponseBodyParser> {
+@interface CoreDAVXMLParser : NSXMLParser <CoreDAVResponseBodyParser> {
     NSURL *_baseURL;
     NSSet *_parseHints;
     CoreDAVXMLElementGenerator *_rootElementGenerator;
@@ -24,7 +24,7 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithRootElementNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3 baseURL:(id)arg4;
 - (id)parseHints;
-- (BOOL)processData:(id)arg1;
+- (BOOL)processData:(id)arg1 forTask:(id)arg2;
 - (id)rootElement;
 - (id)rootElementGenerator;
 - (id)rootError;
@@ -33,6 +33,5 @@
 - (void)setParseHints:(id)arg1;
 - (void)setRootElementGenerator:(id)arg1;
 - (void)setRootErrorGenerator:(id)arg1;
-- (BOOL)task:(id)arg1 receivedData:(id)arg2;
 
 @end

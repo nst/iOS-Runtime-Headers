@@ -15,10 +15,13 @@
 }
 
 + (void)_migrateAccountsIfNeeded;
++ (id)_notifierClassNamesForAccountType:(id)arg1 dataclass:(id)arg2;
 + (BOOL)_oldDAAccountsInformationFound;
 + (BOOL)_oldMailAccountsInformationFound;
 + (void)_setShouldSkipNotifications:(BOOL)arg1;
++ (void)accountDidChange:(id)arg1 forDataclass:(id)arg2;
 + (BOOL)accountSettingsNeedsToBeMigrated;
++ (void)accountWillChange:(id)arg1 forDataclass:(id)arg2;
 + (id)createAndLockMigrationLock;
 + (unsigned int)currentVersion;
 + (id)displayNameForGroupOfAccountType:(id)arg1 forBeginningOfSentence:(BOOL)arg2;
@@ -33,7 +36,6 @@
 - (id)_createRuntimeFixers;
 - (id)_initWithAccountsInfo:(id)arg1;
 - (void)_loadChildrenFromAccount:(id)arg1;
-- (id)_notifierClassNamesForAccountType:(id)arg1 dataclass:(id)arg2;
 - (void)_removeChildrenForAccountWithIdentifier:(id)arg1;
 - (void)_sendNotificationsForChangedAccounts;
 - (void)_setOriginalAccountDictionaries;
@@ -64,12 +66,13 @@
 - (id)initWithAccounsInfoArray:(id)arg1;
 - (void)insertAccount:(id)arg1;
 - (id)legacyAccounts;
+- (id)mergeInMemoryProperties:(id)arg1 originalProperties:(id)arg2 onDiskProperties:(id)arg3;
 - (void)removeChildWithIdentifier:(id)arg1 fromAccount:(id)arg2;
 - (void)replaceAccount:(id)arg1 withAccount:(id)arg2;
 - (void)replaceAccountsWithTypes:(id)arg1 withAccounts:(id)arg2;
 - (void)saveAllAccounts;
 - (void)setDataVersion:(unsigned int)arg1;
-- (void)setLegacyAccounts:(id)arg1;
+- (void)setLegacyAccounts:(id)arg1 withPasswords:(id)arg2;
 - (id)syncableAccountWithSyncIdentifier:(id)arg1;
 - (void)updateAccount:(id)arg1;
 

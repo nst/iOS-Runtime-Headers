@@ -16,9 +16,10 @@
 @property(retain) NSString * type;
 @property(getter=isUnified) BOOL unified;
 
-+ (id)linkedInfoForPeople:(id)arg1 peopleForUnifiedCard:(id)arg2 accountsManager:(id)arg3;
-
 - (void)dealloc;
+- (id)description;
+- (unsigned int)hash;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isUnified;
 - (id)name;
 - (void*)person;

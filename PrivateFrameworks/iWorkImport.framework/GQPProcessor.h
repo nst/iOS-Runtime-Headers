@@ -51,6 +51,7 @@
     GQZArchive *mArchive;
     struct __CFBundle { } *mBundle;
     GQSDocument *mDocumentState;
+    unsigned char mIsProgressive;
     struct __QLPreviewRequest { } *mOutputPreviewRequest;
     struct _xmlParserInputBuffer { void *x1; int (*x2)(); int (*x3)(); struct _xmlCharEncodingHandler {} *x4; struct _xmlBuffer {} *x5; struct _xmlBuffer {} *x6; int x7; int x8; unsigned long x9; } *mParserInputBuffer;
     struct _xmlTextReader { } *mReader;
@@ -72,6 +73,7 @@
 - (BOOL)isWrongFormat;
 - (void)pushInitialState;
 - (void)setBundle:(struct __CFBundle { }*)arg1;
+- (void)setProgressiveMode:(unsigned char)arg1;
 - (void)setThumbnailSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setWrongFormat:(BOOL)arg1;
 - (struct stack<std::tr1::shared_ptr<StateSpec>,std::deque<std::tr1::shared_ptr<StateSpec>, std::allocator<std::tr1::shared_ptr<StateSpec> > > > { struct deque<std::tr1::shared_ptr<StateSpec>,std::allocator<std::tr1::shared_ptr<StateSpec> > > { struct _Deque_impl { struct shared_ptr<StateSpec> {} **x_1_2_1; unsigned int x_1_2_2; struct _Deque_iterator<std::tr1::shared_ptr<StateSpec>,std::tr1::shared_ptr<StateSpec>&,std::tr1::shared_ptr<StateSpec>*> { struct shared_ptr<StateSpec> {} *x_3_3_1; struct shared_ptr<StateSpec> {} *x_3_3_2; struct shared_ptr<StateSpec> {} *x_3_3_3; struct shared_ptr<StateSpec> {} **x_3_3_4; } x_1_2_3; struct _Deque_iterator<std::tr1::shared_ptr<StateSpec>,std::tr1::shared_ptr<StateSpec>&,std::tr1::shared_ptr<StateSpec>*> { struct shared_ptr<StateSpec> {} *x_4_3_1; struct shared_ptr<StateSpec> {} *x_4_3_2; struct shared_ptr<StateSpec> {} *x_4_3_3; struct shared_ptr<StateSpec> {} **x_4_3_4; } x_1_2_4; } x_1_1_1; } x1; }*)stateStack;

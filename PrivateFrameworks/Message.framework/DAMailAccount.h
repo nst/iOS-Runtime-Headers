@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAAccount, MFDAMailbox, NSArray, NSCountedSet, NSMutableDictionary, NSObject<ASAccountActorMessages>, NSSet, NSString;
+@class DAAccount, MFDAMailbox, MFDAOfflineCache, MFRecursiveLock, NSArray, NSCountedSet, NSMutableDictionary, NSObject<ASAccountActorMessages>, NSSet, NSString;
 
 @interface DAMailAccount : MailAccount {
     NSObject<ASAccountActorMessages> *_accountConduit;
@@ -12,14 +12,24 @@
     NSString *_cachedDisplayName;
     NSString *_cachedEmailAddress;
     NSArray *_cachedEmailAddresses;
+    NSString *_cachedIconString;
     NSString *_cachedInboxFolderID;
+    BOOL _cachedIsHotmailAccount;
+    BOOL _cachedRestrictMessageTransfersToOtherAccounts;
+    BOOL _cachedRestrictSendingFromExternalProcesses;
+    BOOL _cachedSecureMIMEEnabled;
+    BOOL _cachedSecureMIMEShouldEncrypt;
+    BOOL _cachedSecureMIMEShouldSign;
     NSString *_cachedSentMessagesFolderID;
     NSString *_cachedTrashFolderID;
     DAAccount *_daAccount;
     unsigned int _daysToSync;
     BOOL _doneInitialInboxCheck;
+    BOOL _isNetworkReachable;
     BOOL _loadedInitialMailboxList;
     BOOL _observingPushedFoldersPrefsChanged;
+    MFDAOfflineCache *_offlineCache;
+    MFRecursiveLock *_offlineCacheLock;
     BOOL _receivedInitialMailboxUpdate;
     NSMutableDictionary *_requestQueuesByFolderID;
     BOOL _startListeningOnHierarchyChange;
@@ -30,6 +40,7 @@
 }
 
 + (id)_URLScheme;
++ (Class)_accountConduitClass;
 + (void)_removeStaleExchangeDirectories:(id)arg1;
 + (id)accountIDForDirectoryName:(id)arg1 isAccountDirectory:(BOOL*)arg2;
 + (id)accountTypeString;
@@ -42,14 +53,23 @@
 
 - (id)_URLScheme;
 - (BOOL)_canReceiveNewMailNotifications;
-- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 permanentTag:(id)arg5 dictionary:(id)arg6;
-- (id)_copyMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 permanentTag:(id)arg4 dictionary:(id)arg5;
+- (id)_copyMailboxUidWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 existingMailboxUid:(id)arg4 dictionary:(id)arg5;
+- (id)_copyMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 dictionary:(id)arg4;
+- (void)_deferMailboxRequests:(id)arg1 mailbox:(id)arg2 offlineCache:(id)arg3;
+- (BOOL)_deleteMailbox:(id)arg1;
 - (void)_ensureWeHaveLoadedInitialMailboxList;
 - (id)_inboxFolderID;
 - (id)_infoForMatchingURL:(id)arg1;
+- (BOOL)_isUnitTesting;
 - (void)_loadChildren:(id)arg1 forID:(id)arg2 intoBox:(id)arg3 replacingInbox:(id)arg4 withID:(id)arg5;
-- (id)_newMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 dictionary:(id)arg4;
+- (id)_newMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 dictionary:(id)arg4 withCreationOption:(int)arg5;
+- (id)_offlineCache;
+- (void)_performFolderChange:(id)arg1 completion:(id)arg2;
+- (void)_reachabilityChanged:(id)arg1;
+- (BOOL)_replayOfflineCache:(id)arg1;
 - (id)_specialMailboxUidWithType:(int)arg1 create:(BOOL)arg2;
+- (void)_synchronouslyLoadListingForParent:(id)arg1;
+- (void)_updateWatchedFolderIdsAndNotify:(BOOL)arg1;
 - (id)accountConduit;
 - (void)accountHierarchyChanged:(id)arg1;
 - (id)accountPropertyForKey:(id)arg1;
@@ -58,17 +78,24 @@
 - (void)addUserFocusMailbox:(id)arg1;
 - (id)allMailboxUids;
 - (BOOL)canFetchMessagesByNumericRange;
+- (BOOL)canGoOffline;
 - (void)cancelSearchQuery:(id)arg1;
+- (id)copyDataForRemoteEncryptionCertificatesForAddress:(id)arg1 error:(id*)arg2;
 - (unsigned int)daysToSync;
 - (void)dealloc;
 - (id)deliveryAccount;
+- (BOOL)derivesDeliveryAccountInfoFromMailAccount;
 - (id)displayName;
 - (int)emptyFrequencyForMailboxType:(int)arg1;
+- (id)encryptionIdentityPersistentReferenceForAddress:(id)arg1;
 - (void)fetchMailboxList;
 - (BOOL)finishedInitialMailboxListLoad;
+- (id)folderIDForMailbox:(id)arg1;
 - (void)foldersContentsChanged:(id)arg1;
+- (BOOL)generatesBulletins;
 - (id)hostname;
 - (id)iconString;
+- (id)identifier;
 - (id)initWithDAAccount:(id)arg1;
 - (id)initWithLibrary:(id)arg1 properties:(id)arg2;
 - (void)invalidate;
@@ -78,22 +105,36 @@
 - (id)mailboxUidForInfo:(id)arg1;
 - (id)meetingStorePersistentID;
 - (BOOL)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4 unsuccessfulOnes:(id)arg5;
-- (BOOL)newMessagesContainReferences;
-- (void)performSearchQuery:(id)arg1 consumer:(id)arg2;
+- (BOOL)newMailboxNameIsAcceptable:(id)arg1 reasonForFailure:(id*)arg2;
+- (BOOL)performRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
+- (void)performSearchQuery:(id)arg1;
 - (id)primaryMailboxUid;
+- (void)processRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
 - (void)pushedFoldersPrefsChanged:(id)arg1;
 - (id)pushedMailboxUids;
 - (BOOL)reconstituteOrphanedMeetingInMessage:(id)arg1;
 - (void)removeUserFocusMailbox:(id)arg1;
+- (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
 - (void)resetSpecialMailboxes;
+- (BOOL)restrictedFromSendingExternally;
+- (BOOL)restrictedFromTransferingMessagesToOtherAccounts;
+- (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
+- (int)secureCompositionSigningPolicyForAddress:(id)arg1;
+- (BOOL)secureMIMEEnabled;
 - (void)setDAAccount:(id)arg1;
+- (void)setEncryptionIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;
+- (void)setGeneratesBulletins:(BOOL)arg1;
+- (void)setSigningIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;
 - (void)setSyncAnchor:(id)arg1 forFolderID:(id)arg2 mailbox:(id*)arg3;
 - (BOOL)shouldAppearInMailSettings;
 - (BOOL)shouldDisplayHostnameInErrorMessages;
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
+- (id)signingIdentityPersistentReferenceForAddress:(id)arg1;
 - (void)startListeningForNotifications;
 - (void)stopListeningForNotifications;
 - (Class)storeClass;
+- (BOOL)supportsMailboxEditing;
+- (BOOL)supportsMessageFlagging;
 - (BOOL)supportsRemoteAppend;
 - (BOOL)supportsServerSearch;
 - (id)syncAnchorForFolderID:(id)arg1 mailbox:(id*)arg2;

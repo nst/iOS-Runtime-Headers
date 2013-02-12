@@ -13,10 +13,16 @@
 @property(getter=isEnabled) BOOL enabled;
 @property(readonly) NSArray * inputPorts;
 @property(readonly) AVCaptureOutput * output;
+@property(getter=isVideoMaxFrameDurationSupported,readonly) BOOL supportsVideoMaxFrameDuration;
+@property(getter=isVideoMinFrameDurationSupported,readonly) BOOL supportsVideoMinFrameDuration;
 @property(getter=isVideoMirroringSupported,readonly) BOOL supportsVideoMirroring;
 @property(getter=isVideoOrientationSupported,readonly) BOOL supportsVideoOrientation;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } videoMaxFrameDuration;
+@property(readonly) float videoMaxScaleAndCropFactor;
+@property struct { long long value; int timescale; unsigned int flags; long long epoch; } videoMinFrameDuration;
 @property(getter=isVideoMirrored) BOOL videoMirrored;
 @property int videoOrientation;
+@property float videoScaleAndCropFactor;
 
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 
@@ -31,22 +37,42 @@
 - (void)invalidate;
 - (BOOL)isActive;
 - (BOOL)isEnabled;
+- (BOOL)isLive;
+- (BOOL)isVideoCropRectSupported;
+- (BOOL)isVideoFirstAndLastFramesUncroppedSupported;
+- (BOOL)isVideoMaxFrameDurationSupported;
+- (BOOL)isVideoMinFrameDurationSupported;
 - (BOOL)isVideoMirrored;
 - (BOOL)isVideoMirroringSupported;
+- (BOOL)isVideoMotionFilterOverlapRatiosSupported;
 - (BOOL)isVideoOrientationSupported;
-- (float)maxVideoScaleAndCropFactor;
+- (BOOL)isVideoRetainedBufferCountHintSupported;
 - (id)mediaType;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)output;
 - (void)removeInputPort:(id)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setVideoCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setVideoFirstAndLastFramesUncropped:(BOOL)arg1;
+- (void)setVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoMirrored:(BOOL)arg1;
+- (void)setVideoMotionFilterOverlapRatios:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVideoOrientation:(int)arg1;
+- (void)setVideoRetainedBufferCountHint:(int)arg1;
 - (void)setVideoScaleAndCropFactor:(float)arg1;
+- (BOOL)sourcesFromFrontFacingCamera;
 - (void)updateAudioChannelsArray;
 - (void)updateAudioLevelsArray;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoCropRect;
+- (BOOL)videoFirstAndLastFramesUncropped;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMaxFrameDuration;
+- (float)videoMaxScaleAndCropFactor;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMinFrameDuration;
+- (struct CGSize { float x1; float x2; })videoMotionFilterOverlapRatios;
 - (int)videoOrientation;
+- (int)videoRetainedBufferCountHint;
 - (float)videoScaleAndCropFactor;
 
 @end

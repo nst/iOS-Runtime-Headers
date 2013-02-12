@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSTimer, SUGridView, UIButton, UIColor, UIImageView, UILabel, UITextField, UIView, _UITableViewCellOldEditingData;
+@class NSString, NSTimer, SUGridView, UIButton, UIColor, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UITableView, UITextField, UIView, _UITableViewCellOldEditingData;
 
-@interface UITableViewCell : UIView <NSCoding> {
+@interface UITableViewCell : UIView <NSCoding, UIGestureRecognizerDelegate> {
     struct { 
         unsigned int showingDeleteConfirmation : 1; 
         unsigned int separatorStyle : 3; 
@@ -39,7 +39,10 @@
         unsigned int backgroundColorSet : 1; 
         unsigned int needsSetup : 1; 
         unsigned int dontDrawTopShadow : 1; 
+        unsigned int usingMultiselectbackgroundView : 1; 
+        unsigned int layoutLoopCounter : 2; 
     SEL _accessoryAction;
+    UIColor *_accessoryTintColor;
     UIButton *_accessoryView;
     UIColor *_backgroundColor;
     UIView *_backgroundView;
@@ -60,7 +63,9 @@
     float _indentationWidth;
     double _lastSelectionTime;
     id _layoutManager;
+    UIView *_multipleSelectionBackgroundView;
     id _oldEditingData;
+    UIImage *_reorderControlImage;
     SEL _returnAction;
     NSString *_reuseIdentifier;
     float _rightMargin;
@@ -68,9 +73,12 @@
     UIView *_selectedBackgroundView;
     UIView *_selectedOverlayView;
     float _selectionFadeDuration;
+    id _selectionSegueTemplate;
+    UIColor *_selectionTintColor;
     UIColor *_separatorColor;
     UIView *_separatorView;
     } _tableCellFlags;
+    UITableView *_tableView;
     id _target;
     float _textFieldOffset;
     UILabel *_textLabel;
@@ -79,27 +87,30 @@
     UIColor *_topShadowColor;
     UIView *_topShadowView;
     struct __CFDictionary { } *_unhighlightedStates;
+    UILongPressGestureRecognizer *longPressGesture;
 }
 
 @property int accessoryType;
 @property(retain) UIView * accessoryView;
 @property(retain) UIView * backgroundView;
-@property(retain,readonly) UIView * contentView;
-@property(retain,readonly) UILabel * detailTextLabel;
+@property(readonly) UIView * contentView;
+@property(readonly) UILabel * detailTextLabel;
 @property(getter=_drawsTopShadow,setter=_setDrawsTopShadow:) BOOL drawsTopShadow;
-@property(retain,readonly) UITextField * editableTextField;
+@property(readonly) UITextField * editableTextField;
 @property(getter=isEditing) BOOL editing;
 @property int editingAccessoryType;
 @property(retain) UIView * editingAccessoryView;
 @property(readonly) int editingStyle;
 @property(readonly) SUGridView * gridView;
 @property(getter=isHighlighted) BOOL highlighted;
-@property(retain,readonly) UIImageView * imageView;
+@property(readonly) UIImageView * imageView;
 @property int indentationLevel;
 @property float indentationWidth;
+@property(retain) UILongPressGestureRecognizer * longPressGesture;
+@property(retain) UIView * multipleSelectionBackgroundView;
 @property(getter=_needsSetup,setter=_setNeedsSetup:) BOOL needsSetup;
 @property(retain) _UITableViewCellOldEditingData * oldEditingData;
-@property(copy,readonly) NSString * reuseIdentifier;
+@property(readonly) NSString * reuseIdentifier;
 @property(getter=isSelected) BOOL selected;
 @property(retain) UIView * selectedBackgroundView;
 @property int selectionStyle;
@@ -107,37 +118,11 @@
 @property(readonly) BOOL showingDeleteConfirmation;
 @property BOOL showsReorderControl;
 @property(setter=setTextFieldOffset:) float textFieldOffset;
-@property(retain,readonly) UILabel * textLabel;
+@property(readonly) UILabel * textLabel;
 @property BOOL wasSwiped;
 
-+ (BOOL)__original_resolveClassMethod:(SEL)arg1;
-+ (void)_initializeSafeCategory;
-+ (BOOL)resolveClassMethod:(SEL)arg1;
-
-- (id)__original_forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)_accessibilityAlwaysReturnsChild;
-- (id)_accessibilityChildren;
-- (void)_accessibilityClearChildren;
-- (void)_accessibilityHandleRemoveConfirm;
-- (void)_accessibilityHandleRemoveSwitch;
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)_accessibilityIndexPath;
-- (id)_accessibilityInternalData;
-- (BOOL)_accessibilityIsRemoveConfirmVisible;
-- (BOOL)_accessibilityIsRemoveControlVisible;
-- (BOOL)_accessibilityIsSwitchTableCell;
-- (BOOL)_accessibilityIsTableCell;
-- (id)_accessibilityMockParent;
-- (id)_accessibilityOverrideChildren;
-- (id)_accessibilityRetrieveTableViewCellText;
-- (id)_accessibilityRetrieveTableViewIvarsText;
-- (void)_accessibilityReuseChildren:(id)arg1 forMockParent:(id)arg2;
-- (id)_accessibilitySubviewsForAdding;
-- (void)_accessibilitySwitchMockView:(id)arg1 toParent:(id)arg2 withPossibleSubviews:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityTextElementFrame;
-- (id)_accessibilityTextElementText;
-- (void)_accessibilityUpdateRemoveControl;
 - (SEL)_accessoryAction;
+- (id)_accessoryTintColor;
 - (id)_accessoryView:(BOOL)arg1;
 - (void)_animateFloatingSeparatorForInsertion:(BOOL)arg1 withRowAnimation:(int)arg2;
 - (void)_animateInnerShadowForInsertion:(BOOL)arg1 withRowAnimation:(int)arg2;
@@ -153,13 +138,15 @@
 - (id)_currentAccessoryView:(BOOL)arg1;
 - (id)_customAccessoryView:(BOOL)arg1;
 - (id)_customEditingAccessoryView:(BOOL)arg1;
+- (id)_defaultAccessoryView;
 - (id)_defaultFont;
 - (void)_delayedDeselect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_delegateConfirmationRect;
+- (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
+- (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_deselectAnimationFinished;
 - (id)_detailTextLabel:(BOOL)arg1;
 - (id)_detailTextLabel;
-- (void)_didAddContentSubview:(id)arg1;
 - (void)_didCreateContentView;
 - (id)_disclosureImage:(BOOL)arg1;
 - (id)_disclosurePressedImage:(BOOL)arg1;
@@ -198,27 +185,33 @@
 - (void)_removeFloatingSeparator;
 - (void)_removeInnerShadow;
 - (void)_removeRemoveControl;
+- (id)_reorderControlImage;
 - (id)_reorderingControl;
 - (id)_reorderingSeparatorView;
 - (void)_resetSelectionTimer;
 - (void)_saveOpaqueViewState:(id)arg1;
 - (id)_scriptingInfo;
 - (id)_selectedBackgroundView:(BOOL)arg1;
-- (void)_setAccessibilityMockParent:(id)arg1;
 - (void)_setAccessoryAction:(SEL)arg1;
+- (void)_setAccessoryTintColor:(id)arg1;
+- (void)_setDisclosureStateUsingDefault:(id)arg1 librarySelector:(SEL)arg2;
 - (void)_setDrawsTopSeparator:(BOOL)arg1;
 - (void)_setDrawsTopSeparatorDuringReordering:(BOOL)arg1;
 - (void)_setDrawsTopShadow:(BOOL)arg1;
 - (void)_setEditingStyle:(int)arg1;
 - (void)_setFont:(id)arg1 layout:(BOOL)arg2;
 - (void)_setGrabberHidden:(BOOL)arg1;
+- (void)_setMultiselecting:(BOOL)arg1;
 - (void)_setNeedsSetup:(BOOL)arg1;
 - (void)_setOpaque:(BOOL)arg1 forSubview:(id)arg2;
+- (void)_setReorderControlImage:(id)arg1;
 - (void)_setReordering:(BOOL)arg1;
+- (void)_setSelectionStyle:(int)arg1 selectionTintColor:(id)arg2;
 - (void)_setShouldIndentWhileEditing:(BOOL)arg1;
 - (void)_setShowingDeleteConfirmation:(BOOL)arg1;
 - (void)_setShowsReorderControl:(BOOL)arg1;
-- (void)_setTableBackgroundCGColor:(struct CGColor { }*)arg1;
+- (void)_setTableBackgroundCGColor:(struct CGColor { }*)arg1 withSystemColorName:(id)arg2;
+- (void)_setTableView:(id)arg1;
 - (void)_setTarget:(id)arg1;
 - (void)_setUnhighlightedBackgroundColor:(id)arg1 forSubview:(id)arg2;
 - (void)_setupMenuGesture;
@@ -232,6 +225,7 @@
 - (struct CGSize { float x1; float x2; })_textInsetSize;
 - (id)_textLabel:(BOOL)arg1;
 - (id)_textLabel;
+- (id)_tintedDisclosureImagePressed:(BOOL)arg1;
 - (id)_titleForDeleteConfirmationButton;
 - (void)_topShadowDidFadeOut;
 - (id)_topShadowView:(BOOL)arg1;
@@ -244,13 +238,7 @@
 - (void)_updateSeparatorContent;
 - (void)_updateTopShadowView:(BOOL)arg1;
 - (void)_willBeDeleted;
-- (void)_willRemoveContentSubview:(id)arg1;
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
 - (id)accessibilityTableViewCellText;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (SEL)accessoryAction;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessoryRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)accessoryType;
@@ -271,7 +259,6 @@
 - (void)deleteConfirmationControlWasCancelled:(id)arg1;
 - (void)deleteConfirmationControlWasClicked:(id)arg1;
 - (id)detailTextLabel;
-- (void)didAddSubview:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)didTransitionToState:(unsigned int)arg1;
 - (BOOL)drawingEnabled;
@@ -285,7 +272,7 @@
 - (int)editingStyle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)font;
-- (id)forwardingTargetForSelector:(SEL)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gridView;
 - (BOOL)hidesAccessoryWhenEditing;
 - (id)image;
@@ -293,14 +280,12 @@
 - (id)imageView;
 - (int)indentationLevel;
 - (float)indentationWidth;
-- (int)indexOfAccessibilityElement:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)insertControl:(id)arg1 shouldInsertWithTarget:(id)arg2;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isAtLeastHalfSelected;
 - (BOOL)isEditing;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
@@ -309,11 +294,11 @@
 - (id)layoutManager;
 - (void)layoutSubviews;
 - (int)lineBreakMode;
-- (BOOL)longPressGestureCanTransitionToRecognizedState:(id)arg1;
+- (id)longPressGesture;
+- (id)multipleSelectionBackgroundView;
 - (id)oldEditingData;
 - (void)paste:(id)arg1;
 - (void)prepareForReuse;
-- (void)registerMockChild:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeControl:(id)arg1 endFrameForTarget:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeControl:(id)arg1 startFrameForTarget:(id)arg2;
 - (void)removeControl:(id)arg1 wasCanceledForTarget:(id)arg2;
@@ -326,7 +311,6 @@
 - (id)reuseIdentifier;
 - (id)sectionBorderColor;
 - (int)sectionLocation;
-- (void)selectAll:(id)arg1;
 - (id)selectedBackgroundView;
 - (void)selectedBackgroundViewChange:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)selectedImage;
@@ -334,7 +318,9 @@
 - (id)selectedTextColor;
 - (float)selectionFadeDuration;
 - (float)selectionPercent;
+- (id)selectionSegueTemplate;
 - (int)selectionStyle;
+- (id)selectionTintColor;
 - (id)separatorColor;
 - (int)separatorStyle;
 - (void)setAccessoryAction:(SEL)arg1;
@@ -344,6 +330,8 @@
 - (void)setBackgroundView:(id)arg1;
 - (void)setBottomShadowColor:(id)arg1;
 - (void)setClipsContents:(BOOL)arg1;
+- (void)setContentAlpha:(float)arg1;
+- (void)setDisclosureStateUsingDefault:(id)arg1 librarySelector:(SEL)arg2;
 - (void)setDrawingEnabled:(BOOL)arg1;
 - (void)setEditAction:(SEL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
@@ -363,6 +351,8 @@
 - (void)setIndentationWidth:(float)arg1;
 - (void)setLayoutManager:(id)arg1;
 - (void)setLineBreakMode:(int)arg1;
+- (void)setLongPressGesture:(id)arg1;
+- (void)setMultipleSelectionBackgroundView:(id)arg1;
 - (void)setOldEditingData:(id)arg1;
 - (void)setPlaceHolderValue:(id)arg1;
 - (void)setReturnAction:(SEL)arg1;
@@ -377,7 +367,9 @@
 - (void)setSelectedImage:(id)arg1;
 - (void)setSelectedTextColor:(id)arg1;
 - (void)setSelectionFadeDuration:(float)arg1;
+- (void)setSelectionSegueTemplate:(id)arg1;
 - (void)setSelectionStyle:(int)arg1;
+- (void)setSelectionTintColor:(id)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setShouldIndentWhileEditing:(BOOL)arg1;
@@ -412,10 +404,8 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)unregisterMockChild:(id)arg1;
 - (BOOL)wasSwiped;
 - (void)willMoveToSuperview:(id)arg1;
-- (void)willRemoveSubview:(id)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;
 
 @end

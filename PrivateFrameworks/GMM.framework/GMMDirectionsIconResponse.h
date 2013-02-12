@@ -10,22 +10,21 @@
     int _iconVersion;
 }
 
-@property(readonly) BOOL hasIconVersion;
+@property BOOL hasIconVersion;
 @property(retain) NSMutableArray * iconDefinitions;
-@property(readonly) int iconDefinitionsCount;
 @property int iconVersion;
 
 - (void)addIconDefinition:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasIconVersion;
 - (id)iconDefinitionAtIndex:(unsigned int)arg1;
 - (id)iconDefinitions;
-- (int)iconDefinitionsCount;
+- (unsigned int)iconDefinitionsCount;
 - (int)iconVersion;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setIconDefinition:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setHasIconVersion:(BOOL)arg1;
 - (void)setIconDefinitions:(id)arg1;
 - (void)setIconVersion:(int)arg1;
 - (void)writeTo:(id)arg1;

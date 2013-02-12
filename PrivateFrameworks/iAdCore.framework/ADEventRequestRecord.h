@@ -3,21 +3,17 @@
  */
 
 @interface ADEventRequestRecord : NSObject {
+    unsigned int _numberOfRetransmits;
     double _sent;
-    BOOL awaitingRetransmit;
-    unsigned int numberOfRetransmits;
 }
 
-@property BOOL awaitingRetransmit;
 @property unsigned int numberOfRetransmits;
 @property double sent;
 
 + (id)requestRecord;
 
-- (BOOL)awaitingRetransmit;
 - (unsigned int)numberOfRetransmits;
 - (double)sent;
-- (void)setAwaitingRetransmit:(BOOL)arg1;
 - (void)setNumberOfRetransmits:(unsigned int)arg1;
 - (void)setSent:(double)arg1;
 

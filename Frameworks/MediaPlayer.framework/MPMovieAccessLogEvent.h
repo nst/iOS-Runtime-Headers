@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVItemAccessLogEvent, NSDate, NSString;
+@class AVPlayerItemAccessLogEvent, NSDate, NSString;
 
 @interface MPMovieAccessLogEvent : NSObject <NSCopying> {
     struct MPMovieAccessLogEventInternal { 
-        AVItemAccessLogEvent *event; 
+        AVPlayerItemAccessLogEvent *event; 
     } _internal;
 }
 
 @property(readonly) NSString * URI;
-@property struct MPMovieAccessLogEventInternal { AVItemAccessLogEvent *event; } _internal;
+@property struct MPMovieAccessLogEventInternal { id x1; } _internal;
 @property(readonly) double durationWatched;
 @property(readonly) double indicatedBitrate;
 @property(readonly) long long numberOfBytesTransferred;

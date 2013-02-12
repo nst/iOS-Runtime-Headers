@@ -18,7 +18,6 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasRelativePoints;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (id)relativePoints;
 - (void)setAbsolutePoint:(id)arg1;

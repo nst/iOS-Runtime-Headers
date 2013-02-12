@@ -13,20 +13,29 @@
 @property ML3MusicLibrary * library;
 @property(readonly) long long persistentID;
 
++ (BOOL)_deleteRowForPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 library:(id)arg3 table:(id)arg4 usingColumn:(id)arg5;
 + (id)aggregateQueryWithUnitQuery:(id)arg1 foreignPersistentIDProperty:(id)arg2;
++ (id)allProperties;
 + (id)anyInLibrary:(id)arg1 predicate:(id)arg2;
++ (id)collectionClassesToUpdateBeforeDelete;
 + (id)countedPropertyForMPMediaEntityProperty:(id)arg1;
 + (id)defaultOrderingProperties;
++ (BOOL)deleteFromLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
 + (id)directCollectionQueryWithAggregateQuery:(id)arg1 predicate:(id)arg2 usingSections:(BOOL)arg3;
 + (id)disambiguatedSQLForProperty:(id)arg1;
++ (void)enumeratePersistentIDsInLibrary:(id)arg1 afterRevision:(long long)arg2 usingBlock:(id)arg3;
 + (id)extraTablesToDelete;
++ (id)extraTablesToInsert;
 + (id)foreignColumnForProperty:(id)arg1;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
++ (BOOL)incrementRevisionWithLibrary:(id)arg1 persistentID:(long long)arg2 deleted:(BOOL)arg3;
 + (id)indexableSQLForProperties:(id)arg1;
 + (BOOL)insertValues:(id)arg1 intoTable:(id)arg2 persistentID:(long long)arg3 library:(id)arg4;
++ (BOOL)insertionChangesLibraryContents;
 + (id)joinClauseForProperty:(id)arg1;
 + (BOOL)libraryContentsChangeForProperty:(id)arg1;
++ (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2;
 + (id)newWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
 + (id)orderingSQLForProperties:(id)arg1 directionality:(id)arg2;
@@ -38,17 +47,23 @@
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 usingSections:(BOOL)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2;
-+ (id)representativeEntityOfEntity:(id)arg1 persistentIDProperty:(id)arg2 foreignPersistentIDProperty:(id)arg3;
++ (id)replacerWithProperties:(id)arg1 databaseHandle:(struct sqlite3 { }*)arg2;
++ (int)revisionTrackingCode;
++ (id)sectionPropertyForProperty:(id)arg1;
 + (id)subselectPropertyForProperty:(id)arg1;
 + (id)subselectStatementForProperty:(id)arg1;
++ (id)unsettableProperties;
 
-- (BOOL)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2;
+- (id)copyInLibrary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)deleteFromLibrary;
+- (id)description;
+- (void)didChangeValueForProperties:(const id*)arg1 count:(unsigned int)arg2;
 - (BOOL)existsInLibrary;
 - (void)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3;
 - (unsigned int)hash;
-- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2;
+- (void)incrementRevision;
+- (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 - (id)initWithPersistentID:(long long)arg1 inLibrary:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)library;
@@ -56,7 +71,9 @@
 - (id)newSelectSQLForProperties:(id*)arg1 count:(unsigned int)arg2 predicate:(id)arg3;
 - (long long)persistentID;
 - (void)setLibrary:(id)arg1;
-- (void)setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)setValues:(const id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3;
+- (BOOL)setValuesForPropertiesWithDictionary:(id)arg1;
 - (id)valueForProperty:(id)arg1;
 
 @end

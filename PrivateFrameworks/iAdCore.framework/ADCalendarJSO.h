@@ -31,7 +31,7 @@
 @property(retain) WebScriptObject * listener;
 @property(retain) ADCalendarEventJSO * presentEvent;
 @property(retain) WebScriptObject * presentListener;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } presentRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } presentRect;
 @property(getter=isPrivilegedClient) BOOL privilegedClient;
 @property(retain) WebScriptObject * rect;
 
@@ -40,6 +40,7 @@
 + (id)scriptSelectors;
 + (id)scriptingKeys;
 
+- (void)_popoverDismissed:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)event;

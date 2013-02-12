@@ -15,6 +15,19 @@
 + (id)cookiesWithResponseHeaderFields:(id)arg1 forURL:(id)arg2;
 + (id)requestHeaderFieldsWithCookies:(id)arg1;
 
+- (id)Comment;
+- (id)CommentURL;
+- (id)Discard;
+- (id)Domain;
+- (id)Expires;
+- (id)MaxAge;
+- (id)Name;
+- (id)OriginURL;
+- (id)Path;
+- (id)Port;
+- (id)Secure;
+- (id)Value;
+- (id)Version;
 - (struct OpaqueCFHTTPCookie { }*)_GetInternalCFHTTPCookie;
 - (int)_compareForHeaderOrder:(id)arg1;
 - (BOOL)_isExpired;

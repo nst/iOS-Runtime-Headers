@@ -6,7 +6,7 @@
 
 @interface _NSManagedObject_st : NSObject {
     id _cd_entity;
-    id _cd_faultHandler;
+    unsigned int _cd_extraFlags;
     unsigned int _cd_lockingInfo;
     NSManagedObjectContext *_cd_managedObjectContext;
     NSManagedObjectID *_cd_objectID;

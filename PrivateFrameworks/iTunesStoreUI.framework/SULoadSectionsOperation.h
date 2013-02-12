@@ -2,32 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUSectionsResponse;
+@class NSString, SUSectionsResponse;
 
 @interface SULoadSectionsOperation : ISOperation <ISURLOperationDelegate> {
+    NSString *_activeSectionVersionString;
     SUSectionsResponse *_sectionsResponse;
     BOOL _shouldUseCache;
 }
 
+@property(copy) NSString * activeSectionVersionString;
 @property(readonly) SUSectionsResponse * sectionsResponse;
 @property BOOL shouldUseCache;
 
-- (id)_baseCachePath;
 - (id)_cachePathForVersion:(id)arg1 create:(BOOL)arg2;
-- (BOOL)_loadArtworkForSections:(id)arg1 fromCacheDirectory:(id)arg2;
-- (BOOL)_loadDefaultSections;
-- (BOOL)_loadFromDictionary:(id)arg1;
 - (BOOL)_loadSectionsFromCacheForVersion:(id)arg1;
 - (BOOL)_loadSectionsFromNetworkWithDictionary:(id)arg1;
-- (BOOL)_loadSectionsFromPath:(id)arg1;
-- (id)_newImageForIdentifier:(id)arg1 variant:(id)arg2 cacheDirectory:(id)arg3;
 - (void)_setSectionsResponse:(id)arg1;
-- (void)_writeImage:(id)arg1 toCachePath:(id)arg2 forIdentifier:(id)arg3 variant:(id)arg4;
-- (void)_writeSectionsToCache:(id)arg1 forVersion:(id)arg2 withOriginalDictionary:(id)arg3;
+- (void)_writeSectionsResponseToCache:(id)arg1 forVersion:(id)arg2;
+- (id)activeSectionVersionString;
 - (void)dealloc;
 - (id)init;
 - (void)run;
 - (id)sectionsResponse;
+- (void)setActiveSectionVersionString:(id)arg1;
 - (void)setShouldUseCache:(BOOL)arg1;
 - (BOOL)shouldUseCache;
 

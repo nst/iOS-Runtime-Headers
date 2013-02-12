@@ -15,10 +15,6 @@
     UIView *_topCrossView;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (BOOL)_accessibilityIsTitleElement;
-- (BOOL)_accessibilityServesAsFirstElement;
 - (void)_cleanUpCrossView;
 - (void)_crossFadeHiddingButton:(BOOL)arg1;
 - (id)_currentTextColorForBarStyle:(int)arg1;
@@ -31,13 +27,10 @@
 - (void)_setLineBreakMode:(int)arg1;
 - (float)_titleWidth;
 - (BOOL)_useSilverLookForBarStyle:(int)arg1;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawText:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 barStyle:(int)arg3;
 - (id)font;
 - (id)initWithNavigationItem:(id)arg1;
-- (BOOL)isAccessibilityElement;
 - (id)navigationItem;
 - (void)setFont:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

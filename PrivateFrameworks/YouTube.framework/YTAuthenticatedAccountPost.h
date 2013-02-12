@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSMutableURLRequest, NSURLConnection;
 
-@interface YTAuthenticatedAccountPost : NSObject {
+@interface YTAuthenticatedAccountPost : NSObject <NSURLConnectionDelegate> {
     NSURLConnection *_connection;
     id _delegate;
     NSMutableURLRequest *_postRequest;
@@ -27,7 +27,6 @@
 - (void)dealloc;
 - (void)failWithError:(id)arg1;
 - (void)fileComplaintForVideo:(id)arg1;
-- (id)init;
 - (void)postComment:(id)arg1 forVideo:(id)arg2;
 - (void)removePlaylist:(id)arg1;
 - (void)removeVideoFromFavorites:(id)arg1;

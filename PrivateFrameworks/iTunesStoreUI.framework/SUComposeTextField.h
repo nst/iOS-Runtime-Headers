@@ -23,7 +23,6 @@
 @property(readonly) UITextField * textField;
 @property(getter=isValid,readonly) BOOL valid;
 
-+ (void)_initializeSafeCategory;
 + (id)labelColorForStyle:(int)arg1;
 + (id)labelFontForStyle:(int)arg1;
 

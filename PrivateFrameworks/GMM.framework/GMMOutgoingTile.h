@@ -13,11 +13,8 @@
 
 @property(retain) GMMClientCapabilities * clientCapabilities;
 @property(retain) NSMutableArray * indexs;
-@property(readonly) int indexsCount;
 @property int tileSize;
 @property int zoom;
-
-+ (id)outgoingTileForTilePaths:(id)arg1 needSupertile:(BOOL*)arg2;
 
 - (void)addIndex:(id)arg1;
 - (id)clientCapabilities;
@@ -26,11 +23,9 @@
 - (id)dictionaryRepresentation;
 - (id)indexAtIndex:(unsigned int)arg1;
 - (id)indexs;
-- (int)indexsCount;
-- (id)init;
+- (unsigned int)indexsCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
-- (void)setIndex:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setIndexs:(id)arg1;
 - (void)setTileSize:(int)arg1;
 - (void)setZoom:(int)arg1;

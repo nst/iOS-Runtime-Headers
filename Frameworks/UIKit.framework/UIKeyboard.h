@@ -17,22 +17,23 @@
 @property BOOL typingEnabled;
 
 + (void)_clearActiveKeyboard;
-+ (void)_initializeSafeCategory;
 + (id)activeKeyboard;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrameForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
 + (void)initImplementationNow;
++ (BOOL)isOnScreen;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })onscreenFrameForTextInputTraits:(id)arg1;
 + (void)removeAllDynamicDictionaries;
++ (BOOL)respondsToProxGesture;
 + (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 
 - (void)_acceptCurrentCandidate;
 - (id)_baseKeyForRepresentedString:(id)arg1;
 - (void)_changeToKeyplane:(id)arg1;
 - (void)_clearCurrentInputManager;
-- (void)_disableDynamicDictionary:(BOOL)arg1;
 - (id)_getAutocorrection;
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
@@ -40,9 +41,11 @@
 - (BOOL)_hasCandidates;
 - (BOOL)_isAutomaticKeyboard;
 - (id)_keyplaneForKey:(id)arg1;
+- (id)_keyplaneNamed:(id)arg1;
 - (int)_positionInCandidateList:(id)arg1;
 - (void)_setAutocorrects:(BOOL)arg1;
 - (void)_setInputMode:(id)arg1;
+- (id)_touchPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_typeCharacter:(id)arg1 withError:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (void)acceptAutocorrection;
 - (void)activate;
@@ -80,6 +83,7 @@
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;
 - (void)removeAutocorrectPrompt;
 - (void)removeFromSuperview;
+- (void)resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)returnKeyEnabled;
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)setCaretVisible:(BOOL)arg1;

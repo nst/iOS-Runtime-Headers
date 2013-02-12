@@ -11,6 +11,7 @@
 
 + (id)_currentMoviePlayerController;
 + (BOOL)_playbackInProgress;
++ (id)_playerKeysToObserve;
 + (void)_setCurrentMoviePlayerController:(id)arg1;
 + (void)_setPlaybackInProgress:(BOOL)arg1;
 + (Class)windowClass;
@@ -25,12 +26,12 @@
 - (void)_itemFailedToPlay:(id)arg1;
 - (id)_localizedDescriptionForErrorCode:(int)arg1;
 - (void)_mediaServerDied:(id)arg1;
-- (void)_movieDidDecode:(id)arg1;
+- (void)_observeAVPlayer;
 - (void)_pausePlaybackForNotification:(id)arg1;
 - (void)_play;
 - (void)_playbackEnded:(id)arg1;
 - (void)_playbackFailedWithError:(id)arg1;
-- (void)_playbackRateChanged:(id)arg1;
+- (void)_playbackRateChangedFrom:(float)arg1 to:(float)arg2;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_playerFadeInAnimationDidEnd:(id)arg1 finished:(id)arg2;
 - (void)_playerFadeOutAnimationDidEnd:(id)arg1 finished:(id)arg2;
@@ -39,8 +40,8 @@
 - (void)_setMoviePlayer:(id)arg1;
 - (void)_simpleRemoteNotification:(id)arg1;
 - (void)_tearDownPlayer:(BOOL)arg1;
+- (void)_unobserveAVPlayer;
 - (void)_updateForCurrentMovieControlMode;
-- (void)_validationDidFinish:(id)arg1;
 - (void)_videoViewScaleModeDidChange:(id)arg1;
 - (unsigned int)_visiblePartsForMovieControlMode;
 - (id)_volumeAudioCategory;
@@ -54,6 +55,7 @@
 - (id)initWithContentURL:(id)arg1;
 - (double)initialPlaybackTime;
 - (int)movieControlMode;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)play;
 - (int)scalingMode;
 - (void)setBackgroundColor:(id)arg1;

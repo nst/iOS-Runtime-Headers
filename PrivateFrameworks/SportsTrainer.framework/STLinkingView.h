@@ -25,8 +25,6 @@
 @property int linkingType;
 @property(copy) NSString * serialNumber;
 
-+ (void)_initializeSafeCategory;
-
 - (void)_done;
 - (void)_linkNewEmped;
 - (void)_linkNewRemote;

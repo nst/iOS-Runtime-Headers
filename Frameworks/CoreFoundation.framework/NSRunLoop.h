@@ -11,12 +11,10 @@
     id _rl;
 }
 
-+ (id)_mapkit_backgroundDrawingRunLoop;
 + (id)_mapkit_networkIORunLoop;
 + (id)_new:(id)arg1;
 + (id)currentRunLoop;
 + (id)mainRunLoop;
-+ (void)set_mapkit_backgroundDrawingRunLoop:(id)arg1;
 + (void)set_mapkit_networkIORunLoop:(id)arg1;
 
 - (void)_addPort:(id)arg1 forMode:(id)arg2;

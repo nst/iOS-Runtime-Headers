@@ -8,9 +8,9 @@
     NSAttributedString *_inString;
 }
 
-@property(retain,readonly) NSAttributedString * inString;
-@property(retain,readonly) NSString * name;
-@property(retain,readonly) NSArray * resultsForLogging;
+@property(readonly) NSAttributedString * inString;
+@property(readonly) NSString * name;
+@property(readonly) NSArray * resultsForLogging;
 @property(readonly) BOOL shouldPreprocess;
 
 - (void)dealloc;

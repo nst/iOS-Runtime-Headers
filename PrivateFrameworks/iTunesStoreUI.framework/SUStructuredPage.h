@@ -5,17 +5,22 @@
 @class NSString, SUItem, SUItemList, SUPageSectionGroup, SUStorePageProtocol;
 
 @interface SUStructuredPage : NSObject <NSCopying> {
+    BOOL _artworkShouldFitWidth;
+    float _artworkWidth;
     BOOL _didShowDialog;
     int _displayStyle;
     SUItem *_item;
     SUItemList *_itemList;
     SUStorePageProtocol *_protocol;
     SUPageSectionGroup *_sectionsGroup;
+    BOOL _shouldHideSignInButton;
     NSString *_title;
     int _type;
     BOOL _wantsIndexBar;
 }
 
+@property(readonly) BOOL artworkShouldFitWidth;
+@property(readonly) float artworkWidth;
 @property(readonly) BOOL didShowDialog;
 @property(readonly) int displayStyle;
 @property(readonly) BOOL hasDisplayableContent;
@@ -23,6 +28,7 @@
 @property(retain) SUItemList * itemList;
 @property(retain) SUStorePageProtocol * protocol;
 @property(retain) SUPageSectionGroup * sectionsGroup;
+@property(readonly) BOOL shouldHideSignInButton;
 @property(retain) NSString * title;
 @property int type;
 @property(readonly) BOOL wantsIndexBar;
@@ -35,6 +41,8 @@
 - (void)_parseItemsFromDictionary:(id)arg1;
 - (void)_parseProtocolFromDictionary:(id)arg1;
 - (void)_parseTemplateParametersFromDictionary:(id)arg1;
+- (BOOL)artworkShouldFitWidth;
+- (float)artworkWidth;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)didShowDialog;
@@ -51,6 +59,7 @@
 - (void)setSectionsGroup:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setType:(int)arg1;
+- (BOOL)shouldHideSignInButton;
 - (id)title;
 - (int)type;
 - (BOOL)wantsIndexBar;

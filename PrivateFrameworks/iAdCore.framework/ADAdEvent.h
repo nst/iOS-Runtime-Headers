@@ -2,40 +2,44 @@
    Image: /System/Library/PrivateFrameworks/iAdCore.framework/iAdCore
  */
 
-@class ADAdConnection, ADDeviceOrientation, NSString;
+@class NSString;
 
 @interface ADAdEvent : PBCodable {
-    ADAdConnection *_connectionType;
+    int _connectionType;
     NSString *_context;
-    ADDeviceOrientation *_deviceOrientation;
+    int _deviceOrientation;
+    BOOL _hasConnectionType;
+    BOOL _hasDeviceOrientation;
     BOOL _hasTimestampEvent;
     unsigned long long _timestampEvent;
 }
 
-@property(retain) ADAdConnection * connectionType;
+@property int connectionType;
 @property(retain) NSString * context;
-@property(retain) ADDeviceOrientation * deviceOrientation;
-@property(readonly) BOOL hasConnectionType;
+@property int deviceOrientation;
+@property BOOL hasConnectionType;
 @property(readonly) BOOL hasContext;
-@property(readonly) BOOL hasDeviceOrientation;
-@property(readonly) BOOL hasTimestampEvent;
+@property BOOL hasDeviceOrientation;
+@property BOOL hasTimestampEvent;
 @property unsigned long long timestampEvent;
 
-- (id)connectionType;
+- (int)connectionType;
 - (id)context;
 - (void)dealloc;
 - (id)description;
-- (id)deviceOrientation;
+- (int)deviceOrientation;
 - (id)dictionaryRepresentation;
 - (BOOL)hasConnectionType;
 - (BOOL)hasContext;
 - (BOOL)hasDeviceOrientation;
 - (BOOL)hasTimestampEvent;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
-- (void)setConnectionType:(id)arg1;
+- (void)setConnectionType:(int)arg1;
 - (void)setContext:(id)arg1;
-- (void)setDeviceOrientation:(id)arg1;
+- (void)setDeviceOrientation:(int)arg1;
+- (void)setHasConnectionType:(BOOL)arg1;
+- (void)setHasDeviceOrientation:(BOOL)arg1;
+- (void)setHasTimestampEvent:(BOOL)arg1;
 - (void)setTimestampEvent:(unsigned long long)arg1;
 - (unsigned long long)timestampEvent;
 - (void)writeTo:(id)arg1;

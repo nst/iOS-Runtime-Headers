@@ -21,6 +21,7 @@
     } _minSize;
 }
 
+- (id).cxx_construct;
 - (id)allItems;
 - (id)breadthFirstDescription;
 - (void)clearAllItemsPerforming:(id)arg1;

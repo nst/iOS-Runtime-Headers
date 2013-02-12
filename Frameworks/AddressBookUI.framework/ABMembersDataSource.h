@@ -2,32 +2,24 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABMembersDataSourceDelegate>, <ABStyleProvider>, ABModel, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue;
+@class <ABMembersDataSourceDelegate>, <ABStyleProvider>, ABModel, NSMutableArray;
 
 @interface ABMembersDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
     void *_addressBook;
     <ABMembersDataSourceDelegate> *_delegate;
     struct __CFDictionary { } *_displayableSectionHeaderToSectionHeader;
     struct __CFDictionary { } *_displayableSectionIndexToSectionIndex;
-    NSMutableSet *_forceReloadCells;
     ABModel *_model;
-    void *_personImageLoadingAddressBook;
-    NSMutableDictionary *_personImageLoadingCache;
-    NSOperationQueue *_personImageLoadingQueue;
     struct __CFDictionary { } *_sectionHeaderToDisplayableSectionHeader;
     struct __CFDictionary { } *_sectionHeaderToSortingIndex;
     NSMutableArray *_sectionIndexTitles;
     struct __CFDictionary { } *_sectionIndexToDisplayableSectionIndex;
-    BOOL _shouldHideImages;
-    BOOL _shouldShowOnlyPersonImage;
     <ABStyleProvider> *_styleProvider;
 }
 
 @property void* addressBook;
 @property <ABMembersDataSourceDelegate> * delegate;
 @property(retain) ABModel * model;
-@property BOOL shouldPickBestImage;
-@property BOOL shouldShowImages;
 @property(retain) <ABStyleProvider> * styleProvider;
 
 - (void*)addressBook;
@@ -38,12 +30,6 @@
 - (id)displayableSectionIndexFromSectionIndex:(id)arg1;
 - (id)model;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void*)personImageLoadingAddressBook;
-- (id)personImageLoadingCache;
-- (id)personImageLoadingQueue;
-- (void)releaseImageCaches;
-- (void)reloadCellForPerson:(void*)arg1;
-- (void)saveImageCaches;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (struct __CFDictionary { }*)sectionHeaderSortingIndices;
 - (id)sectionIndexFromDisplayableSectionIndex:(id)arg1;
@@ -51,11 +37,7 @@
 - (void)setAddressBook:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setModel:(id)arg1;
-- (void)setShouldPickBestImage:(BOOL)arg1;
-- (void)setShouldShowImages:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (BOOL)shouldPickBestImage;
-- (BOOL)shouldShowImages;
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

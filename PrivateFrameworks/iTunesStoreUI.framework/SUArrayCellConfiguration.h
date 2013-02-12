@@ -2,28 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIImage;
-
 @interface SUArrayCellConfiguration : SUCellConfiguration {
-    struct CGRect { struct CGPoint { 
-            float x; 
-            float y; 
-        } x1; struct CGSize { 
-            float width; 
-            float height; 
-    struct CGRect { struct CGPoint { 
-            float x; 
-            float y; 
-        } x1; struct CGSize { 
-            float width; 
-            float height; 
-        } x2; } *_imageFrames;
-    UIImage **_images;
+    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_imageFrames;
+    id *_images;
     unsigned int _numberOfImages;
     unsigned int _numberOfStrings;
-    UIImage **_selectedImages;
-        } x2; } *_stringFrames;
-    NSString **_strings;
+    id *_selectedImages;
+    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_stringFrames;
+    id *_strings;
 }
 
 - (id)_accessibilityStringsArrayPointer;

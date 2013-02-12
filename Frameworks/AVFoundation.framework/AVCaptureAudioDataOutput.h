@@ -19,7 +19,9 @@
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
+- (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)init;
+- (BOOL)isTheOnlyDataOutput;
 - (struct dispatch_queue_s { }*)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;
 - (void)setSampleBufferDelegate:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2;

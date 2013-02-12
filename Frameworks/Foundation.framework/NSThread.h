@@ -7,8 +7,7 @@
     id _private;
 }
 
-+ (void)_ay_prepareForInterThreadMessages;
-+ (id)_mapkit_backgroundDrawingThread;
++ (void)_im_runBlock:(id)arg1;
 + (id)_mapkit_networkIOThread;
 + (void)_mapkit_runThread:(id)arg1;
 + (id)callStackReturnAddresses;
@@ -26,6 +25,8 @@
 + (id)stackBacktrace;
 + (double)threadPriority;
 
+- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)__im_performBlock:(id)arg1;
 - (void)_nq:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
@@ -38,7 +39,6 @@
 - (BOOL)isFinished;
 - (BOOL)isMainThread;
 - (void)main;
-- (void)mf_performOneway:(BOOL)arg1 result:(void*)arg2 withTarget:(id)arg3 selector:(SEL)arg4;
 - (id)name;
 - (void)registerForStopNotification;
 - (id)runLoop;

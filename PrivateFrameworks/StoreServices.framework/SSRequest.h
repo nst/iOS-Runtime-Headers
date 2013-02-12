@@ -4,7 +4,7 @@
 
 @class <SSRequestDelegate>, NSLock, NSString, SSRequestGroup;
 
-@interface SSRequest : NSObject {
+@interface SSRequest : NSObject <SSCoding> {
     int _backgroundTaskIdentifier;
     BOOL _cancelAfterTaskExpiration;
     <SSRequestDelegate> *_delegate;
@@ -36,6 +36,7 @@
 - (void)awakeFromDaemonInRequestGroup:(id)arg1;
 - (void)cancel;
 - (id)copyPropertyListEncoding;
+- (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnect;
@@ -45,6 +46,7 @@
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
 - (id)init;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (void)registerForDaemonNotifications;
 - (id)requestGroup;

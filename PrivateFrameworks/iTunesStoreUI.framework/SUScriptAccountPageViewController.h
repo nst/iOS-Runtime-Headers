@@ -12,6 +12,7 @@
 @property(readonly) NSString * styleNameSignUp;
 @property(readonly) NSString * styleNameViewAccount;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)_className;

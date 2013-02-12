@@ -8,7 +8,8 @@
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
+- (unsigned int)retainCount;
 
 @end

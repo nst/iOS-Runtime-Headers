@@ -23,11 +23,10 @@
 - (void)_restoreOriginalNavigationViews:(BOOL)arg1;
 - (void)_showChapterGuideNavigationViews;
 - (void)dealloc;
-- (BOOL)leaveSpaceForStatusBarAndNavigationBarInOrientation:(int)arg1;
 - (id)navigationBar;
+- (void)performTransition:(unsigned int)arg1;
 - (BOOL)playAfterFlip;
 - (void)setNavigationBar:(id)arg1;
 - (void)setPlayAfterFlip:(BOOL)arg1;
-- (void)transition:(unsigned int)arg1;
 
 @end

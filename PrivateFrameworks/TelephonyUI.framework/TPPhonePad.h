@@ -22,20 +22,17 @@
 
 @property BOOL supportsHardPause;
 
-+ (BOOL)__original_resolveClassMethod:(SEL)arg1;
 + (void)_delayedDeactivate;
-+ (void)_initializeSafeCategory;
 + (BOOL)launchFieldTestIfNeeded:(id)arg1;
-+ (BOOL)resolveClassMethod:(SEL)arg1;
 + (BOOL)shouldStringAutoDial:(id)arg1 givenLastChar:(BOOL)arg2;
 
-- (id)__original_forwardingTargetForSelector:(SEL)arg1;
 - (void)_activateSounds:(BOOL)arg1;
 - (void)_appResumed;
 - (void)_appSuspended;
 - (id)_buttonForKeyAtIndex:(int)arg1;
 - (void)_handleKey:(id)arg1 forUIEvent:(id)arg2;
 - (void)_handleKeyPressAndHold:(id)arg1;
+- (id)_imageByCroppingImage:(id)arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (int)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_keypadImage;
 - (struct CGPoint { float x1; float x2; })_keypadOrigin;
@@ -45,15 +42,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForKey:(int)arg1;
 - (void)_stopAllSoundsForcingCallbacks:(BOOL)arg1;
 - (void)_stopSoundForKey:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_updateRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
 - (float)_yFudge;
-- (id)accessibilityContainerElements;
 - (BOOL)cancelTouchTracking;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (void)movedFromWindow:(id)arg1;
 - (void)movedToWindow:(id)arg1;
 - (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

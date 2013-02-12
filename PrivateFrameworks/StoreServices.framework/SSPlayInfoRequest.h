@@ -4,7 +4,7 @@
 
 @class <SSPlayInfoRequestDelegate>, SSPlayInfoRequestContext, SSPlayInfoResponse;
 
-@interface SSPlayInfoRequest : SSRequest {
+@interface SSPlayInfoRequest : SSRequest <SSCoding> {
     SSPlayInfoRequestContext *_context;
     SSPlayInfoResponse *_response;
 }
@@ -15,12 +15,14 @@
 
 - (void)_sendResponseToDelegate:(id)arg1;
 - (id)copyPropertyListEncoding;
+- (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)handleFailureResponse:(id)arg1;
 - (BOOL)handleFinishResponse:(id)arg1 error:(id*)arg2;
 - (id)init;
 - (id)initWithPlayInfoContext:(id)arg1;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (BOOL)issueRequestForIdentifier:(id)arg1 error:(id*)arg2;
 - (id)playInfoContext;
 - (id)playInfoResponse;

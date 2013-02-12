@@ -5,6 +5,28 @@
 @class AVCaptureInputPort, AVCaptureOutput, NSArray, NSMutableArray;
 
 @interface AVCaptureConnectionInternal : NSObject {
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct CGSize { 
+        float width; 
+        float height; 
     BOOL active;
     NSArray *audioChannelLevels;
     NSMutableArray *audioChannels;
@@ -12,15 +34,21 @@
     BOOL enabled;
     NSMutableArray *inputPorts;
     long long lastGetAudioLevelsTime;
-    float maxVideoScaleAndCropFactor;
     AVCaptureOutput *output;
+    int outputChangeSeedOnDisable;
+    } videoCropRect;
+    BOOL videoFirstAndLastFramesUncropped;
     AVCaptureInputPort *videoInputPort;
+    } videoMaxFrameDuration;
+    float videoMaxScaleAndCropFactor;
+    } videoMinFrameDuration;
     BOOL videoMirrored;
     BOOL videoMirroredIsSetByClient;
     BOOL videoMirroringSupported;
+    } videoMotionFilterOverlapRatios;
     int videoOrientation;
-    BOOL videoOrientationIsSetByClient;
     BOOL videoOrientationSupported;
+    int videoRetainedBufferCountHint;
     float videoScaleAndCropFactor;
 }
 

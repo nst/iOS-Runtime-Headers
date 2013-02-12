@@ -16,15 +16,15 @@
     NSString *_title;
 }
 
-@property(copy,readonly) NSNumber * adamId;
+@property(readonly) NSNumber * adamId;
 @property int error;
 @property(retain) NSDate * expirationDate;
 @property(retain) WebScriptObject * jsListener;
-@property(copy,readonly) NSArray * offers;
-@property(copy,readonly) NSArray * previews;
+@property(readonly) NSArray * offers;
+@property(readonly) NSArray * previews;
 @property(getter=isPrivilegedClient) BOOL privilegedClient;
 @property(retain) SSItem * storeItem;
-@property(copy,readonly) NSString * title;
+@property(readonly) NSString * title;
 
 + (id)scriptingKeys;
 

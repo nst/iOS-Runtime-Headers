@@ -14,7 +14,6 @@
 @property(retain) NSArray * items;
 @property int tag;
 
-- (id)_itemAtIndex:(int)arg1 rowOffset:(int*)arg2;
 - (id)cellForSubitemAtIndex:(int)arg1;
 - (void)dealloc;
 - (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
@@ -22,6 +21,7 @@
 - (BOOL)hasSubitemForIndexPathRow:(unsigned int)arg1;
 - (id)headerTitle;
 - (id)initWithTag:(int)arg1 headerTitle:(id)arg2;
+- (id)itemAtIndex:(int)arg1 subitemIndex:(int*)arg2;
 - (id)itemAtIndex:(int)arg1;
 - (id)items;
 - (int)numberOfRows;

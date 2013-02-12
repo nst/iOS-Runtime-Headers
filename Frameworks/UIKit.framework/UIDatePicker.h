@@ -17,11 +17,18 @@
 @property(retain) NSDate * minimumDate;
 @property int minuteInterval;
 @property(retain) NSTimeZone * timeZone;
+@property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
 
-+ (void)_initializeSafeCategory;
-
+- (float)_contentWidth;
 - (void)_insertPickerView;
+- (id)_locale;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)_setHidesLabels:(BOOL)arg1;
+- (void)_setHighlightsToday:(BOOL)arg1;
+- (void)_setLocale:(id)arg1;
+- (void)_setUsesBlackChrome:(BOOL)arg1;
+- (BOOL)_usesBlackChrome;
+- (void)awakeFromNib;
 - (id)calendar;
 - (double)countDownDuration;
 - (id)date;
@@ -31,7 +38,6 @@
 - (int)hour;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (id)locale;
 - (id)maximumDate;
 - (id)minimumDate;

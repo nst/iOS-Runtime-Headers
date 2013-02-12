@@ -27,6 +27,7 @@
 @property(readonly) NSArray * items;
 @property(readonly) MPMediaQuery * nativeQuery;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 

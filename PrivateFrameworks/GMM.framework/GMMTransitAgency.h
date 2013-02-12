@@ -22,7 +22,6 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasMainUrl;
 - (BOOL)hasPhone;
-- (id)init;
 - (id)mainUrl;
 - (id)name;
 - (id)phone;

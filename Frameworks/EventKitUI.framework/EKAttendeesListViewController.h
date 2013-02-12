@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKAttendeesListView, EKEvent;
+@class <EKEditItemViewControllerDelegate>, EKAttendeesListView, EKEvent;
 
-@interface EKAttendeesListViewController : UIViewController {
+@interface EKAttendeesListViewController : UIViewController <EKEditItemViewControllerProtocol> {
     EKAttendeesListView *_contentView;
     EKEvent *_event;
 }
+
+@property <EKEditItemViewControllerDelegate> * editDelegate;
 
 - (void)attendeeSelected:(id)arg1;
 - (void)dealloc;

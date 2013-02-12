@@ -2,31 +2,35 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKSMSMessageDelivery, NSMutableArray;
+@class CKSMSMessageDelivery, NSArray, NSMutableArray, NSString;
 
 @interface CKSMSMessage : CKMessage {
+    unsigned int _messagePartsLoaded : 1;
+    unsigned int _subjectLoaded : 1;
     int _associationID;
     CKSMSMessageDelivery *_delivery;
+    NSArray *_messageParts;
     NSMutableArray *_messages;
     int _rowID;
+    NSString *_subject;
 }
 
 @property(readonly) int associationID;
 @property(retain) CKSMSMessageDelivery * delivery;
-@property(readonly) int rowID;
 
 - (double)_loadDate;
 - (void)_loadFailedSendCount;
+- (BOOL)_loadIsFromDowngrading;
+- (BOOL)_loadIsRead;
 - (BOOL)_loadOutgoing;
 - (void)_loadSubject;
 - (void)_loadText;
 - (void)_loadUIFlags;
 - (id)_newParts;
+- (void)_setParts:(id)arg1;
 - (void)_setupDeliveryIfPending;
-- (void)_storeUIFlags:(unsigned long)arg1;
-- (void)addMessage:(struct __CKSMSRecord { }*)arg1;
+- (void)addMessage:(void*)arg1;
 - (id)address;
-- (id)alertImageData;
 - (int)associationID;
 - (BOOL)containsDisplayableMessageParts;
 - (void)dealloc;
@@ -36,26 +40,31 @@
 - (void)deliveryCompletedForMessage:(id)arg1;
 - (void)deliveryFailedForMessage:(id)arg1;
 - (void)deliveryPartiallyFailedForMessage:(id)arg1;
-- (BOOL)hasBeenRead;
+- (id)guid;
 - (unsigned int)hash;
-- (id)initWithCTMessage:(struct __CKSMSRecord { }*)arg1 messageParts:(id)arg2;
+- (id)initWithCTMessage:(void*)arg1 messageParts:(id)arg2;
 - (id)initWithCTMessages:(id)arg1 messageParts:(id)arg2;
 - (id)initWithRowID:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isForward;
-- (BOOL)isOnlyDisplayableMessagePart:(id)arg1;
+- (BOOL)isFromMe;
 - (BOOL)isPlaceholder;
+- (void)loadParts;
 - (void)markAsRead;
 - (int)messageCount;
+- (id)messagePartAtIndex:(unsigned int)arg1;
+- (unsigned int)messagePartCount;
 - (id)messages;
-- (void)permanentlyRemoveMessage;
+- (id)parts;
 - (void)prepareToResend;
-- (BOOL)receivedDeliveryReceipt;
 - (int)rowID;
 - (id)sender;
 - (int)sentCount;
+- (id)sequenceNumber;
 - (void)setDelivery:(id)arg1;
+- (void)setIsFromDowngrading:(BOOL)arg1;
 - (void)setMessages:(id)arg1;
+- (id)subject;
 - (int)totalMessageCount;
 
 @end

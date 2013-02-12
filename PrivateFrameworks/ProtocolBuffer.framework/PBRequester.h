@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class <PBRequesterDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableData, NSString, NSURL, NSURLConnection, PBDataReader;
+@class <PBRequesterDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableData, NSMutableDictionary, NSString, NSURL, NSURLConnection, PBDataReader;
 
-@interface PBRequester : NSObject {
+@interface PBRequester : NSObject <NSURLConnectionDelegate> {
     struct { 
         unsigned int ignoresResponse : 1; 
         unsigned int loading : 1; 
-        unsigned int silentLoading : 1; 
         unsigned int needsCancel : 1; 
         unsigned int responseStatusSet : 1; 
         unsigned int parsedResponseHeader : 1; 
@@ -25,13 +24,11 @@
     PBDataReader *_dataReader;
     <PBRequesterDelegate> *_delegate;
     } _flags;
-    NSDictionary *_httpRequestHeaders;
+    NSMutableDictionary *_httpRequestHeaders;
     NSDictionary *_httpResponseHeaders;
     NSMutableArray *_internalRequests;
     NSMutableArray *_internalResponses;
     unsigned int _lastGoodDataOffset;
-    NSString *_logEncodedRequestToFile;
-    NSString *_logEncodedResponseToFile;
     NSString *_logRequestToFile;
     NSString *_logResponseToFile;
     NSMutableArray *_requests;
@@ -47,16 +44,14 @@
 @property(retain) NSArray * clientCertificates;
 @property(retain) NSURLConnection * connection;
 @property id delegate;
-@property(retain) NSDictionary * httpRequestHeaders;
+@property(copy) NSDictionary * httpRequestHeaders;
 @property(retain) NSDictionary * httpResponseHeaders;
 @property BOOL ignoresResponse;
-@property(getter=isLoading) BOOL loading;
 @property(retain) NSString * logRequestToFile;
 @property(retain) NSString * logResponseToFile;
 @property BOOL needsCancel;
 @property(readonly) NSArray * requests;
 @property BOOL shouldHandleCookies;
-@property BOOL silentLoading;
 @property double timeoutSeconds;
 @property(readonly) unsigned int uploadPayloadSize;
 
@@ -72,6 +67,7 @@
 - (id)_osVersion;
 - (void)_removeTimeoutTimer;
 - (void)_resetTimeoutTimer;
+- (void)_scheduleThrottlingError;
 - (void)_sendPayload:(id)arg1;
 - (void)_startTimeoutTimer;
 - (void)_timeoutTimerFired;
@@ -96,10 +92,7 @@
 - (BOOL)ignoresResponse;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
 - (id)internalRequests;
-- (BOOL)isLoading;
 - (BOOL)isPaused;
-- (id)logEncodedRequestToFile;
-- (id)logEncodedResponseToFile;
 - (id)logRequestToFile;
 - (id)logResponseToFile;
 - (BOOL)needsCancel;
@@ -113,22 +106,18 @@
 - (void)setClientCertificates:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHttpRequestHeader:(id)arg1 forKey:(id)arg2;
 - (void)setHttpRequestHeaders:(id)arg1;
 - (void)setHttpResponseHeaders:(id)arg1;
 - (void)setIgnoresResponse:(BOOL)arg1;
-- (void)setLoading:(BOOL)arg1;
-- (void)setLogEncodedRequestToFile:(id)arg1;
-- (void)setLogEncodedResponseToFile:(id)arg1;
 - (void)setLogRequestToFile:(id)arg1;
 - (void)setLogResponseToFile:(id)arg1;
 - (void)setNeedsCancel:(BOOL)arg1;
 - (void)setNeedsCancel;
 - (void)setShouldHandleCookies:(BOOL)arg1;
-- (void)setSilentLoading:(BOOL)arg1;
 - (void)setTimeoutSeconds:(double)arg1;
 - (void)setURL:(id)arg1;
 - (BOOL)shouldHandleCookies;
-- (BOOL)silentLoading;
 - (void)start;
 - (double)timeoutSeconds;
 - (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;

@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAudioVideoRoutingPopoverController, MPInlineAudioOverlay, MPInlineVideoOverlay, NSString, NSTimer, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIView<MPVideoOverlay>, UIWindow;
+@class MPAudioVideoRoutingPopoverController, MPInlineAudioOverlay, MPInlineVideoOverlay, NSString, NSTimer, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIView<MPVideoOverlay>, UIViewController, UIWindow;
 
-@interface MPInlineVideoViewController : MPVideoViewController {
+@interface MPInlineVideoViewController : MPVideoViewController <MPVideoOverlayDelegate, UIPopoverControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -25,6 +25,7 @@
     unsigned int _contentViewDidClipToBounds : 1;
     unsigned int _fullscreenViewSizeIsExternallyManaged : 1;
     unsigned int _swallowNextTapGesture : 1;
+    unsigned int _exited : 1;
     int _audioOverlayStyle;
     MPInlineAudioOverlay *_audioOverlayView;
     int _desiredInterfaceOrientation;
@@ -40,6 +41,7 @@
     } _nonFullscreenDestinationFrame;
     UIView *_overlayViewBeingHidden;
     BOOL _overlayViewIsVisible;
+    UIViewController *_parentViewControllerBeforeFullscreen;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     NSString *_playbackErrorDescription;
     int _previousStatusBarStyle;
@@ -55,7 +57,6 @@
 @property(copy) NSString * playbackErrorDescription;
 @property int videoOverlayStyle;
 
-- (id)_audioOverlayViewIfLoaded;
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
 - (BOOL)_canHideOverlay:(BOOL)arg1;
 - (void)_cancelOverlayIdleTimer;
@@ -63,14 +64,10 @@
 - (void)_fireOverlayIdleTimer:(id)arg1;
 - (void)_hideOverlayAnimated:(BOOL)arg1;
 - (void)_hideOverlayDidEnd:(id)arg1 finished:(id)arg2;
-- (BOOL)_isMainScreenMirrored;
 - (void)_layoutForItemTypeAvailable;
-- (id)_overlayView;
-- (id)_overlayViewIfLoaded;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_removeCoverView;
 - (void)_resetOverlayIdleTimer;
-- (void)_screenDidDisconnect:(id)arg1;
 - (void)_showOverlayAnimated:(BOOL)arg1;
 - (void)_showOverlayDidEnd;
 - (void)_transitionFromFullscreenAnimated:(BOOL)arg1 fromDoneButton:(BOOL)arg2;
@@ -84,9 +81,11 @@
 - (void)_viewWasPinched:(id)arg1;
 - (void)_viewWasTapped:(id)arg1;
 - (int)audioOverlayStyle;
+- (id)audioOverlayViewIfLoaded;
 - (id)backgroundView;
 - (BOOL)canShowQTAudioOnlyUI;
 - (BOOL)controlsOverlayVisible;
+- (id)createChapterFlipTransition;
 - (void)dealloc;
 - (void)displayVideoViewOnScreen;
 - (id)fullscreenView;
@@ -99,6 +98,7 @@
 - (void)overlayTappedBackButton:(id)arg1;
 - (void)overlayTappedScaleModeButton:(id)arg1;
 - (id)playbackErrorDescription;
+- (id)popViewControllerAnimated:(BOOL)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAudioOverlayStyle:(int)arg1;
@@ -115,6 +115,7 @@
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (void)setVideoOverlayStyle:(int)arg1;
 - (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)startTicking;
 - (void)stopTicking;
 - (void)swipableViewHadActivity:(id)arg1;
@@ -122,6 +123,9 @@
 - (BOOL)transportControls:(id)arg1 releasedHeldButtonPart:(unsigned int)arg2;
 - (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
 - (int)videoOverlayStyle;
+- (id)videoOverlayView;
+- (id)videoOverlayViewIfLoaded;
+- (void)videoView_firstVideoFrameDisplayedNotification:(id)arg1;
 - (void)videoView_itemTypeAvailableNotification:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

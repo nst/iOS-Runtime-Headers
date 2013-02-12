@@ -2,22 +2,24 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary;
+@class MPAVController;
 
 @interface MPSystemNowPlayingController : NSObject {
     BOOL _hasSeenAnyItem;
-    NSDictionary *_lastNowPlayingInfo;
-    unsigned long long _lastPostedNowPlayingItemPersistentID;
+    MPAVController *_player;
+    struct dispatch_queue_s { } *_serialQueue;
 }
 
-+ (id)sharedInstance;
+@property MPAVController * player;
 
-- (void)_availableRoutesDidChangeNotification:(id)arg1;
-- (id)_init;
-- (void)_sendAirTunesMetadataForItem:(id)arg1;
+- (int)_MRRepeatModeForMPRepeatType:(unsigned int)arg1;
+- (int)_MRShuffleModeForMPShuffleType:(unsigned int)arg1;
+- (unsigned int)_chapterIndexForItem:(id)arg1 atTime:(double)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)postNowPlayingInfoForItem:(id)arg1 isPlaying:(BOOL)arg2 additionalInfo:(id)arg3;
+- (id)player;
+- (void)postNowPlayingInfoForItem:(id)arg1;
 - (void)postProgressUpdateForItem:(id)arg1;
+- (void)setPlayer:(id)arg1;
 
 @end

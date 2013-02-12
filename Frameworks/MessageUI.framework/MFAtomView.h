@@ -2,31 +2,39 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFAtomBackgroundView, UILabel;
+@class MFAtomBackgroundView, NSString, UIActivityIndicatorView, UILabel, UIView;
 
 @interface MFAtomView : UIDefaultKeyboardInput {
-    unsigned int _disclosure : 1;
-    unsigned int _needsCentering : 1;
-    MFAtomBackgroundView *_background;
-    id _delegate;
+    UIActivityIndicatorView *_activityIndicator;
+    UIView *_background;
     UILabel *_label;
-    float _width;
+    float _scalingFactor;
 }
 
-+ (struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })backgroundImageSlicesWithDisclosure:(BOOL)arg1;
-+ (id)backgroundImageWithDisclosure:(BOOL)arg1 selected:(BOOL)arg2;
+@property(readonly) MFAtomBackgroundView * backgroundView;
+@property BOOL selected;
+@property int style;
+@property(copy) NSString * title;
+
 + (float)defaultHeight;
 + (float)horizontalPadding;
++ (BOOL)showActivityIndicatorForStyle:(int)arg1;
 
+- (float)_leftInset;
+- (float)_rightInset;
+- (void)_setupActivityIndicator;
+- (id)backgroundView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)layoutSubviews;
 - (float)preferredWidth;
 - (BOOL)selected;
+- (void)setScalingFactor:(float)arg1;
 - (void)setSelected:(BOOL)arg1;
-- (void)setShowsDisclosure:(BOOL)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)showBackground:(BOOL)arg1;
+- (int)style;
 - (id)title;
 
 @end

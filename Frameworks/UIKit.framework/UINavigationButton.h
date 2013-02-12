@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSSet, NSString, UIColor, UIImage, UINavigationBar;
+@class NSSet, NSString, UIColor, UIImage;
 
 @interface UINavigationButton : UIButton {
     struct CGSize { 
@@ -10,35 +10,59 @@
         float height; 
     unsigned int _size : 2;
     unsigned int _pad : 30;
+    id _appearanceStorage;
     int _barStyle;
     } _boundsAdjustment;
-    UINavigationBar *_navigationBar;
+    float _maximumWidth;
+    float _minimumWidth;
+    UIColor *_navigationBarTintColor;
     NSSet *_possibleTitles;
     int _style;
-    UIColor *_tintColor;
 }
 
 @property int barStyle;
 @property int controlSize;
 @property(retain) UIImage * image;
+@property float maximumWidth;
+@property float minimumWidth;
 @property int style;
 @property(retain) UIColor * tintColor;
 @property(retain) NSString * title;
 
-+ (void)_initializeSafeCategory;
 + (id)defaultFont;
 
+- (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)_UIAppearance_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (void)_UIAppearance_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (void)_UIAppearance_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)_UIAppearance_setTintColor:(id)arg1;
+- (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_adjustBounds;
-- (BOOL)_canHandleStatusBarMouseEvents:(struct __GSEvent { }*)arg1;
-- (struct CGPoint { float x1; float x2; })_offsetForMiniBarState:(BOOL)arg1;
+- (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
+- (id)_backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
+- (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_defaultTitleColorForState:(unsigned int)arg1;
+- (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
+- (struct UIOffset { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
 - (id)_scriptingInfo;
+- (void)_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (void)_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
+- (void)_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setBoundsAdjustment:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setNavigationBar:(id)arg1;
+- (void)_setTintColor:(id)arg1;
+- (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (id)_tintColor;
+- (struct UIOffset { float x1; float x2; })_titlePositionAdjustmentForBarMetrics:(int)arg1;
+- (id)_titleTextAttributesForState:(unsigned int)arg1;
 - (void)_updateContentInsets;
 - (void)_updateStyle;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
+- (void)_updateTitleColorsForState:(unsigned int)arg1;
 - (int)barStyle;
 - (BOOL)contentsEqualTo:(id)arg1 withStyle:(int)arg2;
 - (int)controlSize;
@@ -53,10 +77,16 @@
 - (id)initWithTitle:(id)arg1;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6 applyBezel:(BOOL)arg7 forButtonItemStyle:(int)arg8;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
+- (float)maximumWidth;
+- (float)minimumWidth;
 - (void)setBarStyle:(int)arg1;
 - (void)setControlSize:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
+- (void)setMaximumWidth:(float)arg1;
+- (void)setMinimumWidth:(float)arg1;
+- (void)setNavigationBarTintColor:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTitle:(id)arg1;

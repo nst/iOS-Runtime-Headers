@@ -6,7 +6,7 @@
 
 @interface NSURLCacheNode : NSObject {
     NSCachedURLResponse *cachedResponse;
-    unsigned int hash;
+    unsigned long hash;
     NSString *key;
     NSURLCacheNode *next;
     NSURLCacheNode *prev;

@@ -41,7 +41,7 @@
     } _titleOffset;
 }
 
-@property struct CGSize { float width; float height; } titleOffset;
+@property struct CGSize { float x1; float x2; } titleOffset;
 
 + (id)defaultFont;
 

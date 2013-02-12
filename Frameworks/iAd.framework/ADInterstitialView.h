@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADInterstitialDebuggingDelegate>, <ADInterstitialViewDelegate>, ADBannerController, ADBannerControllerRecipient, ADLocalAd, ADRemoteView, NSString, UIView;
+@class <ADInterstitialDebuggingDelegate>, <ADInterstitialViewDelegate>, ADBannerController, ADBannerControllerRecipient, ADLocalAd, ADRemoteView, ADTapGestureRecognizer, NSString, UIView;
 
-@interface ADInterstitialView : UIView {
+@interface ADInterstitialView : UIView <ADBannerControllerRecipient, ADBannerControllerDelegate> {
     BOOL _actionInProgress;
     BOOL _actionWasCancelled;
     NSString *_authenticationUserName;
     ADBannerController *_controller;
     <ADInterstitialDebuggingDelegate> *_debuggingDelegate;
     <ADInterstitialViewDelegate> *_delegate;
-    BOOL _delegateImplementsActionDidFinish;
-    BOOL _delegateImplementsActionShouldBegin;
-    BOOL _delegateImplementsDidLoadAd;
     UIView *_dimmerView;
+    ADTapGestureRecognizer *_gestureRecognizer;
     BOOL _hasLoaded;
     BOOL _interstitialWasDismissedByUser;
     BOOL _loaded;
@@ -34,13 +32,11 @@
 @property(retain) ADBannerController * controller;
 @property <ADInterstitialDebuggingDelegate> * debuggingDelegate;
 @property <ADInterstitialViewDelegate> * delegate;
-@property(readonly) BOOL delegateImplementsActionDidFinish;
-@property(readonly) BOOL delegateImplementsActionShouldBegin;
-@property(readonly) BOOL delegateImplementsDidLoadAd;
 @property(retain) UIView * dimmerView;
+@property(retain) ADTapGestureRecognizer * gestureRecognizer;
 @property BOOL hasLoaded;
 @property BOOL interstitialWasDismissedByUser;
-@property(getter=isLoaded,setter=_setLoaded:) BOOL loaded;
+@property(getter=isLoaded) BOOL loaded;
 @property(retain) ADLocalAd * localAd;
 @property BOOL presentedInView;
 @property int previousOrientation;
@@ -51,6 +47,7 @@
 @property BOOL touchesBeganOnCloseBox;
 
 - (void)_disposeOfController;
+- (void)_gestureHandler:(id)arg1;
 - (void)_orientationChanged;
 - (void)_propagateFrame;
 - (void)_propagateProperties;
@@ -67,15 +64,14 @@
 - (id)controller;
 - (void)controllerDidClose:(id)arg1;
 - (void)controllerDidOpen:(id)arg1 withWindowContextId:(id)arg2;
+- (int)creativeType;
 - (void)dealloc;
 - (id)debuggingDelegate;
 - (id)delegate;
-- (BOOL)delegateImplementsActionDidFinish;
-- (BOOL)delegateImplementsActionShouldBegin;
-- (BOOL)delegateImplementsDidLoadAd;
 - (void)didMoveToWindow;
 - (id)dimmerView;
 - (void)exchangeSubviewAtIndex:(int)arg1 withSubviewAtIndex:(int)arg2;
+- (id)gestureRecognizer;
 - (BOOL)hasLoaded;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertSubview:(id)arg1 above:(id)arg2;
@@ -95,9 +91,9 @@
 - (id)remoteView;
 - (void)removeFromSuperview;
 - (id)section;
-- (void)serverBannerViewActionDidBegin:(id)arg1;
 - (void)serverBannerViewDidFailToReceiveAd:(id)arg1 withError:(id)arg2;
 - (void)serverBannerViewDidLoad:(id)arg1;
+- (void)serverBannerViewWillLoad:(id)arg1;
 - (void)serverInterstitialViewExpiredAndWasUnloaded:(id)arg1;
 - (void)serverStoryboardDidFinishFirstSignificantDraw:(id)arg1;
 - (void)serverStoryboardDidTransitionOut:(id)arg1;
@@ -112,6 +108,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDimmerView:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGestureRecognizer:(id)arg1;
 - (void)setHasLoaded:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setInterstitialWasDismissedByUser:(BOOL)arg1;
@@ -126,9 +123,7 @@
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (BOOL)shouldSkipLoadedExceptionCheck;
 - (void)skipNextLoadedExceptionCheck;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)statusBarViewController;
 - (BOOL)touchesBeganOnCloseBox;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

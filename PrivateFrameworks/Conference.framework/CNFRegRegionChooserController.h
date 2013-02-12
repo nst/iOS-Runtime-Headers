@@ -22,8 +22,10 @@
 @property(retain) NSString * selectedRegionID;
 
 - (void)_drillDownControllersWithArray:(id)arg1;
+- (void)_hideTableViewCells;
 - (void)_selectRegionID:(id)arg1;
 - (void)_selectRegionList:(id)arg1;
+- (void)_showTableViewCells;
 - (BOOL)canBeShownFromSuspendedState;
 - (void)dealloc;
 - (id)delegate;
@@ -35,6 +37,7 @@
 - (void)handleURL:(id)arg1;
 - (id)initWithRegionList:(id)arg1 selectedRegionID:(id)arg2;
 - (id)initWithStyle:(int)arg1;
+- (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)parentController;
 - (void)pushController:(id)arg1;
@@ -43,7 +46,10 @@
 - (id)regionList;
 - (id)rootController;
 - (id)sdc;
+- (void)searchDisplayController:(id)arg1 didHideSearchResultsTableView:(id)arg2;
 - (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willUnloadSearchResultsTableView:(id)arg2;
 - (id)selectedRegionID;
 - (void)setDelegate:(id)arg1;
 - (void)setFilteredRegionList:(id)arg1;

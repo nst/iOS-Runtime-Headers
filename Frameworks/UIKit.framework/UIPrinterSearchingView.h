@@ -9,8 +9,6 @@
     UILabel *_searchingLabel;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (void)dealloc;
 - (id)initInView:(id)arg1;
 - (void)layoutSubviews;

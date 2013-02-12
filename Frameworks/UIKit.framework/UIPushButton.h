@@ -36,7 +36,6 @@
     } _titlePadding;
 }
 
-+ (void)_initializeSafeCategory;
 + (id)defaultFont;
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
@@ -48,12 +47,8 @@
 - (id)_scriptingInfo;
 - (void)_setAlwaysHandleScrollerMouseEvent:(BOOL)arg1;
 - (void)_setNeedsDisplay:(struct { id x1; id x2; id x3; id x4; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (BOOL)autosizesToFit;
 - (id)backgroundForState:(unsigned int)arg1;
-- (void)configureFromScriptButton:(id)arg1;
 - (id)currentBackground;
 - (id)currentImage;
 - (id)currentShadowColor;
@@ -72,7 +67,6 @@
 - (id)initWithImage:(id)arg1;
 - (id)initWithTitle:(id)arg1 autosizesToFit:(BOOL)arg2;
 - (id)initWithTitle:(id)arg1;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isPressed;
 - (BOOL)isSelected;
 - (float)minimumFontSize;

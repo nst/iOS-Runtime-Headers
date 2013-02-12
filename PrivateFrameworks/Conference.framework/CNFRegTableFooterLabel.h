@@ -5,8 +5,9 @@
 @interface CNFRegTableFooterLabel : CNFRegTableLabel {
 }
 
+- (id)_URLTarget;
+- (id)_URLText;
 - (float)_bottomPadding;
-- (float)_labelInset;
 - (id)_labelText;
 - (int)_labelTextAlignment;
 - (float)_topPadding;

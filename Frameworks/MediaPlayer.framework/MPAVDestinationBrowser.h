@@ -2,21 +2,25 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSSet;
-
 @interface MPAVDestinationBrowser : NSObject {
     BOOL _isScanning;
+    int _retainCount;
     BOOL _scansForDestinationsWhenEnteringForeground;
 }
 
-@property(readonly) NSSet * availableDestinations;
 @property BOOL scansForDestinationsWhenEnteringForeground;
 
-- (id)availableDestinations;
+- (void)_beginScanningForDestinationsNotification:(id)arg1;
+- (void)_endScanningForDestinationsNotification:(id)arg1;
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (void)beginScanningForDestinations;
 - (void)dealloc;
 - (void)endScanningForDestinations;
 - (id)init;
+- (oneway void)release;
+- (id)retain;
+- (unsigned int)retainCount;
 - (BOOL)scansForDestinationsWhenEnteringForeground;
 - (void)setScansForDestinationsWhenEnteringForeground:(BOOL)arg1;
 

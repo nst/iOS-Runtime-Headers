@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKPickerTableView;
+@class EKPickerTableView, NSTimeZone;
 
-@interface EKEventDateEditItemViewController : EKEventEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKCellShortener> {
+@interface EKEventDateEditItemViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKCellShortener, EKTimeZoneViewControllerDelegate> {
     struct { 
         int year; 
         BOOL month; 
@@ -28,8 +28,13 @@
     } _endGr;
     int _lastSelectedRow;
     int _shorteningStatus;
+    BOOL _showsTimeZone;
     } _startGr;
+    NSTimeZone *_timeZone;
 }
+
+@property BOOL showsTimeZone;
+@property(copy) NSTimeZone * timeZone;
 
 - (void)_allDayChanged:(id)arg1;
 - (BOOL)_cellShouldUseShortDate:(id)arg1;
@@ -38,6 +43,7 @@
 - (void)_localeChanged;
 - (void)_pickNextReasonableTime;
 - (void)_resetStartString:(BOOL)arg1 endString:(BOOL)arg2;
+- (id)_timeZoneDescription;
 - (void)_updateDateColors;
 - (void)_updateDatePicker;
 - (void)_updateTimeWidths;
@@ -52,8 +58,11 @@
 - (id)navigationTitle;
 - (void)setAllDay:(BOOL)arg1;
 - (void)setEndDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setShowsTimeZone:(BOOL)arg1;
 - (void)setStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setTimeZone:(id)arg1;
 - (void)shortenCell:(id)arg1;
+- (BOOL)showsTimeZone;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -61,6 +70,9 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 wantsHeaderForSection:(int)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (id)timeZone;
+- (void)timeZoneViewController:(id)arg1 didSelectTimeZone:(id)arg2;
+- (void)timeZoneViewControllerDidCancel:(id)arg1;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewDidUnload;

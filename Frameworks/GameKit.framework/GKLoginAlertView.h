@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GKLoginAlertView : UIAlertView {
+@interface GKLoginAlertView : UIAlertView <UITextFieldDelegate> {
     unsigned int _passwordFieldIndex;
     NSString *_username;
 }
@@ -12,6 +12,7 @@
 @property(copy) NSString * password;
 @property(copy) NSString * username;
 
+- (void)_updateFrameForDisplay;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 uneditableUsername:(id)arg2;
 - (id)password;

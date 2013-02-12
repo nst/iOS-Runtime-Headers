@@ -14,10 +14,10 @@
 }
 
 @property int h;
-@property(readonly) BOOL hasH;
-@property(readonly) BOOL hasW;
-@property(readonly) BOOL hasX;
-@property(readonly) BOOL hasY;
+@property BOOL hasH;
+@property BOOL hasW;
+@property BOOL hasX;
+@property BOOL hasY;
 @property int w;
 @property int x;
 @property int y;
@@ -30,9 +30,12 @@
 - (BOOL)hasW;
 - (BOOL)hasX;
 - (BOOL)hasY;
-- (id)init;
 - (BOOL)readFrom:(id)arg1;
 - (void)setH:(int)arg1;
+- (void)setHasH:(BOOL)arg1;
+- (void)setHasW:(BOOL)arg1;
+- (void)setHasX:(BOOL)arg1;
+- (void)setHasY:(BOOL)arg1;
 - (void)setW:(int)arg1;
 - (void)setX:(int)arg1;
 - (void)setY:(int)arg1;

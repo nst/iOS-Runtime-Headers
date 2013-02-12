@@ -7,6 +7,7 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)allowsWeakReference;
 - (Class)classForCoder;
 - (int)code;
 - (id)domain;
@@ -16,6 +17,7 @@
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 - (id)userInfo;
 
 @end

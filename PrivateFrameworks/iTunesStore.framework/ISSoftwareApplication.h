@@ -2,31 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSNumber, NSString, SSItemContentRating;
 
-@interface ISSoftwareApplication : NSObject {
+@interface ISSoftwareApplication : NSObject <SSXPCCoding> {
     NSNumber *_accountDSID;
     NSString *_accountIdentifier;
     NSString *_bundleIdentifier;
     NSString *_bundleShortVersionString;
     NSString *_bundleVersion;
     NSString *_containerPath;
+    SSItemContentRating *_contentRating;
     NSNumber *_itemIdentifier;
+    NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
     NSNumber *_versionIdentifier;
     NSArray *_versionOrdering;
 }
 
 @property(retain) NSNumber * accountDSID;
-@property(retain) NSString * accountIdentifier;
-@property(retain) NSString * bundleIdentifier;
-@property(retain) NSString * bundleShortVersionString;
-@property(retain) NSString * bundleVersion;
-@property(retain) NSString * containerPath;
+@property(copy) NSString * accountIdentifier;
+@property(copy) NSString * bundleIdentifier;
+@property(copy) NSString * bundleShortVersionString;
+@property(copy) NSString * bundleVersion;
+@property(copy) NSString * containerPath;
+@property(copy) SSItemContentRating * contentRating;
 @property(retain) NSNumber * itemIdentifier;
+@property(copy) NSString * softwareType;
 @property(retain) NSNumber * storeFrontIdentifier;
 @property(retain) NSNumber * versionIdentifier;
-@property(retain) NSArray * versionOrdering;
+@property(copy) NSArray * versionOrdering;
 
 + (id)lookupAttributeKeys;
 
@@ -37,9 +41,12 @@
 - (id)bundleShortVersionString;
 - (id)bundleVersion;
 - (id)containerPath;
+- (id)contentRating;
+- (void*)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (id)initWithMobileInstallationDictionary:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (id)itemIdentifier;
 - (void)setAccountDSID:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
@@ -47,10 +54,13 @@
 - (void)setBundleShortVersionString:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setContainerPath:(id)arg1;
+- (void)setContentRating:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
+- (void)setSoftwareType:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setVersionIdentifier:(id)arg1;
 - (void)setVersionOrdering:(id)arg1;
+- (id)softwareType;
 - (id)storeFrontIdentifier;
 - (id)versionIdentifier;
 - (id)versionOrdering;

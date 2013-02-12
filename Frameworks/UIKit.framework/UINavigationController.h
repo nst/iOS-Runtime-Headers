@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UINavigationControllerDelegate>, NSArray, NSMutableArray, UILayoutContainerView, UINavigationBar, UINavigationTransitionView, UIToolbar, UIView, UIViewController;
+@class <UINavigationControllerDelegate>, NSArray, UINavigationBar, UINavigationTransitionView, UIToolbar, UIView, UIViewController;
 
-@interface UINavigationController : UIViewController {
+@interface UINavigationController : UIViewController <GKContentRefresh, GKURLHandling, ViewControllerArchiveNode> {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -31,9 +31,9 @@
         unsigned int pretendNavBarHidden : 1; 
         unsigned int avoidMovingNavBarOffscreenBeforeUnhiding : 1; 
         unsigned int searchBarHidNavBar : 1; 
+        unsigned int useSystemPopoverBarAppearance : 1; 
     float _bottomInsetDelta;
     UIView *_containerView;
-    UILayoutContainerView *_containerViewInSheet;
     } _currentScrollContentInsetDelta;
     <UINavigationControllerDelegate> *_delegate;
     UIViewController *_disappearingViewController;
@@ -43,15 +43,21 @@
     UIView *_navigationTransitionView;
     } _previousScrollContentInsetDelta;
     float _previousScrollContentOffsetDelta;
+    int _savedNavBarStyleBeforeSheet;
+    int _savedToolBarStyleBeforeSheet;
     UIToolbar *_toolbar;
-    NSMutableArray *_viewControllers;
+    Class _toolbarClass;
 }
 
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _gkFormSheetContentInsets;
+@property(readonly) BOOL _gkHasFormSheetImages;
+@property(setter=_setToolbarClass:) Class _toolbarClass;
 @property BOOL avoidMovingNavBarOffscreenBeforeUnhiding;
 @property(readonly) UIViewController * bottomViewController;
 @property <UINavigationControllerDelegate> * delegate;
 @property(retain) UIViewController * detailViewController;
 @property(retain) UIViewController * disappearingViewController;
+@property(readonly) UIViewController * firstViewController;
 @property BOOL isExpanded;
 @property(readonly) UINavigationBar * navigationBar;
 @property(getter=isNavigationBarHidden) BOOL navigationBarHidden;
@@ -61,37 +67,45 @@
 @property(readonly) UIViewController * previousViewController;
 @property(readonly) UIToolbar * toolbar;
 @property(getter=isToolbarHidden) BOOL toolbarHidden;
-@property(retain,readonly) UIViewController * topViewController;
+@property(readonly) UIViewController * topViewController;
 @property(copy) NSArray * viewControllers;
-@property(retain,readonly) UIViewController * visibleViewController;
+@property(readonly) UIViewController * visibleViewController;
 
-+ (void)_initializeSafeCategory;
-
+- (void)__viewWillLayoutSubviews;
 - (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_allowsAutorotation;
 - (BOOL)_animationParametersForHidingNavigationBar:(BOOL)arg1 lastOperation:(int)arg2 edge:(int*)arg3 duration:(double*)arg4;
 - (void)_applyScrollContentInsetDelta:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 toScrollView:(id)arg2;
 - (void)_applyScrollContentOffsetDelta:(float)arg1 toScrollView:(id)arg2;
-- (void)_axPostMoveTo:(id)arg1;
 - (void)_clearLastOperation;
 - (void)_computeAndApplyScrollContentInsetDeltaForViewController:(id)arg1;
 - (void)_configureToolbar;
 - (int)_deferredTransition;
+- (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
+- (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (BOOL)_doesTopViewControllerSupportInterfaceOrientation:(int)arg1;
 - (id)_existingToolbar;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displyingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForViewController:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_gkAddFormSheetFrameImages;
-- (void)_gkRefreshContents;
+- (void)_gkForceNextContentUpdate;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_gkFormSheetContentInsets;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (BOOL)_gkHasFormSheetImages;
+- (void)_gkResetContents;
 - (void)_gkRestoreStatusBarStyle:(BOOL)arg1;
 - (void)_gkSaveStatusBarStyle:(BOOL)arg1;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (BOOL)_hasTranslucentNavigationBarIncludingViewController:(id)arg1;
 - (void)_hideOrShowBottomBarIfNeededWithTransition:(int)arg1;
 - (void)_hideShowNavigationBarDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_hideShowToolbarDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (BOOL)_isNavigationBarVisible;
+- (BOOL)_isPresentationContextByDefault;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (BOOL)_isTransitioning;
 - (void)_layoutTopViewController;
 - (void)_layoutTopViewControllerInSheet;
 - (void)_layoutTopViewControllerInSheetWithPopoverView:(id)arg1;
@@ -106,14 +120,18 @@
 - (void)_positionNavigationBarHidden:(BOOL)arg1;
 - (void)_positionToolbarHidden:(BOOL)arg1 edge:(int)arg2;
 - (void)_positionToolbarHidden:(BOOL)arg1;
+- (void)_prepareForDismissalInPopover:(id)arg1;
+- (void)_prepareForPresentationInPopover:(id)arg1;
 - (BOOL)_reallyWantsFullScreenLayout;
 - (void)_releaseContainerViews;
 - (void)_resetBottomBarHiddenState;
 - (void)_restoreOriginalInsetAndOffsetToScrollView:(id)arg1;
+- (id)_rootControllerIfRespondsToSelector:(SEL)arg1;
 - (float)_scrollViewBottomContentInset;
 - (void)_sendNavigationBarToBack;
 - (void)_setNavigationBarHidden:(BOOL)arg1 edge:(int)arg2 duration:(double)arg3;
 - (void)_setNavigationBarHidden:(BOOL)arg1 edgeIfNotNavigating:(int)arg2 duration:(double)arg3;
+- (void)_setToolbarClass:(Class)arg1;
 - (void)_setToolbarHidden:(BOOL)arg1 edge:(int)arg2 duration:(double)arg3;
 - (void)_setViewControllers:(id)arg1 transition:(int)arg2;
 - (BOOL)_shouldBottomBarBeHidden;
@@ -126,15 +144,19 @@
 - (void)_startDeferredTransitionIfNeeded;
 - (void)_startTransition:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 - (void)_tabBarControllerDidFinishShowingTabBar:(id)arg1;
+- (Class)_toolbarClass;
 - (int)_transitionForOldViewControllers:(id)arg1 newViewControllers:(id)arg2;
 - (void)_updateBarsForCurrentInterfaceOrientation;
 - (void)_updateBottomBarHiddenState;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)_updateToolbarItemsFromViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)_viewForContentInPopover;
+- (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (BOOL)avoidMovingNavBarOffscreenBeforeUnhiding;
 - (id)bottomViewController;
 - (BOOL)ckCanDismissWhenSuspending;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (id)copyArchivableContexts;
 - (void)dealloc;
 - (id)defaultFirstResponder;
 - (id)defaultPNGName;
@@ -147,8 +169,10 @@
 - (BOOL)editing;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstViewController;
+- (id)firstViewController;
 - (unsigned int)indexOfViewController:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1;
 - (void)invalidate;
@@ -157,8 +181,10 @@
 - (BOOL)isNavigationBarHidden;
 - (BOOL)isShown;
 - (BOOL)isToolbarHidden;
+- (BOOL)isTransitionInProgress;
 - (int)lastOperation;
 - (void)loadView;
+- (int)localizedCompare:(id)arg1;
 - (void)makeModalViewControllerTopViewController;
 - (int)modalTransitionStyle;
 - (id)moreListImage;
@@ -188,9 +214,11 @@
 - (BOOL)pretendNavBarHidden;
 - (id)previousViewController;
 - (void)purgeMemoryForReason:(int)arg1;
+- (void)pushControllerForContext:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 transition:(int)arg2 forceImmediate:(BOOL)arg3;
 - (void)pushViewController:(id)arg1 transition:(int)arg2;
+- (void)restoreArchivedContexts:(id)arg1;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
 - (BOOL)searchBarHidNavBar;
@@ -215,7 +243,11 @@
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)setViewControllers:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldBeCustomizableInTabBar;
+- (BOOL)shouldDisableWhileDownloading;
 - (id)signInControllerInHierarchy;
+- (void)swapInPreviouslySkippedViewControllers;
+- (void)swapTopViewControllerWithContext:(id)arg1;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (id)tabBarItem;
 - (id)toolbar;
@@ -223,13 +255,13 @@
 - (void)updateTabBarItemForViewController:(id)arg1;
 - (void)updateTitleForViewController:(id)arg1;
 - (id)viewControllers;
+- (id)viewControllersForTopContext:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillLayoutSubviews;
 - (id)visibleViewController;
 - (BOOL)wasLastOperationAnimated;
 - (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

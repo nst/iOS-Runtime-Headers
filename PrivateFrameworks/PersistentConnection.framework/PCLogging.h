@@ -6,7 +6,7 @@
 }
 
 + (void)_appendString:(id)arg1 toFileNamed:(id)arg2;
-+ (id)_dateFormatter;
++ (id)_stringWithCurrentTime;
 + (void)enableConsoleLoggingForLevel:(int)arg1;
 + (void)enableFileLogging:(BOOL)arg1;
 + (void)enableLoggingForCustomHandler:(id)arg1;

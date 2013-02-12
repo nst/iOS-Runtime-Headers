@@ -24,7 +24,6 @@
 - (id)_labelAtIndex:(int)arg1;
 - (id)_newLocalizedPlaceholderForProperty:(int)arg1;
 - (int)_propertyAtIndex:(int)arg1;
-- (BOOL)_refreshPreferredPerson;
 - (void)_removeMultipleValuePlaceholderForProperty:(int)arg1;
 - (void)_removeValueForProperty:(int)arg1;
 - (void)_setValue:(id)arg1 forProperty:(int)arg2;
@@ -47,6 +46,7 @@
 - (id)primaryValueForProperty:(int)arg1;
 - (int)property;
 - (int)propertyForRow:(unsigned int)arg1;
+- (BOOL)refreshPreferredPerson;
 - (void)reloadFromModel;
 - (unsigned int)rowForProperty:(int)arg1;
 - (void)setDelegate:(id)arg1;

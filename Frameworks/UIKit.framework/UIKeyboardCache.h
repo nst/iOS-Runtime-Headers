@@ -5,6 +5,7 @@
 @class CPBitmapStore, NSSet;
 
 @interface UIKeyboardCache : NSObject {
+    BOOL _isCommitting;
     NSSet *_layouts;
     CPBitmapStore *_store;
 }
@@ -12,9 +13,13 @@
 + (BOOL)enabled;
 + (id)sharedInstance;
 
+- (struct CGImage { }*)cachedImageForKey:(id)arg1;
+- (void)commitTransaction;
 - (void)dealloc;
+- (void)displayView:(id)arg1 imageWidth:(float)arg2 withKey:(id)arg3 fromLayout:(id)arg4;
 - (void)displayView:(id)arg1 withKey:(id)arg2 fromLayout:(id)arg3;
 - (id)init;
+- (struct CGImage { }*)renderBlock:(id)arg1 forView:(id)arg2 withKey:(id)arg3 fromLayout:(id)arg4;
 - (id)uniqueLayoutsFromInputModes:(id)arg1;
 - (void)updateCacheForInputModes:(id)arg1;
 

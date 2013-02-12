@@ -12,12 +12,25 @@
 @property(readonly) int trackID;
 
 + (id)keyPathsForValuesAffectingTimeRange;
++ (id)mediaCharacteristicsForMediaTypes;
++ (id)mediaTypesForMediaCharacteristics;
 
+- (id)_allReferencedTracksWithReferenceType:(id)arg1;
 - (id)_assetTrackInspector;
+- (id)_associatedSubtitleTrack;
+- (BOOL)_containsMixedSubtitles;
+- (BOOL)_containsOnlyForcedSubtitles;
+- (id)_fallbackTrack;
+- (id)_firstReferencedTrackWithReferenceType:(id)arg1;
 - (BOOL)_hasMultipleNonEmptyEdits;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2;
 - (id)_initWithAsset:(id)arg1 trackIndex:(long)arg2;
+- (BOOL)_isAuxiliaryContent;
+- (BOOL)_isMainProgramContent;
+- (id)_pairedForcedOnlySubtitlesTrack;
+- (BOOL)_subtitleFormatDescriptionMatchesTextDisplayFlags:(unsigned int)arg1 flagsMask:(unsigned int)arg2;
+- (id)_taggedCharacteristics;
 - (id)asset;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
@@ -34,9 +47,13 @@
 - (BOOL)isEnabled;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExcludedFromAutoselectionInTrackGroup;
+- (BOOL)isPlayable;
 - (BOOL)isSelfContained;
 - (id)languageCode;
+- (int)layer;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (id)locale;
+- (id)mediaCharacteristics;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;

@@ -18,6 +18,7 @@
     NSString *_mediaType;
     NSArray *_metadataItems;
     AVOutputSettings *_outputSettings;
+    struct opaqueCMFormatDescription { } *_sampleBufferFormatHint;
     NSDictionary *_sourcePixelBufferAttributes;
     } _transform;
 }
@@ -28,6 +29,7 @@
 @property(copy) NSString * mediaType;
 @property(copy) NSArray * metadataItems;
 @property(copy) AVOutputSettings * outputSettings;
+@property(retain) struct opaqueCMFormatDescription { }* sampleBufferFormatHint;
 @property(copy) NSDictionary * sourcePixelBufferAttributes;
 @property struct CGAffineTransform { float a; float b; float c; float d; float tx; float ty; } transform;
 
@@ -38,12 +40,14 @@
 - (id)mediaType;
 - (id)metadataItems;
 - (id)outputSettings;
+- (struct opaqueCMFormatDescription { }*)sampleBufferFormatHint;
 - (void)setAttachedToPixelBufferAdaptor:(BOOL)arg1;
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMediaType:(id)arg1;
 - (void)setMetadataItems:(id)arg1;
 - (void)setOutputSettings:(id)arg1;
+- (void)setSampleBufferFormatHint:(struct opaqueCMFormatDescription { }*)arg1;
 - (void)setSourcePixelBufferAttributes:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)sourcePixelBufferAttributes;

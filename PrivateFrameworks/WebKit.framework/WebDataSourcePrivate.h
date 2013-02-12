@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class <WebDocumentRepresentation>, NSError, NSURLRequest, NSURLResponse;
+@class <WebDocumentRepresentation>, NSError, NSObject<WebDataSourcePrivateDelegate>, NSURLRequest, NSURLResponse;
 
 @interface WebDataSourcePrivate : NSObject {
     struct WebDocumentLoaderMac { int (**x1)(); int x2; boolx3; struct Frame {} *x4; struct RefPtr<WebCore::MainResourceLoader> { 
@@ -42,15 +42,32 @@
             } m_impl; 
         } x8; struct RefPtr<WebCore::SharedBuffer> { 
             struct SharedBuffer {} *m_ptr; 
-        } x9; struct ResourceRequest { 
+        } x9; struct DocumentWriter { 
+            struct Frame {} *m_frame; 
+            boolm_receivedData; 
+            struct String { 
+                struct RefPtr<WTF::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_mimeType; 
+            boolm_encodingWasChosenByUser; 
+            struct String { 
+                struct RefPtr<WTF::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_encoding; 
+            struct RefPtr<WebCore::TextResourceDecoder> { 
+                struct TextResourceDecoder {} *m_ptr; 
+            } m_decoder; 
+        } x10; struct ResourceRequest { 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -66,12 +83,12 @@
             double m_timeoutInterval; 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -84,22 +101,22 @@
                 int m_fragmentEnd; 
             } m_firstPartyForCookies; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpMethod; 
             struct HTTPHeaderMap { 
-                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
-                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
+                struct HashTable<WTF::AtomicString,std::pair<WTF::AtomicString, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::AtomicString, WTF::String> >,WTF::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::AtomicString> > { 
+                    struct pair<WTF::AtomicString,WTF::String> {} *m_table; 
                     int m_tableSize; 
                     int m_tableSizeMask; 
                     int m_keyCount; 
                     int m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
-            struct Vector<WebCore::String,0ul> { 
+            struct Vector<WTF::String,0ul> { 
                 unsigned int m_size; 
-                struct VectorBuffer<WebCore::String,0ul> { 
+                struct VectorBuffer<WTF::String,0ul> { 
                     struct String {} *m_buffer; 
                     unsigned int m_capacity; 
                 } m_buffer; 
@@ -111,34 +128,39 @@
             boolm_resourceRequestUpdated; 
             boolm_platformRequestUpdated; 
             boolm_reportUploadProgress; 
+            boolm_reportLoadTiming; 
+            boolm_reportRawHeaders; 
             int m_priority; 
             int m_targetType; 
             boolm_mainResourceRequest; 
+            struct RetainPtr<const _CFURLRequest*> { 
+                struct _CFURLRequest {} *m_ptr; 
+            } m_cfRequest; 
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
-        } x10; struct SubstituteData { 
+        } x11; struct SubstituteData { 
             struct RefPtr<WebCore::SharedBuffer> { 
                 struct SharedBuffer {} *m_ptr; 
             } m_content; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_mimeType; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_textEncoding; 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -152,12 +174,12 @@
             } m_failingURL; 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -169,90 +191,15 @@
                 int m_queryEnd; 
                 int m_fragmentEnd; 
             } m_responseURL; 
-        } x11; struct ResourceRequest { 
-            struct KURL { 
-                struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
-                        struct StringImpl {} *m_ptr; 
-                    } m_impl; 
-                } m_string; 
-                unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
-                int m_schemeEnd; 
-                int m_userStart; 
-                int m_userEnd; 
-                int m_passwordEnd; 
-                int m_hostEnd; 
-                int m_portEnd; 
-                int m_pathAfterLastSlash; 
-                int m_pathEnd; 
-                int m_queryEnd; 
-                int m_fragmentEnd; 
-            } m_url; 
-            int m_cachePolicy; 
-            double m_timeoutInterval; 
-            struct KURL { 
-                struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
-                        struct StringImpl {} *m_ptr; 
-                    } m_impl; 
-                } m_string; 
-                unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
-                int m_schemeEnd; 
-                int m_userStart; 
-                int m_userEnd; 
-                int m_passwordEnd; 
-                int m_hostEnd; 
-                int m_portEnd; 
-                int m_pathAfterLastSlash; 
-                int m_pathEnd; 
-                int m_queryEnd; 
-                int m_fragmentEnd; 
-            } m_firstPartyForCookies; 
-            struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
-                    struct StringImpl {} *m_ptr; 
-                } m_impl; 
-            } m_httpMethod; 
-            struct HTTPHeaderMap { 
-                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
-                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
-                    int m_tableSize; 
-                    int m_tableSizeMask; 
-                    int m_keyCount; 
-                    int m_deletedCount; 
-                } m_impl; 
-            } m_httpHeaderFields; 
-            struct Vector<WebCore::String,0ul> { 
-                unsigned int m_size; 
-                struct VectorBuffer<WebCore::String,0ul> { 
-                    struct String {} *m_buffer; 
-                    unsigned int m_capacity; 
-                } m_buffer; 
-            } m_responseContentDispositionEncodingFallbackArray; 
-            struct RefPtr<WebCore::FormData> { 
-                struct FormData {} *m_ptr; 
-            } m_httpBody; 
-            boolm_allowCookies; 
-            boolm_resourceRequestUpdated; 
-            boolm_platformRequestUpdated; 
-            boolm_reportUploadProgress; 
-            int m_priority; 
-            int m_targetType; 
-            boolm_mainResourceRequest; 
-            struct RetainPtr<NSURLRequest> { 
-                NSURLRequest *m_ptr; 
-            } m_nsRequest; 
         } x12; struct ResourceRequest { 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -268,12 +215,12 @@
             double m_timeoutInterval; 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -286,22 +233,22 @@
                 int m_fragmentEnd; 
             } m_firstPartyForCookies; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpMethod; 
             struct HTTPHeaderMap { 
-                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
-                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
+                struct HashTable<WTF::AtomicString,std::pair<WTF::AtomicString, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::AtomicString, WTF::String> >,WTF::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::AtomicString> > { 
+                    struct pair<WTF::AtomicString,WTF::String> {} *m_table; 
                     int m_tableSize; 
                     int m_tableSizeMask; 
                     int m_keyCount; 
                     int m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
-            struct Vector<WebCore::String,0ul> { 
+            struct Vector<WTF::String,0ul> { 
                 unsigned int m_size; 
-                struct VectorBuffer<WebCore::String,0ul> { 
+                struct VectorBuffer<WTF::String,0ul> { 
                     struct String {} *m_buffer; 
                     unsigned int m_capacity; 
                 } m_buffer; 
@@ -313,21 +260,106 @@
             boolm_resourceRequestUpdated; 
             boolm_platformRequestUpdated; 
             boolm_reportUploadProgress; 
+            boolm_reportLoadTiming; 
+            boolm_reportRawHeaders; 
             int m_priority; 
             int m_targetType; 
             boolm_mainResourceRequest; 
+            struct RetainPtr<const _CFURLRequest*> { 
+                struct _CFURLRequest {} *m_ptr; 
+            } m_cfRequest; 
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
-        } x13; struct ResourceResponse { 
+        } x13; struct ResourceRequest { 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
+                int m_schemeEnd; 
+                int m_userStart; 
+                int m_userEnd; 
+                int m_passwordEnd; 
+                int m_hostEnd; 
+                int m_portEnd; 
+                int m_pathAfterLastSlash; 
+                int m_pathEnd; 
+                int m_queryEnd; 
+                int m_fragmentEnd; 
+            } m_url; 
+            int m_cachePolicy; 
+            double m_timeoutInterval; 
+            struct KURL { 
+                struct String { 
+                    struct RefPtr<WTF::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
+                int m_schemeEnd; 
+                int m_userStart; 
+                int m_userEnd; 
+                int m_passwordEnd; 
+                int m_hostEnd; 
+                int m_portEnd; 
+                int m_pathAfterLastSlash; 
+                int m_pathEnd; 
+                int m_queryEnd; 
+                int m_fragmentEnd; 
+            } m_firstPartyForCookies; 
+            struct String { 
+                struct RefPtr<WTF::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_httpMethod; 
+            struct HTTPHeaderMap { 
+                struct HashTable<WTF::AtomicString,std::pair<WTF::AtomicString, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::AtomicString, WTF::String> >,WTF::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::AtomicString> > { 
+                    struct pair<WTF::AtomicString,WTF::String> {} *m_table; 
+                    int m_tableSize; 
+                    int m_tableSizeMask; 
+                    int m_keyCount; 
+                    int m_deletedCount; 
+                } m_impl; 
+            } m_httpHeaderFields; 
+            struct Vector<WTF::String,0ul> { 
+                unsigned int m_size; 
+                struct VectorBuffer<WTF::String,0ul> { 
+                    struct String {} *m_buffer; 
+                    unsigned int m_capacity; 
+                } m_buffer; 
+            } m_responseContentDispositionEncodingFallbackArray; 
+            struct RefPtr<WebCore::FormData> { 
+                struct FormData {} *m_ptr; 
+            } m_httpBody; 
+            boolm_allowCookies; 
+            boolm_resourceRequestUpdated; 
+            boolm_platformRequestUpdated; 
+            boolm_reportUploadProgress; 
+            boolm_reportLoadTiming; 
+            boolm_reportRawHeaders; 
+            int m_priority; 
+            int m_targetType; 
+            boolm_mainResourceRequest; 
+            struct RetainPtr<const _CFURLRequest*> { 
+                struct _CFURLRequest {} *m_ptr; 
+            } m_cfRequest; 
+            struct RetainPtr<NSURLRequest> { 
+                NSURLRequest *m_ptr; 
+            } m_nsRequest; 
+        } x14; struct ResourceResponse { 
+            struct KURL { 
+                struct String { 
+                    struct RefPtr<WTF::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -340,30 +372,30 @@
                 int m_fragmentEnd; 
             } m_url; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_mimeType; 
             long long m_expectedContentLength; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_textEncodingName; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_suggestedFilename; 
             int m_httpStatusCode; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpStatusText; 
             struct HTTPHeaderMap { 
-                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
-                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
+                struct HashTable<WTF::AtomicString,std::pair<WTF::AtomicString, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::AtomicString, WTF::String> >,WTF::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::AtomicString> > { 
+                    struct pair<WTF::AtomicString,WTF::String> {} *m_table; 
                     int m_tableSize; 
                     int m_tableSizeMask; 
                     int m_keyCount; 
@@ -371,6 +403,15 @@
                 } m_impl; 
             } m_httpHeaderFields; 
             int m_lastModifiedDate; 
+            unsigned int m_wasCached : 1; 
+            unsigned int m_connectionID; 
+            unsigned int m_connectionReused : 1; 
+            struct RefPtr<WebCore::ResourceLoadTiming> { 
+                struct ResourceLoadTiming {} *m_ptr; 
+            } m_resourceLoadTiming; 
+            struct RefPtr<WebCore::ResourceLoadInfo> { 
+                struct ResourceLoadInfo {} *m_ptr; 
+            } m_resourceLoadInfo; 
             unsigned int m_isNull : 1; 
             unsigned int m_haveParsedCacheControlHeader : 1; 
             unsigned int m_haveParsedAgeHeader : 1; 
@@ -385,54 +426,80 @@
             double m_date; 
             double m_expires; 
             double m_lastModified; 
+            struct RetainPtr<_CFURLResponse*> { 
+                struct _CFURLResponse {} *m_ptr; 
+            } m_cfResponse; 
             struct RetainPtr<NSURLResponse> { 
                 NSURLResponse *m_ptr; 
             } m_nsResponse; 
-            boolm_isUpToDate; 
-        } x14; struct ResourceError { 
+            int m_initLevel; 
+        } x15; struct ResourceError { 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_domain; 
             int m_errorCode; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_failingURL; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_localizedDescription; 
             boolm_isNull; 
             boolm_isCancellation; 
             boolm_dataIsUpToDate; 
+            struct RetainPtr<__CFError*> { 
+                struct __CFError {} *m_ptr; 
+            } m_platformError; 
             struct RetainPtr<NSError> { 
                 NSError *m_ptr; 
-            } m_platformError; 
-        } x15; boolx16; boolx17; boolx18; boolx19; boolx20; boolx21; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x22; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x23; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
-        } x24; struct NavigationAction { 
+            } m_platformNSError; 
+        } x16; boolx17; boolx18; boolx19; boolx20; boolx21; boolx22; boolx23; struct StringWithDirection { 
+            struct String { 
+                struct RefPtr<WTF::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_string; 
+            int m_direction; 
+        } x24; struct IconURL { 
+            int m_iconType; 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
+                int m_schemeEnd; 
+                int m_userStart; 
+                int m_userEnd; 
+                int m_passwordEnd; 
+                int m_hostEnd; 
+                int m_portEnd; 
+                int m_pathAfterLastSlash; 
+                int m_pathEnd; 
+                int m_queryEnd; 
+                int m_fragmentEnd; 
+            } m_iconURL; 
+        } x25[1]; struct String { 
+            struct RefPtr<WTF::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } x26; struct NavigationAction { 
+            struct KURL { 
+                struct String { 
+                    struct RefPtr<WTF::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
+                unsigned int m_isValid : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -448,15 +515,15 @@
             struct RefPtr<WebCore::Event> { 
                 struct Event {} *m_ptr; 
             } m_event; 
-        } x25; struct ResourceRequest { 
+        } x27; struct ResourceRequest { 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -472,12 +539,12 @@
             double m_timeoutInterval; 
             struct KURL { 
                 struct String { 
-                    struct RefPtr<WebCore::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl> { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } m_string; 
                 unsigned int m_isValid : 1; 
-                unsigned int m_protocolInHTTPFamily : 1; 
+                unsigned int m_protocolIsInHTTPFamily : 1; 
                 int m_schemeEnd; 
                 int m_userStart; 
                 int m_userEnd; 
@@ -490,22 +557,22 @@
                 int m_fragmentEnd; 
             } m_firstPartyForCookies; 
             struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
+                struct RefPtr<WTF::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpMethod; 
             struct HTTPHeaderMap { 
-                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
-                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
+                struct HashTable<WTF::AtomicString,std::pair<WTF::AtomicString, WTF::String>,WTF::PairFirstExtractor<std::pair<WTF::AtomicString, WTF::String> >,WTF::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WTF::AtomicString>, WTF::HashTraits<WTF::String> >,WTF::HashTraits<WTF::AtomicString> > { 
+                    struct pair<WTF::AtomicString,WTF::String> {} *m_table; 
                     int m_tableSize; 
                     int m_tableSizeMask; 
                     int m_keyCount; 
                     int m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
-            struct Vector<WebCore::String,0ul> { 
+            struct Vector<WTF::String,0ul> { 
                 unsigned int m_size; 
-                struct VectorBuffer<WebCore::String,0ul> { 
+                struct VectorBuffer<WTF::String,0ul> { 
                     struct String {} *m_buffer; 
                     unsigned int m_capacity; 
                 } m_buffer; 
@@ -517,19 +584,24 @@
             boolm_resourceRequestUpdated; 
             boolm_platformRequestUpdated; 
             boolm_reportUploadProgress; 
+            boolm_reportLoadTiming; 
+            boolm_reportRawHeaders; 
             int m_priority; 
             int m_targetType; 
             boolm_mainResourceRequest; 
+            struct RetainPtr<const _CFURLRequest*> { 
+                struct _CFURLRequest {} *m_ptr; 
+            } m_cfRequest; 
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
-        } x26; struct Vector<WebCore::ResourceResponse,0ul> { 
+        } x28; struct Vector<WebCore::ResourceResponse,0ul> { 
             unsigned int m_size; 
             struct VectorBuffer<WebCore::ResourceResponse,0ul> { 
                 struct ResourceResponse {} *m_buffer; 
                 unsigned int m_capacity; 
             } m_buffer; 
-        } x27; boolx28; struct HashMap<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > > { 
+        } x29; boolx30; struct HashMap<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > > { 
             struct HashTable<WTF::RefPtr<WebCore::ResourceLoader>,std::pair<WTF::RefPtr<WebCore::ResourceLoader>, WTF::RefPtr<WebCore::SubstituteResource> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::ResourceLoader>, WTF::RefPtr<WebCore::SubstituteResource> > >,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >, WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
                 struct pair<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource> > {} *m_table; 
                 int m_tableSize; 
@@ -537,7 +609,7 @@
                 int m_keyCount; 
                 int m_deletedCount; 
             } m_impl; 
-        } x29; struct Timer<WebCore::DocumentLoader> { 
+        } x31; struct Timer<WebCore::DocumentLoader> { 
             int (**_vptr$TimerBase)(); 
             double m_nextFireTime; 
             double m_repeatInterval; 
@@ -547,35 +619,52 @@
             struct { 
                 /* Warning: Unrecognized filer type: '"' using 'void*' */ void**__pfn; 
             } m_function; 
-        } x30; struct OwnPtr<WebCore::ArchiveResourceCollection> { 
+        } x32; struct OwnPtr<WebCore::ArchiveResourceCollection> { 
             struct ArchiveResourceCollection {} *m_ptr; 
-        } x31; struct RefPtr<WebCore::SharedBuffer> { 
+        } x33; struct RefPtr<WebCore::SharedBuffer> { 
             struct SharedBuffer {} *m_ptr; 
-        } x32; struct HashSet<WebCore::String,WebCore::StringHash,WTF::HashTraits<WebCore::String> > { 
-            struct HashTable<WebCore::String,WebCore::String,WTF::IdentityExtractor<WebCore::String>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
+        } x34; struct HashSet<WTF::String,WTF::StringHash,WTF::HashTraits<WTF::String> > { 
+            struct HashTable<WTF::String,WTF::String,WTF::IdentityExtractor<WTF::String>,WTF::StringHash,WTF::HashTraits<WTF::String>,WTF::HashTraits<WTF::String> > { 
                 struct String {} *m_table; 
                 int m_tableSize; 
                 int m_tableSizeMask; 
                 int m_keyCount; 
                 int m_deletedCount; 
             } m_impl; 
-        } x33; struct Vector<WebCore::String,0ul> { 
+        } x35; struct Vector<WTF::String,0ul> { 
             unsigned int m_size; 
-            struct VectorBuffer<WebCore::String,0ul> { 
+            struct VectorBuffer<WTF::String,0ul> { 
                 struct String {} *m_buffer; 
                 unsigned int m_capacity; 
             } m_buffer; 
-        } x34; struct String { 
-            struct RefPtr<WebCore::StringImpl> { 
+        } x36; struct String { 
+            struct RefPtr<WTF::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
-        } x35; boolx36; struct OwnPtr<WebCore::ApplicationCacheHost> { 
+        } x37; boolx38; struct DocumentLoadTiming { 
+            double navigationStart; 
+            double unloadEventStart; 
+            double unloadEventEnd; 
+            double redirectStart; 
+            double redirectEnd; 
+            short redirectCount; 
+            double fetchStart; 
+            double responseEnd; 
+            double loadEventStart; 
+            double loadEventEnd; 
+            boolhasCrossOriginRedirect; 
+            boolhasSameOriginAsPreviousDocument; 
+        } x39; struct RefPtr<WebCore::EnumCallback<WebCore::IconLoadDecision> > { 
+            struct EnumCallback<WebCore::IconLoadDecision> {} *m_ptr; 
+        } x40; struct RefPtr<WebCore::ObjectCallback<WebCore::SharedBuffer*> > { 
+            struct ObjectCallback<WebCore::SharedBuffer*> {} *m_ptr; 
+        } x41; boolx42; struct OwnPtr<WebCore::ApplicationCacheHost> { 
             struct ApplicationCacheHost {} *m_ptr; 
-        } x37; id x38; void*x39; void*x40; void*x41; unsigned int x42/* : ? */; void*x43; void*x44; void*x45; void*x46; unsigned short x47; out void*x48; const BOOL x49; void*x50; void*x51; boolx52; struct RetainPtr<objc_object*> { 
+        } x43; id x44; void*x45; void*x46; void*x47; unsigned int x48/* : ? */; void*x49; void*x50; void*x51; void*x52; unsigned short x53; out void*x54; const BOOL x55; void*x56; void*x57; boolx58; struct RetainPtr<objc_object*> { 
             id m_ptr; 
-        } x53; struct RetainPtr<objc_object*> { 
+        } x59; struct RetainPtr<objc_object*> { 
             id m_ptr; 
-        } x54; struct HashSet<long unsigned int,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
+        } x60; struct HashSet<long unsigned int,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
             struct HashTable<long unsigned int,long unsigned int,WTF::IdentityExtractor<long unsigned int>,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
                 unsigned long *m_table; 
                 int m_tableSize; 
@@ -583,8 +672,9 @@
                 int m_keyCount; 
                 int m_deletedCount; 
             } m_impl; 
+    NSObject<WebDataSourcePrivateDelegate> *_dataSourceDelegate;
     BOOL includedInWebKitStatistics;
-        } x55; } *loader;
+        } x61; } *loader;
     <WebDocumentRepresentation> *representation;
     BOOL representationFinishedLoading;
 }

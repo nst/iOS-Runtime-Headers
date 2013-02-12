@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSObject, NSString;
+@class <UIKeyboardCandidateListDelegate>, NSArray, NSMutableArray, NSString, UIKeyboardCandidateBarBackgroundView, UIKeyboardCandidateExtended, UIScrollView, UIView;
 
-@interface UIKeyboardCandidateBar : UIView <UIKeyboardCandidateList> {
+@interface UIKeyboardCandidateBar : UIView <UIKeyboardCandidateList, UIKeyboardCandidateListDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,42 +14,66 @@
             float width; 
             float height; 
         } size; 
+    NSArray *m_allCandidates;
+    BOOL m_animating;
     NSArray *m_candidates;
     NSMutableArray *m_cells;
+    UIKeyboardCandidateBarBackgroundView *m_cellsContainerView;
     unsigned int m_currentCandidateIndex;
-    unsigned int m_currentLimit;
-    unsigned int m_currentOffset;
-    int m_currentPage;
-    NSObject *m_delegate;
+    <UIKeyboardCandidateListDelegate> *m_delegate;
+    UIView *m_extendedButton;
+    UIKeyboardCandidateExtended *m_extendedCandidatesView;
     } m_inlineRect;
     NSString *m_inlineText;
     BOOL m_largeUIShowing;
     float m_maxX;
-    void *m_pageIndex;
-    BOOL m_phone;
+    BOOL m_minimized;
+    UIScrollView *m_scrollView;
+    UIView *m_shadowView;
 }
 
+@property(getter=isAnimating) BOOL animating;
+@property(retain) UIKeyboardCandidateBarBackgroundView * cellsContainerView;
+@property(retain) UIKeyboardCandidateExtended * extendedCandidatesView;
+@property(getter=isMinimized) BOOL minimized;
+
++ (id)activeInstance;
 + (float)candidateBarHeight;
 + (id)sharedInstance;
 
+- (id).cxx_construct;
+- (BOOL)_addCells:(int)arg1;
+- (void)_bgAddCells:(id)arg1;
 - (void)_cellSelected:(id)arg1;
 - (void)_clearAll;
 - (void)_clearCells;
-- (void)_showLargeCandidateList;
+- (void)_forceLayoutTo:(unsigned int)arg1;
+- (void)_hideExtendedCandidatesViewWithAnimation:(BOOL)arg1;
+- (void)_setCurrentCandidateIndex:(unsigned int)arg1;
+- (void)_showExtendedCandidatesView;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (id)candidateAtIndex:(unsigned int)arg1;
 - (void)candidateListAcceptCandidate:(id)arg1;
 - (void)candidateListSelectionDidChange:(id)arg1;
+- (void)candidateListShouldBeDismissed:(id)arg1;
+- (id)cellsContainerView;
 - (void)configureKeyboard:(id)arg1;
 - (unsigned int)count;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)extendedCandidatesView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAnimating;
+- (BOOL)isMinimized;
 - (void)layout;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { float x1; float x2; })screenSpaceBetweenStatusBarAndKeyboard;
+- (void)setAnimating:(BOOL)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCellsContainerView:(id)arg1;
+- (void)setExtendedCandidatesView:(id)arg1;
+- (void)setMinimized:(BOOL)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
 - (void)showNextCandidate;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIBarButtonItem, UIColor, UIView;
+@class NSArray, UIColor, UIView;
 
 @interface UIToolbar : UIView {
     struct { 
@@ -10,25 +10,21 @@
         unsigned int mode : 2; 
         unsigned int alertShown : 1; 
         unsigned int wasEnabled : 1; 
-        unsigned int customized : 1; 
         unsigned int downButtonSentAction : 1; 
         unsigned int isTranslucent : 1; 
         unsigned int forceTopBarAppearance : 1; 
-    id _appearance;
+    id _appearanceStorage;
+    UIView *_backgroundView;
     NSArray *_buttonItems;
     int _currentButtonGroup;
-    NSArray *_customizationItems;
-    UIView *_customizeView;
     id _delegate;
     float _extraEdgeInsets;
     struct __CFDictionary { } *_groups;
     struct __CFArray { } *_hiddenItems;
     NSArray *_items;
-    UIBarButtonItem *_selectedItem;
-    int _selectedTag;
+    int _pressedTag;
     UIColor *_tintColor;
     } _toolbarFlags;
-    int _trackingTag;
 }
 
 @property int barStyle;
@@ -37,7 +33,6 @@
 @property(getter=isTranslucent) BOOL translucent;
 
 + (float)_buttonGap;
-+ (void)_initializeSafeCategory;
 + (Class)defaultButtonClass;
 + (id)defaultButtonFont;
 + (float)defaultHeight;
@@ -45,10 +40,9 @@
 + (float)defaultSelectionModeHeight;
 + (Class)defaultTextButtonClass;
 
-- (id)_accessibilityFuzzyHitTestElements;
-- (BOOL)_accessibilityHitTestShouldFallbackToNearestChild;
-- (void)_adjustButtonSelection:(id)arg1;
+- (void)_adjustButtonPressed:(id)arg1;
 - (void)_alertWillShow:(BOOL)arg1 duration:(float)arg2;
+- (id)_backgroundView;
 - (void)_buttonBarFinishedAnimating;
 - (void)_buttonCancel:(id)arg1;
 - (void)_buttonDown:(id)arg1;
@@ -56,23 +50,19 @@
 - (id)_buttonName:(id)arg1 withType:(int)arg2;
 - (void)_buttonUp:(id)arg1;
 - (id)_buttonWithDescription:(id)arg1;
-- (id)_configureFromOldButton:(id)arg1 toNewButtonWithTag:(int)arg2 skipTag:(int)arg3;
-- (void)_configureToolbarReplacingItem:(id)arg1 withNewItem:(id)arg2 dragging:(BOOL)arg3 swapping:(BOOL)arg4;
 - (id)_currentButtons;
+- (id)_currentCustomBackgroundRespectOversize:(BOOL*)arg1;
 - (id)_customToolbarAppearance;
 - (void)_customViewChangedForButtonItem:(id)arg1;
-- (void)_customizeDoneButtonAction:(id)arg1;
-- (void)_customizeWithAvailableItems:(id)arg1;
-- (void)_customizeWithCurrentButtons:(id)arg1 availableButton:(id)arg2;
 - (id)_descriptionForTag:(int)arg1;
 - (void)_didFinishHidingRetainedOldItems:(id)arg1;
-- (void)_dismissCustomizeSheet:(BOOL)arg1;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (float)_edgeMarginForBorderedItem:(BOOL)arg1;
 - (void)_finishButtonAnimation:(int)arg1 forButton:(int)arg2;
-- (void)_finishCustomizeAnimation:(id)arg1;
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfBarButtonItem:(id)arg1;
 - (BOOL)_isHidden:(id)arg1;
+- (BOOL)_isInNavigationBar;
 - (BOOL)_isPositionedHiddenForAlert;
 - (BOOL)_isTopBar;
 - (void)_populateArchivedSubviews:(id)arg1;
@@ -80,38 +70,36 @@
 - (void)_positionToolbarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
+- (void)_setBackgroundView:(id)arg1;
 - (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(unsigned int)arg3;
 - (void)_setForceTopBarAppearance:(BOOL)arg1;
+- (void)_setTintColor:(id)arg1 force:(BOOL)arg2;
 - (void)_showButtons:(int*)arg1 withCount:(int)arg2 group:(int)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(int)arg6;
+- (BOOL)_subclassImplementsDrawRect;
+- (void)_updateBackgroundImage;
 - (void)_updateItemsForNewFrame:(id)arg1;
 - (void)_updateOpacity;
 - (void)_updateScriptingInfo:(id)arg1 view:(id)arg2;
-- (unsigned long long)accessibilityTraits;
 - (void)animateToolbarItemIndex:(unsigned int)arg1 duration:(double)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (void)animateWithDuration:(float)arg1 forButton:(int)arg2;
+- (id)backgroundImageForToolbarPosition:(int)arg1 barMetrics:(int)arg2;
 - (int)barStyle;
-- (void)beginCustomizingItems:(id)arg1;
 - (id)buttonItems;
 - (id)createButtonWithDescription:(id)arg1;
 - (int)currentButtonGroup;
-- (void)customize:(const int*)arg1 withCount:(int)arg2;
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
 - (id)delegate;
-- (void)dismissCustomizeSheet:(BOOL)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)endCustomizingAnimated:(BOOL)arg1;
 - (float)extraEdgeInsets;
 - (void)getVisibleButtonTags:(int*)arg1 count:(unsigned int*)arg2 maxItems:(unsigned int)arg3;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initInView:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withItemList:(id)arg3;
 - (id)initInView:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withItems:(struct { int x1; int x2; id x3; id x4; float x5; int x6; SEL x7; id x8; }*)arg3 withCount:(int)arg4;
 - (id)initInView:(id)arg1 withItemList:(id)arg2;
 - (id)initInView:(id)arg1 withItems:(struct { int x1; int x2; id x3; id x4; float x5; int x6; SEL x7; id x8; }*)arg2 withCount:(int)arg3;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCustomizing;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isMinibar;
 - (BOOL)isTranslucent;
@@ -119,15 +107,11 @@
 - (id)items;
 - (void)layoutSubviews;
 - (int)mode;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (BOOL)onStateForButton:(int)arg1;
 - (void)positionButtons:(id)arg1 tags:(int*)arg2 count:(int)arg3 group:(int)arg4;
 - (void)registerButtonGroup:(int)arg1 withButtons:(int*)arg2 withCount:(int)arg3;
 - (id)scriptingInfoWithChildren;
-- (int)selectedButton;
-- (id)selectedItem;
+- (void)setBackgroundImage:(id)arg1 forToolbarPosition:(int)arg2 barMetrics:(int)arg3;
 - (void)setBadgeAnimated:(BOOL)arg1 forButton:(int)arg2;
 - (void)setBadgeGlyph:(id)arg1 forButton:(int)arg2;
 - (void)setBadgeValue:(id)arg1 forButton:(int)arg2;
@@ -140,20 +124,17 @@
 - (void)setDelegate:(id)arg1;
 - (void)setExtraEdgeInsets:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setItems:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setOnStateForButton:(BOOL)arg1 forButton:(int)arg2;
-- (void)setSelectedItem:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
+- (void)showActionSheet:(id)arg1 animated:(BOOL)arg2;
 - (void)showButtonGroup:(int)arg1 withDuration:(double)arg2;
 - (void)showButtons:(int*)arg1 withCount:(int)arg2 withDuration:(double)arg3;
-- (void)showSelectionForButton:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tintColor;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

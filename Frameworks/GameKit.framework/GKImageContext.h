@@ -16,11 +16,12 @@
 @property(readonly) struct CGContext { }* CGContext;
 @property(readonly) UIImage * image;
 @property(readonly) float scale;
-@property struct CGSize { float width; float height; } size;
+@property struct CGSize { float x1; float x2; } size;
 
 - (struct CGContext { }*)CGContext;
 - (void)dealloc;
 - (id)image;
+- (id)initMaskContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 opaque:(BOOL)arg3;
 - (float)scale;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;

@@ -18,8 +18,8 @@
 - (void)finalize;
 - (void)flushMemoryCache;
 - (id)initWithTask:(unsigned int)arg1;
-- (int)peekAtAddress:(unsigned int)arg1 size:(unsigned int)arg2 returnsBuf:(void**)arg3;
-- (int)readPointerAt:(unsigned int)arg1 value:(unsigned int*)arg2;
+- (int)peekAtAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnsBuf:(void**)arg3;
+- (int)readPointerAt:(unsigned long long)arg1 value:(unsigned long long*)arg2;
 - (int)startPeeking;
 - (int)stopPeeking;
 

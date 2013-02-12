@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <CalendarEventLoaderDelegate>, EKEventStore, NSMutableArray, NSPredicate;
+@class <CalendarEventLoaderDelegate>, EKEventStore, NSArray, NSMutableSet, NSPredicate;
 
 @interface CalendarEventLoader : NSObject {
     struct { 
@@ -34,7 +34,8 @@
         BOOL minute; 
         double second; 
     NSPredicate *_backgroundPredicate;
-    NSMutableArray *_backgroundResults;
+    id _backgroundRequest;
+    NSArray *_backgroundResults;
     int _backgroundSeed;
     <CalendarEventLoaderDelegate> *_delegate;
     double _end;
@@ -43,7 +44,9 @@
     struct dispatch_group_s { } *_group;
     BOOL _loadsBlocked;
     struct dispatch_queue_s { } *_lock;
-    NSMutableArray *_occurrences;
+    NSArray *_occurrences;
+    NSMutableSet *_occurrencesAwaitingDeletion;
+    NSMutableSet *_occurrencesAwaitingRefresh;
     unsigned int _paddingMonthsToLoad;
     NSPredicate *_predicate;
     BOOL _processingReload;
@@ -51,7 +54,7 @@
     int _seed;
     double _selectedDate;
     } _selectedDateGr;
-    NSMutableArray *_selectedDateOccurrences;
+    NSArray *_selectedDateOccurrences;
     } _selectedDateTimeGr;
     double _start;
     } _startGr;
@@ -72,16 +75,16 @@
 - (void)_reloadOccurrences;
 - (void)_setDisplayedDateRange:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 end:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 loadMethod:(int)arg3;
 - (void)_updatePredicate;
+- (void)addOccurrenceAwaitingDeletion:(id)arg1;
+- (void)addOccurrenceAwaitingRefresh:(id)arg1;
 - (void)cancelBackgroundLoad;
 - (void)dealloc;
 - (id)delegate;
-- (void)displayedDateRange:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1 end:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg2;
-- (id)displayedOccurrences:(BOOL)arg1;
 - (struct CalFilter { }*)filter;
 - (id)initWithEventStore:(id)arg1;
 - (BOOL)loadsBlocked;
 - (id)occurrencesForDay:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 waitForLoad:(BOOL)arg2;
-- (id)occurrencesForStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 waitForLoad:(BOOL)arg3;
+- (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 waitForLoad:(BOOL)arg3;
 - (unsigned int)paddingMonthsToLoad;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })selectedDate;
 - (id)selectedDateOccurrences:(BOOL)arg1 loadIsComplete:(BOOL*)arg2;

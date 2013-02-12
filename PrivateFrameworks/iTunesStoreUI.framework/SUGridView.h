@@ -4,7 +4,7 @@
 
 @class <SUGridViewDataSource>, <SUGridViewDelegate>, NSMutableDictionary, SUGridRowTableViewCellLayoutManager, UIControl, UITableView;
 
-@interface SUGridView : UIView {
+@interface SUGridView : UIView <UITableViewDataSource, UITableViewDelegate> {
     struct { 
         unsigned int commitEditing : 1; 
         unsigned int deleteConfirmationTitle : 1; 
@@ -57,6 +57,7 @@
 - (void)layoutSubviews;
 - (float)marginForTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)reloadCellsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -67,5 +68,6 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView;
+- (id)visibleCells;
 
 @end

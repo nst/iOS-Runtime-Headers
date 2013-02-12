@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OCDReader>, <OCDWriter>, OCDSummary;
+@class <OCDReader>, <OCDWriter>, OADBlipCollection, OCDSummary;
 
 @interface OCDDocument : NSObject {
+    OADBlipCollection *mBlips;
     <OCDReader> *mReader;
     OCDSummary *mSummary;
     <OCDWriter> *mWriter;
 }
 
+- (id)blips;
 - (void)dealloc;
 - (id)init;
 - (bool)isFromBinaryFile;

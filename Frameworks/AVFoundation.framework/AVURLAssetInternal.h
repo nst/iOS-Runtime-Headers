@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspectorLoader, NSArray, NSString, NSURL;
+@class <AVURLAssetFailedURLRequestHandling>, AVAssetInspectorLoader, NSArray, NSString, NSURL;
 
 @interface AVURLAssetInternal : NSObject {
     NSURL *URL;
     NSString *anchorChapterType;
     NSArray *chapterGroupInfo;
+    <AVURLAssetFailedURLRequestHandling> *failedURLRequestDelegate;
     AVAssetInspectorLoader *loader;
     NSArray *tracks;
 }

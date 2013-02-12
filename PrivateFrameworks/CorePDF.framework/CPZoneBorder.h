@@ -55,6 +55,7 @@
 - (BOOL)hasClockwiseVectorAtIndex:(unsigned int)arg1 startingForward:(BOOL)arg2;
 - (BOOL)hasCounterclockwiseVectorAtIndex:(unsigned int)arg1 startingForward:(BOOL)arg2;
 - (BOOL)hasForwardVector;
+- (BOOL)hasNeighborShape:(id)arg1 atSide:(int)arg2;
 - (BOOL)hasNeighborShape:(id)arg1;
 - (BOOL)hasVectorGoingForward:(BOOL)arg1 startingAtIndex:(unsigned int*)arg2;
 - (unsigned int)indexOfIntersectionWith:(id)arg1;

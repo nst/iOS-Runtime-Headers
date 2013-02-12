@@ -15,8 +15,6 @@
 @property(readonly) unsigned int statusDetail;
 @property(readonly) unsigned int statusSubject;
 
-+ (void)initialize;
-
 - (void)_updateEnhancedStatusCodesFromLastResponse;
 - (void)dealloc;
 - (id)description;

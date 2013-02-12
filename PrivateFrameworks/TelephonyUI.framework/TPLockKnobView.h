@@ -11,13 +11,9 @@
     BOOL _tracking;
 }
 
-+ (void)_initializeSafeCategory;
-
-- (id)accessibilityLabel;
 - (void)beginTracking:(id)arg1;
 - (void)dealloc;
 - (id)initWithImage:(id)arg1;
-- (BOOL)isAccessibilityElement;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setLockView:(id)arg1;
 - (BOOL)shouldBeginTracking:(id)arg1;

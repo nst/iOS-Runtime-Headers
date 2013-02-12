@@ -6,11 +6,13 @@
    See Warning(s) below.
  */
 
-@class <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, <CoreDAVTaskManager>, CoreDAVRequestLogger, NSDate, NSDictionary, NSError, NSHTTPURLResponse, NSURL, NSURLConnection, NSURLRequest;
+@class <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, <CoreDAVTaskManager>, CoreDAVRequestLogger, NSDate, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableDictionary, NSURL, NSURLConnection, NSURLRequest;
 
 @interface CoreDAVTask : NSObject {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
+    BOOL _allowAutomaticRedirects;
     id _completionBlock;
+    BOOL _compressedRequestFailed;
     NSURLConnection *_connection;
     void *_context;
     NSDate *_dateConnectionWentOut;
@@ -26,9 +28,12 @@
     BOOL _finished;
     CoreDAVRequestLogger *_logger;
     int _numDownloadedElements;
+    NSMutableDictionary *_overriddenHeaders;
     NSError *_passwordNotificationError;
     BOOL _receivedBadPasswordResponse;
+    NSMutableArray *_redirectHistory;
     NSURLRequest *_request;
+    BOOL _requestIsCompressed;
     id _requestProgressBlock;
     NSHTTPURLResponse *_response;
     <CoreDAVResponseBodyParser> *_responseBodyParser;
@@ -37,34 +42,42 @@
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
     unsigned int _totalBytesReceived;
+    BOOL _triedTokenAuth;
     NSURL *_url;
 }
 
 @property <CoreDAVAccountInfoProvider> * accountInfoProvider;
+@property BOOL allowAutomaticRedirects;
 @property(copy) id completionBlock;
 @property void* context;
 @property <CoreDAVTaskDelegate> * delegate;
 @property int depth;
 @property(retain) NSError * error;
+@property(getter=isFinished,readonly) BOOL finished;
 @property(copy) id requestProgressBlock;
 @property(retain) <CoreDAVResponseBodyParser> * responseBodyParser;
-@property(retain,readonly) NSDictionary * responseHeaders;
+@property(readonly) NSDictionary * responseHeaders;
 @property(copy) id responseProgressBlock;
 @property int responseStatusCode;
 @property <CoreDAVTaskManager> * taskManager;
 @property double timeoutInterval;
 @property unsigned int totalBytesReceived;
-@property(retain,readonly) NSURL * url;
+@property(readonly) NSURL * url;
 
 + (unsigned int)uniqueQueryID;
 
 - (id)_applyAuthenticationChain:(struct __CFArray { }*)arg1 toRequest:(id)arg2;
+- (id)_applyStorageSession:(struct __CFURLStorageSession { }*)arg1 toRequest:(id)arg2;
+- (id)_compressBodyData:(id)arg1;
 - (id)_createBodyData;
 - (void)_failImmediately;
 - (void)_handleBadPasswordResponse;
 - (BOOL)_includeGeneralHeaders;
 - (id)accountInfoProvider;
 - (id)additionalHeaderValues;
+- (BOOL)allowAutomaticRedirects;
+- (id)appleClientInfoString;
+- (unsigned int)cachePolicy;
 - (id)completionBlock;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
@@ -87,8 +100,12 @@
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
 - (id)initWithURL:(id)arg1;
+- (BOOL)isFinished;
+- (id)lastRedirectURL;
 - (void)loadRequest:(id)arg1;
+- (BOOL)markAsFinished;
 - (int)numDownloadedElements;
+- (void)overrideRequestHeader:(id)arg1 withValue:(id)arg2;
 - (void)performCoreDAVTask;
 - (void)reportStatusWithError:(id)arg1;
 - (id)requestBody;
@@ -100,6 +117,7 @@
 - (id)responseProgressBlock;
 - (int)responseStatusCode;
 - (void)setAccountInfoProvider:(id)arg1;
+- (void)setAllowAutomaticRedirects:(BOOL)arg1;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
@@ -112,6 +130,7 @@
 - (void)setTaskManager:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)setTotalBytesReceived:(unsigned int)arg1;
+- (BOOL)shouldLogResponseBody;
 - (void)startModal;
 - (id)taskManager;
 - (void)tearDownResources;

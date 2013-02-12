@@ -25,10 +25,11 @@
     float _scaleThreshold;
     UITouch *_touches[2];
     } _transform;
+    id _transformAnalyzer;
     float _velocity;
 }
 
-@property(readonly) struct CGPoint { float x; float y; } anchorPoint;
+@property(readonly) struct CGPoint { float x1; float x2; } anchorPoint;
 @property(getter=_hysteresis,setter=_setHysteresis:) float hysteresis;
 @property float scale;
 @property float scaleThreshold;
@@ -42,6 +43,8 @@
 - (void)_setEndsOnSingleTouch:(BOOL)arg1;
 - (void)_setHysteresis:(float)arg1;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
+- (void)dealloc;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (float)scale;
 - (float)scaleThreshold;

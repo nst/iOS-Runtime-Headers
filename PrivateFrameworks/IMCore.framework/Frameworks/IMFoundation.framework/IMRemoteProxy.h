@@ -5,26 +5,38 @@
 @class NSProtocolChecker, NSString, Protocol;
 
 @interface IMRemoteProxy : NSObject {
+    BOOL _forwardInBackground;
     NSString *_identifier;
     NSProtocolChecker *_protocolChecker;
+    struct dispatch_queue_s { } *_queue;
     SEL _selector;
     id _target;
 }
 
 @property SEL action;
+@property BOOL forwardInBackground;
 @property(copy) NSString * identifier;
+@property(retain) NSProtocolChecker * protocolChecker;
+@property struct dispatch_queue_s { }* queue;
 @property(copy) Protocol * remoteProtocol;
 @property id target;
 
 - (SEL)action;
 - (void)dealloc;
+- (void)flushSendQueue;
+- (BOOL)forwardInBackground;
 - (void)forwardInvocation:(id)arg1;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)protocolChecker;
+- (struct dispatch_queue_s { }*)queue;
 - (id)remoteProtocol;
 - (void)setAction:(SEL)arg1;
+- (void)setForwardInBackground:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setProtocolChecker:(id)arg1;
+- (void)setQueue:(struct dispatch_queue_s { }*)arg1;
 - (void)setRemoteProtocol:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;

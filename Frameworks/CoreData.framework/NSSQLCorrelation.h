@@ -6,14 +6,19 @@
 
 @interface NSSQLCorrelation : NSObject {
     long long _fk;
+    unsigned int _fok;
     long long _invfk;
+    unsigned int _invfok;
     NSSQLManyToMany *_manyToMany;
 }
 
 - (void)dealloc;
+- (id)description;
 - (long long)fk;
-- (id)initWithManyToMany:(id)arg1 fk:(long long)arg2 invfk:(long long)arg3;
+- (unsigned int)fok;
+- (id)initWithManyToMany:(id)arg1 fk:(long long)arg2 invfk:(long long)arg3 fok:(unsigned int)arg4 invfok:(unsigned int)arg5;
 - (long long)invfk;
+- (unsigned int)invfok;
 - (id)manyToMany;
 
 @end

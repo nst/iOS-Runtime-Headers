@@ -24,10 +24,12 @@
 
 - (void)absolutePosition:(int*)arg1 :(int*)arg2 :(int*)arg3 :(int*)arg4;
 - (id)children;
+- (id)classList;
 - (id)className;
 - (id)contentEditable;
 - (id)dir;
 - (BOOL)draggable;
+- (BOOL)hidden;
 - (id)idName;
 - (id)innerHTML;
 - (id)innerText;
@@ -44,16 +46,22 @@
 - (void)setContentEditable:(id)arg1;
 - (void)setDir:(id)arg1;
 - (void)setDraggable:(BOOL)arg1;
+- (void)setFontSize:(float)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setIdName:(id)arg1;
 - (void)setInnerHTML:(id)arg1;
 - (void)setInnerText:(id)arg1;
 - (void)setLang:(id)arg1;
+- (void)setLineHeight:(float)arg1;
 - (void)setOuterHTML:(id)arg1;
 - (void)setOuterText:(id)arg1;
 - (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2 adjustForPurpleCaret:(BOOL)arg3;
 - (void)setScrollXOffset:(int)arg1 scrollYOffset:(int)arg2;
+- (void)setSpellcheck:(BOOL)arg1;
 - (void)setTabIndex:(int)arg1;
+- (void)setTextShadowColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2;
 - (void)setTitle:(id)arg1;
+- (BOOL)spellcheck;
 - (int)structuralComplexityContribution;
 - (int)tabIndex;
 - (id)title;

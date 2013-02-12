@@ -20,7 +20,6 @@
 - (id)hrefsAsFullURLs;
 - (id)hrefsAsOriginalURLs;
 - (id)hrefsAsStrings;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setHrefs:(id)arg1;
 - (void)setUnauthenticated:(id)arg1;
 - (id)unauthenticated;

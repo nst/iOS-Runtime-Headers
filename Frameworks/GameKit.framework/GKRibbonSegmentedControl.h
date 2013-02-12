@@ -12,15 +12,11 @@
 }
 
 @property(readonly) float defaultHeight;
-@property(retain) <GKRibbonSegmentedControlDelegate> * delegate;
+@property <GKRibbonSegmentedControlDelegate> * delegate;
 @property(readonly) float minimumWidth;
 @property unsigned int selectedSegmentIndex;
 
-- (id)_allTimeString;
 - (void)_tap:(id)arg1;
-- (id)_thisWeekString;
-- (id)_todayString;
-- (void)dealloc;
 - (float)defaultHeight;
 - (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UILongPressGestureRecognizerDelegate>, NSArray, NSMutableSet;
+@class NSArray, NSMutableSet;
 
 @interface UILongPressGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
@@ -14,9 +14,9 @@
     unsigned int _cancelPastAllowableMovement : 1;
     NSMutableSet *_activeTouches;
     float _allowableMovement;
-    double _delay;
     id _enoughTimeElapsed;
     id _imp;
+    double _minimumPressDuration;
     int _numberOfTouchesRequired;
     } _startPointScreen;
     id _tooMuchTimeElapsed;
@@ -25,14 +25,13 @@
 
 @property float allowableMovement;
 @property BOOL cancelPastAllowableMovement;
-@property(readonly) struct CGPoint { float x; float y; } centroid;
+@property(readonly) struct CGPoint { float x1; float x2; } centroid;
 @property double delay;
-@property <UILongPressGestureRecognizerDelegate> * delegate;
 @property double minimumPressDuration;
 @property int numberOfTapsRequired;
 @property int numberOfTouchesRequired;
-@property(readonly) struct CGPoint { float x; float y; } startPoint;
-@property(retain,readonly) NSArray * touches;
+@property(readonly) struct CGPoint { float x1; float x2; } startPoint;
+@property(readonly) NSArray * touches;
 
 + (void)addLongPressGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 minimumPressDuration:(double)arg4 touchCount:(int)arg5;
 
@@ -46,8 +45,9 @@
 - (void)clearTimer;
 - (void)dealloc;
 - (double)delay;
-- (id)delegate;
+- (void)encodeWithCoder:(id)arg1;
 - (void)enoughTimeElapsed:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)invalidate;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
@@ -59,7 +59,6 @@
 - (void)setAllowableMovement:(float)arg1;
 - (void)setCancelPastAllowableMovement:(BOOL)arg1;
 - (void)setDelay:(double)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setMinimumPressDuration:(double)arg1;
 - (void)setNumberOfTapsRequired:(int)arg1;
 - (void)setNumberOfTouchesRequired:(int)arg1;

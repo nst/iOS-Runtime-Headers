@@ -13,8 +13,8 @@
 }
 
 @property(readonly) BOOL hasLine;
-@property(readonly) BOOL hasLineColor;
-@property(readonly) BOOL hasLineWidth;
+@property BOOL hasLineColor;
+@property BOOL hasLineWidth;
 @property(retain) NSData * line;
 @property int lineColor;
 @property int lineWidth;
@@ -25,11 +25,12 @@
 - (BOOL)hasLine;
 - (BOOL)hasLineColor;
 - (BOOL)hasLineWidth;
-- (id)init;
 - (id)line;
 - (int)lineColor;
 - (int)lineWidth;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasLineColor:(BOOL)arg1;
+- (void)setHasLineWidth:(BOOL)arg1;
 - (void)setLine:(id)arg1;
 - (void)setLineColor:(int)arg1;
 - (void)setLineWidth:(int)arg1;

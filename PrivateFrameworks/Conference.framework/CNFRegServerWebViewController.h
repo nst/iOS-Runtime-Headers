@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CNFRegLoadingView, NSMutableDictionary, NSString, NSTimer, UIWebView;
+@class CNFRegController, CNFRegLoadingView, NSMutableDictionary, NSString, NSTimer, UIWebView;
 
 @interface CNFRegServerWebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate> {
     struct { 
@@ -21,6 +21,7 @@
     id _alertHandler;
     NSString *_leftButtonAction;
     CNFRegLoadingView *_loadingView;
+    CNFRegController *_regController;
     NSString *_rightButtonAction;
     NSTimer *_timeoutTimer;
     NSMutableDictionary *_urlHandlers;
@@ -32,6 +33,7 @@
 @property(readonly) BOOL isLoaded;
 @property(readonly) BOOL isLoading;
 @property(copy) NSString * leftButtonAction;
+@property(retain) CNFRegController * regController;
 @property(copy) NSString * rightButtonAction;
 @property(readonly) BOOL timedOut;
 @property(retain) UIWebView * webView;
@@ -57,6 +59,8 @@
 - (void)handleLeftButtonError:(id)arg1;
 - (void)handleRightButtonError:(id)arg1;
 - (void)hideSpinner;
+- (id)init;
+- (id)initWithRegController:(id)arg1;
 - (BOOL)intForServerValue:(id)arg1 value:(int*)arg2 defaultValue:(int)arg3;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
@@ -73,6 +77,7 @@
 - (void)parseAlertURL:(id)arg1;
 - (void)parseNavBarURL:(id)arg1;
 - (id)queryDictionaryForUrl:(id)arg1;
+- (id)regController;
 - (id)rightButtonAction;
 - (void)rightButtonTapped:(id)arg1;
 - (id)schemeForURL:(id)arg1;
@@ -80,6 +85,7 @@
 - (void)setAlertHandler:(id)arg1;
 - (void)setHeadersForRequest:(id)arg1;
 - (void)setLeftButtonAction:(id)arg1;
+- (void)setRegController:(id)arg1;
 - (void)setRightButtonAction:(id)arg1;
 - (void)setWantsWifi:(BOOL)arg1;
 - (void)setWebView:(id)arg1;
@@ -97,7 +103,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(unsigned int)arg3;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (id)webView;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;

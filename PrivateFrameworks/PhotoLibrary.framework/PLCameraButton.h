@@ -5,38 +5,41 @@
 @class NSArray, UIImage, UIImageView, UIView;
 
 @interface PLCameraButton : UIButton {
+    int _buttonMode;
     UIImage *_cameraIcon;
     UIImage *_cameraIconLandscape;
     BOOL _dontDrawDisabled;
     UIImageView *_iconView;
+    BOOL _isCapturing;
     BOOL _isLandscape;
     BOOL _lockEnabled;
     int _orientation;
+    UIImage *_panoRecordingIcon;
+    UIImage *_panoRecordingIconLandscape;
     UIView *_rotationHolder;
-    BOOL _videoIsRecording;
-    BOOL _videoMode;
     NSArray *_videoRecordingIcons;
     BOOL _watchingOrientationChanges;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (void)_deviceOrientationChanged:(id)arg1;
+- (void)_loadPanoLandscapeResources;
+- (void)_loadPanoResources;
+- (void)_loadStillLandscapeResources;
+- (void)_loadStillResources;
+- (void)_loadVideoResources;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (void)_setIcon:(id)arg1;
 - (void)_startWatchingDeviceOrientationChanges;
 - (void)_stopWatchingDeviceOrientationChanges;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
 - (void)dealloc;
 - (id)initWithDefaultSize;
 - (int)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setButtonMode:(int)arg1;
 - (void)setButtonOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setDontShowDisabledState:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setIsCapturing:(BOOL)arg1;
 - (void)setLockEnabled:(BOOL)arg1;
-- (void)setVideoIsRecording:(BOOL)arg1;
-- (void)setVideoMode:(BOOL)arg1;
 
 @end

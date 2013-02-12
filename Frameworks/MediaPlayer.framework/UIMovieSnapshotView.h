@@ -4,7 +4,7 @@
 
 @class <UIMovieSnapshotViewDelegate>, UITapGestureRecognizer;
 
-@interface UIMovieSnapshotView : UIImageView {
+@interface UIMovieSnapshotView : UIImageView <UIGestureRecognizerDelegate> {
     <UIMovieSnapshotViewDelegate> *_delegate;
     UITapGestureRecognizer *_tapGestureRecognizer;
 }

@@ -2,46 +2,50 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CALayer, CAShapeLayer, UIPDFSelection;
+@class CALayer, CAShapeLayer;
 
 @interface UIPDFMagnifiedView : UIView {
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGSize { 
+        float width; 
+        float height; 
     struct CGSize { 
         float width; 
         float height; 
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGImage { } *_bitmap;
-    } _bitmapSize;
-    CAShapeLayer *_glassLayer;
-    struct CGColor { } *_highLightColor;
-    BOOL _isLoupe;
-    CALayer *_leftBar;
+    } _controlPointSize;
+    CALayer *_glassLayer;
+    struct CGImage { } *_image;
+    CALayer *_imageLayer;
+    } _imageSize;
+    CAShapeLayer *_leftBar;
     CALayer *_leftGrabber;
-    float _magnification;
-    CALayer *_magnifiedPageLayer;
-    struct CGImage { } *_mask;
-    } _offset;
-    CALayer *_rightBar;
+    unsigned int _pageRotation;
+    } _position;
+    CAShapeLayer *_rightBar;
     CALayer *_rightGrabber;
-    UIPDFSelection *_selection;
     CAShapeLayer *_selectionLayer;
+    } _touchPoint;
 }
 
-@property struct CGImage { }* bitmap;
-@property float magnification;
-@property struct CGPoint { float x; float y; } offset;
-@property UIPDFSelection * selection;
+@property struct CGImage { }* image;
+@property unsigned int pageRotation;
+@property struct CGPoint { float x; float y; } touchPoint;
 
-- (struct CGImage { }*)bitmap;
+- (void)createGrabbers;
 - (void)dealloc;
+- (struct CGImage { }*)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 loupe:(BOOL)arg2;
-- (float)magnification;
-- (struct CGPoint { float x1; float x2; })offset;
-- (id)selection;
-- (void)setBitmap:(struct CGImage { }*)arg1;
-- (void)setMagnification:(float)arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setSelection:(id)arg1;
+- (unsigned int)pageRotation;
+- (void)setGrabbersAt:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 and:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)setImage:(struct CGImage { }*)arg1;
+- (void)setPageRotation:(unsigned int)arg1;
+- (void)setSelection:(struct CGPath { }*)arg1;
+- (void)setTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })touchPoint;
 
 @end

@@ -5,41 +5,37 @@
 @class LBSGPlatformProfile, LBSGUserProfile, NSMutableArray;
 
 @interface LBSGLocRequest : PBRequest {
-    NSMutableArray *_appProfiless;
+    NSMutableArray *_appProfiles;
     LBSGPlatformProfile *_platformProfile;
-    NSMutableArray *_requestElementss;
+    NSMutableArray *_requestElements;
     LBSGUserProfile *_userProfile;
 }
 
-@property(retain) NSMutableArray * appProfiless;
-@property(readonly) int appProfilessCount;
+@property(retain) NSMutableArray * appProfiles;
 @property(readonly) BOOL hasUserProfile;
 @property(retain) LBSGPlatformProfile * platformProfile;
-@property(retain) NSMutableArray * requestElementss;
-@property(readonly) int requestElementssCount;
+@property(retain) NSMutableArray * requestElements;
 @property(retain) LBSGUserProfile * userProfile;
 
 - (void)addAppProfiles:(id)arg1;
 - (void)addRequestElements:(id)arg1;
+- (id)appProfiles;
 - (id)appProfilesAtIndex:(unsigned int)arg1;
-- (id)appProfiless;
-- (int)appProfilessCount;
+- (unsigned int)appProfilesCount;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (BOOL)hasUserProfile;
-- (id)init;
 - (id)platformProfile;
 - (BOOL)readFrom:(id)arg1;
+- (id)requestElements;
 - (id)requestElementsAtIndex:(unsigned int)arg1;
-- (id)requestElementss;
-- (int)requestElementssCount;
+- (unsigned int)requestElementsCount;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setAppProfiles:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setAppProfiless:(id)arg1;
+- (void)setAppProfiles:(id)arg1;
 - (void)setPlatformProfile:(id)arg1;
-- (void)setRequestElements:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setRequestElementss:(id)arg1;
+- (void)setRequestElements:(id)arg1;
 - (void)setUserProfile:(id)arg1;
 - (id)userProfile;
 - (void)writeTo:(id)arg1;

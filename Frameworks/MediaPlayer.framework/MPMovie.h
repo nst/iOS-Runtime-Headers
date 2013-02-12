@@ -12,7 +12,7 @@
 @property double endPlaybackTime;
 @property(readonly) int movieMediaTypes;
 @property int movieSourceType;
-@property(readonly) struct CGSize { float width; float height; } naturalSize;
+@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) double playableDuration;
 @property double startPlaybackTime;
 @property(readonly) NSURL * url;
@@ -22,7 +22,6 @@
 - (id)_MPArrayQueueItem;
 - (void)_determineMediaType;
 - (void)_durationAvailableNotification:(id)arg1;
-- (void)_fileValidationDidFinishNotification:(id)arg1;
 - (id)_initWithURL:(id)arg1 error:(id*)arg2;
 - (void)_naturalSizeAvailableNotification:(id)arg1;
 - (void)_typeAvailableNotification:(id)arg1;

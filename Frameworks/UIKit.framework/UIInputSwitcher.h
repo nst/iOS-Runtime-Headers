@@ -11,8 +11,6 @@
     UIInputSwitcherView *m_switcherView;
 }
 
-@property(copy) NSString * newMode;
-
 + (id)activeInstance;
 + (id)sharedInstance;
 

@@ -7,6 +7,7 @@
 
 + (Class)_DDURLifierClass;
 + (id)sharedDetectionController;
++ (BOOL)urlIfyNode:(id)arg1 phoneNumberTypes:(unsigned int)arg2;
 + (BOOL)urlIfyNode:(id)arg1;
 + (id)urlMatchesForString:(id)arg1 includingTel:(BOOL)arg2;
 + (id)urlMatchesForString:(id)arg1;

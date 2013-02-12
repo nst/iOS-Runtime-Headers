@@ -19,7 +19,6 @@
 - (void)formSheetViewWillDisappear;
 - (void)forwardInvocation:(id)arg1;
 - (void)handleURL:(id)arg1;
-- (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)parentController;
 - (void)popupViewDidDisappear;

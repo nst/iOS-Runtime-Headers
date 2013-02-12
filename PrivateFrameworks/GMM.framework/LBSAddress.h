@@ -6,51 +6,48 @@
 
 @interface LBSAddress : PBCodable {
     NSMutableArray *_components;
-    NSMutableArray *_cross_streets;
-    BOOL _hasIs_mailing;
-    BOOL _hasIs_physical;
-    BOOL _is_mailing;
-    BOOL _is_physical;
-    NSString *_raw_text;
+    NSMutableArray *_crossStreets;
+    BOOL _hasIsMailing;
+    BOOL _hasIsPhysical;
+    BOOL _isMailing;
+    BOOL _isPhysical;
+    NSString *_rawText;
 }
 
 @property(retain) NSMutableArray * components;
-@property(readonly) int componentsCount;
-@property(retain) NSMutableArray * cross_streets;
-@property(readonly) int cross_streetsCount;
-@property(readonly) BOOL hasIs_mailing;
-@property(readonly) BOOL hasIs_physical;
-@property(readonly) BOOL hasRaw_text;
-@property BOOL is_mailing;
-@property BOOL is_physical;
-@property(retain) NSString * raw_text;
+@property(retain) NSMutableArray * crossStreets;
+@property BOOL hasIsMailing;
+@property BOOL hasIsPhysical;
+@property(readonly) BOOL hasRawText;
+@property BOOL isMailing;
+@property BOOL isPhysical;
+@property(retain) NSString * rawText;
 
 - (void)addComponent:(id)arg1;
-- (void)addCross_street:(id)arg1;
+- (void)addCrossStreet:(id)arg1;
 - (id)componentAtIndex:(unsigned int)arg1;
 - (id)components;
-- (int)componentsCount;
-- (id)cross_streetAtIndex:(unsigned int)arg1;
-- (id)cross_streets;
-- (int)cross_streetsCount;
+- (unsigned int)componentsCount;
+- (id)crossStreetAtIndex:(unsigned int)arg1;
+- (id)crossStreets;
+- (unsigned int)crossStreetsCount;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIs_mailing;
-- (BOOL)hasIs_physical;
-- (BOOL)hasRaw_text;
-- (id)init;
-- (BOOL)is_mailing;
-- (BOOL)is_physical;
-- (id)raw_text;
+- (BOOL)hasIsMailing;
+- (BOOL)hasIsPhysical;
+- (BOOL)hasRawText;
+- (BOOL)isMailing;
+- (BOOL)isPhysical;
+- (id)rawText;
 - (BOOL)readFrom:(id)arg1;
-- (void)setComponent:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setComponents:(id)arg1;
-- (void)setCross_street:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setCross_streets:(id)arg1;
-- (void)setIs_mailing:(BOOL)arg1;
-- (void)setIs_physical:(BOOL)arg1;
-- (void)setRaw_text:(id)arg1;
+- (void)setCrossStreets:(id)arg1;
+- (void)setHasIsMailing:(BOOL)arg1;
+- (void)setHasIsPhysical:(BOOL)arg1;
+- (void)setIsMailing:(BOOL)arg1;
+- (void)setIsPhysical:(BOOL)arg1;
+- (void)setRawText:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

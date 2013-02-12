@@ -19,11 +19,9 @@
 @property int percentComplete;
 
 - (id)achievementID;
-- (int)cacheType;
 - (id)date;
 - (void)dealloc;
 - (id)game;
-- (id)invalidateCacheKeys;
 - (BOOL)isHidden;
 - (id)key;
 - (int)percentComplete;

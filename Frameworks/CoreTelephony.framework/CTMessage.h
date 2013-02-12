@@ -21,7 +21,7 @@
 }
 
 @property(copy) NSString * contentType;
-@property(copy,readonly) NSString * countryCode;
+@property(readonly) NSString * countryCode;
 @property(readonly) NSDate * date;
 @property(readonly) NSArray * items;
 @property unsigned int messageId;

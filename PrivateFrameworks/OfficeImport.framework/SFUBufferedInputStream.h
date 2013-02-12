@@ -19,6 +19,7 @@
 - (void)dealloc;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
+- (id)initWithSFUStream:(id)arg1;
 - (id)initWithStream:(id)arg1 bufferSize:(unsigned long)arg2;
 - (id)initWithStream:(id)arg1 dataLength:(long long)arg2;
 - (id)initWithStream:(id)arg1;

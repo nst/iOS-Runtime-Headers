@@ -6,55 +6,46 @@
 
 @interface UISwitch : UIControl <NSCoding> {
     id _control;
+    float _enabledAlpha;
 }
 
+@property float enabledAlpha;
 @property(getter=isOn) BOOL on;
 @property(getter=_onColor,setter=_setOnColor:,retain) UIColor * onColor;
-@property(getter=_onTintColor,setter=_setOnTintColor:,retain) UIColor * onTintColor;
+@property(retain) UIColor * onTintColor;
 
-+ (void)_initializeSafeCategory;
-
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)_animateToOn:(BOOL)arg1 withDuration:(float)arg2 sendAction:(BOOL)arg3;
-- (void)_commonInit;
-- (id)_customColoredOnButtonImage;
-- (void)_handlePan:(id)arg1;
-- (void)_handleTap:(id)arg1;
-- (id)_imageForState:(int)arg1;
+- (void)_commonInitNewLook;
+- (void)_encodeFrameWithCoder:(id)arg1;
+- (void)_handlePanNL:(id)arg1;
+- (void)_handleTapNL:(id)arg1;
 - (void)_onAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_onColor;
 - (id)_onTintColor;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (void)_resetImages;
 - (id)_scriptingInfo;
 - (void)_setOnColor:(id)arg1;
 - (void)_setOnTintColor:(id)arg1;
-- (void)_setPressed:(BOOL)arg1;
-- (void)_setThumbPosition:(float)arg1;
-- (void)_setupMask;
-- (void)_updateImage;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
+- (BOOL)_useOldSize;
 - (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
+- (float)enabledAlpha;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isOn;
+- (id)onTintColor;
 - (void)setAlpha:(float)arg1;
 - (void)setAlternateColors:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setEnabledAlpha:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOn:(BOOL)arg1;
+- (void)setOnTintColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

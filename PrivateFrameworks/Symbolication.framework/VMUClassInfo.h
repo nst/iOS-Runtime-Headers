@@ -2,23 +2,89 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface VMUClassInfo : NSObject {
-    NSString *_binaryName;
-    NSString *_className;
-    NSString *_type;
+@class NSString, VMUClassInfo;
+
+@interface VMUClassInfo : NSObject <NSCoding> {
+    unsigned int _instanceSize;
+    unsigned int _ivarCount;
+    int *_ivarSizes;
+    struct objc_ivar {} **_localIvarList;
+    id _reader;
+    NSString *_remoteBinaryName;
+    NSString *_remoteClassName;
+    unsigned long long _remoteIsa;
+    unsigned int _remotePointerSize;
+    int _remoteType;
+    unsigned int _ro_flags;
+    unsigned int _rw_flags;
+    char *_strongLayout;
+    BOOL *_strongMap;
+    VMUClassInfo *_superclassLayout;
+    unsigned int _superclassOffset;
+    char *_weakLayout;
+    BOOL *_weakMap;
 }
 
-+ (id)classInfoWithClassName:(id)arg1 binaryName:(id)arg2 type:(id)arg3;
+@property(readonly) NSString * binaryName;
+@property(readonly) NSString * className;
+@property(readonly) NSString * fullIvarDescription;
+@property(readonly) BOOL hasCppConstructorOrDestructor;
+@property(readonly) int infoType;
+@property(readonly) unsigned int instanceSize;
+@property(readonly) BOOL isARR;
+@property(readonly) BOOL isMetaClass;
+@property(readonly) BOOL isRealized;
+@property(readonly) BOOL isRootClass;
+@property(readonly) unsigned long long remoteIsa;
+@property(readonly) NSString * shortIvarDescription;
+@property(readonly) NSString * typeName;
 
++ (id)classInfoWithClassName:(id)arg1 binaryName:(id)arg2 type:(int)arg3;
++ (id)descriptionForTypeEncoding:(const char *)arg1 ivarName:(const char *)arg2;
++ (void)initialize;
+
+- (struct objc_ivar { }*)_copyRemoteIvarAt:(unsigned long long)arg1;
+- (const char *)_copyRemoteLayout:(unsigned long long)arg1;
+- (const char *)_copyRemoteStringAt:(unsigned long long)arg1;
+- (id)_initWithClass:(unsigned long long)arg1 doLayouts:(BOOL)arg2 infoMap:(id)arg3 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg4 type:(int)arg5 memoryReader:(id)arg6;
+- (id)_ivarDescription:(unsigned int)arg1 withSpacing:(unsigned int)arg2;
+- (void)_logDescriptionWithSuperclasses:(BOOL)arg1 indentation:(int)arg2 toLogger:(id)arg3;
+- (void)_parseIvarsAndLayouts;
+- (BOOL*)_processARRLayout:(const char *)arg1;
+- (int)_readRemoteIntAt:(unsigned long long)arg1;
+- (unsigned long long)_readRemotePointerAt:(unsigned long long)arg1;
+- (void)_scanFieldsToOffset:(unsigned int)arg1 withBlock:(id)arg2;
+- (void)_setClassNameWithAddress:(unsigned long long)arg1;
 - (id)binaryName;
 - (id)className;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (void)enumerateIvarsWithBlock:(id)arg1;
+- (id)fullIvarDescription;
+- (BOOL)hasCppConstructorOrDestructor;
 - (unsigned int)hash;
-- (id)initWithClassName:(id)arg1 binaryName:(id)arg2 type:(id)arg3;
+- (int)infoType;
+- (id)initWithClass:(unsigned long long)arg1 infoMap:(id)arg2 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg3 type:(int)arg4 memoryReader:(id)arg5;
+- (id)initWithClassName:(id)arg1 binaryName:(id)arg2 type:(int)arg3;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithIsaPointer:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned int)instanceSize;
+- (BOOL)isARR;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isMetaClass;
+- (BOOL)isRealized;
+- (BOOL)isRootClass;
+- (unsigned long long)remoteIsa;
+- (void)scanObject:(unsigned long long)arg1 ofSize:(unsigned int)arg2 withBlock:(id)arg3;
+- (void)setMemoryReader:(id)arg1;
+- (id)shortIvarDescription;
 - (id)type;
+- (id)typeName;
 
 @end

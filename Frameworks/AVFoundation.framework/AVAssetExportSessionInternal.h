@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVAudioMix, AVURLAsset, AVVideoComposition, AVWeakReference, NSArray, NSError, NSString, NSURL;
+@class AVAssetTrack, AVAudioMix, AVURLAsset, AVVideoComposition, AVWeakReference, NSArray, NSError, NSString, NSURL;
 
 @interface AVAssetExportSessionInternal : NSObject {
     struct { 
@@ -25,6 +25,7 @@
     AVURLAsset *asset;
     AVAudioMix *audioMix;
     NSError *error;
+    AVAssetTrack *firstVideoTrack;
     id handler;
     long long maxFileSize;
     NSArray *metadata;

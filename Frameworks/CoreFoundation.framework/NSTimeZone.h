@@ -10,6 +10,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)calendarTimeZone;
 + (id)defaultTimeZone;
++ (id)gmt;
 + (id)knownTimeZoneNames;
 + (id)localTimeZone;
 + (void)resetSystemTimeZone;
@@ -26,6 +27,7 @@
 - (unsigned long)_cfTypeID;
 - (id)abbreviation;
 - (id)abbreviationForDate:(id)arg1;
+- (id)cityName;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
@@ -50,5 +52,6 @@
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
 - (int)secondsFromGMT;
 - (int)secondsFromGMTForDate:(id)arg1;
+- (void)setCityName:(id)arg1;
 
 @end

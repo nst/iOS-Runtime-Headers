@@ -29,9 +29,11 @@
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
+- (void)endStream;
 - (BOOL)hasSpaceAvailable;
 - (id)initWithAccessory:(id)arg1 forSession:(id)arg2;
 - (void)open;
+- (void)openCompleted;
 - (id)propertyForKey:(id)arg1;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;

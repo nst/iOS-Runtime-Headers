@@ -9,6 +9,7 @@
 
 - (void)addCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)addCharactersInString:(id)arg1;
+- (BOOL)allowsWeakReference;
 - (id)bitmapRepresentation;
 - (BOOL)characterIsMember:(unsigned short)arg1;
 - (Class)classForArchiver;
@@ -33,5 +34,6 @@
 - (void)removeCharactersInString:(id)arg1;
 - (id)retain;
 - (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 
 @end

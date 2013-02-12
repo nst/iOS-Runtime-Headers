@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSMutableSet, UIFieldEditor, UILongPressGestureRecognizer, UITapGestureRecognizer, UITextChecker, UIView, UIView<UITextSelectingContainer>;
 
-@interface UITextInteractionAssistant : NSObject {
+@interface UITextInteractionAssistant : NSObject <UIGestureRecognizerDelegate> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -30,7 +30,7 @@
     UIView<UITextSelectingContainer> *_view;
 }
 
-@property struct CGPoint { float x; float y; } autoscrollUntransformedExtentPoint;
+@property struct CGPoint { float x1; float x2; } autoscrollUntransformedExtentPoint;
 @property BOOL autoscrolled;
 @property(readonly) UIFieldEditor * fieldEditor;
 @property BOOL inGesture;
@@ -81,7 +81,6 @@
 - (BOOL)isChineseInputEnabled;
 - (BOOL)isInteractingWithLink;
 - (void)longDelayRecognizer:(id)arg1;
-- (BOOL)longPressGestureCanTransitionToRecognizedState:(id)arg1;
 - (void)loupeGesture:(id)arg1;
 - (id)loupeGesture;
 - (void)notifyKeyboardSelectionChanged;
@@ -90,12 +89,9 @@
 - (void)oneFingerTapInUneditable:(id)arg1;
 - (void)oneFingerTapSelectsAll:(id)arg1;
 - (void)oneFingerTripleTap:(id)arg1;
-- (struct CGPoint { float x1; float x2; })pointFromContainerToContent:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })pointFromContentToContainer:(struct CGPoint { float x1; float x2; })arg1;
 - (id)rangeForTextReplacement:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectFromContainerToContent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectFromContentToContainer:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)resignedFirstResponder;
+- (void)scheduleGrammarReplacementsForAlternatives:(id)arg1 range:(id)arg2;
 - (void)scheduleReplacementsForRange:(id)arg1 withOptions:(unsigned int)arg2;
 - (void)scheduleReplacementsWithOptions:(unsigned int)arg1;
 - (id)scrollView;

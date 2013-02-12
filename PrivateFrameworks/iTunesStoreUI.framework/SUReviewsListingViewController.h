@@ -15,6 +15,7 @@
 - (void)_writeAReview:(id)arg1;
 - (void)dealloc;
 - (void)loadView;
+- (id)newTermsAndConditionsFooter;
 - (void)reloadData;
 - (void)reloadForChangedRowCount:(int)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

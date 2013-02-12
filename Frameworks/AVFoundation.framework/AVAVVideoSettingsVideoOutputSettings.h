@@ -5,26 +5,25 @@
 @class NSDictionary;
 
 @interface AVAVVideoSettingsVideoOutputSettings : AVVideoOutputSettings <AVReencodedVideoSettingsForFig> {
+    NSDictionary *_adaptedVideoCompressionProperties;
     BOOL _dictionaryWasFullyFormed;
 }
 
-@property(readonly) int height;
 @property(readonly) unsigned int videoCodecType;
 @property(readonly) NSDictionary * videoCompressionProperties;
 @property(readonly) NSDictionary * videoEncoderSpecification;
-@property(readonly) NSDictionary * videoScalingProperties;
-@property(readonly) int width;
 
++ (BOOL)_validateVideoCompressionProperties:(id)arg1 againstSupportedPropertyDictionary:(id)arg2 forCodecType:(id)arg3 exceptionReason:(id*)arg4;
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)eligibleOutputSettingsDictionaryKeys;
 
+- (void)dealloc;
 - (int)height;
 - (id)initWithAVVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (BOOL)isDictionaryFullyFormed;
 - (unsigned long)videoCodecType;
 - (id)videoCompressionProperties;
 - (id)videoEncoderSpecification;
-- (id)videoScalingProperties;
 - (int)width;
 - (BOOL)willYieldCompressedSamples;
 

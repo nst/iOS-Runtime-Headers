@@ -48,6 +48,7 @@
     int mMode;
     } mPageSize;
     struct __CFDictionary { } *mPageWrapPointsMap;
+    int mProgressiveIndex;
     struct __CFArray { } *mSectionStyles;
     BOOL mSplitNextAttachment;
     int mStartPageAt;

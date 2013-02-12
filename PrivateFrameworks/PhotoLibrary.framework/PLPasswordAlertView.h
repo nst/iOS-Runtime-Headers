@@ -8,7 +8,7 @@
 
 @class NSString, UITextField;
 
-@interface PLPasswordAlertView : UIAlertView {
+@interface PLPasswordAlertView : UIAlertView <UIAlertViewDelegate> {
     UITextField *_accountTextField;
     id _completionHandler;
     UITextField *_passwordTextField;

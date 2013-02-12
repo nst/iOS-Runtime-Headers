@@ -7,8 +7,10 @@
 
 - (id)_calendarOrderSortDescriptor;
 - (void)buildDayLabel;
+- (float)faderInset;
 - (id)getSortedBlocksFromOccurrenceBlocks:(id)arg1;
-- (id)makeAllDayLabel;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 numberOfDaysToDisplay:(unsigned int)arg3 opaque:(BOOL)arg4 backgroundColor:(id)arg5 scrollbarShowsInside:(BOOL)arg6;
+- (id)makeAllDayLabel:(BOOL)arg1;
 - (void)updateDayLabels;
 
 @end

@@ -5,7 +5,9 @@
 @interface NSKnownKeysMappingStrategy2 : NSKnownKeysMappingStrategy1 {
 }
 
+- (BOOL)_isDeallocating;
 - (id)_setupForKeys:(id*)arg1 count:(unsigned int)arg2 table:(void*)arg3 inData:(id)arg4;
+- (BOOL)_tryRetain;
 - (void)dealloc;
 - (id)init;
 - (id)initForKeys:(id)arg1;

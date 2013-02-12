@@ -2,12 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface UINibStringIDTable : NSObject {
-    struct UIStringIDTableBucket { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; unsigned short x4; void*x5; const int x6; in void*x7; void*x8; unsigned int x9; struct UIStringIDTableBucket {} *x10; } *buckets;
+    struct UIStringIDTableBucket { id x1; unsigned int x2; struct UIStringIDTableBucket {} *x3; } *buckets;
     unsigned int count;
     unsigned int hashMask;
     struct UIStringIDTableBucket {} **table;

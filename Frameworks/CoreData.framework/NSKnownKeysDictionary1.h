@@ -8,7 +8,7 @@
     int _cd_rc;
     int _count;
     NSKnownKeysMappingStrategy *_keySearch;
-    id *_values;
+    id _values[0];
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
@@ -24,8 +24,10 @@
 + (id)initWithSearchStrategy:(id)arg1;
 
 - (unsigned int)_countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3 forKeys:(BOOL)arg4;
+- (BOOL)_isDeallocating;
 - (void)_recount;
 - (void)_setValues:(id*)arg1 retain:(BOOL)arg2;
+- (BOOL)_tryRetain;
 - (unsigned int)_valueCountByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (id)allKeys;
@@ -46,7 +48,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;
-- (void)release;
+- (oneway void)release;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (id)retain;

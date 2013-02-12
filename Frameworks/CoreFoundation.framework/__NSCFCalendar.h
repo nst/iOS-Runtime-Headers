@@ -7,9 +7,12 @@
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (id)calendarIdentifier;
 - (id)components:(unsigned int)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(unsigned int)arg4;
 - (id)components:(unsigned int)arg1 fromDate:(id)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
 - (id)dateFromComponents:(id)arg1;
 - (void)finalize;

@@ -4,7 +4,7 @@
 
 @class NSNumber, SSAuthenticateRequest, SSAuthenticationContext;
 
-@interface ISStoreAuthenticateOperation : ISOperation {
+@interface ISStoreAuthenticateOperation : ISOperation <SSAuthenticateRequestDelegate> {
     NSNumber *_authenticatedDSID;
     SSAuthenticateRequest *_request;
 }

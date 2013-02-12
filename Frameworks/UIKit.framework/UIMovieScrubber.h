@@ -92,17 +92,8 @@
 @property double value;
 @property float zoomDelay;
 
-+ (void)_initializeSafeCategory;
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
-- (void)_accessibilityDecrementMockSlider:(id)arg1;
-- (void)_accessibilityIncrementMockSlider:(id)arg1;
-- (void)_accessibilityNotifyDelegateEditingEndValueDidChange:(double)arg1;
-- (void)_accessibilityNotifyDelegateEditingStartValueDidChange:(double)arg1;
-- (void)_accessibilityNotifyDelegateScrubberDidBeginScrubbingWithHandle:(int)arg1;
-- (void)_accessibilityNotifyDelegateScrubberDidEndScrubbingWithHandle:(int)arg1;
-- (void)_accessibilityNotifyDelegateWillBeginEditing;
-- (double)_accessibilitySliderDeltaForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_animateAfterEdit:(BOOL)arg1;
 - (void)_beginTrackPressWithTouch:(id)arg1 touchesBegan:(BOOL)arg2;
@@ -129,7 +120,6 @@
 - (void)_updateThumbLocation;
 - (void)_updateTimes;
 - (float)_valueForTouch:(id)arg1;
-- (id)accessibilityContainerElements;
 - (void)animateAfterEdit;
 - (void)animateCancelEdit;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -144,7 +134,6 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isAnimatingValueChange;
 - (BOOL)isContinuous;
 - (BOOL)isEditable;

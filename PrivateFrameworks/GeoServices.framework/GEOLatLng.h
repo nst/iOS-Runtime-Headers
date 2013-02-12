@@ -10,15 +10,22 @@
 @property double lat;
 @property double lng;
 
+- (id)coordinateAsString;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)init;
+- (unsigned int)hash;
+- (id)initWithGMMGeometry:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isValid;
 - (double)lat;
+- (int)latE7;
 - (double)lng;
+- (int)lngE7;
 - (BOOL)readFrom:(id)arg1;
 - (void)setLat:(double)arg1;
 - (void)setLng:(double)arg1;
+- (unsigned int)unsignedLatE7;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -11,9 +11,8 @@
 + (id)sharedInstance;
 
 - (void)_preprocessWithContext:(id)arg1 string:(id*)arg2;
-- (id)autorelease;
+- (BOOL)allowsWeakReference;
 - (void)parseContext:(id)arg1;
-- (oneway void)release;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 
 @end

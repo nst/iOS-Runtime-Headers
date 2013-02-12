@@ -7,6 +7,12 @@
 
 + (id)_parseAuthorizedAccountTokenWithBytes:(const char *)arg1 length:(unsigned int)arg2;
 + (id)_parseBrowseListingWithBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)_parseBulkCloudArtworkInfoResponseWithBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)_parseCloudArtworkInfoResponseWithBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)_parseDeletedIDListingWithBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)_parseDictionaryCollectionWithBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)_parseEditCommandResponseWithBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)_parseItemIDArrayWithBytes:(const char *)arg1 length:(unsigned int)arg2;
 + (unsigned int)_parseItemPropertyCountWithBytes:(const char *)arg1 length:(unsigned int)arg2;
 + (id)_parseItemsResponseWithBytes:(const char *)arg1 length:(unsigned int)arg2 usingHandler:(id)arg3;
 + (id)_parseListingCollectionWithBytes:(const char *)arg1 length:(unsigned int)arg2 usingHandler:(id)arg3;
@@ -14,6 +20,7 @@
 + (id)_parseLoginResponseWithBytes:(const char *)arg1 length:(unsigned int)arg2;
 + (id)_parseResponseCode:(unsigned int)arg1 bytes:(const char *)arg2 length:(unsigned int)arg3 usingHandler:(id)arg4;
 + (id)_parseUpdateResponseWithBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (void)enumerateDeletedItemsInResponseData:(id)arg1 usingHandler:(id)arg2;
 + (void)enumerateItemsInResponseData:(id)arg1 usingHandler:(id)arg2;
 + (id)enumerateRawItemsInResponseData:(id)arg1 usingHandler:(id)arg2;
 + (void)parseItemWithBytes:(const char *)arg1 length:(unsigned int)arg2 usingHandler:(id)arg3;

@@ -24,10 +24,12 @@
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
 + (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
++ (id)metadataItemsFromArray:(id)arg1 withStringValue:(id)arg2;
 
 - (void)_extractPropertiesFromDictionary:(id)arg1;
 - (id)_figMetadataDictionary;
 - (id)_figMetadataFormat;
+- (id)_figMetadataProperties;
 - (id)_initWithFigMetadataDictionary:(id)arg1;
 - (id)_initWithReader:(struct OpaqueFigMetadataReader { }*)arg1 itemIndex:(long)arg2;
 - (id)_keyAsString;

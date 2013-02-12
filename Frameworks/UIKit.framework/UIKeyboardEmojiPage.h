@@ -44,7 +44,7 @@
 @property(retain) UITouch * activeTouch;
 @property <UIKeyboardEmojiController> * controller;
 @property(retain) NSArray * emoji;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } keyActivationRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyActivationRect;
 @property(retain) UIKeyboardEmojiView * onDisplay;
 @property(retain) NSString * optionalText;
 @property(retain) UIKeyboardEmojiView * pendingDisplay;
@@ -59,6 +59,7 @@
 - (id)closestForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned char)colCount:(BOOL)arg1;
 - (id)controller;
+- (void)deactivatePopUps;
 - (void)dealloc;
 - (id)emoji;
 - (void)generateSubviews;

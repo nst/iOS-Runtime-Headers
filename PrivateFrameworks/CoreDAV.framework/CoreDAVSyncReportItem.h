@@ -8,7 +8,7 @@
     NSString *_syncToken;
 }
 
-@property(retain,readonly) NSString * syncToken;
+@property(readonly) NSString * syncToken;
 
 - (void)_setSyncTokenItem:(id)arg1;
 - (id)copyParseRules;

@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIViewController;
+@class UINavigationController, UIViewController;
 
 @interface UISnapshotModalViewController : UIViewController {
     UIViewController *_disappearingViewController;
     int _interfaceOrientation;
+    UINavigationController *_parentController;
 }
 
 @property(retain) UIViewController * disappearingViewController;

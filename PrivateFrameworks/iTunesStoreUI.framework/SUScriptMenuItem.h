@@ -10,21 +10,24 @@
     id _userInfo;
 }
 
-@property(getter=_enabled,setter=set_enabled:) BOOL enabled;
-@property(getter=_title,setter=set_title:,retain) NSString * title;
-@property(getter=_userInfo,setter=set_userInfo:,retain) id userInfo;
+@property BOOL enabled;
+@property(retain) NSString * title;
+@property(retain) id userInfo;
 
++ (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;
 
 - (id)_className;
-- (BOOL)_enabled;
 - (void)_sendDidChange;
-- (id)_title;
-- (id)_userInfo;
+- (id)attributeKeys;
 - (void)dealloc;
+- (BOOL)enabled;
 - (id)init;
-- (void)set_enabled:(BOOL)arg1;
-- (void)set_title:(id)arg1;
-- (void)set_userInfo:(id)arg1;
+- (id)scriptAttributeKeys;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setTitle:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (id)title;
+- (id)userInfo;
 
 @end

@@ -18,11 +18,11 @@
 @property(retain) NSSet * stores;
 @property(retain) NSNumber * type;
 
+- (void).cxx_destruct;
 - (int)accountType;
 - (id)basicAccountIdentifier;
 - (id)collectionInfo;
 - (id)constraints;
-- (void)dealloc;
 - (void)didTurnIntoFault;
 - (id)pathToConstraintsPlist;
 - (id)predicateForNotes;

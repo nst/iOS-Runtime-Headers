@@ -2,33 +2,36 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoView, UINavigationBar, UIView;
+@class MPVideoView, UINavigationBar, UIView, UIViewController;
 
 @interface MPVideoTransferTransitionController : MPTransitionController {
+    UIViewController *_inflightBackstopViewController;
     MPVideoView *_inflightVideoView;
     UINavigationBar *_portraitNavigationBar;
-    UIView *_topmostView;
+    float _preTransitionWindowLevel;
+    BOOL _showOverlayAfterTransition;
     UIView *_transitionBehindView;
 }
 
+@property(retain) UIViewController * inflightBackstopViewController;
 @property(retain) UINavigationBar * portraitNavigationBar;
-@property(retain) UIView * topmostView;
+@property BOOL showOverlayAfterTransition;
 @property(retain) UIView * transitionBehindView;
 
 - (void)_animationDidStop;
-- (void)_prepareViews;
-- (id)_topmostView;
-- (id)_topmostViewWindow;
+- (void)_prepareViewsWithBeginAnimationTransactionBlock:(id)arg1;
 - (void)_transformView:(id)arg1 forOrientation:(int)arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_updateStatusBar;
 - (void)dealloc;
+- (id)inflightBackstopViewController;
 - (id)init;
+- (void)performTransition:(unsigned int)arg1;
 - (id)portraitNavigationBar;
+- (void)setInflightBackstopViewController:(id)arg1;
 - (void)setPortraitNavigationBar:(id)arg1;
-- (void)setTopmostView:(id)arg1;
+- (void)setShowOverlayAfterTransition:(BOOL)arg1;
 - (void)setTransitionBehindView:(id)arg1;
-- (id)topmostView;
-- (void)transition:(unsigned int)arg1;
+- (BOOL)showOverlayAfterTransition;
 - (id)transitionBehindView;
 
 @end

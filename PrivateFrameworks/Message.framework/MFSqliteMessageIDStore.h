@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MailMessageLibrary, NSString;
+@class MFMailMessageLibrary, NSString;
 
 @interface MFSqliteMessageIDStore : NSObject {
-    MailMessageLibrary *_library;
+    MFMailMessageLibrary *_library;
     int _mailboxRowid;
     NSString *_url;
 }

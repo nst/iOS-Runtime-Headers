@@ -12,6 +12,8 @@
 
 - (id)bodyDictionary;
 - (void)dealloc;
+- (id)initWithAccount:(id)arg1 token:(id)arg2;
 - (id)initWithURLString:(id)arg1 account:(id)arg2 token:(id)arg3;
+- (id)urlString;
 
 @end

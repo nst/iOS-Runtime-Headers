@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABGroupWrapper, NSLock, NSMutableArray;
+@class ABGroupWrapper, NSMutableArray, NSRecursiveLock;
 
 @interface ABModel : NSObject {
     struct _NSRange { 
@@ -10,24 +10,25 @@
         unsigned int length; 
     void *_addressBook;
     BOOL _autoInvalidateOnDatabaseChange;
+    void *_backgroundAddressBook;
+    BOOL _backgroundAddressBookInvalidated;
     BOOL _backgroundInvalidated;
-    NSLock *_backgroundLoadingLock;
+    NSRecursiveLock *_backgroundLoadingLock;
     NSMutableArray *_cachedModelRecords;
     struct __CFArray { } *_databaseChangeDelegates;
     id _delayedNotificationHandler;
     unsigned int _displayOrdering;
     NSMutableArray *_displayedGroups;
     } _displayedMemberPreparedRange;
-    struct __CFArray { } *_displayedMembers;
     BOOL _displayedMembersAreSearchResults;
     struct __CFDictionary { } *_headerSortKeyToHeaderString;
     ABGroupWrapper *_lastSelectedGroupWrapper;
     BOOL _loadingInBackground;
-    NSLock *_memberLock;
+    NSRecursiveLock *_memberLock;
     unsigned int _numberOfDisplayedMembers;
     struct { struct { /* ? */ } *x1; int x2; int x3; } *_sectionLists;
     ABGroupWrapper *_selectedGroupWrapper;
-    NSMutableArray *_selectedPeople;
+    void *_selectedPerson;
 }
 
 @property void* addressBook;
@@ -37,9 +38,10 @@
 + (unsigned int)sortOrdering;
 
 - (void)_cachePeople:(struct __CFArray { }*)arg1 atEnd:(BOOL)arg2;
-- (struct __CFArray { }*)_copyArrayOfPeopleInSelectedGroupWrapperForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct __CFArray { }*)_copyArrayOfPeopleInSelectedGroupWrapperForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inBackground:(BOOL)arg2;
 - (struct __CFArray { }*)_databaseChangeDelegates;
 - (id)_displayedGroupMembersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (long)_indexOfMember:(void*)arg1 inDisplayedMembers:(id)arg2;
 - (void)_loadMembersInBackground:(id)arg1;
 - (void)_modelDatabaseChangedExternally:(struct __CFDictionary { }*)arg1;
 - (void)_modelDatabaseChangedLocally:(struct __CFDictionary { }*)arg1;
@@ -49,10 +51,9 @@
 - (void)_startBackgroundThreadIfNecessaryScanningForward:(BOOL)arg1;
 - (void)_waitUntilBackgroundThreadFinished;
 - (void)addDatabaseChangeDelegate:(id)arg1;
-- (void)addDisplayedMember:(void*)arg1;
 - (void*)addressBook;
-- (id)allDisplayedMembers;
-- (void)copyDisplayedNamePieces:(id*)arg1 isGroup:(BOOL*)arg2 highlightIndex:(int*)arg3 forMember:(const void**)arg4 atindex:(unsigned int)arg5;
+- (id)allCachedModelRecords;
+- (void)copyDisplayedNamePieces:(id*)arg1 isGroup:(BOOL*)arg2 highlightIndex:(int*)arg3 forMemberID:(int*)arg4 atindex:(unsigned int)arg5;
 - (void)dealloc;
 - (void*)displayedMemberAtIndex:(unsigned int)arg1;
 - (struct { struct { /* ? */ } *x1; int x2; int x3; }*)displayedMemberSectionLists;
@@ -65,18 +66,15 @@
 - (void)invalidateDisplayedMembers;
 - (void)invalidateLastSelectedGroupWrapper;
 - (id)lastSelectedGroupWrapper;
-- (void)modifiedDisplayedMember:(void*)arg1;
 - (unsigned int)numberOfDisplayedMembers;
 - (void)prepareDisplayedMembersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)removeDatabaseChangeDelegate:(id)arg1;
-- (void)removeDisplayedMember:(void*)arg1;
 - (long)resetFullSectionList:(struct __CFDictionary { }*)arg1 maximumSectionCount:(int)arg2;
 - (long)resetPartialSectionListWithMaximumCount:(int)arg1 headerSortKeyToHeaderString:(struct __CFDictionary { }*)arg2;
 - (void)resetSectionList;
 - (void)resetSortKeyToHeaderStringDictionary;
 - (void*)selectedGroup;
 - (id)selectedGroupWrapper;
-- (id)selectedPeople;
 - (void*)selectedPerson;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAutoInvalidateOnDatabaseChange:(BOOL)arg1;
@@ -85,7 +83,6 @@
 - (void)setLastSelectedGroupWrapper:(id)arg1;
 - (void)setSelectedGroup:(void*)arg1;
 - (void)setSelectedGroupWrapper:(id)arg1;
-- (void)setSelectedPeople:(id)arg1;
 - (void)setSelectedPerson:(void*)arg1;
 - (void)setSortOrdering:(unsigned int)arg1;
 - (BOOL)shouldUsePartialLoadingForGroupWrapper:(id)arg1;

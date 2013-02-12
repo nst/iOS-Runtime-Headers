@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation, NSString, NSURL, SSRemoteNotificationClient, SULocationObserver, SUSectionsResponse, SUTabBarController, UINavigationController;
+@class ISOperation, NSString, NSURL, SSRemoteNotificationClient, SULocationObserver, SUPlaceholderViewController, SUSectionsResponse, SUTabBarController, UINavigationController;
 
 @interface SUClientApplicationController : SUClientController <SUTabBarControllerDelegate> {
+    SUPlaceholderViewController *_fetchSectionsPlaceholder;
+    int _ignoreDownloadQueueChangeCount;
     SUSectionsResponse *_lastBackgroundSectionsResponse;
     SUSectionsResponse *_lastSectionsResponse;
     NSURL *_launchURL;
@@ -17,8 +19,9 @@
 }
 
 @property(readonly) NSString * defaultPNGNameForSuspend;
+@property(getter=isIgnoringDownloadQueueChanges,readonly) BOOL ignoringDownloadQueueChanges;
 @property(readonly) NSURL * launchURL;
-@property(readonly) int statusBarStyleForSuspend;
+@property(getter=wasLaunchedFromLibrary,readonly) BOOL launchedFromLibrary;
 @property(readonly) SUTabBarController * tabBarController;
 @property(getter=isTabBarControllerLoaded,readonly) BOOL tabBarControllerLoaded;
 @property(readonly) UINavigationController * topNavigationController;
@@ -30,6 +33,7 @@
 - (id)_accountViewController;
 - (void)_beginObservingLocation;
 - (void)_cancelLoadSectionsOperation;
+- (void)_cancelSectionFetchPlaceholder;
 - (void)_cancelSuspendAfterDialogsDismissed;
 - (void)_defaultHandleApplicationURLRequestProperties:(id)arg1;
 - (void)_dialogDidFinishNotification:(id)arg1;
@@ -53,32 +57,38 @@
 - (void)_storeFrontChangedNotification:(id)arg1;
 - (void)bagDidLoadNotification:(id)arg1;
 - (void)becomeActive;
+- (void)beginIgnoringDownloadQueueChanges;
 - (void)cancelAllOperations;
 - (id)copySuspendSettings;
 - (void)dealloc;
 - (double)defaultImageSnapshotExpiration;
 - (id)defaultPNGNameForSuspend;
 - (void)dequeueRemoteNotifications;
+- (void)dismissOverlayBackgroundViewController;
 - (BOOL)dismissTopViewControllerAnimated:(BOOL)arg1;
 - (BOOL)displayClientURL:(id)arg1;
+- (void)endIgnoringDownloadQueueChanges;
 - (void)exitStoreAfterDialogsDismiss;
-- (void)exitStoreWithReason:(int)arg1;
 - (BOOL)gotoStorePage:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithClientIdentifier:(id)arg1;
+- (BOOL)isIgnoringDownloadQueueChanges;
 - (BOOL)isTabBarControllerLoaded;
 - (id)launchURL;
 - (BOOL)openClientURL:(id)arg1;
+- (id)overlayBackgroundViewController;
 - (void)performActionForRemoteNotification:(id)arg1;
-- (BOOL)presentAccountViewController:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)presentExternalURLViewController:(id)arg1;
+- (BOOL)presentOverlayBackgroundViewController:(id)arg1;
 - (BOOL)reloadSectionWithIdentifier:(id)arg1 url:(id)arg2;
 - (void)resignActive;
+- (void)returnToLibrary;
 - (BOOL)selectSectionWithIdentifier:(id)arg1;
 - (void)setupUI;
-- (void)showMainPageForItemKind:(id)arg1 sectionIdentifiers:(id)arg2;
-- (int)statusBarStyleForSuspend;
+- (id)showMainPageForItemKind:(id)arg1 sectionIdentifiers:(id)arg2;
 - (id)tabBarController;
 - (void)tearDownUI;
 - (id)topNavigationController;
+- (BOOL)wasLaunchedFromLibrary;
 
 @end

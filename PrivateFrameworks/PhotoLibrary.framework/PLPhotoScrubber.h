@@ -4,7 +4,7 @@
 
 @class <PhotoScrubberDataSource>, BezelView, LoupeView, NSMutableArray, UIView;
 
-@interface PLPhotoScrubber : UIControl <PLImageRotationAnimationProtocol> {
+@interface PLPhotoScrubber : UIControl {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -36,10 +36,8 @@
 @property <PhotoScrubberDataSource> * dataSource;
 
 + (id)_backgroundImage;
-+ (void)_initializeSafeCategory;
 + (id)_shadowImage;
 
-- (void)_accessibilityOutputIndexChange:(int)arg1;
 - (struct CGPoint { float x1; float x2; })_centerForImageAtIndex:(int)arg1;
 - (unsigned int)_imageIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setDisplayedImageIndex:(id)arg1;
@@ -48,17 +46,9 @@
 - (unsigned int)_thumbnailIndexFromLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateLoupe:(BOOL)arg1;
 - (void)_updateLoupeWithTouch:(id)arg1 forceUpdate:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })accessibilityCenterPoint;
-- (void)accessibilityDecrement;
-- (void)accessibilityIncrement;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (id)accessibilityValue;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (void)didCancelRotation;
-- (void)didFinishRotation;
 - (void)didMoveToSuperview;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (int)displayedImageIndex;
@@ -66,7 +56,6 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
 - (id)initWithScrubberOrientation:(int)arg1;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isScrubbing;
 - (void)layoutSubviews;
 - (void)reloadData;
@@ -78,8 +67,8 @@
 - (void)setDeferImageLoading:(BOOL)arg1;
 - (void)setDisplayedImageIndex:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setImage:(id)arg1 atIndex:(int)arg2;
 - (void)setLoupeImage:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willStartRotatingByDegrees:(int)arg1;
 
 @end

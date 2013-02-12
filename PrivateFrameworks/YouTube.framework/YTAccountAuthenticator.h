@@ -4,7 +4,7 @@
 
 @class NSDate, NSHTTPURLResponse, NSMutableData, NSString;
 
-@interface YTAccountAuthenticator : NSObject {
+@interface YTAccountAuthenticator : NSObject <NSURLConnectionDelegate> {
     NSString *_account;
     NSString *_accountToken;
     NSDate *_accountTokenDate;
@@ -14,6 +14,13 @@
     NSMutableData *_responseData;
     NSHTTPURLResponse *_urlResponse;
 }
+
+@property(retain) NSString * account;
+@property(retain) NSString * accountToken;
+@property(retain) NSDate * accountTokenDate;
+@property(retain) NSString * accountYouTubeName;
+@property(retain) NSString * password;
+@property(retain) NSHTTPURLResponse * urlResponse;
 
 + (id)sharedAuthenticator;
 
@@ -26,12 +33,9 @@
 - (void)_postAccountTokenGenerationFailedWithError:(id)arg1;
 - (void)_postNewAccountTokenAvailable;
 - (void)_removePasswordFromKeychain;
-- (void)_setAccount:(id)arg1;
-- (void)_setAccountToken:(id)arg1;
-- (void)_setAccountTokenDate:(id)arg1;
-- (void)_setAccountYouTubeName:(id)arg1;
-- (void)_setPassword:(id)arg1;
-- (void)_setURLResponse:(id)arg1;
+- (id)account;
+- (id)accountToken;
+- (id)accountTokenDate;
 - (id)accountYouTubeName;
 - (BOOL)cachedCredentialsValid;
 - (void)clearAccountInfo;
@@ -41,8 +45,17 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (BOOL)loadStoredCredentials;
+- (id)password;
 - (BOOL)readyToRequestToken;
+- (void)setAccount:(id)arg1;
+- (void)setAccountToken:(id)arg1;
+- (void)setAccountTokenDate:(id)arg1;
+- (void)setAccountYouTubeName:(id)arg1;
+- (void)setPassword:(id)arg1;
+- (void)setUrlResponse:(id)arg1;
 - (id)tokenForCurrentAccount;
+- (id)urlResponse;
 - (void)validateAccount:(id)arg1 password:(id)arg2;
 
 @end

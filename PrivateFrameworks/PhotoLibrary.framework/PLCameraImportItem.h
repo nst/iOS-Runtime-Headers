@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSData, NSError, NSMutableDictionary, NSString, PLPhotoAlbum, UIImage;
+@class NSData, NSError, NSMutableDictionary, NSString, PLManagedAsset, UIImage;
 
-@interface PLCameraImportItem : PLPhoto {
+@interface PLCameraImportItem : NSObject {
     NSString *_basePath;
-    PLPhotoAlbum *_event;
     NSString *_identifier;
     NSError *_importError;
     BOOL _metadataRequested;
@@ -17,12 +16,15 @@
     NSData *_thumbnailData;
     BOOL _thumbnailRequested;
     int _thumbnailState;
+    NSString *eventName;
+    PLManagedAsset *importedAsset;
 }
 
 @property(retain) NSString * basePath;
-@property(retain) PLPhotoAlbum * event;
+@property(retain) NSString * eventName;
 @property(readonly) NSString * identifier;
 @property(retain) NSError * importError;
+@property(retain) PLManagedAsset * importedAsset;
 @property(readonly) NSString * parentFolder;
 @property BOOL shouldImport;
 @property(readonly) UIImage * thumbnail;
@@ -43,12 +45,13 @@
 - (id)creationDate;
 - (void)dealloc;
 - (id)description;
-- (id)event;
+- (id)eventName;
 - (id)fileExtensions;
 - (unsigned long long)fileSize;
 - (BOOL)hasAllMetadata;
 - (id)identifier;
 - (id)importError;
+- (id)importedAsset;
 - (id)initWithIdentifier:(id)arg1 parentFolder:(id)arg2;
 - (BOOL)isAudio;
 - (BOOL)isInDatabaseForce:(BOOL)arg1;
@@ -72,8 +75,9 @@
 - (void)requestMetadata;
 - (void)requestThumbnail;
 - (void)setBasePath:(id)arg1;
-- (void)setEvent:(id)arg1;
+- (void)setEventName:(id)arg1;
 - (void)setImportError:(id)arg1;
+- (void)setImportedAsset:(id)arg1;
 - (void)setShouldImport:(BOOL)arg1;
 - (void)setThumbnailData:(id)arg1;
 - (void)setThumbnailState:(int)arg1;

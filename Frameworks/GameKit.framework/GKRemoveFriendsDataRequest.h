@@ -10,9 +10,7 @@
 
 @property(retain) GKPlayer * player;
 
-- (int)cacheType;
 - (void)dealloc;
-- (id)invalidateCacheKeys;
 - (id)key;
 - (id)player;
 - (id)request;

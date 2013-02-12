@@ -9,7 +9,7 @@
     } _actionSheetSize;
 }
 
-@property struct CGSize { float width; float height; } actionSheetSize;
+@property struct CGSize { float x1; float x2; } actionSheetSize;
 
 - (struct CGSize { float x1; float x2; })actionSheetSize;
 - (void)setActionSheetSize:(struct CGSize { float x1; float x2; })arg1;

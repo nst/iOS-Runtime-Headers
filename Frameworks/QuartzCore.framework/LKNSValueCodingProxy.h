@@ -3,7 +3,7 @@
  */
 
 @interface LKNSValueCodingProxy : CACodingProxy {
-    union $_603 { 
+    union $_623 { 
         struct CGPoint { 
             float x; 
             float y; 
@@ -40,6 +40,11 @@
             float m43; 
             float m44; 
         } transform; 
+        struct CAPoint3D { 
+            float x; 
+            float y; 
+            float z; 
+        } point3d; 
         struct CADoublePoint { 
             double x; 
             double y; 

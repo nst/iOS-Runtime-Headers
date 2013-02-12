@@ -10,6 +10,7 @@
 - (void)CA_encodeCGFloatArray:(const float*)arg1 count:(unsigned long)arg2 forKey:(id)arg3;
 - (void)CA_encodeObject:(id)arg1 forKey:(id)arg2 conditional:(BOOL)arg3;
 - (id)_copyDecodedObjectForKey:(id)arg1 ofClass:(Class)arg2;
+- (id)_safeDecodeContainerForKey:(id)arg1 containerClass:(Class)arg2 valueClass:(Class)arg3;
 - (BOOL)allowsKeyedCoding;
 - (BOOL)containsValueForKey:(id)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
@@ -40,6 +41,7 @@
 - (struct CGSize { float x1; float x2; })decodeSize;
 - (struct CGSize { float x1; float x2; })decodeSizeForKey:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })decodeUIEdgeInsetsForKey:(id)arg1;
+- (struct UIOffset { float x1; float x2; })decodeUIOffsetForKey:(id)arg1;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (void)decodeValuesOfObjCTypes:(const char *)arg1;
 - (void)encodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(const void*)arg3;
@@ -75,9 +77,17 @@
 - (void)encodeSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)encodeUIEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 forKey:(id)arg2;
+- (void)encodeUIOffset:(struct UIOffset { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)encodeValuesOfObjCTypes:(const char *)arg1;
 - (struct _NSZone { }*)objectZone;
+- (id)safeDecodeArrayForKey:(id)arg1 valueClass:(Class)arg2;
+- (id)safeDecodeDateForKey:(id)arg1;
+- (id)safeDecodeDictionaryForKey:(id)arg1 keyClass:(Class)arg2 valueClass:(Class)arg3;
+- (id)safeDecodeNumberForKey:(id)arg1;
+- (id)safeDecodeObjectForKey:(id)arg1 expectedClass:(Class)arg2;
+- (id)safeDecodeSetForKey:(id)arg1 valueClass:(Class)arg2;
+- (id)safeDecodeStringForKey:(id)arg1;
 - (void)safeEncodeUIColor:(id)arg1 forKey:(id)arg2;
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
 - (unsigned int)systemVersion;

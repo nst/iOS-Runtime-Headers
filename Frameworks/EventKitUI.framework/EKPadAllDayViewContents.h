@@ -10,6 +10,7 @@
 
 @property <EKPadAllDayViewContentsDelegate> * delegate;
 
+- (void)dealloc;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

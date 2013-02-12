@@ -23,19 +23,14 @@
     unsigned int m_index;
     BOOL m_mouseDown;
     } m_originalTypedTextRect;
+    float m_originalTypedTextRectCorrectionAmount;
     int m_promptTextType;
     NSString *m_typedText;
     UIView *m_typedTextAnimationView;
     UIView *m_typedTextView;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (void)_candidateSelected:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityLabel;
-- (unsigned long long)accessibilityTraits;
-- (BOOL)accessibilityTreeHidden;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;
 - (id)candidateAtIndex:(unsigned int)arg1;
 - (void)configureKeyboard:(id)arg1;
@@ -53,7 +48,6 @@
 - (unsigned int)index;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAcceptableTextEffectsFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 afterScrollBy:(float)arg2;
-- (BOOL)isAccessibilityElement;
 - (void)layout;
 - (float)maximumCandidateWidth;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;

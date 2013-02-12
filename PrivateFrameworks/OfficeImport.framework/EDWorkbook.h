@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ECMappingContext, EDProcessors, EDReference, EDResources, EDWarnings, ESDContainer, NSDate, NSMutableArray, NSString, OADDrawingGroup, OADTheme;
+@class ECMappingContext, EDProcessors, EDReference, EDResources, EDWarnings, ESDContainer, NSDate, NSMutableArray, NSString, OADTheme;
 
 @interface EDWorkbook : OCDDocument {
     unsigned int mActiveSheetIndex;
     unsigned int mDateBase;
     NSDate *mDateBaseDate;
-    OADDrawingGroup *mDrawingGroup;
     ESDContainer *mEscherDrawingGroup;
     NSString *mFileName;
     ECMappingContext *mMappingContext;
@@ -31,13 +30,12 @@
 - (unsigned int)dateBase;
 - (id)dateBaseDate;
 - (void)dealloc;
-- (id)drawingGroup;
 - (id)escherDrawingGroup;
 - (id)fileName;
 - (unsigned int)indexOfSheet:(id)arg1;
 - (unsigned int)indexOfSheetWithName:(id)arg1;
 - (id)init;
-- (id)initWithFileName:(id)arg1;
+- (id)initWithFileName:(id)arg1 andStringOptimization:(bool)arg2;
 - (id)initWithStringOptimization:(bool)arg1;
 - (id)mappingContext;
 - (id)processors;

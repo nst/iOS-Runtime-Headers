@@ -20,7 +20,6 @@
 - (id)dictionaryRepresentation;
 - (int)featureType;
 - (BOOL)hasLocale;
-- (id)init;
 - (id)locale;
 - (id)name;
 - (BOOL)readFrom:(id)arg1;

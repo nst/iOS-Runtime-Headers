@@ -9,12 +9,11 @@
         float width; 
         float height; 
     AVPlayer *_player;
-    BOOL connectLayerWhenInForeground;
     CALayer *contentLayer;
     BOOL disableActions;
     BOOL hasPlayerToObserve;
-    BOOL inForeground;
     BOOL isObservingPlayer;
+    BOOL isOverscanSubtitleSupportEnabled;
     BOOL isPresentationLayer;
     BOOL isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;

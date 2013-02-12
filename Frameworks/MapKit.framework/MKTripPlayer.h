@@ -41,8 +41,8 @@
 - (id)initWithFilePath:(id)arg1;
 - (BOOL)isPlaying;
 - (BOOL)locationServicesApproved;
-- (void)parseCLString:(id)arg1 tripPoint:(id*)arg2 timeElapsed:(double*)arg3;
-- (void)parseMKString:(id)arg1 tripPoint:(id*)arg2 timeElapsed:(double*)arg3;
+- (BOOL)parseCLString:(id)arg1 tripPoint:(id*)arg2 timeElapsed:(double*)arg3;
+- (BOOL)parseMKString:(id)arg1 tripPoint:(id*)arg2 timeElapsed:(double*)arg3;
 - (void)playNextHeading;
 - (void)playNextTripPoint;
 - (id)prevLocation;

@@ -6,5 +6,9 @@
 }
 
 + (id)databaseTable;
++ (BOOL)insertionChangesLibraryContents;
++ (int)revisionTrackingCode;
+
+- (void)enumerateOrphanedAssetsUsingBlock:(id)arg1;
 
 @end

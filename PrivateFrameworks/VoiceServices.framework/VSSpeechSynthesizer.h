@@ -8,11 +8,13 @@
     struct { 
         unsigned int delegateStart : 1; 
         unsigned int delegateFinish : 1; 
+        unsigned int delegateFinishWithPhonemesSpoken : 1; 
         unsigned int delegatePause : 1; 
         unsigned int delegateContinue : 1; 
         unsigned int delegateWillSpeak : 1; 
         unsigned int willUseInput : 1; 
     <VSSpeechSynthesizerDelegate> *_delegate;
+    int _footprint;
     void *_keepAlive;
     float _pitch;
     float _rate;
@@ -28,13 +30,14 @@
 + (id)availableVoicesForLanguageCode:(id)arg1;
 + (BOOL)isSystemSpeaking;
 
-- (void)_handleSpeech:(struct __VSSpeech { }*)arg1 completed:(BOOL)arg2 withError:(id)arg3;
+- (void)_handleSpeech:(struct __VSSpeech { }*)arg1 completed:(BOOL)arg2 phonemesSpoken:(struct __CFString { }*)arg3 withError:(id)arg4;
 - (void)_handleSpeech:(struct __VSSpeech { }*)arg1 willSpeakMarkType:(int)arg2 inRange:(struct { int x1; int x2; })arg3;
 - (void)_handleSpeechContinued:(struct __VSSpeech { }*)arg1;
 - (void)_handleSpeechPaused:(struct __VSSpeech { }*)arg1;
 - (void)_handleSpeechStarted:(struct __VSSpeech { }*)arg1;
 - (id)continueSpeaking;
 - (void)dealloc;
+- (int)footprint;
 - (id)init;
 - (id)initForInputFeedback;
 - (BOOL)isSpeaking;
@@ -45,6 +48,7 @@
 - (float)pitch;
 - (float)rate;
 - (void)setDelegate:(id)arg1;
+- (void)setFootprint:(int)arg1;
 - (void)setMaintainPersistentConnection:(BOOL)arg1;
 - (id)setPitch:(float)arg1;
 - (id)setRate:(float)arg1;
@@ -57,6 +61,7 @@
 - (id)startSpeakingString:(id)arg1 attributedString:(id)arg2 toURL:(id)arg3 withLanguageCode:(id)arg4;
 - (id)startSpeakingString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3;
 - (id)startSpeakingString:(id)arg1 toURL:(id)arg2;
+- (id)startSpeakingString:(id)arg1 withLanguageCode:(id)arg2;
 - (id)startSpeakingString:(id)arg1;
 - (id)stopSpeakingAtNextBoundary:(int)arg1 synchronously:(BOOL)arg2;
 - (id)stopSpeakingAtNextBoundary:(int)arg1;

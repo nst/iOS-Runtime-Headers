@@ -8,16 +8,18 @@
     NSMutableArray *_addDates;
     <FTMessageQueueDelegate> *_delegate;
     NSMutableArray *_queue;
-    double _timeoutTime;
 }
 
+@property(retain) NSMutableArray * _addDates;
+@property(retain) NSMutableArray * _queue;
 @property(readonly) int count;
 @property <FTMessageQueueDelegate> * delegate;
-@property double messageTimeoutTime;
 @property(readonly) NSArray * messages;
 @property(readonly) FTMessage * topMessage;
 
+- (id)_addDates;
 - (void)_clearTimeout;
+- (id)_queue;
 - (void)_setTimeout;
 - (void)_timeoutHit;
 - (BOOL)addMessage:(id)arg1;
@@ -26,12 +28,12 @@
 - (id)delegate;
 - (id)dequeueTopMessage;
 - (id)init;
-- (double)messageTimeoutTime;
 - (id)messages;
 - (void)removeAllMessages;
 - (BOOL)removeMessage:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMessageTimeoutTime:(double)arg1;
+- (void)set_addDates:(id)arg1;
+- (void)set_queue:(id)arg1;
 - (id)topMessage;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewControllerDataSource>, <QLPreviewItem>, NSOperation, NSTimer, NSURLRequest, QLPopOverState, QLPreviewView, UIBarButtonItem, UIDocumentInteractionController, UIImageView, UINavigationController, UITapGestureRecognizer, UIView, UIViewController;
+@class <QLPreviewControllerDataSource>, <QLPreviewItem>, NSOperation, NSTimer, NSURLRequest, QLPopOverState, QLSwipeView, UIBarButtonItem, UIDocumentInteractionController, UIImageView, UINavigationBar, UISegmentedControl, UITapGestureRecognizer, UIToolbar, UIView;
 
 @interface QLPreviewControllerReserved : NSObject {
     struct CGRect { 
@@ -16,43 +16,53 @@
         } size; 
     unsigned int isHTMLContent : 1;
     unsigned int statusBarWasHidden : 1;
-    unsigned int isInCustomTransition : 1;
+    unsigned int isZooming : 1;
     unsigned int isZoomingIn : 1;
     unsigned int useZoomAnimation : 1;
     unsigned int useTransitionImage : 1;
-    UIBarButtonItem *actionBarButtonItem;
-    BOOL actionMenuEnabled;
+    UIBarButtonItem *actionItem;
+    BOOL arrowWasTapped;
+    UIBarButtonItem *arrowsItem;
     BOOL blockRemoteImages;
+    UIToolbar *bottomToolBar;
     <QLPreviewItem> *cachedPreviewItem;
     UIView *clippingView;
     <QLPreviewItem> *currentPreviewItem;
     int currentPreviewItemIndex;
+    UISegmentedControl *customToolbarSegmentedArrowControl;
     <QLPreviewControllerDataSource> *dataSource;
     id delegate;
     UITapGestureRecognizer *headerTapRecognizer;
     UIImageView *iconView;
     NSTimer *idleTimer;
     UIDocumentInteractionController *interactionController;
+    BOOL internalViewsLoaded;
     UIBarButtonItem *leftArrowItem;
     UIView *mainView;
     int mode;
-    UINavigationController *navigationController;
+    UINavigationBar *navigationBar;
     unsigned int numberOfPreviewItems;
     NSOperation *openOperation;
     int overlayState;
+    NSTimer *overlayTimer;
+    UIView *overlayView;
     UIView *parentControllerView;
     QLPopOverState *popOverState;
     <QLPreviewItem> *previewItem;
     NSURLRequest *previewRequest;
-    QLPreviewView *previewView;
     int previousStatusBarStyle;
     UIBarButtonItem *rightArrowItem;
-    UIViewController *rootViewController;
+    UISegmentedControl *segmentedArrowControl;
+    BOOL showActionAsDefaultButton;
     } sourceFrame;
     UIView *sourceView;
+    QLSwipeView *swipeView;
+    UIBarButtonItem *titleItem;
+    BOOL useCustomActionButton;
     UIView *zoomView;
 }
 
 - (void)dealloc;
+- (id)init;
 
 @end

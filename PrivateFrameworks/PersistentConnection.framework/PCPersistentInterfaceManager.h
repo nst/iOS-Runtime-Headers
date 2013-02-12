@@ -14,6 +14,7 @@
     BOOL _belowRSSIThreshold;
     void *_ctServerConnection;
     struct __CFDictionary { } *_delegatesAndRunLoops;
+    BOOL _hasWWANStatusIndicator;
     void *_interfaceAssertion;
     BOOL _isInCall;
     BOOL _isInternetReachable;
@@ -30,6 +31,7 @@
     NSRecursiveLock *_lock;
     NSMachPort *_machPort;
     void *_reachability;
+    BOOL _shouldOverrideOnCallBehavior;
     struct __CFSet { } *_wakeOnWiFiDelegates;
     PCPersistentTimer *_wakeOnWiFiDisableTimer;
     void *_wifiManager;
@@ -83,7 +85,8 @@
 - (void)bindCFStreamToWWANInterface:(struct __CFReadStream { }*)arg1;
 - (void)bindSocket:(int)arg1 toWWANInterface:(BOOL)arg2;
 - (void)bindSocketToWWANInterface:(int)arg1;
-- (id)dhcpLeaseExpirationDate;
+- (id)dhcpHalfLeaseExpirationDate;
+- (id)dhcpT1RenewalDate;
 - (BOOL)doesWWANInterfaceExist;
 - (void)enableWakeOnWiFi:(BOOL)arg1 forDelegate:(id)arg2;
 - (void)enableWiFiAutoAssociation:(BOOL)arg1 forDelegate:(id)arg2;

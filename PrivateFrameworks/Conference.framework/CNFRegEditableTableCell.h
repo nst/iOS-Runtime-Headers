@@ -38,7 +38,7 @@
 - (void)setShadowView:(id)arg1;
 - (void)setSkipDelegateCallback:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3;
+- (void)setValueChangedTarget:(id)arg1 action:(SEL)arg2 specifier:(id)arg3;
 - (id)shadowImage;
 - (id)shadowView;
 - (BOOL)skipDelegateCallback;

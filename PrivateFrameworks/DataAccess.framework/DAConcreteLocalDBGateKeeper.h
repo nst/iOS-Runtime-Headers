@@ -18,6 +18,7 @@
 - (void)_reloadBabysitterProperties;
 - (void)_removeRestrictedWaitersFromAllQueues;
 - (void)_sendAllClearNotifications;
+- (BOOL)babysitterEnabled;
 - (void)claimedOwnershipOfDataclasses:(int)arg1;
 - (void)dealloc;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;

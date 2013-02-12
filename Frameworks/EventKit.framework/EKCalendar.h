@@ -2,92 +2,79 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKEventStore, NSNumber, NSString;
+@class EKSource, NSString;
 
-@interface EKCalendar : NSObject {
-    NSNumber *_calendarId;
+@interface EKCalendar : EKObject {
     struct CGColor { } *_color;
-    unsigned int _constraints;
-    unsigned int _dirtyFlags;
-    BOOL _editable;
     BOOL _isMain;
-    unsigned int _loadFlags;
-    int _maxAlarms;
-    int _maxRecurrences;
-    int _order;
-    void *_record;
-    id _source;
-    EKEventStore *_store;
-    NSString *_title;
-    int _type;
+    unsigned long _loadFlags;
 }
 
-@property(readonly) struct CGColor { }* CGColor;
+@property struct CGColor { }* CGColor;
 @property(readonly) BOOL allowsContentModifications;
-@property(readonly) unsigned int constraints;
+@property(readonly) NSString * calendarIdentifier;
+@property(retain) struct CGColor { }* color;
+@property(getter=isImmutable,readonly) BOOL immutable;
+@property BOOL isMainCalendarForSource;
+@property unsigned long loadFlags;
+@property(retain) EKSource * source;
+@property(getter=isSubscribed,readonly) BOOL subscribed;
 @property(readonly) unsigned int supportedEventAvailabilities;
-@property(readonly) NSString * title;
+@property(copy) NSString * title;
 @property(readonly) int type;
 
-+ (id)calendar;
++ (id)calendarWithEventStore:(id)arg1;
 + (id)typeDescription:(int)arg1;
 
 - (struct CGColor { }*)CGColor;
-- (id)accountName;
-- (id)accountTypeName;
-- (BOOL)alarmTriggerIntervalConstrainedToRecurrenceInterval;
+- (void)_setSource:(id)arg1;
+- (id)_sourceRelation;
+- (int)allowedEntityTypes;
 - (BOOL)allowsContentModifications;
-- (BOOL)commitToStore:(id)arg1 error:(id*)arg2;
-- (unsigned int)constraints;
+- (BOOL)allowsEvents;
+- (BOOL)allowsTasks;
+- (id)calendarIdentifier;
+- (struct CGColor { }*)color;
+- (id)colorString;
+- (BOOL)commit:(id*)arg1;
 - (void)dealloc;
-- (BOOL)declinedStatusChangeRequiresNoPendingStatus;
-- (BOOL)deliverySourceOrExternalIDRequiredForResponse;
 - (id)description;
 - (int)displayOrder;
-- (BOOL)eventDurationConstrainedToRecurrenceInterval;
-- (BOOL)futureStartDateLimitedToOccurrenceCacheBounds;
+- (int)entityType;
+- (id)externalID;
+- (id)externalURI;
+- (BOOL)getColorRed:(int*)arg1 green:(int*)arg2 blue:(int*)arg3;
 - (BOOL)hasEvents;
 - (BOOL)hasTasks;
 - (id)init;
-- (id)initWithStore:(id)arg1 object:(void*)arg2 recordId:(id)arg3;
-- (BOOL)inviteesCanSeeAttendeeStatuses;
 - (BOOL)isDefaultCalendarForSource;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isHidden;
+- (BOOL)isImmutable;
+- (BOOL)isMainCalendarForSource;
 - (BOOL)isSubscribed;
-- (int)maxAlarmsAllowed;
-- (int)maxRecurrencesAllowed;
-- (BOOL)mustAcknowledgeMasterEvent;
-- (void*)object;
-- (BOOL)occurrencesMustOccurOnSeparateDays;
-- (BOOL)organizerCanSeeAttendeeStatuses;
-- (BOOL)proposedStatusRequiredForResponse;
-- (void)reconnectToServer;
-- (id)recordId;
-- (BOOL)recurrencesShouldPinToMonthDays;
-- (void)refresh;
-- (BOOL)requiresAttendeeSearchInSingleAccount;
-- (BOOL)requiresOutgoingInvitationsInDefaultCalendar;
-- (void)revert;
-- (void)setAlarmTriggerIntervalConstrainedToRecurrenceInterval:(BOOL)arg1;
+- (id)lazyLoadRelationForKey:(id)arg1;
+- (unsigned long)loadFlags;
+- (BOOL)prohibitsScheduling;
+- (BOOL)refresh;
+- (BOOL)remove:(id*)arg1;
+- (void)reset;
+- (void)setAllowedEntityTypes:(int)arg1;
 - (void)setCGColor:(struct CGColor { }*)arg1;
-- (void)setOccurrencesMustOccurOnSeparateDays:(BOOL)arg1;
-- (void)setStore:(id)arg1 object:(void*)arg2;
-- (void)setSupportsOutgoingInvitations:(BOOL)arg1;
+- (void)setColor:(struct CGColor { }*)arg1;
+- (void)setColorString:(id)arg1;
+- (void)setDisplayOrder:(int)arg1;
+- (void)setIsMainCalendarForSource:(BOOL)arg1;
+- (void)setLoadFlags:(unsigned long)arg1;
+- (void)setSource:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (id)sharedOwnerAddress;
+- (id)sharedOwnerName;
+- (int)sharingStatus;
 - (id)source;
-- (BOOL)statusesAreAccurate;
-- (id)store;
 - (unsigned int)supportedEventAvailabilities;
-- (BOOL)supportsIncomingInvitations;
-- (BOOL)supportsInvitationModifications;
-- (BOOL)supportsOutgoingInvitations;
-- (BOOL)supportsRecurrencesOnDetachedEvents;
-- (BOOL)supportsResponseComments;
-- (BOOL)supportsTriggerIntervals;
 - (id)title;
 - (int)type;
 - (id)uiColor;
-- (id)uid;
+- (BOOL)validate:(id*)arg1;
 
 @end

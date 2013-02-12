@@ -8,6 +8,7 @@
     AVCompositionInternal *_priv;
 }
 
+@property(readonly) struct CGSize { float width; float height; } naturalSize;
 @property(readonly) NSArray * tracks;
 
 + (void)initialize;

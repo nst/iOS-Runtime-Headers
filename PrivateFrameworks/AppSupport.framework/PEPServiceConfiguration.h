@@ -16,6 +16,7 @@
 - (void)_updateDefaults:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)registerNetworkDefaultsForAppID:(id)arg1;
+- (BOOL)registerNetworkDefaultsForAppID:(id)arg1;
+- (BOOL)registerNetworkDefaultsForAppIDs:(id)arg1 forceUpdate:(BOOL)arg2;
 
 @end

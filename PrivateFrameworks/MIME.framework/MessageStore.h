@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFObjectCache, NSMutableSet;
+@class NSMutableArray, NSMutableSet;
 
-@interface MessageStore : MFWeakObject {
+@interface MessageStore : NSObject <NSCopying> {
     union { 
         struct { 
-            MFObjectCache *_headerDataCache; 
-            MFObjectCache *_headerCache; 
-            MFObjectCache *_bodyDataCache; 
-            MFObjectCache *_bodyCache; 
+            NSMutableArray *_headerDataCache; 
+            NSMutableArray *_headerCache; 
+            NSMutableArray *_bodyDataCache; 
+            NSMutableArray *_bodyCache; 
         } objectCaches; 
         struct { 
             struct __CFDictionary {} *_headerDataCache; 
@@ -40,10 +40,12 @@
 - (id)additionalHeadersForForwardOfMessage:(id)arg1;
 - (id)additionalHeadersForReplyOfMessage:(id)arg1;
 - (id)bestAlternativeForPart:(id)arg1;
-- (id)bodyDataForMessage:(id)arg1 isComplete:(BOOL*)arg2 downloadIfNecessary:(BOOL)arg3;
+- (id)bodyDataForMessage:(id)arg1 isComplete:(BOOL*)arg2 isPartial:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (id)bodyForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 updateFlags:(BOOL)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
 - (void)dealloc;
+- (id)decryptedTopLevelPartForPart:(id)arg1;
 - (id)defaultAlternativeForPart:(id)arg1;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (BOOL)hasCompleteDataForMimePart:(id)arg1;

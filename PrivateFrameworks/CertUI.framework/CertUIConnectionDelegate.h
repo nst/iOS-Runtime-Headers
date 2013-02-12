@@ -17,6 +17,8 @@
 @property(copy) NSString * connectionDisplayName;
 @property id forwardingDelegate;
 
++ (id)defaultServiceForProtocol:(id)arg1;
+
 - (void)_continueConnectionWithResponse:(int)arg1 challenge:(id)arg2 service:(id)arg3;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;

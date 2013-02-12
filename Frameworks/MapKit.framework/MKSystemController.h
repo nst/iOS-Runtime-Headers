@@ -2,25 +2,34 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
+@class NSMutableArray;
+
 @interface MKSystemController : NSObject {
+    NSMutableArray *_backgroundTasks;
 }
 
 + (id)sharedInstance;
 
+- (void)addReachabilityObserver:(id)arg1 selector:(SEL)arg2 forHostname:(id)arg3;
+- (void)dealloc;
+- (int)deviceTileScale;
+- (int)deviceTileSize;
 - (BOOL)hasMultitouchDeviceInstalled;
 - (BOOL)hasTelephonyCapability;
-- (BOOL)isChinaDevice;
+- (id)init;
 - (BOOL)isHiDPI;
 - (BOOL)isLiveScrollCapable;
 - (BOOL)isMultitaskingSupported;
 - (BOOL)isRunningOniPad;
 - (BOOL)isSensitiveUIEnabled;
-- (BOOL)isStreetViewEnabled;
-- (BOOL)isStreetViewPIPEnabled;
-- (BOOL)isTileRequestThrottled;
+- (BOOL)isWifiEnabled;
+- (void)popBackgroundTask;
+- (void)pushBackgroundTaskWithHandler:(id)arg1;
+- (oneway void)release;
+- (void)removeReachabilityObserver:(id)arg1;
+- (unsigned int)retainCount;
 - (float)screenScale;
 - (struct CGSize { float x1; float x2; })screenSize;
-- (BOOL)useLargeTiles;
 - (int)userInterfaceIdiom;
 
 @end

@@ -23,6 +23,7 @@
 - (BOOL)hasContent;
 - (BOOL)isTextOnly;
 - (id)markupString;
+- (id)messageParts;
 - (id)resources;
 - (void)setIsTextOnly:(BOOL)arg1;
 - (void)setMarkupString:(id)arg1;

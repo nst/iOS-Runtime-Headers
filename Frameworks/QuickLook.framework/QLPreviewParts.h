@@ -21,6 +21,9 @@
     NSData *_data;
     id _delegate;
     NSString *_fileName;
+    int _pageCount;
+    float _pageHeight;
+    float _pageWidth;
     BOOL _progressive;
     NSURL *_url;
     NSString *_uti;
@@ -30,6 +33,7 @@
     NSMutableDictionary *encodingsForURLs;
     NSError *mainError;
     NSMutableSet *outstandingURLs;
+    NSURLResponse *previewResponse;
     NSURL *previewURL;
     NSMutableSet *registeredURLs;
     void *representedObject;
@@ -42,8 +46,11 @@
 @property(getter=isComputed,readonly) BOOL computed;
 @property(retain) NSURLConnection * connection;
 @property(retain) NSData * data;
-@property(retain) id delegate;
+@property id delegate;
 @property(retain) NSString * fileName;
+@property(readonly) int pageCount;
+@property(readonly) float pageHeight;
+@property(readonly) float pageWidth;
 @property(readonly) NSURLRequest * previewRequest;
 @property(readonly) NSURLResponse * previewResponse;
 @property(readonly) NSURL * previewURL;
@@ -77,8 +84,12 @@
 - (id)fileName;
 - (BOOL)isCancelled;
 - (BOOL)isComputed;
+- (id)mimeTypeForAttachmentURL:(id)arg1;
 - (id)newAttachmentURLWithID:(id)arg1 properties:(id)arg2;
 - (id)newSafeAttachmentURLWithID:(id)arg1 mimeType:(id)arg2 textEncoding:(id)arg3;
+- (int)pageCount;
+- (float)pageHeight;
+- (float)pageWidth;
 - (id)previewRequest;
 - (id)previewResponse;
 - (id)previewURL;

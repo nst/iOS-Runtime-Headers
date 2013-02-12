@@ -11,7 +11,7 @@
 
 @property <GKComposeSuggestedContactsControllerDelegate> * delegate;
 @property(retain) NSArray * searchResultItems;
-@property(retain,readonly) UITableView * searchResultsTable;
+@property(readonly) UITableView * searchResultsTable;
 
 - (void)dealloc;
 - (id)delegate;

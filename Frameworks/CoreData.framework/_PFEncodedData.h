@@ -9,6 +9,8 @@
     unsigned int _byteCount;
 }
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

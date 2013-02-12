@@ -8,8 +8,8 @@
     id _internal;
 }
 
-@property(readonly) struct { double latitude; double longitude; } center;
-@property(readonly) struct { struct { double latitude; double longitude; } center; double radius; BOOL identifier[512]; } clientRegion;
+@property(readonly) struct { double x1; double x2; } center;
+@property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; BOOL x3[512]; } clientRegion;
 @property(readonly) NSString * identifier;
 @property(readonly) double radius;
 

@@ -26,8 +26,9 @@
 - (struct sqlite3_stmt { }*)beginStmt;
 - (struct sqlite3_stmt { }*)commitStmt;
 - (void)commitTxn;
+- (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
+- (struct CGImage { }*)copyImageForKey:(id)arg1;
 - (void)createDbAt:(const char *)arg1;
-- (struct CGImage { }*)createImageForKey:(id)arg1;
 - (struct sqlite3 { }*)db;
 - (id)dbPath;
 - (void)dealloc;
@@ -41,7 +42,6 @@
 - (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
 - (struct sqlite3_stmt { }*)saveStmt;
 - (int)setVersion:(int)arg1;
-- (struct CGImage { }*)storeImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id)arg6;
 - (int)version;
 
 @end

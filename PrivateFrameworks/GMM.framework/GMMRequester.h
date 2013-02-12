@@ -21,7 +21,7 @@
 + (id)_requestHTTPHeaders;
 + (void)_resetRequestCounts;
 + (void)_setupNetworkConfiguration;
-+ (BOOL)allowRequestForType:(int)arg1;
++ (BOOL)allowRequests:(id)arg1;
 
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
@@ -39,7 +39,6 @@
 - (void)setAnonymous:(BOOL)arg1;
 - (void)setBundleIdentifiers:(id)arg1;
 - (void)setDisableReplay:(BOOL)arg1;
-- (void)setLoading:(BOOL)arg1;
 - (void)start;
 - (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
 - (BOOL)wasAutomaticallyCancelled;

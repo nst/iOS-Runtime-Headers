@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIFont;
+@class UIFont;
 
 @interface UITextRenderingAttributes : NSObject <NSCopying> {
     struct CGRect { 
@@ -18,6 +18,7 @@
     float _actualTrackingAdjustment;
     int _alignment;
     int _baselineAdjustment;
+    BOOL _drawUnderline;
     UIFont *_font;
     BOOL _includeEmoji;
     int _lineBreakMode;
@@ -26,22 +27,23 @@
     float _minimumTrackingAdjustment;
     float _trackingAdjustment;
     } _truncationRect;
-    NSString **renderString;
+    id *renderString;
 }
 
 @property(readonly) float actualFontSize;
 @property(readonly) float actualTrackingAdjustment;
 @property int alignment;
 @property int baselineAdjustment;
+@property BOOL drawUnderline;
 @property(retain) UIFont * font;
 @property BOOL includeEmoji;
 @property int lineBreakMode;
 @property float lineSpacing;
 @property float minimumFontSize;
 @property float minimumTrackingAdjustment;
-@property NSString ** renderString;
+@property id* renderString;
 @property float trackingAdjustment;
-@property struct CGRect { struct CGPoint { float x; float y; } origin; struct CGSize { float width; float height; } size; } truncationRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } truncationRect;
 
 + (id)attributesWithSystemFontOfSize:(float)arg1;
 
@@ -51,6 +53,7 @@
 - (int)baselineAdjustment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (BOOL)drawUnderline;
 - (int)ellipsisStyle;
 - (id)font;
 - (BOOL)includeEmoji;
@@ -65,6 +68,7 @@
 - (void)setActualTrackingAdjustment:(float)arg1;
 - (void)setAlignment:(int)arg1;
 - (void)setBaselineAdjustment:(int)arg1;
+- (void)setDrawUnderline:(BOOL)arg1;
 - (void)setFont:(id)arg1;
 - (void)setIncludeEmoji:(BOOL)arg1;
 - (void)setLineBreakMode:(int)arg1;

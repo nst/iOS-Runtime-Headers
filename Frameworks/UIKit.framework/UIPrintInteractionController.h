@@ -24,7 +24,8 @@
 
 @property <UIPrintInteractionControllerDelegate> * delegate;
 @property(readonly) int pageCount;
-@property struct _NSRange { unsigned int location; unsigned int length; } pageRange;
+@property struct _NSRange { unsigned int x1; unsigned int x2; } pageRange;
+@property(retain) UIPrintPaper * paper;
 @property(retain) UIPrintFormatter * printFormatter;
 @property(retain) UIPrintInfo * printInfo;
 @property(retain) UIPrintPageRenderer * printPageRenderer;
@@ -42,10 +43,13 @@
 
 - (BOOL)_canShowDuplex;
 - (BOOL)_canShowPageRange;
+- (BOOL)_canShowPaperList;
 - (void)_cleanPrintState;
 - (id)_currentPrintInfo;
 - (void)_endPrintJob:(BOOL)arg1 error:(id)arg2;
 - (id)_init;
+- (id)_paperForContentType:(int)arg1;
+- (id)_paperForPDFItem:(id)arg1 withDuplexMode:(int)arg2;
 - (void)_preparePrintInfo;
 - (id)_printItem:(id)arg1;
 - (void)_printPage;
@@ -64,6 +68,7 @@
 - (id)init;
 - (int)pageCount;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })pageRange;
+- (id)paper;
 - (BOOL)presentAnimated:(BOOL)arg1 completionHandler:(id)arg2;
 - (BOOL)presentFromBarButtonItem:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
 - (BOOL)presentFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3 completionHandler:(id)arg4;
@@ -74,9 +79,10 @@
 - (id)printer;
 - (id)printingItem;
 - (id)printingItems;
-- (void)release;
+- (oneway void)release;
 - (void)setDelegate:(id)arg1;
 - (void)setPageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setPaper:(id)arg1;
 - (void)setPrintFormatter:(id)arg1;
 - (void)setPrintInfo:(id)arg1;
 - (void)setPrintPageRenderer:(id)arg1;

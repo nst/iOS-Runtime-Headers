@@ -2,9 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVPlaybackItemInspectorLoader : AVAssetInspectorLoader {
-    struct OpaqueFigFormatReaderLoader { } *_formatReaderLoader;
+@class NSArray;
+
+@interface AVPlaybackItemInspectorLoader : AVAssetMakeReadyForInspectionLoader {
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _cachedDuration;
     struct OpaqueFigPlaybackItem { } *_playbackItem;
+    BOOL _shouldCacheDuration;
+    NSArray *_trackIDs;
 }
 
 @property(getter=_playbackItem,readonly) struct OpaqueFigPlaybackItem { }* playbackItem;
@@ -12,7 +21,6 @@
 - (void)_addFigObjectNotifications;
 - (struct OpaqueFigFormatReader { }*)_copyFormatReaderFromFigObjectWithFigErrorCode:(int*)arg1;
 - (id)_dictionaryOfSpecialGettersForKeyValueStatus;
-- (struct OpaqueFigFormatReaderLoader { }*)_formatReaderLoader;
 - (BOOL)_inspectionRequiresAFormatReader;
 - (id)_loadValuesUsingDefaultLoadingMethodWhileMutexLockedForKeys:(id)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
@@ -21,9 +29,10 @@
 - (id)assetInspector;
 - (void)cancelLoading;
 - (void)dealloc;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
 - (unsigned int)hash;
-- (id)initWithURL:(id)arg1 playbackItem:(struct OpaqueFigPlaybackItem { }*)arg2;
+- (id)initWithURL:(id)arg1 playbackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 - (BOOL)isEqual:(id)arg1;
 
 @end

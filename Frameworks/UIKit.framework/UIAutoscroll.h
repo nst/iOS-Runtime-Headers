@@ -21,7 +21,7 @@
 @property BOOL active;
 @property int count;
 @property int directions;
-@property struct CGPoint { float x; float y; } point;
+@property struct CGPoint { float x1; float x2; } point;
 @property double repeatInterval;
 @property(retain) UIView<UIAutoscrollContainer> * scrollContainer;
 @property(retain) id target;

@@ -4,7 +4,7 @@
 
 @class UITabBar;
 
-@interface UITabBarSwappableImageView : UIView {
+@interface UITabBarSwappableImageView : UIImageView {
     id _alternate;
     int _buttonTag;
     int _currentAnimation;
@@ -19,7 +19,9 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithImage:(id)arg1 alternateImage:(id)arg2;
+- (void)setAlternateImage:(id)arg1;
 - (void)setCurrentImage;
+- (void)setImage:(id)arg1;
 - (void)showAlternateImage:(BOOL)arg1;
 
 @end

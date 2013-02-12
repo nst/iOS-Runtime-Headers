@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFString : __NSCFType {
+@interface __NSCFString : NSMutableString {
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -11,7 +11,9 @@
 - (const char *)_fastCStringContents:(BOOL)arg1;
 - (const unsigned short*)_fastCharacterContents;
 - (BOOL)_isCString;
+- (BOOL)_isDeallocating;
 - (id)_newSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
+- (BOOL)_tryRetain;
 - (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
 - (void)appendFormat:(id)arg1;
 - (void)appendString:(id)arg1;

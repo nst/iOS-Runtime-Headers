@@ -2,34 +2,25 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset;
+@class AVWeakReference;
 
 @interface AVPlaybackItemTrackInspector : AVAssetTrackInspector {
-    AVAsset *_asset;
     unsigned int _mediaType;
     struct OpaqueFigPlaybackItem { } *_playbackItem;
     int _trackID;
+    AVWeakReference *_weakReferenceToAsset;
 }
 
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })_CMTimeForProperty:(struct __CFString { }*)arg1;
-- (long)_SInt32ForProperty:(struct __CFString { }*)arg1;
-- (unsigned char)_booleanForProperty:(struct __CFString { }*)arg1;
-- (float)_floatForProperty:(struct __CFString { }*)arg1;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
-- (id)_initWithAsset:(id)arg1 trackID:(int)arg2;
-- (id)_initWithAsset:(id)arg1 trackIndex:(long)arg2;
-- (long long)_longLongForProperty:(struct __CFString { }*)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
-- (id)_stringForProperty:(struct __CFString { }*)arg1;
+- (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)asset;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (void)finalize;
 - (id)formatDescriptions;
 - (unsigned int)hash;
-- (id)init;
 - (BOOL)isEnabled;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSelfContained;
@@ -41,8 +32,6 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (id)segments;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (long long)totalSampleDataLength;
 - (int)trackID;

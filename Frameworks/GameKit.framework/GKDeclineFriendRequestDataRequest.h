@@ -5,7 +5,6 @@
 @interface GKDeclineFriendRequestDataRequest : GKAcceptFriendRequestDataRequest {
 }
 
-- (id)invalidateCacheKeys;
 - (id)key;
 - (id)request;
 

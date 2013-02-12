@@ -16,7 +16,6 @@
 - (id)description;
 - (BOOL)hasPropertyError;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)propStats;
 - (void)setPropStats:(id)arg1;
 

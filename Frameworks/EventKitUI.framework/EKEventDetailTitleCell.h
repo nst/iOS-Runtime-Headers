@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel;
+@class EKTextViewWithLabelTextMetrics, UILabel;
 
 @interface EKEventDetailTitleCell : EKEventDetailCell {
     UILabel *_dateView;
-    UILabel *_locationView;
+    EKTextViewWithLabelTextMetrics *_locationView;
     BOOL _observingLocaleChanges;
     UILabel *_recurrenceView;
     UILabel *_statusView;
@@ -15,17 +15,13 @@
     unsigned int _visibleItems;
 }
 
-+ (void)_initializeSafeCategory;
-
 - (id)_dateView;
 - (id)_locationView;
 - (id)_recurrenceView;
 - (id)_statusView;
 - (id)_timeView;
 - (id)_titleView;
-- (id)accessibilityLabel;
 - (void)dealloc;
-- (BOOL)isAccessibilityElement;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (void)setDateString:(id)arg1;
 - (void)setLocation:(id)arg1;

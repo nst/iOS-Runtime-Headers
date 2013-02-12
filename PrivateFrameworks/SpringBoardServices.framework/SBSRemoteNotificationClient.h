@@ -5,6 +5,7 @@
 @interface SBSRemoteNotificationClient : NSObject {
 }
 
++ (unsigned int)_remoteNotificationServerPort;
 + (int)enabledRemoteNotificationTypes;
 + (id)getPendingNotificationUserInfo;
 + (void)getSupportedTypes:(id*)arg1 enabledTypes:(id*)arg2;

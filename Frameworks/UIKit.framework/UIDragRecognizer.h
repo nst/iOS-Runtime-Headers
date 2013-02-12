@@ -23,7 +23,7 @@
 @property double minimumDistance;
 @property BOOL restrictsToAngle;
 @property double startAngle;
-@property struct CGPoint { float x; float y; } startPosition;
+@property struct CGPoint { float x1; float x2; } startPosition;
 @property(retain) UITouch * touch;
 
 - (void)_resetGestureRecognizer;

@@ -2,34 +2,30 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKEventStore, NSString;
+@class NSSet, NSString;
 
-@interface EKSource : NSObject {
-    NSString *_externalId;
-    unsigned int _loadFlags;
-    void *_object;
-    NSString *_sourceId;
-    EKEventStore *_store;
-    NSString *_title;
-    int _type;
+@interface EKSource : EKObject {
 }
 
-@property(copy,readonly) NSString * externalId;
-@property(copy,readonly) NSString * sourceIdentifier;
-@property(copy,readonly) NSString * title;
-@property(readonly) int type;
+@property(readonly) NSSet * calendars;
+@property(readonly) NSString * sourceIdentifier;
+@property(readonly) int sourceType;
+@property(readonly) NSString * title;
 
-- (void)_setStoreInternal:(id)arg1;
-- (void)_storeClosed;
-- (void)dealloc;
+- (id)_persistentItem;
+- (id)allCalendars;
+- (id)calendars;
+- (BOOL)commit:(id*)arg1;
+- (id)constraints;
+- (id)defaultAlarmOffset;
 - (id)description;
-- (id)externalId;
-- (id)initWithStore:(id)arg1 object:(void*)arg2 sourceIdentifier:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (void)reconnectToServer;
-- (void)refresh;
+- (id)externalID;
+- (id)init;
+- (BOOL)isEnabled;
+- (BOOL)remove:(id*)arg1;
+- (void)setDefaultAlarmOffset:(id)arg1;
 - (id)sourceIdentifier;
+- (int)sourceType;
 - (id)title;
-- (int)type;
 
 @end

@@ -2,23 +2,25 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class NSString;
+@class NSNumber, NSString;
 
 @interface GKSendFriendRequestDataRequest : GKDataRequest {
     NSString *_message;
     int _recipientType;
     id _recipients;
     id _results;
+    NSNumber *_rid;
 }
 
 @property(copy) NSString * message;
 @property int recipientType;
 @property(retain) id recipients;
 @property(retain) id results;
+@property(retain) NSNumber * rid;
 
 - (void)dealloc;
 - (id)errorForResponse:(id)arg1;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)handleResponseFromServer:(id)arg1;
 - (id)key;
 - (id)message;
 - (void)processResults:(id)arg1 errorDict:(id)arg2 forKey:(id)arg3 recipients:(id)arg4;
@@ -26,9 +28,11 @@
 - (id)recipients;
 - (id)request;
 - (id)results;
+- (id)rid;
 - (void)setMessage:(id)arg1;
 - (void)setRecipientType:(int)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setResults:(id)arg1;
+- (void)setRid:(id)arg1;
 
 @end

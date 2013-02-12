@@ -7,7 +7,6 @@
 
 + (Class)MFMailComposeViewControllerClass;
 + (Class)MailCompositionContextClass;
-+ (void)_initializeSafeCategory;
 + (BOOL)canSendMail;
 + (id)newComposeViewController;
 + (id)newComposeViewControllerWithComposition:(id)arg1;

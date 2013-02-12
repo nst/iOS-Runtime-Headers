@@ -10,6 +10,7 @@
     BOOL _controlsShown;
     id _delegate;
     UIImageView *_gradientView;
+    BOOL _isShown;
     UILabel *_logLabel;
     UIMoviePlayerController *_moviePlayer;
     double _seekTime;
@@ -35,6 +36,7 @@
 - (void)_presentAlertForError:(id)arg1 reasonCode:(id)arg2;
 - (void)_setupBackground;
 - (void)_switchToVideo:(id)arg1;
+- (void)_updateCaptionsForMovie;
 - (BOOL)canContinuePlayingWhenLocked;
 - (void)dealloc;
 - (void)didHide;
@@ -74,6 +76,7 @@
 - (void)setFullscreen:(BOOL)arg1;
 - (void)setSeekTime:(double)arg1;
 - (void)shareSheetDidHide;
+- (void)shareSheetWillShow;
 - (void)useSmallLogo:(BOOL)arg1;
 - (id)video;
 - (void)willHide;

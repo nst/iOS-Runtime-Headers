@@ -6,29 +6,26 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSDictionary, NSString;
+@class NSDictionary, NSString;
 
 @interface GKDataRequest : NSOperation {
-    id _authObserver;
     id _completionBlock;
     BOOL _isCancelled;
     BOOL _isExecuting;
     BOOL _isFinished;
     struct dispatch_source_s { } *_replySource;
     int _sequenceNumber;
+    double _startTime;
 }
 
 @property(readonly) BOOL authenticationRequired;
-@property(readonly) NSString * cacheKey;
-@property(readonly) int cachePriority;
-@property(readonly) int cacheType;
 @property(copy) id completionBlock;
 @property(readonly) NSDictionary * header;
-@property(retain,readonly) NSArray * invalidateCacheKeys;
 @property(readonly) NSString * key;
 @property(readonly) NSDictionary * request;
 @property(readonly) int sequenceNumber;
 @property(readonly) BOOL shouldProcessInBackground;
+@property double startTime;
 
 + (void)_cancelActiveRequestsWithError:(id)arg1 force:(BOOL)arg2;
 + (void)_resetRequestPort;
@@ -36,37 +33,38 @@
 + (id)protocolVersion;
 + (unsigned int)requestPort;
 + (id)requestQueue;
++ (struct dispatch_queue_s { }*)responseQueue;
 + (BOOL)useTestProtocol;
 
 - (void)_cancelSources;
 - (void)addToQueue;
 - (BOOL)authenticationRequired;
-- (id)cacheKey;
-- (int)cachePriority;
-- (int)cacheType;
 - (void)cancel;
 - (void)cancelWithError:(id)arg1;
 - (id)completionBlock;
 - (void)dealloc;
 - (id)demarshalResponseData:(id)arg1;
 - (id)description;
-- (id)errorForResponse:(id)arg1;
 - (void)finish;
-- (void)handleResponseFromServer:(id)arg1 error:(id)arg2;
+- (void)handleResponseFromServer:(id)arg1;
+- (void)handleUnauthenticatedError;
 - (id)header;
 - (id)init;
-- (id)invalidateCacheKeys;
 - (BOOL)isCancelled;
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (id)key;
+- (void)playerAuthenticationDidChange:(id)arg1;
 - (id)request;
+- (Class)responseClass;
 - (void)send;
 - (int)sequenceNumber;
 - (void)setCompletionBlock:(id)arg1;
+- (void)setStartTime:(double)arg1;
 - (BOOL)shouldProcessInBackground;
 - (void)start;
+- (double)startTime;
 - (void)wasCancelledByServer;
 
 @end

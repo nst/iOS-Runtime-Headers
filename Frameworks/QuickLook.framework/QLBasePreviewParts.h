@@ -12,11 +12,8 @@
 
 + (int (*)())dataCallbackForUTI:(id)arg1 andSize:(unsigned int)arg2;
 + (int (*)())urlCallbackForUTI:(id)arg1;
-+ (id)_csvUTIs;
-+ (id)_iWorkUTIs;
-+ (id)_officeUTIs;
-+ (id)_rtfUTIs;
 + (BOOL)canConvertDocumentType:(id)arg1;
++ (BOOL)isBundleURL:(id)arg1;
 
 - (void)computePreview;
 

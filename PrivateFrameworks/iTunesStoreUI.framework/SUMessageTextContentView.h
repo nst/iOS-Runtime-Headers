@@ -4,7 +4,7 @@
 
 @class <SUMessageTextContentViewDelegate>;
 
-@interface SUMessageTextContentView : UITextContentView {
+@interface SUMessageTextContentView : UITextContentView <DOMEventListener> {
 }
 
 @property <SUMessageTextContentViewDelegate> * delegate;

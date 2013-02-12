@@ -20,6 +20,7 @@
 @property(retain,readonly) NSDictionary * persistedSnapshot;
 @property(retain,readonly) NSManagedObject * sourceObject;
 
+- (id)ancestorSnapshot;
 - (id)cachedSnapshot;
 - (void)dealloc;
 - (id)description;

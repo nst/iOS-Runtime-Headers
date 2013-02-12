@@ -8,6 +8,7 @@
     CoreDAVLeafItem *_apsBundleID;
     CoreDAVLeafItem *_apsEnv;
     CoreDAVLeafItem *_courierServer;
+    CoreDAVLeafItem *_refreshInterval;
     CoreDAVItemWithHrefChildItem *_subscriptionURL;
     CoreDAVItemWithHrefChildItem *_tokenURL;
     CoreDAVLeafItem *_xmppServer;
@@ -17,6 +18,7 @@
 @property(retain) CoreDAVLeafItem * apsBundleID;
 @property(retain) CoreDAVLeafItem * apsEnv;
 @property(retain) CoreDAVLeafItem * courierServer;
+@property(retain) CoreDAVLeafItem * refreshInterval;
 @property(retain) CoreDAVItemWithHrefChildItem * subscriptionURL;
 @property(retain) CoreDAVItemWithHrefChildItem * tokenURL;
 @property(retain) CoreDAVLeafItem * xmppServer;
@@ -29,9 +31,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
+- (id)refreshInterval;
 - (void)setApsBundleID:(id)arg1;
 - (void)setApsEnv:(id)arg1;
 - (void)setCourierServer:(id)arg1;
+- (void)setRefreshInterval:(id)arg1;
 - (void)setSubscriptionURL:(id)arg1;
 - (void)setTokenURL:(id)arg1;
 - (void)setXmppServer:(id)arg1;

@@ -2,47 +2,132 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSArray, NSData, NSDate, NSDictionary, NSString;
 
-@interface FTMessage : NSObject {
+@interface FTMessage : NSObject <NSCopying> {
+    NSDictionary *_cachedBody;
     NSDictionary *_clientInfo;
+    id _completionBlock;
+    id _context;
     NSDate *_creationDate;
+    id _deliveryAcknowledgementBlock;
     NSData *_serviceData;
-    NSData *_sessionToken;
+    double _timeout;
+    NSString *_topic;
+    unsigned int _uniqueID;
     NSDictionary *_userInfo;
+    BOOL _usingOutgoingPush;
+    BOOL _wantsBinaryPush;
+    BOOL _wantsIntegerUniqueIDs;
+    BOOL _wantsResponse;
 }
 
+@property(setter=_setCachedBody:,retain) NSDictionary * _cachedBody;
+@property(setter=_setUsingOutgoingPush:) BOOL _usingOutgoingPush;
 @property(readonly) NSDictionary * additionalMessageHeaders;
+@property(readonly) NSDictionary * additionalMessageHeadersForOutgoingPush;
+@property(readonly) NSDictionary * additionalQueryStringParameters;
 @property(readonly) NSString * bagKey;
 @property(copy) NSDictionary * clientInfo;
-@property(readonly) NSDate * creationDate;
-@property(readonly) BOOL hasRequiredKeys;
+@property(readonly) int command;
+@property(copy) id completionBlock;
+@property(retain) id context;
+@property(retain) NSDate * creationDate;
+@property(readonly) double customRetryInterval;
+@property(copy) id deliveryAcknowledgementBlock;
+@property(readonly) BOOL ignoresNetworkConnectivity;
 @property(readonly) BOOL isValidMessage;
 @property(readonly) NSDictionary * messageBody;
+@property(readonly) NSDictionary * messageBodyUsingCache;
+@property(readonly) NSDictionary * nonStandardMessageHeadersForOutgoingPush;
 @property(readonly) BOOL payloadCanBeLogged;
 @property(readonly) NSArray * requiredKeys;
+@property(readonly) int responseCommand;
 @property(copy) NSData * serviceData;
-@property(copy) NSData * sessionToken;
+@property double timeout;
+@property(retain) NSString * topic;
+@property unsigned int uniqueID;
+@property(readonly) NSString * uniqueIDString;
+@property(readonly) NSString * userAgentHeaderString;
 @property(copy) NSDictionary * userInfo;
+@property(readonly) BOOL wantsAPSRetries;
+@property(readonly) BOOL wantsBagKey;
+@property BOOL wantsBinaryPush;
+@property(readonly) BOOL wantsCFNetworkTimeout;
+@property(readonly) BOOL wantsCompressedBody;
+@property(readonly) BOOL wantsCustomRetryInterval;
+@property(readonly) BOOL wantsHTTPGet;
+@property(readonly) BOOL wantsHTTPHeaders;
+@property BOOL wantsIntegerUniqueIDs;
+@property(readonly) BOOL wantsJSONBody;
+@property BOOL wantsResponse;
+@property(readonly) BOOL wantsUserAgentInHeaders;
 
+- (void)_cacheBody;
+- (id)_cachedBody;
+- (void)_setCachedBody:(id)arg1;
+- (void)_setUsingOutgoingPush:(BOOL)arg1;
+- (BOOL)_usingOutgoingPush;
 - (id)additionalMessageHeaders;
+- (id)additionalMessageHeadersForOutgoingPush;
+- (id)additionalQueryStringParameters;
 - (id)bagKey;
 - (id)clientInfo;
+- (int)command;
+- (id)completionBlock;
+- (id)context;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
+- (double)customRetryInterval;
 - (void)dealloc;
+- (id)deliveryAcknowledgementBlock;
 - (void)handleResponseDictionary:(id)arg1;
-- (BOOL)hasRequiredKeys;
+- (void)handleResponseHeaders:(id)arg1;
+- (BOOL)hasRequiredKeys:(id*)arg1;
+- (BOOL)ignoresNetworkConnectivity;
 - (id)init;
 - (BOOL)isValidMessage;
 - (id)messageBody;
+- (id)messageBodyUsingCache;
+- (id)nonStandardMessageHeadersForOutgoingPush;
 - (BOOL)payloadCanBeLogged;
 - (id)requiredKeys;
+- (int)responseCommand;
 - (id)serviceData;
-- (id)sessionToken;
 - (void)setClientInfo:(id)arg1;
+- (void)setCompletionBlock:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setCreationDate:(id)arg1;
+- (void)setDeliveryAcknowledgementBlock:(id)arg1;
 - (void)setServiceData:(id)arg1;
-- (void)setSessionToken:(id)arg1;
+- (void)setTimeout:(double)arg1;
+- (void)setTopic:(id)arg1;
+- (void)setUniqueID:(unsigned int)arg1;
 - (void)setUserInfo:(id)arg1;
+- (void)setWantsBinaryPush:(BOOL)arg1;
+- (void)setWantsIntegerUniqueIDs:(BOOL)arg1;
+- (void)setWantsResponse:(BOOL)arg1;
+- (double)timeout;
+- (id)topic;
+- (unsigned int)uniqueID;
+- (id)uniqueIDString;
+- (id)userAgentHeaderString;
 - (id)userInfo;
+- (BOOL)wantsAPSRetries;
+- (BOOL)wantsBagKey;
+- (BOOL)wantsBinaryPush;
+- (BOOL)wantsCFNetworkTimeout;
+- (BOOL)wantsCompressedBody;
+- (BOOL)wantsCustomRetryInterval;
+- (BOOL)wantsHTTPGet;
+- (BOOL)wantsHTTPHeaders;
+- (BOOL)wantsIntegerUniqueIDs;
+- (BOOL)wantsJSONBody;
+- (BOOL)wantsResponse;
+- (BOOL)wantsUserAgentInHeaders;
 
 @end

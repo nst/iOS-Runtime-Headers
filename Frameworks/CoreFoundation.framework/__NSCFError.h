@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFError : __NSCFType {
+@interface __NSCFError : NSError {
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (BOOL)_isDeallocating;
+- (BOOL)_tryRetain;
 - (Class)classForCoder;
 - (int)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

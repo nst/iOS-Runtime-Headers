@@ -5,13 +5,16 @@
 @class <MKAnnotation>, MKAnnotationViewInternal, NSString, UIImage, UIView;
 
 @interface MKAnnotationView : UIView {
+    BOOL _customTransformApplied;
     MKAnnotationViewInternal *_internal;
+    BOOL _internalTransformApplied;
 }
 
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } _mapTransform;
 @property(retain) <MKAnnotation> * annotation;
-@property struct CGPoint { float x; float y; } calloutOffset;
+@property struct CGPoint { float x1; float x2; } calloutOffset;
 @property BOOL canShowCallout;
-@property struct CGPoint { float x; float y; } centerOffset;
+@property struct CGPoint { float x1; float x2; } centerOffset;
 @property unsigned int dragState;
 @property(getter=isDraggable) BOOL draggable;
 @property(getter=isEnabled) BOOL enabled;
@@ -23,45 +26,39 @@
 @property(getter=isSelected) BOOL selected;
 
 + (id)_disclosureCalloutButton;
-+ (void)_initializeSafeCategory;
 + (unsigned int)_selectedZIndex;
-+ (id)_streetViewButtonDisabledImage;
-+ (id)_streetViewButtonImage;
-+ (id)_streetViewButtonPressedImage;
-+ (id)_streetViewCalloutButton;
 + (unsigned int)_zIndex;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)currentLocationTitle;
++ (id)droppedPinTitle;
 
-- (id)_accessibilityHitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)_annotationContainer;
-- (int)_annotationViewType;
 - (id)_calloutView;
 - (BOOL)_canChangeOrientation;
 - (BOOL)_canDisplayDisclosureInCallout;
 - (BOOL)_canDisplayPlacemarkInCallout;
 - (BOOL)_canDisplayStreetViewInCallout;
 - (id)_contentLayer;
+- (void)_enableRotationForHeadingMode:(float)arg1;
 - (BOOL)_hasAlternateOrientation;
-- (BOOL)_hasSearchResult;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_mapTransform;
 - (unsigned int)_mapType;
 - (unsigned int)_orientationCount;
 - (void)_resetZIndex;
 - (void)_resetZIndexNotify:(BOOL)arg1;
-- (id)_searchResult;
 - (void)_setCalloutView:(id)arg1;
 - (void)_setCanDisplayDisclosureInCallout:(BOOL)arg1;
 - (void)_setCanDisplayPlacemarkInCallout:(BOOL)arg1;
 - (void)_setCanDisplayStreetViewInCallout:(BOOL)arg1;
 - (void)_setMapType:(unsigned int)arg1;
+- (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
 - (void)_setZIndex:(unsigned int)arg1 notify:(BOOL)arg2;
 - (void)_setZIndex:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantFrame;
 - (void)_updateZIndex;
+- (void)_userTrackingModeDidChange:(id)arg1;
 - (unsigned int)_zIndex;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (id)accessibilityHint;
-- (id)accessibilityLabel;
 - (id)annotation;
 - (struct CGPoint { float x1; float x2; })calloutOffset;
 - (BOOL)canShowCallout;
@@ -73,14 +70,12 @@
 - (id)image;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
 - (BOOL)isDraggable;
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
 - (id)leftCalloutAccessoryView;
-- (id)panoramaID;
 - (void)prepareForReuse;
 - (id)reuseIdentifier;
 - (id)rightCalloutAccessoryView;
@@ -95,7 +90,6 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
-- (void)setPanoramaID:(id)arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;

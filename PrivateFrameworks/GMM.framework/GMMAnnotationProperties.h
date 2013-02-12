@@ -13,11 +13,10 @@
 }
 
 @property int annotationHeightFractionE6;
-@property(readonly) BOOL hasAnnotationHeightFractionE6;
-@property(readonly) BOOL hasHorizonHeightFractionE6;
+@property BOOL hasAnnotationHeightFractionE6;
+@property BOOL hasHorizonHeightFractionE6;
 @property int horizonHeightFractionE6;
 @property(retain) NSMutableArray * links;
-@property(readonly) int linksCount;
 
 - (void)addLink:(id)arg1;
 - (int)annotationHeightFractionE6;
@@ -27,14 +26,14 @@
 - (BOOL)hasAnnotationHeightFractionE6;
 - (BOOL)hasHorizonHeightFractionE6;
 - (int)horizonHeightFractionE6;
-- (id)init;
 - (id)linkAtIndex:(unsigned int)arg1;
 - (id)links;
-- (int)linksCount;
+- (unsigned int)linksCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAnnotationHeightFractionE6:(int)arg1;
+- (void)setHasAnnotationHeightFractionE6:(BOOL)arg1;
+- (void)setHasHorizonHeightFractionE6:(BOOL)arg1;
 - (void)setHorizonHeightFractionE6:(int)arg1;
-- (void)setLink:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setLinks:(id)arg1;
 - (void)writeTo:(id)arg1;
 

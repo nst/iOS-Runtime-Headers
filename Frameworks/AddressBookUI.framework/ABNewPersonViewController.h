@@ -23,7 +23,7 @@
 @property(retain) <ABStyleProvider> * styleProvider;
 
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; int x5; float x6; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (int)abViewControllerType;
 - (float)ab_heightToFitForViewInPopoverView;
@@ -58,6 +58,7 @@
 - (void)setSavesNewContactOnSuspend:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showsCancelButton;
 - (id)styleProvider;
 - (void)updateNavigationButtons;

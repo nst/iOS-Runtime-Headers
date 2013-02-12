@@ -21,7 +21,6 @@
 
 - (id)_cacheDirectoryPath;
 - (id)_cachedRepresentativeImagePath;
-- (struct CGImage { }*)_newCGImageForArtworkData:(id)arg1 artworkInfo:(struct MLArtworkInstanceInfo { struct MLArtworkFormatSpec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; }*)arg2;
 - (unsigned int)countOfRepresentativeImagesWithMaxCount:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;

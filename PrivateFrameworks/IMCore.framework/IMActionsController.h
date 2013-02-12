@@ -11,14 +11,12 @@
 + (id)actionsController;
 
 - (void)addHandler:(id)arg1;
-- (id)autorelease;
+- (BOOL)allowsWeakReference;
 - (void)dealloc;
-- (id)init;
 - (id)performActionsForEvent:(int)arg1 withIMHandle:(id)arg2 withObject:(id)arg3 withChat:(id)arg4 silent:(BOOL)arg5;
 - (id)performActionsForEvent:(int)arg1 withIMHandle:(id)arg2 withObject:(id)arg3;
 - (id)performActionsForEvent:(int)arg1 withIMHandle:(id)arg2;
-- (oneway void)release;
 - (void)removeHandler:(id)arg1;
-- (unsigned int)retainCount;
+- (BOOL)retainWeakReference;
 
 @end

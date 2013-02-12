@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
+- (id)generateMetadataDescription;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLeftExpression:(id)arg1 rightExpression:(id)arg2 customSelector:(SEL)arg3;

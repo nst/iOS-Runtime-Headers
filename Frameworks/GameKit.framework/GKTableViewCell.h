@@ -23,14 +23,16 @@
     } _contentInsets;
     UIView<GKTableViewCellContents> *_contents;
     UIImageView *_disclosureIndicator;
+    BOOL _groupHighlightEnabled;
     } _styleFlags;
     GKUITheme *_theme;
 }
 
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } backgroundInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInsets;
 @property int backgroundStyle;
-@property struct UIEdgeInsets { float top; float left; float bottom; float right; } contentInsets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property(retain) UIView<GKTableViewCellContents> * contents;
+@property BOOL groupHighlightEnabled;
 @property(readonly) BOOL isGroupedTableView;
 @property BOOL leaveAccessorySpace;
 @property(retain) GKUITheme * theme;
@@ -42,6 +44,7 @@
 - (id)contents;
 - (void)dealloc;
 - (id)description;
+- (BOOL)groupHighlightEnabled;
 - (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2 backgroundStyle:(int)arg3;
 - (id)initWithReuseIdentifier:(id)arg1 tableViewStyle:(int)arg2;
 - (id)initWithReuseIdentifier:(id)arg1;
@@ -59,6 +62,8 @@
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContents:(id)arg1;
 - (void)setContentsInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setGroupHighlightEnabled:(BOOL)arg1;
+- (void)setGroupSelectedOrHighlighted:(BOOL)arg1 isHighlight:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setLeaveAccessorySpace:(BOOL)arg1;
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;

@@ -55,7 +55,6 @@
 - (void)blinker;
 - (BOOL)canPanLeft;
 - (BOOL)canPanRight;
-- (id)createLineDescriptor;
 - (BOOL)currentUnread;
 - (void)dealloc;
 - (BOOL)display;
@@ -66,6 +65,7 @@
 - (int)lastToken;
 - (int)masterStatusCellIndex;
 - (BOOL)needsDisplayFlush;
+- (id)newLineDescriptorscriptor;
 - (BOOL)panLeft;
 - (BOOL)panRight;
 - (void)setAnyUnread:(BOOL)arg1;

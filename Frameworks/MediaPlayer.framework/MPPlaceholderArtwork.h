@@ -5,7 +5,6 @@
 @interface MPPlaceholderArtwork : NSObject {
 }
 
-+ (void)_initializeSafeCategory;
 + (unsigned int)currentScreenFormatIDFrom1XFormatID:(unsigned int)arg1;
 + (id)noArtPlaceholderAudioBookImage;
 + (id)noArtPlaceholderImageForMediaType:(int)arg1 withFormat:(unsigned int)arg2;

@@ -3,7 +3,6 @@
  */
 
 @interface NSKnownKeysDictionary2 : NSKnownKeysDictionary1 {
-    id _sourceData;
 }
 
 + (id)newInstanceWithSearchStrategy:(id)arg1 inData:(id)arg2;

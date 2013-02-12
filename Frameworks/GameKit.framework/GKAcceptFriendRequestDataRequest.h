@@ -12,10 +12,8 @@
 @property(retain) NSString * handle;
 @property(retain) GKPlayer * player;
 
-- (int)cacheType;
 - (void)dealloc;
 - (id)handle;
-- (id)invalidateCacheKeys;
 - (id)key;
 - (id)player;
 - (id)request;

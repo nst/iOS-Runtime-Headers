@@ -11,10 +11,10 @@
 
 @interface WebScriptCallFramePrivate : NSObject {
     struct DebuggerCallFrame { struct ExecState {} *x1; struct JSValue { 
-            union $_715 { 
-                long long asEncodedJSValue; 
+            union EncodedValueDescriptor { 
+                long long asInt64; 
                 double asDouble; 
-                struct $_716 { 
+                struct $_700 { 
                     int payload; 
                     int tag; 
                 } asBits; 
@@ -29,8 +29,8 @@
             } m_impl; 
         } x2; boolx3; struct RetainPtr<WebScriptCallFrame> { 
             WebScriptCallFrame *m_ptr; 
-        } x4; struct ProtectedPtr<JSC::JSGlobalObject> { 
-            struct JSGlobalObject {} *m_ptr; 
+        } x4; struct Strong<JSC::JSGlobalObject> { 
+            struct JSValue {} *m_slot; 
         } x5; struct RetainPtr<WebScriptCallFrame> { 
             WebScriptCallFrame *m_ptr; 
     WebScriptCallFrame *caller;

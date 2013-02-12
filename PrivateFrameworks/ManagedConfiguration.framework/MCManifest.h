@@ -11,6 +11,7 @@
 }
 
 + (void)_setManifestPath:(id)arg1;
++ (id)installedProfileWithIdentifier:(id)arg1;
 + (id)sharedManifest;
 
 - (id)_manifest;

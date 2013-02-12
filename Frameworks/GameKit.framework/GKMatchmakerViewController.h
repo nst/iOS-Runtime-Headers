@@ -2,18 +2,21 @@
    Image: /System/Library/Frameworks/GameKit.framework/GameKit
  */
 
-@class <GKMatchmakerViewControllerDelegate>, GKMatchRequest, GKMatchmakerViewControllerPrivate;
+@class <GKMatchmakerViewControllerDelegate>, GKMatchRequest, GKMatchmakerViewControllerPrivate, NSString;
 
 @interface GKMatchmakerViewController : UINavigationController {
     GKMatchmakerViewControllerPrivate *_privateViewController;
 }
 
+@property(copy) NSString * defaultInvitationMessage;
 @property(getter=isHosted) BOOL hosted;
-@property(retain,readonly) GKMatchRequest * matchRequest;
+@property(readonly) GKMatchRequest * matchRequest;
 @property <GKMatchmakerViewControllerDelegate> * matchmakerDelegate;
 @property(retain) GKMatchmakerViewControllerPrivate * privateViewController;
 
+- (void)addPlayersToMatch:(id)arg1;
 - (void)dealloc;
+- (id)defaultInvitationMessage;
 - (id)initWithInvite:(id)arg1;
 - (id)initWithMatchRequest:(id)arg1;
 - (id)initWithPrivateViewController:(id)arg1;
@@ -21,7 +24,9 @@
 - (id)matchRequest;
 - (id)matchmakerDelegate;
 - (id)privateViewController;
+- (void)setDefaultInvitationMessage:(id)arg1;
 - (void)setHosted:(BOOL)arg1;
+- (void)setHostedPlayer:(id)arg1 connected:(BOOL)arg2;
 - (void)setHostedPlayerReady:(id)arg1;
 - (void)setMatchmakerDelegate:(id)arg1;
 - (void)setPrivateViewController:(id)arg1;

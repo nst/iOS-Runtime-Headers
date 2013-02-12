@@ -8,6 +8,7 @@
     } m_ButtonState[135];
 }
 
+- (id).cxx_construct;
 - (void)_descramblePayload:(struct BlanSportsDataFrame { unsigned char x1[28]; }*)arg1;
 - (unsigned int)_getBlanDstAddr:(struct BlanSportsDataFrame { unsigned char x1[28]; }*)arg1;
 - (unsigned char)_getBlanDstAddrLen:(struct BlanSportsDataFrame { unsigned char x1[28]; }*)arg1;

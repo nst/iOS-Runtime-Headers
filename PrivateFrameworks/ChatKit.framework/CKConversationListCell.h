@@ -2,15 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversation, CKSummaryLabel, NSString, UIDateLabel, UIImageView, UILabel;
+@class CKAggregateConversation, CKSummaryLabel, NSDate, NSString, UIDateLabel, UIImageView, UILabel;
 
 @interface CKConversationListCell : UITableViewCell {
     CKSummaryLabel *_backupSummaryLabel;
-    CKConversation *_conversation;
+    CKAggregateConversation *_conversation;
     UIDateLabel *_dateLabel;
     UILabel *_fromLabel;
     UIImageView *_groupImageView;
     UILabel *_hitsLabel;
+    NSDate *_searchMessageDate;
     int _searchMessageID;
     int _searchPartID;
     NSString *_searchSummaryText;
@@ -18,30 +19,30 @@
     UIImageView *_unreadIndicatorImageView;
 }
 
-@property(retain) CKConversation * conversation;
+@property(retain) CKAggregateConversation * conversation;
+@property(readonly) NSDate * searchMessageDate;
 @property(readonly) int searchMessageID;
 @property(readonly) int searchPartID;
 
-+ (void)_initializeSafeCategory;
 + (float)cellHeight;
 + (id)identifier;
 
 - (void)_createBackupSummaryLabel;
-- (id)accessibilityTableViewCellText;
 - (void)clearText;
 - (id)conversation;
 - (void)dealloc;
 - (void)didTransitionToState:(unsigned int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 conversation:(id)arg2;
-- (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
+- (void)prepareForReuse;
+- (id)searchMessageDate;
 - (int)searchMessageID;
 - (int)searchPartID;
 - (void)setConversation:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateContents;
 - (void)updateFontSize;
-- (void)updateWithSearchResult:(struct _CKSpotlightSearchResult { int x1; int x2; int x3; id x4; }*)arg1;
+- (void)updateWithSearchResult:(struct _CKSpotlightSearchResult { id x1; int x2; int x3; id x4; id x5; }*)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;
 
 @end

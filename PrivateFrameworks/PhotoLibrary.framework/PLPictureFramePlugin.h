@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhoto, PLCachedImage, PLCroppedImageView, PLImageCache, PLImageLoadingQueue, PLImageSource;
+@class PLCachedImage, PLCroppedImageView, PLImageCache, PLImageLoadingQueue, PLImageSource, PLManagedAsset;
 
 @interface PLPictureFramePlugin : PLSlideshowPlugin <PLImageLoadingQueueDelegate> {
     unsigned int _didLoadFirstImage : 1;
@@ -17,7 +17,7 @@
     PLImageSource *_imageSource;
     PLCachedImage *_nextImage;
     PLCroppedImageView *_nextImageView;
-    MLPhoto *_requestedImage;
+    PLManagedAsset *_requestedImage;
 }
 
 - (int)_albumImageIndexForSlideIndex:(int)arg1;
@@ -31,12 +31,12 @@
 - (void)_slideshowTimerFired;
 - (void)_transitionToNextImage;
 - (void)dealloc;
-- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forObject:(id)arg3 fromSource:(id)arg4;
+- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
 - (id)init;
 - (id)newSlideshowView;
 - (void)pauseSlideshow;
 - (void)resumeSlideshow;
-- (void)setAlbum:(id)arg1;
+- (void)setAlbumAssets:(id)arg1;
 - (void)slideshowViewDidAppear;
 - (void)slideshowViewDidDisappear;
 - (void)slideshowViewWillAppear;

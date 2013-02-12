@@ -4,16 +4,19 @@
 
 @class NSLock, NSNumber, NSString;
 
-@interface SSAccount : NSObject <NSCopying> {
+@interface SSAccount : NSObject <SSCoding, NSCopying> {
     int _accountKind;
     NSString *_accountName;
     int _accountScope;
     BOOL _active;
+    BOOL _activeLockerAccount;
+    int _availableServiceTypes;
     NSString *_creditsString;
     BOOL _demo;
+    int _enabledServiceTypes;
     NSLock *_lock;
     NSString *_secureToken;
-    BOOL _socialEnabled;
+    NSString *_storeFrontID;
     NSNumber *_uniqueIdentifier;
 }
 
@@ -21,38 +24,59 @@
 @property(copy) NSString * accountName;
 @property int accountScope;
 @property(getter=isActive) BOOL active;
+@property(getter=isActiveLockerAccount) BOOL activeLockerAccount;
 @property(getter=isAuthenticated,readonly) BOOL authenticated;
+@property int availableServiceTypes;
 @property(copy) NSString * creditsString;
 @property(getter=isDemoAccount) BOOL demoAccount;
+@property int enabledServiceTypes;
 @property(copy) NSString * secureToken;
 @property(getter=isSocialEnabled) BOOL socialEnabled;
+@property(copy) NSString * storeFrontIdentifier;
 @property(retain) NSNumber * uniqueIdentifier;
 
 - (int)accountKind;
 - (id)accountName;
 - (int)accountScope;
+- (void)addAvailableServiceTypes:(int)arg1;
+- (void)addEnabledServiceTypes:(int)arg1;
+- (int)availableServiceTypes;
 - (id)copyPropertyListEncoding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)copyXPCEncoding;
 - (id)creditsString;
 - (void)dealloc;
 - (id)description;
+- (int)enabledServiceTypes;
+- (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
+- (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id)arg2;
 - (id)init;
 - (id)initWithPropertyListEncoding:(id)arg1;
+- (id)initWithXPCEncoding:(void*)arg1;
 - (BOOL)isActive;
+- (BOOL)isActiveLockerAccount;
 - (BOOL)isAuthenticated;
 - (BOOL)isDemoAccount;
 - (BOOL)isSocialEnabled;
+- (void)removeAvailableServiceTypes:(int)arg1;
+- (void)removeEnabledServiceTypes:(int)arg1;
 - (void)resetTransientData;
 - (id)secureToken;
 - (void)setAccountKind:(int)arg1;
 - (void)setAccountName:(id)arg1;
 - (void)setAccountScope:(int)arg1;
 - (void)setActive:(BOOL)arg1;
+- (void)setActiveLockerAccount:(BOOL)arg1;
+- (void)setAvailableServiceTypes:(int)arg1;
 - (void)setCreditsString:(id)arg1;
 - (void)setDemoAccount:(BOOL)arg1;
+- (void)setEnabledServiceTypes:(int)arg1;
+- (void)setLockdownDictionary:(id)arg1;
 - (void)setSecureToken:(id)arg1;
 - (void)setSocialEnabled:(BOOL)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
+- (id)storeFrontIdentifier;
 - (id)uniqueIdentifier;
 
 @end

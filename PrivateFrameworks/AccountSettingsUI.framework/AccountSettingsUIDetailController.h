@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountSettingsUI.framework/AccountSettingsUI
  */
 
-@class NSTimer, UIBarButtonItem, UIProgressIndicator;
+@class NSTimer, UIActivityIndicatorView, UIBarButtonItem;
 
 @interface AccountSettingsUIDetailController : PSListController {
     BOOL _addedToTaskList;
@@ -10,7 +10,7 @@
     UIBarButtonItem *_doneButton;
     NSTimer *_idleJiggleTimer;
     void *_powerAssertion;
-    UIProgressIndicator *_progressIndicator;
+    UIActivityIndicatorView *_progressIndicator;
     BOOL _validationInProgress;
 }
 

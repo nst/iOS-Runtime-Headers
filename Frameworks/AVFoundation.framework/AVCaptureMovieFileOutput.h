@@ -24,6 +24,7 @@
 - (void)dealloc;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (BOOL)getRecorderBoolForKey:(id)arg1 withDefault:(BOOL)arg2;
+- (void)handleEnabledChangedForConnection:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)init;
 - (BOOL)isRecording;

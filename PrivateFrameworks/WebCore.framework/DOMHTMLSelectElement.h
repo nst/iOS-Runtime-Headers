@@ -36,6 +36,7 @@
 - (BOOL)disabled;
 - (id)form;
 - (id)item:(unsigned int)arg1;
+- (id)labels;
 - (int)length;
 - (id)listItemAtIndex:(int)arg1;
 - (BOOL)multiple;
@@ -44,12 +45,14 @@
 - (BOOL)nodeCanBecomeFirstResponder;
 - (id)options;
 - (void)remove:(int)arg1;
+- (BOOL)required;
 - (int)selectedIndex;
 - (void)setAutofocus:(BOOL)arg1;
 - (void)setCustomValidity:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setMultiple:(BOOL)arg1;
 - (void)setName:(id)arg1;
+- (void)setRequired:(BOOL)arg1;
 - (void)setSelectedIndex:(int)arg1;
 - (void)setSize:(int)arg1;
 - (void)setValue:(id)arg1;

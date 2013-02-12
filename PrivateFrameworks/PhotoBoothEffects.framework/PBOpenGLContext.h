@@ -8,7 +8,7 @@
 
 - (id)_compileFilter:(id)arg1;
 - (unsigned int)_compileShader:(const char *)arg1 type:(unsigned int)arg2;
-- (void)_createPixelBuffer:(struct __CVBuffer {}**)arg1 fromPool:(struct __CVPixelBufferPool { }*)arg2;
+- (void)_createPixelBuffer:(struct __CVBuffer {}**)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_createPixelBufferPools;
 - (void)_debugDump;
 - (BOOL)_registerFilter:(id)arg1;

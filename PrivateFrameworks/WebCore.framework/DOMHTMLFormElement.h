@@ -19,7 +19,7 @@
 
 - (id)acceptCharset;
 - (id)action;
-- (BOOL)autocapitalize;
+- (id)autocapitalize;
 - (BOOL)autocorrect;
 - (BOOL)checkValidity;
 - (id)elements;
@@ -32,7 +32,7 @@
 - (void)reset;
 - (void)setAcceptCharset:(id)arg1;
 - (void)setAction:(id)arg1;
-- (void)setAutocapitalize:(BOOL)arg1;
+- (void)setAutocapitalize:(id)arg1;
 - (void)setAutocorrect:(BOOL)arg1;
 - (void)setEncoding:(id)arg1;
 - (void)setEnctype:(id)arg1;

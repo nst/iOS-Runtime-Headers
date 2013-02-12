@@ -14,27 +14,87 @@
 @class NSOperationQueue;
 
 @interface CMMotionManagerInternal : NSObject {
+    struct Sample { 
+        double timestamp; 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+        } acceleration; 
+    struct Sample { 
+        double timestamp; 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+        } rotationRate; 
+        boolfsync; 
+    struct Sample { 
+        double timestamp; 
+        struct { 
+            struct { 
+                double w; 
+                double x; 
+                double y; 
+                double z; 
+            } quaternion; 
+            struct { 
+                float x; 
+                float y; 
+                float z; 
+            } userAcceleration; 
+            struct { 
+                float x; 
+                float y; 
+                float z; 
+            } rotationRate; 
+            struct { 
+                float x; 
+                float y; 
+                float z; 
+            } magneticField; 
+            int magneticFieldCalibrationLevel; 
+        } deviceMotion; 
+        boolfsync; 
+    struct { 
+        double x; 
+        double y; 
+        double z; 
+        double magnitude; 
+        double horizontal; 
+        double declination; 
+        double inclination; 
+        double timestamp; 
+    struct Sample { 
+        double timestamp; 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+        } magneticField; 
     int (*fPrivateAccelerometerDataCallback)();
     int (*fPrivateDeviceMotionCallback)();
     int (*fPrivateGyroDataCallback)();
+    boolfHaveSentDeviceRequiresMovementError;
+    boolfHaveSentTrueNorthUnavailableError;
     boolfInactive;
+    boolfPrivateDeviceMotionUse9Axis;
+    boolfShowCompassCalibrationHudOnResume;
     boolfShowsDeviceMovementDisplay;
-    boolfStartAccelerometerOnResume;
-    boolfStartDeviceMotionOnResume;
-    boolfStartGyroOnResume;
-    boolfStartMagnetometerOnResume;
-    struct CLAccelerometer { int (**x1)(); char *x2; struct NotificationInfo {} *x3; int x4; boolx5; unsigned int x6; unsigned int x7; struct __CFRunLoopSource {} *x8; int x9; struct CLSensorInterface {} *x10; boolx11; } *fAccelerometer;
-    struct Dispatcher { int (**x1)(); } *fAccelerometerDispatcher;
+    struct Dispatcher { } *fAccelerometerDispatcher;
     id fAccelerometerHandler;
     NSOperationQueue *fAccelerometerQueue;
     double fAccelerometerUpdateInterval;
-    struct CLDeviceMotion { int (**x1)(); char *x2; struct NotificationInfo {} *x3; int x4; boolx5; unsigned int x6; unsigned int x7; struct __CFRunLoopSource {} *x8; int x9; struct Dispatcher {} *x10; struct Dispatcher {} *x11; boolx12; boolx13; double x14; double x15; double x16; float x17; double x18; struct CLSensorFusion {} *x19; struct CLGyroMotionCalc {} *x20; int x21; int x22; } *fDeviceMotion;
-    struct Dispatcher { int (**x1)(); } *fDeviceMotionDispatcher;
+    int fAttitudeReferenceFrame;
+    void *fCompassCalibrationHud;
+    struct Dispatcher { } *fDeviceMotionDispatcher;
     id fDeviceMotionHandler;
     NSOperationQueue *fDeviceMotionQueue;
+    double fDeviceMotionStartTimestamp;
     double fDeviceMotionUpdateInterval;
-    struct CLGyro { int (**x1)(); char *x2; struct NotificationInfo {} *x3; int x4; boolx5; unsigned int x6; unsigned int x7; struct __CFRunLoopSource {} *x8; int x9; struct CLSensorInterface {} *x10; boolx11; } *fGyro;
-    struct Dispatcher { int (**x1)(); } *fGyroDispatcher;
+    } fGeomagneticModel;
+    int fGeomagneticModelProviderClient;
+    struct Dispatcher { } *fGyroDispatcher;
     id fGyroHandler;
     NSOperationQueue *fGyroQueue;
     double fGyroUpdateInterval;
@@ -42,19 +102,24 @@
     double fLastDeviceMotionNotificationTimestamp;
     double fLastGyroNotificationTimestamp;
     double fLastMagnetometerNotificationTimestamp;
-    struct CLMagnetometer { int (**x1)(); char *x2; struct NotificationInfo {} *x3; int x4; boolx5; unsigned int x6; unsigned int x7; struct __CFRunLoopSource {} *x8; int x9; struct CLSensorInterface {} *x10; boolx11; } *fMagnetometer;
-    struct Dispatcher { int (**x1)(); } *fMagnetometerDispatcher;
+    } fLatestAccelerometerSample;
+    } fLatestDeviceMotionSample;
+    } fLatestGyroSample;
+    } fLatestMagnetometerSample;
+    struct Dispatcher { } *fMagnetometerDispatcher;
     id fMagnetometerHandler;
     NSOperationQueue *fMagnetometerQueue;
     double fMagnetometerUpdateInterval;
     void *fPrivateAccelerometerDataCallbackInfo;
-    struct Dispatcher { int (**x1)(); } *fPrivateAccelerometerDataDispatcher;
+    struct Dispatcher { } *fPrivateAccelerometerDataDispatcher;
     void *fPrivateDeviceMotionCallbackInfo;
-    struct Dispatcher { int (**x1)(); } *fPrivateDeviceMotionDispatcher;
+    struct Dispatcher { } *fPrivateDeviceMotionDispatcher;
     void *fPrivateGyroDataCallbackInfo;
-    struct Dispatcher { int (**x1)(); } *fPrivateGyroDataDispatcher;
+    struct Dispatcher { } *fPrivateGyroDataDispatcher;
+    int fSampleLock;
 }
 
+- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1;
 

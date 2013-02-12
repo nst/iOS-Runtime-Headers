@@ -2,52 +2,82 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMDaemonListener, IMLocalObject, IMRemoteObject<FZDaemon>, NSLock, NSMutableArray, NSPort, NSProtocolChecker, NSString;
+@class IMDaemonListener, IMLocalObject, IMRemoteObject<FZDaemon>, NSArray, NSLock, NSMutableArray, NSMutableDictionary, NSProtocolChecker, NSRecursiveLock, NSString;
 
 @interface IMDaemonController : NSObject {
     BOOL _autoReconnect;
     NSLock *_blockingLock;
+    BOOL _blocksConnectionAtResume;
+    unsigned int _cachedCapabilities;
+    NSRecursiveLock *_connectionLock;
     IMDaemonListener *_daemonListener;
     id _delegate;
     unsigned int _gMyFZListenerCapabilities;
+    BOOL _hasBeenSuspended;
     BOOL _hasCheckedForDaemon;
     BOOL _inBlockingConnect;
     NSString *_listenerID;
+    struct dispatch_queue_s { } *_listenerLockQueue;
+    NSMutableDictionary *_listenerMap;
     IMLocalObject *_localObject;
     BOOL _preventReconnect;
     NSProtocolChecker *_protocol;
+    struct dispatch_queue_s { } *_remoteDaemonLockQueue;
+    struct dispatch_queue_s { } *_remoteMessageQueue;
     IMRemoteObject<FZDaemon> *_remoteObject;
+    struct __CFRunLoopSource { } *_runLoopSource;
     NSMutableArray *_services;
-    BOOL _systemShuttingDown;
+    NSArray *_servicesToAllow;
+    NSArray *_servicesToDeny;
 }
 
-@property(setter=_setCapabilities:) unsigned int _capabilities;
-@property BOOL autoReconnect;
-@property unsigned int capabilities;
+@property(setter=_setAutoReconnect:) BOOL _autoReconnect;
+@property(setter=_setBlocksConnectionAtResume:) BOOL _blocksConnectionAtResume;
+@property(setter=__setCapabilities:) unsigned int _capabilities;
+@property(setter=_setListenerID:,retain) NSString * _listenerID;
+@property(readonly) struct dispatch_queue_s { }* _remoteMessageQueue;
+@property(setter=_setServicesToAllow:,retain) NSArray * _servicesToAllow;
+@property(setter=_setServicesToDeny:,retain) NSArray * _servicesToDeny;
+@property(readonly) unsigned int capabilities;
 @property id delegate;
 @property(readonly) BOOL isConnected;
 @property(readonly) BOOL isConnecting;
 @property(readonly) IMDaemonListener * listener;
-@property(readonly) NSPort * localPort;
 
++ (BOOL)_applicationWillTerminate;
 + (void)_blockUntilSendQueueIsEmpty;
++ (void)_setApplicationWillTerminate;
 + (id)sharedController;
 
-- (oneway void)_addressBookChanged:(id)arg1;
+- (void)__setCapabilities:(unsigned int)arg1;
+- (void)_addressBookChanged:(id)arg1;
 - (void)_agentDidLaunchNotification:(id)arg1;
+- (BOOL)_autoReconnect;
+- (BOOL)_blocksConnectionAtResume;
 - (unsigned int)_capabilities;
 - (BOOL)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned long long)arg2;
 - (void)_handleDaemonException:(id)arg1;
+- (id)_listenerID;
+- (void)_listenerSetUpdated;
 - (void)_localObjectDiedNotification:(id)arg1;
 - (void)_makeConnectionWithLaunch:(BOOL)arg1;
+- (void)_noteSetupComplete;
+- (struct dispatch_queue_s { }*)_remoteMessageQueue;
 - (id)_remoteObject;
 - (void)_remoteObjectDiedNotification:(id)arg1;
+- (id)_servicesToAllow;
+- (id)_servicesToDeny;
+- (void)_setAutoReconnect:(BOOL)arg1;
+- (void)_setBlocksConnectionAtResume:(BOOL)arg1;
 - (void)_setCapabilities:(unsigned int)arg1;
-- (oneway void)addListener:(id)arg1 withListenerID:(id)arg2 capabilities:(unsigned int)arg3;
-- (BOOL)autoReconnect;
-- (id)autorelease;
+- (void)_setListenerID:(id)arg1;
+- (void)_setServicesToAllow:(id)arg1;
+- (void)_setServicesToDeny:(id)arg1;
+- (BOOL)addListenerID:(id)arg1 capabilities:(unsigned int)arg2;
+- (BOOL)allowsWeakReference;
 - (void)blockUntilConnected;
 - (unsigned int)capabilities;
+- (unsigned int)capabilitiesForListenerID:(id)arg1;
 - (BOOL)connectToDaemon;
 - (BOOL)connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned int)arg2 blockUntilConnected:(BOOL)arg3;
 - (BOOL)connectToDaemonWithLaunch:(BOOL)arg1;
@@ -56,24 +86,21 @@
 - (void)disconnectFromDaemon;
 - (void)disconnectFromDaemonWithForce:(BOOL)arg1;
 - (void)forwardInvocation:(id)arg1;
+- (BOOL)hasListenerForID:(id)arg1;
 - (id)init;
 - (BOOL)isConnected;
 - (BOOL)isConnecting;
-- (oneway void)listener:(id)arg1 setDaemonShouldLogoutWithoutStatusListeners:(BOOL)arg2;
-- (oneway void)listener:(id)arg1 setDaemonShouldTerminateWithoutActiveListeners:(BOOL)arg2;
-- (oneway void)listener:(id)arg1 setListenerCapabilities:(unsigned int)arg2;
-- (oneway void)listener:(id)arg1 setValue:(id)arg2 ofPersistentProperty:(id)arg3;
-- (oneway void)listener:(id)arg1 setValue:(id)arg2 ofProperty:(id)arg3;
+- (void)listener:(id)arg1 setListenerCapabilities:(unsigned int)arg2;
+- (void)listener:(id)arg1 setValue:(id)arg2 ofPersistentProperty:(id)arg3;
+- (void)listener:(id)arg1 setValue:(id)arg2 ofProperty:(id)arg3;
 - (id)listener;
 - (void)localObjectDiedNotification:(id)arg1;
-- (id)localPort;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (oneway void)release;
 - (void)remoteObjectDiedNotification:(id)arg1;
-- (unsigned int)retainCount;
+- (BOOL)removeListenerID:(id)arg1;
+- (BOOL)retainWeakReference;
 - (void)sendABInformationToDaemon;
-- (void)setAutoReconnect:(BOOL)arg1;
-- (void)setCapabilities:(unsigned int)arg1;
+- (BOOL)setCapabilities:(unsigned int)arg1 forListenerID:(id)arg2;
 - (void)setDaemonLogsOutWithoutStatusListeners:(BOOL)arg1;
 - (void)setDaemonTerminatesWithoutListeners:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
@@ -82,7 +109,12 @@
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2 forAccount:(id)arg3;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (void)setPresenceValue:(id)arg1 forKey:(id)arg2 forAccount:(id)arg3;
-- (oneway void)setValue:(id)arg1 ofPersistentProperty:(id)arg2;
-- (oneway void)setValue:(id)arg1 ofProperty:(id)arg2;
+- (void)setVCCapabilities:(unsigned long long)arg1;
+- (void)setValue:(id)arg1 ofPersistentProperty:(id)arg2;
+- (void)setValue:(id)arg1 ofProperty:(id)arg2;
+- (void)systemApplicationDidEnterBackground;
+- (void)systemApplicationDidResume;
+- (void)systemApplicationDidSuspend;
+- (void)systemApplicationWillEnterForeground;
 
 @end

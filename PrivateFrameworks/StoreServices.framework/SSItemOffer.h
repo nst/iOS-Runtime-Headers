@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, NSSet, NSString, SSDialog, SSItem, SSItemMedia;
+@class NSArray, NSMutableDictionary, NSSet, NSString, SSDialog, SSItem, SSItemMedia;
 
 @interface SSItemOffer : NSObject <NSCopying> {
     SSItem *_item;
-    NSDictionary *_offerDictionary;
+    NSMutableDictionary *_offerDictionary;
     NSString *_offerIdentifier;
     NSArray *_supportedDevices;
 }
@@ -20,6 +20,7 @@
 @property(readonly) long long estimatedDiskSpaceNeeded;
 @property(readonly) NSString * offerIdentifier;
 @property(readonly) SSItemMedia * offerMedia;
+@property(getter=isOneTapOffer,readonly) BOOL oneTapOffer;
 @property(getter=isPreorder,readonly) BOOL preorder;
 @property(readonly) NSString * priceDisplay;
 @property(readonly) id requiredSoftwareCapabilities;
@@ -34,6 +35,7 @@
 - (id)accountIdentifiers;
 - (id)actionDisplayName;
 - (id)actionType;
+- (id)allowedToneStyles;
 - (id)buyParameters;
 - (id)confirmationDialog;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -45,12 +47,17 @@
 - (long long)estimatedDiskSpaceNeeded;
 - (id)init;
 - (id)initWithOfferIdentifier:(id)arg1 dictionary:(id)arg2;
+- (BOOL)isOneTapOffer;
 - (BOOL)isPreorder;
 - (id)offerIdentifier;
 - (id)offerMedia;
 - (id)playableMedia;
 - (id)priceDisplay;
 - (id)requiredSoftwareCapabilities;
+- (void)setActionDisplayName:(id)arg1;
+- (void)setBuyParameters:(id)arg1;
+- (void)setOneTapOffer:(BOOL)arg1;
+- (void)setPriceDisplay:(id)arg1;
 - (BOOL)shouldShowPlusIcon;
 - (id)successDialog;
 - (id)supportedDevices;

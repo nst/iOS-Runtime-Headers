@@ -16,5 +16,6 @@
 - (void)finalize;
 - (void)release;
 - (id)retain;
+- (unsigned int)retainCount;
 
 @end

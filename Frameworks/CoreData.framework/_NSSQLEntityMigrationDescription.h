@@ -8,7 +8,6 @@
     NSMutableArray *_addedManyToManys;
     NSSQLEntity *_dstEntity;
     NSEntityMapping *_entityMapping;
-    NSMutableDictionary *_mappingsByName;
     int _migrationType;
     NSMutableArray *_pendingTransforms;
     NSMutableArray *_processedTransforms;
@@ -34,7 +33,6 @@
 - (id)destinationEntity;
 - (id)entityMapping;
 - (id)initWithEntityMapping:(id)arg1 sourceEntity:(id)arg2 destinationEntity:(id)arg3;
-- (id)mappingsByName;
 - (int)migrationType;
 - (id)nextPropertyTransform;
 - (id)removedManyToManys;

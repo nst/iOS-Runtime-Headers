@@ -6,14 +6,16 @@
 
 @interface NSProcessInfo : NSObject {
     NSArray *arguments;
+    int automaticTerminationOptOutCounter;
     NSDictionary *environment;
     NSString *hostName;
     NSString *name;
-    void *reserved;
 }
 
 + (id)processInfo;
 
+- (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
+- (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 - (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
 - (int)_suddenTerminationDisablingCount;
@@ -25,6 +27,7 @@
 - (id)environment;
 - (id)globallyUniqueString;
 - (id)hostName;
+- (id)init;
 - (BOOL)isTranslated;
 - (unsigned int)operatingSystem;
 - (id)operatingSystemName;

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <RequestQueueResponseConsumer>, DAMessageStore, Message, MimePart;
+@class <RequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory>, DAMessageStore, Message, MimePart;
 
 @interface DAMessageStoreFetchRequest : DAMailboxFetchMessageRequest <DAMailAccountRequest> {
-    <RequestQueueResponseConsumer> *consumer;
+    <RequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory> *consumer;
+    NSInteger format;
     Message *message;
     MimePart *part;
     BOOL partial;

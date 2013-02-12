@@ -2,34 +2,25 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface GMMDirectionsOptionValue : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
-    BOOL _hasID;
+@interface GMMDirectionsOptionValue : PBCodable {
     BOOL _hasValue;
     NSInteger _iD;
     NSInteger _value;
 }
 
-@property BOOL hasValue; /* unknown property attribute: V_hasValue */
+@property(readonly) BOOL hasValue; /* unknown property attribute: V_hasValue */
 @property NSInteger value; /* unknown property attribute: V_value */
-@property BOOL hasID; /* unknown property attribute: V_hasID */
 @property NSInteger iD; /* unknown property attribute: V_iD */
 
 - (void)dealloc;
-- (BOOL)hasID;
+- (id)description;
 - (BOOL)hasValue;
 - (NSInteger)iD;
 - (id)init;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
-- (void)setHasID:(BOOL)arg1;
-- (void)setHasValue:(BOOL)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setID:(NSInteger)arg1;
 - (void)setValue:(NSInteger)arg1;
 - (NSInteger)value;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

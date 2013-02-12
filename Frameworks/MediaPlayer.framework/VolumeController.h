@@ -51,7 +51,7 @@
 - (BOOL)isEnabled;
 - (BOOL)muted;
 - (void)postCurrentVolumeNotification;
-- (void)setAVController:(id)arg1;
+- (void)setAVController:(id)arg1 pushLocalVolume:(BOOL)arg2;
 - (void)setDebugName:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;

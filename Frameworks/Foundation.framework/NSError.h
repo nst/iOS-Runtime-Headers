@@ -11,6 +11,11 @@
     NSDictionary *_userInfo;
 }
 
+@property(getter=_mapkit_isCLDenied,readonly) BOOL _mapkit_CLDenied;
+@property(getter=_mapkit_isCLErrorNetwork,readonly) BOOL _mapkit_CLErrorNetwork;
+@property(getter=_mapkit_isCLHeadingFailure,readonly) BOOL _mapkit_CLHeadingFailure;
+@property(getter=_mapkit_isCLLocationUnknown,readonly) BOOL _mapkit_CLLocationUnknown;
+
 + (id)_errorWithDomain:(id)arg1 code:(NSInteger)arg2 URL:(id)arg3 userInfoObjectsAndKeys:(id)arg4;
 + (void)_registerBuiltInFormatters;
 + (void)_registerFormatter:(int (*)())arg1 forErrorKey:(id)arg2 parameters:(const char *)arg3;
@@ -34,6 +39,11 @@
 - (NSInteger)_collectApplicableUserInfoFormatters:(struct { /* ? */ }**)arg1 max:(NSInteger)arg2;
 - (id)_formatCocoaErrorString:(id)arg1 parameters:(const char *)arg2 applicableFormatters:(struct { /* ? */ }**)arg3 count:(NSInteger)arg4;
 - (id)_initWithPluginErrorCode:(NSInteger)arg1 contentURL:(id)arg2 pluginPageURL:(id)arg3 pluginName:(id)arg4 MIMEType:(id)arg5;
+- (id)_mapkit_error;
+- (BOOL)_mapkit_isCLDenied;
+- (BOOL)_mapkit_isCLErrorNetwork;
+- (BOOL)_mapkit_isCLHeadingFailure;
+- (BOOL)_mapkit_isCLLocationUnknown;
 - (struct __CFString { }*)_retainedUserInfoCallBackForKey:(id)arg1;
 - (BOOL)_web_errorIsInDomain:(id)arg1;
 - (id)_web_failingURL;
@@ -48,19 +58,24 @@
 - (id)description;
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
+- (id)errorBySettingFatalError:(BOOL)arg1;
+- (id)errorBySettingValue:(id)arg1 forUserInfoKey:(id)arg2;
 - (void)finalize;
 - (id)helpAnchor;
+- (BOOL)iCalIsEqualToError:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(NSInteger)arg2 userInfo:(id)arg3;
 - (BOOL)isConnectivityError;
 - (BOOL)isEqualToError:(id)arg1;
 - (BOOL)isExpiredPasswordError;
+- (BOOL)isFatalError;
 - (BOOL)isInvalidSubscriberError;
 - (BOOL)isNewPasswordError;
 - (BOOL)isPasswordMismatchError;
 - (BOOL)isSecurityError;
 - (BOOL)isServerError;
 - (BOOL)isStreamDomain:(long)arg1 error:(long)arg2;
+- (BOOL)isSubCalAuthError;
 - (BOOL)isUserCancelledError;
 - (id)localizedDescription;
 - (id)localizedFailureReason;

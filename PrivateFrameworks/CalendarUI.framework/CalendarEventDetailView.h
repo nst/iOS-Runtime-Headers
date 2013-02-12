@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarUI.framework/CalendarUI
  */
 
-@class CalendarEventDetailAlarmCell, CalendarEventDetailAttendeesCell, CalendarEventDetailCalendarCell, CalendarEventDetailCommentCell, CalendarEventDetailNotesCell, CalendarEventDetailOrganizerCell, CalendarEventDetailPreviewCell, CalendarEventDetailTitleCell, CalendarEventEditModel, CalendarModel, NSArray, UIButton, UIPreferencesTable, UIToolbar;
+@class CalendarEventDetailAlarmCell, CalendarEventDetailAttendeesCell, CalendarEventDetailAvailabilityCell, CalendarEventDetailCalendarCell, CalendarEventDetailCommentCell, CalendarEventDetailNotesCell, CalendarEventDetailOrganizerCell, CalendarEventDetailPreviewCell, CalendarEventDetailTitleCell, CalendarEventEditModel, CalendarModel, NSArray, UIButton, UIPreferencesTable, UIToolbar;
 
 @interface CalendarEventDetailView : UIView <CalendarView> {
     unsigned int _occurrenceIsEditable : 1;
@@ -10,9 +10,11 @@
     unsigned int _trustsStatus : 1;
     CalendarEventDetailAlarmCell *_alarmCell;
     CalendarEventDetailAttendeesCell *_attendeesCell;
+    CalendarEventDetailAvailabilityCell *_availabilityCell;
     UIToolbar *_buttonBar;
     CalendarEventDetailCalendarCell *_calendarCell;
     CalendarEventDetailCommentCell *_commentCell;
+    id _delegate;
     id _detailDelegate;
     CalendarEventEditModel *_editModel;
     CalendarModel *_model;
@@ -48,6 +50,7 @@
 - (float)preferencesTable:(id)arg1 heightForRow:(NSInteger)arg2 inGroup:(NSInteger)arg3 withProposedHeight:(float)arg4;
 - (NSInteger)preferencesTable:(id)arg1 numberOfRowsInGroup:(NSInteger)arg2;
 - (void)setAllowsCalendarPreview:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDetailDelegate:(id)arg1;
 - (void)setEditModel:(id)arg1;
 - (void)setModel:(id)arg1;
@@ -55,5 +58,6 @@
 - (BOOL)table:(id)arg1 showDisclosureForRow:(NSInteger)arg2;
 - (id)table;
 - (void)tableSelectionDidChange:(id)arg1;
+- (void)updateForInterfaceOrientation:(NSInteger)arg1;
 
 @end

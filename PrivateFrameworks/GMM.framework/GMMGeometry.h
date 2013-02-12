@@ -2,16 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMEfficientMapPoint, GMMMapPoint, GMMPixelPoint, GMMPolyLine, GMMPolygon;
 
-@interface GMMGeometry : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMGeometry : PBCodable {
     GMMEfficientMapPoint *_efficientMapPoint;
-    BOOL _hasType;
     GMMMapPoint *_mapPoint;
     GMMPixelPoint *_pixelPoint;
     GMMPolyLine *_polyLine;
@@ -24,9 +18,9 @@
 @property(retain) GMMPolygon *polygon; /* unknown property attribute: V_polygon */
 @property(retain) GMMPolyLine *polyLine; /* unknown property attribute: V_polyLine */
 @property(retain) GMMMapPoint *mapPoint; /* unknown property attribute: V_mapPoint */
-@property BOOL hasType; /* unknown property attribute: V_hasType */
 @property NSInteger type; /* unknown property attribute: V_type */
 @property(readonly) ? coordinate;
+@property(readonly) BOOL hasCoordinate;
 @property(readonly) BOOL hasEfficientMapPoint;
 @property(readonly) BOOL hasMapPoint;
 @property(readonly) BOOL hasPixelPoint;
@@ -38,13 +32,14 @@
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)description;
+- (id)description;
 - (id)efficientMapPoint;
+- (BOOL)hasCoordinate;
 - (BOOL)hasEfficientMapPoint;
 - (BOOL)hasMapPoint;
 - (BOOL)hasPixelPoint;
 - (BOOL)hasPolyLine;
 - (BOOL)hasPolygon;
-- (BOOL)hasType;
 - (id)init;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithOldMapPoint:(struct MapPoint { NSInteger x1; NSInteger x2; NSInteger x3; NSInteger x4; }*)arg1;
@@ -54,15 +49,14 @@
 - (id)pixelPoint;
 - (id)polyLine;
 - (id)polygon;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setEfficientMapPoint:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
 - (void)setMapPoint:(id)arg1;
 - (void)setPixelPoint:(id)arg1;
 - (void)setPolyLine:(id)arg1;
 - (void)setPolygon:(id)arg1;
 - (void)setType:(NSInteger)arg1;
 - (NSInteger)type;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

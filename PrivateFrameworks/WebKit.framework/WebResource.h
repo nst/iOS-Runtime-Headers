@@ -2,25 +2,27 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class WebResourcePrivate;
 
 @interface WebResource : NSObject <NSCoding, NSCopying> {
+     /* Encoded args for previous method: ^{ArchiveResource=^^?i{KURL={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}Biiiiiiiiii}{ResourceResponse={KURL={String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}Biiiiiiiiii}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}q{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}i{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{HTTPHeaderMap={HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> >=^{pair<WebCore::AtomicString,WebCore::String>}iiii}}iib1b1b1b1{RetainPtr<NSURLResponse>=@}B}{RefPtr<WebCore::SharedBuffer>=^{SharedBuffer}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}B}8@0:4 */
     WebResourcePrivate *_private;
 }
 
-+ (id)_propertyListsFromResources:(id)arg1;
-+ (id)_resourcesFromPropertyLists:(id)arg1;
-
+- (struct ArchiveResource { int (**x1)(); NSInteger x2; struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x_3_1_2; NSInteger x_3_1_3; NSInteger x_3_1_4; NSInteger x_3_1_5; NSInteger x_3_1_6; NSInteger x_3_1_7; NSInteger x_3_1_8; NSInteger x_3_1_9; NSInteger x_3_1_10; NSInteger x_3_1_11; NSInteger x_3_1_12; } x3; struct ResourceResponse { struct KURL { struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_1_2_1; void*x_1_2_2; NSInteger x_1_2_3; NSInteger x_1_2_4; NSInteger x_1_2_5; NSInteger x_1_2_6; NSInteger x_1_2_7; NSInteger x_1_2_8; NSInteger x_1_2_9; NSInteger x_1_2_10; NSInteger x_1_2_11; NSInteger x_1_2_12; } x_4_1_1; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_2_2_1; } x_4_1_2; long long x_4_1_3; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_4_2_1; } x_4_1_4; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_5_2_1; } x_4_1_5; NSInteger x_4_1_6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_3_1; } x_7_2_1; } x_4_1_7; struct HTTPHeaderMap { struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { struct pair<WebCore::AtomicString,WebCore::String> {} *x_1_3_1; NSInteger x_1_3_2; NSInteger x_1_3_3; NSInteger x_1_3_4; NSInteger x_1_3_5; } x_8_2_1; } x_4_1_8; NSInteger x_4_1_9; NSInteger x_4_1_10; unsigned int x_4_1_11 : 1; unsigned int x_4_1_12 : 1; unsigned int x_4_1_13 : 1; unsigned int x_4_1_14 : 1; struct RetainPtr<NSURLResponse> { id x_15_2_1; } x_4_1_15; void*x_4_1_16; } x4; struct RefPtr<WebCore::SharedBuffer> { struct SharedBuffer {} *x_5_1_1; } x5; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_8_1_1; } x8; void*x9; }*)_coreResource;
 - (id)MIMEType;
 - (id)URL;
 - (void)_ignoreWhenUnarchiving;
+- (id)_initWithCoreResource:(struct PassRefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x1; })arg1;
 - (id)_initWithData:(id)arg1 URL:(id)arg2 MIMEType:(id)arg3 textEncodingName:(id)arg4 frameName:(id)arg5 response:(id)arg6 copyData:(BOOL)arg7;
 - (id)_initWithData:(id)arg1 URL:(id)arg2 response:(id)arg3;
-- (id)_initWithPropertyList:(id)arg1;
-- (id)_propertyListRepresentation;
 - (id)_response;
-- (BOOL)_shouldIgnoreWhenUnarchiving;
 - (id)_stringValue;
+- (id)_suggestedFilename;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (void)dealloc;

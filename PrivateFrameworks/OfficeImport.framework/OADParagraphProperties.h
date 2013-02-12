@@ -78,8 +78,9 @@
 - (BOOL)isLatinLineBreak;
 - (BOOL)isRightToLeft;
 - (double)leftMargin;
-- (NSInteger)level;
+- (NSUInteger)level;
 - (id)lineSpacing;
+- (double)nonOveridenLeftMargin;
 - (double)rightMargin;
 - (void)setAfterSpacing:(id)arg1;
 - (void)setAlign:(NSInteger)arg1;
@@ -95,12 +96,12 @@
 - (void)setIsLatinLineBreak:(BOOL)arg1;
 - (void)setIsRightToLeft:(BOOL)arg1;
 - (void)setLeftMargin:(double)arg1;
-- (void)setLevel:(NSInteger)arg1;
+- (void)setLevel:(NSUInteger)arg1;
 - (void)setLineSpacing:(id)arg1;
 - (void)setRightMargin:(double)arg1;
 - (void)setWrap:(NSInteger)arg1;
-- (id)tabStopAtIndex:(NSInteger)arg1;
-- (NSInteger)tabStopCount;
+- (id)tabStopAtIndex:(NSUInteger)arg1;
+- (NSUInteger)tabStopCount;
 - (NSInteger)wrap;
 
 @end

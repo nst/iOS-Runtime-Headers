@@ -16,7 +16,10 @@
 + (id)descriptionForPayloadCount:(NSUInteger)arg1;
 + (id)questionForPolicy:(id)arg1;
 + (BOOL)removePasswordPolicy;
++ (BOOL)setPasswordPolicy:(id)arg1 pinHasBeenSet:(BOOL)arg2;
 + (BOOL)setPasswordPolicy:(id)arg1;
++ (id)supportedPolicyKeys;
++ (id)whiteListKeys;
 
 - (id)_validatePayload;
 - (void)dealloc;

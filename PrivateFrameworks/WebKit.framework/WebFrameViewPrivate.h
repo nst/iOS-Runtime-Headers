@@ -6,12 +6,9 @@
 
 @interface WebFrameViewPrivate : NSObject {
     WAKScrollView *frameScrollView;
-    NSInteger marginHeight;
-    NSInteger marginWidth;
     WebFrame *webFrame;
 }
 
 - (void)dealloc;
-- (id)init;
 
 @end

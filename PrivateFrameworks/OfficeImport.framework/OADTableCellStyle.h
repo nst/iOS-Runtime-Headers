@@ -9,6 +9,9 @@
     OADFill *mFill;
 }
 
++ (id)defaultFill;
++ (id)defaultStyle;
+
 - (id)borderStyle;
 - (void)dealloc;
 - (id)fill;

@@ -5,10 +5,6 @@
 @interface DOMNativeXPathNSResolver : DOMObject <DOMXPathNSResolver> {
 }
 
-+ (id)_wrapXPathNSResolver:(struct XPathNSResolver { int (**x1)(); NSInteger x2; }*)arg1;
-
-- (struct XPathNSResolver { int (**x1)(); NSInteger x2; }*)_xpathNSResolver;
-- (id)_initWithXPathNSResolver:(struct XPathNSResolver { int (**x1)(); NSInteger x2; }*)arg1;
 - (void)dealloc;
 - (void)finalize;
 - (id)lookupNamespaceURI:(id)arg1;

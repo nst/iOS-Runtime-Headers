@@ -8,6 +8,7 @@
 + (id)_z_allocWithZone:(struct _NSZone { }*)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
++ (id)nonRetainingSet;
 + (id)set;
 + (id)setWithArray:(id)arg1;
 + (id)setWithObject:(id)arg1;
@@ -28,9 +29,11 @@
 - (id)_sumForKeyPath:(id)arg1;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(NSUInteger)arg3 context:(void*)arg4;
 - (id)allObjects;
+- (id)allObjectsWithClass:(Class)arg1;
 - (id)anyObject;
 - (Class)classForCoder;
 - (BOOL)containsObject:(id)arg1;
+- (void)copyPhotosToPasteboard;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (NSUInteger)count;
 - (NSUInteger)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(NSUInteger)arg3;
@@ -40,6 +43,7 @@
 - (id)descriptionWithLocale:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)filteredSetUsingPredicate:(id)arg1;
 - (void)getAllObjects:(id*)arg1;
 - (id)getAllObjectsAsArray;
 - (void)getObjects:(id*)arg1;

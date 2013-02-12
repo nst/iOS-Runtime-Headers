@@ -2,37 +2,74 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSArray, NSDictionary;
+
 @interface UIImagePickerController : UINavigationController <NSCoding> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     struct { 
         unsigned int allowsImageEditing : 1; 
         unsigned int visible : 1; 
         unsigned int isCleaningUp : 1; 
+        unsigned int savingOptions : 3; 
+        unsigned int didRevertStatusBar : 1; 
+        unsigned int flags : 1; 
+    } _cropRect;
+    id _image;
     } _imagePickerFlags;
+    NSArray *_mediaTypes;
+    NSDictionary *_options;
+    NSInteger _previousStatusBarMode;
     NSUInteger _sourceType;
 }
 
 @property <UINavigationControllerDelegate><UIImagePickerControllerDelegate> *delegate;
+@property(copy) NSArray *mediaTypes;
 @property BOOL allowsImageEditing;
 @property NSUInteger sourceType;
 
++ (BOOL)_isMediaTypeAvailable:(id)arg1 forSource:(NSUInteger)arg2;
 + (BOOL)_loadPhotoLibraryIfNecessary;
++ (id)availableMediaTypesForSourceType:(NSUInteger)arg1;
 + (BOOL)isSourceTypeAvailable:(NSUInteger)arg1;
 
 - (void)_autoDismiss;
 - (id)_createInitialController;
+- (BOOL)_didRevertStatusBar;
 - (void)_imagePickerDidCancel;
-- (void)_imagePickerDidCompleteForImage:(id)arg1 editingInfo:(id)arg2;
+- (void)_imagePickerDidCompleteWithInfo:(id)arg1;
+- (id)_imagePickerOptions;
+- (NSUInteger)_imagePickerSavingOptions;
+- (id)_initWithSourceImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
 - (void)_removeAllChildren;
+- (void)_setImagePickerOptions:(id)arg1;
+- (void)_setImagePickerSavingOptions:(NSUInteger)arg1;
+- (void)_setUsesTelephonyUI:(BOOL)arg1;
+- (void)_setupControllersForCurrentMediaTypes;
 - (void)_setupControllersForCurrentSourceType;
+- (BOOL)_usesTelephonyUI;
 - (BOOL)allowsImageEditing;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)mediaTypes;
 - (void)setAllowsImageEditing:(BOOL)arg1;
+- (void)setMediaTypes:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSourceType:(NSUInteger)arg1;
 - (NSUInteger)sourceType;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

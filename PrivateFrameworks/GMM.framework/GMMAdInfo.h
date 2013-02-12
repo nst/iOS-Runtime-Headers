@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSString;
 
-@interface GMMAdInfo : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMAdInfo : PBCodable {
     NSString *_creativeLine1;
     NSString *_creativeLine2;
     NSString *_linkText;
@@ -26,26 +21,25 @@
 @property(readonly) BOOL hasCreativeLine2;
 @property(readonly) BOOL hasLinkText;
 @property(readonly) BOOL hasLinkUrl;
-@property(readonly) BOOL hasUniqueId;
 
 - (id)creativeLine1;
 - (id)creativeLine2;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hasCreativeLine1;
 - (BOOL)hasCreativeLine2;
 - (BOOL)hasLinkText;
 - (BOOL)hasLinkUrl;
-- (BOOL)hasUniqueId;
 - (id)init;
 - (id)linkText;
 - (id)linkUrl;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCreativeLine1:(id)arg1;
 - (void)setCreativeLine2:(id)arg1;
 - (void)setLinkText:(id)arg1;
 - (void)setLinkUrl:(id)arg1;
 - (void)setUniqueId:(id)arg1;
 - (id)uniqueId;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

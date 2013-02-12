@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class EDColorReference, EDResources, NSFont, NSString;
+@class EDColorReference, EDResources, NSFontStub, NSString;
 
 @interface EDFont : NSObject <NSCopying, EDImmutableObject> {
      /* Encoded args for previous method: B8@0:4 */
@@ -29,7 +29,7 @@
     EDColorReference *mColorReference;
     NSInteger mFamily;
     double mHeightInTwips;
-    NSFont *mNSFont;
+    NSFontStub *mNSFont;
     NSString *mName;
     EDResources *mResources;
     NSInteger mScript;

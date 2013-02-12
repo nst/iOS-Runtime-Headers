@@ -6,6 +6,6 @@
 }
 
 + (void)fillHTMLArchiveForOfficeData:(id)arg1 fileName:(id)arg2 dataFormat:(NSInteger)arg3 archiver:(id)arg4;
-+ (void)fillHTMLArchiveForOfficeFile:(id)arg1 withUTI:(id)arg2 archiver:(id)arg3;
++ (void)fillHTMLArchiveForOfficeFile:(id)arg1 dataFormat:(NSInteger)arg2 archiver:(id)arg3;
 
 @end

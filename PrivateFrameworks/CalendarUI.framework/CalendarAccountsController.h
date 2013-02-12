@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CalendarUI.framework/CalendarUI
  */
 
-@class AccountSettingsAccountManager, NSMutableDictionary;
+@class AccountsManager, NSMutableDictionary;
 
 @interface CalendarAccountsController : NSObject {
-    AccountSettingsAccountManager *_accountManager;
+    AccountsManager *_accountsManager;
     NSMutableDictionary *_lastCalendarRefreshDates;
     NSMutableDictionary *_lastStoreListingRefreshDates;
     NSMutableDictionary *_lastStoreRefreshDates;
@@ -13,15 +13,18 @@
 
 + (id)sharedInstance;
 
+- (void)_refreshStore:(void*)arg1;
+- (void)_refreshSubscribedStore:(void*)arg1;
 - (id)accountManager;
 - (id)accountTypeTitleForStore:(void*)arg1;
 - (BOOL)calendarNeedsRefresh:(void*)arg1;
+- (void*)copyMainCalendarForStore:(void*)arg1;
 - (void)dealloc;
 - (void)refreshCalendar:(void*)arg1;
 - (void)refreshListingForStore:(void*)arg1;
 - (void)refreshStore:(void*)arg1;
 - (BOOL)storeListingNeedsRefresh:(void*)arg1;
 - (BOOL)storeNeedsRefresh:(void*)arg1;
-- (id)titleForStore:(void*)arg1;
+- (id)titleForStore:(void*)arg1 forBeginningOfSentence:(BOOL)arg2;
 
 @end

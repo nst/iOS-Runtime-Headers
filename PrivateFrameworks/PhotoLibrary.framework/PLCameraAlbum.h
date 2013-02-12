@@ -2,26 +2,52 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhotoDCIMDirectory;
+@class MLPhotoDCIMDirectory, NSArray, NSMutableArray;
 
 @interface PLCameraAlbum : MLPhotoAlbum {
+    BOOL _albumDidChange;
+    NSInteger _cachedCount;
     MLPhotoDCIMDirectory *_dcimDirectory;
+    NSInteger _filter;
+    NSArray *_filteredImages;
+    BOOL _ignoreNotifications;
+    BOOL _imagesLoaded;
+    NSMutableArray *_pendingImages;
 }
 
 + (void)clearSharedInstance;
++ (void)deletePreviewWellImage;
++ (id)previewWellImage;
++ (void)savePreviewWellImage:(id)arg1;
 + (id)sharedInstance;
++ (id)sharedInstanceIfExists;
 
-- (BOOL)_addImage:(id)arg1 withPreview:(id)arg2 exifProperties:(id)arg3 date:(id)arg4 jpegData:(struct __CFData { }*)arg5 notifyingTarget:(id)arg6 selector:(SEL)arg7 contextInfo:(void*)arg8 sendPath:(BOOL)arg9;
+- (BOOL)_addImage:(id)arg1 withPreview:(id)arg2 type:(struct __CFString { }*)arg3 extension:(id)arg4 exifProperties:(id)arg5 date:(id)arg6 jpegData:(struct __CFData { }*)arg7 notifyingTarget:(id)arg8 selector:(SEL)arg9 contextInfo:(void*)arg10 sendPath:(BOOL)arg11;
+- (void)_addImage:(id)arg1;
+- (NSInteger)_itemCount:(BOOL)arg1;
+- (void)_reloadFilteredImages;
+- (void)_setFilteredImages:(id)arg1;
 - (BOOL)addImage:(id)arg1 withPreview:(id)arg2 exifProperties:(id)arg3 date:(id)arg4 jpegData:(struct __CFData { }*)arg5 notifyingTarget:(id)arg6 selector:(SEL)arg7 contextInfo:(void*)arg8;
 - (BOOL)addImage:(id)arg1 withPreview:(id)arg2 exifProperties:(id)arg3 date:(id)arg4 jpegData:(struct __CFData { }*)arg5 notifyingTargetWithPath:(id)arg6 selector:(SEL)arg7;
+- (BOOL)addImage:(id)arg1 withPreview:(id)arg2 type:(struct __CFString { }*)arg3 extension:(id)arg4 exifProperties:(id)arg5 date:(id)arg6 jpegData:(struct __CFData { }*)arg7 notifyingTarget:(id)arg8 selector:(SEL)arg9 contextInfo:(void*)arg10;
+- (void)addImage:(id)arg1;
 - (void)cameraImageFinishedSaving:(id)arg1;
-- (NSUInteger)count;
+- (NSInteger)count;
 - (void)dcimContentsDidChange;
 - (void)dealloc;
 - (void)deleteImageAtIndex:(NSInteger)arg1;
+- (NSInteger)filter;
+- (NSInteger)imageCount;
 - (id)images;
 - (id)init;
 - (id)name;
+- (id)nextAvailableVideoFileGroup;
 - (id)posterImage;
+- (BOOL)processVideoInFileGroup:(id)arg1 metadata:(id)arg2 thumbnailImage:(id)arg3;
+- (void)removeImage:(id)arg1;
+- (void)setFilter:(NSInteger)arg1;
+- (void)setIgnoreAlbumChangeNotifications:(BOOL)arg1;
+- (void)setImages:(id)arg1;
+- (NSInteger)videoCount;
 
 @end

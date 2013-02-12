@@ -4,11 +4,15 @@
 
 @class ABUnknownPersonViewController;
 
-@interface ABUnknownPersonViewDelegateForwarder : NSObject <ABNewPersonViewControllerDelegate> {
+@interface ABUnknownPersonViewDelegateForwarder : NSObject <ABNewPersonViewControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
     ABUnknownPersonViewController *_viewController;
 }
 
 - (id)initWithUnknownPersonViewController:(id)arg1;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 
 @end

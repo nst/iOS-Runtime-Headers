@@ -33,6 +33,8 @@
 - (void)mapTableAt:(id)arg1 withState:(id)arg2;
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
 - (NSInteger)maxRowNumber;
+- (NSInteger)preprocessHeight;
+- (NSInteger)preprocessWidth;
 - (double*)rowGrid;
 - (void)setRowGrid;
 - (NSInteger)width;

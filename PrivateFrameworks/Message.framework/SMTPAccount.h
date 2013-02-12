@@ -6,6 +6,7 @@
 
 @interface SMTPAccount : DeliveryAccount {
     unsigned int _supportsPipelining : 1;
+    unsigned int _supportsOutboxCopy : 1;
     unsigned int _useCellDataOnly : 1;
     SMTPConnection *_connection;
     Class _deliveryClass;
@@ -14,6 +15,9 @@
 }
 
 + (id)accountTypeString;
++ (id)basicAccountProperties;
++ (id)displayedAccountTypeString;
++ (id)displayedShortAccountTypeString;
 + (id)newDefaultInstance;
 + (id)saslProfileName;
 
@@ -45,8 +49,10 @@
 - (void)setDeliveryClass:(Class)arg1;
 - (void)setPasswordInKeychain:(id)arg1;
 - (void)setPreferredAuthScheme:(id)arg1;
+- (void)setSupportsOutboxCopy:(BOOL)arg1;
 - (void)setSupportsPipelining:(BOOL)arg1;
 - (void)setTimer;
+- (BOOL)supportsOutboxCopy;
 - (BOOL)supportsPipelining;
 
 @end

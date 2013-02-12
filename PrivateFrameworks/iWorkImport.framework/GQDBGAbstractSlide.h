@@ -8,6 +8,7 @@
     GQDBGBodyPlaceholder *mBodyPlaceholder;
     BOOL mCallGenerator;
     BOOL mHidden;
+    char *mID;
     GQDBGObjectPlaceholder *mObjectPlaceholder;
     GQDBGSlideNumberPlaceholder *mSlideNumberPlaceholder;
     GQDSStyle *mSlideStyle;
@@ -15,6 +16,7 @@
     GQDBGTitlePlaceholder *mTitlePlaceholder;
 }
 
+- (char *)ID;
 - (void)dealloc;
 - (BOOL)isHidden;
 - (NSInteger)readAttributesForSlide:(struct _xmlTextReader { }*)arg1;

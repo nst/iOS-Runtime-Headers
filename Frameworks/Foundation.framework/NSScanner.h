@@ -18,7 +18,8 @@
 - (id)initWithString:(id)arg1;
 - (BOOL)isAtEnd;
 - (id)locale;
-- (id)nextTokenWithPunctuation:(struct __CFCharacterSet { }*)arg1;
+- (id)mf_nextTokenWithPunctuation:(struct __CFCharacterSet { }*)arg1;
+- (BOOL)mf_scanUpAndOverString:(id)arg1;
 - (BOOL)scanCharactersFromSet:(id)arg1 intoString:(id*)arg2;
 - (BOOL)scanDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; }*)arg1;
 - (BOOL)scanDouble:(double*)arg1;
@@ -32,7 +33,6 @@
 - (NSUInteger)scanLocation;
 - (BOOL)scanLongLong:(long long*)arg1;
 - (BOOL)scanString:(id)arg1 intoString:(id*)arg2;
-- (BOOL)scanUpAndOverString:(id)arg1;
 - (BOOL)scanUpToCharactersFromSet:(id)arg1 intoString:(id*)arg2;
 - (BOOL)scanUpToString:(id)arg1 intoString:(id*)arg2;
 - (void)setCaseSensitive:(BOOL)arg1;

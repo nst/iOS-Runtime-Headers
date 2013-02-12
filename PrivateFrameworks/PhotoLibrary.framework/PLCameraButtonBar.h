@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
+@class PLCameraButton;
+
 @interface PLCameraButtonBar : PLPhotosButtonBar {
-    NSInteger _centerButtonTag;
+    PLCameraButton *_cameraButton;
 }
 
+@property(retain) PLCameraButton *cameraButton; /* unknown property attribute: V_cameraButton */
+
++ (id)backgroundImage;
+
 - (id)cameraButton;
-- (void)dealloc;
-- (void)deviceOrientationChanged;
-- (void)positionButtons:(id)arg1 tags:(NSInteger*)arg2 count:(NSInteger)arg3 group:(NSInteger)arg4;
-- (void)setCenterButtonTag:(NSInteger)arg1;
-- (void)start;
-- (void)stop;
+- (void)layoutSubviews;
+- (void)setCameraButton:(id)arg1;
 
 @end

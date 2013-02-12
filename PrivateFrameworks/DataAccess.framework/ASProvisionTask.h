@@ -13,7 +13,7 @@
 - (id)_initWithType:(NSInteger)arg1 policy:(id)arg2 key:(id)arg3;
 - (id)_policyID;
 - (id)_provisioningType;
-- (id)command;
+- (NSInteger)commandCode;
 - (void)dealloc;
 - (void)finishWithError:(id)arg1;
 - (id)initWithOriginalKeyForPolicyRequest:(id)arg1;

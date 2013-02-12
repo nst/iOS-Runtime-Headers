@@ -2,27 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class LibraryMessage, MailMessageLibrary, NSDictionary, NSFileHandle, NSMutableData, NSString;
+@class LibraryMessage, MFBufferedDataConsumer, MailMessageLibrary, NSString;
 
 @interface DataCollector : NSObject <DataConsumer> {
-    NSMutableData *_data;
-    NSFileHandle *_fileHandle;
+    MFBufferedDataConsumer *_consumer;
     BOOL _incomplete;
-    NSUInteger _length;
     MailMessageLibrary *_library;
     LibraryMessage *_message;
     NSString *_part;
     BOOL _partial;
-    NSString *_path;
-    NSDictionary *_plist;
-    NSString *_tmpPath;
 }
 
 - (void)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;
-- (id)fileHandle;
 - (id)initWithLibrary:(id)arg1 message:(id)arg2 part:(id)arg3 partial:(BOOL)arg4 incomplete:(BOOL)arg5;
+- (id)pathForStorage;
 
 @end

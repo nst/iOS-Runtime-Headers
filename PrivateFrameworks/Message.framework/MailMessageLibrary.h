@@ -14,8 +14,12 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
+    int (*_busyHandler)();
     int (*resetHandler)();
+    void *_CPSearchContext;
+    void *_ICUSearchContext;
     double _beginTransactionTime;
+    void *_busyHandlerContext;
     NSMutableSet *_cachedDatabases;
     NSTimer *_commitTimer;
     double _dateDatabaseBecameLocked;
@@ -31,12 +35,16 @@
     BOOL _writerDBIsBeingUsedAsReader;
 }
 
++ (void)_invalidateActiveAccountsClause;
 + (id)defaultInstance;
 + (void)initialize;
 
 - (id)UIDsToDeleteInMailbox:(id)arg1;
+- (struct sqlite3 { }*)_getWriterDBWithRetryCount:(NSInteger)arg1;
+- (void)_rebuildActiveAccountsClause;
 - (void)_setMessageDataString:(id)arg1 forKey:(const char *)arg2 forMessage:(id)arg3;
 - (BOOL)_writeEmlxFile:(id)arg1 withBodyData:(id)arg2;
+- (void)_yieldDBToOtherProcess;
 - (NSUInteger)accessSequenceNumber;
 - (id)accountForMessage:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(BOOL)arg9 progressDelegate:(id)arg10 addPOPUIDs:(BOOL)arg11 dataSectionsByMessage:(id)arg12;
@@ -61,6 +69,7 @@
 - (id)dataPathForMessage:(id)arg1 part:(id)arg2;
 - (id)dataPathForMessage:(id)arg1 type:(NSInteger)arg2;
 - (id)dataPathForMessage:(id)arg1;
+- (id)dateOfOldestNonSearchResultMessageInMailbox:(id)arg1;
 - (void)dealloc;
 - (id)defaultDatabasePath;
 - (void)deleteMailboxes:(id)arg1;
@@ -81,8 +90,11 @@
 - (NSUInteger)integerForQuery:(char *)arg1 withTextArgument:(id)arg2;
 - (BOOL)isBusy;
 - (BOOL)isMessageContentsLocallyAvailable:(id)arg1;
+- (void)iterateMessagesMatchingCriterion:(id)arg1 withResultHandler:(id)arg2 options:(NSUInteger)arg3 withMonitor:(id)arg4;
+- (void)iterateStatement:(struct sqlite3_stmt { }*)arg1 db:(struct sqlite3 { }*)arg2 withProgressMonitor:(id)arg3 andRowHandler:(int (*)())arg4 context:(void*)arg5;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
+- (NSUInteger)locationOfMessageID:(long long)arg1 inMailbox:(id)arg2;
 - (void)lockDBForWriting;
 - (id)mailboxURLForMessage:(id)arg1;
 - (id)mailboxUidForMessage:(id)arg1;
@@ -127,6 +139,8 @@
 - (void)sendMessagesMatchingCriterion:(id)arg1 to:(id)arg2 options:(NSUInteger)arg3;
 - (void)sendMessagesMatchingQuery:(const char *)arg1 to:(id)arg2 options:(NSUInteger)arg3;
 - (id)sequenceIdentifierForMailbox:(id)arg1;
+- (id)serverSearchResultMessagesForMailbox:(id)arg1;
+- (void)setBusyHandler:(int (*)())arg1 context:(void*)arg2;
 - (void)setBusyTimeoutInterval:(double)arg1;
 - (void)setData:(id)arg1 forMessage:(id)arg2 isPartial:(BOOL)arg3;
 - (void)setDatabasePath:(id)arg1;

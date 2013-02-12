@@ -24,6 +24,7 @@
         unsigned int showPressFeedback : 1; 
         unsigned int disabledDimsImage : 1; 
         unsigned int alwaysHandleScrollerMouseEvent : 1; 
+        unsigned int drawsImageOnRight : 1; 
     UIFont *_font;
     } _imageOffset;
     struct __CFDictionary { } *_info;
@@ -71,6 +72,7 @@
 - (void)setBackground:(id)arg1 forState:(NSUInteger)arg2;
 - (void)setDisabledDimsImage:(BOOL)arg1;
 - (void)setDrawContentsCentered:(BOOL)arg1;
+- (void)setDrawsImageOnRight:(BOOL)arg1;
 - (void)setDrawsShadow:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

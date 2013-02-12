@@ -7,22 +7,26 @@
  */
 
 @interface CAEAGLLayer : CALayer <EAGLDrawable> {
-    struct _CAEAGLNativeWindow { struct _EGLNativeWindowObject { 
+    struct _CAEAGLNativeWindow { struct _EAGLNativeWindowObject { 
             NSInteger version; 
             int (*attach)(); 
             int (*detach)(); 
             int (*begin)(); 
             int (*swap)(); 
             int (*collect)(); 
-        } x1; struct EGLNativeWindowCallbacksRec { 
+        } x1; struct EAGLNativeWindowCallbacksRec { 
             void *callback_data; 
             int (*create_buffer)(); 
             int (*destroy_buffer)(); 
-        } x2; struct x_list_struct {} *x3; struct { 
-            NSInteger x; 
-        } x4; struct { 
-            NSInteger x; 
-        } x5; struct _CAImageQueue {} *x6; id x7; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x8; unsigned char x9; void*x10; void*x11; void*x12; void*x13; unsigned long x14; unsigned long x15; void*x16; void*x17; void*x18; const void*x19; struct x_list_struct {} *x20; NSUInteger x21; void *x22; unsigned int x23 : 1; unsigned int x24 : 1; } *_win;
+        } x2; struct x_list_struct {} *x3; struct Atomic { 
+            struct { 
+                NSInteger x; 
+            } _v; 
+        } x4; struct SpinLock { 
+            struct { 
+                NSInteger x; 
+            } _l; 
+        } x5; struct _CAImageQueue {} *x6; id x7; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x8; unsigned char x9; void*x10; void*x11; void*x12; void*x13; unsigned long x14; unsigned long x15; void*x16; void*x17; void*x18; const void*x19; struct x_list_struct {} *x20; NSUInteger x21; struct __IOSurface {} *x22; unsigned int x23 : 1; unsigned int x24 : 1; } *_win;
 }
 
 @property(copy) NSDictionary *drawableProperties;

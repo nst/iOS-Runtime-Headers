@@ -2,19 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray, NSString;
 
-@interface GMMDocumentInfo : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMDocumentInfo : PBCodable {
     NSString *_attributionUrl;
     NSString *_author;
     NSString *_description;
+    NSString *_docId;
     BOOL _hasNumberOfPlacemarks;
-    NSString *_id;
     NSString *_metadata;
     NSString *_name;
     NSInteger _numberOfPlacemarks;
@@ -22,20 +17,20 @@
     NSString *_snippet;
 }
 
-@property BOOL hasNumberOfPlacemarks; /* unknown property attribute: V_hasNumberOfPlacemarks */
+@property(readonly) BOOL hasNumberOfPlacemarks; /* unknown property attribute: V_hasNumberOfPlacemarks */
 @property NSInteger numberOfPlacemarks; /* unknown property attribute: V_numberOfPlacemarks */
 @property(retain) NSString *attributionUrl; /* unknown property attribute: V_attributionUrl */
 @property(retain) NSString *author; /* unknown property attribute: V_author */
 @property(retain) NSString *metadata; /* unknown property attribute: V_metadata */
 @property(retain) NSString *description; /* unknown property attribute: V_description */
 @property(retain) NSString *snippet; /* unknown property attribute: V_snippet */
-@property(retain) NSString *id; /* unknown property attribute: V_id */
+@property(retain) NSString *docId; /* unknown property attribute: V_docId */
 @property(retain) NSString *name; /* unknown property attribute: V_name */
 @property(retain) NSMutableArray *parseErrors; /* unknown property attribute: V_parseErrors */
 @property(readonly) BOOL hasAttributionUrl;
 @property(readonly) BOOL hasAuthor;
 @property(readonly) BOOL hasDescription;
-@property(readonly) BOOL hasId;
+@property(readonly) BOOL hasDocId;
 @property(readonly) BOOL hasMetadata;
 @property(readonly) BOOL hasName;
 @property(readonly) BOOL hasSnippet;
@@ -46,15 +41,15 @@
 - (id)author;
 - (void)dealloc;
 - (id)description;
+- (id)docId;
 - (BOOL)hasAttributionUrl;
 - (BOOL)hasAuthor;
 - (BOOL)hasDescription;
-- (BOOL)hasId;
+- (BOOL)hasDocId;
 - (BOOL)hasMetadata;
 - (BOOL)hasName;
 - (BOOL)hasNumberOfPlacemarks;
 - (BOOL)hasSnippet;
-- (id)id;
 - (id)init;
 - (id)metadata;
 - (id)name;
@@ -62,19 +57,18 @@
 - (id)parseErrorAtIndex:(NSUInteger)arg1;
 - (id)parseErrors;
 - (NSInteger)parseErrorsCount;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setAttributionUrl:(id)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)setDescription:(id)arg1;
-- (void)setHasNumberOfPlacemarks:(BOOL)arg1;
-- (void)setId:(id)arg1;
+- (void)setDocId:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNumberOfPlacemarks:(NSInteger)arg1;
-- (void)setParseError:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setParseError:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setParseErrors:(id)arg1;
 - (void)setSnippet:(id)arg1;
 - (id)snippet;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

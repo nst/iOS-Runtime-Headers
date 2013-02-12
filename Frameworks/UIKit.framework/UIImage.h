@@ -18,9 +18,15 @@
 @property(readonly) CGSize size;
 @property(readonly) NSInteger topCapHeight;
 
-+ (void)_flushCacheOnSuspend:(id)arg1;
++ (id)_balloonImage:(BOOL)arg1 color:(BOOL)arg2;
++ (id)_balloonMask:(BOOL)arg1;
++ (void)_flushCacheOnMemoryWarning:(id)arg1;
++ (void)_flushSharedImageCache;
++ (id)_highlightImage;
++ (id)_imageWithColor:(BOOL)arg1;
 + (id)_mapkit_imageNamed:(id)arg1;
 + (id)applicationImageNamed:(id)arg1;
++ (id)ckImageNamed:(id)arg1;
 + (id)defaultDesktopImage;
 + (id)imageAtPath:(id)arg1;
 + (id)imageFromAlbumArtData:(id)arg1 height:(NSInteger)arg2 width:(NSInteger)arg3 cache:(BOOL)arg4;
@@ -31,7 +37,10 @@
 + (id)imageWithData:(id)arg1;
 + (void)initialize;
 + (id)kitImageNamed:(id)arg1;
++ (id)nikeBackgroundImage;
++ (id)nikeRunLandscapeBackgroundImage;
 + (void)removeImageNameFromCache:(id)arg1;
++ (id)reversedNikeRunLandscapeBackgroundImage;
 + (void)setDesktopImageData:(id)arg1;
 
 - (struct CGImage { }*)CGImage;
@@ -44,6 +53,7 @@
 - (id)_imageScaledToSize:(struct CGSize { float x1; float x2; })arg1 interpolationQuality:(NSInteger)arg2;
 - (BOOL)_isCached;
 - (BOOL)_isNamed;
+- (id)_mapkit_createImagesOfSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGColor { }*)_patternColor;
 - (void)_setCached:(BOOL)arg1;
 - (void)_setNamed:(BOOL)arg1;
@@ -52,7 +62,6 @@
 - (void)compositeToPoint:(struct CGPoint { float x1; float x2; })arg1 operation:(NSInteger)arg2 fraction:(float)arg3;
 - (void)compositeToPoint:(struct CGPoint { float x1; float x2; })arg1 operation:(NSInteger)arg2;
 - (void)compositeToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 operation:(NSInteger)arg3 fraction:(float)arg4;
-- (struct __CoreSurfaceBuffer { }*)coreSurfaceBuffer;
 - (id)createColoredImageWithColor:(id)arg1;
 - (void)dealloc;
 - (void)draw1PartImageInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fraction:(float)arg2 operation:(NSInteger)arg3;
@@ -78,11 +87,14 @@
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
 - (id)initWithContentsOfFile:(id)arg1 cache:(BOOL)arg2;
 - (id)initWithContentsOfFile:(id)arg1;
-- (id)initWithCoreSurfaceBuffer:(struct __CoreSurfaceBuffer { }*)arg1;
 - (id)initWithData:(id)arg1 cache:(BOOL)arg2;
 - (id)initWithData:(id)arg1;
+- (id)initWithIOSurface:(struct __IOSurface { }*)arg1;
 - (id)initWithImageRef:(struct CGImage { }*)arg1;
+- (struct __IOSurface { }*)ioSurface;
 - (NSInteger)leftCapWidth;
+- (id)newBalloonImageWithTail:(BOOL)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)newBalloonImageWithTail:(BOOL)arg1;
 - (id)patternColor;
 - (struct CGSize { float x1; float x2; })size;
 - (id)stretchableImageWithLeftCapWidth:(NSInteger)arg1 topCapHeight:(NSInteger)arg2;

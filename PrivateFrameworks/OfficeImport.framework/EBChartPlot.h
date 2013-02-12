@@ -6,6 +6,6 @@
 }
 
 + (id)readAxisType:(NSInteger)arg1 group:(NSInteger)arg2 state:(id)arg3;
-+ (id)readChartPlotWithState:(id)arg1;
++ (id)readChartPlotsForGroup:(NSInteger)arg1 withState:(id)arg2;
 
 @end

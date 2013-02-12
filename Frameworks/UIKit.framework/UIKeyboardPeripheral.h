@@ -2,30 +2,28 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextControl>;
+@class DOMNode;
 
 @interface UIKeyboardPeripheral : UIKeyboard <UIFormPeripheral> {
-    <UITextControl> *_control;
     NSInteger _orientation;
+    DOMNode *_textNode;
 }
 
-@property(retain) <UITextControl> *_control; /* unknown property attribute: V_control */
+@property(retain) DOMNode *_textNode; /* unknown property attribute: V_textNode */
 
-+ (BOOL)isUniqueForEachFormControl;
++ (id)createPeripheral;
 
-- (id)_control;
+- (id)_textNode;
+- (void)beginEditing;
 - (void)dealloc;
-- (void)didAnimateInWithFormAssistant:(id)arg1;
-- (void)didAnimateOutWithFormAssistant:(id)arg1;
 - (void)endEditing;
 - (id)initFormPeripheral;
+- (BOOL)isKeyboard;
 - (NSInteger)orientation;
-- (void)postKeyboardNotification:(id)arg1;
+- (id)peripheralFormNode;
+- (void)reset;
 - (void)resumeWithNotification:(id)arg1;
-- (void)setFormControl:(id)arg1;
-- (void)set_control:(id)arg1;
-- (void)willAnimateInWithFormAssistant:(id)arg1;
-- (void)willAnimateOutWithFormAssistant:(id)arg1;
-- (void)willChangeToFormControl:(id)arg1;
+- (void)setPeripheralFormNode:(id)arg1;
+- (void)set_textNode:(id)arg1;
 
 @end

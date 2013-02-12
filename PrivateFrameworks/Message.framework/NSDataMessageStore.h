@@ -4,8 +4,9 @@
 
 @class NSData;
 
-@interface NSDataMessageStore : MessageStore {
+@interface NSDataMessageStore : MailMessageStore {
     NSData *_data;
+    Class _messageClass;
 }
 
 - (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
@@ -14,7 +15,9 @@
 - (void)dealloc;
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)initWithData:(id)arg1;
+- (id)mailboxUid;
 - (id)message;
+- (void)setMessageClass:(Class)arg1;
 - (id)storePath;
 - (void)writeUpdatedMessageDataToDisk;
 

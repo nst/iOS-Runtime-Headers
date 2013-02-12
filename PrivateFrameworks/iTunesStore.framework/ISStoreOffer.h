@@ -5,6 +5,7 @@
 @class NSSet, NSString, NSURL;
 
 @interface ISStoreOffer : NSObject <NSCopying> {
+    unsigned int _isPreorder : 1;
     NSString *_actionDisplayName;
     NSURL *_assetURL;
     NSString *_buyParameters;
@@ -24,10 +25,13 @@
     NSUInteger _previewDuration;
     NSURL *_previewURL;
     NSString *_price;
+    id _requiredCapabilities;
     NSInteger _supportedDeviceType;
 }
 
+@property(readonly) id requiredCapabilities; /* unknown property attribute: V_requiredCapabilities */
 @property NSInteger mediaType; /* unknown property attribute: V_mediaType */
+@property(getter=isPreorder,readonly) BOOL preorder;
 
 - (id)actionDisplayName;
 - (id)assetURL;
@@ -41,11 +45,13 @@
 - (id)dsIDs;
 - (NSUInteger)durationInMS;
 - (id)initWithDictionary:(id)arg1;
+- (BOOL)isPreorder;
 - (NSInteger)mediaType;
 - (id)minimumProductVersion;
 - (NSUInteger)previewDurationInMS;
 - (id)previewURL;
 - (id)priceDisplay;
+- (id)requiredCapabilities;
 - (void)setMediaType:(NSInteger)arg1;
 - (BOOL)supportsDeviceType:(NSInteger)arg1;
 

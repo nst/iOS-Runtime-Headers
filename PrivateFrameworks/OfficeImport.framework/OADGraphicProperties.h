@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, OADFill, OADStroke;
+@class NSArray, OADFill, OADScene3D, OADShape3D, OADStroke;
 
-@interface OADGraphicProperties : OADDrawableProperties {
+@interface OADGraphicProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent> {
     NSArray *mEffects;
     OADFill *mFill;
     BOOL mHasIsBehindText;
     BOOL mIsBehindText;
+    OADScene3D *mScene3D;
+    OADShape3D *mShape3D;
     OADStroke *mStroke;
 }
 
@@ -18,14 +20,20 @@
 - (BOOL)hasEffects;
 - (BOOL)hasFill;
 - (BOOL)hasIsBehindText;
+- (BOOL)hasScene3D;
+- (BOOL)hasShape3D;
 - (BOOL)hasStroke;
 - (id)initWithDefaults;
 - (BOOL)isBehindText;
+- (id)scene3D;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
 - (void)setIsBehindText:(BOOL)arg1;
 - (void)setParent:(id)arg1;
+- (void)setScene3D:(id)arg1;
+- (void)setShape3D:(id)arg1;
 - (void)setStroke:(id)arg1;
+- (id)shape3D;
 - (id)stroke;
 
 @end

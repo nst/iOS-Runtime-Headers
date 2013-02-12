@@ -2,14 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMoviePlayerController, NSURL;
+@class MPMoviePlayerViewControllerInternal;
 
 @interface MPMoviePlayerViewController : UIViewController {
-    NSURL *_contentURL;
-    MPMoviePlayerController *_moviePlayerController;
+    MPMoviePlayerViewControllerInternal *_internal;
 }
 
-@property(retain) MPMoviePlayerController *moviePlayerController; /* unknown property attribute: V_moviePlayerController */
+@property(readonly) MPMoviePlayerController *moviePlayerController;
 @property NSInteger movieControlMode;
 @property NSInteger scalingMode;
 
@@ -21,13 +20,13 @@
 - (BOOL)_viewControllerShouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)dealloc;
 - (void)dismissAfterPlayback;
+- (id)initWithContentFile:(id)arg1;
 - (id)initWithContentURL:(id)arg1;
 - (void)loadView;
 - (NSInteger)movieControlMode;
 - (id)moviePlayerController;
 - (NSInteger)scalingMode;
 - (void)setMovieControlMode:(NSInteger)arg1;
-- (void)setMoviePlayerController:(id)arg1;
 - (void)setScalingMode:(NSInteger)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

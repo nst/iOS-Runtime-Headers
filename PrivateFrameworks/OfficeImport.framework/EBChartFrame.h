@@ -13,7 +13,7 @@
 + (void)mapBasicDataFrom:(struct XlChartFrameType { int (**x1)(); float x2; float x3; float x4; float x5; NSInteger x6; NSInteger x7; NSInteger x8; NSInteger x9; struct XlChartLineStyle {} *x10; struct XlChartFillStyle {} *x11; struct XlChartPicF {} *x12; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x13; void*x14; void*x15; }*)arg1 to:(id)arg2;
 + (id)readChartLegendFrameWithState:(id)arg1;
 + (id)readChartParentFrameWithState:(id)arg1;
-+ (id)readChartPlotFrameWithState:(id)arg1;
++ (id)readChartPlotFrameWithState:(id)arg1 inGroup:(NSInteger)arg2;
 + (id)readChartTitleFrameWithState:(id)arg1;
 
 @end

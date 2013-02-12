@@ -20,6 +20,7 @@
 - (id)currentItem;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (void)finalize;
 - (id)forwardItem;
 - (NSInteger)forwardListCount;
@@ -34,5 +35,6 @@
 - (void)removeItem:(id)arg1;
 - (void)setCapacity:(NSInteger)arg1;
 - (void)setPageCacheSize:(NSUInteger)arg1;
+- (void)setToMatchDictionaryRepresentation:(id)arg1;
 
 @end

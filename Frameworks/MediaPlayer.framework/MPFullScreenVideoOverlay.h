@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPFullScreenTransportControls, MPItem, MPVideoViewController, MovieScrubberControl, UINavigationBar, UINavigationButton, UINavigationItem, UIView;
+@class MPDetailSlider, MPFullScreenTransportControls, MPItem, MPVideoViewController, UINavigationBar, UINavigationButton, UINavigationItem, UIView;
 
-@interface MPFullScreenVideoOverlay : UIView {
+@interface MPFullScreenVideoOverlay : MPSwipableView {
     unsigned int _tvOutEnabled : 1;
     unsigned int _wantsTick : 1;
+    unsigned int _allowsDetailScrubbing : 1;
     UINavigationButton *_backButton;
     NSUInteger _desiredParts;
     NSUInteger _disabledParts;
@@ -16,7 +17,7 @@
     UINavigationItem *_navigationItem;
     NSInteger _orientation;
     UINavigationButton *_scaleModeButton;
-    MovieScrubberControl *_scrubControl;
+    MPDetailSlider *_scrubControl;
     id _target;
     MPFullScreenTransportControls *_transportControls;
     MPVideoViewController *_videoController;
@@ -33,9 +34,11 @@
 @property NSUInteger disabledParts; /* unknown property attribute: V_disabledParts */
 @property NSUInteger desiredParts; /* unknown property attribute: V_desiredParts */
 @property BOOL TVOutEnabled;
+@property BOOL allowsDetailScrubbing;
 
 - (BOOL)TVOutEnabled;
 - (void)_backButtonAction:(id)arg1;
+- (void)_bufferingStateDidChange:(id)arg1;
 - (void)_initNavigationBar;
 - (id)_loadingMovieIndicatorView;
 - (void)_reloadTransportControls:(BOOL)arg1;
@@ -46,8 +49,13 @@
 - (void)_updateScrubControlWithAnimation:(BOOL)arg1;
 - (void)_updateTimeBasedValues;
 - (void)_validityChangedNotification:(id)arg1;
+- (BOOL)allowsDetailScrubbing;
 - (void)dealloc;
 - (NSUInteger)desiredParts;
+- (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
+- (void)detailSliderTrackingDidBegin:(id)arg1;
+- (void)detailSliderTrackingDidCancel:(id)arg1;
+- (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (NSUInteger)disabledParts;
@@ -60,8 +68,7 @@
 - (NSInteger)orientation;
 - (void)reloadNavigationBarWithAnimation:(BOOL)arg1;
 - (void)restoreSanity;
-- (void)scrubberControl:(id)arg1 didChangeToScrubValue:(float)arg2;
-- (void)scrubberControl:(id)arg1 didEnterScrubbingState:(BOOL)arg2;
+- (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(NSUInteger)arg1;
 - (void)setDisabledParts:(NSUInteger)arg1;

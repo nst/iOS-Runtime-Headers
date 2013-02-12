@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MappedData, NSArray, NSDate, NSString;
+@class NSArray, NSData, NSDate, NSString;
 
 @interface IMAPFetchResult : NSObject {
     union { 
@@ -13,7 +13,7 @@
         struct { 
             NSString *section; 
             NSUInteger startOffset; 
-            MappedData *sectionData; 
+            NSData *sectionData; 
         } bodySectionInfo; 
         NSUInteger uid; 
         struct { 

@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController;
+@class MPAVController, NSMutableSet;
 
-@interface MPQueueFeeder : AVQueueFeeder {
+@interface MPQueueFeeder : AVQueueFeeder <NSCopying> {
     MPAVController *_avController;
-    struct __CFSet { } *_items;
+    NSMutableSet *_itemsWithReferencesToClear;
     struct __CFDictionary { } *_nextStartTimes;
     NSUInteger _repeatType;
     NSUInteger _shuffleType;
@@ -31,6 +31,7 @@
 - (void)contentsDidChangeByInsertingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (id)copyRawItemAtIndex:(NSUInteger)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)dequeueOnDemandItem;
 - (Class)itemClass;

@@ -5,13 +5,4 @@
 @interface UIKeyboardLayoutQWERTZLandscape : UIKeyboardLayoutQWERTYLandscape {
 }
 
-- (id)buildUIKeyboardLayoutAlphabet;
-- (id)buildUIKeyboardLayoutAlphabetTransparent;
-- (id)buildUIKeyboardLayoutEmailAddress;
-- (id)buildUIKeyboardLayoutEmailAddressTransparent;
-- (id)buildUIKeyboardLayoutSMSAddressing;
-- (id)buildUIKeyboardLayoutSMSAddressingTransparent;
-- (id)buildUIKeyboardLayoutURL;
-- (id)buildUIKeyboardLayoutURLTransparent;
-
 @end

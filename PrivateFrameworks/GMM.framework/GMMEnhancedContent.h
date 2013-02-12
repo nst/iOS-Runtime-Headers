@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray, NSString;
 
-@interface GMMEnhancedContent : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMEnhancedContent : PBCodable {
     NSMutableArray *_keys;
     NSString *_source;
     NSString *_url;
@@ -20,8 +15,6 @@
 @property(retain) NSMutableArray *values; /* unknown property attribute: V_values */
 @property(retain) NSMutableArray *keys; /* unknown property attribute: V_keys */
 @property(retain) NSString *source; /* unknown property attribute: V_source */
-@property(readonly) BOOL hasSource;
-@property(readonly) BOOL hasUrl;
 @property(readonly) NSInteger keysCount;
 @property(readonly) NSInteger valuesCount;
 
@@ -29,24 +22,23 @@
 - (void)addValue:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasSource;
-- (BOOL)hasUrl;
+- (id)description;
 - (id)init;
 - (id)keyAtIndex:(NSUInteger)arg1;
 - (id)keys;
 - (NSInteger)keysCount;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
-- (void)setKey:(id)arg1 atIndex:(NSInteger)arg2;
+- (BOOL)readFrom:(id)arg1;
+- (void)setKey:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setKeys:(id)arg1;
 - (void)setSource:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (void)setValue:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setValue:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setValues:(id)arg1;
 - (id)source;
 - (id)url;
 - (id)valueAtIndex:(NSUInteger)arg1;
 - (id)values;
 - (NSInteger)valuesCount;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

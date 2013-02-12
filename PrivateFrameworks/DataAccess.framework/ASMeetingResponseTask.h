@@ -11,7 +11,7 @@
     NSInteger _meetingResponse;
 }
 
-- (id)command;
+- (NSInteger)commandCode;
 - (void)dealloc;
 - (id)emailItemFolderId;
 - (id)eventUID;

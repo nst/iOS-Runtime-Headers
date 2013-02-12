@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMMapPoint, GMMMetadata, GMMOutgoingTile, NSString;
 
-@interface GMMStreetViewRequest : GMMRequest <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMStreetViewRequest : PBRequest {
     BOOL _clientSideThrottlingSupported;
     BOOL _hasClientSideThrottlingSupported;
     BOOL _hasIsPrefetch;
@@ -17,55 +12,53 @@
     BOOL _isPrefetch;
     GMMMapPoint *_latLon;
     GMMMetadata *_metadata;
+    GMMOutgoingTile *_outgoingTile;
     NSString *_panoId;
     BOOL _requestSignature;
-    GMMOutgoingTile *_requestTiles;
 }
 
-@property BOOL hasClientSideThrottlingSupported; /* unknown property attribute: V_hasClientSideThrottlingSupported */
+@property(readonly) BOOL hasClientSideThrottlingSupported; /* unknown property attribute: V_hasClientSideThrottlingSupported */
 @property BOOL clientSideThrottlingSupported; /* unknown property attribute: V_clientSideThrottlingSupported */
-@property BOOL hasIsPrefetch; /* unknown property attribute: V_hasIsPrefetch */
+@property(readonly) BOOL hasIsPrefetch; /* unknown property attribute: V_hasIsPrefetch */
 @property BOOL isPrefetch; /* unknown property attribute: V_isPrefetch */
-@property BOOL hasRequestSignature; /* unknown property attribute: V_hasRequestSignature */
+@property(readonly) BOOL hasRequestSignature; /* unknown property attribute: V_hasRequestSignature */
 @property BOOL requestSignature; /* unknown property attribute: V_requestSignature */
-@property(retain) GMMOutgoingTile *requestTiles; /* unknown property attribute: V_requestTiles */
+@property(retain) GMMOutgoingTile *outgoingTile; /* unknown property attribute: V_outgoingTile */
 @property(retain) GMMMetadata *metadata; /* unknown property attribute: V_metadata */
 @property(retain) GMMMapPoint *latLon; /* unknown property attribute: V_latLon */
 @property(retain) NSString *panoId; /* unknown property attribute: V_panoId */
 @property(readonly) BOOL hasLatLon;
 @property(readonly) BOOL hasMetadata;
+@property(readonly) BOOL hasOutgoingTile;
 @property(readonly) BOOL hasPanoId;
-@property(readonly) BOOL hasRequestTiles;
 
-- (void)_writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
 - (BOOL)clientSideThrottlingSupported;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hasClientSideThrottlingSupported;
 - (BOOL)hasIsPrefetch;
 - (BOOL)hasLatLon;
 - (BOOL)hasMetadata;
+- (BOOL)hasOutgoingTile;
 - (BOOL)hasPanoId;
 - (BOOL)hasRequestSignature;
-- (BOOL)hasRequestTiles;
 - (id)init;
 - (BOOL)isPrefetch;
 - (id)latLon;
 - (id)metadata;
+- (id)outgoingTile;
 - (id)panoId;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (BOOL)requestSignature;
-- (id)requestTiles;
+- (NSUInteger)requestTypeCode;
 - (Class)responseClass;
 - (void)setClientSideThrottlingSupported:(BOOL)arg1;
-- (void)setHasClientSideThrottlingSupported:(BOOL)arg1;
-- (void)setHasIsPrefetch:(BOOL)arg1;
-- (void)setHasRequestSignature:(BOOL)arg1;
 - (void)setIsPrefetch:(BOOL)arg1;
 - (void)setLatLon:(id)arg1;
 - (void)setMetadata:(id)arg1;
+- (void)setOutgoingTile:(id)arg1;
 - (void)setPanoId:(id)arg1;
 - (void)setRequestSignature:(BOOL)arg1;
-- (void)setRequestTiles:(id)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

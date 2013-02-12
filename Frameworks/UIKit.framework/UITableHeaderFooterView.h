@@ -5,7 +5,17 @@
 @class UIImage, UILabel;
 
 @interface UITableHeaderFooterView : UIView {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     UIImage *_backgroundImage;
+    } _frame;
     UILabel *_label;
     BOOL _sectionHeader;
     NSInteger _tableViewStyle;

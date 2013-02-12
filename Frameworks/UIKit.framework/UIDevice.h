@@ -4,10 +4,13 @@
 
 @interface UIDevice : NSObject {
     struct { 
+        unsigned int batteryMonitoringEnabled : 1; 
+        unsigned int proximityMonitoringEnabled : 1; 
         unsigned int orientation : 3; 
         unsigned int batteryState : 2; 
+        unsigned int proximityState : 1; 
+    float _batteryLevel;
     } _deviceFlags;
-    NSInteger _numBatteryStateObservers;
     NSInteger _numDeviceOrientationObservers;
 }
 
@@ -18,32 +21,44 @@
 @property(retain,readonly) NSString *systemName;
 @property(retain,readonly) NSString *systemVersion;
 @property(retain,readonly) NSString *uniqueIdentifier;
-@property NSInteger batteryState;
+@property(readonly) BOOL _mapkit_isChinaDevice;
+@property(readonly) BOOL _mapkit_isSensitiveUIEnabled;
+@property(readonly) float batteryLevel;
+@property(getter=isBatteryMonitoringEnabled) BOOL batteryMonitoringEnabled;
+@property(readonly) NSInteger batteryState;
 @property(getter=isGeneratingDeviceOrientationNotifications,readonly) BOOL generatesDeviceOrientationNotifications;
-@property(readonly) BOOL isGeneratingBatteryStateNotifications;
-@property(readonly) BOOL isTimberlineFeatureSetEnabled;
 @property NSInteger orientation;
+@property(readonly) NSInteger orientation;
+@property(getter=isProximityMonitoringEnabled) BOOL proximityMonitoringEnabled;
+@property(readonly) BOOL proximityState;
 
 + (id)currentDevice;
++ (NSInteger)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
 
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
+- (BOOL)_mapkit_isChinaDevice;
+- (BOOL)_mapkit_isSensitiveUIEnabled;
+- (BOOL)_mapkit_isStreetViewEnabled;
+- (BOOL)_mapkit_isStreetViewPIPEnabled;
+- (void)_setBatteryLevel:(float)arg1;
+- (void)_setBatteryState:(NSInteger)arg1;
+- (void)_setProximityState:(BOOL)arg1;
+- (float)batteryLevel;
 - (NSInteger)batteryState;
-- (void)beginGeneratingBatteryStateChangeNotifications;
 - (void)beginGeneratingDeviceOrientationNotifications;
 - (id)buildVersion;
-- (void)endGeneratingBatteryStateChangeNotifications;
 - (void)endGeneratingDeviceOrientationNotifications;
-- (BOOL)isGeneratingBatteryStateNotifications;
+- (BOOL)isBatteryMonitoringEnabled;
 - (BOOL)isGeneratingDeviceOrientationNotifications;
-- (BOOL)isStreetViewEnabled;
-- (BOOL)isStreetViewPIPEnabled;
-- (BOOL)isTimberlineFeatureSetEnabled;
+- (BOOL)isProximityMonitoringEnabled;
 - (id)localizedModel;
 - (id)model;
 - (id)name;
 - (NSInteger)orientation;
-- (void)setBatteryState:(NSInteger)arg1;
+- (BOOL)proximityState;
+- (void)setBatteryMonitoringEnabled:(BOOL)arg1;
 - (void)setOrientation:(NSInteger)arg1;
+- (void)setProximityMonitoringEnabled:(BOOL)arg1;
 - (id)systemName;
 - (id)systemVersion;
 - (id)uniqueIdentifier;

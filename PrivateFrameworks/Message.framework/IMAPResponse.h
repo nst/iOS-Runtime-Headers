@@ -40,6 +40,7 @@
             IMAPFetchResult *flagsFetchResult; 
             unsigned int change : 1; 
         } uidFlags; 
+        NSDictionary *serverInfo; 
         struct { 
             NSString *name; 
             NSArray *parameters; 
@@ -74,6 +75,7 @@
 - (NSInteger)responseType;
 - (id)searchResults;
 - (id)separator;
+- (id)serverInfo;
 - (void)setCapabilities:(id)arg1;
 - (void)setFetchResults:(id)arg1;
 - (void)setFlags:(id)arg1;
@@ -86,6 +88,7 @@
 - (void)setResponseName:(id)arg1 parameters:(id)arg2;
 - (void)setResponseType:(NSInteger)arg1;
 - (void)setSearchResults:(id)arg1;
+- (void)setServerInfo:(id)arg1;
 - (void)setTag:(id)arg1;
 - (void)setUidFlagsChange:(NSInteger)arg1;
 - (void)setUids:(id)arg1;

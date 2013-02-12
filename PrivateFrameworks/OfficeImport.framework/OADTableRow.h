@@ -10,8 +10,8 @@
 }
 
 - (id)addCell;
-- (id)cellAtIndex:(NSInteger)arg1;
-- (NSInteger)cellCount;
+- (id)cellAtIndex:(NSUInteger)arg1;
+- (NSUInteger)cellCount;
 - (void)dealloc;
 - (float)height;
 - (id)init;

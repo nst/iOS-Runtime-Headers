@@ -2,41 +2,37 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSArray, NSString;
+@class NSString;
 
 @interface DADSearchQuery : NSObject <NSCopying> {
     struct _NSRange { 
         NSUInteger location; 
         NSUInteger length; 
-    NSInteger _maxResults;
-    NSArray *_queryAttributes;
     } _range;
     NSString *_searchString;
     NSInteger _state;
     NSInteger _timeLimit;
 }
 
-@property(copy) NSArray *queryAttributes; /* unknown property attribute: V_queryAttributes */
 @property(readonly) NSString *searchString; /* unknown property attribute: V_searchString */
 @property NSInteger timeLimit; /* unknown property attribute: V_timeLimit */
 @property _NSRange range; /* unknown property attribute: V_range */
 @property NSInteger maxResults;
 
-+ (id)searchQueryWithSearchString:(id)arg1;
-
+- (void)_copyProperties:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (NSUInteger)hash;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSearchString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDADSearchQuery:(id)arg1;
 - (BOOL)isQueryRunning;
 - (NSInteger)maxResults;
-- (id)queryAttributes;
 - (struct _NSRange { NSUInteger x1; NSUInteger x2; })range;
 - (id)searchString;
 - (void)setMaxResults:(NSInteger)arg1;
-- (void)setQueryAttributes:(id)arg1;
 - (void)setRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)setState:(NSInteger)arg1;
 - (void)setTimeLimit:(NSInteger)arg1;

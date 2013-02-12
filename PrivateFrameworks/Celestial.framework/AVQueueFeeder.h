@@ -5,6 +5,7 @@
 @interface AVQueueFeeder : NSObject {
 }
 
+- (double)bookmarkTimeForIndex:(NSUInteger)arg1;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(NSUInteger)arg1;
 - (void)contentsDidChangeByInsertingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;

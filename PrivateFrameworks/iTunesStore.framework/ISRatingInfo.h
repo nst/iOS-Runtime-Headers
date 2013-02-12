@@ -16,17 +16,28 @@
     NSInteger _system;
 }
 
+@property NSInteger system; /* unknown property attribute: V_system */
+@property(readonly) NSString *ratingDescription; /* unknown property attribute: V_description */
+@property NSInteger rank; /* unknown property attribute: V_rank */
+@property(readonly) CGSize logoURLSize; /* unknown property attribute: V_logoURLSize */
+@property(readonly) NSURL *logoURL; /* unknown property attribute: V_logoURL */
+@property(readonly) NSString *label; /* unknown property attribute: V_label */
+
 + (BOOL)allowExplicitContent;
++ (NSInteger)ratingSystemFromString:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isExplicit;
+- (BOOL)isRestricted;
 - (id)label;
 - (id)logoURL;
 - (struct CGSize { float x1; float x2; })logoURLSize;
 - (NSInteger)rank;
 - (id)ratingDescription;
+- (void)setRank:(NSInteger)arg1;
+- (void)setSystem:(NSInteger)arg1;
 - (NSInteger)system;
 
 @end

@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CLLocationManager, NSMutableArray;
+@class CLHeading, CLLocationManager, NSDictionary, NSMutableArray;
 
 @interface PLLocationController : NSObject <CLLocationManagerDelegate> {
+    CLHeading *_lastHeading;
     CLLocationManager *_locationManager;
     NSMutableArray *_locationPendingPaths;
     NSInteger _managerRefCount;
+    NSDictionary *_supportDOPInfo;
 }
 
 + (id)sharedInstance;
@@ -19,7 +21,9 @@
 - (BOOL)isRunning;
 - (id)location;
 - (id)locationEXIFDictionary;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
+- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3 usingSupportInfo:(id)arg4;
+- (id)locationString;
 - (void)start;
 - (void)stop;
 

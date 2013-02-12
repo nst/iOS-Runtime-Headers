@@ -12,7 +12,7 @@
 @property(copy) NSArray *timingFunctions;
 @property(copy) NSArray *values;
 
-- (void*)CA_copyRenderValue;
+- (struct Animation { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; float x3; struct Timing {} *x4; struct Vector {} *x5; void *x6; NSUInteger x7; NSUInteger x8; }*)_copyRenderAnimationForLayer:(id)arg1;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (id)calculationMode;
 - (id)keyTimes;

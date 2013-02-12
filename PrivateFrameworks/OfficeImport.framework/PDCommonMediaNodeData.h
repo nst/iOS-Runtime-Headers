@@ -7,9 +7,9 @@
 @interface PDCommonMediaNodeData : PDCommonTimeNodeData {
     BOOL mIsMuted;
     BOOL mIsShowWhenStopped;
-    long mNumberOfSlides;
+    NSInteger mNumberOfSlides;
     PDAnimationTargetElement *mTarget;
-    long mVolume;
+    NSInteger mVolume;
 }
 
 - (void)dealloc;

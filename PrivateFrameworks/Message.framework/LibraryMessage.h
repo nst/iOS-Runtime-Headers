@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface LibraryMessage : Message {
+@interface LibraryMessage : MailMessage {
     struct { 
         unsigned int reserved : 26; 
         unsigned int hasCustomEncoding : 1; 
@@ -26,6 +26,7 @@
 
 - (void)_updateUID;
 - (id)account;
+- (BOOL)canBeDeleted;
 - (void)commit;
 - (NSInteger)compareByUidWithMessage:(id)arg1;
 - (id)dataConsumerForMimePart:(id)arg1;
@@ -37,6 +38,7 @@
 - (struct { unsigned int x1 : 26; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; })imapFlags;
 - (id)initWithLibraryID:(NSUInteger)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isLibraryMessage;
 - (BOOL)isMessageContentsLocallyAvailable;
 - (BOOL)isPartial;
 - (id)library;
@@ -68,7 +70,6 @@
 - (void)setMessageFlags:(unsigned long)arg1;
 - (void)setMessageFlagsWithoutCommitting:(unsigned long)arg1;
 - (void)setMessageSize:(NSUInteger)arg1;
-- (void)setMessageStore:(id)arg1;
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setOriginalMailboxID:(NSUInteger)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;

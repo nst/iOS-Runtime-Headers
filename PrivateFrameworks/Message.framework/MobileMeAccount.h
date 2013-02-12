@@ -5,11 +5,13 @@
 @interface MobileMeAccount : iToolsAccount {
 }
 
++ (id)basicAccountProperties;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)deliveryHostName;
 + (id)displayedAccountTypeString;
 + (id)emailAddressHostPart;
 + (id)hostname;
++ (id)supportedDataclasses;
 
 - (id)hostname;
 - (BOOL)isAccountClassEquivalentTo:(id)arg1;

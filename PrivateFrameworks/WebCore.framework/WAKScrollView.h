@@ -4,12 +4,11 @@
 
 @class WAKView;
 
-@interface WAKScrollView : WAKView <WebCoreFrameView> {
+@interface WAKScrollView : WAKView <WebCoreFrameScrollView> {
     id _delegate;
     WAKView *_documentView;
 }
 
-- (void)_setAllowsScrollingPart:(NSInteger)arg1 flag:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })actualDocumentVisibleRect;
 - (BOOL)allowsHorizontalScrolling;
 - (BOOL)allowsScrolling;
@@ -30,6 +29,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)reflectScrolledClipView:(id)arg1;
 - (void)scrollWheel:(struct __GSEvent { }*)arg1;
+- (void)scrollingModes:(NSInteger*)arg1 vertical:(NSInteger*)arg2;
 - (void)setAllowsHorizontalScrolling:(BOOL)arg1;
 - (void)setAllowsScrolling:(BOOL)arg1;
 - (void)setAllowsVerticalScrolling:(BOOL)arg1;
@@ -44,6 +44,7 @@
 - (void)setLineScroll:(float)arg1;
 - (void)setScrollBarsSuppressed:(BOOL)arg1 repaintOnUnsuppress:(BOOL)arg2;
 - (void)setScrollingMode:(NSInteger)arg1;
+- (void)setScrollingModes:(NSInteger)arg1 vertical:(NSInteger)arg2 andLock:(BOOL)arg3;
 - (void)setVerticalScroller:(id)arg1;
 - (void)setVerticalScrollingMode:(NSInteger)arg1;
 - (float)verticalLineScroll;

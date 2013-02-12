@@ -45,8 +45,6 @@
 - (id)customRightView;
 - (id)customTitleView;
 - (void)dealloc;
-- (void)didBecomeTopInNavigationBar:(id)arg1 navigationBarState:(NSInteger)arg2;
-- (void)didResignTopInNavigationBar:(id)arg1 navigationBarState:(NSInteger)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)existingBackButtonView;
 - (id)font;
@@ -54,8 +52,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1;
 - (id)leftBarButtonItem;
+- (void)mergeValuesFromItem:(id)arg1;
 - (id)navigationBar;
 - (id)prompt;
+- (void)resetAllValues;
 - (id)rightBarButtonItem;
 - (void)setBackBarButtonItem:(id)arg1;
 - (void)setBackButtonTitle:(id)arg1;
@@ -87,7 +87,5 @@
 - (id)titleView;
 - (void)updateNavigationBarButtonsAnimated:(BOOL)arg1;
 - (float)width;
-- (void)willBecomeTopInNavigationBar:(id)arg1 navigationBarState:(NSInteger)arg2;
-- (void)willResignTopInNavigationBar:(id)arg1 navigationBarState:(NSInteger)arg2;
 
 @end

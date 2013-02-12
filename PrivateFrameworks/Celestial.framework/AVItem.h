@@ -9,7 +9,7 @@
 @class NSDictionary;
 
 @interface AVItem : NSObject {
-    struct AVItemPrivate { id x1; id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; inout unsigned short x4; unsigned short x5; void*x6; const NSInteger x7; in void*x8; void*x9; double x10; float x11; float x12; float x13; NSUInteger x14; BOOL x15; BOOL x16; id x17; void*x18; inout unsigned short x19; void*x20; NSInteger x21; BOOL x22; void*x23; NSInteger x24; out in void*x25; const void*x26; void*x27; NSInteger x28; long long x29; long long x30; id x31; void*x32; inout unsigned short x33; void*x34; NSInteger x35; BOOL x36; void*x37; NSInteger x38; out in void*x39; const void*x40; void*x41; NSDictionary *x42; } *_priv;
+    struct AVItemPrivate { id x1; id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; inout unsigned short x4; unsigned short x5; void*x6; const NSInteger x7; in void*x8; void*x9; double x10; float x11; float x12; float x13; NSUInteger x14; BOOL x15; BOOL x16; id x17; void*x18; inout unsigned short x19; void*x20; NSInteger x21; BOOL x22; void*x23; NSInteger x24; out in void*x25; const void*x26; void*x27; NSInteger x28; long long x29; long long x30; BOOL x31; id x32; void*x33; inout unsigned short x34; void*x35; NSInteger x36; BOOL x37; void*x38; NSInteger x39; out in void*x40; const void*x41; void*x42; NSDictionary *x43; } *_priv;
 }
 
 + (id)avItem;
@@ -22,10 +22,12 @@
 - (void)dealloc;
 - (double)duration;
 - (NSInteger)eqPreset;
+- (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(NSInteger)arg3;
 - (id)init;
 - (id)initWithError:(id*)arg1;
 - (id)initWithPath:(id)arg1 error:(id*)arg2;
 - (struct CGSize { float x1; float x2; })naturalSize;
+- (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(NSInteger)arg4;
 - (id)path;
 - (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)setEQPreset:(NSInteger)arg1;

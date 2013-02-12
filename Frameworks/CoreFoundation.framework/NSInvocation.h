@@ -11,11 +11,15 @@
     id _signature;
 }
 
++ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
++ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)invocationWithMethodSignature:(id)arg1;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2;
++ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
++ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
++ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 
 - (void)_addAttachedObject:(id)arg1;
+- (void)_webkit_invokeAndHandleException:(id)arg1;
 - (BOOL)argumentsRetained;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -27,12 +31,14 @@
 - (void)invoke;
 - (void)invokeWithTarget:(id)arg1;
 - (id)methodSignature;
+- (void)mf_invokeWithObject:(id)arg1;
 - (void)retainArguments;
 - (SEL)selector;
 - (void)setArgument:(void*)arg1 atIndex:(NSInteger)arg2;
 - (void)setReturnValue:(void*)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;
+- (BOOL)shouldLogInvocation;
 - (id)target;
 - (id)withProtocol:(id)arg1;
 

@@ -12,8 +12,8 @@
         unsigned int disableToggleRotate : 1; 
         unsigned int tableCellTarget : 1; 
         unsigned int alwaysHideRemoveButton : 1; 
-        unsigned int showAsPlus : 1; 
-        unsigned int reserved : 25; 
+        unsigned int editingStyle : 3; 
+        unsigned int reserved : 23; 
     id _delegate;
     NSString *_label;
     UIRemoveControlMinusButton *_minusButton;
@@ -41,6 +41,7 @@
 - (void)_setInsertControl:(BOOL)arg1;
 - (void)_setInterceptMouseEvent:(BOOL)arg1;
 - (void)_setRemoveConfirmationShowing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setTableViewCellEditingStyle:(NSInteger)arg1;
 - (void)_shouldRemoveTarget;
 - (void)_showDeleteConfirmation:(id)arg1;
 - (float)_verticalOffsetFromTarget;
@@ -52,6 +53,7 @@
 - (id)delegate;
 - (void)hideControlsUsingRemoveAnimation;
 - (id)initWithTarget:(id)arg1;
+- (void)isHighlighted;
 - (BOOL)isRemoveButtonVisible;
 - (BOOL)isRemoveConfirmationVisible;
 - (void)layoutSubviews;
@@ -66,11 +68,13 @@
 - (void)setAlpha:(float)arg1;
 - (void)setAlwaysHideRemoveButton:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setRemoveConfirmationLabel:(id)arg1;
 - (void)setRemoveConfirmationVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRemoveConfirmationVisible:(BOOL)arg1;
 - (void)setRemovedFromTargetWhenHidden:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1;
 - (void)setTarget:(id)arg1;
 - (void)showRemoveButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetContentBounds;

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class ActivityMonitor, NSArray, NSConditionLock, NSLock, NSString, POP3Connection;
+@class ActivityMonitor, MFLock, NSArray, NSConditionLock, NSString, POP3Connection;
 
 @interface POPAccount : MailAccount {
     POP3Connection *_connection;
-    NSLock *_connectionActivityLock;
+    MFLock *_connectionActivityLock;
     float _connectionTimeout;
     NSUInteger _connectionsInUse;
     NSArray *_currentUIDs;

@@ -5,17 +5,10 @@
 @interface UIKeyboardLayoutQWERTY : UIKeyboardLayoutRoman {
 }
 
-- (void)addLocalizedCurrencyKeysToSublayout:(id)arg1 keyboardType:(id)arg2;
-- (id)buildUIKeyboardLayoutAlphabet;
-- (id)buildUIKeyboardLayoutAlphabetTransparent;
-- (id)buildUIKeyboardLayoutEmailAddress;
 - (id)buildUIKeyboardLayoutEmailAddressAlt;
 - (id)buildUIKeyboardLayoutEmailAddressAltTransparent;
-- (id)buildUIKeyboardLayoutEmailAddressTransparent;
 - (id)buildUIKeyboardLayoutNumberPad;
 - (id)buildUIKeyboardLayoutNumberPadTransparent;
-- (id)buildUIKeyboardLayoutNumbers;
-- (id)buildUIKeyboardLayoutNumbersTransparent;
 - (id)buildUIKeyboardLayoutPhonePad;
 - (id)buildUIKeyboardLayoutPhonePadAlt;
 - (id)buildUIKeyboardLayoutPhonePadAltTransparent;
@@ -24,9 +17,7 @@
 - (id)buildUIKeyboardLayoutSMSAddressingAlt;
 - (id)buildUIKeyboardLayoutSMSAddressingAltTransparent;
 - (id)buildUIKeyboardLayoutSMSAddressingTransparent;
-- (id)buildUIKeyboardLayoutURL;
 - (id)buildUIKeyboardLayoutURLAlt;
 - (id)buildUIKeyboardLayoutURLAltTransparent;
-- (id)buildUIKeyboardLayoutURLTransparent;
 
 @end

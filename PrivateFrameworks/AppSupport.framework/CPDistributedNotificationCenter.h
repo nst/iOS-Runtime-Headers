@@ -5,32 +5,32 @@
 @class NSLock, NSMutableDictionary, NSString;
 
 @interface CPDistributedNotificationCenter : NSObject {
+    NSString *_centerName;
     BOOL _isServer;
     NSLock *_lock;
-    NSString *_name;
     struct __CFRunLoopSource { } *_receiveNotificationSource;
     NSMutableDictionary *_sendPorts;
-    NSString *_targetedIdentifier;
+    NSUInteger _startCount;
 }
 
 + (id)centerNamed:(id)arg1;
 
 - (void)_checkIn;
-- (void)_checkOut;
+- (void)_checkOutAndRemoveSource;
+- (void)_createReceiveSourceForRunLoop:(struct __CFRunLoop { }*)arg1;
 - (id)_initWithServerName:(id)arg1;
 - (void)_notificationServerWasRestarted;
-- (void)_receivedCheckIn:(NSUInteger)arg1 targetedIdentifier:(id)arg2;
+- (void)_receivedCheckIn:(NSUInteger)arg1 auditToken:(struct { NSUInteger x1[8]; }*)arg2;
 - (void)_receivedCheckOut:(struct __CFMachPort { }*)arg1;
 - (void)dealloc;
 - (void)deliverNotification:(id)arg1 userInfo:(id)arg2;
 - (id)name;
-- (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toTargetedIdentifier:(id)arg3;
+- (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)postNotificationName:(id)arg1;
 - (void)runServerOnCurrentThread;
-- (void)setTargetedIdentifier:(id)arg1;
 - (void)startDeliveringNotificationsToMainThread;
-- (void)stopDeliveringNotificationsToMainThread;
-- (id)targetedIdentifier;
+- (void)startDeliveringNotificationsToRunLoop:(struct __CFRunLoop { }*)arg1;
+- (void)stopDeliveringNotifications;
 
 @end

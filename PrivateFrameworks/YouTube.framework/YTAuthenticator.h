@@ -2,37 +2,38 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSData, NSMutableData, NSString, NSURLConnection;
+@class <YTAuthenticatorDelegate>, NSMutableArray;
 
 @interface YTAuthenticator : NSObject {
-    NSURLConnection *_connection;
-    NSData *_hmac;
-    NSInteger _phase;
-    NSData *_r1;
-    NSData *_r1Hash;
-    NSData *_r2;
-    NSMutableData *_responseData;
-    double _timeTokenGranted;
-    NSString *_token;
+    NSInteger _accountAuthState;
+    NSMutableArray *_deferredRequests;
+    <YTAuthenticatorDelegate> *_delegate;
+    NSInteger _deviceAuthState;
 }
 
++ (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)sharedAuthenticator;
 
-- (BOOL)_authenticate1;
-- (BOOL)_authenticate2;
-- (void)_clearNonces;
-- (void)_connectionDidEnd;
-- (void)_copyCertificateData:(id*)arg1 privateKey:(struct __SecKey {}**)arg2;
-- (void)_failWithErrorCode:(NSInteger)arg1;
-- (void)_loadStatusChanged;
-- (void)_succeeded;
-- (void)authenticate;
-- (BOOL)canAuthenticate;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
+- (void)_addAccountAuthenticationObserers;
+- (void)_addDeferredRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
+- (void)_addDeviceAuthenticationObserers;
+- (void)_completeAuthentitcationForDeferredRequests;
+- (void)_didAuthenticateAccount:(id)arg1;
+- (void)_didAuthenticateDevice:(id)arg1;
+- (void)_failedToAuthenticateAccount:(id)arg1;
+- (void)_failedToAuthenticateDevice:(id)arg1;
+- (void)_removeAccountAuthenticationObservers;
+- (void)_removeDefferredRequests;
+- (void)_removeDeviceAuthenticationObservers;
+- (void)addAuthenticationHeadersToRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
+- (void)clearAccountInfo;
+- (void)dealloc;
+- (id)init;
 - (void)invalidateToken;
-- (BOOL)isAuthenticating;
-- (id)token;
+- (BOOL)isAccountAuthenticated;
+- (BOOL)isWaitingForAuthentication;
+- (void)setAccount:(id)arg1 password:(id)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)userCancelledAccountAuthentication;
 
 @end

@@ -12,6 +12,6 @@
 - (id)initWithEditModel:(id)arg1;
 - (void)layoutForWidth:(float)arg1 position:(NSInteger)arg2;
 - (BOOL)setEditModel:(id)arg1;
-- (NSInteger)viewToDiscloseForModel:(id)arg1;
+- (id)viewControllerPreparedWithModel:(id)arg1;
 
 @end

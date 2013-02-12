@@ -8,12 +8,15 @@
     NSMutableArray *mTransforms;
 }
 
++ (id)_applyTransforms:(id)arg1 toColor:(id)arg2;
 + (id)basicMapOfColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3;
 + (id)mapAdjustedColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3;
 + (NSInteger)mapSchemeColorID:(NSInteger)arg1 colorMap:(id)arg2;
 + (id)nsColorWithOADColor:(id)arg1;
 
 - (void)addTransform:(id)arg1;
+- (void)addTransformOfType:(NSInteger)arg1 value:(float)arg2;
+- (void)addTransformOfType:(NSInteger)arg1;
 - (id)colorForStyleColor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

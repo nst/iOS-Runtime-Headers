@@ -2,63 +2,61 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIFormControl>, NSMutableDictionary, UIButton, UIImageView, UIInformalDelegate, UITransitionView, UIView<UIFormPeripheral>;
+@class UIButton, UIImageView, UIPeripheralTransition, UISegmentedControl, UITransitionView, UIView<UIFormPeripheral>, WebView;
 
 @interface UIFormAssistant : UIView {
-    <UIFormControl> *_control;
-    UIInformalDelegate *_delegate;
+    UIButton *_autofill;
+    UIView<UIFormPeripheral> *_currentPeripheral;
     UIButton *_done;
-    BOOL _isTransitioning;
+    UIPeripheralTransition *_helper;
     UIImageView *_navigation;
-    UIButton *_next;
-    <UIFormControl> *_nextControl;
-    UIView<UIFormPeripheral> *_nextPeripheral;
     NSInteger _orientation;
-    UIView<UIFormPeripheral> *_peripheral;
-    UIButton *_previous;
-    NSMutableDictionary *_primaryCache;
-    NSMutableDictionary *_secondaryCache;
+    UISegmentedControl *_tab;
     UITransitionView *_transition;
+    WebView *_webView;
 }
 
-@property(retain) UIView<UIFormPeripheral> *_nextPeripheral; /* unknown property attribute: V_nextPeripheral */
-@property(retain) UIView<UIFormPeripheral> *_peripheral; /* unknown property attribute: V_peripheral */
-@property(retain) <UIFormControl> *_nextControl; /* unknown property attribute: V_nextControl */
-@property(retain) <UIFormControl> *_control; /* unknown property attribute: V_control */
+@property(retain) UIPeripheralTransition *_helper; /* unknown property attribute: V_helper */
+@property(retain) UIView<UIFormPeripheral> *_currentPeripheral; /* unknown property attribute: V_currentPeripheral */
 
 + (id)_navigationImage;
-+ (double)defaultTransitionDuration;
 + (BOOL)isShowing;
 + (id)sharedFormAssistant;
 
-- (void)_cachePeripheral:(id)arg1 withClass:(Class)arg2;
-- (id)_control;
-- (id)_getPeripheralFromCache:(Class)arg1;
-- (id)_nextControl;
-- (id)_nextPeripheral;
-- (id)_peripheral;
-- (void)advanceToNextFormControl:(id)arg1;
+- (id)_currentPeripheral;
+- (id)_helper;
+- (void)_postKeyboardNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1;
-- (void)completeFormControlTransition;
+- (void)assistView:(id)arg1;
+- (id)assistedFormNode;
+- (void)autoFill:(id)arg1;
+- (void)autoFillWithFormNode:(id)arg1;
+- (void)beginEditingPeripheral:(id)arg1;
+- (BOOL)canAutoFill;
+- (void)completeFormTransition;
 - (void)dealloc;
+- (void)dismissFormAssistant;
+- (void)displayFormAssistant;
 - (void)done:(id)arg1;
-- (id)formControl;
+- (void)endEditingPeripheral:(id)arg1;
+- (void)formDelegateFormElementDidBlur:(id)arg1;
+- (void)formDelegateFormElementDidFocus:(id)arg1 inFrame:(id)arg2;
+- (void)formDelegateFormElementDidSetValue:(id)arg1 inFrame:(id)arg2;
+- (void)formDelegateHandleTextChangeInFrame:(id)arg1 withAutoFillSuggestions:(BOOL)arg2;
+- (id)getUIWebDocumentViewForWebFrame:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isTransitioning;
-- (BOOL)isTransitioningToNextPeripheral;
 - (void)layoutSubviews;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })peripheralFrame;
-- (void)recedeToPreviousFormControl:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })remainingDeviceRect;
-- (id)sessionDelegate;
-- (void)setFormControl:(id)arg1;
-- (void)setSessionDelegate:(id)arg1;
+- (void)reuseCurrentPeripheralForFormNode:(id)arg1;
+- (void)setFormNode:(id)arg1;
 - (void)setUpAnimation:(id)arg1;
-- (void)set_control:(id)arg1;
-- (void)set_nextControl:(id)arg1;
-- (void)set_nextPeripheral:(id)arg1;
-- (void)set_peripheral:(id)arg1;
+- (void)set_currentPeripheral:(id)arg1;
+- (void)set_helper:(id)arg1;
+- (void)startAssistingFormNode:(id)arg1;
 - (void)synchronizeOrientationWithAnimation:(BOOL)arg1;
+- (void)tabFormNode:(id)arg1;
 - (void)transitionViewDidComplete:(id)arg1;
+- (void)usePeripheral:(id)arg1 forFormNode:(id)arg2;
+- (void)willBeginEditingFormNode:(id)arg1;
 
 @end

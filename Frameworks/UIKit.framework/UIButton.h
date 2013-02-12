@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIFont, UIImageView, UILabel;
+@class UIImageView, UILabel;
 
 @interface UIButton : UIControl <NSCoding> {
     struct UIEdgeInsets { 
@@ -20,9 +20,6 @@
         float left; 
         float bottom; 
         float right; 
-    struct CGSize { 
-        float width; 
-        float height; 
     struct { 
         unsigned int reversesTitleShadowWhenHighlighted : 1; 
         unsigned int adjustsImageWhenHighlighted : 1; 
@@ -31,16 +28,14 @@
         unsigned int disabledDimsImage : 1; 
         unsigned int showsTouchWhenHighlighted : 1; 
         unsigned int buttonType : 8; 
+        unsigned int shouldHandleScrollerMouseEvent : 1; 
     UIImageView *_backgroundView;
     } _buttonFlags;
     } _contentEdgeInsets;
     struct __CFDictionary { } *_contentLookup;
-    UIFont *_font;
     } _imageEdgeInsets;
     UIImageView *_imageView;
-    NSInteger _lineBreakMode;
     } _titleEdgeInsets;
-    } _titleShadowOffset;
     UILabel *_titleView;
 }
 
@@ -50,7 +45,9 @@
 @property(retain,readonly) UIColor *currentTitleColor;
 @property(retain,readonly) UIColor *currentTitleShadowColor;
 @property(retain) UIFont *font;
+@property(retain,readonly) UIImageView *imageView;
 @property(retain) UIColor *tintColor;
+@property(retain,readonly) UILabel *titleLabel;
 @property BOOL adjustsImageWhenDisabled;
 @property BOOL adjustsImageWhenHighlighted;
 @property(readonly) NSInteger buttonType;
@@ -65,24 +62,35 @@
 + (id)_defaultContentForType:(NSInteger)arg1 andState:(NSUInteger)arg2;
 + (id)buttonWithType:(NSInteger)arg1;
 
+- (BOOL)_alwaysHandleScrollerMouseEvent;
 - (id)_archivableContent:(id*)arg1;
 - (id)_backgroundForState:(NSUInteger)arg1 usesBackgroundForNormalState:(BOOL*)arg2;
 - (id)_contentForState:(NSUInteger)arg1;
+- (id)_font;
 - (id)_imageForState:(NSUInteger)arg1 usesImageForNormalState:(BOOL*)arg2;
-- (void)_initSubviews;
+- (NSInteger)_lineBreakMode;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_scriptingInfo;
 - (void)_setBackground:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setButtonType:(NSInteger)arg1;
 - (void)_setContent:(id)arg1 forState:(NSUInteger)arg2;
+- (void)_setFont:(id)arg1;
 - (void)_setImage:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)_setLineBreakMode:(NSInteger)arg1;
 - (void)_setShadowColor:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)_setShouldHandleScrollerMouseEvent:(BOOL)arg1;
 - (void)_setTitle:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)_setTitleColor:(id)arg1 forStates:(NSUInteger)arg2;
+- (void)_setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setupBackgroundView;
+- (void)_setupImageView;
+- (void)_setupTitleView;
 - (id)_shadowColorForState:(NSUInteger)arg1;
 - (void)_takeContentFromArchivableContent:(id)arg1 overrides:(id)arg2;
+- (void)_titleAttributesChanged;
 - (id)_titleColorForState:(NSUInteger)arg1;
 - (id)_titleForState:(NSUInteger)arg1;
+- (struct CGSize { float x1; float x2; })_titleShadowOffset;
 - (BOOL)adjustsImageWhenDisabled;
 - (BOOL)adjustsImageWhenHighlighted;
 - (BOOL)autosizesToFit;
@@ -97,17 +105,20 @@
 - (id)currentTitleColor;
 - (id)currentTitleShadowColor;
 - (void)dealloc;
+- (unsigned long long)defaultAccessibilityTraits;
 - (void)encodeWithCoder:(id)arg1;
 - (id)font;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageEdgeInsets;
 - (id)imageForState:(NSUInteger)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)imageView;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElementByDefault;
+- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
 - (NSInteger)lineBreakMode;
 - (struct CGPoint { float x1; float x2; })pressFeedbackPosition;
-- (BOOL)reversesTitleShadowOnHighlight;
 - (BOOL)reversesTitleShadowWhenHighlighted;
 - (void)setAdjustsImageWhenDisabled:(BOOL)arg1;
 - (void)setAdjustsImageWhenHighlighted:(BOOL)arg1;
@@ -116,6 +127,7 @@
 - (void)setBackgroundImage:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentHorizontalAlignment:(NSInteger)arg1;
 - (void)setDisabledDimsImage:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFont:(id)arg1;
@@ -125,7 +137,6 @@
 - (void)setImage:(id)arg1 forStates:(NSUInteger)arg2;
 - (void)setImageEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLineBreakMode:(NSInteger)arg1;
-- (void)setReversesTitleShadowOnHighlight:(BOOL)arg1;
 - (void)setReversesTitleShadowWhenHighlighted:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setShowPressFeedback:(BOOL)arg1;
@@ -145,6 +156,7 @@
 - (id)titleColorForState:(NSUInteger)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleEdgeInsets;
 - (id)titleForState:(NSUInteger)arg1;
+- (id)titleLabel;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)titleShadowColorForState:(NSUInteger)arg1;
 - (struct CGSize { float x1; float x2; })titleShadowOffset;

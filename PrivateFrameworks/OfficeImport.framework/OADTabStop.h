@@ -8,8 +8,8 @@
 }
 
 - (NSInteger)align;
-- (NSInteger)position;
+- (NSUInteger)position;
 - (void)setAlign:(NSInteger)arg1;
-- (void)setPosition:(NSInteger)arg1;
+- (void)setPosition:(NSUInteger)arg1;
 
 @end

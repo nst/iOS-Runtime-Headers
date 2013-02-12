@@ -11,6 +11,12 @@
     NSInteger mItalic;
 }
 
++ (NSInteger)defaultBold;
++ (id)defaultColor;
++ (id)defaultFontReference;
++ (NSInteger)defaultItalic;
++ (id)defaultStyle;
+
 - (NSInteger)bold;
 - (id)color;
 - (void)dealloc;

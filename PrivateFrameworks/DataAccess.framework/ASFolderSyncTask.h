@@ -8,12 +8,13 @@
     NSString *_previousSyncKey;
 }
 
-- (id)command;
+- (NSInteger)commandCode;
 - (void)dealloc;
 - (void)finishWithError:(id)arg1;
 - (id)initWithPreviousSyncKey:(id)arg1;
 - (BOOL)processContext:(id)arg1;
 - (id)requestBody;
 - (NSInteger)taskStatusForExchangeStatus:(NSInteger)arg1;
+- (double)timeoutInterval;
 
 @end

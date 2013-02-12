@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface OADGroup : OADDrawable {
+@interface OADGroup : OADDrawable <OADDrawableContainer> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,8 +20,8 @@
 
 - (void)addChild:(id)arg1;
 - (void)addChildren:(id)arg1;
-- (id)childAtIndex:(NSInteger)arg1;
-- (NSInteger)childCount;
+- (id)childAtIndex:(NSUInteger)arg1;
+- (NSUInteger)childCount;
 - (id)children;
 - (void)dealloc;
 - (id)groupProperties;

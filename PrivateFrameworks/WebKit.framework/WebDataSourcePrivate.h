@@ -6,30 +6,30 @@
    See Warning(s) below.
  */
 
-@class <WebDocumentRepresentation>, NSError, NSURLRequest, NSURLResponse, WebUnarchivingState;
+@class <WebDocumentRepresentation>, NSError, NSURLRequest, NSURLResponse;
 
 @interface WebDataSourcePrivate : NSObject {
     struct WebDocumentLoaderMac { int (**x1)(); NSInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct Frame {} *x4; struct RefPtr<WebCore::MainResourceLoader> { 
             struct MainResourceLoader {} *m_ptr; 
         } x5; struct HashSet<WTF::RefPtr<WebCore::ResourceLoader>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
-            struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<int32_t>,WTF::HashTraits<int32_t>,WTF::HashTraits<int32_t> > { 
-                NSInteger *m_table; 
+            struct HashTable<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::ResourceLoader>,WTF::IdentityExtractor<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
+                struct RefPtr<WebCore::ResourceLoader> {} *m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
         } x6; struct HashSet<WTF::RefPtr<WebCore::ResourceLoader>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
-            struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<int32_t>,WTF::HashTraits<int32_t>,WTF::HashTraits<int32_t> > { 
-                NSInteger *m_table; 
+            struct HashTable<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::ResourceLoader>,WTF::IdentityExtractor<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
+                struct RefPtr<WebCore::ResourceLoader> {} *m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
         } x7; struct HashSet<WTF::RefPtr<WebCore::ResourceLoader>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
-            struct HashTable<int,int,WTF::IdentityExtractor<int>,WTF::IntHash<int32_t>,WTF::HashTraits<int32_t>,WTF::HashTraits<int32_t> > { 
-                NSInteger *m_table; 
+            struct HashTable<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::ResourceLoader>,WTF::IdentityExtractor<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
+                struct RefPtr<WebCore::ResourceLoader> {} *m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
@@ -39,75 +39,64 @@
             struct SharedBuffer {} *m_ptr; 
         } x9; struct ResourceRequest { 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_url; 
             NSInteger m_cachePolicy; 
             double m_timeoutInterval; 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_mainDocumentURL; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpMethod; 
-            struct HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
-                struct HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> > { 
-                    struct pair<WebCore::StringImpl*,int> {} *m_table; 
+            struct HTTPHeaderMap { 
+                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
+                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
                     NSInteger m_tableSize; 
                     NSInteger m_tableSizeMask; 
                     NSInteger m_keyCount; 
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
+            struct Vector<WebCore::String,0ul> { 
+                NSUInteger m_size; 
+                struct VectorBuffer<WebCore::String,0ul> { 
+                    struct String {} *m_buffer; 
+                    NSUInteger m_capacity; 
+                } m_buffer; 
+            } m_responseContentDispositionEncodingFallbackArray; 
             struct RefPtr<WebCore::FormData> { 
                 struct FormData {} *m_ptr; 
             } m_httpBody; 
@@ -132,130 +121,101 @@
                 } m_impl; 
             } m_textEncoding; 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_failingURL; 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_responseURL; 
         } x11; struct ResourceRequest { 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_url; 
             NSInteger m_cachePolicy; 
             double m_timeoutInterval; 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_mainDocumentURL; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpMethod; 
-            struct HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
-                struct HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> > { 
-                    struct pair<WebCore::StringImpl*,int> {} *m_table; 
+            struct HTTPHeaderMap { 
+                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
+                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
                     NSInteger m_tableSize; 
                     NSInteger m_tableSizeMask; 
                     NSInteger m_keyCount; 
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
+            struct Vector<WebCore::String,0ul> { 
+                NSUInteger m_size; 
+                struct VectorBuffer<WebCore::String,0ul> { 
+                    struct String {} *m_buffer; 
+                    NSUInteger m_capacity; 
+                } m_buffer; 
+            } m_responseContentDispositionEncodingFallbackArray; 
             struct RefPtr<WebCore::FormData> { 
                 struct FormData {} *m_ptr; 
             } m_httpBody; 
@@ -267,75 +227,64 @@
             } m_nsRequest; 
         } x12; struct ResourceRequest { 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_url; 
             NSInteger m_cachePolicy; 
             double m_timeoutInterval; 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_mainDocumentURL; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpMethod; 
-            struct HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
-                struct HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> > { 
-                    struct pair<WebCore::StringImpl*,int> {} *m_table; 
+            struct HTTPHeaderMap { 
+                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
+                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
                     NSInteger m_tableSize; 
                     NSInteger m_tableSizeMask; 
                     NSInteger m_keyCount; 
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
+            struct Vector<WebCore::String,0ul> { 
+                NSUInteger m_size; 
+                struct VectorBuffer<WebCore::String,0ul> { 
+                    struct String {} *m_buffer; 
+                    NSUInteger m_capacity; 
+                } m_buffer; 
+            } m_responseContentDispositionEncodingFallbackArray; 
             struct RefPtr<WebCore::FormData> { 
                 struct FormData {} *m_ptr; 
             } m_httpBody; 
@@ -345,113 +294,24 @@
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
-        } x13; struct ResourceRequest { 
+        } x13; struct ResourceResponse { 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
-            } m_url; 
-            NSInteger m_cachePolicy; 
-            double m_timeoutInterval; 
-            struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
-                void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
-            } m_mainDocumentURL; 
-            struct String { 
-                struct RefPtr<WebCore::StringImpl> { 
-                    struct StringImpl {} *m_ptr; 
-                } m_impl; 
-            } m_httpMethod; 
-            struct HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
-                struct HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> > { 
-                    struct pair<WebCore::StringImpl*,int> {} *m_table; 
-                    NSInteger m_tableSize; 
-                    NSInteger m_tableSizeMask; 
-                    NSInteger m_keyCount; 
-                    NSInteger m_deletedCount; 
-                } m_impl; 
-            } m_httpHeaderFields; 
-            struct RefPtr<WebCore::FormData> { 
-                struct FormData {} *m_ptr; 
-            } m_httpBody; 
-            void*m_allowHTTPCookies; 
-            void*m_resourceRequestUpdated; 
-            void*m_platformRequestUpdated; 
-            struct RetainPtr<NSURLRequest> { 
-                NSURLRequest *m_ptr; 
-            } m_nsRequest; 
-        } x14; struct ResourceResponse { 
-            struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
-                void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_url; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
@@ -475,9 +335,9 @@
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpStatusText; 
-            struct HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
-                struct HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> > { 
-                    struct pair<WebCore::StringImpl*,int> {} *m_table; 
+            struct HTTPHeaderMap { 
+                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
+                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
                     NSInteger m_tableSize; 
                     NSInteger m_tableSizeMask; 
                     NSInteger m_keyCount; 
@@ -486,12 +346,15 @@
             } m_httpHeaderFields; 
             NSInteger m_expirationDate; 
             NSInteger m_lastModifiedDate; 
-            void*m_isUpToDate; 
-            void*m_isNull; 
+            unsigned int m_isNull : 1; 
+            unsigned int m_haveParsedCacheControl : 1; 
+            unsigned int m_cacheControlContainsMustRevalidate : 1; 
+            unsigned int m_cacheControlContainsNoCache : 1; 
             struct RetainPtr<NSURLResponse> { 
                 NSURLResponse *m_ptr; 
             } m_nsResponse; 
-        } x15; struct ResourceError { 
+            void*m_isUpToDate; 
+        } x14; struct ResourceError { 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
@@ -508,122 +371,103 @@
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_localizedDescription; 
+            void*m_isNull; 
+            void*m_isCancellation; 
             void*m_dataIsUpToDate; 
             struct RetainPtr<NSError> { 
                 NSError *m_ptr; 
             } m_platformError; 
-            void*m_isNull; 
-        } x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; struct String { 
+        } x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; struct String { 
             struct RefPtr<WebCore::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
-        } x24; struct String { 
+        } x23; struct String { 
             struct RefPtr<WebCore::StringImpl> { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
-        } x25; struct NavigationAction { 
+        } x24; struct NavigationAction { 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_URL; 
             NSInteger m_type; 
             struct RefPtr<WebCore::Event> { 
                 struct Event {} *m_ptr; 
             } m_event; 
-        } x26; struct ResourceRequest { 
+        } x25; struct ResourceRequest { 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_url; 
             NSInteger m_cachePolicy; 
             double m_timeoutInterval; 
             struct KURL { 
-                struct DeprecatedString { 
-                    struct DeprecatedStringData {} **dataHandle; 
-                    struct DeprecatedStringData { 
-                        NSUInteger refCount; 
-                        NSUInteger _length; 
-                        struct DeprecatedChar {} *_unicode; 
-                        char *_ascii; 
-                        unsigned int _maxUnicode : 30; 
-                        unsigned int _isUnicodeValid : 1; 
-                        unsigned int _isHeapAllocated : 1; 
-                        unsigned int _maxAscii : 31; 
-                        unsigned int _isAsciiValid : 1; 
-                        BOOL _internalBuffer[20]; 
-                    } internalData; 
-                } urlString; 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
                 void*m_isValid; 
-                NSInteger schemeEndPos; 
-                NSInteger userStartPos; 
-                NSInteger userEndPos; 
-                NSInteger passwordEndPos; 
-                NSInteger hostEndPos; 
-                NSInteger portEndPos; 
-                NSInteger pathEndPos; 
-                NSInteger queryEndPos; 
-                NSInteger fragmentEndPos; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
             } m_mainDocumentURL; 
             struct String { 
                 struct RefPtr<WebCore::StringImpl> { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_httpMethod; 
-            struct HashMap<WebCore::String,WebCore::String,WebCore::CaseFoldingHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
-                struct HashTable<WebCore::StringImpl*,std::pair<WebCore::StringImpl*, int>,WTF::PairFirstExtractor<std::pair<WebCore::StringImpl*, int> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::StringImpl*>, WTF::HashTraits<int32_t> >,WTF::HashTraits<WebCore::StringImpl*> > { 
-                    struct pair<WebCore::StringImpl*,int> {} *m_table; 
+            struct HTTPHeaderMap { 
+                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
+                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
                     NSInteger m_tableSize; 
                     NSInteger m_tableSizeMask; 
                     NSInteger m_keyCount; 
                     NSInteger m_deletedCount; 
                 } m_impl; 
             } m_httpHeaderFields; 
+            struct Vector<WebCore::String,0ul> { 
+                NSUInteger m_size; 
+                struct VectorBuffer<WebCore::String,0ul> { 
+                    struct String {} *m_buffer; 
+                    NSUInteger m_capacity; 
+                } m_buffer; 
+            } m_responseContentDispositionEncodingFallbackArray; 
             struct RefPtr<WebCore::FormData> { 
                 struct FormData {} *m_ptr; 
             } m_httpBody; 
@@ -633,21 +477,21 @@
             struct RetainPtr<NSURLRequest> { 
                 NSURLRequest *m_ptr; 
             } m_nsRequest; 
-        } x27; struct Vector<WebCore::ResourceResponse,0ul> { 
+        } x26; struct Vector<WebCore::ResourceResponse,0ul> { 
             NSUInteger m_size; 
             struct VectorBuffer<WebCore::ResourceResponse,0ul> { 
                 struct ResourceResponse {} *m_buffer; 
                 NSUInteger m_capacity; 
             } m_buffer; 
-        } x28; void*x29; struct HashMap<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > > { 
-            struct HashTable<int,std::pair<int, int>,WTF::PairFirstExtractor<std::pair<int, int> >,WTF::IntHash<int32_t>,WTF::PairHashTraits<WTF::HashTraits<int32_t>, WTF::HashTraits<int32_t> >,WTF::HashTraits<int32_t> > { 
-                struct pair<int,int> {} *m_table; 
+        } x27; void*x28; struct HashMap<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource>,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > > { 
+            struct HashTable<WTF::RefPtr<WebCore::ResourceLoader>,std::pair<WTF::RefPtr<WebCore::ResourceLoader>, WTF::RefPtr<WebCore::SubstituteResource> >,WTF::PairFirstExtractor<std::pair<WTF::RefPtr<WebCore::ResourceLoader>, WTF::RefPtr<WebCore::SubstituteResource> > >,WTF::PtrHash<WTF::RefPtr<WebCore::ResourceLoader> >,WTF::PairHashTraits<WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> >, WTF::HashTraits<WTF::RefPtr<WebCore::SubstituteResource> > >,WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader> > > { 
+                struct pair<WTF::RefPtr<WebCore::ResourceLoader>,WTF::RefPtr<WebCore::SubstituteResource> > {} *m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x30; struct Timer<WebCore::DocumentLoader> { 
+        } x29; struct Timer<WebCore::DocumentLoader> { 
             int (**_vptr$TimerBase)(); 
             double m_nextFireTime; 
             double m_repeatInterval; 
@@ -657,26 +501,43 @@
             struct { 
                 void**__pfn; 
             } m_function; 
-        } x31; struct RefPtr<WebCore::ApplicationCache> { 
+        } x30; struct OwnPtr<WebCore::ArchiveResourceCollection> { 
+            struct ArchiveResourceCollection {} *m_ptr; 
+        } x31; struct RefPtr<WebCore::SharedBuffer> { 
+            struct SharedBuffer {} *m_ptr; 
+        } x32; struct HashSet<WebCore::String,WebCore::StringHash,WTF::HashTraits<WebCore::String> > { 
+            struct HashTable<WebCore::String,WebCore::String,WTF::IdentityExtractor<WebCore::String>,WebCore::StringHash,WTF::HashTraits<WebCore::String>,WTF::HashTraits<WebCore::String> > { 
+                struct String {} *m_table; 
+                NSInteger m_tableSize; 
+                NSInteger m_tableSizeMask; 
+                NSInteger m_keyCount; 
+                NSInteger m_deletedCount; 
+            } m_impl; 
+        } x33; struct Vector<WebCore::String,0ul> { 
+            NSUInteger m_size; 
+            struct VectorBuffer<WebCore::String,0ul> { 
+                struct String {} *m_buffer; 
+                NSUInteger m_capacity; 
+            } m_buffer; 
+        } x34; void*x35; struct RefPtr<WebCore::ApplicationCache> { 
             struct ApplicationCache {} *m_ptr; 
-        } x32; struct ApplicationCacheGroup {} *x33; struct RefPtr<WebCore::ApplicationCache> { 
+        } x36; struct ApplicationCacheGroup {} *x37; struct RefPtr<WebCore::ApplicationCache> { 
             struct ApplicationCache {} *m_ptr; 
-        } x34; id x35; void*x36; void*x37; void*x38; unsigned int x39/* : ? */; void*x40; void*x41; void*x42; void*x43; unsigned short x44; out void*x45; const BOOL x46; void*x47; void*x48; void*x49; struct RetainPtr<objc_object*> { 
+        } x38; id x39; void*x40; void*x41; void*x42; unsigned int x43/* : ? */; void*x44; void*x45; void*x46; void*x47; unsigned short x48; out void*x49; const BOOL x50; void*x51; void*x52; void*x53; struct RetainPtr<objc_object*> { 
             id m_ptr; 
-        } x50; struct RetainPtr<objc_object*> { 
+        } x54; struct RetainPtr<objc_object*> { 
             id m_ptr; 
-        } x51; struct HashSet<long unsigned int,WTF::IntHash<uintptr_t>,WTF::HashTraits<long unsigned int> > { 
-            struct HashTable<long unsigned int,long unsigned int,WTF::IdentityExtractor<long unsigned int>,WTF::IntHash<uintptr_t>,WTF::HashTraits<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
+        } x55; struct HashSet<long unsigned int,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
+            struct HashTable<long unsigned int,long unsigned int,WTF::IdentityExtractor<long unsigned int>,WTF::IntHash<long unsigned int>,WTF::HashTraits<long unsigned int>,WTF::HashTraits<long unsigned int> > { 
                 unsigned long *m_table; 
                 NSInteger m_tableSize; 
                 NSInteger m_tableSizeMask; 
                 NSInteger m_keyCount; 
                 NSInteger m_deletedCount; 
             } m_impl; 
-        } x52; } *loader;
+        } x56; } *loader;
     <WebDocumentRepresentation> *representation;
     BOOL representationFinishedLoading;
-    WebUnarchivingState *unarchivingState;
 }
 
 + (void)initialize;

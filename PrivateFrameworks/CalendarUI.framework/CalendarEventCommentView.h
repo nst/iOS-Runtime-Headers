@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CalendarUI.framework/CalendarUI
  */
 
-@class CalendarEventEditModel, CalendarModel, UIPreferencesTable, UITextViewLegacy;
+@class CalendarEventEditModel, CalendarModel, UIPreferencesTable, UIPreferencesTableCell, UITextView;
 
 @interface CalendarEventCommentView : UIView <CalendarView> {
     CalendarEventEditModel *_editModel;
     CalendarModel *_model;
     UIPreferencesTable *_table;
-    UITextViewLegacy *_textView;
+    UIPreferencesTableCell *_tableCell;
+    UITextView *_textView;
 }
 
 + (id)navigationTitleForModel:(id)arg1;
@@ -16,8 +17,10 @@
 - (void)_selectedOccurrenceChanged:(id)arg1;
 - (void)cleanUp;
 - (void)dealloc;
+- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (void)finishedTransitionIn;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (NSInteger)numberOfGroupsInPreferencesTable:(id)arg1;
 - (NSInteger)numberOfRowsInTable:(id)arg1;
 - (id)preferencesTable:(id)arg1 cellForRow:(NSInteger)arg2 inGroup:(NSInteger)arg3;

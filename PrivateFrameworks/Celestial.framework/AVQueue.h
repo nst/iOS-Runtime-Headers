@@ -5,7 +5,7 @@
 @class NSMutableArray, NSRecursiveLock;
 
 @interface AVQueue : NSObject {
-    NSUInteger _flags;
+    NSInteger _isBeingModifiedCount;
     NSMutableArray *_items;
     NSRecursiveLock *_mutex;
     void *_reserved;
@@ -24,6 +24,7 @@
 - (id)initWithError:(id*)arg1;
 - (BOOL)insertItem:(id)arg1 afterItem:(id)arg2 error:(id*)arg3;
 - (BOOL)insertItem:(id)arg1 atIndex:(NSUInteger)arg2 error:(id*)arg3;
+- (BOOL)isBeingModified;
 - (id)itemAfterItem:(id)arg1;
 - (id)itemAtIndex:(NSUInteger)arg1;
 - (NSUInteger)itemCount;

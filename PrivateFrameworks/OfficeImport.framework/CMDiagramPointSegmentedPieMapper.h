@@ -4,6 +4,8 @@
 
 @interface CMDiagramPointSegmentedPieMapper : CMDiagramPointMapper {
     BOOL mDrawArrows;
+    NSUInteger mSegmentCount;
+    NSUInteger mSegmentIndex;
     float mStartAngle;
     float mStopAngle;
 }
@@ -11,7 +13,10 @@
 - (id)_arrowFillWithState:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)setDrawArrows:(BOOL)arg1;
+- (void)setSegmentCount:(NSUInteger)arg1;
+- (void)setSegmentIndex:(NSUInteger)arg1;
 - (void)setStartAngle:(float)arg1;
 - (void)setStopAngle:(float)arg1;
+- (id)transformPresentationName;
 
 @end

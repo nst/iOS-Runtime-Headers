@@ -21,9 +21,9 @@
     id _white;
 }
 
++ (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
 + (Class)classForClassName:(id)arg1;
 + (void)initialize;
-+ (id)safeUnarchiveObjectWithData:(id)arg1;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
 + (id)unarchiveObjectWithFile:(id)arg1;

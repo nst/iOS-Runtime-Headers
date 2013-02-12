@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSMutableArray, NSNumber, NSString;
+@class ASFolderItemsSyncResponse, NSArray, NSNumber, NSString;
 
 @interface ASCollection : ASItem {
-    NSMutableArray *_changedItems;
+    NSArray *_changedItems;
     BOOL _checkedShouldSniffInvites;
     NSInteger _collectionClassType;
     NSString *_collectionId;
     NSNumber *_moreAvailable;
-    NSMutableArray *_responseItems;
+    ASFolderItemsSyncResponse *_parentResponse;
+    NSArray *_responseItems;
     NSInteger _sniffableType;
     NSNumber *_status;
     NSString *_syncKey;
 }
+
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
 
 - (id)asParseRules;
 - (id)changedItems;
@@ -24,16 +30,17 @@
 - (id)description;
 - (id)init;
 - (id)moreAvailable;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)responseItems;
 - (void)setChangedItems:(id)arg1;
 - (void)setCollectionClassTypeString:(id)arg1;
 - (void)setCollectionId:(id)arg1;
 - (void)setMoreAvailable:(id)arg1;
+- (void)setParentResponse:(id)arg1;
 - (void)setResponseItems:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (void)setSyncKey:(id)arg1;
-- (NSInteger)sniffableType;
+- (NSInteger)sniffableTypeForAccount:(id)arg1;
 - (id)status;
 - (id)syncKey;
 

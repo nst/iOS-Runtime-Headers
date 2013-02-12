@@ -8,7 +8,7 @@
 }
 
 - (NSInteger)autoNumberSchemeType;
-- (id)initWithAutoNumberSchemeType:(NSInteger)arg1 startIndex:(NSInteger)arg2;
-- (NSInteger)startIndex;
+- (id)initWithAutoNumberSchemeType:(NSInteger)arg1 startIndex:(NSUInteger)arg2;
+- (NSUInteger)startIndex;
 
 @end

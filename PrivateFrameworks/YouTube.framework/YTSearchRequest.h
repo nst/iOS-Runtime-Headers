@@ -2,44 +2,23 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSURLRequest;
-
-@interface YTSearchRequest : XMLHTTPRequest {
-    NSURLRequest *_deferredRequest;
-    id _delegate;
-    BOOL _invalidatedToken;
-    NSUInteger _startIndex;
-    NSUInteger _totalResults;
-    NSMutableArray *_videos;
-    NSUInteger _videosPerPage;
+@interface YTSearchRequest : YTFeedRequest {
 }
 
-+ (id)_queryClientID;
-+ (id)_realServiceHostname;
-+ (id)_standardQueryParameters;
 + (id)feedCountryCode;
-+ (id)serviceHostname;
-+ (void)setUseHighQualityThumbnails:(BOOL)arg1;
 + (NSUInteger)videosPerRequest;
 
-- (void)_didAuthenticate;
-- (void)_failedToAuthenticate:(id)arg1;
-- (void)_loadRequest:(id)arg1 withDelegate:(id)arg2;
-- (void)_processEntryElement:(struct _xmlNode { void *x1; NSInteger x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
-- (void)_setDeferredRequest:(id)arg1;
-- (void)dealloc;
-- (void)didProcessDocument;
+- (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (BOOL)isLoading;
-- (void)loadRequest:(id)arg1;
-- (void)processDocument:(struct _xmlDoc { void *x1; NSInteger x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; NSInteger x10; NSInteger x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; NSInteger x20; struct _xmlDict {} *x21; void *x22; }*)arg1;
-- (void)receivedResponse:(id)arg1;
+- (BOOL)receivedValidResponse:(id)arg1;
+- (void)searchForFavoriteVideosStartingAtIndex:(NSUInteger)arg1 withDelegate:(id)arg2;
+- (void)searchForMyVideosStartingAtIndex:(NSUInteger)arg1 withDelegate:(id)arg2;
 - (void)searchForRecentVideosStartingAtIndex:(NSUInteger)arg1 withDelegate:(id)arg2;
 - (void)searchForVideoWithID:(id)arg1 withDelegate:(id)arg2;
+- (void)searchForVideosByAuthor:(id)arg1 startingAtIndex:(NSUInteger)arg2 maxResults:(NSUInteger)arg3 withDelegate:(id)arg4;
 - (void)searchForVideosMatchingString:(id)arg1 startingAtIndex:(NSUInteger)arg2 withDelegate:(id)arg3;
 - (void)searchForVideosRelatedToVideo:(id)arg1 withDelegate:(id)arg2;
-- (void)searchForVideosWithFeedURLBase:(id)arg1 startingAtIndex:(NSUInteger)arg2 withTimeQualifier:(id)arg3 withDelegate:(id)arg4;
-- (void)setDelegate:(id)arg1;
-- (void)willProcessDocument;
+- (void)searchForVideosWithFeedURLBase:(id)arg1 startingAtIndex:(NSUInteger)arg2 maxResults:(NSInteger)arg3 withTimeQualifier:(id)arg4 authenticationRequired:(BOOL)arg5 withDelegate:(id)arg6;
+- (void)searchForVideosWithIDs:(id)arg1 withDelegate:(id)arg2;
 
 @end

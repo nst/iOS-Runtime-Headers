@@ -10,6 +10,7 @@
 + (NSInteger)readLineEndLength:(NSInteger)arg1;
 + (NSInteger)readLineEndType:(NSInteger)arg1;
 + (NSInteger)readLineEndWidth:(NSInteger)arg1;
++ (id)readLineEndWithType:(NSInteger)arg1 width:(NSInteger)arg2 length:(NSInteger)arg3;
 + (NSInteger)readPresetDashStyle:(NSInteger)arg1;
 + (id)readStrokeFromShapeBaseManager:(id)arg1 colorPalette:(id)arg2;
 

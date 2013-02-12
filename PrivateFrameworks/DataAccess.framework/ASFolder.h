@@ -8,9 +8,15 @@
     NSInteger _changeType;
     NSString *_displayName;
     NSInteger _folderType;
+    NSInteger _localID;
     NSString *_parentID;
     NSString *_serverID;
 }
+
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
 
 - (id)_folderTypeString;
 - (id)asParseRules;
@@ -22,11 +28,12 @@
 - (NSInteger)folderType;
 - (NSUInteger)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFolderType:(NSInteger)arg1 serverID:(id)arg2 parentID:(id)arg3 displayName:(id)arg4;
+- (id)initWithFolderType:(NSInteger)arg1 serverID:(id)arg2 parentID:(id)arg3 displayName:(id)arg4 localID:(NSInteger)arg5;
 - (BOOL)isEqual:(id)arg1;
-- (NSInteger)mayContainSyncContent:(NSInteger)arg1;
+- (NSInteger)localID;
+- (BOOL)mayContainSyncContent:(NSInteger)arg1;
 - (id)parentID;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)serverID;
 - (void)setChangeType:(NSInteger)arg1;
 - (void)setDisplayName:(id)arg1;

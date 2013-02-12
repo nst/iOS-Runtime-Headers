@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSMutableSet;
 
 @interface WAKView : WAKResponder {
@@ -23,19 +27,10 @@
     struct WKView { struct _WKObject { 
             NSUInteger referenceCount; 
             struct _WKClassInfo {} *classInfo; 
-        } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct _CGSBoundingShape {} *x6; struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } x7; struct CGPoint { 
+        } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { 
             float x; 
             float y; 
-        } x8; struct CGRect { 
+        } x6; struct CGRect { 
             struct CGPoint { 
                 float x; 
                 float y; 
@@ -44,32 +39,34 @@
                 float width; 
                 float height; 
             } size; 
-        } x9; unsigned int x10 : 1; unsigned int x11 : 1; NSUInteger x12; float x13; struct CGSize { 
-            float width; 
-            float height; 
+     /* Encoded args for previous method: @12@0:4^{WKView={_WKObject=I^{_WKClassInfo}}^{_WKViewContext}^{WKWindow}^{WKView}^{__CFArray}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}b1IfB}8 */
+     /* Encoded args for previous method: @12@0:4^{WKView={_WKObject=I^{_WKClassInfo}}^{_WKViewContext}^{WKWindow}^{WKView}^{__CFArray}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}b1IfB}8 */
+     /* Encoded args for previous method: ^{WKView={_WKObject=I^{_WKClassInfo}}^{_WKViewContext}^{WKWindow}^{WKView}^{__CFArray}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}b1IfB}8@0:4 */
     NSMutableSet *subviewReferences;
     } viewContext;
-        } x14; } *viewRef;
+        } x7; unsigned int x8 : 1; NSUInteger x9; float x10; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x11; } *viewRef;
 }
 
 + (void)_addViewWrapper:(id)arg1;
 + (void)_removeViewWrapper:(id)arg1;
 + (struct __CFDictionary { }*)_viewWrappers;
-+ (id)_wrapperForViewRef:(struct WKView { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct _CGSBoundingShape {} *x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGPoint { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; unsigned int x10 : 1; unsigned int x11 : 1; NSUInteger x12; float x13; struct CGSize { float x_14_1_1; float x_14_1_2; } x14; }*)arg1;
++ (id)_wrapperForViewRef:(struct WKView { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; NSUInteger x9; float x10; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x11; }*)arg1;
 + (id)focusView;
 
 - (id)_frame;
 - (void)_handleEvent:(struct __GSEvent { }*)arg1;
 - (BOOL)_handleResponderCall:(NSInteger)arg1;
-- (id)_initWithViewRef:(struct WKView { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct _CGSBoundingShape {} *x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGPoint { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; unsigned int x10 : 1; unsigned int x11 : 1; NSUInteger x12; float x13; struct CGSize { float x_14_1_1; float x_14_1_2; } x14; }*)arg1;
+- (id)_initWithViewRef:(struct WKView { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; NSUInteger x9; float x10; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x11; }*)arg1;
+- (void)_setDrawsOwnDescendants:(BOOL)arg1;
 - (id)_subviewReferences;
-- (struct WKView { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct _CGSBoundingShape {} *x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGPoint { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; unsigned int x10 : 1; unsigned int x11 : 1; NSUInteger x12; float x13; struct CGSize { float x_14_1_1; float x_14_1_2; } x14; }*)_viewRef;
+- (struct WKView { struct _WKObject { NSUInteger x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8 : 1; NSUInteger x9; float x10; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x11; }*)_viewRef;
 - (id)_webView;
+- (void)_web_addDescendantWebHTMLViewsToArray:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_web_convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toView:(id)arg2;
 - (BOOL)_web_firstResponderIsSelfOrDescendantView;
 - (id)_web_parentWebFrameView;
-- (id)_web_superviewOfClass:(Class)arg1 stoppingAtClass:(Class)arg2;
 - (id)_web_superviewOfClass:(Class)arg1;
+- (BOOL)accessibilityIsIgnored;
 - (void)addSubview:(id)arg1;
 - (NSUInteger)autoresizingMask;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
@@ -124,6 +121,7 @@
 - (id)superview;
 - (void)unlockFocus;
 - (void)viewDidMoveToWindow;
+- (void)viewWillDraw;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (void)willRemoveSubview:(id)arg1;
 - (id)window;

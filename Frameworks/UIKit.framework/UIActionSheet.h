@@ -46,6 +46,7 @@
     NSInteger _actionSheetStyle;
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
+    UIView *_buttonTableView;
     NSMutableArray *_buttons;
     NSInteger _cancelButton;
     id _context;
@@ -57,6 +58,7 @@
     NSInteger _firstOtherButton;
     UIView *_keyboard;
     } _modalViewFlags;
+    UIWindow *_originalWindow;
     float _startY;
     UILabel *_subtitleLabel;
     NSInteger _suspendTag;
@@ -120,6 +122,7 @@
 - (void)_slideSheetOut:(BOOL)arg1;
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
 - (float)_titleHorizontalInset;
+- (id)_titleLabel;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
 - (NSInteger)actionSheetStyle;
@@ -132,6 +135,7 @@
 - (BOOL)blocksInteraction;
 - (NSInteger)bodyMaxLineCount;
 - (id)bodyText;
+- (id)buttonAtIndex:(NSInteger)arg1;
 - (NSInteger)buttonCount;
 - (id)buttonTitleAtIndex:(NSInteger)arg1;
 - (id)buttons;
@@ -202,6 +206,9 @@
 - (NSInteger)suspendTag;
 - (id)table;
 - (BOOL)tableShouldShowMinimumContent;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
 - (id)textField;
 - (id)textFieldAtIndex:(NSInteger)arg1;
 - (NSInteger)textFieldCount;

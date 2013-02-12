@@ -49,6 +49,7 @@
 + (id)createAccountWithDictionary:(id)arg1;
 + (id)defaultAccountDirectory;
 + (id)defaultDeliveryAccount;
++ (id)defaultMailAccountForDelivery;
 + (id)defaultPathForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (void)deleteMailboxUidIfEmpty:(id)arg1;
@@ -81,7 +82,6 @@
 + (void)setMailAccounts:(id)arg1 saveIfChanged:(BOOL)arg2;
 + (void)setMailAccounts:(id)arg1;
 + (id)standardAccountClass:(Class)arg1 valueForKey:(id)arg2;
-+ (BOOL)supportsRemoteAppend;
 + (void)synchronouslyEmptyMailboxUidType:(NSInteger)arg1 inAccounts:(id)arg2;
 + (void)updateAutoFetchSettings;
 + (BOOL)usernameIsEmailAddress;
@@ -117,6 +117,7 @@
 - (void)_readCustomInfoFromMailboxCache:(id)arg1;
 - (void)_resetAllMailboxURLs:(BOOL)arg1;
 - (BOOL)_resetSpecialMailboxes;
+- (void)_setAccountProperties:(id)arg1;
 - (BOOL)_setChildren:(id)arg1 forMailboxUid:(id)arg2;
 - (void)_setEmptyFrequency:(NSInteger)arg1 forKey:(id)arg2;
 - (BOOL)_setPath:(id)arg1;
@@ -135,7 +136,6 @@
 - (void)accountDidLoad;
 - (id)allMailboxUids;
 - (BOOL)archiveSentMessages;
-- (NSInteger)autoFetchInterval;
 - (NSInteger)cachePolicy;
 - (BOOL)canAppendMessages;
 - (BOOL)canBeSynchronized;
@@ -151,7 +151,6 @@
 - (id)connectionError;
 - (BOOL)containsMailboxes;
 - (void)dealloc;
-- (id)defaultsDictionary;
 - (id)deleteAccount;
 - (id)deleteAccountWithOptions:(NSUInteger)arg1;
 - (BOOL)deleteInPlace;
@@ -199,7 +198,6 @@
 - (id)path;
 - (void)postUserInfoHasChangedForMailboxUid:(id)arg1 userInfo:(id)arg2;
 - (id)primaryMailboxUid;
-- (BOOL)receivesNewMailNotifications;
 - (BOOL)reconstituteOrphanedMeetingInMessage:(id)arg1;
 - (void)releaseAllConnections;
 - (void)releaseAllForcedConnections;
@@ -226,10 +224,9 @@
 - (void)setPortNumber:(NSUInteger)arg1;
 - (void)setUnreadCount:(NSUInteger)arg1 forMailbox:(id)arg2;
 - (void)setUsername:(id)arg1;
-- (void)setValueInAccountInfo:(id)arg1 forKey:(id)arg2;
+- (void)setValueInAccountProperties:(id)arg1 forKey:(id)arg2;
 - (void)setupLibrary;
 - (BOOL)shouldAppearInMailSettings;
-- (BOOL)shouldAutoFetch;
 - (BOOL)shouldExpungeMessagesOnDelete;
 - (BOOL)shouldRestoreMessagesAfterFailedDelete;
 - (id)specialMailboxNameForType:(NSInteger)arg1;
@@ -238,6 +235,7 @@
 - (Class)storeClass;
 - (Class)storeClassForMailbox:(id)arg1;
 - (id)storeForMailboxUid:(id)arg1;
+- (BOOL)supportsRemoteAppend;
 - (void)synchronizeAllMailboxes;
 - (void)systemDidWake;
 - (void)systemWillSleep;

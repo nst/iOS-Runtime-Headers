@@ -2,50 +2,35 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMMapPoint;
 
-@interface GMMMapInfo : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMMapInfo : PBCodable {
     GMMMapPoint *_center;
-    BOOL _hasLatitudeSpan;
-    BOOL _hasLongitudeSpan;
     BOOL _hasZoomLevel;
     NSInteger _latitudeSpan;
     NSInteger _longitudeSpan;
     NSInteger _zoomLevel;
 }
 
-@property BOOL hasZoomLevel; /* unknown property attribute: V_hasZoomLevel */
+@property(readonly) BOOL hasZoomLevel; /* unknown property attribute: V_hasZoomLevel */
 @property NSInteger zoomLevel; /* unknown property attribute: V_zoomLevel */
-@property BOOL hasLongitudeSpan; /* unknown property attribute: V_hasLongitudeSpan */
 @property NSInteger longitudeSpan; /* unknown property attribute: V_longitudeSpan */
-@property BOOL hasLatitudeSpan; /* unknown property attribute: V_hasLatitudeSpan */
 @property NSInteger latitudeSpan; /* unknown property attribute: V_latitudeSpan */
 @property(retain) GMMMapPoint *center; /* unknown property attribute: V_center */
-@property(readonly) BOOL hasCenter;
 
 - (id)center;
 - (void)dealloc;
-- (BOOL)hasCenter;
-- (BOOL)hasLatitudeSpan;
-- (BOOL)hasLongitudeSpan;
+- (id)description;
 - (BOOL)hasZoomLevel;
 - (id)init;
 - (NSInteger)latitudeSpan;
 - (NSInteger)longitudeSpan;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCenter:(id)arg1;
-- (void)setHasLatitudeSpan:(BOOL)arg1;
-- (void)setHasLongitudeSpan:(BOOL)arg1;
-- (void)setHasZoomLevel:(BOOL)arg1;
 - (void)setLatitudeSpan:(NSInteger)arg1;
 - (void)setLongitudeSpan:(NSInteger)arg1;
 - (void)setZoomLevel:(NSInteger)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 - (NSInteger)zoomLevel;
 
 @end

@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSString, OADFill, OADTableStyle;
+@class NSArray, NSString, OADTableStyle;
 
-@interface OADTableProperties : OADDrawableProperties {
+@interface OADTableProperties : OADDrawableProperties <OADEffectsParent> {
     BOOL mBandColumn;
     BOOL mBandRow;
     NSArray *mEffects;
-    OADFill *mFill;
     BOOL mFirstColumn;
     BOOL mFirstRow;
     BOOL mLastColumn;
@@ -24,12 +23,10 @@
 - (BOOL)bandRow;
 - (void)dealloc;
 - (id)effects;
-- (id)fill;
 - (BOOL)firstColumn;
 - (BOOL)firstRow;
 - (BOOL)hasBandsNormalToDir:(NSInteger)arg1;
 - (BOOL)hasEffects;
-- (BOOL)hasFill;
 - (BOOL)hasVectorNormalToDir:(NSInteger)arg1 atExtremePos:(NSInteger)arg2;
 - (id)initWithDefaults;
 - (BOOL)lastColumn;
@@ -38,7 +35,6 @@
 - (void)setBandColumn:(BOOL)arg1;
 - (void)setBandRow:(BOOL)arg1;
 - (void)setEffects:(id)arg1;
-- (void)setFill:(id)arg1;
 - (void)setFirstColumn:(BOOL)arg1;
 - (void)setFirstRow:(BOOL)arg1;
 - (void)setLastColumn:(BOOL)arg1;

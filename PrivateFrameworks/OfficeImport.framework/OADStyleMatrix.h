@@ -18,11 +18,14 @@
 - (id)bgFillAtIndex:(NSUInteger)arg1;
 - (NSUInteger)bgFillCount;
 - (void)dealloc;
+- (id)effectsAtIndex:(NSUInteger)arg1 color:(id)arg2;
 - (id)effectsAtIndex:(NSUInteger)arg1;
 - (NSUInteger)effectsCount;
+- (id)fillAtIndex:(NSUInteger)arg1 color:(id)arg2;
 - (id)fillAtIndex:(NSUInteger)arg1;
 - (NSUInteger)fillCount;
 - (id)init;
+- (id)strokeAtIndex:(NSUInteger)arg1 color:(id)arg2;
 - (id)strokeAtIndex:(NSUInteger)arg1;
 - (NSUInteger)strokeCount;
 

@@ -19,7 +19,6 @@
 
 - (id)HTTPBody;
 - (id)HTTPBodyStream;
-- (id)HTTPBodyStreamForTransmission;
 - (id)HTTPContentType;
 - (id)HTTPExtraCookies;
 - (id)HTTPMethod;
@@ -37,7 +36,6 @@
 - (id)_web_HTTPContentType;
 - (id)_web_HTTPReferrer;
 - (BOOL)_web_isConditionalRequest;
-- (void)_web_setFileRequestReloadIgnoringCacheDataPolicyIfPossible;
 - (id)allHTTPHeaderFields;
 - (NSUInteger)cachePolicy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

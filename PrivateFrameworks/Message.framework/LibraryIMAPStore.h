@@ -46,13 +46,12 @@
 - (id)_fetchHeaderDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;
 - (NSInteger)_fetchMessagesWithArguments:(id)arg1 idRange:(id)arg2 onConnection:(id)arg3 synchronize:(BOOL)arg4 limit:(NSUInteger)arg5 topUIDToCompact:(NSUInteger)arg6 topKnownUID:(NSUInteger)arg7 success:(BOOL*)arg8 examinedRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; }*)arg9 fetchableUIDsFound:(NSUInteger*)arg10 preserveUID:(NSUInteger*)arg11;
 - (void)_handleFlagsChangedForMessages:(id)arg1 oldFlagsByMessage:(id)arg2;
-- (void)_invalidate;
-- (void)_invalidateInBackground;
 - (id)_performBodyDataDownload:(id)arg1 usingConnection:(id)arg2 isPartial:(BOOL*)arg3;
 - (void)_retrieveNewMessagesForCheckingNewMail:(BOOL)arg1;
 - (void)_setFlagsAndColorForMessages:(id)arg1;
 - (void)_setFlagsForMessages:(id)arg1 mask:(unsigned long)arg2;
 - (void)_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (BOOL)_shouldContinueToPreservedUID:(NSUInteger)arg1;
 - (void)_synchronouslySetFlags:(id)arg1 clearFlags:(id)arg2 forMessages:(id)arg3 originalChanges:(id)arg4;
 - (id)_uidsForMessages:(id)arg1;
 - (void)addFlagChanges:(id)arg1 forMessages:(id)arg2;
@@ -61,9 +60,9 @@
 - (NSInteger)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5 customIMAPFlagsToSet:(id)arg6;
 - (NSInteger)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
 - (BOOL)canCompact;
+- (BOOL)canFetchSearchResults;
 - (BOOL)canPerformOfflineAppend;
 - (BOOL)canRebuild;
-- (NSInteger)checkNewMail;
 - (void)close;
 - (void)connection:(id)arg1 didBeginBodyLoad:(id)arg2;
 - (void)connection:(id)arg1 didFinishLoadingBodyData:(id)arg2;
@@ -82,16 +81,16 @@
 - (id)deletedMessages;
 - (void)doCompact;
 - (id)downloadCache;
+- (NSInteger)fetchMessagesMatchingCriterion:(id)arg1 limit:(NSUInteger)arg2;
 - (NSInteger)fetchNewMessagesAndSynchronizeOldMessages:(BOOL)arg1;
-- (NSInteger)fetchNumMessages:(NSUInteger)arg1 preservingUID:(id)arg2 beforeUID:(NSUInteger)arg3 synchronize:(BOOL)arg4;
+- (NSInteger)fetchNumMessages:(NSUInteger)arg1 preservingUID:(id)arg2 beforeUID:(NSUInteger)arg3 synchronize:(BOOL)arg4 compact:(BOOL)arg5;
 - (id)fetchPipeline;
-- (NSInteger)fetchSynchronously;
 - (void)focusedMessageDidChange:(id)arg1;
 - (void)forceResync;
 - (BOOL)hasMoreMessages:(NSUInteger)arg1;
 - (BOOL)hasValidCacheFileForMessage:(id)arg1;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(BOOL)arg2;
-- (id)lockedConnection:(BOOL*)arg1;
+- (id)lockedConnection;
 - (id)mailboxName;
 - (id)messageForRemoteID:(id)arg1;
 - (id)offlineCache;
@@ -100,6 +99,7 @@
 - (void)removeAllLocalMessages;
 - (NSUInteger)serverMessageCount;
 - (NSUInteger)serverUnreadCount;
+- (NSUInteger)serverUnreadOnlyOnServerCount;
 - (void)setDownloadDelegate:(id)arg1;
 - (void)setFlagsCancelled:(id)arg1 forMessages:(id)arg2;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
@@ -111,10 +111,8 @@
 - (void)startSynchronization;
 - (NSInteger)syncMessagesInIMAPRange:(struct { NSUInteger x1; NSUInteger x2; })arg1 withConnection:(id)arg2 compactingExpungedMessagesToUid:(NSUInteger)arg3;
 - (void)syncOlderMessages;
-- (void)synchronize;
 - (void)updateDeletedCount;
 - (void)updateDeletedCountWithNotDeletedCount:(NSUInteger)arg1;
-- (id)willBeReleased;
 - (id)willSetFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 
 @end

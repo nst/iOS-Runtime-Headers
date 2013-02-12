@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABModel, NSString;
+@class ABModel;
 
 @interface ABPeoplePickerNavigationController : UINavigationController {
     struct { 
         unsigned int allowsEditing : 1; 
         unsigned int allowsCancel : 1; 
         unsigned int allowsActions : 1; 
+        unsigned int allowsSound : 1; 
     void *_addressBook;
     NSInteger _behavior;
     struct __CFArray { } *_displayedProperties;
@@ -17,21 +18,26 @@
     id _insertionValue;
     ABModel *_model;
     id _peoplePickerDelegate;
-    NSString *_prompt;
+    id _reserved1;
+    id _reserved2;
+    id _reserved3;
 }
 
 @property <ABPeoplePickerNavigationControllerDelegate> *peoplePickerDelegate; /* unknown property attribute: V_peoplePickerDelegate */
 @property void *addressBook;
 @property(copy) NSArray *displayedProperties;
 
++ (void)notifyPreferencesChanged;
+
+- (BOOL)_allowsAutorotation;
 - (void)_performCancel:(id)arg1;
-- (BOOL)_showCardForPerson:(void*)arg1 animate:(BOOL)arg2 forceDisableEditing:(BOOL)arg3;
-- (BOOL)_showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
 - (void)_updateViewControllerNavigationButtons;
 - (void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsCancel;
 - (BOOL)allowsCardEditing;
+- (id)bannerTitle;
+- (id)bannerValue;
 - (NSInteger)behavior;
 - (void)dealloc;
 - (id)displayedProperties;
@@ -42,20 +48,34 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (NSInteger)insertionProperty;
 - (id)insertionValue;
+- (BOOL)isDefaultViewControllerVisible;
+- (void)loadState;
+- (id)membersViewController;
 - (id)model;
+- (void)notePreferencesChanged;
 - (id)peoplePickerDelegate;
+- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4 withMemberCell:(id)arg5;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4;
-- (id)prompt;
+- (void)popToDefaultViewController:(BOOL)arg1;
+- (id)promptForViewControllerType:(NSInteger)arg1;
+- (void)pushCleanGroupsAndMembersViewControllersAndLoadState:(BOOL)arg1;
 - (void)saveState;
 - (void)setAddressBook:(void*)arg1;
 - (void)setAllowsCancel:(BOOL)arg1;
 - (void)setAllowsCardEditing:(BOOL)arg1;
+- (void)setAllowsRingtone:(BOOL)arg1;
+- (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setBehavior:(NSInteger)arg1;
 - (void)setDisplayedProperties:(id)arg1;
 - (void)setInsertionValue:(id)arg1 property:(NSInteger)arg2;
 - (void)setPeoplePickerDelegate:(id)arg1;
+- (void)setPrompt:(id)arg1 forViewControllerType:(NSInteger)arg2;
 - (void)setPrompt:(id)arg1;
 - (BOOL)shouldShowGroups;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 forceDisableEditing:(BOOL)arg4;
+- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
+- (void)showPerson:(void*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -8,6 +8,7 @@
 + (id)createFilteredString:(id)arg1;
 + (id)createHeadElementForDeviceWidth:(NSInteger)arg1;
 + (id)createHeadElementWithTitle:(id)arg1 deviceWidth:(NSInteger)arg2;
++ (id)createHeadElementWithTitle:(id)arg1;
 + (id)createXhtmlDocument;
 + (void)filterString:(id)arg1;
 + (id)xhtmlStringWithXmlData:(id)arg1;

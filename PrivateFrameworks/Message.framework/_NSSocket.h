@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MessageInvocation, NSString;
+@class NSInvocation, NSString;
 
 @interface _NSSocket : NSObject {
     unsigned int _numTimeoutSecs : 16;
@@ -12,7 +12,7 @@
     unsigned int _error : 1;
     unsigned int _closed : 1;
     NSInteger _dataContextIdentifier;
-    MessageInvocation *_eventHandler;
+    NSInvocation *_eventHandler;
     double _lastUsedTime;
     NSString *_protocol;
     struct __CFReadStream { } *_readStream;

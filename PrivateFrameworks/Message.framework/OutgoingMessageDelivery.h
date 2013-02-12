@@ -4,7 +4,7 @@
 
 @class DeliveryAccount, MailAccount, MailDelivery, Message, MutableMessageHeaders, NSArray, NSString, PlainTextDocument;
 
-@interface OutgoingMessageDelivery : SafeObserver {
+@interface OutgoingMessageDelivery : WRObject {
     MailAccount *_archiveAccount;
     MailDelivery *_currentDeliveryObject;
     id _delegate;

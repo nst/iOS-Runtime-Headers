@@ -15,7 +15,6 @@
 + (NSInteger)randomTransition;
 + (id)sharedInstance;
 
-- (BOOL)debugIndexSheetScrolling;
 - (id)init;
 - (id)musicForSlideshow;
 - (NSInteger)secondsPerSlide;

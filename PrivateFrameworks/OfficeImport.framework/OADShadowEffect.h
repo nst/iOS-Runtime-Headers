@@ -17,6 +17,7 @@
 - (void)dealloc;
 - (float)distance;
 - (id)initWithShadowEffect:(id)arg1 type:(NSInteger)arg2;
+- (id)initWithType:(NSInteger)arg1;
 - (void)setAngle:(float)arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setColor:(id)arg1;

@@ -18,6 +18,7 @@
     ECMappingContext *mMappingContext;
     NSMutableArray *mOtherResources;
     EDProcessors *mProcessors;
+    NSUInteger mRealSheetCount;
     EDResources *mResources;
     NSMutableArray *mSheets;
     OCDSummary *mSummary;
@@ -41,12 +42,14 @@
 - (void)insertSheet:(id)arg1 atIndex:(NSUInteger)arg2;
 - (id)mappingContext;
 - (id)processors;
+- (NSUInteger)realSheetCount;
 - (void)removeWorksheetAtIndex:(NSUInteger)arg1;
 - (id)resources;
 - (void)setCachedTokenConverter:(id)arg1;
 - (void)setCachedUnsupportedTokenConverter:(id)arg1;
 - (void)setDateBase:(NSUInteger)arg1;
 - (void)setMappingContext:(id)arg1;
+- (void)setRealSheetCount:(NSUInteger)arg1;
 - (id)sheetAtIndex:(NSUInteger)arg1;
 - (NSUInteger)sheetCount;
 - (id)summary;

@@ -52,6 +52,7 @@
 + (float)minimumHeight;
 + (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tentative:(BOOL)arg2 color:(id)arg3 selected:(BOOL)arg4 title:(id)arg5 location:(id)arg6;
 
+- (id)_accessibilityCalEventOccurrence;
 - (void)_drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_getTitleMetrics:(id*)arg1 endPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (void)_invalidateMetrics;
@@ -60,7 +61,6 @@
 - (id)_titleFont;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tentative:(BOOL)arg2 color:(id)arg3 selected:(BOOL)arg4 title:(id)arg5 location:(id)arg6;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (struct CalEventOccurrence { }*)occurrence;
 - (void)removeFromSuperview;
 - (void)setColor:(id)arg1;
@@ -73,5 +73,6 @@
 - (void)setTitle:(id)arg1;
 - (void)setVisibleHeight:(float)arg1;
 - (BOOL)shouldTrack;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

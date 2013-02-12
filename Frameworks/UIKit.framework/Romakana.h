@@ -8,6 +8,7 @@
 
 + (id)hiraganaString:(id)arg1 mappingArray:(id)arg2 withKanaMode:(BOOL)arg3;
 + (id)hiraganaString:(id)arg1 withKanaMode:(BOOL)arg2;
++ (id)oneKanaToRoma:(id)arg1;
 
 - (id)initWithKanaMode:(BOOL)arg1;
 - (id)roma2hiragana:(id)arg1 stripIncompleteRomajiAtEnd:(BOOL)arg2;

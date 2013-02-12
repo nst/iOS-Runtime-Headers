@@ -23,7 +23,9 @@
 - (long)index;
 - (id)init;
 - (id)initWithIndex:(long)arg1 name:(id)arg2;
+- (BOOL)isNull;
 - (id)name;
+- (void)removeEffectAtIndex:(NSUInteger)arg1;
 - (void)setBlip:(id)arg1;
 - (void)setFilename:(id)arg1 data:(id)arg2;
 - (void)setName:(id)arg1;

@@ -2,17 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColorScheme, OADStyleMatrix;
-
-@interface OADThemeOverrides : NSObject {
-    OADColorScheme *mColorScheme;
-    OADStyleMatrix *mStyleMatrix;
+@interface OADThemeOverrides : OADBaseStylesBase {
 }
 
-- (id)colorScheme;
-- (void)dealloc;
 - (void)setColorScheme:(id)arg1;
+- (void)setFontScheme:(id)arg1;
 - (void)setStyleMatrix:(id)arg1;
-- (id)styleMatrix;
 
 @end

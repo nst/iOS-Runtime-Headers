@@ -9,10 +9,11 @@
 }
 
 - (void)addSourceID:(id)arg1 sourceFolder:(id)arg2 destinatonFolder:(id)arg3;
-- (id)command;
+- (NSInteger)commandCode;
 - (void)dealloc;
 - (void)finishWithError:(id)arg1;
 - (BOOL)processContext:(id)arg1;
 - (id)requestBody;
+- (NSInteger)taskStatusForExchangeStatus:(NSInteger)arg1;
 
 @end

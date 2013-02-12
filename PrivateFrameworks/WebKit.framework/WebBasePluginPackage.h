@@ -50,6 +50,7 @@
 - (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPluginDescription:(id)arg1;
+- (void)unload;
 - (unsigned long)versionNumber;
 - (void)wasAddedToPluginDatabase:(id)arg1;
 - (void)wasRemovedFromPluginDatabase:(id)arg1;

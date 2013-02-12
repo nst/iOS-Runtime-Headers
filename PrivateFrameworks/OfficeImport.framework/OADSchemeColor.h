@@ -6,8 +6,10 @@
     NSInteger mIndex;
 }
 
++ (id)schemeColorWithIndex:(NSInteger)arg1;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithSchemeColorIndex:(NSInteger)arg1;
-- (NSInteger)schemeColorIndex;
+- (id)initWithSchemeColorIndex:(NSUInteger)arg1;
+- (NSUInteger)schemeColorIndex;
 
 @end

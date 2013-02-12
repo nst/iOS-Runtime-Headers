@@ -13,6 +13,12 @@
 + (id)defaultCenter;
 + (void)setNotificationCenterSerializeRemoves:(BOOL)arg1;
 
+- (void)_ay_postNotification:(id)arg1 inThread:(id)arg2 beforeDate:(id)arg3;
+- (void)_ay_postNotification:(id)arg1 inThread:(id)arg2;
+- (void)_ay_postNotificationName:(id)arg1 object:(id)arg2 inThread:(id)arg3 beforeDate:(id)arg4;
+- (void)_ay_postNotificationName:(id)arg1 object:(id)arg2 inThread:(id)arg3;
+- (void)_ay_postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3 inThread:(id)arg4 beforeDate:(id)arg5;
+- (void)_ay_postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3 inThread:(id)arg4;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
 - (void)dealloc;
 - (id)description;

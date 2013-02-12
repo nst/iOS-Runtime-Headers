@@ -6,39 +6,47 @@
 }
 
 + (id)arrayWithCapacity:(NSUInteger)arg1;
++ (id)nonRetainingArray;
 
 - (void)_kb_reverse;
+- (NSUInteger)_mapkit_insertSortedAnnotationView:(id)arg1 reverse:(BOOL)arg2;
+- (NSUInteger)_mapkit_insertSortedAnnotationView:(id)arg1;
+- (void)_mapkit_sortUsingDistanceFromCoordinate:(struct { double x1; double x2; })arg1 ascending:(BOOL)arg2;
+- (void)_mapkit_sortUsingDistanceFromCoordinate:(struct { double x1; double x2; })arg1;
+- (void)_mapkit_sortUsingLatitude;
+- (void)_mapkit_sortUsingLatitudeAscending:(BOOL)arg1;
+- (void)_mapkit_sortUsingLongitude;
+- (void)_mapkit_sortUsingLongitudeAscending:(BOOL)arg1;
 - (id)abPop;
 - (void)abPush:(id)arg1;
-- (void)abSortViewsTopToBottom;
 - (id)abTop;
 - (void)addMessageEntry:(id)arg1;
 - (void)addObject:(id)arg1;
-- (BOOL)addObjectIfAbsent:(id)arg1;
-- (BOOL)addObjectIfAbsentAccordingToEquals:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)addObjectsFromArray:(id)arg1;
-- (void)addPin:(id)arg1;
-- (void)addSearchResult:(id)arg1;
-- (void)addSearchResultInAscendingLat:(id)arg1;
-- (void)addSearchResultsFromArray:(id)arg1;
+- (void)applySelector:(SEL)arg1 withObject:(id)arg2;
+- (void)applySelector:(SEL)arg1;
 - (Class)classForCoder;
 - (void)exchange:(NSUInteger)arg1 :(NSUInteger)arg2;
 - (void)exchangeObjectAtIndex:(NSUInteger)arg1 withObjectAtIndex:(NSUInteger)arg2;
-- (NSUInteger)indexOfObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
-- (NSUInteger)indexWhereObjectWouldBeInserted:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
+- (void)filterUsingPredicate:(id)arg1;
 - (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2;
 - (void)insertObject:(id)arg1 atIndex:(NSUInteger)arg2;
-- (NSUInteger)insertObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
+- (BOOL)mf_addObjectIfAbsent:(id)arg1;
+- (BOOL)mf_addObjectIfAbsentAccordingToEquals:(id)arg1;
+- (NSUInteger)mf_indexOfObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
+- (NSUInteger)mf_indexWhereObjectWouldBeInserted:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
+- (NSUInteger)mf_insertObject:(id)arg1 usingSortFunction:(int (*)())arg2 context:(void*)arg3;
 - (void*)pop;
 - (id)pop;
 - (void)push:(id)arg1;
 - (void)push:(void*)arg1;
 - (void)removeAllObjects;
+- (void)removeAllObjectsWithClass:(Class)arg1;
 - (void)removeLastObject;
 - (void)removeObject:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)removeObject:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 identical:(BOOL)arg3;
@@ -50,6 +58,7 @@
 - (void)removeObjectsFromIndices:(NSUInteger*)arg1 numIndices:(NSUInteger)arg2;
 - (void)removeObjectsInArray:(id)arg1;
 - (void)removeObjectsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1;
+- (void)removeViewsFromSuperview;
 - (void)replaceObjectAtIndex:(NSUInteger)arg1 withObject:(id)arg2;
 - (void)replaceObjectsAtIndexes:(id)arg1 withObjects:(id)arg2;
 - (void)replaceObjectsInRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg1 withObjects:(id*)arg2 count:(NSUInteger)arg3;
@@ -62,7 +71,6 @@
 - (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg3;
 - (void)sortUsingFunction:(int (*)())arg1 context:(void*)arg2;
 - (void)sortUsingSelector:(SEL)arg1;
-- (void*)top;
 - (id)top;
 
 @end

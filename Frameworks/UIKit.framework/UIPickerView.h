@@ -51,7 +51,6 @@
 - (void)_sendCheckedRow:(NSInteger)arg1 inTable:(id)arg2 checked:(BOOL)arg3;
 - (void)_sendSelectionChangedForComponent:(NSInteger)arg1;
 - (void)_sendSelectionChangedFromTable:(id)arg1;
-- (void)_setSoundsEnabled:(BOOL)arg1 activate:(BOOL)arg2;
 - (float)_tableRowHeight;
 - (void)_updateSound;
 - (BOOL)allowsMultipleSelection;
@@ -67,6 +66,7 @@
 - (id)imageForPickerPiece:(NSInteger)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAccessibilityElementByDefault;
 - (void)layoutSubviews;
 - (NSInteger)numberOfColumns;
 - (NSInteger)numberOfComponents;
@@ -104,6 +104,7 @@
 - (void)setSoundsEnabled:(BOOL)arg1;
 - (BOOL)showsSelectionIndicator;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)table:(id)arg1 canReuseCell:(id)arg2;
 - (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3 reusing:(id)arg4;
 - (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3;
 - (id)tableForColumn:(NSInteger)arg1;

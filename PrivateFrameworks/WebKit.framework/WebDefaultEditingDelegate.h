@@ -7,6 +7,9 @@
 
 + (id)sharedEditingDelegate;
 
+- (id)documentFragmentForPasteboardItemAtIndex:(NSInteger)arg1;
+- (id)supportedPasteboardTypesForCurrentSelection;
+- (id)undoManagerForWebView:(id)arg1;
 - (BOOL)webView:(id)arg1 doCommandBySelector:(SEL)arg2;
 - (BOOL)webView:(id)arg1 shouldApplyStyle:(id)arg2 toElementsInDOMRange:(id)arg3;
 - (BOOL)webView:(id)arg1 shouldBeginEditingInDOMRange:(id)arg2;

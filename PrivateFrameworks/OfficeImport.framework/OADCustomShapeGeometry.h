@@ -6,8 +6,8 @@
 
 @interface OADCustomShapeGeometry : OADShapeGeometry {
     NSMutableArray *mFormulas;
-    struct CsRect<ChSINT4> { NSInteger x1[4]; } *mGeometryCoordSpace;
-    struct CsPoint<ChSINT4> { NSInteger x1[2]; } *mLimo;
+    struct CsRect<long int> { long x1[4]; } *mGeometryCoordSpace;
+    struct CsPoint<long int> { long x1[2]; } *mLimo;
     NSMutableArray *mPaths;
     NSMutableArray *mTextBodyRects;
 }
@@ -18,13 +18,13 @@
 - (void)dealloc;
 - (id)formulaAtIndex:(NSUInteger)arg1;
 - (NSUInteger)formulaCount;
-- (struct CsRect<ChSINT4> { NSInteger x1[4]; })geometryCoordSpace;
+- (struct CsRect<long int> { long x1[4]; })geometryCoordSpace;
 - (id)init;
-- (struct CsPoint<ChSINT4> { NSInteger x1[2]; })limo;
+- (struct CsPoint<long int> { long x1[2]; })limo;
 - (id)pathAtIndex:(NSUInteger)arg1;
 - (NSUInteger)pathCount;
-- (void)setGeometryCoordSpace:(struct CsRect<ChSINT4> { NSInteger x1[4]; })arg1;
-- (void)setLimo:(struct CsPoint<ChSINT4> { NSInteger x1[2]; })arg1;
+- (void)setGeometryCoordSpace:(struct CsRect<long int> { long x1[4]; })arg1;
+- (void)setLimo:(struct CsPoint<long int> { long x1[2]; })arg1;
 - (id)textBodyRectAtIndex:(NSUInteger)arg1;
 - (NSUInteger)textBodyRectCount;
 

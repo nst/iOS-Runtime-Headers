@@ -5,11 +5,11 @@
 @interface ABDirectoryGroupWrapper : ABGroupWrapper {
 }
 
-+ (id)createDirectoryGroupWrapperWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;
++ (id)createDirectoryGroupWrapperWithAccountIdentifier:(id)arg1 store:(void*)arg2 addressBook:(void*)arg3;
 
-- (id)copyDictionaryRepresentation;
 - (BOOL)isDirectoryWrapper;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
+- (NSInteger)storeType;
 
 @end

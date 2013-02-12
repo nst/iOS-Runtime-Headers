@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder, UIView;
+@class NSUndoManager, UIResponder, UIView;
 
 @interface UIWindow : UIView {
     struct { 
@@ -19,11 +19,15 @@
         unsigned int output : 1; 
         unsigned int inGesture : 1; 
         unsigned int trackingStatusBar : 1; 
-        unsigned int resetLevelOnSuspend : 1; 
         unsigned int cancelScroller : 1; 
         unsigned int bitsPerComponent : 4; 
         unsigned int autorotates : 1; 
         unsigned int isRotating : 1; 
+        unsigned int isUsingOnePartRotationAnimation : 1; 
+        unsigned int isHandlingContentRotation : 1; 
+        unsigned int disableAutorotationCount : 4; 
+        unsigned int needsAutorotationWhenReenabled : 1; 
+        unsigned int forceTwoPartRotationAnimation : 1; 
         unsigned int orderKeyboardInAfterRotating : 1; 
     id _delegate;
     UIView *_exclusiveTouchView;
@@ -32,8 +36,10 @@
     UIView *_lastMouseDownView;
     UIView *_lastMouseEnteredView;
     id _layerContext;
+    id _touchData;
+    NSUndoManager *_undoManager;
     NSInteger _viewOrientation;
-    void *_window;
+    id _windowController;
     } _windowFlags;
     float _windowLevel;
 }
@@ -41,22 +47,34 @@
 @property(getter=isKeyWindow,readonly) BOOL keyWindow;
 @property float windowLevel;
 
++ (id)_ioSurfacePropertyDictionaryForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2 fence:(NSInteger)arg3;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (void*)createIOSurfaceWithContextId:(NSUInteger)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (void*)createIOSurfaceWithContextIds:(const NSUInteger*)arg1 count:(NSUInteger)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
++ (void*)createScreenIOSurface;
 + (id)keyWindow;
 
+- (BOOL)_allowsContextHosting;
+- (void)_applicationDidBeginIgnoringInteractionEvents:(id)arg1;
+- (void)_applicationDidEndIgnoringInteractionEvents:(id)arg1;
 - (BOOL)_becomeFirstResponderWhenPossible;
 - (void)_beginModalSession;
-- (BOOL)_canExistBeyondSuspension;
 - (BOOL)_clearMouseView;
 - (void)_clearPendingKeyboardChanges;
+- (void)_commonInit;
 - (BOOL)_containedInAbsoluteResponderChain;
-- (struct CGImage { }*)_createCGImageRefRepresentationInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSUInteger)_contextId;
+- (void)_createWindow;
+- (NSInteger)_degreesToRotateFromInterfaceOrientation:(NSInteger)arg1 toInterfaceOrientation:(NSInteger)arg2;
+- (BOOL)_disableEdgeAntialiasing;
+- (BOOL)_disableGroupOpacity;
 - (void)_endModalSession;
 - (id)_exclusiveTouchView;
+- (void)_finishedFirstHalfRotation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_finishedHalfRotation:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)_firstResponder;
-- (void)_forceUpdateInterfaceOrientationWithDuration:(double)arg1;
+- (void)_forceTwoPartRotationAnimation:(BOOL)arg1;
 - (void)_handleDeviceOrientationChange:(id)arg1;
 - (void)_handleMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_handleMouseDragged:(struct __GSEvent { }*)arg1;
@@ -65,25 +83,23 @@
 - (void)_handleMouseMoved:(struct __GSEvent { }*)arg1;
 - (void)_handleMouseUp:(struct __GSEvent { }*)arg1;
 - (void)_handleStatusBarOrientationChange:(id)arg1;
-- (BOOL)_isHidden;
+- (BOOL)_ignoresHitTest;
 - (BOOL)_isLayerHidden;
-- (BOOL)_needsResetLevel;
-- (void)_noteStatusBarHeightChanged:(float)arg1 oldHeight:(float)arg2 fence:(NSInteger)arg3;
+- (BOOL)_isScrollingEnabledForView:(id)arg1;
 - (void)_orderFrontWithoutMakingKey;
 - (BOOL)_pointInStatusBar:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(NSInteger)arg3;
 - (void)_registerChargedView:(id)arg1;
 - (void)_registerScrollToTopView:(id)arg1;
 - (void)_registerSwipeView:(id)arg1;
-- (void)_resetLevel;
+- (void)_sendGesturesForEvent:(id)arg1;
+- (void)_sendTouchesForEvent:(id)arg1;
 - (void)_setCancelScroller:(BOOL)arg1;
 - (void)_setExclusiveTouchView:(id)arg1;
 - (void)_setFirstResponder:(id)arg1;
-- (void)_setHidden:(BOOL)arg1;
 - (void)_setLayerHidden:(BOOL)arg1;
 - (void)_setMouseDownView:(id)arg1 withEvent:(struct __GSEvent { }*)arg2;
 - (void)_setMouseEnteredView:(id)arg1;
-- (void)_setNeedsResetLevel:(BOOL)arg1;
 - (void)_setRotatableViewOrientation:(NSInteger)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (void)_setRotatableViewOrientation:(NSInteger)arg1 duration:(double)arg2;
 - (BOOL)_shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
@@ -91,14 +107,22 @@
 - (void)_statusBarMouseDown:(struct __GSEvent { }*)arg1;
 - (void)_statusBarMouseDragged:(struct __GSEvent { }*)arg1;
 - (void)_statusBarMouseUp:(struct __GSEvent { }*)arg1;
+- (id)_touchData;
 - (void)_unregisterChargedView:(id)arg1;
 - (void)_unregisterScrollToTopView:(id)arg1;
 - (void)_unregisterSwipeView:(id)arg1;
-- (struct __GSWindow { }*)_windowRef;
+- (void)_updateInterfaceOrientationFromDeviceOrientation;
+- (void)_updateStatusBarToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2 fenceID:(NSInteger)arg3 animation:(NSInteger)arg4;
+- (void)_updateStatusBarToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)_updateToInterfaceOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
+- (void)_updateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2 force:(BOOL)arg3;
 - (BOOL)acceptsGlobalPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)addTouchCaptureViewWithTag:(NSInteger)arg1;
 - (BOOL)autorotates;
 - (void)becomeKeyWindow;
+- (void)beginDisablingInterfaceAutorotation;
 - (NSInteger)bitsPerComponent;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)contentView;
 - (struct CGPoint { float x1; float x2; })convertDeviceToWindow:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromWindow:(id)arg2;
@@ -106,21 +130,26 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromWindow:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
 - (struct CGPoint { float x1; float x2; })convertWindowToDevice:(struct CGPoint { float x1; float x2; })arg1;
-- (void*)createCoreSurface;
-- (id)createCoreSurfaceSnapshotView:(NSInteger)arg1;
-- (void*)createCoreSurfaceWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void*)createIOSurface;
+- (id)createIOSurfaceSnapshotView:(NSInteger)arg1;
+- (void*)createIOSurfaceWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)endDisablingInterfaceAutorotation;
 - (id)firstResponder;
-- (void)forceUpdateInterfaceOrientation;
 - (void)handleStatusBarChangeFromHeight:(float)arg1 toHeight:(float)arg2;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 output:(NSInteger)arg2 bitsPerComponent:(NSInteger)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 output:(NSInteger)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (NSInteger)interfaceOrientation;
+- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (BOOL)isHandlingContentRotation;
+- (BOOL)isInterfaceAutorotationDisabled;
 - (BOOL)isKeyWindow;
 - (BOOL)isRotating;
+- (BOOL)isUsingOnePartRotationAnimation;
 - (float)level;
 - (void)makeKey:(id)arg1;
 - (void)makeKeyAndOrderFront:(id)arg1;
@@ -130,27 +159,26 @@
 - (id)nextResponder;
 - (void)orderFront:(id)arg1;
 - (void)orderOut:(id)arg1;
-- (NSInteger)output;
+- (void)redo:(id)arg1;
+- (id)removeTouchCaptureViewWithTag:(NSInteger)arg1;
 - (id)representation;
 - (void)resignKeyWindow;
 - (void)sendEvent:(id)arg1;
-- (void)sendGSEvent:(struct __GSEvent { }*)arg1;
 - (void)setAutorotates:(BOOL)arg1 forceUpdateInterfaceOrientation:(BOOL)arg2;
 - (void)setAutorotates:(BOOL)arg1;
 - (void)setBecomeKeyOnOrderFront:(BOOL)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setLevel:(float)arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setWindowLevel:(float)arg1;
-- (BOOL)shouldExcludeFromSnapshot;
-- (BOOL)shouldRespondToStatusBarHeightChange;
+- (void)synchronizeDrawingWithID:(NSInteger)arg1 count:(NSUInteger)arg2;
 - (void)synchronizeDrawingWithID:(NSInteger)arg1;
+- (void)undo:(id)arg1;
+- (id)undoManager;
+- (void)updateForOrientation:(NSInteger)arg1;
 - (struct CGPoint { float x1; float x2; })warpPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)windowLevel;
 - (NSInteger)windowOutput;
-- (void)writeSnapshotsToDir:(id)arg1;
 
 @end

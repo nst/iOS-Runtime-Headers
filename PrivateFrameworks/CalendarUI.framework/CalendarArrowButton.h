@@ -16,7 +16,7 @@
 - (NSInteger)arrowType;
 - (void)dealloc;
 - (id)initWithArrowType:(NSInteger)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

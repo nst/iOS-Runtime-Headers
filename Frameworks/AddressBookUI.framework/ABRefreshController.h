@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABAccountSettingsAccountManager>, NSMutableDictionary;
+@class AccountsManager, NSMutableDictionary;
 
 @interface ABRefreshController : NSObject {
-    <ABAccountSettingsAccountManager> *_accountManager;
+    AccountsManager *_accountsManager;
     NSMutableDictionary *_lastAccountRefreshDates;
     NSMutableDictionary *_lastGroupListRefreshDates;
 }
@@ -14,9 +14,9 @@
 
 - (void)_actuallyRefreshAccountsWithAddressBook:(void*)arg1;
 - (BOOL)accountGroupListNeedsRefresh:(id)arg1;
-- (id)accountManager;
 - (void)dealloc;
 - (BOOL)groupWrapperNeedsRefresh:(id)arg1;
+- (id)mobileAccounts;
 - (void)refreshAccountGroupList:(id)arg1;
 - (void)refreshGroupWrapper:(id)arg1;
 - (void)startRefreshingAccountsWithAddressBook:(void*)arg1;

@@ -20,8 +20,9 @@
 - (void)_cancelOutstandingChecks;
 - (void)_webPluginContainerCancelCheckIfAllowedToLoadRequest:(id)arg1;
 - (id)_webPluginContainerCheckIfAllowedToLoadRequest:(id)arg1 inFrame:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4;
+- (void)_webPluginContainerPostMediaPlayerNotification:(NSInteger)arg1 forElement:(id)arg2;
+- (void)_webPluginContainerSetMediaPlayerProxy:(id)arg1 forElement:(id)arg2;
 - (void)addPlugin:(id)arg1;
-- (id)bridge;
 - (void)dealloc;
 - (void)destroyAllPlugins;
 - (void)destroyPlugin:(id)arg1;

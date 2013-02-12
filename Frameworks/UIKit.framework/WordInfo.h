@@ -6,8 +6,12 @@
 
 @interface WordInfo : CandWord {
     NSInteger _inConnection;
+    unsigned short _lcAttrs[10];
     NSInteger _outConnection[10];
     NSInteger _outConnections;
+    unsigned short _rcAttrs[10];
+    unsigned char _readingLens[10];
+    NSUInteger _trievalues[10];
     NSInteger _weight;
     CandWordString *_yomi;
 }
@@ -19,9 +23,13 @@
 - (void)getInConnection:(NSInteger*)arg1 outConnection:(NSInteger**)arg2 andOutConnections:(NSInteger*)arg3;
 - (NSInteger)inConnection;
 - (id)initWithWord:(id)arg1 withYomi:(id)arg2 inConnection:(NSInteger)arg3 outConnection:(NSInteger)arg4 weight:(NSInteger)arg5;
+- (unsigned short*)lcAttrs;
 - (NSInteger*)outConnection;
 - (NSInteger)outConnections;
+- (unsigned short*)rcAttrs;
+- (char *)readingLens;
 - (void)setWeight:(NSInteger)arg1;
+- (NSUInteger*)trievalues;
 - (NSInteger)weight;
 - (id)yomi;
 - (const char *)yomiUTF8String;

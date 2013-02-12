@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMClientCapabilities, NSMutableArray;
 
-@interface GMMDirectionsIconRequest : GMMRequest <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMDirectionsIconRequest : PBRequest {
     NSMutableArray *_cachedIconIDs;
     NSInteger _cachedIconVersion;
     GMMClientCapabilities *_capabilities;
@@ -17,7 +12,7 @@
 }
 
 @property(retain) NSMutableArray *cachedIconIDs; /* unknown property attribute: V_cachedIconIDs */
-@property BOOL hasCachedIconVersion; /* unknown property attribute: V_hasCachedIconVersion */
+@property(readonly) BOOL hasCachedIconVersion; /* unknown property attribute: V_hasCachedIconVersion */
 @property NSInteger cachedIconVersion; /* unknown property attribute: V_cachedIconVersion */
 @property(retain) GMMClientCapabilities *capabilities; /* unknown property attribute: V_capabilities */
 @property(readonly) NSInteger cachedIconIDsCount;
@@ -30,16 +25,17 @@
 - (NSInteger)cachedIconVersion;
 - (id)capabilities;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hasCachedIconVersion;
 - (BOOL)hasCapabilities;
 - (id)init;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
+- (NSUInteger)requestTypeCode;
 - (Class)responseClass;
-- (void)setCachedIconID:(long long)arg1 atIndex:(NSInteger)arg2;
+- (void)setCachedIconID:(long long)arg1 atIndex:(NSUInteger)arg2;
 - (void)setCachedIconIDs:(id)arg1;
 - (void)setCachedIconVersion:(NSInteger)arg1;
 - (void)setCapabilities:(id)arg1;
-- (void)setHasCachedIconVersion:(BOOL)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

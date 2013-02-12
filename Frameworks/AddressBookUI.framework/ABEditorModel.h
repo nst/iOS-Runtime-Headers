@@ -5,8 +5,10 @@
 @class ABCardItemEditorLayer, NSString;
 
 @interface ABEditorModel : NSObject {
+    void *_addressBook;
     NSInteger _identifier;
     id _insertedValue;
+    NSInteger _interfaceOrientation;
     NSString *_originalLabel;
     id _originalValue;
     void *_person;
@@ -14,17 +16,24 @@
     ABCardItemEditorLayer *_subeditorLayer;
 }
 
+@property NSInteger interfaceOrientation; /* unknown property attribute: V_interfaceOrientation */
+
+- (void*)addressBook;
 - (BOOL)atleastOneFieldHasData;
 - (void)dealloc;
 - (id)description;
+- (NSInteger)editorInputType;
 - (BOOL)hasChanges;
 - (NSInteger)identifier;
-- (id)initWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3 insertedValue:(id)arg4;
+- (id)initWithPerson:(void*)arg1 addressBook:(void*)arg2 property:(NSInteger)arg3 identifier:(NSInteger)arg4 insertedValue:(id)arg5;
 - (id)insertedValue;
+- (NSInteger)interfaceOrientation;
 - (void)labelDeleted:(id)arg1;
 - (void*)person;
 - (NSInteger)property;
+- (void)setInterfaceOrientation:(NSInteger)arg1;
 - (id)subeditorLayer;
+- (id)subeditorLayerWithInterfaceOrientation:(NSInteger)arg1;
 - (void)updateRecord;
 - (id)value;
 

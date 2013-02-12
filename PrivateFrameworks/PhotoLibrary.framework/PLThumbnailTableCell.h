@@ -2,36 +2,69 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray, UIImage, UIView;
+@class <PLThumbnailTableCellDelegate>, NSIndexSet, NSMutableArray, NSMutableIndexSet, UILongPressGestureRecognizer, UITouch;
 
-@interface PLThumbnailTableCell : UITableCell {
+@interface PLThumbnailTableCell : UITableViewCell {
+    unsigned int _canShowCopyCallout : 1;
+    unsigned int _canShowCutCallout : 1;
+    unsigned int _couldShowCopyCallout : 1;
     struct CGImage { } *_cgImage;
-    NSInteger _highlightPhoto;
-    UIView *_highlightView;
-    UIImage *_image;
+    <PLThumbnailTableCellDelegate> *_delegate;
+    NSMutableIndexSet *_highlightedIndexes;
+    NSIndexSet *_highlightedIndexesBeforeTracking;
+    NSMutableArray *_highlightedViews;
+    UILongPressGestureRecognizer *_recognizer;
     NSMutableArray *_slideImages;
-    BOOL _trackingHighlight;
+    NSInteger _thumbnailSelectionStyle;
+    UITouch *_touchForTracking;
 }
 
+@property <PLThumbnailTableCellDelegate> *delegate; /* unknown property attribute: V_delegate */
+@property(readonly) NSArray *photos;
+@property(readonly) MLPhoto *selectedPhoto;
+@property(copy) NSIndexSet *selectedPhotoIndexes;
+@property(readonly) NSArray *selectedPhotos;
+@property BOOL canShowCopyCallout;
+@property BOOL canShowCutCallout;
+@property NSInteger thumbnailSelectionStyle;
+
 - (BOOL)_canDrawContent;
-- (void)_updateSelectedColumnWithEvent:(struct __GSEvent { }*)arg1;
+- (void)_hideCopyCallout;
+- (BOOL)_isMultipleSelectionEnabled;
+- (void)_longPressRecognized:(id)arg1;
+- (void)_notifySelectionStateChanged;
+- (void)_setSelected:(BOOL)arg1;
+- (void)_updateSelectedColumnAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addItemsToPasteboard;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (BOOL)canShowCopyCallout;
+- (BOOL)canShowCutCallout;
+- (void)copy:(id)arg1;
+- (void)cut:(id)arg1;
 - (void)dealloc;
-- (void)drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
-- (id)selectedImage;
+- (id)delegate;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
+- (id)photos;
+- (void)prepareForReuse;
+- (id)selectedPhoto;
+- (id)selectedPhotoIndexes;
+- (id)selectedPhotos;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setImage:(id)arg1;
+- (void)setCanShowCopyCallout:(BOOL)arg1;
+- (void)setCanShowCutCallout:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setImageRef:(struct CGImage { }*)arg1;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSelected:(BOOL)arg1 withFade:(BOOL)arg2;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelectedPhotoIndexes:(id)arg1;
 - (void)setSlideImage:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setThumbnailSelectionStyle:(NSInteger)arg1;
 - (id)slideImageAtIndex:(NSUInteger)arg1;
+- (NSInteger)thumbnailSelectionStyle;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

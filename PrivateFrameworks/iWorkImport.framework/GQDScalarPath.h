@@ -2,12 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQDScalarPath : NSObject {
+@interface GQDScalarPath : GQDPath {
+    struct CGSize { 
+        float width; 
+        float height; 
     double mScalar;
+    } mSize;
     NSInteger mType;
 }
 
+- (struct CGPath { }*)createBezierPath;
+- (BOOL)isRect;
 - (BOOL)isRectangular;
 - (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (double)scalar;
+- (struct CGSize { float x1; float x2; })size;
+- (NSInteger)type;
 
 @end

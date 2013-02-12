@@ -8,7 +8,7 @@
     struct BTAccessoryManagerImpl { } *_accessoryManager;
     BOOL _audioConnected;
     BluetoothAudioJack *_audioJack;
-    NSMutableDictionary *_bluetoothDeviceDict;
+    NSMutableDictionary *_btAddrDict;
     NSMutableDictionary *_btDeviceDict;
     NSInteger _connectedState;
     struct BTDiscoveryAgentImpl { } *_discoveryAgent;
@@ -21,36 +21,45 @@
 }
 
 + (void)initialize;
++ (NSInteger)lastInitError;
 + (id)sharedInstance;
 
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
 - (void)_connectedStatusChanged;
+- (BOOL)_isConnectedToNonSensorDevice;
 - (void)_postNotification:(id)arg1;
 - (void)_postNotificationWithArray:(id)arg1;
-- (void)_powerChanged:(BOOL)arg1;
+- (void)_powerChanged;
 - (void)_removeDevice:(id)arg1;
 - (void)_setup;
 - (void)_setupAccessoryManager;
 - (void)_setupLocalDevice;
 - (void)_setupSession;
+- (void)acceptSSP:(NSInteger)arg1 forDevice:(id)arg2;
 - (id)addDeviceIfNeeded:(struct BTDeviceImpl { }*)arg1;
+- (BOOL)airplaneMode;
 - (BOOL)audioConnected;
 - (id)audioJack;
 - (BOOL)canBeConnected;
 - (void)cancelPairing;
 - (void)cleanup;
 - (void)connectDevice:(id)arg1;
+- (void)connectVisualVoicemailAudio;
 - (BOOL)connectable;
 - (id)connectableDevices;
 - (BOOL)connected;
+- (id)connectingDevices;
 - (void)dealloc;
 - (BOOL)devicePairingEnabled;
 - (BOOL)deviceScanningEnabled;
+- (void)disconnectVisualVoicemailAudio;
 - (void)enableTestMode;
 - (BOOL)enabled;
-- (NSUInteger)getAuthorizatedServicesForDevice:(id)arg1;
+- (void)endVoiceCommand:(id)arg1;
+- (NSUInteger)getAuthorizedServicesForDevice:(id)arg1;
 - (id)init;
 - (BOOL)isDiscoverable;
+- (NSInteger)localDeviceSupportsService:(NSUInteger)arg1;
 - (void)pairDevice:(id)arg1;
 - (id)pairedDevices;
 - (void)postNotification:(id)arg1;
@@ -71,5 +80,6 @@
 - (BOOL)setPowered:(BOOL)arg1;
 - (void)setServiceAuthorization:(NSUInteger)arg1 authorized:(BOOL)arg2 forDevice:(id)arg3;
 - (void)unpairDevice:(id)arg1;
+- (BOOL)wasDeviceDiscovered:(id)arg1;
 
 @end

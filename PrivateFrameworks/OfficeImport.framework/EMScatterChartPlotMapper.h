@@ -5,6 +5,6 @@
 @interface EMScatterChartPlotMapper : EMChartPlotMapper {
 }
 
-- (void)addSeriesToDesription:(id)arg1 withSeries:(id)arg2 index:(NSInteger)arg3 state:(id)arg4;
+- (void)addSeriesToDescription:(id)arg1 withSeries:(id)arg2 index:(NSInteger)arg3 hasDatesAsCategories:(BOOL)arg4 hasDatesAsValues:(BOOL)arg5 state:(id)arg6;
 
 @end

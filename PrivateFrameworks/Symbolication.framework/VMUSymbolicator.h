@@ -13,6 +13,8 @@
 }
 
 + (id)convertHeaderToSymbolOwner:(id)arg1 allowLazySymbolOwners:(BOOL)arg2;
++ (id)ignoreFunctionSymbols:(BOOL)arg1;
++ (BOOL)isIgnoreFunctionSymbols;
 + (id)symbolicatorForMachTaskContainer:(id)arg1;
 + (id)symbolicatorForPath:(id)arg1 architecture:(id)arg2;
 + (id)symbolicatorForPid:(NSInteger)arg1;

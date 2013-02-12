@@ -4,7 +4,7 @@
 
 @class MPPortraitInfoOverlay, MPPortraitTransportControls, MPReflectionImageView, UINavigationBar;
 
-@interface MPPortraitVideoViewController : MPVideoViewController {
+@interface MPPortraitVideoViewController : MPVideoViewController <MPSwipableViewDelegate> {
     unsigned int _ownsTransportControls : 1;
     MPReflectionImageView *_imageView;
     UINavigationBar *_navigationBar;
@@ -19,8 +19,7 @@
 - (id)_overlayView;
 - (void)_reloadImageView;
 - (void)_removeOverlayView;
-- (BOOL)backstopView:(id)arg1 swipedInDirection:(NSInteger)arg2;
-- (void)backstopView:(id)arg1 tappedWithCount:(NSInteger)arg2;
+- (BOOL)allowsDetailScrubbing;
 - (BOOL)canDisplayItem:(id)arg1 withOrientation:(NSInteger)arg2;
 - (id)copyOverlayViewForTransitionToItem:(id)arg1;
 - (id)createAlternateTracksTransition;
@@ -34,6 +33,7 @@
 - (id)navigationBar;
 - (BOOL)ownsTransportControls;
 - (void)restoreOverlayViewAfterTransition:(id)arg1;
+- (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setDesiredParts:(NSUInteger)arg1 animate:(BOOL)arg2;
 - (void)setDisabledParts:(NSUInteger)arg1;
 - (void)setItem:(id)arg1;
@@ -45,7 +45,10 @@
 - (void)showOverlayView;
 - (void)startTicking;
 - (void)stopTicking;
+- (void)swipableView:(id)arg1 swipedInDirection:(NSInteger)arg2;
+- (void)swipableView:(id)arg1 tappedWithCount:(NSUInteger)arg2;
 - (BOOL)transportControls:(id)arg1 tappedButtonPart:(NSUInteger)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

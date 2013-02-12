@@ -12,14 +12,15 @@
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (Class)classForCoder;
+- (void)filterUsingPredicate:(id)arg1;
 - (id)initWithCapacity:(NSUInteger)arg1;
 - (id)initWithObjects:(id*)arg1 count:(NSUInteger)arg2;
 - (void)intersectSet:(id)arg1;
+- (id)mf_uniquedObject:(id)arg1;
 - (void)minusSet:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (void)setSet:(id)arg1;
 - (void)unionSet:(id)arg1;
-- (id)uniquedObject:(id)arg1;
 
 @end

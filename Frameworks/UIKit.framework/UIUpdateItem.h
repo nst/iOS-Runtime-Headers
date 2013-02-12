@@ -16,6 +16,7 @@
 @property(readonly) NSIndexPath *indexPath; /* unknown property attribute: V_indexPath */
 @property(readonly) NSInteger action; /* unknown property attribute: V_action */
 
+- (id)_actionDescription;
 - (NSInteger)action;
 - (NSInteger)animation;
 - (NSInteger)compareIndexPaths:(id)arg1;

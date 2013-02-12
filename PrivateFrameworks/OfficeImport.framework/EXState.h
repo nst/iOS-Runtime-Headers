@@ -30,7 +30,7 @@
     EXOAVState *mOAVState;
     EXOfficeArtState *mOfficeArtState;
     NSMutableDictionary *mReferenceForCommentTextBox;
-    struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; } *mRelationshipNS;
+    struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; } *mRelationshipNS;
     EDResources *mResources;
     NSMapTable *mSharedFormulasMap;
     EDReference *mSheetDimension;
@@ -65,8 +65,8 @@
 - (id)legacyDrawables;
 - (id)oavState;
 - (id)officeArtState;
-- (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; }*)arg1;
-- (struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; }*)relationshipNameSpaceForWorkbook;
+- (void)relationshipNameSpaceForWorkbook:(struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)arg1;
+- (struct _xmlNs { struct _xmlNs {} *x1; NSInteger x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)relationshipNameSpaceForWorkbook;
 - (void)resetForNewSheet;
 - (id)resources;
 - (void)setCellStyleXfsOffset:(NSUInteger)arg1;

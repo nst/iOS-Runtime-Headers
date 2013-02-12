@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface DOMHTMLObjectElement : DOMHTMLElement {
-     /* Encoded args for previous method: @12@0:4^{HTMLObjectElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}^{Frame}B{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{RefPtr<KJS::Bindings::Instance>=^{Instance}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}b1b1{OwnPtr<WebCore::HTMLImageLoader>=^{HTMLImageLoader}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}B}8 */
-     /* Encoded args for previous method: ^{HTMLObjectElement=^^?i^{Node}{DocPtr<WebCore::Document>=^{Document}}^{Node}^{Node}^{RenderObject}{OwnPtr<WebCore::NodeListsNodeData>=^{NodeListsNodeData}}sb1b1b1b2b1b1b1b1b1b1b1b1b1b1b1^^?^{DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> >}^{Node}^{Node}{QualifiedName=^{QualifiedNameImpl}}{RefPtr<WebCore::NamedAttrMap>=^{NamedAttrMap}}b1b1b1{RefPtr<WebCore::CSSMutableStyleDeclaration>=^{CSSMutableStyleDeclaration}}^{Frame}B{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{RefPtr<KJS::Bindings::Instance>=^{Instance}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}b1b1{OwnPtr<WebCore::HTMLImageLoader>=^{HTMLImageLoader}}{String={RefPtr<WebCore::StringImpl>=^{StringImpl}}}B}8@0:4 */
 }
 
 @property(copy,readonly) NSURL *absoluteImageURL;
@@ -29,12 +23,8 @@
 @property(copy) NSString *width;
 @property BOOL declare;
 @property NSInteger hspace;
-@property NSInteger tabIndex;
 @property NSInteger vspace;
 
-+ (id)_wrapHTMLObjectElement:(struct HTMLObjectElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; struct Frame {} *x35; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x36; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_37_1_1; } x37; struct RefPtr<KJS::Bindings::Instance> { struct Instance {} *x_38_1_1; } x38; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_39_1_1; } x39; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_40_1_1; } x40; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_41_1_1; } x41; unsigned int x42 : 1; unsigned int x43 : 1; struct OwnPtr<WebCore::HTMLImageLoader> { struct HTMLImageLoader {} *x_44_1_1; } x44; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_45_1_1; } x45; void*x46; }*)arg1;
-
-- (struct HTMLObjectElement { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_34_1_1; } x34; struct Frame {} *x35; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x36; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_37_1_1; } x37; struct RefPtr<KJS::Bindings::Instance> { struct Instance {} *x_38_1_1; } x38; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_39_1_1; } x39; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_40_1_1; } x40; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_41_1_1; } x41; unsigned int x42 : 1; unsigned int x43 : 1; struct OwnPtr<WebCore::HTMLImageLoader> { struct HTMLImageLoader {} *x_44_1_1; } x44; struct String { struct RefPtr<WebCore::StringImpl> { struct StringImpl {} *x_1_2_1; } x_45_1_1; } x45; void*x46; }*)_HTMLObjectElement;
 - (id)absoluteImageURL;
 - (id)align;
 - (id)archive;
@@ -43,10 +33,10 @@
 - (id)codeBase;
 - (id)codeType;
 - (id)contentDocument;
+- (id)contentFrame;
 - (id)data;
 - (BOOL)declare;
 - (id)form;
-- (id)getSVGDocument;
 - (id)height;
 - (NSInteger)hspace;
 - (id)name;
@@ -62,14 +52,12 @@
 - (void)setHspace:(NSInteger)arg1;
 - (void)setName:(id)arg1;
 - (void)setStandby:(id)arg1;
-- (void)setTabIndex:(NSInteger)arg1;
 - (void)setType:(id)arg1;
 - (void)setUseMap:(id)arg1;
 - (void)setVspace:(NSInteger)arg1;
 - (void)setWidth:(id)arg1;
 - (BOOL)showsTapHighlight;
 - (id)standby;
-- (NSInteger)tabIndex;
 - (id)type;
 - (id)useMap;
 - (NSInteger)vspace;

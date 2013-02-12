@@ -7,10 +7,6 @@
 
 @property(readonly) NSUInteger length;
 
-+ (id)_wrapNodeList:(struct NodeList { int (**x1)(); NSInteger x2; }*)arg1;
-
-- (struct NodeList { int (**x1)(); NSInteger x2; }*)_nodeList;
-- (id)_initWithNodeList:(struct NodeList { int (**x1)(); NSInteger x2; }*)arg1;
 - (void)dealloc;
 - (void)finalize;
 - (id)item:(NSUInteger)arg1;

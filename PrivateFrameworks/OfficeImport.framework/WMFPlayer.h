@@ -8,7 +8,7 @@
     BOOL m_boundsSet;
     MFGraphicsDevice *m_gdi;
     BOOL m_ignoreSetWindowOrg;
-    long m_records;
+    NSInteger m_records;
     unsigned short m_windowsVersion;
 }
 

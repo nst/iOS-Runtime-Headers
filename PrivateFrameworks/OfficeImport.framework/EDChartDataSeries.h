@@ -5,6 +5,7 @@
 @class EDChartSeriesFormat, NSArray, NSMutableDictionary, NSString;
 
 @interface EDChartDataSeries : NSObject {
+    NSUInteger mAxisGroup;
     NSArray *mBubbleSizes;
     NSArray *mCategoryLabels;
     EDChartSeriesFormat *mDefaultFormat;
@@ -14,12 +15,14 @@
 }
 
 - (void)addFormatForPoint:(id)arg1 index:(NSUInteger)arg2;
+- (NSUInteger)axisGroup;
 - (id)bubbleSizes;
 - (id)categoryLabels;
 - (void)dealloc;
 - (id)defaultFormat;
 - (id)formatForPoint:(NSUInteger)arg1;
 - (id)init;
+- (void)setAxisGroup:(NSUInteger)arg1;
 - (void)setBubbleSizes:(id)arg1;
 - (void)setCategoryLabels:(id)arg1;
 - (void)setDefaultFormat:(id)arg1;

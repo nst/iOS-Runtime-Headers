@@ -2,20 +2,57 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMOutlineState;
+@class CMOutlineState, WDText;
 
 @interface WMState : CMState {
     CMOutlineState *currentListState;
+    NSUInteger mBlockIndex;
+    NSUInteger mCurrentPage;
+    BOOL mIsFrame;
+    BOOL mIsFrameEnd;
+    BOOL mIsFrameStart;
+    WDText *mLastFooter;
+    WDText *mLastHeader;
+    float mLeftMargin;
+    float mPageHeight;
+    NSUInteger mRunIndex;
+    float mTopMargin;
+    float mTotalPageHeight;
     CMOutlineState *outlineState;
 }
 
+- (NSUInteger)blockIndex;
 - (void)clearCurrentListState;
 - (id)currentListState;
+- (NSUInteger)currentPage;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isCurrentListId:(NSInteger)arg1;
 - (BOOL)isCurrentListStateOverridden;
+- (BOOL)isFrame;
+- (BOOL)isFrameEnd;
+- (BOOL)isFrameStart;
+- (id)lastFooter;
+- (id)lastHeader;
+- (float)leftMargin;
 - (id)outlineState;
+- (float)pageHeight;
+- (float)pageOffset;
+- (NSUInteger)runIndex;
+- (void)setBlockIndex:(NSUInteger)arg1;
 - (void)setCurrentListState:(id)arg1;
+- (void)setCurrentPage:(NSUInteger)arg1;
+- (void)setIsFrame:(BOOL)arg1;
+- (void)setIsFrameEnd:(BOOL)arg1;
+- (void)setIsFrameStart:(BOOL)arg1;
+- (void)setLastFooter:(id)arg1;
+- (void)setLastHeader:(id)arg1;
+- (void)setLeftMargin:(float)arg1;
+- (void)setPageHeight:(float)arg1;
+- (void)setRunIndex:(NSUInteger)arg1;
+- (void)setTopMargin:(float)arg1;
+- (void)setTotalPageHeight:(float)arg1;
+- (float)topMargin;
+- (float)totalPageHeight;
 
 @end

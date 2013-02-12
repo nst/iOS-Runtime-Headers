@@ -9,13 +9,19 @@
 }
 
 - (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(BOOL)arg3 partial:(BOOL*)arg4;
+- (id)_fetchBodyDataForNormalMessage:(id)arg1 format:(NSInteger)arg2 part:(id)arg3 streamConsumer:(id)arg4;
+- (id)_fetchBodyDataForSearchResult:(id)arg1 format:(NSInteger)arg2 streamConsumer:(id)arg3;
 - (id)_fetchDataForMimePart:(id)arg1 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 isComplete:(BOOL*)arg3;
+- (id)_folderIDForFetching;
 - (BOOL)allowsAppend;
 - (id)bestAlternativeForMessage:(id)arg1 inPart:(id)arg2;
+- (BOOL)canDeleteMessage:(id)arg1;
+- (BOOL)canFetchSearchResults;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(NSUInteger)arg1 limit:(NSUInteger)arg2;
 - (id)defaultAlternativeForMessage:(id)arg1 inPart:(id)arg2;
 - (void)deleteMessagesOlderThanNumberOfDays:(NSInteger)arg1 compact:(BOOL)arg2;
-- (NSInteger)fetchNumMessages:(NSUInteger)arg1 preservingUID:(id)arg2 beforeUID:(NSUInteger)arg3 synchronize:(BOOL)arg4;
+- (NSInteger)fetchMessagesMatchingCriterion:(id)arg1 limit:(NSUInteger)arg2;
+- (NSInteger)fetchNumMessages:(NSUInteger)arg1 preservingUID:(id)arg2 beforeUID:(NSUInteger)arg3 synchronize:(BOOL)arg4 compact:(BOOL)arg5;
 - (id)initWithMailboxUid:(id)arg1 readOnly:(BOOL)arg2;
 - (void)issueFlagUpdates:(id)arg1 forMessages:(id)arg2;
 - (id)loadMeetingDataForMessage:(id)arg1;

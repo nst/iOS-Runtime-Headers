@@ -10,12 +10,14 @@
 
 - (NSInteger)_streamType;
 - (id)command;
+- (NSInteger)commandCode;
 - (NSInteger)connectionActionForResponse:(id)arg1;
 - (id)contentType;
 - (void)dealloc;
 - (BOOL)expectsWBXML;
 - (void)finishWithError:(id)arg1;
 - (id)initWithMessage:(id)arg1;
+- (id)parameterData;
 - (id)requestBody;
 - (id)requestBodyStream;
 

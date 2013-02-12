@@ -7,7 +7,9 @@
     id _private;
 }
 
-+ (void)_runThread:(id)arg1;
++ (void)_ay_prepareForInterThreadMessages;
++ (id)_mapkit_networkIOThread;
++ (void)_mapkit_runThread:(id)arg1;
 + (id)callStackReturnAddresses;
 + (id)currentThread;
 + (void)detachNewThreadSelector:(SEL)arg1 toTarget:(id)arg2 withObject:(id)arg3;
@@ -17,10 +19,10 @@
 + (BOOL)isMultiThreaded;
 + (id)mainThread;
 + (id)mainThread_FOUNDATION;
-+ (id)networkIOThread;
 + (BOOL)setThreadPriority:(double)arg1;
 + (void)sleepForTimeInterval:(double)arg1;
 + (void)sleepUntilDate:(id)arg1;
++ (id)stackBacktrace;
 + (double)threadPriority;
 
 - (void)_nq:(id)arg1;
@@ -38,11 +40,14 @@
 - (void)main;
 - (id)name;
 - (void)performOneway:(BOOL)arg1 result:(void*)arg2 withTarget:(id)arg3 selector:(SEL)arg4;
+- (void)registerForStopNotification;
 - (id)runLoop;
 - (void)setName:(id)arg1;
 - (void)setStackSize:(NSUInteger)arg1;
+- (BOOL)shouldStop;
 - (NSUInteger)stackSize;
 - (void)start;
 - (id)threadDictionary;
+- (void)unregisterForStopNotification;
 
 @end

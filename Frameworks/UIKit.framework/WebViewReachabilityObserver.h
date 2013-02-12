@@ -7,7 +7,7 @@
 }
 
 - (id)init;
-- (void)reachabilityManager:(id)arg1 hostname:(id)arg2 isReachable:(BOOL)arg3;
+- (void)networkReachabilityChanged:(id)arg1;
 - (void)removeReachabilityObserver;
 - (void)setDelegate:(id)arg1;
 

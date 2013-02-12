@@ -9,9 +9,15 @@
 @class CMState, EDChart;
 
 @interface EMChartMapper : CMMapper {
-     /* Encoded args for previous method: v16@0:4@8B12 */
-     /* Encoded args for previous method: v28@0:4@8@12@16@20B24 */
+    struct { 
+        BOOL primaryCategoryHasDates; 
+        BOOL secondaryCategoryHasDates; 
+        BOOL primaryAxisHasDates; 
+        BOOL secondaryAxisHasDates; 
+     /* Encoded args for previous method: v20@0:4@8B12@16 */
+     /* Encoded args for previous method: v36@0:4@8@12@16@20@24B28c32 */
     EDChart *mChart;
+    } mPlotInfos;
     CMState *mState;
 }
 
@@ -19,14 +25,14 @@
 + (struct CGColor { }*)newColorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 
 - (void)_addAxesToDescription:(id)arg1;
-- (void)_addCanvasToDescription:(id)arg1 withBackground:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2;
-- (void)_addLabelAxisToDescription:(id)arg1 ofType:(id)arg2 withTitle:(id)arg3 andLabels:(id)arg4 centerLabels:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg5;
+- (void)_addCanvasToDescription:(id)arg1 withBackground:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg2 state:(id)arg3;
+- (void)_addLabelAxisToDescription:(id)arg1 fromPlot:(id)arg2 withType:(id)arg3 withTitle:(id)arg4 andLabels:(id)arg5 centerLabels:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg6 primary:(BOOL)arg7;
 - (void)_addLegendToDescription:(id)arg1;
 - (void)_addTitleToDescription:(id)arg1 title:(id)arg2;
-- (void)_addUnitAxisToDescription:(id)arg1 ofType:(id)arg2 withTitle:(id)arg3 andValues:(id)arg4;
+- (void)_addUnitAxisToDescription:(id)arg1 fromPlot:(id)arg2 withType:(id)arg3 withTitle:(id)arg4 andValues:(id)arg5 primary:(BOOL)arg6;
 - (id)_chartDescriptionWithState:(id)arg1;
 - (id)_renderChart:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)createChartPlotMapper;
+- (id)createChartPlotMapperForPlot:(id)arg1;
 - (id)createPdfWithState:(id)arg1;
 - (id)initWithChart:(id)arg1 parent:(id)arg2;
 

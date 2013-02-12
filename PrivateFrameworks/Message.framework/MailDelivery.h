@@ -27,6 +27,7 @@
 + (id)newWithMessage:(id)arg1;
 
 - (id)account;
+- (void)archive;
 - (id)archiveAccount;
 - (id)createMessageWriter;
 - (void)dealloc;

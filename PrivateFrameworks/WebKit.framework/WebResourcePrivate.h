@@ -2,18 +2,112 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class NSData, NSString, NSURL, NSURLResponse;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class NSURLResponse;
 
 @interface WebResourcePrivate : NSObject {
-    NSString *MIMEType;
-    NSURL *URL;
-    NSData *data;
-    NSString *frameName;
-    NSURLResponse *response;
-    BOOL shouldIgnoreWhenUnarchiving;
-    NSString *textEncodingName;
+    struct ArchiveResource { int (**x1)(); NSInteger x2; struct KURL { 
+            struct String { 
+                struct RefPtr<WebCore::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_string; 
+            /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*m_isValid; 
+            NSInteger m_schemeEnd; 
+            NSInteger m_userStart; 
+            NSInteger m_userEnd; 
+            NSInteger m_passwordEnd; 
+            NSInteger m_hostEnd; 
+            NSInteger m_portEnd; 
+            NSInteger m_pathAfterLastSlash; 
+            NSInteger m_pathEnd; 
+            NSInteger m_queryEnd; 
+            NSInteger m_fragmentEnd; 
+        } x3; struct ResourceResponse { 
+            struct KURL { 
+                struct String { 
+                    struct RefPtr<WebCore::StringImpl> { 
+                        struct StringImpl {} *m_ptr; 
+                    } m_impl; 
+                } m_string; 
+                void*m_isValid; 
+                NSInteger m_schemeEnd; 
+                NSInteger m_userStart; 
+                NSInteger m_userEnd; 
+                NSInteger m_passwordEnd; 
+                NSInteger m_hostEnd; 
+                NSInteger m_portEnd; 
+                NSInteger m_pathAfterLastSlash; 
+                NSInteger m_pathEnd; 
+                NSInteger m_queryEnd; 
+                NSInteger m_fragmentEnd; 
+            } m_url; 
+            struct String { 
+                struct RefPtr<WebCore::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_mimeType; 
+            long long m_expectedContentLength; 
+            struct String { 
+                struct RefPtr<WebCore::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_textEncodingName; 
+            struct String { 
+                struct RefPtr<WebCore::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_suggestedFilename; 
+            NSInteger m_httpStatusCode; 
+            struct String { 
+                struct RefPtr<WebCore::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_httpStatusText; 
+            struct HTTPHeaderMap { 
+                struct HashTable<WebCore::AtomicString,std::pair<WebCore::AtomicString, WebCore::String>,WTF::PairFirstExtractor<std::pair<WebCore::AtomicString, WebCore::String> >,WebCore::CaseFoldingHash,WTF::PairHashTraits<WTF::HashTraits<WebCore::AtomicString>, WTF::HashTraits<WebCore::String> >,WTF::HashTraits<WebCore::AtomicString> > { 
+                    struct pair<WebCore::AtomicString,WebCore::String> {} *m_table; 
+                    NSInteger m_tableSize; 
+                    NSInteger m_tableSizeMask; 
+                    NSInteger m_keyCount; 
+                    NSInteger m_deletedCount; 
+                } m_impl; 
+            } m_httpHeaderFields; 
+            NSInteger m_expirationDate; 
+            NSInteger m_lastModifiedDate; 
+            unsigned int m_isNull : 1; 
+            unsigned int m_haveParsedCacheControl : 1; 
+            unsigned int m_cacheControlContainsMustRevalidate : 1; 
+            unsigned int m_cacheControlContainsNoCache : 1; 
+            struct RetainPtr<NSURLResponse> { 
+                NSURLResponse *m_ptr; 
+            } m_nsResponse; 
+            void*m_isUpToDate; 
+        } x4; struct RefPtr<WebCore::SharedBuffer> { 
+            struct SharedBuffer {} *m_ptr; 
+        } x5; struct String { 
+            struct RefPtr<WebCore::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } x6; struct String { 
+            struct RefPtr<WebCore::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } x7; struct String { 
+            struct RefPtr<WebCore::StringImpl> { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } x8; void*x9; } *coreResource;
 }
 
++ (void)initialize;
+
 - (void)dealloc;
+- (void)finalize;
+- (id)init;
+- (id)initWithCoreResource:(struct PassRefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x1; })arg1;
 
 @end

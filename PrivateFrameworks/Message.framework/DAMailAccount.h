@@ -2,34 +2,40 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAAccount, DAMailbox, NSMutableDictionary, NSObject<DAAccountActorMessages>, NSString;
+@class DAAccount, DAMailbox, NSArray, NSMutableDictionary, NSObject<ASAccountActorMessages>, NSString;
 
 @interface DAMailAccount : MailAccount {
-    NSObject<DAAccountActorMessages> *_accountConduit;
+    NSObject<ASAccountActorMessages> *_accountConduit;
     NSString *_cachedAccountID;
     BOOL _cachedCalendarEnabled;
     NSString *_cachedDisplayName;
     NSString *_cachedEmailAddress;
+    NSArray *_cachedEmailAddresses;
     NSString *_cachedInboxFolderID;
     NSString *_cachedSentMessagesFolderID;
     NSString *_cachedTrashFolderID;
     DAAccount *_daAccount;
+    NSUInteger _daysToSync;
+    BOOL _doneInitialInboxCheck;
     BOOL _loadedInitialMailboxList;
+    BOOL _observingPushedFoldersPrefsChanged;
     BOOL _receivedInitialMailboxUpdate;
     NSMutableDictionary *_requestQueuesByFolderID;
+    BOOL _startListeningOnHierarchyChange;
+    NSInteger _supportsServerSearch;
     DAMailbox *_temporaryInbox;
-    BOOL _unknownInboxID;
 }
 
 + (id)_URLScheme;
 + (void)_removeStaleExchangeDirectories:(id)arg1;
 + (id)accountDirectoryPrefix;
 + (id)accountIDForDirectoryName:(id)arg1 isAccountDirectory:(BOOL*)arg2;
++ (id)basicAccountProperties;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
 + (id)folderIDForRelativePath:(id)arg1 accountID:(id*)arg2;
 + (void)removeStaleExchangeDBRows;
-+ (BOOL)supportsRemoteAppend;
++ (id)supportedDataclasses;
 
 - (id)_URLScheme;
 - (BOOL)_canReceiveNewMailNotifications;
@@ -42,28 +48,32 @@
 - (id)_specialMailboxUidWithType:(NSInteger)arg1 create:(BOOL)arg2;
 - (id)accountConduit;
 - (void)accountHierarchyChanged:(id)arg1;
+- (id)accountPropertyForKey:(id)arg1;
 - (void)addRequest:(id)arg1 mailbox:(id)arg2 consumer:(id)arg3;
 - (void)addRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
 - (id)allMailboxUids;
 - (BOOL)canFetchMessagesByNumericRange;
 - (void)cancelSearchQuery:(id)arg1;
+- (NSUInteger)daysToSync;
 - (void)dealloc;
 - (id)deliveryAccount;
 - (id)displayName;
-- (id)emailAddresses;
 - (NSInteger)emptyFrequencyForMailboxType:(NSInteger)arg1;
 - (void)fetchMailboxList;
 - (BOOL)finishedInitialMailboxListLoad;
+- (void)foldersContentsChanged:(id)arg1;
 - (id)hostname;
-- (void)inboxUpdated:(id)arg1;
 - (id)initWithDAAccount:(id)arg1;
+- (void)invalidate;
 - (BOOL)isEnabledForMeetings;
+- (BOOL)isRunningInPreferences;
 - (id)mailboxForFolderID:(id)arg1;
 - (id)mailboxPathExtension;
 - (id)mailboxUidForInfo:(id)arg1;
 - (BOOL)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4 unsuccessfulOnes:(id)arg5;
 - (void)performSearchQuery:(id)arg1 consumer:(id)arg2;
 - (id)primaryMailboxUid;
+- (void)pushedFoldersPrefsChanged:(id)arg1;
 - (BOOL)reconstituteOrphanedMeetingInMessage:(id)arg1;
 - (void)resetFolderID:(id)arg1;
 - (void)resetSpecialMailboxes;
@@ -75,6 +85,8 @@
 - (void)startListeningForNotifications;
 - (void)stopListeningForNotifications;
 - (Class)storeClass;
+- (BOOL)supportsRemoteAppend;
+- (BOOL)supportsServerSearch;
 - (id)syncAnchorForFolderID:(id)arg1;
 - (id)syncAnchorForMailbox:(id)arg1;
 - (id)uniqueId;

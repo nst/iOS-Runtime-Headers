@@ -10,10 +10,15 @@
     NSMutableArray *_updatedFolders;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (id)asParseRules;
 - (void)dealloc;
 - (id)description;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (void)setStatus:(id)arg1;
 - (void)setSyncKey:(id)arg1;
 - (void)setUpdatedFolders:(id)arg1;

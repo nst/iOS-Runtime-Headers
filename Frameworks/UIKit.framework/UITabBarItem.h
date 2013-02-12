@@ -64,6 +64,7 @@
 - (id)selectedImage;
 - (void)setAction:(SEL)arg1;
 - (void)setAnimatedBadge:(BOOL)arg1;
+- (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (void)setBadgeValue:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;

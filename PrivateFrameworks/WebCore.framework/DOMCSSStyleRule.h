@@ -8,9 +8,6 @@
 @property(copy) NSString *selectorText;
 @property(retain,readonly) DOMCSSStyleDeclaration *style;
 
-+ (id)_wrapCSSStyleRule:(struct CSSStyleRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_4_1_1; } x4; struct CSSSelectorList { struct CSSSelector {} *x_5_1_1; } x5; }*)arg1;
-
-- (struct CSSStyleRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::CSSMutableStyleDeclaration> { struct CSSMutableStyleDeclaration {} *x_4_1_1; } x4; struct CSSSelectorList { struct CSSSelector {} *x_5_1_1; } x5; }*)_CSSStyleRule;
 - (id)selectorText;
 - (void)setSelectorText:(id)arg1;
 - (id)style;

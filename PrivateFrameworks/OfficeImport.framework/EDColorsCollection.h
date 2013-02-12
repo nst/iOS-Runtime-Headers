@@ -17,7 +17,7 @@
 + (NSInteger)systemColorIdFromIndex:(NSUInteger)arg1;
 
 - (NSUInteger)addOrEquivalentColorExcludingDefaults:(id)arg1;
-- (id)colorWithIndex:(NSInteger)arg1;
+- (id)colorWithIndex:(NSUInteger)arg1;
 - (NSUInteger)defaultColorsCount;
 - (id)initWithDefaultSetup:(/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)arg1;
 - (void)setupDefaults;

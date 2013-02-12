@@ -5,7 +5,10 @@
 @interface ISItemInfoDataSource : NSObject {
 }
 
-- (id)createInfoForType:(NSUInteger)arg1 page:(id)arg2 withDictionary:(id)arg3;
++ (id)defaultSource;
+
+- (id)createInfoForType:(NSUInteger)arg1 withDictionary:(id)arg2;
+- (NSInteger)displayTypeForString:(id)arg1;
 - (NSUInteger)itemTypeFromDictionary:(id)arg1;
 - (NSUInteger)pageTypeFromDictionary:(id)arg1;
 - (id)pageTypeStringFromDictionary:(id)arg1;

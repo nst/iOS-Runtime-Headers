@@ -8,6 +8,8 @@
     NSString *_path;
 }
 
++ (void)initialize;
+
 - (id)UIDsToDeleteInMailbox:(id)arg1;
 - (NSUInteger)accessSequenceNumber;
 - (id)accountForMessage:(id)arg1;
@@ -30,6 +32,7 @@
 - (id)dataForMimePart:(id)arg1 isComplete:(BOOL*)arg2;
 - (id)dataPathForMessage:(id)arg1 part:(id)arg2;
 - (id)dataPathForMessage:(id)arg1;
+- (id)dateOfOldestNonSearchResultMessageInMailbox:(id)arg1;
 - (void)dealloc;
 - (void)deleteMailboxes:(id)arg1;
 - (void)deletePOPUID:(id)arg1 inMailbox:(id)arg2;
@@ -80,6 +83,7 @@
 - (void)sendMessagesMatchingCriterion:(id)arg1 to:(id)arg2 options:(NSUInteger)arg3 range:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg4;
 - (void)sendMessagesMatchingCriterion:(id)arg1 to:(id)arg2 options:(NSUInteger)arg3;
 - (id)sequenceIdentifierForMailbox:(id)arg1;
+- (id)serverSearchResultMessagesForMailbox:(id)arg1;
 - (void)setBusyTimeoutInterval:(double)arg1;
 - (void)setData:(id)arg1 forMessage:(id)arg2 isPartial:(BOOL)arg3;
 - (void)setFlags:(unsigned long)arg1 forMessage:(id)arg2;

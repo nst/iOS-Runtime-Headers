@@ -7,10 +7,6 @@
 
 @property(readonly) NSUInteger length;
 
-+ (id)_wrapNamedNodeMap:(struct NamedNodeMap { int (**x1)(); NSInteger x2; }*)arg1;
-
-- (struct NamedNodeMap { int (**x1)(); NSInteger x2; }*)_namedNodeMap;
-- (id)_initWithNamedNodeMap:(struct NamedNodeMap { int (**x1)(); NSInteger x2; }*)arg1;
 - (void)dealloc;
 - (void)finalize;
 - (id)getNamedItem:(id)arg1;

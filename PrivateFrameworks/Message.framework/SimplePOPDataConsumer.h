@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MappedData;
+@class NSMutableData;
 
 @interface SimplePOPDataConsumer : NSObject <DataConsumer> {
-    MappedData *_data;
+    NSMutableData *_data;
 }
 
 - (void)appendData:(id)arg1;

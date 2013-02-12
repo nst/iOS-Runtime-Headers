@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSString;
 
-@interface GMMStructuredAddress : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMStructuredAddress : PBCodable {
     NSString *_countryCode;
     NSString *_countryName;
     NSString *_dependentLocality;
@@ -39,6 +34,7 @@
 - (void)dealloc;
 - (id)dependentLocality;
 - (id)description;
+- (id)description;
 - (BOOL)hasCountryCode;
 - (BOOL)hasCountryName;
 - (BOOL)hasDependentLocality;
@@ -49,7 +45,7 @@
 - (id)init;
 - (id)locality;
 - (id)postalCode;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)region;
 - (void)setCountryCode:(id)arg1;
 - (void)setCountryName:(id)arg1;
@@ -59,6 +55,6 @@
 - (void)setRegion:(id)arg1;
 - (void)setThoroughfare:(id)arg1;
 - (id)thoroughfare;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

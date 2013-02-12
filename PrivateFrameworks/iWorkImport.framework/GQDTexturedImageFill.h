@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDColor, GQDImageBinary;
+@class GQDColor, GQDFilteredImage;
 
 @interface GQDTexturedImageFill : NSObject <GQDNameMappable> {
     GQDColor *mColor;
-    GQDImageBinary *mFilteredImageBinary;
-    GQDImageBinary *mOriginalImageBinary;
+    GQDFilteredImage *mFilteredImage;
     NSInteger mTechnique;
 }
 
@@ -16,7 +15,9 @@
 - (id)color;
 - (void)dealloc;
 - (id)imageBinary;
+- (void)invalidateFilteredImage;
 - (NSInteger)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
+- (void)setColor:(id)arg1;
 - (NSInteger)technique;
 
 @end

@@ -19,11 +19,17 @@
         float left; 
         float bottom; 
         float right; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     UIToolbarButtonBadge *_badge;
     BOOL _badgeAnimated;
     BOOL _barHeight;
     NSInteger _barStyle;
     BOOL _bezel;
+    } _glowAdjust;
     } _hitRect;
     UIView *_info;
     } _infoInsets;
@@ -43,6 +49,7 @@
 
 - (void)_adjustPushButton:(BOOL)arg1;
 - (void)_adjustPushButtonWithBarStyle:(NSInteger)arg1 withTintColor:(id)arg2;
+- (void)_animateImage:(float)arg1 withButtonBar:(id)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (void)_animateImage:(float)arg1 withButtonBar:(id)arg2;
 - (void)_badgeAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_buttonBarHitRect;
@@ -62,7 +69,7 @@
 - (void)dealloc;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 labelHeight:(float)arg4 withBarStyle:(NSInteger)arg5 withStyle:(NSInteger)arg6 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg7 possibleTitles:(id)arg8 withTintColor:(id)arg9 bezel:(BOOL)arg10 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg11;
+- (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 labelHeight:(float)arg4 withBarStyle:(NSInteger)arg5 withStyle:(NSInteger)arg6 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg7 possibleTitles:(id)arg8 withTintColor:(id)arg9 bezel:(BOOL)arg10 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg11 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg12;
 - (void)layoutSubviews;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
@@ -71,5 +78,6 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setSizesToFitImage:(BOOL)arg1;
+- (void)setTintColor:(id)arg1;
 
 @end

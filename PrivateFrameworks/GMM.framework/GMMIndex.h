@@ -2,12 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface GMMIndex : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMIndex : PBCodable {
     NSInteger _tileXIndex;
     NSInteger _tileYIndex;
 }
@@ -15,11 +10,14 @@
 @property NSInteger tileYIndex; /* unknown property attribute: V_tileYIndex */
 @property NSInteger tileXIndex; /* unknown property attribute: V_tileXIndex */
 
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)init;
+- (BOOL)readFrom:(id)arg1;
 - (void)setTileXIndex:(NSInteger)arg1;
 - (void)setTileYIndex:(NSInteger)arg1;
 - (NSInteger)tileXIndex;
 - (NSInteger)tileYIndex;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

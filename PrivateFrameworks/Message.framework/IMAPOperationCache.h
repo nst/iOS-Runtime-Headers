@@ -4,7 +4,7 @@
 
 @class IMAPAccount, NSFileHandle, NSMutableArray;
 
-@interface IMAPOperationCache : NSObject {
+@interface IMAPOperationCache : WRObject {
     IMAPAccount *_account;
     NSFileHandle *_handle;
     NSUInteger _lastSave;

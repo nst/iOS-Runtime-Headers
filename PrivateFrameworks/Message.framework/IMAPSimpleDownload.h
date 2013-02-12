@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MappedData, NSError, NSString;
+@class NSError, NSMutableData, NSString;
 
 @interface IMAPSimpleDownload : IMAPDownload {
     struct _NSRange { 
@@ -12,7 +12,7 @@
     unsigned int _complete : 1;
     unsigned int _length : 32;
     NSError *_error;
-    MappedData *_mdata;
+    NSMutableData *_mdata;
     } _range;
     NSString *_section;
 }

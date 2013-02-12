@@ -21,11 +21,9 @@
 }
 
 - (void)addCachedStyle:(struct __CFString { }*)arg1;
-- (void)addNavigationTableId:(struct __CFString { }*)arg1 tableString:(struct __CFString { }*)arg2;
 - (void)addStyle:(struct __CFString { }*)arg1 className:(struct __CFString { }*)arg2 srcStyle:(id)arg3;
 - (void)addedDrawableWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)beginNewSheet:(const char *)arg1;
-- (struct __CFString { }*)createTableAnchor;
 - (struct __CFString { }*)cssZOrderClassForDrawableUid:(const char *)arg1;
 - (NSUInteger)currentDrawableZOrder;
 - (void)dealloc;

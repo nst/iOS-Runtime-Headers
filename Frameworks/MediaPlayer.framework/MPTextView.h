@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableString, UIImage, UIImageView, UIProgressIndicator, UITextLabel, UITextViewLegacy, UIWebDocumentView;
+@class NSMutableString, NSString, UIImage, UIImageView, UIProgressIndicator, UIScrollView, UITextLabel, UIWebDocumentView;
 
 @interface MPTextView : UIView {
     UIImage *_albumArtwork;
     UIImageView *_background;
-    id _delegate;
     UIImageView *_faderView;
     UIProgressIndicator *_loadingIndicator;
     UITextLabel *_loadingLabel;
+    NSString *_rawText;
     BOOL _scrollIndicatorFlashDisabled;
+    UIScrollView *_scrollView;
     NSMutableString *_text;
-    UITextViewLegacy *_textView;
     UIWebDocumentView *_webView;
 }
 
@@ -34,12 +34,8 @@
 - (void)noteDidSnapshot;
 - (void)noteWillSnapshot;
 - (void)setArtwork:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setScrollIndicatorFlashDisabled:(BOOL)arg1;
 - (void)setText:(id)arg1 willLoad:(BOOL)arg2;
-- (void)view:(id)arg1 handleTapWithCount:(NSInteger)arg2 event:(struct __GSEvent { }*)arg3;
-- (double)viewDoubleTapDelay:(id)arg1;
-- (double)viewRejectAsTapThrehold:(id)arg1;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 
 @end

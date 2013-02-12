@@ -2,38 +2,78 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCardController, NSString, UIView;
+@class NSString, UIImageView, UILabel, UIView;
 
 @interface ABCardNameControl : UIControl {
+    UIImageView *_accessoryView;
+    NSString *_alternateName;
     UIView *_backgroundView;
-    ABCardController *_cardController;
+    UILabel *_dateView;
     void *_displayedPerson;
     BOOL _editable;
+    BOOL _isSelected;
+    BOOL _isSelectionAnimationEnabled;
+    UILabel *_message;
+    UILabel *_messageDetail;
     UIView *_nameView;
+    NSInteger _primaryProperty;
+    NSString *_primaryPropertyFormattingCountryCode;
     NSString *_tagLine;
 }
+
+@property(copy) NSString *primaryPropertyFormattingCountryCode; /* unknown property attribute: V_primaryPropertyFormattingCountryCode */
+@property(copy) NSString *message;
+@property(copy) NSString *messageDetail;
+@property(retain) UIFont *messageDetailFont;
+@property(retain) UIFont *messageFont;
 
 + (id)createNameBevelColor;
 + (id)createNameColor;
 + (id)createNameFont;
 + (id)createTagLineFont;
++ (id)dateLineFont;
 
-- (BOOL)beginTrackingAt:(struct CGPoint { float x1; float x2; })arg1 withEvent:(struct __GSEvent { }*)arg2;
+- (id)accessoryView;
+- (id)alternateName;
+- (void)cancelTrackingWithEvent:(id)arg1;
+- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)copyCompositeNameWithTagLine:(id)arg1 isPlaceholder:(BOOL*)arg2;
 - (struct __CFArray { }*)copyNamePropertiesForEditing:(BOOL)arg1;
+- (id)copyPrimaryValue;
 - (id)copyTagLine;
+- (id)createBasicLabel:(BOOL)arg1;
 - (void)dealloc;
+- (void)deselectAnimated:(BOOL)arg1;
 - (void)drawNameInView:(id)arg1 withClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)fontForName:(id)arg1 withWidth:(float)arg2;
-- (id)initWithCardController:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (float)heightForMessageConstrainedToWidth:(float)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)message;
+- (id)messageDetail;
+- (id)messageDetailFont;
+- (id)messageFont;
+- (id)primaryPropertyFormattingCountryCode;
+- (void)setAlternateName:(id)arg1;
+- (void)setDateMessageString:(id)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setEditable:(BOOL)arg1;
+- (void)setFont:(id)arg1 forLabel:(id)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)setLabel:(id)arg1 highlighted:(BOOL)arg2;
+- (void)setMessage:(id)arg1;
+- (void)setMessageDetail:(id)arg1;
+- (void)setMessageDetailFont:(id)arg1;
+- (void)setMessageFont:(id)arg1;
 - (void)setNeedsDisplay;
+- (void)setPrimaryProperty:(NSInteger)arg1;
+- (void)setPrimaryPropertyFormattingCountryCode:(id)arg1;
 - (void)setTagLine:(id)arg1;
+- (void)setText:(id)arg1 forOnDemandLabel:(id*)arg2 isDateView:(BOOL)arg3;
+- (BOOL)shouldDrawDateLine;
 - (struct CGSize { float x1; float x2; })sizeToFitWithMinimumHeight:(float)arg1;
+- (id)tagLine;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })usableNameBounds;
 - (float)verticalOffsetForNameWithTextSize:(struct CGSize { float x1; float x2; })arg1 tagLines:(id)arg2;
 

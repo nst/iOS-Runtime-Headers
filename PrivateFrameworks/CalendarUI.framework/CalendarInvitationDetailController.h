@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/CalendarUI.framework/CalendarUI
  */
 
-@class CalendarInvitationPreviewController, CalendarModel;
+@class CalendarModel;
 
 @interface CalendarInvitationDetailController : UIViewController {
     CalendarModel *_model;
-    CalendarInvitationPreviewController *_previewController;
 }
 
 - (void)_selectedOccurrenceChanged:(id)arg1;
-- (NSInteger)calendarViewType;
 - (void)dealloc;
-- (void)eventDetailViewDidSelectPreviewCell:(id)arg1;
+- (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(NSInteger)arg1;
+- (void)eventDetailViewDidFinish:(id)arg1;
+- (void)eventDetailViewDidSelectCell:(id)arg1;
 - (id)init;
 - (void)loadView;
+- (id)rotatingFooterView;
+- (id)rotatingHeaderView;
 - (void)setModel:(id)arg1;
 - (void)setTrustsEventStatus:(BOOL)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (void)updateNavigationBackButtonTitle;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

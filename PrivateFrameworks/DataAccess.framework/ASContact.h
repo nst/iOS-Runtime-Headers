@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSDate, NSString;
+@class NSArray, NSDate, NSString;
 
-@interface ASContact : ASChangedCollectionLeaf {
+@interface ASContact : ASChangedCollectionLeaf <ASDataElement> {
     void *_abRecord;
+    NSString *_accountName;
     NSDate *_anniversary;
     NSString *_assistantName;
     NSString *_assistantTelephoneNumber;
@@ -22,14 +23,19 @@
     NSString *_businessFaxNumber;
     NSString *_businessTelephoneNumber;
     NSString *_carTelephoneNumber;
+    NSArray *_categories;
+    NSArray *_children;
     NSString *_companyMainPhone;
     NSString *_companyName;
+    NSString *_customerID;
     NSString *_department;
     NSString *_email1Address;
     NSString *_email2Address;
     NSString *_email3Address;
     NSString *_fileAs;
+    NSInteger _fileAsAutoConstruction;
     NSString *_firstName;
+    NSString *_governmentID;
     NSString *_home2TelephoneNumber;
     NSString *_homeAddressCity;
     NSString *_homeAddressCountry;
@@ -45,8 +51,10 @@
     NSString *_lastName;
     NSString *_managerName;
     NSString *_middleName;
+    NSString *_mms;
     NSString *_mobileTelephoneNumber;
     NSString *_nickName;
+    NSString *_officeLocation;
     NSString *_otherAddressCity;
     NSString *_otherAddressCountry;
     NSString *_otherAddressPostalCode;
@@ -59,15 +67,87 @@
     NSString *_suffix;
     NSString *_title;
     NSString *_webpage;
+    NSString *_yomiCompanyName;
     NSString *_yomiFirstName;
     NSString *_yomiLastName;
 }
 
-+ (id)contactWithABRecord:(void*)arg1 serverID:(id)arg2;
+@property(retain) NSString *mms; /* unknown property attribute: V_mms */
+@property(retain) NSString *nickName; /* unknown property attribute: V_nickName */
+@property(retain) NSString *accountName; /* unknown property attribute: V_accountName */
+@property(retain) NSString *companyMainPhone; /* unknown property attribute: V_companyMainPhone */
+@property(retain) NSString *managerName; /* unknown property attribute: V_managerName */
+@property(retain) NSString *im3Address; /* unknown property attribute: V_im3Address */
+@property(retain) NSString *im2Address; /* unknown property attribute: V_im2Address */
+@property(retain) NSString *im1Address; /* unknown property attribute: V_im1Address */
+@property(retain) NSString *governmentID; /* unknown property attribute: V_governmentID */
+@property(retain) NSString *customerID; /* unknown property attribute: V_customerID */
+@property(retain) NSString *yomiLastName; /* unknown property attribute: V_yomiLastName */
+@property(retain) NSString *yomiFirstName; /* unknown property attribute: V_yomiFirstName */
+@property(retain) NSString *yomiCompanyName; /* unknown property attribute: V_yomiCompanyName */
+@property(retain) NSString *webpage; /* unknown property attribute: V_webpage */
+@property(retain) NSString *title; /* unknown property attribute: V_title */
+@property(retain) NSString *suffix; /* unknown property attribute: V_suffix */
+@property(retain) NSString *spouse; /* unknown property attribute: V_spouse */
+@property(retain) NSString *radioTelephoneNumber; /* unknown property attribute: V_radioTelephoneNumber */
+@property(retain) NSString *picture; /* unknown property attribute: V_picture */
+@property(retain) NSString *pagerNumber; /* unknown property attribute: V_pagerNumber */
+@property(retain) NSString *otherAddressStreet; /* unknown property attribute: V_otherAddressStreet */
+@property(retain) NSString *otherAddressState; /* unknown property attribute: V_otherAddressState */
+@property(retain) NSString *otherAddressPostalCode; /* unknown property attribute: V_otherAddressPostalCode */
+@property(retain) NSString *otherAddressCountry; /* unknown property attribute: V_otherAddressCountry */
+@property(retain) NSString *otherAddressCity; /* unknown property attribute: V_otherAddressCity */
+@property(retain) NSString *officeLocation; /* unknown property attribute: V_officeLocation */
+@property(retain) NSString *mobileTelephoneNumber; /* unknown property attribute: V_mobileTelephoneNumber */
+@property(retain) NSString *middleName; /* unknown property attribute: V_middleName */
+@property(retain) NSString *lastName; /* unknown property attribute: V_lastName */
+@property(retain) NSString *jobTitle; /* unknown property attribute: V_jobTitle */
+@property(retain) NSString *homeFaxNumber; /* unknown property attribute: V_homeFaxNumber */
+@property(retain) NSString *homeTelephoneNumber; /* unknown property attribute: V_homeTelephoneNumber */
+@property(retain) NSString *homeAddressStreet; /* unknown property attribute: V_homeAddressStreet */
+@property(retain) NSString *homeAddressState; /* unknown property attribute: V_homeAddressState */
+@property(retain) NSString *homeAddressPostalCode; /* unknown property attribute: V_homeAddressPostalCode */
+@property(retain) NSString *homeAddressCountry; /* unknown property attribute: V_homeAddressCountry */
+@property(retain) NSString *homeAddressCity; /* unknown property attribute: V_homeAddressCity */
+@property(retain) NSString *home2TelephoneNumber; /* unknown property attribute: V_home2TelephoneNumber */
+@property(retain) NSString *firstName; /* unknown property attribute: V_firstName */
+@property(retain) NSString *fileAs; /* unknown property attribute: V_fileAs */
+@property(retain) NSString *email3Address; /* unknown property attribute: V_email3Address */
+@property(retain) NSString *email2Address; /* unknown property attribute: V_email2Address */
+@property(retain) NSString *email1Address; /* unknown property attribute: V_email1Address */
+@property(retain) NSString *department; /* unknown property attribute: V_department */
+@property(retain) NSString *companyName; /* unknown property attribute: V_companyName */
+@property(retain) NSString *carTelephoneNumber; /* unknown property attribute: V_carTelephoneNumber */
+@property(retain) NSArray *children; /* unknown property attribute: V_children */
+@property(retain) NSArray *categories; /* unknown property attribute: V_categories */
+@property(retain) NSString *businessTelephoneNumber; /* unknown property attribute: V_businessTelephoneNumber */
+@property(retain) NSString *businessFaxNumber; /* unknown property attribute: V_businessFaxNumber */
+@property(retain) NSString *businessAddressStreet; /* unknown property attribute: V_businessAddressStreet */
+@property(retain) NSString *businessAddressState; /* unknown property attribute: V_businessAddressState */
+@property(retain) NSString *businessAddressPostalCode; /* unknown property attribute: V_businessAddressPostalCode */
+@property(retain) NSString *businessAddressCountry; /* unknown property attribute: V_businessAddressCountry */
+@property(retain) NSString *businessAddressCity; /* unknown property attribute: V_businessAddressCity */
+@property(retain) NSString *business2TelephoneNumber; /* unknown property attribute: V_business2TelephoneNumber */
+@property BOOL bodyTruncated; /* unknown property attribute: V_bodyTruncated */
+@property NSInteger bodySize; /* unknown property attribute: V_bodySize */
+@property(retain) NSString *body; /* unknown property attribute: V_body */
+@property(retain) NSDate *birthday; /* unknown property attribute: V_birthday */
+@property(retain) NSString *assistantTelephoneNumber; /* unknown property attribute: V_assistantTelephoneNumber */
+@property(retain) NSString *assistantName; /* unknown property attribute: V_assistantName */
+@property(retain) NSDate *anniversary; /* unknown property attribute: V_anniversary */
 
++ (BOOL)acceptsTopLevelLeaves;
++ (id)contactWithABRecord:(void*)arg1 serverID:(id)arg2;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (void)_detectFileAsAutoConstruction;
 - (void)_loadAttributesFromABRecord:(void*)arg1;
+- (void)_reconstructFileAsField;
 - (BOOL)_saveDatesToAddressBookWithExistingRecord:(void*)arg1 maintainExistingData:(BOOL)arg2;
 - (BOOL)_saveEmailsToAddressBookWithExistingRecord:(void*)arg1 maintainExistingData:(BOOL)arg2;
+- (BOOL)_saveExternalRepToAddressBookWithExistingRecord:(void*)arg1 maintainExistingData:(BOOL)arg2 storeExternalRep:(BOOL)arg3;
 - (BOOL)_saveIMsToAddressBookWithExistingRecord:(void*)arg1 maintainExistingData:(BOOL)arg2;
 - (BOOL)_savePhoneNumbersToAddressBookWithExistingRecord:(void*)arg1 maintainExistingData:(BOOL)arg2;
 - (BOOL)_saveRelatedNamesToAddressBookWithExistingRecord:(void*)arg1 maintainExistingData:(BOOL)arg2;
@@ -75,11 +155,14 @@
 - (BOOL)_saveURLsToAddressBookWithExistingRecord:(void*)arg1 maintainExistingData:(BOOL)arg2;
 - (BOOL)_setDatesWithExistingRecord:(void*)arg1;
 - (BOOL)_setEmailsWithExistingRecord:(void*)arg1;
+- (BOOL)_setExternalRepWithExistingRecord:(void*)arg1;
 - (BOOL)_setIMsWithExistingRecord:(void*)arg1;
 - (BOOL)_setPhoneNumbersWithExistingRecord:(void*)arg1;
 - (BOOL)_setRelatedNamesWithExistingRecord:(void*)arg1;
 - (BOOL)_setStreetAddressesWithExistingRecord:(void*)arg1;
 - (BOOL)_setURLsWithExistingRecord:(void*)arg1;
+- (id)_transformedDateForABFramework:(id)arg1;
+- (id)accountName;
 - (id)anniversary;
 - (void)appendActiveSyncDataForTask:(id)arg1 toWBXMLData:(id)arg2;
 - (id)asParseRules;
@@ -98,11 +181,15 @@
 - (id)businessFaxNumber;
 - (id)businessTelephoneNumber;
 - (id)carTelephoneNumber;
+- (id)categories;
+- (id)children;
 - (NSInteger)classType;
 - (id)companyMainPhone;
 - (id)companyName;
+- (id)customerID;
 - (void)dealloc;
 - (BOOL)deleteFromAddressBook;
+- (BOOL)deleteFromContainer:(void*)arg1;
 - (id)department;
 - (id)description;
 - (id)email1Address;
@@ -110,7 +197,9 @@
 - (id)email3Address;
 - (id)fileAs;
 - (id)firstName;
+- (id)governmentID;
 - (BOOL)hasLocalModifications:(void*)arg1;
+- (BOOL)hasLocalModificationsWithLocalObject:(void*)arg1;
 - (id)home2TelephoneNumber;
 - (id)homeAddressCity;
 - (id)homeAddressCountry;
@@ -127,23 +216,30 @@
 - (id)lastName;
 - (BOOL)loadABRecord;
 - (void)loadClientIDs;
+- (BOOL)loadLocalItemWithAccount:(id)arg1;
 - (id)managerName;
 - (id)middleName;
+- (id)mms;
 - (id)mobileTelephoneNumber;
 - (id)nickName;
+- (id)officeLocation;
 - (id)otherAddressCity;
 - (id)otherAddressCountry;
 - (id)otherAddressPostalCode;
 - (id)otherAddressState;
 - (id)otherAddressStreet;
 - (id)pagerNumber;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)picture;
 - (void)postProcessApplicationData;
 - (id)radioTelephoneNumber;
+- (BOOL)saveAfterMapWithLocalObject:(void*)arg1 toContainer:(void*)arg2 treatNullsAsDeletes:(BOOL)arg3 account:(id)arg4;
 - (BOOL)saveServerIDToContact;
-- (BOOL)saveToAddressBookWithExistingRecord:(void*)arg1 inStore:(void*)arg2 treatNullsAsDeletes:(BOOL)arg3;
+- (BOOL)saveServerIDToExistingItem;
+- (BOOL)saveToAddressBookWithExistingRecord:(void*)arg1 inStore:(void*)arg2 treatNullsAsDeletes:(BOOL)arg3 storeExternalRep:(BOOL)arg4;
+- (BOOL)saveWithLocalObject:(void*)arg1 toContainer:(void*)arg2 treatNullsAsDeletes:(BOOL)arg3 account:(id)arg4;
 - (void)setABRecord:(void*)arg1;
+- (void)setAccountName:(id)arg1;
 - (void)setAnniversary:(id)arg1;
 - (void)setAssistantName:(id)arg1;
 - (void)setAssistantTelephoneNumber:(id)arg1;
@@ -162,8 +258,11 @@
 - (void)setBusinessFaxNumber:(id)arg1;
 - (void)setBusinessTelephoneNumber:(id)arg1;
 - (void)setCarTelephoneNumber:(id)arg1;
+- (void)setCategories:(id)arg1;
+- (void)setChildren:(id)arg1;
 - (void)setCompanyMainPhone:(id)arg1;
 - (void)setCompanyName:(id)arg1;
+- (void)setCustomerID:(id)arg1;
 - (void)setDepartment:(id)arg1;
 - (void)setEmail1Address:(id)arg1;
 - (void)setEmail2Address:(id)arg1;
@@ -171,6 +270,7 @@
 - (void)setEmailFromAppData:(NSInteger)arg1 setter:(SEL)arg2;
 - (void)setFileAs:(id)arg1;
 - (void)setFirstName:(id)arg1;
+- (void)setGovernmentID:(id)arg1;
 - (void)setHome2TelephoneNumber:(id)arg1;
 - (void)setHomeAddressCity:(id)arg1;
 - (void)setHomeAddressCountry:(id)arg1;
@@ -184,10 +284,13 @@
 - (void)setIm3Address:(id)arg1;
 - (void)setJobTitle:(id)arg1;
 - (void)setLastName:(id)arg1;
+- (void)setLocalItem:(void*)arg1;
 - (void)setManagerName:(id)arg1;
 - (void)setMiddleName:(id)arg1;
+- (void)setMms:(id)arg1;
 - (void)setMobileTelephoneNumber:(id)arg1;
 - (void)setNickName:(id)arg1;
+- (void)setOfficeLocation:(id)arg1;
 - (void)setOtherAddressCity:(id)arg1;
 - (void)setOtherAddressCountry:(id)arg1;
 - (void)setOtherAddressPostalCode:(id)arg1;
@@ -200,12 +303,14 @@
 - (void)setSuffix:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setWebpage:(id)arg1;
+- (void)setYomiCompanyName:(id)arg1;
 - (void)setYomiFirstName:(id)arg1;
 - (void)setYomiLastName:(id)arg1;
 - (id)spouse;
 - (id)suffix;
 - (id)title;
 - (id)webpage;
+- (id)yomiCompanyName;
 - (id)yomiFirstName;
 - (id)yomiLastName;
 

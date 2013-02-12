@@ -9,9 +9,7 @@
     UITextField *_nameField;
 }
 
-- (struct CGSize { float x1; float x2; })_layerSize;
 - (void)dealloc;
-- (void)libraryView:(id)arg1 didSelectAlbum:(id)arg2;
 - (id)libraryView;
 - (void)loadCurrentConfiguration:(id)arg1;
 - (void)reloadLibrary;

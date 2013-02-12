@@ -10,15 +10,11 @@
 @property(retain,readonly) DOMCSSPrimitiveValue *green;
 @property(retain,readonly) DOMCSSPrimitiveValue *red;
 
-+ (id)_wrapRGBColor:(NSUInteger)arg1;
 + (void)initialize;
 
-- (NSUInteger)_RGBColor;
-- (id)_initWithRGB:(NSUInteger)arg1;
 - (id)alpha;
 - (id)blue;
 - (void)dealloc;
-- (void)finalize;
 - (id)green;
 - (id)red;
 

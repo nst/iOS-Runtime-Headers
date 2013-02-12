@@ -20,6 +20,7 @@
 - (id)from;
 - (NSInteger)importance;
 - (id)initWithASEmailItem:(id)arg1;
+- (id)longID;
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;
 - (id)messageClass;

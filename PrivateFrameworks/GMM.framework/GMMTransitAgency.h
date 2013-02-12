@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSString;
 
-@interface GMMTransitAgency : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMTransitAgency : PBCodable {
     NSString *_mainUrl;
     NSString *_name;
     NSString *_phone;
@@ -19,22 +14,21 @@
 @property(retain) NSString *mainUrl; /* unknown property attribute: V_mainUrl */
 @property(retain) NSString *name; /* unknown property attribute: V_name */
 @property(readonly) BOOL hasMainUrl;
-@property(readonly) BOOL hasName;
 @property(readonly) BOOL hasPhone;
 
 - (void)dealloc;
 - (id)description;
+- (id)description;
 - (BOOL)hasMainUrl;
-- (BOOL)hasName;
 - (BOOL)hasPhone;
 - (id)init;
 - (id)mainUrl;
 - (id)name;
 - (id)phone;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setMainUrl:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhone:(id)arg1;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

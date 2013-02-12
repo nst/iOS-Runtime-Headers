@@ -5,10 +5,4 @@
 @interface UIKeyboardLayoutQZERTY : UIKeyboardLayoutQWERTY {
 }
 
-- (id)buildUIKeyboardLayoutAlphabet;
-- (id)buildUIKeyboardLayoutAlphabetTransparent;
-- (id)buildUIKeyboardLayoutEmailAddress;
-- (id)buildUIKeyboardLayoutSMSAddressing;
-- (id)buildUIKeyboardLayoutURL;
-
 @end

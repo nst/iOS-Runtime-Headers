@@ -2,37 +2,35 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, NSString, UISectionList;
+@class NSArray, NSIndexPath, NSString, UITableView;
 
-@interface ABCountryCodePicker : UIView {
-    unsigned int _manuallySettingRowSelection : 1;
+@interface ABCountryCodePicker : UIView <UITableViewDataSource, UITableViewDelegate> {
     id _delegate;
     id _editedItem;
-    UISectionList *_sectionList;
     NSString *_selectedCountryCode;
-    NSArray *_sortedCountryInfos;
+    NSIndexPath *_selectedPath;
     NSArray *_sortedRegions;
-    NSArray *_sortedRegionsIndices;
+    UITableView *_tableView;
 }
 
 - (void)_didEndPickingAndConfirmed:(BOOL)arg1 animate:(BOOL)arg2;
-- (void)_setSelectedCountryCode:(id)arg1;
-- (void)back:(BOOL)arg1 save:(BOOL)arg2;
+- (void)_setSelectedCountryCode:(id)arg1 atPath:(id)arg2;
 - (void)buildUI;
 - (void)dealloc;
 - (id)editedItem;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (NSInteger)numberOfRowsInTable:(id)arg1;
-- (NSInteger)numberOfSectionsInSectionList:(id)arg1;
-- (void)reload;
+- (NSInteger)numberOfSectionsInTableView:(id)arg1;
+- (void)refresh;
 - (void)reloadCountryCodes;
-- (NSInteger)sectionList:(id)arg1 rowForSection:(NSInteger)arg2;
-- (id)sectionList:(id)arg1 titleForSection:(NSInteger)arg2;
 - (id)selectedCountryCode;
 - (void)setDelegate:(id)arg1;
 - (void)setEditedItem:(id)arg1;
 - (void)setSelectedCountryCode:(id)arg1;
-- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3 reusing:(id)arg4;
-- (void)tableRowSelected:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(NSInteger)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 
 @end

@@ -4,11 +4,11 @@
 
 @class ABPersonViewControllerHelper;
 
-@interface ABPersonViewController_DeletionDelegate : NSObject <UIModalViewDelegate> {
+@interface ABPersonViewController_DeletionDelegate : NSObject <UIActionSheetDelegate> {
     ABPersonViewControllerHelper *_controller;
 }
 
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 - (id)initWithPersonViewController:(id)arg1;
-- (void)modalView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 
 @end

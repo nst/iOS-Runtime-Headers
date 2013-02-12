@@ -2,25 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMMapPoint, NSString;
 
-@interface GMMDataProperties : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMDataProperties : PBCodable {
     NSString *_copyright;
     BOOL _disabled;
     BOOL _hasDisabled;
-    BOOL _hasImageHeight;
     BOOL _hasImageSource;
-    BOOL _hasImageWidth;
     BOOL _hasInfoLevel;
     BOOL _hasInfoValue;
-    BOOL _hasMaxZoomLevel;
     BOOL _hasNumZoomLevels;
-    BOOL _hasRadius;
     BOOL _hasTileHeight;
     BOOL _hasTileWidth;
     NSInteger _imageHeight;
@@ -39,54 +30,43 @@
     NSInteger _tileWidth;
 }
 
+@property(readonly) BOOL hasImageSource; /* unknown property attribute: V_hasImageSource */
+@property NSInteger imageSource; /* unknown property attribute: V_imageSource */
+@property NSInteger radius; /* unknown property attribute: V_radius */
+@property NSInteger maxZoomLevel; /* unknown property attribute: V_maxZoomLevel */
 @property(retain) NSString *streetRange; /* unknown property attribute: V_streetRange */
 @property(retain) NSString *text; /* unknown property attribute: V_text */
 @property(retain) NSString *copyright; /* unknown property attribute: V_copyright */
-@property BOOL hasImageSource; /* unknown property attribute: V_hasImageSource */
-@property NSInteger imageSource; /* unknown property attribute: V_imageSource */
-@property BOOL hasRadius; /* unknown property attribute: V_hasRadius */
-@property NSInteger radius; /* unknown property attribute: V_radius */
-@property BOOL hasMaxZoomLevel; /* unknown property attribute: V_hasMaxZoomLevel */
-@property NSInteger maxZoomLevel; /* unknown property attribute: V_maxZoomLevel */
 @property(retain) GMMMapPoint *latLon; /* unknown property attribute: V_latLon */
-@property BOOL hasNumZoomLevels; /* unknown property attribute: V_hasNumZoomLevels */
+@property(readonly) BOOL hasNumZoomLevels; /* unknown property attribute: V_hasNumZoomLevels */
 @property NSInteger numZoomLevels; /* unknown property attribute: V_numZoomLevels */
 @property(retain) NSString *panoId; /* unknown property attribute: V_panoId */
-@property BOOL hasTileHeight; /* unknown property attribute: V_hasTileHeight */
+@property(readonly) BOOL hasTileHeight; /* unknown property attribute: V_hasTileHeight */
 @property NSInteger tileHeight; /* unknown property attribute: V_tileHeight */
-@property BOOL hasTileWidth; /* unknown property attribute: V_hasTileWidth */
+@property(readonly) BOOL hasTileWidth; /* unknown property attribute: V_hasTileWidth */
 @property NSInteger tileWidth; /* unknown property attribute: V_tileWidth */
-@property BOOL hasImageHeight; /* unknown property attribute: V_hasImageHeight */
 @property NSInteger imageHeight; /* unknown property attribute: V_imageHeight */
-@property BOOL hasImageWidth; /* unknown property attribute: V_hasImageWidth */
 @property NSInteger imageWidth; /* unknown property attribute: V_imageWidth */
-@property BOOL hasInfoValue; /* unknown property attribute: V_hasInfoValue */
+@property(readonly) BOOL hasInfoValue; /* unknown property attribute: V_hasInfoValue */
 @property NSInteger infoValue; /* unknown property attribute: V_infoValue */
-@property BOOL hasInfoLevel; /* unknown property attribute: V_hasInfoLevel */
+@property(readonly) BOOL hasInfoLevel; /* unknown property attribute: V_hasInfoLevel */
 @property NSInteger infoLevel; /* unknown property attribute: V_infoLevel */
-@property BOOL hasDisabled; /* unknown property attribute: V_hasDisabled */
+@property(readonly) BOOL hasDisabled; /* unknown property attribute: V_hasDisabled */
 @property BOOL disabled; /* unknown property attribute: V_disabled */
 @property(readonly) BOOL hasCopyright;
-@property(readonly) BOOL hasLatLon;
-@property(readonly) BOOL hasPanoId;
 @property(readonly) BOOL hasStreetRange;
 @property(readonly) BOOL hasText;
 
 - (id)copyright;
 - (void)dealloc;
+- (id)description;
 - (BOOL)disabled;
 - (BOOL)hasCopyright;
 - (BOOL)hasDisabled;
-- (BOOL)hasImageHeight;
 - (BOOL)hasImageSource;
-- (BOOL)hasImageWidth;
 - (BOOL)hasInfoLevel;
 - (BOOL)hasInfoValue;
-- (BOOL)hasLatLon;
-- (BOOL)hasMaxZoomLevel;
 - (BOOL)hasNumZoomLevels;
-- (BOOL)hasPanoId;
-- (BOOL)hasRadius;
 - (BOOL)hasStreetRange;
 - (BOOL)hasText;
 - (BOOL)hasTileHeight;
@@ -102,20 +82,9 @@
 - (NSInteger)numZoomLevels;
 - (id)panoId;
 - (NSInteger)radius;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setCopyright:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
-- (void)setHasDisabled:(BOOL)arg1;
-- (void)setHasImageHeight:(BOOL)arg1;
-- (void)setHasImageSource:(BOOL)arg1;
-- (void)setHasImageWidth:(BOOL)arg1;
-- (void)setHasInfoLevel:(BOOL)arg1;
-- (void)setHasInfoValue:(BOOL)arg1;
-- (void)setHasMaxZoomLevel:(BOOL)arg1;
-- (void)setHasNumZoomLevels:(BOOL)arg1;
-- (void)setHasRadius:(BOOL)arg1;
-- (void)setHasTileHeight:(BOOL)arg1;
-- (void)setHasTileWidth:(BOOL)arg1;
 - (void)setImageHeight:(NSInteger)arg1;
 - (void)setImageSource:(NSInteger)arg1;
 - (void)setImageWidth:(NSInteger)arg1;
@@ -134,6 +103,6 @@
 - (id)text;
 - (NSInteger)tileHeight;
 - (NSInteger)tileWidth;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

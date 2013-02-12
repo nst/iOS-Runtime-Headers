@@ -13,7 +13,12 @@
 - (void)hideTopMostMiniAlert:(NSInteger)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
+- (void)remoteNotificationMessageDelivered;
+- (void)remoteNotificationRegistrationFailedWithErrorDomain:(id)arg1 code:(NSInteger)arg2 localizedDescription:(id)arg3;
+- (void)remoteNotificationRegistrationSucceededWithDeviceToken:(id)arg1;
+- (void)sheetWithRemoteViewIdentifierDidDismiss:(id)arg1;
 - (void)showTopMostMiniAlert;
+- (void)simpleRemoteActionDidOccur:(NSInteger)arg1;
 - (void)statusBarWillAnimateToHeight:(float)arg1 duration:(double)arg2 fence:(NSInteger)arg3;
 - (void)updatePort;
 

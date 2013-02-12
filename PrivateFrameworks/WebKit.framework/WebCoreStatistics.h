@@ -5,9 +5,12 @@
 @interface WebCoreStatistics : NSObject {
 }
 
++ (unsigned long)cachedFontDataCount;
++ (unsigned long)cachedFontDataInactiveCount;
 + (void)emptyCache;
 + (void)garbageCollectJavaScriptObjects;
 + (void)garbageCollectJavaScriptObjectsOnAlternateThreadForDebugging:(BOOL)arg1;
++ (unsigned long)glyphPageCount;
 + (unsigned long)iconPageURLMappingCount;
 + (unsigned long)iconRecordCount;
 + (unsigned long)iconRetainedPageURLCount;
@@ -22,6 +25,9 @@
 + (unsigned long)javaScriptReferencedObjectsCount;
 + (id)javaScriptRootObjectClasses;
 + (id)javaScriptRootObjectTypeCounts;
++ (id)memoryStatistics;
++ (void)purgeInactiveFontData;
++ (void)returnFreeMemoryToSystem;
 + (void)setCacheDisabled:(BOOL)arg1;
 + (void)setShouldPrintExceptions:(BOOL)arg1;
 + (BOOL)shouldPrintExceptions;

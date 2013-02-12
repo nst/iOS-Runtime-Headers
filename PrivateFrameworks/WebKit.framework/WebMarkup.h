@@ -2,32 +2,19 @@
    Image: /System/Library/PrivateFrameworks/WebKit.framework/WebKit
  */
 
-@class DOMDocument, DOMElement, WebFrameBridge, WebView;
+@class DOMDocument, DOMElement, WAKWindow, WebView;
 
 @interface WebMarkup : NSObject {
-    struct WKWindow { struct _WKObject { 
-            NSUInteger referenceCount; 
-            struct _WKClassInfo {} *classInfo; 
-        } x1; struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
     struct CGPoint { 
         float x; 
         float y; 
-    WebFrameBridge *_bridge;
     DOMDocument *_doc;
     struct CGContext { } *_graphicsContext;
     DOMElement *_sizeElement;
     } _stringDrawingOrigin;
     DOMElement *_textElement;
     WebView *_webView;
-        } x2; struct WKView {} *x3; struct WKView {} *x4; struct __GSEvent {} *x5; int (*x6)(); void *x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; } *_window;
+    WAKWindow *_window;
 }
 
 + (BOOL)isSharedMarkupCreated;

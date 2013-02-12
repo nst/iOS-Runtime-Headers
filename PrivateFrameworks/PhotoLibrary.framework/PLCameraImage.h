@@ -2,28 +2,49 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhotoDCFFileGroup;
+@class MLPhotoDCFFileGroup, UIImage;
 
-@interface PLCameraImage : MLPhoto {
+@interface PLCameraImage : MLPhoto <MLPhotoBakedThumbnailsDelegate> {
+    unsigned int _didSetHasJPEGData : 1;
+    unsigned int _didSetDuration : 1;
+    double _duration;
     MLPhotoDCFFileGroup *_fileGroup;
+    BOOL _hasJPEGData;
+    NSInteger _photoType;
+    UIImage *_thumbnailImage;
 }
+
+@property(readonly) NSString *title;
 
 + (NSInteger)imageIDForFileGroup:(id)arg1;
 + (void)setMaxImageSize:(NSInteger)arg1;
 
 - (struct CGImage { }*)_createCGImageForFormat:(NSInteger)arg1 orientation:(NSInteger*)arg2 ignoringSizeCaps:(BOOL)arg3 properties:(const struct __CFDictionary {}**)arg4;
+- (void)checkForVideoFile;
 - (NSInteger)compare:(id)arg1;
 - (struct CGImage { }*)createFullScreenCGImageRef:(NSInteger*)arg1 properties:(const struct __CFDictionary {}**)arg2;
 - (struct CGImage { }*)createFullSizeCGImageRef:(NSInteger*)arg1;
+- (struct CGImage { }*)createFullSizeCGImageRefForImagePickerClient:(NSInteger*)arg1;
 - (struct CGImage { }*)createLowResolutionFullScreenCGImageRef;
 - (void)dealloc;
+- (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)deleteFiles;
 - (id)description;
+- (double)duration;
 - (id)fileGroup;
-- (void)fileGroupDidFinishSaving:(id)arg1;
+- (void)fileGroupDidFinishSaving:(id)arg1 jobType:(id)arg2;
 - (void)fileGroupWillBeginSaving:(id)arg1;
+- (id)fullSizeJPEGPath;
 - (BOOL)hasFullSizeImage;
+- (BOOL)hasFullSizeJPEGData;
+- (NSUInteger)hash;
 - (id)initWithDCFFileGroup:(id)arg1;
+- (BOOL)isAudio;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isVideo;
+- (void)saveBakedVideoThumbnail;
+- (void)setThumbnailImage:(id)arg1;
 - (id)thumbnailImage;
+- (id)title;
 
 @end

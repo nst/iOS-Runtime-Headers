@@ -2,25 +2,34 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
+@class NSArray, UIMoreListCellLayoutManager, UITableView;
 
-@interface UIMoreListController : UIViewController {
+@interface UIMoreListController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     BOOL _allowsCustomizing;
+    UIMoreListCellLayoutManager *_layoutManager;
     NSArray *_moreViewControllers;
+    UITableView *_table;
 }
 
 @property(retain) NSArray *moreViewControllers;
 @property BOOL allowsCustomizing;
 
+- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (void)_layoutCells;
 - (void)_updateEditButton;
 - (BOOL)allowsCustomizing;
 - (void)dealloc;
 - (id)init;
+- (void)loadView;
 - (id)moreViewControllers;
+- (NSInteger)numberOfSectionsInTableView:(id)arg1;
 - (void)setAllowsCustomizing:(BOOL)arg1;
 - (void)setMoreViewControllers:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(NSInteger)arg1;
 - (id)tabBarItem;
 - (id)table;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

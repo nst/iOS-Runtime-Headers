@@ -11,11 +11,17 @@
     NSNumber *_status;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (void)_setPolicies:(id)arg1;
 - (void)_setRemoteWipe:(id)arg1;
 - (void)_setStatus:(id)arg1;
 - (id)asParseRules;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)initWithPolicyType:(id)arg1;
 - (id)policies;

@@ -15,9 +15,9 @@
     NSInteger m_creationTime;
     NSInteger m_modificationTime;
     NSString *m_pstrName;
-    unsigned long m_size;
+    NSUInteger m_size;
     NSInteger m_type;
-    unsigned long m_userFlags;
+    NSUInteger m_userFlags;
 }
 
 - (void)dealloc;
@@ -30,7 +30,7 @@
 - (NSInteger)getType;
 - (unsigned long)getUserFlags;
 - (id)init;
-- (id)initWithStgInfo:(struct _StgInfo { NSInteger *x1; NSInteger x2; unsigned long x3; unsigned long long x4; NSInteger x5; NSInteger x6; NSInteger x7; struct _SSRW_GUID { unsigned long x_8_1_1; unsigned short x_8_1_2; unsigned short x_8_1_3; unsigned char x_8_1_4[8]; } x8; }*)arg1;
+- (id)initWithStgInfo:(struct _StgInfo { NSInteger *x1; NSInteger x2; NSUInteger x3; unsigned long long x4; NSInteger x5; NSInteger x6; NSInteger x7; struct _SSRW_GUID { NSUInteger x_8_1_1; unsigned short x_8_1_2; unsigned short x_8_1_3; unsigned char x_8_1_4[8]; } x8; }*)arg1;
 - (void)setAccessMode:(NSInteger)arg1;
 - (void)setCLSID:(struct { NSUInteger x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
 - (void)setCreationTime:(long)arg1;

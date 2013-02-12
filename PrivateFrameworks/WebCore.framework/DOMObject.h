@@ -6,11 +6,9 @@
     struct DOMObjectInternal { } *_internal;
 }
 
-- (id)_init;
 - (oneway void)_webcore_releaseOnWebThread;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (oneway void)release;
 - (id)sheet;

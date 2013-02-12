@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateList>, <UIKeyboardInput>, NSArray, NSMutableDictionary, NSString, NSTimer, UIAutocorrectInlinePrompt, UIDelayedAction, UIKeyboardInputManager, UIKeyboardLanguageIndicator, UIKeyboardLayout, UITextInputTraits, UIView;
+@class <UIKeyboardCandidateList>, <UIKeyboardInput>, CandWord, NSArray, NSMutableDictionary, NSString, NSTimer, UIAutocorrectInlinePrompt, UIDelayedAction, UIKeyboardInputManager, UIKeyboardLanguageIndicator, UIKeyboardLayout, UITextInputTraits;
 
-@interface UIKeyboardImpl : UIView <WebCaretChangeListener> {
+@interface UIKeyboardImpl : UIView {
     struct CGPoint { 
         float x; 
         float y; 
@@ -19,19 +19,19 @@
     UIAutocorrectInlinePrompt *m_autocorrectPrompt;
     UIDelayedAction *m_autocorrectPromptAction;
     BOOL m_autocorrectPromptTimerFired;
-    NSString *m_autocorrection;
+    CandWord *m_autocorrection;
     BOOL m_autocorrectionPreference;
     BOOL m_autoshift;
     <UIKeyboardCandidateList> *m_candidateList;
     NSArray *m_candidates;
     BOOL m_caretBlinks;
     BOOL m_caretShowingNow;
-    NSTimer *m_caretTimer;
-    UIView *m_caretView;
     BOOL m_caretVisible;
     NSInteger m_changeCount;
+    BOOL m_changeNotificationDisabled;
     double m_changeTime;
     BOOL m_changed;
+    NSInteger m_currentDirection;
     UITextInputTraits *m_defaultTraits;
     <UIKeyboardInput> *m_delegate;
     BOOL m_delegateIsSMSTextView;
@@ -67,12 +67,12 @@
     UITextInputTraits *m_traits;
     BOOL m_updatingPreferences;
     BOOL m_userChangedSelection;
-    NSArray *m_userSelectedInputModes;
 }
 
 @property BOOL shouldSkipCandidateSelection;
 
 + (id)activeInstance;
++ (void)applicationWillSuspend:(id)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(NSInteger)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(NSInteger)arg1;
@@ -81,7 +81,6 @@
 + (id)sharedInstance;
 
 - (id)UILanguagePreference;
-- (BOOL)_shouldSuggestUserEnteredString:(id)arg1;
 - (void)acceptAutocorrection;
 - (void)acceptCandidate:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)acceptCurrentCandidate;
@@ -89,6 +88,7 @@
 - (BOOL)acceptInputString:(id)arg1;
 - (void)acceptWord:(id)arg1 firstDelete:(NSUInteger)arg2 addString:(id)arg3;
 - (void)addInputObject:(id)arg1;
+- (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
 - (void)addInputString:(id)arg1;
 - (void)animateAutocorrection;
 - (void)applicationResumedEventsOnly:(id)arg1;
@@ -98,6 +98,7 @@
 - (id)autocorrectPrompt;
 - (void)autocorrectionAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (BOOL)autocorrectionPreference;
+- (BOOL)autocorrectionPreferenceForTraits;
 - (id)automaticallySelectedOverlay;
 - (void)callChanged;
 - (void)callChangedSelection;
@@ -113,19 +114,17 @@
 - (BOOL)callShouldDelete;
 - (BOOL)callShouldInsertText:(id)arg1;
 - (BOOL)canHandleKeyHitTest;
+- (BOOL)canWriteKeyboardsExpandedPreferences;
 - (id)candidateList;
 - (void)candidateListAcceptCandidate:(id)arg1;
 - (void)candidateListSelectionDidChange:(id)arg1;
-- (void)caretBlinkTimerFired:(id)arg1;
 - (BOOL)caretBlinks;
-- (void)caretChanged;
 - (BOOL)caretVisible;
 - (NSInteger)changeCount;
+- (BOOL)changeNotificationDisabled;
 - (struct __CFDictionary { }*)chargedKeyProbabilities;
 - (void)clearAnimations;
 - (void)clearAutocorrectPromptTimer;
-- (void)clearCaret;
-- (void)clearCaretBlinkTimer;
 - (void)clearChangeTimeAndCount;
 - (void)clearChangedDelegate;
 - (void)clearInput;
@@ -133,6 +132,7 @@
 - (void)clearKeyAreas;
 - (void)clearLayouts;
 - (void)clearLongPressTimer;
+- (void)clearSelection;
 - (void)clearShiftState;
 - (void)clearSynchronizePreferencesTimer;
 - (void)clearTimers;
@@ -144,7 +144,7 @@
 - (void)delayedInit;
 - (id)delegate;
 - (BOOL)delegateIsSMSTextView;
-- (void)delegateSuggestionsForCurrentInput;
+- (BOOL)delegateSuggestionsForCurrentInput;
 - (void)deleteFromInput;
 - (BOOL)displaysCandidates;
 - (BOOL)doubleSpacePeriodPreference;
@@ -161,8 +161,9 @@
 - (void)handleDeleteWithZeroInputCount;
 - (void)handleHardwareKeyDownFromSimulator:(struct __GSEvent { }*)arg1;
 - (void)handleObserverCallback;
-- (void)handleStringInput:(id)arg1;
-- (void)hideCaret:(NSInteger)arg1;
+- (void)handleStringInput:(id)arg1 fromVariantKey:(BOOL)arg2;
+- (BOOL)hasEditableMarkedText;
+- (BOOL)hasMarkedText;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)inputModeFirstPreference;
 - (id)inputModeLastChosen;
@@ -170,14 +171,16 @@
 - (id)inputModeLastUsedPreference;
 - (id)inputModePreference;
 - (id)inputOverlayContainer;
-- (void)installCaret;
+- (BOOL)isAllowedInputMode:(id)arg1;
+- (BOOL)isAutoFillMode;
 - (BOOL)isAutoShifted;
+- (BOOL)isDesiredInputMode:(id)arg1;
 - (BOOL)isLongPress;
 - (BOOL)isShiftLocked;
 - (BOOL)isShifted;
 - (void)keyActivated;
 - (void)keyDeactivated;
-- (NSInteger)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(NSInteger)arg2 atTime:(double)arg3 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct __GSWindow {} *x7; }*)arg4 forceShift:(BOOL)arg5;
+- (NSInteger)keyHitTest:(struct CGPoint { float x1; float x2; })arg1 touchStage:(NSInteger)arg2 atTime:(double)arg3 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg4 forceShift:(BOOL)arg5;
 - (BOOL)keySlidIntoSwipe;
 - (id)keyboardDefaultForKey:(id)arg1;
 - (BOOL)keyboardsExpandedPreference;
@@ -186,23 +189,31 @@
 - (void)notifyShiftState;
 - (NSInteger)orientation;
 - (BOOL)performanceLoggingPreference;
+- (NSUInteger)phraseBoundary;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)postEmptyDelegateNotificationIfNeeded;
 - (void)prepareForGeometryChange;
 - (void)prepareForSelectionChange;
+- (void)recomputeActiveInputModes;
 - (void)registerKeyArea:(struct CGPoint { float x1; float x2; })arg1 withRadii:(struct CGPoint { float x1; float x2; })arg2 forKeyCode:(unsigned short)arg3 forLowerKey:(id)arg4 forUpperKey:(id)arg5;
 - (void)removeAutocorrectPrompt;
 - (void)removeFromSuperview;
 - (BOOL)returnKeyEnabled;
 - (NSInteger)returnKeyType;
+- (id)searchStringForMarkedText;
 - (void)setAnotherTouchWaiting:(BOOL)arg1;
 - (void)setAutocorrection:(id)arg1;
 - (void)setCandidates:(id)arg1;
 - (void)setCaretBlinks:(BOOL)arg1;
 - (void)setCaretVisible:(BOOL)arg1;
+- (void)setChangeNotificationDisabled:(BOOL)arg1;
 - (void)setChanged;
 - (void)setDefaultTextInputTraits:(id)arg1;
 - (void)setDelegate:(id)arg1 force:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setInitialDirection;
 - (void)setInputMode:(id)arg1;
 - (void)setInputModeFromPreferences;
 - (void)setInputModeIfDifferentThanCurrent:(id)arg1;
@@ -216,9 +227,12 @@
 - (void)setInputString:(id)arg1;
 - (void)setKeyboardDefault:(id)arg1 forKey:(id)arg2;
 - (void)setKeyboardsExpandedPreference;
+- (void)setMarkedText;
 - (void)setOrientationForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPhraseBoundary:(NSUInteger)arg1;
 - (void)setPreviousInputString:(id)arg1;
 - (void)setReturnKeyEnabled:(BOOL)arg1;
+- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setShift:(BOOL)arg1 autoshift:(BOOL)arg2;
 - (void)setShift:(BOOL)arg1;
 - (void)setShiftLocked;
@@ -231,12 +245,13 @@
 - (BOOL)shouldChargeKeys;
 - (BOOL)shouldEnableShiftForDeletedCharacter:(unsigned short)arg1;
 - (BOOL)shouldSkipCandidateSelection;
-- (void)showCaret:(NSInteger)arg1;
 - (void)showInputModeIndicator;
 - (void)showNextCandidates;
 - (void)startAutoDeleteTimer;
 - (void)startCaretBlinkIfNeeded;
 - (void)stopAutoDelete;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })subtractKeyboardFrameFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
+- (BOOL)suppliesCompletions;
 - (void)synchronizePreferences;
 - (void)synchronizePreferencesIfNeeded;
 - (void)takeTextInputTraitsFrom:(id)arg1;
@@ -248,7 +263,6 @@
 - (void)toggleShift;
 - (void)touchAutoDeleteTimerWithThreshold:(double)arg1;
 - (void)touchAutocorrectPromptTimer;
-- (void)touchCaretBlinkTimer;
 - (void)touchLongPressTimer;
 - (void)touchLongPressTimerWithDelay:(double)arg1;
 - (void)touchSynchronizePreferencesTimer;
@@ -256,16 +270,15 @@
 - (void)updateAutocorrectPromptAction;
 - (void)updateCandidateDisplay;
 - (void)updateCandidateDisplayAsyncWithCandidates:(id)arg1 forInputManager:(id)arg2;
-- (void)updateCaretRect;
 - (void)updateChangeTimeAndIncrementCount;
 - (void)updateForChangedSelection;
 - (void)updateInputManagerAutoShiftFlag;
 - (void)updateLayout;
 - (void)updateLayoutAndSetShift;
 - (void)updateLayoutForInterfaceOrientation:(NSInteger)arg1;
+- (void)updateObserverState;
 - (void)updateReturnKey:(BOOL)arg1;
 - (void)updateReturnKey;
-- (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateShiftState;
 - (void)updateTextCandidateView;
 

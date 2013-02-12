@@ -2,40 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSError, NSURL, UIColor, UIWindow;
+@class MPMoviePlayerControllerInternal;
 
 @interface MPMoviePlayerController : NSObject {
-    struct { 
-        unsigned int active : 1; 
-        unsigned int mediaType : 1; 
-        unsigned int statusBarWasHidden : 1; 
-        unsigned int shouldRestartPlaybackAfterAudioRouteChange : 1; 
-        unsigned int shouldResumeGeneratingDeviceOrientationNotifications : 1; 
-        unsigned int playbackFailed : 1; 
-        unsigned int isFinishing : 1; 
-        unsigned int hideLoadingIndicatorForLocalFiles : 1; 
-        unsigned int fullscreen : 1; 
-        unsigned int unused : 23; 
-    UIColor *_backgroundColor;
-    NSURL *_contentURL;
-    NSInteger _movieControlMode;
-    NSError *_playbackError;
-    } _playerBitfield;
-    NSUInteger _previousStatusBarMode;
-    NSUInteger _previousStatusBarOrientation;
-    NSInteger _scalingMode;
-    id _videoViewController;
-    UIWindow *_window;
+    MPMoviePlayerControllerInternal *_internal;
 }
 
-@property(retain) UIColor *backgroundColor; /* unknown property attribute: V_backgroundColor */
-@property NSInteger scalingMode; /* unknown property attribute: V_scalingMode */
-@property(readonly) NSURL *contentURL; /* unknown property attribute: V_contentURL */
+@property(retain) UIColor *backgroundColor;
+@property(readonly) UIView *backgroundView;
+@property(readonly) NSURL *contentURL;
 @property(readonly) UIView *movieView;
 @property double currentTime;
 @property(getter=isFullscreen) BOOL fullscreen;
 @property BOOL hideLoadingIndicatorForLocalFiles;
+@property double initialPlaybackTime;
 @property NSInteger movieControlMode;
+@property NSInteger scalingMode;
 
 + (id)_currentMoviePlayerController;
 + (BOOL)_playbackInProgress;
@@ -45,7 +27,9 @@
 
 - (void)_audioRouteChanged:(id)arg1;
 - (void)_bufferingStatusDidChangeNotification:(id)arg1;
+- (void)_checkNetworkMediaType;
 - (void)_createPlayer;
+- (void)_delayedBeginFadeOut;
 - (void)_expireImplicitAudioRouteChangePlaybackRestart;
 - (void)_itemDidChangeNotification:(id)arg1;
 - (void)_itemFailedToPlay:(id)arg1;
@@ -66,7 +50,10 @@
 - (void)_playerFadeOutAnimationDidEnd:(id)arg1 finished:(id)arg2;
 - (void)_playerFinishAndFadeOut;
 - (void)_preloadingComplete;
+- (void)_simpleRemoteNotification:(id)arg1;
+- (void)_tearDownPlayer:(BOOL)arg1;
 - (void)_updateForCurrentMovieControlMode;
+- (void)_validationDidFinish:(id)arg1;
 - (void)_videoViewScaleModeDidChange:(id)arg1;
 - (NSUInteger)_visiblePartsForMovieControlMode;
 - (id)_volumeAudioCategory;
@@ -75,29 +62,30 @@
 - (void)_willSuspendNotification:(id)arg1;
 - (void)_willTerminateNotification:(id)arg1;
 - (id)backgroundColor;
+- (id)backgroundView;
 - (id)contentURL;
 - (double)currentTime;
 - (void)dealloc;
 - (BOOL)hideLoadingIndicatorForLocalFiles;
 - (id)init;
 - (id)initWithContentURL:(id)arg1;
+- (double)initialPlaybackTime;
 - (BOOL)isFullscreen;
 - (NSInteger)movieControlMode;
 - (id)movieView;
 - (NSInteger)orientation;
 - (void)pause;
 - (void)play;
-- (void)resume;
 - (NSInteger)scalingMode;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setFullscreen:(BOOL)arg1;
 - (void)setHideLoadingIndicatorForLocalFiles:(BOOL)arg1;
+- (void)setInitialPlaybackTime:(double)arg1;
 - (void)setMovieControlMode:(NSInteger)arg1;
 - (void)setOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)setScalingMode:(NSInteger)arg1;
 - (void)stop;
-- (id)videoViewController;
 - (void)viewControllerRequestsExit:(id)arg1;
 
 @end

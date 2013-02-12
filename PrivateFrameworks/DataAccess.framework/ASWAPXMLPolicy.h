@@ -8,6 +8,11 @@
     NSString *_data;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (id)_policyForWAPProvisioningXMLData;
 - (void)_setData:(id)arg1;
 - (id)asParseRules;

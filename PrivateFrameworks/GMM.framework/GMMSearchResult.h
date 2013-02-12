@@ -2,87 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class GMMAdInfo, GMMFriendProfileInfo, GMMGeometry, GMMKmlInfo, GMMRating, GMMStructuredAddress, NSMutableArray, NSString;
 
-@class GMMAdInfo, GMMDEPRECATED_5, GMMFriendProfileInfo, GMMGeometry, GMMKmlInfo, GMMRating, GMMStructuredAddress, NSMutableArray, NSString;
-
-@interface GMMSearchResult : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMSearchResult : PBCodable {
     GMMAdInfo *_adInfo;
     NSMutableArray *_addressLines;
     NSString *_attributionText;
     NSString *_attributionUrl;
-    long long _cid;
-    NSString *_dEPRECATED_10;
-    NSString *_dEPRECATED_17;
-    NSString *_dEPRECATED_25;
-    NSString *_dEPRECATED_26;
-    NSString *_dEPRECATED_27;
-    NSString *_dEPRECATED_28;
-    NSString *_dEPRECATED_29;
-    NSString *_dEPRECATED_30;
-    NSString *_dEPRECATED_31;
-    NSString *_dEPRECATED_32;
-    NSString *_dEPRECATED_33;
-    NSString *_dEPRECATED_34;
-    NSString *_dEPRECATED_35;
-    NSString *_dEPRECATED_36;
-    NSString *_dEPRECATED_37;
-    NSString *_dEPRECATED_38;
-    NSString *_dEPRECATED_39;
-    NSString *_dEPRECATED_40;
-    NSString *_dEPRECATED_41;
-    NSString *_dEPRECATED_42;
-    NSString *_dEPRECATED_43;
-    NSString *_dEPRECATED_44;
-    NSString *_dEPRECATED_45;
-    NSString *_dEPRECATED_46;
-    NSString *_dEPRECATED_47;
-    NSString *_dEPRECATED_48;
-    NSString *_dEPRECATED_49;
-    NSString *_dEPRECATED_50;
-    NSString *_dEPRECATED_51;
-    NSString *_dEPRECATED_52;
-    NSString *_dEPRECATED_53;
-    NSString *_dEPRECATED_54;
-    NSString *_dEPRECATED_55;
-    NSString *_dEPRECATED_56;
-    NSString *_dEPRECATED_57;
-    NSString *_dEPRECATED_58;
-    NSString *_dEPRECATED_59;
-    GMMDEPRECATED_5 *_dEPRECATED_5;
-    NSString *_dEPRECATED_60;
-    NSString *_dEPRECATED_61;
-    NSString *_dEPRECATED_62;
-    NSString *_dEPRECATED_63;
-    NSString *_dEPRECATED_64;
-    NSString *_dEPRECATED_65;
-    NSString *_dEPRECATED_66;
-    NSString *_dEPRECATED_67;
-    NSString *_dEPRECATED_68;
-    NSString *_dEPRECATED_69;
-    NSString *_dEPRECATED_6;
-    NSString *_dEPRECATED_74;
-    NSString *_dEPRECATED_75;
-    NSString *_dEPRECATED_76;
-    NSString *_dEPRECATED_77;
-    NSString *_dEPRECATED_78;
-    NSString *_dEPRECATED_79;
-    NSString *_dEPRECATED_7;
-    NSString *_dEPRECATED_80;
-    NSString *_dEPRECATED_81;
-    NSString *_dEPRECATED_82;
-    NSString *_dEPRECATED_83;
-    NSString *_dEPRECATED_84;
-    NSString *_dEPRECATED_85;
-    NSString *_dEPRECATED_86;
-    NSString *_dEPRECATED_87;
-    NSString *_dEPRECATED_88;
-    NSString *_dEPRECATED_89;
-    NSString *_dEPRECATED_8;
-    NSString *_dEPRECATED_9;
+    unsigned long long _cid;
     NSMutableArray *_enhancedContents;
     GMMFriendProfileInfo *_friendProfileInfo;
     GMMGeometry *_geometry;
@@ -90,7 +17,6 @@
     BOOL _hasInexactPosition;
     BOOL _hasLocationSource;
     BOOL _hasShowIcon;
-    BOOL _hasType;
     NSMutableArray *_images;
     BOOL _inexactPosition;
     GMMKmlInfo *_kmlInfo;
@@ -108,12 +34,12 @@
 }
 
 @property(retain) NSString *streetViewPanoId; /* unknown property attribute: V_streetViewPanoId */
-@property BOOL hasInexactPosition; /* unknown property attribute: V_hasInexactPosition */
+@property(readonly) BOOL hasInexactPosition; /* unknown property attribute: V_hasInexactPosition */
 @property BOOL inexactPosition; /* unknown property attribute: V_inexactPosition */
-@property BOOL hasLocationSource; /* unknown property attribute: V_hasLocationSource */
+@property(readonly) BOOL hasLocationSource; /* unknown property attribute: V_hasLocationSource */
 @property NSInteger locationSource; /* unknown property attribute: V_locationSource */
-@property BOOL hasCid; /* unknown property attribute: V_hasCid */
-@property long long cid; /* unknown property attribute: V_cid */
+@property(readonly) BOOL hasCid; /* unknown property attribute: V_hasCid */
+@property unsigned long long cid; /* unknown property attribute: V_cid */
 @property(retain) GMMRating *rating; /* unknown property attribute: V_rating */
 @property(retain) NSString *queryRefinementString; /* unknown property attribute: V_queryRefinementString */
 @property(retain) GMMAdInfo *adInfo; /* unknown property attribute: V_adInfo */
@@ -124,7 +50,7 @@
 @property(retain) GMMKmlInfo *kmlInfo; /* unknown property attribute: V_kmlInfo */
 @property(retain) NSString *attributionUrl; /* unknown property attribute: V_attributionUrl */
 @property(retain) NSString *attributionText; /* unknown property attribute: V_attributionText */
-@property BOOL hasShowIcon; /* unknown property attribute: V_hasShowIcon */
+@property(readonly) BOOL hasShowIcon; /* unknown property attribute: V_hasShowIcon */
 @property BOOL showIcon; /* unknown property attribute: V_showIcon */
 @property(retain) NSMutableArray *references; /* unknown property attribute: V_references */
 @property(retain) NSMutableArray *enhancedContents; /* unknown property attribute: V_enhancedContents */
@@ -132,7 +58,6 @@
 @property(retain) NSMutableArray *addressLines; /* unknown property attribute: V_addressLines */
 @property(retain) GMMGeometry *geometry; /* unknown property attribute: V_geometry */
 @property(retain) NSString *name; /* unknown property attribute: V_name */
-@property BOOL hasType; /* unknown property attribute: V_hasType */
 @property NSInteger type; /* unknown property attribute: V_type */
 @property(readonly) NSInteger addressLinesCount;
 @property(readonly) NSInteger enhancedContentsCount;
@@ -162,8 +87,9 @@
 - (NSInteger)addressLinesCount;
 - (id)attributionText;
 - (id)attributionUrl;
-- (long long)cid;
+- (unsigned long long)cid;
 - (void)dealloc;
+- (id)description;
 - (id)enhancedContentAtIndex:(NSUInteger)arg1;
 - (id)enhancedContents;
 - (NSInteger)enhancedContentsCount;
@@ -186,7 +112,6 @@
 - (BOOL)hasShowIcon;
 - (BOOL)hasStreetViewPanoId;
 - (BOOL)hasStructuredAddress;
-- (BOOL)hasType;
 - (id)imageAtIndex:(NSUInteger)arg1;
 - (id)images;
 - (NSInteger)imagesCount;
@@ -199,26 +124,21 @@
 - (id)phone;
 - (id)queryRefinementString;
 - (id)rating;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)referenceAtIndex:(NSUInteger)arg1;
 - (id)references;
 - (NSInteger)referencesCount;
 - (void)setAdInfo:(id)arg1;
-- (void)setAddressLine:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setAddressLine:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setAddressLines:(id)arg1;
 - (void)setAttributionText:(id)arg1;
 - (void)setAttributionUrl:(id)arg1;
-- (void)setCid:(long long)arg1;
-- (void)setEnhancedContent:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setCid:(unsigned long long)arg1;
+- (void)setEnhancedContent:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setEnhancedContents:(id)arg1;
 - (void)setFriendProfileInfo:(id)arg1;
 - (void)setGeometry:(id)arg1;
-- (void)setHasCid:(BOOL)arg1;
-- (void)setHasInexactPosition:(BOOL)arg1;
-- (void)setHasLocationSource:(BOOL)arg1;
-- (void)setHasShowIcon:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
-- (void)setImage:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setImage:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setImages:(id)arg1;
 - (void)setInexactPosition:(BOOL)arg1;
 - (void)setKmlInfo:(id)arg1;
@@ -228,7 +148,7 @@
 - (void)setPhone:(id)arg1;
 - (void)setQueryRefinementString:(id)arg1;
 - (void)setRating:(id)arg1;
-- (void)setReference:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setReference:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setReferences:(id)arg1;
 - (void)setShowIcon:(BOOL)arg1;
 - (void)setStreetViewPanoId:(id)arg1;
@@ -238,6 +158,6 @@
 - (id)streetViewPanoId;
 - (id)structuredAddress;
 - (NSInteger)type;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

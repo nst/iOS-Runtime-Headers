@@ -11,11 +11,11 @@
 - (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)navigationBarButtonClicked:(NSInteger)arg1;
 - (BOOL)performDeletionActionForSpecifier:(id)arg1;
+- (void)preferencesTable:(id)arg1 deleteRow:(NSInteger)arg2 inGroup:(NSInteger)arg3 outDeletionItemCopy:(id*)arg4;
 - (void)pushController:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (BOOL)table:(id)arg1 canDeleteRow:(NSInteger)arg2;
 - (BOOL)table:(id)arg1 canSelectRow:(NSInteger)arg2;
-- (void)table:(id)arg1 deleteRow:(NSInteger)arg2;
 - (void)viewWillBecomeVisible:(void*)arg1;
 - (void)viewWillRedisplay;
 

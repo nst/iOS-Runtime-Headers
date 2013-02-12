@@ -27,6 +27,7 @@
 + (BOOL)logAllSocketActivity;
 + (void)logBytes:(const char *)arg1 length:(NSInteger)arg2;
 + (id)logClasses;
++ (void)readLoggingDefaults;
 + (void)setLogActivityOnHosts:(id)arg1;
 + (void)setLogActivityOnPorts:(id)arg1;
 + (void)setLogAllSocketActivity:(BOOL)arg1;

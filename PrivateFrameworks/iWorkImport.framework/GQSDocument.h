@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <GQUOutputBundle>, GQDRoot, GQPProcessor, GQSTable, GQZArchive;
+@class <GQUOutputBundle>, <GQWrapPointGenerator>, GQDRoot, GQDSStylesheet, GQPProcessor, GQSTable, GQZArchive;
 
-@interface GQSDocument : NSObject {
+@interface GQSDocument : NSObject <GQWrapPointGenerator> {
     struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>,GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint> >,GQUtility::NSObjectComparator<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { 
             struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>,false> { 
                 struct NSObjectComparator<GQDWrapPoint> { 
@@ -23,37 +23,41 @@
     struct __CFURL { } *mBundleUrl;
     Class mCurrentDrawablesGenerator;
     Class mCurrentTableGenerator;
+    <GQWrapPointGenerator> *mCurrentWrapPointGenerator;
     BOOL mDoExternalTextWrap;
-    struct __CFString { } *mDocumentFilename;
     BOOL mGeneratingThumbnail;
     BOOL mGeneratorBeginWasCalled;
     id mGeneratorState;
+    BOOL mIsReadingStorageAttachments;
     BOOL mMustRegisterDrawables;
     struct __CFArray { } *mObjectStack;
     <GQUOutputBundle> *mOutputBundle;
     GQPProcessor *mProcessor;
     GQDRoot *mRoot;
     BOOL mShouldStreamTables;
+    GQDSStylesheet *mStylesheet;
     GQSTable *mTableState;
+    NSUInteger mTextScale;
     BOOL mThumbnailGenerationDone;
         } x1; } *mWrapPoints;
 }
 
 - (void)addWrapPoint:(id)arg1;
 - (void)clearWrapPoints;
-- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Vector_impl { struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_1; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_2; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_3; } x1; }*)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3;
+- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>,std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct _Vector_impl { struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_1; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_2; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_3; } x1; }*)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3 zIndex:(NSInteger)arg4;
 - (struct __CFURL { }*)createUriToDocumentBundleResource:(struct __CFString { }*)arg1;
 - (Class)currentDrawablesGenerator;
 - (Class)currentTableGenerator;
+- (id)currentWrapPointGenerator;
 - (void)dealloc;
 - (BOOL)doExternalTextWrap;
-- (struct __CFString { }*)documentFilename;
 - (BOOL)generatorBeginWasCalled;
 - (id)generatorState;
-- (id)initWithRoot:(id)arg1 processor:(id)arg2 archive:(id)arg3 documentFilename:(struct __CFString { }*)arg4 outputBundle:(id)arg5;
+- (id)initWithRoot:(id)arg1 processor:(id)arg2 archive:(id)arg3 outputBundle:(id)arg4;
 - (id)initWithRoot:(id)arg1 processor:(id)arg2 bundleUrl:(struct __CFURL { }*)arg3 outputBundle:(id)arg4;
 - (id)initWithRoot:(id)arg1 processor:(id)arg2 outputBundle:(id)arg3;
 - (BOOL)isGeneratingThumbnail;
+- (BOOL)isReadingStorageAttachments;
 - (BOOL)isThumbnailGenerationDone;
 - (BOOL)mustRegisterDrawables;
 - (NSInteger)objectStackDepth;
@@ -65,15 +69,19 @@
 - (id)root;
 - (void)setCurrentDrawablesGenerator:(Class)arg1;
 - (void)setCurrentTableGenerator:(Class)arg1;
+- (void)setCurrentWrapPointGenerator:(id)arg1;
 - (void)setDoExternalTextWrap:(BOOL)arg1;
 - (void)setGeneratingThumbnail:(BOOL)arg1;
 - (void)setGeneratorBeginWasCalled;
 - (void)setGeneratorState:(id)arg1;
+- (void)setIsReadingStorageAttachments:(BOOL)arg1;
 - (void)setMustRegisterDrawables:(BOOL)arg1;
 - (void)setShouldStreamTables:(BOOL)arg1;
+- (void)setStylesheet:(id)arg1;
 - (void)setTableState:(id)arg1;
 - (void)setThumbnailGenerationDone:(BOOL)arg1;
 - (BOOL)shouldStreamTables;
+- (id)stylesheet;
 - (id)tableState;
 - (id)topObjectOfClass:(Class)arg1;
 - (struct __CFString { }*)uriForBundleResource:(struct __CFString { }*)arg1 ofType:(struct __CFString { }*)arg2;

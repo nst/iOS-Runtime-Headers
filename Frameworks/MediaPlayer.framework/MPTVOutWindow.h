@@ -10,7 +10,6 @@
     MPVideoView *_videoView;
 }
 
-- (BOOL)_canExistBeyondSuspension;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)dealloc;
 - (id)initWithVideoView:(id)arg1;

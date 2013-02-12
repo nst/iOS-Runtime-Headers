@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMClientCapabilities, NSMutableArray;
 
-@interface GMMOutgoingTile : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMOutgoingTile : PBCodable {
     GMMClientCapabilities *_clientCapabilities;
-    BOOL _hasTileSize;
-    BOOL _hasZoom;
     NSMutableArray *_indexs;
     NSInteger _tileSize;
     NSInteger _zoom;
 }
 
 @property(retain) NSMutableArray *indexs; /* unknown property attribute: V_indexs */
-@property BOOL hasZoom; /* unknown property attribute: V_hasZoom */
 @property NSInteger zoom; /* unknown property attribute: V_zoom */
-@property BOOL hasTileSize; /* unknown property attribute: V_hasTileSize */
 @property NSInteger tileSize; /* unknown property attribute: V_tileSize */
 @property(retain) GMMClientCapabilities *clientCapabilities; /* unknown property attribute: V_clientCapabilities */
-@property(readonly) BOOL hasClientCapabilities;
 @property(readonly) NSInteger indexsCount;
 
 + (id)outgoingTileForPaths:(id)arg1;
@@ -33,23 +23,19 @@
 - (void)addIndex:(id)arg1;
 - (id)clientCapabilities;
 - (void)dealloc;
-- (BOOL)hasClientCapabilities;
-- (BOOL)hasTileSize;
-- (BOOL)hasZoom;
-- (id)indexAtIndex:(NSInteger)arg1;
+- (id)description;
+- (id)indexAtIndex:(NSUInteger)arg1;
 - (id)indexs;
 - (NSInteger)indexsCount;
 - (id)init;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
-- (void)setHasTileSize:(BOOL)arg1;
-- (void)setHasZoom:(BOOL)arg1;
-- (void)setIndex:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setIndex:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setIndexs:(id)arg1;
 - (void)setTileSize:(NSInteger)arg1;
 - (void)setZoom:(NSInteger)arg1;
 - (NSInteger)tileSize;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 - (NSInteger)zoom;
 
 @end

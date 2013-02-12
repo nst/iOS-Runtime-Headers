@@ -5,8 +5,4 @@
 @interface UIKeyboardLayoutQZERTYLandscape : UIKeyboardLayoutQWERTYLandscape {
 }
 
-- (id)buildUIKeyboardLayoutAlphabet;
-- (id)buildUIKeyboardLayoutSMSAddressing;
-- (id)buildUIKeyboardLayoutURL;
-
 @end

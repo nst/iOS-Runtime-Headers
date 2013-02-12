@@ -5,7 +5,11 @@
 @interface NSNumber : NSValue <ASParsingLeafNode> {
 }
 
++ (BOOL)acceptsTopLevelLeaves;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)boolFromICSString:(id)arg1;
++ (BOOL)expectsContent;
++ (BOOL)frontingBasicTypes;
 + (id)numberWithBool:(BOOL)arg1;
 + (id)numberWithChar:(BOOL)arg1;
 + (id)numberWithDouble:(double)arg1;
@@ -25,11 +29,17 @@
 + (BOOL)parseString:(id)arg1 intoNSUInteger:(NSUInteger*)arg2;
 + (BOOL)parseString:(id)arg1 intoSInt64:(long long*)arg2;
 + (BOOL)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
 
+- (struct Object { int (**x1)(); struct Atomic { struct { NSInteger x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (id)CA_addValue:(id)arg1 multipliedBy:(NSInteger)arg2;
-- (void*)CA_copyRenderValue;
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
+- (void)_ICSBoolAppendingToString:(id)arg1;
+- (void)_ICSFBTypeAppendingToString:(id)arg1;
+- (void)_ICSStringWithOptions:(NSUInteger)arg1 appendingToString:(id)arg2;
+- (void)_ICSUTCOffsetAppendingToString:(id)arg1;
 - (long)_cfNumberType;
 - (unsigned long)_cfTypeID;
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;

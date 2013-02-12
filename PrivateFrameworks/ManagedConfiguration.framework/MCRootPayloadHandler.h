@@ -5,18 +5,31 @@
 @class NSMutableArray;
 
 @interface MCRootPayloadHandler : MCPayloadHandler {
+    BOOL _isEncrypted;
+    BOOL _isSpecialProfileType;
     NSMutableArray *_payloads;
 }
 
 + (void)initialize;
 + (BOOL)isContainer;
++ (BOOL)isRootHandlerType;
 + (BOOL)shouldValidateCommonAttributes;
 
 - (void)dealloc;
+- (id)initWithPayload:(id)arg1 selector:(SEL)arg2;
 - (id)initWithPayload:(id)arg1;
+- (id)initWithPayloadForInspection:(id)arg1;
+- (BOOL)isEncrypted;
+- (BOOL)isHiddenProfileType;
 - (BOOL)isRemovable;
+- (BOOL)isRemovalStub;
+- (BOOL)isSpecialProfileType;
+- (void)neuteredPayloadDictionaryCopy:(id)arg1;
 - (id)payloads;
 - (id)performInstallStep:(NSInteger)arg1 withRoot:(id)arg2 truth:(id)arg3;
+- (id)reEnrollErrorString;
+- (id)reEnrollInfoString;
 - (id)removalPassword;
+- (BOOL)wantsReboot;
 
 @end

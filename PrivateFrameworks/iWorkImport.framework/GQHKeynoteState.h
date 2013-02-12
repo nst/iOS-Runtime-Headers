@@ -13,6 +13,7 @@
 - (NSInteger)currentSlide;
 - (void)incrementCurrentSlide;
 - (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)shouldMapLinkWithUrl:(struct __CFString { }*)arg1;
 - (struct CGSize { float x1; float x2; })slideSize;
 
 @end

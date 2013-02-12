@@ -5,16 +5,25 @@
 @class NSArray, NSNumber;
 
 @interface ASSearchResponse : ASItem {
+    NSInteger _expectedResultType;
     NSNumber *_status;
     NSArray *_stores;
 }
 
+@property NSInteger expectedResultType; /* unknown property attribute: V_expectedResultType */
 @property(copy) NSNumber *status; /* unknown property attribute: V_status */
 @property(retain) NSArray *stores; /* unknown property attribute: V_stores */
+
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
 
 - (id)asParseRules;
 - (void)dealloc;
 - (id)description;
+- (NSInteger)expectedResultType;
+- (void)setExpectedResultType:(NSInteger)arg1;
 - (void)setStatus:(id)arg1;
 - (void)setStores:(id)arg1;
 - (id)status;

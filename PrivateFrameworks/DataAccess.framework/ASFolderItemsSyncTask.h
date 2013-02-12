@@ -9,11 +9,13 @@
     NSArray *_commands;
     NSInteger _filterDays;
     NSString *_folderID;
+    BOOL _haveShortcut121Response;
     BOOL _isInitialSync;
     BOOL _isResyncAfterConnectionFailed;
     BOOL _isSpinning;
     NSInteger _mimeSupport;
     BOOL _moreAvailable;
+    NSInteger _numReplacedItems;
     NSString *_previousSyncKey;
     NSMutableSet *_rejectedServerIds;
     ASMailMessage *_streamingMailMessage;
@@ -31,8 +33,10 @@
 - (void)_setSpinning:(BOOL)arg1;
 - (void)appendCommandData:(id)arg1;
 - (void)appendSupportedFieldsData:(id)arg1;
-- (id)command;
+- (NSInteger)bodyType;
+- (NSInteger)commandCode;
 - (id)commands;
+- (NSInteger)connectionActionForResponse:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (NSInteger)filterDays;

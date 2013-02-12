@@ -12,6 +12,7 @@
 
 - (void)_layoutBasicParts;
 - (void)_layoutComplexParts;
+- (id)createRouteNameLabel;
 - (id)createVolumeSlider;
 - (void)dealloc;
 - (id)init;

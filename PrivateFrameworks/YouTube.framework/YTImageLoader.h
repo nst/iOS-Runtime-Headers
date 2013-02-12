@@ -5,6 +5,12 @@
 @class NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNotificationCenter, NSTimer;
 
 @interface YTImageLoader : NSObject {
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    struct _opaque_pthread_cond_t { 
+        long __sig; 
+        BOOL __opaque[24]; 
     NSLock *_cacheLock;
     NSMutableDictionary *_imageCache;
     NSMutableArray *_imageCacheLRU;
@@ -15,6 +21,9 @@
     NSMutableSet *_loadsInProgress;
     NSNotificationCenter *_notificationCenter;
     NSLock *_queueLock;
+    NSMutableDictionary *_roundedThumbnailImageCache;
+    } _startupCondition;
+    } _startupLock;
 }
 
 + (id)sharedImageLoader;
@@ -30,7 +39,8 @@
 - (void)_postLoadingStatusChanged;
 - (void)_setImageData:(id)arg1 videoID:(id)arg2 forURL:(id)arg3 cacheLocked:(BOOL)arg4;
 - (void)_startLoader;
-- (struct CGImage { }*)imageForURL:(id)arg1 videoID:(id)arg2 loadIfAbsent:(BOOL)arg3;
+- (struct CGImage { }*)createRoundedThumbnailWithImage:(struct CGImage { }*)arg1;
+- (struct CGImage { }*)imageForURL:(id)arg1 rounded:(BOOL)arg2 videoID:(id)arg3 loadIfAbsent:(BOOL)arg4;
 - (id)init;
 - (BOOL)isLoadingImages;
 - (id)notificationCenter;

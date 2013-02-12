@@ -4,78 +4,78 @@
 
 @class NSDate, NSString, NSThread, PCPersistentInterfaceManager, PCPersistentTimer, PHMGrowthAlgorithm;
 
-@interface PCManager : NSObject {
+@interface PCManager : NSObject <PCPersistentInterfaceManagerDelegate> {
     int (*_hbCallback)();
+    unsigned int _onlyAllowsStyleSet : 1;
+    unsigned int _hadEarlyHeartbeat : 1;
+    unsigned int _isForcedHeartbeat : 1;
+    unsigned int _hasStarted : 1;
+    unsigned int _isRunning : 1;
+    unsigned int _inCallback : 1;
+    unsigned int _isPollingIntervalOverriden : 1;
+    unsigned int _reconnectWithHBIDelay : 1;
+    unsigned int _forceManualWhenRoaming : 1;
+    NSInteger _connectionClassType;
     void *_context;
     NSInteger _defaultPollingInterval;
     PCPersistentTimer *_delayTimer;
-    BOOL _exclusivelyPolls;
     PHMGrowthAlgorithm *_growthAlgorithm;
-    BOOL _hadEarlyHeartbeat;
-    BOOL _hasStarted;
-    BOOL _hbSlicesInitialized;
-    NSInteger _hbSlices[4];
     float _hbThreshold;
     PCPersistentTimer *_heartbeatTimer;
     NSString *_identifier;
-    BOOL _inCallback;
     PCPersistentInterfaceManager *_interfaceManager;
-    BOOL _isForcedHeartbeat;
-    BOOL _isPollingIntervalOverriden;
-    BOOL _isRunning;
+    double _lastReachableTime;
+    struct __CFRunLoop { } *_managerRunLoop;
     NSThread *_managerThread;
-    NSDate *_onTimeWakeDate;
+    NSDate *_onTimeHeartbeatDate;
+    NSInteger _onlyAllowsStyle;
     NSInteger _overridePollingInterval;
     double _pingStartTime;
+    void *_powerAssertion;
     NSString *_powerIdentifier;
     NSInteger _prefsStyle;
+    struct __SCNetworkReachability { } *_reachability;
     NSInteger _reconnectIteration;
-    BOOL _reconnectWithHBIDelay;
     NSDate *_scheduledWakeDate;
     NSInteger _state;
     NSInteger _wakeGracePeriod;
 }
 
-@property(retain) NSThread *managerThread; /* unknown property attribute: V_managerThread */
+@property(retain,readonly) NSThread *managerThread; /* unknown property attribute: V_managerThread */
 
 + (NSInteger)_deviceOffset;
 + (void)_setSpeedFactor:(float)arg1;
 + (id)getLastSystemWakeDate;
-+ (void)prepareSocketForPush:(NSInteger)arg1;
-+ (void)prepareStreamForPush:(struct __CFReadStream { }*)arg1;
 + (id)sharedPowerControlOperationQueue;
++ (double)timeIntervalSinceSystemWake;
 + (unsigned long long)uniqueIdentifier;
-+ (id)urlConnectionForPushWithRequest:(id)arg1 delegeate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
 
 - (void)_adjustInterfaceAssertion;
 - (void)_callBackWithEvent:(NSInteger)arg1;
 - (void)_cancelAllExistingWakes;
 - (void)_cancelScheduledWake;
 - (void)_clearTimers;
-- (void)_closeLockFile:(NSInteger)arg1;
 - (NSInteger)_getCachedHBI;
 - (void)_hbDelayedFire:(id)arg1;
 - (void)_hbTimerFired:(id)arg1;
 - (id)_hbiCacheDirectoryPath;
-- (id)_hbiCacheLockfilePath;
 - (id)_hbiCachePath;
-- (void)_interfaceStatusChanged:(id)arg1;
 - (BOOL)_isCachedHBIStillValid:(NSInteger)arg1 date:(id)arg2;
-- (void)_loadPrefsGeneratingEvent:(id)arg1;
+- (void)_loadPreferencesAndStyleStateGeneratingEvent:(id)arg1;
 - (NSInteger)_nextForcedHB;
-- (NSInteger)_openLockFile;
 - (void)_performWakeWithDate:(id)arg1 setWake:(BOOL)arg2;
 - (id)_powerIdentifier;
+- (void)_reachabilityCallback:(NSUInteger)arg1;
 - (void)_releasePowerAssertion;
 - (void)_resolveStateWithAction:(NSInteger)arg1;
 - (void)_saveCachedHBI:(NSInteger)arg1;
 - (void)_sendHBNotificationWithDelay:(double)arg1;
-- (void)_setupHBSlices;
 - (void)_setupHeartbeatForPoll;
 - (void)_setupHeartbeatForPush:(NSInteger)arg1;
 - (void)_setupHeartbeatForReconnect;
 - (void)_setupWakeAtDate:(id)arg1;
 - (void)_setupWakeTimeInterval:(double)arg1 heartbeatFireInterval:(double)arg2;
+- (id)_stringForAction:(NSInteger)arg1;
 - (id)_stringForEvent:(NSInteger)arg1;
 - (void)_takePowerAssertion;
 - (BOOL)_validateActionForCurrentStyle:(NSInteger)arg1;
@@ -84,16 +84,17 @@
 - (void)dealloc;
 - (void)endHeartbeat;
 - (NSInteger)heartbeatGracePeriod;
-- (id)initWithCallback:(int (*)())arg1 serviceIdentifier:(id)arg2 context:(void*)arg3;
+- (id)initWithConnectionClass:(NSInteger)arg1 callback:(int (*)())arg2 serviceIdentifier:(id)arg3 context:(void*)arg4;
+- (void)interfaceManager:(id)arg1 inHomeCountryStatusChanged:(BOOL)arg2;
+- (void)interfaceManager:(id)arg1 interfaceStatusChanged:(BOOL)arg2;
 - (id)managerThread;
 - (NSInteger)pollingInterval;
 - (void)resumeHeartbeat:(NSInteger)arg1;
-- (void)setExclusivelyPolls;
 - (void)setHeartbeatGracePeriod:(NSInteger)arg1;
 - (void)setHeartbeatThreshold:(float)arg1;
-- (void)setManagerThread:(id)arg1;
 - (void)setMaximumHeartbeatInterval:(NSInteger)arg1;
 - (void)setMinimumHeartbeatInterval:(NSInteger)arg1;
+- (void)setOnlyAllowsStyle:(NSInteger)arg1;
 - (void)setOverridePollingInterval:(NSInteger)arg1;
 - (BOOL)shouldClientScheduleReconnectDueToFailure;
 - (void)startHeartbeat;

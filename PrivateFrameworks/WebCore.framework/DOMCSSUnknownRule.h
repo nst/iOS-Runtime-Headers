@@ -5,8 +5,4 @@
 @interface DOMCSSUnknownRule : DOMCSSRule {
 }
 
-+ (id)_wrapCSSUnknownRule:(struct CSSUnknownRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)arg1;
-
-- (struct CSSUnknownRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; }*)_CSSUnknownRule;
-
 @end

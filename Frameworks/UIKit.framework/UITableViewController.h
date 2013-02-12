@@ -9,8 +9,7 @@
 
 @property(retain) UITableView *tableView;
 
-- (void)_adjustTableForKeyboardHeight:(id)arg1;
-- (void)_deselectAllRowsAnimated:(BOOL)arg1;
+- (void)_adjustTableForKeyboardInfo:(id)arg1;
 - (void)dealloc;
 - (id)existingTableView;
 - (id)init;

@@ -19,21 +19,23 @@
 @property NSInteger scrollTop;
 @property(readonly) NSInteger scrollWidth;
 
-+ (id)_wrapElement:(struct Element { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; }*)arg1;
 + (BOOL)isRichTextStyle:(id)arg1;
 
-- (struct Element { int (**x1)(); NSInteger x2; struct Node {} *x3; struct DocPtr<WebCore::Document> { struct Document {} *x_4_1_1; } x4; struct Node {} *x5; struct Node {} *x6; struct RenderObject {} *x7; struct OwnPtr<WebCore::NodeListsNodeData> { struct NodeListsNodeData {} *x_8_1_1; } x8; short x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 2; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; int (**x25)(); struct DeprecatedValueList<WTF::RefPtr<WebCore::RegisteredEventListener> > {} *x26; struct Node {} *x27; struct Node {} *x28; struct QualifiedName { struct QualifiedNameImpl {} *x_29_1_1; } x29; struct RefPtr<WebCore::NamedAttrMap> { struct NamedAttrMap {} *x_30_1_1; } x30; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; }*)_element;
+- (void*)_NPObject;
 - (struct __GSFont { }*)_font;
 - (id)_getURLAttribute:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_windowClipRect;
-- (BOOL)becomeFirstResponder;
 - (void)blur;
+- (NSUInteger)childElementCount;
 - (NSInteger)clientHeight;
 - (NSInteger)clientLeft;
 - (NSInteger)clientTop;
 - (NSInteger)clientWidth;
 - (BOOL)contains:(id)arg1;
+- (BOOL)exceedsStructuralComplexity:(NSInteger)arg1;
+- (id)firstElementChild;
 - (void)focus;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)getAttribute:(id)arg1;
 - (id)getAttributeNS:(id)arg1 :(id)arg2;
 - (id)getAttributeNS:(id)arg1 localName:(id)arg2;
@@ -47,16 +49,21 @@
 - (BOOL)hasAttribute:(id)arg1;
 - (BOOL)hasAttributeNS:(id)arg1 :(id)arg2;
 - (BOOL)hasAttributeNS:(id)arg1 localName:(id)arg2;
+- (BOOL)hasCustomLineHeight;
+- (BOOL)inDocument;
 - (id)innerText;
-- (id)insertAdjacentElement:(id)arg1 element:(id)arg2;
 - (BOOL)isFocused;
+- (BOOL)isHidden;
 - (BOOL)isRichTextElement;
 - (BOOL)isRichTextElementType;
+- (id)lastElementChild;
+- (id)nextElementSibling;
 - (NSInteger)offsetHeight;
 - (NSInteger)offsetLeft;
 - (id)offsetParent;
 - (NSInteger)offsetTop;
 - (NSInteger)offsetWidth;
+- (id)previousElementSibling;
 - (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;
 - (NSInteger)quoteLevelDelta;
@@ -65,7 +72,6 @@
 - (void)removeAttributeNS:(id)arg1 :(id)arg2;
 - (void)removeAttributeNS:(id)arg1 localName:(id)arg2;
 - (id)removeAttributeNode:(id)arg1;
-- (BOOL)resignFirstResponder;
 - (void)scrollByLines:(NSInteger)arg1;
 - (void)scrollByPages:(NSInteger)arg1;
 - (NSInteger)scrollHeight;
@@ -74,6 +80,7 @@
 - (NSInteger)scrollLeft;
 - (NSInteger)scrollTop;
 - (NSInteger)scrollWidth;
+- (BOOL)selectable;
 - (void)setAttribute:(id)arg1 :(id)arg2;
 - (void)setAttribute:(id)arg1 value:(id)arg2;
 - (void)setAttributeNS:(id)arg1 :(id)arg2 :(id)arg3;

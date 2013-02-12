@@ -6,7 +6,7 @@
     NSInteger mPoints;
 }
 
-- (id)initWithPoints:(NSInteger)arg1;
-- (NSInteger)points;
+- (id)initWithPoints:(NSUInteger)arg1;
+- (NSUInteger)points;
 
 @end

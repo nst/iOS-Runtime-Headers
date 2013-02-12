@@ -10,6 +10,12 @@
     NSString *_uidWithoutExceptionDate;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)expectsContent;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (id)_uidStringBySettingExceptionDateInOutlookUUIDString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

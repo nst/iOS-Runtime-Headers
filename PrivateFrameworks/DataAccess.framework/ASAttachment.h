@@ -5,24 +5,41 @@
 @class NSNumber, NSString;
 
 @interface ASAttachment : ASItem <DAMailMessageAttachment> {
+    NSString *_attContentId;
+    NSString *_attContentLocation;
     NSString *_attDisplayName;
+    NSNumber *_attIsInline;
     NSNumber *_attMethod;
     NSString *_attName;
     NSNumber *_attSize;
 }
 
+@property(copy) NSNumber *isInline; /* unknown property attribute: V_attIsInline */
+@property(copy) NSString *contentLocation; /* unknown property attribute: V_attContentLocation */
+@property(copy) NSString *contentId; /* unknown property attribute: V_attContentId */
 @property(copy) NSString *displayName; /* unknown property attribute: V_attDisplayName */
 @property(copy) NSNumber *method; /* unknown property attribute: V_attMethod */
 @property(copy) NSNumber *size; /* unknown property attribute: V_attSize */
 @property(copy) NSString *name; /* unknown property attribute: V_attName */
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (id)asParseRules;
+- (id)contentId;
+- (id)contentLocation;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
+- (id)isInline;
 - (id)method;
 - (id)name;
+- (void)setContentId:(id)arg1;
+- (void)setContentLocation:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setIsInline:(id)arg1;
 - (void)setMethod:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPercentEscapedName:(id)arg1;

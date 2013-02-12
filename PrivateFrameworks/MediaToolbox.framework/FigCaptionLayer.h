@@ -2,20 +2,21 @@
    Image: /System/Library/PrivateFrameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class FigCaptionRowLayer;
+@class FigCaptionLayerPrivate;
 
 @interface FigCaptionLayer : CALayer {
-    struct FigCaptionLayerState { char *x1; float x2; float x3; FigCaptionRowLayer *x4[16]; BOOL x5; } *_priv;
+    FigCaptionLayerPrivate *_priv;
 }
 
-- (void)createRowLayers;
 - (void)dealloc;
-- (void)drawRow:(NSInteger)arg1 commands:(id)arg2 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inContext:(struct CGContext { }*)arg4;
-- (void)drawUnichar:(unsigned short)arg1 italics:(BOOL)arg2 underline:(BOOL)arg3 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 inContext:(struct CGContext { }*)arg5;
+- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)finalize;
 - (id)init;
-- (void)processCaptionCommand:(NSUInteger)arg1 data:(struct __CFDictionary { }*)arg2;
-- (void)relayoutRowLayers;
+- (void)layoutSublayers;
+- (void)processCaptionCommand:(NSUInteger)arg1 data:(id)arg2;
+- (void)renderer:(id)arg1 didChangeRows:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2;
 - (void)resetCaptions;
 - (void)setFontName:(const char *)arg1;
+- (void)tearDown;
 
 @end

@@ -2,34 +2,38 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIView;
+@class UIView;
 
 @interface UIGroupTableViewCellBackground : UIView {
     NSInteger _animationCount;
     BOOL _disableSeparator;
-    NSInteger _externalAnimationCount;
-    UIImageView *_fixedView;
-    UIImageView *_lowerLeftView;
-    UIImageView *_lowerRightView;
     NSInteger _sectionLocation;
     UIView *_separatorView;
-    UIImageView *_upperLeftView;
-    UIImageView *_upperRightView;
 }
 
-@property NSInteger sectionLocation; /* unknown property attribute: V_sectionLocation */
+@property NSInteger sectionLocation;
 
-- (id)_createBackgroundImageViewWithHeight:(float)arg1;
-- (id)_createFixedBackgroundImageViewWithSectionLocation:(NSInteger)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (void)_flushCacheOnMemoryWarning:(id)arg1;
++ (void)initialize;
+
+- (id)_backgroundColor;
+- (id)_borderColor;
+- (struct CGImage { }*)_cachedImageWithSize:(struct CGSize { float x1; float x2; })arg1 forBackgroundColor:(id)arg2 borderColor:(id)arg3 fillColor:(id)arg4 leftPhase:(float)arg5 rightPhase:(float)arg6 ignoreSectionLocation:(BOOL)arg7;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForContentHeight:(float)arg1;
+- (struct CGContext { }*)_createContextForCachingWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isOpaque:(BOOL)arg2;
 - (void)_decrementAnimationCount;
+- (id)_fillColor;
 - (void)_incrementAnimationCount;
-- (void)_updateSeparatorViewForSectionLocation:(NSInteger)arg1;
-- (void)_updateSubviewsForSectionLocation:(NSInteger)arg1;
-- (id)cellBackgroundColor;
+- (void)_layoutSubviews:(BOOL)arg1;
+- (void)_setSectionLocationAnimationDidStop;
+- (void)_updateContentsRectAndCenter;
+- (void)_updateSeparatorView;
+- (id)backgroundColor;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (NSInteger)sectionLocation;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSectionLocation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)setSectionLocation:(NSInteger)arg1;

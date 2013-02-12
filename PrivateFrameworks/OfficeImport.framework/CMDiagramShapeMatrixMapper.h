@@ -6,6 +6,7 @@
     NSInteger mColumnCount;
     BOOL mHasArrows;
     BOOL mIsHorizontal;
+    BOOL mIsLinear;
     BOOL mIsSnake;
     float mRectHeight;
     float mRectWidth;

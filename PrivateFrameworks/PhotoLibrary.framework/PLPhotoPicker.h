@@ -6,7 +6,6 @@
 
 @interface PLPhotoPicker : UIView {
     struct { 
-        unsigned int customAllowsAlbumSelectionFlagInfo : 2; 
         unsigned int customAllowsPlayingSlideshowFlagInfo : 2; 
         unsigned int customAllowsFullSizeImageDisplayFlagInfo : 2; 
         unsigned int customAllowsZoomingWhenCroppingFlagInfo : 2; 
@@ -15,7 +14,7 @@
         unsigned int customShowCamera : 2; 
         unsigned int syncing : 1; 
         unsigned int cancel : 1; 
-        unsigned int unused : 16; 
+        unsigned int unused : 18; 
     UIView *_contentView;
     PLCropOverlay *_cropOverlay;
     NSDictionary *_customCropTitles;
@@ -52,7 +51,6 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)navigationBar:(id)arg1 buttonClicked:(NSInteger)arg2;
 - (void)photoWasCroppedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fullSizeImageData:(id)arg2 fullScreenImageData:(id)arg3 croppedImageData:(id)arg4 imageView:(id)arg5;
-- (void)setAllowsAlbumSelection:(BOOL)arg1;
 - (void)setAllowsFullSizeImageDisplay:(BOOL)arg1;
 - (void)setAllowsPlayingSlideshow:(BOOL)arg1;
 - (void)setAllowsZoomingWhenCropping:(BOOL)arg1;

@@ -15,7 +15,7 @@
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { NSUInteger x1; NSUInteger x2; })arg2 isComplete:(BOOL*)arg3;
 - (void)dealloc;
-- (NSInteger)fetchNumMessages:(NSUInteger)arg1 preservingUID:(id)arg2 beforeUID:(NSUInteger)arg3 synchronize:(BOOL)arg4;
+- (NSInteger)fetchNumMessages:(NSUInteger)arg1 preservingUID:(id)arg2 beforeUID:(NSUInteger)arg3 synchronize:(BOOL)arg4 compact:(BOOL)arg5;
 - (NSInteger)fetchSynchronously;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (BOOL)hasMoreMessages:(NSUInteger)arg1;
@@ -26,6 +26,7 @@
 - (void)purgeMessages:(id)arg1;
 - (NSUInteger)serverMessageCount;
 - (NSUInteger)serverUnreadCount;
+- (NSUInteger)serverUnreadOnlyOnServerCount;
 - (void)setServerMessageCount:(NSUInteger)arg1;
 - (void)setServerUnreadCount:(NSUInteger)arg1;
 

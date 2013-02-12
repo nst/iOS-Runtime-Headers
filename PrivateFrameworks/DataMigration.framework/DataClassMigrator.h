@@ -6,6 +6,7 @@
 }
 
 - (id)dataClassName;
+- (float)estimatedDuration;
 - (float)migrationProgress;
 - (BOOL)performMigration;
 

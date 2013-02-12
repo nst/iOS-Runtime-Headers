@@ -2,22 +2,26 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MessageCriterion, NSString;
+@class MailAccount, MailboxUid, MessageCriterion, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MailboxUid : NSObject {
-    id _accountOrPathComponent;
+@interface MailboxUid : WRObject <WeakReferenceHolder> {
+    MailAccount *_account;
     NSUInteger _attributes;
+    NSMutableArray *_children;
     MessageCriterion *_criterion;
     NSUInteger _numberOfGenericChildren;
+    MailboxUid *_parent;
+    NSString *_pathComponent;
     NSString *_permanentTag;
     NSString *_realFullPath;
-    void *_tree;
+    MailAccount *_representedAccount;
+    NSInteger _type;
+    NSMutableDictionary *_userInfo;
     BOOL allCriteriaMustBeSatisfied;
     NSString *pendingNameChange;
     NSString *uniqueId;
 }
 
-+ (id)specialMailboxUids;
 + (id)specialNameForType:(NSInteger)arg1;
 
 - (id)URL;
@@ -28,6 +32,7 @@
 - (id)_loadUserInfo;
 - (id)account;
 - (id)accountRelativePath;
+- (void)addToPostOrderTraversal:(id)arg1;
 - (id)ancestralAccount;
 - (NSUInteger)attributes;
 - (id)childAtIndex:(NSUInteger)arg1;
@@ -69,12 +74,15 @@
 - (NSUInteger)nonDeletedCount;
 - (NSUInteger)numberOfChildren;
 - (NSUInteger)numberOfGenericChildren;
+- (void)objectWillBeDeallocated:(id)arg1;
 - (id)oldURLString;
 - (id)parent;
 - (id)pathRelativeToMailbox:(id)arg1;
 - (id)permanentTag;
 - (id)realFullPath;
+- (void)removeChild:(id)arg1;
 - (id)representedAccount;
+- (id)rootMailbox;
 - (void)saveUserInfo;
 - (void)setAttributes:(NSUInteger)arg1;
 - (BOOL)setChildren:(id)arg1;
@@ -93,12 +101,13 @@
 - (void)sortChildren;
 - (id)store;
 - (id)tildeAbbreviatedPath;
+- (id)topMailbox;
 - (NSInteger)type;
 - (id)uniqueId;
 - (NSUInteger)unreadCount;
-- (id)userInfo;
 - (BOOL)userInfoBoolForKey:(id)arg1;
 - (id)userInfoDictionary;
+- (id)userInfoForSerialization;
 - (id)userInfoObjectForKey:(id)arg1;
 
 @end

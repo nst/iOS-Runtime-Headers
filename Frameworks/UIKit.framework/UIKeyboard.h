@@ -7,6 +7,7 @@
 @interface UIKeyboard : UIView {
     UITextInputTraits *m_defaultTraits;
     UIImage *m_snapshot;
+    BOOL m_typingDisabled;
 }
 
 + (id)activeKeyboard;
@@ -14,12 +15,15 @@
 + (struct UIKeyboardAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; })calculateAnimationGeometryForOrientation:(NSInteger)arg1 outDirection:(NSInteger)arg2;
 + (struct UIKeyboardAnimationGeometry { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; })calculateAnimationGeometryForOrientation:(NSInteger)arg1;
 + (id)containerWindow;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrameForInterfaceOrientation:(NSInteger)arg1;
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(NSInteger)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(NSInteger)arg1;
 + (void)initImplementationNow;
 + (void)removeAllDynamicDictionaries;
 
+- (void)_setTypingEnabled:(BOOL)arg1;
+- (BOOL)_typingEnabled;
 - (void)acceptAutocorrection;
 - (void)activate;
 - (void)clearSnapshot;
@@ -29,10 +33,12 @@
 - (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)geometryChangeDone:(BOOL)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithDefaultSize;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)keyboardAutomaticOrderIn:(id)arg1 finished:(id)arg2;
 - (void)keyboardAutomaticOrderOut:(id)arg1 finished:(id)arg2;
+- (void)keyboardAutomaticWillOrderIn:(id)arg1 context:(void*)arg2;
 - (void)mouseDown:(struct __GSEvent { }*)arg1;
 - (void)mouseDragged:(struct __GSEvent { }*)arg1;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
@@ -43,6 +49,7 @@
 - (void)orderOutWithAnimation:(BOOL)arg1;
 - (NSInteger)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)prepareForGeometryChange;
 - (void)removeAutocorrectPrompt;
 - (void)removeFromSuperview;
@@ -54,6 +61,10 @@
 - (void)setReturnKeyEnabled:(BOOL)arg1;
 - (void)takeSnapshot;
 - (NSInteger)textEffectsVisibilityLevel;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)updateLayout;
 
 @end

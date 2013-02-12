@@ -22,6 +22,7 @@
 - (void)mapChlidrenAt:(id)arg1 withState:(id)arg2;
 - (void)mapPointTextAt:(id)arg1 style:(id)arg2 level:(NSInteger)arg3 withState:(id)arg4;
 - (void)mapSiblingTextAt:(id)arg1 style:(id)arg2 level:(NSInteger)arg3 withState:(id)arg4;
+- (void)mapStyledRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 at:(id)arg2 withState:(id)arg3;
 - (void)mapTextAt:(id)arg1 withBounds:(id)arg2 isCentered:(BOOL)arg3 includeChildren:(BOOL)arg4 withState:(id)arg5;
 - (id)plainText;
 - (id)presentationName;

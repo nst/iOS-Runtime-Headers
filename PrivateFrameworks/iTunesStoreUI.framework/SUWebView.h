@@ -2,29 +2,49 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
+@class SUScriptDebugDelegate, SUScriptInterface, SUWebViewDelegateProxy;
 
-@interface SUWebView : UIWebDocumentView {
-    unsigned int _adjustHeightToFit : 1;
-    id _loadDelegate;
-    NSString *_stylesheet;
+@interface SUWebView : UIWebView <SUScriptInterfaceDelegate> {
+    unsigned int _openURLsExternally : 1;
+    unsigned int _scrollingDisabled : 1;
+    unsigned int _sourceIsTrusted : 1;
+    SUScriptDebugDelegate *_debugDelegate;
+    SUWebViewDelegateProxy *_delegateProxy;
+    SUScriptInterface *_scriptInterface;
+    struct __CFDictionary { } *_widgets;
 }
 
-@property(retain) NSString *stylesheet; /* unknown property attribute: V_stylesheet */
-@property id loadDelegate; /* unknown property attribute: V_loadDelegate */
-@property BOOL adjustHeightToFit;
+@property <SUWebViewDelegate> *delegate;
+@property(readonly) NSString *title;
+@property BOOL openURLsExternally;
+@property(getter=isScrollingEnabled) BOOL scrollingEnabled;
+@property BOOL sourceIsTrusted;
 
-- (BOOL)adjustHeightToFit;
+- (id)_DOMDocument;
+- (id)_createImageViewForElement:(id)arg1;
+- (id)_createLabelForElement:(id)arg1 withText:(id)arg2;
+- (void)_didFinishLoadForFrame:(id)arg1;
+- (void)_injectScriptObjectsForWindow:(id)arg1;
+- (void)_positionView:(id)arg1 forWidget:(id)arg2;
+- (id)_webView;
+- (id)callWebScriptMethod:(id)arg1 withArguments:(id)arg2;
 - (void)dealloc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForElementWithIdentifier:(id)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)loadDelegate;
-- (void)setAdjustHeightToFit:(BOOL)arg1;
-- (void)setHTMLFragment:(id)arg1;
-- (void)setLoadDelegate:(id)arg1;
-- (void)setPlaintextString:(id)arg1;
-- (void)setStylesheet:(id)arg1;
-- (id)stylesheet;
-- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
-- (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
+- (BOOL)isScrollingEnabled;
+- (BOOL)openURLsExternally;
+- (void)scriptInterface:(id)arg1 animatePurchaseForIdentifier:(id)arg2;
+- (void)scriptInterface:(id)arg1 parsedPropertyList:(id)arg2 ofType:(NSInteger)arg3;
+- (void)scriptInterface:(id)arg1 receivedEventOfType:(NSInteger)arg2 userInfo:(id)arg3;
+- (void)scriptInterface:(id)arg1 registeredNativeWidget:(id)arg2;
+- (void)scriptInterface:(id)arg1 registeredNavigationButton:(id)arg2;
+- (void)scriptInterface:(id)arg1 removedNativeWidgetWithIdentifier:(id)arg2;
+- (void)setOpenURLsExternally:(BOOL)arg1;
+- (void)setScrollingEnabled:(BOOL)arg1;
+- (void)setSourceIsTrusted:(BOOL)arg1;
+- (BOOL)sourceIsTrusted;
+- (id)superviewForImageSheetForWebView:(id)arg1;
+- (id)title;
 
 @end

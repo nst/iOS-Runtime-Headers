@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPBackstopView, MPTVOutWindow, MPVideoBackgroundView, UIAlertView, UIColor, UIProgressIndicator;
+@class MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, UIAlertView, UIColor, UIProgressIndicator;
 
-@interface MPVideoViewController : MPViewController <MPBackstopViewTarget, MPVideoTransferViewController, UIModalViewDelegate> {
+@interface MPVideoViewController : MPViewController <MPSwipableViewDelegate, MPVideoTransferViewController, UIModalViewDelegate> {
     unsigned int _canAnimateControlsOverlay : 1;
     unsigned int _canShowControlsOverlay : 1;
     unsigned int _disableControlsAutohide : 1;
@@ -14,10 +14,12 @@
     unsigned int _scheduledLoadingIndicator : 1;
     unsigned int _tvOutEnabled : 1;
     unsigned int _displayPlaybackErrorAlerts : 1;
+    unsigned int _allowsDetailScrubbing : 1;
+    unsigned int _attemptAutoPlayWhenControlsHidden : 1;
     UIAlertView *_alertSheet;
     MPVideoBackgroundView *_backgroundView;
     UIColor *_backstopColor;
-    MPBackstopView *_backstopView;
+    MPSwipableView *_backstopView;
     NSUInteger _desiredParts;
     NSUInteger _disabledParts;
     UIProgressIndicator *_loadingIndicator;
@@ -34,6 +36,8 @@
 @property(readonly) UIView *backgroundView;
 @property(retain,readonly) MPVideoView *videoView;
 @property BOOL TVOutEnabled;
+@property BOOL allowsDetailScrubbing;
+@property BOOL attemptAutoPlayWhenControlsHidden;
 @property BOOL canAnimateControlsOverlay;
 @property(readonly) BOOL canChangeScaleMode;
 @property BOOL canShowControlsOverlay;
@@ -48,12 +52,14 @@
 - (BOOL)TVOutEnabled;
 - (void)_delayedPopForTimeJump;
 - (void)_delayedShowLoading;
+- (void)_delayedUpdateBackgroundView;
 - (void)_hideLoadingForStateChange:(id)arg1;
 - (void)_hideLoadingIndicator;
 - (void)_popForTimeJump:(id)arg1;
 - (void)_scheduleLoadingIndicatorIfNeeded;
 - (void)_tvOutCapabilityChangedNotification;
 - (void)_updateAlwaysPlayWheneverPossible;
+- (void)_updateBackgroundView:(BOOL)arg1;
 - (void)_updateIdleTimerDisabledFromPlaybackState:(NSUInteger)arg1;
 - (void)_videoVideo_batteryStateDidChangeNotification:(id)arg1;
 - (void)_videoView_effectiveScaleModeChangedNotification:(id)arg1;
@@ -61,13 +67,17 @@
 - (void)_videoView_playbackStateChangedNotification:(id)arg1;
 - (void)_videoView_resumeEventsOnlyNotification:(id)arg1;
 - (void)_videoView_scaleModeChangedNotification:(id)arg1;
+- (void)_videoView_sizeChangedNotification:(id)arg1;
 - (void)_videoView_validityChangedNotification:(id)arg1;
+- (BOOL)allowsDetailScrubbing;
+- (BOOL)attemptAutoPlayWhenControlsHidden;
 - (id)backgroundView;
 - (id)backstopColor;
 - (BOOL)canAnimateControlsOverlay;
 - (BOOL)canChangeScaleMode;
 - (BOOL)canShowControlsOverlay;
 - (void)chapterList:(id)arg1 selectedChapter:(NSUInteger)arg2;
+- (void)chapterListDidDisappear:(id)arg1;
 - (id)createAlternateTracksTransition;
 - (id)createChapterFlipTransition;
 - (void)dealloc;
@@ -87,6 +97,8 @@
 - (BOOL)ownsStatusBar;
 - (void)removeChildViewController:(id)arg1;
 - (NSUInteger)scaleMode;
+- (void)setAllowsDetailScrubbing:(BOOL)arg1;
+- (void)setAttemptAutoPlayWhenControlsHidden:(BOOL)arg1;
 - (void)setBackstopColor:(id)arg1;
 - (void)setCanAnimateControlsOverlay:(BOOL)arg1;
 - (void)setCanShowControlsOverlay:(BOOL)arg1;

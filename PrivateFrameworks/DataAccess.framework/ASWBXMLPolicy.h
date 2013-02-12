@@ -8,6 +8,12 @@
     NSMutableDictionary *_policyData;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (void)_cleanUpPolicyData:(id)arg1;
 - (void)_setPolicyData:(id)arg1;
 - (id)asParseRules;
 - (void)dealloc;

@@ -2,42 +2,22 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface GMMMapTile : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
-    BOOL _hasTileIndexX;
-    BOOL _hasTileIndexY;
-    BOOL _hasTileType;
-    BOOL _hasZoomLevel;
+@interface GMMMapTile : PBCodable {
     NSInteger _tileIndexX;
     NSInteger _tileIndexY;
     NSInteger _tileType;
     NSInteger _zoomLevel;
 }
 
-@property BOOL hasZoomLevel; /* unknown property attribute: V_hasZoomLevel */
 @property NSInteger zoomLevel; /* unknown property attribute: V_zoomLevel */
-@property BOOL hasTileIndexY; /* unknown property attribute: V_hasTileIndexY */
 @property NSInteger tileIndexY; /* unknown property attribute: V_tileIndexY */
-@property BOOL hasTileIndexX; /* unknown property attribute: V_hasTileIndexX */
 @property NSInteger tileIndexX; /* unknown property attribute: V_tileIndexX */
-@property BOOL hasTileType; /* unknown property attribute: V_hasTileType */
 @property NSInteger tileType; /* unknown property attribute: V_tileType */
 
 - (void)dealloc;
-- (BOOL)hasTileIndexX;
-- (BOOL)hasTileIndexY;
-- (BOOL)hasTileType;
-- (BOOL)hasZoomLevel;
+- (id)description;
 - (id)init;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
-- (void)setHasTileIndexX:(BOOL)arg1;
-- (void)setHasTileIndexY:(BOOL)arg1;
-- (void)setHasTileType:(BOOL)arg1;
-- (void)setHasZoomLevel:(BOOL)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (void)setTileIndexX:(NSInteger)arg1;
 - (void)setTileIndexY:(NSInteger)arg1;
 - (void)setTileType:(NSInteger)arg1;
@@ -45,7 +25,7 @@
 - (NSInteger)tileIndexX;
 - (NSInteger)tileIndexY;
 - (NSInteger)tileType;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 - (NSInteger)zoomLevel;
 
 @end

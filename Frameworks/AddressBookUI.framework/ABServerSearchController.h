@@ -2,29 +2,25 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABDimmingView, ABGroupWrapper, DASearchQuery, NSArray, UIImageView, UILabel, UISearchField, UITableView, UIView;
+@class ABGroupWrapper, DAContactsSearchQuery, NSArray, NSMutableArray, UISearchBar, UISearchDisplayController, UIViewController;
 
-@interface ABServerSearchController : ABContentController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, DASearchQueryConsumer> {
+@interface ABServerSearchController : ABContentController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, DASearchQueryConsumer, UISearchDisplayDelegate, UISearchBarDelegate> {
     struct { 
-        unsigned int resumeToEditing : 1; 
-        unsigned int isEndingEditingWithAnimation : 1; 
         unsigned int showingCardForPerson : 1; 
         unsigned int isSearching : 1; 
         unsigned int hasResults : 1; 
         unsigned int hasError : 1; 
-        unsigned int unused : 26; 
-    UITableView *_completionTable;
+        unsigned int wasKeyboardShowing : 1; 
+        unsigned int unused : 24; 
     NSArray *_currentResultsAsPeople;
-    DASearchQuery *_currentSearchQuery;
+    DAContactsSearchQuery *_currentSearchQuery;
     NSArray *_currentSearchResults;
     } _flags;
-    UILabel *_informationalOverlay;
-    ABDimmingView *_keyboardDimmingView;
-    UISearchField *_searchField;
-    UITableView *_searchResultsTable;
-    UIView *_searchView;
+    NSMutableArray *_incrementalSearchResults;
+    UIViewController *_parentViewController;
+    UISearchBar *_searchBar;
+    UISearchDisplayController *_searchController;
     ABGroupWrapper *_selectedGroupWrapper;
-    UIImageView *_shadowView;
 }
 
 @property(retain) ABGroupWrapper *selectedGroupWrapper; /* unknown property attribute: V_selectedGroupWrapper */
@@ -32,34 +28,36 @@
 
 - (void)_beginSearch;
 - (void)_clearSearchResults;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_completionTableFrameWithKeyboardVisible;
 - (void)_deselectAllRowsWithAnimation:(BOOL)arg1;
-- (void)_endEditingAnimationDidFinish;
-- (void)_endSearchFieldEditing;
 - (NSInteger)_errorForDAStatusCode:(NSInteger)arg1;
 - (id)_localizedStringForError:(NSInteger)arg1;
-- (void)_searchFieldDidChange:(id)arg1;
 - (id)_searchString;
 - (void)_setCurrentSearchResults:(id)arg1 error:(NSInteger)arg2 callDelegate:(BOOL)arg3;
 - (void)_setCurrentSearchResults:(id)arg1 error:(NSInteger)arg2;
 - (void)_setCurrentSearchResults:(id)arg1;
+- (BOOL)_shouldDeactivateOnCancelButtonClicked;
 - (id)contentView;
 - (void)dealloc;
+- (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
 - (id)navigationTitleView;
-- (void)resultsReceived:(id)arg1 forSearchQuery:(id)arg2 withStatus:(NSInteger)arg3;
+- (void)searchBarCancelButtonClicked:(id)arg1;
+- (void)searchBarSearchButtonClicked:(id)arg1;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
+- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
+- (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
+- (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
 - (id)selectedGroupWrapper;
+- (void)setParentViewController:(id)arg1;
 - (void)setSelectedGroupWrapper:(id)arg1;
-- (NSInteger)tableView:(id)arg1 accessoryTypeForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
-- (void)tapInsideDimmingView:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

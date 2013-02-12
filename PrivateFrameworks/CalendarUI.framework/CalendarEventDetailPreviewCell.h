@@ -11,5 +11,6 @@
 - (BOOL)hasCustomLayout;
 - (id)initWithEditModel:(id)arg1;
 - (BOOL)setEditModel:(id)arg1;
+- (id)viewControllerPreparedWithModel:(id)arg1;
 
 @end

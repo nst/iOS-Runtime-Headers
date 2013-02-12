@@ -11,8 +11,8 @@
 
 + (BOOL)_acquireLock:(BOOL)arg1 sharedLock:(BOOL)arg2 instanceUID:(NSUInteger)arg3 threadArgs:(struct __CFDictionary { }*)arg4 notifyMainThreadIfAcquired:(BOOL)arg5;
 + (void)_blockingLockWasAcquired:(struct __CFDictionary { }*)arg1;
-+ (void)_ensureLockFileParentDirectoryExists;
-+ (id)lockfilePath;
++ (void)_ensureLockFileParentDirectoryExists:(NSUInteger)arg1;
++ (id)iTunesSyncingLockfilePath;
 
 - (void)_blockingLockWasAcquired;
 - (void)_releaseLockNoSpinLock;
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasLock;
-- (id)initWithDelegate:(id)arg1 useExclusiveLocks:(BOOL)arg2;
+- (id)initWithDelegate:(id)arg1 lockfilePath:(id)arg2 useExclusiveLocks:(BOOL)arg3;
 - (void)releaseLock;
 
 @end

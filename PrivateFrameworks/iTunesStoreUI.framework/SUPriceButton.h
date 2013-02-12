@@ -2,58 +2,62 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
+@class NSString, SUScriptWidget;
 
 @interface SUPriceButton : UIThreePartButton {
     struct CGSize { 
         float width; 
         float height; 
-    unsigned int _adjustingWidth : 1;
-    unsigned int _leftAligned : 1;
-    unsigned int _needsLayout : 1;
-    unsigned int _normalWidthIsDirty : 1;
-    unsigned int _showingConfirmation : 1;
-    unsigned int _ignoreNextUp : 1;
-    NSString *_adjustedTitle;
-    } _adjustedTitleSize;
+    unsigned int _frameLocked : 1;
     NSString *_confirmationTitle;
-    id _delegate;
-    float _normalWidth;
+    BOOL _leftAnchored;
     NSString *_originalTitle;
+    float _originalWidth;
+    SUScriptWidget *_scriptWidget;
+    BOOL _showingConfirmation;
     NSUInteger _style;
+    NSString *_stylizedTitle;
+    } _stylizedTitleSize;
 }
 
-+ (float)animationDuration;
-+ (NSUInteger)styleForItem:(id)arg1;
-+ (float)widthForTitle:(id)arg1 style:(NSUInteger)arg2;
+@property NSUInteger style; /* unknown property attribute: V_style */
+@property(getter=isShowingConfirmation) BOOL showingConfirmation; /* unknown property attribute: V_showingConfirmation */
+@property(retain) SUScriptWidget *scriptWidget; /* unknown property attribute: V_scriptWidget */
+@property BOOL leftAnchored; /* unknown property attribute: V_leftAnchored */
+@property(retain) NSString *confirmationTitle; /* unknown property attribute: V_confirmationTitle */
 
-- (void)_adjustWidthForConfirming:(BOOL)arg1 animate:(BOOL)arg2 stopSelector:(SEL)arg3;
-- (BOOL)_alwaysHandleScrollerMouseEvent;
-- (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
-- (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
-- (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
-- (void)_finishedHidingConfirmation:(id)arg1;
-- (void)_finishedShowingConfirmation:(id)arg1;
-- (id)_interceptMouseEvent:(struct __GSEvent { }*)arg1;
-- (id)_notPurchaseableStyle;
-- (void)_press:(id)arg1;
-- (void)_setInterceptMouseEvent:(BOOL)arg1;
-- (void)_updateButtonImages:(BOOL)arg1;
-- (void)_updateTitleAppearance;
-- (void)cancelBuyConfirmation:(BOOL)arg1;
++ (NSUInteger)_styleForItem:(id)arg1;
++ (double)defaultAnimationDuration;
++ (struct CGSize { float x1; float x2; })sizeForItem:(id)arg1;
+
+- (struct { NSUInteger x1; id x2; id x3; struct { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_4_1_1; struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_2_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_2_2_2; } x_4_1_2; struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_3_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_3_2_2; } x_4_1_3; } x4; float x5; struct CGSize { float x_6_1_1; float x_6_1_2; } x6; })_activeStyle;
+- (void)_buttonAction:(id)arg1;
+- (void)_hideConfirmationAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)_hideConfirmationWithDuration:(float)arg1;
+- (void)_reloadButton;
+- (void)_reloadTitleStyling;
+- (void)_showConfirmationAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)_showConfirmationWithDuration:(float)arg1;
+- (id)_stylizedTitle;
+- (void)configureFromItem:(id)arg1;
+- (id)confirmationTitle;
 - (void)dealloc;
 - (void)drawButtonPart:(NSInteger)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)drawTitleAtPoint:(struct CGPoint { float x1; float x2; })arg1 width:(float)arg2;
-- (id)init;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isShowingConfirmation;
-- (float)normalWidth;
-- (void)removeFromSuperview;
+- (BOOL)leftAnchored;
+- (id)scriptWidget;
 - (void)setConfirmationTitle:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLeftAnchored:(BOOL)arg1;
-- (void)setNormalWidth:(float)arg1;
+- (void)setScriptWidget:(id)arg1;
+- (void)setShowingConfirmation:(BOOL)arg1 duration:(float)arg2;
+- (void)setShowingConfirmation:(BOOL)arg1;
 - (void)setStyle:(NSUInteger)arg1;
 - (void)setTitle:(id)arg1;
 - (void)sizeToFit;
+- (NSUInteger)style;
 
 @end

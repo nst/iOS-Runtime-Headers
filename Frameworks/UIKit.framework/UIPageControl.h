@@ -21,8 +21,8 @@
 
 - (void)_commonPageControlInit;
 - (NSInteger)_displayedPage;
-- (id)_pageIndicatorCurrentImage;
-- (id)_pageIndicatorImage;
+- (id)_pageIndicatorCurrentImageForPage:(NSInteger)arg1;
+- (id)_pageIndicatorImageForPage:(NSInteger)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_setCurrentPage:(NSInteger)arg1;
 - (void)_setDisplayedPage:(NSInteger)arg1;
@@ -36,6 +36,7 @@
 - (BOOL)hidesForSinglePage;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
 - (NSInteger)numberOfPages;
 - (void)setCurrentPage:(NSInteger)arg1;

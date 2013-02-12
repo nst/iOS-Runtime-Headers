@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSData, NSMutableDictionary, NSString, _NSHTTPBodyStreamWrapper;
+@class NSArray, NSData, NSMutableDictionary, NSString;
 
 @interface NSHTTPURLRequestParameters : NSObject {
     BOOL _pad1;
     BOOL _pad2;
     BOOL _pad3;
-    _NSHTTPBodyStreamWrapper *bodyStreamWrapper;
     NSData *data;
     NSArray *extraCookies;
     NSMutableDictionary *fields;

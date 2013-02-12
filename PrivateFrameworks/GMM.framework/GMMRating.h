@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class NSMutableArray;
 
-@interface GMMRating : NSObject <GMMReadWriteStream> {
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMRating : PBCodable {
     BOOL _hasStarRatingAverage_E3;
     BOOL _hasTotalReviews;
     NSMutableArray *_numReviewsStarRating1To5s;
@@ -18,29 +13,28 @@
 }
 
 @property(retain) NSMutableArray *numReviewsStarRating1To5s; /* unknown property attribute: V_numReviewsStarRating1To5s */
-@property BOOL hasTotalReviews; /* unknown property attribute: V_hasTotalReviews */
+@property(readonly) BOOL hasTotalReviews; /* unknown property attribute: V_hasTotalReviews */
 @property NSInteger totalReviews; /* unknown property attribute: V_totalReviews */
-@property BOOL hasStarRatingAverage_E3; /* unknown property attribute: V_hasStarRatingAverage_E3 */
+@property(readonly) BOOL hasStarRatingAverage_E3; /* unknown property attribute: V_hasStarRatingAverage_E3 */
 @property NSInteger starRatingAverage_E3; /* unknown property attribute: V_starRatingAverage_E3 */
 @property(readonly) NSInteger numReviewsStarRating1To5sCount;
 
 - (void)addNumReviewsStarRating1To5:(NSInteger)arg1;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hasStarRatingAverage_E3;
 - (BOOL)hasTotalReviews;
 - (id)init;
 - (NSInteger)numReviewsStarRating1To5AtIndex:(NSUInteger)arg1;
 - (id)numReviewsStarRating1To5s;
 - (NSInteger)numReviewsStarRating1To5sCount;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
-- (void)setHasStarRatingAverage_E3:(BOOL)arg1;
-- (void)setHasTotalReviews:(BOOL)arg1;
-- (void)setNumReviewsStarRating1To5:(NSInteger)arg1 atIndex:(NSInteger)arg2;
+- (BOOL)readFrom:(id)arg1;
+- (void)setNumReviewsStarRating1To5:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
 - (void)setNumReviewsStarRating1To5s:(id)arg1;
 - (void)setStarRatingAverage_E3:(NSInteger)arg1;
 - (void)setTotalReviews:(NSInteger)arg1;
 - (NSInteger)starRatingAverage_E3;
 - (NSInteger)totalReviews;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

@@ -7,24 +7,19 @@
  */
 
 @interface AVFileValidator : NSObject {
-    struct AVFileValidatorPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; unsigned long x6; void*x7; id x8; void*x9; void*x10; oneway void*x11; void*x12; void*x13; void*x14; unsigned short x15; void*x16; const void*x17; void*x18; void*x19; void*x20; id x21; void*x22; void*x23; oneway void*x24; void*x25; float x26; void*x27; out void x28; NSInteger x29; void*x30; void*x31; void*x32; const short x33; void*x34; const void*x35; struct FigOpaqueFileCheck {} *x36; struct FigFileCheckDataLocation { 
+    struct AVFileValidatorPrivate { id x1; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x2; inout unsigned short x3; void*x4; void*x5; unsigned long x6; void*x7; struct FigOpaqueMediaValidator {} *x8; struct FigMediaValidatorDataLocation { 
             unsigned long long offset; 
             unsigned long long size; 
-        } x37; BOOL x38; } *_priv;
+        } x9; struct OpaqueFigByteStream {} *x10; BOOL x11; BOOL x12; } *_priv;
 }
 
-- (id)byteStream;
 - (void)cancel;
 - (void)dealloc;
 - (void)fileCheckResult:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isCompleted;
+- (BOOL)isStreaming;
 - (float)progress;
-- (void)refMovieLeaf:(id)arg1;
-- (void)refMovieResolved:(id)arg1;
-- (void)setUrl:(id)arg1;
-- (void)streamFailed:(id)arg1;
-- (void)streamOpened:(id)arg1;
 - (id)url;
 - (void)validate;
 

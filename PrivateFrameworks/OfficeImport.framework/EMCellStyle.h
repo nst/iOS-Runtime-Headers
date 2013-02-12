@@ -5,9 +5,12 @@
 @class EDStyle;
 
 @interface EMCellStyle : CMStyle {
+    BOOL _nameContainsBold;
+    BOOL _nameContainsItalic;
     EDStyle *edStyle;
 }
 
+- (id)_parseFontName:(id)arg1;
 - (void)addAlignmentStyle:(id)arg1;
 - (void)addBordersStyle:(id)arg1;
 - (void)addFillStyle:(id)arg1;

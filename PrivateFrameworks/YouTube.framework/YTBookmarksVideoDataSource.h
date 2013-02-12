@@ -2,12 +2,22 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
+@class NSMutableArray, YTSearchRequest;
+
 @interface YTBookmarksVideoDataSource : YTVideoDataSource {
+    NSMutableArray *_bookmarkedShortIDs;
+    YTSearchRequest *_bookmarksSearchRequest;
+    BOOL _lastReloadWasAccountsFavorites;
 }
 
+- (void)_nextBatch;
+- (void)addVideo:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (BOOL)isLoading;
 - (NSUInteger)maxVideosToSave;
 - (void)reloadData;
+- (void)searchRequest:(id)arg1 foundBatchURL:(id)arg2;
+- (void)searchRequest:(id)arg1 receivedVideos:(id)arg2 startIndex:(NSUInteger)arg3 videosRemaining:(NSUInteger)arg4;
 
 @end

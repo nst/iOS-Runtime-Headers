@@ -12,7 +12,6 @@
 
 - (id)alternateAddressesForSelf;
 - (id)archiveMailbox;
-- (BOOL)autosaveWindows;
 - (BOOL)boolForKey:(id)arg1;
 - (void)dealloc;
 - (id)defaultMailDirectory;
@@ -23,7 +22,6 @@
 - (id)objectForKey:(id)arg1;
 - (id)primaryEmailAddress;
 - (void)removeObjectForKey:(id)arg1;
-- (void)setAutosaveWindows:(BOOL)arg1;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)setDefaultMailDirectory:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

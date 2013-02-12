@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPVideoView, UINavigationBar;
+@class MPVideoView, UINavigationBar, UIView;
 
 @interface MPVideoTransferTransitionController : MPTransitionController {
     MPVideoView *_inflightVideoView;
     UINavigationBar *_portraitNavigationBar;
+    UIView *_transitionBehindView;
 }
 
+@property(retain) UIView *transitionBehindView; /* unknown property attribute: V_transitionBehindView */
 @property(retain) UINavigationBar *portraitNavigationBar; /* unknown property attribute: V_portraitNavigationBar */
 
 - (void)_animationDidStop;
@@ -19,6 +21,8 @@
 - (id)init;
 - (id)portraitNavigationBar;
 - (void)setPortraitNavigationBar:(id)arg1;
+- (void)setTransitionBehindView:(id)arg1;
 - (void)transition:(NSUInteger)arg1;
+- (id)transitionBehindView;
 
 @end

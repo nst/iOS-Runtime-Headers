@@ -8,21 +8,30 @@
     struct { 
         unsigned int albumsInvalid : 1; 
         unsigned int visible : 1; 
-        unsigned int reserved : 30; 
+        unsigned int filter : 3; 
+        unsigned int didSetPreviousStatusBarMode : 1; 
+        unsigned int reserved : 26; 
     PLPhotoLibrary *_library;
     } _libraryControllerFlags;
+    NSInteger _newStatusBarMode;
+    NSInteger _previousStatusBarMode;
 }
 
+- (NSInteger)_imagePickerStatusBarMode;
 - (id)_library;
+- (void)_reloadLibrary;
 - (void)_updateAlbumsIfNecessary;
-- (void)cancelButtonClicked:(id)arg1;
+- (id)contentScrollView;
 - (void)dealloc;
+- (NSInteger)filter;
 - (void)iTunesSyncHasCompleted:(NSInteger)arg1;
 - (void)iTunesSyncRequestedStart;
 - (id)init;
-- (void)libraryView:(id)arg1 didSelectAlbum:(id)arg2;
 - (void)loadView;
+- (void)setFilter:(NSInteger)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

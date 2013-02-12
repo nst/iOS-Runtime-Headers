@@ -14,6 +14,6 @@
 
 - (void)dealloc;
 - (id)initWithLayer:(id)arg1 error:(id*)arg2;
-- (void)synchronizeToMoment:(const struct TimebaseSyncMoment { NSUInteger x1; NSUInteger x2; double x3; struct { long long x_4_1_1; NSInteger x_4_1_2; long long x_4_1_3; NSUInteger x_4_1_4; } x4; struct { long long x_5_1_1; NSInteger x_5_1_2; long long x_5_1_3; NSUInteger x_5_1_4; } x5; double x6; }*)arg1;
+- (void)synchronizeToMoment:(const struct TimebaseSyncMoment { NSUInteger x1; NSUInteger x2; double x3; struct { long long x_4_1_1; NSInteger x_4_1_2; NSUInteger x_4_1_3; long long x_4_1_4; } x4; struct { long long x_5_1_1; NSInteger x_5_1_2; NSUInteger x_5_1_3; long long x_5_1_4; } x5; double x6; }*)arg1;
 
 @end

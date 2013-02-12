@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMMapInfo, NSMutableArray, NSString;
 
-@interface GMMSearchResponse : GMMResponse <GMMReadWriteStream> {
-     /* Encoded args for previous method: c16@0:4^{InputDataStream=*IIBB}8c12 */
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMSearchResponse : PBCodable {
     BOOL _autoSpellingCorrected;
     NSMutableArray *_categorys;
     NSMutableArray *_documentInfos;
     NSString *_errorMessage;
     BOOL _hasAutoSpellingCorrected;
     BOOL _hasResultOffset;
-    BOOL _hasStatus;
     GMMMapInfo *_mapInfo;
     NSString *_originalQuery;
     NSString *_refinementQuery;
@@ -27,19 +20,18 @@
     NSInteger _status;
 }
 
-@property BOOL hasResultOffset; /* unknown property attribute: V_hasResultOffset */
+@property(readonly) BOOL hasResultOffset; /* unknown property attribute: V_hasResultOffset */
 @property NSInteger resultOffset; /* unknown property attribute: V_resultOffset */
 @property(retain) NSMutableArray *categorys; /* unknown property attribute: V_categorys */
 @property(retain) NSMutableArray *documentInfos; /* unknown property attribute: V_documentInfos */
 @property(retain) NSMutableArray *searchResults; /* unknown property attribute: V_searchResults */
 @property(retain) GMMMapInfo *mapInfo; /* unknown property attribute: V_mapInfo */
 @property(retain) NSString *spellingSuggestion; /* unknown property attribute: V_spellingSuggestion */
-@property BOOL hasAutoSpellingCorrected; /* unknown property attribute: V_hasAutoSpellingCorrected */
+@property(readonly) BOOL hasAutoSpellingCorrected; /* unknown property attribute: V_hasAutoSpellingCorrected */
 @property BOOL autoSpellingCorrected; /* unknown property attribute: V_autoSpellingCorrected */
 @property(retain) NSString *refinementQuery; /* unknown property attribute: V_refinementQuery */
 @property(retain) NSString *originalQuery; /* unknown property attribute: V_originalQuery */
 @property(retain) NSString *errorMessage; /* unknown property attribute: V_errorMessage */
-@property BOOL hasStatus; /* unknown property attribute: V_hasStatus */
 @property NSInteger status; /* unknown property attribute: V_status */
 @property(readonly) NSInteger categorysCount;
 @property(readonly) NSInteger documentInfosCount;
@@ -58,6 +50,7 @@
 - (id)categorys;
 - (NSInteger)categorysCount;
 - (void)dealloc;
+- (id)description;
 - (id)documentInfoAtIndex:(NSUInteger)arg1;
 - (id)documentInfos;
 - (NSInteger)documentInfosCount;
@@ -69,36 +62,31 @@
 - (BOOL)hasRefinementQuery;
 - (BOOL)hasResultOffset;
 - (BOOL)hasSpellingSuggestion;
-- (BOOL)hasStatus;
 - (id)init;
 - (id)mapInfo;
 - (id)originalQuery;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1 tillEnd:(BOOL)arg2;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (id)refinementQuery;
 - (NSInteger)resultOffset;
 - (id)searchResultAtIndex:(NSUInteger)arg1;
 - (id)searchResults;
 - (NSInteger)searchResultsCount;
 - (void)setAutoSpellingCorrected:(BOOL)arg1;
-- (void)setCategory:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setCategory:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setCategorys:(id)arg1;
-- (void)setDocumentInfo:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setDocumentInfo:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setDocumentInfos:(id)arg1;
 - (void)setErrorMessage:(id)arg1;
-- (void)setHasAutoSpellingCorrected:(BOOL)arg1;
-- (void)setHasResultOffset:(BOOL)arg1;
-- (void)setHasStatus:(BOOL)arg1;
 - (void)setMapInfo:(id)arg1;
 - (void)setOriginalQuery:(id)arg1;
 - (void)setRefinementQuery:(id)arg1;
 - (void)setResultOffset:(NSInteger)arg1;
-- (void)setSearchResult:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setSearchResult:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setSearchResults:(id)arg1;
 - (void)setSpellingSuggestion:(id)arg1;
 - (void)setStatus:(NSInteger)arg1;
 - (id)spellingSuggestion;
 - (NSInteger)status;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

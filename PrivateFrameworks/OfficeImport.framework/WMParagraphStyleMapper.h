@@ -19,7 +19,7 @@
 - (/* Warning: Unrecognized filer type: 'B' using 'void*' */ void*)checkListId:(NSInteger)arg1 level:(NSInteger)arg2;
 - (void)dealloc;
 - (void)destyleEmptyParagraph;
-- (id)initWithWDParagraph:(id)arg1 parent:(id)arg2;
+- (id)initWithWDParagraph:(id)arg1 parent:(id)arg2 isInTextFrame:(BOOL)arg3;
 - (BOOL)isListItem;
 - (id)labelStringWithGap:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;

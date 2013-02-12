@@ -2,17 +2,29 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableSet;
 
 @interface MCConfigurationPayloadHandler : MCPayloadHandler {
+    NSMutableArray *_groupedPayloads;
+    NSMutableArray *_orderedPayloads;
+    NSMutableSet *_payloadTypes;
     NSMutableArray *_payloads;
 }
 
 + (BOOL)isContainer;
 
+- (void)_performDependencyAnalysis;
 - (void)dealloc;
+- (id)expirationDate;
+- (id)groupedPayloads;
 - (id)initWithPayload:(id)arg1;
+- (id)initWithPayloadForInspection:(id)arg1;
+- (BOOL)isEncrypted;
+- (BOOL)mayProduceProfileUpdate;
+- (id)payloadTypes;
 - (id)payloads;
 - (id)performInstallStep:(NSInteger)arg1 withRoot:(id)arg2 truth:(id)arg3;
+- (BOOL)produceProfileUpdate;
+- (id)rawPayloads;
 
 @end

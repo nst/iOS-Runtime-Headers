@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalendarUI.framework/CalendarUI
  */
 
-@class UITextLabel;
+@class UITextLabel, UITextView;
 
 @interface CalendarEventDetailNotesCell : CalendarEventDetailCell {
     UITextLabel *_notesTitleView;
-    UITextLabel *_notesView;
+    UITextView *_notesView;
 }
 
 + (BOOL)shouldDisplayForEditModel:(id)arg1;

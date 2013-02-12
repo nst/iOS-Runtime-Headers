@@ -2,80 +2,56 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISAuthenticator, NSNumber, NSString;
+@class NSNumber, NSString;
 
 @interface ISAccount : NSObject <NSCoding> {
-    unsigned int _hasChanges : 1;
-    unsigned int _identityConfirmed : 1;
-    unsigned int _isPrimaryAccount : 1;
-    unsigned int _remembersPassword : 1;
-    unsigned int _loadFromKeychain : 1;
-    NSString *_accountID;
-    NSNumber *_accountKind;
-    ISAuthenticator *_authenticator;
+    NSString *_cachedPassword;
+    NSString *_creditString;
     NSNumber *_dsID;
-    double _expirationTime;
+    NSString *_identifier;
+    NSInteger _kind;
     NSString *_password;
-    NSUInteger _referenceNumber;
     NSString *_token;
-    NSString *_userName;
 }
 
-@property NSString *userName; /* unknown property attribute: V_userName */
 @property(retain) NSString *token; /* unknown property attribute: V_token */
-@property(retain,readonly) NSString *password; /* unknown property attribute: V_password */
-@property(retain) NSString *identifier; /* unknown property attribute: V_accountID */
+@property(retain) NSString *password; /* unknown property attribute: V_password */
+@property NSInteger kind; /* unknown property attribute: V_kind */
+@property(retain) NSString *identifier; /* unknown property attribute: V_identifier */
 @property(retain) NSNumber *dsID; /* unknown property attribute: V_dsID */
+@property(retain) NSString *creditString; /* unknown property attribute: V_creditString */
+@property(retain) NSString *cachedPassword; /* unknown property attribute: V_cachedPassword */
 @property(getter=isAuthenticated,readonly) BOOL authenticated;
-@property(getter=isIdentityConfirmed) BOOL identityConfirmed;
-@property NSInteger kind;
-@property(getter=isPrimary) BOOL primary;
-@property(getter=isProbablyAuthenticated,readonly) BOOL probablyAuthenticated;
-@property(readonly) NSUInteger referenceNumber;
+@property(getter=isPrimary,readonly) BOOL primary;
 
-- (id)_authenticator;
-- (void)_checkExpiration;
-- (id)_passwordFromKeychain;
-- (BOOL)_reallySetPassword:(id)arg1;
-- (void)_removePasswordFromKeychain;
-- (void)_savePasswordToKeychain;
-- (void)_setCreateLocalAccounts:(BOOL)arg1;
-- (BOOL)authenticate;
-- (BOOL)authenticateForClient:(id)arg1;
-- (BOOL)cancelAuthentication;
-- (BOOL)commit;
-- (BOOL)commitToLockdown;
-- (id)copyUserInfo;
+- (id)_copyPasswordFromKeychain;
+- (id)cachedPassword;
+- (void)commitToLockdownDomain:(struct __CFString { }*)arg1;
+- (id)copyLockdownDictionary;
+- (id)creditString;
 - (void)dealloc;
-- (id)dictionaryRepresentation;
+- (id)description;
 - (id)dsID;
 - (void)encodeWithCoder:(id)arg1;
-- (void)expire;
 - (id)identifier;
-- (id)init;
-- (id)initPrimaryAccount;
 - (id)initWithCoder:(id)arg1;
-- (void)invalidate;
+- (id)initWithLockdownDictionary:(id)arg1;
 - (BOOL)isAuthenticated;
-- (BOOL)isAuthenticating;
-- (BOOL)isIdentityConfirmed;
 - (BOOL)isPrimary;
-- (BOOL)isProbablyAuthenticated;
 - (NSInteger)kind;
-- (void)loadFromDictionary:(id)arg1;
-- (void)mergeWithAccount:(id)arg1;
+- (void)loadPasswordFromKeychain;
+- (void)makePrimaryAccount;
+- (void)mergeValuesFromResponse:(id)arg1;
 - (id)password;
-- (NSUInteger)referenceNumber;
-- (void)resetExpiration;
-- (void)setDSID:(id)arg1;
+- (void)removePasswordFromKeychain;
+- (void)savePasswordToKeychain;
+- (void)setCachedPassword:(id)arg1;
+- (void)setCreditString:(id)arg1;
+- (void)setDsID:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIdentityConfirmed:(BOOL)arg1;
 - (void)setKind:(NSInteger)arg1;
-- (BOOL)setPassword:(id)arg1;
-- (void)setPrimary:(BOOL)arg1;
+- (void)setPassword:(id)arg1;
 - (void)setToken:(id)arg1;
-- (void)setUserName:(id)arg1;
 - (id)token;
-- (id)userName;
 
 @end

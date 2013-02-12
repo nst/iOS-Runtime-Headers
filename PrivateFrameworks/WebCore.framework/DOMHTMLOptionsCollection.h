@@ -2,22 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface DOMHTMLOptionsCollection : DOMObject {
-     /* Encoded args for previous method: @12@0:4^{HTMLOptionsCollection=^^?iB{RefPtr<WebCore::Node>=^{Node}}i^{CollectionInfo}B}8 */
-     /* Encoded args for previous method: ^{HTMLOptionsCollection=^^?iB{RefPtr<WebCore::Node>=^{Node}}i^{CollectionInfo}B}8@0:4 */
-     /* Encoded args for previous method: @12@0:4^{HTMLOptionsCollection=^^?iB{RefPtr<WebCore::Node>=^{Node}}i^{CollectionInfo}B}8 */
 }
 
 @property NSUInteger length;
 
-+ (id)_wrapHTMLOptionsCollection:(struct HTMLOptionsCollection { int (**x1)(); NSInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct RefPtr<WebCore::Node> { struct Node {} *x_4_1_1; } x4; NSInteger x5; struct CollectionInfo {} *x6; void*x7; }*)arg1;
-
-- (struct HTMLOptionsCollection { int (**x1)(); NSInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct RefPtr<WebCore::Node> { struct Node {} *x_4_1_1; } x4; NSInteger x5; struct CollectionInfo {} *x6; void*x7; }*)_HTMLOptionsCollection;
-- (id)_initWithHTMLOptionsCollection:(struct HTMLOptionsCollection { int (**x1)(); NSInteger x2; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x3; struct RefPtr<WebCore::Node> { struct Node {} *x_4_1_1; } x4; NSInteger x5; struct CollectionInfo {} *x6; void*x7; }*)arg1;
 - (void)add:(id)arg1 index:(NSUInteger)arg2;
 - (void)dealloc;
 - (void)finalize;

@@ -2,23 +2,38 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray, UIImageView, UIView;
+@class NSArray, UIImage, UIImageView, UIView;
 
 @interface PLCameraButton : UIThreePartButton {
-    NSMutableArray *_buttonImages;
-    UIImageView *_cameraIcon;
+    UIImage *_cameraIcon;
+    UIImage *_cameraIconLandscape;
+    BOOL _dontDrawDisabled;
+    UIImageView *_iconView;
     BOOL _isLandscape;
     BOOL _lockEnabled;
+    NSInteger _orientation;
     UIView *_rotationHolder;
+    BOOL _videoIsRecording;
+    BOOL _videoMode;
+    NSArray *_videoRecordingIcons;
+    BOOL _watchingOrientationChanges;
 }
 
+- (void)_deviceOrientationChanged:(id)arg1;
+- (void)_setDeviceOrientation:(NSInteger)arg1 animated:(BOOL)arg2;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
+- (void)_setIcon:(id)arg1;
+- (void)_startWatchingDeviceOrientationChanges;
+- (void)_stopWatchingDeviceOrientationChanges;
 - (void)dealloc;
 - (id)initWithDefaultSize;
-- (void)lockEnabled:(BOOL)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (void)setDeviceOrientation:(NSInteger)arg1;
+- (NSInteger)orientation;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setDontShowDisabledState:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)updateButtonBackgrounds;
+- (void)setLockEnabled:(BOOL)arg1;
+- (void)setVideoIsRecording:(BOOL)arg1;
+- (void)setVideoMode:(BOOL)arg1;
+- (void)willMoveToSuperview:(id)arg1;
 
 @end

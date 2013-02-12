@@ -5,7 +5,9 @@
 @class NSString, OADOrientedBounds;
 
 @interface CMDiagramShapeMapper : CMDiagramMapper {
+    NSInteger mChildCount;
     float mDefaultFontSize;
+    float mDefaultScale;
     OADOrientedBounds *mDiagramShapeBounds;
     NSString *mIdentifier;
     NSInteger mMaxMappableTreeDepth;
@@ -16,10 +18,10 @@
 - (id)initWithOddDiagram:(id)arg1 drawingContext:(id)arg2 orientedBounds:(id)arg3 identifier:(id)arg4 parent:(id)arg5;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapChildrenAt:(id)arg1 withState:(id)arg2;
-- (NSInteger)pointCount;
 - (void)setDefaultFonSize;
 - (float)setFonSizeForChildNode:(id)arg1 atIndex:(NSUInteger)arg2 level:(NSInteger)arg3;
 - (void)setFonSizeForChildNode:(id)arg1 atIndex:(NSUInteger)arg2;
 - (struct CGSize { float x1; float x2; })sizeForNode:(id)arg1 atIndex:(NSUInteger)arg2;
+- (struct CGSize { float x1; float x2; })textSizeForShapeSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

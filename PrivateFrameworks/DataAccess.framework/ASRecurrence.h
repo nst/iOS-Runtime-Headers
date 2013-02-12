@@ -16,6 +16,14 @@
     NSNumber *_weekOfMonth;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (void*)_createRecurrence;
+- (BOOL)_loadAttributesFromCalRecurrence:(void*)arg1 parentStartDate:(id)arg2 parentItem:(id)arg3;
+- (BOOL)_requiresParentEvent;
 - (id)_transformedUntilDateForActiveSync:(id)arg1;
 - (id)_untilDateForCalFramework;
 - (void)appendActiveSyncDataForTask:(id)arg1 toWBXMLData:(id)arg2;
@@ -29,13 +37,14 @@
 - (id)interval;
 - (id)monthOfYear;
 - (id)occurrences;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (void)saveToCalendarWithParentASEvent:(id)arg1 existingRecord:(void*)arg2 treatNullsAsDeletes:(BOOL)arg3;
 - (void)setDayOfMonth:(id)arg1;
 - (void)setDayOfWeek:(id)arg1;
 - (void)setInterval:(id)arg1;
 - (void)setMonthOfYear:(id)arg1;
 - (void)setOccurrences:(id)arg1;
+- (void)setParentEvent:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setUntil:(id)arg1;
 - (void)setUntilString:(id)arg1;

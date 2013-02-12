@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLImageScroller;
+@class PLImageScrollView;
 
 @interface PLTransitionContainerView : UIView {
-    PLImageScroller *_scroller;
+    PLImageScrollView *_scroller;
 }
 
 - (id)scroller;

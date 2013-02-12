@@ -2,18 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDWPLayoutFrame;
+@class GQDPath, GQDWPLayoutFrame;
 
 @interface GQDShape : GQDGraphic <GQDNameMappable> {
     GQDWPLayoutFrame *mLayoutFrame;
-    id mPath;
+    GQDPath *mPath;
 }
 
 + (const struct StateSpec { int (**x1)(); char *x2; NSInteger x3; NSInteger x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
+- (struct CGPath { }*)createBezierPath;
 - (void)dealloc;
+- (id)initWithGraphic:(id)arg1 path:(id)arg2 geometry:(id)arg3;
 - (BOOL)isBlank;
 - (BOOL)isRectangularAndAxisAlignedToAngle:(float)arg1;
 - (id)layoutFrame;
+- (id)path;
 
 @end

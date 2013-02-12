@@ -7,41 +7,13 @@
  */
 
 @interface CAContextImpl : CAContext {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    struct _CARenderContext { struct { 
-            NSInteger x; 
-        } x1; NSUInteger x2; struct __CFDictionary {} *x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
-        } x7; NSUInteger x8; struct _CARenderHandle {} *x9; struct _CARenderLayerNode {} *x10; struct __CFDictionary {} *x11; struct x_list_struct {} *x12; float x13; struct _CARenderFence {} *x14; struct _CARenderLayerHost {} *x15; struct x_list_struct {} *x16; double x17; NSInteger *x18; struct CGSBounds { 
-            NSInteger x; 
-            NSInteger y; 
-            NSInteger w; 
-            NSInteger h; 
+    struct Context { NSUInteger x1; struct Context {} *x2; struct Mutex { 
+            struct _opaque_pthread_mutex_t { 
+                long __sig; 
+                BOOL __opaque[40]; 
+            } _m; 
      /* Encoded args for previous method: @16@0:4@8B12 */
-    unsigned int _ownsServerPort : 1;
-    unsigned int _synchronized : 1;
-    unsigned int _serverDied : 1;
-    NSUInteger _clientId;
-    NSUInteger _clientPort;
-    struct __CFMachPort { } *_clientPortRef;
-    struct __CFRunLoopSource { } *_clientPortSource;
-    struct CGColorSpace { } *_colorspace;
-    struct commitClosure { struct _CATransaction {} *x1; id x2; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x3; unsigned char x4; void*x5; unsigned char x6; out in void*x7; void*x8; void*x9; void*x10; NSUInteger x11; void*x12; void*x13; long x14; void*x15; double x16; double x17; struct _CARenderCoder {} *x18; struct _CARenderContext {} *x19; double x20; void*x21; } *_commit;
-    struct x_list_struct { void *x1; struct x_list_struct {} *x2; } *_deletedShmems;
-    NSUInteger _fenceCount;
-    NSUInteger _fenceName;
-    void *_layer;
-    float _level;
-    NSUInteger _localId;
-    } _mutex;
-    void *_next;
-    NSUInteger _refcount;
-        } x19; NSUInteger x20; NSUInteger x21; NSUInteger x22; NSUInteger x23; NSInteger *x24; } *_renderCtx;
-    NSUInteger _serverPort;
-    struct x_list_struct { void *x1; struct x_list_struct {} *x2; } *_shmems;
+        } x3; id x4; /* Warning: Unrecognized filer type: '"' using 'void*' */ void*x5; unsigned char x6; void*x7; unsigned char x8; out in void*x9; void*x10; void*x11; void*x12; void*x13; NSUInteger x14; NSUInteger x15; id x16; void*x17; unsigned char x18; void*x19; unsigned long x20; void*x21; void*x22; void*x23; const void*x24; struct Context {} *x25; struct CGColorSpace {} *x26; struct __CFDictionary {} *x27; NSUInteger x28; NSUInteger x29; struct __CFMachPort {} *x30; struct __CFRunLoopSource {} *x31; struct Shmem {} *x32; struct Shmem {} *x33; float x34; struct Commit {} *x35; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; } *_impl;
 }
 
 - (struct CGColorSpace { }*)colorSpace;
@@ -56,10 +28,7 @@
 - (float)level;
 - (void)orderAbove:(NSUInteger)arg1;
 - (void)orderBelow:(NSUInteger)arg1;
-- (void)release;
-- (struct _CARenderContext { struct { NSInteger x_1_1_1; } x1; NSUInteger x2; struct __CFDictionary {} *x3; NSUInteger x4; NSUInteger x5; NSUInteger x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; NSUInteger x8; struct _CARenderHandle {} *x9; struct _CARenderLayerNode {} *x10; struct __CFDictionary {} *x11; struct x_list_struct {} *x12; float x13; struct _CARenderFence {} *x14; struct _CARenderLayerHost {} *x15; struct x_list_struct {} *x16; double x17; NSInteger *x18; struct CGSBounds { NSInteger x_19_1_1; NSInteger x_19_1_2; NSInteger x_19_1_3; NSInteger x_19_1_4; } x19; NSUInteger x20; NSUInteger x21; NSUInteger x22; NSUInteger x23; NSInteger *x24; }*)renderContext;
-- (id)retain;
-- (NSUInteger)retainCount;
+- (struct Context { }*)renderContext;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
 - (void)setFence:(NSUInteger)arg1 count:(NSUInteger)arg2;
 - (void)setLayer:(id)arg1;

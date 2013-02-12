@@ -12,14 +12,21 @@
 
 - (id)archiver;
 - (id)blipAtIndex:(NSUInteger)arg1;
+- (float)bottomMargin;
+- (struct CGSize { float x1; float x2; })contentSizeForDevice;
 - (void)dealloc;
 - (NSInteger)defaultTabWidth;
 - (id)documentTitle;
 - (id)fileName;
+- (BOOL)hasSessionBreakAtIndex:(NSUInteger)arg1;
 - (id)initWithWDom:(id)arg1 archiver:(id)arg2;
-- (void)mapAt:(id)arg1 withState:(id)arg2;
+- (float)leftMargin;
 - (void)mapDefaultCssStylesAt:(id)arg1;
+- (void)mapWithState:(id)arg1;
 - (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (float)rightMargin;
 - (void)setFileName:(id)arg1;
+- (id)styleMatrix;
+- (float)topMargin;
 
 @end

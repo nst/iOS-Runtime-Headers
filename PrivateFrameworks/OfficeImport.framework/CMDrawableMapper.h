@@ -47,11 +47,12 @@
 - (id)initWithParent:(id)arg1;
 - (BOOL)isCropped;
 - (void)mapBounds;
+- (void)mapDrawingContext:(id)arg1 at:(id)arg2 relative:(BOOL)arg3 withState:(id)arg4;
 - (void)mapImageBinaryData;
 - (void)mapShapeGraphicsAt:(id)arg1 withState:(id)arg2;
 - (void)mapTextBoxAt:(id)arg1 withState:(id)arg2;
 - (float)rotation;
-- (id)saveResourceAndReturnPath:(id)arg1 type:(NSInteger)arg2;
+- (id)saveResourceAndReturnPath:(id)arg1 withType:(NSInteger)arg2;
 - (void)setBoundingBox;
 - (void)setRotation:(float)arg1;
 - (void)setWithOadImage:(id)arg1;

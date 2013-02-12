@@ -8,26 +8,13 @@
     struct CGPoint { 
         float x; 
         float y; 
-    struct { 
-        unsigned char pathIndex; 
-        unsigned char pathIdentity; 
-        unsigned char pathProximity; 
-        float pathPressure; 
-        float pathMajorRadius; 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } pathLocation; 
-        struct __GSWindow {} *pathWindow; 
     struct USet { } *m_accentInfo;
     UIView *m_accentedKeyView;
     NSInteger m_activeKeyIndex;
     UIView *m_activeKeyView;
-    } m_activePathInfo;
     UIKeyboardSublayout *m_activeSublayout;
     id m_activeSublayoutKey;
     BOOL m_built;
-    NSUInteger m_currentPathFlags;
     UIKeyboardSublayout *m_deactivatingSublayout;
     SEL m_deleteAction;
     SEL m_deleteLongAction;
@@ -48,11 +35,9 @@
     SEL m_returnLongAction;
     id m_returnTarget;
     BOOL m_shift;
-    NSInteger m_shiftKeyPathIndex;
     SEL m_spaceAction;
     SEL m_spaceLongAction;
     id m_spaceTarget;
-    NSInteger m_swipePathIndex;
 }
 
 + (id)availableTopLevelDomains;
@@ -95,16 +80,14 @@
 - (id)buildUIKeyboardLayoutURLAltTransparent;
 - (id)buildUIKeyboardLayoutURLTransparent;
 - (id)cacheKeyForKey:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id x6; id x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; id x11; }*)arg1;
-- (BOOL)canHandleHandEvent:(struct __GSEvent { }*)arg1;
-- (BOOL)cancelMouseTracking;
-- (BOOL)cancelTouchTracking;
+- (struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id x6; id x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; id x11; }*)closestKeyWithoutCharging:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })compositeFGLongPressFrameForKey:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id x6; id x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; id x11; }*)arg1 orientation:(NSInteger)arg2;
 - (void)confirmAction;
 - (void)deactivateActiveKeys;
 - (void)dealloc;
 - (void)deleteAction;
+- (void)didRotate;
 - (NSUInteger)downActionFlagsForKey:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id x6; id x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; id x11; }*)arg1;
-- (BOOL)handleHandEvent:(struct __GSEvent { }*)arg1;
 - (void)handleHardwareKeyDownFromSimulator:(struct __GSEvent { }*)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -115,7 +98,7 @@
 - (BOOL)isShiftKeyPlaneChooser;
 - (struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id x6; id x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; id x11; }*)keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (NSUInteger)keyHitTest:(struct CGPoint { float x1; float x2; })arg1;
-- (NSInteger)keyHitTestUniversal:(struct CGPoint { float x1; float x2; })arg1 touchStage:(NSInteger)arg2 atTime:(double)arg3 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct __GSWindow {} *x7; }*)arg4;
+- (NSInteger)keyHitTestUniversal:(struct CGPoint { float x1; float x2; })arg1 touchStage:(NSInteger)arg2 atTime:(double)arg3 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg4;
 - (id)layoutKeyForKeyboardType:(NSInteger)arg1 withAppearance:(NSInteger)arg2;
 - (void)layoutSubview:(id)arg1 selectedString:(id)arg2;
 - (void)longPressAction;
@@ -135,12 +118,10 @@
 - (void)showPopupVariantsForKey:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id x6; id x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; id x11; }*)arg1;
 - (Class)sublayoutClassForKeyboardType:(id)arg1;
 - (id)sublayoutForKey:(id)arg1;
-- (void)touchDown:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct __GSWindow {} *x7; }*)arg2;
+- (void)touchDown:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg2;
 - (void)touchDownWithKey:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id x6; id x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; id x11; }*)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)touchDragged:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct __GSWindow {} *x7; }*)arg2;
-- (void)touchUp:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct __GSWindow {} *x7; }*)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchDragged:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg2;
+- (void)touchUp:(struct __GSEvent { }*)arg1 withPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; void *x7; }*)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (NSUInteger)typeForKey:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id x6; id x7; NSUInteger x8; NSUInteger x9; NSUInteger x10; id x11; }*)arg1;
@@ -148,5 +129,6 @@
 - (void)updateLocalizedKeys;
 - (void)updateReturnKey;
 - (BOOL)usesAutoShift;
+- (void)willRotate;
 
 @end

@@ -9,6 +9,11 @@
     NSDictionary *_subclassRuleSet;
 }
 
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
 - (void)addItem:(id)arg1;
 - (id)asParseRules;
 - (id)commonValue;

@@ -2,57 +2,85 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MLPhotoAlbum, PLEmptyAlbumView, PLImageCountCell, PLSelectableTable, PLThumbnailTableCell;
+@class MLPhotoAlbum, NSMutableSet, PLEmptyAlbumView, PLImageCountCell, PLThumbnailTableCell, UITableView, UIToolbar;
 
-@interface PLAlbumView : UIView {
+@interface PLAlbumView : UIView <UITableViewDataSource, UITableViewDelegate> {
     struct CGSize { 
         float width; 
         float height; 
-    struct CGSize { 
-        float width; 
-        float height; 
-    unsigned int _pad : 1;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    unsigned int _multipleSelectionEnabled : 1;
+    unsigned int _canShowCopyCallout : 1;
     MLPhotoAlbum *_album;
-    float _bottomBuffer;
     } _cellSize;
     id _delegate;
+    BOOL _didScrollToBottom;
     PLEmptyAlbumView *_emptyAlbumView;
-    } _gridSize;
+    NSInteger _filter;
+    BOOL _forceTableReload;
+    NSUInteger _gridHeight;
     PLThumbnailTableCell *_highlightedCell;
     PLImageCountCell *_imageCountCell;
-    PLSelectableTable *_indexTable;
+    UITableView *_indexTableView;
+    BOOL _isCameraAlbum;
+    } _lastTableContentInset;
+    BOOL _pictureWasTakenSinceLastReload;
+    struct __CFDictionary { } *_selectedPhotoIndexesByRow;
+    NSMutableSet *_selectedPhotos;
     BOOL _showImageCount;
+    UIToolbar *_toolbar;
 }
 
-- (struct CGSize { float x1; float x2; })_calculateGridSizeForCount:(NSInteger)arg1;
+@property(retain) MLPhotoAlbum *album;
+@property(readonly) NSSet *selectedPhotos;
+@property(retain) UIToolbar *toolbar;
+@property BOOL canShowCopyCallout;
+@property id delegate;
+@property NSInteger filter;
+@property BOOL multipleSelectionEnabled;
+
+- (void)_albumContentsDidChange:(id)arg1;
+- (NSUInteger)_calculateGridHeightForCount:(NSInteger)arg1;
+- (void)_cameraAlbumDidChange:(id)arg1;
 - (id)_imageCountCell;
 - (struct CGSize { float x1; float x2; })_indexCellSizeForCount:(NSInteger)arg1;
-- (float)_padding:(float*)arg1;
-- (void)_pictureWasTaken:(id)arg1;
+- (void)_scrollToBottom;
 - (void)_setupIndexTable;
-- (void)_updateScrollerIndicatorSubrect;
+- (void)_updateToolbar;
 - (id)album;
-- (void)cameraAlbumDidChange;
+- (BOOL)canShowCopyCallout;
 - (void)clearSelection;
 - (void)dealloc;
+- (id)delegate;
+- (NSInteger)filter;
 - (id)indexTable;
+- (id)indexTableView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)loadCurrentConfiguration:(id)arg1;
-- (NSInteger)numberOfRowsInTable:(id)arg1;
+- (BOOL)multipleSelectionEnabled;
 - (void)reloadIndexTable;
 - (void)scrollRowToVisible:(NSInteger)arg1;
+- (id)selectedPhotos;
 - (void)setAlbum:(id)arg1;
-- (void)setBottomBufferHeight:(float)arg1;
+- (void)setCanShowCopyCallout:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFilter:(NSInteger)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHighlightedCell:(id)arg1;
-- (void)setRequiresPadding:(BOOL)arg1;
-- (void)statusBarHeightDidChange:(id)arg1;
+- (void)setMultipleSelectionEnabled:(BOOL)arg1;
+- (void)setToolbar:(id)arg1;
 - (void)storeCurrentConfiguration:(id)arg1;
-- (id)table:(id)arg1 cellForRow:(NSInteger)arg2 column:(id)arg3 reusing:(id)arg4;
-- (void)tableSelectionDidChange:(id)arg1;
-- (void)thumbnailSelected:(id)arg1;
-- (void)updateButtonBar:(id)arg1 duration:(float)arg2 visible:(BOOL)arg3;
+- (void)tableCell:(id)arg1 requestsDeletionOfPhotoAtIndex:(NSUInteger)arg2;
+- (void)tableCellCopyCalloutWillDisappear:(id)arg1;
+- (void)tableCellSelectionStateDidChange:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (NSInteger)tableView:(id)arg1 numberOfRowsInSection:(NSInteger)arg2;
+- (id)toolbar;
 - (void)viewWillBeDisplayed;
 
 @end

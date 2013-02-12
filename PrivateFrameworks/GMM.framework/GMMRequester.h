@@ -2,62 +2,33 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-@class NSDictionary, NSMutableArray, NSMutableData, NSURLConnection;
+@class GMMRequester, NSArray;
 
-@interface GMMRequester : NSObject {
-    NSURLConnection *_connection;
-    NSMutableData *_data;
-    NSDictionary *_httpHeaders;
-    BOOL _loading;
-    BOOL _needsCancel;
-    NSMutableArray *_requests;
-    struct __CFDictionary { } *_requestsResponses;
-    NSInteger _responseStatusCode;
-    BOOL _responseStatusSet;
-    BOOL _silentLoading;
-    id delegate;
-    BOOL ignoresResponse;
+@interface GMMRequester : PBRequester {
+    BOOL _anonymous;
+    NSArray *_bundleIdentifiers;
+    GMMRequester *_pbRequester;
 }
 
-@property BOOL needsCancel; /* unknown property attribute: V_needsCancel */
-@property BOOL silentLoading; /* unknown property attribute: V_silentLoading */
-@property(getter=isLoading) BOOL loading; /* unknown property attribute: V_loading */
-@property(retain) NSDictionary *httpHeaders; /* unknown property attribute: V_httpHeaders */
-@property BOOL ignoresResponse; /* unknown property attribute: VignoresResponse */
-@property(retain) NSURLConnection *connection; /* unknown property attribute: V_connection */
-@property id delegate; /* unknown property attribute: Vdelegate */
-@property(readonly) NSArray *requests;
+@property(retain) NSArray *bundleIdentifiers; /* unknown property attribute: V_bundleIdentifiers */
+@property(getter=isAnonymous) BOOL anonymous; /* unknown property attribute: V_anonymous */
 
-- (void)_cancelWithErrorCode:(NSInteger)arg1;
-- (void)_cleanup;
-- (void)_failWithError:(id)arg1;
-- (void)_failWithErrorCode:(NSInteger)arg1;
-- (id)_requestHTTPHeaders;
-- (void)addRequest:(id)arg1;
-- (void)cancel;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)connection;
-- (void)connectionDidFinishLoading:(id)arg1;
++ (id)_requestHTTPHeaders;
++ (void)_resetRequestCounts;
++ (void)_setupNetworkConfiguration;
++ (BOOL)allowRequestForType:(NSInteger)arg1;
+
+- (id)bundleIdentifiers;
 - (void)dealloc;
-- (id)delegate;
-- (id)httpHeaders;
-- (BOOL)ignoresResponse;
-- (id)initWithDelegate:(id)arg1;
-- (BOOL)isLoading;
-- (BOOL)needsCancel;
-- (id)requests;
-- (id)responseForRequest:(id)arg1;
-- (void)setConnection:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setHttpHeaders:(id)arg1;
-- (void)setIgnoresResponse:(BOOL)arg1;
+- (id)initWithRequesterDelegate:(id)arg1;
+- (BOOL)isAnonymous;
+- (BOOL)readResponsePreamble:(id)arg1;
+- (id)requestPreamble;
+- (void)setAnonymous:(BOOL)arg1;
+- (void)setBundleIdentifiers:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
-- (void)setNeedsCancel:(BOOL)arg1;
-- (void)setNeedsCancel;
-- (void)setSilentLoading:(BOOL)arg1;
-- (BOOL)silentLoading;
 - (void)start;
+- (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2;
+- (void)writeRequest:(id)arg1 into:(id)arg2;
 
 @end

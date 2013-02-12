@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
+@class GQDTComputedFormatSpec;
+
 @interface GQDTDateCell : GQDTCell {
+    GQDTComputedFormatSpec *mComputedFormat;
     struct __CFDate { } *mDate;
 }
 
 - (struct __CFString { }*)createStringValue;
 - (struct __CFDate { }*)date;
 - (void)dealloc;
-- (NSInteger)readAttributesForDateCell:(struct _xmlTextReader { }*)arg1;
+- (struct __CFString { }*)getDateFormat;
+- (NSInteger)readAttributesForDateCell:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
 
 @end

@@ -28,6 +28,7 @@
 - (NSUInteger)index;
 - (id)initWithCandidate:(id)arg1 andIndex:(NSUInteger)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)mouseUp:(struct __GSEvent { }*)arg1;
+- (void)selected;
 - (void)setAtBottom:(BOOL)arg1;
 - (void)setGap:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1;

@@ -33,6 +33,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didChangeToOrientation:(NSInteger)arg1;
+- (NSInteger)displayableOrientationForOrientation:(NSInteger)arg1;
 - (void)endIgnoringChangeTypes:(NSUInteger)arg1;
 - (BOOL)idleTimerDisabled;
 - (id)init;

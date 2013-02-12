@@ -12,10 +12,13 @@
         unsigned int style : 3; 
         unsigned int size : 2; 
         unsigned int selected : 1; 
+        unsigned int highlighted : 1; 
         unsigned int showDivider : 1; 
         unsigned int hasImage : 1; 
         unsigned int isDisclosure : 1; 
         unsigned int position : 3; 
+        unsigned int autosizeText : 1; 
+    NSInteger _barStyle;
     } _contentOffset;
     UIView *_info;
     } _segmentFlags;
@@ -23,27 +26,49 @@
     float _width;
 }
 
+@property NSInteger controlSize;
+@property(getter=isHighlighted) BOOL highlighted;
+@property(getter=isSelected) BOOL selected;
+
+- (id)_dividerImageForRight:(BOOL)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionInfo;
+- (id)_texturedFillImage;
+- (id)_texturedLeftCapImage;
+- (id)_texturedRightCapImage;
+- (void)_tileImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_updateBackgroundImage;
+- (void)_updateTextColors;
+- (void)_updateTexturedBackgroundImage;
 - (void)animateAdd:(BOOL)arg1;
-- (void)animateRemove;
+- (void)animateRemoveForWidth:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (struct CGSize { float x1; float x2; })contentSize;
+- (NSInteger)controlSize;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)info;
 - (id)infoName;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInfo:(id)arg1 style:(NSInteger)arg2 size:(NSInteger)arg3 tintColor:(id)arg4 position:(NSUInteger)arg5 isDisclosure:(BOOL)arg6;
+- (id)initWithInfo:(id)arg1 style:(NSInteger)arg2 size:(NSInteger)arg3 barStyle:(NSInteger)arg4 tintColor:(id)arg5 position:(NSUInteger)arg6 isDisclosure:(BOOL)arg7 autosizeText:(BOOL)arg8;
 - (void)insertDividerView;
+- (BOOL)isHighlighted;
+- (BOOL)isSelected;
+- (void)setAutosizeText:(BOOL)arg1;
+- (void)setBarStyle:(NSInteger)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setControlSize:(NSInteger)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setInfo:(id)arg1;
 - (void)setPosition:(NSUInteger)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setShowDivider:(BOOL)arg1;
 - (void)setTintColor:(id)arg1;
+- (void)updateDividerViewToMatchSegment:(id)arg1;
 
 @end

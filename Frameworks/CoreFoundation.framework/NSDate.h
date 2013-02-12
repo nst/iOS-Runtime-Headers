@@ -5,9 +5,8 @@
 @interface NSDate : NSObject <NSCopying, NSCoding> {
 }
 
++ (BOOL)acceptsTopLevelLeaves;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)createDateInCommonFormatsWithString:(id)arg1;
-+ (id)createLenientDateInCommonFormatsWithString:(id)arg1;
 + (id)date;
 + (id)dateWithActiveSyncString:(id)arg1;
 + (id)dateWithActiveSyncStringFromYearMonthDay:(id)arg1;
@@ -24,6 +23,11 @@
 + (id)dateWithWordDate:(const struct WrdDateTime { int (**x1)(); NSInteger x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
 + (id)distantFuture;
 + (id)distantPast;
++ (BOOL)frontingBasicTypes;
++ (id)mf_createDateInCommonFormatsWithString:(id)arg1;
++ (id)mf_createLenientDateInCommonFormatsWithString:(id)arg1;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
 + (double)timeIntervalSinceReferenceDate;
 
 - (unsigned long)_cfTypeID;
@@ -63,11 +67,12 @@
 - (BOOL)isNSDate__;
 - (BOOL)isNSDate__;
 - (id)laterDate:(id)arg1;
-- (id)nearestMidnight;
+- (id)nearestMidnightPreferForwardLeap:(BOOL)arg1;
 - (id)replyPrefixForSender:(id)arg1 withSpacer:(BOOL)arg2;
 - (double)timeIntervalSince1970;
 - (double)timeIntervalSinceDate:(id)arg1;
 - (double)timeIntervalSinceNow;
 - (double)timeIntervalSinceReferenceDate;
+- (id)tzDateToDateInGMT:(id)arg1;
 
 @end

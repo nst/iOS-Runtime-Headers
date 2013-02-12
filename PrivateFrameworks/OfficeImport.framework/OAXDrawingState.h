@@ -17,13 +17,13 @@
 - (id)client;
 - (void)dealloc;
 - (id)documentState;
-- (id)drawableForShapeId:(NSInteger)arg1;
+- (id)drawableForShapeId:(NSUInteger)arg1;
 - (id)init;
 - (id)initWithClient:(id)arg1;
 - (id)oavState;
 - (id)packagePart;
 - (void)setDocumentState:(id)arg1;
-- (void)setDrawable:(id)arg1 forShapeId:(NSInteger)arg2;
+- (void)setDrawable:(id)arg1 forShapeId:(NSUInteger)arg2;
 - (void)setOavState:(id)arg1;
 - (void)setPackagePart:(id)arg1;
 - (void)setStyleMatrix:(id)arg1;

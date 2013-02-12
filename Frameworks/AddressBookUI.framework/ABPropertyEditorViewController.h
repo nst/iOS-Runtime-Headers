@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABEditorController, NSArray, UINavigationButton;
+@class <ABPropertyEditorViewControllerDelegate>, ABEditorController, NSArray, UINavigationButton;
 
 @interface ABPropertyEditorViewController : UIViewController {
     void *_addressBook;
-    id _delegate;
+    <ABPropertyEditorViewControllerDelegate> *_delegate;
     ABEditorController *_editorController;
     NSArray *_editorItems;
     id _insertionValue;
@@ -15,25 +15,40 @@
     UINavigationButton *_saveButton;
 }
 
-- (void)_attemptDismissWithSnapbackIdentifier:(id)arg1 afterEditingConfirmed:(BOOL)arg2;
+@property <ABPropertyEditorViewControllerDelegate> *delegate; /* unknown property attribute: V_delegate */
+
+- (BOOL)_allowsAutorotation;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; NSInteger x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; }*)arg1;
+- (BOOL)_isSupportedInterfaceOrientation:(NSInteger)arg1;
+- (id)_navTitleForPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3;
 - (void)cancelButtonClicked:(id)arg1;
 - (id)cardController;
 - (void)dealloc;
+- (id)delegate;
+- (void)didRotateFromInterfaceOrientation:(NSInteger)arg1;
 - (void)editingFieldChanged;
 - (id)editorController;
 - (struct CGSize { float x1; float x2; })fullScreenContentSize;
+- (id)initNameEditorWithPerson:(void*)arg1 addressBook:(void*)arg2;
+- (id)initPropertyEditorWithPerson:(void*)arg1 property:(NSInteger)arg2 identifier:(NSInteger)arg3 addressBook:(void*)arg4;
 - (id)initWithEditorItems:(id)arg1 containNameParts:(BOOL)arg2 isNew:(BOOL)arg3 title:(id)arg4 addressBook:(void*)arg5;
+- (BOOL)labelPickerViewControllerShouldDismissKeyboard:(id)arg1;
 - (void)loadView;
 - (id)peoplePicker;
 - (void)saveButtonClicked:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInsertionValue:(id)arg1;
-- (BOOL)shouldDismissCountryPickerViewController:(id)arg1 afterCountrySelected:(id)arg2;
+- (BOOL)shouldDismissCountryPickerViewController:(id)arg1 afterSelectingCountry:(id)arg2;
+- (BOOL)shouldDismissInstantMessageServicePickerViewController:(id)arg1 afterSelectingService:(id)arg2;
 - (BOOL)shouldDismissLabelPickerViewController:(id)arg1 afterLabelSelected:(id)arg2;
 - (void)showCountryCodeEditorForItem:(id)arg1;
+- (void)showInstantMessageServicePickerWithSelectedService:(id)arg1;
 - (void)showLabelEditorForItem:(id)arg1 additionalLabels:(id)arg2 property:(NSInteger)arg3;
+- (void)tellDelegateEditingWasConfirmed:(BOOL)arg1;
 - (id)value;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(NSInteger)arg1 duration:(double)arg2;
 
 @end

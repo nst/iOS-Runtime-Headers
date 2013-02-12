@@ -2,20 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GMM.framework/GMM
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @class GMMDateTime, GMMDirectionsIconResponse, NSMutableArray, NSString;
 
-@interface GMMDirectionsResponse : GMMResponse <GMMReadWriteStream> {
-     /* Encoded args for previous method: c16@0:4^{InputDataStream=*IIBB}8c12 */
-     /* Encoded args for previous method: c12@0:4^{InputDataStream=*IIBB}8 */
+@interface GMMDirectionsResponse : PBCodable {
     NSMutableArray *_agencys;
     NSMutableArray *_alerts;
+    NSMutableArray *_alternateModes;
     BOOL _hasRecommendedDistanceUnits;
     BOOL _hasRequestedTimeType;
-    BOOL _hasStatus;
     GMMDirectionsIconResponse *_icons;
     NSMutableArray *_modes;
     NSString *_notice;
@@ -28,23 +22,24 @@
     NSMutableArray *_waypointFeedbacks;
 }
 
+@property(retain) NSMutableArray *alternateModes; /* unknown property attribute: V_alternateModes */
 @property(retain) NSMutableArray *alerts; /* unknown property attribute: V_alerts */
 @property(retain) NSMutableArray *optionsUseds; /* unknown property attribute: V_optionsUseds */
-@property BOOL hasRecommendedDistanceUnits; /* unknown property attribute: V_hasRecommendedDistanceUnits */
+@property(readonly) BOOL hasRecommendedDistanceUnits; /* unknown property attribute: V_hasRecommendedDistanceUnits */
 @property NSInteger recommendedDistanceUnits; /* unknown property attribute: V_recommendedDistanceUnits */
 @property(retain) NSMutableArray *agencys; /* unknown property attribute: V_agencys */
 @property(retain) NSString *notice; /* unknown property attribute: V_notice */
 @property(retain) GMMDirectionsIconResponse *icons; /* unknown property attribute: V_icons */
 @property(retain) NSMutableArray *trips; /* unknown property attribute: V_trips */
 @property(retain) NSMutableArray *waypointFeedbacks; /* unknown property attribute: V_waypointFeedbacks */
-@property BOOL hasRequestedTimeType; /* unknown property attribute: V_hasRequestedTimeType */
+@property(readonly) BOOL hasRequestedTimeType; /* unknown property attribute: V_hasRequestedTimeType */
 @property NSInteger requestedTimeType; /* unknown property attribute: V_requestedTimeType */
 @property(retain) GMMDateTime *requestedDateTime; /* unknown property attribute: V_requestedDateTime */
 @property(retain) NSMutableArray *modes; /* unknown property attribute: V_modes */
-@property BOOL hasStatus; /* unknown property attribute: V_hasStatus */
 @property NSInteger status; /* unknown property attribute: V_status */
 @property(readonly) NSInteger agencysCount;
 @property(readonly) NSInteger alertsCount;
+@property(readonly) NSInteger alternateModesCount;
 @property(readonly) BOOL hasIcons;
 @property(readonly) BOOL hasNotice;
 @property(readonly) BOOL hasRequestedDateTime;
@@ -59,6 +54,7 @@
 
 - (void)addAgency:(id)arg1;
 - (void)addAlert:(id)arg1;
+- (void)addAlternateMode:(id)arg1;
 - (void)addMode:(NSInteger)arg1;
 - (void)addOptionsUsed:(id)arg1;
 - (void)addTrip:(id)arg1;
@@ -69,13 +65,16 @@
 - (id)alertAtIndex:(NSUInteger)arg1;
 - (id)alerts;
 - (NSInteger)alertsCount;
+- (id)alternateModeAtIndex:(NSUInteger)arg1;
+- (id)alternateModes;
+- (NSInteger)alternateModesCount;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hasIcons;
 - (BOOL)hasNotice;
 - (BOOL)hasRecommendedDistanceUnits;
 - (BOOL)hasRequestedDateTime;
 - (BOOL)hasRequestedTimeType;
-- (BOOL)hasStatus;
 - (id)icons;
 - (id)init;
 - (NSInteger)mode;
@@ -86,20 +85,18 @@
 - (id)optionsUsedAtIndex:(NSUInteger)arg1;
 - (id)optionsUseds;
 - (NSInteger)optionsUsedsCount;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1 tillEnd:(BOOL)arg2;
-- (BOOL)readFromStream:(struct InputDataStream { char *x1; NSUInteger x2; NSUInteger x3; /* Warning: Unrecognized filer type: 'B' using 'void*' */ void*x4; void*x5; }*)arg1;
+- (BOOL)readFrom:(id)arg1;
 - (NSInteger)recommendedDistanceUnits;
 - (id)requestedDateTime;
 - (NSInteger)requestedTimeType;
-- (void)setAgency:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setAgency:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setAgencys:(id)arg1;
 - (void)setAlert:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setAlerts:(id)arg1;
-- (void)setHasRecommendedDistanceUnits:(BOOL)arg1;
-- (void)setHasRequestedTimeType:(BOOL)arg1;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setAlternateMode:(id)arg1 atIndex:(NSUInteger)arg2;
+- (void)setAlternateModes:(id)arg1;
 - (void)setIcons:(id)arg1;
-- (void)setMode:(NSInteger)arg1 atIndex:(NSInteger)arg2;
+- (void)setMode:(NSInteger)arg1 atIndex:(NSUInteger)arg2;
 - (void)setModes:(id)arg1;
 - (void)setNotice:(id)arg1;
 - (void)setOptionsUsed:(id)arg1 atIndex:(NSUInteger)arg2;
@@ -108,9 +105,9 @@
 - (void)setRequestedDateTime:(id)arg1;
 - (void)setRequestedTimeType:(NSInteger)arg1;
 - (void)setStatus:(NSInteger)arg1;
-- (void)setTrip:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setTrip:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setTrips:(id)arg1;
-- (void)setWaypointFeedback:(id)arg1 atIndex:(NSInteger)arg2;
+- (void)setWaypointFeedback:(id)arg1 atIndex:(NSUInteger)arg2;
 - (void)setWaypointFeedbacks:(id)arg1;
 - (NSInteger)status;
 - (id)tripAtIndex:(NSUInteger)arg1;
@@ -119,6 +116,6 @@
 - (id)waypointFeedbackAtIndex:(NSUInteger)arg1;
 - (id)waypointFeedbacks;
 - (NSInteger)waypointFeedbacksCount;
-- (void)writeToStream:(struct OutputDataStream { char *x1; NSUInteger x2; NSUInteger x3; }*)arg1;
+- (void)writeTo:(id)arg1;
 
 @end

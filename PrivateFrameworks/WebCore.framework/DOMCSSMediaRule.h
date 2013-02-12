@@ -8,9 +8,6 @@
 @property(retain,readonly) DOMCSSRuleList *cssRules;
 @property(retain,readonly) DOMMediaList *media;
 
-+ (id)_wrapCSSMediaRule:(struct CSSMediaRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::MediaList> { struct MediaList {} *x_4_1_1; } x4; struct RefPtr<WebCore::CSSRuleList> { struct CSSRuleList {} *x_5_1_1; } x5; }*)arg1;
-
-- (struct CSSMediaRule { int (**x1)(); NSInteger x2; struct StyleBase {} *x3; struct RefPtr<WebCore::MediaList> { struct MediaList {} *x_4_1_1; } x4; struct RefPtr<WebCore::CSSRuleList> { struct CSSRuleList {} *x_5_1_1; } x5; }*)_CSSMediaRule;
 - (id)cssRules;
 - (void)deleteRule:(NSUInteger)arg1;
 - (NSUInteger)insertRule:(id)arg1 :(NSUInteger)arg2;

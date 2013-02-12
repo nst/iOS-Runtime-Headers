@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableDictionary;
-
-@interface Account : NSObject {
+@interface Account : BasicAccount <WeaklyReferencedObject> {
     unsigned int _isOffline : 1;
     unsigned int _autosynchronizingEnabled : 1;
     unsigned int _isActive : 2;
-    NSMutableDictionary *_info;
 }
 
-+ (BOOL)_shouldUseKeychain;
-+ (id)accountInfoValueForKey:(id)arg1 value:(id)arg2;
++ (id)accountPropertiesValueForKey:(id)arg1 value:(id)arg2;
 + (id)accountTypeString;
 + (BOOL)allObjectsInArrayAreOffline:(id)arg1;
++ (id)basicAccountProperties;
 + (id)createAccountWithDictionary:(id)arg1;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
@@ -29,14 +26,16 @@
 + (id)saslProfileName;
 + (void)saveAccountInfoToDefaults;
 + (void)saveAccounts:(id)arg1 usingKey:(id)arg2;
++ (id)supportedDataclasses;
 
 - (BOOL)_connectAndAuthenticate:(id)arg1;
 - (id)_createConnection;
+- (id)_initWithProperties:(id)arg1;
+- (void)_initializeState;
 - (void)_queueAccountInfoDidChange;
 - (void)_removePasswordInKeychain;
-- (void)_setAccountInfo:(id)arg1;
+- (void)_setAccountProperties:(id)arg1;
 - (BOOL)_shouldTryDirectSSLConnectionOnPort:(NSUInteger)arg1;
-- (id)accountInfo;
 - (void)accountInfoDidChange;
 - (BOOL)acquireCredentialsWithPassword:(id)arg1;
 - (id)alternateConnectionSettings;
@@ -44,6 +43,7 @@
 - (id)authenticatedConnection;
 - (BOOL)canGoOffline;
 - (Class)connectionClass;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customDescriptionForError:(id)arg1 authScheme:(id)arg2 defaultDescription:(id)arg3;
 - (id)customTitleForAuthenticationError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
 - (id)customTitleForError:(id)arg1 authScheme:(id)arg2 defaultTitle:(id)arg3;
@@ -52,12 +52,12 @@
 - (id)defaultConnectionSettings;
 - (NSUInteger)defaultPortNumber;
 - (NSUInteger)defaultSecurePortNumber;
-- (id)defaultsDictionary;
 - (id)displayName;
 - (id)domain;
 - (BOOL)enableAccount;
 - (id)hostname;
 - (id)init;
+- (id)initWithBasicAccount:(id)arg1;
 - (id)insecureConnectionSettings;
 - (BOOL)isActive;
 - (BOOL)isCommonPortNumber:(NSUInteger)arg1;
@@ -75,15 +75,18 @@
 - (id)preferredAuthScheme;
 - (id)promptUserForPasswordWithMessage:(id)arg1;
 - (id)promptUserIfNeededForPasswordWithMessage:(id)arg1;
+- (id)propertiesToSave;
+- (void)release;
 - (void)releaseAllConnections;
 - (void)releaseAllForcedConnections;
-- (void)removeValueInAccountInfoForKey:(id)arg1;
+- (void)removeValueInAccountPropertiesForKey:(id)arg1;
 - (void)reportAuthenticationError:(id)arg1 authScheme:(id)arg2;
 - (BOOL)requiresAuthentication;
+- (id)retain;
+- (NSUInteger)retainCount;
 - (id)secureConnectionSettings;
 - (id)secureServiceName;
 - (id)serviceName;
-- (void)setAccountInfo:(id)arg1;
 - (void)setAutosynchronizingEnabled:(BOOL)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDomain:(id)arg1;
@@ -99,15 +102,16 @@
 - (void)setUserApprovedCertificateDigest:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (void)setUsesSSL:(BOOL)arg1;
-- (void)setValueInAccountInfo:(id)arg1 forKey:(id)arg2;
+- (void)setValueInAccountProperties:(id)arg1 forKey:(id)arg2;
 - (BOOL)shouldDisplayHostnameInErrorMessages;
 - (BOOL)shouldEnableAfterError:(id)arg1;
 - (BOOL)storesPassword;
+- (id)syncStoreIdentifier;
 - (id)uniqueId;
 - (id)userApprovedCertificateDigest;
 - (id)username;
 - (BOOL)usesSSL;
 - (void)validateConnections;
-- (id)valueInAccountInfoForKey:(id)arg1;
+- (id)valueInAccountPropertiesForKey:(id)arg1;
 
 @end

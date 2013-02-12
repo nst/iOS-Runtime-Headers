@@ -9,32 +9,64 @@
     NSString *_body;
     NSInteger _bodySize;
     BOOL _bodyTruncated;
+    NSInteger _bodyType;
     NSString *_cc;
     NSDate *_date;
     NSString *_displayTo;
     NSString *_folderId;
     NSString *_from;
     NSInteger _importance;
+    NSString *_longID;
     ASMeetingRequest *_meetingRequest;
     NSString *_messageClass;
     NSString *_mimeData;
     BOOL _read;
+    BOOL _readIsSet;
     NSString *_replyTo;
     NSString *_subject;
     NSString *_threadTopic;
     NSString *_to;
 }
 
-- (BOOL)_isSyncingCalendars;
+@property NSInteger bodyType; /* unknown property attribute: V_bodyType */
+@property(retain) NSString *longID; /* unknown property attribute: V_longID */
+@property(retain) NSString *folderId; /* unknown property attribute: V_folderId */
+@property(retain) NSString *mimeData; /* unknown property attribute: V_mimeData */
+@property(retain) NSString *threadTopic; /* unknown property attribute: V_threadTopic */
+@property(retain) NSArray *attachments; /* unknown property attribute: V_attachments */
+@property(retain) NSString *messageClass; /* unknown property attribute: V_messageClass */
+@property BOOL bodyTruncated; /* unknown property attribute: V_bodyTruncated */
+@property NSInteger bodySize; /* unknown property attribute: V_bodySize */
+@property(retain) NSString *body; /* unknown property attribute: V_body */
+@property BOOL read; /* unknown property attribute: V_read */
+@property NSInteger importance; /* unknown property attribute: V_importance */
+@property(retain) NSString *displayTo; /* unknown property attribute: V_displayTo */
+@property(retain) NSString *subject; /* unknown property attribute: V_subject */
+@property(retain) NSDate *date; /* unknown property attribute: V_date */
+@property(retain) NSString *replyTo; /* unknown property attribute: V_replyTo */
+@property(retain) NSString *from; /* unknown property attribute: V_from */
+@property(retain) NSString *cc; /* unknown property attribute: V_cc */
+@property(retain) NSString *to; /* unknown property attribute: V_to */
+@property(retain,readonly) NSData *meetingRequestMetaData;
+@property(retain,readonly) NSString *meetingRequestUUID;
+
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)frontingBasicTypes;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (BOOL)_isSearchResult;
 - (void)_processApplicationData:(BOOL)arg1;
 - (void)_setMeetingRequest:(id)arg1;
 - (id)asParseRules;
 - (id)attachments;
 - (id)body;
 - (NSInteger)bodySize;
-- (NSInteger)bodyTruncated;
+- (BOOL)bodyTruncated;
+- (NSInteger)bodyType;
 - (id)cc;
 - (NSInteger)compare:(id)arg1;
+- (BOOL)containsOnlyFlagAttributes;
 - (id)date;
 - (void)dealloc;
 - (id)description;
@@ -43,11 +75,12 @@
 - (id)from;
 - (NSInteger)importance;
 - (id)initWithServerID:(id)arg1 from:(id)arg2 to:(id)arg3 body:(id)arg4 subject:(id)arg5 date:(id)arg6 isRead:(BOOL)arg7;
+- (id)longID;
 - (id)meetingRequestMetaData;
 - (id)meetingRequestUUID;
 - (id)messageClass;
 - (id)mimeData;
-- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5;
+- (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (void)postProcessApplicationData;
 - (void)processAppDataForStream;
 - (BOOL)read;
@@ -55,13 +88,15 @@
 - (void)setAttachments:(id)arg1;
 - (void)setBody:(id)arg1;
 - (void)setBodySize:(NSInteger)arg1;
-- (void)setBodyTruncated:(NSInteger)arg1;
+- (void)setBodyTruncated:(BOOL)arg1;
+- (void)setBodyType:(NSInteger)arg1;
 - (void)setCc:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDisplayTo:(id)arg1;
 - (void)setFolderId:(id)arg1;
 - (void)setFrom:(id)arg1;
 - (void)setImportance:(NSInteger)arg1;
+- (void)setLongID:(id)arg1;
 - (void)setMessageClass:(id)arg1;
 - (void)setMimeData:(id)arg1;
 - (void)setRead:(BOOL)arg1;

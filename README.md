@@ -39,6 +39,9 @@ Note that many other unique identifiers can be retrieved:
     id deviceInfo = [[[AADeviceInfo alloc] init] autorelease];
     NSLog(@"-- wifiMacAddress: %@", [deviceInfo wifiMacAddress]);
 
+    Class OSDBattery = NSClassFromString(@"OSDBattery");
+    NSLog(@"-- battery serial number: %@", [OSDBattery _getBatterySerialNumber]);
+
 #### Timeline
 
 - Green == public

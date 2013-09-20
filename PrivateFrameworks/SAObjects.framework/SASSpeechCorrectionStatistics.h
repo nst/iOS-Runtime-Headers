@@ -10,6 +10,8 @@
 @property(copy) NSString * aceId;
 @property int alternativeSelectCount;
 @property int characterChangeCount;
+@property(copy) NSString * correctionSource;
+@property(copy) NSString * correctionText;
 @property(copy) NSString * interactionId;
 @property(copy) NSString * refId;
 @property(copy) NSString * sessionId;
@@ -19,12 +21,16 @@
 
 - (int)alternativeSelectCount;
 - (int)characterChangeCount;
+- (id)correctionSource;
+- (id)correctionText;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)interactionId;
 - (id)sessionId;
 - (void)setAlternativeSelectCount:(int)arg1;
 - (void)setCharacterChangeCount:(int)arg1;
+- (void)setCorrectionSource:(id)arg1;
+- (void)setCorrectionText:(id)arg1;
 - (void)setInteractionId:(id)arg1;
 - (void)setSessionId:(id)arg1;
 

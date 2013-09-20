@@ -27,6 +27,7 @@
 - (float)getPreviewWidth;
 - (id)initWithClient:(const void*)arg1 andCallbacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (BOOL)previewHasStreamedMainHTML;
+- (BOOL)progressiveStreamStarted;
 - (void)setNumbersSheetUri:(struct __CFString { }*)arg1;
 - (void)setPreviewHeight:(float)arg1 andWidth:(float)arg2;
 - (void)startDataWithOptions:(struct __CFDictionary { }*)arg1;

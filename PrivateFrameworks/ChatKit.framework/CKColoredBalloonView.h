@@ -2,19 +2,45 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
+@class CKGradientView, UIImageView, UIView<CKGradientReferenceView>;
+
 @interface CKColoredBalloonView : CKBalloonView {
-    int _outgoingColor;
+    BOOL _color;
+    CKGradientView *_gradientView;
+    UIImageView *_mask;
+    BOOL _wantsGradient;
 }
 
-@property int outgoingColor;
+@property BOOL color;
+@property(retain) UIView<CKGradientReferenceView> * gradientReferenceView;
+@property(retain) CKGradientView * gradientView;
+@property(retain) UIImageView * mask;
+@property BOOL wantsGradient;
 
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (id)balloonImage;
+- (BOOL)color;
+- (void)configureForMessagePart:(id)arg1;
+- (void)dealloc;
 - (id)description;
+- (id)gradientReferenceView;
+- (id)gradientView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)outgoingColor;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setOutgoingColor:(int)arg1;
-- (void)updateHighlightedImage;
-- (void)updateImage;
+- (id)mask;
+- (id)overlayColor;
+- (void)prepareForDisplay;
+- (void)prepareForReuse;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCanUseOpaqueMask:(BOOL)arg1;
+- (void)setColor:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGradientReferenceView:(id)arg1;
+- (void)setGradientView:(id)arg1;
+- (void)setHasTail:(BOOL)arg1;
+- (void)setMask:(id)arg1;
+- (void)setWantsGradient:(BOOL)arg1;
+- (void)updateWantsGradient;
+- (BOOL)wantsGradient;
 
 @end

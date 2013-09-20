@@ -12,9 +12,9 @@
 @property(readonly) UILabel * textLabel2;
 @property(readonly) TwoPartTextLabel * twoPartTextLabel2;
 
+- (void).cxx_destruct;
 - (void)_layoutSubviewsCore;
 - (void)checkValueWidths;
-- (void)dealloc;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
 - (id)textLabel2;
 - (id)twoPartTextLabel2;

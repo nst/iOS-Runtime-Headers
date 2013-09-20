@@ -5,14 +5,16 @@
 @class NSMutableDictionary;
 
 @interface ADDefaults : NSObject {
-    struct __CFString { } *_defaultsBundleId;
+    struct __CFString { } *_defaultsBundleID;
     NSMutableDictionary *_factoryDefaults;
 }
+
+@property struct __CFString { }* defaultsBundleID;
+@property(retain) NSMutableDictionary * factoryDefaults;
 
 + (id)_defaultValueForKey:(id)arg1 valueClass:(Class)arg2;
 + (void)_setDefaultValue:(id)arg1 forKey:(id)arg2;
 + (void)addFactoryDefaults:(id)arg1;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)boolForKey:(id)arg1;
 + (double)doubleForKey:(id)arg1;
 + (int)integerForKey:(id)arg1;
@@ -23,11 +25,10 @@
 + (id)sharedInstance;
 + (id)stringForKey:(id)arg1;
 
-- (id)autorelease;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (struct __CFString { }*)defaultsBundleID;
+- (id)factoryDefaults;
 - (id)init;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
+- (void)setDefaultsBundleID:(struct __CFString { }*)arg1;
+- (void)setFactoryDefaults:(id)arg1;
 
 @end

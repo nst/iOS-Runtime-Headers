@@ -23,9 +23,11 @@
     NSDate *_tomorrow;
 }
 
++ (double)defaultRadius;
 + (id)sharedInstance;
 
 - (void)_adjustFences:(id)arg1;
+- (void)_calendarNotificationSettingChanged;
 - (void)_databaseChanged;
 - (id)_dateFormatter;
 - (BOOL)_haveAlarmsChanged:(id)arg1;

@@ -5,6 +5,6 @@
 @interface PSSplitViewController : UISplitViewController {
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

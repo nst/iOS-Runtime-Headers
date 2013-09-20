@@ -18,13 +18,14 @@
 - (id)activationContext;
 - (BOOL)allowStackingOfAlert:(id)arg1;
 - (BOOL)allowSuspension;
+- (void)animateViewIn;
 - (void)animateViewOut;
 - (id)animationStartTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (BOOL)definesPresentationContext;
 - (void)didFinishLaunchingFrontmost;
 - (void)didReceiveMemoryWarning;
-- (BOOL)displaysAboveStatusBar;
 - (void)finishedAnimatingIn;
 - (void)finishedAnimatingOut;
 - (void)handleAutoLock;
@@ -37,16 +38,21 @@
 - (id)init;
 - (BOOL)isSlidingViewController;
 - (id)pendingDeactivationInvocation;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)removeBackgroundStyleWithDuration:(double)arg1;
 - (void)requestActivationAnimated:(BOOL)arg1 animateCurrentDisplayOut:(BOOL)arg2 withDelay:(BOOL)arg3;
 - (void)requestDeactivationAnimated:(BOOL)arg1 animateOldDisplayInWithStyle:(int)arg2;
 - (void)setActivationContext:(id)arg1;
 - (void)setAnimationStartTime:(id)arg1;
+- (void)setBackgroundStyle:(int)arg1 withDuration:(double)arg2;
 - (void)setPendingDeactivationInvocation:(id)arg1;
 - (void)setShouldAnimateIn:(BOOL)arg1;
+- (void)setWallpaperTunnelActive:(BOOL)arg1;
 - (BOOL)shouldAnimateIn;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (BOOL)viewIsReadyToBeRemoved;
+- (void)viewWillAnimateIn;
 - (void)viewWillAnimateOut;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

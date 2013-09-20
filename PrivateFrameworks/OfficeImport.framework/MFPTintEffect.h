@@ -3,12 +3,12 @@
  */
 
 @interface MFPTintEffect : MFPEffect {
-    long mAmount;
-    long mHue;
+    int mAmount;
+    int mHue;
 }
 
 + (id)GUID;
 
-- (id)initWithHue:(long)arg1 amount:(long)arg2;
+- (id)initWithHue:(int)arg1 amount:(int)arg2;
 
 @end

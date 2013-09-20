@@ -2,24 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDictionary, NSString;
-
 @interface CKAudioMediaObject : CKAVMediaObject {
-    NSDictionary *_transcodeOptions;
-    NSString *_transcodePath;
 }
 
-+ (id)mimeTypesToFileExtensions;
++ (id)UTITypes;
++ (id)fallbackFilenamePrefix;
 
-- (id)_transcodeOptions;
-- (void)dealloc;
-- (id)effectiveExportedFilename;
 - (int)mediaType;
-- (void)prepareForTranscode;
-- (double)transcodeDuration;
-- (double)transcodeEndTime;
-- (id)transcodeMimeType;
-- (double)transcodeStartTime;
-- (id)transcodedFilename;
 
 @end

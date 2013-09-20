@@ -56,10 +56,10 @@
 - (void)dealloc;
 - (id)displayHighlightedTextColor;
 - (id)displayTextColor;
+- (void)entryField:(id)arg1 didEndEditingForKey:(id)arg2;
 - (void)entryField:(id)arg1 valueDidChange:(id)arg2 forKey:(id)arg3;
 - (void)entryFieldBeginAttemptBecomeFirstResponder:(id)arg1;
 - (void)entryFieldDidBeginEditing:(id)arg1;
-- (void)entryFieldDidEndEditing:(id)arg1;
 - (void)entryFieldEndAttemptBecomeFirstResponder:(id)arg1;
 - (BOOL)entryFieldShouldBeginEditing:(id)arg1;
 - (BOOL)entryFieldShouldEndEditing:(id)arg1;

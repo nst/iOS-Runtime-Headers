@@ -2,24 +2,25 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class UIColor, VGLMesh, VKAnimation;
+@class VGLMesh, VGLRenderState, VKAnimation;
 
 @interface VKCircleAnnotationMarkerLayer : VKAnnotationMarkerLayer {
     struct { 
         double v[4][4]; 
     struct { 
         double v[4][4]; 
-    struct { 
+    struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    struct { 
+    struct Vec3Imp<double> { 
         double x; 
         double y; 
         double z; 
+    VGLRenderState *_circleRenderState;
     double _distanceRadius;
     float _distanceRadiusToScreenRadiusMultiplier;
-    UIColor *_fillColor;
+    struct CGColor { } *_fillColor;
     float _fillColorComponents[4];
     BOOL _hasDistanceRadiusToScreenRadiusMultiplier;
     } _inverseMatrix;
@@ -31,7 +32,7 @@
     float _presentationRadius;
     float _radius;
     VKAnimation *_radiusAnimation;
-    UIColor *_strokeColor;
+    struct CGColor { } *_strokeColor;
     float _strokeColorComponents[4];
     VGLMesh *_strokeMesh;
     int _strokeTriangleCount;
@@ -40,27 +41,31 @@
 }
 
 @property double distanceRadius;
-@property(retain) UIColor * fillColor;
+@property struct CGColor { }* fillColor;
 @property float minRadius;
 @property float radius;
-@property(retain) UIColor * strokeColor;
+@property struct CGColor { }* strokeColor;
 @property float strokeWidth;
 
+- (id).cxx_construct;
 - (void)_createStrokeMeshWithTriangleCount:(int)arg1 context:(id)arg2;
 - (void)dealloc;
 - (double)distanceRadius;
 - (void)drawWithContext:(id)arg1;
-- (id)fillColor;
+- (struct CGColor { }*)fillColor;
+- (id)init;
 - (void)layoutWithContext:(id)arg1;
 - (float)minRadius;
 - (float)radius;
+- (void)setDistanceRadius:(double)arg1 duration:(double)arg2;
 - (void)setDistanceRadius:(double)arg1;
-- (void)setFillColor:(id)arg1;
+- (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)setMinRadius:(float)arg1;
+- (void)setRadius:(float)arg1 duration:(double)arg2;
 - (void)setRadius:(float)arg1;
-- (void)setStrokeColor:(id)arg1;
+- (void)setStrokeColor:(struct CGColor { }*)arg1;
 - (void)setStrokeWidth:(float)arg1;
-- (id)strokeColor;
+- (struct CGColor { }*)strokeColor;
 - (float)strokeWidth;
 
 @end

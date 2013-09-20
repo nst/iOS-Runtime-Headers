@@ -11,6 +11,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 withResponseHandler:(id)arg2;
+- (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 isConcurrent:(BOOL)arg2 timeoutInterval:(double)arg3 withResponseHandler:(id)arg4;
 
 @end

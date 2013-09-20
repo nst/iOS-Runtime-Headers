@@ -16,12 +16,15 @@
     BKSSignal *_invalidationSignal;
     NSObject<OS_dispatch_queue> *_messageHandlingQueue;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_xpc_object> *_serverEndpoint;
 }
 
 @property(copy) id handler;
 @property(copy) NSArray * interestedBundleIDs;
 @property unsigned int interestedStates;
 
+- (id)_connection;
+- (void)_setEndpoint:(id)arg1;
 - (void)applicationInfoForApplication:(id)arg1 completion:(id)arg2;
 - (void)applicationInfoForPID:(int)arg1 completion:(id)arg2;
 - (unsigned int)applicationStateForApplication:(id)arg1;
@@ -30,10 +33,11 @@
 - (id)handler;
 - (id)init;
 - (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2;
+- (id)initWithEndpoint:(id)arg1 bundleIDs:(id)arg2 states:(unsigned int)arg3;
 - (id)interestedBundleIDs;
 - (unsigned int)interestedStates;
 - (void)invalidate;
-- (BOOL)isNewsstandAppWakeQuotaReached:(id)arg1;
+- (BOOL)isApplicationBeingDebugged:(id)arg1;
 - (unsigned int)mostElevatedApplicationStateForPID:(int)arg1;
 - (void)queue_connectionWasInvalidated;
 - (void)queue_handleMessage:(id)arg1;

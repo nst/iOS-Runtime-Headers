@@ -9,6 +9,7 @@
 
 @property(readonly) NSString * UUID;
 @property(copy) NSURL * address;
+@property(copy) NSString * comment;
 @property(copy) NSString * displayName;
 @property(copy) NSString * emailAddress;
 @property(copy) NSString * firstName;
@@ -18,6 +19,7 @@
 
 - (id)UUID;
 - (id)address;
+- (id)comment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)displayName;
 - (id)emailAddress;
@@ -27,6 +29,7 @@
 - (id)lastName;
 - (id)owner;
 - (void)setAddress:(id)arg1;
+- (void)setComment:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFirstName:(id)arg1;

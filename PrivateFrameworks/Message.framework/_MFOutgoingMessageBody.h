@@ -4,7 +4,7 @@
 
 @class MFBufferedDataConsumer, NSData;
 
-@interface _MFOutgoingMessageBody : MessageBody <MFCollectingDataConsumer> {
+@interface _MFOutgoingMessageBody : MFMessageBody <MFCollectingDataConsumer> {
     MFBufferedDataConsumer *_consumer;
     unsigned long _count;
     BOOL _lastNewLine;

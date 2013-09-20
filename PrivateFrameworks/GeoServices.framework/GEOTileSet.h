@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOTileSet : PBCodable {
+@interface GEOTileSet : PBCodable <NSCopying> {
     struct { 
         unsigned int multiTileURLUsesStatusCodes : 1; 
     NSString *_baseURL;
@@ -39,6 +39,7 @@
 - (void)clearSupportedLanguages;
 - (void)clearValidVersions;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -9,18 +9,26 @@
         float x; 
         float y; 
     double _angle;
+    BOOL _canBeginDrag;
+    SEL _checkCanBeginDrag;
     double _maximumDeviation;
     double _minimumDistance;
+    double _quietPeriod;
     BOOL _restrictsToAngle;
     double _startAngle;
     } _startPosition;
     UIDelayedAction *_tooSlow;
     UITouch *_touch;
+    UIDelayedAction *ignoreTouch;
 }
 
 @property double angle;
+@property BOOL canBeginDrag;
+@property SEL checkCanBeginDrag;
+@property(retain) UIDelayedAction * ignoreTouch;
 @property double maximumDeviation;
 @property double minimumDistance;
+@property double quietPeriod;
 @property BOOL restrictsToAngle;
 @property double startAngle;
 @property struct CGPoint { float x1; float x2; } startPosition;
@@ -28,15 +36,24 @@
 
 - (void)_resetGestureRecognizer;
 - (double)angle;
+- (BOOL)canBeginDrag;
+- (SEL)checkCanBeginDrag;
+- (void)clearIgnoreTouch;
 - (void)clearTimer;
 - (void)dealloc;
+- (id)ignoreTouch;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (double)maximumDeviation;
 - (double)minimumDistance;
+- (double)quietPeriod;
 - (BOOL)restrictsToAngle;
 - (void)setAngle:(double)arg1;
+- (void)setCanBeginDrag:(BOOL)arg1;
+- (void)setCheckCanBeginDrag:(SEL)arg1;
+- (void)setIgnoreTouch:(id)arg1;
 - (void)setMaximumDeviation:(double)arg1;
 - (void)setMinimumDistance:(double)arg1;
+- (void)setQuietPeriod:(double)arg1;
 - (void)setRestrictsToAngle:(BOOL)arg1;
 - (void)setStartAngle:(double)arg1;
 - (void)setStartPosition:(struct CGPoint { float x1; float x2; })arg1;

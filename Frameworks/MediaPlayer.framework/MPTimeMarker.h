@@ -25,8 +25,8 @@
 @property(retain) NSString * title;
 @property(retain) NSURL * url;
 
+- (void).cxx_destruct;
 - (double)comparableTime;
-- (void)dealloc;
 - (id)description;
 - (double)duration;
 - (BOOL)hasArtworkAtPlaybackTime;

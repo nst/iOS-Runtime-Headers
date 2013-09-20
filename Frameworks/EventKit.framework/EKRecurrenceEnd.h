@@ -11,6 +11,7 @@
 
 @property(readonly) NSDate * endDate;
 @property(readonly) unsigned int occurrenceCount;
+@property(readonly) BOOL usesEndDate;
 
 + (id)recurrenceEndWithEndDate:(id)arg1;
 + (id)recurrenceEndWithOccurrenceCount:(unsigned int)arg1;

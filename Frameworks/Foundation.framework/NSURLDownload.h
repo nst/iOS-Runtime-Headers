@@ -25,6 +25,7 @@
 - (id)_originatingURL;
 - (id)_resumeInformation;
 - (void)_setDelegate:(id)arg1;
+- (void)_setDelegateQueue:(id)arg1;
 - (void)_setDeletesFileAfterFailure:(BOOL)arg1;
 - (void)_setDirectoryPath:(id)arg1;
 - (void)_setOriginatingURL:(id)arg1;
@@ -34,6 +35,7 @@
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)dealloc;
 - (BOOL)deletesFileUponFailure;
+- (id)description;
 - (id)init;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;
 - (id)initWithResumeData:(id)arg1 delegate:(id)arg2 path:(id)arg3;
@@ -57,5 +59,6 @@
 - (void)setDestination:(id)arg1 allowOverwrite:(BOOL)arg2;
 - (id)url;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
+- (void)withDelegate:(id)arg1;
 
 @end

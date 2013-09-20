@@ -28,7 +28,6 @@
 - (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 - (void)setRootController:(id)arg1;
 - (void)setSpecifier:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)specifier;
 - (void)statusBarWillAnimateByHeight:(float)arg1;
 - (void)suspend;

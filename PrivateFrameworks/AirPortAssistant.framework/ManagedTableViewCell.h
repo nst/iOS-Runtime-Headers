@@ -5,11 +5,21 @@
 @class NSIndexPath, NSMutableDictionary, TableViewManager;
 
 @interface ManagedTableViewCell : UITableViewCell {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     NSMutableDictionary *_cellDict;
     float _cellXEdgeInset;
     float _computedRightmostEditTextInset;
     NSIndexPath *_currentIndexPath;
     float _forcedRightmostEditTextInset;
+    } _modifiedContentViewFrame;
     float _neededContentHeight;
     TableViewManager *_parentTableManager;
 }
@@ -28,16 +38,24 @@
 - (float)computedRightmostEditTextInset;
 - (id)currentIndexPath;
 - (void)dealloc;
+- (float)edgeInsetValue:(id)arg1;
 - (float)forcedRightmostEditTextInset;
 - (float)horizontalSpacingForView:(id)arg1 withItem:(id)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
+- (float)leftInsetForView:(id)arg1 withItem:(id)arg2;
 - (float)neededContentHeight;
 - (id)parentTableManager;
 - (void)prepareForReuse;
+- (void)repositionView:(id)arg1 ifOverlapsPreviousView:(id)arg2;
+- (float)rightInsetForView:(id)arg1 withItem:(id)arg2;
 - (void)setCellDict:(id)arg1;
 - (void)setCurrentIndexPath:(id)arg1;
 - (void)setForcedRightmostEditTextInset:(float)arg1;
 - (void)setParentTableManager:(id)arg1;
+- (float)usableContentWidth;
+- (float)usableContentWidthForItem:(id)arg1 withVerticalNeighborView:(id)arg2;
+- (float)verticalInset;
+- (float)verticalSpacingForView:(id)arg1 withItem:(id)arg2;
 
 @end

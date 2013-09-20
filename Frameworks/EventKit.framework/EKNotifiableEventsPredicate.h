@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKNotifiableEventsPredicate : NSPredicate {
+@interface EKNotifiableEventsPredicate : NSPredicate <EKDefaultPropertiesLoading> {
 }
 
 + (id)predicate;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)defaultPropertiesToLoad;
 - (BOOL)evaluateWithObject:(id)arg1;
+- (BOOL)shouldLoadDefaultProperties;
 
 @end

@@ -9,6 +9,7 @@
     UITextView *_URLView;
 }
 
+- (void).cxx_destruct;
 - (id)_URLTitleView;
 - (id)_URLView;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;

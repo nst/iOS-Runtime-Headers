@@ -39,7 +39,6 @@
 - (id)URL;
 - (id)URLWithAttributeString:(id)arg1;
 - (id)_documentRange;
-- (id)_focusableNodes;
 - (id)adoptNode:(id)arg1;
 - (id)anchors;
 - (id)applets;
@@ -102,6 +101,7 @@
 - (id)getOverrideStyle:(id)arg1 :(id)arg2;
 - (id)getOverrideStyle:(id)arg1 pseudoElement:(id)arg2;
 - (id)head;
+- (BOOL)hidden;
 - (id)images;
 - (id)implementation;
 - (id)importNode:(id)arg1 :(BOOL)arg2;
@@ -130,7 +130,9 @@
 - (void)setXmlVersion:(id)arg1;
 - (id)styleSheets;
 - (id)title;
+- (id)visibilityState;
 - (id)webFrame;
+- (id)webkitGetNamedFlows;
 - (id)xmlEncoding;
 - (BOOL)xmlStandalone;
 - (id)xmlVersion;

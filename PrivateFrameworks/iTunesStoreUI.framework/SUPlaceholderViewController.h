@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUGradient, SULoadingView;
+@class SUGradient, SUGradientView, SULoadingView;
 
 @interface SUPlaceholderViewController : SUViewController {
     SUGradient *_backgroundGradient;
     SUGradient *_defaultBackgroundGradient;
+    SUGradientView *_gradientView;
     BOOL _hideLoadingView;
     SULoadingView *_loadingView;
     BOOL _shouldShowLoadingView;
@@ -18,11 +19,13 @@
 @property BOOL shouldShowLoadingView;
 
 - (void)_bagDidLoadNotification:(id)arg1;
+- (id)_copyActiveGradient;
 - (id)_newURLBagBackgroundGradient;
 - (void)_reloadBackgroundGradient;
 - (void)_reloadLoadingView;
 - (id)backgroundGradient;
 - (id)copyArchivableContext;
+- (id)copyDefaultScriptProperties;
 - (void)dealloc;
 - (id)defaultBackgroundGradient;
 - (id)init;
@@ -32,6 +35,7 @@
 - (void)setBackgroundGradient:(id)arg1;
 - (void)setDefaultBackgroundGradient:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
+- (void)setScriptProperties:(id)arg1;
 - (void)setShouldShowLoadingView:(BOOL)arg1;
 - (BOOL)shouldShowLoadingView;
 

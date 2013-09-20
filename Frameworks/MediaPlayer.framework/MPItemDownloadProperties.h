@@ -24,6 +24,7 @@
 @property unsigned long long downloadToken;
 @property(readonly) NSURL * sourceURL;
 
+- (void).cxx_destruct;
 - (void)_reloadNetworkConstraints;
 - (void)acquireDownloadTokenWithCompletionHandler:(id)arg1;
 - (long long)assetFileSize;
@@ -38,7 +39,7 @@
 - (unsigned long long)downloadToken;
 - (unsigned int)hash;
 - (id)initWithDownload:(id)arg1;
-- (id)initWithDownloadIdentifier:(id)arg1;
+- (id)initWithDownloadIdentifier:(long long)arg1;
 - (id)initWithMediaItem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)newAVAssetOptionsWithDownloadStyle:(int)arg1;

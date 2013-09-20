@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSNumber, NSString, NSURL;
+@class NSDate, NSNumber, NSString;
 
-@interface SAReminderSearch : SABaseClientBoundCommand {
+@interface SAReminderSearch : SADomainCommand {
 }
 
 @property(copy) NSNumber * completionStatus;
@@ -12,7 +12,6 @@
 @property(copy) NSDate * dueBefore;
 @property(copy) NSString * listName;
 @property(copy) NSString * subject;
-@property(copy) NSURL * targetAppId;
 @property(copy) NSString * timeZoneId;
 
 + (id)search;
@@ -30,10 +29,8 @@
 - (void)setDueBefore:(id)arg1;
 - (void)setListName:(id)arg1;
 - (void)setSubject:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (void)setTimeZoneId:(id)arg1;
 - (id)subject;
-- (id)targetAppId;
 - (id)timeZoneId;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOSimpleTileRequester, NSMutableData, NSString, NSURL, NSURLConnection, _GEOTileDownloadOp;
+@class GEOSimpleTileRequester, NSData, NSMutableData, NSString, NSURL, NSURLConnection, _GEOTileDownloadOp;
 
 @interface _GEOTileDownloadOp : NSObject <NSURLConnectionDelegate> {
     struct _GEOTileKey { 
@@ -16,6 +16,8 @@
         unsigned int expires : 1; 
         unsigned int reserved1 : 7; 
         unsigned char reserved2[4]; 
+    int _attempts;
+    NSData *_auditToken;
     _GEOTileDownloadOp *_baseTile;
     NSURLConnection *_conn;
     unsigned int _contentLength;
@@ -27,13 +29,15 @@
     } _key;
     _GEOTileDownloadOp *_localizationTile;
     BOOL _requireWiFi;
+    double _startTime;
     unsigned int _tileEdition;
+    double _timeout;
     NSURL *_url;
     BOOL _useCookies;
     NSString *_userAgent;
-    _GEOTileDownloadOp *localizationTile;
 }
 
+@property(retain) NSData * auditToken;
 @property(retain) _GEOTileDownloadOp * baseTile;
 @property(retain) NSURLConnection * conn;
 @property(readonly) unsigned int contentLength;
@@ -45,10 +49,12 @@
 @property(retain) _GEOTileDownloadOp * localizationTile;
 @property BOOL requireWiFi;
 @property unsigned int tileEdition;
+@property double timeout;
 @property(retain) NSURL * url;
 @property BOOL useCookies;
 @property(retain) NSString * userAgent;
 
+- (id)auditToken;
 - (id)baseTile;
 - (void)cancel;
 - (id)conn;
@@ -62,10 +68,12 @@
 - (id)delegate;
 - (id)description;
 - (id)editionHeader;
+- (double)elapsed;
 - (BOOL)finished;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })key;
 - (id)localizationTile;
 - (BOOL)requireWiFi;
+- (void)setAuditToken:(id)arg1;
 - (void)setBaseTile:(id)arg1;
 - (void)setConn:(id)arg1;
 - (void)setData:(id)arg1;
@@ -75,11 +83,13 @@
 - (void)setLocalizationTile:(id)arg1;
 - (void)setRequireWiFi:(BOOL)arg1;
 - (void)setTileEdition:(unsigned int)arg1;
+- (void)setTimeout:(double)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUseCookies:(BOOL)arg1;
 - (void)setUserAgent:(id)arg1;
 - (void)start;
 - (unsigned int)tileEdition;
+- (double)timeout;
 - (id)url;
 - (BOOL)useCookies;
 - (id)userAgent;

@@ -4,14 +4,14 @@
 
 @class NSString;
 
-@interface PDCmdBehavior : PDCommonBehaviorData {
+@interface PDCmdBehavior : PDAnimateBehavior {
+    int mBehaviorType;
     NSString *mCmd;
-    int mType;
 }
 
+- (int)behaviorType;
 - (id)cmd;
+- (void)setBehaviorType:(int)arg1;
 - (void)setCmd:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
 
 @end

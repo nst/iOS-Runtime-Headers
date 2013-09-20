@@ -2,62 +2,188 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class AltMapView, VKGlobeAnnotationTrackingCameraController, VKGlobeViewWrapper;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
 
-@interface VKGlobeCameraController : VKMapCameraController <VKAnnotationTrackingCameraControllerDelegate> {
-    AltMapView *_altMapView;
-    VKGlobeViewWrapper *_globe;
+@class <VKMotionProvider>, VKAnimation, VKGlobeAnnotationTrackingCameraController;
+
+@interface VKGlobeCameraController : VKMapCameraController <VKCameraControllerDelegate> {
+    struct CameraManager { 
+        int (**_vptr$CameraManager)(); 
+        bool_panBegin; 
+        bool_panInProgress; 
+        bool_panEnd; 
+        struct Vector2i { 
+            int _x; 
+            int _y; 
+        } _panCurrentCursor; 
+        struct Vector2i { 
+            int _x; 
+            int _y; 
+        } _panPreviousCursor; 
+        struct Position3d { 
+            double _latitude; 
+            double _longitude; 
+            double _height; 
+        } _panStartPosition; 
+        double _panDistance; 
+        bool_rotateBegin; 
+        bool_rotateInProgress; 
+        bool_rotateEnd; 
+        struct Position3d { 
+            double _latitude; 
+            double _longitude; 
+            double _height; 
+        } _rotateStartPosition; 
+        struct Vector2i { 
+            int _x; 
+            int _y; 
+        } _rotateCurrentCursor; 
+        double _rotateAngle; 
+        bool_tiltBegin; 
+        bool_tiltInProgress; 
+        bool_tiltEnd; 
+        struct Position3d { 
+            double _latitude; 
+            double _longitude; 
+            double _height; 
+        } _tiltStartPosition; 
+        struct Vector2i { 
+            int _x; 
+            int _y; 
+        } _tiltCurrentCursor; 
+        double _tiltAngle; 
+        bool_zoomBegin; 
+        bool_zoomInProgress; 
+        bool_zoomEnd; 
+        struct Position3d { 
+            double _latitude; 
+            double _longitude; 
+            double _height; 
+        } _zoomStartPosition; 
+        struct Vector2i { 
+            int _x; 
+            int _y; 
+        } _zoomCurrentCursor; 
+        double _zoomFactor; 
+        bool_zoomRotateToNorth; 
+        bool_useTiltLimit; 
+        int _tiltLimitMode; 
+        bool_tiltLimitTransferInProgress; 
+        bool_tiltLimitPushDown; 
+        double _startPushDownTilt; 
+        double _tiltLimitTransferFraction; 
+        double _startTiltLimitTilt; 
+        struct PositionGeo3d { 
+            double _x; 
+            double _y; 
+            double _z; 
+        } _startTiltLimitPosition; 
+        struct Vector3d { 
+            double _x; 
+            double _y; 
+            double _z; 
+        } _startTiltLimitDirection; 
+        double _fullZoomTiltLimitFactor; 
+    } _cameraManager;
+    double _currentDoublePanPitch;
+    VKAnimation *_decelerationAnimation;
     VKGlobeAnnotationTrackingCameraController *_globeAnnotationTrackingCameraController;
-    double _oldTranslation;
+    struct GlobeView { int (**x1)(); } *_globeView;
+    BOOL _isPitching;
+    BOOL _isRotating;
+    BOOL _motionActive;
+    VKAnimation *_motionAnimation;
+    <VKMotionProvider> *_motionProvider;
+    VKAnimation *_positionAnimation;
+    VKAnimation *_regionAnimation;
+    VKAnimation *_wiggleAnimation;
 }
 
-@property(retain) AltMapView * altMapView;
-@property(retain) VKGlobeViewWrapper * globe;
+@property struct GlobeView { int (**x1)(); }* globeView;
+@property(getter=isMotionActive,readonly) BOOL motionActive;
 @property(readonly) double pitchThreshold;
 
+- (struct GlobeView { int (**x1)(); }*)globeView;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)_animateToStartPosition;
 - (struct CGPoint { float x1; float x2; })_centerScreenPoint;
 - (struct Vector2i { int x1; int x2; })_cursorFromScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)altMapView;
-- (id)annotationTrackingCameraController:(id)arg1 presentationForAnnotation:(id)arg2;
-- (void)annotationTrackingCameraControllerDidChangeCameraState:(id)arg1;
+- (void)_performMotionAnimation;
+- (void)_rotateAroundTargetWithDuration:(double)arg1 rotations:(double)arg2;
+- (void)_stopAnimations;
+- (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id)arg5;
+- (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
+- (void)cameraController:(id)arg1 didBecomePitched:(BOOL)arg2;
+- (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
+- (void)cameraController:(id)arg1 requestsDisplayRate:(int)arg2;
+- (void)cameraControllerDidChangeCameraState:(id)arg1;
+- (void)cameraControllerDidStopRegionAnimation:(id)arg1 completed:(BOOL)arg2;
+- (void)cameraControllerWillStartRegionAnimation:(id)arg1;
 - (BOOL)canEnter3DMode;
+- (BOOL)currentZoomLevelAllowsRotation;
 - (void)dealloc;
 - (void)didAnimateInAnnotationMarkers:(id)arg1;
+- (double)durationToAnimateToMapRegion:(id)arg1;
 - (void)enter3DMode;
 - (void)exit3DMode;
-- (id)globe;
 - (id)init;
 - (BOOL)isAnimatingToTrackAnnotation;
+- (BOOL)isFullyPitched;
+- (BOOL)isMotionActive;
+- (BOOL)isPitched;
 - (BOOL)isTrackingHeading;
+- (id)mapRegion;
+- (id)mapRegionOfInterest;
 - (int)maximumNormalizedZoomLevel;
 - (int)minimumNormalizedZoomLevel;
+- (void)moveTo:(struct { double x1; double x2; })arg1 zoom:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
 - (void)pan:(struct CGPoint { float x1; float x2; })arg1;
+- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id)arg5;
 - (void)pinch:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
 - (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
+- (double)pitch;
 - (double)pitchThreshold;
-- (void)resetHeightModel;
+- (double)presentationYaw;
 - (BOOL)restoreViewportFromInfo:(id)arg1;
 - (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)setAltMapView:(id)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)rotateTo:(double)arg1 animated:(BOOL)arg2;
+- (void)runAnimation:(id)arg1;
+- (void)setAnnotationTrackingZoomStyle:(int)arg1;
+- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
-- (void)setGlobe:(id)arg1;
-- (void)setTrackingAutoSelectsZoomScale:(BOOL)arg1;
-- (void)snapMapIfNecessary:(const struct { double x1; double x2; double x3; }*)arg1 animated:(BOOL)arg2;
+- (void)setGlobeView:(struct GlobeView { int (**x1)(); }*)arg1;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id)arg5;
+- (void)setYaw:(double)arg1 animated:(BOOL)arg2;
+- (void)showPlaceCardAnimationAtCoordinate:(struct { double x1; double x2; })arg1 andDistance:(double)arg2;
+- (void)showSearchResultAnimationAtCoordinate:(struct { double x1; double x2; })arg1 withZoom:(double)arg2;
+- (void)snapMapIfNecessary:(const struct VKPoint { double x1; double x2; double x3; }*)arg1 animated:(BOOL)arg2;
 - (void)startPanning:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPinching:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPitching:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startRotating:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)startWithMotionProvider:(id)arg1;
+- (void)stopGlobeAnimations;
+- (void)stopMotion;
 - (void)stopPanning:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopPinching:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopPitching:(struct CGPoint { float x1; float x2; })arg1;
+- (void)stopPlaceCardAnimation;
 - (void)stopRotating:(struct CGPoint { float x1; float x2; })arg1;
+- (void)stopSearchResultAnimation;
 - (void)stopTrackingAnnotation;
 - (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id)arg3;
 - (int)tileSize;
+- (void)tiltTo:(double)arg1 animated:(BOOL)arg2 exaggerate:(BOOL)arg3;
 - (id)trackingAnnotation;
+- (void)updateCameraManager;
 - (void)updateGlobeFromCamera;
 - (void)willAnimateInAnnotationMarkers:(id)arg1;
+- (double)yaw;
+- (double)zoomForMapRegion:(id)arg1;
 
 @end

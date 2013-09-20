@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeViewControllerDelegate>, <NSCoding>, ABPeoplePickerNavigationController, ABPersonViewController, ABUnknownPersonViewController, MFAddressPickerReformatter, MFComposeBodyField, MFComposeImageSizeView, MFComposeRecipientAtom, MFComposeSubjectView, MFComposeTextContentView, MFGenericAttachmentStore, MFLock, MFMailAccountProxyGenerator, MFMailComposeRecipientView, MFMailPopoverManager, MFOutgoingMessageDelivery, MFRecentComposeRecipient, MFSecureMIMECompositionManager, MailboxUid, MutableMessageHeaders, NSArray, NSDictionary, NSString, UIActionSheet, UIAlertView, UIBarButtonItem, UIImagePickerController, UIView, _MFMailCompositionContext;
+@class <MFMailComposeViewControllerDelegate>, <NSCoding>, ABPeoplePickerNavigationController, ABPersonViewController, ABUnknownPersonViewController, MFAddressPickerReformatter, MFComposeBodyField, MFComposeImageSizeView, MFComposeSubjectView, MFComposeTextContentView, MFGenericAttachmentStore, MFLock, MFMailAccountProxyGenerator, MFMailComposeRecipientView, MFMailPopoverManager, MFMailboxUid, MFModernComposeRecipientAtom, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFRecentComposeRecipient, MFSecureMIMECompositionManager, NSArray, NSDictionary, NSString, UIActionSheet, UIAlertView, UIBarButtonItem, UIImagePickerController, UIKeyCommand, UIView, _MFMailCompositionContext;
 
-@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, MFMailPopoverManagerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFMailComposeRecipientViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate> {
+@interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABUnknownPersonViewControllerDelegate, MFMailPopoverManagerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate, MFGroupDetailViewControllerDelegate> {
     unsigned int _isDirty : 1;
     unsigned int _bodyTextChanged : 1;
     unsigned int _shouldAutosaveWithSuspendInfo : 1;
@@ -24,7 +24,7 @@
     MFAddressPickerReformatter *_addressPickerReformatter;
     BOOL _allowRestrictedAccounts;
     UIView *_alternateTitleView;
-    MFComposeRecipientAtom *_atomPresentingCard;
+    MFModernComposeRecipientAtom *_atomPresentingCard;
     MFGenericAttachmentStore *_attachmentStore;
     id _autorotationDelegate;
     id _autosaveIdentifier;
@@ -44,15 +44,19 @@
     int _encryptionIdentityStatus;
     BOOL _encryptionStatusIsKnown;
     NSDictionary *_errorsByRecipient;
+    UIKeyCommand *_escapeKeyCommand;
+    BOOL _firstSignaturePassComplete;
+    BOOL _hasSignature;
     MFComposeImageSizeView *_imageSizeField;
     unsigned int _initialAttachmentCount;
     NSString *_initialTitle;
-    MailboxUid *_lastDraftMailboxUid;
+    MFMailboxUid *_lastDraftMailboxUid;
     NSString *_lastDraftMessageID;
     MFMailComposeRecipientView *_lastFocusedRecipientView;
     unsigned int _options;
     NSArray *_originalBccAddresses;
     NSString *_originalSendingEmailAddress;
+    NSString *_originatingBundleID;
     ABPeoplePickerNavigationController *_peoplePicker;
     ABPersonViewController *_personViewController;
     UIImagePickerController *_photosImagePickerController;
@@ -62,12 +66,15 @@
     int _recipientFieldWhileViewUnloaded;
     id _remoteViewControllerProxy;
     int _resolution;
-    MutableMessageHeaders *_savedHeaders;
+    MFMutableMessageHeaders *_savedHeaders;
     MFSecureMIMECompositionManager *_secureCompositionManager;
     UIBarButtonItem *_sendButtonItem;
+    UIKeyCommand *_sendKeyCommand;
     NSString *_sendingEmailAddress;
     int _sendingEmailAddressIndex;
+    NSString *_signatureMarkupString;
     int _signingIdentityStatus;
+    int _sourceAccountManagement;
     NSString *_subject;
     MFComposeSubjectView *_subjectField;
     NSArray *_toAddresses;
@@ -78,28 +85,35 @@
 @property(retain) UIAlertView * activeAlertView;
 @property(retain) UIActionSheet * activeSheet;
 @property(copy) NSString * addressForMissingIdentity;
-@property(retain) MFComposeRecipientAtom * atomPresentingCard;
+@property(retain) MFModernComposeRecipientAtom * atomPresentingCard;
 @property(retain) MFGenericAttachmentStore * attachmentStore;
-@property id autorotationDelegate;
 @property(retain) <NSCoding> * autosaveIdentifier;
 @property(retain) NSDictionary * certificatesByRecipient;
 @property id delegate;
+@property(readonly) MFOutgoingMessageDelivery * delivery;
 @property(retain) NSDictionary * errorsByRecipient;
+@property(readonly) MFMailboxUid * lastDraftMailboxUid;
+@property(readonly) NSString * lastDraftMessageID;
+@property(copy) NSString * originatingBundleID;
 @property(retain) ABPeoplePickerNavigationController * peoplePicker;
 @property(retain) ABPersonViewController * personViewController;
 @property(retain) MFRecentComposeRecipient * recentRecipientPresentingCard;
 @property(retain) id remoteViewControllerProxy;
+@property int sourceAccountManagement;
 @property(retain) ABUnknownPersonViewController * unknownPersonViewController;
 
 + (id)defaultSignature;
 + (void)initialize;
++ (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1 originatingBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
 + (BOOL)isSetupForDeliveryAllowingRestrictedAccounts:(BOOL)arg1;
 + (id)preferenceForKey:(id)arg1;
 + (id)signature;
++ (id)signatureForSendingEmailAddress:(id)arg1;
 + (id)signatureMarkupForSendingEmailAddress:(id)arg1;
 + (BOOL)useAccountSignatures;
 
 - (void)_accountsChanged:(id)arg1;
+- (void)_addSignature:(BOOL)arg1 includeMarkup:(BOOL)arg2;
 - (id)_addressFieldForField:(int)arg1;
 - (id)_allRecipientViews;
 - (id)_alternateTitleView;
@@ -116,8 +130,7 @@
 - (void)_close;
 - (void)_composeViewDidDraw:(id)arg1;
 - (id)_defaultAccount;
-- (int)_defaultAddressAtomStyle;
-- (id)_deleteButton;
+- (unsigned int)_defaultAtomPresentationOptions;
 - (void)_dismissPeoplePicker:(id)arg1;
 - (void)_dismissPersonCard;
 - (void)_displayAlertSheet:(id)arg1;
@@ -132,7 +145,6 @@
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (BOOL)_hasEncryptionIdentityError;
 - (BOOL)_hasRecipients;
-- (void)_inlinedAttachmentFinishedLoading:(id)arg1;
 - (void)_insertInlineAttachment:(id)arg1;
 - (void)_insertInlineAttachmentWithWrapper:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (BOOL)_isPopoverOrActionSheetOrAlertVisible;
@@ -153,13 +165,16 @@
 - (void)_physicallyScaleImagesToScale:(unsigned int)arg1;
 - (void)_pickInitialFirstResponder;
 - (void)_popoverWillBePresented:(id)arg1;
+- (void)_preferredContentSizeCategoryDidChange:(id)arg1;
 - (void)_prepareCompositionContextForLoading:(id)arg1;
 - (void)_prepareForSuspend;
 - (void)_prepareImagesForSend;
+- (void)_prependSignatureToNode:(id)arg1 includeMarkup:(BOOL)arg2;
 - (void)_presentAlertView:(id)arg1;
 - (id)_reformattedAddressAtIndex:(unsigned int)arg1;
 - (unsigned int)_reloadNumberOfReformattedAddressesWithMaximumWidth:(float)arg1 defaultFontSize:(float)arg2;
 - (void)_removeRecent;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_replaceSignature:(id)arg1 withSignature:(id)arg2 backwardsFromNode:(id)arg3 maxParagraphs:(unsigned int)arg4;
 - (void)_resetProxyGenerator;
 - (void)_resetSecureCompositionManager;
 - (void)_restoreMessageValues;
@@ -170,6 +185,7 @@
 - (void)_setIsLoading:(BOOL)arg1;
 - (void)_setLastFocusedRecipientView:(id)arg1;
 - (void)_setRecipients:(id)arg1 forField:(int)arg2;
+- (BOOL)_setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
 - (void)_setTitleBarSubtitleText:(id)arg1 style:(unsigned int)arg2;
 - (void)_setUpDeliveryObject;
 - (void)_setupForAutosavedMessage:(id)arg1;
@@ -181,12 +197,15 @@
 - (BOOL)_shouldEnableSendButton;
 - (BOOL)_shouldPrependBlankLineForAttachments;
 - (void)_showMissingIdentityAlert;
+- (void)_showPersonCardForRecent:(id)arg1 showDeleteButton:(BOOL)arg2;
 - (void)_showPhotoPickerWithSourceType:(int)arg1;
+- (id)_stripSignatureMarkup:(id)arg1;
 - (void)_textChanged:(id)arg1;
 - (void)_tryAddSenderToBccRecipients;
 - (void)_unscaleImages;
 - (void)_unthrottleScalingAfterDelayIfVisible;
 - (void)_unthrottleScalingWithAttachmentStore:(id)arg1;
+- (void)_updateAutoBccSendingAddress:(id)arg1 withNewSendingAddress:(id)arg2;
 - (void)_updateIdentityStatus:(int*)arg1 withPolicy:(int)arg2 identity:(struct __SecIdentity { }*)arg3 error:(id)arg4;
 - (void)_updateImageSizeTitles;
 - (void)_updateNavigationBarTitleAnimated:(BOOL)arg1;
@@ -195,6 +214,7 @@
 - (void)_updatePersonCard;
 - (void)_updateRecipientAtomStyles;
 - (void)_updateSendAndCloseEnabled;
+- (void)_updateSignatureMarkupString;
 - (void)_updateTableCell:(id)arg1 isChecked:(BOOL)arg2;
 - (void)_updateTitleBarForEncryptionStatus:(int)arg1;
 - (BOOL)_wantsEncryption;
@@ -207,6 +227,7 @@
 - (void)addAddress:(id)arg1 field:(int)arg2;
 - (void)addInlineAttachment:(id)arg1;
 - (id)addInlinedElementToStore:(id)arg1 onlyIfNecessary:(BOOL)arg2;
+- (void)addSignature:(BOOL)arg1;
 - (id)addressForMissingIdentity;
 - (id)addressesForField:(int)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
@@ -217,9 +238,9 @@
 - (id)atomPresentingCard;
 - (void)attachmentFinishedLoading:(id)arg1;
 - (id)attachmentStore;
+- (id)attachmentStoreCreateIfNecessary;
 - (id)attachments;
 - (void)attachmentsRemoved:(id)arg1;
-- (id)autorotationDelegate;
 - (id)autosaveIdentifier;
 - (void)autosaveWithHandler:(id)arg1;
 - (BOOL)bccAddressesDirtied;
@@ -239,17 +260,19 @@
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didReplaceRecipients:(id)arg2 withRecipients:(id)arg3;
+- (void)composeRecipientView:(id)arg1 showCorecipients:(id)arg2;
 - (void)composeRecipientView:(id)arg1 showPersonCardForAtom:(id)arg2;
 - (void)composeRecipientView:(id)arg1 showPersonCardForRecent:(id)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
 - (void)composeRecipientViewDidBecomeFirstResponder:(id)arg1;
-- (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
 - (void)composeRecipientViewReturnPressed:(id)arg1;
 - (BOOL)composeRecipientViewShowingSearchResults:(id)arg1;
+- (void)composeShortcutInvoked:(id)arg1;
 - (void)composeSubjectViewTextFieldDidBecomeFirstResponder:(id)arg1;
 - (void)composeSubjectViewTextFieldDidResignFirstResponder:(id)arg1;
 - (int)composeType;
@@ -259,14 +282,18 @@
 - (void)dealloc;
 - (id)delegate;
 - (int)deliverMessageRemotely;
-- (id)deliveryController;
+- (id)delivery;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)didSelectCellAtRow:(unsigned int)arg1;
+- (void)dismissSearchResultsForComposeRecipientView:(id)arg1;
 - (void)dismissSheet;
 - (id)emailAddresses;
 - (id)errorsByRecipient;
 - (void)forceSaveAsDraft;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAttachmentWithIdentifier:(id)arg1;
+- (void)groupDetailViewController:(id)arg1 didAskToRemoveGroup:(id)arg2;
+- (void)groupDetailViewController:(id)arg1 didTapComposeRecipient:(id)arg2;
+- (void)groupDetailViewControllerDidCancel:(id)arg1;
 - (BOOL)hasAnyHiddenTrailingEmptyQuote;
 - (BOOL)hasAttachments;
 - (void)hostApplicationDidEnterBackground;
@@ -280,12 +307,16 @@
 - (BOOL)isDirty;
 - (BOOL)isSavingAsDraft;
 - (BOOL)isShowingRecentPersonCard;
+- (id)keyCommands;
+- (id)lastDraftMailboxUid;
+- (id)lastDraftMessageID;
 - (void)loadView;
 - (id)mailComposeView;
 - (id)navigationBarTitle;
 - (id)navigationControllerForRecentPersonCard;
 - (BOOL)needsDelivery;
 - (int)numberOfComponentsInPickerView:(id)arg1;
+- (id)originatingBundleID;
 - (id)peoplePicker;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
@@ -295,7 +326,6 @@
 - (id)pickerView:(id)arg1 attributedTitleForRow:(int)arg2 forComponent:(int)arg3;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (unsigned int)pickerView:(id)arg1 numberOfRowsInComponent:(unsigned int)arg2;
-- (BOOL)pickerView:(id)arg1 shouldUseCheckSelectionForRow:(int)arg2 forComponent:(int)arg3;
 - (void)popoverControllerDidDismissPopover:(id)arg1 isUserAction:(BOOL)arg2;
 - (id)popoverManager;
 - (id)popoverManagerCreateIfNeeded:(BOOL)arg1;
@@ -329,7 +359,6 @@
 - (void)setAddresses:(id)arg1 field:(int)arg2;
 - (void)setAtomPresentingCard:(id)arg1;
 - (void)setAttachmentStore:(id)arg1;
-- (void)setAutorotationDelegate:(id)arg1;
 - (void)setAutosaveIdentifier:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCcRecipients:(id)arg1;
@@ -341,6 +370,7 @@
 - (void)setErrorsByRecipient:(id)arg1;
 - (void)setHosted:(BOOL)arg1;
 - (void)setInitialTitle:(id)arg1;
+- (void)setOriginatingBundleID:(id)arg1;
 - (void)setPeoplePicker:(id)arg1;
 - (void)setPersonViewController:(id)arg1;
 - (void)setRecentRecipientPresentingCard:(id)arg1;
@@ -350,10 +380,11 @@
 - (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
 - (void)setSendingEmailAddress:(id)arg1;
 - (void)setSheet:(id)arg1;
+- (void)setSourceAccountManagement:(int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (void)setUnknownPersonViewController:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (int)sourceAccountManagement;
 - (id)subject;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -362,6 +393,7 @@
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)unknownPersonViewController;
+- (void)updateSignature;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

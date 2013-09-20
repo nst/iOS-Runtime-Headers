@@ -12,10 +12,13 @@
 @property(copy) NSString * keyPath;
 @property(retain) id object;
 
+- (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
+- (id)CAMLTypeForKey:(id)arg1;
 - (void)apply:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;

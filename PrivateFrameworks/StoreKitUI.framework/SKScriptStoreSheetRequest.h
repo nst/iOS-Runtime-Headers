@@ -22,9 +22,9 @@
 + (id)webScriptNameForKey:(const char *)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
+- (void).cxx_destruct;
 - (id)_className;
 - (id)attributeKeys;
-- (void)dealloc;
 - (id)newNativeStorePageRequest;
 - (int)productPageStyle;
 - (int)productPageStyleAutomatic;

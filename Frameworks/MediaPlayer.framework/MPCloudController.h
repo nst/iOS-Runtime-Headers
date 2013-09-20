@@ -2,53 +2,52 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class HSCloudClient, NSObject<OS_dispatch_queue>;
+@class HSCloudClient, NSObject<HSCloudAvailability>;
 
 @interface MPCloudController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _canShowCloudDownloadButtons;
+    NSObject<HSCloudAvailability> *_cloudAvailabilityController;
     HSCloudClient *_cloudClient;
-    BOOL _isCellularDataActive;
     BOOL _isCloudEnabled;
     BOOL _isInitialImport;
-    BOOL _isObservingDataStatusChanges;
-    BOOL _isObservingWiFiChanges;
-    BOOL _isShowingAllMusic;
     BOOL _isUpdateInProgress;
-    BOOL _isWiFiEnabled;
     int _preferencesChangedNotifyToken;
     BOOL _preferencesChangedNotifyTokenIsValid;
 }
 
+@property(readonly) BOOL canDefaultMediaLibraryShowCloudContent;
 @property(readonly) BOOL canShowCloudDownloadButtons;
-@property(readonly) BOOL canShowCloudTracks;
+@property(readonly) BOOL canShowCloudMusic;
+@property(readonly) BOOL canShowCloudVideo;
 @property(readonly) BOOL hasCloudLockerAccount;
+@property(readonly) BOOL hasPurchaseHistoryAccount;
 @property(readonly) BOOL isCloudEnabled;
 @property(readonly) BOOL isGeniusEnabled;
 @property(readonly) BOOL isInitialImport;
 @property(readonly) BOOL isUpdateInProgress;
 
-+ (BOOL)isCellularDataRestricted;
 + (BOOL)isMediaApplication;
 + (void)migrateCellularDataPreferencesIfNeeded;
 + (id)sharedCloudController;
-+ (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 
-- (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
-- (BOOL)_currentIsShowingAllMusic;
-- (void)_handleTelephonyNotificationWithName:(id)arg1 userInfo:(id)arg2;
+- (void).cxx_destruct;
 - (void)_initializeUpdateInProgressState;
-- (void)_onQueue_updateCanShowCloudDownloadButtonsWithNotification:(BOOL)arg1;
-- (void)_wifiEnabledDidChangeNotification:(id)arg1;
 - (void)addGeniusPlaylistWithName:(id)arg1 seedItemSagaIDs:(id)arg2 itemSagaIDs:(id)arg3 completionHandler:(id)arg4;
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)becomeActive;
+- (BOOL)canDefaultMediaLibraryShowCloudContent;
 - (BOOL)canShowCloudDownloadButtons;
-- (BOOL)canShowCloudTracks;
+- (void)canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
+- (BOOL)canShowCloudMusic;
+- (void)canShowCloudTracksDidChangeNotification:(id)arg1;
+- (BOOL)canShowCloudVideo;
 - (void)dealloc;
 - (BOOL)hasCloudLockerAccount;
+- (BOOL)hasProperNetworkConditionsToPlayMedia;
+- (BOOL)hasPurchaseHistoryAccount;
 - (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (id)init;
+- (BOOL)isCellularDataRestricted;
+- (void)isCellularDataRestrictedDidChangeNotification:(id)arg1;
 - (BOOL)isCloudEnabled;
 - (BOOL)isGeniusEnabled;
 - (BOOL)isInitialImport;
@@ -57,7 +56,9 @@
 - (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)resignActive;
+- (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
+- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 completionHandler:(id)arg3;
 
 @end

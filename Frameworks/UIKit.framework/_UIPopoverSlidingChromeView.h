@@ -17,6 +17,7 @@
 - (float)_shadowRadius;
 - (unsigned int)arrowDirection;
 - (float)arrowOffset;
+- (void)layoutSubviews;
 - (void)setArrowDirection:(unsigned int)arg1;
 - (void)setArrowOffset:(float)arg1;
 

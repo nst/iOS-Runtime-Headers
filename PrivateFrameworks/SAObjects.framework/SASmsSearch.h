@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString, NSURL;
+@class NSArray, NSDate, NSNumber, NSString;
 
-@interface SASmsSearch : SABaseClientBoundCommand {
+@interface SASmsSearch : SADomainCommand {
 }
 
 @property(copy) NSDate * end;
 @property(copy) NSString * message;
-@property(copy) NSString * recipient;
-@property(copy) NSString * sender;
+@property(copy) NSNumber * outgoing;
+@property(copy) NSArray * recipients;
+@property(copy) NSArray * senders;
 @property(copy) NSDate * start;
-@property int status;
-@property(copy) NSURL * targetAppId;
-@property(copy) NSString * timeZoneId;
+@property(copy) NSString * subject;
+@property(copy) NSNumber * unread;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
@@ -23,20 +23,20 @@
 - (id)end;
 - (id)groupIdentifier;
 - (id)message;
-- (id)recipient;
+- (id)outgoing;
+- (id)recipients;
 - (BOOL)requiresResponse;
-- (id)sender;
+- (id)senders;
 - (void)setEnd:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setRecipient:(id)arg1;
-- (void)setSender:(id)arg1;
+- (void)setOutgoing:(id)arg1;
+- (void)setRecipients:(id)arg1;
+- (void)setSenders:(id)arg1;
 - (void)setStart:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (void)setTimeZoneId:(id)arg1;
+- (void)setSubject:(id)arg1;
+- (void)setUnread:(id)arg1;
 - (id)start;
-- (int)status;
-- (id)targetAppId;
-- (id)timeZoneId;
+- (id)subject;
+- (id)unread;
 
 @end

@@ -5,7 +5,9 @@
 @class IMAVCamera;
 
 @interface IMAVLocalPreviewClient : NSObject <IMSystemMonitorListener> {
+    BOOL _wantsPausedPreview;
     BOOL _wantsPreview;
+    BOOL _wantsUnpausedPreview;
 }
 
 @property unsigned int cameraOrientation;
@@ -25,7 +27,9 @@
 - (unsigned int)cameraOrientation;
 - (unsigned int)cameraType;
 - (void)dealloc;
+- (void)didChangeLocalScreenAttributes:(id)arg1;
 - (void)didChangeLocalVideoAttributes:(id)arg1;
+- (void)didPausePreview;
 - (void)didReceiveCommError;
 - (void)didReceiveErrorFromCamera:(unsigned int)arg1 error:(id)arg2;
 - (void)didReceiveFirstPreviewFrameFromCamera:(unsigned int)arg1;
@@ -36,11 +40,14 @@
 - (id)init;
 - (BOOL)isPreviewRunning;
 - (id)localCamera;
+- (id)localScreenAttributesForVideoAttributes:(id)arg1;
 - (void*)localVideoBackLayer;
 - (void*)localVideoLayer;
+- (void)pausePreview;
 - (void)setCameraOrientation:(unsigned int)arg1;
 - (void)setCameraType:(unsigned int)arg1;
 - (void)setLocalCamera:(id)arg1;
+- (void)setLocalScreenAttributes:(id)arg1;
 - (void)setLocalVideoBackLayer:(void*)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (void)startPreview;
@@ -49,5 +56,6 @@
 - (void)systemApplicationWillEnterForeground;
 - (void)systemScreenDidPowerDown;
 - (void)systemScreenDidPowerUp;
+- (void)unpausePreview;
 
 @end

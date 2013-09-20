@@ -31,6 +31,7 @@
 - (BOOL)notifyForExternalChangeOnly;
 - (void)notifyTarget:(unsigned int)arg1;
 - (void)refresh;
+- (oneway void)release;
 - (void)setAirplaneMode:(BOOL)arg1;
 - (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (void)setDelegate:(id)arg1;

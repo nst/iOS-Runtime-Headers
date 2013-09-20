@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSMutableSet, NSSQLEntity, NSSQLiteStatement, NSString;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLEntity, NSSQLiteStatement, NSString;
 
 @interface NSSQLiteConnection : NSSQLConnection {
     struct __sqliteConnectionFlags { 
@@ -12,7 +12,8 @@
         unsigned int _proxyLocking : 1; 
         unsigned int _vacuumSetupNeeded : 1; 
         unsigned int _usingWAL : 1; 
-        unsigned int _reserved : 25; 
+        unsigned int _disallowReconnect : 1; 
+        unsigned int _reserved : 24; 
     NSSQLiteStatement *_beginStatement;
     struct __CFDictionary { } *_cachedEntityUpdateStatements;
     NSSQLiteStatement *_commitStatement;
@@ -28,6 +29,8 @@
     NSSQLiteStatement *_rollbackStatement;
     int _rowsProcessedCount;
     } _sqliteConnectionFlags;
+    NSMutableArray *_temporaryTables;
+    double _timeOutIncrement;
     double _timeOutOption;
     struct sqlite3_stmt { } *_updatePKStatement;
     long long _vacuumTracker;
@@ -41,6 +44,7 @@
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
 + (void)_setDebugFlags:(int)arg1;
 + (void)initialize;
++ (int)openAtPath:(const char *)arg1 handle:(struct sqlite3 {}**)arg2 flags:(int)arg3 module:(const char *)arg4;
 + (int)readMagicWordFromPath:(const char *)arg1;
 
 - (id)_adapter;
@@ -57,7 +61,7 @@
 - (void)_configureAutoVacuum;
 - (void)_configureIntegrityCheck;
 - (void)_configurePageSize;
-- (void)_configurePragmaOptions:(int)arg1;
+- (void)_configurePragmaOptions:(int)arg1 createdSchema:(BOOL)arg2;
 - (void)_configureSynchronousMode;
 - (void)_configureUbiquityMetadataTable;
 - (void)_endPowerAssertionWithAssert:(unsigned int)arg1 andApp:(id)arg2;
@@ -81,6 +85,7 @@
 - (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
 - (id)allPeerRanges;
 - (void)beginTransaction;
+- (void)bindTempTableForBindIntarray:(id)arg1;
 - (void)cacheCurrentDBStatementOn:(id)arg1;
 - (void)cacheUpdateStatement:(id)arg1 forEntity:(id)arg2 andDeltasMask:(struct __CFBitVector { }*)arg3;
 - (id)cachedUpdateStatementForEntity:(id)arg1 andDeltasMask:(struct __CFBitVector { }*)arg2;
@@ -95,6 +100,7 @@
 - (void)deleteCorrelation:(id)arg1;
 - (void)deleteRow:(id)arg1;
 - (id)describeResults;
+- (void)didCreateSchema;
 - (void)disconnect;
 - (void)dropUbiquityTables;
 - (void)endFetch;
@@ -116,6 +122,7 @@
 - (BOOL)isFetchInProgress;
 - (BOOL)isLocalFS;
 - (BOOL)isOpen;
+- (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (id)newFetchedArray;
 - (BOOL)performIntegrityCheck;
 - (void)prepareForPrimaryKeyGeneration;

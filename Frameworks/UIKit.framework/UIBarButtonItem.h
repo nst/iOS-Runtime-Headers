@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSSet, NSString, UIColor, UIImage, UIToolbarButton, UIView;
+@class NSDictionary, NSSet, NSString, UIBarButtonItem, UIColor, UIImage, UIToolbarButton, UIView;
 
 @interface UIBarButtonItem : UIBarItem <NSCoding> {
     struct UIEdgeInsets { 
@@ -25,6 +25,7 @@
         unsigned int disableAutosizing : 1; 
         unsigned int selected : 1; 
         unsigned int imageHasEffects : 1; 
+    UIBarButtonItem *__itemVariation;
     SEL _action;
     id _appearanceStorage;
     } _barButtonItemFlags;
@@ -35,22 +36,33 @@
     } _landscapeImagePhoneInsets;
     float _maximumWidth;
     float _minimumWidth;
+    BOOL _needsViewUpdateForLetterpressImage;
     NSSet *_possibleSystemItems;
     NSSet *_possibleTitles;
+    NSDictionary *_stylesForSizingTitles;
     int _tag;
     id _target;
     NSString *_title;
     float _toolbarCharge;
     UIView *_view;
+    BOOL _viewWantsLetterpressImage;
     float _width;
 }
 
 @property(setter=_setFlexible:) BOOL _flexible;
 @property(setter=_setImageHasEffects:) BOOL _imageHasEffects;
+@property(setter=_setItemVariation:,retain) UIBarButtonItem * _itemVariation;
+@property(setter=_setItemVariation:,retain) UIBarButtonItem * _itemVariation;
 @property(setter=_setMaximumWidth:) float _maximumWidth;
 @property(setter=_setMinimumWidth:) float _minimumWidth;
+@property(readonly) BOOL _needsViewUpdateForLetterpressImage;
+@property(readonly) BOOL _needsViewUpdateForLetterpressImage;
+@property(setter=_setPossibleItemVariations:,copy) NSSet * _possibleItemVariations;
+@property(setter=_setPossibleItemVariations:,copy) NSSet * _possibleItemVariations;
+@property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
 @property(readonly) UIToolbarButton * _toolbarButton;
 @property(setter=_setToolbarCharge:) float _toolbarCharge;
+@property(readonly) BOOL _viewWantsLetterpressImage;
 @property SEL action;
 @property(retain) UIView * customView;
 @property(getter=isEnabled) BOOL enabled;
@@ -70,7 +82,7 @@
 @property(retain) UIColor * tintColor;
 @property float width;
 
-+ (id)_appearanceProxyViewClasses;
++ (id)_appearanceBlindViewClasses;
 + (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8 usingSystemItem:(int)arg9 usingItemStyle:(int)arg10;
 + (Class)classForNavigationButton;
 
@@ -78,30 +90,40 @@
 - (void)_applyPositionAdjustmentToSegmentedControl:(id)arg1;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 - (BOOL)_flexible;
+- (id)_foregroundColorForLetterpressWithView:(id)arg1;
 - (void)_getNavBarEdgeSizeAdjust:(struct CGSize { float x1; float x2; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 landscape:(BOOL)arg3;
 - (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8;
 - (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 forBarStyle:(int)arg4 landscape:(BOOL)arg5 alwaysBordered:(BOOL)arg6;
 - (BOOL)_imageHasEffects;
+- (id)_itemVariation;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_leftRightImagePaddingForEdgeMarginInNavBarIsMini:(BOOL)arg1;
 - (float)_maximumWidth;
 - (id)_miniImage;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_miniImageInsets;
 - (float)_minimumWidth;
+- (BOOL)_needsViewUpdateForLetterpressImage;
+- (id)_possibleItemVariations;
 - (id)_possibleSystemItems;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_setFlexible:(BOOL)arg1;
 - (void)_setImageHasEffects:(BOOL)arg1;
+- (void)_setItemVariation:(id)arg1;
 - (void)_setMaximumWidth:(float)arg1;
 - (void)_setMiniImage:(id)arg1;
 - (void)_setMiniImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setMinimumWidth:(float)arg1;
+- (void)_setPossibleItemVariations:(id)arg1;
 - (void)_setPossibleSystemItems:(id)arg1;
+- (void)_setStylesForSizingTitles:(id)arg1;
 - (void)_setSystemItem:(int)arg1;
 - (void)_setToolbarCharge:(float)arg1;
 - (void)_setWidth:(float)arg1;
 - (BOOL)_shouldBezelSystemButtonImage;
+- (id)_stylesForSizingTitles;
 - (id)_toolbarButton;
 - (float)_toolbarCharge;
 - (void)_updateView;
+- (BOOL)_viewWantsLetterpressImage;
 - (float)_width;
 - (SEL)action;
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
@@ -129,6 +151,7 @@
 - (BOOL)isEnabled;
 - (BOOL)isMinibarView;
 - (BOOL)isSystemItem;
+- (id)itemVariation;
 - (id)landscapeImagePhone;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })landscapeImagePhoneInsets;
 - (void)mf_setImageOffset:(struct CGPoint { float x1; float x2; })arg1;

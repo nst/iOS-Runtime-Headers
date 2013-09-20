@@ -9,8 +9,11 @@
     NSExpression *_right;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)allowEvaluation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

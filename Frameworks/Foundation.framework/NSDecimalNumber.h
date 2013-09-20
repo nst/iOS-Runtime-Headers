@@ -39,6 +39,7 @@
 + (id)numberWithUnsignedShort:(unsigned short)arg1;
 + (id)one;
 + (void)setDefaultBehavior:(id)arg1;
++ (BOOL)supportsSecureCoding;
 + (id)two;
 + (id)zero;
 

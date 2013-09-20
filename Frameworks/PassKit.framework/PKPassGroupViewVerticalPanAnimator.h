@@ -26,8 +26,8 @@
 @property float panningViewTargetScale;
 
 - (id)_dynamicAnimationWithStart:(float)arg1 target:(float)arg2 initialVelocity:(float)arg3;
-- (void)animateWithStartVelocity:(float)arg1 completion:(id)arg2;
 - (void)dealloc;
+- (void)dismissWithStartVelocity:(float)arg1 completion:(id)arg2;
 - (id)gestureRecognizer;
 - (id)initWithGroupView:(id)arg1;
 - (void)layoutViewsWithY:(float)arg1;

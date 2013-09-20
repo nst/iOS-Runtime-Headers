@@ -9,20 +9,21 @@
 @class NSString;
 
 @interface AXGestureOverrideHandler : NSObject {
-    id handler;
-    struct NSString { Class x1; } *identifier;
-    int type;
+    id _handler;
+    NSString *_identifier;
+    unsigned int _type;
 }
 
 @property(copy) id handler;
 @property(retain) NSString * identifier;
-@property int type;
+@property unsigned int type;
 
+- (void)dealloc;
 - (id)handler;
-- (struct NSString { Class x1; }*)identifier;
+- (id)identifier;
 - (void)setHandler:(id)arg1;
-- (void)setIdentifier:(struct NSString { Class x1; }*)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setIdentifier:(id)arg1;
+- (void)setType:(unsigned int)arg1;
+- (unsigned int)type;
 
 @end

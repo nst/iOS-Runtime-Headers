@@ -39,6 +39,7 @@
         int (*shouldUseCredentialStorageFunc)(); 
         int (*shouldPaintBrokenImageForURLFunc)(); 
     struct WebFrameLoadDelegateImplementationCache { 
+        int (*didCreateJavaScriptContextForFrameFunc)(); 
         int (*didClearWindowObjectForFrameFunc)(); 
         int (*didClearWindowObjectForFrameInScriptWorldFunc)(); 
         int (*didClearInspectorWindowObjectForFrameFunc)(); 
@@ -60,10 +61,14 @@
         int (*didFinishLoadForFrameFunc)(); 
         int (*didFirstLayoutInFrameFunc)(); 
         int (*didFirstVisuallyNonEmptyLayoutInFrameFunc)(); 
+        int (*didLayoutFunc)(); 
+        int (*didReceiveIconForFrameFunc)(); 
         int (*didFinishDocumentLoadForFrameFunc)(); 
         int (*didDisplayInsecureContentFunc)(); 
         int (*didRunInsecureContentFunc)(); 
         int (*didDetectXSSFunc)(); 
+        int (*didRemoveFrameFromHierarchyFunc)(); 
+        int (*webThreadDidLayoutFunc)(); 
     struct WebScriptDebugDelegateImplementationCache { 
         BOOL didParseSourceExpectsBaseLineNumber; 
         BOOL exceptionWasRaisedExpectsHasHandlerFlag; 
@@ -77,6 +82,7 @@
         int (*navigatedFunc)(); 
         int (*clientRedirectFunc)(); 
         int (*serverRedirectFunc)(); 
+        int (*deprecatedSetTitleFunc)(); 
         int (*setTitleFunc)(); 
         int (*populateVisitedLinksFunc)(); 
     struct CGSize { 
@@ -96,21 +102,23 @@
             float width; 
             float height; 
         } size; 
-    struct HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id>> > { 
-        struct HashTable<unsigned long, std::__1::pair<unsigned long, WTF::RetainPtr<id>>, WTF::PairFirstExtractor<std::__1::pair<unsigned long, WTF::RetainPtr<id>>>, WTF::IntHash<unsigned long>, WTF::HashMapValueTraits<WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id>>>, WTF::HashTraits<unsigned long> > { 
-            struct pair<unsigned long, WTF::RetainPtr<id> > {} *m_table; 
+    struct HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id> > > { 
+        struct HashTable<unsigned long, WTF::KeyValuePair<unsigned long, WTF::RetainPtr<id> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long, WTF::RetainPtr<id> > >, WTF::IntHash<unsigned long>, WTF::HashMapValueTraits<WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id> > >, WTF::HashTraits<unsigned long> > { 
+            struct KeyValuePair<unsigned long, WTF::RetainPtr<id> > {} *m_table; 
             int m_tableSize; 
             int m_tableSizeMask; 
             int m_keyCount; 
             int m_deletedCount; 
         } m_impl; 
-    struct OwnPtr<LayerFlushController> { 
+    struct RefPtr<LayerFlushController> { 
         struct LayerFlushController {} *m_ptr; 
     struct CGSize { 
         float width; 
         float height; 
     struct RefPtr<WebCore::HistoryItem> { 
         struct HistoryItem {} *m_ptr; 
+    struct RetainPtr<NSData> { 
+        struct NSData { Class x_0_1_1; } *m_ptr; 
     id UIDelegate;
     id UIDelegateForwarder;
     id UIKitDelegate;
@@ -131,10 +139,8 @@
     struct CGColor { } *backgroundColor;
     BOOL becomingFirstResponder;
     BOOL becomingFirstResponderFromOutside;
-    BOOL catchesDelegateExceptions;
     BOOL closed;
     BOOL closing;
-    BOOL cssAnimationsSuspended;
     WebNodeHighlight *currentNodeHighlight;
     float customDeviceScaleFactor;
     int didDrawTiles;
@@ -183,10 +189,9 @@
     id resourceProgressDelegateForwarder;
     id scriptDebugDelegate;
     } scriptDebugDelegateImplementations;
-    BOOL selectTrailingWhitespaceEnabled;
     BOOL shouldCloseWithWindow;
     BOOL shouldUpdateWhileOffscreen;
-    BOOL smartInsertDeleteEnabled;
+    } sourceApplicationAuditData;
     int spellCheckerDocumentTag;
     BOOL tabKeyCyclesThroughElementsChanged;
     BOOL useSiteSpecificSpoofing;

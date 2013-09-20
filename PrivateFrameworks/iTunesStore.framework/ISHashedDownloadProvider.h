@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSString;
+@class ISHashError, NSArray, NSString;
 
 @interface ISHashedDownloadProvider : ISDataProvider <NSCopying> {
     struct CC_MD5state_st { 
@@ -16,6 +16,7 @@
         int num; 
     int _fileDescriptor;
     NSArray *_hashes;
+    ISHashError *_lastHashError;
     NSString *_localFilePath;
     } _md5Context;
     long long _numberOfBytesToHash;
@@ -25,6 +26,7 @@
 }
 
 @property(retain) NSArray * hashes;
+@property(copy) ISHashError * lastHashError;
 @property(retain) NSString * localFilePath;
 @property long long numberOfBytesToHash;
 @property BOOL shouldResumeFromLocalBytes;
@@ -39,17 +41,19 @@
 - (BOOL)_writeDataWithHashing:(id)arg1 returningError:(id*)arg2;
 - (BOOL)_writeDataWithoutHashing:(id)arg1 returningError:(id*)arg2;
 - (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
-- (void)closeStream;
+- (id)closeStream;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)hashes;
 - (id)init;
 - (BOOL)isStream;
+- (id)lastHashError;
 - (id)localFilePath;
 - (long long)numberOfBytesToHash;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (void)resetStream;
 - (void)setHashes:(id)arg1;
+- (void)setLastHashError:(id)arg1;
 - (void)setLocalFilePath:(id)arg1;
 - (void)setNumberOfBytesToHash:(long long)arg1;
 - (void)setShouldResumeFromLocalBytes:(BOOL)arg1;

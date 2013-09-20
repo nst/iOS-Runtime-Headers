@@ -17,7 +17,7 @@
 
 - (void)_callServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id)arg3;
 - (id)_connection;
-- (id)_createMessageForService:(id)arg1 arguments:(id)arg2;
+- (id)_createMessageForService:(id)arg1 arguments:(id)arg2 index:(long long*)arg3;
 - (id)_createServiceOnQueue:(id)arg1;
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id*)arg3;
 - (void)_generateUnitTestResponsesForResultArray:(id)arg1;

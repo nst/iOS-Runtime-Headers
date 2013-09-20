@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIRemoteWebViewControllerProtocol>, WebUIBrowserLoadingController, _UIServiceWebView;
+@class WebUIBrowserLoadingController, _UIServiceWebView;
 
-@interface _UIServiceWebViewController : UIViewController <XPCProxyTarget, _UIServiceWebViewControllerProtocol, WebUIBrowserLoadingControllerDelegate> {
+@interface _UIServiceWebViewController : UIViewController <_UIServiceWebViewControllerProtocol, WebUIBrowserLoadingControllerDelegate> {
     WebUIBrowserLoadingController *_loadingController;
-    <_UIRemoteWebViewControllerProtocol> *_remoteViewControllerProxy;
     _UIServiceWebView *_uiWebView;
 }
+
++ (id)_exportedInterface;
++ (id)_remoteViewControllerInterface;
 
 - (BOOL)_isInternalInstall;
 - (id)_makeAlertView;
@@ -17,6 +19,7 @@
 - (void)_remotelyDispatchWillPresentViewControllerWithCompletionHandler:(id)arg1;
 - (void)_setupRemoteInspectorDetailsForRequestingProcess;
 - (void)_webContentSizeWithReplyHandler:(id)arg1;
+- (void)_willAppearInRemoteViewController;
 - (void)browserLoadingController:(id)arg1 didFinishLoadingWithError:(id)arg2 dataSource:(id)arg3;
 - (void)browserLoadingControllerDidStartLoading:(id)arg1;
 - (void)browserLoadingControllerDidUpdateBackForward:(id)arg1;
@@ -34,12 +37,10 @@
 - (void)loadUserTypedAddress:(id)arg1;
 - (void)loadView;
 - (id)localizedApplicationNameForProcess:(int)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)reload;
 - (void)setShouldDecidePolicyRemotely:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)stopLoading;
-- (void)willAppearInRemoteViewController:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

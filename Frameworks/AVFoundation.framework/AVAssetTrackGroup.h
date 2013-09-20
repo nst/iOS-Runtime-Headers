@@ -2,15 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray;
+@class AVAssetTrackGroupInternal, NSArray;
 
-@interface AVAssetTrackGroup : AVTrackGroup {
-    id _assetComparisonToken;
-    NSArray *_trackIDs;
+@interface AVAssetTrackGroup : NSObject <NSCopying> {
+    AVAssetTrackGroupInternal *_assetTrackGroup;
 }
 
+@property(readonly) NSArray * trackIDs;
+
 - (id)_assetComparisonToken;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)finalize;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithAsset:(id)arg1 trackIDs:(id)arg2;

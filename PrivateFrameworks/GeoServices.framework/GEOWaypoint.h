@@ -4,7 +4,7 @@
 
 @class GEOLocation, GEOPlaceSearchRequest, NSMutableArray;
 
-@interface GEOWaypoint : PBCodable {
+@interface GEOWaypoint : PBCodable <NSCopying> {
     NSMutableArray *_entryPoints;
     GEOLocation *_location;
     GEOPlaceSearchRequest *_placeSearchRequest;
@@ -19,6 +19,7 @@
 - (void)addEntryPoint:(id)arg1;
 - (void)clearEntryPoints;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -29,6 +30,8 @@
 - (BOOL)hasPlaceSearchRequest;
 - (unsigned int)hash;
 - (id)initWithLocation:(id)arg1;
+- (id)initWithMapItem:(id)arg1 includeEntryPoints:(BOOL)arg2;
+- (id)initWithPlace:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)location;
 - (id)locationForWaypoint;

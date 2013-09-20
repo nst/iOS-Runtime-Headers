@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary, NSMutableIndexSet, NSMutableSet, PLPhotoLibrary;
+@class NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSString, PLPhotoLibrary;
 
 @interface PLFileSystemAssetImporter : NSObject {
     NSMutableDictionary *_existingOIDsByUUID;
@@ -10,6 +10,7 @@
     NSMutableDictionary *_existingUUIDsByPath;
     BOOL _hasProcessedAnyAssets;
     PLPhotoLibrary *_photoLibrary;
+    NSString *_photoLibraryStoreUUID;
     NSMutableIndexSet *_thumbIndexes;
     unsigned int _thumbnailBatchFetchSize;
 }
@@ -20,11 +21,10 @@
 @property unsigned int thumbnailBatchFetchSize;
 
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
-- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2 forceInsert:(BOOL)arg3 forceUpdate:(BOOL)arg4;
-- (id)addAssetWithURLs:(id)arg1 usingThumbnailsInformation:(id)arg2;
+- (id)addAssetWithURLs:(id)arg1 forceInsert:(BOOL)arg2 forceUpdate:(BOOL)arg3;
+- (id)addAssetWithURLs:(id)arg1;
 - (void)addAvailableThumbnailIndex:(unsigned int)arg1;
 - (id)assetURLisInDatabase:(id)arg1;
-- (void)createThumbnailForVideoAsset:(id)arg1;
 - (void)dealloc;
 - (id)existingOIDsByUUID;
 - (id)existingUUIDs;
@@ -36,7 +36,8 @@
 - (void)setExistingUUIDsByPath:(id)arg1;
 - (void)setModificationAndCreationDateOnAsset:(id)arg1 withURL:(id)arg2;
 - (void)setThumbnailBatchFetchSize:(unsigned int)arg1;
-- (BOOL)setupPhotoAsset:(id)arg1 withURL:(id)arg2 thumbnailsInformation:(id)arg3 allowedToResetThumbnails:(BOOL)arg4;
+- (BOOL)setupPhotoAsset:(id)arg1 withURL:(id)arg2;
+- (BOOL)setupVideoAsset:(id)arg1 withURL:(id)arg2;
 - (unsigned int)thumbnailBatchFetchSize;
 
 @end

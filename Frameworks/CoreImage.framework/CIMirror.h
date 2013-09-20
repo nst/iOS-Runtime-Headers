@@ -10,9 +10,9 @@
     CIVector *inputPoint;
 }
 
-@property(copy) NSNumber * inputAngle;
+@property(retain) NSNumber * inputAngle;
 @property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputPoint;
+@property(retain) CIVector * inputPoint;
 
 + (id)customAttributes;
 

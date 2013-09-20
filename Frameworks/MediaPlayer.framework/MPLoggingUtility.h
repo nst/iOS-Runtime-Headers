@@ -7,5 +7,7 @@
 
 + (void)debugLog:(id)arg1;
 + (void)debugLogForDefaultsKey:(id)arg1 format:(id)arg2;
++ (void)debugLogForMusicPlayerControllerWithFormat:(id)arg1;
++ (void)debugLogForRadioPlaybackPerformanceWithFormat:(id)arg1;
 
 @end

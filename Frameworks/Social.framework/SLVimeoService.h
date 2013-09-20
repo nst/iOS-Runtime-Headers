@@ -6,8 +6,15 @@
 }
 
 - (id)accountTypeIdentifier;
+- (id)activityImage;
+- (id)activityTitle;
 - (int)authenticationStyle;
 - (BOOL)isFirstClassService;
+- (int)maximumImageCount;
+- (int)maximumURLCount;
+- (int)maximumVideoCount;
+- (int)maximumVideoDataSize;
+- (int)maximumVideoTimeLimit;
 - (id)serviceType;
 
 @end

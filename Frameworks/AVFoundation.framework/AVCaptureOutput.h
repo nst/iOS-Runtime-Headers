@@ -24,15 +24,18 @@
 - (id)connections;
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;
+- (void)didStartForSessionWithoutGraphRebuild:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (id)firstEnabledConnectionForMediaType:(id)arg1;
 - (void)handleEnabledChangedForConnection:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)init;
 - (id)liveConnections;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })metadataOutputRectOfInterestForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)notReadyError;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (struct CGSize { float x1; float x2; })outputSizeForCaptureOptions:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForMetadataOutputRectOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeConnection:(id)arg1;
 - (id)session;
 - (void)setSession:(id)arg1;

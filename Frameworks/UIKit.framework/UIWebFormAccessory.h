@@ -10,6 +10,8 @@
     UIBarButtonItem *_doneButton;
     UIBarButtonItem *_flexibleSpaceItem;
     UIToolbar *_leftToolbar;
+    UIBarButtonItem *_nextItem;
+    UIBarButtonItem *_previousItem;
     UIToolbar *_rightToolbar;
     UISegmentedControl *_tab;
     <UIWebFormAccessoryDelegate> *delegate;
@@ -18,31 +20,33 @@
 @property(retain) UIBarButtonItem * _autofill;
 @property(retain) UIBarButtonItem * _clearButton;
 @property(retain) UISegmentedControl * _tab;
-@property(getter=isAutoFillEnabled) BOOL autoFillEnabled;
 @property <UIWebFormAccessoryDelegate> * delegate;
 @property(getter=isNextEnabled) BOOL nextEnabled;
 @property(getter=isPreviousEnabled) BOOL previousEnabled;
 
 + (id)toolbarWithItems:(id)arg1;
 
+- (void)_applyTreatmentToAutoFillLabel;
+- (id)_autoFillButton;
 - (id)_autofill;
 - (id)_clearButton;
+- (void)_nextTapped:(id)arg1;
 - (void)_orientationDidChange:(id)arg1;
+- (void)_previousTapped:(id)arg1;
 - (void)_refreshAutofillPresentation;
 - (id)_tab;
+- (void)_tabSegmentedControlDidChange:(id)arg1;
 - (void)_updateFrame;
 - (void)autoFill:(id)arg1;
 - (void)clear:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)done:(id)arg1;
+- (void)hideAutoFillButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAutoFillEnabled;
 - (BOOL)isNextEnabled;
 - (BOOL)isPreviousEnabled;
 - (void)layoutSubviews;
-- (void)setAutoFillEnabled:(BOOL)arg1;
-- (void)setAutoFillVisible:(BOOL)arg1;
 - (void)setClearVisible:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNextEnabled:(BOOL)arg1;
@@ -50,6 +54,7 @@
 - (void)set_autofill:(id)arg1;
 - (void)set_clearButton:(id)arg1;
 - (void)set_tab:(id)arg1;
-- (void)tab:(id)arg1;
+- (void)showAutoFillButton;
+- (void)showAutoFillButtonWithTitle:(id)arg1;
 
 @end

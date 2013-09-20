@@ -2,29 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class UILabel, UIView;
-
 @interface StepByStepUIViewController_ReplaceNetworkChoice : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
-    UIView *justTextContainerView;
-    UILabel *justTextLabel;
-    UIView *tableHeaderContainerView;
 }
-
-@property(retain) UIView * justTextContainerView;
-@property(retain) UILabel * justTextLabel;
-@property(retain) UIView * tableHeaderContainerView;
 
 - (id)devicePickerLabel;
 - (id)deviceTableLabel;
-- (id)justTextContainerView;
-- (id)justTextLabel;
 - (void)prepareParams;
-- (void)setJustTextContainerView:(id)arg1;
-- (void)setJustTextLabel:(id)arg1;
-- (void)setTableHeaderContainerView:(id)arg1;
 - (void)setupDevices;
 - (void)setupHeaderAndFooter;
-- (id)tableHeaderContainerView;
 - (void)updateNavigationButtons;
 
 @end

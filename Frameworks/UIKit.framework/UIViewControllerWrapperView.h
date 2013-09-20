@@ -3,13 +3,19 @@
  */
 
 @interface UIViewControllerWrapperView : UIView {
+    BOOL _tightWrappingDisabled;
 }
+
+@property BOOL tightWrappingDisabled;
 
 + (id)existingWrapperViewForView:(id)arg1;
 + (id)wrapperViewForView:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (id)wrapperViewForView:(id)arg1 wrapperFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 viewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTightWrappingDisabled:(BOOL)arg1;
+- (BOOL)tightWrappingDisabled;
 - (void)unwrapView:(id)arg1;
 - (void)unwrapView;
 

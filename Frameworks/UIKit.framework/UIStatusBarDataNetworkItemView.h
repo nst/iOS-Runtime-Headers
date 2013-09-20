@@ -10,9 +10,9 @@
     int _wifiStrengthRaw;
 }
 
-- (id)_dataNetworkImageForStyle:(int)arg1;
+- (id)_dataNetworkImage;
 - (id)_stringForRSSI;
-- (id)contentsImageForStyle:(int)arg1;
+- (id)contentsImage;
 - (float)extraLeftPadding;
 - (float)maximumOverlap;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

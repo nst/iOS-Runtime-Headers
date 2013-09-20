@@ -8,10 +8,12 @@
 
 @property unsigned short provider;
 
+- (id)_mapkit_initForCompletionsWithEntriesType:(int)arg1 listType:(int)arg2;
 - (id)_mapkit_initWithLocalSearchRequest:(id)arg1;
 - (id)init;
 - (unsigned short)provider;
 - (Class)responseClass;
+- (void)setDeviceGEOCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setProvider:(unsigned short)arg1;
 
 @end

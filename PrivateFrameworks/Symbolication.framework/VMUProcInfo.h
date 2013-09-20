@@ -60,5 +60,6 @@
 - (BOOL)terminate;
 - (void)update;
 - (id)userAppName;
+- (id)valueForEnvVar:(id)arg1;
 
 @end

@@ -42,7 +42,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

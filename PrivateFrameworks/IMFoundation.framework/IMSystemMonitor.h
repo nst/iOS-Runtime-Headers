@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSDate, NSMutableArray, NSString, NSTimer;
+@class NSDate, NSMutableArray, NSString;
 
 @interface IMSystemMonitor : NSObject {
     BOOL _active;
@@ -22,9 +22,9 @@
     BOOL _screensaverActive;
     BOOL _switchedOut;
     BOOL _systemLocked;
-    NSTimer *_timer;
     BOOL _underFirstLock;
     NSString *_userID;
+    int _userIdleToken;
     BOOL _usesPowerNotifications;
     BOOL _usesSystemIdleState;
     BOOL _watchesDataProtectionLockState;
@@ -39,7 +39,6 @@
 @property BOOL _idleOverride;
 @property(retain) NSDate * _idleStart;
 @property(retain) NSMutableArray * _listeners;
-@property(retain) NSTimer * _timer;
 @property BOOL _underFirstLock;
 @property(retain) NSString * _userID;
 @property(readonly) NSDate * dateScreenLightLastChanged;
@@ -60,6 +59,7 @@
 @property(readonly) double systemIdleTime;
 @property(readonly) BOOL systemIsShuttingDown;
 @property(readonly) BOOL systemIsSleeping;
+@property int userIdleToken;
 @property BOOL usesPowerNotifications;
 @property BOOL usesSystemIdleState;
 @property BOOL watchesDataProtectionLockState;
@@ -80,6 +80,7 @@
 - (double)_delayTime;
 - (void)_deliverNotificationSelector:(SEL)arg1;
 - (id)_earlyListeners;
+- (void)_forceResumed;
 - (void)_handleLoginWindowNotification:(id)arg1;
 - (BOOL)_idleOverride;
 - (id)_idleStart;
@@ -111,10 +112,10 @@
 - (void)_systemDidWake;
 - (void)_systemWillShutdown;
 - (void)_systemWillSleep;
-- (id)_timer;
 - (BOOL)_underFirstLock;
 - (void)_unregisterForLoginWindowNotifications;
 - (void)_unregisterForRestoreNotifications;
+- (void)_updateIdleState;
 - (id)_userID;
 - (void)addListener:(id)arg1;
 - (id)dateScreenLightLastChanged;
@@ -138,6 +139,7 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setIsFastUserSwitched:(BOOL)arg1;
 - (void)setReceivesMemoryWarnings:(BOOL)arg1;
+- (void)setUserIdleToken:(int)arg1;
 - (void)setUsesPowerNotifications:(BOOL)arg1;
 - (void)setUsesSystemIdleState:(BOOL)arg1;
 - (void)setWatchesDataProtectionLockState:(BOOL)arg1;
@@ -149,12 +151,12 @@
 - (void)set_idleOverride:(BOOL)arg1;
 - (void)set_idleStart:(id)arg1;
 - (void)set_listeners:(id)arg1;
-- (void)set_timer:(id)arg1;
 - (void)set_underFirstLock:(BOOL)arg1;
 - (void)set_userID:(id)arg1;
 - (double)systemIdleTime;
 - (BOOL)systemIsShuttingDown;
 - (BOOL)systemIsSleeping;
+- (int)userIdleToken;
 - (BOOL)usesPowerNotifications;
 - (BOOL)usesSystemIdleState;
 - (BOOL)watchesDataProtectionLockState;

@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL, SAWeatherLocation;
+@class SAWeatherLocation;
 
-@interface SAWeatherLocationDelete : SABaseClientBoundCommand {
+@interface SAWeatherLocationDelete : SADomainCommand {
 }
 
-@property(copy) NSURL * targetAppId;
 @property(retain) SAWeatherLocation * weatherLocation;
 
 + (id)locationDelete;
@@ -16,9 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
-- (void)setTargetAppId:(id)arg1;
 - (void)setWeatherLocation:(id)arg1;
-- (id)targetAppId;
 - (id)weatherLocation;
 
 @end

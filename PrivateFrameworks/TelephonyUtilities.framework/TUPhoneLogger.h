@@ -2,37 +2,44 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class TUInMemoryAppender, TURemoteAppender;
+@class TURemoteAppender;
 
 @interface TUPhoneLogger : NSObject <TULogger> {
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     struct dispatch_queue_s { } *_appenderQueue;
-    TUInMemoryAppender *_inMemoryAppender;
-    int _lock;
-    int _loggingConfiguration;
+    BOOL _backtracesEnabled;
+    long _createAppenderOnce;
+    } _lock;
     BOOL _loggingConfigurationCached;
+    BOOL _loggingEnabled;
     TURemoteAppender *_remoteAppender;
-    id _signalHandler;
+    BOOL _symbolicationEnabled;
 }
+
+@property(readonly) TURemoteAppender * appender;
+@property BOOL backtracesEnabled;
+@property(readonly) BOOL loggingEnabled;
+@property BOOL symbolicationEnabled;
 
 + (id)sharedPhoneLogger;
 
-- (id)_appender;
-- (void)_handleSignal:(int)arg1;
 - (void)_loggingChanged;
-- (int)_loggingConfiguration;
 - (BOOL)_shouldLogWithLevel:(int)arg1 topic:(id)arg2;
+- (id)appender;
+- (BOOL)backtracesEnabled;
 - (void)dealloc;
 - (id)identifier;
 - (id)init;
 - (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 format:(id)arg4 args:(void*)arg5;
 - (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 format:(id)arg4;
 - (void)logWithLevel:(int)arg1 topic:(id)arg2 backtrace:(BOOL)arg3 text:(id)arg4;
+- (BOOL)loggingEnabled;
+- (void)setBacktracesEnabled:(BOOL)arg1;
+- (void)setSymbolicationEnabled:(BOOL)arg1;
 - (BOOL)shouldLog;
 - (BOOL)shouldLogWithLevel:(int)arg1 topic:(id)arg2;
-- (id)signalHandler;
+- (BOOL)symbolicationEnabled;
 
 @end

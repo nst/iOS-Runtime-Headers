@@ -31,6 +31,11 @@
 
 - (id)URL;
 - (id)URLs;
+- (id)__ck_dataForPasteboardType:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)__ck_pasteboardTypeListRTF;
+- (id)__ck_pasteboardTypesForIndex:(unsigned int)arg1;
+- (id)__ck_preferredPasteboardValues;
+- (id)__ck_valueForPasteboardType:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_addItems:(id)arg1 oldPasteboardTypes:(id)arg2;
 - (id)_initWithName:(id)arg1 system:(BOOL)arg2 create:(BOOL)arg3;
 - (void)_pasteboardChanged:(id)arg1;
@@ -50,6 +55,7 @@
 - (id)itemSetWithPasteboardTypes:(id)arg1;
 - (id)items;
 - (void)mf_addPasteboardRepresentationsForAttachments:(id)arg1;
+- (void)mf_addPasteboardRepresentationsForTextAttachments:(id)arg1;
 - (id)mf_getAttachmentsPasteboardRepresentations;
 - (id)name;
 - (int)numberOfItems;

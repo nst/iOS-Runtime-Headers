@@ -2,14 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIImageView;
-
-@interface MKPinAnnotationViewInternal : MKAnnotationViewInternal {
-    BOOL animatesDrop;
-    id delegate;
-    int pinType;
-    UIImageView *shadowView;
-    int state;
+@interface MKPinAnnotationViewInternal : NSObject {
 }
 
 @end

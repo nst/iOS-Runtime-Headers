@@ -5,6 +5,8 @@
 @interface PKPassGenericFrontFaceView : PKPassFrontFaceView {
 }
 
-- (id)passFaceTemplate;
+- (id)shortFaceTemplate;
+- (id)shortScrunchedFaceTemplate;
+- (id)tallFaceTemplate;
 
 @end

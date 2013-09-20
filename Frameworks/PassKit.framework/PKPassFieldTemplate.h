@@ -5,6 +5,7 @@
 @class NSNumber, UIFont;
 
 @interface PKPassFieldTemplate : NSObject {
+    NSNumber *_boxedSuppressesEmptyLabel;
     NSNumber *_boxedSuppressesLabel;
     NSNumber *_boxedTextAlignment;
     NSNumber *_boxedValueCanWrap;
@@ -14,11 +15,13 @@
     Class _viewSubclass;
 }
 
+@property(retain) NSNumber * boxedSuppressesEmptyLabel;
 @property(retain) NSNumber * boxedSuppressesLabel;
 @property(retain) NSNumber * boxedTextAlignment;
 @property(retain) NSNumber * boxedValueCanWrap;
 @property(retain) NSNumber * boxedVerticalPadding;
 @property(retain) UIFont * labelFont;
+@property BOOL suppressesEmptyLabel;
 @property BOOL suppressesLabel;
 @property int textAlignment;
 @property BOOL valueCanWrap;
@@ -31,23 +34,27 @@
 + (id)fieldTemplateWithVerticalPadding:(float)arg1;
 + (id)fieldTemplateWithViewSubclass:(Class)arg1;
 
+- (id)boxedSuppressesEmptyLabel;
 - (id)boxedSuppressesLabel;
 - (id)boxedTextAlignment;
 - (id)boxedValueCanWrap;
 - (id)boxedVerticalPadding;
 - (void)dealloc;
 - (id)labelFont;
+- (void)setBoxedSuppressesEmptyLabel:(id)arg1;
 - (void)setBoxedSuppressesLabel:(id)arg1;
 - (void)setBoxedTextAlignment:(id)arg1;
 - (void)setBoxedValueCanWrap:(id)arg1;
 - (void)setBoxedVerticalPadding:(id)arg1;
 - (void)setLabelFont:(id)arg1;
+- (void)setSuppressesEmptyLabel:(BOOL)arg1;
 - (void)setSuppressesLabel:(BOOL)arg1;
 - (void)setTextAlignment:(int)arg1;
 - (void)setValueCanWrap:(BOOL)arg1;
 - (void)setValueFont:(id)arg1;
 - (void)setVerticalPadding:(float)arg1;
 - (void)setViewSubclass:(Class)arg1;
+- (BOOL)suppressesEmptyLabel;
 - (BOOL)suppressesLabel;
 - (int)textAlignment;
 - (BOOL)valueCanWrap;

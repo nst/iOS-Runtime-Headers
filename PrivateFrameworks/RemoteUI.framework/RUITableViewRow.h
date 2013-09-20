@@ -6,12 +6,14 @@
 
 @interface RUITableViewRow : RUIElement <UIPickerViewDelegate, UITextFieldDelegate> {
     float _cachedHeight;
+    BOOL _configured;
     NSData *_data;
     NSDate *_date;
     NSDate *_dateMax;
     NSDate *_dateMin;
     id _delegate;
     NSDictionary *_deleteAction;
+    float _height;
     BOOL _rowInvalid;
     NSMutableArray *_selectOptions;
     int _selectedRow;
@@ -21,27 +23,36 @@
     UIWebView *_webView;
 }
 
+@property BOOL configured;
 @property(retain) NSData * data;
 @property(retain) NSDate * date;
 @property(retain) NSDate * dateMax;
 @property(retain) NSDate * dateMin;
 @property(retain) NSDictionary * deleteAction;
+@property float height;
 @property BOOL rowInvalid;
 @property(readonly) int selectedRow;
 
-+ (id)_monthAndDayFormatter;
++ (id)_formatterForDateYMD;
++ (id)_formatterForMonthAndDay;
++ (id)_formatterForShortDate;
++ (id)_timeZoneAdjustedDateFromDate:(id)arg1;
++ (void)initialize;
 + (void)resetLocale;
 
 - (void)_activate;
-- (id)_dateFormatter;
 - (void)_datePickerChanged:(id)arg1;
+- (void)accessoryImageLoaded;
 - (void)clearCachedHeight;
+- (BOOL)configured;
 - (id)data;
 - (id)date;
 - (id)dateMax;
 - (id)dateMin;
 - (void)dealloc;
 - (id)deleteAction;
+- (float)height;
+- (BOOL)loadAccessoryImage;
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
@@ -51,18 +62,23 @@
 - (BOOL)rowInvalid;
 - (id)selectOptions;
 - (int)selectedRow;
+- (void)setAttributes:(id)arg1;
+- (void)setConfigured:(BOOL)arg1;
 - (void)setData:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDateMax:(id)arg1;
 - (void)setDateMin:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteAction:(id)arg1;
+- (void)setHeight:(float)arg1;
 - (void)setImage:(id)arg1;
 - (void)setRowInvalid:(BOOL)arg1;
+- (id)sourceURL;
 - (BOOL)supportsAutomaticSelection;
 - (id)tableCell;
 - (Class)tableCellClass;
 - (int)tableCellStyle;
+- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 
 @end

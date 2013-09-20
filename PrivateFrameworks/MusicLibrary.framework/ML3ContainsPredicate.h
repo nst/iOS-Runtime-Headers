@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
+- (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

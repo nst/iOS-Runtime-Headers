@@ -10,11 +10,12 @@
 
 @property <CKSMSComposeRemoteViewControllerDelegate> * delegate;
 
++ (id)exportedInterface;
 + (id)requestViewControllerWithConnectionHandler:(id)arg1;
++ (id)serviceViewControllerInterface;
 
 - (void)dealloc;
 - (id)delegate;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)smsComposeControllerAppeared;
 - (void)smsComposeControllerCancelled;

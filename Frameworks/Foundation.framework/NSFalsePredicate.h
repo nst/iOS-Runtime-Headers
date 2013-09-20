@@ -5,9 +5,11 @@
 @interface NSFalsePredicate : NSPredicate {
 }
 
++ (BOOL)_allowsEvaluation;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultInstance;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)autorelease;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSDictionary;
+@class CUICatalog, CUIStyleEffectConfiguration;
 
 @interface NSLineFragmentRenderingContext : NSObject {
     struct CGRect { 
@@ -18,8 +18,10 @@
         unsigned int _isRTL : 1; 
         unsigned int _vAdvance : 1; 
         unsigned int _flipped : 1; 
-        unsigned int _reserved : 29; 
+        unsigned int _usesSimpleTextEffects : 1; 
+        unsigned int _reserved : 28; 
     struct CGSize { float x1; float x2; } *_advancements;
+    CUICatalog *_catalog;
     float _elasticWidth;
     } _flags;
     unsigned short *_glyphs;
@@ -30,14 +32,22 @@
     long _numRuns;
     float _rightControlWidth;
     void *_runs;
-    NSDictionary *_styledTextOptions;
+    CUIStyleEffectConfiguration *_styleEffects;
 }
+
+@property(retain) CUICatalog * cuiCatalog;
+@property(retain) CUIStyleEffectConfiguration * cuiStyleEffects;
+@property(getter=_usesSimpleTextEffects,setter=_setUsesSimpleTextEffects:) BOOL usesSimpleTextEffects;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 
 - (BOOL)_isDeallocating;
+- (void)_setUsesSimpleTextEffects:(BOOL)arg1;
 - (BOOL)_tryRetain;
+- (BOOL)_usesSimpleTextEffects;
+- (id)cuiCatalog;
+- (id)cuiStyleEffects;
 - (void)dealloc;
 - (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (float)elasticWidth;
@@ -48,8 +58,8 @@
 - (BOOL)isRTL;
 - (float)lineFragmentWidth;
 - (oneway void)release;
-- (void)setStyledTextOptions:(id)arg1;
+- (void)setCuiCatalog:(id)arg1;
+- (void)setCuiStyleEffects:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeWithBehavior:(int)arg1 usesFontLeading:(BOOL)arg2 baselineDelta:(float*)arg3;
-- (id)styledTextOptions;
 
 @end

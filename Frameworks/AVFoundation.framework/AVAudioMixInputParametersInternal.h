@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface AVAudioMixInputParametersInternal : NSObject {
+    NSString *audioTimePitchAlgorithm;
     NSMutableArray *ramps;
     struct opaqueMTAudioProcessingTap { } *tap;
     int trackID;

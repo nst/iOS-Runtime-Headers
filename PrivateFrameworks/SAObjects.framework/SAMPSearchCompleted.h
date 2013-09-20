@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, NSURL;
+@class NSArray, NSString;
 
-@interface SAMPSearchCompleted : SABaseClientBoundCommand <SAServerBoundCommand> {
+@interface SAMPSearchCompleted : SADomainCommand <SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;
 @property(copy) NSString * refId;
 @property(copy) NSArray * results;
-@property(copy) NSURL * targetAppId;
 
 + (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,7 +19,5 @@
 - (BOOL)requiresResponse;
 - (id)results;
 - (void)setResults:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

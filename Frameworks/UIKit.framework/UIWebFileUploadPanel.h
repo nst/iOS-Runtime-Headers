@@ -43,6 +43,7 @@
 - (void)_filePathFromMediaInfo:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
 - (id)_mediaTypesForPickerSourceType:(int)arg1;
 - (id)_photoPickerWithSourceType:(int)arg1;
+- (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned int)arg2 processedResults:(id)arg3 processedImageCount:(unsigned int)arg4 processedVideoCount:(unsigned int)arg5 successBlock:(id)arg6 failureBlock:(id)arg7;
 - (void)_processMediaInfoDictionaries:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)_showMediaSourceSelectionSheet;
 - (void)_showPhotoPickerWithSourceType:(int)arg1;

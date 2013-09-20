@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSUndoManager, UIResponder, UIResponder<UITextInput>, UIView, UIView<UITextInputPrivate>;
+@class NSArray, NSString, NSUndoManager, UIResponder, UIResponder<UITextInput>, UITextInputMode, UIView, UIView<UITextInputPrivate>;
 
-@interface UIResponder : NSObject <UITextInput_Internal> {
+@interface UIResponder : NSObject <UITextInput_Internal, UITextInputAdditions> {
 }
 
 @property(getter=_proxyTextInput,readonly) UIResponder<UITextInput> * __content;
@@ -16,7 +16,10 @@
 @property(getter=isEditing,readonly) BOOL editing;
 @property(readonly) UIView * inputAccessoryView;
 @property(readonly) UIView * inputView;
+@property(readonly) NSArray * keyCommands;
 @property(copy) NSString * restorationIdentifier;
+@property(readonly) NSString * textInputContextIdentifier;
+@property(readonly) UITextInputMode * textInputMode;
 @property(readonly) NSUndoManager * undoManager;
 
 + (void)_cleanupAllStateRestorationTables;
@@ -24,9 +27,10 @@
 + (void)_finishStateRestoration;
 + (void)_prepareForSecondPassStateRestoration;
 + (void)_setRestoredIdentifierPathForObject:(id)arg1 identifierPath:(id)arg2;
-+ (void)_startTrackingObjectsWithIdentifiers;
-+ (void)_stopTrackingObjectsWithIdentifiers;
++ (void)_startDeferredTrackingObjectsWithIdentifiers;
++ (void)_stopDeferredTrackingObjectsWithIdentifiers;
 + (void)_updateStateRestorationIdentifierMap;
++ (void)clearTextInputContextIdentifier:(id)arg1;
 + (id)objectWithRestorationIdentifierPath:(id)arg1;
 
 - (id)_asTextSelection;
@@ -34,7 +38,9 @@
 - (void)_becomeFirstResponderAndMakeVisible;
 - (BOOL)_becomeFirstResponderWhenPossible;
 - (void)_beginPinningInputViews;
+- (BOOL)_canBecomeFirstResponder;
 - (BOOL)_canBecomeFirstResponderWhenPossible;
+- (BOOL)_canChangeFirstResponder:(id)arg1 toResponder:(id)arg2;
 - (BOOL)_canShowTextServices;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRect;
 - (unsigned long)_characterAfterCaretSelection;
@@ -47,21 +53,19 @@
 - (void)_completeForwardingTouches:(id)arg1 phase:(int)arg2 event:(id)arg3;
 - (BOOL)_containedInAbsoluteResponderChain;
 - (BOOL)_containsResponder:(id)arg1;
-- (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
-- (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
-- (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
-- (id)_deepestDefaultFirstResponder;
-- (id)_deepestDefaultFirstResponderMatching:(id)arg1;
+- (id)_deepestUnambiguousResponder;
 - (void)_deleteBackwardAndNotify:(BOOL)arg1;
 - (void)_deleteByWord;
 - (void)_deleteForwardAndNotify:(BOOL)arg1;
 - (void)_deleteToEndOfLine;
 - (void)_deleteToStartOfLine;
+- (void)_didChangeToFirstResponder:(id)arg1;
 - (id)_editingDelegate;
 - (void)_endPinningInputViews;
+- (void)_expandSelectionToBackwardDeletionCluster;
 - (void)_expandSelectionToStartOfWordBeforeCaretSelection;
 - (void)_expandSelectionToStartOfWordsBeforeCaretSelection:(int)arg1;
 - (void)_extendCurrentSelection:(int)arg1;
@@ -72,6 +76,7 @@
 - (id)_fullRange;
 - (id)_fullText;
 - (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)_hasMarkedTextOrRangedSelection;
 - (int)_indexForTextPosition:(id)arg1;
 - (BOOL)_isEmptySelection;
@@ -79,6 +84,8 @@
 - (BOOL)_isRootForKeyResponderCycle;
 - (BOOL)_isTransitioningFromView:(id)arg1;
 - (BOOL)_isViewController;
+- (id)_keyCommandForEvent:(id)arg1;
+- (id)_keyCommands;
 - (id)_keyInput;
 - (id)_keyboardResponder;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(id)arg1;
@@ -95,30 +102,42 @@
 - (id)_moveToStartOfParagraph:(BOOL)arg1 withHistory:(id)arg2;
 - (id)_moveToStartOfWord:(BOOL)arg1 withHistory:(id)arg2;
 - (id)_moveUp:(BOOL)arg1 withHistory:(id)arg2;
+- (void)_moveWithEvent:(id)arg1;
 - (id)_newPhraseBoundaryGestureRecognizer;
-- (id)_nextFirstResponderIfAllowed;
 - (id)_nextKeyResponder;
 - (id)_nextViewControllerInResponderChain;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_nsrangeForTextRange:(id)arg1;
 - (void)_phraseBoundaryGesture:(id)arg1;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
+- (id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2;
 - (id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4;
 - (id)_previousKeyResponder;
-- (BOOL)_promoteDeepestDefaultFirstResponder;
 - (id)_proxyTextInput;
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (id)_rangeOfLineEnclosingPosition:(id)arg1;
 - (id)_rangeOfParagraphEnclosingPosition:(id)arg1;
+- (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
+- (void)_rebuildStateRestorationIdentifierPath;
 - (void)_replaceCurrentWordWithText:(id)arg1;
 - (BOOL)_requiresKeyboardResetOnReload;
 - (BOOL)_requiresKeyboardWhenFirstResponder;
+- (BOOL)_requiresKeyboardWindowWhenFirstResponder;
 - (void)_resignFirstResponder;
+- (BOOL)_resignIfContainsFirstResponder;
 - (id)_responderForBecomeFirstResponder;
 - (id)_responderForEditing;
+- (id)_responderSelectionContainerViewForResponder:(id)arg1;
+- (id)_responderSelectionImage;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_responderSelectionRectForWindow:(id)arg1;
+- (id)_responderWindow;
 - (id)_restorationIdentifierPath;
 - (void)_scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (void)_selectAll;
 - (id)_selectableText;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedNSRange;
 - (int)_selectionAffinity;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_selectionAsNSRange;
 - (BOOL)_selectionAtDocumentEnd;
 - (BOOL)_selectionAtDocumentStart;
 - (BOOL)_selectionAtWordStart;
@@ -130,16 +149,13 @@
 - (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2;
 - (id)_setSelectionRangeWithHistory:(id)arg1;
-- (BOOL)_shouldUseDefaultFirstResponder;
-- (BOOL)_shouldUseKeyWindowStack;
-- (BOOL)_shouldUseNextFirstResponder;
 - (id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
-- (id)_targetForAction:(SEL)arg1 withSender:(id)arg2;
+- (BOOL)_supportsBecomeFirstResponderWhenPossible;
 - (id)_textColorForCaretSelection;
 - (id)_textSelectingContainer;
-- (void)_trackObjectWithIdentifier:(id)arg1;
 - (void)_unmarkText;
 - (void)_updateSelectionWithTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2;
+- (void)_wheelChangedWithEvent:(id)arg1;
 - (id)_window;
 - (void)_windowBecameKey;
 - (void)_windowResignedKey;
@@ -150,12 +166,9 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canResignFirstResponder;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
-- (id)defaultFirstResponder;
-- (void)downloadAsset:(id)arg1 completionHandler:(id)arg2;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)endSelectionChange;
 - (id)firstResponder;
-- (id)firstViewControllerInResponderChain;
 - (void)gestureChanged:(struct __GSEvent { }*)arg1;
 - (void)gestureEnded:(struct __GSEvent { }*)arg1;
 - (void)gestureStarted:(struct __GSEvent { }*)arg1;
@@ -165,18 +178,12 @@
 - (BOOL)isEditable;
 - (BOOL)isEditing;
 - (BOOL)isFirstResponder;
+- (id)keyCommands;
 - (void)motionBegan:(int)arg1 withEvent:(id)arg2;
 - (void)motionCancelled:(int)arg1 withEvent:(id)arg2;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)mouseEntered:(struct __GSEvent { }*)arg1;
-- (void)mouseExited:(struct __GSEvent { }*)arg1;
-- (void)mouseMoved:(struct __GSEvent { }*)arg1;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (id)nextFirstResponder;
 - (id)nextResponder;
-- (void)purchaseAsset:(id)arg1 completionHandler:(id)arg2;
 - (void)reloadInputViews;
 - (void)reloadInputViewsWithoutReset;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
@@ -185,8 +192,11 @@
 - (void)scrollWheel:(struct __GSEvent { }*)arg1;
 - (int)selectionAffinity;
 - (void)setRestorationIdentifier:(id)arg1;
+- (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
+- (id)textInputContextIdentifier;
+- (id)textInputMode;
 - (id)textInputView;
-- (void)toggleVisibilityOfItemsInCompletionOffering:(id)arg1;
+- (id)tl_firstViewControllerInResponderChain;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

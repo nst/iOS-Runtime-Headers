@@ -10,13 +10,9 @@
 @property unsigned int tag;
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)initialize;
 
-- (void)NSOperationAdditions_dealloc;
 - (id)__;
 - (id)_implicitObservationInfo;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (void)addDependency:(id)arg1;
 - (void)cancel;
 - (id)completionBlock;
@@ -33,10 +29,7 @@
 - (void)main;
 - (void*)observationInfo;
 - (int)queuePriority;
-- (oneway void)release;
 - (void)removeDependency:(id)arg1;
-- (id)retain;
-- (unsigned int)retainCount;
 - (void)setCompletionBlock:(id)arg1;
 - (void)setObservationInfo:(void*)arg1;
 - (void)setQueuePriority:(int)arg1;

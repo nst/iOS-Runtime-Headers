@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UIView, UIWindow;
+@class NSArray, NSMutableArray, UIResponder, UIView, UIWindow;
 
-@interface UITouch : NSObject {
+@interface UITouch : NSObject <_UIResponderForwardable> {
     struct CGPoint { 
         float x; 
         float y; 
@@ -17,10 +17,14 @@
         unsigned int _isDelayed : 1; 
         unsigned int _sentTouchesEnded : 1; 
         unsigned int _abandonForwardingRecord : 1; 
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _displacement;
     BOOL _eaten;
+    int _edgeType;
     NSMutableArray *_forwardingRecord;
     NSMutableArray *_gestureRecognizers;
-    UIView *_gestureView;
     } _locationInWindow;
     float _movementMagnitudeSquared;
     unsigned char _pathIdentity;
@@ -37,12 +41,15 @@
     UIWindow *_window;
 }
 
+@property(setter=_setDisplacement:) struct CGSize { float x1; float x2; } _displacement;
 @property(getter=_isEaten,setter=_setEaten:) BOOL _eaten;
+@property(setter=_setEdgeType:) int _edgeType;
+@property(setter=_setForwardablePhase:) int _forwardablePhase;
 @property(setter=_setPathIdentity:) unsigned char _pathIdentity;
 @property(setter=_setPathIndex:) unsigned char _pathIndex;
 @property(setter=_setPathMajorRadius:) float _pathMajorRadius;
+@property(setter=_setResponder:,retain) UIResponder * _responder;
 @property(readonly) NSArray * gestureRecognizers;
-@property(retain) UIView * gestureView;
 @property BOOL isTap;
 @property int phase;
 @property(readonly) int phase;
@@ -59,17 +66,23 @@
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(int)arg2 view:(id)arg3;
 
+- (void)_abandonForwardingRecord;
 - (void)_addGestureRecognizer:(id)arg1;
 - (void)_clearGestureRecognizers;
 - (int)_compareIndex:(id)arg1;
+- (struct CGSize { float x1; float x2; })_displacement;
 - (float)_distanceFrom:(id)arg1 inView:(id)arg2;
+- (int)_edgeType;
+- (int)_forwardablePhase;
 - (id)_forwardingRecord;
 - (id)_gestureRecognizers;
+- (BOOL)_isAbandoningForwardingRecord;
 - (BOOL)_isEaten;
 - (BOOL)_isFirstTouchForView;
 - (BOOL)_isStationaryRelativeToTouches:(id)arg1;
 - (void)_loadStateFromTouch:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_locationInWindow:(id)arg1;
+- (id)_mutableForwardingRecord;
 - (unsigned char)_pathIdentity;
 - (unsigned char)_pathIndex;
 - (float)_pathMajorRadius;
@@ -78,26 +91,32 @@
 - (struct CGPoint { float x1; float x2; })_previousLocationInWindow:(id)arg1;
 - (void)_pushPhase:(int)arg1;
 - (void)_removeGestureRecognizer:(id)arg1;
+- (id)_responder;
+- (SEL)_responderSelectorForPhase:(int)arg1;
+- (void)_setDisplacement:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setEaten:(BOOL)arg1;
+- (void)_setEdgeType:(int)arg1;
+- (void)_setForwardablePhase:(int)arg1;
 - (void)_setIsFirstTouchForView:(BOOL)arg1;
 - (void)_setLocationInWindow:(struct CGPoint { float x1; float x2; })arg1 resetPrevious:(BOOL)arg2;
 - (void)_setPathIdentity:(unsigned char)arg1;
 - (void)_setPathIndex:(unsigned char)arg1;
 - (void)_setPathMajorRadius:(float)arg1;
+- (void)_setResponder:(id)arg1;
 - (void)_updateMovementMagnitudeForLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)gestureRecognizers;
-- (id)gestureView;
 - (int)info;
 - (BOOL)isDelayed;
 - (BOOL)isTap;
+- (struct CGPoint { float x1; float x2; })locationInNode:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (int)phase;
+- (struct CGPoint { float x1; float x2; })previousLocationInNode:(id)arg1;
 - (struct CGPoint { float x1; float x2; })previousLocationInView:(id)arg1;
 - (BOOL)sentTouchesEnded;
-- (void)setGestureView:(id)arg1;
 - (void)setIsDelayed:(BOOL)arg1;
 - (void)setIsTap:(BOOL)arg1;
 - (void)setPhase:(int)arg1;

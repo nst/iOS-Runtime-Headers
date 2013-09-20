@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSDictionary, NSMutableArray, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSSet, NSString, NSURL, PLManagedAsset, PLPlacesMapAnnotation, UIImage;
+@class NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSSet, NSString, NSURL, PLManagedAsset, PLPlacesMapAnnotation, UIImage;
 
-@interface PLPlace : NSObject <PLAssetContainer> {
+@interface PLPlace : NSObject <PLAlbumProtocol> {
     struct { 
         struct { 
             double latitude; 
@@ -53,9 +53,11 @@
 @property(readonly) NSOrderedSet * assets;
 @property(readonly) unsigned int assetsCount;
 @property(retain) NSSet * assetsSet;
+@property(readonly) BOOL canContributeToCloudSharedAlbum;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) BOOL canShowComments;
-@property(readonly) unsigned int count;
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } destinationRegion;
+@property(readonly) NSDate * endDate;
 @property(readonly) NSURL * groupURL;
 @property BOOL hasUnseenContentBoolValue;
 @property(retain) NSString * importSessionID;
@@ -63,26 +65,35 @@
 @property(readonly) BOOL isCloudSharedAlbum;
 @property(readonly) BOOL isEmpty;
 @property(readonly) BOOL isLibrary;
+@property(readonly) BOOL isMultipleContributorCloudSharedAlbum;
 @property(readonly) BOOL isOwnedCloudSharedAlbum;
+@property(readonly) BOOL isPanoramasAlbum;
+@property(readonly) BOOL isPendingPhotoStreamAlbum;
 @property(readonly) BOOL isPhotoStreamAlbum;
+@property(readonly) BOOL isStandInAlbum;
+@property(readonly) BOOL isWallpaperAlbum;
 @property(retain) PLManagedAsset * keyAsset;
 @property(readonly) NSNumber * kind;
 @property(readonly) int kindValue;
+@property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSString * localizedTitle;
 @property(readonly) NSMutableOrderedSet * mutableAssets;
 @property(readonly) NSString * name;
 @property unsigned int numberOfPhotos;
 @property unsigned int numberOfVideos;
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } originalRegion;
-@property unsigned int pendingItemsCount;
-@property unsigned int pendingItemsType;
+@property int pendingItemsCount;
+@property int pendingItemsType;
 @property(readonly) unsigned int photosCount;
 @property(readonly) UIImage * posterImage;
 @property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(readonly) id sectioningComparator;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(retain) NSDictionary * slideshowSettings;
 @property(readonly) id sortingComparator;
+@property(readonly) NSDate * startDate;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) NSString * title;
 @property(readonly) NSString * uuid;
 @property(readonly) unsigned int videosCount;
@@ -102,7 +113,9 @@
 - (unsigned int)assetsCount;
 - (id)assetsSet;
 - (void)batchFetchAssets:(id)arg1;
+- (BOOL)canContributeToCloudSharedAlbum;
 - (BOOL)canPerformEditOperation:(int)arg1;
+- (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
 - (unsigned int)count;
 - (void)dealloc;
@@ -122,24 +135,31 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPlace:(id)arg1;
 - (BOOL)isLibrary;
+- (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
+- (BOOL)isPanoramasAlbum;
+- (BOOL)isPendingPhotoStreamAlbum;
 - (BOOL)isPhotoStreamAlbum;
+- (BOOL)isStandInAlbum;
+- (BOOL)isWallpaperAlbum;
 - (id)keyAsset;
 - (id)kind;
 - (int)kindValue;
+- (id)localizedLocationNames;
 - (id)localizedTitle;
 - (id)mutableAssets;
 - (id)name;
 - (unsigned int)numberOfPhotos;
 - (unsigned int)numberOfVideos;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })originalRegion;
-- (unsigned int)pendingItemsCount;
-- (unsigned int)pendingItemsType;
+- (int)pendingItemsCount;
+- (int)pendingItemsType;
 - (unsigned int)photosCount;
 - (id)posterImage;
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (void)removePhoto:(id)arg1;
+- (id)secondaryKeyAsset;
 - (id)sectioningComparator;
 - (void)setAssets:(id)arg1;
 - (void)setAssetsSet:(id)arg1;
@@ -150,10 +170,12 @@
 - (void)setNumberOfPhotos:(unsigned int)arg1;
 - (void)setNumberOfVideos:(unsigned int)arg1;
 - (void)setOriginalRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setPendingItemsCount:(unsigned int)arg1;
-- (void)setPendingItemsType:(unsigned int)arg1;
+- (void)setPendingItemsCount:(int)arg1;
+- (void)setPendingItemsType:(int)arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSecondaryKeyAsset:(id)arg1;
 - (void)setSlideshowSettings:(id)arg1;
+- (void)setTertiaryKeyAsset:(id)arg1;
 - (void)setTitleIsNumberOfPhotos:(BOOL)arg1;
 - (void)set_assets:(id)arg1;
 - (void)set_uuid:(id)arg1;
@@ -161,9 +183,9 @@
 - (BOOL)shouldGroupPhoto:(id)arg1;
 - (id)slideshowSettings;
 - (id)sortingComparator;
+- (id)tertiaryKeyAsset;
 - (id)title;
 - (id)titleForSectionStartingAtIndex:(unsigned int)arg1;
-- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (id)uuid;
 - (unsigned int)videosCount;
 

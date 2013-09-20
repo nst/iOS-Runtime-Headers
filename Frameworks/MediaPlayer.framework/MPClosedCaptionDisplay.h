@@ -11,6 +11,7 @@
     BOOL _rotating;
 }
 
+- (void).cxx_destruct;
 - (void)_hidePanel;
 - (void)_updatePositioning:(BOOL)arg1;
 - (void)endLayoutChange;

@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAAceSerializable>, NSString;
+@class <SAAceSerializable>, NSNumber, NSString;
 
 @interface SAUISayIt : SABaseClientBoundCommand {
 }
 
 @property(retain) <SAAceSerializable> * context;
+@property(copy) NSNumber * listenAfterSpeaking;
 @property(copy) NSString * message;
 
 + (id)sayIt;
@@ -16,9 +17,11 @@
 - (id)context;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)listenAfterSpeaking;
 - (id)message;
 - (BOOL)requiresResponse;
 - (void)setContext:(id)arg1;
+- (void)setListenAfterSpeaking:(id)arg1;
 - (void)setMessage:(id)arg1;
 
 @end

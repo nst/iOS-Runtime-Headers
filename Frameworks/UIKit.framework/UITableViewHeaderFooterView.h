@@ -14,18 +14,26 @@
             float width; 
             float height; 
         } size; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    struct { 
+        unsigned int isHeader : 1; 
+        unsigned int labelBackgroundColorNeedsUpdate : 1; 
+        unsigned int detailLabelBackgroundColorNeedsUpdate : 1; 
+        unsigned int floating : 1; 
     UIImage *_backgroundImage;
     UIView *_backgroundView;
     UIView *_contentView;
     UILabel *_detailLabel;
-    BOOL _detailLabelBackgroundColorNeedsUpdate;
-    BOOL _floating;
     } _frame;
+    } _headerFooterFlags;
     UILabel *_label;
-    BOOL _labelBackgroundColorNeedsUpdate;
     float _maxTitleWidth;
     NSString *_reuseIdentifier;
-    BOOL _sectionHeader;
+    } _separatorInset;
     UITableView *_tableView;
     int _tableViewStyle;
     int _textAlignment;
@@ -37,8 +45,10 @@
 @property(readonly) UIView * contentView;
 @property(readonly) UILabel * detailTextLabel;
 @property BOOL floating;
+@property(getter=_marginWidth,setter=_setMarginWidth:) float marginWidth;
 @property float maxTitleWidth;
 @property(copy) NSString * reuseIdentifier;
+@property(getter=_rightMarginWidth,setter=_setRightMarginWidth:) float rightMarginWidth;
 @property BOOL sectionHeader;
 @property UITableView * tableView;
 @property int tableViewStyle;
@@ -49,16 +59,26 @@
 
 + (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailLabelFrame;
 - (struct CGSize { float x1; float x2; })_detailTextSizeForWidth:(float)arg1;
 - (void)_invalidateDetailLabelBackgroundColor;
 - (void)_invalidateLabelBackgroundColor;
 - (id)_label:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
+- (float)_marginWidth;
+- (float)_rightMarginWidth;
 - (id)_scriptingInfo;
+- (void)_setBackgroundViewColor:(id)arg1;
+- (void)_setMarginWidth:(float)arg1;
+- (void)_setRightMarginWidth:(float)arg1;
+- (void)_setupBackgroundView;
 - (void)_setupLabelAppearance;
+- (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 stripPaddingForAbuttingView:(BOOL)arg2 isTopHeader:(BOOL)arg3;
+- (void)_tableViewDidUpdateMarginWidth;
 - (struct CGSize { float x1; float x2; })_textSizeForWidth:(float)arg1;
 - (void)_updateBackgroundImage;
+- (void)_updateContentAndBackgroundView;
 - (void)_updateDetailLabelBackgroundColor;
 - (void)_updateDetailLabelBackgroundColorIfNeeded;
 - (void)_updateLabelBackgroundColor;
@@ -93,7 +113,6 @@
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTintColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tableView;
 - (int)tableViewStyle;
 - (id)text;

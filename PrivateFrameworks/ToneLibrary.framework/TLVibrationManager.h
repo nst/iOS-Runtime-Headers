@@ -2,52 +2,65 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NSDictionary;
+@class NSDictionary, TLAccessQueue;
 
 @interface TLVibrationManager : NSObject {
+    TLAccessQueue *_accessQueue;
     BOOL _allowsAutoRefresh;
+    NSDictionary *_cachedSystemVibrationPatterns;
     NSDictionary *_cachedUserGeneratedVibrationPatterns;
-    NSDictionary *_cachedVibrationPatterns;
     BOOL _needsRefresh;
-    BOOL _unitTestingModeEnabled;
+    unsigned int _specialBehaviors;
 }
 
+@property(setter=_setAccessQueue:,retain) TLAccessQueue * _accessQueue;
 @property(setter=_setAllowsAutoRefresh:) BOOL _allowsAutoRefresh;
+@property(setter=_setCachedSystemVibrationPatterns:,retain) NSDictionary * _cachedSystemVibrationPatterns;
 @property(setter=_setCachedUserGeneratedVibrationPatterns:,retain) NSDictionary * _cachedUserGeneratedVibrationPatterns;
-@property(setter=_setCachedVibrationPatterns:,retain) NSDictionary * _cachedVibrationPatterns;
-@property(getter=_isUnitTestingModeEnabled,setter=_setUnitTestingModeEnabled:) BOOL _unitTestingModeEnabled;
+@property(setter=_setSpecialBehaviors:) unsigned int _specialBehaviors;
+@property(readonly) NSDictionary * _systemVibrationPatterns;
+@property(getter=_isUnitTestingModeEnabled,readonly) BOOL _unitTestingModeEnabled;
 @property(readonly) NSDictionary * _userGeneratedVibrationPatterns;
-@property(readonly) NSDictionary * _vibrationPatterns;
 @property BOOL allowsAutoRefresh;
 @property BOOL needsRefresh;
+@property(readonly) BOOL shouldVibrateForCurrentRingerSwitchState;
+@property(readonly) BOOL shouldVibrateOnRing;
+@property(readonly) BOOL shouldVibrateOnSilent;
 
 + (void)_handleSystemVibrationDidChangeNotification;
-+ (void)releaseSharedVibrationManager;
++ (void)_handleVibrateOnRingOrSilentDidChangeNotification;
 + (id)sharedVibrationManager;
 
+- (id)_accessQueue;
 - (BOOL)_allowsAutoRefresh;
+- (BOOL)_booleanPreferenceForKey:(struct __CFString { }*)arg1;
+- (id)_cachedSystemVibrationPatterns;
 - (id)_cachedUserGeneratedVibrationPatterns;
-- (id)_cachedVibrationPatterns;
 - (id)_copySystemWideVibrationPatternPreferenceKeyForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)_currentVibrationIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
 - (void)_handleUserGeneratedVibrationsDidChangeNotification;
+- (id)_initWithSpecialBehaviors:(unsigned int)arg1;
 - (BOOL)_isUnitTestingModeEnabled;
 - (id)_localizedNameForVibrationWithIdentifier:(id)arg1;
 - (void)_makeSystemVibrationDataMigrationVersionCurrentIfNecessary;
 - (BOOL)_migrateLegacySettings;
 - (id)_nameOfVibrationWithIdentifier:(id)arg1;
 - (unsigned int)_numberOfUserGeneratedVibrations;
+- (id)_patternForSystemVibrationWithIdentifier:(id)arg1;
+- (void)_performBlockInAccessQueue:(id)arg1;
 - (BOOL)_removeAllUserGeneratedVibrationsWithError:(id*)arg1;
 - (BOOL)_saveUserGeneratedVibrationPatterns:(id)arg1 error:(id*)arg2;
 - (BOOL)_sendUserGeneratedVibrationPatternsAffectingMessage:(id)arg1 error:(id*)arg2;
+- (void)_setAccessQueue:(id)arg1;
 - (void)_setAllowsAutoRefresh:(BOOL)arg1;
+- (void)_setCachedSystemVibrationPatterns:(id)arg1;
 - (void)_setCachedUserGeneratedVibrationPatterns:(id)arg1;
-- (void)_setCachedVibrationPatterns:(id)arg1;
 - (void)_setNeedsRefresh:(BOOL)arg1;
-- (void)_setUnitTestingModeEnabled:(BOOL)arg1;
+- (void)_setSpecialBehaviors:(unsigned int)arg1;
+- (unsigned int)_specialBehaviors;
 - (unsigned int)_storedSystemVibrationDataMigrationVersion;
+- (id)_systemVibrationPatterns;
 - (id)_userGeneratedVibrationPatterns;
-- (id)_vibrationPatterns;
 - (id)addUserGeneratedVibrationPattern:(id)arg1 name:(id)arg2 error:(id*)arg3;
 - (id)allSystemVibrationIdentifiers;
 - (id)allUserGeneratedVibrationIdentifiers;
@@ -66,7 +79,6 @@
 - (id)defaultVibrationPatternForAlertType:(int)arg1;
 - (BOOL)deleteUserGeneratedVibrationPatternWithIdentifier:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (id)initWithUnitTestingModeEnabled:(BOOL)arg1;
 - (id)nameOfVibrationWithIdentifier:(id)arg1;
 - (BOOL)needsRefresh;
 - (id)noneVibrationIdentifier;
@@ -81,6 +93,9 @@
 - (void)setCurrentVibrationIdentifier:(id)arg1 forType:(int)arg2 accountIdentifier:(id)arg3;
 - (void)setCurrentVibrationIdentifier:(id)arg1 forType:(int)arg2;
 - (BOOL)setName:(id)arg1 forUserGeneratedVibrationWithIdentifier:(id)arg2 error:(id*)arg3;
+- (BOOL)shouldVibrateForCurrentRingerSwitchState;
+- (BOOL)shouldVibrateOnRing;
+- (BOOL)shouldVibrateOnSilent;
 - (BOOL)vibrationWithIdentifierIsValid:(id)arg1;
 
 @end

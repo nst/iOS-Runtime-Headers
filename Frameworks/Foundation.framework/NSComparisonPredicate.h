@@ -16,11 +16,13 @@
 + (id)predicateWithPredicateOperator:(id)arg1 leftExpression:(id)arg2 rightExpression:(id)arg3;
 + (id)predicateWithPredicateOperator:(id)arg1 leftKeyPath:(id)arg2 rightKeyPath:(id)arg3;
 + (id)predicateWithPredicateOperator:(id)arg1 leftKeyPath:(id)arg2 rightValue:(id)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (void)_acceptExpressions:(id)arg1 flags:(unsigned int)arg2;
 - (void)_acceptOperator:(id)arg1 flags:(unsigned int)arg2;
 - (BOOL)_isForeignObjectExpression:(id)arg1 givenContext:(id)arg2;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)allowEvaluation;
 - (unsigned int)comparisonPredicateModifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (SEL)customSelector;

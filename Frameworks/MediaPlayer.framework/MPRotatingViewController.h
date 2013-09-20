@@ -10,8 +10,9 @@
     id _block;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithValidInterfaceOrientationsBlock:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

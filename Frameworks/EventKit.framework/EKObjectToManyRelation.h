@@ -12,7 +12,7 @@
 }
 
 @property(retain) NSMutableSet * addedItems;
-@property(readonly) int count;
+@property(readonly) unsigned int count;
 @property(retain) NSMutableSet * effectiveItems;
 @property(copy) NSSet * items;
 @property(readonly) BOOL itemsWereAdded;
@@ -28,7 +28,7 @@
 - (void)addItem:(id)arg1;
 - (id)addedItems;
 - (id)committedValue;
-- (int)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (void)didCommit;

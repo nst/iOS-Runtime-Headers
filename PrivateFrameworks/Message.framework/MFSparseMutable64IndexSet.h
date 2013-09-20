@@ -13,6 +13,8 @@
 
 - (void)_garbageCollectStorageIfNecessary;
 - (void)_incrementStorageIfNecessaryForCount:(unsigned int)arg1;
+- (unsigned long)_insertionPositionOfIndex:(unsigned long long)arg1;
+- (unsigned long)_positionOfIndex:(unsigned long long)arg1;
 - (void)addIndex:(unsigned long long)arg1;
 - (void)addIndexes:(id)arg1;
 - (BOOL)containsIndex:(unsigned long long)arg1;

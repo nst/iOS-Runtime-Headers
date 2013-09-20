@@ -9,9 +9,11 @@
     PDSlideMaster *mSlideMaster;
 }
 
+- (id)background;
 - (void)dealloc;
 - (id)defaultTheme;
 - (void)doneWithContent;
+- (BOOL)hasMappableSlideNumberShape;
 - (id)initWithSlideMaster:(id)arg1;
 - (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
 - (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;

@@ -5,13 +5,25 @@
 @class <OCCancelDelegate>, CPImportTracing, ECColumnWidthConvertor, EDReference, EDResources, EDSheet, EDWorkbook, EXOAVState, EXOfficeArtState, NSMutableArray, NSMutableDictionary, OCPPackagePart;
 
 @interface EXState : OAVState {
+    struct map<long, unsigned int, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, unsigned int> > > { 
+        struct __tree<std::__1::pair<long, unsigned int>, std::__1::__map_value_compare<long, unsigned int, std::__1::less<long>, true>, std::__1::allocator<std::__1::pair<long, unsigned int> > > { 
+            struct __tree_node<std::__1::pair<long, unsigned int>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<long, unsigned int>, void *> > > { 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                    struct __tree_node_base<void *> {} *__left_; 
+                } __first_; 
+            } __pair1_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, unsigned int, std::__1::less<long>, true> > { 
+                unsigned long __first_; 
+            } __pair3_; 
+        } __tree_; 
     boolmIsPredefinedDxfsBeingRead;
     boolmIsPredefinedTableStylesRead;
     boolmMaxColumnsWarned;
     boolmMaxRowsWarned;
     NSMutableArray *mArrayedFormulas;
     <OCCancelDelegate> *mCancelDelegate;
-    unsigned int mCellStyleXfsOffset;
+    unsigned long mCellStyleXfsOffset;
     ECColumnWidthConvertor *mColumnWidthConvertor;
     OCPPackagePart *mCurrentPart;
     EDSheet *mCurrentSheet;
@@ -24,7 +36,7 @@
     NSMutableDictionary *mReferenceForCommentTextBox;
     struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; } *mRelationshipNS;
     EDResources *mResources;
-    struct __CFDictionary { } *mSharedFormulasMap;
+    } mSharedFormulasMap;
     EDReference *mSheetDimension;
     unsigned int mTotalCellsWithContentCount;
     unsigned int mTotalCellsWithFormulaCount;
@@ -35,10 +47,12 @@
 
 @property(readonly) <OCCancelDelegate> * cancelDelegate;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)addSharedBaseFormulaIndex:(unsigned int)arg1 withIndex:(long)arg2;
 - (id)arrayedFormulas;
 - (id)cancelDelegate;
-- (unsigned int)cellStyleXfsOffset;
+- (unsigned long)cellStyleXfsOffset;
 - (unsigned int)cellsWithContentCount;
 - (id)columnWidthConvertor;
 - (id)currentPart;
@@ -62,7 +76,7 @@
 - (void)reportWorksheetWarning:(struct CPTaggedMessageStructure { int x1; id x2; }*)arg1;
 - (void)resetForNewSheet;
 - (id)resources;
-- (void)setCellStyleXfsOffset:(unsigned int)arg1;
+- (void)setCellStyleXfsOffset:(unsigned long)arg1;
 - (void)setCurrentPart:(id)arg1;
 - (void)setCurrentSheet:(id)arg1;
 - (void)setCurrentSheetIndex:(unsigned int)arg1;

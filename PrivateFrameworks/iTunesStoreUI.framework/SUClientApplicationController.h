@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation, NSString, NSURL, SUMediaPlayerViewController, SUPlaceholderViewController, SUPreviewOverlayViewController, SUSectionsResponse, SUTabBarController, UINavigationController;
+@class ISOperation, NSString, NSURL, SKUIURL, SUMediaPlayerViewController, SUPlaceholderViewController, SUPreviewOverlayViewController, SUSectionsResponse, SUTabBarController, UINavigationController;
 
 @interface SUClientApplicationController : SUClientController <SUTabBarControllerDelegate> {
     SUMediaPlayerViewController *_activeMediaPlayer;
@@ -11,7 +11,7 @@
     int _ignoreDownloadQueueChangeCount;
     SUSectionsResponse *_lastBackgroundSectionsResponse;
     SUSectionsResponse *_lastSectionsResponse;
-    NSURL *_launchURL;
+    SKUIURL *_launchURL;
     ISOperation *_loadSectionsOperation;
     id _locationObserver;
     NSString *_preMediaDefaultPNG;
@@ -44,13 +44,16 @@
 - (void)_cancelSuspendAfterDialogsDismissed;
 - (void)_defaultHandleApplicationURLRequestProperties:(id)arg1;
 - (void)_dialogDidFinishNotification:(id)arg1;
+- (BOOL)_displayClientURL:(id)arg1;
 - (void)_handleAccountURL:(id)arg1;
+- (void)_handleDonationURL:(id)arg1;
 - (void)_handleFinishedBackgroundLoadSectionsOperation:(id)arg1;
 - (void)_handleFinishedLoadSectionsOperation:(id)arg1;
-- (void)_handleSearchURL:(id)arg1;
+- (void)_handleSearchURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (void)_handleSectionsLoadFailedWithError:(id)arg1;
 - (BOOL)_loadSectionsAllowingCache:(BOOL)arg1 withCompletionBlock:(id)arg2;
 - (id)_newTabBarController;
+- (void)_openClientURL:(id)arg1;
 - (void)_presentSectionFetchUI;
 - (id)_previewOverlayViewController;
 - (void)_reloadForNetworkTypeChange:(id)arg1;
@@ -79,7 +82,7 @@
 - (id)defaultPNGNameForSuspend;
 - (void)dismissOverlayBackgroundViewController;
 - (BOOL)dismissTopViewControllerAnimated:(BOOL)arg1;
-- (BOOL)displayClientURL:(id)arg1;
+- (BOOL)displayClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (void)endIgnoringDownloadQueueChanges;
 - (void)exitStoreAfterDialogsDismiss;
 - (id)exitStoreButtonTitle;
@@ -87,7 +90,7 @@
 - (BOOL)isIgnoringDownloadQueueChanges;
 - (BOOL)isTabBarControllerLoaded;
 - (id)launchURL;
-- (BOOL)openClientURL:(id)arg1;
+- (BOOL)openClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (id)overlayBackgroundViewController;
 - (void)prepareUserInterface;
 - (BOOL)presentAccountViewController:(id)arg1 showNavigationBar:(BOOL)arg2 animated:(BOOL)arg3;

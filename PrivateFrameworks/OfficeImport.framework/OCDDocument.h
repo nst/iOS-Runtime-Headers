@@ -2,26 +2,36 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OCDWriter>, OADBlipCollection, OCDReader, OCDSummary;
+@class NSData, OADBlipCollection, OADGraphicStyleCache, OADTextListStyle, OCDReader, OCDSummary, OCDWriter;
 
 @interface OCDDocument : NSObject {
     OADBlipCollection *mBlips;
+    OADTextListStyle *mDefaultTextStyle;
+    NSData *mEncryptionInfo;
+    OADGraphicStyleCache *mGraphicStyleCache;
     OCDReader *mReader;
     OCDSummary *mSummary;
-    <OCDWriter> *mWriter;
+    OCDWriter *mWriter;
 }
 
 @property(readonly) OADBlipCollection * blips;
+@property(readonly) OADTextListStyle * defaultTextStyle;
+@property(retain) OADGraphicStyleCache * graphicStyleCache;
 @property(retain) OCDReader * reader;
 @property(readonly) OCDSummary * summary;
-@property(retain) <OCDWriter> * writer;
+@property(retain) OCDWriter * writer;
 
 - (id)blips;
 - (void)dealloc;
+- (id)defaultTextStyle;
+- (id)encryptionInfo;
+- (id)graphicStyleCache;
 - (id)init;
 - (bool)isFromBinaryFile;
 - (bool)isToBinaryFile;
 - (id)reader;
+- (void)setEncryptionInfo:(id)arg1;
+- (void)setGraphicStyleCache:(id)arg1;
 - (void)setReader:(id)arg1;
 - (void)setWriter:(id)arg1;
 - (id)summary;

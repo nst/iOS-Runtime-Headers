@@ -9,10 +9,10 @@
 
 @property float alpha;
 
-+ (id)program;
++ (id)fragName;
 
 - (float)alpha;
-- (id)init;
 - (void)setAlpha:(float)arg1;
+- (void)setup;
 
 @end

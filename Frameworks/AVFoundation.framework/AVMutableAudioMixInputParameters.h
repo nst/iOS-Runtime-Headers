@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMutableAudioMixInputParametersInternal;
+@class AVMutableAudioMixInputParametersInternal, NSString;
 
 @interface AVMutableAudioMixInputParameters : AVAudioMixInputParameters {
     AVMutableAudioMixInputParametersInternal *_mutableInputParameters;
 }
 
 @property(retain) struct opaqueMTAudioProcessingTap { }* audioTapProcessor;
+@property(copy) NSString * audioTimePitchAlgorithm;
 @property int trackID;
 
 + (id)audioMixInputParameters;

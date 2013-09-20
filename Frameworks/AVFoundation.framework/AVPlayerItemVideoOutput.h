@@ -28,8 +28,6 @@
 - (BOOL)hasNewPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)init;
 - (id)initWithPixelBufferAttributes:(id)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })itemTimeForHostTime:(double)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })itemTimeForMachAbsoluteTime:(long long)arg1;
 - (void)requestNotificationOfMediaDataChangeWithAdvanceInterval:(double)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setSuppressesPlayerRendering:(BOOL)arg1;

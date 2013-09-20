@@ -9,6 +9,7 @@
     <CalendarEventAlarmTableDelegate> *_alarmTableDelegate;
     BOOL _customSelected;
     NSString *_customString;
+    BOOL _immediateAlarmCreation;
     int _selectedItem;
     BOOL _shouldAllowAlarmsTriggeringAfterStartDate;
     <EKStyleProvider> *_styleProvider;
@@ -16,21 +17,22 @@
 }
 
 @property <CalendarEventAlarmTableDelegate> * alarmTableDelegate;
+@property BOOL customSelected;
 @property BOOL shouldAllowAlarmsTriggeringAfterStartDate;
 @property(retain) <EKStyleProvider> * styleProvider;
 @property BOOL useAllDayAlarms;
 
+- (void).cxx_destruct;
 - (int)_presetIdentifierForRow:(int)arg1;
-- (int)_rowForPresetIdentifier:(int)arg1;
 - (void)_selectRow:(int)arg1;
 - (id)alarmTableDelegate;
-- (int)countOfPresets;
+- (unsigned int)countOfPresets;
 - (BOOL)customSelected;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)intervalForPresetIdentifier:(int)arg1;
 - (int)presetIdentifier;
-- (int)presetIdentifierAtIndex:(int)arg1;
+- (int)presetIdentifierAtIndex:(unsigned int)arg1;
+- (int)rowForPresetIdentifier:(int)arg1;
 - (void)setAlarmTableDelegate:(id)arg1;
 - (void)setCustomSelected:(BOOL)arg1;
 - (void)setCustomString:(id)arg1;

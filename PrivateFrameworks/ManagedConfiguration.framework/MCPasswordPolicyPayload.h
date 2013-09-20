@@ -30,7 +30,8 @@
 @property(readonly) NSNumber * minLength;
 @property(readonly) NSNumber * passcodeHistoryCount;
 
-+ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
 + (id)typeStrings;
 
 - (void).cxx_destruct;
@@ -47,6 +48,7 @@
 - (id)minComplexCharacters;
 - (id)minLength;
 - (id)passcodeHistoryCount;
+- (id)restrictions;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)title;

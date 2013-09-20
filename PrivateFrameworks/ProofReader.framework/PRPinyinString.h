@@ -3,6 +3,52 @@
  */
 
 @interface PRPinyinString : NSPinyinString {
+    struct _NSRange { unsigned int x1; unsigned int x2; } *_finalRanges;
+    unsigned int _modificationCount;
+    unsigned int *_modificationTypes;
+    struct _NSRange { unsigned int x1; unsigned int x2; } *_originalAdditionalSyllableRanges;
+    unsigned int _originalCheckedLength;
+    unsigned int _originalLength;
+    struct _NSRange { unsigned int x1; unsigned int x2; } *_originalRanges;
+    struct _NSRange { unsigned int x1; unsigned int x2; } *_originalSyllableRanges;
 }
+
++ (id)alternativesForInputString:(id)arg1;
++ (id)correctionsForInputString:(id)arg1;
++ (id)prefixesForInputString:(id)arg1;
+
+- (id)annotatedString;
+- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (void)dealloc;
+- (id)description;
+- (unsigned int)finalCheckedLength;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })finalRangeForModificationAtIndex:(unsigned int)arg1;
+- (unsigned int)hash;
+- (unsigned int)indexOfFirstModification;
+- (id)initWithString:(id)arg1 syllableCount:(unsigned int)arg2 lastSyllableIsPartial:(BOOL)arg3 score:(unsigned int)arg4 originalLength:(unsigned int)arg5 modificationType:(unsigned int)arg6 originalModificationRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg7 finalModificationRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg8 originalSyllableRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg9 originalAdditionalSyllableRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg10;
+- (id)initWithString:(id)arg1 syllableCount:(unsigned int)arg2 lastSyllableIsPartial:(BOOL)arg3 score:(unsigned int)arg4 originalLength:(unsigned int)arg5 modificationType:(unsigned int)arg6 originalModificationRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg7 finalModificationRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg8 originalSyllableRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg9;
+- (id)initWithString:(id)arg1 syllableCount:(unsigned int)arg2 lastSyllableIsPartial:(BOOL)arg3 score:(unsigned int)arg4 originalLength:(unsigned int)arg5 modificationType:(unsigned int)arg6 originalModificationRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg7 finalModificationRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg8;
+- (id)initWithString:(id)arg1 syllableCount:(unsigned int)arg2 lastSyllableIsPartial:(BOOL)arg3 score:(unsigned int)arg4 originalLength:(unsigned int)arg5 originalCheckedLength:(unsigned int)arg6 numberOfModifications:(unsigned int)arg7 modificationTypes:(unsigned int*)arg8 originalModificationRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg9 finalModificationRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg10 originalSyllableRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg11 originalAdditionalSyllableRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg12;
+- (id)initWithUncheckedString:(id)arg1 score:(unsigned int)arg2 originalLength:(unsigned int)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)lastSyllableIsPartial;
+- (unsigned int)length;
+- (id)nonPinyinIndexSet;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })nonPinyinRangeAtIndex:(unsigned int)arg1;
+- (unsigned int)numberOfDeletions;
+- (unsigned int)numberOfInsertions;
+- (unsigned int)numberOfModifications;
+- (unsigned int)numberOfNonPinyinRanges;
+- (unsigned int)numberOfReplacements;
+- (unsigned int)numberOfTranspositions;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })originalAdditionalSyllableRangeForModificationAtIndex:(unsigned int)arg1;
+- (unsigned int)originalCheckedLength;
+- (unsigned int)originalLength;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })originalRangeForModificationAtIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })originalSyllableRangeForModificationAtIndex:(unsigned int)arg1;
+- (unsigned int)score;
+- (id)string;
+- (unsigned int)syllableCount;
+- (unsigned int)typeOfModificationAtIndex:(unsigned int)arg1;
 
 @end

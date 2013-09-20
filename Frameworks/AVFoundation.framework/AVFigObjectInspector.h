@@ -21,6 +21,7 @@
 - (id)_nonNilDictionaryForProperty:(struct __CFString { }*)arg1;
 - (struct CGSize { float x1; float x2; })_sizeForProperty:(struct __CFString { }*)arg1;
 - (id)_stringForProperty:(struct __CFString { }*)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_timeForProperty:(struct __CFString { }*)arg1 defaultValue:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_timeForProperty:(struct __CFString { }*)arg1;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })_timeRangeForProperty:(struct __CFString { }*)arg1;
 - (id)_tollFreeBridgedObjectForProperty:(struct __CFString { }*)arg1;

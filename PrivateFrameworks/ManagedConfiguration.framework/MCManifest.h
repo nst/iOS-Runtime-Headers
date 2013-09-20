@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (id)identifiersOfProfilesWithFilterFlags:(int)arg1;
 - (id)init;
+- (id)installedProfileWithIdentifier:(id)arg1;
 - (void)invalidateCache;
 - (id)manifest;
 - (void)removeIdentifierFromManifest:(id)arg1;

@@ -5,6 +5,7 @@
 @class AVCaptureInput, NSString;
 
 @interface AVCaptureInputPortInternal : NSObject {
+    struct OpaqueCMClock { } *clock;
     BOOL enabled;
     struct opaqueCMFormatDescription { } *formatDescription;
     AVCaptureInput *input;

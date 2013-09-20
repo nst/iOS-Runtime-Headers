@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary, NSString, NSURL;
 
-@interface SUDocumentation : NSObject <NSCoding, NSCopying> {
+@interface SUDocumentation : NSObject <NSSecureCoding, NSCopying> {
     NSURL *_baseDocumentationURL;
     NSMutableDictionary *_cachedData;
     NSString *_humanReadableUpdateName;
@@ -26,6 +26,8 @@
 @property(retain) NSString * releaseNotesSummaryFileName;
 @property(retain) NSURL * releaseNotesSummaryURL;
 @property(retain) NSURL * releaseNotesURL;
+
++ (BOOL)supportsSecureCoding;
 
 - (id)_cachedDocumentationDataForURL:(id)arg1;
 - (void)_clearTransientDocumentationData;

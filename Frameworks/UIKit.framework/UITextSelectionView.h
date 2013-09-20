@@ -102,7 +102,6 @@
 - (void)updateSelectionRects;
 - (void)updateSelectionRectsIfNeeded;
 - (void)updateSelectionWithDocumentPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updateWithMagnifierTerminalPoint:(BOOL)arg1;
 - (void)viewAnimate:(id)arg1;
 - (BOOL)visible;
 - (void)willRotate:(id)arg1;

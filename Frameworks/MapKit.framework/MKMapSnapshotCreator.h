@@ -14,6 +14,9 @@
 
 @property(retain) MKMapSnapshotRequest * servingRequest;
 
++ (BOOL)supportsHighResolutionSnapshots;
++ (BOOL)supportsSharingThumbnails;
+
 - (id)_newSnapshotWithView:(id)arg1;
 - (void)_processRequest;
 - (void)_respondWithSnapshot;

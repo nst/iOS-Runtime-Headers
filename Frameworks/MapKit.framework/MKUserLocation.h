@@ -5,11 +5,15 @@
 @class CLHeading, CLLocation, MKUserLocationInternal, NSString;
 
 @interface MKUserLocation : NSObject <MKAnnotation> {
+    double _expectedCoordinateUpdateInterval;
+    double _expectedHeadingUpdateInterval;
     MKUserLocationInternal *_internal;
 }
 
 @property(readonly) double accuracy;
 @property struct { double x1; double x2; } coordinate;
+@property double expectedCoordinateUpdateInterval;
+@property double expectedHeadingUpdateInterval;
 @property(retain) CLLocation * fixedLocation;
 @property(retain) CLHeading * heading;
 @property(readonly) double headingDegrees;
@@ -24,6 +28,7 @@
 
 + (void)_setAnnotationClass:(Class)arg1;
 + (id)keyPathsForValuesAffectingSubtitle;
++ (id)title;
 
 - (void)_updateCoordinate;
 - (double)accuracy;
@@ -31,6 +36,8 @@
 - (struct { double x1; double x2; })coordinate;
 - (double)course;
 - (void)dealloc;
+- (double)expectedCoordinateUpdateInterval;
+- (double)expectedHeadingUpdateInterval;
 - (id)fixedLocation;
 - (id)heading;
 - (double)headingDegrees;
@@ -42,6 +49,8 @@
 - (void)reset;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setCourse:(double)arg1;
+- (void)setExpectedCoordinateUpdateInterval:(double)arg1;
+- (void)setExpectedHeadingUpdateInterval:(double)arg1;
 - (void)setFixedLocation:(id)arg1;
 - (void)setHeading:(id)arg1;
 - (void)setLocation:(id)arg1;

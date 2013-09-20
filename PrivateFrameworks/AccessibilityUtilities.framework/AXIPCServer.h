@@ -22,40 +22,45 @@
     struct __CFRunLoopSource { } *_serverRunLoopSource;
     NSString *_serviceName;
     NSMutableDictionary *_validSecurityTokens;
-    unsigned int machPort;
 }
 
+@property(copy) id clientInvalidationCallback;
 @property(copy) id defaultHandler;
 @property(retain) NSMutableDictionary * handlers;
 @property(readonly) unsigned int machPort;
 @property(getter=isRunning) BOOL running;
 @property(retain) NSString * serviceName;
-@property(retain) struct __CFRunLoopSource { }* serviceRunLoopSource;
 
+- (id)_clientIdentificationForAuditToken:(struct { unsigned int x1[8]; })arg1;
+- (BOOL)_clientWithPort:(unsigned int)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 hasAnyEntitlementRequiredForMessage:(id)arg3;
 - (void)_handleClientInvalidation:(unsigned int)arg1;
 - (void)_handleClientRegistration:(id)arg1;
+- (BOOL)_handleErrorWithMessage:(id)arg1 outError:(id*)arg2;
 - (id)_handleIncomingMessage:(id)arg1 securityToken:(struct { unsigned int x1[2]; })arg2 auditToken:(struct { unsigned int x1[8]; })arg3 clientPort:(unsigned int)arg4;
-- (BOOL)_hasEntitlement:(unsigned int)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 key:(int)arg3;
 - (void)_startServerThread;
-- (BOOL)addHandler:(id)arg1 forKey:(int)arg2 withError:(id*)arg3;
+- (void)addPossibleRequiredEntitlement:(id)arg1 forMessageWithKey:(int)arg2;
+- (id)clientInvalidationCallback;
 - (void)dealloc;
 - (id)defaultHandler;
 - (id)description;
-- (id)handlerForKey:(int)arg1 withError:(id*)arg2;
 - (id)handlers;
-- (id)initWithPort:(unsigned int)arg1;
+- (id)initWithPort:(unsigned int)arg1 serviceRunLoopSource:(struct __CFRunLoopSource { }*)arg2;
 - (id)initWithServiceName:(id)arg1;
 - (BOOL)isRunning;
 - (unsigned int)machPort;
-- (BOOL)removeHandlerForKey:(int)arg1 withError:(id*)arg2;
+- (void)removeAllHandlersForTarget:(id)arg1;
+- (void)removeHandlerForKey:(int)arg1;
+- (void)removePossibleRequiredEntitlement:(id)arg1 forMessageWithKey:(int)arg2;
 - (id)serviceName;
 - (void)setClientInvalidationCallback:(id)arg1;
 - (void)setDefaultHandler:(id)arg1;
+- (void)setHandler:(id)arg1 forKey:(int)arg2;
+- (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3 possibleRequiredEntitlements:(id)arg4;
+- (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3;
 - (void)setHandlers:(id)arg1;
 - (void)setRunning:(BOOL)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)setServiceRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
-- (void)setValidateMessage:(int)arg1 validate:(BOOL)arg2 withEntitlement:(id)arg3;
 - (BOOL)startServerWithError:(id*)arg1;
 - (BOOL)stopServerWithError:(id*)arg1;
 

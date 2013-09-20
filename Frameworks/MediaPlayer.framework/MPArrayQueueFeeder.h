@@ -10,6 +10,7 @@
 
 @property(readonly) NSArray * items;
 
+- (void).cxx_destruct;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;

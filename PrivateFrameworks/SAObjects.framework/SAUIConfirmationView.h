@@ -7,6 +7,7 @@
 @interface SAUIConfirmationView : SAAceView {
 }
 
+@property(copy) NSArray * allConfirmationOptions;
 @property(copy) NSString * cancelTrigger;
 @property(copy) NSArray * confirmCommands;
 @property(copy) NSString * confirmText;
@@ -16,6 +17,7 @@
 + (id)confirmationView;
 + (id)confirmationViewWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)allConfirmationOptions;
 - (id)cancelTrigger;
 - (id)confirmCommands;
 - (id)confirmText;
@@ -23,6 +25,7 @@
 - (id)denyText;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (void)setAllConfirmationOptions:(id)arg1;
 - (void)setCancelTrigger:(id)arg1;
 - (void)setConfirmCommands:(id)arg1;
 - (void)setConfirmText:(id)arg1;

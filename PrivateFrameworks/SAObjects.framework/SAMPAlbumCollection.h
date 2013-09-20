@@ -2,18 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
+@class NSString;
+
 @interface SAMPAlbumCollection : SAMPCollection {
 }
 
-@property int rating;
+@property(copy) NSString * artist;
+@property(copy) NSString * sortArtist;
 
 + (id)albumCollection;
 + (id)albumCollectionWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)artist;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)rating;
-- (void)setRating:(int)arg1;
+- (void)setArtist:(id)arg1;
+- (void)setSortArtist:(id)arg1;
+- (id)sortArtist;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

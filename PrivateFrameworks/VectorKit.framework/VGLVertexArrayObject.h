@@ -2,36 +2,33 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class EAGLContext;
+@class VGLContext, VGLResource;
 
 @interface VGLVertexArrayObject : NSObject <NSCoding> {
-    struct vector<unsigned char, vk_allocator<unsigned char> > { 
-        char *__begin_; 
-        char *__end_; 
-        struct __compressed_pair<unsigned char *, vk_allocator<unsigned char> > { 
-            char *__first_; 
-        } __end_cap_; 
-    struct vector<unsigned short, vk_allocator<unsigned short> > { 
-        unsigned short *__begin_; 
-        unsigned short *__end_; 
-        struct __compressed_pair<unsigned short *, vk_allocator<unsigned short> > { 
-            unsigned short *__first_; 
-        } __end_cap_; 
+    struct SimpleBuffer<unsigned char> { 
+        unsigned int _size; 
+        unsigned int _capacity; 
+        char *_buf; 
+    struct SimpleBuffer<unsigned short> { 
+        unsigned int _size; 
+        unsigned int _capacity; 
+        unsigned short *_buf; 
     unsigned int _indicesDirty : 1;
     unsigned int _verticesDirty : 1;
     unsigned int _vertexUsage : 2;
     unsigned int _indexUsage : 2;
     unsigned int _attributeCount : 8;
-    unsigned int _EBO[2];
     unsigned int _VAO;
-    unsigned int _VBO;
     struct { int x1; int x2; int x3; } *_attributes;
     unsigned int _bindedIndexBuffer;
-    EAGLContext *_context;
+    VGLContext *_context;
+    VGLResource *_ebo[2];
     unsigned int _indexBufferMode;
     int _indexCount[2];
     } _indices[2];
     int _stride;
+    VGLResource *_vao;
+    VGLResource *_vbo;
     int _vertexCount;
     int _vertexPrimitiveType[2];
     } _vertices;
@@ -49,10 +46,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned int)VAO;
-- (void)appendIndices:(const unsigned short*)arg1 count:(int)arg2 forIndexMode:(unsigned int)arg3;
-- (void)appendIndices:(const unsigned short*)arg1 count:(int)arg2;
-- (void)appendVertices:(const void*)arg1 count:(int)arg2;
 - (void)bindWithContext:(id)arg1;
+- (BOOL)canReserveVertices:(int)arg1;
 - (void)checkIndexList:(int)arg1 offset:(int)arg2;
 - (int)currentPrimitiveType;
 - (void)dealloc;
@@ -70,16 +65,16 @@
 - (id)initWithStride:(int)arg1 primitiveType:(int)arg2 attributes:(const struct { int x1; int x2; int x3; }*)arg3 attributeCount:(unsigned char)arg4 vertexCapacity:(int)arg5;
 - (id)initWithStride:(int)arg1 primitiveType:(int)arg2 attributes:(const struct { int x1; int x2; int x3; }*)arg3 attributeCount:(unsigned char)arg4 vertices:(const void*)arg5 vertexCount:(int)arg6 indices:(const unsigned short*)arg7 indexCount:(int)arg8;
 - (id)initWithStride:(int)arg1 primitiveType:(int)arg2 attributes:(const struct { int x1; int x2; int x3; }*)arg3 attributeCount:(unsigned char)arg4 vertices:(const void*)arg5 vertexCount:(int)arg6;
+- (BOOL)mergeMesh:(id)arg1;
+- (void*)mutableVertices;
 - (int)primitiveTypeForMode:(unsigned int)arg1;
-- (unsigned short*)reserveIndices:(int)arg1 forIndexMode:(unsigned int)arg2;
-- (unsigned short*)reserveIndices:(int)arg1;
-- (void*)reserveVertices:(int)arg1;
 - (void)resetIndices;
 - (void)resetVertices;
 - (void)setIndexBufferMode:(unsigned int)arg1;
 - (void)setPrimitiveType:(int)arg1 forMode:(unsigned int)arg2;
 - (int)vertexCount;
 - (void*)vertices;
+- (void)verticesMuted;
 - (unsigned char)vertsPerPrimitive;
 
 @end

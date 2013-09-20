@@ -23,6 +23,7 @@
         } ; 
         float v[3]; 
     } _center;
+    unsigned char _centerChanged;
     GLKEffect *_effect;
     unsigned char _effectStale;
     NSString *_label;
@@ -39,9 +40,10 @@
 }
 
 @property union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } center;
+@property unsigned char centerChanged;
 @property GLKEffect * effect;
 @property unsigned char effectStale;
-@property(retain) NSString * label;
+@property(copy) NSString * label;
 @property unsigned int positionVBO;
 @property unsigned int programName;
 @property(readonly) NSMutableArray * propertyArray;
@@ -54,6 +56,7 @@
 @property float zSize;
 
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })center;
+- (unsigned char)centerChanged;
 - (void)createAndBindVAOWithPositions:(float*)arg1 texCoords:(float*)arg2;
 - (void)dealloc;
 - (id)description;
@@ -67,6 +70,7 @@
 - (unsigned int)programName;
 - (id)propertyArray;
 - (void)setCenter:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg1;
+- (void)setCenterChanged:(unsigned char)arg1;
 - (void)setEffect:(id)arg1;
 - (void)setEffectStale:(unsigned char)arg1;
 - (void)setLabel:(id)arg1;

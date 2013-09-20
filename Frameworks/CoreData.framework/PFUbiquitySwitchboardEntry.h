@@ -2,51 +2,70 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMutableDictionary, NSRecursiveLock, NSString, PFUbiquityFilePresenter, PFUbiquityLocation, _PFUbiquityRecordsExporter, _PFUbiquityRecordsImporter;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PFUbiquityContainerMonitor, PFUbiquityFilePresenter, PFUbiquityLocation, PFUbiquitySetupAssistant, PFUbiquitySwitchboardEntryMetadata;
 
 @interface PFUbiquitySwitchboardEntry : NSObject {
     unsigned int _activeStoreCount;
-    _PFUbiquityRecordsExporter *_exporter;
+    int _finishLock;
+    BOOL _finishedInitializingForStore;
+    BOOL _finishedSetupForStore;
+    PFUbiquitySetupAssistant *_finishingSetupAssistant;
     PFUbiquityFilePresenter *_fp;
-    _PFUbiquityRecordsImporter *_importer;
+    BOOL _hasScheduledFinishBlock;
+    PFUbiquityFilePresenter *_localFP;
     NSString *_localPeerID;
+    PFUbiquityLocation *_localRootLocation;
+    PFUbiquitySwitchboardEntryMetadata *_metadata;
+    PFUbiquityContainerMonitor *_monitor;
+    NSObject<OS_dispatch_queue> *_privateQueue;
     NSMutableDictionary *_registeredCoordinators;
-    NSMutableDictionary *_storeNameToCacheWrapper;
-    NSRecursiveLock *_storeNameToCacheWrapperLock;
-    NSMutableDictionary *_storeNameToImporterPSC;
-    NSMutableDictionary *_storeNameToModelVersionHash;
-    NSMutableDictionary *_storeNameToStores;
+    NSString *_storeName;
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
 @property unsigned int activeStoreCount;
-@property(readonly) _PFUbiquityRecordsExporter * exporter;
 @property(readonly) PFUbiquityFilePresenter * filePresenter;
-@property(readonly) _PFUbiquityRecordsImporter * importer;
+@property(readonly) PFUbiquitySetupAssistant * finishingSetupAssistant;
+@property(readonly) PFUbiquityFilePresenter * localFilePresenter;
 @property(readonly) NSString * localPeerID;
-@property(readonly) NSDictionary * storeNameToImporterPSC;
-@property(readonly) NSDictionary * storeNameToModelVersionHash;
-@property(readonly) NSDictionary * storeNameToStores;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property(readonly) PFUbiquityLocation * localRootLocation;
+@property(retain) PFUbiquitySwitchboardEntryMetadata * metadata;
+@property(readonly) PFUbiquityContainerMonitor * monitor;
+@property(readonly) NSString * storeName;
+@property(retain) PFUbiquityLocation * ubiquityRootLocation;
 
 - (unsigned int)activeStoreCount;
+- (void)afterDelay:(double)arg1 executeBlockOnGlobalConcurrentQueue:(id)arg2;
+- (void)afterDelay:(double)arg1 executeBlockOnPrivateQueue:(id)arg2;
 - (id)cacheWrapperForStoreName:(id)arg1;
+- (void)containerIdentifierChanged:(id)arg1;
+- (void)containerStateChanged:(id)arg1;
 - (id)createSetOfActiveStoreNames;
 - (id)createSetOfPersistentStoreCoordinatorsRegisteredForStoreName:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)entryWillBeRemovedFromSwitchboard;
-- (id)exporter;
+- (void)executeBlockOnPrivateQueue:(id)arg1;
 - (id)filePresenter;
-- (id)importer;
+- (void)filePresenterNoticedBaselineFileChange:(id)arg1;
+- (void)filePresenterWasNotifiedTransactionLogs:(id)arg1;
+- (BOOL)finishSetupForStore:(id)arg1 withSetupAssistant:(id)arg2 synchronously:(BOOL)arg3 error:(id*)arg4 finishBlock:(id)arg5;
+- (id)finishingSetupAssistant;
 - (id)init;
-- (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
+- (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 ubiquityRootLocation:(id)arg3 andLocalRootLocation:(id)arg4;
+- (id)localFilePresenter;
 - (id)localPeerID;
+- (id)localRootLocation;
+- (id)metaForStoreName:(id)arg1;
+- (id)metadata;
+- (id)monitor;
+- (void)monitorStateChanged:(id)arg1;
 - (void)registerPersistentStore:(id)arg1 withStoreName:(id)arg2;
 - (void)setActiveStoreCount:(unsigned int)arg1;
-- (id)storeNameToImporterPSC;
-- (id)storeNameToModelVersionHash;
-- (id)storeNameToStores;
+- (void)setMetadata:(id)arg1;
+- (void)setUbiquityRootLocation:(id)arg1;
+- (void)setupFinished;
+- (id)storeName;
 - (id)ubiquityRootLocation;
 - (void)unregisterPersistentStore:(id)arg1;
 - (void)unregisterPersistentStoreCoordinator:(id)arg1;

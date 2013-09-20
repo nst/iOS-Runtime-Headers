@@ -32,6 +32,7 @@
 }
 
 @property <NSStreamDelegate> * delegate;
+@property(readonly) unsigned int totalBytes;
 
 - (void).cxx_destruct;
 - (void)_scheduleCallback;

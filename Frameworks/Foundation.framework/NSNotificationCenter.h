@@ -9,7 +9,6 @@
 }
 
 + (void)_postNotificationName:(id)arg1;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultCenter;
 
 - (void)__mainThreadPostNotification:(id)arg1;
@@ -25,6 +24,7 @@
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
+- (void)postNotificationName:(id)arg1;
 - (void)postNotificationNameOnMainThread:(id)arg1 object:(id)arg2 userInfo:(id)arg3 waitUntilDone:(BOOL)arg4;
 - (void)postNotificationNameOnMainThreadHandler:(id)arg1;
 - (void)postNotificationOnMainThreadWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3 waitUntilDone:(BOOL)arg4;

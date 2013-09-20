@@ -4,7 +4,7 @@
 
 @class NSDate, NSNumber, NSString, NSURL, SAEmail, SALocation, SAPhone;
 
-@interface SAABPersonSearch : SABaseClientBoundCommand {
+@interface SAABPersonSearch : SADomainCommand {
 }
 
 @property(copy) NSURL * accountIdentifier;
@@ -17,7 +17,6 @@
 @property(retain) SAPhone * phone;
 @property(copy) NSString * relationship;
 @property(copy) NSString * scope;
-@property(copy) NSURL * targetAppId;
 
 + (id)personSearch;
 + (id)personSearchWithDictionary:(id)arg1 context:(id)arg2;
@@ -45,7 +44,5 @@
 - (void)setPhone:(id)arg1;
 - (void)setRelationship:(id)arg1;
 - (void)setScope:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

@@ -10,12 +10,13 @@
 
 @property <MFMailComposeRemoteViewControllerDelegate> * delegate;
 
++ (id)exportedInterface;
 + (id)requestViewControllerWithConnectionHandler:(id)arg1;
++ (id)serviceViewControllerInterface;
 
 - (void)bodyFinishedDrawing;
-- (void)compositionFinishedWithResult:(id)arg1 error:(id)arg2;
 - (id)delegate;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)serviceCompositionFinishedWithResult:(int)arg1 error:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

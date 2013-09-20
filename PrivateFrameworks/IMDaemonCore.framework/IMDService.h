@@ -10,15 +10,18 @@
     NSBundle *_bundle;
     NSDictionary *_cachedServiceDefaults;
     NSDictionary *_cachedSetupServiceDefaults;
+    NSString *_internalName;
     NSDictionary *_serviceDefaults;
     NSDictionary *_serviceProperties;
     Class _sessionClass;
 }
 
+@property(readonly) Class accountClass;
 @property(readonly) NSBundle * bundle;
 @property(readonly) NSDictionary * defaultAccountSettings;
 @property(readonly) BOOL disallowDeactivation;
 @property(readonly) NSString * internalName;
+@property(readonly) BOOL isIDSBased;
 @property(readonly) BOOL serviceChatsIgnoreLoginStatus;
 @property(readonly) NSDictionary * serviceDefaults;
 @property(readonly) NSDictionary * serviceDefaultsForSetup;
@@ -46,16 +49,23 @@
 - (void)_reallyUnloadServiceBundle;
 - (id)_serviceDefaultsForDomain:(id)arg1;
 - (id)_serviceDomain;
+- (void)accountAdded:(id)arg1;
+- (Class)accountClass;
+- (void)accountRemoved:(id)arg1;
 - (id)bundle;
 - (BOOL)clearOneTimeImportAccounts;
 - (void)dealloc;
 - (id)defaultAccountSettings;
 - (void)delayedSaveSettings;
 - (id)description;
+- (void)disableAccount:(id)arg1;
 - (BOOL)disallowDeactivation;
+- (void)enableAccount:(id)arg1;
 - (id)initWithBundle:(id)arg1;
 - (id)internalName;
+- (BOOL)isIDSBased;
 - (void)loadServiceBundle;
+- (id)newAccountWithAccountDefaults:(id)arg1 accountID:(id)arg2;
 - (id)oldInternalName;
 - (void)purgeMemoryCaches;
 - (void)saveSettings;

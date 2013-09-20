@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray;
+@class ABUIPerson, NSArray;
 
 @interface ABPropertyPickerViewController : ABPickerViewController <ABCardPropertyPickerDelegate> {
     void *_addressBook;
-    void *_person;
+    ABUIPerson *_person;
     NSArray *_policies;
     struct __CFArray { } *_properties;
 }
 
 @property void* addressBook;
-@property void* person;
+@property(retain) ABUIPerson * person;
 @property(retain) NSArray * policies;
 @property struct __CFArray { }* properties;
 
@@ -22,14 +22,14 @@
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void*)person;
+- (id)person;
 - (id)policies;
 - (struct __CFArray { }*)properties;
 - (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2 withDefaultValue:(id)arg3;
 - (void)propertyPicker:(id)arg1 selectedProperty:(int)arg2;
 - (id)propertyPicker;
 - (void)setAddressBook:(void*)arg1;
-- (void)setPerson:(void*)arg1;
+- (void)setPerson:(id)arg1;
 - (void)setPolicies:(id)arg1;
 - (void)setProperties:(struct __CFArray { }*)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

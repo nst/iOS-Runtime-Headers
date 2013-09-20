@@ -2,91 +2,92 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class AVAssetExportSession, AVCaptureConnection, AVCaptureMovieFileOutput, AVCaptureSession, MPAudioDeviceController, NSDate, NSMutableArray, NSString, RCSavedRecording;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface RCAudioInputDevice : NSObject <AVCaptureFileOutputRecordingDelegate, AVCaptureFileOutputPauseResumeDelegate> {
-    unsigned int _recording : 1;
-    unsigned int _audioInputAvailable : 1;
-    unsigned int _active : 1;
-    unsigned int _interrupted : 1;
-    unsigned int _writingToDisk : 1;
-    unsigned int _recordAfterFinishedWritingToDisk : 1;
-    unsigned int _lastRecordingDidStop : 1;
-    unsigned int _preparingToRecord : 1;
-    unsigned int _stopRecordingImmediately : 1;
-    unsigned int _previewStarted : 1;
-    unsigned int _remaking : 1;
+@class AVCaptureConnection, AVCaptureSession, MPAudioDeviceController, NSDate, NSMutableArray, NSString, RCAudioInputWaveformDataSource, RCCaptureAudioFileOutput, RCSavedRecording;
+
+@interface RCAudioInputDevice : NSObject <RCCaptureAudioFileOutputRecordingDelegate> {
     RCSavedRecording *_activeRecording;
+    RCAudioInputWaveformDataSource *_activeWaveformDataSource;
     MPAudioDeviceController *_audioDeviceController;
+    BOOL _audioInputAvailable;
     unsigned int _backgroundTaskIdentifier;
+    RCCaptureAudioFileOutput *_captureAudioOutput;
     AVCaptureConnection *_captureConnection;
-    AVCaptureSession *_captureController;
-    double _duration;
-    AVAssetExportSession *_exportSession;
-    AVCaptureMovieFileOutput *_movieFileOutput;
-    NSString *_originalRecordingPath;
-    NSDate *_pauseStartDate;
+    AVCaptureSession *_captureSession;
+    BOOL _handlingRecordingDidFinishCapturing;
+    BOOL _isInterrupted;
+    BOOL _lastRecordingDidStop;
     NSString *_pickedRouteName;
-    RCSavedRecording *_recordingBeingRemade;
+    NSMutableArray *_prepareFinishedCompletionBlocks;
+    int _prepareToRecordState;
+    BOOL _recordingSampleBuffers;
     NSDate *_recordingStartDate;
-    NSMutableArray *_recordingsToRemake;
-    NSString *_remadeRecordingPath;
-    double _totalPausedTime;
+    id _sampleBufferHandlerBlock;
+    BOOL _sessionFailedToStart;
+    BOOL _waitingForCaptureSessionDidStart;
 }
 
+@property(readonly) RCSavedRecording * activeRecording;
+@property(readonly) RCAudioInputWaveformDataSource * activeWaveformDataSource;
 @property(readonly) BOOL audioInputAvailable;
 @property(readonly) double elapsedRecordingTime;
+@property(readonly) BOOL isIdle;
+@property(readonly) BOOL isInterrupted;
 @property(readonly) BOOL isPaused;
 @property(readonly) BOOL isRecording;
-@property(readonly) RCSavedRecording * recordingBeingRemade;
 @property(retain) NSDate * recordingStartDate;
+@property(copy) id sampleBufferHandlerBlock;
 @property(readonly) BOOL shouldSuspend;
 
-+ (id)savedRecordingsDirectory;
 + (id)sharedInputDevice;
 
 - (void).cxx_destruct;
-- (void)_adjustDurationForPauseIfNecessary;
 - (void)_applicationWillTerminate:(id)arg1;
-- (BOOL)_attachCaptureDevice;
-- (void)_audioInputAvailabilityDidChange:(BOOL)arg1;
+- (BOOL)_attachCaptureSessionDeviceInput;
 - (void)_availableModesDidChange:(id)arg1;
-- (void)_beginRecording;
-- (void)_captureCompleted;
-- (void)_createCaptureController;
+- (void)_beginRecordingWithIntermediateRecordingURL:(id)arg1;
+- (void)_closeCaptureSession;
+- (void)_handleRecordingDidFinishCapturingWithError:(id)arg1;
 - (id)_init;
 - (void)_interruptionDidBegin:(id)arg1;
-- (void)_interruptionDidEnd:(id)arg1;
-- (void)_recordingStopped;
-- (void)_remakeRecording:(id)arg1;
-- (void)_removeCaptureObservers;
+- (void)_onMainQueueHandleRecordingDidFinishCapturingAfterCompletionSound;
+- (BOOL)_openCaptureSessionAndWaitUntilRunning;
+- (void)_registerForCatpureSessionNotifications;
 - (void)_sessionDidStartRunning:(id)arg1;
+- (void)_sessionDidStopRunning:(id)arg1;
 - (void)_sessionErrored:(id)arg1;
 - (void)_setDisableSBMediaHUD:(BOOL)arg1;
-- (BOOL)_setupAudioInputQueue;
-- (void)_teardownAudioInputQueue;
+- (void)_setPostPrepareRequestedState:(int)arg1;
+- (void)_unregisterForCatpureSessionNotifications;
+- (void)_updateAudioInputAvailable;
+- (id)activeRecording;
+- (id)activeWaveformDataSource;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (BOOL)audioInputAvailable;
-- (void)becomeActive;
-- (BOOL)beginRecording;
-- (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
-- (void)captureOutput:(id)arg1 didPauseRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
-- (void)captureOutput:(id)arg1 didResumeRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
-- (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
+- (void)beginRecordingWithCustomRecordingLabel:(id)arg1 prepareFinishedCompletionBlock:(id)arg2;
+- (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 error:(id)arg3;
+- (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (void)captureOutput:(id)arg1 didPauseRecordingToOutputFileAtURL:(id)arg2;
+- (void)captureOutput:(id)arg1 didResumeRecordingToOutputFileAtURL:(id)arg2;
+- (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2;
 - (void)dealloc;
 - (double)elapsedRecordingTime;
 - (void)endRecording;
-- (void)getAverageAudioLevel:(float*)arg1 peakAudioLevel:(float*)arg2;
 - (id)init;
+- (BOOL)isIdle;
+- (BOOL)isInterrupted;
 - (BOOL)isPaused;
+- (BOOL)isPreparing;
 - (BOOL)isRecording;
 - (void)pauseRecording;
-- (id)recordingBeingRemade;
 - (id)recordingStartDate;
-- (void)remakeRecording:(id)arg1;
-- (void)resignActive;
 - (void)resumeRecording;
+- (id)sampleBufferHandlerBlock;
 - (void)setRecordingStartDate:(id)arg1;
+- (void)setSampleBufferHandlerBlock:(id)arg1;
 - (BOOL)shouldSuspend;
 
 @end

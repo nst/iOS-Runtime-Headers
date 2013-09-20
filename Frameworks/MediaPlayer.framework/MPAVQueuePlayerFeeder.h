@@ -29,6 +29,7 @@
 @property unsigned int maxQueueDepth;
 @property unsigned int minQueueDepth;
 
+- (void).cxx_destruct;
 - (void)_effectiveNetworkTypeDidChangeNotification:(id)arg1;
 - (void)_fillInQueue;
 - (id)_fillInQueueWithExtraSpace:(int)arg1 ignoreExistingItems:(BOOL)arg2 removeCurrentItem:(BOOL)arg3;

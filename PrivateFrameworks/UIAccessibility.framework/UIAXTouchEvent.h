@@ -5,7 +5,10 @@
 @interface UIAXTouchEvent : UIAXTouchEvent_super {
 }
 
++ (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (id)_installSafeCategoryValidationMethod;
 
 - (id)_accessibilityHitTestStartsAtElement;
 - (BOOL)_accessibilityHitTestsAnyElement;

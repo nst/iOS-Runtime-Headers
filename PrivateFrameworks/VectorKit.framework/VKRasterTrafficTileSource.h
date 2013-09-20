@@ -6,6 +6,7 @@
 }
 
 - (BOOL)expires;
+- (id)init;
 - (unsigned int)mapLayerForZoomLevelRange;
 - (BOOL)maximumZoomLevelBoundsCamera;
 - (BOOL)minimumZoomLevelBoundsCamera;

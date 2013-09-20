@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLAggregateAlbumList, PLAlbumListChangeNotification;
+@class PLAggregateAlbumList, PLAssetContainerListChangeNotification;
 
-@interface PLAggregateAlbumListChangeNotification : PLAlbumListChangeNotification {
+@interface PLAggregateAlbumListChangeNotification : PLAssetContainerListChangeNotification {
     PLAggregateAlbumList *_albumList;
     unsigned int _indexOffet;
-    PLAlbumListChangeNotification *_note;
+    PLAssetContainerListChangeNotification *_note;
 }
 
 + (id)notificationForAggregateAlbumList:(id)arg1 fromAlbumListChangeNotification:(id)arg2 indexOffset:(unsigned int)arg3;
@@ -15,6 +15,7 @@
 - (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (struct NSObject { Class x1; }*)albumList;
 - (id)changedIndexes;
+- (id)changedIndexesRelativeToSnapshot;
 - (id)changedObjects;
 - (void)dealloc;
 - (id)deletedIndexes;
@@ -25,5 +26,6 @@
 - (id)insertedObjects;
 - (id)object;
 - (BOOL)shouldReload;
+- (unsigned int)snapshotIndexForContainedObject:(id)arg1;
 
 @end

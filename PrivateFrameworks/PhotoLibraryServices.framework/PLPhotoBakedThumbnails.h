@@ -8,7 +8,7 @@
     struct CGSize { 
         float width; 
         float height; 
-    int _count;
+    unsigned int _count;
     BOOL _dataIsMutable;
     int _format;
     BOOL _missingHeader;
@@ -37,7 +37,7 @@
 - (unsigned int)bitmapInfo;
 - (int)bitsPerComponent;
 - (int)bytesPerPixel;
-- (int)count;
+- (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (int)format;

@@ -10,6 +10,8 @@
 
 @property(retain) NSArray * searchABPropertyTypes;
 
++ (id)sharedRecipientGenerator;
+
 - (void)_appendSearchResults:(id)arg1 identifiers:(id)arg2 abPropertyType:(int)arg3 toArray:(id)arg4;
 - (void)dealloc;
 - (id)recipientWithAddress:(id)arg1;

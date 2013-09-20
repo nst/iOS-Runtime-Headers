@@ -2,28 +2,21 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEventDetailRecurrenceCell, NSString;
+@class EKEventDetailRecurrenceCell, NSDate, NSString;
 
 @interface EKEventRecurrenceDetailItem : EKEventDetailItem {
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
     EKEventDetailRecurrenceCell *_cell;
     NSString *_customRepeatDescription;
     BOOL _indent;
     int _originalRepeatType;
-    } _repeatEndGr;
+    NSDate *_repeatEnd;
     int _repeatType;
 }
 
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (void).cxx_destruct;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
-- (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (void)reset;
 - (void)setEvent:(id)arg1 store:(id)arg2;
 

@@ -14,8 +14,8 @@
 @property(readonly) EKExpandingTextView * textView;
 @property float verticalPadding;
 
+- (void).cxx_destruct;
 - (float)_textViewWidthForContentWidth:(float)arg1;
-- (void)dealloc;
 - (float)heightNeededForContentWidth:(float)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;

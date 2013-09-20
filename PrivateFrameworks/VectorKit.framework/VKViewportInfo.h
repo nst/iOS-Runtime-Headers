@@ -22,6 +22,7 @@
 @property double yaw;
 @property float zoomLevel;
 
+- (id).cxx_construct;
 - (struct { double x1; double x2; })centerCoordinate;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

@@ -2,20 +2,24 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPPurchasableMediaDownload;
+@class MPStoreDownload;
 
-@interface MPMatchMediaDownloadObserver : MPMediaDownloadObserver <MPPurchasableMediaDownloadObserver> {
-    MPPurchasableMediaDownload *_purchasableMediaDownload;
+@interface MPMatchMediaDownloadObserver : MPMediaDownloadObserver <MPStoreDownloadManagerObserver> {
+    MPStoreDownload *_storeDownload;
 }
 
+- (void).cxx_destruct;
 - (void)_onQueue_invalidate;
 - (BOOL)canCancel;
 - (void)cancelDownload;
 - (void)dealloc;
+- (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
 - (double)downloadProgress;
-- (id)initWithStoreID:(long long)arg1 mediaItemPersistentID:(unsigned long long)arg2;
+- (id)initWithStoreDownload:(id)arg1;
 - (BOOL)isCurrentlyPlayable;
+- (BOOL)isPurchasing;
 - (BOOL)isRestoreDownload;
-- (void)purchasableMediaDownload:(id)arg1 downloadDidProgressWithPercentComplete:(double)arg2;
+- (double)rawDownloadProgress;
+- (double)rawDownloadTotal;
 
 @end

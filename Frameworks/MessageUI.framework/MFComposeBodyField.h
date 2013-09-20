@@ -40,6 +40,7 @@
 - (void)_finishedLoadingURLRequest:(id)arg1 success:(BOOL)arg2;
 - (id)_nodeForAttachmentData:(id)arg1 text:(id)arg2 type:(id)arg3;
 - (void)_nts_AddDOMNode:(id)arg1 quote:(BOOL)arg2 baseURL:(id)arg3 emptyFirst:(BOOL)arg4 prepended:(BOOL)arg5;
+- (void)_removeInlineAttachment:(id)arg1;
 - (void)_webthread_webView:(id)arg1 tileDidDraw:(id)arg2;
 - (void)addDOMNode:(id)arg1 quote:(BOOL)arg2 baseURL:(id)arg3 emptyFirst:(BOOL)arg4 prepended:(BOOL)arg5;
 - (void)addMailAttributesBeforeDisplayHidingTrailingEmptyQuotes:(BOOL)arg1;
@@ -61,7 +62,6 @@
 - (void)deleteTemporarySelectionMarkersFromDocument:(id)arg1;
 - (void)didUndoOrRedo:(id)arg1;
 - (id)documentFragmentForPasteboardItemAtIndex:(int)arg1;
-- (BOOL)endEditing:(BOOL)arg1;
 - (void)endPreventingLayout;
 - (void)ensureSelection;
 - (void)htmlString:(id*)arg1 otherHtmlStringsAndAttachments:(id*)arg2 charsets:(id*)arg3 withAttachmentSource:(id)arg4;

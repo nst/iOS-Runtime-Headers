@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendar, EKDaemonConnection, NSArray, NSMutableDictionary, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSTimeZone;
+@class EKAlarm, EKCalendar, EKDaemonConnection, NSArray, NSMutableDictionary, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSTimeZone;
 
-@interface EKEventStore : NSObject {
+@interface EKEventStore : NSObject <EKDaemonConnection> {
     NSMutableDictionary *_cachedValidatedEmails;
     NSObject<OS_dispatch_queue> *_calendarQueue;
     NSMutableDictionary *_calendars;
@@ -35,25 +35,30 @@
 @property(retain) NSMutableDictionary * _sources;
 @property NSObject<OS_dispatch_queue> * calendarQueue;
 @property(readonly) NSArray * calendars;
+@property(readonly) EKDaemonConnection * connection;
 @property(retain) EKDaemonConnection * database;
 @property NSObject<OS_dispatch_queue> * dbChangedQueue;
+@property(readonly) EKAlarm * defaultAllDayAlarm;
 @property(retain) NSNumber * defaultAllDayAlarmOffset;
 @property(readonly) EKCalendar * defaultCalendarForNewEvents;
+@property(readonly) EKAlarm * defaultTimedAlarm;
 @property(retain) NSNumber * defaultTimedAlarmOffset;
 @property NSMutableSet * deletedObjects;
 @property(readonly) NSString * eventStoreIdentifier;
 @property unsigned long flags;
 @property NSMutableSet * insertedObjects;
 @property double lastDatabaseNotificationTimestamp;
+@property(readonly) int notifiableEventCount;
 @property NSMutableSet * objectsPendingCommit;
 @property NSMutableDictionary * publicRegisteredObjects;
 @property NSMutableDictionary * registeredObjects;
 @property NSObject<OS_dispatch_queue> * registeredQueue;
+@property(readonly) unsigned int serverPort;
 @property(copy) NSTimeZone * timeZone;
+@property(readonly) int unacknowledgedEventCount;
 @property NSObject<OS_dispatch_queue> * unsavedChangesQueue;
 @property NSMutableSet * updatedObjects;
 
-+ (BOOL)_isAuthorizationRestrictedForService:(struct __CFString { }*)arg1;
 + (int)authorizationStatusForEntityType:(unsigned int)arg1;
 + (Class)classForEntityName:(id)arg1;
 + (Class)publicClassForEntityName:(id)arg1;
@@ -80,9 +85,6 @@
 - (void)_protectedDataDidBecomeAvailable;
 - (void)_protectedDataWillBecomeUnavailable;
 - (void)_refreshDASource:(id)arg1 isUserRequested:(BOOL)arg2;
-- (void)_refreshDASubscribedCalendar:(id)arg1 isUserRequested:(BOOL)arg2;
-- (void)_refreshSource:(id)arg1 accountsManager:(id)arg2 isUserRequested:(BOOL)arg3;
-- (void)_refreshSubscribedCalendar:(id)arg1 accountsManager:(id)arg2 isUserRequested:(BOOL)arg3;
 - (void)_registerObject:(id)arg1;
 - (void)_registerObjectImmediate:(id)arg1;
 - (void)_requestAccessForEntityType:(unsigned int)arg1;
@@ -90,9 +92,11 @@
 - (void)_saveWithoutNotify;
 - (id)_sources;
 - (void)_trackModifiedObject:(id)arg1;
+- (id)_uicolorFromString:(id)arg1;
 - (void)_unregisterObject:(id)arg1;
 - (void)_validateObjectIDs:(id)arg1 completion:(id)arg2;
 - (void)alarmOccurrencesBetweenStartDate:(id)arg1 endDate:(id)arg2 completion:(id)arg3;
+- (void)alarmOccurrencesBetweenStartDate:(id)arg1 endDate:(id)arg2 inCalendars:(id)arg3 completion:(id)arg4;
 - (id)alarmWithUUID:(id)arg1;
 - (void)cacheValidationStatusForEmail:(id)arg1 status:(int)arg2;
 - (id)calendarItemWithIdentifier:(id)arg1;
@@ -107,6 +111,7 @@
 - (id)changesSinceSequenceNumber:(int)arg1;
 - (id)closestCachedOccurrenceToDate:(double)arg1 forEventUID:(int)arg2;
 - (id)colorForCalendar:(id)arg1;
+- (id)colorNamesInRainbowOrder;
 - (BOOL)commit:(id*)arg1;
 - (id)connection;
 - (struct CGColor { }*)copyCGColorForNewCalendar;
@@ -117,7 +122,6 @@
 - (void)dealloc;
 - (id)defaultAllDayAlarm;
 - (id)defaultAllDayAlarmOffset;
-- (id)defaultCalendarColors;
 - (id)defaultCalendarColorsInRainbowOrder;
 - (id)defaultCalendarForNewEvents;
 - (id)defaultCalendarForNewReminders;
@@ -125,6 +129,7 @@
 - (id)defaultTimedAlarmOffset;
 - (BOOL)deleteCalendar:(id)arg1 forEntityType:(int)arg2 error:(id*)arg3;
 - (id)deletedObjects;
+- (id)doEvents:(id)arg1 haveOccurrencesAfterDate:(id)arg2;
 - (id)earliestExpiringNotifiableEventEndDateAfterDate:(id)arg1 timeZone:(id)arg2;
 - (int)emailAddressValidationStatus:(id)arg1;
 - (void)enumerateEventsMatchingPredicate:(id)arg1 usingBlock:(id)arg2;
@@ -139,6 +144,8 @@
 - (BOOL)fetchProperties:(id)arg1 forReminders:(id)arg2;
 - (id)fetchRemindersMatchingPredicate:(id)arg1 completion:(id)arg2;
 - (unsigned long)flags;
+- (id)getCalDAVLog;
+- (id)getDataAccessLog;
 - (BOOL)hideCalendarsFromNotificationCenter:(id)arg1 error:(id*)arg2;
 - (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3;
 - (void)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3 completion:(id)arg4;
@@ -150,22 +157,24 @@
 - (id)insertNewReminder;
 - (id)insertedObjects;
 - (id)inviteReplyNotifications;
-- (int)inviteReplyNotificationsCount;
 - (BOOL)isDataProtected;
 - (double)lastDatabaseNotificationTimestamp;
 - (id)localSource;
+- (id)localizedStringForSymbolicColorName:(id)arg1;
 - (void)locationBasedAlarmOccurrencesWithCompletion:(id)arg1;
 - (BOOL)markCalendarAlerted:(id)arg1;
 - (void)markEventAlerted:(id)arg1;
 - (BOOL)markInviteReplyNotificationAlerted:(id)arg1;
 - (void)markNotificationsAlertedAndSave:(id)arg1;
 - (BOOL)markResourceChangeAlerted:(id)arg1 error:(id*)arg2;
+- (BOOL)moveDiagnosticsLogToCrashReporterFolder;
 - (int)notifiableEventCount;
 - (id)objectWithObjectID:(id)arg1;
 - (id)objectsPendingCommit;
 - (id)occurrenceCacheGetOccurrencesForCalendars:(id)arg1 onDay:(double)arg2;
 - (id)occurrenceCacheGetOccurrencesForCalendars:(id)arg1;
 - (BOOL)occurrenceCacheOccurrencesAreBeingGenerated;
+- (id)ownedSources;
 - (id)predicateForAllRemindersDueBeforeOrOnDueDate:(id)arg1 calendars:(id)arg2;
 - (id)predicateForAllRemindersWithDueDate:(id)arg1 calendars:(id)arg2;
 - (id)predicateForCompletedRemindersWithCalendars:(id)arg1;
@@ -178,8 +187,10 @@
 - (id)predicateForIncompleteRemindersDueBeforeOrOnDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3;
 - (id)predicateForIncompleteRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3;
 - (id)predicateForIncompleteRemindersWithDueDateStarting:(id)arg1 ending:(id)arg2 calendars:(id)arg3;
+- (id)predicateForMasterEventsInCalendars:(id)arg1;
 - (id)predicateForNotifiableEvents;
 - (id)predicateForNotificationCenterVisibleEvents;
+- (id)predicateForRecentNotifiableEvents;
 - (id)predicateForRemindersInCalendars:(id)arg1;
 - (id)predicateForRemindersWithSearchTerm:(id)arg1;
 - (id)predicateForRemindersWithTitle:(id)arg1 calendars:(id)arg2;
@@ -195,7 +206,7 @@
 - (id)readWriteCalendarsForEntityType:(unsigned int)arg1;
 - (void)refreshSourcesIfNecessary:(BOOL)arg1;
 - (void)refreshSourcesIfNecessary;
-- (id)registerFetchedObjectWithID:(id)arg1 defaultLoadedProperties:(id)arg2;
+- (id)registerFetchedObjectWithID:(id)arg1 withDefaultLoadedProperties:(id)arg2 inSet:(id)arg3;
 - (id)registerFetchedObjectWithID:(id)arg1;
 - (id)registeredObjects;
 - (id)registeredQueue;
@@ -224,6 +235,8 @@
 - (BOOL)saveReminder:(id)arg1 commit:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)saveReminder:(id)arg1 error:(id*)arg2;
 - (BOOL)saveSource:(id)arg1 error:(id*)arg2;
+- (id)scheduledTaskCacheFetchDaysAndTaskCounts;
+- (id)scheduledTaskCacheFetchTasksOnDay:(id)arg1;
 - (int)sequenceNumber;
 - (unsigned int)serverPort;
 - (void)setCalendarQueue:(id)arg1;
@@ -243,6 +256,7 @@
 - (void)setPublicRegisteredObjects:(id)arg1;
 - (void)setRegisteredObjects:(id)arg1;
 - (void)setRegisteredQueue:(id)arg1;
+- (void)setShowDeclinedEvents:(BOOL)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setUnsavedChangesQueue:(id)arg1;
 - (void)setUpdatedObjects:(id)arg1;
@@ -255,6 +269,7 @@
 - (id)sourceWithIdentifier:(id)arg1;
 - (id)sources;
 - (id)stringForColor:(id)arg1;
+- (id)symbolicNameToUIColors;
 - (id)timeZone;
 - (int)unacknowledgedEventCount;
 - (id)unsavedChangesQueue;

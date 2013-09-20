@@ -22,15 +22,17 @@
 @property float taper;
 @property float width;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
 - (struct { float x1; float x2; float x3; })cameraDirection;
-- (id)init;
 - (float)ramp;
 - (void)setCameraDirection:(struct { float x1; float x2; float x3; })arg1;
 - (void)setRamp:(float)arg1;
 - (void)setTaper:(float)arg1;
 - (void)setWidth:(float)arg1;
+- (void)setup;
 - (float)taper;
 - (float)width;
 

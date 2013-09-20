@@ -19,7 +19,7 @@
 @property(retain) UIView * backgroundView;
 @property ABPersonViewControllerHelper * helper;
 @property float minimumBottomInset;
-@property <ABPersonTabsLayoutManager> * tabsLayoutManager;
+@property(retain) <ABPersonTabsLayoutManager> * tabsLayoutManager;
 
 - (id)helper;
 - (void)layoutSubviews;

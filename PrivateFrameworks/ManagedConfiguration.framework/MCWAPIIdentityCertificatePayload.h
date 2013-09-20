@@ -10,7 +10,8 @@
 
 @property(readonly) NSData * pemData;
 
-+ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
 + (id)typeStrings;
 
 - (void).cxx_destruct;

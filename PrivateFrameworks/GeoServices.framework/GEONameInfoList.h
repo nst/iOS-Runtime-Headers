@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEONameInfoList : PBCodable {
+@interface GEONameInfoList : PBCodable <NSCopying> {
     NSMutableArray *_nameInfos;
 }
 
@@ -13,6 +13,7 @@
 - (void)addNameInfo:(id)arg1;
 - (void)clearNameInfos;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

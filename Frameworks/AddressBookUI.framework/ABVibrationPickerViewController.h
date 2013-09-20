@@ -19,9 +19,10 @@
 - (void)_vibrationSaveButtonClicked:(id)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)dealloc;
-- (id)initWithVibrationType:(int)arg1;
+- (id)initWithAlertType:(int)arg1;
 - (void)loadView;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setStyleProvider:(id)arg1;
 - (id)vibrationPickerViewController;
 
 @end

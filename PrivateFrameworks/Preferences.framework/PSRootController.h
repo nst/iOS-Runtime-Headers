@@ -11,6 +11,7 @@
     NSMutableSet *_tasks;
 }
 
++ (id)domainForSpecifier:(id)arg1;
 + (BOOL)processedBundle:(id)arg1 parentController:(id)arg2 parentSpecifier:(id)arg3 bundleControllers:(id*)arg4 settings:(id)arg5;
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
@@ -51,6 +52,7 @@
 - (id)specifiers;
 - (void)statusBarWillAnimateByHeight:(float)arg1;
 - (void)statusBarWillChangeHeight:(id)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)suspend;
 - (void)taskFinished:(id)arg1;
 - (BOOL)taskIsRunning:(id)arg1;

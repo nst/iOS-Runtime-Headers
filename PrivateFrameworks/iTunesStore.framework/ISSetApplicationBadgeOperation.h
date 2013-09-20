@@ -5,11 +5,11 @@
 @class NSString;
 
 @interface ISSetApplicationBadgeOperation : ISOperation {
-    id _badgeValue;
+    NSString *_badgeValue;
     NSString *_bundleIdentifier;
 }
 
-@property(retain) id badgeValue;
+@property(retain) NSString * badgeValue;
 @property(retain) NSString * bundleIdentifier;
 
 - (id)badgeValue;

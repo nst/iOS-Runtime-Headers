@@ -11,8 +11,8 @@
 
 @property BOOL usePlaceholderAsFallback;
 
+- (void).cxx_destruct;
 - (id)copyRawImageReturningError:(id*)arg1;
-- (void)dealloc;
 - (id)initWithURL:(id)arg1;
 - (id)placeholderImage;
 - (void)setUsePlaceholderAsFallback:(BOOL)arg1;

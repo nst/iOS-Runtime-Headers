@@ -39,7 +39,7 @@
 + (id)displays;
 + (id)mainDisplay;
 
-- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; unsigned int x5; struct __CFString {} *x6; struct ModeSet { unsigned int x_7_1_1; unsigned int x_7_1_2[1]; } x7; int x8; int x9; int x10; struct Bounds { int x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; unsigned int x12; unsigned int x13; float x14; int x15; boolx16; boolx17; boolx18; boolx19; boolx20; boolx21; unsigned int x22; double x23; boolx24; }*)arg1;
+- (id)_initWithDisplay:(struct Display { int (**x1)(); id x2; struct __CFString {} *x3; struct __CFString {} *x4; unsigned int x5; struct __CFString {} *x6; struct ModeSet { unsigned int x_7_1_1; unsigned int x_7_1_2[1]; } x7; int x8; int x9; int x10; struct Bounds { int x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; unsigned int x12; unsigned int x13; float x14; int x15; boolx16; boolx17; boolx18; boolx19; boolx20; boolx21; unsigned int x22; double x23; boolx24; boolx25; }*)arg1;
 - (void)_invalidate;
 - (BOOL)allowsVirtualModes;
 - (id)availableModes;

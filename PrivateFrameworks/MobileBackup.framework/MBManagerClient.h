@@ -16,6 +16,7 @@
 - (id)_sendRequest:(id)arg1 arguments:(id)arg2;
 - (void)accountChanged;
 - (BOOL)acquireLockWithBackupUDID:(id)arg1 owner:(id)arg2 timeout:(double)arg3 error:(id*)arg4;
+- (BOOL)addFileToBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 domainName:(id)arg3 relativePath:(id)arg4 fromPath:(id)arg5 error:(id*)arg6;
 - (BOOL)allowiTunesBackup;
 - (id)backupState;
 - (void)cancel;
@@ -30,6 +31,7 @@
 - (void)dealloc;
 - (BOOL)deleteAccountWithError:(id*)arg1;
 - (BOOL)deleteBackupUDID:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteItemFromBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 domainName:(id)arg3 relativePath:(id)arg4 error:(id*)arg5;
 - (BOOL)deleteSnapshotID:(unsigned int)arg1 fromBackupUDID:(id)arg2 error:(id*)arg3;
 - (id)domainInfoForName:(id)arg1;
 - (id)domainInfoList;
@@ -45,6 +47,7 @@
 - (BOOL)isBackupEnabled;
 - (BOOL)isBackupEnabledForDomainName:(id)arg1;
 - (void)keyBagIsLocking;
+- (void)keyBagIsUnlocked;
 - (unsigned long long)nextBackupSize;
 - (void)prioritizeRestoreFileWithPath:(id)arg1;
 - (void)rebootDevice;

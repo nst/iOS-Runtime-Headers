@@ -44,7 +44,7 @@
 - (void)_foundChildrenOrder:(id)arg1 inFolderWithURL:(id)arg2;
 - (void)_getDataPayloads;
 - (void)_getItemTags;
-- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
+- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 deletedItems:(id)arg3 error:(id)arg4;
 - (void)_getTopFolderTags;
 - (void)_postTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_pushActions;

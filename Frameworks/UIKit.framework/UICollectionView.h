@@ -2,7 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UICollectionViewDataSource>, <UICollectionViewDelegate>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UICollectionReusableView, UICollectionViewLayout, UITouch, UIView;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class <UICollectionViewDataSource>, <UICollectionViewDelegate>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UICollectionReusableView, UICollectionViewData, UICollectionViewLayout, UICollectionViewLayoutAttributes, UICollectionViewUpdate, UITouch, UIView, _UIDynamicAnimationGroup;
 
 @interface UICollectionView : UIScrollView {
     struct CGRect { 
@@ -26,6 +30,12 @@
     struct CGPoint { 
         float x; 
         float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
+    struct CGPoint { 
+        float x; 
+        float y; 
     struct { 
         unsigned int delegateShouldHighlightItemAtIndexPath : 1; 
         unsigned int delegateDidHighlightItemAtIndexPath : 1; 
@@ -37,6 +47,9 @@
         unsigned int delegateSupportsMenus : 1; 
         unsigned int delegateDidEndDisplayingCell : 1; 
         unsigned int delegateDidEndDisplayingSupplementaryView : 1; 
+        unsigned int delegateIndexForReferenceItemDuringLayoutTransition : 1; 
+        unsigned int delegateOverrideForTransitionOffsetSize : 1; 
+        unsigned int delegateTargetContentOffsetForProposedContentOffset : 1; 
         unsigned int dataSourceNumberOfSections : 1; 
         unsigned int dataSourceViewForSupplementaryElement : 1; 
         unsigned int reloadSkippedDuringSuspension : 1; 
@@ -44,7 +57,6 @@
         unsigned int scheduledUpdateVisibleCellLayoutAttributes : 1; 
         unsigned int allowsSelection : 1; 
         unsigned int allowsMultipleSelection : 1; 
-        unsigned int updating : 1; 
         unsigned int fadeCellsForBoundsChange : 1; 
         unsigned int updatingLayout : 1; 
         unsigned int needsReload : 1; 
@@ -52,6 +64,8 @@
         unsigned int skipLayoutDuringSnapshotting : 1; 
         unsigned int layoutInvalidatedSinceLastCellUpdate : 1; 
         unsigned int doneFirstLayout : 1; 
+        unsigned int loadingOffscreenViews : 1; 
+        unsigned int updating : 1; 
     struct CGPoint { 
         float x; 
         float y; 
@@ -61,11 +75,17 @@
     NSMutableDictionary *_cellNibDict;
     NSMutableDictionary *_cellNibExternalObjectsTables;
     NSMutableDictionary *_cellReuseQueues;
-    id _collectionViewData;
+    NSMutableDictionary *_clonedViewsDict;
+    UICollectionViewData *_collectionViewData;
     } _collectionViewFlags;
+    } _currentCenterOffset;
+    float _currentInteractiveTransitionProgress;
+    double _currentInteractiveTransitionTimeStamp;
     UITouch *_currentTouch;
+    UICollectionViewUpdate *_currentUpdate;
     <UICollectionViewDataSource> *_dataSource;
     NSMutableArray *_deleteItems;
+    _UIDynamicAnimationGroup *_endInteractiveTransitionAnimationGroup;
     NSIndexPath *_firstResponderIndexPath;
     UICollectionReusableView *_firstResponderView;
     NSString *_firstResponderViewKind;
@@ -73,24 +93,37 @@
     NSMutableSet *_indexPathsForHighlightedItems;
     NSMutableSet *_indexPathsForSelectedItems;
     NSMutableArray *_insertItems;
+    id _interactiveCompletionHandler;
+    NSMutableDictionary *_interactiveTransitionInfos;
+    NSMutableDictionary *_interactiveTransitionValueTrackingDict;
+    BOOL _isInInteractiveTransition;
     } _lastLayoutOffset;
     UICollectionViewLayout *_layout;
     NSMutableArray *_moveItems;
+    id _navigationCompletion;
     UIView *_newContentView;
+    UICollectionViewLayout *_nextLayoutForInteractiveTranstion;
     NSArray *_originalDeleteItems;
     NSArray *_originalInsertItems;
     NSMutableSet *_pendingDeselectionIndexPaths;
     NSIndexPath *_pendingSelectionIndexPath;
     } _preRotationBounds;
+    } _previousCenterOffset;
+    float _previousInteractiveTransitionProgress;
+    double _previousInteractiveTransitionTimeStamp;
     NSMutableArray *_reloadItems;
     int _reloadingSuspendedCount;
     int _rotationAnimationCount;
     } _rotationBoundsOffset;
+    BOOL _shouldAccumulateTrackedLayoutValues;
+    double _startTimeStamp;
     NSMutableDictionary *_supplementaryViewClassDict;
     NSMutableDictionary *_supplementaryViewNibDict;
     NSMutableDictionary *_supplementaryViewNibExternalObjectsTables;
     NSMutableDictionary *_supplementaryViewReuseQueues;
-    id _update;
+    NSMutableArray *_trackedValuesKeys;
+    UICollectionViewLayoutAttributes *_transitionLayoutAttributes;
+    int _updateAnimationCount;
     id _updateCompletionHandler;
     int _updateCount;
     } _visibleBounds;
@@ -103,37 +136,64 @@
 @property(getter=_currentTouch,setter=_setCurrentTouch:,retain) UITouch * currentTouch;
 @property <UICollectionViewDataSource> * dataSource;
 @property <UICollectionViewDelegate> * delegate;
+@property(getter=_navigationCompletion,setter=_setNavigationCompletion:,copy) id navigationCompletion;
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
 
+- (int)MPU_globalRowForRowAtIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })__ck_contentSize;
+- (id)__ck_indexPathForLastItem;
 - (void)_addControlledSubview:(id)arg1 atZIndex:(int)arg2;
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2 andSet:(id)arg3;
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2;
 - (id)_arrayForUpdateAction:(int)arg1;
 - (void)_beginUpdates;
 - (BOOL)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
+- (void)_cancelInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
 - (void)_cancelTouches;
 - (void)_cellMenuDismissed;
+- (void)_cleanUpAfterInteractiveTransitionDidFinish:(BOOL)arg1;
 - (id)_collectionViewData;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForNewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 newContentSize:(struct CGSize { float x1; float x2; })arg3 andOldContentSize:(struct CGSize { float x1; float x2; })arg4;
-- (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2;
-- (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3;
+- (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3;
+- (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3 applyAttributes:(BOOL)arg4;
 - (id)_currentTouch;
 - (id)_currentUpdate;
 - (BOOL)_dataSourceImplementsNumberOfSections;
 - (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3;
 - (void)_deselectAllAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
 - (void)_deselectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
-- (id)_doubleSidedAnimationsForView:(id)arg1 withStartingLayoutAttributes:(id)arg2 endingLayoutAttributes:(id)arg3 withAnimationSetup:(id)arg4 animationCompletion:(id)arg5;
+- (id)_doubleSidedAnimationsForView:(id)arg1 withStartingLayoutAttributes:(id)arg2 startingLayout:(id)arg3 endingLayoutAttributes:(id)arg4 endingLayout:(id)arg5 withAnimationSetup:(id)arg6 animationCompletion:(id)arg7 enableCustomAnimations:(BOOL)arg8 customAnimationsType:(unsigned int)arg9;
+- (id)_dynamicAnimationsForTrackValues;
 - (void)_endItemAnimations;
 - (void)_endUpdates;
+- (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_finishInteractiveTransitionShouldFinish:(BOOL)arg1 finalAnimation:(BOOL)arg2;
+- (void)_finishInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
+- (id)_gkDequeueCellForClass:(Class)arg1 forIndexPath:(id)arg2;
+- (id)_gkDequeueSupplementaryViewForClass:(Class)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
+- (void)_gkRegisterCellClass:(Class)arg1;
+- (void)_gkRegisterClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2;
+- (id)_gkReuseIdentifierForClass:(Class)arg1;
+- (id)_gkVisibleCellForIndexPath:(id)arg1;
 - (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
 - (id)_indexPathForView:(id)arg1 ofType:(unsigned int)arg2;
-- (void)_invalidateLayout;
+- (BOOL)_indexPathIsValid:(id)arg1;
+- (id)_indexPathsForVisibleDecorationViewsOfKind:(id)arg1;
+- (id)_indexPathsForVisibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
+- (id)_indexPathsForVisibleSupplementaryViewsOfKind:(id)arg1;
+- (void)_invalidateLayoutIfNecessary;
+- (void)_invalidateLayoutWithContext:(id)arg1;
 - (id)_keysForObject:(id)arg1 inDictionary:(id)arg2;
 - (id)_layoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_moveWithEvent:(id)arg1;
+- (id)_navigationCompletion;
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
+- (id)_pivotForTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (void)_prepareLayoutForUpdates;
 - (void)_reloadDataIfNeeded;
 - (void)_resumeReloads;
@@ -144,39 +204,51 @@
 - (void)_selectAllSelectedItems;
 - (void)_selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3 notifyDelegate:(BOOL)arg4;
 - (id)_selectableIndexPathForItemContainingHitView:(id)arg1;
+- (void)_setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 isInteractive:(BOOL)arg3 completion:(id)arg4;
 - (void)_setCurrentTouch:(id)arg1;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
+- (void)_setNavigationCompletion:(id)arg1;
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withLayoutAttributes:(BOOL)arg2;
 - (void)_setObject:(id)arg1 inDictionary:(id)arg2 forKind:(id)arg3 indexPath:(id)arg4;
-- (void)_setVisibleCell:(id)arg1 forIndexPath:(id)arg2;
-- (void)_setVisibleDecorationView:(id)arg1 forReuseIdentifier:(id)arg2 indexPath:(id)arg3;
-- (void)_setVisibleSupplementaryView:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
 - (void)_setupCellAnimations;
 - (BOOL)_shouldShowMenuForCell:(id)arg1;
 - (void)_suspendReloads;
+- (void)_trackLayoutValue:(float)arg1 forKey:(id)arg2;
+- (float)_trackedLayoutValueForKey:(id)arg1;
 - (void)_unhighlightAllItems;
 - (void)_unhighlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateBackgroundView;
 - (void)_updateRowsAtIndexPaths:(id)arg1 updateAction:(int)arg2;
 - (void)_updateSections:(id)arg1 updateAction:(int)arg2;
+- (void)_updateTrackedLayoutValuesWith:(id)arg1;
+- (void)_updateTransitionWithProgress:(float)arg1;
 - (void)_updateVisibleCellsNow:(BOOL)arg1;
 - (void)_updateWithItems:(id)arg1;
 - (void)_userSelectItemAtIndexPath:(id)arg1;
 - (id)_viewAnimationsForCurrentUpdate;
+- (id)_viewControllerToNotifyOnLayoutSubviews;
+- (BOOL)_visible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBounds;
-- (id)_visibleSupplementaryViewForKind:(id)arg1 andIndexPath:(id)arg2;
+- (id)_visibleDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)_visibleDecorationViewsOfKind:(id)arg1;
+- (id)_visibleSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2 isDecorationView:(BOOL)arg3;
+- (id)_visibleSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)_visibleSupplementaryViewsOfKind:(id)arg1 isDecorationView:(BOOL)arg2;
+- (id)_visibleSupplementaryViewsOfKind:(id)arg1;
 - (id)_visibleViewsDict;
 - (BOOL)allowsMultipleSelection;
 - (BOOL)allowsSelection;
-- (void)animationDone:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (id)backgroundView;
+- (BOOL)canBecomeFirstResponder;
+- (void)cancelInteractiveTransition;
 - (id)cellForItemAtIndexPath:(id)arg1;
 - (id)collectionViewLayout;
 - (id)dataSource;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (void)deleteSections:(id)arg1;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
@@ -184,7 +256,11 @@
 - (id)description;
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)didMoveToWindow;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)finishInteractiveTransition;
+- (void)fixVisibleBounds;
+- (int)highlightedGlobalItem;
 - (id)indexPathForCell:(id)arg1;
 - (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)indexPathForSupplementaryView:(id)arg1;
@@ -198,11 +274,14 @@
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)layoutSubviews;
+- (int)maximumGlobalItemIndex;
 - (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)moveSection:(int)arg1 toSection:(int)arg2;
 - (int)numberOfItemsInSection:(int)arg1;
 - (int)numberOfSections;
 - (void)performBatchUpdates:(id)arg1 completion:(id)arg2;
+- (void)pu_scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)pu_scrollToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)registerClass:(Class)arg1 forCellWithReuseIdentifier:(id)arg2;
 - (void)registerClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)registerNib:(id)arg1 forCellWithReuseIdentifier:(id)arg2;
@@ -216,11 +295,16 @@
 - (void)setAllowsSelection:(BOOL)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2;
 - (void)setCollectionViewLayout:(id)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)startInteractiveTransitionToCollectionViewLayout:(id)arg1 completion:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

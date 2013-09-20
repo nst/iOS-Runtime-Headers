@@ -2,30 +2,31 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSCache, NSLock, NSMutableArray, SLWeiboDaemonConnectionInfo;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface SLWeiboSession : NSObject <XPCProxyTarget> {
+@class NSCache, SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol>;
+
+@interface SLWeiboSession : NSObject <SLWeiboClientSessionProtocol, SLMicroBlogSheetDelegate> {
     id _connectionResetBlock;
-    SLWeiboDaemonConnectionInfo *_daemonConnectionInfo;
-    NSMutableArray *_inFlightSessionRemoteCallInfos;
-    NSLock *_inFlightSessionRemoteCallInfosLock;
     id _locationInformationChangedBlock;
     NSCache *_profileImageCache;
+    SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol> *_remoteSession;
 }
 
 @property(copy) id connectionResetBlock;
 @property(copy) id locationInformationChangedBlock;
 
++ (id)_remoteInterface;
+
 - (void).cxx_destruct;
-- (void)_buildWeibodSession;
-- (id)_daemonSessionProxy;
-- (void)_didCompleteRemoteCall:(id)arg1;
-- (void)_issueRemoteCall:(id)arg1;
-- (id)_newRemoteCall;
-- (void)_noteWeibodSessionProxyInterrupted;
 - (void)acceptLocationUpdate:(id)arg1;
+- (id)cachedProfileImageDataForScreenName:(id)arg1;
+- (int)characterCountForText:(id)arg1 shortenedURLCost:(int)arg2;
 - (id)connectionResetBlock;
-- (void)dealloc;
+- (BOOL)countMediaAttachmentsTowardCharacterCount;
+- (void)ensureUserRecordStore;
 - (void)fetchCurrentImageLimits:(id)arg1;
 - (void)fetchCurrentUrlLimits:(id)arg1;
 - (void)fetchGeotagStatus:(id)arg1;
@@ -36,9 +37,10 @@
 - (void)getPermaLinkFromLastStatusUpdate:(id)arg1;
 - (id)init;
 - (id)locationInformationChangedBlock;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)overrideLocationWithLatitude:(float)arg1 longitude:(float)arg2 name:(id)arg3;
 - (void)recordsMatchingPrefixString:(id)arg1 completion:(id)arg2;
 - (void)sendStatus:(id)arg1 completion:(id)arg2;
+- (id)serviceAccountTypeIdentifier;
 - (void)setActiveAccountIdentifier:(id)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setConnectionResetBlock:(id)arg1;
@@ -46,7 +48,7 @@
 - (void)setGeotagStatus:(int)arg1;
 - (void)setLocationInformationChangedBlock:(id)arg1;
 - (void)setOverrideGeotagInfo:(id)arg1;
-- (void)showWeiboSettingsIfNeeded;
-- (void)tearDownWeibodSession;
+- (void)showSettingsIfNeeded;
+- (void)tearDownConnectionToRemoteSession;
 
 @end

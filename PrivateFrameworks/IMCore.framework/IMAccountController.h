@@ -9,6 +9,7 @@
     NSMutableArray *_accounts;
     BOOL _cachesEnabled;
     BOOL _isReadOnly;
+    NSArray *_operationalAccountsCache;
     NSMutableDictionary *_serviceToAccountsMap;
     NSMutableDictionary *_serviceToActiveAccountsMap;
     NSMutableDictionary *_serviceToConnectedAccountsMap;
@@ -26,16 +27,20 @@
 + (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;
 
-- (id)__ck_anyAccount;
+- (id)__ck_bestAccountForAddress:(id)arg1;
+- (id)__ck_bestAccountForAddresses:(id)arg1;
 - (id)__ck_defaultAccountForService:(id)arg1;
 - (id)__ck_operationalPhoneAccountForService:(id)arg1;
 - (id)__iCloudSystemAccountForService:(id)arg1;
+- (void)_accountRegistrationStatusChanged:(id)arg1;
 - (id)_accounts;
 - (void)_activeAccountChanged:(id)arg1;
 - (id)_bestOperationalAccountForSendingForService:(id)arg1;
+- (BOOL)_deactivateAccount:(id)arg1;
+- (BOOL)_deactivateAccounts:(id)arg1;
 - (void)_disableCache;
 - (void)_enableCache;
-- (id)_serviceAgentConnectedAccounts;
+- (void)_rebuildOperationalAccountsCache:(BOOL)arg1;
 - (BOOL)accountActive:(id)arg1;
 - (id)accountAtIndex:(int)arg1;
 - (BOOL)accountConnected:(id)arg1;

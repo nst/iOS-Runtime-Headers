@@ -15,12 +15,6 @@
 @property(retain) NSNumber * start;
 @property(retain) PFUbiquityStoreMetadata * storeMetadata;
 
-+ (id)createArrayOfRangesForAllUnmappedObjectsInStoreWithStoreMetadata:(id)arg1 withLocalPeerID:(id)arg2;
-+ (id)fakeManagedObjectURIForStoreMetadata:(id)arg1 entityName:(id)arg2 andPrimaryKey:(id)arg3;
-+ (id)peerRangeForLocalPrimaryKey:(unsigned int)arg1 inStoreNamed:(id)arg2 andEntityName:(id)arg3 inManagedObjectContext:(id)arg4;
-
-- (id)createBaselineDictionary;
 - (void)loadFromBaselineDictionary:(id)arg1;
-- (void)loadFromStoreMetadataDictionary:(id)arg1;
 
 @end

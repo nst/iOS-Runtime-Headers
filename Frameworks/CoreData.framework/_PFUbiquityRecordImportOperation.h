@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSError, NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSObject<_PFUbiquityRecordImportOperationDelegate>, NSPersistentStore, NSPersistentStoreCoordinator, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector, PFUbiquitySwitchboardEntry, PFUbiquityTransactionLog;
+@class NSError, NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSObject<_PFUbiquityRecordImportOperationDelegate>, NSPersistentStoreCoordinator, PFUbiquityImportContext, PFUbiquityKnowledgeVector, PFUbiquitySwitchboardEntry, PFUbiquityTransactionLog;
 
 @interface _PFUbiquityRecordImportOperation : PFUbiquityImportOperation <NSManagedObjectContextFaultingDelegate> {
     NSMutableSet *_deletedObjectIDs;
@@ -11,14 +11,13 @@
     int _inMemorySequenceNumber;
     PFUbiquityKnowledgeVector *_initialStoreKnowledgeVector;
     NSMutableSet *_insertedObjectIDs;
-    NSString *_localPeerID;
     BOOL _lockedExistingCoord;
     PFUbiquityKnowledgeVector *_logScore;
     NSManagedObjectContext *_moc;
     NSError *_operationError;
     NSPersistentStoreCoordinator *_psc;
+    NSMutableDictionary *_relationshipsToObjectIDsToCheck;
     NSMutableDictionary *_resolvedConflicts;
-    NSPersistentStore *_store;
     BOOL _success;
     BOOL _transactionDidRollback;
     PFUbiquityTransactionLog *_transactionLog;
@@ -32,14 +31,12 @@
 @property(retain) PFUbiquityImportContext * importContext;
 @property(readonly) PFUbiquityKnowledgeVector * initialStoreKnowledgeVector;
 @property(readonly) NSMutableSet * insertedObjectIDs;
-@property(readonly) NSString * localPeerID;
 @property BOOL lockedExistingCoord;
 @property(retain) PFUbiquityKnowledgeVector * logScore;
 @property(readonly) NSManagedObjectContext * moc;
 @property(readonly) NSError * operationError;
 @property(readonly) NSPersistentStoreCoordinator * psc;
 @property(readonly) NSMutableDictionary * resolvedConflicts;
-@property(readonly) NSPersistentStore * store;
 @property(readonly) BOOL success;
 @property(readonly) BOOL transactionDidRollBack;
 @property(readonly) PFUbiquityTransactionLog * transactionLog;
@@ -48,8 +45,8 @@
 @property(readonly) BOOL wroteKV;
 
 - (BOOL)applyChangesFromStoreSaveSnapshot:(id)arg1 withImportContext:(id)arg2 withError:(id*)arg3;
+- (void)cancel;
 - (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
-- (void)coordinatorWillRemoveStore:(id)arg1;
 - (id)copy;
 - (void)dealloc;
 - (id)delegate;
@@ -58,11 +55,9 @@
 - (BOOL)fillManagedObject:(id)arg1 withGlobalID:(id)arg2 fromUbiquityDictionary:(id)arg3 missingObjects:(id)arg4 importContext:(id)arg5 withError:(id*)arg6;
 - (id)importContext;
 - (id)init;
-- (id)initWithTransactionLog:(id)arg1 withLocalPeerID:(id)arg2;
-- (id)initWithTransactionLog:(id)arg1;
+- (id)initWithTransactionLog:(id)arg1 persistentStore:(id)arg2 andLocalPeerID:(id)arg3;
 - (id)initialStoreKnowledgeVector;
 - (id)insertedObjectIDs;
-- (id)localPeerID;
 - (BOOL)lockedExistingCoord;
 - (id)logScore;
 - (void)main;
@@ -79,7 +74,6 @@
 - (void)setLockedExistingCoord:(BOOL)arg1;
 - (void)setLogScore:(id)arg1;
 - (void)setUpdatedStoreKnowledgeVector:(id)arg1;
-- (id)store;
 - (BOOL)success;
 - (BOOL)transactionDidRollBack;
 - (id)transactionLog;

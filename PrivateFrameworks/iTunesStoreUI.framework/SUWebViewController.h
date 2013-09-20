@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class ISURLRequestPerformance, NSURL, SSAuthenticationContext, SSMutableAuthenticationContext, SUDelayedNavigationItem, SUMescalSession, SUObjectPool, SUStorePageProtocol, SUWebView, SUWebViewManager;
+@class ISURLRequestPerformance, NSURL, SSAuthenticationContext, SSMutableAuthenticationContext, SUDelayedNavigationItem, SUMescalSession, SUObjectPool, SUShowcaseViewController, SUStorePageProtocol, SUWebView, SUWebViewManager;
 
 @interface SUWebViewController : SUViewController <SUWebViewManagerDelegate, SUWebViewDelegate> {
     SSMutableAuthenticationContext *_authenticationContext;
@@ -18,6 +18,7 @@
     SUObjectPool *_objectPool;
     ISURLRequestPerformance *_performanceMetrics;
     int _scheduledOrientation;
+    SUShowcaseViewController *_showcaseViewController;
     SUStorePageProtocol *_storePageProtocol;
     int _style;
     NSURL *_url;
@@ -46,6 +47,7 @@
 - (id)_performanceMetrics;
 - (id)_placeholderBackgroundView;
 - (void)_prepareToLoadURL:(id)arg1;
+- (void)_reloadBackgroundViewPropertiesWithScriptProperties:(id)arg1;
 - (void)_reloadObjectPool;
 - (void)_reloadPlaceholderBackgroundView;
 - (void)_reloadUI;
@@ -55,6 +57,7 @@
 - (void)_setLastKnownOrientation:(int)arg1;
 - (void)_setMescalSession:(id)arg1;
 - (void)_setPerformanceMetrics:(id)arg1;
+- (void)_showNativeShowcaseWithDictionary:(id)arg1;
 - (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;
 - (id)authenticationContext;

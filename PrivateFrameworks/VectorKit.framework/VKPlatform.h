@@ -2,40 +2,55 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface VKPlatform : NSObject {
-    int _hardwareType;
     unsigned int _memSize;
-    NSString *_modelName;
     int _numCPUs;
+    BOOL _proceduralRoadAlpha;
+    BOOL _shouldUseTrafficAlphaHack;
+    BOOL _supports3DBuildingStrokes;
+    BOOL _supportsBuildingStrokes;
+    BOOL _useCheapTrafficShader;
 }
 
-@property(readonly) BOOL canMakeHighResolutionSnapshots;
 @property(readonly) BOOL canMakeSharingThumbnails;
-@property(readonly) BOOL isHiDPI;
 @property(readonly) BOOL isPad;
+@property(readonly) float mainScreenPPI;
+@property(readonly) float mainScreenScale;
+@property(readonly) unsigned int memorySize;
+@property(readonly) BOOL proceduralRoadAlpha;
 @property(readonly) BOOL roadsWithSimpleLineMeshesAvailable;
 @property(readonly) BOOL shouldDrawWhenReady;
 @property(readonly) BOOL shouldUseTrafficAlphaHack;
+@property(readonly) BOOL supports3DBuildingStrokes;
+@property(readonly) BOOL supportsBuildingStrokes;
+@property(readonly) BOOL supportsDepthDependentBuildings;
+@property(readonly) BOOL supportsHiResBuildings;
+@property(readonly) BOOL supportsHiResRTT;
 @property(readonly) unsigned int tileMaximumLimit;
-@property(readonly) unsigned int tileReserveLimit;
+@property(readonly) BOOL useCheapTrafficShader;
 
 + (id)sharedPlatform;
 
+- (unsigned int)_calculateMemSize;
 - (void)_determineHardware;
-- (void)_determineSystemModel;
-- (BOOL)canMakeHighResolutionSnapshots;
 - (BOOL)canMakeSharingThumbnails;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isHiDPI;
 - (BOOL)isPad;
+- (float)mainScreenPPI;
+- (float)mainScreenScale;
+- (unsigned int)memorySize;
+- (BOOL)proceduralRoadAlpha;
 - (BOOL)roadsWithSimpleLineMeshesAvailable;
 - (BOOL)shouldDrawWhenReady;
 - (BOOL)shouldUseTrafficAlphaHack;
+- (BOOL)supports3DBuildingStrokes;
+- (BOOL)supportsBuildingStrokes;
+- (BOOL)supportsDepthDependentBuildings;
+- (BOOL)supportsHiResBuildings;
 - (BOOL)supportsHiResRTT;
 - (unsigned int)tileMaximumLimit;
-- (unsigned int)tileReserveLimit;
+- (unsigned int)tileReserveLimit:(BOOL)arg1;
+- (BOOL)useCheapTrafficShader;
 
 @end

@@ -33,10 +33,14 @@
 @property float specularIntensity;
 @property(copy) NSString * type;
 
++ (void)CAMLParserStartElement:(id)arg1;
++ (id)CA_CAMLPropertyForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (id)lightWithType:(id)arg1;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
+- (id)CAMLTypeForKey:(id)arg1;
 - (float)ambientIntensity;
 - (struct CGColor { }*)color;
 - (float)coneAngle;
@@ -45,6 +49,7 @@
 - (void)dealloc;
 - (float)diffuseIntensity;
 - (struct CAPoint3D { float x1; float x2; float x3; })direction;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (float)falloff;
 - (float)falloffDistance;

@@ -2,17 +2,23 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString;
 
 @interface NSProgressValues : NSObject <NSSecureCoding> {
-    NSMutableArray *_children;
+    long long _childCompletedUnitCount;
+    double _childFractionCompleted;
     long long _completedUnitCount;
+    double _fractionCompleted;
     BOOL _isCancellable;
     BOOL _isCancelled;
+    BOOL _isFinished;
     BOOL _isPausable;
     BOOL _isPaused;
+    BOOL _isPrioritizable;
     NSString *_kind;
+    NSString *_localizedAdditionalDescription;
     NSString *_localizedDescription;
+    double _selfFractionCompleted;
     long long _totalUnitCount;
     NSMutableDictionary *_userInfo;
 }
@@ -22,8 +28,11 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isIndeterminate;
+- (void)setIndeterminate:(BOOL)arg1;
 
 @end

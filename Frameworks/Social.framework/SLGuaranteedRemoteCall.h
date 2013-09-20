@@ -6,15 +6,13 @@
    See Warning(s) below.
  */
 
-@class XPCProxy;
-
 @interface SLGuaranteedRemoteCall : NSObject {
-    XPCProxy *_proxy;
-    id _remoteCallBlock;
+    id _block;
+    id _proxy;
 }
 
 @property(copy) id block;
-@property(retain) XPCProxy * proxy;
+@property(retain) id proxy;
 
 - (void).cxx_destruct;
 - (id)block;

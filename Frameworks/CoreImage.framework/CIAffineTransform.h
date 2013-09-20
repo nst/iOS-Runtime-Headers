@@ -4,13 +4,13 @@
 
 @class CIImage, NSValue;
 
-@interface CIAffineTransform : CIFilter {
+@interface CIAffineTransform : CIFilter <_CIFilterProperties> {
     CIImage *inputImage;
     NSValue *inputTransform;
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) NSValue * inputTransform;
+@property(retain) NSValue * inputTransform;
 
 + (id)customAttributes;
 

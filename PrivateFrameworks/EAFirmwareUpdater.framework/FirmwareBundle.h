@@ -2,16 +2,17 @@
    Image: /System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/EAFirmwareUpdater
  */
 
-@class NSData;
+@class NSData, NSString;
 
 @interface FirmwareBundle : NSObject {
-    NSData *certificate;
-    NSData *firmwareImage;
-    unsigned int firmwareImageBaseAddress;
-    unsigned int firmwareImageSize;
-    NSData *hash;
-    unsigned int productIDCode;
-    NSData *signature;
+    NSString *_bundleDescription;
+    NSData *_certificate;
+    NSData *_firmwareImage;
+    unsigned int _firmwareImageBaseAddress;
+    unsigned int _firmwareImageSize;
+    NSData *_hash;
+    unsigned int _productIDCode;
+    NSData *_signature;
 }
 
 @property(readonly) NSData * certificate;
@@ -22,10 +23,11 @@
 @property(readonly) unsigned int productIDCode;
 @property(readonly) NSData * signature;
 
-+ (id)parseResourceFileIntoData:(id)arg1;
++ (id)defaultBundlePath;
 
 - (id)certificate;
 - (void)dealloc;
+- (id)description;
 - (id)firmwareImage;
 - (unsigned int)firmwareImageBaseAddress;
 - (unsigned int)firmwareImageSize;
@@ -33,7 +35,11 @@
 - (id)initWithBundle:(id)arg1;
 - (id)initWithBundleName:(id)arg1;
 - (id)initWithBundlePath:(id)arg1;
-- (id)parseFirmwareImageFileIntoData:(id)arg1;
+- (void)parseFileName:(id)arg1 intoPath:(id*)arg2 andExtension:(id*)arg3;
+- (id)parseMSP430TXTFile:(id)arg1 withDefaultByteValue:(unsigned char)arg2;
+- (id)parseResourceFileIntoData:(id)arg1;
+- (id)parseSRECFile:(id)arg1 withDefaultByteValue:(unsigned char)arg2;
+- (void)parseSRECLine:(id)arg1 intoImage:(id)arg2;
 - (unsigned int)productIDCode;
 - (id)signature;
 

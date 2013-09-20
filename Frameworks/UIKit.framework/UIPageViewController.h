@@ -24,7 +24,10 @@
     struct { 
         unsigned int delegateWantsTransitionWillBegin : 1; 
         unsigned int delegateWantsTransitionCompleted : 1; 
+        unsigned int delegateWantsTransitionsFinished : 1; 
         unsigned int delegateCustomizesSpineLocationForInterfaceOrientation : 1; 
+        unsigned int delegateSupportedInterfaceOrientations : 1; 
+        unsigned int delegatePreferredInterfaceOrientationForPresentation : 1; 
         unsigned int dataSourceSuppliesBeforeViewController : 1; 
         unsigned int dataSourceSuppliesAfterViewController : 1; 
         unsigned int dataSourceSuppliesPageCount : 1; 
@@ -82,6 +85,8 @@
 + (BOOL)_isSpineLocation:(int)arg1 supportedForTransitionStyle:(int)arg2;
 + (BOOL)_isSupportedTransitionStyle:(int)arg1;
 + (id)_outgoingViewControllerKeys;
++ (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
++ (BOOL)doesOverrideSupportedInterfaceOrientations;
 + (id)stringForSpineLocation:(int)arg1;
 
 - (void)_beginDisablingInterfaceAutorotation;
@@ -167,6 +172,7 @@
 - (BOOL)isDoubleSided;
 - (void)loadView;
 - (int)navigationOrientation;
+- (int)preferredInterfaceOrientationForPresentation;
 - (void)queuingScrollView:(id)arg1 didBailoutOfScrollAndRevealedView:(id)arg2;
 - (void)queuingScrollView:(id)arg1 didCommitManualScroll:(BOOL)arg2 toRevealView:(id)arg3 concealView:(id)arg4 direction:(int)arg5 animated:(BOOL)arg6 canComplete:(BOOL)arg7;
 - (void)queuingScrollView:(id)arg1 didEndManualScroll:(BOOL)arg2 toRevealView:(id)arg3 direction:(int)arg4 animated:(BOOL)arg5 didFinish:(BOOL)arg6 didComplete:(BOOL)arg7;
@@ -174,6 +180,7 @@
 - (id)queuingScrollView:(id)arg1 viewAfterView:(id)arg2;
 - (id)queuingScrollView:(id)arg1 viewBeforeView:(id)arg2;
 - (void)queuingScrollView:(id)arg1 willManuallyScroll:(BOOL)arg2 toRevealView:(id)arg3 concealView:(id)arg4 animated:(BOOL)arg5;
+- (void)queuingScrollViewDidFinishScrolling:(id)arg1;
 - (BOOL)queuingScrollViewShouldLayoutSubviews:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -183,6 +190,7 @@
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (int)spineLocation;
+- (unsigned int)supportedInterfaceOrientations;
 - (int)transitionStyle;
 - (id)viewControllers;
 - (void)viewDidAppear:(BOOL)arg1;

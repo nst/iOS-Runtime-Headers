@@ -2,17 +2,20 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOResourceManifestServerProxyDelegate>, NSLock, NSMutableArray, NSObject<OS_xpc_object>;
+@class <GEOResourceManifestServerProxyDelegate>, NSHashTable, NSLock, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
 @interface GEOResourceManifestServerRemoteProxy : NSObject <GEOResourceManifestServerProxy> {
+    NSHashTable *_cancellingConnections;
+    NSLock *_cancellingConnectionsLock;
     int _closedCount;
     NSObject<OS_xpc_object> *_conn;
+    NSLock *_connLock;
     <GEOResourceManifestServerProxyDelegate> *_delegate;
     BOOL _hiDPI;
-    NSMutableArray *_inProgressRegionalResourcesRequests;
-    NSLock *_inProgressRegionalResourcesRequestsLock;
-    unsigned long long _regionalResourceHandleCounter;
+    BOOL _isLoadingResources;
+    BOOL _isUpdatingManifest;
     unsigned int _retryCount;
+    NSObject<OS_dispatch_queue> *_serverQueue;
     BOOL _started;
 }
 
@@ -21,19 +24,18 @@
 - (void)_handleMessage:(id)arg1 xpcMessage:(id)arg2;
 - (void)_setupConnection;
 - (id)authToken;
-- (oneway void)cancelRegionalResourcesLoadForKeys:(id)arg1;
 - (void)closeConnection;
 - (void)dealloc;
 - (id)delegate;
 - (oneway void)forceUpdate;
 - (void)getResourceManifestWithHandler:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
-- (oneway void)loadRegionalResourcesForKeys:(id)arg1 allowNetwork:(BOOL)arg2;
 - (void)openConnection;
-- (oneway void)refreshActiveTileGroup;
 - (oneway void)resetActiveTileGroup;
+- (id)serverQueue;
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setManifestToken:(id)arg1 completionHandler:(id)arg2;
 - (oneway void)startServer:(id)arg1;
 
 @end

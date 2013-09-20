@@ -17,7 +17,7 @@
 
 @property(readonly) OADColorMap * colorMap;
 @property(retain) <OADColorPalette> * colorPalette;
-@property(readonly) OADColorScheme * colorScheme;
+@property(retain) OADColorScheme * colorScheme;
 @property(readonly) OADFontScheme * fontScheme;
 @property(readonly) OADDefaultProperties * lineDefaults;
 @property(readonly) OADDefaultProperties * shapeDefaults;
@@ -31,8 +31,10 @@
 - (void)dealloc;
 - (id)fontScheme;
 - (id)initWithTheme:(id)arg1 colorMap:(id)arg2 colorPalette:(id)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (id)lineDefaults;
 - (void)setColorPalette:(id)arg1;
+- (void)setColorScheme:(id)arg1;
 - (id)shapeDefaults;
 - (id)styleMatrix;
 - (id)textDefaults;

@@ -3,29 +3,21 @@
  */
 
 @interface VGLCenterLineMesh : VGLCullableMesh {
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
     int _drivingDirection;
     int _lastRenderPass;
     int _meshType;
     int _roadClass;
-    float _textureMappingStepQuantizationScaler;
-    } _trafficPrimaryColor;
     int _trafficSpeed;
 }
 
 @property(readonly) int centerLineMeshType;
 @property int drivingDirection;
 @property int roadClass;
-@property float textureMappingStepQuantizationScaler;
-@property struct _VGLColor { float x1; float x2; float x3; float x4; } trafficPrimaryColor;
 @property int trafficSpeed;
 
 - (int)centerLineMeshType;
 - (int)drivingDirection;
+- (void)freezeWithoutCulling;
 - (id)init;
 - (id)initDashedMesh;
 - (id)initMeshOfType:(int)arg1;
@@ -36,11 +28,7 @@
 - (int)roadClass;
 - (void)setDrivingDirection:(int)arg1;
 - (void)setRoadClass:(int)arg1;
-- (void)setTextureMappingStepQuantizationScaler:(float)arg1;
-- (void)setTrafficPrimaryColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTrafficSpeed:(int)arg1;
-- (float)textureMappingStepQuantizationScaler;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })trafficPrimaryColor;
 - (int)trafficSpeed;
 
 @end

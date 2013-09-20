@@ -16,6 +16,7 @@
     NSString *_location;
     BOOL _locationChanged;
     NSDate *_startDate;
+    NSDate *_startDateForNextOccurrence;
     BOOL _timeChanged;
     BOOL _titleChanged;
     NSNumber *_updateCount;
@@ -32,6 +33,7 @@
 @property(retain) NSString * location;
 @property BOOL locationChanged;
 @property(retain) NSDate * startDate;
+@property(retain) NSDate * startDateForNextOccurrence;
 @property BOOL timeChanged;
 @property BOOL titleChanged;
 @property(retain) NSNumber * updateCount;
@@ -61,10 +63,12 @@
 - (void)setLocation:(id)arg1;
 - (void)setLocationChanged:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
+- (void)setStartDateForNextOccurrence:(id)arg1;
 - (void)setTimeChanged:(BOOL)arg1;
 - (void)setTitleChanged:(BOOL)arg1;
 - (void)setUpdateCount:(id)arg1;
 - (id)startDate;
+- (id)startDateForNextOccurrence;
 - (BOOL)timeChanged;
 - (BOOL)titleChanged;
 - (id)updateCount;

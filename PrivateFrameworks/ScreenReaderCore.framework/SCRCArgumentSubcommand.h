@@ -25,6 +25,7 @@
 - (int)run;
 - (void)showHelp;
 - (void)stop;
+- (void)stopDueToSigTerm;
 - (id)subcommandName;
 
 @end

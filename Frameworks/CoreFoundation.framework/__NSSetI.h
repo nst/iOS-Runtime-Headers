@@ -15,6 +15,7 @@
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
 - (void)finalize;
 - (void)getObjects:(id*)arg1 count:(unsigned int)arg2;
 - (id)member:(id)arg1;

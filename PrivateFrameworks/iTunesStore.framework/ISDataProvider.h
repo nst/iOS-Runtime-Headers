@@ -28,11 +28,12 @@
 
 + (id)provider;
 
+- (BOOL)_runServerAuthenticationOperation:(id)arg1 error:(id*)arg2;
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
 - (id)bagContext;
 - (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
-- (void)closeStream;
+- (id)closeStream;
 - (void)configureFromProvider:(id)arg1;
 - (long long)contentLength;
 - (id)contentType;
@@ -40,6 +41,7 @@
 - (void)dealloc;
 - (int)errorHandlerResponseType;
 - (BOOL)isStream;
+- (BOOL)isStreamComplete;
 - (void)migrateOutputFromSubProvider:(id)arg1;
 - (id)output;
 - (id)parentOperation;
@@ -47,6 +49,7 @@
 - (id)redirectURL;
 - (void)resetStream;
 - (BOOL)runAuthorizationDialog:(id)arg1 error:(id*)arg2;
+- (BOOL)runSubOperation:(id)arg1 error:(id*)arg2;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setBagContext:(id)arg1;
@@ -57,6 +60,8 @@
 - (void)setParentOperation:(id)arg1;
 - (void)setRedirectURL:(id)arg1;
 - (void)setup;
+- (void)streamCancelled;
+- (void)streamDidFailWithError:(id)arg1;
 - (long long)streamedBytes;
 
 @end

@@ -12,7 +12,8 @@
 @property(readonly) BOOL nonChaperonePairingAllowed;
 @property(readonly) NSData * pairingCertificateData;
 
-+ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
 + (id)typeStrings;
 
 - (void).cxx_destruct;

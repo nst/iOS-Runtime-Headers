@@ -6,11 +6,15 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, SYDClient;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, SYDClient;
 
 @interface SYDRemotePreferencesSource : NSObject {
+    BOOL _forceNextSynchronization;
     long _generationCount;
+    double _lastAccess;
     long _lastGenerationFromDisk;
+    NSObject<OS_dispatch_source> *_memoryWarningSource;
+    NSObject<OS_dispatch_queue> *_protectionQueue;
     struct __CFDictionary { } *cache;
     SYDClient *client;
     struct __CFDictionary { } *configurationDictionary;
@@ -20,6 +24,7 @@
     unsigned char isInitialSync;
     struct __CFString { } *preferenceID;
     id registrationBlock;
+    NSObject<OS_dispatch_queue> *registrationQueue;
     long long storageChangeCount;
     struct __CFURL { } *urlOnDisk;
 }
@@ -27,11 +32,17 @@
 + (id)SYDRemotePreferencesSourceConfigurationDidChangeNotification;
 + (id)SYDRemotePreferencesSourceDidChangeNotification;
 + (void)initialize;
++ (void)migrateSyncedDefaultsForBundleIdentifier:(id)arg1;
 + (void)noteAccountChanges:(id)arg1;
 + (void)resetAllApplicationsWithCompletionHandler:(id)arg1;
 
 - (void)_cachePlistFromDisk;
+- (void)_createMemoryWarningSource;
+- (void)_didReceiveMemoryWarning;
+- (void)_forceRegistrationNow;
 - (void)_storeConfiguration:(struct __CFDictionary { }*)arg1;
+- (unsigned char)_synchronizeForced:(unsigned char)arg1;
+- (id)_warningSource;
 - (long)configurationValueForKey:(struct __CFString { }*)arg1;
 - (struct __CFDictionary { }*)copyConfigurationDictionary;
 - (struct __CFDictionary { }*)copyDictionary;
@@ -55,6 +66,7 @@
 - (void)scheduleRemoteSynchronization;
 - (id)serverSideDebugDescription;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (void)synchronizationWithCompletionHandler:(id)arg1;
 - (unsigned char)synchronize;
 - (unsigned char)synchronizeForced:(unsigned char)arg1;
 - (void)unregisterForSynchronizedDefaults;

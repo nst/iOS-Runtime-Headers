@@ -6,6 +6,8 @@
     unsigned int _flags;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_modifierString;
 - (void)_setOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

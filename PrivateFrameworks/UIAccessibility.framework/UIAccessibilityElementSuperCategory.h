@@ -5,13 +5,18 @@
 @interface UIAccessibilityElementSuperCategory : UIAccessibilityElementSuperCategory_super {
 }
 
++ (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (id)_installSafeCategoryValidationMethod;
 
+- (float)_accessibilityActivationDelay;
 - (id)_accessibilityAutomaticIdentifier;
 - (BOOL)_accessibilityProvidesOwnFrame;
 - (void)_accessibilitySetValue:(id)arg1;
 - (BOOL)_accessibilitySupportsActivateAction;
-- (void)accessibilityActivate;
+- (BOOL)_accessibilitySupportsHandwriting;
+- (BOOL)accessibilityActivate;
 - (struct CGPoint { float x1; float x2; })accessibilityActivationPoint;
 - (void)accessibilityElementDidBecomeFocused;
 - (void)accessibilityElementDidLoseFocus;

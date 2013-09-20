@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPMoviePlayerControllerDelegate>, MPAVController, MPInlineVideoController, MPMovieAccessLog, MPMovieErrorLog, MPMoviePlayerController, MPMovieView, MPSystemNowPlayingController, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet;
+@class <MPMoviePlayerControllerDelegate>, MPAVController, MPInlineVideoController, MPMovieAccessLog, MPMovieErrorLog, MPMoviePlayerController, MPMovieView, MPSystemNowPlayingController, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, UIWindow;
 
 @interface MPMoviePlayerControllerNew : NSObject <MPMovieViewDelegate, MPMediaPlayback> {
     NSDictionary *_HTTPHeaderFields;
@@ -34,12 +34,12 @@
     BOOL _playWhenSourceTypeIsDetermined;
     NSError *_playbackError;
     MPAVController *_player;
+    UIWindow *_preApexSupportWindow;
     BOOL _prepareWhenSourceTypeIsDetermined;
     BOOL _preparedQueue;
     NSMutableArray *_queuedThumbnailRequests;
     BOOL _readyForDisplay;
     int _repeatMode;
-    int _retainCount;
     BOOL _setUseApplicationAudioSessionWhenPlaybackEnds;
     BOOL _shouldAutoplay;
     BOOL _shouldRestartPlaybackFromBeginning;
@@ -57,8 +57,10 @@
 @property double currentPlaybackTime;
 @property(readonly) BOOL isPreparedToPlay;
 
+- (void).cxx_destruct;
 - (id)_HTTPHeaderFields;
 - (int)_additionalButtons;
+- (id)_advertisementView;
 - (BOOL)_areControlsHidden;
 - (id)_audioSessionModeOverride;
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
@@ -73,7 +75,6 @@
 - (void)_firstVideoFrameDisplayedNotification:(id)arg1;
 - (id)_hostedWindow;
 - (unsigned int)_hostedWindowContextID;
-- (BOOL)_isDeallocating;
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (BOOL)_isNavigationBarHidden;
 - (BOOL)_isReadyForDisplay;
@@ -95,6 +96,8 @@
 - (id)_navigationBar;
 - (id)_nowPlayingMovie;
 - (void)_pausePlaybackForSuspension;
+- (double)_playableEndTime;
+- (double)_playableStartTime;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_postDidFinishNotificationWithReason:(int)arg1;
 - (void)_postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
@@ -102,7 +105,10 @@
 - (void)_prepareToPlayWithStartIndex:(unsigned int)arg1;
 - (void)_rateDidChangeNotification:(id)arg1;
 - (void)_resignActive;
+- (id)_resolvedContentURL;
 - (void)_restartPlaybackFromBeginning;
+- (double)_seekableEndTime;
+- (double)_seekableStartTime;
 - (void)_serverDiedNotification:(id)arg1;
 - (void)_setAdditionalButtons:(int)arg1;
 - (void)_setAudioSessionModeOverride:(id)arg1;
@@ -129,10 +135,8 @@
 - (void)_timeDidJumpNotification:(id)arg1;
 - (void)_timedMetadataAvailableNotification:(id)arg1;
 - (void)_timedMetadataImageAvailableNotification:(id)arg1;
-- (BOOL)_tryRetain;
 - (void)_updateDisabledPartsFromDelegate;
 - (BOOL)_useHostedWindowWhenFullscreen;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoFrame;
 - (id)_videoView;
 - (id)_videoViewController;
 - (void)_videoViewPathWillChangeNotification:(id)arg1;
@@ -141,6 +145,7 @@
 - (void)_willTerminateNotification:(id)arg1;
 - (id)accessLog;
 - (BOOL)allowsAirPlay;
+- (id)asset;
 - (id)backgroundView;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
@@ -164,6 +169,7 @@
 - (int)loadState;
 - (int)movieMediaTypes;
 - (int)movieSourceType;
+- (void)movieView:(id)arg1 willMoveToSuperview:(id)arg2;
 - (void)movieView:(id)arg1 willMoveToWindow:(id)arg2;
 - (void)movieViewDidMoveToWindow:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
@@ -172,13 +178,11 @@
 - (double)playableDuration;
 - (int)playbackState;
 - (void)prepareToPlay;
-- (oneway void)release;
 - (int)repeatMode;
 - (void)requestThumbnailImagesAtTimes:(id)arg1 timeOption:(int)arg2;
-- (id)retain;
-- (unsigned int)retainCount;
 - (int)scalingMode;
 - (void)setAllowsAirPlay:(BOOL)arg1;
+- (void)setAsset:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentURL:(id)arg1;
 - (void)setControlStyle:(int)arg1;

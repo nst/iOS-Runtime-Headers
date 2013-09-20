@@ -29,5 +29,7 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setTotalCostLimit:(unsigned int)arg1;
 - (unsigned int)totalCostLimit;
+- (void)tsp_removeComponentWithIdentifier:(long long)arg1;
+- (void)tsp_setComponent:(id)arg1 forIdentifier:(long long)arg2;
 
 @end

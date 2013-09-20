@@ -13,6 +13,7 @@
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
+- (void).cxx_destruct;
 - (id)makeStoreSheetRequest;
 - (id)parentProductPageViewController;
 - (void)setParentProductPageViewController:(id)arg1;

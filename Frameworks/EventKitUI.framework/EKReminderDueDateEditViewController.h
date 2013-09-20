@@ -4,7 +4,7 @@
 
 @class EKPickerTableView, NSDate;
 
-@interface EKReminderDueDateEditViewController : EKEditItemViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface EKReminderDueDateEditViewController : EKEditItemViewController <UITableViewDelegate, UITableViewDataSource, EKPickerTableViewDelegate> {
     EKPickerTableView *_container;
     NSDate *_dueDate;
     BOOL _hasDueDate;
@@ -12,6 +12,7 @@
     BOOL _shouldShowAllDay;
 }
 
+- (void).cxx_destruct;
 - (void)_datePickerChanged:(id)arg1;
 - (void)_hasDueDateChanged:(id)arg1;
 - (void)_isAllDayChanged:(id)arg1;
@@ -31,6 +32,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (BOOL)isAllDay;
 - (void)loadView;
+- (void)pickerTableViewDidChangeDatePickerInterval:(id)arg1;
 - (void)setDueDate:(id)arg1;
 - (void)setHasDueDate:(BOOL)arg1;
 - (void)setIsAllDay:(BOOL)arg1;
@@ -39,6 +41,5 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 willDeselectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (void)viewDidUnload;
 
 @end

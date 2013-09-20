@@ -23,7 +23,7 @@
 - (id)oaxState;
 - (unsigned long)officeArtShapeIdWithVmlShapeId:(id)arg1;
 - (id)packagePart;
-- (void)reset;
+- (void)resetForNewDrawing;
 - (void)setDrawable:(id)arg1 forVmlShapeId:(id)arg2;
 - (void)setOAXState:(id)arg1;
 - (void)setPackagePart:(id)arg1;

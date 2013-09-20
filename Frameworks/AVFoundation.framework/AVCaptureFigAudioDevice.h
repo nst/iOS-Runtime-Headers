@@ -5,6 +5,7 @@
 @class NSDictionary, NSString;
 
 @interface AVCaptureFigAudioDevice : AVCaptureDevice {
+    struct OpaqueCMClock { } *_deviceClock;
     NSDictionary *_deviceProperties;
     BOOL _isConnected;
     BOOL _levelMeteringEnabled;
@@ -16,8 +17,8 @@
 - (void)audioInputDeviceLocalizedNameDidChangeHandler:(id)arg1;
 - (void)audioInputDevicesDidChangeHandler:(id)arg1;
 - (void)dealloc;
+- (struct OpaqueCMClock { }*)deviceClock;
 - (id)devicePropertiesDictionary;
-- (id)formats;
 - (BOOL)hasMediaType:(id)arg1;
 - (id)init;
 - (id)initWithProperties:(id)arg1;

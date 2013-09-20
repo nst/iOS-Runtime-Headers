@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMappedObjectStore, NSMutableDictionary, NSString;
+@class NSDictionary, NSMappedObjectStore, NSString;
 
 @interface NSPersistentStoreMap : NSObject {
     NSString *_databaseUUID;
-    NSMutableDictionary *_mappings;
+    NSDictionary *_mappings;
     unsigned long long _nextPK64;
     NSMappedObjectStore *_store;
-    NSMutableDictionary *_storeMetadata;
+    NSDictionary *_storeMetadata;
 }
 
 + (void)initialize;

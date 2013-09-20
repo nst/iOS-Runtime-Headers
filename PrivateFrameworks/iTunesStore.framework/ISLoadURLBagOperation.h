@@ -14,18 +14,14 @@
 
 - (id)URLBag;
 - (void)_addHeadersToRequestProperties:(id)arg1;
-- (id)_copyBootstrapURLs;
-- (id)_copyProductionBootstrapURLs;
-- (id)_copySandboxBootstrapURLs;
-- (void)_loadURLBagFromURL:(id)arg1;
 - (void)_postBagDidLoadNotificationWithURLBag:(id)arg1;
+- (void)_sendPingsForURLBag:(id)arg1;
 - (void)_setOutputURLBag:(id)arg1;
-- (void)_writeURLBagToDiskCache:(id)arg1;
+- (BOOL)_setURLBagWithDictionary:(id)arg1 response:(id)arg2 error:(id*)arg3;
 - (id)context;
 - (void)dealloc;
 - (id)init;
 - (id)initWithBagContext:(id)arg1;
-- (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (BOOL)operation:(id)arg1 shouldSetStoreFrontID:(id)arg2;
 - (void)operation:(id)arg1 willSendRequest:(id)arg2;
 - (void)run;

@@ -11,7 +11,8 @@
         unsigned int _cleanupOnDealloc : 1; 
         unsigned int _dataProtectionLevel : 3; 
         unsigned int _isStoredUbiquitously : 1; 
-        unsigned int _reserved : 25; 
+        unsigned int _createdByUbiquityImport : 1; 
+        unsigned int _reserved : 24; 
     unsigned int _bytesLengthForExternalReference;
     unsigned int _bytesLengthForStore;
     void *_bytesPtrForExternalReference;
@@ -33,6 +34,7 @@
 - (unsigned int)_bytesLengthForStore;
 - (const void*)_bytesPtrForExternalReference;
 - (const void*)_bytesPtrForStore;
+- (BOOL)_createdByUbiquityImport;
 - (void)_deleteExternalReferenceFromPermanentLocation;
 - (void)_doCleanup;
 - (id)_exceptionForReadError:(id)arg1;

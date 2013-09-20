@@ -10,6 +10,7 @@
 
 @property(retain) NSString * directionSelector;
 
+- (id)_generateBackdropMaskViewForFlag:(int)arg1;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)dealloc;
 - (id)directionSelector;

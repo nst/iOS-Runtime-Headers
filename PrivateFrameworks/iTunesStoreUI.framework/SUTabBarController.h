@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUTabBarControllerDelegate>, NSArray, NSMutableArray, NSString, SUClientInterface, SUPreviewOverlayViewController, SUViewController, UIImage, UIViewController;
+@class <SUTabBarControllerDelegate>, NSArray, NSMutableArray, NSString, SUClientInterface, SUNavigationBarBackgroundView, SUPreviewOverlayViewController, SUViewController, UIImage, UIViewController;
 
-@interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate> {
+@interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate, _UIBasicAnimationFactory> {
     SUClientInterface *_clientInterface;
     BOOL _ignoreTabReselection;
     UIImage *_moreListSelectedImage;
@@ -18,6 +18,8 @@
     SUPreviewOverlayViewController *_previewOverlayViewController;
     int _reloadingUnderneathTransientControllerCount;
     NSArray *_sections;
+    int _storeBarStyle;
+    SUNavigationBarBackgroundView *_tabBarBackdropView;
 }
 
 @property(getter=_previewOverlayViewController,readonly) SUPreviewOverlayViewController * _previewOverlayViewController;
@@ -29,9 +31,11 @@
 
 + (Class)_moreNavigationControllerClass;
 
+- (int)ITunesStoreUIBarStyle;
 - (void)_applicationDidChangeStatusBarFrame:(id)arg1;
 - (void)_applyMoreListConfiguration;
 - (id)_archivedContextsForViewController:(id)arg1;
+- (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (void)_beginReloadingUnderneathTransientViewController;
 - (void)_endReloadingUnderneathTransientViewController;
 - (void)_fixupTabBarSelection;
@@ -40,7 +44,6 @@
 - (void)_hidePhonePreviewOverlayAnimated:(BOOL)arg1;
 - (void)_hidePreviewOverlayAnimated:(BOOL)arg1;
 - (BOOL)_isReloadingUnderneathTransientViewController;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_moveTransientViewController:(id)arg1 toSectionWithIdentifier:(id)arg2 asRoot:(BOOL)arg3;
 - (void)_moveView:(id)arg1 toView:(id)arg2;
 - (void)_partnerChanged:(id)arg1;
@@ -57,9 +60,11 @@
 - (id)_sectionForType:(int)arg1;
 - (id)_sectionForViewController:(id)arg1;
 - (void)_setSelectedViewController:(id)arg1;
+- (void)_setStoreBarStyle:(int)arg1;
 - (void)_showPadPreviewOverlay:(id)arg1 animated:(BOOL)arg2;
 - (void)_showPhonePreviewOverlay:(id)arg1 animated:(BOOL)arg2;
 - (void)_showPreviewOverlay:(id)arg1 animated:(BOOL)arg2;
+- (id)_timingFunctionForAnimation;
 - (void)_transitionSafeHandlePartnerChange:(id)arg1;
 - (id)_viewControllerForContext:(id)arg1;
 - (void)cancelTransientViewController:(id)arg1;
@@ -99,6 +104,7 @@
 - (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setTransientViewController:(id)arg1 onSectionWithIdentifier:(id)arg2;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
 - (void)tabBar:(id)arg1 willShowCustomizationSheet:(id)arg2 withNavigationBar:(id)arg3;

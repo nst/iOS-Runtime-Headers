@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEODirectionsCollectionRequest : PBRequest {
+@interface GEODirectionsCollectionRequest : PBRequest <NSCopying> {
     NSMutableArray *_requestElements;
 }
 
@@ -13,6 +13,7 @@
 - (void)addRequestElements:(id)arg1;
 - (void)clearRequestElements;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

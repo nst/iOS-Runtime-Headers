@@ -2,23 +2,39 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSLock, NSObject;
+@class NSLock, NSObject, NSPersistentStore, NSString, PFUbiquityLocation;
 
 @interface PFUbiquityImportOperation : NSOperation {
     NSObject *_delegate;
     NSLock *_delegateLock;
+    NSString *_localPeerID;
     BOOL _lockedDelegateLock;
+    NSPersistentStore *_store;
+    NSString *_storeName;
+    PFUbiquityLocation *_ubiquityRootLocation;
 }
 
 @property NSObject * delegate;
+@property(readonly) NSString * localPeerID;
+@property(readonly) NSPersistentStore * store;
+@property(readonly) NSString * storeName;
+@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
 - (void)cancel;
 - (void)dealloc;
 - (id)delegate;
+- (id)description;
 - (id)init;
+- (id)initWithPersistentStore:(id)arg1 localPeerID:(id)arg2 andUbiquityRootLocation:(id)arg3;
+- (id)initWithStoreName:(id)arg1 localPeerID:(id)arg2 andUbiquityRootLocation:(id)arg3;
+- (id)localPeerID;
 - (void)lockDelegateLock;
 - (id)retainedDelegate;
 - (void)setDelegate:(id)arg1;
+- (id)store;
+- (id)storeName;
+- (void)storeWillBeRemoved:(id)arg1;
+- (id)ubiquityRootLocation;
 - (void)unlockDelegateLock;
 
 @end

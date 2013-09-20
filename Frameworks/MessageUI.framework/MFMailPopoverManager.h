@@ -38,7 +38,6 @@
 @property(retain) UIView * currentView;
 @property BOOL popoverBeingHiddenDuringRotation;
 @property(retain) MFPopoverController * popoverController;
-@property(readonly) UIView * popoverView;
 @property BOOL rasterizePopoverLayer;
 
 + (void)dismissPopover:(id)arg1 animated:(BOOL)arg2;
@@ -82,8 +81,6 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1 isUserAction:(BOOL)arg2;
 - (BOOL)popoverDismissalIsDelayed;
 - (BOOL)popoverShowing;
-- (id)popoverView;
-- (void)presentActionSheetPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 animated:(BOOL)arg4;
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 animated:(BOOL)arg3;
 - (void)presentPopover:(id)arg1 fromBarButtonItem:(id)arg2 withDelegate:(id)arg3 animated:(BOOL)arg4;
 - (void)presentPopover:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 allowInteractionWithViews:(id)arg5 withDelegate:(id)arg6 animated:(BOOL)arg7;

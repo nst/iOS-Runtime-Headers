@@ -31,6 +31,7 @@
 + (id)IPodDownloadManager;
 + (void)_sendGlobalHandler:(id)arg1;
 + (void)_triggerDownloads;
++ (void)reconnectToLSApplicationWorkspace;
 + (void)reevaluateBackgroundDownloadsForBundleIdentifiers:(id)arg1;
 + (void)removePersistenceIdentifier:(id)arg1;
 + (void)retryAllRestoreDownloads;

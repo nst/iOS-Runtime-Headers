@@ -6,6 +6,7 @@
 
 @interface AVPingTest : NSObject {
     float avg;
+    NSString *interfaceNameToTest;
     NSString *ipAsString;
     int lastReturnedError;
     float max;
@@ -23,6 +24,7 @@
 @property(readonly) BOOL usingWifi;
 
 - (float)avg;
+- (void)calculateInterfaceName;
 - (void)dealloc;
 - (id)description;
 - (id)initWithIPAsString:(id)arg1 usingWifi:(BOOL)arg2;

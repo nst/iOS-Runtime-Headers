@@ -12,6 +12,7 @@
 @property BOOL hasCompletedDataMigration;
 
 + (id)readOnlyDefaults;
++ (void)synchronize;
 
 - (void)_updateDefaults;
 - (id)allHosts;

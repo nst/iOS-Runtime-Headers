@@ -8,6 +8,10 @@
 
 @property unsigned short providerID;
 
+- (void)_commonSetup:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)initWithDirectionsRequest:(id)arg1;
+- (id)initWithQuickETARequest:(id)arg1;
 - (unsigned short)providerID;
 - (Class)responseClass;
 - (void)setProviderID:(unsigned short)arg1;

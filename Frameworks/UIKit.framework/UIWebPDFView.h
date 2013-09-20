@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSObject<UIWebPDFViewDelegate>, NSString, NSURL, UIColor, UIPDFDocument, UITapGestureRecognizer, WebPDFViewPlaceholder;
+@class NSArray, NSData, NSMutableArray, NSObject<UIWebPDFViewDelegate>, NSString, NSURL, UIColor, UIPDFDocument, UITapGestureRecognizer, WebPDFViewPlaceholder;
 
-@interface UIWebPDFView : UIView <WebPDFViewPlaceholderDelegate, UIPopoverControllerDelegate, UIGestureRecognizerDelegate> {
+@interface UIWebPDFView : UIView <UIPDFPageViewDelegate, UIPDFAnnotationControllerDelegate, WebPDFViewPlaceholderDelegate, UIPopoverControllerDelegate, UIGestureRecognizerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -55,6 +55,7 @@
 @property(readonly) struct CGPDFDocument { }* cgPDFDocument;
 @property(readonly) UIPDFDocument * document;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
+@property(readonly) NSData * documentData;
 @property(retain) NSString * documentPassword;
 @property(readonly) float documentScale;
 @property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } documentTransform;
@@ -70,13 +71,18 @@
 @property BOOL readyForSnapshot;
 @property(readonly) unsigned int totalPages;
 
++ (void)initialize;
 + (void)setAsPDFDocRepAndView;
 
 - (id)_addPageAtIndex:(unsigned int)arg1;
 - (void)_addSubViewsInViewCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 force:(BOOL)arg2;
 - (BOOL)_checkIfDocumentNeedsUnlock;
 - (void)_define:(id)arg1;
+- (void)_didLongPress:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToPageIndex:(unsigned int)arg4;
+- (void)_didLongPress:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToURL:(id)arg4;
 - (void)_didScroll;
+- (void)_didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToPageIndex:(unsigned int)arg4;
+- (void)_didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToURL:(id)arg4;
 - (BOOL)_hasPageRects;
 - (id)_installViewAtIndex:(int)arg1 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (unsigned int)_pageNumberForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -92,23 +98,20 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewCachingBoundsInUIViewCoords;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewportBoundsInUIVIewCoordsWithView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewportBoundsInUIViewCoords;
-- (void)annotationIsBeingPressed:(id)arg1 annotation:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
-- (void)annotationWasTouched:(id)arg1 annotation:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (void)annotation:(id)arg1 isBeingPressedAtPoint:(struct CGPoint { float x1; float x2; })arg2 controller:(id)arg3;
+- (void)annotation:(id)arg1 wasTouchedAtPoint:(struct CGPoint { float x1; float x2; })arg2 controller:(id)arg3;
 - (id)backgroundColorForUnRenderedContent;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGPDFDocument { }*)cgPDFDocument;
 - (void)clearSelection;
 - (void)dealloc;
 - (void)didCompleteLayout;
-- (void)didLongPress:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToPageIndex:(unsigned int)arg4;
-- (void)didLongPress:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToURL:(id)arg4;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (void)didRotate:(id)arg1;
-- (void)didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToPageIndex:(unsigned int)arg4;
-- (void)didTouch:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 linkingToURL:(id)arg4;
 - (void)didZoom:(id)arg1;
 - (id)document;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
+- (id)documentData;
 - (id)documentPassword;
 - (float)documentScale;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })documentTransform;

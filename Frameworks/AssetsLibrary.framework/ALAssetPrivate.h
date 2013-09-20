@@ -12,6 +12,7 @@
 }
 
 @property(retain) PLPhotoLibrary * _photoLibrary;
+@property(getter=isDeletable,readonly) BOOL deletable;
 @property BOOL isValid;
 @property ALAssetsLibrary * library;
 @property(retain) PLManagedAsset * photo;
@@ -20,10 +21,10 @@
 - (id)_photoLibrary;
 - (void)dealloc;
 - (id)initWithManagedAsset:(id)arg1 library:(id)arg2;
+- (BOOL)isDeletable;
 - (BOOL)isValid;
 - (id)library;
 - (void)libraryDidChange;
-- (void)libraryWillDisappear;
 - (id)photo;
 - (void)setIsValid:(BOOL)arg1;
 - (void)setLibrary:(id)arg1;

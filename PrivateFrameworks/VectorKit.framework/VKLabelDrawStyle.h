@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSMutableArray;
 
-@interface VKLabelDrawStyle : NSObject <_VKStyle> {
+@interface VKLabelDrawStyle : VKDrawStyle {
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -15,7 +20,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -24,7 +29,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -33,7 +38,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -42,7 +47,25 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -51,7 +74,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -60,7 +83,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -69,7 +92,25 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                BOOL value; 
+                unsigned char hi; 
+            } v[2]; 
+            char *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<signed char> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                BOOL value; 
+                unsigned char hi; 
+            } v[2]; 
+            char *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<signed char> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -78,7 +119,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -87,7 +128,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -96,7 +137,25 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -105,7 +164,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -119,7 +178,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -133,7 +192,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -142,7 +201,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -151,7 +210,25 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -160,7 +237,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<unsigned int> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 unsigned int value; 
                 unsigned char hi; 
@@ -169,7 +246,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -178,7 +255,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -187,7 +264,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -196,7 +273,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<int> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 int value; 
                 unsigned char hi; 
@@ -205,7 +282,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -214,7 +291,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -223,7 +300,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -232,7 +309,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -241,7 +318,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -250,7 +327,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -259,16 +336,52 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
             } v[2]; 
             float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<VKLabelTextVisibility> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 int value; 
                 unsigned char hi; 
@@ -277,7 +390,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -286,7 +399,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -295,7 +408,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<signed char> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 BOOL value; 
                 unsigned char hi; 
@@ -304,7 +417,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -313,7 +426,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -322,7 +435,70 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -331,7 +507,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<int> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 int value; 
                 unsigned char hi; 
@@ -340,7 +516,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -354,7 +530,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -367,50 +543,8 @@
             struct _VGLColor {} *extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
-            struct VKProfileSparseRampValue { 
-                struct _VGLColor { 
-                    float r; 
-                    float g; 
-                    float b; 
-                    float a; 
-                } value; 
-                unsigned char hi; 
-            } v[2]; 
-            struct _VGLColor {} *extra; 
-        } u; 
-        unsigned char count; 
-    struct VKProfileSparseRamp<VKGenericShieldStyle> { 
-        union { 
+    struct VKProfileSparseRamp<VKBlendMode> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 int value; 
                 unsigned char hi; 
@@ -418,8 +552,17 @@
             int *extra; 
         } u; 
         unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -433,7 +576,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -447,7 +590,48 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                struct _VGLColor { 
+                    float r; 
+                    float g; 
+                    float b; 
+                    float a; 
+                } value; 
+                unsigned char hi; 
+            } v[2]; 
+            struct _VGLColor {} *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<VKIconGlyphStyle> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<VKBlendMode> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<_VGLColor> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -461,7 +645,28 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<CGSize> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                struct CGSize { 
+                    float width; 
+                    float height; 
+                } value; 
+                unsigned char hi; 
+            } v[2]; 
+            struct CGSize {} *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -470,7 +675,108 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                struct _VGLColor { 
+                    float r; 
+                    float g; 
+                    float b; 
+                    float a; 
+                } value; 
+                unsigned char hi; 
+            } v[2]; 
+            struct _VGLColor {} *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<unsigned int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                unsigned int value; 
+                unsigned char hi; 
+            } v[2]; 
+            unsigned int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<VKBlendMode> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<VKPStyleProperties_GenericShieldStyle> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<_VGLColor> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                struct _VGLColor { 
+                    float r; 
+                    float g; 
+                    float b; 
+                    float a; 
+                } value; 
+                unsigned char hi; 
+            } v[2]; 
+            struct _VGLColor {} *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<_VGLColor> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                struct _VGLColor { 
+                    float r; 
+                    float g; 
+                    float b; 
+                    float a; 
+                } value; 
+                unsigned char hi; 
+            } v[2]; 
+            struct _VGLColor {} *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<_VGLColor> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                struct _VGLColor { 
+                    float r; 
+                    float g; 
+                    float b; 
+                    float a; 
+                } value; 
+                unsigned char hi; 
+            } v[2]; 
+            struct _VGLColor {} *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<_VGLColor> { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -484,7 +790,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<CGSize> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct CGSize { 
                     float width; 
@@ -496,7 +802,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -505,7 +811,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -518,8 +824,26 @@
             struct _VGLColor {} *extra; 
         } u; 
         unsigned char count; 
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<VKPStyleProperties_ShieldSize> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -527,16 +851,154 @@
             float *extra; 
         } u; 
         unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<int> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                int value; 
+                unsigned char hi; 
+            } v[2]; 
+            int *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<float> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                float value; 
+                unsigned char hi; 
+            } v[2]; 
+            float *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<signed char> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                BOOL value; 
+                unsigned char hi; 
+            } v[2]; 
+            char *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<signed char> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                BOOL value; 
+                unsigned char hi; 
+            } v[2]; 
+            char *extra; 
+        } u; 
+        unsigned char count; 
+    struct VKProfileSparseRamp<signed char> { 
+        union _u { 
+            struct VKProfileSparseRampValue { 
+                BOOL value; 
+                unsigned char hi; 
+            } v[2]; 
+            char *extra; 
+        } u; 
+        unsigned char count; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    } arrowCollisionOrder;
+    } arrowCollisionRank;
+    } arrowColor;
+    } arrowHaloColor;
     } arrowHeightLarge;
     } arrowHeightMedium;
     } arrowHeightSmall;
+    } arrowHeightXLarge;
+    } arrowHeightXXLarge;
+    } arrowLayer;
     } arrowSpacing;
     } arrowVisible;
+    } collisionOrder;
+    } collisionRank;
     } color;
     unsigned char dedupeRank;
     } fontExpansionLarge;
     } fontExpansionMedium;
     } fontExpansionSmall;
+    } fontExpansionXLarge;
+    } fontExpansionXXLarge;
     NSMutableArray *fontFamily;
     } genericShieldBackgroundColor;
     } genericShieldBorderColor;
@@ -551,32 +1013,75 @@
     } haloSizeLarge;
     } haloSizeMedium;
     } haloSizeSmall;
+    } haloSizeXLarge;
+    } haloSizeXXLarge;
     } hasHeightCurveLarge;
     } hasHeightCurveMedium;
     } hasHeightCurveSmall;
+    } hasHeightCurveXLarge;
+    } hasHeightCurveXXLarge;
     } heightLarge;
     } heightMedium;
     } heightSmall;
+    } heightXLarge;
+    } heightXXLarge;
     NSMutableArray *icon;
     } iconBadgeColor;
+    } iconBadgeLightBlendMode;
+    } iconBadgeLightColor;
+    } iconBevelAmount;
+    } iconBrightness;
+    } iconCornerRadius;
+    } iconDropShadowColor;
+    } iconDropShadowOffset;
+    } iconDropShadowSize;
+    NSMutableArray *iconGlow;
+    } iconGlowBlendMode;
+    } iconGlyphBlendMode;
     } iconGlyphColor;
+    } iconGlyphStyle;
     } iconGradientBottomColor;
     } iconGradientTopColor;
     } iconHaloColor;
+    } iconHaloSize;
+    } iconSourceStyleAttribute;
     } iconStyle;
+    } iconVisibleWhenPOIsDisabled;
+    int labelClass;
+    } layer;
     } lineWrapping;
+    } marginBottom;
+    } marginLeft;
+    } marginRight;
+    } marginTop;
+    BOOL navShieldsVisible;
+    float navSignsBrightness;
+    BOOL navSignsVisible;
+    } offsetLarge;
+    } offsetMedium;
+    } offsetSmall;
+    } offsetXLarge;
+    } offsetXXLarge;
     } onlyShowIfTappable;
     } raisedInitial;
     } roadRank;
     } roadWidth;
+    } selectable;
+    } shieldCollisionOrder;
+    } shieldCollisionRank;
     } shieldRank;
+    } shieldSize;
     } shieldVisibility;
+    } showLabelAsShield;
     } showShieldTextAsLabel;
     } smallCaps;
     } spacingLarge;
     } spacingMedium;
     } spacingSmall;
+    } spacingXLarge;
+    } spacingXXLarge;
     } textVisibility;
+    } textVisibleWhenPOIsDisabled;
     float tiltLimit;
     } upcase;
     } visibility;
@@ -586,22 +1091,32 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)areNavShieldsVisible;
+- (BOOL)areNavSignsVisible;
 - (BOOL)areShieldsEverVisible;
+- (BOOL)areTextBoxesEverVisible;
+- (unsigned int)arrowLayer;
 - (BOOL)arrowVisibleAtZoom:(float)arg1;
 - (void)dealloc;
 - (unsigned char)dedupeRank;
-- (void)getLabelStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; BOOL x23; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
-- (void)getLabelTextGlyphStyle:(struct { float x1; BOOL x2; BOOL x3; id x4; }*)arg1 atZoom:(int)arg2 scaleFactor:(int)arg3;
-- (void)getNavShieldStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; BOOL x23; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
-- (void)getRoadSignStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; BOOL x23; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
-- (void)getShieldStyle:(struct { BOOL x1; float x2; float x3; float x4; unsigned int x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct _VGLColor { float x_10_1_1; float x_10_1_2; float x_10_1_3; float x_10_1_4; } x10; struct _VGLColor { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; } x11; unsigned int x12; float x13; id x14; id x15; struct { int x_16_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_16_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_16_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_16_1_4; struct _VGLColor { float x_5_2_1; float x_5_2_2; float x_5_2_3; float x_5_2_4; } x_16_1_5; } x16; BOOL x17; float x18; float x19; int x20; BOOL x21; BOOL x22; BOOL x23; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
-- (id)init;
+- (id)genericShieldStyle;
+- (void)getFontOptions:(struct FontOptions { struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_1_1_1)(); struct __CFString {} *x_1_1_2; struct _retain_cf<const __CFString *> { } x_1_1_3; struct _release_cf { } x_1_1_4; } x1; boolx2; float x3; boolx4; float x5; float x6; }*)arg1 atZoom:(float)arg2 contentScale:(float)arg3 scaleFactor:(int)arg4;
+- (void)getLabelStyle:(struct VKLabelStyle { BOOL x1; unsigned int x2; float x3; BOOL x4; struct _VGLColor { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; struct _VGLColor { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; } x6; unsigned int x7; float x8; float x9; struct { int x_10_1_1; struct _VGLColor { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_10_1_2; struct _VGLColor { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_10_1_3[2]; struct _VGLColor { float x_4_2_1; float x_4_2_2; float x_4_2_3; float x_4_2_4; } x_10_1_4; int x_10_1_5; struct _VGLColor { float x_6_2_1; float x_6_2_2; float x_6_2_3; float x_6_2_4; } x_10_1_6; int x_10_1_7; int x_10_1_8; float x_10_1_9; struct _VGLColor { float x_10_2_1; float x_10_2_2; float x_10_2_3; float x_10_2_4; } x_10_1_10; struct CGSize { float x_11_2_1; float x_11_2_2; } x_10_1_11; float x_10_1_12; struct _VGLColor { float x_13_2_1; float x_13_2_2; float x_13_2_3; float x_13_2_4; } x_10_1_13; float x_10_1_14; float x_10_1_15; float x_10_1_16; unsigned int x_10_1_17; } x10; int x11; BOOL x12; float x13; float x14; struct _VGLColor { float x_15_1_1; float x_15_1_2; float x_15_1_3; float x_15_1_4; } x15; struct _VGLColor { float x_16_1_1; float x_16_1_2; float x_16_1_3; float x_16_1_4; } x16; int x17; int x18; int x19; BOOL x20; BOOL x21; BOOL x22; float x23; int x24; float x25; float x26; float x27; float x28; float x29; float x30; BOOL x31; int x32; float x33; BOOL x34; BOOL x35; int x36; int x37; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_38_1_1)(); struct __CFString {} *x_38_1_2; struct _retain_cf<const __CFString *> { } x_38_1_3; struct _release_cf { } x_38_1_4; } x38; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_39_1_1)(); struct __CFString {} *x_39_1_2; struct _retain_cf<const __CFString *> { } x_39_1_3; struct _release_cf { } x_39_1_4; } x39; struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_40_1_1)(); struct __CFString {} *x_40_1_2; struct _retain_cf<const __CFString *> { } x_40_1_3; struct _release_cf { } x_40_1_4; } x40; struct FontOptions { struct _retain_ptr<const __CFString *, geo::_retain_cf<const __CFString *>, geo::_release_cf> { int (**x_1_2_1)(); struct __CFString {} *x_1_2_2; struct _retain_cf<const __CFString *> { } x_1_2_3; struct _release_cf { } x_1_2_4; } x_41_1_1; boolx_41_1_2; float x_41_1_3; boolx_41_1_4; float x_41_1_5; float x_41_1_6; } x41; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (void)getNavShieldStyle:(struct { BOOL x1; float x2; float x3; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (void)getRoadSignStyle:(struct { BOOL x1; float x2; float x3; }*)arg1 atZoom:(float)arg2 tilt:(float)arg3 contentScale:(float)arg4 scaleFactor:(int)arg5;
+- (id)initWithStyle:(id)arg1;
+- (BOOL)isPOITextEverVisible;
+- (unsigned int)layer;
 - (double)mapWidthInEmsForZoom:(int)arg1 scaleFactor:(int)arg2;
+- (unsigned int)maxVisibleZoom;
+- (unsigned int)minArrowZoom;
+- (unsigned int)minVisibleZoom;
 - (double)minimumRoadArrowSpacingForZoom:(int)arg1;
 - (double)minimumRoadLabelSpacingForZoom:(int)arg1 scaleFactor:(int)arg2;
 - (BOOL)showShieldTextAsLabelAtZoom:(float)arg1;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2;
+- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
 - (void)takeFromZoomInvariantProperties:(id)arg1;
+- (id)variant;
 - (BOOL)visibleAtMaxZoom:(float)arg1;
 
 @end

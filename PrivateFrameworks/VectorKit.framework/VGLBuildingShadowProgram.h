@@ -4,15 +4,21 @@
 
 @interface VGLBuildingShadowProgram : VGLProgram {
     float _alpha;
+    float _brightness;
     int _uAlpha;
+    int _uBrightness;
 }
 
 @property float alpha;
+@property float brightness;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
 - (float)alpha;
-- (id)init;
+- (float)brightness;
 - (void)setAlpha:(float)arg1;
+- (void)setBrightness:(float)arg1;
+- (void)setup;
 
 @end

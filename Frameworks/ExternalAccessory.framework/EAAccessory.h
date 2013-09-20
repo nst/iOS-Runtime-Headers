@@ -54,17 +54,21 @@
 - (BOOL)getEphemerisExpirationInterval:(double*)arg1;
 - (BOOL)getEphemerisRecommendRefreshInterval:(double*)arg1;
 - (BOOL)getEphemerisURL:(id*)arg1;
+- (void)getIAPTimeSyncInfo:(id)arg1 completionHandler:(id)arg2;
 - (BOOL)getNMEASentence:(id*)arg1;
+- (id)getVehicleInfoData;
 - (id)hardwareRevision;
 - (int)iPodOutOptionsMask;
 - (id)init;
 - (BOOL)isConnected;
+- (int)locationSentenceTypesMask;
 - (id)macAddress;
 - (id)manufacturer;
 - (id)modelNumber;
 - (id)name;
 - (id)preferredApp;
 - (id)protocolStrings;
+- (void)resetIAPTimeSyncKalmanFilter;
 - (BOOL)sendEphemeris:(id)arg1;
 - (BOOL)sendEphemerisPointDataGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(unsigned short)arg5;
 - (BOOL)sendGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2;
@@ -75,14 +79,21 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEqIndex:(unsigned int)arg1;
 - (void)setEqNames:(id)arg1;
+- (void)setIAPTimeSyncParams:(id)arg1;
 - (void)setIPodOutOptionsMask:(int)arg1;
+- (void)setLocationSentenceTypesMask:(int)arg1;
 - (BOOL)setNMEASentencesToFilter:(id)arg1;
+- (void)setVehicleInfoSupportedTypes:(id)arg1;
+- (void)setVehicleInfovehicleInfoInitialData:(id)arg1;
+- (BOOL)shouldBeHiddenFromUI;
 - (BOOL)supportsAccessibility;
 - (BOOL)supportsLocation;
 - (BOOL)supportsPointOfInterest;
 - (BOOL)supportsPublicIap;
 - (void)updateItemProperty:(int)arg1 withValue:(id)arg2;
 - (void)updateSystemProperty:(int)arg1 withValue:(id)arg2;
+- (id)vehicleInfoInitialData;
+- (id)vehicleInfoSupportedTypes;
 - (id)wakeToken;
 
 @end

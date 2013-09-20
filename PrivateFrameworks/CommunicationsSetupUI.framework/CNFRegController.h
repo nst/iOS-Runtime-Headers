@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class FTCConnectionHandler, IMAccount, IMServiceImpl, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimer;
+@class IMAccount, IMServiceImpl, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimer;
 
 @interface CNFRegController : NSObject <IMSystemMonitorListener> {
     struct { 
@@ -31,7 +31,6 @@
     id _aliasStatusChangedBlock;
     NSDictionary *_cachedCallerIDMap;
     id _callerIdChangedBlock;
-    FTCConnectionHandler *_connectionHandler;
     } _controllerFlags;
     unsigned int _logIndent;
     NSString *_logName;
@@ -94,6 +93,7 @@
 - (id)__filter_appleIDAccountPredicate;
 - (id)__filter_failedAccountsPredicate;
 - (id)__filter_inactiveAccountsPredicate;
+- (id)__filter_operationalPredicate;
 - (id)__filter_phoneAccountPredicate;
 - (id)__filter_signInCompletePredicate;
 - (id)__filter_signedInPredicate;
@@ -126,6 +126,7 @@
 - (void)_nukeCallerIDCache;
 - (void)_postCallerIDChanged;
 - (id)_predicatesWithFilter:(int)arg1;
+- (void)_purgeExcessAccounts;
 - (BOOL)_shouldFilterOutAlias:(id)arg1 onAccount:(id)arg2;
 - (void)_showNetworkAlertWithMessage:(id)arg1;
 - (void)_signOutAccount:(id)arg1 delete:(BOOL)arg2;

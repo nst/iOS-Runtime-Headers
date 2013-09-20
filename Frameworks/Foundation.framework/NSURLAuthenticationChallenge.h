@@ -4,11 +4,13 @@
 
 @class NSURLAuthenticationChallengeInternal;
 
-@interface NSURLAuthenticationChallenge : NSObject <NSCoding> {
+@interface NSURLAuthenticationChallenge : NSObject <NSSecureCoding> {
     NSURLAuthenticationChallengeInternal *_internal;
 }
 
++ (id)_authenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 + (id)_createAuthenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
 - (id)_initWithCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;

@@ -5,6 +5,7 @@
 @interface _UIUserNotificationAlertView : UIAlertView {
     BOOL _runningModal;
     BOOL _runsModal;
+    id _strongDelegate;
     struct __CFUserNotification { } *_userNotification;
     struct __CFRunLoopSource { } *_userNotificationRunLoopSource;
 }

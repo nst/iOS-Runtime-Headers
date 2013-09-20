@@ -11,6 +11,7 @@
     BOOL _playbackStartTimeIsValid;
 }
 
+- (void).cxx_destruct;
 - (void)_handleItemChangedNotification:(id)arg1;
 - (void)_handleItemTypeAvailableNotification:(id)arg1;
 - (void)_handlePlaybackStateChangedNotification:(id)arg1;

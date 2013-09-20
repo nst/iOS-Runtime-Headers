@@ -7,6 +7,5 @@
 
 - (id)newNetworkLockoutViewControllerWithSection:(id)arg1;
 - (id)newPlaceholderViewController;
-- (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2;
 
 @end

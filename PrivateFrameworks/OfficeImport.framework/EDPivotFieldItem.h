@@ -9,7 +9,7 @@
     boolmExpanded;
     boolmHidden;
     boolmMissed;
-    unsigned int mItemIndex;
+    unsigned long mItemIndex;
     int mType;
 }
 
@@ -21,14 +21,14 @@
 - (bool)expanded;
 - (bool)hidden;
 - (id)init;
-- (unsigned int)itemIndex;
+- (unsigned long)itemIndex;
 - (bool)missed;
 - (void)setCalculatedMember:(bool)arg1;
 - (void)setChildItems:(bool)arg1;
 - (void)setDetailsHidden:(bool)arg1;
 - (void)setExpanded:(bool)arg1;
 - (void)setHidden:(bool)arg1;
-- (void)setItemIndex:(unsigned int)arg1;
+- (void)setItemIndex:(unsigned long)arg1;
 - (void)setMissed:(bool)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

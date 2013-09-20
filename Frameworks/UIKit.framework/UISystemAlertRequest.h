@@ -11,6 +11,7 @@
     id _target;
 }
 
+- (void)_willBeReleasedOnDismiss;
 - (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
 - (void)dealloc;
 - (id)initWithAlertID:(int)arg1 sheet:(id)arg2 target:(id)arg3 action:(SEL)arg4;

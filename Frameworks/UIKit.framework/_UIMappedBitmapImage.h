@@ -11,6 +11,7 @@
 @property(retain) NSData * data;
 
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (id)_initWithOtherImage:(id)arg1;
 - (void)_preheatBitmapData;

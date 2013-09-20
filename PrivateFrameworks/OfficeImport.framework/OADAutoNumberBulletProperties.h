@@ -4,7 +4,7 @@
 
 @interface OADAutoNumberBulletProperties : OADBulletProperties {
     int mSchemeType;
-    int mStartIndex;
+    unsigned int mStartIndex;
 }
 
 - (int)autoNumberSchemeType;

@@ -6,8 +6,6 @@
     struct CGSize { 
         float width; 
         float height; 
-    BOOL mIsOldAssetNameMapInitialized;
-    struct __CFDictionary { } *mOldAssetNameMap;
     } mSlideSize;
     struct __CFArray { } *mThemes;
 }

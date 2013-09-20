@@ -2,11 +2,19 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class EAGLContext, EAGLSharegroup, NSSet;
+@class NSSet, NSString, VGLContext, VGLSharegroup;
 
 @interface VGLGPU : NSObject {
+    struct mutex { 
+        struct _opaque_pthread_mutex_t { 
+            long __sig; 
+            BOOL __opaque[40]; 
+        } __m_; 
+    } _capabilitesLock;
     NSSet *_extensionNames;
-    EAGLContext *_mainEAGLContext;
+    int _initializedCapabilities;
+    VGLContext *_internalContext;
+    int _kind;
     int _maxDepthBufferPlanes;
     int _maxFragShaderTextureUnits;
     int _maxSamples;
@@ -17,10 +25,12 @@
     int _maxVaryingVectors;
     int _maxVertShaderTextureUnits;
     int _maxVertexAttributes;
-    BOOL _paused;
+    NSString *_rendererName;
+    VGLSharegroup *_sharegroup;
 }
 
 @property(readonly) NSSet * extensionNames;
+@property(readonly) int kind;
 @property(readonly) int maxDepthBufferPlanes;
 @property(readonly) int maxFragShaderTextureUnits;
 @property(readonly) int maxSamples;
@@ -31,14 +41,18 @@
 @property(readonly) int maxVaryingVectors;
 @property(readonly) int maxVertShaderTextureUnits;
 @property(readonly) int maxVertexAttributes;
-@property BOOL paused;
-@property(readonly) EAGLSharegroup * sharegroup;
+@property(readonly) NSString * rendererName;
 
-+ (id)sharedInstance;
++ (id)gpuForKind:(int)arg1;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)_initCapabilities;
 - (void)dealloc;
+- (id)description;
 - (id)extensionNames;
-- (id)init;
+- (id)initWithKind:(int)arg1;
+- (int)kind;
 - (int)maxDepthBufferPlanes;
 - (int)maxFragShaderTextureUnits;
 - (int)maxSamples;
@@ -49,9 +63,8 @@
 - (int)maxVaryingVectors;
 - (int)maxVertShaderTextureUnits;
 - (int)maxVertexAttributes;
-- (BOOL)paused;
+- (id)newContext:(Class)arg1;
 - (BOOL)platformSupports:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
-- (id)sharegroup;
+- (id)rendererName;
 
 @end

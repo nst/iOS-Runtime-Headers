@@ -24,6 +24,7 @@
     NSString *_firmwareRevision;
     NSString *_hardwareRevision;
     int _iPodOutOptionsMask;
+    int _locationSentenceTypesMask;
     NSString *_macAddress;
     NSString *_manufacturer;
     NSString *_modelNumber;
@@ -33,6 +34,8 @@
     NSDictionary *_protocols;
     NSString *_serialNumber;
     NSMutableArray *_sessionsList;
+    NSDictionary *_vehicleInfoInitialData;
+    NSDictionary *_vehicleInfoSupportedTypes;
 }
 
 @property(retain) NSDictionary * audioPorts;
@@ -49,6 +52,7 @@
 @property(copy) NSString * firmwareRevision;
 @property(copy) NSString * hardwareRevision;
 @property int iPodOutOptionsMask;
+@property int locationSentenceTypesMask;
 @property(copy) NSString * macAddress;
 @property(copy) NSString * manufacturer;
 @property(copy) NSString * modelNumber;
@@ -58,6 +62,8 @@
 @property(retain) NSDictionary * protocols;
 @property(copy) NSString * serialNumber;
 @property(readonly) NSArray * sessionsList;
+@property(retain) NSDictionary * vehicleInfoInitialData;
+@property(retain) NSDictionary * vehicleInfoSupportedTypes;
 
 - (int (*)())cfAccessoryPortPropertyCallback;
 - (void)addSession:(id)arg1;
@@ -76,6 +82,7 @@
 - (id)hardwareRevision;
 - (int)iPodOutOptionsMask;
 - (id)init;
+- (int)locationSentenceTypesMask;
 - (id)macAddress;
 - (id)manufacturer;
 - (id)modelNumber;
@@ -100,6 +107,7 @@
 - (void)setFirmwareRevision:(id)arg1;
 - (void)setHardwareRevision:(id)arg1;
 - (void)setIPodOutOptionsMask:(int)arg1;
+- (void)setLocationSentenceTypesMask:(int)arg1;
 - (void)setMacAddress:(id)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModelNumber:(id)arg1;
@@ -108,5 +116,9 @@
 - (void)setPreferredApp:(id)arg1;
 - (void)setProtocols:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
+- (void)setVehicleInfoInitialData:(id)arg1;
+- (void)setVehicleInfoSupportedTypes:(id)arg1;
+- (id)vehicleInfoInitialData;
+- (id)vehicleInfoSupportedTypes;
 
 @end

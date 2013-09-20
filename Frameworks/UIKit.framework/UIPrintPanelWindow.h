@@ -5,6 +5,6 @@
 @interface UIPrintPanelWindow : UIWindow {
 }
 
-- (BOOL)_affectsTintView;
+- (BOOL)_canAffectStatusBarAppearance;
 
 @end

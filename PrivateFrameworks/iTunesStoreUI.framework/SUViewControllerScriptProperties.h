@@ -29,6 +29,7 @@
     BOOL _showsHorizontalScrollIndicator;
     BOOL _showsVerticalScrollIndicator;
     UIColor *_topExtensionColor;
+    BOOL _usesBlurredBackground;
 }
 
 @property BOOL alwaysDispatchesScrollEvents;
@@ -50,6 +51,7 @@
 @property BOOL showsHorizontalScrollIndicator;
 @property BOOL showsVerticalScrollIndicator;
 @property(retain) UIColor * topExtensionColor;
+@property BOOL usesBlurredBackground;
 
 - (BOOL)alwaysDispatchesScrollEvents;
 - (id)backgroundColor;
@@ -87,11 +89,13 @@
 - (void)setShowsHorizontalScrollIndicator:(BOOL)arg1;
 - (void)setShowsVerticalScrollIndicator:(BOOL)arg1;
 - (void)setTopExtensionColor:(id)arg1;
+- (void)setUsesBlurredBackground:(BOOL)arg1;
 - (BOOL)shouldLoadProgressively;
 - (BOOL)shouldShowFormAccessory;
 - (BOOL)showsBackgroundShadow;
 - (BOOL)showsHorizontalScrollIndicator;
 - (BOOL)showsVerticalScrollIndicator;
 - (id)topExtensionColor;
+- (BOOL)usesBlurredBackground;
 
 @end

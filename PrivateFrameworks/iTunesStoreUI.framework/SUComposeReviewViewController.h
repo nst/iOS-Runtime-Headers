@@ -2,31 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISReview, SUComposeReviewView, SURatingAlertView;
+@class NSURL, SKComposeReviewViewController;
 
-@interface SUComposeReviewViewController : SUViewController <SUComposeReviewViewDelegate, UIAlertViewDelegate> {
-    SUComposeReviewView *_composeView;
-    SURatingAlertView *_ratingAlert;
-    ISReview *_review;
-    int _state;
+@interface SUComposeReviewViewController : SUViewController <SKComposeReviewDelegate> {
+    NSURL *_compositionURL;
+    SKComposeReviewViewController *_remoteViewController;
 }
 
-- (void)_cancel;
-- (void)_fetchReviewInfo;
-- (void)_setReviewByMergingWithReview:(id)arg1;
-- (void)_submit;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)applicationDidEnterBackground;
-- (void)composeReviewViewValidityChanged:(id)arg1;
-- (id)copyReview;
+@property(readonly) NSURL * compositionURL;
+
+- (void)_showRemoteView;
+- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (id)compositionURL;
 - (id)copyScriptViewController;
 - (void)dealloc;
 - (id)init;
+- (id)initWithCompositionURL:(id)arg1;
 - (void)loadView;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (void)operationFinished:(id)arg1;
-- (void)setReview:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)prepareWithCompletionBlock:(id)arg1;
+- (void)reviewComposeViewControllerDidFinish:(id)arg1;
 
 @end

@@ -5,10 +5,13 @@
 @class IMRemoteURLConnection;
 
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
+    BOOL _pendingRetryAfterAirplaneMode;
     IMRemoteURLConnection *_remoteConnection;
+    double _retryTimeAfterAirplaneMode;
 }
 
 - (void)_cleanupURLConnection;
+- (void)_clearRetryTimer;
 - (void)_dequeueIfNeeded;
 - (void)_notifyDelegateAboutError:(id)arg1 forMessage:(id)arg2;
 - (id)_processResultData:(id)arg1 forMessage:(id)arg2 error:(id*)arg3;
@@ -22,6 +25,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
+- (void)networkStateChanged;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (BOOL)sendMessage:(id)arg1;
 

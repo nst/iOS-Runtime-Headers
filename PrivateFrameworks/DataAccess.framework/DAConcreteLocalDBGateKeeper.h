@@ -2,28 +2,17 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface DAConcreteLocalDBGateKeeper : DALocalDBGateKeeper {
-    NSString *_buildVersion;
-    NSMutableDictionary *_failedWaiters;
-    NSMutableDictionary *_refreshingWaiters;
-    NSMutableDictionary *_restrictedWaiters;
 }
 
 - (void)_abortWaiterForWrappers:(id)arg1;
 - (BOOL)_canWakenWaiter:(id)arg1;
-- (void)_decrementRefreshCountForWaiterID:(id)arg1 didFinish:(BOOL)arg2;
 - (void)_notifyWaitersForDataclasses:(id)arg1;
 - (void)_registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 preempt:(BOOL)arg3 completionHandler:(id)arg4;
-- (void)_reloadBabysitterProperties;
-- (void)_removeRestrictedWaitersFromAllQueues;
 - (void)_sendAllClearNotifications;
 - (void)_setUnitTestHackRunLoopMode:(id)arg1;
-- (BOOL)babysitterEnabled;
 - (void)claimedOwnershipOfDataclasses:(int)arg1;
 - (void)dealloc;
-- (void)giveAccountWithIDAnotherChance:(id)arg1;
 - (id)init;
 - (void)registerPreemptiveWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;
 - (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id)arg3;

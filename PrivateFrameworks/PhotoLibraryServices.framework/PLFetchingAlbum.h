@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSFetchRequest, NSOrderedSet;
+@class NSArray, NSFetchRequest, NSOrderedSet;
 
-@interface PLFetchingAlbum : _PLFetchingAlbum <PLAssetContainerDisplayCount> {
+@interface PLFetchingAlbum : _PLFetchingAlbum <PLAlbumProtocolDisplayCount> {
+    NSArray *_cachedKeyAssets;
     unsigned int _countForDisplay;
     int _emptyState;
     unsigned int _photosCount;
@@ -16,11 +17,13 @@
 @property(retain) NSOrderedSet * fetchedAssets;
 @property(readonly) BOOL hasAssetsCache;
 
++ (id)_panoramasAlbumPredicate;
 + (BOOL)contextShouldIgnoreChangesForFetchRequest;
 + (BOOL)contextShouldIgnoreChangesForFetchedAssets;
 + (BOOL)contextShouldIgnoreChangesForFetchedAssetsSet;
 
-- (unsigned int)_fetchedCountForAssetsOfKind:(int)arg1;
+- (id)_cachedKeyAssets;
+- (unsigned int)_fetchedCountForAssetsOfKind:(short)arg1;
 - (id)assets;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
@@ -28,8 +31,9 @@
 - (unsigned int)batchSize;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (unsigned int)count;
-- (unsigned int)countForAssetsOfKind:(int)arg1;
+- (unsigned int)countForAssetsOfKind:(short)arg1;
 - (unsigned int)countForDisplay;
+- (void)dealloc;
 - (void)didTurnIntoFault;
 - (id)fastPointerAccessSetForAssets:(id)arg1;
 - (id)fetchRequest;
@@ -39,10 +43,14 @@
 - (BOOL)mayHaveAssetsInCommon:(id)arg1;
 - (id)mutableAssets;
 - (id)primitiveAssets;
+- (id)secondaryKeyAsset;
 - (void)setAssets:(id)arg1;
 - (void)setFetchRequest:(id)arg1;
 - (void)setKeyAsset:(id)arg1;
+- (void)setSecondaryKeyAsset:(id)arg1;
+- (void)setTertiaryKeyAsset:(id)arg1;
 - (void)setupFetchRequest;
+- (id)tertiaryKeyAsset;
 - (void)updateSnapshotAndClearCaches:(id)arg1;
 
 @end

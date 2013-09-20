@@ -2,50 +2,82 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSDictionary, NSString;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class AVItem, NSDictionary, NSString;
 
 @interface SBUISound : NSObject {
-    NSString *_audioCategory;
+    NSString *_accountIdentifier;
+    int _alertType;
+    AVItem *_avItem;
+    id _completionBlock;
+    NSDictionary *_controllerAttributes;
+    double _maxDuration;
     BOOL _repeats;
+    NSString *_resolvedToneIdentifier;
     NSString *_ringtoneName;
     unsigned int _soundBehavior;
     int _soundType;
     unsigned long _systemSoundID;
+    NSString *_toneIdentifier;
+    NSString *_vibrationIdentifier;
     NSDictionary *_vibrationPattern;
 }
 
-@property(retain) NSString * audioCategory;
+@property(copy) NSString * accountIdentifier;
+@property int alertType;
+@property(retain) AVItem * avItem;
+@property(retain) NSDictionary * controllerAttributes;
+@property double maxDuration;
 @property(getter=isRepeating) BOOL repeats;
 @property(retain) NSString * ringtoneName;
 @property unsigned int soundBehavior;
 @property int soundType;
 @property unsigned long systemSoundID;
+@property(copy) NSString * toneIdentifier;
+@property(copy) NSString * vibrationIdentifier;
 @property(retain) NSDictionary * vibrationPattern;
 
-+ (id)alertSoundWithSystemSoundID:(unsigned long)arg1;
-
-- (id)audioCategory;
+- (id)_completionBlock;
+- (id)_resolvedToneIdentifier;
+- (void)_setCompletionBlock:(id)arg1;
+- (void)_setResolvedToneIdentifier:(id)arg1;
+- (id)accountIdentifier;
+- (int)alertType;
+- (id)avItem;
+- (id)controllerAttributes;
 - (void)dealloc;
 - (id)description;
-- (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 audioCategory:(id)arg4;
+- (id)initWithAVItem:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 maxDuration:(double)arg4 controllerAttributes:(id)arg5;
+- (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 controllerAttributes:(id)arg4;
 - (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2 vibrationPattern:(id)arg3;
-- (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2;
+- (id)initWithToneAlert:(int)arg1 accountIdentifier:(id)arg2 toneIdentifier:(id)arg3 vibrationIdentifier:(id)arg4;
 - (BOOL)isPlaying;
 - (BOOL)isRepeating;
-- (BOOL)play;
-- (BOOL)playWithCompletionHandler:(id)arg1;
+- (double)maxDuration;
+- (BOOL)playInEvironments:(int)arg1 completion:(id)arg2;
 - (id)ringtoneName;
-- (void)setAudioCategory:(id)arg1;
+- (void)setAccountIdentifier:(id)arg1;
+- (void)setAlertType:(int)arg1;
+- (void)setAvItem:(id)arg1;
+- (void)setControllerAttributes:(id)arg1;
+- (void)setMaxDuration:(double)arg1;
 - (void)setRepeats:(BOOL)arg1;
 - (void)setRingtoneName:(id)arg1;
 - (void)setSoundBehavior:(unsigned int)arg1;
 - (void)setSoundType:(int)arg1;
 - (void)setSystemSoundID:(unsigned long)arg1;
+- (void)setToneIdentifier:(id)arg1;
+- (void)setVibrationIdentifier:(id)arg1;
 - (void)setVibrationPattern:(id)arg1;
 - (unsigned int)soundBehavior;
 - (int)soundType;
 - (void)stop;
 - (unsigned long)systemSoundID;
+- (id)toneIdentifier;
+- (id)vibrationIdentifier;
 - (id)vibrationPattern;
 
 @end

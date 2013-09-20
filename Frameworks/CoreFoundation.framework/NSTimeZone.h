@@ -10,7 +10,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)calendarTimeZone;
 + (id)defaultTimeZone;
-+ (id)gmt;
 + (id)knownTimeZoneNames;
 + (id)localTimeZone;
 + (void)resetSystemTimeZone;

@@ -8,6 +8,7 @@
 }
 
 @property(copy) NSNumber * favoriteFacetime;
+@property(copy) NSNumber * favoriteFacetimeAudio;
 @property(copy) NSNumber * favoriteVoice;
 @property(copy) NSString * label;
 @property(copy) NSString * number;
@@ -17,11 +18,13 @@
 
 - (id)encodedClassName;
 - (id)favoriteFacetime;
+- (id)favoriteFacetimeAudio;
 - (id)favoriteVoice;
 - (id)groupIdentifier;
 - (id)label;
 - (id)number;
 - (void)setFavoriteFacetime:(id)arg1;
+- (void)setFavoriteFacetimeAudio:(id)arg1;
 - (void)setFavoriteVoice:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setNumber:(id)arg1;

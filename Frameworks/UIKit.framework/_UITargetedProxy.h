@@ -8,6 +8,7 @@
 
 + (id)proxyWithTarget:(id)arg1;
 
+- (void)_setTarget:(id)arg1;
 - (id)_target;
 - (void)dealloc;
 - (id)description;

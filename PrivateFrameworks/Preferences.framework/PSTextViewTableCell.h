@@ -4,7 +4,7 @@
 
 @class PSTextView;
 
-@interface PSTextViewTableCell : PSTableCell <UITextViewDelegate> {
+@interface PSTextViewTableCell : PSTableCell <UITextContentViewDelegate> {
     PSTextView *_textView;
 }
 
@@ -21,9 +21,8 @@
 - (BOOL)resignFirstResponder;
 - (void)setTextView:(id)arg1;
 - (void)setValue:(id)arg1;
+- (void)textContentViewDidChange:(id)arg1;
+- (void)textContentViewDidEndEditing:(id)arg1;
 - (id)textView;
-- (void)textViewDidChange:(id)arg1;
-- (void)textViewDidEndEditing:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textViewInsets;
 
 @end

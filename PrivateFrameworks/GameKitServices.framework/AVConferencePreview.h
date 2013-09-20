@@ -5,13 +5,22 @@
 @class AVConferenceXPCClient, CALayer, NSObject<AVConferencePreviewClientDelegate>, NSObject<OS_dispatch_queue>, VideoAttributes;
 
 @interface AVConferencePreview : NSObject {
+    struct CGSize { 
+        float width; 
+        float height; 
+    struct CGSize { 
+        float width; 
+        float height; 
     NSObject<OS_dispatch_queue> *avConferencePreviewNotificationQueue;
     NSObject<OS_dispatch_queue> *avConferencePreviewQueue;
     CALayer *caLayerBack;
     CALayer *caLayerFront;
     BOOL clientWantsPreview;
     AVConferenceXPCClient *connection;
+    unsigned int connectionAttempts;
     NSObject<AVConferencePreviewClientDelegate> *delegate;
+    } localScreenLandscapeAspectRatio;
+    } localScreenPortraitAspectRatio;
     VideoAttributes *localVideoAttributes;
 }
 
@@ -27,7 +36,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)didChangeLocalScreenAttributes:(id)arg1;
 - (void)didChangeLocalVideoAttributes:(id)arg1;
+- (void)didPausePreview;
 - (void)didReceiveCommError;
 - (void)didReceiveErrorFromCamera:(unsigned int)arg1 error:(id)arg2;
 - (void)didReceiveFirstPreviewFrameFromCamera:(unsigned int)arg1;
@@ -38,16 +49,20 @@
 - (id)init;
 - (BOOL)isPreviewRunning;
 - (unsigned int)localCamera;
+- (id)localScreenAttributesForVideoAttributes:(id)arg1;
 - (id)localVideoAttributes;
 - (id)localVideoLayer:(BOOL)arg1;
+- (void)pausePreview;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)setDelegate:(id)arg1;
 - (void)setLocalCamera:(unsigned int)arg1;
+- (void)setLocalScreenAttributes:(id)arg1;
 - (void)setLocalVideoAttributes:(id)arg1;
 - (void)setLocalVideoLayer:(id)arg1 front:(BOOL)arg2;
 - (void)startPreview;
+- (void)startPreviewUnpausing:(BOOL)arg1;
 - (void)stopPreview;
 
 @end

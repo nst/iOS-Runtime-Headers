@@ -10,6 +10,7 @@
     PFUbiquityLocation *_currentLocation;
     NSError *_downloadError;
     BOOL _downloadSuccess;
+    BOOL _isRegistered;
     NSString *_localPeerID;
     BOOL _moveAfterSave;
     PFUbiquityLocation *_permanentLocation;
@@ -27,6 +28,7 @@
 @property(readonly) BOOL existsAtPermanentLocation;
 @property(readonly) BOOL existsAtSafeSaveLocation;
 @property(readonly) BOOL existsInCloud;
+@property(readonly) BOOL isRegistered;
 @property(readonly) NSString * localPeerID;
 @property(readonly) BOOL moveAfterSave;
 @property(readonly) PFUbiquityLocation * permanentLocation;
@@ -36,6 +38,7 @@
 
 - (void)checkFileDownload;
 - (void)checkSafeSaveFileUpload;
+- (void)checkSafeSaveFileUploadAsync;
 - (BOOL)continueCheckingDownload;
 - (BOOL)continueCheckingUpload;
 - (id)currentLocation;
@@ -52,6 +55,7 @@
 - (id)initWithPermanentLocation:(id)arg1 safeSaveLocation:(id)arg2 andLocalPeerID:(id)arg3;
 - (BOOL)isFileDownloaded:(id*)arg1;
 - (BOOL)isFileUploaded:(id*)arg1;
+- (BOOL)isRegistered;
 - (BOOL)loadFile:(id*)arg1;
 - (BOOL)loadFileFromLocation:(id)arg1 error:(id*)arg2;
 - (id)localPeerID;

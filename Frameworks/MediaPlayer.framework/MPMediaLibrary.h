@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPMediaLibraryDataProviderPrivate>, CADisplayLink, NSDate, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, QueryCriteriaResultsCache;
+@class <MPMediaLibraryDataProviderPrivate>, CADisplayLink, NSDate, NSHashTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, QueryCriteriaResultsCache;
 
-@interface MPMediaLibrary : NSObject <NSCoding> {
+@interface MPMediaLibrary : NSObject <NSSecureCoding> {
     unsigned int _determinedHasMedia : 1;
     unsigned int _hasMedia : 1;
     unsigned int _determinedHasSongs : 1;
@@ -17,10 +17,13 @@
     unsigned int _hasComposers : 1;
     unsigned int _determinedHasPodcasts : 1;
     unsigned int _hasPodcasts : 1;
-    unsigned int _determinedHasUniversalBookmarkableItems : 1;
-    unsigned int _hasUniversalBookmarkableContent : 1;
+    unsigned int _determinedHasUbiquitousBookmarkableItems : 1;
+    unsigned int _hasUbiquitousBookmarkableContent : 1;
     unsigned int _determinedHasAudiobooks : 1;
     unsigned int _hasAudiobooks : 1;
+    NSMutableArray *_additionalLibraryFilterPredicates;
+    NSObject<OS_dispatch_queue> *_additionalLibraryFilterPredicatesAccessQueue;
+    int _cloudFilteringType;
     QueryCriteriaResultsCache *_collectionsForCriteriaCache;
     QueryCriteriaResultsCache *_collectionsResultSetsForCriteriaCache;
     NSHashTable *_connectionAssertions;
@@ -33,6 +36,7 @@
     QueryCriteriaResultsCache *_countOfItemsForCriteriaCache;
     BOOL _determinedHasAudibleAudioBooks;
     BOOL _determinedHasCompilations;
+    BOOL _determinedHasHomeVideos;
     BOOL _determinedHasITunesU;
     BOOL _determinedHasMovieRentals;
     BOOL _determinedHasMovies;
@@ -44,10 +48,12 @@
     BOOL _disconnectAfterReleasingAssertions;
     NSObject<OS_dispatch_queue> *_entityCacheQueue;
     BOOL _filteringDisabled;
+    NSObject<OS_dispatch_queue> *_fixedQueue;
     BOOL _hasAudibleAudioBooks;
     NSMutableDictionary *_hasCollectionsDidLoadForCriteria;
     QueryCriteriaResultsCache *_hasCollectionsForCriteriaCache;
     BOOL _hasCompilations;
+    BOOL _hasHomeVideos;
     BOOL _hasITunesU;
     NSMutableDictionary *_hasItemsDidLoadForCriteria;
     QueryCriteriaResultsCache *_hasItemsForCriteriaCache;
@@ -93,10 +99,13 @@
 + (void)setDefaultMediaLibrary:(id)arg1;
 + (void)setLibraryServerDisabled:(BOOL)arg1;
 + (void)setRunLoopForNotifications:(id)arg1;
++ (BOOL)supportsSecureCoding;
 + (void)syncGenerationDidChangeForLibraryDataProvider:(id)arg1;
 + (void)uniqueIdentifierDidChangeForLibraryDataProvider:(id)arg1;
 
-- (BOOL)_checkHasContent:(BOOL*)arg1 determined:(BOOL*)arg2 mediaType:(int)arg3 queryHasEntitiesBlock:(id)arg4;
+- (void).cxx_destruct;
+- (void)_canShowCloudTracksDidChangeNotification:(id)arg1;
+- (BOOL)_checkHasContent:(BOOL*)arg1 determined:(BOOL*)arg2 mediaType:(unsigned int)arg3 queryHasEntitiesBlock:(id)arg4;
 - (BOOL)_checkHasContent:(BOOL*)arg1 determined:(BOOL*)arg2 queryHasEntitiesBlock:(id)arg3;
 - (void)_clearCachedContentDataAndResultSets:(BOOL)arg1 withCompletionBlock:(id)arg2;
 - (void)_clearCachedEntitiesIncludingResultSets:(BOOL)arg1 completionBlock:(id)arg2;
@@ -121,23 +130,24 @@
 - (void)_reloadLibraryForInvisiblePropertyChangeWithNotificationInfo:(id)arg1;
 - (void)_reloadLibraryForRestrictionsChange;
 - (void)_removeConnectionAssertion:(id)arg1;
-- (id)_sanitizeQueryCriteriaForQueryCriteria:(id)arg1;
 - (void)_stopConnectionProgressDisplayLink;
 - (id)_syncValidity;
+- (void)addLibraryFilterPredicate:(id)arg1;
 - (id)addPlaylistWithName:(id)arg1 activeGeniusPlaylist:(BOOL)arg2;
 - (id)addPlaylistWithName:(id)arg1;
+- (id)additionalLibraryFilterPredicates;
 - (void)beginGeneratingLibraryChangeNotifications;
-- (int)compareMediaLibrary:(id)arg1;
+- (int)cloudFilteringType;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2;
 - (void)connectWithCompletionHandler:(id)arg1;
 - (id)connectionAssertionWithIdentifier:(id)arg1;
 - (float)connectionProgress;
 - (unsigned long long)currentEntityRevision;
+- (id)databasePath;
 - (void)dealloc;
 - (id)description;
 - (void)disconnect;
 - (void)downloadAsset:(id)arg1 completionHandler:(id)arg2;
-- (void)downloadItem:(id)arg1 completionHandler:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endGeneratingLibraryChangeNotifications;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id)arg2;
@@ -145,14 +155,16 @@
 - (BOOL)hasAlbums;
 - (BOOL)hasArtists;
 - (BOOL)hasAudibleAudioBooks;
+- (BOOL)hasAudioITunesUContent;
 - (BOOL)hasAudiobooks;
 - (BOOL)hasCompilations;
 - (BOOL)hasComposers;
 - (BOOL)hasGeniusMixes;
 - (BOOL)hasGenres;
+- (BOOL)hasHomeVideos;
 - (BOOL)hasITunesUContent;
 - (BOOL)hasMedia;
-- (BOOL)hasMediaOfType:(int)arg1;
+- (BOOL)hasMediaOfType:(unsigned int)arg1;
 - (BOOL)hasMovieRentals;
 - (BOOL)hasMovies;
 - (BOOL)hasMusicVideos;
@@ -160,7 +172,7 @@
 - (BOOL)hasPodcasts;
 - (BOOL)hasSongs;
 - (BOOL)hasTVShows;
-- (BOOL)hasUniversalBookmarkableItems;
+- (BOOL)hasUbiquitousBookmarkableItems;
 - (BOOL)hasVideoITunesUContent;
 - (BOOL)hasVideoPodcasts;
 - (BOOL)hasVideos;
@@ -168,6 +180,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isArtworkIdenticalForItem:(id)arg1 otherItem:(id)arg2 compareRepresentativeItemArtwork:(BOOL)arg3 missingAlwaysComparesEqual:(BOOL)arg4;
+- (BOOL)isCurrentThreadInTransaction;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGeniusEnabled;
 - (BOOL)isValidAssetURL:(id)arg1;
@@ -178,13 +191,15 @@
 - (id)lastModifiedDate;
 - (id)libraryDataProvider;
 - (BOOL)libraryHasBeenModifiedWithToken:(id)arg1;
+- (id)localizedSectionHeaderForSectionIndex:(unsigned int)arg1;
+- (id)localizedSectionIndexTitles;
 - (id)modificationToken;
+- (int)music_compareMediaLibrary:(id)arg1;
 - (id)name;
 - (id)newPlaylistWithPersistentID:(unsigned long long)arg1;
 - (id)pathForAssetURL:(id)arg1;
 - (void)performReadTransactionWithBlock:(id)arg1;
 - (BOOL)performTransactionWithBlock:(id)arg1;
-- (void)performUbiquitousDatabaseUpdateTransaction:(id)arg1;
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
 - (long long)playlistGeneration;
 - (id)playlistWithPersistentID:(unsigned long long)arg1;
@@ -193,19 +208,19 @@
 - (id)preferredSubtitleLanguages;
 - (id)protectedContentSupportStorageURL;
 - (int)removalReason;
+- (BOOL)removeItems:(id)arg1 hideFromPurchaseHistory:(BOOL)arg2;
 - (BOOL)removeItems:(id)arg1;
+- (void)removeLibraryFilterPredicate:(id)arg1;
 - (BOOL)removePlaylist:(id)arg1;
+- (void)replaceLibraryFilterPredicate:(id)arg1 withPredicate:(id)arg2;
 - (BOOL)requiresAuthentication;
+- (void)setCloudFilteringType:(int)arg1;
+- (void)setLibraryFilterPredicates;
 - (void)setRemovalReason:(int)arg1;
-- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
-- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
 - (int)status;
 - (unsigned long long)syncGenerationID;
 - (id)syncValidity;
-- (id)ubiquitousBookmarkDomainVersionAnchorToken;
-- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
 - (id)uniqueIdentifier;
-- (void)updateUbiquitousValuesForTrackWithKey:(id)arg1 mediaPropertyValues:(id)arg2 timestamp:(double)arg3;
 - (BOOL)writable;
 
 @end

@@ -20,6 +20,7 @@
 @property int style;
 @property(copy) NSString * title;
 
+- (void).cxx_destruct;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (id)_newArtistAlbumLabel;

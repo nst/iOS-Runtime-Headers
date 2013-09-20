@@ -10,9 +10,12 @@
 
 @property(readonly) CIImage * outputImage;
 
++ (id)_filterArrayFromImageMetadata:(struct CGImageMetadata { }*)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)_filterArrayFromProperties:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)_filterArrayFromProperties:(id)arg1;
-+ (id)_filterFromProperties:(id)arg1;
++ (struct CGImageMetadata { }*)_imageMetadataFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (id)_pl_filterArrayFromProperties:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (id)_pl_propertyArrayFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)_propertyArrayFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)customAttributes;
 + (id)filterArrayFromSerializedXMP:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 error:(id*)arg3;
@@ -20,13 +23,14 @@
 + (id)filterNamesInCategory:(id)arg1;
 + (id)filterWithName:(id)arg1 keysAndValues:(id)arg2;
 + (id)filterWithName:(id)arg1;
++ (id)filterWithString:(id)arg1;
 + (id)serializedXMPFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 - (id)_copyFilterWithZone:(struct _NSZone { }*)arg1;
 - (id)_filterClassDescription;
-- (id)_initFromProperties:(id)arg1;
+- (BOOL)_filterClassInCategory:(id)arg1;
 - (BOOL)_isIdentity;
-- (id)_outputProperties;
+- (id)_serializedXMPString;
 - (id)attributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -73,6 +73,7 @@
 - (void*)_newSnowLeopardStyleDictionaryContainingPropertiesOfType:(unsigned int)arg1;
 - (id)_newVersionHashInStyle:(unsigned int)arg1;
 - (id)_new_implicitlyObservedKeys;
+- (void)_nukeMOClassName__;
 - (unsigned long)_offsetRelationshipIndex:(unsigned long)arg1 fromSuperEntity:(id)arg2 andIsToMany:(BOOL)arg3;
 - (id)_propertiesOfType:(unsigned int)arg1;
 - (id)_propertyNamed:(id)arg1;

@@ -6,7 +6,6 @@
 
 @interface PSSwitchTableCell : PSControlTableCell {
     UIActivityIndicatorView *_activityIndicator;
-    BOOL _alternateSwitchColor;
 }
 
 @property BOOL loading;

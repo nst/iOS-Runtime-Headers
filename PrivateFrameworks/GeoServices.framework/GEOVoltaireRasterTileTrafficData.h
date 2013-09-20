@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 @interface GEOVoltaireRasterTileTrafficData : NSObject {
     double _expirationTime;
+    NSArray *_trafficIncidents;
     NSMutableArray *_trafficSegments;
     struct { int x1; int x2; } *_vertices;
 }
 
 @property double expirationTime;
+@property(readonly) NSArray * trafficIncidents;
 @property(retain) NSMutableArray * trafficSegments;
 @property struct { int x1; int x2; }* vertices;
 
@@ -23,6 +25,7 @@
 - (void)setExpirationTime:(double)arg1;
 - (void)setTrafficSegments:(id)arg1;
 - (void)setVertices:(struct { int x1; int x2; }*)arg1;
+- (id)trafficIncidents;
 - (id)trafficSegments;
 - (struct { int x1; int x2; }*)vertices;
 

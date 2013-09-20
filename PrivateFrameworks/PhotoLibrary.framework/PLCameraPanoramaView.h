@@ -95,6 +95,7 @@
 
 - (void)_arrowWasTapped:(id)arg1;
 - (void)_cancelDelayedShowMoveText;
+- (void)_createMotionManagerAndDisplayLink;
 - (void)_hideText;
 - (void)_showMoveDownText;
 - (void)_showMoveUpText;
@@ -106,7 +107,7 @@
 - (void)hideFastMovementTextAfterDelay;
 - (void)hideInstructionalText;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 centerYOffset:(float)arg2 panoramaPreviewScale:(float)arg3 panoramaPreviewSize:(struct CGSize { float x1; float x2; })arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 centerYOffset:(float)arg2 panoramaPreviewScale:(float)arg3;
 - (id)panoramaPreviewLayer;
 - (void)panoramaWillStart;
 - (void)setCaptureDirection:(int)arg1;
@@ -121,6 +122,7 @@
 - (void)showSavingHUD:(BOOL)arg1;
 - (void)updateUI;
 - (void)updateWithPreviewState:(id)arg1;
+- (void)viewWillAppear;
 - (void)viewWillDisappear;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visiblePreviewRect;
 

@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptViewController, UIPopoverController;
+@class SUScriptViewController, UIPopoverController, UIViewController;
 
 @interface SUScriptPopOver : SUScriptObject {
     BOOL _ignoreDismiss;
 }
 
+@property(readonly) UIViewController * activeViewController;
 @property int backgroundStyle;
 @property(readonly) int backgroundStyleBlack;
 @property(readonly) int backgroundStyleClear;
@@ -24,7 +25,6 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (id)_activeViewController;
 - (id)_className;
 - (void)_dismissAnimated:(BOOL)arg1;
 - (BOOL)_isViewControllerVisible;
@@ -36,6 +36,7 @@
 - (BOOL)_shouldDisplayAsPopover;
 - (void)_showAsModalViewController;
 - (void)_viewControllerDidDismiss:(id)arg1;
+- (id)activeViewController;
 - (id)attributeKeys;
 - (int)backgroundStyle;
 - (int)backgroundStyleBlack;

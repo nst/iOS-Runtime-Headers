@@ -31,7 +31,7 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

@@ -17,8 +17,8 @@
     OADGraphicProperties *mGraphicProperties;
     CHDDataValue *mLastCachedName;
     CHDFormula *mName;
-    int mOrder;
-    int mStyleIndex;
+    unsigned int mOrder;
+    unsigned int mStyleIndex;
     EDCollection *mTrendlinesCollection;
     CHDData *mValueData;
 }
@@ -33,7 +33,7 @@
 - (id)dataValuePropertiesCollection;
 - (void)dealloc;
 - (id)defaultDataLabel;
-- (id)defaultSeriesNameForIndex:(int)arg1;
+- (id)defaultSeriesNameForIndex:(unsigned int)arg1;
 - (id)errorBarXAxis;
 - (id)errorBarYAxis;
 - (id)graphicProperties;
@@ -46,7 +46,7 @@
 - (int)key;
 - (id)lastCachedName;
 - (id)name;
-- (int)order;
+- (unsigned int)order;
 - (void)setCategoryData:(id)arg1;
 - (void)setChartType:(id)arg1;
 - (void)setDataValuePropertiesCollection:(id)arg1;
@@ -59,12 +59,12 @@
 - (void)setHiddenFlag:(bool)arg1;
 - (void)setLastCachedName:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setOrder:(int)arg1;
-- (void)setStyleIndex:(int)arg1;
+- (void)setOrder:(unsigned int)arg1;
+- (void)setStyleIndex:(unsigned int)arg1;
 - (void)setTrendlineCollection:(id)arg1;
 - (void)setValueData:(id)arg1;
 - (id)shallowCopy;
-- (int)styleIndex;
+- (unsigned int)styleIndex;
 - (id)trendlineCollection;
 - (id)valueData;
 

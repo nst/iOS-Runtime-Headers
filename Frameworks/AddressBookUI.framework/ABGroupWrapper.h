@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABGroupWrapperDelegate>, ABGroupWrapper, ACAccountStore, AccountsManager, NSSet, NSString;
+@class <ABGroupWrapperDelegate>, ABGroupWrapper, ACAccountStore, NSSet, NSString;
 
 @interface ABGroupWrapper : NSObject {
     NSString *_accountIdentifier;
     ACAccountStore *_accountStore;
-    AccountsManager *_accountsManager;
     void *_addressBook;
     NSString *_cachedName;
     NSSet *_childGroupWrappers;
@@ -22,7 +21,6 @@
 @property(readonly) NSString * _accountDescriptionBasedOnIdentifier;
 @property(readonly) NSString * accountIdentifier;
 @property(retain) ACAccountStore * accountStore;
-@property(retain) AccountsManager * accountsManager;
 @property(readonly) void* addressBook;
 @property(retain) NSSet * childGroupWrappers;
 @property <ABGroupWrapperDelegate> * delegate;
@@ -35,16 +33,15 @@
 @property(readonly) int sourceType;
 
 + (id)newGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3 accountStore:(id)arg4 excludingSearchableStores:(BOOL)arg5 isSoleAccount:(BOOL)arg6;
-+ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountsManager:(id)arg3 accountStore:(id)arg4;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3 excludingSearchableStores:(BOOL)arg4 isSoleAccount:(BOOL)arg5;
++ (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 accountStore:(id)arg3;
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2 excludingSearchableStores:(BOOL)arg3;
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;
 
 - (id)_accountDescriptionBasedOnIdentifier;
+- (id)_rootGroupWrapper;
 - (id)accountIdentifier;
-- (id)accountManager;
 - (id)accountStore;
-- (id)accountsManager;
 - (void*)addressBook;
 - (void)childGroupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
 - (id)childGroupWrappers;
@@ -64,7 +61,6 @@
 - (id)parentGroupWrapper;
 - (int)score;
 - (void)setAccountStore:(id)arg1;
-- (void)setAccountsManager:(id)arg1;
 - (void)setChildGroupWrappers:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setParentGroupWrapper:(id)arg1;
@@ -75,5 +71,6 @@
 - (BOOL)showLinkedPeople;
 - (void*)source;
 - (int)sourceType;
+- (BOOL)toggleSelection;
 
 @end

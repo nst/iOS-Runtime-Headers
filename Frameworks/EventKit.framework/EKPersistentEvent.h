@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSString, NSURL;
+@class NSArray, NSDate, NSString, NSURL;
 
 @interface EKPersistentEvent : EKPersistentCalendarItem {
     struct { 
@@ -16,6 +16,8 @@
 }
 
 @property(copy) NSURL * URL;
+@property(copy) NSArray * actions;
+@property(readonly) BOOL allowsParticipationStatusModifications;
 @property int availability;
 @property(readonly) int birthdayID;
 @property(readonly) double duration;

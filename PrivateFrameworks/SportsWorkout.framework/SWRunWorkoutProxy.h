@@ -7,6 +7,8 @@
 @interface SWRunWorkoutProxy : NSObject {
 }
 
+@property(readonly) NSString * currentAlbumName;
+@property(readonly) NSString * currentArtistName;
 @property(readonly) NSString * currentSongName;
 @property(readonly) float goal;
 @property(readonly) NSString * goalType;

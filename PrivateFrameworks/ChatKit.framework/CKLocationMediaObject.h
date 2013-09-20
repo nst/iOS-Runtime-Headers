@@ -2,14 +2,39 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKLocationMediaObject : CKCardMediaObject {
+@class NSString;
+
+@interface CKLocationMediaObject : CKContactMediaObject <MKAnnotation> {
+    struct { 
+        double latitude; 
+        double longitude; 
+    } _coordinate;
 }
 
-+ (id)mimeTypesToFileExtensions;
+@property struct { double x1; double x2; } coordinate;
+@property(readonly) NSString * subtitle;
+@property(readonly) NSString * title;
 
-- (id)icon;
++ (id)UTITypes;
++ (id)fallbackFilenamePrefix;
++ (BOOL)isPreviewable;
++ (id)mapThumbnailQueue;
++ (id)placeholderPreviewCache;
++ (id)titleBarMaskImage;
+
+- (id)bbPreviewFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })bbSize;
+- (struct { double x1; double x2; })coordinate;
+- (id)generatePlaceholderThumbnail;
+- (id)generatePlaceholderThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithTransfer:(id)arg1;
+- (BOOL)isDroppedPin;
 - (int)mediaType;
-- (id)subtitle;
-- (id)title;
+- (id)pin;
+- (Class)previewBalloonViewClass;
+- (id)previewForOrientation:(BOOL)arg1;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (id)vCardURLProperties;
 
 @end

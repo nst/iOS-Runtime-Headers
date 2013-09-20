@@ -10,6 +10,10 @@
         unsigned int _opaque_2; 
     void *_cfi;
     id _delegate;
+    unsigned int _dispatchThreadHardLimit;
+    unsigned int _dispatchThreadHardLimitCount;
+    unsigned int _dispatchThreadSoftLimit;
+    unsigned int _dispatchThreadSoftLimitCount;
     double _interval;
     NSMapTable *_lastThreadBacktraceMap;
     unsigned int _mainThread;
@@ -18,6 +22,7 @@
     BOOL _needTaskPortDealloc;
     unsigned int _numberOfCopiedBacktraces;
     unsigned int _numberOfSamples;
+    unsigned int _options;
     int _pid;
     unsigned int _previousThreadCount;
     unsigned int *_previousThreadList;
@@ -29,8 +34,6 @@
     BOOL _sampling;
     struct sampling_context_t { } *_samplingContext;
     unsigned int _samplingThreadPort;
-    BOOL _shouldOutputSignature;
-    BOOL _showDispatchQueueNames;
     BOOL _stacksFixed;
     NSConditionLock *_stateLock;
     } _symbolicator;
@@ -51,6 +54,7 @@
 + (id)sampleAllThreadsOfTask:(unsigned int)arg1 withSymbolicator:(id)arg2;
 + (id)sampleAllThreadsOfTask:(unsigned int)arg1;
 
+- (void)_checkDispatchThreadLimits;
 - (void)_fixupStacks:(id)arg1;
 - (void)_makeHighPriority;
 - (void)_makeTimeshare;
@@ -70,6 +74,7 @@
 - (id)initWithTask:(unsigned int)arg1;
 - (void)initializeSamplingContext:(BOOL)arg1;
 - (unsigned int)mainThread;
+- (id)outputString;
 - (int)pid;
 - (void)preloadSymbols;
 - (unsigned int)recordSampleTo:(id)arg1 beginTime:(double)arg2 endTime:(double)arg3 thread:(unsigned int)arg4;

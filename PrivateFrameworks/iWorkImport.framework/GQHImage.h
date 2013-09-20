@@ -5,14 +5,14 @@
 @interface GQHImage : NSObject {
 }
 
-+ (int)handleFloatingImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 crop:(id)arg4 maskPath:(id)arg5 state:(id)arg6;
++ (int)handleFloatingImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 cropGeometry:(id)arg4 maskingShapePath:(id)arg5 alphaMaskBezier:(struct CGPath { }*)arg6 state:(id)arg7;
 + (int)handleFloatingMedia:(id)arg1 state:(id)arg2;
 + (int)handleFloatingWebView:(id)arg1 state:(id)arg2;
-+ (int)handleInlineImageBinary:(id)arg1 geometry:(id)arg2 cropGeometry:(id)arg3 maskPath:(id)arg4 style:(id)arg5 state:(id)arg6;
-+ (int)handleInlineImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 state:(id)arg4;
++ (int)handleInlineImageBinary:(id)arg1 geometry:(id)arg2 cropGeometry:(id)arg3 maskingShapePath:(id)arg4 alphaMaskBezier:(struct CGPath { }*)arg5 style:(id)arg6 state:(id)arg7;
 + (int)handleInlineMedia:(id)arg1 state:(id)arg2;
 + (int)handleInlineWebView:(id)arg1 state:(id)arg2;
-+ (void)mapCrop:(id)arg1 bounds:(id)arg2 style:(id)arg3;
-+ (void)mapMaskedImage:(id)arg1 maskPath:(id)arg2 geometry:(id)arg3 crop:(id)arg4 graphicStyle:(id)arg5 state:(id)arg6;
++ (void)handleSimpleImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 state:(id)arg4;
++ (void)mapCropGeometry:(id)arg1 bounds:(id)arg2 style:(id)arg3;
++ (void)mapMaskedImage:(id)arg1 geometry:(id)arg2 cropGeometry:(id)arg3 maskingShapePath:(id)arg4 alphaMaskBezier:(struct CGPath { }*)arg5 graphicStyle:(id)arg6 isFloating:(BOOL)arg7 state:(id)arg8;
 
 @end

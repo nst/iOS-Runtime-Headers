@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
-
-@interface SAFmfVisibilityStateSet : SABaseClientBoundCommand {
+@interface SAFmfVisibilityStateSet : SADomainCommand {
 }
 
-@property(copy) NSURL * targetAppId;
 @property BOOL visible;
 
 + (id)visibilityStateSet;
@@ -16,9 +13,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
-- (void)setTargetAppId:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
-- (id)targetAppId;
 - (BOOL)visible;
 
 @end

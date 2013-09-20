@@ -13,7 +13,7 @@
 
 + (id)sharedStatistics;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)domain;
 - (void)incrementViewDisplayCountForKey:(id)arg1;
 - (void)incrementViewDisplayCountForViewController:(id)arg1;

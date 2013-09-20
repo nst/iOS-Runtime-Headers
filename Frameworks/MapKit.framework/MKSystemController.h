@@ -7,14 +7,11 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_featureFreedomEnabled;
-- (int)deviceTileScale;
-- (int)deviceTileSize;
 - (BOOL)isHiDPI;
 - (BOOL)isInternalInstall;
-- (BOOL)isLiveScrollCapable;
-- (BOOL)isSensitiveUIEnabled;
 - (BOOL)isWifiEnabled;
+- (BOOL)openURL:(id)arg1;
+- (BOOL)overrideBlurStyle;
 - (oneway void)release;
 - (unsigned int)retainCount;
 - (float)screenScale;
@@ -22,7 +19,7 @@
 - (BOOL)shouldRateLimitSearchCompletions;
 - (BOOL)supports3DImagery;
 - (BOOL)supports3DMaps;
-- (BOOL)supportsNavigation;
+- (BOOL)supportsPitchAPI;
 - (int)userInterfaceIdiom;
 
 @end

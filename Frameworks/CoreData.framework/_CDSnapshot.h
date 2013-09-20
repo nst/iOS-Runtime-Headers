@@ -24,6 +24,7 @@
 
 - (id)_descriptionValues;
 - (BOOL)_isDeallocating;
+- (id)_snapshot_;
 - (BOOL)_tryRetain;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

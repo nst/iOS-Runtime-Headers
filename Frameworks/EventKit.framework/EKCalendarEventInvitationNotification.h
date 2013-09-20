@@ -7,22 +7,35 @@
 @interface EKCalendarEventInvitationNotification : EKCalendarNotification {
     BOOL _allDay;
     NSString *_calendarName;
+    BOOL _dateChanged;
     NSDate *_endDate;
     BOOL _hasRecurrenceRules;
     NSString *_location;
+    BOOL _locationChanged;
+    int _participationStatus;
+    NSDate *_participationStatusModifiedDate;
     NSDate *_startDate;
+    NSDate *_startDateForNextOccurrence;
     int _status;
+    BOOL _timeChanged;
 }
 
 @property(getter=isAllDay) BOOL allDay;
 @property(retain) NSString * calendarName;
+@property BOOL dateChanged;
 @property(retain) NSDate * endDate;
 @property BOOL hasRecurrenceRules;
 @property(retain) NSString * location;
+@property BOOL locationChanged;
+@property int participationStatus;
+@property(retain) NSDate * participationStatusModifiedDate;
 @property(retain) NSDate * startDate;
+@property(retain) NSDate * startDateForNextOccurrence;
 @property int status;
+@property BOOL timeChanged;
 
 - (id)calendarName;
+- (BOOL)dateChanged;
 - (void)dealloc;
 - (id)endDate;
 - (id)eventFromEventStore:(id)arg1;
@@ -30,15 +43,26 @@
 - (id)initWithType:(int)arg1;
 - (BOOL)isAllDay;
 - (id)location;
+- (BOOL)locationChanged;
 - (BOOL)needsAlert;
+- (int)participationStatus;
+- (id)participationStatusModifiedDate;
 - (void)setAllDay:(BOOL)arg1;
 - (void)setCalendarName:(id)arg1;
+- (void)setDateChanged:(BOOL)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setHasRecurrenceRules:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setLocationChanged:(BOOL)arg1;
+- (void)setParticipationStatus:(int)arg1;
+- (void)setParticipationStatusModifiedDate:(id)arg1;
 - (void)setStartDate:(id)arg1;
+- (void)setStartDateForNextOccurrence:(id)arg1;
 - (void)setStatus:(int)arg1;
+- (void)setTimeChanged:(BOOL)arg1;
 - (id)startDate;
+- (id)startDateForNextOccurrence;
 - (int)status;
+- (BOOL)timeChanged;
 
 @end

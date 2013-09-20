@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMutableOrderedSet, NSNumber, NSObject<PLIndexMappingCache>, NSOrderedSet, NSString, NSURL, PLManagedAsset, PLPhotoLibrary, UIImage;
+@class NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSObject<PLIndexMappingCache>, NSOrderedSet, NSString, NSURL, PLManagedAsset, PLPhotoLibrary, UIImage;
 
-@interface PLGenericAlbum : _PLGenericAlbum <PLAssetContainer, PLDerivedAlbumOrigin, PLIndexMappersDataOrigin> {
+@interface PLGenericAlbum : _PLGenericAlbum <PLAlbumProtocol, PLDerivedAlbumOrigin, PLIndexMappersDataOrigin> {
     NSObject<PLIndexMappingCache> *_derivededAlbums[5];
     BOOL didRegisteredWithUserInterfaceContext;
     BOOL isRegisteredForChanges;
@@ -13,9 +13,11 @@
 @property(readonly) unsigned int approximateCount;
 @property(readonly) NSOrderedSet * assets;
 @property(readonly) unsigned int assetsCount;
+@property(readonly) BOOL canContributeToCloudSharedAlbum;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) BOOL canShowComments;
-@property(readonly) unsigned int count;
 @property BOOL didRegisteredWithUserInterfaceContext;
+@property(readonly) NSDate * endDate;
 @property(readonly) NSURL * groupURL;
 @property BOOL hasUnseenContentBoolValue;
 @property(retain) NSString * importSessionID;
@@ -24,24 +26,35 @@
 @property(readonly) BOOL isCloudSharedAlbum;
 @property(readonly) BOOL isEmpty;
 @property(readonly) BOOL isLibrary;
+@property(readonly) BOOL isMultipleContributorCloudSharedAlbum;
+@property(readonly) BOOL isOwnPhotoStreamAlbum;
 @property(readonly) BOOL isOwnedCloudSharedAlbum;
+@property(readonly) BOOL isPanoramasAlbum;
+@property(readonly) BOOL isPendingPhotoStreamAlbum;
 @property(readonly) BOOL isPhotoStreamAlbum;
 @property BOOL isRegisteredForChanges;
+@property(readonly) BOOL isSmartAlbum;
+@property(readonly) BOOL isStandInAlbum;
+@property(readonly) BOOL isWallpaperAlbum;
 @property(retain) PLManagedAsset * keyAsset;
 @property(readonly) NSNumber * kind;
 @property int kindValue;
+@property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSString * localizedTitle;
 @property(readonly) NSMutableOrderedSet * mutableAssets;
 @property(readonly) NSString * name;
-@property unsigned int pendingItemsCount;
-@property unsigned int pendingItemsType;
+@property int pendingItemsCount;
+@property int pendingItemsType;
 @property(readonly) PLPhotoLibrary * photoLibrary;
 @property(readonly) unsigned int photosCount;
 @property(readonly) UIImage * posterImage;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(readonly) id sectioningComparator;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(retain) NSDictionary * slideshowSettings;
 @property(readonly) id sortingComparator;
+@property(readonly) NSDate * startDate;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(retain) NSString * title;
 @property(retain) NSString * uuid;
 @property(readonly) unsigned int videosCount;
@@ -64,8 +77,13 @@
 + (id)allAlbumsInManagedObjectContext:(id)arg1;
 + (id)allAlbumsRegisteredWithManagedObjectContext:(id)arg1;
 + (id)allAssetsAlbumInLibrary:(id)arg1;
++ (id)allHorizontalPanoramasAlbumInLibrary:(id)arg1;
 + (id)allNonPhotoStreamAssetsAlbumInLibrary:(id)arg1;
++ (id)allPanoramasAlbumInLibrary:(id)arg1;
 + (id)allPhotoStreamAssetsAlbumInLibrary:(id)arg1;
++ (id)allSyncedAlbumsInManagedObjectContext:(id)arg1;
++ (id)allVerticalPanoramasAlbumInLibrary:(id)arg1;
++ (id)allVideosAlbumInLibrary:(id)arg1;
 + (id)cameraRollAlbumInLibrary:(id)arg1;
 + (id)eventsWithName:(id)arg1 andImportSessionIdentifier:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)filesystemImportProgressAlbumInLibrary:(id)arg1;
@@ -78,6 +96,8 @@
 + (id)insertNewEventIntoLibrary:(id)arg1;
 + (id)insertNewEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewFaceAlbumIntoLibrary:(id)arg1;
++ (id)insertNewSyncedEventIntoLibrary:(id)arg1;
++ (id)insertNewSyncedEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)keyPathsForValuesAffectingKindValue;
 + (id)keyPathsForValuesAffectingName;
 + (id)otaRestoreProgressAlbumInLibrary:(id)arg1;
@@ -93,12 +113,15 @@
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (void)batchFetchAssets:(id)arg1;
+- (BOOL)canContributeToCloudSharedAlbum;
 - (BOOL)canPerformEditOperation:(int)arg1;
+- (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
 - (unsigned int)count;
-- (unsigned int)countForAssetsOfKind:(int)arg1;
+- (unsigned int)countForAssetsOfKind:(short)arg1;
 - (void)dealloc;
 - (void)delete;
+- (id)description;
 - (BOOL)didRegisteredWithUserInterfaceContext;
 - (id)displayableIndexesForCount:(unsigned int)arg1;
 - (void)enumerateDerivedAlbums:(id)arg1;
@@ -111,11 +134,19 @@
 - (BOOL)isCloudSharedAlbum;
 - (BOOL)isEmpty;
 - (BOOL)isLibrary;
+- (BOOL)isMultipleContributorCloudSharedAlbum;
+- (BOOL)isOwnPhotoStreamAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
+- (BOOL)isPanoramasAlbum;
+- (BOOL)isPendingPhotoStreamAlbum;
 - (BOOL)isPhotoStreamAlbum;
 - (BOOL)isRegisteredForChanges;
+- (BOOL)isSmartAlbum;
+- (BOOL)isStandInAlbum;
+- (BOOL)isWallpaperAlbum;
 - (id)kind;
 - (int)kindValue;
+- (id)localizedLocationNames;
 - (id)localizedTitle;
 - (id)name;
 - (id)photoLibrary;
@@ -140,7 +171,6 @@
 - (id)titleForSectionStartingAtIndex:(unsigned int)arg1;
 - (void)unregisterAllDerivedAlbums;
 - (void)unregisterForChanges;
-- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (id)uuid;
 - (unsigned int)videosCount;
 - (void)willTurnIntoFault;

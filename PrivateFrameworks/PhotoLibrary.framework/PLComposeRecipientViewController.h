@@ -4,7 +4,7 @@
 
 @class <PLComposeRecipientViewControllerDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSNumber, PLComposeRecipientView, UIPopoverController, UIScrollView, UITableView;
 
-@interface PLComposeRecipientViewController : UIViewController <MFContactsSearchConsumer, UITableViewDelegate, UITableViewDataSource, UIPopoverControllerDelegate> {
+@interface PLComposeRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, UITableViewDelegate, UITableViewDataSource, UIPopoverControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,6 +26,7 @@
     } _keyboardFrame;
     unsigned int _maxExpandRows;
     UIPopoverController *_peoplePickerPopoverController;
+    NSArray *_properties;
     UIScrollView *_recipientContainerView;
     PLComposeRecipientView *_recipientView;
     MFContactsSearchManager *_searchManager;
@@ -41,9 +42,10 @@
 @property unsigned int maxExpandRows;
 @property(readonly) PLComposeRecipientView * recipientView;
 
-+ (void)recordRecentEventForAddresses:(id)arg1;
++ (void)recordRecentInvitationRecipient:(id)arg1 displayName:(id)arg2 date:(id)arg3;
 
 - (void*)_addressBook;
+- (void)_dismissPeoplePicker:(id)arg1;
 - (void)_forceDismissPeoplePickerPopover;
 - (void)_keyboardSizeDidChange:(id)arg1;
 - (id)_newSearchResultsTable;
@@ -58,11 +60,12 @@
 - (void)beganNetworkActivity;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
+- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
 - (void)composeRecipientView:(id)arg1 showPersonCardForAtom:(id)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
-- (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (BOOL)composeRecipientViewIsShowingPeoplePicker:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
@@ -82,6 +85,9 @@
 - (void)makeRecipientViewFirstResponder;
 - (void)makeRecipientViewResignFirstResponder;
 - (unsigned int)maxExpandRows;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
+- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)recipientView;
 - (id)recipients;
@@ -89,10 +95,12 @@
 - (void)setDrawsLetterpress:(BOOL)arg1;
 - (void)setMaxExpandRows:(unsigned int)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldShowCardForPerson:(void*)arg1 peoplePicker:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

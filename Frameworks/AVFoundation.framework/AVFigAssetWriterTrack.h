@@ -54,9 +54,11 @@
 - (void)setFigMetadata:(id)arg1;
 - (void)setFigTrackMatrix:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
+- (void)setLayer:(int)arg1;
 - (void)setMarksOutputTrackAsEnabled:(BOOL)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setSampleBufferCoalescingInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setTrackVolume:(float)arg1;
 - (int)trackID;
 
 @end

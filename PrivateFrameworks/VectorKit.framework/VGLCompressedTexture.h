@@ -18,6 +18,7 @@
     unsigned int _surfaces;
 }
 
+- (id).cxx_construct;
 - (void)dealloc;
 - (BOOL)decodeTexture;
 - (id)initWithData:(id)arg1;

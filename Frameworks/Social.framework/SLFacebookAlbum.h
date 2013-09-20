@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SLFacebookAlbum : NSObject <NSCoding> {
+@interface SLFacebookAlbum : NSObject <NSSecureCoding> {
     BOOL _canUpload;
     int _count;
     NSString *_coverPhotoIdentifier;
@@ -22,6 +22,7 @@
 
 + (id)albumWithDataDictionary:(id)arg1;
 + (id)albumsWithAlbumDataDictionaries:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (BOOL)canUpload;

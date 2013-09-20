@@ -10,6 +10,7 @@
         float height; 
     NSString *_displayString;
     UIImage *_image;
+    float _maxImageHeight;
     } _textSize;
 }
 

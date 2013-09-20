@@ -30,6 +30,7 @@
 @property int interfaceOrientation;
 @property(copy) id layoutSubviewsPostflightHandler;
 
+- (void).cxx_destruct;
 - (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(int)arg3;
 - (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
 - (void)_updateDestinationBackgroundViewAnimated:(BOOL)arg1;

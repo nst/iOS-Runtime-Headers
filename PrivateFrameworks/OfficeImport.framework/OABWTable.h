@@ -10,8 +10,8 @@
     OADTable *mSrcTable;
     OABWriterState *mState;
     ESDContainer *mTgtTable;
-    struct vector<long, std::allocator<long> > { struct _Vector_impl { long *x_1_1_1; long *x_1_1_2; long *x_1_1_3; } x1; } *mpXCoords;
-    struct vector<long, std::allocator<long> > { struct _Vector_impl { long *x_1_1_1; long *x_1_1_2; long *x_1_1_3; } x1; } *mpYCoords;
+    struct vector<long, std::__1::allocator<long> > { long *x1; long *x2; struct __compressed_pair<long *, std::__1::allocator<long> > { long *x_3_1_1; } x3; } *mpXCoords;
+    struct vector<long, std::__1::allocator<long> > { long *x1; long *x2; struct __compressed_pair<long *, std::__1::allocator<long> > { long *x_3_1_1; } x3; } *mpYCoords;
 }
 
 - (void)dealloc;

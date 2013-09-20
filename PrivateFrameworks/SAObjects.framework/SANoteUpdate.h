@@ -4,12 +4,11 @@
 
 @class NSString, NSURL;
 
-@interface SANoteUpdate : SABaseClientBoundCommand {
+@interface SANoteUpdate : SADomainCommand {
 }
 
 @property(copy) NSString * contentsToAppend;
 @property(copy) NSURL * identifier;
-@property(copy) NSURL * targetAppId;
 
 + (id)update;
 + (id)updateWithDictionary:(id)arg1 context:(id)arg2;
@@ -21,7 +20,5 @@
 - (BOOL)requiresResponse;
 - (void)setContentsToAppend:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

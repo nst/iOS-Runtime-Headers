@@ -16,7 +16,6 @@
 - (Class)aggregateEntityClass;
 - (unsigned int)countOfEntities;
 - (void)dealloc;
-- (BOOL)distinctPersistentIDProperty;
 - (void)encodeWithCoder:(id)arg1;
 - (Class)entityClass;
 - (id)foreignPersistentIDProperty;

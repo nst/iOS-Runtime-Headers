@@ -5,12 +5,12 @@
 @interface NSBundle : NSObject {
     id _cfBundle;
     unsigned int _flags;
+    id _initialPath;
+    id _lock;
     Class _principalClass;
-    void *_reserved0;
-    void *_reserved1;
     unsigned int _reserved2;
-    id _tmp1;
-    id _tmp2;
+    id _reserved3;
+    id _resolvedPath;
 }
 
 + (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 inBundleWithURL:(id)arg4;
@@ -21,10 +21,14 @@
 + (id)_brailleTableBundles;
 + (id)_brailleTableDictionaryForBrailleTableIdentifier:(id)arg1;
 + (id)_brailleTableDictionaryForBrailleTableIdentifier:(id)arg1;
++ (id)_coreroutineBundle;
++ (id)_coreroutine_LocalizedStringForKey:(id)arg1;
++ (id)_gkBundleWithIdentifier:(id)arg1;
++ (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
++ (id)_gkLocalizedMessageFromDictionary:(id)arg1;
 + (id)_mapkitBundle;
 + (id)_rivenBundle;
 + (id)_rivenFactory;
-+ (id)_textInputFactory;
 + (id)_typologyBundle;
 + (id)accessibilityBundleWithLastPathComponent:(id)arg1;
 + (id)afui_assistantUIFrameworkBundle;
@@ -58,12 +62,13 @@
 + (id)findBundleResourceURLsCallingMethod:(SEL)arg1 baseURL:(id)arg2 passingTest:(id)arg3;
 + (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned int)arg7;
 + (id)frameworkBundleForBinaryImagePath:(id)arg1;
-+ (id)iPodUIBundle;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
 + (id)loadedBundles;
 + (id)mainBundle;
 + (id)mediaPlayerBundle;
++ (id)mediaPlayerUIBundle;
++ (id)musicUIBundle;
 + (id)nameForBrailleTableIdentifier:(id)arg1;
 + (id)nameForBrailleTableIdentifier:(id)arg1;
 + (id)pathForITunesResource:(id)arg1 ofType:(id)arg2;
@@ -74,12 +79,16 @@
 + (void)popNibPath;
 + (id)preferredLocalizationsFromArray:(id)arg1 forPreferences:(id)arg2;
 + (id)preferredLocalizationsFromArray:(id)arg1;
++ (id)pu_PhotosUIFrameworkBundle;
 + (void)pushNibLoadingBundle:(id)arg1;
 + (void)pushNibPath:(id)arg1;
++ (id)radioUIBundle;
++ (id)safari_safariSharedBundle;
 + (void)setSystemLanguages:(id)arg1;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
 
+- (id)PKSanitizedBundleIdentifier;
 - (id)URLForAuxiliaryExecutable:(id)arg1;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3 localization:(id)arg4;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2 subdirectory:(id)arg3;
@@ -90,16 +99,17 @@
 - (void)_accessibilityInitializeContainerLogic;
 - (id)_cachedMainBundleResourcePath;
 - (struct __CFBundle { }*)_cfBundle;
-- (id)_compatibility_bundleURL;
-- (id)_compatility_bundlePath;
-- (id)_computeExecutablePath;
 - (id)_gkBundleVersion;
+- (BOOL)_gkIsBadgingEnabled;
+- (BOOL)_gkIsGameCenter;
+- (BOOL)_gkIsGameCenterUIService;
 - (id)_gkLocalizedName;
+- (id)_gkLocalizedStringForKey:(id)arg1 defaultValue:(id)arg2 arguments:(id)arg3;
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
 - (id)_gkPathForChallengeSound;
 - (id)_gkPathForInviteSound;
 - (id)_gkPathForSoundWithName:(id)arg1;
-- (void)_initInfoDictionary;
+- (id)_gkPreferredLanguage;
 - (id)_pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3 forRegion:(id)arg4;
 - (id)_pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forRegion:(id)arg3;
 - (id)_regionsArray;
@@ -116,7 +126,6 @@
 - (id)bundleURL;
 - (Class)classNamed:(id)arg1;
 - (void)dealloc;
-- (id)defaultsDictionary;
 - (id)description;
 - (id)developmentLocalization;
 - (id)executableArchitectures;
@@ -129,7 +138,6 @@
 - (id)initWithURL:(id)arg1;
 - (void)invalidateResourceCache;
 - (BOOL)isLoaded;
-- (id)launchDPath;
 - (BOOL)load;
 - (BOOL)loadAndReturnError:(id*)arg1;
 - (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
@@ -144,7 +152,6 @@
 - (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3 forLocalization:(id)arg4;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2;
-- (id)pathForResource:(id)arg1;
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forLanguage:(id)arg3;
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forLocalization:(id)arg3;
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
@@ -156,13 +163,17 @@
 - (oneway void)release;
 - (id)resourcePath;
 - (id)resourceURL;
+- (BOOL)safari_primaryLocalizationIsEnglish;
 - (id)sharedFrameworksPath;
 - (id)sharedFrameworksURL;
 - (id)sharedSupportPath;
 - (id)sharedSupportURL;
+- (id)siriUILocalizedStringForKey:(id)arg1 table:(id)arg2;
+- (id)siriUILocalizedStringForKey:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
 - (id)tableIdentifierForBundleSpecificTableIdentifier:(id)arg1;
 - (BOOL)unload;
 - (unsigned int)versionNumber;
+- (id)webui_localizedDisplayName;
 
 @end

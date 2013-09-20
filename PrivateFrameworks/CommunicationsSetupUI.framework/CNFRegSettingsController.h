@@ -20,10 +20,9 @@
     NSMutableArray *_addresses;
     id _alertHandler;
     NSArray *_aliasGroupSpecifiers;
+    NSArray *_blacklistGroupSpecifiers;
     PSSpecifier *_blankAddressSpecifier;
     NSArray *_callerIdGroupSpecifiers;
-    NSArray *_cellularDataGroupSpecifiers;
-    PSSpecifier *_cellularDataSwitchSpecifier;
     NSNumber *_delayedRefreshAnimatedFlag;
     PSSpecifier *_faceTimeEnabledGroupSpecifier;
     PSSpecifier *_faceTimeEnabledSpecifier;
@@ -50,6 +49,7 @@
 - (void)_handleFailedAccountReactivation:(id)arg1 error:(id)arg2;
 - (void)_handleSuccessfulAccountReactivation:(id)arg1;
 - (void)_hideLocaleChooser;
+- (id)_localeChooserForAccount:(id)arg1;
 - (id)_operationalAccounts;
 - (id)_operationalAccountsForService:(int)arg1;
 - (BOOL)_popFromSettingsAnimated:(BOOL)arg1;
@@ -60,7 +60,6 @@
 - (void)_setupAccountHandlersForDisabling;
 - (void)_setupAccountHandlersForNormalOperation;
 - (void)_setupAllListeners;
-- (void)_setupAppearBlockForLocaleControllerWithAccount:(id)arg1;
 - (BOOL)_shouldShowAliasInfo;
 - (BOOL)_shouldUseDisabledHandlers;
 - (void)_showAccountAlertForAccount:(id)arg1;
@@ -89,8 +88,6 @@
 - (id)blankAliasTextField;
 - (id)bundle;
 - (id)callerIdAliasSpecifiers;
-- (BOOL)canBeShownFromSuspendedState;
-- (BOOL)cellularDataSwitchEnabled;
 - (void)clearAccountCache;
 - (id)createSpecifierForAccount:(id)arg1;
 - (id)createSpecifierForAlias:(id)arg1;
@@ -103,7 +100,6 @@
 - (void)formSheetViewWillDisappear;
 - (id)getAccountNameForSpecifier:(id)arg1;
 - (id)getAddAliasTextForSpecifier:(id)arg1;
-- (id)getCellularDataForSpecifier:(id)arg1;
 - (id)getFaceTimeEnabledForSpecifier:(id)arg1;
 - (int)groupIdForSpecifier:(id)arg1;
 - (int)groupIdForSpecifierId:(id)arg1;
@@ -122,9 +118,9 @@
 - (void)refreshAliasesAnimated:(BOOL)arg1;
 - (void)refreshAllAliasSpecifiers;
 - (void)refreshAllCallerIdAliasSpecifiers;
+- (void)refreshBlacklistSettingsAnimated:(BOOL)arg1;
 - (void)refreshCallerIdAliasesAnimated:(BOOL)arg1;
 - (void)refreshCallerIdSpecifier:(id)arg1;
-- (void)refreshCellularDataAnimated:(BOOL)arg1;
 - (void)refreshEnabledStateAnimated:(BOOL)arg1;
 - (void)refreshFaceTimeSettingsAnimated:(BOOL)arg1;
 - (void)refreshFaceTimeSettingsWithDelayAnimated:(BOOL)arg1;
@@ -132,22 +128,21 @@
 - (void)setAlertHandler:(id)arg1;
 - (void)setAliasSelected:(id)arg1;
 - (void)setCallerId:(id)arg1;
-- (void)setCellularData:(id)arg1 specifier:(id)arg2;
 - (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2 animated:(BOOL)arg3;
 - (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setPendingAddress:(id)arg1 forSpecifier:(id)arg2;
 - (void)setPendingAddress:(id)arg1;
 - (void)setShowEnableSwitch:(BOOL)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
-- (BOOL)shouldShowCellularData;
+- (BOOL)shouldShowBlacklistSettings;
 - (BOOL)shouldShowReplyWithMessage;
 - (BOOL)showAccounts:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showAddAliasButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showAliases:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showAllSettings:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)showBlacklistSettings:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showBlankAlias:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showCallerId:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)showCellularData:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showEnableSwitch;
 - (void)showReplyWithMessage:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showSpecifiers:(id)arg1 afterGroupId:(id)arg2 animated:(BOOL)arg3;
@@ -165,7 +160,6 @@
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)textFieldEmptyStateChanged:(id)arg1 forSpecifier:(id)arg2;
-- (void)updateCellularDataFooterText;
 - (void)updateSpecifier:(id)arg1 withAccount:(id)arg2;
 - (void)updateSpecifier:(id)arg1 withAlias:(id)arg2;
 - (void)updateSpecifier:(id)arg1 withCallerIdAlias:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeRecipientViewDelegate>, <MFMailComposeViewDelegate>, <MFMailPopoverManagerDelegate>, MFComposeBodyField, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeScrollView, MFComposeSubjectView, MFComposeTextContentView, MFFromAddressViewController, MFMailComposeContactsSearchController, MFMailComposeRecipientView, NSArray, NSInvocation, NSString, UIPickerView, UIResponder, UITableView, UIView;
+@class <MFComposeRecipientViewDelegate>, <MFMailComposeViewDelegate>, <MFMailPopoverManagerDelegate>, MFComposeBodyField, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeScrollView, MFComposeSubjectView, MFComposeTextContentView, MFFromAddressViewController, MFMailComposeContactsSearchController, MFMailComposeRecipientView, NSArray, NSInvocation, UIPickerView, UIResponder, UITableView, UIView;
 
 @interface MFMailComposeView : UITransitionView <UITextContentViewDelegate, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, MFMailComposeContactsSearchControllerDelegate, MFComposeBodyFieldDelegate, MFDragContext> {
     struct CGSize { 
@@ -24,11 +24,12 @@
     MFComposeBodyField *_bodyField;
     MFComposeScrollView *_bodyScroller;
     MFMailComposeRecipientView *_ccField;
-    <MFMailComposeRecipientViewDelegate> *_composeRecipientViewDelegate;
+    <MFComposeRecipientViewDelegate> *_composeRecipientViewDelegate;
     UIView *_contentView;
     } _currentContentSize;
     NSInvocation *_delayedPopoverInvocation;
     UIResponder *_firstResponderBeforeSheet;
+    UIView *_fromAddressPickerBackgroundView;
     UIPickerView *_fromAddressPickerView;
     MFFromAddressViewController *_fromAddressViewController;
     MFComposeFromView *_fromField;
@@ -47,7 +48,6 @@
     NSArray *_searchResults;
     UITableView *_searchResultsTable;
     UIView *_shadowView;
-    NSString *_signatureMarkupString;
     MFComposeSubjectView *_subjectField;
     MFComposeTextContentView *_textView;
     MFMailComposeRecipientView *_toField;
@@ -60,7 +60,7 @@
 @property(readonly) MFComposeTextContentView * bodyTextView;
 @property(readonly) MFMailComposeRecipientView * ccField;
 @property(getter=isChangingRecipients) BOOL changingRecipients;
-@property <MFMailComposeRecipientViewDelegate> * composeRecipientDelegate;
+@property <MFComposeRecipientViewDelegate> * composeRecipientDelegate;
 @property <MFMailComposeViewDelegate> * composeViewDelegate;
 @property(readonly) MFComposeFromView * fromField;
 @property(readonly) MFComposeImageSizeView * imageSizeField;
@@ -73,12 +73,14 @@
 @property(readonly) MFComposeSubjectView * subjectField;
 @property(readonly) MFMailComposeRecipientView * toField;
 
+- (void)_adjustHeaderFieldsPreferredContentSize;
 - (void)_adjustScrollerContentSize;
 - (void)_adjustScrollerForBottomView;
 - (void)_cancelAnimations;
 - (void)_cancelDelayedPopover;
 - (void)_collectKeyViews:(id)arg1;
 - (void)_finishUpRotationToInterfaceOrientation:(int)arg1;
+- (id)_focusedRecipientView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForFromAddressPicker;
 - (float)_heightForBottomView;
 - (void)_layoutFromFieldWithChangingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2 fieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
@@ -94,7 +96,6 @@
 - (void)_setupField:(id*)arg1 withLabel:(id)arg2 navTitle:(id)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)_updateKeyboardIntersection:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateOptionalHeaderVisibilityForceVisible:(BOOL)arg1;
-- (void)_updateSignatureMarkupString;
 - (void)automaticKeyboardFinishedAppearing:(id)arg1;
 - (void)automaticKeyboardFinishedDisappearing:(id)arg1;
 - (id)bccField;
@@ -111,6 +112,7 @@
 - (void)composeBodyFieldDidDraw:(id)arg1;
 - (void)composeBodyFieldDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)composeBodyFieldFrameChanged:(id)arg1;
+- (void)composeContactsSearchController:(id)arg1 didFindCorecipients:(id)arg2;
 - (void)composeContactsSearchController:(id)arg1 didSortResults:(id)arg2;
 - (void)composeContactsSearchController:(id)arg1 finishedWithResults:(BOOL)arg2;
 - (void)composeHeaderViewClicked:(id)arg1;
@@ -119,11 +121,13 @@
 - (void)dealloc;
 - (void)didAppear;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)dismissSearchResults;
 - (void)dragBeganInWindow:(id)arg1;
 - (void)dragEnded;
 - (id)dragScrollView;
 - (id)dragWindow;
 - (BOOL)endEditing:(BOOL)arg1;
+- (void)findCorecipientsWithRecipientView:(id)arg1;
 - (void)focusFirstResponderAfterRecipientView:(id)arg1;
 - (void)fromAddressPickerNeedsToBeRefreshed;
 - (void)fromAddressPickerPopoverWasDismissed;
@@ -143,6 +147,7 @@
 - (BOOL)isShowingPeoplePicker;
 - (void)layoutForChangedComposeRecipientView:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)layoutSubviews;
+- (void)menuDidHide;
 - (id)multiField;
 - (void)parentDidClose;
 - (void)parentWillClose;
@@ -170,6 +175,7 @@
 - (void)setChangingRecipients:(BOOL)arg1;
 - (void)setComposeRecipientDelegate:(id)arg1;
 - (void)setComposeViewDelegate:(id)arg1;
+- (void)setFromAddressPickerVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFromAddressPickerVisible:(BOOL)arg1;
 - (void)setIsForEditing:(BOOL)arg1;
 - (void)setKeyboardVisible:(BOOL)arg1 animate:(BOOL)arg2;
@@ -182,6 +188,8 @@
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)textContentView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize { float x1; float x2; })arg2;
@@ -189,7 +197,6 @@
 - (id)toField;
 - (void)toggleImageSizeFieldIfNecessary;
 - (void)updateOptionalHeaderVisibility;
-- (void)updateSignature;
 - (void)viewDidBecomeFirstResponder:(id)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willDisappear;

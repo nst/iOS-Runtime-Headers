@@ -5,7 +5,14 @@
 @interface MCLazyInitializationUtilities : NSObject {
 }
 
++ (BOOL)hasLibMIS;
++ (void)initAddressBook;
++ (void)initCoreGraphics;
++ (void)initCoreText;
++ (void)initImageIO;
 + (void)initPowerlog;
 + (void)initVPNUtilities;
++ (void)loadBundleAtURL:(id)arg1 completionBlock:(id)arg2;
++ (void)loadNSBundleAtURL:(id)arg1 completionBlock:(id)arg2;
 
 @end

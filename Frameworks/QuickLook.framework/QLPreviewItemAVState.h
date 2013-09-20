@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLPreviewItemAVState : NSObject {
+@interface QLPreviewItemAVState : NSObject <NSSecureCoding> {
     double duration;
     BOOL playing;
     double position;
@@ -13,6 +13,7 @@
 @property double position;
 
 + (id)avStateWithPosition:(double)arg1 duration:(double)arg2 playing:(BOOL)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (id)description;
 - (double)duration;

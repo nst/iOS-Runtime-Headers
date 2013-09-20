@@ -99,7 +99,10 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (id)objectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (id)objectEnumerator;
+- (id)objectPassingTest:(id)arg1;
+- (id)objectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (id)objectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (id)objectsAtIndexes:(id)arg1;
 - (id)objectsPassingTest:(id)arg1;

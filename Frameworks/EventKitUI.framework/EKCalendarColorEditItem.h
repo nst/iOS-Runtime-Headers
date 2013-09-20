@@ -11,13 +11,13 @@
 
 @property(readonly) NSMutableArray * cells;
 
+- (void).cxx_destruct;
 - (id)_cellForColor:(id)arg1;
-- (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (id)cells;
-- (void)dealloc;
 - (id)headerTitle;
-- (int)numberOfSubitems;
+- (unsigned int)numberOfSubitems;
 - (void)reset;
 - (BOOL)saveStateToCalendar:(id)arg1;
 - (void)setCalendar:(id)arg1 store:(id)arg2;

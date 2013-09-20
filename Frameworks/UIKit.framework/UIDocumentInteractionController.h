@@ -56,6 +56,7 @@
     id _previewController;
     id _previewItemProxy;
     BOOL _shouldUnzipDocument;
+    BOOL _sourceIsManaged;
     NSURL *_tmpURLToDeleteOnDealloc;
     NSString *_uniqueIdentifier;
     NSURL *_unzippedDocumentURL;
@@ -65,6 +66,7 @@
 @property(copy) NSString * UTI;
 @property(retain) UIActivityViewController * activityViewController;
 @property(retain) id annotation;
+@property(getter=isArchive,readonly) BOOL archive;
 @property <UIDocumentInteractionControllerDelegate> * delegate;
 @property(readonly) NSArray * gestureRecognizers;
 @property(readonly) NSArray * icons;
@@ -75,11 +77,14 @@
 @property(readonly) _UIPreviewItemProxy * previewItemProxy;
 @property BOOL shouldUnzipDocument;
 @property BOOL shouldUnzipDocument;
+@property BOOL sourceIsManaged;
+@property BOOL sourceIsManaged;
 @property(retain) NSString * uniqueIdentifier;
 @property(retain) NSString * uniqueIdentifier;
 
 + (id)_UTIForFileURL:(id)arg1;
 + (id)_applicationsForDocumentProxy:(id)arg1;
++ (id)_pathFilterPredicate;
 + (id)_unzippingQueue;
 + (id)allActionSelectorNames;
 + (void)initialize;
@@ -95,23 +100,27 @@
 - (BOOL)_canUnzipDocument;
 - (BOOL)_canUnzipDocumentAndPresentOpenIn;
 - (BOOL)_canUnzipDocumentAndPresentOptions;
+- (BOOL)_canUnzipDocumentForPreview;
 - (BOOL)_delegateCanPerformAction:(SEL)arg1;
 - (BOOL)_delegateExistsAndImplementsRequiredMethods:(id*)arg1;
 - (BOOL)_delegateImplementsLegacyActions;
 - (BOOL)_delegatePerformAction:(SEL)arg1;
+- (void)_dismissEverythingWithExtremePrejudiceAnimated:(BOOL)arg1;
 - (BOOL)_documentNeedsHelpUnzippingForPreview;
-- (id)_documentProxy;
+- (id)_documentProxySourceIsManaged:(BOOL)arg1;
 - (void)_finishedCopyingResource;
 - (void)_fixupFileExtensionIfNeeded;
 - (void)_interfaceOrientationWillChange:(id)arg1;
 - (void)_invalidate;
-- (BOOL)_isFilenameValidForUnzipping:(id)arg1;
+- (BOOL)_isFilenameValidForUnzipping:(id)arg1 allowsArchiveZip:(BOOL)arg2;
 - (BOOL)_isImage;
 - (BOOL)_isImageOrVideo;
+- (BOOL)_isPackageArchive:(id)arg1;
 - (BOOL)_isValidURL:(id)arg1;
 - (BOOL)_isVideo;
 - (void)_openDocumentWithApplication:(id)arg1;
 - (void)_openDocumentWithCurrentApplication;
+- (id)_pathsInArchive:(id)arg1;
 - (BOOL)_performingActivity;
 - (void)_presentOpenIn:(id)arg1;
 - (void)_presentOptionsMenu:(id)arg1;
@@ -122,6 +131,7 @@
 - (BOOL)_setupForOpenInMenu;
 - (BOOL)_setupForOptionsMenu;
 - (BOOL)_setupPreviewController;
+- (id)_unzipFileAndSetupPayload:(id)arg1 completion:(id)arg2;
 - (void)_unzipFileAndSetupPayload:(id)arg1;
 - (id)_unzippedDocumentURL;
 - (id)activityViewController;
@@ -131,9 +141,11 @@
 - (id)delegate;
 - (void)dismissMenuAnimated:(BOOL)arg1;
 - (void)dismissPreviewAnimated:(BOOL)arg1;
+- (id)extractSubitemFromArchive:(id)arg1 completion:(id)arg2;
 - (id)gestureRecognizers;
 - (id)icons;
 - (id)initWithURL:(id)arg1;
+- (BOOL)isArchive;
 - (id)name;
 - (int)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (void)openDocumentWithDefaultApplication;
@@ -160,10 +172,13 @@
 - (void)setPopoverController:(id)arg1;
 - (void)setPreviewURLOverride:(id)arg1;
 - (void)setShouldUnzipDocument:(BOOL)arg1;
+- (void)setSourceIsManaged:(BOOL)arg1;
 - (void)setURL:(id)arg1;
 - (void)setUTI:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (BOOL)shouldUnzipDocument;
+- (BOOL)sourceIsManaged;
+- (id)subitemsInArchive:(id)arg1;
 - (id)uniqueIdentifier;
 
 @end

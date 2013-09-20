@@ -10,8 +10,8 @@
     CIImage *inputImage;
 }
 
-@property(copy) CIColor * inputColor0;
-@property(copy) CIColor * inputColor1;
+@property(retain) CIColor * inputColor0;
+@property(retain) CIColor * inputColor1;
 @property(retain) CIImage * inputImage;
 
 + (id)customAttributes;

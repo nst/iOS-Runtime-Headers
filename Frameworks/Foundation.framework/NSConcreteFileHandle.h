@@ -10,36 +10,29 @@
 
 @interface NSConcreteFileHandle : NSFileHandle {
     unsigned short _activity;
-    NSObject<OS_dispatch_data> *_anchor;
     NSObject<OS_dispatch_source> *_dsrc;
     int _error;
     int _fd;
-    NSObject<OS_dispatch_queue> *_fhLock;
+    NSObject<OS_dispatch_queue> *_fhQueue;
     unsigned short _flags;
-    void *_nativeHandle;
-    BOOL _padding2[2];
-    BOOL _padding[2];
-    NSObject<OS_dispatch_queue> *_readMonitoringQueue;
+    NSObject<OS_dispatch_queue> *_monitoringQueue;
     NSObject<OS_dispatch_source> *_readMonitoringSource;
     id _readabilityHandler;
-    void *_resultBytes;
-    unsigned long _resultLength;
+    NSObject<OS_dispatch_data> *_resultData;
     int _resultSocket;
     struct __CFRunLoop { } *_rl;
     struct __CFRunLoopSource { } *_source;
-    long long _weakRefCount;
-    NSObject<OS_dispatch_queue> *_writeMonitoringQueue;
     NSObject<OS_dispatch_source> *_writeMonitoringSource;
     id _writeabilityHandler;
 }
 
 - (void)_cancelDispatchSources;
-- (id)_monitor:(const struct dispatch_source_type_s { }*)arg1 source:(id)arg2 onQueue:(id)arg3;
+- (void)_commonDealloc;
+- (void)_locked_clearHandler:(id*)arg1 forSource:(id*)arg2;
+- (id)_monitor:(int)arg1;
 - (void)acceptConnectionInBackgroundAndNotify;
 - (void)acceptConnectionInBackgroundAndNotifyForModes:(id)arg1;
 - (id)availableData;
-- (void)clearReadabilityHandler;
-- (void)clearWriteabilityHandler;
 - (void)closeFile;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -51,8 +44,7 @@
 - (id)initWithFileDescriptor:(int)arg1;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
-- (void)lockedRelease;
-- (id)lockedRetain;
+- (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (unsigned long long)offsetInFile;
 - (void)performActivity:(int)arg1 modes:(id)arg2;
 - (id)port;
@@ -64,8 +56,6 @@
 - (void)readToEndOfFileInBackgroundAndNotify;
 - (void)readToEndOfFileInBackgroundAndNotifyForModes:(id)arg1;
 - (id)readabilityHandler;
-- (oneway void)release;
-- (id)retain;
 - (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
 - (void)setPort:(id)arg1;

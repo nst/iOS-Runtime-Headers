@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PDSlideTarget : PDAnimationTargetElement {
+@interface PDSlideTarget : PDAnimationTarget {
 }
 
 @end

@@ -12,6 +12,8 @@
 + (id)mapTableWithStrongToWeakObjects;
 + (id)mapTableWithWeakToStrongObjects;
 + (id)mapTableWithWeakToWeakObjects;
++ (id)newTspStrongObjectsMapTable;
++ (id)newTspWeakObjectsMapTable;
 + (id)strongToStrongObjectsMapTable;
 + (id)strongToWeakObjectsMapTable;
 + (id)weakToStrongObjectsMapTable;
@@ -26,6 +28,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
+- (void)enumerateIdentifiersAndObjectsUsingBlock:(id)arg1;
+- (void)enumerateObjectsUsingBlock:(id)arg1;
 - (id)enumerator;
 - (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
 - (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
@@ -40,6 +44,7 @@
 - (id)mutableDictionary;
 - (id)objectEnumerator;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (void)removeAllItems;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
@@ -48,6 +53,10 @@
 - (void)setItem:(const void*)arg1 forKey:(const void*)arg2;
 - (void)setItem:(const void*)arg1 forKnownAbsentKey:(const void*)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)tsp_objectForIdentifier:(long long)arg1;
+- (void)tsp_removeObjectForIdentifier:(long long)arg1;
+- (void)tsp_setObject:(id)arg1 forIdentifier:(long long)arg2;
 - (id)valuePointerFunctions;
 
 @end

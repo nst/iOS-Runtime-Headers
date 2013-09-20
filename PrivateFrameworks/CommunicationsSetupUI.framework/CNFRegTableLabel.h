@@ -29,6 +29,7 @@
 - (int)_labelTextAlignment;
 - (float)_topPadding;
 - (void)_urlTapped:(id)arg1;
+- (void)clearSpecifier;
 - (id)cnfreg_tableView;
 - (void)dealloc;
 - (id)initWithSpecifier:(id)arg1;

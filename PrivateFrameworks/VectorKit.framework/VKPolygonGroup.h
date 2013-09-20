@@ -2,28 +2,38 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLCenterLineMesh, VGLTexture, VKPolygonDrawStyle, VKStyle, VKVectorTile;
+@class GEOFeatureStyleAttributes, VGLMeshVendor, VGLTexture, VKStyle, VKVectorTile;
 
-@interface VKPolygonGroup : VGLCullableMesh {
-    VKPolygonDrawStyle *_polygonStyle;
-    VGLCenterLineMesh *_strokeMesh;
+@interface VKPolygonGroup : NSObject {
+    float _contentScale;
+    VGLMeshVendor *_fillMeshVendor;
+    VGLMeshVendor *_strokeMeshVendor;
     VKStyle *_style;
+    GEOFeatureStyleAttributes *_styleAttributes;
     VGLTexture *_texture;
+    VGLTexture *_textureVariant;
     VKVectorTile *_tile;
+    float _variation;
 }
 
-@property(readonly) VKPolygonDrawStyle * polygonStyle;
-@property(readonly) VGLCenterLineMesh * strokeMesh;
+@property(readonly) VGLMeshVendor * fillMeshVendor;
+@property(readonly) VGLMeshVendor * strokeMeshVendor;
 @property(readonly) VKStyle * style;
+@property(retain) GEOFeatureStyleAttributes * styleAttributes;
 @property(readonly) VGLTexture * texture;
+@property(readonly) VGLTexture * textureVariant;
 
-- (id)_textureForName:(id)arg1;
+- (id)_textureForName:(id)arg1 scale:(float)arg2;
 - (void)dealloc;
-- (id)initWithStyle:(id)arg1 tile:(id)arg2;
-- (id)polygonStyle;
-- (id)strokeMesh;
+- (id)fillMeshVendor;
+- (id)initWithStyle:(id)arg1 tile:(id)arg2 attributes:(id)arg3 contentScale:(float)arg4;
+- (void)setStyleAttributes:(id)arg1;
+- (id)strokeMeshVendor;
 - (id)style;
+- (id)styleAttributes;
 - (id)texture;
+- (id)textureVariant;
 - (unsigned int)triangleCount;
+- (void)updateTextures;
 
 @end

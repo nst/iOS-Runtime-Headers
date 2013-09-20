@@ -2,29 +2,32 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class AVRemaker, NSString, NSTimer, NSURL, PLProgressView;
+@class AVAsset, AVAssetExportSession, AVAudioMix, NSString, NSTimer, PLProgressView;
 
 @interface PLVideoRemaker : NSObject {
+    AVAsset *_asset;
+    AVAudioMix *_audioMix;
     id _delegate;
     double _duration;
+    AVAssetExportSession *_exportSession;
     int _mode;
     float _percentComplete;
     NSTimer *_progressTimer;
     PLProgressView *_progressView;
-    AVRemaker *_remaker;
-    NSURL *_sourceURL;
     double _trimEndTime;
     double _trimStartTime;
     NSString *_trimmedPath;
 }
 
 + (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
++ (long long)fileLengthLimitForRemakerMode:(int)arg1;
 + (int)getHDRemakerModeForMode:(int)arg1;
 + (int)getSDRemakerModeForMode:(int)arg1;
 + (double)maximumDurationForTrimMode:(int)arg1;
 
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;
-- (void)_remakerDidFinish:(id)arg1;
+- (void)_exportCompletedWithSuccess:(BOOL)arg1;
+- (id)_fileFormatForURL:(id)arg1;
 - (void)_removeProgressTimer;
 - (void)_resetProgressTimer;
 - (void)_updateProgress;
@@ -32,7 +35,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (double)duration;
-- (id)initWithURL:(id)arg1;
+- (id)initWithAVAsset:(id)arg1;
+- (id)initWithManagedAsset:(id)arg1 applySlalomRegions:(BOOL)arg2;
 - (id)messageForRemakingProgress;
 - (int)mode;
 - (id)progressView;

@@ -10,7 +10,7 @@
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputRadius;
+@property(retain) NSNumber * inputRadius;
 
 + (id)customAttributes;
 

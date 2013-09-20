@@ -2,14 +2,26 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKLinkedAppView, UIAlertView, UIButton, UILabel, UIRefreshControl, UISwitch;
+@class BluetoothManager, NSArray, NSMutableDictionary, NSTimer, PKLinkedAppView, PKSettingTableCell, UIAlertView, UIButton, UILabel, UIRefreshControl, UITableView, UIView;
 
-@interface PKPassBackFaceView : PKPassFaceView {
-    UISwitch *_automaticUpdatesSwitch;
+@interface PKPassBackFaceView : PKPassFaceView <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate> {
+    PKSettingTableCell *_automaticUpdates;
+    UITableView *_bodyTable;
+    BluetoothManager *_btManager;
     UIButton *_doneButton;
+    NSMutableDictionary *_fieldCellsByIndexPath;
+    unsigned int _fieldsSection;
+    BOOL _isBluetoothEnabled;
+    BOOL _isLocationEnabled;
+    BOOL _isWifiEnabled;
     PKLinkedAppView *_linkedApp;
+    unsigned int _linkedAppSection;
+    UIView *_locationHelpView;
     UIRefreshControl *_refreshControl;
-    UISwitch *_showInLockScreenSwitch;
+    NSTimer *_refreshTimeoutTimer;
+    NSArray *_rowCountBySection;
+    unsigned int _settingsSection;
+    PKSettingTableCell *_showInLockScreen;
     BOOL _showsDelete;
     BOOL _showsLinkedApp;
     BOOL _showsLinks;
@@ -19,32 +31,49 @@
     UILabel *_updateDateLabel;
 }
 
-@property(readonly) PKLinkedAppView * linkedApp;
+@property PKLinkedAppView * linkedApp;
 @property BOOL showsDelete;
 @property BOOL showsLinkedApp;
 @property BOOL showsLinks;
 @property BOOL showsSettings;
 @property(retain) UIAlertView * storeDemoRefuseDeleteAlert;
 
++ (id)_linkColor;
++ (id)_linkTextAttributes;
++ (BOOL)isWifiEnabled;
+
+- (void)_bluetoothPowerChanged:(id)arg1;
 - (void)_deleteButtonPressed:(id)arg1;
 - (void)_doneButtonPressed:(id)arg1;
+- (id)_fieldCellForIndexPath:(id)arg1;
+- (id)_fieldForIndexPath:(id)arg1;
+- (id)_formattedUpdateDate:(id)arg1;
+- (BOOL)_isBluetoothEnabled;
+- (BOOL)_linkedAppAvailable;
+- (id)_locationHelpViewForTableView:(id)arg1;
+- (id)_locationRelevancyHelpText;
+- (void)_refreshTimeoutFired;
 - (id)_relevantBuckets;
+- (BOOL)_settingsAvailable;
+- (id)_settingsCellForRow:(unsigned int)arg1;
+- (id)_updateLabelAttributedStringWithString:(id)arg1;
+- (void)_wifiChanged:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)createBodyInvariantViews;
 - (void)dealloc;
 - (BOOL)deleteEnabled;
-- (id)formattedUpdateDate:(id)arg1;
+- (void)didMoveToWindow;
 - (id)initTall:(BOOL)arg1;
 - (BOOL)isFrontFace;
 - (void)layoutSubviews;
 - (id)linkedApp;
-- (void)makeInfoBlockWithTitle:(id)arg1 info:(id)arg2 isFirst:(BOOL)arg3 superview:(id)arg4 yOffset:(float*)arg5 contentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg6;
-- (id)makeSettingsBlockWithTitle:(id)arg1 info:(id)arg2 action:(SEL)arg3 settingSwitch:(id*)arg4;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (void)pushSettingsFromViewToModel;
 - (void)refreshControlValueChanged:(id)arg1;
 - (void)registerForEnterBackgroundNotification;
+- (void)setLinkedApp:(id)arg1;
 - (void)setShowsDelete:(BOOL)arg1;
 - (void)setShowsLinkedApp:(BOOL)arg1;
 - (void)setShowsLinks:(BOOL)arg1;
@@ -59,6 +88,15 @@
 - (BOOL)showsLinks;
 - (BOOL)showsSettings;
 - (id)storeDemoRefuseDeleteAlert;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)unregisterForEnterBackgroundNotification;
+- (void)willMoveToSuperview:(id)arg1;
 
 @end

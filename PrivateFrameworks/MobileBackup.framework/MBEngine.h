@@ -31,7 +31,6 @@
 @property(readonly) NSString * restoreTypeString;
 @property(getter=isServiceEngine,readonly) BOOL serviceEngine;
 @property(readonly) MBSettingsContext * settingsContext;
-@property(getter=isSplitRestore,readonly) BOOL splitRestore;
 
 + (id)stringForEngineMode:(int)arg1;
 + (id)stringForEngineType:(int)arg1;
@@ -54,7 +53,6 @@
 - (BOOL)isMigrate;
 - (BOOL)isRestoreEngine;
 - (BOOL)isServiceEngine;
-- (BOOL)isSplitRestore;
 - (id)properties;
 - (void)pushAggregateDictionaryTotalFileCount:(long long)arg1 totalFileSize:(long long)arg2 duration:(double)arg3;
 - (int)restoreType;
@@ -62,5 +60,6 @@
 - (id)settingsContext;
 - (BOOL)shouldCommitIfPossible;
 - (id)validateFile:(id)arg1;
+- (id)validateRestorePath:(id)arg1;
 
 @end

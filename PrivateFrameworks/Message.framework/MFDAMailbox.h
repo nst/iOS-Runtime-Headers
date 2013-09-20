@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MFDAMailbox : MailboxUid {
+@interface MFDAMailbox : MFMailboxUid {
     NSString *_folderID;
 }
 

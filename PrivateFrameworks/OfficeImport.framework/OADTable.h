@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OADTableGrid, OADTableProperties;
+@class NSMutableArray, OADTableGrid;
 
 @interface OADTable : OADDrawable {
     OADTableGrid *mGrid;
-    OADTableProperties *mProperties;
     NSMutableArray *mRows;
 }
 

@@ -43,9 +43,11 @@
 - (id)_targetViewController;
 - (void)_tearDownDimmerView;
 - (void)dealloc;
-- (void)handleSearchURL:(id)arg1;
+- (void)handleSearchURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (id)init;
+- (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2 style:(int)arg3;
 - (id)initWithContentsController:(id)arg1 clientInterface:(id)arg2;
+- (id)initWithContentsController:(id)arg1 style:(int)arg2;
 - (id)initWithContentsController:(id)arg1;
 - (BOOL)isActive;
 - (id)newRequestPropertiesWithSearchTerm:(id)arg1;

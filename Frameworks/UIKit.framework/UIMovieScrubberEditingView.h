@@ -5,31 +5,38 @@
 @class NSArray, UIImageView;
 
 @interface UIMovieScrubberEditingView : UIView {
-    unsigned int _isActive : 1;
-    unsigned int _centerHandleEnabled : 1;
     NSArray *_activeImages;
+    NSArray *_activeNoEditImages;
+    float _edgeInset;
+    BOOL _editing;
+    BOOL _enabled;
     NSArray *_inactiveImages;
     UIImageView *_leftImageView;
     UIImageView *_middleImageView;
     UIImageView *_rightImageView;
 }
 
+@property float edgeInset;
 @property(getter=isEditing) BOOL editing;
+@property(getter=isEnabled) BOOL enabled;
 
 - (float)_bounceValueForFraction:(float)arg1;
+- (id)_handleImages;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_leftHandleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rightHandleRect;
+- (void)_updateHandleImages;
 - (void)bounce;
 - (void)dealloc;
+- (float)edgeInset;
 - (int)handleForPoint:(struct CGPoint { float x1; float x2; })arg1 hitOffset:(float*)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEditing;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })leftHandleBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })leftHandleFrame;
-- (BOOL)pointInsideCenterHandle:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)isEnabled;
+- (void)layoutSubviews;
 - (BOOL)pointInsideLeftHandle:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)pointInsideRightHandle:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rightHandleBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rightHandleFrame;
-- (void)setCenterHandleEnabled:(BOOL)arg1;
+- (void)setEdgeInset:(float)arg1;
 - (void)setEditing:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
 
 @end

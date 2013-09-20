@@ -22,15 +22,15 @@
 - (id)initFromPlist:(id)arg1;
 - (id)initWithArray:(id)arg1;
 - (BOOL)matches:(id)arg1;
-- (id)occurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
+- (id)occurrenceOfSequence:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)overlayedOn:(id)arg1;
-- (id)portionFollowingOccurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
-- (id)portionPrecedingOccurrenceOfSequence:(id)arg1 atIndex:(int)arg2;
+- (id)portionFollowingOccurrenceOfSequence:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)portionPrecedingOccurrenceOfSequence:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)rest;
 - (id)reversed;
 - (void)setSlots:(id)arg1;
-- (id)slotSubsequenceFromIndex:(int)arg1;
+- (id)slotSubsequenceFromIndex:(unsigned int)arg1;
 - (id)slots;
-- (id)subsequenceFromIndex:(int)arg1;
+- (id)subsequenceFromIndex:(unsigned int)arg1;
 
 @end

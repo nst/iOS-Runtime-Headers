@@ -19,6 +19,7 @@
 }
 
 + (id)_alternativesForInputString:(id)arg1;
++ (id)_correctionsForInputString:(id)arg1;
 + (id)_prefixesForInputString:(id)arg1;
 + (id)alternativesForInputString:(id)arg1;
 + (id)prefixesForInputString:(id)arg1;

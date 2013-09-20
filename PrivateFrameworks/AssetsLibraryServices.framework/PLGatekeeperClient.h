@@ -5,19 +5,25 @@
 @class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
 @interface PLGatekeeperClient : NSObject {
+    NSObject<OS_dispatch_queue> *_serialReplyQueue;
     NSObject<OS_xpc_object> *connection;
 }
 
 @property NSObject<OS_xpc_object> * connection;
 @property(readonly) NSObject<OS_dispatch_queue> * replyQueue;
 
++ (id)securityPolicyErrorForMissingEntitlement:(id)arg1;
 + (id)sharedInstance;
 
 - (void)addAssetWithURL:(id)arg1 toAlbumWithUUID:(id)arg2 handler:(id)arg3;
 - (void)addGroupWithName:(id)arg1 handler:(id)arg2;
+- (void)analyzeAllMoments;
+- (void)analyzeInvalidMomentsAndDupesIfNeeded;
+- (void)analyzeMoment:(id)arg1;
+- (void)analyzeMomentList:(id)arg1;
 - (unsigned long long)attemptToPurgeSharedAssetsSpace:(unsigned long long)arg1;
 - (void)automaticallyDeleteEmptyAlbum:(id)arg1;
-- (void)cleanupAfteriTunesSync;
+- (void)batchSaveAssetsWithJobDictionaries:(id)arg1 handler:(id)arg2;
 - (void)cleanupForStoreDemoMode;
 - (void)cleanupModelAfteriTunesRestore;
 - (void)clearAllBulletinsWithLastClearedRecordID:(unsigned int)arg1;
@@ -26,43 +32,56 @@
 - (void)createPhotoLibraryDatabase;
 - (void)createPhotostreamAlbumWithStreamID:(id)arg1;
 - (void)dataMigrationWillFinish;
+- (void)deleteAssetWithURL:(id)arg1 handler:(id)arg2;
+- (id)deviceSpecificReplyQueue;
 - (id)emailAddressForKey:(int)arg1;
 - (void)enablePhotostreamsWithStreamID:(id)arg1;
+- (long long)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
 - (int)fileDescriptorForAssetURL:(id)arg1;
 - (id)fileURLForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2;
 - (id)fileURLForNewAssetWithType:(unsigned int)arg1 extension:(id)arg2;
 - (void)finalizeOTARestoreRecreatingAlbums:(BOOL)arg1;
 - (int)getCurrentApplicationBadgeCount;
 - (id)getCurrentBulletins;
+- (int)getCurrentModelVersion;
 - (void)getLibrarySizes:(id)arg1;
 - (void)getPhotosAndVideosCountWithHandler:(id)arg1;
 - (id)getThumbnailImageDataForBulletinWithRecordID:(unsigned int)arg1;
-- (id)imageDataFromAssetURL:(id)arg1 format:(int)arg2;
+- (BOOL)hasCompletedMomentAnalysis;
+- (BOOL)hasCompletedRestorePostProcessing;
+- (id)imageDataForAsset:(id)arg1 format:(int)arg2;
 - (void)importFileSystemAssetsWaitingForReply:(BOOL)arg1;
 - (id)init;
 - (int)keyForEmailAddress:(id)arg1;
 - (void)launchAssetsd;
 - (void)notifyAboutTerminationDueToUncaughtException:(id)arg1;
+- (id)personInfoDictionaryForPersonID:(id)arg1;
 - (unsigned long long)purgeableSharedAssetsSpace;
+- (void)rebuildAllThumbnails;
+- (void)rebuildCloudFeed;
+- (void)rebuildMomentLists;
+- (void)rebuildMomentsIncremental:(BOOL)arg1;
 - (void)recalculateCachedAlbumCounts;
 - (void)recoverFromCrashIfNeeded;
 - (void)repairPotentialModelCorruption;
 - (void)repairSingletonObjects;
 - (id)replyQueue;
 - (void)requestAccessWithHandler:(id)arg1;
-- (void)requestImageFromAssetURL:(id)arg1 format:(int)arg2 handler:(id)arg3;
+- (void)requestImageDataForAsset:(id)arg1 format:(int)arg2 handler:(id)arg3;
+- (void)resetDupesAnalysis;
 - (void)saveAssetWithJobDictionary:(id)arg1 handler:(id)arg2 imageSurface:(struct __IOSurface { }*)arg3 previewImageSurface:(struct __IOSurface { }*)arg4;
 - (unsigned int)secondsNeededToCleanupModelAfteriTunesRestore;
 - (void)sendDaemonJob:(id)arg1 replyHandler:(id)arg2;
 - (id)sendQueue;
 - (void)setConnection:(id)arg1;
+- (void)setExternalUsageIntent:(unsigned int)arg1 forAssetWithURL:(id)arg2 handler:(id)arg3;
+- (void)setLargePreviewImageForAssetWithURL:(id)arg1 imageData:(id)arg2 properties:(id)arg3 handler:(id)arg4;
+- (void)setPersonInfoDictionary:(id)arg1 forPersonID:(id)arg2;
 - (void)updateCameraPreviewWellImage:(id)arg1;
 - (void)updateModelAfterOTARestore;
 - (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2;
 - (void)updateSharedAlbumsCachedServerConfigurationLimits;
-- (void)updateStackedImageCacheForAlbum:(id)arg1;
-- (void)updateThumbnailsForPhoto:(id)arg1 generatePreviewImage:(BOOL)arg2 waitForReply:(BOOL)arg3 assignNewIndex:(BOOL)arg4;
-- (void)updateThumbnailsForPhoto:(id)arg1 generatePreviewImage:(BOOL)arg2 waitForReply:(BOOL)arg3;
+- (void)updateThumbnailsForPhotos:(id)arg1 waitForReply:(BOOL)arg2 assignNewIndex:(BOOL)arg3 forceRefresh:(BOOL)arg4;
 - (void)waitUntilConnectionSendsAllMessages;
 - (void)writeDataInBackground:(id)arg1 toFileURL:(id)arg2;
 

@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 @interface AXValidationManager : NSObject {
+    NSMutableArray *_consoleErrorMessages;
+    BOOL _debugBuild;
     BOOL _forceDoNotReport;
     unsigned int _numberOfValidationErrors;
+    NSString *_overrideProcessName;
     BOOL _shouldCrashOnError;
     BOOL _shouldLogToConsole;
     BOOL _shouldReportToServer;
     NSString *_validationTargetName;
 }
 
+@property(retain) NSMutableArray * consoleErrorMessages;
+@property(getter=isDebugBuild) BOOL debugBuild;
 @property BOOL forceDoNotReport;
 @property unsigned int numberOfValidationErrors;
+@property(copy) NSString * overrideProcessName;
 @property BOOL shouldCrashOnError;
 @property BOOL shouldLogToConsole;
 @property BOOL shouldReportToServer;
@@ -22,11 +28,26 @@
 
 + (id)sharedInstance;
 
+- (void)_printConsoleReport:(BOOL)arg1 isDelayed:(BOOL)arg2;
+- (BOOL)_validateClass:(id)arg1 hasMethod:(id)arg2 methodType:(int)arg3 returnType:(id)arg4 arguments:(id)arg5;
+- (id)consoleErrorMessages;
+- (void)dealloc;
 - (BOOL)forceDoNotReport;
+- (id)init;
+- (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4 forceDoNotReport:(BOOL)arg5;
+- (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
+- (BOOL)installSafeCategory:(id)arg1 canInteractWithTargetClass:(BOOL)arg2;
+- (BOOL)installSafeCategory:(id)arg1;
+- (BOOL)isDebugBuild;
 - (unsigned int)numberOfValidationErrors;
+- (id)overrideProcessName;
+- (void)performValidations:(id)arg1 withPreValidationHandler:(id)arg2 postValidationHandler:(id)arg3 safeCategoryInstallationHandler:(id)arg4;
 - (void)performValidations:(id)arg1 withPreValidationHandler:(id)arg2 postValidationHandler:(id)arg3;
+- (void)setConsoleErrorMessages:(id)arg1;
+- (void)setDebugBuild:(BOOL)arg1;
 - (void)setForceDoNotReport:(BOOL)arg1;
 - (void)setNumberOfValidationErrors:(unsigned int)arg1;
+- (void)setOverrideProcessName:(id)arg1;
 - (void)setShouldCrashOnError:(BOOL)arg1;
 - (void)setShouldLogToConsole:(BOOL)arg1;
 - (void)setShouldReportToServer:(BOOL)arg1;

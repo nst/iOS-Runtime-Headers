@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSObject<UIWebPDFViewHandlerDelegate>, UIAlertView, UIColor, UIDocumentPasswordView, UIHighlightView, UIView, UIWebPDFLabelView, UIWebPDFSearchController, UIWebPDFView, WebPDFNSNumberFormatter, _UIRotatingActionSheet;
+@class NSArray, NSDictionary, NSMapTable, NSObject<UIWebPDFViewHandlerDelegate>, UIAlertView, UIColor, UIDocumentPasswordView, UIView, UIWebPDFLabelView, UIWebPDFView, WebPDFNSNumberFormatter, _UIHighlightView, _UIRotatingActionSheet;
 
 @interface UIWebPDFViewHandler : NSObject <UIWebPDFViewPrivateDelegate, UIDocumentPasswordViewDelegate, UIActionSheetDelegate, _UIRotatingActionSheetDelegate, UIWebPDFViewDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate> {
     struct _PDFHistoryItem { 
@@ -32,7 +32,7 @@
     NSDictionary *_linkActionInfo;
     _UIRotatingActionSheet *_linkActionSheet;
     NSArray *_linkActions;
-    UIHighlightView *_linkHighlightView;
+    _UIHighlightView *_linkHighlightView;
     UIWebPDFLabelView *_pageLabelView;
     UIDocumentPasswordView *_passwordEntryView;
     NSObject<UIWebPDFViewHandlerDelegate> *_pdfHandlerDelegate;
@@ -41,7 +41,7 @@
     } _rectOfInterest;
     BOOL _rectOfInterestConsidersHeight;
     BOOL _scalesPageToFit;
-    UIWebPDFSearchController *_searchController;
+    NSMapTable *_searchControllers;
     BOOL _showPageLabels;
     BOOL _showsShadowsForHTMLContent;
 }
@@ -53,7 +53,6 @@
 @property NSObject<UIWebPDFViewHandlerDelegate> * pdfHandlerDelegate;
 @property(readonly) UIWebPDFView * pdfView;
 @property BOOL scalesPageToFit;
-@property(readonly) UIWebPDFSearchController * searchController;
 @property BOOL showPageLabels;
 
 - (id)_absoluteUrlRelativeToDocumentURL:(id)arg1;
@@ -61,7 +60,8 @@
 - (id)_actionsForInteractionInfo:(id)arg1;
 - (void)_adjustContentOffsetForKeyboardIfNeeded;
 - (void)_adjustZoomScalesForScrollViewInternal:(id)arg1;
-- (void)_completeLinkClick:(id)arg1;
+- (void)_completeLinkClickWithURL:(id)arg1;
+- (void)_completeLinkClickWithURLString:(id)arg1;
 - (void)_createPDFViewIfNeeded:(id)arg1;
 - (void)_ensurePDFViewInHierarchyForWebDocView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForDocumentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -79,7 +79,7 @@
 - (void)_replacePDFViewIfPresentWithWebDocView:(id)arg1;
 - (void)_resultRects:(id)arg1 andResultViews:(id)arg2 forSearchResult:(id)arg3 inViewCoordinates:(id)arg4;
 - (id)_scroller:(id)arg1;
-- (void)_setSearchControllerDocumentToSearch;
+- (void)_setSearchControllerDocumentToSearch:(id)arg1;
 - (void)_showLinkSheet:(id)arg1;
 - (void)_showPasswordEntryViewForFile:(id)arg1;
 - (void)_showPasswordErrorAlert;
@@ -95,6 +95,7 @@
 - (void)clearAllViews;
 - (void)clearLinkHighlight;
 - (void)clearPageLabel;
+- (void)clearSearchControllerForHighlighter:(id)arg1;
 - (BOOL)considerHeightForDoubleTap;
 - (BOOL)considerHeightOfRectOfInterestForRotation;
 - (id)contentView;
@@ -110,6 +111,7 @@
 - (struct { float x1; float x2; float x3; })doubleTapScalesForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)enclosingScrollView;
 - (void)ensureCorrectPagesAreInstalled:(BOOL)arg1;
+- (id)findOnPageHighlighter;
 - (id)frontView;
 - (void)handleLinkClick:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)handleLongPressOnLink:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
@@ -140,7 +142,7 @@
 - (struct { float x1; float x2; float x3; })scalesForContainerSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)scalesPageToFit;
 - (void)scrollToPageNumber:(int)arg1 animate:(BOOL)arg2;
-- (id)searchController;
+- (id)searchControllerForHighlighter:(id)arg1;
 - (void)setBackgroundColorForUnRenderedContent:(id)arg1;
 - (void)setHideActivityIndicatorForUnRenderedContent:(BOOL)arg1;
 - (void)setHidePageViewsUntilReadyToRender:(BOOL)arg1;

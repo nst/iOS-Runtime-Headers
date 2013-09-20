@@ -17,9 +17,11 @@
     BOOL displaySecureTextUsingPlainText;
     int emptyContentReturnKeyType;
     BOOL enablesReturnKeyAutomatically;
+    BOOL enablesReturnKeyOnNonWhiteSpaceContent;
     BOOL forceEnableDictation;
     UIColor *insertionPointColor;
     unsigned int insertionPointWidth;
+    BOOL isSingleLineDocument;
     BOOL learnsCorrections;
     BOOL returnKeyGoesToNextResponder;
     int returnKeyType;
@@ -47,9 +49,11 @@
 @property BOOL displaySecureTextUsingPlainText;
 @property int emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
+@property BOOL enablesReturnKeyOnNonWhiteSpaceContent;
 @property BOOL forceEnableDictation;
 @property(retain) UIColor * insertionPointColor;
 @property unsigned int insertionPointWidth;
+@property BOOL isSingleLineDocument;
 @property int keyboardAppearance;
 @property int keyboardType;
 @property BOOL learnsCorrections;
@@ -72,6 +76,7 @@
 + (BOOL)keyboardTypeRequiresASCIICapable:(int)arg1;
 + (id)traitsByAdoptingTraits:(id)arg1;
 
+- (void)_setColorsToMatchTintColor:(id)arg1;
 - (BOOL)acceptsEmoji;
 - (BOOL)acceptsFloatingKeyboard;
 - (BOOL)acceptsSplitKeyboard;
@@ -86,15 +91,18 @@
 - (BOOL)displaySecureTextUsingPlainText;
 - (int)emptyContentReturnKeyType;
 - (BOOL)enablesReturnKeyAutomatically;
+- (BOOL)enablesReturnKeyOnNonWhiteSpaceContent;
 - (BOOL)forceEnableDictation;
 - (id)init;
 - (id)insertionPointColor;
 - (unsigned int)insertionPointWidth;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSecureTextEntry;
+- (BOOL)isSingleLineDocument;
 - (int)keyboardAppearance;
 - (int)keyboardType;
 - (BOOL)learnsCorrections;
+- (BOOL)publicTraitsMatchTraits:(id)arg1;
 - (BOOL)returnKeyGoesToNextResponder;
 - (int)returnKeyType;
 - (id)selectionBarColor;
@@ -110,9 +118,11 @@
 - (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
 - (void)setEmptyContentReturnKeyType:(int)arg1;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
+- (void)setEnablesReturnKeyOnNonWhiteSpaceContent:(BOOL)arg1;
 - (void)setForceEnableDictation:(BOOL)arg1;
 - (void)setInsertionPointColor:(id)arg1;
 - (void)setInsertionPointWidth:(unsigned int)arg1;
+- (void)setIsSingleLineDocument:(BOOL)arg1;
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setKeyboardType:(int)arg1;
 - (void)setLearnsCorrections:(BOOL)arg1;

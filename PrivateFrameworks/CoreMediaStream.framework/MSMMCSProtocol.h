@@ -20,7 +20,7 @@
 - (int)_getFileDescriptorFromItem:(unsigned long long)arg1;
 - (void)_getItemDone:(unsigned long long)arg1 path:(id)arg2 error:(id)arg3;
 - (id)_getUTIFromItem:(unsigned long long)arg1;
-- (void)_putItemDone:(unsigned long long)arg1 error:(id)arg2;
+- (void)_putItemDone:(unsigned long long)arg1 putReceipt:(id)arg2 error:(id)arg3;
 - (void)_requestCompleted;
 - (void)abort;
 - (void)deactivate;

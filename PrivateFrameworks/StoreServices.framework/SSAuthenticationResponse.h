@@ -19,6 +19,7 @@
 @property(readonly) NSString * creditsString;
 @property(readonly) int enabledServiceTypes;
 @property(readonly) NSNumber * failureType;
+@property(getter=isNewCustomer,readonly) BOOL newCustomer;
 @property(readonly) NSDictionary * responseDictionary;
 @property(readonly) int responseType;
 @property(readonly) NSString * storeFrontIdentifier;
@@ -40,6 +41,7 @@
 - (int)enabledServiceTypes;
 - (id)failureType;
 - (id)initWithURLResponse:(id)arg1 dictionary:(id)arg2;
+- (BOOL)isNewCustomer;
 - (id)newAccount;
 - (id)responseDictionary;
 - (int)responseType;

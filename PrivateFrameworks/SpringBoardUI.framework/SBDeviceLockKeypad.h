@@ -4,7 +4,7 @@
 
 @class UIButton;
 
-@interface SBDeviceLockKeypad : TPPhonePad {
+@interface SBDeviceLockKeypad : TPLegacyPhonePad {
     UIButton *_cancelButton;
     UIButton *_deleteButton;
     BOOL _deleteEnabled;

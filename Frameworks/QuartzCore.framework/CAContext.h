@@ -23,7 +23,10 @@
 + (id)remoteContextWithOptions:(id)arg1;
 + (void)setClientPort:(unsigned int)arg1;
 
+- (id)_associatedScreen;
+- (void)_setAssociatedScreen:(id)arg1;
 - (unsigned int)createFencePort;
+- (unsigned int)createImageSlot:(struct CGSize { float x1; float x2; })arg1 hasAlpha:(BOOL)arg2;
 - (unsigned int)createSlot;
 - (void)deleteSlot:(unsigned int)arg1;
 - (void)invalidate;

@@ -2,31 +2,60 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSData, NSString, UITextAttachmentView;
+@class NSData, NSFileWrapper, NSString, UIImage, UITextAttachmentView, UIView;
 
-@interface NSTextAttachment : NSObject <NSCoding> {
+@interface NSTextAttachment : NSObject <NSTextAttachmentContainer, NSCoding> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _bounds;
+    NSString *_cacheKey;
     NSData *_data;
+    NSFileWrapper *_fileWrapper;
+    UIImage *_image;
     NSString *_uti;
     UITextAttachmentView *_wrapperView;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawingBounds;
-@property(retain) id image;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property(retain) UIView * contentView;
+@property(retain) NSData * contents;
+@property(retain) NSString * fileType;
+@property(retain) NSFileWrapper * fileWrapper;
+@property(retain) UIImage * image;
 
-- (void)_setWrapperView:(id)arg1;
-- (id)_wrapperView;
++ (id)imageCache;
++ (void)initialize;
+
+- (id)_cacheKey;
+- (id)_image;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 glyphPosition:(struct CGPoint { float x1; float x2; })arg3 characterIndex:(unsigned int)arg4;
 - (id)attachmentCell;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)contentView;
+- (id)contents;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawingBounds;
 - (void)encodeWithCoder:(id)arg1;
+- (id)fileType;
 - (id)fileWrapper;
 - (id)image;
+- (id)imageForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2 characterIndex:(unsigned int)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 ofType:(id)arg2;
 - (id)initWithFileWrapper:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentView:(id)arg1;
+- (void)setContents:(id)arg1;
 - (void)setDrawingBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFileType:(id)arg1;
+- (void)setFileWrapper:(id)arg1;
 - (void)setImage:(id)arg1;
 
 @end

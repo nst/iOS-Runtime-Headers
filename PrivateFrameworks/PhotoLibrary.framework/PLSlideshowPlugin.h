@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLSlideshowPluginDelegate>, NSArray, NSObject<PLAssetContainer>, PLManagedAsset;
+@class <PLSlideshowPluginDelegate>, NSArray, NSObject<PLAlbumProtocol>, PLManagedAsset;
 
 @interface PLSlideshowPlugin : NSObject {
     struct NSObject { Class x1; } *_album;
@@ -13,7 +13,7 @@
     BOOL _shuffleAlbum;
 }
 
-@property(retain) NSObject<PLAssetContainer> * album;
+@property(retain) NSObject<PLAlbumProtocol> * album;
 @property(retain) NSArray * albumAssets;
 @property(readonly) PLManagedAsset * currentPhoto;
 @property <PLSlideshowPluginDelegate> * delegate;

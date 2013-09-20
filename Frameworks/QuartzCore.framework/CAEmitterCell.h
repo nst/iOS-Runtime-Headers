@@ -9,7 +9,7 @@
 
 @class NSArray, NSDictionary, NSString;
 
-@interface CAEmitterCell : NSObject <CAPropertyInfo, NSCoding, CAMediaTiming> {
+@interface CAEmitterCell : NSObject <NSCopying, CAPropertyInfo, NSCoding, CAMediaTiming> {
     void *_attr[2];
     unsigned int _flags;
     void *_state;
@@ -24,11 +24,17 @@
 @property float blueSpeed;
 @property struct CGColor { }* color;
 @property(retain) id contents;
+@property unsigned int contentsFrameCount;
+@property(copy) NSString * contentsFrameMode;
+@property unsigned int contentsFramesPerRow;
+@property float contentsFramesPerSecond;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentsRect;
+@property float contentsScale;
 @property double duration;
 @property float emissionLatitude;
 @property float emissionLongitude;
 @property float emissionRange;
+@property(copy) NSArray * emitterBehaviors;
 @property(copy) NSArray * emitterCells;
 @property(getter=isEnabled) BOOL enabled;
 @property(copy) NSString * fillMode;
@@ -37,13 +43,21 @@
 @property float lifetime;
 @property float lifetimeRange;
 @property(copy) NSString * magnificationFilter;
+@property float mass;
+@property float massRange;
 @property(copy) NSString * minificationFilter;
 @property float minificationFilterBias;
 @property(copy) NSString * name;
+@property float orientationLatitude;
+@property float orientationLongitude;
+@property float orientationRange;
+@property(copy) NSString * particleType;
 @property float redRange;
 @property float redSpeed;
 @property float repeatCount;
 @property double repeatDuration;
+@property float rotation;
+@property float rotationRange;
 @property float scale;
 @property float scaleRange;
 @property float scaleSpeed;
@@ -58,6 +72,7 @@
 @property float yAcceleration;
 @property float zAcceleration;
 
++ (void)CAMLParserStartElement:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
@@ -65,6 +80,8 @@
 + (id)properties;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
+- (id)CAMLTypeForKey:(id)arg1;
 - (void)CA_prepareRenderValue;
 - (float)alphaRange;
 - (float)alphaSpeed;
@@ -75,14 +92,23 @@
 - (float)blueSpeed;
 - (struct CGColor { }*)color;
 - (id)contents;
+- (unsigned int)contentsFrameCount;
+- (id)contentsFrameMode;
+- (unsigned int)contentsFramesPerRow;
+- (float)contentsFramesPerSecond;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentsRect;
+- (float)contentsScale;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
+- (void)didChangeValueForKey:(id)arg1;
 - (double)duration;
 - (float)emissionLatitude;
 - (float)emissionLongitude;
 - (float)emissionRange;
+- (id)emitterBehaviors;
 - (id)emitterCells;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fillMode;
 - (float)greenRange;
@@ -92,13 +118,21 @@
 - (float)lifetime;
 - (float)lifetimeRange;
 - (id)magnificationFilter;
+- (float)mass;
+- (float)massRange;
 - (id)minificationFilter;
 - (float)minificationFilterBias;
 - (id)name;
+- (float)orientationLatitude;
+- (float)orientationLongitude;
+- (float)orientationRange;
+- (id)particleType;
 - (float)redRange;
 - (float)redSpeed;
 - (float)repeatCount;
 - (double)repeatDuration;
+- (float)rotation;
+- (float)rotationRange;
 - (float)scale;
 - (float)scaleRange;
 - (float)scaleSpeed;
@@ -111,11 +145,17 @@
 - (void)setBlueSpeed:(float)arg1;
 - (void)setColor:(struct CGColor { }*)arg1;
 - (void)setContents:(id)arg1;
+- (void)setContentsFrameCount:(unsigned int)arg1;
+- (void)setContentsFrameMode:(id)arg1;
+- (void)setContentsFramesPerRow:(unsigned int)arg1;
+- (void)setContentsFramesPerSecond:(float)arg1;
 - (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentsScale:(float)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setEmissionLatitude:(float)arg1;
 - (void)setEmissionLongitude:(float)arg1;
 - (void)setEmissionRange:(float)arg1;
+- (void)setEmitterBehaviors:(id)arg1;
 - (void)setEmitterCells:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFillMode:(id)arg1;
@@ -124,13 +164,21 @@
 - (void)setLifetime:(float)arg1;
 - (void)setLifetimeRange:(float)arg1;
 - (void)setMagnificationFilter:(id)arg1;
+- (void)setMass:(float)arg1;
+- (void)setMassRange:(float)arg1;
 - (void)setMinificationFilter:(id)arg1;
 - (void)setMinificationFilterBias:(float)arg1;
 - (void)setName:(id)arg1;
+- (void)setOrientationLatitude:(float)arg1;
+- (void)setOrientationLongitude:(float)arg1;
+- (void)setOrientationRange:(float)arg1;
+- (void)setParticleType:(id)arg1;
 - (void)setRedRange:(float)arg1;
 - (void)setRedSpeed:(float)arg1;
 - (void)setRepeatCount:(float)arg1;
 - (void)setRepeatDuration:(double)arg1;
+- (void)setRotation:(float)arg1;
+- (void)setRotationRange:(float)arg1;
 - (void)setScale:(float)arg1;
 - (void)setScaleRange:(float)arg1;
 - (void)setScaleSpeed:(float)arg1;

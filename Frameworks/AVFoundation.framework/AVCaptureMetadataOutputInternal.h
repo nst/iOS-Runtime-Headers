@@ -5,9 +5,19 @@
 @class <AVCaptureMetadataOutputObjectsDelegate>, NSArray, NSObject<OS_dispatch_queue>;
 
 @interface AVCaptureMetadataOutputInternal : NSObject {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     NSObject<OS_dispatch_queue> *clientQueue;
     <AVCaptureMetadataOutputObjectsDelegate> *delegate;
     NSArray *metadataObjectTypes;
+    } rectOfInterest;
 }
 
 - (void)dealloc;

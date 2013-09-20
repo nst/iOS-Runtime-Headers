@@ -3,12 +3,12 @@
  */
 
 @interface MFPRedEyeCorrectionEffect : MFPEffect {
-    struct vector<CGRect, std::allocator<CGRect> > { struct _Vector_impl { struct CGRect {} *x_1_1_1; struct CGRect {} *x_1_1_2; struct CGRect {} *x_1_1_3; } x1; } *mAreas;
+    struct vector<CGRect, std::__1::allocator<CGRect> > { struct CGRect {} *x1; struct CGRect {} *x2; struct __compressed_pair<CGRect *, std::__1::allocator<CGRect> > { struct CGRect {} *x_3_1_1; } x3; } *mAreas;
 }
 
 + (id)GUID;
 
 - (void)dealloc;
-- (id)initWithAreas:(const struct vector<CGRect, std::allocator<CGRect> > { struct _Vector_impl { struct CGRect {} *x_1_1_1; struct CGRect {} *x_1_1_2; struct CGRect {} *x_1_1_3; } x1; }*)arg1;
+- (id)initWithAreas:(const struct vector<CGRect, std::__1::allocator<CGRect> > { struct CGRect {} *x1; struct CGRect {} *x2; struct __compressed_pair<CGRect *, std::__1::allocator<CGRect> > { struct CGRect {} *x_3_1_1; } x3; }*)arg1;
 
 @end

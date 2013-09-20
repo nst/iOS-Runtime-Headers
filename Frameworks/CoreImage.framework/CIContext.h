@@ -11,7 +11,8 @@
     struct CIContextInternal { struct Context {} *x1; struct _opaque_pthread_mutex_t { long x_2_1_1; BOOL x_2_1_2[40]; } x2; boolx3; id x4; } *_priv;
 }
 
-+ (struct Context { int (**x1)(); unsigned int x2; struct CGColorSpace {} *x3; struct CGColorSpace {} *x4; }*)glesInternalContextOptions:(id)arg1;
++ (struct Context { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct CGColorSpace {} *x3; struct CGColorSpace {} *x4; boolx5; }*)glesInternalContextWithEAGLContext:(id)arg1 options:(id)arg2;
++ (struct Context { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct CGColorSpace {} *x3; struct CGColorSpace {} *x4; boolx5; }*)glesInternalContextWithOptions:(id)arg1;
 + (int)_crashed_because_nonaddressable_memory_was_passed_to_render:(id)arg1 toBitmap:(void*)arg2 rowBytes:(int)arg3 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 format:(int)arg5 colorSpace:(struct CGColorSpace { }*)arg6;
 + (id)_singletonContext;
 + (BOOL)applicationIsInForegroundState;

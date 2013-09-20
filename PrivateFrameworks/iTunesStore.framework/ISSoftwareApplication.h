@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSNumber, NSString, SSItemContentRating;
+@class NSArray, NSDate, NSNumber, NSString, SSItemContentRating;
 
 @interface ISSoftwareApplication : NSObject <SSXPCCoding> {
     NSNumber *_accountDSID;
@@ -12,13 +12,16 @@
     NSString *_bundleVersion;
     NSString *_containerPath;
     SSItemContentRating *_contentRating;
+    NSString *_deviceIdentifierForVendor;
     NSNumber *_itemIdentifier;
     NSString *_itemName;
     BOOL _profileValidated;
+    NSDate *_receiptExpirationDate;
     NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
     NSNumber *_versionIdentifier;
     NSArray *_versionOrdering;
+    unsigned int _vppStateFlags;
 }
 
 @property(retain) NSNumber * accountDSID;
@@ -28,13 +31,16 @@
 @property(copy) NSString * bundleVersion;
 @property(copy) NSString * containerPath;
 @property(copy) SSItemContentRating * contentRating;
+@property(copy) NSString * deviceIdentifierForVendor;
 @property(retain) NSNumber * itemIdentifier;
 @property(copy) NSString * itemName;
 @property(getter=isProfileValidated) BOOL profileValidated;
+@property(readonly) NSDate * receiptExpirationDate;
 @property(copy) NSString * softwareType;
 @property(retain) NSNumber * storeFrontIdentifier;
 @property(retain) NSNumber * versionIdentifier;
 @property(copy) NSArray * versionOrdering;
+@property(readonly) unsigned int vppStateFlags;
 
 + (id)lookupAttributeKeys;
 
@@ -49,11 +55,14 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
+- (id)deviceIdentifierForVendor;
 - (id)initWithMobileInstallationDictionary:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isProfileValidated;
 - (id)itemIdentifier;
 - (id)itemName;
+- (id)receiptExpirationDate;
+- (void)resetVPPStateFlags;
 - (void)setAccountDSID:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
@@ -61,6 +70,7 @@
 - (void)setBundleVersion:(id)arg1;
 - (void)setContainerPath:(id)arg1;
 - (void)setContentRating:(id)arg1;
+- (void)setDeviceIdentifierForVendor:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setItemName:(id)arg1;
 - (void)setProfileValidated:(BOOL)arg1;
@@ -72,5 +82,6 @@
 - (id)storeFrontIdentifier;
 - (id)versionIdentifier;
 - (id)versionOrdering;
+- (unsigned int)vppStateFlags;
 
 @end

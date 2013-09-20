@@ -2,19 +2,20 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
+@class ABUIPerson, NSString;
 
 @interface ABActionsController : NSObject {
     struct __CFArray { } *_actionsForProperty;
     void *_context;
     int _lastPropertyForActions;
     int _multiValueIdentifier;
-    void *_person;
+    ABUIPerson *_person;
     int _property;
-    int _recordID;
     NSString *_stringValue;
     id _value;
 }
+
+@property(retain) ABUIPerson * person;
 
 + (int)defaultActionForProperty:(int)arg1;
 + (id)newActionsControllerForProperty:(int)arg1;
@@ -31,12 +32,11 @@
 - (void)performAction:(int)arg1;
 - (void)performActionAtIndex:(int)arg1 forProperty:(int)arg2;
 - (void)performDefaultAction;
-- (void*)person;
+- (id)person;
 - (void)resetPrimaryPropertyActions;
 - (void)setContext:(void*)arg1;
 - (void)setMultiValueIdentifier:(int)arg1;
-- (void)setPerson:(void*)arg1;
-- (void)setRecordID:(int)arg1;
+- (void)setPerson:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)stringValue;

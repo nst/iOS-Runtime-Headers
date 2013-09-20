@@ -33,7 +33,10 @@
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 + (void)initialize;
 
+- (void)_setVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setVideoMirrored:(BOOL)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_videoMaxFrameDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_videoMinFrameDuration;
 - (void)addInputPort:(id)arg1;
 - (id)audioChannels;
 - (BOOL)automaticallyAdjustsVideoMirroring;
@@ -51,7 +54,9 @@
 - (BOOL)isActive;
 - (BOOL)isEnabled;
 - (BOOL)isLive;
+- (BOOL)isVideoMaxFrameDurationSet;
 - (BOOL)isVideoMaxFrameDurationSupported;
+- (BOOL)isVideoMinFrameDurationSet;
 - (BOOL)isVideoMinFrameDurationSupported;
 - (BOOL)isVideoMirrored;
 - (BOOL)isVideoMirroringSupported;
@@ -79,12 +84,8 @@
 - (void)updateAudioChannelsArray;
 - (void)updateAudioLevelsArray;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMaxFrameDuration;
-- (BOOL)videoMaxFrameDurationIsSet;
-- (int)videoMaxFrameRate;
 - (float)videoMaxScaleAndCropFactor;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMinFrameDuration;
-- (BOOL)videoMinFrameDurationIsSet;
-- (int)videoMinFrameRate;
 - (int)videoOrientation;
 - (id)videoPreviewLayer;
 - (int)videoRetainedBufferCountHint;

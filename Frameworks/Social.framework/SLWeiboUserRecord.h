@@ -2,34 +2,27 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSNumber, NSString, NSURL;
+@class NSNumber, NSURL;
 
-@interface SLWeiboUserRecord : NSObject {
+@interface SLWeiboUserRecord : SLMicroBlogUserRecord <NSSecureCoding> {
     NSURL *_objectID;
-    NSString *_profileImageUrl;
-    NSString *_screenName;
     NSNumber *_uid;
-    NSString *_weiboIdentifier;
 }
 
-@property(copy) NSString * profile_image_url;
-@property(copy) NSString * screen_name;
+@property(retain) NSURL * objectID;
 @property(copy) NSNumber * uid;
 
++ (BOOL)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_setValuesFromDictionaryRepresentation:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)objectID;
-- (id)profile_image_url;
-- (id)screen_name;
 - (void)setObjectID:(id)arg1;
-- (void)setProfile_image_url:(id)arg1;
-- (void)setScreen_name:(id)arg1;
 - (void)setUid:(id)arg1;
+- (void)setValuesWithUserDictionary:(id)arg1;
 - (id)uid;
 
 @end

@@ -7,6 +7,8 @@
 @interface BKSApplicationLaunchSettings : NSObject <NSCopying, BKSXPCCoding> {
     NSArray *_arguments;
     BOOL _checkForLeaks;
+    NSDictionary *_containerEnvironment;
+    NSString *_containerPath;
     BOOL _disableASLR;
     NSDictionary *_environment;
     NSString *_standardError;
@@ -16,6 +18,8 @@
 
 @property(retain) NSArray * arguments;
 @property BOOL checkForLeaks;
+@property(retain) NSDictionary * containerEnvironment;
+@property(retain) NSString * containerPath;
 @property BOOL disableASLR;
 @property(retain) NSDictionary * environment;
 @property(copy) NSString * standardError;
@@ -24,6 +28,8 @@
 
 - (id)arguments;
 - (BOOL)checkForLeaks;
+- (id)containerEnvironment;
+- (id)containerPath;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -34,6 +40,8 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)setArguments:(id)arg1;
 - (void)setCheckForLeaks:(BOOL)arg1;
+- (void)setContainerEnvironment:(id)arg1;
+- (void)setContainerPath:(id)arg1;
 - (void)setDisableASLR:(BOOL)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setStandardError:(id)arg1;

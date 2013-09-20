@@ -12,6 +12,12 @@
     NSString *_low;
 }
 
+@property unsigned int dayNumber;
+@property unsigned int dayOfWeek;
+@property(copy) NSString * high;
+@property unsigned int icon;
+@property(copy) NSString * low;
+
 - (int)compareDayNumberToDayForecast:(id)arg1;
 - (unsigned int)dayNumber;
 - (unsigned int)dayOfWeek;

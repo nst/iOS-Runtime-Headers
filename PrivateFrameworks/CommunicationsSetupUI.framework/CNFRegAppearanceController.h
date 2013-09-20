@@ -8,6 +8,9 @@
 }
 
 @property(readonly) BOOL actionSheetsUsePopoverStyle;
+@property(readonly) UIColor * customBackgroundColor;
+@property(readonly) BOOL firstNavigationBarHidden;
+@property(readonly) int keyboardAppearance;
 @property(readonly) UIImage * learnMoreArrowImage;
 @property(readonly) UIImage * learnMoreArrowImagePressed;
 @property(readonly) BOOL learnMoreButtonDrawsUnderline;
@@ -16,12 +19,25 @@
 @property(readonly) UIColor * learnMoreTextColorSelected;
 @property(readonly) int modalPresentationStyle;
 @property(readonly) int navigationBarActivityIndicatorStyle;
+@property(readonly) UIImage * navigationBarBackgroundImage;
+@property(readonly) BOOL navigationBarHidesShadow;
+@property(readonly) BOOL navigationBarHidesTitle;
 @property(readonly) BOOL navigationBarIsTranslucent;
 @property(readonly) int navigationBarStyle;
+@property(readonly) UIColor * navigationBarTintColor;
+@property(readonly) BOOL navigationBarTranslucent;
 @property(readonly) UIColor * searchResultsTableSeparatorBottomShadowColor;
 @property(readonly) UIColor * searchResultsTableSeparatorColor;
 @property(readonly) int searchResultsTableSeparatorStyle;
 @property(readonly) UIColor * searchResultsTableSeparatorTopShadowColor;
+@property(readonly) UIColor * splashEntryFieldLabelTextColor;
+@property(readonly) UIColor * splashEntryFieldTextColor;
+@property(readonly) UIColor * splashEntryPlaceholderTextColor;
+@property(readonly) BOOL splashScreenShowsIcon;
+@property(readonly) UIColor * splashSignInFieldsBackgroundColor;
+@property(readonly) UIColor * splashSignInFieldsBorderColor;
+@property(readonly) int splashSignInProgressIndicatorColor;
+@property(readonly) UIColor * splashTitleLabelTextColor;
 @property(readonly) BOOL styleUsesCustomAccessoryView;
 @property(readonly) BOOL styleUsesCustomSearchResultsStyle;
 @property(readonly) BOOL styleUsesCustomSeparatorStyle;
@@ -31,6 +47,7 @@
 @property(readonly) UIImage * tableCellButtonImage;
 @property(readonly) UIImage * tableCellButtonImageSelected;
 @property(readonly) UIImage * tableCellCheckmarkImage;
+@property(readonly) UIImage * tableCellCheckmarkImageDisabled;
 @property(readonly) UIImage * tableCellCheckmarkImageSelected;
 @property(readonly) UIView * tableCellCustomAccessoryViewDisclosureIndicator;
 @property(readonly) UIColor * tableCellDetailLabelBackgroundColor;
@@ -43,7 +60,10 @@
 @property(readonly) UIColor * tableCellTextLabelBackgroundColor;
 @property(readonly) UIColor * tableCellTextLabelColor;
 @property(readonly) UIFont * tableFooterFont;
+@property(readonly) int tableFooterTextAlignment;
+@property(readonly) UIColor * tableFooterTextColor;
 @property(readonly) UIFont * tableHeaderFont;
+@property(readonly) int tableHeaderTextAlignment;
 @property(readonly) UIColor * tableHeaderTextColor;
 @property(readonly) UIColor * tableHeaderTextColorSelected;
 @property(readonly) UIColor * tableHeaderTextShadowColor;
@@ -54,6 +74,7 @@
 @property(readonly) UIColor * tableSeparatorColor;
 @property(readonly) int tableSeparatorStyle;
 @property(readonly) UIColor * tableSeparatorTopShadowColor;
+@property(readonly) UIColor * userInteractionColor;
 @property(readonly) UIColor * webViewBackgroundColor;
 @property(readonly) UIView * webViewBackgroundView;
 @property(readonly) BOOL webViewDrawsShadows;
@@ -63,10 +84,16 @@
 + (id)defaultAppearanceController;
 + (id)globalAppearanceController;
 + (id)gradientAppearanceController;
++ (id)modernAppearanceController;
++ (id)modernTransparentDarkAppearanceController;
++ (id)modernTransparentLightAppearanceController;
 + (id)stripedAppearanceController;
 + (id)translucentBlackAppearanceController;
 
 - (BOOL)actionSheetsUsePopoverStyle;
+- (id)customBackgroundColor;
+- (BOOL)firstNavigationBarHidden;
+- (int)keyboardAppearance;
 - (id)learnMoreArrowImage;
 - (id)learnMoreArrowImagePressed;
 - (BOOL)learnMoreButtonDrawsUnderline;
@@ -75,12 +102,25 @@
 - (id)learnMoreTextColorSelected;
 - (int)modalPresentationStyle;
 - (int)navigationBarActivityIndicatorStyle;
+- (id)navigationBarBackgroundImage;
+- (BOOL)navigationBarHidesShadow;
+- (BOOL)navigationBarHidesTitle;
 - (BOOL)navigationBarIsTranslucent;
 - (int)navigationBarStyle;
+- (id)navigationBarTintColor;
+- (BOOL)navigationBarTranslucent;
 - (id)searchResultsTableSeparatorBottomShadowColor;
 - (id)searchResultsTableSeparatorColor;
 - (int)searchResultsTableSeparatorStyle;
 - (id)searchResultsTableSeparatorTopShadowColor;
+- (id)splashEntryFieldLabelTextColor;
+- (id)splashEntryFieldTextColor;
+- (id)splashEntryPlaceholderTextColor;
+- (BOOL)splashScreenShowsIcon;
+- (id)splashSignInFieldsBackgroundColor;
+- (id)splashSignInFieldsBorderColor;
+- (int)splashSignInProgressIndicatorColor;
+- (id)splashTitleLabelTextColor;
 - (BOOL)styleUsesCustomAccessoryView;
 - (BOOL)styleUsesCustomSearchResultsStyle;
 - (BOOL)styleUsesCustomSeparatorStyle;
@@ -90,6 +130,7 @@
 - (id)tableCellButtonImage;
 - (id)tableCellButtonImageSelected;
 - (id)tableCellCheckmarkImage;
+- (id)tableCellCheckmarkImageDisabled;
 - (id)tableCellCheckmarkImageSelected;
 - (id)tableCellCustomAccessoryViewDisclosureIndicator;
 - (id)tableCellDetailLabelBackgroundColor;
@@ -102,7 +143,10 @@
 - (id)tableCellTextLabelBackgroundColor;
 - (id)tableCellTextLabelColor;
 - (id)tableFooterFont;
+- (int)tableFooterTextAlignment;
+- (id)tableFooterTextColor;
 - (id)tableHeaderFont;
+- (int)tableHeaderTextAlignment;
 - (id)tableHeaderTextColor;
 - (id)tableHeaderTextColorSelected;
 - (id)tableHeaderTextShadowColor;
@@ -113,6 +157,7 @@
 - (id)tableSeparatorColor;
 - (int)tableSeparatorStyle;
 - (id)tableSeparatorTopShadowColor;
+- (id)userInteractionColor;
 - (id)webViewBackgroundColor;
 - (id)webViewBackgroundView;
 - (BOOL)webViewDrawsShadows;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderAudioMixOutputInternal, AVAudioMix, NSArray, NSDictionary;
+@class AVAssetReaderAudioMixOutputInternal, AVAudioMix, NSArray, NSDictionary, NSString;
 
 @interface AVAssetReaderAudioMixOutput : AVAssetReaderOutput {
     AVAssetReaderAudioMixOutputInternal *_audioMixOutputInternal;
@@ -10,18 +10,22 @@
 
 @property(copy) AVAudioMix * audioMix;
 @property(readonly) NSDictionary * audioSettings;
+@property(copy) NSString * audioTimePitchAlgorithm;
 @property(readonly) NSArray * audioTracks;
 
 + (id)assetReaderAudioMixOutputWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 
 - (id)_asset;
 - (struct opaqueMTAudioProcessingTap { }*)_audioTapProcessorForTrack:(id)arg1;
+- (id)_audioTimePitchAlgorithmForTrack:(id)arg1;
 - (id)_audioVolumeCurveForTrack:(id)arg1;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (void)_setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1 forTrack:(id)arg2;
+- (void)_setAudioTimePitchAlgorithm:(id)arg1 forTrack:(id)arg2;
 - (void)_setAudioVolumeCurve:(id)arg1 forTrack:(id)arg2;
 - (id)audioMix;
 - (id)audioSettings;
+- (id)audioTimePitchAlgorithm;
 - (id)audioTracks;
 - (void)dealloc;
 - (id)description;
@@ -30,5 +34,6 @@
 - (id)initWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 - (id)mediaType;
 - (void)setAudioMix:(id)arg1;
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
 
 @end

@@ -5,7 +5,10 @@
 @interface AXVisualAlertSBBulletinSoundController : AXVisualAlertSBBulletinSoundController_super {
 }
 
++ (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (id)_installSafeCategoryValidationMethod;
 
 - (BOOL)playSoundForBulletin:(id)arg1;
 

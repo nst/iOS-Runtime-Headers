@@ -2,9 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableDictionary;
 
 @interface StockUpdateManager : NSObject <StockUpdaterDelegate> {
+    NSMutableArray *_activeUpdaters;
+    NSMutableDictionary *_cacheDurationForParts;
+    NSMutableArray *_inactiveUpdaters;
     BOOL _postingRemoteUpdateNotification;
     NSMutableArray *_updaters;
 }
@@ -13,9 +16,8 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (id)_comprehensiveUpdater;
-- (void)_createUpdatersIfNeeded;
-- (id)_listUpdater;
+- (id)availableStockUpdater;
+- (double)cacheDurationForParts:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (void)failWithError:(id)arg1;
@@ -24,9 +26,12 @@
 - (BOOL)isLoading;
 - (void)resetUpdaters;
 - (void)setBasicDataCacheTimeInterval:(double)arg1;
+- (void)stockUpdater:(id)arg1 didFailWithError:(id)arg2 whileUpdatingStocks:(id)arg3 comprehensive:(BOOL)arg4;
 - (void)stockUpdater:(id)arg1 didUpdateStocks:(id)arg2 isComprehensive:(BOOL)arg3;
 - (void)stocksDidUpdateRemotely;
 - (void)updateAllStocksBasic;
+- (void)updateAllStocksBasicWithCompletion:(id)arg1;
+- (void)updateStockComprehensive:(id)arg1 withCompletion:(id)arg2;
 - (void)updateStockComprehensive:(id)arg1;
 - (void)updateStocksComprehensive:(id)arg1;
 

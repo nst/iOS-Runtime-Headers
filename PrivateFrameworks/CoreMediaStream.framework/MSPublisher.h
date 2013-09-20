@@ -2,17 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSPublishStorageProtocol>, <MSPublisherDelegate>, MSMediaStreamDaemon, MSObjectQueue, MSPublishStreamsProtocol, NSMutableArray, NSMutableDictionary, NSURL;
+@class <MSPublishStorageProtocol>, <MSPublisherDelegate>, MSMediaStreamDaemon, MSObjectQueue, MSPublishStreamsProtocol, NSArray, NSMutableArray, NSMutableDictionary, NSURL;
 
 @interface MSPublisher : MSCupidStateMachine <MSPublisher, MSPublishStreamsProtocolDelegate, MSPublishStorageProtocolDelegate> {
     MSMediaStreamDaemon *_daemon;
     <MSPublisherDelegate> *_delegate;
+    MSObjectQueue *_derivativesQueue;
     NSMutableDictionary *_fileHashToAssetMap;
     int _maxErrorCount;
     NSMutableDictionary *_maxSizeByUTI;
+    NSArray *_pendingDerivativesQueue;
     MSPublishStreamsProtocol *_protocol;
     int _publishBatchSize;
     long long _publishTargetByteCount;
+    MSObjectQueue *_quarantinedQueue;
     NSMutableArray *_requestAuthQueue;
     NSMutableArray *_sendingQueue;
     unsigned int _sendingQueueCount;
@@ -45,12 +48,18 @@
 - (id)_abortedError;
 - (void)_addAssetToFileHashMap:(id)arg1;
 - (void)_categorizeError:(id)arg1 setOutIsIgnorable:(BOOL*)arg2 setOutIsCounted:(BOOL*)arg3 setOutIsFatal:(BOOL*)arg4 setOutNeedsBackoff:(BOOL*)arg5 setOutIsTemporary:(BOOL*)arg6 setOutIsTokenAuth:(BOOL*)arg7 setOutIsAuthError:(BOOL*)arg8;
+- (id)_checkAssetCollectionFiles:(id)arg1;
+- (id)_checkObjectWrappers:(id)arg1;
+- (id)_collectionWithNoDerivatives:(id)arg1;
 - (void)_didFinishUsingAssetCollections:(id)arg1;
 - (void)_forget;
 - (id)_invalidStreamsResponseErrorUnderlyingError:(id)arg1;
 - (BOOL)_isAllowedToUpload;
 - (BOOL)_isInRetryState;
+- (void)_quarantineOrDiscardWrappers:(id)arg1 withError:(id)arg2;
 - (void)_refreshServerSideConfiguredParameters;
+- (void)_registerAllAssetsForWrapper:(id)arg1;
+- (void)_registerAsset:(id)arg1;
 - (void)_removeAssetFromFileHashMap:(id)arg1;
 - (void)_removeAssetsInAssetCollectionWrappersFromAssetMap:(id)arg1;
 - (void)_requestDerivatives;
@@ -60,12 +69,14 @@
 - (void)_serverSideConfigurationDidChange:(id)arg1;
 - (int)_stop;
 - (void)_updateMasterManifest;
+- (BOOL)_verifyAssetFile:(id)arg1;
 - (void)abort;
 - (void)computeHashForAsset:(id)arg1;
 - (id)daemon;
 - (void)deactivate;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 outError:(id*)arg2;
 - (BOOL)enqueueAssetCollections:(id)arg1 outError:(id*)arg2;
 - (id)initWithPersonID:(id)arg1 baseURL:(id)arg2;
 - (void)publish;
@@ -78,6 +89,7 @@
 - (void)publishStreamsProtocol:(id)arg1 didFinishUploadingMetadataResponse:(id)arg2 error:(id)arg3;
 - (void)publishStreamsProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (long long)publishTargetByteCount;
+- (void)reenqueueQuarantinedAssetCollections;
 - (void)setDaemon:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPublishBatchSize:(int)arg1;

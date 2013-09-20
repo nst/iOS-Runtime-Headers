@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSString;
 
-@interface SLFacebookPostPrivacySetting : NSObject <NSCoding> {
+@interface SLFacebookPostPrivacySetting : NSObject <NSSecureCoding> {
     NSString *_identifier;
     NSString *_name;
     NSDictionary *_parameters;
@@ -20,6 +20,7 @@
 + (id)postPrivacySettingForPrivacyOptionDictionary:(id)arg1;
 + (id)postPrivacySettingWithIdentifier:(id)arg1 name:(id)arg2 type:(int)arg3 parameters:(id)arg4;
 + (id)postPrivacySettingsForPrivacyOptions:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_parametersJSONStringRepresentation;

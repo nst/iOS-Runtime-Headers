@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ACAccountStore, AccountsManager, NSMutableDictionary, NSTimer;
+@class ACAccountStore, NSMutableDictionary, NSTimer;
 
 @interface ABRefreshController : NSObject {
     NSMutableDictionary *_accountGroupListsToRefreshByObserver;
     ACAccountStore *_accountStore;
-    AccountsManager *_accountsManager;
     NSMutableDictionary *_contactsFiltersToRefreshByObserver;
     double _refreshDelay;
     NSTimer *_refreshTimer;
@@ -18,21 +17,15 @@
 - (BOOL)_acAccountExistsForIdentifier:(id)arg1;
 - (void)_actuallyRefreshOrphanedAccountsWithAddressBook:(void*)arg1;
 - (void)_addObjectToRefresh:(id)arg1 withObserver:(void*)arg2 toDictionary:(id*)arg3;
-- (id)_allContactsSyncingAccounts;
 - (void)_invalidateTimer;
 - (void)_postponeAllRefreshes;
 - (void)_proceedWithRefresh:(id)arg1;
 - (void)_refreshACAccountWithIdentifier:(id)arg1 isUserRequested:(BOOL)arg2;
-- (void)_refreshAccount:(id)arg1 isUserRequested:(BOOL)arg2;
-- (void)_refreshAccountGroupList:(id)arg1 isUserRequested:(BOOL)arg2;
 - (void)_refreshGroupListForACAccountWithIdentifier:(id)arg1 isUserRequested:(BOOL)arg2;
 - (void)_resumeAllRefreshes;
 - (void)_scheduleRefreshTimerIfNeeded;
-- (void)_setAccountsManager:(id)arg1;
 - (void)_setRefreshDelay:(double)arg1;
 - (id)accountStore;
-- (void)accountsChanged;
-- (id)accountsManager;
 - (BOOL)canRefreshAccountIdentifier:(id)arg1;
 - (BOOL)canRefreshContactsFilter:(id)arg1;
 - (BOOL)canRefreshSources:(id)arg1;

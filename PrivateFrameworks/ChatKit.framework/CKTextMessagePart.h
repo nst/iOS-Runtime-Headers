@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString, NSString;
+@class NSAttributedString;
 
 @interface CKTextMessagePart : CKMessagePart {
-    NSString *_contentLocation;
     NSAttributedString *_text;
 }
 
-@property(copy) NSString * contentLocation;
+@property(readonly) NSAttributedString * text;
 
-- (id)contentLocation;
-- (void)copyToPasteboard;
+- (Class)balloonViewClass;
+- (id)compositionRepresentation;
 - (void)dealloc;
 - (id)description;
 - (id)detachedCopy;
 - (id)initWithText:(id)arg1;
-- (BOOL)isDisplayable;
-- (void)setContentLocation:(id)arg1;
+- (id)pasteboardItems;
 - (id)text;
 - (int)type;
 

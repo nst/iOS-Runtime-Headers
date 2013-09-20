@@ -41,6 +41,7 @@
     } latestPlayerLayerBoundsAtRendering;
     } latestPresentationSizeAtRendering;
     } latestSubtitleLayoutAtRendering;
+    CALayer *maskLayer;
     } presentationSize;
     NSObject<OS_dispatch_queue> *serialQueue;
     BOOL shouldObservePlayer;

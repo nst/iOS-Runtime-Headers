@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class AAAccount;
+@class ACAccount;
 
 @interface AAEmailVettingRequest : AARequest {
-    AAAccount *_account;
+    ACAccount *_account;
 }
 
-@property(retain) AAAccount * account;
+@property(retain) ACAccount * account;
 
 - (void).cxx_destruct;
 - (id)account;

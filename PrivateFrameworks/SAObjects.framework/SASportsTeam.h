@@ -8,12 +8,14 @@
 }
 
 @property(copy) NSString * abbreviatedName;
+@property BOOL alwaysUseAthleteFullName;
 @property(copy) NSArray * athletes;
 @property(copy) NSString * awayLosses;
 @property(copy) NSString * awayWins;
 @property(copy) NSNumber * clinchedQualificationPosition;
 @property(copy) NSNumber * conferencePosition;
 @property(copy) NSString * gamesBehind;
+@property(copy) NSString * gamesPlayed;
 @property(copy) NSString * groupName;
 @property(copy) NSNumber * groupPosition;
 @property(copy) NSString * groupPositionDescription;
@@ -43,6 +45,7 @@
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)abbreviatedName;
+- (BOOL)alwaysUseAthleteFullName;
 - (id)athletes;
 - (id)awayLosses;
 - (id)awayWins;
@@ -50,6 +53,7 @@
 - (id)conferencePosition;
 - (id)encodedClassName;
 - (id)gamesBehind;
+- (id)gamesPlayed;
 - (id)groupIdentifier;
 - (id)groupName;
 - (id)groupPosition;
@@ -68,12 +72,14 @@
 - (id)rankings;
 - (id)secondaryColor;
 - (void)setAbbreviatedName:(id)arg1;
+- (void)setAlwaysUseAthleteFullName:(BOOL)arg1;
 - (void)setAthletes:(id)arg1;
 - (void)setAwayLosses:(id)arg1;
 - (void)setAwayWins:(id)arg1;
 - (void)setClinchedQualificationPosition:(id)arg1;
 - (void)setConferencePosition:(id)arg1;
 - (void)setGamesBehind:(id)arg1;
+- (void)setGamesPlayed:(id)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setGroupPosition:(id)arg1;
 - (void)setGroupPositionDescription:(id)arg1;

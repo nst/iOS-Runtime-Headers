@@ -6,7 +6,7 @@
     boolmAutomatic;
     boolmNoMultipleLevelLabel;
     int mLabelAlignment;
-    int mLabelFrequency;
+    long mLabelFrequency;
 }
 
 - (void)adjustAxisPositionForHorizontalChart;
@@ -14,10 +14,10 @@
 - (bool)isAutomatic;
 - (bool)isNoMultipleLabellevel;
 - (int)labelAlignment;
-- (int)labelFrequency;
+- (long)labelFrequency;
 - (void)setAutomatic:(bool)arg1;
 - (void)setLabelAlignment:(int)arg1;
-- (void)setLabelFrequency:(int)arg1;
+- (void)setLabelFrequency:(long)arg1;
 - (void)setNoMultipleLevelLabel:(bool)arg1;
 
 @end

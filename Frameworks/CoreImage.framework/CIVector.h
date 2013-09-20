@@ -27,6 +27,7 @@
 - (float)X;
 - (float)Y;
 - (float)Z;
+- (float*)_values;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long)count;
 - (void)dealloc;

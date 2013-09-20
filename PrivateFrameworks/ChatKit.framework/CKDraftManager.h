@@ -10,22 +10,18 @@
     NSArray *_pendingRecipients;
 }
 
-+ (void)_createDraftSavePath;
-+ (void)_createPendingRecipientPath;
-+ (id)_draftSavePath;
-+ (id)_pendingRecipientFile;
 + (id)sharedInstance;
 
 - (void)_clearDraftForConversation:(id)arg1;
 - (id)_draftForKey:(id)arg1;
 - (id)_pendingRecipients;
+- (id)_pendingRecipientsURL;
 - (void)_setDraft:(id)arg1 forKey:(id)arg2;
 - (void)_setPendingRecipients:(id)arg1;
 - (void)clearDraftForPendingConversation;
 - (void)dealloc;
 - (id)draftForConversation:(id)arg1;
 - (id)draftForPendingConversationWithRecipients:(id*)arg1;
-- (id)init;
 - (void)save:(BOOL)arg1;
 - (void)setDraft:(id)arg1 forConversation:(id)arg2;
 - (void)setDraftForPendingConversation:(id)arg1 withRecipients:(id)arg2;

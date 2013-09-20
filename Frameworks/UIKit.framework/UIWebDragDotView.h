@@ -5,24 +5,45 @@
 @class UIColor, UIImageView;
 
 @interface UIWebDragDotView : UIView {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     UIImageView *m_dot;
+    } m_dotFrame;
     UIColor *m_insertionPointColor;
     int m_orientation;
     UIColor *m_selectionBarColor;
+    } m_stickFrame;
 }
 
 @property BOOL showsBall;
 
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 container:(id)arg2 orientation:(int)arg3;
+- (id)initWithEdge:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 container:(id)arg2 orientation:(int)arg3;
 - (BOOL)isPointedDown;
 - (BOOL)isPointedLeft;
 - (BOOL)isPointedRight;
 - (BOOL)isPointedUp;
 - (BOOL)isVertical;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setEdge:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setShowsBall:(BOOL)arg1;
 - (BOOL)showsBall;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })stickFrameForEdge:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOverlap:(float)arg2;
 
 @end

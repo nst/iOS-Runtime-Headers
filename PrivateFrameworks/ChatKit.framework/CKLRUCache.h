@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKLRUCache : CPLRUDictionary {
+@interface CKLRUCache : CPLRUDictionary <CKCache> {
 }
 
 - (void)dealloc;
-- (id)init;
+- (id)initWithMaximumCapacity:(unsigned int)arg1;
 
 @end

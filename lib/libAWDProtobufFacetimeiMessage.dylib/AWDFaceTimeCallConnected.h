@@ -10,6 +10,7 @@
         unsigned int connectDuration : 1; 
         unsigned int connectionType : 1; 
         unsigned int currentNatType : 1; 
+        unsigned int isVideo : 1; 
         unsigned int localNetworkConnection : 1; 
         unsigned int relayConnectDuration : 1; 
         unsigned int remoteNatType : 1; 
@@ -20,6 +21,7 @@
     unsigned int _currentNatType;
     NSString *_guid;
     } _has;
+    unsigned int _isVideo;
     unsigned int _localNetworkConnection;
     unsigned int _relayConnectDuration;
     unsigned int _remoteNatType;
@@ -36,12 +38,14 @@
 @property BOOL hasConnectionType;
 @property BOOL hasCurrentNatType;
 @property(readonly) BOOL hasGuid;
+@property BOOL hasIsVideo;
 @property BOOL hasLocalNetworkConnection;
 @property BOOL hasRelayConnectDuration;
 @property BOOL hasRemoteNatType;
 @property BOOL hasRemoteNetworkConnection;
 @property BOOL hasTimestamp;
 @property BOOL hasUsesRelay;
+@property unsigned int isVideo;
 @property unsigned int localNetworkConnection;
 @property unsigned int relayConnectDuration;
 @property unsigned int remoteNatType;
@@ -61,6 +65,7 @@
 - (BOOL)hasConnectionType;
 - (BOOL)hasCurrentNatType;
 - (BOOL)hasGuid;
+- (BOOL)hasIsVideo;
 - (BOOL)hasLocalNetworkConnection;
 - (BOOL)hasRelayConnectDuration;
 - (BOOL)hasRemoteNatType;
@@ -69,6 +74,7 @@
 - (BOOL)hasUsesRelay;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)isVideo;
 - (unsigned int)localNetworkConnection;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)relayConnectDuration;
@@ -81,12 +87,14 @@
 - (void)setHasConnectDuration:(BOOL)arg1;
 - (void)setHasConnectionType:(BOOL)arg1;
 - (void)setHasCurrentNatType:(BOOL)arg1;
+- (void)setHasIsVideo:(BOOL)arg1;
 - (void)setHasLocalNetworkConnection:(BOOL)arg1;
 - (void)setHasRelayConnectDuration:(BOOL)arg1;
 - (void)setHasRemoteNatType:(BOOL)arg1;
 - (void)setHasRemoteNetworkConnection:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasUsesRelay:(BOOL)arg1;
+- (void)setIsVideo:(unsigned int)arg1;
 - (void)setLocalNetworkConnection:(unsigned int)arg1;
 - (void)setRelayConnectDuration:(unsigned int)arg1;
 - (void)setRemoteNatType:(unsigned int)arg1;

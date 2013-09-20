@@ -4,7 +4,7 @@
 
 @class GEOStructuredAddress, NSMutableArray;
 
-@interface GEOAddress : PBCodable {
+@interface GEOAddress : PBCodable <NSCopying> {
     struct { 
         unsigned int formattedAddressType : 1; 
     NSMutableArray *_formattedAddressLines;
@@ -23,6 +23,7 @@
 - (id)addressDictionary;
 - (void)clearFormattedAddressLines;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -33,7 +34,9 @@
 - (BOOL)hasFormattedAddressType;
 - (BOOL)hasStructuredAddress;
 - (unsigned int)hash;
+- (id)initWithAddressDictionary:(id)arg1;
 - (id)initWithAddressString:(id)arg1;
+- (id)initWithPlacemark:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setFormattedAddressLines:(id)arg1;

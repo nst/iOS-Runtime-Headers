@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL, SATimerObject;
+@class SATimerObject;
 
-@interface SATimerSet : SABaseClientBoundCommand {
+@interface SATimerSet : SADomainCommand {
 }
 
-@property(copy) NSURL * targetAppId;
 @property(retain) SATimerObject * timer;
 
 + (id)set;
@@ -16,9 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
-- (void)setTargetAppId:(id)arg1;
 - (void)setTimer:(id)arg1;
-- (id)targetAppId;
 - (id)timer;
 
 @end

@@ -14,6 +14,7 @@
     unsigned int _cancelPastAllowableMovement : 1;
     NSMutableSet *_activeTouches;
     float _allowableMovement;
+    int _buttonType;
     id _enoughTimeElapsed;
     id _imp;
     double _minimumPressDuration;
@@ -23,6 +24,7 @@
     NSArray *_touches;
 }
 
+@property(setter=_setButtonType:) int _buttonType;
 @property float allowableMovement;
 @property BOOL cancelPastAllowableMovement;
 @property(readonly) struct CGPoint { float x1; float x2; } centroid;
@@ -35,8 +37,15 @@
 
 + (void)addLongPressGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3 minimumPressDuration:(double)arg4 touchCount:(int)arg5;
 
+- (int)_buttonType;
+- (void)_interactionsEndedWithValidTouches:(BOOL)arg1;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_resetGestureRecognizer;
+- (void)_setButtonType:(int)arg1;
 - (void)_startTapFinishedTimer;
+- (float)_touchSloppinessFactor;
 - (float)allowableMovement;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (BOOL)cancelPastAllowableMovement;

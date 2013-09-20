@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <WLCardViewDelegate>, NSString, PKPass, PKPassBackFaceView, PKPassColorProfile, PKPassFaceView, PKPassFrontFaceView, UIImage;
+@class <WLCardViewDelegate>, NSString, PKPass, PKPassBackFaceView, PKPassColorProfile, PKPassFaceView, PKPassFrontFaceView;
 
 @interface PKPassView : UIView <PKPassFaceDelegate> {
     PKPassBackFaceView *_backFace;
     BOOL _backFaceIsTall;
-    UIImage *_cardFrontSnapshot;
     PKPassColorProfile *_colorProfile;
     int _contentMode;
     <WLCardViewDelegate> *_delegate;
     PKPassFrontFaceView *_frontFace;
     PKPassFaceView *_otherFace;
     PKPass *_pass;
-    UIImage *_passFrontSnapshot;
     int _suppressedContent;
     PKPassFaceView *_visibleFace;
 }
@@ -22,17 +20,18 @@
 @property BOOL backFaceIsTall;
 @property int contentMode;
 @property <WLCardViewDelegate> * delegate;
+@property(readonly) BOOL frontFaceBodyContentCreated;
 @property(readonly) PKPass * pass;
-@property(retain) UIImage * passFrontSnapshot;
 @property(readonly) BOOL showingFront;
 @property int suppressedContent;
 @property(readonly) NSString * uniqueID;
 
 - (void)_applyContentMode;
-- (void)_flipPass:(BOOL)arg1;
+- (void)_flipPass:(BOOL)arg1 fromLeft:(BOOL)arg2 notify:(BOOL)arg3;
 - (int)_frontFaceBackgroundModeForContentMode;
 - (int)_regionsForCurrentModes;
 - (void)_updateBackFaceSuppressedContent;
+- (void)_updateFrontFaceSuppressedContent;
 - (BOOL)_visibleFaceShouldClipForCurrentViewMode:(float*)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
@@ -41,8 +40,9 @@
 - (void)createBackFaceIfNecessary;
 - (void)dealloc;
 - (id)delegate;
-- (void)flipPass:(BOOL)arg1;
+- (void)flipPass:(BOOL)arg1 fromLeft:(BOOL)arg2 notify:(BOOL)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfVisibleFace;
+- (BOOL)frontFaceBodyContentCreated;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithPass:(id)arg1 content:(int)arg2;
 - (id)initWithPass:(id)arg1;
@@ -52,7 +52,8 @@
 - (BOOL)passFaceDeleteButtonEnabled;
 - (void)passFaceDeleteButtonPressed:(id)arg1;
 - (void)passFaceFlipButtonPressed:(id)arg1;
-- (id)passFrontSnapshot;
+- (void)passFaceShareButtonPressed:(id)arg1;
+- (void)prepareForFlip;
 - (void)presentDiff:(id)arg1 completion:(id)arg2;
 - (void)registerForEnterBackgroundNotification;
 - (void)setBackFaceIsTall:(BOOL)arg1;
@@ -60,17 +61,18 @@
 - (void)setContentMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
-- (void)setPassFrontSnapshot:(id)arg1;
 - (void)setSuppressedContent:(int)arg1;
 - (BOOL)showingFront;
 - (struct CGSize { float x1; float x2; })sizeOfBackFace;
 - (struct CGSize { float x1; float x2; })sizeOfFrontFace;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)snapshotOfFrontFace;
 - (int)suppressedContent;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)uniqueID;
 - (void)unregisterForEnterBackgroundNotification;
+- (void)updateValidityDisplay;
 
 @end

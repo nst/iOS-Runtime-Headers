@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
-
-@interface SAMPSetPlaybackPosition : SABaseClientBoundCommand {
+@interface SAMPSetPlaybackPosition : SADomainCommand {
 }
 
 @property int position;
-@property(copy) NSURL * targetAppId;
 
 + (id)setPlaybackPosition;
 + (id)setPlaybackPositionWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +15,5 @@
 - (int)position;
 - (BOOL)requiresResponse;
 - (void)setPosition:(int)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

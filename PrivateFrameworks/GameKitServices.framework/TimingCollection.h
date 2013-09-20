@@ -13,6 +13,7 @@
 - (id)description;
 - (BOOL)hasKey:(id)arg1;
 - (id)init;
+- (void)removeTimingForKey:(id)arg1;
 - (void)resetTotalTimeForKey:(id)arg1;
 - (void)startTimingForKey:(id)arg1;
 - (void)stopTimingForKey:(id)arg1;

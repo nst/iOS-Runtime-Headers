@@ -10,7 +10,11 @@
 
 @property(readonly) NKAssetDownload * newsstandAssetDownload;
 
-+ (void)HS_sendAsynchronousRequest:(id)arg1 completionQueue:(id)arg2 completionHandler:(id)arg3;
++ (void)_geo_sendAsynchronousRequest:(id)arg1 connectionProperties:(id)arg2 completionHandler:(id)arg3;
++ (void)_geo_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id)arg4;
++ (void)_geo_sendAttributedAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
++ (id)_geo_sendAttributedSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
++ (id)_geo_sendSynchronousRequest:(id)arg1 connectionProperties:(id)arg2 returningResponse:(id*)arg3 error:(id*)arg4;
 + (void)_resourceLoadLoop:(id)arg1;
 + (void)_setLoaderThreadPriority:(int)arg1;
 + (void)_setMIMETypesWithNoSizeLimit:(id)arg1;
@@ -19,11 +23,13 @@
 + (BOOL)canHandleRequest:(id)arg1;
 + (id)connectionWithRequest:(id)arg1 delegate:(id)arg2;
 + (struct __CFRunLoop { }*)resourceLoaderRunLoop;
++ (void)safari_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 + (void)sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
 + (id)sendSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
 
 - (id)_cfInternal;
 - (id)_dlInternal;
+- (id)_geo_initWithAttributedRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
 - (void)_resumeLoading;
 - (void)_suspendLoading;
@@ -34,6 +40,7 @@
 - (id)currentRequest;
 - (void)dealloc;
 - (BOOL)defersCallbacks;
+- (id)description;
 - (void)download;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;

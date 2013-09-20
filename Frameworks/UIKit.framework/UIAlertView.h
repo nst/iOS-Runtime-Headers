@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIAlertViewDelegate>, NSMutableArray, NSString, UILabel, UIToolbar, UIView, UIWindow;
+@class <UIAlertViewDelegate>, NSMutableArray, NSMutableDictionary, NSString, UILabel, UIToolbar, UIView, UIViewController, UIWindow, _UIModalItem;
 
 @interface UIAlertView : UIView {
     struct CGPoint { 
@@ -62,12 +62,19 @@
         unsigned int alertViewStyle : 3; 
         unsigned int isSBAlert : 1; 
         unsigned int isBeingDismissed : 1; 
+        unsigned int useLookNeue : 1; 
+    UIView *_accessoryView;
+    UIViewController *_accessoryViewController;
+    UIView *_backdropView;
     UIView *_backgroundImageView;
+    UIWindow *_blurWindow;
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
+    NSMutableArray *_buttonTitlesNeue;
     NSMutableArray *_buttons;
     int _cancelButton;
     } _center;
+    UIView *_contentViewNeue;
     id _context;
     int _defaultButton;
     <UIAlertViewDelegate> *_delegate;
@@ -75,17 +82,25 @@
     UIWindow *_dimWindow;
     int _dismissButtonIndex;
     int _firstOtherButton;
+    UIViewController *_hostingViewControllerNeue;
     UIView *_keyboard;
+    NSString *_messageTextNeue;
     } _modalViewFlags;
     UIWindow *_originalWindow;
+    _UIModalItem *_representedModalItem;
+    NSMutableDictionary *_separatorsViews;
     float _startY;
     UILabel *_subtitleLabel;
     int _suspendTag;
     UIView *_table;
     UILabel *_taglineTextLabel;
+    UIView *_textFieldBackgroundView;
     NSMutableArray *_textFields;
+    BOOL _textFieldsHidden;
     UILabel *_titleLabel;
+    NSString *_titleTextNeue;
     UIToolbar *_toolbar;
+    UIWindow *_windowFOrSBNeueCompatibility;
 }
 
 @property int alertViewStyle;
@@ -119,10 +134,10 @@
 - (int)_alertOrientation;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)_alertSheetTextFieldDidChange:(id)arg1;
-- (void)_alertSheetTextFieldDidEndEditing:(id)arg1;
 - (void)_alertSheetTextFieldDidStartEditing:(id)arg1;
 - (void)_alertSheetTextFieldReturn:(id)arg1;
 - (void)_appSuspended:(id)arg1;
+- (id)_blurMaskImageForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_bottomVerticalInset;
 - (void)_bubbleAnimationNormalDidStop:(id)arg1 finished:(id)arg2;
 - (void)_bubbleAnimationShrinkDidStop:(id)arg1 finished:(id)arg2;
@@ -144,7 +159,7 @@
 - (BOOL)_dimsBackground;
 - (id)_firstOtherButton;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)_isAnimating;
 - (BOOL)_isSBAlert;
 - (void)_jiggleStage1AnimationDidStop:(id)arg1 finished:(id)arg2;
@@ -159,10 +174,13 @@
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_layoutIfNeeded;
 - (void)_layoutPopupAlertWithOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)_loginFieldDidChangeForItem:(id)arg1;
 - (BOOL)_manualKeyboardIsVisible;
 - (float)_maxHeight;
+- (id)_modalItemForNeueCompatibility;
 - (BOOL)_needsKeyboard;
 - (void)_nukeOldTextFields;
+- (void)_passwordFieldDidChangeForItem:(id)arg1;
 - (void)_performPopoutAnimationAnimated:(BOOL)arg1 coveredBySpringBoardAlert:(BOOL)arg2;
 - (void)_performPopup:(BOOL)arg1 animationType:(int)arg2 revealedBySpringBoardAlert:(BOOL)arg3;
 - (void)_performPopup:(BOOL)arg1 animationType:(int)arg2;
@@ -175,7 +193,11 @@
 - (void)_removeAlertWindowOrShowAnOldAlert;
 - (void)_repopup;
 - (void)_repopupNoAnimation;
+- (id)_representedModalItem;
+- (id)_representedModalItemView;
 - (void)_rotatingAnimationDidStop:(id)arg1;
+- (void)_setAccessoryView:(id)arg1;
+- (void)_setAccessoryViewController:(id)arg1;
 - (void)_setAlertSheetStyleFromButtonBar:(id)arg1;
 - (void)_setDefaultButton:(id)arg1;
 - (void)_setDestructiveButton:(id)arg1;
@@ -183,8 +205,9 @@
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)_setupKBWatcher;
 - (void)_setupTitleStyle;
-- (BOOL)_shouldOrderInAutomaticKeyboard;
 - (BOOL)_shouldUseUndoStyle;
+- (void)_showByReplacingAlert:(id)arg1 animated:(BOOL)arg2;
+- (void)_showByReplacingPreviousAlertAnimated:(BOOL)arg1;
 - (void)_showKeyboard:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_showManualKBIfNecessary;
 - (void)_slideSheetOut:(BOOL)arg1;
@@ -194,8 +217,10 @@
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
 - (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
+- (void)_updateButtonTitles;
 - (void)_updateFrameForDisplay;
 - (void)_updateKeyboardStateForPreviousResponder:(id)arg1;
+- (void)_useLegacyUI:(BOOL)arg1;
 - (void)_useUndoStyle:(BOOL)arg1;
 - (void)_willRotateKeyboard;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
@@ -224,6 +249,7 @@
 - (int)defaultButtonIndex;
 - (id)delegate;
 - (id)destructiveButton;
+- (void)didPresentModalItem:(id)arg1;
 - (BOOL)dimsBackground;
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
@@ -242,6 +268,10 @@
 - (void)layoutAnimated:(BOOL)arg1 withDuration:(double)arg2;
 - (void)layoutAnimated:(BOOL)arg1;
 - (id)message;
+- (void)modalItem:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (BOOL)modalItem:(id)arg1 shouldDismissForButtonAtIndex:(int)arg2;
+- (void)modalItem:(id)arg1 tappedButtonAtIndex:(int)arg2;
+- (void)modalItem:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (int)numberOfButtons;
 - (int)numberOfLinesInTitle;
 - (int)numberOfRows;
@@ -301,5 +331,6 @@
 - (id)titleLabel;
 - (int)titleMaxLineCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
+- (void)willPresentModalItem:(id)arg1;
 
 @end

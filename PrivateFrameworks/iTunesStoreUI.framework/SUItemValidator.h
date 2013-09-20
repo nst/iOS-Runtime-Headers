@@ -11,8 +11,6 @@
 
 @property(readonly) NSArray * validationTests;
 
-+ (id)purchaseValidator;
-
 - (void)addCollectionValidationTests:(id)arg1;
 - (void)addItemValidationTests:(id)arg1;
 - (void)dealloc;

@@ -33,7 +33,5 @@
 - (void)dealloc;
 - (id)initWithServiceType:(id)arg1;
 - (void)setCachedUsername:(id)arg1;
-- (void)setTimestampSkew:(double)arg1;
-- (double)timestampSkew;
 
 @end

@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation, GEORouteAttributes, NSMutableArray;
+@class GEOClientCapabilities, GEOLocation, GEORouteAttributes, NSData, NSMutableArray;
 
-@interface GEOETATrafficUpdateRequest : PBRequest {
+@interface GEOETATrafficUpdateRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int includeBetterRouteSuggestion : 1; 
+    GEOClientCapabilities *_clientCapabilities;
     GEOLocation *_currentUserLocation;
     NSMutableArray *_destinationWaypoints;
+    NSData *_directionsResponseID;
     } _has;
     BOOL _includeBetterRouteSuggestion;
     GEORouteAttributes *_routeAttributes;
@@ -16,9 +18,13 @@
     NSMutableArray *_serviceTags;
 }
 
+@property(retain) GEOClientCapabilities * clientCapabilities;
 @property(retain) GEOLocation * currentUserLocation;
 @property(retain) NSMutableArray * destinationWaypoints;
+@property(retain) NSData * directionsResponseID;
+@property(readonly) BOOL hasClientCapabilities;
 @property(readonly) BOOL hasCurrentUserLocation;
+@property(readonly) BOOL hasDirectionsResponseID;
 @property BOOL hasIncludeBetterRouteSuggestion;
 @property(readonly) BOOL hasRouteAttributes;
 @property BOOL includeBetterRouteSuggestion;
@@ -32,7 +38,9 @@
 - (void)clearDestinationWaypoints;
 - (void)clearRoutes;
 - (void)clearServiceTags;
+- (id)clientCapabilities;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentUserLocation;
 - (void)dealloc;
 - (id)description;
@@ -40,7 +48,10 @@
 - (id)destinationWaypoints;
 - (unsigned int)destinationWaypointsCount;
 - (id)dictionaryRepresentation;
+- (id)directionsResponseID;
+- (BOOL)hasClientCapabilities;
 - (BOOL)hasCurrentUserLocation;
+- (BOOL)hasDirectionsResponseID;
 - (BOOL)hasIncludeBetterRouteSuggestion;
 - (BOOL)hasRouteAttributes;
 - (unsigned int)hash;
@@ -56,8 +67,10 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
+- (void)setClientCapabilities:(id)arg1;
 - (void)setCurrentUserLocation:(id)arg1;
 - (void)setDestinationWaypoints:(id)arg1;
+- (void)setDirectionsResponseID:(id)arg1;
 - (void)setHasIncludeBetterRouteSuggestion:(BOOL)arg1;
 - (void)setIncludeBetterRouteSuggestion:(BOOL)arg1;
 - (void)setRouteAttributes:(id)arg1;

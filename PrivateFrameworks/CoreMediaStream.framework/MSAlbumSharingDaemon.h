@@ -37,6 +37,7 @@
 - (void)addAccessControlEntries:(id)arg1 toAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)addAlbum:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)addAlbum:(id)arg1 personID:(id)arg2;
+- (void)addAlbum:(id)arg1;
 - (void)addAssetCollections:(id)arg1 toAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4;
 - (void)addAssetCollections:(id)arg1 toAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)addComments:(id)arg1 toAssetCollectionWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4;
@@ -50,8 +51,10 @@
 - (id)delegate;
 - (void)deleteAlbumWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)deleteAlbumWithGUID:(id)arg1 personID:(id)arg2;
+- (void)deleteAlbumWithGUID:(id)arg1;
 - (void)deleteAssetCollectionWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)deleteAssetCollectionWithGUID:(id)arg1 personID:(id)arg2;
+- (void)deleteAssetCollectionsWithGUIDs:(id)arg1 personID:(id)arg2;
 - (void)deleteCommentWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)deleteCommentWithGUID:(id)arg1 personID:(id)arg2;
 - (void)didCreateStateMachineForPersonID:(id)arg1;
@@ -93,7 +96,7 @@
 - (id)personIDToDelegateMap;
 - (id)personIDToStateMachineMap;
 - (id)personIDsListeningToPushNotification;
-- (void)pollForSubscriptionUpdatesTriggeredByPushNotification;
+- (void)pollForSubscriptionUpdatesTriggeredByPushNotificationForPersonID:(id)arg1;
 - (void)refreshAccessControlListOfAlbumWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)refreshAccessControlListOfAlbumWithGUID:(id)arg1 personID:(id)arg2;
 - (void)refreshCommentsForAssetCollectionWithGUID:(id)arg1 resetSync:(BOOL)arg2 personID:(id)arg3 info:(id)arg4;
@@ -110,6 +113,7 @@
 - (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)retrieveAssetsInAssetCollectionsWithGUIDs:(id)arg1 assetTypeFlags:(int)arg2 personID:(id)arg3;
 - (void)retryOutstandingActivities;
+- (void)retryOutstandingActivitiesForPersonID:(id)arg1;
 - (void)sendServerSideConfigurationDidChangeNotificationForPersonID:(id)arg1;
 - (id)serverSideConfigurationForPersonID:(id)arg1;
 - (void)setBusyCount:(int)arg1;
@@ -119,6 +123,8 @@
 - (void)setFocusAssetCollectionGUID:(id)arg1 forPersonID:(id)arg2;
 - (void)setIsRetryingOutstandingActivities:(BOOL)arg1;
 - (void)setMapQueue:(id)arg1;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id)arg4;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id)arg5;
 - (void)setNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 - (void)setNextUpdateDateByPersonID:(id)arg1;
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2 personID:(id)arg3;

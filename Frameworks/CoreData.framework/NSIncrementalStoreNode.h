@@ -17,9 +17,12 @@
 - (id)_snapshot_;
 - (unsigned int)_versionNumber;
 - (void)dealloc;
+- (id)description;
+- (id)initWithObjectID:(id)arg1 fromSQLRow:(id)arg2;
 - (id)initWithObjectID:(id)arg1 withValues:(id)arg2 version:(unsigned long long)arg3;
 - (const id*)knownKeyValuesPointer;
 - (id)objectID;
+- (void)updateFromSQLRow:(id)arg1;
 - (void)updateWithValues:(id)arg1 version:(unsigned long long)arg2;
 - (id)valueForPropertyDescription:(id)arg1;
 - (unsigned long long)version;

@@ -5,16 +5,21 @@
 @class EKEventStore, NSMutableDictionary, NSMutableSet;
 
 @interface EKPersistentObject : NSObject {
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
     NSMutableDictionary *_committedProperties;
     NSMutableSet *_dirtyProperties;
     EKEventStore *_eventStore;
     unsigned int _flags;
     struct __CFDictionary { } *_loadedProperties;
+    } _lock;
     id _objectID;
     NSMutableDictionary *_referencers;
 }
 
 @property(retain) NSMutableDictionary * committedProperties;
+@property(readonly) int entityType;
 @property(readonly) EKEventStore * eventStore;
 
 + (id)defaultPropertiesToLoad;
@@ -30,7 +35,7 @@
 - (BOOL)_isPendingDelete;
 - (BOOL)_isPendingInsert;
 - (BOOL)_isPendingUpdate;
-- (id)_loadChildIdentifiersForKey:(id)arg1;
+- (BOOL)_loadChildIdentifiersForKey:(id)arg1 values:(id*)arg2;
 - (void)_loadDefaultPropertiesIfNeeded;
 - (BOOL)_loadRelationForKey:(id)arg1 value:(id*)arg2;
 - (id)_loadStringValueForKey:(id)arg1;
@@ -50,7 +55,7 @@
 - (void)_setPendingUpdate:(BOOL)arg1;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
 - (BOOL)_shouldRetainPropertyForKey:(id)arg1;
-- (void)_takeValuesForDefaultProperties:(id)arg1;
+- (void)_takeValuesForDefaultProperties:(id)arg1 inSet:(id)arg2;
 - (void)changed;
 - (id)committedProperties;
 - (id)committedValueForKey:(id)arg1;

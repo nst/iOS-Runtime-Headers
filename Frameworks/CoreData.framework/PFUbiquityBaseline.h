@@ -38,8 +38,10 @@
 + (id)createArchiveWithModel:(id)arg1 metadata:(id)arg2 storeFilenameToData:(id)arg3 storeFilename:(id)arg4 error:(id*)arg5;
 + (id)createBaselineGCModelForStoreName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3;
 + (id)createBaselineOptimizedModelForStoreName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3;
-+ (id)createModelFromBaselineModelWithStoreMetadata:(id)arg1;
++ (id)createModelFromBaselineModelWithModelVersionHash:(id)arg1 storeName:(id)arg2 andUbiquityRootLocation:(id)arg3;
++ (id)createStringOfContentsOfBaselineFile:(id)arg1;
 + (BOOL)enoughTransactionsHavePassedToRollBaseline:(id)arg1 withLocalPeerID:(id)arg2 error:(id*)arg3;
++ (BOOL)isPeerReceiptTooOld:(id)arg1;
 + (BOOL)logsConsumeEnoughDiskSpaceToRollBaseline:(id)arg1 withLocalPeerID:(id)arg2 andStoreURL:(id)arg3 error:(id*)arg4;
 + (id)metadataFromBaselineArchive:(id)arg1;
 + (id)metadataFromCurrentBaselineForStoreWithName:(id)arg1 modelVersionHash:(id)arg2 andUbiquityRootLocation:(id)arg3 withError:(id*)arg4;
@@ -49,6 +51,7 @@
 + (void)setNumRequiredTransactionsForBaselineRoll:(unsigned int)arg1;
 + (void)setRequiredFractionOfDiskSpaceUsedForLogs:(/* Warning: Unrecognized filer type: 'D' using 'void*' */ void*)arg1;
 
+- (id)_createPersistentStoreCoordinatorForCurrentBaseline:(BOOL)arg1 error:(id*)arg2;
 - (id)baselineArchive;
 - (id)baselineArchiveLocation;
 - (id)baselineMetadataData;
@@ -58,16 +61,19 @@
 - (BOOL)clearOutStagingLocationWithError:(id*)arg1;
 - (BOOL)constructBaselineArchive:(id*)arg1;
 - (id)createManagedObjectModel;
+- (id)createManagedObjectModelFromCurrentBaseline;
+- (id)createPersistentStoreCoordinatorForCurrentBaseline:(id*)arg1;
+- (id)createSetOfInUseExternalDataRefUUIDs:(id*)arg1;
 - (void)dealloc;
 - (id)description;
 - (BOOL)gatherContentsAndConstructArchiveWithError:(id*)arg1;
 - (BOOL)gatherContentsFromMigratedBaseline:(id)arg1 withStoreFileURL:(id)arg2 error:(id*)arg3;
+- (id)gcModelData;
 - (BOOL)haveTransactionLogsForPeer:(id)arg1 between:(int)arg2 and:(int)arg3;
 - (BOOL)importBaselineForStoreAtURL:(id)arg1 ofType:(id)arg2 options:(id)arg3 withLocalPeerID:(id)arg4 stack:(id)arg5 andPersistentStoreCoordinator:(id)arg6 error:(id*)arg7;
 - (id)init;
 - (id)initWithBaselineLocation:(id)arg1 andLocalPeerID:(id)arg2;
 - (id)initWithLocalPeerID:(id)arg1 ubiquityRootLocation:(id)arg2 forStoreWithName:(id)arg3 andManagedObjectModel:(id)arg4;
-- (BOOL)initializeBaselineArchiveWithError:(id*)arg1;
 - (BOOL)isUploaded:(id*)arg1;
 - (BOOL)loadFileFromLocation:(id)arg1 error:(id*)arg2;
 - (BOOL)makeCurrentBaselineWithError:(id*)arg1;
@@ -76,8 +82,8 @@
 - (id)modelVersionHash;
 - (BOOL)moveToPermanentLocation:(id*)arg1;
 - (id)optimizedModelData;
-- (BOOL)prepareForBaselineRollOfPersistentStore:(id)arg1 withStoreMetadata:(id)arg2 andLocalPeerID:(id)arg3 error:(id*)arg4;
-- (id)regularModelData;
+- (BOOL)prepareForBaselineRollOfPersistentStore:(id)arg1 andLocalPeerID:(id)arg2 error:(id*)arg3;
+- (BOOL)removeUnusedExternalDataReferences:(id*)arg1;
 - (BOOL)replaceLocalPersistentStoreAtURL:(id)arg1 ofType:(id)arg2 withOptions:(id)arg3 usingPersistentStoreCoordinator:(id)arg4 error:(id*)arg5;
 - (void)setMetadata:(id)arg1;
 - (id)store;
@@ -86,6 +92,7 @@
 - (id)storeFilenameToData;
 - (id)storeName;
 - (BOOL)unpackStoreFilesToStagingLocation:(id*)arg1;
-- (BOOL)writeArchiveContentsToDiskAndMonitorUploadSynchronously:(BOOL)arg1 error:(id*)arg2;
+- (BOOL)updateCurrentStoreIdentifier:(id)arg1 error:(id*)arg2;
+- (BOOL)writeFileToLocation:(id)arg1 error:(id*)arg2;
 
 @end

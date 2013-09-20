@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class <MPImageCacheDelegate>, CPLRUDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface MPImageCache : NSObject <MPImageRequestDelegate> {
@@ -9,27 +13,28 @@
     CPLRUDictionary *_cachedImages;
     NSObject<OS_dispatch_queue> *_cachedImagesQueue;
     <MPImageCacheDelegate> *_delegate;
+    id _idleEventHandler;
     id _libraryDisplayValueChangeObserver;
     NSOperationQueue *_operationQueue;
     int _resumeToForegroundCacheSize;
-    int _retainCount;
     int _suspendToBackgroundCacheSize;
 }
 
 @property unsigned int cacheSize;
 @property <MPImageCacheDelegate> * delegate;
+@property(copy) id idleEventHandler;
 @property BOOL imageRequestsSuspended;
+@property(readonly) BOOL isIdle;
 @property id libraryDisplayValueChangeObserver;
 
+- (void).cxx_destruct;
 - (void)_cacheImage:(id)arg1 forKey:(id)arg2;
 - (id)_cachedImageForKey:(id)arg1;
 - (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_didReceiveMemoryWarningNotification:(id)arg1;
 - (void)_enqueueRequest:(id)arg1;
 - (id)_imageByApplyingModificationsForCachedImageForRequest:(id)arg1;
-- (BOOL)_isDeallocating;
 - (void)_removeCachedImageForKey:(id)arg1;
-- (BOOL)_tryRetain;
 - (void)_willEnterForegroundNotification:(id)arg1;
 - (void)_zapCache;
 - (void)_zapCachedPlaceholders;
@@ -37,22 +42,22 @@
 - (id)cachedImageForRequest:(id)arg1;
 - (void)cancelAllImageRequests;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)delegate;
+- (id)idleEventHandler;
 - (id)imageForRequest:(id)arg1 error:(id*)arg2;
-- (id)imageForRequest:(id)arg1 fetchIfNecessary:(BOOL)arg2 waitUntilFetched:(BOOL)arg3;
-- (id)imageForRequest:(id)arg1 fetchIfNecessary:(BOOL)arg2;
 - (void)imageRequest:(id)arg1 failedWithError:(id)arg2;
 - (void)imageRequest:(id)arg1 loadedImage:(id)arg2;
 - (BOOL)imageRequestsSuspended;
 - (id)init;
+- (BOOL)isIdle;
 - (id)libraryDisplayValueChangeObserver;
 - (void)loadImageForRequest:(id)arg1 asynchronously:(BOOL)arg2 completionHandler:(id)arg3;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setCacheSize:(unsigned int)arg1 preserveExisting:(BOOL)arg2;
 - (void)setCacheSize:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIdleEventHandler:(id)arg1;
 - (void)setImageRequestsSuspended:(BOOL)arg1;
 - (void)setLibraryDisplayValueChangeObserver:(id)arg1;
 

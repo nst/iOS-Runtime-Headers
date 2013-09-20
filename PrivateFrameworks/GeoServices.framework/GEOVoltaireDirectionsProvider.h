@@ -5,6 +5,7 @@
 @class GEORequester;
 
 @interface GEOVoltaireDirectionsProvider : GEODirectionsProvider <PBRequesterDelegate> {
+    BOOL _cancelled;
     GEORequester *_requester;
 }
 

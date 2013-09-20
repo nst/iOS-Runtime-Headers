@@ -8,6 +8,7 @@
 }
 
 @property(retain) SAUIAddViews * alternativePunchOut;
+@property BOOL appAvailableInStorefront;
 @property(copy) NSString * appDisplayName;
 @property(retain) SAUIImageResource * appIcon;
 @property(copy) NSDictionary * appIconMap;
@@ -22,8 +23,10 @@
 + (id)appPunchOutWithDictionary:(id)arg1 context:(id)arg2;
 
 - (void)afui_getInstallAppPunchoutWithCompletion:(id)arg1;
+- (id)afui_punchOutAppNotAvailableViews;
 - (id)afui_punchOutFailureViews;
 - (id)alternativePunchOut;
+- (BOOL)appAvailableInStorefront;
 - (id)appDisplayName;
 - (id)appIcon;
 - (id)appIconMap;
@@ -37,6 +40,7 @@
 - (id)punchOutUri;
 - (BOOL)requiresResponse;
 - (void)setAlternativePunchOut:(id)arg1;
+- (void)setAppAvailableInStorefront:(BOOL)arg1;
 - (void)setAppDisplayName:(id)arg1;
 - (void)setAppIcon:(id)arg1;
 - (void)setAppIconMap:(id)arg1;

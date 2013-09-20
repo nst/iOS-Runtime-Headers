@@ -9,12 +9,11 @@
     UILabel *_titleView;
     UILabel *_value2View;
     UILabel *_valueView;
-    unsigned int _visibleItems;
 }
 
 @property(readonly) unsigned int visibleItems;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (int)style;

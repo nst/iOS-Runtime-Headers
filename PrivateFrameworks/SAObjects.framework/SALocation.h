@@ -55,6 +55,8 @@
 - (void)setSubThoroughfare:(id)arg1;
 - (void)setThoroughfare:(id)arg1;
 - (void)setTimezoneId:(id)arg1;
+- (id)siriui_coreLocationRepresentation;
+- (id)siriui_mapKitAddressDictionaryRepresentation;
 - (id)stateCode;
 - (id)street;
 - (id)subThoroughfare;

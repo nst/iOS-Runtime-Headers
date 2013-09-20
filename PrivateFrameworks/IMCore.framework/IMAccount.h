@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMHandle, IMPeople, IMServiceImpl, NSArray, NSAttributedString, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString;
+@class IMHandle, IMPeople, IMServiceImpl, NSArray, NSAttributedString, NSData, NSDate, NSDictionary, NSMutableDictionary, NSRecursiveLock, NSString;
 
 @interface IMAccount : NSObject <IMSystemMonitorListener> {
     id _accountImage;
@@ -38,6 +38,8 @@
     BOOL _isActive;
     BOOL _justLoggedIn;
     NSArray *_lastReceivedGroupState;
+    NSMutableDictionary *_localCache;
+    NSRecursiveLock *_lock;
     NSString *_loginID;
     IMHandle *_loginIMHandle;
     unsigned int _loginStatus;
@@ -64,6 +66,7 @@
     NSArray *_targetGroupState;
     NSString *_uniqueID;
     BOOL _useMeCardName;
+    NSArray *_vettedAliases;
 }
 
 @property(readonly) BOOL _isUsableForSending;
@@ -166,7 +169,7 @@
 - (void)_ensureGroupsExists:(id)arg1;
 - (void)_handleDeliveredCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
 - (void)_handleIncomingCommand:(id)arg1 withProperties:(id)arg2 fromBuddyInfo:(id)arg3;
-- (void)_handleIncomingData:(id)arg1 fromBuddyInfo:(id)arg2;
+- (id)_imHandleWithID:(id)arg1 alreadyCanonical:(BOOL)arg2 knownIDStatus:(int)arg3 originalID:(id)arg4 countryCode:(id)arg5;
 - (BOOL)_isUsableForSending;
 - (void)_loadFromDictionary:(id)arg1 force:(BOOL)arg2;
 - (void)_loginWithAutoLogin:(BOOL)arg1;
@@ -176,13 +179,20 @@
 - (id)_persistentPropertyForKey:(id)arg1;
 - (void)_refreshLoginIMHandle;
 - (void)_registrationStatusChanged:(id)arg1;
+- (void)_removeObjectForKey:(id)arg1;
 - (void)_removePersistentPropertyForKey:(id)arg1;
 - (void)_resumeBuddyUpdatesNow;
 - (id)_serverWithSSL:(BOOL)arg1;
 - (void)_serviceDidConnect:(id)arg1;
 - (void)_serviceDidDisconnect:(id)arg1;
 - (void)_serviceDidReconnect:(id)arg1;
+- (void)_setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)_setDictionaryData:(id)arg1 forKey:(id)arg2;
+- (void)_setInteger:(int)arg1 forKey:(id)arg2;
+- (void)_setLocalCachedObject:(id)arg1 forKey:(id)arg2;
+- (void)_setObject:(id)arg1 forKey:(id)arg2;
 - (void)_setPersistentPropertyObject:(id)arg1 forKey:(id)arg2;
+- (void)_setString:(id)arg1 forKey:(id)arg2;
 - (id)_statuses;
 - (void)_syncWithRemoteBuddies;
 - (BOOL)_updateDisplayName:(id)arg1;
@@ -338,7 +348,6 @@
 - (id)propertiesForGroup:(id)arg1;
 - (void)recalculateSubtypeInfo;
 - (id)recalculatedSubtypeInfo;
-- (BOOL)refreshVettedAliases;
 - (BOOL)registerAccount;
 - (void)registerIMHandle:(id)arg1;
 - (id)registrationFailureAlertInfo;

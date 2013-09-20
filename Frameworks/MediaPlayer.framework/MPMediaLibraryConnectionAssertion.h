@@ -11,6 +11,7 @@
 
 @property(readonly) NSString * identifier;
 
+- (void).cxx_destruct;
 - (id)_initWithMediaLibrary:(id)arg1 identifier:(id)arg2;
 - (void)dealloc;
 - (id)description;

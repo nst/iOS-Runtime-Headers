@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLMesh, VGLRenderState, VKAnimation;
+@class VGLMesh, VGLRenderState, VKMapModel, VKStylesheet;
 
-@interface VKGridModel : VKModelObject <VKMapLayer> {
+@interface VKGridModel : VKModelObject <VKMapLayer, VKStylesheetObserver> {
     struct { 
         double v[4][4]; 
     struct { 
         double v[4][4]; 
-    struct { 
+    struct Vec2Imp<float> { 
         float x; 
         float y; 
     struct _VGLColor { 
@@ -22,30 +22,39 @@
         float g; 
         float b; 
         float a; 
-    } _color;
-    VKAnimation *_colorAnimation;
+    } _fillColor;
     double _gridMix;
     } _gridView;
     } _invFwidth;
     } _lineColor;
+    VKMapModel *_mapModel;
     VGLMesh *_mesh;
     } _projection;
     VGLRenderState *_renderState;
     BOOL _simpleGridEnabled;
 }
 
-@property struct _VGLColor { float x1; float x2; float x3; float x4; } color;
+@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } fillColor;
+@property VKMapModel * mapModel;
 @property BOOL simpleGridEnabled;
+@property(readonly) VKStylesheet * stylesheet;
 
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
++ (BOOL)reloadOnStylesheetChange;
+
+- (id).cxx_construct;
 - (void)dealloc;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })fillColor;
 - (id)init;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
-- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1 animated:(BOOL)arg2;
-- (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (id)mapModel;
+- (void)setMapModel:(id)arg1;
 - (void)setSimpleGridEnabled:(BOOL)arg1;
 - (BOOL)simpleGridEnabled;
+- (id)stylesheet;
+- (void)stylesheetDidChange;
+- (unsigned int)supportedRenderPasses;
+- (void)updateGridColor;
 
 @end

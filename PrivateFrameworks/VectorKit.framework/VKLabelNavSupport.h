@@ -6,33 +6,41 @@
    See Warning(s) below.
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, VKLabelNavRoadGraph, VKPolylineOverlayPainter;
 
 @interface VKLabelNavSupport : NSObject {
-    struct { 
+    struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    struct vector<std::__1::shared_ptr<vk::Label>, vk_allocator<std::__1::shared_ptr<vk::Label>> > { 
-        struct shared_ptr<vk::Label> {} *__begin_; 
-        struct shared_ptr<vk::Label> {} *__end_; 
-        struct __compressed_pair<std::__1::shared_ptr<vk::Label> *, vk_allocator<std::__1::shared_ptr<vk::Label>> > { 
-            struct shared_ptr<vk::Label> {} *__first_; 
+    struct vector<std::__1::shared_ptr<vk::NavLabel>, vk_allocator<std::__1::shared_ptr<vk::NavLabel> > > { 
+        struct shared_ptr<vk::NavLabel> {} *__begin_; 
+        struct shared_ptr<vk::NavLabel> {} *__end_; 
+        struct __compressed_pair<std::__1::shared_ptr<vk::NavLabel> *, vk_allocator<std::__1::shared_ptr<vk::NavLabel> > > { 
+            struct shared_ptr<vk::NavLabel> {} *__first_; 
         } __end_cap_; 
-    struct { 
+    struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    struct { 
+    struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
     } _activeSigns;
     BOOL _checkIfRouteSubrangeChanged;
+    BOOL _checkOnRouteLabelsAlignment;
     int _countVisibleRoadSigns;
     NSString *_currentLocationText;
     NSString *_currentRoadName;
     int _currentRoadNameIndex;
     NSString *_currentShieldGroup;
+    BOOL _disableTileParseForOneLayout;
     BOOL _drawRoadSigns;
     NSMutableArray *_fadingLabels;
+    NSMutableArray *_guidanceStepInfos;
     BOOL _isOnRoute;
     NSMutableArray *_junctions;
     BOOL _needsLayout;
@@ -51,35 +59,37 @@
     NSMutableDictionary *_visibleLabelsByName;
 }
 
-@property(readonly) const /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<vk::Label>' */ struct * activeSigns; /* unknown property attribute:  vk_allocator<std::__1::shared_ptr<vk::Label>> >=^{shared_ptr<vk::Label>}}} */
+@property(readonly) const /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<vk::NavLabel>' */ struct * activeSigns; /* unknown property attribute:  vk_allocator<std::__1::shared_ptr<vk::NavLabel> > >=^{shared_ptr<vk::NavLabel>}}} */
 @property(retain) NSString * currentLocationText;
 @property(retain) NSString * currentRoadName;
 @property(retain) NSString * currentShieldGroup;
 @property BOOL drawRoadSigns;
 @property(readonly) BOOL needsLayout;
 @property(retain) VKPolylineOverlayPainter * route;
-@property struct { unsigned int x1; float x2; } routeUserOffset;
+@property struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_addJunctionsForTile:(id)arg1;
-- (void)_addLabelsForJunctions:(id)arg1 withContext:(struct LabelContext { id x1; id x2; id x3; id x4; struct ViewTransform {} *x5; int x6; int x7; unsigned int x8; float x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; double x_17_1_4; } x17; struct { float x_18_1_1; float x_18_1_2; float x_18_1_3; float x_18_1_4; } x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; struct { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; int x21; }*)arg2 maxVisibleLabels:(unsigned int)arg3 useAllJunctions:(BOOL)arg4;
+- (void)_addLabelsAtJunctions:(id)arg1 withContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2 maxVisibleLabels:(unsigned int)arg3;
+- (void)_addLabelsForJunctions:(id)arg1 withContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2 maxVisibleLabels:(unsigned int)arg3 useAllJunctions:(BOOL)arg4 placeShieldsFrontToBack:(BOOL)arg5;
 - (BOOL)_collideLabel:(id)arg1 activeLabel:(id)arg2 labelsToRemove:(id)arg3;
 - (BOOL)_findRouteOverlappingJunctionFrom:(int)arg1 routeJunctions:(struct vector<RouteJunctionInfo, vk_allocator<RouteJunctionInfo> > { struct RouteJunctionInfo {} *x1; struct RouteJunctionInfo {} *x2; struct __compressed_pair<RouteJunctionInfo *, vk_allocator<RouteJunctionInfo> > { struct RouteJunctionInfo {} *x_3_1_1; } x3; }*)arg2 lookBackward:(BOOL)arg3 firstOverlap:(int*)arg4 secondOverlap:(int*)arg5;
 - (void)_initalizeCurrentRoadInfo;
 - (void)_refreshGuidanceRoadNames;
 - (void)_reloadRouteJunctions;
-- (void)_setTiles:(id)arg1;
-- (void)_tryAddLabel:(id)arg1 labelContext:(struct LabelContext { id x1; id x2; id x3; id x4; struct ViewTransform {} *x5; int x6; int x7; unsigned int x8; float x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; double x_17_1_4; } x17; struct { float x_18_1_1; float x_18_1_2; float x_18_1_3; float x_18_1_4; } x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; struct { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; int x21; }*)arg2 labelCollisionEnabled:(BOOL)arg3;
-- (void)_tryAddRoadSignForRoad:(id)arg1 isShield:(BOOL)arg2 labelContext:(struct LabelContext { id x1; id x2; id x3; id x4; struct ViewTransform {} *x5; int x6; int x7; unsigned int x8; float x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; double x_17_1_4; } x17; struct { float x_18_1_1; float x_18_1_2; float x_18_1_3; float x_18_1_4; } x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; struct { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; int x21; }*)arg3 labelCollisionEnabled:(BOOL)arg4;
+- (void)_tryAddLabel:(id)arg1 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2 labelCollisionEnabled:(BOOL)arg3;
+- (void)_tryAddRoadSignForJunction:(id)arg1 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2 labelCollisionEnabled:(BOOL)arg3;
+- (void)_tryAddRoadSignForRoad:(id)arg1 isShield:(BOOL)arg2 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg3 labelCollisionEnabled:(BOOL)arg4;
 - (BOOL)_updateActiveRouteRange;
 - (void)_updateCurrentRoadInfo;
 - (void)_updatePreferredLabelPlacements;
 - (void)_updateRoadStarts;
 - (void)_updateRoadsInGuidance;
 - (void)_updateUniqueOffRouteRoads;
-- (const struct vector<std::__1::shared_ptr<vk::Label>, vk_allocator<std::__1::shared_ptr<vk::Label>> > { struct shared_ptr<vk::Label> {} *x1; struct shared_ptr<vk::Label> {} *x2; struct __compressed_pair<std::__1::shared_ptr<vk::Label> *, vk_allocator<std::__1::shared_ptr<vk::Label>> > { struct shared_ptr<vk::Label> {} *x_3_1_1; } x3; }*)activeSigns;
-- (void)clearScene;
+- (const struct vector<std::__1::shared_ptr<vk::NavLabel>, vk_allocator<std::__1::shared_ptr<vk::NavLabel> > > { struct shared_ptr<vk::NavLabel> {} *x1; struct shared_ptr<vk::NavLabel> {} *x2; struct __compressed_pair<std::__1::shared_ptr<vk::NavLabel> *, vk_allocator<std::__1::shared_ptr<vk::NavLabel> > > { struct shared_ptr<vk::NavLabel> {} *x_3_1_1; } x3; }*)activeSigns;
+- (void)clearSceneIsMemoryWarning:(BOOL)arg1;
+- (unsigned char)computeRoutePositionMaskForPOIAtPixel:(const struct Vec2Imp<float> { float x1; float x2; }*)arg1 currentPositionMask:(unsigned char)arg2 context:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg3;
 - (id)currentLocationText;
 - (id)currentRoadName;
 - (id)currentShieldGroup;
@@ -88,15 +98,15 @@
 - (void)grabTilesFromScene:(id)arg1;
 - (id)init;
 - (BOOL)isNavMode;
-- (void)layoutWithLabelContext:(struct LabelContext { id x1; id x2; id x3; id x4; struct ViewTransform {} *x5; int x6; int x7; unsigned int x8; float x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; double x_17_1_4; } x17; struct { float x_18_1_1; float x_18_1_2; float x_18_1_3; float x_18_1_4; } x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; struct { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; int x21; }*)arg1;
+- (void)layoutWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
 - (BOOL)needsLayout;
 - (id)route;
-- (struct { unsigned int x1; float x2; })routeUserOffset;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeUserOffset;
 - (void)setCurrentLocationText:(id)arg1;
 - (void)setCurrentRoadName:(id)arg1;
 - (void)setCurrentShieldGroup:(id)arg1;
 - (void)setDrawRoadSigns:(BOOL)arg1;
 - (void)setRoute:(id)arg1;
-- (void)setRouteUserOffset:(struct { unsigned int x1; float x2; })arg1;
+- (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 
 @end

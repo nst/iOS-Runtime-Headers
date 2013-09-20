@@ -2,23 +2,22 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEditItemViewControllerDelegate>, EKEvent;
+@class <EKEditItemViewControllerDelegate>, EKDayView, EKEvent;
 
-@interface EKDayPreviewController : EKDayViewController <EKDayViewDelegate, EKEditItemViewControllerProtocol> {
+@interface EKDayPreviewController : UIViewController <EKDayViewDataSource, EKEditItemViewControllerProtocol> {
+    EKDayView *_dayView;
     EKEvent *_event;
 }
 
 @property <EKEditItemViewControllerDelegate> * editDelegate;
-@property(retain) EKEvent * event;
 
-- (void)_updateTitle;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (void)dealloc;
-- (id)event;
-- (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
+- (void).cxx_destruct;
+- (id)_eventsForStartDate:(id)arg1 endDate:(id)arg2;
+- (id)dayView:(id)arg1 eventsForStartDate:(id)arg2 endDate:(id)arg3;
+- (id)initWithEvent:(id)arg1;
 - (void)loadView;
-- (void)setEvent:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

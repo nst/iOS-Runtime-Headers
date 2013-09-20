@@ -6,56 +6,79 @@
    See Warning(s) below.
  */
 
-@class <SKStoreProductViewControllerDelegate>, <SKStoreProductViewControllerDelegatePrivate>, NSDictionary, NSString, SKInvocationQueueProxy<SKUIServiceProductPageViewController>, SKRemoteProductViewController, _UIAsyncInvocation;
+@class <SKStoreProductViewControllerDelegate>, <SKStoreProductViewControllerDelegatePrivate>, GKGame, NSDictionary, NSString, SKInvocationQueueProxy<SKUIServiceProductPageViewController>, SKRemoteProductViewController, _UIAsyncInvocation;
 
 @interface SKStoreProductViewController : UIViewController {
+    NSString *_additionalBuyParameters;
     NSString *_affiliateIdentifier;
+    BOOL _automaticallyDismisses;
     _UIAsyncInvocation *_cancelRequest;
     NSString *_clientIdentifier;
     <SKStoreProductViewControllerDelegatePrivate> *_delegate;
     id _loadBlock;
+    int _originalStatusBarStyle;
     int _productPageStyle;
     SKRemoteProductViewController *_remoteViewController;
     NSDictionary *_scriptContextDictionary;
     SKInvocationQueueProxy<SKUIServiceProductPageViewController> *_serviceProxy;
+    BOOL _showsStoreButton;
 }
 
+@property(copy) id _gkCompletionHandler;
+@property(retain) GKGame * _gkGame;
+@property(copy) NSString * additionalBuyParameters;
 @property(copy) NSString * affiliateIdentifier;
+@property BOOL automaticallyDismisses;
 @property(copy) NSString * clientIdentifier;
 @property <SKStoreProductViewControllerDelegate> * delegate;
 @property int productPageStyle;
 @property(copy) NSDictionary * scriptContextDictionary;
+@property BOOL showsStoreButton;
 
 + (void)_validateURL:(id)arg1 withSheetInfo:(id)arg2 completionBlock:(id)arg3;
 + (void)getCanLoadURL:(id)arg1 completionBlock:(id)arg2;
++ (void)getCanLoadURL:(id)arg1 withURLBag:(id)arg2 completionBlock:(id)arg3;
 
 - (void)_addRemoteView;
 - (void)_didFinish;
 - (void)_didFinishWithResult:(int)arg1;
+- (id)_gkCompletionHandler;
+- (id)_gkGame;
 - (void)_loadDidFinishWithResult:(BOOL)arg1 error:(id)arg2;
 - (void)_presentPageWithRequest:(id)arg1 animated:(BOOL)arg2;
 - (void)_requestRemoteViewController;
 - (void)_resetRemoteViewController;
+- (void)_setLoadBlock:(id)arg1;
 - (void)_throwUnsupportedPresentationException;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
+- (id)additionalBuyParameters;
 - (id)affiliateIdentifier;
+- (BOOL)automaticallyDismisses;
 - (id)clientIdentifier;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)loadProductWithPageDictionary:(id)arg1 completionBlock:(id)arg2;
 - (void)loadProductWithParameters:(id)arg1 completionBlock:(id)arg2;
 - (void)loadProductWithRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)loadProductWithURL:(id)arg1 completionBlock:(id)arg2;
 - (void)loadView;
 - (int)productPageStyle;
 - (id)scriptContextDictionary;
+- (void)setAdditionalBuyParameters:(id)arg1;
 - (void)setAffiliateIdentifier:(id)arg1;
+- (void)setAutomaticallyDismisses:(BOOL)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setProductPageStyle:(int)arg1;
 - (void)setScriptContextDictionary:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setShowsStoreButton:(BOOL)arg1;
+- (void)set_gkCompletionHandler:(id)arg1;
+- (void)set_gkGame:(id)arg1;
+- (BOOL)showsStoreButton;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

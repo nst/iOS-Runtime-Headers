@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKAnnotation>, <VKAnnotationMarkerDelegate>, NSString, UICalloutView, UIPopoverController, UIView, VKAnchor, VKAnimation, VKAnnotationModel;
+@class <VKAnnotation>, <VKAnnotationMarkerDelegate>, NSString, UIView, VKAnchor, VKAnimation;
 
-@interface VKAnnotationMarker : VKAnnotationMarkerLayer <VKCalloutSource, VKAnchorDelegate, VKTrackableAnnotationPresentation> {
-    struct { 
+@interface VKAnnotationMarker : VKAnnotationMarkerLayer <VKAnchorDelegate, VKTrackableAnnotationPresentation, MKCalloutSource> {
+    struct VKPoint { 
         double x; 
         double y; 
         double z; 
-    struct { 
+    struct VKPoint { 
         double x; 
         double y; 
         double z; 
@@ -22,6 +22,8 @@
     struct { 
         int from; 
         int to; 
+        int fromDisplayStyle; 
+        int toDisplayStyle; 
         float fraction; 
     struct CGPoint { 
         float x; 
@@ -30,8 +32,6 @@
     BOOL _animatingToCoordinate;
     <VKAnnotation> *_annotation;
     } _calloutOffset;
-    UIPopoverController *_calloutPopoverController;
-    UICalloutView *_calloutView;
     BOOL _canShowCallout;
     VKAnimation *_coordinateAnimation;
     <VKAnnotationMarkerDelegate> *_delegate;
@@ -39,14 +39,12 @@
     BOOL _draggable;
     float _dropFraction;
     BOOL _followsTerrain;
-    UIView *_leftCalloutAccessoryView;
-    VKAnnotationModel *_model;
+    BOOL _hidden;
     } _presentationCoordinate;
     } _presentationPoint;
     } _projectedGroundPoint;
     } _projectedPoint;
     NSString *_reuseIdentifier;
-    UIView *_rightCalloutAccessoryView;
     BOOL _selected;
     } _styleTransitionState;
     BOOL _tracking;
@@ -56,25 +54,26 @@
 @property BOOL animatingToCoordinate;
 @property(retain) <VKAnnotation> * annotation;
 @property struct CGPoint { float x1; float x2; } calloutOffset;
-@property(retain) UIPopoverController * calloutPopoverController;
-@property(retain) UICalloutView * calloutView;
 @property(readonly) BOOL canAnimateIn;
 @property BOOL canShowCallout;
 @property <VKAnnotationMarkerDelegate> * delegate;
+@property(retain) UIView * detailCalloutAccessoryView;
 @property int dragState;
 @property(getter=isDraggable) BOOL draggable;
 @property float dropFraction;
 @property BOOL followsTerrain;
+@property BOOL hidden;
 @property(retain) UIView * leftCalloutAccessoryView;
-@property VKAnnotationModel * model;
 @property struct { double x1; double x2; } presentationCoordinate;
 @property struct CGPoint { float x1; float x2; } presentationPoint;
-@property struct { double x1; double x2; double x3; } projectedGroundPoint;
-@property struct { double x1; double x2; double x3; } projectedPoint;
+@property struct VKPoint { double x1; double x2; double x3; } projectedGroundPoint;
+@property struct VKPoint { double x1; double x2; double x3; } projectedPoint;
 @property(readonly) NSString * reuseIdentifier;
 @property(retain) UIView * rightCalloutAccessoryView;
 @property(getter=isSelected) BOOL selected;
-@property struct { int x1; int x2; float x3; } styleTransitionState;
+@property struct { int x1; int x2; int x3; int x4; float x5; } styleTransitionState;
+@property(readonly) NSString * subtitle;
+@property(readonly) NSString * title;
 @property(getter=isTracking) BOOL tracking;
 @property BOOL useScreenSpacePoint;
 
@@ -83,25 +82,27 @@
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)keyPathsForValuesAffectingTitle;
 
+- (id).cxx_construct;
+- (void)_setHiddenForOffscreen:(BOOL)arg1;
 - (id)anchorWithContext:(id)arg1;
-- (void)anchorWorldPointDidChange:(id)arg1;
+- (void)anchorWorldPointDidChange:(void*)arg1;
 - (void)animateFromCoordinate:(struct { double x1; double x2; })arg1 duration:(double)arg2;
 - (double)animateInWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 delay:(double)arg2 completionHandler:(id)arg3;
 - (BOOL)animatingToCoordinate;
 - (id)annotation;
-- (struct CGPoint { float x1; float x2; })calloutAnchorPointWithCanvasSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })calloutAnchorPointWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 canvasScale:(float)arg2 snapToPixels:(BOOL)arg3;
 - (struct CGPoint { float x1; float x2; })calloutOffset;
-- (id)calloutPopoverController;
-- (id)calloutView;
 - (BOOL)canAnimateIn;
 - (BOOL)canShowCallout;
 - (void)dealloc;
 - (id)debugAnchorPointString;
 - (id)delegate;
+- (id)detailCalloutAccessoryView;
 - (int)dragState;
 - (float)dropFraction;
 - (BOOL)followsTerrain;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameWithCanvasSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)hidden;
 - (id)init;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isDraggable;
@@ -109,42 +110,40 @@
 - (BOOL)isSelected;
 - (BOOL)isTracking;
 - (id)leftCalloutAccessoryView;
-- (id)model;
-- (struct { double x1; double x2; double x3; })pointInWorldWithContext:(id)arg1;
+- (struct VKPoint { double x1; double x2; double x3; })pointInWorldWithContext:(id)arg1;
 - (struct CGPoint { float x1; float x2; })pointToDropAtForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)prepareForReuse;
 - (struct { double x1; double x2; })presentationCoordinate;
 - (struct CGPoint { float x1; float x2; })presentationPoint;
-- (struct { double x1; double x2; double x3; })projectedGroundPoint;
-- (struct { double x1; double x2; double x3; })projectedPoint;
+- (struct VKPoint { double x1; double x2; double x3; })projectedGroundPoint;
+- (struct VKPoint { double x1; double x2; double x3; })projectedPoint;
 - (id)reuseIdentifier;
 - (id)rightCalloutAccessoryView;
-- (struct CGPoint { float x1; float x2; })screenPointToScrollRelativeToWithCanvasSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })screenPointToScrollRelativeToWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 canvasScale:(float)arg2;
 - (void)setAnimatingToCoordinate:(BOOL)arg1;
 - (void)setAnnotation:(id)arg1;
 - (void)setCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setCalloutPopoverController:(id)arg1;
-- (void)setCalloutView:(id)arg1;
 - (void)setCanShowCallout:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDetailCalloutAccessoryView:(id)arg1;
 - (void)setDragState:(int)arg1 animated:(BOOL)arg2;
 - (void)setDragState:(int)arg1;
 - (void)setDraggable:(BOOL)arg1;
 - (void)setDropFraction:(float)arg1;
 - (void)setFollowsTerrain:(BOOL)arg1;
+- (void)setHidden:(BOOL)arg1;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
-- (void)setModel:(id)arg1;
 - (void)setPresentationCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setPresentationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setProjectedGroundPoint:(struct { double x1; double x2; double x3; })arg1;
-- (void)setProjectedPoint:(struct { double x1; double x2; double x3; })arg1;
+- (void)setProjectedGroundPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
+- (void)setProjectedPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
-- (void)setStyleTransitionState:(struct { int x1; int x2; float x3; })arg1;
+- (void)setStyleTransitionState:(struct { int x1; int x2; int x3; int x4; float x5; })arg1;
 - (void)setTracking:(BOOL)arg1;
 - (void)setUseScreenSpacePoint:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })significantFrameWithCanvasSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct { int x1; int x2; float x3; })styleTransitionState;
+- (struct { int x1; int x2; int x3; int x4; float x5; })styleTransitionState;
 - (id)subtitle;
 - (id)title;
 - (BOOL)useScreenSpacePoint;

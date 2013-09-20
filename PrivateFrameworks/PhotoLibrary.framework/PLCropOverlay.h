@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCropOverlayBottomBar, PLCropOverlayCropView, PLToolbar, TPBottomDoubleButtonBar, TPButton, TPCameraButton, UIButton, UIImageView, UILabel, UIProgressHUD, UIView;
+@class CAMBottomBar, PLContactPhotoOverlay, PLCropOverlayBottomBar, PLCropOverlayCropView, PLCropOverlayWallpaperBottomBar, PLProgressHUD, TPBottomDoubleButtonBar, TPButton, TPCameraButton, UIButton, UIImageView, UILabel, UIToolbar, UIView;
 
 @interface PLCropOverlay : UIView {
     struct CGRect { 
@@ -21,15 +21,17 @@
     unsigned int _showsCropRegion : 1;
     unsigned int _controlsAreVisible : 1;
     unsigned int _isDisplayedInPopover : 1;
-    PLCropOverlayBottomBar *_bottomBar;
+    PLCropOverlayBottomBar *__bottomBar;
+    UIButton *__cameraCancelButton;
     UIImageView *_bottomShineView;
     UIButton *_cancelButton;
     TPButton *_cancelPushButton;
+    PLContactPhotoOverlay *_contactPhotoOverlay;
     } _cropRect;
     PLCropOverlayCropView *_cropView;
-    PLToolbar *_customToolbar;
+    UIToolbar *_customToolbar;
     id _delegate;
-    UIProgressHUD *_hud;
+    PLProgressHUD *_hud;
     int _mode;
     UIButton *_okButton;
     TPCameraButton *_okPushButton;
@@ -43,9 +45,16 @@
     UIView *_wildcatPickerTopView;
 }
 
+@property(readonly) PLCropOverlayBottomBar * _bottomBar;
+@property(readonly) UIButton * _cameraCancelButton;
+@property(retain) CAMBottomBar * cameraBottomBar;
+@property(readonly) PLContactPhotoOverlay * contactPhotoOverlay;
 @property BOOL previewMode;
+@property(readonly) PLCropOverlayWallpaperBottomBar * wallpaperBottomBar;
 
 - (void)_backgroundSavePhoto:(id)arg1;
+- (id)_bottomBar;
+- (id)_cameraCancelButton;
 - (void)_createCropView;
 - (void)_fadeOutCompleted:(id)arg1;
 - (id)_irisView;
@@ -54,19 +63,24 @@
 - (void)_playButtonPressed:(id)arg1;
 - (void)_savePhotoFinished:(id)arg1;
 - (void)_setMode:(int)arg1;
+- (void)_tappedBottomBarCancelButton:(id)arg1;
+- (void)_tappedBottomBarDoneButton:(id)arg1;
+- (void)_tappedBottomBarPlaybackButton:(id)arg1;
+- (void)_tappedBottomBarSetBothButton;
+- (void)_tappedBottomBarSetHomeButton;
+- (void)_tappedBottomBarSetLockButton;
 - (void)_updateCropRectInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateTitle;
 - (void)_updateToolbarItems:(BOOL)arg1;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(int)arg4;
 - (id)bottomBar;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bottomBarFrame;
+- (id)cameraBottomBar;
 - (void)cancelButtonClicked:(id)arg1;
+- (id)contactPhotoOverlay;
 - (BOOL)controlsAreVisible;
-- (void)cropOverlayBottomBarCancelButtonClicked:(id)arg1;
-- (void)cropOverlayBottomBarDoneButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarPauseButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarPlayButtonClicked:(id)arg1;
-- (void)cropOverlayBottomBarToggleButtonClicked:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (void)dealloc;
 - (void)didCapturePhoto;
@@ -79,20 +93,20 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertIrisView:(id)arg1;
+- (BOOL)isTelephonyUIMode:(int)arg1;
 - (void)layoutSubviews;
 - (int)mode;
-- (id)modeSwitch;
 - (void)okButtonClicked:(id)arg1;
 - (id)overlayContainerView;
 - (BOOL)previewMode;
 - (void)removeProgress;
+- (void)setCameraBottomBar:(id)arg1;
 - (void)setCancelButtonHidden:(BOOL)arg1;
 - (void)setCancelButtonTitle:(id)arg1;
 - (void)setControlsAreVisible:(BOOL)arg1;
 - (void)setCropRectVisible:(BOOL)arg1 duration:(float)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setModeSwitch:(id)arg1;
 - (void)setOKButtonColor:(int)arg1;
 - (void)setOKButtonShowsCamera:(BOOL)arg1;
 - (void)setOKButtonTitle:(id)arg1;
@@ -104,11 +118,10 @@
 - (void)setTitle:(id)arg1 okButtonTitle:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (void)setTitleHidden:(BOOL)arg1 animationDuration:(float)arg2;
-- (id)shutterButton;
 - (void)statusBarHeightDidChange:(id)arg1;
 - (id)telephonyUIBottomBar;
 - (id)telephonyUIShutterButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
-- (id)toggleButton;
+- (id)wallpaperBottomBar;
 
 @end

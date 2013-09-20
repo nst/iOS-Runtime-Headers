@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, NSMutableArray;
+@class NSArray, NSManagedObjectModel, NSMutableArray;
 
 @interface NSPersistentStoreCoordinator : NSObject <NSLocking> {
     struct _persistentStoreCoordinatorFlags { 
@@ -13,13 +13,12 @@
     id _externalRecordsHelper;
     } _flags;
     NSManagedObjectModel *_managedObjectModel;
-    NSMutableArray *_persistentStores;
-    void *_reserved;
+    long _miniLock;
+    NSArray *_persistentStores;
 }
 
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (Class)_classForPersistentStoreAtURL:(id)arg1;
-+ (BOOL)_melissaIsDebugging;
 + (void)_registerCoreDataStoreClass:(Class)arg1 forStoreType:(id)arg2;
 + (void)_registerDefaultStoreClassesAndTypes;
 + (Class)_storeClassForStoreType:(id)arg1;
@@ -27,9 +26,14 @@
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
 + (id)metadataForPersistentStoreOfType:(id)arg1 URL:(id)arg2 error:(id*)arg3;
++ (id)metadataForPersistentStoreOfType:(id)arg1 URL:(id)arg2 options:(id)arg3 error:(id*)arg4;
 + (void)registerStoreClass:(Class)arg1 forStoreType:(id)arg2;
 + (id)registeredStoreTypes;
++ (BOOL)removeUbiquitousContentAndPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreOfType:(id)arg2 URL:(id)arg3 error:(id*)arg4;
++ (BOOL)setMetadata:(id)arg1 forPersistentStoreOfType:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
++ (id)ubiquityStoreURLForStoreURL:(id)arg1 ubiquityIdentityToken:(id)arg2 localPeerID:(id)arg3 ubiquityName:(id)arg4;
++ (id)ubiquityStoreURLForStoreURL:(id)arg1 ubiquityIdentityToken:(id)arg2 ubiquityName:(id)arg3;
 
 - (id)URLForPersistentStore:(id)arg1;
 - (void)_addPersistentStore:(id)arg1 identifier:(id)arg2;
@@ -56,6 +60,7 @@
 - (BOOL)_removePersistentStore:(id)arg1;
 - (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id*)arg6;
 - (id)_retainedAllMigratedObjectsInStore:(id)arg1 toStore:(id)arg2;
+- (id)_retainedPersistentStores;
 - (id)_saveRequestForStore:(id)arg1 withContext:(id)arg2 originalRequest:(id)arg3 andOptimisticLocking:(id)arg4;
 - (void)_setIsRegisteredWithUbiquity:(BOOL)arg1;
 - (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
@@ -67,7 +72,9 @@
 - (void)lock;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
+- (id)managedObjectIDForURIRepresentation:(id)arg1 error:(id*)arg2;
 - (id)managedObjectIDForURIRepresentation:(id)arg1;
+- (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2 error:(id*)arg3;
 - (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned int)arg2;
 - (id)managedObjectModel;
 - (id)metadataForPersistentStore:(id)arg1;

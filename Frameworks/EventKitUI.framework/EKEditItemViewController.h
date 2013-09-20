@@ -29,10 +29,9 @@
 @property int subitem;
 @property int subsection;
 
+- (void).cxx_destruct;
 - (void)_saveAndDismissWithForce:(BOOL)arg1;
 - (void)cancel;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (id)editDelegate;
 - (BOOL)fitsPopoverWhenKeyboardActive;
@@ -40,6 +39,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)marginForTableView:(id)arg1;
 - (BOOL)modal;
+- (void)popIfNonModal;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)saveAndDismiss;
 - (void)saveAndDismissWithExtremePrejudice;
 - (void)setCell:(id)arg1 checked:(BOOL)arg2;
@@ -48,10 +49,10 @@
 - (void)setShowsDoneButton:(BOOL)arg1;
 - (void)setSubitem:(int)arg1;
 - (void)setSubsection:(int)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)showsDoneButton;
 - (int)subitem;
 - (int)subsection;
+- (unsigned int)supportedInterfaceOrientations;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;

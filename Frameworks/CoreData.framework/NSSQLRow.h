@@ -20,8 +20,6 @@
 - (id)copy;
 - (void)dealloc;
 - (id)description;
-- (id)entity;
-- (unsigned int)entityID;
 - (unsigned int)foreignEntityKeyForSlot:(unsigned int)arg1;
 - (long long)foreignKeyForSlot:(unsigned int)arg1;
 - (unsigned int)foreignOrderKeyForSlot:(unsigned int)arg1;
@@ -34,11 +32,13 @@
 - (struct _NSScalarObjectID { Class x1; }*)objectID;
 - (long long)optLock;
 - (long long)pk64;
-- (void)setForeignEntityKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
+- (void)setForeignEntityKeySlot:(unsigned int)arg1 entityKey:(unsigned int)arg2;
 - (void)setForeignKeySlot:(unsigned int)arg1 int64:(long long)arg2;
-- (void)setForeignOrderKeySlot:(unsigned int)arg1 unsigned:(unsigned int)arg2;
+- (void)setForeignOrderKeySlot:(unsigned int)arg1 orderKey:(unsigned int)arg2;
 - (void)setObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
 - (void)setOptLock:(long long)arg1;
+- (id)sqlEntity;
+- (unsigned int)sqlEntityID;
 - (id)valueForKey:(id)arg1;
 - (long long)version;
 

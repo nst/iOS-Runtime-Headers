@@ -5,7 +5,7 @@
 @class NSString;
 
 @interface MFPFont : NSObject {
-    unsigned long mFlags;
+    unsigned int mFlags;
     NSString *mName;
     float mSize;
     int mUnit;
@@ -13,9 +13,9 @@
 
 - (struct __CTFont { }*)createCTFontWithGraphics:(id)arg1;
 - (void)dealloc;
-- (unsigned long)flags;
+- (unsigned int)flags;
 - (id)name;
-- (void)setFlags:(unsigned long)arg1;
+- (void)setFlags:(unsigned int)arg1;
 - (void)setName:(id)arg1;
 - (void)setSize:(float)arg1;
 - (void)setUnit:(int)arg1;

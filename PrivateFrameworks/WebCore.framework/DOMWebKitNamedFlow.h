@@ -2,18 +2,25 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMNodeList;
+@class NSString;
 
 @interface DOMWebKitNamedFlow : DOMObject {
 }
 
-@property(readonly) DOMNodeList * contentNodes;
-@property(readonly) BOOL overflow;
+@property(readonly) int firstEmptyRegionIndex;
+@property(readonly) NSString * name;
+@property(readonly) BOOL overset;
 
-- (id)contentNodes;
+- (void)addEventListener:(id)arg1 listener:(id)arg2 useCapture:(BOOL)arg3;
 - (void)dealloc;
+- (BOOL)dispatchEvent:(id)arg1;
 - (void)finalize;
-- (id)getRegionsByContentNode:(id)arg1;
-- (BOOL)overflow;
+- (int)firstEmptyRegionIndex;
+- (id)getContent;
+- (id)getRegions;
+- (id)getRegionsByContent:(id)arg1;
+- (id)name;
+- (BOOL)overset;
+- (void)removeEventListener:(id)arg1 listener:(id)arg2 useCapture:(BOOL)arg3;
 
 @end

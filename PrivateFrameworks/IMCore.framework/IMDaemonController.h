@@ -63,7 +63,7 @@
 - (void)_blockUntilSendQueueIsEmpty;
 - (BOOL)_blocksConnectionAtResume;
 - (unsigned int)_capabilities;
-- (void)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned long long)arg2;
+- (void)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned int)arg2;
 - (void)_handleDaemonException:(id)arg1;
 - (id)_listenerID;
 - (void)_listenerSetUpdated;
@@ -116,7 +116,6 @@
 - (void)setMyProfile:(id)arg1;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2 forAccount:(id)arg3;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
-- (void)setPresenceValue:(id)arg1 forKey:(id)arg2 forAccount:(id)arg3;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;

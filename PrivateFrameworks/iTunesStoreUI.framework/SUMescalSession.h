@@ -17,6 +17,7 @@
 @property(getter=isComplete,readonly) BOOL complete;
 
 - (id)_newDataWithBytes:(char *)arg1 length:(unsigned long)arg2;
+- (void)_teardownSession;
 - (void)dealloc;
 - (id)exchangeData:(id)arg1 error:(id*)arg2;
 - (id)init;

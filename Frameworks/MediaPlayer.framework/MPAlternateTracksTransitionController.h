@@ -11,7 +11,7 @@
 
 @property MPVideoViewController * videoController;
 
-- (void)_animationDidStop;
+- (void).cxx_destruct;
 - (void)performTransition:(unsigned int)arg1;
 - (void)setVideoController:(id)arg1;
 - (id)videoController;

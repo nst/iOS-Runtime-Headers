@@ -23,6 +23,7 @@
 - (void)dealloc;
 - (BOOL)isOld;
 - (void)pause;
+- (void)prioritize;
 - (void)publish;
 - (void)resignCurrent;
 - (void)setCancellable:(BOOL)arg1;
@@ -32,6 +33,8 @@
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setPausable:(BOOL)arg1;
 - (void)setPausingHandler:(id)arg1;
+- (void)setPrioritizable:(BOOL)arg1;
+- (void)setPrioritizationHandler:(id)arg1;
 - (void)setTotalUnitCount:(long long)arg1;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)unpublish;

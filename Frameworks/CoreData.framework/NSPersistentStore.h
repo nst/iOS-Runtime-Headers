@@ -40,6 +40,7 @@
 - (void)_preflightCrossCheck;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)_rawMetadata__;
+- (void)_resetObjectIDFactoriesForStoreUUIDChange;
 - (void)_setMetadataDirty:(BOOL)arg1;
 - (id)_storeInfoForEntityDescription:(id)arg1;
 - (BOOL)_unload:(id*)arg1;

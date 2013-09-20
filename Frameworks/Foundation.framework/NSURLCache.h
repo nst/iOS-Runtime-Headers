@@ -28,6 +28,7 @@
 - (void)_diskCacheSetSyncTimer;
 - (void)_diskCacheSync;
 - (void)_diskCacheTruncate:(unsigned int)arg1;
+- (id)_initWithExistingCFURLCache:(struct _CFURLCache { }*)arg1;
 - (void)_memoryCacheAppendNodeToLRUList:(id)arg1;
 - (void)_memoryCacheClear;
 - (id)_memoryCacheGet:(id)arg1;

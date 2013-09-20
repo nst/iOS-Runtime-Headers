@@ -3,14 +3,15 @@
  */
 
 @interface ABCapabilitiesManager : NSObject {
-    BOOL _isListeningToFTCServiceAvailability;
+    BOOL _isListeningToIDSServiceAvailability;
 }
 
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;
 
-- (void)_startListeningToFTCServiceAvailabilityIfNecessary;
-- (void)addFTCServiceAvailabilityListener:(id)arg1 selector:(SEL)arg2;
+- (BOOL)_isAppAvailable:(id)arg1;
+- (void)_startListeningToIDSServiceAvailabilityIfNecessary;
+- (void)addIDSServiceAvailabilityListener:(id)arg1 selector:(SEL)arg2;
 - (id)conferenceURLForDestinationID:(id)arg1;
 - (id)conferenceURLForPhoneNumber:(id)arg1;
 - (void)dealloc;
@@ -20,16 +21,22 @@
 - (BOOL)hasCellularTelephonyCapability;
 - (BOOL)hasPreviouslyConferencedWithID:(id)arg1;
 - (BOOL)hasSMSCapability;
+- (BOOL)hasSiriCapability;
 - (BOOL)hasTelephonyCapability;
 - (BOOL)hasVibratorCapability;
 - (BOOL)isConferencingAvailable;
 - (BOOL)isConferencingEverGonnaBeAvailable;
 - (BOOL)isEmailConfigured;
+- (BOOL)isFaceTimeAppAvailable;
+- (BOOL)isFaceTimeAudioAvailable;
 - (BOOL)isMMSConfigured;
 - (BOOL)isMadridConfigured;
+- (BOOL)isMailAppAvailable;
+- (BOOL)isMessagesAppAvailable;
+- (BOOL)isPhoneAppAvailable;
 - (BOOL)isSensitiveUIAllowed;
 - (BOOL)isTwitterServiceAvailable;
 - (BOOL)isWeiboServiceAvailable;
-- (void)removeFTCServiceAvailabilityListener:(id)arg1;
+- (void)removeIDSServiceAvailabilityListener:(id)arg1;
 
 @end

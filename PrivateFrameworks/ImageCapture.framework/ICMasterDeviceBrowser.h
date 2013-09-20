@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class MSCameraDeviceManager, NSMutableArray, PTPCameraDeviceManager;
+@class ExFATCameraDeviceManager, MSCameraDeviceManager, NSMutableArray, PTPCameraDeviceManager;
 
 @interface ICMasterDeviceBrowser : NSObject {
     NSMutableArray *_browsers;
     NSMutableArray *_devices;
+    ExFATCameraDeviceManager *_exFATManager;
     MSCameraDeviceManager *_msDevManager;
     int _numberOfBrowsingBrowsers;
     PTPCameraDeviceManager *_ptpDevManager;
@@ -19,9 +20,9 @@
 + (BOOL)exists;
 
 - (void)addBrowser:(id)arg1;
+- (int)addExFATCamera:(id)arg1;
 - (int)addMSCamera:(id)arg1;
 - (int)addPTPCamera:(id)arg1;
-- (int)addRemoveMSCamera;
 - (id)browsers;
 - (void)dealloc;
 - (id)deviceWithDelegate:(id)arg1;

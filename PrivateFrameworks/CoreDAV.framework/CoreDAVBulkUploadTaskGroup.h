@@ -53,7 +53,6 @@
 - (void)startTaskGroup;
 - (void)syncAway;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
-- (void)taskGroupWillCancelWithError:(id)arg1;
 - (id)uuidToErrorItems;
 - (id)uuidToHREF;
 - (id)uuidToStatus;

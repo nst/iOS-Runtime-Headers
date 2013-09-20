@@ -5,6 +5,6 @@
 @interface StepByStepUIViewController_ExtendWired_Config : StepByStepUIViewController_ExtendWireless_Config {
 }
 
-- (void)viewDidLoad;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

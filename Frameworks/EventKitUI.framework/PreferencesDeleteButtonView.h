@@ -10,11 +10,10 @@
 
 @property(readonly) UIButton * button;
 
-+ (float)defaultHeight;
-
+- (void).cxx_destruct;
 - (id)button;
-- (void)dealloc;
 - (id)initWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 - (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

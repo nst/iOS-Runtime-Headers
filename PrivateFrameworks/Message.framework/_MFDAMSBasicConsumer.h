@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class ActivityMonitor, MFDAMailbox, MFDAMessageStore, MFError, MFMailMessageLibrary;
+@class MFActivityMonitor, MFDAMailbox, MFDAMessageStore, MFError, MFMailMessageLibrary;
 
 @interface _MFDAMSBasicConsumer : MFBufferedQueue {
     MFError *error;
     MFMailMessageLibrary *library;
     MFDAMailbox *mailbox;
-    ActivityMonitor *monitor;
+    MFActivityMonitor *monitor;
     unsigned int numNewMessages;
     MFDAMessageStore *store;
 }
 
 @property(retain) MFError * error;
-@property(retain) ActivityMonitor * monitor;
+@property(retain) MFActivityMonitor * monitor;
 
 - (void)dealloc;
 - (id)error;

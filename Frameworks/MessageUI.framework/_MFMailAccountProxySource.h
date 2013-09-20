@@ -7,6 +7,7 @@
 @interface _MFMailAccountProxySource : NSObject {
     NSArray *_accountProxies;
     NSLock *_lock;
+    int _notifyToken;
     BOOL _registeredForNotifications;
 }
 
@@ -16,7 +17,7 @@
 - (void)_deregisterForNotifications_nts;
 - (void)_registerForNotifications_nts;
 - (void)_resetAccountsChanged:(BOOL)arg1;
-- (id)accountProxies;
+- (id)accountProxiesOriginatingBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
 - (void)dealloc;
 - (id)init;
 

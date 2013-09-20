@@ -13,6 +13,7 @@
     unsigned int _hideHighlight : 1;
     UIColor *_bottomBorderColor;
     SUTableCellContentView *_configurationView;
+    int _editState;
     SUItemOfferButton *_itemOfferButton;
     } _position;
     UIColor *_topBorderColor;
@@ -23,6 +24,7 @@
 @property(readonly) UIBezierPath * clippingPath;
 @property(retain) SUCellConfiguration * configuration;
 @property BOOL drawAsDisabled;
+@property int editState;
 @property BOOL highlightsOnlyContentView;
 @property(readonly) SUItemOfferButton * itemOfferButton;
 @property struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;
@@ -39,6 +41,7 @@
 - (void)dealloc;
 - (BOOL)drawAsDisabled;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)editState;
 - (BOOL)highlightsOnlyContentView;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
@@ -49,6 +52,7 @@
 - (void)setClipCorners:(int)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDrawAsDisabled:(BOOL)arg1;
+- (void)setEditState:(int)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlightsOnlyContentView:(BOOL)arg1;

@@ -2,97 +2,132 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSString, VKLabelNavJunction, VKLabelNavRoadLabel, VKLabelTile;
 
-@interface VKLabelNavRoad : NSObject {
-    struct { 
+@interface VKLabelNavRoad : NSObject <VKLabelNavFeature> {
+    struct vector<geo::Vec2Imp<double>, vk_allocator<geo::Vec2Imp<double> > > { 
+        struct Vec2Imp<double> {} *__begin_; 
+        struct Vec2Imp<double> {} *__end_; 
+        struct __compressed_pair<geo::Vec2Imp<double> *, vk_allocator<geo::Vec2Imp<double> > > { 
+            struct Vec2Imp<double> {} *__first_; 
+        } __end_cap_; 
+    struct Vec2Imp<float> { 
         float x; 
         float y; 
-    struct { 
+    struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
     BOOL _areLabelsDisabled;
-    struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; unsigned int x6; unsigned int x7; struct { float x_8_1_1; float x_8_1_2; float x_8_1_3; float x_8_1_4; } x8; struct { /* ? */ } *x9; } *_data;
+    BOOL _areNavStylesInitialized;
+    struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; struct BRectImp<float> { struct Vec2Imp<float> { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct Vec2Imp<float> { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; } *_data;
     } _direction;
+    BOOL _hasVisibleShields;
+    BOOL _hasVisibleSigns;
     int _intraRoadPriority;
-    BOOL _isAwayFromRoute;
+    BOOL _isGuidanceStepStart;
     BOOL _isInGuidance;
+    BOOL _isOnRoute;
     BOOL _isRoadLabelUnique;
     BOOL _isStartOfRoadName;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } *_junctionA;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } *_junctionB;
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; } *_junctionA;
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; } *_junctionB;
     double _length;
     NSString *_name;
     VKLabelNavJunction *_navJunctionA;
-    BOOL _onRoute;
     VKLabelNavRoadLabel *_roadShield;
     VKLabelNavRoadLabel *_roadSign;
     float _routeCrossProduct;
     } _routeOffset;
     NSString *_shieldDisplayGroup;
     NSString *_shieldGroup;
+    } _simplifiedPoints;
+    BOOL _suppressRoadSignIfShieldPresent;
     VKLabelTile *_tile;
     int _vertexIndexA;
     int _vertexIndexB;
 }
 
 @property BOOL areLabelsDisabled;
-@property struct { float x1; float x2; } direction;
+@property(readonly) const char * cstrName;
+@property struct Vec2Imp<float> { float x1; float x2; } direction;
 @property int intraRoadPriority;
 @property(readonly) BOOL isAwayFromRoute;
+@property BOOL isGuidanceStepStart;
 @property BOOL isInGuidance;
+@property BOOL isOnRoute;
 @property(readonly) BOOL isOnewayToJunction;
 @property(readonly) BOOL isRamp;
 @property BOOL isRoadLabelUnique;
 @property BOOL isStartOfRoadName;
-@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }* junctionB;
+@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }* junctionB;
 @property(readonly) NSString * name;
-@property BOOL onRoute;
+@property(readonly) VKLabelNavJunction * navJunctionA;
+@property(readonly) int roadClass;
+@property(readonly) int roadSignAlignment;
 @property float routeCrossProduct;
-@property struct { unsigned int x1; float x2; } routeOffset;
+@property struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
 @property(readonly) NSString * shieldDisplayGroup;
 @property(readonly) NSString * shieldGroup;
 @property(readonly) BOOL suppressRoadSignIfShieldPresent;
 @property(readonly) VKLabelTile * tile;
 
 - (id).cxx_construct;
-- (id)_newLabelWithLabelContext:(struct LabelContext { id x1; id x2; id x3; id x4; struct ViewTransform {} *x5; int x6; int x7; unsigned int x8; float x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; double x_17_1_4; } x17; struct { float x_18_1_1; float x_18_1_2; float x_18_1_3; float x_18_1_4; } x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; struct { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; int x21; }*)arg1 isShieldLabel:(BOOL)arg2 worldPoint:(struct { double x1; double x2; double x3; })arg3;
-- (BOOL)_worldPointForRoadOffset:(float)arg1 worldPoint:(struct { double x1; double x2; double x3; }*)arg2;
+- (void).cxx_destruct;
+- (BOOL)_findLabelAnchorPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg1 isShieldLabel:(BOOL)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 roadGraph:(id)arg6;
+- (float)_findRoadOffsetForDistanceToRay:(float)arg1 rayStart:(struct VKPoint { double x1; double x2; double x3; })arg2 rayVector:(struct Vec2Imp<float> { float x1; float x2; })arg3 roadGraph:(id)arg4;
+- (id)_newLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 isShieldLabel:(BOOL)arg2 worldPoint:(struct VKPoint { double x1; double x2; double x3; })arg3 alignment:(int)arg4;
+- (BOOL)_worldPointForRoadOffset:(float)arg1 worldPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg2;
+- (void)_worldRoadPoints:(struct vector<geo::Vec2Imp<double>, vk_allocator<geo::Vec2Imp<double> > > { struct Vec2Imp<double> {} *x1; struct Vec2Imp<double> {} *x2; struct __compressed_pair<geo::Vec2Imp<double> *, vk_allocator<geo::Vec2Imp<double> > > { struct Vec2Imp<double> {} *x_3_1_1; } x3; }*)arg1;
+- (void)appendSimplifiedWorldRoadPoints:(struct vector<geo::Vec2Imp<double>, vk_allocator<geo::Vec2Imp<double> > > { struct Vec2Imp<double> {} *x1; struct Vec2Imp<double> {} *x2; struct __compressed_pair<geo::Vec2Imp<double> *, vk_allocator<geo::Vec2Imp<double> > > { struct Vec2Imp<double> {} *x_3_1_1; } x3; }*)arg1;
 - (BOOL)areLabelsDisabled;
 - (void)clearRoadSign;
-- (void)createLabelWithLabelContext:(struct LabelContext { id x1; id x2; id x3; id x4; struct ViewTransform {} *x5; int x6; int x7; unsigned int x8; float x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; double x_17_1_4; } x17; struct { float x_18_1_1; float x_18_1_2; float x_18_1_3; float x_18_1_4; } x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; struct { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; int x21; }*)arg1 isShieldLabel:(BOOL)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 roadGraph:(id)arg6;
+- (void)createLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 isShieldLabel:(BOOL)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 minRouteDistance:(float)arg6 roadGraph:(id)arg7;
 - (const char *)cstrName;
 - (void)dealloc;
 - (id)description;
-- (struct { float x1; float x2; })direction;
+- (struct Vec2Imp<float> { float x1; float x2; })direction;
 - (void)getRoadEdge:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1;
 - (BOOL)hasShield;
-- (id)initWithRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 navJunctionA:(id)arg2 routeOffset:(struct { unsigned int x1; float x2; })arg3 tile:(id)arg4;
+- (BOOL)hasVisibleShields;
+- (BOOL)hasVisibleSigns;
+- (id)initWithRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 navJunctionA:(id)arg2 routeOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg3 tile:(id)arg4;
 - (int)intraRoadPriority;
 - (BOOL)isAwayFromRoute;
+- (BOOL)isGuidanceStepStart;
 - (BOOL)isInGuidance;
+- (BOOL)isOnRoute;
 - (BOOL)isOnewayToJunction;
 - (BOOL)isRamp;
 - (BOOL)isRoadLabelUnique;
 - (BOOL)isStartOfRoadName;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)junctionB;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)junctionB;
 - (id)labelWithType:(BOOL)arg1;
 - (double)length;
 - (BOOL)matchesRoad:(id)arg1;
 - (BOOL)matchesRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1;
 - (id)name;
-- (BOOL)onRoute;
+- (id)navJunctionA;
+- (void)prepareStyleVarsWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
+- (void)recreateRoadSignWithAlignment:(int)arg1 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2;
+- (int)roadClass;
+- (int)roadSignAlignment;
 - (float)routeCrossProduct;
-- (struct { unsigned int x1; float x2; })routeOffset;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
 - (void)setAreLabelsDisabled:(BOOL)arg1;
-- (void)setDirection:(struct { float x1; float x2; })arg1;
+- (void)setDirection:(struct Vec2Imp<float> { float x1; float x2; })arg1;
 - (void)setIntraRoadPriority:(int)arg1;
+- (void)setIsGuidanceStepStart:(BOOL)arg1;
 - (void)setIsInGuidance:(BOOL)arg1;
+- (void)setIsOnRoute:(BOOL)arg1;
 - (void)setIsRoadLabelUnique:(BOOL)arg1;
 - (void)setIsStartOfRoadName:(BOOL)arg1;
-- (void)setOnRoute:(BOOL)arg1;
 - (void)setRouteCrossProduct:(float)arg1;
-- (void)setRouteOffset:(struct { unsigned int x1; float x2; })arg1;
+- (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (id)shieldDisplayGroup;
 - (id)shieldGroup;
 - (BOOL)suppressRoadSignIfShieldPresent;

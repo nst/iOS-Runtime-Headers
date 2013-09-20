@@ -2,18 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKSummaryLabel, NSDate, NSString, UIDateLabel, UIImageView, UILabel;
+@class NSDate, NSString, UIDateLabel, UIImageView, UILabel;
 
 @interface CKConversationListCell : UITableViewCell {
-    CKSummaryLabel *_backupSummaryLabel;
+    UIImageView *_chevronImageView;
     UIDateLabel *_dateLabel;
     UILabel *_fromLabel;
     UIImageView *_groupImageView;
     BOOL _isPlaceholder;
+    UIImageView *_recipientPhotoView;
     NSDate *_searchMessageDate;
     NSString *_searchMessageGUID;
     NSString *_searchSummaryText;
-    CKSummaryLabel *_summaryLabel;
+    UILabel *_summaryLabel;
     UIImageView *_unreadIndicatorImageView;
 }
 
@@ -24,22 +25,22 @@
 + (float)cellHeight;
 + (id)identifier;
 
-- (void)_createBackupSummaryLabel;
+- (void)_calculateLayoutFrames;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
-- (void)didTransitionToState:(unsigned int)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)searchMessageDate;
 - (id)searchMessageGUID;
 - (id)searchSummaryText;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSearchMessageDate:(id)arg1;
 - (void)setSearchMessageGUID:(id)arg1;
 - (void)setSearchSummaryText:(id)arg1;
+- (BOOL)showingEditControl;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateContentsForConversation:(id)arg1;
-- (void)updateFontSize;
 - (void)updateWithSearchResult:(id)arg1;
-- (void)willTransitionToState:(unsigned int)arg1;
 
 @end

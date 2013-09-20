@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBUUID, NSArray, NSData, NSNumber;
+@class CBUUID, NSArray, NSData, NSMutableArray, NSNumber;
 
 @interface CBMutableCharacteristic : CBCharacteristic {
     NSNumber *_ID;
     int _permissions;
+    NSMutableArray *_subscribedCentrals;
 }
 
 @property(retain) NSNumber * ID;
@@ -14,15 +15,21 @@
 @property(retain) NSArray * descriptors;
 @property int permissions;
 @property int properties;
+@property(readonly) NSArray * subscribedCentrals;
 @property(retain) NSData * value;
 
 - (id)ID;
+- (void)dealloc;
 - (id)description;
+- (BOOL)handleCentralSubscribed:(id)arg1;
+- (BOOL)handleCentralUnsubscribed:(id)arg1;
+- (id)initWithService:(id)arg1 dictionary:(id)arg2;
 - (id)initWithType:(id)arg1 properties:(int)arg2 value:(id)arg3 permissions:(int)arg4;
 - (int)permissions;
 - (void)setDescriptors:(id)arg1;
 - (void)setID:(id)arg1;
 - (void)setPermissions:(int)arg1;
 - (void)setProperties:(int)arg1;
+- (id)subscribedCentrals;
 
 @end

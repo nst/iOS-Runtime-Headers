@@ -23,6 +23,8 @@
 + (BOOL)isConnecting;
 + (BOOL)isScanningForLibraries;
 
+- (void).cxx_destruct;
+- (id)_cachedImagePathHomeSharingID:(unsigned int)arg1 pixelSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_fetchTokensForAuthorizedDSIDs;
 - (void)_fillContainerForQueryCriteria:(id)arg1 completionBlock:(id)arg2;
@@ -34,7 +36,6 @@
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2 progressHandler:(id)arg3;
 - (void)dealloc;
 - (void)disconnect;
-- (void)downloadItemWithIdentifier:(long long)arg1 completionHandler:(id)arg2;
 - (id)errorResolverForMediaItem:(id)arg1;
 - (BOOL)hasArtworkImageForItemWithIdentifier:(long long)arg1;
 - (BOOL)hasGeniusMixes;
@@ -43,21 +44,19 @@
 - (BOOL)isSupportedSharingVersion;
 - (id)itemResultSetForQueryCriteria:(id)arg1;
 - (void)loadArtworkImageForFormat:(int)arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
-- (void)loadBestArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
-- (void)loadBestTimedArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 atPlaybackTime:(double)arg3 completionBlock:(id)arg4;
-- (void)loadCoverFlowArtworkImageForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 completionBlock:(id)arg3;
+- (void)loadBestArtworkImageDataForSize:(struct CGSize { float x1; float x2; })arg1 ofItemWithIdentifier:(long long)arg2 atPlaybackTime:(double)arg3 completionBlock:(id)arg4;
 - (void)loadQueryCriteria:(id)arg1 countOfCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 countOfItemsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasCollectionsWithCompletionBlock:(id)arg2;
 - (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id)arg2;
 - (id)name;
-- (void)performUbiquitousDatabaseUpdateTransaction:(id)arg1;
 - (id)protectedContentSupportStorageURL;
 - (BOOL)requiresAuthentication;
 - (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3;
+- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkFormat:(int)arg2 artworkCacheID:(id)arg3;
+- (BOOL)shouldAsynchrounouslyLoadArtworkForItemWithIdentifier:(long long)arg1 artworkSize:(struct CGSize { float x1; float x2; })arg2 artworkCacheID:(id)arg3;
 - (id)uniqueIdentifier;
-- (void)updateUbiquitousValuesForTrackWithKey:(id)arg1 mediaPropertyValues:(id)arg2;
 
 @end

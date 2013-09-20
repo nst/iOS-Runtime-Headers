@@ -10,9 +10,9 @@
     UILabel *_titleView;
 }
 
+- (void).cxx_destruct;
 - (id)_organizerView;
 - (id)_titleView;
-- (void)dealloc;
 - (BOOL)hasCustomLayout;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;

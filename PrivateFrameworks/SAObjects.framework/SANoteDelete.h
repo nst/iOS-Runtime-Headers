@@ -4,11 +4,10 @@
 
 @class NSURL;
 
-@interface SANoteDelete : SABaseClientBoundCommand {
+@interface SANoteDelete : SADomainCommand {
 }
 
 @property(copy) NSURL * identifier;
-@property(copy) NSURL * targetAppId;
 
 + (id)delete;
 + (id)deleteWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)identifier;
 - (BOOL)requiresResponse;
 - (void)setIdentifier:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

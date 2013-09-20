@@ -9,7 +9,10 @@
     NSString *_serverHeader;
     NSString *_supportedCalendarComponentSets;
     BOOL _supportsAutoSchedule;
+    BOOL _supportsCalendarHomeSync;
     BOOL _supportsCalendarProxy;
+    BOOL _supportsCheckForValidEmail;
+    BOOL _supportsChecksumming;
     BOOL _supportsExtendedCalendarQuery;
     BOOL _supportsInboxAvailability;
     BOOL _supportsManagedAttachments;
@@ -31,7 +34,10 @@
 @property(copy) NSString * serverHeader;
 @property(copy) NSString * supportedCalendarComponentSets;
 @property BOOL supportsAutoSchedule;
+@property BOOL supportsCalendarHomeSync;
 @property BOOL supportsCalendarProxy;
+@property BOOL supportsCheckForValidEmail;
+@property BOOL supportsChecksumming;
 @property BOOL supportsExtendedCalendarQuery;
 @property BOOL supportsInboxAvailability;
 @property BOOL supportsManagedAttachments;
@@ -70,7 +76,10 @@
 - (void)setServerHeader:(id)arg1;
 - (void)setSupportedCalendarComponentSets:(id)arg1;
 - (void)setSupportsAutoSchedule:(BOOL)arg1;
+- (void)setSupportsCalendarHomeSync:(BOOL)arg1;
 - (void)setSupportsCalendarProxy:(BOOL)arg1;
+- (void)setSupportsCheckForValidEmail:(BOOL)arg1;
+- (void)setSupportsChecksumming:(BOOL)arg1;
 - (void)setSupportsExtendedCalendarQuery:(BOOL)arg1;
 - (void)setSupportsInboxAvailability:(BOOL)arg1;
 - (void)setSupportsManagedAttachments:(BOOL)arg1;
@@ -88,7 +97,10 @@
 - (void)setVersion:(double)arg1;
 - (id)supportedCalendarComponentSets;
 - (BOOL)supportsAutoSchedule;
+- (BOOL)supportsCalendarHomeSync;
 - (BOOL)supportsCalendarProxy;
+- (BOOL)supportsCheckForValidEmail;
+- (BOOL)supportsChecksumming;
 - (BOOL)supportsExtendedCalendarQuery;
 - (BOOL)supportsInboxAvailability;
 - (BOOL)supportsManagedAttachments;

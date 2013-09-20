@@ -16,7 +16,6 @@
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
-- (void)_cancelPartnerDetect;
 - (void)_cancelStartupTimer;
 - (void)_handleNetworkTypeChange:(id)arg1;
 - (void)_handleUsingNetworkChange:(id)arg1;
@@ -31,8 +30,6 @@
 - (void)checkPartnerAvailability;
 - (void)dealloc;
 - (id)init;
-- (void)operation:(id)arg1 failedWithError:(id)arg2;
-- (void)operationFinished:(id)arg1;
 - (id)partnerIdentifier;
 - (void)setPartnerIdentifier:(id)arg1;
 - (void)setPartnersEnabled:(BOOL)arg1;

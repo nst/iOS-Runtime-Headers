@@ -2,56 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIBarButtonItem, UINavigationItem, UIToolbar;
-
-@interface PLPhotoScrollerViewController : PLPhotoBrowserController <PLAlbumChangeObserver> {
-    unsigned int _modalSheetIsPresent : 1;
-    unsigned int _dontChangeStatusBar : 1;
-    unsigned int _toolbarWasHiddenWhenSelfWasPushed : 1;
-    unsigned int _viewWillDisappear : 1;
-    UIBarButtonItem *_doneItem;
-    UINavigationItem *_navItem;
-    int _previousInterfaceOrientation;
+@interface PLPhotoScrollerViewController : PLPhotoBrowserController {
+    BOOL _dontChangeStatusBar;
+    BOOL _modalSheetIsPresent;
+    BOOL _viewWillDisappear;
 }
 
-@property(retain) UIToolbar * buttonBar;
-@property(retain) UIBarButtonItem * doneItem;
-@property(readonly) unsigned int visibleItemIndex;
-
-- (id)_currentToolbarItems;
-- (void)_forceRotationToPortaitIfNecessary;
-- (id)_initWithAlbum:(struct NSObject { Class x1; }*)arg1 lockStatusBar:(BOOL)arg2 currentImageIndex:(int)arg3 delayImageLoading:(BOOL)arg4;
-- (void)_setupButtonBar;
-- (void)_updateCommentsButtonFrameForUIOrientation:(int)arg1;
-- (void)_updateToolbar:(BOOL)arg1;
-- (void)addAirTunesButton;
-- (id)airTunesButton;
-- (id)buttonBar;
-- (void)dealloc;
-- (void)didMoveToPhotoAtIndex:(unsigned int)arg1;
-- (id)doneItem;
+- (id)_initWithAssetContainerList:(id)arg1 lockStatusBar:(BOOL)arg2 currentImageIndexPath:(id)arg3 delayImageLoading:(BOOL)arg4;
 - (BOOL)dontChangeStatusBar;
 - (void)loadView;
-- (id)navigationItem;
 - (id)remakerContainerView;
-- (void)removeAirTunesButton;
 - (void)removeRemakerContainerView;
-- (void)setButtonBar:(id)arg1;
-- (void)setDoneItem:(id)arg1;
 - (void)setDontChangeStatusBar:(BOOL)arg1;
-- (void)setParentViewController:(id)arg1;
-- (void)setToolbarHidden:(BOOL)arg1 withDuration:(double)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)startSettingWallpaper;
-- (void)updateAirTunesButton;
-- (void)updateNavigationItemTitle;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillLayoutSubviews;
-- (unsigned int)visibleItemIndex;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willPresentActionSheet:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class CIImage, NSNumber;
 
-@interface CIFaceBalance : CIFilter {
+@interface CIFaceBalance : CIFilter <_CIFilterProperties> {
     CIImage *inputImage;
     NSNumber *inputOrigI;
     NSNumber *inputOrigQ;
@@ -13,10 +13,10 @@
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputOrigI;
-@property(copy) NSNumber * inputOrigQ;
-@property(copy) NSNumber * inputStrength;
-@property(copy) NSNumber * inputWarmth;
+@property(retain) NSNumber * inputOrigI;
+@property(retain) NSNumber * inputOrigQ;
+@property(retain) NSNumber * inputStrength;
+@property(retain) NSNumber * inputWarmth;
 
 + (id)customAttributes;
 

@@ -10,7 +10,7 @@
 
 @property UIPageController * pageController;
 
-- (int)_abuttedPagingEdges;
+- (unsigned int)_abuttedPagingEdges;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (void)_scrollViewDidEndDecelerating;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;

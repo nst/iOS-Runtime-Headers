@@ -6,19 +6,23 @@
    See Warning(s) below.
  */
 
-@interface BBNotificationBehaviorUtilitiesClient : NSObject <BBNotificationBehaviorUtilitiesClientProtocol, XPCProxyTarget> {
+@class BBServerConnection;
+
+@interface BBNotificationBehaviorUtilitiesClient : NSObject <BBNotificationBehaviorUtilitiesClientProtocol, XPCProxyTarget, BBXPCConnectionDelegate> {
     id _activeBehaviorOverridesChangeHandler;
+    BBServerConnection *_connection;
     id _filteringStateChangeHandler;
-    id _serverProxy;
 }
 
 - (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1;
+- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;
+- (void)invalidate;
 - (void)notificationPresentationFilteringChangedToEnabled:(BOOL)arg1;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)setActiveBehaviorOverridesChangeHandler:(id)arg1;
 - (void)setFilteringStateChangeHandler:(id)arg1;
-- (void)shouldPresentNotificationFromSender:(id)arg1 withHandler:(id)arg2;
+- (void)shouldPresentNotificationOfType:(int)arg1 fromSender:(id)arg2 withHandler:(id)arg3;
 
 @end

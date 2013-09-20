@@ -9,15 +9,18 @@
     <DATask> *_activeExclusiveTask;
     <DATask> *_activeModalTask;
     <DATask> *_activeQueuedTask;
+    BOOL _didLogSyncStart;
     NSMutableSet *_heldIndependentTasks;
     NSMutableSet *_independentTasks;
     NSTimer *_managerIdleTimer;
     <DATask> *_modalHeldActiveQueuedTask;
     NSMutableSet *_modalHeldIndependentTasks;
+    NSTimer *_powerLogIdleTimer;
     NSMutableArray *_queuedExclusiveTasks;
     NSMutableArray *_queuedModalTasks;
     NSMutableArray *_queuedTasks;
     int _state;
+    NSTimer *_userInitiatedSyncTimer;
 }
 
 @property DAAccount * account;
@@ -27,6 +30,7 @@
 @property(readonly) NSArray * queuedTasks;
 
 - (void)_cancelTasksWithReason:(int)arg1;
+- (void)_clearUserInitiatedSyncTimer;
 - (id)_getHeldIndependentTasks;
 - (id)_getIndependentTasks;
 - (id)_getModalHeldIndependentTasks;
@@ -34,9 +38,12 @@
 - (id)_getQueuedModalTasks;
 - (id)_getQueuedTasks;
 - (BOOL)_hasTasksForcingNetworkConnection;
+- (BOOL)_hasTasksIndicatingARunningSync;
+- (void)_logSyncEnd;
 - (void)_makeStateTransition;
 - (void)_performTask:(id)arg1;
 - (void)_populateVersionDescriptions;
+- (id)_powerLogInfoDictionary;
 - (void)_reactivateHeldTasks;
 - (void)_releasePowerAssertionForTask:(id)arg1;
 - (void)_requestCancelTasksWithReason:(int)arg1;
@@ -67,7 +74,6 @@
 - (id)password;
 - (int)port;
 - (id)queuedTasks;
-- (id)scheme;
 - (id)server;
 - (void)setAccount:(id)arg1;
 - (void)shutdown;

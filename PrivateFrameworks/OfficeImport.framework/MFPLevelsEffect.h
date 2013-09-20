@@ -3,13 +3,13 @@
  */
 
 @interface MFPLevelsEffect : MFPEffect {
-    long mHighlight;
-    long mMidtone;
-    long mShadow;
+    int mHighlight;
+    int mMidtone;
+    int mShadow;
 }
 
 + (id)GUID;
 
-- (id)initWithHighlight:(long)arg1 midtone:(long)arg2 shadow:(long)arg3;
+- (id)initWithHighlight:(int)arg1 midtone:(int)arg2 shadow:(int)arg3;
 
 @end

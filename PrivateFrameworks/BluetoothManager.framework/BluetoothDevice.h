@@ -7,7 +7,6 @@
 @interface BluetoothDevice : NSObject {
     NSString *_address;
     struct BTDeviceImpl { } *_device;
-    BOOL _isLowEnergy;
     NSString *_name;
 }
 
@@ -29,9 +28,8 @@
 - (void)disconnect;
 - (void)endVoiceCommand;
 - (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
-- (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2 isLE:(BOOL)arg3;
+- (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
 - (BOOL)isAccessory;
-- (BOOL)isLowEnergy;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
 - (unsigned int)majorClass;
 - (unsigned int)minorClass;

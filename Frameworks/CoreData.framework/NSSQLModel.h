@@ -9,6 +9,7 @@
     NSString *_configuration;
     NSMutableArray *_entities;
     NSKnownKeysDictionary *_entitiesByName;
+    id *_entityDescriptionToSQLMap;
     BOOL _hasVirtualToOnes;
     BOOL _modelHasPrecomputedKeyOrder;
     NSManagedObjectModel *_mom;

@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOSupportedTileSets : PBCodable {
+@interface GEOSupportedTileSets : PBCodable <NSCopying> {
     NSMutableArray *_tileSets;
 }
 
@@ -13,6 +13,7 @@
 - (void)addTileSet:(id)arg1;
 - (void)clearTileSets;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -2,21 +2,26 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSURL;
+@class <TextLinkButtonDelegate>, NSString;
 
 @interface TextLinkButton : UIButton {
-    NSURL *_url;
+    <TextLinkButtonDelegate> *_delegate;
+    NSString *_urlString;
 }
 
-@property(retain) NSURL * url;
+@property <TextLinkButtonDelegate> * delegate;
+@property(retain) NSString * urlString;
 
+- (void)dealloc;
+- (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
-- (void)setUrl:(id)arg1;
-- (id)url;
-- (void)urlAction:(id)arg1;
+- (void)setUrlString:(id)arg1;
+- (void)tapAction:(id)arg1;
+- (id)urlString;
 
 @end

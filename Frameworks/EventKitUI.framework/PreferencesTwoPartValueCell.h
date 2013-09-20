@@ -14,9 +14,9 @@
 @property(readonly) TwoPartTextLabel * twoPartTextLabel;
 @property(readonly) UIColor * valueColor;
 
+- (void).cxx_destruct;
 - (void)_layoutSubviewsCore;
 - (void)checkValueWidths;
-- (void)dealloc;
 - (void)layoutSubviews;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
 - (void)setShortener:(id)arg1;

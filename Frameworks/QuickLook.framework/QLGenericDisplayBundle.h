@@ -2,24 +2,25 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSError, UIImageView, UILabel, UITextView, UIView;
+@class NSError, QLGenericView;
 
-@interface QLGenericDisplayBundle : QLDisplayBundle {
-    UIView *_containerView;
+@interface QLGenericDisplayBundle : QLDisplayBundle <QLGenericViewDelegate> {
+    QLGenericView *_airplayView;
     NSError *_error;
-    UIImageView *_iconView;
-    UITextView *_subtitleLabel;
-    UILabel *_titleLabel;
 }
 
 @property(retain) NSError * error;
 
 - (void)_loadPreviewItemInfos;
-- (void)_relayout;
-- (void)_showLoadingProgress:(BOOL)arg1;
+- (id)airplayView;
+- (void)dealloc;
+- (void)discardAirPlayView;
 - (id)error;
+- (void)genericViewDidClickOnArchiveButton:(id)arg1;
 - (void)loadView;
 - (void)loadWithHints:(id)arg1;
 - (void)setError:(id)arg1;
+- (void)setupAirPlayView;
+- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

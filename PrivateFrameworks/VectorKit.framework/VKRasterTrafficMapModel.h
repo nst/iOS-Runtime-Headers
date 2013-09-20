@@ -2,13 +2,19 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
+@class VKTrafficDrawStyle;
+
 @interface VKRasterTrafficMapModel : VKMapTileModel <VKMapLayer> {
+    BOOL _needsTileStencil;
+    int _sourceTileZtoStencilOffset;
+    VKTrafficDrawStyle *_trafficDrawStyle;
 }
 
-+ (void)buildTileStencilWithContext:(id)arg1 forTiles:(id)arg2;
-
+- (void)buildTileStencilWithContext:(id)arg1 scene:(id)arg2;
+- (void)dealloc;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (unsigned int)supportedRenderPasses;
 
 @end

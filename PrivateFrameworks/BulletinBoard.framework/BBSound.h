@@ -5,49 +5,70 @@
 @class NSDictionary, NSString;
 
 @interface BBSound : NSObject <NSCopying, NSCoding> {
+    NSString *_accountIdentifier;
+    int _alertType;
     NSString *_audioCategory;
     BOOL _repeats;
     NSString *_ringtoneName;
     unsigned int _soundBehavior;
     int _soundType;
     unsigned long _systemSoundID;
+    NSString *_toneIdentifier;
+    NSString *_vibrationIdentifier;
     NSDictionary *_vibrationPattern;
 }
 
+@property(copy) NSString * accountIdentifier;
+@property int alertType;
 @property(copy) NSString * audioCategory;
 @property(getter=isRepeating) BOOL repeats;
-@property(retain) NSString * ringtoneName;
+@property(copy) NSString * ringtoneName;
 @property unsigned int soundBehavior;
 @property int soundType;
 @property unsigned long systemSoundID;
-@property(retain) NSDictionary * vibrationPattern;
+@property(copy) NSString * toneIdentifier;
+@property(copy) NSString * vibrationIdentifier;
+@property(copy) NSDictionary * vibrationPattern;
 
 + (id)_possiblyCachedAlertSoundForInitializedSound:(id)arg1;
 + (id)alertSoundWithSystemSoundID:(unsigned long)arg1;
 
 - (BOOL)_isUniquableAlertSound;
+- (id)accountIdentifier;
+- (int)alertType;
 - (id)audioCategory;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 audioCategory:(id)arg4;
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3;
 - (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2 vibrationPattern:(id)arg3;
 - (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2;
+- (id)initWithToneAlert:(int)arg1 accountIdentifier:(id)arg2;
+- (id)initWithToneAlert:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
+- (id)initWithToneAlert:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isRepeating;
 - (id)ringtoneName;
+- (void)setAccountIdentifier:(id)arg1;
+- (void)setAlertType:(int)arg1;
 - (void)setAudioCategory:(id)arg1;
 - (void)setRepeats:(BOOL)arg1;
 - (void)setRingtoneName:(id)arg1;
 - (void)setSoundBehavior:(unsigned int)arg1;
 - (void)setSoundType:(int)arg1;
 - (void)setSystemSoundID:(unsigned long)arg1;
+- (void)setToneIdentifier:(id)arg1;
+- (void)setVibrationIdentifier:(id)arg1;
 - (void)setVibrationPattern:(id)arg1;
 - (unsigned int)soundBehavior;
 - (int)soundType;
 - (unsigned long)systemSoundID;
+- (id)toneIdentifier;
+- (id)vibrationIdentifier;
 - (id)vibrationPattern;
 
 @end

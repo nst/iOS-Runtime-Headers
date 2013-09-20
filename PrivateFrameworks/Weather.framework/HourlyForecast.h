@@ -6,25 +6,33 @@
 
 @interface HourlyForecast : NSObject {
     int _conditionCode;
+    NSString *_detail;
+    unsigned int _eventType;
+    int _hourIndex;
     float _percentPrecipitation;
-    NSString *_temperature;
-    NSString *_time24Hour;
+    NSString *_time;
 }
 
 @property int conditionCode;
+@property(copy) NSString * detail;
+@property unsigned int eventType;
+@property int hourIndex;
 @property float percentPrecipitation;
-@property(copy) NSString * temperature;
-@property(copy) NSString * time24Hour;
+@property(copy) NSString * time;
 
 - (int)conditionCode;
 - (void)dealloc;
 - (id)description;
+- (id)detail;
+- (unsigned int)eventType;
+- (int)hourIndex;
 - (float)percentPrecipitation;
 - (void)setConditionCode:(int)arg1;
+- (void)setDetail:(id)arg1;
+- (void)setEventType:(unsigned int)arg1;
+- (void)setHourIndex:(int)arg1;
 - (void)setPercentPrecipitation:(float)arg1;
-- (void)setTemperature:(id)arg1;
-- (void)setTime24Hour:(id)arg1;
-- (id)temperature;
-- (id)time24Hour;
+- (void)setTime:(id)arg1;
+- (id)time;
 
 @end

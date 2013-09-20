@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PDSetBehavior : PDCommonBehaviorData {
+@interface PDSetBehavior : PDAnimateBehavior {
     id mValue;
 }
 

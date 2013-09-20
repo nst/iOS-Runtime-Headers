@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
 @interface NSFileAccessArbiterProxy : NSObject <NSFileAccessArbiter> {
@@ -9,6 +13,8 @@
     NSMutableDictionary *_providersByID;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_xpc_object> *_server;
+    id _serverEventHandler;
+    NSObject<OS_dispatch_queue> *_serverQueue;
 }
 
 + (id)_operationQueueForPresenter:(id)arg1;
@@ -18,6 +24,7 @@
 - (void)_makePresenter:(id)arg1 accommodateDisconnectionWithCompletionHandler:(id)arg2;
 - (void)_makePresenter:(id)arg1 observeChangeWithSubitemURL:(id)arg2;
 - (void)_makePresenter:(id)arg1 observeMoveToURL:(id)arg2 withSubitemURL:(id)arg3;
+- (void)_makePresenter:(id)arg1 observeUbiquityChangeWithSubitemURL:(id)arg2;
 - (void)_makePresenter:(id)arg1 observeVersionChangeOfKind:(id)arg2 withClientID:(id)arg3 name:(id)arg4 subitemURL:(id)arg5;
 - (void)_makePresenter:(id)arg1 reacquireFromReadingClaimForID:(id)arg2;
 - (void)_makePresenter:(id)arg1 reacquireFromWritingClaimForID:(id)arg2;
@@ -29,6 +36,7 @@
 - (void)_makePresenterObserveDisconnection:(id)arg1;
 - (void)_makePresenterObserveReconnection:(id)arg1;
 - (void)_makeProvider:(id)arg1 cancelProvidingItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3;
+- (void)_makeProvider:(id)arg1 observePresentationChangeOfKind:(id)arg2 withPresenterID:(id)arg3 url:(id)arg4 newURL:(id)arg5 completionHandler:(id)arg6;
 - (void)_makeProvider:(id)arg1 provideItemAtURL:(id)arg2 forAccessClaimWithID:(id)arg3 completionHandler:(id)arg4;
 - (id)_readRelinquishmentForPresenter:(id)arg1;
 - (id)_writeRelinquishmentForPresenter:(id)arg1;
@@ -44,12 +52,13 @@
 - (void)handleCanceledServer;
 - (void)handleMessage:(id)arg1;
 - (id)idForFileReactor:(id)arg1;
-- (id)initWithServer:(id)arg1;
+- (id)initWithServer:(id)arg1 queue:(id)arg2 eventHandler:(id)arg3;
 - (void)removeFilePresenter:(id)arg1;
 - (void)removeFileProvider:(id)arg1;
 - (void)revokeAccessClaimForID:(id)arg1;
 - (void)revokeSubarbitrationClaimForID:(id)arg1;
 - (void)tiePresenterForID:(id)arg1 toItemAtURL:(id)arg2;
+- (void)writerWithPurposeID:(id)arg1 didChangeUbiquityOfItemAtURL:(id)arg2;
 - (void)writerWithPurposeID:(id)arg1 didDisconnectItemAtURL:(id)arg2;
 - (void)writerWithPurposeID:(id)arg1 didMoveItemAtURL:(id)arg2 toURL:(id)arg3;
 - (void)writerWithPurposeID:(id)arg1 didReconnectItemAtURL:(id)arg2;

@@ -5,8 +5,13 @@
 @class NSArray, NSObject<WebPDFViewPlaceholderDelegate>, NSString, WebDataSource;
 
 @interface WebPDFViewPlaceholder : WAKView <WebPDFDocumentView, WebPDFDocumentRepresentation> {
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _containerSize;
     WebDataSource *_dataSource;
     NSObject<WebPDFViewPlaceholderDelegate> *_delegate;
+    BOOL _didCompleteLayout;
     BOOL _didFinishLoadAndMemoryMap;
     struct CGPDFDocument { } *_document;
     NSArray *_pageRects;
@@ -14,7 +19,9 @@
     NSString *_title;
 }
 
+@property struct CGSize { float x1; float x2; } containerSize;
 @property NSObject<WebPDFViewPlaceholderDelegate> * delegate;
+@property(readonly) BOOL didCompleteLayout;
 @property(readonly) struct CGPDFDocument { }* doc;
 @property(readonly) struct CGPDFDocument { }* document;
 @property(retain) NSArray * pageRects;
@@ -26,6 +33,7 @@
 + (void)setAsPDFDocRepAndView;
 + (id)supportedMIMETypes;
 
+- (id).cxx_construct;
 - (struct CGSize { float x1; float x2; })_computePageRects:(struct CGPDFDocument { }*)arg1;
 - (void)_doPostLoadOrUnlockTasks;
 - (void)_evaluateJSForDocument:(struct CGPDFDocument { }*)arg1;
@@ -34,11 +42,14 @@
 - (void)_updateTitleForDocumentIfAvailable;
 - (void)_updateTitleForURL:(id)arg1;
 - (BOOL)canProvideDocumentSource;
+- (void)clearDocument;
+- (struct CGSize { float x1; float x2; })containerSize;
 - (void)dataSourceMemoryMapFailed;
 - (void)dataSourceMemoryMapped;
 - (void)dataSourceUpdated:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)didCompleteLayout;
 - (void)didUnlockDocument;
 - (struct CGPDFDocument { }*)doc;
 - (struct CGPDFDocument { }*)document;
@@ -50,6 +61,7 @@
 - (void)receivedData:(id)arg1 withDataSource:(id)arg2;
 - (void)receivedError:(id)arg1 withDataSource:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageNumber:(unsigned int)arg1;
+- (void)setContainerSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDocument:(struct CGPDFDocument { }*)arg1;

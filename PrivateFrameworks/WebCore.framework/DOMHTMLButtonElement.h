@@ -12,7 +12,7 @@
 @property BOOL disabled;
 @property(readonly) DOMHTMLFormElement * form;
 @property(copy) NSString * name;
-@property(readonly) NSString * type;
+@property(copy) NSString * type;
 @property(copy) NSString * value;
 @property(readonly) BOOL willValidate;
 
@@ -39,6 +39,7 @@
 - (void)setFormNoValidate:(BOOL)arg1;
 - (void)setFormTarget:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setType:(id)arg1;
 - (void)setValue:(id)arg1;
 - (int)structuralComplexityContribution;
 - (id)type;

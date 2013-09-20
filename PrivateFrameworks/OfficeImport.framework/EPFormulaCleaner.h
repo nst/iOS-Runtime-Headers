@@ -21,7 +21,7 @@
 - (bool)checkFunctionId:(int)arg1 tokenIndex:(unsigned int)arg2;
 - (bool)checkSupportedAddInName:(id)arg1 externalLink:(bool)arg2;
 - (bool)cleanArea3D:(unsigned int)arg1;
-- (bool)cleanArea:(unsigned int)arg1;
+- (bool)cleanArea:(unsigned int)arg1 updateSheet:(BOOL)arg2;
 - (bool)cleanArray:(unsigned int)arg1;
 - (void)cleanFormula:(id)arg1 name:(id)arg2;
 - (void)cleanFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
@@ -33,17 +33,17 @@
 - (bool)cleanNameX:(unsigned int)arg1;
 - (bool)cleanRange:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
 - (bool)cleanRef3D:(unsigned int)arg1;
-- (bool)cleanRef:(unsigned int)arg1;
+- (bool)cleanRef:(unsigned int)arg1 updateSheet:(BOOL)arg2;
 - (bool)cleanTokenAtIndex:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
 - (bool)cleanUnion:(unsigned int)arg1;
 - (bool)combineCellReferences:(unsigned int)arg1 removedTokenCount:(unsigned int*)arg2;
 - (void)dealloc;
-- (id)extractFormulaToCleanFromSharedFormula:(id)arg1;
 - (bool)isLinkReferenceIndexSupported:(unsigned int)arg1 allowExternal:(bool)arg2;
 - (bool)isObjectSupported:(id)arg1;
 - (bool)isReferenceValidInLassoForRow:(int)arg1 rowRelative:(bool)arg2 column:(int)arg3 columnRelative:(bool)arg4;
 - (bool)isReferenceValidInLassoForSheet:(id)arg1 rowMin:(int)arg2 rowMinRelative:(bool)arg3 rowMax:(int)arg4 rowMaxRelative:(bool)arg5 columnMin:(int)arg6 columnMinRelative:(bool)arg7 columnMax:(int)arg8 columnMaxRelative:(bool)arg9;
 - (bool)isThereContentOutsideOfLassoBoundsForSheet:(id)arg1 rowMin:(int)arg2 rowMax:(int)arg3 columnMin:(int)arg4 columnMax:(int)arg5;
+- (id)newFormulaToCleanFromSharedFormula:(id)arg1;
 - (void)prepareToProcessFormula:(id)arg1 sheet:(id)arg2 name:(id)arg3;
 - (void)reportWarning:(int)arg1 parameter:(id)arg2;
 - (void)reportWarning:(int)arg1;

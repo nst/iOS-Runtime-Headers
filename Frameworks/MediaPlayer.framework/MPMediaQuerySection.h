@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface MPMediaQuerySection : NSObject <NSCoding, NSCopying> {
+@interface MPMediaQuerySection : NSObject <NSSecureCoding, NSCopying> {
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -17,9 +17,11 @@
 @property unsigned int sectionIndexTitleIndex;
 @property(copy) NSString * title;
 
++ (BOOL)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (id)_init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

@@ -28,8 +28,8 @@
 - (void)_appendDaysOfTheWeek:(id)arg1 toSpecifier:(id)arg2;
 - (void)_appendIndexList:(id)arg1 toSpecifier:(id)arg2 propertyKey:(unsigned short)arg3;
 - (void)_clearArrays;
-- (id)_parseDaysOfWeek:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; struct { int x_4_1_1; int x_4_1_2; } x4; int x5; int x6; }*)arg1 range:(struct { int x1; int x2; })arg2;
-- (id)_parseIndexList:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; struct { int x_4_1_1; int x_4_1_2; } x4; int x5; int x6; }*)arg1 range:(struct { int x1; int x2; })arg2;
+- (id)_parseDaysOfWeek:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; }*)arg1 range:(struct { int x1; int x2; })arg2;
+- (id)_parseIndexList:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; }*)arg1 range:(struct { int x1; int x2; })arg2;
 - (void)_parseSpecifierIfNeeded;
 - (void)_updateSpecifier;
 - (id)daysOfTheMonth;

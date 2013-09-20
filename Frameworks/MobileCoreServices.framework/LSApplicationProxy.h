@@ -2,10 +2,12 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class LSApplicationProxy, NSArray, NSDictionary, NSString, NSURL, NSUUID;
+@class LSApplicationProxy, NSArray, NSDictionary, NSProgress, NSString, NSURL, NSUUID;
 
-@interface LSApplicationProxy : LSResourceProxy {
+@interface LSApplicationProxy : LSResourceProxy <NSSecureCoding> {
+    NSArray *_UIBackgroundModes;
     NSString *_applicationType;
+    NSArray *_audioComponents;
     unsigned int _bundleFlags;
     NSURL *_bundleURL;
     NSString *_bundleVersion;
@@ -13,15 +15,30 @@
     NSDictionary *_entitlements;
     NSDictionary *_environmentVariables;
     unsigned int _flags;
+    BOOL _foundBackingBundle;
+    NSDictionary *_groupContainers;
+    unsigned int _installType;
+    BOOL _isAppUpdate;
+    BOOL _isInstalled;
+    BOOL _isNewsstandApp;
+    BOOL _isPlaceholder;
+    BOOL _isRestricted;
+    NSArray *_machOUUIDs;
     NSArray *_privateDocumentIconNames;
     LSApplicationProxy *_privateDocumentTypeOwner;
+    BOOL _profileValidated;
     NSString *_shortVersionString;
     NSString *_signerIdentity;
     NSString *_vendorID;
+    NSString *_vendorName;
 }
 
+@property(readonly) NSArray * UIBackgroundModes;
+@property(readonly) BOOL _gkIsAppleInternal;
+@property(readonly) BOOL _gkIsInstalled;
 @property(readonly) NSString * applicationIdentifier;
 @property(readonly) NSString * applicationType;
+@property(readonly) NSArray * audioComponents;
 @property(readonly) NSURL * bundleURL;
 @property(readonly) NSString * bundleVersion;
 @property(readonly) NSURL * containerURL;
@@ -29,21 +46,51 @@
 @property(readonly) NSArray * directionsModes;
 @property(readonly) NSDictionary * entitlements;
 @property(readonly) NSDictionary * environmentVariables;
+@property(readonly) BOOL foundBackingBundle;
+@property(readonly) NSDictionary * groupContainers;
+@property(readonly) NSProgress * installProgress;
+@property(readonly) unsigned int installType;
+@property(readonly) BOOL isAppUpdate;
+@property(readonly) BOOL isInstalled;
+@property(readonly) BOOL isNewsstandApp;
+@property(readonly) BOOL isPlaceholder;
+@property(readonly) BOOL isRestricted;
+@property(readonly) NSArray * machOUUIDs;
 @property(readonly) BOOL profileValidated;
 @property(readonly) NSString * roleIdentifier;
 @property(readonly) NSString * shortVersionString;
 @property(readonly) NSString * signerIdentity;
 @property(readonly) NSString * vendorID;
+@property(readonly) NSString * vendorName;
 
++ (id)_gkMetadataForBundleURL:(id)arg1;
++ (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2 server:(BOOL)arg3;
++ (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2;
 + (id)applicationProxyForIdentifier:(id)arg1 roleIdentifier:(id)arg2;
 + (id)applicationProxyForIdentifier:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
+- (id)UIBackgroundModes;
+- (unsigned char)_createContext:(struct LSContext { struct LSDatabase {} *x1; }*)arg1 andGetBundle:(unsigned int*)arg2 withData:(const struct LSBundleData {}**)arg3;
 - (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
+- (id)_gkAdamID;
+- (id)_gkBundle;
+- (void)_gkDetachITunesMetadata;
+- (id)_gkExternalVersion;
+- (id)_gkGameDescriptor;
+- (id)_gkITunesMetadata;
+- (BOOL)_gkIsAppleInternal;
+- (BOOL)_gkIsGameCenterEnabled;
+- (BOOL)_gkIsGameCenterEverEnabled;
+- (BOOL)_gkIsInstalled;
+- (id)_gkItemName;
+- (id)_gkPurchaseDate;
 - (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
-- (id)_initWithApplicationIdentifier:(id)arg1 name:(id)arg2 containerURL:(id)arg3 resourcesDirectoryURL:(id)arg4 iconsDictionary:(id)arg5 iconFileNames:(id)arg6 iconIsPrerendered:(BOOL)arg7;
+- (id)_initWithApplicationIdentifier:(id)arg1 bundleType:(unsigned int)arg2 name:(id)arg3 containerURL:(id)arg4 resourcesDirectoryURL:(id)arg5 iconsDictionary:(id)arg6 iconFileNames:(id)arg7 iconIsPrerendered:(BOOL)arg8 server:(BOOL)arg9;
 - (id)_plistValueForKey:(id)arg1;
 - (id)applicationIdentifier;
 - (id)applicationType;
+- (id)audioComponents;
 - (id)bundleURL;
 - (id)bundleVersion;
 - (id)containerURL;
@@ -51,12 +98,26 @@
 - (id)description;
 - (id)deviceIdentifierForVendor;
 - (id)directionsModes;
+- (void)encodeWithCoder:(id)arg1;
 - (id)entitlements;
 - (id)environmentVariables;
+- (BOOL)foundBackingBundle;
+- (id)groupContainers;
 - (unsigned int)hash;
+- (id)iconDataForVariant:(int)arg1;
 - (id)iconStyleDomain;
+- (id)initWithCoder:(id)arg1;
+- (id)installProgress;
+- (id)installProgressSync;
+- (unsigned int)installType;
+- (BOOL)isAppUpdate;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isInstalled;
+- (BOOL)isNewsstandApp;
+- (BOOL)isPlaceholder;
+- (BOOL)isRestricted;
 - (id)localizedName;
+- (id)machOUUIDs;
 - (BOOL)privateDocumentIconAllowOverride;
 - (id)privateDocumentIconNames;
 - (id)privateDocumentTypeOwner;
@@ -69,5 +130,6 @@
 - (id)shortVersionString;
 - (id)signerIdentity;
 - (id)vendorID;
+- (id)vendorName;
 
 @end

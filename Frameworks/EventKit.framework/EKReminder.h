@@ -2,14 +2,21 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSDateComponents;
+@class EKAlarm, EKObjectID, NSDate, NSDateComponents, NSURL;
 
 @interface EKReminder : EKCalendarItem {
+    BOOL hadRecurrences;
 }
 
+@property(copy) NSURL * action;
+@property(readonly) EKAlarm * bestDisplayAlarm;
 @property(getter=isCompleted) BOOL completed;
 @property(copy) NSDate * completionDate;
+@property unsigned int displayOrder;
+@property(readonly) NSDate * dueDate;
 @property(copy) NSDateComponents * dueDateComponents;
+@property BOOL hadRecurrences;
+@property(readonly) EKObjectID * parentID;
 @property int priority;
 @property(copy) NSDateComponents * startDateComponents;
 
@@ -28,6 +35,7 @@
 - (id)dueDate;
 - (id)dueDateComponents;
 - (id)externalURI;
+- (BOOL)hadRecurrences;
 - (id)initWithPersistentObject:(id)arg1;
 - (BOOL)isCompleted;
 - (id)parentID;
@@ -37,9 +45,11 @@
 - (void)setCompletionDate:(id)arg1;
 - (void)setDisplayOrder:(unsigned int)arg1;
 - (void)setDueDateComponents:(id)arg1;
+- (void)setHadRecurrences:(BOOL)arg1;
 - (void)setPriority:(int)arg1;
 - (void)setStartDateComponents:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
 - (id)startDateComponents;
 - (BOOL)validate:(id*)arg1;
 

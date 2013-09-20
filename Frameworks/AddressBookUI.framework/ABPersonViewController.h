@@ -2,10 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonEditDelegate>, <ABPersonViewControllerDelegate>, <ABStyleProvider>, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, AFContextManager, NSArray, NSString, NSTimer, UIFont, UIImage, UIView;
+@class <ABPersonEditDelegate>, <ABPersonViewControllerDelegate>, <ABStyleProvider>, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, ABUIPerson, AFContextManager, NSArray, NSString, NSTimer, UIFont, UIImage, UIView;
 
 @interface ABPersonViewController : UIViewController <AFContextProvider, UIViewControllerRestoration> {
     ABPersonTableViewActionsDelegate *_actionsDelegate;
+    BOOL _allowsContactBlocking;
+    BOOL _allowsOnlyFaceTimeActions;
+    BOOL _allowsOnlyPhoneActions;
     ABPersonTableViewDataSource *_dataSource;
     NSTimer *_editAnimationTimer;
     id _helper;
@@ -21,8 +24,11 @@
 @property BOOL allowsAddToFavorites;
 @property BOOL allowsCancel;
 @property BOOL allowsConferencing;
+@property BOOL allowsContactBlocking;
 @property BOOL allowsDeletion;
 @property BOOL allowsEditing;
+@property BOOL allowsOnlyFaceTimeActions;
+@property BOOL allowsOnlyPhoneActions;
 @property BOOL allowsSettingAsPreferredCardForName;
 @property BOOL allowsSharing;
 @property BOOL allowsSounds;
@@ -37,6 +43,7 @@
 @property(readonly) ABPersonTableViewDataSource * dataSource;
 @property void* displayedPerson;
 @property(copy) NSArray * displayedProperties;
+@property(retain) ABUIPerson * displayedUIPerson;
 @property <ABPersonEditDelegate> * editDelegate;
 @property(readonly) ABPersonViewControllerHelper * helper;
 @property(copy) NSString * message;
@@ -65,7 +72,6 @@
 - (void)_editAnimationTimerFired:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
 - (void)_handleLocalChange:(struct __CFDictionary { }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_removeContextProviderOnMainThread;
 - (BOOL)_updateAllDataForExternalChange;
 - (BOOL)_updatePeopleDataForExternalChange;
@@ -83,8 +89,11 @@
 - (BOOL)allowsAddToFavorites;
 - (BOOL)allowsCancel;
 - (BOOL)allowsConferencing;
+- (BOOL)allowsContactBlocking;
 - (BOOL)allowsDeletion;
 - (BOOL)allowsEditing;
+- (BOOL)allowsOnlyFaceTimeActions;
+- (BOOL)allowsOnlyPhoneActions;
 - (BOOL)allowsSettingAsPreferredCardForName;
 - (BOOL)allowsSharing;
 - (BOOL)allowsSounds;
@@ -107,6 +116,7 @@
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void*)displayedPerson;
 - (id)displayedProperties;
+- (id)displayedUIPerson;
 - (void)editCancel:(id)arg1;
 - (id)editDelegate;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
@@ -126,7 +136,7 @@
 - (BOOL)isReadonly;
 - (void)loadView;
 - (BOOL)makeFirstFieldBecomeFirstResponder;
-- (BOOL)manuallyLinkPerson:(void*)arg1;
+- (BOOL)manuallyLinkPerson:(id)arg1;
 - (id)message;
 - (id)messageDetail;
 - (id)messageDetailFont;
@@ -137,7 +147,6 @@
 - (id)personHeaderView;
 - (id)personViewDelegate;
 - (void)pickerCancel:(id)arg1;
-- (id)prepareViewWithPerson:(void*)arg1;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 forProperty:(int)arg3 withActionGrouping:(int)arg4 ordering:(int)arg5;
 - (void)saveChanges;
 - (void)setActionShouldPickHighlightedItem:(BOOL)arg1;
@@ -146,8 +155,11 @@
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
 - (void)setAllowsCancel:(BOOL)arg1;
 - (void)setAllowsConferencing:(BOOL)arg1;
+- (void)setAllowsContactBlocking:(BOOL)arg1;
 - (void)setAllowsDeletion:(BOOL)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
+- (void)setAllowsOnlyFaceTimeActions:(BOOL)arg1;
+- (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setAllowsSettingAsPreferredCardForName:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
 - (void)setAllowsSounds:(BOOL)arg1;
@@ -163,6 +175,7 @@
 - (void)setCustomMessageView:(id)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setDisplayedProperties:(id)arg1;
+- (void)setDisplayedUIPerson:(id)arg1;
 - (void)setEditDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1 saveChanges:(BOOL)arg2 animated:(BOOL)arg3;
@@ -196,12 +209,12 @@
 - (id)shareMessageSubject;
 - (id)sharingDelegate;
 - (BOOL)shouldAlignPersonHeaderViewToImage;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldShowLinkedPeople;
 - (BOOL)shouldShowLinkingUIOnCard;
 - (void)startDelayingChangeNotifications;
 - (void)stopDelayingChangeNotificationsAndDeliverNow:(BOOL)arg1;
 - (id)styleProvider;
+- (BOOL)supportedInterfaceOrientation:(int)arg1;
 - (id)tableHeaderView;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;

@@ -26,7 +26,7 @@
 - (id)finishedHandler;
 - (BOOL)isLoading;
 - (void)providerDidCancel;
-- (void)providerReceivedErrorCode:(int)arg1;
+- (void)providerReceivedErrorCode:(int)arg1 userInfo:(id)arg2 problemDetails:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg3;
 - (void)providerReceivedResponse:(id)arg1;
 - (void)requestCompleted;
 - (void)setErrorHandler:(id)arg1;

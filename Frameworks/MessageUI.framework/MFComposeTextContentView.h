@@ -11,7 +11,6 @@
     } _scrollPosition;
 }
 
-- (void)_insertPhotoOrVideo;
 - (BOOL)becomeFirstResponder;
 - (void)beginPreventingScrollSelectionToVisible;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -20,9 +19,10 @@
 - (void)endPreventingScrollSelectionToVisible;
 - (void)ensureSelection;
 - (void)increaseQuoteLevel;
-- (void)quoteLevelMenu;
 - (BOOL)resignFirstResponder;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
+- (void)showQuoteLevelOptions;
 - (id)supportedPasteboardTypesForCurrentSelection;
+- (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 
 @end

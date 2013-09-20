@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableOrderedSet, NSString, PLFilteredAlbumList;
+@class NSMutableOrderedSet, NSObject<PLIndexMappingCache>, NSString;
 
-@interface PLManagedAlbumList : _PLManagedAlbumList <PLAlbumContainer, PLIndexMappersDataOrigin> {
-    PLFilteredAlbumList *_filteredAlbumLists[5];
+@interface PLManagedAlbumList : _PLManagedAlbumList <PLAlbumContainer, PLDerivedAlbumListOrigin, PLIndexMappersDataOrigin> {
+    NSObject<PLIndexMappingCache> *_derivedAlbumLists[5];
     BOOL didRegisteredWithUserInterfaceContext;
     BOOL isRegisteredForChanges;
 }
@@ -14,8 +14,10 @@
 @property(readonly) NSString * _typeDescription;
 @property int albumListType;
 @property(readonly) NSMutableOrderedSet * albums;
+@property(readonly) unsigned int albumsCount;
 @property(readonly) id albumsSortingComparator;
 @property(readonly) BOOL canEditAlbums;
+@property(readonly) unsigned int containersCount;
 @property BOOL didRegisteredWithUserInterfaceContext;
 @property(readonly) int filter;
 @property(readonly) BOOL hasAtLeastOneAlbum;
@@ -29,11 +31,14 @@
 + (void)addSingletonObjectsToContext:(id)arg1;
 + (id)albumListInManagedObjectContext:(id)arg1;
 + (id)albumListInPhotoLibrary:(id)arg1;
++ (id)allStreamedAlbumsListInManagedObjectContext:(id)arg1;
 + (id)allStreamedAlbumsListInPhotoLibrary:(id)arg1;
 + (id)eventListInManagedObjectContext:(id)arg1;
 + (id)eventListInPhotoLibrary:(id)arg1;
 + (id)facesAlbumListInManagedObjectContext:(id)arg1;
 + (id)facesAlbumListInPhotoLibrary:(id)arg1;
++ (id)importListInManagedObjectContext:(id)arg1;
++ (id)importListInPhotoLibrary:(id)arg1;
 + (void)initialize;
 + (BOOL)isValidPathForPersistence:(id)arg1;
 + (BOOL)isValidTypeForPersistence:(int)arg1;
@@ -42,34 +47,43 @@
 + (id)placesAlbumListInManagedObjectContext:(id)arg1;
 + (id)placesAlbumListInPhotoLibrary:(id)arg1;
 + (void)restoreAlbumListFromPersistedDataAtPath:(id)arg1 library:(id)arg2;
++ (id)wallpaperAlbumListInPhotoLibrary:(id)arg1;
 
+- (id)_albumsCountFetchRequest;
 - (id)_prettyDescription;
 - (id)_typeDescription;
 - (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
 - (int)albumListType;
 - (id)albums;
+- (unsigned int)albumsCount;
 - (id)albumsSortingComparator;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (BOOL)canEditAlbums;
+- (BOOL)canEditContainers;
+- (id)containers;
+- (unsigned int)containersCount;
+- (id)containersRelationshipName;
 - (void)dealloc;
 - (BOOL)didRegisteredWithUserInterfaceContext;
 - (void)didSave;
+- (void)enumerateDerivedAlbumLists:(id)arg1;
 - (void)enumerateDerivedIndexMappers:(id)arg1;
-- (void)enumerateFilteredAlbumLists:(id)arg1;
 - (int)filter;
 - (BOOL)hasAtLeastOneAlbum;
 - (BOOL)hasDerivedIndexMappers;
+- (void)insertIntoOrderedAlbumsAtIndexByPriorityForAlbum:(id)arg1;
+- (BOOL)isEmpty;
 - (BOOL)isRegisteredForChanges;
 - (BOOL)needsReordering;
-- (void)registerFilteredAlbumList:(id)arg1;
+- (void)registerDerivedAlbumList:(struct NSObject { Class x1; }*)arg1;
 - (void)registerForChanges;
 - (void)setAlbumListType:(int)arg1;
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (void)setIsRegisteredForChanges:(BOOL)arg1;
 - (void)setNeedsReordering;
 - (unsigned int)unreadAlbumsCount;
-- (void)unregisterAllFilteredAlbums;
+- (void)unregisterAllDerivedAlbums;
 - (void)unregisterForChanges;
 - (void)updateAlbumsOrderIfNeeded;
 - (void)willTurnIntoFault;

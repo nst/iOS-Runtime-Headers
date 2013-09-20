@@ -5,17 +5,14 @@
 @class <NSObject>;
 
 @interface MFWeakReferenceHolder : NSObject {
-    unsigned int _isZeroing : 1;
     <NSObject> *_reference;
 }
 
-+ (id)weakReferenceWithObject:(id)arg1 allowNonZeroing:(BOOL)arg2;
 + (id)weakReferenceWithObject:(id)arg1;
 
-- (id)_initWithObject:(id)arg1 allowNonZeroing:(BOOL)arg2;
+- (id)_initWithObject:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isZeroingWeakReference;
 - (id)retainedReference;
 
 @end

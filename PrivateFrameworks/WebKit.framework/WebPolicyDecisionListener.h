@@ -11,11 +11,9 @@
 - (id)_initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)_invalidate;
 - (void)_usePolicy:(int)arg1;
-- (oneway void)_webcore_releaseOnWebThread;
 - (void)dealloc;
 - (void)download;
 - (void)ignore;
-- (oneway void)release;
 - (void)use;
 
 @end

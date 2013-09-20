@@ -36,7 +36,7 @@
 @property(copy) id willTweetLocationCallback;
 @property(copy) id willWeiboLocationCallback;
 
-+ (void*)_newFakePersonForMergedPeople:(id)arg1;
++ (id)_fakePersonForMergedPeople:(id)arg1;
 
 - (BOOL)canSendMMS;
 - (BOOL)canSendMail;
@@ -50,6 +50,7 @@
 - (BOOL)loadChatKitAndReturnBundle:(id*)arg1;
 - (BOOL)loadMessageUIAndReturnBundle:(id*)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
 - (void)setHelper:(id)arg1;
 - (void)setShareLocationSnapshotImage:(id)arg1;
 - (void)setShareLocationURL:(id)arg1;
@@ -72,9 +73,6 @@
 - (id)shareMessageBody;
 - (BOOL)shareMessageBodyIsHTML;
 - (id)shareMessageSubject;
-- (void)smsComposeControllerCancelled:(id)arg1;
-- (void)smsComposeControllerDataInserted:(id)arg1;
-- (void)smsComposeControllerSendStarted:(id)arg1;
 - (id)styleProvider;
 - (id)vCardFileName;
 - (id)willTweetLocationCallback;

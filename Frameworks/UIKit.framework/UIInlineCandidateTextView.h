@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class InlineCandidateCell, NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, _UIInlineCandidateCell;
 
 @interface UIInlineCandidateTextView : UIView {
     SEL _action;
     BOOL _arrowHighlighted;
     NSMutableArray *_candidateCellArray;
     NSArray *_candidates;
-    InlineCandidateCell *_currentlyPushedItem;
+    _UIInlineCandidateCell *_currentlyPushedItem;
     BOOL _phraseEditable;
     unsigned int _selectedItem;
     BOOL _showingArrow;
@@ -23,17 +23,12 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
 - (void)_cellSelected:(id)arg1;
 - (float)_layoutCandidates:(id)arg1 maxCount:(int)arg2 height:(float)arg3 maxScreenWidth:(float)arg4 hasExtensionCandidates:(BOOL)arg5;
-- (void)_mouseUp:(struct __GSEvent { }*)arg1 wasCancelled:(BOOL)arg2;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)edgeType;
 - (id)findCell:(struct CGPoint { float x1; float x2; })arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 candidates:(id)arg2 type:(int)arg3 maxScreenWidth:(float)arg4 hasExtensionCandidates:(BOOL)arg5;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
-- (BOOL)needsWebDocumentViewEventsDirectly;
 - (unsigned int)numberOfShownItems;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

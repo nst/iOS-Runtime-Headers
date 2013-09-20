@@ -27,21 +27,21 @@
 
 - (id).cxx_construct;
 - (BOOL)areThereOpenContainers;
-- (void)beginContainerNoParamsWithId:(unsigned long)arg1;
-- (void)beginContainerWithId:(unsigned long)arg1 boundsInParent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 boundsUnit:(int)arg4;
-- (void)beginContainerWithId:(unsigned long)arg1 containerTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (void)beginContainerNoParamsWithId:(unsigned int)arg1;
+- (void)beginContainerWithId:(unsigned int)arg1 boundsInParent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 boundsUnit:(int)arg4;
+- (void)beginContainerWithId:(unsigned int)arg1 containerTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canvas;
 - (id)currentState;
 - (void)dealloc;
-- (void)fillPath:(struct CGPath { }*)arg1 evenOddRule:(BOOL)arg2 brush:(id)arg3;
+- (void)fillPath:(id)arg1 brush:(id)arg2;
 - (id)fontNameForUppercaseFontName:(id)arg1;
 - (id)initWithCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)objectTable;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })pageTransformWithScale:(float)arg1 unit:(int)arg2;
 - (float)pixelsPerUnit:(int)arg1 direction:(int)arg2;
-- (void)restoreGraphicsStateOrEndContainerWithId:(unsigned long)arg1;
-- (void)saveGraphicsStateWithId:(unsigned long)arg1;
+- (void)restoreGraphicsStateOrEndContainerWithId:(unsigned int)arg1;
+- (void)saveGraphicsStateWithId:(unsigned int)arg1;
 - (void)setHorizontalDpi:(int)arg1 verticalDpi:(int)arg2;
-- (void)strokePath:(struct CGPath { }*)arg1 pen:(id)arg2;
+- (void)strokePath:(id)arg1 pen:(id)arg2;
 
 @end

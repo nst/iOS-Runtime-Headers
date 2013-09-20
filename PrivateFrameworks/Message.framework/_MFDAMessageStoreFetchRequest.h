@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory>, MFDAMessageStore, Message, MimePart;
+@class <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory>, MFDAMessageStore, MFMessage, MFMimePart;
 
 @interface _MFDAMessageStoreFetchRequest : DAMailboxFetchMessageRequest <MFDAMailAccountRequest> {
     <MFRequestQueueResponseConsumer><DAMailAccountStreamConsumerFactory> *consumer;
     int format;
-    Message *message;
-    MimePart *part;
+    MFMessage *message;
+    MFMimePart *part;
     BOOL partial;
     MFDAMessageStore *store;
 }

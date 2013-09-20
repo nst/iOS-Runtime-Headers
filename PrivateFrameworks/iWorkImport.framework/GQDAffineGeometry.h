@@ -43,9 +43,15 @@
 - (struct CGPoint { float x1; float x2; })position;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (void)setAngle:(float)arg1;
+- (void)setAspectRatioLocked:(BOOL)arg1;
+- (void)setHorizontalFlip:(BOOL)arg1;
 - (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setShearXAngle:(float)arg1;
+- (void)setShearYAngle:(float)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSizesLocked:(BOOL)arg1;
+- (void)setVerticalFlip:(BOOL)arg1;
 - (float)shearXAngle;
 - (float)shearYAngle;
 - (struct CGSize { float x1; float x2; })size;

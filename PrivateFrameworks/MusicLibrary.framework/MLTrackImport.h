@@ -11,7 +11,6 @@
     NSArray *_chapters;
     NSMutableDictionary *_properties;
     BOOL _shouldAddToPurchasedPlaylist;
-    BOOL _shouldDeleteExistingArtwork;
 }
 
 @property(copy) NSData * artworkData;
@@ -23,7 +22,6 @@
 @property unsigned long mediaType;
 @property(copy) MLMovieProperties * movieProperties;
 @property BOOL shouldAddToPurchasedPlaylist;
-@property BOOL shouldDeleteExistingArtwork;
 
 + (void)initialize;
 
@@ -49,10 +47,8 @@
 - (void)setMediaType:(unsigned long)arg1;
 - (void)setMovieProperties:(id)arg1;
 - (void)setShouldAddToPurchasedPlaylist:(BOOL)arg1;
-- (void)setShouldDeleteExistingArtwork:(BOOL)arg1;
 - (void)setValue:(id)arg1 forEntityProperty:(id)arg2;
 - (BOOL)shouldAddToPurchasedPlaylist;
-- (BOOL)shouldDeleteExistingArtwork;
 - (id)valueForEntityProperty:(id)arg1;
 
 @end

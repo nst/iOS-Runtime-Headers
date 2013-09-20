@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPickerViewDataSource>, <UIPickerViewDelegate>, NSMutableArray, UIView;
+@class <UIPickerViewDataSource>, <UIPickerViewDelegate>, CALayer, NSMutableArray, UIColor, UIImageView, UIView;
 
-@interface UIPickerView : UIView <UITableViewDelegate, NSCoding, UITableViewDataSource> {
+@interface UIPickerView : UIView <UIPickerTableViewContainerDelegate, UITableViewDelegate, NSCoding, UITableViewDataSource> {
     struct { 
         unsigned int needsLayout : 1; 
         unsigned int delegateRespondsToNumberOfComponentsInPickerView : 1; 
@@ -15,7 +15,6 @@
         unsigned int delegateRespondsToAttributedTitleForRow : 1; 
         unsigned int delegateRespondsToWidthForComponent : 1; 
         unsigned int delegateRespondsToRowHeightForComponent : 1; 
-        unsigned int delegateRespondsToCheckableForRow : 1; 
         unsigned int showsSelectionBar : 1; 
         unsigned int allowsMultipleSelection : 1; 
         unsigned int allowSelectingCells : 1; 
@@ -23,29 +22,49 @@
         unsigned int usesCheckedSelection : 1; 
         unsigned int skipsBackground : 1; 
     UIView *_backgroundView;
+    UIImageView *_bottomGradient;
+    UIView *_bottomLineView;
     <UIPickerViewDataSource> *_dataSource;
     <UIPickerViewDelegate> *_delegate;
     NSMutableArray *_dividers;
+    UIView *_foregroundView;
     BOOL _isInLayoutSubviews;
+    BOOL _magnifierEnabled;
+    CALayer *_maskGradientLayer;
     int _numberOfComponents;
     } _pickerViewFlags;
     NSMutableArray *_selectionBars;
     NSMutableArray *_tables;
+    UIColor *_textColor;
+    UIColor *_textShadowColor;
     UIView *_topFrame;
+    UIImageView *_topGradient;
+    UIView *_topLineView;
+    BOOL _usesModernStyle;
 }
 
 @property(setter=_setInLayoutSubviews:) BOOL _isInLayoutSubviews;
+@property(setter=_setMagnifierEnabled:) BOOL _magnifierEnabled;
 @property <UIPickerViewDataSource> * dataSource;
 @property <UIPickerViewDelegate> * delegate;
+@property(getter=_highlightColor,setter=_setHighlightColor:,retain) UIColor * highlightColor;
 @property(readonly) int numberOfComponents;
 @property BOOL showsSelectionIndicator;
+@property(getter=_textColor,setter=_setTextColor:,retain) UIColor * textColor;
+@property(getter=_textShadowColor,setter=_setTextShadowColor:,retain) UIColor * textShadowColor;
+@property(getter=_usesModernStyle,setter=_setUsesModernStyle:) BOOL usesModernStyle;
 
++ (id)_modernCenterCellFont;
++ (id)_modernNonCenterCellFont;
 + (struct CGSize { float x1; float x2; })defaultSizeForCurrentOrientation;
 + (struct CGSize { float x1; float x2; })sizeForCurrentOrientationThatFits:(struct CGSize { float x1; float x2; })arg1;
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forInterfaceOrientation:(int)arg2;
 
+- (void)_addMagnifierLinesForRowHeight:(float)arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (id)_contentView;
+- (id)_createColumnWithTableFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 rowHeight:(float)arg2;
 - (id)_createTableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forComponent:(int)arg2;
 - (id)_createViewForPickerPiece:(int)arg1;
 - (id)_delegateAttributedTitleForRow:(int)arg1 forComponent:(int)arg2;
@@ -55,10 +74,14 @@
 - (id)_delegateTitleForRow:(int)arg1 forComponent:(int)arg2;
 - (float)_delegateWidthForComponent:(int)arg1 ofCount:(int)arg2 withSizeLeft:(float)arg3;
 - (BOOL)_drawsBackground;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_effectiveTableViewFrameForColumn:(int)arg1;
+- (id)_highlightColor;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isInLayoutSubviews;
 - (BOOL)_isLandscapeOrientation;
+- (BOOL)_magnifierEnabled;
 - (id)_orientationImageSuffix;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_perspectiveTransform;
 - (id)_popoverSuffix;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_resetSelectionOfTables;
@@ -69,15 +92,24 @@
 - (void)_sendSelectionChangedForComponent:(int)arg1;
 - (void)_sendSelectionChangedFromTable:(id)arg1;
 - (void)_setDrawsBackground:(BOOL)arg1;
+- (void)_setHighlightColor:(id)arg1;
 - (void)_setInLayoutSubviews:(BOOL)arg1;
+- (void)_setMagnifierEnabled:(BOOL)arg1;
+- (void)_setTextColor:(id)arg1;
+- (void)_setTextShadowColor:(id)arg1;
 - (void)_setUsesCheckedSelection:(BOOL)arg1;
+- (void)_setUsesModernStyle:(BOOL)arg1;
+- (BOOL)_shouldDrawWithModernStyle;
 - (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_soundsEnabled;
 - (float)_tableRowHeight;
+- (id)_textColor;
+- (id)_textShadowColor;
 - (void)_updateSound;
 - (void)_updateWithOldSize:(struct CGSize { float x1; float x2; })arg1 newSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)_usesCheckSelection;
 - (BOOL)_usesCheckedSelection;
+- (BOOL)_usesModernStyle;
 - (float)_wheelShift;
 - (BOOL)allowsMultipleSelection;
 - (int)columnForTableView:(id)arg1;
@@ -88,6 +120,7 @@
 - (id)delegate;
 - (void)didMoveToWindow;
 - (void)encodeWithCoder:(id)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)imageForPickerPiece:(int)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -113,6 +146,7 @@
 - (int)selectedRowInComponent:(int)arg1;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (void)setAlpha:(float)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;

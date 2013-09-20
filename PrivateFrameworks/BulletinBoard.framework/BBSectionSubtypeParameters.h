@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBSectionSubtypeParameters, NSNumber, NSSet, NSString;
+@class BBSectionIcon, BBSectionSubtypeParameters, NSNumber, NSSet, NSString;
 
-@interface BBSectionSubtypeParameters : NSObject {
+@interface BBSectionSubtypeParameters : NSObject <NSSecureCoding> {
     NSSet *_alertSuppressionAppIDs;
     NSNumber *_boxedBannerShowsSubtitle;
     NSNumber *_boxedCoalescesWhenLocked;
@@ -18,6 +18,7 @@
     BBSectionSubtypeParameters *_fallbackParameters;
     NSString *_fullUnlockActionLabel;
     NSString *_missedBannerDescriptionFormat;
+    BBSectionIcon *_sectionIconOverride;
     NSString *_topic;
     NSString *_unlockActionLabel;
 }
@@ -41,11 +42,14 @@
 @property(copy) NSString * missedBannerDescriptionFormat;
 @property BOOL preservesUnlockActionCase;
 @property unsigned int realertCount;
+@property(copy) BBSectionIcon * sectionIconOverride;
 @property unsigned int subtypePriority;
 @property BOOL suppressesMessageForPrivacy;
 @property(copy) NSString * topic;
 @property(copy) NSString * unlockActionLabel;
 @property BOOL visuallyIndicatesWhenDateIsInFuture;
+
++ (BOOL)supportsSecureCoding;
 
 - (id)alertSuppressionAppIDs;
 - (BOOL)bannerShowsSubtitle;
@@ -70,6 +74,7 @@
 - (id)missedBannerDescriptionFormat;
 - (BOOL)preservesUnlockActionCase;
 - (unsigned int)realertCount;
+- (id)sectionIconOverride;
 - (void)setAlertSuppressionAppIDs:(id)arg1;
 - (void)setBannerShowsSubtitle:(BOOL)arg1;
 - (void)setBoxedBannerShowsSubtitle:(id)arg1;
@@ -89,6 +94,7 @@
 - (void)setMissedBannerDescriptionFormat:(id)arg1;
 - (void)setPreservesUnlockActionCase:(BOOL)arg1;
 - (void)setRealertCount:(unsigned int)arg1;
+- (void)setSectionIconOverride:(id)arg1;
 - (void)setSubtypePriority:(unsigned int)arg1;
 - (void)setSuppressesMessageForPrivacy:(BOOL)arg1;
 - (void)setTopic:(id)arg1;

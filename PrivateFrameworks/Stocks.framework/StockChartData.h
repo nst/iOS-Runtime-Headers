@@ -2,25 +2,26 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSArray, NSDate, NSString, NSTimeZone, StockGraphImageSet;
+@class NSArray, NSDate, NSTimeZone, Stock, StockGraphImageSet;
 
 @interface StockChartData : NSObject {
-    int chartInterval;
-    double expirationTime;
-    StockGraphImageSet *graphImageSets[2];
-    BOOL hasVolume;
-    NSArray *interestingIndexes;
-    BOOL isUnavailable;
-    int labelAlignments[2];
-    NSArray *labelInfoArrays[4];
-    NSDate *marketCloseDate;
-    NSDate *marketOpenDate;
-    NSTimeZone *marketTimeZone;
-    struct { double x1; double x2; unsigned long long x3; } *maxValue;
-    struct { double x1; double x2; unsigned long long x3; } *minValue;
-    unsigned int stockValueCount;
-    struct { double x1; double x2; unsigned long long x3; } *stockValues;
-    NSString *symbol;
+    int _chartInterval;
+    double _expirationTime;
+    StockGraphImageSet *_graphImageSets[2];
+    BOOL _hasVolume;
+    NSArray *_interestingIndexes;
+    BOOL _isUnavailable;
+    int _labelAlignments[2];
+    NSArray *_labelInfoArrays[4];
+    NSDate *_marketCloseDate;
+    NSDate *_marketOpenDate;
+    NSTimeZone *_marketTimeZone;
+    struct { double x1; double x2; unsigned long long x3; } *_maxValue;
+    struct { double x1; double x2; unsigned long long x3; } *_minValue;
+    Stock *_stock;
+    unsigned int _stockValueCount;
+    struct { double x1; double x2; unsigned long long x3; } *_stockValues;
+    int _yAxisFractionDigits;
 }
 
 @property int chartInterval;
@@ -33,9 +34,10 @@
 @property(retain) NSTimeZone * marketTimeZone;
 @property struct { double x1; double x2; unsigned long long x3; }* maxValue;
 @property struct { double x1; double x2; unsigned long long x3; }* minValue;
+@property Stock * stock;
 @property(readonly) unsigned int stockValueCount;
 @property(readonly) struct { double x1; double x2; unsigned long long x3; }* stockValues;
-@property(copy) NSString * symbol;
+@property int yAxisFractionDigits;
 
 - (void).cxx_destruct;
 - (struct { double x1; double x2; unsigned long long x3; }*)allocateStockValuesWithCount:(unsigned int)arg1;
@@ -46,7 +48,7 @@
 - (double)expirationTime;
 - (BOOL)hasVolume;
 - (id)imageSetForStockGraphSize:(int)arg1;
-- (id)initWithSymbol:(id)arg1 interval:(int)arg2;
+- (id)initWithStock:(id)arg1 interval:(int)arg2;
 - (id)interestingIndexes;
 - (BOOL)isUnavailable;
 - (int)labelAlignmentForDetailedMode:(BOOL)arg1;
@@ -69,9 +71,11 @@
 - (void)setMarketTimeZone:(id)arg1;
 - (void)setMaxValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
 - (void)setMinValue:(struct { double x1; double x2; unsigned long long x3; }*)arg1;
-- (void)setSymbol:(id)arg1;
+- (void)setStock:(id)arg1;
+- (void)setYAxisFractionDigits:(int)arg1;
+- (id)stock;
 - (unsigned int)stockValueCount;
 - (struct { double x1; double x2; unsigned long long x3; }*)stockValues;
-- (id)symbol;
+- (int)yAxisFractionDigits;
 
 @end

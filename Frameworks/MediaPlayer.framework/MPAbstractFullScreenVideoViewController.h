@@ -8,8 +8,6 @@
     unsigned int _showControlsAfterRotate : 1;
     unsigned int _autoHidingForItemChange : 1;
     unsigned int _scheduledAutoHide : 1;
-    unsigned int _orientationForStatusBarOverrideActive : 1;
-    int _orientationForStatusBarOverride;
 }
 
 - (void)_applicationDidBecomeActive:(id)arg1;
@@ -17,7 +15,6 @@
 - (void)_hideOverlayWithAnimation:(BOOL)arg1 shouldUpdateAutohideFlag:(BOOL)arg2;
 - (void)_hideOverlayWithAnimation:(BOOL)arg1;
 - (void)_resumedEventsOnlyNotification:(id)arg1;
-- (void)_setStatusBarVisible:(BOOL)arg1 duration:(float)arg2;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (int)_validInterfaceOrientation;
 - (BOOL)canDisplayItem:(id)arg1 withInterfaceOrientation:(int)arg2;
@@ -33,7 +30,6 @@
 - (id)init;
 - (void)loadView;
 - (id)newAlternateTracksTransition;
-- (int)orientationForStatusBar;
 - (void)overlayDidBeginScrubbing:(id)arg1;
 - (void)overlayDidEndScrubbing:(id)arg1;
 - (void)scheduleControlsOverlayAutohideAfterDelay:(double)arg1;
@@ -49,7 +45,6 @@
 - (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showOverlayAnimated:(BOOL)arg1;
 - (void)showOverlayIfNecessary;
-- (int)statusBarStyle;
 - (void)swipableView:(id)arg1 tappedWithCount:(unsigned int)arg2 atLocation:(struct CGPoint { float x1; float x2; })arg3;
 - (void)swipableViewHadActivity:(id)arg1;
 - (void)transformVideoForInterfaceOrientation:(int)arg1 animate:(BOOL)arg2;

@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIView;
+@class NSObject, NSString, UIKBRenderConfig, UIKBTree;
 
-@interface UIKBBackgroundView : UIView <UIKBCacheableView> {
+@interface UIKBBackgroundView : UIKBSplitImageView <UIKBCacheableView> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -42,13 +42,13 @@
             float height; 
         } size; 
     BOOL _centerFilled;
-    id _geometryCacheKey;
+    NSObject *_geometryCacheKey;
+    BOOL _hasCandidateKeys;
     BOOL _isSplit;
-    NSString *_layoutName;
-    UIView *_splitLeft;
+    UIKBTree *_keyplane;
+    UIKBRenderConfig *_renderConfig;
     } _splitLeftCacheRect;
     } _splitLeftRect;
-    UIView *_splitRight;
     } _splitRightCacheRect;
     } _splitRightRect;
     int _topCorners;
@@ -56,15 +56,26 @@
 }
 
 @property(readonly) BOOL cacheDeferable;
+@property(readonly) NSString * cacheKey;
 @property(readonly) float cachedWidth;
+@property(retain) NSObject * geometryCacheKey;
+@property(readonly) BOOL keepNonPersistent;
+@property(retain) UIKBRenderConfig * renderConfig;
 
 - (BOOL)cacheDeferable;
 - (id)cacheKey;
+- (id)cacheKeysForRenderFlags:(id)arg1;
 - (float)cachedWidth;
 - (void)dealloc;
 - (void)displayLayer:(id)arg1;
+- (void)drawContentsOfRenderers:(id)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)geometryCacheKey;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)refreshStyleForKeyboard:(id)arg1;
+- (BOOL)keepNonPersistent;
+- (void)refreshStyleForKeyplane:(id)arg1;
+- (id)renderConfig;
+- (void)setGeometryCacheKey:(id)arg1;
+- (void)setRenderConfig:(id)arg1;
 
 @end

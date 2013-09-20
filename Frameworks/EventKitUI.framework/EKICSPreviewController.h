@@ -5,7 +5,7 @@
 @class <EKICSPreviewControllerDelegate>, EKEventStore, EKEventViewController, EKICSPreviewModel, UIViewController;
 
 @interface EKICSPreviewController : NSObject {
-    BOOL _actionsDisabled;
+    int _actionsState;
     BOOL _allowsEditing;
     BOOL _allowsImport;
     BOOL _allowsInvalidProperties;
@@ -21,7 +21,7 @@
     <EKICSPreviewControllerDelegate> *_previewDelegate;
 }
 
-@property BOOL actionsDisabled;
+@property int actionsState;
 @property BOOL allowsEditing;
 @property BOOL allowsImport;
 @property BOOL allowsInvalidProperties;
@@ -29,13 +29,14 @@
 @property BOOL allowsToDos;
 @property(readonly) BOOL isImporting;
 @property <EKICSPreviewControllerDelegate> * previewDelegate;
-@property(readonly) int totalEventCount;
-@property(readonly) int unimportedEventCount;
+@property(readonly) unsigned int totalEventCount;
+@property(readonly) unsigned int unimportedEventCount;
 
+- (void).cxx_destruct;
 - (void)_createCancelButtonWithType:(int)arg1 target:(id)arg2 action:(SEL)arg3;
 - (void)_databaseChanged:(id)arg1;
 - (void)_updateCancelButton;
-- (BOOL)actionsDisabled;
+- (int)actionsState;
 - (BOOL)allowsEditing;
 - (BOOL)allowsImport;
 - (BOOL)allowsInvalidProperties;
@@ -60,7 +61,7 @@
 - (void)presentCalendarChooserForController:(id)arg1;
 - (id)previewDelegate;
 - (void)removeCancelButton;
-- (void)setActionsDisabled:(BOOL)arg1;
+- (void)setActionsState:(int)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setAllowsImport:(BOOL)arg1;
 - (void)setAllowsInvalidProperties:(BOOL)arg1;
@@ -68,8 +69,8 @@
 - (void)setAllowsToDos:(BOOL)arg1;
 - (void)setCancelButtonWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)setPreviewDelegate:(id)arg1;
-- (int)totalEventCount;
-- (int)unimportedEventCount;
+- (unsigned int)totalEventCount;
+- (unsigned int)unimportedEventCount;
 - (id)viewController;
 
 @end

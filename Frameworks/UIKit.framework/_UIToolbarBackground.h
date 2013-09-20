@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIToolbarBackground : UIImageView {
+@interface _UIToolbarBackground : _UIBarBackgroundImageView {
 }
 
 @end

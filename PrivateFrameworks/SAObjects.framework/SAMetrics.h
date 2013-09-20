@@ -9,6 +9,7 @@
 
 @property(copy) NSString * aceId;
 @property(copy) NSString * category;
+@property(copy) NSString * originalCommandId;
 @property(copy) NSString * refId;
 @property(copy) NSDictionary * timings;
 
@@ -18,7 +19,9 @@
 - (id)category;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)originalCommandId;
 - (void)setCategory:(id)arg1;
+- (void)setOriginalCommandId:(id)arg1;
 - (void)setTimings:(id)arg1;
 - (id)timings;
 

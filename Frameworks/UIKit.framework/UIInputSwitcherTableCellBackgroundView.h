@@ -2,14 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UIKeyboardMenuView, UITableView, UITableViewCell;
+
 @interface UIInputSwitcherTableCellBackgroundView : UIView {
-    BOOL m_selected;
+    UITableViewCell *_cell;
+    UIKeyboardMenuView *_menu;
+    UITableView *_tableView;
 }
 
-@property BOOL selected;
+@property UITableViewCell * cell;
+@property UIKeyboardMenuView * menu;
+@property UITableView * tableView;
 
+- (id)cell;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
+- (id)initWithTableView:(id)arg1 cell:(id)arg2;
+- (id)menu;
+- (void)setCell:(id)arg1;
+- (void)setMenu:(id)arg1;
+- (void)setTableView:(id)arg1;
+- (id)tableView;
 
 @end

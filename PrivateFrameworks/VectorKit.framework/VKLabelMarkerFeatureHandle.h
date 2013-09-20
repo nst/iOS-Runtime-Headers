@@ -10,14 +10,9 @@
     int _tileZ;
 }
 
-@property(readonly) int featureIndex;
-@property(readonly) int featureType;
-@property(readonly) int tileX;
-@property(readonly) int tileY;
-@property(readonly) int tileZ;
-
 - (int)featureIndex;
 - (int)featureType;
+- (id)initWithFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1;
 - (int)tileX;
 - (int)tileY;
 - (int)tileZ;

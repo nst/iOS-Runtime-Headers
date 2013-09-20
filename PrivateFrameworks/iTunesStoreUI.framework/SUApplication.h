@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIWindow;
+@class UIColor, UIWindow;
 
 @interface SUApplication : UIApplication <UIApplicationDelegate> {
+    UIColor *_interactionTintColor;
     BOOL _terminateOnNextSuspend;
     UIWindow *_window;
 }
 
+@property(copy) UIColor * interactionTintColor;
 @property(retain) UIWindow * window;
 
 - (void)_applicationDidFinishLaunching:(id)arg1;
@@ -19,7 +21,8 @@
 - (void)_storeEnabledChangeNotification:(id)arg1;
 - (void)_teardownUI;
 - (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
-- (BOOL)application:(id)arg1 handleOpenURL:(id)arg2;
+- (BOOL)application:(id)arg1 openURL:(id)arg2 sourceApplication:(id)arg3 annotation:(id)arg4;
+- (unsigned int)application:(id)arg1 supportedInterfaceOrientationsForWindow:(id)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (BOOL)applicationSuspend:(struct __GSEvent { }*)arg1 settings:(id)arg2;
@@ -27,7 +30,9 @@
 - (void)dealloc;
 - (double)defaultImageSnapshotExpiration;
 - (id)init;
+- (id)interactionTintColor;
 - (BOOL)runTest:(id)arg1 options:(id)arg2;
 - (void)runTestInvocation:(id)arg1;
+- (void)setInteractionTintColor:(id)arg1;
 
 @end

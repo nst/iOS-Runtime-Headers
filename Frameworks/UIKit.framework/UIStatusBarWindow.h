@@ -18,10 +18,9 @@
 
 - (BOOL)_disableGroupOpacity;
 - (BOOL)_disableViewScaling;
-- (void)_fadeAnimationStopped:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (BOOL)_isStatusBarWindow;
 - (void)_rotate;
-- (void)_styleAnimationDidStop:(id)arg1 finished:(id)arg2 completion:(void*)arg3;
+- (BOOL)_shouldZoom;
 - (void)_updateTransformLayerForClassicPresentation;
 - (void)dealloc;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

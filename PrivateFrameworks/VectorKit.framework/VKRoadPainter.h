@@ -8,10 +8,8 @@
     VGLRenderState *_renderState;
 }
 
-+ (void)buildTileStencilWithContext:(id)arg1 forTiles:(id)arg2;
-
 - (void)dealloc;
-- (void)drawTiles:(id)arg1 context:(id)arg2 layer:(unsigned int)arg3 withModel:(id)arg4 drawingRoad:(BOOL)arg5 scene:(id)arg6;
+- (void)drawRoadTiles:(id)arg1 context:(id)arg2 layer:(unsigned int)arg3 withModel:(id)arg4 scene:(id)arg5 stencilOffset:(int)arg6 needsTileStencil:(BOOL)arg7 atopTransparent:(BOOL)arg8 includeBorders:(int)arg9;
 - (id)init;
 
 @end

@@ -29,6 +29,7 @@
 - (id)init;
 - (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
 - (BOOL)okToNotifyFromThisThread;
+- (id)pickableRoutesForCategory:(id)arg1 andMode:(id)arg2;
 - (id)pickableRoutesForCategory:(id)arg1;
 - (void)postEffectiveVolumeNotification:(void*)arg1;
 - (void)postFullMuteDidChangeNotification:(void*)arg1;

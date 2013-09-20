@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface PDAnimateEffectBehavior : PDCommonBehaviorData {
+@interface PDAnimateEffectBehavior : PDAnimateBehavior {
     NSString *mFilter;
     int mTransition;
 }

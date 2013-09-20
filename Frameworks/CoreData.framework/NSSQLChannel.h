@@ -16,6 +16,7 @@
 - (void)_openChannel;
 - (id)_propertiesToFetch;
 - (void)_setCurrentEntityAndRelationshipWithFetchRequest:(id)arg1;
+- (void)bindTempTablesForStatementIfNecessary:(id)arg1;
 - (id)connection;
 - (id)currentContext;
 - (void)dealloc;

@@ -12,32 +12,33 @@
     float _letterSpacing;
     BOOL _loopNowIfNecessary;
     BOOL _loopingNecessaryForString;
+    BOOL _loopingNow;
     float _maxWidth;
-    NSString *_pathToServiceImages[2];
     NSString *_serviceString;
     float _serviceWidth;
-    BOOL _usingStringForStyle[2];
 }
 
-- (id)_contentsImageFromString:(id)arg1 withWidth:(float)arg2 letterSpacing:(float)arg3 forStyle:(int)arg4;
-- (id)_crossfadeContentsImageForStyle:(int)arg1;
+- (id)_cachedContentImageForString:(id)arg1 withWidth:(float)arg2 letterSpacing:(float)arg3;
+- (id)_contentsImageFromString:(id)arg1 withWidth:(float)arg2 letterSpacing:(float)arg3;
+- (id)_crossfadeContentsImage;
 - (void)_crossfadeStepAnimation;
 - (BOOL)_crossfaded;
-- (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)_finalAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (BOOL)_loopingNecessary;
-- (id)_serviceContentsImageForStyle:(int)arg1;
-- (void)_setUsingString:(BOOL)arg1 forStyle:(int)arg2;
+- (id)_serviceContentsImage;
+- (float)addContentOverlap:(float)arg1;
 - (BOOL)animatesDataChange;
-- (BOOL)animatesFrameChange;
-- (id)contentsImageForStyle:(int)arg1;
+- (id)contentsImage;
 - (void)dealloc;
 - (float)extraRightPadding;
+- (int)legibilityStyle;
 - (void)performPendedActions;
+- (float)resetContentOverlap;
 - (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (float)standardPadding;
-- (id)textColorForStyle:(int)arg1;
 - (float)updateContentsAndWidth;
+- (BOOL)updateForContentType:(int)arg1 serviceString:(id)arg2 serviceCrossfadeString:(id)arg3 maxWidth:(float)arg4 actions:(int)arg5;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
-- (BOOL)usesSmallerTextFont;
 
 @end

@@ -38,7 +38,7 @@
 - (void)setDefaultParagraphStyle:(id)arg1;
 - (void)setDefaultTableStyle:(id)arg1;
 - (void)setName:(id)arg1 forId:(id)arg2;
-- (int)styleCount;
+- (unsigned int)styleCount;
 - (id)styleIdForName:(id)arg1;
 - (id)styleNameToId:(id)arg1;
 - (id)styleWithId:(id)arg1;

@@ -6,6 +6,7 @@
 
 @interface EGLBase : NSObject <ESRenderer> {
     unsigned int mFramebuffer;
+    EAGLContext *mGLBackupContext;
     EAGLContext *mGLContext;
     unsigned int mTextureArray[32];
 }
@@ -27,5 +28,6 @@
 - (int)renderInto16bitYBuffer:(unsigned short*)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 usingProgram:(unsigned int)arg4;
 - (int)renderIntoBuffer:(struct __IOSurface { }*)arg1 planeIndex:(unsigned int)arg2 usingProgram:(unsigned int)arg3 viewportOrigX:(int)arg4 viewportOrigY:(int)arg5 viewportWidth:(int)arg6 viewportHeight:(int)arg7;
 - (void)restoreContext;
+- (void)setCurrentContext;
 
 @end

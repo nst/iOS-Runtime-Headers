@@ -9,8 +9,8 @@
 - (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
 - (id)initWithValue:(id)arg1 type:(unsigned int)arg2;
 - (BOOL)isMultiValued;
-- (void)setValue:(id)arg1 type:(int)arg2;
-- (void)setValues:(id)arg1 valueType:(int)arg2;
+- (void)setValue:(id)arg1 type:(unsigned int)arg2;
+- (void)setValues:(id)arg1 valueType:(unsigned int)arg2;
 - (id)value;
 - (id)values;
 

@@ -4,7 +4,7 @@
 
 @class GEOLocation, GEOMapRegion, GEOPlaceSearchRequest, NSString;
 
-@interface GEOMapQuery : PBCodable {
+@interface GEOMapQuery : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -77,6 +77,7 @@
 - (int)clientImgMaxHeight;
 - (int)clientImgMaxWidth;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

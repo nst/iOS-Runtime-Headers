@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <NSObject>, MPAVController, NSDictionary;
+@class <NSObject>, MPAVController, NSDictionary, RadioStation;
 
 @interface MPQueueFeeder : NSObject <MPAVPlaylistFeeder> {
     unsigned int _activeShuffleType;
@@ -25,16 +25,20 @@
 @property(readonly) Class itemClass;
 @property(readonly) unsigned int itemCount;
 @property(readonly) unsigned int nonRepeatingItemCount;
+@property(readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
 @property(readonly) NSDictionary * preferredLanguages;
 @property(readonly) unsigned int realRepeatType;
 @property(readonly) unsigned int realShuffleType;
 @property unsigned int repeatType;
 @property(retain) <NSObject> * representedObject;
 @property unsigned int shuffleType;
+@property(readonly) RadioStation * station;
 @property(readonly) BOOL trackChangesCanEndPlayback;
+@property(readonly) BOOL userCanChangeShuffleAndRepeatType;
 
 + (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2 feederClass:(Class)arg3;
 
+- (void).cxx_destruct;
 - (id)AVController;
 - (BOOL)_canPurgeNextStartTimes;
 - (void)_fixNextStartTimesByInsertingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -52,6 +56,7 @@
 - (void)contentInvalidated;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
 - (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)controller:(id)arg1 willChangePlaybackIndexBy:(int)arg2 deltaType:(int)arg3 ignoreElapsedTime:(BOOL)arg4 allowSkippingAds:(BOOL)arg5;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)errorResolverForItem:(id)arg1;
@@ -65,11 +70,12 @@
 - (unsigned int)itemCount;
 - (id)itemForIndex:(unsigned int)arg1;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
+- (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
-- (id)mix;
 - (unsigned int)nonRepeatingItemCount;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)playbackInfoAtIndex:(unsigned int)arg1;
+- (BOOL)playerPreparesItemsForPlaybackAsynchronously;
 - (id)preferredLanguages;
 - (unsigned int)realRepeatType;
 - (unsigned int)realShuffleType;
@@ -82,7 +88,6 @@
 - (void)setActiveShuffleType:(unsigned int)arg1;
 - (void)setFullScreenPlaybackQueue:(BOOL)arg1;
 - (void)setIsSourceChangeInProgress:(BOOL)arg1;
-- (void)setMix:(id)arg1;
 - (void)setNextStartTime:(double)arg1 forIndex:(unsigned int)arg2;
 - (void)setRepeatType:(unsigned int)arg1;
 - (void)setRepresentedObject:(id)arg1;
@@ -92,6 +97,8 @@
 - (BOOL)shouldReloadForChangeFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
 - (unsigned int)shuffleType;
+- (id)station;
 - (BOOL)trackChangesCanEndPlayback;
+- (BOOL)userCanChangeShuffleAndRepeatType;
 
 @end

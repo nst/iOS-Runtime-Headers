@@ -24,6 +24,7 @@
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 path:(id)arg3 format:(id)arg4;
 + (BOOL)isError:(id)arg1 withCode:(int)arg2;
 + (BOOL)isError:(id)arg1 withCodes:(int)arg2;
++ (BOOL)isNSError:(id)arg1 withCode:(int)arg2;
 + (BOOL)isRetryAfterError:(id)arg1 retryAfterDate:(id*)arg2;
 + (BOOL)isTransientError:(id)arg1;
 + (BOOL)isUnexpectedErrorCode:(int)arg1;

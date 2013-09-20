@@ -2,16 +2,26 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObjectToOneRelation, EKStructuredLocation, NSDate;
+@class EKAlarm, EKCalendarItem, EKObjectToOneRelation, EKStructuredLocation, NSArray, NSDate, NSString;
 
 @interface EKAlarm : EKObject <NSCopying> {
     EKObjectToOneRelation *_locationRelation;
+    EKCalendarItem *_owner;
 }
 
+@property(readonly) NSString * UUID;
 @property(copy) NSDate * absoluteDate;
+@property(copy) NSDate * acknowledgedDate;
+@property(getter=isDefaultAlarm) BOOL defaultAlarm;
+@property(readonly) NSString * externalID;
+@property(readonly) BOOL isAbsolute;
+@property(readonly) BOOL isSnoozedAlarm;
 @property(retain) EKObjectToOneRelation * locationRelation;
+@property(retain) EKAlarm * originalAlarm;
+@property(retain) EKCalendarItem * owner;
 @property int proximity;
 @property double relativeOffset;
+@property(copy) NSArray * snoozedAlarms;
 @property(copy) EKStructuredLocation * structuredLocation;
 
 + (int)_currentAuthorizationStatus;
@@ -26,8 +36,10 @@
 - (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
 - (id)_locationRelation;
 - (id)_originalAlarmRelation;
+- (id)_snoozedAlarmsRelation;
 - (id)absoluteDate;
 - (id)acknowledgedDate;
+- (void)addSnoozedAlarm:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -37,6 +49,7 @@
 - (id)initWithRelativeOffset:(double)arg1;
 - (BOOL)isAbsolute;
 - (BOOL)isDefaultAlarm;
+- (BOOL)isSnoozedAlarm;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)localizedAllDayDescription;
 - (id)localizedDescription;
@@ -50,13 +63,18 @@
 - (int)proximity;
 - (BOOL)rebase;
 - (double)relativeOffset;
+- (void)removeSnoozedAlarm:(id)arg1;
 - (void)setAbsoluteDate:(id)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
 - (void)setDefaultAlarm:(BOOL)arg1;
 - (void)setLocationRelation:(id)arg1;
+- (void)setOriginalAlarm:(id)arg1;
+- (void)setOwner:(id)arg1;
 - (void)setProximity:(int)arg1;
 - (void)setRelativeOffset:(double)arg1;
+- (void)setSnoozedAlarms:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;
+- (id)snoozedAlarms;
 - (id)structuredLocation;
 - (BOOL)validate:(id*)arg1;
 

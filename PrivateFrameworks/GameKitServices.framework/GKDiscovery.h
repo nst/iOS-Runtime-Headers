@@ -16,6 +16,7 @@
 - (void)dealloc;
 - (void)forgetParticipant:(id)arg1 deviceID:(id)arg2;
 - (id)init;
+- (id)initWithDomain:(id)arg1 type:(id)arg2;
 - (id)manager;
 - (id)playerFoundHandler;
 - (id)playerLostHandler;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABFMFActionButtonsDelegate>, ABPersonTableActionDataSource, ABPersonTableTinyActionCell, ABPersonTableViewDataSource, ABStyleProvider;
+@class <ABFMFActionButtonsDelegate>, ABPersonTableActionDataSource, ABPersonTableTinyActionCell, ABPersonTableViewDataSource, ABStyleProvider, ABUIPerson;
 
 @interface ABPersonTableViewActionsDelegate : NSObject <UIActionSheetDelegate, ABPersonTableActionDelegate, ABPersonTableTinyActionDelegate> {
     <ABFMFActionButtonsDelegate> *_FMFActionButtonsDelegate;
@@ -12,7 +12,7 @@
     ABPersonTableViewDataSource *_dataSource;
     int _highlightedValueIdentifier;
     BOOL _highlightedValueIsImportant;
-    void *_highlightedValuePerson;
+    ABUIPerson *_highlightedValuePerson;
     int _highlightedValueProperty;
     ABStyleProvider *_styleProvider;
     ABPersonTableTinyActionCell *_tinyActionCell;
@@ -23,7 +23,7 @@
 @property BOOL actionShouldPickHighlightedValue;
 @property ABPersonTableViewDataSource * dataSource;
 @property int highlightedValueIdentifier;
-@property void* highlightedValuePerson;
+@property(retain) ABUIPerson * highlightedValuePerson;
 @property int highlightedValueProperty;
 @property(retain) ABStyleProvider * styleProvider;
 @property(readonly) ABPersonTableTinyActionCell * tinyActionCell;
@@ -46,15 +46,15 @@
 - (id)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 detailText:(id)arg3 style:(int)arg4 target:(id)arg5 selector:(SEL)arg6 property:(int)arg7 actionGrouping:(int)arg8 ordering:(int)arg9;
 - (id)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 property:(int)arg5 actionGrouping:(int)arg6 ordering:(int)arg7;
 - (void)addToFavoritesButtonClicked:(id)arg1;
-- (void)callContact:(id)arg1 person:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)conference:(id)arg1 person:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)callContact:(id)arg1 person:(id)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)conference:(id)arg1 person:(id)arg2 property:(int)arg3 identifier:(int)arg4;
 - (id)dataSource;
 - (void)dealloc;
 - (int)groupingCountForProperty:(int)arg1;
 - (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6 outActions:(id*)arg7 outIndex:(int*)arg8;
 - (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6;
 - (int)highlightedValueIdentifier;
-- (void*)highlightedValuePerson;
+- (id)highlightedValuePerson;
 - (int)highlightedValueProperty;
 - (id)init;
 - (BOOL)isFavoriteOfType:(int)arg1 inPropertyGroup:(id)arg2 atIndex:(int)arg3;
@@ -71,12 +71,12 @@
 - (void)reloadPrimaryPropertyActionsSection;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(int)arg3 actionGrouping:(int)arg4 ordering:(int)arg5 animated:(BOOL)arg6;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 property:(int)arg3 actionGrouping:(int)arg4 ordering:(int)arg5;
-- (void)sendTextMessage:(id)arg1 person:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)sendTextMessage:(id)arg1 person:(id)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setActionShouldPickHighlightedValue:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setFMFActionButtonsDelegate:(id)arg1;
 - (void)setHighlightedValueIdentifier:(int)arg1;
-- (void)setHighlightedValuePerson:(void*)arg1;
+- (void)setHighlightedValuePerson:(id)arg1;
 - (void)setHighlightedValueProperty:(int)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)shareContactButtonClicked:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
+@class <UIWebTouchEventsGestureRecognizerDelegate>, NSMutableArray;
 
 @interface UIWebTouchEventsGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
@@ -11,6 +11,7 @@
     unsigned int _passedHitTest : 1;
     unsigned int _defaultPrevented : 1;
     unsigned int _inJavaScriptGesture : 1;
+    unsigned int _type : 2;
     } _locationInWindow;
     float _originalGestureAngle;
     float _originalGestureDistance;
@@ -21,7 +22,7 @@
     NSMutableArray *_touchLocations;
     NSMutableArray *_touchPhases;
     id _touchTarget;
-    int _type;
+    <UIWebTouchEventsGestureRecognizerDelegate> *_webTouchDelegate;
 }
 
 @property(getter=isDefaultPrevented) BOOL defaultPrevented;
@@ -34,8 +35,8 @@
 @property(retain) NSMutableArray * touchPhases;
 @property(readonly) int type;
 
+- (id).cxx_construct;
 - (unsigned int)_getNextTouchIdentifier;
-- (BOOL)_hitTestTouches:(id)arg1;
 - (id)_identifiersDescription;
 - (id)_locationsDescription;
 - (id)_phaseDescription:(int)arg1;
@@ -49,7 +50,7 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)inJavaScriptGesture;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2 touchDelegate:(id)arg3;
 - (BOOL)isDefaultPrevented;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
 - (float)rotation;

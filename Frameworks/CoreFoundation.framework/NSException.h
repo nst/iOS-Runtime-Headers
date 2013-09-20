@@ -17,6 +17,7 @@
 + (void)raise:(id)arg1 format:(id)arg2 arguments:(void*)arg3;
 + (void)raise:(id)arg1 format:(id)arg2;
 + (void)raiseWithError:(id)arg1;
++ (void)raiseWithError:(id)arg1;
 
 - (id)_crashReporterString;
 - (BOOL)_installStackTraceKeyIfNeeded;
@@ -27,6 +28,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)error;
 - (id)error;
 - (unsigned int)hash;
 - (id)init;

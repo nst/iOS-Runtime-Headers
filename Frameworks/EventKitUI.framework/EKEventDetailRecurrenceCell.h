@@ -9,9 +9,9 @@
     UILabel *_recurrenceLabel;
 }
 
+- (void).cxx_destruct;
 - (id)_myTableView;
 - (id)_recurrenceLabel;
-- (void)dealloc;
 - (float)height;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (void)layoutSubviews;

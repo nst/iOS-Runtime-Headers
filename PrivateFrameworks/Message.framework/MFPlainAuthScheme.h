@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFPlainAuthScheme : AuthScheme {
+@interface MFPlainAuthScheme : MFAuthScheme {
 }
 
 - (Class)authenticatorClass;

@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class AXTimer, CBCentralManager, CBUUID, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>;
+@class AXTimer, CBCentralManager, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AXHearingAidDeviceController : NSObject <CBCentralManagerDelegate> {
+    AXTimer *_advertisingTimeoutTimer;
+    NSMutableDictionary *_advertisingTimestamps;
+    NSMutableArray *_availablePeripherals;
     NSMutableArray *_availableSearchBlocks;
     NSObject<OS_dispatch_queue> *_bluetoothCentralQueue;
     CBCentralManager *_bluetoothManager;
     NSLock *_centralRequestsLock;
+    NSMutableArray *_connectedDevices;
     NSMutableArray *_connectedSearchBlocks;
-    CBUUID *_disUUID;
-    AXTimer *_invalidateDevicesTimer;
+    NSMutableDictionary *_deviceUpdatesDescription;
+    AXTimer *_deviceUpdatesTimer;
     BOOL _isScanning;
-    CBUUID *_leaHearingAidUUID;
-    CBUUID *_manufacturerUUID;
+    NSMutableArray *_loadedDevices;
     NSMutableArray *_persistentDevices;
     NSMutableArray *_updateDeviceBlocks;
-    NSMutableArray *availablePeripherals;
     NSMutableArray *centralRequestBlocks;
-    NSMutableArray *connectedDevices;
-    NSMutableArray *loadedDevices;
 }
 
 @property(retain) NSMutableArray * availablePeripherals;
@@ -32,11 +32,11 @@
 @property(retain) NSMutableArray * persistentDevices;
 @property(retain) NSMutableArray * updateDeviceBlocks;
 
-+ (void)hearingAidDeviceUpdate:(id)arg1;
-+ (void)searchForAvailableDevicesWithCompletion:(id)arg1;
-+ (void)searchForConnectedDevicesWithCompletion:(id)arg1;
 + (id)sharedController;
 
+- (void)addAvailableDevice:(id)arg1;
+- (void)addConnectedDevice:(id)arg1;
+- (void)addLoadedDevice:(id)arg1;
 - (id)availablePeripherals;
 - (id)availableSearchBlocks;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
@@ -47,30 +47,34 @@
 - (void)centralManager:(id)arg1 didRetrievePeripherals:(id)arg2;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (id)centralRequestBlocks;
+- (void)clearAvailableDevices;
+- (void)clearConnectedDevices;
+- (void)clearLoadedDevices;
+- (void)clearMissingHearingAids;
 - (void)connectToPeripheral:(id)arg1;
 - (id)connectedDevices;
 - (id)connectedSearchBlocks;
 - (void)dealloc;
 - (void)device:(id)arg1 didSubsumeSlave:(id)arg2;
+- (void)device:(id)arg1 didUpdateProperty:(int)arg2;
 - (void)deviceDidFinishLoading:(id)arg1;
-- (void)deviceDidUpdateProperty:(id)arg1;
-- (id)disUUID;
 - (void)disconnectFromPeripheral:(id)arg1;
-- (id)fakeHearingAids;
-- (id)firmwareVersionUUID;
-- (id)hardwareVersionUUID;
 - (id)hearingAidForPeripheral:(id)arg1;
 - (id)hearingAidsForUUID:(id)arg1;
 - (id)init;
 - (BOOL)isBluetoothAvailable;
 - (BOOL)isScanning;
-- (id)leaHearingAidUUID;
 - (id)loadedDevices;
-- (id)manufacturerUUID;
-- (id)modelNumberUUID;
+- (void)loadedDevicesDidChange;
 - (void)pairedHearingAidsDidChange;
 - (id)persistentDevices;
+- (void)registerForPropertyUpdates:(id)arg1;
+- (void)removeAvailableDevice:(id)arg1;
+- (void)removeConnectedDevice:(id)arg1;
+- (void)removeLoadedDevice:(id)arg1;
+- (void)resetConnectionToPeripheral:(id)arg1;
 - (void)searchForAvailableDevices;
+- (void)searchForAvailableDevicesWithCompletion:(id)arg1;
 - (void)searchForConnectedDevices;
 - (void)sendRequestToCentralManager:(id)arg1;
 - (void)setAvailablePeripherals:(id)arg1;
@@ -81,7 +85,7 @@
 - (void)setLoadedDevices:(id)arg1;
 - (void)setPersistentDevices:(id)arg1;
 - (void)setUpdateDeviceBlocks:(id)arg1;
-- (id)sortByRSSI:(id)arg1;
+- (void)stopPropertyUpdates;
 - (void)stopSearching;
 - (id)updateDeviceBlocks;
 

@@ -4,11 +4,13 @@
 
 @interface UIKeyboardAutomatic : UIKeyboard {
     BOOL caretBlinks;
+    BOOL receivedCandidatesInCurrentInputMode;
     BOOL showsCandidateBar;
     BOOL showsCandidateInline;
 }
 
 @property BOOL caretBlinks;
+@property BOOL receivedCandidatesInCurrentInputMode;
 @property BOOL showsCandidateBar;
 @property BOOL showsCandidateInline;
 
@@ -24,7 +26,9 @@
 - (void)maximize;
 - (void)minimize;
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;
+- (BOOL)receivedCandidatesInCurrentInputMode;
 - (void)setCaretBlinks:(BOOL)arg1;
+- (void)setReceivedCandidatesInCurrentInputMode:(BOOL)arg1;
 - (void)setShowsCandidateBar:(BOOL)arg1;
 - (void)setShowsCandidateInline:(BOOL)arg1;
 - (BOOL)showsCandidateBar;

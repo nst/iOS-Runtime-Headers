@@ -16,6 +16,7 @@
 - (id)localizedDescription;
 - (id)mf_moreInfo;
 - (id)mf_shortDescription;
+- (id)recoveryAttempter;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setMoreInfo:(id)arg1;
 - (void)setShortDescription:(id)arg1;

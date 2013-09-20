@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class ACAccount, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL, OACredential, SLService;
+@class ACAccount, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL, OACredential, SLService;
 
 @interface SLRequest : NSObject {
     OACredential *_OAuthCredential;
     ACAccount *_account;
     NSString *_applicationID;
     int _callingPID;
+    NSString *_contentType;
     NSString *_multiPartBoundary;
     NSMutableArray *_multiParts;
     NSMutableDictionary *_parameters;
+    NSData *_payload;
     int _requestMethod;
     SLService *_service;
     NSURL *_url;
@@ -28,12 +30,14 @@
 - (id)OAuthCredential;
 - (id)URL;
 - (id)_HTTPMethodName;
+- (void)_addAuthenticationParameters:(id)arg1;
 - (id)_allParameters;
 - (void)_appendCoreSig1Signature;
 - (id)_commandName;
 - (id)_parameterString;
 - (id)_preparedURL;
 - (BOOL)_requiresAuthorization;
+- (BOOL)_shouldAppendTencentWeiboParametersToRequest;
 - (BOOL)_shouldRetryAfterCount:(int)arg1 delay:(float*)arg2;
 - (id)_urlEncodedString:(id)arg1;
 - (id)account;
@@ -59,9 +63,11 @@
 - (void)setAccount:(id)arg1;
 - (void)setApplicationID:(id)arg1;
 - (void)setCallingPID:(int)arg1;
+- (void)setContentType:(id)arg1;
 - (void)setMultiPartBoundary:(id)arg1;
 - (void)setOAuthCredential:(id)arg1;
 - (void)setParameterValue:(id)arg1 forKey:(id)arg2;
+- (void)setPayload:(id)arg1;
 - (BOOL)shouldIncludeParameterString;
 
 @end

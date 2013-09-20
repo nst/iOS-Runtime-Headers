@@ -9,6 +9,7 @@
 @class GEORequester;
 
 @interface GEOVoltaireSearchProvider : GEOSearchProvider <PBRequesterDelegate> {
+    BOOL _cancelled;
     id _finished;
     id _refinement;
     GEORequester *_requester;

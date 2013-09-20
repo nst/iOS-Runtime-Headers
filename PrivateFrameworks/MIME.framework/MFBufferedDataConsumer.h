@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableData, NSString;
 
-@interface MFBufferedDataConsumer : NSObject <MFCollectingDataConsumer> {
+@interface MFBufferedDataConsumer : NSObject <MFGuaranteedCollectingDataConsumer> {
     NSMutableData *_data;
     int _fd;
     NSString *_path;

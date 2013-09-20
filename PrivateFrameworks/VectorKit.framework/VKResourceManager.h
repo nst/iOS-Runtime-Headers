@@ -7,6 +7,7 @@
 
 + (id)sharedManager;
 
+- (id)_localNameForResourceName:(id)arg1;
 - (id)dataForResourceWithName:(id)arg1;
 - (id)init;
 - (id)pathForResourceWithName:(id)arg1;

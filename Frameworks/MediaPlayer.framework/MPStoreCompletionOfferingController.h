@@ -17,6 +17,7 @@
 + (void)setWantsArtwork:(BOOL)arg1;
 + (id)storeOfferingController;
 
+- (void).cxx_destruct;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)_dumpCache;
 - (void)_lookupCompletedWithResponse:(id)arg1 lookupItem:(id)arg2 error:(id)arg3;

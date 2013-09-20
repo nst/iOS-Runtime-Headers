@@ -10,6 +10,7 @@
         unsigned int delegateInterestedInCommittedScrolls : 1; 
         unsigned int delegateInterestedInCompletedScrolls : 1; 
         unsigned int delegateInterestedInBailedOutScrolls : 1; 
+        unsigned int delegateInterestedFinishedScrolling : 1; 
         unsigned int delegateCanVetoSubviewLayout : 1; 
         unsigned int dataSourceSuppliesBeforeView : 1; 
         unsigned int dataSourceSuppliesAfterView : 1; 
@@ -43,7 +44,7 @@
 @property <_UIQueuingScrollViewDelegate> * qDelegate;
 @property(readonly) UIView * visibleView;
 
-- (int)_abuttedPagingEdges;
+- (unsigned int)_abuttedPagingEdges;
 - (void)_adjustContentInsets;
 - (void)_boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_cleanUpCompletionState:(id)arg1 didFinish:(BOOL)arg2 didComplete:(BOOL)arg3;
@@ -67,9 +68,8 @@
 - (void)_notifyDelegateDidBailoutOfScrollAndRevealedView:(id)arg1;
 - (void)_notifyDelegateDidCommitManualScroll:(BOOL)arg1 toRevealView:(id)arg2 concealView:(id)arg3 direction:(int)arg4 animated:(BOOL)arg5 canComplete:(BOOL)arg6;
 - (void)_notifyDelegateDidEndManualScroll:(BOOL)arg1 toRevealView:(id)arg2 direction:(int)arg3 animated:(BOOL)arg4 didFinish:(BOOL)arg5 didComplete:(BOOL)arg6;
+- (void)_notifyDelegateDidFinishScrolling;
 - (void)_notifyDelegateWillManuallyScroll:(BOOL)arg1 toRevealView:(id)arg2 concealingView:(id)arg3 animated:(BOOL)arg4;
-- (BOOL)_pagingDown;
-- (BOOL)_pagingUp;
 - (void)_replaceViews:(id)arg1 updatingContents:(BOOL)arg2 adjustContentInsets:(BOOL)arg3 animated:(BOOL)arg4;
 - (id)_requestViewForIndex:(int)arg1;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
@@ -91,6 +91,7 @@
 - (float)pageSpacing;
 - (id)qDataSource;
 - (id)qDelegate;
+- (void)scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDisabledScrollingRegion:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

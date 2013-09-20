@@ -7,19 +7,19 @@
 @interface MFPen : NSObject <MFObject> {
     TSUColor *m_colour;
     int m_penStyle;
-    long m_penWidth;
+    int m_penWidth;
     double *m_userStyleArray;
 }
 
 + (id)pen;
-+ (id)penWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
++ (id)penWithStyle:(int)arg1 width:(int)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 
 - (void)dealloc;
 - (id)getColor;
 - (int)getStyle;
-- (long)getWidth;
+- (int)getWidth;
 - (id)init;
-- (id)initWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
+- (id)initWithStyle:(int)arg1 width:(int)arg2 colour:(id)arg3 styleArray:(double*)arg4;
 - (int)selectInto:(id)arg1;
 
 @end

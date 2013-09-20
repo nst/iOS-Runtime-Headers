@@ -12,29 +12,40 @@
     NSMutableArray *_addedEventTapPairs;
     NSRecursiveLock *_eventTapLock;
     NSMutableArray *_eventTaps;
-    id _installationCallback;
+    id _installationEventRepPost;
+    id _installationGSCallback;
+    id _installationHIDCallback;
     BOOL _isEnumeratingEventTaps;
     NSMutableSet *_removedEventTapIdentifiers;
     BOOL _shouldReorderEventTaps;
 }
 
-@property(copy) id installationCallback;
+@property(copy) id installationEventRepPost;
+@property(copy) id installationGSCallback;
+@property(copy) id installationHIDCallback;
 
 + (id)sharedManager;
 
+- (id)_copyCurrentEventTapPairs;
 - (void)_enumerateEventTapPairsUsingBlock:(id)arg1;
-- (BOOL)_processEvent:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned char x11[0]; }*)arg1;
+- (void)_installEventTap:(id)arg1;
+- (BOOL)_processGSEvent:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned long long x11; unsigned char x12[0]; }*)arg1;
+- (BOOL)_processHIDEvent:(struct __IOHIDEvent { }*)arg1 taskPort:(unsigned int)arg2 bundleId:(id)arg3;
 - (void)_reorderEventTaps;
-- (void)_setEventTapCallback:(void*)arg1;
+- (void)_setGSEventTapCallback:(void*)arg1;
+- (void)_setHIDEventTapCallback:(void*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)installEventTap:(id)arg1 identifier:(id)arg2;
-- (id)installEventTap:(id)arg1;
-- (id)installationCallback;
+- (id)installationEventRepPost;
+- (id)installationGSCallback;
+- (id)installationHIDCallback;
 - (void)removeEventTap:(id)arg1;
-- (void)sendEvent:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned char x11[0]; }*)arg1 withPort:(unsigned int)arg2 afterTap:(id)arg3;
+- (void)sendEvent:(id)arg1 afterTap:(id)arg2 useGSEvent:(BOOL)arg3 namedTaps:(id)arg4;
 - (void)setEventTapPriority:(id)arg1 priority:(int)arg2;
-- (void)setInstallationCallback:(id)arg1;
+- (void)setInstallationEventRepPost:(id)arg1;
+- (void)setInstallationGSCallback:(id)arg1;
+- (void)setInstallationHIDCallback:(id)arg1;
 
 @end

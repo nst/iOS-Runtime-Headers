@@ -17,12 +17,13 @@
         float x; 
         float y; 
         float z; 
+    float _brightness;
     } _cameraPositionInTileSpace;
     } _color;
     } _oneMinusScale;
     float _scale;
     int _textureSampler;
-    int _uAlpha;
+    int _uBrightness;
     int _uCameraPositionInTileSpace;
     int _uColor;
     int _uOneMinusScale;
@@ -30,22 +31,26 @@
     int _uTextureSampler;
 }
 
+@property float brightness;
 @property struct { float x1; float x2; float x3; } cameraPositionInTileSpace;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } color;
 @property float scale;
 @property int textureSampler;
 
-+ (id)program;
-+ (id)realisticProgram;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
+- (float)brightness;
 - (struct { float x1; float x2; float x3; })cameraPositionInTileSpace;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
 - (float)scale;
+- (void)setBrightness:(float)arg1;
 - (void)setCameraPositionInTileSpace:(struct { float x1; float x2; float x3; })arg1;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setScale:(float)arg1;
 - (void)setTextureSampler:(int)arg1;
+- (void)setup;
 - (int)textureSampler;
 
 @end

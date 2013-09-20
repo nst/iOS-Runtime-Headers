@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSData, NSDictionary, NSString, NSURL;
+@class NSData, NSDictionary, NSString, NSURL, SSMetricsPageEvent;
 
 @interface SSURLConnectionResponse : NSObject <SSXPCCoding> {
     NSDictionary *_allHeaderFields;
     NSData *_body;
     long long _expectedContentLength;
+    SSMetricsPageEvent *_metricsPageEvent;
     NSString *_mimeType;
     int _statusCode;
     NSString *_suggestedFilename;
@@ -18,7 +19,10 @@
 @property(readonly) NSString * MIMEType;
 @property(readonly) NSURL * URL;
 @property(readonly) NSData * bodyData;
+@property(readonly) NSData * databaseEncoding;
 @property(readonly) long long expectedContentLength;
+@property(retain) SSMetricsPageEvent * metricsPageEvent;
+@property(readonly) NSData * radio_decompressedBodyData;
 @property(readonly) NSString * suggestedFilename;
 @property(readonly) NSString * textEncodingName;
 
@@ -27,10 +31,15 @@
 - (id)allHeaderFields;
 - (id)bodyData;
 - (id)copyXPCEncoding;
+- (id)databaseEncoding;
 - (void)dealloc;
 - (long long)expectedContentLength;
+- (id)initWithDatabaseEncoding:(id)arg1;
 - (id)initWithURLResponse:(id)arg1 bodyData:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)metricsPageEvent;
+- (id)radio_decompressedBodyData;
+- (void)setMetricsPageEvent:(id)arg1;
 - (int)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;

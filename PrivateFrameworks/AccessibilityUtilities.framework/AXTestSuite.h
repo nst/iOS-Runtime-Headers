@@ -6,5 +6,6 @@
 }
 
 - (id)name;
+- (id)overrideProcessName;
 
 @end

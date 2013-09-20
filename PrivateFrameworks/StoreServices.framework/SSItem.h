@@ -22,6 +22,7 @@
 @property(readonly) SSItemOffer * defaultItemOffer;
 @property(readonly) NSDate * expirationDate;
 @property(getter=isGameCenterEnabled,readonly) BOOL gameCenterEnabled;
+@property(getter=isHighDefinition,readonly) BOOL highDefinition;
 @property(readonly) SSItemImageCollection * imageCollection;
 @property(readonly) NSString * itemKind;
 @property(readonly) NSString * itemTitle;
@@ -61,6 +62,7 @@
 - (id)initWithItemDictionary:(id)arg1;
 - (BOOL)isCompilation;
 - (BOOL)isGameCenterEnabled;
+- (BOOL)isHighDefinition;
 - (BOOL)isRestricted;
 - (id)itemKind;
 - (id)itemOfferForIdentifier:(id)arg1;

@@ -19,6 +19,7 @@
         unsigned short wPort; 
     NSData *_allocateReq;
     id _allocationResponseHandler;
+    double _allocationTimestamp;
     id _bindingResponseHandler;
     TCPBufferPool *_bufferPool;
     NSData *_channelBReq;
@@ -64,7 +65,7 @@
 - (void)destroyDispatchTimer;
 - (id)destroyHandler;
 - (void)finalize;
-- (id)initWithRelayRequestDictionary:(id)arg1 withCallID:(int)arg2 relayType:(unsigned char)arg3 errorCode:(int*)arg4;
+- (id)initWithRelayRequestDictionary:(id)arg1 withCallID:(unsigned long)arg2 relayType:(unsigned char)arg3 errorCode:(int*)arg4;
 - (BOOL)isTunnelSocketClosed;
 - (id)participantID;
 - (void)processSocketRead;
@@ -73,7 +74,7 @@
 - (id)receiveHandler;
 - (void)receivedControlData:(id)arg1;
 - (void)receivedSSLConnectionData:(id)arg1 recordType:(unsigned short)arg2;
-- (void)reportErrorAndTerminate:(int)arg1 detail:(int)arg2 description:(id)arg3 reason:(id)arg4;
+- (void)reportErrorAndTerminate:(int)arg1 detail:(int)arg2 returnCode:(int)arg3 description:(id)arg4 reason:(id)arg5;
 - (void)resetConnection;
 - (BOOL)sendAllocateMsg:(id*)arg1;
 - (BOOL)sendChannelBindingMsgWithDict:(id)arg1 error:(id*)arg2;

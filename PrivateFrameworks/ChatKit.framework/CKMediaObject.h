@@ -2,73 +2,69 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSData, NSDictionary, NSString, NSURL;
+@class <CKFileTransfer>, NSData, NSDictionary, NSString, NSURL;
 
-@interface CKMediaObject : NSObject <QLPreviewItem, CKGenericAttachment> {
-    NSData *_data;
-    BOOL _dataIsPropertyListData;
-    double _duration;
-    NSString *_exportedFilename;
-    NSString *_filename;
-    NSString *_hardLinkPath;
-    NSString *_mimeType;
-    NSString *_transferGUID;
-    BOOL shouldRemoveTransfer;
+@interface CKMediaObject : NSObject <CKPreviewDispatchCachePolicyDelegate, QLPreviewItem> {
+    <CKFileTransfer> *_transfer;
 }
 
-@property(copy) NSDictionary * SMSComposePropertyList;
+@property(readonly) NSString * UTIType;
 @property(readonly) NSData * data;
-@property(readonly) NSString * displayFilename;
-@property double duration;
-@property(copy) NSString * exportedFilename;
+@property(readonly) NSURL * fileURL;
 @property(readonly) NSString * filename;
-@property(copy) NSString * mimeType;
+@property(readonly) int mediaType;
+@property(readonly) NSString * mimeType;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) NSURL * previewItemURL;
-@property BOOL shouldRemoveTransfer;
-@property(copy) NSString * transferGUID;
+@property(readonly) NSDictionary * transcoderUserInfo;
+@property(retain) <CKFileTransfer> * transfer;
+@property(readonly) NSString * transferGUID;
 
-+ (id)fileExtensionForMIMEType:(id)arg1;
-+ (id)mimeTypesToFileExtensions;
-+ (id)supportedMIMETypes;
-+ (BOOL)supportsMIMEType:(id)arg1;
-+ (struct CGSize { float x1; float x2; })transcodeMaxSize;
++ (id)UTITypes;
++ (id)fallbackFilenamePrefix;
++ (id)iconCache;
++ (BOOL)isPreviewable;
++ (id)previewDispatchCache;
 
-- (id)SMSComposePropertyList;
-- (void)copyToPasteboard:(id)arg1;
+- (id)PNGDataFromImage:(id)arg1;
+- (id)UTIType;
+- (void)_sampleImageEdges:(id)arg1 usingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forMostlyWhitePixels:(unsigned int*)arg3 otherPixels:(unsigned int*)arg4;
+- (Class)balloonViewClass;
+- (id)bbPreviewFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })bbSize;
 - (id)data;
-- (id)dataForMedia;
-- (id)dataRepresentation;
 - (void)dealloc;
 - (id)description;
-- (id)displayFilename;
-- (double)duration;
-- (id)exportedFilename;
+- (id)downloadProgressImage;
+- (id)downloadProgressString;
+- (id)fileManager;
+- (id)fileSizeString;
+- (id)fileURL;
 - (id)filename;
-- (id)filenameForMedia;
+- (id)generatePreviewFromThumbnail:(id)arg1 forOrientation:(BOOL)arg2;
+- (id)generateThumbnail;
+- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)icon;
-- (id)initWithData:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
-- (id)initWithFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3 composeOptions:(id)arg4;
-- (id)initWithTransferGUID:(id)arg1;
+- (id)initWithTransfer:(id)arg1;
+- (BOOL)isPreviewable;
 - (int)mediaType;
 - (id)mimeType;
+- (id)pasteboardItem;
+- (Class)previewBalloonViewClass;
+- (BOOL)previewDispatchCache:(id)arg1 shouldReplaceCachedPreview:(id)arg2 withPreview:(id)arg3;
+- (id)previewDispatchCache;
+- (id)previewForOrientation:(BOOL)arg1;
 - (id)previewItemURL;
-- (void)setDuration:(double)arg1;
-- (void)setExportedFilename:(id)arg1;
-- (void)setMimeType:(id)arg1;
-- (void)setSMSComposePropertyList:(id)arg1;
-- (void)setShouldRemoveTransfer:(BOOL)arg1;
-- (void)setTransferGUID:(id)arg1;
-- (void)setupTransfer;
+- (void)savePreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;
+- (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
+- (void)setTransfer:(id)arg1;
 - (BOOL)shouldBeQuickLooked;
-- (BOOL)shouldRemoveTransfer;
 - (BOOL)shouldShowDisclosure;
-- (id)sizeInBytesString;
+- (BOOL)shouldShowViewer;
 - (id)subtitle;
 - (id)title;
-- (double)transcodeDuration;
-- (double)transcodeEndTime;
-- (double)transcodeStartTime;
+- (id)transcoderUserInfo;
+- (id)transfer;
 - (id)transferGUID;
 
 @end

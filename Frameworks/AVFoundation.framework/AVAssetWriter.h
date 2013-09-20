@@ -52,9 +52,15 @@
 - (int)movieTimeScale;
 - (id)outputFileType;
 - (id)outputURL;
+- (float)preferredRate;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (float)preferredVolume;
 - (void)setMetadata:(id)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTimeScale:(int)arg1;
+- (void)setPreferredRate:(float)arg1;
+- (void)setPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setPreferredVolume:(float)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (BOOL)shouldOptimizeForNetworkUse;
 - (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

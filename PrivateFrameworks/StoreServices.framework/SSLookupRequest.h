@@ -8,6 +8,7 @@
     BOOL _authenticatesIfNeeded;
     SSAuthenticationContext *_authenticationContext;
     SSLookupProperties *_properties;
+    int _resultFilters;
 }
 
 @property(readonly) SSLookupProperties * _lookupProperties;
@@ -15,6 +16,7 @@
 @property(copy) SSAuthenticationContext * authenticationContext;
 @property(copy) NSString * keyProfile;
 @property int localizationStyle;
+@property int resultFilters;
 
 - (id)_lookupProperties;
 - (BOOL)authenticatesIfNeeded;
@@ -22,13 +24,16 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)init;
+- (id)initWithLocation:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)keyProfile;
 - (int)localizationStyle;
+- (int)resultFilters;
 - (void)setAuthenticatesIfNeeded:(BOOL)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setKeyProfile:(id)arg1;
 - (void)setLocalizationStyle:(int)arg1;
+- (void)setResultFilters:(int)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
 - (BOOL)start;
 - (void)startWithCompletionBlock:(id)arg1;

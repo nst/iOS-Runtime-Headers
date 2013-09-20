@@ -2,24 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, _UIViewServiceXPCListener;
+@class NSMutableArray, NSXPCListener;
 
-@interface _UIViewServiceSessionManager : NSObject {
+@interface _UIViewServiceSessionManager : NSObject <NSXPCListenerDelegate> {
     int _connectionNotificationToken;
-    NSMutableArray *_incomingConnections;
-    _UIViewServiceXPCListener *_listener;
+    NSXPCListener *_listener;
     int _lock;
     NSMutableArray *_sessions;
 }
 
++ (BOOL)_shouldUseXPCObjects;
 + (BOOL)hasActiveSessions;
 + (void)startViewServiceSessionManager;
 
+- (BOOL)_hasActiveSessions;
 - (id)_init;
 - (void)_registerSessionForDefaultDeputies:(id)arg1;
 - (void)_startListener;
+- (void)_startOrStopSystemsForBackgroundRunning;
 - (void)dealloc;
-- (BOOL)hasActiveSessions;
 - (id)init;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

@@ -5,7 +5,7 @@
 @class VKAttributedRouteMatch;
 
 @interface VKPuckAnimatorLocationProjector : NSObject {
-    struct { 
+    struct VKPoint { 
         double x; 
         double y; 
         double z; 
@@ -18,10 +18,11 @@
 @property(readonly) double projectedCourse;
 @property(readonly) struct { double x1; double x2; } projectedLocation;
 @property(readonly) BOOL projectedLocationOnRoute;
-@property(readonly) struct { double x1; double x2; double x3; } projectedPosition;
+@property(readonly) struct VKPoint { double x1; double x2; double x3; } projectedPosition;
 @property(retain) VKAttributedRouteMatch * projectedRouteMatch;
 @property(retain) VKAttributedRouteMatch * routeMatch;
 
+- (id).cxx_construct;
 - (void)_updateCourseAndPositionFromRouteMatch;
 - (void)dealloc;
 - (id)init;
@@ -29,7 +30,7 @@
 - (double)projectedCourse;
 - (struct { double x1; double x2; })projectedLocation;
 - (BOOL)projectedLocationOnRoute;
-- (struct { double x1; double x2; double x3; })projectedPosition;
+- (struct VKPoint { double x1; double x2; double x3; })projectedPosition;
 - (id)projectedRouteMatch;
 - (void)reset;
 - (id)routeMatch;

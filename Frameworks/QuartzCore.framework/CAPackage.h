@@ -5,7 +5,7 @@
 @class CALayer;
 
 @interface CAPackage : NSObject {
-    struct _CAPackageData { id x1; id x2; id x3; boolx4; boolx5; } *_data;
+    struct _CAPackageData { id x1; id x2; id x3; boolx4; boolx5; id x6; id x7; } *_data;
 }
 
 @property(getter=isGeometryFlipped,readonly) BOOL geometryFlipped;
@@ -14,13 +14,19 @@
 + (id)packageWithContentsOfURL:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
 + (id)packageWithData:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
 
+- (Class)CAMLParser:(id)arg1 didFailToFindClassWithName:(id)arg2;
+- (void)CAMLParser:(id)arg1 didLoadResource:(id)arg2 fromURL:(id)arg3;
+- (id)CAMLParser:(id)arg1 resourceForURL:(id)arg2;
 - (void)_addClassSubstitutions:(id)arg1;
 - (id)_initWithContentsOfURL:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)_initWithData:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)_readFromArchiveData:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (void)_readFromCAMLData:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
+- (void)_readFromCAMLURL:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)dealloc;
 - (void)foreachLayer:(id)arg1;
 - (BOOL)isGeometryFlipped;
+- (id)publishedObjectNames;
 - (id)publishedObjectWithName:(id)arg1;
 - (id)rootLayer;
 - (id)substitutedClasses;

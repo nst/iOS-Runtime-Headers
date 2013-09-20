@@ -4,7 +4,7 @@
 
 @class NSString, SUDocumentation;
 
-@interface SUDescriptor : NSObject <NSCoding, NSCopying> {
+@interface SUDescriptor : NSObject <NSSecureCoding, NSCopying> {
     BOOL _autoDownloadAllowableForCellular;
     SUDocumentation *_documentation;
     BOOL _downloadAllowableForCellular;
@@ -34,6 +34,8 @@
 @property(retain) NSString * publisher;
 @property int updateType;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_buildCompareKey;
 - (BOOL)_hasValue:(id)arg1;
 - (BOOL)autoDownloadAllowableForCellular;
@@ -41,7 +43,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)documentation;
-- (id)downloadPolicy;
 - (unsigned long long)downloadSize;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

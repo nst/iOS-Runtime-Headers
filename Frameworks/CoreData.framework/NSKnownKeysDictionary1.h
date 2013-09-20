@@ -22,6 +22,7 @@
 + (id)initWithDictionary:(id)arg1;
 + (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
 + (id)initWithSearchStrategy:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (unsigned int)_countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3 forKeys:(BOOL)arg4;
 - (BOOL)_isDeallocating;

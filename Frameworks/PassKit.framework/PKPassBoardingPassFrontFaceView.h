@@ -9,10 +9,12 @@
     UIImageView *_transitImageView;
 }
 
-- (id)_transitGlyphForTransitType:(int)arg1 scrunched:(BOOL)arg2;
+- (id)_transitGlyphForTransitType:(int)arg1;
 - (void)createBodyContentViews;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (id)passFaceTemplate;
+- (id)shortFaceTemplate;
+- (id)shortScrunchedFaceTemplate;
+- (id)tallFaceTemplate;
 
 @end

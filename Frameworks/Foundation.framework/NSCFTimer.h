@@ -24,7 +24,9 @@
 - (unsigned int)retainCount;
 - (BOOL)retainWeakReference;
 - (void)setFireDate:(id)arg1;
+- (void)setTolerance:(double)arg1;
 - (double)timeInterval;
+- (double)tolerance;
 - (id)userInfo;
 
 @end

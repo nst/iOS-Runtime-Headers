@@ -14,6 +14,8 @@
 @property(readonly) NSString * digits;
 @property BOOL isShortCode;
 
++ (bool)isValidPhoneNumber:(id)arg1;
++ (bool)isValidPhoneNumberChar:(unsigned short)arg1;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 
 - (id)canonicalFormat;

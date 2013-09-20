@@ -31,11 +31,12 @@
 @property(retain) ABStyleProvider * styleProvider;
 @property(readonly) UITableView * tableView;
 
-+ (id)_defaultLabelsForProperty:(int)arg1 person:(void*)arg2 propertyGroup:(id)arg3 index:(int)arg4 addressBook:(void*)arg5 outBestLabelIndex:(int*)arg6 forceIncludeLabels:(id)arg7;
++ (id)_defaultLabelsForProperty:(int)arg1 person:(id)arg2 propertyGroup:(id)arg3 index:(int)arg4 addressBook:(void*)arg5 outBestLabelIndex:(int*)arg6 forceIncludeLabels:(id)arg7;
 + (id)builtInLabelsForProperty:(int)arg1;
-+ (struct __CFDictionary { }*)copyLabelUsageForProperty:(int)arg1 person:(void*)arg2;
-+ (struct __CFDictionary { }*)copyLabelUsageForPropertyGroup:(id)arg1 person:(void*)arg2;
-+ (id)defaultLabelsForProperty:(int)arg1 person:(void*)arg2 addressBook:(void*)arg3 outBestLabelIndex:(int*)arg4 forceIncludeLabels:(id)arg5;
++ (struct __CFDictionary { }*)copyLabelUsageForProperty:(int)arg1 person:(id)arg2;
++ (struct __CFDictionary { }*)copyLabelUsageForPropertyGroup:(id)arg1 person:(id)arg2;
++ (id)defaultLabelForProperty:(int)arg1 person:(id)arg2 addressBook:(void*)arg3;
++ (id)defaultLabelsForProperty:(int)arg1 person:(id)arg2 addressBook:(void*)arg3 outBestLabelIndex:(int*)arg4 forceIncludeLabels:(id)arg5;
 + (id)defaultLabelsForProperty:(int)arg1 policy:(void*)arg2;
 + (id)defaultLabelsForPropertyGroup:(id)arg1 index:(int)arg2 addressBook:(void*)arg3 outBestLabelIndex:(int*)arg4 forceIncludeLabels:(id)arg5;
 

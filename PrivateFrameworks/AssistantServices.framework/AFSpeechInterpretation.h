@@ -4,15 +4,18 @@
 
 @class NSArray;
 
-@interface AFSpeechInterpretation : NSObject {
+@interface AFSpeechInterpretation : NSObject <NSSecureCoding> {
     NSArray *_tokens;
 }
 
 @property(copy) NSArray * tokens;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
-- (id)dkPlistRepresentation;
-- (id)initWithDKPlistRepresentation:(id)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)setTokens:(id)arg1;
 - (id)tokens;
 

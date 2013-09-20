@@ -7,13 +7,17 @@
 @interface PLFilesystemDeletionInfo : NSObject {
     NSArray *_fileURLs;
     NSURL *_objectIDURI;
+    NSString *_thumbnailIdentifier;
     unsigned int _thumbnailIndex;
+    unsigned long long _timestamp;
     NSString *_uuid;
 }
 
 @property(readonly) NSArray * fileURLs;
 @property(readonly) NSURL * objectIDURI;
+@property(readonly) NSString * thumbnailIdentifier;
 @property(readonly) unsigned int thumbnailIndex;
+@property(readonly) unsigned long long timestamp;
 @property(readonly) NSString * uuid;
 
 + (id)deletionInfoWithAsset:(id)arg1;
@@ -21,9 +25,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)fileURLs;
-- (id)initWithObjectIDURI:(id)arg1 fileURLs:(id)arg2 thumbnailIndex:(unsigned int)arg3 uuid:(id)arg4;
+- (id)initWithObjectIDURI:(id)arg1 fileURLs:(id)arg2 thumbnailIndex:(unsigned int)arg3 thumbnailIdentifier:(id)arg4 uuid:(id)arg5 timestamp:(unsigned long long)arg6;
 - (id)objectIDURI;
+- (id)thumbnailIdentifier;
 - (unsigned int)thumbnailIndex;
+- (unsigned long long)timestamp;
 - (id)uuid;
 
 @end

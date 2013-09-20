@@ -35,6 +35,7 @@
 - (BOOL)addLoginIMHandle:(id)arg1;
 - (id)bestIMHandle;
 - (void)dealloc;
+- (id)description;
 - (id)email;
 - (id)emails;
 - (id)firstName;

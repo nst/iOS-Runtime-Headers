@@ -7,9 +7,9 @@
 @interface TLITunesTone : NSObject {
     NSString *_artworkFile;
     unsigned int _duration;
+    NSString *_filePath;
     NSString *_identifier;
     NSString *_name;
-    NSString *_path;
     NSNumber *_pid;
     NSDictionary *_playbackProperties;
     BOOL _private;
@@ -20,9 +20,9 @@
 
 @property(retain) NSString * artworkFile;
 @property unsigned int duration;
+@property(retain) NSString * filePath;
 @property(retain) NSString * identifier;
 @property(retain) NSString * name;
-@property(retain) NSString * path;
 @property(retain) NSNumber * pid;
 @property(retain) NSDictionary * playbackProperties;
 @property BOOL private;
@@ -33,21 +33,21 @@
 - (id)artworkFile;
 - (void)dealloc;
 - (unsigned int)duration;
+- (id)filePath;
 - (id)identifier;
 - (BOOL)isPurchased;
 - (BOOL)isRingtone;
 - (BOOL)loadFromPropertyList:(id)arg1;
 - (id)name;
-- (id)path;
 - (id)pid;
 - (id)playbackProperties;
 - (BOOL)private;
 - (BOOL)protected;
 - (void)setArtworkFile:(id)arg1;
 - (void)setDuration:(unsigned int)arg1;
+- (void)setFilePath:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPath:(id)arg1;
 - (void)setPid:(id)arg1;
 - (void)setPlaybackProperties:(id)arg1;
 - (void)setPrivate:(BOOL)arg1;

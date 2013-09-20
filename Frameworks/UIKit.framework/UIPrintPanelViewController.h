@@ -25,6 +25,7 @@
 @property(retain) UIPrintPaper * paper;
 @property(readonly) NSArray * paperList;
 @property(retain) PKPrinter * printer;
+@property(readonly) BOOL showCopies;
 @property(readonly) BOOL showDuplex;
 @property(readonly) BOOL showPageRange;
 @property(readonly) BOOL showPaper;
@@ -55,6 +56,7 @@
 - (void)setPaper:(id)arg1;
 - (void)setPrinter:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)showCopies;
 - (BOOL)showDuplex;
 - (BOOL)showPageRange;
 - (BOOL)showPaper;

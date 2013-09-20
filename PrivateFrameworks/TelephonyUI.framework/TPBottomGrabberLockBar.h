@@ -23,6 +23,5 @@
 - (void)layoutSubviews;
 - (void)setGrabberGestureRecognizers:(id)arg1;
 - (void)setGrabberImage:(id)arg1;
-- (void)setSuppressDrawingBackground:(BOOL)arg1;
 
 @end

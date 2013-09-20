@@ -9,6 +9,6 @@
 - (int)explosion;
 - (id)init;
 - (void)setExplosion:(int)arg1;
-- (id)shallowCopyWithIndex:(int)arg1;
+- (id)shallowCopyWithIndex:(unsigned int)arg1;
 
 @end

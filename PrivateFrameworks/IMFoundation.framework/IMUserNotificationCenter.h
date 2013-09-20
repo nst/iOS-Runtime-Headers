@@ -43,6 +43,7 @@
 - (id)identifierToRunLoopSourcesMap;
 - (void)removeAllListeners;
 - (void)removeListener:(id)arg1;
+- (void)removeNotificationsForServiceIdentifier:(id)arg1;
 - (void)setIdentifierToBlockQueueMap:(id)arg1;
 - (void)setIdentifierToCFUserNotificationMap:(id)arg1;
 - (void)setIdentifierToIMUserNotificationQueueMap:(id)arg1;

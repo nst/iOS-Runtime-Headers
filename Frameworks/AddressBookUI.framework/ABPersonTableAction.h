@@ -64,7 +64,7 @@
 - (id)initWithTitle:(id)arg1 style:(int)arg2 target:(id)arg3 selector:(SEL)arg4;
 - (void)modifyDetailText:(id)arg1;
 - (int)ordering;
-- (void)performWithSender:(id)arg1 person:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)performWithSender:(id)arg1 person:(id)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)prepareButton:(id)arg1 forValueAtIndex:(int)arg2 inPropertyGroup:(id)arg3;
 - (struct __CFArray { }*)properties;
 - (int)property;

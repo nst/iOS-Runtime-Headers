@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
+@class NSMutableArray;
+
 @interface FigHUDGraphLayer : CALayer {
     struct __CTFont { } *_Font;
     struct CGPoint { float x1; float x2; } *_Lines;
@@ -13,6 +15,7 @@
     int *_StartIndex;
     struct __CFDictionary { } *_TextAttributes;
     float **_Values;
+    NSMutableArray *_valueLabels;
 }
 
 - (void)dealloc;
@@ -20,6 +23,7 @@
 - (id)init;
 - (void)setUpGraph:(int)arg1 min:(float)arg2 max:(float)arg3 numValues:(int)arg4;
 - (void)setUpGraphs:(int)arg1;
+- (void)updateValue:(int)arg1 value:(float)arg2 label:(id)arg3;
 - (void)updateValue:(int)arg1 value:(float)arg2;
 
 @end

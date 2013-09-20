@@ -14,6 +14,7 @@
     NSURL *_recentFilePresenterURL;
 }
 
++ (void)__itemAtURL:(id)arg1 didChangeUbiquityWithPurposeID:(id)arg2;
 + (void)__itemAtURL:(id)arg1 didDisconnectWithPurposeID:(id)arg2;
 + (void)__itemAtURL:(id)arg1 didGainVersionWithClientID:(id)arg2 name:(id)arg3 purposeID:(id)arg4;
 + (void)__itemAtURL:(id)arg1 didLoseVersionWithClientID:(id)arg2 name:(id)arg3 purposeID:(id)arg4;
@@ -30,6 +31,12 @@
 + (void)addFilePresenter:(id)arg1;
 + (id)filePresenters;
 + (void)removeFilePresenter:(id)arg1;
++ (void)tsp_addFilePresenter:(id)arg1;
++ (BOOL)tsp_coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 filePresenter:(id)arg3 error:(id*)arg4 byAccessor:(id)arg5;
++ (BOOL)tsp_coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 filePresenter:(id)arg5 error:(id*)arg6 byAccessor:(id)arg7;
++ (BOOL)tsp_coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 filePresenter:(id)arg3 error:(id*)arg4 byAccessor:(id)arg5;
++ (BOOL)tsp_coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 filePresenter:(id)arg5 error:(id*)arg6 byAccessor:(id)arg7;
++ (void)tsp_removeFilePresenter:(id)arg1;
 
 - (void)__coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 byAccessor:(id)arg4;
 - (void)__coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 purposeID:(id)arg5 byAccessor:(id)arg6;
@@ -48,6 +55,7 @@
 - (void)_itemAtURL:(id)arg1 willMoveToURL:(id)arg2;
 - (void)_requestAccessClaim:(id)arg1 withProcedure:(id)arg2;
 - (void)_setFileProvider:(id)arg1;
+- (void)_ubiquityDidChangeForItemAtURL:(id)arg1;
 - (void)cancel;
 - (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3 byAccessor:(id)arg4;
 - (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5 byAccessor:(id)arg6;

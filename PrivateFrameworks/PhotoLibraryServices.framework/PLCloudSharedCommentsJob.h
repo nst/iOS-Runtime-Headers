@@ -8,7 +8,7 @@
     NSString *_albumGUID;
     NSString *_assetGUID;
     NSString *_commentGUID;
-    int _jobType;
+    long long _jobType;
     NSArray *_msASComments;
     NSDictionary *_mstreamdInfoDictionary;
 }
@@ -16,7 +16,7 @@
 @property(retain) NSString * albumGUID;
 @property(retain) NSString * assetGUID;
 @property(retain) NSString * commentGUID;
-@property int jobType;
+@property long long jobType;
 @property(retain) NSArray * msASComments;
 @property(retain) NSDictionary * mstreamdInfoDictionary;
 
@@ -29,7 +29,7 @@
 - (id)albumGUID;
 - (id)assetGUID;
 - (id)commentGUID;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)executeProcessServerNotificationOfCommentChanges;
 - (void)executePublishCommentToServer;
 - (id)initFromXPCObject:(id)arg1;
-- (int)jobType;
+- (long long)jobType;
 - (id)msASComments;
 - (id)mstreamdInfoDictionary;
 - (void)run;
@@ -45,7 +45,7 @@
 - (void)setAlbumGUID:(id)arg1;
 - (void)setAssetGUID:(id)arg1;
 - (void)setCommentGUID:(id)arg1;
-- (void)setJobType:(int)arg1;
+- (void)setJobType:(long long)arg1;
 - (void)setMsASComments:(id)arg1;
 - (void)setMstreamdInfoDictionary:(id)arg1;
 - (BOOL)shouldArchiveXPCToDisk;

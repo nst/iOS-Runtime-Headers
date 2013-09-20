@@ -11,7 +11,7 @@
 }
 
 + (int)objectTypeForShape:(id)arg1;
-+ (void)readChart:(id)arg1 chartIndex:(int)arg2 state:(id)arg3;
++ (void)readChart:(id)arg1 chartIndex:(short)arg2 state:(id)arg3;
 + (id)readGraphicWithDictionary:(id)arg1 state:(id)arg2;
 + (void)readGraphicsInChart:(id)arg1 state:(id)arg2;
 + (void)readGraphicsWithState:(id)arg1;

@@ -8,8 +8,8 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
+- (void).cxx_destruct;
 - (id)_iconForDocumentProxy:(id)arg1;
-- (void)dealloc;
 - (void)layoutSubviews;
 - (void)setAttachment:(id)arg1;
 - (void)showSpinner:(BOOL)arg1;

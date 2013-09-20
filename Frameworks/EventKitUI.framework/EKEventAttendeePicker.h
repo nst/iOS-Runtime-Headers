@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventAttendeePickerDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSNumber, NSString, UIKeyboard, UIScrollView, UITableView, _MFComposeRecipientView;
+@class <EKEventAttendeePickerDelegate>, MFComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSNumber, NSString, UIKeyboard, UIScrollView, UITableView;
 
-@interface EKEventAttendeePicker : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, _MFComposeRecipientViewDelegate, _MFComposeRecipientViewStyleDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate> {
+@interface EKEventAttendeePicker : UIViewController <UITableViewDataSource, UITableViewDelegate, MFContactsSearchConsumer, MFComposeRecipientViewDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -14,7 +14,8 @@
             float width; 
             float height; 
         } size; 
-    _MFComposeRecipientView *_composeRecipientView;
+    BOOL _ABAccessDenied;
+    MFComposeRecipientView *_composeRecipientView;
     <EKEventAttendeePickerDelegate> *_emailValidationDelegate;
     } _initialFrame;
     UIKeyboard *_keyboard;
@@ -37,6 +38,8 @@
 @property(readonly) NSString * remainingText;
 @property(copy) NSString * searchAccountID;
 
+- (void).cxx_destruct;
+- (unsigned int)_atomPresentationOptionsForRecipient:(id)arg1;
 - (void)_copyRecipientsFromComposeView;
 - (void)_hideSearchFieldAndCancelOutstandingSearches:(BOOL)arg1;
 - (float)_maxScrollerHeight;
@@ -50,14 +53,14 @@
 - (void)animationDidStop:(id)arg1;
 - (void)beganNetworkActivity;
 - (void)commitRemainingText;
-- (int)composeRecipientView:(id)arg1 atomStyleForRecipient:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
+- (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
+- (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
+- (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
 - (void)composeRecipientView:(id)arg1 showPersonCardForAtom:(id)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
-- (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
 - (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
@@ -83,11 +86,11 @@
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

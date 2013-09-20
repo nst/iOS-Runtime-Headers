@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSAttributedString, NSString, UIColor, UIImage, _UIGraphicsLetterpressStyle;
+@class NSAttributedString, NSNumber, NSString, UIColor, UIImage, _UIGraphicsLetterpressStyle;
 
 @interface UIButtonContent : NSObject <NSCoding, NSCopying> {
     NSAttributedString *attributedTitle;
     UIImage *background;
+    NSNumber *drawingStroke;
     UIImage *image;
+    UIColor *imageColor;
     UIColor *shadowColor;
     NSString *title;
     UIColor *titleColor;
@@ -15,7 +17,9 @@
 
 @property(retain) NSAttributedString * attributedTitle;
 @property(retain) UIImage * background;
+@property(retain) NSNumber * drawingStroke;
 @property(retain) UIImage * image;
+@property(retain) UIColor * imageColor;
 @property(readonly) BOOL isEmpty;
 @property(retain) _UIGraphicsLetterpressStyle * letterpressStyle;
 @property(retain) UIColor * shadowColor;
@@ -27,14 +31,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)drawingStroke;
 - (void)encodeWithCoder:(id)arg1;
 - (id)image;
+- (id)imageColor;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEmpty;
 - (id)letterpressStyle;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setBackground:(id)arg1;
+- (void)setDrawingStroke:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setImageColor:(id)arg1;
 - (void)setLetterpressStyle:(id)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setTitle:(id)arg1;

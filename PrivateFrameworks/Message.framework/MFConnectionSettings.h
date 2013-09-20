@@ -2,31 +2,39 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface MFConnectionSettings : NSObject <NSCopying> {
+    NSString *_accountIdentifier;
     BOOL _allowsTrustPrompt;
     NSString *_certUIService;
+    NSArray *_clientCertificates;
     struct __CFString { } *_connectionServiceType;
     NSString *_hostname;
     unsigned int _portNumber;
     NSString *_serviceName;
+    NSString *_sourceApplicationBundleIdentifier;
     BOOL _tryDirectSSLConnection;
     BOOL _usesOpportunisticSockets;
     BOOL _usesSSL;
 }
 
+@property(copy) NSString * accountIdentifier;
 @property BOOL allowsTrustPrompt;
 @property(copy) NSString * certUIService;
+@property(copy) NSArray * clientCertificates;
 @property(copy) NSString * hostname;
 @property unsigned int portNumber;
 @property(copy) NSString * serviceName;
+@property(copy) NSString * sourceApplicationBundleIdentifier;
 @property BOOL tryDirectSSL;
 @property BOOL usesOpportunisticSockets;
 @property BOOL usesSSL;
 
+- (id)accountIdentifier;
 - (BOOL)allowsTrustPrompt;
 - (id)certUIService;
+- (id)clientCertificates;
 - (struct __CFString { }*)connectionServiceType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -34,15 +42,19 @@
 - (id)hostname;
 - (unsigned int)portNumber;
 - (id)serviceName;
+- (void)setAccountIdentifier:(id)arg1;
 - (void)setAllowsTrustPrompt:(BOOL)arg1;
 - (void)setCertUIService:(id)arg1;
+- (void)setClientCertificates:(id)arg1;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setHostname:(id)arg1;
 - (void)setPortNumber:(unsigned int)arg1;
 - (void)setServiceName:(id)arg1;
+- (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setTryDirectSSL:(BOOL)arg1;
 - (void)setUsesOpportunisticSockets:(BOOL)arg1;
 - (void)setUsesSSL:(BOOL)arg1;
+- (id)sourceApplicationBundleIdentifier;
 - (BOOL)tryDirectSSL;
 - (BOOL)usesOpportunisticSockets;
 - (BOOL)usesSSL;

@@ -2,18 +2,33 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface AFPreferences : NSObject {
-    BOOL _shouldSynchronizePrivateDomain;
+    int _navToken;
+    BOOL _navTokenIsValid;
+    NSObject<OS_dispatch_queue> *_navTokenQueue;
+    BOOL _registeredForInternalPrefs;
+    BOOL _registeredForLanguageCode;
+    BOOL _registeredForOutputVoice;
 }
 
 + (id)sharedPreferences;
 
+- (void).cxx_destruct;
+- (void)_internalPreferencesDidChangeExternally;
+- (void)_languageCodeDidChangeExternally;
+- (void)_ouputVoiceDidChangeExternally;
 - (void)_preferencesDidChangeExternally;
+- (void)_registerForInteralPrefs;
+- (void)_registerForLanguageCode;
+- (void)_registerForNavStatusIfNeeded;
+- (void)_registerForOutputVoice;
 - (void)_setAssistantIsEnabledLocal:(BOOL)arg1;
 - (void)_setDictationIsEnabledLocal:(BOOL)arg1;
-- (void)_synchronizeSessionContext;
 - (BOOL)assistantIsEnabled;
 - (id)birthCertificateDataForLanguageCode:(id)arg1;
+- (int)bugReportingMode;
 - (void)dealloc;
 - (BOOL)debugButtonIsEnabled;
 - (BOOL)dictationIsEnabled;
@@ -22,14 +37,21 @@
 - (BOOL)fileLoggingIsEnabled;
 - (int)handsFreeMode;
 - (id)init;
+- (id)languageCode;
 - (id)languagesMissingBirthCertificates;
+- (BOOL)manualEndpointingEnabled;
+- (id)outputVoice;
 - (void)setAssistantIsEnabled:(BOOL)arg1;
 - (void)setBirthCertificateData:(id)arg1 forLanguageCode:(id)arg2;
+- (void)setBugReportingMode:(int)arg1;
 - (void)setDebugButtonIsEnabled:(BOOL)arg1;
 - (void)setDictationIsEnabled:(BOOL)arg1;
 - (void)setDisableAssistantWhilePasscodeLocked:(BOOL)arg1;
 - (void)setFileLoggingIsEnabled:(BOOL)arg1;
 - (void)setHandsFreeMode:(int)arg1;
+- (void)setLanguageCode:(id)arg1;
+- (void)setManualEndpointingEnabled:(BOOL)arg1;
+- (void)setOutputVoice:(id)arg1;
 - (void)setShouldShowReadyForLanguageCode:(id)arg1;
 - (void)setValue:(id)arg1 forSessionContextKey:(id)arg2;
 - (BOOL)shouldShowReadyForLanguageCode:(id)arg1;

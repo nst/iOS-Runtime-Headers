@@ -5,6 +5,7 @@
 @class <VKOverlay>, VKOverlayContainerModel;
 
 @interface VKOverlayPainter : NSObject {
+    float _brightness;
     VKOverlayContainerModel *_containerModel;
     <VKOverlay> *_overlay;
 }
@@ -20,5 +21,6 @@
 - (void)layoutWithContext:(id)arg1 tiles:(id)arg2 keysInView:(id)arg3;
 - (id)overlay;
 - (void)setContainerModel:(id)arg1;
+- (void)stylesheetDidChange;
 
 @end

@@ -2,21 +2,33 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, SUTableDataSource;
+@class NSArray, SUClientInterface, SUTableDataSource;
 
 @interface SUDownloadsGridViewController : SUGridViewController <SUDownloadsChildViewController> {
+    SUClientInterface *_clientInterface;
+    BOOL _isEditing;
 }
 
+@property(retain) SUClientInterface * clientInterface;
 @property(retain) SUTableDataSource * dataSource;
 @property(retain) NSArray * scriptButtons;
 
+- (void)_cancelAction:(id)arg1;
+- (void)_deleteAction:(id)arg1;
 - (id)_downloadsViewController;
+- (void)_editAction:(id)arg1;
 - (void)_reloadColumnCountForOrientation:(int)arg1;
+- (void)_updateEditButtons;
+- (id)clientInterface;
+- (void)dealloc;
 - (BOOL)deleteCellAtIndexPath:(id)arg1;
+- (void)gridViewEditSelectionDidChange:(id)arg1;
 - (id)init;
 - (void)loadView;
+- (void)reloadData;
 - (void)reloadDownloadCellForDownload:(id)arg1;
 - (id)scriptButtons;
+- (void)setClientInterface:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setScriptButtons:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

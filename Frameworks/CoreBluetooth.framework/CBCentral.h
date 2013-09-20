@@ -2,17 +2,25 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
+@class NSUUID;
+
 @interface CBCentral : NSObject <NSCopying> {
     struct __CFUUID { } *_UUID;
+    NSUUID *_identifier;
+    unsigned int _maximumUpdateValueLength;
 }
 
 @property(readonly) struct __CFUUID { }* UUID;
+@property(readonly) NSUUID * identifier;
+@property unsigned int maximumUpdateValueLength;
 
 - (struct __CFUUID { }*)UUID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initWithUUID:(struct __CFUUID { }*)arg1;
-- (void)setUUID:(struct __CFUUID { }*)arg1;
+- (id)identifier;
+- (id)initWithUUID:(id)arg1;
+- (unsigned int)maximumUpdateValueLength;
+- (void)setMaximumUpdateValueLength:(unsigned int)arg1;
 
 @end

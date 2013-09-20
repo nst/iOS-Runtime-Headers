@@ -9,6 +9,7 @@
     boolmShowFirstColumn;
     boolmShowLastColumn;
     boolmShowRowStripes;
+    EDCollection *mColumnFilters;
     unsigned int mDataAreaBorderDxfIndex;
     unsigned int mDataAreaDxfIndex;
     NSString *mDisplayName;
@@ -29,6 +30,7 @@
 
 + (id)tableWithResources:(id)arg1;
 
+- (id)columnFilters;
 - (id)dataAreaBorderDxf;
 - (unsigned int)dataAreaBorderDxfIndex;
 - (id)dataAreaDxf;

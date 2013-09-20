@@ -68,7 +68,6 @@
 - (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(int)arg4;
 - (id)playToEndNotificationInfo;
 - (id)propertiesNeededForInspection;
-- (void)release;
 - (void)removeFPListeners;
 - (void)removeFromPlayQueue:(struct OpaqueFigPlayer { }*)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;

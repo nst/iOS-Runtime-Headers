@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL, SADomainObject;
+@class SADomainObject;
 
-@interface SADomainObjectCreate : SABaseClientBoundCommand <SADomainObjectCommand> {
+@interface SADomainObjectCreate : SADomainCommand <SADomainObjectCommand> {
 }
 
 @property(retain) SADomainObject * object;
-@property(copy) NSURL * targetAppId;
 
 + (id)domainObjectCreate;
 + (id)domainObjectCreateWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)object;
 - (BOOL)requiresResponse;
 - (void)setObject:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

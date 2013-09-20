@@ -65,6 +65,7 @@
 - (void)move:(unsigned long)arg1 inDirection:(int)arg2;
 - (id)parentBlock;
 - (id)rangeOfContents;
+- (struct CGImage { }*)renderedImageForcingBlackText:(BOOL)arg1;
 - (BOOL)rendersAsBlock;
 - (void)selectNode:(id)arg1;
 - (void)selectNodeContents:(id)arg1;

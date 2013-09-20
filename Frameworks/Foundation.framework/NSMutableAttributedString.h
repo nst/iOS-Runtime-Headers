@@ -7,18 +7,26 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (void)MP_addAttributes:(id)arg1 toOccurrencesOfSubstring:(id)arg2 options:(unsigned int)arg3;
+- (BOOL)_attributeFixingInProgress;
 - (void)_changeIntAttribute:(id)arg1 by:(int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)_setAttributeFixingInProgress:(BOOL)arg1;
 - (BOOL)_shouldSetOriginalFontAttribute;
+- (void)_ui_restoreOriginalFontAttributes;
 - (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)appendAttributedString:(id)arg1;
+- (void)appendString:(id)arg1 withAttributes:(id)arg2;
 - (void)appendString:(id)arg1 withAttributes:(id)arg2;
 - (void)beginEditing;
 - (void)convertBidiControlCharactersToWritingDirection;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })convertBidiControlCharactersToWritingDirectionForParagraphAtIndex:(unsigned int)arg1;
 - (void)convertWritingDirectionToBidiControlCharacters;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })convertWritingDirectionToBidiControlCharactersForParagraphAtIndex:(unsigned int)arg1;
+- (void)dd_makeLinksForResultsInAttributesOfType:(unsigned int)arg1 context:(id)arg2;
+- (void)dd_resetResults;
+- (void)dd_urlifyResult:(id)arg1 withBlock:(id)arg2 referenceDate:(id)arg3;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)endEditing;
 - (void)fixAttachmentAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -33,6 +41,7 @@
 - (id)mutableString;
 - (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
+- (BOOL)readFromFileURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
 - (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -41,11 +50,12 @@
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
 - (void)replaceNewlinesWithSpaces;
-- (void)replaceOccurrencesOfCharactersFromSet:(id)arg1 withString:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)scrcAppendFormat:(id)arg1;
 - (void)setAlignment:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setAttributedString:(id)arg1;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setBaseWritingDirection:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)setTextColor:(id)arg1 font:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)subscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)superscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)trimWhitespace;

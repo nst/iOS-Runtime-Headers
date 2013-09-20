@@ -6,10 +6,14 @@
 
 @interface MCConfigurationProfile : MCProfile {
     MCProfileServiceProfile *_OTAProfile;
+    BOOL _isCloudLocked;
+    BOOL _isCloudProfile;
     NSArray *_payloads;
 }
 
-@property MCProfileServiceProfile * OTAProfile;
+@property(retain) MCProfileServiceProfile * OTAProfile;
+@property BOOL isCloudLocked;
+@property BOOL isCloudProfile;
 
 - (void).cxx_destruct;
 - (id)OTAProfile;
@@ -17,12 +21,16 @@
 - (void)_sortPayloads;
 - (id)description;
 - (id)earliestCertificateExpiryDate;
-- (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
-- (id)installationWarnings;
+- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(BOOL)arg2 outError:(id*)arg3;
+- (id)installationWarningsIncludeUnsignedProfileWarning:(BOOL)arg1;
+- (BOOL)isCloudLocked;
+- (BOOL)isCloudProfile;
 - (BOOL)isManagedByProfileService;
 - (id)localizedPayloadSummaryByType;
 - (id)payloadWithUUID:(id)arg1;
 - (id)payloads;
+- (void)setIsCloudLocked:(BOOL)arg1;
+- (void)setIsCloudProfile:(BOOL)arg1;
 - (void)setOTAProfile:(id)arg1;
 - (id)stubDictionary;
 

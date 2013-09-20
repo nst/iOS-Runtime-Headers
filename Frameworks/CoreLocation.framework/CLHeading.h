@@ -4,7 +4,7 @@
 
 @class NSDate, NSString;
 
-@interface CLHeading : NSObject <NSCopying, NSCoding> {
+@interface CLHeading : NSObject <NSCopying, NSSecureCoding> {
     id _internal;
 }
 
@@ -18,6 +18,8 @@
 @property(readonly) double x;
 @property(readonly) double y;
 @property(readonly) double z;
+
++ (BOOL)supportsSecureCoding;
 
 - (id)compactDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

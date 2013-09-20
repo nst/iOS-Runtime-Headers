@@ -23,6 +23,7 @@
 - (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3 additionalSource:(BOOL)arg4;
 - (id)initWithQueue:(id)arg1 bundleIdentifier:(struct __CFString { }*)arg2 storeIdentifier:(struct __CFString { }*)arg3;
 - (void)sendMessageWithName:(id)arg1 replyHandler:(id)arg2;
+- (void)sendMessageWithName:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
 - (id)sendMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)sendMessageWithName:(id)arg1;
 - (void)shutdown;

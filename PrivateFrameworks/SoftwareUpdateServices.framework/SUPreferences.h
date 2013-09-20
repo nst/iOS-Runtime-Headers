@@ -3,10 +3,14 @@
  */
 
 @interface SUPreferences : NSObject {
+    BOOL _allowSameBuildUpdates;
+    BOOL _disableBuildNumberComparison;
     BOOL _disableUserWiFiOnlyPeriod;
     int _logLevel;
 }
 
+@property(readonly) BOOL allowSameBuildUpdates;
+@property(readonly) BOOL disableBuildNumberComparison;
 @property(readonly) BOOL disableUserWiFiOnlyPeriod;
 @property(readonly) int logLevel;
 
@@ -16,7 +20,9 @@
 - (int)_defaultLogLevel;
 - (BOOL)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(BOOL)arg2;
 - (void)_loadPreferences;
+- (BOOL)allowSameBuildUpdates;
 - (void)dealloc;
+- (BOOL)disableBuildNumberComparison;
 - (BOOL)disableUserWiFiOnlyPeriod;
 - (id)init;
 - (int)logLevel;

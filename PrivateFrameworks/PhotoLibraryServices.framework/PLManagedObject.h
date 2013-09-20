@@ -12,8 +12,6 @@
 @property(readonly) NSString * pl_shortDescription;
 @property(readonly) NSString * shortObjectIDURI;
 
-+ (id)shortObjectIDURIFromURI:(id)arg1;
-
 - (BOOL)isRegisteredWithUserInterfaceContext;
 - (id)photoLibrary;
 - (id)pl_shortDescription;

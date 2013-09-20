@@ -9,10 +9,12 @@
 @class <NSObject>, NSObject<OS_dispatch_queue>, NSString, NSXPCInterface, NSXPCListenerEndpoint;
 
 @interface NSXPCConnection : NSObject <NSXPCProxyCreating> {
+    id _dCache;
+    id _eCache;
     NSXPCListenerEndpoint *_endpoint;
     id _exportInfo;
     id _importInfo;
-    NSObject<OS_dispatch_queue> *_internalQueue;
+    id _incomingReplyInfo;
     id _interruptionHandler;
     id _invalidationHandler;
     id _lock;
@@ -20,10 +22,9 @@
     NSXPCInterface *_remoteObjectInterface;
     id _replyInfo;
     id _reserved1;
-    id _reserved2;
-    id _reserved3;
     NSString *_serviceName;
-    unsigned long long _state;
+    unsigned int _state2;
+    unsigned int _state;
     NSObject<OS_dispatch_queue> *_userQueue;
     void *_xconnection;
 }
@@ -36,6 +37,7 @@
 @property(retain) id exportedObject;
 @property(copy) id interruptionHandler;
 @property(copy) id invalidationHandler;
+@property(getter=ml_isValid,setter=ml_setValid:) BOOL ml_valid;
 @property(readonly) int processIdentifier;
 @property(retain) NSXPCInterface * remoteObjectInterface;
 @property(readonly) NSString * serviceName;
@@ -44,17 +46,27 @@
 + (id)currentConnection;
 + (void)endTransaction;
 
-- (void)_addProxy:(unsigned long long)arg1;
+- (void)_addClassToDecodeCache:(Class)arg1;
+- (void)_addClassToEncodeCache:(Class)arg1;
+- (void)_addImportedProxy:(unsigned long long)arg1;
+- (id)_clientBundleID;
 - (void)_decodeAndInvokeMessageWithData:(id)arg1;
 - (void)_decodeAndInvokeReplyBlockWithData:(id)arg1;
+- (BOOL)_decodeCacheContainsClass:(Class)arg1;
+- (BOOL)_encodeCacheContainsClass:(Class)arg1;
 - (id)_exportTable;
-- (id)_initWithPeerConnection:(id)arg1 name:(id)arg2;
-- (void)_removeProxy:(unsigned long long)arg1;
+- (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned int)arg3;
+- (void)_invalidate:(BOOL)arg1;
+- (id)_queue;
+- (void)_removeImportedProxy:(unsigned long long)arg1;
 - (void)_sendDesistForProxyNumber:(unsigned long long)arg1;
+- (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5 userInfo:(id)arg6;
 - (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5;
 - (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4;
 - (void)_sendInvocation:(id)arg1 proxyNumber:(unsigned long long)arg2 remoteInterface:(id)arg3;
+- (void)_setQueue:(id)arg1;
 - (void)_setUUID:(id)arg1;
+- (void)addBarrierBlock:(id)arg1;
 - (int)auditSessionIdentifier;
 - (struct { unsigned int x1[8]; })auditToken;
 - (void)dealloc;
@@ -71,15 +83,19 @@
 - (id)initWithListenerEndpoint:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithMachServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithServiceName:(id)arg1;
 - (id)interruptionHandler;
 - (void)invalidate;
 - (id)invalidationHandler;
+- (BOOL)ml_isValid;
+- (void)ml_setValid:(BOOL)arg1;
 - (int)processIdentifier;
 - (id)remoteObjectInterface;
 - (id)remoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 - (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id)arg2;
+- (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id)arg2;
 - (id)replacementObjectForEncoder:(id)arg1 object:(id)arg2;
 - (void)resume;
 - (id)serviceName;
@@ -91,6 +107,8 @@
 - (void)setOptions:(unsigned int)arg1;
 - (void)setRemoteObjectInterface:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (BOOL)sl_clientHasEntitlement:(id)arg1;
+- (id)sl_localizedClientName;
 - (void)start;
 - (void)stop;
 - (void)suspend;

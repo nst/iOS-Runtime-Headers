@@ -2,17 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface ISDialogButton : NSObject {
     int _actionType;
+    NSDictionary *_dictionary;
     id _parameter;
+    NSString *_subtarget;
     NSString *_title;
     int _urlType;
 }
 
 @property int actionType;
+@property(retain) NSDictionary * dictionary;
 @property(retain) id parameter;
+@property(copy) NSString * subtarget;
 @property(retain) NSString * title;
 @property int urlType;
 
@@ -24,15 +28,19 @@
 - (int)_urlTypeForString:(id)arg1;
 - (int)actionType;
 - (void)dealloc;
+- (id)dictionary;
 - (BOOL)isEqual:(id)arg1 superficial:(BOOL)arg2;
 - (void)loadFromDictionary:(id)arg1;
 - (id)parameter;
 - (void)performDefaultActionForDialog:(id)arg1;
 - (void)setActionType:(int)arg1;
 - (void)setActionTypeWithString:(id)arg1;
+- (void)setDictionary:(id)arg1;
 - (void)setParameter:(id)arg1;
+- (void)setSubtarget:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrlType:(int)arg1;
+- (id)subtarget;
 - (id)title;
 - (int)urlType;
 

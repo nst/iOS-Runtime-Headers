@@ -11,10 +11,6 @@
     NSString *_selectedService;
 }
 
-@property(readonly) NSString * addCustomServiceButtonLabel;
-@property(readonly) NSString * addCustomServicePlaceholder;
-@property(readonly) NSString * addCustomServiceTitle;
-@property(readonly) NSString * selectServiceTitle;
 @property(copy) NSString * selectedService;
 
 + (id)defaultService;
@@ -29,6 +25,7 @@
 - (id)selectServiceTitle;
 - (id)selectedService;
 - (void)setSelectedService:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
 - (void)simpleTextInputViewController:(id)arg1 didCompleteWithValue:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

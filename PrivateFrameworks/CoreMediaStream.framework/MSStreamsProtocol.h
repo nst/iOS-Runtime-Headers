@@ -26,7 +26,7 @@
 - (void).cxx_destruct;
 - (void)_didFindServerSideConfigurationVersion:(id)arg1;
 - (void)_didReceiveRetryAfterDate:(id)arg1;
-- (void)_refreshAuthTokenForContext:(struct __MSSPCContext { void *x1; struct __CFString {} *x2; struct __CFString {} *x3; struct __CFDictionary {} *x4; double x5; int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); struct CFURLConnectionClient_V1 {} *x11; struct _CFURLConnection {} *x12; struct __CFData {} *x13; struct __CFHTTPMessage {} *x14; struct __CFError {} *x15; }*)arg1;
+- (void)_refreshAuthTokenForContext:(struct __MSSPCContext { void *x1; struct __CFString {} *x2; struct __CFString {} *x3; struct __CFDictionary {} *x4; struct __CFDictionary {} *x5; double x6; int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); struct CFURLConnectionClient_V1 {} *x12; struct _CFURLConnection {} *x13; struct __CFData {} *x14; struct __CFHTTPMessage {} *x15; struct __CFError {} *x16; }*)arg1;
 - (void)abort;
 - (id)delegate;
 - (id)deleteURL;

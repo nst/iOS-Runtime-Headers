@@ -6,6 +6,7 @@
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)autorelease;
 - (id)init;

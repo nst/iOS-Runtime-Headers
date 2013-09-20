@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSArray, NSDictionary, PKLinkedAppUserRatingView, SSSoftwareLibraryItem, UIActivityIndicatorView, UIButton, UIImageView, UILabel;
+@class NSArray, NSDictionary, NSURL, PKLinkedAppUserRatingView, SKStoreProductViewController, SSSoftwareLibraryItem, UIActivityIndicatorView, UIButton, UIImageView, UILabel;
 
-@interface PKLinkedAppView : UIView <SKStoreProductViewControllerDelegate> {
+@interface PKLinkedAppView : UITableViewCell <SKStoreProductViewControllerDelegate> {
     UIActivityIndicatorView *_activityIndicator;
     BOOL _appInstalled;
+    NSURL *_appLaunchURL;
     UILabel *_appName;
     BOOL _appNotAvailable;
     UILabel *_appPublisher;
@@ -14,7 +15,9 @@
     NSDictionary *_foundStoreItem;
     UIImageView *_iconView;
     UILabel *_loadingLabel;
+    BOOL _lookupInitiated;
     UILabel *_price;
+    SKStoreProductViewController *_productViewController;
     NSArray *_storeIDs;
     UILabel *_tapToOpen;
     PKLinkedAppUserRatingView *_userRatingView;
@@ -23,6 +26,7 @@
 
 @property(retain) UIActivityIndicatorView * activityIndicator;
 @property BOOL appInstalled;
+@property(retain) NSURL * appLaunchURL;
 @property(retain) UILabel * appName;
 @property BOOL appNotAvailable;
 @property(retain) UILabel * appPublisher;
@@ -30,7 +34,9 @@
 @property(retain) NSDictionary * foundStoreItem;
 @property(retain) UIImageView * iconView;
 @property(retain) UILabel * loadingLabel;
+@property BOOL lookupInitiated;
 @property(retain) UILabel * price;
+@property(retain) SKStoreProductViewController * productViewController;
 @property(retain) NSArray * storeIDs;
 @property(retain) UILabel * tapToOpen;
 @property(retain) PKLinkedAppUserRatingView * userRatingView;
@@ -55,6 +61,7 @@
 - (struct CGSize { float x1; float x2; })_sizeFromImage:(id)arg1;
 - (id)activityIndicator;
 - (BOOL)appInstalled;
+- (id)appLaunchURL;
 - (id)appName;
 - (BOOL)appNotAvailable;
 - (id)appPublisher;
@@ -62,16 +69,19 @@
 - (id)foundLibraryItem;
 - (id)foundStoreItem;
 - (id)iconView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 storeIDs:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithStoreIDs:(id)arg1 appLaunchURL:(id)arg2;
 - (void)layoutSubviews;
 - (id)loadingLabel;
+- (BOOL)lookupInitiated;
 - (void)performStoreLookup;
 - (id)price;
+- (id)productViewController;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)reload;
+- (void)reloadWithDelay:(double)arg1;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setAppInstalled:(BOOL)arg1;
+- (void)setAppLaunchURL:(id)arg1;
 - (void)setAppName:(id)arg1;
 - (void)setAppNotAvailable:(BOOL)arg1;
 - (void)setAppPublisher:(id)arg1;
@@ -79,7 +89,9 @@
 - (void)setFoundStoreItem:(id)arg1;
 - (void)setIconView:(id)arg1;
 - (void)setLoadingLabel:(id)arg1;
+- (void)setLookupInitiated:(BOOL)arg1;
 - (void)setPrice:(id)arg1;
+- (void)setProductViewController:(id)arg1;
 - (void)setStoreIDs:(id)arg1;
 - (void)setTapToOpen:(id)arg1;
 - (void)setUserRatingView:(id)arg1;

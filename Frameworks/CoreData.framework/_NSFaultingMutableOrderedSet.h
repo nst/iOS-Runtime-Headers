@@ -26,6 +26,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)_assignOrderKeysUsingCount:(unsigned int)arg1;
+- (void)_batchFulfillOrderKeysForObjectsIntoIndexes:(unsigned int**)arg1;
 - (BOOL)_hasOrderKeys;
 - (BOOL)_isDeallocating;
 - (BOOL)_isIdenticalFault:(id)arg1;

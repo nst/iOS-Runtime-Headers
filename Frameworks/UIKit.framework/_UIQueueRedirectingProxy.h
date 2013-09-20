@@ -13,7 +13,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
-- (BOOL)isBlock;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (BOOL)respondsToSelector:(SEL)arg1;
 

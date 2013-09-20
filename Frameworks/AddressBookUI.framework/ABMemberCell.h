@@ -2,44 +2,35 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, NSArray;
+@class <ABStyleProvider>, ABMemberNameView, ABStyleProvider, ABUIPerson;
 
 @interface ABMemberCell : UITableViewCell {
-    BOOL _drawsComponentsRTL;
-    long _highlightIndex;
-    BOOL _isGroup;
-    BOOL _isMe;
-    int _memberID;
-    NSArray *_namePieces;
-    <ABStyleProvider> *_styleProvider;
+    ABMemberNameView *_contactNameView;
+    BOOL _isMeCard;
+    ABUIPerson *_person;
+    ABStyleProvider *_styleProvider;
 }
 
-@property BOOL isMe;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property(retain) ABMemberNameView * contactNameView;
+@property BOOL isMeCard;
+@property(retain) ABUIPerson * person;
+@property(readonly) <ABStyleProvider> * styleProvider;
 
-- (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })_drawText:(id)arg1 withColor:(id)arg2 shadowColor:(id)arg3 shadowOffset:(struct CGSize { float x1; float x2; })arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5 forWidth:(float)arg6 withFont:(id)arg7 lineBreakMode:(int)arg8;
-- (struct CGSize { float x1; float x2; })_drawText:(id)arg1 withColor:(id)arg2 shadowColor:(id)arg3 shadowOffset:(struct CGSize { float x1; float x2; })arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5 withFont:(id)arg6;
 - (id)_scriptingInfo;
-- (id)boldFont;
+- (id)contactNameView;
 - (void)dealloc;
 - (id)description;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)groupName;
-- (BOOL)isMe;
-- (id)italicFont;
-- (float)memberCellFieldSpacing;
-- (int)memberID;
-- (id)regularFont;
-- (void)setGroup:(BOOL)arg1;
-- (void)setHighlightIndex:(long)arg1;
+- (id)initWithStyleProvider:(id)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isMeCard;
+- (void)layoutSubviews;
+- (id)person;
+- (void)setContactNameView:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setIsMe:(BOOL)arg1;
-- (void)setMemberID:(int)arg1;
-- (void)setNamePieces:(id)arg1;
+- (void)setIsMeCard:(BOOL)arg1;
+- (void)setPerson:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setStyleProvider:(id)arg1;
+- (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)styleProvider;
 
 @end

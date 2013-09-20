@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSRecursiveLock;
 
 @interface NSNumberFormatter : NSFormatter {
     NSMutableDictionary *_attributes;
+    unsigned int _behavior;
     unsigned int _counter;
     struct __CFNumberFormatter { } *_formatter;
-    void *_reserved[12];
+    NSRecursiveLock *_lock;
+    void *_reserved[10];
 }
 
 + (unsigned int)defaultFormatterBehavior;
@@ -23,6 +25,9 @@
 
 - (void*)__Keynote_NOOP;
 - (void)_clearFormatter;
+- (BOOL)_hasSetCurrencyCode;
+- (BOOL)_hasSetCurrencySymbol;
+- (BOOL)_hasSetInternationalCurrencySymbol;
 - (void)_regenerateFormatter;
 - (void)_reset;
 - (void)_setUsesCharacterDirection:(BOOL)arg1;

@@ -4,18 +4,17 @@
 
 @class CIImage, NSNumber;
 
-@interface CIHighlightShadowAdjust : CIFilter {
-    NSNumber *_inputRadius;
+@interface CIHighlightShadowAdjust : CIFilter <_CIFilterProperties> {
     NSNumber *inputHighlightAmount;
     CIImage *inputImage;
     NSNumber *inputRadius;
     NSNumber *inputShadowAmount;
 }
 
-@property(copy) NSNumber * inputHighlightAmount;
+@property(retain) NSNumber * inputHighlightAmount;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputRadius;
-@property(copy) NSNumber * inputShadowAmount;
+@property(retain) NSNumber * inputRadius;
+@property(retain) NSNumber * inputShadowAmount;
 
 + (id)customAttributes;
 

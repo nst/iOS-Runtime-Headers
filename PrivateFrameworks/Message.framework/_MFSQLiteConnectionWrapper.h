@@ -7,18 +7,18 @@
 @interface _MFSQLiteConnectionWrapper : NSObject {
     MFSQLiteConnection *_connection;
     unsigned int _generation;
-    BOOL _isWriter;
+    unsigned int _type;
 }
 
 @property(readonly) MFSQLiteConnection * connection;
 @property(readonly) unsigned int generation;
-@property BOOL isWriter;
+@property unsigned int type;
 
 - (id)connection;
 - (void)dealloc;
 - (unsigned int)generation;
 - (id)initWithConnection:(id)arg1 generation:(unsigned int)arg2;
-- (BOOL)isWriter;
-- (void)setIsWriter:(BOOL)arg1;
+- (void)setType:(unsigned int)arg1;
+- (unsigned int)type;
 
 @end

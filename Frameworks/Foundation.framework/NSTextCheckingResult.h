@@ -9,6 +9,7 @@
 @property(readonly) unsigned long long resultType;
 
 + (id)addressCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
++ (id)correctionCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2 alternativeStrings:(id)arg3;
 + (id)correctionCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
 + (id)dashCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
 + (id)dateCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4;
@@ -27,6 +28,7 @@
 - (id)URL;
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (id)addressComponents;
+- (id)alternativeStrings;
 - (id)components;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;

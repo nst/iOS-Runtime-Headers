@@ -19,6 +19,7 @@
     NSMutableArray *_delegatePlaces;
     <PlacesMapViewDelegateDetailsDelegate> *_detailsDelegate;
     BOOL _didFirstAdjustment;
+    BOOL _displayMoreDetails;
     UIButton *_moreDetailsButton;
     PLAnnotationPen *_pendingAdds;
     PLPlaces *_places;
@@ -26,7 +27,8 @@
     float _previousZoomLevel;
 }
 
-- (id)_borderedPosterImageFromImage:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
+@property BOOL displayMoreDetails;
+
 - (id)_createAnnotationViewWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)_displayMoreDetailsButton;
 - (BOOL)_displaysAlbumPosterOnLeft;
@@ -37,14 +39,17 @@
 - (void)_updateVisibleAnnotationsAfterUpdatingMapView:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)dealloc;
+- (BOOL)displayMoreDetails;
 - (void)fullResetOfMapView:(id)arg1;
 - (id)initWithPlaces:(id)arg1;
 - (void)mapView:(id)arg1 annotationView:(id)arg2 calloutAccessoryControlTapped:(id)arg3;
 - (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
+- (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
-- (void)mapViewWillStartLoadingMap:(id)arg1;
+- (void)mapViewWillStartRenderingMap:(id)arg1;
 - (void)setDetailsDelegate:(id)arg1;
+- (void)setDisplayMoreDetails:(BOOL)arg1;
 - (void)updateMapView:(id)arg1 WithAddedAssets:(id)arg2 deletedAssets:(id)arg3 updatedAssets:(id)arg4;
 
 @end

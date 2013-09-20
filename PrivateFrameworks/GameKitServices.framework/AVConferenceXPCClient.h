@@ -33,6 +33,7 @@
 - (id)registeredBlocks;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 reply:(id)arg3 queue:(id)arg4;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 reply:(id)arg3;
+- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2;
 - (id)sendMessageSync:(char *)arg1 arguments:(id)arg2 timeout:(unsigned int)arg3;
 - (id)sendMessageSync:(char *)arg1 arguments:(id)arg2;
 

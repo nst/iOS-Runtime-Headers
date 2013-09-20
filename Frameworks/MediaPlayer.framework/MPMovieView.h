@@ -10,9 +10,11 @@
 
 @property <MPMovieViewDelegate> * delegate;
 
+- (void).cxx_destruct;
 - (id)delegate;
 - (void)didMoveToWindow;
 - (void)setDelegate:(id)arg1;
+- (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

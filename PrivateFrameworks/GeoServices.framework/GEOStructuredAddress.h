@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOStructuredAddress : PBCodable {
+@interface GEOStructuredAddress : PBCodable <NSCopying> {
     struct { 
         long long *list; 
         unsigned int count; 
@@ -22,6 +22,7 @@
     NSString *_ocean;
     NSString *_postCode;
     NSString *_postCodeExtension;
+    NSString *_postCodeFull;
     NSString *_premise;
     NSString *_premises;
     NSString *_subAdministrativeArea;
@@ -50,6 +51,7 @@
 @property(readonly) BOOL hasOcean;
 @property(readonly) BOOL hasPostCode;
 @property(readonly) BOOL hasPostCodeExtension;
+@property(readonly) BOOL hasPostCodeFull;
 @property(readonly) BOOL hasPremise;
 @property(readonly) BOOL hasPremises;
 @property(readonly) BOOL hasSubAdministrativeArea;
@@ -61,6 +63,7 @@
 @property(retain) NSString * ocean;
 @property(retain) NSString * postCode;
 @property(retain) NSString * postCodeExtension;
+@property(retain) NSString * postCodeFull;
 @property(retain) NSString * premise;
 @property(retain) NSString * premises;
 @property(retain) NSString * subAdministrativeArea;
@@ -83,6 +86,7 @@
 - (void)clearGeoIds;
 - (void)clearSubPremises;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)country;
 - (id)countryCode;
 - (void)dealloc;
@@ -105,6 +109,7 @@
 - (BOOL)hasOcean;
 - (BOOL)hasPostCode;
 - (BOOL)hasPostCodeExtension;
+- (BOOL)hasPostCodeFull;
 - (BOOL)hasPremise;
 - (BOOL)hasPremises;
 - (BOOL)hasSubAdministrativeArea;
@@ -112,12 +117,14 @@
 - (BOOL)hasSubThoroughfare;
 - (BOOL)hasThoroughfare;
 - (unsigned int)hash;
+- (id)initWithAddressDictionary:(id)arg1;
 - (id)inlandWater;
 - (BOOL)isEqual:(id)arg1;
 - (id)locality;
 - (id)ocean;
 - (id)postCode;
 - (id)postCodeExtension;
+- (id)postCodeFull;
 - (id)premise;
 - (id)premises;
 - (BOOL)readFrom:(id)arg1;
@@ -134,6 +141,7 @@
 - (void)setOcean:(id)arg1;
 - (void)setPostCode:(id)arg1;
 - (void)setPostCodeExtension:(id)arg1;
+- (void)setPostCodeFull:(id)arg1;
 - (void)setPremise:(id)arg1;
 - (void)setPremises:(id)arg1;
 - (void)setSubAdministrativeArea:(id)arg1;

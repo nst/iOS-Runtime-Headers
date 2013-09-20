@@ -6,13 +6,16 @@
 
 @interface PCWWANUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol, PCInterfaceUsabilityMonitorDelegate> {
     struct dispatch_queue_s { } *_ctServerQueue;
+    struct __CFString { } *_currentRAT;
     struct dispatch_queue_s { } *_delegateQueue;
     CUTWeakReference *_delegateReference;
     PCInterfaceUsabilityMonitor *_interfaceMonitor;
     NSString *_interfaceName;
     BOOL _isInCall;
+    BOOL _isInHighPowerState;
     struct dispatch_queue_s { } *_ivarQueue;
     struct dispatch_queue_s { } *_monitorDelegateQueue;
+    int _powerlogCDRXToken;
     struct __CTServerConnection { } *_telephonyServer;
     unsigned int _thresholdOffTransitionCount;
     BOOL _trackUsability;
@@ -20,12 +23,15 @@
     long _wwanContextID;
 }
 
+@property(readonly) struct __CFString { }* currentRAT;
 @property <PCInterfaceUsabilityMonitorDelegate> * delegate;
 @property(readonly) int interfaceIdentifier;
 @property(readonly) BOOL isInterfaceHistoricallyUsable;
 @property(readonly) BOOL isInterfaceUsable;
 @property(readonly) BOOL isInternetReachable;
+@property(readonly) BOOL isLTEWithCDRX;
 @property(readonly) BOOL isPoorLinkQuality;
+@property(readonly) BOOL isRadioHot;
 @property(readonly) int linkQuality;
 @property(readonly) NSString * linkQualityString;
 
@@ -34,6 +40,7 @@
 - (void)_forwardConfigurationOnIvarQueue;
 - (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
 - (void)_setupWWANMonitor;
+- (struct __CFString { }*)currentRAT;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithDelegateQueue:(struct dispatch_queue_s { }*)arg1;
@@ -43,7 +50,9 @@
 - (BOOL)isInterfaceHistoricallyUsable;
 - (BOOL)isInterfaceUsable;
 - (BOOL)isInternetReachable;
+- (BOOL)isLTEWithCDRX;
 - (BOOL)isPoorLinkQuality;
+- (BOOL)isRadioHot;
 - (int)linkQuality;
 - (id)linkQualityString;
 - (void)setDelegate:(id)arg1;

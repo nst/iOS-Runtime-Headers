@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/XPCObjects.framework/XPCObjects
  */
 
-@interface XPCMachSendRight : NSObject <NSCoding> {
+@interface XPCMachSendRight : NSObject <NSSecureCoding> {
     unsigned int _sendRight;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)wrapSendRight:(unsigned int)arg1;
 
 - (void)dealloc;

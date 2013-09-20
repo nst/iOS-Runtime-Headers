@@ -16,6 +16,7 @@
 
 - (id)category;
 - (void)dealloc;
+- (id)description;
 - (id)initWithString:(id)arg1 category:(id)arg2;
 - (id)string;
 

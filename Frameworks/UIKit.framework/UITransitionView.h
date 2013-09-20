@@ -32,7 +32,7 @@
 - (void)_didCompleteTransition:(BOOL)arg1;
 - (void)_didStartTransition;
 - (BOOL)_isTransitioningFromFromView:(id)arg1;
-- (void)_startTransition:(int)arg1 withDuration:(float)arg2;
+- (void)_startTransition:(int)arg1 withDuration:(double)arg2;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
 - (void)dealloc;
 - (id)delegate;

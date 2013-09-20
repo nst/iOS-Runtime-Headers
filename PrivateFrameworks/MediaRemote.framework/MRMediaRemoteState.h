@@ -18,6 +18,7 @@
     int _notifyRestoreClientStateForLaunch;
     NSData *_nowPlayingArtworkData;
     NSDictionary *_nowPlayingInfo;
+    int _originDiscoveryCount;
     unsigned int _routeDiscoveryCount;
 }
 
@@ -31,11 +32,13 @@
 
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
 - (void)addCommandHandlerBlock:(id)arg1 forKey:(id)arg2;
+- (void)beginOriginDiscovery;
 - (void)beginRouteDiscovery;
 - (BOOL)canBeNowPlayingApp;
 - (id)commandHandlerBlock;
 - (id)commandHandlerBlocks;
 - (void)dealloc;
+- (void)endOriginDiscovery;
 - (void)endRouteDiscovery;
 - (id)init;
 - (BOOL)isOverrideApp;

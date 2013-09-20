@@ -11,8 +11,8 @@
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputNeutral;
-@property(copy) CIVector * inputTargetNeutral;
+@property(retain) CIVector * inputNeutral;
+@property(retain) CIVector * inputTargetNeutral;
 
 + (id)customAttributes;
 

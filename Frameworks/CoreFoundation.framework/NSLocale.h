@@ -8,6 +8,10 @@
 + (id)ISOCountryCodes;
 + (id)ISOCurrencyCodes;
 + (id)ISOLanguageCodes;
++ (id)__ck_currentLocale;
++ (id)_localeOverridesForLocaleWithIdentifier:(id)arg1;
++ (void)_mapkit_overrideDistanceUnit:(int)arg1;
++ (void)_mapkit_overrideGuidanceUnit:(int)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)autoupdatingCurrentLocale;
 + (id)availableLocaleIdentifiers;
@@ -30,6 +34,10 @@
 
 - (unsigned long)_cfTypeID;
 - (id)_copyDisplayNameForKey:(id)arg1 value:(id)arg2;
+- (BOOL)_mapkit_distanceUsesMetricSystem;
+- (BOOL)_mapkit_guidanceUsesMetricSystem;
+- (id)_mapkit_objectForKey:(id)arg1;
+- (BOOL)_mapkit_useYardsForShortDistances;
 - (id)_prefs;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

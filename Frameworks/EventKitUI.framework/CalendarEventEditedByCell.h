@@ -15,9 +15,9 @@
 @property <EKCellShortener> * shortener;
 @property(readonly) UILabel * textLabel2;
 
+- (void).cxx_destruct;
 - (void)_checkValueWidth;
 - (void)_copyTextLabelAttributesFrom:(id)arg1 to:(id)arg2;
-- (void)dealloc;
 - (BOOL)detailText2IsPlaceholder;
 - (BOOL)detailTextIsPlaceholder;
 - (id)detailTextLabel2;

@@ -31,6 +31,8 @@
 - (void)_registerDelegate;
 - (void)_setupDeviceDetection;
 - (id)aggregatedStatus;
+- (BOOL)alwaysUsesNemethCodeForTechnicalText;
+- (BOOL)automaticBrailleTranslationEnabled;
 - (int)contractionMode;
 - (void)dealloc;
 - (id)delegate;
@@ -59,8 +61,10 @@
 - (void)selectAllForToken:(int)arg1;
 - (void)setAggregatedStatus:(id)arg1;
 - (void)setAlertString:(id)arg1 timeout:(double)arg2 priority:(int)arg3;
+- (void)setAlwaysUsesNemethCodeForTechnicalText:(BOOL)arg1;
 - (void)setAnnouncementString:(id)arg1;
 - (void)setAnnouncementsDisplayMode;
+- (void)setAutomaticBrailleTranslationEnabled:(BOOL)arg1;
 - (void)setContractionMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayDescriptorCallbackEnabled:(BOOL)arg1;

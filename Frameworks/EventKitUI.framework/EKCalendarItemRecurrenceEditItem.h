@@ -2,38 +2,41 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, PreferencesValueCell;
+@class EKCalendarItemRecurrenceEndCell, EKRecurrenceTypeEditItemViewController, NSDate, NSString, PreferencesValueCell;
 
 @interface EKCalendarItemRecurrenceEditItem : EKCalendarItemEditItem <EKCellShortener> {
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
     NSString *_customRepeatDescription;
-    PreferencesValueCell *_dateCell;
+    unsigned int _disclosedSubitem;
+    NSDate *_originalRepeatEnd;
     int _originalRepeatType;
-    } _repeatEndGr;
+    EKRecurrenceTypeEditItemViewController *_recurrenceTypeVC;
+    NSDate *_repeatEnd;
+    PreferencesValueCell *_repeatEndDateCell;
+    EKCalendarItemRecurrenceEndCell *_repeatEndPickerCell;
     int _repeatType;
     int _shorteningStatus;
 }
 
+- (void).cxx_destruct;
+- (void)_neverRepeatButtonTapped:(id)arg1;
+- (id)_recurrenceTypeVC;
+- (void)_repeatEndDateChanged:(id)arg1;
+- (id)_repeatEndPickerCell;
+- (void)_updateRepeatEndDateCell;
+- (BOOL)_validateRecurrenceType:(id)arg1;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
-- (void)dealloc;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
 - (BOOL)editItemViewControllerCommit:(id)arg1 notify:(BOOL)arg2;
 - (BOOL)editItemViewControllerCommit:(id)arg1;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })minRecurrenceEndDateGr;
-- (int)numberOfSubitemsInSubsection:(int)arg1;
+- (id)minRecurrenceEndDate;
+- (unsigned int)numberOfSubitemsInSubsection:(unsigned int)arg1;
 - (id)recurrenceDate;
 - (id)recurrenceTimeZone;
 - (void)refreshFromCalendarItemAndStore;
 - (void)reset;
+- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (void)shortenCell:(id)arg1;
-- (id)stringForGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (BOOL)validateRecurrenceType:(id)arg1;
+- (id)stringForDate:(id)arg1;
 
 @end

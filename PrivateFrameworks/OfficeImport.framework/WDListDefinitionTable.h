@@ -12,12 +12,12 @@
     unsigned int mNextIdIndex;
 }
 
-- (id)addDefinition:(int)arg1;
+- (id)addDefinition:(long)arg1;
 - (id)addDefinition;
 - (void)dealloc;
-- (id)definitionAt:(int)arg1;
-- (int)definitionCount;
-- (id)definitionWithId:(int)arg1;
+- (id)definitionAt:(unsigned int)arg1;
+- (unsigned int)definitionCount;
+- (id)definitionWithId:(long)arg1;
 - (id)document;
 - (id)initWithDocument:(id)arg1;
 - (int)nextId;

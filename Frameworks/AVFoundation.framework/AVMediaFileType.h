@@ -17,6 +17,7 @@
 + (id)_mediaFileTypeWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
 + (id)allFileTypeIdentifiers;
 + (void)initialize;
++ (id)isoFileTypes;
 + (id)mediaFileTypeWithFileTypeIdentifier:(id)arg1;
 
 - (id)UTI;
@@ -28,6 +29,7 @@
 - (id)figFormatReaderFileFormat;
 - (id)initWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
 - (id)supportedMediaTypes;
+- (BOOL)supportsFormat:(struct opaqueCMFormatDescription { }*)arg1;
 - (BOOL)supportsOutputSettings:(id)arg1 reason:(id*)arg2;
 
 @end

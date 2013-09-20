@@ -9,6 +9,7 @@
 - (void)postNotificationsForTransitionEnd;
 - (void)postNotificationsForTransitionStart;
 - (BOOL)shouldCompleteOnSuspend;
+- (BOOL)shouldRecomputeEndFrame;
 - (BOOL)subsumesTransition:(id)arg1;
 
 @end

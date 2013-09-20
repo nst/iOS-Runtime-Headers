@@ -10,7 +10,7 @@
 + (id)__formatTimeInterval:(unsigned int)arg1;
 + (id)__gregorianCalendar;
 + (void)__serializeWorkoutDict:(id)arg1 toURL:(id)arg2;
-+ (id)__snapshotDictArrayForSnapshotVector:(struct vector<ISL::IPodSportsWorkout_Run::Snapshot, std::allocator<ISL::IPodSportsWorkout_Run::Snapshot> > { struct _Vector_impl { struct Snapshot {} *x_1_1_1; struct Snapshot {} *x_1_1_2; struct Snapshot {} *x_1_1_3; } x1; })arg1;
++ (id)__snapshotDictArrayForSnapshotVector:(struct vector<ISL::IPodSportsWorkout_Run::Snapshot, std::__1::allocator<ISL::IPodSportsWorkout_Run::Snapshot> > { struct Snapshot {} *x1; struct Snapshot {} *x2; struct __compressed_pair<ISL::IPodSportsWorkout_Run::Snapshot *, std::__1::allocator<ISL::IPodSportsWorkout_Run::Snapshot> > { struct Snapshot {} *x_3_1_1; } x3; })arg1;
 + (id)dictionaryForWorkoutFileAtURL:(id)arg1;
 + (void)serializeWorkoutDict:(id)arg1 toURL:(id)arg2;
 

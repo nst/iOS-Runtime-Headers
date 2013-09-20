@@ -4,7 +4,7 @@
 
 @class NSDate, NSString, NSTimeZone;
 
-@interface EKEventPredicate : EKPredicate {
+@interface EKEventPredicate : EKPredicate <EKDefaultPropertiesLoading> {
     NSDate *_endDate;
     BOOL _shouldLoadDefaultProperties;
     NSDate *_startDate;
@@ -24,6 +24,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)defaultPropertiesToLoad;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (BOOL)evaluateWithObject:(id)arg1;

@@ -9,11 +9,15 @@
         int mountedState; 
         int mountedConfidence; 
         float tilt; 
+        double timestamp; 
+        int exitState; 
+        double estExitTime; 
+        double startTime; 
     } fActivity;
 }
 
 - (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; })arg1;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; float x5; double x6; int x7; double x8; double x9; })arg1;
 
 @end

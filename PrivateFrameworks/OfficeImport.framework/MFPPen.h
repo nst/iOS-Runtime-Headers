@@ -33,11 +33,10 @@
 
 - (id).cxx_construct;
 - (int)alignment;
-- (void)applyDashCap;
-- (void)applyDashPattern:(const float*)arg1 count:(int)arg2;
-- (void)applyDashPattern;
-- (void)applyLineCap;
-- (void)applyLineJoin;
+- (void)applyDashCapToPath:(id)arg1;
+- (void)applyDashPatternToPath:(id)arg1;
+- (void)applyLineCapToPath:(id)arg1;
+- (void)applyLineJoinToPath:(id)arg1;
 - (id)brush;
 - (const float*)compoundArray;
 - (int)compoundArrayCount;
@@ -60,6 +59,7 @@
 - (void)setCustomStartCap:(id)arg1;
 - (void)setDashCap:(int)arg1;
 - (void)setDashOffset:(float)arg1;
+- (void)setDashPattern:(const float*)arg1 count:(int)arg2 toPath:(id)arg3;
 - (void)setDashPattern:(const float*)arg1 count:(int)arg2;
 - (void)setDashStyle:(int)arg1;
 - (void)setEndCap:(int)arg1;
@@ -69,7 +69,7 @@
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setWidth:(float)arg1;
 - (int)startCap;
-- (void)strokePath:(struct CGPath { }*)arg1;
+- (void)strokePath:(id)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (float)width;
 

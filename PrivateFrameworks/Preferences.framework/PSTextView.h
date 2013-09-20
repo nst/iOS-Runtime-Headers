@@ -4,7 +4,7 @@
 
 @class PSTextViewTableCell;
 
-@interface PSTextView : UITextView {
+@interface PSTextView : UITextContentView {
     PSTextViewTableCell *_cell;
 }
 

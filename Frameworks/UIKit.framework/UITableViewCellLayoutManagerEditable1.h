@@ -17,6 +17,5 @@
 - (void)textFieldDidEndEditing:(id)arg1;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
-- (id)textLabelForCell:(id)arg1;
 
 @end

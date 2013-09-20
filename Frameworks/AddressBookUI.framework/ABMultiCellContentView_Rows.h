@@ -17,8 +17,8 @@
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForView:(id)arg1;
 - (void)dealloc;
+- (void)entryField:(id)arg1 didEndEditingForKey:(id)arg2;
 - (void)entryFieldBeginAttemptBecomeFirstResponder:(id)arg1;
-- (void)entryFieldDidEndEditing:(id)arg1;
 - (void)entryFieldEndAttemptBecomeFirstResponder:(id)arg1;
 - (id)entryFieldForRow:(unsigned int)arg1;
 - (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;

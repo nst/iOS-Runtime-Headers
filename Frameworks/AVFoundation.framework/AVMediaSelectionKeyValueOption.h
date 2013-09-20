@@ -8,11 +8,13 @@
     NSDictionary *_dictionary;
     BOOL _displaysNonForcedSubtitles;
     id _groupID;
-    NSString *_mediaType;
+    id _groupMediaType;
+    NSString *_optionMediaType;
     AVWeakReference *_weakReferenceToGroup;
 }
 
 - (id)_groupID;
+- (id)_groupMediaType;
 - (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;

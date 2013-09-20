@@ -2,54 +2,45 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSDate, NSString, NSTimer;
+@class NSString, PCSimpleTimer;
 
-@interface PCPersistentTimer : NSObject <PCLoggingDelegate> {
+@interface PCPersistentTimer : NSObject <PCLoggingDelegate, CUTPowerMonitorDelegate> {
     BOOL _disableSystemWaking;
-    BOOL _disallowInterfaceManagerUsage;
-    NSTimer *_fireRunLoopTimer;
     double _fireTime;
-    double _lastUpdateTime;
+    unsigned int _guidancePriority;
     double _minimumEarlyFireProportion;
-    struct IONotificationPort { } *_pmNotificationPort;
-    unsigned int _pmNotifier;
-    unsigned int _pmRootDomainConnect;
-    struct __CFRunLoopSource { } *_pmRunLoopSource;
-    unsigned int _powerAssertionID;
-    NSTimer *_preventSleepRunLoopTimer;
-    NSDate *_scheduledWakeDate;
     SEL _selector;
     NSString *_serviceIdentifier;
-    BOOL _sleepIsImminent;
+    PCSimpleTimer *_simpleTimer;
     double _startTime;
     id _target;
-    id _timeChangeSource;
     BOOL _triggerOnGMTChange;
     id _userInfo;
 }
 
 @property BOOL disableSystemWaking;
+@property(readonly) double fireTime;
 @property(readonly) NSString * loggingIdentifier;
 @property double minimumEarlyFireProportion;
 
++ (double)_currentGuidanceTime;
++ (void)_updateTime:(double)arg1 forGuidancePriority:(unsigned int)arg2;
 + (double)currentMachTimeInterval;
 + (id)lastSystemWakeDate;
 
-- (id)_earlyFireDate;
+- (double)_earlyFireTime;
 - (void)_fireTimerFired;
-- (id)_initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 triggerOnGMTChange:(BOOL)arg6;
+- (id)_initWithAbsoluteTime:(double)arg1 serviceIdentifier:(id)arg2 guidancePriority:(unsigned int)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6 triggerOnGMTChange:(BOOL)arg7;
 - (double)_nextForcedAlignmentAbsoluteTime;
-- (void)_powerChangedMessageType:(unsigned int)arg1 notificationID:(void*)arg2;
-- (void)_preventSleepFired;
-- (void)_setPowerMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
-- (void)_setSignificantTimeChangeMonitoringEnabledForRunLoop:(id)arg1 mode:(id)arg2;
-- (void)_significantTimeChange;
 - (void)_updateTimers;
+- (void)cutPowerMonitorBatteryConnectedStateDidChange:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (BOOL)disableSystemWaking;
+- (double)fireTime;
+- (BOOL)firingIsImminent;
 - (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
-- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 disallowInterfaceManagerUsage:(BOOL)arg6;
+- (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 guidancePriority:(unsigned int)arg3 target:(id)arg4 selector:(SEL)arg5 userInfo:(id)arg6;
 - (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
 - (void)interfaceManagerWWANInterfaceChangedPowerState:(id)arg1;

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISReview, NSNumber, NSString;
+@class NSNumber, NSString, NSURL, SKUIReviewMetadata;
 
 @interface SUScriptReview : SUScriptObject {
-    ISReview *_review;
+    NSURL *_infoURL;
+    SKUIReviewMetadata *_review;
 }
 
 @property(readonly) NSNumber * adamID;

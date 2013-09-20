@@ -10,9 +10,11 @@
 
 @property _UIWebViewController * webViewController;
 
++ (id)exportedInterface;
++ (id)serviceViewControllerInterface;
+
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)setWebViewController:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

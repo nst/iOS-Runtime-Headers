@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSURL, SALocation, SAPerson;
+@class NSNumber, NSString, SALocation, SAPerson;
 
-@interface SAFmfGeoFenceSet : SABaseClientBoundCommand {
+@interface SAFmfGeoFenceSet : SADomainCommand {
 }
 
 @property(copy) NSNumber * enable;
@@ -13,7 +13,6 @@
 @property(copy) NSString * geoFenceTrigger;
 @property(copy) NSNumber * oneTimeOnly;
 @property(retain) SALocation * requestedLocation;
-@property(copy) NSURL * targetAppId;
 
 + (id)geoFenceSet;
 + (id)geoFenceSetWithDictionary:(id)arg1 context:(id)arg2;
@@ -33,7 +32,5 @@
 - (void)setGeoFenceTrigger:(id)arg1;
 - (void)setOneTimeOnly:(id)arg1;
 - (void)setRequestedLocation:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

@@ -8,6 +8,7 @@
     MPPipelineJPEGDecoder *decoder;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithIOSurface:(struct __IOSurface { }*)arg1 decoder:(id)arg2;
 

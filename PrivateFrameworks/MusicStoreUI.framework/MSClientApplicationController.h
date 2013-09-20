@@ -16,11 +16,11 @@
 - (void)_accountStoreChangedNotification:(id)arg1;
 - (void)_handleGeniusLookupURL:(id)arg1;
 - (void)_handleLibraryLinkURL:(id)arg1;
-- (void)_handleStoreSearchURL:(id)arg1;
+- (void)_handleStoreSearchURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (void)_updateRemoteNotificationSettings;
 - (void)becomeActive;
 - (void)dealloc;
-- (BOOL)displayClientURL:(id)arg1;
+- (BOOL)displayClientURL:(id)arg1 withSourceApplication:(id)arg2 sourceURLString:(id)arg3;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (id)init;
 - (id)initWithClientIdentifier:(id)arg1;

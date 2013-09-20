@@ -2,10 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class <IMFileCopierDelegate>, NSURL;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class <IMFileCopierDelegate>, NSObject<OS_dispatch_queue>, NSURL;
 
 @interface IMFileCopier : NSObject {
     void *_BOMCopier;
+    id _callback;
     <IMFileCopierDelegate> *_delegate;
     BOOL _didErrorOccur;
     id _identifier;
@@ -13,10 +18,13 @@
     NSURL *_inputURL;
     unsigned int _operation;
     NSURL *_outputURL;
+    NSObject<OS_dispatch_queue> *_queue;
     BOOL _shouldCancel;
 }
 
 @property void* _BOMCopier;
+@property id _callback;
+@property NSObject<OS_dispatch_queue> * _queue;
 @property <IMFileCopierDelegate> * delegate;
 @property(readonly) BOOL didErrorOccur;
 @property(readonly) id identifier;
@@ -27,8 +35,10 @@
 @property(readonly) BOOL wasCancelled;
 
 - (void*)_BOMCopier;
+- (id)_callback;
 - (void)_fillOutputURLFromInputURL;
 - (void)_main_copierFinishedWithResult:(id)arg1;
+- (id)_queue;
 - (id)_temporaryCopierPath;
 - (void)_worker_doCopy;
 - (void)cancel;
@@ -38,6 +48,7 @@
 - (BOOL)didErrorOccur;
 - (id)identifier;
 - (BOOL)inProgress;
+- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 completionBlock:(id)arg5 queue:(id)arg6;
 - (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
 - (id)inputURL;
 - (unsigned int)operation;
@@ -46,6 +57,8 @@
 - (void)setInProgress:(BOOL)arg1;
 - (void)setOperation:(unsigned int)arg1;
 - (void)set_BOMCopier:(void*)arg1;
+- (void)set_callback:(id)arg1;
+- (void)set_queue:(id)arg1;
 - (void)start;
 - (BOOL)wasCancelled;
 

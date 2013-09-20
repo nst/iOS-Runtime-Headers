@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOPhoto : PBCodable {
+@interface GEOPhoto : PBCodable <NSCopying> {
     struct { 
         unsigned int photoType : 1; 
     } _has;
@@ -22,6 +22,7 @@
 - (void)addPhotoInfo:(id)arg1;
 - (void)clearPhotoInfos;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

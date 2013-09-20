@@ -2,26 +2,37 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@class CKAnimatedImage, NSArray, UIImageView;
 
-@interface CKImageBalloonView : CKBalloonView {
-    id _highlightedImageBlock;
+@interface CKImageBalloonView : CKBalloonView <CKAnimationTimerObserver> {
+    CKAnimatedImage *_animatedImage;
+    NSArray *_frames;
+    UIImageView *_tailMask;
 }
 
-@property(copy) id highlightedImageBlock;
+@property(retain) CKAnimatedImage * animatedImage;
+@property(copy) NSArray * frames;
+@property(retain) UIImageView * tailMask;
 
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsetsForBalloonOrientation:(int)arg1;
-+ (float)entryFieldBalloonAdditionalHeight;
-+ (struct CGPoint { float x1; float x2; })entryFieldBalloonOffset;
-+ (BOOL)fixedWidth;
-
+- (id)animatedImage;
+- (void)animationTimerFired:(unsigned int)arg1;
+- (void)configureForMessagePart:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)highlightedImageBlock;
+- (void)didMoveToWindow;
+- (id)frames;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)overlayColor;
+- (void)prepareForDisplay;
 - (void)prepareForReuse;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setHighlightedImageBlock:(id)arg1;
+- (void)setAnimatedImage:(id)arg1;
+- (void)setCanUseOpaqueMask:(BOOL)arg1;
+- (void)setFrames:(id)arg1;
+- (void)setHasTail:(BOOL)arg1;
+- (void)setTailMask:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (id)tailMask;
+- (void)updateAnimationTimerObserving;
 
 @end

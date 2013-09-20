@@ -7,7 +7,7 @@
 @interface _SCRCThreadTask : NSObject {
     unsigned long _count;
     unsigned long _mask;
-    void *_objects[4];
+    void *_objects[6];
     SEL _selector;
     id _target;
     NSConditionLock *_waitLock;

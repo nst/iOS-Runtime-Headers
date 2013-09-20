@@ -2,38 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
+@class UIImageView;
 
 @interface UIMovieScrubberTrackOverlayView : UIView {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     unsigned int _editing : 1;
     unsigned int _zoomed : 1;
     unsigned int _editingHandle;
     double _endValue;
-    UIView *_innerShadowView;
-    } _leftFillFrame;
-    UIView *_leftFillView;
+    UIImageView *_leftFillView;
     double _maximumValue;
     double _minimumValue;
-    } _rightFillFrame;
-    UIView *_rightFillView;
+    UIImageView *_rightFillView;
     double _startValue;
     double _value;
 }
@@ -47,7 +26,6 @@
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditingHandle:(int)arg1;
 - (void)setEndValue:(double)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsZoomed:(BOOL)arg1;
 - (void)setMaximumValue:(double)arg1;
 - (void)setMinimumValue:(double)arg1;

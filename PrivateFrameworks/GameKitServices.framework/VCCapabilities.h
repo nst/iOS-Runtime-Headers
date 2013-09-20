@@ -43,7 +43,6 @@
 - (unsigned int)actualVideoCodec;
 - (void)decodeFromNSDictionary:(id)arg1;
 - (id)description;
-- (id)encodeToNewNSDictionary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -58,6 +57,7 @@
 - (BOOL)isRelayForced;
 - (BOOL)isVideoEnabled;
 - (BOOL)isVideoPausedToStart;
+- (id)newEncodedDictionary;
 - (unsigned int)preferredAudioCodec;
 - (unsigned int)preferredVideoCodec;
 - (BOOL)requiresWifi;

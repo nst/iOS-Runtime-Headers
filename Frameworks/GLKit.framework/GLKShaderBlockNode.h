@@ -26,8 +26,8 @@
 @property GLKShaderBlockNode * children;
 @property unsigned int index;
 @property BOOL indexedMask;
-@property(retain) NSString * label;
-@property(retain) NSString * loopVar;
+@property(copy) NSString * label;
+@property(copy) NSString * loopVar;
 @property struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } mask;
 @property GLKShaderBlockNode * next;
 @property GLKShaderBlockNode * parent;

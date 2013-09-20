@@ -18,19 +18,19 @@
     int m_family;
     int m_lfCharSet;
     unsigned char m_lfClipPrecision;
-    long m_lfEscapement;
+    int m_lfEscapement;
     NSString *m_lfFaceName;
-    long m_lfHeight;
-    long m_lfOrientation;
+    int m_lfHeight;
+    int m_lfOrientation;
     int m_lfOutPrecision;
     int m_lfQuality;
-    long m_lfWeight;
-    long m_lfWidth;
+    int m_lfWeight;
+    int m_lfWidth;
     int m_pitch;
 }
 
-+ (id)fontWithExtendedFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
-+ (id)fontWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
++ (id)fontWithExtendedFeatures:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
++ (id)fontWithFeatures:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
 + (id)fontWithStockFont:(int)arg1;
 
 - (void)dealloc;
@@ -38,8 +38,8 @@
 - (id)faceName;
 - (double)fontHeight;
 - (int)getCharset;
-- (id)initWithAllFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
-- (id)initWithFeatures:(long)arg1 :(long)arg2 :(long)arg3 :(long)arg4 :(long)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
+- (id)initWithAllFeatures:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15 :(id)arg16 :(id)arg17 :(unsigned int)arg18 :(unsigned int)arg19 :(unsigned int)arg20 :(unsigned int)arg21 :(unsigned int)arg22;
+- (id)initWithFeatures:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(bool)arg6 :(bool)arg7 :(bool)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(int)arg12 :(int)arg13 :(int)arg14 :(id)arg15;
 - (id)initWithStockFont:(int)arg1;
 - (int)selectInto:(id)arg1;
 - (BOOL)strikeout;

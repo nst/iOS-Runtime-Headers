@@ -5,6 +5,7 @@
 @class NSMutableArray, NSSQLEntity, NSString;
 
 @interface NSSQLStatement : NSObject {
+    NSMutableArray *_bindIntarrays;
     NSMutableArray *_bindVariables;
     NSSQLEntity *_entity;
     NSSQLEntity *_fakeEntityForFetch;
@@ -12,7 +13,9 @@
     NSString *_sqlString;
 }
 
+- (unsigned int)addBindIntarray:(id)arg1;
 - (unsigned int)addBindVariable:(id)arg1;
+- (id)bindIntarrays;
 - (id)bindVariables;
 - (void)cacheFakeEntityForFetch:(id)arg1;
 - (void)clearCaches;
@@ -24,7 +27,9 @@
 - (id)initWithEntity:(id)arg1;
 - (BOOL)isImpossibleCondition;
 - (BOOL)isReadOnly;
+- (void)removeAllBindIntarrays;
 - (void)removeAllBindVariables;
+- (void)setBindIntarrays:(id)arg1;
 - (void)setBindVariables:(id)arg1;
 - (void)setImpossibleCondition:(BOOL)arg1;
 - (void)setSQLString:(id)arg1;

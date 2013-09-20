@@ -2,23 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString, UILabel, UIView;
+@class NSString;
 
 @interface StepByStepUIViewController_Create_Guest : StepByStepUIViewController <TableViewManagerDelegate> {
     int _guestNetSecMode;
     BOOL _guestNetworkEnabled;
     NSString *_wifiName;
     NSString *_wifiPassword;
-    UIView *justTextContainerView;
-    UILabel *justTextLabel;
-    UIView *tableHeaderContainerView;
 }
 
 @property int guestNetSecMode;
 @property BOOL guestNetworkEnabled;
-@property(retain) UIView * justTextContainerView;
-@property(retain) UILabel * justTextLabel;
-@property(retain) UIView * tableHeaderContainerView;
 @property(copy) NSString * wifiName;
 @property(copy) NSString * wifiPassword;
 
@@ -26,21 +20,14 @@
 - (void)addGuestNetworkPasswordSection;
 - (int)guestNetSecMode;
 - (BOOL)guestNetworkEnabled;
-- (void)initUI;
-- (id)justTextContainerView;
-- (id)justTextLabel;
 - (void)setGuestNetSecMode:(int)arg1;
 - (void)setGuestNetworkEnabled:(BOOL)arg1;
-- (void)setJustTextContainerView:(id)arg1;
-- (void)setJustTextLabel:(id)arg1;
-- (void)setTableHeaderContainerView:(id)arg1;
 - (void)setWifiName:(id)arg1;
 - (void)setWifiPassword:(id)arg1;
 - (void)setupInitialTableHeaderConfiguration;
 - (void)setupTable;
 - (BOOL)shouldChangeTextField:(id)arg1 atIndexPath:(id)arg2 forTextIndex:(unsigned int)arg3 toString:(id)arg4;
 - (void)switchTouchedInCellAtIndexPath:(id)arg1 forSwitchIndex:(unsigned int)arg2 isOn:(BOOL)arg3;
-- (id)tableHeaderContainerView;
 - (void)textFieldDidChangeAtIndexPath:(id)arg1;
 - (void)updateTable;
 - (BOOL)validateAndSetValues;

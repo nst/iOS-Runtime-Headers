@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
-
-@interface SAMPLoadPredefinedQueue : SABaseClientBoundCommand {
+@interface SAMPLoadPredefinedQueue : SADomainCommand {
 }
 
 @property int mediaItemType;
-@property(copy) NSURL * targetAppId;
+@property BOOL shouldShuffle;
 
 + (id)loadPredefinedQueue;
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +16,7 @@
 - (int)mediaItemType;
 - (BOOL)requiresResponse;
 - (void)setMediaItemType:(int)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
+- (void)setShouldShuffle:(BOOL)arg1;
+- (BOOL)shouldShuffle;
 
 @end

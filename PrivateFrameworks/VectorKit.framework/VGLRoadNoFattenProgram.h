@@ -8,17 +8,23 @@
         float g; 
         float b; 
         float a; 
+    float _capWidth;
     } _color;
+    int _uCapWidth;
     int _uColor;
 }
 
+@property float capWidth;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } color;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
+- (float)capWidth;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (id)init;
-- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
+- (void)setCapWidth:(float)arg1;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setup;
 
 @end

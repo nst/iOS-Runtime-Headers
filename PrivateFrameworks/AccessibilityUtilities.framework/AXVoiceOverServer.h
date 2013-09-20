@@ -9,8 +9,6 @@
 
 - (BOOL)_connectIfNecessary;
 - (id)_serviceName;
-- (void)dealloc;
-- (id)init;
 - (void)triggerCommand:(int)arg1;
 
 @end

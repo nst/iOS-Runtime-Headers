@@ -18,7 +18,7 @@
 - (void)clearHideSwitcherTimer;
 - (void)clearSwitcherTimer;
 - (void)dealloc;
-- (BOOL)handleModifiersChangedEvent:(struct __GSEvent { }*)arg1;
+- (BOOL)handleModifiersChangedEvent:(id)arg1;
 - (void)handleRotate:(id)arg1;
 - (BOOL)handleSwitchCommand:(BOOL)arg1;
 - (void)hideSwitcher;

@@ -12,6 +12,8 @@
 @property(copy) NSArray * durations;
 @property(retain) UIImage * image;
 
++ (id)animatedImageWithContentsOfCPBitmapURL:(id)arg1;
+
 - (id)_initWithImage:(id)arg1 durations:(id)arg2;
 - (void)dealloc;
 - (id)description;
@@ -21,5 +23,6 @@
 - (id)initWithImages:(id)arg1 durations:(id)arg2;
 - (void)setDurations:(id)arg1;
 - (void)setImage:(id)arg1;
+- (BOOL)writeToCPBitmapURL:(id)arg1;
 
 @end

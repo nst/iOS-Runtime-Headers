@@ -51,6 +51,7 @@
 - (id)paymentQueueClient;
 - (void)removeTransactionObserver:(id)arg1;
 - (void)restoreCompletedTransactions;
+- (void)restoreCompletedTransactionsWithApplicationUsername:(id)arg1;
 - (void)resumeDownloads:(id)arg1;
 - (void)startDownloads:(id)arg1;
 - (id)transactions;

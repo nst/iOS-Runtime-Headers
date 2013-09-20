@@ -2,62 +2,59 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, UIImage;
+@class IMHandle, NSAttributedString, NSString, UIImage;
 
-@interface CKEntity : NSObject {
-    void *_abRecord;
-    int _addressBookUID;
-    unsigned int _addressHash;
-    id _contactImageThumbnail;
-    BOOL _foundABNameForSender;
-    int _identifier;
-    int _propertyType;
-    BOOL _senderIsVoicemail;
+@interface CKEntity : NSObject <CKTranscriptDataRowObject> {
+    IMHandle *_handle;
 }
 
 @property(readonly) void* abRecord;
-@property int addressBookUID;
-@property(readonly) unsigned int addressHash;
-@property(readonly) UIImage * contactImageThumbnail;
-@property(readonly) BOOL foundABNameForSender;
-@property(readonly) BOOL hasContactImage;
-@property int identifier;
+@property(readonly) NSAttributedString * attributedTranscriptText;
+@property(readonly) IMHandle * defaultIMHandle;
+@property(readonly) NSString * fullName;
+@property(retain) IMHandle * handle;
+@property(readonly) int identifier;
 @property(readonly) NSString * name;
-@property(readonly) NSString * normalizedRawAddress;
 @property(readonly) NSString * originalAddress;
-@property(readonly) struct __CFPhoneNumber { }* phoneNumberRef;
-@property int propertyType;
+@property(readonly) int propertyType;
 @property(readonly) NSString * rawAddress;
-@property(readonly) BOOL senderIsVoicemail;
 @property(readonly) NSString * textToneIdentifier;
 @property(readonly) NSString * textVibrationIdentifier;
+@property(readonly) UIImage * transcriptContactImage;
 
-+ (id)contactImageThumbnailForMeCard;
-+ (id)copyAllEntities;
-+ (void)resetClassCache;
++ (id)_copyEntityForAddressString:(id)arg1 onAccount:(id)arg2;
++ (id)copyEntityForAddressString:(id)arg1;
 
+- (Class)__ck_displayCellClass;
+- (id)__ck_displayCellIdentifier;
+- (id)__ck_displayContactImage;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })__ck_displayContentAlignmentInsets;
+- (BOOL)__ck_displayDuringSend;
+- (id)__ck_displayGUIDWithMessage:(id)arg1;
+- (struct CGSize { float x1; float x2; })__ck_displaySize:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1;
+- (BOOL)__ck_displayTranscriptOrientation;
+- (void)__ck_prewarmForDisplay;
+- (BOOL)__ck_transcriptUsesTextAlignmentInsets;
+- (BOOL)__ck_wantsDrawerLayout;
 - (void*)abRecord;
-- (int)addressBookUID;
-- (unsigned int)addressHash;
-- (id)contactImageThumbnail;
+- (id)attributedTranscriptText;
 - (void)dealloc;
-- (BOOL)foundABNameForSender;
-- (BOOL)hasContactImage;
+- (id)defaultIMHandle;
+- (id)description;
+- (id)fullName;
+- (id)handle;
+- (unsigned int)hash;
 - (int)identifier;
-- (id)init;
+- (id)initWithIMHandle:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (id)normalizedRawAddress;
 - (id)originalAddress;
-- (struct __CFPhoneNumber { }*)phoneNumberRef;
+- (id)personViewControllerWithDelegate:(id)arg1;
 - (int)propertyType;
 - (id)rawAddress;
-- (void)resetCaches;
-- (BOOL)senderIsVoicemail;
-- (void)setABRecord:(void*)arg1 withIdentifier:(int)arg2;
-- (void)setAddressBookUID:(int)arg1;
-- (void)setIdentifier:(int)arg1;
-- (void)setPropertyType:(int)arg1;
+- (void)setHandle:(id)arg1;
 - (id)textToneIdentifier;
 - (id)textVibrationIdentifier;
+- (id)transcriptContactImage;
 
 @end

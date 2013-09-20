@@ -2,22 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSDictionary;
-
 @interface PSInternationalController : PSListController {
     struct __CFLocale { } *_locale;
     double _sampleTime;
-    NSDictionary *_voiceControlShortTitles;
-    NSArray *_voiceControlTitles;
-    NSArray *_voiceControlValues;
 }
 
 + (id)capitalizeFirstPartOfCountry:(id)arg1;
 + (void)setLanguage:(id)arg1;
 + (void)setLocale:(id)arg1;
-+ (id)voiceControlLanguageData;
++ (id)shortTitlesForLanguageIdentifiers:(id)arg1;
++ (id)titlesForLanguageIdentifiers:(id)arg1;
++ (id)voiceControlLanguageIdentifiers;
 
-- (void)_initVoiceControlData;
 - (void)_loadLocaleIfNeeded;
 - (id)calendar:(id)arg1;
 - (void)dealloc;
@@ -42,8 +38,5 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (id)voiceControlLanguage:(id)arg1;
-- (id)voiceControlShortTitles;
-- (id)voiceControlTitles:(id)arg1;
-- (id)voiceControlValues:(id)arg1;
 
 @end

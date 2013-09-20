@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <SFUOutputStream>, NSData, NSMutableArray, SFUCryptoKey, SFUMoveableFileOutputStream, SFUZipFreeSpaceEntry, SFUZipOutputEntry;
+@class <SFUOutputStream>, NSData, NSMutableArray, OISFUCryptoKey, SFUMoveableFileOutputStream, SFUZipFreeSpaceEntry, SFUZipOutputEntry;
 
 @interface SFUZipArchiveOutputStream : NSObject <SFUSimpleOutputStream> {
     char *mBuffer;
-    SFUCryptoKey *mCryptoKey;
+    OISFUCryptoKey *mCryptoKey;
     SFUZipOutputEntry *mCurrentEntry;
     SFUZipFreeSpaceEntry *mCurrentFreeSpace;
     NSData *mEncryptedDocumentUuid;
@@ -45,7 +45,7 @@
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 - (void)writeCentralFileHeaderUsingEntry:(id)arg1 isFirstEntry:(BOOL)arg2;
 - (void)writeEndOfCentralDirectoryWithOffset:(long long)arg1;
-- (unsigned int)writeLocalFileHeaderForEntry:(id)arg1;
+- (unsigned long)writeLocalFileHeaderForEntry:(id)arg1;
 - (void)writeZip64EndOfCentralDirectoryLocatorWithOffset:(long long)arg1;
 - (void)writeZip64EndOfCentralDirectoryWithOffset:(long long)arg1;
 

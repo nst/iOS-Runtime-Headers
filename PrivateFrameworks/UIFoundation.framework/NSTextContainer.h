@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSLayoutManager;
+@class NSArray, NSDictionary, NSLayoutManager;
 
 @interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider> {
     struct CGSize { 
@@ -12,35 +12,75 @@
         unsigned int widthTracksTextView : 1; 
         unsigned int heightTracksTextView : 1; 
         unsigned int observingFrameChanges : 1; 
-        unsigned int _reserved : 13; 
+        unsigned int lineBreakMode : 4; 
+        unsigned int _reserved : 9; 
+    NSDictionary *_attributesForExtraLineFragment;
+    float _cacheBoundsMaxY;
+    float _cacheBoundsMinY;
+    struct CGPath { } *_cachedBoundingPath;
+    struct __CFArray { } *_cachedBounds;
+    struct __CFArray { } *_cachedClippingAttributes;
+    NSArray *_exclusionPaths;
     NSLayoutManager *_layoutManager;
+    int _layoutOrientation;
     float _lineFragmentPadding;
     unsigned int _maximumLines;
     } _size;
     } _tcFlags;
+    id _textView;
 }
 
+@property(copy) NSArray * exclusionPaths;
+@property BOOL heightTracksTextView;
+@property(readonly) BOOL isSimpleRectangularTextContainer;
+@property NSLayoutManager * layoutManager;
+@property int layoutOrientation;
+@property int lineBreakMode;
+@property float lineFragmentPadding;
 @property unsigned int maximumNumberOfLines;
+@property struct CGSize { float x1; float x2; } size;
+@property BOOL widthTracksTextView;
 
 + (void)initialize;
 
 - (void)_commonInit;
+- (void)_resizeAccordingToTextView:(id)arg1;
+- (id)attributesForExtraLineFragment;
 - (struct CGSize { float x1; float x2; })containerSize;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)coordinateAccess:(id)arg1;
+- (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)exclusionPaths;
+- (BOOL)heightTracksTextView;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContainerSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isSimpleRectangularTextContainer;
 - (id)layoutManager;
 - (int)layoutOrientation;
+- (int)lineBreakMode;
 - (float)lineFragmentPadding;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sweepDirection:(unsigned int)arg2 movementDirection:(unsigned int)arg3 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atIndex:(unsigned int)arg2 writingDirection:(int)arg3 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
 - (unsigned int)maximumNumberOfLines;
 - (void)replaceLayoutManager:(id)arg1;
+- (void)setAttributesForExtraLineFragment:(id)arg1;
 - (void)setContainerSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setExclusionPaths:(id)arg1;
+- (void)setHeightTracksTextView:(BOOL)arg1;
 - (void)setLayoutManager:(id)arg1;
+- (void)setLayoutOrientation:(int)arg1;
+- (void)setLineBreakMode:(int)arg1;
 - (void)setLineFragmentPadding:(float)arg1;
 - (void)setMaximumNumberOfLines:(unsigned int)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTextView:(id)arg1;
+- (void)setWidthTracksTextView:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGPoint { float x1; float x2; })textContainerOrigin;
+- (id)textView;
+- (BOOL)widthTracksTextView;
 
 @end

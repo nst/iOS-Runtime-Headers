@@ -50,6 +50,7 @@
 @property BOOL useOutlineShadow;
 @property float width;
 
++ (BOOL)_isModernStyle:(int)arg1;
 + (id)_loadResourcesForStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })defaultSizeForStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })size;
@@ -60,7 +61,7 @@
 - (id)_artBackupKey;
 - (BOOL)_canCustomize;
 - (BOOL)_canCustomizeStyle:(int)arg1;
-- (id)_commonInitWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_commonInit;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (int)_customStyleForStyle:(int)arg1;
@@ -68,9 +69,12 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_feedTheGear;
 - (id)_generateImages;
+- (id)_generateModernImagesForImages:(id)arg1;
+- (BOOL)_hasCustomColor;
 - (id)_imageForStep:(int)arg1;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isArtWorkBased;
+- (BOOL)_isModern;
 - (id)_layoutInfosForStyle:(int)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_removeAllAnimations:(BOOL)arg1;

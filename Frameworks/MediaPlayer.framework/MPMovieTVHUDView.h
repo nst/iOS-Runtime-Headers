@@ -12,6 +12,7 @@
 
 @property(retain) MPAVController * player;
 
+- (void).cxx_destruct;
 - (void)_changeState;
 - (void)_fadeOut;
 - (void)_playbackStateDidChangeNotification:(id)arg1;

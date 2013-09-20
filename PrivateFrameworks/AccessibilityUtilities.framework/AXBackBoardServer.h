@@ -10,26 +10,39 @@
     NSMutableArray *_zoomListeners;
 }
 
+@property BOOL invertColorsEnabled;
+
 + (id)server;
 
-- (BOOL)_connectIfNecessary;
-- (void)_connectServerIfNecessary;
+- (void)_didConnectToServer;
 - (id)_handleEventListener:(id)arg1;
 - (id)_handleZoomListener:(id)arg1;
 - (id)_serviceName;
+- (id)_springboardParametersForGuidedAccessAvailability;
+- (void)_willClearServer;
+- (void)adjustSystemZoom:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forContextId:(unsigned int)arg2;
 - (void)dealloc;
+- (unsigned int)guidedAccessAvailability;
 - (id)init;
-- (void)postGSEvent:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned char x11[0]; }*)arg1 systemEvent:(BOOL)arg2 postThroughHID:(BOOL)arg3;
+- (BOOL)invertColorsEnabled;
+- (BOOL)isGuidedAccessSelfLockedToApp:(id)arg1;
+- (void)postEvent:(id)arg1 afterNamedTap:(id)arg2 includeTaps:(id)arg3;
+- (void)postEvent:(id)arg1 systemEvent:(BOOL)arg2;
+- (void)registerAccessibilityUIServicePID:(int)arg1;
 - (void)registerAssistiveTouchPID:(int)arg1;
 - (void)registerEventListener:(id)arg1 withIdentifierCallback:(id)arg2;
 - (void)registerGestureConflictWithZoom:(id)arg1;
+- (void)registerSiriViewServicePID:(int)arg1;
 - (id)registerZoomLevelChangeHandler:(id)arg1;
-- (void)removeEventListener:(struct NSString { Class x1; }*)arg1;
+- (void)removeEventListener:(id)arg1;
 - (void)removeZoomLevelHandler:(id)arg1;
+- (BOOL)requestGuidedAccessSession:(BOOL)arg1 appID:(id)arg2;
 - (void)setHearingAidControlIsVisible:(BOOL)arg1;
+- (void)setInvertColorsEnabled:(BOOL)arg1;
 - (void)setLockScreenDimTimerEnabled:(BOOL)arg1;
 - (void)setVoiceOverItemChooserVisible:(BOOL)arg1;
+- (void)toggleGuidedAccess;
 - (void)userEventOccurred;
 - (void)wakeUpDeviceIfNecessary;
 - (double)zoomActivationAnimationStartDelay;

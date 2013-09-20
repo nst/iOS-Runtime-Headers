@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SAPersonAttribute;
+@class NSArray, NSString;
 
 @interface SASmsRecipientSearchCompleted : SABaseCommand <SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;
-@property(retain) SAPersonAttribute * recipient;
 @property(copy) NSArray * recipients;
 @property(copy) NSString * refId;
 
@@ -17,9 +16,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)recipient;
 - (id)recipients;
-- (void)setRecipient:(id)arg1;
 - (void)setRecipients:(id)arg1;
 
 @end

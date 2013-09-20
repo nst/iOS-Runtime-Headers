@@ -2,50 +2,55 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class AVItem, NSDate, NSString;
+@class AVItem, NSDate, NSString, NSURL;
 
-@interface RCSavedRecording : NSManagedObject {
-    unsigned int _beingRemade : 1;
+@interface RCSavedRecording : NSManagedObject <UIActivityItemSource> {
     AVItem *_avItem;
-    NSString *_pathForRemaking;
+    NSString *_path;
 }
 
 @property(readonly) AVItem * avItem;
-@property(getter=isBeingRemade) BOOL beingRemade;
+@property(getter=isBeingMade) BOOL beingMade;
 @property(copy) NSString * customLabel;
 @property(copy) NSDate * date;
 @property(readonly) NSString * detailLabel;
 @property double duration;
 @property long long iTunesPersistentID;
 @property(readonly) NSString * label;
-@property unsigned int labelPreset;
+@property int labelPreset;
 @property(copy) NSString * path;
-@property(copy) NSString * pathForRemaking;
 @property(getter=isPendingRestore) BOOL pendingRestore;
 @property(getter=isSynced) BOOL synced;
+@property(readonly) NSURL * url;
 
-+ (id)localizedStringForRecordingLabel:(unsigned int)arg1;
++ (id)localizedStringForRecordingLabel:(int)arg1;
 
 - (void).cxx_destruct;
+- (id)_activityURLCreateIfNecessary:(BOOL)arg1;
+- (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
+- (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
+- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)avItem;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (id)detailLabel;
 - (double)duration;
 - (long long)iTunesPersistentID;
-- (BOOL)isBeingRemade;
+- (BOOL)isBeingMade;
 - (BOOL)isPendingRestore;
 - (BOOL)isSynced;
 - (id)label;
-- (unsigned int)labelPreset;
-- (id)pathForRemaking;
-- (void)setBeingRemade:(BOOL)arg1;
+- (int)labelPreset;
+- (id)path;
+- (void)setBeingMade:(BOOL)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setITunesPersistentID:(long long)arg1;
-- (void)setLabelPreset:(unsigned int)arg1;
-- (void)setPathForRemaking:(id)arg1;
+- (void)setLabelPreset:(int)arg1;
+- (void)setPath:(id)arg1;
 - (void)setPendingRestore:(BOOL)arg1;
 - (void)setSynced:(BOOL)arg1;
+- (id)url;
 - (void)willSave;
 
 @end

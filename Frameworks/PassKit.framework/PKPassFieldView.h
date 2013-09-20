@@ -2,16 +2,24 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKDiffView, PKPassField, PKPassFieldTemplate, UILabel;
+@class PKDiffView, PKPassColorProfile, PKPassField, PKPassFieldTemplate, UILabel;
 
 @interface PKPassFieldView : UIView {
+    struct CGSize { 
+        float width; 
+        float height; 
+    int _background;
+    } _cachedSize;
+    PKPassColorProfile *_colorProfile;
     PKDiffView *_diffView;
     PKPassField *_field;
     PKPassFieldTemplate *_fieldTemplate;
     UILabel *_labelLabel;
+    BOOL _needsRecalculation;
     UILabel *_valueLabel;
 }
 
+@property(retain) PKPassColorProfile * colorProfile;
 @property(retain) PKDiffView * diffView;
 @property(retain) PKPassField * field;
 @property(retain) PKPassFieldTemplate * fieldTemplate;
@@ -20,9 +28,12 @@
 
 + (id)newViewForField:(id)arg1 fieldTemplate:(id)arg2;
 
-- (id)_labelAttributedString;
+- (id)_labelAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
+- (struct CGSize { float x1; float x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_shouldDisplayLabel;
 - (id)_textAttributesWithTextColor:(id)arg1 alignment:(int)arg2 lineBreakMode:(int)arg3;
-- (id)_valueAttributedString;
+- (id)_valueAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
+- (id)colorProfile;
 - (void)dealloc;
 - (id)diffView;
 - (id)field;
@@ -33,6 +44,7 @@
 - (void)layoutSubviews;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;
 - (void)setColorProfile:(id)arg1 background:(int)arg2;
+- (void)setColorProfile:(id)arg1;
 - (void)setDiffView:(id)arg1;
 - (void)setField:(id)arg1;
 - (void)setFieldTemplate:(id)arg1;

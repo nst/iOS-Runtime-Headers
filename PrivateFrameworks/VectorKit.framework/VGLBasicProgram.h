@@ -14,10 +14,12 @@
 
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } color;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (id)init;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setup;
 
 @end

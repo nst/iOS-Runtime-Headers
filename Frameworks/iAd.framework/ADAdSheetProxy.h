@@ -2,42 +2,56 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADXPCConnection;
+@class <ADSSession_RPC>, NSMutableSet, NSXPCConnection;
 
-@interface ADAdSheetProxy : NSObject <ADXPCConnectionDelegate> {
+@interface ADAdSheetProxy : NSObject {
     unsigned int _adSheetBootstrapAttempts;
-    ADXPCConnection *_adSheetConnection;
+    NSXPCConnection *_adSheetConnection;
     int _bootstrapState;
     int _classicUnavailableToken;
+    NSMutableSet *_connectionAssertions;
+    double _lastBootstrap;
     double _lastTermination;
+    BOOL _serviceLaunchThrottled;
 }
 
 @property unsigned int adSheetBootstrapAttempts;
-@property(retain) ADXPCConnection * adSheetConnection;
+@property(retain) NSXPCConnection * adSheetConnection;
 @property int bootstrapState;
 @property int classicUnavailableToken;
+@property(retain) NSMutableSet * connectionAssertions;
+@property(readonly) BOOL connectionAvailable;
+@property double lastBootstrap;
 @property double lastTermination;
+@property(readonly) <ADSSession_RPC> * rpcProxy;
+@property BOOL serviceLaunchThrottled;
 
 + (id)sharedInstance;
 
-- (void)_bootstrap;
+- (void)_adSheetConnectionLost;
+- (void)_considerConnectingToAdSheet;
+- (void)_considerLaunchingAdSheet;
 - (unsigned int)adSheetBootstrapAttempts;
 - (id)adSheetConnection;
 - (int)bootstrapState;
 - (int)classicUnavailableToken;
-- (void)commitFence;
+- (id)connectionAssertions;
+- (BOOL)connectionAvailable;
 - (id)init;
-- (BOOL)isBootstrapped;
+- (double)lastBootstrap;
 - (double)lastTermination;
-- (id)remoteObjectForMessageName:(id)arg1 senderId:(id)arg2;
+- (void)releaseConnectionAssertion:(id)arg1;
 - (void)resetAdSheetThrottle;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2;
+- (id)rpcProxy;
+- (BOOL)serviceLaunchThrottled;
 - (void)setAdSheetBootstrapAttempts:(unsigned int)arg1;
 - (void)setAdSheetConnection:(id)arg1;
 - (void)setBootstrapState:(int)arg1;
 - (void)setClassicUnavailableToken:(int)arg1;
+- (void)setConnectionAssertions:(id)arg1;
+- (void)setLastBootstrap:(double)arg1;
 - (void)setLastTermination:(double)arg1;
-- (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
-- (void)xpcConnectionFailed:(id)arg1;
+- (void)setServiceLaunchThrottled:(BOOL)arg1;
+- (void)takeConnectionAssertion:(id)arg1;
 
 @end

@@ -2,17 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLAlbumStreamingOptionsViewControllerDelegate>, NSArray, NSString, PLCloudSharedAlbum, PLComposeRecipientViewController, UIBarButtonItem, UIPopoverController, UISwitch, UITableView, UITextField;
+@class <PLAlbumStreamingOptionsViewControllerDelegate>, NSArray, NSString, PLCloudSharedAlbum, PLCloudSharedAlbumInvitationRecord, PLComposeRecipientViewController, UIBarButtonItem, UISwitch, UITableView;
 
-@interface PLAlbumStreamingOptionsViewController : UIViewController <PLComposeRecipientViewControllerDelegate, PLSubscriberViewControllerDelegate, PLAlbumChangeObserver, UIActionSheetDelegate, UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPopoverControllerDelegate> {
-    unsigned int _showingPublicWebsiteActivityIndicator : 1;
-    unsigned int _showingShareLinkOption : 1;
+@interface PLAlbumStreamingOptionsViewController : UIViewController <PLComposeRecipientViewControllerDelegate, PLInvitationRecordsObserver, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
+    PLCloudSharedAlbumInvitationRecord *__selectedSubscriberInvitationRecord;
+    BOOL __shouldScrollToTopOnNextViewLayout;
     unsigned int _addSubscribersRow;
     BOOL _adjustedInsetsForKeyboard;
     PLCloudSharedAlbum *_album;
     NSArray *_albumAssets;
     NSString *_albumName;
-    UITextField *_albumNameTextField;
     UIBarButtonItem *_cancelButton;
     BOOL _changingValueFromControl;
     PLComposeRecipientViewController *_composeRecipientController;
@@ -21,14 +20,17 @@
     BOOL _isPresentedModally;
     int _optionsMode;
     UITableView *_optionsTableView;
-    int _publicURLTransitionMode;
-    UIPopoverController *_shareLinkPopoverController;
+    BOOL _showShareLink;
     BOOL _streamOwner;
     NSArray *_visibleInvitationRecords;
     NSString *_visiblePublicURL;
+    UISwitch *_wantsAcceptCloudNotificationSwitch;
+    UISwitch *_wantsMultipleContributorsSwitch;
     UISwitch *_wantsPublicWebsiteSwitch;
 }
 
+@property(setter=_setSelectedSubscriberInvitationRecord:,retain) PLCloudSharedAlbumInvitationRecord * _selectedSubscriberInvitationRecord;
+@property(setter=_setShouldScrollToTopOnNextViewLayout:) BOOL _shouldScrollToTopOnNextViewLayout;
 @property(retain) PLCloudSharedAlbum * album;
 @property(retain) NSArray * albumAssets;
 @property(copy) NSString * albumName;
@@ -36,50 +38,57 @@
 @property BOOL isPresentedModally;
 @property BOOL streamOwner;
 
-- (BOOL)_albumNameIsValid;
 - (BOOL)_appAllowsSupressionOfAlerts;
 - (void)_cancelAction:(id)arg1;
-- (void)_changeAlbumName:(id)arg1;
+- (void)_changeWantsAcceptCloudNotification:(id)arg1;
+- (void)_changeWantsMultipleContributors:(id)arg1;
 - (void)_changeWantsPublicWebsite:(id)arg1;
 - (void)_createNewCloudSharedAlbum;
 - (void)_deletePhotoStream;
 - (void)_displayActivitySheet;
+- (void)_displayConfirmationForRemovalOfSelectedSubscriber;
 - (void)_displayDeleteConfirmation:(id)arg1;
 - (void)_doneAction:(id)arg1;
-- (void)_editAlbumIfNecessaryWithCompletionHandler:(id)arg1;
 - (void)_handleCompletionWithReason:(int)arg1;
 - (id)_initWithOptionsMode:(int)arg1 withAlbum:(id)arg2 andAssets:(id)arg3;
 - (void)_keyboardDidHide:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (id)_optionsTableViewFooter;
+- (BOOL)_multipleContributorsEnabled;
+- (id)_newPersonViewControllerWithEmail:(id)arg1 phone:(id)arg2 firstName:(id)arg3 lastName:(id)arg4 canResendInvitation:(BOOL)arg5 canRemoveSubscriber:(BOOL)arg6;
+- (void*)_personMatchingEmail:(id)arg1 orPhone:(id)arg2 matchingProperty:(out int*)arg3 matchingValueIdentifier:(out int*)arg4;
 - (BOOL)_publicURLEnabled;
+- (void)_removeSelectedSubscriber;
+- (void)_resendInvitationToSelectedSubscriber;
+- (id)_selectedSubscriberInvitationRecord;
+- (void)_setSelectedSubscriberInvitationRecord:(id)arg1;
+- (void)_setShouldScrollToTopOnNextViewLayout:(BOOL)arg1;
+- (void)_setShowingMultipleContributorSpinner:(BOOL)arg1;
 - (void)_setShowingPublicURLActivitySpinner:(BOOL)arg1;
+- (BOOL)_shouldScrollToTopOnNextViewLayout;
 - (BOOL)_shouldShowPublicURLActivitySpinner;
 - (id)_suppresionContexts;
-- (void)_updateAlbumNameField;
 - (void)_updateAllControls;
-- (void)_updateNavButtons;
-- (void)_updatePublicURLStateIfNecessary;
-- (void)_updatePublicURLTransitionMode;
+- (void)_updateMultipleContributorsState;
+- (void)_updatePublicURLStateIfNecessaryAnimated:(BOOL)arg1;
+- (void)_updateWantsAcceptCloudNotificationField;
+- (void)_updateWantsMultipleContributorsField;
 - (void)_updateWantsPublicWebsiteField;
 - (id)_visibleInvitationRecordsForStreamOwner:(BOOL)arg1;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)album;
 - (id)albumAssets;
-- (void)albumDidChange:(id)arg1;
 - (id)albumName;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)backingNavigationControllerForComposeRecipientViewController:(id)arg1;
-- (void)composeRecipientViewControllerReturnKeyPressed:(id)arg1;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)delegate;
 - (id)initForAlbumCreationOperationWithAssets:(id)arg1;
 - (id)initForEditOpertationForAlbum:(id)arg1;
+- (void)invitationRecordsDidChange:(id)arg1;
 - (BOOL)isPresentedModally;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setAlbum:(id)arg1;
 - (void)setAlbumAssets:(id)arg1;
 - (void)setAlbumName:(id)arg1;
@@ -88,20 +97,18 @@
 - (void)setStreamOwner:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)streamOwner;
-- (void)subscriberViewController:(id)arg1 didDeleteSubscriber:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

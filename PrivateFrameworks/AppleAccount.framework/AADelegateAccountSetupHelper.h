@@ -6,27 +6,25 @@
    See Warning(s) below.
  */
 
-@class AASetupAssistantService, NSArray, NSMutableArray, NSMutableDictionary, NSTimer;
+@class AASetupAssistantService, ACAccountStore, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_source>;
 
 @interface AADelegateAccountSetupHelper : NSObject {
     AASetupAssistantService *_aaService;
+    ACAccountStore *_accountStore;
     NSMutableDictionary *_assistantDelegates;
-    NSTimer *_delegatesTimeout;
     NSArray *_delegatesToSetup;
+    NSObject<OS_dispatch_source> *_delegatetimer;
     id _handler;
     NSMutableArray *_pendingCompletionBundles;
 }
 
 - (void).cxx_destruct;
-- (id)_adjustResponseDictionary:(id)arg1 forAssistantDelegate:(id)arg2 withIdentifier:(id)arg3;
-- (void)_completeDelegateSetupWithResponse:(id)arg1;
-- (void)_delegateBundlesDidTimeout;
-- (void)_delegateBundlesFinished;
+- (id)_adjustResponseDictionary:(id)arg1;
+- (void)_completeiCloudAndDelegateSetupWithResponse:(id)arg1;
 - (id)_loadAssistantDelegateBundles;
 - (void)_setupDelegateAccountsWithEmailChoice:(id)arg1;
-- (void)_storeDelegateTokensWithResponse:(id)arg1;
 - (id)init;
-- (void)setupAppleIDDelegatesWithUsername:(id)arg1 password:(id)arg2 emailChoice:(id)arg3 withHandler:(id)arg4;
+- (id)initWithStore:(id)arg1;
 - (void)setupiCloudDelegateWithUsername:(id)arg1 password:(id)arg2 emailChoice:(id)arg3 withHandler:(id)arg4;
 
 @end

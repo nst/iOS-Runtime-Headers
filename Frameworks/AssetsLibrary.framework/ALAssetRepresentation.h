@@ -17,6 +17,7 @@
 - (id)UTI;
 - (int)_fileDescriptor;
 - (id)_imageData;
+- (struct CGImage { }*)_largeDisplayableImageForFormat:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (struct CGSize { float x1; float x2; })dimensions;
@@ -35,5 +36,6 @@
 - (void)setInternal:(id)arg1;
 - (long long)size;
 - (id)url;
+- (struct CGImage { }*)zoomableDisplayImage;
 
 @end

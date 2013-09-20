@@ -9,6 +9,7 @@
     NSMutableArray *_defaultListStockSymbols;
     double _lastModifiedTime;
     BOOL _needRemoteAddNotification;
+    BOOL _needRemoteDeleteNotification;
     BOOL _needRemoteMoveNotification;
     BOOL _shouldPostSyncNotifications;
     NSMutableArray *_stocksList;
@@ -23,6 +24,7 @@
 - (void)RemoveChartDataFromLRU:(id)arg1;
 - (void)UpdateChartDataInLRU:(id)arg1;
 - (void)_checkForAddedStocks;
+- (void)_checkForDeletedStocks;
 - (void)_checkForMovedStocks;
 - (id)_defaultStockDictionaries;
 - (id)_localeStocks;

@@ -32,6 +32,7 @@
 
 @property <CalendarEventLoaderDelegate> * delegate;
 
+- (void).cxx_destruct;
 - (void)_enqueueLoadForRangeStart:(double)arg1 end:(double)arg2;
 - (void)_eventStoreChanged:(id)arg1;
 - (void)_getLoadStart:(double*)arg1 end:(double*)arg2 fromLoadedStart:(double)arg3 loadedEnd:(double)arg4 currentlyLoadingStart:(double)arg5 currentlyLoadingEnd:(double)arg6;

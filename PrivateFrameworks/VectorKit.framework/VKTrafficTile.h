@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSArray, NSData, NSMutableArray, VKTileKeyMap;
 
 @interface VKTrafficTile : VKVectorTile {
@@ -24,31 +28,49 @@
                 struct Record {} *__first_; 
             } __end_cap_; 
         } m_records; 
+    struct vector<VKRibbonMultiPolylineSegment, vk_allocator<VKRibbonMultiPolylineSegment> > { 
+        struct VKRibbonMultiPolylineSegment {} *__begin_; 
+        struct VKRibbonMultiPolylineSegment {} *__end_; 
+        struct __compressed_pair<VKRibbonMultiPolylineSegment *, vk_allocator<VKRibbonMultiPolylineSegment> > { 
+            struct VKRibbonMultiPolylineSegment {} *__first_; 
+        } __end_cap_; 
+    struct vector<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *>, vk_allocator<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> > > { 
+        struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *__begin_; 
+        struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *__end_; 
+        struct __compressed_pair<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> *, vk_allocator<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> > > { 
+            struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *__first_; 
+        } __end_cap_; 
     NSData *_data;
     } _dataKey;
     VKTileKeyMap *_dynamicTiles;
     NSMutableArray *_incidents;
+    } _ribbonSegments;
+    } _tileBoundaryDesignators;
     } _trafficData;
 }
 
+@property /* Warning: unhandled struct encoding: '{vector<std::__1::pair<unsigned int' */ struct * tileBoundaryDesignators; /* unknown property attribute:  VKRibbonMultiPolylineSegment *>}}} */
 @property const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }* dataKey;
 @property(readonly) VKTileKeyMap * dynamicTiles;
 @property(readonly) NSArray * incidents;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)_buildStartOffset:(float*)arg1 endOffset:(float*)arg2 forLine:(struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; unsigned int x6; unsigned int x7; struct { float x_8_1_1; float x_8_1_2; float x_8_1_3; float x_8_1_4; } x8; struct { /* ? */ } *x9; }*)arg3 forSkeleton:(const struct Record { unsigned int x1; unsigned int x2; float x3; float x4; long long x5; int x6; float x7; float x8; }*)arg4 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 forFlow:(const struct Flow { long long x1; float x2; float x3; int x4; }*)arg6 forPoints:(struct { float x1; float x2; }*)arg7;
-- (void)buildIncidentsForDynamic:(id)arg1;
+- (BOOL)_buildStartOffset:(float*)arg1 endOffset:(float*)arg2 forLine:(struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; struct BRectImp<float> { struct Vec2Imp<float> { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct Vec2Imp<float> { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)arg3 forSkeleton:(const struct Record { unsigned int x1; unsigned int x2; float x3; float x4; long long x5; int x6; float x7; float x8; }*)arg4 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 forFlow:(const struct Flow { long long x1; float x2; float x3; int x4; }*)arg6 forPoints:(struct Vec2Imp<float> { float x1; float x2; }*)arg7;
+- (void)buildConnectionDesignators;
+- (void)buildIncidentsForDynamic:(id)arg1 withRoadData:(id)arg2 styleSession:(id)arg3;
 - (void)buildSkeletonMap;
 - (void)buildSkeletonMeshForDebug:(id)arg1;
-- (void)buildTrafficMeshWithRoadData:(id)arg1 dynamicTile:(id)arg2 ribbonMaker:(struct VKRibbonMakerData_t { id x1; id x2; BOOL x3; float x4; float x5; BOOL x6; float x7; BOOL x8; BOOL x9; BOOL x10; }*)arg3 trafficAccum:(struct TrafficAccum { int x1; struct vector<GEOVectorTilePoint, vk_allocator<GEOVectorTilePoint> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<GEOVectorTilePoint *, vk_allocator<GEOVectorTilePoint> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; int x3; int x4; int x5; id x6; int x7; struct { /* ? */ } *x8; int x9; float x10; }*)arg4 styleSession:(id)arg5;
+- (void)buildTrafficMeshWithRoadData:(id)arg1 dynamicTile:(id)arg2 ribbonMaker:(struct VKRibbonMakerData { id x1; id x2; BOOL x3; BOOL x4; BOOL x5; float x6; BOOL x7; BOOL x8; BOOL x9; struct vector<VKRibbonPolylineSegment, vk_allocator<VKRibbonPolylineSegment> > { struct VKRibbonPolylineSegment {} *x_10_1_1; struct VKRibbonPolylineSegment {} *x_10_1_2; struct __compressed_pair<VKRibbonPolylineSegment *, vk_allocator<VKRibbonPolylineSegment> > { struct VKRibbonPolylineSegment {} *x_3_2_1; } x_10_1_3; } x10; }*)arg3 trafficAccum:(struct TrafficAccum { int x1; struct vector<geo::Vec2Imp<float>, vk_allocator<geo::Vec2Imp<float> > > { struct Vec2Imp<float> {} *x_2_1_1; struct Vec2Imp<float> {} *x_2_1_2; struct __compressed_pair<geo::Vec2Imp<float> *, vk_allocator<geo::Vec2Imp<float> > > { struct Vec2Imp<float> {} *x_3_2_1; } x_2_1_3; } x2; int x3; int x4; int x5; id x6; int x7; struct { /* ? */ } *x8; int x9; float x10; }*)arg4 styleSession:(id)arg5;
 - (void)buildTrafficMeshWithRoadData:(id)arg1;
 - (const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)dataKey;
 - (void)dealloc;
 - (id)dynamicTiles;
+- (void)enumerateTrafficRoadPiecesForTile:(id)arg1 usingFunction:(const struct function<void (const vk::RoadPiece &)>={type=[12C] {}*)arg2;
 - (id)incidents;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 data:(id)arg3;
 - (void)setDataKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
-- (BOOL)writeDataToDirectory:(id)arg1 error:(id*)arg2;
+- (void)setTileBoundaryDesignators:(struct vector<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *>, vk_allocator<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> > > { struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *x1; struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *x2; struct __compressed_pair<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> *, vk_allocator<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> > > { struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *x_3_1_1; } x3; }*)arg1;
+- (struct vector<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *>, vk_allocator<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> > > { struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *x1; struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *x2; struct __compressed_pair<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> *, vk_allocator<std::__1::pair<unsigned int, VKRibbonMultiPolylineSegment *> > > { struct pair<unsigned int, VKRibbonMultiPolylineSegment *> {} *x_3_1_1; } x3; }*)tileBoundaryDesignators;
 
 @end

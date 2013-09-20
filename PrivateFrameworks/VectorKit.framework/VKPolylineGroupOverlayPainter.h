@@ -7,9 +7,11 @@
 @interface VKPolylineGroupOverlayPainter : VKOverlayPainter <VKPolylineGroupOverlayObserver> {
     NSMapTable *_polylinesToPainters;
     VKPolylineOverlay *_selectedPolyline;
+    BOOL _showTraffic;
 }
 
 @property(readonly) VKPolylineOverlayPainter * selectedPolylinePainter;
+@property BOOL showTraffic;
 
 - (void)_addPainterForOverlay:(id)arg1;
 - (void)dealloc;
@@ -22,5 +24,8 @@
 - (void)polylineGroup:(id)arg1 didSelectPolyline:(id)arg2;
 - (id)selectedPolylinePainter;
 - (void)setContainerModel:(id)arg1;
+- (void)setShowTraffic:(BOOL)arg1;
+- (BOOL)showTraffic;
+- (void)stylesheetDidChange;
 
 @end

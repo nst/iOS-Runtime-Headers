@@ -8,7 +8,7 @@
     <SWFakeRunSensorDelegate> *_delegate;
 }
 
-+ (id)_newDelegate;
++ (id)_createDelegate;
 + (void)initialize;
 
 - (void)_fakeLinkingFailure;

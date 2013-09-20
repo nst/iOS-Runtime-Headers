@@ -34,16 +34,20 @@
 @property(readonly) BOOL proximityState;
 @property(readonly) NSString * systemName;
 @property(readonly) NSString * systemVersion;
-@property(readonly) NSString * uniqueIdentifier;
 @property(readonly) int userInterfaceIdiom;
 
 + (id)currentDevice;
 + (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
 + (id)platformString;
++ (id)platformString;
 
 - (float)_backlightLevel;
+- (void)_clearGraphicsQualityOverride;
+- (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
+- (int)_graphicsQuality;
+- (BOOL)_hasGraphicsQualityOverride;
 - (BOOL)_isTTYEnabled;
 - (void)_playSystemSound:(unsigned long)arg1;
 - (void)_registerForSystemSounds:(id)arg1;
@@ -52,6 +56,7 @@
 - (void)_setBatteryLevel:(float)arg1;
 - (void)_setBatteryState:(int)arg1;
 - (void)_setExpectsFaceContactInLandscape:(BOOL)arg1;
+- (void)_setGraphicsQualityOverride:(int)arg1;
 - (void)_setProximityState:(BOOL)arg1;
 - (float)_softwareDimmingAlpha;
 - (void)_unregisterForSystemSounds:(id)arg1;
@@ -60,7 +65,6 @@
 - (int)batteryState;
 - (void)beginGeneratingDeviceOrientationNotifications;
 - (id)buildVersion;
-- (id)deviceInfoForKey:(struct __CFString { }*)arg1;
 - (void)endGeneratingDeviceOrientationNotifications;
 - (id)identifierForVendor;
 - (BOOL)isBatteryMonitoringEnabled;
@@ -68,7 +72,6 @@
 - (BOOL)isMediaPicker;
 - (BOOL)isMultitaskingSupported;
 - (BOOL)isProximityMonitoringEnabled;
-- (BOOL)isWildcat;
 - (id)localizedModel;
 - (id)model;
 - (id)name;
@@ -77,7 +80,6 @@
 - (BOOL)proximityState;
 - (void)setBatteryMonitoringEnabled:(BOOL)arg1;
 - (void)setIsMediaPicker:(BOOL)arg1;
-- (void)setIsWildcat:(BOOL)arg1;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setOrientation:(int)arg1;
 - (void)setProximityMonitoringEnabled:(BOOL)arg1;

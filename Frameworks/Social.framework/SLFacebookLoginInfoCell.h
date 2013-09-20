@@ -4,7 +4,7 @@
 
 @class SLFacebookLoginInfoCellContentView;
 
-@interface SLFacebookLoginInfoCell : PSTableCell {
+@interface SLFacebookLoginInfoCell : UITableViewCell {
     SLFacebookLoginInfoCellContentView *_infoView;
 }
 

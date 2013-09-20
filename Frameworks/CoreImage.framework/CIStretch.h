@@ -11,8 +11,8 @@
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputPoint;
-@property(copy) CIVector * inputSize;
+@property(retain) CIVector * inputPoint;
+@property(retain) CIVector * inputSize;
 
 + (id)customAttributes;
 

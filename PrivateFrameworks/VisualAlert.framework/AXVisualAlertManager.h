@@ -14,6 +14,7 @@
     AXNotificationHandler *_deviceLockStateChangedNotificationHandler;
     BOOL _isDeviceLocked;
     BOOL _isQuietModeEnabled;
+    BOOL _isTorchEnabledInControlCenter;
     NSArray *_notificationHandlers;
     NSDictionary *_patternToUseForVisualAlertAfterCaptureSessionStopsRunning;
     NSDictionary *_patterns;
@@ -23,6 +24,7 @@
     BOOL _torchDeviceOn;
     BOOL _torchDeviceOpen;
     AXTimer *_torchForceShutdownTimer;
+    AXNotificationHandler *_torchInControlCenterWasEnabledNotificationHandler;
     unsigned int _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
 }
 
@@ -56,6 +58,8 @@
 - (void)_handleQuietModeWasDisabled;
 - (void)_handleQuietModeWasEnabled;
 - (void)_handleSecondaryVisualAlertManagerDidStart;
+- (void)_handleTorchInControlCenterWasDisabled;
+- (void)_handleTorchInControlCenterWasEnabled;
 - (void)_handleVisualAlertForExternalApplication;
 - (void)_handleVisualAlertForIncomingMessage;
 - (void)_handleVisualAlertForRegularNotification;
@@ -63,6 +67,7 @@
 - (void)_insertCustomLogicForSystemWideServer;
 - (BOOL)_isTorchDeviceOn;
 - (BOOL)_isTorchDeviceOpen;
+- (BOOL)_isTorchEnabledInControlCenter;
 - (id)_normalizedStrobePatternForOriginalPattern:(id)arg1;
 - (id)_patterns;
 - (void)_processNextVisualAlertComponent;

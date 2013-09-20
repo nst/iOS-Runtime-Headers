@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUCarrierDownloadPolicyProperties : NSObject <NSCoding> {
+@interface SUCarrierDownloadPolicyProperties : NSObject <NSSecureCoding> {
 }
+
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
 - (id)_carrierSUProperties;

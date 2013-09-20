@@ -34,6 +34,7 @@
 @property BOOL registeredForPlayerNotifications;
 @property(readonly) UIView * view;
 
+- (void).cxx_destruct;
 - (BOOL)_canReloadView;
 - (void)_popTransitionEnded:(id)arg1;
 - (void)_pushTransitionEnded:(id)arg1;

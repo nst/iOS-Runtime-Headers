@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsFilter, ALAssetsLibrary, NSMutableDictionary, NSObject<PLAssetContainer>, PLPhotoLibrary;
+@class ALAssetsFilter, ALAssetsLibrary, NSMutableDictionary, NSObject<PLAlbumProtocol>, PLPhotoLibrary;
 
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
     struct NSObject { Class x1; } *_album;
     ALAssetsFilter *_assetsFilter;
     unsigned int _groupType;
+    BOOL _isCloudSharedGroup;
     BOOL _isValid;
     ALAssetsLibrary *_library;
     BOOL _loadedAssets;
@@ -16,9 +17,10 @@
 }
 
 @property(retain) PLPhotoLibrary * _photoLibrary;
-@property(retain) NSObject<PLAssetContainer> * album;
+@property(retain) NSObject<PLAlbumProtocol> * album;
 @property(retain) ALAssetsFilter * assetsFilter;
 @property unsigned int groupType;
+@property BOOL isCloudSharedGroup;
 @property BOOL isValid;
 @property ALAssetsLibrary * library;
 @property(retain) NSMutableDictionary * propertyValues;
@@ -26,20 +28,23 @@
 - (void)_performBlockAndWait:(id)arg1;
 - (id)_photoLibrary;
 - (struct NSObject { Class x1; }*)album;
+- (int)albumFilter;
 - (id)assetsFilter;
 - (void)dealloc;
 - (unsigned int)groupType;
+- (BOOL)hasFilter;
 - (id)initWithAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2;
+- (BOOL)isCloudSharedGroup;
 - (BOOL)isValid;
 - (id)library;
 - (void)libraryDidChange;
-- (void)libraryWillDisappear;
 - (void)populateAssets;
 - (id)propertyValues;
 - (void)resetAssets;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)setAssetsFilter:(id)arg1;
 - (void)setGroupType:(unsigned int)arg1;
+- (void)setIsCloudSharedGroup:(BOOL)arg1;
 - (void)setIsValid:(BOOL)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPropertyValues:(id)arg1;

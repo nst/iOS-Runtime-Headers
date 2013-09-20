@@ -16,6 +16,8 @@
 @property int style;
 @property BOOL usesImage;
 
++ (id)roundedButtonWithText:(id)arg1 color:(id)arg2;
+
 - (void)_setupArrowImageForCurrentStyle;
 - (void)_setupLearnMoreTextForCurrentStyle;
 - (BOOL)alwaysUnderline;

@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
+- (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

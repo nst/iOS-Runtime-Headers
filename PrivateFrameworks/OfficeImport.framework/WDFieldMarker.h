@@ -12,7 +12,7 @@
     unsigned int mPrivateResult : 1;
     unsigned int mNested : 1;
     unsigned int mHasSeparator : 1;
-    long mFieldPosition;
+    int mFieldPosition;
     unsigned char mFieldType;
     int mMarkerType;
     WDCharacterProperties *mProperties;
@@ -21,7 +21,7 @@
 - (void)clearProperties;
 - (void)dealloc;
 - (int)fieldMarkerType;
-- (long)fieldPosition;
+- (int)fieldPosition;
 - (unsigned char)fieldType;
 - (BOOL)hasSeparator;
 - (id)initWithParagraph:(id)arg1;
@@ -33,7 +33,7 @@
 - (BOOL)resultEdited;
 - (int)runType;
 - (void)setFieldMarkerType:(int)arg1;
-- (void)setFieldPosition:(long)arg1;
+- (void)setFieldPosition:(int)arg1;
 - (void)setFieldType:(unsigned char)arg1;
 - (void)setHasSeparator:(BOOL)arg1;
 - (void)setLocked:(BOOL)arg1;

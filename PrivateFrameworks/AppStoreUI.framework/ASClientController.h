@@ -8,7 +8,6 @@
 
 @property BOOL shouldExitAfterPurchases;
 
-- (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)initWithClientIdentifier:(id)arg1;
 - (id)initWithClientInterface:(id)arg1;
 - (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;

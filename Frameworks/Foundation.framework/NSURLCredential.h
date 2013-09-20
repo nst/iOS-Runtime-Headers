@@ -4,13 +4,14 @@
 
 @class NSURLCredentialInternal;
 
-@interface NSURLCredential : NSObject <NSCoding, NSCopying> {
+@interface NSURLCredential : NSObject <NSSecureCoding, NSCopying> {
     NSURLCredentialInternal *_internal;
 }
 
 + (id)credentialForTrust:(struct __SecTrust { }*)arg1;
 + (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
 + (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (struct _CFURLCredential { }*)_cfurlcredential;
 - (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;

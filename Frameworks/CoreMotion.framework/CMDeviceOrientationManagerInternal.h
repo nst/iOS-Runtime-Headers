@@ -11,7 +11,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSOperationQueue;
+@class NSObject<OS_dispatch_semaphore>, NSOperationQueue;
 
 @interface CMDeviceOrientationManagerInternal : NSObject {
     struct Sample { 
@@ -19,12 +19,13 @@
         struct { 
             int type; 
         } orientation; 
-    struct Dispatcher { int (**x1)(); } *fDeviceOrientationDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fDeviceOrientationDispatcher;
     id fDeviceOrientationHandler;
     NSOperationQueue *fDeviceOrientationQueue;
-    struct dispatch_semaphore_s { } *fDeviceOrientationSemaphore;
+    NSObject<OS_dispatch_semaphore> *fDeviceOrientationSemaphore;
     BOOL fDidSignalSemaphore;
     } fLatestDeviceOrientationSample;
+    int fOrientationCallbackMode;
     int fSampleLock;
 }
 

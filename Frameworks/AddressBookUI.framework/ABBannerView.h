@@ -9,12 +9,15 @@
     NSString *_value;
 }
 
+@property(copy) NSString * title;
+@property(copy) NSString * value;
+
 + (float)defaultHeight;
 
-- (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
+- (void)_updateLabel;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)setTitle:(id)arg1 value:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)title;

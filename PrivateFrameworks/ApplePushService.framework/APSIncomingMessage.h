@@ -9,10 +9,13 @@
 
 @property(getter=wasFromStorage) BOOL fromStorage;
 @property(getter=wasLastMessageFromStorage) BOOL lastMessageFromStorage;
+@property int priority;
 @property(copy) NSDate * timestamp;
 
+- (int)priority;
 - (void)setFromStorage:(BOOL)arg1;
 - (void)setLastMessageFromStorage:(BOOL)arg1;
+- (void)setPriority:(int)arg1;
 - (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 - (BOOL)wasFromStorage;

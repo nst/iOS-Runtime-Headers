@@ -18,9 +18,9 @@
 - (id)initWithSQLCore:(id)arg1;
 - (void)registerRow:(id)arg1 forObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2;
 - (void)registerSnapshots:(id)arg1;
-- (void)registerToMany:(id)arg1 forSourceObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 relationshipName:(id)arg3 andTimestamp:(double)arg4;
+- (void)registerToMany:(id)arg1 forSourceObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 forProperty:(id)arg3 andTimestamp:(double)arg4;
 - (id)rowForObjectID:(id)arg1 after:(double)arg2;
 - (id)rowForObjectID:(id)arg1;
-- (id)toManyForSourceObjectID:(id)arg1 relationshipName:(id)arg2 after:(double)arg3;
+- (id)toManyForSourceObjectID:(id)arg1 forProperty:(id)arg2 after:(double)arg3;
 
 @end

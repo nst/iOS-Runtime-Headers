@@ -10,16 +10,19 @@
 
 @interface MFStream : NSObject <NSStreamDelegate> {
     char *_buffer;
+    unsigned int _bytesRead;
+    unsigned int _bytesWritten;
     id _callback;
-    BOOL _canRead;
-    BOOL _canWrite;
     unsigned long _capacity;
+    BOOL _dispatchedBytesAvailable;
+    BOOL _enableThroughputMonitoring;
     NSError *_error;
     unsigned long _length;
     NSObject<OS_dispatch_queue> *_location;
     NSMutableDictionary *_properties;
     NSInputStream *_rStream;
-    BOOL _sentCanRead;
+    BOOL _streamCanRead;
+    BOOL _streamCanWrite;
     NSOutputStream *_wStream;
 }
 
@@ -34,6 +37,8 @@
 - (void)_readBytesFromStream;
 - (void)close;
 - (void)dealloc;
+- (void)enableExcessiveKeepaliveDetection:(BOOL)arg1;
+- (void)enableThroughputMonitoring:(BOOL)arg1;
 - (id)init;
 - (id)initCallBack:(id)arg1 onDispatchQueue:(id)arg2;
 - (BOOL)isOpen;

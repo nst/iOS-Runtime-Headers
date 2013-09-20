@@ -4,7 +4,7 @@
 
 @class CALayer;
 
-@interface UIPDFPageContentLayer : CALayer {
+@interface UIPDFPageContentLayer : CALayer <UIPDFSelectionLayer> {
     CALayer *_selectionLayer;
 }
 
@@ -13,5 +13,6 @@
 - (id)init;
 - (void)layoutSublayers;
 - (void)setNeedsDisplay;
+- (void)setSelectionNeedsDisplay;
 
 @end

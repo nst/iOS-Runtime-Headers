@@ -2,24 +2,25 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKRoutePreloadSession>, VGLRenderState;
+@class <VKRoutePreloadSession>, VGLRenderState, VKSkyModel;
 
 @interface VKRealisticMapModel : VKVectorMapModel <VKMapLayer> {
-    double _currentZoomLevel;
     BOOL _disableRealisticLand;
     BOOL _disableRealisticRoads;
     double _fade;
     VGLRenderState *_renderState;
     <VKRoutePreloadSession> *_routePreloadSession;
     float _sceneAlpha;
+    VKSkyModel *_skyModel;
 }
 
 @property BOOL disableRealisticLand;
 @property BOOL disableRealisticRoads;
 @property(retain) <VKRoutePreloadSession> * routePreloadSession;
 @property float sceneAlpha;
+@property(retain) VKSkyModel * skyModel;
 
-- (void)_updateZoomLevel:(id)arg1;
+- (double)_calculateZoomLevelWithContext:(id)arg1;
 - (void)dealloc;
 - (BOOL)disableRealisticLand;
 - (BOOL)disableRealisticRoads;
@@ -29,6 +30,7 @@
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
 - (BOOL)minimumZoomLevelBoundsCamera;
+- (void)preloadNavigationSceneAnimationResourcesForDisplayStyle:(int)arg1 context:(id)arg2;
 - (void)preloadRenderingResourcesWithContext:(id)arg1;
 - (id)routePreloadSession;
 - (float)sceneAlpha;
@@ -36,6 +38,11 @@
 - (void)setDisableRealisticRoads:(BOOL)arg1;
 - (void)setRoutePreloadSession:(id)arg1;
 - (void)setSceneAlpha:(float)arg1;
+- (void)setSkyModel:(id)arg1;
+- (id)skyModel;
+- (void)stylesheetDidChange;
+- (void)stylesheetWillChange;
+- (unsigned int)supportedRenderPasses;
 - (BOOL)wantsCategorizedSourceTiles;
 - (void)willStartDrawingTiles:(id)arg1;
 

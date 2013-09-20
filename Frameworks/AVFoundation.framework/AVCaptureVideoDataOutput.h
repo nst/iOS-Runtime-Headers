@@ -21,6 +21,7 @@
 
 - (void)_AVCaptureVideoDataOutput_VideoDataBecameReady;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (void)_setMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (BOOL)alwaysDiscardsLateVideoFrames;
 - (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
@@ -36,6 +37,7 @@
 - (BOOL)isTheOnlyDataOutput;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
 - (struct CGSize { float x1; float x2; })outputSizeForCaptureOptions:(id)arg1;
+- (id)recommendedVideoSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;
 - (void)setAlwaysDiscardsLateVideoFrames:(BOOL)arg1;
@@ -43,6 +45,7 @@
 - (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
 - (void)setSession:(id)arg1;
 - (void)setVideoSettings:(id)arg1;
+- (id)supportedAssetWriterOutputFileTypes;
 - (id)vettedVideoSettingsForSettingsDictionary:(id)arg1;
 - (id)videoSettings;
 

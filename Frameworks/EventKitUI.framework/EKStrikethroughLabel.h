@@ -2,24 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSIndexSet;
-
 @interface EKStrikethroughLabel : UILabel {
-    BOOL _strikethroughEnabled;
-    NSIndexSet *_textMetrics;
+    BOOL _drawsStrikethrough;
 }
 
-@property BOOL strikethroughEnabled;
+@property BOOL drawsStrikethrough;
 
-- (void)_invalidateTextMetrics;
-- (id)_textMetrics;
-- (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFont:(id)arg1;
-- (void)setLineBreakMode:(int)arg1;
-- (void)setStrikethroughEnabled:(BOOL)arg1;
+- (BOOL)drawsStrikethrough;
+- (void)setDrawsStrikethrough:(BOOL)arg1;
 - (void)setText:(id)arg1;
-- (BOOL)strikethroughEnabled;
 
 @end

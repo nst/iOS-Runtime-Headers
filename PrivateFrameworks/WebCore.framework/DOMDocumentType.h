@@ -19,6 +19,7 @@
 - (id)name;
 - (id)notations;
 - (id)publicId;
+- (void)remove;
 - (id)systemId;
 
 @end

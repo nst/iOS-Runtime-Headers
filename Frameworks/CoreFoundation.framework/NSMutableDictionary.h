@@ -6,11 +6,15 @@
 }
 
 + (id)MSASDictionaryWithCopyOfDictionary:(id)arg1;
++ (BOOL)_processArgumentWithMutableDictionary:(id)arg1 object:(id)arg2 key:(id)arg3;
++ (id)dictionaryByInvertingDictionary:(id)arg1;
++ (id)dictionaryByInvertingDictionaryIfPossible:(id)arg1;
 + (id)dictionaryWithCapacity:(unsigned int)arg1;
 + (id)dictionaryWithSharedKeySet:(id)arg1;
 + (id)nonRetainingDictionary;
 + (id)nonRetainingKeyAndValueDictionary;
 + (id)retainingKeyDictionary;
++ (id)vmDictionaryWithObjectsAndKeys:(id)arg1;
 
 - (void)CDVAddObjectsAndKeys:(id)arg1;
 - (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
@@ -37,7 +41,6 @@
 - (void)_webkit_setFloat:(float)arg1 forKey:(id)arg2;
 - (void)_webkit_setInt:(int)arg1 forKey:(id)arg2;
 - (void)_webkit_setLongLong:(long long)arg1 forKey:(id)arg2;
-- (void)_webkit_setObject:(id)arg1 forUncopiedKey:(id)arg2;
 - (void)_webkit_setUnsignedInt:(unsigned int)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedShort:(unsigned short)arg1 forKey:(id)arg2;
@@ -47,7 +50,9 @@
 - (void)addObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)addObjects:(id)arg1 forKeys:(id)arg2;
 - (id)addToCacheAndReturnCssString:(id)arg1;
+- (void)bks_setSafeObject:(id)arg1 forKey:(id)arg2;
 - (Class)classForCoder;
+- (void)cr_setNonNilObject:(id)arg1 forKey:(id)arg2;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
@@ -59,23 +64,28 @@
 - (void)mf_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)mf_setInteger:(int)arg1 forKey:(id)arg2;
 - (id)mutableCopyDeep;
+- (id)objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
+- (id)objectForKey:(id)arg1 withDefaultUsingBlock:(id)arg2;
 - (void)removeAllObjects;
 - (void)removeEntriesInDictionary:(id)arg1;
+- (void)removeEntriesPassingTest:(id)arg1;
+- (void)removeEntriesWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (void)removeKeysForObject:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
 - (void)removeObjectsForKeys:(id)arg1;
 - (void)replaceObject:(id)arg1 forKey:(id)arg2;
 - (void)replaceObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)replaceObjects:(id)arg1 forKeys:(id)arg2;
+- (void)sbs_setSafeObject:(id)arg1 forKey:(id)arg2;
 - (void)setAsString:(id)arg1 forKey:(id)arg2;
 - (void)setDictionary:(id)arg1;
 - (void)setEntriesFromDictionary:(id)arg1;
-- (void)setObject:(id)arg1 forInt:(int)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (void)setObjects:(id)arg1 forKeys:(id)arg2;
 - (void)setSafeObject:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)vmSetObject:(id)arg1 forKey:(id)arg2;
 
 @end

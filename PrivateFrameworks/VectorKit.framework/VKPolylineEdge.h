@@ -2,72 +2,67 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface VKPolylineEdge : NSObject {
     struct { 
-        struct { /* ? */ } *road; 
-        unsigned int vertexIndexA; 
-        unsigned int vertexIndexB; 
-        unsigned int junctionIndexA; 
-        unsigned int junctionIndexB; 
-        struct { /* ? */ } *junctionA; 
-        struct { /* ? */ } *junctionB; 
-    struct { 
-        unsigned int index; 
-        float offset; 
-    struct { 
-        unsigned int index; 
-        float offset; 
-    float _cost;
-    int _direction;
-    float _featureOffsetA;
-    float _featureOffsetB;
-    BOOL _isFinalEdge;
-    float _pathOffsetA;
-    float _pathOffsetB;
-    unsigned int _pointCount;
-    struct { float x1; float x2; } *_pointStorage;
-    struct { float x1; float x2; } *_points;
-    } _roadEdge;
-    } _routeOffsetA;
-    } _routeOffsetB;
-    float _totalCost;
+        double x0; 
+        double x1; 
+        double y0; 
+        double y1; 
+    struct shared_ptr<geo::MapEdge> { 
+        struct MapEdge {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    struct vector<geo::Vec2Imp<float>, vk_allocator<geo::Vec2Imp<float> > > { 
+        struct Vec2Imp<float> {} *__begin_; 
+        struct Vec2Imp<float> {} *__end_; 
+        struct __compressed_pair<geo::Vec2Imp<float> *, vk_allocator<geo::Vec2Imp<float> > > { 
+            struct Vec2Imp<float> {} *__first_; 
+        } __end_cap_; 
+    struct vector<geo::PolylineCoordinate, vk_allocator<geo::PolylineCoordinate> > { 
+        struct PolylineCoordinate {} *__begin_; 
+        struct PolylineCoordinate {} *__end_; 
+        struct __compressed_pair<geo::PolylineCoordinate *, vk_allocator<geo::PolylineCoordinate> > { 
+            struct PolylineCoordinate {} *__first_; 
+        } __end_cap_; 
+    BOOL _clippedBack;
+    BOOL _clippedFront;
+    } _localBounds;
+    } _mapEdge;
+    unsigned long _mapEdgeOffset;
+    } _points;
+    } _routeOffsets;
 }
 
-@property(readonly) float cost;
-@property(readonly) int direction;
-@property(readonly) float featureOffsetA;
-@property(readonly) float featureOffsetB;
-@property(readonly) BOOL isFinalEdge;
-@property(readonly) float pathOffsetA;
-@property(readonly) float pathOffsetB;
-@property(readonly) unsigned int pointCount;
-@property(readonly) struct { float x1; float x2; }* points;
-@property(readonly) const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }* roadEdge;
-@property struct { unsigned int x1; float x2; } routeOffsetA;
-@property struct { unsigned int x1; float x2; } routeOffsetB;
-@property float totalCost;
+@property(readonly) BOOL clippedBack;
+@property(readonly) BOOL clippedFront;
+@property(readonly) struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; struct BRectImp<float> { struct Vec2Imp<float> { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct Vec2Imp<float> { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }* feature;
+@property(readonly) struct shared_ptr<geo::MapEdge> { struct MapEdge {} *x1; struct __shared_weak_count {} *x2; } mapEdge;
+@property(readonly) unsigned long mapEdgeOffset;
+@property(readonly) unsigned long pointCount;
+@property(readonly) struct Vec2Imp<float> { float x1; float x2; }* points;
+@property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffsetA;
+@property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffsetB;
+@property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; }* routeOffsets;
 
-- (float)_roadLength;
-- (void)computeCostWithPath:(struct { float x1; float x2; }*)arg1 pathCount:(unsigned int)arg2 prevEdge:(id)arg3;
-- (float)cost;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)calculateRouteOffsetsBetweenA:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1 andB:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2 overLength:(float)arg3 onRoute:(id)arg4;
+- (BOOL)clippedBack;
+- (BOOL)clippedFront;
 - (void)dealloc;
 - (id)description;
-- (int)direction;
-- (float)featureOffsetA;
-- (float)featureOffsetB;
-- (id)initWithRoadEdge:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1;
-- (BOOL)isFinalEdge;
-- (void)markFinalEdgeOnPath:(struct { float x1; float x2; }*)arg1 pathCount:(unsigned int)arg2;
-- (float)pathOffsetA;
-- (float)pathOffsetB;
-- (unsigned int)pointCount;
-- (struct { float x1; float x2; }*)points;
-- (const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)roadEdge;
-- (struct { unsigned int x1; float x2; })routeOffsetA;
-- (struct { unsigned int x1; float x2; })routeOffsetB;
-- (void)setRouteOffsetA:(struct { unsigned int x1; float x2; })arg1;
-- (void)setRouteOffsetB:(struct { unsigned int x1; float x2; })arg1;
-- (void)setTotalCost:(float)arg1;
-- (float)totalCost;
+- (struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; id x_1_1_12; int x_1_1_13; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; struct BRectImp<float> { struct Vec2Imp<float> { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct Vec2Imp<float> { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; }*)feature;
+- (id)initWithRoadPath:(const struct RoadPathElement<std::__1::shared_ptr<geo::MapEdge> > { int (**x1)(); int x2; unsigned int x3; struct shared_ptr<geo::MapEdge> { struct MapEdge {} *x_4_1_1; struct __shared_weak_count {} *x_4_1_2; } x4; struct GeoPolyline { struct shared_ptr<const std::__1::vector<zilch::GeoCoordinates, std::__1::allocator<zilch::GeoCoordinates> > > { struct vector<zilch::GeoCoordinates, std::__1::allocator<zilch::GeoCoordinates> > {} *x_1_2_1; struct __shared_weak_count {} *x_1_2_2; } x_5_1_1; int x_5_1_2; } x5; int x6; }*)arg1 sectionRect:(const struct { double x1; double x2; double x3; double x4; }*)arg2;
+- (struct shared_ptr<geo::MapEdge> { struct MapEdge {} *x1; struct __shared_weak_count {} *x2; })mapEdge;
+- (unsigned long)mapEdgeOffset;
+- (unsigned long)pointCount;
+- (struct Vec2Imp<float> { float x1; float x2; }*)points;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffsetA;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffsetB;
+- (struct PolylineCoordinate { unsigned int x1; float x2; }*)routeOffsets;
 
 @end

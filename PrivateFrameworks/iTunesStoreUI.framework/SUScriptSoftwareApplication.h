@@ -10,6 +10,7 @@
 
 @property(readonly) NSNumber * adamID;
 @property(readonly) NSString * bundleID;
+@property(readonly) NSString * bundleShortVersionString;
 @property(readonly) NSString * bundleVersion;
 @property(readonly) NSNumber * dsID;
 @property(readonly) NSString * environmentProduction;
@@ -39,6 +40,7 @@
 - (id)adamID;
 - (id)attributeKeys;
 - (id)bundleID;
+- (id)bundleShortVersionString;
 - (id)bundleVersion;
 - (void)checkInAppPurchaseQueueWithAccountID:(id)arg1 environment:(id)arg2;
 - (void)dealloc;

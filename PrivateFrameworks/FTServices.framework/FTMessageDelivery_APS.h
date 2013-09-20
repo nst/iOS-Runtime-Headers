@@ -34,6 +34,7 @@
 - (void)_invalidateDeathTimerForMessageID:(id)arg1;
 - (void)_invalidateTimerForMessageID:(id)arg1;
 - (BOOL)_isBusyWithMessage:(id)arg1;
+- (void)_messageACKTimedOut:(id)arg1;
 - (void)_messageCompletelyTimedOut:(id)arg1;
 - (id)_messageForAPSOutgoingMessage:(id)arg1;
 - (void)_messageNeedsRetry:(id)arg1;
@@ -49,6 +50,7 @@
 - (void)_sendMessage:(id)arg1 ftMessage:(id)arg2;
 - (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_serverBagLoaded:(id)arg1;
+- (void)_setEnabledTopics:(id)arg1;
 - (void)_setMapForMessage:(id)arg1 apsMessage:(id)arg2 messageBody:(id)arg3 timeoutTime:(double)arg4 timeoutSelector:(SEL)arg5 retries:(id)arg6;
 - (void)_updateTopics;
 - (void)_updateWiFiAssertions;

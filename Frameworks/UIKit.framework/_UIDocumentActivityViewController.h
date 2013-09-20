@@ -20,6 +20,7 @@
 - (BOOL)hideSystemActivities;
 - (void)setDocumentInteractionController:(id)arg1;
 - (void)setHideSystemActivities:(BOOL)arg1;
+- (BOOL)sourceIsManaged;
 - (void)viewDidDisappear:(BOOL)arg1;
 
 @end

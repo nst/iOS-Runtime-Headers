@@ -11,16 +11,20 @@
 @property(copy) NSString * accountName;
 @property(getter=isAccountNameEditable) BOOL accountNameEditable;
 @property int accountScope;
+@property BOOL allowsBioAuthentication;
 @property BOOL allowsRetry;
 @property BOOL canCreateNewAccount;
 @property BOOL canSetActiveAccount;
 @property(copy) NSString * clientIdentifierHeader;
 @property(getter=isDemoAccount) BOOL demoAccount;
 @property(copy) NSString * initialPassword;
+@property BOOL persistsAcrossDeviceLock;
+@property BOOL persistsPasswordFallback;
 @property(copy) NSString * preferredITunesStoreClient;
 @property int promptStyle;
 @property(copy) NSDictionary * requestParameters;
 @property(retain) NSNumber * requiredUniqueIdentifier;
+@property BOOL shouldCreateNewSession;
 @property BOOL shouldFollowAccountButtons;
 @property BOOL shouldIgnoreProtocol;
 @property BOOL shouldSuppressDialogs;
@@ -33,6 +37,7 @@
 - (void)setAccountName:(id)arg1;
 - (void)setAccountNameEditable:(BOOL)arg1;
 - (void)setAccountScope:(int)arg1;
+- (void)setAllowsBioAuthentication:(BOOL)arg1;
 - (void)setAllowsRetry:(BOOL)arg1;
 - (void)setCanCreateNewAccount:(BOOL)arg1;
 - (void)setCanSetActiveAccount:(BOOL)arg1;
@@ -40,10 +45,13 @@
 - (void)setDemoAccount:(BOOL)arg1;
 - (void)setHTTPHeaders:(id)arg1;
 - (void)setInitialPassword:(id)arg1;
+- (void)setPersistsAcrossDeviceLock:(BOOL)arg1;
+- (void)setPersistsPasswordFallback:(BOOL)arg1;
 - (void)setPreferredITunesStoreClient:(id)arg1;
 - (void)setPromptStyle:(int)arg1;
 - (void)setRequestParameters:(id)arg1;
 - (void)setRequiredUniqueIdentifier:(id)arg1;
+- (void)setShouldCreateNewSession:(BOOL)arg1;
 - (void)setShouldFollowAccountButtons:(BOOL)arg1;
 - (void)setShouldIgnoreProtocol:(BOOL)arg1;
 - (void)setShouldSuppressDialogs:(BOOL)arg1;
@@ -51,5 +59,6 @@
 - (void)setTokenType:(int)arg1;
 - (void)setUserAgentComponents:(id)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (void)setValuesWithAccount:(id)arg1;
 
 @end

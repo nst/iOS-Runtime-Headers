@@ -19,7 +19,7 @@
         } __end_cap_; 
     } _list;
     float _maximumStyleZ;
-    } _rectList[26];
+    } _rectList[29];
 }
 
 @property(readonly) float maximumStyleZ;
@@ -36,6 +36,7 @@
 - (unsigned int)numRectForLayer:(unsigned int)arg1;
 - (unsigned int)numTiles;
 - (const struct { float x1; float x2; float x3; float x4; }*)rectListForLayer:(unsigned int)arg1;
+- (const struct vector<VGLRect, vk_allocator<VGLRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VGLRect *, vk_allocator<VGLRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)rectListVectorForLayer:(unsigned int)arg1;
 - (id*)tileList;
 
 @end

@@ -7,17 +7,19 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSNumber : NSValue <ASParsingLeafNode> {
+@interface NSNumber : NSValue <TSDMixing> {
 }
 
 + (id)_gkServerTimeInterval:(double)arg1;
-+ (BOOL)acceptsTopLevelLeaves;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)boolFromICSString:(id)arg1;
-+ (BOOL)expectsContent;
-+ (BOOL)frontingBasicTypes;
-+ (BOOL)notifyOfUnknownTokens;
++ (id)cr_numberWithCRContactID:(long long)arg1;
++ (id)cr_numberWithCRRecentID:(long long)arg1;
++ (id)instanceWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 + (id)numberWithBool:(BOOL)arg1;
++ (id)numberWithCGFloat:(float)arg1;
++ (id)numberWithCGFloat:(float)arg1;
++ (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithCGFloat:(float)arg1;
 + (id)numberWithChar:(BOOL)arg1;
@@ -30,6 +32,8 @@
 + (id)numberWithLong:(long)arg1;
 + (id)numberWithLongLong:(long long)arg1;
 + (id)numberWithShort:(short)arg1;
++ (id)numberWithStyleInt:(int)arg1;
++ (id)numberWithStyleProperty:(int)arg1;
 + (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedInteger:(unsigned int)arg1;
@@ -40,17 +44,20 @@
 + (BOOL)parseString:(id)arg1 intoNSUInteger:(unsigned int*)arg2;
 + (BOOL)parseString:(id)arg1 intoSInt64:(long long*)arg2;
 + (BOOL)parseString:(id)arg1 intoUInt64:(unsigned long long*)arg2;
-+ (BOOL)parsingLeafNode;
-+ (BOOL)parsingWithSubItems;
 + (BOOL)supportsSecureCoding;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)CAMLType;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; boolx10; }*)arg4;
-- (void)MLBindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (id)CA_roundToIntegerFromValue:(id)arg1;
+- (float)CGFloatValue;
+- (float)CGFloatValue;
+- (float)CGFloatValue;
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
+- (BOOL)WF_isEqualToNumber:(id)arg1 withPrecision:(float)arg2;
 - (void)_ICSBoolAppendingToString:(id)arg1;
 - (void)_ICSFBTypeAppendingToString:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
@@ -62,21 +69,24 @@
 - (unsigned char)_getValue:(void*)arg1 forType:(long)arg2;
 - (int)_reverseCompare:(id)arg1;
 - (void)appendJsonStringToString:(id)arg1;
+- (void)appendJsonStringToString:(id)arg1;
 - (BOOL)boolValue;
-- (float)cgFloatValue;
 - (float)cgFloatValue;
 - (BOOL)charValue;
 - (Class)classForCoder;
 - (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)cr_CRContactIDValue;
+- (long long)cr_CRRecentIDValue;
 - (struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })decimalValue;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
 - (double)doubleValue;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (float)floatValue;
 - (unsigned int)hash;
-- (id)initWithASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 lengthUntilEndOfTerminator:(int)arg6;
+- (id)initWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithBool:(BOOL)arg1;
 - (id)initWithCGFloat:(float)arg1;
 - (id)initWithCGFloat:(float)arg1;
@@ -100,14 +110,20 @@
 - (int)integerValue;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNumber:(id)arg1;
+- (BOOL)isFloatingPointType;
 - (BOOL)isNSNumber__;
 - (unsigned long long)itemIdentifierValue;
 - (id)localizedString;
 - (long long)longLongValue;
 - (long)longValue;
-- (int)parsingState;
+- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
+- (int)mixingTypeWithObject:(id)arg1;
+- (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (void)saveToArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; double x3; int x4; unsigned int x5[1]; }*)arg1 archiver:(id)arg2;
 - (short)shortValue;
 - (id)stringValue;
+- (int)styleIntValue;
+- (int)stylePropertyValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned int)unsignedIntegerValue;

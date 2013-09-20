@@ -9,9 +9,9 @@
 @class BBAssertion, NSArray, NSString;
 
 @interface BBResponse : NSObject <NSCoding> {
-    NSString *_actionKey;
+    int _actionType;
     NSString *_bulletinID;
-    BOOL _deliverToPublisher;
+    NSString *_buttonID;
     BBAssertion *_lifeAssertion;
     NSArray *_lifeAssertions;
     NSString *_replyText;
@@ -19,26 +19,26 @@
     BOOL _sent;
 }
 
-@property(retain) NSString * actionKey;
+@property int actionType;
 @property(retain) NSString * bulletinID;
-@property BOOL deliverToPublisher;
+@property(copy) NSString * buttonID;
 @property(copy) NSArray * lifeAssertions;
 @property(copy) NSString * replyText;
 @property(copy) id sendBlock;
 
-- (id)actionKey;
+- (int)actionType;
 - (id)bulletinID;
+- (id)buttonID;
 - (void)dealloc;
-- (BOOL)deliverToPublisher;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)lifeAssertions;
 - (id)replyText;
 - (void)send;
 - (id)sendBlock;
-- (void)setActionKey:(id)arg1;
+- (void)setActionType:(int)arg1;
 - (void)setBulletinID:(id)arg1;
-- (void)setDeliverToPublisher:(BOOL)arg1;
+- (void)setButtonID:(id)arg1;
 - (void)setLifeAssertions:(id)arg1;
 - (void)setReplyText:(id)arg1;
 - (void)setSendBlock:(id)arg1;

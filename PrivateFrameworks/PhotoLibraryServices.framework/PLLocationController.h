@@ -19,8 +19,8 @@
 + (BOOL)usesEffectiveBundleIdentifier;
 
 - (BOOL)_addLocationToAsset:(id)arg1;
-- (void)_albumsChanged:(id)arg1;
 - (void)_applicationStateChanged:(id)arg1;
+- (void)_assetContainerChanged:(id)arg1;
 - (void)_startUpdating;
 - (void)_stopUpdating;
 - (void)_updateLocationRunState;

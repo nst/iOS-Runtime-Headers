@@ -11,13 +11,19 @@
 @property(readonly) AVCaptureDevice * device;
 
 + (id)deviceInputWithDevice:(id)arg1 error:(id*)arg2;
++ (void)initialize;
 
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (BOOL)_authorizedToUseDevice:(id)arg1;
+- (void)_checkForFigCameraAccess;
+- (int)_requestCameraRecordPermission;
 - (void)_setDevice:(id)arg1;
+- (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
 - (id)description;
 - (id)device;
 - (void)didStartForSession:(id)arg1;
+- (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)init;
 - (id)initWithDevice:(id)arg1 error:(id*)arg2;

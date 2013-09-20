@@ -7,14 +7,21 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
+
 @interface ACSystemConfigManager : NSObject {
     int _applySkipCount;
     BOOL _notifyForExternalChangeOnly;
     struct __SCPreferences { } *_prefs;
+    NSObject<OS_dispatch_queue> *_timerQueue;
+    NSObject<OS_dispatch_source> *_timerSource;
 }
 
++ (id)_livingInstance;
++ (unsigned int)_timeoutInterval;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_keepAlive;
 - (void)_tearDown;
 - (int)accountsWithAccountTypeIdentifierExist:(id)arg1;

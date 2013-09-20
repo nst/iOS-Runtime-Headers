@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class AsyncSSDownloadManager, NSCountedSet, NSMutableArray, NSTimer, SSDownloadHandler;
+@class NSAsyncSSDownloadManager, NSCountedSet, NSMutableArray, NSTimer, SSDownloadHandler;
 
 @interface NSURLConnectionInternalBackgroundDownload : NSURLConnectionInternal <NSURLConnectionRequired, SSDownloadManagerObserver, SSDownloadHandlerDelegate> {
     long long _ctLast;
     NSTimer *_deferredStartTimer;
     long long _downloadIdent;
     SSDownloadHandler *_handler;
-    AsyncSSDownloadManager *_manager;
+    NSAsyncSSDownloadManager *_manager;
     NSMutableArray *_pendingOps;
     NSCountedSet *_runloops;
     struct __CFRunLoopSource { } *_source;

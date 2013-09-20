@@ -37,12 +37,14 @@
 - (id)_errorWithXPCReply:(id)arg1;
 - (id)_initWithLocalPropertyValues:(id)arg1;
 - (void)_legacyLoadArtworkData;
+- (id)_newAssetWithURL:(id)arg1 assetType:(id)arg2;
 - (void)_resetLocalIVars;
 - (void)_resetStatus;
 - (id)_thumbnailImageURL;
 - (BOOL)addAsset:(id)arg1 forType:(id)arg2;
 - (id)assets;
 - (id)assetsForType:(id)arg1;
+- (id)backgroundNetworkingJobGroupName;
 - (long long)bytesDownloaded;
 - (long long)bytesTotal;
 - (id)copyXPCEncoding;
@@ -56,6 +58,7 @@
 - (void)handleWithDownloadHandler:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithDownloadMetadata:(id)arg1;
 - (id)initWithPersistentIdentifier:(long long)arg1;
+- (BOOL)isBackgroundNetworkingUserInitiated;
 - (BOOL)isCancelable;
 - (BOOL)isEligibleForRestore:(id*)arg1;
 - (BOOL)isExternal;
@@ -70,6 +73,8 @@
 - (BOOL)removeAsset:(id)arg1;
 - (void)resume;
 - (void)setAssets:(id)arg1;
+- (void)setBackgroundNetworkingJobGroupName:(id)arg1;
+- (void)setBackgroundNetworkingUserInitiated:(BOOL)arg1;
 - (void)setDownloadHandler:(id)arg1 completionBlock:(id)arg2;
 - (void)setDownloadPolicy:(id)arg1;
 - (void)setMetadata:(id)arg1;

@@ -11,14 +11,15 @@
 @interface SBAwayViewPluginController : NSObject {
     BOOL _alwaysFullscreen;
     id _disableTransitionBlock;
+    unsigned int _effectivePresentationStyle;
     BOOL _fullscreen;
     int _orientation;
     UIView *_view;
     BOOL _viewCanBeDisplayed;
 }
 
-@property(getter=isAlwaysFullscreen,readonly) BOOL alwaysFullscreen;
-@property(getter=isFullscreen,readonly) BOOL fullscreen;
+@property(getter=isAlwaysFullscreen) BOOL alwaysFullscreen;
+@property(getter=_effectivePresentationStyle,setter=_setEffectivePresentationStyle:) unsigned int effectivePresentationStyle;
 @property int orientation;
 @property(retain) UIView * view;
 @property BOOL viewCanBeDisplayed;
@@ -30,13 +31,19 @@
 + (void)enableBundleNamed:(id)arg1;
 
 - (id)_disableTransitionBlock;
+- (unsigned int)_effectivePresentationStyle;
 - (void)_setDisableTransitionBlock:(id)arg1;
+- (void)_setEffectivePresentationStyle:(unsigned int)arg1;
+- (BOOL)allowsControlCenter;
 - (BOOL)allowsLockScreenCamera;
 - (BOOL)allowsLockScreenMediaControls;
+- (BOOL)allowsNotificationCenter;
 - (BOOL)allowsPhotoSlideshow;
 - (BOOL)allowsSiri;
+- (BOOL)allowsTimer;
 - (void)alwaysFullscreenValueHasChanged;
 - (BOOL)animateResumingToApplicationWithIdentifier:(id)arg1;
+- (id)backgroundView;
 - (id)bundleIDForUnlock;
 - (BOOL)canBeAlwaysFullscreen;
 - (BOOL)canScreenDim;
@@ -60,9 +67,14 @@
 - (id)init;
 - (BOOL)isAlwaysFullscreen;
 - (BOOL)isFullscreen;
+- (id)legibilitySettings;
 - (void)loadView;
+- (void)lockScreenMediaControlsShown:(BOOL)arg1;
+- (unsigned int)notificationBehavior;
 - (int)orientation;
+- (unsigned int)overlayStyle;
 - (int)pluginPriority;
+- (unsigned int)presentationStyle;
 - (void)purgeView;
 - (BOOL)retainsPriorityWhileInactive;
 - (void)setActivationContext:(id)arg1;
@@ -78,10 +90,10 @@
 - (BOOL)shouldDisableOnUnlock;
 - (BOOL)shouldShowLockStatusBarTime;
 - (BOOL)showAwayItems;
+- (BOOL)showDate;
 - (BOOL)showDateView;
 - (BOOL)showHeaderView;
-- (BOOL)showsAboveHeader;
-- (BOOL)showsBeneathNotifications;
+- (BOOL)showStatusBar;
 - (BOOL)showsDuringCall;
 - (double)transitionDuration;
 - (id)view;
@@ -96,6 +108,7 @@
 - (BOOL)wantsAutomaticFullscreenTimer;
 - (BOOL)wantsHardwareEventsWhenScreenDimmed;
 - (BOOL)wantsMenuButtonHeldEvent;
+- (BOOL)wantsMesaAutoUnlock;
 - (BOOL)wantsSwipeGestureRecognizer;
 - (BOOL)wantsToOpenURLsWhilePasscodeLocked;
 - (BOOL)wantsUserWallpaper;

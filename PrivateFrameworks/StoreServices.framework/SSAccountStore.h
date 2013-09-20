@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>, SSAccount, SSKeyValueStore;
+@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, SSAccount, SSKeyValueStore;
 
 @interface SSAccountStore : NSObject {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSKeyValueStore *_keyValueStore;
     NSObject<OS_dispatch_queue> *_notificationQueue;
+    NSMutableArray *_notifyTokens;
 }
 
 @property(readonly) NSArray * accounts;

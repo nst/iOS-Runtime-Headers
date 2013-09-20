@@ -15,7 +15,7 @@
 @property UIKeyboardEmojiInputController * inputController;
 @property(retain) UIView * pressIndicator;
 
-+ (struct __CFDictionary { }*)emojiFontAttributes;
++ (id)emojiFontAttributes;
 
 - (id)characters;
 - (void)dealloc;

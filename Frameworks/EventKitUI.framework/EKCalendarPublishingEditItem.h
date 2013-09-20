@@ -2,31 +2,34 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIView;
+@class UIActivityIndicatorView, UILabel, UIView;
 
 @interface EKCalendarPublishingEditItem : EKCalendarEditItem <CalendarPublishingActivityDelegate> {
+    UILabel *_descriptionLabel;
     UIView *_footerView;
     BOOL _published;
+    UILabel *_publishingLabel;
+    UIActivityIndicatorView *_spinner;
 }
 
 @property(readonly) UIView * footerView;
 @property BOOL published;
 
+- (void).cxx_destruct;
 - (void)_applyStyleToUILabel:(id)arg1;
 - (void)_publishChanged:(id)arg1;
-- (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
+- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (id)calendarTitle;
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1;
-- (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (float)footerHeightForSection;
 - (id)footerView;
 - (id)footerViewForSection;
-- (id)init;
+- (void)layoutForWidth:(float)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(int)arg2;
-- (int)numberOfSubitems;
+- (unsigned int)numberOfSubitems;
 - (id)pubishURL;
 - (BOOL)published;
 - (void)reset;

@@ -9,6 +9,8 @@
     BOOL mAppBundleResourcesUrlInitialized;
     int mAppBundleVersion;
     unsigned long long mDocVersion;
+    BOOL mIsOldAssetNameMapInitialized;
+    struct __CFDictionary { } *mOldAssetNameMap;
     struct __CFDictionary { } *mUidToObjectMap;
 }
 

@@ -8,8 +8,7 @@
     NSString *_volumeAudioCategory;
 }
 
-- (void)dealloc;
-- (void)layout;
+- (void).cxx_destruct;
 - (void)setVolumeAudioCategory:(id)arg1;
 - (id)volumeView;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAudioDeviceController, MPAudioVideoRoutingActionSheet, MPAudioVideoRoutingPopoverController, MPVolumeSlider, UIButton, UILabel;
+@class MPAudioDeviceController, MPAudioVideoRoutingActionSheet, MPAudioVideoRoutingPopoverController, MPVolumeSlider, UIButton, UIImage, UILabel;
 
 @interface MPVolumeView : UIView <MPAudioDeviceControllerDelegate, NSCoding> {
     MPAudioVideoRoutingActionSheet *_actionSheet;
@@ -25,6 +25,8 @@
     int _style;
     MPVolumeSlider *_volumeSlider;
     BOOL _volumeSliderShrinksFromBothEnds;
+    BOOL _wirelessRouteIsPicked;
+    BOOL _wirelessRoutesAvailable;
 }
 
 @property BOOL hidesRouteLabelWhenNoRouteChoice;
@@ -37,7 +39,11 @@
 @property(readonly) int style;
 @property(readonly) MPVolumeSlider * volumeSlider;
 @property BOOL volumeSliderShrinksFromBothEnds;
+@property(retain) UIImage * volumeWarningSliderImage;
+@property(getter=isWirelessRouteActive,readonly) BOOL wirelessRouteActive;
+@property(getter=areWirelessRoutesAvailable,readonly) BOOL wirelessRoutesAvailable;
 
+- (void).cxx_destruct;
 - (void)_createSubviews;
 - (id)_defaultRouteButtonImageAsSelected:(BOOL)arg1;
 - (void)_displayAudioRoutePicker;
@@ -47,6 +53,8 @@
 - (void)_setShowsRouteButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setShowsVolumeSlider:(BOOL)arg1;
 - (void)_setVolumeAudioCategory:(id)arg1;
+- (void)_updateWirelessRouteStatus;
+- (BOOL)areWirelessRoutesAvailable;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToSuperview;
@@ -60,6 +68,7 @@
 - (BOOL)isShowingActiveOverlays;
 - (BOOL)isShowingRouteButton;
 - (BOOL)isVisible;
+- (BOOL)isWirelessRouteActive;
 - (void)layoutSubviews;
 - (id)maximumVolumeSliderImageForState:(unsigned int)arg1;
 - (id)minimumVolumeSliderImageForState:(unsigned int)arg1;
@@ -82,6 +91,7 @@
 - (void)setShowsVolumeSlider:(BOOL)arg1;
 - (void)setVolumeSliderShrinksFromBothEnds:(BOOL)arg1;
 - (void)setVolumeThumbImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setVolumeWarningSliderImage:(id)arg1;
 - (BOOL)showsRouteButton;
 - (BOOL)showsVolumeSlider;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
@@ -91,6 +101,7 @@
 - (BOOL)volumeSliderShrinksFromBothEnds;
 - (id)volumeThumbImageForState:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })volumeThumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 volumeSliderRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
+- (id)volumeWarningSliderImage;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

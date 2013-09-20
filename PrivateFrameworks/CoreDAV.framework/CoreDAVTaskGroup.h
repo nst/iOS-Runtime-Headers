@@ -14,6 +14,7 @@
     <CoreDAVTaskGroupDelegate> *_delegate;
     NSError *_error;
     BOOL _isCancelling;
+    BOOL _isFinished;
     BOOL _isTearingDown;
     NSMutableSet *_outstandingTasks;
     id _progressBlock;

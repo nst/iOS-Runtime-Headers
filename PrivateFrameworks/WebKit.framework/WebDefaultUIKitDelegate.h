@@ -9,6 +9,7 @@
 
 - (void)_webthread_webView:(id)arg1 attachRootLayer:(id)arg2;
 - (void)addInputString:(id)arg1 fromVariantKey:(BOOL)arg2;
+- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
 - (id)checkSpellingOfString:(id)arg1;
 - (struct CGPoint { float x1; float x2; })contentsPointForWebView:(id)arg1;
 - (void)deleteFromInput;
@@ -34,7 +35,7 @@
 - (void)webView:(id)arg1 didObserveDeferredContentChange:(int)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didReceiveDocTypeForFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
-- (void)webView:(id)arg1 didReceiveViewportArguments:(id)arg2 forFrame:(id)arg3;
+- (void)webView:(id)arg1 didReceiveViewportArguments:(id)arg2;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 elementDidBlurNode:(id)arg2;
 - (void)webView:(id)arg1 elementDidFocusNode:(id)arg2;

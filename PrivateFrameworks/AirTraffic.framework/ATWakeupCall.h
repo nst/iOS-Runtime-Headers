@@ -12,7 +12,7 @@
     NSNetServiceBrowser *_browser;
     id _completion;
     NSMutableArray *_hostLibraryIdentifiers;
-    int _hostsToResolve;
+    unsigned int _hostsToResolve;
     NSMutableArray *_resolvedLibraryIdentifiers;
     NSMutableArray *_resolvedLibraryServices;
     int _resolving;

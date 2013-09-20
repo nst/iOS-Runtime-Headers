@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKTimeZoneViewControllerDelegate>, EKTimeZoneChooserView, NSTimeZone;
+@class <EKTimeZoneViewControllerDelegate>, NSArray, NSTimeZone, UISearchDisplayController, UITableView;
 
-@interface EKTimeZoneViewController : UIViewController <EKTimeZoneChooserDelegate> {
-    EKTimeZoneChooserView *_chooser;
+@interface EKTimeZoneViewController : UIViewController <UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource> {
+    NSArray *_cities;
     <EKTimeZoneViewControllerDelegate> *_delegate;
+    UISearchDisplayController *_searchController;
     int _style;
+    UITableView *_tableView;
     NSTimeZone *_timeZone;
 }
 
@@ -15,17 +17,24 @@
 @property <EKTimeZoneViewControllerDelegate> * delegate;
 @property(copy) NSTimeZone * timeZone;
 
+- (void).cxx_destruct;
 - (int)chooserStyle;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (void)dealloc;
 - (id)delegate;
 - (id)initWithChooserStyle:(int)arg1;
-- (void)loadView;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willHideSearchResultsTableView:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willShowSearchResultsTableView:(id)arg2;
+- (void)searchDisplayControllerDidEndSearch:(id)arg1;
+- (void)searchDisplayControllerWillBeginSearch:(id)arg1;
+- (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)timeZone;
-- (void)timeZoneChooser:(id)arg1 didSelectTimeZone:(id)arg2 cityName:(id)arg3;
-- (void)timeZoneChooserDidCancel:(id)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

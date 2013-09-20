@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassFaceDelegate>, NSArray, NSMutableArray, NSMutableSet, PKBarcodeStickerView, PKPass, PKPassColorProfile, PKPassFaceTemplate, UIImage, UIImageView, UIView;
+@class <PKPassFaceDelegate>, CAFilter, NSArray, NSMutableArray, NSMutableSet, PKBarcodeStickerView, PKPass, PKPassColorProfile, PKPassFaceTemplate, UIImage, UIImageView, UIView;
 
 @interface PKPassFaceView : WLEasyToHitCustomView {
     BOOL _allowBackgroundPlaceHolders;
@@ -19,7 +19,7 @@
     UIView *_contentView;
     int _contentViewCreatedRegions;
     <PKPassFaceDelegate> *_delegate;
-    UIImageView *_dimmingView;
+    CAFilter *_dimmingFilter;
     UIImage *_faceImage;
     PKPassFaceTemplate *_faceTemplate;
     NSMutableArray *_headerBucketViews;
@@ -28,12 +28,14 @@
     int _invariantViewCreatedRegions;
     UIImage *_partialFaceImage;
     PKPass *_pass;
-    int _template;
+    int _style;
     int _visibleRegions;
 }
 
 @property BOOL allowBackgroundPlaceHolders;
 @property int backgroundMode;
+@property(readonly) PKBarcodeStickerView * barcodeView;
+@property(readonly) BOOL bodyContentCreated;
 @property(readonly) NSMutableSet * bodyContentViews;
 @property(readonly) NSMutableSet * bodyInvariantViews;
 @property(readonly) NSArray * buckets;
@@ -48,27 +50,30 @@
 @property(readonly) NSMutableSet * headerInvariantViews;
 @property(readonly) BOOL isFrontFace;
 @property(readonly) PKPass * pass;
-@property int template;
+@property int style;
 @property int visibleRegions;
 
-+ (Class)_faceClassForTemplate:(int)arg1 front:(BOOL)arg2;
-+ (id)newBackFaceViewForTemplate:(int)arg1 tall:(BOOL)arg2;
-+ (id)newFrontFaceViewForTemplate:(int)arg1;
++ (Class)_faceClassForStyle:(int)arg1 front:(BOOL)arg2;
++ (id)newBackFaceViewForStyle:(int)arg1 tall:(BOOL)arg2;
++ (id)newFrontFaceViewForStyle:(int)arg1;
 
-- (int)_backgroundForBucketTemplate:(id)arg1;
 - (void)_createContentViewsForRegions:(int)arg1;
 - (void)_createInvariantViewsForRegions:(int)arg1;
 - (void)_flushContentViewsForRegions:(int)arg1;
 - (void)_handleTimeOrLocaleChange:(id)arg1;
+- (void)_positionBarcodeView;
 - (id)_relevantBuckets;
 - (void)_setContentViewsAlpha:(float)arg1;
 - (void)_setShowsBackgroundView:(BOOL)arg1;
 - (void)_setShowsBodyViews:(BOOL)arg1;
 - (void)_setShowsHeaderViews:(BOOL)arg1;
+- (int)_validityStateForPass:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (BOOL)allowBackgroundPlaceHolders;
 - (int)backgroundMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })barcodeFrame;
+- (id)barcodeView;
+- (BOOL)bodyContentCreated;
 - (id)bodyContentViews;
 - (id)bodyInvariantViews;
 - (id)buckets;
@@ -93,6 +98,7 @@
 - (void)layoutSubviews;
 - (id)pass;
 - (id)passFaceTemplate;
+- (void)prepareForFlip;
 - (void)presentDiff:(id)arg1 completion:(id)arg2;
 - (void)setAllowBackgroundPlaceHolders:(BOOL)arg1;
 - (void)setBackgroundMode:(int)arg1;
@@ -102,10 +108,10 @@
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
 - (void)setHeaderBucketViews:(id)arg1;
 - (void)setPass:(id)arg1 colorProfile:(id)arg2;
-- (void)setTemplate:(int)arg1;
+- (void)setStyle:(int)arg1;
 - (void)setVisibleRegions:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })shadowInsets;
-- (int)template;
+- (int)style;
 - (int)visibleRegions;
 
 @end

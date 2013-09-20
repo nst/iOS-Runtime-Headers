@@ -45,7 +45,10 @@
 @property(readonly) BOOL isDataConnectionActive;
 @property(readonly) BOOL isDataSwitchEnabled;
 @property(readonly) BOOL isHostingWiFiHotSpot;
+@property(readonly) BOOL isSIMLocked;
+@property(readonly) BOOL isSIMRemoved;
 @property(readonly) BOOL isWiFiAssociated;
+@property(readonly) BOOL isWiFiCaptive;
 @property(readonly) BOOL isWiFiEnabled;
 @property(retain) NSRecursiveLock * lock;
 @property BOOL registered;
@@ -102,7 +105,10 @@
 - (BOOL)isDataConnectionActive;
 - (BOOL)isDataSwitchEnabled;
 - (BOOL)isHostingWiFiHotSpot;
+- (BOOL)isSIMLocked;
+- (BOOL)isSIMRemoved;
 - (BOOL)isWiFiAssociated;
+- (BOOL)isWiFiCaptive;
 - (BOOL)isWiFiEnabled;
 - (id)lock;
 - (void)refresh;
@@ -129,6 +135,7 @@
 - (void)set_suspendDormancyAssertion:(void*)arg1;
 - (BOOL)shouldBringUpDataContext;
 - (void)showNetworkOptions;
+- (void)showSIMUnlock;
 - (id)wiFiAutoAssociationTokens;
 - (id)wiFiScaledRSSI;
 - (id)wiFiScaledRate;

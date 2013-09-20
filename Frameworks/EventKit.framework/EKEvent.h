@@ -2,23 +2,48 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendarDate, EKParticipant, NSDate, NSNumber, NSString;
+@class EKCalendarDate, EKEventStore, EKParticipant, NSArray, NSDate, NSNumber, NSString, NSURL;
 
 @interface EKEvent : EKCalendarItem {
+    int _attendeeCount;
     EKCalendarDate *_occurrenceEndDate;
     BOOL _occurrenceIsAllDay;
     EKCalendarDate *_occurrenceStartDate;
     EKCalendarDate *_originalOccurrenceEndDate;
     NSNumber *_originalOccurrenceIsAllDay;
     EKCalendarDate *_originalOccurrenceStartDate;
+    BOOL _requiresDetachDueToSnoozedAlarm;
 }
 
+@property(readonly) NSString * UUID;
 @property(getter=isAllDay) BOOL allDay;
+@property(readonly) NSArray * attachments;
+@property(readonly) int attendeeCount;
 @property int availability;
 @property(readonly) int birthdayPersonID;
+@property(readonly) BOOL canBeRespondedTo;
+@property(readonly) BOOL canDetachSingleOccurrence;
+@property(readonly) BOOL canSetAvailability;
+@property(readonly) BOOL dateChanged;
+@property(readonly) double duration;
+@property(readonly) EKCalendarDate * endCalendarDate;
 @property(copy) NSDate * endDate;
+@property(readonly) struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } endDateGr;
 @property(readonly) NSString * eventIdentifier;
+@property(readonly) EKEventStore * eventStore;
+@property(readonly) NSURL * externalURL;
+@property(readonly) NSDate * initialEndDate;
+@property(readonly) NSDate * initialStartDate;
+@property unsigned int invitationStatus;
+@property(readonly) BOOL isAllDayDirty;
 @property(readonly) BOOL isDetached;
+@property(readonly) BOOL isEditable;
+@property(readonly) BOOL isEndDateDirty;
+@property(readonly) BOOL isStartDateDirty;
+@property(readonly) BOOL isStatusDirty;
+@property(readonly) BOOL locationChanged;
+@property(readonly) unsigned int modifiedProperties;
+@property(readonly) NSDate * occurrenceDate;
 @property(copy) EKCalendarDate * occurrenceEndDate;
 @property BOOL occurrenceIsAllDay;
 @property(copy) EKCalendarDate * occurrenceStartDate;
@@ -26,8 +51,19 @@
 @property(copy) EKCalendarDate * originalOccurrenceEndDate;
 @property(copy) NSNumber * originalOccurrenceIsAllDay;
 @property(copy) EKCalendarDate * originalOccurrenceStartDate;
+@property int participationStatus;
+@property(readonly) NSDate * participationStatusModifiedDate;
+@property(readonly) int pendingParticipationStatus;
+@property BOOL requiresDetachDueToSnoozedAlarm;
+@property(copy) NSString * responseComment;
+@property(readonly) BOOL responseMustApplyToAll;
+@property(readonly) EKCalendarDate * startCalendarDate;
 @property(copy) NSDate * startDate;
+@property(readonly) struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } startDateGr;
 @property(readonly) int status;
+@property(readonly) BOOL timeChanged;
+@property(readonly) BOOL titleChanged;
+@property(readonly) NSString * uniqueId;
 
 + (id)eventWithEventStore:(id)arg1;
 
@@ -39,7 +75,6 @@
 - (void)_detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(BOOL)arg3;
 - (id)_effectiveTimeZone;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_gregorianDateCorrectedForTimeZoneFromCalendarDate:(id)arg1 orNSDate:(id)arg2;
-- (BOOL)_isAlarmAcknowledgedPropertyDirty;
 - (BOOL)_isAllDay;
 - (BOOL)_isInitialOccurrenceDate:(id)arg1;
 - (BOOL)_occurrenceExistsOnDate:(double)arg1 timeZone:(id)arg2;
@@ -52,7 +87,6 @@
 - (BOOL)_validateAlarmIntervalConstrainedToRecurrenceInterval:(int)arg1;
 - (BOOL)_validateDatesAndRecurrencesGivenSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)_validateDurationConstrainedToRecurrenceInterval;
-- (int)alarmCount;
 - (BOOL)allowsAlarmModifications;
 - (BOOL)allowsCalendarModifications;
 - (BOOL)allowsRecurrenceModifications;
@@ -61,11 +95,11 @@
 - (id)attendees;
 - (int)availability;
 - (int)birthdayPersonID;
-- (id)birthdayTitleWithAddressBook:(void*)arg1;
 - (BOOL)canBeRespondedTo;
 - (BOOL)canDetachSingleOccurrence;
 - (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id*)arg3;
 - (BOOL)canSetAvailability;
+- (BOOL)changingAllDayPropertyIsAllowed;
 - (void)clearInvitationStatus;
 - (BOOL)commitWithSpan:(int)arg1 error:(id*)arg2;
 - (id)committedValueForKey:(id)arg1;
@@ -76,17 +110,14 @@
 - (id)description;
 - (void)didCommit;
 - (id)dirtyPropertiesToSkip;
-- (id)displayTitle;
 - (double)duration;
 - (id)endCalendarDate;
 - (id)endDate;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDateGr;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
 - (id)eventIdentifier;
 - (id)eventStore;
 - (id)exportToICS;
-- (id)externalId;
 - (id)externalURI;
 - (id)externalURL;
 - (BOOL)hasHumanInviteesToDisplay;
@@ -120,11 +151,13 @@
 - (id)originalOccurrenceIsAllDay;
 - (id)originalOccurrenceStartDate;
 - (int)participationStatus;
+- (id)participationStatusModifiedDate;
 - (int)pendingParticipationStatus;
 - (id)recurrenceRule;
 - (BOOL)refresh;
 - (BOOL)removeWithSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)requiresDetach;
+- (BOOL)requiresDetachDueToSnoozedAlarm;
 - (id)responseComment;
 - (BOOL)responseMustApplyToAll;
 - (void)revert;
@@ -143,9 +176,11 @@
 - (void)setOriginalOccurrenceStartDate:(id)arg1;
 - (void)setParticipationStatus:(int)arg1;
 - (void)setRecurrenceRule:(id)arg1;
+- (void)setRequiresDetachDueToSnoozedAlarm:(BOOL)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
 - (id)sortEKParticipantsIgnoringNonHumans:(id)arg1;
 - (id)sortedEKAttachmentsDisplayStrings;
 - (id)sortedEKParticipantsDisplayStringsIgnoringNonHumans:(id)arg1;
@@ -153,9 +188,9 @@
 - (id)startDate;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDateGr;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
 - (int)status;
 - (BOOL)timeChanged;
+- (id)title;
 - (BOOL)titleChanged;
 - (id)uniqueId;
 - (BOOL)validateWithSpan:(int)arg1 error:(id*)arg2;

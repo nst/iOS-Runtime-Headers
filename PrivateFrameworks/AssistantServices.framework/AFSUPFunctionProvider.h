@@ -5,7 +5,8 @@
 @class NSDateFormatter;
 
 @interface AFSUPFunctionProvider : AFSpeakableUtteranceParser <AFSpeakableNamespaceProvider> {
-    NSDateFormatter *_ourFormatter;
+    NSDateFormatter *_dateFormatter;
+    NSDateFormatter *_timeFormatter;
     BOOL _useSpeechMode;
 }
 
@@ -22,6 +23,7 @@
 - (id)_lowercaseString:(id)arg1;
 - (id)_tempInWeatherUnits:(id)arg1;
 - (id)init;
+- (id)initWithLocale:(id)arg1;
 - (id)stringForExpression:(id)arg1;
 - (void)useSpeechMode:(BOOL)arg1;
 

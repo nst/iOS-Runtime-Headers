@@ -15,6 +15,7 @@
 - (id)initWithLayer:(id)arg1;
 - (BOOL)isVideoLayerBeingServiced;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
+- (id)layerDisplayName;
 - (void)notificationBarrier;
 
 @end

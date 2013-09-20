@@ -11,6 +11,7 @@
     NSString *_appSpecificMultiGetCommand;
     NSString *_appSpecificMultiGetNameSpace;
     NSString *_appSpecificNamespace;
+    NSSet *_deletedURLs;
     NSSet *_missingURLs;
     NSSet *_parsedContents;
     BOOL _shouldIgnoreResponseErrors;
@@ -20,6 +21,7 @@
 @property <CoreDAVAccountInfoProvider> * accountInfoProvider;
 @property(retain) NSSet * additionalPropElements;
 @property(copy) id completionBlock;
+@property(readonly) NSSet * deletedURLs;
 @property(readonly) NSError * error;
 @property(readonly) NSSet * missingURLs;
 @property(readonly) NSSet * parsedContents;
@@ -31,6 +33,7 @@
 - (id)copyAdditionalPropElements;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
+- (id)deletedURLs;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
 - (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;

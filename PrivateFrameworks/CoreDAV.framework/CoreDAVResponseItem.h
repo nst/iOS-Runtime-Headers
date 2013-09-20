@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVErrorItem, CoreDAVItemWithHrefChildItem, CoreDAVLeafItem, NSMutableArray, NSMutableSet;
+@class CoreDAVErrorItem, CoreDAVItemWithHrefChildItem, CoreDAVLeafItem, CoreDAVMatchResultsItem, NSMutableArray, NSMutableSet;
 
 @interface CoreDAVResponseItem : CoreDAVItem {
     CoreDAVErrorItem *_errorItem;
     NSMutableArray *_hrefs;
     CoreDAVItemWithHrefChildItem *_location;
+    CoreDAVMatchResultsItem *_matchResults;
     NSMutableSet *_propStats;
     CoreDAVLeafItem *_responseDescription;
     CoreDAVLeafItem *_serverUID;
@@ -17,6 +18,7 @@
 @property(retain) CoreDAVErrorItem * errorItem;
 @property(retain) NSMutableArray * hrefs;
 @property(retain) CoreDAVItemWithHrefChildItem * location;
+@property(retain) CoreDAVMatchResultsItem * matchResults;
 @property(retain) NSMutableSet * propStats;
 @property(retain) CoreDAVLeafItem * responseDescription;
 @property(retain) CoreDAVLeafItem * serverUID;
@@ -34,12 +36,14 @@
 - (id)hrefs;
 - (id)init;
 - (id)location;
+- (id)matchResults;
 - (id)propStats;
 - (id)responseDescription;
 - (id)serverUID;
 - (void)setErrorItem:(id)arg1;
 - (void)setHrefs:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setMatchResults:(id)arg1;
 - (void)setPropStats:(id)arg1;
 - (void)setResponseDescription:(id)arg1;
 - (void)setServerUID:(id)arg1;

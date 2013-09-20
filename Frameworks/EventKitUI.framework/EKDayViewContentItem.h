@@ -5,26 +5,44 @@
 @class EKCalendarDate, EKDayOccurrenceView;
 
 @interface EKDayViewContentItem : NSObject {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     EKCalendarDate *_endDate;
     unsigned int _eventIndex;
+    BOOL _pinned;
     EKCalendarDate *_startDate;
+    } _unPinnedViewFrame;
     EKDayOccurrenceView *_view;
 }
 
 @property(copy) EKCalendarDate * endDate;
 @property(readonly) unsigned int eventIndex;
+@property(getter=isPinned) BOOL pinned;
 @property(copy) EKCalendarDate * startDate;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unPinnedViewFrame;
 @property(retain) EKDayOccurrenceView * view;
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)description;
 - (id)endDate;
 - (unsigned int)eventIndex;
 - (id)initWithEventIndex:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isPinned;
 - (void)setEndDate:(id)arg1;
+- (void)setPinned:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
+- (void)setUnPinnedViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setView:(id)arg1;
 - (id)startDate;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unPinnedViewFrame;
 - (id)view;
 
 @end

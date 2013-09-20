@@ -16,9 +16,8 @@
     void *_reserved;
 }
 
-+ (BOOL)_isInferredMappingModel:(id)arg1;
-+ (id)_mappingModelFromPaths:(id)arg1 forSourceHashes:(id)arg2 destinationHashes:(id)arg3;
 + (id)_modelPathsFromBundles:(id)arg1;
++ (id)_newMappingModelFromPaths:(id)arg1 forSourceHashes:(id)arg2 destinationHashes:(id)arg3;
 + (id)inferredMappingModelForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id*)arg3;
 + (void)initialize;
 + (id)mappingModelFromBundles:(id)arg1 forSourceModel:(id)arg2 destinationModel:(id)arg3;
@@ -28,7 +27,9 @@
 - (void)_addEntityMapping:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (id)_destinationEntityVersionHashesByName;
+- (BOOL)_hasInferredMappingNeedingValidation;
 - (id)_initWithEntityMappings:(id)arg1;
+- (BOOL)_isInferredMappingModel;
 - (void)_setIsEditable:(BOOL)arg1;
 - (id)_sourceEntityVersionHashesByName;
 - (void)_throwIfNotEditable;

@@ -6,24 +6,52 @@
    See Warning(s) below.
  */
 
-@class UIImage;
+@class NSString, UIImage;
 
-@interface SLAttachment : NSObject {
+@interface SLAttachment : NSObject <NSSecureCoding> {
+    int _downsampleStatus;
+    NSString *_identifier;
     id _payload;
-    UIImage *_preview;
+    id _payloadUpdateObserver;
+    BOOL _pendingPreviewProxy;
+    UIImage *_previewImage;
     int _previewType;
-    id _updateObserver;
+    id _previewUpdateObserver;
+    int _type;
 }
 
+@property int downsampleStatus;
+@property(readonly) NSString * identifier;
+@property(copy) id payload;
+@property BOOL pendingPreviewProxy;
+@property(retain) UIImage * previewImage;
 @property int previewType;
+@property int type;
+
++ (BOOL)attachmentTypeRepresentsAnImage:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)initWithPayload:(id)arg1 preview:(id)arg2;
+- (id)_uniqueIdentifier;
+- (id)description;
+- (int)downsampleStatus;
+- (void)encodeWithCoder:(id)arg1;
+- (id)identifier;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPayload:(id)arg1 type:(int)arg2 previewImage:(id)arg3;
 - (id)payload;
-- (id)preview;
+- (BOOL)pendingPreviewProxy;
+- (id)previewImage;
 - (int)previewType;
-- (void)setPreview:(id)arg1;
+- (void)setDownsampleStatus:(int)arg1;
+- (void)setPayload:(id)arg1;
+- (void)setPayloadUpdateObserverWithBlock:(id)arg1;
+- (void)setPendingPreviewProxy:(BOOL)arg1;
+- (void)setPreviewImage:(id)arg1;
 - (void)setPreviewType:(int)arg1;
-- (void)setUpdateObserver:(id)arg1;
+- (void)setPreviewUpdateObserverWithBlock:(id)arg1;
+- (void)setType:(int)arg1;
+- (int)type;
 
 @end

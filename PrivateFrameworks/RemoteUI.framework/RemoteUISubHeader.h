@@ -7,14 +7,20 @@
 @interface RemoteUISubHeader : UIView <RemoteUITableHeader> {
     UILabel *_headerLabel;
     BOOL _isFirstSection;
+    BOOL _isRightToLeft;
     UILabel *_subHeaderLabel;
     float _subHeaderSized;
 }
 
+@property(readonly) UILabel * headerLabel;
+@property(readonly) UILabel * subHeaderLabel;
+
 - (void)dealloc;
 - (float)headerHeightForWidth:(float)arg1 inTableView:(id)arg2;
+- (id)headerLabel;
 - (id)initWithAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (void)setSectionIsFirst:(BOOL)arg1;
+- (id)subHeaderLabel;
 
 @end

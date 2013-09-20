@@ -11,10 +11,10 @@
     NSNumber *inputSaturation;
 }
 
-@property(copy) NSNumber * inputBrightness;
-@property(copy) NSNumber * inputContrast;
+@property(retain) NSNumber * inputBrightness;
+@property(retain) NSNumber * inputContrast;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputSaturation;
+@property(retain) NSNumber * inputSaturation;
 
 + (id)customAttributes;
 

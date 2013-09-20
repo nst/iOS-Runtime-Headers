@@ -2,24 +2,30 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSRecursiveLock, NSString, PFUbiquityGlobalObjectIDCache, PFUbiquityKnowledgeVector, PFUbiquityLocation;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSPersistentStore, NSPersistentStoreCoordinator, NSRecursiveLock, NSString, PFUbiquityGlobalObjectIDCache, PFUbiquityKnowledgeVector, PFUbiquityLocation;
 
 @interface PFUbiquityTransactionHistoryCache : NSObject {
     PFUbiquityKnowledgeVector *_cacheKV;
     NSMutableArray *_entriesToWrite;
     PFUbiquityGlobalObjectIDCache *_globalIDCache;
     NSMutableDictionary *_globalIDToHistoryArray;
+    BOOL _hasScheduledWriteBlock;
     NSString *_localPeerID;
+    PFUbiquityKnowledgeVector *_minCacheKV;
     NSMutableDictionary *_peerIDToHistoryArray;
     NSRecursiveLock *_peerIDToHistoryArrayLock;
+    NSPersistentStoreCoordinator *_privatePSC;
+    NSPersistentStore *_privateStore;
     PFUbiquityLocation *_rootLocation;
+    NSString *_storeName;
 }
 
 @property(readonly) PFUbiquityKnowledgeVector * cacheKV;
 @property(readonly) NSArray * cachedGlobalIDs;
 @property(retain) PFUbiquityGlobalObjectIDCache * globalIDCache;
+@property(readonly) PFUbiquityKnowledgeVector * minCacheKV;
+@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
 
-- (BOOL)addTransactionEntriesFromExporter:(id)arg1 error:(id*)arg2;
 - (BOOL)addTransactionEntry:(id)arg1 error:(id*)arg2;
 - (BOOL)addTransactionEntryLight:(id)arg1 needsWrite:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)addTransactionEntryLights:(id)arg1 error:(id*)arg2;
@@ -33,9 +39,11 @@
 - (id)description;
 - (id)globalIDCache;
 - (id)init;
-- (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
+- (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 privateStore:(id)arg3 andUbiquityRootLocation:(id)arg4;
+- (id)minCacheKV;
 - (BOOL)purgeCacheAndWritePendingEntries:(BOOL)arg1 error:(id*)arg2;
 - (void)setGlobalIDCache:(id)arg1;
+- (id)ubiquityRootLocation;
 - (BOOL)writePendingEntries:(id*)arg1;
 
 @end

@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class Message, MessageLibrary;
+@class MFMessage, MFMessageLibrary;
 
 @interface _MFDALibraryConsumerFactory : NSObject <MFMessageDataConsumerFactory> {
-    MessageLibrary *_library;
-    Message *_message;
+    MFMessageLibrary *_library;
+    MFMessage *_message;
 }
 
-@property(retain) MessageLibrary * library;
-@property(retain) Message * message;
+@property(retain) MFMessageLibrary * library;
+@property(retain) MFMessage * message;
 
 - (id)dataConsumerForPart:(id)arg1;
 - (void)dealloc;

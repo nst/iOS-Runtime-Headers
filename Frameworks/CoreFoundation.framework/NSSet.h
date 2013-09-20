@@ -29,9 +29,11 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)supportsSecureCoding;
 
-- (void)ML3GetValuesAsPersistentIDsUsingBlock:(id)arg1;
+- (id)CAMLType;
 - (void)__applyValues:(int (*)())arg1 context:(void*)arg2;
 - (BOOL)__getValue:(id*)arg1 forObj:(id)arg2;
+- (void)__imForEach:(id)arg1;
+- (id)__imSetByApplyingBlock:(id)arg1;
 - (id)_avgForKeyPath:(id)arg1;
 - (unsigned long)_cfTypeID;
 - (id)_countForKeyPath:(id)arg1;
@@ -60,6 +62,7 @@
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
 - (id)descriptionWithLocale:(id)arg1;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateObjectsUsingBlock:(id)arg1;
@@ -98,6 +101,8 @@
 - (id)mf_getAllObjectsAsArray;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
+- (id)objectPassingTest:(id)arg1;
+- (id)objectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (id)objectsPassingTest:(id)arg1;
 - (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (unsigned int)pl_countOfObjectsPassingTest:(id)arg1;

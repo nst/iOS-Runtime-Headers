@@ -14,7 +14,6 @@
 @property(readonly) float rollAngle;
 @property(readonly) float yawAngle;
 
-+ (id)derivedFaceObjectFromFaceObject:(id)arg1 withBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 yaw:(float)arg3 roll:(float)arg4;
 + (id)faceObjectWithFigEmbeddedCaptureDeviceFaceDictionary:(id)arg1 input:(id)arg2;
 
 - (void)dealloc;
@@ -22,9 +21,8 @@
 - (int)faceID;
 - (BOOL)hasRollAngle;
 - (BOOL)hasYawAngle;
-- (id)initDerivedFaceObjectFromFaceObject:(id)arg1 withBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 yaw:(float)arg3 roll:(float)arg4;
+- (id)initDerivedMetadataObjectFromMetadataObject:(id)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 isVideoMirrored:(BOOL)arg3 rollAdjustment:(float)arg4;
 - (id)initWithFigEmbeddedCaptureDeviceFaceDictionary:(id)arg1 input:(id)arg2;
-- (id)originalFaceObject;
 - (float)rollAngle;
 - (float)yawAngle;
 

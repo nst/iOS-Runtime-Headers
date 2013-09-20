@@ -2,9 +2,12 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
+@class NSDate;
+
 @interface EKPersistentAttendee : EKPersistentParticipant {
 }
 
+@property(copy) NSDate * lastModified;
 @property int participantRole;
 @property int participantStatus;
 @property int participantType;
@@ -21,11 +24,13 @@
 - (id)initWithAddress:(id)arg1 name:(id)arg2;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
+- (id)lastModified;
 - (id)owner;
 - (int)participantRole;
 - (int)participantStatus;
 - (int)participantType;
 - (int)pendingStatus;
+- (void)setLastModified:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setParticipantRole:(int)arg1;
 - (void)setParticipantStatus:(int)arg1;

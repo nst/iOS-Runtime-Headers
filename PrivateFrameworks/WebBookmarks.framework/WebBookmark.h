@@ -25,14 +25,15 @@
     unsigned int _specialID;
     NSData *_syncData;
     NSString *_syncKey;
+    BOOL _syncable;
     NSString *_title;
     NSString *_url;
+    int _webFilterStatus;
 }
 
 @property(readonly) NSString * UUID;
 @property(retain) NSString * address;
 @property int archiveStatus;
-@property int databaseWriteTestValue;
 @property(retain) NSDate * dateAdded;
 @property(retain) NSDate * dateLastArchived;
 @property(retain) NSDate * dateLastFetched;
@@ -54,10 +55,18 @@
 @property(readonly) unsigned int parentID;
 @property(retain) NSString * previewText;
 @property(retain) NSString * serverID;
+@property(retain) NSString * siteName;
+@property(retain) NSString * sourceBundleID;
+@property(retain) NSString * sourceLocalizedAppName;
 @property(readonly) unsigned int specialID;
 @property(retain) NSData * syncData;
 @property(retain) NSString * syncKey;
+@property(getter=isSyncable,readonly) BOOL syncable;
 @property(retain) NSString * title;
+@property int webFilterStatus;
+
++ (id)_trimmedPreviewText:(id)arg1;
++ (id)_trimmedTitle:(id)arg1;
 
 - (id)UUID;
 - (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1;
@@ -72,6 +81,7 @@
 - (void)_setInserted:(BOOL)arg1;
 - (void)_setOrderIndex:(unsigned int)arg1;
 - (void)_setParentID:(unsigned int)arg1;
+- (void)_setSyncable:(BOOL)arg1;
 - (void)_setUUID:(id)arg1;
 - (unsigned long long)_sizeForFileOrDirectory:(id)arg1 withAttributes:(id)arg2;
 - (id)_suggestedFileNameForWebView:(id)arg1;
@@ -81,7 +91,6 @@
 - (void)cleanupRedundantPreviewText;
 - (void)clearArchive;
 - (void)clearArchiveSynchronously;
-- (int)databaseWriteTestValue;
 - (id)dateAdded;
 - (id)dateLastArchived;
 - (id)dateLastFetched;
@@ -94,10 +103,14 @@
 - (id)iconData;
 - (unsigned int)identifier;
 - (id)init;
+- (id)initBuiltinDeviceBookmarkWithTitle:(id)arg1 address:(id)arg2;
+- (id)initCarrierBookmarkWithTitle:(id)arg1 address:(id)arg2;
 - (id)initFolderWithParentID:(unsigned int)arg1;
-- (id)initReadingListBookmarkWithTitle:(id)arg1 address:(id)arg2 previewText:(id)arg3 iconData:(id)arg4;
-- (id)initStaticWithTitle:(id)arg1 address:(id)arg2;
+- (id)initReadingListBookmarkWithTitle:(id)arg1 address:(id)arg2 previewText:(id)arg3;
+- (id)initWhiteListBookmarkWithTitle:(id)arg1 address:(id)arg2;
 - (id)initWithTitle:(id)arg1 address:(id)arg2;
+- (BOOL)isBookmarksBarFolder;
+- (BOOL)isBookmarksMenuFolder;
 - (BOOL)isDeletable;
 - (BOOL)isEditable;
 - (BOOL)isFolder;
@@ -105,6 +118,8 @@
 - (BOOL)isInserted;
 - (BOOL)isReadingListFolder;
 - (BOOL)isReadingListItem;
+- (BOOL)isSyncable;
+- (BOOL)isWebFilterWhiteListFolder;
 - (id)localAttributes;
 - (id)localPreviewText;
 - (id)localizedTitle;
@@ -116,7 +131,6 @@
 - (id)serverID;
 - (void)setAddress:(id)arg1;
 - (void)setArchiveStatus:(int)arg1;
-- (void)setDatabaseWriteTestValue:(int)arg1;
 - (void)setDateAdded:(id)arg1;
 - (void)setDateLastArchived:(id)arg1;
 - (void)setDateLastFetched:(id)arg1;
@@ -131,16 +145,24 @@
 - (void)setNextPageURLs:(id)arg1;
 - (void)setPreviewText:(id)arg1;
 - (void)setServerID:(id)arg1;
+- (void)setSiteName:(id)arg1;
+- (void)setSourceBundleID:(id)arg1;
+- (void)setSourceLocalizedAppName:(id)arg1;
 - (void)setSyncData:(id)arg1;
 - (void)setSyncKey:(id)arg1;
-- (void)setTitle:(id)arg1 previewText:(id)arg2 dateLastViewed:(id)arg3 dateLastFetched:(id)arg4;
+- (void)setTitle:(id)arg1 previewText:(id)arg2 dateLastFetched:(id)arg3;
 - (void)setTitle:(id)arg1;
+- (void)setWebFilterStatus:(int)arg1;
 - (id)shortTypeDescription;
 - (BOOL)shouldReattemptArchive;
+- (id)siteName;
+- (id)sourceBundleID;
+- (id)sourceLocalizedAppName;
 - (unsigned int)specialID;
 - (id)syncData;
 - (id)syncKey;
 - (id)title;
+- (int)webFilterStatus;
 - (id)webarchivePathForNextPageURL:(id)arg1;
 - (id)webarchivePathInReaderForm:(BOOL)arg1 fileExists:(BOOL*)arg2;
 - (BOOL)writeOfflineWebView:(id)arg1 asArchive:(BOOL)arg2 inReaderForm:(BOOL)arg3;

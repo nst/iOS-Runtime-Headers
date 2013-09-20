@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFDeliveryDelegate>, DeliveryAccount, MFMailDelivery, MailAccount, Message, MutableMessageHeaders, NSArray, NSDictionary, NSString, PlainTextDocument;
+@class <MFDeliveryDelegate>, DeliveryAccount, MFMailDelivery, MFMessage, MFMutableMessageHeaders, MFPlainTextDocument, MailAccount, NSArray, NSDictionary, NSString;
 
 @interface MFOutgoingMessageDelivery : NSObject {
     MailAccount *_archiveAccount;
@@ -11,12 +11,12 @@
     MFMailDelivery *_currentDeliveryObject;
     <MFDeliveryDelegate> *_delegate;
     DeliveryAccount *_deliveryAccount;
-    MutableMessageHeaders *_headers;
+    MFMutableMessageHeaders *_headers;
     NSString *_htmlBody;
-    Message *_message;
+    MFMessage *_message;
     NSArray *_mixedContent;
     NSArray *_otherHTMLAndAttachments;
-    PlainTextDocument *_plainTextAlternative;
+    MFPlainTextDocument *_plainTextAlternative;
     BOOL _textPartsAreHTML;
 }
 
@@ -27,12 +27,12 @@
 + (id)newWithMessage:(id)arg1;
 
 - (id)_currentDeliveryObject;
-- (int)_deliverSynchronouslyWithCurrentSettings:(BOOL)arg1;
+- (id)_deliverSynchronouslyWithCurrentSettings:(BOOL)arg1;
 - (id)_deliveryAccountForInitializers;
 - (id)account;
 - (id)compositionSpecification;
 - (void)dealloc;
-- (int)deliverSynchronously;
+- (id)deliverSynchronously;
 - (int)deliveryStatus;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;

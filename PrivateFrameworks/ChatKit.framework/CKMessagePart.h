@@ -2,47 +2,63 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKMessage>;
+@class <CKMessage>, NSAttributedString, NSString;
 
-@interface CKMessagePart : NSObject {
-    int _outgoingBubbleColor;
+@interface CKMessagePart : NSObject <CKTranscriptDataRowObject> {
+    BOOL _color;
+    NSAttributedString *_displayText;
+    NSString *_guid;
     <CKMessage> *_parentMessage;
-    int _rowID;
+    int _partID;
 }
 
-@property int outgoingBubbleColor;
+@property BOOL color;
+@property(readonly) NSAttributedString * displayText;
+@property(readonly) NSString * guid;
+@property(readonly) BOOL isOutgoing;
 @property <CKMessage> * parentMessage;
-@property int rowID;
+@property int partID;
 
-+ (id)_assembleTextPartFromRange:(id)arg1;
-+ (id)_newPartsForNode:(id)arg1 resources:(id)arg2 attachments:(id*)arg3;
-+ (id)copyDeletedPart;
-+ (id)copyDetachedMessageParts:(id)arg1;
-+ (id)copyMessagePartsFromComposition:(id)arg1 attachmentParts:(id*)arg2;
-+ (id)copyMessagePartsFromComposition:(id)arg1;
-+ (id)copyUnknownPart;
++ (id)messagePartsWithComposition:(id)arg1;
 
-- (id)composeData;
+- (Class)__ck_displayCellClass;
+- (id)__ck_displayCellIdentifier;
+- (id)__ck_displayContactImage;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })__ck_displayContentAlignmentInsets;
+- (BOOL)__ck_displayDuringSend;
+- (id)__ck_displayGUIDWithMessage:(id)arg1;
+- (struct CGSize { float x1; float x2; })__ck_displaySize:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1;
+- (BOOL)__ck_displayTranscriptOrientation;
+- (void)__ck_prewarmForDisplay;
+- (BOOL)__ck_transcriptUsesTextAlignmentInsets;
+- (BOOL)__ck_wantsDrawerLayout;
+- (Class)balloonViewClass;
+- (BOOL)color;
 - (id)composeImages;
-- (void)copyToPasteboard;
+- (id)compositionRepresentation;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)detachedCopy;
+- (id)displayText;
+- (id)guid;
 - (id)highlightData;
 - (id)image;
 - (id)imageData;
 - (id)imageFilename;
-- (BOOL)isDisplayable;
+- (id)init;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isOutgoing;
+- (BOOL)isSeparateSubjectPart;
 - (id)mediaObject;
-- (int)outgoingBubbleColor;
 - (id)parentMessage;
-- (id)previewData;
+- (int)partID;
+- (id)pasteboardItems;
 - (id)previewImage;
 - (id)previewText;
-- (int)rowID;
-- (void)setOutgoingBubbleColor:(int)arg1;
+- (void)setColor:(BOOL)arg1;
 - (void)setParentMessage:(id)arg1;
-- (void)setRowID:(int)arg1;
+- (void)setPartID:(int)arg1;
 - (id)text;
 - (int)type;
 

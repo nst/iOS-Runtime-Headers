@@ -2,22 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMTransferServices.framework/IMTransferServices
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface IMTransferServicesController : NSObject {
-    NSObject<OS_xpc_object> *_connection;
 }
 
 + (id)sharedInstance;
 
-- (BOOL)_connect;
-- (BOOL)_disconnect;
-- (void)_disconnected;
-- (void)_receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 retries:(int)arg7 completionBlock:(id)arg8;
-- (void)_sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(BOOL)arg3 retries:(int)arg4 completionBlock:(id)arg5;
-- (void)dealloc;
-- (id)init;
-- (void)receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 completionBlock:(id)arg7;
-- (void)sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(BOOL)arg3 completionBlock:(id)arg4;
+- (void)_receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 retries:(int)arg7 fileSize:(unsigned long long)arg8 progressBlock:(id)arg9 completionBlock:(id)arg10;
+- (void)_sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(BOOL)arg3 retries:(int)arg4 progressBlock:(id)arg5 completionBlock:(id)arg6;
+- (void)receiveFileTransfer:(id)arg1 path:(id)arg2 requestURLString:(id)arg3 ownerID:(id)arg4 signature:(id)arg5 decryptionKey:(id)arg6 fileSize:(unsigned long long)arg7 progressBlock:(id)arg8 completionBlock:(id)arg9;
+- (void)sendFilePath:(id)arg1 transferID:(id)arg2 encryptFile:(BOOL)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
 
 @end

@@ -2,10 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSLinguisticTagger, NSMutableArray, NSMutableOrderedSet, NSString;
+@class NSArray, NSLinguisticTagger, NSMutableArray, NSMutableOrderedSet, NSString;
 
 @interface AXLanguageTaggedContent : NSObject {
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _currentChunk;
+    NSArray *_currentDialects;
     NSLinguisticTagger *_linguisticTagger;
+    BOOL _predictedByTagger;
     BOOL _tagged;
     NSMutableArray *_tags;
     NSMutableOrderedSet *_unpredictedAmbiguousLangMaps;
@@ -13,6 +19,7 @@
 }
 
 @property(readonly) NSString * content;
+@property(retain) NSArray * currentDialects;
 @property(retain) NSLinguisticTagger * linguisticTagger;
 @property(getter=isTagged) BOOL tagged;
 @property(retain) NSMutableArray * tags;
@@ -23,6 +30,7 @@
 - (void)_manuallyProcessContentWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)ambiguousLangMaps;
 - (id)content;
+- (id)currentDialects;
 - (void)dealloc;
 - (id)description;
 - (void)enumeratePredictedTags:(id)arg1;
@@ -34,6 +42,8 @@
 - (BOOL)langMapIsSignificant:(id)arg1;
 - (id)linguisticTagger;
 - (id)primaryAmbiguousDialect;
+- (id)primaryUnambiguousDialect;
+- (void)setCurrentDialects:(id)arg1;
 - (void)setLinguisticTagger:(id)arg1;
 - (void)setTagged:(BOOL)arg1;
 - (void)setTags:(id)arg1;

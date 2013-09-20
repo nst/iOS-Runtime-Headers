@@ -8,6 +8,7 @@
 }
 
 @property(readonly) unsigned int childElementCount;
+@property(copy) NSString * className;
 @property(readonly) int clientHeight;
 @property(readonly) int clientLeft;
 @property(readonly) int clientTop;
@@ -35,11 +36,12 @@
 + (id)_DOMElementFromJSContext:(struct OpaqueJSContext { }*)arg1 value:(struct OpaqueJSValue { }*)arg2;
 + (BOOL)isRichTextStyle:(id)arg1;
 
-- (struct __GSFont { }*)_font;
+- (struct __CTFont { }*)_font;
 - (id)_getURLAttribute:(id)arg1;
-- (id)_markerTextForListItem;
 - (void)blur;
 - (unsigned int)childElementCount;
+- (id)classList;
+- (id)className;
 - (int)clientHeight;
 - (int)clientLeft;
 - (int)clientTop;
@@ -70,7 +72,9 @@
 - (BOOL)isRichTextElement;
 - (BOOL)isRichTextElementType;
 - (id)lastElementChild;
+- (id)mf_computedBackgroundColor;
 - (id)mf_containingQuoteBlockElement;
+- (BOOL)mf_hasBackgroundColorOrImage;
 - (BOOL)mf_isContainedInAnyElementInSet:(id)arg1;
 - (BOOL)mf_isContainedInQuoteBlock;
 - (BOOL)mf_isContainedInTable;
@@ -86,6 +90,7 @@
 - (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;
 - (void)recursivelyRemoveMailAttributes;
+- (void)remove;
 - (void)removeAttribute:(id)arg1;
 - (void)removeAttributeNS:(id)arg1 :(id)arg2;
 - (void)removeAttributeNS:(id)arg1 localName:(id)arg2;
@@ -105,6 +110,7 @@
 - (void)setAttributeNS:(id)arg1 qualifiedName:(id)arg2 value:(id)arg3;
 - (id)setAttributeNode:(id)arg1;
 - (id)setAttributeNodeNS:(id)arg1;
+- (void)setClassName:(id)arg1;
 - (void)setScrollLeft:(int)arg1;
 - (void)setScrollTop:(int)arg1;
 - (int)structuralComplexityContribution;
@@ -113,6 +119,6 @@
 - (id)tapHighlightColor;
 - (BOOL)touchCalloutEnabled;
 - (BOOL)webkitMatchesSelector:(id)arg1;
-- (id)webkitRegionOverflow;
+- (id)webkitRegionOverset;
 
 @end

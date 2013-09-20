@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PDAnimateRotateBehavior : PDCommonBehaviorData {
+@interface PDAnimateRotateBehavior : PDAnimateBehavior {
     double mBy;
     double mFrom;
     double mTo;

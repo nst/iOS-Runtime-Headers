@@ -2,27 +2,26 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSLock, NSObject<OS_dispatch_queue>, NSString;
+@class NSConditionLock, NSString;
 
 @interface MFCountryConfiguration : NSObject {
     NSString *_countryCode;
-    NSLock *_countryCodeLock;
-    BOOL _isUpdating;
-    id _networkObserver;
-    NSString *_oldCountryCode;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSConditionLock *_generatorLock;
+    NSString *_lastCountryCode;
+    int _lock;
 }
 
-@property(copy) NSString * countryCode;
+@property(readonly) NSString * countryCode;
 
 + (id)sharedConfiguration;
 
-- (void)_checkCountryCode;
-- (void)_useCountryCode:(id)arg1;
+- (id)_cellSimCountryCode;
+- (id)_countryCodeWithGenerator:(id)arg1;
+- (id)_networkCountryCode;
 - (id)countryCode;
 - (void)dealloc;
 - (id)init;
-- (void)setCountryCode:(id)arg1;
+- (void)invalidate;
 - (void)updateCurrentCountry;
 
 @end

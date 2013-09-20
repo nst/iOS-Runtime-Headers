@@ -7,19 +7,23 @@
 @interface SBAlertItem : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alertSheet;
     BOOL _allowInSetup;
+    BOOL _allowInStark;
     NSArray *_allowedBundleIDs;
     BOOL _didEverActivate;
     BOOL _didPlayPresentationSound;
     BOOL _ignoreIfAlreadyDisplaying;
     BOOL _orderOverSBAlert;
     BOOL _pendInSetupIfNotAllowed;
+    BOOL _pendWhileKeyBagLocked;
     BOOL _preventLockOver;
 }
 
 @property BOOL allowInSetup;
+@property BOOL allowInStark;
 @property(retain) NSArray * allowedBundleIDs;
 @property BOOL ignoreIfAlreadyDisplaying;
 @property BOOL pendInSetupIfNotAllowed;
+@property BOOL pendWhileKeyBagLocked;
 
 + (id)_alertItemsController;
 + (void)activateAlertItem:(id)arg1;
@@ -35,6 +39,7 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowAutoUnlock;
 - (BOOL)allowInSetup;
+- (BOOL)allowInStark;
 - (BOOL)allowMenuButtonDismissal;
 - (id)allowedBundleIDs;
 - (double)autoDismissInterval;
@@ -51,33 +56,39 @@
 - (void)dismiss;
 - (BOOL)dismissOnLock;
 - (BOOL)dismissOnModalDisplayActivation;
+- (BOOL)displayActionButtonOnLockScreen;
 - (BOOL)forcesModalAlertAppearance;
 - (BOOL)hasActiveKeyboardOnScreen;
 - (BOOL)ignoreIfAlreadyDisplaying;
 - (id)init;
 - (BOOL)isCriticalAlert;
 - (id)lockLabel;
-- (float)lockLabelFontSize;
 - (void)noteVolumeOrLockPressed;
 - (BOOL)pendInSetupIfNotAllowed;
+- (BOOL)pendWhileKeyBagLocked;
 - (void)performUnlockAction;
 - (void)playPresentationSound;
+- (id)prepareNewAlertSheetWithLockedState:(BOOL)arg1 requirePasscodeForActions:(BOOL)arg2;
 - (BOOL)preventInterruption;
 - (BOOL)preventLockOver;
 - (BOOL)reappearsAfterLock;
 - (BOOL)reappearsAfterUnlock;
 - (void)screenWillUndim;
 - (void)setAllowInSetup:(BOOL)arg1;
+- (void)setAllowInStark:(BOOL)arg1;
 - (void)setAllowedBundleIDs:(id)arg1;
 - (void)setIgnoreIfAlreadyDisplaying:(BOOL)arg1;
 - (void)setOrderOverSBAlert:(BOOL)arg1;
 - (void)setPendInSetupIfNotAllowed:(BOOL)arg1;
+- (void)setPendWhileKeyBagLocked:(BOOL)arg1;
 - (void)setPreventLockOver:(BOOL)arg1;
 - (id)shortLockLabel;
 - (BOOL)shouldShowInEmergencyCall;
 - (BOOL)shouldShowInLockScreen;
+- (id)sound;
 - (BOOL)togglesMediaControls;
 - (BOOL)undimsScreen;
+- (int)unlockSource;
 - (BOOL)unlocksScreen;
 - (void)willActivate;
 - (void)willDeactivateForReason:(int)arg1;

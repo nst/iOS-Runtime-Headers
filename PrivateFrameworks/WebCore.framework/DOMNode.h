@@ -9,7 +9,7 @@
 
 @class <UITextInputDelegate>, <UITextInputTokenizer>, DOMDocument, DOMElement, DOMNamedNodeMap, DOMNode, DOMNodeList, NSDictionary, NSString, UIColor, UIImage, UIResponder<UITextInput>, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIView<UITextInputPrivate>;
 
-@interface DOMNode : DOMObject <DOMEventTarget, UIKeyboardInput, UIKeyInput, UITextInputTokenizer, UIWebSelectionBlock, UITextInput_Internal> {
+@interface DOMNode : DOMObject <DOMEventTarget, UIKeyboardInput, UITextInputPrivate, UIKeyInput, UITextInputTokenizer, UIWebSelectionBlock, UITextInput_Internal> {
 }
 
 @property(getter=_proxyTextInput,readonly) UIResponder<UITextInput> * __content;
@@ -28,6 +28,7 @@
 @property BOOL displaySecureTextUsingPlainText;
 @property int emptyContentReturnKeyType;
 @property BOOL enablesReturnKeyAutomatically;
+@property BOOL enablesReturnKeyOnNonWhiteSpaceContent;
 @property(readonly) UITextPosition * endOfDocument;
 @property(readonly) DOMNode * firstChild;
 @property BOOL forceEnableDictation;
@@ -36,6 +37,7 @@
 @property unsigned int insertionPointWidth;
 @property(readonly) UITextInteractionAssistant * interactionAssistant;
 @property(readonly) BOOL isContentEditable;
+@property BOOL isSingleLineDocument;
 @property int keyboardAppearance;
 @property int keyboardType;
 @property(readonly) DOMNode * lastChild;
@@ -43,6 +45,7 @@
 @property(readonly) NSString * localName;
 @property(readonly) UITextRange * markedTextRange;
 @property(copy) NSDictionary * markedTextStyle;
+@property(readonly) BOOL mf_isAttachment;
 @property(readonly) BOOL mf_isBody;
 @property(readonly) NSString * namespaceURI;
 @property(readonly) DOMNode * nextSibling;
@@ -75,7 +78,9 @@
 @property(readonly) <UITextInputTokenizer> * tokenizer;
 @property BOOL useInterfaceLanguageForLocalization;
 
-- (struct Element { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; int (**x3)(); struct ContainerNode {} *x4; int x5; unsigned int x6; struct Document {} *x7; struct Node {} *x8; struct Node {} *x9; struct RenderObject {} *x10; struct Node {} *x11; struct Node {} *x12; struct QualifiedName { struct QualifiedNameImpl {} *x_13_1_1; } x13; struct OwnPtr<WebCore::ElementAttributeData> { struct ElementAttributeData {} *x_14_1_1; } x14; }*)_linkElement;
++ (id)_nodeFromJSWrapper:(struct OpaqueJSValue { }*)arg1;
+
+- (struct Element { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; int x3; unsigned int x4; struct ContainerNode {} *x5; struct TreeScope {} *x6; struct Node {} *x7; struct Node {} *x8; union DataUnion { struct RenderObject {} *x_9_1_1; struct NodeRareDataBase {} *x_9_1_2; } x9; struct Node {} *x10; struct Node {} *x11; struct QualifiedName { struct QualifiedNameImpl {} *x_12_1_1; } x12; struct RefPtr<WebCore::ElementData> { struct ElementData {} *x_13_1_1; } x13; }*)_linkElement;
 - (void)_accessoryClear;
 - (unsigned long)_characterAfterCaretSelection;
 - (unsigned long)_characterBeforeCaretSelection;
@@ -87,6 +92,7 @@
 - (void)_deleteForwardAndNotify:(BOOL)arg1;
 - (void)_deleteToEndOfLine;
 - (void)_deleteToStartOfLine;
+- (void)_expandSelectionToBackwardDeletionCluster;
 - (void)_expandSelectionToStartOfWordBeforeCaretSelection;
 - (void)_expandSelectionToStartOfWordsBeforeCaretSelection:(int)arg1;
 - (void)_extendCurrentSelection:(int)arg1;
@@ -100,7 +106,6 @@
 - (BOOL)_isEmptySelection;
 - (id)_keyInput;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_markedTextNSRange;
 - (void)_moveCurrentSelection:(int)arg1;
 - (id)_moveDown:(BOOL)arg1 withHistory:(id)arg2;
 - (id)_moveLeft:(BOOL)arg1 withHistory:(id)arg2;
@@ -118,12 +123,14 @@
 - (id)_nextAssistedNode;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_nsrangeForTextRange:(id)arg1;
 - (void)_phraseBoundaryGesture:(id)arg1;
+- (id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2;
 - (id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4;
 - (id)_previousAssistedNode;
 - (id)_proxyTextInput;
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (id)_rangeOfLineEnclosingPosition:(id)arg1;
 - (id)_rangeOfParagraphEnclosingPosition:(id)arg1;
+- (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
 - (id)_realNode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_renderRect:(bool*)arg1;
 - (void)_replaceCurrentWordWithText:(id)arg1;
@@ -131,9 +138,10 @@
 - (BOOL)_requiresInputView;
 - (struct RootObject { }*)_rootObject;
 - (void)_scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (void)_selectAll;
 - (id)_selectableText;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedNSRange;
 - (int)_selectionAffinity;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_selectionAsNSRange;
 - (BOOL)_selectionAtDocumentEnd;
 - (BOOL)_selectionAtDocumentStart;
 - (BOOL)_selectionAtWordStart;
@@ -146,7 +154,6 @@
 - (id)_setSelectionRangeWithHistory:(id)arg1;
 - (void)_startAssistingDocumentView:(id)arg1;
 - (void)_stopAssistingDocumentView:(id)arg1;
-- (id)_subresourceURLs;
 - (BOOL)_supportsAccessoryClear;
 - (BOOL)_supportsAutoFill;
 - (id)_textColorForCaretSelection;
@@ -185,11 +192,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
 - (unsigned short)characterAfterCaretSelection;
-- (unsigned short)characterBeforeCaretSelection;
 - (unsigned short)characterInRelationToCaretSelection:(int)arg1;
 - (id)characterRangeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (id)childNodes;
+- (void)clearMarkedText;
 - (id)cloneNode:(BOOL)arg1;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -225,7 +232,6 @@
 - (id)endOfDocument;
 - (id)endPosition;
 - (void)endSelectionChange;
-- (void)expandSelectionToStartOfWordContainingCaretSelection;
 - (void)extendCurrentSelection:(int)arg1;
 - (void)finalize;
 - (id)findExplodedTextNodeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -286,7 +292,6 @@
 - (id)localName;
 - (id)lookupNamespaceURI:(id)arg1;
 - (id)lookupPrefix:(id)arg1;
-- (id)markedText;
 - (id)markedTextRange;
 - (id)markedTextStyle;
 - (id)markupString;
@@ -305,6 +310,7 @@
 - (id)mf_highestContainingBlockQuote;
 - (BOOL)mf_isAtBeginningOfContainerNode:(id)arg1;
 - (BOOL)mf_isAtEndOfContainerNode:(id)arg1;
+- (BOOL)mf_isAttachment;
 - (BOOL)mf_isBody;
 - (BOOL)mf_isDescendantOfNode:(id)arg1;
 - (BOOL)mf_isQuoteOrWithinQuote;
@@ -315,16 +321,13 @@
 - (id)mf_traverseNextNodeStayingWithin:(id)arg1;
 - (id)mf_traverseNextSiblingStayingWithin:(id)arg1;
 - (id)mf_traversePreviousNode;
-- (void)moveBackward:(unsigned int)arg1;
 - (void)moveDown;
-- (void)moveForward:(unsigned int)arg1;
 - (void)moveLeft;
 - (void)moveRight;
 - (void)moveUp;
 - (id)namespaceURI;
 - (id)nextFocusNode;
 - (id)nextSibling;
-- (id)nextUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (BOOL)nodeCanBecomeFirstResponder;
 - (id)nodeName;
 - (unsigned short)nodeType;
@@ -343,7 +346,6 @@
 - (id)prefix;
 - (id)previousFocusNode;
 - (id)previousSibling;
-- (id)previousUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (id)rangeByExtendingCurrentSelection:(int)arg1;
 - (id)rangeByMovingCurrentSelection:(int)arg1;
 - (id)rangeEnclosingPosition:(id)arg1 withGranularity:(int)arg2 inDirection:(int)arg3;
@@ -351,8 +353,6 @@
 - (id)rangeOfContents;
 - (id)rangeOfContents;
 - (id)rangeOfEnclosingWord:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)rectsForNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)recursivelyRemoveMailAttributes;
 - (id)removeChild:(id)arg1;
@@ -365,13 +365,11 @@
 - (void)replaceCurrentWordWithText:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2 closeTyping:(BOOL)arg3;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
-- (void)replaceRangeWithText:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (BOOL)requiresKeyEvents;
 - (int)returnKeyType;
 - (void)selectAll;
 - (BOOL)selectable;
-- (id)selectedDOMRange;
 - (id)selectedTextRange;
 - (int)selectionAffinity;
 - (BOOL)selectionAtDocumentStart;
@@ -386,13 +384,11 @@
 - (void)setInitialSelectionBehavior:(int)arg1;
 - (void)setInputDelegate:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)setMarkedText:(id)arg1;
 - (void)setMarkedTextStyle:(id)arg1;
 - (void)setNodeValue:(id)arg1;
 - (void)setPrefix:(id)arg1;
 - (void)setReturnKeyType:(int)arg1;
 - (void)setSecure:(BOOL)arg1;
-- (void)setSelectedDOMRange:(id)arg1 affinityDownstream:(BOOL)arg2;
 - (void)setSelectedTextRange:(id)arg1 withAffinityDownstream:(BOOL)arg2;
 - (void)setSelectedTextRange:(id)arg1;
 - (void)setSelectionAffinity:(int)arg1;
@@ -435,8 +431,6 @@
 - (id)webArchive;
 - (id)webArchiveByFilteringSubframes:(id)arg1;
 - (id)webFrame;
-- (id)wordContainingCaretSelection;
 - (int)wordOffsetInRange:(id)arg1;
-- (id)wordRangeContainingCaretSelection;
 
 @end

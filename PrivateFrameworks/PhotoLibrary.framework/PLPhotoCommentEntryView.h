@@ -2,29 +2,32 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLCommentTextView, UIButton, UILabel, UIScrollView, UIView;
+@class <PLPhotoCommentEntryViewDelegate>, UIButton, UILabel, UITextView;
 
-@interface PLPhotoCommentEntryView : UIView {
+@interface PLPhotoCommentEntryView : UIView <UITextViewDelegate> {
+    <PLPhotoCommentEntryViewDelegate> *_delegate;
     UILabel *_placeholderLabel;
     UIButton *_postButton;
-    UIScrollView *_scrollview;
-    UIView *_styledSeparatorView;
-    PLCommentTextView *_textView;
+    UITextView *_textView;
     UILabel *placeholderLabel;
 }
 
+@property <PLPhotoCommentEntryViewDelegate> * delegate;
 @property(readonly) UILabel * placeholderLabel;
 @property(readonly) UIButton * postButton;
-@property(readonly) PLCommentTextView * textView;
+@property(readonly) UITextView * textView;
 
-- (void)adjustButtonPosition;
+- (void)clearText;
 - (void)dealloc;
-- (float)heightForTextContentHeight:(float)arg1 orientation:(int)arg2;
+- (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)placeholderLabel;
 - (id)postButton;
-- (float)preferredHeightForOrientation:(int)arg1;
+- (float)preferredHeight;
+- (void)setDelegate:(id)arg1;
 - (id)textView;
+- (void)textViewDidChange:(id)arg1;
+- (id)trimmedText;
 
 @end

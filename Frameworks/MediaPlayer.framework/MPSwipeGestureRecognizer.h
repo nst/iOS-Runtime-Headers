@@ -16,6 +16,7 @@
 
 @property(readonly) int swipeDirection;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)reset;

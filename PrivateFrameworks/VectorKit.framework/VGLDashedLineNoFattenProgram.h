@@ -9,11 +9,12 @@
 
 @property float distanceMultiplier;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
 - (float)distanceMultiplier;
-- (id)init;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDistanceMultiplier:(float)arg1;
+- (void)setup;
 
 @end

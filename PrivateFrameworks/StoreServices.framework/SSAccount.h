@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSLock, NSNumber, NSString;
+@class NSData, NSLock, NSNumber, NSString;
 
 @interface SSAccount : NSObject <SSXPCCoding, NSCopying> {
     int _accountKind;
@@ -12,10 +12,13 @@
     BOOL _active;
     BOOL _activeLockerAccount;
     int _availableServiceTypes;
+    NSData *_bioToken;
     NSString *_creditsString;
     BOOL _demo;
+    BOOL _didFallbackToPassword;
     int _enabledServiceTypes;
     NSLock *_lock;
+    BOOL _newCustomer;
     NSString *_secureToken;
     NSString *_storeFrontID;
     NSNumber *_uniqueIdentifier;
@@ -32,12 +35,14 @@
 @property(copy) NSString * creditsString;
 @property(getter=isDemoAccount) BOOL demoAccount;
 @property int enabledServiceTypes;
+@property(getter=isNewCustomer) BOOL newCustomer;
 @property(copy) NSString * secureToken;
 @property(getter=isSocialEnabled) BOOL socialEnabled;
 @property(copy) NSString * storeFrontIdentifier;
 @property(retain) NSNumber * uniqueIdentifier;
 
 - (void)_sendBlockingXPCMessage:(id)arg1;
+- (void)acceptTermsAndConditions:(id)arg1 withCompletionBlock:(id)arg2;
 - (int)accountKind;
 - (id)accountName;
 - (int)accountScope;
@@ -51,9 +56,12 @@
 - (id)creditsString;
 - (void)dealloc;
 - (id)description;
+- (BOOL)didFallbackToPassword;
 - (int)enabledServiceTypes;
 - (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
 - (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id)arg2;
+- (void)getTermsAndConditionsWithBlock:(id)arg1;
+- (unsigned int)hash;
 - (id)init;
 - (id)initDemoAccount;
 - (id)initWithXPCEncoding:(id)arg1;
@@ -61,8 +69,11 @@
 - (BOOL)isActiveLockerAccount;
 - (BOOL)isAuthenticated;
 - (BOOL)isDemoAccount;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isNewCustomer;
 - (BOOL)isSocialEnabled;
 - (BOOL)mergeValuesFromAccount:(id)arg1;
+- (id)popBiometricToken;
 - (void)removeAvailableServiceTypes:(int)arg1;
 - (void)removeEnabledServiceTypes:(int)arg1;
 - (void)resetTransientData;
@@ -74,10 +85,13 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setActiveLockerAccount:(BOOL)arg1;
 - (void)setAvailableServiceTypes:(int)arg1;
+- (void)setBiometricToken:(id)arg1;
 - (void)setCreditsString:(id)arg1;
 - (void)setDemoAccount:(BOOL)arg1;
+- (void)setDidFallbackToPassword:(BOOL)arg1;
 - (void)setEnabledServiceTypes:(int)arg1;
 - (void)setLockdownDictionary:(id)arg1;
+- (void)setNewCustomer:(BOOL)arg1;
 - (void)setSecureToken:(id)arg1;
 - (void)setSocialEnabled:(BOOL)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;

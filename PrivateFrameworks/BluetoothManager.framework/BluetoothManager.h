@@ -47,9 +47,7 @@
 - (void)connectDevice:(id)arg1;
 - (BOOL)connectable;
 - (BOOL)connected;
-- (id)connectedDevices:(BOOL)arg1;
 - (id)connectedDevices;
-- (id)connectedLEDevices;
 - (id)connectingDevices;
 - (void)dealloc;
 - (BOOL)devicePairingEnabled;
@@ -64,9 +62,7 @@
 - (BOOL)isDiscoverable;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
 - (int)localDeviceSupportsService:(unsigned int)arg1;
-- (id)pairedDevices:(BOOL)arg1;
 - (id)pairedDevices;
-- (id)pairedLEDevices;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 error:(id)arg3;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;

@@ -2,44 +2,65 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <AceContext>, NSMutableDictionary;
+@class NSData, NSMutableDictionary, NSString;
 
 @interface AceObject : NSObject <AceObject> {
-    <AceContext> *_context;
+    NSString *_aceId;
     NSMutableDictionary *_dict;
+    NSData *_plistData;
+    NSString *_refId;
 }
 
+@property(copy) NSString * aceId;
+@property(readonly) NSMutableDictionary * dict;
+@property(readonly) NSData * plistData;
+@property(copy) NSString * refId;
+
 + (id)_aceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
-+ (id)_newAceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
++ (id)_newAceObjectWithMutableDictionary:(id)arg1;
 + (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseClass:(Class)arg2 context:(id)arg3;
 + (id)aceObjectArrayWithDictionaryArray:(id)arg1 baseProtocol:(id)arg2 context:(id)arg3;
 + (id)aceObjectDictionaryWithDictionary:(id)arg1 baseClass:(Class)arg2 context:(id)arg3;
 + (id)aceObjectDictionaryWithDictionary:(id)arg1 baseProtocol:(id)arg2 context:(id)arg3;
 + (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)aceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithPlistData:(id)arg1;
 + (id)dictionaryArrayWithAceObjectArray:(id)arg1;
 + (id)dictionaryWithAceObjectDictionary:(id)arg1;
 + (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(int)arg3 withPrefixes:(id)arg4;
-- (id)_initWithMutableDictionary:(id)arg1 context:(id)arg2;
-- (id)context;
+- (void)_deserializeFromPlistData;
+- (id)_dict;
+- (id)_initWithMutableDictionary:(id)arg1;
+- (id)_initWithPlistData:(id)arg1 aceId:(id)arg2 refId:(id)arg3;
+- (id)aceId;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dict;
 - (id)dictionary;
+- (void)encodeWithCoder:(id)arg1;
 - (id)encodedClassName;
+- (void)forceEagerDeserialization;
 - (id)groupIdentifier;
+- (BOOL)hasArrayForPropertyForKey:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)plistData;
 - (id)properties;
 - (id)propertyForKey:(id)arg1;
+- (id)refId;
+- (void)setAceId:(id)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)setRefId:(id)arg1;
 - (void)setTopLevelProperty:(id)arg1 forKey:(id)arg2;
 - (id)topLevelPropertyForKey:(id)arg1;
 

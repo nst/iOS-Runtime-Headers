@@ -4,7 +4,7 @@
 
 @class NSMutableOrderedSet, NSString;
 
-@interface PLAggregateAlbumList : NSObject <PLAlbumListChangeObserver, PLAlbumContainer> {
+@interface PLAggregateAlbumList : NSObject <PLAssetContainerListChangeObserver, PLAlbumContainer> {
     NSMutableOrderedSet *_allAlbums;
     NSMutableOrderedSet *_childAlbumLists;
     int _filter;
@@ -12,7 +12,9 @@
 
 @property(readonly) NSString * _prettyDescription;
 @property(readonly) NSString * _typeDescription;
+@property(readonly) unsigned int albumsCount;
 @property(readonly) id albumsSortingComparator;
+@property(readonly) unsigned int containersCount;
 @property int filter;
 @property(readonly) unsigned int unreadAlbumsCount;
 
@@ -22,16 +24,22 @@
 - (id)_prettyDescription;
 - (id)_typeDescription;
 - (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
-- (void)albumListDidChange:(id)arg1;
 - (int)albumListType;
 - (id)albums;
+- (unsigned int)albumsCount;
 - (id)albumsSortingComparator;
+- (void)assetContainerListDidChange:(id)arg1;
 - (BOOL)canEditAlbums;
+- (BOOL)canEditContainers;
+- (id)containers;
+- (unsigned int)containersCount;
+- (id)containersRelationshipName;
 - (void)dealloc;
 - (int)filter;
 - (BOOL)hasAtLeastOneAlbum;
 - (id)identifier;
 - (id)initWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
+- (BOOL)isEmpty;
 - (id)managedObjectContext;
 - (BOOL)needsReordering;
 - (id)photoLibrary;

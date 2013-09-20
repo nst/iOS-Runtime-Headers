@@ -4,7 +4,7 @@
 
 @class <SBUIPluginControllerHost>;
 
-@interface SBUIPluginController : NSObject <SBPluginBundleController, SBUIPluginViewController> {
+@interface SBUIPluginController : NSObject <SBPluginBundleController> {
     <SBUIPluginControllerHost> *_host;
     BOOL _isVisible;
 }
@@ -12,9 +12,7 @@
 @property <SBUIPluginControllerHost> * host;
 @property(getter=isVisible) BOOL visible;
 
-- (void)_postVisibilityDidChangeNotification;
 - (void)cancelPendingActivationEvent:(int)arg1;
-- (struct CGSize { float x1; float x2; })desiredSizeForRevealMode:(int)arg1;
 - (BOOL)handleActivationEvent:(int)arg1 context:(void*)arg2;
 - (void)handleBluetoothDismissal;
 - (BOOL)handledMenuButtonDownEvent;
@@ -29,14 +27,7 @@
 - (void)setHost:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (BOOL)supportedAndEnabled;
-- (id)view;
-- (void)viewDidAppear;
-- (void)viewDidDisappear;
-- (void)viewDidRotateFromInterfaceOrientation:(int)arg1;
-- (void)viewWillAnimateRotationToInterfaceOrientation:(int)arg1;
-- (void)viewWillAppear;
-- (void)viewWillDisappear;
-- (void)viewWillRotateToInterfaceOrientation:(int)arg1;
+- (id)viewControllerForActivationContext:(id)arg1;
 - (BOOL)wantsActivationEvent:(int)arg1 interval:(double*)arg2;
 
 @end

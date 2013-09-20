@@ -25,8 +25,8 @@
 - (id)colorScheme;
 - (id)connectorsInCurrentDrawing;
 - (void)dealloc;
-- (id)drawingAtIndex:(unsigned int)arg1;
-- (unsigned int)drawingCount;
+- (id)drawingAtIndex:(unsigned long)arg1;
+- (unsigned long)drawingCount;
 - (id)drawingGroup;
 - (unsigned int)indexForChild:(id)arg1 parentContainer:(id)arg2;
 - (id)initWithClient:(id)arg1;

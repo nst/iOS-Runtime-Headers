@@ -81,6 +81,7 @@
 - (void)_abandonPWFetcher;
 - (void)_abandonSystemProxySettingsFetcher;
 - (void)_autoReconnectTimer:(id)arg1;
+- (void)_callMonitorStateChanged:(id)arg1;
 - (void)_clearAutoReconnectTimer;
 - (void)_clearConnectionMonitor;
 - (void)_clearDowngradeMarkersForChat:(id)arg1;
@@ -96,11 +97,12 @@
 - (void)_login_serverSettingsReady;
 - (void)_login_usernameAndPasswordReady;
 - (void)_managedPrefsNotification:(id)arg1;
-- (void)_mapRoomChatToGroupChat:(id*)arg1 style:(char *)arg2;
+- (void)_mapRoomChatToGroupChat:(id*)arg1 style:(unsigned char*)arg2;
 - (void)_markChatAsDowngraded:(id)arg1;
 - (void)_networkChanged:(id)arg1;
 - (id)_newHashForChat:(id)arg1 style:(unsigned char)arg2;
 - (void)_processConnectionMonitorUpdate;
+- (void)_processPotentialNetworkChange;
 - (void)_reconnectIfNecessary;
 - (void)_routingTimerFired;
 - (void)_setAutoReconnectTimer;
@@ -134,8 +136,10 @@
 - (id)blockList;
 - (unsigned int)blockingMode;
 - (id)broadcaster;
+- (id)broadcasterForACConferenceListeners;
 - (id)broadcasterForAVConferenceListeners;
 - (id)broadcasterForChatListeners;
+- (id)broadcasterForChatObserverListeners;
 - (id)broadcasterForListenersWithCapabilities:(unsigned int)arg1;
 - (id)broadcasterForVCConferenceListeners;
 - (id)buddyPictures;
@@ -144,7 +148,7 @@
 - (void)cancelVCRequestWithPerson:(id)arg1 properties:(id)arg2 conference:(id)arg3;
 - (id)canonicalFormOfChatRoom:(id)arg1;
 - (id)canonicalFormOfID:(id)arg1;
-- (void)canonicalizeChatIdentifier:(id*)arg1 style:(char *)arg2;
+- (void)canonicalizeChatIdentifier:(id*)arg1 style:(unsigned char*)arg2;
 - (unsigned long long)capabilities;
 - (void)changeGroup:(id)arg1 changes:(id)arg2;
 - (void)changeGroups:(id)arg1;
@@ -226,7 +230,6 @@
 - (unsigned short)proxyPort;
 - (int)proxyType;
 - (void)refreshServiceCapabilities;
-- (void)refreshVettedAliases;
 - (void)registerAccount;
 - (void)registerChat:(id)arg1 style:(unsigned char)arg2 handleInfo:(id)arg3;
 - (void)registerChat:(id)arg1 style:(unsigned char)arg2;
@@ -247,7 +250,6 @@
 - (void)sendAVMessageToPerson:(id)arg1 sessionID:(unsigned int)arg2 type:(unsigned int)arg3 userInfo:(id)arg4 conference:(id)arg5;
 - (void)sendCommand:(id)arg1 withProperties:(id)arg2 toPerson:(id)arg3;
 - (void)sendCounterProposalToPerson:(id)arg1 properties:(id)arg2 conference:(id)arg3;
-- (void)sendData:(id)arg1 toPerson:(id)arg2;
 - (void)sendFileTransfer:(id)arg1 toPerson:(id)arg2;
 - (void)sendMessage:(id)arg1 toChat:(id)arg2 style:(unsigned char)arg3;
 - (void)sendMessage:(id)arg1 toChatID:(id)arg2 identifier:(id)arg3 style:(unsigned char)arg4;

@@ -9,7 +9,7 @@
     CIImage *inputImage;
 }
 
-@property(copy) NSNumber * inputEV;
+@property(retain) NSNumber * inputEV;
 @property(retain) CIImage * inputImage;
 
 + (id)customAttributes;

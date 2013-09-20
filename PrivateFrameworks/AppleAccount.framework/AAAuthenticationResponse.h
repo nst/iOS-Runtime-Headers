@@ -9,14 +9,20 @@
     NSDictionary *_tokens;
 }
 
+@property(readonly) NSString * HSAAction;
+@property(readonly) NSString * HSAData;
 @property(readonly) NSString * authToken;
 @property(readonly) NSString * fmipToken;
+@property(readonly) NSString * mapsToken;
 @property(readonly) NSString * personID;
 
 - (void).cxx_destruct;
+- (id)HSAAction;
+- (id)HSAData;
 - (id)authToken;
 - (id)fmipToken;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
+- (id)mapsToken;
 - (id)personID;
 
 @end

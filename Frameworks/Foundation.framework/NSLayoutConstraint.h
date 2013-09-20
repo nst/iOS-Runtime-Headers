@@ -9,7 +9,6 @@
     float _constant;
     id _container;
     id _firstItem;
-    id _flange;
     unsigned long long _layoutConstraintFlags;
     float _loweredConstant;
     id _markerAndPositiveExtraVar;
@@ -32,8 +31,21 @@
 @property BOOL shouldBeArchived;
 @property(copy) NSString * symbolicConstant;
 
++ (id)_gkConstraintForView:(id)arg1 baselineAlignedUnderView:(id)arg2 offsetBy:(float)arg3;
++ (id)_gkConstraintForView:(id)arg1 centeredXInView:(id)arg2;
++ (id)_gkConstraintForView:(id)arg1 centeredYInView:(id)arg2;
++ (id)_gkConstraintForView:(id)arg1 withConstantHeight:(float)arg2;
++ (id)_gkConstraintForView:(id)arg1 withConstantWidth:(float)arg2;
++ (id)_gkConstraintForView:(id)arg1 withHeightDerivedFromView:(id)arg2 insetBy:(float)arg3;
++ (id)_gkConstraintForView:(id)arg1 withWidthDerivedFromView:(id)arg2 insetBy:(float)arg3;
++ (id)_gkConstraintsForView:(id)arg1 centeredXInView:(id)arg2 enforceMargin:(float)arg3;
++ (id)_gkConstraintsForView:(id)arg1 withinView:(id)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
++ (id)_gkConstraintsForViews:(id)arg1 alignedByAttribute:(int)arg2;
++ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5 applyOrthogonalConstraints:(BOOL)arg6;
++ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 constant:(float)arg4;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 constant:(float)arg6;
++ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constant:(float)arg7 priority:(float)arg8;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constant:(float)arg7;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 symbolicConstant:(id)arg7 theme:(id)arg8;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 symbolicConstant:(id)arg7;
@@ -41,6 +53,7 @@
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5;
 + (id)constraintsWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4;
 
+- (BOOL)_addLoweredExpression:(id)arg1 toEngine:(id)arg2 integralizationAdjustment:(float)arg3 lastLoweredConstantWasRounded:(BOOL)arg4 mutuallyExclusiveConstraints:(id*)arg5;
 - (BOOL)_addToEngine:(id)arg1 integralizationAdjustment:(float)arg2 mutuallyExclusiveConstraints:(id*)arg3;
 - (void)_addToEngine:(id)arg1;
 - (float)_allowedMagnitudeForIntegralizationAdjustment;
@@ -59,9 +72,10 @@
 - (float)_fudgeIncrement;
 - (id)_identifier;
 - (BOOL)_isFudgeable;
+- (BOOL)_isIBPrototypingLayoutConstraint;
+- (BOOL)_lowerIntoExpression:(id)arg1 reportingConstantIsRounded:(BOOL*)arg2;
 - (BOOL)_loweredConstantIsRounded;
 - (id)_loweredExpression;
-- (id)_loweredExpressionReportingConstantIsRounded:(BOOL*)arg1;
 - (void)_makeExtraVars;
 - (id)_markerAndPositiveExtraVar;
 - (id)_negativeExtraVar;
@@ -122,5 +136,6 @@
 - (void)setSymbolicConstant:(id)arg1;
 - (BOOL)shouldBeArchived;
 - (id)symbolicConstant;
+- (void)tk_removeFromContainer;
 
 @end

@@ -6,32 +6,35 @@
    See Warning(s) below.
  */
 
-@class UIPopoverController;
+@class UIPopoverController, UIViewController;
 
 @interface CKPopoverManager : NSObject <UIPopoverControllerDelegate> {
-    BOOL _dismissingPopoverForRotation;
     id _handler;
     UIPopoverController *_popoverController;
     id _presenter;
 }
 
+@property(readonly) UIViewController * currentContentController;
 @property(copy) id handler;
 @property(retain) UIPopoverController * popoverController;
 @property(copy) id presenter;
 
 + (id)sharedInstance;
 
+- (id)currentContentController;
 - (void)dealloc;
 - (void)didFinishRotating;
-- (void)dismissCurrentPopover;
+- (void)dismissCurrentPopoverAnimated:(BOOL)arg1;
 - (id)handler;
+- (BOOL)isShowingPopover;
 - (id)popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (id)presenter;
+- (void)replaceCurrentControllerWithController:(id)arg1;
+- (void)representCurrentPopover;
 - (void)setHandler:(id)arg1;
 - (void)setPopoverController:(id)arg1;
 - (void)setPresenter:(id)arg1;
-- (void)showPopover:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
-- (void)willStartRotating;
+- (void)showPopoverWithContentViewController:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
 
 @end

@@ -5,8 +5,18 @@
 @interface NSCharacterSet : NSObject <NSCopying, NSMutableCopying, NSCoding> {
 }
 
++ (id)URLFragmentAllowedCharacterSet;
++ (id)URLHostAllowedCharacterSet;
++ (id)URLPasswordAllowedCharacterSet;
++ (id)URLPathAllowedCharacterSet;
++ (id)URLQueryAllowedCharacterSet;
++ (id)URLUserAllowedCharacterSet;
++ (id)allQuotesCharacterSetExcludingLeft;
++ (id)allQuotesCharacterSetExcludingRight;
 + (id)alphanumericCharacterSet;
++ (id)breakingSpaceCharacterSet;
 + (id)capitalizedLetterCharacterSet;
++ (id)characterSetRequiringSingleQuotes;
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)characterSetWithCharactersInString:(id)arg1;
 + (id)characterSetWithContentsOfFile:(id)arg1;
@@ -14,13 +24,29 @@
 + (id)controlCharacterSet;
 + (id)decimalDigitCharacterSet;
 + (id)decomposableCharacterSet;
++ (id)dollarSignCharacterSet;
 + (id)illegalCharacterSet;
 + (void)initialize;
++ (id)internationalColonCharacterSet;
++ (id)internationalWhitespaceAndNewlineCharacterSet;
++ (id)internationalWhitespaceCharacterSet;
++ (id)invisibleCharacterSet;
 + (id)letterCharacterSet;
++ (id)lineBreakingCharacterSet;
++ (id)listDelimiterCharacterSet;
 + (id)lowercaseLetterCharacterSet;
 + (id)newlineCharacterSet;
 + (id)nonBaseCharacterSet;
++ (id)normalQuotesCharacterSet;
++ (id)periodCharacterSet;
++ (id)postSmartSet;
++ (id)preSmartSet;
 + (id)punctuationCharacterSet;
++ (id)singleQuoteCharacterSet;
++ (id)smartDoubleQuotesCharacterSet;
++ (id)smartQuotesCharacterSet;
++ (id)smartSingleQuotesCharacterSet;
++ (id)spaceCharacterSet;
 + (id)symbolCharacterSet;
 + (id)uppercaseLetterCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;

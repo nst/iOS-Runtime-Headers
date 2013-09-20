@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVAssetResourceLoaderDelegate>, AVWeakReference, NSObject<OS_dispatch_queue>;
+@class AVWeakReference, NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface AVAssetResourceLoaderInternal : NSObject {
-    <AVAssetResourceLoaderDelegate> *delegate;
+    NSMutableDictionary *contentInformationCache;
+    NSObject<OS_dispatch_queue> *contentInformationCachingQueue;
     NSObject<OS_dispatch_queue> *delegateQueue;
-    struct OpaqueFigAsset { } *figAsset;
+    NSMutableDictionary *pendingRequests;
     NSObject<OS_dispatch_queue> *stateQueue;
     AVWeakReference *weakReference;
     AVWeakReference *weakReferenceToAsset;
+    AVWeakReference *weakReferenceToDelegate;
 }
 
 @end

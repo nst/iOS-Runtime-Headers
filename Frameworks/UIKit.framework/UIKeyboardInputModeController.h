@@ -2,18 +2,19 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardInputModeControllerDelegate>, NSArray, NSMutableArray, NSString, UIKeyboardInputMode;
+@class <UIKeyboardInputModeControllerDelegate>, NSArray, NSString, UIKeyboardInputMode;
 
 @interface UIKeyboardInputModeController : NSObject {
     UIKeyboardInputMode *_currentInputMode;
     <UIKeyboardInputModeControllerDelegate> *_delegate;
+    NSString *_inputModeContextIdentifier;
     NSArray *_inputModesWithoutHardwareSupport;
-    NSMutableArray *_supportedInputModeIdentifiers;
     NSString *currentLanguage;
     NSString *currentLocale;
     NSArray *defaultInputModes;
     NSArray *defaultKeyboardInputModes;
     NSArray *defaultNormalizedInputModes;
+    NSArray *defaultRawInputModes;
     NSArray *enabledInputModes;
     NSArray *keyboardInputModes;
     NSArray *normalizedInputModes;
@@ -23,13 +24,16 @@
 @property(retain) UIKeyboardInputMode * currentInputMode;
 @property(retain) NSString * currentLanguage;
 @property(retain) NSString * currentLocale;
+@property(readonly) UIKeyboardInputMode * currentPublicInputMode;
 @property(retain) NSArray * defaultInputModes;
 @property(retain) NSArray * defaultKeyboardInputModes;
 @property(retain) NSArray * defaultNormalizedInputModes;
+@property(copy) NSArray * defaultRawInputModes;
 @property <UIKeyboardInputModeControllerDelegate> * delegate;
 @property(readonly) NSArray * enabledInputModeIdentifiers;
 @property(readonly) NSArray * enabledInputModeLanguages;
 @property(retain) NSArray * enabledInputModes;
+@property(copy) NSString * inputModeContextIdentifier;
 @property(readonly) NSArray * inputModesWithoutHardwareSupport;
 @property(retain) NSArray * keyboardInputModes;
 @property(readonly) NSArray * normalizedEnabledInputModeIdentifiers;
@@ -39,21 +43,24 @@
 + (id)sharedInputModeController;
 
 - (id)activeInputModes;
-- (void)clearCachedValues;
 - (BOOL)containsDictationSupportedInputMode;
 - (id)currentInputMode;
 - (id)currentLanguage;
 - (id)currentLocale;
+- (BOOL)currentLocaleRequiresExtendedSetup;
+- (id)currentPublicInputMode;
 - (void)dealloc;
 - (id)defaultEnabledInputModesForCurrentLocale:(BOOL)arg1;
 - (id)defaultInputModes;
 - (id)defaultKeyboardInputModes;
 - (id)defaultNormalizedInputModes;
+- (id)defaultRawInputModes;
 - (id)delegate;
 - (id)enabledInputModeIdentifiers:(BOOL)arg1;
 - (id)enabledInputModeIdentifiers;
 - (id)enabledInputModeLanguages;
 - (id)enabledInputModes;
+- (id)inputModeContextIdentifier;
 - (id)inputModeWithIdentifier:(id)arg1;
 - (id)inputModesWithoutHardwareSupport;
 - (id)keyboardInputModes;
@@ -65,12 +72,16 @@
 - (void)setDefaultInputModes:(id)arg1;
 - (void)setDefaultKeyboardInputModes:(id)arg1;
 - (void)setDefaultNormalizedInputModes:(id)arg1;
+- (void)setDefaultRawInputModes:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabledInputModes:(id)arg1;
+- (void)setInputModeContextIdentifier:(id)arg1;
 - (void)setKeyboardInputModes:(id)arg1;
 - (void)setNormalizedInputModes:(id)arg1;
 - (void)startConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)startDictationConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
+- (id)suggestedInputModesForCurrentLocale:(BOOL)arg1 fallbackToDefaultInputModes:(BOOL)arg2;
+- (id)suggestedInputModesForCurrentLocale;
 - (id)supportedInputModeIdentifiers;
 - (void)updateCurrentInputMode:(id)arg1;
 

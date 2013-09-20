@@ -10,7 +10,7 @@
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputPower;
+@property(retain) NSNumber * inputPower;
 
 + (id)customAttributes;
 

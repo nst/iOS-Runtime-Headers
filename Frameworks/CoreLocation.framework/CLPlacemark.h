@@ -4,7 +4,7 @@
 
 @class CLLocation, CLPlacemarkInternal, CLRegion, NSArray, NSDictionary, NSString;
 
-@interface CLPlacemark : NSObject <NSCopying, NSCoding> {
+@interface CLPlacemark : NSObject <NSCopying, NSSecureCoding> {
     CLPlacemarkInternal *_internal;
 }
 
@@ -24,6 +24,9 @@
 @property(readonly) NSString * subLocality;
 @property(readonly) NSString * subThoroughfare;
 @property(readonly) NSString * thoroughfare;
+
++ (id)placemarkWithPlace:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)ISOcountryCode;
 - (id)addressDictionary;

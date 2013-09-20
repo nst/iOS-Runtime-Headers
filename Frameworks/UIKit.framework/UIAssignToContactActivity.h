@@ -19,6 +19,7 @@
 - (id)_activityImage;
 - (void)_cleanup;
 - (id)_embeddedActivityViewController;
+- (void)_willPresentAsFormSheet;
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;

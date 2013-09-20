@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
-
-@interface SAMPSetState : SABaseClientBoundCommand {
+@interface SAMPSetState : SADomainCommand {
 }
 
 @property int state;
-@property(copy) NSURL * targetAppId;
 
 + (id)setState;
 + (id)setStateWithDictionary:(id)arg1 context:(id)arg2;
@@ -17,8 +14,6 @@
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setState:(int)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (int)state;
-- (id)targetAppId;
 
 @end

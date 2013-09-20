@@ -9,6 +9,7 @@
         unsigned int supportsAlarmTriggerIntervals : 1; 
         unsigned int supportsAlarmTriggerDates : 1; 
         unsigned int supportsAlarmsTriggeringAfterStartDate : 1; 
+        unsigned int snoozeAlarmRequiresDetach : 1; 
         unsigned int organizerCanSeeAttendeeStatuses : 1; 
         unsigned int inviteesCanSeeAttendeeStatuses : 1; 
         unsigned int statusesAreAccurate : 1; 
@@ -46,8 +47,8 @@
         unsigned int isFacebook : 1; 
         unsigned int recurrenceSeriesMustIncludeMoreThanFirstOccurrence : 1; 
     } _flags;
-    int _maxAlarms;
-    int _maxRecurrences;
+    int _maxAlarmsAllowed;
+    int _maxRecurrencesAllowed;
 }
 
 @property BOOL alarmTriggerIntervalConstrainedToRecurrenceInterval;
@@ -59,7 +60,7 @@
 @property BOOL deliverySourceOrExternalIDRequiredForResponse;
 @property BOOL eventAvalabilityLimited;
 @property BOOL eventDurationConstrainedToRecurrenceInterval;
-@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; } flags;
+@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; } flags;
 @property BOOL futureStartDateLimitedToOccurrenceCacheBounds;
 @property BOOL inviteesCanSeeAttendeeStatuses;
 @property BOOL isFacebook;
@@ -76,6 +77,7 @@
 @property BOOL requiresOutgoingInvitationsInDefaultCalendar;
 @property BOOL shouldCancelDeletedEvents;
 @property BOOL shouldDeclineDeletedInvitations;
+@property BOOL snoozeAlarmRequiresDetach;
 @property BOOL statusesAreAccurate;
 @property BOOL supportsAlarmProximity;
 @property BOOL supportsAlarmTriggerDates;
@@ -102,7 +104,7 @@
 - (BOOL)deliverySourceOrExternalIDRequiredForResponse;
 - (BOOL)eventAvalabilityLimited;
 - (BOOL)eventDurationConstrainedToRecurrenceInterval;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; })flags;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; })flags;
 - (BOOL)futureStartDateLimitedToOccurrenceCacheBounds;
 - (id)init;
 - (id)initWithMaxAlarms:(int)arg1 maxRecurrences:(int)arg2 constraintFlags:(unsigned long long)arg3;
@@ -128,7 +130,7 @@
 - (void)setDeliverySourceOrExternalIDRequiredForResponse:(BOOL)arg1;
 - (void)setEventAvalabilityLimited:(BOOL)arg1;
 - (void)setEventDurationConstrainedToRecurrenceInterval:(BOOL)arg1;
-- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; })arg1;
+- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; })arg1;
 - (void)setFutureStartDateLimitedToOccurrenceCacheBounds:(BOOL)arg1;
 - (void)setInviteesCanSeeAttendeeStatuses:(BOOL)arg1;
 - (void)setIsFacebook:(BOOL)arg1;
@@ -145,6 +147,7 @@
 - (void)setRequiresOutgoingInvitationsInDefaultCalendar:(BOOL)arg1;
 - (void)setShouldCancelDeletedEvents:(BOOL)arg1;
 - (void)setShouldDeclineDeletedInvitations:(BOOL)arg1;
+- (void)setSnoozeAlarmRequiresDetach:(BOOL)arg1;
 - (void)setStatusesAreAccurate:(BOOL)arg1;
 - (void)setSupportsAlarmProximity:(BOOL)arg1;
 - (void)setSupportsAlarmTriggerDates:(BOOL)arg1;
@@ -163,6 +166,7 @@
 - (void)setSupportsURLField:(BOOL)arg1;
 - (BOOL)shouldCancelDeletedEvents;
 - (BOOL)shouldDeclineDeletedInvitations;
+- (BOOL)snoozeAlarmRequiresDetach;
 - (BOOL)statusesAreAccurate;
 - (BOOL)supportsAlarmProximity;
 - (BOOL)supportsAlarmTriggerDates;

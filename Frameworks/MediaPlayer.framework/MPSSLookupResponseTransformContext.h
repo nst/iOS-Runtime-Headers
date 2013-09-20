@@ -10,8 +10,8 @@
 
 @property(retain) MPMediaItem * collectionRepresentativeItem;
 
+- (void).cxx_destruct;
 - (id)collectionRepresentativeItem;
-- (void)dealloc;
 - (id)initWithCollectionRepresentativeItem:(id)arg1;
 - (void)setCollectionRepresentativeItem:(id)arg1;
 

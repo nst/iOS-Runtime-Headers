@@ -5,16 +5,22 @@
 @class GEORequester;
 
 @interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <PBRequesterDelegate> {
+    BOOL _cancelled;
+    BOOL _isBatchRequest;
     BOOL _isForwardGeocodeRequest;
     GEORequester *_requester;
 }
 
++ (id)batchReverseGeocoderURL;
 + (id)forwardGeocoderURL;
 + (unsigned short)provider;
 + (id)providerName;
 + (id)reverseGeocoderURL;
 + (void)setUsePersistentConnection:(BOOL)arg1;
 
+- (void)_batchRequesterDidFinish:(id)arg1;
+- (void)_singleRequesterDidFinish:(id)arg1;
+- (void)batchReverseGeocode:(id)arg1 success:(id)arg2 error:(id)arg3;
 - (void)cancel;
 - (void)dealloc;
 - (void)forwardGeocode:(id)arg1 success:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;

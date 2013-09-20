@@ -14,13 +14,16 @@
     MPButton *_devicePickerButton;
     unsigned long long _disabledParts;
     MPButton *_emailButton;
+    MPButton *_fastForward15SecondsButton;
     NSMutableIndexSet *_heldParts;
     MPAVItem *_item;
+    MPButton *_likeOrBanButton;
     MPButton *_nextButton;
     MPButton *_playButton;
     MPAVController *_player;
     MPButton *_previousButton;
     BOOL _registeredForPlayerNotifications;
+    MPButton *_rewind15SecondsButton;
     MPButton *_rewind30SecondsButton;
     MPButton *_scaleButton;
     id _target;
@@ -42,16 +45,20 @@
 @property unsigned long long visibleParts;
 
 + (Class)buttonClass;
++ (BOOL)buttonImagesUseBackgroundImage;
++ (int)buttonType;
 + (unsigned long long)defaultVisibleParts;
 
+- (void).cxx_destruct;
 - (void)_alternateTypesChangedNotification:(id)arg1;
 - (void)_applyDesiredPartsWithAnimation:(BOOL)arg1;
 - (unsigned long long)_applyPossibleVisiblePartsToParts:(unsigned long long)arg1;
 - (void)_availableRoutesChangedNotification:(id)arg1;
-- (void)_handleHoldForPart:(unsigned long long)arg1;
-- (void)_handleReleaseForPart:(unsigned long long)arg1;
-- (void)_handleTapForPart:(unsigned long long)arg1;
+- (BOOL)_handleHoldForPart:(unsigned long long)arg1;
+- (BOOL)_handleReleaseForPart:(unsigned long long)arg1;
+- (BOOL)_handleTapForPart:(unsigned long long)arg1;
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
+- (void)_isLikedDidChangeNotification:(id)arg1;
 - (void)_itemChangedNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
 - (void)_reloadViewWithAnimation:(BOOL)arg1;
@@ -103,7 +110,10 @@
 - (void)setVisibleParts:(unsigned long long)arg1;
 - (BOOL)showsVolumeSliderWhenNoVolumeControlAvailable;
 - (id)target;
+- (id)tintColorForPart:(unsigned long long)arg1;
 - (void)unregisterForPlayerNotifications;
+- (void)updateVisibleButtonImages;
+- (BOOL)usesTintColorForControls;
 - (unsigned long long)visibleParts;
 
 @end

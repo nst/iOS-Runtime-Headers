@@ -15,6 +15,7 @@
 
 + (id)sharedNetworkPlayabilityMonitor;
 
+- (void).cxx_destruct;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (int)_onQueueEffectiveNetworkTypeForAverageBitrate:(double)arg1;
 - (void)adjustEffectiveNetworkTypeUsingPreviouslyPlayedItem:(id)arg1;

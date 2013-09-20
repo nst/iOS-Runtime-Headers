@@ -10,6 +10,7 @@
     NSDate *_accountTokenDate;
     NSString *_accountYouTubeName;
     NSString *_authURLBase;
+    NSString *_clientUUID;
     NSString *_password;
     NSMutableData *_responseData;
     NSHTTPURLResponse *_urlResponse;
@@ -27,6 +28,7 @@
 - (id)_authRequestForAccount:(id)arg1 password:(id)arg2;
 - (id)_authRequestWithURL:(id)arg1;
 - (void)_clearURLResponseInfo;
+- (id)_clientUUID;
 - (void)_getNewTokenForAccount:(id)arg1 password:(id)arg2;
 - (BOOL)_isTokenExpired:(id)arg1;
 - (id)_passwordFromKeychain;

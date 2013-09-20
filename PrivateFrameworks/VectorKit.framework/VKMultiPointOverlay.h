@@ -13,21 +13,22 @@
     GEOMapRegion *_boundingMapRegion;
     } _bounds;
     unsigned int _pointCount;
-    struct { float x1; float x2; } *_points;
+    struct Vec2Imp<float> { float x1; float x2; } *_points;
 }
 
 @property(readonly) GEOMapRegion * boundingMapRegion;
 @property(readonly) struct { double x1; double x2; double x3; double x4; } bounds;
 @property(readonly) struct { double x1; double x2; } coordinate;
 @property(readonly) unsigned int pointCount;
-@property(readonly) struct { float x1; float x2; }* points;
+@property(readonly) struct Vec2Imp<float> { float x1; float x2; }* points;
 
+- (id).cxx_construct;
 - (void)_setCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (id)boundingMapRegion;
 - (struct { double x1; double x2; double x3; double x4; })bounds;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (unsigned int)pointCount;
-- (struct { float x1; float x2; }*)points;
+- (struct Vec2Imp<float> { float x1; float x2; }*)points;
 
 @end

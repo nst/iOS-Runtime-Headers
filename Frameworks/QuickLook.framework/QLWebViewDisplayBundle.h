@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSData, NSMutableArray, NSURLRequest, QLPDFHanderDelegateForwarder, QLPreviewConverter, QLScrubView, UIWebView;
+@class NSData, NSMutableArray, NSURLRequest, QLPDFHanderDelegateForwarder, QLPreviewConverter, QLScrubView, UIView, UIWebView;
 
 @interface QLWebViewDisplayBundle : QLDisplayBundle <UIWebViewDelegate, UIScrollViewDelegate, QLScrubViewDataSource, UIWebPDFViewHandlerDelegate> {
     unsigned int _isLoadedDuringZoom : 1;
@@ -14,12 +14,13 @@
     unsigned int _isRTFContent : 1;
     unsigned int _isCSVContent : 1;
     unsigned int _loadStarted : 1;
+    UIView *_accessoryView;
     float _defaultZoom;
     QLPDFHanderDelegateForwarder *_forwarder;
     NSMutableArray *_htmlSlideNodes;
     BOOL _inScroll;
     int _lastPage;
-    float _navigationBarHeight;
+    float _navigationBarVerticalOffset;
     NSData *_pdfPreviewData;
     QLPreviewConverter *_previewConverter;
     NSURLRequest *_previewRequest;
@@ -28,8 +29,6 @@
     BOOL _webViewReadyForThumbnailing;
 }
 
-+ (int)backgroundTypeForUTI:(id)arg1 andMode:(int)arg2;
-
 - (id)_copyPreviewConverterForPreviewItem:(id)arg1;
 - (struct CGPDFDocument { }*)_getCGPDFDocumentRef;
 - (id)_getWebView:(BOOL)arg1;
@@ -37,17 +36,19 @@
 - (void)_hideScrubberIfNeeded:(double)arg1;
 - (id)_htmlPageXPath;
 - (id)_htmlSlideNodes;
-- (id)_scrubView;
+- (id)_scrubView:(BOOL)arg1;
 - (void)_showScrubberIfNeeded:(double)arg1;
 - (void)_tearDownWebView;
+- (void)_updateContentOffsetAnimated:(BOOL)arg1;
 - (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
+- (int)airPlayMode;
 - (id)alertViewForUIWebPDFViewHandler:(id)arg1;
 - (void)cancelLoad;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrameWithoutOverlay;
 - (unsigned int)currentPageNumber;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (id)gestureRecognizersForFullScreenDisplay;
 - (void)loadWithHints:(id)arg1;
 - (int)numberOfPagesInScrubView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
@@ -62,6 +63,7 @@
 - (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })scrubView:(id)arg1 pageSizeAtIndex:(unsigned int)arg2;
 - (id)scrubView:(id)arg1 thumbnailOperationForPageAtIndex:(unsigned int)arg2;
+- (void)setNavigationBarVerticalOffset:(float)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewItem:(id)arg1;
 - (void)setPreviewMode:(int)arg1;
@@ -72,6 +74,8 @@
 - (id)uiWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 - (void)userInteractedWithScrubView:(id)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;

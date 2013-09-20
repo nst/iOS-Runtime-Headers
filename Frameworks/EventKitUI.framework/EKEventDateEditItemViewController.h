@@ -2,42 +2,32 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKPickerTableView, NSTimeZone;
+@class EKPickerTableView, NSDateComponents, NSTimeZone;
 
-@interface EKEventDateEditItemViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKCellShortener, EKTimeZoneViewControllerDelegate> {
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    unsigned int _showsAllDaySwitch : 1;
-    unsigned int _changingDate : 1;
-    unsigned int _switchChanging : 1;
-    unsigned int _endTimeWasMessedUp : 1;
-    unsigned int _dontAnimateDateChange : 1;
+@interface EKEventDateEditItemViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate, EKCellShortener, EKTimeZoneViewControllerDelegate, EKPickerTableViewDelegate> {
     BOOL _allDay;
+    BOOL _changingDate;
     EKPickerTableView *_contentView;
-    } _endGr;
-    int _lastSelectedRow;
+    BOOL _dontAnimateDateChange;
+    NSDateComponents *_endComponents;
+    BOOL _endTimeWasMessedUp;
+    unsigned int _lastSelectedRow;
     int _shorteningStatus;
+    BOOL _showsAllDaySwitch;
     BOOL _showsTimeZone;
-    } _startGr;
+    NSDateComponents *_startComponents;
+    BOOL _switchChanging;
     NSTimeZone *_timeZone;
 }
 
+@property(getter=isAllDay) BOOL allDay;
+@property(copy) NSDateComponents * endDate;
 @property BOOL showsAllDaySwitch;
 @property BOOL showsTimeZone;
+@property(copy) NSDateComponents * startDate;
 @property(copy) NSTimeZone * timeZone;
 
+- (void).cxx_destruct;
 - (void)_allDayChanged:(id)arg1;
 - (int)_allDayRow;
 - (BOOL)_cellShouldUseShortDate:(id)arg1;
@@ -58,22 +48,23 @@
 - (BOOL)calendarPreferencesTable:(id)arg1 canSelectRow:(int)arg2 inGroup:(int)arg3;
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDate;
+- (id)endDate;
 - (BOOL)fitsPopoverWhenKeyboardActive;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAllDay;
 - (void)loadView;
 - (id)navigationTitle;
+- (void)pickerTableViewDidChangeDatePickerInterval:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
-- (void)setEndDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setEndDate:(id)arg1;
 - (void)setShowsAllDaySwitch:(BOOL)arg1;
 - (void)setShowsTimeZone:(BOOL)arg1;
-- (void)setStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setStartDate:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)shortenCell:(id)arg1;
 - (BOOL)showsAllDaySwitch;
 - (BOOL)showsTimeZone;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDate;
+- (id)startDate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
@@ -85,7 +76,6 @@
 - (void)timeZoneViewControllerDidCancel:(id)arg1;
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

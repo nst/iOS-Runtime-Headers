@@ -31,7 +31,7 @@
     id *_cachedObsInfoByEntity;
     int _cd_rc;
     NSMutableSet *_changedObjects;
-    id _childObjectStores;
+    id _childIDMappings;
     id *_debuggingRecords;
     id _delegate;
     NSMutableSet *_deletedObjects;
@@ -50,8 +50,8 @@
     id _parentObjectStore;
     id _referenceQueue;
     NSMutableSet *_refreshedObjects;
-    id _reserved2;
     int _spinLock;
+    id _tombstonedIDs;
     NSUndoManager *_undoManager;
     short _undoTransactionID;
     NSMutableSet *_unprocessedChanges;
@@ -69,6 +69,7 @@
 - (BOOL)_attemptCoalesceChangesForFetch;
 - (unsigned int)_batchRetainedObjects:(id*)arg1 forCount:(unsigned int)arg2 withIDs:(id*)arg3 optionalHandler:(id)arg4 withInlineStorage:(BOOL)arg5;
 - (void)_changeIDsForManagedObjects:(id)arg1 toIDs:(id)arg2;
+- (BOOL)_checkObjectForExistenceAndCacheRow:(id)arg1;
 - (void)_clearChangedThisTransaction:(id)arg1;
 - (void)_clearDeletions;
 - (void)_clearInsertions;
@@ -99,6 +100,7 @@
 - (void)_enqueueEndOfEventNotification;
 - (void)_establishEventSnapshotsForObject:(id)arg1;
 - (void)_forceInsertionForObject:(id)arg1;
+- (void)_forceRegisterLostFault:(id)arg1;
 - (void)_forceRemoveFromDeletedObjects:(id)arg1;
 - (void)_forgetObject:(id)arg1 propagateToObjectStore:(BOOL)arg2 removeFromRegistry:(BOOL)arg3;
 - (void)_forgetObject:(id)arg1 propagateToObjectStore:(BOOL)arg2;
@@ -113,6 +115,8 @@
 - (void)_incrementUndoTransactionID;
 - (void)_informParentStore:(id)arg1 noLongerInterestedInObjects:(id)arg2;
 - (void)_informParentStore:(id)arg1 ofInterestInObjects:(id)arg2;
+- (void)_informParentStoreNoLongerInterestedInObjectIDs:(id)arg1;
+- (void)_informParentStoreOfInterestInObjectIDs:(id)arg1;
 - (id)_initWithParentObjectStore:(unsigned long)arg1;
 - (void)_insertObjectWithGlobalID:(id)arg1 globalID:(id)arg2;
 - (BOOL)_isDeallocating;
@@ -139,12 +143,12 @@
 - (void)_postRefreshedObjectsNotificationAndClearList;
 - (BOOL)_postSaveNotifications;
 - (BOOL)_prepareForPushChanges:(id*)arg1;
+- (void)_prepareUnprocessedDeletionAfterRefresh:(id)arg1;
 - (void)_processChangedStoreConfigurationNotification:(id)arg1;
 - (BOOL)_processDeletedObjects:(id*)arg1;
 - (void)_processEndOfEventNotification:(id)arg1;
 - (void)_processNotificationQueue;
 - (void)_processObjectStoreChanges:(id)arg1;
-- (void)_processOwnedObjects:(id)arg1 set:(id)arg2 boolean:(BOOL)arg3;
 - (id)_processPendingDeletions:(id)arg1 withInsertions:(id)arg2 withUpdates:(id)arg3 withNewlyForgottenList:(id)arg4 withRemovedChangedObjects:(id)arg5;
 - (id)_processPendingInsertions:(id)arg1 withDeletions:(id)arg2 withUpdates:(id)arg3;
 - (id)_processPendingUpdates:(id)arg1;
@@ -176,6 +180,7 @@
 - (void)_setPersistentStoreCoordinator:(id)arg1;
 - (void)_setPostSaveNotifications:(BOOL)arg1;
 - (void)_setRetainsRegisteredObjects:(BOOL)arg1;
+- (void)_setStalenessInterval:(double)arg1;
 - (void)_setStopsValidationAfterFirstError:(BOOL)arg1;
 - (void)_setUndoManager:(id)arg1;
 - (void)_startObservingUndoManagerNotifications;
@@ -183,6 +188,7 @@
 - (void)_stopObservingUndoManagerNotifications;
 - (BOOL)_stopsValidationAfterFirstError;
 - (void)_storeConfigurationChanged:(id)arg1;
+- (void)_thereIsNoSadnessLikeTheDeathOfOptimism;
 - (BOOL)_tryRetain;
 - (void)_undoDeletions:(id)arg1;
 - (void)_undoDeletionsMovedToUpdates:(id)arg1;
@@ -218,6 +224,7 @@
 - (void)insertObject:(id)arg1;
 - (id)insertedObjects;
 - (BOOL)isEditing;
+- (BOOL)isUserInterfaceContext;
 - (void)lock;
 - (void)lockObjectStore;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
@@ -236,6 +243,7 @@
 - (void)performBlock:(id)arg1;
 - (void)performBlockAndWait:(id)arg1;
 - (id)persistentStoreCoordinator;
+- (id)photoLibrary;
 - (void)pl_refresh;
 - (void)processPendingChanges;
 - (BOOL)propagatesDeletesAtEndOfEvent;

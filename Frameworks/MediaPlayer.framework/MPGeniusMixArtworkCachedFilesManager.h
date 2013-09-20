@@ -10,6 +10,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_mediaLibraryDisplayValuesWillChangeNotification:(id)arg1;
 - (void)cleanupIfNecessaryWithCompletionHandler:(id)arg1;
 - (void)dealloc;

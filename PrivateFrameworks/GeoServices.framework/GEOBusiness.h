@@ -4,7 +4,7 @@
 
 @class GEOLatLng, NSMutableArray, NSString;
 
-@interface GEOBusiness : PBCodable {
+@interface GEOBusiness : PBCodable <NSCopying> {
     struct { 
         unsigned int uID : 1; 
         unsigned int totalNumberOfPhotos : 1; 
@@ -106,6 +106,7 @@
 - (void)clearSources;
 - (void)clearStarRatings;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

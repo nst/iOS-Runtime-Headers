@@ -2,21 +2,58 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class BBBulletin;
+@class NSDate, NSString;
 
-@interface AFBulletin : NSObject {
-    BBBulletin *_bulletin;
+@interface AFBulletin : NSObject <NSSecureCoding> {
+    BOOL _allDay;
+    NSString *_bulletinID;
+    NSDate *_date;
+    NSString *_displayName;
+    NSDate *_endDate;
+    NSString *_message;
+    NSString *_modalAlertContentMessage;
     BOOL _read;
+    NSDate *_recencyDate;
+    NSString *_sectionID;
+    NSString *_subtitle;
+    NSString *_timeZone;
+    NSString *_title;
 }
 
-@property(retain) BBBulletin * bulletin;
+@property(getter=isAllDay,readonly) BOOL allDay;
+@property(readonly) NSString * bulletinID;
+@property(readonly) NSDate * date;
+@property(copy) NSString * displayName;
+@property(readonly) NSDate * endDate;
+@property(readonly) NSString * message;
+@property(readonly) NSString * modalAlertContentMessage;
 @property(getter=isRead) BOOL read;
+@property(readonly) NSDate * recencyDate;
+@property(readonly) NSString * sectionID;
+@property(readonly) NSString * subtitle;
+@property(readonly) NSString * timeZone;
+@property(readonly) NSString * title;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)bulletin;
-- (id)dictionaryRepresentation;
+- (id)bulletinID;
+- (id)date;
+- (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)endDate;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isAllDay;
 - (BOOL)isRead;
+- (id)message;
+- (id)modalAlertContentMessage;
+- (id)recencyDate;
+- (id)sectionID;
 - (void)setBulletin:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 - (void)setRead:(BOOL)arg1;
+- (id)subtitle;
+- (id)timeZone;
+- (id)title;
 
 @end

@@ -7,6 +7,8 @@
     unsigned int _options;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (void)_setOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

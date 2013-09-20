@@ -11,6 +11,7 @@
 }
 
 @property(readonly) NSArray * MD5HashStrings;
+@property(readonly) NSData * appReceiptData;
 @property unsigned long long artistIdentifier;
 @property(copy) NSString * artistName;
 @property(getter=isAutomaticDownload) BOOL automaticDownload;
@@ -67,6 +68,7 @@
 - (id)_thumbnailArtworkImage;
 - (id)_urlValueForValue:(id)arg1;
 - (id)_valueForFirstAvailableTopLevelKey:(id)arg1;
+- (id)appReceiptData;
 - (id)applicationIdentifier;
 - (unsigned long long)artistIdentifier;
 - (id)artistName;
@@ -110,6 +112,7 @@
 - (BOOL)isCompilation;
 - (BOOL)isContentRestricted;
 - (BOOL)isExplicitContent;
+- (BOOL)isHighDefinition;
 - (BOOL)isRedownloadDownload;
 - (BOOL)isRental;
 - (BOOL)isSample;
@@ -168,6 +171,7 @@
 - (void)setFullSizeImageURL:(id)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setGenreIdentifier:(unsigned long long)arg1;
+- (void)setHighDefinition:(BOOL)arg1;
 - (void)setIndexInCollection:(id)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setKeyStyle:(int)arg1;

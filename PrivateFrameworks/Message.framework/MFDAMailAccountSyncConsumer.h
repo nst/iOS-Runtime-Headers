@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class ActivityMonitor, NSArray, NSMutableData, NSString;
+@class MFActivityMonitor, NSArray, NSMutableData, NSString;
 
 @interface MFDAMailAccountSyncConsumer : MFDAMailAccountConsumer <DAMailboxRequestConsumer, DAMailboxStreamingContentConsumer> {
     NSString *_accountID;
     NSMutableData *_bodyData;
     NSArray *_consumers;
     BOOL _firstSyncBatch;
-    ActivityMonitor *_monitor;
+    MFActivityMonitor *_monitor;
     BOOL _moreAvailable;
     BOOL _receivedFirstItem;
     NSArray *_requests;

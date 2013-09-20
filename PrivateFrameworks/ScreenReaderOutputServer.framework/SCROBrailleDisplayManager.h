@@ -14,6 +14,7 @@
     int _alertPriority;
     double _alertTimeout;
     struct __CFRunLoopTimer { } *_alertTimer;
+    BOOL _automaticBrailleTranslation;
     NSAttributedString *_blankUIString;
     SCRODBluetoothBrailleDisplay *_bluetoothBrailleDisplay;
     NSLock *_contentLock;
@@ -65,6 +66,7 @@
 - (void)_resetBluetoothReconnectionTimer;
 - (void)_saveBluetoothDisplayConfiguration:(id)arg1;
 - (void)_setAggregatedStatusHandler:(id)arg1;
+- (void)_setAlwaysUsesNemethCodeForTechnicalText:(id)arg1;
 - (void)_setBatchUpdates:(id)arg1;
 - (void)_setDisplayInputAccessMode:(id)arg1;
 - (void)_setDisplayMode:(int)arg1;
@@ -79,6 +81,9 @@
 - (void)_stopAlertTimer;
 - (void)_unloadStealthDisplay;
 - (id)aggregatedStatus;
+- (BOOL)alwaysUsesNemethCodeForTechnicalText;
+- (BOOL)automaticBrailleTranslation;
+- (void)automaticBrailleTranslationHandler:(id)arg1;
 - (void)beginUpdates;
 - (void)brailleDisplay:(id)arg1 didDisplay:(id)arg2;
 - (void)brailleDisplay:(id)arg1 didPanLeft:(id)arg2 elementToken:(id)arg3 appToken:(id)arg4;
@@ -113,7 +118,9 @@
 - (void)panDisplayRight:(long)arg1;
 - (void)removeBluetoothDriverWithAddress:(id)arg1;
 - (void)setAggregatedStatus:(id)arg1;
+- (void)setAlwaysUsesNemethCodeForTechnicalText:(BOOL)arg1;
 - (void)setAnnouncementsDisplayMode;
+- (void)setAutomaticBrailleTranslationEnabled:(BOOL)arg1;
 - (void)setContractionMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayInputAccessMode:(int)arg1;

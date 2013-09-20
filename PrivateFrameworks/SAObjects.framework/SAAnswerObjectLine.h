@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@class NSNumber, NSString, NSURL;
 
 @interface SAAnswerObjectLine : AceObject <SAAceSerializable> {
 }
 
 @property(copy) NSURL * image;
+@property(copy) NSNumber * imageInverted;
 @property(copy) NSString * text;
 
 + (id)objectLine;
@@ -16,7 +17,9 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)image;
+- (id)imageInverted;
 - (void)setImage:(id)arg1;
+- (void)setImageInverted:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 

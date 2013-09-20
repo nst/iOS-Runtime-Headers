@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSFileAccessNode, NSMapTable, NSString;
+@class NSFileAccessNode, NSMutableDictionary, NSString;
 
 @interface NSFileAccessNode : NSObject {
     id _accessClaimOrClaims;
-    NSMapTable *_childrenByNormalizedName;
+    NSMutableDictionary *_childrenByNormalizedName;
     BOOL _isArbitrationBoundary;
     BOOL _isFilePackage;
     BOOL _isFilePackageIsFigured;
@@ -54,11 +54,12 @@
 - (void)forEachReactorToItemOrContainedItemPerformProcedure:(id)arg1;
 - (void)forEachRelevantAccessClaimPerformProcedure:(id)arg1;
 - (id)initWithParent:(id)arg1 name:(id)arg2 normalizedName:(id)arg3;
-- (BOOL)isFilePackage;
+- (BOOL)itemIsFilePackage;
 - (BOOL)itemIsInItemAtLocation:(id)arg1;
 - (BOOL)itemIsItemAtLocation:(id)arg1;
 - (BOOL)itemIsSubarbitrable;
 - (id)itemProvider;
+- (id)normalizationOfChildName:(id)arg1;
 - (id)parent;
 - (id)pathExceptPrivate;
 - (id)pathFromAncestor:(id)arg1;
@@ -76,5 +77,6 @@
 - (void)setSymbolicLinkDestination:(id)arg1;
 - (id)standardizedURL;
 - (id)url;
+- (id)urlOfSubitemAtPath:(id)arg1 plusPath:(id)arg2;
 
 @end

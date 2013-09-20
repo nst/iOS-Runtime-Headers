@@ -11,6 +11,7 @@
 @interface XPCProxy : NSObject <NSCopying> {
     NSObject<OS_xpc_object> *_connection;
     id _errorHandler;
+    NSObject<OS_dispatch_queue> *_internalQueue;
     BOOL _invalidated;
     NSObject<OS_dispatch_queue> *_queue;
     Class _remoteClass;
@@ -40,18 +41,19 @@
 - (id)_objectForXpcEncoding:(id)arg1;
 - (id)_proxyDescription;
 - (SEL)_selectorForMessage:(id)arg1;
+- (id)_uikit_disconnect;
 - (id)connection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)disconnect;
 - (id)errorHandler;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithConnection:(id)arg1 queue:(id)arg2 target:(id)arg3;
 - (void)invalidate;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)proxyWithNewTarget:(id)arg1 label:(id)arg2;
-- (id)proxyWithNewTarget:(id)arg1 queue:(id)arg2;
+- (id)proxyWithNewTarget:(id)arg1 label:(id)arg2 errorHandler:(id)arg3;
+- (id)proxyWithNewTarget:(id)arg1 queue:(id)arg2 errorHandler:(id)arg3;
 - (Class)remoteClass;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 - (id)remoteProtocol;
 - (void)restrictDecodingToWhitelistedClassNames:(id)arg1;
 - (void)setErrorHandler:(id)arg1;

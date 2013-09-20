@@ -2,81 +2,91 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class MSASAssetCollection, NSArray, NSDictionary, NSString;
+@class AssetCollectionInfo, MSASAssetCollection, NSArray, NSDictionary, NSString;
 
 @interface PLCloudSharedAssetSaveJob : PLCloudSharingJob {
+    NSArray *_assetCollectionInfos;
     NSString *_cloudAlbumGUID;
-    NSArray *_cloudAssetCollections;
     NSArray *_cloudAssetGUIDsToDelete;
     NSString *_cloudPersonID;
+    AssetCollectionInfo *_currentAssetCollectionInfo;
     MSASAssetCollection *_currentCloudAssetCollection;
     NSString *_currentCloudAssetGUID;
-    NSDictionary *_currentCloudAssetMetadata;
+    unsigned int _currentCloudAssetMediaAssetType;
     NSString *_currentFilePath;
-    BOOL _isCreatingPlaceHolder;
-    int _jobType;
+    BOOL _isVideo;
+    long long _jobType;
     NSDictionary *_mstreamdInfoDictionary;
     BOOL _replacingOriginalWithDerivative;
 }
 
+@property(retain) NSArray * assetCollectionInfos;
 @property(retain) NSString * cloudAlbumGUID;
-@property(retain) NSArray * cloudAssetCollections;
 @property(retain) NSArray * cloudAssetGUIDsToDelete;
 @property(retain) NSString * cloudPersonID;
 @property(retain) MSASAssetCollection * currentCloudAssetCollection;
 @property(retain) NSString * currentCloudAssetGUID;
-@property(retain) NSDictionary * currentCloudAssetMetadata;
+@property unsigned int currentCloudAssetMediaAssetType;
 @property(retain) NSString * currentFilePath;
-@property BOOL isCreatingPlaceHolder;
-@property int jobType;
+@property BOOL isVideo;
+@property long long jobType;
 @property(retain) NSDictionary * mstreamdInfoDictionary;
 
 + (id)_dcimDirectoryForFileURL:(id)arg1;
++ (BOOL)_lightweightReimportCacheDirectoryExists;
++ (id)_lightweightReimportPhotoCloudSharingAlbumInfoForAlbumWithCloudGUID:(id)arg1 cloudPersonID:(id)arg2;
 + (void)deleteCloudSharedAssetsWithCloudGUIDs:(id)arg1 info:(id)arg2;
-+ (id)directoryPathForInFlightAssets:(BOOL)arg1;
++ (void)downloadPendingAssetsForPersonID:(id)arg1 info:(id)arg2;
 + (id)nextDCIMSaveFileURLForCloudPersonID:(id)arg1 cloudAlbumGUID:(id)arg2 fileExtension:(id)arg3;
++ (id)pathForInFlightAssetCollectionWithGUID:(id)arg1 mediaAssetType:(unsigned int)arg2;
 + (id)placeholderImageProperties;
 + (void)processMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4;
 + (void)replaceRecentlyUploadedOriginalWithDerivativeForCollection:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3;
-+ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollection:(id)arg2 albumGUID:(id)arg3 assetMetadata:(id)arg4 personID:(id)arg5 info:(id)arg6;
++ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollectionWithGUID:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(BOOL)arg7;
 
+- (BOOL)_createPlaceHolderInSharedAlbum:(id)arg1;
 - (unsigned int)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;
-- (id)assetsToRetriveForAssetMetadataForCurrentCollectionWithExistingPlaceHolderKind:(int)arg1;
+- (BOOL)_parseISO6709String:(id)arg1 outLatitude:(double*)arg2 outLongitude:(double*)arg3;
+- (void)_processInFlightCommentsForAsset:(id)arg1 inAlbum:(id)arg2 inPhotoLibrary:(id)arg3;
+- (BOOL)_processSaveAssetWithPlaceholderKind:(int)arg1 withAssetDataFilePath:(id)arg2;
+- (id)assetCollectionInfos;
+- (int)attemptLightweightReimportAssetData;
 - (id)cloudAlbumGUID;
-- (id)cloudAssetCollections;
 - (id)cloudAssetGUIDsToDelete;
 - (id)cloudPersonID;
 - (id)currentCloudAssetCollection;
 - (id)currentCloudAssetGUID;
-- (id)currentCloudAssetMetadata;
+- (unsigned int)currentCloudAssetMediaAssetType;
 - (id)currentFilePath;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)executeDaemonOperationDeleteAssetJobType;
+- (void)executeDaemonOperationDownloadPendingAssetsJobType;
 - (void)executeDaemonOperationReplaceRecentlyUploadedOriginalJobType;
 - (void)executeDaemonOperationSaveAssetJobType;
 - (void)executeDaemonOperationSaveAssetMetadataForCollectionsJobType;
+- (id)init;
 - (id)initFromXPCObject:(id)arg1;
-- (BOOL)isCreatingPlaceHolder;
 - (BOOL)isProcessingThumbnail;
-- (int)jobType;
+- (BOOL)isVideo;
+- (long long)jobType;
 - (id)mstreamdInfoDictionary;
-- (int)placeHolderKindFromAssetMetadataType:(id)arg1;
+- (int)placeHolderKindFromAssetMetadataType:(unsigned int)arg1;
 - (void)run;
 - (void)runDaemonSide;
 - (void)saveJobAssetWithPlaceholderKind:(int)arg1;
+- (void)setAssetCollectionInfos:(id)arg1;
 - (void)setCloudAlbumGUID:(id)arg1;
-- (void)setCloudAssetCollections:(id)arg1;
 - (void)setCloudAssetGUIDsToDelete:(id)arg1;
 - (void)setCloudPersonID:(id)arg1;
 - (void)setCurrentCloudAssetCollection:(id)arg1;
 - (void)setCurrentCloudAssetGUID:(id)arg1;
-- (void)setCurrentCloudAssetMetadata:(id)arg1;
+- (void)setCurrentCloudAssetMediaAssetType:(unsigned int)arg1;
 - (void)setCurrentFilePath:(id)arg1;
-- (void)setIsCreatingPlaceHolder:(BOOL)arg1;
-- (void)setJobType:(int)arg1;
+- (void)setIsVideo:(BOOL)arg1;
+- (void)setJobType:(long long)arg1;
 - (void)setMstreamdInfoDictionary:(id)arg1;
 
 @end

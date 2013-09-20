@@ -11,6 +11,7 @@
 
 @interface WebInspectorServer : NSObject <WebInspectorXPCWrapperDelegate, WebInspectorClientRegistryDelegate> {
     WebInspectorServerWebViewConnectionController *_connectionController;
+    BOOL _hasActiveDebugSession;
     BOOL _isEnabled;
     int _notifyToken;
     WebInspectorXPCWrapper *_xpcConnection;
@@ -19,9 +20,11 @@
 - (void)dealloc;
 - (void)didRegisterClient:(struct WebInspectorClient { int (**x1)(); int (**x2)(); id x3; struct RetainPtr<WebNodeHighlighter> { struct WebNodeHighlighter { } *x_4_1_1; } x4; struct Page {} *x5; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { } *x_6_1_1; } x6; int x7; id x8; struct WebInspectorFrontendClient {} *x9; }*)arg1;
 - (void)didUnregisterClient:(struct WebInspectorClient { int (**x1)(); int (**x2)(); id x3; struct RetainPtr<WebNodeHighlighter> { struct WebNodeHighlighter { } *x_4_1_1; } x4; struct Page {} *x5; struct RetainPtr<WebInspectorWindowController> { struct WebInspectorWindowController { } *x_6_1_1; } x6; int x7; id x8; struct WebInspectorFrontendClient {} *x9; }*)arg1;
+- (BOOL)hasActiveDebugSession;
 - (id)init;
 - (BOOL)isEnabled;
 - (void)pushListing;
+- (void)setHasActiveDebugSession:(BOOL)arg1;
 - (void)setupXPCConnectionIfNeeded;
 - (void)start;
 - (void)stop;

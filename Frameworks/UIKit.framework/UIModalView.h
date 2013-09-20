@@ -84,7 +84,7 @@
 + (id)topMostAlert;
 + (id)visibleAlert;
 
-- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
+- (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)_addButtonWithTitle:(id)arg1;
 - (id)_addButtonWithTitleText:(id)arg1;
 - (void)_alertSheetAnimationDidStop:(id)arg1 finished:(id)arg2;
@@ -107,7 +107,7 @@
 - (id)_dimView;
 - (BOOL)_dimsBackground;
 - (void)_growAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)_handleKeyUIEvent:(id)arg1;
 - (void)_hideAnimated:(BOOL)arg1;
 - (id)_initWithTelephoneNumber:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (BOOL)_isAnimating;
@@ -136,14 +136,12 @@
 - (void)_setTextFieldsHidden:(BOOL)arg1;
 - (void)_setupInitialFrame;
 - (void)_setupTitleStyle;
-- (BOOL)_shouldOrderInAutomaticKeyboard;
 - (void)_slideSheetOut:(BOOL)arg1;
 - (void)_temporarilyHideAnimated:(BOOL)arg1;
 - (float)_titleHorizontalInset;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
 - (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
-- (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (int)addButtonWithTitle:(id)arg1;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;

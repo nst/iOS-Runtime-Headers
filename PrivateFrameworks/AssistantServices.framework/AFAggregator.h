@@ -13,12 +13,19 @@
 @property int connectionType;
 @property BOOL hasActiveRequest;
 
++ (id)_fullAggDKeyWithPrefix:(id)arg1 error:(id)arg2;
++ (void)logDictationCancelled;
++ (void)logDictationFailedWithError:(id)arg1;
++ (void)logDictationStarted;
++ (void)logDictationSucceeded;
 + (void)logRequestCancelAfterSeconds:(double)arg1;
-+ (void)logRequestCancelled;
-+ (void)logRequestCompleted;
 + (void)logRequestCompletedWithDuration:(double)arg1;
-+ (void)logRequestFailed;
-+ (void)logRequestStarted;
++ (void)logSiriOtherRequestStarted;
++ (void)logSiriRequestCancelled;
++ (void)logSiriRequestFailedWithError:(id)arg1;
++ (void)logSiriRequestSucceeded;
++ (void)logSiriSpeechRequestStarted;
++ (void)logTimeToBeepWithDuration:(double)arg1;
 + (void)missedAlertContextForRequest;
 + (void)missedAppContextForRequest;
 

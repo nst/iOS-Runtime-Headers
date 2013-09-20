@@ -3,13 +3,24 @@
  */
 
 @interface VKVectorMapModel : VKMapTileModel {
+    BOOL _needsTileStencil;
+    int _sourceTileZtoStencilOffset;
 }
+
+@property BOOL needsTileStencil;
+@property int sourceTileZtoStencilOffset;
 
 + (BOOL)reloadOnActiveTileGroupChange;
 + (BOOL)reloadOnStylesheetChange;
 
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (BOOL)needsTileStencil;
+- (void)setNeedsTileStencil:(BOOL)arg1;
+- (void)setSourceTileZtoStencilOffset:(int)arg1;
+- (void)setupStencil:(id)arg1 fullyLoaded:(BOOL)arg2;
+- (void)setupStencil:(id)arg1 tiles:(id)arg2 minZ:(int)arg3 maxZ:(int)arg4 fullyLoaded:(BOOL)arg5;
+- (int)sourceTileZtoStencilOffset;
 - (BOOL)wantsCategorizedSourceTiles;
 
 @end

@@ -4,9 +4,10 @@
 
 @class CADisplayLink, CALayer, NSMutableArray, NSTimer, UIImageView;
 
-@interface UIDictationMeterView : UIView {
+@interface UIDictationMeterView : UIButton {
     CALayer *_animatingLayer;
     UIImageView *_background;
+    int _cachedViewMode;
     CADisplayLink *_displayLink;
     NSTimer *_fillTimer;
     CALayer *_micImageLayer;

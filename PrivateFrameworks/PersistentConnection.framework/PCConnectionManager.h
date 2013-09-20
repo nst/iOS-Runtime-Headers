@@ -4,15 +4,20 @@
 
 @class <PCConnectionManagerDelegate>, <PCGrowthAlgorithm>, NSRunLoop, NSString, PCDarwinNotificationRunLoopSource, PCPersistentTimer;
 
-@interface PCConnectionManager : NSObject <PCLoggingDelegate> {
+@interface PCConnectionManager : NSObject <PCLoggingDelegate, PCInterfaceMonitorDelegate> {
     int _connectionClass;
     double _defaultPollingInterval;
     PCPersistentTimer *_delayTimer;
     <PCConnectionManagerDelegate> *_delegate;
-    BOOL _fallBackToAlternateInterface;
+    struct dispatch_queue_s { } *_delegateQueue;
+    NSRunLoop *_delegateRunLoop;
+    BOOL _disableEarlyFire;
+    BOOL _enableNonCellularConnections;
     BOOL _forceManualWhenRoaming;
+    unsigned int _guidancePriority;
     BOOL _hasStarted;
     BOOL _inCallback;
+    int _interfaceIdentifier;
     PCPersistentTimer *_intervalTimer;
     BOOL _isInReconnectMode;
     BOOL _isReachable;
@@ -21,6 +26,8 @@
     double _lastReachableTime;
     double _lastReconnectTime;
     double _lastResumeTime;
+    <PCGrowthAlgorithm> *_lastScheduledGrowthAlgorithm;
+    double _lastScheduledIntervalTime;
     double _lastStopTime;
     double _onTimeKeepAliveTime;
     int _onlyAllowedStyle;
@@ -34,14 +41,18 @@
     unsigned int _reconnectIteration;
     PCPersistentTimer *_reconnectWakeTimer;
     BOOL _reconnectWithKeepAliveDelay;
-    NSRunLoop *_runLoop;
     NSString *_serviceIdentifier;
+    double _timerGuidance;
+    int _timerGuidanceToken;
     <PCGrowthAlgorithm> *_wifiGrowthAlgorithm;
     <PCGrowthAlgorithm> *_wwanGrowthAlgorithm;
 }
 
+@property(readonly) unsigned int countOfGrowthActions;
 @property(readonly) double currentKeepAliveInterval;
-@property BOOL fallBackToAlternateInterface;
+@property <PCConnectionManagerDelegate> * delegate;
+@property BOOL disableEarlyFire;
+@property(readonly) BOOL isRunning;
 @property double keepAliveGracePeriod;
 @property(readonly) NSString * loggingIdentifier;
 @property double maximumKeepAliveInterval;
@@ -54,21 +65,25 @@
 + (id)intervalCacheDictionaries;
 
 - (void)_adjustInterfaceAssertions;
+- (void)_adjustPollTimerIfNecessary;
+- (void)_callDelegateWithEvent:(id)arg1;
 - (void)_calloutWithEvent:(int)arg1;
 - (void)_clearTimers;
 - (void)_clearTimersReleasingPowerAssertion:(BOOL)arg1;
 - (id)_currentGrowthAlgorithm;
 - (void)_delayTimerFired;
-- (double)_getCachedWWANKeepAliveInterval;
+- (id)_getCachedWWANKeepAliveInterval;
+- (id)_initWithConnectionClass:(int)arg1 interfaceIdentifier:(int)arg2 guidancePriority:(unsigned int)arg3 delegate:(id)arg4 delegateQueue:(struct dispatch_queue_s { }*)arg5 serviceIdentifier:(id)arg6;
 - (void)_intervalTimerFired;
 - (BOOL)_isPushConnected;
 - (void)_loadPreferencesGeneratingEvent:(BOOL)arg1;
 - (void)_preferencesChanged;
 - (void)_releasePowerAssertion;
 - (void)_resolveStateWithAction:(int)arg1;
-- (void)_saveWWANKeepAliveInterval:(double)arg1;
+- (void)_saveWWANKeepAliveInterval;
+- (void)_setTimerGuidance:(double)arg1;
 - (void)_setupKeepAliveForReconnect;
-- (void)_setupTimerForPoll;
+- (void)_setupTimerForPollForAdjustment:(BOOL)arg1;
 - (void)_setupTimerForPushWithKeepAliveInterval:(double)arg1;
 - (id)_stringForAction:(int)arg1;
 - (id)_stringForEvent:(int)arg1;
@@ -76,14 +91,20 @@
 - (void)_takePowerAssertionWithTimeout:(double)arg1;
 - (void)_validateActionForCurrentStyle:(int)arg1;
 - (void)cancelPollingIntervalOverride;
+- (unsigned int)countOfGrowthActions;
 - (double)currentKeepAliveInterval;
 - (int)currentStyle;
 - (void)dealloc;
-- (BOOL)fallBackToAlternateInterface;
+- (id)delegate;
+- (BOOL)disableEarlyFire;
+- (id)initWithConnectionClass:(int)arg1 delegate:(id)arg2 delegateQueue:(struct dispatch_queue_s { }*)arg3 serviceIdentifier:(id)arg4;
 - (id)initWithConnectionClass:(int)arg1 delegate:(id)arg2 serviceIdentifier:(id)arg3;
+- (id)initWithConnectionClass:(int)arg1 interfaceIdentifier:(int)arg2 guidancePriority:(unsigned int)arg3 delegate:(id)arg4 serviceIdentifier:(id)arg5;
+- (void)interfaceLinkQualityChanged:(id)arg1 previousLinkQuality:(int)arg2;
 - (void)interfaceManagerInHomeCountryStatusChanged:(id)arg1;
 - (void)interfaceManagerInternetReachabilityChanged:(id)arg1;
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
+- (BOOL)isRunning;
 - (double)keepAliveGracePeriod;
 - (void)log:(id)arg1;
 - (void)logAtLevel:(int)arg1 format:(id)arg2 arguments:(void*)arg3;
@@ -93,7 +114,9 @@
 - (double)minimumKeepAliveInterval;
 - (double)pollingInterval;
 - (void)resumeManagerWithAction:(int)arg1;
-- (void)setFallBackToAlternateInterface:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDisableEarlyFire:(BOOL)arg1;
+- (void)setEnableNonCellularConnections:(BOOL)arg1;
 - (void)setKeepAliveGracePeriod:(double)arg1;
 - (void)setMaximumKeepAliveInterval:(double)arg1;
 - (void)setMinimumKeepAliveInterval:(double)arg1;
@@ -101,6 +124,7 @@
 - (void)setPollingIntervalOverride:(double)arg1;
 - (BOOL)shouldClientScheduleReconnectDueToFailure;
 - (void)startManager;
+- (void)stopAndResetManager;
 - (void)stopManager;
 
 @end

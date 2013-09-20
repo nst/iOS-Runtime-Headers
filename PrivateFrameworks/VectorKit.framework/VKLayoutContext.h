@@ -19,7 +19,6 @@
     float _styleZAdjust;
     VKCamera *_transitionCamera;
     int _transitionMapMode;
-    BOOL _userIsGesturing;
     VKViewTransform *_viewTransform;
 }
 
@@ -29,6 +28,7 @@
 @property int transitionMapMode;
 @property(retain) VKViewTransform * viewTransform;
 
+- (id).cxx_construct;
 - (id)anchorContext;
 - (void)canvasDidChange;
 - (void)clearCanvas;

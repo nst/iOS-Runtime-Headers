@@ -20,13 +20,13 @@
 
 + (id)routesPreferringMirroring;
 
+- (void).cxx_destruct;
 - (id)_availableRoutes;
 - (void)_debugButtonAction:(id)arg1;
 - (id)_displayedRoutes;
 - (id)_effectivePickedRouteReturningActualPickedRouteType:(int*)arg1;
 - (void)_mirroringSwitchValueDidChange:(id)arg1;
 - (id)_pickedRoute;
-- (BOOL)_shouldShowDebugButton;
 - (BOOL)_wirelessDisplayCapableRouteIsPicked;
 - (id)audioDeviceController;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;

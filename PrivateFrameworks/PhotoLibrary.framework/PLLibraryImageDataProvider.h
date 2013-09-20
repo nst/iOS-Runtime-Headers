@@ -14,7 +14,6 @@
 - (void)cancelLoadForAsset:(id)arg1 format:(int)arg2;
 - (void)cancelLoadForAsset:(id)arg1;
 - (void)dealloc;
-- (id)imageViewForAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 format:(int)arg3 loadImagesSynchronously:(BOOL)arg4;
 - (id)init;
 - (void)invalidateCachedImagesForAsset:(id)arg1 format:(int)arg2;
 - (void)invalidateCachedImagesForAsset:(id)arg1;

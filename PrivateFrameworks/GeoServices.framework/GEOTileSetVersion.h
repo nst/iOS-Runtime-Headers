@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTileSetVersion : PBCodable {
+@interface GEOTileSetVersion : PBCodable <NSCopying> {
     struct { 
         unsigned int supportedLanguagesVersion : 1; 
         unsigned int timeToLiveSeconds : 1; 
@@ -36,6 +36,7 @@
 - (void)clearAvailableTiles;
 - (void)clearGenericTiles;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -2,9 +2,12 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class EAGLContext, NSMutableArray, VGLFramebuffer, VGLMesh, VGLProgram, VGLTexture, VGLVertexArrayObject;
+@class EAGLContext, NSMapTable, NSMutableArray, NSString, VGLFramebuffer, VGLGPU, VGLMesh, VGLProgram, VGLProgramFactory, VGLRenderState, VGLResourceFactory, VGLSharegroup, VGLTexture, VGLVertexArrayObject;
 
 @interface VGLContext : NSObject {
+    struct CGSize { 
+        float width; 
+        float height; 
     union { 
         struct { 
             float m00; 
@@ -25,11 +28,29 @@
             float m33; 
         } ; 
         float m[16]; 
+    struct { 
+        float x0; 
+        float x1; 
+        float y0; 
+        float y1; 
     struct _VGLColor { 
         float r; 
         float g; 
         float b; 
         float a; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    struct { 
+        float factor; 
+        float units; 
     struct _VGLColor { 
         float r; 
         float g; 
@@ -42,7 +63,7 @@
     int _blendMode;
     } _clearColor;
     float _clearDepth;
-    unsigned short _clearStencil;
+    unsigned char _clearStencil;
     } _color;
     BOOL _colorMask;
     BOOL _cullFace;
@@ -54,19 +75,34 @@
     BOOL _depthTest;
     BOOL _drawFramerateGraph;
     EAGLContext *_eaglContext;
+    BOOL _enablePolygonFillOffset;
     float _fpsStartTime;
+    } _frameRateGraphColor;
     VGLFramebuffer *_framebuffer;
+    } _framerateGraphColor;
     float _framerateGraphSamples[30];
     float _framerateSum;
+    VGLGPU *_gpu;
     float _lineWidth;
     VGLMesh *_meshForUnitSquare;
     VGLMesh *_meshForUnitTexture;
     VGLMesh *_meshForUnitTextureInverted;
     } _pixelSpaceMatrix;
+    } _polygonOffset;
     VGLProgram *_program;
+    NSMapTable *_programCache;
+    VGLProgramFactory *_programFactory;
+    NSString *_programFactoryCohort;
     NSMutableArray *_renderStateStack;
+    VGLResourceFactory *_resourceFactory;
     unsigned int _sAlphaFactor;
     unsigned int _sFactor;
+    } _scissorRect;
+    BOOL _scissorTest;
+    VGLSharegroup *_sharegroup;
+    VGLRenderState *_simpleRenderState;
+    } _sizeInPixels;
+    unsigned char _stencilMask;
     BOOL _stencilTest;
     VGLTexture *_texture[2][8];
 }
@@ -76,7 +112,7 @@
 @property int blendMode;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } clearColor;
 @property float clearDepth;
-@property unsigned short clearStencil;
+@property unsigned char clearStencil;
 @property BOOL colorMask;
 @property BOOL cullFace;
 @property BOOL depthMask;
@@ -84,12 +120,19 @@
 @property BOOL depthTest;
 @property BOOL drawFramerateGraph;
 @property(readonly) EAGLContext * eaglContext;
+@property BOOL enablePolygonFillOffset;
+@property struct _VGLColor { float x1; float x2; float x3; float x4; } framerateGraphColor;
+@property(readonly) VGLGPU * gpu;
 @property float lineWidth;
-@property(readonly) VGLMesh * meshForUnitSquare;
 @property(readonly) VGLMesh * meshForUnitTexture;
 @property(readonly) VGLMesh * meshForUnitTextureInverted;
 @property(readonly) union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; } pixelSpaceMatrix;
+@property struct { float x1; float x2; } polygonOffset;
 @property(retain) VGLProgram * program;
+@property struct { float x1; float x2; float x3; float x4; } scissorRect;
+@property BOOL scissorTest;
+@property(readonly) VGLSharegroup * sharegroup;
+@property unsigned char stencilMask;
 @property BOOL stencilTest;
 @property(retain) VGLFramebuffer * targetFramebuffer;
 @property(retain) VGLTexture * texture2D0;
@@ -101,17 +144,15 @@
 @property(retain) VGLTexture * texture2D6;
 @property(retain) VGLTexture * texture2D7;
 
-+ (id)_contextStack;
-+ (void)popContext;
-+ (void)pushContext:(id)arg1;
-
+- (id).cxx_construct;
 - (id)VAO;
 - (void)_blendFuncWithSFactor:(unsigned int)arg1 dFactor:(unsigned int)arg2 sAlphaFactor:(unsigned int)arg3 dAlphaFactor:(unsigned int)arg4;
 - (void)_drawArrayMode:(unsigned int)arg1 dim:(int)arg2 nv:(int)arg3 pv:(float*)arg4 pt:(float*)arg5;
 - (void)_drawArrayMode:(unsigned int)arg1 dim:(int)arg2 nv:(int)arg3 pv:(float*)arg4;
 - (void)_drawCircleWithMode:(unsigned int)arg1 X:(float)arg2 Y:(float)arg3 radius:(float)arg4;
 - (void)_forceBlendMode:(int)arg1;
-- (void)_makeActive;
+- (void)_pop:(void*)arg1;
+- (BOOL)_push:(void**)arg1;
 - (void)_setTexture:(id)arg1 target:(int)arg2 unit:(int)arg3;
 - (unsigned int)activeTexture;
 - (float)averageFPS;
@@ -125,13 +166,14 @@
 - (void)clearBufferColor:(BOOL)arg1 stencil:(BOOL)arg2 depth:(BOOL)arg3;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })clearColor;
 - (float)clearDepth;
-- (unsigned short)clearStencil;
+- (unsigned char)clearStencil;
 - (BOOL)colorMask;
 - (BOOL)cullFace;
 - (void)dealloc;
 - (BOOL)depthMask;
 - (int)depthMode;
 - (BOOL)depthTest;
+- (id)description;
 - (void)doneStenciling;
 - (void)drawAsteriskCX:(float)arg1 cy:(float)arg2 sz:(float)arg3;
 - (void)drawCircleX:(float)arg1 Y:(float)arg2 radius:(float)arg3;
@@ -154,33 +196,49 @@
 - (void)drawUnit;
 - (void)drawUnitCircle;
 - (void)drawUnitSquare;
+- (void)drawUnitSquareMesh;
 - (void)dumpCounts;
 - (id)eaglContext;
+- (BOOL)enablePolygonFillOffset;
 - (void)endFrame;
 - (void)fillCircleX:(float)arg1 Y:(float)arg2 radius:(float)arg3;
 - (void)fillRectAtZ:(float)arg1 x:(float)arg2 y:(float)arg3 w:(float)arg4 h:(float)arg5;
 - (void)fillRectX:(float)arg1 y:(float)arg2 w:(float)arg3 h:(float)arg4;
 - (void)fillRectangle:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)fillUnitCircle;
-- (id)init;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })framerateGraphColor;
+- (id)gpu;
+- (id)initWithGPU:(id)arg1 sharegroup:(id)arg2;
 - (BOOL)isCurrentContext;
 - (float)lineWidth;
-- (id)meshForUnitSquare;
 - (id)meshForUnitTexture;
 - (id)meshForUnitTextureInverted;
+- (id)newBuffer;
+- (id)newFramebuffer;
+- (id)newOcclusionResource:(int)arg1;
+- (id)newRenderbuffer;
+- (id)newTextureResource;
+- (id)newVAO;
+- (void)perform:(id)arg1;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })pixelSpaceMatrix;
+- (struct { float x1; float x2; })polygonOffset;
 - (void)popRenderState;
 - (void)present;
 - (id)program;
+- (id)programFactoryCohort;
+- (id)programWithClass:(Class)arg1;
 - (void)pushRenderState;
 - (id)renderState;
+- (BOOL)renderbufferStorage:(unsigned int)arg1 fromCanvas:(id)arg2;
 - (void)reset;
 - (void)resetAlphaChannel:(unsigned char)arg1;
+- (struct { float x1; float x2; float x3; float x4; })scissorRect;
+- (BOOL)scissorTest;
 - (void)setActiveTexture:(unsigned int)arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setClearDepth:(float)arg1;
-- (void)setClearStencil:(unsigned short)arg1;
+- (void)setClearStencil:(unsigned char)arg1;
 - (void)setColorMask:(BOOL)arg1;
 - (void)setColorMaskRed:(BOOL)arg1 green:(BOOL)arg2 blue:(BOOL)arg3 alpha:(BOOL)arg4;
 - (void)setCullFace:(BOOL)arg1;
@@ -188,9 +246,16 @@
 - (void)setDepthMode:(int)arg1;
 - (void)setDepthTest:(BOOL)arg1;
 - (void)setDrawFramerateGraph:(BOOL)arg1;
+- (void)setEnablePolygonFillOffset:(BOOL)arg1;
+- (void)setFramerateGraphColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLineWidth:(float)arg1;
+- (void)setPolygonOffset:(struct { float x1; float x2; })arg1;
 - (void)setProgram:(id)arg1;
-- (void)setStencilFunc:(int)arg1 ref:(unsigned int)arg2 mask:(unsigned int)arg3;
+- (void)setProgramFactoryCohort:(id)arg1;
+- (void)setScissorRect:(struct { float x1; float x2; float x3; float x4; })arg1;
+- (void)setScissorTest:(BOOL)arg1;
+- (void)setStencilFunc:(int)arg1 ref:(unsigned char)arg2 mask:(unsigned char)arg3;
+- (void)setStencilMask:(unsigned char)arg1;
 - (void)setStencilOpFail:(int)arg1 zFail:(int)arg2 zPass:(int)arg3;
 - (void)setStencilTest:(BOOL)arg1;
 - (void)setTargetFramebuffer:(id)arg1;
@@ -203,7 +268,9 @@
 - (void)setTexture2D6:(id)arg1;
 - (void)setTexture2D7:(id)arg1;
 - (void)setVAO:(id)arg1;
+- (id)sharegroup;
 - (void)startFrame;
+- (unsigned char)stencilMask;
 - (BOOL)stencilTest;
 - (void)stencilToExclusion;
 - (void)stencilToInclusion;

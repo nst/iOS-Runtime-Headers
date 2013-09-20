@@ -4,7 +4,7 @@
 
 @class SBDeviceLockKeypad;
 
-@interface SBDeviceLockViewWithKeypad : SBDeviceLockView {
+@interface SBDeviceLockViewWithKeypad : SBDeviceLockView <TPDialerKeypadDelegate> {
     BOOL _cancelingTouches;
     SBDeviceLockKeypad *_keypad;
 }

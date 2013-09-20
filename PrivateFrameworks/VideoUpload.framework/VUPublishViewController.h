@@ -2,18 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
  */
 
-@class <VUPublishViewControllerDelegate>, NSArray, NSMutableArray, NSString, PLTableViewEditableCell, UIAlertView, UIButton, UIImageView, UILabel, UIPickerView, UITableView, UITableViewCell, VUCategory, VUCategoryCell, VUFooterContainerView;
+@class <VUPublishViewControllerDelegate>, NSArray, NSMutableArray, NSString, PLTableViewEditableCell, UIAlertView, UIImageView, UIPickerView, UITableView, UITableViewCell, UIView, VUCategory, VUCategoryCell, VUFooterContainerView;
 
 @interface VUPublishViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     struct { 
         int title; 
         int hd; 
@@ -38,16 +29,14 @@
     UIImageView *_headerImageView;
     PLTableViewEditableCell *_optionCells[2];
     UIPickerView *_picker;
+    UIView *_pickerContainer;
     } _sectionIndices;
     int _selectedOption;
     BOOL _showHDSection;
+    BOOL _showingPicker;
     UITableView *_tableView;
     NSMutableArray *_tagCells;
-    UIButton *_termsButton;
-    UILabel *_termsLabel;
     PLTableViewEditableCell *_titleCell;
-    } _unshrunkFrame;
-    BOOL _userDidStartEditing;
     BOOL _viewShrunk;
 }
 
@@ -71,12 +60,12 @@
 - (void)_automaticKeyboardDidShow:(id)arg1;
 - (void)_cancel;
 - (void)_footerFrameDidChangeWithSplitKeyboard:(BOOL)arg1;
+- (void)_hidePicker;
 - (int)_indexOfBlankTagCellOtherThan:(id)arg1;
 - (BOOL)_isAuthenticated;
 - (void)_publish;
 - (void)_showPicker;
 - (void)_shrinkView;
-- (float)_termsBlurbHeightForWidth:(float)arg1;
 - (void)_termsButtonPressed:(id)arg1;
 - (void)_unshrinkView;
 - (void)_updateAccountCell;
@@ -101,10 +90,13 @@
 - (void)loadView;
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)orderOutKeyboard;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (float)pickerView:(id)arg1 rowHeightForComponent:(int)arg2;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
+- (void)resignResponder;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (int)selectedOption;
 - (void)setDelegate:(id)arg1;
 - (void)setEnableHDSection:(BOOL)arg1;
@@ -119,6 +111,7 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (id)termsOfUseString;
 - (id)termsOfUseURL;

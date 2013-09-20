@@ -9,13 +9,16 @@
 @class <MFMailComposeViewControllerDelegate>;
 
 @interface MFMailComposeViewController : UINavigationController {
+    BOOL _didChangeStatusBarStyle;
     id _internal;
+    int _savedStatusBarStyle;
     id _setupAnimationBlock;
 }
 
 @property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
 
 + (BOOL)canSendMail;
++ (BOOL)canSendMailSourceAccountManagement:(int)arg1;
 + (BOOL)hasAutosavedMessageWithIdentifier:(id)arg1;
 + (unsigned int)maximumAttachmentSize;
 + (void)removeAutosavedMessageWithIdentifier:(id)arg1;
@@ -42,9 +45,12 @@
 - (void)setKeyboardVisible:(BOOL)arg1;
 - (void)setMailComposeDelegate:(id)arg1;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
+- (void)setSourceAccountManagement:(int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

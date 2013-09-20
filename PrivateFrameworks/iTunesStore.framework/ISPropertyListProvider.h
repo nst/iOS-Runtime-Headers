@@ -2,43 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISPropertyListProvider : ISDataProvider <NSCopying> {
-    BOOL _shouldPostFooterSectionChanged;
-    BOOL _shouldProcessAccount;
-    BOOL _shouldProcessAuthenticationDialogs;
-    BOOL _shouldProcessDialogs;
-    BOOL _shouldProcessProtocol;
-    BOOL _shouldTriggerDownloads;
+@interface ISPropertyListProvider : ISProtocolDataProvider <NSCopying> {
 }
 
-@property BOOL shouldPostFooterSectionChanged;
-@property BOOL shouldProcessAccount;
-@property BOOL shouldProcessAuthenticationDialogs;
-@property BOOL shouldProcessDialogs;
-@property BOOL shouldProcessProtocol;
-@property BOOL shouldTriggerDownloads;
-
-- (void)_checkDownloadQueues;
-- (void)_checkInAppPurchaseQueueForAction:(id)arg1;
-- (void)_performActionsForResponse:(id)arg1;
-- (BOOL)_processFailureTypeFromPropertyList:(id)arg1 error:(id*)arg2;
-- (void)_selectFooterSection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
-- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (BOOL)processDialogFromPropertyList:(id)arg1 returningError:(id*)arg2;
 - (BOOL)processPropertyList:(id)arg1 returningError:(id*)arg2;
-- (void)setShouldPostFooterSectionChanged:(BOOL)arg1;
-- (void)setShouldProcessAccount:(BOOL)arg1;
-- (void)setShouldProcessAuthenticationDialogs:(BOOL)arg1;
-- (void)setShouldProcessDialogs:(BOOL)arg1;
-- (void)setShouldProcessProtocol:(BOOL)arg1;
-- (void)setShouldTriggerDownloads:(BOOL)arg1;
-- (BOOL)shouldPostFooterSectionChanged;
-- (BOOL)shouldProcessAccount;
-- (BOOL)shouldProcessAuthenticationDialogs;
-- (BOOL)shouldProcessDialogs;
-- (BOOL)shouldProcessProtocol;
-- (BOOL)shouldTriggerDownloads;
 
 @end

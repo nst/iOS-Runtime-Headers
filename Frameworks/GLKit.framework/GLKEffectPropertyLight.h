@@ -102,6 +102,23 @@
             float p; 
         } ; 
         float v[3]; 
+    union _GLKVector3 { 
+        struct { 
+            float x; 
+            float y; 
+            float z; 
+        } ; 
+        struct { 
+            float r; 
+            float g; 
+            float b; 
+        } ; 
+        struct { 
+            float s; 
+            float t; 
+            float p; 
+        } ; 
+        float v[3]; 
     union _GLKVector4 { 
         struct { 
             float x; 
@@ -122,23 +139,6 @@
             float q; 
         } ; 
         float v[4]; 
-    union _GLKVector3 { 
-        struct { 
-            float x; 
-            float y; 
-            float z; 
-        } ; 
-        struct { 
-            float r; 
-            float g; 
-            float b; 
-        } ; 
-        struct { 
-            float s; 
-            float t; 
-            float p; 
-        } ; 
-        float v[3]; 
     struct GLKBigInt_s { 
         unsigned long long n0; 
         unsigned long long n1; 

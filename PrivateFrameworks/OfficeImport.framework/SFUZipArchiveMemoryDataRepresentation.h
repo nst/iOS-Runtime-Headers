@@ -4,7 +4,7 @@
 
 @class NSData;
 
-@interface SFUZipArchiveMemoryDataRepresentation : SFUDataRepresentation <SFUZipArchiveDataRepresentation> {
+@interface SFUZipArchiveMemoryDataRepresentation : OISFUDataRepresentation <SFUZipArchiveDataRepresentation> {
     NSData *mData;
 }
 

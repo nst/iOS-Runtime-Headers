@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, UILabel, UITextView;
+@class NSString, UITextView;
 
 @interface CalendarNotesCell : UITableViewCell {
-    UILabel *_placeholder;
-    BOOL _showingPlaceholder;
+    NSString *_text;
     UITextView *_textView;
 }
 
@@ -14,17 +13,14 @@
 @property(copy) NSString * text;
 @property(readonly) UITextView * textView;
 
-- (id)_placeholderLabel;
-- (void)_updatePlaceholder;
+- (void).cxx_destruct;
 - (BOOL)becomeFirstResponder;
-- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)placeholder;
 - (void)setPlaceholder:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
-- (void)textChanged:(id)arg1;
 - (id)textView;
 
 @end

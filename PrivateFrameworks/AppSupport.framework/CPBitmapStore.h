@@ -9,6 +9,7 @@
     NSString *_imagePath;
     NSString *_path;
     int _version;
+    NSString *_versionPath;
 }
 
 @property(readonly) int version;
@@ -25,7 +26,7 @@
 - (struct CGImage { }*)copyImageForKey:(id)arg1;
 - (void)dealloc;
 - (BOOL)findImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
-- (int)imageCount;
+- (unsigned int)imageCount;
 - (id)imageNameForKey:(id)arg1 inGroup:(id)arg2;
 - (id)imagePath;
 - (id)initWithPath:(id)arg1 version:(int)arg2;
@@ -34,7 +35,9 @@
 - (void)purge;
 - (void)removeImagesInGroups:(id)arg1;
 - (BOOL)saveImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6; }*)arg3;
+- (int)setVersion:(int)arg1 withOptions:(unsigned int)arg2;
 - (int)setVersion:(int)arg1;
+- (void)storeImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 data:(id)arg6;
 - (void)storeImageForKey:(id)arg1 inGroup:(id)arg2 opaque:(BOOL)arg3 image:(struct CGImage { }*)arg4;
 - (int)version;
 

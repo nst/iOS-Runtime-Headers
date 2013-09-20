@@ -9,12 +9,14 @@
     unsigned int _byteCount;
 }
 
++ (Class)classForCoder;
+
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (const void*)bytes;
+- (Class)classForArchiver;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
 - (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)init;
@@ -25,7 +27,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)privateCopy;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfData:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

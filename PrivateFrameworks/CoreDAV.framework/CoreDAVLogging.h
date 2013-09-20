@@ -2,17 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface CoreDAVLogging : NSObject {
+    NSObject<OS_dispatch_queue> *_delegateMuckingQueue;
     struct __CFDictionary { } *_logDelegates;
 }
 
 + (id)sharedLogging;
 
-- (struct __CFSet { }*)_delegatesToLogForProvider:(id)arg1;
+- (id)_delegatesToLogForProvider:(id)arg1;
 - (BOOL)_shouldOutputAtLevel:(int)arg1 forAccountInfoProvider:(id)arg2;
 - (void)addLogDelegate:(id)arg1 forAccountInfoProvider:(id)arg2;
 - (void)dealloc;
-- (struct __CFSet { }*)delegatesToLogTransmittedDataForAccountInfoProvider:(id)arg1;
+- (id)delegatesToLogTransmittedDataForAccountInfoProvider:(id)arg1;
 - (id)init;
 - (void)logDiagnosticForProvider:(id)arg1 withLevel:(int)arg2 format:(id)arg3 args:(void*)arg4;
 - (void)removeLogDelegate:(id)arg1 forAccountInfoProvider:(id)arg2;

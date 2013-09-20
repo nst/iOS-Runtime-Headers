@@ -34,12 +34,13 @@
 }
 
 + (void)purge;
-+ (id)textureWithName:(id)arg1 style:(id)arg2 levelOfDetail:(unsigned int)arg3;
++ (id)textureWithName:(id)arg1 style:(id)arg2 levelOfDetail:(unsigned int)arg3 scale:(float)arg4;
 
+- (id).cxx_construct;
 - (void)_addColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)_addTextureLayerWithName:(id)arg1 properties:(struct { int x1; float x2; })arg2;
-- (void)_buildWithStyle:(id)arg1 levelOfDetail:(unsigned int)arg2;
-- (id)_createVKImageForName:(id)arg1;
+- (void)_buildWithStyle:(id)arg1 levelOfDetail:(unsigned int)arg2 scale:(float)arg3;
+- (id)_createVKImageForName:(id)arg1 scale:(float)arg2;
 - (void)dealloc;
 - (BOOL)decodeTexture;
 - (id)initWithName:(id)arg1;

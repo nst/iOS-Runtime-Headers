@@ -10,13 +10,14 @@
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) NSValue * inputTransform;
+@property(retain) NSValue * inputTransform;
 
 + (id)customAttributes;
 
 - (id)inputImage;
 - (id)inputTransform;
 - (id)outputImage;
+- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputTransform:(id)arg1;
 

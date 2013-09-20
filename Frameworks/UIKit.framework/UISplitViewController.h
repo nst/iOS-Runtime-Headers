@@ -36,6 +36,9 @@
         unsigned int delegateWantsWillHideCallback : 1; 
         unsigned int delegateWantsWillPresentCallback : 1; 
         unsigned int delegateWantsNavigationRequests : 1; 
+        unsigned int resizesDetailOnSlide : 1; 
+        unsigned int delegateSupportedInterfaceOrientations : 1; 
+        unsigned int delegatePreferredInterfaceOrientationForPresentation : 1; 
     UIBarButtonItem *_barButtonItem;
     NSString *_buttonTitle;
     NSArray *_cornerImageViews;
@@ -55,6 +58,7 @@
     UIView *_rotationSnapshotView;
     unsigned int _slideTransitionCount;
     } _splitViewControllerFlags;
+    UIView *_underBarSeparatorView;
 }
 
 @property(setter=_setPresentsInFadingPopover:) BOOL _presentsInFadingPopover;
@@ -65,9 +69,12 @@
 + (BOOL)_forcePresentsInSlidingPopover;
 + (BOOL)_forcePresentsWithGesture;
 + (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
++ (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
++ (BOOL)doesOverrideSupportedInterfaceOrientations;
 
 - (void)__viewWillLayoutSubviews;
 - (void)_addOrRemovePopoverPresentationGestureRecognizer;
+- (id)_allContainedViewControllers;
 - (void)_calculateDelegateHiddenMasterOrientations;
 - (BOOL)_canDisplayHostedMaster;
 - (BOOL)_canSlideMaster;
@@ -75,6 +82,7 @@
 - (struct CGSize { float x1; float x2; })_contentSizeForChildViewController:(id)arg1 inPopoverController:(id)arg2;
 - (BOOL)_delegateUsesLegacySlideSPI;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrameWithPopoverControllerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_dismissMasterViewController;
 - (BOOL)_effectivePresentsWithGesture;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
@@ -92,12 +100,16 @@
 - (BOOL)_isRotating;
 - (void)_loadNewSubviews:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame;
+- (void)_popoverController:(id)arg1 willAnimateToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_presentGestureAttemptedWithPresentedPopoverController:(id)arg1;
 - (void)_presentMasterViewController:(BOOL)arg1;
 - (BOOL)_presentsInFadingPopover;
 - (void)_removeRoundedCorners;
+- (BOOL)_resizesDetailOnSlide;
 - (void)_setPresentsInFadingPopover:(BOOL)arg1;
+- (void)_setResizesDetailOnSlide:(BOOL)arg1;
 - (void)_setupRoundedCorners;
+- (void)_setupUnderBarSeparatorViewForOrientation:(int)arg1;
 - (BOOL)_shouldPersistViewWhenCoding;
 - (BOOL)_shouldSynthesizeSupportedOrientations;
 - (void)_slideIn:(BOOL)arg1 viewController:(id)arg2 animated:(BOOL)arg3 totalDuration:(double)arg4 completion:(id)arg5;
@@ -122,6 +134,7 @@
 - (float)masterColumnWidth;
 - (id)masterViewController;
 - (void)popoverWillAppear:(id)arg1;
+- (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)presentsWithGesture;
 - (void)purgeMemoryForReason:(int)arg1;
 - (BOOL)revealsMasterViewDuringRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
@@ -136,6 +149,7 @@
 - (void)snapshotAllViews;
 - (void)snapshotForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2;
 - (void)snapshotMasterView;
+- (unsigned int)supportedInterfaceOrientations:(id)arg1;
 - (void)toggleMasterVisible:(id)arg1;
 - (void)unloadViewForced:(BOOL)arg1;
 - (id)viewControllers;

@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@class NSString;
 
-@interface SAWebSearch : SABaseClientBoundCommand {
+@interface SAWebSearch : SADomainCommand {
 }
 
 @property(copy) NSString * provider;
 @property(copy) NSString * query;
-@property(copy) NSURL * targetAppId;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
@@ -21,7 +20,5 @@
 - (BOOL)requiresResponse;
 - (void)setProvider:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

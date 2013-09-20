@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSString, OADTableStyle;
+@class NSArray, OADTableStyle;
 
 @interface OADTableProperties : OADDrawableProperties <OADEffectsParent> {
     BOOL mBandColumn;
@@ -14,7 +14,6 @@
     BOOL mLastRow;
     BOOL mRightToLeft;
     OADTableStyle *mStyle;
-    NSString *mStyleId;
 }
 
 + (id)defaultProperties;
@@ -41,8 +40,6 @@
 - (void)setLastRow:(BOOL)arg1;
 - (void)setRightToLeft:(BOOL)arg1;
 - (void)setStyle:(id)arg1;
-- (void)setStyleId:(id)arg1;
 - (id)style;
-- (id)styleId;
 
 @end

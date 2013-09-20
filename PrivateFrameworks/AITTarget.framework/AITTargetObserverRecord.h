@@ -6,21 +6,23 @@
    See Warning(s) below.
  */
 
+@class NSObject<OS_dispatch_queue>;
+
 @interface AITTargetObserverRecord : NSObject {
     id _handler;
     id _observer;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(readonly) id handler;
 @property(readonly) id observer;
-@property(readonly) struct dispatch_queue_s { }* queue;
+@property(readonly) NSObject<OS_dispatch_queue> * queue;
 
-+ (id)recordForObserver:(id)arg1 queue:(struct dispatch_queue_s { }*)arg2 block:(id)arg3;
++ (id)recordForObserver:(id)arg1 queue:(id)arg2 block:(id)arg3;
 
 - (void)dealloc;
 - (id)handler;
 - (id)observer;
-- (struct dispatch_queue_s { }*)queue;
+- (id)queue;
 
 @end

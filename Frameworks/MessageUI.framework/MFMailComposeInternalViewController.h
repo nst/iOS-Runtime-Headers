@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeViewControllerDelegate>, MFMailComposePlaceholderViewController, MFMailComposeRemoteViewController, NSError, NSMutableArray, NSMutableDictionary, NSString, XPCProxy<MFMailComposeRemoteService>, _UIAsyncInvocation;
+@class <MFMailComposeViewControllerDelegate>, MFMailComposePlaceholderViewController, MFMailComposeRemoteViewController, NSError, NSMutableArray, NSMutableDictionary, NSString, _UIAsyncInvocation;
 
 @interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate> {
     unsigned int _hasDelayedPresentation : 1;
@@ -24,7 +24,6 @@
     MFMailComposePlaceholderViewController *_placeholderViewController;
     double _presentationDelayBeganTimestamp;
     MFMailComposeRemoteViewController *_serviceViewController;
-    XPCProxy<MFMailComposeRemoteService> *_serviceViewControllerProxy;
 }
 
 @property id autorotationDelegate;
@@ -34,6 +33,7 @@
 - (void)_cancelComposition:(id)arg1;
 - (void)_cancelRemoteServiceViewControllerRequest;
 - (void)_configureRemoteViewContoller;
+- (double)_delayedPresentationTimeout;
 - (void)_didEndDelayingCompositionPresentation;
 - (void)_endDelayingCompositionPresentation;
 - (void)_finishServiceViewControllerRequestWithSuccess:(BOOL)arg1;
@@ -63,6 +63,7 @@
 - (void)setMailComposeDelegate:(id)arg1;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (void)setShowKeyboardImmediately:(BOOL)arg1;
+- (void)setSourceAccountManagement:(int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (void)setURL:(id)arg1;

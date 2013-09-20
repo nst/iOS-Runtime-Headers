@@ -32,6 +32,7 @@
 - (id)name;
 - (id)sandbox;
 - (id)scrolling;
+- (BOOL)seamless;
 - (void)setAlign:(id)arg1;
 - (void)setFrameBorder:(id)arg1;
 - (void)setHeight:(id)arg1;
@@ -41,6 +42,7 @@
 - (void)setName:(id)arg1;
 - (void)setSandbox:(id)arg1;
 - (void)setScrolling:(id)arg1;
+- (void)setSeamless:(BOOL)arg1;
 - (void)setSrc:(id)arg1;
 - (void)setSrcdoc:(id)arg1;
 - (void)setWidth:(id)arg1;

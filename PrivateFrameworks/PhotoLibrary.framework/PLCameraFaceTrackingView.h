@@ -17,7 +17,6 @@
 - (double)fadeOutDuration;
 - (id)init;
 - (BOOL)isInFrame;
-- (void)scaleWithZoomFactor:(float)arg1;
 - (void)setIsInFrame:(BOOL)arg1;
 
 @end

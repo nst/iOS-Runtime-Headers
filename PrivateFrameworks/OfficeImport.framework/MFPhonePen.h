@@ -6,12 +6,12 @@
     float m_PixelSize;
 }
 
-+ (id)penWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4 LPToDPTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5;
++ (id)penWithStyle:(int)arg1 width:(int)arg2 colour:(id)arg3 styleArray:(double*)arg4 LPToDPTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5;
 
-- (void)applyDashedLines;
-- (void)applyLineCapStyle;
-- (void)applyLineJoinStyle:(id)arg1;
-- (id)initWithStyle:(int)arg1 width:(long)arg2 colour:(id)arg3 styleArray:(double*)arg4;
-- (void)strokePath:(id)arg1 :(struct CGPath { }*)arg2;
+- (void)applyDashedLinesToPath:(id)arg1;
+- (void)applyLineCapStyleToPath:(id)arg1;
+- (void)applyLineJoinStyleToPath:(id)arg1 :(id)arg2;
+- (id)initWithStyle:(int)arg1 width:(int)arg2 colour:(id)arg3 styleArray:(double*)arg4;
+- (void)strokePath:(id)arg1 :(id)arg2;
 
 @end

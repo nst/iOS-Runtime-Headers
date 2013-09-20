@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOAttributionApp : PBCodable {
+@interface GEOAttributionApp : PBCodable <NSCopying> {
     NSString *_appBundleIdentifier;
     NSMutableArray *_handledSchemes;
 }
@@ -16,6 +16,7 @@
 - (id)appBundleIdentifier;
 - (void)clearHandledSchemes;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

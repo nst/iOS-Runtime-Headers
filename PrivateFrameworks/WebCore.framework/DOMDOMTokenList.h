@@ -14,6 +14,6 @@
 - (id)item:(unsigned int)arg1;
 - (unsigned int)length;
 - (void)remove:(id)arg1;
-- (BOOL)toggle:(id)arg1;
+- (BOOL)toggle:(id)arg1 force:(BOOL)arg2;
 
 @end

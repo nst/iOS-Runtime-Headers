@@ -11,29 +11,40 @@
     struct CGSize { 
         float width; 
         float height; 
+    float _bottomPadding;
     } _cachedSize;
     } _cachedSizeToFit;
+    NSArray *_entries;
     UIFont *_font;
     UIColor *_indexBackgroundColor;
     UIColor *_indexColor;
+    UIColor *_indexTrackingBackgroundColor;
     BOOL _pastBottom;
     BOOL _pastTop;
     int _selectedSection;
     NSArray *_titles;
+    float _topPadding;
+    float _verticalTextHeightEstimate;
 }
 
 @property(retain) UIFont * font;
 @property(retain) UIColor * indexBackgroundColor;
 @property(retain) UIColor * indexColor;
+@property(retain) UIColor * indexTrackingBackgroundColor;
 @property(readonly) BOOL pastBottom;
 @property(readonly) BOOL pastTop;
 @property(readonly) int selectedSection;
 @property(readonly) NSString * selectedSectionTitle;
 @property(retain) NSArray * titles;
 
-- (id)_createTouchesWithMouseEvent:(struct __GSEvent { }*)arg1 phase:(int)arg2;
+- (void)_cacheAndMeasureTitles;
 - (id)_displayTitles;
+- (id)_fontForIdiom:(int)arg1;
+- (int)_idiom;
+- (float)_minLineSpacingForIdiom:(int)arg1;
 - (void)_selectSectionForTouch:(id)arg1 withEvent:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBoundsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 stride:(float*)arg2;
+- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -43,20 +54,22 @@
 - (id)font;
 - (id)indexBackgroundColor;
 - (id)indexColor;
+- (id)indexTrackingBackgroundColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
-- (void)mouseDown:(struct __GSEvent { }*)arg1;
-- (void)mouseDragged:(struct __GSEvent { }*)arg1;
-- (void)mouseUp:(struct __GSEvent { }*)arg1;
 - (BOOL)pastBottom;
 - (BOOL)pastTop;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)selectedSection;
 - (id)selectedSectionTitle;
 - (void)setFont:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIndexBackgroundColor:(id)arg1;
 - (void)setIndexColor:(id)arg1;
+- (void)setIndexTrackingBackgroundColor:(id)arg1;
 - (void)setTitles:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)tintColorDidChange;
 - (id)titles;
 
 @end

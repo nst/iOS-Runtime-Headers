@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCalendar, EKGroupInfo, NSString, UIColor;
+@class EKCalendar, EKGroupInfo, NSString, UIColor, UIImage;
 
 @interface EKCalendarInfo : NSObject {
     EKCalendar *_calendar;
@@ -10,13 +10,17 @@
     int _customGroupType;
     EKGroupInfo *_group;
     BOOL _selected;
+    NSString *_title;
 }
 
 @property(retain) EKCalendar * calendar;
 @property(retain) UIColor * color;
 @property int customGroupType;
 @property(readonly) int displayOrder;
+@property(readonly) BOOL excludeFromSelectAll;
 @property EKGroupInfo * group;
+@property(readonly) UIImage * highlightedIcon;
+@property(readonly) UIImage * icon;
 @property(readonly) BOOL isEditable;
 @property(readonly) BOOL isPublished;
 @property(readonly) BOOL isShared;
@@ -24,14 +28,17 @@
 @property BOOL selected;
 @property(readonly) NSString * title;
 
+- (void).cxx_destruct;
 - (void)_updateCustomGroupType;
 - (id)calendar;
 - (id)color;
 - (int)customGroupType;
-- (void)dealloc;
 - (id)description;
 - (int)displayOrder;
+- (BOOL)excludeFromSelectAll;
 - (id)group;
+- (id)highlightedIcon;
+- (id)icon;
 - (id)initWithCalendar:(id)arg1;
 - (BOOL)isEditable;
 - (BOOL)isPublished;

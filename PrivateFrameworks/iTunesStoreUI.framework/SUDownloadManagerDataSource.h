@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUDownloadManager;
+@class NSArray, SUDownloadManager;
 
 @interface SUDownloadManagerDataSource : SUTableDataSource {
     SUDownloadManager *_downloadManager;
 }
 
 @property(readonly) SUDownloadManager * downloadManager;
+@property(readonly) NSArray * downloads;
 
 - (BOOL)canDeleteIndexPath:(id)arg1;
 - (BOOL)canSelectIndexPath:(id)arg1;
@@ -18,6 +19,7 @@
 - (BOOL)deleteIndexPath:(id)arg1;
 - (id)downloadForIndexPath:(id)arg1;
 - (id)downloadManager;
+- (id)downloads;
 - (id)initWithDownloadManager:(id)arg1;
 - (int)numberOfRowsInSection:(int)arg1;
 - (int)numberOfSections;

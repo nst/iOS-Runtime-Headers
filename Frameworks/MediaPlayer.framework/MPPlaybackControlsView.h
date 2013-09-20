@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVController, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, UIActivityIndicatorView, UIImage, UILabel, UIView;
+@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVController, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, NSString, UIActivityIndicatorView, UIImage, UILabel, UIView;
 
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
     unsigned int _wantsTick : 1;
@@ -27,6 +27,10 @@
     MPAVController *_player;
     MPDetailSlider *_progressControl;
     double _progressOffset;
+    MPButton *_radioButton;
+    BOOL _radioButtonHidden;
+    MPButton *_radioHistoryButton;
+    MPButton *_radioShareButton;
     MPButton *_repeatButton;
     MPButton *_rewindButton;
     UIView *_rewindButtonBezel;
@@ -34,19 +38,23 @@
     float _seekedToValue;
     MPButton *_shuffleButton;
     double _tickInterval;
+    MPButton *_trackInfoButton;
     UILabel *_trackInfoLabel;
     unsigned long long _visibleParts;
 }
 
 @property <MPPlaybackControlsDelegate> * delegate;
+@property(readonly) BOOL detailScrubbingHidesControls;
 @property unsigned long long disabledParts;
 @property(readonly) BOOL hideGeniusButton;
 @property(readonly) BOOL isScrubbing;
 @property(retain) MPAVItem * item;
+@property(readonly) NSString * localizedScrubSpeedText;
 @property(readonly) UIImage * mailButtonImage;
 @property(retain) MPAVController * player;
 @property(readonly) UIImage * repeatButtonImage;
 @property(readonly) unsigned int repeatType;
+@property(readonly) BOOL shouldOverrideProgressTimeLabelStyle;
 @property(readonly) UIImage * shuffleButtonImage;
 @property(readonly) BOOL shuffleIsOn;
 @property(readonly) unsigned int shuffleType;
@@ -54,9 +62,10 @@
 
 + (unsigned int)defaultVisibleParts;
 
+- (void).cxx_destruct;
 - (void)_addOpacityAnimationToBezelView:(id)arg1 reversed:(BOOL)arg2;
-- (void)_applicationDidBecomeActiveNotification:(id)arg1;
-- (void)_applicationWillResignActiveNotification:(id)arg1;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_changeGeniusImageToNormalImage:(id)arg1;
 - (void)_changeGeniusImageToPressedImage:(id)arg1;
 - (void)_contentsChangedNotification:(id)arg1;
@@ -64,24 +73,33 @@
 - (void)_fastForwardButton:(id)arg1;
 - (void)_geniusButton:(id)arg1;
 - (void)_handleGeniusButtonClick;
-- (void)_initializeControls;
 - (void)_isGeniusEnabledDidChangeNotification:(id)arg1;
 - (void)_mailButton:(id)arg1;
+- (void)_playbackModeDidChangeNotification:(id)arg1;
 - (void)_playbackSpeedButton:(id)arg1;
+- (void)_radioButton:(id)arg1;
+- (void)_radioHistoryButton:(id)arg1;
+- (void)_radioShareButton:(id)arg1;
 - (void)_repeatButton:(id)arg1;
 - (void)_resetGeniusButtonImages;
 - (void)_rewindButton:(id)arg1;
+- (void)_setCurrentTime:(double)arg1 duration:(double)arg2;
 - (void)_setVisiblePartsNeedReload;
 - (void)_shuffleButton:(id)arg1;
 - (void)_tickNotification:(id)arg1;
+- (void)_timeDidJumpNotification:(id)arg1;
+- (void)_trackInfoButton:(id)arg1;
 - (void)_updateButtonVisibility;
 - (void)_updateForPlaybackSpeed;
-- (double)_updatedDisplayDurationForTime:(double)arg1;
+- (double)_updatedDisplayDurationForTime:(double)arg1 preciseChapterMarkers:(BOOL)arg2;
 - (void)_validityChangedNotification:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (Class)buttonClass;
+- (int)buttonType;
 - (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)detailScrubbingHidesControls;
 - (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
 - (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
@@ -98,16 +116,20 @@
 - (BOOL)isScrubbing;
 - (id)item;
 - (void)layoutSubviews;
+- (id)localizedScrubSpeedText;
 - (id)mailButtonImage;
+- (id)newButtonBezelViewForPart:(unsigned long long)arg1;
 - (id)newButtonForPart:(unsigned long long)arg1;
 - (id)newProgressIndicator;
 - (id)newTrackInfoLabel;
 - (id)playbackSpeedButtonImageForPlaybackSpeed:(unsigned int)arg1;
+- (id)playbackSpeedTitleForPlaybackSpeed:(unsigned int)arg1;
 - (id)player;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)progressBarClipsToChapterDuration;
 - (void)registerForPlayerNotifications;
 - (void)reloadButtonVisibility;
+- (void)reloadControls;
 - (void)reloadView;
 - (id)repeatButtonImage;
 - (unsigned int)repeatType;
@@ -118,6 +140,7 @@
 - (void)setItem:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1;
+- (BOOL)shouldOverrideProgressTimeLabelStyle;
 - (id)shuffleButtonImage;
 - (BOOL)shuffleIsOn;
 - (unsigned int)shuffleType;

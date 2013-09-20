@@ -59,9 +59,11 @@
 - (void)systemApplicationWillEnterForeground;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)timeoutDuration;
+- (id)titleString;
 - (void)validationTimeout:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

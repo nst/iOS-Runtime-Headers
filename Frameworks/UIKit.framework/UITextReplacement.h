@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UITextRange;
+@class NSString, UITextRange;
 
 @interface UITextReplacement : NSObject {
     NSString *_menuTitle;
     NSString *_originalText;
     UITextRange *_range;
     NSString *_replacementText;
-    NSArray *_usageTrackingTypes;
+    unsigned int _usageTrackingMask;
 }
 
 @property(readonly) NSString * menuTitle;
 @property(readonly) NSString * originalText;
 @property(readonly) UITextRange * range;
 @property(readonly) NSString * replacementText;
-@property(retain) NSArray * usageTrackingTypes;
+@property unsigned int usageTrackingMask;
 
 + (id)replacementWithRange:(id)arg1 original:(id)arg2 replacement:(id)arg3 menuTitle:(id)arg4;
 
@@ -25,7 +25,7 @@
 - (id)originalText;
 - (id)range;
 - (id)replacementText;
-- (void)setUsageTrackingTypes:(id)arg1;
-- (id)usageTrackingTypes;
+- (void)setUsageTrackingMask:(unsigned int)arg1;
+- (unsigned int)usageTrackingMask;
 
 @end

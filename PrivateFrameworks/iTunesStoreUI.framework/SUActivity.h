@@ -15,7 +15,6 @@
 @property <SUActivityDelegate> * ITunesStoreDelegate;
 
 - (id)ITunesStoreDelegate;
-- (id)_activityImage;
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;

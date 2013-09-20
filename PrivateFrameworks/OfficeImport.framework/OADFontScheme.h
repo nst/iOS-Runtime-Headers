@@ -14,6 +14,7 @@
 - (void)dealloc;
 - (id)fontForFontSchemeRef:(id)arg1;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFontSchemeRef:(id)arg1;
 - (id)majorFont;
 - (unsigned int)majorFontCount;

@@ -42,6 +42,7 @@
 }
 
 + (void)_handleSIMChange;
++ (BOOL)_lockedSharedServiceIsSubscribed;
 + (void)_resetInsomniaState;
 + (void)_setInsomniaState:(BOOL)arg1;
 + (void)_suppressInsomniaState;
@@ -92,7 +93,7 @@
 - (void)handleDataContextDeactivated;
 - (void)handleIndicatorNotification:(struct __CFDictionary { }*)arg1;
 - (void)handleNotification:(id)arg1 isMWI:(BOOL)arg2;
-- (void)handlePasswordNotificationResponse:(struct __CFUserNotification { }*)arg1 flags:(unsigned long)arg2;
+- (void)handlePasswordNotificationResponse:(id)arg1;
 - (void)handlePasswordRequestCancellation;
 - (BOOL)headerChangesPending;
 - (id)init;
@@ -100,6 +101,7 @@
 - (BOOL)isMessageWaiting;
 - (BOOL)isOfflineDueToRoaming;
 - (BOOL)isOnline;
+- (BOOL)isPasswordReady;
 - (BOOL)isSubscribed;
 - (void)kill;
 - (int)mailboxGreetingType;
@@ -147,7 +149,7 @@
 - (double)trashCompactionAge;
 - (unsigned int)trashedCount;
 - (unsigned int)unreadCount;
-- (void)updateCountsForChangedFlags:(int)arg1 currentRecordFlags:(int)arg2;
+- (void)updateCountsForChangedFlags:(unsigned int)arg1 currentRecordFlags:(unsigned int)arg2;
 - (void)updateLoggingSettings;
 
 @end

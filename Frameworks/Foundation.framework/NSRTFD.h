@@ -40,7 +40,7 @@
 - (id)initWithDataRepresentation:(id)arg1;
 - (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithObjects:(id*)arg1 forKeys:(id*)arg2 count:(unsigned int)arg3;
+- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 - (id)initWithPasteboardDataRepresentation:(id)arg1;
 - (unsigned int)insertItem:(id)arg1 path:(id)arg2 dirInfo:(id)arg3 zone:(struct _NSZone { }*)arg4 plist:(id)arg5;
 - (unsigned int)internalSaveTo:(id)arg1 removeBackup:(BOOL)arg2 errorHandler:(id)arg3 temp:(id)arg4 backup:(id)arg5;

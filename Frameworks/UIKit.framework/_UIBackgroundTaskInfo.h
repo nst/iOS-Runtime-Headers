@@ -6,16 +6,18 @@
    See Warning(s) below.
  */
 
+@class BKSProcessAssertion;
+
 @interface _UIBackgroundTaskInfo : NSObject {
     int _count;
     id _expireHandler;
-    struct SBSProcessAssertion { } *_processAssertion;
+    BKSProcessAssertion *_processAssertion;
     unsigned int _taskId;
 }
 
 - (void)dealloc;
 - (void)fireExpirationHandler;
-- (id)initWithProcessAssertion:(struct SBSProcessAssertion { }*)arg1 expirationHandler:(id)arg2;
+- (id)initWithProcessAssertion:(id)arg1 expirationHandler:(id)arg2;
 - (void)invalidate;
 
 @end

@@ -2,45 +2,37 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class CPDistributedMessagingCenter, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSXPCConnection;
 
 @interface MSConnection : NSObject {
-    CPDistributedMessagingCenter *_center;
-    CPDistributedMessagingCenter *_noWakeCenter;
+    NSXPCConnection *_center;
+    NSXPCConnection *_noWakeCenter;
     NSMutableDictionary *_serverSideConfig;
     int _serverSideConfigNotificationToken;
     NSObject<OS_dispatch_queue> *_serverSideConfigQueue;
-    NSMutableDictionary *_shareState;
-    int _shareStateNotificationToken;
-    NSObject<OS_dispatch_queue> *_shareStateQueue;
 }
 
 + (id)sharedConnection;
 
 - (void).cxx_destruct;
 - (id)_machErrorWithUnderlyingError:(id)arg1;
+- (void)_waitForMessageToBeSent;
 - (void)abortActivitiesForPersonID:(id)arg1;
 - (void)checkForOutstandingActivities;
-- (BOOL)computeHashForAsset:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)dealloc;
 - (void)deleteAssetCollections:(id)arg1 personID:(id)arg2;
+- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (BOOL)enqueueAssetCollections:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)forgetPersonID:(id)arg1;
-- (void)handleSubscriptionPush;
+- (void)handleSubscriptionPushForPersonID:(id)arg1;
 - (id)init;
 - (BOOL)isBusy;
-- (void)modifyShare:(id)arg1 forPersonID:(id)arg2;
+- (void)isBusyCompletionBlock:(id)arg1;
 - (id)pause;
-- (BOOL)personIDHasOutstandingPublications:(id)arg1;
 - (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;
 - (void)refreshServerSideConfigurationForPersonID:(id)arg1;
-- (void)removeShare:(id)arg1 fromPersonID:(id)arg2;
 - (void)resetServerStateForPersonID:(id)arg1;
-- (void)resetSubscriptionSyncForPersonID:(id)arg1;
 - (void)resume:(id)arg1;
-- (void)sendInvitationsForShares:(id)arg1 forPersonID:(id)arg2;
 - (id)serverSideConfigurationForPersonID:(id)arg1;
-- (id)shareStateForPersonID:(id)arg1;
-- (id)subscribedStreamsForPersonID:(id)arg1 outError:(id*)arg2;
 
 @end

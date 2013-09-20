@@ -65,6 +65,7 @@
 - (id)_socialProfileUserId;
 - (id)_socialProfileUsername;
 - (BOOL)_usesArrayForExternalPropKey:(id)arg1;
+- (BOOL)_usesRemainingLineForExternalPropKey:(id)arg1;
 - (id)_valueSetter;
 - (void)addAddressMultiValues;
 - (BOOL)addIMValueTo:(id)arg1;
@@ -105,6 +106,7 @@
 - (BOOL)parseNICKNAME;
 - (BOOL)parseORG;
 - (BOOL)parsePhoto:(id)arg1;
+- (id)parseRemainingLine;
 - (id)parseSingleValue;
 - (BOOL)parseSocialProfiles;
 - (BOOL)parseTEL;

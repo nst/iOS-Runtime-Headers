@@ -11,6 +11,7 @@
     int _deviceType;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSKeyValueStore *_keyValueStore;
+    NSString *_legacyUserAgent;
     NSString *_localStoreFrontIdentifier;
     BOOL _localStoreFrontIsTransient;
     id _mediaLibraryIdentifier;
@@ -29,6 +30,7 @@
 @property(readonly) double batteryLevel;
 @property(readonly) int deviceType;
 @property(readonly) unsigned long deviceTypeIdentifier;
+@property(readonly) NSString * legacyUserAgent;
 @property(copy) NSString * mediaLibraryIdentifier;
 @property(getter=isPluggedIn,readonly) BOOL pluggedIn;
 @property(readonly) NSString * productType;
@@ -47,7 +49,6 @@
 + (void)setPromptWithIdentifier:(id)arg1 needsDisplay:(BOOL)arg2;
 
 - (void)_cacheKeyValueStoreValues;
-- (id)_copyGSCapabilityValueForKey:(struct __CFString { }*)arg1;
 - (id)_copyKeyValueStoreValueForDomain:(id)arg1 key:(id)arg2;
 - (id)_copyProductType;
 - (int)_deviceClass;
@@ -57,10 +58,14 @@
 - (int)_deviceTypeForUnknownIPad:(id)arg1;
 - (int)_deviceTypeForUnknownIPhone:(id)arg1;
 - (int)_deviceTypeForUnknownIPod:(id)arg1;
+- (id)_diskCapacityString;
+- (id)_fairPlayDeviceTypeString;
 - (BOOL)_getDeviceType:(unsigned int*)arg1 error:(id*)arg2;
 - (void)_invalidateSoftwareCUID;
 - (BOOL)_is1080pCapable;
 - (BOOL)_is720pCapable;
+- (id)_newLegacyUserAgent:(BOOL*)arg1;
+- (id)_newModernUserAgentWithClientName:(id)arg1 version:(id)arg2 isCachable:(BOOL*)arg3;
 - (void)_postStoreFrontDidChangeNotification;
 - (id)_productVersion;
 - (void)_reloadAfterStoreFrontChange;
@@ -68,6 +73,8 @@
 - (BOOL)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (void)_updateAutomaticDownloadKinds:(id)arg1 withValue:(id)arg2 completionBlock:(id)arg3;
 - (void)_updateBatteryLevelFromService:(unsigned int)arg1;
+- (id)_userAgentClientNameForBundleID:(id)arg1;
+- (id)_userAgentClientNameForInfoPlist:(id)arg1;
 - (id)automaticDownloadKinds;
 - (double)batteryLevel;
 - (id)copyStoreFrontRequestHeaders;
@@ -80,6 +87,7 @@
 - (id)init;
 - (BOOL)isPluggedIn;
 - (BOOL)isStoreFrontIdentifierTransient;
+- (id)legacyUserAgent;
 - (void)loadStoreFrontWithCompletionHandler:(id)arg1;
 - (id)mediaLibraryIdentifier;
 - (void)minusAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
@@ -91,6 +99,7 @@
 - (void)setCellularNetworkingAllowed:(BOOL)arg1;
 - (void)setMediaLibraryIdentifier:(id)arg1;
 - (void)setSoftwareLibraryIdentifier:(id)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1 accountIdentifier:(id)arg2 isTransient:(BOOL)arg3;
 - (void)setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (void)setStoreFrontWithResponseHeaders:(id)arg1;
 - (void)showPromptWithIdentifier:(id)arg1 completionHandler:(id)arg2;
@@ -103,5 +112,7 @@
 - (void)synchronizeAutomaticDownloadKinds;
 - (void)unionAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)userAgent;
+- (id)userAgentWithBundleIdentifier:(id)arg1 version:(id)arg2;
+- (id)userAgentWithClientName:(id)arg1 version:(id)arg2;
 
 @end

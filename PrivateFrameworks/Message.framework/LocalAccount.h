@@ -5,6 +5,7 @@
 @interface LocalAccount : MailAccount {
 }
 
++ (id)accountTypeIdentifier;
 + (id)accountTypeString;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)localAccount;
@@ -19,10 +20,10 @@
 - (BOOL)canGoOffline;
 - (BOOL)deleteInPlaceForMailbox:(id)arg1;
 - (id)displayName;
-- (id)initWithLibrary:(id)arg1 properties:(id)arg2;
+- (id)initWithLibrary:(id)arg1 persistentAccount:(id)arg2;
+- (BOOL)isActive;
 - (id)mailboxPathExtension;
 - (id)mailboxUidForFileSystemPath:(id)arg1;
-- (id)password:(BOOL)arg1;
 - (id)primaryMailboxUid;
 - (id)pushedMailboxUids;
 - (BOOL)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;
@@ -31,6 +32,7 @@
 - (void)setUsername:(id)arg1;
 - (Class)storeClass;
 - (BOOL)supportsAppend;
+- (BOOL)supportsArchiving;
 - (id)transientDraftsFolder;
 - (id)uniqueId;
 

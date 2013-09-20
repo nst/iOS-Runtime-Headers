@@ -18,6 +18,7 @@
 + (id)runLoopForNotifications;
 + (void)setRunLoopForNotifications:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_clientCheckInUsingExistencePort:(BOOL)arg1;
 - (void)_isQueuePreparedDidChange:(BOOL)arg1;
 - (void)_itemPlaybackDidEnd:(unsigned long long)arg1;
@@ -34,7 +35,7 @@
 - (void)_stopMigServer;
 - (void)_systemVolumeDidChange:(id)arg1;
 - (void)_unregisterForLaunchNotifications;
-- (BOOL)allowsRemoteUIAccess;
+- (BOOL)allowsBackgroundVideo;
 - (void)beginGeneratingPlaybackNotifications;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
@@ -54,6 +55,7 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(unsigned int)arg1;
+- (long long)nowPlayingRadioTrackID;
 - (unsigned int)numberOfItems;
 - (void)pause;
 - (void)pauseWithFadeoutDuration:(double)arg1;
@@ -63,7 +65,7 @@
 - (void)prepareToPlay;
 - (int)repeatMode;
 - (BOOL)serverIsAlive;
-- (void)setAllowsRemoteUIAccess:(BOOL)arg1;
+- (void)setAllowsBackgroundVideo:(BOOL)arg1;
 - (void)setCurrentChapterIndex:(unsigned int)arg1;
 - (void)setCurrentPlaybackRate:(float)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
@@ -72,11 +74,13 @@
 - (void)setQueueWithItemCollection:(id)arg1;
 - (void)setQueueWithQuery:(id)arg1 firstItem:(id)arg2;
 - (void)setQueueWithQuery:(id)arg1;
+- (void)setQueueWithRadioStation:(id)arg1;
 - (BOOL)setQueueWithSeedItems:(id)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setShuffleMode:(int)arg1;
 - (void)setUseCachedPlaybackState:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
+- (void)setVolumePrivate:(float)arg1;
 - (int)shuffleMode;
 - (BOOL)skipInDirection:(int)arg1 error:(id*)arg2;
 - (void)stop;

@@ -2,36 +2,27 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKGlobePointCache, VKMercatorTerrainHeightCache;
-
 @interface VKAnchorContext : NSObject {
-    VKGlobePointCache *_globePointCache;
-    BOOL _isGeocentric;
-    BOOL _isMercator;
-    VKMercatorTerrainHeightCache *_mercatorTerrainHeightCache;
+    struct shared_ptr<vk::AnchorContext> { 
+        struct AnchorContext {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    struct shared_ptr<vk::AnchorFactory> { 
+        struct AnchorFactory {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _anchorContext;
+    } _anchorFactory;
 }
 
-@property(retain) VKGlobePointCache * globePointCache;
-@property(readonly) BOOL isGeocentric;
-@property(readonly) BOOL isMercator;
-@property(retain) VKMercatorTerrainHeightCache * mercatorTerrainHeightCache;
-
-- (void)clearTerrainHeightForAnchor:(id)arg1;
-- (void)dealloc;
-- (struct { double x1; double x2; double x3; })geocentricPointForAnchor:(id)arg1;
-- (id)globePointCache;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (struct shared_ptr<vk::AnchorContext> { struct AnchorContext {} *x1; struct __shared_weak_count {} *x2; })anchorContext;
+- (struct shared_ptr<vk::AnchorFactory> { struct AnchorFactory {} *x1; struct __shared_weak_count {} *x2; })anchorFactory;
 - (id)init;
 - (id)initGeocentricWithCache:(id)arg1;
 - (id)initMercator;
-- (BOOL)isGeocentric;
+- (id)initWithAnchorContext:(struct AnchorContext { boolx1; id x2; id x3; }*)arg1;
 - (BOOL)isMercator;
-- (id)mercatorTerrainHeightCache;
-- (struct { double x1; double x2; double x3; })mercatorTerrainPointForAnchor:(id)arg1;
 - (id)newAnchorAtCoordinate:(struct { double x1; double x2; })arg1 followsTerrain:(BOOL)arg2;
-- (id)newAnchorAtCoordinate:(struct { double x1; double x2; })arg1;
-- (id)newAnchorAtMercatorPoint:(struct { double x1; double x2; double x3; })arg1;
-- (void)removeHandle:(id)arg1;
-- (void)setGlobePointCache:(id)arg1;
 - (void)setMercatorTerrainHeightCache:(id)arg1;
 
 @end

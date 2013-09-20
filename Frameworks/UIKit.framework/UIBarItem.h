@@ -19,7 +19,7 @@
 @property int tag;
 @property(copy) NSString * title;
 
-+ (id)_appearanceProxyViewClasses;
++ (id)_appearanceBlindViewClasses;
 + (id)_appearanceRecorder;
 + (id)_appearanceRecorderWhenContainedIn:(Class)arg1;
 + (id)_appearanceWhenContainedIn:(id)arg1;

@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableSet, NSOrderedSet, PLAlbumChangeNotification, PLInFlightAssetsAlbum;
+@class NSMutableSet, NSOrderedSet, PLAssetContainerChangeNotification, PLInFlightAssetsAlbum;
 
-@interface PLInFlightAssetsAlbumChangeNotification : PLAlbumChangeNotification {
+@interface PLInFlightAssetsAlbumChangeNotification : PLAssetContainerChangeNotification {
     PLInFlightAssetsAlbum *_album;
-    PLAlbumChangeNotification *_backingNotification;
+    PLAssetContainerChangeNotification *_backingNotification;
     BOOL _keyAssetDidChange;
     NSOrderedSet *_oldOIDs;
     NSMutableSet *_uniquedOIDs;
 }
 
 @property(readonly) PLInFlightAssetsAlbum * album;
-@property(readonly) PLAlbumChangeNotification * backingNotification;
+@property(readonly) PLAssetContainerChangeNotification * backingNotification;
 @property(readonly) NSOrderedSet * oldOIDs;
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;

@@ -14,7 +14,7 @@
 
 - (void)addPathForLineEndStyle:(int)arg1 graphicStyle:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 neighboringCP:(struct CGPoint { float x1; float x2; })arg4 filledPath:(struct CGPath {}**)arg5 strokedPath:(struct CGPath {}**)arg6;
 - (void)addScriptTagToHtml:(id)arg1 state:(id)arg2;
-- (void)createMaskedImageWithId:(struct __CFString { }*)arg1 path:(id)arg2 geometry:(id)arg3 cropGeometry:(id)arg4 imageBinary:(id)arg5 graphicStyle:(id)arg6 isFloating:(BOOL)arg7 state:(id)arg8;
+- (void)createMaskedImageWithId:(struct __CFString { }*)arg1 geometry:(id)arg2 imageBinary:(id)arg3 cropGeometry:(id)arg4 maskingShapePath:(id)arg5 alphaMaskBezier:(struct CGPath { }*)arg6 graphicStyle:(id)arg7 isFloating:(BOOL)arg8 state:(id)arg9;
 - (void)createShapeWithId:(struct __CFString { }*)arg1 path:(id)arg2 geometry:(id)arg3 graphicStyle:(id)arg4 isFloating:(BOOL)arg5 state:(id)arg6;
 - (void)dealloc;
 - (struct GQHPathEndPointInfo { BOOL x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; int x6; })endPointInfoForPath:(struct CGPath { }*)arg1;

@@ -16,12 +16,12 @@
 @property(retain) UINavigationBar * navigationBar;
 @property BOOL playAfterFlip;
 
+- (void).cxx_destruct;
 - (BOOL)TVOutEnabled;
 - (id)_chapterGuideTitleLabel;
 - (id)_copySwizzledNavigationViews;
 - (void)_done:(id)arg1;
 - (void)_hideNavigationAndStatusBars;
-- (void)_hideNavigationBarAnimationDidFinish:(id)arg1;
 - (int)_interfaceOrientation;
 - (void)_restoreOriginalNavigationViews:(BOOL)arg1;
 - (void)_restoreOriginalNavigationViewsDidStop:(id)arg1;

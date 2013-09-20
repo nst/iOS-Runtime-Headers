@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_xpc_object>, NSProtocolChecker, NSRecursiveLock, NSString;
+@class IMMessageContext, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_xpc_object>, NSProtocolChecker, NSRecursiveLock, NSString;
 
 @interface IMLocalObjectInternal : NSObject {
     BOOL _busyForwarding;
@@ -10,6 +10,7 @@
     NSLock *_componentQueueLock;
     NSRecursiveLock *_componentQueueProcessingLock;
     NSObject<OS_xpc_object> *_connection;
+    IMMessageContext *_currentMessageContext;
     NSObject<OS_dispatch_semaphore> *_deathLock;
     NSRecursiveLock *_lock;
     BOOL _pendingComponentQueueProcessing;

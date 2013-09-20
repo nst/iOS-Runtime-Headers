@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOLatLng : PBCodable {
+@interface GEOLatLng : PBCodable <NSCopying> {
     double _lat;
     double _lng;
 }
@@ -10,14 +10,13 @@
 @property double lat;
 @property double lng;
 
-- (id)coordinateAsString;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid;
 - (double)lat;
 - (double)lng;
 - (BOOL)readFrom:(id)arg1;

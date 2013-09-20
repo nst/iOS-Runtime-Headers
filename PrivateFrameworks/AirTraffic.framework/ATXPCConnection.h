@@ -29,7 +29,7 @@
 - (void)_handleLockdownMessage:(void*)arg1;
 - (void)_handleXPCError:(void*)arg1;
 - (void)_handleXPCMessage:(void*)arg1;
-- (int)_outstandingMessages;
+- (unsigned int)_outstandingMessages;
 - (void)_registerMessage:(id)arg1;
 - (void)_removeMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id)arg2;

@@ -8,8 +8,10 @@
     NSString *_timeString;
 }
 
-- (id)contentsImageForStyle:(int)arg1;
+- (BOOL)cachesImage;
+- (id)contentsImage;
 - (void)dealloc;
+- (int)textStyle;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

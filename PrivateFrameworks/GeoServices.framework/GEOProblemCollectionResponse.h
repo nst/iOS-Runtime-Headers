@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOProblemCollectionResponse : PBCodable {
+@interface GEOProblemCollectionResponse : PBCodable <NSCopying> {
 }
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

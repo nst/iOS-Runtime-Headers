@@ -13,7 +13,6 @@
     unsigned int _dateReceivedInterval;
     unsigned int _dateSentInterval;
     long long _generationNumber;
-    BOOL _knownToHaveAttachments;
     unsigned int _mailboxID;
     unsigned int _uid;
 }
@@ -47,7 +46,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKnownToHaveAttachments;
 - (BOOL)isVIP;
-- (BOOL)knownToHaveAttachments;
 - (unsigned int)mailboxID;
 - (BOOL)read;
 - (void)setConversationHash:(long long)arg1;

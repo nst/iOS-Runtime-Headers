@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCalendarItemEditorDelegate>, EKCalendarItem, EKCalendarItemEditItem, EKEventStore, NSArray, NSMutableSet, UIActionSheet, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
+@class <EKCalendarItemEditorDelegate>, EKCalendarItem, EKCalendarItemEditItem, EKEventStore, NSArray, NSMutableSet, UIActionSheet, UIAlertView, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
 
-@interface EKCalendarItemEditor : UITableViewController <EKCalendarItemEditItemDelegate, UIActionSheetDelegate> {
+@interface EKCalendarItemEditor : UITableViewController <EKCalendarItemEditItemDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     _UIAccessDeniedView *_accessDeniedView;
     UIActionSheet *_alertSheet;
+    UIAlertView *_alertView;
     EKCalendarItem *_calendarItem;
     BOOL _canHideDoneAndCancelButtons;
     UIBarButtonItem *_cancelButton;
@@ -21,9 +22,13 @@
     BOOL _hasAppeared;
     BOOL _isIgnoringCellHeightChange;
     int _lastAuthorizationStatus;
+    float _leftButtonSpace;
+    UIBarButtonItem *_leftButtonSpacer;
     BOOL _needsCellHeightChange;
     UIResponder *_responderToRestoreOnAppearence;
     id _revertState;
+    float _rightButtonSpace;
+    UIBarButtonItem *_rightButtonSpacer;
     BOOL _scrollToNotes;
     BOOL _showsTimeZone;
     EKEventStore *_store;
@@ -35,12 +40,16 @@
 @property BOOL canHideDoneAndCancelButtons;
 @property(readonly) EKCalendarItemEditItem * currentEditItem;
 @property <EKCalendarItemEditorDelegate> * editorDelegate;
+@property float navBarLeftContentInset;
+@property float navBarRightContentInset;
 @property(retain) UIResponder * responderToRestoreOnAppearence;
 @property BOOL scrollToNotes;
 @property BOOL showsTimeZone;
 @property(retain) EKEventStore * store;
 @property int visibleSectionToRestoreOnAppearence;
 
+- (void).cxx_destruct;
+- (void)_alertButtonClickedWithTag:(int)arg1 buttonIndex:(int)arg2;
 - (BOOL)_canDetachSingleOccurrence;
 - (BOOL)_canEnableDoneButton;
 - (void)_cancelSheetButtonPressed:(int)arg1;
@@ -59,6 +68,7 @@
 - (void)_performDelete:(int)arg1;
 - (BOOL)_performSave:(int)arg1 animated:(BOOL)arg2;
 - (void)_pinKeyboard:(BOOL)arg1;
+- (void)_presentAlertWithTag:(int)arg1;
 - (void)_presentDetachSheet;
 - (void)_reallyHandleCellHeightChange;
 - (void)_revertEvent;
@@ -72,14 +82,15 @@
 - (id)_viewForSheet;
 - (id)accessDeniedView;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowsDeletingFutureOccurrences;
 - (void)applicationDidResume;
 - (id)calendarItem;
 - (BOOL)canHideDoneAndCancelButtons;
 - (void)cancel:(id)arg1;
 - (void)cancelEditingWithDelegateNotification:(BOOL)arg1;
+- (void)completeAndSave;
 - (void)completeWithAction:(int)arg1 animated:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (id)currentEditItem;
 - (void)customizeActionSheet:(id)arg1;
 - (void)dealloc;
@@ -90,10 +101,14 @@
 - (void)didReceiveMemoryWarning;
 - (void)done:(id)arg1;
 - (void)editItem:(id)arg1 didCommitFromDetailViewController:(BOOL)arg2;
+- (void)editItem:(id)arg1 performActionsOnCellAtSubitem:(unsigned int)arg2 inSubsection:(unsigned int)arg3 actions:(id)arg4;
 - (void)editItem:(id)arg1 textViewShouldReturn:(id)arg2;
 - (void)editItem:(id)arg1 wantsDoneButtonDisabled:(BOOL)arg2;
+- (void)editItem:(id)arg1 wantsIndexPathsScrolledToVisible:(id)arg2;
 - (void)editItem:(id)arg1 wantsKeyboardPinned:(BOOL)arg2;
+- (void)editItem:(id)arg1 wantsRowInsertions:(id)arg2 rowDeletions:(id)arg3 rowReloads:(id)arg4;
 - (void)editItem:(id)arg1 wantsRowInsertions:(id)arg2 rowDeletions:(id)arg3;
+- (void)editItem:(id)arg1 wantsRowReload:(id)arg2;
 - (void)editItemDidEndEditing:(id)arg1;
 - (void)editItemDidStartEditing:(id)arg1;
 - (void)editItemRequiresHeightChange:(id)arg1;
@@ -106,8 +121,11 @@
 - (void)handleTapOutside;
 - (id)init;
 - (void)loadView;
+- (float)navBarLeftContentInset;
+- (float)navBarRightContentInset;
 - (id)notificationNamesForLocaleChange;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)preferredTitle;
 - (void)prepareEditItems;
 - (void)refreshStartAndEndDates;
@@ -122,6 +140,8 @@
 - (void)setCanHideDoneAndCancelButtons:(BOOL)arg1;
 - (void)setEditItemVisibility:(int)arg1 animated:(BOOL)arg2;
 - (void)setEditorDelegate:(id)arg1;
+- (void)setNavBarLeftContentInset:(float)arg1;
+- (void)setNavBarRightContentInset:(float)arg1;
 - (void)setResponderToRestoreOnAppearence:(id)arg1;
 - (void)setScrollToNotes:(BOOL)arg1;
 - (void)setShowsTimeZone:(BOOL)arg1;
@@ -129,11 +149,11 @@
 - (void)setVisibleSectionToRestoreOnAppearence:(int)arg1;
 - (void)setupDeleteButton;
 - (void)setupForEvent;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldDisplayEditItem:(id)arg1 withVisibility:(int)arg2;
 - (BOOL)showsTimeZone;
 - (id)store;
 - (void)storeChanged:(id)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -146,10 +166,11 @@
 - (void)tableViewDidStartReload:(id)arg1;
 - (id)viewControllerForEditItem:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (int)visibleSectionToRestoreOnAppearence;
+- (BOOL)willPresentDialogOnSave;
 
 @end

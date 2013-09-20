@@ -2,11 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMServiceAgentCenter;
-
 @interface IMServiceAgentImpl : IMServiceAgent {
-    BOOL _anyAccountsConnected;
-    IMServiceAgentCenter *_notifCenter;
 }
 
 + (void)_determineStatusImageAppearance;
@@ -21,23 +17,15 @@
 - (void)_customMessagesChanged:(id)arg1;
 - (void)_daemonConnected:(id)arg1;
 - (void)_daemonDisconnected:(id)arg1;
-- (void)_processAccountStatusChange;
 - (void)_statusImageAppearanceChanged:(id)arg1;
-- (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(int)arg4 properties:(id)arg5;
-- (void)activeAccountsChanged:(id)arg1 forService:(id)arg2;
-- (void)centerDidRemoveObserver;
-- (void)centerWillAddObserver;
 - (void)dealloc;
 - (void)finalize;
-- (void)imHandleInfoChangedNotification:(id)arg1;
-- (void)imHandleStatusChangedNotification:(id)arg1;
 - (id)init;
 - (void)launchIfNecessary;
 - (id)myAvailableMessages;
 - (id)myAwayMessages;
 - (id)notificationCenter;
 - (id)serviceWithName:(id)arg1;
-- (id)serviceWithNameNonBlocking:(id)arg1;
 - (void)setMyAvailableMessages:(id)arg1;
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;

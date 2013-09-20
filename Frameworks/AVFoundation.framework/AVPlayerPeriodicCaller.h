@@ -27,19 +27,7 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
     id _block;
-    } _currentHostTime;
-    } _currentTime;
     } _intervalRequested;
     } _lastFireTime;
     } _lastIntervalUsed;
@@ -47,7 +35,6 @@
     unsigned int _sequenceNum;
 }
 
-- (void)_cacheTimebaseTimeAndHostTime;
 - (void)_effectiveRateChanged;
 - (void)_handleTimeDiscontinuity;
 - (void)_resetNextFireTime;

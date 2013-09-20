@@ -16,6 +16,7 @@
     unsigned short objectBlockTransferSizes[4];
 }
 
+@property <iAUPServerDelegate> * delegate;
 @property(retain) FirmwareBundle * firmwareBundle;
 
 + (id)sharedServer;
@@ -23,13 +24,16 @@
 - (unsigned char)appendByteWithEscaping:(unsigned char)arg1 toObject:(id*)arg2;
 - (void)appendToLog:(id)arg1;
 - (void)dealloc;
+- (id)delegate;
 - (id)firmwareBundle;
 - (id)init;
 - (void)logCommand:(unsigned char)arg1 payload:(char *)arg2 length:(unsigned int)arg3;
+- (void)processDataFromAccessory:(id)arg1;
 - (void)processInByte:(unsigned char)arg1;
 - (void)processInTelegram;
 - (void)resetParser;
 - (void)sendCommand:(unsigned char)arg1 payload:(char *)arg2 payload_length:(unsigned short)arg3;
+- (void)setBootloaderEntry;
 - (void)setDelegate:(id)arg1;
 - (void)setFirmwareBundle:(id)arg1;
 - (unsigned int)supportedTargetProductIDCode;

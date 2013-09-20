@@ -22,9 +22,9 @@
 - (void)setBuildLevel:(int)arg1;
 - (void)setIsReversedParagraphOrder:(BOOL)arg1;
 - (void)setType:(int)arg1;
-- (id)timeNodeDataAtIndex:(int)arg1;
+- (id)timeNodeDataAtIndex:(unsigned int)arg1;
 - (id)timeNodeDataList;
-- (int)timeNodeDataListCount;
+- (unsigned int)timeNodeDataListCount;
 - (int)type;
 
 @end

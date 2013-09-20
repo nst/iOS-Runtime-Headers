@@ -5,15 +5,14 @@
 @class NSArray, NSData, NSString;
 
 @interface IMPerson : NSObject {
-    BOOL _beingTornDown;
     int _recordID;
     BOOL _registered;
 }
 
-@property(readonly) BOOL _beingTornDown;
 @property(readonly) int _recordID;
 @property(readonly) void* _recordRef;
 @property(readonly) BOOL _registered;
+@property(readonly) NSString * abbreviatedName;
 @property(readonly) NSArray * allEmails;
 @property(readonly) NSString * companyName;
 @property(readonly) NSString * displayName;
@@ -34,7 +33,11 @@
 @property(readonly) unsigned int status;
 @property(readonly) NSString * uniqueID;
 
++ (id)_cachedRecordResultForQuery:(id)arg1 addressBook:(void*)arg2;
++ (void)_setCachedQueriesEnabled:(BOOL)arg1;
++ (void)_setCachedRecordResult:(int)arg1 identifier:(int)arg2 forQuery:(id)arg3 addressBook:(void*)arg4;
 + (id)allPeople;
++ (id)existingABPeopleWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 + (id)existingABPersonForPerson:(id)arg1;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 countryCode:(id)arg6 identifier:(int*)arg7;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 identifier:(int*)arg6;
@@ -42,12 +45,13 @@
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3 orNumber:(id)arg4;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
++ (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 
 - (void)_abPersonChanged:(id)arg1;
-- (BOOL)_beingTornDown;
 - (int)_recordID;
 - (void*)_recordRef;
 - (BOOL)_registered;
+- (id)abbreviatedName;
 - (id)allEmails;
 - (id)allHandlesForProperty:(id)arg1;
 - (void)appendID:(id)arg1 toProperty:(id)arg2;
@@ -79,7 +83,6 @@
 - (id)nickname;
 - (id)phoneNumbers;
 - (int)recordID;
-- (oneway void)release;
 - (void)save;
 - (void)setEmails:(id)arg1;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;

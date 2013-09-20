@@ -37,12 +37,12 @@
 + (void)getBuyOfferDictionary:(id*)arg1 regularPriceOfferDictionary:(id*)arg2 inOfferDictionaries:(id)arg3 variantString:(id)arg4;
 + (id)offerVariantResponseKeyForOfferVariant:(int)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)_isBuy;
 - (id)actionDisplayTitle;
 - (id)buyParameters;
 - (int)buyType;
 - (id)buyURL;
-- (void)dealloc;
 - (id)displayPrice;
 - (id)displayTitle;
 - (unsigned long long)downloadSize;

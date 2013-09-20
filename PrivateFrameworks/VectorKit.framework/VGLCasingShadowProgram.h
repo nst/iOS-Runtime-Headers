@@ -2,17 +2,18 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VGLCasingShadowProgram : VGLRealisticFadeProgram {
+@interface VGLCasingShadowProgram : VGLRealisticProgram {
     float _ramp;
     int _uRamp;
 }
 
 @property float ramp;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
-- (id)init;
 - (float)ramp;
 - (void)setRamp:(float)arg1;
+- (void)setup;
 
 @end

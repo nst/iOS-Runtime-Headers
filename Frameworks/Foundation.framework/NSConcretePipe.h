@@ -13,7 +13,6 @@
 - (void)dealloc;
 - (id)fileHandleForReading;
 - (id)fileHandleForWriting;
-- (void)finalize;
 - (id)init;
 
 @end

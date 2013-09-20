@@ -26,7 +26,6 @@
     double _duration;
     double _endValue;
     UIView *_maskContainerView;
-    UIView *_maskView;
     UIMovieScrubberTrackOverlayView *_overlayView;
     double _startValue;
     NSArray *_summaryThumbnailChildTimestamps;
@@ -47,17 +46,16 @@
 @property <UIMovieScrubberTrackViewDataSource> * dataSource;
 @property <UIMovieScrubberTrackViewDelegate> * delegate;
 
-- (id)_createImageViewForTimestamp:(id)arg1;
+- (id)_createImageViewForTimestamp:(id)arg1 isSummaryThumbnail:(BOOL)arg2;
 - (void)_reallyReloadData;
 - (void)_setOverlayViewIsZoomed:(BOOL)arg1 minValue:(float)arg2 maxValue:(float)arg3;
-- (void)_unzoomAnimation:(id)arg1 didFinish:(id)arg2 context:(void*)arg3;
-- (void)_zoomAnimation:(id)arg1 didFinish:(id)arg2 context:(void*)arg3;
+- (void)_unzoomAnimation:(id)arg1 didFinish:(id)arg2 context:(id)arg3;
+- (void)_zoomAnimation:(id)arg1 didFinish:(id)arg2 context:(id)arg3;
 - (void)animateFillFramesAway;
 - (void)clear;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
@@ -65,7 +63,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setEndValue:(double)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setStartValue:(double)arg1;
 - (void)setThumbnailImage:(struct CGImage { }*)arg1 forTimestamp:(id)arg2;
 - (void)setValue:(double)arg1;

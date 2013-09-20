@@ -4,7 +4,9 @@
 
 @class <EKReminderViewControllerDelegate>, <EKStyleProvider>, EKEventStore, EKReminder, EKReminderEditor;
 
-@interface EKReminderViewController : UIViewController <EKCalendarItemEditorDelegate, EKReminderEditorDelegate> {
+@interface EKReminderViewController : UIViewController <EKCalendarItemEditorDelegate, EKReminderEditorDelegate, EKPickerTableViewDelegate> {
+    SEL _datePickerAction;
+    id _datePickerTarget;
     <EKReminderViewControllerDelegate> *_delegate;
     EKReminderEditor *_editor;
     float _minimumTableHeight;
@@ -17,9 +19,9 @@
 @property(retain) EKReminder * reminder;
 @property(retain) <EKStyleProvider> * styleProvider;
 
+- (void).cxx_destruct;
 - (void)_eventStoreChanged:(id)arg1;
 - (BOOL)allowContextProvider:(id)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)delegate;
 - (void)didEndDatePickingWithTarget:(id)arg1 animated:(BOOL)arg2;
@@ -32,6 +34,8 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)navigationItem;
+- (void)pickerTableViewDidChangeDatePickerInterval:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)reminder;
 - (void)saveReminderAnimated:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;

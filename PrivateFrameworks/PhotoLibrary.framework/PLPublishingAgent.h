@@ -43,6 +43,7 @@
     id _userInfo;
 }
 
+@property(readonly) BOOL allowsCellularAccessForRequests;
 @property BOOL allowsHDOver3GUpload;
 @property long long approximateHDUploadSize;
 @property long long approximateSDUploadSize;
@@ -70,6 +71,7 @@
 - (void)_transcodeVideo:(id)arg1;
 - (void)_updateStatisticsFromSnapshots;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (BOOL)allowsCellularAccessForRequests;
 - (BOOL)allowsHDOver3GUpload;
 - (BOOL)allowsTellingFriend;
 - (BOOL)allowsViewingOnHost;

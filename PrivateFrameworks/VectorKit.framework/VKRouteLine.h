@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKAttributedRoute;
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
+@class NSSet, VKAttributedRoute;
 
 @interface VKRouteLine : NSObject <VKRouteMapMatchingDataSource> {
     struct { 
@@ -12,81 +17,65 @@
         double y1; 
     struct { 
         double v[4][4]; 
-    struct vector<VKRouteLineSection, vk_allocator<VKRouteLineSection> > { 
-        struct VKRouteLineSection {} *__begin_; 
-        struct VKRouteLineSection {} *__end_; 
-        struct __compressed_pair<VKRouteLineSection *, vk_allocator<VKRouteLineSection> > { 
-            struct VKRouteLineSection {} *__first_; 
+    struct vector<vk::RouteLineSection, vk_allocator<vk::RouteLineSection> > { 
+        struct RouteLineSection {} *__begin_; 
+        struct RouteLineSection {} *__end_; 
+        struct __compressed_pair<vk::RouteLineSection *, vk_allocator<vk::RouteLineSection> > { 
+            struct RouteLineSection {} *__first_; 
         } __end_cap_; 
-    struct VKRouteLineFeatureCache { 
-        struct unordered_map<GEOMultiSectionFeature *, VKRouteLineFeature, std::__1::hash<GEOMultiSectionFeature *>, std::__1::equal_to<GEOMultiSectionFeature *>, vk_allocator<std::__1::pair<GEOMultiSectionFeature *const, VKRouteLineFeature>> > { 
-            struct __hash_table<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, std::__1::__unordered_map_hasher<GEOMultiSectionFeature *, VKRouteLineFeature, std::__1::hash<GEOMultiSectionFeature *>, true>, std::__1::__unordered_map_equal<GEOMultiSectionFeature *, VKRouteLineFeature, std::__1::equal_to<GEOMultiSectionFeature *>, true>, vk_allocator<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>> > { 
-                struct unique_ptr<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> *[], std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> *>> > { 
-                    struct __compressed_pair<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> **, std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> *>> > { 
-                        struct __hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> {} **__first_; 
-                        struct __bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> *> > { 
-                            struct __compressed_pair<unsigned long, vk_allocator<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> *> > { 
-                                unsigned long __first_; 
-                            } __data_; 
-                        } __second_; 
-                    } __ptr_; 
-                } __bucket_list_; 
-                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> *>, vk_allocator<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *>> > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> *> { 
-                        struct __hash_node<std::__1::pair<GEOMultiSectionFeature *, VKRouteLineFeature>, void *> {} *__next_; 
-                    } __first_; 
-                } __p1_; 
-                struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<GEOMultiSectionFeature *, VKRouteLineFeature, std::__1::hash<GEOMultiSectionFeature *>, true> > { 
-                    unsigned long __first_; 
-                } __p2_; 
-                struct __compressed_pair<float, std::__1::__unordered_map_equal<GEOMultiSectionFeature *, VKRouteLineFeature, std::__1::equal_to<GEOMultiSectionFeature *>, true> > { 
-                    float __first_; 
-                } __p3_; 
-            } __table_; 
-        } _map; 
-        struct { 
-            double x0; 
-            double x1; 
-            double y0; 
-            double y1; 
-        } _routeLineRect; 
-    struct { 
+    struct PolylineCoordinate { 
         unsigned int index; 
         float offset; 
-    struct { 
+    struct Vec2Imp<float> { 
         float x; 
         float y; 
     } _bounds;
     double _boundsInWorldUnit;
     double _boundsUnitsPerMeter;
     BOOL _curve;
-    } _featureCache;
+    BOOL _hasNewRoadMatches;
     } _inverseMatrix;
     double _lastTrafficTimeStamp;
     double _lastUserLocationMatchTimestamp;
     BOOL _matchToRoads;
+    double _metersPerPoint;
     VKAttributedRoute *_overlay;
+    NSSet *_retainedTiles;
     } _sections;
+    double _simplificationEpsilonPoints;
     } _userLocation;
     } _userLocationIndex;
-    struct VKRouteLineSection { struct vector<VKRouteMapMatchingSection::Vertex, vk_allocator<VKRouteMapMatchingSection::Vertex> > { struct Vertex {} *x_1_1_1; struct Vertex {} *x_1_1_2; struct __compressed_pair<VKRouteMapMatchingSection::Vertex *, vk_allocator<VKRouteMapMatchingSection::Vertex> > { struct Vertex {} *x_3_2_1; } x_1_1_3; } x1; boolx2; float x3; float x4; struct list<VGLRouteLineMesh *, vk_allocator<VGLRouteLineMesh *> > { struct __list_node_base<VGLRouteLineMesh *, void *> { struct __list_node<VGLRouteLineMesh *, void *> {} *x_1_2_1; struct __list_node<VGLRouteLineMesh *, void *> {} *x_1_2_2; } x_5_1_1; struct __compressed_pair<unsigned long, vk_allocator<std::__1::__list_node<VGLRouteLineMesh *, void *>> > { unsigned long x_2_2_1; } x_5_1_2; } x5; struct VKPolylineWalker { char *x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; unsigned int x_6_1_4; } x6; struct VKRouteLineToMeshPathMap { struct list<VKRouteLineToMeshPathMap::Range, vk_allocator<VKRouteLineToMeshPathMap::Range> > { struct __list_node_base<VKRouteLineToMeshPathMap::Range, void *> { struct __list_node<VKRouteLineToMeshPathMap::Range, void *> {} *x_1_3_1; struct __list_node<VKRouteLineToMeshPathMap::Range, void *> {} *x_1_3_2; } x_1_2_1; struct __compressed_pair<unsigned long, vk_allocator<std::__1::__list_node<VKRouteLineToMeshPathMap::Range, void *>> > { unsigned long x_2_3_1; } x_1_2_2; } x_7_1_1; struct __list_iterator<VKRouteLineToMeshPathMap::Range, void *> { struct __list_node<VKRouteLineToMeshPathMap::Range, void *> {} *x_2_2_1; } x_7_1_2; } x7; struct { unsigned int x_8_1_1; float x_8_1_2; } x8; struct { unsigned int x_9_1_1; float x_9_1_2; } x9; } *_userLocationSection;
+    struct RouteLineSection { int (**x1)(); struct vector<vk::RouteLineSection::Vertex, vk_allocator<vk::RouteLineSection::Vertex> > { struct Vertex {} *x_2_1_1; struct Vertex {} *x_2_1_2; struct __compressed_pair<vk::RouteLineSection::Vertex *, vk_allocator<vk::RouteLineSection::Vertex> > { struct Vertex {} *x_3_2_1; } x_2_1_3; } x2; struct vector<vk::RouteLineSection::Arrow, vk_allocator<vk::RouteLineSection::Arrow> > { struct Arrow {} *x_3_1_1; struct Arrow {} *x_3_1_2; struct __compressed_pair<vk::RouteLineSection::Arrow *, vk_allocator<vk::RouteLineSection::Arrow> > { struct Arrow {} *x_3_2_1; } x_3_1_3; } x3; struct vector<vk::RouteLineSection::Arrow, vk_allocator<vk::RouteLineSection::Arrow> > { struct Arrow {} *x_4_1_1; struct Arrow {} *x_4_1_2; struct __compressed_pair<vk::RouteLineSection::Arrow *, vk_allocator<vk::RouteLineSection::Arrow> > { struct Arrow {} *x_3_2_1; } x_4_1_3; } x4; boolx5; boolx6; float x7; float x8; struct list<VGLRouteLineMesh *, vk_allocator<VGLRouteLineMesh *> > { struct __list_node_base<VGLRouteLineMesh *, void *> { struct __list_node<VGLRouteLineMesh *, void *> {} *x_1_2_1; struct __list_node<VGLRouteLineMesh *, void *> {} *x_1_2_2; } x_9_1_1; struct __compressed_pair<unsigned long, vk_allocator<std::__1::__list_node<VGLRouteLineMesh *, void *> > > { unsigned long x_2_2_1; } x_9_1_2; } x9; struct VertexSource {} *x10; struct VKPolylineWalker<vk::RouteLineSection::Vertex> { struct VKPolylineWalkerDataSource<vk::RouteLineSection::Vertex> {} *x_11_1_1; } x11; struct VKRouteLineToMeshPathMap { struct list<VKRouteLineToMeshPathMap::Range, vk_allocator<VKRouteLineToMeshPathMap::Range> > { struct __list_node_base<VKRouteLineToMeshPathMap::Range, void *> { struct __list_node<VKRouteLineToMeshPathMap::Range, void *> {} *x_1_3_1; struct __list_node<VKRouteLineToMeshPathMap::Range, void *> {} *x_1_3_2; } x_1_2_1; struct __compressed_pair<unsigned long, vk_allocator<std::__1::__list_node<VKRouteLineToMeshPathMap::Range, void *> > > { unsigned long x_2_3_1; } x_1_2_2; } x_12_1_1; struct __list_iterator<VKRouteLineToMeshPathMap::Range, void *> { struct __list_node<VKRouteLineToMeshPathMap::Range, void *> {} *x_2_2_1; } x_12_1_2; } x12; struct PolylineCoordinate { unsigned int x_13_1_1; float x_13_1_2; } x13; struct PolylineCoordinate { unsigned int x_14_1_1; float x_14_1_2; } x14; unsigned int *x15; unsigned int x16; double x17; float x18; boolx19; float x20; float x21; } *_userLocationSection;
+    double _viewUnitsPerPoint;
 }
 
 @property(readonly) struct { double x1; double x2; double x3; double x4; } bounds;
+@property BOOL hasNewRoadMatches;
+@property(readonly) BOOL needsUpdate;
 @property VKAttributedRoute * overlay;
+@property double simplificationEpsilonPoints;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_updateBounds:(id)arg1;
+- (void)_updateTilesCovered:(id)arg1;
 - (struct { double x1; double x2; double x3; double x4; })bounds;
-- (void)buildRouteLineFromSortedPaths:(id)arg1 curve:(BOOL)arg2 matchRouteLine:(BOOL)arg3;
+- (BOOL)buildRouteLineForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 containerModel:(id)arg4 viewUnitsPerPoint:(double)arg5 force:(BOOL)arg6 curve:(BOOL)arg7;
+- (void)createMeshIfNecessary:(int)arg1;
+- (void)dealloc;
 - (void)drawDebugMarkersWithContext:(id)arg1;
 - (void)forEachMapMatchingSection:(id)arg1;
 - (void)forEachSection:(id)arg1;
+- (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(float)arg2;
+- (BOOL)hasNewRoadMatches;
 - (BOOL)isTrafficUpToDate;
 - (BOOL)isTrafficUptoDate:(double)arg1;
+- (BOOL)needsUpdate;
 - (id)overlay;
+- (void)setHasNewRoadMatches:(BOOL)arg1;
 - (void)setOverlay:(id)arg1;
+- (void)setSimplificationEpsilonPoints:(double)arg1;
+- (double)simplificationEpsilonPoints;
 - (void)splitRouteLineAtAnnotation:(id)arg1;
 
 @end

@@ -10,15 +10,15 @@
     UITableViewCell *_titleCell;
 }
 
-- (id)_makeCell:(int)arg1;
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
-- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
-- (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
+- (void).cxx_destruct;
+- (id)_makeCell:(unsigned int)arg1;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2 forWidth:(float)arg3;
 - (id)init;
 - (id)initWithLocation:(BOOL)arg1;
 - (BOOL)isInline;
-- (int)numberOfSubitemsInSubsection:(int)arg1;
+- (unsigned int)numberOfSubitemsInSubsection:(unsigned int)arg1;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;

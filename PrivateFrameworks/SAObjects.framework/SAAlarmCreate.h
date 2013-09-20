@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL, SAAlarmObject;
+@class SAAlarmObject;
 
-@interface SAAlarmCreate : SABaseClientBoundCommand {
+@interface SAAlarmCreate : SADomainCommand {
 }
 
 @property(retain) SAAlarmObject * alarmToCreate;
-@property(copy) NSURL * targetAppId;
 
 + (id)create;
 + (id)createWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setAlarmToCreate:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

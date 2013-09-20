@@ -111,7 +111,7 @@
 - (void)_setRightView:(id)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
-- (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (BOOL)canAnchorFromBottom;
 - (void)completeBounceAnimation;
 - (void)dealloc;

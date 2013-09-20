@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSMutableData, NSURLConnection, NSURLRequest;
+@class NSMutableData, NSMutableURLRequest, NSURLConnection;
 
 @interface WeatherXMLHTTPRequest : NSObject <NSURLConnectionDelegate> {
     NSURLConnection *_connection;
     NSMutableData *_rawData;
-    NSURLRequest *_request;
+    NSMutableURLRequest *_request;
 }
 
 @property(readonly) NSURLConnection * connection;

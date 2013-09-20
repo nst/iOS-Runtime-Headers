@@ -20,17 +20,12 @@
 + (id)videoAnswerButtonImage;
 + (id)videoDeclineButtonImage;
 
-- (float)_buttonWidth;
-- (void)_layoutWells;
 - (void)animateGrabberOutWithCompletion:(id)arg1;
 - (void)dealloc;
 - (id)grabberGestureRecognizers;
 - (id)grabberImage;
 - (id)grabberView;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initForVideoChatWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
 - (void)setGrabberGestureRecognizers:(id)arg1;
 - (void)setGrabberImage:(id)arg1;
 

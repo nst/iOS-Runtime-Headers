@@ -9,10 +9,11 @@
 
 @property int textureSampler;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
-- (id)init;
 - (void)setTextureSampler:(int)arg1;
+- (void)setup;
 - (int)textureSampler;
 
 @end

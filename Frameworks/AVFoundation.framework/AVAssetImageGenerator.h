@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVAssetImageGeneratorInternal, AVVideoComposition, NSString;
+@class <AVVideoCompositing>, AVAsset, AVAssetImageGeneratorInternal, AVVideoComposition, NSString;
 
 @interface AVAssetImageGenerator : NSObject {
     AVAssetImageGeneratorInternal *_priv;
@@ -11,6 +11,7 @@
 @property(copy) NSString * apertureMode;
 @property BOOL appliesPreferredTrackTransform;
 @property(readonly) AVAsset * asset;
+@property(readonly) <AVVideoCompositing> * customVideoCompositor;
 @property struct CGSize { float x1; float x2; } maximumSize;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } requestedTimeToleranceAfter;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } requestedTimeToleranceBefore;
@@ -34,6 +35,7 @@
 - (id)asset;
 - (void)cancelAllCGImageGeneration;
 - (struct CGImage { }*)copyCGImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 actualTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 error:(id*)arg3;
+- (id)customVideoCompositor;
 - (void)dealloc;
 - (void)finalize;
 - (void)generateCGImagesAsynchronouslyForTimes:(id)arg1 completionHandler:(id)arg2;

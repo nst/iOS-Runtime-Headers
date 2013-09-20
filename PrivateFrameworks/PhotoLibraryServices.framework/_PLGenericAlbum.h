@@ -10,9 +10,11 @@
 @property(retain) NSMutableSet * albumLists;
 @property(retain) PLManagedAsset * keyAsset;
 @property(retain) NSNumber * kind;
-@property unsigned int pendingItemsCount;
-@property unsigned int pendingItemsType;
+@property int pendingItemsCount;
+@property int pendingItemsType;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(retain) NSDictionary * slideshowSettings;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(retain) NSString * title;
 @property(retain) NSString * uuid;
 
@@ -20,7 +22,5 @@
 + (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-
-- (id)objectID;
 
 @end

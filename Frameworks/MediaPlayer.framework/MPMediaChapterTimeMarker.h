@@ -14,9 +14,9 @@
 @property(retain) NSArray * chapters;
 @property BOOL hasArtworkAtPlaybackTime;
 
+- (void).cxx_destruct;
 - (unsigned int)chapterIndex;
 - (id)chapters;
-- (void)dealloc;
 - (BOOL)hasArtworkAtPlaybackTime;
 - (void)setChapterIndex:(unsigned int)arg1;
 - (void)setChapters:(id)arg1;

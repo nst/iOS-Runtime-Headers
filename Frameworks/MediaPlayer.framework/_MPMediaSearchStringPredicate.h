@@ -14,10 +14,10 @@
 
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
 - (id)_ML3PredicateForEntityClass:(Class)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

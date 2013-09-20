@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, UIActionSheet, UIAlertView, UIKeyboard, UIPopoverController, UITableView;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString, UIActionSheet, UIAlertView, UIKeyboard, UIPopoverController, UITableView, UIView;
 
 @interface PSListController : PSViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PSViewControllerOffsetProtocol> {
     struct CGPoint { 
@@ -14,7 +14,9 @@
     BOOL _bundlesLoaded;
     BOOL _cachesCells;
     NSMutableDictionary *_cells;
+    UIView *_containerView;
     } _contentOffsetWithKeyboard;
+    BOOL _edgeToEdgeCells;
     BOOL _forceSynchronousIconLoadForCreatedCells;
     NSMutableArray *_groups;
     BOOL _hasAppeared;
@@ -36,6 +38,7 @@
     float _verticalContentOffset;
 }
 
+@property BOOL edgeToEdgeCells;
 @property BOOL forceSynchronousIconLoadForCreatedCells;
 
 + (BOOL)displaysButtonBar;
@@ -45,6 +48,7 @@
 - (id)_customViewForSpecifier:(id)arg1 class:(Class)arg2 isHeader:(BOOL)arg3;
 - (BOOL)_getGroup:(int*)arg1 row:(int*)arg2 ofSpecifierAtIndex:(int)arg3 groups:(id)arg4;
 - (float)_getKeyboardIntersectionHeight;
+- (void)_handleActionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)_insertContiguousSpecifiers:(id)arg1 atIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)_keyboardDidHide:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
@@ -54,18 +58,19 @@
 - (void)_removeContiguousSpecifiers:(id)arg1 animated:(BOOL)arg2;
 - (void)_removeIdentifierForSpecifier:(id)arg1;
 - (void)_returnKeyPressed:(id)arg1;
+- (void)_scrollToSpecifierNamed:(id)arg1;
 - (void)_setContentInset:(float)arg1;
 - (void)_setNotShowingSetupController;
 - (float)_tableView:(id)arg1 heightForCustomInSection:(int)arg2 isHeader:(BOOL)arg3;
 - (id)_tableView:(id)arg1 viewForCustomInSection:(int)arg2 isHeader:(BOOL)arg3;
 - (void)_unloadBundleControllers;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)addSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)addSpecifier:(id)arg1;
 - (void)addSpecifiersFromArray:(id)arg1 animated:(BOOL)arg2;
 - (void)addSpecifiersFromArray:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (Class)backgroundViewClass;
 - (void)beginUpdates;
 - (id)bundle;
 - (id)cachedCellForSpecifier:(id)arg1;
@@ -74,16 +79,17 @@
 - (void)confirmationViewAcceptedForSpecifier:(id)arg1;
 - (void)confirmationViewCancelledForSpecifier:(id)arg1;
 - (BOOL)containsSpecifier:(id)arg1;
-- (id)contentScrollView;
 - (id)controllerForRowAtIndexPath:(id)arg1;
 - (id)controllerForSpecifier:(id)arg1;
 - (void)createGroupIndices;
-- (void)createPrequeuedPSTableCells:(unsigned int)arg1 etched:(BOOL)arg2;
+- (void)createPrequeuedPSTableCells:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)dismissConfirmationViewForSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)dismissPopover;
 - (void)dismissPopoverAnimated:(BOOL)arg1;
+- (BOOL)edgeToEdgeCells;
 - (void)endUpdates;
 - (id)findFirstVisibleResponder;
 - (BOOL)forceSynchronousIconLoadForCreatedCells;
@@ -163,6 +169,7 @@
 - (void)setCachesCells:(BOOL)arg1;
 - (void)setDesiredVerticalContentOffset:(float)arg1;
 - (void)setDesiredVerticalContentOffsetItemNamed:(id)arg1;
+- (void)setEdgeToEdgeCells:(BOOL)arg1;
 - (void)setForceSynchronousIconLoadForCreatedCells:(BOOL)arg1;
 - (void)setReusesCells:(BOOL)arg1;
 - (void)setSpecifier:(id)arg1;
@@ -171,7 +178,6 @@
 - (void)setTitle:(id)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (BOOL)shouldSelectResponderOnAppearance;
-- (void)showConfirmationSheetForSpecifier:(id)arg1;
 - (void)showConfirmationViewForSpecifier:(id)arg1 useAlert:(BOOL)arg2 swapAlertButtons:(BOOL)arg3;
 - (void)showConfirmationViewForSpecifier:(id)arg1;
 - (void)showPINSheet:(id)arg1;
@@ -182,8 +188,6 @@
 - (id)specifiers;
 - (id)specifiersInGroup:(int)arg1;
 - (id)table;
-- (id)tableBackgroundColor;
-- (int)tableStyle;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 detailTextForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -203,9 +207,11 @@
 - (void)updateSpecifiersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withSpecifiers:(id)arg2;
 - (float)verticalContentOffset;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

@@ -2,31 +2,39 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardEmoji, UIKeyboardEmojiImageView, UIView;
+@class UIKBRenderConfig, UIKeyboardEmoji, UIKeyboardEmojiImageView, UIView, UIView<UIKeyboardEmojiPressIndicationDelegate>;
 
 @interface UIKeyboardEmojiView : UIControl {
+    UIView<UIKeyboardEmojiPressIndicationDelegate> *_delegate;
     UIKeyboardEmoji *_emoji;
     UIKeyboardEmojiImageView *_imageView;
     UIView *_popup;
+    UIKBRenderConfig *_renderConfig;
 }
 
+@property(retain) UIView<UIKeyboardEmojiPressIndicationDelegate> * delegate;
 @property(retain) UIKeyboardEmoji * emoji;
 @property(retain) UIKeyboardEmojiImageView * imageView;
 @property(retain) UIView * popup;
+@property(retain) UIKBRenderConfig * renderConfig;
 
 + (id)emojiViewForEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (void)recycleEmojiView:(id)arg1;
 
 - (id)createAndInstallKeyPopupView;
 - (void)dealloc;
+- (id)delegate;
 - (id)emoji;
 - (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 emoji:(id)arg2;
 - (id)popup;
+- (id)renderConfig;
+- (void)setDelegate:(id)arg1;
 - (void)setEmoji:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setEmoji:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setPopup:(id)arg1;
+- (void)setRenderConfig:(id)arg1;
 - (void)uninstallPopup;
 
 @end

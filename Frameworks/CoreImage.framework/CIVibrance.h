@@ -4,12 +4,12 @@
 
 @class CIImage, NSNumber;
 
-@interface CIVibrance : CIFilter {
+@interface CIVibrance : CIFilter <_CIFilterProperties> {
     NSNumber *inputAmount;
     CIImage *inputImage;
 }
 
-@property(copy) NSNumber * inputAmount;
+@property(retain) NSNumber * inputAmount;
 @property(retain) CIImage * inputImage;
 
 + (id)customAttributes;

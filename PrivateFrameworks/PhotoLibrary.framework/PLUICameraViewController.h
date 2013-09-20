@@ -41,12 +41,16 @@
 - (void)cameraView:(id)arg1 videoSavedToPath:(id)arg2 editingInfo:(id)arg3;
 - (void)cameraViewCancelled:(id)arg1;
 - (BOOL)cameraViewShouldShowPreviewAfterSelection:(id)arg1;
+- (void)cameraViewWillPreviewPhoto:(id)arg1;
+- (void)cameraViewWillRetakePhoto:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)loadView;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setWantsImageData:(BOOL)arg1;
+- (BOOL)shouldAutorotate;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

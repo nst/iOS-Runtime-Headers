@@ -15,8 +15,8 @@
 - (oneway void)cancelSearchQuery:(id)arg1;
 - (oneway void)cancelTaskWithID:(int)arg1;
 - (id)customSignature;
-- (id)delegateeInvitationICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
 - (id)deletedItemsFolder;
+- (id)draftsFolder;
 - (id)encryptionIdentityPersistentReference;
 - (id)folderIDsThatExternalClientsCareAboutForDataclasses:(int)arg1 withTag:(id*)arg2;
 - (id)folderIDsThatExternalClientsCareAboutWithTag:(id*)arg1;
@@ -24,7 +24,6 @@
 - (BOOL)generatesBulletins;
 - (id)inboxFolder;
 - (id)initWithDAAccount:(id)arg1;
-- (BOOL)isHotmailAccount;
 - (int)mailNumberOfPastDaysToSync;
 - (id)mailboxes;
 - (oneway void)monitorFoldersForUpdates:(id)arg1;
@@ -54,5 +53,6 @@
 - (oneway void)stopMonitoringFoldersForUpdates:(id)arg1;
 - (int)supportsEmailFlagging;
 - (int)supportsMailboxSearch;
+- (id)unactionableICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
 
 @end

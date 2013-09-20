@@ -2,56 +2,78 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMutableDictionary, NSNumber, UIImage, _UIBarButtonItemAppearanceStorage;
+@class NSDictionary, NSMutableDictionary, NSNumber, NSString, UIImage, _UIBarButtonItemAppearanceStorage;
 
-@interface _UINavigationBarAppearanceStorage : NSObject {
+@interface _UINavigationBarAppearanceStorage : _UIBarAppearanceStorage {
+    NSString *_backdropViewGroupName;
     BOOL _deferShadowToSearchBar;
-    NSMutableDictionary *backgroundImagesForBarMetrics;
+    int activeBarMetrics;
+    UIImage *backIndicatorImage;
+    NSNumber *backIndicatorLeftMargin;
+    UIImage *backIndicatorTransitionMaskImage;
+    int barMetrics;
     _UIBarButtonItemAppearanceStorage *buttonAppearanceStorage;
+    int defaultBarMetrics;
     BOOL hidesShadow;
-    NSNumber *miniTitleVerticalAdjustment;
     BOOL reversesShadowOffset;
     UIImage *shadowImage;
     NSDictionary *textAttributes;
-    NSNumber *titleVerticalAdjustment;
+    NSMutableDictionary *titleVerticalAdjustmentsForBarMetrics;
 }
 
 @property(readonly) _UIBarButtonItemAppearanceStorage * _barButtonAppearanceStorage;
+@property int activeBarMetrics;
+@property(retain) UIImage * backIndicatorImage;
+@property(retain) NSNumber * backIndicatorLeftMargin;
+@property(retain) UIImage * backIndicatorTransitionMaskImage;
+@property(retain) NSString * backdropViewGroupName;
 @property(readonly) UIImage * backgroundImage;
 @property(readonly) _UIBarButtonItemAppearanceStorage * barButtonAppearanceStorage;
+@property(readonly) UIImage * cardBackgroundImage;
+@property int defaultBarMetrics;
 @property BOOL deferShadowToSearchBar;
 @property BOOL hidesShadow;
 @property(readonly) UIImage * miniBackgroundImage;
 @property(readonly) UIImage * miniPromptBackgroundImage;
-@property(retain) NSNumber * miniTitleVerticalAdjustment;
 @property(readonly) UIImage * promptBackgroundImage;
 @property BOOL reversesShadowOffset;
 @property(retain) UIImage * shadowImage;
 @property(copy) NSDictionary * textAttributes;
-@property(retain) NSNumber * titleVerticalAdjustment;
+
++ (int)typicalBarPosition;
 
 - (id)_barButtonAppearanceStorage;
+- (int)activeBarMetrics;
+- (id)backIndicatorImage;
+- (id)backIndicatorLeftMargin;
+- (id)backIndicatorTransitionMaskImage;
+- (id)backdropViewGroupName;
 - (id)backgroundImage;
-- (id)backgroundImageForBarMetrics:(int)arg1;
 - (id)barButtonAppearanceStorage;
+- (id)cardBackgroundImage;
 - (void)dealloc;
+- (int)defaultBarMetrics;
 - (BOOL)deferShadowToSearchBar;
 - (BOOL)hidesShadow;
 - (id)miniBackgroundImage;
 - (id)miniPromptBackgroundImage;
-- (id)miniTitleVerticalAdjustment;
 - (id)promptBackgroundImage;
+- (id)representativeImageForIdiom:(int)arg1;
 - (BOOL)reversesShadowOffset;
-- (void)setBackgroundImage:(id)arg1 forBarMetrics:(int)arg2;
+- (void)setActiveBarMetrics:(int)arg1;
+- (void)setBackIndicatorImage:(id)arg1;
+- (void)setBackIndicatorLeftMargin:(id)arg1;
+- (void)setBackIndicatorTransitionMaskImage:(id)arg1;
+- (void)setBackdropViewGroupName:(id)arg1;
+- (void)setDefaultBarMetrics:(int)arg1;
 - (void)setDeferShadowToSearchBar:(BOOL)arg1;
 - (void)setHidesShadow:(BOOL)arg1;
-- (void)setMiniTitleVerticalAdjustment:(id)arg1;
 - (void)setReversesShadowOffset:(BOOL)arg1;
 - (void)setShadowImage:(id)arg1;
 - (void)setTextAttributes:(id)arg1;
-- (void)setTitleVerticalAdjustment:(id)arg1;
+- (void)setTitleVerticalAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (id)shadowImage;
 - (id)textAttributes;
-- (id)titleVerticalAdjustment;
+- (float)titleVerticalAdjustmentForBarMetrics:(int)arg1;
 
 @end

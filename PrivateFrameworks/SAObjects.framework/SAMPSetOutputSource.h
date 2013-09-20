@@ -4,11 +4,10 @@
 
 @class NSURL;
 
-@interface SAMPSetOutputSource : SABaseClientBoundCommand {
+@interface SAMPSetOutputSource : SADomainCommand {
 }
 
 @property(copy) NSURL * outputSourceId;
-@property(copy) NSURL * targetAppId;
 
 + (id)setOutputSource;
 + (id)setOutputSourceWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)outputSourceId;
 - (BOOL)requiresResponse;
 - (void)setOutputSourceId:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

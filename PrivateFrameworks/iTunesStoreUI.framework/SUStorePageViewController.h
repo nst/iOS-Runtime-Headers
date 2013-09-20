@@ -6,13 +6,14 @@
    See Warning(s) below.
  */
 
-@class <SUStorePageViewControllerDelegate>, ISURLRequestPerformance, NSString, SSAuthenticationContext, SSMutableURLRequestProperties, SSURLRequestProperties, SUNavigationMenuViewController, SUPageSectionGroup, SUSearchFieldController, SUSegmentedControl, SUStorePageProtocol, SUViewController, UIPopoverController;
+@class <SUStorePageViewControllerDelegate>, ISURLRequestPerformance, NSDictionary, NSString, SSAuthenticationContext, SSMutableURLRequestProperties, SSURLRequestProperties, SUNavigationMenuViewController, SUPageSectionGroup, SUSearchFieldController, SUSegmentedControl, SUStorePageProtocol, SUViewController, UIPopoverController, _UIBackdropView;
 
 @interface SUStorePageViewController : SUViewController <SUMenuViewControllerDelegate, SUPreviewOverlayContainer, UIPopoverControllerDelegate, ISURLOperationDelegate> {
     SUViewController *_activeChildViewController;
     int _activeSectionIndex;
     struct __CFSet { } *_allowedInterfaceOrientations;
     SSAuthenticationContext *_authContext;
+    _UIBackdropView *_backdropView;
     BOOL _canMoveToOverlay;
     <SUStorePageViewControllerDelegate> *_delegate;
     double _expirationTime;
@@ -34,6 +35,7 @@
     SUSearchFieldController *_searchFieldController;
     SUPageSectionGroup *_sectionsGroup;
     SUSegmentedControl *_segmentedControl;
+    NSDictionary *_showcaseDictionary;
     SSMutableURLRequestProperties *_urlRequestProperties;
     BOOL _useWebViewFastPath;
 }
@@ -73,7 +75,6 @@
 - (void)_handleViewControllerBecameReady:(id)arg1;
 - (BOOL)_isCacheExpired;
 - (BOOL)_isInTransientViewController;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_moveChildViewController:(id)arg1 toOverlayForProtocol:(id)arg2;
 - (void)_moveToRootSectionForChildViewController:(id)arg1 protocol:(id)arg2;
 - (void)_navigationButtonAction:(id)arg1;
@@ -81,6 +82,8 @@
 - (id)_newBarButtonItemsWithButtonItems:(id)arg1 replacingItemWithTag:(int)arg2 withButtonItem:(id)arg3;
 - (id)_newSegmentedControlWithItems:(id)arg1;
 - (void)_performActionForProtocolButton:(id)arg1;
+- (void)_reloadBackgroundViewProperties;
+- (void)_reloadContentInsets;
 - (void)_reloadForAppearance:(BOOL)arg1;
 - (void)_reloadForNetworkTypeChange:(id)arg1;
 - (void)_reloadNavigationBar;
@@ -100,7 +103,6 @@
 - (BOOL)_sectionIsNetworkConstrained;
 - (void)_sendFailureAfterDialogsFinished:(id)arg1;
 - (void)_setActiveChildViewController:(id)arg1 shouldTearDown:(BOOL)arg2;
-- (void)_setAllowedOrientations:(id)arg1;
 - (void)_setHeaderView:(id)arg1;
 - (void)_setLeftNavigationItem:(id)arg1 forTag:(int)arg2;
 - (void)_setPendingChildViewController:(id)arg1;
@@ -111,6 +113,7 @@
 - (BOOL)_shouldDisplaySegmentedControlInNavigationBar:(id)arg1;
 - (BOOL)_shouldFetchAutomatically;
 - (BOOL)_shouldReloadForAppearance;
+- (void)_showNativeShowcaseWithDictionary:(id)arg1;
 - (void)_showPlaceholderViewControllerWithTearDown:(BOOL)arg1;
 - (void)_tabConfigurationChanged:(id)arg1;
 - (void)_tearDownNavigationMenu;
@@ -136,7 +139,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
 - (void)enqueueFetchOperation;
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
-- (void)handleApplicationURL:(id)arg1;
+- (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (void)handleFailureWithError:(id)arg1;
 - (void)handleStoreFailureWithError:(id)arg1;
 - (void)hidePreviewOverlay:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;

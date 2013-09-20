@@ -37,12 +37,14 @@
 - (int)_currentNetworkType;
 - (id)_dataStatusIndicator;
 - (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
+- (int)_networkTypeForReachabilityFlags:(unsigned int)arg1;
 - (int)_networkTypeFromDataIndicator:(id)arg1;
 - (BOOL)_ntsIsUsingNetwork;
 - (void)_postTypeChangedNotificationFromValue:(int)arg1 toValue:(int)arg2;
 - (void)_postUsageChangedToValue:(BOOL)arg1;
 - (void)_reloadCellularRestriction;
 - (void)_reloadNetworkType;
+- (void)_reloadNetworkTypeWithReachabilityFlags:(unsigned int)arg1;
 - (int)_setNetworkType:(int)arg1;
 - (void)beginObservingDownloadQueue:(id)arg1;
 - (void)beginUsingNetwork;
@@ -55,6 +57,7 @@
 - (void)endObservingDownloadQueue:(id)arg1;
 - (void)endUsingNetwork;
 - (id)init;
+- (BOOL)isCellularDataEnabledForBundleIdentifier:(id)arg1;
 - (BOOL)isUsingNetwork;
 - (BOOL)isWiFiEnabled;
 - (double)lastNetworkTypeChangeTime;

@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMetadataItem, NSArray, NSDictionary, NSString;
+@class AVMetadataItem, NSArray, NSData, NSDictionary, NSString;
 
 @interface AVAssetInspector : AVFigObjectInspector <NSCopying> {
 }
 
+@property(readonly) NSData * SHA1Digest;
 @property(readonly) NSArray * alternateTrackGroups;
 @property(readonly) NSArray * availableMetadataFormats;
 @property(readonly) NSArray * commonMetadata;
@@ -28,6 +29,7 @@
 @property(readonly) NSArray * trackIDs;
 @property(readonly) NSDictionary * trackReferences;
 
+- (id)SHA1Digest;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;

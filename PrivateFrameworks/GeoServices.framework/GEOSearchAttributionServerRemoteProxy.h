@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOSearchAttributionManifest;
-
 @interface GEOSearchAttributionServerRemoteProxy : NSObject <GEOSearchAttributionServerProxy> {
-    GEOSearchAttributionManifest *_manifest;
 }
 
-- (id)_manifest;
-- (void)dealloc;
 - (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4;
 
 @end

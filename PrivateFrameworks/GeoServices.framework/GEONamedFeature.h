@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEONamedFeature : PBCodable {
+@interface GEONamedFeature : PBCodable <NSCopying> {
     NSString *_name;
     double _value;
 }
@@ -13,6 +13,7 @@
 @property double value;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

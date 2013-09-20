@@ -15,6 +15,7 @@
 - (void)addObjectsFromOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)addObjectsFromOrderedSet:(id)arg1;
 - (void)addObjectsFromSet:(id)arg1;
+- (Class)classForCoder;
 - (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
 - (void)filterUsingPredicate:(id)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
@@ -33,14 +34,15 @@
 - (void)minusSet:(id)arg1;
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
 - (void)pl_addObjectsFromArray:(id)arg1;
+- (void)pl_insertObjects:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)pl_removeObjectsInArray:(id)arg1;
-- (BOOL)pl_replaceObjectsAtIndexes:(id)arg1 wihtObjectsIfDifferent:(id)arg2;
 - (void)removeAllObjects;
 - (void)removeFirstObject;
 - (void)removeLastObject;
 - (void)removeObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeObject:(id)arg1;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)removeObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (void)removeObjectsAtIndexes:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeObjectsInArray:(id)arg1;
@@ -53,6 +55,8 @@
 - (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inSet:(id)arg2;
 - (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)removeObjectsInSet:(id)arg1;
+- (void)removeObjectsPassingTest:(id)arg1;
+- (void)removeObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (void)replaceObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)replaceObject:(id)arg1;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;

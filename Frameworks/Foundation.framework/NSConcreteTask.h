@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_source>, NSPort;
+@class NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSPort;
 
 @interface NSConcreteTask : NSTask {
     NSMutableDictionary *_dictionary;
@@ -14,6 +14,7 @@
     BOOL _hasExeced;
     BOOL _hasPostedDeathNotification;
     BOOL _isRunning;
+    NSObject<OS_dispatch_semaphore> *_lock;
     int _pid;
     int _platformExitInfo;
     int _suspendCount;
@@ -24,6 +25,7 @@
 
 - (int)_platformExitInformation;
 - (int)_procid;
+- (void)_withTaskDictionary:(id)arg1;
 - (id)arguments;
 - (id)currentDirectoryPath;
 - (void)dealloc;

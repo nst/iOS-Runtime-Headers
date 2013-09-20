@@ -7,22 +7,24 @@
 @interface PLBulletinsTestDaemonJob : PLDaemonJob {
     NSArray *_addedAssetUUIDs;
     NSString *_albumUUID;
-    int _bulletinType;
+    long long _bulletinType;
     PLPhotoLibrary *_photoLibrary;
 }
 
 @property(retain) NSArray * addedAssetUUIDs;
 @property(retain) NSString * albumUUID;
-@property int bulletinType;
+@property long long bulletinType;
 @property(retain) PLPhotoLibrary * photoLibrary;
 
 + (void)notifyAssets:(id)arg1 wereAddedToAlbum:(id)arg2;
++ (void)notifyCommentWasReceivedForAssets:(id)arg1;
 + (void)notifyInvitationWasReceivedForAlbum:(id)arg1;
++ (void)notifyLikeWasReceivedForAssets:(id)arg1;
 
 - (id)addedAssetUUIDs;
 - (id)albumUUID;
-- (int)bulletinType;
-- (int)daemonOperation;
+- (long long)bulletinType;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
 - (id)initFromXPCObject:(id)arg1;
@@ -31,7 +33,7 @@
 - (void)runDaemonSide;
 - (void)setAddedAssetUUIDs:(id)arg1;
 - (void)setAlbumUUID:(id)arg1;
-- (void)setBulletinType:(int)arg1;
+- (void)setBulletinType:(long long)arg1;
 - (void)setPhotoLibrary:(id)arg1;
 
 @end

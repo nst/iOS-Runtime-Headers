@@ -13,7 +13,7 @@
 + (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
 
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
+- (id)databaseStatementParameters;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

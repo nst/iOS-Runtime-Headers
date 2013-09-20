@@ -9,7 +9,6 @@
 
 @property(copy) NSString * accessKey;
 @property(readonly) DOMHTMLCollection * children;
-@property(copy) NSString * className;
 @property(copy) NSString * contentEditable;
 @property(copy) NSString * dir;
 @property(copy) NSString * idName;
@@ -26,8 +25,6 @@
 - (void)absolutePosition:(int*)arg1 :(int*)arg2 :(int*)arg3 :(int*)arg4;
 - (id)accessKey;
 - (id)children;
-- (id)classList;
-- (id)className;
 - (void)click;
 - (id)contentEditable;
 - (id)dir;
@@ -46,7 +43,6 @@
 - (int)scrollXOffset;
 - (int)scrollYOffset;
 - (void)setAccessKey:(id)arg1;
-- (void)setClassName:(id)arg1;
 - (void)setContentEditable:(id)arg1;
 - (void)setDir:(id)arg1;
 - (void)setDraggable:(BOOL)arg1;

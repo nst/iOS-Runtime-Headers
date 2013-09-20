@@ -3,11 +3,17 @@
  */
 
 @interface VGLRenderState : NSObject {
+    struct { 
+        float factor; 
+        float units; 
     int _blendMode;
     BOOL _depthMask;
     int _depthMode;
     BOOL _enableCullFace;
     BOOL _enableDepthTest;
+    BOOL _enablePolygonFillOffset;
+    } _polygonOffset;
+    BOOL _scissorTest;
     BOOL _stencilTest;
 }
 
@@ -16,25 +22,33 @@
 @property int depthMode;
 @property BOOL enableCullFace;
 @property BOOL enableDepthTest;
+@property BOOL enablePolygonFillOffset;
+@property struct { float x1; float x2; } polygonOffset;
+@property BOOL scissorTest;
 @property BOOL stencilTest;
 
-+ (id)sharedSimpleState;
-
+- (id).cxx_construct;
 - (int)blendMode;
 - (BOOL)depthMask;
 - (int)depthMode;
 - (BOOL)enableCullFace;
 - (BOOL)enableDepthTest;
+- (BOOL)enablePolygonFillOffset;
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (void)loadStateFromContext:(id)arg1;
+- (struct { float x1; float x2; })polygonOffset;
 - (void)pushStateIntoContext:(id)arg1;
 - (void)reset;
+- (BOOL)scissorTest;
 - (void)setBlendMode:(int)arg1;
 - (void)setDepthMask:(BOOL)arg1;
 - (void)setDepthMode:(int)arg1;
 - (void)setEnableCullFace:(BOOL)arg1;
 - (void)setEnableDepthTest:(BOOL)arg1;
+- (void)setEnablePolygonFillOffset:(BOOL)arg1;
+- (void)setPolygonOffset:(struct { float x1; float x2; })arg1;
+- (void)setScissorTest:(BOOL)arg1;
 - (void)setStencilTest:(BOOL)arg1;
 - (BOOL)stencilTest;
 

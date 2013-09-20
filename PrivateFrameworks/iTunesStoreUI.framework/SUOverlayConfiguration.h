@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class CPRegularExpression, NSString;
+@class NSRegularExpression, NSString;
 
 @interface SUOverlayConfiguration : NSObject {
     struct CGSize { 
         float width; 
         float height; 
-    CPRegularExpression *_bagKeyPattern;
+    NSRegularExpression *_bagKeyPattern;
     int _cornerRadius;
     BOOL _shouldShowNavigationBar;
     } _size;
     NSString *_transitionName;
-    CPRegularExpression *_urlPattern;
+    NSRegularExpression *_urlPattern;
 }
 
 @property(readonly) int cornerRadius;

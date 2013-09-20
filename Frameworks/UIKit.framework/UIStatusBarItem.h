@@ -5,6 +5,7 @@
 @class NSString;
 
 @interface UIStatusBarItem : NSObject {
+    int _idiom;
     int _type;
 }
 
@@ -15,9 +16,10 @@
 @property(readonly) int type;
 @property(readonly) Class viewClass;
 
-+ (BOOL)itemType:(int)arg1 appearsInRegion:(int)arg2;
-+ (BOOL)itemType:(int)arg1 canBeEnabledForData:(id)arg2 style:(int)arg3;
-+ (id)itemWithType:(int)arg1;
++ (BOOL)isItemWithTypeExclusive:(int)arg1;
++ (BOOL)itemType:(int)arg1 idiom:(int)arg2 appearsInRegion:(int)arg3;
++ (BOOL)itemType:(int)arg1 idiom:(int)arg2 canBeEnabledForData:(id)arg3 style:(id)arg4;
++ (id)itemWithType:(int)arg1 idiom:(int)arg2;
 + (BOOL)typeIsValid:(int)arg1;
 
 - (BOOL)appearsInRegion:(int)arg1;

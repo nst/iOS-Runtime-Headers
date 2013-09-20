@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOPlaceSearchFeedbackCollection : PBCodable {
+@interface GEOPlaceSearchFeedbackCollection : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -38,6 +38,7 @@
 - (unsigned long long)businessID;
 - (void)clearActionCaptures;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

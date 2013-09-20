@@ -11,6 +11,7 @@
     BOOL _isRemovable;
     NSString *_label;
     BOOL _precomposed;
+    NSString *_savedIdentifier;
 }
 
 @property(readonly) NSURL * URL;
@@ -19,8 +20,10 @@
 @property(readonly) BOOL isRemovable;
 @property(readonly) NSString * label;
 @property(readonly) BOOL precomposed;
+@property(retain) NSString * savedIdentifier;
 
-+ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
 + (id)typeStrings;
 
 - (void).cxx_destruct;
@@ -32,6 +35,8 @@
 - (BOOL)isRemovable;
 - (id)label;
 - (BOOL)precomposed;
+- (id)savedIdentifier;
+- (void)setSavedIdentifier:(id)arg1;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)subtitle1Label;

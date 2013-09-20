@@ -24,6 +24,7 @@
 - (void)setTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)styleBarButtonItem:(id)arg1;
+- (void)styleButton:(id)arg1;
 - (id)textAttributesForState:(unsigned int)arg1;
 - (struct UIOffset { float x1; float x2; })titlePositionAdjustmentForBarMetrics:(int)arg1;
 

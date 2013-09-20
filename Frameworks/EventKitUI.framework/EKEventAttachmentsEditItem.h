@@ -4,25 +4,24 @@
 
 @class NSArray;
 
-@interface EKEventAttachmentsEditItem : EKEventEditItem <EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate, UIDocumentInteractionControllerDelegate> {
+@interface EKEventAttachmentsEditItem : EKEventEditItem <EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate> {
     NSArray *_cellControllers;
 }
 
+- (void).cxx_destruct;
 - (void)_cleanUpCellControllers;
-- (id)_parentViewControllerForAttachmentCellController;
 - (BOOL)_shouldCondenseIntoSingleItem;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(int)arg2 inSubsection:(int)arg3;
-- (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
-- (void)documentInteractionControllerWillEndPreview:(id)arg1;
-- (void)editor:(id)arg1 didSelectSubitem:(int)arg2 inSubsection:(int)arg3;
-- (int)numberOfSubitemsInSubsection:(int)arg1;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2 forWidth:(float)arg3;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
+- (void)editor:(id)arg1 didSelectSubitem:(unsigned int)arg2 inSubsection:(unsigned int)arg3;
+- (unsigned int)numberOfSubitemsInSubsection:(unsigned int)arg1;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)owningEventForAttachmentEditViewController:(id)arg1;
+- (id)parentViewControllerForAttachmentCellController:(id)arg1;
 - (void)refreshFromCalendarItemAndStore;
-- (BOOL)usesDetailViewControllerForSubitem:(int)arg1 inSubsection:(int)arg2;
+- (BOOL)usesDetailViewControllerForSubitem:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
 
 @end

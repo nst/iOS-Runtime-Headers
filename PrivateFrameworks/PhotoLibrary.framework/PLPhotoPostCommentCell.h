@@ -14,7 +14,7 @@
 @property(readonly) UILabel * contentLabel;
 @property(readonly) UIView * styledSeparatorView;
 
-+ (float)heightForWidth:(float)arg1 forInterfaceOrientation:(int)arg2;
++ (float)heightForWidth:(float)arg1;
 
 - (id)_attributedStringForPlaceholder;
 - (id)addCommentButton;

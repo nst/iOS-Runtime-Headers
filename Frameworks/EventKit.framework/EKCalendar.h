@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKSource, NSString;
+@class EKSource, NSArray, NSString, NSURL;
 
 @interface EKCalendar : EKObject {
     struct CGColor { } *_color;
@@ -13,13 +13,50 @@
 @property struct CGColor { }* CGColor;
 @property(readonly) unsigned int allowedEntityTypes;
 @property(readonly) BOOL allowsContentModifications;
+@property(readonly) BOOL allowsEvents;
+@property(readonly) BOOL allowsTasks;
 @property(readonly) NSString * calendarIdentifier;
+@property(readonly) BOOL canBePublished;
+@property(readonly) BOOL canBeShared;
+@property(readonly) NSString * colorString;
+@property int displayOrder;
+@property(copy) NSString * externalID;
+@property(copy) NSString * externalModificationTag;
+@property(readonly) NSURL * externalURI;
+@property(readonly) BOOL hasEvents;
+@property(readonly) BOOL hasTasks;
 @property(getter=isImmutable,readonly) BOOL immutable;
+@property unsigned int invitationStatus;
+@property(readonly) BOOL isDefaultCalendarForSource;
+@property(readonly) BOOL isFacebookBirthdayCalendar;
+@property(readonly) BOOL isHidden;
 @property BOOL isMainCalendarForSource;
+@property BOOL isPublished;
+@property(readonly) BOOL isSharingInvitation;
 @property unsigned long loadFlags;
+@property(copy) NSURL * ownerIdentityAddress;
+@property(copy) NSString * ownerIdentityDisplayName;
+@property(copy) NSString * ownerIdentityEmail;
+@property(copy) NSString * ownerIdentityFirstName;
+@property(copy) NSString * ownerIdentityLastName;
+@property(readonly) BOOL prohibitsScheduling;
+@property(readonly) NSString * publishedURL;
+@property(readonly) BOOL schedulingProhibited;
+@property(copy) NSURL * selfIdentityAddress;
+@property(copy) NSString * selfIdentityDisplayName;
+@property(copy) NSString * selfIdentityEmail;
+@property(copy) NSString * selfIdentityFirstName;
+@property(copy) NSString * selfIdentityLastName;
+@property(copy) NSURL * sharedOwnerAddress;
+@property(readonly) NSString * sharedOwnerEmail;
+@property(copy) NSString * sharedOwnerName;
+@property(copy) NSArray * sharees;
+@property int sharingInvitationResponse;
+@property int sharingStatus;
 @property(retain) EKSource * source;
 @property(getter=isSubscribed,readonly) BOOL subscribed;
 @property(readonly) unsigned int supportedEventAvailabilities;
+@property(copy) NSString * symbolicColorName;
 @property(copy) NSString * title;
 @property(readonly) int type;
 
@@ -36,6 +73,7 @@
 - (BOOL)allowsContentModifications;
 - (BOOL)allowsEvents;
 - (BOOL)allowsTasks;
+- (id)bulkRequests;
 - (id)calendarIdentifier;
 - (BOOL)canBePublished;
 - (BOOL)canBeShared;
@@ -46,6 +84,7 @@
 - (int)displayOrder;
 - (int)entityType;
 - (id)externalID;
+- (id)externalModificationTag;
 - (id)externalURI;
 - (BOOL)getColorRed:(int*)arg1 green:(int*)arg2 blue:(int*)arg3;
 - (BOOL)hasEvents;
@@ -69,6 +108,7 @@
 - (id)ownerIdentityLastName;
 - (BOOL)prohibitsScheduling;
 - (id)publishedURL;
+- (id)pushKey;
 - (BOOL)refresh;
 - (BOOL)remove:(id*)arg1;
 - (void)removeSharee:(id)arg1;
@@ -79,9 +119,12 @@
 - (id)selfIdentityEmail;
 - (id)selfIdentityFirstName;
 - (id)selfIdentityLastName;
+- (void)setBulkRequests:(id)arg1;
 - (void)setCGColor:(struct CGColor { }*)arg1;
 - (void)setColorString:(id)arg1;
 - (void)setDisplayOrder:(int)arg1;
+- (void)setExternalID:(id)arg1;
+- (void)setExternalModificationTag:(id)arg1;
 - (void)setInvitationStatus:(unsigned int)arg1;
 - (void)setIsMainCalendarForSource:(BOOL)arg1;
 - (void)setIsPublished:(BOOL)arg1;
@@ -91,6 +134,7 @@
 - (void)setOwnerIdentityEmail:(id)arg1;
 - (void)setOwnerIdentityFirstName:(id)arg1;
 - (void)setOwnerIdentityLastName:(id)arg1;
+- (void)setPushKey:(id)arg1;
 - (void)setSelfIdentityAddress:(id)arg1;
 - (void)setSelfIdentityDisplayName:(id)arg1;
 - (void)setSelfIdentityEmail:(id)arg1;
@@ -102,6 +146,8 @@
 - (void)setSharingInvitationResponse:(int)arg1;
 - (void)setSharingStatus:(int)arg1;
 - (void)setSource:(id)arg1;
+- (void)setSubcalAccountID:(id)arg1;
+- (void)setSymbolicColorName:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)sharedOwnerAddress;
 - (id)sharedOwnerEmail;
@@ -110,7 +156,9 @@
 - (int)sharingInvitationResponse;
 - (int)sharingStatus;
 - (id)source;
+- (id)subcalAccountID;
 - (unsigned int)supportedEventAvailabilities;
+- (id)symbolicColorName;
 - (id)title;
 - (int)type;
 - (id)uiColor;

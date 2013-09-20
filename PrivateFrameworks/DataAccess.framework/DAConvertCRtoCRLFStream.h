@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSData;
+@class ASTrafficLogger, NSData;
 
 @interface DAConvertCRtoCRLFStream : NSInputStream {
     struct { 
@@ -29,6 +29,7 @@
     struct __CFRunLoopSource { } *_rls;
     unsigned int _streamStatus;
     unsigned int _totalLength;
+    ASTrafficLogger *_trafficLogger;
 }
 
 - (void)_scheduleCallback;

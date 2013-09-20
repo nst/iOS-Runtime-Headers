@@ -5,6 +5,7 @@
 @class AVCaptureDevice, NSArray;
 
 @interface AVCaptureDeviceInputInternal : NSObject {
+    BOOL _authorizedForCamera;
     AVCaptureDevice *_device;
     NSArray *_ports;
     BOOL _ready;

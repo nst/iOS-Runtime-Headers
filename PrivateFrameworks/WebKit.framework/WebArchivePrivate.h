@@ -20,7 +20,7 @@
 
 + (void)initialize;
 
-- (struct LegacyWebArchive { int (**x1)(); int x2; struct RefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x_3_1_1; } x3; struct Vector<WTF::RefPtr<WebCore::ArchiveResource>, 0> { unsigned int x_4_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::ArchiveResource>, 0> { struct RefPtr<WebCore::ArchiveResource> {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; struct Vector<WTF::RefPtr<WebCore::Archive>, 0> { unsigned int x_5_1_1; struct VectorBuffer<WTF::RefPtr<WebCore::Archive>, 0> { struct RefPtr<WebCore::Archive> {} *x_2_2_1; unsigned int x_2_2_2; } x_5_1_2; } x5; }*)coreArchive;
+- (struct LegacyWebArchive { int (**x1)(); unsigned int x2; struct RefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x_3_1_1; } x3; struct Vector<WTF::RefPtr<WebCore::ArchiveResource>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebCore::ArchiveResource> {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; struct Vector<WTF::RefPtr<WebCore::Archive>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebCore::Archive> {} *x_5_1_1; unsigned int x_5_1_2; unsigned int x_5_1_3; } x5; }*)coreArchive;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;

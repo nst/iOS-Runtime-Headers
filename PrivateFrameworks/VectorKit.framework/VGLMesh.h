@@ -5,6 +5,7 @@
 @interface VGLMesh : VGLVertexArrayObject <NSCoding> {
 }
 
+- (void)drawElementsOfType:(int)arg1 withContext:(id)arg2 offset:(int)arg3 count:(int)arg4;
 - (void)drawLinesWithContext:(id)arg1 offset:(int)arg2 count:(int)arg3;
 - (void)drawLinesWithContext:(id)arg1;
 - (void)drawTriangleStripWithContext:(id)arg1;

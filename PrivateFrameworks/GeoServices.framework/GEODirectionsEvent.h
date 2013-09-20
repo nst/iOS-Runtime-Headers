@@ -4,7 +4,7 @@
 
 @class GEOLatLng, NSData, NSString;
 
-@interface GEODirectionsEvent : PBCodable {
+@interface GEODirectionsEvent : PBCodable <NSCopying> {
     struct { 
         unsigned int errorCode : 1; 
         unsigned int occurrenceResponseIndex : 1; 
@@ -50,6 +50,7 @@
 @property int type;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

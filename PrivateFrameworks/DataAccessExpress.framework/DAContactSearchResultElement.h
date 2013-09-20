@@ -21,7 +21,8 @@
     NSString *_homePostalAddress;
     NSString *_iPhone;
     NSString *_identifierOnServer;
-    NSString *_imAddress;
+    NSString *_imService;
+    NSString *_imUsername;
     NSData *_jpegPhoto;
     NSString *_lastName;
     NSString *_mainPhone;
@@ -58,7 +59,8 @@
 @property(copy) NSString * homePostalAddress;
 @property(copy) NSString * iPhone;
 @property(retain) NSString * identifierOnServer;
-@property(copy) NSString * imAddress;
+@property(copy) NSString * imService;
+@property(copy) NSString * imUsername;
 @property(copy) NSData * jpegPhoto;
 @property(copy) NSString * lastName;
 @property(copy) NSString * mainPhone;
@@ -99,7 +101,8 @@
 - (id)homePostalAddress;
 - (id)iPhone;
 - (id)identifierOnServer;
-- (id)imAddress;
+- (id)imService;
+- (id)imUsername;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDAContactSearchResultElement:(id)arg1;
@@ -131,7 +134,8 @@
 - (void)setHomePostalAddress:(id)arg1;
 - (void)setIPhone:(id)arg1;
 - (void)setIdentifierOnServer:(id)arg1;
-- (void)setImAddress:(id)arg1;
+- (void)setImService:(id)arg1;
+- (void)setImUsername:(id)arg1;
 - (void)setJpegPhoto:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMainPhone:(id)arg1;

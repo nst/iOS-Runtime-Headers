@@ -2,36 +2,35 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSSpecifier, UIImageView, UIView;
+@class NSString, PSSpecifier, UIImageView, UILongPressGestureRecognizer;
 
 @interface PSTableCell : UITableViewCell {
     int _alignment;
-    UIView *_bottomEtchLine;
     BOOL _cellEnabled;
     BOOL _checked;
     UIImageView *_checkedImageView;
-    BOOL _etch;
     NSString *_hiddenTitle;
+    BOOL _isCopyable;
     BOOL _lazyIcon;
     NSString *_lazyIconAppID;
     BOOL _lazyIconDontUnload;
     BOOL _lazyIconForceSynchronous;
+    UILongPressGestureRecognizer *_longTapRecognizer;
     SEL _pAction;
     id _pTarget;
     BOOL _reusedCell;
     BOOL _shouldHideTitle;
     PSSpecifier *_specifier;
-    UIView *_topEtchLine;
-    UIView *_topShadow;
     int _type;
     id _value;
 }
 
+@property BOOL isCopyable;
+@property(retain) UILongPressGestureRecognizer * longTapRecognizer;
 @property BOOL reusedCell;
 @property(retain) PSSpecifier * specifier;
 @property int type;
 
-+ (id)bottomEtchLineView;
 + (Class)cellClassForSpecifier:(id)arg1;
 + (int)cellStyle;
 + (int)cellTypeFromString:(id)arg1;
@@ -39,20 +38,21 @@
 + (id)reuseIdentifierForClassAndType:(int)arg1;
 + (id)reuseIdentifierForSpecifier:(id)arg1;
 + (id)stringFromCellType:(int)arg1;
-+ (id)topEtchLineView;
 
 - (id)_automationID;
 - (id)_contentString;
-- (void)_setBottomEtchHidden:(BOOL)arg1;
-- (void)_setTopEtchHidden:(BOOL)arg1;
-- (void)_setTopShadowHidden:(BOOL)arg1;
-- (void)_updateEtchState:(BOOL)arg1;
+- (id)_copyableText;
 - (SEL)action;
 - (id)blankIcon;
 - (BOOL)canBeChecked;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canReload;
+- (SEL)cellAction;
 - (BOOL)cellEnabled;
 - (void)cellRemovedFromView;
+- (id)cellTarget;
+- (void)copy:(id)arg1;
 - (void)dealloc;
 - (void)forceSynchronousIconLoadOnNextIconLoad;
 - (id)getIcon;
@@ -61,7 +61,10 @@
 - (id)iconImageView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (BOOL)isChecked;
+- (BOOL)isCopyable;
 - (void)layoutSubviews;
+- (void)longPressed:(id)arg1;
+- (id)longTapRecognizer;
 - (void)prepareForReuse;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)reloadWithSpecifier:(id)arg1 animated:(BOOL)arg2;
@@ -69,10 +72,14 @@
 - (id)scriptingInfoWithChildren;
 - (void)setAction:(SEL)arg1;
 - (void)setAlignment:(int)arg1;
+- (void)setCellAction:(SEL)arg1;
 - (void)setCellEnabled:(BOOL)arg1;
+- (void)setCellTarget:(id)arg1;
 - (void)setChecked:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setIcon:(id)arg1;
+- (void)setIsCopyable:(BOOL)arg1;
+- (void)setLongTapRecognizer:(id)arg1;
 - (void)setReusedCell:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShouldHideTitle:(BOOL)arg1;

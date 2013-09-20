@@ -18,6 +18,8 @@
 @property BOOL shouldMakeDefaultRingtone;
 @property BOOL shouldMakeDefaultTextTone;
 
+- (void)_addEntriesToDatabaseEncoding:(id)arg1;
+- (void)_setValuesUsingDatabaseEncoding:(id)arg1;
 - (id)allowedToneStyles;
 - (id)assigneeIdentifier;
 - (id)assigneeToneStyle;

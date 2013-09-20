@@ -7,7 +7,6 @@
 @interface NSSQLConnection : NSObject {
     NSSQLAdapter *_adapter;
     NSArray *_columnsToFetch;
-    int _debug;
     NSArray *_metadataColumns;
     NSSQLStatement *_sqlStatement;
     BOOL _transactionIsOpen;
@@ -25,6 +24,7 @@
 - (id)allPeerRanges;
 - (void)awake;
 - (void)beginTransaction;
+- (void)bindTempTableForBindIntarray:(id)arg1;
 - (BOOL)canConnect;
 - (id)columnsToFetch;
 - (void)commitTransaction;
@@ -68,6 +68,7 @@
 - (BOOL)isFetchInProgress;
 - (BOOL)isOpen;
 - (id)metadataColumns;
+- (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (id)newFetchedArray;
 - (void)performAdapterOperation:(id)arg1;
 - (void)performAdapterOperations:(id)arg1;

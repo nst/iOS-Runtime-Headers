@@ -2,28 +2,31 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSData, NSURL;
+@class NSArray, NSURL;
 
 @interface AVFigAssetInspector : AVAssetInspector {
     struct OpaqueFigAsset { } *_figAsset;
     struct OpaqueFigFormatReader { } *_formatReader;
+    long _formatReaderOnce;
     BOOL didCheckForSaveRestriction;
     BOOL hasSaveRestriction;
 }
 
-@property(readonly) NSData * SHA1Digest;
 @property(readonly) NSURL * URL;
 @property(readonly) NSArray * chapterGroupInfo;
 @property(readonly) unsigned long long downloadToken;
 @property(getter=_figAsset,readonly) struct OpaqueFigAsset { }* figAsset;
+@property(getter=_formatReader,readonly) struct OpaqueFigFormatReader { }* formatReader;
 @property(readonly) BOOL hasProtectedContent;
 @property(readonly) NSURL * resolvedURL;
+@property(getter=_isStreaming,readonly) BOOL streaming;
 
 - (id)SHA1Digest;
 - (id)URL;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (BOOL)_hasQTSaveRestriction;
+- (BOOL)_isStreaming;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;

@@ -11,9 +11,11 @@
     double _timeout;
 }
 
+@property(readonly) NSString * identifier;
 @property double timeout;
 
 - (void)dealloc;
+- (id)identifier;
 - (id)initWithIdentifier:(id)arg1 timeout:(double)arg2;
 - (void)setTimeout:(double)arg1;
 - (void)timedout;

@@ -4,7 +4,7 @@
 
 @class <ABStyleProvider>, ABModel;
 
-@interface ABAbstractViewController : UIViewController {
+@interface ABAbstractViewController : UITableViewController {
     ABModel *_model;
     <ABStyleProvider> *_styleProvider;
 }
@@ -14,7 +14,6 @@
 
 - (BOOL)_allowsAutorotation;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (int)behavior;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
@@ -27,8 +26,8 @@
 - (void)setModel:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)styleProvider;
+- (BOOL)supportedInterfaceOrientation:(int)arg1;
 - (void)updateNavigationButtons;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

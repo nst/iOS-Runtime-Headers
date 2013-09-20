@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
+- (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
@@ -24,7 +24,9 @@
 - (id)initWithPredicates:(id)arg1;
 - (BOOL)isDynamicForEntityClass:(Class)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (id)predicates;
 - (void)setPredicates:(id)arg1;
+- (id)spotlightPredicate;
 
 @end

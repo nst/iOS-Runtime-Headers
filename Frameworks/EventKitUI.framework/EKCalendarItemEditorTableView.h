@@ -6,5 +6,6 @@
 }
 
 - (void)reloadData;
+- (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 
 @end

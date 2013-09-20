@@ -48,6 +48,7 @@
 - (void)didBecomeActivePrivate:(id)arg1;
 - (void)dismissDeviceMovementDisplay;
 - (id)gyroData;
+- (int)gyroStartupLatency;
 - (double)gyroUpdateInterval;
 - (int)gyttNumTemperatures;
 - (id)init;
@@ -81,9 +82,14 @@
 - (void)setGyroUpdateIntervalPrivate:(double)arg1;
 - (void)setMagnetometerUpdateInterval:(double)arg1;
 - (void)setMagnetometerUpdateIntervalPrivate:(double)arg1;
+- (void)setMaxAccelerationVarianceForStability:(float)arg1;
+- (void)setNotificationCallback:(int (*)())arg1 info:(void*)arg2;
+- (void)setSensorThrottleTime:(double)arg1;
+- (void)setSensorTurnOffTime:(double)arg1;
 - (void)setShowsDeviceMovementDisplay:(BOOL)arg1;
 - (void)setShowsDeviceMovementDisplayPrivate:(BOOL)arg1;
 - (void)setUseAccelerometer:(BOOL)arg1;
+- (void)setWantsPowerConservativeDeviceMotion:(BOOL)arg1;
 - (void)showDeviceMovementDisplay;
 - (BOOL)showsDeviceMovementDisplay;
 - (void)startAccelerometerUpdates;

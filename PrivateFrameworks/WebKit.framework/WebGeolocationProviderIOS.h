@@ -6,94 +6,76 @@
    See Warning(s) below.
  */
 
-@class GeolocationCoreLocationDelegate, NSTimer, WebGeolocationPosition, m_tableSize;
+@class m_tableSize;
 
-@interface WebGeolocationProviderIOS : NSObject <WebGeolocationProvider, GeolocationUpdateListener> {
-    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
-        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
-            m_tableSize **m_table; 
-        } m_impl; 
-    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
-        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
-            m_tableSize **m_table; 
-        } m_impl; 
-    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
-        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
-            m_tableSize **m_table; 
-        } m_impl; 
-    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
-        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
-            m_tableSize **m_table; 
-        } m_impl; 
-    struct HashMap<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>, WTF::PtrHash<WTF::RetainPtr<WebView>>, WTF::HashTraits<WTF::RetainPtr<WebView>>, WTF::HashTraits<WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>> > { 
-        struct HashTable<WTF::RetainPtr<WebView>, std::__1::pair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>>, WTF::PairFirstExtractor<std::__1::pair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>>>, WTF::PtrHash<WTF::RetainPtr<WebView>>, WTF::HashMapValueTraits<WTF::HashTraits<WTF::RetainPtr<WebView>>, WTF::HashTraits<WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>>>, WTF::HashTraits<WTF::RetainPtr<WebView>> > { 
-            struct pair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>> > {} *m_table; 
+@interface WebGeolocationProviderIOS : NSObject <WebGeolocationProvider> {
+    struct RetainPtr<WebGeolocationCoreLocationProvider> { 
+        struct WebGeolocationCoreLocationProvider { Class x_0_1_1; } *m_ptr; 
+    struct RetainPtr<_WebCoreLocationUpdateThreadingProxy> { 
+        struct _WebCoreLocationUpdateThreadingProxy { Class x_0_1_1; } *m_ptr; 
+    struct HashMap<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> >, WTF::PtrHash<WTF::RetainPtr<WebView> >, WTF::HashTraits<WTF::RetainPtr<WebView> >, WTF::HashTraits<WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > > > { 
+        struct HashTable<WTF::RetainPtr<WebView>, WTF::KeyValuePair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > > >, WTF::PtrHash<WTF::RetainPtr<WebView> >, WTF::HashMapValueTraits<WTF::HashTraits<WTF::RetainPtr<WebView> >, WTF::HashTraits<WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > > >, WTF::HashTraits<WTF::RetainPtr<WebView> > > { 
+            struct KeyValuePair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > > {} *m_table; 
             int m_tableSize; 
             int m_tableSizeMask; 
             int m_keyCount; 
             int m_deletedCount; 
         } m_impl; 
+    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
+        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
+            m_tableSize **m_table; 
+        } m_impl; 
+    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
+        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
+            m_tableSize **m_table; 
+        } m_impl; 
+    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
+        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
+            m_tableSize **m_table; 
+        } m_impl; 
+    struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
+        /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"i"m_tableSizeMask"i"m_keyCount"i"m_deletedCount"i}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
+            m_tableSize **m_table; 
+        } m_impl; 
+    struct RetainPtr<NSTimer> { 
+        struct NSTimer { Class x_0_1_1; } *m_ptr; 
+    struct RetainPtr<WebGeolocationPosition> { 
+        struct WebGeolocationPosition { Class x_0_1_1; id x_0_1_2; } *m_ptr; 
+    } _coreLocationProvider;
+    } _coreLocationUpdateListenerProxy;
     BOOL _enableHighAccuracy;
-    GeolocationCoreLocationDelegate *_geolocationCoreLocationDelegate;
     BOOL _isSuspended;
-    WebGeolocationPosition *_lastPosition;
+    } _lastPosition;
     } _pendingInitialPositionWebView;
     } _registeredWebViews;
-    NSTimer *_sendLastPositionAsynchronouslyTimer;
+    } _sendLastPositionAsynchronouslyTimer;
     BOOL _shouldResetOnResume;
     } _trackedWebViews;
     } _warmUpWebViews;
     } _webViewsWaitingForCoreLocationStart;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{HashMap<WTF::RetainPtr<WebView>' */ struct  webViewsWaitingForCoreLocationStart; /* unknown property attribute:  WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>> >}iiii}} */
-@property(readonly) struct  warmUpWebViews; /* unknown property attribute:  WTF::HashTraits<WebView *> >=^@iiii}} */
-@property(readonly) struct  pendingInitialPositionWebView; /* unknown property attribute:  WTF::HashTraits<WebView *> >=^@iiii}} */
-@property(readonly) struct  registeredWebViews; /* unknown property attribute:  WTF::HashTraits<WebView *> >=^@iiii}} */
-@property(readonly) struct  trackedWebViews; /* unknown property attribute:  WTF::HashTraits<WebView *> >=^@iiii}} */
-@property BOOL enableHighAccuracy;
-@property(retain) GeolocationCoreLocationDelegate * geolocationCoreLocationDelegate;
-@property BOOL isSuspended;
-@property(retain) WebGeolocationPosition * lastPosition;
-@property(retain) NSTimer * sendLastPositionAsynchronouslyTimer;
-@property BOOL shouldResetOnResume;
-
 + (id)sharedGeolocationProvider;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_handlePendingInitialPosition:(id)arg1;
+- (void)_startCoreLocationDelegate;
+- (void)_stopCoreLocationDelegateIfNeeded;
 - (void)cancelWarmUpForWebView:(id)arg1;
 - (void)dealloc;
-- (BOOL)enableHighAccuracy;
 - (void)errorOccurred:(id)arg1;
-- (id)geolocationCoreLocationDelegate;
 - (void)geolocationDelegateStarted;
 - (void)geolocationDelegateUnableToStart;
-- (void)handlePendingInitialPosition:(id)arg1;
 - (void)initializeGeolocationForWebView:(id)arg1 listener:(id)arg2;
-- (BOOL)isSuspended;
 - (id)lastPosition;
-- (struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { id *x_1_1_1; int x_1_1_2; int x_1_1_3; int x_1_1_4; int x_1_1_5; } x1; })pendingInitialPositionWebView;
 - (void)positionChanged:(id)arg1;
 - (void)registerWebView:(id)arg1;
-- (struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { id *x_1_1_1; int x_1_1_2; int x_1_1_3; int x_1_1_4; int x_1_1_5; } x1; })registeredWebViews;
 - (void)resetGeolocation;
 - (void)resume;
-- (id)sendLastPositionAsynchronouslyTimer;
 - (void)setEnableHighAccuracy:(BOOL)arg1;
-- (void)setGeolocationCoreLocationDelegate:(id)arg1;
-- (void)setIsSuspended:(BOOL)arg1;
-- (void)setLastPosition:(id)arg1;
-- (void)setSendLastPositionAsynchronouslyTimer:(id)arg1;
-- (void)setShouldResetOnResume:(BOOL)arg1;
-- (BOOL)shouldResetOnResume;
-- (void)startCoreLocationDelegate;
-- (void)stopCoreLocationDelegateIfNeeded;
 - (void)stopTrackingWebView:(id)arg1;
 - (void)suspend;
-- (struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { id *x_1_1_1; int x_1_1_2; int x_1_1_3; int x_1_1_4; int x_1_1_5; } x1; })trackedWebViews;
 - (void)unregisterWebView:(id)arg1;
-- (struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { id *x_1_1_1; int x_1_1_2; int x_1_1_3; int x_1_1_4; int x_1_1_5; } x1; })warmUpWebViews;
-- (struct HashMap<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>, WTF::PtrHash<WTF::RetainPtr<WebView>>, WTF::HashTraits<WTF::RetainPtr<WebView>>, WTF::HashTraits<WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>> > { struct HashTable<WTF::RetainPtr<WebView>, std::__1::pair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>>, WTF::PairFirstExtractor<std::__1::pair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>>>, WTF::PtrHash<WTF::RetainPtr<WebView>>, WTF::HashMapValueTraits<WTF::HashTraits<WTF::RetainPtr<WebView>>, WTF::HashTraits<WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>>>>, WTF::HashTraits<WTF::RetainPtr<WebView>> > { struct pair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener>> > {} *x_1_1_1; int x_1_1_2; int x_1_1_3; int x_1_1_4; int x_1_1_5; } x1; })webViewsWaitingForCoreLocationStart;
 
 @end

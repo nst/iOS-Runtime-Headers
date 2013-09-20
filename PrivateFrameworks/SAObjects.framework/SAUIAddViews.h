@@ -8,6 +8,7 @@
 }
 
 @property(copy) NSString * dialogPhase;
+@property(copy) NSString * displayTarget;
 @property BOOL scrollToTop;
 @property BOOL temporary;
 @property(copy) NSArray * views;
@@ -16,11 +17,13 @@
 + (id)addViewsWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)dialogPhase;
+- (id)displayTarget;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (BOOL)scrollToTop;
 - (void)setDialogPhase:(id)arg1;
+- (void)setDisplayTarget:(id)arg1;
 - (void)setScrollToTop:(BOOL)arg1;
 - (void)setTemporary:(BOOL)arg1;
 - (void)setViews:(id)arg1;

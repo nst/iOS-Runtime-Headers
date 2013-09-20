@@ -2,110 +2,65 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSDate, NSString, UICalloutView, UIView, VGLRenderState, VKAnchor, VKImage;
+@class NSDate, NSString;
 
-@interface VKTrafficIncident : NSObject <VKCalloutSource> {
-    struct { 
-        double x; 
-        double y; 
-        double z; 
-    union { 
-        struct { 
-            float m00; 
-            float m01; 
-            float m02; 
-            float m03; 
-            float m10; 
-            float m11; 
-            float m12; 
-            float m13; 
-            float m20; 
-            float m21; 
-            float m22; 
-            float m23; 
-            float m30; 
-            float m31; 
-            float m32; 
-            float m33; 
-        } ; 
-        float m[16]; 
-    struct { 
-        double x0; 
-        double x1; 
-        double y0; 
-        double y1; 
-    struct { 
+@interface VKTrafficIncident : NSObject {
+    struct VKPoint { 
         double x; 
         double y; 
         double z; 
     struct { 
         double latitude; 
         double longitude; 
-    VKAnchor *_anchor;
-    UICalloutView *_calloutView;
     NSString *_crossStreet;
     NSDate *_endDate;
-    VKImage *_image;
     NSString *_info;
     NSDate *_lastUpdatedDate;
-    UIView *_leftCalloutAccessoryView;
     } _location;
-    } _pointInWorld;
-    } _projectedPoint;
-    VGLRenderState *_renderState;
-    UIView *_rightCalloutAccessoryView;
-    } _screenRect;
-    } _shaderMatrix;
+    float _minZoom;
     NSDate *_startDate;
     NSString *_street;
     NSString *_subtitle;
     NSString *_title;
     int _type;
+    unsigned long long _uniqueID;
+    NSString *_uniqueString;
+    } _worldPoint;
 }
 
-@property(retain) UICalloutView * calloutView;
 @property(readonly) NSString * crossStreet;
 @property(readonly) NSDate * endDate;
 @property(readonly) NSString * info;
 @property(readonly) NSDate * lastUpdatedDate;
-@property(retain) UIView * leftCalloutAccessoryView;
-@property(retain) UIView * rightCalloutAccessoryView;
+@property(readonly) float minZoom;
 @property(readonly) NSDate * startDate;
 @property(readonly) NSString * street;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property(readonly) NSString * subtitle;
+@property(readonly) NSString * title;
 @property(readonly) int type;
+@property(readonly) unsigned long long uniqueID;
+@property(readonly) NSString * uniqueString;
+@property(readonly) struct VKPoint { double x1; double x2; double x3; } worldPoint;
 
 - (id).cxx_construct;
-- (id)anchorWithContext:(id)arg1;
-- (struct CGPoint { float x1; float x2; })calloutAnchorPointWithCanvasSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)calloutView;
-- (BOOL)containsPoint:(struct { double x1; double x2; double x3; })arg1;
 - (id)crossStreet;
 - (void)dealloc;
-- (id)debugAnchorPointString;
-- (float)distanceFromPoint:(struct { double x1; double x2; double x3; })arg1 canvasSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)drawWithContext:(id)arg1;
 - (id)endDate;
+- (BOOL)hasSameIdentifier:(id)arg1;
 - (id)info;
-- (id)initWithIncidentData:(const struct Incident { struct GeoCoordinates { struct Longitude { unsigned int x_1_2_1; } x_1_1_1; struct Latitude { unsigned int x_2_2_1; } x_1_1_2; } x1; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; int x4; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; long long x7; long long x8; long long x9; int x10; unsigned char x11; boolx12; }*)arg1 worldPoint:(struct { double x1; double x2; double x3; }*)arg2;
+- (id)initWithIncident:(id)arg1 vertices:(struct { int x1; int x2; }*)arg2 tileRect:(struct { double x1; double x2; double x3; double x4; })arg3 tileSize:(double)arg4;
+- (id)initWithIncidentData:(const struct Incident { struct GeoCoordinates { struct Longitude { unsigned int x_1_2_1; } x_1_1_1; struct Latitude { unsigned int x_2_2_1; } x_1_1_2; } x1; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; int x4; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; long long x7; long long x8; long long x9; long long x10; int x11; unsigned char x12; boolx13; }*)arg1 worldPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg2 minZoom:(float)arg3;
+- (id)initWithIncidentData:(const struct Incident { struct GeoCoordinates { struct Longitude { unsigned int x_1_2_1; } x_1_1_1; struct Latitude { unsigned int x_2_2_1; } x_1_1_2; } x1; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; int x4; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; struct String { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; long long x7; long long x8; long long x9; long long x10; int x11; unsigned char x12; boolx13; }*)arg1 worldPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg2;
+- (id)initWithRouteIncident:(id)arg1;
 - (id)lastUpdatedDate;
-- (void)layoutWithContext:(id)arg1;
-- (id)leftCalloutAccessoryView;
-- (struct { double x1; double x2; double x3; })pointInWorldWithContext:(id)arg1;
-- (struct { double x1; double x2; double x3; })projectedPoint;
-- (id)rightCalloutAccessoryView;
-- (struct CGPoint { float x1; float x2; })screenPointToScrollRelativeToWithCanvasSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setCalloutView:(id)arg1;
-- (void)setLeftCalloutAccessoryView:(id)arg1;
-- (void)setRightCalloutAccessoryView:(id)arg1;
-- (void)setSubtitle:(id)arg1;
-- (void)setTitle:(id)arg1;
+- (float)minZoom;
 - (id)startDate;
 - (id)street;
 - (id)subtitle;
 - (id)title;
 - (int)type;
-- (struct { double x1; double x2; double x3; })worldPoint;
+- (unsigned long long)uniqueID;
+- (id)uniqueString;
+- (struct VKPoint { double x1; double x2; double x3; })worldPoint;
 
 @end

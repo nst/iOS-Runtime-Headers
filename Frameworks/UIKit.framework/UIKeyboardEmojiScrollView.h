@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIKeyboardEmojiCategory, UIKeyboardEmojiInputController, UILabel, UIPageControl, UIScrollView;
+@class NSMutableArray, UIKeyboardEmojiCategory, UIKeyboardEmojiInputController, UILabel, UIPageControl, UIScrollView, UIView;
 
-@interface UIKeyboardEmojiScrollView : UIKBKeyView <UIScrollViewDelegate, UIKeyboardEmojiInput> {
+@interface UIKeyboardEmojiScrollView : UIKBKeyView <UIScrollViewDelegate, UIKeyboardEmojiInput, UIKeyboardEmojiPressIndicationDelegate> {
     UIKeyboardEmojiCategory *_category;
     UILabel *_categoryLabel;
     int _currentPage;
@@ -12,8 +12,13 @@
     UILabel *_optionalDescription;
     UIPageControl *_pageControl;
     NSMutableArray *_pages;
+    UIView *_pressIndicator;
     UIScrollView *_scrollView;
+    BOOL _whiteText;
 }
+
+@property(retain) UIView * pressIndicator;
+@property BOOL whiteText;
 
 - (void)clearPages;
 - (int)currentPage;
@@ -24,18 +29,25 @@
 - (void)ensureSurrounded;
 - (void)forceLayout;
 - (void)goToFirstPage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (void)installPressIndicatorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)interruptScrolling;
 - (void)layoutPages;
 - (void)layoutRecents;
 - (void)pageChanged;
+- (id)pressIndicator;
 - (void)reloadForCategory:(id)arg1;
+- (void)removePressIndicator;
 - (void)saveFirstVisibleEmojiIndex;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewWillBeginDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)setPressIndicator:(id)arg1;
+- (void)setRenderConfig:(id)arg1;
 - (void)setScrollDelay:(double)arg1;
+- (void)setWhiteText:(BOOL)arg1;
 - (BOOL)shouldCache;
+- (BOOL)whiteText;
 
 @end

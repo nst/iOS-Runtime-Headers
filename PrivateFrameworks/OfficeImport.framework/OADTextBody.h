@@ -24,6 +24,7 @@
 - (id)plainText;
 - (id)properties;
 - (void)removeAllParagraphs;
+- (void)removeLeadingNewlines;
 - (void)removeTrailingNewlines;
 - (void)removeUnnecessaryOverrides;
 - (void)setParentTextListStyle:(id)arg1;

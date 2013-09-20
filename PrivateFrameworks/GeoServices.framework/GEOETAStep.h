@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOETAStep : PBCodable {
+@interface GEOETAStep : PBCodable <NSCopying> {
     struct { 
         unsigned int expectedTime : 1; 
         unsigned int stepID : 1; 
@@ -21,6 +21,7 @@
 @property int zilchPointIndex;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

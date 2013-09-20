@@ -6,6 +6,8 @@
 }
 
 - (id)accountTypeIdentifier;
+- (id)activityImage;
+- (id)activityTitle;
 - (int)authenticationStyle;
 - (BOOL)isFirstClassService;
 - (id)serviceType;

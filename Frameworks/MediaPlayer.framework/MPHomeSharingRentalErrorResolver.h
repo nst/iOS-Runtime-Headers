@@ -16,6 +16,7 @@
 @property(retain) MPHomeSharingML3DataProvider * dataProvider;
 @property(readonly) unsigned long long itemID;
 
+- (void).cxx_destruct;
 - (BOOL)_errorIsFairPlayError:(id)arg1;
 - (id)dataProvider;
 - (void)dealloc;

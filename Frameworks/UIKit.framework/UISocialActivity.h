@@ -2,25 +2,39 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class SLComposeViewController;
+@class NSString, SLComposeViewController, UIImage;
 
 @interface UISocialActivity : UIActivity {
+    UIImage *_composedImage;
+    NSString *_socialActivityType;
     SLComposeViewController *_socialComposeViewController;
 }
 
+@property(retain) UIImage * composedImage;
+@property(copy) NSString * socialActivityType;
 @property(retain) SLComposeViewController * socialComposeViewController;
 
++ (int)activityCategory;
+
 - (id)_activityImage;
+- (int)_activityItemTypes;
+- (int)_blockingActivityItemTypes;
 - (void)_cleanup;
 - (int)_maxImageDataSize;
 - (id)_serviceType;
+- (struct CGSize { float x1; float x2; })_thumbnailSize;
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
+- (id)composedImage;
 - (void)dealloc;
+- (id)initActivityType:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1;
+- (void)setComposedImage:(id)arg1;
+- (void)setSocialActivityType:(id)arg1;
 - (void)setSocialComposeViewController:(id)arg1;
+- (id)socialActivityType;
 - (id)socialComposeViewController;
 
 @end

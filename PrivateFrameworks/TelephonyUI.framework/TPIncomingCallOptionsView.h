@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSArray, NSMutableArray, NSObject<TPIncomingCallOptionsViewDelegate>, TPBottomBar<TPBottomGrabberBar>, TPBottomGrabberLockBar, UITableView, UIView;
+@class NSArray, NSMutableArray, NSObject<TPIncomingCallOptionsViewDelegate>, TPBottomBar, TPBottomBar<TPBottomGrabberBar>, TPBottomGrabberLockBar, UITableView, UIView;
 
 @interface TPIncomingCallOptionsView : UIView <UITableViewDelegate, UITableViewDataSource> {
     struct CGPoint { 
@@ -38,6 +38,7 @@
 
 @property(readonly) BOOL hasGrabberImage;
 @property NSObject<TPIncomingCallOptionsViewDelegate> * incomingOptionsDelegate;
+@property(readonly) TPBottomBar * lockBar;
 @property BOOL optionsShown;
 @property BOOL usesLockBar;
 
@@ -56,6 +57,7 @@
 - (id)initForIncomingFaceTimeWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)lockBar;
 - (void)lockBarUnlocked:(id)arg1;
 - (float)optionsHeight;
 - (BOOL)optionsShown;

@@ -2,28 +2,24 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLProgressViewDelegate>, NSString, QLDisplayBundle, UIActivityIndicatorView, UILabel;
+@class NSString, UIActivityIndicatorView, UILabel;
 
-@interface QLProgressView : UIImageView {
+@interface QLProgressView : UIView {
     int _backgroundColorType;
-    <QLProgressViewDelegate> *_delegate;
-    QLDisplayBundle *_displayBundle;
     UILabel *_loadingTextLabel;
-    NSString *_loadintTextForMissingFiles;
     UIActivityIndicatorView *_progressIndicator;
 }
 
-@property <QLProgressViewDelegate> * delegate;
-@property(retain) NSString * loadintTextForMissingFiles;
+@property int backgroundColorType;
+@property(copy) NSString * loadingText;
 
+- (void)_update;
 - (int)backgroundColorType;
 - (void)dealloc;
-- (id)delegate;
-- (id)initWithBackgroundColorType:(int)arg1 loadintTextForMissingFiles:(id)arg2;
+- (id)init;
 - (void)layoutSubviews;
-- (id)loadintTextForMissingFiles;
-- (void)setDelegate:(id)arg1;
-- (void)setLoadintTextForMissingFiles:(id)arg1;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)loadingText;
+- (void)setBackgroundColorType:(int)arg1;
+- (void)setLoadingText:(id)arg1;
 
 @end

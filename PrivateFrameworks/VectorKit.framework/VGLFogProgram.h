@@ -65,12 +65,12 @@
 @property float skyOffset;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } skyTopColor;
 
+- (id).cxx_construct;
 - (void)_updateFogSlopeInShader;
 - (void)dealloc;
 - (float)fogOffset;
 - (float)fogSlope;
 - (float)horizonDepth;
-- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })modelViewMatrix;
 - (float)screenHeight;
 - (void)setFogOffset:(float)arg1;
@@ -81,6 +81,7 @@
 - (void)setSkyBottomColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSkyOffset:(float)arg1;
 - (void)setSkyTopColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setup;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })skyBottomColor;
 - (float)skyOffset;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })skyTopColor;

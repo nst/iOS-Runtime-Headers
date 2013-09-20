@@ -2,21 +2,27 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDDatabase, NSManagedObjectContext, NSPersistentStoreCoordinator;
+@class NSManagedObjectContext, NSMutableDictionary, NSPersistentStoreCoordinator, NSString;
 
 @interface ACDDatabaseMigrator : NSObject {
-    NSPersistentStoreCoordinator *_coordinator;
-    ACDDatabase *_database;
+    NSString *_databasePath;
     NSManagedObjectContext *_migrationContext;
+    NSPersistentStoreCoordinator *_privateCoordinator;
+    NSPersistentStoreCoordinator *_realCoordinator;
+    NSMutableDictionary *_realOptions;
 }
 
 - (void).cxx_destruct;
 - (id)_compatibleModelForStoreAtURL:(id)arg1;
 - (id)_fetchAllAuthorizationEntitiesForModelVersion:(int)arg1;
+- (id)_fetchAllDataclassEntitles;
 - (void)_migrateAccessAuthorizationsToTCCFromModelVersion:(int)arg1;
+- (void)_migrateNameAttributeOfDataclassEntities;
+- (void)_migrateOptionsAttributeOfAuthorizatinEntitiesFromModelVersion:(int)arg1;
+- (void)_postProcessMigrationFromVersion:(int)arg1 migrationData:(id)arg2;
 - (id)_setUpContextForMigration;
 - (int)_versionForModel:(id)arg1;
-- (id)initForDatabase:(id)arg1;
+- (id)initForDatabaseAtPath:(id)arg1 persistentStoreCoordinator:(id)arg2 options:(id)arg3;
 - (BOOL)run;
 
 @end

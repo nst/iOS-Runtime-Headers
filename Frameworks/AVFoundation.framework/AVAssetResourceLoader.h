@@ -11,18 +11,20 @@
 @property(readonly) <AVAssetResourceLoaderDelegate> * delegate;
 @property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
 
-- (void)_addFigAssetNotifications;
-- (BOOL)_attemptDelegateHandlingOfRequestWithDictionary:(id)arg1;
-- (struct OpaqueFigAsset { }*)_figAsset;
-- (void)_removeFigAssetNotifications;
+- (void)_attemptDelegateHandlingOfRequestWithDictionary:(id)arg1 fallbackBlock:(id)arg2;
+- (void)_noteFinishingOfLoadingRequest:(id)arg1;
+- (void)_performDelegateCallbackSynchronouslyIfCurrentDelegateQueueIsQueue:(id)arg1 delegateCallbackBlock:(id)arg2;
 - (id)_weakReference;
 - (id)asset;
+- (void)cacheContentInformation:(id)arg1 forURL:(id)arg2;
+- (id)cachedContentInformationForURL:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
 - (void)finalize;
 - (id)initWithAsset:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
+- (void)setDelegate:(id)arg1;
 - (id)stateQueue;
 
 @end

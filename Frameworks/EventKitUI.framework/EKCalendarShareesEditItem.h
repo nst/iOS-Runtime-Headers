@@ -10,19 +10,19 @@
 
 @property(retain) NSMutableArray * shareeCells;
 
+- (void).cxx_destruct;
 - (id)_addPersonCell;
 - (void)_popBackToCalendarEditor:(BOOL)arg1;
 - (id)_shareeCellForName:(id)arg1 detailText:(id)arg2 additionalDetailText:(id)arg3;
 - (id)_stringForShareeAccessLevel:(int)arg1;
 - (id)_stringForShareeStatus:(int)arg1;
-- (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1;
-- (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (id)eventStoreForShareePickerViewController:(id)arg1;
 - (id)headerTitle;
-- (int)numberOfSubitems;
+- (unsigned int)numberOfSubitems;
 - (void)reset;
 - (BOOL)saveStateToCalendar:(id)arg1;
 - (void)setShareeCells:(id)arg1;

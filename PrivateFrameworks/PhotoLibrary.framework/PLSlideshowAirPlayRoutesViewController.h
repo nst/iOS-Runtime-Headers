@@ -5,20 +5,20 @@
 @class NSArray, UITableView, UIView;
 
 @interface PLSlideshowAirPlayRoutesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_airPlayServices;
+    NSArray *_airplayRoutes;
     UIView *_containerView;
-    unsigned int _selectedServiceIndex;
+    unsigned int _selectedRouteIndex;
     UITableView *_table;
 }
 
-@property unsigned int selectedServiceIndex;
+@property unsigned int selectedRouteIndex;
 
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
 - (void)dealloc;
-- (id)initWithAirPlayServices:(id)arg1 selectedServiceIndex:(unsigned int)arg2;
+- (id)initWithAirplayRoutes:(id)arg1 selectedRouteIndex:(unsigned int)arg2;
 - (void)loadView;
-- (unsigned int)selectedServiceIndex;
-- (void)setSelectedServiceIndex:(unsigned int)arg1;
+- (unsigned int)selectedRouteIndex;
+- (void)setSelectedRouteIndex:(unsigned int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

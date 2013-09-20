@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSKnownKeysMappingStrategy : NSObject <NSCoding, NSFastEnumeration> {
+@interface NSKnownKeysMappingStrategy : NSObject <NSSecureCoding, NSFastEnumeration> {
 }
 
 + (id)alloc;

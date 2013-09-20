@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKConversationSearcherDelegate>, CKSpotlightQuery, NSArray, UISearchBar, UISearchDisplayController;
+@class <CKConversationSearcherDelegate>, CKSpotlightQuery, NSMutableArray, UISearchBar, UISearchDisplayController;
 
 @interface CKConversationSearcher : NSObject <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate> {
     BOOL _active;
@@ -12,7 +12,7 @@
     UISearchDisplayController *_searchController;
     BOOL _shouldDisplayNoResults;
     BOOL _showingSearchResults;
-    NSArray *_sortedSearchResults;
+    NSMutableArray *_sortedSearchResults;
 }
 
 @property(getter=isActive,readonly) BOOL active;
@@ -40,8 +40,9 @@
 - (void)searchDisplayControllerWillEndSearch:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 
 @end

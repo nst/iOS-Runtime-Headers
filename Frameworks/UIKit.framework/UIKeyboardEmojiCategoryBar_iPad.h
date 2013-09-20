@@ -18,12 +18,10 @@
 
 - (id)categoryKeyHighlightedImage;
 - (id)categoryKeyImage;
-- (void)dealloc;
 - (id)dividerHighlightedImage;
 - (id)dividerImage;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForSegment:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
 - (void)layoutSubviews;
 - (void)releaseImagesAndViews;
 - (void)setCategoryKeyHighlightedImage:(id)arg1;

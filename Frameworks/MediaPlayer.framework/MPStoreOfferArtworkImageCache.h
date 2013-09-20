@@ -12,6 +12,7 @@
 
 + (id)sharedArtworkImageCache;
 
+- (void).cxx_destruct;
 - (void)_applicationDidReceiveMemoryWarningNotification:(id)arg1;
 - (void)_dumpCache;
 - (void)_onQueueCallDidLoadBlocksWithImage:(id)arg1 forURL:(id)arg2;

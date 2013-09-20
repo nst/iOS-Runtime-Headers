@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMAccount, NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
+@class IDSService, IMAccount, NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
 
 @interface IMServiceImpl : IMService {
     NSArray *_abProperties;
@@ -13,6 +13,8 @@
     NSArray *_emailDomains;
     BOOL _handlesChatInvites;
     BOOL _hasLoadedServiceProperties;
+    IDSService *_idsService;
+    BOOL _ignoresNetworkConnectivity;
     NSData *_imageData;
     BOOL _isPersistent;
     BOOL _isPlugInService;
@@ -31,6 +33,7 @@
     BOOL _supportsGroupAttachments;
     BOOL _supportsIDStatusLookup;
     BOOL _supportsMutatingGroupMembers;
+    BOOL _supportsOfflineTransfers;
     BOOL _supportsPhoneNumberMapping;
     BOOL _supportsPresence;
     BOOL _supportsRegistration;
@@ -50,6 +53,7 @@
 @property(retain) NSDictionary * defaultAccountSettings;
 @property(readonly) NSArray * emailDomains;
 @property(readonly) BOOL handlesChatInvites;
+@property(readonly) BOOL ignoresNetworkConnectivity;
 @property(readonly) NSString * internalName;
 @property(readonly) BOOL isPersistent;
 @property(readonly) BOOL isPlugInService;
@@ -66,16 +70,20 @@
 @property(readonly) BOOL supportsGroupAttachments;
 @property(readonly) BOOL supportsIDStatusLookup;
 @property(readonly) BOOL supportsMutatingGroupMembers;
+@property(readonly) BOOL supportsOfflineTransfers;
 @property(readonly) BOOL supportsPhoneNumberMapping;
 @property(readonly) BOOL supportsPresence;
 @property(readonly) BOOL supportsRegistration;
 
 + (id)activeServices;
++ (id)allServices;
++ (id)allServicesNonBlocking;
 + (id)connectedServices;
 + (id)connectedServicesWithCapability:(unsigned long long)arg1;
 + (id)operationalServicesWithCapability:(unsigned long long)arg1;
 + (Class)serviceClass;
 + (id)serviceWithInternalName:(id)arg1;
++ (id)serviceWithName:(id)arg1;
 + (id)servicesWithCapability:(unsigned long long)arg1;
 + (void)setServiceClass:(Class)arg1;
 + (id)supportedCountryCodes;
@@ -84,6 +92,7 @@
 - (unsigned int)IDSensitivity;
 - (id)_IDsToMapForIMPerson:(id)arg1;
 - (id)_abPropertiesBySanitizingABProperties:(id)arg1;
+- (id)_accountForUniqueID:(id)arg1;
 - (void)_addAddressBookCards:(id)arg1 toMap:(id)arg2;
 - (void)_blockUntilInitialSyncPerformed;
 - (void)_calculateBestAccount;
@@ -96,7 +105,6 @@
 - (BOOL)_wantsInternationizedNumbers;
 - (Class)accountClass;
 - (id)accountIDs;
-- (void)accountInitialSyncPerformed:(id)arg1;
 - (void)activeAccountsChanged:(id)arg1;
 - (id)addressBookProperties;
 - (id)addressBookProperty;
@@ -115,6 +123,7 @@
 - (id)emailDomains;
 - (BOOL)equalID:(id)arg1 andID:(id)arg2;
 - (BOOL)handlesChatInvites;
+- (BOOL)ignoresNetworkConnectivity;
 - (id)imABPeopleWithScreenName:(id)arg1 countryCode:(id)arg2 identifier:(int*)arg3;
 - (id)imABPeopleWithScreenName:(id)arg1 identifier:(int*)arg2;
 - (id)imABPeopleWithScreenName:(id)arg1 options:(unsigned int)arg2;
@@ -154,6 +163,7 @@
 - (BOOL)supportsGroupAttachments;
 - (BOOL)supportsIDStatusLookup;
 - (BOOL)supportsMutatingGroupMembers;
+- (BOOL)supportsOfflineTransfers;
 - (BOOL)supportsPhoneNumberMapping;
 - (BOOL)supportsPresence;
 - (BOOL)supportsRegistration;

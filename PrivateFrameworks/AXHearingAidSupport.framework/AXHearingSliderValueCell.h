@@ -24,6 +24,7 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (BOOL)isAccessibilityElement;
 - (void)layoutSubviews;
+- (void)setValue:(id)arg1;
 - (void)sliderValueDidChange:(id)arg1;
 - (void)updateValue;
 - (id)value;

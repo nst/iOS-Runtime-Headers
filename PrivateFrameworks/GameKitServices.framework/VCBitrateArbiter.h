@@ -5,6 +5,10 @@
 @class NSMutableArray;
 
 @interface VCBitrateArbiter : NSObject {
+    unsigned int _maxAllowedAudioOnlyBitrate2G;
+    unsigned int _maxAllowedAudioOnlyBitrate3G;
+    unsigned int _maxAllowedAudioOnlyBitrateLTE;
+    unsigned int _maxAllowedAudioOnlyBitrateWifi;
     unsigned int _maxAllowedBitrate2G;
     unsigned int _maxAllowedBitrate3G;
     unsigned int _maxAllowedBitrate;
@@ -22,6 +26,7 @@
 - (void)createSupportedBitrateRuleSets;
 - (void)dealloc;
 - (id)init;
+- (unsigned int)maxAllowedAudioOnlyBitrateForConnection:(int)arg1;
 - (unsigned int)maxAllowedBitrate2G;
 - (unsigned int)maxAllowedBitrate3G;
 - (unsigned int)maxAllowedBitrate;

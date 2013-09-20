@@ -87,6 +87,7 @@
 - (void)setShouldInvalidateForLowMemory:(BOOL)arg1;
 - (void)setShouldLoadProgressively:(BOOL)arg1;
 - (void)setShouldShowFormAccessory:(id)arg1;
+- (void)setShowcaseWithDictionary:(id)arg1;
 - (void)setShowsBackgroundShadow:(BOOL)arg1;
 - (void)setShowsHorizontalScrollIndicator:(id)arg1;
 - (void)setShowsVerticalScrollIndicator:(id)arg1;

@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUClientInterfaceDelegate>, <SUClientInterfaceDelegatePrivate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SUPreviewOverlayViewController, SUPurchaseManager, SUQueueSessionManager, SUTabBarController, SUUIAppearance, SUViewControllerFactory;
+@class <SUClientInterfaceDelegate>, <SUClientInterfaceDelegatePrivate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SUPreviewOverlayViewController, SUPurchaseManager, SUQueueSessionManager, SUTabBarController, SUUIAppearance, SUViewControllerFactory, UIColor;
 
 @interface SUClientInterface : NSObject {
     SUUIAppearance *_appearance;
     NSString *_clientIdentifier;
+    UIColor *_darkKeyColor;
     <SUClientInterfaceDelegatePrivate> *_delegate;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _ignoresExpectedClientsProtocol;
+    UIColor *_lightKeyColor;
     NSString *_localStoragePath;
     SUPurchaseManager *_purchaseManager;
     SUQueueSessionManager *_queueSessionManager;
@@ -22,7 +24,9 @@
 @property(getter=_ignoresExpectedClientsProtocol,setter=_setIgnoresExpectedClientsProtocol:) BOOL _ignoresExpectedClientsProtocol;
 @property(copy) SUUIAppearance * appearance;
 @property(copy) NSString * clientIdentifier;
+@property(copy) UIColor * darkKeyColor;
 @property <SUClientInterfaceDelegate> * delegate;
+@property(copy) UIColor * lightKeyColor;
 @property(copy) NSString * localStoragePath;
 @property(readonly) SUPreviewOverlayViewController * previewOverlay;
 @property(retain) SUPurchaseManager * purchaseManager;
@@ -49,16 +53,20 @@
 - (void)_showPreviewOverlayAnimated:(BOOL)arg1;
 - (id)appearance;
 - (id)clientIdentifier;
+- (id)darkKeyColor;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
+- (id)lightKeyColor;
 - (id)localStoragePath;
 - (id)previewOverlay;
 - (id)purchaseManager;
 - (id)queueSessionManager;
 - (void)setAppearance:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
+- (void)setDarkKeyColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setLightKeyColor:(id)arg1;
 - (void)setLocalStoragePath:(id)arg1;
 - (void)setPurchaseManager:(id)arg1;
 - (void)setQueueSessionManager:(id)arg1;

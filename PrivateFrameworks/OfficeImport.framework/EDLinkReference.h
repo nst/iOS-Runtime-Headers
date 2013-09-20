@@ -16,6 +16,7 @@
 - (id)initWithLinkIndex:(unsigned int)arg1 firstSheetIndex:(unsigned int)arg2 lastSheetIndex:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLinkReference:(id)arg1;
+- (bool)isWorkbookLevelReference;
 - (unsigned int)lastSheetIndex;
 - (unsigned int)linkIndex;
 - (void)setFirstSheetIndex:(unsigned int)arg1;

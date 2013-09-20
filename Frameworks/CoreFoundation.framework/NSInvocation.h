@@ -16,18 +16,33 @@
     id _signature;
 }
 
++ (id)_gkInvocationWithBlock:(id)arg1;
 + (id)_invocationWithMethodSignature:(id)arg1 frame:(void*)arg2;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (void)executeBlock:(id)arg1;
++ (void)executeBlock:(id)arg1;
++ (id)invocationWithBlock:(id)arg1;
 + (id)invocationWithBlock:(id)arg1;
 + (id)invocationWithMethodSignature:(id)arg1;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 
+- (void)__gkPrepareForFakeCallbackWithNoData:(BOOL)arg1 orError:(id)arg2;
 - (void)_addAttachedObject:(id)arg1;
 - (int)_firstXPCProxyReplyHandlerArgumentIndex;
+- (void)_gkCallbackWithError:(id)arg1 queue:(id)arg2;
+- (void)_gkClearArgumentAtIndex:(unsigned int)arg1;
+- (void)_gkClearCopiedArguments;
+- (void)_gkClearTarget;
+- (void)_gkCopyArguments;
+- (BOOL)_gkHasReplyBlock;
+- (void)_gkInvokeOnce;
+- (void)_gkInvokeOnceWithTarget:(id)arg1;
+- (void)_gkPrepareForCallWithError:(id)arg1;
+- (void)_gkPrintBlockSignature;
+- (id)_gkReplyHandlerInvocation;
 - (void)_webkit_invokeAndHandleException:(id)arg1;
 - (BOOL)argumentsRetained;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -48,8 +63,9 @@
 - (void)setReturnValue:(void*)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;
+- (void)setUserInfo:(id)arg1;
 - (id)target;
+- (id)userInfo;
 - (BOOL)wantsReturnValue;
-- (id)withProtocol:(id)arg1;
 
 @end

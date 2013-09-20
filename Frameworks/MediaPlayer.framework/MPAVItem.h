@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVAsset, AVPlayerItem, MPAVController, MPAlternateTracks, MPImageCache, MPMediaItem, MPQueueFeeder, NSArray, NSData, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class AVAsset, AVPlayerItem, MPAVController, MPAlternateTextTrack, MPAlternateTracks, MPImageCache, MPMediaItem, MPQueueFeeder, MPRadioAdTrack, NSArray, NSData, NSObject<OS_dispatch_queue>, NSString, NSURL, RadioAudioClip, RadioTrack;
 
 @interface MPAVItem : NSObject {
     unsigned int _advancedDuringPlayback : 1;
@@ -26,8 +26,12 @@
     float _defaultPlaybackRate;
     BOOL _didAttemptToLoadAsset;
     MPQueueFeeder *_feeder;
+    BOOL _hasPostedNaturalSizeChange;
     unsigned int _indexInQueueFeeder;
     BOOL _isAssetLoaded;
+    BOOL _limitReadAhead;
+    float _loudnessInfoVolumeNormalization;
+    MPMediaItem *_mediaItem;
     MPAVController *_player;
     double _seekableTimeRangesCacheTime;
     float _soundCheckVolumeNormalization;
@@ -35,17 +39,21 @@
     NSArray *_urlTimeMarkers;
 }
 
+@property(readonly) MPRadioAdTrack * adTrack;
 @property(readonly) NSString * album;
 @property(readonly) NSString * albumArtist;
 @property(readonly) unsigned int albumTrackCount;
 @property(readonly) unsigned int albumTrackNumber;
 @property(readonly) BOOL allowsEQ;
 @property(readonly) MPAlternateTracks * alternateTracks;
+@property(getter=isAlwaysLive,readonly) BOOL alwaysLive;
 @property(readonly) NSString * artist;
 @property(readonly) NSData * artworkImageData;
 @property(readonly) NSString * artworkMIMEType;
 @property(retain) NSArray * artworkTimeMarkers;
 @property(readonly) AVAsset * asset;
+@property(readonly) NSString * assetFlavor;
+@property(readonly) RadioAudioClip * audioClip;
 @property(readonly) BOOL canSeedGenius;
 @property(retain) NSArray * chapterTimeMarkers;
 @property(retain) NSArray * closedCaptionTimeMarkers;
@@ -54,6 +62,7 @@
 @property(readonly) double currentTimeDisplayOverride;
 @property(readonly) int customAVEQPreset;
 @property float defaultPlaybackRate;
+@property(readonly) BOOL didAttemptToLoadAsset;
 @property(readonly) unsigned int discCount;
 @property(readonly) unsigned int discNumber;
 @property(readonly) NSString * displayableText;
@@ -62,6 +71,7 @@
 @property(readonly) double durationFromExternalMetadata;
 @property(readonly) double durationIfAvailable;
 @property(readonly) BOOL durationIsValid;
+@property(getter=isExplicitTrack,readonly) BOOL explicitTrack;
 @property MPQueueFeeder * feeder;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } forwardPlaybackEndTime;
 @property(readonly) NSString * genre;
@@ -70,8 +80,12 @@
 @property BOOL hasPlayedThisSession;
 @property(readonly) MPImageCache * imageCache;
 @property unsigned int indexInQueueFeeder;
+@property(readonly) BOOL isAd;
 @property BOOL isAssetLoaded;
+@property(readonly) BOOL isRadioItem;
 @property(readonly) BOOL isStreamingQuality;
+@property(readonly) NSString * localizedPositionInPlaylistString;
+@property float loudnessInfoVolumeNormalization;
 @property(readonly) NSString * lyrics;
 @property(readonly) NSString * mainTitle;
 @property(readonly) MPMediaItem * mediaItem;
@@ -84,19 +98,26 @@
 @property(readonly) AVPlayerItem * playerItem;
 @property(readonly) NSURL * podcastURL;
 @property(readonly) struct CGSize { float x1; float x2; } presentationSize;
+@property(readonly) RadioTrack * radioTrack;
+@property(retain) MPAlternateTextTrack * selectedAlternateTextTrack;
 @property float soundCheckVolumeNormalization;
 @property(readonly) int status;
 @property(getter=isStreamable,readonly) BOOL streamable;
-@property int subtitleTrackID;
+@property(readonly) BOOL supportsAddStation;
+@property(readonly) BOOL supportsHistory;
+@property(readonly) BOOL supportsLikeOrBan;
 @property(readonly) BOOL supportsRewindAndFastForward15Seconds;
+@property(readonly) BOOL supportsShare;
+@property(readonly) BOOL supportsSkip;
+@property(readonly) BOOL supportsTrackInfo;
 @property(readonly) double timeOfSeekableEnd;
 @property(readonly) double timeOfSeekableStart;
+@property(readonly) NSArray * timedMetadataIfAvailable;
 @property(readonly) unsigned int type;
 @property(retain) NSArray * urlTimeMarkers;
 @property(readonly) BOOL useEmbeddedChapterData;
 @property(readonly) float userRating;
 @property(copy) NSString * videoID;
-@property(readonly) BOOL wantsSubtitles;
 @property(readonly) BOOL wasDownloadedThisSession;
 
 + (id)URLFromPath:(id)arg1;
@@ -104,10 +125,12 @@
 + (unsigned int)defaultScaleMode;
 + (void)setDefaultScaleMode:(unsigned int)arg1;
 
+- (void).cxx_destruct;
+- (BOOL)MPSPWD_prioritizeDownloadSession;
 - (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_captionAppearanceSettingsChanged;
 - (void)_checkAllowsBlockingDurationCall;
 - (void)_clearAsset;
-- (void)_closedCaptioningStatusDidChangeNotification:(id)arg1;
 - (double)_durationFromExternalMetadataIfAvailable;
 - (double)_durationInSeconds;
 - (id)_imageChapterTrackIDsForAsset:(id)arg1;
@@ -117,11 +140,14 @@
 - (void)_loadTimeMarkersAsync;
 - (void)_loadTimeMarkersBlocking;
 - (double)_playableDurationForLoadedTimeRanges:(id)arg1;
+- (id)_plistKeyForMPMediaItemProperty:(id)arg1;
 - (void)_realoadEmbeddedTimeMarkers;
 - (void)_releaseAllTimeMarkers;
 - (id)_seekableTimeRanges;
 - (id)_timeMarkerFromMarkers:(id)arg1 forTime:(double)arg2;
 - (void)_updateSoundCheckVolumeNormalizationForPlayerItem;
+- (id)adTrack;
+- (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
 - (id)album;
 - (id)albumArtist;
 - (unsigned int)albumTrackCount;
@@ -135,6 +161,8 @@
 - (id)artworkTimeMarkerForTime:(double)arg1;
 - (id)artworkTimeMarkers;
 - (id)asset;
+- (id)assetFlavor;
+- (id)audioClip;
 - (id)blockForDirectAVControllerNotificationReferencingItem:(id)arg1;
 - (BOOL)canSeedGenius;
 - (id)chapterTimeMarkerForTime:(double)arg1;
@@ -147,6 +175,7 @@
 - (int)customAVEQPreset;
 - (void)dealloc;
 - (float)defaultPlaybackRate;
+- (BOOL)didAttemptToLoadAsset;
 - (unsigned int)discCount;
 - (unsigned int)discNumber;
 - (id)displayableText;
@@ -167,21 +196,29 @@
 - (id)imageCache;
 - (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2 usePlaceholderAsFallback:(BOOL)arg3;
 - (id)imageCacheRequestWithSize:(struct CGSize { float x1; float x2; })arg1 time:(double)arg2;
+- (id)inBandAlternateTextTracks;
 - (unsigned int)indexInQueueFeeder;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)initWithURL:(id)arg1;
+- (BOOL)isAd;
+- (BOOL)isAlwaysLive;
 - (BOOL)isAssetLoaded;
 - (BOOL)isAssetURLValid;
+- (BOOL)isExplicitTrack;
 - (BOOL)isPlaceholderForItem:(id)arg1;
+- (BOOL)isRadioItem;
 - (BOOL)isStreamable;
 - (BOOL)isStreamingQuality;
 - (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (BOOL)limitReadAhead;
 - (void)loadAssetAndPlayerItem;
 - (id)localeForAssetTrack:(id)arg1;
+- (id)localizedAttributedPositionInPlaylistStringWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
 - (id)localizedPositionInPlaylistString;
+- (float)loudnessInfoVolumeNormalization;
 - (id)lyrics;
 - (id)mainTitle;
 - (id)mediaItem;
@@ -198,11 +235,13 @@
 - (id)playerItem;
 - (id)podcastURL;
 - (struct CGSize { float x1; float x2; })presentationSize;
-- (BOOL)prioritizeDownloadSession;
+- (id)radioTrack;
 - (void)reevaluateType;
+- (void)replaceOutOfBandAlternateTextTracksWithArray:(id)arg1;
 - (void)replacePlayerItemWithPlayerItem:(id)arg1;
 - (void)resetBookkeeping;
 - (float)scanIntervalForLevel:(unsigned int)arg1 paused:(BOOL)arg2;
+- (id)selectedAlternateTextTrack;
 - (void)setAlternateAudioTrackID:(int)arg1;
 - (void)setArtworkTimeMarkers:(id)arg1;
 - (void)setChapterTimeMarkers:(id)arg1;
@@ -213,6 +252,8 @@
 - (void)setHasPlayedThisSession:(BOOL)arg1;
 - (void)setIndexInQueueFeeder:(unsigned int)arg1;
 - (void)setIsAssetLoaded:(BOOL)arg1;
+- (void)setLimitReadAhead:(BOOL)arg1;
+- (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (void)setOverrideDuration:(double)arg1;
 - (void)setPlaybackCheckpointCurrentTime:(double)arg1;
 - (void)setPlaybackFinishedTime:(double)arg1;
@@ -220,11 +261,11 @@
 - (void)setPlayer:(id)arg1;
 - (void)setPlayerItem:(id)arg1;
 - (void)setRating:(float)arg1;
+- (void)setSelectedAlternateTextTrack:(id)arg1;
 - (void)setSoundCheckVolumeNormalization:(float)arg1;
 - (void)setSubtitleTrackID:(int)arg1;
 - (void)setUrlTimeMarkers:(id)arg1;
 - (void)setUserAdvancedDuringPlayback:(BOOL)arg1;
-- (void)setUserEnabledSubtitles:(BOOL)arg1;
 - (void)setUserSkippedPlayback:(BOOL)arg1;
 - (void)setVideoID:(id)arg1;
 - (void)setupEQPresetWithDefaultPreset:(int)arg1;
@@ -232,9 +273,16 @@
 - (float)soundCheckVolumeNormalization;
 - (int)status;
 - (int)subtitleTrackID;
+- (BOOL)supportsAddStation;
+- (BOOL)supportsHistory;
+- (BOOL)supportsLikeOrBan;
 - (BOOL)supportsRewindAndFastForward15Seconds;
+- (BOOL)supportsShare;
+- (BOOL)supportsSkip;
+- (BOOL)supportsTrackInfo;
 - (double)timeOfSeekableEnd;
 - (double)timeOfSeekableStart;
+- (id)timedMetadataIfAvailable;
 - (id)titlesForTime:(double)arg1;
 - (unsigned int)type;
 - (id)url;
@@ -244,7 +292,6 @@
 - (float)userRating;
 - (BOOL)userSkippedPlayback;
 - (id)videoID;
-- (BOOL)wantsSubtitles;
 - (BOOL)wasDownloadedThisSession;
 
 @end

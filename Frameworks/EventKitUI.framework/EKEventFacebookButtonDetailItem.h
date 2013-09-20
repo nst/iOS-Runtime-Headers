@@ -8,9 +8,10 @@
     UITableViewCell *_cell;
 }
 
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (void).cxx_destruct;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
-- (void)eventViewController:(id)arg1 didSelectSubitem:(int)arg2;
+- (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (void)layoutCellsForWidth:(float)arg1 position:(int)arg2;
 - (void)reset;
 

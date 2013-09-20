@@ -2,18 +2,23 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOVoltaireRasterTileTrafficData, VKIntObjectMap;
+@class GEOVoltaireRasterTileTrafficData, NSArray, NSMutableArray, VKIntObjectMap;
 
 @interface VKRasterTrafficTile : VKTile {
     VKIntObjectMap *_capMeshes;
+    NSMutableArray *_incidents;
     GEOVoltaireRasterTileTrafficData *_modelTile;
     VKIntObjectMap *_roadMeshes;
 }
 
+@property(readonly) NSArray * incidents;
+
+- (void)_buildIncidents;
 - (void)_buildMeshes;
-- (id)capMeshForSpeed:(int)arg1;
+- (id)capMeshVendorForSpeed:(int)arg1;
 - (void)dealloc;
+- (id)incidents;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 trafficData:(id)arg3;
-- (id)roadMeshForSpeed:(int)arg1;
+- (id)roadMeshVendorForSpeed:(int)arg1;
 
 @end

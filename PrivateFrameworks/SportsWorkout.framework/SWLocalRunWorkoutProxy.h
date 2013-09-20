@@ -11,6 +11,8 @@
 - (void)activateWorkout;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (id)currentAlbumName;
+- (id)currentArtistName;
 - (id)currentSongName;
 - (void)dealloc;
 - (void)endSeeking;

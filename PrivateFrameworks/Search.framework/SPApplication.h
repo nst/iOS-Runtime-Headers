@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString, SPSearchResultSection;
+@class NSString, SPSearchResult;
 
 @interface SPApplication : NSObject {
     NSString *_displayIdentifier;
@@ -13,14 +13,14 @@
 @property(retain) NSString * displayIdentifier;
 @property(retain) NSString * displayName;
 @property(retain) NSString * longDisplayName;
-@property(readonly) SPSearchResultSection * section;
+@property(readonly) SPSearchResult * searchResult;
 
 - (void)dealloc;
 - (id)description;
 - (id)displayIdentifier;
 - (id)displayName;
 - (id)longDisplayName;
-- (id)section;
+- (id)searchResult;
 - (void)setDisplayIdentifier:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setLongDisplayName:(id)arg1;

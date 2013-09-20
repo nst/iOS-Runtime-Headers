@@ -48,7 +48,7 @@
 - (void)setAnimatesIfTruncated:(BOOL)arg1;
 - (void)setCenterText:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFont:(struct __GSFont { }*)arg1;
+- (void)setFont:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLCDTextFont:(id)arg1;
 - (void)setLeftTruncatesText:(BOOL)arg1;

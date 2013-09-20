@@ -2,21 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPButton, UIView;
+@class TPButton;
 
 @interface TPBottomDoubleButtonBar : TPBottomSingleButtonBar {
     TPButton *_button2;
-    UIView *_well1;
-    UIView *_well2;
-    UIView *_wellContainer;
 }
-
-+ (float)_wellPadding;
 
 - (float)_buttonWidth;
 - (void)_layoutButtons;
-- (void)_layoutWells;
-- (void)_updateButtonSettings:(id)arg1;
 - (id)button2;
 - (void)dealloc;
 - (id)initForCallFailureWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -28,6 +21,5 @@
 - (void)setButton2:(id)arg1 andStyle:(BOOL)arg2;
 - (void)setButton:(id)arg1 andStyle:(BOOL)arg2;
 - (void)setDrawsSeparateWells:(BOOL)arg1;
-- (void)setWellAlpha:(float)arg1;
 
 @end

@@ -4,11 +4,12 @@
 
 @class MSAsset, NSArray, NSData, NSString;
 
-@interface MSAssetCollection : NSObject <NSCoding> {
+@interface MSAssetCollection : NSObject <NSSecureCoding> {
     NSString *_assetCollectionID;
     NSString *_ctag;
     NSArray *_derivedAssets;
     NSString *_fileName;
+    long long _initialFailureDate;
     MSAsset *_masterAsset;
     BOOL _wasDeleted;
 }
@@ -17,12 +18,14 @@
 @property(retain) NSString * ctag;
 @property(retain) NSArray * derivedAssets;
 @property(retain) NSString * fileName;
+@property long long initialFailureDate;
 @property(retain) MSAsset * masterAsset;
 @property(readonly) NSData * masterAssetHash;
 @property BOOL wasDeleted;
 
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)assetCollectionID;
@@ -33,6 +36,7 @@
 - (id)fileName;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
+- (long long)initialFailureDate;
 - (BOOL)isEqual:(id)arg1;
 - (id)masterAsset;
 - (id)masterAssetHash;
@@ -40,6 +44,7 @@
 - (void)setCtag:(id)arg1;
 - (void)setDerivedAssets:(id)arg1;
 - (void)setFileName:(id)arg1;
+- (void)setInitialFailureDate:(long long)arg1;
 - (void)setMasterAsset:(id)arg1;
 - (void)setWasDeleted:(BOOL)arg1;
 - (BOOL)wasDeleted;

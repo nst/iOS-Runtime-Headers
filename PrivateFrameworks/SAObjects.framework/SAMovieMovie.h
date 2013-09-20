@@ -29,7 +29,6 @@
 @property(copy) NSString * theaterShowtimeSearchRegionDescription;
 @property(copy) NSArray * theaterShowtimes;
 @property(copy) NSDate * theatricalReleaseDate;
-@property(copy) NSURL * trailerUri;
 
 + (id)movie;
 + (id)movieWithDictionary:(id)arg1 context:(id)arg2;
@@ -75,13 +74,11 @@
 - (void)setTheaterShowtimeSearchRegionDescription:(id)arg1;
 - (void)setTheaterShowtimes:(id)arg1;
 - (void)setTheatricalReleaseDate:(id)arg1;
-- (void)setTrailerUri:(id)arg1;
 - (id)studios;
 - (id)synopsis;
 - (id)theaterShowtimeSearchRegionDescription;
 - (id)theaterShowtimes;
 - (id)theatricalReleaseDate;
-- (id)trailerUri;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

@@ -11,21 +11,24 @@
     <EKStyleProvider> *_styleProvider;
 }
 
+@property(readonly) EKCalendar * calendar;
 @property <EKCalendarEditItemDelegate> * delegate;
 @property(retain) <EKStyleProvider> * styleProvider;
 
+- (void).cxx_destruct;
 - (void)applyStyleProviderToCell:(id)arg1;
 - (BOOL)becomeFirstResponder;
-- (void)calendarEditor:(id)arg1 didSelectSubitem:(int)arg2;
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (id)calendar;
+- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1;
-- (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (id)delegate;
 - (float)footerHeightForSection;
 - (id)footerViewForSection;
 - (id)headerTitle;
-- (int)numberOfSubitems;
+- (void)layoutForWidth:(float)arg1;
+- (unsigned int)numberOfSubitems;
 - (void)reset;
 - (BOOL)saveStateToCalendar:(id)arg1;
 - (void)setCalendar:(id)arg1 store:(id)arg2;

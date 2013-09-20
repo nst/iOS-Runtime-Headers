@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIColor, UIImage;
+@class NSMutableArray, UIColor, UIImage, _UILegibilitySettings;
 
 @interface UIPageControl : UIControl {
     struct { 
@@ -13,6 +13,8 @@
     UIColor *_currentPageIndicatorTintColor;
     int _displayedPage;
     NSMutableArray *_indicators;
+    int _lastUserInterfaceIdiom;
+    _UILegibilitySettings *_legibilitySettings;
     } _pageControlFlags;
     UIImage *_pageImage;
     UIColor *_pageIndicatorTintColor;
@@ -22,25 +24,52 @@
 @property(retain) UIColor * currentPageIndicatorTintColor;
 @property BOOL defersCurrentPageDisplay;
 @property BOOL hidesForSinglePage;
+@property(getter=_legibilitySettings,setter=_setLegibilitySettings:) _UILegibilitySettings * legibilitySettings;
+@property(getter=_legibilityStyle,setter=_setLegibilityStyle:) int legibilityStyle;
 @property int numberOfPages;
 @property(retain) UIColor * pageIndicatorTintColor;
 
+- (id)_activePageIndicatorImage;
 - (void)_commonPageControlInit;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (id)_correctIdiomaticNameForImageNamed:(id)arg1;
+- (id)_createModernIndicatorImageFromView:(id)arg1;
+- (id)_customPageIndicatorCurrentImageForPage:(int)arg1;
+- (id)_customPageIndicatorImageForPage:(int)arg1;
+- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (int)_displayedPage;
+- (void)_drawModernIndicatorInView:(id)arg1 enabled:(BOOL)arg2;
+- (BOOL)_hasCustomImageForPage:(int)arg1 enabled:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_indicatorFrameAtIndex:(int)arg1;
+- (float)_indicatorSpacing;
+- (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3;
+- (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2;
+- (void)_invalidateIndicators;
+- (id)_legibilitySettings;
+- (int)_legibilityStyle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_modernBounds;
+- (id)_modernColorEnabled:(BOOL)arg1;
+- (float)_modernCornerRadius;
+- (id)_modernIndicatorImageEnabled:(BOOL)arg1;
+- (void)_modernTransitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
 - (id)_pageIndicatorCurrentImageForPage:(int)arg1;
+- (id)_pageIndicatorImage;
 - (id)_pageIndicatorImageForPage:(int)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_setCurrentPage:(int)arg1;
 - (void)_setDisplayedPage:(int)arg1;
+- (void)_setLegibilitySettings:(id)arg1;
+- (void)_setLegibilityStyle:(int)arg1;
+- (BOOL)_shouldDrawLegibly;
+- (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
+- (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3;
 - (void)_updateCurrentPageDisplay;
 - (int)currentPage;
 - (id)currentPageIndicatorTintColor;
 - (void)dealloc;
 - (BOOL)defersCurrentPageDisplay;
 - (void)encodeWithCoder:(id)arg1;
-- (void)endTrackingAt:(struct CGPoint { float x1; float x2; })arg1 previous:(struct CGPoint { float x1; float x2; })arg2 withEvent:(struct __GSEvent { }*)arg3;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)hidesForSinglePage;

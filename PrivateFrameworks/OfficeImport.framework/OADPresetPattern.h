@@ -10,7 +10,6 @@
 + (id)defaultProperties;
 + (id)nameForPresetPatternType:(int)arg1;
 + (id)namedBitmapDataForPresetPatternType:(int)arg1;
-+ (id)presetPatternHeader;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;

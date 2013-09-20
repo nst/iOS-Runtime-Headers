@@ -9,9 +9,6 @@
 }
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
-- (void)_controlMouseDown:(struct __GSEvent { }*)arg1;
-- (void)_controlMouseDragged:(struct __GSEvent { }*)arg1;
-- (void)_controlMouseUp:(struct __GSEvent { }*)arg1;
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;

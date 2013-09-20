@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary, OADTextListStyle;
+@class NSMutableArray, NSMutableDictionary;
 
 @interface PDPresentation : OCDDocument {
     struct CGSize { 
@@ -13,7 +13,6 @@
         float height; 
     NSMutableArray *mBulletBlips;
     NSMutableDictionary *mCommentAuthors;
-    OADTextListStyle *mDefaultTextStyle;
     BOOL mIsAutoPlay;
     BOOL mIsCommentsVisible;
     BOOL mIsKiosk;
@@ -33,9 +32,11 @@
 - (id)bulletBlipAtIndex:(long)arg1;
 - (unsigned long)bulletBlipCount;
 - (id)bulletBlips;
+- (void)cacheGraphicStyleForDrawable:(id)arg1 colorContext:(id)arg2;
+- (void)cacheGraphicStylesForSlideBase:(id)arg1;
 - (id)commentAuthorForId:(unsigned int)arg1;
 - (void)dealloc;
-- (id)defaultTextStyle;
+- (void)ensureDefaultLayoutsForMasters;
 - (void)flushUnusedMastersAndLayouts;
 - (unsigned int)indexOfSlide:(id)arg1;
 - (id)init;

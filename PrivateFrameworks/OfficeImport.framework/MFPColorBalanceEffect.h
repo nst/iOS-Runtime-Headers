@@ -3,13 +3,13 @@
  */
 
 @interface MFPColorBalanceEffect : MFPEffect {
-    long mCyanRed;
-    long mMagentaGreen;
-    long mYellowBlue;
+    int mCyanRed;
+    int mMagentaGreen;
+    int mYellowBlue;
 }
 
 + (id)GUID;
 
-- (id)initWithCyanRed:(long)arg1 magentaGreen:(long)arg2 yellowBlue:(long)arg3;
+- (id)initWithCyanRed:(int)arg1 magentaGreen:(int)arg2 yellowBlue:(int)arg3;
 
 @end

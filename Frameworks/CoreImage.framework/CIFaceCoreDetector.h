@@ -2,34 +2,28 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CIContext;
+@class CIContext, FCRFaceDetector, NSMutableDictionary;
 
 @interface CIFaceCoreDetector : CIDetector {
     CIContext *context;
-    void *faceCoreAPI;
+    FCRFaceDetector *faceCoreDetector;
+    NSMutableDictionary *featureOptions;
 }
 
 @property(retain) CIContext * context;
-@property void* faceCoreAPI;
+@property FCRFaceDetector * faceCoreDetector;
 
-- (struct FaceCoreAPI { int (**x1)(); struct FaceCoreAPIInternal {} *x2; struct FaceCoreContext {} *x3; void *x4; }*)api;
 - (id)adjustedImageFromImage:(id)arg1 orientation:(int)arg2 inverseCTM:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3;
 - (id)context;
-- (BOOL)createFaceCoreImage:(struct image { char *x1; int x2; int x3; }*)arg1 fromCIImage:(id)arg2;
+- (id)createFaceCoreDataFromCIImage:(id)arg1 width:(unsigned int*)arg2 height:(unsigned int*)arg3;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })ctmForImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2;
 - (void)dealloc;
-- (void*)faceCoreAPI;
-- (id)featuresFromFaceVector:(struct vector<vision::lib::face, std::allocator<vision::lib::face> > { struct _Vector_impl { struct face {} *x_1_1_1; struct face {} *x_1_1_2; struct face {} *x_1_1_3; } x1; }*)arg1 ctm:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (id)faceCoreDetector;
 - (id)featuresInImage:(id)arg1 options:(id)arg2;
 - (id)featuresInImage:(id)arg1;
 - (void)finalize;
 - (id)initWithContext:(id)arg1 options:(id)arg2;
 - (void)setContext:(id)arg1;
-- (void)setFaceCoreAPI:(void*)arg1;
+- (void)setFaceCoreDetector:(id)arg1;
 
 @end

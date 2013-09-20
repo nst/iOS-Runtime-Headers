@@ -16,14 +16,13 @@
 @property(readonly) UILabel * commentContentLabel;
 @property(readonly) UIView * styledSeparatorView;
 
-+ (id)_attributedStringForBylineText:(id)arg1;
-+ (id)_attributedStringForCommentText:(id)arg1;
++ (id)_attributionStringForComment:(id)arg1;
++ (id)_commentStringForComment:(id)arg1;
 + (id)_synthesizedAttributedString:(id)arg1 withWordWrapping:(BOOL)arg2;
-+ (id)bylineStringForComment:(id)arg1;
 + (float)heightForComment:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
-+ (float)heightForCommentText:(id)arg1 bylineText:(id)arg2 forWidth:(float)arg3 forInterfaceOrientation:(int)arg4;
 + (Class)layerClass;
 
+- (void)_updateContent;
 - (id)comment;
 - (id)commentBylineLabel;
 - (id)commentContentLabel;

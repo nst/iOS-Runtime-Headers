@@ -5,6 +5,7 @@
 @class NSMutableIndexSet, NSObject<OS_dispatch_queue>;
 
 @interface PLThumbnailIndexes : NSObject {
+    unsigned long long _fetchTimestamp;
     NSObject<OS_dispatch_queue> *isolation;
     NSMutableIndexSet *unusedIndexes;
     int usedMax;
@@ -13,7 +14,7 @@
 + (void)getAvailableThumbnailIndexWithHandler:(id)arg1;
 + (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id)arg2;
 + (unsigned int)nextAvailableThumbnailIndex;
-+ (void)recycleThumbnailIndex:(unsigned int)arg1;
++ (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
 + (void)recycleThumbnailIndexes:(id)arg1;
 + (id)sharedInstance;
 
@@ -21,7 +22,6 @@
 - (void)getAvailableThumbnailIndexesFromDatabase;
 - (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id)arg2;
 - (id)init;
-- (void)recycleThumbnailIndex:(unsigned int)arg1;
-- (void)recycleThumbnailIndexes:(id)arg1;
+- (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
 
 @end

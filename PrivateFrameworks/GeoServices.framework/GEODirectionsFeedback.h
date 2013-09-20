@@ -4,7 +4,7 @@
 
 @class NSData, NSMutableArray;
 
-@interface GEODirectionsFeedback : PBCodable {
+@interface GEODirectionsFeedback : PBCodable <NSCopying> {
     NSData *_directionResponseID;
     struct { double x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_stepFeedbacks;
     unsigned int _stepFeedbacksCount;
@@ -23,6 +23,7 @@
 - (void)clearStepFeedbacks;
 - (void)clearTraversedRouteIDs;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -10,6 +10,8 @@
 @class NSArray, NSMutableDictionary, NSOperationQueue;
 
 @interface MFContactsSearchResultsModel : NSObject <_MFSearchResultsConsumer> {
+    NSMutableDictionary *_corecipientsByAddress;
+    NSArray *_enteredRecipients;
     BOOL _favorMobileNumbers;
     struct __CFSet { } *_finishedResultTypes;
     NSArray *_infrequentRecentSearchResults;
@@ -24,6 +26,8 @@
     NSMutableDictionary *_serverSearchResultsByAddress;
 }
 
+@property(retain) NSArray * enteredRecipients;
+
 - (void)_addBestRecipientsForRecipients:(id)arg1 excluding:(id)arg2 toArray:(id)arg3;
 - (void)_addResults:(id)arg1 ofType:(int)arg2;
 - (void)_appendSortedResultsOfType:(int)arg1 excluding:(id)arg2 toResults:(id)arg3;
@@ -36,10 +40,12 @@
 - (BOOL)_shouldProcessResultsAfterFinishingType:(int)arg1;
 - (void)addResults:(id)arg1 ofType:(int)arg2;
 - (void)dealloc;
+- (id)enteredRecipients;
 - (id)init;
 - (id)initWithFavorMobileNumbers:(BOOL)arg1;
 - (id)initWithResultTypeSortOrderComparator:(int (*)())arg1 resultTypePriorityComparator:(int (*)())arg2 favorMobileNumbers:(BOOL)arg3;
 - (void)processAddedResultsOfType:(int)arg1 completion:(id)arg2;
 - (void)reset;
+- (void)setEnteredRecipients:(id)arg1;
 
 @end

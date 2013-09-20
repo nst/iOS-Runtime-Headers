@@ -44,7 +44,8 @@
 @property(readonly) NSString * outgoingPassword;
 @property(readonly) BOOL outgoingPasswordSameAsIncomingPassword;
 
-+ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
 + (id)profileNameFromAccountTag:(id)arg1;
 + (id)typeStrings;
 

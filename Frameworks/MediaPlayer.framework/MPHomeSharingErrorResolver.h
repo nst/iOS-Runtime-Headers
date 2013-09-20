@@ -15,6 +15,7 @@
 
 @property(retain) MPHomeSharingML3DataProvider * dataProvider;
 
+- (void).cxx_destruct;
 - (BOOL)_errorIsFairPlayError:(id)arg1;
 - (void)authorizationRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)dataProvider;

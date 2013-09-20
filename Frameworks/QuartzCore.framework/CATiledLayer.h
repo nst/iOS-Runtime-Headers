@@ -34,7 +34,6 @@
 - (unsigned long)levelsOfDetail;
 - (unsigned long)levelsOfDetailBias;
 - (float)maximumTileScale;
-- (BOOL)queueIsEmpty;
 - (void)setContents:(id)arg1;
 - (void)setDrawingEnabled:(BOOL)arg1;
 - (void)setFillColor:(struct CGColor { }*)arg1;

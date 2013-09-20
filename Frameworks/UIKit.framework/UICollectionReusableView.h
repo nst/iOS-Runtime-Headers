@@ -6,7 +6,8 @@
 
 @interface UICollectionReusableView : UIView {
     struct { 
-        unsigned int inUpdateAnimation : 1; 
+        unsigned int updateAnimationCount : 5; 
+        unsigned int wasDequeued : 1; 
     UICollectionView *_collectionView;
     UICollectionViewLayoutAttributes *_layoutAttributes;
     } _reusableViewFlags;
@@ -15,13 +16,28 @@
 
 @property(readonly) NSString * reuseIdentifier;
 
++ (void)_gkSetupSelectableThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 middleLine:(id)arg5 lowerLine:(id)arg6 metricOverrides:(id)arg7;
++ (void)_gkSetupSelectableTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
++ (void)_gkSetupThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 middleLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
++ (void)_gkSetupTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 lowerLine:(id)arg4 metricOverrides:(id)arg5;
++ (id)_gkStandardConstraintMetrics;
++ (id)_gkStandardConstraintMetricsMergedWithOverrides:(id)arg1;
+
+- (void)_addUpdateAnimation;
+- (void)_clearUpdateAnimation;
 - (id)_collectionView;
+- (BOOL)_disableRasterizeInAnimations;
+- (id)_gkNewStandardImageView;
+- (id)_gkNewStandardInfoLabel;
+- (id)_gkNewStandardTitleLabel;
 - (BOOL)_isInUpdateAnimation;
 - (id)_layoutAttributes;
+- (void)_markAsDequeued;
+- (void)_setBaseLayoutAttributes:(id)arg1;
 - (void)_setCollectionView:(id)arg1;
-- (void)_setInUpdateAnimation:(BOOL)arg1;
 - (void)_setLayoutAttributes:(id)arg1;
 - (void)_setReuseIdentifier:(id)arg1;
+- (BOOL)_wasDequeued;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)dealloc;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;

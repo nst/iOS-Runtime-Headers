@@ -5,7 +5,6 @@
 @interface CalendarInvitationWrapperController : EKEventViewController {
 }
 
-- (void)dealloc;
 - (id)initForEventUID:(int)arg1;
 - (void)viewControllerWillSuspend:(id)arg1;
 

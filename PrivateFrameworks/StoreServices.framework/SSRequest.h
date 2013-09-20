@@ -16,6 +16,8 @@
 @property <SSRequestDelegate> * delegate;
 @property BOOL shouldCancelAfterTaskExpiration;
 
+- (void)__beginBackgroundTask;
+- (void)__endBackgroundTask;
 - (void)_beginBackgroundTask;
 - (void)_endBackgroundTask;
 - (id)_initSSRequest;

@@ -4,13 +4,13 @@
 
 @class UIImage;
 
-@interface _UIToolbarAppearanceStorage : NSObject {
-    UIImage *backgroundImage;
+@interface _UIToolbarAppearanceStorage : _UIBarAppearanceStorage {
+    UIImage *_backgroundImage;
+    UIImage *_miniBackgroundImage;
+    UIImage *_miniTopBackgroundImage;
+    UIImage *_topBackgroundImage;
     BOOL hidesShadow;
-    UIImage *miniBackgroundImage;
-    UIImage *miniTopBackgroundImage;
     UIImage *shadowImage;
-    UIImage *topBackgroundImage;
     UIImage *topShadowImage;
 }
 
@@ -21,6 +21,8 @@
 @property(retain) UIImage * shadowImage;
 @property(retain) UIImage * topBackgroundImage;
 @property(retain) UIImage * topShadowImage;
+
++ (int)typicalBarPosition;
 
 - (id)backgroundImage;
 - (void)dealloc;

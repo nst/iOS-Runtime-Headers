@@ -9,6 +9,8 @@
     NSSubstringPredicateOperator *_stringVersion;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (void)_setOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

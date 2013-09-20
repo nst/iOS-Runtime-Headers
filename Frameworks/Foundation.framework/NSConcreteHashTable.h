@@ -55,7 +55,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
 - (void*)getItem:(const void*)arg1;
-- (void)getKeys:(void**)arg1 count:(unsigned int*)arg2;
+- (void)getKeys:(const void**)arg1 count:(unsigned int*)arg2;
 - (unsigned int)hash;
 - (void)hashGrow;
 - (id)init;

@@ -4,7 +4,7 @@
 
 @class <RUIObjectModelDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NSURL, RUIPage, UIAlertView;
 
-@interface RUIObjectModel : NSObject <UIWebViewDelegate, RUITableViewDelegate, RUIPageDelegate> {
+@interface RUIObjectModel : NSObject <UIWebViewDelegate, RUITableViewDelegate, RUIPasscodeViewDelegate, RUIPageDelegate> {
     NSDictionary *_alert;
     NSDictionary *_clientInfo;
     UIAlertView *_confirmationAlert;
@@ -27,6 +27,7 @@
     UIAlertView *_secondConfirmationAlert;
     NSDictionary *_serverInfo;
     NSURL *_sourceURL;
+    NSDictionary *_updateInfo;
     NSString *_validationFunction;
 }
 
@@ -45,13 +46,13 @@
 @property(retain) NSURL * scriptURL;
 @property(retain) NSDictionary * serverInfo;
 @property(retain) NSURL * sourceURL;
+@property(retain) NSDictionary * updateInfo;
 @property(retain) NSString * validationFunction;
 @property(readonly) RUIPage * visiblePage;
 
 + (id)objectModelForXMLNamed:(id)arg1;
 
 - (void)RUIPage:(id)arg1 pressedNavBarButton:(id)arg2;
-- (BOOL)RUIPage:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 - (void)RUIPage:(id)arg1 toggledEditing:(BOOL)arg2;
 - (void)_cleanupConfirmation;
 - (void)_cleanupRefreshTimer;
@@ -69,9 +70,16 @@
 - (id)alert;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)alertView;
+- (id)alertViewInWindow:(id)arg1;
 - (id)allPages;
 - (void)back:(id)arg1;
 - (id)clientInfo;
+- (void)configureRow:(id)arg1;
+- (void)configureSection:(id)arg1;
+- (void)configureTableView:(id)arg1;
+- (Class)customFooterClassForSection:(id)arg1;
+- (Class)customHeaderClassForSection:(id)arg1;
+- (Class)customTableCellClassForTableViewRow:(id)arg1;
 - (void)dealloc;
 - (id)defaultPages;
 - (id)description;
@@ -82,17 +90,20 @@
 - (BOOL)hasSecondConfirmationAttributes:(id)arg1;
 - (id)init;
 - (id)inlineScript;
-- (id)invokeStringFunction:(id)arg1;
+- (id)invokeScriptFunction:(id)arg1 withArguments:(id)arg2;
 - (id)name;
 - (id)namedPages;
 - (id)newNavigationControllerForPresentation;
 - (int)nextButtonStyle;
+- (id)objectForJSValue:(struct OpaqueJSValue { }*)arg1;
 - (id)pages;
+- (void)passcodeViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (void)populatePostbackDictionary:(id)arg1;
 - (id)postbackData;
 - (id)postbackDictionary;
 - (BOOL)prepareScriptContext;
 - (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)presentWithBlock:(id)arg1;
 - (int)refreshDelay;
 - (void)refreshTimeout;
 - (id)refreshURL;
@@ -115,13 +126,18 @@
 - (void)setScriptURL:(id)arg1;
 - (void)setServerInfo:(id)arg1;
 - (void)setSourceURL:(id)arg1;
+- (void)setUpdateInfo:(id)arg1;
 - (void)setValidationFunction:(id)arg1;
 - (id)sourceURL;
 - (id)stringForAttributeName:(id)arg1 withAttributes:(id)arg2;
+- (unsigned int)supportedInterfaceOrientationsForRUIPage:(id)arg1;
+- (id)tableFooterViewForAttributes:(id)arg1;
+- (id)tableHeaderViewForAttributes:(id)arg1;
 - (BOOL)tableViewOM:(id)arg1 deleteRowAtIndexPath:(id)arg2;
 - (void)tableViewOM:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)tableViewOM:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (void)tableViewOMDidChange:(id)arg1;
+- (id)updateInfo;
 - (BOOL)validateWithFunction:(id)arg1;
 - (id)validationFunction;
 - (id)visiblePage;

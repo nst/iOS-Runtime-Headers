@@ -13,8 +13,11 @@
     OADParagraphProperties *mDefaultTextProperties;
     BOOL mDefaultTextPropertiesHaveExplicitFontSize;
     EXOfficeArtState *mDrawingState;
+    BOOL mIgnoreFormulas;
     EDResources *mResources;
 }
+
+@property BOOL ignoreFormulas;
 
 - (id)autoStyling;
 - (id)chart;
@@ -25,6 +28,7 @@
 - (id)defaultTextProperties;
 - (id)drawingState;
 - (id)exState;
+- (BOOL)ignoreFormulas;
 - (id)initWithDrawingState:(id)arg1;
 - (void)popTitleTextProperties;
 - (void)pushTitleTextProperties:(BOOL)arg1;
@@ -35,6 +39,7 @@
 - (void)setCurrentSeries:(id)arg1;
 - (void)setDefaultTextProperties:(id)arg1;
 - (void)setDefaultTextPropertiesHaveExplicitFontSize:(BOOL)arg1;
+- (void)setIgnoreFormulas:(BOOL)arg1;
 - (void)setResources:(id)arg1;
 
 @end

@@ -2,39 +2,47 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewContentDataSource>, <QLPreviewContentDelegate>, NSMutableDictionary, QLPreviewContentController, QLRemotePrintPageHelper, XPCProxy<QLRemotePreviewContentProxyProtocol>, _UIHostedWindow;
+@class <QLPreviewContentDataSource>, <QLPreviewContentDelegate>, NSMutableDictionary, QLPreviewContentController, QLRemotePrintPageHelper, _UIHostedWindow;
 
-@interface QLServicePreviewContentController : UIViewController <XPCProxyTarget, QLRemotePreviewContentControllerProtocol, QLPreviewContentDataSource, QLPreviewContentDelegate> {
+@interface QLServicePreviewContentController : UIViewController <QLRemotePreviewContentControllerProtocol, QLPreviewContentDataSource, QLPreviewContentDelegate> {
     BOOL _blockRemoteImages;
     int _clientInterfaceOrientation;
     _UIHostedWindow *_hostedWindow;
     int _numberOfPreviewItems;
     QLPreviewContentController *_previewContentController;
-    XPCProxy<QLRemotePreviewContentProxyProtocol> *_previewContentProxy;
     NSMutableDictionary *_previewItemCache;
     int _previewMode;
     QLRemotePrintPageHelper *_printPageHelper;
     BOOL _remoteInstantiationFinished;
+    int _sourceUUID;
 }
 
 @property <QLPreviewContentDataSource> * dataSource;
 @property <QLPreviewContentDelegate> * delegate;
 @property int previewMode;
+@property(readonly) int sourceUUID;
 
-- (void)_getNumberOfPagesForSize:(id)arg1 withHandler:(id)arg2;
-- (void)_getPDFPageAtIndex:(int)arg1 size:(id)arg2 handler:(id)arg3;
-- (void)_getPDFPreviewDataWithHandler:(id)arg1;
-- (void)_prepareForDrawingPages:(id)arg1;
-- (void)_setContentFrame:(id)arg1;
++ (id)_exportedInterface;
++ (id)_remoteViewControllerInterface;
+
+- (void)_getNumberOfPagesForSize:(struct CGSize { float x1; float x2; })arg1 withHandler:(id)arg2;
+- (void)_getPDFPageAtIndex:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2 handler:(id)arg3;
+- (void)_prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)_remotePreviewItemAtIndex:(int)arg1;
+- (void)_setNavigationBarVerticalOffset:(float)arg1;
 - (void)_setNumberOfPreviewItems:(int)arg1;
-- (void)_setPreviewItems:(id)arg1;
+- (void)_setTransitioning:(BOOL)arg1;
 - (void)_updateHostedWindowFrame;
 - (void)_willAnimateRotationTo:(int)arg1;
+- (void)_willAppearInRemoteViewController;
+- (void)becomeForeground;
 - (void)beginScrubbing;
+- (void)checkCurrentPreviewItem;
 - (id)clientProcessAlertViewForPreviewContentController:(id)arg1;
 - (void)configureWithParameters:(id)arg1;
 - (void)contentWasTappedInPreviewContentController:(id)arg1;
 - (int)currentPreviewItemIndex;
+- (int)currentSourceUUIDForPreviewContentController:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
@@ -45,11 +53,10 @@
 - (int)numberOfPreviewItems;
 - (int)numberOfPreviewItemsInPreviewContentController:(id)arg1;
 - (void)overlayWasTappedInPreviewContentController:(id)arg1;
-- (id)pdfPreviewData;
 - (void)previewContentController:(id)arg1 didFailWithError:(id)arg2;
 - (void)previewContentController:(id)arg1 didLoadItem:(id)arg2 atIndex:(int)arg3 withError:(id)arg4;
 - (void)previewContentController:(id)arg1 didMoveToItem:(id)arg2 atIndex:(int)arg3;
-- (void)previewContentController:(id)arg1 didUnloadItem:(id)arg2;
+- (void)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2 completionBlock:(id)arg3;
 - (id)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2;
 - (void)previewContentController:(id)arg1 receivedTapOnURL:(id)arg2;
 - (void)previewContentController:(id)arg1 setAVState:(id)arg2 forPreviewItem:(id)arg3;
@@ -61,19 +68,21 @@
 - (int)previewMode;
 - (id)printPageHelper;
 - (id)printPageRenderer;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)purgeCache;
 - (void)refreshCurrentPreviewItem;
-- (void)reloadData;
 - (void)scrubToValue:(double)arg1;
 - (void)setBlockRemoteImages:(BOOL)arg1;
 - (void)setContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCurrentPreviewItemIndex:(int)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLoadintTextForMissingFiles:(id)arg1;
+- (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewMode:(int)arg1;
+- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id)arg2;
+- (void)showContentsWasTappedInPreviewContentController:(id)arg1;
+- (int)sourceUUID;
 - (void)togglePlayState;
-- (void)willAppearInRemoteViewController:(id)arg1;
+- (void)willChangeContentFrame;
 
 @end

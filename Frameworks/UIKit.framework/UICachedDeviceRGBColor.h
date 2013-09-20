@@ -11,7 +11,6 @@
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

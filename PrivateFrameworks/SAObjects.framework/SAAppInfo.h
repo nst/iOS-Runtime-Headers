@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString, SASiriSupport, SAStarkSupport;
 
 @interface SAAppInfo : SADomainObject {
 }
@@ -11,11 +11,14 @@
 @property(copy) NSString * appName;
 @property(copy) NSDictionary * appNameMap;
 @property(copy) NSString * appVersion;
+@property(copy) NSString * authToken;
 @property(copy) NSString * displayAppName;
 @property(copy) NSDictionary * displayAppNameMap;
 @property(copy) NSString * providerName;
+@property(retain) SASiriSupport * siriSupport;
 @property(copy) NSString * spotlightName;
 @property(copy) NSDictionary * spotlightNameMap;
+@property(retain) SAStarkSupport * starkSupport;
 @property(copy) NSArray * supportedCommands;
 @property(copy) NSArray * supportedSchemes;
 
@@ -26,6 +29,7 @@
 - (id)appName;
 - (id)appNameMap;
 - (id)appVersion;
+- (id)authToken;
 - (id)displayAppName;
 - (id)displayAppNameMap;
 - (id)encodedClassName;
@@ -35,15 +39,20 @@
 - (void)setAppName:(id)arg1;
 - (void)setAppNameMap:(id)arg1;
 - (void)setAppVersion:(id)arg1;
+- (void)setAuthToken:(id)arg1;
 - (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayAppNameMap:(id)arg1;
 - (void)setProviderName:(id)arg1;
+- (void)setSiriSupport:(id)arg1;
 - (void)setSpotlightName:(id)arg1;
 - (void)setSpotlightNameMap:(id)arg1;
+- (void)setStarkSupport:(id)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (void)setSupportedSchemes:(id)arg1;
+- (id)siriSupport;
 - (id)spotlightName;
 - (id)spotlightNameMap;
+- (id)starkSupport;
 - (id)supportedCommands;
 - (id)supportedSchemes;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;

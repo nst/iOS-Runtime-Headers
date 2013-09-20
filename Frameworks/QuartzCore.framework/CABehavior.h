@@ -21,20 +21,24 @@
 @property(copy) NSString * name;
 @property(copy) NSDictionary * style;
 
-+ (int (*)())CA_getterForType:(int)arg1;
-+ (int (*)())CA_setterForType:(int)arg1;
++ (int (*)())CA_getterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
++ (int (*)())CA_setterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
++ (void)CAMLParserStartElement:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)behavior;
 + (id)defaultValueForKey:(id)arg1;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
+- (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
+- (id)CAMLTypeForKey:(id)arg1;
 - (void)_setCARenderBehavior:(struct Behavior { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Ref<CA::Render::String> { struct String {} *x_4_1_1; } x4; unsigned int x5; unsigned int x6; unsigned int x7 : 8; unsigned int x8 : 8; struct Ref<const CA::Render::Behavior> { struct Behavior {} *x_9_1_1; } x9; }*)arg1;
 - (BOOL)allowsWeakReference;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

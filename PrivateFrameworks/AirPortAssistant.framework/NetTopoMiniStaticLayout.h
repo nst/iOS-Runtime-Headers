@@ -8,12 +8,14 @@
     NSMutableArray *_connectionLayers;
     CALayer *_containerLayer;
     int _layoutOptions;
+    id _owningView;
     NSMutableArray *_topoDeviceLayers;
     NSArray *_topoDevicesDescriptor;
 }
 
 @property(retain) CALayer * containerLayer;
 @property int layoutOptions;
+@property(retain) id owningView;
 @property(readonly) NSArray * topoDeviceLayers;
 @property(retain) NSArray * topoDevicesDescriptor;
 
@@ -21,12 +23,14 @@
 - (void)createLayoutForDevices:(id)arg1;
 - (void)dealloc;
 - (void)destroyDeviceLayers;
+- (struct CGImage { }*)imageForDeviceSpec:(id)arg1 wantSmall:(BOOL)arg2 forContentsScale:(float)arg3;
 - (id)initWithContainerLayer:(id)arg1 andOptions:(int)arg2;
 - (int)layoutOptions;
-- (struct CGImage { }*)newImageForDeviceSpec:(id)arg1 wantSmall:(BOOL)arg2;
+- (id)owningView;
 - (void)performLayout;
 - (void)setContainerLayer:(id)arg1;
 - (void)setLayoutOptions:(int)arg1;
+- (void)setOwningView:(id)arg1;
 - (void)setTopoDevicesDescriptor:(id)arg1;
 - (id)topoDeviceLayers;
 - (id)topoDevicesDescriptor;

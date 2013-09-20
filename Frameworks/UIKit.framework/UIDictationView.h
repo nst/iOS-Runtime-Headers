@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIButton, UIDictationMeterView, UIKeyboardDicationBackground;
+@class UIButton, UIDictationMeterView, UIKeyboardDicationBackground, _UISiriWaveyView;
 
-@interface UIDictationView : UIView {
+@interface UIDictationView : UIView <_UISiriWaveyViewDelegate> {
     BOOL _automaticAppearanceWasEnabled;
     UIKeyboardDicationBackground *_background;
     UIButton *_endpointButton;
@@ -12,14 +12,19 @@
     BOOL _keyboardInTransition;
     UIDictationMeterView *_meterView;
     int _state;
+    UIButton *_waveTapEndpointButton;
+    _UISiriWaveyView *_waveyView;
 }
 
 + (id)activeInstance;
 + (Class)dictationViewClass;
 + (struct CGSize { float x1; float x2; })layoutSize;
 + (id)sharedInstance;
++ (struct CGSize { float x1; float x2; })viewSize;
 
 - (void)applicationEnteredBackground;
+- (void)applicationWillResignActive;
+- (float)audioLevelForWaveyView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })backgroundOffset;
 - (struct CGPoint { float x1; float x2; })contentOffset;
 - (id)createEndpointButtonWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 action:(SEL)arg2;
@@ -31,6 +36,7 @@
 - (void)endpointButtonPressed;
 - (void)finishReturnToKeyboard;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isShowing;
 - (void)keyboardDidShow:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGPoint { float x1; float x2; })positionForShow;

@@ -12,7 +12,7 @@
 - (BOOL)conflictsExistForBaseline:(id)arg1;
 - (id)delegate;
 - (id)electAncestorBaselineForConflictedBaselines:(id)arg1 dissentingBaselines:(id*)arg2;
-- (BOOL)electBaselineURLFromVersionURLs:(id)arg1 withBaseline:(id)arg2 error:(id*)arg3;
+- (BOOL)electBaselineURLFromVersions:(id)arg1 withBaseline:(id)arg2 error:(id*)arg3;
 - (BOOL)hasCurrentBaseline;
 - (BOOL)isEqual:(id)arg1;
 - (void)main;

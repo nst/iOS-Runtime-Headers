@@ -2,31 +2,24 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSMutableSet, NSString;
+@class NSObject<OS_dispatch_queue>, NSString;
 
 @interface HSFairPlayInfo : NSObject {
-    BOOL _hasValidMescalSession;
     void *_hwInfo;
-    NSMutableSet *_requestsToSign;
+    NSObject<OS_dispatch_queue> *_sapQueue;
     void *_session;
 }
 
 @property(readonly) NSString * deviceGUID;
 
-- (void)_addRequestsToSign:(id)arg1;
 - (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
 - (id)_hexStringForData:(id)arg1;
-- (id)beginNegotiation;
-- (id)continueNegotationWithData:(id)arg1 isComplete:(BOOL*)arg2;
+- (id)beginNegotiationWithSAPVersion:(unsigned int)arg1;
+- (id)continueNegotationWithSAPVersion:(unsigned int)arg1 data:(id)arg2 isComplete:(BOOL*)arg3;
 - (void)dealloc;
 - (id)deviceGUID;
-- (void)endMescalSession;
 - (void)endSecuritySession;
 - (id)init;
-- (id)processSignedResponseData:(id)arg1 withSignature:(id)arg2;
 - (id)securityInfoForURL:(id)arg1;
-- (BOOL)setupMescalWithURL:(id)arg1 certificateURL:(id)arg2 requestsToSign:(id)arg3 userAgent:(id)arg4;
-- (BOOL)shouldSignRequestAction:(id)arg1;
-- (id)signatureForData:(id)arg1;
 
 @end

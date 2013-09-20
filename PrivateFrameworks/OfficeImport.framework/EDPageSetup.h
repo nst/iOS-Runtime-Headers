@@ -5,17 +5,16 @@
 @interface EDPageSetup : NSObject {
     boolmCustomFirstPageNumber;
     float mBottomMargin;
-    unsigned int mCopies;
-    unsigned int mFirstPageNumber;
-    unsigned int mFitToHeight;
-    unsigned int mFitToWidth;
+    unsigned long mFirstPageNumber;
+    unsigned long mFitToHeight;
+    unsigned long mFitToWidth;
     float mFooterMargin;
     float mHeaderMargin;
     float mLeftMargin;
     int mOrientation;
     int mPageOrder;
     float mRightMargin;
-    unsigned int mScale;
+    unsigned long mScale;
     float mTopMargin;
 }
 
@@ -23,9 +22,9 @@
 
 - (float)bottomMargin;
 - (bool)customFirstPageNumber;
-- (unsigned int)firstPageNumber;
-- (unsigned int)fitToHeight;
-- (unsigned int)fitToWidth;
+- (unsigned long)firstPageNumber;
+- (unsigned long)fitToHeight;
+- (unsigned long)fitToWidth;
 - (float)footerMargin;
 - (float)headerMargin;
 - (id)init;
@@ -33,19 +32,19 @@
 - (int)order;
 - (int)orientation;
 - (float)rightMargin;
-- (unsigned int)scale;
+- (unsigned long)scale;
 - (void)setBottomMargin:(float)arg1;
 - (void)setCustomFirstPageNumber:(bool)arg1;
-- (void)setFirstPageNumber:(unsigned int)arg1;
-- (void)setFitToHeight:(unsigned int)arg1;
-- (void)setFitToWidth:(unsigned int)arg1;
+- (void)setFirstPageNumber:(unsigned long)arg1;
+- (void)setFitToHeight:(unsigned long)arg1;
+- (void)setFitToWidth:(unsigned long)arg1;
 - (void)setFooterMargin:(float)arg1;
 - (void)setHeaderMargin:(float)arg1;
 - (void)setLeftMargin:(float)arg1;
 - (void)setOrder:(int)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)setRightMargin:(float)arg1;
-- (void)setScale:(unsigned int)arg1;
+- (void)setScale:(unsigned long)arg1;
 - (void)setTopMargin:(float)arg1;
 - (float)topMargin;
 

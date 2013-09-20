@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary;
 
-@interface CKCache : NSObject {
+@interface CKCache : NSObject <CKCache> {
     NSMutableDictionary *_dictionary;
 }
 

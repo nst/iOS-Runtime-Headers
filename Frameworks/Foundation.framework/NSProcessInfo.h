@@ -14,7 +14,9 @@
 
 + (id)processInfo;
 
+- (void)_disableAutomaticTerminationOnly:(id)arg1;
 - (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
+- (void)_enableAutomaticTerminationOnly:(id)arg1;
 - (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 - (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
@@ -22,11 +24,15 @@
 - (unsigned int)activeProcessorCount;
 - (id)arguments;
 - (BOOL)automaticTerminationSupportEnabled;
+- (id)beginActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2;
+- (id)beginSuspensionOfSystemBehaviors:(unsigned long long)arg1 reason:(id)arg2;
 - (void)dealloc;
 - (void)disableAutomaticTermination:(id)arg1;
 - (void)disableSuddenTermination;
 - (void)enableAutomaticTermination:(id)arg1;
 - (void)enableSuddenTermination;
+- (void)endActivity:(id)arg1;
+- (void)endSystemBehaviorSuspension:(id)arg1;
 - (id)environment;
 - (id)globallyUniqueString;
 - (id)hostName;
@@ -35,6 +41,8 @@
 - (unsigned int)operatingSystem;
 - (id)operatingSystemName;
 - (id)operatingSystemVersionString;
+- (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 block:(id)arg3;
+- (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id)arg3;
 - (unsigned long long)physicalMemory;
 - (int)processIdentifier;
 - (id)processName;

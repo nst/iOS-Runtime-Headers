@@ -28,7 +28,7 @@
 - (id)description;
 - (void)finalize;
 - (void)forwardInvocation:(id)arg1;
-- (unsigned int)forwardXPCObject:(id)arg1;
+- (unsigned int)forwardXPCObject:(id)arg1 messageContext:(id)arg2;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(BOOL)arg3;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2;
 - (id)initWithPortName:(id)arg1 protocol:(id)arg2;

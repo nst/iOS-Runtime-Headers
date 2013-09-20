@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTableViewDataSourceDelegate>, <ABStyleProvider>, ABActionsController, ABLabelViewWithVariablePositioning, ABMultiCellContentView, ABNamePropertyGroup, ABPersonCellLayoutManager, ABPersonImageView, ABPersonPickersDelegate, ABPersonTableFooterView, ABPersonTableHeaderView, ABPersonTableView, ABPersonTableViewActionsDelegate, ABPersonTableViewImageDataDelegate, ABPersonTableViewLinkingDelegate, ABPersonTableViewMultiCellDelegate, ABPersonTableViewSharingDelegate, AccountsManager, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIFont, UILabel, UIResponder, UITableViewCell, UIView;
+@class <ABPersonTableViewDataSourceDelegate>, <ABStyleProvider>, ABActionsController, ABLabelViewWithVariablePositioning, ABMultiCellContentView, ABNamePropertyGroup, ABPersonCellLayoutManager, ABPersonImageView, ABPersonPickersDelegate, ABPersonTableFooterView, ABPersonTableHeaderView, ABPersonTableView, ABPersonTableViewActionsDelegate, ABPersonTableViewImageDataDelegate, ABPersonTableViewLinkingDelegate, ABPersonTableViewMultiCellDelegate, ABPersonTableViewSharingDelegate, ABUIPerson, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIFont, UILabel, UIResponder, UITableViewCell, UIView;
 
 @interface ABPersonTableViewDataSource : NSObject <UITableViewDelegate, UITableViewDataSourcePrivate, ABPrimaryValueDelegate, ABPersonCellLayoutManagerDelegate> {
-    AccountsManager *_accountsManager;
     ABActionsController *_actionsController;
     ABPersonTableViewActionsDelegate *_actionsDelegate;
     struct __CFSet { } *_addNewValueProperties;
@@ -66,7 +65,7 @@
     NSIndexPath *_pinningMultiCellIndexPath;
     NSIndexPath *_pinningMultiCellRelativeIndexPath;
     UIResponder *_pinningResponder;
-    void *_preinsertedPerson;
+    ABUIPerson *_preinsertedPerson;
     int _primaryProperty;
     NSMutableArray *_propertyGroups;
     NSMutableDictionary *_propertyGroupsStore;
@@ -177,7 +176,6 @@
 - (void)_updateCellsForDataProvider:(id)arg1 afterDeleteAtIndex:(int)arg2 isInsertionIndex:(BOOL)arg3 inTableView:(id)arg4;
 - (void)_updateDeleteButtonIfNeededForFooterView:(id)arg1;
 - (void)_updateTableForVibrationChanges;
-- (id)accountsManager;
 - (id)actionCellForTableView:(id)arg1 withReuseIdentifier:(id)arg2 isConference:(BOOL)arg3 hasCustomContent:(BOOL)arg4;
 - (id)actionsController;
 - (id)actionsDelegate;
@@ -247,7 +245,6 @@
 - (BOOL)isEditing;
 - (BOOL)isEndingEditingTransactions;
 - (BOOL)isInFullEditingMode;
-- (BOOL)isMe;
 - (BOOL)isPinning;
 - (BOOL)isPropertyDisplayed:(int)arg1;
 - (BOOL)isPropertyOptional:(int)arg1;
@@ -287,12 +284,10 @@
 - (id)pinningMultiCellIndexPath;
 - (id)pinningMultiCellRelativeIndexPath;
 - (id)pinningResponder;
-- (void*)policyForPerson:(void*)arg1;
 - (id)prepareForLinkingUIUpdate;
 - (void)prepareView;
 - (void)presentRelatedNamesPicker:(id)arg1;
 - (int)primaryProperty;
-- (id)primarySourceNameForPerson:(void*)arg1;
 - (void)propertyGroup:(id*)arg1 orActions:(id*)arg2 forSection:(int)arg3 whenEditing:(BOOL)arg4;
 - (id)propertyGroupForProperty:(int)arg1 context:(void*)arg2 createIfEmpty:(BOOL)arg3;
 - (id)propertyGroupForProperty:(int)arg1 context:(void*)arg2;
@@ -315,7 +310,6 @@
 - (void)scrollToLastActiveEntryFieldAnimated:(BOOL)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (id)secondarySourceNameForPerson:(void*)arg1;
 - (id)sectionAnimationsDictionaryForEditing:(BOOL)arg1;
 - (id)sectionAnimationsDictionaryForOriginalPropertyGroups:(id)arg1 newPropertyGroups:(id)arg2 whenEditing:(BOOL)arg3;
 - (id)sectionAnimationsDictionaryForSwipeToDeleteAtIndexPath:(id)arg1;

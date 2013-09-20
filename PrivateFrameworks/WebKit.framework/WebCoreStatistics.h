@@ -33,6 +33,7 @@
 + (void)purgeInactiveFontData;
 + (void)returnFreeMemoryToSystem;
 + (void)setCacheDisabled:(BOOL)arg1;
++ (void)setJavaScriptGarbageCollectorTimerEnabled:(BOOL)arg1;
 + (void)setShouldPrintExceptions:(BOOL)arg1;
 + (BOOL)shouldPrintExceptions;
 + (void)startIgnoringWebCoreNodeLeaks;

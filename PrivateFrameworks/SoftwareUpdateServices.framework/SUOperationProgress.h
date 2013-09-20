@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface SUOperationProgress : NSObject <NSCoding, NSCopying> {
+@interface SUOperationProgress : NSObject <NSSecureCoding, NSCopying> {
     float _normalizedPercentComplete;
     float _percentComplete;
     NSString *_phase;
@@ -16,8 +16,11 @@
 @property(retain) NSString * phase;
 @property double timeRemaining;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isDone;

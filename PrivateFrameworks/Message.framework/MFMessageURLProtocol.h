@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MessageTextAttachment, MonitoredInvocation, NSThread, NSURL;
+@class MFMessageTextAttachment, MFMonitoredInvocation, NSMutableArray, NSThread, NSURL;
 
 @interface MFMessageURLProtocol : NSURLProtocol {
-    MessageTextAttachment *_attachment;
-    MonitoredInvocation *_invocation;
+    MFMessageTextAttachment *_attachment;
+    NSMutableArray *_attachments;
+    MFMonitoredInvocation *_invocation;
     NSThread *_loader;
     BOOL _stopped;
     NSURL *_url;

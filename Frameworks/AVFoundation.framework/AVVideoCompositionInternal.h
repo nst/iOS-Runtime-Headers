@@ -15,7 +15,8 @@
         float height; 
     AVVideoCompositionCoreAnimationTool *animationTool;
     BOOL auxiliaryTrackLayerSetLast;
-    NSString *compositor;
+    NSString *builtInCompositorName;
+    Class customCompositorClass;
     } frameDuration;
     NSArray *instructions;
     float renderScale;

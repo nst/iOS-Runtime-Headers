@@ -2,37 +2,43 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString, VKLabelNavRoad;
+@class <VKLabelNavFeature>, NSString;
 
 @interface VKLabelNavRoadLabel : NSObject {
-    struct shared_ptr<vk::Label> { 
-        struct Label {} *__ptr_; 
+    struct shared_ptr<vk::NavLabel> { 
+        struct NavLabel {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
+    int _alignment;
     NSString *_displayGroup;
     unsigned int _displayID;
-    BOOL _isShield;
     } _label;
-    VKLabelNavRoad *_road;
+    <VKLabelNavFeature> *_navFeature;
+    int _navLabelType;
 }
 
+@property int alignment;
 @property unsigned int displayID;
-@property(readonly) BOOL isShield;
-@property(readonly) const struct shared_ptr<vk::Label> { struct Label {} *x1; struct __shared_weak_count {} *x2; }* label;
-@property VKLabelNavRoad * road;
-
-+ (id)displayGroupForShieldLabelOnRoad:(id)arg1;
+@property(readonly) BOOL isJunctionLabel;
+@property(readonly) BOOL isRoadLabel;
+@property(readonly) BOOL isShieldLabel;
+@property(readonly) const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }* label;
+@property <VKLabelNavFeature> * navFeature;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (int)alignment;
 - (void)dealloc;
 - (id)description;
 - (id)displayGroup;
 - (unsigned int)displayID;
-- (id)initWithRoad:(id)arg1 label:(const struct shared_ptr<vk::Label> { struct Label {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
-- (BOOL)isShield;
-- (const struct shared_ptr<vk::Label> { struct Label {} *x1; struct __shared_weak_count {} *x2; }*)label;
-- (id)road;
+- (id)initWithNavFeature:(id)arg1 label:(const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*)arg2 navLabelType:(int)arg3;
+- (BOOL)isJunctionLabel;
+- (BOOL)isRoadLabel;
+- (BOOL)isShieldLabel;
+- (const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*)label;
+- (id)navFeature;
+- (void)setAlignment:(int)arg1;
 - (void)setDisplayID:(unsigned int)arg1;
-- (void)setRoad:(id)arg1;
+- (void)setNavFeature:(id)arg1;
 
 @end

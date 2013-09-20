@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <GQUOutputBundle>, <GQWrapPointGenerator>, GQDRoot, GQDSStylesheet, GQPProcessor, GQSTable, GQZArchive;
+@class <GQUOutputBundle>, <GQWrapPointGenerator>, GQDRoot, GQDSStylesheet, GQPProcessor, GQSTable, SFUZipArchive;
 
 @interface GQSDocument : NSObject <GQWrapPointGenerator> {
-    GQZArchive *mArchive;
+    BOOL _doCalculateThumbnailSize;
+    SFUZipArchive *mArchive;
     struct __CFDictionary { } *mBundleResourceUriMap;
     struct __CFURL { } *mBundleUrl;
     Class mCurrentDrawablesGenerator;
@@ -27,17 +28,21 @@
     GQSTable *mTableState;
     unsigned int mTextScale;
     BOOL mThumbnailGenerationDone;
-    struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint>>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>, false> { struct NSObjectComparator<GQDWrapPoint> { SEL x_1_3_1; } x_1_2_1; struct _Rb_tree_node_base { int x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; unsigned int x_1_2_3; } x_1_1_1; } x1; } *mWrapPoints;
+    struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::__1::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct __tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::__1::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct __tree_node<GQUtility::ObjcSharedPtr<GQDWrapPoint>, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<GQUtility::ObjcSharedPtr<GQDWrapPoint>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, GQUtility::NSObjectComparator<GQDWrapPoint> > { unsigned long x_3_2_1; struct NSObjectComparator<GQDWrapPoint> { SEL x_2_3_1; } x_3_2_2; } x_1_1_3; } x1; } *mWrapPoints;
 }
+
+@property BOOL doCalculateThumbnailSize;
 
 - (void)addWrapPoint:(id)arg1;
 - (void)clearWrapPoints;
-- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Vector_impl { struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_1; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_2; struct ObjcSharedPtr<GQDWrapPoint> {} *x_1_1_3; } x1; }*)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3 zIndex:(int)arg4;
+- (struct vector<GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::__1::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct ObjcSharedPtr<GQDWrapPoint> {} *x1; struct ObjcSharedPtr<GQDWrapPoint> {} *x2; struct __compressed_pair<GQUtility::ObjcSharedPtr<GQDWrapPoint> *, std::__1::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct ObjcSharedPtr<GQDWrapPoint> {} *x_3_1_1; } x3; }*)createListOfWrapPointsAlongY:(float)arg1 minX:(float)arg2 maxX:(float)arg3 zIndex:(int)arg4;
 - (struct __CFURL { }*)createUriToDocumentBundleResource:(struct __CFString { }*)arg1;
+- (struct __CFURL { }*)createUrlToAppBundleResource:(struct __CFString { }*)arg1 processorBundle:(struct __CFBundle { }*)arg2 skipCachingPDFAndNoExtentionResources:(BOOL*)arg3;
 - (Class)currentDrawablesGenerator;
 - (Class)currentTableGenerator;
 - (id)currentWrapPointGenerator;
 - (void)dealloc;
+- (BOOL)doCalculateThumbnailSize;
 - (BOOL)doExternalTextWrap;
 - (struct __CFString { }*)filename;
 - (BOOL)generatorBeginWasCalled;
@@ -59,6 +64,7 @@
 - (void)setCurrentDrawablesGenerator:(Class)arg1;
 - (void)setCurrentTableGenerator:(Class)arg1;
 - (void)setCurrentWrapPointGenerator:(id)arg1;
+- (void)setDoCalculateThumbnailSize:(BOOL)arg1;
 - (void)setDoExternalTextWrap:(BOOL)arg1;
 - (void)setGeneratingThumbnail:(BOOL)arg1;
 - (void)setGeneratorBeginWasCalled;
@@ -74,6 +80,6 @@
 - (id)tableState;
 - (id)topObjectOfClass:(Class)arg1;
 - (struct __CFString { }*)uriForBundleResource:(struct __CFString { }*)arg1 ofType:(struct __CFString { }*)arg2;
-- (const struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::ObjcSharedPtr<GQDWrapPoint>, std::_Identity<GQUtility::ObjcSharedPtr<GQDWrapPoint>>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint>> > { struct _Rb_tree_impl<GQUtility::NSObjectComparator<GQDWrapPoint>, false> { struct NSObjectComparator<GQDWrapPoint> { SEL x_1_3_1; } x_1_2_1; struct _Rb_tree_node_base { int x_2_3_1; struct _Rb_tree_node_base {} *x_2_3_2; struct _Rb_tree_node_base {} *x_2_3_3; struct _Rb_tree_node_base {} *x_2_3_4; } x_1_2_2; unsigned int x_1_2_3; } x_1_1_1; } x1; }*)wrapPoints;
+- (const struct set<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::__1::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct __tree<GQUtility::ObjcSharedPtr<GQDWrapPoint>, GQUtility::NSObjectComparator<GQDWrapPoint>, std::__1::allocator<GQUtility::ObjcSharedPtr<GQDWrapPoint> > > { struct __tree_node<GQUtility::ObjcSharedPtr<GQDWrapPoint>, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<GQUtility::ObjcSharedPtr<GQDWrapPoint>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, GQUtility::NSObjectComparator<GQDWrapPoint> > { unsigned long x_3_2_1; struct NSObjectComparator<GQDWrapPoint> { SEL x_2_3_1; } x_3_2_2; } x_1_1_3; } x1; }*)wrapPoints;
 
 @end

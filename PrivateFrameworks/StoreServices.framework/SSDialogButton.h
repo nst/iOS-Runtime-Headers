@@ -14,6 +14,8 @@
 @property(readonly) NSString * buttonAction;
 @property(readonly) NSString * buttonTitle;
 
++ (id)buttonWithTitle:(id)arg1;
+
 - (id)URLTarget;
 - (id)actionParameter;
 - (id)buttonAction;

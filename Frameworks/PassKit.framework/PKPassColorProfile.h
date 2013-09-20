@@ -9,11 +9,9 @@
     float _backgroundLightness;
     UIColor *_foregroundColor;
     float _foregroundLightness;
-    UIColor *_foregroundShadowColor;
     UIColor *_highlightColor;
     UIColor *_labelColor;
     float _labelLightness;
-    UIColor *_labelShadowColor;
     float _overlayDarkeningAlpha;
     float _overlayLighteningAlpha;
     float _regularDarkeningAlpha;
@@ -23,11 +21,9 @@
 
 @property(readonly) UIColor * backgroundColor;
 @property(readonly) UIColor * foregroundColor;
-@property(readonly) UIColor * foregroundShadowColor;
 @property(readonly) UIColor * highlightColor;
 @property(readonly) BOOL isLight;
 @property(readonly) UIColor * labelColor;
-@property(readonly) UIColor * labelShadowColor;
 @property(readonly) float overlayDarkeningAlpha;
 @property(readonly) float overlayLighteningAlpha;
 @property(readonly) float regularDarkeningAlpha;
@@ -36,27 +32,22 @@
 + (id)profileForDisplayProfile:(id)arg1;
 
 - (void)_calculateColorsWithBackgroundColor:(id)arg1 foregroundColor:(id)arg2 labelColor:(id)arg3;
-- (id)_imageForGlyph:(id)arg1 color:(id)arg2 letterpressStyle:(id)arg3;
+- (id)_imageForGlyph:(id)arg1 color:(id)arg2;
 - (id)_initWithBackgroundColor:(id)arg1 foregroundColor:(id)arg2 labelColor:(id)arg3;
-- (id)_letterpressStyleForSize:(int)arg1 textLightness:(float)arg2 shadowColor:(id)arg3;
 - (int)_sizeForFont:(id)arg1;
 - (int)_sizeForGlyph:(id)arg1;
 - (id)backgroundColor;
 - (void)dealloc;
+- (id)foregroundAttributesForFont:(id)arg1;
 - (id)foregroundColor;
 - (id)foregroundColorOverStrip:(BOOL)arg1;
 - (id)foregroundImageForGlyph:(id)arg1;
-- (id)foregroundLetterpressStyleForFont:(id)arg1;
-- (id)foregroundLetterpressStyleForGlyph:(id)arg1;
-- (id)foregroundShadowColor;
 - (id)highlightColor;
 - (BOOL)isLight;
+- (id)labelAttributesForFont:(id)arg1;
 - (id)labelColor;
 - (id)labelColorOverStrip:(BOOL)arg1;
 - (id)labelImageForGlyph:(id)arg1;
-- (id)labelLetterpressStyleForFont:(id)arg1;
-- (id)labelLetterpressStyleForGlyph:(id)arg1;
-- (id)labelShadowColor;
 - (float)overlayDarkeningAlpha;
 - (float)overlayLighteningAlpha;
 - (float)regularDarkeningAlpha;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSASServerSideModelGroupedCommandQueue, MSASStateMachine, MSAlbumSharingDaemon, NSCountedSet, NSObject<OS_dispatch_queue>, NSString;
+@class MSASPendingChanges, MSASServerSideModelGroupedCommandQueue, MSASStateMachine, MSAlbumSharingDaemon, NSCountedSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MSASServerSideModel : MSASModelBase <MSASModel, MSASStateMachineDelegate> {
     MSASServerSideModelGroupedCommandQueue *_commandQueue;
@@ -11,6 +11,7 @@
     NSObject<OS_dispatch_queue> *_eventQueue;
     NSObject<OS_dispatch_queue> *_memberQueue;
     NSCountedSet *_observers;
+    MSASPendingChanges *_pendingChanges;
 }
 
 @property MSASStateMachine * MSASCounterpartInstance;
@@ -22,6 +23,7 @@
 @property double maxGroupedCallbackEventStaleness;
 @property(retain) NSObject<OS_dispatch_queue> * memberQueue;
 @property(retain) NSCountedSet * observers;
+@property(retain) MSASPendingChanges * pendingChanges;
 @property(readonly) NSString * personID;
 @property(readonly) MSASStateMachine * stateMachine;
 
@@ -32,10 +34,10 @@
 - (void)MSASStateMachine:(id)arg1 didFindAlbumSyncedState:(id)arg2 forAlbum:(id)arg3 info:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFindAssetCollectionChanges:(id)arg2 forAlbum:(id)arg3 info:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFindAssetCollectionSyncedState:(id)arg2 forAssetCollectionGUID:(id)arg3 inAlbum:(id)arg4 assetCollectionStateCtag:(id)arg5 info:(id)arg6;
+- (void)MSASStateMachine:(id)arg1 didFindChangesInAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFindCommentChanges:(id)arg2 inAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFindNewURLString:(id)arg2 forAlbumWithGUID:(id)arg3 info:(id)arg4;
-- (void)MSASStateMachine:(id)arg1 didFindResetSyncForAlbum:(id)arg2 info:(id)arg3;
-- (void)MSASStateMachine:(id)arg1 didFindSharingRelationshipChanges:(id)arg2 info:(id)arg3;
+- (void)MSASStateMachine:(id)arg1 didFindSyncedKeyValueChangesForAlbumGUIDS:(id)arg2 albumChanges:(id)arg3 accessControlChangesForAlbumGUIDS:(id)arg4 info:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFindSyncedKeyValueChangesForAlbumGUIDS:(id)arg2 info:(id)arg3;
 - (void)MSASStateMachine:(id)arg1 didFinishAddingAssetCollection:(id)arg2 toAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFinishAddingComment:(id)arg2 toAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5 error:(id)arg6;
@@ -49,15 +51,17 @@
 - (void)MSASStateMachine:(id)arg1 didFinishDeletingAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishDeletingAssetCollection:(id)arg2 inAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFinishDeletingComment:(id)arg2 inAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5 error:(id)arg6;
+- (void)MSASStateMachine:(id)arg1 didFinishEnqueueingAssetsForDownload:(id)arg2 inAlbumWithGUID:(id)arg3;
 - (void)MSASStateMachine:(id)arg1 didFinishGettingAccessControls:(id)arg2 forAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFinishRemovingSharingRelationship:(id)arg2 fromOwnedAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFinishRetrievingAsset:(id)arg2 inAlbum:(id)arg3 error:(id)arg4;
+- (void)MSASStateMachine:(id)arg1 didFinishSendingInvitationByPhone:(id)arg2 toOwnedAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFinishSettingSyncedStateForAlbum:(id)arg2 info:(id)arg3 error:(id)arg4 newAlbumStateCtag:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFinishSettingSyncedStateForAssetCollection:(id)arg2 inAlbum:(id)arg3 assetStateCtag:(id)arg4 info:(id)arg5 error:(id)arg6;
 - (void)MSASStateMachine:(id)arg1 didFinishSubscribingToAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishUnsubscribingFromAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishUpdatingAlbum:(id)arg2 info:(id)arg3 error:(id)arg4;
-- (void)MSASStateMachine:(id)arg1 didFinishUpdatingAssetCollection:(id)arg2 inAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
+- (void)MSASStateMachine:(id)arg1 didFinishUpdatingAssetCollections:(id)arg2 inAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFireScheduledEvent:(id)arg2 forAssetCollectionGUID:(id)arg3 albumGUID:(id)arg4 info:(id)arg5;
 - (BOOL)MSASStateMachine:(id)arg1 didQueryIsAssetCollectionWithGUIDInModel:(id)arg2;
 - (void)MSASStateMachine:(id)arg1 didRequestAssetsForAddingAssetCollections:(id)arg2 inAlbum:(id)arg3 specifications:(id)arg4 info:(id)arg5;
@@ -68,9 +72,10 @@
 - (void)MSASStateMachineDidFindGlobalResetSync:(id)arg1 info:(id)arg2;
 - (id)MSASStateMachineDidRequestAlbumStateCtagForAlbumWithGUID:(id)arg1 info:(id)arg2;
 - (id)MSASStateMachineDidRequestAlbumURLStringForAlbumWithGUID:(id)arg1 info:(id)arg2;
+- (id)MSASStateMachineDidRequestAlbumWithGUID:(id)arg1;
 - (id)MSASStateMachineDidRequestAssetCollectionStateCtagForAssetCollectionWithGUID:(id)arg1 info:(id)arg2;
 - (void)MSASStateMachineDidStart:(id)arg1;
-- (void)MSASStateMachineWillCheckForChanges:(id)arg1 info:(id)arg2;
+- (void)MSASStateMachineDidUpdateServerCommunicationBackoffDate:(id)arg1;
 - (id)_invalidAccessControlGUIDErrorwithGUID:(id)arg1;
 - (id)_invalidAssetCollectionGUIDErrorwithGUID:(id)arg1;
 - (id)_invalidInvitationGUIDErrorWithGUID:(id)arg1;
@@ -155,12 +160,14 @@
 - (void)dbQueueSetUnviewedState:(BOOL)arg1 onAssetCollectionWithGUID:(id)arg2 info:(id)arg3;
 - (int)dbQueueUnviewedAlbumCount;
 - (int)dbQueueUnviewedAssetCollectionCountForAlbumWithGUID:(id)arg1;
+- (void)dbQueueUpdateAlbumCtag:(id)arg1;
 - (BOOL)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;
 - (void)dealloc;
 - (void)deleteAlbumWithGUID:(id)arg1 info:(id)arg2;
 - (void)deleteAlbumWithGUID:(id)arg1;
 - (void)deleteAssetCollectionWithGUID:(id)arg1 info:(id)arg2;
 - (void)deleteAssetCollectionWithGUID:(id)arg1;
+- (void)deleteAssetCollectionsWithGUIDs:(id)arg1;
 - (void)deleteCommentWithGUID:(id)arg1 info:(id)arg2;
 - (void)deleteCommentWithGUID:(id)arg1;
 - (id)earliestUnviewedAssetCollectionGUIDInAlbumWithGUID:(id)arg1;
@@ -170,6 +177,7 @@
 - (void)eventQueueNotifyObserversOfUpdatedUnviewedCountInAlbum:(id)arg1 unviewedCount:(int)arg2 info:(id)arg3;
 - (void)eventQueuePerformBlockOnObservers:(id)arg1;
 - (void)flushAllPendingCommentCheckOperations;
+- (id)focusAssetCollectionGUID;
 - (void)forgetEverything;
 - (void)forgetEverythingInfo:(id)arg1 completionBlock:(id)arg2;
 - (void)forgetEverythingInfo:(id)arg1;
@@ -199,6 +207,7 @@
 - (void)modifyAlbumMetadata:(id)arg1;
 - (id)nextCommandGroupMaxCount:(int)arg1 outCommand:(id*)arg2 outLastCommandIndex:(long long*)arg3;
 - (id)observers;
+- (id)pendingChanges;
 - (void)performBlockOnObservers:(id)arg1;
 - (void)reconstruct;
 - (void)refreshAccessControlListForAlbumWithGUID:(id)arg1 info:(id)arg2;
@@ -219,6 +228,7 @@
 - (void)retainBusy;
 - (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2;
 - (void)retrieveAssetsFromAssetCollectionsWithGUIDs:(id)arg1 assetTypeFlags:(int)arg2;
+- (id)serverCommunicationBackoffDate;
 - (id)serverSideConfiguration;
 - (void)setCommandQueue:(id)arg1;
 - (void)setDaemon:(id)arg1;
@@ -230,7 +240,10 @@
 - (void)setMaxGroupedCallbackEventIdleInterval:(double)arg1;
 - (void)setMaxGroupedCallbackEventStaleness:(double)arg1;
 - (void)setMemberQueue:(id)arg1;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 completionBlock:(id)arg3;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
 - (void)setObservers:(id)arg1;
+- (void)setPendingChanges:(id)arg1;
 - (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 completionBlock:(id)arg3;
 - (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
 - (void)setUserInfo:(id)arg1 forAccessControlWithGUID:(id)arg2;
@@ -253,5 +266,7 @@
 - (id)userInfoForAssetCollectionWithGUID:(id)arg1;
 - (id)userInfoForCommentWithGUID:(id)arg1;
 - (id)userInfoForInvitationWithGUID:(id)arg1;
+- (void)videoURLForAssetCollectionWithGUID:(id)arg1 completionBlock:(id)arg2;
+- (void)videoURLsForAssetCollectionWithGUID:(id)arg1 forMediaAssetType:(unsigned int)arg2 completionBlock:(id)arg3;
 
 @end

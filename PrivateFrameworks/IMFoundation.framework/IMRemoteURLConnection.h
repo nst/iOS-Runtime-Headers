@@ -6,26 +6,32 @@
    See Warning(s) below.
  */
 
-@class NSObject<OS_xpc_object>, NSURLRequest;
+@class NSObject<OS_xpc_object>, NSString, NSURLRequest;
 
 @interface IMRemoteURLConnection : NSObject {
     id _block;
+    NSString *_bundleIdentifierForDataUsage;
+    BOOL _cancelled;
     NSObject<OS_xpc_object> *_connection;
     BOOL _forceCellularIfPossible;
     BOOL _loading;
     NSURLRequest *_request;
+    int _retries;
 }
 
+@property(retain) NSString * bundleIdentifierForDataUsage;
 @property BOOL forceCellularIfPossible;
 
 - (BOOL)_connect;
 - (BOOL)_disconnect;
 - (void)_disconnected;
+- (id)bundleIdentifierForDataUsage;
 - (void)cancel;
 - (void)dealloc;
 - (BOOL)forceCellularIfPossible;
 - (id)initWithURLRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)load;
+- (void)setBundleIdentifierForDataUsage:(id)arg1;
 - (void)setForceCellularIfPossible:(BOOL)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFCRAM_MD5AuthScheme : AuthScheme {
+@interface MFCRAM_MD5AuthScheme : MFAuthScheme {
 }
 
 - (Class)authenticatorClass;

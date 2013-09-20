@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOActiveTileSet, NSTimer, VKTilePool, _VKTileSetBackedTileSourceTimerTarget;
+@class GEOActiveTileSet, VKTilePool, VKTimer, _VKTileSetBackedTileSourceTimerTarget;
 
 @interface VKTileSetBackedTileSource : VKTileSource {
     struct _GEOTileKey { 
@@ -20,7 +20,7 @@
         unsigned int location; 
         unsigned int length; 
     } _downloadTemplate;
-    NSTimer *_expirationTimer;
+    VKTimer *_expirationTimer;
     VKTilePool *_expiredTilePool;
     int _maximumDownloadZoomLevel;
     int _minimumDownloadZoomLevel;
@@ -31,6 +31,7 @@
 
 @property(readonly) GEOActiveTileSet * tileSet;
 
+- (id).cxx_construct;
 - (double)_expirationInterval;
 - (void)_expireTiles;
 - (double)_nextTileExpirationDate;
@@ -56,6 +57,5 @@
 - (id)tileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (id)tileSet;
 - (int)tileSize;
-- (id)tileSource;
 
 @end

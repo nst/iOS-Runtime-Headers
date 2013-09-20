@@ -2,40 +2,58 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSISLinearExpression : NSObject <NSCopying, NSISRowBody> {
-    float _constant;
-    struct __CFArray { } *_sortedVarCoeffs;
-    struct __CFArray { } *_sortedVarPointers;
-    float _termScalar;
+@interface NSISLinearExpression : NSObject <NSISRowBody, NSFastEnumeration> {
+    union { 
+        struct { 
+            id stored_extern_marker; 
+            struct { /* ? */ } *slab; 
+            unsigned int capacity; 
+        } extern_data; 
+        struct { 
+            unsigned long aligner; 
+        } inline_slab; 
+        unsigned char padding[36]; 
+        void *_workaround13455311; 
+    double constant;
+    } data;
+    unsigned int inline_capacity;
+    unsigned int var_count;
 }
 
-@property float constant;
+@property double constant;
 
-- (float)_preScaledCoefficientForVariable:(id)arg1;
-- (void)_setPreScaledCoefficient:(float)arg1 forVariable:(id)arg2;
-- (void)addExpression:(id)arg1 times:(float)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
-- (void)addExpression:(id)arg1 times:(float)arg2;
-- (void)addVariable:(id)arg1 coefficient:(float)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
-- (void)addVariable:(id)arg1 coefficient:(float)arg2;
-- (id)allVariables;
-- (float)coefficientForVariable:(id)arg1;
-- (float)constant;
++ (id)acquireFromPoolForUseCase:(int)arg1;
++ (id)newExpressionWithCapacity:(unsigned int)arg1;
+
+- (void)addExpression:(id)arg1 times:(double)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
+- (void)addExpression:(id)arg1 times:(double)arg2;
+- (void)addVariable:(id)arg1 coefficient:(double)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
+- (void)addVariable:(id)arg1 coefficient:(double)arg2;
+- (double)coefficientForVariable:(id)arg1;
+- (double)constant;
+- (id)copyContentsAndReturnToPool;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (void)enumerateVariables:(id)arg1;
 - (void)enumerateVariablesAndCoefficients:(id)arg1;
-- (float)incrementConstant:(float)arg1;
+- (BOOL)enumerateVariablesAndCoefficientsUntil:(id)arg1;
+- (double)incrementConstant:(double)arg1;
 - (id)init;
-- (id)initWithSortedVarPointers:(struct __CFArray { }*)arg1 sortedVarCoefficients:(struct __CFArray { }*)arg2 constant:(float)arg3 termScalar:(float)arg4;
+- (id)initWithInlineCapacity:(unsigned int)arg1;
 - (BOOL)isConstant;
 - (void)removeVariable:(id)arg1;
 - (void)replaceVariable:(id)arg1 withExpression:(id)arg2 processVariableNewToReceiver:(id)arg3 processVariableDroppedFromReceiver:(id)arg4;
-- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(float)arg2 timesVariable:(id)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
-- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(float)arg2;
-- (void)scaleBy:(float)arg1;
-- (void)scalePrescaledVariablesBy:(double)arg1;
-- (void)setCoefficient:(float)arg1 forVariable:(id)arg2;
-- (void)setConstant:(float)arg1;
+- (void)replaceVariable:(id)arg1 withVariable:(id)arg2 coefficient:(double)arg3;
+- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2 timesVariable:(id)arg3 processVariableNewToReceiver:(id)arg4 processVariableDroppedFromReceiver:(id)arg5;
+- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2;
+- (void)returnToPool;
+- (void)scaleBy:(double)arg1;
+- (void)setCoefficient:(double)arg1 forVariable:(id)arg2;
+- (void)setConstant:(double)arg1;
+- (unsigned int)variableCount;
+- (id)variablesArray;
+- (void)verifyInternalIntegrity;
 
 @end

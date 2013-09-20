@@ -8,7 +8,9 @@
 
 + (id)set;
 
+- (id)_generateAllObjectsFromSelector:(SEL)arg1;
 - (void)addObject:(id)arg1;
+- (id)allCommentedAddresses;
 - (id)allObjects;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;

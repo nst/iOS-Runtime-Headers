@@ -13,7 +13,11 @@
     unsigned int _startCount;
 }
 
++ (struct __CFDictionary { }*)_serverPortToNotificationCenterMap;
++ (id)_serverPortToNotificationCenterMapDispatchQueue;
++ (id)centerForServerPort:(unsigned int)arg1;
 + (id)centerNamed:(id)arg1;
++ (void)setCenter:(id)arg1 forServerPort:(unsigned int)arg2;
 
 - (void)_checkIn;
 - (void)_checkOutAndRemoveSource;

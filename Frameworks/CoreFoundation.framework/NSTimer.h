@@ -30,7 +30,9 @@
 - (long)order;
 - (void)setFireDate:(id)arg1;
 - (void)setFireTime:(double)arg1;
+- (void)setTolerance:(double)arg1;
 - (double)timeInterval;
+- (double)tolerance;
 - (id)userInfo;
 
 @end

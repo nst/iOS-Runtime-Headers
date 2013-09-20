@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTrafficSegment : PBCodable {
+@interface GEOTrafficSegment : PBCodable <NSCopying> {
     struct { 
         unsigned int speed : 1; 
         unsigned int width : 1; 
@@ -21,6 +21,7 @@
 @property int width;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

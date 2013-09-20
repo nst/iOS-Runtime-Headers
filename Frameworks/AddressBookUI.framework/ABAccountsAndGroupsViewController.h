@@ -2,27 +2,22 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABAccountsAndGroupDataSource, ABPeoplePickerNavigationController, UITableView;
+@class ABAccountsAndGroupDataSource, ABPeoplePickerNavigationController, UIRefreshControl;
 
 @interface ABAccountsAndGroupsViewController : ABAbstractViewController <UITableViewDelegate> {
     ABAccountsAndGroupDataSource *_dataSource;
     BOOL _needsReload;
     ABPeoplePickerNavigationController *_peoplePickerNavigationController;
+    UIRefreshControl *_refreshControl;
     BOOL _showsRefreshButton;
     BOOL _tableViewNeedsReloadAfterResume;
 }
 
 @property(readonly) ABAccountsAndGroupDataSource * dataSource;
-@property BOOL hidesGlobalGroupWrapper;
-@property BOOL hidesSearchableSources;
 @property ABPeoplePickerNavigationController * peoplePickerNavigationController;
-@property(readonly) UITableView * tableView;
 
-- (void)_applyAccessibilityFontChanges;
-- (void)_applyStylesToTableView:(id)arg1;
 - (void)_updateDisplayedContactsFilterFromSelection;
 - (int)abViewControllerType;
-- (void)accessibilityLargeTextDidChange;
 - (id)allGroupWrapperIndexPaths;
 - (void)applicationDidResume;
 - (id)dataSource;
@@ -41,12 +36,10 @@
 - (void)setHidesSearchableSources:(BOOL)arg1;
 - (void)setModel:(id)arg1;
 - (void)setPeoplePickerNavigationController:(id)arg1;
-- (void)setStyleProvider:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)updateRefreshButton;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

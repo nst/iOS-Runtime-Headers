@@ -5,30 +5,35 @@
 @class NSDictionary, NSMutableDictionary, NSMutableSet, NSSet;
 
 @interface PFUbiquityRecordsImporterSchedulingContext : NSObject {
-    NSMutableSet *_failedLogs;
-    NSMutableSet *_ignoredLogs;
-    NSMutableDictionary *_logsToEncounteredErrors;
-    NSMutableSet *_pendingLogs;
-    NSMutableSet *_scheduledLogs;
+    NSMutableSet *_failedLogLocations;
+    NSMutableSet *_ignoredLogLocations;
+    int _lock;
+    NSMutableDictionary *_logLocationsToEncounteredErrors;
+    NSMutableSet *_pendingLogLocations;
+    NSMutableSet *_scheduledLogLocations;
 }
 
-@property(readonly) NSSet * failedLogs;
-@property(readonly) NSSet * ignoredLogs;
-@property(readonly) NSDictionary * logsToEncounteredErrors;
-@property(readonly) NSSet * pendingLogs;
-@property(readonly) NSSet * scheduledLogs;
+@property(readonly) NSSet * failedLogLocations;
+@property(readonly) NSSet * ignoredLogLocations;
+@property(readonly) NSDictionary * logLocationsToEncounteredErrors;
+@property(readonly) NSSet * pendingLogLocations;
+@property(readonly) NSSet * scheduledLogLocations;
 
+- (void)addPendingLogLocation:(id)arg1;
+- (void)addPendingLogLocations:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)failedLogs;
-- (id)ignoredLogs;
+- (id)failedLogLocations;
+- (void)failedTransactionLogAtLocationRecovered:(id)arg1;
+- (id)ignoredLogLocations;
 - (id)init;
-- (id)initWithPendingLogs:(id)arg1;
-- (id)logsToEncounteredErrors;
-- (id)pendingLogs;
-- (id)scheduledLogs;
+- (id)initWithPendingLogLocations:(id)arg1;
+- (id)logLocationsToEncounteredErrors;
+- (id)pendingLogLocations;
+- (id)scheduledLogLocations;
 - (void)transactionLogAtLocation:(id)arg1 failedToOpenWithError:(id)arg2;
 - (void)transactionLogAtLocationWasIgnored:(id)arg1;
 - (void)transactionLogAtLocationWasScheduled:(id)arg1;
+- (void)unionWithSchedulingContext:(id)arg1;
 
 @end

@@ -9,19 +9,20 @@
 @class NSString;
 
 @interface AXSpringBoardActionHandlerHolder : NSObject {
-    id handler;
-    struct NSString { Class x1; } *identifier;
-    int type;
+    id _handler;
+    NSString *_identifier;
+    int _type;
 }
 
 @property(copy) id handler;
-@property(retain) NSString * identifier;
+@property(copy) NSString * identifier;
 @property int type;
 
+- (void)dealloc;
 - (id)handler;
-- (struct NSString { Class x1; }*)identifier;
+- (id)identifier;
 - (void)setHandler:(id)arg1;
-- (void)setIdentifier:(struct NSString { Class x1; }*)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
 

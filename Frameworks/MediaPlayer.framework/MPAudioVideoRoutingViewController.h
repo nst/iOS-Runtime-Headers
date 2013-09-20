@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAudioVideoRoutingViewControllerDelegate>, MPAudioVideoRoutingTableViewController;
+@class <MPAudioVideoRoutingViewControllerDelegate>, MPAudioVideoRoutingTableViewController, UINavigationController;
 
 @interface MPAudioVideoRoutingViewController : UIViewController {
     <MPAudioVideoRoutingViewControllerDelegate> *_delegate;
+    UINavigationController *_navigationController;
     MPAudioVideoRoutingTableViewController *_tableViewController;
 }
 
@@ -13,11 +14,11 @@
 
 + (BOOL)hasWirelessDisplayRoutes;
 
+- (void).cxx_destruct;
 - (void)_doneAction:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (void)loadView;
 - (void)setDelegate:(id)arg1;
+- (void)viewDidLoad;
 
 @end

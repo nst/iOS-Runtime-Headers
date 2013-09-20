@@ -20,7 +20,8 @@
 @property(readonly) BOOL useSSL;
 @property(readonly) NSString * username;
 
-+ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
 + (id)typeStrings;
 
 - (void).cxx_destruct;

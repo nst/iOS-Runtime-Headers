@@ -4,7 +4,7 @@
 
 @class <SWSyncControllerDelegate>, NSMutableArray, NSString, SWSyncHost, SWSyncServiceConnection;
 
-@interface SWSyncController : NSObject <SWSyncServiceConnectionDelegate, SWGeneratePINConnectionDelegate, SWSyncWorkoutConnectionDelegate, SWPINStatusConnectionDelegate> {
+@interface SWSyncController : NSObject <SWSyncServiceConnectionDelegate, SWGeneratePINConnectionDelegate, SWSyncWorkoutConnectionDelegate, SWPINStatusConnectionDelegate, SWGenerateTokenConnectionDelegate, SWSyncCompleteConnectionDelegate> {
     int _attemptedUploadCount;
     NSString *_baseDirectoryPath;
     SWSyncServiceConnection *_currentSyncConnection;

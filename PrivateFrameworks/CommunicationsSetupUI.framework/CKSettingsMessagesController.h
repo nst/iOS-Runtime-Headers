@@ -23,6 +23,7 @@
 - (void)_updateSwitchDelayed;
 - (void)_updateUIWithError:(id)arg1;
 - (id)areReadReceiptsEnabled:(id)arg1;
+- (id)blacklistSettingsSpecifierIdentifiers;
 - (id)bundle;
 - (id)characterCountSpecifierIdentifiers;
 - (id)controllerForSpecifier:(id)arg1;
@@ -57,6 +58,7 @@
 - (void)setWillSendGroupMMS:(id)arg1 specifier:(id)arg2;
 - (void)setiMessageLoggingEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (BOOL)shouldReloadSpecifiersOnResume;
+- (BOOL)shouldShowBlacklistSettings;
 - (BOOL)shouldShowCharacterCount;
 - (BOOL)shouldShowDebugSettings;
 - (BOOL)shouldShowDeliveryReceipts;

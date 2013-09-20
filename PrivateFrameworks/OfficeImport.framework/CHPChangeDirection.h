@@ -5,12 +5,12 @@
 @interface CHPChangeDirection : EDProcessor {
 }
 
-- (void)addDataValue:(id)arg1 to:(id)arg2 withIndex:(int)arg3;
+- (void)addDataValue:(id)arg1 to:(id)arg2 withIndex:(unsigned int)arg3;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
 - (void)changeChartDirection:(id)arg1 sheet:(id)arg2;
 - (void)cleanUpOldSeriesCollection:(id)arg1;
 - (id)createNewSeriesCollectionForOrthogonalDirection:(id)arg1 forChart:(id)arg2;
-- (id)getGraphicPropertiesForSeriesWithIndex:(int)arg1 fromCollection:(id)arg2 isVaryColors:(bool)arg3 forChart:(id)arg4;
+- (id)getGraphicPropertiesForSeriesWithIndex:(unsigned int)arg1 fromCollection:(id)arg2 isVaryColors:(bool)arg3 forChart:(id)arg4;
 - (id)getSeriesCollectionForOrthogonalDirection:(id)arg1 forChart:(id)arg2;
 - (bool)isObjectSupported:(id)arg1;
 - (void)mapSeriesCollection:(id)arg1 from:(id)arg2 forChart:(id)arg3;

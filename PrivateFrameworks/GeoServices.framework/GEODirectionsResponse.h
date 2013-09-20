@@ -4,7 +4,7 @@
 
 @class NSData, NSMutableArray;
 
-@interface GEODirectionsResponse : PBCodable {
+@interface GEODirectionsResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int instructionSignFillColor : 1; 
         unsigned int localDistanceUnits : 1; 
@@ -12,10 +12,15 @@
         unsigned int routeDeviatesFromOriginal : 1; 
     NSData *_directionsResponseID;
     } _has;
+    NSMutableArray *_incidentsOffRoutes;
+    NSMutableArray *_incidentsOnRoutes;
     int _instructionSignFillColor;
     BOOL _isNavigable;
     int _localDistanceUnits;
     NSMutableArray *_placeSearchResponses;
+    struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_problemDetails;
+    unsigned int _problemDetailsCount;
+    unsigned int _problemDetailsSpace;
     BOOL _routeDeviatesFromOriginal;
     NSMutableArray *_routes;
     int _status;
@@ -27,19 +32,30 @@
 @property BOOL hasIsNavigable;
 @property BOOL hasLocalDistanceUnits;
 @property BOOL hasRouteDeviatesFromOriginal;
+@property(retain) NSMutableArray * incidentsOffRoutes;
+@property(retain) NSMutableArray * incidentsOnRoutes;
 @property int instructionSignFillColor;
 @property BOOL isNavigable;
 @property int localDistanceUnits;
 @property(retain) NSMutableArray * placeSearchResponses;
+@property(readonly) struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* problemDetails;
+@property(readonly) unsigned int problemDetailsCount;
 @property BOOL routeDeviatesFromOriginal;
 @property(retain) NSMutableArray * routes;
 @property int status;
 
+- (void)addIncidentsOffRoutes:(id)arg1;
+- (void)addIncidentsOnRoutes:(id)arg1;
 - (void)addPlaceSearchResponse:(id)arg1;
+- (void)addProblemDetail:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)addRoute:(id)arg1;
+- (void)clearIncidentsOffRoutes;
+- (void)clearIncidentsOnRoutes;
 - (void)clearPlaceSearchResponses;
+- (void)clearProblemDetails;
 - (void)clearRoutes;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -50,6 +66,12 @@
 - (BOOL)hasLocalDistanceUnits;
 - (BOOL)hasRouteDeviatesFromOriginal;
 - (unsigned int)hash;
+- (id)incidentsOffRoutes;
+- (id)incidentsOffRoutesAtIndex:(unsigned int)arg1;
+- (unsigned int)incidentsOffRoutesCount;
+- (id)incidentsOnRoutes;
+- (id)incidentsOnRoutesAtIndex:(unsigned int)arg1;
+- (unsigned int)incidentsOnRoutesCount;
 - (int)instructionSignFillColor;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNavigable;
@@ -57,6 +79,9 @@
 - (id)placeSearchResponseAtIndex:(unsigned int)arg1;
 - (id)placeSearchResponses;
 - (unsigned int)placeSearchResponsesCount;
+- (struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })problemDetailAtIndex:(unsigned int)arg1;
+- (struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)problemDetails;
+- (unsigned int)problemDetailsCount;
 - (BOOL)readFrom:(id)arg1;
 - (id)routeAtIndex:(unsigned int)arg1;
 - (BOOL)routeDeviatesFromOriginal;
@@ -67,10 +92,13 @@
 - (void)setHasIsNavigable:(BOOL)arg1;
 - (void)setHasLocalDistanceUnits:(BOOL)arg1;
 - (void)setHasRouteDeviatesFromOriginal:(BOOL)arg1;
+- (void)setIncidentsOffRoutes:(id)arg1;
+- (void)setIncidentsOnRoutes:(id)arg1;
 - (void)setInstructionSignFillColor:(int)arg1;
 - (void)setIsNavigable:(BOOL)arg1;
 - (void)setLocalDistanceUnits:(int)arg1;
 - (void)setPlaceSearchResponses:(id)arg1;
+- (void)setProblemDetails:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (void)setRouteDeviatesFromOriginal:(BOOL)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)setStatus:(int)arg1;

@@ -12,11 +12,11 @@
     NSNumber *inputWarmth;
 }
 
-@property(copy) CIColor * inputColor;
-@property(copy) NSNumber * inputDamping;
+@property(retain) CIColor * inputColor;
+@property(retain) NSNumber * inputDamping;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputStrength;
-@property(copy) NSNumber * inputWarmth;
+@property(retain) NSNumber * inputStrength;
+@property(retain) NSNumber * inputWarmth;
 
 + (id)customAttributes;
 

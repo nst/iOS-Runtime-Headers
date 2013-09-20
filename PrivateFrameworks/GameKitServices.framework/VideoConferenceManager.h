@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
  */
 
-@class AVAudioDevice, GKNATObserver, ICEResultWaitQueue, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, VideoConference;
+@class GKNATObserver, ICEResultWaitQueue, NSMutableArray, VideoConference;
 
 @interface VideoConferenceManager : NSObject <VideoConferenceDelegate> {
     struct _opaque_pthread_mutex_t { 
@@ -11,50 +11,21 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
     VideoConference *activeConference;
-    } audioLock;
-    int audioRefCount;
-    NSArray *backMicSource;
-    int clientPID;
-    struct opaqueCMSession { } *cmSession;
-    NSObject<OS_dispatch_queue> *cmSessionQueue;
-    int cmSessionRefCount;
     VideoConference *conferenceWithMic;
-    int direction;
-    BOOL enableSpeakerPhone;
-    NSArray *frontMicSource;
-    struct tagHANDLE { int x1; } *hAUIO;
     struct tagHANDLE { int x1; } *hSIP;
-    int hardwareSampleRate;
-    int internalBlockSize;
-    BOOL isGKVoiceChat;
-    BOOL isTetheredDisplayMode;
-    BOOL isUsingSuppression;
     BOOL isVTPInitialized;
     GKNATObserver *natObserver;
     ICEResultWaitQueue *resultQueue;
-    BOOL shouldSetupAudioSession;
     } sipLock;
     int sipRefCount;
     } stateLock;
-    AVAudioDevice *targetInputDevice;
-    BOOL tearDownCMSession;
-    BOOL usingFloat;
     NSMutableArray *vcList;
 }
 
 @property VideoConference * activeConference;
-@property int clientPID;
 @property VideoConference * conferenceWithMic;
-@property(getter=isSpeakerPhoneEnabled) BOOL enableSpeakerPhone;
-@property BOOL isGKVoiceChat;
-@property BOOL isUsingSuppression;
 @property(readonly) ICEResultWaitQueue * resultQueue;
-@property BOOL shouldSetupAudioSession;
-@property(readonly) BOOL usingFloat;
 @property(readonly) NSMutableArray * vcList;
 
 + (void)addNSError:(id)arg1 toConferenceXPCArgumentDictionary:(id)arg2;
@@ -63,82 +34,44 @@
 - (struct tagHANDLE { int x1; }*)SIPHandle;
 - (id)activeConference;
 - (void)addVideoConference:(id)arg1;
-- (void)audioSessionClientDied:(int)arg1;
 - (void)broadcastCellTechChange:(int)arg1 cellularMaxPktLen:(unsigned short)arg2;
 - (void)cleanupVTP;
-- (int)clientPID;
-- (struct opaqueCMSession { }*)cmSessionRef;
-- (id)conferenceForCallID:(int)arg1;
-- (id)conferenceForIncomingConnectionResult:(struct tagCONNRESULT { int x1; int x2; int x3; int x4; int x5; unsigned short x6; unsigned short x7; struct tagIPPORT { int x_8_1_1; BOOL x_8_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_8_1_3; unsigned short x_8_1_4; } x8; struct tagIPPORT { int x_9_1_1; BOOL x_9_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { int x_10_1_1; BOOL x_10_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { int x_11_1_1; BOOL x_11_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { int x_12_1_1; BOOL x_12_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; struct tagIPPORT { int x_13_1_1; BOOL x_13_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_13_1_3; unsigned short x_13_1_4; } x13; unsigned int x14; int x15; int x16; int x17; int x18; unsigned short x19; }*)arg1;
+- (id)conferenceForCallID:(unsigned long)arg1;
+- (id)conferenceForIncomingConnectionResult:(struct tagCONNRESULT { unsigned int x1; int x2; int x3; unsigned int x4; int x5; int x6; unsigned short x7; unsigned short x8; struct tagIPPORT { int x_9_1_1; BOOL x_9_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_9_1_3; unsigned short x_9_1_4; } x9; struct tagIPPORT { int x_10_1_1; BOOL x_10_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_10_1_3; unsigned short x_10_1_4; } x10; struct tagIPPORT { int x_11_1_1; BOOL x_11_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_11_1_3; unsigned short x_11_1_4; } x11; struct tagIPPORT { int x_12_1_1; BOOL x_12_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_12_1_3; unsigned short x_12_1_4; } x12; struct tagIPPORT { int x_13_1_1; BOOL x_13_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_13_1_3; unsigned short x_13_1_4; } x13; struct tagIPPORT { int x_14_1_1; BOOL x_14_1_2[16]; union { unsigned int x_3_2_1; unsigned char x_3_2_2[16]; } x_14_1_3; unsigned short x_14_1_4; } x14; unsigned int x15; int x16; int x17; int x18; int x19; unsigned int x20; unsigned short x21; int x22; struct tagCONNRESULT {} *x23; }*)arg1;
 - (id)conferenceForParticipantID:(id)arg1;
 - (id)conferenceWithMic;
-- (id)createInputSourceArrayWithPolarPattern:(id)arg1;
 - (void)createSIP;
-- (id)currentInputDevice;
-- (void)enableMetering:(BOOL)arg1 isInputMeter:(BOOL)arg2;
-- (BOOL)forceBufferFrames:(int*)arg1;
-- (BOOL)forceSampleRate:(double*)arg1;
-- (void)handleAudioInterruption:(struct opaqueCMSession { }*)arg1 interruptionInfo:(struct __CFDictionary { }*)arg2 cmd:(unsigned int)arg3;
-- (void)handleRouteChanged:(struct opaqueCMSession { }*)arg1;
 - (BOOL)hasVideoConference:(id)arg1;
 - (id)init;
-- (BOOL)isGKVoiceChat;
 - (BOOL)isSIPHandleValid:(struct tagHANDLE { int x1; }*)arg1;
-- (BOOL)isSpeakerPhoneEnabled;
-- (BOOL)isUsingSuppression;
-- (void)onPlaySound:(char *)arg1 numBytes:(int)arg2 numSamples:(int)arg3 timeStamp:(unsigned int)arg4 averagePower:(float)arg5;
 - (void)pauseVideoConferences:(BOOL)arg1;
-- (BOOL)projectionModeEnabledState;
 - (void)registerBlocksForConference;
 - (void)removeVideoConference:(id)arg1;
-- (void)resetAudioSessionProperties;
 - (id)resultQueue;
-- (void)selectMicForDirection;
 - (void)setActiveConference:(id)arg1;
-- (void)setAudioSessionProperties;
-- (void)setBlockSize:(BOOL)arg1;
-- (void)setClientPID:(int)arg1;
 - (void)setConferenceWithMic:(id)arg1;
-- (BOOL)setCurrentInputDevice:(id)arg1;
-- (void)setDirection:(int)arg1;
-- (void)setEnableSpeakerPhone:(BOOL)arg1;
-- (void)setIsGKVoiceChat:(BOOL)arg1;
-- (void)setIsUsingSuppression:(BOOL)arg1;
-- (void)setMicDirectionWithSource:(id)arg1;
-- (void)setMicrophoneMuted:(BOOL)arg1;
-- (void)setSampleRate;
-- (void)setSamplesPerFrame:(int)arg1;
-- (void)setShouldSetupAudioSession:(BOOL)arg1;
-- (void)setupAudioNotifications;
-- (void)setupAudioSession;
-- (void)setupInputBeamforming;
-- (BOOL)shouldSetupAudioSession;
-- (BOOL)startAudioIO:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg1 minSamplesPerFrame:(int)arg2 internalBlockSize:(int)arg3 farEndVersionInfo:(struct VoiceIOFarEndVersionInfo { unsigned char x1[64]; unsigned char x2[64]; unsigned int x3; }*)arg4 error:(id*)arg5;
-- (void)startAudioSession;
 - (void)startSIP;
-- (BOOL)stopAudioIO;
-- (void)stopAudioSession;
 - (void)stopSIP;
-- (BOOL)tearDownAudioIO:(BOOL)arg1;
-- (void)tearDownAudioSession:(BOOL)arg1;
-- (BOOL)usingFloat;
 - (id)vcList;
-- (void)videoConference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
-- (void)videoConference:(id)arg1 didReceiveFirstRemoteFrameForCallID:(int)arg2;
-- (void)videoConference:(id)arg1 didRemoteScreenAttributesChange:(id)arg2 forCallID:(int)arg3;
-- (void)videoConference:(id)arg1 didRemoteVideoAttributesChange:(id)arg2 forCallID:(int)arg3;
-- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(int)arg3 error:(id)arg4;
-- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(int)arg3 withUserInfo:(id)arg4 error:(id)arg5;
-- (void)videoConference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3 callMetadata:(id)arg4;
-- (void)videoConference:(id)arg1 inititiateRelayRequest:(int)arg2 requestDict:(id)arg3;
-- (void)videoConference:(id)arg1 receivedNoRemotePacketsForTime:(double)arg2 callID:(int)arg3;
-- (void)videoConference:(id)arg1 remoteAudioPaused:(BOOL)arg2 callID:(int)arg3;
-- (void)videoConference:(id)arg1 remoteMediaStalled:(BOOL)arg2 callID:(int)arg3;
-- (void)videoConference:(id)arg1 remoteVideoPaused:(BOOL)arg2 callID:(int)arg3;
-- (void)videoConference:(id)arg1 sendRelayUpdate:(int)arg2 updateDict:(id)arg3;
+- (void)videoConference:(id)arg1 cancelRelayRequest:(unsigned long)arg2 requestDict:(id)arg3;
+- (void)videoConference:(id)arg1 didChangeLocalVariablesForCallID:(unsigned long)arg2;
+- (void)videoConference:(id)arg1 didReceiveARPLData:(id)arg2 fromCallID:(unsigned long)arg3;
+- (void)videoConference:(id)arg1 didReceiveFirstRemoteFrameForCallID:(unsigned long)arg2;
+- (void)videoConference:(id)arg1 didRemoteScreenAttributesChange:(id)arg2 forCallID:(unsigned long)arg3;
+- (void)videoConference:(id)arg1 didRemoteVideoAttributesChange:(id)arg2 forCallID:(unsigned long)arg3;
+- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned long)arg3 error:(id)arg4;
+- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned long)arg3 withUserInfo:(id)arg4 error:(id)arg5;
+- (void)videoConference:(id)arg1 didStopWithCallID:(unsigned long)arg2 error:(id)arg3 callMetadata:(id)arg4;
+- (void)videoConference:(id)arg1 inititiateRelayRequest:(unsigned long)arg2 requestDict:(id)arg3;
+- (void)videoConference:(id)arg1 receivedNoRemotePacketsForTime:(double)arg2 callID:(unsigned long)arg3;
+- (void)videoConference:(id)arg1 remoteAudioPaused:(BOOL)arg2 callID:(unsigned long)arg3;
+- (void)videoConference:(id)arg1 remoteMediaStalled:(BOOL)arg2 callID:(unsigned long)arg3;
+- (void)videoConference:(id)arg1 remoteVideoPaused:(BOOL)arg2 callID:(unsigned long)arg3;
+- (void)videoConference:(id)arg1 sendIPChangeRequest:(id)arg2 withCallID:(unsigned long)arg3;
+- (void)videoConference:(id)arg1 sendRelayUpdate:(unsigned long)arg2 updateDict:(id)arg3;
 - (void)videoConference:(id)arg1 updateInputMeterLevel:(float)arg2;
 - (void)videoConference:(id)arg1 updateOutputMeterLevel:(float)arg2;
-- (void)videoConference:(id)arg1 videoQualityNotificationForCallID:(int)arg2 isDegraded:(BOOL)arg3 isRemote:(BOOL)arg4;
-- (void)videoConference:(id)arg1 withCallID:(int)arg2 networkHint:(BOOL)arg3;
+- (void)videoConference:(id)arg1 videoQualityNotificationForCallID:(unsigned long)arg2 isDegraded:(BOOL)arg3 isRemote:(BOOL)arg4;
+- (void)videoConference:(id)arg1 withCallID:(unsigned long)arg2 networkHint:(BOOL)arg3;
 
 @end

@@ -2,6 +2,8 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
+@class NSDictionary;
+
 @interface NSTextTab : NSObject <NSCopying, NSCoding> {
     struct { 
         unsigned int alignment : 4; 
@@ -12,7 +14,12 @@
     id _reserved;
 }
 
+@property(readonly) int alignment;
+@property(readonly) float location;
+@property(readonly) NSDictionary * options;
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)columnTerminatorsForLocale:(id)arg1;
 + (void)initialize;
 
 - (BOOL)_isDeallocating;

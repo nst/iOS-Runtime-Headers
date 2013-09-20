@@ -49,7 +49,6 @@
     IMPerson *_person;
     struct __CFPhoneNumber { } *_phoneNumberRef;
     NSData *_pictureData;
-    NSDictionary *_presenceProps;
     unsigned int _prevStatus;
     NSString *_prevStatusMsg;
     int _priority;
@@ -64,13 +63,13 @@
     NSString *_uniqueName;
     NSDate *_whenStatusChanged;
     NSDate *_whenWentOffline;
-    BOOL _willUpdateIdleTime;
 }
 
 @property(readonly) NSString * ID;
 @property int IDStatus;
 @property(readonly) NSString * IDWithoutResource;
 @property(readonly) IMPerson * _cachedPerson;
+@property(readonly) NSString * _displayNameWithAbbreviation;
 @property(setter=_setIsRegisteredWithRegistrar:) BOOL _isRegisteredWithRegistrar;
 @property(readonly) IMAccount * account;
 @property(readonly) NSArray * accountSiblingsArray;
@@ -135,7 +134,6 @@
 @property(retain) NSDictionary * otherServiceIDs;
 @property(setter=setIMPerson:,retain) IMPerson * person;
 @property(readonly) NSData * pictureData;
-@property(readonly) NSDictionary * presenceProperties;
 @property(readonly) unsigned int previousStatus;
 @property(readonly) NSString * previousStatusMessage;
 @property int priority;
@@ -177,6 +175,7 @@
 - (void)_clearABProperties;
 - (void)_clearStatusMessageURLCache;
 - (void)_createPhoneNumberRefIfNeeded;
+- (id)_displayNameWithAbbreviation;
 - (void)_filterStatusMessage;
 - (id)_formattedPhoneNumber;
 - (id)_handleInfo;
@@ -193,10 +192,8 @@
 - (void)_registerForIMPersonPictureChanges;
 - (void)_registerForNotifications;
 - (void)_removeAccountReference:(id)arg1;
-- (void)_scheduleIdleTimeUpdate;
 - (void)_sendAutomationData:(id)arg1 properties:(id)arg2;
 - (void)_sendCommand:(id)arg1 properties:(id)arg2;
-- (void)_sendData:(id)arg1;
 - (void)_sendRemoteLogDumpRequest:(id)arg1;
 - (void)_sendRemoteLogDumpRequest;
 - (void)_setABPersonFirstName:(id)arg1 lastName:(id)arg2;
@@ -204,14 +201,14 @@
 - (BOOL)_setCapabilities:(unsigned long long)arg1;
 - (void)_setCountryCode:(id)arg1;
 - (void)_setExtraProperties:(id)arg1;
+- (void)_setIDStatus:(int)arg1;
 - (void)_setIsRegisteredWithRegistrar:(BOOL)arg1;
 - (void)_setOriginalID:(id)arg1 countryCode:(id)arg2 updateSiblings:(BOOL)arg3;
 - (void)_setOriginalID:(id)arg1 updateSiblings:(BOOL)arg2;
 - (void)_setOriginalID:(id)arg1;
 - (void)_stopRetainingAccount:(id)arg1;
 - (void)_unregisterFromIMPersonPictureChanges;
-- (void)_updateIdleTime;
-- (void)_updateIdleTimer;
+- (void)_updateOriginalID:(id)arg1;
 - (void)_updateStatusBasedOnAuthRequestStatus;
 - (id)account;
 - (id)accountSiblingsArray;
@@ -225,8 +222,6 @@
 - (id)bestIMHandleForAccount:(id)arg1;
 - (id)bestIMHandleForService:(id)arg1;
 - (id)bestSibling;
-- (id)bestSiblingInGroup:(id)arg1 otherThan:(id)arg2;
-- (id)bestSiblingInGroup:(id)arg1;
 - (BOOL)canBeAdded;
 - (BOOL)canBeDeleted;
 - (unsigned long long)capabilities;
@@ -246,6 +241,7 @@
 - (id)dependentIMHandles;
 - (id)description;
 - (id)displayID;
+- (id)displayNameForChat:(id)arg1;
 - (id)email;
 - (id)emails;
 - (void)encodeWithCoder:(id)arg1;
@@ -279,6 +275,7 @@
 - (id)imHandleRegistrarGUID;
 - (id)imHandleWithoutResource;
 - (id)init;
+- (id)initWithAccount:(id)arg1 ID:(id)arg2 alreadyCanonical:(BOOL)arg3 knownIDStatus:(int)arg4;
 - (id)initWithAccount:(id)arg1 ID:(id)arg2 alreadyCanonical:(BOOL)arg3;
 - (id)initWithAccount:(id)arg1 ID:(id)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -311,7 +308,6 @@
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (id)pictureData;
 - (void)postNotificationName:(id)arg1;
-- (id)presenceProperties;
 - (unsigned int)previousStatus;
 - (id)previousStatusMessage;
 - (int)priority;
@@ -352,7 +348,6 @@
 - (void)setLocalNickname:(id)arg1;
 - (void)setOtherServiceIDs:(id)arg1;
 - (void)setPersonStatus:(unsigned int)arg1;
-- (void)setPresenceProperties:(id)arg1;
 - (void)setPriority:(int)arg1;
 - (void)setStatus:(unsigned int)arg1 message:(id)arg2 richMessage:(id)arg3;
 - (void)setStatusMessageAsURL:(id)arg1;

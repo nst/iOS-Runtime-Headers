@@ -29,6 +29,7 @@
 @property(retain) EKReminderLocationItem * itemBeingGeocoded;
 @property(readonly) BOOL meCardIsSet;
 
+- (void).cxx_destruct;
 - (void)_beginOperation;
 - (void)_cacheLocation:(id)arg1 forAddressDictionary:(id)arg2;
 - (void)_cancelUpdatingCurrentLocation;

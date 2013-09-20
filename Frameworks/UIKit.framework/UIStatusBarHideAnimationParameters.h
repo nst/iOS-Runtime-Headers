@@ -15,5 +15,6 @@
 - (id)initWithDefaultParameters;
 - (void)setAdditionalSlideHeight:(float)arg1;
 - (void)setHideAnimation:(int)arg1;
+- (BOOL)shouldAnimate;
 
 @end

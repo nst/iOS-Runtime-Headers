@@ -6,6 +6,7 @@
 
 @interface ISDialog : NSObject {
     BOOL _allowDuplicates;
+    BOOL _allowsBioAuthorization;
     SSAuthenticationContext *_authenticationContext;
     BOOL _authorizationIsForced;
     NSArray *_buttons;
@@ -22,7 +23,6 @@
     BOOL _oneButtonPerLine;
     BOOL _shouldDismissAfterUnlock;
     BOOL _shouldDisplayAsTopMost;
-    BOOL _shouldHideButtonsInAwayView;
     BOOL _shouldPendInSetupIfNotAllowed;
     NSArray *_textFields;
     NSString *_title;
@@ -32,6 +32,7 @@
 }
 
 @property BOOL allowDuplicates;
+@property(readonly) BOOL allowsBioAuthorization;
 @property(copy) SSAuthenticationContext * authenticationContext;
 @property BOOL authorizationIsForced;
 @property(retain) NSArray * buttons;
@@ -48,7 +49,6 @@
 @property BOOL oneButtonPerLine;
 @property BOOL shouldDismissAfterUnlock;
 @property BOOL shouldDisplayAsTopMost;
-@property BOOL shouldHideButtonsInAwayView;
 @property BOOL shouldPendInSetupIfNotAllowed;
 @property(retain) NSArray * textFields;
 @property(retain) NSString * title;
@@ -59,6 +59,7 @@
 
 - (int)_kindForString:(id)arg1;
 - (BOOL)allowDuplicates;
+- (BOOL)allowsBioAuthorization;
 - (id)authenticationContext;
 - (BOOL)authorizationIsForced;
 - (id)buttons;
@@ -100,7 +101,6 @@
 - (void)setOneButtonPerLine:(BOOL)arg1;
 - (void)setShouldDismissAfterUnlock:(BOOL)arg1;
 - (void)setShouldDisplayAsTopMost:(BOOL)arg1;
-- (void)setShouldHideButtonsInAwayView:(BOOL)arg1;
 - (void)setShouldPendInSetupIfNotAllowed:(BOOL)arg1;
 - (void)setTextFields:(id)arg1;
 - (void)setTitle:(id)arg1;
@@ -109,7 +109,6 @@
 - (void)setValue:(void*)arg1 forCFUserNotificationKey:(struct __CFString { }*)arg2;
 - (BOOL)shouldDismissAfterUnlock;
 - (BOOL)shouldDisplayAsTopMost;
-- (BOOL)shouldHideButtonsInAwayView;
 - (BOOL)shouldPendInSetupIfNotAllowed;
 - (id)textFields;
 - (id)title;

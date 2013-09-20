@@ -10,11 +10,11 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_init;
 - (void)_loadRentals;
 - (void)_saveRentals;
 - (void)addRentalWithItemID:(unsigned long long)arg1 databaseID:(id)arg2;
-- (void)dealloc;
 - (id)init;
 - (void)removeAllRentalsForDatabaseID:(id)arg1;
 - (void)removeRentalWithItemID:(unsigned long long)arg1;

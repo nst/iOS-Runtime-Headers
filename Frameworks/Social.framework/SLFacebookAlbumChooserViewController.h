@@ -24,7 +24,6 @@
 - (void)albumManager:(id)arg1 didRefreshAlbums:(id)arg2;
 - (id)albumManager;
 - (id)albums;
-- (void)cancelButtonTapped:(id)arg1;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
@@ -33,7 +32,6 @@
 - (id)initWithAlbumManager:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (id)navigationItem;
 - (void)setAlbumManager:(id)arg1;
 - (void)setAlbums:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -42,6 +40,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidLoad;
 - (void)viewDidUnload;
 - (void)viewWillLayoutSubviews;

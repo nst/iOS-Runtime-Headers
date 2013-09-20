@@ -6,11 +6,13 @@
 
 @interface CalDAVModifyCalendarSharingLevelTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
     int _action;
+    NSURL *_publishedURL;
     int _state;
     NSURL *_url;
 }
 
 @property int action;
+@property(retain) NSURL * publishedURL;
 @property int state;
 @property(retain) NSURL * url;
 
@@ -20,7 +22,9 @@
 - (void)finishWithError:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)initWithSharingAction:(int)arg1 atCalendarURL:(id)arg2 accountInfoProvider:(id)arg3 taskManager:(id)arg4;
+- (id)publishedURL;
 - (void)setAction:(int)arg1;
+- (void)setPublishedURL:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setUrl:(id)arg1;
 - (void)startTaskGroup;

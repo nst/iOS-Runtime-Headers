@@ -10,15 +10,15 @@
 
 @interface AXEventListenerContainer : NSObject {
     id handler;
-    struct NSString { Class x1; } *identifier;
+    NSString *identifier;
 }
 
 @property(copy) id handler;
 @property(retain) NSString * identifier;
 
 - (id)handler;
-- (struct NSString { Class x1; }*)identifier;
+- (id)identifier;
 - (void)setHandler:(id)arg1;
-- (void)setIdentifier:(struct NSString { Class x1; }*)arg1;
+- (void)setIdentifier:(id)arg1;
 
 @end

@@ -5,7 +5,10 @@
 @interface NSBundleAccessibility : NSBundleAccessibility_super {
 }
 
++ (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (id)_installSafeCategoryValidationMethod;
 
 - (void)_loadAXBundleForBundleOnMainThread;
 - (BOOL)loadAndReturnError:(id*)arg1;

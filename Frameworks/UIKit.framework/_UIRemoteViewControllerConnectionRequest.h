@@ -6,73 +6,33 @@
    See Warning(s) below.
  */
 
-@class NSArray, NSError, NSObject<OS_dispatch_queue>, NSString, XPCMachSendRight, _UIAsyncInvocation, _UIViewServiceInterface, _UIViewServiceXPCProxy;
+@class <_UIViewServiceDeputyXPCInterface>, NSArray, NSError, NSObject<OS_dispatch_queue>, NSString, _UIAsyncInvocation, _UIRemoteViewControllerConnectionInfo;
 
 @interface _UIRemoteViewControllerConnectionRequest : NSObject {
-    struct { 
-        _UIViewServiceInterface *interface; 
-        _UIViewServiceXPCProxy *viewControllerOperatorProxy; 
-        _UIViewServiceXPCProxy *serviceViewControllerProxy; 
-        _UIViewServiceXPCProxy *textEffectsOperatorProxy; 
-        unsigned int hostedWindowContextID; 
-        NSArray *serviceViewControllerSupportedInterfaceOrientations; 
-        XPCMachSendRight *serviceAccessibilityServerPortWrapper; 
-        struct CGAffineTransform { 
-            float a; 
-            float b; 
-            float c; 
-            float d; 
-            float tx; 
-            float ty; 
-        } serviceRootLayerTransform; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } serviceRootLayerFrame; 
-        struct CGAffineTransform { 
-            float a; 
-            float b; 
-            float c; 
-            float d; 
-            float tx; 
-            float ty; 
-        } textEffectsRootLayerTransform; 
-        struct CGRect { 
-            struct CGPoint { 
-                float x; 
-                float y; 
-            } origin; 
-            struct CGSize { 
-                float width; 
-                float height; 
-            } size; 
-        } textEffectsRootLayerFrame; 
-        unsigned int textEffectsWindowContextID; 
-        unsigned int textEffectsWindowAboveStatusBarContextID; 
     _UIAsyncInvocation *_cancelInvocationForCurrentOperation;
-    } _connectionInfo;
+    _UIRemoteViewControllerConnectionInfo *_connectionInfo;
     NSError *_error;
+    id _exportedHostingObject;
     id _handler;
     BOOL _isCancelledOrComplete;
-    BOOL _propagateAppearanceCustomizations;
+    BOOL _legacyAppearance;
     NSObject<OS_dispatch_queue> *_queue;
     _UIAsyncInvocation *_requestCancellationInvocation;
+    NSArray *_serializedAppearanceCustomizations;
+    <_UIViewServiceDeputyXPCInterface> *_serviceViewControllerDeputyInterface;
+    BOOL _useXPCObjects;
     NSString *_viewControllerClassName;
     NSString *_viewServiceBundleIdentifier;
 }
 
-+ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 propagateAppearanceCustomizations:(BOOL)arg3 connectionHandler:(id)arg4;
++ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 serializedAppearanceCustomizations:(id)arg3 legacyAppearance:(BOOL)arg4 useXPCObjects:(BOOL)arg5 exportedHostingObject:(id)arg6 serviceViewControllerDeputyInterface:(id)arg7 connectionHandler:(id)arg8;
 
 - (void)_cancelUnconditionallyThen:(id)arg1;
 - (id)_cancelWithError:(id)arg1;
+- (void)_connectToDeputyWithInterface:(id)arg1 orType:(id)arg2 fromExportedHostingObject:(id)arg3 successHandler:(id)arg4;
 - (void)_connectToServiceViewController;
 - (void)_connectToTextEffectsOperator;
+- (void)_connectToViewControllerControlMessageDeputy;
 - (void)_connectToViewControllerOperator;
 - (void)_connectToViewService;
 - (void)_didFinishEstablishingConnection;

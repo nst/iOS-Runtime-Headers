@@ -76,7 +76,7 @@
 @property GLKEffect * effect;
 @property unsigned char effectStale;
 @property(readonly) GLKEffectPropertyFog * fog;
-@property(retain) NSString * label;
+@property(copy) NSString * label;
 @property(readonly) GLKEffectPropertyLight * light0;
 @property(readonly) GLKEffectPropertyLight * light1;
 @property(readonly) GLKEffectPropertyLight * light2;
@@ -89,7 +89,7 @@
 @property unsigned char propertyArrayStale;
 @property(readonly) GLKEffectPropertyTexture * texture2d0;
 @property(readonly) GLKEffectPropertyTexture * texture2d1;
-@property(retain) NSArray * textureOrder;
+@property(copy) NSArray * textureOrder;
 @property(readonly) GLKEffectPropertyTransform * transform;
 @property unsigned char useConstantColor;
 

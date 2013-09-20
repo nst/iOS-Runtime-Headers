@@ -11,9 +11,7 @@
     BOOL mHasBody;
     BOOL mHasFooters;
     BOOL mHasHeaders;
-    BOOL mIsOldAssetNameMapInitialized;
     BOOL mIsOldTemplateNameMapInitialized;
-    struct __CFDictionary { } *mOldAssetNameMap;
     struct __CFDictionary { } *mOldTemplateNameMap;
     GQDSLPageMargins *mPageMargins;
     } mPageSize;

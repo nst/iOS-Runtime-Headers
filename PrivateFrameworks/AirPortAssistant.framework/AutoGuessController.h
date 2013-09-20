@@ -110,7 +110,9 @@
 - (id)targetInfo;
 - (id)targetMACAddress;
 - (id)targetScanRecord;
+- (void)uiAssetsUpdated:(id)arg1;
 - (id)unconfiguredDeviceThatIsBeingSetup;
+- (void)updateTargetInfo:(BOOL)arg1;
 - (int)wifiScanStatus;
 - (void)wirelessScanDone:(id)arg1;
 

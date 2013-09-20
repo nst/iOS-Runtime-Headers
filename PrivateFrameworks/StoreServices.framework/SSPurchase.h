@@ -2,77 +2,114 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString, SSDownloadPolicy, SSItem, SSItemOffer, SSNetworkConstraints, SSURLRequestProperties;
+@class NSArray, NSData, NSDictionary, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString, SSDownloadPolicy, SSItem, SSItemOffer, SSNetworkConstraints, SSURLRequestProperties;
 
 @interface SSPurchase : NSObject <SSXPCCoding, NSCoding, NSCopying> {
     NSNumber *_accountIdentifier;
     NSString *_affiliateIdentifier;
+    BOOL _backgroundPurchase;
+    int _batchIdentifier;
     NSString *_buyParameters;
+    BOOL _createsDownloads;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSDownloadPolicy *_downloadPolicy;
     NSMutableDictionary *_downloadProperties;
+    long long _expectedDownloadFileSize;
     NSArray *_filteredAssetTypes;
+    NSArray *_gratisIdentifiers;
     BOOL _ignoresForcedPasswordRestriction;
     SSItem *_item;
     SSItemOffer *_itemOffer;
     SSNetworkConstraints *_networkConstraints;
     long long _placeholderDownloadIdentifier;
     SSURLRequestProperties *_requestProperties;
-    NSString *_uniqueIdentifier;
+    id _requiredDeviceCapabilities;
+    long long _uniqueIdentifier;
+    BOOL _usesLocalRedownloadParametersIfPossible;
 }
 
 @property(retain) NSNumber * accountIdentifier;
 @property(copy) NSString * affiliateIdentifier;
+@property(getter=isBackgroundPurchase) BOOL backgroundPurchase;
+@property int batchIdentifier;
 @property(copy) NSString * buyParameters;
+@property BOOL createsDownloads;
+@property(readonly) NSData * databaseEncoding;
 @property(copy) SSDownloadPolicy * downloadPolicy;
 @property(copy) NSDictionary * downloadProperties;
+@property long long expectedDownloadFileSize;
 @property(copy) NSArray * filteredAssetTypes;
+@property(copy) NSArray * gratisIdentifiers;
 @property BOOL ignoresForcedPasswordRestriction;
-@property(readonly) SSItem * item;
-@property(readonly) SSItemOffer * itemOffer;
 @property(copy) SSNetworkConstraints * networkConstraints;
 @property long long placeholderDownloadIdentifier;
 @property(copy) SSURLRequestProperties * requestProperties;
-@property(readonly) NSString * uniqueIdentifier;
+@property(copy) id requiredDeviceCapabilities;
+@property long long uniqueIdentifier;
+@property BOOL usesLocalRedownloadParametersIfPossible;
 
++ (id)newPurchaseWithDatabaseEncoding:(id)arg1;
++ (id)newPurchaseWithXPCEncoding:(id)arg1;
 + (id)purchaseWithBuyParameters:(id)arg1;
 
+- (void)_addEntriesToDatabaseEncoding:(id)arg1;
 - (id)_initSSPurchase;
+- (void)_setValuesUsingDatabaseEncoding:(id)arg1;
 - (id)accountIdentifier;
 - (id)affiliateIdentifier;
+- (int)batchIdentifier;
 - (id)buyParameters;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
+- (BOOL)createsDownloads;
+- (id)databaseEncoding;
 - (void)dealloc;
 - (id)downloadMetadata;
 - (id)downloadPolicy;
 - (id)downloadProperties;
 - (void)encodeWithCoder:(id)arg1;
+- (long long)expectedDownloadFileSize;
 - (id)filteredAssetTypes;
+- (id)gratisIdentifiers;
+- (unsigned int)hash;
 - (BOOL)ignoresForcedPasswordRestriction;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDatabaseEncoding:(id)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;
 - (id)initWithItem:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)isBackgroundPurchase;
+- (BOOL)isEqual:(id)arg1;
 - (id)item;
 - (id)itemOffer;
 - (id)networkConstraints;
 - (long long)placeholderDownloadIdentifier;
 - (id)requestProperties;
+- (id)requiredDeviceCapabilities;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAffiliateIdentifier:(id)arg1;
+- (void)setBackgroundPurchase:(BOOL)arg1;
+- (void)setBatchIdentifier:(int)arg1;
 - (void)setBuyParameters:(id)arg1;
+- (void)setCreatesDownloads:(BOOL)arg1;
+- (void)setDefaultUserAgent:(id)arg1;
 - (void)setDownloadMetadata:(id)arg1;
 - (void)setDownloadPolicy:(id)arg1;
 - (void)setDownloadProperties:(id)arg1;
+- (void)setExpectedDownloadFileSize:(long long)arg1;
 - (void)setFilteredAssetTypes:(id)arg1;
+- (void)setGratisIdentifiers:(id)arg1;
 - (void)setIgnoresForcedPasswordRestriction:(BOOL)arg1;
 - (void)setNetworkConstraints:(id)arg1;
 - (void)setPlaceholderDownloadIdentifier:(long long)arg1;
 - (void)setRequestProperties:(id)arg1;
+- (void)setRequiredDeviceCapabilities:(id)arg1;
+- (void)setUniqueIdentifier:(long long)arg1;
+- (void)setUsesLocalRedownloadParametersIfPossible:(BOOL)arg1;
 - (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
-- (id)uniqueIdentifier;
+- (long long)uniqueIdentifier;
+- (BOOL)usesLocalRedownloadParametersIfPossible;
 - (id)valueForDownloadProperty:(id)arg1;
 
 @end

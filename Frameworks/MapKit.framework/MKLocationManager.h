@@ -6,31 +6,24 @@
    See Warning(s) below.
  */
 
-@class <MKLocationProvider>, <MKLocationRecorder>, CLHeading, CLLocation, GEOLocation, GEOLocationShiftFunctionRequest, GEOLocationShiftFunctionResponse, NSBundle, NSHashTable, NSTimer;
+@class <MKLocationProvider>, <MKLocationRecorder>, CLHeading, CLLocation, GEOLocation, GEOLocationShifter, NSBundle, NSHashTable, NSString, NSTimer, _MKWiFiObserver;
 
-@interface MKLocationManager : NSObject <MKLocationProviderDelegate> {
+@interface MKLocationManager : NSObject <_MKWiFiObserverDelegate, MKLocationProviderDelegate> {
     BOOL _airplaneModeEnabled;
     BOOL _airplaneModeEnabledIsValid;
     struct __SCPreferences { } *_airplaneModePrefs;
     BOOL _allowUpdateCoalescing;
     double _applicationResumeTime;
     double _applicationSuspendTime;
-    BOOL _chinaShiftEnabled;
     NSTimer *_coalesceTimer;
     int _consecutiveOutOfCourseCount;
     BOOL _continuedAfterBecomingInactive;
     BOOL _continuesWhileInactive;
-    CLLocation *_delayedLocationToShift;
     BOOL _enabled;
-    BOOL _hasCheckedChinaShiftEnabled;
     CLHeading *_heading;
     NSHashTable *_headingObservers;
     double _headingUpdateTime;
     BOOL _isLastLocationStale;
-    BOOL _isRequestingShiftFunction;
-    BOOL _isTrafficHarvestingEnabled;
-    BOOL _isTrafficHarvestingEnabledValid;
-    double _lastKnownNavCourse;
     CLLocation *_lastLocation;
     BOOL _lastLocationPushed;
     double _lastLocationReportTime;
@@ -41,30 +34,28 @@
     NSHashTable *_locationObservers;
     <MKLocationProvider> *_locationProvider;
     <MKLocationRecorder> *_locationRecorder;
+    GEOLocationShifter *_locationShifter;
     BOOL _logStartStopLocationUpdates;
     double _navCourse;
     id _networkActivity;
-    GEOLocationShiftFunctionResponse *_shiftFunction;
-    int _shiftProvider;
-    GEOLocationShiftFunctionRequest *_shiftRequest;
-    int _staleWiFiStatus;
+    NSHashTable *_regionMonitors;
+    BOOL _suspended;
     CLHeading *_throttledHeading;
     BOOL _trackingHeading;
     BOOL _trackingLocation;
     BOOL _useCourseForHeading;
-    int _wiFiStatus;
+    _MKWiFiObserver *_wifiObserver;
 }
 
 @property int activityType;
 @property BOOL allowUpdateCoalescing;
-@property BOOL chinaShiftEnabled;
 @property BOOL continuesWhileInactive;
 @property(readonly) GEOLocation * courseCorrectedLocation;
 @property(readonly) GEOLocation * currentLocation;
-@property(retain) CLLocation * delayedLocationToShift;
 @property double desiredAccuracy;
 @property double distanceFilter;
 @property(retain) NSBundle * effectiveBundle;
+@property(copy) NSString * effectiveBundleIdentifier;
 @property(getter=isEnabled) BOOL enabled;
 @property(readonly) double expectedGpsUpdateInterval;
 @property(readonly) GEOLocation * gridSnappedCurrentLocation;
@@ -81,7 +72,6 @@
 @property(readonly) BOOL isLocationServicesEnabled;
 @property(readonly) BOOL isLocationServicesPossiblyAvailable;
 @property(readonly) BOOL isLocationServicesRestricted;
-@property(readonly) BOOL isTrafficHarvestingEnabled;
 @property(readonly) BOOL isWiFiEnabled;
 @property(readonly) CLLocation * lastLocation;
 @property(getter=wasLastLocationPushed,readonly) BOOL lastLocationPushed;
@@ -89,23 +79,21 @@
 @property(copy) id locationCorrector;
 @property(retain) <MKLocationProvider> * locationProvider;
 @property(retain) <MKLocationRecorder> * locationRecorder;
+@property(getter=isLocationServicesAuthorizationNeeded,readonly) BOOL locationServicesAuthorizationNeeded;
 @property(getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
+@property(readonly) BOOL locationShiftEnabled;
 @property BOOL logStartStopLocationUpdates;
 @property(readonly) double navigationCourse;
 @property(copy) id networkActivity;
-@property(retain) GEOLocationShiftFunctionResponse * shiftFunction;
-@property(retain) GEOLocationShiftFunctionRequest * shiftRequest;
 @property(retain) CLHeading * throttledHeading;
 @property BOOL useCourseForHeading;
 
-+ (void)setConsidersWiFiInAirplaneMode:(BOOL)arg1;
++ (void)setCanMonitorWiFiStatus:(BOOL)arg1;
 + (id)sharedLocationManager;
 
 - (void)_airplaneModeChanged;
-- (id)_applyChinaLocationShift:(id)arg1;
-- (BOOL)_canHarvestTrafficWithBundle:(id)arg1;
-- (void)_countryProvidersDidChange:(id)arg1;
 - (BOOL)_isTimeToResetOnResume;
+- (void)_locationProvider:(id)arg1 didUpdateLocation:(id)arg2 lastKnownNavCourse:(double)arg3;
 - (void)_refreshAirplaneMode;
 - (void)_reportHeadingFailureWithError:(id)arg1;
 - (void)_reportHeadingSuccess;
@@ -119,24 +107,21 @@
 - (void)_stopCoalescingUpdates;
 - (void)_suspend;
 - (void)_syncLocationProviderWithTracking;
-- (void)_updateWifiEnabled;
 - (void)_useCoreLocationProvider;
 - (int)activityType;
 - (BOOL)allowUpdateCoalescing;
 - (void)applicationDidBecomeActive:(id)arg1;
-- (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
-- (BOOL)chinaShiftEnabled;
 - (BOOL)continuesWhileInactive;
 - (id)courseCorrectedLocation;
 - (id)currentLocation;
 - (void)dampenGPSLocationAccuracy:(id*)arg1 oldLocationSource:(int)arg2;
 - (void)dealloc;
-- (id)delayedLocationToShift;
 - (double)desiredAccuracy;
 - (void)dismissHeadingCalibrationDisplay;
 - (double)distanceFilter;
 - (id)effectiveBundle;
+- (id)effectiveBundleIdentifier;
 - (double)expectedGpsUpdateInterval;
 - (id)gridSnappedCurrentLocation;
 - (BOOL)hasLocation;
@@ -149,6 +134,7 @@
 - (BOOL)isHeadingServicesAvailable;
 - (BOOL)isLastLocationStale;
 - (BOOL)isLocationServicesApproved;
+- (BOOL)isLocationServicesAuthorizationNeeded;
 - (BOOL)isLocationServicesAvailable;
 - (BOOL)isLocationServicesDenied;
 - (BOOL)isLocationServicesEnabled;
@@ -156,15 +142,18 @@
 - (BOOL)isLocationServicesPossiblyAvailable;
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
 - (BOOL)isLocationServicesRestricted;
-- (BOOL)isTrafficHarvestingEnabled;
+- (BOOL)isMonitoringRegionsAvailable;
 - (BOOL)isWiFiEnabled;
 - (id)lastLocation;
 - (int)lastLocationSource;
 - (void)listenForLocationUpdates:(id)arg1;
 - (id)locationCorrector;
-- (BOOL)locationManagerShouldDisplayHeadingCalibration:(id)arg1;
+- (void)locationProvider:(id)arg1 didEnterRegion:(id)arg2;
+- (void)locationProvider:(id)arg1 didExitRegion:(id)arg2;
+- (void)locationProvider:(id)arg1 didReceiveError:(id)arg2 monitoringRegion:(id)arg3;
 - (void)locationProvider:(id)arg1 didReceiveError:(id)arg2;
 - (void)locationProvider:(id)arg1 didUpdateHeading:(id)arg2;
+- (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2 lastKnownNavCourse:(double)arg3;
 - (void)locationProvider:(id)arg1 didUpdateLocation:(id)arg2;
 - (id)locationProvider;
 - (void)locationProviderDidChangeAuthorizationStatus:(id)arg1;
@@ -172,22 +161,22 @@
 - (void)locationProviderDidResumeLocationUpdates:(id)arg1;
 - (BOOL)locationProviderShouldPauseLocationUpdates:(id)arg1;
 - (id)locationRecorder;
+- (BOOL)locationShiftEnabled;
 - (BOOL)logStartStopLocationUpdates;
 - (double)navigationCourse;
 - (id)networkActivity;
 - (void)pushLocation:(id)arg1;
 - (void)reportCoalescedUpdated;
-- (void)requestShiftFunctionForLocation:(id)arg1 wrap:(BOOL)arg2;
 - (void)reset;
+- (void)resetAfterResumeIfNecessary;
 - (void)setActivityType:(int)arg1;
 - (void)setAllowUpdateCoalescing:(BOOL)arg1;
-- (void)setChinaShiftEnabled:(BOOL)arg1;
 - (void)setCoalesceTimer:(id)arg1;
 - (void)setContinuesWhileInactive:(BOOL)arg1;
-- (void)setDelayedLocationToShift:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
 - (void)setEffectiveBundle:(id)arg1;
+- (void)setEffectiveBundleIdentifier:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHeading:(id)arg1;
 - (void)setHeadingOrientation:(int)arg1;
@@ -198,23 +187,21 @@
 - (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
 - (void)setLogStartStopLocationUpdates:(BOOL)arg1;
 - (void)setNetworkActivity:(id)arg1;
-- (void)setShiftFunction:(id)arg1;
-- (void)setShiftRequest:(id)arg1;
 - (void)setThrottledHeading:(id)arg1;
 - (void)setUseCourseForHeading:(BOOL)arg1;
-- (id)shiftFunction;
-- (id)shiftRequest;
 - (BOOL)shouldCoalesceUpdates;
 - (BOOL)shouldStartCoalescingLocation:(id)arg1;
 - (BOOL)shouldStopCoalescingLocation:(id)arg1;
 - (id)singleLocationUpdateWithHandler:(id)arg1;
 - (void)startHeadingUpdateWithObserver:(id)arg1;
 - (void)startLocationUpdateWithObserver:(id)arg1;
+- (void)startMonitoringRegion:(id)arg1 observer:(id)arg2;
 - (void)stopHeadingUpdateWithObserver:(id)arg1;
 - (void)stopLocationUpdateWithObserver:(id)arg1;
+- (void)stopMonitoringRegion:(id)arg1 observer:(id)arg2;
 - (id)throttledHeading;
 - (BOOL)useCourseForHeading;
 - (BOOL)wasLastLocationPushed;
-- (void)wiFiStatusChanged:(id)arg1;
+- (void)wiFiObserverDidChangeEnabled:(id)arg1;
 
 @end

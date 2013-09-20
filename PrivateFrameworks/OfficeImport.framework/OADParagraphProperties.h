@@ -40,9 +40,6 @@
     unsigned char mWrap;
 }
 
-@property int bulletCharSet;
-@property BOOL hasBulletCharSet;
-
 + (id)defaultProperties;
 
 - (id)addTabStop;
@@ -103,7 +100,6 @@
 - (void)setBulletSize:(id)arg1;
 - (void)setDefaultTab:(double)arg1;
 - (void)setFontAlign:(int)arg1;
-- (void)setHasBulletCharSet:(BOOL)arg1;
 - (void)setIndent:(double)arg1;
 - (void)setIsHangingPunctuation:(BOOL)arg1;
 - (void)setIsLatinLineBreak:(BOOL)arg1;

@@ -3,18 +3,22 @@
  */
 
 @interface HSItemsRequest : HSRequest {
+    BOOL _includeHiddenItems;
     BOOL _shouldParseResponse;
 }
 
+@property BOOL includeHiddenItems;
 @property BOOL shouldParseResponse;
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 containerID:(unsigned int)arg2;
 + (id)requestWithDatabaseID:(unsigned int)arg1;
 
 - (id)canonicalResponseForResponse:(id)arg1;
+- (BOOL)includeHiddenItems;
 - (id)initWithAction:(id)arg1;
 - (id)initWithDatabaseID:(unsigned int)arg1 containerID:(unsigned int)arg2;
 - (id)initWithDatabaseID:(unsigned int)arg1;
+- (void)setIncludeHiddenItems:(BOOL)arg1;
 - (void)setShouldParseResponse:(BOOL)arg1;
 - (void)setSongsRequestWithSessonID:(unsigned int)arg1 metadataFilter:(id)arg2 purchaseTokenListing:(id)arg3 queryFilter:(id)arg4;
 - (BOOL)shouldParseResponse;

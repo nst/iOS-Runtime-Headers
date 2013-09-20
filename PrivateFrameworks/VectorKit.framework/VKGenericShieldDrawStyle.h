@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKGenericShieldDrawStyle : NSObject <_VKStyle> {
+@interface VKGenericShieldDrawStyle : VKDrawStyle {
     struct _VGLColor { 
         float r; 
         float g; 
@@ -71,8 +71,9 @@
 - (void)setStyle:(int)arg1;
 - (void)setTextColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (int)style;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2;
+- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
 - (void)takeFromZoomInvariantProperties:(id)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })textColor;
+- (id)variant;
 
 @end

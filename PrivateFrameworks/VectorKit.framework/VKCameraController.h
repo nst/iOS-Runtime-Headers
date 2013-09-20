@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKCamera, VKScreenCanvas, VKScreenCanvas<VKCameraControllerCanvasDelegate>;
+@class <VGLCanvas>, <VKCameraControllerDelegate>, VKCamera;
 
 @interface VKCameraController : NSObject {
     int _animating;
     VKCamera *_camera;
-    VKScreenCanvas *_canvas;
+    <VGLCanvas> *_canvas;
+    <VKCameraControllerDelegate> *_delegate;
     BOOL _gesturing;
 }
 
 @property(getter=isAnimating,readonly) BOOL animating;
 @property(retain) VKCamera * camera;
-@property VKScreenCanvas<VKCameraControllerCanvasDelegate> * canvas;
+@property <VGLCanvas> * canvas;
+@property <VKCameraControllerDelegate> * delegate;
 @property(getter=isGesturing) BOOL gesturing;
 
 - (void)beginAnimating;
@@ -21,13 +23,14 @@
 - (id)canvas;
 - (void)canvasDidLayout;
 - (void)dealloc;
+- (id)delegate;
 - (id)detailedDescription;
-- (void)endAnimating;
+- (void)endAnimating:(BOOL)arg1;
 - (BOOL)isAnimating;
 - (BOOL)isGesturing;
-- (struct CGPoint { float x1; float x2; })screenPointWithIndex:(int)arg1 fromRecognizer:(id)arg2;
 - (void)setCamera:(id)arg1;
 - (void)setCanvas:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setGesturing:(BOOL)arg1;
 
 @end

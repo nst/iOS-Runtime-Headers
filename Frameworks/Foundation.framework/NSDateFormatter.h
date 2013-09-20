@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSObject<OS_dispatch_semaphore>;
 
 @interface NSDateFormatter : NSFormatter {
     NSMutableDictionary *_attributes;
     unsigned int _counter;
     struct __CFDateFormatter { } *_formatter;
+    NSObject<OS_dispatch_semaphore> *_lock;
 }
 
 + (id)dateFormatFromTemplate:(id)arg1 options:(unsigned int)arg2 locale:(id)arg3;
@@ -94,6 +95,7 @@
 - (id)standaloneQuarterSymbols;
 - (id)standaloneWeekdaySymbols;
 - (id)stringForObjectValue:(id)arg1;
+- (id)stringFromDate:(id)arg1 withRelativeToTimeZone:(id)arg2;
 - (id)stringFromDate:(id)arg1;
 - (unsigned int)timeStyle;
 - (id)timeZone;

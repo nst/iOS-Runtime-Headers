@@ -14,6 +14,7 @@
     NSString *_httpsServiceString;
     NSArray *_potentialContextPaths;
     NSString *_requiredComplianceClass;
+    BOOL _shouldBailEarly;
     NSString *_wellKnownPath;
 }
 
@@ -21,6 +22,7 @@
 @property BOOL didReceiveAuthenticationError;
 @property(retain) <CoreDAVAccountInfoProvider> * discoveredAccountInfo;
 @property(retain) NSArray * potentialContextPaths;
+@property BOOL shouldBailEarly;
 @property(retain) NSString * wellKnownPath;
 
 - (void)addToDiscoveryArray:(id*)arg1 discovery:(id)arg2;
@@ -38,6 +40,7 @@
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 httpPorts:(id)arg3 httpsPorts:(id)arg4 httpServiceString:(id)arg5 httpsServiceString:(id)arg6 wellKnownPath:(id)arg7 potentialContextPaths:(id)arg8 requiredComplianceClass:(id)arg9;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 httpPorts:(id)arg3 httpsPorts:(id)arg4 httpServiceString:(id)arg5 httpsServiceString:(id)arg6 wellKnownPaths:(id)arg7 requiredComplianceClass:(id)arg8;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
+- (void)noteDefinitiveAuthFailureFromTask:(id)arg1;
 - (void)optionsTask:(id)arg1 error:(id)arg2;
 - (id)potentialContextPaths;
 - (id)propFindProperties;
@@ -45,8 +48,10 @@
 - (void)setDidReceiveAuthenticationError:(BOOL)arg1;
 - (void)setDiscoveredAccountInfo:(id)arg1;
 - (void)setPotentialContextPaths:(id)arg1;
+- (void)setShouldBailEarly:(BOOL)arg1;
 - (void)setWellKnownPath:(id)arg1;
 - (id)setupDiscoveries:(id)arg1 withSchemes:(id)arg2;
+- (BOOL)shouldBailEarly;
 - (void)srvLookupTask:(id)arg1 error:(id)arg2;
 - (void)startOptionsTask:(id)arg1;
 - (void)startPropfindTask:(id)arg1;

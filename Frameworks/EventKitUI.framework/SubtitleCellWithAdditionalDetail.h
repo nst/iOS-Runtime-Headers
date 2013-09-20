@@ -10,8 +10,8 @@
 
 @property(readonly) UILabel * additionalDetailLabel;
 
+- (void).cxx_destruct;
 - (id)additionalDetailLabel;
-- (void)dealloc;
 - (void)layoutSubviews;
 
 @end

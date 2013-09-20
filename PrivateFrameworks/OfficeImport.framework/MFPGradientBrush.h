@@ -32,7 +32,7 @@
 - (void)createStopsFromStartAndEndColors;
 - (void)dealloc;
 - (id)endColor;
-- (void)fillPath:(struct CGPath { }*)arg1 evenOddRule:(BOOL)arg2;
+- (void)fillPath:(id)arg1;
 - (id)init;
 - (void)setBlend:(id)arg1;
 - (void)setColorBlend:(id)arg1;

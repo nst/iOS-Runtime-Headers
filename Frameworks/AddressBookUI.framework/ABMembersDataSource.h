@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABMembersDataSourceDelegate>, <ABStyleProvider>, ABBannerView, ABModel, NSMutableArray;
+@class <ABMembersDataSourceDelegate>, <ABStyleProvider>, ABBannerView, ABModel, ABUIPerson, NSMutableArray;
 
 @interface ABMembersDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
     void *_addressBook;
@@ -10,6 +10,7 @@
     <ABMembersDataSourceDelegate> *_delegate;
     struct __CFDictionary { } *_displayableSectionHeaderToSectionHeader;
     struct __CFDictionary { } *_displayableSectionIndexToSectionIndex;
+    ABUIPerson *_meCard;
     ABModel *_model;
     struct __CFDictionary { } *_sectionHeaderToDisplayableSectionHeader;
     struct __CFDictionary { } *_sectionHeaderToSortingIndex;
@@ -23,6 +24,7 @@
 @property(retain) ABModel * model;
 @property(retain) <ABStyleProvider> * styleProvider;
 
+- (void)_invalidateMeCard;
 - (void*)addressBook;
 - (id)bannerView;
 - (void)createAllDisplayableSectionIndexAndHeaderCaches;
@@ -56,6 +58,7 @@
 - (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
 - (id)titleForHeaderInSection:(int)arg1;
 
 @end

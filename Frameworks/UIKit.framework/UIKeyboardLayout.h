@@ -2,43 +2,54 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UITouch;
+@class NSMutableArray, UIKBScreenTraits, UIKeyboardTaskQueue, UITextInputTraits, UITouch;
 
-@interface UIKeyboardLayout : UIView <UIKeyboardLayoutProtocol> {
+@interface UIKeyboardLayout : UIView {
     UITouch *_activeTouch;
-    int _orientation;
+    UITextInputTraits *_inputTraits;
+    UIKBScreenTraits *_screenTraits;
     UITouch *_shiftKeyTouch;
+    UIKeyboardTaskQueue *_taskQueue;
     NSMutableArray *_uncommittedTouches;
-    int m_orientation;
 }
 
 @property(retain) UITouch * activeTouch;
-@property int orientation;
+@property(readonly) int orientation;
 @property(retain) UITouch * shiftKeyTouch;
+@property(retain) UIKeyboardTaskQueue * taskQueue;
 
+- (BOOL)acceptsDirectionInput;
 - (id)activationIndicatorView;
 - (id)activeTouch;
-- (void)addSwipeRecognizer;
 - (void)addWipeRecognizer;
 - (id)baseKeyForString:(id)arg1;
+- (BOOL)canForceTouchCommit:(id)arg1;
+- (BOOL)canMultitap;
 - (BOOL)canProduceString:(id)arg1;
 - (id)candidateList;
 - (void)changeToKeyplane:(id)arg1;
-- (void)clearAllKeyDelegates;
+- (void)clearShiftIfNecessaryForEndedTouch:(id)arg1;
 - (void)clearUnusedObjects:(BOOL)arg1;
-- (void)commitTouchesBeforeTouch:(id)arg1;
+- (void)commitTouches:(id)arg1 executionContext:(id)arg2;
+- (void)commitTouches:(id)arg1;
+- (id)currentKeyplane;
 - (void)deactivateActiveKeys;
+- (void)deactivateActiveKeysClearingTouchInfo:(BOOL)arg1 clearingDimming:(BOOL)arg2;
 - (void)dealloc;
 - (void)didClearInput;
-- (BOOL)doesKeyCharging;
+- (void)didCommitTouch:(id)arg1;
 - (struct CGSize { float x1; float x2; })dragGestureSize;
+- (void)fadeWithInvocation:(id)arg1;
 - (float)flickDistance;
+- (void)forceUpdatesForCommittedTouch;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (SEL)handlerForNotification:(id)arg1;
+- (BOOL)hasAccentKey;
 - (BOOL)hasCandidateKeys;
 - (float)hitBuffer;
 - (BOOL)ignoresShiftState;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isAlphabeticPlane;
 - (BOOL)isShiftKeyBeingHeld;
 - (BOOL)isShiftKeyPlaneChooser;
 - (id)keyplaneForKey:(id)arg1;
@@ -47,34 +58,45 @@
 - (int)orientation;
 - (BOOL)performReturnAction;
 - (BOOL)performSpaceAction;
-- (void)phraseBoundaryDidChange;
+- (void)physicalKeyDownWithEvent:(id)arg1;
+- (void)physicalKeyUpWithEvent:(id)arg1;
+- (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)restoreDefaultsForAllKeys;
 - (void)restoreDefaultsForKey:(id)arg1;
 - (void)setAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setActiveTouch:(id)arg1;
 - (void)setAutoshift:(BOOL)arg1;
-- (void)setDelegate:(id)arg1 forKey:(id)arg2;
 - (void)setLabel:(id)arg1 forKey:(id)arg2;
+- (void)setLayoutTag:(id)arg1;
 - (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
-- (void)setOrientation:(int)arg1;
+- (void)setRenderConfig:(id)arg1;
+- (void)setReturnKeyEnabled:(BOOL)arg1 withDisplayName:(id)arg2 withType:(int)arg3;
 - (void)setShift:(BOOL)arg1;
 - (void)setShiftKeyTouch:(id)arg1;
 - (void)setTarget:(id)arg1 forKey:(id)arg2;
+- (void)setTaskQueue:(id)arg1;
 - (id)shiftKeyTouch;
+- (BOOL)shouldFadeFromLayout;
+- (BOOL)shouldFadeToLayout;
 - (BOOL)shouldShowIndicator;
-- (void)showKeyboardType:(int)arg1 withAppearance:(int)arg2;
+- (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
 - (id)simulateTouch:(struct CGPoint { float x1; float x2; })arg1;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
-- (void)swipeGestureRecognized:(id)arg1;
+- (id)taskQueue;
+- (void)touchCancelled:(id)arg1 executionContext:(id)arg2;
 - (void)touchCancelled:(id)arg1;
+- (void)touchDown:(id)arg1 executionContext:(id)arg2;
 - (void)touchDown:(id)arg1;
+- (void)touchDragged:(id)arg1 executionContext:(id)arg2;
 - (void)touchDragged:(id)arg1;
+- (void)touchUp:(id)arg1 executionContext:(id)arg2;
 - (void)touchUp:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (BOOL)updateKeysWithDelegates;
+- (id)touchesToCommitBeforeTouch:(id)arg1;
+- (void)updateBackgroundCorners;
 - (void)updateLocalizedKeys:(BOOL)arg1;
 - (BOOL)usesAutoShift;
 - (void)wipeGestureRecognized:(id)arg1;

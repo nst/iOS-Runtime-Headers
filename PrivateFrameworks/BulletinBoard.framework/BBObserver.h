@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class <BBObserverDelegate>, NSMutableDictionary, NSMutableSet;
+@class <BBObserverDelegate>, BBServerConnection, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
 
-@interface BBObserver : NSObject <XPCProxyTarget> {
+@interface BBObserver : NSObject <BBXPCConnectionDelegate, XPCProxyTarget> {
     struct { 
         unsigned int addBulletin : 1; 
         unsigned int modifyBulletin : 1; 
+        unsigned int modifyBulletinDEPRECATED : 1; 
         unsigned int removeBulletin : 1; 
+        unsigned int removeBulletinFinal : 1; 
         unsigned int sectionOrderRule : 1; 
         unsigned int sectionOrder : 1; 
+        unsigned int sectionOrderDefault : 1; 
         unsigned int sectionInfo : 1; 
+        unsigned int sectionInfoDefault : 1; 
         unsigned int sectionParameters : 1; 
         unsigned int fetchImage : 1; 
         unsigned int fetchSize : 1; 
@@ -21,16 +25,22 @@
         unsigned int sizeForThumbSize : 1; 
         unsigned int purgeReferences : 1; 
         unsigned int alertBehaviorOverrides : 1; 
+        unsigned int alertBehaviorOverrideState : 1; 
+        unsigned int invalidatedBulletinIDs : 1; 
+        unsigned int serverConnectionChanged : 1; 
+        unsigned int serverReceivedResponse : 1; 
     NSMutableDictionary *_attachmentInfoByBulletinID;
     NSMutableDictionary *_bulletinLifeAssertions;
     NSMutableDictionary *_bulletinUpdateQueuesBySectionID;
+    BBServerConnection *_connection;
     <BBObserverDelegate> *_delegate;
     } _delegateFlags;
     unsigned int _numberOfBulletinFetchesUnderway;
     unsigned int _observerFeed;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary *_remainingFeedsByBulletinID;
     NSMutableSet *_sectionIDsWithUpdatesUnderway;
     NSMutableDictionary *_sectionParameters;
-    id _serverProxy;
 }
 
 @property <BBObserverDelegate> * delegate;
@@ -49,6 +59,7 @@
 - (void)_getAttachmentSizesIfPossibleForBulletins:(id)arg1 withCompletion:(id)arg2;
 - (void)_getParametersIfNecessaryForSectionID:(id)arg1 withCompletion:(id)arg2;
 - (void)_getParametersIfNecessaryForSectionIDs:(id)arg1 withCompletion:(id)arg2;
+- (void)_invalidate;
 - (id)_lifeAssertionForBulletinID:(id)arg1;
 - (void)_noteAttachmentImagesFetchedForBulletinID:(id)arg1;
 - (void)_noteAttachmentSizesFetchedForBulletinID:(id)arg1;
@@ -67,30 +78,40 @@
 - (struct CGSize { float x1; float x2; })attachmentSizeForKey:(id)arg1 forBulletinID:(id)arg2;
 - (void)clearBulletins:(id)arg1 inSection:(id)arg2;
 - (void)clearSection:(id)arg1;
+- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
+- (id)description;
 - (void)getAlertBehaviorOverridesWithCompletion:(id)arg1;
 - (void)getAttachmentImageForBulletin:(id)arg1 withCompletion:(id)arg2;
 - (void)getPrivilegedAddressBookGroupRecordIDAndNameWithCompletion:(id)arg1;
 - (void)getPrivilegedSenderTypesWithCompletion:(id)arg1;
-- (void)getRecentUnacknowledgedBulletinsForFeeds:(unsigned int)arg1 withCompletion:(id)arg2;
+- (void)getSectionInfoForCategory:(int)arg1 withCompletion:(id)arg2;
 - (void)getSectionInfoWithCompletion:(id)arg1;
 - (void)getSectionOrderRuleWithCompletion:(id)arg1;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withCompletion:(id)arg2;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (void)invalidate;
+- (BOOL)isValid;
+- (void)noteAlertBehaviorOverrideStateChanged:(id)arg1;
 - (void)noteAlertBehaviorOverridesChanged:(id)arg1;
+- (void)noteServerReceivedResponseForBulletin:(id)arg1;
 - (unsigned int)observerFeed;
 - (id)parametersForSectionID:(id)arg1;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeed:(unsigned int)arg3;
+- (void)removeBulletins:(id)arg1 inSection:(id)arg2;
+- (void)requestFutureBulletinsForSectionID:(id)arg1;
 - (void)requestListBulletinsForSectionID:(id)arg1;
+- (void)requestNoticesBulletinsForSectionID:(id)arg1;
+- (void)requestTodayBulletinsForSectionID:(id)arg1;
 - (void)sendResponse:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setObserverFeed:(unsigned int)arg1;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
-- (void)updateSectionInfo:(id)arg1;
-- (void)updateSectionOrder:(id)arg1;
+- (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;
+- (void)updateSectionOrder:(id)arg1 forCategory:(int)arg2;
 - (void)updateSectionOrderRule:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 

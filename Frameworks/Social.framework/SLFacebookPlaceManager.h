@@ -6,15 +6,15 @@
    See Warning(s) below.
  */
 
-@class <SLFacebookPlaceManagerDelegate>, ACAccount, CLLocation, CLLocationManager, NSHTTPURLResponse, NSMutableData, NSURLConnection;
+@class ACAccount, CLLocation, CLLocationManager, NSHTTPURLResponse, NSMutableData, NSObject<SLPlaceDataSourceDelegate>, NSURLConnection;
 
-@interface SLFacebookPlaceManager : NSObject <CLLocationManagerDelegate> {
+@interface SLFacebookPlaceManager : NSObject <CLLocationManagerDelegate, SLPlaceDataSource> {
     ACAccount *_account;
     CLLocation *_currentLocation;
-    <SLFacebookPlaceManagerDelegate> *_delegate;
-    BOOL _disableTimout;
+    NSObject<SLPlaceDataSourceDelegate> *_delegate;
+    BOOL _disableTimeout;
     BOOL _isCanceled;
-    BOOL _isUpdatingPlaces;
+    BOOL _isUpdatingLocation;
     CLLocationManager *_locationManager;
     NSMutableData *_placeData;
     id _queuedSearchRequest;
@@ -23,17 +23,21 @@
     NSHTTPURLResponse *_urlResponse;
 }
 
+@property(retain) ACAccount * account;
+@property(retain) CLLocation * currentLocation;
 @property(readonly) double currentLocationAccuracy;
-@property <SLFacebookPlaceManagerDelegate> * delegate;
+@property NSObject<SLPlaceDataSourceDelegate> * delegate;
 
 - (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1 error:(id)arg2;
 - (id)_placesArrayWithPlacesData:(id)arg1;
+- (id)account;
 - (void)cancelPlaceFetch;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
+- (id)currentLocation;
 - (double)currentLocationAccuracy;
 - (id)delegate;
 - (double)distanceFromCurrentLocationToPlace:(id)arg1;
@@ -43,8 +47,10 @@
 - (void)locationDidTimeout;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)setAccount:(id)arg1;
+- (void)setCurrentLocation:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)startUpdatingPlaces;
-- (void)stopUpdatingPlaces;
+- (void)startUpdatingLocation;
+- (void)stopUpdatingLocation;
 
 @end

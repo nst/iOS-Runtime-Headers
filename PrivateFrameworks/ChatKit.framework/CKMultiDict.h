@@ -2,20 +2,27 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface CKMultiDict : NSObject {
+    unsigned int _count;
     NSMutableDictionary *_dictionary;
+    NSObject<OS_dispatch_queue> *_lockQueue;
 }
 
 @property(retain) NSMutableDictionary * dictionary;
+@property(retain) NSObject<OS_dispatch_queue> * lockQueue;
 
 - (id)allKeys;
 - (unsigned int)count;
 - (void)dealloc;
+- (id)dequeueObjectForKey:(id)arg1;
 - (id)description;
 - (id)dictionary;
+- (void)enqueueObject:(id)arg1 forKey:(id)arg2;
+- (id)headObjectForKey:(id)arg1;
 - (id)init;
+- (id)lockQueue;
 - (id)objectsForKey:(id)arg1;
 - (id)peekObjectForKey:(id)arg1;
 - (id)popObjectForKey:(id)arg1;
@@ -23,5 +30,6 @@
 - (void)removeAllObjects;
 - (void)removeObjectsForKey:(id)arg1;
 - (void)setDictionary:(id)arg1;
+- (void)setLockQueue:(id)arg1;
 
 @end

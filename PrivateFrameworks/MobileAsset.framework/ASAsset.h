@@ -11,7 +11,7 @@
 @interface ASAsset : NSObject {
     NSString *_assetType;
     NSDictionary *_attributes;
-    struct __MobileAsset { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; struct __CFDictionary {} *x3; struct __MobileAssetQuery {} *x4; struct __MobileAssetQuery {} *x5; unsigned char x6; unsigned char x7; struct SoftwareUpdateProperties {} *x8; unsigned int x9; } *_cfAsset;
+    struct __MobileAsset { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; struct __CFDictionary {} *x3; struct __MobileAssetQuery {} *x4; struct __MobileAssetQuery {} *x5; unsigned char x6; } *_cfAsset;
     NSString *_clientName;
     NSDictionary *_downloadOptions;
     NSString *_identifier;
@@ -28,7 +28,9 @@
 @property(copy) id progressHandler;
 @property(readonly) int state;
 
+- (int)_contentVersion;
 - (void)_downloadWithOptions:(id)arg1 shouldFireCallback:(BOOL)arg2;
+- (int)_formatVersion;
 - (id)_getLocalAttribute:(id)arg1;
 - (void)adjustDownloadOptions:(id)arg1 completion:(id)arg2;
 - (id)assetType;
@@ -36,17 +38,25 @@
 - (void)beginDownloadWithOptions:(id)arg1;
 - (void)cancelDownload:(id)arg1;
 - (BOOL)cancelDownloadAndReturnError:(id*)arg1;
+- (void)cancelDownloadIfNecessary;
+- (void)cleanupAsset;
 - (id)clientName;
 - (void)dealloc;
 - (id)description;
 - (id)downloadOptions;
 - (id)fullAttributes;
 - (int)garbageCollectionBehavior;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)initWithAssetType:(id)arg1 attributes:(id)arg2;
+- (BOOL)isDownloading;
+- (BOOL)isDownloadingOrInstalled;
+- (BOOL)isEmergencyUpdate;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isInstalled;
 - (BOOL)isPresentOnDisk;
 - (id)localURL;
-- (struct __MobileAsset { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; struct __CFDictionary {} *x3; struct __MobileAssetQuery {} *x4; struct __MobileAssetQuery {} *x5; unsigned char x6; unsigned char x7; struct SoftwareUpdateProperties {} *x8; unsigned int x9; }*)mobileAsset;
+- (struct __MobileAsset { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; struct __CFDictionary {} *x3; struct __MobileAssetQuery {} *x4; struct __MobileAssetQuery {} *x5; unsigned char x6; }*)mobileAsset;
 - (void)pauseDownload:(id)arg1;
 - (BOOL)pauseDownloadAndReturnError:(id*)arg1;
 - (id)progressHandler;

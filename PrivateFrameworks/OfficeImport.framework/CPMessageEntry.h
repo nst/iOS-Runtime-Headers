@@ -10,10 +10,10 @@
     NSArray *m_parameters;
     int m_tag;
     NSString *m_text;
-    int m_timeStamp;
+    unsigned int m_timeStamp;
 }
 
-@property int timeStamp;
+@property unsigned int timeStamp;
 
 + (void)initialize;
 
@@ -25,14 +25,14 @@
 - (int)getMessageTag;
 - (id)getMessageText;
 - (id)getParameter:(unsigned int)arg1;
-- (int)getParameterCount;
+- (unsigned int)getParameterCount;
 - (unsigned int)hash;
 - (id)initWithTag:(int)arg1 affectedObject:(id)arg2 text:(id)arg3 parameters:(void*)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (void)logWithCat:(id)arg1;
 - (void)mergeEntries:(id)arg1;
-- (void)setTimeStamp:(int)arg1;
-- (int)timeStamp;
+- (void)setTimeStamp:(unsigned int)arg1;
+- (unsigned int)timeStamp;
 - (int)timeStampCompare:(id)arg1;
 
 @end

@@ -5,9 +5,13 @@
 @interface MCUserNotificationManager : NSObject {
 }
 
-- (BOOL)_cancelAllNotifications;
+@property(readonly) BOOL hasOutstandingNotifications;
+
 - (void)cancelAllNotificationsCompletionBlock:(id)arg1;
 - (void)dealloc;
-- (BOOL)displayUserNotificationWithTitle:(id)arg1 message:(id)arg2 defaultButtonText:(id)arg3 alternateButtonText:(id)arg4 completionBlock:(id)arg5;
+- (void)displayUserNotificationWithTitle:(id)arg1 message:(id)arg2 defaultButtonText:(id)arg3 alternateButtonText:(id)arg4 displayOnLockScreen:(BOOL)arg5 displayInAppWhitelistModes:(BOOL)arg6 dismissAfterTimeInterval:(double)arg7 completionBlock:(id)arg8;
+- (BOOL)hasOutstandingNotifications;
+- (id)init;
+- (void)mainQueueDidReceiveAppWhitelistChangedNotification;
 
 @end

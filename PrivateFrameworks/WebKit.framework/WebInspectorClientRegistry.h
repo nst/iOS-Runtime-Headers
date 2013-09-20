@@ -11,8 +11,8 @@
 
 @interface WebInspectorClientRegistry : NSObject {
     struct HashMap<unsigned int, WebInspectorClient *, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WebInspectorClient *> > { 
-        struct HashTable<unsigned int, std::__1::pair<unsigned int, WebInspectorClient *>, WTF::PairFirstExtractor<std::__1::pair<unsigned int, WebInspectorClient *>>, WTF::IntHash<unsigned int>, WTF::HashMapValueTraits<WTF::HashTraits<unsigned int>, WTF::HashTraits<WebInspectorClient *>>, WTF::HashTraits<unsigned int> > { 
-            struct pair<unsigned int, WebInspectorClient *> {} *m_table; 
+        struct HashTable<unsigned int, WTF::KeyValuePair<unsigned int, WebInspectorClient *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, WebInspectorClient *> >, WTF::IntHash<unsigned int>, WTF::HashMapValueTraits<WTF::HashTraits<unsigned int>, WTF::HashTraits<WebInspectorClient *> >, WTF::HashTraits<unsigned int> > { 
+            struct KeyValuePair<unsigned int, WebInspectorClient *> {} *m_table; 
             int m_tableSize; 
             int m_tableSizeMask; 
             int m_keyCount; 

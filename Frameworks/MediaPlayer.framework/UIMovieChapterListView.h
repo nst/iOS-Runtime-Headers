@@ -14,6 +14,7 @@
 @property(readonly) UITableView * tableView;
 @property float topPadding;
 
+- (void).cxx_destruct;
 - (id)init;
 - (void)layoutSubviews;
 - (void)pinVisibleRow:(unsigned int)arg1;

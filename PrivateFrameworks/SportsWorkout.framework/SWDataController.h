@@ -36,7 +36,6 @@
 - (id)_onQueue_calibrationDataForSensorSerialNumber:(id)arg1 walkCalibrationDate:(id*)arg2 runCalibrationDate:(id*)arg3;
 - (id)_pathOfSnapshotForWorkout:(id)arg1;
 - (id)_plistForDatabaseProperty:(id)arg1;
-- (void)_removeAllEmpedsFromCheckpoint;
 - (void)_removeSnapshotForWorkout:(id)arg1;
 - (void)_replaceValueIfLarger:(id)arg1 forAchievementName:(id)arg2 sensorSerialNumber:(id)arg3;
 - (void)_replaceValueIfSmaller:(id)arg1 forAchievementName:(id)arg2 sensorSerialNumber:(id)arg3;

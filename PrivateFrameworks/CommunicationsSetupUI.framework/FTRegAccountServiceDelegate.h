@@ -6,20 +6,17 @@
    See Warning(s) below.
  */
 
-@class CNFRegController, FTCConnectionHandler, FTRegAppleIDSetupOperation, NSDictionary;
+@class CNFRegController, NSDictionary;
 
 @interface FTRegAccountServiceDelegate : NSObject <AASetupAssistantDelegateService> {
     id _completionHandler;
-    FTCConnectionHandler *_connectionHandler;
     CNFRegController *_regController;
     NSDictionary *_responseDictionary;
-    FTRegAppleIDSetupOperation *_setupOperation;
 }
 
 @property(copy) id completionHandler;
 @property(retain) CNFRegController * regController;
 @property(copy) NSDictionary * responseDictionary;
-@property(retain) FTRegAppleIDSetupOperation * setupOperation;
 
 - (BOOL)_account:(id)arg1 matchesSetupParameters:(id)arg2;
 - (void)_cleanup;
@@ -40,6 +37,7 @@
 - (id)displayName;
 - (id)init;
 - (id)initWithRegController:(id)arg1;
+- (id)name;
 - (id)regController;
 - (id)responseDictionary;
 - (BOOL)serviceIsAvailable;
@@ -47,8 +45,6 @@
 - (void)setCompletionHandler:(id)arg1;
 - (void)setRegController:(id)arg1;
 - (void)setResponseDictionary:(id)arg1;
-- (void)setSetupOperation:(id)arg1;
-- (id)setupOperation;
 - (void)setupOperationFailed;
 
 @end

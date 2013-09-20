@@ -20,10 +20,10 @@
 
 - (id)_defaultOption;
 - (id)_groupID;
+- (id)_groupMediaType;
 - (BOOL)_isAlternateTrackGroup;
 - (BOOL)_isKeyValueGroup;
 - (BOOL)_matchesGroupID:(id)arg1 mediaType:(id)arg2;
-- (id)_mediaType;
 - (id)_optionWithID:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
 - (id)_weakReference;
 - (BOOL)allowsEmptySelection;

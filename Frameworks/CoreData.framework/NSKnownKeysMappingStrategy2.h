@@ -12,7 +12,7 @@
 - (id)init;
 - (id)initForKeys:(id)arg1;
 - (id)initForKeys:(id*)arg1 count:(unsigned int)arg2;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

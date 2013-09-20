@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKRoadPainter;
+@class VKRoadPainter, VKStylesheet;
 
-@interface VKRoadMapModel : VKVectorMapModel {
+@interface VKRoadMapModel : VKVectorMapModel <VKStylesheetObserver> {
     BOOL _drawRoads;
+    unsigned int _mapLayerPosition;
     VKRoadPainter *_roadPainter;
+    unsigned int _supportedRenderPasses;
 }
 
 @property BOOL drawRoads;
+@property unsigned int mapLayerPosition;
+@property(readonly) VKStylesheet * stylesheet;
+@property unsigned int supportedRenderPasses;
 
 - (void)dealloc;
 - (void)drawDebugScene:(id)arg1 WithContext:(id)arg2;
@@ -18,5 +23,9 @@
 - (id)init;
 - (unsigned int)mapLayerPosition;
 - (void)setDrawRoads:(BOOL)arg1;
+- (void)setMapLayerPosition:(unsigned int)arg1;
+- (void)setSupportedRenderPasses:(unsigned int)arg1;
+- (void)stylesheetDidChange;
+- (unsigned int)supportedRenderPasses;
 
 @end

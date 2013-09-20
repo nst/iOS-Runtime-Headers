@@ -17,7 +17,6 @@
 }
 
 + (id)indexerForDisplayIdentifier:(id)arg1 category:(id)arg2;
-+ (void)initialize;
 + (void)preheat;
 
 - (id)_indexPath;

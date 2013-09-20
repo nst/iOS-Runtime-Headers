@@ -4,7 +4,7 @@
 
 @class GEONameInfo, NSMutableArray, NSString;
 
-@interface GEOStep : PBCodable {
+@interface GEOStep : PBCodable <NSCopying> {
     struct { 
         unsigned int distance : 1; 
         unsigned int expectedTime : 1; 
@@ -17,7 +17,12 @@
         unsigned int overrideDrivingSide : 1; 
         unsigned int overrideTransportType : 1; 
         unsigned int stepID : 1; 
+        unsigned int endsOnFwy : 1; 
+        unsigned int toFreeway : 1; 
+        unsigned int tollAhead : 1; 
+        unsigned int tollPrior : 1; 
     unsigned int _distance;
+    BOOL _endsOnFwy;
     GEONameInfo *_exitNumber;
     unsigned int _expectedTime;
     } _has;
@@ -40,12 +45,18 @@
     int _overrideTransportType;
     NSMutableArray *_signposts;
     unsigned int _stepID;
+    NSMutableArray *_substeps;
+    BOOL _toFreeway;
+    BOOL _tollAhead;
+    BOOL _tollPrior;
 }
 
 @property unsigned int distance;
+@property BOOL endsOnFwy;
 @property(retain) GEONameInfo * exitNumber;
 @property unsigned int expectedTime;
 @property BOOL hasDistance;
+@property BOOL hasEndsOnFwy;
 @property(readonly) BOOL hasExitNumber;
 @property BOOL hasExpectedTime;
 @property(readonly) BOOL hasHintFirstAnnouncementIndex;
@@ -60,6 +71,9 @@
 @property BOOL hasOverrideDrivingSide;
 @property BOOL hasOverrideTransportType;
 @property BOOL hasStepID;
+@property BOOL hasToFreeway;
+@property BOOL hasTollAhead;
+@property BOOL hasTollPrior;
 @property(readonly) int hintFirstAnnouncementIndex;
 @property int hintFirstAnnouncementZilchIndex;
 @property(retain) NSString * instructions;
@@ -80,23 +94,33 @@
 @property int overrideTransportType;
 @property(retain) NSMutableArray * signposts;
 @property unsigned int stepID;
+@property(retain) NSMutableArray * substeps;
+@property BOOL toFreeway;
+@property BOOL tollAhead;
+@property BOOL tollPrior;
 
 - (void)addJunctionElement:(struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
 - (void)addLaneGuidance:(struct { int x1; unsigned int x2; unsigned int x3; int x4; unsigned int x5; int x6; struct { unsigned int x_7_1_1 : 1; unsigned int x_7_1_2 : 1; unsigned int x_7_1_3 : 1; unsigned int x_7_1_4 : 1; unsigned int x_7_1_5 : 1; unsigned int x_7_1_6 : 1; } x7; })arg1;
 - (void)addManeuverName:(id)arg1;
 - (void)addSignpost:(id)arg1;
+- (void)addSubsteps:(id)arg1;
 - (void)clearJunctionElements;
 - (void)clearLaneGuidances;
 - (void)clearManeuverNames;
 - (void)clearSignposts;
+- (void)clearSubsteps;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)distance;
+- (BOOL)endsOnFwy;
 - (id)exitNumber;
 - (unsigned int)expectedTime;
+- (id)firstNameInfo;
 - (BOOL)hasDistance;
+- (BOOL)hasEndsOnFwy;
 - (BOOL)hasExitNumber;
 - (BOOL)hasExpectedTime;
 - (BOOL)hasHintFirstAnnouncementIndex;
@@ -111,10 +135,14 @@
 - (BOOL)hasOverrideDrivingSide;
 - (BOOL)hasOverrideTransportType;
 - (BOOL)hasStepID;
+- (BOOL)hasToFreeway;
+- (BOOL)hasTollAhead;
+- (BOOL)hasTollPrior;
 - (unsigned int)hash;
 - (int)hintFirstAnnouncementIndex;
 - (int)hintFirstAnnouncementZilchIndex;
 - (id)instructions;
+- (id)intersectionNameInfo;
 - (BOOL)isEqual:(id)arg1;
 - (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })junctionElementAtIndex:(unsigned int)arg1;
 - (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)junctionElements;
@@ -123,9 +151,11 @@
 - (struct { int x1; unsigned int x2; unsigned int x3; int x4; unsigned int x5; int x6; struct { unsigned int x_7_1_1 : 1; unsigned int x_7_1_2 : 1; unsigned int x_7_1_3 : 1; unsigned int x_7_1_4 : 1; unsigned int x_7_1_5 : 1; unsigned int x_7_1_6 : 1; } x7; })laneGuidanceAtIndex:(unsigned int)arg1;
 - (struct { int x1; unsigned int x2; unsigned int x3; int x4; unsigned int x5; int x6; struct { unsigned int x_7_1_1 : 1; unsigned int x_7_1_2 : 1; unsigned int x_7_1_3 : 1; unsigned int x_7_1_4 : 1; unsigned int x_7_1_5 : 1; unsigned int x_7_1_6 : 1; } x7; }*)laneGuidances;
 - (unsigned int)laneGuidancesCount;
+- (id)maneuverDescription;
 - (int)maneuverEndBasicIndex;
 - (unsigned int)maneuverEndIndex;
 - (int)maneuverEndZilchIndex;
+- (BOOL)maneuverIsHighwayExit;
 - (id)maneuverNameAtIndex:(unsigned int)arg1;
 - (id)maneuverNames;
 - (unsigned int)maneuverNamesCount;
@@ -137,9 +167,11 @@
 - (int)overrideTransportType;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDistance:(unsigned int)arg1;
+- (void)setEndsOnFwy:(BOOL)arg1;
 - (void)setExitNumber:(id)arg1;
 - (void)setExpectedTime:(unsigned int)arg1;
 - (void)setHasDistance:(BOOL)arg1;
+- (void)setHasEndsOnFwy:(BOOL)arg1;
 - (void)setHasExpectedTime:(BOOL)arg1;
 - (void)setHasHintFirstAnnouncementZilchIndex:(BOOL)arg1;
 - (void)setHasJunctionType:(BOOL)arg1;
@@ -150,6 +182,9 @@
 - (void)setHasOverrideDrivingSide:(BOOL)arg1;
 - (void)setHasOverrideTransportType:(BOOL)arg1;
 - (void)setHasStepID:(BOOL)arg1;
+- (void)setHasToFreeway:(BOOL)arg1;
+- (void)setHasTollAhead:(BOOL)arg1;
+- (void)setHasTollPrior:(BOOL)arg1;
 - (void)setHintFirstAnnouncementZilchIndex:(int)arg1;
 - (void)setInstructions:(id)arg1;
 - (void)setJunctionElements:(struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned int)arg2;
@@ -165,10 +200,21 @@
 - (void)setOverrideTransportType:(int)arg1;
 - (void)setSignposts:(id)arg1;
 - (void)setStepID:(unsigned int)arg1;
+- (void)setSubsteps:(id)arg1;
+- (void)setToFreeway:(BOOL)arg1;
+- (void)setTollAhead:(BOOL)arg1;
+- (void)setTollPrior:(BOOL)arg1;
+- (void)shieldInfo:(id)arg1;
 - (id)signpostAtIndex:(unsigned int)arg1;
 - (id)signposts;
 - (unsigned int)signpostsCount;
 - (unsigned int)stepID;
+- (id)substeps;
+- (id)substepsAtIndex:(unsigned int)arg1;
+- (unsigned int)substepsCount;
+- (BOOL)toFreeway;
+- (BOOL)tollAhead;
+- (BOOL)tollPrior;
 - (void)writeTo:(id)arg1;
 
 @end

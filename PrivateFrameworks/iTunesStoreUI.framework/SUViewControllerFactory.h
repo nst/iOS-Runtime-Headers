@@ -5,6 +5,7 @@
 @interface SUViewControllerFactory : NSObject {
 }
 
+- (id)newComposeReviewViewControllerWithCompositionURL:(id)arg1;
 - (id)newDownloadsViewController;
 - (id)newNetworkLockoutViewControllerWithSection:(id)arg1;
 - (id)newPlaceholderViewController;

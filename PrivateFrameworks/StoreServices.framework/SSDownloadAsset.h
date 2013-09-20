@@ -27,11 +27,12 @@
 - (id)URLRequest;
 - (id)URLRequestProperties;
 - (id)_copyURLRequestProperties;
-- (id)_initWithDownloadMetadata:(id)arg1 type:(id)arg2;
 - (int)_legacyAssetType;
 - (void)_resetLocalIVars;
 - (int)assetType;
 - (long long)bytesDownloaded;
+- (long long)bytesUploadTotal;
+- (long long)bytesUploaded;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadFileName;
@@ -40,6 +41,7 @@
 - (id)finalizedPath;
 - (id)initWithURLRequest:(id)arg1 type:(int)arg2;
 - (id)initWithURLRequest:(id)arg1;
+- (id)initWithURLRequestProperties:(id)arg1;
 - (BOOL)isExternal;
 - (id)sinfs;
 

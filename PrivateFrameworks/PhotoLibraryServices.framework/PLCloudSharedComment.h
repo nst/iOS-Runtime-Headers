@@ -2,20 +2,26 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDate, NSNumber, NSString, PLManagedAsset;
+@class NSDate, NSNumber, NSString, PLCloudFeedCommentsEntry, PLManagedAsset;
 
-@interface PLCloudSharedComment : NSManagedObject {
+@interface PLCloudSharedComment : PLManagedObject {
 }
 
+@property(retain) PLCloudFeedCommentsEntry * cloudFeedCommentEntry;
+@property(readonly) PLCloudFeedCommentsEntry * cloudFeedEntry;
+@property(retain) PLCloudFeedCommentsEntry * cloudFeedLikeCommentEntry;
 @property(retain) NSString * cloudGUID;
+@property(retain) NSDate * commentClientDate;
 @property(retain) NSDate * commentDate;
 @property(retain) NSString * commentText;
 @property(retain) NSString * commentType;
 @property(retain) PLManagedAsset * commentedAsset;
-@property(retain) NSString * commenterEmail;
-@property(retain) NSNumber * commenterEmailKey;
-@property(retain) NSString * commenterFirstName;
-@property(retain) NSString * commenterLastName;
+@property(readonly) NSString * commenterEmail;
+@property(readonly) NSString * commenterFirstName;
+@property(readonly) NSString * commenterFullName;
+@property(retain) NSString * commenterHashedPersonID;
+@property(readonly) NSString * commenterLastName;
+@property(retain) NSNumber * isBatchComment;
 @property(retain) NSNumber * isCaption;
 @property(retain) NSNumber * isDeletable;
 @property(retain) NSNumber * isLike;
@@ -33,13 +39,18 @@
 - (id)asset;
 - (void)awakeFromInsert;
 - (BOOL)canBeDeletedByUser;
+- (id)cloudFeedEntry;
 - (id)commenterDisplayName;
 - (id)commenterEmail;
+- (id)commenterFirstName;
+- (id)commenterFullName;
+- (id)commenterLastName;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isInterestingForAlbumsSorting;
 - (BOOL)isLikeBoolValue;
-- (void)setCommenterEmail:(id)arg1;
+- (void)prepareForDeletion;
 - (BOOL)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(BOOL*)arg2;
+- (void)willSave;
 
 @end

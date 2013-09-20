@@ -2,17 +2,22 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class XPCProxy<WebBookmarksSettingsProtocol>;
+@class WebBookmarksXPCConnection;
 
-@interface WebBookmarksSettingsGateway : NSObject <XPCProxyTarget> {
-    XPCProxy<WebBookmarksSettingsProtocol> *_settingsProxy;
+@interface WebBookmarksSettingsGateway : NSObject <WebBookmarksXPCConnectionDelegate> {
+    WebBookmarksXPCConnection *_connection;
 }
 
+- (void)_clearConnection;
+- (void)connection:(id)arg1 didCloseWithError:(id)arg2;
 - (void)dealloc;
+- (void)deleteAllSafariSecurityOrigins;
+- (void)deleteSafariPersistentURLCacheStorage;
+- (void)deleteSafariSecurityOrigin:(id)arg1;
 - (void)getCellularReadingListAllowedWithCompletion:(id)arg1;
+- (id)getSafariDataUsageSummary;
+- (void)getSafariWebDataUsageWithCompletion:(id)arg1;
 - (id)init;
-- (void)invalidate;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)setCellularReadingListAllowed:(BOOL)arg1;
 
 @end

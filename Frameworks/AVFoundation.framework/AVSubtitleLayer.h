@@ -27,9 +27,11 @@
 - (void)layerDidBecomeVisible:(BOOL)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
+- (void)setDelegate:(id)arg1;
 - (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (id)subtitleLayerDisplay;
+- (void)subtitleRenderingNeedsLayout;
 - (long)updateSubtitle:(id)arg1 forcedSubtitleSample:(BOOL)arg2 shouldBeHidden:(BOOL*)arg3;
 
 @end

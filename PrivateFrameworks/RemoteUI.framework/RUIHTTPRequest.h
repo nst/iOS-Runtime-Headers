@@ -4,7 +4,7 @@
 
 @class NSMutableData, NSURLConnection, NSURLRequest;
 
-@interface RUIHTTPRequest : NSObject <NSURLConnectionDelegate> {
+@interface RUIHTTPRequest : NSObject <NSURLConnectionDataDelegate> {
     NSURLConnection *_connection;
     id _delegate;
     BOOL _invalidResponse;

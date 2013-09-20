@@ -2,30 +2,23 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray;
+@class NSArray, NSDate;
 
 @interface EKPreviewSection : NSObject {
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    } _date;
+    NSDate *_date;
     NSArray *_events;
 }
 
-@property struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } date;
+@property(retain) NSDate * date;
 @property(readonly) NSArray * events;
 
-+ (id)sectionWithDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
++ (id)sectionWithDate:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addEvent:(id)arg1;
-- (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })date;
-- (void)dealloc;
+- (id)date;
 - (id)events;
-- (id)initWithDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
-- (void)setDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (id)initWithDate:(id)arg1;
+- (void)setDate:(id)arg1;
 
 @end

@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class TSDBezierPath;
+
 @interface MFPPath : NSObject {
-    struct CGPath { } *mPath;
+    TSDBezierPath *mPath;
 }
 
 - (void)dealloc;
-- (id)initWithPath:(struct CGPath { }*)arg1;
-- (struct CGPath { }*)path;
+- (id)initWithPath:(id)arg1;
+- (id)path;
 
 @end

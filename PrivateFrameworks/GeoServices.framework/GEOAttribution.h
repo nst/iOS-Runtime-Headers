@@ -4,38 +4,51 @@
 
 @class NSString;
 
-@interface GEOAttribution : PBCodable {
+@interface GEOAttribution : PBCodable <NSCopying> {
     NSString *_badge;
+    NSString *_badgeChecksum;
     NSString *_logo;
+    NSString *_logoChecksum;
     NSString *_name;
     NSString *_url;
 }
 
 @property(retain) NSString * badge;
+@property(retain) NSString * badgeChecksum;
 @property(readonly) BOOL hasBadge;
+@property(readonly) BOOL hasBadgeChecksum;
 @property(readonly) BOOL hasLogo;
+@property(readonly) BOOL hasLogoChecksum;
 @property(readonly) BOOL hasName;
 @property(readonly) BOOL hasUrl;
 @property(retain) NSString * logo;
+@property(retain) NSString * logoChecksum;
 @property(retain) NSString * name;
 @property(retain) NSString * url;
 
 - (id)badge;
+- (id)badgeChecksum;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBadge;
+- (BOOL)hasBadgeChecksum;
 - (BOOL)hasLogo;
+- (BOOL)hasLogoChecksum;
 - (BOOL)hasName;
 - (BOOL)hasUrl;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)logo;
+- (id)logoChecksum;
 - (id)name;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBadge:(id)arg1;
+- (void)setBadgeChecksum:(id)arg1;
 - (void)setLogo:(id)arg1;
+- (void)setLogoChecksum:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;

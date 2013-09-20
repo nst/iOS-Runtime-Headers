@@ -2,84 +2,53 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewControllerDataSource>, <QLPreviewItem>, MPDetailSlider, MPVolumeView, NSMutableDictionary, NSMutableSet, NSNumberFormatter, NSOperation, NSString, NSTimer, NSURL, QLPopOverState, QLProgressView, UIBarButtonItem, UIDocumentInteractionController, UIImageView, UILabel, UINavigationController, UISegmentedControl, UITapGestureRecognizer, UIView, UIViewController<QLPreviewContentControllerProtocol>, _UIAsyncInvocation;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
+@class <QLPreviewItem>, MPVolumeView, NSMutableDictionary, NSNumberFormatter, NSString, NSTimer, QLArchiveViewer, QLPreviewItemsSource, UIBarButtonItem, UIDocumentInteractionController, UILabel, UINavigationController, UIView, UIViewController<QLPreviewContentControllerProtocol>, _UIAsyncInvocation;
 
 @interface QLPreviewControllerReserved : NSObject {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     unsigned int statusBarWasHidden : 1;
     unsigned int toolbarWasHidden : 1;
-    unsigned int isZooming : 1;
-    unsigned int isZoomingIn : 1;
-    unsigned int useZoomAnimation : 1;
-    unsigned int useTransitionImage : 1;
-    unsigned int hasLoadError : 1;
-    unsigned int isDelayingPresentation : 1;
-    unsigned int delayedItemIsLoaded : 1;
-    UITapGestureRecognizer *_tapGestureRegnizer;
+    unsigned int isInUIDICPopover : 1;
     UIBarButtonItem *actionItem;
-    UIBarButtonItem *arrowsItem;
+    UIBarButtonItem *archiveItem;
+    QLArchiveViewer *archiveViewer;
     NSMutableDictionary *avStateForPreviewItems;
-    int barStyle;
     BOOL blockRemoteImages;
     _UIAsyncInvocation *cancelViewServiceRequest;
-    UIView *clippingView;
-    BOOL clippingViewActive;
-    int currentPreviewItemIndex;
-    NSURL *currentPreviewItemURL;
-    <QLPreviewControllerDataSource> *dataSource;
     id delegate;
-    MPDetailSlider *detailSlider;
-    UIImageView *iconView;
     NSNumberFormatter *indexFormatter;
     UIBarButtonItem *indexItem;
     UILabel *indexLabel;
     UIDocumentInteractionController *interactionController;
     BOOL internalViewsLoaded;
-    BOOL loadingProgressVisible;
-    NSString *loadintTextForMissingFiles;
+    QLPreviewItemsSource *itemsSource;
+    UIBarButtonItem *listItem;
+    NSString *loadingTextForMissingFiles;
     UIView *mainView;
     int mode;
-    UIImageView *navigationBarBackground;
-    UIImageView *navigationBarShadow;
     UINavigationController *navigationController;
-    unsigned int numberOfPreviewItems;
-    NSOperation *openOperation;
     int overlayState;
-    NSTimer *overlayTimer;
-    UIView *parentControllerView;
-    UIBarButtonItem *pauseButton;
-    QLPopOverState *popOverState;
-    NSMutableSet *preloadedPreviewItems;
-    <QLPreviewItem> *presentedPreviewItem;
+    NSMutableDictionary *pdfPreviewDataCache;
+    UIBarButtonItem *playPauseButton;
     UIViewController<QLPreviewContentControllerProtocol> *previewContentController;
     <QLPreviewItem> *previewItem;
-    NSMutableDictionary *previewItemCache;
-    int previousMode;
+    BOOL previousNavBarWasTranslucent;
     int previousStatusBarStyle;
     int previousToolbarStyle;
-    BOOL previousToolbarWasTranlucent;
-    QLProgressView *progressView;
+    BOOL previousToolbarWasTranslucent;
+    id readyBlock;
     UIBarButtonItem *routeButton;
-    UILabel *scrubInstructionsLabel;
-    UILabel *scrubSpeedLabel;
     BOOL scrubbing;
-    UISegmentedControl *segmentedArrowControl;
     BOOL showActionAsDefaultButton;
-    } sourceFrame;
-    UIView *sourceView;
+    BOOL sourceIsManaged;
+    NSTimer *timeoutTimer;
     UIBarButtonItem *titleItem;
-    BOOL translucent;
     BOOL useCustomActionButton;
     MPVolumeView *volumeView;
-    UIView *zoomView;
+    MPVolumeView *volumeViewHidden;
 }
 
 - (void)dealloc;

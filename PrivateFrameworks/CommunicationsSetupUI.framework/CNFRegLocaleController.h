@@ -67,6 +67,7 @@
 - (void)showCountryPicker;
 - (id)specifierList;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)titleString;
 - (id)validationString;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

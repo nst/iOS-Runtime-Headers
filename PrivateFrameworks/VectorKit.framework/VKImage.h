@@ -17,13 +17,14 @@
     BOOL _usedAsTextureAndImage;
 }
 
+- (id).cxx_construct;
 - (void)dealloc;
 - (struct CGImage { }*)image;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2;
-- (id)initWithData:(id)arg1 usedAsTextureAndImage:(BOOL)arg2;
-- (id)initWithData:(id)arg1;
-- (id)initWithName:(id)arg1;
+- (id)initWithData:(id)arg1 scale:(float)arg2 usedAsTextureAndImage:(BOOL)arg3;
+- (id)initWithData:(id)arg1 scale:(float)arg2;
+- (id)initWithName:(id)arg1 scale:(float)arg2;
 - (float)scale;
 - (struct CGSize { float x1; float x2; })size;
 - (id)texture;

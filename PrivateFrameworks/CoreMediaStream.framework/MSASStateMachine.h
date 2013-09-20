@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class MSASAssetDownloader, MSASAssetUploader, MSASPersonModel, MSASProtocol, MSAlbumSharingDaemon, MSBackoffManager, MSImageScalingSpecification, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class MSASAssetDownloader, MSASAssetUploader, MSASPersonModel, MSASPhoneInvitations, MSASProtocol, MSAlbumSharingDaemon, MSBackoffManager, MSImageScalingSpecification, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MSASStateMachine : NSObject <MSBackoffManagerDelegate, MSASAssetUploaderDelegate, MSASAssetDownloaderDelegate> {
     MSBackoffManager *_MMCSBackoffManager;
@@ -21,6 +21,7 @@
     MSAlbumSharingDaemon *_daemon;
     id _delegate;
     MSImageScalingSpecification *_derivativeImageScalingSpecification;
+    NSArray *_derivativeSpecifications;
     NSObject<OS_dispatch_queue> *_eventQueue;
     NSString *_focusAlbumGUID;
     NSString *_focusAssetCollectionGUID;
@@ -32,6 +33,7 @@
     NSDictionary *_metadataBackoffManagerParameters;
     MSASPersonModel *_model;
     NSString *_personID;
+    MSASPhoneInvitations *_phoneInvitations;
     id _postCommandCompletionBlock;
     MSASProtocol *_protocol;
     NSObject<OS_dispatch_queue> *_serverSideConfigQueue;
@@ -47,7 +49,8 @@
 @property(setter=_setStopHandlerBlock:,copy) id _stopHandlerBlock;
 @property MSAlbumSharingDaemon * daemon;
 @property id delegate;
-@property(retain) MSImageScalingSpecification * derivativeImageScalingSpecification;
+@property(readonly) MSImageScalingSpecification * derivativeImageScalingSpecification;
+@property(readonly) NSArray * derivativeSpecifications;
 @property(retain) NSObject<OS_dispatch_queue> * eventQueue;
 @property(retain) NSString * focusAlbumGUID;
 @property(retain) NSString * focusAssetCollectionGUID;
@@ -57,17 +60,18 @@
 @property(retain) NSObject<OS_dispatch_queue> * memberQueue;
 @property(retain) NSDictionary * metadataBackoffManagerParameters;
 @property(retain) NSString * personID;
+@property(retain) MSASPhoneInvitations * phoneInvitations;
 @property(copy) id postCommandCompletionBlock;
 @property(retain) MSASProtocol * protocol;
 @property(retain) NSObject<OS_dispatch_queue> * serverSideConfigQueue;
 @property(retain) NSDictionary * serverSideConfiguration;
 @property(readonly) NSString * serverSideConfigurationVersion;
-@property(retain) MSImageScalingSpecification * thumbnailImageScalingSpecification;
+@property(readonly) MSImageScalingSpecification * thumbnailImageScalingSpecification;
 @property(retain) NSObject<OS_dispatch_queue> * workQueue;
 
 - (void).cxx_destruct;
 - (id)MMCSBackoffManagerParameters;
-- (void)MSASAssetDownloader:(id)arg1 didFinishDownloadingAsset:(id)arg2 inAlbum:(id)arg3 error:(id)arg4;
+- (void)MSASAssetDownloader:(id)arg1 didFinishDownloadingAsset:(id)arg2 inAlbumGUID:(id)arg3 error:(id)arg4;
 - (void)MSASAssetDownloader:(id)arg1 willBeginBatchCount:(unsigned int)arg2;
 - (void)MSASAssetDownloaderDidFinishBatch:(id)arg1;
 - (void)MSASAssetUploader:(id)arg1 didFinishUploadingAssetCollection:(id)arg2 intoAlbum:(id)arg3 error:(id)arg4;
@@ -76,6 +80,7 @@
 - (void)_addAssetCollectionsDisposition:(int)arg1 params:(id)arg2;
 - (void)_addCommentDisposition:(int)arg1 params:(id)arg2;
 - (void)_addSharingRelationshipsDisposition:(int)arg1 params:(id)arg2;
+- (id)_assetCollectionFailedError;
 - (id)_assetCollectionRejectedError;
 - (id)_assetDownloader;
 - (id)_assetInfoToReauthForDownload;
@@ -103,6 +108,7 @@
 - (void)_removeSharingRelationshipsDisposition:(int)arg1 params:(id)arg2;
 - (void)_scheduleEventDisposition:(int)arg1 params:(id)arg2;
 - (void)_sendGetServerSideConfigurationDisposition:(int)arg1 params:(id)arg2;
+- (void)_sendGetUploadTokensDisposition:(int)arg1 params:(id)arg2;
 - (void)_sendPutAssetCollectionsDisposition:(int)arg1 params:(id)arg2;
 - (void)_sendReauthorizeAssetsForDownloadDisposition:(int)arg1 params:(id)arg2;
 - (void)_sendUploadCompleteDisposition:(int)arg1 params:(id)arg2;
@@ -140,6 +146,7 @@
 - (void)deleteAssetCollections:(id)arg1 inAlbum:(id)arg2 info:(id)arg3;
 - (void)deleteComments:(id)arg1 inAssetCollection:(id)arg2 inAlbum:(id)arg3 info:(id)arg4;
 - (id)derivativeImageScalingSpecification;
+- (id)derivativeSpecifications;
 - (id)eventQueue;
 - (id)focusAlbumGUID;
 - (id)focusAssetCollectionGUID;
@@ -158,14 +165,17 @@
 - (id)metadataBackoffManagerParameters;
 - (id)persistentObjectForKey:(id)arg1;
 - (id)personID;
+- (id)phoneInvitations;
 - (id)postCommandCompletionBlock;
 - (id)protocol;
 - (void)purgeEverythingCompletionBlock:(id)arg1;
 - (void)refreshServerSideConfig;
 - (void)removeSharingRelationships:(id)arg1 fromOwnedAlbum:(id)arg2 info:(id)arg3;
-- (void)retrieveAssets:(id)arg1 inAlbum:(id)arg2;
+- (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2;
 - (void)retryOutstandingActivities;
+- (id)rootCtagToCheckForChanges;
 - (void)scheduleEvent:(id)arg1 assetCollectionGUID:(id)arg2 albumGUID:(id)arg3 info:(id)arg4;
+- (id)serverCommunicationBackoffDate;
 - (id)serverSideConfigQueue;
 - (id)serverSideConfiguration;
 - (id)serverSideConfigurationVersion;
@@ -175,7 +185,6 @@
 - (void)setAssetCollectionSyncedState:(id)arg1 forAssetCollection:(id)arg2 album:(id)arg3 info:(id)arg4;
 - (void)setDaemon:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDerivativeImageScalingSpecification:(id)arg1;
 - (void)setEventQueue:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1;
 - (void)setFocusAssetCollectionGUID:(id)arg1;
@@ -185,14 +194,17 @@
 - (void)setMaxMetadataRetryCount:(int)arg1;
 - (void)setMemberQueue:(id)arg1;
 - (void)setMetadataBackoffManagerParameters:(id)arg1;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)setPendingRootCtag:(id)arg1;
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2;
 - (void)setPersonID:(id)arg1;
+- (void)setPhoneInvitations:(id)arg1;
 - (void)setPostCommandCompletionBlock:(id)arg1;
 - (void)setProtocol:(id)arg1;
 - (void)setPublicAccessEnabled:(BOOL)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)setRootCtagFromPendingRootCtag;
 - (void)setServerSideConfigQueue:(id)arg1;
 - (void)setServerSideConfiguration:(id)arg1;
-- (void)setThumbnailImageScalingSpecification:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)shutDownCompletionBlock:(id)arg1;
 - (void)start;
@@ -201,6 +213,8 @@
 - (id)thumbnailImageScalingSpecification;
 - (void)unsubscribeFromAlbum:(id)arg1 info:(id)arg2;
 - (void)updateAlbum:(id)arg1 updateAlbumFlags:(int)arg2 info:(id)arg3;
+- (void)videoURLForAssetCollection:(id)arg1 inAlbum:(id)arg2 completionBlock:(id)arg3;
+- (void)videoURLsForAssetCollection:(id)arg1 forMediaAssetType:(unsigned int)arg2 inAlbum:(id)arg3 completionBlock:(id)arg4;
 - (id)workQueue;
 - (void)workQueueApplyServerSideConfiguration;
 - (void)workQueueCancelAllCommandsFilteredByAlbumGUID:(id)arg1 assetCollectionGUID:(id)arg2;

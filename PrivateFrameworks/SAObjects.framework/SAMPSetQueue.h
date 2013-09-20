@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSURL, SAMPCollection;
+@class NSArray, SAMPCollection;
 
-@interface SAMPSetQueue : SABaseClientBoundCommand {
+@interface SAMPSetQueue : SADomainCommand {
 }
 
 @property(copy) NSArray * filters;
 @property(retain) SAMPCollection * mediaItems;
+@property BOOL shouldShuffle;
 @property(copy) NSArray * sort;
-@property(copy) NSURL * targetAppId;
 
 + (id)setQueue;
 + (id)setQueueWithDictionary:(id)arg1 context:(id)arg2;
@@ -22,9 +22,9 @@
 - (BOOL)requiresResponse;
 - (void)setFilters:(id)arg1;
 - (void)setMediaItems:(id)arg1;
+- (void)setShouldShuffle:(BOOL)arg1;
 - (void)setSort:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
+- (BOOL)shouldShuffle;
 - (id)sort;
-- (id)targetAppId;
 
 @end

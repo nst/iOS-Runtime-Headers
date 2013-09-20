@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel;
+@class UILabel;
 
 @interface UIPrintingMessageView : UIView {
-    UIImageView *_icon;
     UILabel *_message;
     UILabel *_title;
 }
 
 - (void)dealloc;
 - (id)initInView:(id)arg1 title:(id)arg2;
-- (void)layoutSubviews;
 - (void)setMessage:(id)arg1;
 
 @end

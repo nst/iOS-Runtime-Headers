@@ -10,6 +10,7 @@
     OADColorScheme *mColorScheme;
     id mDocumentState;
     OADFontScheme *mFontScheme;
+    unsigned int mGroupDepth;
     OAVState *mOavState;
     OCPPackagePart *mPackagePart;
     NSMutableDictionary *mShapeIdMap;
@@ -21,10 +22,12 @@
     NSMutableArray *mTgtBulletBlips;
 }
 
+@property(retain) NSMutableDictionary * sourceURLToTargetBlipIndexMap;
+@property(retain) NSMutableDictionary * sourceURLToTargetBulletBlipIndexMap;
+
 - (id)blipRefForURL:(id)arg1;
 - (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
 - (id)bulletBlipRefForURL:(id)arg1;
-- (void)clearDrawableForShapeIdMap;
 - (void)clearTargetBlipCollection;
 - (id)client;
 - (id)colorMap;
@@ -35,8 +38,12 @@
 - (id)fontScheme;
 - (id)init;
 - (id)initWithClient:(id)arg1;
+- (BOOL)isInsideGroup;
 - (id)oavState;
 - (id)packagePart;
+- (void)popGroup;
+- (void)pushGroup;
+- (void)resetForNewDrawing;
 - (void)setColorMap:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setDocumentState:(id)arg1;
@@ -44,10 +51,14 @@
 - (void)setFontScheme:(id)arg1;
 - (void)setOavState:(id)arg1;
 - (void)setPackagePart:(id)arg1;
+- (void)setSourceURLToTargetBlipIndexMap:(id)arg1;
+- (void)setSourceURLToTargetBulletBlipIndexMap:(id)arg1;
 - (void)setStyleMatrix:(id)arg1;
 - (void)setTableStyleCache:(id)arg1;
 - (void)setTargetBlipCollection:(id)arg1;
 - (void)setTargetBulletBlipArray:(id)arg1;
+- (id)sourceURLToTargetBlipIndexMap;
+- (id)sourceURLToTargetBulletBlipIndexMap;
 - (id)styleMatrix;
 - (id)tableStyleCache;
 - (id)targetBlipCollection;

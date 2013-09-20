@@ -10,6 +10,7 @@
     NSArray *_routes;
 }
 
+- (void).cxx_destruct;
 - (BOOL)_pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
 - (void)audioDeviceControllerAudioRoutesChanged:(id)arg1;
 - (void)dealloc;

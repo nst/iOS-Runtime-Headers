@@ -8,7 +8,7 @@
     unsigned int _expirationEvents;
 }
 
-@property int accessoryStyle;
+@property unsigned int accessoryStyle;
 @property(copy) BBAction * acknowledgeAction;
 @property int addressBookRecordID;
 @property(copy) NSSet * alertSuppressionContexts;
@@ -20,11 +20,13 @@
 @property int dateFormatStyle;
 @property BOOL dateIsAllDay;
 @property(copy) BBAction * defaultAction;
+@property(copy) NSString * dismissalID;
 @property(retain) NSDate * endDate;
 @property(retain) NSDate * expirationDate;
 @property unsigned int expirationEvents;
 @property(copy) BBAction * expireAction;
 @property BOOL expiresOnPublisherDeath;
+@property BOOL hasEventDate;
 @property(copy) NSString * message;
 @property(retain) BBContent * modalAlertContent;
 @property int primaryAttachmentType;
@@ -36,12 +38,16 @@
 @property(copy) NSString * sectionID;
 @property int sectionSubtype;
 @property BOOL showsUnreadIndicator;
+@property(copy) BBAction * snoozeAction;
 @property(retain) BBSound * sound;
+@property(retain) BBContent * starkBannerContent;
 @property(copy) NSSet * subsectionIDs;
 @property(copy) NSString * subtitle;
 @property BOOL tentative;
 @property(retain) NSTimeZone * timeZone;
 @property(copy) NSString * title;
+@property BOOL usesExternalSync;
+@property BOOL wantsFullscreenPresentation;
 
 - (void)addAlertSuppressionAppID:(id)arg1;
 - (void)addAttachmentOfType:(int)arg1;

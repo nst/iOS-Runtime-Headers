@@ -40,16 +40,18 @@
 @property float screenHeight;
 @property float skyStartOffset;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })horizon;
-- (id)init;
 - (float)screenHeight;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHorizon:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setScreenHeight:(float)arg1;
 - (void)setSkyStartOffset:(float)arg1;
+- (void)setup;
 - (float)skyStartOffset;
 
 @end

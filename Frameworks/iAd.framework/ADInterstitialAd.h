@@ -2,38 +2,76 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADInterstitialAdDelegate>, ADInterstitialModalViewController, ADInterstitialView;
+@class <ADInterstitialAdDelegate>, ADAdSpace, ADInterstitialView, UIView, UIViewController;
 
-@interface ADInterstitialAd : NSObject <ADInterstitialViewDelegate> {
+@interface ADInterstitialAd : NSObject <ADAdRecipient> {
+    BOOL _actionInProgress;
+    ADAdSpace *_adSpace;
+    BOOL _canLoadMoreThanOnce;
+    <ADInterstitialAdDelegate> *_delegate;
+    BOOL _hasLoadedFirstAd;
+    <ADInterstitialAdDelegate> *_internalDelegate;
+    UIViewController *_internalPresentingViewController;
     ADInterstitialView *_interstitialView;
-    ADInterstitialModalViewController *_modalViewController;
-    BOOL _presentedInView;
-    <ADInterstitialAdDelegate> *_weakDelegate;
+    BOOL _loaded;
+    int _options;
 }
 
-@property(getter=isActionInProgress,readonly) BOOL actionInProgress;
+@property(getter=isActionInProgress) BOOL actionInProgress;
+@property(retain) ADAdSpace * adSpace;
+@property(readonly) UIView * adSpaceView;
+@property BOOL canLoadMoreThanOnce;
 @property <ADInterstitialAdDelegate> * delegate;
+@property BOOL hasLoadedFirstAd;
+@property(readonly) int internalAdType;
+@property <ADInterstitialAdDelegate> * internalDelegate;
+@property UIViewController * internalPresentingViewController;
+@property(retain) ADInterstitialView * interstitialView;
 @property(getter=isLoaded,readonly) BOOL loaded;
-@property(retain) ADInterstitialModalViewController * modalViewController;
+@property(readonly) int options;
+@property(readonly) UIViewController * presentingViewController;
 
+- (BOOL)_considerClosingAdSpace;
+- (id)_initWithOptions:(int)arg1;
+- (id)adSpace;
+- (id)adSpaceView;
+- (BOOL)canLoadMoreThanOnce;
 - (void)cancelAction;
 - (void)dealloc;
 - (id)delegate;
+- (void)handleTapOnInterstitialViewAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)hasLoadedFirstAd;
+- (id)identifier;
 - (id)init;
-- (void)interstitialView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
-- (void)interstitialViewActionDidFinish:(id)arg1;
-- (BOOL)interstitialViewActionShouldBegin:(id)arg1 willLeaveApplication:(BOOL)arg2;
-- (void)interstitialViewDidLoadAd:(id)arg1;
-- (void)interstitialViewDidUnloadAd:(id)arg1;
-- (void)interstitialViewWillLoadAd:(id)arg1;
+- (int)internalAdType;
+- (id)internalDelegate;
+- (id)internalPresentingViewController;
+- (id)interstitialView;
 - (BOOL)isActionInProgress;
 - (BOOL)isLoaded;
-- (id)modalViewController;
+- (int)options;
+- (void)presentAsStoryboardFromViewController:(id)arg1;
 - (void)presentFromViewController:(id)arg1;
 - (BOOL)presentInView:(id)arg1;
+- (id)presentingViewController;
+- (void)serverBannerViewDidFailToReceiveAdWithError:(id)arg1;
+- (void)serverBannerViewDidLoad;
+- (void)serverBannerViewWillLoad;
+- (void)serverStoryboardDidTransitionOut;
+- (id)serverURL;
+- (void)setActionInProgress:(BOOL)arg1;
+- (void)setAdSpace:(id)arg1;
 - (void)setAuthenticationUserName:(id)arg1;
+- (void)setCanLoadMoreThanOnce:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setModalViewController:(id)arg1;
+- (void)setHasLoadedFirstAd:(BOOL)arg1;
+- (void)setInternalDelegate:(id)arg1;
+- (void)setInternalPresentingViewController:(id)arg1;
+- (void)setInterstitialView:(id)arg1;
+- (void)setLoaded:(BOOL)arg1;
+- (void)setRemoteWindowContextId:(unsigned int)arg1;
 - (void)setSection:(id)arg1;
+- (void)setServerURL:(id)arg1;
+- (void)storyboardViewControllerDidPresent;
 
 @end

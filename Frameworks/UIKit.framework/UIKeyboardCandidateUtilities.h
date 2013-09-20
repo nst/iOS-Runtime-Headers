@@ -2,16 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface UIKeyboardCandidateUtilities {
-     /* Encoded args for previous method:  */
+@interface UIKeyboardCandidateUtilities : NSObject {
 }
 
 + (id)candidateBarBackgroundWithHighlight:(BOOL)arg1;
 + (id)candidateScrollViewBackgroundWithHeight:(float)arg1;
-+ (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
 
 @end

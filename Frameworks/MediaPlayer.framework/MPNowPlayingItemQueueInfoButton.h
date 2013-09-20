@@ -22,6 +22,7 @@
 @property(readonly) int infoDisplayType;
 @property(retain) NSURL * infoURL;
 
+- (void).cxx_destruct;
 - (int)_activeDisplayType;
 - (int)_infoDisplayTypeForURL:(id)arg1 urlIsTimed:(BOOL)arg2 feederCount:(unsigned int)arg3 askDelegate:(BOOL)arg4;
 - (float)_minSizingTextWidth;
@@ -33,7 +34,6 @@
 - (void)clicked:(id)arg1;
 - (BOOL)configureForItem:(id)arg1 atTime:(double)arg2;
 - (void)configureForItem:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)infoDisplayType;

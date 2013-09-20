@@ -2,46 +2,70 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSCalendar, NSDate, NSLocale, NSTimeZone, _UIDatePickerView;
+@class NSCalendar, NSDate, NSLocale, NSTimeZone, UIColor, _UIDatePickerView;
 
 @interface UIDatePicker : UIControl <NSCoding> {
     _UIDatePickerView *_pickerView;
+    BOOL _useCurrentDateDuringDecoding;
 }
 
-@property(getter=_allowsZeroCountdownDuration,setter=_setAllowsZeroCountdownDuration:) BOOL allowsZeroCountdownDuration;
+@property(getter=_usesModernStyle,setter=_setUsesModernStyle:) BOOL _usesModernStyle;
+@property(getter=_allowsZeroCountDownDuration,setter=_setAllowsZeroCountDownDuration:) BOOL allowsZeroCountDownDuration;
+@property(getter=_allowsZeroTimeInterval,setter=_setAllowsZeroTimeInterval:) BOOL allowsZeroTimeInterval;
 @property(copy) NSCalendar * calendar;
+@property(getter=_contentWidth,readonly) float contentWidth;
 @property double countDownDuration;
 @property(retain) NSDate * date;
 @property int datePickerMode;
 @property(getter=_dateUnderSelectionBar,readonly) NSDate * dateUnderSelectionBar;
 @property(getter=_drawsBackground,setter=_setDrawsBackground:) BOOL drawsBackground;
+@property(getter=_highlightColor,setter=_setHighlightColor:,retain) UIColor * highlightColor;
+@property(getter=_isTimeIntervalMode,readonly) BOOL isTimeIntervalMode;
 @property(retain) NSLocale * locale;
 @property(retain) NSDate * maximumDate;
 @property(retain) NSDate * minimumDate;
 @property int minuteInterval;
+@property(getter=_textColor,setter=_setTextColor:,retain) UIColor * textColor;
+@property(getter=_textShadowColor,setter=_setTextShadowColor:,retain) UIColor * textShadowColor;
+@property double timeInterval;
 @property(retain) NSTimeZone * timeZone;
+@property(getter=_useCurrentDateDuringDecoding,setter=_setUseCurrentDateDuringDecoding:) BOOL useCurrentDateDuringDecoding;
 @property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
 
 + (Class)_pickerViewClass;
 
-- (BOOL)_allowsZeroCountdownDuration;
+- (BOOL)_allowsZeroCountDownDuration;
+- (BOOL)_allowsZeroTimeInterval;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (float)_contentWidth;
 - (id)_dateUnderSelectionBar;
 - (BOOL)_drawsBackground;
+- (id)_highlightColor;
 - (void)_insertPickerView;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_isTimeIntervalMode;
+- (id)_labelTextForCalendarUnit:(unsigned int)arg1;
 - (id)_locale;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_selectedTextForCalendarUnit:(unsigned int)arg1;
-- (void)_setAllowsZeroCountdownDuration:(BOOL)arg1;
+- (void)_setAllowsZeroCountDownDuration:(BOOL)arg1;
+- (void)_setAllowsZeroTimeInterval:(BOOL)arg1;
 - (void)_setDrawsBackground:(BOOL)arg1;
 - (void)_setHidesLabels:(BOOL)arg1;
+- (void)_setHighlightColor:(id)arg1;
 - (void)_setHighlightsToday:(BOOL)arg1;
 - (void)_setLocale:(id)arg1;
+- (void)_setTextColor:(id)arg1;
+- (void)_setTextShadowColor:(id)arg1;
+- (void)_setUseCurrentDateDuringDecoding:(BOOL)arg1;
 - (void)_setUsesBlackChrome:(BOOL)arg1;
+- (void)_setUsesModernStyle:(BOOL)arg1;
+- (id)_textColor;
+- (id)_textShadowColor;
+- (BOOL)_useCurrentDateDuringDecoding;
 - (BOOL)_usesBlackChrome;
+- (BOOL)_usesModernStyle;
 - (void)awakeFromNib;
 - (id)calendar;
 - (double)countDownDuration;
@@ -49,6 +73,7 @@
 - (id)dateComponents;
 - (int)datePickerMode;
 - (void)encodeWithCoder:(id)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)hour;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -59,6 +84,7 @@
 - (int)minute;
 - (int)minuteInterval;
 - (int)second;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setCountDownDuration:(double)arg1;

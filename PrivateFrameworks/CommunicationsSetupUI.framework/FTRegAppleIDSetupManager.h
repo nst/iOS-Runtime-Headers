@@ -27,11 +27,11 @@
 
 - (id)_aliasesForDictionary:(id)arg1;
 - (id)_appleID;
-- (void)_checkCompletionStatus;
 - (void)_cleanup;
 - (void)_notifyFailureWithError:(id)arg1;
 - (void)_notifySuccess:(BOOL)arg1 error:(id)arg2;
 - (void)_notifySuccess;
+- (BOOL)_shouldShowAliasSelectionUI;
 - (void)_updateCandidateAliases;
 - (void)_updateSelectionSummaryText;
 - (void)addSetupDictionary:(id)arg1 forService:(int)arg2;

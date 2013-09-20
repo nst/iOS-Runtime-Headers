@@ -3,13 +3,13 @@
  */
 
 @interface WebDeviceOrientationInternal : NSObject {
-    struct RefPtr<WebCore::DeviceOrientation> { 
-        struct DeviceOrientation {} *m_ptr; 
+    struct RefPtr<WebCore::DeviceOrientationData> { 
+        struct DeviceOrientationData {} *m_ptr; 
     } m_orientation;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithCoreDeviceOrientation:(struct PassRefPtr<WebCore::DeviceOrientation> { struct DeviceOrientation {} *x1; })arg1;
+- (id)initWithCoreDeviceOrientation:(struct PassRefPtr<WebCore::DeviceOrientationData> { struct DeviceOrientationData {} *x1; })arg1;
 
 @end

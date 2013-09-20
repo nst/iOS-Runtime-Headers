@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSFileHandle, NSMutableString, NSString, NSTimer;
+@class NSFileHandle, NSMutableString, NSObject<TUAppenderDelegate>, NSString, NSTimer;
 
 @interface TURollingFileAppender : NSObject <TUAppender> {
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    NSObject<TUAppenderDelegate> *_appenderDelegate;
     struct dispatch_queue_s { } *_backgroundQueue;
     NSMutableString *_buffer;
     NSString *_directory;
     NSFileHandle *_fileHandle;
-    int _lock;
+    } _lock;
     NSString *_prefix;
     NSTimer *_scheduledFlushTimer;
 }
@@ -25,7 +29,9 @@
 - (void)_scheduleFlush;
 - (void)dealloc;
 - (void)flush;
+- (id)formattedDyldContextForBacktrace:(id)arg1;
 - (id)initWithDirectory:(id)arg1 prefix:(id)arg2;
 - (void)logWithIdentifier:(id)arg1 pid:(int)arg2 date:(id)arg3 level:(int)arg4 topic:(id)arg5 text:(id)arg6 backtrace:(id)arg7;
+- (void)setAppenderDelegate:(id)arg1;
 
 @end

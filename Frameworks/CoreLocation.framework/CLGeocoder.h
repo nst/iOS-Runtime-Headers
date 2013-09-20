@@ -17,8 +17,6 @@
 - (void)_notifyPartialResult:(id)arg1;
 - (void)_notifyResult:(id)arg1 error:(id)arg2;
 - (void)_notifyResult:(id)arg1;
-- (id)_placemarkWithLocation:(id)arg1;
-- (id)_placemarkWithPlace:(id)arg1;
 - (void)_request:(id)arg1 didReturnError:(id)arg2 partialResultForLocation:(id)arg3;
 - (void)_request:(id)arg1 didReturnError:(id)arg2;
 - (void)_request:(id)arg1 didReturnResponse:(id)arg2;

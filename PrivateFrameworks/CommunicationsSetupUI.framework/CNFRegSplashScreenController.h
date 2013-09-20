@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class <CNFRegFirstRunDelegate>, CNFRegController, CNFRegLearnMoreButton, UIBarButtonItem;
+@class <CNFRegFirstRunDelegate>, CNFRegController, UIBarButtonItem, UIButton;
 
 @interface CNFRegSplashScreenController : PSViewController <CNFRegFirstRunExperience> {
     <CNFRegFirstRunDelegate> *_delegate;
-    CNFRegLearnMoreButton *_learnMoreButton;
+    UIButton *_learnMoreButton;
     CNFRegController *_regController;
 }
 
@@ -15,13 +15,9 @@
 @property(retain) UIBarButtonItem * customRightButton;
 @property <CNFRegFirstRunDelegate> * delegate;
 @property(retain) CNFRegController * regController;
-@property BOOL showSplash;
 
 - (void)_getStartedPressed:(id)arg1;
 - (void)_learnMorePressed:(id)arg1;
-- (id)_shadowLabelColor;
-- (id)_shadowedLabelWithFont:(id)arg1 text:(id)arg2;
-- (float)_startingYOffset;
 - (int)currentAppearanceStyle;
 - (id)customLeftButton;
 - (id)customRightButton;
@@ -36,7 +32,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setRegController:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (id)splashImage;
+- (id)userInteractionColor;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willBecomeActive;
 

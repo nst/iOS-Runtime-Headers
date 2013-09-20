@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSString;
+@class ICSDateValue, NSString;
 
 @interface ICSUserAddress : ICSProperty {
 }
@@ -12,6 +12,7 @@
 @property(retain) NSString * dir;
 @property(retain) NSString * email;
 @property int partstat;
+@property(retain) ICSDateValue * partstatModified;
 @property int role;
 @property BOOL rsvp;
 @property int scheduleagent;
@@ -47,6 +48,7 @@
 - (BOOL)isHTTPAddress;
 - (BOOL)isHTTPSAddress;
 - (int)partstat;
+- (id)partstatModified;
 - (int)role;
 - (BOOL)rsvp;
 - (int)scheduleagent;
@@ -57,6 +59,7 @@
 - (void)setDir:(id)arg1;
 - (void)setEmail:(id)arg1;
 - (void)setPartstat:(int)arg1;
+- (void)setPartstatModified:(id)arg1;
 - (void)setRole:(int)arg1;
 - (void)setRsvp:(BOOL)arg1;
 - (void)setScheduleagent:(int)arg1;

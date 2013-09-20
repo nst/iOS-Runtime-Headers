@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MailMessage;
+@class MFMailMessage;
 
 @interface _MFMailComposeAttachmentLoader : NSObject {
     id _content;
     BOOL _isDraft;
-    MailMessage *_message;
+    MFMailMessage *_message;
 }
 
 - (void)dealloc;

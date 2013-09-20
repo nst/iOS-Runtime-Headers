@@ -2,45 +2,83 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSString, NSURL, PLManagedAsset, UIImage;
+@class NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSString, NSURL, PLManagedAsset, UIImage;
 
-@interface PLCloudSharedAlbum : PLManagedAlbum <PLCloudSharedContainer> {
+@interface PLCloudSharedAlbum : PLManagedAlbum <PLCloudSharedAlbumProtocol> {
+    BOOL _deleteFromDBOnly;
 }
 
 @property(readonly) unsigned int approximateCount;
-@property(readonly) NSOrderedSet * assets;
+@property(retain) NSOrderedSet * assets;
 @property(readonly) unsigned int assetsCount;
+@property(readonly) BOOL canContributeToCloudSharedAlbum;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) BOOL canShowComments;
+@property(readonly) NSOrderedSet * cloudAlbumSubscriberRecords;
+@property(retain) NSDate * cloudCreationDate;
+@property(readonly) NSDate * cloudFirstRecentBatchDate;
+@property(retain) NSString * cloudGUID;
+@property(retain) NSDate * cloudLastContributionDate;
+@property(retain) NSDate * cloudLastInterestingChangeDate;
+@property(retain) NSDictionary * cloudMetadata;
+@property(retain) NSNumber * cloudMultipleContributorsEnabled;
+@property(retain) NSNumber * cloudMultipleContributorsEnabledLocal;
+@property BOOL cloudNotificationsEnabled;
+@property(retain) NSString * cloudOwnerEmail;
 @property(retain) NSNumber * cloudOwnerEmailKey;
+@property(retain) NSString * cloudOwnerFirstName;
+@property(retain) NSString * cloudOwnerFullName;
+@property(retain) NSString * cloudOwnerHashedPersonID;
+@property(retain) NSString * cloudOwnerLastName;
+@property(retain) NSString * cloudPersonID;
+@property(retain) NSNumber * cloudPublicURLEnabled;
+@property(retain) NSNumber * cloudPublicURLEnabledLocal;
 @property(retain) NSNumber * cloudRelationshipState;
 @property(retain) NSNumber * cloudRelationshipStateLocal;
-@property(readonly) unsigned int count;
+@property(readonly) int cloudRelationshipStateLocalValue;
+@property(readonly) int cloudRelationshipStateValue;
+@property(retain) NSDate * cloudSubscriptionDate;
+@property(readonly) NSDate * endDate;
 @property(readonly) NSURL * groupURL;
 @property(retain) NSNumber * hasUnseenContent;
 @property BOOL hasUnseenContentBoolValue;
 @property(retain) NSString * importSessionID;
+@property(retain) NSOrderedSet * invitationRecords;
 @property(readonly) BOOL isCameraAlbum;
 @property(readonly) BOOL isCloudSharedAlbum;
 @property(readonly) BOOL isEmpty;
 @property(readonly) BOOL isLibrary;
+@property(readonly) BOOL isMultipleContributorCloudSharedAlbum;
 @property(retain) NSNumber * isOwned;
 @property(readonly) BOOL isOwnedCloudSharedAlbum;
+@property(readonly) BOOL isPanoramasAlbum;
+@property(readonly) BOOL isPendingPhotoStreamAlbum;
 @property(readonly) BOOL isPhotoStreamAlbum;
+@property(readonly) BOOL isStandInAlbum;
+@property(readonly) BOOL isWallpaperAlbum;
 @property(retain) PLManagedAsset * keyAsset;
 @property(readonly) NSNumber * kind;
 @property(readonly) int kindValue;
+@property(readonly) NSArray * localizedLocationNames;
+@property(readonly) NSString * localizedSharedWithLabel;
 @property(readonly) NSString * localizedTitle;
 @property(readonly) NSMutableOrderedSet * mutableAssets;
 @property(readonly) NSString * name;
-@property unsigned int pendingItemsCount;
-@property unsigned int pendingItemsType;
+@property int pendingItemsCount;
+@property int pendingItemsType;
 @property(readonly) unsigned int photosCount;
 @property(readonly) UIImage * posterImage;
+@property(retain) NSString * publicURL;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(readonly) id sectioningComparator;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(retain) NSDictionary * slideshowSettings;
 @property(readonly) id sortingComparator;
+@property(readonly) NSDate * startDate;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) NSString * title;
+@property(retain) NSNumber * unseenAssetsCount;
+@property unsigned int unseenAssetsCountIntegerValue;
 @property(readonly) NSString * uuid;
 @property(readonly) unsigned int videosCount;
 
@@ -49,7 +87,7 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 
-- (id)_expectedKeyAsset;
+- (id)_expectedKeyAssets;
 - (id)_localizedRemoteOwnerAllowsEmail:(BOOL)arg1;
 - (id)activityViewController:(id)arg1 itemsForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 thumbnailForActivityType:(id)arg2;
@@ -57,6 +95,7 @@
 - (id)activityViewControllerSubject:(id)arg1;
 - (id)albumDirectoryPath;
 - (void)awakeFromInsert;
+- (BOOL)canContributeToCloudSharedAlbum;
 - (id)cloudAlbumSubscriberRecords;
 - (id)cloudFirstRecentBatchDate;
 - (id)cloudOwnerDisplayNameIncludingEmail:(BOOL)arg1 allowsEmail:(BOOL)arg2;
@@ -64,21 +103,26 @@
 - (int)cloudRelationshipStateLocalValue;
 - (int)cloudRelationshipStateValue;
 - (void)delete;
+- (void)deleteFromDatabaseOnly;
 - (void)getUnseenStartMarkerIndex:(unsigned int*)arg1 count:(unsigned int*)arg2 showsProgress:(BOOL*)arg3;
 - (BOOL)hasUnseenContentBoolValue;
+- (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
 - (id)localizedSharedByLabelAllowsEmail:(BOOL)arg1;
 - (id)localizedSharedWithLabel;
 - (void)persistRecoveryMetadata;
-- (void)publishBatchOfOriginalAssets:(id)arg1 withBatchCommentText:(id)arg2 isNewAlbum:(BOOL)arg3;
+- (void)prepareForDeletion;
+- (void)publishBatchOfOriginalAssets:(id)arg1 withBatchCommentText:(id)arg2 andTrimmedVideoPathInfo:(id)arg3 isNewAlbum:(BOOL)arg4;
 - (id)sectioningComparator;
 - (void)setCloudOwnerEmail:(id)arg1;
 - (void)setHasUnseenContentBoolValue:(BOOL)arg1;
-- (void)setUnseenAssetsCountIntegerValue:(int)arg1;
+- (void)setUnseenAssetsCountIntegerValue:(unsigned int)arg1;
 - (id)sortingComparator;
 - (id)titleForSectionStartingAtIndex:(unsigned int)arg1;
-- (int)unseenAssetsCountIntegerValue;
+- (unsigned int)unseenAssetsCountIntegerValue;
+- (void)updateCloudLastContributionDateWithDate:(id)arg1;
 - (void)updateCloudLastInterestingChangeDateWithDate:(id)arg1;
 - (void)userDeleteSubscriberRecord:(id)arg1;
+- (void)willSave;
 
 @end

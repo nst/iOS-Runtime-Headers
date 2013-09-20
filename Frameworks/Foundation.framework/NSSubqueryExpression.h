@@ -10,9 +10,12 @@
     NSExpression *_variableExpression;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (BOOL)_shouldUseParensWithDescription;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)allowEvaluation;
 - (id)collection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

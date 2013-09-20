@@ -2,28 +2,39 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSTimer, VKCamera, VKLayoutContext, VKScene, VKWorld;
+@class VKCamera, VKDispatch, VKLayoutContext, VKScene, VKTimer, VKWorld;
 
-@interface VKImageCanvas : VGLImageCanvas <VKWorldDelegate> {
+@interface VKImageCanvas : VGLImageCanvas <VKWorldDelegate, VKAnimationRunner> {
     VKCamera *_camera;
+    VKDispatch *_dispatch;
+    double _frameTimestamp;
     VKLayoutContext *_layoutContext;
-    NSTimer *_layoutTimer;
+    VKTimer *_layoutTimer;
+    BOOL _needsDisplay;
+    BOOL _needsLayout;
     VKScene *_scene;
+    BOOL _shouldDrawWhileLoading;
     VKWorld *_world;
 }
 
 @property(readonly) VKCamera * camera;
+@property(readonly) VKDispatch * dispatch;
 @property(readonly) VKWorld * world;
 
 + (Class)contextClass;
 
-- (void)_spinScene;
+- (void)_spinScene:(id)arg1;
+- (void)animationDidStop:(id)arg1;
 - (id)camera;
 - (void)cancelLoad;
 - (void)dealloc;
+- (id)dispatch;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 context:(id)arg3 homeQueue:(id)arg4;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 context:(id)arg3;
 - (void)loadScene;
-- (void)renderScene;
+- (void)renderScene:(id)arg1;
+- (void)runAnimation:(id)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)world;
 - (void)worldDisplayDidChange:(id)arg1;
 - (void)worldLayoutDidChange:(id)arg1;

@@ -12,8 +12,8 @@
 @property(readonly) UILabel * detailLabel3;
 @property(readonly) UILabel * textLabel3;
 
+- (void).cxx_destruct;
 - (void)_layoutSubviewsCore;
-- (void)dealloc;
 - (id)detailLabel3;
 - (void)layoutText:(id)arg1 andValue:(id)arg2;
 - (id)textLabel3;

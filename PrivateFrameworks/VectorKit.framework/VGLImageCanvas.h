@@ -16,6 +16,7 @@
     BOOL _canMakeImage;
     float _contentScale;
     } _glClearColor;
+    BOOL _recreateFramebuffer;
     } _size;
     VGLContext *_targetContext;
     VGLFramebuffer *_targetFramebuffer;
@@ -24,31 +25,39 @@
     BOOL _useStencilBuffer;
 }
 
-@property(readonly) float contentScale;
+@property float contentScale;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } glClearColor;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property struct CGSize { float x1; float x2; } size;
 @property(readonly) struct CGSize { float x1; float x2; } sizeInPixels;
 @property BOOL useDepthBuffer;
+@property BOOL useMultisampling;
 @property BOOL useStencilBuffer;
 @property(readonly) VGLContext * vglContext;
 
++ (void*)bitmapData:(unsigned int*)arg1 fromTexture:(id)arg2;
 + (Class)contextClass;
++ (struct CGImage { }*)newImageFromTargetTexture:(id)arg1;
 
+- (id).cxx_construct;
 - (void)_createFramebuffer;
 - (void)_destroyFramebuffer;
+- (void*)bitmapData:(unsigned int*)arg1;
 - (float)contentScale;
 - (void)dealloc;
 - (void)didDrawView;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })glClearColor;
-- (id)image;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 context:(id)arg3;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (struct CGImage { }*)newImage;
+- (void)setContentScale:(float)arg1;
 - (void)setGlClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setUseDepthBuffer:(BOOL)arg1;
+- (void)setUseMultisampling:(BOOL)arg1;
 - (void)setUseStencilBuffer:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (struct CGSize { float x1; float x2; })sizeInPixels;
 - (BOOL)useDepthBuffer;
+- (BOOL)useMultisampling;
 - (BOOL)useStencilBuffer;
 - (id)vglContext;
 - (void)willDrawView;

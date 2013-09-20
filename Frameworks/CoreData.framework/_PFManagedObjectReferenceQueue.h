@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initForContext:(id)arg1;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

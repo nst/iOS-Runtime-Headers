@@ -4,7 +4,7 @@
 
 @class NSURL;
 
-@interface SAFmfVisibilityView : SAAceView {
+@interface SAFmfVisibilityView : SAUISnippet {
 }
 
 @property(copy) NSURL * searchContext;

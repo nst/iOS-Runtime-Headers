@@ -11,12 +11,21 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (int)drivingSide;
+- (BOOL)hasDrivingSide;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithAttributes:(unsigned int)arg1;
+- (BOOL)isDrivable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFreeway;
+- (BOOL)isRailway;
 - (BOOL)isRamp;
 - (BOOL)isTunnel;
+- (BOOL)isWalkable;
+- (int)rampDirection;
+- (int)rampType;
+- (BOOL)shouldSuppress3DBuildingStrokes;
 - (void)sort;
 
 @end

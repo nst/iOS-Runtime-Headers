@@ -16,6 +16,8 @@
 
 @property(readonly) NSString * name;
 
++ (void)CAMLParserEndElement:(id)arg1 content:(id)arg2;
++ (void)CAMLParserStartElement:(id)arg1;
 + (id)functionWithName:(id)arg1;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
@@ -23,6 +25,7 @@
 - (BOOL)apply:(const double*)arg1 result:(double*)arg2 parameterFunction:(int (*)())arg3 context:(void*)arg4;
 - (BOOL)apply:(const double*)arg1 result:(double*)arg2;
 - (void)dealloc;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long)inputCount;

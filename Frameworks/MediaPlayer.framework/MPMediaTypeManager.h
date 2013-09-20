@@ -10,7 +10,7 @@
     NSString *_bundleID;
     NSString *_defaultsKey;
     BOOL _installed;
-    int _mediaType;
+    unsigned int _mediaType;
     NSString *_supportsMediaKey;
 }
 
@@ -19,17 +19,17 @@
 @property(readonly) NSString * bundleID;
 @property(readonly) NSString * defaultsKey;
 @property BOOL installed;
-@property(readonly) int mediaType;
+@property(readonly) unsigned int mediaType;
 @property(readonly) NSString * supportsMediaKey;
 
+- (void).cxx_destruct;
 - (id)activeAlert;
 - (id)alertLocalizationKey;
 - (id)bundleID;
-- (void)dealloc;
 - (id)defaultsKey;
-- (id)initWithMediaType:(int)arg1 bundleID:(id)arg2 supportsMediaKey:(id)arg3 defaultsKey:(id)arg4 alertLocalizationKey:(id)arg5;
+- (id)initWithMediaType:(unsigned int)arg1 bundleID:(id)arg2 supportsMediaKey:(id)arg3 defaultsKey:(id)arg4 alertLocalizationKey:(id)arg5;
 - (BOOL)installed;
-- (int)mediaType;
+- (unsigned int)mediaType;
 - (void)setActiveAlert:(id)arg1;
 - (void)setInstalled:(BOOL)arg1;
 - (id)supportsMediaKey;

@@ -12,8 +12,9 @@
 
 @property(getter=isDefaultApp) BOOL defaultApp;
 
++ (int)activityCategory;
+
 - (id)_activityImage;
-- (id)_beforeActivity;
 - (id)activityTitle;
 - (id)activityType;
 - (BOOL)canPerformWithActivityItems:(id)arg1;

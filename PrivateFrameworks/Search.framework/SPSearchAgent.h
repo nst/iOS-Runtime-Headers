@@ -7,12 +7,9 @@
 @interface SPSearchAgent : NSObject <SPDaemonQueryDelegate, MCProfileConnectionObserver> {
     SPDaemonQueryToken *_currentToken;
     NSObject<SPSearchAgentDelegate> *_delegate;
-    unsigned int _latestCurrentReplacementGroup;
-    unsigned int _latestCurrentSection;
     int _options;
     NSString *_prefixWithNoResults;
     BOOL _queryComplete;
-    unsigned int *_replacementGroupLengths;
     unsigned int _resultCount;
     NSArray *_searchDomains;
     BOOL _searchThroughAllowed;
@@ -27,6 +24,7 @@
 @property(readonly) unsigned int resultCount;
 @property(retain) NSArray * searchDomains;
 
+- (int)_indexOfCompatibleSection:(id)arg1;
 - (BOOL)_shouldIgnoreQuery:(id)arg1;
 - (void)addDeserializer:(id)arg1;
 - (void)addSections:(id)arg1;
@@ -36,7 +34,6 @@
 - (void)handleOptionsForNewSections:(id)arg1;
 - (BOOL)hasResults;
 - (id)init;
-- (id)initWithOptions:(int)arg1 andSearchDomains:(id)arg2;
 - (id)initWithOptions:(int)arg1;
 - (void)invalidate;
 - (int)options;
@@ -45,12 +42,12 @@
 - (id)queryString;
 - (void)removeSectionAtIndex:(unsigned int)arg1;
 - (unsigned int)resultCount;
+- (void)retrieveImageDataForResult:(id)arg1 inSection:(id)arg2 preferredSize:(struct CGSize { float x1; float x2; })arg3 completion:(id)arg4;
 - (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
 - (void)searchDaemonQueryCompleted:(id)arg1;
 - (id)searchDomains;
 - (id)sectionAtIndex:(unsigned int)arg1;
-- (BOOL)sectionAtIndexIsValid:(unsigned int)arg1;
 - (unsigned int)sectionCount;
 - (void)setDelegate:(id)arg1;
 - (void)setOptions:(int)arg1;

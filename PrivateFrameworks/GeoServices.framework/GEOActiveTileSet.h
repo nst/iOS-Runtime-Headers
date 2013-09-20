@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOActiveTileSet : PBCodable {
+@interface GEOActiveTileSet : PBCodable <NSCopying> {
     struct { 
         unsigned int timeToLiveSeconds : 1; 
         unsigned int multiTileURLUsesStatusCodes : 1; 
@@ -57,6 +57,7 @@
 - (void)clearSentinelTiles;
 - (void)clearSupportedLanguages;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataForGenericTileType:(int)arg1;
 - (void)dealloc;
 - (id)description;

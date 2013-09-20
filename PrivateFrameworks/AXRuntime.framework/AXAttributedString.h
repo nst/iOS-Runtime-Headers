@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
  */
 
-@interface AXAttributedString : NSString {
+@interface AXAttributedString : NSString <NSCopying> {
     struct __CFAttributedString { } *_string;
 }
 
@@ -11,6 +11,7 @@
 
 - (void)appendAXAttributedString:(id)arg1;
 - (void)appendString:(id)arg1;
+- (id)attributeValueForKey:(id)arg1;
 - (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)attributesAtIndex:(int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)axAttributedStringDescription;
@@ -21,6 +22,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)enumerateAttributesUsingBlock:(id)arg1;
 - (BOOL)hasAttribute:(id)arg1;
 - (id)initWithCFAttributedString:(struct __CFAttributedString { }*)arg1;
 - (id)initWithString:(id)arg1;

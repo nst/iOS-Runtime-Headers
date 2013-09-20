@@ -8,11 +8,13 @@
     struct { 
         unsigned int identifier : 1; 
         unsigned int flags : 1; 
+        unsigned int numberOfSummaryLines : 1; 
     NSString *_auxiliarySubtitle;
     NSString *_auxiliaryTitle;
     int _flags;
     } _has;
     unsigned long long _identifier;
+    unsigned int _numberOfSummaryLines;
     NSString *_subtitle;
     NSString *_summary;
     NSString *_title;
@@ -26,11 +28,13 @@
 @property(readonly) BOOL hasAuxiliaryTitle;
 @property BOOL hasFlags;
 @property BOOL hasIdentifier;
+@property BOOL hasNumberOfSummaryLines;
 @property(readonly) BOOL hasSubtitle;
 @property(readonly) BOOL hasSummary;
 @property(readonly) BOOL hasTitle;
 @property(readonly) BOOL hasUrl;
 @property unsigned long long identifier;
+@property unsigned int numberOfSummaryLines;
 @property(retain) NSString * subtitle;
 @property(retain) NSString * summary;
 @property(retain) NSString * title;
@@ -47,6 +51,7 @@
 - (BOOL)hasAuxiliaryTitle;
 - (BOOL)hasFlags;
 - (BOOL)hasIdentifier;
+- (BOOL)hasNumberOfSummaryLines;
 - (BOOL)hasSubtitle;
 - (BOOL)hasSummary;
 - (BOOL)hasTitle;
@@ -55,13 +60,16 @@
 - (unsigned long long)identifier;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEquivalentToResult:(id)arg1;
+- (unsigned int)numberOfSummaryLines;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAuxiliarySubtitle:(id)arg1;
 - (void)setAuxiliaryTitle:(id)arg1;
 - (void)setFlags:(int)arg1;
 - (void)setHasFlags:(BOOL)arg1;
 - (void)setHasIdentifier:(BOOL)arg1;
+- (void)setHasNumberOfSummaryLines:(BOOL)arg1;
 - (void)setIdentifier:(unsigned long long)arg1;
+- (void)setNumberOfSummaryLines:(unsigned int)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSummary:(id)arg1;
 - (void)setTitle:(id)arg1;

@@ -23,8 +23,8 @@
 - (void)linkRecentlyAddedPeople;
 - (BOOL)linkRecentlyAddedPeopleWithLimit:(int)arg1;
 - (void)makeInitialLinks;
-- (void)makeInitialLinksCountingOuterIterations:(int*)arg1;
-- (void)makeLinksForAddedPeople:(id)arg1 inInitialLinking:(BOOL)arg2 countingOuterIterations:(int*)arg3;
+- (void)makeInitialLinksCountingOuterIterations:(unsigned int*)arg1;
+- (void)makeLinksForAddedPeople:(id)arg1 inInitialLinking:(BOOL)arg2 countingOuterIterations:(unsigned int*)arg3;
 - (id)otherPeopleInArray:(id)arg1 matchingPerson:(void*)arg2;
 - (id)otherPeopleInDatabaseMatchingPerson:(void*)arg1 notIncludingPeople:(id)arg2;
 - (void)presortPeople:(id)arg1;

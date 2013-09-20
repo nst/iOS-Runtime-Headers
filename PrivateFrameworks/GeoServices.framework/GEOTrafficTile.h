@@ -4,7 +4,7 @@
 
 @class NSData, NSMutableArray;
 
-@interface GEOTrafficTile : PBCodable {
+@interface GEOTrafficTile : PBCodable <NSCopying> {
     NSMutableArray *_trafficIncidents;
     NSMutableArray *_trafficSegments;
     NSData *_vertices;
@@ -20,6 +20,7 @@
 - (void)clearTrafficIncidents;
 - (void)clearTrafficSegments;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct { int x1; int x2; }*)createUnpackedVerticesWithGutterSize:(int)arg1;
 - (void)dealloc;
 - (id)description;

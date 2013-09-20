@@ -2,8 +2,13 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
+@class NSDate;
+
 @interface EKAttendee : EKParticipant {
 }
+
+@property(readonly) NSDate * lastModifiedParticipationStatus;
+@property int pendingStatus;
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
@@ -16,6 +21,7 @@
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
+- (id)lastModifiedParticipationStatus;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)owner;
 - (int)participantRole;

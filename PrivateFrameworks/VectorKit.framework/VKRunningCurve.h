@@ -4,36 +4,36 @@
 
 @interface VKRunningCurve : NSObject {
     struct { 
-        struct { 
+        struct VKPoint { 
             double x; 
             double y; 
             double z; 
         } position; 
-        struct { 
+        struct Vec3Imp<double> { 
             double x; 
             double y; 
             double z; 
         } tangent; 
         BOOL tangentValid; 
     struct { 
-        struct { 
+        struct VKPoint { 
             double x; 
             double y; 
             double z; 
         } position; 
-        struct { 
+        struct Vec3Imp<double> { 
             double x; 
             double y; 
             double z; 
         } tangent; 
         BOOL tangentValid; 
     struct { 
-        struct { 
+        struct VKPoint { 
             double x; 
             double y; 
             double z; 
         } position; 
-        struct { 
+        struct Vec3Imp<double> { 
             double x; 
             double y; 
             double z; 
@@ -52,11 +52,11 @@
 }
 
 - (id).cxx_construct;
-- (void)appendPosition:(struct { double x1; double x2; double x3; })arg1 atTime:(double)arg2;
+- (void)appendPosition:(struct VKPoint { double x1; double x2; double x3; })arg1 atTime:(double)arg2;
 - (void)dealloc;
 - (BOOL)hasStateAtTime:(double)arg1;
 - (id)init;
 - (void)reset;
-- (struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; BOOL x3; })stateAtTime:(double)arg1;
+- (struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct Vec3Imp<double> { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; BOOL x3; })stateAtTime:(double)arg1;
 
 @end

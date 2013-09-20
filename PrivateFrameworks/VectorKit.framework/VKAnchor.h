@@ -5,16 +5,10 @@
 @class <VKAnchorDelegate>;
 
 @interface VKAnchor : NSObject {
-    struct { 
-        double x; 
-        double y; 
-        double z; 
-    struct { 
-        double latitude; 
-        double longitude; 
-    } _coordinate;
-    <VKAnchorDelegate> *_delegate;
-    } _mercatorPoint;
+    struct shared_ptr<vk::Anchor> { 
+        struct Anchor {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _anchor;
 }
 
 @property struct { double x1; double x2; } coordinate;
@@ -22,22 +16,23 @@
 @property(readonly) BOOL followsTerrain;
 @property(readonly) BOOL isGeocentric;
 @property(readonly) BOOL isMercator;
-@property struct { double x1; double x2; double x3; } mercatorPoint;
-@property(readonly) struct { double x1; double x2; double x3; } worldPoint;
+@property(readonly) struct VKPoint { double x1; double x2; double x3; } mercatorPoint;
+@property(readonly) struct VKPoint { double x1; double x2; double x3; } worldPoint;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (struct { double x1; double x2; })coordinate;
 - (id)delegate;
 - (BOOL)followsTerrain;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
-- (id)initWithMercatorPoint:(struct { double x1; double x2; double x3; })arg1;
+- (id)initWithAnchor:(struct shared_ptr<vk::Anchor> { struct Anchor {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (BOOL)isGeocentric;
 - (BOOL)isMercator;
-- (struct { double x1; double x2; double x3; })mercatorPoint;
+- (struct VKPoint { double x1; double x2; double x3; })mercatorPoint;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMercatorPoint:(struct { double x1; double x2; double x3; })arg1;
+- (void)setMercatorPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
 - (int)worldIndexWithContext:(id)arg1;
-- (struct { double x1; double x2; double x3; })worldPoint;
+- (struct VKPoint { double x1; double x2; double x3; })worldPoint;
 - (void)worldPointDidChange;
 
 @end

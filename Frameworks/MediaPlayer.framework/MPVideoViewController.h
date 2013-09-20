@@ -4,13 +4,12 @@
 
 @class MPAVController, MPAVItem, MPClosedCaptionDisplay, MPImageCache, MPImageCacheRequest, MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, MPVideoView, UIActivityIndicatorView, UIAlertView, UIColor, UIImage, UIView, UIView<MPVideoOverlay>, _UIHostedWindow;
 
-@interface MPVideoViewController : MPViewController <MPVideoControllerProtocol, MPSwipableViewDelegate, MPVideoTransferViewController, UIModalViewDelegate> {
+@interface MPVideoViewController : MPViewController <MPVideoControllerProtocol, MPSwipableViewDelegate, UIModalViewDelegate> {
     unsigned int _tvOutEnabled : 1;
     unsigned int _allowsTVOutInBackground : 1;
     unsigned int _canAnimateControlsOverlay : 1;
     unsigned int _canShowControlsOverlay : 1;
     unsigned int _disableControlsAutohide : 1;
-    unsigned int _ownsStatusBar : 1;
     unsigned int _playAfterPop : 1;
     unsigned int _scheduledLoadingIndicator : 1;
     unsigned int _displayPlaybackErrorAlerts : 1;
@@ -50,8 +49,8 @@
 @property int artworkImageStyle;
 @property(readonly) UIView * artworkImageView;
 @property BOOL attemptAutoPlayWhenControlsHidden;
+@property BOOL autoPlayWhenLikelyToKeepUp;
 @property(readonly) UIView * backgroundView;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } backgroundViewSnapshotFrame;
 @property(retain) UIColor * backstopColor;
 @property BOOL canAnimateControlsOverlay;
 @property(readonly) BOOL canChangeScaleMode;
@@ -67,12 +66,10 @@
 @property(getter=isFullscreen) BOOL fullscreen;
 @property(readonly) _UIHostedWindow * hostedWindow;
 @property(readonly) unsigned int hostedWindowContextID;
-@property BOOL inhibitOverlay;
 @property BOOL inlinePlaybackUsesTVOut;
 @property(retain) MPAVItem * item;
 @property unsigned int itemTypeOverride;
 @property int orientation;
-@property BOOL ownsStatusBar;
 @property(retain) MPAVController * player;
 @property(retain) UIImage * posterImage;
 @property unsigned int scaleMode;
@@ -87,9 +84,11 @@
 @property(readonly) BOOL viewControllerWillRequestExit;
 @property unsigned long long visibleParts;
 
++ (int)_activityIndicatorViewStyle;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateArtworkImageViewFrameInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (BOOL)supportsFullscreenDisplay;
 
+- (void).cxx_destruct;
 - (BOOL)TVOutEnabled;
 - (BOOL)_canEnableAirPlayVideoRoutes;
 - (void)_cancelArtworkImageRequest;
@@ -133,9 +132,9 @@
 - (int)artworkImageStyle;
 - (id)artworkImageView;
 - (BOOL)attemptAutoPlayWhenControlsHidden;
+- (BOOL)autoPlayWhenLikelyToKeepUp;
 - (id)backgroundView;
 - (void)backgroundViewDidUpdate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundViewSnapshotFrame;
 - (id)backstopColor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateArtworkImageViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateFullScreenArtworkImageViewFrame;
@@ -161,6 +160,7 @@
 - (void)displayVideoViewOnScreen;
 - (void)displayVideoViewOnTV;
 - (void)enableAirPlayVideoRoutesIfNecessary;
+- (void)exitFullscreen;
 - (void)handleScaleModeChange;
 - (id)hostedWindow;
 - (unsigned int)hostedWindowContextID;
@@ -168,7 +168,6 @@
 - (BOOL)inlinePlaybackUsesTVOut;
 - (BOOL)isFullscreen;
 - (BOOL)isFullscreenForLayoutPurposes;
-- (BOOL)isStatusBarHidden;
 - (BOOL)isTransitioningFromFullscreen;
 - (BOOL)isTransitioningToFullscreen;
 - (unsigned int)itemTypeOverride;
@@ -177,7 +176,6 @@
 - (id)newArtworkImageView;
 - (void)noteIgnoredChangeTypes:(unsigned int)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)ownsStatusBar;
 - (id)posterImage;
 - (void)prepareToDisplayVideo;
 - (void)registerForPlayerNotifications;
@@ -190,6 +188,7 @@
 - (void)setAlwaysAllowHidingControlsOverlay:(BOOL)arg1;
 - (void)setArtworkImageStyle:(int)arg1;
 - (void)setAttemptAutoPlayWhenControlsHidden:(BOOL)arg1;
+- (void)setAutoPlayWhenLikelyToKeepUp:(BOOL)arg1;
 - (void)setBackstopColor:(id)arg1;
 - (void)setCanAnimateControlsOverlay:(BOOL)arg1;
 - (void)setCanShowControlsOverlay:(BOOL)arg1;
@@ -225,7 +224,6 @@
 - (BOOL)showArtworkInImageView;
 - (void)showChaptersController;
 - (void)showChaptersControllerAndFadeViews:(id)arg1;
-- (int)statusBarStyle;
 - (void)tearDownTVOutWindow;
 - (void)toggleScaleMode:(BOOL)arg1;
 - (void)unregisterForPlayerNotifications;

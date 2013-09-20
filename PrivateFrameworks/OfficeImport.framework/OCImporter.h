@@ -2,28 +2,33 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CPImportTracing, NSData, NSURL, OCDReader;
+@class CPImportTracing, NSData, NSURL, OCDReader, TSUProgressContext;
 
 @interface OCImporter : OCMapper {
     NSData *mData;
+    TSUProgressContext *mProgressContext;
     OCDReader *mReader;
     CPImportTracing *mTracing;
     BOOL mTryAlternateReader;
     NSURL *mURL;
 }
 
+@property(retain) TSUProgressContext * progressContext;
 @property(readonly) CPImportTracing * tracing;
 
 + (void)initialize;
 
 - (void)dealloc;
+- (id)displayName;
 - (id)filename;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isDocumentEncryptedUnsupportedVersion:(BOOL*)arg1 errorMessage:(id*)arg2;
 - (BOOL)isDocumentEncryptedUnsupportedVersionHelper:(BOOL*)arg1 errorMessage:(id*)arg2 readError:(BOOL*)arg3;
 - (BOOL)isXML;
+- (id)progressContext;
 - (BOOL)setPassphrase:(id)arg1;
+- (void)setProgressContext:(id)arg1;
 - (void)setURL:(id)arg1;
 - (BOOL)start;
 - (id)tracing;

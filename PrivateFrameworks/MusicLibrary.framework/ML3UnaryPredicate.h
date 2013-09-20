@@ -14,13 +14,14 @@
 
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;
-- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
+- (id)databaseStatementParameters;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPredicate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicate;
+- (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (void)setPredicate:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class GEOUser, NSString;
 
-@interface GEOReview : PBCodable {
+@interface GEOReview : PBCodable <NSCopying> {
     struct { 
         unsigned int reviewTime : 1; 
         unsigned int score : 1; 
@@ -28,6 +28,7 @@
 @property(retain) NSString * uid;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -14,6 +14,7 @@
             struct __CFString {} *personID; 
             struct __CFString {} *authToken; 
             struct __CFDictionary {} *deviceInfo; 
+            struct __CFDictionary {} *clientHeadersRef; 
             double connectionTimeout; 
             int (*__didReceiveDataCallback)(); 
             int (*__didFinishCallback)(); 

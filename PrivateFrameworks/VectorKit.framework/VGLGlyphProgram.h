@@ -4,20 +4,26 @@
 
 @interface VGLGlyphProgram : VGLProgram {
     int _channel;
+    float _fadeTime;
     int _textureSampler;
     int _uChannel;
+    int _uFadeTime;
     int _uTextureSampler;
 }
 
 @property int channel;
+@property float fadeTime;
 @property int textureSampler;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
 - (int)channel;
-- (id)init;
+- (float)fadeTime;
 - (void)setChannel:(int)arg1;
+- (void)setFadeTime:(float)arg1;
 - (void)setTextureSampler:(int)arg1;
+- (void)setup;
 - (int)textureSampler;
 
 @end

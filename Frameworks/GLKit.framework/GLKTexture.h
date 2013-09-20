@@ -8,7 +8,7 @@
     unsigned int GLTextureName;
     struct CGImageBlockSet { } *_blockSet;
     struct __CFData { } *_cfData;
-    unsigned int _dataCategory;
+    int _dataCategory;
     BOOL _hasPremultipliedAlpha;
     unsigned int _height;
     unsigned int _index;
@@ -39,7 +39,7 @@
     unsigned int numMipMapLevels;
     unsigned int orientation;
     BOOL reOrient;
-    unsigned int texelFormat;
+    int texelFormat;
     unsigned int textureTarget;
     unsigned int type;
 }
@@ -47,7 +47,7 @@
 @property unsigned int GLTextureName;
 @property unsigned int bindTarget;
 @property unsigned int bitsPerPixel;
-@property unsigned int dataCategory;
+@property int dataCategory;
 @property unsigned int format;
 @property BOOL hasAlpha;
 @property(readonly) BOOL hasPremultipliedAlpha;
@@ -68,7 +68,7 @@
 @property unsigned int orientation;
 @property BOOL reOrient;
 @property unsigned int rowBytes;
-@property unsigned int texelFormat;
+@property int texelFormat;
 @property unsigned int textureTarget;
 @property unsigned int type;
 @property unsigned int width;
@@ -79,7 +79,7 @@
 - (unsigned int)bindTarget;
 - (unsigned int)bitsPerPixel;
 - (BOOL)canHonorSRGBrequest;
-- (unsigned int)dataCategory;
+- (int)dataCategory;
 - (void)dealloc;
 - (BOOL)decodeCGImage:(struct CGImage { }*)arg1;
 - (BOOL)decodeCGImageDataProvider:(struct CGImage { }*)arg1;
@@ -117,7 +117,7 @@
 - (unsigned int)rowBytes;
 - (void)setBindTarget:(unsigned int)arg1;
 - (void)setBitsPerPixel:(unsigned int)arg1;
-- (void)setDataCategory:(unsigned int)arg1;
+- (void)setDataCategory:(int)arg1;
 - (void)setFormat:(unsigned int)arg1;
 - (void)setGLTextureName:(unsigned int)arg1;
 - (void)setHasAlpha:(BOOL)arg1;
@@ -137,13 +137,13 @@
 - (void)setOrientation:(unsigned int)arg1;
 - (void)setReOrient:(BOOL)arg1;
 - (void)setRowBytes:(unsigned int)arg1;
-- (void)setTexelFormat:(unsigned int)arg1;
+- (void)setTexelFormat:(int)arg1;
 - (void)setTextureTarget:(unsigned int)arg1;
 - (void)setType:(unsigned int)arg1;
 - (void)setWidth:(unsigned int)arg1;
 - (BOOL)shouldApplyPremultiplication;
 - (BOOL)shouldApplyReorientToGL;
-- (unsigned int)texelFormat;
+- (int)texelFormat;
 - (unsigned int)textureTarget;
 - (unsigned int)type;
 - (void)updateRequestedOperationsFromOptions:(id)arg1;

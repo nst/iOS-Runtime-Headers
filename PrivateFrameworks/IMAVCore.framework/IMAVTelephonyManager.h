@@ -6,11 +6,13 @@
 
 @interface IMAVTelephonyManager : NSObject {
     CTCallCenter *_callCenter;
+    struct __CFUUID { } *_ctAudioToken;
     struct __CTServerConnection { } *_ctServerConnection;
     struct __CFMachPort { } *_ctServerMachPort;
-    struct __CFUUID { } *_ctToken;
+    struct __CFUUID { } *_ctVideoToken;
     NSMutableDictionary *_currentCallDictionary;
-    BOOL _isDesignatedServiceProvider;
+    BOOL _isDesignatedAudioServiceProvider;
+    BOOL _isDesignatedVideoServiceProvider;
 }
 
 @property(readonly) unsigned int callState;
@@ -31,6 +33,7 @@
 - (void)_handleCallEvent:(id)arg1;
 - (void)_hangUpCall:(struct __CTCall { }*)arg1;
 - (BOOL)_isOnCallToID:(id)arg1;
+- (void)_notifyMissedCallForInviteFromID:(id)arg1 isVideo:(BOOL)arg2;
 - (BOOL)_reconnectCTServerConnectionIfNecessary;
 - (BOOL)_registerCTRequestService;
 - (void)_setCallRef:(struct __CTCall { }*)arg1 forChat:(id)arg2;

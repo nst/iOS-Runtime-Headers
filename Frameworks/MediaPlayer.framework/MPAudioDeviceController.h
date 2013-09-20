@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class BKSApplicationStateMonitor, NSArray, NSDictionary, NSMutableArray, NSString;
+@class NSArray, NSDictionary, NSMutableArray, NSString;
 
-@interface MPAudioDeviceController : NSObject <UIAlertViewDelegate> {
-    BKSApplicationStateMonitor *_applicationMonitor;
+@interface MPAudioDeviceController : NSObject {
     NSString *_category;
     id _delegate;
     BOOL _determiningPickableRoutes;
@@ -15,7 +14,7 @@
     NSDictionary *_pickedRoute;
     BOOL _pickedRouteHasVolumeControl;
     BOOL _pickedRouteHasVolumeControlIsValid;
-    int _retainCount;
+    BOOL _scheduledSendAudioRoutesDidChange;
 }
 
 @property id delegate;
@@ -24,16 +23,14 @@
 + (BOOL)routeDiscoveryEnabled;
 + (void)setRouteDiscoveryEnabled:(BOOL)arg1;
 
+- (void).cxx_destruct;
 - (void)_activeAudioRouteDidChange:(id)arg1;
-- (BOOL)_isDeallocating;
-- (void)_mediaServerDied;
-- (BOOL)_pickRoute:(id)arg1 withPassword:(id)arg2;
-- (BOOL)_pickRoute:(id)arg1;
+- (void)_mediaServerDiedNotification:(id)arg1;
 - (id)_pickableRoutes;
 - (void)_pickableRoutesChangedNotification:(id)arg1;
 - (id)_pickedRoute;
 - (void)_portStatusDidChangeNotification:(id)arg1;
-- (void)_registerForAVControllerNotifications;
+- (void)_registerNotifications;
 - (void)_routeDiscoveryDidEndNotification:(id)arg1;
 - (BOOL)_routeIsDisplayPort:(id)arg1;
 - (BOOL)_routeIsHandset:(id)arg1;
@@ -42,9 +39,8 @@
 - (BOOL)_routeIsSpeaker:(id)arg1;
 - (BOOL)_routeIsWireless:(id)arg1;
 - (void)_scheduleSendDelegateAudioRoutesChanged;
-- (void)_sendDelegateAudioRoutesChanged;
 - (void)_sendFakeRouteChange;
-- (BOOL)_tryRetain;
+- (void)_unregisterNotifications;
 - (BOOL)airtunesRouteIsPicked;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)clearCachedRoutes;
@@ -53,6 +49,7 @@
 - (void)determinePickableRoutesWithCompletionHandler:(id)arg1;
 - (BOOL)handsetRouteIsPicked;
 - (int)indexOfPickedRoute;
+- (int)indexOfRouteWithName:(id)arg1;
 - (id)init;
 - (BOOL)isPickedRouteDistinctFromRoute:(id)arg1;
 - (void)logCurrentRoutes;
@@ -60,15 +57,14 @@
 - (unsigned int)numberOfAudioRoutes;
 - (BOOL)pickBestDeviceRoute;
 - (BOOL)pickHandsetRoute;
+- (BOOL)pickRoute:(id)arg1 withPassword:(id)arg2;
+- (BOOL)pickRoute:(id)arg1;
 - (BOOL)pickRouteAtIndex:(unsigned int)arg1 withPassword:(id)arg2;
 - (BOOL)pickRouteAtIndex:(unsigned int)arg1;
 - (BOOL)pickSpeakerRoute;
 - (id)pickedRouteDescription;
 - (BOOL)receiverRouteIsPicked;
-- (oneway void)release;
 - (void)restorePickedRoute;
-- (id)retain;
-- (unsigned int)retainCount;
 - (id)routeDescriptionAtIndex:(unsigned int)arg1;
 - (BOOL)routeDiscoveryEnabled;
 - (id)routeNameAtIndex:(unsigned int)arg1 isPicked:(BOOL*)arg2;

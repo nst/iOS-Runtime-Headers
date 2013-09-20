@@ -5,6 +5,8 @@
 @class NSDictionary;
 
 @interface AVPixelBufferAttributesVideoOutputSettings : AVVideoOutputSettings <AVDecodedVideoSettingsForFig> {
+    NSDictionary *_VTCleanApertureDictionary;
+    NSDictionary *_VTPixelAspectRatioDictionary;
 }
 
 @property(readonly) NSDictionary * pixelBufferAttributes;
@@ -13,10 +15,13 @@
 + (id)eligibleOutputSettingsDictionaryKeys;
 
 - (BOOL)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
+- (id)cleanApertureDictionary;
+- (void)dealloc;
 - (int)height;
 - (id)initWithPixelBufferAttributes:(id)arg1 exceptionReason:(id*)arg2;
 - (id)initWithTrustedPixelBufferAttributes:(id)arg1;
 - (BOOL)isCodecAvailableOnCurrentSystem;
+- (id)pixelAspectRatioDictionary;
 - (id)pixelBufferAttributes;
 - (int)width;
 - (BOOL)willYieldCompressedSamples;

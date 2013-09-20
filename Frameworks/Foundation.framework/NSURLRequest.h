@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLRequestInternal;
+@class GKFairPlaySAPSession, NSURLRequestInternal;
 
-@interface NSURLRequest : NSObject <NSCoding, NSCopying, NSMutableCopying> {
+@interface NSURLRequest : NSObject <NSSecureCoding, NSCopying, NSMutableCopying> {
     NSURLRequestInternal *_internal;
 }
 
-@property(readonly) BOOL HS_isCancelled;
+@property(retain) GKFairPlaySAPSession * SAPSession;
 
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
@@ -19,12 +19,12 @@
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setDefaultTimeoutInterval:(double)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)DARequestByApplyingStorageSession:(struct __CFURLStorageSession { }*)arg1;
-- (void)HS_cancel;
-- (BOOL)HS_isCancelled;
 - (id)HTTPBody;
 - (id)HTTPBodyStream;
+- (id)HTTPBodyString;
 - (id)HTTPContentType;
 - (id)HTTPExtraCookies;
 - (id)HTTPMethod;
@@ -32,6 +32,7 @@
 - (BOOL)HTTPShouldHandleCookies;
 - (BOOL)HTTPShouldUsePipelining;
 - (id)HTTPUserAgent;
+- (id)SAPSession;
 - (id)URL;
 - (struct _CFURLRequest { }*)_CFURLRequest;
 - (BOOL)_URLHasScheme:(id)arg1;
@@ -64,6 +65,7 @@
 - (id)mainDocumentURL;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)networkServiceType;
+- (void)setSAPSession:(id)arg1;
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
 

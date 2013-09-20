@@ -10,6 +10,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)_init;
 - (id)_prefs;
 - (void)_update:(id)arg1;
 - (Class)classForCoder;
@@ -18,7 +19,6 @@
 - (id)description;
 - (id)displayNameForKey:(id)arg1 value:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocaleIdentifier:(id)arg1;
 - (id)objectForKey:(id)arg1;

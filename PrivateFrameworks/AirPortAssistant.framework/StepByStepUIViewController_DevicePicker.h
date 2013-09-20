@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class AnimatedPickerView, NSArray, NSDictionary, NSString, PoppablePickerViewController, RecommendationActionController, UIPopoverController;
+@class NSArray, NSDictionary, NSString, RecommendationActionController, UIPopoverController;
 
-@interface StepByStepUIViewController_DevicePicker : StepByStepUIViewController <UIPickerViewDataSource, UIPickerViewDelegate, TableViewManagerDelegate> {
-    AnimatedPickerView *_networkPickerView;
+@interface StepByStepUIViewController_DevicePicker : StepByStepUIViewController <TableViewManagerDelegate> {
     UIPopoverController *_popover;
-    PoppablePickerViewController *_poppablePickerViewController;
     NSDictionary *_selectedDevice;
     BOOL _showSingleBaseTopo;
     NSDictionary *_sourceBase;
@@ -15,6 +13,7 @@
     NSDictionary *_targetBase;
     RecommendationActionController *actionController;
     NSString *connectionMedium;
+    BOOL showFullList;
     NSArray *sortedDevices;
 }
 
@@ -24,9 +23,8 @@
 
 - (id)actionController;
 - (id)connectionMedium;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)pickerContent;
 - (void)setActionController:(id)arg1;
 - (void)setConnectionMedium:(id)arg1;
 - (void)setSortedDevices:(id)arg1;

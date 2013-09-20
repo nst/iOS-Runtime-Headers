@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, <CoreDAVTaskManager>, CoreDAVErrorItem, CoreDAVRequestLogger, NSData, NSDate, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableDictionary, NSURL, NSURLConnection, NSURLRequest;
+@class <CoreDAVAccountInfoProvider>, <CoreDAVResponseBodyParser>, <CoreDAVTaskDelegate>, <CoreDAVTaskManager>, CoreDAVErrorItem, CoreDAVRequestLogger, NSData, NSDate, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableDictionary, NSString, NSURL, NSURLConnection, NSURLRequest;
 
 @interface CoreDAVTask : NSObject <CoreDAVSubmittable> {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
@@ -23,6 +23,7 @@
     BOOL _didFinishLoading;
     BOOL _didReceiveData;
     BOOL _didReceiveResponse;
+    BOOL _didRetryWithClientToken;
     BOOL _didSendRequest;
     NSError *_error;
     BOOL _everTriedTokenAuth;
@@ -45,9 +46,11 @@
     <CoreDAVResponseBodyParser> *_responseBodyParser;
     id _responseProgressBlock;
     int _responseStatusCode;
+    BOOL _shouldRetryWithClientToken;
     <CoreDAVTaskManager> *_taskManager;
     double _timeoutInterval;
     unsigned int _totalBytesReceived;
+    NSString *_uniqueID;
     NSURL *_url;
 }
 
@@ -76,10 +79,13 @@
 - (id)_applyAuthenticationChain:(struct __CFArray { }*)arg1 toRequest:(id)arg2;
 - (id)_applyStorageSession:(struct __CFURLStorageSession { }*)arg1 toRequest:(id)arg2;
 - (id)_compressBodyData:(id)arg1;
+- (id)_connectionForLogging;
 - (id)_createBodyData;
 - (void)_failImmediately;
 - (void)_handleBadPasswordResponse;
 - (BOOL)_includeGeneralHeaders;
+- (id)_requestForLogging;
+- (BOOL)_shouldHandleStatusCode:(int)arg1;
 - (id)accountInfoProvider;
 - (id)additionalHeaderValues;
 - (BOOL)allowAutomaticRedirects;
@@ -98,6 +104,7 @@
 - (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (void*)context;
 - (id)copyDefaultParserForContentType:(id)arg1;
+- (id)credentialForOAuthChallenge:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (int)depth;
@@ -105,6 +112,7 @@
 - (id)error;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (void)finishEarlyWithError:(id)arg1;
+- (void)handleWebLoginRequestWithCompletionBlock:(id)arg1;
 - (id)httpMethod;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isFinished;

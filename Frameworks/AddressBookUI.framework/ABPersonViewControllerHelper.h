@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABCardContentProvider>, <ABPersonEditDelegate>, <ABPersonViewControllerPrivateDelegate>, <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABDatePickerViewController, ABMultiCellContentView_RelatedName, ABPeoplePickerNavigationController, ABPersonTableView, ABPersonTableViewDataSource, ABPersonTableViewLinkingDelegate, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIPopoverController, UITableView, UIView, UIViewController;
+@class <ABCardContentProvider>, <ABPersonEditDelegate>, <ABPersonViewControllerPrivateDelegate>, <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABDatePickerViewController, ABMultiCellContentView_RelatedName, ABPeoplePickerNavigationController, ABPersonTableView, ABPersonTableViewDataSource, ABPersonTableViewLinkingDelegate, ABUIPerson, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIPopoverController, UITableView, UIView, UIViewController;
 
 @interface ABPersonViewControllerHelper : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonTableViewDataSourceDelegate, ABPickerViewControllerDismissDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, ABPopoverRepresentDelegate, ABPersonEditDelegate, ABPersonViewControllerDelegate, UIScrollViewDelegate, UIViewControllerRestoration> {
     id _actionSheetDelegate;
@@ -21,7 +21,7 @@
     id _deletionDelegate;
     BOOL _disablePopoverUpdates;
     NSArray *_displayedPeople;
-    void *_displayedPerson;
+    ABUIPerson *_displayedPerson;
     struct __CFArray { } *_displayedProperties;
     <ABPersonEditDelegate> *_editDelegate;
     int _favoritesListChangeNotificationCount;
@@ -48,7 +48,6 @@
     BOOL _willPresentDatePickerViewController;
 }
 
-@property(retain) id activeDialog;
 @property(copy) NSString * addToPersonButtonTitle;
 @property void* addressBook;
 @property BOOL allowsAddingToAddressBook;
@@ -56,10 +55,9 @@
 @property BOOL automaticallySetEditing;
 @property(readonly) UITableView * controllerTableView;
 @property ABPersonTableViewDataSource * dataSource;
-@property(retain) ABDatePickerViewController * datePickerViewController;
 @property BOOL disablePopoverUpdates;
 @property(readonly) NSArray * displayedPeople;
-@property void* displayedPerson;
+@property(retain) ABUIPerson * displayedPerson;
 @property(copy) NSArray * displayedProperties;
 @property <ABPersonEditDelegate> * editDelegate;
 @property(readonly) void* existingAddressBook;
@@ -76,18 +74,19 @@
 @property(retain) <ABStyleProvider> * styleProvider;
 @property(readonly) <ABUnknownPersonViewControllerDelegate> * unknownPersonViewDelegate;
 @property(readonly) UIViewController * viewController;
-@property(readonly) UIView * viewForActionSheet;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
+- (void)_addProperties:(id)arg1 toPerson:(id)arg2;
 - (void)_attemptSave;
 - (id)_chatURLWithPropertyValue:(id)arg1;
 - (void)_conferencingAvailabilityChanged:(id)arg1;
 - (void)_datePickerInputViewDismissAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_dismissDatePickerInputViewAnimated:(BOOL)arg1;
 - (void)_favoritesListChanged:(id)arg1;
+- (void)_mergeIntoDisplayedPerson:(void*)arg1;
 - (id)_newContactViewControllerForAddToContacts;
-- (void*)_personToUseForAddressBook;
+- (id)_personToUseForAddressBook;
 - (id)_preparePeoplePicker;
 - (void)_presentDatePickerViewControllerAsInputView:(id)arg1 andScrollToIndexPath:(id)arg2;
 - (void)_presentPeoplePickerNavigationController:(id)arg1 fromView:(id)arg2 inPopover:(BOOL)arg3;
@@ -101,7 +100,6 @@
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)ab_updatePopoverSize;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (id)activeDialog;
 - (id)addToPersonButtonTitle;
 - (void)addUnknownPersonActionsIfNeeded;
 - (void*)addressBook;
@@ -112,19 +110,18 @@
 - (void)applicationWillSuspend;
 - (BOOL)automaticallySetEditing;
 - (void)client:(id)arg1 didDismissActionSheet:(id)arg2;
-- (void)conference:(id)arg1 person:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (void)conference:(id)arg1 person:(id)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)contentSwitchingTabsTapped:(id)arg1;
 - (id)controllerTableView;
 - (BOOL)copyInsertValue:(id*)arg1 property:(int*)arg2 forPerson:(void*)arg3;
 - (id)dataSource;
-- (id)datePickerViewController;
 - (void)dealloc;
 - (void)deleteDialog:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)didDismissModalViewController;
 - (BOOL)disablePopoverUpdates;
 - (void)dismissPickerViewController:(id)arg1;
 - (id)displayedPeople;
-- (void*)displayedPerson;
+- (id)displayedPerson;
 - (id)displayedProperties;
 - (id)editDelegate;
 - (void*)existingAddressBook;
@@ -136,18 +133,17 @@
 - (BOOL)isPresentingDatePickerViewControllerForPersonTableViewDataSource:(id)arg1;
 - (BOOL)isReadonly;
 - (id)linkingDelegate;
-- (void)loadUnknownViewWithPerson:(void*)arg1 allowActions:(BOOL)arg2;
-- (void)loadViewWithPerson:(void*)arg1 allowDeletion:(BOOL)arg2 allowActions:(BOOL)arg3;
+- (void)loadUnknownViewWithPerson:(id)arg1 allowActions:(BOOL)arg2;
+- (void)loadViewWithPerson:(id)arg1 allowDeletion:(BOOL)arg2 allowActions:(BOOL)arg3;
 - (BOOL)makeFirstFieldBecomeFirstResponder;
-- (void)nameUpdatedForPerson:(void*)arg1;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2 informDelegate:(BOOL)arg3;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (id)newPersonViewDelegate;
 - (void)notifyScrollViewDidLoad;
 - (void)openSocialProfile:(id)arg1;
 - (void)peoplePickerNavigationController:(id)arg1 insertEditorDidConfirm:(BOOL)arg2 forPerson:(void*)arg3;
-- (void)peoplePickerNavigationController:(id)arg1 requestedLinkForPerson:(void*)arg2;
-- (void)peoplePickerNavigationController:(id)arg1 setRelatedPerson:(void*)arg2;
+- (void)peoplePickerNavigationController:(id)arg1 requestedLinkForPerson:(id)arg2;
+- (void)peoplePickerNavigationController:(id)arg1 setRelatedPerson:(id)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
@@ -163,7 +159,7 @@
 - (void)performWeiboActionForPropertyValue:(id)arg1 cell:(id)arg2;
 - (id)personContainerView;
 - (void)personTableViewDataSource:(id)arg1 addNonScrollableHeaderView:(id)arg2 animated:(BOOL)arg3;
-- (void)personTableViewDataSource:(id)arg1 conference:(id)arg2 person:(void*)arg3 property:(int)arg4 identifier:(int)arg5;
+- (void)personTableViewDataSource:(id)arg1 conference:(id)arg2 person:(id)arg3 property:(int)arg4 identifier:(int)arg5;
 - (void)personTableViewDataSource:(id)arg1 didBeginEditingProperty:(int)arg2;
 - (void)personTableViewDataSource:(id)arg1 didDismissActionSheet:(id)arg2;
 - (void)personTableViewDataSource:(id)arg1 didFinishEditingProperty:(int)arg2;
@@ -205,7 +201,7 @@
 - (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
 - (id)popoverViewInCellIndexPath;
 - (void)preferredPersonDidChangeToPerson:(void*)arg1;
-- (id)prepareViewWithPerson:(void*)arg1;
+- (id)prepareViewWithPerson:(id)arg1;
 - (void)presentAddToContactsSheetIfNeeded:(id)arg1;
 - (void)presentLinkingPeoplePickerForPersonTableViewDataSource:(id)arg1;
 - (void)presentModalViewController:(id)arg1;
@@ -234,7 +230,7 @@
 - (void)setDatePickerViewController:(id)arg1;
 - (void)setDisablePopoverUpdates:(BOOL)arg1;
 - (void)setDisplayedPeople:(id)arg1 forceReload:(BOOL)arg2;
-- (void)setDisplayedPerson:(void*)arg1;
+- (void)setDisplayedPerson:(id)arg1;
 - (void)setDisplayedProperties:(id)arg1;
 - (void)setEditDelegate:(id)arg1;
 - (void)setIsLocation:(BOOL)arg1;
@@ -243,7 +239,6 @@
 - (void)setPopoverViewInCellIndexPath:(id)arg1;
 - (void)setSavesNewContactOnSuspend:(BOOL)arg1;
 - (void)setShowsPeoplePickerCancelButton:(BOOL)arg1;
-- (void)setStringValue:(id)arg1 forProperty:(int)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (BOOL)shouldAnimateDatePickerInputView;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;

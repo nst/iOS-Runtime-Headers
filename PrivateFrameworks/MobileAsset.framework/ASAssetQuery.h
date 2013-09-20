@@ -6,12 +6,14 @@
 
 @interface ASAssetQuery : NSObject {
     NSString *_assetType;
+    double _networkTimeout;
     NSPredicate *_predicate;
     BOOL _queriesLocalAssetInformationOnly;
     NSArray *_results;
 }
 
 @property(copy) NSString * assetType;
+@property double networkTimeout;
 @property(retain) NSPredicate * predicate;
 @property BOOL queriesLocalAssetInformationOnly;
 @property(retain) NSArray * results;
@@ -21,11 +23,13 @@
 - (id)assetType;
 - (void)dealloc;
 - (id)initWithAssetType:(id)arg1;
+- (double)networkTimeout;
 - (id)predicate;
 - (BOOL)queriesLocalAssetInformationOnly;
 - (id)results;
 - (id)runQueryAndReturnError:(id*)arg1;
 - (void)setAssetType:(id)arg1;
+- (void)setNetworkTimeout:(double)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setQueriesLocalAssetInformationOnly:(BOOL)arg1;
 - (void)setResults:(id)arg1;

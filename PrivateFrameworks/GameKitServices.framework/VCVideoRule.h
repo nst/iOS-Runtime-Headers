@@ -6,12 +6,14 @@
     float fPref;
     float fRate;
     int iHeight;
+    int iPayload;
     int iWidth;
 }
 
 @property float fPref;
 @property float fRate;
 @property int iHeight;
+@property int iPayload;
 @property int iWidth;
 
 - (int)compare:(id)arg1;
@@ -20,12 +22,15 @@
 - (float)fPref;
 - (float)fRate;
 - (int)iHeight;
+- (int)iPayload;
 - (int)iWidth;
+- (id)initWithFrameWidth:(int)arg1 frameHeight:(int)arg2 frameRate:(float)arg3 payload:(int)arg4;
 - (id)initWithFrameWidth:(int)arg1 frameHeight:(int)arg2 frameRate:(float)arg3 pref:(float)arg4;
 - (id)initWithFrameWidth:(int)arg1 frameHeight:(int)arg2 frameRate:(float)arg3;
 - (void)setFPref:(float)arg1;
 - (void)setFRate:(float)arg1;
 - (void)setIHeight:(int)arg1;
+- (void)setIPayload:(int)arg1;
 - (void)setIWidth:(int)arg1;
 - (void)setToVideoRule:(id)arg1;
 

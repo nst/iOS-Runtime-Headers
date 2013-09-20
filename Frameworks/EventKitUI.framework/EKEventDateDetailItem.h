@@ -2,32 +2,20 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class PreferencesDoubleTwoPartValueCell;
+@class NSDate, PreferencesDoubleTwoPartValueCell;
 
 @interface EKEventDateDetailItem : EKEventDetailItem <EKCellShortener> {
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
-    struct { 
-        int year; 
-        BOOL month; 
-        BOOL day; 
-        BOOL hour; 
-        BOOL minute; 
-        double second; 
     PreferencesDoubleTwoPartValueCell *_cell;
-    } _endDateGr;
+    NSDate *_endDate;
     BOOL _indent;
-    } _startDateGr;
+    NSDate *_startDate;
 }
 
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (void).cxx_destruct;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (void)dealloc;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (void)reset;
 - (void)setEvent:(id)arg1 store:(id)arg2;
 - (void)shortenCell:(id)arg1;

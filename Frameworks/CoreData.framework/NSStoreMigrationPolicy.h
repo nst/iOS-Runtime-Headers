@@ -24,12 +24,14 @@
     long _workingWithSkewedSource;
 }
 
++ (id)destinationURLForMigrationSourceURL:(id)arg1 createDocumentReplacementDirectory:(BOOL)arg2 error:(id*)arg3;
 + (int)migrationDebugLevel;
 + (id)migrationStoreOptionsFromStoreOptions:(id)arg1;
 + (void)setMigrationDebugLevel:(int)arg1;
 
 - (id)_gatherDataAndPerformMigration:(id*)arg1;
 - (id)addMigratedStoreToCoordinator:(id)arg1 withType:(id)arg2 configuration:(id)arg3 URL:(id)arg4 options:(id)arg5 error:(id*)arg6;
+- (id)createMigrationManagerForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id*)arg3;
 - (void)dealloc;
 - (id)destinationConfiguration;
 - (id)destinationConfigurationForMigration:(id)arg1 sourceMetadata:(id)arg2 error:(id*)arg3;
@@ -39,11 +41,9 @@
 - (id)destinationType;
 - (id)destinationTypeForMigration:(id)arg1 sourceMetadata:(id)arg2 error:(id*)arg3;
 - (id)destinationURL;
-- (id)destinationURLForMigration:(id)arg1 sourceURL:(id)arg2 sourceMetadata:(id)arg3 error:(id*)arg4;
 - (void)didPerformMigrationWithManager:(id)arg1;
 - (id)externalDataReferencesURLForDestination:(id)arg1 forStoreOfType:(id)arg2;
 - (void)handleMigrationError:(id)arg1 inManager:(id)arg2;
-- (id)managerForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id*)arg3;
 - (id)mappingModel;
 - (id)mappingModelForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id*)arg3;
 - (BOOL)migrateStoreAtURL:(id)arg1 toURL:(id)arg2 storeType:(id)arg3 options:(id)arg4 withManager:(id)arg5 error:(id*)arg6;

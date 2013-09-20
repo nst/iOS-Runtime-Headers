@@ -13,13 +13,14 @@
     NSDictionary *_options;
     NSURL *_resourceURL;
     int _result;
-    id _userInfoPList;
+    BOOL _sourceIsManaged;
+    id _userInfoPlist;
 }
 
 - (void)completeOperation;
 - (void)dealloc;
 - (BOOL)didSucceed;
-- (id)initForOpeningResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 options:(id)arg5 delegate:(id)arg6;
+- (id)initForOpeningResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 sourceIsManaged:(BOOL)arg4 userInfo:(id)arg5 options:(id)arg6 delegate:(id)arg7;
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;

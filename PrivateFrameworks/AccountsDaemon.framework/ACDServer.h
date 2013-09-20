@@ -2,45 +2,56 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDAccessPluginManager, ACDAuthenticationPluginManager, ACDDatabase, NSMutableSet, NSString;
+@class ACDAccessPluginManager, ACDAuthenticationDialogManager, ACDAuthenticationPluginManager, ACDDataclassOwnersManager, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSXPCListener;
 
-@interface ACDServer : NSObject <ACDAccountStoreDelegate> {
+@interface ACDServer : NSObject <NSXPCListenerDelegate, ACDAccountStoreDelegate> {
     ACDAccessPluginManager *_accessPluginManager;
-    ACDDatabase *_accountDatabase;
-    NSString *_accountDatabasePath;
+    NSMutableArray *_accountStoreClients;
+    NSXPCListener *_accountStoreListener;
+    NSXPCListener *_authenticationDialogListener;
+    ACDAuthenticationDialogManager *_authenticationDialogManager;
+    NSMutableArray *_authenticationDialogManagerClients;
     ACDAuthenticationPluginManager *_authenticationPluginManager;
-    NSMutableSet *_clientAccountStores;
-    NSMutableSet *_clientOAuthSigners;
-    NSMutableSet *_daemonAccountStores;
-    NSMutableSet *_daemonOAuthSigners;
-    struct dispatch_queue_s { } *_queue;
+    ACDDataclassOwnersManager *_dataclassOwnersManager;
+    NSObject<OS_dispatch_queue> *_deferredConnectionResumeQueue;
+    NSObject<OS_dispatch_semaphore> *_deferredConnectionResumeQueueSemaphore;
+    NSMutableArray *_oauthSignerClients;
+    NSXPCListener *_oauthSignerListener;
+    NSObject<OS_dispatch_queue> *_performMigrationQueue;
+    BOOL _shouldExit;
 }
 
-@property(readonly) ACDAccessPluginManager * accessPluginManager;
-@property(readonly) ACDAuthenticationPluginManager * authenticationPluginManager;
-@property(readonly) ACDDatabase * database;
+@property(retain) ACDAccessPluginManager * accessPluginManager;
+@property(retain) ACDAuthenticationDialogManager * authenticationDialogManager;
+@property(retain) ACDAuthenticationPluginManager * authenticationPluginManager;
+@property(retain) ACDDataclassOwnersManager * dataclassOwnersManager;
+@property BOOL shouldExit;
 
 + (id)sharedServer;
 
 - (void).cxx_destruct;
-- (void)_addAccountStoreProxy:(id)arg1;
-- (void)_addAccountStoreWithConnection:(struct _xpc_connection_s { }*)arg1;
-- (void)_addOAuthSignerProxy:(id)arg1;
-- (void)_addOAuthSignerWithConnection:(struct _xpc_connection_s { }*)arg1;
 - (void)_beginObservingLanguageChangeNotfication;
-- (id)_clientForConnection:(struct _xpc_connection_s { }*)arg1;
-- (BOOL)_databaseExists;
-- (void)_removeAccountStoreProxy:(id)arg1;
-- (void)_removeOAuthSignerProxy:(id)arg1;
+- (id)_newDaemonAccountStoreFilterForClient:(id)arg1;
+- (id)_newOAuthSignerForClient:(id)arg1;
+- (void)_signalDeferredConnectionResumeQueueSemaphore;
 - (void)_stopObservingLanguageChangeNotification;
 - (id)accessPluginManager;
 - (void)accountStoreDidSaveAccounts;
+- (id)authenticationDialogManager;
 - (id)authenticationPluginManager;
+- (id)clientForConnection:(id)arg1;
 - (void)credentialsDidChangeForAccountWithIdentifier:(id)arg1;
-- (id)database;
+- (id)dataclassOwnersManager;
 - (void)dealloc;
 - (id)init;
-- (id)initWithAccountStorePath:(id)arg1;
-- (void)setUpWithAccountStoreConnection:(struct _xpc_connection_s { }*)arg1 oauthSignerConnection:(struct _xpc_connection_s { }*)arg2 onQueue:(struct dispatch_queue_s { }*)arg3;
+- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)setAccessPluginManager:(id)arg1;
+- (void)setAuthenticationDialogManager:(id)arg1;
+- (void)setAuthenticationPluginManager:(id)arg1;
+- (void)setDataclassOwnersManager:(id)arg1;
+- (void)setShouldExit:(BOOL)arg1;
+- (void)setUpWithAccountStoreConnectionListener:(id)arg1 oauthSignerConnectionListener:(id)arg2 authenticationDialogConnectionListener:(id)arg3;
+- (BOOL)shouldExit;
+- (void)shutdown;
 
 @end

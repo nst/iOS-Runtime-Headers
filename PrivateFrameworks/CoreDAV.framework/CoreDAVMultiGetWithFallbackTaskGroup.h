@@ -19,6 +19,7 @@
 
 @property <CoreDAVAccountInfoProvider> * accountInfoProvider;
 @property(copy) id completionBlock;
+@property(readonly) NSSet * deletedURLs;
 @property(readonly) NSError * error;
 @property(readonly) NSSet * missingURLs;
 @property(readonly) NSSet * parsedContents;
@@ -30,6 +31,7 @@
 - (void)_fetchOneItem;
 - (void)_switchToSingleGetMode;
 - (void)dealloc;
+- (id)deletedURLs;
 - (id)error;
 - (id)initWithURLs:(id)arg1 multiGetBlock:(id)arg2 getBlock:(id)arg3 accountInfoProvider:(id)arg4 taskManager:(id)arg5;
 - (id)missingURLs;
@@ -37,6 +39,5 @@
 - (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
 - (BOOL)shouldIgnoreResponseErrors;
 - (void)startTaskGroup;
-- (void)taskGroupWillCancelWithError:(id)arg1;
 
 @end

@@ -14,7 +14,6 @@
     MPQueuePlayer *_player;
     <MPAVPlaylistFeeder> *_playlistFeeder;
     int _repeatMode;
-    int _retainCount;
     int _targetIndex;
     BOOL _updatedAudioSessionMode;
 }
@@ -33,19 +32,18 @@
 @property(retain) <MPAVPlaylistFeeder> * playlistFeeder;
 @property int repeatMode;
 
+- (void).cxx_destruct;
 - (void)_assetCancelNotification:(id)arg1;
 - (id)_audioSessionModeForMediaItem:(id)arg1;
 - (void)_downloadCancelledNotification:(id)arg1;
 - (id)_feeder;
 - (id)_feederItemForIndex:(int)arg1;
-- (BOOL)_isDeallocating;
 - (id)_itemToFollowItemIndex:(int)arg1 skipUnavailableContent:(BOOL)arg2;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (int)_nextItemIndex:(int)arg1 repeatMode:(int)arg2;
 - (int)_prepareToQueuePlaybackIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)_reloadQueuedItemsIfPathBecameAvailable;
-- (BOOL)_tryRetain;
 - (void)_updateAudioSessionMode;
 - (id)audioSessionModeOverride;
 - (BOOL)canChangePlaylistFeeder;
@@ -71,10 +69,7 @@
 - (void)queuePlayerFeeder:(id)arg1 willRemoveItem:(id)arg2;
 - (void)queuePlayerFeederDidUpdateQueue:(id)arg1 queuedItems:(id)arg2 dequeuedItems:(id)arg3;
 - (void)queuePlayerFeederFailedToQueueAnyItems:(id)arg1;
-- (oneway void)release;
 - (int)repeatMode;
-- (id)retain;
-- (unsigned int)retainCount;
 - (void)setAudioSessionModeOverride:(id)arg1;
 - (void)setCurrentIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)setForceSynchronousQueueFilling:(BOOL)arg1;

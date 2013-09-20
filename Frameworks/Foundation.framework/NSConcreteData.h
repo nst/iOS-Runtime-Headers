@@ -2,18 +2,22 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @interface NSConcreteData : NSData {
+    /* Warning: unhandled union encoding: '(?="_space"[12C]"_deallocator"@?)' */ union { 
+        unsigned char _space[12]; 
+        id _deallocator; 
     unsigned int _isInline : 1;
-    unsigned int _shouldFree : 1;
-    unsigned int _hasVM : 1;
-    unsigned int _retainCount : 29;
+    unsigned int _retainCount : 31;
     void *_bytes;
     unsigned int _capacity;
     unsigned int _length;
-    unsigned char _space[12];
+    } _u;
 }
 
-- (BOOL)_bytesAreVM;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -22,6 +26,7 @@
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getBytes:(void*)arg1;
 - (id)init;
+- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 deallocator:(id)arg4;
 - (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
 - (unsigned int)length;
 

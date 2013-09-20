@@ -6,62 +6,91 @@
    See Warning(s) below.
  */
 
-@class NSMutableDictionary, NSString, SLFacebookRemoteComposeViewController, UIImageView;
+@class ACAccount, ACAccountStore, ALAssetsLibrary, SLFacebookAlbumChooserViewController, SLFacebookAlbumManager, SLFacebookPlaceManager, SLFacebookPost, SLFacebookPostPrivacyManager, SLFacebookSession, SLFacebookVideoOptionsViewController, SLSheetAction, SLSheetPlaceViewController, SLVideoQualityOption, UIViewController<SLFacebookAudienceViewController>;
 
-@interface SLFacebookComposeViewController : SLComposeViewController {
+@interface SLFacebookComposeViewController : SLComposeServiceViewController <SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate, SLFacebookAudienceViewControllerDelegate, SLFacebookAlbumChooserViewControllerDelegate, SLFacebookVideoOptionsDelegate> {
+    struct { 
+        unsigned int showAlbumAction : 1; 
+        unsigned int showPrivacyAction : 1; 
+        unsigned int showPlaceAction : 1; 
+        unsigned int showVideoDetailAction : 1; 
+    ACAccountStore *_accountStore;
+    } _actionFlags;
+    SLFacebookAlbumChooserViewController *_albumChooserViewController;
+    SLFacebookAlbumManager *_albumManager;
+    SLSheetAction *_albumSheetAction;
+    ALAssetsLibrary *_assetsLibrary;
+    UIViewController<SLFacebookAudienceViewController> *_audienceViewController;
     id _completionHandler;
-    NSMutableDictionary *_delayedActions;
-    BOOL _didFailLoadingRemoteViewController;
-    NSString *_lastVignetteName;
-    SLFacebookRemoteComposeViewController *_remoteViewController;
-    int _savedStatusBarStyle;
-    UIImageView *_vignetteView;
+    BOOL _hasAccessToAccount;
+    BOOL _hasCheckedAccess;
+    BOOL _hasShowedLocationDeniedAlert;
+    SLFacebookPlaceManager *_placeManager;
+    SLSheetAction *_placeSheetAction;
+    SLSheetPlaceViewController *_placeViewController;
+    SLFacebookPost *_post;
+    SLFacebookPostPrivacyManager *_postPrivacyManager;
+    SLSheetAction *_privacySheetAction;
+    SLVideoQualityOption *_selectedVideoQualityOption;
+    SLFacebookSession *_session;
+    SLSheetAction *_videoOptionsAction;
+    SLFacebookVideoOptionsViewController *_videoOptionsViewController;
     BOOL _wasPresented;
 }
 
-@property(retain) SLFacebookRemoteComposeViewController * remoteViewController;
+@property(retain) ACAccountStore * accountStore;
+@property(copy) id completionHandler;
+@property(readonly) ACAccount * privilegedAccount;
 
-+ (BOOL)canPost;
++ (id)serviceBundle;
 
 - (void).cxx_destruct;
-- (void)_addDelayedAction:(id)arg1 forEvent:(id)arg2;
-- (id)_delayedActions;
-- (void)_handleRemoteViewFailure;
-- (void)_performActionsForEvent:(id)arg1;
-- (BOOL)_useCustomDimmingView;
-- (BOOL)addAttachment:(id)arg1;
-- (id)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
-- (BOOL)addImage:(id)arg1;
-- (BOOL)addImageAsset:(id)arg1;
-- (id)addImageByProxy;
-- (BOOL)addURL:(id)arg1 withPreviewImage:(id)arg2;
-- (BOOL)addURL:(id)arg1;
-- (id)addURLWithProxyPreviewImage:(id)arg1;
-- (BOOL)canAddContent;
+- (id)_albumSheetAction;
+- (void)_handlePostPrivacyResultWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (BOOL)_isLocationAuthorizationDenied;
+- (id)_placeSheetAction;
+- (void)_presentAlbumViewController;
+- (void)_presentAudienceViewController;
+- (void)_presentFacebookDisabledAlert;
+- (void)_presentNoAccountsAlert;
+- (void)_presentPlaceViewController;
+- (void)_presentVideoOptionsViewController;
+- (id)_privacySheetAction;
+- (void)_setPlace:(id)arg1;
+- (void)_setVideoSizeOptionIdentifier:(id)arg1;
+- (void)_updateAudienceButtonForPrivacySettingType:(int)arg1 name:(id)arg2;
+- (id)_videoOptionIdentifer;
+- (id)_videoOptionsAction;
+- (id)_videoQualityOption;
+- (id)accountStore;
+- (void)albumChooserViewController:(id)arg1 didSelectAlbum:(id)arg2;
+- (id)albumManager;
+- (void)audienceViewController:(id)arg1 didSelectPostPrivacySetting:(id)arg2;
+- (void)callCompletionHandlerWithResult:(int)arg1;
+- (BOOL)canPost;
 - (id)completionHandler;
-- (void)dealloc;
+- (void)createPreviewIfNeeded;
 - (void)didReceiveMemoryWarning;
+- (void)handleImagePostWithURL;
+- (BOOL)hasAccountAccess;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)remoteController:(id)arg1 didLoadWithError:(id)arg2;
-- (id)remoteViewController;
-- (BOOL)removeAllImages;
-- (BOOL)removeAllURLs;
-- (id)serviceType;
+- (void)loadView;
+- (void)placeManager:(id)arg1 failedWithError:(id)arg2;
+- (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
+- (void)placeViewController:(id)arg1 didSelectPlace:(id)arg2;
+- (id)privilegedAccount;
+- (void)send;
+- (void)setAccountStore:(id)arg1;
 - (void)setCompletionHandler:(id)arg1;
-- (BOOL)setInitialText:(id)arg1;
-- (void)setLongitude:(double)arg1 latitude:(double)arg2 name:(id)arg3;
-- (void)setRemoteViewController:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)supportsImageAsset:(id)arg1;
-- (void)updateVignetteToOrientation:(int)arg1;
+- (void)setupCommonUI;
+- (id)sheetActions;
+- (void)sheetPresentationAnimationDidFinish;
+- (BOOL)validateText:(id)arg1;
+- (void)videoOptionsViewController:(id)arg1 didSelectVideoQualityOption:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillLayoutSubviews;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

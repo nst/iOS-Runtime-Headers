@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOSearchAttributionManifest : PBCodable {
+@interface GEOSearchAttributionManifest : PBCodable <NSCopying> {
     NSMutableArray *_searchAttributionSources;
 }
 
@@ -13,6 +13,7 @@
 - (void)addSearchAttributionSources:(id)arg1;
 - (void)clearSearchAttributionSources;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

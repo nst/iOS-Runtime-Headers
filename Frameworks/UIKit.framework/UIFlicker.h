@@ -21,9 +21,6 @@
     int _throwIterations;
 }
 
-- (void)_mouseDraggedMemberListTest;
-- (void)_mouseUpMemberListTest;
-- (void)_throwMemberListTest;
 - (id)init;
 - (struct CGPoint { float x1; float x2; })offset;
 - (void)run;

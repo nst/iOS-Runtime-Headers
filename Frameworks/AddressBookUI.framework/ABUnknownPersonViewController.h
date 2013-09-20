@@ -2,10 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, NSArray, NSString, UIView;
+@class <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, ABUIPerson, NSArray, NSString, UIFont, UIImage, UIView;
 
 @interface ABUnknownPersonViewController : UIViewController <UIActionSheetDelegate> {
     ABPersonTableViewActionsDelegate *_actionsDelegate;
+    BOOL _allowsContactBlocking;
+    BOOL _allowsOnlyFaceTimeActions;
+    BOOL _allowsOnlyPhoneActions;
     ABPersonTableViewDataSource *_dataSource;
     id _helper;
     id _reserved;
@@ -18,24 +21,41 @@
 @property BOOL allowsActions;
 @property BOOL allowsAddingToAddressBook;
 @property BOOL allowsConferencing;
+@property BOOL allowsContactBlocking;
+@property BOOL allowsOnlyFaceTimeActions;
+@property BOOL allowsOnlyPhoneActions;
 @property BOOL allowsSendingTextMessage;
 @property BOOL allowsSharing;
 @property(copy) NSString * alternateName;
 @property(copy) NSString * attribution;
+@property BOOL badgeEmailPropertiesForMailVIP;
 @property(readonly) BOOL canShareContact;
+@property(retain) UIView * customFooterView;
+@property(retain) UIView * customHeaderView;
+@property(retain) UIView * customMessageView;
 @property(readonly) ABPersonTableViewDataSource * dataSource;
 @property void* displayedPerson;
 @property(copy) NSArray * displayedProperties;
+@property(retain) ABUIPerson * displayedUIPerson;
 @property(readonly) ABPersonViewControllerHelper * helper;
 @property BOOL isLocation;
-@property(readonly) BOOL isShowingMultipleVCards;
 @property(copy) NSString * message;
+@property(copy) NSString * messageDetail;
+@property(retain) UIFont * messageDetailFont;
+@property(retain) UIFont * messageFont;
 @property(retain) UIView * personHeaderView;
 @property BOOL savesNewContactOnSuspend;
+@property(retain) UIImage * shareLocationSnapshotImage;
+@property(copy) NSString * shareLocationURL;
+@property(copy) NSString * shareMessageBody;
+@property BOOL shareMessageBodyIsHTML;
+@property(copy) NSString * shareMessageSubject;
 @property(readonly) ABPersonTableViewSharingDelegate * sharingDelegate;
 @property BOOL shouldAlignPersonHeaderViewToImage;
 @property(retain) <ABStyleProvider> * styleProvider;
 @property <ABUnknownPersonViewControllerDelegate> * unknownPersonViewDelegate;
+@property(copy) id willTweetLocationCallback;
+@property(copy) id willWeiboLocationCallback;
 
 + (id)defaultLabelsForProperty:(int)arg1 person:(void*)arg2 addressBook:(void*)arg3;
 
@@ -47,8 +67,8 @@
 - (id)_findMatchingCardsForRecord:(void*)arg1;
 - (id)_forwarder;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; float x5; int x6; }*)arg1;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (id)_mf_initWithEmailAddress:(id)arg1;
+- (id)_mf_initWithRecentGroup:(id)arg1;
 - (void)_showCardViewerForIndex:(int)arg1;
 - (void)_showUnmergedContactsAlert;
 - (id)_unmergedAlertSheet;
@@ -70,6 +90,9 @@
 - (BOOL)allowsActions;
 - (BOOL)allowsAddingToAddressBook;
 - (BOOL)allowsConferencing;
+- (BOOL)allowsContactBlocking;
+- (BOOL)allowsOnlyFaceTimeActions;
+- (BOOL)allowsOnlyPhoneActions;
 - (BOOL)allowsSendingTextMessage;
 - (BOOL)allowsSharing;
 - (id)alternateName;
@@ -86,6 +109,7 @@
 - (void)dismissAnimated:(BOOL)arg1;
 - (void*)displayedPerson;
 - (id)displayedProperties;
+- (id)displayedUIPerson;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6;
 - (id)helper;
@@ -116,6 +140,9 @@
 - (void)setAllowsActions:(BOOL)arg1;
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;
 - (void)setAllowsConferencing:(BOOL)arg1;
+- (void)setAllowsContactBlocking:(BOOL)arg1;
+- (void)setAllowsOnlyFaceTimeActions:(BOOL)arg1;
+- (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setAllowsSendingTextMessage:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;
@@ -129,6 +156,7 @@
 - (void)setCustomMessageView:(id)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setDisplayedProperties:(id)arg1;
+- (void)setDisplayedUIPerson:(id)arg1;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 important:(BOOL)arg3;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2 person:(void*)arg3 important:(BOOL)arg4;
 - (void)setHighlightedItemForProperty:(int)arg1 withIdentifier:(int)arg2;
@@ -147,7 +175,6 @@
 - (void)setShareMessageBodyIsHTML:(BOOL)arg1;
 - (void)setShareMessageSubject:(id)arg1;
 - (void)setShouldAlignPersonHeaderViewToImage:(BOOL)arg1;
-- (void)setStringValue:(id)arg1 forProperty:(int)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (void)setUnknownPersonViewDelegate:(id)arg1;
 - (void)setWillTweetLocationCallback:(id)arg1;
@@ -159,8 +186,8 @@
 - (id)shareMessageSubject;
 - (id)sharingDelegate;
 - (BOOL)shouldAlignPersonHeaderViewToImage;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)styleProvider;
+- (BOOL)supportedInterfaceOrientation:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

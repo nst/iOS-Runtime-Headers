@@ -2,41 +2,58 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDate, NSLock, NSMutableDictionary, NSPersistentStoreCoordinator, NSString, NSTimer, PFUbiquityLocation;
+@class NSDate, NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PFUbiquityLocation;
 
 @interface _PFUbiquityRecordsExporter : NSObject {
+    BOOL _allowTempLogStorage;
     NSDate *_lastTransactionDate;
     NSString *_localPeerID;
-    NSPersistentStoreCoordinator *_monitoredPersistentStoreCoordinator;
+    PFUbiquityLocation *_localRootLocation;
+    BOOL _pendingTempLogMove;
     NSMutableDictionary *_pendingTransactionsToStoreNameAndTransactionNumber;
-    NSTimer *_tempMoveTimer;
+    NSObject<OS_dispatch_queue> *_processingQueue;
+    NSString *_storeName;
+    BOOL _throwOptimisticLockingException;
     NSLock *_transactionLock;
     PFUbiquityLocation *_ubiquityRootLocation;
+    BOOL _useLocalStorage;
 }
 
+@property BOOL allowTempLogStorage;
+@property(readonly) PFUbiquityLocation * currentRootLocation;
 @property(retain) NSDate * lastTransactionDate;
 @property(readonly) NSString * localPeerID;
-@property(retain) NSTimer * tempMoveTimer;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property(readonly) PFUbiquityLocation * localRootLocation;
+@property(readonly) BOOL pendingTempLogMove;
+@property BOOL throwOptimisticLockingException;
+@property(retain) PFUbiquityLocation * ubiquityRootLocation;
+@property BOOL useLocalStorage;
 
+- (BOOL)allowTempLogStorage;
 - (void)beginWatchingForChangesFromStore:(id)arg1;
 - (void)cleanUpFromRolledbackPendingTransaction:(id)arg1 withNotification:(id)arg2;
 - (id)createDictionaryForObjectsInSaveNotification:(id)arg1 forTransactionOfType:(int)arg2 withExportContext:(id)arg3 andSaveSnapshot:(id)arg4;
-- (id)createSetOfStoresToExportForNotification:(id)arg1;
+- (id)currentRootLocation;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
+- (id)initWithLocalPeerID:(id)arg1 forStoreName:(id)arg2 ubiquityRootLocation:(id)arg3 localRootLocation:(id)arg4 andProcessingQueue:(id)arg5;
 - (id)lastTransactionDate;
 - (id)localPeerID;
+- (id)localRootLocation;
 - (void)managedObjectContextDidSave:(id)arg1;
-- (void)onlyExportFromPersistentStoreCoordinator:(id)arg1;
-- (void)scheduleTempMoveTimerWithPeerURL:(id)arg1;
+- (void)moveLogsFromTempDirectory;
+- (BOOL)pendingTempLogMove;
+- (void)scheduleTempLogMove;
+- (void)setAllowTempLogStorage:(BOOL)arg1;
 - (void)setLastTransactionDate:(id)arg1;
-- (void)setTempMoveTimer:(id)arg1;
+- (void)setThrowOptimisticLockingException:(BOOL)arg1;
+- (void)setUbiquityRootLocation:(id)arg1;
+- (void)setUseLocalStorage:(BOOL)arg1;
 - (BOOL)shouldRespondToSaveNotification:(id)arg1;
-- (id)tempMoveTimer;
-- (void)timerMoveLogsFromTempDirectory:(id)arg1;
+- (void)stopWatchingForChanges;
+- (BOOL)throwOptimisticLockingException;
 - (id)ubiquityRootLocation;
+- (BOOL)useLocalStorage;
 
 @end

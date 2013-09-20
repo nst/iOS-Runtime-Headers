@@ -17,6 +17,7 @@
 
 + (BOOL)_canSeedGeniusWithItem:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_applicationStateChangedNotification:(id)arg1;
 - (id)_avController;
 - (id)_avControllerForClientPID:(int)arg1;
@@ -38,7 +39,7 @@
 - (void)_setQueueWithQuery:(id)arg1;
 - (void)_tearDownVideoView;
 - (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
-- (id)allowsRemoteUIAccess;
+- (id)allowsBackgroundVideo;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
 - (id)currentChapterIndex;
@@ -53,6 +54,7 @@
 - (id)isNowPlayingItemFromGeniusMix;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(id)arg1;
+- (id)nowPlayingRadioTrackID;
 - (id)numberOfItems;
 - (void)pause;
 - (void)pauseWithFadeoutDuration:(id)arg1;
@@ -63,10 +65,11 @@
 - (void)prepareQueueForPlayback;
 - (void)prepareToPlay;
 - (id)queueAsQuery;
+- (id)queueAsRadioStation;
 - (void)registerForServerDiedNotifications;
 - (id)repeatMode;
 - (id)serverIsAlive;
-- (void)setAllowsRemoteUIAccess:(id)arg1;
+- (void)setAllowsBackgroundVideo:(id)arg1;
 - (void)setCurrentChapterIndex:(id)arg1;
 - (void)setCurrentPlaybackRate:(id)arg1;
 - (void)setCurrentPlaybackTime:(id)arg1;
@@ -76,6 +79,7 @@
 - (void)setQueueWithItemCollection:(id)arg1;
 - (void)setQueueWithQuery:(id)arg1 firstItem:(id)arg2;
 - (void)setQueueWithQuery:(id)arg1;
+- (void)setQueueWithRadioStation:(id)arg1;
 - (id)setQueueWithSeedItems:(id)arg1;
 - (void)setRepeatMode:(id)arg1;
 - (void)setShuffleMode:(id)arg1;

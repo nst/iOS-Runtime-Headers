@@ -2,27 +2,27 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <AssistantViewControllerDelegate>, AssistantCallbackController, AssistantSubUIViewController, AssistantUIController, NSDictionary, NSString, NetTopoMiniStaticLayout, TextLinkButton, UIActivityIndicatorView, UIAlertView, UIBarButtonItem, UILabel, UITableView, UITextField, UIView;
+@class <AssistantViewControllerDelegate>, AssistantCallbackController, AssistantSubUIViewController, AssistantUIController, NSArray, NSDictionary, NSString, NetTopoMiniStaticLayout, UIActivityIndicatorView, UIAlertView, UIBarButtonItem, UILabel, UITableView, UITextField, UIView;
 
 @interface AssistantUIViewController : AUUITableViewController <AssistantUIDelegate, AssistantCallbackUIDelegate, UINavigationControllerDelegate, AssistantSubcontrollerHelper, TableViewManagerDelegate> {
     id _assistantDelegate;
     AssistantUIController *_assistantUIController;
     AssistantCallbackController *_controllerContext;
     int _controllerContextSelector;
-    int _currentConnectionStatusStep;
     AssistantSubUIViewController *_currentSubController;
+    int _currentUIConfigStep;
     BOOL _goingBack;
     NSString *_macAddress;
     UITableView *_mainTableView;
+    NSDictionary *_mfiAccessoryResponseDict;
+    NSArray *_paramScanResults;
     NSDictionary *_recommendationParamDict;
     NSDictionary *_scanInfoRecord;
     unsigned int _selectedActionTag;
-    UIView *_tableHeaderContainerView;
-    int askUserContext;
+    NSString *_settingUpStatusText;
     UIAlertView *askUserQuestionAlertView;
     UIBarButtonItem *cancelButton;
     UIAlertView *connectionVerificationAlertView;
-    AssistantSubUIViewController *currentSubController;
     UITextField *currentTextField;
     BOOL iPadIdiom;
     UIView *justTextContainerView;
@@ -40,7 +40,7 @@
     UILabel *spinnerWithStatusBelowLabel;
     UIActivityIndicatorView *spinnerWithStatusBelowSpinner;
     UIView *spinnerWithStatusBelowView;
-    TextLinkButton *textLinkButton;
+    UIView *tableHeaderContainerView;
     UIView *topoContainerView;
     NetTopoMiniStaticLayout *topoLayout;
     UIView *topoView;
@@ -55,20 +55,22 @@
 @property(retain) UITextField * currentTextField;
 @property BOOL iPadIdiom;
 @property(retain) UIView * justTextContainerView;
-@property(retain) UILabel * justTextLabel;
+@property UILabel * justTextLabel;
 @property int letMeChooseButtonIndex;
 @property(copy) NSString * macAddress;
 @property(retain) UITableView * mainTableView;
 @property(retain) UIBarButtonItem * nextButton;
+@property(copy) NSArray * paramScanResults;
 @property(retain) UIAlertView * passwordAlertView;
 @property int recommendationButtonIndex;
 @property(copy) NSDictionary * recommendationParamDict;
 @property int restoreButtonIndex;
 @property(copy) NSDictionary * scanInfoRecord;
-@property(retain) UILabel * spinnerWithStatusAdjacentLabel;
-@property(retain) UIActivityIndicatorView * spinnerWithStatusAdjacentSpinner;
+@property(retain) NSString * settingUpStatusText;
+@property(retain) UIView * spinnerWithStatusAdjacentView;
+@property(retain) UIView * spinnerWithStatusBelowView;
 @property(retain) UIView * tableHeaderContainerView;
-@property(retain) TextLinkButton * textLinkButton;
+@property(retain) UIView * topoContainerView;
 @property(retain) NetTopoMiniStaticLayout * topoLayout;
 
 + (void)readjustSubviewsInContainer:(id)arg1;
@@ -81,11 +83,14 @@
 - (id)assistantDelegate;
 - (void)assistantUpdateProgress:(id)arg1 forState:(int)arg2;
 - (void)baseStationConfigurationComplete:(id)arg1;
+- (void)callbackAskCancel;
 - (long)callbackAskUserAQuestion:(int)arg1 paramDict:(id)arg2 forController:(id)arg3;
 - (long)callbackAskUserForPassword:(int)arg1 param:(id)arg2 forController:(id)arg3;
 - (id)cancelButton;
 - (void)confirmSkipWANPort;
 - (void)connectionVerificationSucceededForSelector:(int)arg1;
+- (void)continueWithDiagsAndUsageStats;
+- (void)continueWithGuestNetSettings;
 - (void)continueWithPPPoESettings;
 - (void)continueWithSwapCabling;
 - (id)currentSubController;
@@ -112,6 +117,7 @@
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)newStepByStepControllerForStep:(int)arg1;
 - (id)nextButton;
+- (id)paramScanResults;
 - (id)passwordAlertView;
 - (void)playDoneSound;
 - (void)popToRootViewControllerAnimated:(BOOL)arg1;
@@ -122,6 +128,7 @@
 - (void)presentUIForSetupStatusWithRecommendationDict:(id)arg1;
 - (void)presentUIForStepByStepNextStep:(int)arg1 paramDict:(id)arg2;
 - (void)presentUIForStepByStepResult:(long)arg1;
+- (void)presentUIForStepByStepStart;
 - (void)presentWaitingForWANViewWithContinueText:(BOOL)arg1;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)radioNameFromBaseStation:(id)arg1;
@@ -143,37 +150,42 @@
 - (void)setMacAddress:(id)arg1;
 - (void)setMainTableView:(id)arg1;
 - (void)setNextButton:(id)arg1;
+- (void)setParamScanResults:(id)arg1;
 - (void)setPasswordAlertView:(id)arg1;
 - (void)setRecommendationButtonIndex:(int)arg1;
 - (void)setRecommendationParamDict:(id)arg1;
 - (void)setRestoreButtonIndex:(int)arg1;
 - (void)setScanInfoRecord:(id)arg1;
-- (void)setSpinnerWithStatusAdjacentLabel:(id)arg1;
-- (void)setSpinnerWithStatusAdjacentSpinner:(id)arg1;
+- (void)setSettingUpStatusText:(id)arg1;
+- (void)setSpinnerWithStatusAdjacentView:(id)arg1;
+- (void)setSpinnerWithStatusBelowView:(id)arg1;
 - (void)setTableHeaderContainerView:(id)arg1;
-- (void)setTextLinkButton:(id)arg1;
+- (void)setTopoContainerView:(id)arg1;
 - (void)setTopoLayout:(id)arg1;
 - (void)set_assistantUIController:(id)arg1;
 - (void)set_controllerContext:(id)arg1;
+- (id)settingUpStatusText;
 - (void)setupCompleteShowPasswords:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showAskUserForPPPoECredentialsForStatus:(long)arg1 paramDict:(id)arg2;
 - (void)showAskUserPluginAudioCablingForStatus:(long)arg1 paramDict:(id)arg2;
 - (void)showAskUserSwapCablingForStatus:(long)arg1 paramDict:(id)arg2;
 - (void)showTellUserToFixTheirInternetConnection;
 - (void)showTellUserToPlugInEthernetForStatus:(long)arg1 paramDict:(id)arg2;
 - (void)showTellUserToResetBroadbandDeviceForStatus:(long)arg1 paramDict:(id)arg2;
+- (void)showUIConfigPromptForGuestNetConfigWithParamDict:(id)arg1;
+- (void)showUIConfigPromptToSendDiagsUsageStatsWithParamDict:(id)arg1;
 - (void)showUIForSetupStatus;
 - (void)skipPluginAudioCabling;
 - (void)skipWANPort;
-- (id)spinnerWithStatusAdjacentLabel;
-- (id)spinnerWithStatusAdjacentSpinner;
+- (id)spinnerWithStatusAdjacentView;
+- (id)spinnerWithStatusBelowView;
 - (void)startSetup:(id)arg1;
 - (id)tableHeaderContainerView;
-- (id)textLinkButton;
+- (id)topoContainerView;
 - (id)topoLayout;
 - (void)touchInCellAtIndexPath:(id)arg1;
 - (id)valueForItemOfType:(id)arg1 atTypeIndex:(unsigned int)arg2 inCellWithTag:(int)arg3;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

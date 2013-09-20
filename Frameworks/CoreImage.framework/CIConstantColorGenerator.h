@@ -8,7 +8,7 @@
     CIColor *inputColor;
 }
 
-@property(copy) CIColor * inputColor;
+@property(retain) CIColor * inputColor;
 
 + (id)customAttributes;
 

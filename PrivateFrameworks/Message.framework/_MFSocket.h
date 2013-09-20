@@ -5,28 +5,35 @@
 @class MFStream, NSArray, NSCondition, NSData, NSInvocation, NSString;
 
 @interface _MFSocket : NSObject {
+    NSString *_accountIdentifier;
     BOOL _allowsTrustPrompt;
-    BOOL _canRead;
-    BOOL _canWrite;
+    NSArray *_clientCertificates;
     NSCondition *_condition;
     struct __CFString { } *_connectionServiceType;
     NSInvocation *_eventHandler;
     NSString *_host;
+    int _lowThroughputCounter;
     int _numTimeoutSecs;
     NSString *_protocol;
     NSString *_service;
+    BOOL _socketCanRead;
+    BOOL _socketCanWrite;
+    NSString *_sourceApplicationBundleIdentifier;
     MFStream *_stream;
     BOOL _usesOpportunisticSockets;
 }
 
+@property(copy) NSString * accountIdentifier;
 @property BOOL allowsTrustPrompt;
-@property(readonly) BOOL isForcedConnection;
+@property(retain) NSArray * clientCertificates;
+@property(readonly) BOOL isCellularConnection;
 @property(readonly) BOOL isReadable;
 @property(readonly) BOOL isValid;
 @property(readonly) BOOL isWritable;
 @property(readonly) NSString * remoteHostname;
 @property(readonly) unsigned int remotePortNumber;
 @property(readonly) NSArray * serverCertificates;
+@property(copy) NSString * sourceApplicationBundleIdentifier;
 @property(readonly) NSData * sourceIPAddress;
 @property int timeout;
 @property BOOL usesOpportunisticSockets;
@@ -34,28 +41,36 @@
 - (unsigned int)_bufferedByteCount;
 - (BOOL)_startSSLHandshakeWithProtocol:(id)arg1 disableSSL2:(BOOL)arg2 errorPtr:(id*)arg3;
 - (void)abort;
+- (id)accountIdentifier;
 - (BOOL)allowsTrustPrompt;
+- (id)clientCertificates;
 - (BOOL)connectToHost:(id)arg1 withPort:(unsigned int)arg2 service:(id)arg3;
 - (void)dealloc;
+- (void)enableExcessiveKeepaliveDetection:(BOOL)arg1;
+- (void)enableThroughputMonitoring:(BOOL)arg1;
 - (id)init;
-- (BOOL)isForcedConnection;
+- (BOOL)isCellularConnection;
 - (BOOL)isReadable;
 - (BOOL)isValid;
 - (BOOL)isWritable;
-- (int)readBytes:(char *)arg1 length:(int)arg2;
+- (int)readBytes:(char *)arg1 length:(unsigned long)arg2;
 - (id)remoteHostname;
 - (unsigned int)remotePortNumber;
 - (id)securityProtocol;
 - (id)serverCertificates;
+- (void)setAccountIdentifier:(id)arg1;
 - (void)setAllowsTrustPrompt:(BOOL)arg1;
+- (void)setClientCertificates:(id)arg1;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setEventHandler:(id)arg1;
 - (BOOL)setSecurityProtocol:(id)arg1;
+- (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setTimeout:(int)arg1;
 - (void)setUsesOpportunisticSockets:(BOOL)arg1;
+- (id)sourceApplicationBundleIdentifier;
 - (id)sourceIPAddress;
 - (int)timeout;
 - (BOOL)usesOpportunisticSockets;
-- (int)writeBytes:(const char *)arg1 length:(int)arg2;
+- (int)writeBytes:(const char *)arg1 length:(unsigned long)arg2;
 
 @end

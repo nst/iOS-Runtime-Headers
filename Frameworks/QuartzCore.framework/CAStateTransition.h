@@ -14,11 +14,16 @@
 @property(copy) NSString * fromState;
 @property(copy) NSString * toState;
 
++ (void)CAMLParserStartElement:(id)arg1;
+
+- (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
+- (id)CAMLTypeForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (double)duration;
 - (id)elements;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fromState;
 - (id)init;

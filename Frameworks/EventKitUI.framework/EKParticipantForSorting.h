@@ -12,8 +12,8 @@
     EKParticipant *_participant;
 }
 
+- (void).cxx_destruct;
 - (int)compare:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (id)firstName;

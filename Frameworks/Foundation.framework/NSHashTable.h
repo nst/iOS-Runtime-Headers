@@ -23,7 +23,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void*)getItem:(const void*)arg1;
-- (void)getKeys:(void**)arg1 count:(unsigned int*)arg2;
+- (void)getKeys:(const void**)arg1 count:(unsigned int*)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOptions:(unsigned int)arg1 capacity:(unsigned int)arg2;

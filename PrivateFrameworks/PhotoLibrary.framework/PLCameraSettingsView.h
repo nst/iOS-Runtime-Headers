@@ -17,7 +17,6 @@
 @property BOOL gridIsOn;
 @property BOOL hdrIsOn;
 
-- (void)_enterPanoramaMode;
 - (void)_toggleEnableGridLines:(id)arg1;
 - (void)_toggleEnableHDR:(id)arg1;
 - (void)dealloc;

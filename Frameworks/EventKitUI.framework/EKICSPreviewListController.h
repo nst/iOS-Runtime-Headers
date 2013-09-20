@@ -10,12 +10,16 @@
     <EKICSPreviewListDelegate> *_listDelegate;
     EKICSPreviewModel *_model;
     NSMutableArray *_sections;
+    BOOL _showWeekNumbers;
 }
 
 @property BOOL allowsImport;
 @property BOOL allowsSubitems;
 @property <EKICSPreviewListDelegate> * listDelegate;
+@property BOOL showWeekNumbers;
 
+- (void).cxx_destruct;
+- (void)_showWeekNumbersPreferenceChanged:(id)arg1;
 - (BOOL)allowsImport;
 - (BOOL)allowsSubitems;
 - (void)buildSections;
@@ -28,6 +32,8 @@
 - (void)setAllowsImport:(BOOL)arg1;
 - (void)setAllowsSubitems:(BOOL)arg1;
 - (void)setListDelegate:(id)arg1;
+- (void)setShowWeekNumbers:(BOOL)arg1;
+- (BOOL)showWeekNumbers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

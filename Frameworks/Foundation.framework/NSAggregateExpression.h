@@ -6,8 +6,11 @@
     id _collection;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)allowEvaluation;
 - (id)collection;
 - (id)constantValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

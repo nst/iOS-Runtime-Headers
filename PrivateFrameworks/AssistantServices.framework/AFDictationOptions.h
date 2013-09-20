@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AFDictationOptions : NSObject {
+@interface AFDictationOptions : NSObject <NSSecureCoding, NSCopying> {
     NSString *_applicationName;
     NSString *_applicationVersion;
     NSString *_fieldIdentifier;
@@ -30,13 +30,17 @@
 @property int returnKeyType;
 @property(copy) NSString * selectedText;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)applicationName;
 - (id)applicationVersion;
-- (id)dkPlistRepresentation;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictationOptionsWithoutTextContext;
+- (void)encodeWithCoder:(id)arg1;
 - (id)fieldIdentifier;
 - (id)fieldLabel;
-- (id)initWithDKPlistRepresentation:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)interactionIdentifier;
 - (int)keyboardType;
 - (id)languageCodeOverride;

@@ -17,7 +17,7 @@
 - (void)_didReceiveNotificationData:(id)arg1;
 - (id)_initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)_registerObserverClient;
-- (id)copyActiveAccounts;
+- (id)activeAccountsHadLoadError:(BOOL*)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)messagesForAccountIDs:(id)arg1 count:(unsigned int)arg2 cutOffDates:(id)arg3;

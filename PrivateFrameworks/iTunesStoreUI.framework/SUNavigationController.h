@@ -9,14 +9,17 @@
     SUClientInterface *_clientInterface;
     BOOL _loading;
     SUSection *_section;
+    int _storeBarStyle;
 }
 
 @property(retain) SUClientInterface * clientInterface;
 @property(getter=isLoading) BOOL loading;
 @property(retain) SUSection * section;
 
+- (int)ITunesStoreUIBarStyle;
 - (void)_loadingDidChangeNotification:(id)arg1;
 - (id)_sectionForViewController:(id)arg1;
+- (void)_setStoreBarStyle:(int)arg1 clientInterface:(id)arg2;
 - (void)addChildViewController:(id)arg1;
 - (BOOL)clearsWeakScriptReferences;
 - (id)clientInterface;
@@ -29,6 +32,7 @@
 - (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
 - (id)initWithSection:(id)arg1;
 - (BOOL)isLoading;
+- (void)loadView;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
 - (void)removeChildViewController:(id)arg1;
@@ -41,6 +45,7 @@
 - (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setToolbarHidden:(BOOL)arg1;
 - (void)setViewControllers:(id)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;

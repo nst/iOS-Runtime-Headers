@@ -26,6 +26,7 @@
 @property(copy) id toolbarItems;
 @property(retain) id topBackgroundColor;
 @property(retain) SUScriptViewController * transientViewController;
+@property id usesBlurredBackground;
 @property(readonly) SUScriptViewController * volumeViewController;
 @property id wantsFullScreenLayout;
 
@@ -75,6 +76,7 @@
 - (void)setToolbarItems:(id)arg1;
 - (void)setTopBackgroundColor:(id)arg1;
 - (void)setTransientViewController:(id)arg1;
+- (void)setUsesBlurredBackground:(id)arg1;
 - (void)setWantsFullScreenLayout:(id)arg1;
 - (id)showsLibraryButton;
 - (id)splitViewController;
@@ -82,6 +84,7 @@
 - (id)toolbarItems;
 - (id)topBackgroundColor;
 - (id)transientViewController;
+- (id)usesBlurredBackground;
 - (id)volumeViewController;
 - (id)wantsFullScreenLayout;
 

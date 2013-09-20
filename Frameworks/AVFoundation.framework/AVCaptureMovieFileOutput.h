@@ -17,8 +17,8 @@
 + (BOOL)updateMovieMetadataInFile:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;
 
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
-- (long)_avErrorForDidStopRecordingReason:(id)arg1;
-- (void)_handleStartRecordingErrorWithDomain:(id)arg1 code:(long)arg2 info:(id)arg3;
+- (id)_avErrorUserInfoDictionaryForError:(long)arg1 wrapper:(id)arg2;
+- (void)_handleStartRecordingError:(long)arg1 info:(id)arg2;
 - (long)_startRecording:(id)arg1;
 - (long)_stopRecording;
 - (id)connectionMediaTypes;
@@ -33,6 +33,7 @@
 - (id)metadata;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (id)outputFileURL;
+- (id)outputSettingsForConnection:(id)arg1;
 - (void)pauseRecording;
 - (void)resumeRecording;
 - (BOOL)sendsLastVideoPreviewFrame;

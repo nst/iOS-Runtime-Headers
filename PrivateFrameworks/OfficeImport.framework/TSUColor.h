@@ -75,6 +75,7 @@
 - (BOOL)isEqualToColor:(id)arg1;
 - (BOOL)isOpaque;
 - (float)luminance;
+- (id)newBlendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
 - (id)newSolidColoredBitmap:(struct CGSize { float x1; float x2; })arg1;
 - (float)p_rgbComponentWithIndex:(unsigned char)arg1;
 - (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;

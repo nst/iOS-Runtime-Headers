@@ -18,7 +18,12 @@
 + (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
 + (id)_UTTypes;
 + (id)_avfValidationPlist;
++ (id)_figFileMIMETypes;
++ (id)_figFilePathExtensions;
 + (id)_figMIMETypes;
++ (id)_figStreamingMIMETypes;
++ (id)_fileUTTypes;
++ (id)_streamingUTTypes;
 + (id)audiovisualMIMETypes;
 + (id)audiovisualTypes;
 + (BOOL)isPlayableExtendedMIMEType:(id)arg1;
@@ -32,9 +37,10 @@
 - (id)_assetInspectorLoader;
 - (id)_chapterGroupInfo;
 - (id)_errorForFigNotificationPayload:(struct __CFDictionary { }*)arg1 key:(struct __CFString { }*)arg2;
-- (void)_finishLoadingURLRequestWithResponseProperties:(id)arg1 context:(id)arg2;
+- (void)_finishLoadingCustomURLProviderRequestWithResponseProperties:(id)arg1 context:(id)arg2;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (void)_handleURLRequest:(id)arg1;
+- (BOOL)_hasResourceLoaderDelegate;
 - (void)_removeFigAssetNotifications;
 - (void)_setAssetInspectorLoader:(id)arg1;
 - (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
@@ -54,7 +60,6 @@
 - (id)init;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)lyrics;
-- (id)requestForStreamingKeyForContext:(id)arg1 appID:(id)arg2 assetID:(id)arg3 options:(id)arg4 errorOut:(id*)arg5;
 - (id)resolvedURL;
 - (id)resourceLoader;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;

@@ -17,6 +17,7 @@
 
 + (id)mediaPlayerDownloadManager;
 
+- (void).cxx_destruct;
 - (void)_applyBlockToObservers:(id)arg1;
 - (void)_clearCache;
 - (id)_copyObservers;

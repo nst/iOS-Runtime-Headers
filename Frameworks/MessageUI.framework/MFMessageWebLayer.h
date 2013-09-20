@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class DOMRange, LibraryMessage, MFMessageReformattingContext, NSMutableDictionary, NSObject<MFMessageWebLayerDelegate>, NSString, NSTimer;
+@class DOMRange, MFLibraryMessage, MFMessageReformattingContext, NSMutableDictionary, NSObject<MFMessageWebLayerDelegate>, NSString, NSTimer;
 
 @interface MFMessageWebLayer : UIWebBrowserView {
     unsigned int _shouldReformat : 1;
@@ -15,10 +15,9 @@
     unsigned int _bottomReplyLastQuoteLevel;
     DOMRange *_bottomReplyRange;
     NSString *_currentUUID;
-    BOOL _didFinishLoad;
     BOOL _didReformatMessage;
     NSMutableDictionary *_displayInfoCache;
-    LibraryMessage *_displayInfoCacheLibraryMessage;
+    MFLibraryMessage *_displayInfoCacheLibraryMessage;
     int _displayStyle;
     BOOL _hasUnloadedRemoteImages;
     NSTimer *_ignorePendingStylesheetsTimer;
@@ -53,6 +52,7 @@
 - (BOOL)_elementHasDefinedWidth:(id)arg1;
 - (void)_frameDidFinishPrePrintURLification:(id)arg1;
 - (void)_ignorePendingStylesheets:(id)arg1;
+- (void)_preferredContentSizeDidChangeNotification:(id)arg1;
 - (id)_rangeOfFirstText;
 - (id)_reformatOneElementUsingMethod:(id)arg1 shouldCancel:(BOOL*)arg2;
 - (void)_reformattingDidFail;
@@ -81,7 +81,6 @@
 - (void)clearMessageReformattingCache;
 - (void)copy:(id)arg1;
 - (void)dealloc;
-- (void)defaultMouseDragged:(struct __GSEvent { }*)arg1;
 - (float)defaultWidth;
 - (void)displayDidEnd;
 - (int)displayStyle;
@@ -90,7 +89,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleSize:(struct CGSize { float x1; float x2; })arg2 viewportWidth:(float)arg3 displayStyle:(int)arg4;
 - (void)invalidateDisplayInfoCache;
 - (BOOL)isCancelled;
-- (void)loadFragments:(id)arg1 withDDContext:(id)arg2 forLibraryMessage:(id)arg3;
+- (void)loadFragments:(id)arg1 forLibraryMessage:(id)arg2;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (float)maximumDoubleTapScale;
 - (id)messageWebLayerDelegate;
@@ -98,6 +97,7 @@
 - (id)objectForDisplayInfoCacheKey:(id)arg1;
 - (id)originalHTMLString;
 - (void)parseDocument:(id)arg1;
+- (void)performBatchUpdates:(id)arg1;
 - (BOOL)prePrintDataDetectionPending;
 - (void)prepareDisplayInfoCacheWithLibraryMessage:(id)arg1;
 - (void)reformatMessage:(id)arg1;

@@ -11,13 +11,12 @@
 
 @property <EKEditItemViewControllerDelegate> * editDelegate;
 
+- (void).cxx_destruct;
 - (void)attendeeSelected:(id)arg1;
-- (void)dealloc;
 - (id)initWithEvent:(id)arg1;
 - (void)loadView;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)title;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

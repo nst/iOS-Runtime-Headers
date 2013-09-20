@@ -57,7 +57,7 @@
 - (void)setCommitInterval:(float)arg1;
 - (void)setHTMLHeight:(int)arg1;
 - (void)setHTMLWidth:(int)arg1;
-- (BOOL)setIsOnPhone:(BOOL)arg1;
+- (void)setIsOnPhone:(BOOL)arg1;
 - (void)setIsThumbnail:(BOOL)arg1;
 - (void)setPageCount:(unsigned int)arg1;
 - (void)setPassphrase:(id)arg1;

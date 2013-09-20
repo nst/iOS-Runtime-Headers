@@ -4,28 +4,40 @@
 
 @class GEOPlaceActionDetails;
 
-@interface GEOMapsUsageFeedbackCollection : PBCodable {
+@interface GEOMapsUsageFeedbackCollection : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
+    struct { 
+        unsigned int sessionID : 1; 
+        unsigned int sessionRelativeTimestamp : 1; 
+        unsigned int actionType : 1; 
     int _actionType;
+    } _has;
     GEOPlaceActionDetails *_placeActionDetails;
     } _sessionID;
     double _sessionRelativeTimestamp;
 }
 
 @property int actionType;
+@property BOOL hasActionType;
 @property(readonly) BOOL hasPlaceActionDetails;
+@property BOOL hasSessionID;
+@property BOOL hasSessionRelativeTimestamp;
 @property(retain) GEOPlaceActionDetails * placeActionDetails;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionID;
 @property double sessionRelativeTimestamp;
 
 - (int)actionType;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasActionType;
 - (BOOL)hasPlaceActionDetails;
+- (BOOL)hasSessionID;
+- (BOOL)hasSessionRelativeTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)placeActionDetails;
@@ -33,6 +45,9 @@
 - (struct { unsigned long long x1; unsigned long long x2; })sessionID;
 - (double)sessionRelativeTimestamp;
 - (void)setActionType:(int)arg1;
+- (void)setHasActionType:(BOOL)arg1;
+- (void)setHasSessionID:(BOOL)arg1;
+- (void)setHasSessionRelativeTimestamp:(BOOL)arg1;
 - (void)setPlaceActionDetails:(id)arg1;
 - (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;

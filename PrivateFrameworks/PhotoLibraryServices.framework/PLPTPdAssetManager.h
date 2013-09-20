@@ -9,15 +9,15 @@
     NSObject<PhotoLibraryPTPDelegate> *_delegate;
     NSString *_firstDCIMFolderServiced;
     NSMutableArray *_inflightAssets;
+    PLPhotoLibrary *_photoLibrary;
     NSFileManager *fileManager;
-    PLPhotoLibrary *photoLibrary;
 }
 
 @property(readonly) NSArray * albumObjectIDs;
 @property NSObject<PhotoLibraryPTPDelegate> * delegate;
 @property(retain) NSFileManager * fileManager;
 @property(readonly) PLManagedObjectContext * managedObjectContext;
-@property(retain) PLPhotoLibrary * photoLibrary;
+@property(readonly) PLPhotoLibrary * photoLibrary;
 
 - (id)_allAssetObjectIDs;
 - (BOOL)_isPTPAlbum:(id)arg1;
@@ -39,6 +39,7 @@
 - (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssets:(id)arg2 deletedAssets:(id)arg3 changedAssets:(id)arg4;
 - (id)managedObjectContext;
 - (id)photoLibrary;
+- (void)photoLibraryAvailabilityChangedNotification;
 - (BOOL)ptpCanDeleteFiles;
 - (BOOL)ptpDeletePhotoWithKey:(struct NSObject { Class x1; }*)arg1 andExtension:(id)arg2;
 - (id)ptpInformationForFilesInDirectory:(id)arg1;
@@ -47,7 +48,6 @@
 - (id)ptpThumbnailForPhotoWithKey:(struct NSObject { Class x1; }*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFileManager:(id)arg1;
-- (void)setPhotoLibrary:(id)arg1;
 - (void)setPtpDelegate:(id)arg1;
 
 @end

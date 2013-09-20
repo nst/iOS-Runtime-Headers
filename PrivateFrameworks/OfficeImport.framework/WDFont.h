@@ -16,7 +16,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (int)fontFamily;
-- (unsigned int)hash;
+- (unsigned long)hash;
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

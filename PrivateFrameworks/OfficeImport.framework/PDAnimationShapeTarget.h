@@ -4,7 +4,7 @@
 
 @class OADDrawable;
 
-@interface PDAnimationShapeTarget : PDAnimationTargetElement {
+@interface PDAnimationShapeTarget : PDAnimationTarget {
     OADDrawable *mDrawable;
 }
 

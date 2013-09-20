@@ -23,6 +23,11 @@
 + (void)sleepForTimeInterval:(double)arg1;
 + (void)sleepUntilDate:(id)arg1;
 + (double)threadPriority;
++ (BOOL)tsp_hasReadFileAccess;
++ (BOOL)tsp_isArchiverThread;
++ (void)tsp_performSynchronousArchiverOperationUsingBlock:(id)arg1;
++ (void)tsp_performSynchronousOperationMarkingThreadWithKey:(id)arg1 usingBlock:(id)arg2;
++ (void)tsp_performSynchronousOperationWithReadFileAccessUsingBlock:(id)arg1;
 
 - (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2 modes:(id)arg3;
 - (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2;

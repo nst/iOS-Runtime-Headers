@@ -10,6 +10,7 @@
 @property(retain) SALocation * address;
 @property(copy) NSURL * businessUrl;
 @property(copy) NSArray * categories;
+@property(copy) NSString * currencySymbol;
 @property(copy) NSString * description;
 @property(copy) NSString * extSessionGuid;
 @property(copy) NSDictionary * identifierMap;
@@ -17,20 +18,21 @@
 @property(copy) NSArray * offerLists;
 @property(retain) SALocalSearchOperationHours * operationHours;
 @property(copy) NSString * phoneNumber;
-@property(copy) NSArray * photoFullSize;
 @property(copy) NSArray * photoList;
-@property(copy) NSArray * photoThumbnail;
+@property(copy) NSString * priceRange;
 @property(copy) NSArray * reviewList;
 
 + (id)afui_mapsURLForLocalSearchBusiness2s:(id)arg1;
 + (id)business2;
 + (id)business2WithDictionary:(id)arg1 context:(id)arg2;
++ (id)siriui_mapsURLForLocalSearchBusiness2s:(id)arg1;
 
 - (id)address;
 - (id)afui_mapItemRepresentation;
 - (id)afui_mapsURL;
 - (id)businessUrl;
 - (id)categories;
+- (id)currencySymbol;
 - (id)description;
 - (id)encodedClassName;
 - (id)extSessionGuid;
@@ -40,13 +42,13 @@
 - (id)offerLists;
 - (id)operationHours;
 - (id)phoneNumber;
-- (id)photoFullSize;
 - (id)photoList;
-- (id)photoThumbnail;
+- (id)priceRange;
 - (id)reviewList;
 - (void)setAddress:(id)arg1;
 - (void)setBusinessUrl:(id)arg1;
 - (void)setCategories:(id)arg1;
+- (void)setCurrencySymbol:(id)arg1;
 - (void)setDescription:(id)arg1;
 - (void)setExtSessionGuid:(id)arg1;
 - (void)setIdentifierMap:(id)arg1;
@@ -54,10 +56,11 @@
 - (void)setOfferLists:(id)arg1;
 - (void)setOperationHours:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
-- (void)setPhotoFullSize:(id)arg1;
 - (void)setPhotoList:(id)arg1;
-- (void)setPhotoThumbnail:(id)arg1;
+- (void)setPriceRange:(id)arg1;
 - (void)setReviewList:(id)arg1;
+- (id)siriui_mapItemRepresentation;
+- (id)siriui_mapsURL;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

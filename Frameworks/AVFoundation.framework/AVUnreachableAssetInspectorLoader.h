@@ -9,6 +9,7 @@
     NSDictionary *_figErrorUserInfo;
 }
 
+- (void)dealloc;
 - (id)initWithFigError:(long)arg1 userInfo:(id)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSCalendar, NSDate, NSDateComponents, NSLocale, NSTimeZone, UIDatePicker, UILabel, _UIDatePickerMode;
+@class NSCalendar, NSDate, NSDateComponents, NSLocale, NSTimeZone, UIDatePicker, UIFont, UILabel, _UIDatePickerMode;
 
 @interface _UIDatePickerView : UIPickerView <UIPickerViewDelegate, UIPickerViewDataSource> {
     struct { 
@@ -10,9 +10,8 @@
         unsigned int loadingDateOrTime : 1; 
         unsigned int highlightsToday : 1; 
         unsigned int usesBlackChrome : 1; 
-    BOOL _allowsZeroCountdownDuration;
+    BOOL _allowsZeroTimeInterval;
     NSLocale *_compositeLocale;
-    double _countDownDuration;
     UIDatePicker *_datePickerDelegate;
     } _datePickerFlags;
     id _delegateOfDatePicker;
@@ -24,6 +23,7 @@
     NSDate *_minimumDate;
     UILabel *_minuteLabel;
     _UIDatePickerMode *_mode;
+    double _timeInterval;
     NSTimeZone *_timeZone;
     NSCalendar *_userProvidedCalendar;
     NSLocale *_userProvidedLocale;
@@ -32,24 +32,34 @@
     NSDate *_userSuppliedMinimumDate;
 }
 
-@property(getter=_allowsZeroCountdownDuration,setter=_setAllowsZeroCountdownDuration:) BOOL allowsZeroCountdownDuration;
-@property double countDownDuration;
+@property(getter=_allowsZeroCountDownDuration,setter=_setAllowsZeroCountDownDuration:) BOOL allowsZeroCountDownDuration;
+@property(getter=_allowsZeroTimeInterval,setter=_setAllowsZeroTimeInterval:) BOOL allowsZeroTimeInterval;
+@property(getter=_amPmValue,readonly) int amPmValue;
+@property(readonly) NSCalendar * calendar;
+@property(readonly) float contentWidth;
 @property(copy) NSDate * date;
 @property(copy) NSDateComponents * dateComponents;
 @property int datePickerMode;
 @property id delegateOfDatePicker;
 @property(getter=_hasCustomCalendar,readonly) BOOL hasCustomCalendar;
+@property(getter=_hasCustomLocale,readonly) BOOL hasCustomLocale;
 @property BOOL highlightsToday;
+@property(getter=_hrMinFont,readonly) UIFont * hrMinFont;
+@property(getter=_isTimeIntervalMode,readonly) BOOL isTimeIntervalMode;
+@property(getter=_lastSelectedDateComponents,readonly) NSDateComponents * lastSelectedDateComponents;
+@property(readonly) NSLocale * locale;
 @property(copy) NSDate * maximumDate;
 @property(copy) NSDate * minimumDate;
 @property int minuteInterval;
 @property BOOL staggerTimeIntervals;
+@property double timeInterval;
 @property(retain) NSTimeZone * timeZone;
 @property(copy) NSCalendar * userProvidedCalendar;
 @property(retain) NSLocale * userProvidedLocale;
 @property(getter=_usesBlackChrome,setter=_setUsesBlackChrome:) BOOL usesBlackChrome;
 
-- (BOOL)_allowsZeroCountdownDuration;
+- (BOOL)_allowsZeroCountDownDuration;
+- (BOOL)_allowsZeroTimeInterval;
 - (int)_amPmValue;
 - (id)_componentsSelectedAfterEnforcingValidityOfComponents:(id)arg1 withLastManipulatedComponent:(int)arg2;
 - (void)_datePickerReset:(id)arg1;
@@ -60,11 +70,14 @@
 - (id)_hoursStringForHour:(int)arg1;
 - (id)_hrMinFont;
 - (BOOL)_isCurrentCalendar:(id)arg1;
+- (BOOL)_isTimeIntervalMode;
 - (id)_labelForCalendarUnit:(unsigned int)arg1 createIfNecessary:(BOOL)arg2;
+- (id)_labelTextForCalendarUnit:(unsigned int)arg1;
 - (id)_lastSelectedDateComponents;
 - (void)_loadDate:(id)arg1 animated:(BOOL)arg2;
 - (id)_makeNewAccessoryLabel;
 - (id)_minutesStringForHour:(int)arg1 minutes:(int)arg2;
+- (id)_orientationImageSuffix;
 - (void)_positionLabel:(id)arg1 forCalendarUnit:(unsigned int)arg2 relativeTo:(id)arg3 order:(int)arg4;
 - (void)_rebuildCompositeLocale;
 - (void)_resetSelectionOfTables;
@@ -73,10 +86,11 @@
 - (int)_selectedMinuteForColumn:(int)arg1;
 - (id)_selectedTextForCalendarUnit:(unsigned int)arg1;
 - (int)_selectionBarRowInComponent:(int)arg1;
-- (void)_setAllowsZeroCountdownDuration:(BOOL)arg1;
+- (void)_setAllowsZeroCountDownDuration:(BOOL)arg1;
+- (void)_setAllowsZeroTimeInterval:(BOOL)arg1;
 - (void)_setDate:(id)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)_setHidesLabels:(BOOL)arg1;
-- (void)_setLabel:(id)arg1 forCalendarUnit:(unsigned int)arg2;
+- (void)_setLabel:(id)arg1 forCalendarUnit:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)_setMode:(id)arg1;
 - (void)_setUsesBlackChrome:(BOOL)arg1;
 - (BOOL)_showingDate;
@@ -90,7 +104,6 @@
 - (id)_viewForSelectedRowInComponent:(int)arg1;
 - (id)calendar;
 - (float)contentWidth;
-- (double)countDownDuration;
 - (id)date;
 - (id)dateComponents;
 - (int)datePickerMode;
@@ -115,7 +128,6 @@
 - (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (int)second;
-- (void)setCountDownDuration:(double)arg1;
 - (void)setDate:(id)arg1 animated:(BOOL)arg2;
 - (void)setDate:(id)arg1;
 - (void)setDateComponents:(id)arg1;
@@ -128,11 +140,13 @@
 - (void)setMinimumDate:(id)arg1;
 - (void)setMinuteInterval:(int)arg1;
 - (void)setStaggerTimeIntervals:(BOOL)arg1;
+- (void)setTimeInterval:(double)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setUserProvidedCalendar:(id)arg1;
 - (void)setUserProvidedLocale:(id)arg1;
 - (id)shadowColor;
 - (BOOL)staggerTimeIntervals;
+- (double)timeInterval;
 - (id)timeZone;
 - (id)userProvidedCalendar;
 - (id)userProvidedLocale;

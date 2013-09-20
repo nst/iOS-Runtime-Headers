@@ -4,12 +4,13 @@
 
 @class NSDictionary, NSString;
 
-@interface AOSFMFAccountInfo : NSObject {
+@interface AOSFMFAccountInfo : NSObject <NSSecureCoding> {
     NSDictionary *_additionalInfo;
     NSString *_aosAPSEnvironment;
     NSString *_aosServerHost;
     NSString *_aosServerProtocolScheme;
     NSString *_appAuthToken;
+    int _appAuthTokenStatus;
     NSString *_dsid;
     NSString *_internalAuthToken;
     NSString *_username;
@@ -20,23 +21,31 @@
 @property(retain) NSString * aosServerHost;
 @property(retain) NSString * aosServerProtocolScheme;
 @property(retain) NSString * appAuthToken;
+@property int appAuthTokenStatus;
 @property(retain) NSString * dsid;
 @property(retain) NSString * internalAuthToken;
 @property(retain) NSString * username;
+
++ (BOOL)supportsSecureCoding;
 
 - (id)additionalInfo;
 - (id)aosAPSEnvironment;
 - (id)aosServerHost;
 - (id)aosServerProtocolScheme;
 - (id)appAuthToken;
+- (int)appAuthTokenStatus;
 - (void)dealloc;
+- (id)description;
 - (id)dsid;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)internalAuthToken;
 - (void)setAdditionalInfo:(id)arg1;
 - (void)setAosAPSEnvironment:(id)arg1;
 - (void)setAosServerHost:(id)arg1;
 - (void)setAosServerProtocolScheme:(id)arg1;
 - (void)setAppAuthToken:(id)arg1;
+- (void)setAppAuthTokenStatus:(int)arg1;
 - (void)setDsid:(id)arg1;
 - (void)setInternalAuthToken:(id)arg1;
 - (void)setUsername:(id)arg1;

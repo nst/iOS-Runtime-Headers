@@ -11,12 +11,14 @@
 @property(readonly) NSArray * availableChapterLocales;
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property(readonly) struct CGSize { float x1; float x2; } naturalSize;
+@property(readonly) struct CGSize { float x1; float x2; } naturalSizeWithPreferredTransforms;
 @property(readonly) float preferredRate;
 @property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property(readonly) float preferredVolume;
 
 + (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;
 + (id)assetWithURL:(id)arg1;
++ (id)keyPathsForValuesAffectingNaturalSizeWithPreferredTransforms;
 
 - (id)_absoluteURL;
 - (id)_assetInspector;
@@ -25,6 +27,7 @@
 - (id)_comparisonToken;
 - (BOOL)_containsAtLeastOnePlayableAudioTrack;
 - (BOOL)_containsAtLeastOnePlayableVideoTrack;
+- (id)_exportURL;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_firstTrackGroupWithMediaType:(id)arg1;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
@@ -61,9 +64,11 @@
 - (id)lyrics;
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (id)mediaSelectionGroups;
+- (id)metadata;
 - (id)metadataForFormat:(id)arg1;
 - (void)mpLoadValuesAsynchronouslyForKeys:(id)arg1 completionQueue:(id)arg2 completionHandler:(id)arg3;
 - (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSizeWithPreferredTransforms;
 - (int)naturalTimeScale;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;

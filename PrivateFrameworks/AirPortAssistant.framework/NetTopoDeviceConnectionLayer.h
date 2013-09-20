@@ -21,7 +21,9 @@
     unsigned int _connectionStyle;
     } _downstreamConnectionPoint;
     struct CGPath { } *_hitTestPath;
+    struct CGColor { } *_lineColorActive;
     struct CGColor { } *_lineColorEthernet;
+    struct CGColor { } *_lineColorInactive;
     struct CGColor { } *_lineColorWiFi;
     struct CGColor { } *_selectedLineColor;
     } _siblingMergePoint;
@@ -54,8 +56,8 @@
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getUserInteractionBounds;
 - (struct CGPath { }*)hitTestPath;
-- (id)init;
-- (BOOL)isSelected;
+- (void)initNetTopoDeviceConnectionLayerCommonWithStyle:(int)arg1 andOwningView:(id)arg2;
+- (id)initWithUIStyle:(int)arg1 andOwningView:(id)arg2;
 - (void)layoutSublayers;
 - (struct CGPath { }*)newConnectionPathWithOffset:(float)arg1;
 - (void)setConnectionMediumFallback:(unsigned int)arg1;

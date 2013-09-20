@@ -6,14 +6,15 @@
 
 @interface SSRedeemCodesResponse : NSObject <SSXPCCoding> {
     NSDictionary *_errors;
-    NSArray *_redeemedCodes;
+    NSDictionary *_redeemedCodes;
 }
 
 @property(readonly) NSArray * failedCodes;
-@property(copy) NSArray * redeemedCodes;
+@property(readonly) NSArray * redeemedCodes;
 
 - (id)copyXPCEncoding;
 - (void)dealloc;
+- (id)dictionaryForCode:(id)arg1;
 - (id)errorForCode:(id)arg1;
 - (id)failedCodes;
 - (id)initWithXPCEncoding:(id)arg1;

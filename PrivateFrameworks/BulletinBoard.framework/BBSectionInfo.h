@@ -2,22 +2,23 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBSectionInfo, NSArray, NSData, NSString;
+@class BBSectionIcon, BBSectionInfo, NSArray, NSData, NSString;
 
-@interface BBSectionInfo : NSObject <NSCopying, NSCoding> {
+@interface BBSectionInfo : NSObject <NSCopying, NSSecureCoding> {
     unsigned int _alertType;
     NSArray *_dataProviderIDs;
     NSString *_displayName;
     BOOL _displaysCriticalBulletins;
     NSString *_factorySectionID;
     BOOL _hideWeeApp;
-    NSData *_iconData;
+    BBSectionIcon *_icon;
     unsigned int _notificationCenterLimit;
     BBSectionInfo *_parentSection;
     NSString *_pathToWeeAppPluginBundle;
     unsigned int _pushSettings;
+    int _sectionCategory;
     NSString *_sectionID;
-    unsigned int _sectionType;
+    int _sectionType;
     BOOL _showsInLockScreen;
     BOOL _showsInNotificationCenter;
     BOOL _showsMessagePreview;
@@ -38,13 +39,15 @@
 @property BOOL enabled;
 @property(copy) NSString * factorySectionID;
 @property BOOL hideWeeApp;
-@property(copy) NSData * iconData;
+@property(copy) BBSectionIcon * icon;
+@property(readonly) NSData * iconData;
 @property unsigned int notificationCenterLimit;
 @property BBSectionInfo * parentSection;
 @property(copy) NSString * pathToWeeAppPluginBundle;
 @property unsigned int pushSettings;
+@property int sectionCategory;
 @property(copy) NSString * sectionID;
-@property unsigned int sectionType;
+@property int sectionType;
 @property BOOL showsInLockScreen;
 @property BOOL showsInNotificationCenter;
 @property BOOL showsMessagePreview;
@@ -56,12 +59,13 @@
 @property unsigned int suppressedSettings;
 @property unsigned int version;
 
-+ (id)defaultSectionInfoForType:(unsigned int)arg1;
-+ (BOOL)defaultStateForSetting:(unsigned int)arg1 inSectionType:(unsigned int)arg2;
++ (id)defaultSectionInfoForType:(int)arg1;
++ (BOOL)defaultStateForSetting:(unsigned int)arg1 inSectionType:(int)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (void)_addSubsection:(id)arg1;
 - (void)_associateDataProviderSectionInfo:(id)arg1;
-- (void)_configureWithDefaultsForSectionType:(unsigned int)arg1;
+- (void)_configureWithDefaultsForSectionType:(int)arg1;
 - (void)_dissociateDataProviderSectionInfo:(id)arg1;
 - (id)_pushSettingsDescription;
 - (void)_replaceSubsection:(id)arg1;
@@ -80,6 +84,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)factorySectionID;
 - (BOOL)hideWeeApp;
+- (id)icon;
 - (id)iconData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -87,8 +92,9 @@
 - (id)parentSection;
 - (id)pathToWeeAppPluginBundle;
 - (unsigned int)pushSettings;
+- (int)sectionCategory;
 - (id)sectionID;
-- (unsigned int)sectionType;
+- (int)sectionType;
 - (void)setAlertType:(unsigned int)arg1;
 - (void)setBulletinCount:(unsigned int)arg1;
 - (void)setDataProviderIDs:(id)arg1;
@@ -97,13 +103,14 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFactorySectionID:(id)arg1;
 - (void)setHideWeeApp:(BOOL)arg1;
-- (void)setIconData:(id)arg1;
+- (void)setIcon:(id)arg1;
 - (void)setNotificationCenterLimit:(unsigned int)arg1;
 - (void)setParentSection:(id)arg1;
 - (void)setPathToWeeAppPluginBundle:(id)arg1;
 - (void)setPushSettings:(unsigned int)arg1;
+- (void)setSectionCategory:(int)arg1;
 - (void)setSectionID:(id)arg1;
-- (void)setSectionType:(unsigned int)arg1;
+- (void)setSectionType:(int)arg1;
 - (void)setShowsInLockScreen:(BOOL)arg1;
 - (void)setShowsInNotificationCenter:(BOOL)arg1;
 - (void)setShowsMessagePreview:(BOOL)arg1;

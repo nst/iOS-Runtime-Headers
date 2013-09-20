@@ -6,6 +6,7 @@
 }
 
 + (int)TCCStateForClient:(id)arg1 accountType:(id)arg2;
++ (BOOL)TCCSupportedForAccountType:(id)arg1;
 + (struct __CFString { }*)_TCCServiceForAccountTypeID:(id)arg1;
 + (id)allTCCStatesForAccountType:(id)arg1;
 + (BOOL)clearAllTCCStatesForAccountType:(id)arg1;

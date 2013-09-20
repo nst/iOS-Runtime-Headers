@@ -17,6 +17,7 @@
 
 - (void)dealloc;
 - (id)deletedObjects;
+- (id)description;
 - (BOOL)hasChanges;
 - (id)init;
 - (id)initWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3 lockedObjects:(id)arg4;

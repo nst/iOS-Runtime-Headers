@@ -2,26 +2,18 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ACDDatabase, NSSet;
+@class NSObject<OS_dispatch_queue>, NSSet;
 
 @interface ACDAccessPluginManager : NSObject {
-    struct dispatch_queue_s { } *_accessPluginQueue;
-    struct dispatch_semaphore_s { } *_accessPluginQueueSemaphore;
+    NSObject<OS_dispatch_queue> *_accessPluginQueue;
     NSSet *_accessPlugins;
-    id _authorizationCompletionHandler;
-    ACDDatabase *_database;
 }
 
 - (void).cxx_destruct;
 - (id)_authorizationPluginForAccountType:(id)arg1;
 - (void)authorizeAccessToAccountsOfType:(id)arg1 forClient:(id)arg2 store:(id)arg3 completion:(id)arg4;
-- (void)dealloc;
-- (void)handleAccessRequestToAccountsOfType:(id)arg1 forClient:(id)arg2 withOptions:(id)arg3 store:(id)arg4 completion:(id)arg5;
-- (id)initWithDatabase:(id)arg1;
+- (void)handleAccessRequestToAccountsOfType:(id)arg1 forClient:(id)arg2 withOptions:(id)arg3 store:(id)arg4 allowUserInteraction:(BOOL)arg5 completion:(id)arg6;
+- (id)init;
 - (void)revokeAccessToAccountsOfType:(id)arg1 forClient:(id)arg2 store:(id)arg3 completion:(id)arg4;
 - (void)revokeAllAccessToAccountsOfType:(id)arg1 store:(id)arg2 withCompletion:(id)arg3;
 

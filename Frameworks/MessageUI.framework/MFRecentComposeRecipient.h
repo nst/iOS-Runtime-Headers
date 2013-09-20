@@ -9,9 +9,13 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)initWithRecentContact:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isGroup;
 - (BOOL)isRemovableFromSearchResults;
 - (id)placeholderName;
+- (id)preferredSendingAddress;
 - (id)recentContact;
 
 @end

@@ -8,39 +8,19 @@
     BOOL dontRestore;
     UIView *dontRestoreRecommendationContainerView;
     UILabel *dontRestoreRecommendationLabel;
-    UILabel *dontRestoreRecommendationTextView;
-    UIView *justTextContainerView;
-    UILabel *justTextLabel;
     UIView *restoreRecommendationContainerView;
     UILabel *restoreRecommendationLabel;
-    UILabel *restoreRecommendationTextView;
-    UIView *tableHeaderContainerView;
 }
 
 @property(retain) UIView * dontRestoreRecommendationContainerView;
-@property(retain) UILabel * dontRestoreRecommendationLabel;
-@property(retain) UIView * justTextContainerView;
-@property(retain) UILabel * justTextLabel;
 @property(retain) UIView * restoreRecommendationContainerView;
-@property(retain) UILabel * restoreRecommendationLabel;
-@property(retain) UIView * tableHeaderContainerView;
 
+- (void)dealloc;
 - (id)dontRestoreRecommendationContainerView;
-- (id)dontRestoreRecommendationLabel;
-- (void)initUI;
-- (id)justTextContainerView;
-- (id)justTextLabel;
 - (id)restoreRecommendationContainerView;
-- (id)restoreRecommendationLabel;
 - (void)setDontRestoreRecommendationContainerView:(id)arg1;
-- (void)setDontRestoreRecommendationLabel:(id)arg1;
-- (void)setJustTextContainerView:(id)arg1;
-- (void)setJustTextLabel:(id)arg1;
 - (void)setRestoreRecommendationContainerView:(id)arg1;
-- (void)setRestoreRecommendationLabel:(id)arg1;
-- (void)setTableHeaderContainerView:(id)arg1;
 - (void)setupInitialTableHeaderConfiguration;
-- (id)tableHeaderContainerView;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

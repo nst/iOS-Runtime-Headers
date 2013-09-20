@@ -5,6 +5,7 @@
 @interface CloudTabServices : NSObject {
 }
 
++ (id)_serverConnection;
 + (void)clearAllCloudTabDevices;
 + (void)clearTabsForCurrentDevice;
 + (void)didToggleCloudTabs:(BOOL)arg1 terminateAfterUpdating:(BOOL)arg2;

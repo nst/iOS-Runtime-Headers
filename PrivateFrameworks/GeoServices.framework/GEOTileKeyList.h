@@ -9,6 +9,7 @@
     void *_head;
     GEOTileKeyMap *_map;
     unsigned int _maxCount;
+    unsigned long _mutationsCount;
     void *_tail;
 }
 

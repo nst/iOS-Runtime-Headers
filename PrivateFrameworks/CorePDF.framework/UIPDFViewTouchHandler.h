@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UILongPressGestureRecognizer, UIMenuController, UIPDFPageView, UIPDFSelectionController, UIPDFViewMagnifyController, UITapGestureRecognizer;
+@class UILongPressGestureRecognizer, UIMenuController, UIPDFMagnifierController, UIPDFPageView, UIPDFSelectionController, UITapGestureRecognizer;
 
 @interface UIPDFViewTouchHandler : UIResponder <UIGestureRecognizerDelegate> {
     BOOL _allowMenu;
@@ -10,7 +10,7 @@
     UITapGestureRecognizer *_doubleTapRecognizer;
     BOOL _firstTouch;
     UILongPressGestureRecognizer *_longPressRecognizer;
-    UIPDFViewMagnifyController *_magnifyController;
+    UIPDFMagnifierController *_magnifyController;
     UIMenuController *_menuController;
     UIPDFPageView *_pdfPageView;
     UIPDFSelectionController *_selectionController;
@@ -32,6 +32,7 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)copy:(id)arg1;
 - (void)dealloc;
+- (BOOL)delegateGesture:(id)arg1 kind:(int)arg2;
 - (void)disableRecognizers;
 - (void)doubleTapRecognized:(id)arg1;
 - (void)enableRecognizers;

@@ -40,6 +40,7 @@
 - (struct sqlite3_stmt { }*)_statementForSQL:(id)arg1 cache:(BOOL)arg2;
 - (void)accessDatabaseUsingBlock:(id)arg1;
 - (void)beginTaskCompletionAssertion;
+- (int)countChanges;
 - (void)dealloc;
 - (void)dispatchAfter:(unsigned long long)arg1 block:(id)arg2;
 - (void)dispatchBlockAsync:(id)arg1;
@@ -53,8 +54,11 @@
 - (void)prepareStatementForSQL:(id)arg1 cache:(BOOL)arg2 usingBlock:(id)arg3;
 - (void)setSetupBlock:(id)arg1;
 - (void)setTakesTaskCompletionAssertions:(BOOL)arg1;
+- (BOOL)setUserVersion:(int)arg1 forDatabase:(id)arg2;
 - (BOOL)setUserVersion:(int)arg1;
 - (id)setupBlock;
 - (BOOL)takesTaskCompletionAssertions;
+- (int)userVersion;
+- (int)userVersionForDatabase:(id)arg1;
 
 @end

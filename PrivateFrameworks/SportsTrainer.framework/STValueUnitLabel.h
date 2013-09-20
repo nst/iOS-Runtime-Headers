@@ -7,6 +7,7 @@
 @interface STValueUnitLabel : UIView {
     unsigned int _reversesLabels : 1;
     unsigned int _forceLayout : 1;
+    unsigned int _verticalArrangement : 1;
     float _labelSpacing;
     UILabel *_leftLabel;
     UILabel *_rightLabel;
@@ -18,6 +19,7 @@
 @property BOOL reversesLabels;
 @property(readonly) UILabel * rightLabel;
 @property int textAlignment;
+@property BOOL verticalArrangement;
 
 - (BOOL)_labelsNeedSizing;
 - (void)_sizeLabelsToFit;
@@ -33,8 +35,10 @@
 - (void)setNeedsDisplay;
 - (void)setReversesLabels:(BOOL)arg1;
 - (void)setTextAlignment:(int)arg1;
+- (void)setVerticalArrangement:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
 - (int)textAlignment;
+- (BOOL)verticalArrangement;
 
 @end

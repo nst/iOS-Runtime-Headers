@@ -60,6 +60,10 @@
             boolisInitialized; 
         } deviceMotion; 
         boolfsync; 
+    struct unique_ptr<CLGeomagneticModelProvider_Type::Client, std::__1::default_delete<CLGeomagneticModelProvider_Type::Client> > { 
+        struct __compressed_pair<CLGeomagneticModelProvider_Type::Client *, std::__1::default_delete<CLGeomagneticModelProvider_Type::Client> > { 
+            struct Client {} *__first_; 
+        } __ptr_; 
     struct { 
         double x; 
         double y; 
@@ -79,27 +83,29 @@
     int (*fPrivateAccelerometerDataCallback)();
     int (*fPrivateDeviceMotionCallback)();
     int (*fPrivateGyroDataCallback)();
+    int (*fPrivateNotificationCallback)();
+    boolfCompassCalibrationHud;
     boolfHaveSentDeviceRequiresMovementError;
     boolfHaveSentTrueNorthUnavailableError;
     boolfInactive;
     boolfPrivateDeviceMotionUse9Axis;
     boolfPrivateUseAccelerometer;
+    boolfPrivateWantsPowerConservativeDeviceMotion;
     boolfShowCompassCalibrationHudOnResume;
     boolfShowsDeviceMovementDisplay;
-    struct Dispatcher { int (**x1)(); } *fAccelerometerDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fAccelerometerDispatcher;
     id fAccelerometerHandler;
     NSOperationQueue *fAccelerometerQueue;
     double fAccelerometerUpdateInterval;
     int fAttitudeReferenceFrame;
-    void *fCompassCalibrationHud;
-    struct Dispatcher { int (**x1)(); } *fDeviceMotionDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fDeviceMotionDispatcher;
     id fDeviceMotionHandler;
     NSOperationQueue *fDeviceMotionQueue;
     double fDeviceMotionStartTimestamp;
     double fDeviceMotionUpdateInterval;
     } fGeomagneticModel;
-    int fGeomagneticModelProviderClient;
-    struct Dispatcher { int (**x1)(); } *fGyroDispatcher;
+    } fGeomagneticModelProviderClient;
+    struct Dispatcher { int (**x1)(); id x2; } *fGyroDispatcher;
     id fGyroHandler;
     NSOperationQueue *fGyroQueue;
     double fGyroUpdateInterval;
@@ -111,20 +117,24 @@
     } fLatestDeviceMotionSample;
     } fLatestGyroSample;
     } fLatestMagnetometerSample;
-    struct Dispatcher { int (**x1)(); } *fMagnetometerDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fMagnetometerDispatcher;
     id fMagnetometerHandler;
     NSOperationQueue *fMagnetometerQueue;
     double fMagnetometerUpdateInterval;
     void *fPrivateAccelerometerDataCallbackInfo;
-    struct Dispatcher { int (**x1)(); } *fPrivateAccelerometerDataDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fPrivateAccelerometerDataDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fPrivateDeviceMotionAlgorithmDidResetDispatcher;
     void *fPrivateDeviceMotionCallbackInfo;
-    struct Dispatcher { int (**x1)(); } *fPrivateDeviceMotionDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fPrivateDeviceMotionDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fPrivateDeviceMotionSensorStatusDispatcher;
     void *fPrivateGyroDataCallbackInfo;
-    struct Dispatcher { int (**x1)(); } *fPrivateGyroDataDispatcher;
+    struct Dispatcher { int (**x1)(); id x2; } *fPrivateGyroDataDispatcher;
+    void *fPrivateNotificationCallbackInfo;
     int fSampleLock;
 }
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1;
 

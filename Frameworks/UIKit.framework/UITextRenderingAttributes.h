@@ -27,59 +27,9 @@
     float _minimumTrackingAdjustment;
     float _trackingAdjustment;
     } _truncationRect;
-    id *renderString;
 }
 
-@property(readonly) float actualFontSize;
-@property(readonly) float actualTrackingAdjustment;
-@property int alignment;
-@property int baselineAdjustment;
-@property BOOL drawUnderline;
-@property(retain) UIFont * font;
-@property BOOL includeEmoji;
-@property int lineBreakMode;
-@property float lineSpacing;
-@property float minimumFontSize;
-@property float minimumTrackingAdjustment;
-@property id* renderString;
-@property float trackingAdjustment;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } truncationRect;
-
-+ (id)attributesWithSystemFontOfSize:(float)arg1;
-
-- (float)actualFontSize;
-- (float)actualTrackingAdjustment;
-- (int)alignment;
-- (id)attributesDictionary:(BOOL)arg1;
-- (int)baselineAdjustment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (BOOL)drawUnderline;
-- (int)ellipsisStyle;
-- (id)font;
-- (BOOL)includeEmoji;
 - (id)init;
-- (float)letterSpacing;
-- (int)lineBreakMode;
-- (float)lineSpacing;
-- (float)minimumFontSize;
-- (float)minimumTrackingAdjustment;
-- (id*)renderString;
-- (void)setActualFontSize:(float)arg1;
-- (void)setActualTrackingAdjustment:(float)arg1;
-- (void)setAlignment:(int)arg1;
-- (void)setBaselineAdjustment:(int)arg1;
-- (void)setDrawUnderline:(BOOL)arg1;
-- (void)setFont:(id)arg1;
-- (void)setIncludeEmoji:(BOOL)arg1;
-- (void)setLineBreakMode:(int)arg1;
-- (void)setLineSpacing:(float)arg1;
-- (void)setMinimumFontSize:(float)arg1;
-- (void)setMinimumTrackingAdjustment:(float)arg1;
-- (void)setRenderString:(id*)arg1;
-- (void)setTrackingAdjustment:(float)arg1;
-- (void)setTruncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)trackingAdjustment;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })truncationRect;
 
 @end

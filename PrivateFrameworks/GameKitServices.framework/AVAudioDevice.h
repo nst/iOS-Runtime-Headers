@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (id)deviceID;
 - (id)deviceName;
+- (unsigned int)hash;
 - (id)initWithDeviceID:(id)arg1;
 - (BOOL)inputAvailable;
 - (BOOL)isEqual:(id)arg1;

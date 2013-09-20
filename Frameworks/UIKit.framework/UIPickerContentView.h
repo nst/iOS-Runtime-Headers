@@ -19,6 +19,7 @@
 + (float)_checkmarkOffset;
 
 - (BOOL)_isSelectable;
+- (id)checkedColor;
 - (void)dealloc;
 - (BOOL)isChecked;
 - (BOOL)isHighlighted;

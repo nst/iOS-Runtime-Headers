@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIImageTableArtwork : UISharedArtwork {
+@interface UIImageTableArtwork : UISharedArtwork <_UISharedArtworkResolving> {
 }
 
 + (void)initialize;

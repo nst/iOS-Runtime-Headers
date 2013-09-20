@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSURL;
+@class NSArray;
 
-@interface SAClockDelete : SABaseClientBoundCommand {
+@interface SAClockDelete : SADomainCommand {
 }
 
 @property(copy) NSArray * clockIds;
-@property(copy) NSURL * targetAppId;
 
 + (id)delete;
 + (id)deleteWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setClockIds:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

@@ -28,6 +28,8 @@
 
 @property(retain) id context;
 @property struct { double x1; double x2; } coordinate;
+@property(readonly) NSString * subtitle;
+@property(readonly) NSString * title;
 
 - (struct { double x1; double x2; })animationDestination;
 - (struct { double x1; double x2; })animationOrigin;

@@ -43,10 +43,13 @@
 - (id)_handleBatchRequest:(id)arg1 message:(id)arg2;
 - (id)_handleGenericPostRequest:(id)arg1;
 - (id)_handleHeartbeatTokenRequest:(id)arg1 message:(id)arg2;
+- (id)_handleListeningPresenceEventsRequest:(id)arg1 message:(id)arg2;
 - (id)_handleLogAdContentErrorRequest:(id)arg1 message:(id)arg2;
 - (id)_handleLogAdEventRequest:(id)arg1 message:(id)arg2;
+- (id)_handleLogAggregateMetricsRequest:(id)arg1 message:(id)arg2;
 - (id)_handleLogImpressionRequest:(id)arg1 message:(id)arg2;
 - (id)_handleLogSysEventRequest:(id)arg1 message:(id)arg2;
+- (id)_handleLogTileImpressionEventRequest:(id)arg1 message:(id)arg2;
 - (id)_handleManifestRequest:(id)arg1 message:(id)arg2;
 - (id)_handleMescalSignSAPSetupCertificateRequest:(id)arg1 message:(id)arg2;
 - (id)_handleMescalSignSAPSetupRequest:(id)arg1 message:(id)arg2;

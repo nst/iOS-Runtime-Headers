@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary, Protocol;
+@class Protocol;
 
 @interface NSXPCInterface : NSObject {
-    NSMutableDictionary *_methods;
+    struct __CFDictionary { } *_methods2;
     Protocol *_protocol;
     id _reserved1;
 }
@@ -13,16 +13,19 @@
 @property Protocol * protocol;
 
 + (id)interfaceWithProtocol:(id)arg1;
++ (id)mf_mailComposeRemoteHostInterface;
++ (id)mf_mailComposeRemoteServiceInterface;
 + (id)signatureForBlock:(id)arg1;
 
-- (id)_allowedClassesForSelector:(id)arg1 reply:(BOOL)arg2;
-- (id)_interfaceForArgument:(unsigned int)arg1 ofSelector:(id)arg2 reply:(BOOL)arg3;
-- (id)_verifiedMethodSignatureForReplyBlockOfSelector:(id)arg1;
-- (id)_verifiedMethodSignatureForSelector:(id)arg1;
+- (id)_allowedClassesForSelector:(SEL)arg1 reply:(BOOL)arg2;
+- (id)_interfaceForArgument:(unsigned int)arg1 ofSelector:(SEL)arg2 reply:(BOOL)arg3;
+- (id)_verifiedMethodSignatureForReplyBlockOfSelector:(SEL)arg1;
+- (id)_verifiedMethodSignatureForSelector:(SEL)arg1;
 - (Class)classForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
 - (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
 - (void)dealloc;
 - (id)debugDescription;
+- (void)finalize;
 - (id)init;
 - (id)interfaceForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
 - (id)protocol;

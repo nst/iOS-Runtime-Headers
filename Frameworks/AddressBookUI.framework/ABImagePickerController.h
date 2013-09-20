@@ -57,7 +57,7 @@
 - (void)imagePickerController:(id)arg1 didFinishPickingImage:(id)arg2 editingInfo:(id)arg3;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (id)initWithContentControllerDelegate:(id)arg1 addressBook:(void*)arg2;
-- (void)multipleSourcePicker:(id)arg1 didSelectPerson:(void*)arg2;
+- (void)multipleSourcePicker:(id)arg1 didSelectPerson:(id)arg2;
 - (void)multipleSourcePickerDidSelectPhotoPicker:(id)arg1;
 - (void)orderOut:(id)arg1;
 - (id)popoverPresenterForViewController:(id)arg1;
@@ -67,6 +67,6 @@
 - (void)setImageDataDelegate:(id)arg1;
 - (void)suspend;
 - (void)takePhoto;
-- (void)usePhotoFromPerson:(void*)arg1;
+- (void)usePhotoFromPerson:(id)arg1;
 
 @end

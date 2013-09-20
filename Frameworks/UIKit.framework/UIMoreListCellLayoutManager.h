@@ -7,6 +7,6 @@
 }
 
 - (void)layoutSubviewsOfCell:(id)arg1;
-- (void)setWidestImageWidthFromViewControllers:(id)arg1;
+- (float)setWidestImageWidthFromViewControllers:(id)arg1;
 
 @end

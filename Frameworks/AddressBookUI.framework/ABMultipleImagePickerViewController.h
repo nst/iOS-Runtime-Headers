@@ -12,7 +12,7 @@
 
 @property <ABMultipleSourceImagePickerDelegate> * delegate;
 
-- (void)addImageData:(id)arg1 title:(id)arg2 isSelectedImage:(BOOL)arg3 person:(void*)arg4;
+- (void)addImageData:(id)arg1 title:(id)arg2 isSelectedImage:(BOOL)arg3 person:(id)arg4;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithStyle:(int)arg1;

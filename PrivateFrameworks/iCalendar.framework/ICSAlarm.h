@@ -31,6 +31,7 @@
 - (id)acknowledged;
 - (int)action;
 - (void)fixAlarm;
+- (BOOL)isNoneAlarm;
 - (id)relatedTo;
 - (void)setAcknowledged:(id)arg1;
 - (void)setAction:(int)arg1;

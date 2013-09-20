@@ -58,13 +58,14 @@
 - (void)deleteAlbumWithGUID:(id)arg1 personID:(id)arg2;
 - (void)deleteAssetCollectionWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)deleteAssetCollectionWithGUID:(id)arg1 personID:(id)arg2;
+- (void)deleteAssetCollectionsWithGUIDs:(id)arg1 personID:(id)arg2;
 - (void)deleteCommentWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)deleteCommentWithGUID:(id)arg1 personID:(id)arg2;
 - (id)focusAlbumGUIDByPersonID;
 - (id)focusAlbumTimerByPersonID;
 - (id)foregroundPingTimerContextByPersonID;
 - (void)forgetEverythingAboutPersonID:(id)arg1;
-- (void)handlePushNotification;
+- (void)handlePushNotificationForPersonID:(id)arg1;
 - (id)init;
 - (void)invitationGUIDsForPersonID:(id)arg1 completionBlock:(id)arg2;
 - (void)invitationWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
@@ -97,6 +98,7 @@
 - (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)retrieveAssetsFromAssetCollectionsWithGUIDs:(id)arg1 assetTypeFlags:(int)arg2 personID:(id)arg3;
 - (void)retryOutstandingActivities;
+- (void)retryOutstandingActivitiesForPersonID:(id)arg1;
 - (id)serverSideConfigurationDictionaryByPersonID;
 - (void)serverSideConfigurationDictionaryForPersonID:(id)arg1 completionBlock:(id)arg2;
 - (void)setConnection:(id)arg1;
@@ -108,6 +110,8 @@
 - (void)setForegroundPingTimerContextByPersonID:(id)arg1;
 - (void)setIsUIForeground:(BOOL)arg1 forPersonID:(id)arg2;
 - (void)setMemberQueue:(id)arg1;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id)arg4;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id)arg5;
 - (void)setNoWakeConnection:(id)arg1;
 - (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id)arg4;
 - (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id)arg5;
@@ -118,5 +122,7 @@
 - (void)timerPingQueueSendSetUIForeground:(BOOL)arg1 personID:(id)arg2;
 - (void)unsubscribeFromAlbumWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)unsubscribeFromAlbumWithGUID:(id)arg1 personID:(id)arg2;
+- (void)videoURLForAssetCollectionWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
+- (void)videoURLsForAssetCollectionWithGUID:(id)arg1 forMediaAssetType:(unsigned int)arg2 personID:(id)arg3 completionBlock:(id)arg4;
 
 @end

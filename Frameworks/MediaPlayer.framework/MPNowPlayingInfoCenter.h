@@ -14,6 +14,7 @@
 
 + (id)defaultCenter;
 
+- (void).cxx_destruct;
 - (id)_init;
 - (void)_pushNowPlayingInfoAndRetry:(BOOL)arg1;
 - (id)init;

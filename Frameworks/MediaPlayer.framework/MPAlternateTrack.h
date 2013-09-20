@@ -5,28 +5,25 @@
 @class AVMediaSelectionOption, NSString;
 
 @interface MPAlternateTrack : NSObject {
-    BOOL _isSDH;
-    NSString *_name;
+    NSString *_canonicalLanguageIdentifier;
+    NSString *_displayName;
     AVMediaSelectionOption *_option;
 }
 
-@property(readonly) NSString * displayName;
-@property BOOL isSDH;
-@property(readonly) NSString * name;
+@property(readonly) NSString * canonicalLanguageIdentifier;
+@property(retain) NSString * displayName;
 @property(readonly) AVMediaSelectionOption * option;
 
-+ (id)copyOffTrack;
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
 
-- (id)_humanReadableLanguage;
+- (void).cxx_destruct;
+- (void)_setDisplayNameFromOption:(id)arg1;
+- (id)canonicalLanguageIdentifier;
 - (int)compare:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
-- (id)initWithName:(id)arg1 option:(id)arg2;
-- (BOOL)isSDH;
-- (id)name;
+- (id)initWithOption:(id)arg1;
 - (id)option;
-- (void)setIsSDH:(BOOL)arg1;
+- (void)setDisplayName:(id)arg1;
 
 @end

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSDate, NSString;
+@class NSDate, NSDictionary, NSString;
 
 @interface PCMultiStageGrowthAlgorithm : NSObject <PCGrowthAlgorithm> {
     NSString *_algorithmName;
+    unsigned int _countOfGrowthActions;
     double _currentKeepAliveInterval;
     int _growthStage;
     double _highWatermark;
@@ -18,6 +19,8 @@
     double _minimumKeepAliveInterval;
 }
 
+@property(readonly) NSDictionary * cacheInfo;
+@property(readonly) unsigned int countOfGrowthActions;
 @property(readonly) double currentKeepAliveInterval;
 @property(readonly) NSString * loggingIdentifier;
 @property double maximumKeepAliveInterval;
@@ -30,20 +33,24 @@
 - (void)_processInitialGrowthAction:(int)arg1;
 - (void)_processRefinedGrowthAction:(int)arg1;
 - (void)_processSteadyStateAction:(int)arg1;
+- (void)_resetAlgorithmToInterval:(double)arg1 stage:(int)arg2;
 - (void)_resetAlgorithmToInterval:(double)arg1;
 - (void)_setCurrentKeepAliveInterval:(double)arg1;
 - (double)_steadyStateTimeout;
 - (id)_stringForAction:(int)arg1;
 - (id)_stringForStage:(int)arg1;
+- (id)cacheInfo;
+- (unsigned int)countOfGrowthActions;
 - (double)currentKeepAliveInterval;
 - (void)dealloc;
 - (id)description;
-- (id)initWithKeepAliveInterval:(double)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
+- (id)initWithCacheInfo:(id)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
 - (id)loggingIdentifier;
 - (double)maximumKeepAliveInterval;
 - (double)minimumKeepAliveInterval;
 - (void)processNextAction:(int)arg1;
 - (void)setMaximumKeepAliveInterval:(double)arg1;
 - (void)setMinimumKeepAliveInterval:(double)arg1;
+- (BOOL)useIntervalIfImprovement:(double)arg1;
 
 @end

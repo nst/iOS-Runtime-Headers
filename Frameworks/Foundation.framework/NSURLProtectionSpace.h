@@ -4,9 +4,12 @@
 
 @class NSURLProtectionSpaceInternal;
 
-@interface NSURLProtectionSpace : NSObject <NSCoding, NSCopying> {
+@interface NSURLProtectionSpace : NSObject <NSSecureCoding, NSCopying> {
     NSURLProtectionSpaceInternal *_internal;
 }
+
++ (id)safari_HTMLFormProtectionSpaceForURL:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (struct _CFURLProtectionSpace { }*)_cfurlprtotectionspace;
 - (id)_initWithCFURLProtectionSpace:(struct _CFURLProtectionSpace { }*)arg1;
@@ -14,6 +17,7 @@
 - (id)authenticationMethod;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)distinguishedNames;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
@@ -29,6 +33,8 @@
 - (id)proxyType;
 - (id)realm;
 - (BOOL)receivesCredentialSecurely;
+- (id)safari_addressString;
+- (id)safari_protectionSpaceByReplacingHostWithHighlevelDomain;
 - (struct __SecTrust { }*)serverTrust;
 
 @end

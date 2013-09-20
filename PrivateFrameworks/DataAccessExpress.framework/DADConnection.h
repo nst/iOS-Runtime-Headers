@@ -8,7 +8,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
-@interface DADConnection : NSObject <AccountNotificationProtocol> {
+@interface DADConnection : NSObject {
     NSMutableSet *_accountIdsWithAlreadyResetCerts;
     NSMutableSet *_accountIdsWithAlreadyResetThrottleTimers;
     NSObject<OS_xpc_object> *_conn;
@@ -20,9 +20,6 @@
     id _statusReportBlock;
 }
 
-+ (void)accountDidChange:(id)arg1 forDataclass:(id)arg2;
-+ (void)accountWillChange:(id)arg1 forDataclass:(id)arg2;
-+ (void)noteAccountChanges:(id)arg1;
 + (void)setShouldIgnoreAccountChanges;
 + (id)sharedConnection;
 + (id)sharedConnectionIfServerIsRunning;
@@ -50,7 +47,7 @@
 - (void)_serverDiedWithReason:(id)arg1;
 - (void)_shareResponseFinished:(id)arg1;
 - (void)_tearDownInFlightObjects;
-- (void)applyNewAccountProperties:(id)arg1 onAccountWithId:(id)arg2 forceSave:(BOOL)arg3;
+- (id)activeSyncDeviceIdentifier;
 - (id)beginDownloadingAttachmentWithUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
 - (void)cancelDownloadingAttachmentWithDownloadID:(id)arg1 error:(id)arg2;
 - (void)cancelServerContactsSearch:(id)arg1;
@@ -80,8 +77,10 @@
 - (BOOL)suspendWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2 isUserRequested:(BOOL)arg3;
 - (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclass:(int)arg2;
+- (BOOL)updateContentsOfAllFoldersForAccountID:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
 - (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3 isUserRequested:(BOOL)arg4;
 - (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclass:(int)arg3;
+- (BOOL)updateContentsOfFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 andDataclasses:(int)arg3 isUserRequested:(BOOL)arg4;
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 requireChangedFolders:(BOOL)arg3 isUserRequested:(BOOL)arg4;
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2;

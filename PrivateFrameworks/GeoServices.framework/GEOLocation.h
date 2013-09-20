@@ -4,7 +4,7 @@
 
 @class GEOLatLng;
 
-@interface GEOLocation : PBCodable {
+@interface GEOLocation : PBCodable <NSCopying> {
     struct { 
         unsigned int course : 1; 
         unsigned int heading : 1; 
@@ -47,8 +47,10 @@
 + (id)locationWithCLLocation:(id)arg1 course:(double)arg2;
 
 - (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; }*)arg1;
+- (id)addr;
 - (int)altitude;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)course;
 - (void)dealloc;
 - (id)description;
@@ -67,6 +69,8 @@
 - (id)initWithCLLocation:(id)arg1 course:(double)arg2;
 - (id)initWithCLLocation:(id)arg1;
 - (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
+- (id)initWithLocation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)latLng;
 - (BOOL)readFrom:(id)arg1;

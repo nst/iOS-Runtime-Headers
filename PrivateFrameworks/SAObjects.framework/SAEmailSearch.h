@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString, NSURL;
+@class NSDate, NSString;
 
-@interface SAEmailSearch : SABaseClientBoundCommand {
+@interface SAEmailSearch : SADomainCommand {
 }
 
 @property(copy) NSDate * endDate;
@@ -12,7 +12,6 @@
 @property(copy) NSDate * startDate;
 @property int status;
 @property(copy) NSString * subject;
-@property(copy) NSURL * targetAppId;
 @property(copy) NSString * timeZoneId;
 @property(copy) NSString * toEmail;
 
@@ -29,13 +28,11 @@
 - (void)setStartDate:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setSubject:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (void)setTimeZoneId:(id)arg1;
 - (void)setToEmail:(id)arg1;
 - (id)startDate;
 - (int)status;
 - (id)subject;
-- (id)targetAppId;
 - (id)timeZoneId;
 - (id)toEmail;
 

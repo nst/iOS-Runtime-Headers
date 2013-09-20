@@ -6,7 +6,6 @@
 }
 
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (BOOL)shouldDisplayForEvent;
 - (BOOL)update;
 
 @end

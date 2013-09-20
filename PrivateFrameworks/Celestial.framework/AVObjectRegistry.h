@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableSet, NSRecursiveLock;
+@class NSHashTable, NSRecursiveLock;
 
 @interface AVObjectRegistry : NSObject {
     NSRecursiveLock *_lock;
-    NSMutableSet *_registeredObjects;
+    NSHashTable *_registeredObjects;
 }
 
 + (id)defaultObjectRegistry;
 
 - (void)dealloc;
-- (void)finishedRelease;
 - (id)init;
-- (BOOL)isObjectRegistered:(id)arg1;
 - (void)registerObject:(id)arg1;
 - (void)registerObjectForSafeRetain:(id)arg1;
 - (void)safeInvokeWithDescription:(id)arg1;
@@ -28,7 +26,6 @@
 - (void)safePostNotificationFromMainThreadTarget:(id)arg1 name:(id)arg2 userInfo:(id)arg3;
 - (void)safePostNotificationFromThread:(id)arg1 target:(id)arg2 name:(id)arg3 userInfo:(id)arg4;
 - (BOOL)safeRetainObject:(id)arg1;
-- (BOOL)shouldReleaseObject:(id)arg1 requireThread:(id)arg2;
 - (void)unregisterObject:(id)arg1;
 
 @end

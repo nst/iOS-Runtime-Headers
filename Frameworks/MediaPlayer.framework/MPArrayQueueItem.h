@@ -18,7 +18,7 @@
 @property double stopTime;
 @property(copy) NSString * videoID;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithMPAVItem:(id)arg1;
 - (id)item;

@@ -12,6 +12,7 @@
     BOOL _isInvitationMessage;
     long long _messageID;
     NSAttributedString *_messageSubject;
+    NSArray *_parts;
     NSString *_plainBody;
     IMHandle *_sender;
     IMHandle *_subject;
@@ -23,9 +24,9 @@
 
 @property(readonly) FZMessage * _fzMessage;
 @property(retain) NSError * error;
-@property(readonly) NSArray * fileTransferGUIDs;
+@property(copy) NSArray * fileTransferGUIDs;
 @property unsigned long long flags;
-@property(readonly) NSString * guid;
+@property(retain) NSString * guid;
 @property(readonly) BOOL hasDataDetectorResults;
 @property(readonly) BOOL hasInlineAttachments;
 @property(readonly) NSArray * inlineAttachmentAttributesArray;
@@ -45,6 +46,7 @@
 @property(readonly) BOOL isTypingMessage;
 @property long long messageID;
 @property(readonly) NSAttributedString * messageSubject;
+@property(readonly) NSArray * parts;
 @property(readonly) NSString * plainBody;
 @property(retain) IMHandle * sender;
 @property(readonly) NSString * senderName;
@@ -63,16 +65,22 @@
 + (id)instantMessageWithText:(id)arg1 messageSubject:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(unsigned long long)arg4;
 + (id)instantMessageWithText:(id)arg1 messageSubject:(id)arg2 flags:(unsigned long long)arg3;
 + (id)messageFromFZMessage:(id)arg1 sender:(id)arg2 subject:(id)arg3;
++ (id)messageFromFZMessageDictionary:(id)arg1 sender:(id)arg2 subject:(id)arg3;
 
 - (BOOL)__ck_isEqualToMessageUsingGUID:(id)arg1;
 - (int)_compareIMMessageDates:(id)arg1;
 - (int)_compareIMMessageGUIDs:(id)arg1;
 - (int)_compareIMMessageIDs:(id)arg1;
 - (id)_copyWithFlags:(unsigned long long)arg1;
+- (void)_flushMessageParts;
 - (id)_fzMessage;
 - (id)_initWithSender:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 plainText:(id)arg5 text:(id)arg6 messageSubject:(id)arg7 fileTransferGUIDs:(id)arg8 flags:(unsigned long long)arg9 error:(id)arg10 guid:(id)arg11 messageID:(long long)arg12 subject:(id)arg13;
+- (void)_loadParts;
+- (void)_parseIMMessagePartsWithTextProcessingBlock:(id)arg1 fileTransferProcessingBlock:(id)arg2;
 - (void)_updateError:(id)arg1;
+- (void)_updateFileTransferGUIDs:(id)arg1;
 - (void)_updateFlags:(unsigned long long)arg1;
+- (void)_updateGUID:(id)arg1;
 - (void)_updateMessageID:(long long)arg1;
 - (void)_updateSender:(id)arg1;
 - (void)_updateText:(id)arg1;
@@ -111,6 +119,7 @@
 - (BOOL)isTypingMessage;
 - (long long)messageID;
 - (id)messageSubject;
+- (id)parts;
 - (id)plainBody;
 - (id)sender;
 - (id)senderName;

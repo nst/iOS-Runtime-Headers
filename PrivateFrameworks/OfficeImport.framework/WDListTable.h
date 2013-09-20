@@ -13,8 +13,8 @@
 - (void)dealloc;
 - (id)document;
 - (id)initWithDocument:(id)arg1;
-- (id)listAt:(int)arg1;
-- (int)listCount;
+- (id)listAt:(unsigned int)arg1;
+- (unsigned int)listCount;
 - (id)lists;
 
 @end

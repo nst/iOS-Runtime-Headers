@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString, RecommendationActionController, UILabel, UIView;
+@class NSString, RecommendationActionController;
 
 @interface StepByStepUIViewController_Create_Config : StepByStepUIViewController <TableViewManagerDelegate, UIPopoverControllerDelegate> {
     NSString *_basePassword;
@@ -15,9 +15,6 @@
     NSString *_wifiPasswordVerify;
     RecommendationActionController *actionController;
     BOOL hasDisk;
-    UIView *justTextContainerView;
-    UILabel *justTextLabel;
-    UIView *tableHeaderContainerView;
     BOOL useDifferentDiskPassword;
     BOOL useSinglePassword;
 }
@@ -28,10 +25,7 @@
 @property(copy) NSString * diskPassword;
 @property(copy) NSString * diskPasswordVerify;
 @property BOOL hasDisk;
-@property(retain) UIView * justTextContainerView;
-@property(retain) UILabel * justTextLabel;
 @property(copy) NSString * personalizedBaseName;
-@property(retain) UIView * tableHeaderContainerView;
 @property BOOL useDifferentDiskPassword;
 @property BOOL useSinglePassword;
 @property(copy) NSString * wifiName;
@@ -45,8 +39,6 @@
 - (id)diskPassword;
 - (id)diskPasswordVerify;
 - (BOOL)hasDisk;
-- (id)justTextContainerView;
-- (id)justTextLabel;
 - (id)personalizedBaseName;
 - (void)setActionController:(id)arg1;
 - (void)setBasePassword:(id)arg1;
@@ -54,10 +46,7 @@
 - (void)setDiskPassword:(id)arg1;
 - (void)setDiskPasswordVerify:(id)arg1;
 - (void)setHasDisk:(BOOL)arg1;
-- (void)setJustTextContainerView:(id)arg1;
-- (void)setJustTextLabel:(id)arg1;
 - (void)setPersonalizedBaseName:(id)arg1;
-- (void)setTableHeaderContainerView:(id)arg1;
 - (void)setUseDifferentDiskPassword:(BOOL)arg1;
 - (void)setUseSinglePassword:(BOOL)arg1;
 - (void)setWifiName:(id)arg1;
@@ -67,7 +56,6 @@
 - (void)setupTable;
 - (BOOL)shouldChangeTextField:(id)arg1 atIndexPath:(id)arg2 forTextIndex:(unsigned int)arg3 toString:(id)arg4;
 - (void)switchTouchedInCellAtIndexPath:(id)arg1 forSwitchIndex:(unsigned int)arg2 isOn:(BOOL)arg3;
-- (id)tableHeaderContainerView;
 - (void)textFieldDidChangeAtIndexPath:(id)arg1;
 - (void)touchInCellAtIndexPath:(id)arg1;
 - (void)updateSinglePasswordSwitchExplanation:(BOOL)arg1;

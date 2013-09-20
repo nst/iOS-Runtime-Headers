@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCurrentTimeMarkerView, NSMutableArray, NSTimer, UIColor, UIView;
+@class EKCurrentTimeMarkerView, NSMutableArray, UIColor, UIImageView, UIView;
 
-@interface EKDayGridView : UIView {
+@interface EKDayGridView : UIView <EKCurrentTimeMarkerViewUpdating> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -16,36 +16,38 @@
         } size; 
     unsigned int _leftBorder : 1;
     unsigned int _rightBorder : 1;
-    unsigned int _showsTimeMarker : 1;
-    unsigned int _showsTimeLine : 1;
     UIColor *_backgroundColor;
-    UIView *_bottomGrayView;
     UIView *_bottomPattern;
     unsigned int _daysToDisplay;
-    BOOL _drawsGrayOutsideExtents;
+    float _eventHorizontalInset;
     float _fixedDayWidth;
     float _hourHeight;
-    int _hoursToPadBottom;
-    int _hoursToPadTop;
+    float _hoursToPadBottom;
+    float _hoursToPadTop;
     } _lastBounds;
     UIView *_leftBorderView;
+    UIColor *_lineColor;
     NSMutableArray *_middleBorderViews;
     int _orientation;
     BOOL _rightBorderInsetsOccurrences;
     UIView *_rightBorderView;
     int _selected;
+    BOOL _showsTimeLine;
+    BOOL _showsTimeMarker;
+    UIImageView *_timeDot;
     float _timeInset;
     EKCurrentTimeMarkerView *_timeMarker;
-    NSTimer *_timeMarkerTimer;
+    int _timeMarkerDotDay;
     float _timeWidth;
-    UIView *_topGrayView;
     UIView *_topPattern;
+    BOOL _usesVibrantGridDrawing;
 }
 
-@property BOOL drawsGrayOutsideExtents;
+@property float eventHorizontalInset;
 @property float fixedDayWidth;
-@property int hoursToPadBottom;
-@property int hoursToPadTop;
+@property float hoursToPadBottom;
+@property float hoursToPadTop;
+@property(retain) UIColor * lineColor;
 @property BOOL rightBorderInsetsOccurrences;
 @property(getter=isSelected) BOOL selected;
 @property BOOL showsLeftBorder;
@@ -53,37 +55,40 @@
 @property BOOL showsTimeLine;
 @property BOOL showsTimeMarker;
 @property(readonly) float timeInset;
+@property(readonly) EKCurrentTimeMarkerView * timeMarker;
+@property int timeMarkerDotDay;
 @property(readonly) float timeWidth;
+@property BOOL usesVibrantGridDrawing;
 @property(readonly) float widthForOccurrences;
 
 + (void)cacheBackgroundImage:(id)arg1 forKey:(id)arg2;
 + (id)cachedBackgroundImageForKey:(id)arg1;
 
+- (void).cxx_destruct;
 - (float)_dayWidth;
 - (id)_generateGridImage;
-- (void)_invalidateMarkerTimer;
-- (void)_setMarkerTimer;
 - (void)_updateTimeMarker;
+- (void)addSubview:(id)arg1;
 - (float)bottomPadding;
-- (void)dealloc;
-- (BOOL)drawsGrayOutsideExtents;
+- (float)eventHorizontalInset;
 - (float)fixedDayWidth;
 - (float)hourHeight;
-- (int)hoursToPadBottom;
-- (int)hoursToPadTop;
+- (float)hoursToPadBottom;
+- (float)hoursToPadTop;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundColor:(id)arg2 opaque:(BOOL)arg3 numberOfDaysToDisplay:(unsigned int)arg4;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
+- (id)lineColor;
 - (float)positionOfSecond:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForStartSeconds:(int)arg1 endSeconds:(int)arg2;
-- (void)removeFromSuperview;
 - (BOOL)rightBorderInsetsOccurrences;
 - (int)secondAtPosition:(float)arg1;
-- (void)setDrawsGrayOutsideExtents:(BOOL)arg1;
+- (void)setEventHorizontalInset:(float)arg1;
 - (void)setFixedDayWidth:(float)arg1;
-- (void)setHoursToPadBottom:(int)arg1;
-- (void)setHoursToPadTop:(int)arg1;
+- (void)setHoursToPadBottom:(float)arg1;
+- (void)setHoursToPadTop:(float)arg1;
+- (void)setLineColor:(id)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)setRightBorderInsetsOccurrences:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
@@ -91,15 +96,21 @@
 - (void)setShowsRightBorder:(BOOL)arg1;
 - (void)setShowsTimeLine:(BOOL)arg1;
 - (void)setShowsTimeMarker:(BOOL)arg1;
+- (void)setTimeMarkerDotDay:(int)arg1;
+- (void)setUsesVibrantGridDrawing:(BOOL)arg1;
 - (BOOL)showsLeftBorder;
 - (BOOL)showsRightBorder;
 - (BOOL)showsTimeLine;
 - (BOOL)showsTimeMarker;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)timeDotImage;
 - (float)timeInset;
+- (id)timeMarker;
+- (int)timeMarkerDotDay;
 - (float)timeWidth;
 - (float)topPadding;
 - (void)updateMarkerPosition;
+- (BOOL)usesVibrantGridDrawing;
 - (float)widthForOccurrences;
 
 @end

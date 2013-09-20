@@ -18,7 +18,6 @@
 - (void)_stopListeningForNotifications;
 - (id)accountNameForSpecifier:(id)arg1;
 - (void)accountTappedWithSpecifier:(id)arg1;
-- (BOOL)canBeShownFromSuspendedState;
 - (void)dealloc;
 - (id)initWithServiceType:(int)arg1;
 - (id)service;

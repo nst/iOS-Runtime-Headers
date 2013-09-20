@@ -14,6 +14,7 @@
 
 + (id)sharedMotionManager;
 
+- (void).cxx_destruct;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_beginMotionUpdates;

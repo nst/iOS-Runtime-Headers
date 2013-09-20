@@ -10,12 +10,14 @@
 
 + (id)sharedCredentialStorage;
 
+- (id)_initWithCFURLCredentialStorage:(struct _CFURLCredentialStorage { }*)arg1;
 - (id)_internalInit;
 - (id)allCredentials;
 - (id)credentialsForProtectionSpace:(id)arg1;
 - (void)dealloc;
 - (id)defaultCredentialForProtectionSpace:(id)arg1;
 - (id)init;
+- (void)removeCredential:(id)arg1 forProtectionSpace:(id)arg2 options:(id)arg3;
 - (void)removeCredential:(id)arg1 forProtectionSpace:(id)arg2;
 - (void)setCredential:(id)arg1 forProtectionSpace:(id)arg2;
 - (void)setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2;

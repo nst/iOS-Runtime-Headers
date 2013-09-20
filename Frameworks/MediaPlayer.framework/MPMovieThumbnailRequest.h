@@ -12,7 +12,7 @@
 @property int timeOption;
 @property(retain) NSArray * times;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setTimeOption:(int)arg1;
 - (void)setTimes:(id)arg1;
 - (int)timeOption;

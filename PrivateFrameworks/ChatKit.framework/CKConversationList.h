@@ -2,41 +2,36 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversation, FTCConnectionHandler, NSMutableArray;
+@class CKConversation, NSMutableArray;
 
 @interface CKConversationList : NSObject {
-    FTCConnectionHandler *_connectionHandler;
     BOOL _loadedConversations;
     BOOL _loadingConversations;
     CKConversation *_pendingConversation;
     NSMutableArray *_trackedConversations;
 }
 
-@property(readonly) FTCConnectionHandler * connectionHandler;
-@property(readonly) CKConversation * firstUnreadConversation;
-@property(readonly) CKConversation * firstUnreadFilteredConversation;
 @property(readonly) BOOL loadingConversations;
+@property(retain) CKConversation * pendingConversation;
 
++ (id)conversationThumbnailCache;
 + (id)sharedConversationList;
 
 - (void)_abChanged:(id)arg1;
 - (id)_alreadyTrackedConversationForChat:(id)arg1;
 - (void)_beginTrackingAllExistingChatsIfNeeded;
 - (id)_beginTrackingConversationWithChat:(id)arg1;
-- (id)_chatIdentifierForEntities:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)_conversationForChat:(id)arg1;
 - (id)_copyEntitiesForAddressStrings:(id)arg1;
-- (id)_firstUnreadConversationWithFiltering:(BOOL)arg1;
 - (void)_handleMemoryWarning:(id)arg1;
 - (void)_handleRegistryDidLoadChatNotification:(id)arg1;
 - (void)_handleRegistryDidRegisterChatNotification:(id)arg1;
 - (void)_handleRegistryWillUnregisterChatNotification:(id)arg1;
 - (void)_postConversationListChangedNotification;
 - (BOOL)_shouldFilterForParticipants:(id)arg1;
-- (int)_unreadConversationCount:(BOOL)arg1;
 - (id)activeConversations;
 - (void)beginTrackingConversation:(id)arg1 forChat:(id)arg2;
-- (id)connectionHandler;
+- (id)conversationForExistingChat:(id)arg1;
 - (id)conversationForExistingChatWithAddresses:(id)arg1;
 - (id)conversationForExistingChatWithGUID:(id)arg1;
 - (id)conversationForExistingChatWithGroupID:(id)arg1;
@@ -44,9 +39,9 @@
 - (id)conversationForRecipients:(id)arg1 create:(BOOL)arg2;
 - (id)conversations;
 - (void)dealloc;
-- (void)deleteConversationAtIndex:(int)arg1;
-- (id)firstUnreadConversation;
-- (id)firstUnreadFilteredConversation;
+- (void)deleteConversation:(id)arg1;
+- (void)deleteConversationAtIndex:(unsigned int)arg1;
+- (id)firstUnreadFilteredConversationIgnoringMessages:(id)arg1;
 - (BOOL)hasActiveConversations;
 - (id)init;
 - (BOOL)loadingConversations;
@@ -54,11 +49,13 @@
 - (id)pendingConversationCreatingIfNecessary;
 - (BOOL)reloadStaleConversations;
 - (void)resetCaches;
+- (void)resetCachesAndRegenerateThumbnails;
 - (void)resort;
+- (void)setPendingConversation:(id)arg1;
 - (void)stopTrackingConversation:(id)arg1;
 - (void)unpendConversation;
-- (int)unreadConversationCount;
 - (int)unreadCount;
-- (int)unreadFilteredConversationCount;
+- (int)unreadFilteredConversationCountIgnoringMessages:(id)arg1;
+- (id)unreadLastMessages;
 
 @end

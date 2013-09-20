@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
+@class ABUIPerson, NSString;
 
 @interface ABPersonLinkedInfo : NSObject {
     NSString *_name;
-    void *_person;
+    ABUIPerson *_person;
     NSString *_type;
     BOOL _unified;
 }
 
 @property(retain) NSString * name;
-@property void* person;
+@property(retain) ABUIPerson * person;
 @property(retain) NSString * type;
 @property(getter=isUnified) BOOL unified;
 
@@ -22,9 +22,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isUnified;
 - (id)name;
-- (void*)person;
+- (id)person;
 - (void)setName:(id)arg1;
-- (void)setPerson:(void*)arg1;
+- (void)setPerson:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setUnified:(BOOL)arg1;
 - (id)type;

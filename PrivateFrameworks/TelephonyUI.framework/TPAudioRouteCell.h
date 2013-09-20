@@ -2,20 +2,23 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
+@class UILabel;
+
 @interface TPAudioRouteCell : UITableViewCell {
-    BOOL _checked;
+    UILabel *_audioRouteNameLabel;
+    BOOL _isActiveRoute;
 }
 
-+ (id)highlightedBackground;
-+ (id)normalBackground;
+@property UILabel * audioRouteNameLabel;
+@property BOOL isActiveRoute;
 
-- (id)_shadowColor;
-- (id)_shadowHighlightedColor;
-- (id)enabledIcon;
-- (id)highlightedIcon;
+- (id)audioRouteNameLabel;
+- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isActiveRoute;
 - (void)layoutSubviews;
-- (void)setChecked:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setAudioRouteNameLabel:(id)arg1;
+- (void)setIsActiveRoute:(BOOL)arg1;
+- (void)setIsMuteButtonWithImage:(id)arg1;
 
 @end

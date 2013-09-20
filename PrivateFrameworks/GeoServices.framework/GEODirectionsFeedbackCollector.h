@@ -18,7 +18,7 @@
 - (id)currentDirectionsFeedback;
 - (id)currentFeedbackCollection;
 - (void)dealloc;
-- (void)endFeedbackSession;
+- (void)endFeedbackSessionWithLocationWhereRouteWasCancelled:(id)arg1;
 - (void)reset;
 - (id)routeIDs;
 - (void)setCurrentDirectionsFeedback:(id)arg1;

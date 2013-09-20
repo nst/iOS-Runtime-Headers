@@ -7,6 +7,7 @@
 
 @property BOOL eyesFree;
 @property BOOL handsFree;
+@property BOOL talkOnly;
 
 + (id)startSpeechRequest;
 + (id)startSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;
@@ -17,5 +18,7 @@
 - (BOOL)handsFree;
 - (void)setEyesFree:(BOOL)arg1;
 - (void)setHandsFree:(BOOL)arg1;
+- (void)setTalkOnly:(BOOL)arg1;
+- (BOOL)talkOnly;
 
 @end

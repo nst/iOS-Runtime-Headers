@@ -23,6 +23,7 @@
 @property BOOL representsCameraRoll;
 
 + (id)cameraRollPlistName;
++ (id)cloudPlistName;
 + (id)migrateOldPlistToNewPlist:(id)arg1;
 
 - (BOOL)_ensureDirectoryExists:(id)arg1;

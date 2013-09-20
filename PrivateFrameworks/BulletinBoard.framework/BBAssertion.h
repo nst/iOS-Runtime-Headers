@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class <BBAssertionDelegate>, NSString;
+@class BBZeroingWeakReference, NSString;
 
 @interface BBAssertion : NSObject {
-    <BBAssertionDelegate> *_delegate;
+    BBZeroingWeakReference *_delegate;
     NSString *_identifier;
     unsigned int _transactionID;
 }

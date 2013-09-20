@@ -18,6 +18,7 @@
 @property(retain) NSString * externalContentRef;
 @property(retain) NSNumber * externalFlags;
 @property(retain) NSData * externalRepresentation;
+@property(retain) NSNumber * externalSequenceNumber;
 @property(retain) NSNumber * externalServerIntId;
 @property unsigned long long flags;
 @property(retain) NSString * guid;
@@ -28,6 +29,7 @@
 @property BOOL isPlainText;
 @property(retain) NSDate * modificationDate;
 @property(readonly) NSURL * noteId;
+@property unsigned long long sequenceNumber;
 @property(retain) NSString * serverId;
 @property long long serverIntId;
 @property(retain) NoteStoreObject * store;
@@ -46,12 +48,14 @@
 - (BOOL)isPlainText;
 - (void)markForDeletion;
 - (id)noteId;
+- (unsigned long long)sequenceNumber;
 - (long long)serverIntId;
 - (void)setContent:(id)arg1;
 - (void)setExternalContentRef:(id)arg1;
 - (void)setExternalRepresentation:(id)arg1;
 - (void)setFlags:(unsigned long long)arg1;
 - (void)setIsPlainText:(BOOL)arg1;
+- (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setServerIntId:(long long)arg1;
 
 @end

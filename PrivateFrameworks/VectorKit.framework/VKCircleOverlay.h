@@ -19,6 +19,7 @@
 
 + (id)circleWithCenterCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
 
+- (id).cxx_construct;
 - (id)_initWithCenterCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
 - (id)boundingMapRegion;
 - (struct { double x1; double x2; })coordinate;

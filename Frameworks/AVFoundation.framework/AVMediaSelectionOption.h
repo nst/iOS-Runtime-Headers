@@ -10,6 +10,8 @@
 
 @property(readonly) NSArray * availableMetadataFormats;
 @property(readonly) NSArray * commonMetadata;
+@property(readonly) NSString * displayName;
+@property(readonly) NSString * extendedLanguageTag;
 @property(readonly) NSLocale * locale;
 @property(readonly) NSArray * mediaSubTypes;
 @property(readonly) NSString * mediaType;
@@ -21,16 +23,22 @@
 
 - (id)_ancillaryDescription;
 - (id)_groupID;
+- (id)_groupMediaType;
 - (BOOL)_isDesignatedDefault;
 - (id)_title;
+- (id)associatedExtendedLanguageTag;
 - (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
+- (id)associatedPersistentIDs;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionary;
+- (id)displayName;
+- (id)displayNameWithLocale:(id)arg1;
 - (BOOL)displaysNonForcedSubtitles;
+- (id)extendedLanguageTag;
 - (id)group;
 - (BOOL)hasMediaCharacteristic:(id)arg1;
 - (id)init;

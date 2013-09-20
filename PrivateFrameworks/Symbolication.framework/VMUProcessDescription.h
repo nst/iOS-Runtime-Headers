@@ -19,7 +19,6 @@
     BOOL _executablePathNeedsCorrection;
     NSString *_internalError;
     BOOL _is64Bit;
-    BOOL _isNative;
     NSDictionary *_lsApplicationInformation;
     NSDictionary *_osVersionDictionary;
     NSString *_parentExecutablePath;
@@ -33,6 +32,8 @@
     unsigned int _task;
     NSArray *_unreadableBinaryImagePaths;
 }
+
++ (id)parseBinaryImagesDescription:(id)arg1;
 
 - (id)_binaryImagesDescriptionForRanges:(id)arg1;
 - (id)_buildInfoDescription;
@@ -52,6 +53,7 @@
 - (id)binaryImagesDescription;
 - (id)binaryImagesDescriptionForBacktraces:(id)arg1;
 - (id)bundleIdentifier;
+- (void)clearCrashReporterInfo;
 - (int)cpuType;
 - (id)date;
 - (id)dateAndVersionDescription;
@@ -61,7 +63,6 @@
 - (id)executablePath;
 - (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2;
 - (BOOL)isAppleApplication;
-- (BOOL)isTranslated;
 - (id)parentProcessName;
 - (int)pid;
 - (id)processDescriptionHeader;
@@ -69,6 +70,7 @@
 - (id)processName;
 - (id)processVersion;
 - (id)processVersionDictionary;
+- (void)setCrashReporterInfo;
 - (unsigned int)task;
 
 @end

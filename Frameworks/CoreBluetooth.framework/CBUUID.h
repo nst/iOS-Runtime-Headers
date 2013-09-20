@@ -16,6 +16,7 @@
 
 + (id)UUIDWithCFUUID:(struct __CFUUID { }*)arg1;
 + (id)UUIDWithData:(id)arg1;
++ (id)UUIDWithNSUUID:(id)arg1;
 + (id)UUIDWithString:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -25,6 +26,7 @@
 - (unsigned int)hash;
 - (id)initWithCFUUID:(struct __CFUUID { }*)arg1;
 - (id)initWithData:(id)arg1;
+- (id)initWithNSUUID:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 

@@ -16,7 +16,8 @@
         unsigned int entityIsName : 1; 
         unsigned int refreshesRefetched : 1; 
         unsigned int propertiesValidated : 1; 
-        unsigned int _RESERVED : 20; 
+        unsigned int disableCaching : 1; 
+        unsigned int _RESERVED : 19; 
     unsigned int _batchSize;
     NSEntityDescription *_entity;
     unsigned long _fetchLimit;
@@ -34,10 +35,12 @@
 + (id)fetchRequestWithEntityName:(id)arg1;
 + (void)initialize;
 
+- (BOOL)_disablePersistentStoreResultCaching;
 - (void)_incrementInUseCounter;
 - (BOOL)_isEditable;
 - (id)_newValidatedProperties:(id)arg1 groupBy:(BOOL)arg2 error:(id*)arg3;
 - (void)_resolveEntityWithContext:(id)arg1;
+- (void)_setDisablePersistentStoreResultCaching:(BOOL)arg1;
 - (void)_throwIfNotEditable;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
 - (id)affectedStores;

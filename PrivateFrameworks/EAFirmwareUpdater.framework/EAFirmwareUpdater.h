@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class EAAccessory, EASession, NSMutableData, NSObject<OS_dispatch_queue>, NSString, NSURL, iAUPServer;
+@class EAAccessory, EASession, NSMutableData, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSURL, iAUPServer;
 
-@interface EAFirmwareUpdater : MobileAssetUpdater <EAAccessoryDelegate, NSStreamDelegate> {
+@interface EAFirmwareUpdater : MobileAssetUpdater <EAAccessoryDelegate, NSStreamDelegate, iAUPServerDelegate> {
     EAAccessory *_accessory;
     NSString *_appProtocol;
     id _applyCompletion;
@@ -21,10 +21,12 @@
     unsigned int _firmwareVersionMinor;
     unsigned int _firmwareVersionRelease;
     iAUPServer *_iAUPServer;
+    BOOL _isExpectingReconnect;
     NSMutableData *_outputData;
     unsigned int _productIDCode;
     id _progressHandler;
     NSString *_protocolString;
+    NSTimer *_reconnectTimer;
     EASession *_session;
     NSString *_updateBundleFilename;
     NSURL *_updateBundleURL;
@@ -37,7 +39,6 @@
 @property(retain) NSString * firmwareBundleFilename;
 @property(retain) NSURL * firmwareBundleURL;
 @property unsigned int productIDCode;
-@property(copy) id progressHandler;
 @property(retain) NSString * protocolString;
 @property(retain) iAUPServer * server;
 @property(retain) EASession * session;
@@ -63,12 +64,13 @@
 - (id)flushOutput;
 - (void)handleInputData;
 - (id)initWithProductIDCode:(unsigned int)arg1 assetType:(id)arg2;
+- (void)logStatusString:(id)arg1;
 - (id)openSession;
 - (id)overrideQueryPredicateFromDict:(id)arg1;
 - (unsigned int)productIDCode;
-- (id)progressHandler;
 - (id)protocolString;
 - (id)queryPredicate;
+- (void)reconnectTimerDidFire:(id)arg1;
 - (id)server;
 - (id)session;
 - (void)setAccessory:(id)arg1;
@@ -78,10 +80,11 @@
 - (void)setFirmwareBundleFilename:(id)arg1;
 - (void)setFirmwareBundleURL:(id)arg1;
 - (void)setProductIDCode:(unsigned int)arg1;
-- (void)setProgressHandler:(id)arg1;
 - (void)setProtocolString:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setSession:(id)arg1;
+- (void)startReconnectTimer;
+- (void)stopReconnectTimer;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (id)supportedProtocolForAccessory:(id)arg1;
 - (void)updateComplete:(id)arg1;

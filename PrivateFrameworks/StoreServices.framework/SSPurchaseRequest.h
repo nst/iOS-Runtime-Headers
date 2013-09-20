@@ -2,12 +2,21 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSPurchaseRequestDelegate>, NSArray;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface SSPurchaseRequest : SSRequest <SSXPCCoding> {
+@class <SSPurchaseRequestDelegate>, NSArray, NSMutableSet, SSPurchaseManager;
+
+@interface SSPurchaseRequest : SSRequest <SSPurchaseManagerDelegate, SSXPCCoding> {
+    id _completionBlock;
     BOOL _createsDownloads;
     BOOL _isBackgroundRequest;
     BOOL _needsAuthentication;
+    NSMutableSet *_openPurchaseIdentifiers;
+    id _purchaseBlock;
+    SSPurchaseManager *_purchaseManager;
+    id _purchaseResponseBlock;
     NSArray *_purchases;
     BOOL _shouldValidatePurchases;
 }
@@ -19,7 +28,10 @@
 @property(readonly) NSArray * purchases;
 @property BOOL shouldValidatePurchases;
 
-- (id)_purchaseForUniqueIdentifier:(id)arg1;
+- (void)_addPurchasesToManager;
+- (void)_finishPurchasesWithResponses:(id)arg1;
+- (id)_purchaseForUniqueIdentifier:(long long)arg1;
+- (void)cancel;
 - (id)copyXPCEncoding;
 - (BOOL)createsDownloads;
 - (void)dealloc;
@@ -28,6 +40,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isBackgroundRequest;
 - (BOOL)needsAuthentication;
+- (void)purchaseManager:(id)arg1 didFinishPurchasesWithResponses:(id)arg2;
 - (id)purchases;
 - (void)setBackgroundRequest:(BOOL)arg1;
 - (void)setCreatesDownloads:(BOOL)arg1;

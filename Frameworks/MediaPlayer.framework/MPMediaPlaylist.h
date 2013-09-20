@@ -2,19 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
+@class MPMediaItem, NSString;
 
 @interface MPMediaPlaylist : MPMediaItemCollection {
 }
 
+@property(getter=music_seedItem,readonly) MPMediaItem * music_seedItem;
 @property(readonly) NSString * name;
 @property(readonly) unsigned long long persistentID;
 @property(readonly) int playlistAttributes;
 
 + (void)_createFilterableDictionary;
 + (BOOL)_isValidPlaylistProperty:(id)arg1;
++ (id)activeGeniusPlaylist;
 + (BOOL)canFilterByProperty:(id)arg1;
 
+- (int)_sortPlaylistByName:(id)arg1;
 - (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)existsInLibrary;
@@ -24,7 +27,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
 - (id)loadGeniusMixArtworkWithTileLength:(float)arg1 completionBlock:(id)arg2;
-- (int)mediaTypes;
+- (unsigned int)mediaTypes;
+- (id)music_seedItem;
 - (id)name;
 - (unsigned long long)persistentID;
 - (int)playlistAttributes;

@@ -5,20 +5,23 @@
 @interface NSCalendar : NSObject <NSCopying, NSSecureCoding> {
 }
 
++ (id)__ck_currentCalendar;
++ (id)_mapkit_gregorianCalendar;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)autoupdatingCurrentCalendar;
 + (id)currentCalendar;
-+ (id)gregorianCalendar;
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
 - (id)AMSymbol;
 - (id)PMSymbol;
+- (unsigned int)__ck_unitOfDisambiguityFromDate:(id)arg1 toDate:(id)arg2;
 - (unsigned char)_addComponents:(double*)arg1 :(unsigned long)arg2 :(const char *)arg3 :(void*)arg4;
 - (unsigned long)_cfTypeID;
 - (unsigned char)_composeAbsoluteTime:(double*)arg1 :(const char *)arg2 :(void*)arg3;
 - (id)_copyLocale;
 - (id)_copyTimeZone;
+- (id)_dateOnlyComponentsForDate:(id)arg1;
 - (unsigned char)_decomposeAbsoluteTime:(double)arg1 :(const char *)arg2 :(void*)arg3;
 - (unsigned char)_diffComponents:(double)arg1 :(double)arg2 :(unsigned long)arg3 :(const char *)arg4 :(void*)arg5;
 - (id)_gregorianStartDate;
@@ -28,11 +31,14 @@
 - (struct { int x1; int x2; })_rangeOfUnit:(unsigned int)arg1 inUnit:(unsigned int)arg2 forAT:(double)arg3;
 - (unsigned char)_rangeOfUnit:(unsigned int)arg1 startTime:(double*)arg2 interval:(double*)arg3 forAT:(double)arg4;
 - (void)_setGregorianStartDate:(id)arg1;
+- (id)_timeOnlyComponentsForDate:(id)arg1;
 - (id)calendarIdentifier;
 - (Class)classForCoder;
 - (id)components:(unsigned int)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(unsigned int)arg4;
 - (id)components:(unsigned int)arg1 fromDate:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)date:(id)arg1 isSameDayAsDate:(id)arg2;
+- (BOOL)date:(id)arg1 isSameYearAsDate:(id)arg2;
 - (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
 - (id)dateFromComponents:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MimeTextAttachment, NSData;
+@class MFMimeTextAttachment, NSData;
 
-@interface MFMailInlineTextAttachment : MessageTextAttachment {
+@interface MFMailInlineTextAttachment : MFMessageTextAttachment {
     struct CGSize { 
         float width; 
         float height; 
@@ -12,7 +12,7 @@
     } _cachedImageSize;
     BOOL _displayableAsIcon;
     NSData *_iconImageData;
-    MimeTextAttachment *_original;
+    MFMimeTextAttachment *_original;
 }
 
 @property BOOL displayableAsIcon;

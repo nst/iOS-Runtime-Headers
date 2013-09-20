@@ -4,9 +4,13 @@
 
 @interface StocksPreferences : NSObject {
     BOOL _changeColorSwapped;
+    BOOL _textAttachmentDirectionIsRightToLeft;
+    unsigned int _textDirection;
 }
 
 @property(getter=isChangeColorSwapped,readonly) BOOL changeColorSwapped;
+@property(readonly) BOOL textAttachmentDirectionIsRightToLeft;
+@property(readonly) unsigned int textDirection;
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;
@@ -19,5 +23,7 @@
 - (void)resetLocale;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)synchronize;
+- (BOOL)textAttachmentDirectionIsRightToLeft;
+- (unsigned int)textDirection;
 
 @end

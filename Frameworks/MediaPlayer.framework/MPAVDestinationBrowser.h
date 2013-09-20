@@ -4,7 +4,6 @@
 
 @interface MPAVDestinationBrowser : NSObject {
     BOOL _isScanning;
-    int _retainCount;
     BOOL _scansForDestinationsWhenEnteringForeground;
 }
 
@@ -12,15 +11,10 @@
 
 - (void)_beginScanningForDestinationsNotification:(id)arg1;
 - (void)_endScanningForDestinationsNotification:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (void)beginScanningForDestinations;
 - (void)dealloc;
 - (void)endScanningForDestinations;
 - (id)init;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
 - (BOOL)scansForDestinationsWhenEnteringForeground;
 - (void)setScansForDestinationsWhenEnteringForeground:(BOOL)arg1;
 

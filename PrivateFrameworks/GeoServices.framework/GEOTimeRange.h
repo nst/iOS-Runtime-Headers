@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTimeRange : PBCodable {
+@interface GEOTimeRange : PBCodable <NSCopying> {
     struct { 
         unsigned int from : 1; 
         unsigned int to : 1; 
@@ -22,6 +22,7 @@
 
 - (BOOL)allDay;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

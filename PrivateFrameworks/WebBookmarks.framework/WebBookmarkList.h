@@ -26,6 +26,5 @@
 - (unsigned int)folderID;
 - (id)initWithBookmarksWhere:(id)arg1 collection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4;
 - (id)initWithFolderID:(unsigned int)arg1 inCollection:(id)arg2 bookmarkCount:(unsigned int)arg3 skipOffset:(unsigned int)arg4 includeHidden:(BOOL)arg5;
-- (BOOL)stepThroughIndex:(unsigned int)arg1;
 
 @end

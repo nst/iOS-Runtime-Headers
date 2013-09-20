@@ -10,7 +10,6 @@
 @interface WBFieldMarker : NSObject {
 }
 
-+ (int)getFieldTypeFrom:(id)arg1 for:(id)arg2;
 + (void)readFrom:(id)arg1 position:(const struct WrdFieldPosition { int (**x1)(); int x2; struct WrdFieldDescriptor {} *x3; }*)arg2 paragraph:(id)arg3 fieldMarker:(id)arg4;
 
 @end

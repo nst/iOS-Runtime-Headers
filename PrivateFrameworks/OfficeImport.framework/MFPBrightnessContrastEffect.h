@@ -3,12 +3,12 @@
  */
 
 @interface MFPBrightnessContrastEffect : MFPEffect {
-    long mBrightness;
-    long mContrast;
+    int mBrightness;
+    int mContrast;
 }
 
 + (id)GUID;
 
-- (id)initWithBrightness:(long)arg1 contrast:(long)arg2;
+- (id)initWithBrightness:(int)arg1 contrast:(int)arg2;
 
 @end

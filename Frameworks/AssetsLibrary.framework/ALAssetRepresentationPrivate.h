@@ -35,7 +35,6 @@
 - (BOOL)isValid;
 - (id)library;
 - (void)libraryDidChange;
-- (void)libraryWillDisappear;
 - (id)photo;
 - (void)setExtension:(id)arg1;
 - (void)setIsValid:(BOOL)arg1;

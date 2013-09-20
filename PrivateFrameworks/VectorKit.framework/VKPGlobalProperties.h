@@ -53,6 +53,8 @@
         unsigned int size; 
     struct { 
         unsigned int buildingChangeoverZ : 1; 
+        unsigned int globeLODScale : 1; 
+        unsigned int lodOffset : 1; 
         unsigned int minLineTriangleWidth : 1; 
         unsigned int minTrafficTypeAccidentZ : 1; 
         unsigned int minTrafficTypeConstructionZ : 1; 
@@ -62,9 +64,13 @@
         unsigned int minTrafficTypeRampClosureZ : 1; 
         unsigned int minTrafficTypeRoadClosureZ : 1; 
         unsigned int minTrafficTypeUnknownZ : 1; 
-        unsigned int rasterMode : 1; 
         unsigned int rasterPolygonChangeoverZ : 1; 
+        unsigned int realisticNightBrightness : 1; 
+        unsigned int realisticShieldNightBrightness : 1; 
+        unsigned int shieldNightBrightness : 1; 
+        unsigned int tiltLimitSatelliteScale : 1; 
     unsigned int _buildingChangeoverZ;
+    float _globeLODScale;
     } _has;
     } _layerZoomRangeBackgroundRasters;
     } _layerZoomRangeGroundCovers;
@@ -78,6 +84,7 @@
     } _layerZoomRangeVectorRealistics;
     } _layerZoomRangeVectorRoadTraffics;
     } _layerZoomRangeVectorRoads;
+    float _lodOffset;
     float _minLineTriangleWidth;
     unsigned int _minTrafficTypeAccidentZ;
     unsigned int _minTrafficTypeConstructionZ;
@@ -87,12 +94,18 @@
     unsigned int _minTrafficTypeRampClosureZ;
     unsigned int _minTrafficTypeRoadClosureZ;
     unsigned int _minTrafficTypeUnknownZ;
-    int _rasterMode;
     unsigned int _rasterPolygonChangeoverZ;
+    float _realisticNightBrightness;
+    float _realisticShieldNightBrightness;
+    float _shieldNightBrightness;
+    float _tiltLimitSatelliteScale;
 }
 
 @property unsigned int buildingChangeoverZ;
+@property float globeLODScale;
 @property BOOL hasBuildingChangeoverZ;
+@property BOOL hasGlobeLODScale;
+@property BOOL hasLodOffset;
 @property BOOL hasMinLineTriangleWidth;
 @property BOOL hasMinTrafficTypeAccidentZ;
 @property BOOL hasMinTrafficTypeConstructionZ;
@@ -102,8 +115,11 @@
 @property BOOL hasMinTrafficTypeRampClosureZ;
 @property BOOL hasMinTrafficTypeRoadClosureZ;
 @property BOOL hasMinTrafficTypeUnknownZ;
-@property BOOL hasRasterMode;
 @property BOOL hasRasterPolygonChangeoverZ;
+@property BOOL hasRealisticNightBrightness;
+@property BOOL hasRealisticShieldNightBrightness;
+@property BOOL hasShieldNightBrightness;
+@property BOOL hasTiltLimitSatelliteScale;
 @property(readonly) unsigned int* layerZoomRangeBackgroundRasters;
 @property(readonly) unsigned int layerZoomRangeBackgroundRastersCount;
 @property(readonly) unsigned int* layerZoomRangeGroundCovers;
@@ -128,6 +144,7 @@
 @property(readonly) unsigned int layerZoomRangeVectorRoadTrafficsCount;
 @property(readonly) unsigned int* layerZoomRangeVectorRoads;
 @property(readonly) unsigned int layerZoomRangeVectorRoadsCount;
+@property float lodOffset;
 @property float minLineTriangleWidth;
 @property unsigned int minTrafficTypeAccidentZ;
 @property unsigned int minTrafficTypeConstructionZ;
@@ -137,8 +154,11 @@
 @property unsigned int minTrafficTypeRampClosureZ;
 @property unsigned int minTrafficTypeRoadClosureZ;
 @property unsigned int minTrafficTypeUnknownZ;
-@property int rasterMode;
 @property unsigned int rasterPolygonChangeoverZ;
+@property float realisticNightBrightness;
+@property float realisticShieldNightBrightness;
+@property float shieldNightBrightness;
+@property float tiltLimitSatelliteScale;
 
 - (void)addLayerZoomRangeBackgroundRasters:(unsigned int)arg1;
 - (void)addLayerZoomRangeGroundCover:(unsigned int)arg1;
@@ -169,7 +189,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (float)globeLODScale;
 - (BOOL)hasBuildingChangeoverZ;
+- (BOOL)hasGlobeLODScale;
+- (BOOL)hasLodOffset;
 - (BOOL)hasMinLineTriangleWidth;
 - (BOOL)hasMinTrafficTypeAccidentZ;
 - (BOOL)hasMinTrafficTypeConstructionZ;
@@ -179,8 +202,11 @@
 - (BOOL)hasMinTrafficTypeRampClosureZ;
 - (BOOL)hasMinTrafficTypeRoadClosureZ;
 - (BOOL)hasMinTrafficTypeUnknownZ;
-- (BOOL)hasRasterMode;
 - (BOOL)hasRasterPolygonChangeoverZ;
+- (BOOL)hasRealisticNightBrightness;
+- (BOOL)hasRealisticShieldNightBrightness;
+- (BOOL)hasShieldNightBrightness;
+- (BOOL)hasTiltLimitSatelliteScale;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int*)layerZoomRangeBackgroundRasters;
@@ -219,6 +245,7 @@
 - (unsigned int*)layerZoomRangeVectorRoads;
 - (unsigned int)layerZoomRangeVectorRoadsAtIndex:(unsigned int)arg1;
 - (unsigned int)layerZoomRangeVectorRoadsCount;
+- (float)lodOffset;
 - (float)minLineTriangleWidth;
 - (unsigned int)minTrafficTypeAccidentZ;
 - (unsigned int)minTrafficTypeConstructionZ;
@@ -228,11 +255,15 @@
 - (unsigned int)minTrafficTypeRampClosureZ;
 - (unsigned int)minTrafficTypeRoadClosureZ;
 - (unsigned int)minTrafficTypeUnknownZ;
-- (int)rasterMode;
 - (unsigned int)rasterPolygonChangeoverZ;
 - (BOOL)readFrom:(id)arg1;
+- (float)realisticNightBrightness;
+- (float)realisticShieldNightBrightness;
 - (void)setBuildingChangeoverZ:(unsigned int)arg1;
+- (void)setGlobeLODScale:(float)arg1;
 - (void)setHasBuildingChangeoverZ:(BOOL)arg1;
+- (void)setHasGlobeLODScale:(BOOL)arg1;
+- (void)setHasLodOffset:(BOOL)arg1;
 - (void)setHasMinLineTriangleWidth:(BOOL)arg1;
 - (void)setHasMinTrafficTypeAccidentZ:(BOOL)arg1;
 - (void)setHasMinTrafficTypeConstructionZ:(BOOL)arg1;
@@ -242,8 +273,11 @@
 - (void)setHasMinTrafficTypeRampClosureZ:(BOOL)arg1;
 - (void)setHasMinTrafficTypeRoadClosureZ:(BOOL)arg1;
 - (void)setHasMinTrafficTypeUnknownZ:(BOOL)arg1;
-- (void)setHasRasterMode:(BOOL)arg1;
 - (void)setHasRasterPolygonChangeoverZ:(BOOL)arg1;
+- (void)setHasRealisticNightBrightness:(BOOL)arg1;
+- (void)setHasRealisticShieldNightBrightness:(BOOL)arg1;
+- (void)setHasShieldNightBrightness:(BOOL)arg1;
+- (void)setHasTiltLimitSatelliteScale:(BOOL)arg1;
 - (void)setLayerZoomRangeBackgroundRasters:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setLayerZoomRangeGroundCovers:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setLayerZoomRangeHybridRasters:(unsigned int*)arg1 count:(unsigned int)arg2;
@@ -256,6 +290,7 @@
 - (void)setLayerZoomRangeVectorRealistics:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setLayerZoomRangeVectorRoadTraffics:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setLayerZoomRangeVectorRoads:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setLodOffset:(float)arg1;
 - (void)setMinLineTriangleWidth:(float)arg1;
 - (void)setMinTrafficTypeAccidentZ:(unsigned int)arg1;
 - (void)setMinTrafficTypeConstructionZ:(unsigned int)arg1;
@@ -265,8 +300,14 @@
 - (void)setMinTrafficTypeRampClosureZ:(unsigned int)arg1;
 - (void)setMinTrafficTypeRoadClosureZ:(unsigned int)arg1;
 - (void)setMinTrafficTypeUnknownZ:(unsigned int)arg1;
-- (void)setRasterMode:(int)arg1;
 - (void)setRasterPolygonChangeoverZ:(unsigned int)arg1;
+- (void)setRealisticNightBrightness:(float)arg1;
+- (void)setRealisticShieldNightBrightness:(float)arg1;
+- (void)setShieldNightBrightness:(float)arg1;
+- (void)setTiltLimitSatelliteScale:(float)arg1;
+- (float)shieldNightBrightness;
+- (float)tiltLimitSatelliteScale;
+- (float)tiltLimitScale:(int)arg1;
 - (void)writeTo:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })zoomRangeForMapLayer:(unsigned int)arg1;
 

@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSURL;
+@class NSArray;
 
-@interface SAStockDelete : SABaseClientBoundCommand {
+@interface SAStockDelete : SADomainCommand {
 }
 
 @property(copy) NSArray * stocks;
-@property(copy) NSURL * targetAppId;
 
 + (id)delete;
 + (id)deleteWithDictionary:(id)arg1 context:(id)arg2;
@@ -17,8 +16,6 @@
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setStocks:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (id)stocks;
-- (id)targetAppId;
 
 @end

@@ -6,7 +6,8 @@
     int _capacity;
 }
 
-- (id)contentsImageForStyle:(int)arg1;
+- (id)contentsImage;
+- (float)extraLeftPadding;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

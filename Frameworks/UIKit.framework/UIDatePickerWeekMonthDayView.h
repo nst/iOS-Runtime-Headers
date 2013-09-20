@@ -2,26 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel;
+@class NSString, UILabel;
 
 @interface UIDatePickerWeekMonthDayView : UIView {
     struct { 
         unsigned int weekdayLast : 1; 
     UILabel *_dateLabel;
     } _datePickerWeekMonthDayViewFlags;
+    NSString *_formattedDateString;
+    BOOL _isModern;
     UILabel *_weekdayLabel;
     float _weekdayWidth;
 }
 
 @property(readonly) UILabel * dateLabel;
+@property(copy) NSString * formattedDateString;
+@property BOOL isModern;
 @property(readonly) UILabel * weekdayLabel;
 @property BOOL weekdayLast;
 @property float weekdayWidth;
 
+- (BOOL)_canBeReusedInPickerView;
 - (id)dateLabel;
 - (void)dealloc;
+- (id)formattedDateString;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isModern;
 - (void)layoutSubviews;
+- (void)setFormattedDateString:(id)arg1;
+- (void)setIsModern:(BOOL)arg1;
 - (void)setWeekdayLast:(BOOL)arg1;
 - (void)setWeekdayWidth:(float)arg1;
 - (id)weekdayLabel;

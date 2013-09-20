@@ -7,16 +7,17 @@
 @interface IMDChat : NSObject {
     NSString *_accountID;
     NSString *_chatIdentifier;
-    unsigned int _failedCount;
+    NSMutableDictionary *_chatInfo;
+    NSString *_displayName;
     NSString *_guid;
-    int _isArchived;
+    BOOL _isArchived;
     NSString *_lastAddressedLocalHandle;
     FZMessage *_lastMessage;
     NSRecursiveLock *_lock;
     NSArray *_participants;
     NSDictionary *_properties;
     NSString *_roomName;
-    int _rowIDOfMostRecentFailedMessage;
+    long long _rowID;
     NSString *_serviceName;
     int _state;
     unsigned char _style;
@@ -27,17 +28,16 @@
 @property(copy) NSString * accountID;
 @property(copy) NSString * chatIdentifier;
 @property(readonly) NSDictionary * chatProperties;
-@property(readonly) NSMutableDictionary * copyDictionaryRepresentation;
 @property(readonly) NSDictionary * dictionaryRepresentation;
-@property unsigned int failedCount;
+@property(copy) NSString * displayName;
 @property(copy) NSString * guid;
-@property(readonly) int isArchived;
+@property(readonly) BOOL isArchived;
 @property(copy) NSString * lastAddressedLocalHandle;
 @property(retain) FZMessage * lastMessage;
 @property(copy) NSArray * participants;
 @property(retain) NSDictionary * properties;
 @property(copy) NSString * roomName;
-@property int rowIDOfMostRecentFailedMessage;
+@property long long rowID;
 @property(readonly) IMDService * service;
 @property(copy) NSString * serviceName;
 @property(readonly) IMDServiceSession * serviceSession;
@@ -45,9 +45,9 @@
 @property unsigned char style;
 @property unsigned int unreadCount;
 
-- (void)_setFailedCount:(unsigned int)arg1;
-- (void)_setRowIDOfMostRecentFailedMessage:(int)arg1;
+- (void)_setRowID:(long long)arg1;
 - (void)_setUnreadCount:(unsigned int)arg1;
+- (void)_updateCachedParticipants;
 - (void)_updateLastMessage:(id)arg1;
 - (id)account;
 - (id)accountID;
@@ -55,14 +55,14 @@
 - (void)addParticipants:(id)arg1;
 - (id)chatIdentifier;
 - (id)chatProperties;
-- (id)copyDictionaryRepresentation;
+- (id)copyDictionaryRepresentation:(BOOL)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)failedCount;
+- (id)displayName;
 - (id)guid;
-- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 chatIdentifier:(id)arg4 participants:(id)arg5 roomName:(id)arg6 lastAddressedLocalHandle:(id)arg7 state:(int)arg8 style:(unsigned char)arg9;
-- (int)isArchived;
+- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 chatIdentifier:(id)arg4 participants:(id)arg5 roomName:(id)arg6 displayName:(id)arg7 lastAddressedLocalHandle:(id)arg8 properties:(id)arg9 state:(int)arg10 style:(unsigned char)arg11;
+- (BOOL)isArchived;
 - (id)lastAddressedLocalHandle;
 - (id)lastMessage;
 - (id)participants;
@@ -70,12 +70,13 @@
 - (void)removeParticipant:(id)arg1;
 - (void)removeParticipants:(id)arg1;
 - (id)roomName;
-- (int)rowIDOfMostRecentFailedMessage;
+- (long long)rowID;
 - (id)service;
 - (id)serviceName;
 - (id)serviceSession;
 - (void)setAccountID:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setLastAddressedLocalHandle:(id)arg1;
 - (void)setLastMessage:(id)arg1;
@@ -88,6 +89,7 @@
 - (int)state;
 - (unsigned char)style;
 - (unsigned int)unreadCount;
+- (void)updateDisplayName:(id)arg1;
 - (void)updateProperties:(id)arg1;
 
 @end

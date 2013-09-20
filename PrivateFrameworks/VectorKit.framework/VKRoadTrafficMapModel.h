@@ -2,20 +2,27 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKRoadPainter;
+@class VKRoadMapModel, VKTrafficDrawStyle, VKTrafficPainter;
 
 @interface VKRoadTrafficMapModel : VKVectorMapModel {
     BOOL _enabled;
-    VKRoadPainter *_roadPainter;
+    VKRoadMapModel *_roadModel;
+    VKTrafficDrawStyle *_trafficDrawStyle;
+    VKTrafficPainter *_trafficPainter;
 }
 
 @property BOOL enabled;
+@property(retain) VKRoadMapModel * roadModel;
 
 - (void)dealloc;
 - (void)drawScene:(id)arg1 withContext:(id)arg2;
 - (BOOL)enabled;
 - (id)init;
 - (unsigned int)mapLayerPosition;
+- (id)roadModel;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setRoadModel:(id)arg1;
+- (void)stylesheetDidChange;
+- (unsigned int)supportedRenderPasses;
 
 @end

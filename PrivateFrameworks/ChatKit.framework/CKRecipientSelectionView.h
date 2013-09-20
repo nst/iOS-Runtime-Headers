@@ -2,72 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSNumber, NSString, UIPopoverController, UIScrollView, UITableView;
-
-@interface CKRecipientSelectionView : UIView <UITableViewDataSource, UITableViewDelegate, CKOverlayViewProtocol, MFContactsSearchConsumer, _MFComposeRecipientViewDelegate> {
-    NSArray *_abProperties;
-    NSNumber *_currentSearchTaskID;
-    id _delegate;
-    MFContactsSearchManager *_searchManager;
-    NSArray *_searchResults;
-    MFContactsSearchResultsModel *_searchResultsModel;
-    UIPopoverController *_searchResultsPopoverController;
-    UITableView *_searchResultsTable;
-    NSString *_searchText;
-    MFSearchShadowView *_shadowView;
-    BOOL _showingSearchField;
-    CKComposeRecipientView *_toField;
-    UIScrollView *_toFieldScrollingView;
+@interface CKRecipientSelectionView : UIView {
 }
 
-@property id delegate;
-@property(copy) NSString * searchText;
-@property(getter=isShowingSearchField,readonly) BOOL showingSearchField;
-
-+ (float)separatorHeight;
-
-- (void)_cleanUpResultsTable;
-- (void)_hideSearchField;
-- (void)_searchWithText:(id)arg1;
-- (void)_showSearchField;
-- (void)_updateContentSize;
-- (void)_updateShowingSearch;
-- (void)animationDidStop:(id)arg1;
-- (void)beganNetworkActivity;
-- (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
-- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
-- (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
-- (void)composeRecipientViewDidFinishEnteringRecipient:(id)arg1;
-- (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
-- (void)composeRecipientViewRequestAddRecipient:(id)arg1;
-- (void)composeRecipientViewReturnPressed:(id)arg1;
-- (void)consumeSearchResults:(id)arg1 type:(int)arg2 taskID:(id)arg3;
-- (void)dealloc;
-- (id)delegate;
-- (void)endedNetworkActivity;
-- (void)finishedSearchingForType:(int)arg1;
-- (void)finishedTaskWithID:(id)arg1;
-- (BOOL)hasText;
-- (float)heightWithoutSeparator;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ABProperties:(id)arg2;
-- (BOOL)isRecipientAvailable:(id)arg1;
-- (BOOL)isShowingSearchField;
-- (void)reallyResignFirstResponder;
-- (id)recipients;
-- (void)reflow;
-- (void)reset;
-- (id)searchText;
-- (void)setABProperties:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setSearchText:(id)arg1;
-- (void)showErrorAlertForTooManyRecipientsIfNecessary;
-- (void)stopCheckingRecipientAvailability;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)toField;
-- (void)updateRecipientLimit;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 
 @end

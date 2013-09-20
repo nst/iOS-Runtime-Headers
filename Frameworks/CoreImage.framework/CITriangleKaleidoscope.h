@@ -5,6 +5,7 @@
 @class CIImage, CIVector, NSNumber;
 
 @interface CITriangleKaleidoscope : CIFilter {
+    CIImage *_decayImage;
     NSNumber *inputDecay;
     CIImage *inputImage;
     CIVector *inputPoint;
@@ -12,16 +13,17 @@
     NSNumber *inputSize;
 }
 
-@property(copy) NSNumber * inputDecay;
+@property(retain) NSNumber * inputDecay;
 @property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputPoint;
-@property(copy) NSNumber * inputRotation;
-@property(copy) NSNumber * inputSize;
+@property(retain) CIVector * inputPoint;
+@property(retain) NSNumber * inputRotation;
+@property(retain) NSNumber * inputSize;
 
 + (id)customAttributes;
 
 - (id)_colorKernel;
 - (id)_geomKernel;
+- (void)dealloc;
 - (id)inputDecay;
 - (id)inputImage;
 - (id)inputPoint;

@@ -2,25 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSNumber, NSValue, UIColor, _UIBarBackButtonItemAppearanceStorage;
+@class NSMutableDictionary, NSValue, UIColor, _UIBarBackButtonItemAppearanceStorage;
 
 @interface _UIBarButtonItemAppearanceStorage : _UIBarItemAppearanceStorage {
     _UIBarBackButtonItemAppearanceStorage *backButtonAppearance;
     NSMutableDictionary *backgroundImages;
-    NSNumber *backgroundVerticalAdjustment;
+    NSMutableDictionary *backgroundVerticalAdjustmentsForBarMetrics;
     NSMutableDictionary *miniBackgroundImages;
-    NSNumber *miniBackgroundVerticalAdjustment;
     NSValue *miniTitlePositionOffset;
     UIColor *tintColor;
     NSValue *titlePositionOffset;
 }
 
-@property(retain) NSNumber * backButtonBackgroundVerticalAdjustment;
 @property(retain) NSValue * backButtonTitlePositionOffset;
-@property(retain) NSNumber * backgroundVerticalAdjustment;
-@property(retain) NSNumber * miniBackButtonBackgroundVerticalAdjustment;
 @property(retain) NSValue * miniBackButtonTitlePositionOffset;
-@property(retain) NSNumber * miniBackgroundVerticalAdjustment;
 @property(retain) NSValue * miniTitlePositionOffset;
 @property(retain) UIColor * tintColor;
 @property(retain) NSValue * titlePositionOffset;
@@ -28,23 +23,19 @@
 - (id)anyBackButtonBackgroundImage;
 - (id)anyBackgroundImage;
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
-- (id)backButtonBackgroundVerticalAdjustment;
+- (float)backButtonBackgroundVerticalAdjustmentForBarMetrics:(int)arg1;
 - (id)backButtonTitlePositionOffset;
 - (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 isMini:(BOOL)arg3;
-- (id)backgroundVerticalAdjustment;
+- (float)backgroundVerticalAdjustmentForBarMetrics:(int)arg1;
 - (void)dealloc;
-- (id)miniBackButtonBackgroundVerticalAdjustment;
 - (id)miniBackButtonTitlePositionOffset;
-- (id)miniBackgroundVerticalAdjustment;
 - (id)miniTitlePositionOffset;
 - (void)setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;
-- (void)setBackButtonBackgroundVerticalAdjustment:(id)arg1;
+- (void)setBackButtonBackgroundVerticalAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)setBackButtonTitlePositionOffset:(id)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 style:(int)arg3 isMini:(BOOL)arg4;
-- (void)setBackgroundVerticalAdjustment:(id)arg1;
-- (void)setMiniBackButtonBackgroundVerticalAdjustment:(id)arg1;
+- (void)setBackgroundVerticalAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)setMiniBackButtonTitlePositionOffset:(id)arg1;
-- (void)setMiniBackgroundVerticalAdjustment:(id)arg1;
 - (void)setMiniTitlePositionOffset:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTitlePositionOffset:(id)arg1;

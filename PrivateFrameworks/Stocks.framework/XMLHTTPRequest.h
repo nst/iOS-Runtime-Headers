@@ -46,14 +46,17 @@
     NSURLConnection *_connection;
     NSMutableData *_rawData;
     NSURLRequest *_request;
-    } saxHandler;
+    } _saxHandler;
 }
 
 + (void)appendDebugString:(id)arg1;
 + (void)saveDebugString;
++ (void)setShouldGenerateOfflineData:(BOOL)arg1;
++ (BOOL)shouldGenerateOfflineData;
 + (id)uniqueQueryIDString;
 
 - (void).cxx_destruct;
+- (id)_yahooDoppelganger_connectionForRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

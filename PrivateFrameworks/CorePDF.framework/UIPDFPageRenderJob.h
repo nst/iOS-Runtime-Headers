@@ -27,6 +27,7 @@
 @property(readonly) unsigned int pageIndex;
 @property(readonly) int priority;
 @property BOOL releaseWhenDone;
+@property(readonly) struct CGSize { float x1; float x2; } size;
 
 - (void)cancel;
 - (void)cancelOperation;
@@ -46,5 +47,6 @@
 - (void)setOperation:(id)arg1;
 - (void)setReleaseWhenDone:(BOOL)arg1;
 - (void)setTarget:(id)arg1 callback:(SEL)arg2 userData:(id)arg3;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

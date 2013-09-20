@@ -16,6 +16,8 @@
     BOOL _fNATCheckInProgress;
     BOOL _fNATCheckQueued;
     BOOL _favorNonCarrier;
+    BOOL _hasNATCheckEnded;
+    BOOL _hasNATCheckStarted;
     BOOL _ignoreCarrierBundle;
     BOOL _ignoreNatTypeCache;
     NSMutableDictionary *_interfaceInfoDictionary;
@@ -53,12 +55,17 @@
 - (oneway void)release;
 - (void)reportNATType;
 - (id)retrieveNatTypeCache;
+- (id)retrieveNatTypeCache_CachePlistScheme;
+- (id)retrieveNatTypeCache_OSXGamedScheme;
 - (unsigned int)setCommNATFlags:(unsigned int)arg1 forInterface:(id)arg2 isCached:(BOOL)arg3;
 - (void)setDelegate:(id)arg1;
 - (unsigned int)setFlags:(unsigned int)arg1 forInterface:(id)arg2 isCached:(BOOL)arg3 isCachedKey:(id)arg4 mask:(unsigned int)arg5;
 - (unsigned int)setSSLFlags:(unsigned int)arg1 forInterface:(id)arg2 isCached:(BOOL)arg3;
 - (unsigned int)setTCPFlags:(unsigned int)arg1 forInterface:(id)arg2 isCached:(BOOL)arg3;
+- (void)shouldTryNATCheck;
 - (void)tryNATCheckWithDelay:(double)arg1;
 - (void)updateNatTypeCache:(id)arg1;
+- (void)updateNatTypeCache_CachePlistScheme:(id)arg1;
+- (void)updateNatTypeCache_OSXGamedScheme:(id)arg1;
 
 @end

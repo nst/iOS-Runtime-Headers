@@ -8,34 +8,60 @@
     NSManagedObjectContext *_context;
     NSFetchedResultsController *_fetchController;
     NSFetchRequest *_fetchRequest;
+    BOOL _isSaveInProgress;
     NSManagedObjectModel *_model;
+    int _notifyToken;
+    BOOL _valid;
 }
 
 @property(readonly) unsigned int count;
+@property BOOL isSaveInProgress;
 @property(readonly) NSArray * recordings;
+@property BOOL valid;
 
-+ (void)invalidateSharedModel;
++ (id)_assetManifestPlistPath;
++ (void)initialize;
++ (id)savedRecordingsDirectory;
 + (id)sharedModel;
++ (id)sharedModelForQueue:(id)arg1;
++ (id)standardURLForRecordingWithCreationDate:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_allCustomLabels;
+- (id)_copyFileIntoRecordingsDirectory:(id)arg1;
+- (void)_deleteRecordingsWithDurationLessThan:(double)arg1 passingTest:(id)arg2;
 - (void)_generateAssetManifestPlist;
+- (void)_handleExternalModelDidSaveNotification:(id)arg1;
+- (void)_handleInternalModelDidSaveNotification:(id)arg1;
 - (id)_init;
 - (id)_labelPresetsForQuery:(id)arg1;
+- (void)_postRecordingsModelDidChangeForNotificationName:(id)arg1;
+- (void)_scheduleAutomaticRecordingDeletions;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
 - (void)controllerDidChangeContent:(id)arg1;
 - (unsigned int)count;
 - (void)dealloc;
+- (void)deleteOrphanedRecordingsPassingTest:(id)arg1;
 - (void)deleteRecording:(id)arg1;
+- (void)enumerateExistingRecordingsWithBlock:(id)arg1;
 - (BOOL)hasExistingRecordingForAudioFile:(id)arg1;
 - (id)indexPathForRecording:(id)arg1;
 - (id)init;
+- (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3 customLabelBase:(id)arg4;
 - (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3;
+- (BOOL)isSaveInProgress;
+- (id)nextRecordingDefaultLabelWithCustomLabelBase:(id)arg1;
 - (id)recordingAtIndex:(unsigned int)arg1;
 - (id)recordingWithID:(id)arg1;
 - (id)recordingWithITunesPersistentID:(long long)arg1;
 - (id)recordingWithURIRepresentation:(id)arg1;
 - (id)recordings;
 - (id)recordingsForSpotlightSearch:(id)arg1;
+- (void)save;
 - (void)saveIfNecessary;
+- (BOOL)saveManagedObjectContext:(id*)arg1;
+- (void)setIsSaveInProgress:(BOOL)arg1;
+- (void)setValid:(BOOL)arg1;
+- (BOOL)valid;
 
 @end

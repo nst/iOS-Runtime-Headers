@@ -11,6 +11,7 @@
 @property NSObject<MBManagerDelegate> * delegate;
 
 - (id)_init;
+- (BOOL)addFileToBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 domainName:(id)arg3 relativePath:(id)arg4 fromPath:(id)arg5 error:(id*)arg6;
 - (BOOL)allowiTunesBackup;
 - (id)backupList;
 - (id)backupState;
@@ -22,6 +23,7 @@
 - (id)dateOfNextScheduledBackup;
 - (id)delegate;
 - (BOOL)deleteBackupUDID:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteItemFromBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 domainName:(id)arg3 relativePath:(id)arg4 error:(id*)arg5;
 - (id)domainInfoForName:(id)arg1;
 - (id)domainInfoList;
 - (BOOL)extractItemFromBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 domainName:(id)arg3 relativePath:(id)arg4 toPath:(id)arg5 error:(id*)arg6;

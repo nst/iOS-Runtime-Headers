@@ -2,27 +2,32 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIImageView, _UINavigationBarAppearanceStorage;
+@class UIColor, UIImageView, UIView, _UIBackdropView, _UINavigationBarAppearanceStorage;
 
-@interface _UINavigationBarBackground : UIImageView {
+@interface _UINavigationBarBackground : _UIBarBackgroundImageView {
     struct { 
-        unsigned int isTranslucent : 1; 
+        unsigned int barTranslucence : 3; 
         unsigned int barStyle : 3; 
         unsigned int backgroundImageNeedsUpdate : 1; 
         unsigned int isContainedInPopover : 1; 
+        unsigned int barWantsAdaptiveBackdrop : 1; 
+    _UIBackdropView *_adaptiveBackdrop;
     _UINavigationBarAppearanceStorage *_appearanceStorage;
+    UIColor *_barTintColor;
     } _navbarFlags;
     UIImageView *_shadowView;
-    UIColor *_tintColor;
 }
 
-@property(setter=_setShadowView:,retain) UIImageView * _shadowView;
+@property(setter=_setShadowView:,retain) UIView * _shadowView;
 @property(retain) _UINavigationBarAppearanceStorage * appearanceStorage;
 @property int barStyle;
-@property(retain) UIColor * tintColor;
+@property(retain) UIColor * barTintColor;
+@property BOOL barWantsAdaptiveBackdrop;
 @property(getter=isTranslucent) BOOL translucent;
 
-- (id)_currentCustomBackgroundRespectOversize:(BOOL*)arg1;
+- (id)_currentCustomBackground;
+- (id)_currentCustomBackgroundDedicatedToBarMetrics:(int*)arg1 barPosition:(int*)arg2;
+- (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;
 - (id)_customShadowImageForSearchBar;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(BOOL)arg2;
@@ -31,17 +36,19 @@
 - (id)_shadowView;
 - (id)appearanceStorage;
 - (int)barStyle;
+- (id)barTintColor;
+- (BOOL)barWantsAdaptiveBackdrop;
 - (void)dealloc;
 - (void)didMoveToSuperview;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 barStyle:(int)arg2 tintColor:(id)arg3 appearance:(id)arg4 isTranslucent:(BOOL)arg5;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 barStyle:(int)arg2 barTintColor:(id)arg3 appearance:(id)arg4 barTranslucence:(int)arg5;
 - (BOOL)isTranslucent;
 - (void)setAppearanceStorage:(id)arg1;
 - (void)setBarStyle:(int)arg1;
+- (void)setBarTintColor:(id)arg1;
+- (void)setBarWantsAdaptiveBackdrop:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTintColor:(id)arg1;
 - (void)setTranslucent:(BOOL)arg1;
-- (id)tintColor;
 - (void)updateBackgroundImage;
 
 @end

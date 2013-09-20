@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewCell, UITableViewCellDeleteConfirmationControl, UITableViewCellEditControl, UITableViewCellReorderControl, UIView;
+@class UITableViewCell, UITableViewCellDeleteConfirmationControl_Legacy, UITableViewCellEditControl, UITableViewCellReorderControl, UIView;
 
 @interface UITableViewCellEditingData : NSObject {
     UITableViewCell *_cell;
-    UITableViewCellDeleteConfirmationControl *_deleteConfirmationControl;
+    UITableViewCellDeleteConfirmationControl_Legacy *_deleteConfirmationControl;
     UITableViewCellEditControl *_editControl;
     int _editingStyle;
     UITableViewCellReorderControl *_reorderControl;

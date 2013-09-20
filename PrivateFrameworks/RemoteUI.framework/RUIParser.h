@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSMutableArray, NSURL, NSXMLParser, RUIObjectModel;
+@class NSData, NSMutableArray, NSURL, NSXMLParser, RUIObjectModel;
 
 @interface RUIParser : NSObject <NSXMLParserDelegate> {
     int _actionSignal;
@@ -13,14 +13,18 @@
     int _parserState;
     BOOL _succeeded;
     RUIObjectModel *_uiObjectModel;
+    NSData *_xmlData;
 }
 
 @property(retain) NSURL * baseURL;
 @property(readonly) BOOL succeeded;
+@property(retain) NSData * xmlData;
 
 - (void)_addNavigationBarWithAttributes:(id)arg1;
 - (void)_addSectionWithAttributes:(id)arg1;
-- (id)_createNewPage;
+- (void)_addTableFooterViewWithAttributes:(id)arg1;
+- (void)_addTableHeaderViewWithAttributes:(id)arg1;
+- (id)_createNewPageWithAttributes:(id)arg1;
 - (id)_createSupplementalPageNamed:(id)arg1;
 - (id)_lastPageCreateIfNeeded;
 - (id)_lastRow;
@@ -36,7 +40,9 @@
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parser:(id)arg1 validationErrorOccurred:(id)arg2;
 - (void)setBaseURL:(id)arg1;
+- (void)setXmlData:(id)arg1;
 - (BOOL)succeeded;
 - (id)uiObjectModel;
+- (id)xmlData;
 
 @end

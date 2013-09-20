@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSURL;
+@class NSDictionary, NSURL;
 
 @interface PLWallpaperAsset : PLManagedAsset {
 }
 
 @property(retain) NSURL * imageURL;
 @property(retain) NSURL * thumbnailURL;
+@property(retain) NSDictionary * wallpaperOptions;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
@@ -21,14 +22,16 @@
 - (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)imageWithFormat:(int)arg1;
 - (id)indexSheetImage;
+- (BOOL)isIncludedInMoments;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
-- (id)objectID;
 - (void)prepareForDeletion;
 - (void)setImageURL:(id)arg1;
 - (void)setThumbnailURL:(id)arg1;
 - (void)setURL:(id)arg1 forKey:(id)arg2;
+- (void)setWallpaperOptions:(id)arg1;
 - (id)thumbnailURL;
 - (id)urlForKey:(id)arg1;
 - (id)wallpaperFullScreenImage;
+- (id)wallpaperOptions;
 
 @end

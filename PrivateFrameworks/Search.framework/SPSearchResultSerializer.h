@@ -26,6 +26,7 @@
 
 - (unsigned int)_allocateSize:(unsigned int)arg1;
 - (id)_convertConformingResult:(id)arg1;
+- (BOOL)appendResult:(id)arg1 toSection:(id)arg2;
 - (BOOL)appendResult:(id)arg1;
 - (BOOL)appendSection:(id)arg1;
 - (unsigned int)byteVector;

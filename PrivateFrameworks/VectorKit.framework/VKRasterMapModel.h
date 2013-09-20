@@ -2,17 +2,20 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, VGLRenderState;
+@class NSMutableArray, VGLRenderState, VGLTexture;
 
 @interface VKRasterMapModel : VKMapTileModel <VKMapLayer> {
+    VGLTexture *_clutTexture;
     unsigned int _mapLayer;
     BOOL _rasterViewer;
     VGLRenderState *_renderState;
+    BOOL _showingNoDataPlaceholders;
     NSMutableArray *_sortedTiles;
 }
 
 @property unsigned int mapLayerPosition;
 @property BOOL rasterViewer;
+@property(getter=isShowingNoDataPlaceholders,readonly) BOOL showingNoDataPlaceholders;
 
 + (BOOL)reloadOnStylesheetChange;
 
@@ -26,5 +29,9 @@
 - (void)reset;
 - (void)setMapLayerPosition:(unsigned int)arg1;
 - (void)setRasterViewer:(BOOL)arg1;
+- (void)setupClutTextureForLevelOfDetail:(unsigned int)arg1 scale:(float)arg2;
+- (id)stylesheet;
+- (void)stylesheetDidChange;
+- (unsigned int)supportedRenderPasses;
 
 @end

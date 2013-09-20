@@ -29,15 +29,17 @@
     int _meID;
     NSRecursiveLock *_memberLock;
     unsigned int _numberOfDisplayedMembers;
-    struct { struct { /* ? */ } *x1; int x2; int x3; } *_sectionLists;
+    struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; } *_sectionLists;
     ABContactsFilter *_selectedContactsFilter;
     void *_selectedPerson;
 }
 
 @property void* addressBook;
 @property(retain) ABContactsFilter * displayedContactsFilter;
+@property(readonly) void* groupForNewRecords;
 @property(readonly) ABContactsFilter * lastSelectedContactsFilter;
 @property(readonly) ABContactsFilter * selectedContactsFilter;
+@property(readonly) void* sourceForNewRecords;
 
 + (void)initialize;
 + (unsigned int)sortOrdering;
@@ -63,16 +65,17 @@
 - (id)allDatabaseDirectories;
 - (id)allGroups;
 - (id)allSources;
-- (void)copyDisplayedNamePieces:(id*)arg1 isGroup:(BOOL*)arg2 highlightIndex:(int*)arg3 forMemberID:(int*)arg4 atindex:(unsigned int)arg5;
+- (void)copyDisplayedNamePieces:(id*)arg1 isGroup:(BOOL*)arg2 highlightIndex:(int*)arg3 forMemberID:(int*)arg4 atindex:(int)arg5;
 - (id)databaseFullDirectory;
 - (id)databaseHomeDirectory;
 - (id)databaseSubdirectory;
 - (void)dealloc;
 - (id)displayedContactsFilter;
-- (void*)displayedMemberAtIndex:(unsigned int)arg1;
-- (struct { struct { /* ? */ } *x1; int x2; int x3; }*)displayedMemberSectionLists;
-- (int)displayedMemberSectionListsCount;
+- (void*)displayedMemberAtIndex:(int)arg1;
+- (struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; }*)displayedMemberSectionLists;
+- (unsigned int)displayedMemberSectionListsCount;
 - (id)displayedMembersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void*)groupForNewRecords;
 - (struct __CFDictionary { }*)headerSortKeyToHeaderStringDictionary;
 - (int)indexForDisplayedMember:(void*)arg1;
 - (id)initWithAddressBook:(void*)arg1;
@@ -99,6 +102,7 @@
 - (void)setSelectedPerson:(void*)arg1;
 - (void)setSortOrdering:(unsigned int)arg1;
 - (BOOL)shouldUsePartialLoadingForContactsFilter:(id)arg1;
+- (void*)sourceForNewRecords;
 - (void)startDelayingNotificationsForDatabaseChangeDelegate:(id)arg1;
 - (void)stopDelayingNotificationsForDatabaseChangeDelegate:(id)arg1 andDeliverDelayedNotifications:(BOOL)arg2;
 - (void)updateForMajorAddressBookChange;

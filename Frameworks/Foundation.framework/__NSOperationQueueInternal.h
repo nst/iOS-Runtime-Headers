@@ -6,6 +6,7 @@
 
 @interface __NSOperationQueueInternal : NSObject {
     int __actualMaxNumOps;
+    NSObject<OS_dispatch_queue> *__dispatchQueue;
     NSOperation *__firstOperation;
     NSOperation *__firstPriOperation[5];
     NSOperation *__lastOperation;
@@ -19,9 +20,9 @@
     NSOperation *__pendingFirstOperation;
     NSOperation *__pendingLastOperation;
     NSObject<OS_dispatch_queue> *__pending_barrier;
-    unsigned int __poke;
     int __queueLock;
     unsigned char __suspended;
+    unsigned int __unused2;
 }
 
 - (void)dealloc;

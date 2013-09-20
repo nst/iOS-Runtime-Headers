@@ -7,9 +7,12 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@interface NSValue : NSObject <NSCopying, NSSecureCoding> {
+@interface NSValue : NSObject <NSCopying, NSSecureCoding, TSDMixing> {
 }
 
++ (id)_gkValueWithGLKVector3:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg1;
++ (id)_mapkit_valueWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
++ (id)_mapkit_valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)_web_valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
@@ -22,6 +25,8 @@
 + (id)valueWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (id)valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
@@ -46,13 +51,16 @@
 - (struct CAColorMatrix { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; })CAColorMatrixValue;
 - (struct CADoublePoint { double x1; double x2; })CADoublePointValue;
 - (struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })CADoubleRectValue;
+- (id)CAMLType;
 - (struct CAPoint3D { float x1; float x2; float x3; })CAPoint3DValue;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })CATransform3DValue;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
 - (float)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; boolx10; }*)arg4;
+- (id)CA_roundToIntegerFromValue:(id)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })CGAffineTransformValue;
+- (struct CGPoint { float x1; float x2; })CGPointValue;
 - (struct CGPoint { float x1; float x2; })CGPointValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
@@ -66,6 +74,10 @@
 - (struct { long long x1; int x2; })ML3NameOrderValue;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })UIEdgeInsetsValue;
 - (struct UIOffset { float x1; float x2; })UIOffsetValue;
+- (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })_gkGLKVector3Value;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_mapkit_CGAffineTransformValue;
+- (struct CGPoint { float x1; float x2; })_mapkit_CGPointValue;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_CGRectValue;
 - (id)_mapkit_initWithCADoublePoint:(struct CADoublePoint { double x1; double x2; })arg1;
 - (id)_mapkit_initWithCADoubleRect:(struct CADoubleRect { struct CADoublePoint { double x_1_1_1; double x_1_1_2; } x1; struct CADoubleSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_mapkit_initWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -75,12 +87,14 @@
 - (struct { float x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapkit_zoomRegionValue;
 - (struct CGPoint { float x1; float x2; })cgPointValue;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cgRectValue;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cgRectValue;
 - (struct CGSize { float x1; float x2; })cgSizeValue;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)ddrangeCompare:(id)arg1;
 - (struct _DDRange { unsigned long long x1; unsigned long long x2; })ddrangeValue;
 - (id)description;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getValue:(void*)arg1;
 - (unsigned int)hash;
@@ -90,6 +104,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToValue:(id)arg1;
 - (BOOL)isNSValue__;
+- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
+- (int)mixingTypeWithObject:(id)arg1;
 - (id)nonretainedObjectValue;
 - (const char *)objCType;
 - (struct CGPoint { float x1; float x2; })pointValue;

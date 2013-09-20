@@ -12,7 +12,9 @@
 - (void)addExecutionBlock:(id)arg1;
 - (void)dealloc;
 - (id)executionBlocks;
+- (void)finalize;
 - (id)init;
+- (id)initWithBlock:(id)arg1;
 - (void)main;
 
 @end

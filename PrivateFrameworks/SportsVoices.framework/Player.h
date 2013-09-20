@@ -11,15 +11,13 @@
 
 @property(readonly) BOOL isPlaying;
 
-+ (void)__audioSessionInterruptionDidBegin;
-+ (void)__audioSessionInterruptionDidEnd;
 + (void)__clearSharedPlayQueue;
 + (void)__deactivateAudioSession;
 + (void)__initializeAudioSession;
 + (void)__nts_indicateEndOfQueuePlayback:(id)arg1;
 + (void)__nts_queuePlayerStatusChanged:(id)arg1;
 + (id)__sharedPlayQueue;
-+ (id)__stringForAudioSessionError:(long)arg1;
++ (void)_setAudioSessionActive:(BOOL)arg1;
 + (void)initialize;
 + (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 

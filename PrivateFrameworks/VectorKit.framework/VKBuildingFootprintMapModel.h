@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLRenderState, VKAnimation, VKMercatorTerrainHeightCache, VKVectorTile;
+@class VGLRenderState, VKAnimation, VKMercatorTerrainHeightCache, VKSkyModel;
 
 @interface VKBuildingFootprintMapModel : VKVectorMapModel <VKMercatorTerrainHeightProvider, VKMapLayer> {
     struct _VGLColor { 
@@ -25,50 +25,144 @@
         float g; 
         float b; 
         float a; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    struct unordered_map<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, std::__1::equal_to<VKVectorTile *>, vk_allocator<std::__1::pair<VKVectorTile *const, OccluderGroupList> > > { 
+        struct __hash_table<std::__1::pair<VKVectorTile *, OccluderGroupList>, std::__1::__unordered_map_hasher<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, true>, std::__1::__unordered_map_equal<VKVectorTile *, OccluderGroupList, std::__1::equal_to<VKVectorTile *>, true>, vk_allocator<std::__1::pair<VKVectorTile *, OccluderGroupList> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *[], std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> **, std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
+                    struct __hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *>, vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> { 
+                    struct __hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<VKVectorTile *, OccluderGroupList, std::__1::equal_to<VKVectorTile *>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
+    struct unordered_map<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, std::__1::equal_to<VKVectorTile *>, vk_allocator<std::__1::pair<VKVectorTile *const, OccluderGroupList> > > { 
+        struct __hash_table<std::__1::pair<VKVectorTile *, OccluderGroupList>, std::__1::__unordered_map_hasher<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, true>, std::__1::__unordered_map_equal<VKVectorTile *, OccluderGroupList, std::__1::equal_to<VKVectorTile *>, true>, vk_allocator<std::__1::pair<VKVectorTile *, OccluderGroupList> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *[], std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> **, std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
+                    struct __hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *>, vk_allocator<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> *> { 
+                    struct __hash_node<std::__1::pair<VKVectorTile *, OccluderGroupList>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<VKVectorTile *, OccluderGroupList, std::__1::equal_to<VKVectorTile *>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
+    } _3DStrokeColor;
+    float _3DStrokeWidth;
+    float _brightness;
     int _buildingMode;
-    unsigned int _buildingOccluder;
     float _buildingOccluderAlpha;
+    } _currentOccluders;
     } _facadeColor;
     VKAnimation *_fadeBuildingAnimation;
     BOOL _fadeTiles;
+    double _farDistance;
     } _flatColor;
+    } _footprintStrokeColor;
+    float _footprintStrokeWidth;
     VKMercatorTerrainHeightCache *_heightCache;
+    BOOL _initializedStyles;
     } _landmarkColor;
-    unsigned int _previousBuildingOccluder;
+    float _maxLayeringHeight;
+    float _minLayeringHeight;
+    double _nearDistance;
+    } _pointyFacadeColor;
+    } _pointyTopColor;
+    } _previousOccluders;
     VGLRenderState *_renderState;
+    VKSkyModel *_skyModel;
     VKAnimation *_styleChangeAnimation;
-    VKVectorTile *_tileWithBuildingOccluder;
     } _topColor;
     int _vectorType;
+    bool_shouldDraw3DBuildingsIn3DBuildingsRenderPass;
+    bool_shouldDraw3DBuildingsInVectorBuildingsRenderPass;
 }
 
 @property int buildingMode;
 @property BOOL fadeTiles;
 @property(readonly) VKMercatorTerrainHeightCache * heightCache;
+@property(retain) VKSkyModel * skyModel;
 @property int vectorType;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)_clearOccluders;
 - (id)_globalBuildingDrawStyle;
-- (void)_reloadStyleAnimated:(BOOL)arg1;
+- (id)_globalPointyBuildingDrawStyle;
+- (void)_updateStyles;
 - (int)buildingMode;
 - (void)dealloc;
+- (void)draw2DBuildingsInScene:(id)arg1 withContext:(id)arg2;
+- (void)draw3DBuildingShadowsInScene:(id)arg1 withContext:(id)arg2;
+- (void)draw3DBuildingStrokesInScene:(id)arg1 withContext:(id)arg2;
+- (void)draw3DBuildingsInScene:(id)arg1 withContext:(id)arg2 passes:(unsigned int)arg3;
 - (void)drawDebugScene:(id)arg1 withContext:(id)arg2;
-- (void)drawScene:(id)arg1 withContext:(id)arg2;
+- (void)drawFootprintsInScene:(id)arg1 withContext:(id)arg2;
+- (void)drawScene:(id)arg1 withContext:(id)arg2 pass:(unsigned int)arg3;
 - (BOOL)fadeTiles;
-- (double)heightAtPoint:(struct { double x1; double x2; double x3; })arg1;
+- (double)heightAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
 - (id)heightCache;
 - (id)init;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
-- (double)maxTileHeightAtPoint:(struct { double x1; double x2; double x3; })arg1;
-- (void)preloadRealisticResourcesWithContext:(id)arg1;
+- (double)maxTileHeightAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
 - (void)removePersistingExitingTiles:(id)arg1;
 - (void)reset;
 - (void)setActive:(BOOL)arg1;
 - (void)setBuildingMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setBuildingMode:(int)arg1;
 - (void)setFadeTiles:(BOOL)arg1;
+- (void)setSkyModel:(id)arg1;
 - (void)setVectorType:(int)arg1;
+- (id)skyModel;
+- (void)stylesheetDidChange;
+- (unsigned int)supportedRenderPasses;
 - (int)vectorType;
 - (void)vectorTypeDidChange;
 - (BOOL)wantsCategorizedSourceTiles;

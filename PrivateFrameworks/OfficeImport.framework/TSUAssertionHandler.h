@@ -6,6 +6,7 @@
 }
 
 + (id)currentHandler;
++ (id)descriptionForMethod:(SEL)arg1 object:(id)arg2;
 + (void)installAsNSHandler;
 
 - (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 description:(id)arg4;

@@ -28,7 +28,7 @@
 - (id)description;
 - (id)deviceAttributes;
 - (id)enrollmentIdentityPersistentID;
-- (id)initWithDictionary:(id)arg1 originalData:(id)arg2 wasEncrypted:(BOOL)arg3 allowEmptyPayload:(BOOL)arg4 outError:(id*)arg5;
+- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(BOOL)arg2 outError:(id*)arg3;
 - (id)localizedPayloadSummaryByType;
 - (id)payloads;
 - (void)setEnrollmentIdentityPersistentID:(id)arg1;

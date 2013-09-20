@@ -4,7 +4,7 @@
 
 @class NSArray;
 
-@interface MPMediaQuerySectionInfo : NSObject <NSCopying, NSMutableCopying, NSCoding> {
+@interface MPMediaQuerySectionInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSArray *_sectionIndexTitles;
     NSArray *_sections;
 }
@@ -13,9 +13,11 @@
 @property(copy) NSArray * sectionIndexTitles;
 @property(readonly) NSArray * sections;
 
++ (BOOL)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)indexOfSectionForSectionIndexTitleAtIndex:(unsigned int)arg1;

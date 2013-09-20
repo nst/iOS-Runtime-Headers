@@ -56,7 +56,7 @@
 - (void)_getDataPayloads;
 - (void)_getETags;
 - (void)_getOrder;
-- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 error:(id)arg3;
+- (void)_getTask:(id)arg1 finishedWithParsedContents:(id)arg2 deletedItems:(id)arg3 error:(id)arg4;
 - (void)_postTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_pushActions;
 - (void)_sendNextBatch;
@@ -81,6 +81,7 @@
 - (id)copyPutTaskWithPayloadItem:(id)arg1 forAction:(id)arg2;
 - (id)dataContentType;
 - (void)dealloc;
+- (void)deleteResourceURLs:(id)arg1;
 - (void)deleteTask:(id)arg1 completedWithError:(id)arg2;
 - (id)description;
 - (BOOL)ensureUpdatedCTag;
@@ -96,6 +97,7 @@
 - (id)previousSyncToken;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)putTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
+- (void)receivedPropertiesToValues:(id)arg1 forURL:(id)arg2;
 - (void)setActionsOnly:(BOOL)arg1;
 - (void)setAddMemberURL:(id)arg1;
 - (void)setBulkChangeCheckCTag:(id)arg1;
@@ -108,6 +110,7 @@
 - (void)setPreviousSyncToken:(id)arg1;
 - (void)setUseMultiGet:(BOOL)arg1;
 - (void)setUseSyncCollection:(BOOL)arg1;
+- (BOOL)shouldDownloadResource:(id)arg1 localETag:(id)arg2 serverETag:(id)arg3;
 - (BOOL)shouldFetchMoreETags;
 - (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
 - (void)startTaskGroup;

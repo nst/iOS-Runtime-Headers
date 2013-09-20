@@ -27,7 +27,7 @@
 - (void)devalueSelf;
 - (void)evaluateNewClaim:(id)arg1;
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
-- (void)forwardReacquisitionMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenterForID:(id)arg3;
+- (void)forwardReacquisitionMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenterForID:(id)arg3 usingReplySender:(id)arg4;
 - (void)forwardRelinquishmentMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenter:(id)arg3 usingReplySender:(id)arg4;
 - (void)forwardUsingMessageSender:(id)arg1 crashHandler:(id)arg2;
 - (void)granted;

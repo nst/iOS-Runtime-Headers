@@ -2,35 +2,68 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSFileManager, PLCurrentThumbnailsInformation, PLPhotoLibrary, PLXPCTransaction;
+@class NSDictionary, NSFileManager, PLPhotoLibrary, PLXPCTransaction;
 
 @interface PLModelMigrator : NSObject {
     NSFileManager *_fileManager;
     PLPhotoLibrary *_photoLibrary;
     long _photoLibraryOnce;
-    PLCurrentThumbnailsInformation *_thumbnailsInformation;
+    NSDictionary *_syncedPropertiesByUUID;
     PLXPCTransaction *_transaction;
     double startTime;
 }
 
-@property(retain) PLCurrentThumbnailsInformation * _thumbnailsInformation;
 @property(retain) NSFileManager * fileManager;
 @property(readonly) PLPhotoLibrary * photoLibrary;
 
++ (void)_applySyncedProperties:(id)arg1 toAsset:(id)arg2;
++ (BOOL)_batchOfflineDeleteFromDatabaseOnlyAssets:(id)arg1 inManagedObjectContext:(id)arg2 error:(id*)arg3;
++ (void)_createDatabase;
++ (id)_dateWithiTunesTimeInterval:(double)arg1;
++ (BOOL)_deleteCloudSharedAndSyncedAssetReferencesInStore:(id)arg1;
++ (BOOL)_deletePhotoCloudSharingMetadataInManagedObjectContext:(id)arg1 error:(id*)arg2;
++ (BOOL)_deletePhotoStreamAssetReferencesInStore:(id)arg1;
++ (BOOL)_fixupAlbumOrderInAlbumListInStore:(id)arg1;
++ (BOOL)_fixupEditorBundleIDsInStore:(id)arg1;
++ (BOOL)_fixupImportedAssetsInStore:(id)arg1;
++ (BOOL)_fixupImportedEventsInStore:(id)arg1;
++ (BOOL)_fixupKeyAssetsForAlbumsInStore:(id)arg1;
++ (BOOL)_fixupOldBursts;
++ (BOOL)_fixupSyncedAssetAttributesInStore:(id)arg1;
++ (BOOL)_forceAnalyzeAllMoments;
++ (void)_forceCreateIndexOnOrderedAssets:(BOOL)arg1;
++ (BOOL)_forceDupeAnalysis;
++ (BOOL)_initiateLightweightReimportOfAllPhotoCloudSharingMetadataInStore:(id)arg1;
++ (BOOL)_moveMyPhotoStreamToAlbumsListInStore:(id)arg1;
++ (id)_newSyncedPropertiesByAssetUUIDs:(BOOL)arg1;
++ (BOOL)_populateLightweightReimportDirectoryWithPhotoCloudSharingAssetsInManagedObjectContext:(id)arg1 error:(id*)arg2;
++ (BOOL)_rebuildAllMomentsInStore:(id)arg1;
++ (BOOL)_repairSingletonObjectsInDatabaseForOfflineStore:(id)arg1;
++ (BOOL)_repairSingletonObjectsInDatabaseUsingContext:(id)arg1 error:(id*)arg2;
++ (BOOL)_resetDupesAnalysisInStore:(id)arg1 resetHashes:(BOOL)arg2;
++ (BOOL)_resetThumbnailsAndInitiateRebuildRequest;
++ (BOOL)_updateKindSubtypeForPanoramaPhotosNeedsReset:(BOOL)arg1 inStore:(id)arg2;
 + (void)archiveAssetUUIDForPathPlist:(id)arg1;
 + (id)archivedAssetUUIDForURL:(id)arg1;
 + (id)assetUUIDForPathPlistURL;
++ (BOOL)attemptLightweightMigrationOnStore:(id)arg1 fromVersion:(int)arg2 metadata:(id)arg3;
 + (void)cleanupModelAfterRestoreFromiTunes;
 + (void)createDatabase;
++ (int)currentModelVersion;
++ (BOOL)debug_resetThumbnailsAndInitiateRebuildRequest;
++ (BOOL)didCreateSqliteErrorFileForLightweightMigration;
 + (BOOL)didImportFileSystemAssets;
 + (void)dontImportFileSystemDataIntoDatabase;
 + (id)eventNameFromDate:(id)arg1;
++ (void)forceImportFileSystemDataIntoDatabase;
 + (id)generateAssetUUIDForPathPlist;
 + (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id)arg3;
++ (BOOL)isPostProcessingLightweightMigration;
 + (void)loadFileSystemDataIntoDatabase;
 + (id)modelMigrator;
++ (BOOL)postProcessMigratedStore:(id)arg1 fromVersion:(int)arg2;
++ (BOOL)postProcessThumbnailsOnly;
 + (void)recalculateCachedCounts;
-+ (void)recreateThumbnailTablesIfNecessary;
 + (void)repairPotentialModelCorruption;
 + (void)repairSingletonObjectsInDatabaseWithCompletionHandler:(id)arg1;
 + (BOOL)restartingAfterOTAMigration;
@@ -38,16 +71,17 @@
 + (long long)secondsNeededToCleanupModelAfteriTunesRestore;
 + (void)setDidImportFileSystemAssets:(BOOL)arg1;
 + (id)sharedModelMigratorForImport;
++ (BOOL)shouldAttemptLightweightMigration;
 + (BOOL)shouldRebuildDCIMSubDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 assetsKind:(int*)arg3;
++ (void)validateCurrentModelVersion;
 + (void)waitForDataMigratorToExit;
 
 - (void)_importAllDCIMAssets;
 - (id)_orderedAssetsToImportCameraRollOnly:(BOOL)arg1;
-- (BOOL)_shouldReimportCameraRollAssets;
-- (id)_thumbnailsInformation;
+- (id)_syncedPropertiesForAssetUUID:(id)arg1;
 - (void)cleanupModelAfterRestoreFromiTunes;
 - (void)collectContentsOfDirectoryURL:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4;
-- (void)collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4;
+- (void)collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4 testCreationDates:(BOOL)arg5;
 - (void)dealloc;
 - (void)dontImportFileSystemDataIntoDatabase;
 - (id)fileManager;
@@ -59,12 +93,10 @@
 - (void)pausePhotoStreams;
 - (id)photoLibrary;
 - (void)recalculateCachedCountsWithSemaphore:(id)arg1;
-- (void)recreateThumbnailTablesIfNecessary;
 - (void)repairPotentialModelCorruption;
 - (void)resumePhotoStreams;
 - (long long)secondsNeededToCleanupModelAfteriTunesRestore;
 - (void)setFileManager:(id)arg1;
-- (void)set_thumbnailsInformation:(id)arg1;
 - (BOOL)shouldRebuildDCIMDirectoryAtURL:(id)arg1 directoryEnumerator:(id)arg2 isPhotoStream:(BOOL*)arg3 cameraRollOnly:(BOOL)arg4;
 
 @end

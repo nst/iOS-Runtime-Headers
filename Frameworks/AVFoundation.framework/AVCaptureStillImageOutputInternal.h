@@ -9,16 +9,20 @@
         float width; 
         float height; 
     BOOL EV0CaptureEnabled;
-    BOOL HDRCaptureEnabled;
+    int HDRCaptureMode;
+    BOOL SISActive;
+    BOOL SISEnabled;
+    BOOL SISSupported;
     BOOL chromaNoiseReductionEnabled;
     unsigned long imageDataFormatType;
-    long long imageMaxDataSize;
     BOOL isCapturingPhoto;
     float jpegQuality;
     BOOL jpegQualitySpecified;
     NSDictionary *outputSettings;
     } previewImageSize;
     BOOL rawCaptureEnabled;
+    unsigned long shutterSoundID;
+    BOOL squareCropEnabled;
     NSMutableArray *stillImageRequests;
     BOOL suspendsVideoProcessingDuringCapture;
 }

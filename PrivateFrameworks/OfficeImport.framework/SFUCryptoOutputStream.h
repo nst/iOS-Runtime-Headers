@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <SFUOutputStream>, SFUCryptor;
+@class <SFUOutputStream>, OISFUCryptor;
 
 @interface SFUCryptoOutputStream : NSObject <SFUOutputStream> {
     <SFUOutputStream> *mBaseStream;
     BOOL mComputeCrc32;
     unsigned int mCrc32;
-    SFUCryptor *mCryptor;
+    OISFUCryptor *mCryptor;
     BOOL mIsClosed;
 }
 

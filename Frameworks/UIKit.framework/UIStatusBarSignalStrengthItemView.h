@@ -10,7 +10,7 @@
 }
 
 - (id)_stringForRSSI;
-- (id)contentsImageForStyle:(int)arg1;
+- (id)contentsImage;
 - (float)extraRightPadding;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;

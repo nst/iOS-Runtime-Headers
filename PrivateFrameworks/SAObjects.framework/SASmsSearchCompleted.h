@@ -13,11 +13,9 @@
 
 + (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)searchCompletedWithResults:(id)arg1;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)initWithResults:(id)arg1;
 - (id)results;
 - (void)setResults:(id)arg1;
 

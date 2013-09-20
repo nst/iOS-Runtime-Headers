@@ -6,16 +6,19 @@
 
 @interface PKPassWelcomeFrontFaceView : PKPassFrontFaceView {
     UIButton *_appStoreButton;
-    UILabel *_bodyLabel;
+    UIButton *_cameraButton;
     UILabel *_headlineLabel;
-    UILabel *_welcomeLabel;
+    UILabel *_passbookLabel;
 }
 
 - (void)_appStoreButtonPressed;
+- (void)_cameraButtonPressed;
 - (void)_openURL;
 - (void)createBodyContentViews;
 - (void)createHeaderContentViews;
 - (void)dealloc;
 - (void)layoutSubviews;
+- (BOOL)showsInfo;
+- (BOOL)showsShare;
 
 @end

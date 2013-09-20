@@ -4,7 +4,7 @@
 
 @class NSString, PLManagedAsset;
 
-@interface PLManagedFace : NSManagedObject {
+@interface PLManagedFace : PLManagedObject {
 }
 
 @property(retain) NSString * albumUUID;

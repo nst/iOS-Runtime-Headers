@@ -4,13 +4,13 @@
 
 @class CIImage, CIVector;
 
-@interface CICrop : CIFilter {
+@interface CICrop : CIFilter <_CIFilterProperties> {
     CIImage *inputImage;
     CIVector *inputRectangle;
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputRectangle;
+@property(retain) CIVector * inputRectangle;
 
 + (id)customAttributes;
 

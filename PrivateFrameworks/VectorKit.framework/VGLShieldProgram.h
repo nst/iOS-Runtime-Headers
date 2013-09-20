@@ -3,16 +3,22 @@
  */
 
 @interface VGLShieldProgram : VGLProgram {
+    float _fadeTime;
     int _textureSampler;
+    int _uFadeTime;
     int _uTextureSampler;
 }
 
+@property float fadeTime;
 @property int textureSampler;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
-- (id)init;
+- (float)fadeTime;
+- (void)setFadeTime:(float)arg1;
 - (void)setTextureSampler:(int)arg1;
+- (void)setup;
 - (int)textureSampler;
 
 @end

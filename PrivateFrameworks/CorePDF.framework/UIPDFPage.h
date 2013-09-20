@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSString, UIImage, UIPDFDocument, UIPDFSelection;
+@class NSMutableArray, NSString, UIImage, UIPDFDocument, UIPDFSelection;
 
 @interface UIPDFPage : NSObject {
+    NSMutableArray *_annotations;
     struct CGPDFPage { } *_cgPage;
     UIPDFDocument *_document;
+    int _lock;
     UIImage *_pageImage;
     unsigned int _pageIndex;
     unsigned int _pageNumber;
@@ -23,7 +25,12 @@
 @property(retain) UIPDFSelection * selection;
 
 - (struct CGPDFPage { }*)CGPage;
+- (void)addAnnotation:(id)arg1;
+- (id)annotationIn:(id)arg1 withIndex:(unsigned int)arg2;
+- (id)annotations;
 - (unsigned long)cfCompareFlagsFromNSOptions:(unsigned int)arg1;
+- (void)clearAnnotations;
+- (id)copyPage;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropBox;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropBoxAccountForRotation;
 - (void)dealloc;
@@ -33,13 +40,18 @@
 - (id)findString:(id)arg1 fromSelection:(id)arg2 options:(unsigned int)arg3;
 - (id)getImageIfAvailable;
 - (id)initWithCGPDFPage:(struct CGPDFPage { }*)arg1;
+- (id)initWithDocument:(id)arg1 pageNumber:(unsigned int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaBox;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediaBoxAccountForRotation;
 - (id)pageImage;
 - (unsigned int)pageIndex;
 - (unsigned int)pageNumber;
+- (void)refresh;
+- (void)removeAllAnnotations;
+- (void)removeAnnotation:(id)arg1;
 - (unsigned int)rotation;
 - (id)selection;
+- (void)setDocument:(id)arg1;
 - (void)setPageImage:(id)arg1;
 - (void)setSelection:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;

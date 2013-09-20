@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UIDimmingView, UIInputSwitcherShadowView, UITableView, UIView;
+@class NSTimer, UIDimmingView, UIInputSwitcherSelectionExtraView, UIInputSwitcherShadowView, UIInputSwitcherTableView, UIKBTree, UIKeyboardLayoutStar;
 
 @interface UIKeyboardMenuView : UIView <UITableViewDataSource, UITableViewDelegate, UIDimmingViewDelegate> {
     struct CGRect { 
@@ -17,8 +17,10 @@
     struct CGPoint { 
         float x; 
         float y; 
-    double _dismissDelay;
-    double dismissDelay;
+    UIKeyboardLayoutStar *_layout;
+    UIKBTree *_referenceKey;
+    BOOL _usesDarkTheme;
+    BOOL _usesStraightLeftEdge;
     UIDimmingView *m_dimmingView;
     int m_firstVisibleRow;
     int m_mode;
@@ -30,18 +32,25 @@
     NSTimer *m_scrollTimer;
     BOOL m_scrollable;
     BOOL m_scrolling;
-    UIView *m_selExtraView;
+    UIInputSwitcherSelectionExtraView *m_selExtraView;
     UIInputSwitcherShadowView *m_shadowView;
     BOOL m_shouldFade;
-    UITableView *m_table;
+    BOOL m_startAutoscroll;
+    UIInputSwitcherTableView *m_table;
     int m_visibleRows;
 }
 
-@property double dismissDelay;
+@property UIKeyboardLayoutStar * layout;
 @property int mode;
+@property UIKBTree * referenceKey;
+@property BOOL usesDarkTheme;
+@property BOOL usesStraightLeftEdge;
 @property(readonly) BOOL usesTable;
 
++ (id)viewThatContainsBaseKey;
+
 - (void)_delayedFade;
+- (int)_internationalKeyRoundedCornerInLayout:(id)arg1;
 - (void)applicationWillSuspend:(id)arg1;
 - (void)autoscrollTimerFired:(id)arg1;
 - (BOOL)centerPopUpOverKey;
@@ -50,44 +59,66 @@
 - (void)didSelectItemAtIndex:(int)arg1;
 - (id)dimmingView;
 - (void)dimmingViewWasTapped:(id)arg1;
-- (double)dismissDelay;
 - (void)endScrolling:(id)arg1;
 - (void)fade;
-- (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)fadeWithDelay:(double)arg1;
 - (id)font;
 - (void)hide;
 - (void)highlightRow:(int)arg1;
 - (int)indexForIndexPath:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)insertSelExtraView;
 - (BOOL)isVisible;
+- (id)layout;
+- (id)maskForShadowViewBlurredBackground;
+- (float)minYOfLastTableCellForSelectionExtraView;
 - (int)mode;
 - (int)numberOfItems;
 - (void)performShowAnimation;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popupRect;
 - (struct CGSize { float x1; float x2; })preferredSize;
+- (id)referenceKey;
 - (void)removeFromSuperview;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)selectItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDismissDelay:(double)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHighlightForRowAtIndexPath:(id)arg1 highlight:(BOOL)arg2;
+- (void)setKeyboardDimmed:(BOOL)arg1;
+- (void)setLayout:(id)arg1;
 - (void)setMode:(int)arg1;
+- (void)setNeedsDisplay;
 - (void)setNeedsDisplayForCell:(id)arg1;
 - (void)setNeedsDisplayForTopBottomCells;
+- (void)setReferenceKey:(id)arg1;
+- (void)setRenderConfig:(id)arg1;
+- (void)setUsesDarkTheme:(BOOL)arg1;
+- (void)setUsesStraightLeftEdge:(BOOL)arg1;
+- (void)setupShadowViewWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)show;
 - (void)showAsHUD;
-- (void)showAsPopupFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
+- (void)showAsPopupForKey:(id)arg1 inLayout:(id)arg2;
 - (void)stopAnyAutoscrolling;
 - (id)subtitleFont;
 - (id)subtitleForItemAtIndex:(int)arg1;
+- (id)table;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 willDeselectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)titleForItemAtIndex:(int)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)usesDarkTheme;
+- (BOOL)usesDimmingView;
+- (BOOL)usesShadowView;
+- (BOOL)usesStraightLeftEdge;
 - (BOOL)usesTable;
 
 @end

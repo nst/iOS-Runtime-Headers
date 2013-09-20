@@ -4,14 +4,17 @@
 
 @class NSString;
 
-@interface UITextInputMode : NSObject {
+@interface UITextInputMode : NSObject <NSSecureCoding> {
 }
 
 @property(readonly) NSString * primaryLanguage;
 
 + (id)activeInputModes;
 + (id)currentInputMode;
++ (BOOL)supportsSecureCoding;
 
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)primaryLanguage;
 
 @end

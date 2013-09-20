@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDTimeListNodeList, TSUNoCopyDictionary;
+@class PDRootTimeNode, TSUNoCopyDictionary;
 
 @interface PDAnimation : NSObject {
     TSUNoCopyDictionary *mBuildMap;
-    PDTimeListNodeList *mTimeListNodeList;
+    PDRootTimeNode *mRootTimeNode;
 }
 
 + (void)initialize;
 
-- (id)addTimeListNodeList;
+- (id)addRootTimeNode;
 - (id)buildMap;
 - (void)dealloc;
 - (id)init;
+- (id)rootTimeNode;
 - (void)setBuildMap:(id)arg1;
-- (id)timeListNodeList;
 
 @end

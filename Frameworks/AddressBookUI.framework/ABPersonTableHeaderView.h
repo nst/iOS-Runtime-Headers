@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTableHeaderViewDelegate>, <ABStyleProvider>, ABMultiCell, ABMultiCellContentView, ABNamePropertyGroup, ABPersonImageView, ABPersonNameDisplayView, NSString, UIFont, UIImageView, UITableView, UIView;
+@class <ABPersonTableHeaderViewDelegate>, <ABStyleProvider>, ABMultiCell, ABMultiCellContentView, ABNamePropertyGroup, ABPersonImageView, ABPersonNameDisplayView, ABUIPerson, NSString, UIFont, UIImageView, UITableView, UIView;
 
 @interface ABPersonTableHeaderView : UIView <UITableViewDelegate, UITableViewDataSource> {
     <ABPersonTableHeaderViewDelegate> *_delegate;
@@ -34,7 +34,7 @@
 @property(retain) UIFont * messageDetailFont;
 @property(retain) UIFont * messageFont;
 @property(retain) ABNamePropertyGroup * namePropertyGroup;
-@property void* personForImageView;
+@property(retain) ABUIPerson * personForImageView;
 @property BOOL representsLinkedPeople;
 @property(retain) <ABStyleProvider> * styleProvider;
 
@@ -82,8 +82,7 @@
 - (id)messageFont;
 - (id)namePropertyGroup;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void*)personForImageView;
-- (void*)personForName;
+- (id)personForImageView;
 - (void)reloadData;
 - (void)reloadImageData;
 - (void)reloadNameDataAnimated:(BOOL)arg1;
@@ -103,7 +102,7 @@
 - (void)setMessageDetailFont:(id)arg1;
 - (void)setMessageFont:(id)arg1;
 - (void)setNamePropertyGroup:(id)arg1;
-- (void)setPersonForImageView:(void*)arg1;
+- (void)setPersonForImageView:(id)arg1;
 - (void)setPrimaryProperty:(int)arg1 countryCode:(id)arg2;
 - (void)setRepresentsLinkedPeople:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;

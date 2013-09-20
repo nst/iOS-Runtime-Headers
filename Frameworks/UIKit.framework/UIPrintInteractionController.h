@@ -12,6 +12,7 @@
     unsigned int _backgroundTaskIdentifier;
     id _completionHandler;
     <UIPrintInteractionControllerDelegate> *_delegate;
+    BOOL _hidesNumberOfCopies;
     UIPrintFormatter *_printFormatter;
     UIPrintInfo *_printInfo;
     UIPrintPageRenderer *_printPageRenderer;
@@ -33,6 +34,7 @@
 @property(retain) PKPrinter * printer;
 @property(copy) id printingItem;
 @property(copy) NSArray * printingItems;
+@property BOOL showsNumberOfCopies;
 @property BOOL showsPageRange;
 
 + (BOOL)canPrintData:(id)arg1;
@@ -41,6 +43,7 @@
 + (id)printableUTIs;
 + (id)sharedPrintController;
 
+- (BOOL)_canShowCopies;
 - (BOOL)_canShowDuplex;
 - (BOOL)_canShowPageRange;
 - (BOOL)_canShowPaperList;
@@ -55,6 +58,7 @@
 - (id)_paperForPDFItem:(id)arg1 withDuplexMode:(int)arg2;
 - (void)_preparePrintInfo;
 - (id)_printItem:(id)arg1;
+- (struct CGSize { float x1; float x2; })_printItemContentSize;
 - (void)_printPage;
 - (id)_printPageRenderer:(id)arg1;
 - (void)_printPanelDidDismiss;
@@ -92,7 +96,9 @@
 - (void)setPrinter:(id)arg1;
 - (void)setPrintingItem:(id)arg1;
 - (void)setPrintingItems:(id)arg1;
+- (void)setShowsNumberOfCopies:(BOOL)arg1;
 - (void)setShowsPageRange:(BOOL)arg1;
+- (BOOL)showsNumberOfCopies;
 - (BOOL)showsPageRange;
 
 @end

@@ -2,19 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSLock, NSMutableDictionary;
-
 @interface _NSXPCConnectionReplyTable : NSObject {
-    NSMutableDictionary *_replyTable;
-    NSLock *_replyTableLock;
+    struct __CFDictionary { } *_replyTable;
+    int _replyTableLock;
     unsigned long long _sequence;
 }
 
 - (void)cleanupReplyBlocksWithError:(id)arg1;
 - (void)dealloc;
+- (void)finalize;
 - (id)init;
 - (void)invokeErrorBlockForSequence:(unsigned long)arg1 withError:(id)arg2;
 - (id)replyInfoForSequence:(unsigned long long)arg1;
-- (unsigned long long)sequenceForReplyBlock:(id)arg1 errorBlock:(id)arg2 cleanupBlock:(id)arg3 protocol:(id)arg4 selector:(SEL)arg5;
+- (unsigned long long)sequenceForReplyBlock:(id)arg1 errorBlock:(id)arg2 cleanupBlock:(id)arg3 protocol:(id)arg4 selector:(SEL)arg5 proxyNumber:(unsigned long long)arg6 userInfo:(id)arg7;
 
 @end

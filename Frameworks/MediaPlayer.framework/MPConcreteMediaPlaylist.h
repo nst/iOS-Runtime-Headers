@@ -11,6 +11,7 @@
     NSMutableDictionary *_properties;
 }
 
+- (void).cxx_destruct;
 - (void)_updateLibraryForPlaylistEdit:(id)arg1;
 - (void)addItem:(id)arg1 completionBlock:(id)arg2;
 - (void)addItems:(id)arg1 completionBlock:(id)arg2;
@@ -27,14 +28,18 @@
 - (id)initWithProperties:(id)arg1 itemsQuery:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
-- (int)mediaTypes;
+- (id)itemsQuery;
+- (id)mediaLibrary;
+- (unsigned int)mediaTypes;
 - (void)moveItemFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2 completionBlock:(id)arg3;
 - (void)populateWithSeedItem:(id)arg1 completionBlock:(id)arg2;
 - (void)populateWithSeedItem:(id)arg1 queue:(id)arg2 completionBlock:(id)arg3;
 - (void)removeAllItems;
 - (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id)arg3;
 - (id)representativeItem;
-- (void)setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
+- (id)valuesForProperties:(id)arg1;
 
 @end

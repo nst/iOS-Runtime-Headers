@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOLocalizedAttribution : PBCodable {
+@interface GEOLocalizedAttribution : PBCodable <NSCopying> {
     NSString *_displayName;
     NSString *_language;
     NSMutableArray *_logoURLs;
@@ -20,10 +20,11 @@
 
 - (void)addLogoURLs:(id)arg1;
 - (void)addSnippetLogoURLs:(id)arg1;
-- (id)bestURLForLogos:(id)arg1;
+- (id)bestURLForLogos:(id)arg1 hiDPI:(BOOL)arg2;
 - (void)clearLogoURLs;
 - (void)clearSnippetLogoURLs;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

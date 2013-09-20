@@ -2,33 +2,51 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSObject<OS_dispatch_queue>, _CKPriorityQueue;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
 
 @interface CKDispatchQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatch_queue;
-    _CKPriorityQueue *_priorityQueue;
+    BOOL _cancelled;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSMutableDictionary *_dispatchQueueBlocks;
+    unsigned int _fifo;
+    struct __CFBinaryHeap { } *_heap;
+    NSObject<OS_dispatch_queue> *_lockQueue;
     BOOL _suspended;
-    BOOL cancelled;
 }
 
 @property(getter=isCancelled) BOOL cancelled;
-@property(retain) _CKPriorityQueue * priorityQueue;
+@property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
+@property(retain) NSMutableDictionary * dispatchQueueBlocks;
+@property(retain) struct __CFBinaryHeap { }* heap;
+@property(retain) NSObject<OS_dispatch_queue> * lockQueue;
 @property(getter=isSuspended) BOOL suspended;
 
 + (id)concurrentQueueWithDispatchPriority:(long)arg1;
 + (id)serialQueueWithDispatchPriority:(long)arg1;
 
 - (id)_initWithDispatchAttr:(id)arg1 dispatchPriority:(long)arg2;
+- (void)addBlock:(id)arg1 withQueuePriority:(int)arg2 forKey:(id)arg3;
 - (void)addBlock:(id)arg1 withQueuePriority:(int)arg2;
 - (void)addBlock:(id)arg1;
+- (id)allKeysOfOutstandingBlocks;
 - (void)cancelOustandingBlocks;
+- (BOOL)containsOutstandingBlockForKey:(id)arg1;
 - (void)dealloc;
+- (id)dispatchQueue;
+- (id)dispatchQueueBlocks;
+- (struct __CFBinaryHeap { }*)heap;
 - (id)init;
 - (BOOL)isCancelled;
 - (BOOL)isSuspended;
-- (id)priorityQueue;
+- (id)lockQueue;
+- (int)queuePriorityOfOutstandingBlockForKey:(id)arg1;
+- (void)removeOutstandingBlockForKey:(id)arg1;
 - (void)setCancelled:(BOOL)arg1;
-- (void)setPriorityQueue:(id)arg1;
+- (void)setDispatchQueue:(id)arg1;
+- (void)setDispatchQueueBlocks:(id)arg1;
+- (void)setHeap:(struct __CFBinaryHeap { }*)arg1;
+- (void)setLockQueue:(id)arg1;
+- (void)setQueuePriority:(int)arg1 ofOutstandingBlockForKey:(id)arg2;
 - (void)setSuspended:(BOOL)arg1;
 
 @end

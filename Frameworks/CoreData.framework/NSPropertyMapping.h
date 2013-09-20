@@ -11,8 +11,8 @@
     NSString *_name;
     } _propertyMappingFlags;
     NSArray *_propertyTransforms;
-    void *_reserved1;
     void *_reserved;
+    NSArray *_transformValidations;
     NSDictionary *_userInfo;
     NSExpression *_valueExpression;
 }
@@ -24,7 +24,9 @@
 - (id)_propertyTransforms;
 - (void)_setIsEditable:(BOOL)arg1;
 - (void)_setPropertyTransforms:(id)arg1;
+- (void)_setTransformValidations:(id)arg1;
 - (void)_throwIfNotEditable;
+- (id)_transformValidations;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

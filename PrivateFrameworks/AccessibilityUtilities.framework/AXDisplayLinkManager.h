@@ -6,53 +6,58 @@
 
 @interface AXDisplayLinkManager : NSObject {
     NSMutableSet *_activeTargetActions;
-    NSMutableSet *_addedTargetActions;
-    CADisplayLink *_displayLink;
     BOOL _handlingDisplayRefresh;
-    NSMutableSet *_removedTargetActions;
-    BOOL _shouldInvalidate;
-    BOOL _shouldInvalidateAutomatically;
+    BOOL _hasUpdatedTargetActions;
+    CADisplayLink *_storedDisplayLink;
+    NSMutableSet *_updatedTargetActions;
+    unsigned int _warmUpModeRequirementsCount;
 }
 
-@property(setter=_setActiveTargetActions:,retain) NSMutableSet * _activeTargetActions;
-@property(setter=_setAddedTargetActions:,retain) NSMutableSet * _addedTargetActions;
-@property(setter=_setDisplayLink:,retain) CADisplayLink * _displayLink;
-@property(getter=_isHandlingDisplayRefresh,setter=_setHandlingDisplayRefresh:) BOOL _handlingDisplayRefresh;
-@property(setter=_setRemovedTargetActions:,retain) NSMutableSet * _removedTargetActions;
-@property(setter=_setShouldInvalidate:) BOOL _shouldInvalidate;
+@property(retain) NSMutableSet * activeTargetActions;
+@property(retain) CADisplayLink * displayLink;
 @property(readonly) double duration;
-@property(readonly) int frameInterval;
+@property(readonly) unsigned int frameInterval;
+@property(getter=isHandlingDisplayRefresh) BOOL handlingDisplayRefresh;
+@property BOOL hasUpdatedTargetActions;
 @property(getter=isPaused,readonly) BOOL paused;
-@property BOOL shouldInvalidateAutomatically;
+@property(retain) CADisplayLink * storedDisplayLink;
 @property(readonly) double timestamp;
+@property(retain) NSMutableSet * updatedTargetActions;
+@property(getter=isWarmUpModeEnabled,readonly) BOOL warmUpModeEnabled;
+@property unsigned int warmUpModeRequirementsCount;
 
++ (void)_releaseCurrentDisplayLinkManager;
 + (id)currentDisplayLinkManager;
-+ (void)releaseCurrentDisplayLinkManager;
 
-- (id)_activeTargetActions;
-- (id)_addedTargetActions;
+- (void)_didAddFirstTargetAction;
+- (void)_didRemoveLastTargetAction;
 - (void)_displayDidRefresh:(id)arg1;
-- (id)_displayLink;
-- (BOOL)_isHandlingDisplayRefresh;
-- (id)_removedTargetActions;
-- (void)_setActiveTargetActions:(id)arg1;
-- (void)_setAddedTargetActions:(id)arg1;
-- (void)_setDisplayLink:(id)arg1;
-- (void)_setHandlingDisplayRefresh:(BOOL)arg1;
-- (void)_setRemovedTargetActions:(id)arg1;
-- (void)_setShouldInvalidate:(BOOL)arg1;
-- (BOOL)_shouldInvalidate;
-- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(int)arg3;
+- (id)_prepareUpdatedTargetActionsForModification;
+- (id)activeTargetActions;
+- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(unsigned int)arg3;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2;
+- (void)beginRequiringWarmUpMode;
 - (void)dealloc;
+- (id)displayLink;
 - (double)duration;
-- (int)frameInterval;
+- (void)endRequiringWarmUpMode;
+- (unsigned int)frameInterval;
+- (BOOL)hasUpdatedTargetActions;
 - (id)init;
-- (void)invalidate;
+- (BOOL)isHandlingDisplayRefresh;
 - (BOOL)isPaused;
+- (BOOL)isWarmUpModeEnabled;
 - (void)removeTarget:(id)arg1 selector:(SEL)arg2;
-- (void)setShouldInvalidateAutomatically:(BOOL)arg1;
-- (BOOL)shouldInvalidateAutomatically;
+- (void)setActiveTargetActions:(id)arg1;
+- (void)setDisplayLink:(id)arg1;
+- (void)setHandlingDisplayRefresh:(BOOL)arg1;
+- (void)setHasUpdatedTargetActions:(BOOL)arg1;
+- (void)setStoredDisplayLink:(id)arg1;
+- (void)setUpdatedTargetActions:(id)arg1;
+- (void)setWarmUpModeRequirementsCount:(unsigned int)arg1;
+- (id)storedDisplayLink;
 - (double)timestamp;
+- (id)updatedTargetActions;
+- (unsigned int)warmUpModeRequirementsCount;
 
 @end

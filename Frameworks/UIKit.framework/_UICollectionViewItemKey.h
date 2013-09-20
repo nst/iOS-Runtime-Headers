@@ -7,29 +7,31 @@
 @interface _UICollectionViewItemKey : NSObject <NSCopying> {
     NSString *_identifier;
     NSIndexPath *_indexPath;
-    unsigned int type;
+    BOOL _isClone;
+    unsigned int _type;
 }
 
-@property(retain) NSString * identifier;
-@property(retain) NSIndexPath * indexPath;
-@property unsigned int type;
+@property(readonly) NSString * identifier;
+@property(readonly) NSIndexPath * indexPath;
+@property(readonly) BOOL isClone;
+@property(readonly) unsigned int type;
 
 + (id)collectionItemKeyForCellWithIndexPath:(id)arg1;
 + (id)collectionItemKeyForDecorationViewOfKind:(id)arg1 andIndexPath:(id)arg2;
 + (id)collectionItemKeyForLayoutAttributes:(id)arg1;
 + (id)collectionItemKeyForSupplementaryViewOfKind:(id)arg1 andIndexPath:(id)arg2;
 
+- (id)copyAsClone:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)indexPath;
-- (id)init;
+- (id)initWithType:(unsigned int)arg1 indexPath:(id)arg2 identifier:(id)arg3 clone:(BOOL)arg4;
+- (id)initWithType:(unsigned int)arg1 indexPath:(id)arg2 identifier:(id)arg3;
+- (BOOL)isClone;
 - (BOOL)isEqual:(id)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)setIndexPath:(id)arg1;
-- (void)setType:(unsigned int)arg1;
 - (unsigned int)type;
 
 @end

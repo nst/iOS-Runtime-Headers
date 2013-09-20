@@ -15,6 +15,7 @@
 @property BOOL enabled;
 @property(readonly) UIWebSelection * selection;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
+@property(readonly) UIWebSelectionView * selectionView;
 
 - (void)clearSelection;
 - (void)dealloc;
@@ -36,6 +37,7 @@
 - (id)selection;
 - (void)selectionChanged;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrame;
+- (id)selectionView;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setGestureRecognizers;
 - (void)tap:(id)arg1;

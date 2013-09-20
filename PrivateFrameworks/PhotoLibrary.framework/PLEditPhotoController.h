@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class CIFilter, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSTimer, NSUndoManager, PLImageAdjustmentView, PLManagedAsset, UIActionSheet, UIAlertView, UIImage, UILabel, UINavigationBar, UIPopoverController, UIProgressHUD, UIScrollView, UIToolbar, UIView;
+@class CIContext, CIFilter, EAGLContext, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSTimer, NSUndoManager, PLEffectSelectionViewController, PLImageAdjustmentView, PLManagedAsset, PLProgressHUD, UIActionSheet, UIAlertView, UIImage, UILabel, UINavigationBar, UIPopoverController, UIScrollView, UIToolbar, UIView;
 
-@interface PLEditPhotoController : UIViewController <PLImageAdjustmentViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate> {
+@interface PLEditPhotoController : UIViewController <PLImageAdjustmentViewDelegate, UIScrollViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate, PLEffectSelectionViewControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -41,6 +41,10 @@
     unsigned int _modal : 1;
     unsigned int _isUsingProxyImage : 1;
     unsigned int _shouldPublishToPhotoStreams : 1;
+    unsigned int _needsFilteredFullSizeImage : 1;
+    unsigned int _preloadedEffectFilters : 1;
+    unsigned int _stopPreloadEffectFilters : 1;
+    BOOL __toolbarHidden;
     id _actionCompletionBlock;
     UIActionSheet *_actionSheet;
     UIImage *_adjustedImage;
@@ -50,18 +54,29 @@
     CIFilter *_autoRedEyeFilter;
     NSObject<OS_dispatch_queue> *_cachedImageQueue;
     NSDictionary *_cachedMetadata;
+    CIContext *_ciContextFullSize;
+    CIContext *_ciContextMainThread;
+    CIContext *_ciContextThumbnails;
     int _currentMode;
     id _didEndZoomingBlock;
     id _editCompletionBlock;
     PLImageAdjustmentView *_editView;
     PLManagedAsset *_editedPhoto;
+    NSArray *_effectFilters;
+    NSObject<OS_dispatch_queue> *_effectQueueFullSize;
+    NSObject<OS_dispatch_queue> *_effectQueueThumbnails;
+    PLEffectSelectionViewController *_effectSelectionViewController;
     } _enhanceCalcRect;
+    EAGLContext *_glesContextFullSize;
+    EAGLContext *_glesContextThumbnails;
     NSDictionary *_initialAdjustmentState;
     int _initialOrientation;
+    UIImage *_largeThumbnailImage;
     NSTimer *_messageTimer;
     UILabel *_messageView;
     NSMutableArray *_navBarItems;
     UINavigationBar *_navigationBar;
+    unsigned int _nextPreloadEffectFilterIndex;
     } _normalizedCropRect;
     NSArray *_originalItems;
     PLManagedAsset *_pendingPhoto;
@@ -71,15 +86,21 @@
     unsigned int _redEyeCycleCount;
     CIFilter *_redEyeFilter;
     float _rotationAngle;
-    UIProgressHUD *_savingHUD;
+    BOOL _savesAdjustmentsToCameraRoll;
+    PLProgressHUD *_savingHUD;
     UIImage *_scaledCachedImage;
     UIScrollView *_scrollView;
+    UIImage *_smallThumbnailImage;
     float _straightenAngle;
+    BOOL _supportsEffects;
+    NSMutableDictionary *_thumbnailCache;
+    NSDictionary *_thumbnailCacheAdjustmentState;
     UIToolbar *_toolbar;
     NSUndoManager *_undoManager;
     UIView *_zoomView;
 }
 
+@property(setter=_setToolbarHidden:) BOOL _toolbarHidden;
 @property(copy) id actionCompletionBlock;
 @property BOOL autoAdjustmentEnabled;
 @property(retain) PLManagedAsset * editedPhoto;
@@ -94,34 +115,45 @@
 + (void)initialize;
 
 - (void)_addRedEyeCorrections:(id)arg1 fromFilter:(id)arg2 isUserAction:(BOOL)arg3;
+- (BOOL)_adjustmentState:(id)arg1 isEqualTo:(id)arg2;
 - (id)_adjustmentState;
 - (void)_autoAdjustImage;
 - (id)_autoAdjustmentFilters;
 - (id)_buttonWithTag:(int)arg1;
 - (id)_calculateAutoFiltersWithFeatures:(int)arg1 includeGeometry:(BOOL)arg2;
 - (void)_cleanupFilters;
+- (void)_computeFullSizeFilteredImage;
+- (void)_computeFullSizeFilteredImageWithAdjustmentState:(id)arg1;
 - (id)_constrainActionSheet;
-- (id)_cropAndStraightenFilters;
+- (id)_cropAndStraightenFiltersForImageSize:(struct CGSize { float x1; float x2; })arg1 forceSquareCrop:(BOOL)arg2 forceUseGeometry:(BOOL)arg3;
 - (id)_cropAndStraightenToolbarItems;
 - (id)_croppedStraightenedImage;
-- (id)_currentNonGeometryFilters;
+- (id)_currentNonGeometryFiltersWithEffectFilters:(id)arg1;
 - (BOOL)_currentStateIsEqualToAdjustmentState:(id)arg1;
 - (id)_currentToolbarItems;
+- (void)_dismissEffectSelection;
 - (BOOL)_dismissPopoverViews;
 - (void)_dismissProgressAlertIfNeeded;
 - (void)_dismissSavingHUD;
 - (void)_displayAllRedEyeCorrections;
 - (void)_displayAutoAdjustmentMessage;
 - (void)_displayRedEyeCorrections:(id)arg1;
+- (struct CGSize { float x1; float x2; })_editedImageFullSize;
+- (void)_fetchSmallThumbnailForEffectFilter:(id)arg1 completionBlock:(id)arg2;
 - (BOOL)_isZoomedToScale:(float)arg1;
+- (id)_largeThumbnailImage;
+- (void)_layoutToolbar;
 - (void)_loadFiltersFromDatabase;
 - (id)_masterImagePath;
 - (id)_newButtonItemWithIcon:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4 tag:(int)arg5;
 - (id)_newCIImageFromUIImage:(id)arg1;
-- (id)_newImageFromImage:(id)arg1 filters:(id)arg2 orientation:(int)arg3;
+- (id)_newImageFromImage:(id)arg1 filters:(id)arg2 orientation:(int)arg3 ciContext:(id)arg4;
 - (id)_originalState;
 - (void)_popModalState;
+- (void)_preloadEffectFilters;
 - (void)_preloadEnhancementFilters;
+- (void)_preloadNextEffectFilter;
+- (void)_presentEffectSelection;
 - (void)_presentSavingHUD;
 - (void)_pushModalState;
 - (void)_pushNewUndoManager;
@@ -134,19 +166,23 @@
 - (void)_saveFiltersToAsset:(id)arg1;
 - (void)_saveXMPPropertiesToPhoto:(id)arg1;
 - (id)_scaledCachedImage;
-- (id)_scaledCachedImageFromData:(id)arg1 utiType:(id)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 scaledToMaxDimension:(unsigned int)arg4 outImageProperties:(id*)arg5;
 - (void)_setAdjustmentState:(id)arg1;
 - (void)_setAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setAutoAdjustmentFilters:(id)arg1;
 - (void)_setAutoRedEyeFilterFromArray:(id)arg1;
 - (void)_setControlsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setEditMode:(int)arg1;
+- (void)_setEditedImage:(id)arg1 isProxyImage:(BOOL)arg2 updateCropAndStraighten:(BOOL)arg3 forceAnimate:(BOOL)arg4;
 - (void)_setEditedImage:(id)arg1 isProxyImage:(BOOL)arg2 updateCropAndStraighten:(BOOL)arg3;
 - (void)_setEditedPhoto:(id)arg1 resetFilters:(BOOL)arg2;
 - (BOOL)_setRedEyeCorrections:(id)arg1 changedCorrections:(id*)arg2;
+- (void)_setToolbarHidden:(BOOL)arg1;
 - (void)_setUndoManager:(id)arg1;
+- (id)_smallThumbnailImage;
 - (void)_startEditingWithAsset:(id)arg1;
 - (id)_startToolbarItems;
+- (void)_thumbnailImageWithEffectFilters:(id)arg1 inputImage:(id)arg2 applyOrientation:(BOOL)arg3 forceSquareCrop:(BOOL)arg4 completionBlock:(id)arg5;
+- (BOOL)_toolbarHidden;
 - (void)_undoTransformImage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2;
 - (void)_updateAggregateInfoForCurrentAdjustmentState;
 - (void)_updateButtons;
@@ -157,21 +193,21 @@
 - (void)_updateMessageOverlayFrame;
 - (void)_updateModeButtons;
 - (void)_updateToolbar;
+- (void)_updateToolbarSetHiddenState:(BOOL)arg1;
 - (void)_verifyProgress:(id)arg1 completion:(id)arg2;
-- (BOOL)_writeXMPHeaderToPhoto:(id)arg1 properties:(id)arg2 orientation:(int)arg3;
-- (void)_writeXMPSidecarToPhoto:(id)arg1 properties:(id)arg2 orientation:(int)arg3;
 - (id)actionCompletionBlock;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)addRedEyePoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)albumDidChange:(id)arg1;
 - (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (void)applicationDidEnterBackground:(id)arg1;
 - (void)applySubmode:(id)arg1;
+- (void)assetContainerDidChange:(id)arg1;
 - (BOOL)autoAdjustmentEnabled;
 - (BOOL)canBecomeFirstResponder;
 - (void)cancel:(id)arg1;
+- (id)contentScrollView;
 - (void)dealloc;
+- (void)didReceiveMemoryWarning;
 - (void)didRedoNotification:(id)arg1;
 - (void)didUndoNotification:(id)arg1;
 - (void)editViewDidCropImage:(id)arg1;
@@ -179,6 +215,8 @@
 - (void)editViewWillCropImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })editedImageSize;
 - (id)editedPhoto;
+- (void)effectSelectionViewController:(id)arg1 didSelectEffect:(id)arg2;
+- (void)effectSelectionViewController:(id)arg1 requestsThumbnailWithEffect:(id)arg2 completionBlock:(id)arg3;
 - (void)enhancePhoto:(id)arg1;
 - (BOOL)hasRedEyeCorrections;
 - (void)hideMessage:(id)arg1;
@@ -189,7 +227,7 @@
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
 - (id)navigationBar;
 - (id)navigationItem;
-- (id)newAdjustedImageWithoutGeometry;
+- (id)newAdjustedImageWithoutGeometryUsingContext:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizedCropRect;
 - (void)orderOut:(BOOL)arg1;
 - (id)pendingPhoto;

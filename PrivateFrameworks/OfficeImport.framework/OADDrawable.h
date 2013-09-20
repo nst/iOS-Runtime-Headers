@@ -8,7 +8,7 @@
     <OADClient> *mClientData;
     OADDrawableProperties *mDrawableProperties;
     BOOL mHidden;
-    long mId;
+    unsigned long mId;
     OADDrawable<OADDrawableContainer> *mParent;
 }
 
@@ -19,14 +19,15 @@
 - (id)drawableProperties;
 - (id)ensureClientDataOfClass:(Class)arg1;
 - (BOOL)hidden;
-- (long)id;
+- (unsigned long)id;
+- (void)identify;
 - (id)initWithPropertiesClass:(Class)arg1;
 - (id)parent;
 - (void)removeUnnecessaryOverrides;
 - (void)setClientData:(id)arg1;
 - (void)setDrawableProperties:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
-- (void)setId:(long)arg1;
+- (void)setId:(unsigned long)arg1;
 - (void)setParent:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 

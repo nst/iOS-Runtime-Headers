@@ -20,6 +20,7 @@
 - (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
 - (id)possibleSeparators;
 - (id)possibleSeparatorsInvertedSet;
+- (void)removeMACAddressSeparatorsFromString:(id)arg1;
 - (void)setPossibleSeparators:(id)arg1;
 - (void)setPossibleSeparatorsInvertedSet:(id)arg1;
 - (void)setUserPreferredSeparator:(id)arg1;

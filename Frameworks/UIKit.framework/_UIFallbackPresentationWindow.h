@@ -5,7 +5,7 @@
 @interface _UIFallbackPresentationWindow : UIWindow {
 }
 
-- (BOOL)_affectsTintView;
+- (BOOL)_canAffectStatusBarAppearance;
 - (BOOL)_includeInDefaultImageSnapshot;
 
 @end

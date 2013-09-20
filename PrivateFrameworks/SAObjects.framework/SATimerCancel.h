@@ -2,12 +2,8 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
-
-@interface SATimerCancel : SABaseClientBoundCommand {
+@interface SATimerCancel : SADomainCommand {
 }
-
-@property(copy) NSURL * targetAppId;
 
 + (id)cancel;
 + (id)cancelWithDictionary:(id)arg1 context:(id)arg2;
@@ -15,7 +11,5 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

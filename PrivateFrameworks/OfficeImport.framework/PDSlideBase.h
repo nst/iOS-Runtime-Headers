@@ -2,18 +2,26 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSString, OADBackground, OADTableStyle, PDAnimation, PDTransition;
+@class NSArray, NSString, OADBackground, OADShape, OADTableStyle, PDAnimation, PDTransition;
 
 @interface PDSlideBase : NSObject {
     unsigned int mIsHidden : 1;
     unsigned int mIsDoneWithContent : 1;
     PDAnimation *mAnimation;
     OADBackground *mBackground;
+    BOOL mCachedSlideNumberPlaceholder;
+    BOOL mCachedSlideNumberShape;
     OADTableStyle *mDefaultTableStyle;
     NSArray *mDrawables;
     NSString *mName;
+    OADShape *mSlideNumberPlaceholder;
+    OADShape *mSlideNumberShape;
     PDTransition *mTransition;
 }
+
+@property(readonly) BOOL hasMappableSlideNumberShape;
+@property(readonly) OADShape * slideNumberPlaceholder;
+@property(readonly) OADShape * slideNumberShape;
 
 + (int)inheritedPlaceholderType:(int)arg1;
 
@@ -30,6 +38,7 @@
 - (id)drawingTheme;
 - (id)fontScheme;
 - (void)generatePpt9Animations:(id)arg1;
+- (BOOL)hasMappableSlideNumberShape;
 - (BOOL)hasPpt10Animations;
 - (BOOL)hasPpt9Animations;
 - (id)init;
@@ -43,6 +52,7 @@
 - (id)parentTextStyleForTables;
 - (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
 - (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 useBaseTypeMatch:(BOOL)arg3 overrideIndex:(BOOL)arg4;
+- (id)placeholders;
 - (void)setBackground:(id)arg1;
 - (void)setDefaultTableStyle:(id)arg1;
 - (void)setDrawables:(id)arg1 defaultTextListStyle:(id)arg2;
@@ -51,6 +61,8 @@
 - (void)setName:(id)arg1;
 - (void)setPpt9AnimationDataForCacheItem:(id)arg1 order:(int)arg2;
 - (void)setTransition:(id)arg1;
+- (id)slideNumberPlaceholder;
+- (id)slideNumberShape;
 - (id)styleMatrix;
 - (id)transition;
 

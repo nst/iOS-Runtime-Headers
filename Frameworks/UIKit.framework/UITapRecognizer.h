@@ -35,7 +35,13 @@
 @property unsigned int numberOfTouchesRequired;
 @property(readonly) NSArray * touches;
 
+- (void)_beginInteraction;
+- (float)_effectiveAllowableMovement;
+- (void)_interactionEndedTouch:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })_locationOnScreen;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_reset;
 - (float)allowableMovement;
 - (void)clearTapTimer;

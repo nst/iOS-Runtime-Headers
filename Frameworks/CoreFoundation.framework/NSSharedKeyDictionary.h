@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeySet:(id)arg1;
 - (id)keyEnumerator;

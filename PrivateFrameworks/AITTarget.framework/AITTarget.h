@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/AITTarget.framework/AITTarget
  */
 
-@class AITXPCConnection, NSMutableArray, NSMutableDictionary, NSString;
+@class AITXPCConnection, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
 @interface AITTarget : NSObject <AITXPCConnectionDelegate> {
-    struct dispatch_queue_s { } *_clientQueue;
+    NSObject<OS_dispatch_queue> *_clientQueue;
     int _notifyToken;
     NSMutableDictionary *_observerRecords;
     NSMutableArray *_queuedProbes;
-    struct dispatch_queue_s { } *_rpcDispatchQueue;
+    NSObject<OS_dispatch_queue> *_rpcDispatchQueue;
     NSString *_rpcSelectorPrefix;
     id _rpcTarget;
     double _startTime;
-    struct dispatch_source_s { } *_watchdogSource;
+    NSObject<OS_dispatch_source> *_watchdogSource;
     AITXPCConnection *_xpcConnection;
 }
 
-@property struct dispatch_queue_s { }* rpcDispatchQueue;
+@property NSObject<OS_dispatch_queue> * rpcDispatchQueue;
 @property(copy) NSString * rpcSelectorPrefix;
 @property(retain) id rpcTarget;
 
@@ -32,7 +32,7 @@
 - (id)_rpcTarget;
 - (void)_sendAckForToken:(id)arg1 success:(BOOL)arg2 returnValue:(id)arg3 details:(id)arg4;
 - (void)_setupXPCConnectionIfNeeded;
-- (void)addObserver:(id)arg1 forMessage:(id)arg2 dispatchQueue:(struct dispatch_queue_s { }*)arg3 block:(id)arg4;
+- (void)addObserver:(id)arg1 forMessage:(id)arg2 dispatchQueue:(id)arg3 block:(id)arg4;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
@@ -40,14 +40,14 @@
 - (void)removeObserver:(id)arg1 forMessage:(id)arg2;
 - (id)retain;
 - (unsigned int)retainCount;
-- (struct dispatch_queue_s { }*)rpcDispatchQueue;
+- (id)rpcDispatchQueue;
 - (id)rpcSelectorPrefix;
 - (id)rpcTarget;
-- (void)setRpcDispatchQueue:(struct dispatch_queue_s { }*)arg1;
+- (void)setRpcDispatchQueue:(id)arg1;
 - (void)setRpcSelectorPrefix:(id)arg1;
 - (void)setRpcTarget:(id)arg1;
 - (void)xpcConnection:(id)arg1 receivedMessage:(id)arg2 userInfo:(id)arg3;
 - (void)xpcConnectionFailed:(id)arg1;
-- (void)xpcConnectionUnhandledMessage:(void*)arg1;
+- (void)xpcConnectionUnhandledMessage:(id)arg1;
 
 @end

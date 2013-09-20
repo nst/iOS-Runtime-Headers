@@ -7,27 +7,27 @@
 @interface PLCloudSharingInvitationChangeJob : PLCloudSharingJob {
     NSArray *_MSASSharingRelationships;
     NSString *_albumGUID;
-    int _jobType;
+    long long _jobType;
     NSDictionary *_mstreamdInfoDictionary;
-    int _relationshipChangeType;
+    long long _relationshipChangeType;
     NSString *_resendInvitationGUID;
 }
 
 @property(retain) NSArray * MSASSharingRelationships;
 @property(retain) NSString * albumGUID;
-@property int jobType;
+@property long long jobType;
 @property(retain) NSDictionary * mstreamdInfoDictionary;
-@property int relationshipChangeType;
+@property long long relationshipChangeType;
 @property(retain) NSString * resendInvitationGUID;
 
 + (void)resendPendingInvitationWithGUID:(id)arg1 albumGUID:(id)arg2;
-+ (void)saveServerStateLocallyForSharingACLRelationships:(id)arg1 changeType:(int)arg2 info:(id)arg3;
-+ (void)saveServerStateLocallyForSharingInvitationRelationships:(id)arg1 changeType:(int)arg2 info:(id)arg3;
++ (void)saveServerStateLocallyForSharingACLRelationships:(id)arg1 changeType:(long long)arg2 info:(id)arg3;
++ (void)saveServerStateLocallyForSharingInvitationRelationships:(id)arg1 changeType:(long long)arg2 info:(id)arg3;
 + (void)sendServerPendingInvitationsForAlbumWithGUID:(id)arg1;
 
 - (id)MSASSharingRelationships;
 - (id)albumGUID;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
@@ -35,17 +35,17 @@
 - (void)executeSaveServerStateLocallyForSharingInvitationRelationships;
 - (void)executeSendServerPendingInvitationsForAlbumWithGUID;
 - (id)initFromXPCObject:(id)arg1;
-- (int)jobType;
+- (long long)jobType;
 - (id)mstreamdInfoDictionary;
-- (int)relationshipChangeType;
+- (long long)relationshipChangeType;
 - (id)resendInvitationGUID;
 - (void)run;
 - (void)runDaemonSide;
 - (void)setAlbumGUID:(id)arg1;
-- (void)setJobType:(int)arg1;
+- (void)setJobType:(long long)arg1;
 - (void)setMSASSharingRelationships:(id)arg1;
 - (void)setMstreamdInfoDictionary:(id)arg1;
-- (void)setRelationshipChangeType:(int)arg1;
+- (void)setRelationshipChangeType:(long long)arg1;
 - (void)setResendInvitationGUID:(id)arg1;
 - (BOOL)shouldArchiveXPCToDisk;
 

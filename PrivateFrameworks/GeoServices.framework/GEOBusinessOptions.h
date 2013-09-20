@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOBusinessOptions : PBCodable {
+@interface GEOBusinessOptions : PBCodable <NSCopying> {
     struct { 
         unsigned int maxBusinessResults : 1; 
         unsigned int includeBusinessHours : 1; 
@@ -34,6 +34,7 @@
 - (void)clearAttributeKeys;
 - (void)clearPhotoOptions;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

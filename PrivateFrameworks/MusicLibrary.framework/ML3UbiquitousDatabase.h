@@ -2,36 +2,67 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
+@class ML3DatabaseConnectionPool, ML3MusicLibrary, NSString;
 
-@interface ML3UbiquitousDatabase : ML3SqliteDatabase <ML3SqliteDatabaseSubclass> {
-    BOOL _isInTransaction;
+@interface ML3UbiquitousDatabase : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate> {
+    ML3DatabaseConnectionPool *_connectionPool;
+    NSString *_databasePath;
+    ML3MusicLibrary *_musicLibrary;
     BOOL _needsToPurgeOldEntries;
 }
 
-@property(copy) NSString * ubiquitousBookmarkDomainVersionAnchorToken;
-@property unsigned long long ubiquitousBookmarkEntityRevisionAnchor;
+@property(retain) ML3DatabaseConnectionPool * connectionPool;
+@property(retain) NSString * databasePath;
+@property(readonly) ML3MusicLibrary * musicLibrary;
 
 + (id)allSchemaSQL;
 + (int)currentUserVersion;
-+ (id)databasePath;
-+ (BOOL)migrateFromVersion:(int)arg1 outUserVersion:(int*)arg2 usingHandle:(struct sqlite3 { }*)arg3;
++ (BOOL)supportsUbiquitousBookmarksInMusicLibrary:(id)arg1;
 
+- (void).cxx_destruct;
+- (BOOL)_buildDatabaseTablesUsingTransaction:(BOOL)arg1;
+- (BOOL)_deleteAndRecreateDatabase;
+- (int)_fetchDatabaseUserVersion;
+- (BOOL)_migrateToCurrentUserVersion;
 - (BOOL)_setValue:(id)arg1 forDatabaseProperty:(id)arg2;
+- (BOOL)_setupDatabaseConnection;
 - (void)_updateUbiquitousBookmarkMetadataWithMetadataIdentifier:(id)arg1 propertyValues:(id)arg2 timestamp:(double)arg3;
+- (BOOL)_userVersionMatchesSystemVersion;
 - (id)_valueForDatabaseProperty:(id)arg1;
-- (void)applyUbiqiutousBookmarkMetadataToTrack:(id)arg1;
-- (void)didCommitInDatabaseContext:(id)arg1;
+- (void)applyUbiqiutousBookmarkMetadataToImportedTrack:(id)arg1;
+- (BOOL)coerceValidDatabase;
+- (BOOL)connectionDetectedDatabaseCorruption:(id)arg1;
+- (void)connectionPool:(id)arg1 createdNewConnection:(id)arg2;
+- (id)connectionPool;
+- (void)connectionWillOpenDatabase:(id)arg1;
+- (id)databasePath;
+- (id)dateLastSynced;
+- (id)dateToSyncWithUbiquitousStore;
 - (void)dumpUbiquitousMetadata;
+- (BOOL)hasLocalChangesToPush;
+- (BOOL)hasRemoteChangesToPull;
+- (BOOL)hasSyncedAtleastOnce;
+- (id)init;
+- (id)initWithIdentifier:(id)arg1 path:(id)arg2 enableWrites:(BOOL)arg3;
+- (id)initWithMusicLibrary:(id)arg1;
 - (void)insertUbiquitousBookmarkMetadataWithMetadataIdentifier:(id)arg1 propertyValues:(id)arg2 timestamp:(double)arg3;
-- (void)insertUbiquitousBookmarkMetadataWithValuesFromTrack:(id)arg1;
-- (void)performTransactionWithBlock:(id)arg1;
+- (id)lastNotificationDomainVersion;
+- (id)lastSyncedDomainVersion;
+- (unsigned long long)lastSyncedEntityRevision;
+- (BOOL)migrateFromVersion:(int)arg1 outUserVersion:(int*)arg2;
+- (id)musicLibrary;
+- (void)performDatabaseWriteTransactionWithBlock:(id)arg1;
 - (void)purgeOldEntriesIfNecessary;
 - (void)removeUbiquitousBookmarkMetadataForTrack:(id)arg1;
-- (void)resetUbiquitousMetadata;
-- (void)setUbiquitousBookmarkDomainVersionAnchorToken:(id)arg1;
-- (void)setUbiquitousBookmarkEntityRevisionAnchor:(unsigned long long)arg1;
-- (id)ubiquitousBookmarkDomainVersionAnchorToken;
-- (unsigned long long)ubiquitousBookmarkEntityRevisionAnchor;
+- (BOOL)requiresSchemaOnlyUpdates;
+- (void)setConnectionPool:(id)arg1;
+- (void)setDatabasePath:(id)arg1;
+- (void)setDateLastSynced:(id)arg1;
+- (void)setDateToSyncWithUbiquitousStore:(id)arg1;
+- (void)setLastNotificationDomainVersion:(id)arg1;
+- (void)setLastSyncedDomainVersion:(id)arg1;
+- (void)setLastSyncedEntityRevision:(unsigned long long)arg1;
+- (BOOL)updateUbiquitousBookmarkMetadataValuesForChangedTrackWithPersistentID:(long long)arg1;
+- (int)userVersion;
 
 @end

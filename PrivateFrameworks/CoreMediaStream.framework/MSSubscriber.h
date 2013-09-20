@@ -27,6 +27,8 @@
 @property long long targetRetrievalByteCount;
 
 + (id)_clearInstantiatedSubscribersByPersonID;
++ (id)_descriptionForRetrievalState:(int)arg1;
++ (id)_descriptionForState:(int)arg1;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 + (id)existingSubscriberForPersonID:(id)arg1;
 + (void)forgetPersonID:(id)arg1;
@@ -39,6 +41,8 @@
 
 - (void).cxx_destruct;
 - (void)_abort;
+- (void)_changeRetrievalStateTo:(int)arg1;
+- (void)_changeStateTo:(int)arg1;
 - (void)_checkForNewAssetCollections;
 - (void)_didFinishRetrievingSubscriptionUpdate;
 - (void)_didReceiveAuthenticationError:(id)arg1;

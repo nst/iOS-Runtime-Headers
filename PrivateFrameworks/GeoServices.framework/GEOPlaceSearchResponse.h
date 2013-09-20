@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, NSMutableArray;
+@class GEOMapRegion, NSData, NSMutableArray;
 
-@interface GEOPlaceSearchResponse : PBCodable {
+@interface GEOPlaceSearchResponse : PBCodable <NSCopying> {
     struct { 
+        unsigned int turnaroundTime : 1; 
         unsigned int localSearchProviderID : 1; 
         unsigned int statusCodeInfo : 1; 
         unsigned int abTestResponse : 1; 
@@ -17,6 +18,9 @@
     NSMutableArray *_searchs;
     int _status;
     int _statusCodeInfo;
+    NSMutableArray *_suggestionEntryLists;
+    NSData *_suggestionMetadata;
+    double _turnaroundTime;
 }
 
 @property BOOL abTestResponse;
@@ -24,19 +28,27 @@
 @property BOOL hasLocalSearchProviderID;
 @property(readonly) BOOL hasMapRegion;
 @property BOOL hasStatusCodeInfo;
+@property(readonly) BOOL hasSuggestionMetadata;
+@property BOOL hasTurnaroundTime;
 @property int localSearchProviderID;
 @property(retain) GEOMapRegion * mapRegion;
 @property(retain) NSMutableArray * placeResults;
 @property(retain) NSMutableArray * searchs;
 @property int status;
 @property int statusCodeInfo;
+@property(retain) NSMutableArray * suggestionEntryLists;
+@property(retain) NSData * suggestionMetadata;
+@property double turnaroundTime;
 
 - (BOOL)abTestResponse;
 - (void)addPlaceResult:(id)arg1;
 - (void)addSearch:(id)arg1;
+- (void)addSuggestionEntryLists:(id)arg1;
 - (void)clearPlaceResults;
 - (void)clearSearchs;
+- (void)clearSuggestionEntryLists;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -44,6 +56,8 @@
 - (BOOL)hasLocalSearchProviderID;
 - (BOOL)hasMapRegion;
 - (BOOL)hasStatusCodeInfo;
+- (BOOL)hasSuggestionMetadata;
+- (BOOL)hasTurnaroundTime;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (int)localSearchProviderID;
@@ -59,14 +73,23 @@
 - (void)setHasAbTestResponse:(BOOL)arg1;
 - (void)setHasLocalSearchProviderID:(BOOL)arg1;
 - (void)setHasStatusCodeInfo:(BOOL)arg1;
+- (void)setHasTurnaroundTime:(BOOL)arg1;
 - (void)setLocalSearchProviderID:(int)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setPlaceResults:(id)arg1;
 - (void)setSearchs:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setStatusCodeInfo:(int)arg1;
+- (void)setSuggestionEntryLists:(id)arg1;
+- (void)setSuggestionMetadata:(id)arg1;
+- (void)setTurnaroundTime:(double)arg1;
 - (int)status;
 - (int)statusCodeInfo;
+- (id)suggestionEntryLists;
+- (id)suggestionEntryListsAtIndex:(unsigned int)arg1;
+- (unsigned int)suggestionEntryListsCount;
+- (id)suggestionMetadata;
+- (double)turnaroundTime;
 - (void)writeTo:(id)arg1;
 
 @end

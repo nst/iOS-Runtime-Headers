@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, NSURL;
+@class AVAsset, MPAVItem, NSURL;
 
 @interface MPMovie : NSObject {
     struct CGSize { 
@@ -20,6 +20,7 @@
     NSURL *_url;
 }
 
+@property(readonly) AVAsset * asset;
 @property(readonly) double duration;
 @property double endPlaybackTime;
 @property(readonly) int movieMediaTypes;
@@ -29,14 +30,19 @@
 @property double startPlaybackTime;
 @property(readonly) NSURL * url;
 
++ (id)movieWithAsset:(id)arg1 error:(id*)arg2;
 + (id)movieWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 
+- (void).cxx_destruct;
 - (id)_MPArrayQueueItem;
 - (void)_determineMediaType;
 - (void)_durationAvailableNotification:(id)arg1;
+- (id)_initWithAsset:(id)arg1 error:(id*)arg2;
 - (id)_initWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (void)_naturalSizeAvailableNotification:(id)arg1;
+- (void)_sharedInit;
 - (void)_typeAvailableNotification:(id)arg1;
+- (id)asset;
 - (void)dealloc;
 - (double)duration;
 - (double)endPlaybackTime;

@@ -8,7 +8,7 @@
     _UIViewServiceFencingController *_fencingController;
 }
 
-+ (id)proxyWithTarget:(id)arg1 fencingController:(id)arg2;
++ (id)proxyWithTarget:(id)arg1 fencingController:(id)arg2 exportedProtocol:(id)arg3;
 
 - (void)__beginFencingMessagesWithSendRight:(id)arg1 connectionCount:(unsigned int)arg2;
 - (void)__endFencingMessagesForSendRight:(id)arg1;

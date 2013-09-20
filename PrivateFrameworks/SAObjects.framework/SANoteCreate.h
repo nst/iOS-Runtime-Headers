@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@class NSString;
 
-@interface SANoteCreate : SABaseClientBoundCommand {
+@interface SANoteCreate : SADomainCommand {
 }
 
 @property(copy) NSString * contents;
-@property(copy) NSURL * targetAppId;
 
 + (id)create;
 + (id)createWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setContents:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

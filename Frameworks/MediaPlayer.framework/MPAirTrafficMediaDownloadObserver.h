@@ -14,9 +14,11 @@
 + (void)registerObserver:(id)arg1 forAssetID:(id)arg2;
 + (void)unregisterObserver:(id)arg1 forAssetID:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)_onQueue_invalidate;
 - (void)dealloc;
 - (double)downloadProgress;
 - (id)initWithAssetIdentifier:(id)arg1;
+- (BOOL)isPurchasing;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMailMimeTextAttachment : MimeTextAttachment {
+@interface MFMailMimeTextAttachment : MFMimeTextAttachment {
 }
 
 - (BOOL)shouldDownloadAttachmentOnDisplay;

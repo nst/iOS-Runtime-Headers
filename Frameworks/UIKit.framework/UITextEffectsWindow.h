@@ -2,17 +2,24 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextEffectsWindow : UIAutoRotatingWindow {
+@class UIScreen;
+
+@interface UITextEffectsWindow : UIAutoRotatingWindow <_UIScreenBasedObject> {
     struct CGPoint { 
         float x; 
         float y; 
     unsigned long _activeEffectsCount;
+    unsigned int _activeRemoteViewCount;
+    int _bgCount;
     float _defaultWindowLevel;
     } _hostedWindowOffset;
     BOOL _inDealloc;
     BOOL _nonServiceHosted;
+    unsigned int _windowLevelCount;
+    float _windowLevelStack[5];
 }
 
+@property(readonly) UIScreen * _intendedScreen;
 @property(readonly) unsigned int contextID;
 @property float defaultWindowLevel;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } hostedFrame;
@@ -20,6 +27,7 @@
 @property BOOL nonServiceHosted;
 
 + (void)_releaseSharedInstances;
++ (id)_sharedTextEffectsWindowforScreen:(id)arg1 aboveStatusBar:(BOOL)arg2 matchesStatusBarOrientationOnAccess:(BOOL)arg3;
 + (void)lowerTextEffectsWindowsForHideNotificationCenter;
 + (id)preferredTextEffectsWindow;
 + (id)preferredTextEffectsWindowAboveStatusBar;
@@ -27,17 +35,26 @@
 + (id)sharedTextEffectsWindow:(BOOL)arg1;
 + (id)sharedTextEffectsWindow;
 + (id)sharedTextEffectsWindowAboveStatusBar;
++ (id)sharedTextEffectsWindowAboveStatusBarForScreen:(id)arg1;
++ (id)sharedTextEffectsWindowForScreen:(id)arg1;
 
 - (struct CGPoint { float x1; float x2; })_adjustPointForHostedDisplay:(struct CGPoint { float x1; float x2; })arg1 hasTarget:(BOOL)arg2 inset:(BOOL)arg3;
-- (BOOL)_affectsTintView;
-- (BOOL)_canShowTextServices;
+- (void)_applicationDidFinishLaunching:(id)arg1;
+- (BOOL)_canActAsKeyWindowForScreen:(id)arg1;
+- (BOOL)_canAffectStatusBarAppearance;
 - (void)_didRemoveSubview:(id)arg1;
 - (BOOL)_disableViewScaling;
+- (id)_initWithScreen:(id)arg1 options:(id)arg2;
+- (id)_intendedScreen;
 - (BOOL)_isTextEffectsWindow;
 - (BOOL)_isWindowServerHostingManaged;
-- (id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
+- (BOOL)_matchingOptions:(id)arg1;
+- (void)_restoreWindowLevel;
+- (void)_setWindowLevel:(float)arg1;
+- (BOOL)_shouldTintStatusBar;
 - (void)_updateTransformLayerForClassicPresentation;
 - (BOOL)_usesWindowServerHitTesting;
+- (id)aboveStatusBar;
 - (void)bringSubviewToFront:(id)arg1;
 - (struct CGPoint { float x1; float x2; })classicWindowPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned int)contextID;
@@ -68,6 +85,7 @@
 - (void)setHostedWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setKeepContextInBackground:(BOOL)arg1;
 - (void)setNonServiceHosted:(BOOL)arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)sortSubviews;
 - (void)updateForOrientation:(int)arg1 forceResetTransform:(BOOL)arg2;
 - (void)updateForOrientation:(int)arg1;

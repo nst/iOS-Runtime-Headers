@@ -3,7 +3,7 @@
  */
 
 @interface AVSubtitleLayerUsingWebKit : CALayer {
-    struct AVSubtitleLayerUsingWebKitPrivate { struct __GSFont {} *x1; struct __CFAttributedString {} *x2; } *_priv;
+    struct AVSubtitleLayerUsingWebKitPrivate { struct __CTFont {} *x1; struct __CFAttributedString {} *x2; } *_priv;
 }
 
 - (void)clearSubtitle;

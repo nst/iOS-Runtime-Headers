@@ -18,9 +18,13 @@
 + (id)message:(long long)arg1 withPacker:(id)arg2;
 + (void)sendMessage:(long long)arg1 toConnection:(id)arg2 withMessagePacker:(id)arg3 replyHandler:(id)arg4 replyQueue:(id)arg5;
 + (void)sendMessage:(long long)arg1 toConnection:(id)arg2 withMessagePacker:(id)arg3;
++ (void)sendMessageWithPacker:(id)arg1 toConnection:(id)arg2 replyHandler:(id)arg3 replyQueue:(id)arg4;
++ (void)sendMessageWithPacker:(id)arg1 toConnection:(id)arg2;
 
 - (void)dealloc;
+- (id)initWithMessage:(id)arg1 replyHandler:(id)arg2 replyQueue:(id)arg3;
 - (id)initWithMessage:(long long)arg1 packer:(id)arg2 replyHandler:(id)arg3 replyQueue:(id)arg4;
+- (id)initWithMessagePacker:(id)arg1 replyHandler:(id)arg2 replyQueue:(id)arg3;
 - (void)sendToConnection:(id)arg1;
 
 @end

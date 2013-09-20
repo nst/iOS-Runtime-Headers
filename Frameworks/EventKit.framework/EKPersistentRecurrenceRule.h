@@ -26,6 +26,7 @@
 @property(readonly) BOOL shouldPinMonthDays;
 @property(copy) NSArray * weeksOfTheYear;
 
++ (id)defaultPropertiesToLoad;
 + (id)relations;
 
 - (id)UUID;

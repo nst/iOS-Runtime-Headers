@@ -47,6 +47,7 @@
 - (id)due;
 - (void)fixComponent;
 - (int)percentComplete;
+- (id)propertiesToIncludeForChecksumVersion:(int)arg1;
 - (void)setCompleted:(id)arg1;
 - (void)setDue:(id)arg1;
 - (void)setPercentComplete:(int)arg1;

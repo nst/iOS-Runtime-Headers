@@ -14,7 +14,7 @@
 @property BOOL usesLargeClearButton;
 
 - (void)_endedEditing;
-- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)_handleKeyUIEvent:(id)arg1;
 - (id)_style;
 - (void)attachFieldEditor:(id)arg1;
 - (BOOL)becomeFirstResponder;

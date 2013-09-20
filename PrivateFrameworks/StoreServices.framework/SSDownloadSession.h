@@ -5,8 +5,10 @@
 @class NSObject<OS_dispatch_queue>, SSDownload, SSDownloadAsset, SSXPCConnection;
 
 @interface SSDownloadSession : NSObject {
+    long long _assetID;
     SSXPCConnection *_controlConnection;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    long long _downloadID;
     long long _sessionID;
 }
 
@@ -15,8 +17,9 @@
 
 - (id)_copySessionPropertyWithKey:(const char *)arg1;
 - (id)_initSSDownloadSession;
-- (id)_initWithSessionIdentifier:(long long)arg1 controlConnection:(id)arg2;
+- (id)_initWithMessage:(id)arg1 controlConnection:(id)arg2;
 - (void)dealloc;
+- (id)description;
 - (id)download;
 - (id)downloadAsset;
 - (unsigned int)hash;

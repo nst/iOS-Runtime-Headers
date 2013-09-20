@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSObject<PLAssetContainer>, NSString, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer;
+@class NSObject<PLAlbumProtocol>, NSString, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer;
 
 @interface PLEmptyAlbumView : UIView {
     struct UIEdgeInsets { 
@@ -28,7 +28,7 @@
     BOOL _useLargeImages;
 }
 
-@property(retain) NSObject<PLAssetContainer> * album;
+@property(retain) NSObject<PLAlbumProtocol> * album;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property int filter;
 

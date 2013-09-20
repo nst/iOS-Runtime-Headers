@@ -8,7 +8,7 @@
     BOOL m_boundsSet;
     MFGraphicsDevice *m_gdi;
     BOOL m_ignoreSetWindowOrg;
-    long m_records;
+    int m_records;
     unsigned short m_windowsVersion;
 }
 
@@ -83,6 +83,6 @@
 - (int)playTextOut:(unsigned int)arg1 :(const char *)arg2;
 - (int)playUnknown:(unsigned int)arg1 :(unsigned int)arg2 :(const char *)arg3;
 - (int)playUnsupported:(unsigned int)arg1 :(const char *)arg2 :(const char *)arg3;
-- (long)records;
+- (int)records;
 
 @end

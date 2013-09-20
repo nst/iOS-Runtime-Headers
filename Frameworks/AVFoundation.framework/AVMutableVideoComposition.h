@@ -9,6 +9,7 @@
 }
 
 @property(retain) AVVideoCompositionCoreAnimationTool * animationTool;
+@property(retain) Class customVideoCompositorClass;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } frameDuration;
 @property(copy) NSArray * instructions;
 @property float renderScale;
@@ -19,13 +20,15 @@
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1;
 
 - (id)animationTool;
-- (id)compositor;
+- (id)builtInCompositorName;
+- (Class)customVideoCompositorClass;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })frameDuration;
 - (id)instructions;
 - (float)renderScale;
 - (struct CGSize { float x1; float x2; })renderSize;
 - (void)setAnimationTool:(id)arg1;
-- (void)setCompositor:(id)arg1;
+- (void)setBuiltInCompositorName:(id)arg1;
+- (void)setCustomVideoCompositorClass:(Class)arg1;
 - (void)setFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setInstructions:(id)arg1;
 - (void)setRenderScale:(float)arg1;

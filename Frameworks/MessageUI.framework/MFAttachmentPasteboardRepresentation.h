@@ -20,6 +20,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAttachment:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithMFAttachment:(id)arg1;
 - (BOOL)isValid;
 - (id)mimeType;
 - (id)name;

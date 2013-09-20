@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableString, PlainTextDocument;
+@class MFPlainTextDocument, NSMutableString;
 
 @interface _MFFormatFlowedWriter : NSObject {
     unsigned int _addedTrailingSpaces : 1;
     unsigned long _encoding;
-    PlainTextDocument *_inputDocument;
+    MFPlainTextDocument *_inputDocument;
     NSMutableString *_lineString;
     NSMutableString *_outputString;
     NSMutableString *_quotedString;

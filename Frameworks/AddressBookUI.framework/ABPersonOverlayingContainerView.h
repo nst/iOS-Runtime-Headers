@@ -20,7 +20,7 @@
 @property(retain) UIView * backgroundView;
 @property(retain) UIView * contentView;
 @property float minimumBottomInset;
-@property <ABPersonTabsLayoutManager> * tabsLayoutManager;
+@property(retain) <ABPersonTabsLayoutManager> * tabsLayoutManager;
 
 - (void)_updateContentFrameAndSize;
 - (id)backgroundView;

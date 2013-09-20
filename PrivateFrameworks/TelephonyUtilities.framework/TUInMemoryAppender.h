@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableArray, NSString;
 
 @interface TUInMemoryAppender : NSObject <TUAppender> {
     NSMutableArray *_buffer;
     NSString *_cachedPrettyNameForPid;
     unsigned long long _currentCapacity;
-    NSMutableDictionary *_dyldInfo;
     unsigned long long _maxCapacity;
     BOOL _shouldLogDyldInfo;
     BOOL _shouldLogSystemInfo;
@@ -23,6 +22,7 @@
 - (id)initWithMaxCapacity:(unsigned long long)arg1;
 - (void)logWithIdentifier:(id)arg1 pid:(int)arg2 date:(id)arg3 level:(int)arg4 topic:(id)arg5 text:(id)arg6 backtrace:(id)arg7;
 - (void)reset;
+- (void)setAppenderDelegate:(id)arg1;
 - (void)setShouldLogDyldInfo:(BOOL)arg1;
 - (void)setShouldLogSystemInfo:(BOOL)arg1;
 - (BOOL)shouldLogDyldInfo;

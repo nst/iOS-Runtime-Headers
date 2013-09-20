@@ -10,10 +10,11 @@
 
 @interface _UIAsyncInvocation : NSObject {
     id _invocationBlock;
+    BOOL _invocationBlockHasBeenCalled;
     _UIAsyncInvocationObserver *_observer;
-    long _performToken;
 }
 
++ (id)emptyInvocation;
 + (id)invocationWithBlock:(id)arg1;
 
 - (void)dealloc;

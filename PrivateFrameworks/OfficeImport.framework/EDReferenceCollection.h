@@ -11,7 +11,7 @@
 
 - (unsigned int)addObject:(id)arg1;
 - (void)coalesce;
-- (bool)coalesceReferenceAtIndex1:(int)arg1 index2:(int)arg2;
+- (bool)coalesceReferenceAtIndex1:(unsigned int)arg1 index2:(unsigned int)arg2;
 - (unsigned int)countOfCellsBeingReferenced;
 - (id)init;
 - (id)initWihNoCoalesce;

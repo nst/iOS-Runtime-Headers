@@ -6,73 +6,65 @@
    See Warning(s) below.
  */
 
-@class NSString, UIView, UIWebView, UIWindow, _UIDictionaryDownloadViewController;
+@class NSArray, NSString, UINavigationController, UITableViewController, UIViewController, UIWindow;
 
-@interface UIReferenceLibraryViewController : UIViewController {
-    UIView *_definitionContainerView;
-    NSString *_definitionHTML;
-    unsigned int _definitionLanguageDirection;
-    UIWebView *_definitionView;
+@interface UIReferenceLibraryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate> {
+    UINavigationController *_baseNavController;
+    NSArray *_definitionValues;
     id _dismissCompletionHandler;
-    _UIDictionaryDownloadViewController *_downloadViewController;
-    BOOL _downloadableDictionaryAvailable;
-    UIView *_modalHeaderView;
+    UIViewController *_longDefViewController;
+    UITableViewController *_multiDefViewController;
     int _oldPopoverStyle;
     UIWindow *_rotationDecider;
-    NSString *_stringToDefine;
-    NSString *_stylesheet;
+    NSString *_term;
 }
 
 @property(setter=_setRotationDecider:,retain) UIWindow * _rotationDecider;
-@property(readonly) UIView * definitionContainerView;
-@property(retain) NSString * definitionHTML;
-@property(readonly) UIWebView * definitionView;
 @property(copy) id dismissCompletionHandler;
-@property(retain) _UIDictionaryDownloadViewController * downloadViewController;
-@property BOOL downloadableDictionaryAvailable;
-@property(readonly) UIView * modalHeaderView;
-@property(readonly) NSString * stringToDefine;
-@property(readonly) NSString * stylesheet;
 
 + (id)_backgroundColor;
-+ (id)_diddlydoLineColor;
++ (id)_colorAttributes;
++ (id)_defaultButtonImage;
++ (id)_dictionaryDefinitionAttributes;
++ (id)_diddlyDoViewLineColor;
 + (id)_foregroundColor;
-+ (id)_noDefinitionLabel;
++ (id)_localizedDictionaryTitleAttributes;
 + (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
++ (id)_pressedButtonImage;
 + (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
 
+- (id)_backgroundColor;
+- (id)_colorAttributes;
+- (id)_defaultButtonImage;
+- (id)_dictionaryDefinitionAttributes;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
+- (id)_diddlyDoViewLineColor;
 - (void)_dismissModalReferenceView:(id)arg1;
-- (void)_repositionSubviews;
+- (id)_foregroundColor;
+- (void)_installRequiredElementsOnViewController:(id)arg1;
+- (id)_localizedDictionaryTitleAttributes;
+- (id)_pressedButtonImage;
 - (id)_rotationDecider;
+- (void)_searchWeb:(id)arg1;
 - (void)_setPopoverController:(id)arg1;
 - (void)_setRotationDecider:(id)arg1;
-- (void)_userChoseToDownload:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)dealloc;
-- (id)definitionContainerView;
-- (id)definitionHTML;
-- (id)definitionView;
 - (id)dismissCompletionHandler;
-- (void)downloadActionsAreComplete:(id)arg1;
-- (id)downloadViewController;
-- (BOOL)downloadableDictionaryAvailable;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTerm:(id)arg1;
-- (id)modalHeaderView;
-- (void)setDefinitionHTML:(id)arg1;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)pushDownloadManager:(id)arg1;
 - (void)setDismissCompletionHandler:(id)arg1;
-- (void)setDownloadViewController:(id)arg1;
-- (void)setDownloadableDictionaryAvailable:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)showDownloadInterface;
-- (id)stringToDefine;
-- (id)stylesheet;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLayoutSubviews;
+- (unsigned int)supportedInterfaceOrientations;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillLayoutSubviews;
 
 @end

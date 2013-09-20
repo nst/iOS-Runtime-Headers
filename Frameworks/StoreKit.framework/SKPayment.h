@@ -8,6 +8,7 @@
     id _internal;
 }
 
+@property(readonly) NSString * applicationUsername;
 @property(readonly) NSString * productIdentifier;
 @property(readonly) int quantity;
 @property(readonly) NSData * requestData;
@@ -16,8 +17,10 @@
 + (id)paymentWithProduct:(id)arg1;
 + (id)paymentWithProductIdentifier:(id)arg1;
 
+- (id)applicationUsername;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

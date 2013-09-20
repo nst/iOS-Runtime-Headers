@@ -10,8 +10,8 @@
 
 @property(retain) <ABStyleProvider> * styleProvider;
 
-- (void)_updateBackgroundImage;
 - (void)dealloc;
+- (void)layoutSubviews;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 

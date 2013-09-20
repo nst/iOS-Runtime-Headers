@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
-
-@interface SAMPEnableShuffle : SABaseClientBoundCommand {
+@interface SAMPEnableShuffle : SADomainCommand {
 }
 
 @property BOOL enable;
-@property(copy) NSURL * targetAppId;
 
 + (id)enableShuffle;
 + (id)enableShuffleWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +15,5 @@
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setEnable:(BOOL)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

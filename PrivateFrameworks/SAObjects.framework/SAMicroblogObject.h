@@ -13,7 +13,6 @@
 @property(copy) NSDictionary * hashtagAlternatives;
 @property(retain) SALocation * location;
 @property(copy) NSNumber * outgoing;
-@property(copy) NSNumber * providerId;
 @property(copy) NSArray * recipients;
 @property(copy) NSURL * refereceId;
 @property(retain) SAPersonAttribute * sender;
@@ -32,7 +31,6 @@
 - (id)hashtagAlternatives;
 - (id)location;
 - (id)outgoing;
-- (id)providerId;
 - (id)recipients;
 - (id)refereceId;
 - (id)sender;
@@ -43,7 +41,6 @@
 - (void)setHashtagAlternatives:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setOutgoing:(id)arg1;
-- (void)setProviderId:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setRefereceId:(id)arg1;
 - (void)setSender:(id)arg1;

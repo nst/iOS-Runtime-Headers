@@ -15,14 +15,16 @@
 
 + (id)stepByStepController;
 
+- (long)cancelStepByStep;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)restoreRecommendation;
+- (long)resume;
 - (void)setDelegate:(id)arg1;
 - (void)setRestoreRecommendation:(id)arg1;
 - (long)setupFromAutoguessRecommendation:(id)arg1 withOptions:(id)arg2;
 - (void)stepByStepNextStepResult:(long)arg1 withOptions:(id)arg2;
-- (long)subclassAssistantCallback:(struct AssistantCallbackContext { struct AssistantContext {} *x1; int x2; struct __CFDictionary {} *x3; int x4; id x5; id x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; void *x8; }*)arg1;
+- (long)subclassAssistantCallback:(struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; id x7; struct _opaque_pthread_mutex_t { long x_8_1_1; BOOL x_8_1_2[40]; } x8; void *x9; int x10; }*)arg1;
 
 @end

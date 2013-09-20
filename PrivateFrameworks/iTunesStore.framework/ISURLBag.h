@@ -23,18 +23,10 @@
 @property(getter=isValid,readonly) BOOL valid;
 @property(readonly) long long versionIdentifier;
 
-+ (id)URLBagForContext:(id)arg1 wasDiskCached:(BOOL*)arg2;
 + (BOOL)_allowUnsignedBags;
-+ (id)_copyFallbackContextForContext:(id)arg1;
 + (void)_loadItemKindURLBagKeyMap;
-+ (void)_observeExternalChanges;
-+ (void)_setURLBag:(id)arg1 forContext:(id)arg2;
-+ (id)_urlBagForContext:(id)arg1;
 + (id)copyExtraHeadersForURL:(id)arg1 inBagContext:(id)arg2;
-+ (id)diskCachedURLBagForContext:(id)arg1;
-+ (void)invalidateAllBags;
 + (id)networkConstraintsForDownloadKind:(id)arg1 inBagContext:(id)arg2;
-+ (void)setURLBag:(id)arg1 forContext:(id)arg2;
 + (BOOL)shouldSendGUIDForURL:(id)arg1 inBagContext:(id)arg2;
 + (id)storeFrontURLBagKeyForItemKind:(id)arg1;
 + (id)urlBagForContext:(id)arg1;
@@ -60,7 +52,6 @@
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithRawDictionary:(id)arg1;
 - (id)initWithURLBagContext:(id)arg1;
-- (void)invalidate;
 - (double)invalidationTime;
 - (BOOL)isValid;
 - (BOOL)loadFromDictionary:(id)arg1 returningError:(id*)arg2;
@@ -69,6 +60,7 @@
 - (id)sanitizedURLForURL:(id)arg1;
 - (id)searchQueryParametersForClientIdentifier:(id)arg1 networkType:(int)arg2;
 - (void)setInvalidationTime:(double)arg1;
+- (void)setInvalidationTimeWithExprationInterval:(double)arg1;
 - (void)setLoadedFromDiskCache:(BOOL)arg1;
 - (void)setURLBagContext:(id)arg1;
 - (BOOL)shouldSendGUIDForURL:(id)arg1;

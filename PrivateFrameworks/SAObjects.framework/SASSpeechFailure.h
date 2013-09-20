@@ -7,6 +7,7 @@
 @interface SASSpeechFailure : SABaseClientBoundCommand {
 }
 
+@property int errorCode;
 @property int reason;
 @property(copy) NSString * reasonDescription;
 
@@ -14,10 +15,12 @@
 + (id)speechFailureWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
+- (int)errorCode;
 - (id)groupIdentifier;
 - (int)reason;
 - (id)reasonDescription;
 - (BOOL)requiresResponse;
+- (void)setErrorCode:(int)arg1;
 - (void)setReason:(int)arg1;
 - (void)setReasonDescription:(id)arg1;
 

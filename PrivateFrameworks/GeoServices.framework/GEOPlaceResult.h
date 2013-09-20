@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOAddress, GEOPlace, NSMutableArray, NSString;
+@class GEOAddress, GEOPlace, GEOPlaceSearchRequest, NSMutableArray, NSString;
 
-@interface GEOPlaceResult : PBCodable {
+@interface GEOPlaceResult : PBCodable <NSCopying> {
     struct { 
         unsigned int confidence : 1; 
+        unsigned int travelTime : 1; 
     NSMutableArray *_additionalPlaces;
     double _confidence;
     } _has;
+    NSMutableArray *_matchedTokens;
     NSMutableArray *_namedFeatures;
     GEOPlace *_place;
     NSString *_quad;
+    GEOPlaceSearchRequest *_revgeoRequestTemplate;
     NSString *_suggestedQuery;
     GEOAddress *_tokenEntity;
+    unsigned int _travelTime;
     NSMutableArray *_unmatchedStrings;
 }
 
@@ -22,52 +26,72 @@
 @property double confidence;
 @property BOOL hasConfidence;
 @property(readonly) BOOL hasQuad;
+@property(readonly) BOOL hasRevgeoRequestTemplate;
 @property(readonly) BOOL hasSuggestedQuery;
 @property(readonly) BOOL hasTokenEntity;
+@property BOOL hasTravelTime;
+@property(retain) NSMutableArray * matchedTokens;
 @property(retain) NSMutableArray * namedFeatures;
 @property(retain) GEOPlace * place;
 @property(retain) NSString * quad;
+@property(retain) GEOPlaceSearchRequest * revgeoRequestTemplate;
 @property(retain) NSString * suggestedQuery;
 @property(retain) GEOAddress * tokenEntity;
+@property unsigned int travelTime;
 @property(retain) NSMutableArray * unmatchedStrings;
 
 - (void)addAdditionalPlace:(id)arg1;
+- (void)addMatchedToken:(id)arg1;
 - (void)addNamedFeature:(id)arg1;
 - (void)addUnmatchedString:(id)arg1;
 - (id)additionalPlaceAtIndex:(unsigned int)arg1;
 - (id)additionalPlaces;
 - (unsigned int)additionalPlacesCount;
 - (void)clearAdditionalPlaces;
+- (void)clearMatchedTokens;
 - (void)clearNamedFeatures;
 - (void)clearUnmatchedStrings;
 - (double)confidence;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasConfidence;
 - (BOOL)hasQuad;
+- (BOOL)hasRevgeoRequestTemplate;
 - (BOOL)hasSuggestedQuery;
 - (BOOL)hasTokenEntity;
+- (BOOL)hasTravelTime;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)matchedTokenAtIndex:(unsigned int)arg1;
+- (id)matchedTokens;
+- (unsigned int)matchedTokensCount;
 - (id)namedFeatureAtIndex:(unsigned int)arg1;
 - (id)namedFeatures;
 - (unsigned int)namedFeaturesCount;
 - (id)place;
 - (id)quad;
 - (BOOL)readFrom:(id)arg1;
+- (id)relativeNameToPlaceResult:(id)arg1 locationWithAccuracy:(id)arg2;
+- (id)revgeoRequestTemplate;
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setConfidence:(double)arg1;
 - (void)setHasConfidence:(BOOL)arg1;
+- (void)setHasTravelTime:(BOOL)arg1;
+- (void)setMatchedTokens:(id)arg1;
 - (void)setNamedFeatures:(id)arg1;
 - (void)setPlace:(id)arg1;
 - (void)setQuad:(id)arg1;
+- (void)setRevgeoRequestTemplate:(id)arg1;
 - (void)setSuggestedQuery:(id)arg1;
 - (void)setTokenEntity:(id)arg1;
+- (void)setTravelTime:(unsigned int)arg1;
 - (void)setUnmatchedStrings:(id)arg1;
 - (id)suggestedQuery;
 - (id)tokenEntity;
+- (unsigned int)travelTime;
 - (id)unmatchedStringAtIndex:(unsigned int)arg1;
 - (id)unmatchedStrings;
 - (unsigned int)unmatchedStringsCount;

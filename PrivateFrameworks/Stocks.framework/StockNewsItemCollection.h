@@ -5,8 +5,8 @@
 @class NSArray;
 
 @interface StockNewsItemCollection : NSObject {
-    double expirationTime;
-    NSArray *newsItems;
+    double _expirationTime;
+    NSArray *_newsItems;
 }
 
 @property double expirationTime;

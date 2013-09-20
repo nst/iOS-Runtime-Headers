@@ -8,7 +8,7 @@
 
 @class HSConnectionConfiguration, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
-@interface HSCloudClient : NSObject {
+@interface HSCloudClient : NSObject <HSCloudAvailability> {
     BOOL _active;
     HSConnectionConfiguration *_configuration;
     NSObject<OS_xpc_object> *_connection;
@@ -32,31 +32,48 @@
 - (void)addPlaylistWithName:(id)arg1 completionHandler:(id)arg2;
 - (void)authenticateWithCompletionHandler:(id)arg1;
 - (void)becomeActive;
+- (BOOL)canShowCloudDownloadButtons;
+- (BOOL)canShowCloudMusic;
+- (BOOL)canShowCloudVideo;
 - (void)dealloc;
 - (void)deauthenticateWithCompletionHandler:(id)arg1;
 - (void)downloadGeniusDataWithCompletionHandler:(id)arg1;
+- (BOOL)hasProperNetworkConditionsToPlayMedia;
 - (void)incrementItemProperty:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithConfiguration:(id)arg1;
 - (void)isAuthenticatedWithCompletionHandler:(id)arg1;
 - (void)isAuthenticatedWithQueue:(id)arg1 completionHandler:(id)arg2;
+- (BOOL)isCellularDataRestricted;
 - (void)isExpiredWithCompletionHandler:(id)arg1;
+- (void)jaliscoAppsImageDataForStoreID:(id)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForPurchaseHistoryID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForPurchaseHistoryID:(unsigned long long)arg1;
 - (void)loadArtworkDataForPurchaseHistoryIDs:(id)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadArtworkDataForSagaID:(unsigned long long)arg1;
+- (void)loadArtworkInfoForPurchaseHistoryIDs:(id)arg1 completionHandler:(id)arg2;
+- (void)loadArtworkInfoForSagaIDs:(id)arg1 completionHandler:(id)arg2;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)loadIsUpdateInProgressWithCompletionHandler:(id)arg1;
 - (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
+- (void)redownloadPurchaseAppWithStoreID:(id)arg1 completionHandler:(id)arg2;
+- (void)removeJaliscoLibrary;
 - (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)resetConfiguration:(id)arg1;
 - (void)resignActive;
+- (void)searchJaliscoAppsLibrary:(id)arg1 searchMethod:(long long)arg2 completionHandler:(id)arg3;
 - (void)setDaemonConfiguration:(unsigned long long)arg1;
+- (void)setHidden:(BOOL)arg1 purchasedAppWithStoreID:(id)arg2 completionHandler:(id)arg3;
+- (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setUpdateInProgressChangedHandler:(id)arg1;
+- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
+- (void)unhideAllPurchasedApps:(id)arg1;
+- (void)updateArtistImagesWithCompletionHandler:(id)arg1;
 - (id)updateInProgressChangedHandler;
+- (void)updateJaliscoAppsLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
 - (void)updateJaliscoLibraryWithCompletionHandler:(id)arg1;
 - (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(id)arg2;
 - (void)updatePlaylistWithSagaID:(unsigned long long)arg1 itemSagaIDs:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;

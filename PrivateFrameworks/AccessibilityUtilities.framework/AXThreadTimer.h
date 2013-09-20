@@ -8,12 +8,15 @@
 
 @class AXThreadTimerTask, NSThread;
 
-@interface AXThreadTimer : AXTimer {
+@interface AXThreadTimer : NSObject <AXTimer> {
     id _cancelBlock;
     AXThreadTimerTask *_task;
     NSThread *_thread;
 }
 
+@property(getter=isActive,readonly) BOOL active;
+@property(getter=isCancelled,readonly) BOOL cancelled;
+@property(getter=isPending,readonly) BOOL pending;
 @property(retain) AXThreadTimerTask * task;
 
 - (void)_runAfterDelay:(id)arg1;
@@ -22,6 +25,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithThread:(id)arg1;
+- (BOOL)isActive;
 - (BOOL)isCancelled;
 - (BOOL)isPending;
 - (void)setTask:(id)arg1;

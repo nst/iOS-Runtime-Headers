@@ -6,12 +6,14 @@
 
 @interface MFContactsSearchManager : NSObject <DASearchQueryConsumer> {
     void *_addressBook;
+    int _contactSearchAccountChangedToken;
+    NSArray *_explicitSearchAccountIDs;
     unsigned int _genNumber;
     NSOrderedSet *_properties;
     NSOperationQueue *_queue;
     NSString *_recentsBundleIdentifier;
     BOOL _registeredForAddressBookChanges;
-    NSArray *_searchAccountIDs;
+    NSArray *_searchAccounts;
     unsigned int _searchTypes;
     NSString *_sendingAddress;
     NSObject<OS_dispatch_queue> *_serverSearchQueue;
@@ -21,9 +23,11 @@
 
 @property(copy) NSString * recentsBundleIdentifier;
 @property(retain) NSArray * searchAccountIDs;
+@property(readonly) NSArray * searchAccounts;
 @property(copy) NSString * sendingAddress;
 
 - (void)_handleAddressBookChangeNotification;
+- (void)_handleCorecipientSearchResults:(id)arg1 operation:(id)arg2 taskID:(id)arg3;
 - (void)_handleLocalSearchResults:(id)arg1 type:(int)arg2 operation:(id)arg3 taskID:(id)arg4;
 - (void)_handleRecentsSearchFrequentResults:(id)arg1 infrequentResults:(id)arg2 operation:(id)arg3 taskID:(id)arg4;
 - (void)_handleSearchQueriesByAccountID:(id)arg1 operation:(id)arg2 taskID:(id)arg3;
@@ -31,6 +35,8 @@
 - (void)_handleSearchQuery:(id)arg1 returnedResults:(id)arg2;
 - (void)_handleSearchQueryFinished:(id)arg1 context:(id)arg2;
 - (void)_handleTaskFinished:(id)arg1 context:(id)arg2;
+- (void)_invalidateSearchAccounts;
+- (void)_performLazySetup;
 - (void)_registerForAddressBookChanges;
 - (id)_serverSearchQueue;
 - (void)cancelTaskWithID:(id)arg1;
@@ -39,6 +45,8 @@
 - (id)initWithAddressBook:(void*)arg1 properties:(int*)arg2 propertyCount:(unsigned int)arg3;
 - (id)recentsBundleIdentifier;
 - (id)searchAccountIDs;
+- (id)searchAccounts;
+- (id)searchForCorecipientsWithRecipients:(id)arg1 consumer:(id)arg2;
 - (id)searchForText:(id)arg1 consumer:(id)arg2;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 returnedResults:(id)arg2;

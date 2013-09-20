@@ -9,7 +9,6 @@
     BOOL _lastPostedNetworkUp;
     NSString *_myIP;
     NSArray *_myIPs;
-    struct __CFRunLoopSource { } *_runLoopSource;
     struct __SCDynamicStore { } *_store;
 }
 
@@ -22,7 +21,6 @@
 @property(readonly) NSString * myIPAddress;
 @property(readonly) NSArray * myIPAddresses;
 @property(retain) NSArray * myIPs;
-@property struct __CFRunLoopSource { }* runLoopSource;
 @property struct __SCDynamicStore { }* store;
 
 + (void)disableNotifications;
@@ -30,7 +28,6 @@
 + (id)sharedInstance;
 
 - (void)_clearIPCache;
-- (void)_clearSharedDNSService;
 - (BOOL)_listenForChanges;
 - (id)connectionMonitor;
 - (void)connectionMonitorDidUpdate:(id)arg1;
@@ -38,6 +35,7 @@
 - (struct __SCDynamicStore { }*)getDynamicStore;
 - (id)init;
 - (BOOL)isNetworkUp;
+- (BOOL)isPrimaryCellular;
 - (BOOL)lastPostedNetworkUp;
 - (unsigned int)linkQualityForInterfaceType:(unsigned int)arg1;
 - (int)linkQualityValueForInterface:(id)arg1;
@@ -47,12 +45,11 @@
 - (id)myIPAddress;
 - (id)myIPAddresses;
 - (id)myIPs;
-- (struct __CFRunLoopSource { }*)runLoopSource;
+- (id)primaryInterfaceName;
 - (void)setConnectionMonitor:(id)arg1;
 - (void)setLastPostedNetworkUp:(BOOL)arg1;
 - (void)setMyIP:(id)arg1;
 - (void)setMyIPs:(id)arg1;
-- (void)setRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
 - (void)setStore:(struct __SCDynamicStore { }*)arg1;
 - (struct __SCDynamicStore { }*)store;
 - (void)systemDidWake;

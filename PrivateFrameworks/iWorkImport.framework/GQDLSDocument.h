@@ -5,8 +5,6 @@
 @class GQDSStylesheet;
 
 @interface GQDLSDocument : GQDRoot {
-    BOOL mIsOldAssetNameMapInitialized;
-    struct __CFDictionary { } *mOldAssetNameMap;
     GQDSStylesheet *mStylesheet;
 }
 

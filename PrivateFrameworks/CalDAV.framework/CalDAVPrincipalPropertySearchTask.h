@@ -16,8 +16,6 @@
 @property(retain) NSSet * searchTypes;
 @property(retain) CalDAVPrincipalSearchPropertySet * serverSupportSet;
 
-+ (id)_propertiesToFindForServerSupportSet:(id)arg1;
-
 - (void)dealloc;
 - (id)extraAttributes;
 - (id)initWithSearchStrings:(id)arg1 searchTypes:(id)arg2 serverSupportSet:(id)arg3 atURL:(id)arg4;

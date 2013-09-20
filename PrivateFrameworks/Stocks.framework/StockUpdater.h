@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class <StockUpdaterDelegate>, NSArray, NSError, NSMutableDictionary, QuoteParserData;
 
 @interface StockUpdater : XMLHTTPRequest {
@@ -12,12 +16,14 @@
     NSError *_lastError;
     QuoteParserData *_quoteParserData;
     NSArray *_requestStocks;
+    id _updateCompletionHandler;
 }
 
 @property <StockUpdaterDelegate> * delegate;
 @property BOOL isComprehensive;
 @property(retain) NSError * lastError;
 @property(retain) NSArray * requestStocks;
+@property(copy) id updateCompletionHandler;
 
 - (void).cxx_destruct;
 - (id)_symbolTagsForRequestStocks;
@@ -39,5 +45,7 @@
 - (void)setIsComprehensive:(BOOL)arg1;
 - (void)setLastError:(id)arg1;
 - (void)setRequestStocks:(id)arg1;
+- (void)setUpdateCompletionHandler:(id)arg1;
+- (id)updateCompletionHandler;
 
 @end

@@ -17,8 +17,6 @@
 @property int remoteUIAccessoryType;
 @property(retain) UIView * remoteUIAccessoryView;
 
-+ (id)alertImage;
-
 - (void)_accessoriesChanged;
 - (void)dealloc;
 - (BOOL)forceFullSizeDetailLabel;

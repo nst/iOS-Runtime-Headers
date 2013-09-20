@@ -17,6 +17,8 @@
 
 - (void)dealloc;
 - (id)description;
+- (BOOL)includesFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (BOOL)includesFrameRate:(double)arg1;
 - (id)initWithMinFrameRate:(int)arg1 maxFrameRate:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxFrameDuration;

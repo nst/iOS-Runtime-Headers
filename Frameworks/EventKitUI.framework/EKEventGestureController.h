@@ -66,12 +66,16 @@
 @property BOOL usesHorizontalDragLocking;
 @property BOOL usesXDragOffsetInCancelRegion;
 
+- (void).cxx_destruct;
 - (float)_alignedYOriginForAllDayOccurrence:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 floorAtAllDayRegionBottom:(BOOL)arg3;
 - (void)_cancel;
 - (float)_capOccurrenceViewYOrigin:(float)arg1;
 - (void)_commit;
 - (void)_commitUntimed;
+- (float)_computeHeightForOccurrenceViewOfDuration:(double)arg1 allDay:(BOOL)arg2;
+- (float)_computeHeightForOccurrenceViewOfDuration:(double)arg1;
 - (struct CGPoint { float x1; float x2; })_computeOriginAtTouchPoint:(struct CGPoint { float x1; float x2; })arg1 forDate:(double)arg2 isAllDay:(BOOL)arg3 allowXOffset:(BOOL)arg4 allowFloorAtRegionBottom:(BOOL)arg5;
+- (float)_computeWidthForOccurrenceView;
 - (void)_createTemporaryView:(id)arg1;
 - (BOOL)_flingOrCancelDraggingViewIfNeeded;
 - (void)_installScrollTimer;

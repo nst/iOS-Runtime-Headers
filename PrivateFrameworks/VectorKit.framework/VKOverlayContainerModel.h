@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKOverlayContainerDelegate>, <VKRouteMatchedAnnotationPresentation>, NSMapTable, NSMutableArray, NSMutableSet, NSSet;
+@class <VKOverlayContainerDelegate>, <VKRouteMatchedAnnotationPresentation>, NSMapTable, NSMutableArray, NSMutableSet, NSSet, VKSkyModel, VKStylesheet;
 
-@interface VKOverlayContainerModel : VKMapTileModel <VKMapLayer> {
+@interface VKOverlayContainerModel : VKMapTileModel <VKMapLayer, VKStylesheetObserver> {
     struct { 
-        struct { 
+        struct VKPoint { 
             double x; 
             double y; 
             double z; 
@@ -25,20 +25,24 @@
     BOOL _shouldCheckForOcclusion;
     BOOL _shouldOccludeTraffic;
     BOOL _shouldShowTraffic;
-    BOOL _shouldSplitRouteLine;
+    VKSkyModel *_skyModel;
     NSMutableSet *_visibleOverlays;
 }
 
 @property <VKOverlayContainerDelegate> * delegate;
 @property(getter=isInRealisticMode,readonly) BOOL inRealisticMode;
 @property(readonly) NSSet * persistentOverlays;
-@property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; } puckPosition;
+@property(readonly) struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; } puckPosition;
 @property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
 @property BOOL shouldCheckForOcclusion;
 @property BOOL shouldOccludeTraffic;
 @property BOOL shouldShowTraffic;
-@property BOOL shouldSplitRouteLine;
+@property(retain) VKSkyModel * skyModel;
+@property(readonly) VKStylesheet * stylesheet;
 
++ (BOOL)reloadOnStylesheetChange;
+
+- (id).cxx_construct;
 - (void)_updatePainterOrdering;
 - (void)addPersistentOverlay:(id)arg1;
 - (void)dealloc;
@@ -49,7 +53,7 @@
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
 - (id)persistentOverlays;
-- (struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; })puckPosition;
+- (struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; })puckPosition;
 - (void)removePersistentOverlay:(id)arg1;
 - (id)routeLineSplitAnnotation;
 - (void)setDelegate:(id)arg1;
@@ -57,10 +61,13 @@
 - (void)setShouldCheckForOcclusion:(BOOL)arg1;
 - (void)setShouldOccludeTraffic:(BOOL)arg1;
 - (void)setShouldShowTraffic:(BOOL)arg1;
-- (void)setShouldSplitRouteLine:(BOOL)arg1;
+- (void)setSkyModel:(id)arg1;
 - (BOOL)shouldCheckForOcclusion;
 - (BOOL)shouldOccludeTraffic;
 - (BOOL)shouldShowTraffic;
-- (BOOL)shouldSplitRouteLine;
+- (id)skyModel;
+- (id)stylesheet;
+- (void)stylesheetDidChange;
+- (unsigned int)supportedRenderPasses;
 
 @end

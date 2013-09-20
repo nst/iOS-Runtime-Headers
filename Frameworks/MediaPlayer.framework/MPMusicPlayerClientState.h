@@ -2,15 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaPlaylist, MPMediaQuery;
+@class MPMediaItem, MPMediaPlaylist, MPMediaQuery, MPRadioStation;
 
 @interface MPMusicPlayerClientState : NSObject {
-    BOOL _allowsRemoteUIAccess;
+    BOOL _allowsBackgroundVideo;
+    BOOL _autoReshufflingDisabled;
     int _backgroundPlaybackAccess;
     MPMediaItem *_firstItem;
     MPMediaPlaylist *_geniusMixPlaylist;
     BOOL _hasAudioBackgroundMode;
     MPMediaQuery *_query;
+    MPRadioStation *_radioStation;
     int _repeatMode;
     BOOL _seeking;
     int _shuffleMode;
@@ -18,33 +20,39 @@
     BOOL _videoPlaybackEnabled;
 }
 
-@property BOOL allowsRemoteUIAccess;
+@property BOOL allowsBackgroundVideo;
+@property BOOL autoReshufflingDisabled;
 @property int backgroundPlaybackAccess;
 @property(retain) MPMediaItem * firstItem;
 @property(retain) MPMediaPlaylist * geniusMixPlaylist;
 @property BOOL hasAudioBackgroundMode;
 @property(retain) MPMediaQuery * query;
+@property(retain) MPRadioStation * radioStation;
 @property int repeatMode;
 @property BOOL seeking;
 @property int shuffleMode;
 @property BOOL useApplicationSpecificQueue;
 @property BOOL videoPlaybackEnabled;
 
-- (BOOL)allowsRemoteUIAccess;
+- (void).cxx_destruct;
+- (BOOL)allowsBackgroundVideo;
+- (BOOL)autoReshufflingDisabled;
 - (int)backgroundPlaybackAccess;
-- (void)dealloc;
 - (id)firstItem;
 - (id)geniusMixPlaylist;
 - (BOOL)hasAudioBackgroundMode;
 - (id)query;
+- (id)radioStation;
 - (int)repeatMode;
 - (BOOL)seeking;
-- (void)setAllowsRemoteUIAccess:(BOOL)arg1;
+- (void)setAllowsBackgroundVideo:(BOOL)arg1;
+- (void)setAutoReshufflingDisabled:(BOOL)arg1;
 - (void)setBackgroundPlaybackAccess:(int)arg1;
 - (void)setFirstItem:(id)arg1;
 - (void)setGeniusMixPlaylist:(id)arg1;
 - (void)setHasAudioBackgroundMode:(BOOL)arg1;
 - (void)setQuery:(id)arg1;
+- (void)setRadioStation:(id)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setSeeking:(BOOL)arg1;
 - (void)setShuffleMode:(int)arg1;

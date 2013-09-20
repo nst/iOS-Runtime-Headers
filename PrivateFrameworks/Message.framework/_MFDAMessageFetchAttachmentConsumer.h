@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class ActivityMonitor, NSData, NSMutableData;
+@class MFActivityMonitor, MFProgressFilterDataConsumer;
 
 @interface _MFDAMessageFetchAttachmentConsumer : MFDAMailAccountConsumer <DAMessageFetchAttachmentConsumer> {
-    NSMutableData *_accumulatedData;
+    unsigned int _accumulatedLength;
     BOOL _dataWasBase64;
     unsigned int _expectedLength;
     BOOL _fetchSucceeded;
-    ActivityMonitor *_monitor;
+    MFActivityMonitor *_monitor;
+    MFProgressFilterDataConsumer *_progressFilter;
 }
 
-@property(readonly) NSData * accumulatedData;
 @property(readonly) BOOL dataWasBase64;
 @property unsigned int expectedLength;
 @property(readonly) BOOL fetchSucceeded;
+@property(retain) MFProgressFilterDataConsumer * progressFilter;
 
-- (id)accumulatedData;
 - (void)attachmentFetchCompletedWithStatus:(int)arg1 forAttachmentNamed:(id)arg2 ofMessageWithServerID:(id)arg3 dataWasBase64:(BOOL)arg4;
 - (void)consumeData:(id)arg1 ofContentType:(id)arg2 forAttachmentNamed:(id)arg3 ofMessageWithServerID:(id)arg4;
 - (BOOL)dataWasBase64;
@@ -25,6 +25,8 @@
 - (unsigned int)expectedLength;
 - (BOOL)fetchSucceeded;
 - (id)initWithActivityMonitor:(id)arg1;
+- (id)progressFilter;
 - (void)setExpectedLength:(unsigned int)arg1;
+- (void)setProgressFilter:(id)arg1;
 
 @end

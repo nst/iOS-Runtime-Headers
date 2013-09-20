@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSMutableArray;
+
 @interface _UIPopoverLayoutInfo : NSObject <NSCopying> {
     struct UIEdgeInsets { 
         float top; 
@@ -45,6 +47,7 @@
         } size; 
     unsigned int _arrowDirection;
     float _arrowHeight;
+    NSMutableArray *_candidates;
     BOOL _constrainToTargetRect;
     } _containingFrame;
     } _containingFrameInsets;
@@ -80,6 +83,7 @@
 - (BOOL)_updatesEnabled;
 - (unsigned int)arrowDirection;
 - (float)arrowHeight;
+- (id)candidates;
 - (BOOL)constrainToTargetRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containingFrame;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })containingFrameInsets;
@@ -102,6 +106,7 @@
 - (void)setPreferLandscapeOrientations:(BOOL)arg1;
 - (void)setPreferredArrowDirections:(unsigned int)arg1;
 - (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setProperties:(id)arg1;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetRect;
 

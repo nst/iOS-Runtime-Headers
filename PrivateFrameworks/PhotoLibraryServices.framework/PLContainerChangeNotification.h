@@ -20,10 +20,11 @@
 
 @property(readonly) NSArray * _changedObjects;
 @property(readonly) NSString * _contentRelationshipName;
-@property(readonly) BOOL _didCalculateDiffs;
+@property(setter=_setDidCalculateDiffs:) BOOL _didCalculateDiffs;
 @property(readonly) NSString * _diffDescription;
 @property(readonly) PLManagedObject * _managedObject;
 @property(readonly) NSIndexSet * changedIndexes;
+@property(readonly) NSIndexSet * changedIndexesRelativeToSnapshot;
 @property(readonly) NSArray * changedObjects;
 @property(readonly) BOOL countDidChange;
 @property(readonly) NSIndexSet * deletedIndexes;
@@ -44,7 +45,9 @@
 - (id)_init;
 - (id)_initWithObject:(id)arg1 snapshot:(id)arg2 changedObjects:(id)arg3;
 - (id)_managedObject;
+- (void)_setDidCalculateDiffs:(BOOL)arg1;
 - (id)changedIndexes;
+- (id)changedIndexesRelativeToSnapshot;
 - (id)changedObjects;
 - (BOOL)countDidChange;
 - (void)dealloc;
@@ -59,5 +62,6 @@
 - (id)object;
 - (BOOL)shouldReload;
 - (id)snapshot;
+- (unsigned int)snapshotIndexForContainedObject:(id)arg1;
 
 @end

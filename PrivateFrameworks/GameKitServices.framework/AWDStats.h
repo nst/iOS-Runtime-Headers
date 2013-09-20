@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/ViceroyTrace.framework/ViceroyTrace
  */
 
-@class NSDictionary, NSMutableDictionary, NSString;
+@class AudioTierHistogram, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AWDStats : NSObject {
     unsigned int audioFlush;
     unsigned int audioPauseTime;
+    AudioTierHistogram *audioTiers;
     unsigned int avgInterarrivalTime;
     unsigned int avgInterarrivalTimeCount;
     unsigned int avgJitterBufferSize;
@@ -16,7 +17,13 @@
     unsigned int avgRate;
     unsigned int avgRateCount;
     unsigned int basebandCount;
+    unsigned int callAvgRxRate;
+    unsigned int callAvgRxRateCount;
+    unsigned int callAvgTxRate;
+    unsigned int callAvgTxRateCount;
+    long callDuration;
     unsigned int callNonce;
+    unsigned int connectionType;
     double currentCellTechDuration;
     NSString *currentInterface;
     unsigned int downlinkEstimateAvg;
@@ -27,8 +34,10 @@
     BOOL isSender;
     unsigned int lastVRAWidth;
     float localVideoDegradeTime;
+    unsigned int operatingMode;
     double previousCellTechDuration;
     NSString *previousInterface;
+    unsigned int relayType;
     NSString *remoteInterfaceName;
     float remoteVideoDegradeTime;
     unsigned int rxFrameRateAvg;
@@ -38,7 +47,10 @@
     unsigned int rxHeight;
     unsigned int rxWidth;
     long startTime;
+    NSObject<OS_dispatch_queue> *submitQueue;
     unsigned int targetFramerate;
+    unsigned int targetJitterBufferSize;
+    unsigned int targetJitterBufferSizeCount;
     unsigned int terminationReason;
     double timeSinceLastCellTech;
     double timeSinceLastVRA;
@@ -55,6 +67,7 @@
     unsigned int videoPauseTime;
 }
 
+@property(readonly) unsigned int callNonce;
 @property float localVideoDegradeTime;
 @property float remoteVideoDegradeTime;
 
@@ -65,20 +78,24 @@
 - (void)accumulateAudioPauseTime:(unsigned int)arg1;
 - (void)accumulateAverageInterarrivalTime:(unsigned int)arg1;
 - (void)accumulateAverageRate:(unsigned int)arg1;
+- (void)accumulateAverageReceiveRate:(unsigned int)arg1;
+- (void)accumulateAverageTransmitRate:(unsigned int)arg1;
 - (void)accumulateAvgLossRate:(unsigned int)arg1;
 - (void)accumulateDownlinkEstimate:(unsigned int)arg1;
 - (void)accumulateJitterBufferSize:(unsigned int)arg1;
 - (void)accumulateRxFrameRate:(unsigned int)arg1 min:(unsigned int)arg2 max:(unsigned int)arg3;
+- (void)accumulateTargetJitterBufferSize:(unsigned int)arg1;
 - (void)accumulateTxFrameRate:(unsigned int)arg1 min:(unsigned int)arg2 max:(unsigned int)arg3;
 - (void)accumulateUplinkEstimate:(unsigned int)arg1;
 - (void)accumulateVideoFlush:(unsigned int)arg1;
 - (void)accumulateVideoPauseTime:(unsigned int)arg1;
-- (void)addConnectivityTiming:(struct tagConnectivityTiming { int x1[12]; })arg1;
+- (void)addConnectivityTiming:(struct tagConnectivityTiming { int x1[13]; })arg1;
 - (void)addFloatValue:(float)arg1 toHistogram:(id)arg2;
 - (void)addVRAWidth:(unsigned int)arg1;
 - (void)addValue:(unsigned int)arg1 toHistogram:(id)arg2;
 - (void)callEnd;
-- (void)callStartIsSender:(bool)arg1 forTime:(long)arg2;
+- (unsigned int)callNonce;
+- (void)callStartIsSender:(bool)arg1 forTime:(long)arg2 mode:(unsigned int)arg3;
 - (void)dealloc;
 - (void)finishCellTech;
 - (void)finishVRA;
@@ -88,13 +105,17 @@
 - (void)printHistograms;
 - (float)remoteVideoDegradeTime;
 - (void)reset;
+- (int)sendAudioTierHistogramToAWD;
 - (int)sendBasebandStatsToAWD;
 - (int)sendConnectivityTimingToAWD;
 - (int)sendHistogramsToAWD;
 - (int)sendInterfaceStatusToAWD;
+- (int)sendRTCSessionEndMetricToAWD;
 - (int)sendRTStatsToAWD;
 - (int)sendVideoQualityStatsToAWD;
 - (int)sendVideoStatusToAWD;
+- (void)setCallReportProtobuf:(unsigned long)arg1 withProtobufData:(id)arg2 forMetricID:(int)arg3;
+- (void)setConnectionType:(unsigned int)arg1;
 - (void)setFirstRemoteFrameTiming:(unsigned int)arg1;
 - (void)setInterface:(id)arg1;
 - (void)setLocalVideoDegradeTime:(float)arg1;
@@ -103,6 +124,7 @@
 - (void)setRemoteVideoDegradeTime:(float)arg1;
 - (void)setRemoteWidth:(unsigned int)arg1 height:(unsigned int)arg2;
 - (void)setTerminationReason:(unsigned int)arg1;
+- (void)updateAudioTier:(unsigned int)arg1 mode:(unsigned int)arg2 duplication:(unsigned int)arg3 codecPayload:(unsigned int)arg4 codecBitrate:(unsigned int)arg5 bundling:(unsigned int)arg6;
 - (void)updateCellTech:(id)arg1;
 
 @end

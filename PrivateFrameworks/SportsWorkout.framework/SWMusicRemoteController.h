@@ -12,6 +12,10 @@
     int _interruptedRepeatMode;
     NSString *_latestSelectedPlaylistName;
     int _musicSelection;
+    NSString *_nowPlayingAlbum;
+    NSString *_nowPlayingArtist;
+    BOOL _nowPlayingIsPlaying;
+    NSString *_nowPlayingTitle;
     NSMutableArray *_playlists;
     MPMediaItem *_powersongItem;
     NSTimer *_volumeAdjustTimer;
@@ -32,7 +36,8 @@
 - (void)_adjustVolumeUpTimer:(id)arg1;
 - (id)_init;
 - (void)_mediaLibraryChanged:(id)arg1;
-- (void)_nowPlayingItemChanged:(id)arg1;
+- (void)_mediaRemoteNowPlayingInfoChanged:(id)arg1;
+- (void)_mediaRemoteNowPlayingIsPlayingChanged:(id)arg1;
 - (unsigned long long)_persistentUIDForPlaylistIndex:(unsigned int)arg1 isWorkoutMix:(BOOL)arg2;
 - (void)_releaseRemoteCachedData;
 - (void)_resumeInterruptedQueue;
@@ -41,6 +46,8 @@
 - (void)beginAdjustingVolume:(int)arg1;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (id)currentAlbumName;
+- (id)currentArtistName;
 - (id)currentSongName;
 - (void)dealloc;
 - (void)endAdjustingVolume:(int)arg1;

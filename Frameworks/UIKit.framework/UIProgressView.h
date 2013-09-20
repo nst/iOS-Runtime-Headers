@@ -2,19 +2,42 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIImage, UIImageView;
+@class CAGradientLayer, UIColor, UIImage, UIImageView;
 
 @interface UIProgressView : UIView <NSCoding> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
     int _barStyle;
     BOOL _isAnimating;
+    } _previousBounds;
+    } _previousProgressBounds;
     float _progress;
+    CAGradientLayer *_progressGradientLayer;
     UIImage *_progressImage;
     UIColor *_progressTintColor;
     UIImageView *_progressView;
     int _progressViewStyle;
+    CAGradientLayer *_trackGradientLayer;
     UIImage *_trackImage;
     UIColor *_trackTintColor;
     UIImageView *_trackView;
+    BOOL _useArtwork;
 }
 
 @property float progress;

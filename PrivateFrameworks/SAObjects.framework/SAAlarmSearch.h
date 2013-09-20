@@ -4,7 +4,7 @@
 
 @class NSArray, NSNumber, NSString, NSURL;
 
-@interface SAAlarmSearch : SABaseClientBoundCommand {
+@interface SAAlarmSearch : SADomainCommand {
 }
 
 @property(copy) NSNumber * enabled;
@@ -13,7 +13,6 @@
 @property(copy) NSURL * identifier;
 @property(copy) NSString * label;
 @property(copy) NSNumber * minute;
-@property(copy) NSURL * targetAppId;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
@@ -33,7 +32,5 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setMinute:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

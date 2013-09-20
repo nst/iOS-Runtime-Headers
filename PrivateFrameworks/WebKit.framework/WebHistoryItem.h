@@ -9,14 +9,16 @@
 }
 
 + (id)entryWithURL:(id)arg1;
-+ (void)initWindowWatcherIfNecessary;
 + (void)initialize;
 
 - (id)RSSFeedReferrer;
 - (id)URL;
 - (id)URLString;
+- (unsigned int)_bookmarkID;
 - (unsigned long)_getDailyVisitCounts:(const int**)arg1;
 - (unsigned long)_getWeeklyVisitCounts:(const int**)arg1;
+- (BOOL)_hasCachedPageExpired;
+- (BOOL)_isInPageCache;
 - (BOOL)_lastVisitWasHTTPNonGet;
 - (id)_lastVisitedDate;
 - (void)_mergeAutoCompleteHints:(id)arg1;
@@ -25,16 +27,18 @@
 - (float)_scale;
 - (BOOL)_scaleIsInitial;
 - (struct CGPoint { float x1; float x2; })_scrollPoint;
+- (void)_setBookmarkID:(unsigned int)arg1;
 - (void)_setLastVisitWasFailure:(BOOL)arg1;
 - (void)_setLastVisitedTimeInterval:(double)arg1;
 - (void)_setScale:(float)arg1 isInitial:(BOOL)arg2;
 - (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_setSharedLinkUniqueIdentifier:(id)arg1;
 - (void)_setTransientProperty:(id)arg1 forKey:(id)arg2;
 - (void)_setViewportArguments:(id)arg1;
+- (id)_sharedLinkUniqueIdentifier;
 - (id)_transientPropertyForKey:(id)arg1;
 - (id)_viewportArguments;
 - (void)_visitedWithTitle:(id)arg1 increaseVisitCount:(BOOL)arg2;
-- (oneway void)_webcore_releaseOnWebThread;
 - (id)alternateTitle;
 - (id)children;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -56,7 +60,6 @@
 - (BOOL)lastVisitWasFailure;
 - (double)lastVisitedTimeInterval;
 - (id)originalURLString;
-- (oneway void)release;
 - (struct CGPoint { float x1; float x2; })scrollPoint;
 - (void)setAlternateTitle:(id)arg1;
 - (void)setAlwaysAttemptToUsePageCache:(BOOL)arg1;

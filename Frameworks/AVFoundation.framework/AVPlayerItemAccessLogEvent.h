@@ -9,8 +9,10 @@
 }
 
 @property(readonly) NSString * URI;
+@property(readonly) int downloadOverdue;
 @property(readonly) double durationWatched;
 @property(readonly) double indicatedBitrate;
+@property(readonly) int mediaRequestsWWAN;
 @property(readonly) long long numberOfBytesTransferred;
 @property(readonly) int numberOfDroppedVideoFrames;
 @property(readonly) int numberOfMediaRequests;
@@ -18,20 +20,31 @@
 @property(readonly) int numberOfServerAddressChanges;
 @property(readonly) int numberOfStalls;
 @property(readonly) double observedBitrate;
+@property(readonly) double observedBitrateStandardDeviation;
+@property(readonly) double observedMaxBitrate;
+@property(readonly) double observedMinBitrate;
 @property(readonly) NSString * playbackSessionID;
 @property(readonly) NSDate * playbackStartDate;
 @property(readonly) double playbackStartOffset;
+@property(readonly) NSString * playbackType;
 @property(readonly) double segmentsDownloadedDuration;
 @property(readonly) NSString * serverAddress;
+@property(readonly) double startupTime;
+@property(readonly) double switchBitrate;
+@property(readonly) double transferDuration;
 
 - (id)URI;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)currentObservedBitrate;
 - (void)dealloc;
+- (int)downloadOverdue;
 - (double)durationWatched;
+- (int)entryReasonCode;
 - (void)finalize;
 - (double)indicatedBitrate;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
+- (int)mediaRequestsWWAN;
 - (long long)numberOfBytesTransferred;
 - (int)numberOfDroppedVideoFrames;
 - (int)numberOfMediaRequests;
@@ -39,10 +52,18 @@
 - (int)numberOfServerAddressChanges;
 - (int)numberOfStalls;
 - (double)observedBitrate;
+- (double)observedBitrateStandardDeviation;
+- (double)observedMaxBitrate;
+- (double)observedMinBitrate;
 - (id)playbackSessionID;
 - (id)playbackStartDate;
 - (double)playbackStartOffset;
+- (id)playbackType;
 - (double)segmentsDownloadedDuration;
 - (id)serverAddress;
+- (id)serviceIdentifier;
+- (double)startupTime;
+- (double)switchBitrate;
+- (double)transferDuration;
 
 @end

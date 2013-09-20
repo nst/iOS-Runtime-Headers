@@ -13,6 +13,7 @@
 
 @property(getter=isBackButton,readonly) BOOL backButton;
 @property(readonly) int buttonType;
+@property(getter=isEnabled) BOOL enabled;
 @property(retain) UIImage * image;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
 @property(getter=isLoading) BOOL loading;
@@ -35,8 +36,10 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (id)initWithSystemItemString:(id)arg1;
 - (BOOL)isBackButton;
+- (BOOL)isEnabled;
 - (BOOL)isLoading;
 - (BOOL)isShowingConfirmation;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setStyleFromString:(id)arg1;

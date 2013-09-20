@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureFileOutputRecordingDelegate><AVCaptureFileOutputPauseResumeDelegate>, NSArray, NSString, NSURL;
+@class <AVCaptureFileOutputRecordingDelegate><AVCaptureFileOutputPauseResumeDelegate>, NSArray, NSURL;
 
 @interface AVCaptureFileOutputDelegateWrapper : NSObject {
     NSArray *_connections;
     <AVCaptureFileOutputRecordingDelegate><AVCaptureFileOutputPauseResumeDelegate> *_delegate;
-    NSString *_didStopRecordingReason;
+    long _didStopRecordingError;
     NSArray *_metadata;
     NSURL *_outputFileURL;
     BOOL _receivedDidStartRecording;
@@ -16,7 +16,7 @@
 
 @property(readonly) NSArray * connections;
 @property(readonly) <AVCaptureFileOutputRecordingDelegate><AVCaptureFileOutputPauseResumeDelegate> * delegate;
-@property(copy) NSString * didStopRecordingReason;
+@property long didStopRecordingError;
 @property(retain) NSArray * metadata;
 @property(readonly) NSURL * outputFileURL;
 @property BOOL receivedDidStartRecording;
@@ -27,13 +27,13 @@
 - (id)connections;
 - (void)dealloc;
 - (id)delegate;
-- (id)didStopRecordingReason;
+- (long)didStopRecordingError;
 - (id)initWithURL:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
 - (id)metadata;
 - (id)outputFileURL;
 - (BOOL)receivedDidStartRecording;
 - (BOOL)receivedDidStopRecording;
-- (void)setDidStopRecordingReason:(id)arg1;
+- (void)setDidStopRecordingError:(long)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setReceivedDidStartRecording:(BOOL)arg1;
 - (void)setReceivedDidStopRecording:(BOOL)arg1;

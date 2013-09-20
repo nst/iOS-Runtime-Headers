@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UIHighlightView, UILabel;
+@class NSTimer, UILabel, _UIHighlightView;
 
 @interface UIWebPDFLabelView : UIView {
-    UIHighlightView *_highlight;
+    _UIHighlightView *_highlight;
     UILabel *_label;
     NSTimer *_timer;
     unsigned int currentPageIndex;

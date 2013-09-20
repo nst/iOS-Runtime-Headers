@@ -6,7 +6,7 @@
     void *_priv;
 }
 
-- (int)_argumentTypeAtIndex:(unsigned long)arg1;
+- (int)_argumentTypeAtIndex:(int)arg1;
 - (id)_initWithInternalRepresentation:(void*)arg1;
 - (void*)_internalRepresentation;
 - (BOOL)_validOptions:(id)arg1;

@@ -19,7 +19,7 @@
 - (void)deferOnRunloop_initManagerUsingIOHID;
 - (void)deferOnRunloop_stopEvents;
 - (void)didUpdateAccelerationWithEventInfo:(struct { double x1; double x2; double x3; double x4; }*)arg1;
-- (void)getVector:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
+- (void)getVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (id)init;
 - (id)initWithOptions:(BOOL)arg1 enableRotation:(BOOL)arg2 enableAttitude:(BOOL)arg3;
 - (BOOL)managingAccel;

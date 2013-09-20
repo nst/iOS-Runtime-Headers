@@ -7,7 +7,12 @@
     float _huggingPriority;
 }
 
+@property(readonly) float compressionResistancePriority;
+@property(readonly) float huggingPriority;
+
 - (id)_priorityDescription;
+- (float)compressionResistancePriority;
+- (float)huggingPriority;
 - (id)initWithLayoutItem:(id)arg1 value:(float)arg2 huggingPriority:(float)arg3 compressionResistancePriority:(float)arg4 orientation:(int)arg5;
 - (float)priorityForVariable:(id)arg1;
 

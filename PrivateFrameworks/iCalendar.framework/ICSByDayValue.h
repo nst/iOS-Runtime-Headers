@@ -16,6 +16,7 @@
 + (int)weekdayFromICSString:(id)arg1;
 
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (int)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithWeekday:(int)arg1 number:(id)arg2;

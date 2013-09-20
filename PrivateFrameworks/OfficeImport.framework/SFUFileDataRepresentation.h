@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, SFUCryptoKey;
+@class NSString, OISFUCryptoKey;
 
-@interface SFUFileDataRepresentation : SFUDataRepresentation {
-    SFUCryptoKey *mCryptoKey;
+@interface SFUFileDataRepresentation : OISFUDataRepresentation {
+    OISFUCryptoKey *mCryptoKey;
     BOOL mDeleteFileWhenDone;
     long long mFileLength;
     unsigned long mFileType;

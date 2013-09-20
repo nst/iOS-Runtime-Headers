@@ -6,17 +6,30 @@
 }
 
 + (id)allServices;
++ (id)availableServices;
 + (id)serviceForServiceType:(id)arg1;
 
 - (id)accountType;
+- (id)activityImage;
+- (id)activityTitle;
 - (void)addExtraParameters:(id)arg1 forRequest:(id)arg2;
+- (id)composeViewController;
+- (id)connectionName;
 - (BOOL)hasAccounts;
 - (BOOL)isAvailable;
 - (BOOL)isFirstClassService;
 - (BOOL)isServiceTypeSupportedByConfiguration;
 - (BOOL)isSheetAccessPermitted;
 - (int)maximumImageCount;
+- (int)maximumImageDataSize;
 - (int)maximumURLCount;
+- (int)maximumVideoCount;
+- (int)maximumVideoDataSize;
+- (int)maximumVideoTimeLimit;
 - (id)serviceType;
+- (id)shareSheetClassName;
+- (id)shareSheetHostingBundleIdentifier;
+- (BOOL)supportsImageURL:(id)arg1;
+- (BOOL)supportsVideoURL:(id)arg1;
 
 @end

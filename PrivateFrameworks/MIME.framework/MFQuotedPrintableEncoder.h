@@ -14,7 +14,7 @@
 @property BOOL forHeader;
 @property BOOL forTextPart;
 
-+ (unsigned long)requiredSizeToEncodeHeaderBytes:(const char *)arg1 length:(unsigned long)arg2;
++ (unsigned int)requiredSizeToEncodeHeaderBytes:(const char *)arg1 length:(unsigned int)arg2;
 
 - (int)appendData:(id)arg1;
 - (void)done;

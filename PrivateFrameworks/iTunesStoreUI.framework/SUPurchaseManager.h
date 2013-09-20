@@ -4,7 +4,7 @@
 
 @class <SUPurchaseManagerDelegate>, NSMutableArray, NSMutableSet, NSSet, NSString, SUQueueSessionManager;
 
-@interface SUPurchaseManager : NSObject <SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate> {
+@interface SUPurchaseManager : NSObject <SSPurchaseRequestDelegatePrivate, SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate> {
     <SUPurchaseManagerDelegate> *_delegate;
     NSMutableSet *_futurePurchases;
     NSMutableSet *_inflightContinuations;
@@ -73,6 +73,7 @@
 - (int)numberOfPendingPurchases;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
+- (void)purchaseRequest:(id)arg1 purchaseDidSucceedWithResponse:(id)arg2;
 - (void)purchaseScriptObject:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (void)purchaseScriptObject:(id)arg1;
 - (id)purchasedItemIdentifiers;

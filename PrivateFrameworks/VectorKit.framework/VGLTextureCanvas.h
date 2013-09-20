@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLContext, VGLTexture;
+@class VGLContext, VGLResource, VGLTexture, VGLTextureFramebuffer;
 
 @interface VGLTextureCanvas : NSObject <VGLCanvas> {
     struct CGSize { 
@@ -17,8 +17,9 @@
         float b; 
         float a; 
     float _contentScale;
-    unsigned int _depthbuffer;
-    unsigned int _framebuffer;
+    VGLResource *_depthbufferResource;
+    VGLTextureFramebuffer *_framebuffer;
+    VGLResource *_framebufferResource;
     } _glClearColor;
     } _size;
     } _sizeInPixels;
@@ -35,10 +36,14 @@
 
 + (Class)contextClass;
 
+- (id).cxx_construct;
+- (void)_bindFramebuffer;
+- (id)_framebufferResource;
 - (float)contentScale;
 - (void)dealloc;
 - (id)description;
 - (void)didDrawView;
+- (void)dumpTextureToPath:(id)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })glClearColor;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (void)setGlClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;

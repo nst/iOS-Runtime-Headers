@@ -9,6 +9,7 @@
 
 @property(copy) NSString * emailAddress;
 @property(copy) NSNumber * favoriteFacetime;
+@property(copy) NSNumber * favoriteFacetimeAudio;
 @property(copy) NSString * label;
 
 + (id)email;
@@ -17,10 +18,12 @@
 - (id)emailAddress;
 - (id)encodedClassName;
 - (id)favoriteFacetime;
+- (id)favoriteFacetimeAudio;
 - (id)groupIdentifier;
 - (id)label;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFavoriteFacetime:(id)arg1;
+- (void)setFavoriteFacetimeAudio:(id)arg1;
 - (void)setLabel:(id)arg1;
 
 @end

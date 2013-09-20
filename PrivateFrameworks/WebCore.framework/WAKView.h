@@ -21,11 +21,11 @@
     BOOL _isHidden;
     NSMutableSet *subviewReferences;
     } viewContext;
-    struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; } *viewRef;
+    struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; id x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; } *viewRef;
 }
 
 + (void)_setInterpolationQuality:(int)arg1;
-+ (id)_wrapperForViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; }*)arg1;
++ (id)_wrapperForViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; id x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; }*)arg1;
 + (id)focusView;
 
 - (id).cxx_construct;
@@ -33,20 +33,19 @@
 - (void)_drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 lockFocus:(bool)arg3;
 - (id)_frame;
 - (BOOL)_handleResponderCall:(int)arg1;
-- (id)_initWithViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; }*)arg1;
+- (id)_initWithViewRef:(struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; id x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; }*)arg1;
 - (void)_lockFocusViewInContext:(struct CGContext { }*)arg1;
 - (BOOL)_selfHandleEvent:(id)arg1;
 - (void)_setDrawsOwnDescendants:(BOOL)arg1;
 - (id)_subviewReferences;
 - (void)_unlockFocusViewInContext:(struct CGContext { }*)arg1;
-- (struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; struct WKWindow {} *x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; }*)_viewRef;
+- (struct WKView { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; struct _WKViewContext {} *x2; id x3; struct WKView {} *x4; struct __CFArray {} *x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; unsigned int x8; float x9; void *x10; }*)_viewRef;
 - (id)_webView;
 - (void)_web_addDescendantWebHTMLViewsToArray:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_web_convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toView:(id)arg2;
 - (BOOL)_web_firstResponderIsSelfOrDescendantView;
 - (id)_web_parentWebFrameView;
 - (id)_web_superviewOfClass:(Class)arg1;
-- (oneway void)_webcore_releaseWithWebThreadLock;
 - (BOOL)accessibilityIsIgnored;
 - (void)addSubview:(id)arg1;
 - (unsigned int)autoresizingMask;
@@ -73,6 +72,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)invalidateGState;
 - (BOOL)isDescendantOf:(id)arg1;
+- (BOOL)isHiddenOrHasHiddenAncestor;
 - (id)lastScrollableAncestor;
 - (void)layout;
 - (void)layoutIfNeeded;
@@ -85,7 +85,6 @@
 - (id)nextValidKeyView;
 - (id)previousKeyView;
 - (id)previousValidKeyView;
-- (oneway void)release;
 - (void)releaseGState;
 - (void)removeFromSuperview;
 - (float)scale;

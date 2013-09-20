@@ -14,8 +14,8 @@
 @property(readonly) int deletionType;
 @property(readonly) MPMediaEntity * entity;
 
+- (void).cxx_destruct;
 - (id)anchor;
-- (void)dealloc;
 - (int)deletionType;
 - (id)entity;
 - (id)initWithEntity:(id)arg1 anchor:(id)arg2 deletionType:(int)arg3;

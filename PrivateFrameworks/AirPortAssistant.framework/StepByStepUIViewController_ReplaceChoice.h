@@ -2,25 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class UILabel, UIView;
-
 @interface StepByStepUIViewController_ReplaceChoice : StepByStepUIViewController <TableViewManagerDelegate> {
-    UIView *justTextContainerView;
-    UILabel *justTextLabel;
-    UIView *tableHeaderContainerView;
 }
 
-@property(retain) UIView * justTextContainerView;
-@property(retain) UILabel * justTextLabel;
-@property(retain) UIView * tableHeaderContainerView;
-
-- (id)justTextContainerView;
-- (id)justTextLabel;
-- (void)setJustTextContainerView:(id)arg1;
-- (void)setJustTextLabel:(id)arg1;
-- (void)setTableHeaderContainerView:(id)arg1;
 - (void)setupTable;
-- (id)tableHeaderContainerView;
 - (void)touchInCellAtIndexPath:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

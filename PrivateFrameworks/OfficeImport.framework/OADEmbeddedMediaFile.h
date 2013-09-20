@@ -2,20 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSData, NSString;
-
 @interface OADEmbeddedMediaFile : OADMovie {
-    NSData *mData;
-    NSString *mName;
 }
-
-@property(retain) NSData * data;
-@property(retain) NSString * name;
-
-- (id)data;
-- (void)dealloc;
-- (id)name;
-- (void)setData:(id)arg1;
-- (void)setName:(id)arg1;
 
 @end

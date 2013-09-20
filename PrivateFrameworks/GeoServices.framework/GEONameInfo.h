@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEONameInfo : PBCodable {
+@interface GEONameInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int phoneticType : 1; 
         unsigned int shieldType : 1; 
@@ -32,6 +32,7 @@
 @property int signType;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

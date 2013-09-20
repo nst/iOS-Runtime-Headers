@@ -2,26 +2,28 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaLibrary, NSMutableDictionary, NSObject<OS_dispatch_queue>;
+@class MPConcreteMediaEntityPropertiesCache, MPMediaLibrary;
 
-@interface MPConcreteMediaItem : MPMediaItem <NSCoding, NSCopying> {
-    BOOL _cachesProperties;
+@interface MPConcreteMediaItem : MPMediaItem <NSCoding, NSCopying, MPMediaItemArrayPIDEncodableItem, MPCacheableConcreteMediaEntity> {
     MPMediaLibrary *_library;
     unsigned long long _persistentID;
-    NSMutableDictionary *_properties;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
+    MPConcreteMediaEntityPropertiesCache *_propertiesCache;
 }
+
+@property(readonly) MPConcreteMediaEntityPropertiesCache * cachedPropertyValues;
 
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
-+ (void)persistentID:(unsigned long long)arg1 didChange:(BOOL)arg2;
++ (void)didChangeEntityWithDataProviderEntityClass:(Class)arg1 persistentID:(unsigned long long)arg2 deleted:(BOOL)arg3;
++ (BOOL)supportsSecureCoding;
 
-- (id)_initWithPersistentID:(unsigned long long)arg1 library:(id)arg2 cachesProperties:(BOOL)arg3;
+- (void).cxx_destruct;
+- (id)_initWithPersistentID:(unsigned long long)arg1 library:(id)arg2 propertiesCache:(id)arg3;
 - (id)_nonBatchableOrCachedValueForProperty:(id)arg1 needsFetch:(BOOL*)arg2;
-- (void)clearBookmarkTime;
+- (id)cachedPropertyValues;
+- (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)delete;
 - (id)description;
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -34,15 +36,17 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 - (id)initWithPersistentID:(unsigned long long)arg1;
-- (void)invalidate;
+- (void)invalidateCachedProperties;
+- (Class)itemArrayCoderPIDDataCodingClass;
 - (void)markNominalAmountHasBeenPlayed;
 - (id)mediaLibrary;
 - (double)nominalHasBeenPlayedThreshold;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
 - (unsigned long long)persistentID;
 - (void)reallyIncrementPlayCount;
-- (void)setValue:(id)arg1 forProperty:(id)arg2;
-- (void)updateLastUsedDateToCurrentDate;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id)arg1;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 

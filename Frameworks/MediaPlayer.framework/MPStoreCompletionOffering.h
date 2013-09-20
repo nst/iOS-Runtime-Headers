@@ -2,33 +2,35 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, MPStoreCollectionCompletionOffering, MPStoreLinkCompletionOffering, NSDictionary;
+@class MPMediaQuery, MPStoreCollectionCompletionOffering, MPStoreOfferMediaItemCollection, NSDictionary, NSURL;
 
 @interface MPStoreCompletionOffering : NSObject <NSCopying> {
-    MPStoreLinkCompletionOffering *_linkOffering;
+    MPStoreCollectionCompletionOffering *_collectionWithCompletionItemsOffering;
     MPMediaQuery *_localItemsQuery;
     int _preferredStoreOfferVariant;
-    MPStoreCollectionCompletionOffering *_purchaseableCollectionOffering;
+    int _presentationStyle;
     NSDictionary *_responseCollectionDictionary;
+    NSURL *_storeURL;
 }
 
-@property(readonly) MPStoreLinkCompletionOffering * linkOffering;
+@property(readonly) MPStoreOfferMediaItemCollection * collectionWithCompletionItems;
 @property int preferredStoreOfferVariant;
-@property(retain) MPStoreCollectionCompletionOffering * purchaseableCollectionOffering;
+@property(readonly) int presentationStyle;
+@property(readonly) NSURL * storeURL;
 
 + (int)defaultOfferVariant;
 + (id)offeringWithCollectionResponseDictionary:(id)arg1 localItemsQuery:(id)arg2;
 + (void)setDefaultOfferVariant:(int)arg1;
 
-- (id)_getPurchaseableCollectionOffering;
+- (void).cxx_destruct;
+- (void)_loadOfferingData;
+- (id)collectionWithCompletionItems;
 - (id)copyByInvalidatingCalculatedContent;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithCollectionResponseDictionary:(id)arg1 localItemsQuery:(id)arg2;
-- (id)linkOffering;
 - (int)preferredStoreOfferVariant;
-- (id)purchaseableCollectionOffering;
+- (int)presentationStyle;
 - (void)setPreferredStoreOfferVariant:(int)arg1;
-- (void)setPurchaseableCollectionOffering:(id)arg1;
+- (id)storeURL;
 
 @end

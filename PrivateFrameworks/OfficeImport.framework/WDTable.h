@@ -21,8 +21,8 @@
 - (id)newRowIterator;
 - (id)newRunIterator;
 - (id)properties;
-- (id)rowAt:(int)arg1;
-- (int)rowCount;
+- (id)rowAt:(unsigned int)arg1;
+- (unsigned int)rowCount;
 - (id)rowIterator;
 - (id)runIterator;
 

@@ -2,41 +2,46 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString, VKIntObjectMap, VKLabelDrawStyle, VKLineDrawStyle, VKStyle, VKVectorTile;
+@class NSString, VKIntObjectMap, VKLabelDrawStyle, VKLineDrawStyle, VKRoadDrawStyle, VKStyle, VKVectorTile;
 
 @interface VKRoadGroup : NSObject {
-    VKIntObjectMap *_capMeshes;
+    VKIntObjectMap *_capMeshVendors;
     BOOL _frozen;
     int _highestZ;
+    BOOL _isPatternedRailway;
     VKLabelDrawStyle *_labelStyle;
     VKLineDrawStyle *_lineStyle;
     VKLineDrawStyle *_linetyle;
     int _lowestZ;
     int _meshType;
-    VKIntObjectMap *_roadMeshes;
-    const struct { } *_roadStyle;
+    VKIntObjectMap *_roadMeshVendors;
+    VKRoadDrawStyle *_roadStyle;
     VKStyle *_style;
     VKVectorTile *_tile;
 }
 
 @property(readonly) int highestZ;
+@property BOOL isPatternedRailway;
 @property(readonly) VKLabelDrawStyle * labelStyle;
 @property(readonly) VKLineDrawStyle * lineStyle;
 @property(readonly) int lowestZ;
-@property(readonly) const struct { }* roadStyle;
+@property(readonly) VKRoadDrawStyle * roadStyle;
 @property(readonly) NSString * styleName;
 @property(readonly) VKVectorTile * tile;
 
-- (id)capMeshAtZ:(int)arg1;
+- (id)capMeshVendorAtZ:(int)arg1;
 - (void)dealloc;
 - (void)freeze;
+- (void)freezeStructure;
 - (int)highestZ;
 - (id)initWithStyle:(id)arg1 tile:(id)arg2 createMesh:(BOOL)arg3 ofType:(int)arg4;
+- (BOOL)isPatternedRailway;
 - (id)labelStyle;
 - (id)lineStyle;
 - (int)lowestZ;
-- (id)roadMeshAtZ:(int)arg1;
-- (const struct { }*)roadStyle;
+- (id)roadMeshVendorAtZ:(int)arg1;
+- (id)roadStyle;
+- (void)setIsPatternedRailway:(BOOL)arg1;
 - (id)styleName;
 - (id)tile;
 - (unsigned int)triangleCount;

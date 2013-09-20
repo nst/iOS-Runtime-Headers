@@ -2,18 +2,28 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UIKBBackgroundView, UIKBTree;
+
 @interface UIKeyboardLayoutDictation : UIKeyboardLayout {
+    UIKBBackgroundView *_backgroundView;
+    UIKBTree *_keyplane;
 }
 
-+ (struct CGSize { float x1; float x2; })dictationLayoutSize;
++ (id)activeInstance;
 + (float)landscapeHeight;
 + (float)portraitHeight;
 
-- (void)didRotate;
+- (int)_clipCornersOfView:(id)arg1;
+- (id)currentKeyplane;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)showKeyboardType:(int)arg1 withAppearance:(int)arg2;
+- (void)setRenderConfig:(id)arg1;
+- (void)setupBackgroundViewForNewSplitTraits:(id)arg1;
+- (BOOL)shouldFadeFromLayout;
+- (BOOL)shouldFadeToLayout;
+- (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
+- (struct CGSize { float x1; float x2; })splitLeftSize;
+- (BOOL)usesAutoShift;
 - (BOOL)visible;
 
 @end

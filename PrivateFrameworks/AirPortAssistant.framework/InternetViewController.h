@@ -8,11 +8,13 @@
     struct { 
         unsigned int ethernetPortCount; 
         unsigned int productID; 
+        unsigned int subProductID; 
         unsigned int productFamily; 
         int deviceKind; 
     struct { 
         unsigned int ethernetPortCount; 
         unsigned int productID; 
+        unsigned int subProductID; 
         unsigned int productFamily; 
         int deviceKind; 
     UIImageView *airplayDeviceImageView;
@@ -129,13 +131,13 @@
 - (id)containerView;
 - (id)descriptionContainerView;
 - (id)descriptionLabel;
-- (void)determineInfoForDevice:(id)arg1 deviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; int x4; }*)arg2;
-- (id)deviceImageForDeviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; int x4; }*)arg1 audioImage:(BOOL)arg2;
+- (void)determineInfoForDevice:(id)arg1 deviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; }*)arg2;
+- (id)deviceImageForDeviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; }*)arg1 audioImage:(BOOL)arg2;
 - (id)deviceImageView;
 - (id)deviceLabel;
 - (id)diagramContainerView;
 - (id)diagramView;
-- (id)insetImageForDeviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; int x4; }*)arg1 audioImage:(BOOL)arg2;
+- (id)insetImageForDeviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; }*)arg1 audioImage:(BOOL)arg2;
 - (id)insetImageView;
 - (unsigned int)internetFlow;
 - (id)internetLabel;

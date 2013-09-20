@@ -7,6 +7,8 @@
 @interface AARequest : NSObject {
     struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
     BOOL _flushCache;
+    NSString *_machineId;
+    NSString *_oneTimePassword;
     NSString *_urlString;
 }
 
@@ -24,6 +26,8 @@
 - (void)performRequestWithHandler:(id)arg1;
 - (id)redactedBodyStringWithPropertyList:(id)arg1;
 - (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
+- (void)setDeviceProvisioningMachineId:(id)arg1;
+- (void)setDeviceProvisioningOneTimePassword:(id)arg1;
 - (void)setFlushCache:(BOOL)arg1;
 - (id)urlCredential;
 - (id)urlRequest;

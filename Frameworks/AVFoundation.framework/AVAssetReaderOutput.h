@@ -22,6 +22,7 @@
 - (void)_attachToWeakReferenceToAssetReader:(id)arg1;
 - (void)_cancelReading;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
+- (id)_errorForOSStatus:(long)arg1;
 - (int)_extractionID;
 - (struct OpaqueFigAssetReader { }*)_figAssetReader;
 - (void)_figAssetReaderDecodeError;

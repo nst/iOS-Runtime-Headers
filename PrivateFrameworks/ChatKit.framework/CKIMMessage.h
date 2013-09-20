@@ -2,43 +2,74 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversation, IMMessage, NSArray, NSAttributedString, NSCalendarDate, NSDate;
+@class CKConversation, CKEntity, IMMessage, IMService, NSArray, NSAttributedString, NSDate, NSError, NSString;
 
 @interface CKIMMessage : NSObject <CKMessage> {
-    unsigned int _dateLoaded : 1;
-    unsigned int _observingFileTransferNotifications : 1;
-    unsigned int _shouldPlayReceivedTone : 1;
+    struct { 
+        unsigned int hasPostedComplete : 1; 
+        unsigned int shouldPlayReceivedTone : 1; 
+        unsigned int isPlaceHolderDate : 1; 
     float _cachedPercentComplete;
-    NSCalendarDate *_calendarDate;
     CKConversation *_conversation;
-    double _date;
-    int _failedSendCount;
-    BOOL _hasPostedComplete;
+    NSDate *_date;
     IMMessage *_imMessage;
-    int _incompletePartCount;
-    NSArray *_incompleteParts;
+    } _messageFlags;
     int _partCount;
     NSArray *_parts;
-    NSDate *_placeHolderDate;
-    NSAttributedString *_text;
 }
 
 @property(retain) IMMessage * IMMessage;
+@property(readonly) NSString * address;
+@property CKConversation * conversation;
+@property(readonly) NSDate * date;
+@property(readonly) NSError * error;
+@property(readonly) BOOL failedSend;
+@property(readonly) int failedSendCount;
+@property(readonly) NSString * guid;
+@property(readonly) BOOL hasAttachments;
+@property(readonly) BOOL hasBeenSent;
+@property(readonly) BOOL isDelivered;
+@property BOOL isFromDowngrading;
+@property(readonly) BOOL isFromFilteredSender;
+@property(readonly) BOOL isFromMe;
+@property(readonly) BOOL isOutgoing;
+@property(readonly) BOOL isPlaceholder;
+@property(readonly) BOOL isRead;
+@property(readonly) BOOL isSMS;
+@property(readonly) BOOL isToEmailAddress;
+@property(readonly) BOOL isTypingIndicator;
+@property(readonly) BOOL isWaitingForDelivery;
+@property(readonly) BOOL isiMessage;
+@property(readonly) unsigned int messagePartCount;
+@property(readonly) BOOL outgoingBubbleColor;
+@property(readonly) BOOL partiallyFailedSend;
+@property(readonly) NSArray * parts;
+@property(readonly) int pendingCount;
+@property(readonly) float percentComplete;
+@property(readonly) NSString * previewText;
+@property(readonly) NSArray * recipients;
+@property(readonly) int rowID;
+@property(readonly) CKEntity * sender;
+@property(readonly) int sentCount;
+@property(readonly) long long sequenceNumber;
+@property(readonly) IMService * service;
+@property(readonly) BOOL shouldPlayReceivedTone;
+@property(readonly) BOOL shouldUseSeparateSubject;
+@property(readonly) NSAttributedString * subject;
+@property(readonly) BOOL supportsDeliveryReceipts;
+@property(readonly) NSDate * timeRead;
+@property(readonly) BOOL wantsSendStatus;
 
 - (id)IMMessage;
-- (void)_fileTransferUpdated:(id)arg1;
 - (void)_loadCounts;
-- (double)_loadDate;
-- (void)_observeFileTransfersIfNecessary;
 - (void)_parseIMMessagePartsWithTextProcessingBlock:(id)arg1 fileTransferProcessingBlock:(id)arg2;
 - (id)_rawPreviewText;
 - (void)_resetData;
 - (id)address;
 - (id)attachmentText:(BOOL)arg1;
-- (id)calendarDate;
 - (int)compare:(id)arg1;
-- (BOOL)containsAllDisplayableMessageParts:(id)arg1;
 - (id)conversation;
+- (id)date;
 - (void)dealloc;
 - (void)deleteMessageParts:(id)arg1;
 - (id)description;
@@ -52,7 +83,6 @@
 - (id)initWithIMMessage:(id)arg1;
 - (BOOL)isDelivered;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isFirstDisplayablePart:(id)arg1;
 - (BOOL)isFromDowngrading;
 - (BOOL)isFromFilteredSender;
 - (BOOL)isFromMe;
@@ -67,10 +97,9 @@
 - (void)loadParts;
 - (void)markAsRead;
 - (int)messageCount;
-- (BOOL)messageIsComplete;
 - (id)messagePartAtIndex:(unsigned int)arg1;
 - (unsigned int)messagePartCount;
-- (int)outgoingBubbleColor;
+- (BOOL)outgoingBubbleColor;
 - (BOOL)partiallyFailedSend;
 - (id)parts;
 - (BOOL)pending;
@@ -83,18 +112,20 @@
 - (int)rowID;
 - (id)sender;
 - (int)sentCount;
-- (int)sequenceNumber;
+- (long long)sequenceNumber;
 - (id)service;
 - (void)setConversation:(id)arg1;
 - (void)setIMMessage:(id)arg1;
 - (void)setIsFromDowngrading:(BOOL)arg1;
 - (BOOL)shouldPlayReceivedTone;
+- (BOOL)shouldUseSeparateSubject;
 - (id)subject;
 - (BOOL)supportsDeliveryReceipts;
 - (id)timeDelivered;
 - (id)timeRead;
 - (int)totalMessageCount;
 - (void)updateMessageCompleteQuietly;
+- (id)url;
 - (BOOL)wantsSendStatus;
 
 @end

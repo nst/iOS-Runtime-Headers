@@ -5,7 +5,7 @@
 @interface MPFullScreenTransitionViewController : UIViewController {
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)wantsFullScreenLayout;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

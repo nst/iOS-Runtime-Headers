@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSManagedObjectID, UIImage;
+@class NSString, UIImage;
 
 @interface PLCameraPreviewImageWellChangeNotification : PLChangeNotification {
-    NSManagedObjectID *_assetID;
     UIImage *_image;
+    NSString *_uuid;
 }
 
-@property(readonly) NSManagedObjectID * assetID;
+@property(readonly) NSString * assetUUID;
 @property(readonly) UIImage * image;
 
 + (id)notification;
 
 - (id)_init;
-- (id)assetID;
+- (id)assetUUID;
 - (void)dealloc;
 - (id)description;
 - (id)image;

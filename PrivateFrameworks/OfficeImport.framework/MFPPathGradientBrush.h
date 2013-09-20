@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, TSUColor;
+@class NSArray, TSDBezierPath, TSUColor;
 
 @interface MFPPathGradientBrush : MFPGradientBrush {
     struct CGPoint { 
@@ -10,7 +10,7 @@
         float y; 
     TSUColor *mCenterColor;
     } mCenterPoint;
-    struct CGPath { } *mPath;
+    TSDBezierPath *mPath;
     NSArray *mSurroundColors;
 }
 
@@ -20,7 +20,7 @@
 - (id)endColor;
 - (void)setCenterColor:(id)arg1;
 - (void)setCenterPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setPath:(struct CGPath { }*)arg1;
+- (void)setPath:(id)arg1;
 - (void)setSurroundColors:(id)arg1;
 - (id)startColor;
 

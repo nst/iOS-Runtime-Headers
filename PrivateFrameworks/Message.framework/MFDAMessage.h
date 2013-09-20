@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAMailMessage, MailboxUid, Message, NSString;
+@class DAMailMessage, MFMailboxUid, MFMessage, NSString;
 
-@interface MFDAMessage : MailMessage {
+@interface MFDAMessage : MFMailMessage {
     DAMailMessage *_DAMailMessage;
     NSString *_externalConversationID;
-    MailboxUid *_mailbox;
-    Message *_rfc822CreatedMessage;
+    MFMailboxUid *_mailbox;
+    MFMessage *_rfc822CreatedMessage;
 }
 
 @property(readonly) DAMailMessage * DAMailMessage;

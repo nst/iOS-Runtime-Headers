@@ -39,6 +39,7 @@
 - (void)forgetParticipant:(id)arg1 deviceID:(id)arg2;
 - (id)generateDeviceID;
 - (id)init;
+- (id)initWithDomain:(id)arg1 type:(id)arg2;
 - (id)localServiceName;
 - (void)passDataToGKLayer:(id)arg1 fromPeer:(id)arg2;
 - (id)peers;

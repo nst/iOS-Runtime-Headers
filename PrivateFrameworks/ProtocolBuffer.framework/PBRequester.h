@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class <PBRequesterDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableData, NSMutableDictionary, NSString, NSURL, NSURLConnection, PBDataReader;
+@class <PBRequesterDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableData, NSMutableDictionary, NSRunLoop, NSString, NSURL, NSURLConnection, PBDataReader;
 
 @interface PBRequester : NSObject <NSURLConnectionDelegate> {
     struct { 
@@ -20,6 +20,8 @@
     NSURL *_URL;
     NSArray *_clientCertificates;
     NSURLConnection *_connection;
+    NSDictionary *_connectionProperties;
+    NSRunLoop *_connectionRunLoop;
     NSMutableData *_data;
     PBDataReader *_dataReader;
     <PBRequesterDelegate> *_delegate;
@@ -47,6 +49,7 @@
 @property(retain) NSURL * URL;
 @property(retain) NSArray * clientCertificates;
 @property(retain) NSURLConnection * connection;
+@property(retain) NSRunLoop * connectionRunLoop;
 @property id delegate;
 @property(readonly) unsigned int downloadPayloadSize;
 @property(copy) NSDictionary * httpRequestHeaders;
@@ -68,6 +71,7 @@
 - (void)_cancelNoNotify;
 - (void)_cancelWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
 - (void)_cleanup;
+- (id)_connectionRunLoop;
 - (void)_failWithError:(id)arg1;
 - (void)_failWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
 - (id)_languageLocale;
@@ -76,6 +80,8 @@
 - (void)_resetTimeoutTimer;
 - (void)_scheduleThrottlingError;
 - (void)_sendPayload:(id)arg1;
+- (void)_serializePayload:(id)arg1;
+- (void)_start;
 - (void)_startTimeoutTimer;
 - (void)_timeoutTimerFired;
 - (BOOL)_tryParseData;
@@ -83,12 +89,15 @@
 - (void)addRequest:(id)arg1;
 - (void)cancel;
 - (void)cancelWithErrorCode:(int)arg1;
+- (void)clearRequests;
 - (id)clientCertificates;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
+- (id)connection:(id)arg1 willSendRequestForEstablishedConnection:(id)arg2 properties:(id)arg3;
 - (id)connection;
 - (void)connectionDidFinishLoading:(id)arg1;
+- (id)connectionRunLoop;
 - (void)dealloc;
 - (id)decodeResponseData:(id)arg1;
 - (id)delegate;
@@ -105,6 +114,7 @@
 - (id)logResponseToFile;
 - (BOOL)needsCancel;
 - (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
+- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2 connectionProperties:(id)arg3;
 - (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
 - (void)pause;
 - (BOOL)readResponsePreamble:(id)arg1;
@@ -116,6 +126,7 @@
 - (void)resume;
 - (void)setClientCertificates:(id)arg1;
 - (void)setConnection:(id)arg1;
+- (void)setConnectionRunLoop:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHttpRequestHeader:(id)arg1 forKey:(id)arg2;
 - (void)setHttpRequestHeaders:(id)arg1;
@@ -130,6 +141,7 @@
 - (void)setURL:(id)arg1;
 - (BOOL)shouldHandleCookies;
 - (void)start;
+- (void)startWithConnectionProperties:(id)arg1;
 - (double)timeoutSeconds;
 - (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
 - (unsigned int)uploadPayloadSize;

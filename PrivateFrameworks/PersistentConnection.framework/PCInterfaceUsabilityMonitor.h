@@ -22,12 +22,15 @@
     double _trackedTimeInterval;
 }
 
+@property(readonly) struct __CFString { }* currentRAT;
 @property <PCInterfaceUsabilityMonitorDelegate> * delegate;
 @property(readonly) int interfaceIdentifier;
 @property(readonly) BOOL isInterfaceHistoricallyUsable;
 @property(readonly) BOOL isInterfaceUsable;
 @property(readonly) BOOL isInternetReachable;
+@property(readonly) BOOL isLTEWithCDRX;
 @property(readonly) BOOL isPoorLinkQuality;
+@property(readonly) BOOL isRadioHot;
 @property(readonly) int linkQuality;
 @property(readonly) NSString * linkQualityString;
 
@@ -59,6 +62,7 @@
 - (BOOL)isInterfaceUsable;
 - (BOOL)isInternetReachable;
 - (BOOL)isPoorLinkQuality;
+- (BOOL)isRadioHot;
 - (int)linkQuality;
 - (id)linkQualityString;
 - (void)setDelegate:(id)arg1;

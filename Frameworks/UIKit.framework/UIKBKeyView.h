@@ -2,45 +2,77 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBTree;
+@class CALayer, NSString, UIKBRenderConfig, UIKBTree, UIKeyboardMenuView;
 
 @interface UIKBKeyView : UIView <UIKBCacheableView> {
-    struct CGPoint { 
-        float x; 
-        float y; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    CALayer *_keyBackgrounds;
+    CALayer *_keyBorders;
+    CALayer *_keyCaps;
+    UIKeyboardMenuView *_popupMenu;
+    BOOL _renderAsMask;
+    int _renderedKeyState;
+    BOOL _usesControlOpacities;
     struct __CFBoolean { } *m_allowsCaching;
-    int m_clipCorners;
-    } m_drawOrigin;
+    } m_drawFrame;
     UIKBTree *m_key;
-    UIKBTree *m_keyboard;
-    int m_state;
+    UIKBTree *m_keyplane;
+    UIKBRenderConfig *m_renderConfig;
 }
 
 @property(readonly) BOOL cacheDeferable;
+@property(readonly) NSString * cacheKey;
+@property(readonly) int cachedRenderFlags;
 @property(readonly) float cachedWidth;
-@property int clipCorners;
-@property struct CGPoint { float x1; float x2; } drawOrigin;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } displayInsets;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawFrame;
+@property(readonly) BOOL keepNonPersistent;
 @property(readonly) UIKBTree * key;
-@property(readonly) UIKBTree * keyboard;
-@property(readonly) BOOL shouldCache;
-@property(readonly) int state;
+@property(readonly) UIKBTree * keyplane;
+@property UIKeyboardMenuView * popupMenu;
+@property BOOL renderAsMask;
+@property(retain) UIKBRenderConfig * renderConfig;
+@property BOOL usesControlOpacities;
 
+- (void)_applyAppearanceInvocations;
+- (id)_generateBackdropMaskImage;
+- (id)_setupLayerIfNoLayer:(id)arg1 withContents:(id)arg2;
+- (BOOL)_shouldUpdateLayers;
+- (BOOL)_viewShouldBeOpaque;
 - (BOOL)cacheDeferable;
 - (id)cacheKey;
+- (id)cacheKeysForRenderFlags:(id)arg1;
+- (int)cachedRenderFlags;
 - (float)cachedWidth;
-- (int)clipCorners;
 - (void)dealloc;
+- (void)dimKeyCaps:(float)arg1 duration:(float)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })displayInsets;
 - (void)displayLayer:(id)arg1;
-- (struct CGPoint { float x1; float x2; })drawOrigin;
+- (void)drawContentsOfRenderers:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawFrame;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyboard:(id)arg2 key:(id)arg3 state:(int)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (BOOL)keepNonPersistent;
 - (id)key;
-- (id)keyboard;
-- (void)setClipCorners:(int)arg1;
-- (void)setDrawOrigin:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)shouldCache;
-- (int)state;
+- (id)keyplane;
+- (id)popupMenu;
+- (BOOL)renderAsMask;
+- (id)renderConfig;
+- (void)setDrawFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPopupMenu:(id)arg1;
+- (void)setRenderAsMask:(BOOL)arg1;
+- (void)setRenderConfig:(id)arg1;
+- (void)setUsesControlOpacities:(BOOL)arg1;
 - (int)textEffectsVisibilityLevel;
-- (void)updateForKeyboard:(id)arg1 key:(id)arg2;
+- (void)updateForKeyplane:(id)arg1 key:(id)arg2;
+- (BOOL)usesControlOpacities;
 
 @end

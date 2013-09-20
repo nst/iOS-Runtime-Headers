@@ -2,16 +2,27 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
+@class NSMutableDictionary;
+
 @interface PSInternationalLanguageController : PSListItemsController {
+    NSMutableDictionary *_cellCache;
 }
+
+@property(retain) NSMutableDictionary * cellCache;
 
 - (void)_removeBlackFrame;
 - (void)cancelButtonTapped;
+- (id)cellCache;
+- (void)dealloc;
 - (void)doneButtonTapped;
+- (void)generateLanguageCellCache;
 - (id)init;
+- (void)setCellCache:(id)arg1;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)updateNavigationItem;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -6,9 +6,10 @@
 
 @interface GKVoiceChatServicePrivate : NSObject <VideoConferenceDelegate, VideoConferenceRealTimeChannel> {
     struct tagCONNRESULT { 
-        int iCallID; 
+        unsigned int dwCallID; 
+        int iResultCount; 
         int iRole; 
-        int iRemoteCallID; 
+        unsigned int dwRemoteCallID; 
         int proto; 
         int bIfRelay; 
         unsigned short wRelayServType; 
@@ -72,14 +73,17 @@
         int bIfRemoteCellularQoS; 
         int iLocalCellTech; 
         int iRemoteCellTech; 
+        unsigned int dwCellularUniqueTag; 
         unsigned short wCellularMTU; 
+        int bIfUpgrade; 
+        struct tagCONNRESULT {} *next; 
     int bundle;
     int chatMode;
     <GKVoiceChatClient> *client;
     BOOL clientHasRTChannel;
     NSLock *clientLock;
     VideoConference *conf;
-    int curCallID;
+    unsigned long curCallID;
     } currentConnResult;
     int didUseICE;
     BOOL focus;
@@ -118,14 +122,14 @@
 
 + (id)defaultVoiceChatService;
 
-- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
+- (BOOL)acceptCallID:(unsigned long)arg1 error:(id*)arg2;
 - (int)chatMode;
 - (void)cleanup;
 - (id)client;
-- (id)createInvite:(id*)arg1 toParticipant:(id)arg2 callID:(int*)arg3;
+- (id)createInvite:(id*)arg1 toParticipant:(id)arg2 callID:(unsigned int*)arg3;
 - (id)createReplyUsingDictionary:(id)arg1 replyCode:(unsigned int)arg2 error:(id*)arg3;
 - (void)dealloc;
-- (void)denyCallID:(int)arg1;
+- (void)denyCallID:(unsigned long)arg1;
 - (void)forceNoICE:(BOOL)arg1;
 - (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(long)arg4;
 - (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
@@ -143,14 +147,14 @@
 - (BOOL)isMicrophoneMuted;
 - (BOOL)isOutputMeteringEnabled;
 - (double)localBitrate;
-- (id)localDisplayNameForCallID:(int)arg1;
+- (id)localDisplayNameForCallID:(unsigned long)arg1;
 - (double)localFramerate;
 - (void*)localVideoLayer;
 - (float)outputMeterLevel;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
 - (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 - (double)remoteBitrate;
-- (id)remoteDisplayNameForCallID:(int)arg1;
+- (id)remoteDisplayNameForCallID:(unsigned long)arg1;
 - (double)remoteFramerate;
 - (float)remoteParticipantVolume;
 - (void*)remoteVideoLayer;
@@ -166,15 +170,15 @@
 - (void)setRemoteVideoLayer:(void*)arg1;
 - (void)setState:(int)arg1;
 - (void)setWrapperService:(id)arg1;
-- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2 withCallID:(int)arg3;
+- (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2 withCallID:(unsigned long)arg3;
 - (int)startICEConnectionCheck:(id)arg1 isCaller:(BOOL)arg2;
 - (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (int)state;
 - (void)stopVoiceChatProc:(id)arg1;
 - (void)stopVoiceChatWithParticipantID:(id)arg1;
 - (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
-- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(int)arg3 error:(id)arg4;
-- (void)videoConference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
+- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned long)arg3 error:(id)arg4;
+- (void)videoConference:(id)arg1 didStopWithCallID:(unsigned long)arg2 error:(id)arg3;
 - (id)wrapperService;
 
 @end

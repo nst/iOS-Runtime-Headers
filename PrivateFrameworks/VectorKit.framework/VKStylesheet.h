@@ -2,36 +2,67 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, NSString, VKPGlobalProperties;
+@class NSMutableArray, NSString, VKGenericShieldDrawStyle, VKPGlobalProperties;
 
 @interface VKStylesheet : NSObject {
+    float _blendingFactor;
+    BOOL _canSelectIcons;
+    VKGenericShieldDrawStyle *_defaultGenericShieldStyle;
     NSMutableArray *_flatStyles;
+    NSMutableArray *_inheritance;
+    int _mapDisplayStyle;
+    int _mapDisplayStyleVariant;
+    BOOL _nightStyleVariantsInitialized;
     float _ppi;
     int _rasterPolygonChangeoverZ;
-    int _rasterTileMode;
     float _scale;
     NSString *_sheetName;
     VKPGlobalProperties *_styleGlobalProperties;
+    BOOL _supportsNightMode;
+    int _targetDisplay;
+    unsigned int _updateStamp;
 }
 
+@property float blendingFactor;
+@property BOOL canSelectIcons;
+@property(readonly) VKGenericShieldDrawStyle * defaultGenericShieldStyle;
+@property(readonly) int mapDisplayStyle;
+@property int mapDisplayStyleVariant;
 @property(readonly) VKPGlobalProperties * styleGlobalProperties;
+@property(readonly) int targetDisplay;
+@property(readonly) unsigned int updateStamp;
 
-+ (void)activeTileGroupWillChange:(id)arg1;
++ (void)_activeTileGroupWillChange;
 + (id)installedStylesheets;
-+ (id)stylesheetWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3;
++ (id)stylesheetWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(int)arg4;
 
-- (id)_styleMatchingAttributes:(id)arg1 vectorType:(int)arg2;
+- (float)_nightShieldBrightnessForVectorType:(int)arg1;
+- (id)_styleMatchingAttributes:(id)arg1 vectorType:(int)arg2 locale:(id)arg3;
+- (float)blendingFactor;
+- (BOOL)canSelectIcons;
 - (void)dealloc;
+- (id)defaultGenericShieldStyle;
 - (id)init;
-- (id)initWithData:(id)arg1 forName:(id)arg2 scale:(float)arg3 ppi:(float)arg4;
-- (id)initWithData:(id)arg1 forName:(id)arg2;
-- (id)initWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3;
+- (id)initWithData:(id)arg1 forName:(id)arg2 scale:(float)arg3 ppi:(float)arg4 targetDisplay:(int)arg5;
+- (id)initWithName:(id)arg1 scale:(float)arg2 ppi:(float)arg3 targetDisplay:(int)arg4;
 - (id)initWithScale:(float)arg1 ppi:(float)arg2;
+- (int)mapDisplayStyle;
+- (int)mapDisplayStyleVariant;
+- (void)prepareStyleVariantsForMapDisplayStyle:(int)arg1;
 - (int)rasterPolygonChangeoverZ;
-- (int)rasterTileMode;
 - (oneway void)release;
+- (void)setBlendingFactor:(float)arg1;
+- (void)setCanSelectIcons:(BOOL)arg1;
+- (void)setMapDisplayStyleVariant:(int)arg1;
 - (id)sheetName;
+- (float)shieldBrightnessForDisplayStyle:(int)arg1;
+- (float)shieldBrightnessForVectorType:(int)arg1;
+- (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2 locale:(id)arg3;
 - (id)styleForFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; id x12; int x13; }*)arg1 vectorType:(int)arg2;
 - (id)styleGlobalProperties;
+- (BOOL)supportsMapDisplayStyle:(int)arg1;
+- (int)targetDisplay;
+- (unsigned int)updateStamp;
+- (id)variantForStyle:(id)arg1;
 
 @end

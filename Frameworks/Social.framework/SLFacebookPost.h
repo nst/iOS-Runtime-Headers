@@ -4,7 +4,7 @@
 
 @class NSArray, NSMutableArray, NSString, NSURL, SLFacebookAlbum, SLFacebookPlace, SLFacebookPostPrivacySetting;
 
-@interface SLFacebookPost : NSObject <NSCoding> {
+@interface SLFacebookPost : NSObject <NSSecureCoding> {
     SLFacebookAlbum *_album;
     NSMutableArray *_imageAssetURLs;
     NSMutableArray *_imageData;
@@ -12,7 +12,11 @@
     NSString *_maskedApplicationID;
     SLFacebookPlace *_place;
     SLFacebookPostPrivacySetting *_privacySetting;
+    NSArray *_taggedUserIDs;
     NSString *_text;
+    NSMutableArray *_videoAssetURLs;
+    NSMutableArray *_videoData;
+    NSString *_videoExportPreset;
 }
 
 @property(retain) SLFacebookAlbum * album;
@@ -22,12 +26,20 @@
 @property(retain) NSString * maskedApplicationID;
 @property(retain) SLFacebookPlace * place;
 @property(retain) SLFacebookPostPrivacySetting * privacySetting;
+@property(retain) NSArray * taggedUserIDs;
 @property(retain) NSString * text;
+@property(retain) NSArray * videoAssetURLs;
+@property(retain) NSArray * videoData;
+@property(retain) NSString * videoExportPreset;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_encodableObjectProperties;
 - (void)addImageAssetURL:(id)arg1;
 - (void)addImageData:(id)arg1;
+- (void)addVideoAssetURL:(id)arg1;
+- (void)addVideoData:(id)arg1;
 - (id)album;
 - (id)copy;
 - (void)encodeWithCoder:(id)arg1;
@@ -46,7 +58,15 @@
 - (void)setMaskedApplicationID:(id)arg1;
 - (void)setPlace:(id)arg1;
 - (void)setPrivacySetting:(id)arg1;
+- (void)setTaggedUserIDs:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setVideoAssetURLs:(id)arg1;
+- (void)setVideoData:(id)arg1;
+- (void)setVideoExportPreset:(id)arg1;
+- (id)taggedUserIDs;
 - (id)text;
+- (id)videoAssetURLs;
+- (id)videoData;
+- (id)videoExportPreset;
 
 @end

@@ -9,6 +9,7 @@
     unsigned int _isBirthday : 1;
     unsigned int _isFacebook : 1;
     unsigned int _tentative : 1;
+    unsigned int _declined : 1;
     unsigned int _needsReply : 1;
     unsigned int _cancelled : 1;
     unsigned int _isEndDate : 1;
@@ -28,22 +29,26 @@
 + (float)defaultHeight;
 + (float)hourWidth;
 + (float)timeWidthIncludingDots:(BOOL)arg1;
++ (float)xMidpointForCalendarDot;
 
+- (void).cxx_destruct;
 - (id)_dot;
 - (id)_selectedBackgroundImage;
-- (void)dealloc;
 - (unsigned int)designator;
+- (void)drawBoldText:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 forWidth:(float)arg3 font:(id)arg4 lineBreakMode:(int)arg5 staticColor:(BOOL)arg6;
+- (void)drawDeemphasizedText:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 forWidth:(float)arg3 font:(id)arg4 lineBreakMode:(int)arg5 staticColor:(BOOL)arg6;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawText:(id)arg1 withDefaultColor:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 forWidth:(float)arg4 font:(id)arg5 lineBreakMode:(int)arg6 staticColor:(BOOL)arg7;
 - (id)init;
 - (id)initWithEvent:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 location:(id)arg3 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg4 allDay:(BOOL)arg5 tentative:(BOOL)arg6;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAllDay;
 - (BOOL)isCancelled;
 - (BOOL)isHighlighted;
 - (id)outlineImageWithColor:(id)arg1;
 - (void)setCancelled:(BOOL)arg1;
-- (void)setDisplayDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1;
+- (void)setDeclined:(BOOL)arg1;
+- (void)setDisplayDate:(id)arg1;
 - (void)setDotColor:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIndentsForMissingDot:(BOOL)arg1;
@@ -56,6 +61,7 @@
 - (void)setShowsColors:(BOOL)arg1;
 - (void)setTentative:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
+- (BOOL)setUpStaticDrawingColor;
 - (BOOL)showDisclosure;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)title;

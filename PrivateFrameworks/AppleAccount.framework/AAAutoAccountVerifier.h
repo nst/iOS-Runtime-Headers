@@ -6,10 +6,10 @@
    See Warning(s) below.
  */
 
-@class AAAccount, MSSearch, NSOperationQueue;
+@class ACAccount, MSSearch, NSOperationQueue;
 
 @interface AAAutoAccountVerifier : NSObject <MSSearchDelegate> {
-    AAAccount *_account;
+    ACAccount *_account;
     int _attempts;
     BOOL _canceled;
     id _handler;
@@ -17,9 +17,10 @@
     MSSearch *_search;
 }
 
-@property(retain) AAAccount * account;
+@property(retain) ACAccount * account;
 
 - (void).cxx_destruct;
+- (void)_resendVerificationEmailForAccount:(id)arg1 completion:(id)arg2;
 - (void)_validateToken:(id)arg1;
 - (void)_verify;
 - (id)account;

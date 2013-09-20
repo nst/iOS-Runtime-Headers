@@ -22,6 +22,7 @@
 }
 
 - (id).cxx_construct;
+- (id)_itemsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)allItems;
 - (id)breadthFirstDescription;
 - (void)clearAllItemsPerforming:(id)arg1;

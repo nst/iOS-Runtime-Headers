@@ -17,7 +17,6 @@
 - (void)dealloc;
 - (id)initWithWorkbook:(id)arg1 worksheet:(id)arg2 rowNumber:(int)arg3 columnNumber:(int)arg4;
 - (BOOL)isCurrentSheet:(id)arg1;
-- (bool)isThereContentOutsideOfLassoBoundsForRowMin:(unsigned int)arg1 rowMax:(unsigned int)arg2 columnMin:(unsigned int)arg3 columnMax:(unsigned int)arg4;
 - (unsigned int)resolveFile:(id)arg1;
 - (unsigned int)resolveFirstSheet:(id)arg1 lastSheet:(id)arg2;
 - (int)resolveFunctionName:(id)arg1;

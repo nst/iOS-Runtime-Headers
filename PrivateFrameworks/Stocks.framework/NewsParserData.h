@@ -5,8 +5,8 @@
 @class NSMutableArray, NSMutableString;
 
 @interface NewsParserData : NSObject {
-    NSMutableString *buffer;
-    NSMutableArray *newsItems;
+    NSMutableString *_buffer;
+    NSMutableArray *_newsItems;
     int state;
 }
 

@@ -24,7 +24,6 @@
 @property <MPVideoOverlayDelegate> * delegate;
 @property unsigned long long desiredParts;
 @property unsigned long long disabledParts;
-@property int interfaceOrientation;
 @property(retain) MPAVItem * item;
 @property(readonly) UINavigationBar * navigationBar;
 @property BOOL navigationBarHidden;
@@ -32,6 +31,7 @@
 @property <MPVideoControllerProtocol> * videoViewController;
 @property unsigned long long visibleParts;
 
+- (void).cxx_destruct;
 - (double)_duration;
 - (void)_endSliderTracking;
 - (void)_itemDurationDidChangeNotification:(id)arg1;
@@ -51,7 +51,6 @@
 - (void)hideAlternateTracks;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)interfaceOrientation;
 - (id)item;
 - (void)layoutSubviews;
 - (id)navigationBar;
@@ -64,7 +63,6 @@
 - (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDesiredParts:(unsigned long long)arg1;
 - (void)setDisabledParts:(unsigned long long)arg1;
-- (void)setInterfaceOrientation:(int)arg1;
 - (void)setItem:(id)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, PDAnimateMotionBehavior, PDAnimationTargetElement, PDBuild;
+@class NSString, PDAnimateMotionBehavior, PDAnimationTarget, PDBuild;
 
 @interface PDAnimationCache : NSObject {
     PDBuild *mBuild;
@@ -24,7 +24,7 @@
     int mPresetClass;
     int mPresetId;
     int mPresetSubType;
-    PDAnimationTargetElement *mTargetElement;
+    PDAnimationTarget *mTarget;
     double mValue;
 }
 
@@ -47,7 +47,7 @@
 @property int presetClass;
 @property int presetId;
 @property int presetSubType;
-@property(retain) PDAnimationTargetElement * targetElement;
+@property(retain) PDAnimationTarget * target;
 @property double value;
 
 + (id)createAnimationInfoDataForCacheItem:(id)arg1 order:(unsigned int)arg2;
@@ -95,9 +95,9 @@
 - (void)setPresetClass:(int)arg1;
 - (void)setPresetId:(int)arg1;
 - (void)setPresetSubType:(int)arg1;
-- (void)setTargetElement:(id)arg1;
+- (void)setTarget:(id)arg1;
 - (void)setValue:(double)arg1;
-- (id)targetElement;
+- (id)target;
 - (double)value;
 
 @end

@@ -14,7 +14,6 @@
 }
 
 + (id)activeFencePort;
-+ (void)initialize;
 
 - (int)__automatic_invalidation_logic;
 - (BOOL)_isDeallocating;
@@ -27,7 +26,6 @@
 - (void)invalidate;
 - (id)methodSignatureForSelector:(SEL)arg1 withRemoteProtocol:(id)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (id)proxyDeliveryingXPCReplyHandlersAsynchronously;
 - (id)proxyWithRemoteProtocol:(id)arg1;
 - (oneway void)release;
 - (void)restrictDecodingToWhitelistedClassNames:(id)arg1;

@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBSectionSubtypeParameters, NSData, NSLock, NSMutableDictionary, NSString;
+@class BBSectionIcon, BBSectionSubtypeParameters, NSLock, NSMutableDictionary, NSString;
 
-@interface BBSectionParameters : NSObject {
+@interface BBSectionParameters : NSObject <NSSecureCoding> {
     NSMutableDictionary *_allSubtypeParameters;
     BBSectionSubtypeParameters *_defaultSubtypeParameters;
     NSString *_displayName;
     BOOL _displaysCriticalBulletins;
-    NSData *_iconData;
+    BBSectionIcon *_icon;
     NSLock *_lock;
     unsigned int _messageNumberOfLines;
     BOOL _orderSectionUsingRecencyDate;
@@ -23,7 +23,7 @@
 @property(retain) BBSectionSubtypeParameters * defaultSubtypeParameters;
 @property(copy) NSString * displayName;
 @property BOOL displaysCriticalBulletins;
-@property(retain) NSData * iconData;
+@property(retain) BBSectionIcon * icon;
 @property unsigned int messageNumberOfLines;
 @property BOOL orderSectionUsingRecencyDate;
 @property BOOL showsDateInFloatingLockScreenAlert;
@@ -34,6 +34,7 @@
 + (void)addSectionParametersToCache:(id)arg1;
 + (id)copyCachedSectionParametersWithIdentifier:(id)arg1;
 + (void)removeSectionParametersFromCache:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)allSubtypeParameters;
 - (void)dealloc;
@@ -41,7 +42,7 @@
 - (id)displayName;
 - (BOOL)displaysCriticalBulletins;
 - (void)encodeWithCoder:(id)arg1;
-- (id)iconData;
+- (id)icon;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)messageNumberOfLines;
@@ -51,7 +52,7 @@
 - (void)setDefaultSubtypeParameters:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDisplaysCriticalBulletins:(BOOL)arg1;
-- (void)setIconData:(id)arg1;
+- (void)setIcon:(id)arg1;
 - (void)setMessageNumberOfLines:(unsigned int)arg1;
 - (void)setOrderSectionUsingRecencyDate:(BOOL)arg1;
 - (void)setShowsDateInFloatingLockScreenAlert:(BOOL)arg1;

@@ -10,6 +10,7 @@
 
 @property <EKCellShortener> * shortener;
 
+- (void).cxx_destruct;
 - (void)_checkValueWidth;
 - (void)layoutSubviews;
 - (void)setShortener:(id)arg1;

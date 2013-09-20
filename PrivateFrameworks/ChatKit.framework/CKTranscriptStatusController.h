@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversation, CKSendingProgressView, NSMutableSet, NSString, NSTimer, UIView;
+@class CKConversation, NSMutableSet, NSString, NSTimer, UIView;
 
 @interface CKTranscriptStatusController : NSObject {
+    BOOL _animatingFadeOut;
     CKConversation *_conversation;
     NSMutableSet *_currentMessages;
     id _delegate;
     BOOL _finishingUp;
     NSString *_lastMsg;
     float _lastVal;
-    UIView *_multipleRecipientTitleView;
     NSTimer *_progressUpdateTimer;
-    CKSendingProgressView *_statusView;
+    UIView *_progressView;
     BOOL _suspended;
     NSString *_title;
     BOOL _updatingProgress;
@@ -34,7 +34,6 @@
 - (void)_refreshNavigationItemViewAnimate:(BOOL)arg1;
 - (BOOL)_shouldShowProgress;
 - (void)_startUpdatingProgress;
-- (id)_statusView;
 - (id)_title;
 - (void)_updateCurrentMessages;
 - (void)_updateNavItemTitleView:(BOOL)arg1;
@@ -49,6 +48,7 @@
 - (void)resume;
 - (void)setConversation:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setProgressIndicatorHidden:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)suspend;
 - (id)title;

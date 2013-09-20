@@ -12,9 +12,11 @@
 }
 
 - (int)_activityIndicatorStyle;
+- (void)_startAnimating;
+- (void)_stopAnimating;
 - (void)dealloc;
 - (void)setVisible:(BOOL)arg1;
-- (float)shadowPaddingForStyle:(int)arg1;
+- (float)shadowPadding;
 - (float)updateContentsAndWidth;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 

@@ -20,7 +20,7 @@
 + (void)clearSharedLocationUpdater;
 + (id)sharedLocationUpdater;
 
-- (void)_failed:(int)arg1;
+- (void)_failed:(unsigned int)arg1;
 - (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (id)currentCity;
@@ -28,7 +28,7 @@
 - (void)didProcessDocument;
 - (void)enableProgressIndicator:(BOOL)arg1;
 - (void)failCity:(id)arg1;
-- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(int)arg2;
+- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned int)arg2;
 - (void)handleNilCity;
 - (BOOL)isDataValid:(id)arg1;
 - (void)parsedResultCity:(id)arg1;

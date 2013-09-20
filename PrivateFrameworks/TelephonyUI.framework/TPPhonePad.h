@@ -2,12 +2,15 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@interface TPPhonePad : UIControl {
+@class <TPDialerKeypadDelegate>;
+
+@interface TPPhonePad : UIControl <TPDialerKeypadProtocol> {
     unsigned int _delegateSoundCallbacks : 1;
     unsigned int _soundsActivated : 1;
     float _bottomHeight;
-    id _delegate;
+    <TPDialerKeypadDelegate> *_delegate;
     int _downKey;
+    int _highlightKey;
     unsigned int _incompleteSounds;
     struct __CFSet { } *_inflightSounds;
     struct __CFDictionary { } *_keyToButtonMap;
@@ -29,32 +32,39 @@
 - (void)_activateSounds:(BOOL)arg1;
 - (void)_appResumed;
 - (void)_appSuspended;
-- (id)_buttonForKeyAtIndex:(int)arg1;
+- (id)_buttonForKeyAtIndex:(unsigned int)arg1;
 - (void)_handleKey:(id)arg1 forUIEvent:(id)arg2;
-- (void)_handleKeyPressAndHold:(id)arg1;
+- (void)_handleKeyPressAndHoldForDownKey:(id)arg1;
+- (void)_handleKeyPressAndHoldForHighlightedKey:(id)arg1;
+- (void)_handleKeyPressAndHoldForKey:(int)arg1;
+- (id)_highlightedImage;
 - (id)_imageByCroppingImage:(id)arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (int)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_keypadImage;
 - (struct CGPoint { float x1; float x2; })_keypadOrigin;
 - (void)_notifySoundCompletionIfNecessary:(unsigned long)arg1;
-- (void)_playSoundForKey:(int)arg1;
+- (void)_playSoundForKey:(unsigned int)arg1;
 - (id)_pressedImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForKey:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForKey:(unsigned int)arg1;
 - (void)_stopAllSoundsForcingCallbacks:(BOOL)arg1;
-- (void)_stopSoundForKey:(int)arg1;
+- (void)_stopSoundForKey:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_updateRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
 - (float)_yFudge;
 - (BOOL)cancelTouchTracking;
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)highlightKeyAtIndex:(int)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (int)indexForHighlightedKey;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)movedFromWindow:(id)arg1;
 - (void)movedToWindow:(id)arg1;
+- (void)performTapActionDownForHighlightedKey;
+- (void)performTapActionEndForHighlightedKey;
 - (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeFromSuperview;
 - (id)scriptingInfoWithChildren;
-- (void)setButton:(id)arg1 forKeyAtIndex:(int)arg2;
+- (void)setButton:(id)arg1 forKeyAtIndex:(unsigned int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setNeedsDisplayForKey:(int)arg1;

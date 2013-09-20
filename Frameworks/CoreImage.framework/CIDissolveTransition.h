@@ -12,7 +12,7 @@
 
 @property(retain) CIImage * inputImage;
 @property(retain) CIImage * inputTargetImage;
-@property(copy) NSNumber * inputTime;
+@property(retain) NSNumber * inputTime;
 
 + (id)customAttributes;
 

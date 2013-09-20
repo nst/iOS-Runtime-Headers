@@ -5,14 +5,12 @@
 @class NSData;
 
 @interface MSMSPlatform : NSObject <MSPlatform> {
-    NSData *_developmentPushToken;
     BOOL _isPerfLoggingEnabled;
-    NSData *_productionPushToken;
+    NSData *_pushToken;
 }
 
-@property(readonly) NSData * developmentPushToken;
 @property BOOL isPerfLoggingEnabled;
-@property(readonly) NSData * productionPushToken;
+@property(retain) NSData * pushToken;
 
 + (id)thePlatform;
 
@@ -28,7 +26,6 @@
 - (id)authTokenForPersonID:(id)arg1;
 - (id)baseURLForPersonID:(id)arg1;
 - (Class)deletePluginClass;
-- (id)developmentPushToken;
 - (void)didDetectUnrecoverableCondition;
 - (id)fullNameFromFirstName:(id)arg1 lastName:(id)arg2;
 - (id)hardwareString;
@@ -41,12 +38,13 @@
 - (BOOL)personIDUsesProductionPushEnvironment:(id)arg1;
 - (BOOL)policyMayDownload;
 - (BOOL)policyMayUpload;
-- (id)productionPushToken;
 - (Class)publisherPluginClass;
+- (id)pushToken;
 - (id)pushTokenForPersonID:(id)arg1;
 - (void)setIsPerfLoggingEnabled:(BOOL)arg1;
-- (void)setPushToken:(id)arg1 production:(BOOL)arg2;
+- (void)setPushToken:(id)arg1;
 - (Class)sharingPluginClass;
+- (BOOL)shouldEnableNewFeatures;
 - (BOOL)shouldLogAtLevel:(int)arg1;
 - (id)socketOptions;
 - (Class)subscriberPluginClass;

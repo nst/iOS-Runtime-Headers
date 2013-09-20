@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class TSDBezierPath;
+
 @interface MFPhonePath : MFPath {
-    struct CGPath { } *m_path;
+    TSDBezierPath *m_path;
     int m_state;
 }
 
 - (int)abort;
-- (void)appendBezierPath:(struct CGPath { }*)arg1 dc:(id)arg2;
+- (void)appendBezierPath:(id)arg1 dc:(id)arg2;
 - (int)begin;
 - (int)closeFigure;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -17,9 +19,9 @@
 - (int)end;
 - (int)fill:(id)arg1;
 - (int)flatten;
-- (struct CGPath { }*)getBezierPath;
+- (id)getBezierPath;
 - (id)init;
-- (id)initWithPath:(struct CGPath { }*)arg1 state:(int)arg2;
+- (id)initWithPath:(id)arg1 state:(int)arg2;
 - (BOOL)isOpen;
 - (int)state;
 - (int)stroke:(id)arg1;

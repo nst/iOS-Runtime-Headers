@@ -17,7 +17,7 @@
     } listLock;
 }
 
-@property id changeListener;
+@property(copy) id changeListener;
 
 + (id)defaultDeviceOfType:(unsigned long)arg1;
 + (id)newDeviceList;

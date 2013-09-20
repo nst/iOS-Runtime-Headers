@@ -83,14 +83,19 @@
 - (void)fixPropertiesInheritance:(id)arg1;
 - (void)fixRecurrenceDates;
 - (void)fixRecurrenceRules;
+- (BOOL)forcedAllDay;
+- (BOOL)ignorePropertyWithName:(id)arg1;
 - (id)init;
 - (BOOL)isAllDay;
 - (id)last_modified;
 - (id)location;
 - (id)organizer;
+- (id)parametersToIncludeForChecksumVersion:(int)arg1;
 - (unsigned int)priority;
 - (id)properties;
 - (id)propertiesForName:(id)arg1;
+- (id)propertiesThatIfPresentExcludeThisComponentFromChecksummingForVersion:(int)arg1;
+- (id)propertiesToIncludeForChecksumVersion:(int)arg1;
 - (id)rdate;
 - (id)recurrence_id;
 - (void)removeComponent:(id)arg1;
@@ -110,6 +115,7 @@
 - (void)setDuration:(id)arg1;
 - (void)setExdate:(id)arg1;
 - (void)setExrule:(id)arg1;
+- (void)setForcedAllDay:(BOOL)arg1;
 - (void)setLast_modified:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setOrganizer:(id)arg1;
@@ -137,6 +143,8 @@
 - (void)setX_apple_scheduletag:(id)arg1;
 - (void)setX_apple_serverFilename:(id)arg1;
 - (void)setX_apple_structured_location:(id)arg1;
+- (void)setX_apple_travel_duration:(id)arg1;
+- (void)setX_apple_travel_start:(id)arg1;
 - (void)setX_calendarserver_access:(int)arg1;
 - (int)status;
 - (id)summary;
@@ -154,6 +162,8 @@
 - (id)x_apple_scheduletag;
 - (id)x_apple_serverFilename;
 - (id)x_apple_structured_location;
+- (id)x_apple_travel_duration;
+- (id)x_apple_travel_start;
 - (int)x_calendarserver_access;
 
 @end

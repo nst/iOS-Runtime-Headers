@@ -2,20 +2,21 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, NSString, SSDialogButton;
+@class NSArray, NSDictionary, NSMutableDictionary, NSString, SSDialogButton;
 
 @interface SSDialog : NSObject {
     NSArray *_buttons;
-    NSDictionary *_dialogDictionary;
+    NSMutableDictionary *_dialogDictionary;
 }
 
-@property(readonly) NSArray * buttons;
-@property(readonly) SSDialogButton * defaultButton;
+@property(copy) NSArray * buttons;
+@property(retain) SSDialogButton * defaultButton;
 @property(readonly) NSDictionary * dialogDictionary;
 @property(readonly) NSString * dialogKind;
-@property(readonly) NSString * message;
-@property(readonly) NSString * title;
+@property(copy) NSString * message;
+@property(copy) NSString * title;
 
+- (void)_setValue:(id)arg1 forProperty:(id)arg2;
 - (id)buttons;
 - (void)dealloc;
 - (id)defaultButton;
@@ -24,6 +25,10 @@
 - (id)init;
 - (id)initWithDialogDictionary:(id)arg1;
 - (id)message;
+- (void)setButtons:(id)arg1;
+- (void)setDefaultButton:(id)arg1;
+- (void)setMessage:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (id)title;
 - (id)valueForProperty:(id)arg1;
 

@@ -22,6 +22,7 @@
 - (BOOL)isMergedPropertyForSelector:(SEL)arg1;
 - (BOOL)isMergedWithParent;
 - (id)overrideForSelector:(SEL)arg1;
+- (void)p_setParent:(id)arg1;
 - (id)parent;
 - (void)removeUnnecessaryOverrides;
 - (void)setMerged:(BOOL)arg1;

@@ -6,21 +6,21 @@
     boolmByPosition;
     boolmRelative;
     boolmSelected;
-    unsigned int mCount;
-    unsigned int mFieldId;
+    unsigned long mCount;
+    unsigned long mFieldId;
 }
 
 + (id)pivotAreaReference;
 
 - (bool)byPosition;
-- (unsigned int)count;
-- (unsigned int)fieldId;
+- (unsigned long)count;
+- (unsigned long)fieldId;
 - (id)init;
 - (bool)relative;
 - (bool)selected;
 - (void)setByPosition:(bool)arg1;
-- (void)setCount:(unsigned int)arg1;
-- (void)setFieldId:(unsigned int)arg1;
+- (void)setCount:(unsigned long)arg1;
+- (void)setFieldId:(unsigned long)arg1;
 - (void)setRelative:(bool)arg1;
 - (void)setSelected:(bool)arg1;
 

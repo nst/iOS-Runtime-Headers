@@ -7,6 +7,7 @@
 @interface AXDialectMap : NSObject {
     AXLangMap *_langMap;
     NSLocale *_locale;
+    NSCharacterSet *_secondaryLanguageRange;
     NSCharacterSet *_speakableCharacters;
     NSString *_specificLanguageID;
     NSString *_voiceName;
@@ -19,7 +20,9 @@
 @property(readonly) NSString * languageNameInCurrentLocale;
 @property(readonly) NSString * languageNameInNativeLocale;
 @property(retain) NSLocale * locale;
+@property(readonly) NSString * localeNameInCurrentLocale;
 @property(readonly) NSString * regionID;
+@property(retain) NSCharacterSet * secondaryLanguageRange;
 @property(retain) NSCharacterSet * speakableCharacters;
 @property(copy) NSString * specificLanguageID;
 @property(copy) NSString * voiceName;
@@ -31,7 +34,8 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (id)initWithLocale:(id)arg1 voiceName:(id)arg2 specificLanguageID:(id)arg3 speakableCharacters:(id)arg4;
+- (id)initWithLocale:(id)arg1 voiceName:(id)arg2 specificLanguageID:(id)arg3 speakableCharacters:(id)arg4 secondaryLanguageRange:(id)arg5;
+- (BOOL)isDialectSecondaryForCharacter:(unsigned short)arg1;
 - (id)langManager;
 - (id)langMap;
 - (id)languageNameAndLocaleInCurrentLocale;
@@ -39,9 +43,12 @@
 - (id)languageNameInCurrentLocale;
 - (id)languageNameInNativeLocale;
 - (id)locale;
+- (id)localeNameInCurrentLocale;
 - (id)regionID;
+- (id)secondaryLanguageRange;
 - (void)setLangMap:(id)arg1;
 - (void)setLocale:(id)arg1;
+- (void)setSecondaryLanguageRange:(id)arg1;
 - (void)setSpeakableCharacters:(id)arg1;
 - (void)setSpecificLanguageID:(id)arg1;
 - (void)setVoiceName:(id)arg1;

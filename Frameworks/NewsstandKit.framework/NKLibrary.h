@@ -25,10 +25,7 @@
 
 + (BOOL)_isNewsstandApp;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (void)load;
 + (id)sharedLibrary;
-+ (id)sharedLibraryCreatingIfNecessary:(BOOL)arg1;
-+ (id)sharedLibraryIfExists;
 
 - (void)__actuallySave;
 - (id)_appSupportURL;
@@ -44,6 +41,7 @@
 - (void)_load;
 - (void)_markAsDirtyAndSave;
 - (void)_markIssuesAndSave;
+- (void)_performBackgroundTask:(id)arg1 withDescription:(id)arg2;
 - (void)_saveIfNeeded;
 - (void)_saveIfNeededAfterDelay:(double)arg1;
 - (void)_saveNowIfNeeded;

@@ -2,31 +2,31 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, NSString, NSTimer, UIImageView, UILabel, UIView;
+@class MPAVController, MPAudioDeviceController, MPVolumeController, NSString, NSTimer, UIImage, UIImageView, UILabel, UIView;
 
-@interface MPVolumeSlider : UISlider {
-    float _EUVolumeLimit;
+@interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate> {
+    MPAudioDeviceController *_audioDeviceController;
     NSTimer *_commitTimer;
     BOOL _isOffScreen;
-    MPAVController *_player;
     UILabel *_routeNameLabel;
     int _style;
     UIImageView *_thumbImageView;
+    BOOL _thumbIsDefault;
     UIImageView *_thumbMaskImageView;
-    NSString *_volumeAudioCategory;
+    MPVolumeController *_volumeController;
     BOOL _volumeWarningBlinking;
-    BOOL _volumeWarningEnabled;
-    int _volumeWarningState;
+    UIImage *_volumeWarningTrackImage;
     UIView *_volumeWarningView;
 }
 
 @property(setter=_setIsOffScreen:) BOOL _isOffScreen;
+@property(readonly) UIView * _newVolumeWarningView;
 @property(retain) MPAVController * player;
 @property(readonly) int style;
 @property(copy) NSString * volumeAudioCategory;
+@property(retain) UIImage * volumeWarningTrackImage;
 
-- (void)_EUVolumeLimitDidChange:(id)arg1;
-- (void)_EUVolumeLimitEnforcedDidChange:(id)arg1;
+- (void).cxx_destruct;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
@@ -37,20 +37,16 @@
 - (void)_endTracking;
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
 - (BOOL)_isOffScreen;
-- (BOOL)_isPlayerInValidState;
 - (void)_layoutForAvailableRoutes;
 - (void)_layoutMaskForThumb;
 - (void)_layoutVolumeWarningView;
 - (id)_maxTrackImageForStyle:(int)arg1;
 - (id)_minTrackImageForStyle:(int)arg1;
+- (id)_newVolumeWarningView;
+- (void)_resetThumbImageForState:(unsigned int)arg1;
 - (void)_routeNameLabelAnimationDidEnd;
 - (void)_setIsOffScreen:(BOOL)arg1;
-- (void)_systemMuteDidChange:(id)arg1;
-- (void)_systemVolumeDidChange:(id)arg1;
 - (id)_thumbImageForStyle:(int)arg1;
-- (void)_updateVolumeFromAVController;
-- (void)_volumeDidChange:(id)arg1;
-- (float)_volumeFromAVController;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (id)createThumbView;
@@ -69,12 +65,18 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setThumbImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)setVolumeAudioCategory:(id)arg1;
+- (void)setVolumeWarningTrackImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)style;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (id)volumeAudioCategory;
+- (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
+- (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(BOOL)arg2;
+- (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
+- (id)volumeWarningTrackImage;
 
 @end

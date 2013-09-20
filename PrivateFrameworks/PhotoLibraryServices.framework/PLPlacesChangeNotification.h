@@ -4,7 +4,7 @@
 
 @class NSArray, NSOrderedSet, PLChangeNotification, PLPlaces;
 
-@interface PLPlacesChangeNotification : PLAlbumListChangeNotification {
+@interface PLPlacesChangeNotification : PLAssetContainerListChangeNotification {
     PLChangeNotification *_changeNotification;
     NSArray *_changedPlacesList;
     NSOrderedSet *_newPlacesSet;

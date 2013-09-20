@@ -2,32 +2,23 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, UIView;
+@class PSSpecifier, UIViewController;
 
 @interface PSEditingPane : UIView {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
     unsigned int _requiresKeyboard : 1;
     id _delegate;
-    } _pinstripeRect;
-    UIView *_pinstripeView;
     PSSpecifier *_specifier;
+    UIViewController *_viewController;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pinstripeRect;
+@property UIViewController * viewController;
 
 + (id)defaultBackgroundColor;
 + (float)preferredHeight;
 
 - (void)addNewValue;
 - (BOOL)changed;
+- (id)childViewControllerForHostingViewController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
@@ -35,15 +26,19 @@
 - (void)editMode;
 - (BOOL)handlesDoneButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pinstripeRect;
+- (void)insetContent;
+- (void)layoutInsetContent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)preferenceSpecifier;
 - (id)preferenceValue;
 - (BOOL)requiresKeyboard;
+- (id)scrollViewToBeInsetted;
 - (void)setDelegate:(id)arg1;
-- (void)setPinstripeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPreferenceSpecifier:(id)arg1;
 - (void)setPreferenceValue:(id)arg1;
+- (void)setViewController:(id)arg1;
+- (BOOL)shouldInsetContent;
 - (id)specifierLabel;
+- (id)viewController;
 - (void)viewDidBecomeVisible;
 - (BOOL)wantsNewButton;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

@@ -4,7 +4,7 @@
 
 @class MPStoreOfferContentRating, NSDictionary;
 
-@interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSCoding, NSCopying> {
+@interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSSecureCoding, NSCopying> {
     MPStoreOfferContentRating *_contentRating;
     unsigned int _indexInCollectionItems;
     NSDictionary *_lookupCollectionPropertyValues;
@@ -13,10 +13,11 @@
 
 + (id)assetLookupKeyForItemMediaProperty:(id)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
-+ (BOOL)canMergeStoreOfferMediaItemsLocalItems:(id)arg1;
++ (BOOL)canMergeStoreOfferWithLocalMediaItems:(id)arg1;
++ (BOOL)canRequestStoreOfferForLocalMediaItems:(id)arg1;
 + (id)collectionLookupKeyForMediaProperty:(id)arg1;
 + (id)contentRatingForCollectionPropertyValues:(id)arg1 itemIndex:(unsigned int)arg2;
-+ (id)fallbackPropertyValues;
++ (id)defaultPropertyValues;
 + (BOOL)hasMediaItemValuesForStoreLookupCollectionPropertyValues:(id)arg1 itemIndex:(unsigned int)arg2;
 + (id)itemLookupKeyForMediaProperty:(id)arg1;
 + (id)localRepresentativeItemPropertyForMediaProperty:(id)arg1;
@@ -28,12 +29,13 @@
 + (id)offerDictionaryWithPreferredAssetDictionaryInItemResponseDictionary:(id)arg1;
 + (id)offerLookupKeyForItemMediaProperty:(id)arg1;
 + (id)preferredAssetDictionaryInOfferDictionary:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_lookupOfferDictionaries;
 - (BOOL)_offeredItemAlreadyExists;
 - (id)buyOfferForVariant:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
@@ -43,7 +45,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)mediaLibrary;
 - (int)preferredStoreOfferVariant;
-- (void)setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 
 @end

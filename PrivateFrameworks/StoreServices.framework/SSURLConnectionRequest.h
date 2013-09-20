@@ -2,19 +2,27 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSURLConnectionRequestDelegate>, NSURLRequest, SSURLRequestProperties;
+@class <SSURLConnectionRequestDelegate>, NSURLRequest, SSAuthenticationContext, SSURLRequestProperties;
 
 @interface SSURLConnectionRequest : SSRequest <SSXPCCoding> {
+    SSAuthenticationContext *_authenticationContext;
     SSURLRequestProperties *_requestProperties;
+    BOOL _runsInProcess;
     BOOL _shouldMescalSign;
 }
 
 @property(readonly) NSURLRequest * URLRequest;
+@property(copy) SSAuthenticationContext * authenticationContext;
 @property <SSURLConnectionRequestDelegate> * delegate;
 @property(readonly) SSURLRequestProperties * requestProperties;
+@property BOOL runsInProcess;
 @property BOOL shouldMescalSign;
 
++ (id)newRadioRequestWithRequestProperties:(id)arg1;
+
 - (id)URLRequest;
+- (BOOL)_canRunInProcess;
+- (id)authenticationContext;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)init;
@@ -22,7 +30,10 @@
 - (id)initWithURLRequest:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)requestProperties;
+- (BOOL)runsInProcess;
 - (id)sendSynchronousRequestReturningError:(id*)arg1;
+- (void)setAuthenticationContext:(id)arg1;
+- (void)setRunsInProcess:(BOOL)arg1;
 - (void)setShouldMescalSign:(BOOL)arg1;
 - (BOOL)shouldMescalSign;
 - (BOOL)start;

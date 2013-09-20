@@ -50,6 +50,7 @@
 - (int)_lastTouchCount;
 - (struct UIOffset { float x1; float x2; })_offsetInViewFromScreenLocation:(struct CGPoint { float x1; float x2; })arg1 toScreenLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_previousVelocitySample;
+- (void)_processTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_removeHysteresisFromTranslation;
 - (void)_resetGestureRecognizer;
 - (void)_resetVelocitySamples;
@@ -62,6 +63,7 @@
 - (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
 - (BOOL)_updateMovingTouchesArraySavingOldArray:(id*)arg1;
 - (id)_velocitySample;
+- (void)_willBeginAfterSatisfyingFailureRequirements;
 - (BOOL)_willScrollX;
 - (BOOL)_willScrollY;
 - (void)dealloc;

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBAction, BBAttachments, BBContent, BBObserver, BBSound, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSSet, NSString, NSTimeZone;
+@class BBAction, BBAttachments, BBContent, BBSectionIcon, BBSound, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimeZone;
 
 @interface BBBulletin : NSObject <NSCopying, NSCoding> {
-    int _accessoryStyle;
+    unsigned int _accessoryStyle;
     NSMutableDictionary *_actions;
     int _addressBookRecordID;
     NSSet *_alertSuppressionContexts;
@@ -19,14 +19,17 @@
     NSDate *_date;
     int _dateFormatStyle;
     BOOL _dateIsAllDay;
+    NSString *_dismissalID;
     NSDate *_endDate;
     NSDate *_expirationDate;
     unsigned int _expirationEvents;
     BOOL _expiresOnPublisherDeath;
+    BOOL _hasEventDate;
     NSDate *_lastInterruptDate;
     NSMutableArray *_lifeAssertions;
     BBContent *_modalAlertContent;
-    BBObserver *_observer;
+    NSMutableSet *_observers;
+    NSDate *_publicationDate;
     NSString *_publisherBulletinID;
     NSString *_publisherRecordID;
     NSDate *_recencyDate;
@@ -34,14 +37,17 @@
     int _sectionSubtype;
     BOOL _showsMessagePreview;
     BBSound *_sound;
+    BBContent *_starkBannerContent;
     NSSet *_subsectionIDs;
     NSTimeZone *_timeZone;
     NSString *_unlockActionLabelOverride;
+    BOOL _usesExternalSync;
+    BOOL _wantsFullscreenPresentation;
     NSSet *alertSuppressionAppIDs_deprecated;
     unsigned int realertCount_deprecated;
 }
 
-@property int accessoryStyle;
+@property unsigned int accessoryStyle;
 @property(copy) BBAction * acknowledgeAction;
 @property(retain) NSMutableDictionary * actions;
 @property int addressBookRecordID;
@@ -62,12 +68,14 @@
 @property int dateFormatStyle;
 @property BOOL dateIsAllDay;
 @property(copy) BBAction * defaultAction;
+@property(copy) NSString * dismissalID;
 @property(retain) NSDate * endDate;
 @property(retain) NSDate * expirationDate;
 @property unsigned int expirationEvents;
 @property(copy) BBAction * expireAction;
 @property BOOL expiresOnPublisherDeath;
 @property(readonly) NSString * fullUnlockActionLabel;
+@property BOOL hasEventDate;
 @property(readonly) int iPodOutAlertType;
 @property(readonly) BOOL inertWhenLocked;
 @property(retain) NSDate * lastInterruptDate;
@@ -76,10 +84,11 @@
 @property(readonly) unsigned int messageNumberOfLines;
 @property(readonly) NSString * missedBannerDescriptionFormat;
 @property(retain) BBContent * modalAlertContent;
-@property(retain) BBObserver * observer;
+@property(retain) NSMutableSet * observers;
 @property(readonly) BOOL orderSectionUsingRecencyDate;
 @property(readonly) BOOL preservesUnlockActionCase;
 @property(readonly) int primaryAttachmentType;
+@property(retain) NSDate * publicationDate;
 @property(copy) NSString * publisherBulletinID;
 @property(readonly) unsigned int realertCount;
 @property unsigned int realertCount_deprecated;
@@ -89,12 +98,14 @@
 @property(readonly) NSString * sectionDisplayName;
 @property(readonly) BOOL sectionDisplaysCriticalBulletins;
 @property(copy) NSString * sectionID;
-@property(readonly) NSData * sectionIconData;
+@property(readonly) BBSectionIcon * sectionIcon;
 @property int sectionSubtype;
 @property(readonly) BOOL showsDateInFloatingLockScreenAlert;
 @property BOOL showsMessagePreview;
 @property(readonly) BOOL showsSubtitle;
+@property(copy) BBAction * snoozeAction;
 @property(retain) BBSound * sound;
+@property(retain) BBContent * starkBannerContent;
 @property(copy) NSSet * subsectionIDs;
 @property(copy) NSString * subtitle;
 @property(readonly) unsigned int subtypePriority;
@@ -104,8 +115,10 @@
 @property(readonly) NSString * topic;
 @property(readonly) NSString * unlockActionLabel;
 @property(copy) NSString * unlockActionLabelOverride;
+@property BOOL usesExternalSync;
 @property(readonly) BOOL usesVariableLayout;
 @property(readonly) BOOL visuallyIndicatesWhenDateIsInFuture;
+@property BOOL wantsFullscreenPresentation;
 
 + (void)addBulletinToCache:(id)arg1;
 + (id)bulletinWithBulletin:(id)arg1;
@@ -113,15 +126,18 @@
 + (void)killSounds;
 + (void)removeBulletinFromCache:(id)arg1;
 
-- (id)_actionKeyForButtonIndex:(unsigned int)arg1;
+- (id)_actionKeyForType:(int)arg1;
 - (void)_fillOutCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
-- (id)_responseForActionKey:(id)arg1;
-- (int)accessoryStyle;
+- (id)_responseForActionType:(int)arg1;
+- (id)_safeDescription:(BOOL)arg1;
+- (unsigned int)accessoryStyle;
 - (id)acknowledgeAction;
 - (id)actionBlockForButton:(id)arg1 withOrigin:(int)arg2;
 - (id)actionBlockForButton:(id)arg1;
+- (id)actionForResponse:(id)arg1;
 - (id)actions;
 - (void)addLifeAssertion:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (int)addressBookRecordID;
 - (id)alertSuppressionAppIDs;
 - (id)alertSuppressionAppIDs_deprecated;
@@ -130,6 +146,7 @@
 - (id)attachments;
 - (id)attachmentsCreatingIfNecessary:(BOOL)arg1;
 - (BOOL)bannerShowsSubtitle;
+- (BOOL)bulletinAlertShouldOverrideQuietMode;
 - (id)bulletinID;
 - (id)bulletinVersionID;
 - (id)buttons;
@@ -154,15 +171,17 @@
 - (id)defaultActionBlock;
 - (id)defaultActionBlockWithOrigin:(int)arg1 canBypassPinLock:(BOOL*)arg2 requiresUnlock:(BOOL*)arg3 shouldDeactivateAwayController:(BOOL*)arg4 suitabilityFilter:(id)arg5;
 - (id)defaultActionBlockWithOrigin:(int)arg1;
-- (void)deliverResponse:(id)arg1;
 - (id)description;
+- (id)dismissalID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)expirationDate;
 - (unsigned int)expirationEvents;
 - (id)expireAction;
 - (BOOL)expiresOnPublisherDeath;
+- (id)firstValidObserver;
 - (id)fullUnlockActionLabel;
+- (BOOL)hasEventDate;
 - (int)iPodOutAlertType;
 - (BOOL)inertWhenLocked;
 - (id)init;
@@ -176,11 +195,12 @@
 - (id)modalAlertContent;
 - (unsigned int)numberOfAdditionalAttachments;
 - (unsigned int)numberOfAdditionalAttachmentsOfType:(int)arg1;
-- (id)observer;
+- (id)observers;
 - (BOOL)orderSectionUsingRecencyDate;
 - (BOOL)playSound;
 - (BOOL)preservesUnlockActionCase;
 - (int)primaryAttachmentType;
+- (id)publicationDate;
 - (id)publisherBulletinID;
 - (unsigned int)realertCount;
 - (unsigned int)realertCount_deprecated;
@@ -190,14 +210,16 @@
 - (id)responseForButtonActionAtIndex:(unsigned int)arg1;
 - (id)responseForDefaultAction;
 - (id)responseForExpireAction;
+- (id)responseForSnoozeAction;
 - (id)responseSendBlock;
+- (id)safeDescription;
 - (id)section;
 - (id)sectionDisplayName;
 - (BOOL)sectionDisplaysCriticalBulletins;
 - (id)sectionID;
-- (id)sectionIconData;
+- (id)sectionIcon;
 - (int)sectionSubtype;
-- (void)setAccessoryStyle:(int)arg1;
+- (void)setAccessoryStyle:(unsigned int)arg1;
 - (void)setAcknowledgeAction:(id)arg1;
 - (void)setActions:(id)arg1;
 - (void)setAddressBookRecordID:(int)arg1;
@@ -215,16 +237,19 @@
 - (void)setDateFormatStyle:(int)arg1;
 - (void)setDateIsAllDay:(BOOL)arg1;
 - (void)setDefaultAction:(id)arg1;
+- (void)setDismissalID:(id)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setExpirationEvents:(unsigned int)arg1;
 - (void)setExpireAction:(id)arg1;
 - (void)setExpiresOnPublisherDeath:(BOOL)arg1;
+- (void)setHasEventDate:(BOOL)arg1;
 - (void)setLastInterruptDate:(id)arg1;
 - (void)setLifeAssertions:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setModalAlertContent:(id)arg1;
-- (void)setObserver:(id)arg1;
+- (void)setObservers:(id)arg1;
+- (void)setPublicationDate:(id)arg1;
 - (void)setPublisherBulletinID:(id)arg1;
 - (void)setRealertCount_deprecated:(unsigned int)arg1;
 - (void)setRecencyDate:(id)arg1;
@@ -233,26 +258,35 @@
 - (void)setSectionID:(id)arg1;
 - (void)setSectionSubtype:(int)arg1;
 - (void)setShowsMessagePreview:(BOOL)arg1;
+- (void)setSnoozeAction:(id)arg1;
 - (void)setSound:(id)arg1;
+- (void)setStarkBannerContent:(id)arg1;
 - (void)setSubsectionIDs:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUnlockActionLabelOverride:(id)arg1;
+- (void)setUsesExternalSync:(BOOL)arg1;
+- (void)setWantsFullscreenPresentation:(BOOL)arg1;
 - (BOOL)showsDateInFloatingLockScreenAlert;
 - (BOOL)showsMessagePreview;
 - (BOOL)showsSubtitle;
+- (id)snoozeAction;
 - (id)sound;
+- (id)starkBannerContent;
 - (id)subsectionIDs;
 - (id)subtitle;
 - (unsigned int)subtypePriority;
 - (BOOL)suppressesMessageForPrivacy;
+- (id)syncHash;
 - (id)timeZone;
 - (id)title;
 - (id)topic;
 - (id)unlockActionLabel;
 - (id)unlockActionLabelOverride;
+- (BOOL)usesExternalSync;
 - (BOOL)usesVariableLayout;
 - (BOOL)visuallyIndicatesWhenDateIsInFuture;
+- (BOOL)wantsFullscreenPresentation;
 
 @end

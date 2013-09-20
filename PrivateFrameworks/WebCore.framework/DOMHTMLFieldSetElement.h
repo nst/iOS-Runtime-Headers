@@ -11,6 +11,7 @@
 
 - (BOOL)checkValidity;
 - (BOOL)disabled;
+- (id)elements;
 - (id)form;
 - (id)name;
 - (void)setCustomValidity:(id)arg1;

@@ -12,6 +12,7 @@
     <STLinkingViewDelegate> *_delegate;
     UIButton *_doneButton;
     UILabel *_fgsnLabel;
+    NSString *_fgsnSerialNumber;
     UILabel *_instructionLabel;
     UIButton *_linkNewButton;
     int _linkingType;
@@ -26,6 +27,7 @@
 @property(copy) NSString * serialNumber;
 
 - (void)_done;
+- (id)_haloImageOfSize:(struct CGSize { float x1; float x2; })arg1 color:(id)arg2 strokeWidth:(float)arg3;
 - (void)_linkNewEmped;
 - (void)_linkNewRemote;
 - (id)_newButton;
@@ -33,6 +35,7 @@
 - (void)_rescanForEmped;
 - (void)_rescanForRemote;
 - (void)_sensorHideAnimationDidStop;
+- (id)_sensorImageName;
 - (void)_startAnimation;
 - (void)_stopAnimation;
 - (void)_unlinkRemote;

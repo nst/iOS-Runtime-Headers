@@ -11,8 +11,8 @@
 
 @property(retain) NSString * language;
 
+- (void).cxx_destruct;
 - (void)addCaptionText:(id)arg1 startTime:(double)arg2 endTime:(double)arg3;
-- (void)dealloc;
 - (id)description;
 - (id)language;
 - (void)setLanguage:(id)arg1;

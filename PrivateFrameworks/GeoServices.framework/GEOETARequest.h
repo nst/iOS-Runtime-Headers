@@ -2,13 +2,85 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOETARequest : GEOETATrafficUpdateRequest {
-    unsigned short _providerID;
+@class GEOWaypoint, NSMutableArray;
+
+@interface GEOETARequest : PBRequest <NSCopying> {
+    struct { 
+        double _time; 
+        int _type; 
+        struct { 
+            unsigned int time : 1; 
+            unsigned int type : 1; 
+        } _has; 
+    struct { 
+        unsigned int timepoint : 1; 
+        unsigned int transportType : 1; 
+        unsigned int allowPartialResults : 1; 
+        unsigned int includeHistoricTravelTime : 1; 
+    BOOL _allowPartialResults;
+    NSMutableArray *_destinations;
+    } _has;
+    BOOL _includeHistoricTravelTime;
+    GEOWaypoint *_origin;
+    NSMutableArray *_serviceTags;
+    } _timepoint;
+    int _transportType;
 }
 
-@property unsigned short providerID;
+@property BOOL allowPartialResults;
+@property(retain) NSMutableArray * destinations;
+@property BOOL hasAllowPartialResults;
+@property BOOL hasIncludeHistoricTravelTime;
+@property(readonly) BOOL hasOrigin;
+@property BOOL hasTimepoint;
+@property BOOL hasTransportType;
+@property BOOL includeHistoricTravelTime;
+@property(retain) GEOWaypoint * origin;
+@property(retain) NSMutableArray * serviceTags;
+@property struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } timepoint;
+@property int transportType;
 
-- (unsigned short)providerID;
-- (void)setProviderID:(unsigned short)arg1;
+- (void)addDestination:(id)arg1;
+- (void)addServiceTag:(id)arg1;
+- (BOOL)allowPartialResults;
+- (void)clearDestinations;
+- (void)clearServiceTags;
+- (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)destinationAtIndex:(unsigned int)arg1;
+- (id)destinations;
+- (unsigned int)destinationsCount;
+- (id)dictionaryRepresentation;
+- (BOOL)hasAllowPartialResults;
+- (BOOL)hasIncludeHistoricTravelTime;
+- (BOOL)hasOrigin;
+- (BOOL)hasTimepoint;
+- (BOOL)hasTransportType;
+- (unsigned int)hash;
+- (BOOL)includeHistoricTravelTime;
+- (BOOL)isEqual:(id)arg1;
+- (id)origin;
+- (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
+- (id)serviceTagAtIndex:(unsigned int)arg1;
+- (id)serviceTags;
+- (unsigned int)serviceTagsCount;
+- (void)setAllowPartialResults:(BOOL)arg1;
+- (void)setDestinations:(id)arg1;
+- (void)setHasAllowPartialResults:(BOOL)arg1;
+- (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setHasTimepoint:(BOOL)arg1;
+- (void)setHasTransportType:(BOOL)arg1;
+- (void)setIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setOrigin:(id)arg1;
+- (void)setServiceTags:(id)arg1;
+- (void)setTimepoint:(struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (void)setTransportType:(int)arg1;
+- (struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })timepoint;
+- (int)transportType;
+- (void)writeTo:(id)arg1;
 
 @end

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class AAAccount, AASigningSession, NSDate, NSOperationQueue, NSString;
+@class AASigningSession, ACAccount, NSDate, NSOperationQueue, NSString;
 
 @interface AASetupAssistantService : NSObject {
-    AAAccount *_account;
+    ACAccount *_account;
     NSString *_appleID;
     struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
     NSString *_emailChoice;
@@ -23,6 +23,9 @@
 + (id)urlConfiguration;
 
 - (void).cxx_destruct;
+- (void)_doHSADeviceProvisioningSynchronizationWithDSID:(id)arg1 data:(id)arg2;
+- (void)_doHSADeviceProvisioningWithDSID:(id)arg1 data:(id)arg2;
+- (void)_doHSADeviceReprovisioningWithDSID:(id)arg1;
 - (id)_signingSession;
 - (id)appleID;
 - (void)authenticateWithHandler:(id)arg1;
@@ -30,7 +33,6 @@
 - (void)dealloc;
 - (void)downloadURLConfiguration:(id)arg1;
 - (id)emailChoice;
-- (void)fetchDelegateTokensWithAccountParameters:(id)arg1 delegateHints:(id)arg2 handler:(id)arg3;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
 - (id)initWithAppleID:(id)arg1 password:(id)arg2;

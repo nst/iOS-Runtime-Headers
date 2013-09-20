@@ -6,5 +6,7 @@
 }
 
 - (BOOL)disablesAutomaticKeyboardDismissal;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

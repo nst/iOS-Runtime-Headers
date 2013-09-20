@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEORating : PBCodable {
+@interface GEORating : PBCodable <NSCopying> {
     struct { 
         unsigned int maxScore : 1; 
         unsigned int score : 1; 
@@ -38,6 +38,7 @@
 - (void)addReview:(id)arg1;
 - (void)clearReviews;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

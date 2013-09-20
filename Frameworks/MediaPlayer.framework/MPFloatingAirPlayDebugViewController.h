@@ -2,21 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AirPlayDiagnosticsFullscreenController, UINavigationController, UIWindow;
+@class AirPlayDiagnosticsFullscreenController, UIWindow;
 
-@interface MPFloatingAirPlayDebugViewController : UIViewController <AirPlayDiagnosticsFullscreenControllerDelegate> {
+@interface MPFloatingAirPlayDebugViewController : UINavigationController <AirPlayDiagnosticsFullscreenControllerDelegate> {
     AirPlayDiagnosticsFullscreenController *_airPlayDiagsController;
     UIWindow *_floatingWindow;
-    UINavigationController *_navController;
     BOOL _presentedAnimated;
 }
 
 @property(readonly) AirPlayDiagnosticsFullscreenController * airPlayDiagsController;
 
+- (void).cxx_destruct;
 - (void)_destroyFloatingWindow;
-- (void)airPlayDiagnosticsFullscreenController:(id)arg1 didComplete:(BOOL)arg2;
+- (void)airPlayDiagnosticsContentViewController:(id)arg1 didComplete:(BOOL)arg2;
 - (id)airPlayDiagsController;
-- (void)dealloc;
 - (void)presentFromFloatingWindowAnimated:(BOOL)arg1 completion:(id)arg2;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 
 @end

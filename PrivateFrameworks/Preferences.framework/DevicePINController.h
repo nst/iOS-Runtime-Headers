@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, UIBarButtonItem;
+@class <DevicePINControllerDelegate>, NSString, UIBarButtonItem;
 
 @interface DevicePINController : PSDetailController {
     UIBarButtonItem *_cancelButton;
     UIBarButtonItem *_doneButton;
     NSString *_error1;
     NSString *_error2;
+    BOOL _hidesNavigationButtons;
     NSString *_lastEntry;
     int _mode;
     UIBarButtonItem *_nextButton;
@@ -18,26 +19,25 @@
     BOOL _success;
 }
 
+@property BOOL hidesNavigationButtons;
+@property <DevicePINControllerDelegate> * pinDelegate;
+
 + (BOOL)settingEnabled;
 
-- (BOOL)_attemptValidationWithPIN:(id)arg1;
 - (void)_clearBlockedState;
 - (void)_dismiss;
 - (int)_getScreenType;
-- (BOOL)_isBlocked;
-- (int)_numberOfFailedAttempts;
 - (void)_setNumberOfFailedAttempts:(int)arg1;
 - (void)_setUnblockTime:(double)arg1;
 - (void)_showFailedAttempts;
 - (void)_showPINConfirmationError;
 - (void)_showUnacceptablePINError:(id)arg1 password:(id)arg2;
 - (void)_slidePasscodeField;
-- (BOOL)_success;
-- (double)_unblockTime;
 - (void)_updateErrorTextAndFailureCount:(BOOL)arg1;
 - (void)_updatePINButtons;
 - (void)_updateUI;
 - (void)adjustButtonsForPasswordLength:(unsigned int)arg1;
+- (BOOL)attemptValidationWithPIN:(id)arg1;
 - (struct __CFString { }*)blockTimeIntervalKey;
 - (struct __CFString { }*)blockedStateKey;
 - (void)cancelButtonTapped;
@@ -45,32 +45,43 @@
 - (void)dealloc;
 - (struct __CFString { }*)defaultsID;
 - (struct __CFString { }*)failedAttemptsKey;
+- (BOOL)hidesNavigationButtons;
 - (id)init;
+- (BOOL)isBlocked;
 - (void)loadView;
+- (int)numberOfFailedAttempts;
+- (struct CGSize { float x1; float x2; })overallContentSizeForViewInPopover;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paneFrame;
 - (void)performActionAfterPINEntry;
 - (void)performActionAfterPINRemove;
 - (void)performActionAfterPINSet;
 - (struct CGSize { float x1; float x2; })pinContentSizeForViewInPopover;
+- (id)pinDelegate;
 - (void)pinEntered:(id)arg1;
 - (id)pinInstructionsPrompt;
 - (id)pinInstructionsPromptFont;
 - (BOOL)pinIsAcceptable:(id)arg1 outError:(id*)arg2;
 - (int)pinLength;
 - (BOOL)requiresKeyboard;
+- (void)setHidesNavigationButtons:(BOOL)arg1;
 - (void)setLastEntry:(id)arg1;
+- (void)setMode:(int)arg1;
 - (void)setOldPassword:(id)arg1;
 - (void)setPIN:(id)arg1;
 - (void)setPane:(id)arg1;
+- (void)setPinDelegate:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (BOOL)simplePIN;
 - (id)stringsBundle;
 - (id)stringsTable;
+- (BOOL)success;
 - (void)suspend;
+- (double)unblockTime;
 - (BOOL)useProgressiveDelays;
 - (BOOL)validatePIN:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)willUnlock;
 

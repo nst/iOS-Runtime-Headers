@@ -15,6 +15,9 @@
         unsigned int hidesSearchableSources : 1; 
         unsigned int hidesPromptInLandscape : 1; 
     void *_addressBook;
+    BOOL _allowsContactBlocking;
+    BOOL _allowsOnlyFaceTimeActions;
+    BOOL _allowsOnlyPhoneActions;
     int _behavior;
     NSArray *_defaultToolbarItems;
     struct __CFArray { } *_displayedProperties;
@@ -32,7 +35,12 @@
 
 @property(setter=ab_setDefaultToolbarItems:,retain) NSArray * ab_defaultToolbarItems;
 @property void* addressBook;
+@property BOOL allowsContactBlocking;
+@property BOOL allowsOnlyFaceTimeActions;
+@property BOOL allowsOnlyPhoneActions;
 @property(copy) NSArray * displayedProperties;
+@property BOOL hidesPromptInLandscape;
+@property BOOL hidesSearchableSources;
 @property <ABPeoplePickerNavigationControllerDelegate> * peoplePickerDelegate;
 @property(retain) <ABStyleProvider> * styleProvider;
 
@@ -58,13 +66,19 @@
 - (BOOL)allowsCancel;
 - (BOOL)allowsCardEditing;
 - (BOOL)allowsConferencing;
+- (BOOL)allowsContactBlocking;
+- (BOOL)allowsOnlyFaceTimeActions;
+- (BOOL)allowsOnlyPhoneActions;
 - (BOOL)allowsShowingPersonsCards;
 - (id)bannerTitle;
 - (id)bannerValue;
 - (int)behavior;
 - (BOOL)ckCanDismissWhenSuspending;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
+- (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void*)displayedPerson;
 - (id)displayedProperties;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)finishNavigationBarAnimation;
@@ -79,6 +93,7 @@
 - (id)initWithAddressBook:(void*)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(int)arg1;
+- (id)initWithoutSetup;
 - (int)insertionProperty;
 - (id)insertionValue;
 - (BOOL)isDefaultViewControllerVisible;
@@ -92,7 +107,7 @@
 - (BOOL)navigationBarIsAnimating;
 - (void)notePreferencesChanged;
 - (id)peoplePickerDelegate;
-- (void)personViewController:(id)arg1 requestedLinkForPerson:(void*)arg2;
+- (void)personViewController:(id)arg1 requestedLinkForPerson:(id)arg2;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4 withMemberCell:(id)arg5;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)popToDefaultViewController:(BOOL)arg1;
@@ -109,6 +124,9 @@
 - (void)setAllowsCancel:(BOOL)arg1;
 - (void)setAllowsCardEditing:(BOOL)arg1;
 - (void)setAllowsConferencing:(BOOL)arg1;
+- (void)setAllowsContactBlocking:(BOOL)arg1;
+- (void)setAllowsOnlyFaceTimeActions:(BOOL)arg1;
+- (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setAllowsSounds:(BOOL)arg1;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
@@ -124,12 +142,12 @@
 - (void)setPrompt:(id)arg1;
 - (void)setSearchCompletionDelegate:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
+- (void)setupAsAddressBook:(BOOL)arg1 withAddressBook:(void*)arg2 withStyle:(int)arg3;
 - (void)setupAsMePicker;
 - (void)setupInitialStackAndLoadState:(BOOL)arg1;
 - (BOOL)shouldContinueAfterSelectingPerson:(void*)arg1 cell:(id)arg2;
 - (BOOL)shouldPerformDefaultActionForPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 withMemberCell:(id)arg4;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 forceDisableEditing:(BOOL)arg4;
-- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3;
 - (void)showCardForPerson:(void*)arg1;
 - (void)showMembersOfContactsFilter:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
 - (void)showMembersOfContactsFilter:(id)arg1;

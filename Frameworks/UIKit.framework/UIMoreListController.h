@@ -6,6 +6,8 @@
 
 @interface UIMoreListController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     BOOL _allowsCustomizing;
+    BOOL _disableCustomizing;
+    BOOL _hideNavigationBar;
     UIMoreListCellLayoutManager *_layoutManager;
     UIBarButtonItem *_moreEditButtonItem;
     NSArray *_moreViewControllers;
@@ -19,9 +21,13 @@
 
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_layoutCells;
+- (id)_targetNavigationController;
 - (void)_updateEditButton;
+- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (BOOL)allowsCustomizing;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)init;
 - (void)loadView;
 - (id)moreViewControllers;
@@ -35,6 +41,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

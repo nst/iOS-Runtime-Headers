@@ -30,8 +30,10 @@
 - (void)_removeAllChildren;
 - (void)_setProperties:(id)arg1;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (void)_setVideoURL:(id)arg1;
 - (void)_setupControllers;
 - (id)_valueForProperty:(id)arg1;
+- (id)_videoURL;
 - (void)editVideoViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
 - (void)editVideoViewControllerDidCancel:(id)arg1;

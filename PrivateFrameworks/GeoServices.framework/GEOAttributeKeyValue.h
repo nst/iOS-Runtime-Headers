@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOAttributeKeyValue : PBCodable {
+@interface GEOAttributeKeyValue : PBCodable <NSCopying> {
     NSString *_attributeKey;
     NSString *_attributeValue;
 }
@@ -15,6 +15,7 @@
 - (id)attributeKey;
 - (id)attributeValue;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

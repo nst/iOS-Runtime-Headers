@@ -18,6 +18,7 @@
     BOOL _isGesture;
     unsigned short _keyCode;
     BOOL _keyRepeating;
+    unsigned int _keyboardFlags;
     } _locationInWindow;
     unsigned int _modifierFlags;
     BOOL _popupVariant;
@@ -28,6 +29,7 @@
     NSArray *_touchLocations;
     NSArray *_touchPhases;
     int _type;
+    BOOL _wasHandled;
 }
 
 @property(readonly) int characterSet;
@@ -40,6 +42,7 @@
 @property(readonly) BOOL isGesture;
 @property(readonly) unsigned short keyCode;
 @property(getter=isKeyRepeating,readonly) BOOL keyRepeating;
+@property(readonly) unsigned int keyboardFlags;
 @property(readonly) struct CGPoint { float x1; float x2; } locationInWindow;
 @property(readonly) unsigned int modifierFlags;
 @property(getter=isPopupVariant,readonly) BOOL popupVariant;
@@ -50,6 +53,7 @@
 @property(readonly) NSArray * touchLocations;
 @property(readonly) NSArray * touchPhases;
 @property(readonly) int type;
+@property BOOL wasHandled;
 
 - (id).cxx_construct;
 - (id)_characterSetDescription;
@@ -70,6 +74,7 @@
 - (float)gestureRotation;
 - (float)gestureScale;
 - (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(BOOL)arg6 isPopupVariant:(BOOL)arg7 keyCode:(unsigned short)arg8 isTabKey:(BOOL)arg9 characterSet:(int)arg10;
+- (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(BOOL)arg6 withFlags:(unsigned int)arg7 keyCode:(unsigned short)arg8 isTabKey:(BOOL)arg9 characterSet:(int)arg10;
 - (id)initWithMouseEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
 - (id)initWithScrollWheelEventWithTimeStamp:(double)arg1 location:(struct CGPoint { float x1; float x2; })arg2 deltaX:(float)arg3 deltaY:(float)arg4;
 - (id)initWithTouchEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint { float x1; float x2; })arg3 modifiers:(unsigned int)arg4 touchCount:(unsigned int)arg5 touchLocations:(id)arg6 touchIdentifiers:(id)arg7 touchPhases:(id)arg8 isGesture:(BOOL)arg9 gestureScale:(float)arg10 gestureRotation:(float)arg11;
@@ -78,13 +83,16 @@
 - (BOOL)isPopupVariant;
 - (BOOL)isTabKey;
 - (unsigned short)keyCode;
+- (unsigned int)keyboardFlags;
 - (struct CGPoint { float x1; float x2; })locationInWindow;
 - (unsigned int)modifierFlags;
+- (void)setWasHandled:(BOOL)arg1;
 - (double)timestamp;
 - (unsigned int)touchCount;
 - (id)touchIdentifiers;
 - (id)touchLocations;
 - (id)touchPhases;
 - (int)type;
+- (BOOL)wasHandled;
 
 @end

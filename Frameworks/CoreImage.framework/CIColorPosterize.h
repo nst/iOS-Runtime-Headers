@@ -10,7 +10,7 @@
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputLevels;
+@property(retain) NSNumber * inputLevels;
 
 + (id)customAttributes;
 

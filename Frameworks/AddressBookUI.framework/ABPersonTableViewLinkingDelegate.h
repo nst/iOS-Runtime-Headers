@@ -41,9 +41,9 @@
 - (BOOL)isLinkedCard;
 - (id)linkedInfoAtRow:(int)arg1;
 - (id)linkedInfos;
-- (BOOL)manuallyLinkPerson:(void*)arg1;
+- (BOOL)manuallyLinkPerson:(id)arg1;
 - (BOOL)manuallyUnlinkCardAtRow:(int)arg1;
-- (id)newLinkedInfoForPerson:(void*)arg1;
+- (id)newLinkedInfoForPerson:(id)arg1;
 - (id)newPeoplePickerForLinking;
 - (id)newPersonViewControllerForLinkedCardAtRow:(int)arg1;
 - (int)numberOfLinkedCardRows;

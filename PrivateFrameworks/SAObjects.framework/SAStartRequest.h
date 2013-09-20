@@ -8,17 +8,20 @@
 }
 
 @property(copy) NSString * aceId;
+@property BOOL clearContext;
 @property BOOL eyesFree;
 @property BOOL handsFree;
 @property(copy) NSString * motionActivity;
 @property(copy) NSNumber * motionConfidence;
 @property(copy) NSString * origin;
 @property(copy) NSString * refId;
+@property BOOL talkOnly;
 @property(copy) NSString * utterance;
 
 + (id)startRequest;
 + (id)startRequestWithDictionary:(id)arg1 context:(id)arg2;
 
+- (BOOL)clearContext;
 - (id)encodedClassName;
 - (BOOL)eyesFree;
 - (id)groupIdentifier;
@@ -26,12 +29,15 @@
 - (id)motionActivity;
 - (id)motionConfidence;
 - (id)origin;
+- (void)setClearContext:(BOOL)arg1;
 - (void)setEyesFree:(BOOL)arg1;
 - (void)setHandsFree:(BOOL)arg1;
 - (void)setMotionActivity:(id)arg1;
 - (void)setMotionConfidence:(id)arg1;
 - (void)setOrigin:(id)arg1;
+- (void)setTalkOnly:(BOOL)arg1;
 - (void)setUtterance:(id)arg1;
+- (BOOL)talkOnly;
 - (id)utterance;
 
 @end

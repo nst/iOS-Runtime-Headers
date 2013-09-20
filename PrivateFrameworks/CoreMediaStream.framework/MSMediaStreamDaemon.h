@@ -24,6 +24,7 @@
 - (void)computeHashForAsset:(id)arg1 personID:(id)arg2;
 - (id)delegate;
 - (void)deleteAssetCollections:(id)arg1 forPersonID:(id)arg2;
+- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)didExceedPublishQuotaForPersonID:(id)arg1 retryDate:(id)arg2;
 - (void)didIdle;
 - (void)didReceiveAuthenticationFailureForPersonID:(id)arg1;
@@ -49,7 +50,8 @@
 - (BOOL)personIDHasOutstandingPublications:(id)arg1;
 - (BOOL)personIDIsAcceptingInvitations:(id)arg1;
 - (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;
-- (void)pollForSubscriptionUpdatesTriggeredByPushNotification;
+- (void)pollForSubscriptionUpdatesTriggeredByPushNotificationForPersonID:(id)arg1;
+- (void)reenqueueQuarantinedActivitiesWithReason:(id)arg1;
 - (void)refreshServerSideConfigurationForPersonID:(id)arg1;
 - (void)refreshShareStatesForPersonID:(id)arg1;
 - (void)removeShare:(id)arg1 forPersonID:(id)arg2;

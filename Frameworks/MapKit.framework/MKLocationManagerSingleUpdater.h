@@ -7,6 +7,7 @@
  */
 
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
+    BOOL _active;
     id _handler;
 }
 
@@ -23,5 +24,6 @@
 - (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)setHandler:(id)arg1;
+- (void)start;
 
 @end

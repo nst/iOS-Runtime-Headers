@@ -2,34 +2,25 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOAltitudeManifest : NSObject <NSXMLParserDelegate> {
-    struct map<unsigned int, _GEOAltitudeTriggerData, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, _GEOAltitudeTriggerData>> > { 
-        struct __tree<std::__1::pair<unsigned int, _GEOAltitudeTriggerData>, std::__1::__map_value_compare<unsigned int, _GEOAltitudeTriggerData, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::pair<unsigned int, _GEOAltitudeTriggerData>> > { 
-            struct __tree_node<std::__1::pair<unsigned int, _GEOAltitudeTriggerData>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::pair<unsigned int, _GEOAltitudeTriggerData>, void *>> > { 
-                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
-                    struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
-            } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, _GEOAltitudeTriggerData, std::__1::less<unsigned int>, true> > { 
-                unsigned long __first_; 
-            } __pair3_; 
-        } __tree_; 
-    } _triggerData;
+@class GEOAltitudeManifestReserved;
+
+@interface GEOAltitudeManifest : NSObject <NSXMLParserDelegate, GEOResourceManifestTileGroupObserver> {
+    GEOAltitudeManifestReserved *_reserved;
 }
 
 + (id)sharedManager;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)_activeTileGroupChanged:(id)arg1;
+- (void)_reloadManifest;
 - (id)availableRegions;
+- (void)commonInit;
 - (void)dealloc;
 - (id)init;
 - (id)initWithoutObserver;
 - (void)parseManifest:(id)arg1;
 - (BOOL)parseXml:(id)arg1;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
+- (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (unsigned int)versionForRegion:(unsigned int)arg1;
 
 @end

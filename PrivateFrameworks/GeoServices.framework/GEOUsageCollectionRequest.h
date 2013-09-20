@@ -4,10 +4,11 @@
 
 @class NSMutableArray;
 
-@interface GEOUsageCollectionRequest : PBRequest {
+@interface GEOUsageCollectionRequest : PBRequest <NSCopying> {
     NSMutableArray *_directionsFeedbackCollections;
     NSMutableArray *_mapsUsageFeedbackCollections;
     NSMutableArray *_placeSearchFeedbackCollections;
+    NSMutableArray *_suggestionsFeedbackCollections;
     NSMutableArray *_transitAppLaunchFeedbackCollections;
     NSMutableArray *_usageCollections;
 }
@@ -15,20 +16,24 @@
 @property(retain) NSMutableArray * directionsFeedbackCollections;
 @property(retain) NSMutableArray * mapsUsageFeedbackCollections;
 @property(retain) NSMutableArray * placeSearchFeedbackCollections;
+@property(retain) NSMutableArray * suggestionsFeedbackCollections;
 @property(retain) NSMutableArray * transitAppLaunchFeedbackCollections;
 @property(retain) NSMutableArray * usageCollections;
 
 - (void)addDirectionsFeedbackCollection:(id)arg1;
 - (void)addMapsUsageFeedbackCollection:(id)arg1;
 - (void)addPlaceSearchFeedbackCollection:(id)arg1;
+- (void)addSuggestionsFeedbackCollection:(id)arg1;
 - (void)addTransitAppLaunchFeedbackCollection:(id)arg1;
 - (void)addUsageCollection:(id)arg1;
 - (void)clearDirectionsFeedbackCollections;
 - (void)clearMapsUsageFeedbackCollections;
 - (void)clearPlaceSearchFeedbackCollections;
+- (void)clearSuggestionsFeedbackCollections;
 - (void)clearTransitAppLaunchFeedbackCollections;
 - (void)clearUsageCollections;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -49,8 +54,12 @@
 - (void)setDirectionsFeedbackCollections:(id)arg1;
 - (void)setMapsUsageFeedbackCollections:(id)arg1;
 - (void)setPlaceSearchFeedbackCollections:(id)arg1;
+- (void)setSuggestionsFeedbackCollections:(id)arg1;
 - (void)setTransitAppLaunchFeedbackCollections:(id)arg1;
 - (void)setUsageCollections:(id)arg1;
+- (id)suggestionsFeedbackCollectionAtIndex:(unsigned int)arg1;
+- (id)suggestionsFeedbackCollections;
+- (unsigned int)suggestionsFeedbackCollectionsCount;
 - (id)transitAppLaunchFeedbackCollectionAtIndex:(unsigned int)arg1;
 - (id)transitAppLaunchFeedbackCollections;
 - (unsigned int)transitAppLaunchFeedbackCollectionsCount;

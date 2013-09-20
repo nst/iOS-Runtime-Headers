@@ -25,6 +25,7 @@
 
 - (void)_chatParticipantsChangedNotification:(id)arg1;
 - (void)_chatUnreadCountDidChange:(id)arg1;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_conversationDidChange:(id)arg1;
 - (void)_conversationListDidChange:(id)arg1;
 - (void)_conversationListDidFinishLoadingConversations:(id)arg1;
@@ -57,6 +58,9 @@
 - (void)noteConversationListChanged;
 - (void)noteUnreadCountsChanged;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)parentControllerDidResume:(BOOL)arg1 animating:(BOOL)arg2;
+- (void)prepareForResume;
+- (void)prepareForSuspend;
 - (id)previouslySelectedIndexPath;
 - (void)reloadStaleConversations;
 - (void)scrollToTop;
@@ -65,7 +69,6 @@
 - (void)searcher:(id)arg1 userDidSelectChatGUID:(id)arg2 messageGUID:(id)arg3;
 - (void)searcher:(id)arg1 willHideSearchResultsTableView:(id)arg2;
 - (id)searcherContentsController:(id)arg1;
-- (void)searcherWillBeginSearch:(id)arg1;
 - (void)searcherWillEndSearch:(id)arg1;
 - (void)selectConversationClosestToDeletedIndex:(unsigned int)arg1;
 - (void)selectDefaultConversationAnimated:(BOOL)arg1;
@@ -83,18 +86,17 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)updateConversationList;
 - (void)updateConversationSelection;
 - (void)updateNavigationItems;
 - (void)updateTitle;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidUnload;
 - (id)viewForHeaderInTableView:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 

@@ -59,7 +59,6 @@
 - (void)account:(id)arg1 blockingModeChanged:(unsigned int)arg2;
 - (void)account:(id)arg1 buddyInfo:(id)arg2 commandDelivered:(id)arg3 properties:(id)arg4;
 - (void)account:(id)arg1 buddyInfo:(id)arg2 commandReceived:(id)arg3 properties:(id)arg4;
-- (void)account:(id)arg1 buddyInfo:(id)arg2 dataReceived:(id)arg3;
 - (void)account:(id)arg1 buddyPictureChanged:(id)arg2 imageData:(id)arg3 imageHash:(id)arg4;
 - (void)account:(id)arg1 buddyProperties:(id)arg2 buddyPictures:(id)arg3;
 - (void)account:(id)arg1 buddyPropertiesChanged:(id)arg2;

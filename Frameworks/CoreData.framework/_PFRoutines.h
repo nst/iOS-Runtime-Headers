@@ -5,6 +5,7 @@
 @interface _PFRoutines : NSObject {
 }
 
++ (id)_coalescedPrefetchKeypaths:(id)arg1;
 + (id)_createNicksBase64EncodedStringFromData:(id)arg1;
 + (BOOL)_doNameAndTypeCheck:(id)arg1;
 + (unsigned int)_generateHashForString:(id)arg1;
@@ -25,6 +26,7 @@
 + (id)encodeObjectValue:(id)arg1 forTransformableAttribute:(id)arg2;
 + (void)getIndexes:(unsigned int*)arg1 fromCollection:(id)arg2 forObjectsInCollection:(id)arg3;
 + (void)initialize;
++ (BOOL)isUbiquitousItemAtURL:(id)arg1;
 + (BOOL)isUbiquitousURLDownloaded:(id)arg1 error:(id*)arg2;
 + (BOOL)isUbiquitousURLUploaded:(id)arg1 error:(id*)arg2;
 + (long long)lengthOfFileAtExternalReferenceLocation:(const char *)arg1;
@@ -45,6 +47,7 @@
 + (id)newSetOfObjectIDsFromCollection:(id)arg1;
 + (void)readBytesForExternalReferenceData:(id)arg1 intoBuffer:(void*)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 + (void*)readExternalReferenceDataFromFile:(id)arg1;
++ (void)setOrRemoveValue:(id)arg1 forKey:(id)arg2 inDictionary:(id)arg3;
 + (id)valueForProcessArgument:(id)arg1;
 + (id)writePFExternalReferenceDataToInterimFile:(id)arg1;
 

@@ -20,5 +20,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)predicateFormat;
 - (id)predicateWithSubstitutionVariables:(id)arg1;
+- (BOOL)supportsSecureCoding;
 
 @end

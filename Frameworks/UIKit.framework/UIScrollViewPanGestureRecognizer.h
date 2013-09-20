@@ -12,7 +12,7 @@
     unsigned int _hasParentScrollView : 1;
     unsigned int _caughtDeceleratingScrollView : 1;
     unsigned int _directionalLockEnabled : 1;
-    unsigned int _waitingForParentScrollView : 1;
+    unsigned int _transfersTrackingFromParentScrollView : 1;
     unsigned int _lastLockingAxis : 2;
     unsigned int _lockingAxis : 2;
     } _reconsideredLockingLocation;
@@ -25,11 +25,14 @@
 @property UIScrollView * scrollView;
 
 - (struct CGPoint { float x1; float x2; })_adjustScreenLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_canTransferTrackingFromParentPagingScrollView;
 - (BOOL)_caughtDeceleratingScrollView;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (float)_hysteresis;
 - (void)_resetGestureRecognizer;
 - (void)_scrollViewDidEndZooming;
+- (BOOL)_shouldContinueToWaitToTransferTrackingFromParentScrollView;
+- (BOOL)_shouldTransferTrackingFromParentScrollViewForCurrentOffset;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

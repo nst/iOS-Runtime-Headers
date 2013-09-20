@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSArray, NSLocale, NSString;
+@class AVWeakReference, NSArray, NSDictionary, NSLocale, NSString;
 
 @interface AVAssetTrackInspector : AVFigObjectInspector <AVAsynchronousKeyValueLoading> {
+    NSArray *_cachedMediaCharacteristics;
+    long _synthesizeMediaCharacteristicsOnce;
     AVWeakReference *_weakReference;
 }
 
@@ -15,15 +17,20 @@
 @property(readonly) float estimatedDataRate;
 @property(getter=isExcludedFromAutoselectionInTrackGroup,readonly) BOOL excludedFromAutoselectionInTrackGroup;
 @property(readonly) NSString * extendedLanguageTag;
+@property(getter=_figMediaType,readonly) unsigned long figMediaType;
 @property(readonly) NSArray * formatDescriptions;
+@property(readonly) BOOL hasProtectedContent;
 @property(readonly) NSString * languageCode;
 @property(readonly) int layer;
 @property(readonly) NSLocale * locale;
+@property(readonly) NSDictionary * loudnessInfo;
 @property(readonly) NSArray * mediaCharacteristics;
 @property(readonly) NSString * mediaType;
+@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minSampleDuration;
 @property(readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) int naturalTimeScale;
 @property(readonly) float nominalFrameRate;
+@property(readonly) long playabilityValidationResult;
 @property(getter=isPlayable,readonly) BOOL playable;
 @property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property(readonly) float preferredVolume;
@@ -32,12 +39,15 @@
 @property(readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
 @property(readonly) long long totalSampleDataLength;
 @property(readonly) int trackID;
+@property(getter=_trackReferences,readonly) NSDictionary * trackReferences;
 
 + (id)assetTrackInspectorWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 
+- (unsigned long)_figMediaType;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2;
 - (id)_initWithAsset:(id)arg1 trackIndex:(long)arg2;
+- (id)_trackReferences;
 - (id)_weakReference;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
@@ -47,6 +57,7 @@
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (id)formatDescriptions;
+- (BOOL)hasProtectedContent;
 - (id)init;
 - (BOOL)isEnabled;
 - (BOOL)isExcludedFromAutoselectionInTrackGroup;
@@ -56,12 +67,15 @@
 - (int)layer;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
 - (id)locale;
+- (id)loudnessInfo;
 - (id)mediaCharacteristics;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minSampleDuration;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)nominalFrameRate;
+- (long)playabilityValidationResult;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

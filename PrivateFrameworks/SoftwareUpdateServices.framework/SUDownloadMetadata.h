@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUDownloadMetadata : NSObject <NSCoding, NSCopying> {
+@interface SUDownloadMetadata : NSObject <NSSecureCoding, NSCopying> {
     int _activeDownloadPolicyType;
     BOOL _autoDownload;
     int _downloadFeeAgreementStatus;
@@ -25,6 +25,8 @@
 @property(getter=isEnabledForWifi) BOOL enabledForWifi;
 @property(getter=isEnabledOnBatteryPower) BOOL enabledOnBatteryPower;
 @property BOOL enforceWifiOnlyOverride;
+
++ (BOOL)supportsSecureCoding;
 
 - (id)_stringForBool:(BOOL)arg1;
 - (id)activeDownloadPolicy:(id)arg1;

@@ -55,6 +55,7 @@
 - (id)init;
 - (BOOL)loadSoftwareMapReturningError:(id*)arg1;
 - (BOOL)loadURLBagWithContext:(id)arg1 returningError:(id*)arg2;
+- (id)loadedURLBagWithContext:(id)arg1 returningError:(id*)arg2;
 - (void)lock;
 - (void)main;
 - (id)operationRunLoop;
@@ -62,6 +63,7 @@
 - (id)powerAssertionIdentifier;
 - (id)progress;
 - (int)progressWeight;
+- (void)releasePowerAssertionsDuringBlock:(id)arg1;
 - (void)run:(BOOL)arg1;
 - (void)run;
 - (long)runRunLoopUntilStopped;

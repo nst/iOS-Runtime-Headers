@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMapTable, NSMutableDictionary, VKPShieldPack;
+@class NSMapTable, VKObjectPool, VKPShieldPack;
 
 @interface VKShieldAtlas : NSObject {
+    VKObjectPool *_artworkPool;
     NSMapTable *_atlasToImages;
-    NSMutableDictionary *_shieldDict;
     VKPShieldPack *_shieldPack;
 }
 
-- (id)artworkForShieldIdentifier:(id)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 extraScale:(float)arg4 mode:(int)arg5;
+- (id)artworkForShieldIdentifier:(id)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 extraScale:(float)arg4 size:(int)arg5 numberOfLines:(unsigned int)arg6;
 - (void)dealloc;
 - (id)initWithShieldPack:(id)arg1;
 - (void)purge;

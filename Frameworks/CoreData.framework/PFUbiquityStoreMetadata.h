@@ -22,7 +22,6 @@
 @property(readonly) NSURL * ubiquityRootURL;
 @property(retain) NSString * ubiquityRootURLString;
 
-+ (id)addMetadataForPersistentStore:(id)arg1 withLocalPeerID:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)allStoreMetadataInManagedObjectContext:(id)arg1;
 + (id)baselineGCModelURLForUbiquityName:(id)arg1 andUbiquityLogURL:(id)arg2;
 + (id)baselineMetaFileURLForUbiquityName:(id)arg1 andUbiquityLogURL:(id)arg2;
@@ -33,17 +32,14 @@
 + (id)metadataForStoreWithName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)storeMetadatasWithName:(id)arg1 inManagedObjectContext:(id)arg2;
 
-- (id)createPeerRangesForBaselineWithLocalPeerID:(id)arg1;
 - (id)initWithUbiquityName:(id)arg1 andUbiquityRootLocation:(id)arg2 insertIntoManagedObjectContext:(id)arg3;
 - (void)loadFromBaselineMetadata:(id)arg1 withLocalPeerID:(id)arg2;
 - (id)peerStateForPeerID:(id)arg1;
-- (id)peerStoreURLForPeerIdentifier:(id)arg1;
-- (id)peerURLForPeerIdentifier:(id)arg1;
 - (void)setStoreOptions:(id)arg1;
 - (id)storeOptions;
 - (id)ubiquityRootLocation;
 - (id)ubiquityRootURL;
 - (void)updatePeerStatesToMatchKnowledgeVector:(id)arg1;
-- (void)updateWithStore:(id)arg1;
+- (void)updateWithStore:(id)arg1 andRootLocation:(id)arg2;
 
 @end

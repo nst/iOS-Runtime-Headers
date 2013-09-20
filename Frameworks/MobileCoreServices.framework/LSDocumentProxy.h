@@ -7,13 +7,16 @@
 @interface LSDocumentProxy : LSResourceProxy {
     NSString *_MIMEType;
     NSString *_name;
+    BOOL _sourceIsManaged;
     NSString *_typeIdentifier;
 }
 
 @property(readonly) NSString * MIMEType;
 @property(readonly) NSString * name;
+@property(readonly) BOOL sourceIsManaged;
 @property(readonly) NSString * typeIdentifier;
 
++ (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;
 + (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;
 
 - (id)MIMEType;
@@ -21,9 +24,11 @@
 - (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 - (void)bind;
 - (void)dealloc;
+- (id)description;
 - (id)iconStyleDomain;
-- (id)initWithName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3;
+- (id)initWithName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceIsManaged:(BOOL)arg4;
 - (id)name;
+- (BOOL)sourceIsManaged;
 - (id)typeIdentifier;
 
 @end

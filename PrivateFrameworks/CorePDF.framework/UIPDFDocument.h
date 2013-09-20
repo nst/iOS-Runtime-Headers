@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSString, UIPDFPageImageCache;
+@class <NSObject><UIPDFDocumentDelegate>, NSString, UIPDFPageImageCache;
 
 @interface UIPDFDocument : NSObject {
     float _cachedWidth;
     struct CGPDFDocument { } *_cgDocument;
+    <NSObject><UIPDFDocumentDelegate> *_delegate;
     NSString *_documentID;
     NSString *_documentName;
     unsigned int _imageCacheCount;
@@ -14,13 +15,13 @@
     unsigned int _imageCacheLookAhead;
     int _lock;
     unsigned int _numberOfPages;
-    id *_pageArray;
     UIPDFPageImageCache *_pageImageCache;
     UIPDFPageImageCache *_thumbnailCache;
     int _thumbnailLock;
 }
 
 @property(readonly) struct CGPDFDocument { }* CGDocument;
+@property <NSObject><UIPDFDocumentDelegate> * delegate;
 @property(readonly) NSString * documentID;
 @property(readonly) unsigned int numberOfPages;
 @property(retain) UIPDFPageImageCache * pageImageCache;
@@ -29,11 +30,12 @@
 + (id)documentNamed:(id)arg1;
 
 - (struct CGPDFDocument { }*)CGDocument;
-- (void)_clearCachedState;
 - (BOOL)allowsCopying;
 - (struct CGPDFDocument { }*)copyCGPDFDocument;
+- (BOOL)copyDocumentTo:(id)arg1;
 - (id)copyPageAtIndex:(unsigned int)arg1;
 - (void)dealloc;
+- (id)delegate;
 - (id)documentID;
 - (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
 - (id)initWithURL:(id)arg1;
@@ -43,7 +45,7 @@
 - (id)pageAtIndex:(unsigned int)arg1;
 - (id)pageImageCache;
 - (void)purgePagesBefore:(unsigned int)arg1;
-- (void)setCGPDFDocument:(struct CGPDFDocument { }*)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setImageCacheCount:(unsigned int)arg1 lookAhead:(unsigned int)arg2;
 - (void)setPageImageCache:(id)arg1;
 - (void)setThumbnailCache:(id)arg1;

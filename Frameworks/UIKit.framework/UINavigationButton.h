@@ -2,25 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSSet, NSString, UIColor, UIImage;
+@class NSDictionary, NSSet, NSString, UIColor, UIImage;
 
 @interface UINavigationButton : UIButton {
     struct CGSize { 
         float width; 
         float height; 
+    unsigned int _wantsLetterpressTitle : 1;
     unsigned int _size : 2;
-    unsigned int _pad : 30;
+    Class _appearanceGuideClass;
     id _appearanceStorage;
     int _barStyle;
     } _boundsAdjustment;
+    int _buttonItemStyle;
+    float _fontScaleAdjustment;
+    BOOL _isFontScaleInvalid;
     float _maximumWidth;
     float _minimumWidth;
     UIColor *_navigationBarTintColor;
     NSSet *_possibleSystemItems;
     NSSet *_possibleTitles;
     int _style;
+    NSDictionary *_stylesForSizingTitles;
 }
 
+@property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
+@property(setter=_setButtonItemStyle:) int _buttonItemStyle;
+@property(setter=_setFontScaleAdjustment:) float _fontScaleAdjustment;
+@property(setter=_setFontScaleInvalid:) BOOL _isFontScaleInvalid;
+@property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
 @property int barStyle;
 @property int controlSize;
 @property(retain) UIImage * image;
@@ -42,17 +52,31 @@
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_adjustBounds;
+- (id)_adjustedDefaultTitleFont;
+- (Class)_appearanceGuideClass;
+- (id)_appearanceStorage;
 - (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (id)_backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
 - (int)_barButtonItemStyle;
+- (int)_buttonItemStyle;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_buttonTitleEdgeInsets;
 - (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (id)_defaultTitleColorForState:(unsigned int)arg1;
 - (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
-- (struct UIOffset { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
+- (float)_fontScaleAdjustment;
+- (BOOL)_hasBaselineAlignedAbsoluteVerticalPosition:(out float*)arg1 withinNavBar:(id)arg2 forSize:(struct CGSize { float x1; float x2; })arg3;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_isFontScaleInvalid;
+- (BOOL)_isModernButton;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathImageEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_pathTitleEdgeInsets;
+- (void)_prepareToAppearInNavigationItemOnLeft:(BOOL)arg1;
 - (id)_scriptingInfo;
+- (void)_sendSetNeedsLayoutToSuperviewOnTitleAnimationCompletionIfNecessary;
+- (void)_setAppearanceGuideClass:(Class)arg1;
 - (void)_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
@@ -60,9 +84,16 @@
 - (void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 style:(int)arg3 barMetrics:(int)arg4;
 - (void)_setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setBoundsAdjustment:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setButtonItemStyle:(int)arg1;
+- (void)_setFontScaleAdjustment:(float)arg1;
+- (void)_setFontScaleInvalid:(BOOL)arg1;
+- (void)_setStylesForSizingTitles:(id)arg1;
 - (void)_setTintColor:(id)arg1;
+- (void)_setTitleFrozen:(BOOL)arg1;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setWantsLetterpressTitle;
+- (id)_stylesForSizingTitles;
 - (id)_tintColor;
 - (struct UIOffset { float x1; float x2; })_titlePositionAdjustmentForBarMetrics:(int)arg1;
 - (id)_titleTextAttributesForState:(unsigned int)arg1;
@@ -70,6 +101,7 @@
 - (void)_updateShadowOffsetWithAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_updateStyle;
 - (void)_updateTitleColorsForState:(unsigned int)arg1;
+- (void)_updateTitleForLetterpress;
 - (int)barStyle;
 - (BOOL)contentsEqualTo:(id)arg1 withStyle:(int)arg2;
 - (int)controlSize;
@@ -84,6 +116,7 @@
 - (id)initWithTitle:(id)arg1;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 possibleSystemItems:(id)arg6 tintColor:(id)arg7 applyBezel:(BOOL)arg8 forButtonItemStyle:(int)arg9;
 - (id)initWithValue:(id)arg1 width:(float)arg2 style:(int)arg3 barStyle:(int)arg4 possibleTitles:(id)arg5 tintColor:(id)arg6;
+- (void)layoutSubviews;
 - (float)maximumWidth;
 - (float)minimumWidth;
 - (void)setBarStyle:(int)arg1;
@@ -96,11 +129,9 @@
 - (void)setMinimumWidth:(float)arg1;
 - (void)setNavigationBarTintColor:(id)arg1;
 - (void)setStyle:(int)arg1;
-- (void)setTintColor:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)style;
-- (id)tintColor;
 - (id)title;
 
 @end

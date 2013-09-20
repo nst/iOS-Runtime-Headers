@@ -2,43 +2,20 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMWheelEvent : DOMUIEvent {
+@interface DOMWheelEvent : DOMMouseEvent {
 }
 
-@property(readonly) BOOL altKey;
-@property(readonly) int clientX;
-@property(readonly) int clientY;
-@property(readonly) BOOL ctrlKey;
 @property(readonly) BOOL isHorizontal;
-@property(readonly) BOOL metaKey;
-@property(readonly) int offsetX;
-@property(readonly) int offsetY;
-@property(readonly) int screenX;
-@property(readonly) int screenY;
-@property(readonly) BOOL shiftKey;
 @property(readonly) int wheelDelta;
 @property(readonly) int wheelDeltaX;
 @property(readonly) int wheelDeltaY;
-@property(readonly) int x;
-@property(readonly) int y;
 
-- (BOOL)altKey;
-- (int)clientX;
-- (int)clientY;
-- (BOOL)ctrlKey;
+- (unsigned int)deltaMode;
 - (void)initWheelEvent:(int)arg1 wheelDeltaY:(int)arg2 view:(id)arg3 screenX:(int)arg4 screenY:(int)arg5 clientX:(int)arg6 clientY:(int)arg7 ctrlKey:(BOOL)arg8 altKey:(BOOL)arg9 shiftKey:(BOOL)arg10 metaKey:(BOOL)arg11;
 - (BOOL)isHorizontal;
-- (BOOL)metaKey;
-- (int)offsetX;
-- (int)offsetY;
-- (int)screenX;
-- (int)screenY;
-- (BOOL)shiftKey;
 - (BOOL)webkitDirectionInvertedFromDevice;
 - (int)wheelDelta;
 - (int)wheelDeltaX;
 - (int)wheelDeltaY;
-- (int)x;
-- (int)y;
 
 @end

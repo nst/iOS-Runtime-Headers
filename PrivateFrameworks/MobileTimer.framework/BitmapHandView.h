@@ -5,27 +5,15 @@
 @class NSArray;
 
 @interface BitmapHandView : UIView <HandView> {
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    float _handAngle;
     NSArray *_partViews;
     NSArray *_partViewsMaintainingOrientation;
-    } _rotationalCenterTranslate;
 }
-
-@property float handAngle;
 
 + (id)partInfoWithName:(id)arg1 offset:(struct CGPoint { float x1; float x2; })arg2 maintainsOrientation:(BOOL)arg3;
 + (id)partInfoWithName:(id)arg1;
 
 - (void)dealloc;
-- (float)handAngle;
 - (id)initWithBundle:(id)arg1 resourcePath:(id)arg2 partInfoList:(id)arg3 rotationalCenter:(struct CGPoint { float x1; float x2; })arg4;
-- (void)setHandAngle:(float)arg1;
+- (id)initWithImage:(id)arg1 rotationalCenter:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

@@ -5,6 +5,7 @@
 @class NSDictionary, NSString;
 
 @interface AASetupAssistantConfigResponse : AAResponse {
+    NSString *_ckAppLoginURL;
     NSDictionary *_urls;
 }
 
@@ -12,9 +13,12 @@
 @property(readonly) NSString * activeEmailDomain;
 @property(readonly) NSString * authenticateURL;
 @property(readonly) NSString * checkValidityURL;
+@property(readonly) NSString * ckAppLoginURL;
 @property(readonly) NSString * createAppleIDURL;
 @property(readonly) NSString * createDelegateAccountsURL;
 @property(readonly) NSString * existingAppleIDTermsUIURL;
+@property(readonly) NSString * genericTermsURL;
+@property(readonly) NSString * iForgotUIURL;
 @property(readonly) NSString * iForgotURL;
 @property(readonly) NSString * loginDelegatesURL;
 @property(readonly) BOOL setupAssistantServerEnabled;
@@ -30,9 +34,12 @@
 - (id)activeEmailDomain;
 - (id)authenticateURL;
 - (id)checkValidityURL;
+- (id)ckAppLoginURL;
 - (id)createAppleIDURL;
 - (id)createDelegateAccountsURL;
 - (id)existingAppleIDTermsUIURL;
+- (id)genericTermsURL;
+- (id)iForgotUIURL;
 - (id)iForgotURL;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)loginDelegatesURL;

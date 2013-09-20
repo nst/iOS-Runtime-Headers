@@ -10,6 +10,8 @@
 
 @property(retain) VGLTexture * texture;
 
+- (void)_drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 numRects:(unsigned int)arg2 context:(id)arg3;
+- (void)_drawTrianglesWithContext:(id)arg1;
 - (void)dealloc;
 - (void)drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 numRects:(unsigned int)arg2 context:(id)arg3;
 - (void)drawTrianglesWithContext:(id)arg1;

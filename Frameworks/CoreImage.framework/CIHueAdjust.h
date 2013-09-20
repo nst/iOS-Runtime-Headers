@@ -9,7 +9,7 @@
     CIImage *inputImage;
 }
 
-@property(copy) NSNumber * inputAngle;
+@property(retain) NSNumber * inputAngle;
 @property(retain) CIImage * inputImage;
 
 + (id)customAttributes;

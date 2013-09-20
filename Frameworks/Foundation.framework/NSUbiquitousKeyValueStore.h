@@ -68,5 +68,7 @@
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;
 - (BOOL)synchronize;
+- (void)synchronizeWithCompletionHandler:(id)arg1;
+- (BOOL)synchronizeWithSourceForced:(BOOL)arg1;
 
 @end

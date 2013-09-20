@@ -22,10 +22,12 @@
 - (void)_closeMescalSession;
 - (void)_mescalDidOpenWithSession:(id)arg1 error:(id)arg2;
 - (id)_mescalSession;
+- (id)copyArchivableContext;
 - (void)dealloc;
 - (void)enqueueFetchOperation;
 - (void)handleFailureWithError:(id)arg1;
 - (id)init;
+- (id)initWithExternalAccountURL:(id)arg1;
 - (id)newFetchOperation;
 - (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2 returningError:(id*)arg3;
 - (void)setStyle:(int)arg1;

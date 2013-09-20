@@ -31,7 +31,7 @@
 - (void)didFailWithError:(id)arg1;
 - (void)didValidateLocation:(id)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)locationManager;
 - (void)removeAllCities;
 - (id)searchCompletion;

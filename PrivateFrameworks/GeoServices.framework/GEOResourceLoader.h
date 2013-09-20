@@ -6,39 +6,39 @@
    See Warning(s) below.
  */
 
-@class <GEOResourceLoaderDelegate>, NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString;
 
 @interface GEOResourceLoader : NSObject {
     NSString *_baseURLString;
     BOOL _canceled;
     id _completionHandler;
-    <GEOResourceLoaderDelegate> *_delegate;
     NSString *_directory;
+    BOOL _firstLoadEver;
+    BOOL _ignoreCachedResources;
     NSMutableArray *_loadedResources;
     unsigned int _maxConcurrentLoads;
+    int _numberOfCopiesInProgress;
     int _numberOfDownloadsInProgress;
     id _progressHandler;
+    NSArray *_resourceInfos;
     NSMutableArray *_resourcesToLoad;
     unsigned int _tileGroupIdentifier;
     NSString *_uniqueTileGroupIdentifier;
 }
 
-@property <GEOResourceLoaderDelegate> * delegate;
 @property(readonly) NSArray * loadedResources;
 @property(readonly) unsigned int tileGroupIdentifier;
 @property(readonly) NSString * uniqueTileGroupIdentifier;
 
-- (void)_addNecessaryResourcesForType:(int)arg1;
 - (void)_cleanup;
 - (void)_loadNextResource;
-- (BOOL)_writeResourceToDisk:(id)arg1;
+- (id)_urlForResource:(id)arg1;
+- (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 orExistingPathOnDisk:(id)arg3 completionHandler:(id)arg4;
 - (void)cancel;
 - (void)dealloc;
-- (id)delegate;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1 uniqueIdentifier:(id)arg2 targetDirectory:(id)arg3 baseURLString:(id)arg4 isFirstLoad:(BOOL)arg5;
+- (id)initWithTileGroupIdentifier:(unsigned int)arg1 uniqueIdentifier:(id)arg2 targetDirectory:(id)arg3 baseURLString:(id)arg4 resources:(id)arg5 isFirstLoad:(BOOL)arg6 ignoreCachedResources:(BOOL)arg7;
 - (id)loadedResources;
-- (void)setDelegate:(id)arg1;
-- (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2;
+- (void)startWithProgressHandler:(id)arg1 completionHandler:(id)arg2 firstLoadEver:(BOOL)arg3;
 - (unsigned int)tileGroupIdentifier;
 - (id)uniqueTileGroupIdentifier;
 

@@ -21,6 +21,7 @@
 
 + (id)currentClient;
 
+- (id)_appleClientVersions;
 - (void)_softwareMapInvalidatedNotification:(id)arg1;
 - (id)appleClientApplication;
 - (id)appleClientVersions;

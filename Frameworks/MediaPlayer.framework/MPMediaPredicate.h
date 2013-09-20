@@ -2,8 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaPredicate : NSObject <NSCoding> {
+@interface MPMediaPredicate : NSObject <NSSecureCoding> {
 }
+
++ (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)evaluateEntity:(id)arg1;

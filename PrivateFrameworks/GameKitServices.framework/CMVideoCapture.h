@@ -11,9 +11,9 @@
     struct tagHANDLE { int x1; } *_handle;
 }
 
+- (long)copyColorInfo:(const struct __CFDictionary {}**)arg1;
 - (void)dealloc;
 - (long)getCameraType:(int*)arg1;
-- (long)getColorInfo:(const struct __CFDictionary {}**)arg1;
 - (long)getPreviewFrameCount:(int*)arg1 captureFrameCount:(int*)arg2 reset:(BOOL)arg3;
 - (id)initWithOptions:(void*)arg1 callback:(int (*)())arg2 width:(int)arg3 height:(int)arg4 frameRate:(int)arg5 cameraType:(int)arg6 withError:(int*)arg7;
 - (BOOL)isPreviewRunning;

@@ -2,35 +2,43 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSString, NSURL;
+@class NSString, NSURL, NSUUID;
 
-@interface QLPreviewItemProxy : NSObject <NSCoding, QLPreviewItem> {
+@interface QLPreviewItemProxy : NSObject <NSSecureCoding, QLPreviewItem> {
     NSString *_contentType;
     int _fileExtensionHandle;
     NSString *_fileExtensionToken;
+    int _index;
     NSString *_password;
     NSString *_title;
     NSURL *_url;
     NSURL *_urlForDisplay;
+    NSUUID *_uuid;
 }
 
 @property(retain) NSString * contentType;
+@property int index;
 @property(retain) NSString * password;
 @property(readonly) NSString * previewItemTitle;
 @property(readonly) NSURL * previewItemURL;
 @property(retain) NSString * title;
 @property(retain) NSURL * url;
 @property(retain) NSURL * urlForDisplay;
+@property(readonly) NSUUID * uuid;
 
++ (id)encodedClasses;
 + (id)proxyWithPreviewItem:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void)consumeFileExtension;
 - (id)contentType;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (int)index;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPreviewItem:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)issueFileExtension;
 - (id)password;
 - (id)previewItemContentType;
@@ -38,6 +46,7 @@
 - (id)previewItemURL;
 - (id)previewItemURLForDisplay;
 - (void)setContentType:(id)arg1;
+- (void)setIndex:(int)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrl:(id)arg1;
@@ -45,5 +54,6 @@
 - (id)title;
 - (id)url;
 - (id)urlForDisplay;
+- (id)uuid;
 
 @end

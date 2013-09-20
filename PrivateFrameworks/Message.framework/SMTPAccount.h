@@ -15,9 +15,11 @@
 }
 
 + (id)accountTypeString;
++ (unsigned int)defaultPortNumber;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
-+ (void*)keychainProtocol;
++ (BOOL)isCommonPortNumber:(unsigned int)arg1;
++ (void*)legacyKeychainProtocol;
 + (id)newDefaultInstance;
 + (void)registerAppleServiceDeliveryHostname:(id)arg1;
 + (id)saslProfileName;
@@ -36,20 +38,16 @@
 - (id)connectionSettingsForAuthentication:(BOOL)arg1 secure:(id)arg2 insecure:(id)arg3;
 - (id)customAuthenticationErrorStringForError:(id)arg1 authScheme:(id)arg2;
 - (void)dealloc;
-- (unsigned int)defaultPortNumber;
 - (Class)deliveryClass;
 - (void)disconnect:(id)arg1;
+- (id)errorForResponse:(id)arg1;
 - (id)insecureConnectionSettings;
-- (BOOL)isCommonPortNumber:(unsigned int)arg1;
-- (unsigned int)keychainPortNumber;
-- (id)passwordFromKeychain;
 - (id)preferredAuthScheme;
 - (void)releaseAllConnections;
 - (void)releaseAllForcedConnections;
 - (id)secureConnectionSettings;
 - (id)serviceName;
 - (void)setDeliveryClass:(Class)arg1;
-- (void)setPasswordInKeychain:(id)arg1;
 - (void)setPreferredAuthScheme:(id)arg1;
 - (void)setSupportsOutboxCopy:(BOOL)arg1;
 - (void)setSupportsPipelining:(BOOL)arg1;

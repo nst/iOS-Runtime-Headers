@@ -20,6 +20,5 @@
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 homeURL:(id)arg3 cardURL:(id)arg4;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)startTaskGroup;
-- (void)taskGroupWillCancelWithError:(id)arg1;
 
 @end

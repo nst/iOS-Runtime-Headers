@@ -4,12 +4,12 @@
 
 @class NSString;
 
-@interface AXHearingAidMode : NSObject {
-    int category;
-    int ear;
-    unsigned char index;
-    BOOL isSelected;
-    NSString *name;
+@interface AXHearingAidMode : NSObject <NSSecureCoding> {
+    int _category;
+    int _ear;
+    unsigned char _index;
+    BOOL _isSelected;
+    NSString *_name;
     int syncAttempts;
 }
 
@@ -20,11 +20,15 @@
 @property(copy) NSString * name;
 @property int syncAttempts;
 
++ (BOOL)supportsSecureCoding;
+
 - (int)category;
 - (void)dealloc;
 - (id)description;
 - (int)ear;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned char)index;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSelected;
 - (BOOL)isStream;

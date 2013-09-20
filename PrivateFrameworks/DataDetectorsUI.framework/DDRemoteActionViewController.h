@@ -14,7 +14,9 @@
 @property(retain) DDAction * action;
 @property DDActionController * actionController;
 
++ (id)exportedInterface;
 + (id)prepareViewController:(id)arg1 forAction:(id)arg2 actionController:(id)arg3;
++ (id)serviceViewControllerInterface;
 
 - (void)_prepareForAction:(id)arg1 inActionController:(id)arg2;
 - (id)action;
@@ -23,7 +25,7 @@
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)setAction:(id)arg1;
 - (void)setActionController:(id)arg1;
-- (void)viewControllerReadyAndIsModal:(id)arg1;
+- (void)viewControllerReadyAndIsModal:(BOOL)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

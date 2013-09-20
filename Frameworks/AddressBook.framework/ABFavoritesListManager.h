@@ -22,6 +22,7 @@
 - (void)_addEntryToMap:(id)arg1;
 - (void)_delayedLookup;
 - (void)_entryIdentityChanged:(id)arg1;
+- (BOOL)_isValueForEntry:(id)arg1 equalToValue:(id)arg2;
 - (void)_listChangedExternally;
 - (void)_loadList;
 - (void)_loadListWithAddressBook:(void*)arg1;

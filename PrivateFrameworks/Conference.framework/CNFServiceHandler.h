@@ -10,7 +10,8 @@
 + (BOOL)_isValidProcess;
 + (void)activateFaceTime;
 + (int)activationState;
-+ (unsigned long long)capabilities;
++ (BOOL)callingIsSupported;
++ (unsigned int)capabilities;
 + (BOOL)connect:(BOOL)arg1;
 + (BOOL)connect;
 + (BOOL)disconnect;
@@ -18,8 +19,7 @@
 + (BOOL)faceTimeIsSupported;
 + (id)faceTimeSourceAccount;
 + (BOOL)isConnected;
-+ (void)setCapabilities:(unsigned long long)arg1;
-+ (void)setupServiceHandlerForControllerType:(int)arg1;
++ (void)setCapabilities:(unsigned int)arg1;
 + (void)updateConferenceCapabilitiesForControllerType:(int)arg1;
 
 @end

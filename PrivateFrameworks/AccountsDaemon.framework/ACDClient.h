@@ -2,40 +2,53 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSMutableDictionary, NSNumber, NSString;
+@class ACDDatabase, ACDTelemetryWatchdog, NSMutableDictionary, NSNumber, NSString, NSXPCConnection;
 
 @interface ACDClient : NSObject {
-    NSMutableDictionary *_accessOptions;
     struct __CFBundle { } *_bundle;
     NSString *_bundleID;
-    struct _xpc_connection_s { } *_connection;
+    NSXPCConnection *_connection;
+    ACDDatabase *_database;
+    BOOL _didManuallySetBundleID;
+    NSMutableDictionary *_entitlementChecks;
     NSString *_localizedAppName;
     NSString *_name;
     NSNumber *_pid;
+    ACDTelemetryWatchdog *_telemetry;
 }
 
 @property(readonly) NSString * adamOrDisplayID;
 @property(readonly) struct __CFBundle { }* bundle;
 @property(retain) NSString * bundleID;
-@property(readonly) struct _xpc_connection_s { }* connection;
+@property(readonly) NSXPCConnection * connection;
+@property(readonly) ACDDatabase * database;
 @property(readonly) NSString * localizedAppName;
 @property(readonly) NSString * name;
 @property(readonly) NSNumber * pid;
+@property(retain) ACDTelemetryWatchdog * telemetry;
 
++ (id)bundleForPID:(int)arg1;
 + (id)clientWithBundleID:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_displayNameFromBundleInfoDictionaryForPID:(int)arg1;
+- (id)_displayNameFromSpringBoardForPID:(int)arg1;
 - (id)adamOrDisplayID;
 - (struct __CFBundle { }*)bundle;
 - (id)bundleID;
-- (struct _xpc_connection_s { }*)connection;
+- (id)connection;
+- (id)database;
 - (void)dealloc;
 - (id)debugDescription;
+- (id)description;
 - (BOOL)hasEntitlement:(id)arg1;
-- (id)initWithConnection:(struct _xpc_connection_s { }*)arg1;
+- (id)initWithConnection:(id)arg1 database:(id)arg2;
+- (id)initWithConnection:(id)arg1;
 - (id)localizedAppName;
 - (id)name;
 - (id)pid;
 - (void)setBundleID:(id)arg1;
+- (void)setTelemetry:(id)arg1;
+- (id)telemetry;
 
 @end

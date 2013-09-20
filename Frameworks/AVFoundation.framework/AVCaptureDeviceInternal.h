@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceFormat, AVCaptureDeviceInput;
+@class AVCaptureDeviceInput;
 
 @interface AVCaptureDeviceInternal : NSObject {
-    AVCaptureDeviceFormat *_activeFormat;
     AVCaptureDeviceInput *_activeInput;
     int _configLockPid;
     int _configLockRefCount;

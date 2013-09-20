@@ -10,8 +10,8 @@
 
 @property(retain) MPAVController * player;
 
+- (void).cxx_destruct;
 - (id)_automationID;
-- (void)dealloc;
 - (id)player;
 - (void)setPlayer:(id)arg1;
 

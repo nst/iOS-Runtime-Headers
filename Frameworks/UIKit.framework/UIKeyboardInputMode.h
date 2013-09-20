@@ -23,9 +23,12 @@
 + (id)softwareLayoutFromIdentifier:(id)arg1;
 
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)hardwareLayout;
 - (id)identifier;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)normalizedIdentifierLevels;
 - (id)primaryLanguage;
 - (void)setHardwareLayout:(id)arg1;

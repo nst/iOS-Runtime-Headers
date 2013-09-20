@@ -26,6 +26,7 @@
     NSDictionary *_localUserInfo;
     NSString *_messageGUID;
     NSString *_mimeType;
+    BOOL _needsWrapper;
     NSString *_otherPerson;
     BOOL _shouldAttemptToResume;
     BOOL _shouldForceArchive;
@@ -42,6 +43,7 @@
 @property(readonly) unsigned long long _lastAveragedBytes;
 @property(setter=_setLastAveragedInterval:) double _lastAveragedInterval;
 @property(setter=_setLastUpdatedInterval:) double _lastUpdatedInterval;
+@property(setter=_setNeedsWrapper:) BOOL _needsWrapper;
 @property(retain) NSString * accountID;
 @property unsigned long long averageTransferRate;
 @property(readonly) BOOL canBeAccepted;
@@ -57,6 +59,7 @@
 @property unsigned short hfsFlags;
 @property unsigned long hfsType;
 @property BOOL isDirectory;
+@property(readonly) BOOL isFinished;
 @property BOOL isIncoming;
 @property(retain) NSData * localBookmark;
 @property(retain) NSString * localPath;
@@ -87,6 +90,7 @@
 - (unsigned long long)_lastAveragedBytes;
 - (double)_lastAveragedInterval;
 - (double)_lastUpdatedInterval;
+- (BOOL)_needsWrapper;
 - (void)_setAccount:(id)arg1 otherPerson:(id)arg2;
 - (void)_setAveragedTransferRate:(unsigned long long)arg1 lastAveragedInterval:(double)arg2 lastAveragedBytes:(unsigned long long)arg3;
 - (void)_setCurrentBytes:(unsigned long long)arg1 totalBytes:(unsigned long long)arg2;
@@ -98,6 +102,7 @@
 - (void)_setLastUpdatedInterval:(double)arg1;
 - (void)_setLocalPath:(id)arg1;
 - (void)_setLocalURL:(id)arg1;
+- (void)_setNeedsWrapper:(BOOL)arg1;
 - (void)_setStartDate:(id)arg1;
 - (void)_setTransferDataURL:(id)arg1;
 - (void)_setTransferState:(int)arg1;
@@ -118,7 +123,9 @@
 - (unsigned long)hfsCreator;
 - (unsigned short)hfsFlags;
 - (unsigned long)hfsType;
+- (id)init;
 - (BOOL)isDirectory;
+- (BOOL)isFinished;
 - (BOOL)isIncoming;
 - (id)localBookmark;
 - (id)localPath;

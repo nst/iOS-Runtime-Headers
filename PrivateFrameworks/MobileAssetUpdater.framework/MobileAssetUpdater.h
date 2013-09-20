@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class ASAsset, NSString;
+@class ASAsset, ASAssetQuery, NSString;
 
 @interface MobileAssetUpdater : NSObject {
     ASAsset *_asset;
@@ -15,6 +15,7 @@
     id _logger;
     NSString *_overrideFile;
     NSString *_purgeOverrideFile;
+    ASAssetQuery *_query;
     BOOL _requireAssetMetadata;
 }
 
@@ -25,6 +26,7 @@
 @property(copy) id logger;
 @property(retain) NSString * overrideFile;
 @property(retain) NSString * purgeOverrideFile;
+@property(retain) ASAssetQuery * query;
 @property BOOL requireAssetMetadata;
 
 - (id)asset;
@@ -46,6 +48,7 @@
 - (id)overrideFile;
 - (id)overrideQueryPredicateFromDict:(id)arg1;
 - (id)purgeOverrideFile;
+- (id)query;
 - (void)queryComplete:(id)arg1 remote:(BOOL)arg2 error:(id)arg3 completion:(id)arg4;
 - (id)queryPredicate;
 - (BOOL)requireAssetMetadata;
@@ -54,6 +57,7 @@
 - (void)setLogger:(id)arg1;
 - (void)setOverrideFile:(id)arg1;
 - (void)setPurgeOverrideFile:(id)arg1;
+- (void)setQuery:(id)arg1;
 - (void)setRequireAssetMetadata:(BOOL)arg1;
 - (id)validateAsset;
 - (id)validateAssetAttributes:(id)arg1;

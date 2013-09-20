@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOIndexQueryNode : PBCodable {
+@interface GEOIndexQueryNode : PBCodable <NSCopying> {
     NSString *_field;
     NSMutableArray *_operands;
     int _type;
@@ -21,6 +21,7 @@
 - (void)addOperands:(id)arg1;
 - (void)clearOperands;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

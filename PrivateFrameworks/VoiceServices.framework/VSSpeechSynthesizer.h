@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class <VSSpeechSynthesizerDelegate>, NSString;
+@class <VSSpeechSynthesizerDelegate>, NSObject<OS_dispatch_queue>, NSString, VSKeepAlive, VSSpeechConnection;
 
-@interface VSSpeechSynthesizer : NSObject {
+@interface VSSpeechSynthesizer : NSObject <VSSpeechConnectionDelegate> {
     struct { 
         unsigned int delegateStart : 1; 
         unsigned int delegateFinish : 1; 
@@ -12,61 +12,105 @@
         unsigned int delegatePause : 1; 
         unsigned int delegateContinue : 1; 
         unsigned int delegateWillSpeak : 1; 
+        unsigned int delegateStartWithRequest : 1; 
+        unsigned int delegateFinishWithRequest : 1; 
+        unsigned int delegateFinishWithPhonemesSpokenWithRequest : 1; 
+        unsigned int delegatePauseWithRequest : 1; 
+        unsigned int delegateContinueWithRequest : 1; 
+        unsigned int delegateWillSpeakWithRequest : 1; 
         unsigned int willUseInput : 1; 
+    unsigned int _audioQueueFlags;
+    unsigned int _audioSessionID;
+    BOOL _audioSessionIDIsValid;
     <VSSpeechSynthesizerDelegate> *_delegate;
     int _footprint;
-    void *_inactiveKeepAlive;
-    void *_keepAlive;
+    int _gender;
+    VSKeepAlive *_inactiveKeepAlive;
+    VSKeepAlive *_keepAlive;
     float _pitch;
+    NSObject<OS_dispatch_queue> *_queue;
     float _rate;
-    void *_speechJob;
+    VSSpeechConnection *_speechConnection;
     } _synthesizerFlags;
+    BOOL _useCustomVoice;
+    BOOL _useSharedSession;
     NSString *_voice;
     float _volume;
 }
 
-+ (void)_localeDidChange;
+@property <VSSpeechSynthesizerDelegate> * delegate;
+@property float pitch;
+@property float rate;
+@property(retain) NSString * voice;
+@property float volume;
+
++ (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 + (id)availableLanguageCodes;
 + (id)availableVoices;
 + (id)availableVoicesForLanguageCode:(id)arg1;
++ (void)downloadVoiceAsset:(id)arg1 progress:(id)arg2 completion:(id)arg3;
++ (void)getAllVoiceAssets:(id)arg1;
++ (void)getAutoDownloadedVoiceAssets:(id)arg1;
++ (void)getLocalVoiceAssets:(id)arg1;
++ (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(int)arg2 gender:(int)arg3 custom:(BOOL)arg4 reply:(id)arg5;
 + (BOOL)isSystemSpeaking;
++ (void)setAutoDownloadedVoiceAssets:(id)arg1;
 
-- (void)_handleSpeech:(struct __VSSpeech { }*)arg1 completed:(BOOL)arg2 phonemesSpoken:(struct __CFString { }*)arg3 withError:(id)arg4;
-- (void)_handleSpeech:(struct __VSSpeech { }*)arg1 willSpeakMarkType:(int)arg2 inRange:(struct { int x1; int x2; })arg3;
-- (void)_handleSpeechContinued:(struct __VSSpeech { }*)arg1;
-- (void)_handleSpeechPaused:(struct __VSSpeech { }*)arg1;
-- (void)_handleSpeechStarted:(struct __VSSpeech { }*)arg1;
-- (id)continueSpeaking;
+- (void).cxx_destruct;
+- (BOOL)_continueSpeakingRequest:(id)arg1 withError:(id*)arg2;
+- (BOOL)_pauseSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 synchronously:(BOOL)arg3 error:(id*)arg4;
+- (void)_setDelegate:(id)arg1;
+- (BOOL)_startSpeakingString:(id)arg1 orAttributedString:(id)arg2 toURL:(id)arg3 withLanguageCode:(id)arg4 request:(id*)arg5 error:(id*)arg6;
+- (BOOL)_stopSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 synchronously:(BOOL)arg3 error:(id*)arg4;
+- (void)connection:(id)arg1 speechRequest:(id)arg2 didStopAtEnd:(BOOL)arg3 phonemesSpoken:(id)arg4 error:(id)arg5;
+- (void)connection:(id)arg1 speechRequest:(id)arg2 willSpeakMark:(int)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (void)connection:(id)arg1 speechRequestDidContinue:(id)arg2;
+- (void)connection:(id)arg1 speechRequestDidPause:(id)arg2;
+- (void)connection:(id)arg1 speechRequestDidStart:(id)arg2;
+- (BOOL)continueSpeakingRequest:(id)arg1 withError:(id*)arg2;
+- (BOOL)continueSpeakingWithError:(id*)arg1;
 - (void)dealloc;
+- (id)delegate;
 - (int)footprint;
+- (int)gender;
 - (id)init;
 - (id)initForInputFeedback;
 - (BOOL)isSpeaking;
 - (float)maximumRate;
 - (float)minimumRate;
-- (id)pauseSpeakingAtNextBoundary:(int)arg1 synchronously:(BOOL)arg2;
-- (id)pauseSpeakingAtNextBoundary:(int)arg1;
+- (BOOL)pauseSpeakingAtNextBoundary:(int)arg1 error:(id*)arg2;
+- (BOOL)pauseSpeakingAtNextBoundary:(int)arg1 synchronously:(BOOL)arg2 error:(id*)arg3;
+- (BOOL)pauseSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 error:(id*)arg3;
+- (BOOL)pauseSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 synchronously:(BOOL)arg3 error:(id*)arg4;
 - (float)pitch;
 - (float)rate;
 - (void)setDelegate:(id)arg1;
 - (void)setFootprint:(int)arg1;
+- (void)setGender:(int)arg1;
 - (void)setMaintainInactivePersistentConnection:(BOOL)arg1;
 - (void)setMaintainPersistentConnection:(BOOL)arg1;
-- (id)setPitch:(float)arg1;
-- (id)setRate:(float)arg1;
+- (void)setPitch:(float)arg1;
+- (void)setRate:(float)arg1;
+- (void)setUseCustomVoice:(BOOL)arg1;
 - (void)setVoice:(id)arg1;
-- (id)setVolume:(float)arg1;
+- (void)setVolume:(float)arg1;
 - (id)speechString;
-- (id)startSpeakingAttributedString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3;
-- (id)startSpeakingAttributedString:(id)arg1 toURL:(id)arg2;
-- (id)startSpeakingAttributedString:(id)arg1;
-- (id)startSpeakingString:(id)arg1 attributedString:(id)arg2 toURL:(id)arg3 withLanguageCode:(id)arg4;
-- (id)startSpeakingString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3;
-- (id)startSpeakingString:(id)arg1 toURL:(id)arg2;
-- (id)startSpeakingString:(id)arg1 withLanguageCode:(id)arg2;
-- (id)startSpeakingString:(id)arg1;
-- (id)stopSpeakingAtNextBoundary:(int)arg1 synchronously:(BOOL)arg2;
-- (id)stopSpeakingAtNextBoundary:(int)arg1;
+- (BOOL)startSpeakingAttributedString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3 error:(id*)arg4;
+- (BOOL)startSpeakingString:(id)arg1 error:(id*)arg2;
+- (BOOL)startSpeakingString:(id)arg1 request:(id*)arg2 error:(id*)arg3;
+- (BOOL)startSpeakingString:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (BOOL)startSpeakingString:(id)arg1 toURL:(id)arg2 request:(id*)arg3 error:(id*)arg4;
+- (BOOL)startSpeakingString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3 error:(id*)arg4;
+- (BOOL)startSpeakingString:(id)arg1 withLanguageCode:(id)arg2 error:(id*)arg3;
+- (BOOL)startSpeakingString:(id)arg1 withLanguageCode:(id)arg2 request:(id*)arg3 error:(id*)arg4;
+- (BOOL)stopSpeakingAtNextBoundary:(int)arg1 error:(id*)arg2;
+- (BOOL)stopSpeakingAtNextBoundary:(int)arg1 synchronously:(BOOL)arg2 error:(id*)arg3;
+- (BOOL)stopSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 error:(id*)arg3;
+- (BOOL)stopSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 synchronously:(BOOL)arg3 error:(id*)arg4;
+- (void)useAudioQueueFlags:(unsigned int)arg1;
+- (BOOL)useCustomVoice;
+- (void)useSharedAudioSession:(BOOL)arg1;
+- (void)useSpecificAudioSession:(unsigned int)arg1;
 - (id)voice;
 - (float)volume;
 

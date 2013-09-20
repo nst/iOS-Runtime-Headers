@@ -12,10 +12,10 @@
 
 + (id)predicateMatchingPredicates:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
 - (id)_ML3PredicateForEntityTypeSelector:(SEL)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

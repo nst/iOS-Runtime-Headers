@@ -68,8 +68,8 @@
 - (id)_automationValue;
 - (void)_define:(id)arg1;
 - (void)_didScroll;
-- (id)_findWebViewWordBoundaryFromPosition:(id)arg1;
 - (void)_hideSelectionCommands;
+- (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;
 - (id)_keyboardResponder;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
@@ -79,6 +79,7 @@
 - (void)_scrollViewDidEndDecelerating;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewWillBeginDragging;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionClipRect;
 - (void)_showTextStyleOptions:(id)arg1;
 - (BOOL)allowsEditingTextAttributes;
 - (id)attributedText;
@@ -97,7 +98,6 @@
 - (void)cancelInteractionWithLink;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForVisiblePosition:(id)arg1;
-- (unsigned short)characterBeforeCaretSelection;
 - (id)characterRangeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)characterRangeByExtendingPosition:(id)arg1 inDirection:(int)arg2;
 - (void)clearScrollToVisibleTimer;
@@ -113,6 +113,7 @@
 - (void)cut:(id)arg1;
 - (unsigned int)dataDetectorTypes;
 - (void)dealloc;
+- (void)decreaseSize:(id)arg1;
 - (id)delegate;
 - (void)deleteBackward;
 - (void)didMoveToSuperview;
@@ -131,6 +132,7 @@
 - (BOOL)hasSelection;
 - (BOOL)hasText;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)increaseSize:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 webView:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -153,7 +155,6 @@
 - (void)makeTextWritingDirectionLeftToRight:(id)arg1;
 - (void)makeTextWritingDirectionRightToLeft:(id)arg1;
 - (int)marginTop;
-- (id)markedText;
 - (id)markedTextRange;
 - (id)markedTextStyle;
 - (id)metadataDictionariesForDictationResults;
@@ -169,7 +170,6 @@
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
 - (void)recalculateStyle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectContainingCaretSelection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForScrollToVisible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSelection:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)registerForEditingDelegateNotification:(id)arg1 selector:(SEL)arg2;
@@ -271,7 +271,5 @@
 - (id)webView;
 - (void)webViewDidChange:(id)arg1;
 - (BOOL)willInteractWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)wordContainingCaretSelection;
-- (id)wordRangeContainingCaretSelection;
 
 @end

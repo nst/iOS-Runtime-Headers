@@ -9,6 +9,7 @@
 }
 
 @property(readonly) AVAssetTrack * assetTrack;
+@property(readonly) float currentVideoFrameRate;
 @property(getter=isEnabled) BOOL enabled;
 
 + (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackID:(int)arg2 asset:(id)arg3 playerItem:(id)arg4;
@@ -20,8 +21,10 @@
 - (id)_playerItem;
 - (void)_removeLayer:(id)arg1;
 - (void)_setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1;
+- (void)_setAudioTimePitchAlgorithm:(id)arg1;
 - (void)_setAudioVolumeCurve:(id)arg1;
 - (id)assetTrack;
+- (float)currentVideoFrameRate;
 - (void)dealloc;
 - (id)description;
 - (id)fallbackTrack;
@@ -29,7 +32,9 @@
 - (unsigned int)hash;
 - (BOOL)isEnabled;
 - (BOOL)isEqual:(id)arg1;
+- (id)loudnessInfo;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setLoudnessInfo:(id)arg1;
 - (int)trackID;
 
 @end

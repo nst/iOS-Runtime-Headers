@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSASAssetUploaderDelegate>, NSMutableArray, NSMutableDictionary;
+@class <MSASAssetUploaderDelegate>, NSMutableArray, NSMutableDictionary, NSMutableSet;
 
 @interface MSASAssetUploader : MSASAssetTransferer {
+    NSMutableDictionary *_assetCollectionGUIDToRequestorContext;
     NSMutableDictionary *_assetCollectionsToItemInFlightMap;
+    NSMutableSet *_assetCollectionsWithAuthorizationError;
     NSMutableDictionary *_assetToAssetCollectionMap;
     BOOL _didEncounterNetworkConditionError;
     NSMutableArray *_finishedAssetCollections;
@@ -13,7 +15,9 @@
     int _state;
 }
 
+@property(retain) NSMutableDictionary * assetCollectionGUIDToRequestorContext;
 @property(retain) NSMutableDictionary * assetCollectionsToItemInFlightMap;
+@property(retain) NSMutableSet * assetCollectionsWithAuthorizationError;
 @property(retain) NSMutableDictionary * assetToAssetCollectionMap;
 @property <MSASAssetUploaderDelegate> * delegate;
 @property BOOL didEncounterNetworkConditionError;
@@ -22,22 +26,28 @@
 @property int state;
 
 - (void).cxx_destruct;
-- (void)MMCSEngine:(id)arg1 didFinishGettingAllAssetsContext:(id)arg2;
-- (void)MMCSEngine:(id)arg1 didFinishGettingAsset:(id)arg2 path:(id)arg3 context:(id)arg4 error:(id)arg5;
-- (void)MMCSEngine:(id)arg1 didFinishPuttingAllAssetsContext:(id)arg2;
-- (void)MMCSEngine:(id)arg1 didFinishPuttingAsset:(id)arg2 context:(id)arg3 putReceipt:(id)arg4 error:(id)arg5;
-- (void)MMCSEngine:(id)arg1 didMakeGetProgress:(float)arg2 state:(int)arg3 onAsset:(id)arg4 context:(id)arg5;
-- (void)MMCSEngine:(id)arg1 didMakePutProgress:(float)arg2 state:(int)arg3 onAsset:(id)arg4 context:(id)arg5;
+- (void)MMCSEngine:(id)arg1 didCreateRequestorContext:(id)arg2 forAssets:(id)arg3;
+- (void)MMCSEngine:(id)arg1 didFinishGettingAsset:(id)arg2 path:(id)arg3 error:(id)arg4;
+- (void)MMCSEngine:(id)arg1 didFinishPuttingAsset:(id)arg2 putReceipt:(id)arg3 error:(id)arg4;
+- (void)MMCSEngine:(id)arg1 didMakeGetProgress:(float)arg2 state:(int)arg3 onAsset:(id)arg4;
+- (void)MMCSEngine:(id)arg1 didMakePutProgress:(float)arg2 state:(int)arg3 onAsset:(id)arg4;
 - (id)_orphanedAssetCollectionError;
 - (id)_pathForPersonID:(id)arg1;
 - (void)_workQueueStop;
+- (id)assetCollectionGUIDToRequestorContext;
 - (id)assetCollectionsToItemInFlightMap;
+- (id)assetCollectionsWithAuthorizationError;
 - (id)assetToAssetCollectionMap;
+- (void)cancelAssetCollections:(id)arg1;
 - (BOOL)didEncounterNetworkConditionError;
+- (void)didFinishGettingAllAssets;
+- (void)didFinishPuttingAllAssets;
 - (id)finishedAssetCollections;
 - (id)itemsInFlight;
 - (void)registerAssetCollections:(id)arg1 completionBlock:(id)arg2;
+- (void)setAssetCollectionGUIDToRequestorContext:(id)arg1;
 - (void)setAssetCollectionsToItemInFlightMap:(id)arg1;
+- (void)setAssetCollectionsWithAuthorizationError:(id)arg1;
 - (void)setAssetToAssetCollectionMap:(id)arg1;
 - (void)setDidEncounterNetworkConditionError:(BOOL)arg1;
 - (void)setFinishedAssetCollections:(id)arg1;
@@ -47,6 +57,7 @@
 - (void)unregisterAssetCollections:(id)arg1 completionBlock:(id)arg2;
 - (void)unregisterAssetCollections:(id)arg1;
 - (void)workQueueCancel;
+- (void)workQueueCancelAssetCollections:(id)arg1;
 - (void)workQueueDidFinishWithItem:(id)arg1 error:(id)arg2;
 - (void)workQueueGoIdle;
 - (void)workQueueRegisterAssetCollections:(id)arg1 index:(unsigned int)arg2 results:(id)arg3 completionBlock:(id)arg4;

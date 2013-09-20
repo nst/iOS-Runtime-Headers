@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVResourceTypeItem, NSDictionary, NSSet, NSString, NSURL;
+@class CoreDAVResourceTypeItem, CoreDAVSupportedReportSetItem, NSDictionary, NSSet, NSString, NSURL;
 
 @interface CoreDAVContainer : NSObject {
     NSURL *_addMemberURL;
@@ -17,7 +17,7 @@
     NSString *_quotaUsed;
     NSURL *_resourceID;
     CoreDAVResourceTypeItem *_resourceType;
-    NSSet *_supportedReports;
+    CoreDAVSupportedReportSetItem *_supportedReportSetItem;
     NSString *_syncToken;
     NSURL *_url;
 }
@@ -25,6 +25,7 @@
 @property(retain) NSURL * addMemberURL;
 @property(retain) NSDictionary * bulkRequests;
 @property(retain) NSString * containerTitle;
+@property(readonly) BOOL hasBindPrivileges;
 @property(readonly) BOOL hasReadPrivileges;
 @property(readonly) BOOL hasWriteContentPrivileges;
 @property(readonly) BOOL hasWritePropertiesPrivileges;
@@ -40,7 +41,8 @@
 @property(retain) NSURL * resourceID;
 @property(retain) CoreDAVResourceTypeItem * resourceType;
 @property(readonly) NSSet * resourceTypeAsStringSet;
-@property(retain) NSSet * supportedReports;
+@property(retain) CoreDAVSupportedReportSetItem * supportedReportSetItem;
+@property(readonly) NSSet * supportedReports;
 @property(readonly) NSSet * supportedReportsAsStringSet;
 @property(readonly) BOOL supportsPrincipalPropertySearchReport;
 @property(readonly) BOOL supportsSyncCollectionReport;
@@ -50,12 +52,14 @@
 + (id)convertPushTransportsForNSServerNotificationCenter:(id)arg1;
 + (id)copyPropertyMappingsForParser;
 
+- (BOOL)_anyPrivilegesMatches:(id)arg1;
 - (id)addMemberURL;
 - (void)applyParsedProperties:(id)arg1;
 - (id)bulkRequests;
 - (id)containerTitle;
 - (void)dealloc;
 - (id)description;
+- (BOOL)hasBindPrivileges;
 - (BOOL)hasReadPrivileges;
 - (BOOL)hasWriteContentPrivileges;
 - (BOOL)hasWritePropertiesPrivileges;
@@ -84,9 +88,10 @@
 - (void)setQuotaUsed:(id)arg1;
 - (void)setResourceID:(id)arg1;
 - (void)setResourceType:(id)arg1;
-- (void)setSupportedReports:(id)arg1;
+- (void)setSupportedReportSetItem:(id)arg1;
 - (void)setSyncToken:(id)arg1;
 - (void)setUrl:(id)arg1;
+- (id)supportedReportSetItem;
 - (id)supportedReports;
 - (id)supportedReportsAsStringSet;
 - (BOOL)supportsPrincipalPropertySearchReport;

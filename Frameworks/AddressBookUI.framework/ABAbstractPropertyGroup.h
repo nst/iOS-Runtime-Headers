@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, NSArray;
+@class <ABStyleProvider>, ABUIPerson, NSArray;
 
 @interface ABAbstractPropertyGroup : NSObject {
     BOOL _hasChanges;
     NSArray *_people;
-    void *_preinsertedPerson;
+    ABUIPerson *_preinsertedPerson;
     <ABStyleProvider> *_styleProvider;
 }
 
 @property BOOL hasChanges;
 @property(retain) NSArray * people;
-@property void* preinsertedPerson;
+@property(retain) ABUIPerson * preinsertedPerson;
 @property(retain) <ABStyleProvider> * styleProvider;
 
 - (BOOL)canSave;
@@ -21,12 +21,12 @@
 - (BOOL)hasChanges;
 - (id)init;
 - (id)people;
-- (void*)preinsertedPerson;
+- (id)preinsertedPerson;
 - (int)property;
 - (void)reloadFromModel;
 - (void)setHasChanges:(BOOL)arg1;
 - (void)setPeople:(id)arg1;
-- (void)setPreinsertedPerson:(void*)arg1;
+- (void)setPreinsertedPerson:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (void)updateRecord;

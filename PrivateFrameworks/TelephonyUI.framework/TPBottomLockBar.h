@@ -2,30 +2,23 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSArray, NSTimer, TPLockKnobView, TPLockTextView, TPWell, UIImageView, UIView;
+@class NSArray, NSTimer, TPLockTextView;
 
 @interface TPBottomLockBar : TPBottomBar {
-    UIImageView *_backgroundView;
     int _currentLabelIndex;
     NSTimer *_cycleLabelTimer;
     id _delegate;
     float _deltaFromDefaultLabelWidth;
     float _fontSize;
-    float _knobTrackInsetLeft;
-    TPLockKnobView *_knobView;
     TPLockTextView *_labelView;
     NSArray *_labels;
     id _representedObject;
-    UIView *_trackArrow;
-    TPWell *_well;
 }
 
 + (float)defaultLabelFontSize;
 + (struct CGSize { float x1; float x2; })defaultSize;
 
-- (void)_adjustKnobOrigin;
 - (void)_adjustLabelOrigin;
-- (float)_calcKnobYOffset;
 - (BOOL)_canDrawContent;
 - (id)_knobImageForColor:(int)arg1;
 - (void)_setLabel:(id)arg1;
@@ -41,7 +34,6 @@
 - (void)finishedCyclingLabelOut;
 - (float)fontSize;
 - (void)freezeKnobInUnlockedPosition;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initForIncomingCallWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 knobColor:(int)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 knobImage:(id)arg2;
@@ -64,10 +56,10 @@
 - (void)setLabel:(id)arg1;
 - (void)setLabels:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
-- (void)setSuppressDrawingBackground:(BOOL)arg1;
 - (void)setTextAlpha:(float)arg1;
-- (void)setWellAlpha:(float)arg1;
 - (void)slideBack:(BOOL)arg1;
+- (float)slideTouchAreaInsetLeft;
+- (float)slideTouchAreaInsetRight;
 - (void)startAnimating;
 - (void)startCyclingLabels;
 - (void)stopAnimating;

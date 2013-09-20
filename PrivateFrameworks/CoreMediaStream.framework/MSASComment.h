@@ -7,29 +7,35 @@
 @interface MSASComment : NSObject {
     NSString *_GUID;
     int _ID;
+    NSDate *_clientTimestamp;
     NSString *_content;
     NSString *_email;
     NSString *_firstName;
     NSString *_fullName;
+    BOOL _isBatchComment;
     BOOL _isCaption;
     BOOL _isDeletable;
     BOOL _isLike;
     BOOL _isMine;
     NSString *_lastName;
+    NSString *_personID;
     NSDate *_timestamp;
 }
 
 @property(retain) NSString * GUID;
 @property int ID;
+@property(retain) NSDate * clientTimestamp;
 @property(retain) NSString * content;
 @property(retain) NSString * email;
 @property(retain) NSString * firstName;
 @property(retain) NSString * fullName;
+@property BOOL isBatchComment;
 @property BOOL isCaption;
 @property BOOL isDeletable;
 @property BOOL isLike;
 @property BOOL isMine;
 @property(retain) NSString * lastName;
+@property(retain) NSString * personID;
 @property(retain) NSDate * timestamp;
 
 + (id)MSASPCommentFromProtocolDictionary:(id)arg1;
@@ -39,6 +45,7 @@
 - (void).cxx_destruct;
 - (id)GUID;
 - (int)ID;
+- (id)clientTimestamp;
 - (id)content;
 - (id)description;
 - (id)email;
@@ -48,23 +55,28 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isBatchComment;
 - (BOOL)isCaption;
 - (BOOL)isDeletable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLike;
 - (BOOL)isMine;
 - (id)lastName;
+- (id)personID;
+- (void)setClientTimestamp:(id)arg1;
 - (void)setContent:(id)arg1;
 - (void)setEmail:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setGUID:(id)arg1;
 - (void)setID:(int)arg1;
+- (void)setIsBatchComment:(BOOL)arg1;
 - (void)setIsCaption:(BOOL)arg1;
 - (void)setIsDeletable:(BOOL)arg1;
 - (void)setIsLike:(BOOL)arg1;
 - (void)setIsMine:(BOOL)arg1;
 - (void)setLastName:(id)arg1;
+- (void)setPersonID:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (id)timestamp;
 

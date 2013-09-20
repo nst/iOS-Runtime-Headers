@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVAsset, AVAudioMix, AVPlayerConnection, AVPlayerItem, AVPropertyStorage, AVVideoComposition, AVWeakReference, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
+@class <AVPlayerItemDelegate>, AVAsset, AVAudioMix, AVCustomVideoCompositorSession, AVPlayerConnection, AVPlayerItem, AVPropertyStorage, AVVideoComposition, AVWeakReference, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
 
 @interface AVPlayerItemInternal : NSObject {
     struct { 
@@ -35,12 +35,18 @@
         unsigned int flags; 
         long long epoch; 
     NSURL *URL;
+    BOOL allowProgressiveSwitchUp;
     AVAsset *asset;
     AVAsset *assetWithFigPlaybackItem;
     NSDictionary *audibleDRMInfo;
     AVAudioMix *audioMix;
+    NSArray *automaticallyLoadedAssetKeys;
+    AVCustomVideoCompositorSession *customVideoCompositorSession;
     NSString *dataYouTubeID;
+    <AVPlayerItemDelegate> *delegate;
     BOOL didApplyInitialAudioMix;
+    BOOL didBecomeReadyForBasicInspection;
+    BOOL didBecomeReadyForInspectionOfDuration;
     BOOL didBecomeReadyForInspectionOfMediaSelectionOptions;
     BOOL didBecomeReadyForInspectionOfPresentationSize;
     BOOL didBecomeReadyForInspectionOfTracks;
@@ -54,6 +60,8 @@
     struct OpaqueFigCPEProtector { } *figCPEProtector;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
     struct OpaqueCMTimebase { } *figTimebase;
+    void *figVideoCompositor;
+    } forwardPlaybackEndTime;
     NSDictionary *gaplessInfo;
     NSMutableArray *handlersToCallWhenReadyForEnqueueing;
     BOOL haveCPEProtector;
@@ -66,31 +74,39 @@
     NSDate *initialDate;
     NSDate *initialEstimatedDate;
     struct __CFString { } *initialFigTimePitchAlgorithm;
-    } initialForwardPlaybackEndTime;
     BOOL initialLimitReadAhead;
     int initialPlaybackLikelyToKeepUpTrigger;
-    } initialReversePlaybackEndTime;
     } initialTime;
     } initialToleranceAfter;
     } initialToleranceBefore;
+    int initialVariantIndex;
     BOOL initialWillNeverSeekBackwardsHint;
     BOOL isCurrentPlayerItem;
-    NSMutableArray *itemOutputs;
+    NSMutableArray *itemLegibleOutputs;
+    NSArray *itemOutputs;
     NSMutableArray *itemVideoOutputs;
+    float maximumBitRate;
+    NSString *mediaKind;
     NSMutableDictionary *mediaOptionsSelectedByClient;
     BOOL needTimedMetadataNotification;
+    BOOL networkUsuallyExceedsMaxBitRate;
     AVPlayerItem *nextItem;
     int nextSeekIDToGenerate;
-    BOOL nonForcedSubtitleDisplayEnabled;
+    BOOL nonForcedSubtitlesEnabled;
     int pendingSeekID;
     AVPlayerConnection *playerConnection;
     AVWeakReference *playerReference;
     AVPlayerItem *previousItem;
     AVPropertyStorage *propertyStorage;
     NSDictionary *rampInOutInfo;
+    BOOL requiresAccessLog;
+    unsigned int restrictions;
+    } reversePlaybackEndTime;
+    BOOL savesDownloadedDataToDiskWhenDone;
     id seekCompletionHandler;
     struct OpaqueFigSimpleMutex { } *seekIDMutex;
     BOOL seekingWaitsForVideoCompositionRendering;
+    NSString *serviceIdentifier;
     float soundCheckVolumeNormalization;
     NSObject<OS_dispatch_queue> *stateDispatchQueue;
     int status;
@@ -99,7 +115,6 @@
     NSArray *textStyleRules;
     NSArray *timedMetadata;
     NSArray *trackIDsForAssetWithFigPlaybackItem;
-    NSMutableDictionary *tracksSelectedByClientViaAlternateTrackGroupSPI;
     AVVideoComposition *videoComposition;
     float volumeAdjustment;
     BOOL wasInitializedWithURL;

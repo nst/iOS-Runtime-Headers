@@ -14,7 +14,6 @@
     } _range;
 }
 
-- (BOOL)_bytesAreVM;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

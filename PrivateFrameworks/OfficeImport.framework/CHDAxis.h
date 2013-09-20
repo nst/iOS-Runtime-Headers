@@ -24,7 +24,7 @@
     int mCrossBetween;
     int mCrosses;
     double mCrossesAt;
-    int mFontIndex;
+    unsigned int mFontIndex;
     OADGraphicProperties *mMajorGridLinesGraphicProperties;
     int mMajorTickMark;
     OADGraphicProperties *mMinorGridLinesGraphicProperties;
@@ -33,7 +33,7 @@
     EDResources *mResources;
     double mScalingMaximum;
     double mScalingMinimum;
-    int mTickLabelColorIndex;
+    unsigned int mTickLabelColorIndex;
     int mTickLabelPosition;
     double mTickLabelRotation;
     CHDTitle *mTitle;
@@ -53,7 +53,7 @@
 - (void)dealloc;
 - (id)defaultDateTimeContentFormat;
 - (id)font;
-- (int)fontIndex;
+- (unsigned int)fontIndex;
 - (id)initWithResources:(id)arg1;
 - (bool)isAutoCrossValue;
 - (bool)isAutoMaximumValue;
@@ -89,7 +89,7 @@
 - (void)setDateTimeFormattingFlag:(bool)arg1;
 - (void)setDeleted:(bool)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(int)arg1;
+- (void)setFontIndex:(unsigned int)arg1;
 - (void)setIsContentFormatDerivedFromDataPoints:(bool)arg1;
 - (void)setLineVisible:(bool)arg1;
 - (void)setMajorGridLinesGraphicProperties:(id)arg1;
@@ -102,12 +102,12 @@
 - (void)setScalingMinimum:(double)arg1;
 - (void)setSecondary:(bool)arg1;
 - (void)setTickLabelAutoRotation:(bool)arg1;
-- (void)setTickLabelColorIndex:(int)arg1;
+- (void)setTickLabelColorIndex:(unsigned int)arg1;
 - (void)setTickLabelPosition:(int)arg1;
 - (void)setTickLabelRotationAngle:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (id)tickLabelColor;
-- (int)tickLabelColorIndex;
+- (unsigned int)tickLabelColorIndex;
 - (int)tickLabelPosition;
 - (double)tickLabelRotationAngle;
 - (id)title;

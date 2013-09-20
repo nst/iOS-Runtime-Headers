@@ -23,6 +23,7 @@
         unsigned int gameKitError : 1; 
         unsigned int genericError : 1; 
         unsigned int gksError : 1; 
+        unsigned int gksReturnCode : 1; 
         unsigned int invitationServiceError : 1; 
         unsigned int isAudioInterrupted : 1; 
         unsigned int isCallUpgrade : 1; 
@@ -30,6 +31,7 @@
         unsigned int isNetworkActive : 1; 
         unsigned int isNetworkEnabled : 1; 
         unsigned int isNetworkReachable : 1; 
+        unsigned int isVideo : 1; 
         unsigned int isVideoInterrupted : 1; 
         unsigned int linkQuality : 1; 
         unsigned int localNetworkConnection : 1; 
@@ -58,6 +60,7 @@
     unsigned int _gameKitError;
     int _genericError;
     int _gksError;
+    int _gksReturnCode;
     NSString *_guid;
     } _has;
     unsigned int _invitationServiceError;
@@ -67,6 +70,7 @@
     unsigned int _isNetworkActive;
     unsigned int _isNetworkEnabled;
     unsigned int _isNetworkReachable;
+    unsigned int _isVideo;
     unsigned int _isVideoInterrupted;
     int _linkQuality;
     unsigned int _localNetworkConnection;
@@ -98,6 +102,7 @@
 @property unsigned int gameKitError;
 @property int genericError;
 @property int gksError;
+@property int gksReturnCode;
 @property(retain) NSString * guid;
 @property BOOL hasBackCameraCaptureDuration;
 @property BOOL hasCallDuration;
@@ -115,6 +120,7 @@
 @property BOOL hasGameKitError;
 @property BOOL hasGenericError;
 @property BOOL hasGksError;
+@property BOOL hasGksReturnCode;
 @property(readonly) BOOL hasGuid;
 @property BOOL hasInvitationServiceError;
 @property BOOL hasIsAudioInterrupted;
@@ -123,6 +129,7 @@
 @property BOOL hasIsNetworkActive;
 @property BOOL hasIsNetworkEnabled;
 @property BOOL hasIsNetworkReachable;
+@property BOOL hasIsVideo;
 @property BOOL hasIsVideoInterrupted;
 @property BOOL hasLinkQuality;
 @property BOOL hasLocalNetworkConnection;
@@ -143,6 +150,7 @@
 @property unsigned int isNetworkActive;
 @property unsigned int isNetworkEnabled;
 @property unsigned int isNetworkReachable;
+@property unsigned int isVideo;
 @property unsigned int isVideoInterrupted;
 @property int linkQuality;
 @property unsigned int localNetworkConnection;
@@ -177,6 +185,7 @@
 - (unsigned int)gameKitError;
 - (int)genericError;
 - (int)gksError;
+- (int)gksReturnCode;
 - (id)guid;
 - (BOOL)hasBackCameraCaptureDuration;
 - (BOOL)hasCallDuration;
@@ -194,6 +203,7 @@
 - (BOOL)hasGameKitError;
 - (BOOL)hasGenericError;
 - (BOOL)hasGksError;
+- (BOOL)hasGksReturnCode;
 - (BOOL)hasGuid;
 - (BOOL)hasInvitationServiceError;
 - (BOOL)hasIsAudioInterrupted;
@@ -202,6 +212,7 @@
 - (BOOL)hasIsNetworkActive;
 - (BOOL)hasIsNetworkEnabled;
 - (BOOL)hasIsNetworkReachable;
+- (BOOL)hasIsVideo;
 - (BOOL)hasIsVideoInterrupted;
 - (BOOL)hasLinkQuality;
 - (BOOL)hasLocalNetworkConnection;
@@ -224,6 +235,7 @@
 - (unsigned int)isNetworkActive;
 - (unsigned int)isNetworkEnabled;
 - (unsigned int)isNetworkReachable;
+- (unsigned int)isVideo;
 - (unsigned int)isVideoInterrupted;
 - (int)linkQuality;
 - (unsigned int)localNetworkConnection;
@@ -251,6 +263,7 @@
 - (void)setGameKitError:(unsigned int)arg1;
 - (void)setGenericError:(int)arg1;
 - (void)setGksError:(int)arg1;
+- (void)setGksReturnCode:(int)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setHasBackCameraCaptureDuration:(BOOL)arg1;
 - (void)setHasCallDuration:(BOOL)arg1;
@@ -268,6 +281,7 @@
 - (void)setHasGameKitError:(BOOL)arg1;
 - (void)setHasGenericError:(BOOL)arg1;
 - (void)setHasGksError:(BOOL)arg1;
+- (void)setHasGksReturnCode:(BOOL)arg1;
 - (void)setHasInvitationServiceError:(BOOL)arg1;
 - (void)setHasIsAudioInterrupted:(BOOL)arg1;
 - (void)setHasIsCallUpgrade:(BOOL)arg1;
@@ -275,6 +289,7 @@
 - (void)setHasIsNetworkActive:(BOOL)arg1;
 - (void)setHasIsNetworkEnabled:(BOOL)arg1;
 - (void)setHasIsNetworkReachable:(BOOL)arg1;
+- (void)setHasIsVideo:(BOOL)arg1;
 - (void)setHasIsVideoInterrupted:(BOOL)arg1;
 - (void)setHasLinkQuality:(BOOL)arg1;
 - (void)setHasLocalNetworkConnection:(BOOL)arg1;
@@ -295,6 +310,7 @@
 - (void)setIsNetworkActive:(unsigned int)arg1;
 - (void)setIsNetworkEnabled:(unsigned int)arg1;
 - (void)setIsNetworkReachable:(unsigned int)arg1;
+- (void)setIsVideo:(unsigned int)arg1;
 - (void)setIsVideoInterrupted:(unsigned int)arg1;
 - (void)setLinkQuality:(int)arg1;
 - (void)setLocalNetworkConnection:(unsigned int)arg1;

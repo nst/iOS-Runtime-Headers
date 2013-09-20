@@ -8,13 +8,15 @@
     struct __CFSet { } *_callbackSet;
     unsigned int _identifier;
     NSLock *_lock;
+    int _pid;
     unsigned int _port;
     struct __CFArray { } *_queue;
 }
 
-+ (id)addClientGetIdentifier:(unsigned int*)arg1 getPort:(unsigned int*)arg2;
++ (id)addClientGetIdentifier:(unsigned int*)arg1 token:(struct { unsigned int x1[8]; })arg2 getPort:(unsigned int*)arg3;
 + (id)callbacksForClientIdentifier:(unsigned int)arg1;
 + (void)initialize;
++ (BOOL)isClientTrustedWithPortToken:(struct { unsigned int x1[8]; })arg1;
 + (void)registerCallbackWithKey:(int)arg1 forClientIdentifier:(unsigned int)arg2;
 + (long)removeClientWithPort:(unsigned int)arg1;
 + (void)sendCallback:(id)arg1;

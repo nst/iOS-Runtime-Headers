@@ -17,16 +17,16 @@
     NSNumber *inputTime;
 }
 
-@property(copy) CIVector * inputCenter;
-@property(copy) CIColor * inputColor;
-@property(copy) CIVector * inputExtent;
-@property(copy) NSNumber * inputFadeThreshold;
+@property(retain) CIVector * inputCenter;
+@property(retain) CIColor * inputColor;
+@property(retain) CIVector * inputExtent;
+@property(retain) NSNumber * inputFadeThreshold;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputMaxStriationRadius;
-@property(copy) NSNumber * inputStriationContrast;
-@property(copy) NSNumber * inputStriationStrength;
+@property(retain) NSNumber * inputMaxStriationRadius;
+@property(retain) NSNumber * inputStriationContrast;
+@property(retain) NSNumber * inputStriationStrength;
 @property(retain) CIImage * inputTargetImage;
-@property(copy) NSNumber * inputTime;
+@property(retain) NSNumber * inputTime;
 
 + (id)customAttributes;
 

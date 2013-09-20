@@ -13,6 +13,7 @@
     EKOccurrenceCacheSearch *_search;
 }
 
+- (void).cxx_destruct;
 - (id)_cachedDays;
 - (void)_setCachedDaysAndNotify:(id)arg1 withDateToScrollTo:(id)arg2;
 - (int)countOfOccurrencesAtDayIndex:(int)arg1;

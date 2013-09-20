@@ -76,7 +76,6 @@
 - (void)forceSetUpUniqueObjects;
 - (id)getNextIdObject;
 - (void)handleMigration;
-- (BOOL)handleSaveErrors:(id)arg1;
 - (BOOL)hasMultipleEnabledStores;
 - (void)indexInBatches:(BOOL)arg1;
 - (void)indexNotes:(id)arg1;

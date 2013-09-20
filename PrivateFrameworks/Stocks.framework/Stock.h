@@ -5,31 +5,33 @@
 @class NSString, NSURL, StockChartData;
 
 @interface Stock : NSObject {
+    NSString *_averageVolume;
     StockChartData *_chartDataArray[9];
+    NSString *_companyName;
+    NSString *_dividendYield;
+    NSString *_exchange;
+    NSString *_high;
+    NSURL *_infoURL;
+    NSString *_low;
     BOOL _marketIsOpen;
-    NSString *averageVolume;
-    NSString *companyName;
-    NSString *dividendYield;
-    NSString *exchange;
-    NSString *high;
-    NSURL *infoURL;
-    NSString *low;
-    NSString *marketcap;
-    NSString *nonRealtimeChange;
-    NSString *nonRealtimePrice;
-    NSString *open;
-    NSString *peRatio;
-    unsigned int pricePrecision;
-    NSString *realtimeChange;
-    NSString *realtimePrice;
-    NSString *realtimeTimestamp;
-    NSString *shortCompanyName;
-    NSString *symbol;
-    double timeMetadataLastUpdated;
-    double timeQuoteLastUpdated;
-    NSString *volume;
-    NSString *yearHigh;
-    NSString *yearLow;
+    NSString *_marketcap;
+    NSString *_nonRealtimeChange;
+    NSString *_nonRealtimePrice;
+    NSString *_open;
+    NSString *_peRatio;
+    NSString *_previousClose;
+    unsigned int _pricePrecision;
+    NSString *_realtimeChange;
+    NSString *_realtimePrice;
+    NSString *_realtimeTimestamp;
+    NSString *_shortCompanyName;
+    NSString *_symbol;
+    NSString *_symbolType;
+    double _timeMetadataLastUpdated;
+    double _timeQuoteLastUpdated;
+    NSString *_volume;
+    NSString *_yearHigh;
+    NSString *_yearLow;
 }
 
 @property(retain) NSString * averageVolume;
@@ -45,6 +47,7 @@
 @property(retain) NSString * nonRealtimePrice;
 @property(retain) NSString * open;
 @property(retain) NSString * peRatio;
+@property(retain) NSString * previousClose;
 @property(readonly) NSString * price;
 @property(readonly) unsigned int pricePrecision;
 @property(retain) NSString * realtimeChange;
@@ -52,6 +55,7 @@
 @property(retain) NSString * realtimeTimestamp;
 @property(retain) NSString * shortCompanyName;
 @property(retain) NSString * symbol;
+@property(retain) NSString * symbolType;
 @property double timeMetadataLastUpdated;
 @property double timeQuoteLastUpdated;
 @property(retain) NSString * volume;
@@ -59,23 +63,28 @@
 @property(retain) NSString * yearLow;
 
 + (id)BlankValueString;
++ (id)PercentFormatter;
++ (id)_formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3 groupingSeparators:(BOOL)arg4;
 + (id)_potentiallyAbsentKeys;
++ (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3 groupingSeparators:(BOOL)arg4 droppingFractionDigitsIfLengthExceeds:(unsigned int)arg5;
 + (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3 groupingSeparators:(BOOL)arg4;
 + (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3;
++ (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3 droppingFractionDigitsIfLengthExceeds:(unsigned int)arg4;
 + (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3;
 + (BOOL)localeUsesASCIIDigits;
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1 fractionDigits:(unsigned int)arg2;
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1;
-+ (id)postfixCharacterForEngineeringMagnitude:(unsigned int)arg1;
++ (id)percentSymbol;
++ (id)postfixCharacterForMagnitude:(unsigned int)arg1 unitMagnitude:(unsigned int*)arg2;
 + (void)resetLocale;
 + (id)urlForStock:(id)arg1;
++ (id)urlForStockSymbol:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_updatePricePrecision;
 - (id)archiveDictionary;
 - (id)averageVolume;
 - (id)change;
-- (float)changeFloatPercent:(BOOL)arg1;
 - (BOOL)changeIsNegative;
 - (BOOL)changeIsZero;
 - (id)chartDataForInterval:(int)arg1;
@@ -85,6 +94,7 @@
 - (id)description;
 - (id)dividendYield;
 - (id)exchange;
+- (id)formattedChangePercent:(BOOL)arg1 includePercentSign:(BOOL)arg2;
 - (id)formattedChangePercent:(BOOL)arg1;
 - (id)formattedPrice;
 - (unsigned int)hash;
@@ -102,6 +112,7 @@
 - (id)open;
 - (id)peRatio;
 - (void)populateFromDictionary:(id)arg1;
+- (id)previousClose;
 - (id)price;
 - (BOOL)priceIsRealtime;
 - (unsigned int)pricePrecision;
@@ -122,11 +133,13 @@
 - (void)setNonRealtimePrice:(id)arg1;
 - (void)setOpen:(id)arg1;
 - (void)setPeRatio:(id)arg1;
+- (void)setPreviousClose:(id)arg1;
 - (void)setRealtimeChange:(id)arg1;
 - (void)setRealtimePrice:(id)arg1;
 - (void)setRealtimeTimestamp:(id)arg1;
 - (void)setShortCompanyName:(id)arg1;
 - (void)setSymbol:(id)arg1;
+- (void)setSymbolType:(id)arg1;
 - (void)setTimeMetadataLastUpdated:(double)arg1;
 - (void)setTimeQuoteLastUpdated:(double)arg1;
 - (void)setVolume:(id)arg1;
@@ -134,6 +147,7 @@
 - (void)setYearLow:(id)arg1;
 - (id)shortCompanyName;
 - (id)symbol;
+- (id)symbolType;
 - (double)timeMetadataLastUpdated;
 - (double)timeQuoteLastUpdated;
 - (void)updateMetadataWithDictionary:(id)arg1 forTime:(double)arg2;

@@ -6,23 +6,29 @@
     int _landSampler;
     int _uLandSampler;
     int _uVegetationAlpha;
+    int _uVegetationBrightness;
     int _uVegetationSampler;
     float _vegetationAlpha;
+    float _vegetationBrightness;
     int _vegetationSampler;
 }
 
 @property int landSampler;
 @property float vegetationAlpha;
+@property float vegetationBrightness;
 @property int vegetationSampler;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
-- (id)init;
 - (int)landSampler;
 - (void)setLandSampler:(int)arg1;
 - (void)setVegetationAlpha:(float)arg1;
+- (void)setVegetationBrightness:(float)arg1;
 - (void)setVegetationSampler:(int)arg1;
+- (void)setup;
 - (float)vegetationAlpha;
+- (float)vegetationBrightness;
 - (int)vegetationSampler;
 
 @end

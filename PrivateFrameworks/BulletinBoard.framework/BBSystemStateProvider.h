@@ -2,14 +2,22 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@interface BBSystemStateProvider : NSObject <XPCProxyTarget> {
-    id _serverProxy;
+@class BBServerConnection, NSSet;
+
+@interface BBSystemStateProvider : NSObject <BBXPCConnectionDelegate, XPCProxyTarget> {
+    BBServerConnection *_connection;
+    unsigned int _currentState;
+    NSSet *_sectionIDs;
 }
 
+- (void)_sendState:(unsigned int)arg1 value:(BOOL)arg2;
+- (void)connection:(id)arg1 connectionStateDidChange:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;
+- (void)invalidate;
 - (void)noteChangeOfState:(unsigned int)arg1 newValue:(BOOL)arg2;
 - (void)noteOccurrenceOfEvent:(unsigned int)arg1;
+- (void)noteRestrictedSectionIDsDidChange:(id)arg1;
 - (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 
 @end

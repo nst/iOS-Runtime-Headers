@@ -13,7 +13,7 @@
     NSObject<OS_dispatch_queue> *queue;
 }
 
-@property(retain) id block;
+@property(copy) id block;
 @property NSObject<OS_dispatch_queue> * queue;
 
 - (id)block;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VGLCasingFacadeProgram : VGLRealisticFadeProgram {
+@interface VGLCasingFacadeProgram : VGLRealisticProgram {
     struct _VGLColor { 
         float r; 
         float g; 
@@ -22,12 +22,14 @@
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } color;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } gradientColor;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })gradientColor;
-- (id)init;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGradientColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setup;
 
 @end

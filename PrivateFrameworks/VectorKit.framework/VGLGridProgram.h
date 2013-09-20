@@ -62,12 +62,13 @@
 @property float majorSize;
 @property float minorSize;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
 - (float)gridMix;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })gridView;
-- (id)init;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })lineColor;
 - (struct { float x1; float x2; float x3; float x4; })lineParams;
 - (float)majorSize;
@@ -79,5 +80,6 @@
 - (void)setLineParams:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMajorSize:(float)arg1;
 - (void)setMinorSize:(float)arg1;
+- (void)setup;
 
 @end

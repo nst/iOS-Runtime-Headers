@@ -2,27 +2,51 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSNumberFormatter, UIImageView, UILabel;
+@class NSNumberFormatter, UILabel, UIProgressView, UIView, _UIBackdropView;
 
 @interface PLProgressView : UIView {
     unsigned int _didLayout : 1;
     unsigned int _didSetPermanantTextOnLabelView : 1;
-    UIImageView *_backgroundView;
+    _UIBackdropView *_backgroundBlurredView;
+    UIView *_backgroundTintedView;
+    int _backgroundType;
+    UIView *_backgroundView;
     UILabel *_labelView;
     float _percentComplete;
     NSNumberFormatter *_progressFormatter;
-    UIImageView *_progressView;
-    UIImageView *_wellView;
+    UIProgressView *_progressView;
+    UIView *_topDivider;
 }
 
+@property(retain) _UIBackdropView * backgroundBlurredView;
+@property(retain) UIView * backgroundTintedView;
+@property int backgroundType;
+@property(retain) UIView * backgroundView;
+@property(retain) UILabel * labelView;
 @property float percentComplete;
 
-- (void)_updateProgressView;
+- (void)_installBackgroundBlurredView;
+- (void)_installBackgroundTintedView;
+- (void)_installBackgroundView;
+- (void)_removeBackgroundBlurredView;
+- (void)_removeBackgroundTintedView;
+- (void)_syncToBackgroundType;
+- (id)backgroundBlurredView;
+- (id)backgroundTintedView;
+- (int)backgroundType;
+- (id)backgroundView;
 - (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)labelView;
 - (void)layoutSubviews;
 - (float)percentComplete;
+- (void)setBackgroundBlurredView:(id)arg1;
+- (void)setBackgroundTintedView:(id)arg1;
+- (void)setBackgroundType:(int)arg1;
+- (void)setBackgroundView:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLabelText:(id)arg1;
+- (void)setLabelView:(id)arg1;
 - (void)setPercentComplete:(float)arg1;
 - (void)updateUIForPublishingAgent:(id)arg1;
 

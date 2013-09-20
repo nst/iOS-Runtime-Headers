@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class <BKSWorkspaceDelegate>, BKSApplicationActivationAssertion, BKSMachSendRight, BKSSignal, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
+@class <BKSWorkspaceDelegate>, BKSApplicationActivationAssertion, BKSSignal, BKSWorkspaceActivationTokenFactory, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
 
 @interface BKSWorkspace : NSObject {
     NSMutableArray *_activatingApplications;
+    BKSWorkspaceActivationTokenFactory *_activationTokenFactory;
     NSMutableDictionary *_activationTokens;
     NSObject<OS_dispatch_queue> *_applicationInfoQueue;
     NSObject<OS_dispatch_queue> *_connectionQueue;
@@ -15,21 +16,23 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_runningApplicationInfo;
     NSObject<OS_xpc_object> *_serverConnection;
+    NSObject<OS_xpc_object> *_serverEndpoint;
     unsigned int _serverPort;
     BOOL _suspended;
     BKSApplicationActivationAssertion *_topApplicationAssertion;
     NSString *_topApplicationBundleID;
-    BKSMachSendRight *_topEventPortOverride;
     BOOL _workspaceOwner;
 }
 
+@property(retain) BKSWorkspaceActivationTokenFactory * activationTokenFactory;
 @property <BKSWorkspaceDelegate> * delegate;
 @property(readonly) unsigned int serverPort;
 @property(readonly) BOOL suspended;
-@property(retain) BKSMachSendRight * topEventPortOverride;
 
 - (void)_acquireApplicationActivationAssertion:(id)arg1 uniqueID:(id)arg2 name:(id)arg3;
 - (id)_activationTokenForBundleID:(id)arg1;
+- (id)_activationTokens;
+- (void)_addApplicationAsPending:(id)arg1;
 - (void)_clearActivationStateForBundleID:(id)arg1;
 - (void)_handleDidBecomeReceiverFrom:(id)arg1 to:(id)arg2 workspaceWillResume:(BOOL)arg3;
 - (void)_handleMessage:(id)arg1;
@@ -37,15 +40,19 @@
 - (id)_infoForBundleIdentifier:(id)arg1;
 - (void)_invalidateConnection;
 - (BOOL)_isServerBeingDebugged;
+- (void)_makeInitialConnection;
 - (void)_noteWillActivateBundleIdentifier:(id)arg1 suspended:(BOOL)arg2 activationToken:(id)arg3;
 - (void)_receiveApplicationDidActivate:(id)arg1;
 - (void)_receiveApplicationExited:(id)arg1;
+- (void)_receiveApplicationFinishedBackgroundContentFetching:(id)arg1;
 - (void)_receiveApplicationIsBeingDebuggedStateChanged:(id)arg1;
 - (void)_receiveApplicationLaunchBegan:(id)arg1;
 - (void)_receiveApplicationSuspended:(id)arg1;
 - (void)_receiveApplicationSuspensionSettingsUpdated:(id)arg1;
+- (void)_receiveCanActivateApplication:(id)arg1;
 - (void)_receiveDidBecomeReceiver:(id)arg1;
-- (void)_receiveHandleOpenURL:(id)arg1;
+- (void)_receiveHandleOpenApplicationRequest:(id)arg1;
+- (void)_receiveHandleOpenURLRequest:(id)arg1;
 - (void)_receiveHandleStatusBarReturnActionFromApplication:(id)arg1;
 - (void)_receiveWillBecomeReceiver:(id)arg1;
 - (void)_receiveWorkspaceActivationResponse:(id)arg1;
@@ -70,9 +77,10 @@
 - (void)_sendResume:(id)arg1;
 - (void)_sendShutdown:(BOOL)arg1;
 - (void)_sendSuspend:(id)arg1;
-- (void)_sendTopEventPortOverride:(id)arg1;
+- (void)_setupForActivationForBundleID:(id)arg1 activationSettings:(id)arg2 withResult:(id)arg3;
 - (void)activate:(id)arg1 withActivation:(id)arg2;
 - (id)activatingApplications;
+- (id)activationTokenFactory;
 - (void)application:(id)arg1 resignActiveForReason:(int)arg2;
 - (void)application:(id)arg1 resumeActiveForReason:(int)arg2;
 - (void)application:(id)arg1 sendSimpleGSEvent:(int)arg2 withSubtype:(int)arg3;
@@ -87,6 +95,7 @@
 - (id)description;
 - (void)elapsedCPUTimesForApplications:(id)arg1 completion:(id)arg2;
 - (id)init;
+- (id)initWithQueue:(id)arg1 endpoint:(id)arg2 delegate:(id)arg3 connectImmediately:(BOOL)arg4;
 - (id)initWithQueue:(id)arg1;
 - (void)invalidate;
 - (BOOL)isApplicationConnectedToExternalAccessory:(id)arg1;
@@ -102,14 +111,13 @@
 - (id)runningApplications;
 - (id)runningBundleIDForPID:(int)arg1;
 - (unsigned int)serverPort;
+- (void)setActivationTokenFactory:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLocked:(BOOL)arg1;
-- (void)setTopEventPortOverride:(id)arg1;
 - (void)shutdown:(BOOL)arg1;
 - (void)suspend:(id)arg1;
 - (BOOL)suspended;
 - (id)topActivatingApplication;
 - (id)topApplication;
-- (id)topEventPortOverride;
 
 @end

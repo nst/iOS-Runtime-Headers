@@ -6,11 +6,13 @@
 
 @interface MPCloudAssetDownloadController : NSObject {
     NSMutableDictionary *_downloadSessionsForMediaItemIDs;
+    BOOL _downloadSessionsPaused;
     unsigned long long _prioritizedMediaItemID;
 }
 
 + (id)sharedAssetDownloadController;
 
+- (void).cxx_destruct;
 - (id)_cachedAssetDestinationDirectory;
 - (BOOL)_canPlayCachedAssetAtPath:(id)arg1;
 - (void)_cancelDownloadSession:(id)arg1;
@@ -18,19 +20,24 @@
 - (void)_downloadFileSizeAvailableNotification:(id)arg1;
 - (id)_downloadKeyCookieWithValue:(id)arg1 URL:(id)arg2;
 - (void)_downloadSucceededNotification:(id)arg1;
+- (id)_lowBitrateCachedAssetDestinationDirectory;
 - (void)_matchCellularDataRestrictedDidChangeNotification:(id)arg1;
+- (BOOL)_mediaItemHasDownloadSessionForPersistentID:(unsigned long long)arg1;
 - (void)_networkTypeChangedNotification:(id)arg1;
-- (id)_newAVAssetForMediaItem:(id)arg1;
-- (id)_newAVAssetForPurchaseResponseDictionary:(id)arg1 mediaItem:(id)arg2 preferredAssetFlavor:(id)arg3;
-- (id)_newAssetForExistingDownloadSession:(id)arg1;
+- (id)_newAVAssetForMediaItem:(id)arg1 options:(id)arg2;
+- (id)_newAVAssetForPurchaseResponseDictionary:(id)arg1 mediaItem:(id)arg2 preferredAssetFlavor:(id)arg3 options:(id)arg4;
+- (id)_newAssetForExistingDownloadSession:(id)arg1 options:(id)arg2;
+- (void)_prioritizeDownloadSessionForMediaItemPersistentID:(unsigned long long)arg1;
 - (void)_removeNotificationObserversForDownloadSession:(id)arg1;
 - (void)_resumedPausedDownloadSessionsForCompletedMediaItemID:(unsigned long long)arg1;
 - (void)_stopDownloadsBasedOnCurrentNetworkIfNeeded;
 - (id)_urlConnectionRequestForMediaItem:(id)arg1;
-- (id)assetForMediaItem:(id)arg1;
+- (id)assetForMediaItem:(id)arg1 options:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (BOOL)mediaItemHasDownloadSession:(id)arg1;
+- (void)pauseAllDownloadSessions;
 - (void)prioritizeDownloadSessionForMediaItem:(id)arg1;
+- (void)resumeAllDownloadSessions;
 
 @end

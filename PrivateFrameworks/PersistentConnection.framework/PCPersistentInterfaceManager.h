@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSRecursiveLock, NSString, NSTimer, PCNonCellularUsabilityMonitor, PCPersistentTimer, PCWWANUsabilityMonitor;
+@class NSRecursiveLock, NSString, NSTimer, PCSimpleTimer;
 
-@interface PCPersistentInterfaceManager : NSObject <PCInterfaceUsabilityMonitorDelegate> {
+@interface PCPersistentInterfaceManager : NSObject <PCInterfaceMonitorDelegate> {
     long _WWANContextIdentifier;
-    struct __CFSet { } *_WWANInterfaceAssertionDelegates;
-    NSTimer *_WWANInterfaceAssertionDisableTimer;
     NSString *_WWANInterfaceName;
     struct __CFSet { } *_WiFiAutoAssociationDelegates;
-    PCPersistentTimer *_WiFiAutoAssociationDisableTimer;
+    PCSimpleTimer *_WiFiAutoAssociationDisableTimer;
+    BOOL _ctIsWWANInHomeCountry;
     void *_ctServerConnection;
     struct __CFDictionary { } *_delegatesAndRunLoops;
     BOOL _hasWWANStatusIndicator;
@@ -18,7 +17,6 @@
     void *_interfaceAssertion;
     BOOL _isInCall;
     BOOL _isPowerStateDetectionSupported;
-    BOOL _isWWANInHomeCountry;
     BOOL _isWWANInterfaceActivationPermitted;
     BOOL _isWWANInterfaceDataActive;
     BOOL _isWWANInterfaceInProlongedHighPowerState;
@@ -29,10 +27,8 @@
     NSRecursiveLock *_lock;
     BOOL _shouldOverrideOnCallBehavior;
     struct __CFSet { } *_wakeOnWiFiDelegates;
-    PCPersistentTimer *_wakeOnWiFiDisableTimer;
+    PCSimpleTimer *_wakeOnWiFiDisableTimer;
     void *_wifiManager;
-    PCNonCellularUsabilityMonitor *_wifiMonitor;
-    PCWWANUsabilityMonitor *_wwanMonitor;
     int _wwanRSSI;
 }
 
@@ -65,6 +61,7 @@
 - (void)_ctConnectionWasInvalidated;
 - (void)_inCallWWANOverrideTimerFired;
 - (BOOL)_isInternetReachableLocked;
+- (BOOL)_isWWANInHomeCountryLocked;
 - (BOOL)_isWiFiUsable;
 - (void)_mainThreadDelayedInvalidation;
 - (void)_performCalloutsForSelectorValue:(id)arg1;
@@ -73,6 +70,7 @@
 - (void)_scheduleCalloutsForSelector:(SEL)arg1;
 - (void)_serverCallback:(id)arg1 info:(id)arg2;
 - (void)_serverCallbackLocked:(id)arg1 info:(id)arg2;
+- (void)_updateCTIsWWANInHomeCountry:(BOOL)arg1 isWWANInterfaceDataActive:(BOOL)arg2;
 - (void)_updateWWANInterfaceAssertions;
 - (void)_updateWWANInterfaceAssertionsLocked;
 - (void)_updateWWANInterfaceUpState;
@@ -81,7 +79,6 @@
 - (BOOL)_wantsWakeOnWiFiEnabled;
 - (BOOL)_wifiIsPoorLinkQuality;
 - (BOOL)_wwanIsPoorLinkQuality;
-- (BOOL)_wwanLinkQualityBelowThresholdAndWoWAvailableLocked;
 - (void)addDelegate:(id)arg1 callbackRunLoop:(id)arg2;
 - (BOOL)areAllNetworkInterfacesDisabled;
 - (void)bindCFStream:(struct __CFReadStream { }*)arg1 toWWANInterface:(BOOL)arg2;
@@ -107,7 +104,6 @@
 - (BOOL)isWWANInterfaceInProlongedHighPowerState;
 - (BOOL)isWWANInterfaceUp;
 - (BOOL)isWakeOnWiFiSupported;
-- (void)keepWWANInterfaceUp:(BOOL)arg1 forDelegate:(id)arg2;
 - (void)removeDelegate:(id)arg1;
 - (id)urlConnectionBoundToWWANInterface:(BOOL)arg1 withRequest:(id)arg2 delegate:(id)arg3 usesCache:(BOOL)arg4 maxContentLength:(long long)arg5 startImmediately:(BOOL)arg6 connectionProperties:(id)arg7;
 - (id)urlConnectionBoundToWWANInterfaceWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;

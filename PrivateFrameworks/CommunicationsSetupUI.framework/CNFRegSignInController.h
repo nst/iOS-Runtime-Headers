@@ -17,7 +17,6 @@
     PSSpecifier *_passwordSpecifier;
     NSString *_pendingPassword;
     NSString *_pendingUsername;
-    BOOL _showSplash;
     PSSpecifier *_signInButtonSpecifier;
     unsigned int _signinFailureCount;
     BOOL _useSystemAccount;
@@ -28,7 +27,6 @@
 @property BOOL hideLearnMoreButton;
 @property(copy) NSString * pendingPassword;
 @property(copy) NSString * pendingUsername;
-@property BOOL showSplash;
 @property unsigned int signinFailureCount;
 
 - (void)__userTappedTextField;
@@ -36,8 +34,6 @@
 - (void)_buildCredentialSpecifierCache:(id)arg1;
 - (void)_buildSignInGroupSpecifierCache:(id)arg1;
 - (void)_buildSpecifierCache:(id)arg1;
-- (id)_existingLearnMoreViewForSection:(int)arg1;
-- (id)_existingLearnMoreViewForSpecifier:(id)arg1;
 - (void)_finishSignInWithAccount:(id)arg1 animated:(BOOL)arg2;
 - (void)_handleTimeout;
 - (void)_incrementSigninFailureCount;
@@ -62,10 +58,12 @@
 - (void)_updateUI;
 - (id)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)applicationDidResume;
 - (id)bundle;
 - (void)cancelButtonTapped;
 - (void)createAccountControllerDidFinish:(id)arg1 withAppleId:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)dealloc;
+- (void)forgotIDButtonTapped;
 - (id)getPasswordForSpecifier:(id)arg1;
 - (id)getUserNameForSpecifier:(id)arg1;
 - (void)handleURL:(id)arg1;
@@ -86,22 +84,18 @@
 - (void)setPasswordText:(id)arg1;
 - (void)setPendingPassword:(id)arg1;
 - (void)setPendingUsername:(id)arg1;
-- (void)setShowSplash:(BOOL)arg1;
 - (void)setSignInButtonEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSigninFailureCount:(unsigned int)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setUsernameEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setUsernameText:(id)arg1;
 - (void)showCreateAccountController;
-- (BOOL)showSplash;
 - (void)signInTapped:(id)arg1;
 - (unsigned int)signinFailureCount;
 - (id)specifierList;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationWillEnterForeground;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)usernameFieldDidBeginEditing:(id)arg1;
 - (void)usernameFieldEmptyStateChanged:(id)arg1 forSpecifier:(id)arg2;
 - (BOOL)usernameIsEmpty;

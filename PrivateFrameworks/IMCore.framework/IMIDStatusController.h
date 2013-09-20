@@ -2,29 +2,28 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableDictionary;
+@class NSMutableSet;
 
 @interface IMIDStatusController : NSObject {
-    NSMutableDictionary *_emailAddressHistory;
-    NSMutableDictionary *_phoneNumberHistory;
+    NSMutableSet *_servicesRegistered;
 }
 
-@property(retain) NSMutableDictionary * _emailAddressHistory;
-@property(retain) NSMutableDictionary * _phoneNumberHistory;
+@property(retain) NSMutableSet * _servicesRegistered;
 
 + (id)sharedInstance;
 
-- (id)_emailAddressHistory;
-- (BOOL)_havePreviouslyConferencedWithID:(id)arg1;
-- (id)_phoneNumberHistory;
-- (void)_reloadHistory;
-- (void)_setHavePreviouslyConferenced:(BOOL)arg1 withID:(id)arg2;
-- (void)_setIDStatus:(int)arg1 forID:(id)arg2 onService:(id)arg3;
-- (void)_writeConferenceHistory;
+- (int)__statusForID:(id)arg1 onService:(id)arg2 isCanonicalized:(BOOL)arg3;
+- (int)_idStatusForID:(id)arg1 onAccount:(id)arg2;
+- (int)_idStatusForID:(id)arg1 onService:(id)arg2;
+- (void)_processIDStatusResponseForURI:(id)arg1 resultStatus:(int)arg2 forService:(id)arg3;
+- (void)_requestStatusForID:(id)arg1 onService:(id)arg2 onAccount:(id)arg3;
+- (id)_servicesRegistered;
+- (int)_statusForCanonicalizedID:(id)arg1 onService:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)set_emailAddressHistory:(id)arg1;
-- (void)set_phoneNumberHistory:(id)arg1;
+- (void)requestStatusForID:(id)arg1 onAccount:(id)arg2;
+- (void)requestStatusForID:(id)arg1 onService:(id)arg2;
+- (void)set_servicesRegistered:(id)arg1;
 - (int)statusForID:(id)arg1 onService:(id)arg2;
 
 @end

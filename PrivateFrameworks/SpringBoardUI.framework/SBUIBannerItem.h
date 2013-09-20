@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class <SBUIBannerSource>;
-
-@interface SBUIBannerItem : NSObject {
-    <SBUIBannerSource> *_source;
+@interface SBUIBannerItem : NSObject <SBUIQuietModePlayability> {
 }
-
-@property(retain) <SBUIBannerSource> * source;
 
 - (id)action;
 - (BOOL)canShowInAssistant;
-- (void)dealloc;
+- (BOOL)canShowWhileLocked;
+- (BOOL)inertWhenLocked;
+- (BOOL)isCritical;
 - (BOOL)isSticky;
+- (BOOL)overridesQuietMode;
 - (unsigned int)priority;
-- (void)setSource:(id)arg1;
+- (id)pullDownNotification;
 - (id)sortDate;
 - (id)sound;
-- (id)source;
+- (id)subActionLabels;
+- (id)subActionWithIndex:(unsigned int)arg1;
 
 @end

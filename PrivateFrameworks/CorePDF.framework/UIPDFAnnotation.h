@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CALayer, NSMutableArray, NSString, UIPDFAnnotationView, UIPDFPageView, UIPDFPopupAnnotation, UIPDFSelection;
+@class CALayer, NSMutableArray, NSString, UIPDFAnnotationController, UIPDFAnnotationView, UIPDFPage, UIPDFPopupAnnotation, UIPDFSelection;
 
 @interface UIPDFAnnotation : NSObject {
+    UIPDFAnnotationController *_annotationController;
     NSString *_annotationID;
     UIPDFAnnotationView *_annotationView;
     void *_appearanceStream;
@@ -15,16 +16,17 @@
     CALayer *_drawingLayer;
     BOOL _hidden;
     int _index;
-    UIPDFPageView *_pageView;
+    UIPDFPage *_page;
     struct CGPDFString { } *_pdfContents;
     UIPDFPopupAnnotation *_popup;
     NSMutableArray *_quadPoints;
-    int annotationStyle;
+    UIPDFSelection *_selection;
+    unsigned int _tag;
     id data;
     BOOL editable;
 }
 
-@property int annotationStyle;
+@property UIPDFAnnotationController * annotationController;
 @property(retain) UIPDFAnnotationView * annotationView;
 @property(retain) NSString * associatedAnnotationID;
 @property(retain) NSString * contents;
@@ -32,25 +34,28 @@
 @property(retain) CALayer * drawingLayer;
 @property BOOL editable;
 @property int index;
-@property UIPDFPageView * pageView;
+@property UIPDFPage * page;
 @property UIPDFPopupAnnotation * popup;
+@property(readonly) BOOL recognizeGestures;
 @property UIPDFSelection * selection;
+@property unsigned int tag;
 
 + (id)newAnnotationWithPage:(id)arg1 fromArchive:(id)arg2;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })Rect;
+- (id)annotationController;
 - (id)annotationID;
-- (int)annotationStyle;
 - (int)annotationType;
 - (id)annotationView;
 - (id)archive;
 - (id)associatedAnnotationID;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGColor { }*)color;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)contents;
 - (id)data;
 - (void)dealloc;
-- (id)description;
+- (id)descriptionHOLD;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)drawingLayer;
@@ -62,28 +67,32 @@
 - (int)index;
 - (id)init;
 - (id)initWithAnnotationDictionary:(struct CGPDFDictionary { }*)arg1;
-- (BOOL)isMarkupAnnotation;
 - (void)makeQuadpointsFrom:(id)arg1;
 - (struct CGPath { }*)newPathFromQuadPoints;
 - (id)newSelection;
-- (id)pageView;
+- (id)page;
 - (const char *)pdfContents;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popUpAnnotationRect;
 - (id)popup;
+- (BOOL)recognizeGestures;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectIn:(struct CGPDFArray { }*)arg1;
 - (id)selection;
+- (void)setAnnotationController:(id)arg1;
 - (void)setAnnotationID:(id)arg1;
-- (void)setAnnotationStyle:(int)arg1;
 - (void)setAnnotationView:(id)arg1;
 - (void)setAssociatedAnnotationID:(id)arg1;
+- (void)setColor:(struct CGColor { }*)arg1;
 - (void)setContents:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setDrawingLayer:(id)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setIndex:(int)arg1;
+- (void)setPage:(id)arg1;
 - (void)setPageView:(id)arg1;
 - (void)setPopup:(id)arg1;
 - (void)setSelection:(id)arg1;
+- (void)setTag:(unsigned int)arg1;
+- (unsigned int)tag;
 - (Class)viewClass;
 
 @end

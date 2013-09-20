@@ -24,9 +24,9 @@
 @property(retain) id value;
 @property(copy) id valueLoader;
 
+- (void).cxx_destruct;
 - (int)_sortByChapterIndex:(id)arg1;
 - (int)chapterType;
-- (void)dealloc;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;

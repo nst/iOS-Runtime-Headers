@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderTrackOutputInternal, AVAssetTrack, NSDictionary;
+@class AVAssetReaderTrackOutputInternal, AVAssetTrack, NSDictionary, NSString;
 
 @interface AVAssetReaderTrackOutput : AVAssetReaderOutput {
     AVAssetReaderTrackOutputInternal *_trackOutputInternal;
 }
 
+@property(copy) NSString * audioTimePitchAlgorithm;
 @property(readonly) NSDictionary * outputSettings;
 @property(readonly) AVAssetTrack * track;
 
@@ -17,6 +18,7 @@
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (id)_figAssetReaderExtractionOptions;
 - (BOOL)_trimsSampleDurations;
+- (id)audioTimePitchAlgorithm;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
@@ -24,6 +26,7 @@
 - (id)initWithTrack:(id)arg1 outputSettings:(id)arg2;
 - (id)mediaType;
 - (id)outputSettings;
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (id)track;
 
 @end

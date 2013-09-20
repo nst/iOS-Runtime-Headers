@@ -2,17 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, ML3SqliteDatabase;
+@class ML3DatabaseConnection, ML3MusicLibrary;
 
 @interface ITDBGeniusDatabase : NSObject {
     double _connectionFailedTime;
-    ML3SqliteDatabase *_geniusDB;
+    ML3DatabaseConnection *_geniusDBConnection;
     BOOL _isInTransaction;
     ML3MusicLibrary *_musicLibrary;
     struct __CFDictionary { } *_statementCache;
 }
 
 @property BOOL isInTransaction;
+@property(readonly) ML3MusicLibrary * musicLibrary;
 
 + (id)sharedGeniusDatabase;
 
@@ -23,14 +24,14 @@
 - (unsigned int)_getInt32ValueInTable:(id)arg1 column:(id)arg2;
 - (unsigned long long)_getInt64ValueInTable:(id)arg1 column:(id)arg2 where:(id)arg3 limit:(unsigned int)arg4;
 - (BOOL)_hasAnySongs;
-- (unsigned int)_hasRowsInTable:(id)arg1;
+- (BOOL)_hasRowsInTable:(id)arg1;
 - (void)_invalidateDatabase;
 - (BOOL)_readBlobForRowID:(unsigned long long)arg1 intoData:(id)arg2 table:(const char *)arg3 blobColumn:(const char *)arg4;
 - (BOOL)_readBlobIntoData:(id)arg1 table:(id)arg2 blobColumn:(id)arg3 where:(id)arg4;
 - (id)copyGeniusConfigrationDataAndBytes;
 - (id)copyGeniusMetadataDataAndBytesForGlobalID:(unsigned long long)arg1;
 - (id)copyGeniusSimilaritiesDataAndBytesForGlobalID:(unsigned long long)arg1;
-- (id)database;
+- (id)databaseConnection;
 - (unsigned int)defaultMinTrackCount;
 - (unsigned int)defaultTrackCount;
 - (unsigned int)geniusConfigurationVersion;
@@ -42,6 +43,7 @@
 - (BOOL)hasGeniusFeatureEnabled;
 - (id)init;
 - (BOOL)isInTransaction;
+- (id)musicLibrary;
 - (void)setIsInTransaction:(BOOL)arg1;
 
 @end

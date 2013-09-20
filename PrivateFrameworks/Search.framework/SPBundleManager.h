@@ -16,11 +16,14 @@
 + (id)sharedManager;
 
 - (void)_loadSearchBundles;
+- (void)createLockForDatastore:(id)arg1;
 - (id)datastoreForDomain:(unsigned int)arg1;
 - (id)datastores;
 - (void)dealloc;
 - (id)domainMap;
+- (void)lockDatastore:(id)arg1;
 - (void)resetDatastores;
 - (id)searchBundles;
+- (void)unlockDatastore:(id)arg1;
 
 @end

@@ -10,10 +10,13 @@
     SEL _selector;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (id)_mapKVCOperatorsToFunctionsInContext:(id)arg1;
 - (BOOL)_shouldUseParensWithDescription;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)allowEvaluation;
 - (id)arguments;
 - (id)binaryOperatorForSelector;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

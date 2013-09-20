@@ -8,6 +8,7 @@
     float _alpha;
     VKBuildingFootprintMaker *_buildingFootprintMaker;
     NSMutableArray *_coastlineGroups;
+    float _contentScale;
     VKMapTileList *_fragments;
     float _maximumStyleZ;
     GEOVectorTile *_modelTile;
@@ -23,6 +24,7 @@
 @property float alpha;
 @property(readonly) VKBuildingFootprintMaker * buildingFootprintMaker;
 @property(readonly) NSArray * coastlineGroups;
+@property float contentScale;
 @property(readonly) VKMapTileList * fragments;
 @property(readonly) double maxHeight;
 @property float maximumStyleZ;
@@ -41,6 +43,7 @@
 - (void)buildRoadGroupsAndGenerateMesh:(BOOL)arg1;
 - (id)buildingFootprintMaker;
 - (id)coastlineGroups;
+- (float)contentScale;
 - (void)dealloc;
 - (id)fragments;
 - (void)generateBuildingFootprintMeshWithFacades:(BOOL)arg1;
@@ -51,8 +54,10 @@
 - (float)maximumStyleZ;
 - (id)modelTile;
 - (id)polygonGroups;
+- (void)postprocessRoadGroups;
 - (id)roadGroups;
 - (void)setAlpha:(float)arg1;
+- (void)setContentScale:(float)arg1;
 - (void)setMaximumStyleZ:(float)arg1;
 - (void)setModelTile:(id)arg1;
 - (void)setShouldBlend:(BOOL)arg1;

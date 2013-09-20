@@ -11,6 +11,7 @@
 
 @property(readonly) BOOL isEditable;
 
+- (void).cxx_destruct;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
 - (BOOL)isEditable;

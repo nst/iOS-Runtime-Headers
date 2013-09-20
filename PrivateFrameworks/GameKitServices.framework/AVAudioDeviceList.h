@@ -13,10 +13,12 @@
     AVInternalDeviceList *_internalList;
 }
 
-@property(retain) id changeListener;
+@property(copy) id changeListener;
 
++ (id)currentInputDevice;
 + (id)defaultInputDevice;
 + (id)defaultOutputDevice;
++ (BOOL)setInputDevice:(id)arg1;
 
 - (id)changeListener;
 - (void)dealloc;

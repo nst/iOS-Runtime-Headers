@@ -6,44 +6,46 @@
    See Warning(s) below.
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>, NSString;
 
 @interface TLAlert : NSObject {
     id _completionHandler;
-    unsigned long _soundID;
+    BOOL _shouldOverrideMasterSwitches;
     NSObject<OS_dispatch_queue> *_targetQueue;
+    NSString *_toneIdentifier;
     int _type;
-    NSDictionary *_vibrationPattern;
+    NSString *_vibrationIdentifier;
 }
 
-@property(copy) id completionHandler;
-@property(getter=isPlaying,readonly) BOOL playing;
-@property unsigned long soundID;
-@property(retain) NSObject<OS_dispatch_queue> * targetQueue;
+@property(setter=_setCompletionHandler:,copy) id _completionHandler;
+@property(setter=_setShouldOverrideMasterSwitches:) BOOL _shouldOverrideMasterSwitches;
+@property(setter=_setTargetQueue:,retain) NSObject<OS_dispatch_queue> * _targetQueue;
+@property(copy) NSString * toneIdentifier;
 @property int type;
-@property(copy) NSDictionary * vibrationPattern;
+@property(copy) NSString * vibrationIdentifier;
 
++ (void)_playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3 shouldOverrideMasterSwitches:(BOOL)arg4;
 + (void)playToneAndVibrationForType:(int)arg1 accountIdentifier:(id)arg2;
 + (void)playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 + (void)playToneAndVibrationForType:(int)arg1;
 
-- (id)completionHandler;
+- (id)_completionHandler;
+- (void)_setCompletionHandler:(id)arg1;
+- (void)_setShouldOverrideMasterSwitches:(BOOL)arg1;
+- (void)_setTargetQueue:(id)arg1;
+- (void)_setToneIdentifier:(id)arg1;
+- (void)_setType:(int)arg1;
+- (void)_setVibrationIdentifier:(id)arg1;
+- (BOOL)_shouldOverrideMasterSwitches;
+- (id)_targetQueue;
 - (void)dealloc;
 - (id)initWithType:(int)arg1 accountIdentifier:(id)arg2;
 - (id)initWithType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 - (id)initWithType:(int)arg1;
-- (BOOL)isPlaying;
 - (BOOL)playWithCompletionHandler:(id)arg1 targetQueue:(id)arg2;
-- (void)setCompletionHandler:(id)arg1;
-- (void)setSoundID:(unsigned long)arg1;
-- (void)setTargetQueue:(id)arg1;
-- (void)setType:(int)arg1;
-- (void)setVibrationPattern:(id)arg1;
-- (unsigned long)soundBehavior;
-- (unsigned long)soundID;
 - (void)stop;
-- (id)targetQueue;
+- (id)toneIdentifier;
 - (int)type;
-- (id)vibrationPattern;
+- (id)vibrationIdentifier;
 
 @end

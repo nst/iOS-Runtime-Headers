@@ -4,7 +4,7 @@
 
 @class NSData, NSMutableArray;
 
-@interface GEOETARoute : PBCodable {
+@interface GEOETARoute : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
         unsigned int count; 
@@ -14,8 +14,13 @@
         unsigned int count; 
         unsigned int size; 
     struct { 
+        unsigned int historicTravelTime : 1; 
         unsigned int routeNoLongerValid : 1; 
     } _has;
+    unsigned int _historicTravelTime;
+    NSMutableArray *_incidentsOffReRoutes;
+    NSMutableArray *_incidentsOnETARoutes;
+    NSMutableArray *_incidentsOnReRoutes;
     NSMutableArray *_invalidSectionZilchPoints;
     NSMutableArray *_reroutedRoutes;
     NSData *_routeID;
@@ -26,9 +31,14 @@
     NSData *_zilchPoints;
 }
 
+@property BOOL hasHistoricTravelTime;
 @property(readonly) BOOL hasRouteID;
 @property BOOL hasRouteNoLongerValid;
 @property(readonly) BOOL hasZilchPoints;
+@property unsigned int historicTravelTime;
+@property(retain) NSMutableArray * incidentsOffReRoutes;
+@property(retain) NSMutableArray * incidentsOnETARoutes;
+@property(retain) NSMutableArray * incidentsOnReRoutes;
 @property(retain) NSMutableArray * invalidSectionZilchPoints;
 @property(retain) NSMutableArray * reroutedRoutes;
 @property(retain) NSData * routeID;
@@ -40,24 +50,42 @@
 @property(readonly) unsigned int trafficColorsCount;
 @property(retain) NSData * zilchPoints;
 
+- (void)addIncidentsOffReRoutes:(id)arg1;
+- (void)addIncidentsOnETARoute:(id)arg1;
+- (void)addIncidentsOnReRoutes:(id)arg1;
 - (void)addInvalidSectionZilchPoints:(id)arg1;
 - (void)addReroutedRoute:(id)arg1;
 - (void)addStep:(id)arg1;
 - (void)addTrafficColor:(unsigned int)arg1;
 - (void)addTrafficColorOffset:(unsigned int)arg1;
+- (void)clearIncidentsOffReRoutes;
+- (void)clearIncidentsOnETARoutes;
+- (void)clearIncidentsOnReRoutes;
 - (void)clearInvalidSectionZilchPoints;
 - (void)clearReroutedRoutes;
 - (void)clearSteps;
 - (void)clearTrafficColorOffsets;
 - (void)clearTrafficColors;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasHistoricTravelTime;
 - (BOOL)hasRouteID;
 - (BOOL)hasRouteNoLongerValid;
 - (BOOL)hasZilchPoints;
 - (unsigned int)hash;
+- (unsigned int)historicTravelTime;
+- (id)incidentsOffReRoutes;
+- (id)incidentsOffReRoutesAtIndex:(unsigned int)arg1;
+- (unsigned int)incidentsOffReRoutesCount;
+- (id)incidentsOnETARouteAtIndex:(unsigned int)arg1;
+- (id)incidentsOnETARoutes;
+- (unsigned int)incidentsOnETARoutesCount;
+- (id)incidentsOnReRoutes;
+- (id)incidentsOnReRoutesAtIndex:(unsigned int)arg1;
+- (unsigned int)incidentsOnReRoutesCount;
 - (id)invalidSectionZilchPoints;
 - (id)invalidSectionZilchPointsAtIndex:(unsigned int)arg1;
 - (unsigned int)invalidSectionZilchPointsCount;
@@ -68,7 +96,12 @@
 - (unsigned int)reroutedRoutesCount;
 - (id)routeID;
 - (BOOL)routeNoLongerValid;
+- (void)setHasHistoricTravelTime:(BOOL)arg1;
 - (void)setHasRouteNoLongerValid:(BOOL)arg1;
+- (void)setHistoricTravelTime:(unsigned int)arg1;
+- (void)setIncidentsOffReRoutes:(id)arg1;
+- (void)setIncidentsOnETARoutes:(id)arg1;
+- (void)setIncidentsOnReRoutes:(id)arg1;
 - (void)setInvalidSectionZilchPoints:(id)arg1;
 - (void)setReroutedRoutes:(id)arg1;
 - (void)setRouteID:(id)arg1;

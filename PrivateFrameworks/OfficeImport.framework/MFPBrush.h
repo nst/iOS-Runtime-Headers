@@ -6,6 +6,6 @@
 }
 
 - (id)color;
-- (void)fillPath:(struct CGPath { }*)arg1 evenOddRule:(BOOL)arg2;
+- (void)fillPath:(id)arg1;
 
 @end

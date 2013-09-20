@@ -8,19 +8,25 @@
     AVCaptureStillImageOutputInternal *_internal;
 }
 
+@property BOOL automaticallyEnablesStillImageStabilizationWhenAvailable;
 @property(readonly) NSArray * availableImageDataCVPixelFormatTypes;
 @property(readonly) NSArray * availableImageDataCodecTypes;
 @property(getter=isCapturingStillImage,readonly) BOOL capturingStillImage;
 @property(copy) NSDictionary * outputSettings;
+@property(getter=isStillImageStabilizationActive,readonly) BOOL stillImageStabilizationActive;
+@property(getter=isStillImageStabilizationSupported,readonly) BOOL stillImageStabilizationSupported;
 
 + (struct CGImage { }*)cgImageForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;
 + (void)initialize;
 + (id)jpegStillImageNSDataRepresentation:(struct opaqueCMSampleBuffer { }*)arg1;
 + (id)jpegStillImageNSDataRepresentationForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;
 + (id)jpegStillImageNSDataRepresentationForSurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2 metadata:(id)arg3;
++ (unsigned long)maxStillImageJPEGDataSize;
 
+- (int)HDRMode;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
-- (void)_updateStillImageDataSizeForCaptureOptions:(id)arg1;
+- (id)addConnection:(id)arg1 error:(id*)arg2;
+- (BOOL)automaticallyEnablesStillImageStabilizationWhenAvailable;
 - (id)availableImageDataCVPixelFormatTypes;
 - (id)availableImageDataCodecTypes;
 - (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
@@ -28,29 +34,40 @@
 - (void)configureAndInitiateCopyStillImageForRequest:(id)arg1;
 - (id)connectionMediaTypes;
 - (void)dealloc;
+- (void)didStartForSession:(id)arg1;
 - (id)firstActiveConnection;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
-- (void)handlePhotoTakenForRequest:(id)arg1 info:(id)arg2;
+- (void)handlePhotoTakenForRequest:(id)arg1 info:(id)arg2 imageIsEV0:(BOOL*)arg3;
 - (unsigned long)imageDataFormatType;
 - (id)init;
 - (BOOL)isCapturingStillImage;
 - (BOOL)isChromaNoiseReductionEnabled;
 - (BOOL)isEV0CaptureEnabled;
 - (BOOL)isHDRCaptureEnabled;
+- (BOOL)isHDRSupported;
 - (BOOL)isRawCaptureEnabled;
 - (BOOL)isRawCaptureSupported;
-- (long long)maxStillImageDataSize;
+- (BOOL)isStillImageStabilizationActive;
+- (BOOL)isStillImageStabilizationSupported;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputSettings;
 - (struct CGSize { float x1; float x2; })previewImageSize;
+- (void)removeConnection:(id)arg1;
 - (BOOL)resumeVideoProcessing;
-- (id)scaleAndCropDictionary;
+- (void)setAutomaticallyEnablesStillImageStabilizationWhenAvailable:(BOOL)arg1;
 - (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (void)setEV0CaptureEnabled:(BOOL)arg1;
 - (void)setHDRCaptureEnabled:(BOOL)arg1;
+- (void)setHDRMode:(int)arg1;
 - (void)setOutputSettings:(id)arg1;
 - (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRawCaptureEnabled:(BOOL)arg1;
+- (void)setShutterSound:(unsigned long)arg1;
+- (void)setSquareCropEnabled:(BOOL)arg1;
 - (void)setSuspendsVideoProcessingDuringStillImageCapture:(BOOL)arg1;
+- (unsigned long)shutterSound;
+- (BOOL)squareCropEnabled;
 - (BOOL)suspendsVideoProcessingDuringStillImageCapture;
+- (void)updateSISSupportedForSourceDevice:(id)arg1;
 
 @end

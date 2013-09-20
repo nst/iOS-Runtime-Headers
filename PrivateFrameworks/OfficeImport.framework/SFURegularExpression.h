@@ -25,6 +25,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })matchedRangeForCString:(const char *)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 subexpressionRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 count:(unsigned int)arg4;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })matchedRangeForString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 subexpressionRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 count:(unsigned int)arg4;
-- (unsigned int)numberOfSubexpressions;
+- (unsigned long)numberOfSubexpressions;
 
 @end

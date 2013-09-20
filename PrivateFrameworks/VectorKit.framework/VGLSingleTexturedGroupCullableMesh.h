@@ -11,11 +11,11 @@
 @property(retain) VGLTexture * texture;
 
 - (void)dealloc;
-- (void)drawGroup:(unsigned int)arg1 context:(id)arg2;
-- (void)drawInPreparedCulls:(id)arg1 excludeGroup:(int)arg2;
+- (void)drawGroups:(const struct vector<unsigned int, vk_allocator<unsigned int> > { }*)arg1 context:(id)arg2;
+- (void)drawInPreparedCulls:(id)arg1 excludeGroups:(const struct vector<unsigned int, vk_allocator<unsigned int> > { }*)arg2;
 - (void)drawInPreparedCulls:(id)arg1;
 - (void)drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 rectCount:(unsigned int)arg2 context:(id)arg3;
-- (void)drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 rectCount:(unsigned int)arg2 excludeGroup:(int)arg3 context:(id)arg4;
+- (void)drawInRects:(const struct { float x1; float x2; float x3; float x4; }*)arg1 rectCount:(unsigned int)arg2 excludeGroups:(const struct vector<unsigned int, vk_allocator<unsigned int> > { }*)arg3 context:(id)arg4;
 - (void)setTexture:(id)arg1;
 - (id)texture;
 

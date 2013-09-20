@@ -5,12 +5,26 @@
 @class CALayer, NSMutableArray, NSObject<AVConferencePreviewDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<VideoCaptureProtocol>, VideoAttributes;
 
 @interface AVConferencePreviewServer : NSObject {
+    struct CGSize { 
+        float width; 
+        float height; 
+    struct CGSize { 
+        float width; 
+        float height; 
+    struct CGSize { 
+        float width; 
+        float height; 
+    struct CGSize { 
+        float width; 
+        float height; 
     NSMutableArray *activeConferences;
     NSObject<AVConferencePreviewDelegate> *appDelegate;
     NSObject<VideoCaptureProtocol> *avCapture;
     NSObject<OS_dispatch_queue> *avConferencePreviewServerConferenceQueue;
     NSObject<OS_dispatch_queue> *avConferencePreviewServerNotificationQueue;
     NSObject<OS_dispatch_queue> *avConferencePreviewServerQueue;
+    NSObject<OS_dispatch_queue> *avConferencePreviewServerVariablesQueue;
+    struct __CVPixelBufferPool { } *bufferPool;
     NSObject<OS_dispatch_source> *cameraHealthMonitor;
     int captureFrameCount;
     unsigned int currentCameraID;
@@ -19,10 +33,14 @@
     int currentWidth;
     int encodedFrameCount;
     double falteredRenderingtimeStamp;
-    BOOL finishedPreviewToPIPAnimation;
     BOOL firstPreviewFrame;
+    NSMutableArray *inactiveConferences;
     struct _CAImageQueue { } *localCAImageQueue;
     struct _CAImageQueue { } *localCAImageQueueBack;
+    } localExpectedLandscapeAspectRatio;
+    } localExpectedPortraitAspectRatio;
+    } localScreenLandscapeAspectRatio;
+    } localScreenPortraitAspectRatio;
     VideoAttributes *localVideoAttributes;
     struct OpaqueFigImageQueue { } *localVideoImageQueue;
     struct OpaqueFigImageQueue { } *localVideoImageQueueBack;
@@ -33,6 +51,8 @@
     int pendingHeight;
     int pendingWidth;
     int previewFrameCount;
+    BOOL resize;
+    struct OpaqueVTPixelTransferSession { } *transferSession;
 }
 
 @property(retain) NSObject<AVConferencePreviewDelegate> * appDelegate;
@@ -44,9 +64,11 @@
 - (id)autorelease;
 - (void)beginPIPToPreviewAnimation;
 - (void)beginPreviewToPIPAnimation;
-- (struct __CFDictionary { }*)cameraColorInfo;
 - (unsigned int)captureCamera;
 - (BOOL)captureVideoWidth:(int*)arg1 height:(int*)arg2 frameRate:(int*)arg3;
+- (void)changeCameraToPendingSettingsWithReset:(BOOL)arg1;
+- (struct __CFDictionary { }*)copyCameraColorInfo;
+- (id)copyLocalScreenAttributesForVideoAttributes:(id)arg1;
 - (id)copyLocalVideoAttributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long)createVideoCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3 useBackFacingCamera:(BOOL)arg4;
@@ -61,15 +83,21 @@
 - (id)init;
 - (BOOL)isConferenceRegisteredForFrames:(id)arg1;
 - (BOOL)isRunningPreview;
+- (struct CGSize { float x1; float x2; })localExpectedRatioForScreenOrientation:(int)arg1;
+- (id)localScreenAttributesForVideoAttributes:(id)arg1;
+- (struct CGSize { float x1; float x2; })localScreenRatioForScreenOrientation:(int)arg1;
 - (id)localVideoAttributes;
 - (id)localVideoLayer;
 - (int)localVideoSlot:(BOOL)arg1;
 - (BOOL)onCaptureFrame:(struct __CVBuffer { }*)arg1 frameTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 preview:(BOOL)arg3 isSwitching:(BOOL)arg4 cameraType:(int)arg5;
+- (void)pausePreview;
 - (void)previewVideoWidth:(int*)arg1 height:(int*)arg2 frameRate:(int*)arg3;
 - (void)reconnectClientLayerFront:(BOOL)arg1;
 - (BOOL)registerForFrames:(id)arg1 unpausing:(BOOL)arg2;
 - (BOOL)registerForFrames:(id)arg1 width:(int)arg2 height:(int)arg3 frameRate:(int)arg4 unpausing:(BOOL)arg5;
 - (oneway void)release;
+- (void)resetCameraToPreviewSettingsForced:(BOOL)arg1;
+- (struct __CVBuffer { }*)resizeFrame:(struct __CVBuffer { }*)arg1;
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)setAppDelegate:(id)arg1;
@@ -77,6 +105,7 @@
 - (void)setCaptureWidth:(int)arg1 height:(int)arg2 rate:(int)arg3 forced:(BOOL)arg4;
 - (void)setCaptureWidth:(int)arg1 height:(int)arg2 rate:(int)arg3;
 - (BOOL)setFrameRatePercentage:(id)arg1 percentage:(double)arg2;
+- (BOOL)setLocalScreenAttributes:(id)arg1;
 - (BOOL)setLocalVideoAttributes:(id)arg1;
 - (BOOL)setLocalVideoLayer:(id)arg1;
 - (void)startCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3 unpausing:(BOOL)arg4;

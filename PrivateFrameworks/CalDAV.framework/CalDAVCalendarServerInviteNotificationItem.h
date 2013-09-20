@@ -6,6 +6,7 @@
 
 @interface CalDAVCalendarServerInviteNotificationItem : CoreDAVItem {
     CalDAVCalendarServerAccessItem *_access;
+    CoreDAVItemWithNoChildren *_calendarPublic;
     CoreDAVItemWithHrefChildItem *_hostURL;
     CoreDAVHrefItem *_href;
     CoreDAVItemWithNoChildren *_inviteStatus;
@@ -16,6 +17,7 @@
 }
 
 @property(retain) CalDAVCalendarServerAccessItem * access;
+@property(retain) CoreDAVItemWithNoChildren * calendarPublic;
 @property(retain) CoreDAVItemWithHrefChildItem * hostURL;
 @property(retain) CoreDAVHrefItem * href;
 @property(retain) CoreDAVItemWithNoChildren * inviteStatus;
@@ -25,6 +27,7 @@
 @property(retain) CoreDAVLeafItem * uid;
 
 - (id)access;
+- (id)calendarPublic;
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;
@@ -36,6 +39,7 @@
 - (BOOL)isComponentSupportedForString:(id)arg1;
 - (id)organizer;
 - (void)setAccess:(id)arg1;
+- (void)setCalendarPublic:(id)arg1;
 - (void)setHostURL:(id)arg1;
 - (void)setHref:(id)arg1;
 - (void)setInviteStatus:(id)arg1;

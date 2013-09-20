@@ -2,15 +2,23 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaQuery;
+@class MPConcreteMediaEntityPropertiesCache, MPMediaItem, MPMediaQuery;
 
-@interface MPConcreteMediaItemCollection : MPMediaItemCollection <NSCoding, NSCopying> {
+@interface MPConcreteMediaItemCollection : MPMediaItemCollection <NSCoding, NSCopying, MPCacheableConcreteMediaEntity> {
     int _grouping;
     long long _identifier;
     MPMediaQuery *_itemsQuery;
+    MPConcreteMediaEntityPropertiesCache *_propertiesCache;
     MPMediaItem *_representativeItem;
 }
 
+@property(readonly) MPConcreteMediaEntityPropertiesCache * cachedPropertyValues;
+
++ (void)didChangeEntityWithDataProviderEntityClass:(Class)arg1 persistentID:(unsigned long long)arg2 deleted:(BOOL)arg3;
+
+- (void).cxx_destruct;
+- (id)_initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5 propertiesCache:(id)arg6;
+- (id)cachedPropertyValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
@@ -20,14 +28,15 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(long long)arg1 itemsQuery:(id)arg2 grouping:(int)arg3;
 - (id)initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5;
+- (void)invalidateCachedProperties;
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
 - (id)itemsQuery;
 - (id)mediaLibrary;
-- (int)mediaTypes;
 - (unsigned long long)persistentID;
 - (id)representativeItem;
-- (void)setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 

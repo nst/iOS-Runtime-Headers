@@ -43,6 +43,7 @@
 @property(getter=isVisible,readonly) BOOL visible;
 @property(getter=isVisibleAndFrontmost,readonly) BOOL visibleAndFrontmost;
 
+- (int)ITunesStoreUIBarStyle;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (id)_cachedScriptProperties;
@@ -54,7 +55,6 @@
 - (void)_exitStoreButtonDidChangeNotification:(id)arg1;
 - (void)_invalidateForMemoryPurge;
 - (BOOL)_isEnteringForeground;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)_keyboardDidHideNotification:(id)arg1;
 - (void)_keyboardDidShowNotification:(id)arg1;
 - (void)_keyboardWillHideNotification:(id)arg1;
@@ -71,7 +71,6 @@
 - (void)applicationDidResume;
 - (void)applicationWillEnterForeground;
 - (void)applicationWillSuspend;
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -91,6 +90,7 @@
 - (void)dismissFooterViewControllerAnimated:(BOOL)arg1;
 - (void)enqueueOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
 - (id)footerViewController;
+- (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (void)handleApplicationURL:(id)arg1;
 - (id)init;
 - (id)initWithSection:(id)arg1;
@@ -132,6 +132,7 @@
 - (BOOL)shouldInvalidateForMemoryPurge;
 - (BOOL)showsLibraryButton;
 - (void)storePageProtocolDidChange;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)tabBarItem;
 - (void)trackOperation:(id)arg1 cancelOnDealloc:(BOOL)arg2;
 - (id)viewControllerFactory;

@@ -10,11 +10,14 @@
 
 @interface AVPlayerInternal : NSObject {
     AVAudioSessionMediaPlayerOnly *audioSessionMediaPlayerOnly;
+    BOOL autoSwitchStreamVariants;
     NSMutableSet *caLayers;
+    NSDictionary *cachedFigMediaSelectionCriteriaProperty;
     AVPlayerItem *currentItem;
     NSDictionary *currentSubtitlesPayload;
     NSArray *displaysUsedForPlayback;
     NSError *error;
+    NSArray *expectedAssetTypes;
     NSString *externalPlaybackVideoGravity;
     struct OpaqueCMClock { } *figMasterClock;
     struct OpaqueFigPlaybackItem { } *figPlaybackItemToIdentifyNextCurrentItem;
@@ -31,6 +34,7 @@
     NSMutableDictionary *pendingFigPlayerProperties;
     int pendingPrerollID;
     AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
+    BOOL preparesItemsForPlaybackAsynchronously;
     id prerollCompletionHandler;
     struct OpaqueFigSimpleMutex { } *prerollIDMutex;
     AVPropertyStorage *propertyStorage;
@@ -38,6 +42,7 @@
     NSObject<OS_dispatch_queue> *stateDispatchQueue;
     int status;
     NSObject<OS_dispatch_queue> *subtitleQueue;
+    NSDictionary *vibrationPattern;
     AVWeakReference *weakReference;
 }
 

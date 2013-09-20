@@ -8,6 +8,11 @@
     struct CGSize { 
         float width; 
         float height; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     UIColor *_backgroundColor;
     UIColor *_bottomShadowColor;
     UIColor *_fillColor;
@@ -15,11 +20,13 @@
     BOOL _opaque;
     float _rightPhase;
     UIColor *_sectionBorderColor;
+    float _sectionBorderWidth;
     int _sectionLocation;
     BOOL _selected;
     UIColor *_selectionColor;
     int _selectionStyle;
     UIColor *_separatorColor;
+    } _separatorInset;
     } _size;
     UIColor *_topShadowColor;
 }
@@ -31,11 +38,13 @@
 @property BOOL opaque;
 @property float rightPhase;
 @property(retain) UIColor * sectionBorderColor;
+@property float sectionBorderWidth;
 @property int sectionLocation;
 @property BOOL selected;
 @property(retain) UIColor * selectionColor;
 @property int selectionStyle;
 @property(retain) UIColor * separatorColor;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
 @property struct CGSize { float x1; float x2; } size;
 @property(retain) UIColor * topShadowColor;
 
@@ -51,11 +60,13 @@
 - (BOOL)opaque;
 - (float)rightPhase;
 - (id)sectionBorderColor;
+- (float)sectionBorderWidth;
 - (int)sectionLocation;
 - (BOOL)selected;
 - (id)selectionColor;
 - (int)selectionStyle;
 - (id)separatorColor;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBottomShadowColor:(id)arg1;
 - (void)setFillColor:(id)arg1;
@@ -63,11 +74,13 @@
 - (void)setOpaque:(BOOL)arg1;
 - (void)setRightPhase:(float)arg1;
 - (void)setSectionBorderColor:(id)arg1;
+- (void)setSectionBorderWidth:(float)arg1;
 - (void)setSectionLocation:(int)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelectionColor:(id)arg1;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setSeparatorColor:(id)arg1;
+- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTopShadowColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;

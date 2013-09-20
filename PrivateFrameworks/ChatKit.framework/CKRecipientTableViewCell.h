@@ -3,16 +3,8 @@
  */
 
 @interface CKRecipientTableViewCell : MFRecipientTableViewCell {
-    BOOL _recipientAvailable;
 }
 
-@property(getter=isRecipientAvailable) BOOL recipientAvailable;
-
-+ (id)availableImage;
 + (id)cellForRecipient:(id)arg1;
-+ (id)highlightedAvailableImage;
-
-- (BOOL)isRecipientAvailable;
-- (void)setRecipientAvailable:(BOOL)arg1;
 
 @end

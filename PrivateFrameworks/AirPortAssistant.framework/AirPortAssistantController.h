@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <AirPortAssistantControllerDelegate>;
+@class <AirPortAssistantControllerDelegate>, NSString;
 
 @interface AirPortAssistantController : NSObject {
+    NSString *_configuredSSID;
+    id _context;
     id _delegate;
     id _viewController;
 }
 
+@property(retain) NSString * configuredSSID;
+@property(retain) id context;
 @property <AirPortAssistantControllerDelegate> * delegate;
 @property(retain) id viewController;
 
@@ -17,18 +21,22 @@
 + (void)downloadAssetsCancel;
 + (void)downloadAssetsIfNeeded;
 + (BOOL)isAirPlayDevice:(id)arg1;
-+ (BOOL)isUnconfiguredBaseStation:(id)arg1 productID:(char *)arg2 productFamily:(unsigned int*)arg3;
++ (BOOL)isGenericMFiAccessory:(id)arg1;
++ (BOOL)isSTAOnlyDevice:(id)arg1;
 + (BOOL)isUnconfiguredDevice:(id)arg1;
 + (BOOL)launchAUForDevice:(id)arg1 getAUFromAppStore:(BOOL)arg2;
 + (BOOL)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(BOOL)arg3;
 + (id)sharedInstance;
-+ (id)unconfiguredBaseStationName:(unsigned char)arg1;
 + (id)unconfiguredDeviceName:(id)arg1;
 + (id)uniqueBaseStationName:(id)arg1 withBssid:(id)arg2;
 
-- (void)assistantComplete;
+- (void)assistantCompleteWithResult:(long)arg1;
+- (id)configuredSSID;
+- (id)context;
 - (void)dealloc;
 - (id)delegate;
+- (void)setConfiguredSSID:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (id)viewController;

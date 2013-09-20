@@ -2,7 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
+@class NSString;
+
 @interface AVMediaSelectionOptionInternal : NSObject {
+    NSString *_displayName;
+    NSString *_displayNameLocaleIdentifier;
 }
 
 @end

@@ -4,7 +4,7 @@
 
 @class MFComposeHeaderView, MFComposeSubjectView;
 
-@interface _MFMailComposePlaceholderView : UIView {
+@interface _MFMailComposePlaceholderView : UIScrollView {
     MFComposeHeaderView *_multiView;
     MFComposeSubjectView *_subjectView;
     MFComposeHeaderView *_toField;

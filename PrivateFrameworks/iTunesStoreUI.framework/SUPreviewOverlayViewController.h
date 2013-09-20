@@ -21,6 +21,7 @@
     float _paddingTop;
     SUPreviewOverlayStorePageViewController *_storePageViewController;
     NSString *_userInfoString;
+    BOOL _visible;
 }
 
 @property(getter=isContentLoaded) BOOL contentLoaded;
@@ -29,18 +30,13 @@
 @property float paddingTop;
 @property(copy) NSString * userInfoString;
 
++ (void)_setContentInsetsForScrollView:(id)arg1 viewController:(id)arg2;
 + (double)defaultAnimationDuration;
 + (id)defaultRequestProperties;
 + (void)offsetScrollView:(id)arg1 forViewController:(id)arg2;
-+ (void)offsetToHideOverScrollView:(id)arg1;
 
-- (void)_hideFromNavigationBar:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
-- (void)_hideInContainer:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
-- (void)_hideInScrollView:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (id)_previewOverlayContainerForViewController:(id)arg1;
 - (id)_scrollViewForViewController:(id)arg1;
-- (void)_showFromNavigationBar:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
-- (void)_showInScrollView:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
 - (id)_storePageViewController;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
@@ -50,7 +46,6 @@
 - (void)loadView;
 - (void)loadWithCompletionBlock:(id)arg1;
 - (void)loadWithRequestProperties:(id)arg1 completionBlock:(id)arg2;
-- (void)offsetToShowOverScrollView:(id)arg1;
 - (float)paddingRight;
 - (float)paddingTop;
 - (void)setContentLoaded:(BOOL)arg1;

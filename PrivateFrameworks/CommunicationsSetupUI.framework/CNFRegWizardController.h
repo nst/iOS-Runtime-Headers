@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class <CNFRegWizardControllerDelegate>, CNFRegController;
+@class <CNFRegWizardControllerDelegate>, CNFRegController, _UIBackdropView;
 
 @interface CNFRegWizardController : PSSetupController <CNFRegFirstRunDelegate> {
     struct { 
@@ -19,8 +19,10 @@
         unsigned int showSplashOnSignin : 1; 
         unsigned int reloadOnViewWillAppear : 1; 
         unsigned int allowCancel : 1; 
+        unsigned int allowSMS : 1; 
         unsigned int shouldTerminateInBackground : 1; 
     id _alertHandler;
+    _UIBackdropView *_backdropView;
     <CNFRegWizardControllerDelegate> *_firstRunDelegate;
     CNFRegController *_regController;
     id _resignListener;
@@ -31,6 +33,8 @@
 
 @property(copy) id alertHandler;
 @property BOOL allowCancel;
+@property BOOL allowSMS;
+@property(retain) _UIBackdropView * backdropView;
 @property BOOL canShowDisabledScreen;
 @property BOOL canShowSplashScreen;
 @property BOOL canStartNested;
@@ -53,11 +57,17 @@
 - (void)_restrictionsChanged;
 - (void)_startListeningForResignResume;
 - (void)_stopListeningForResignResume;
+- (void)_updateNavigationBarHiddenForCurrentState;
+- (void)_updateNavigationBarHiddenForPop;
+- (void)_updateNavigationBarHiddenForPush;
+- (void)_updateNavigationBarTitle;
 - (id)alertHandler;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowCancel;
+- (BOOL)allowSMS;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
+- (id)backdropView;
 - (BOOL)canShowDisabledScreen;
 - (BOOL)canShowSplashScreen;
 - (BOOL)canStartNested;
@@ -73,10 +83,16 @@
 - (id)init;
 - (id)initWithRegController:(id)arg1;
 - (id)initWithServiceTypes:(int)arg1;
+- (id)popViewControllerAnimated:(BOOL)arg1;
+- (id)popViewControllerWithTransition:(int)arg1;
+- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)pushViewController:(id)arg1 transition:(int)arg2;
 - (id)regController;
 - (BOOL)reloadOnViewWillAppear;
 - (void)setAlertHandler:(id)arg1;
 - (void)setAllowCancel:(BOOL)arg1;
+- (void)setAllowSMS:(BOOL)arg1;
+- (void)setBackdropView:(id)arg1;
 - (void)setCanShowDisabledScreen:(BOOL)arg1;
 - (void)setCanShowSplashScreen:(BOOL)arg1;
 - (void)setCanStartNested:(BOOL)arg1;
@@ -87,10 +103,10 @@
 - (void)setShouldListenForSuspension:(BOOL)arg1;
 - (void)setShouldTerminateInBackground:(BOOL)arg1;
 - (void)setShowSplashOnSignin:(BOOL)arg1;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)setupController;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldListenForSuspension;
-- (BOOL)shouldShowFirstRunController:(BOOL)arg1;
 - (BOOL)shouldShowFirstRunController;
 - (BOOL)shouldTerminateInBackground;
 - (BOOL)showSplashOnSignin;

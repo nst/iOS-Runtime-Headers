@@ -27,6 +27,7 @@
 - (BOOL)_isAccountActive:(id)arg1 forService:(id)arg2;
 - (id)_superFormatFromAIML:(id)arg1;
 - (id)accountForAccountID:(id)arg1;
+- (id)accountForIDSAccountUniqueID:(id)arg1;
 - (id)accounts;
 - (id)accountsForLoginID:(id)arg1 onService:(id)arg2;
 - (id)accountsForService:(id)arg1;
@@ -55,5 +56,6 @@
 - (void)removeAccount:(id)arg1;
 - (void)save;
 - (id)sessionForAccount:(id)arg1;
+- (void)setupAccount:(id)arg1;
 
 @end

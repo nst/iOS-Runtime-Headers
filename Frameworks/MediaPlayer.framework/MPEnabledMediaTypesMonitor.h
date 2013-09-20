@@ -2,41 +2,43 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSOperationQueue;
+@class MPMediaPredicate, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSOperationQueue;
 
 @interface MPEnabledMediaTypesMonitor : NSObject {
     NSMutableArray *_completionHandlers;
-    int _defaultEnabledMediaTypes;
-    int _disablableMediaTypes;
-    int _enabledIfPresentMediaTypes;
-    int _enabledMediaTypes;
+    unsigned int _defaultEnabledMediaTypes;
+    unsigned int _disablableMediaTypes;
+    unsigned int _enabledIfPresentMediaTypes;
+    unsigned int _enabledMediaTypes;
+    MPMediaPredicate *_enabledMediaTypesPredicate;
     NSArray *_externalTypeManagers;
-    int _externallyManagedMediaTypes;
+    unsigned int _externallyManagedMediaTypes;
     BOOL _hidesSecondPartyMediaTypes;
     BOOL _ignoreLibraryDidChangeNotifications;
     NSOperationQueue *_lookupQueue;
     BOOL _monitoringActive;
     NSObject<OS_dispatch_queue> *_queue;
-    int _unavailableDisabledTypes;
+    unsigned int _unavailableDisabledTypes;
 }
 
-@property int defaultEnabledMediaTypes;
-@property int disablableMediaTypes;
-@property(readonly) int enabledIfPresentMediaTypes;
-@property int enabledMediaTypes;
+@property unsigned int defaultEnabledMediaTypes;
+@property unsigned int disablableMediaTypes;
+@property(readonly) unsigned int enabledIfPresentMediaTypes;
+@property unsigned int enabledMediaTypes;
 @property(retain) NSArray * externalTypeManagers;
-@property int externallyManagedMediaTypes;
+@property unsigned int externallyManagedMediaTypes;
 @property BOOL hidesSecondPartyMediaTypes;
 @property(retain) NSOperationQueue * lookupQueue;
-@property int unavailableDisabledTypes;
+@property unsigned int unavailableDisabledTypes;
 
 + (void)alertUserOneTimeForDisabledMediaTypes;
-+ (void)monitorWithDefaultMediaTypes:(int)arg1;
++ (void)monitorWithDefaultMediaTypes:(unsigned int)arg1;
 + (id)sharedInstance;
 
-- (void)_beginMonitoringWithDefaultMediaTypes:(int)arg1;
-- (int)_calculatedEnabledIfPresentMediaTypes;
-- (int)_calculatedEnabledMediaTypes;
+- (void).cxx_destruct;
+- (void)_beginMonitoringWithDefaultMediaTypes:(unsigned int)arg1;
+- (unsigned int)_calculatedEnabledIfPresentMediaTypes;
+- (unsigned int)_calculatedEnabledMediaTypes;
 - (void)_installedSoftwaredChanged;
 - (void)_libraryDidChangeNotification:(id)arg1;
 - (void)_onQueueUpdateEnabledTypesByUpdatingExternallyManagedTypes:(BOOL)arg1 updateNonExistentTypes:(BOOL)arg2;
@@ -47,24 +49,24 @@
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)dealloc;
-- (int)defaultEnabledMediaTypes;
-- (int)disablableMediaTypes;
-- (int)enabledIfPresentMediaTypes;
-- (int)enabledMediaTypes;
+- (unsigned int)defaultEnabledMediaTypes;
+- (unsigned int)disablableMediaTypes;
+- (unsigned int)enabledIfPresentMediaTypes;
+- (unsigned int)enabledMediaTypes;
 - (id)externalTypeManagers;
-- (int)externallyManagedMediaTypes;
+- (unsigned int)externallyManagedMediaTypes;
 - (BOOL)hidesSecondPartyMediaTypes;
 - (id)init;
 - (id)lookupQueue;
-- (void)setDefaultEnabledMediaTypes:(int)arg1;
-- (void)setDisablableMediaTypes:(int)arg1;
-- (void)setEnabledMediaTypes:(int)arg1 enabledIfPresentMediaTypes:(int)arg2;
-- (void)setEnabledMediaTypes:(int)arg1;
+- (void)setDefaultEnabledMediaTypes:(unsigned int)arg1;
+- (void)setDisablableMediaTypes:(unsigned int)arg1;
+- (void)setEnabledMediaTypes:(unsigned int)arg1 enabledIfPresentMediaTypes:(unsigned int)arg2;
+- (void)setEnabledMediaTypes:(unsigned int)arg1;
 - (void)setExternalTypeManagers:(id)arg1;
-- (void)setExternallyManagedMediaTypes:(int)arg1;
+- (void)setExternallyManagedMediaTypes:(unsigned int)arg1;
 - (void)setHidesSecondPartyMediaTypes:(BOOL)arg1;
 - (void)setLookupQueue:(id)arg1;
-- (void)setUnavailableDisabledTypes:(int)arg1;
-- (int)unavailableDisabledTypes;
+- (void)setUnavailableDisabledTypes:(unsigned int)arg1;
+- (unsigned int)unavailableDisabledTypes;
 
 @end

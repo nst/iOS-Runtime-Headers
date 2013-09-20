@@ -4,8 +4,10 @@
 
 @class NSMutableSet, NSSet, VKMapModel, VKStylesheet;
 
-@interface VKMapTileModel : VKModelObject <VKMapLayer> {
+@interface VKMapTileModel : VKModelObject <VKMapLayer, VKStylesheetObserver> {
     VKMapModel *_mapModel;
+    unsigned char _maximumZ;
+    unsigned char _minimumZ;
     NSMutableSet *_previousTilesInScene;
     NSMutableSet *_tilesExitingScene;
     NSMutableSet *_tilesInScene;
@@ -21,7 +23,7 @@
 + (BOOL)reloadOnActiveTileGroupChange;
 + (BOOL)reloadOnStylesheetChange;
 
-- (void)activeTileGroupChanged:(id)arg1;
+- (void)activeTileGroupChanged;
 - (void)clearCollections;
 - (void)createCollections;
 - (void)createCollectionsIfNecessary;
@@ -37,6 +39,7 @@
 - (void)setMapModel:(id)arg1;
 - (id)stylesheet;
 - (void)stylesheetDidChange;
+- (void)stylesheetWillChange;
 - (id)tilesInScene;
 - (void)updateTilesInScene:(id)arg1 withContext:(id)arg2 categorize:(BOOL)arg3;
 - (void)willStartDrawingTiles:(id)arg1;

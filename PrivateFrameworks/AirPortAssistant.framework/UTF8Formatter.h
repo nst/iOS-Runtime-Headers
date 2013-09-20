@@ -12,6 +12,7 @@
 + (id)utf8Formatter;
 + (id)utf8FormatterWithMaxByteCount:(unsigned int)arg1 maxLength:(unsigned int)arg2;
 
+- (id)initAFPFormatterWithLength:(unsigned int)arg1;
 - (id)initWithMaxByteCount:(unsigned int)arg1 maxLength:(unsigned int)arg2;
 - (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
 - (unsigned int)maxByteCount;

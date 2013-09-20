@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL, SAClockObject;
+@class SAClockObject;
 
-@interface SAClockAdd : SABaseClientBoundCommand {
+@interface SAClockAdd : SADomainCommand {
 }
 
 @property(retain) SAClockObject * clockToAdd;
-@property(copy) NSURL * targetAppId;
 
 + (id)add;
 + (id)addWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setClockToAdd:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

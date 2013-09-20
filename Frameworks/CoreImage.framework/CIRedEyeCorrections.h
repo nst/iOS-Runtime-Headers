@@ -4,14 +4,14 @@
 
 @class CIImage, NSArray, NSString;
 
-@interface CIRedEyeCorrections : CIFilter {
+@interface CIRedEyeCorrections : CIFilter <_CIFilterProperties> {
     NSString *inputCameraModel;
     NSArray *inputCorrectionInfo;
     CIImage *inputImage;
 }
 
-@property(retain) NSString * inputCameraModel;
-@property(retain) NSArray * inputCorrectionInfo;
+@property(copy) NSString * inputCameraModel;
+@property(copy) NSArray * inputCorrectionInfo;
 @property(retain) CIImage * inputImage;
 
 - (id)_initFromProperties:(id)arg1;

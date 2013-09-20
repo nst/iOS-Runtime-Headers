@@ -25,7 +25,7 @@
 
 - (id)_backgroundImage;
 - (struct CGSize { float x1; float x2; })_fieldSizeForCurrentDevice;
-- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)_handleKeyUIEvent:(id)arg1;
 - (void)_layoutForCurrentDevice;
 - (void)appendString:(id)arg1;
 - (BOOL)becomeFirstResponder;

@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEORegionalResource : PBCodable {
+@interface GEORegionalResource : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
         unsigned int count; 
@@ -15,6 +15,7 @@
         unsigned int z : 1; 
     NSMutableArray *_attributions;
     } _has;
+    NSMutableArray *_iconChecksums;
     NSMutableArray *_icons;
     struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_tileRanges;
     unsigned int _tileRangesCount;
@@ -29,6 +30,7 @@
 @property BOOL hasX;
 @property BOOL hasY;
 @property BOOL hasZ;
+@property(retain) NSMutableArray * iconChecksums;
 @property(retain) NSMutableArray * icons;
 @property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }* tileRanges;
 @property(readonly) unsigned int tileRangesCount;
@@ -40,16 +42,19 @@
 
 - (void)addAttribution:(id)arg1;
 - (void)addIcon:(id)arg1;
+- (void)addIconChecksum:(id)arg1;
 - (void)addTileRange:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (void)addValidSubManifestVersion:(unsigned int)arg1;
 - (id)attributionAtIndex:(unsigned int)arg1;
 - (id)attributions;
 - (unsigned int)attributionsCount;
 - (void)clearAttributions;
+- (void)clearIconChecksums;
 - (void)clearIcons;
 - (void)clearTileRanges;
 - (void)clearValidSubManifestVersions;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -58,6 +63,9 @@
 - (BOOL)hasZ;
 - (unsigned int)hash;
 - (id)iconAtIndex:(unsigned int)arg1;
+- (id)iconChecksumAtIndex:(unsigned int)arg1;
+- (id)iconChecksums;
+- (unsigned int)iconChecksumsCount;
 - (id)icons;
 - (unsigned int)iconsCount;
 - (BOOL)isEqual:(id)arg1;
@@ -66,6 +74,7 @@
 - (void)setHasX:(BOOL)arg1;
 - (void)setHasY:(BOOL)arg1;
 - (void)setHasZ:(BOOL)arg1;
+- (void)setIconChecksums:(id)arg1;
 - (void)setIcons:(id)arg1;
 - (void)setTileRanges:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
 - (void)setValidSubManifestVersions:(unsigned int*)arg1 count:(unsigned int)arg2;

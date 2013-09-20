@@ -19,6 +19,9 @@
 
 + (id)animationWithKeyPath:(id)arg1;
 
+- (id)TSD_animationForKeyPath:(id)arg1 atTime:(double)arg2;
+- (double)TSD_animationPercentFromAnimationTime:(double)arg1;
+- (BOOL)TSD_containsAnimationForKeyPath:(id)arg1;
 - (unsigned int)_propertyFlagsForLayer:(id)arg1;
 - (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; void *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; }*)arg1 layer:(id)arg2;
 - (BOOL)additive;
@@ -27,6 +30,8 @@
 - (BOOL)isAdditive;
 - (BOOL)isCumulative;
 - (id)keyPath;
+- (id)p_adjustedResultWithValue:(id)arg1;
+- (id)p_interpolatedValueFrom:(id)arg1 to:(id)arg2 percent:(float)arg3;
 - (void)setAdditive:(BOOL)arg1;
 - (void)setCumulative:(BOOL)arg1;
 - (void)setKeyPath:(id)arg1;

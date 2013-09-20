@@ -26,7 +26,7 @@
 - (int)cropOverlayMode;
 - (void)dealloc;
 - (id)delegate;
-- (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
+- (void)didChooseVideoAtURL:(id)arg1 options:(id)arg2;
 - (id)initWithPhoto:(id)arg1 trimTitle:(id)arg2;
 - (id)initWithProperties:(id)arg1;
 - (void)loadView;

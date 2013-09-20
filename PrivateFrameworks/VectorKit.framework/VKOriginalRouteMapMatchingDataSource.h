@@ -8,7 +8,6 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    struct VKRouteMapMatchingSection {} **_mmSections;
     } _sectionRange;
     NSArray *_sections;
 }
@@ -18,7 +17,7 @@
 - (id).cxx_construct;
 - (void)dealloc;
 - (void)forEachMapMatchingSection:(id)arg1;
-- (id)initWithFromSections:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithSections:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })sectionRange;
 
 @end

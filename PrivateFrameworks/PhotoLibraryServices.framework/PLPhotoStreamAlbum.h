@@ -14,11 +14,9 @@
 + (id)keyPathsForValuesAffectingPersonID;
 + (id)photoStreamAlbumWithStreamID:(id)arg1 inPhotoLibrary:(id)arg2 createIfNeeded:(BOOL)arg3;
 
-- (void)_updateKeyAssetIfNeeded;
 - (void)addAssetOrderedByDataTaken:(id)arg1;
 - (void)awakeFromInsert;
 - (void)enforceImageLimitIfNecessary;
-- (BOOL)isOwnPhotoStreamAlbum;
 - (id)personID;
 - (void)setPersonID:(id)arg1;
 - (BOOL)shouldDeleteWhenEmpty;

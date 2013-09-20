@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class NSMutableArray, UICollectionReusableView, UICollectionViewLayoutAttributes;
 
 @interface UICollectionViewAnimation : NSObject {
@@ -10,6 +14,7 @@
         unsigned int deleteAterAnimation : 1; 
         unsigned int rasterizeAfterAnimation : 1; 
         unsigned int resetRasterizationAfterAnimation : 1; 
+    id _animationBlock;
     } _collectionViewAnimationFlags;
     NSMutableArray *_completionHandlers;
     float _endFraction;
@@ -35,9 +40,10 @@
 - (BOOL)animateFromCurrentPosition;
 - (void)dealloc;
 - (BOOL)deleteAfterAnimation;
+- (id)description;
 - (float)endFraction;
 - (id)finalLayoutAttributes;
-- (id)initWithView:(id)arg1 viewType:(int)arg2 finalLayoutAttributes:(id)arg3 startFraction:(float)arg4 endFraction:(float)arg5 animateFromCurrentPostion:(BOOL)arg6 deleteAfterAnimation:(BOOL)arg7;
+- (id)initWithView:(id)arg1 viewType:(int)arg2 finalLayoutAttributes:(id)arg3 startFraction:(float)arg4 endFraction:(float)arg5 animateFromCurrentPostion:(BOOL)arg6 deleteAfterAnimation:(BOOL)arg7 customAnimations:(id)arg8;
 - (BOOL)rasterizeAfterAnimation;
 - (BOOL)resetRasterizationAfterAnimation;
 - (void)setRasterizeAfterAnimation:(BOOL)arg1;

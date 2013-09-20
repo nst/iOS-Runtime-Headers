@@ -20,7 +20,6 @@
 - (BOOL)webView:(id)arg1 shouldInsertNode:(id)arg2 replacingDOMRange:(id)arg3 givenAction:(int)arg4;
 - (BOOL)webView:(id)arg1 shouldInsertText:(id)arg2 replacingDOMRange:(id)arg3 givenAction:(int)arg4;
 - (BOOL)webView:(id)arg1 shouldMoveRangeAfterDelete:(id)arg2 replacingRange:(id)arg3;
-- (BOOL)webView:(id)arg1 shouldShowDeleteInterfaceForElement:(id)arg2;
 - (void)webViewDidBeginEditing:(id)arg1;
 - (void)webViewDidChange:(id)arg1;
 - (void)webViewDidChangeSelection:(id)arg1;

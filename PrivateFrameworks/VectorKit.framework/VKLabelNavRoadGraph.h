@@ -10,41 +10,112 @@
 @class NSMutableArray, NSMutableDictionary, NSMutableSet;
 
 @interface VKLabelNavRoadGraph : NSObject {
-    struct { 
-        double x0; 
-        double x1; 
-        double y0; 
-        double y1; 
+    struct Vec2Imp<float> { 
+        float x; 
+        float y; 
+    struct BRectImp<double> { 
+        struct Vec2Imp<double> { 
+            double x; 
+            double y; 
+        } p0; 
+        struct Vec2Imp<double> { 
+            double x; 
+            double y; 
+        } p1; 
+    struct PolylineCoordinate { 
+        unsigned int index; 
+        float offset; 
+    struct unordered_map<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature>, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, vk_allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> > > > { 
+        struct __hash_table<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature>, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature>, std::__1::equal_to<std::__1::basic_string<char> >, true>, vk_allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> > > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> *[], std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> **, std::__1::__bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> *> > > { 
+                    struct __hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<vk_allocator<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> *> > { 
+                        struct __compressed_pair<unsigned long, vk_allocator<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> *>, vk_allocator<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> *> { 
+                    struct __hash_node<std::__1::pair<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature> >, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature>, std::__1::hash<std::__1::basic_string<char> >, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::shared_ptr<NavRoadFeature>, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
+    struct vector<geo::Vec2Imp<double>, vk_allocator<geo::Vec2Imp<double> > > { 
+        struct Vec2Imp<double> {} *__begin_; 
+        struct Vec2Imp<double> {} *__end_; 
+        struct __compressed_pair<geo::Vec2Imp<double> *, vk_allocator<geo::Vec2Imp<double> > > { 
+            struct Vec2Imp<double> {} *__first_; 
+        } __end_cap_; 
+    struct vector<RouteSegment, vk_allocator<RouteSegment> > { 
+        struct RouteSegment {} *__begin_; 
+        struct RouteSegment {} *__end_; 
+        struct __compressed_pair<RouteSegment *, vk_allocator<RouteSegment> > { 
+            struct RouteSegment {} *__first_; 
+        } __end_cap_; 
+    unsigned int _currentRoadStartSimplifiedPointIndex;
     NSMutableSet *_duplicateTiles;
+    unsigned int _firstPOIAligningRouteSegment;
     NSMutableArray *_intersections;
     NSMutableArray *_junctions;
     } _offRouteJunctionSelectRect;
     NSMutableArray *_offRouteJunctions;
     BOOL _offRouteJunctionsValid;
+    NSMutableArray *_oppositeCarriagewayJunctions;
+    BOOL _oppositeCarriagewayJunctionsValid;
+    } _routeFeatureMap;
+    BOOL _routeFeatureMapValid;
+    } _routeUserOffset;
+    } _screenRouteSegments;
+    BOOL _screenRouteValid;
+    } _simplifiedRoutePoints;
+    BOOL _simplifiedRouteValid;
     NSMutableDictionary *_tileDatasByIndex;
     NSMutableSet *_tiles;
+    } _unitHeading;
 }
 
 @property(retain) NSMutableArray * junctions;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
+- (BOOL)_checkIfDualCarriageWayConnectorRoad:(id)arg1 fromJunction:(id)arg2 toJunction:(id)arg3 checkShields:(BOOL)arg4;
 - (id)_findInterTileJunctionForJunction:(id)arg1;
 - (void)_findOffRouteJunctions;
-- (id)_junctionForRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 atA:(BOOL)arg2 routeOffset:(struct { unsigned int x1; float x2; })arg3 tile:(id)arg4;
+- (id)_junctionForRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 atA:(BOOL)arg2 routeOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg3 tile:(id)arg4;
 - (id)_nextIntersectionForRoad:(id)arg1;
+- (void)_transformRouteToScreenWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
 - (void)_updateIntersectionsForDepth:(unsigned int)arg1;
-- (void)addPolylineEdge:(id)arg1 atA:(BOOL)arg2 tile:(id)arg3 junctionList:(id)arg4;
+- (void)_updateSimplifiedRoute;
+- (void)addRouteRoadEdge:(const struct VKLabelNavRouteRoadEdge { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; struct { /* ? */ } *x3; }*)arg1 atA:(BOOL)arg2 isRouteRefineJunction:(BOOL)arg3 tile:(id)arg4 junctionList:(id)arg5;
+- (BOOL)collideRouteWithLabel:(id)arg1 routeCrossProduct:(float*)arg2 context:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg3;
+- (unsigned char)computeRoutePositionMaskForPOIAtPixel:(const struct Vec2Imp<float> { float x1; float x2; }*)arg1 currentPositionMask:(unsigned char)arg2 context:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg3;
 - (unsigned int)countReadyJunctionLists;
 - (void)dealloc;
 - (void)evaluateDualCarriagewayForJunction:(id)arg1 outputJunctionList:(id)arg2;
 - (id)initWithJunctions:(id)arg1;
+- (BOOL)isOnScreenRouteBackwardsAtJunction:(id)arg1 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2;
+- (BOOL)isPriorRouteCollinearWithRoad:(id)arg1 distance:(float)arg2;
 - (id)junctionForRoad:(id)arg1 nearJunction:(BOOL)arg2 crossTileEdge:(BOOL)arg3;
 - (id)junctionListForDepth:(unsigned int)arg1;
 - (id)junctions;
 - (id)nextRoadSegmentForRoad:(id)arg1;
-- (id)offRouteGraphJunctionsForViewTransform:(const struct ViewTransform { int (**x1)(); int x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; struct { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; struct { double x_5_1_1; double x_5_1_2; double x_5_1_3; } x5; float x6; float x7; boolx8; float x9; double x10; struct { double x_11_1_1[4][4]; } x11; struct { double x_12_1_1[4][4]; } x12; struct { double x_13_1_1[4][4]; } x13; id x14; float x15; boolx16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; } x17; struct { double x_18_1_1; double x_18_1_2; double x_18_1_3; } x18; double x19; double x20; struct CGSize { float x_21_1_1; float x_21_1_2; } x21; float x22; struct { BOOL x_23_1_1; double x_23_1_2; double x_23_1_3; double x_23_1_4; double x_23_1_5; } x23; struct { double x_24_1_1; double x_24_1_2; double x_24_1_3; } x24; struct { double x_25_1_1; double x_25_1_2; double x_25_1_3; } x25; }*)arg1 labelContext:(struct LabelContext { id x1; id x2; id x3; id x4; struct ViewTransform {} *x5; int x6; int x7; unsigned int x8; float x9; boolx10; boolx11; boolx12; boolx13; boolx14; boolx15; int x16; struct { double x_17_1_1; double x_17_1_2; double x_17_1_3; double x_17_1_4; } x17; struct { float x_18_1_1; float x_18_1_2; float x_18_1_3; float x_18_1_4; } x18; struct { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; } x19; struct { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; } x20; int x21; }*)arg2 maxJunctions:(unsigned int)arg3;
+- (id)offRouteGraphJunctionsWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 maxJunctions:(unsigned int)arg2 isOnRoute:(BOOL)arg3;
+- (id)oppositeCarriagewayJunctions;
+- (id)overpassJunctionForJunction:(id)arg1;
+- (BOOL)prepareOppositeCarriagewayJunctions;
 - (void)reset;
+- (void)routeJunctionsHaveChanged;
 - (void)setJunctions:(id)arg1;
 - (void)setTiles:(id)arg1;
+- (void)startingLabelLayoutWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 routeUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
 
 @end

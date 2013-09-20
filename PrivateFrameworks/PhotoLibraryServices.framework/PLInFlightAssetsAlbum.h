@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSCache, NSDictionary, NSFetchRequest, NSMutableOrderedSet, NSNumber, NSObject<PLIndexMappingCache>, NSOrderedSet, NSString, NSURL, PLManagedAlbum, PLManagedAsset, UIImage;
+@class <NSObject><NSCopying>, NSArray, NSCache, NSDate, NSDictionary, NSFetchRequest, NSMutableOrderedSet, NSNumber, NSObject<PLIndexMappingCache>, NSOrderedSet, NSString, NSURL, PLManagedAlbum, PLManagedAsset, UIImage;
 
-@interface PLInFlightAssetsAlbum : NSObject <PLAssetContainer, PLIndexMappingCache, PLDerivedAlbumOrigin> {
+@interface PLInFlightAssetsAlbum : NSObject <PLAlbumProtocol, PLIndexMappingCache, PLDerivedAlbumOrigin> {
     NSCache *__assetCache;
+    BOOL __notificationsEnabled;
     NSMutableOrderedSet *_albumOIDs;
     PLManagedAlbum *_backingAlbum;
     NSObject<PLIndexMappingCache> *_derivedAlbums[5];
@@ -18,12 +19,16 @@
 }
 
 @property NSMutableOrderedSet * _assets;
+@property BOOL _notificationsEnabled;
 @property(readonly) unsigned int approximateCount;
 @property(readonly) NSOrderedSet * assets;
 @property(readonly) unsigned int assetsCount;
 @property(readonly) PLManagedAlbum * backingAlbum;
+@property(readonly) <NSObject><NSCopying> * cachedIndexMapState;
+@property(readonly) BOOL canContributeToCloudSharedAlbum;
+@property(readonly) BOOL canShowAvalancheStacks;
 @property(readonly) BOOL canShowComments;
-@property(readonly) unsigned int count;
+@property(readonly) NSDate * endDate;
 @property(readonly) NSURL * groupURL;
 @property BOOL hasUnseenContentBoolValue;
 @property(retain) NSString * importSessionID;
@@ -31,23 +36,32 @@
 @property(readonly) BOOL isCloudSharedAlbum;
 @property(readonly) BOOL isEmpty;
 @property(readonly) BOOL isLibrary;
+@property(readonly) BOOL isMultipleContributorCloudSharedAlbum;
 @property(readonly) BOOL isOwnedCloudSharedAlbum;
+@property(readonly) BOOL isPanoramasAlbum;
+@property(readonly) BOOL isPendingPhotoStreamAlbum;
 @property(readonly) BOOL isPhotoStreamAlbum;
+@property(readonly) BOOL isStandInAlbum;
+@property(readonly) BOOL isWallpaperAlbum;
 @property(retain) PLManagedAsset * keyAsset;
 @property(readonly) NSNumber * kind;
 @property(readonly) int kindValue;
+@property(readonly) NSArray * localizedLocationNames;
 @property(readonly) NSString * localizedTitle;
 @property(readonly) NSMutableOrderedSet * mutableAssets;
 @property(readonly) NSString * name;
-@property unsigned int pendingItemsCount;
-@property unsigned int pendingItemsType;
+@property int pendingItemsCount;
+@property int pendingItemsType;
 @property(readonly) unsigned int photosCount;
 @property(readonly) UIImage * posterImage;
+@property(retain) PLManagedAsset * secondaryKeyAsset;
 @property(readonly) id sectioningComparator;
 @property BOOL sessionLimited;
 @property(readonly) BOOL shouldDeleteWhenEmpty;
 @property(retain) NSDictionary * slideshowSettings;
 @property(readonly) id sortingComparator;
+@property(readonly) NSDate * startDate;
+@property(retain) PLManagedAsset * tertiaryKeyAsset;
 @property(readonly) NSString * title;
 @property(readonly) NSString * uuid;
 @property(readonly) unsigned int videosCount;
@@ -56,7 +70,8 @@
 
 - (id)_albumOIDs;
 - (id)_assets;
-- (unsigned int)_fetchedCountForAssetsOfKind:(int)arg1;
+- (unsigned int)_fetchedCountForAssetsOfKind:(short)arg1;
+- (BOOL)_notificationsEnabled;
 - (void)_resetAlbumOIDs;
 - (void)addInFlightAsset:(id)arg1;
 - (unsigned int)approximateCount;
@@ -67,14 +82,16 @@
 - (void)batchFetchAssets:(id)arg1;
 - (unsigned int)batchSize;
 - (id)cachedIndexMapState;
+- (BOOL)canContributeToCloudSharedAlbum;
 - (BOOL)canPerformEditOperation:(int)arg1;
+- (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
+- (void)clearAssetCaches;
 - (unsigned int)count;
-- (unsigned int)countForAssetsOfKind:(int)arg1;
+- (unsigned int)countForAssetsOfKind:(short)arg1;
 - (unsigned int)countOfMergedAssets;
 - (id)currentStateForChange;
 - (void)dealloc;
-- (void)deleteInflightAssets:(id)arg1;
 - (Class)derivedChangeNotificationClass;
 - (id)description;
 - (id)displayableIndexesForCount:(unsigned int)arg1;
@@ -93,11 +110,17 @@
 - (BOOL)isCloudSharedAlbum;
 - (BOOL)isEmpty;
 - (BOOL)isLibrary;
+- (BOOL)isMultipleContributorCloudSharedAlbum;
 - (BOOL)isOwnedCloudSharedAlbum;
+- (BOOL)isPanoramasAlbum;
+- (BOOL)isPendingPhotoStreamAlbum;
 - (BOOL)isPhotoStreamAlbum;
+- (BOOL)isStandInAlbum;
+- (BOOL)isWallpaperAlbum;
 - (id)keyAsset;
 - (id)kind;
 - (int)kindValue;
+- (id)localizedLocationNames;
 - (id)localizedTitle;
 - (id)managedObjectAtAlbumIndex:(unsigned int)arg1;
 - (id)managedObjectForOID:(id)arg1;
@@ -106,31 +129,37 @@
 - (BOOL)mappedDataSourceChanged:(id)arg1 remoteNotificationData:(id)arg2;
 - (id)mutableAssets;
 - (id)objectInMergedAssetsAtIndex:(unsigned int)arg1;
-- (unsigned int)pendingItemsCount;
-- (unsigned int)pendingItemsType;
+- (int)pendingItemsCount;
+- (int)pendingItemsType;
 - (unsigned int)photosCount;
 - (id)posterImage;
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (void)registerDerivedAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)removeInflightAssets:(id)arg1;
 - (void)removeObjectFromMergedAssetsAtIndex:(unsigned int)arg1;
+- (id)secondaryKeyAsset;
 - (id)sectioningComparator;
 - (BOOL)sessionLimited;
 - (void)setHasUnseenContentBoolValue:(BOOL)arg1;
 - (void)setImportSessionID:(id)arg1;
 - (void)setKeyAsset:(id)arg1;
-- (void)setPendingItemsCount:(unsigned int)arg1;
-- (void)setPendingItemsType:(unsigned int)arg1;
+- (void)setPendingItemsCount:(int)arg1;
+- (void)setPendingItemsType:(int)arg1;
+- (void)setSecondaryKeyAsset:(id)arg1;
 - (void)setSessionLimited:(BOOL)arg1;
 - (void)setSlideshowSettings:(id)arg1;
+- (void)setTertiaryKeyAsset:(id)arg1;
+- (void)setUINotificationsEnabled:(BOOL)arg1;
 - (void)set_assets:(id)arg1;
+- (void)set_notificationsEnabled:(BOOL)arg1;
 - (BOOL)shouldDeleteWhenEmpty;
 - (id)slideshowSettings;
 - (id)sortingComparator;
 - (void)startNewSession;
+- (id)tertiaryKeyAsset;
 - (id)title;
 - (id)titleForSectionStartingAtIndex:(unsigned int)arg1;
 - (void)unregisterAllDerivedAlbums;
-- (void)updateStackedImageShouldNotifyImmediately:(BOOL)arg1;
 - (id)uuid;
 - (unsigned int)videosCount;
 

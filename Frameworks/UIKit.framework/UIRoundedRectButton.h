@@ -9,7 +9,6 @@
     UIBezierPath *_fillPath;
     UIView *_shadowView;
     UIGroupTableViewCellBackground *_tableViewStyleBackground;
-    UIColor *_tintColor;
 }
 
 - (id)_backgroundView;
@@ -32,6 +31,5 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setTintColor:(id)arg1;
-- (id)tintColor;
 
 @end

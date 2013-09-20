@@ -14,13 +14,13 @@
     NSNumber *inputTime;
 }
 
-@property(copy) NSNumber * inputAngle;
-@property(copy) CIVector * inputCenter;
-@property(copy) NSNumber * inputCompression;
+@property(retain) NSNumber * inputAngle;
+@property(retain) CIVector * inputCenter;
+@property(retain) NSNumber * inputCompression;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputRadius;
+@property(retain) NSNumber * inputRadius;
 @property(retain) CIImage * inputTargetImage;
-@property(copy) NSNumber * inputTime;
+@property(retain) NSNumber * inputTime;
 
 + (id)customAttributes;
 

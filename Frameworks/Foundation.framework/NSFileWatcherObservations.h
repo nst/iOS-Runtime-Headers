@@ -2,25 +2,25 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString, NSURL;
+@class NSString;
 
 @interface NSFileWatcherObservations : NSObject {
     BOOL _attributesChanged;
     BOOL _contentsChanged;
     BOOL _deleted;
-    BOOL _didResetURL;
+    BOOL _didResetPath;
     NSString *_lastObservedPath;
     BOOL _moved;
-    NSURL *_url;
+    NSString *_path;
 }
 
+- (void)addAnnouncedMoveToPath:(id)arg1;
 - (void)addAttributeChange;
 - (void)addContentsChange;
 - (void)addDeletion;
-- (void)addMoveToPath:(id)arg1;
-- (void)addMoveToURL:(id)arg1;
+- (void)addDetectedMoveToPath:(id)arg1;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1;
+- (id)initWithPath:(id)arg1;
 - (void)notifyObserver:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @class CIImage, CIVector;
 
-@interface CIToneCurve : CIFilter {
+@interface CIToneCurve : CIFilter <_CIFilterProperties> {
     CIImage *_curveImage;
     CIImage *inputImage;
     CIVector *inputPoint0;

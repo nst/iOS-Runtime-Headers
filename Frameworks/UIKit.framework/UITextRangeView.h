@@ -136,14 +136,12 @@
 - (void)scaleDidChange;
 - (void)scaleWillChange;
 - (BOOL)scaling;
-- (void)selectionAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (id)selectionView;
 - (void)setActiveTouch:(id)arg1;
 - (void)setAnimateUpdate:(BOOL)arg1;
 - (void)setBaseIsStart:(BOOL)arg1;
 - (void)setBasePoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCommandsWereShowing:(BOOL)arg1;
-- (void)setEnclosingScrollViewsEnabled:(BOOL)arg1;
 - (void)setEndEdge:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEndGrabber:(id)arg1;
 - (void)setExtentPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -179,8 +177,6 @@
 - (void)updateGrabbers;
 - (void)updateRectViews;
 - (void)updateSelectionWithDocumentPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updateWithMagnifierTerminalPoint:(BOOL)arg1;
 - (void)willRotate;
 - (void)willScroll;
 

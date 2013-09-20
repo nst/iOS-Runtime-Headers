@@ -8,6 +8,8 @@
     NSString *_variable;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -26,8 +26,8 @@
     double mWrapDistanceLeft;
     double mWrapDistanceRight;
     double mWrapDistanceTop;
-    int mZIndex;
-    int mZIndexTotal;
+    long mZIndex;
+    long mZIndexTotal;
 }
 
 @property BOOL allowOverlap;
@@ -56,8 +56,8 @@
 - (void)setWrapDistanceLeft:(double)arg1;
 - (void)setWrapDistanceRight:(double)arg1;
 - (void)setWrapDistanceTop:(double)arg1;
-- (void)setZIndex:(int)arg1;
-- (void)setZIndexTotal:(int)arg1;
+- (void)setZIndex:(long)arg1;
+- (void)setZIndexTotal:(long)arg1;
 - (int)textWrappingMode;
 - (int)textWrappingModeType;
 - (int)verticalPosition;
@@ -65,7 +65,7 @@
 - (double)wrapDistanceLeft;
 - (double)wrapDistanceRight;
 - (double)wrapDistanceTop;
-- (int)zIndex;
-- (int)zIndexTotal;
+- (long)zIndex;
+- (long)zIndexTotal;
 
 @end

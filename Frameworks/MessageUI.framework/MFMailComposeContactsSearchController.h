@@ -5,6 +5,7 @@
 @class <MFMailComposeContactsSearchControllerDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, NSNumber;
 
 @interface MFMailComposeContactsSearchController : NSObject <MFContactsSearchConsumer> {
+    NSNumber *_corecipientSearchTaskID;
     <MFMailComposeContactsSearchControllerDelegate> *_delegate;
     BOOL _foundAnySearchResults;
     MFContactsSearchManager *_manager;
@@ -24,9 +25,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)endedNetworkActivity;
+- (void)findCorecipientsWithRecipients:(id)arg1;
 - (void)finishedSearchingForType:(int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (id)init;
+- (void)searchWithString:(id)arg1 enteredRecipients:(id)arg2;
 - (void)searchWithString:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTaskID:(id)arg1;

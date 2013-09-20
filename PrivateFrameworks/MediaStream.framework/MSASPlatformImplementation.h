@@ -17,10 +17,12 @@
 - (BOOL)deviceHasEnoughDiskSpaceRemainingToOperate;
 - (void)logLevel:(int)arg1 personID:(id)arg2 albumGUID:(id)arg3 format:(id)arg4;
 - (id)pathAlbumSharingDir;
+- (BOOL)personIDEnabledForAlbumSharing:(id)arg1;
 - (BOOL)personIDUsesProductionPushEnvironment:(id)arg1;
 - (id)personIDsEnabledForAlbumSharing;
 - (Class)pluginClass;
 - (id)pushTokenForPersonID:(id)arg1;
+- (BOOL)shouldEnableNewFeatures;
 - (BOOL)shouldLogAtLevel:(int)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSNotificationCenter, NSNumber, NSObject<OS_dispatch_queue>, PLManagedObjectContext;
+@class NSDictionary, NSMapTable, NSMutableArray, NSMutableIndexSet, NSMutableSet, NSNotificationCenter, NSNumber, NSObject<OS_dispatch_queue>, PLManagedObjectContext;
 
 @interface PLChangeNotificationCenter : NSObject {
     struct changeList_s { 
@@ -23,21 +23,43 @@
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
+    struct contentChanges_s { 
+        NSMutableArray *container; 
+        NSMutableArray *updatedContent; 
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
+    struct contentChanges_s { 
+        NSMutableArray *container; 
+        NSMutableArray *updatedContent; 
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
+    struct changeList_s { 
+        NSMutableSet *inserted; 
+        NSMutableSet *updated; 
+        NSMutableSet *deleted; 
     } _albumListsContent;
     } _albumsContent;
+    NSMutableSet *_assetsWithCloudCommentChanges;
     int _cameraPreviewChangeListenerCount;
     NSNumber *_cameraPreviewChangedToken;
     } _changedAlbumLists;
     } _changedAlbums;
     } _changedAssets;
+    } _changedCloudFeedEntries;
     NSMapTable *_changedInflightAssetsAlbumsToSnapshots;
+    } _changedMomentLists;
+    } _changedMoments;
     NSMutableIndexSet *_changedThumbnailIndexes;
-    NSMutableDictionary *_delayedBlocks;
     NSMutableArray *_enqueuedNotifications;
     BOOL _isOverloaded;
-    BOOL _isPostingChanges;
     BOOL _isProcessingRemoteDidSave;
     PLManagedObjectContext *_moc;
+    } _momentListsContent;
+    } _momentsContent;
     NSMutableSet *_overloadedObjects;
     NSDictionary *_remoteNotificationData;
     NSMutableArray *_snapshots;
@@ -51,9 +73,6 @@
 
 + (id)allManagedObjectKeysStrategy;
 + (id)defaultCenter;
-+ (void)distributeStackViewImageUpdatedForAlbumID:(id)arg1;
-+ (void)distributeThumbnailUpdatedAtIndex:(unsigned int)arg1;
-+ (void)distributeThumbnailUpdatedAtIndexes:(id)arg1;
 + (void)forceFetchingAlbumReload;
 + (void)getInsertedAssetCount:(unsigned int*)arg1 deletedAssetCount:(unsigned int*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
 + (void)getInsertedAssets:(id)arg1 deletedAssets:(id)arg2 changedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
@@ -62,20 +81,26 @@
 - (id)_attributesOfInterestForObject:(id)arg1;
 - (void)_cleanupState;
 - (void)_enqueueAlbumChangeNotification:(id)arg1;
-- (void)_enqueueAlbumListChangeNotification:(id)arg1;
 - (void)_enqueueAlbumListNotifications;
 - (void)_enqueueAlbumNotifications;
+- (void)_enqueueAssetChangeNotification;
+- (void)_enqueueAssetContainerChangeNotification:(id)arg1;
+- (void)_enqueueAssetContainerListChangeNotification:(id)arg1;
 - (void)_enqueueCloudCommentsNotifications;
+- (void)_enqueueCloudFeedEntriesChangeNotifications;
+- (void)_enqueueInvitationRecordsChangeNotification:(id)arg1;
+- (void)_enqueueMomentChangeNotifications;
+- (void)_enqueueMomentListChangeNotifications;
 - (void)_enqueueNotification:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)_enqueueNotification:(id)arg1 object:(id)arg2 userInfoWithObjects:(const id*)arg3 forKeys:(const id*)arg4 count:(unsigned int)arg5;
 - (void)_enqueuePhotoLibraryNotifications;
 - (void)_evaluateContainersWithUpdatedContent;
+- (void)_evaluateUpdatedAssets;
 - (BOOL)_isInterestedInUpdatesOfObject:(id)arg1;
 - (id)_keysOfInterestForObject:(id)arg1;
 - (id)_orderedRelationshipsOfInterestForObject:(id)arg1;
 - (void)_persistUserAlbumChanges;
 - (void)_postEnqueuedNotifications;
-- (void)_processStackViewAlbumUpdatedEvent:(id)arg1 withGroup:(id)arg2;
 - (void)_processThumbnailsUpdatedEvent:(id)arg1;
 - (void)_registerForCameraPreviewWellChanges;
 - (void)_registerForStackViewImageChanges;
@@ -91,14 +116,16 @@
 - (id)_toOneRelationshipsOfInterestForObject:(id)arg1;
 - (void)_unregisterForCameraPreviewWellChanges;
 - (void)_unregisterForStackViewImageChanges;
-- (void)addAlbumChangeObserver:(id)arg1 album:(struct NSObject { Class x1; }*)arg2;
-- (void)addAlbumListChangeObserver:(id)arg1 albumList:(struct NSObject { Class x1; }*)arg2;
+- (void)addAssetChangeObserver:(id)arg1;
+- (void)addAssetContainerChangeObserver:(id)arg1 container:(id)arg2;
+- (void)addAssetContainerListChangeObserver:(id)arg1 containerList:(id)arg2;
 - (void)addCameraPreviewWellImageChangeObserver:(id)arg1;
 - (void)addCloudCommentsChangeObserver:(id)arg1 asset:(id)arg2;
+- (void)addCloudFeedEntriesObserver:(id)arg1;
+- (void)addInvitationRecordsObserver:(id)arg1;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
 - (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id)arg4;
 - (void)addShouldReloadObserver:(id)arg1;
-- (void)addStackViewImageChangeObserver:(id)arg1;
 - (id)backingCenter;
 - (void)dealloc;
 - (id)descriptionOfSplitChanges;
@@ -114,14 +141,16 @@
 - (void)postShouldReloadNotification;
 - (void)processChangeHubEvent:(id)arg1 withGroup:(id)arg2;
 - (void)processContextDidChangeNotification:(id)arg1;
-- (void)removeAlbumChangeObserver:(id)arg1 album:(struct NSObject { Class x1; }*)arg2;
-- (void)removeAlbumListChangeObserver:(id)arg1 albumList:(struct NSObject { Class x1; }*)arg2;
+- (void)processContextDidSaveNotification:(id)arg1;
+- (void)removeAssetChangeObserver:(id)arg1;
+- (void)removeAssetContainerChangeObserver:(id)arg1 container:(id)arg2;
+- (void)removeAssetContainerListChangeObserver:(id)arg1 containerList:(id)arg2;
 - (void)removeCameraPreviewWellImageChangeObserver:(id)arg1;
 - (void)removeCloudCommentsChangeObserver:(id)arg1 asset:(id)arg2;
+- (void)removeCloudFeedEntriesObserver:(id)arg1;
+- (void)removeInvitationRecordsObserver:(id)arg1;
 - (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (void)removeObserver:(id)arg1;
 - (void)removeShouldReloadObserver:(id)arg1;
-- (void)removeStackViewImageChangeObserver:(id)arg1;
-- (void)setPostProcessingHandlerForIdentifier:(id)arg1 block:(id)arg2;
 
 @end

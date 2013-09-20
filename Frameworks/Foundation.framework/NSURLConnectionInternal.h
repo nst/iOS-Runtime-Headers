@@ -19,10 +19,9 @@
 - (void)_invalidate;
 - (void)_setDelegateQueue:(id)arg1;
 - (void)_withActiveConnectionAndDelegate:(id)arg1;
-- (void)_withConnection:(id)arg1;
 - (void)_withConnectionAndDelegate:(id)arg1 onlyActive:(BOOL)arg2;
+- (void)_withConnectionAndDelegate:(id)arg1;
 - (void)_withConnectionDisconnectFromConnection;
-- (void)_withErrorForConnection:(id)arg1;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (id)currentRequest;

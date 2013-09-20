@@ -10,11 +10,13 @@
         unsigned int isCallUpgrade : 1; 
         unsigned int isToEmail : 1; 
         unsigned int isToPhoneNumber : 1; 
+        unsigned int isVideo : 1; 
     NSString *_guid;
     } _has;
     unsigned int _isCallUpgrade;
     unsigned int _isToEmail;
     unsigned int _isToPhoneNumber;
+    unsigned int _isVideo;
     unsigned long long _timestamp;
 }
 
@@ -23,10 +25,12 @@
 @property BOOL hasIsCallUpgrade;
 @property BOOL hasIsToEmail;
 @property BOOL hasIsToPhoneNumber;
+@property BOOL hasIsVideo;
 @property BOOL hasTimestamp;
 @property unsigned int isCallUpgrade;
 @property unsigned int isToEmail;
 @property unsigned int isToPhoneNumber;
+@property unsigned int isVideo;
 @property unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -38,21 +42,25 @@
 - (BOOL)hasIsCallUpgrade;
 - (BOOL)hasIsToEmail;
 - (BOOL)hasIsToPhoneNumber;
+- (BOOL)hasIsVideo;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (unsigned int)isCallUpgrade;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)isToEmail;
 - (unsigned int)isToPhoneNumber;
+- (unsigned int)isVideo;
 - (BOOL)readFrom:(id)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setHasIsCallUpgrade:(BOOL)arg1;
 - (void)setHasIsToEmail:(BOOL)arg1;
 - (void)setHasIsToPhoneNumber:(BOOL)arg1;
+- (void)setHasIsVideo:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setIsCallUpgrade:(unsigned int)arg1;
 - (void)setIsToEmail:(unsigned int)arg1;
 - (void)setIsToPhoneNumber:(unsigned int)arg1;
+- (void)setIsVideo:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

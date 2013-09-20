@@ -2,19 +2,22 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLContext, VGLFramebuffer;
+@class VGLContext, VGLFramebuffer, VGLLayer;
 
-@interface VGLScreenCanvas : UIView <VGLCanvas> {
+@interface VGLScreenCanvas : CALayer <VGLCanvas> {
     struct _VGLColor { 
         float r; 
         float g; 
         float b; 
         float a; 
-    unsigned int _canvasHeight;
-    unsigned int _canvasWidth;
+    int _canvasHeight;
+    int _canvasWidth;
+    float _contentScale;
     BOOL _forceRecreateFramebuffer;
     BOOL _forceRecreateFramebufferAndKeepMultisampleFramebuffer;
     } _glClearColor;
+    VGLLayer *_glLayer;
+    BOOL _isInBackground;
     BOOL _requiresMultisampling;
     struct CGContext { } *_snapshotContext;
     VGLFramebuffer *_targetBuffer;
@@ -24,10 +27,11 @@
     BOOL _useStencilBuffer;
 }
 
-@property(readonly) float contentScale;
+@property float contentScale;
 @property(readonly) BOOL currentSceneRequiresMSAA;
 @property(getter=isDrawable,readonly) BOOL drawable;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } glClearColor;
+@property(readonly) VGLLayer * glLayer;
 @property(readonly) struct CGSize { float x1; float x2; } size;
 @property(readonly) struct CGSize { float x1; float x2; } sizeInPixels;
 @property BOOL useDepthBuffer;
@@ -36,36 +40,57 @@
 @property(readonly) VGLContext * vglContext;
 
 + (Class)contextClass;
-+ (Class)layerClass;
 
+- (id).cxx_construct;
 - (void)_createFramebuffer;
+- (void)_createGLLayerIfNecessary;
 - (void)_destroyAndCreateFramebuffer;
 - (void)_destroyAndCreateFramebufferAndKeepMultisampleFramebuffer;
 - (void)_destroyFramebuffer;
 - (void)_destroyFramebufferAndKeepMultisampleFramebuffer;
+- (void)_updateForceRecreateFramebuffer;
+- (BOOL)canRender;
 - (float)contentScale;
+- (void)createContextIfNecessary;
 - (BOOL)currentSceneRequiresMSAA;
 - (void)dealloc;
 - (void)didDrawView;
 - (void)didEnterBackground;
+- (void)didPresent;
 - (void)didReceiveMemoryWarning;
+- (void)display;
+- (void)drawWithTimestamp:(double)arg1;
+- (void)frameBufferDestroyed;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })glClearColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)glLayer;
+- (id)initWithContext:(id)arg1 inBackground:(BOOL)arg2;
 - (BOOL)isDrawable;
 - (BOOL)isEffectivelyHidden;
-- (void)layoutSubviews;
+- (void)layoutSublayers;
 - (void)preloadResources;
+- (void)present;
+- (void)renderInContext:(struct CGContext { }*)arg1;
+- (void)setBackgroundColor:(struct CGColor { }*)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentScale:(float)arg1;
+- (void)setContentsGravity:(id)arg1;
+- (void)setContentsScale:(float)arg1;
 - (void)setGlClearColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setNeedsDisplay;
+- (void)setNeedsDisplayOnBoundsChange:(BOOL)arg1;
+- (void)setOpaque:(BOOL)arg1;
 - (void)setUseDepthBuffer:(BOOL)arg1;
 - (void)setUseMultisampling:(BOOL)arg1;
 - (void)setUseStencilBuffer:(BOOL)arg1;
+- (BOOL)shouldRender;
 - (struct CGSize { float x1; float x2; })size;
 - (struct CGSize { float x1; float x2; })sizeInPixels;
 - (BOOL)useDepthBuffer;
 - (BOOL)useMultisampling;
 - (BOOL)useStencilBuffer;
 - (id)vglContext;
+- (BOOL)wantsRender;
 - (void)willDrawView;
+- (void)willEnterForeground;
 
 @end

@@ -2,10 +2,16 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKTextViewWithLabelTextMetrics, UILabel;
+@class EKTextViewWithLabelTextMetrics, NSObject<EKEventDetailTitleCellDelegate>, UIButton, UIImage, UIImageView, UILabel;
 
 @interface EKEventDetailTitleCell : EKEventDetailCell {
     UILabel *_dateView;
+    NSObject<EKEventDetailTitleCellDelegate> *_delegate;
+    UIButton *_editButton;
+    BOOL _hasLocationStatus;
+    int _locationStatus;
+    UIImage *_locationStatusImage;
+    UIImageView *_locationStatusView;
     EKTextViewWithLabelTextMetrics *_locationView;
     BOOL _observingLocaleChanges;
     UILabel *_recurrenceView;
@@ -15,16 +21,30 @@
     unsigned int _visibleItems;
 }
 
+@property NSObject<EKEventDetailTitleCellDelegate> * delegate;
+
++ (id)_skinnyImageWithColor:(id)arg1;
++ (id)_titleFont;
+
+- (void).cxx_destruct;
 - (id)_dateView;
+- (id)_editButton;
+- (id)_locationFont;
+- (id)_locationStatusView;
 - (id)_locationView;
 - (id)_recurrenceView;
 - (id)_statusView;
 - (id)_timeView;
 - (id)_titleView;
 - (void)dealloc;
+- (id)delegate;
+- (void)editButtonTapped;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (void)setColor:(id)arg1;
 - (void)setDateString:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setPrimaryTextColor:(id)arg1;
 - (void)setRecurrenceString:(id)arg1;
 - (void)setStatusString:(id)arg1;
 - (void)setTimeString:(id)arg1;

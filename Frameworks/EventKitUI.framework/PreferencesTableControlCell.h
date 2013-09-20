@@ -10,9 +10,8 @@
 
 @property(retain) UIControl * control;
 
+- (void).cxx_destruct;
 - (id)control;
-- (void)dealloc;
-- (void)layoutSubviews;
 - (void)setControl:(id)arg1;
 
 @end

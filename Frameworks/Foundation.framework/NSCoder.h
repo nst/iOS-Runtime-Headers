@@ -21,8 +21,12 @@
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })decodeCGAffineTransformForKey:(id)arg1;
 - (struct CGPoint { float x1; float x2; })decodeCGPointForKey:(id)arg1;
+- (struct CGPoint { float x1; float x2; })decodeCGPointForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })decodeCGSizeForKey:(id)arg1;
+- (struct CGSize { float x1; float x2; })decodeCGSizeForKey:(id)arg1;
+- (struct CGVector { float x1; float x2; })decodeCGVectorForKey:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })decodeCMTimeForKey:(id)arg1;
 - (struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })decodeCMTimeMappingForKey:(id)arg1;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })decodeCMTimeRangeForKey:(id)arg1;
@@ -45,6 +49,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRectForKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })decodeSize;
 - (struct CGSize { float x1; float x2; })decodeSizeForKey:(id)arg1;
+- (unsigned int)decodeTheme;
+- (unsigned int)decodeThemeForKey:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })decodeUIEdgeInsetsForKey:(id)arg1;
 - (struct UIOffset { float x1; float x2; })decodeUIOffsetForKey:(id)arg1;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
@@ -57,8 +63,12 @@
 - (void)encodeBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (void)encodeCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 forKey:(id)arg2;
 - (void)encodeCGPoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGPoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (void)encodeCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (void)encodeCGSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGVector:(struct CGVector { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forKey:(id)arg2;
 - (void)encodeCMTimeMapping:(struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (void)encodeCMTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 forKey:(id)arg2;
@@ -81,6 +91,8 @@
 - (void)encodeRootObject:(id)arg1;
 - (void)encodeSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)encodeTheme:(unsigned int)arg1 forKey:(id)arg2;
+- (void)encodeTheme:(unsigned int)arg1;
 - (void)encodeUIEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 forKey:(id)arg2;
 - (void)encodeUIOffset:(struct UIOffset { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
@@ -99,6 +111,7 @@
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
 - (unsigned int)systemVersion;
 - (void)validateAllowedClass:(Class)arg1 forKey:(id)arg2;
+- (void)validateClassSupportsSecureCoding:(Class)arg1;
 - (int)versionForClassName:(id)arg1;
 
 @end

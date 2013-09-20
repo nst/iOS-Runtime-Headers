@@ -12,7 +12,6 @@
     NSFileAccessNode *_rootNode;
     NSMutableDictionary *_subarbitrationClaimsByID;
     NSObject<OS_xpc_object> *_superarbitrationServer;
-    NSMutableDictionary *_watchersByPresenterID;
 }
 
 - (void)_addPresenter:(id)arg1 ofItemAtURL:(id)arg2 withLastEventID:(id)arg3;
@@ -25,14 +24,11 @@
 - (void)_handleMessage:(id)arg1 fromClient:(id)arg2;
 - (BOOL)_handleMessage:(id)arg1 ofKind:(id)arg2 withParameters:(id)arg3 embeddedServer:(id)arg4 fromClient:(id)arg5;
 - (void)_removeReactorForID:(id)arg1;
-- (void)_revokeAccessClaim:(id)arg1;
 - (void)_revokeAccessClaimForID:(id)arg1 fromLocal:(BOOL)arg2;
 - (void)_sendSubarbitersMessageWithKind:(id)arg1 parameters:(id)arg2;
 - (void)_startArbitratingItemsAtURLs:(id)arg1 withSuperarbitrationServer:(id)arg2;
-- (void)_startWatchingItemAtURL:(id)arg1 forPresenter:(id)arg2 withLastEventID:(id)arg3;
-- (void)_stopWatchingItemForPresenterForID:(id)arg1;
-- (void)_tiePresenter:(id)arg1 toItemAtURL:(id)arg2;
 - (void)_tiePresenterForID:(id)arg1 toItemAtURL:(id)arg2;
+- (void)_writerWithPurposeID:(id)arg1 didChangeUbiquityOfItemAtURL:(id)arg2;
 - (void)_writerWithPurposeID:(id)arg1 didDisconnectItemAtURL:(id)arg2;
 - (void)_writerWithPurposeID:(id)arg1 didMoveItemAtURL:(id)arg2 toURL:(id)arg3;
 - (void)_writerWithPurposeID:(id)arg1 didReconnectItemAtURL:(id)arg2;
@@ -48,6 +44,7 @@
 - (id)rootNode;
 - (void)stopArbitrating;
 - (void)tiePresenterForID:(id)arg1 toItemAtURL:(id)arg2;
+- (void)writerWithPurposeID:(id)arg1 didChangeUbiquityOfItemAtURL:(id)arg2;
 - (void)writerWithPurposeID:(id)arg1 didDisconnectItemAtURL:(id)arg2;
 - (void)writerWithPurposeID:(id)arg1 didMoveItemAtURL:(id)arg2 toURL:(id)arg3;
 - (void)writerWithPurposeID:(id)arg1 didReconnectItemAtURL:(id)arg2;

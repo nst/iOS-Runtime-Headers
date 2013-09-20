@@ -7,6 +7,7 @@
 @interface UIWebTiledView : UIView {
     BOOL _allowsPaintingAndScriptsWhilePanning;
     BOOL _didFirstTileLayout;
+    BOOL _editingTilingModeEnabled;
     int _inGestureType;
     BOOL _layoutTilesInMainThread;
     int _tilingArea;
@@ -20,8 +21,10 @@
 - (unsigned int)adjustedMaxTileCount;
 - (BOOL)allowsPaintingAndScriptsWhilePanning;
 - (void)dealloc;
+- (void)drawImageIntoTiles:(struct CGImage { }*)arg1;
 - (BOOL)drawsGrid;
 - (void)dumpTiles;
+- (BOOL)editingTilingModeEnabled;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTilingEnabled;
 - (BOOL)keepsZoomedOutTiles;
@@ -38,6 +41,7 @@
 - (void)removeForegroundTiles;
 - (void)setAllowsPaintingAndScriptsWhilePanning:(BOOL)arg1;
 - (void)setDrawsGrid:(BOOL)arg1;
+- (void)setEditingTilingModeEnabled:(BOOL)arg1;
 - (void)setInGesture:(int)arg1;
 - (void)setKeepsZoomedOutTiles:(BOOL)arg1;
 - (void)setLayoutTilesInMainThread:(BOOL)arg1;
@@ -62,6 +66,5 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (id)wakWindow;
 - (void)willMoveToWindow:(id)arg1;
-- (struct WKWindow { struct _WKObject { unsigned int x_1_1_1; struct _WKClassInfo {} *x_1_1_2; } x1; id x2; struct WKView {} *x3; struct WKView {} *x4; struct WKView {} *x5; }*)wkWindow;
 
 @end

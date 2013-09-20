@@ -15,22 +15,19 @@
 @property <EKShareeViewControllerDelegate> * delegate;
 @property(retain) EKSharee * sharee;
 
-- (int)_addressCardRow;
+- (void).cxx_destruct;
 - (void)_allowEditingChanged:(id)arg1;
-- (int)_allowEditingRow;
 - (void)_reloadTitle;
-- (int)_resendInvitationRow;
 - (int)_rowForSubitem:(int)arg1;
 - (BOOL)_shouldDisplayResendInvitationButton;
 - (int)_subitemAtRow:(int)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowEditing;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (void)dealloc;
 - (id)delegate;
 - (id)initWithSharee:(id)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)removeClicked:(id)arg1;
 - (void)setAllowEditing:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;

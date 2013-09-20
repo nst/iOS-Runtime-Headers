@@ -8,7 +8,8 @@
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 
-        unsigned short *directBuffer; 
+        unsigned short *directUniCharBuffer; 
+        char *directCStringBuffer; 
         struct { 
             int location; 
             int length; 

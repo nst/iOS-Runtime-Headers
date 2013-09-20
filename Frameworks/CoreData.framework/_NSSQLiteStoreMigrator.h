@@ -27,8 +27,10 @@
 + (BOOL)_annotatesMigrationMetadata;
 + (void)_setAnnotatesMigrationMetadata:(BOOL)arg1;
 
-- (void)_addEntityMigration:(id)arg1 toTableMigrationForRootEntity:(id)arg2 migrationType:(int)arg3;
+- (void)_addEntityMigration:(id)arg1 toTableMigrationForRootEntity:(id)arg2 tableMigrationType:(int)arg3;
 - (void)_addReindexedProperty:(id)arg1 toSetForEntity:(id)arg2;
+- (long long)_countNullsInColumn:(id)arg1 forEntity:(id)arg2;
+- (long long)_countUnreferencedPrimaryKeysForEntity:(id)arg1 inForeignKeyColumnName:(id)arg2 fromTable:(id)arg3;
 - (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;
 - (void)_determineReindexedEntitiesAndAffectedProperties;
 - (void)_populateEntityMigrationDescriptionsAndEntityMap;
@@ -42,5 +44,8 @@
 - (id)initWithStore:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
 - (BOOL)performMigration:(id*)arg1;
 - (id)tableMigrationDescriptionForEntity:(id)arg1;
+- (BOOL)validateMandatoryAttribute:(id)arg1 onEntity:(id)arg2 error:(id*)arg3;
+- (BOOL)validateMandatoryRelationship:(id)arg1 onEntity:(id)arg2 error:(id*)arg3;
+- (BOOL)validateMigratedDataFromEntityMapping:(id)arg1 error:(id*)arg2;
 
 @end

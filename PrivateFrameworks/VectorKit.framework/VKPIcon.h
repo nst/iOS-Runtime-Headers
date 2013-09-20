@@ -12,6 +12,8 @@
         unsigned int iconRectWidth : 1; 
         unsigned int iconRectX : 1; 
         unsigned int iconRectY : 1; 
+        unsigned int matchingStyleAttributeKey : 1; 
+        unsigned int matchingStyleAttributeValue : 1; 
     unsigned int _anchorPointX;
     unsigned int _anchorPointY;
     unsigned int _atlasIndex;
@@ -20,6 +22,8 @@
     unsigned int _iconRectWidth;
     unsigned int _iconRectX;
     unsigned int _iconRectY;
+    unsigned int _matchingStyleAttributeKey;
+    int _matchingStyleAttributeValue;
     NSString *_name;
     unsigned int _quadIndex;
 }
@@ -33,10 +37,15 @@
 @property BOOL hasIconRectWidth;
 @property BOOL hasIconRectX;
 @property BOOL hasIconRectY;
+@property BOOL hasMatchingStyleAttributeKey;
+@property BOOL hasMatchingStyleAttributeValue;
+@property(readonly) BOOL hasName;
 @property unsigned int iconRectHeight;
 @property unsigned int iconRectWidth;
 @property unsigned int iconRectX;
 @property unsigned int iconRectY;
+@property unsigned int matchingStyleAttributeKey;
+@property int matchingStyleAttributeValue;
 @property(retain) NSString * name;
 @property unsigned int quadIndex;
 
@@ -53,12 +62,17 @@
 - (BOOL)hasIconRectWidth;
 - (BOOL)hasIconRectX;
 - (BOOL)hasIconRectY;
+- (BOOL)hasMatchingStyleAttributeKey;
+- (BOOL)hasMatchingStyleAttributeValue;
+- (BOOL)hasName;
 - (unsigned int)hash;
 - (unsigned int)iconRectHeight;
 - (unsigned int)iconRectWidth;
 - (unsigned int)iconRectX;
 - (unsigned int)iconRectY;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)matchingStyleAttributeKey;
+- (int)matchingStyleAttributeValue;
 - (id)name;
 - (unsigned int)quadIndex;
 - (BOOL)readFrom:(id)arg1;
@@ -71,10 +85,14 @@
 - (void)setHasIconRectWidth:(BOOL)arg1;
 - (void)setHasIconRectX:(BOOL)arg1;
 - (void)setHasIconRectY:(BOOL)arg1;
+- (void)setHasMatchingStyleAttributeKey:(BOOL)arg1;
+- (void)setHasMatchingStyleAttributeValue:(BOOL)arg1;
 - (void)setIconRectHeight:(unsigned int)arg1;
 - (void)setIconRectWidth:(unsigned int)arg1;
 - (void)setIconRectX:(unsigned int)arg1;
 - (void)setIconRectY:(unsigned int)arg1;
+- (void)setMatchingStyleAttributeKey:(unsigned int)arg1;
+- (void)setMatchingStyleAttributeValue:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setQuadIndex:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

@@ -2,24 +2,36 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, PKBarcode, UIImageView, UILabel;
+@class NSMutableArray, PKBarcode, UIImageView, UILabel, UIView;
 
 @interface PKBarcodeStickerView : UIView {
     UILabel *_altTextLabel;
     PKBarcode *_barcode;
     UIImageView *_barcodeView;
     BOOL _drawBarcode;
+    int _layoutMode;
     NSMutableArray *_matteConstraints;
     UIImageView *_matteView;
     NSMutableArray *_stickerConstraints;
+    int _validity;
 }
 
+@property(readonly) UIView * matteView;
+@property int validity;
+
++ (struct PKBarcodeQuietZone { float x1; float x2; float x3; float x4; })_quiteZoneForBarcode:(id)arg1;
 + (struct CGSize { float x1; float x2; })_sizeForBarcode:(id)arg1;
 
 - (void)_generateMatteRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 barcodeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 altTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 boundingSize:(struct CGSize { float x1; float x2; })arg4;
+- (id)_resizedBarcode:(id)arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)_updateValidity;
+- (struct CGSize { float x1; float x2; })_varianceForBarcode:(id)arg1;
 - (void)dealloc;
-- (id)initWithBarcode:(id)arg1 passRevoked:(BOOL)arg2;
+- (id)initWithBarcode:(id)arg1 validityState:(int)arg2 layoutMode:(int)arg3;
 - (void)layoutSubviews;
+- (id)matteView;
+- (void)setValidity:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (int)validity;
 
 @end

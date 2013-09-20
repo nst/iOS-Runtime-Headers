@@ -4,7 +4,7 @@
 
 @class UIKeyboardCandidateGridHeader;
 
-@interface UIKeyboardCandidateView_iPhone : UIKeyboardCandidateView <UIScrollViewDelegate, UIGestureRecognizerDelegate> {
+@interface UIKeyboardCandidateView_iPhone : UIKeyboardCandidateView <UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     UIKeyboardCandidateGridHeader *_header;
 }
 
@@ -12,6 +12,7 @@
 - (void)_setupKeyboardInteraction;
 - (BOOL)_shouldShowHideKeyboard;
 - (BOOL)_shouldUseFullMetrics;
+- (float)barHeight;
 - (void)dealloc;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleTap;

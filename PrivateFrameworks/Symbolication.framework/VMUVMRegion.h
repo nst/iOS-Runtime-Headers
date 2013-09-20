@@ -35,14 +35,25 @@
     unsigned int virtual_pages;
 }
 
+- (void)addInfoFromRegion:(id)arg1;
 - (id)breakAtLength:(unsigned long)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2;
+- (unsigned int)dirtyPageCount;
+- (BOOL)hasSameInfoAsRegion:(id)arg1;
+- (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSubmap;
+- (unsigned int)maxProtection;
+- (id)path;
 - (unsigned int)protection;
+- (unsigned int)purgeablePageCount;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
+- (unsigned int)residentPageCount;
+- (unsigned int)sharedNowPrivatePageCount;
+- (unsigned int)swappedOutPageCount;
 - (id)type;
+- (unsigned int)virtualPageCount;
 
 @end

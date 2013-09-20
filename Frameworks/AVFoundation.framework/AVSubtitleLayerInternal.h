@@ -7,6 +7,7 @@
 @interface AVSubtitleLayerInternal : NSObject {
     NSDictionary *currentSubtitleSample;
     BOOL currentSubtitleSampleIsForced;
+    id delegate;
     BOOL hasPlayerToObserve;
     BOOL isObservingPlayer;
     BOOL isOverscanSubtitleSupportEnabled;

@@ -2,6 +2,8 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
+@class TSDBezierPath;
+
 @interface MFPhoneRegion : MFRegion {
     struct CGRect { 
         struct CGPoint { 
@@ -13,7 +15,7 @@
             float height; 
         } size; 
     } m_bounds;
-    struct CGPath { } *m_path;
+    TSDBezierPath *m_path;
 }
 
 - (id).cxx_construct;

@@ -36,8 +36,8 @@
 - (id)properties;
 - (void)removeLastCharacter:(unsigned short)arg1;
 - (void)removeRun:(id)arg1;
-- (id)runAt:(int)arg1;
-- (int)runCount;
+- (id)runAt:(unsigned int)arg1;
+- (unsigned int)runCount;
 - (id)runIterator;
 - (id)runs;
 

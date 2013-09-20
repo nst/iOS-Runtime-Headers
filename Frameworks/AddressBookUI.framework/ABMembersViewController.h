@@ -31,7 +31,6 @@
 - (BOOL)allowsCardEditing;
 - (BOOL)allowsShowingPersonsCards;
 - (void)applicationDidResume;
-- (void)applicationWillSuspend;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancel:(id)arg1;
 - (void)cancelRefreshingAccount;
@@ -39,9 +38,9 @@
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)defaultPNGName;
-- (void)didReceiveMemoryWarning;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)handleExternalChangeOnPersonViewControllers;
+- (id)indexPathForMember:(void*)arg1;
 - (id)initWithModel:(id)arg1;
 - (void)insertProperty:(int*)arg1 insertValue:(id*)arg2 insertLabel:(id*)arg3;
 - (BOOL)isNavigationButtonEnabled:(int)arg1;
@@ -50,9 +49,11 @@
 - (void)loadView;
 - (BOOL)membersController:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (id)membersController;
+- (void)membersControllerDidEndSearching:(id)arg1;
 - (void)membersControllerDidEndServerSearch:(id)arg1;
 - (void)membersControllerWillEndSearching:(id)arg1;
 - (void)membersControllerWillStartSearching:(id)arg1;
+- (void)model:(id)arg1 localChangeWithInfo:(struct __CFDictionary { }*)arg2;
 - (id)model;
 - (void)modelDatabaseChange:(id)arg1;
 - (void)nameUpdatedForPerson:(void*)arg1;
@@ -69,6 +70,7 @@
 - (void)resetInsertionData;
 - (void)resetStateForDisplayedFilterChange;
 - (void)searchCurrentContactsGroupForWords:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)selectAndScrollMemberVisible:(void*)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setSearchCompletionDelegate:(id)arg1;
@@ -81,6 +83,7 @@
 - (void)showInsertEditorForPerson:(void*)arg1 animate:(BOOL)arg2;
 - (void)startRefreshingAccount;
 - (id)styleProvider;
+- (id)tableView;
 - (void)updateLeftNavigationButtonAnimated:(BOOL)arg1;
 - (void)updateNavigationButtonsAnimated:(BOOL)arg1;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1 animated:(BOOL)arg2;
@@ -88,7 +91,6 @@
 - (void)updateTitle;
 - (void)updateView;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;

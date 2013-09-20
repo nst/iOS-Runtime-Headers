@@ -12,11 +12,11 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_adjustLanguageIndices;
 - (void)_loadSupportedLanguages;
 - (void)_setLanguage:(id)arg1;
 - (id)currentLanguage;
 - (void)dealloc;
+- (void)setLanguage:(id)arg1 fallback:(id)arg2;
 - (void)setLanguage:(id)arg1;
 - (id)supportedLanguages;
 

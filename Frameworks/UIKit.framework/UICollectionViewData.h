@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, UICollectionView, UICollectionViewLayout;
+@class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, UICollectionView, UICollectionViewLayout;
 
 @interface UICollectionViewData : NSObject {
     struct CGRect { 
@@ -21,21 +21,28 @@
         unsigned int contentSizeIsValid : 1; 
         unsigned int itemCountsAreValid : 1; 
         unsigned int layoutIsPrepared : 1; 
+        unsigned int layoutLocked : 1; 
+    NSMutableArray *_clonedLayoutAttributes;
     UICollectionView *_collectionView;
     } _collectionViewDataFlags;
     } _contentSize;
     NSMutableDictionary *_decorationLayoutAttributes;
     id *_globalItems;
+    NSMutableDictionary *_invalidatedSupplementaryViews;
+    int _lastResultForNumberOfItemsBeforeSection;
+    int _lastSectionTestedForNumberOfItemsBeforeSection;
     UICollectionViewLayout *_layout;
     int _numItems;
     int _numSections;
-    NSMutableDictionary *_screenPageDict;
+    NSMapTable *_screenPageMap;
     int *_sectionItemCounts;
     NSMutableDictionary *_supplementaryLayoutAttributes;
     } _validLayoutRect;
 }
 
+@property(readonly) NSArray * clonedLayoutAttributes;
 @property(readonly) BOOL layoutIsPrepared;
+@property(getter=isLayoutLocked) BOOL layoutLocked;
 
 + (void)initialize;
 
@@ -47,13 +54,19 @@
 - (void)_updateItemCounts;
 - (void)_validateContentSize;
 - (void)_validateItemCounts;
+- (id)clonedLayoutAttributes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })collectionViewContentRect;
 - (void)dealloc;
+- (id)existingSupplementaryLayoutAttributes;
 - (id)existingSupplementaryLayoutAttributesInSection:(int)arg1;
 - (int)globalIndexForItemAtIndexPath:(id)arg1;
 - (id)indexPathForItemAtGlobalIndex:(int)arg1;
 - (id)initWithCollectionView:(id)arg1 layout:(id)arg2;
 - (void)invalidate:(BOOL)arg1;
+- (void)invalidateSupplementaryViews:(id)arg1;
+- (BOOL)isLayoutLocked;
+- (id)knownDecorationElementKinds;
+- (id)knownSupplementaryElementKinds;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForElementsInSection:(int)arg1;
@@ -69,6 +82,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForGlobalItemIndex:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForItemAtIndexPath:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (void)setLayoutLocked:(BOOL)arg1;
 - (void)validateLayoutInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)validateSupplementaryViews;
 
 @end

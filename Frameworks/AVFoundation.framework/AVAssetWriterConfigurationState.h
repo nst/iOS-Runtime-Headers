@@ -10,6 +10,13 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     NSURL *_URL;
     NSArray *_inputGroups;
     NSArray *_inputs;
@@ -17,6 +24,9 @@
     NSArray *_metadataItems;
     } _movieFragmentInterval;
     int _movieTimeScale;
+    float _preferredRate;
+    } _preferredTransform;
+    float _preferredVolume;
     BOOL _shouldOptimizeForNetworkUse;
 }
 
@@ -27,6 +37,9 @@
 @property(copy) NSArray * metadataItems;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property int movieTimeScale;
+@property float preferredRate;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property float preferredVolume;
 @property BOOL shouldOptimizeForNetworkUse;
 
 - (id)URL;
@@ -37,12 +50,18 @@
 - (id)metadataItems;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (int)movieTimeScale;
+- (float)preferredRate;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (float)preferredVolume;
 - (void)setInputGroups:(id)arg1;
 - (void)setInputs:(id)arg1;
 - (void)setMediaFileType:(id)arg1;
 - (void)setMetadataItems:(id)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTimeScale:(int)arg1;
+- (void)setPreferredRate:(float)arg1;
+- (void)setPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setPreferredVolume:(float)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (void)setURL:(id)arg1;
 - (BOOL)shouldOptimizeForNetworkUse;

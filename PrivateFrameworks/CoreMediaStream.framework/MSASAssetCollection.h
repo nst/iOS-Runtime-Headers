@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <NSCoding>, NSArray, NSDictionary, NSString;
+@class <NSCoding>, NSArray, NSDate, NSDictionary, NSString;
 
 @interface MSASAssetCollection : NSObject <NSCopying> {
     NSString *_GUID;
@@ -14,11 +14,14 @@
     NSString *_firstName;
     NSString *_fullName;
     BOOL _hasComments;
+    BOOL _isDeletable;
     BOOL _isMine;
     NSString *_lastName;
     NSDictionary *_metadata;
     NSString *_path;
+    NSString *_personID;
     long long _photoNumber;
+    NSDate *_timestamp;
     <NSCoding> *_userInfo;
 }
 
@@ -31,11 +34,14 @@
 @property(retain) NSString * firstName;
 @property(retain) NSString * fullName;
 @property BOOL hasComments;
+@property BOOL isDeletable;
 @property BOOL isMine;
 @property(retain) NSString * lastName;
 @property(retain) NSDictionary * metadata;
 @property(retain) NSString * path;
+@property(retain) NSString * personID;
 @property long long photoNumber;
+@property(retain) NSDate * timestamp;
 @property(retain) <NSCoding> * userInfo;
 
 + (id)MSASPAssetCollectionFromProtocolDictionary:(id)arg1;
@@ -56,14 +62,18 @@
 - (id)firstName;
 - (id)fullName;
 - (BOOL)hasComments;
+- (BOOL)hasVideoAsset;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileName:(id)arg1 path:(id)arg2;
+- (BOOL)isDeletable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMine;
 - (id)lastName;
+- (id)mediaAssetType;
 - (id)metadata;
 - (id)path;
+- (id)personID;
 - (long long)photoNumber;
 - (void)setAlbumGUID:(id)arg1;
 - (void)setAssets:(id)arg1;
@@ -74,13 +84,17 @@
 - (void)setFullName:(id)arg1;
 - (void)setGUID:(id)arg1;
 - (void)setHasComments:(BOOL)arg1;
+- (void)setIsDeletable:(BOOL)arg1;
 - (void)setIsMine:(BOOL)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setPath:(id)arg1;
+- (void)setPersonID:(id)arg1;
 - (void)setPhotoNumber:(long long)arg1;
+- (void)setTimestamp:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (id)timestamp;
 - (id)userInfo;
 
 @end

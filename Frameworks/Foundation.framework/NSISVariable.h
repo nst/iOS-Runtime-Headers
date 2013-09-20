@@ -6,6 +6,7 @@
 
 @interface NSISVariable : NSObject {
     <NSISVariableDelegate> *_delegate;
+    unsigned int _ident;
     int _refCount;
 }
 
@@ -22,6 +23,8 @@
 - (float)allowedMagnitudeForIntegralizationAdjustmentOfMarkedConstraint;
 - (id)delegate;
 - (id)description;
+- (unsigned int)hash;
+- (id)init;
 - (id)markedConstraint;
 - (BOOL)markedConstraintIsEligibleForIntegralizationAdjustment;
 - (oneway void)release;

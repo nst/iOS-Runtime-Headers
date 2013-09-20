@@ -3,7 +3,7 @@
  */
 
 @interface GQSSpiceTable : GQSTable {
-    struct vector<float, std::allocator<float> > { struct _Vector_impl { float *x_1_1_1; float *x_1_1_2; float *x_1_1_3; } x1; } *mColumnPositions;
+    struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; } *mColumnPositions;
     float mCurrentCellMaxX;
     float mCurrentCellMaxY;
     float mCurrentCellMinX;
@@ -11,7 +11,7 @@
     id mCurrentCellStorage;
     id mCurrentCellStyle;
     BOOL mReadingRowVectors;
-    struct vector<float, std::allocator<float> > { struct _Vector_impl { float *x_1_1_1; float *x_1_1_2; float *x_1_1_3; } x1; } *mRowPositions;
+    struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; } *mRowPositions;
     struct __CFDictionary { } *mVectorUidToAlongMap;
 }
 

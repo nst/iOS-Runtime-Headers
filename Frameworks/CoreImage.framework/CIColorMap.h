@@ -18,6 +18,7 @@
 
 - (id)_kernel;
 - (id)cachedGradientImage;
+- (void)dealloc;
 - (id)gradientImage;
 - (id)inputGradientImage;
 - (id)inputImage;

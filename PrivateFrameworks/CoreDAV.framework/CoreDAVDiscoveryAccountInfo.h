@@ -45,6 +45,8 @@
 - (id)accountID;
 - (id)additionalHeaderValues;
 - (id)backingAccountInfoProvider;
+- (id)clientToken;
+- (void)clientTokenRequestedByServer;
 - (struct __CFURLStorageSession { }*)copyStorageSession;
 - (void)dealloc;
 - (id)description;
@@ -58,7 +60,7 @@
 - (id)host;
 - (id)identityPersist;
 - (id)initWithAccountInfoProvider:(id)arg1;
-- (id)oauthToken;
+- (id)oauthInfoProvider;
 - (id)password;
 - (int)port;
 - (id)principalURL;

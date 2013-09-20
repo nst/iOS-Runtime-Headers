@@ -2,30 +2,31 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSCache, NSLock, NSMutableArray, SLTwitterSessionInternal;
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
 
-@interface SLTwitterSession : NSObject <XPCProxyTarget> {
+@class NSCache, SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol>;
+
+@interface SLTwitterSession : NSObject <SLTwitterClientSessionProtocol, SLMicroBlogSheetDelegate> {
     id _connectionResetBlock;
-    NSMutableArray *_inFlightSessionCallInfos;
-    NSLock *_inFlightSessionCallInfosLock;
-    SLTwitterSessionInternal *_internal;
     id _locationInformationChangedBlock;
     NSCache *_profileImageCache;
+    SLRemoteSessionProxy<SLTwitterRemoteSessionProtocol> *_remoteSession;
 }
 
 @property(copy) id connectionResetBlock;
 @property(copy) id locationInformationChangedBlock;
 
++ (id)_remoteInterface;
+
 - (void).cxx_destruct;
 - (void)acceptLocationUpdate:(id)arg1;
-- (void)buildTwitterdSession;
-- (void)completedRemoteProxyCall:(id)arg1;
+- (id)cachedProfileImageDataForScreenName:(id)arg1;
 - (id)connectionResetBlock;
-- (id)currentSessionProxy;
-- (void)dealloc;
-- (id)emptyCallInfo;
+- (void)ensureUserRecordStore;
 - (void)fetchCurrentImageLimits:(id)arg1;
-- (void)fetchCurrentTCoLength:(id)arg1;
+- (void)fetchCurrentUrlLimits:(id)arg1;
 - (void)fetchGeotagStatus:(id)arg1;
 - (void)fetchProfileImageDataForScreenName:(id)arg1 completion:(id)arg2;
 - (void)fetchRecordForScreenName:(id)arg1 completion:(id)arg2;
@@ -34,18 +35,16 @@
 - (void)getPermaLinkFromLastStatusUpdate:(id)arg1;
 - (id)init;
 - (id)locationInformationChangedBlock;
-- (void)noteTwitterdSessionProxyInterrupted;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
-- (void)recordAndIssueCallInfo:(id)arg1;
+- (void)overrideLocationWithLatitude:(float)arg1 longitude:(float)arg2 name:(id)arg3;
 - (void)recordsMatchingPrefixString:(id)arg1 completion:(id)arg2;
 - (void)sendStatus:(id)arg1 completion:(id)arg2;
+- (id)serviceAccountTypeIdentifier;
 - (void)setActiveAccountIdentifier:(id)arg1;
-- (void)setClientInfo:(id)arg1;
 - (void)setConnectionResetBlock:(id)arg1;
 - (void)setGeotagStatus:(int)arg1;
 - (void)setLocationInformationChangedBlock:(id)arg1;
 - (void)setOverrideGeotagInfo:(id)arg1;
-- (void)showTwitterSettingsIfNeeded;
-- (void)tearDownTwitterdSession;
+- (void)showSettingsIfNeeded;
+- (void)tearDownConnectionToRemoteSession;
 
 @end

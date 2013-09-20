@@ -4,12 +4,11 @@
 
 @class NSString, NSURL;
 
-@interface SAWeatherLocationSearch : SABaseClientBoundCommand {
+@interface SAWeatherLocationSearch : SADomainCommand {
 }
 
 @property(copy) NSURL * identifier;
 @property(copy) NSString * locationId;
-@property(copy) NSURL * targetAppId;
 
 + (id)locationSearch;
 + (id)locationSearchWithDictionary:(id)arg1 context:(id)arg2;
@@ -21,7 +20,5 @@
 - (BOOL)requiresResponse;
 - (void)setIdentifier:(id)arg1;
 - (void)setLocationId:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

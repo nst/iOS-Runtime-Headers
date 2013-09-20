@@ -12,11 +12,11 @@
     CIVector *inputTopRight;
 }
 
-@property(copy) CIVector * inputBottomLeft;
-@property(copy) CIVector * inputBottomRight;
+@property(retain) CIVector * inputBottomLeft;
+@property(retain) CIVector * inputBottomRight;
 @property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputTopLeft;
-@property(copy) CIVector * inputTopRight;
+@property(retain) CIVector * inputTopLeft;
+@property(retain) CIVector * inputTopRight;
 
 + (id)customAttributes;
 

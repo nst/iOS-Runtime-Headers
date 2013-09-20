@@ -2,21 +2,45 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableDictionary;
+@class NSArray, NSDictionary, NSMutableDictionary;
 
 @interface CKMediaObjectManager : NSObject {
-    NSMutableDictionary *_mediaObjectDict;
+    NSDictionary *_UTITypes;
+    NSArray *_classes;
+    NSDictionary *_dynTypes;
+    NSMutableDictionary *_transfers;
 }
+
+@property(copy) NSDictionary * UTITypes;
+@property(copy) NSArray * classes;
+@property(copy) NSDictionary * dynTypes;
+@property(retain) NSMutableDictionary * transfers;
 
 + (id)sharedInstance;
 
-- (void)_registerAllMediaTypes;
+- (id)UTITypeForExtension:(id)arg1;
+- (id)UTITypeForFilename:(id)arg1;
+- (id)UTITypes;
+- (Class)classForFilename:(id)arg1;
+- (Class)classForUTIType:(id)arg1;
+- (id)classes;
 - (void)dealloc;
-- (Class)mediaObjectClassForMIMEType:(id)arg1;
-- (Class)mediaObjectClassForPath:(id)arg1;
-- (Class)mediaObjectClassForTransferGUID:(id)arg1;
-- (id)newMediaObjectForData:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3;
-- (id)newMediaObjectForFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3 composeOptions:(id)arg4;
-- (id)newMediaObjectForTransferGUID:(id)arg1;
+- (id)dynTypes;
+- (id)fileManager;
+- (id)imageDataWithData:(id)arg1;
+- (id)init;
+- (id)mediaObjectWithData:(id)arg1 UTIType:(id)arg2 filename:(id)arg3 transcoderUserInfo:(id)arg4;
+- (id)mediaObjectWithFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3;
+- (id)mediaObjectWithPasteboard:(id)arg1 itemAtIndex:(unsigned int)arg2;
+- (id)mediaObjectWithTransferGUID:(id)arg1 message:(id)arg2;
+- (void)setClasses:(id)arg1;
+- (void)setDynTypes:(id)arg1;
+- (void)setTransfers:(id)arg1;
+- (void)setUTITypes:(id)arg1;
+- (Class)transferClass;
+- (void)transferRemoved:(id)arg1;
+- (id)transferWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2;
+- (id)transferWithTransferGUID:(id)arg1 message:(id)arg2;
+- (id)transfers;
 
 @end

@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIShortcutConversionCandidate : UIKeyboardCandidateSingle {
+@interface TIShortcutConversionCandidate : TIKeyboardCandidateSingle {
 }
+
++ (int)type;
 
 - (BOOL)isForShortcutConversion;
 

@@ -2,29 +2,70 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLRenderState;
+@class VGLRenderState, VKStylesheet;
 
-@interface VKPolygonMapModel : VKVectorMapModel {
+@interface VKPolygonMapModel : VKVectorMapModel <VKStylesheetObserver> {
+    struct RenderStepsSet { 
+        struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { 
+            struct { /* ? */ } *__begin_; 
+            struct { /* ? */ } *__end_; 
+            struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { 
+                struct { /* ? */ } *__first_; 
+            } __end_cap_; 
+        } renderSteps; 
+        struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { 
+            struct { /* ? */ } *__begin_; 
+            struct { /* ? */ } *__end_; 
+            struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { 
+                struct { /* ? */ } *__first_; 
+            } __end_cap_; 
+        } transparentRenderSteps; 
+    struct RenderStepsSet { 
+        struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { 
+            struct { /* ? */ } *__begin_; 
+            struct { /* ? */ } *__end_; 
+            struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { 
+                struct { /* ? */ } *__first_; 
+            } __end_cap_; 
+        } renderSteps; 
+        struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { 
+            struct { /* ? */ } *__begin_; 
+            struct { /* ? */ } *__end_; 
+            struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { 
+                struct { /* ? */ } *__first_; 
+            } __end_cap_; 
+        } transparentRenderSteps; 
     BOOL _drawShapes;
     VGLRenderState *_renderState;
-    int _renderStepCount;
-    int _renderStepMax;
-    struct { id x1; id x2; BOOL x3; BOOL x4; struct _VGLColor { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; struct _VGLColor { float x_6_1_1; float x_6_1_2; float x_6_1_3; float x_6_1_4; } x6; float x7; unsigned int x8; } *_renderSteps;
+    } _renderStepsSet;
+    } _transitRenderStepsSet;
+    VGLRenderState *_transparentRenderState;
 }
 
 @property BOOL drawShapes;
+@property(readonly) VKStylesheet * stylesheet;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)drawCoastlinesWithContext:(id)arg1;
 - (void)drawDebugScene:(id)arg1 withContext:(id)arg2;
-- (void)drawPolygonsWithContext:(id)arg1;
-- (void)drawScene:(id)arg1 withContext:(id)arg2;
+- (void)drawRenderStepSet:(const struct RenderStepsSet { struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_1_1_1; struct { /* ? */ } *x_1_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_1_1_3; } x1; struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; }*)arg1 scene:(id)arg2 withContext:(id)arg3;
+- (void)drawScene:(id)arg1 withContext:(id)arg2 pass:(unsigned int)arg3;
 - (BOOL)drawShapes;
+- (void)drawTransparentPolygonStrokesInRenderStepSet:(const struct RenderStepsSet { struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_1_1_1; struct { /* ? */ } *x_1_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_1_1_3; } x1; struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; }*)arg1 withWidth:(float)arg2 minDepth:(float)arg3 context:(id)arg4;
+- (void)drawTransparentPolygonsInRenderStepSet:(const struct RenderStepsSet { struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_1_1_1; struct { /* ? */ } *x_1_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_1_1_3; } x1; struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; }*)arg1 withContext:(id)arg2 stencil:(int)arg3;
 - (id)init;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (unsigned int)mapLayerPosition;
+- (void)renderNormalPolygonsInRenderStepSet:(const struct RenderStepsSet { struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_1_1_1; struct { /* ? */ } *x_1_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_1_1_3; } x1; struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; }*)arg1 withWidth:(float)arg2 minDepth:(float)arg3 context:(id)arg4;
+- (struct RenderStepsSet { struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_1_1_1; struct { /* ? */ } *x_1_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_1_1_3; } x1; struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; }*)renderStepSetForFeatureWithAttributes:(id)arg1;
+- (void)renderTransparentPolygonsInRenderStepSet:(const struct RenderStepsSet { struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_1_1_1; struct { /* ? */ } *x_1_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_1_1_3; } x1; struct vector<PolygonRenderStep, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<PolygonRenderStep *, vk_allocator<PolygonRenderStep> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; }*)arg1 withWidth:(float)arg2 minDepth:(float)arg3 context:(id)arg4;
 - (void)reset;
 - (void)setDrawShapes:(BOOL)arg1;
+- (void)stylesheetDidChange;
+- (void)stylesheetWillChange;
+- (unsigned int)supportedRenderPasses;
 - (unsigned int)textureSize;
 
 @end

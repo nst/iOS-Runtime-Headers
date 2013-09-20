@@ -39,5 +39,8 @@
 - (id)serviceURL;
 - (void)setNetworkReachable:(BOOL)arg1;
 - (void)setupLogging;
+- (id)signedRequestForURL:(id)arg1 parameters:(id)arg2;
+- (id)stocksYQLBaseURL;
+- (id)stocksYQLEnvParameter;
 
 @end

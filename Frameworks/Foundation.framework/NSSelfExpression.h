@@ -5,9 +5,11 @@
 @interface NSSelfExpression : NSExpression {
 }
 
++ (BOOL)_allowsEvaluation;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultInstance;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (id)_initPrivate;
 - (BOOL)_isDeallocating;

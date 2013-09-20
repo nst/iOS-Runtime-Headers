@@ -4,13 +4,12 @@
 
 @class NSNumber, NSString, NSURL;
 
-@interface SAClockSearch : SABaseClientBoundCommand {
+@interface SAClockSearch : SADomainCommand {
 }
 
 @property(copy) NSNumber * alCityId;
 @property(copy) NSString * countryCode;
 @property(copy) NSURL * identifier;
-@property(copy) NSURL * targetAppId;
 @property(copy) NSString * unlocalizedCityName;
 @property(copy) NSString * unlocalizedCountryName;
 
@@ -26,10 +25,8 @@
 - (void)setAlCityId:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (void)setUnlocalizedCityName:(id)arg1;
 - (void)setUnlocalizedCountryName:(id)arg1;
-- (id)targetAppId;
 - (id)unlocalizedCityName;
 - (id)unlocalizedCountryName;
 

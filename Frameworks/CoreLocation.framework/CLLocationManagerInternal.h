@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class <CLLocationManagerDelegate>, NSString;
+@class <CLLocationManagerDelegate>, NSMutableSet, NSString;
 
 @interface CLLocationManagerInternal : NSObject {
     struct { 
@@ -48,13 +48,17 @@
     BOOL fPersistentMonitoringEnabled;
     int fPreviousAuthorizationStatus;
     BOOL fPreviousAuthorizationStatusValid;
+    NSMutableSet *fRangedRegions;
     BOOL fUpdatingHeading;
     BOOL fUpdatingLocation;
 }
 
+@property(readonly) NSMutableSet * rangedRegions;
+
 - (int)PausesLocationUpdatesAutomatically;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
+- (id)rangedRegions;
 - (void)setPausesLocationUpdatesAutomatically:(int)arg1;
 - (void)stopUpdatingLocationAutoPaused;
 

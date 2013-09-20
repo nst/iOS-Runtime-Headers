@@ -18,12 +18,17 @@
 @property(copy) NSString * key;
 @property CALayer * target;
 
++ (void)CAMLParserStartElement:(id)arg1;
+
+- (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
+- (id)CAMLTypeForKey:(id)arg1;
 - (id)animation;
 - (double)beginTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (double)duration;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

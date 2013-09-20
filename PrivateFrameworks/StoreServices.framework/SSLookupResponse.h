@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDate, NSDictionary;
+@class NSArray, NSDate, NSDictionary, NSMutableArray, SSMetricsConfiguration, SSMetricsPageEvent;
 
 @interface SSLookupResponse : NSObject <SSXPCCoding> {
     NSDate *_expirationDate;
+    NSMutableArray *_itemOrder;
+    SSMetricsPageEvent *_metricsPageEvent;
     NSDictionary *_response;
 }
 
+@property(readonly) NSArray * allItems;
 @property(copy) NSDate * expirationDate;
+@property(readonly) SSMetricsConfiguration * metricsConfiguration;
+@property(retain) SSMetricsPageEvent * metricsPageEvent;
 @property(readonly) BOOL mpIsPersonalizedOffer;
 @property(readonly) NSDictionary * responseDictionary;
 
@@ -18,11 +23,19 @@
 + (BOOL)mpShowBuysWithNoCompletionOffer;
 + (BOOL)mpVerboseCMCLogging;
 
+- (void)_enumerateItemsWithBlock:(id)arg1;
+- (void)_setMetricsPageEvent:(id)arg1;
+- (id)allItems;
+- (id)appStoreURLWithReason:(int)arg1 initialIndex:(int)arg2;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)expirationDate;
+- (id)initWithLocationResponseDictionary:(id)arg1;
 - (id)initWithResponseDictionary:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)itemForKey:(id)arg1;
+- (id)metricsConfiguration;
+- (id)metricsPageEvent;
 - (id)mpCompletionOfferResponseDictionaryWithLocalAlbumsCollection:(id)arg1;
 - (BOOL)mpIsPersonalizedOffer;
 - (void)mpSaveCompletionsResponseForDebuggingIfNecessaryWithExpectedStoreLookupID:(id)arg1;

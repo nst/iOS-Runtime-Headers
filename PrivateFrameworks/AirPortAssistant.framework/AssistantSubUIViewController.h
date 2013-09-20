@@ -16,6 +16,12 @@
 @property(readonly) NSDictionary * outResultsDict;
 @property AssistantUIViewController * parentController;
 
++ (id)labelViewInContainer:(id*)arg1 withSpinner:(id*)arg2 above:(BOOL)arg3;
++ (id)labelViewInContainer:(id*)arg1;
++ (id)tableView;
++ (id)tableViewHeaderView;
++ (id)topoViewInContainerView:(id*)arg1;
+
 - (void)dealloc;
 - (id)getProductLocalizedStringWithFormat:(id)arg1;
 - (BOOL)iPadIdiom;
@@ -28,7 +34,6 @@
 - (void)setLeftNavigationButton:(id)arg1 enable:(BOOL)arg2 hide:(BOOL)arg3;
 - (void)setParentController:(id)arg1;
 - (void)setRightNavigationButton:(id)arg1 enable:(BOOL)arg2 hide:(BOOL)arg3;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)viewDidLoad;
 
 @end

@@ -7,9 +7,10 @@
 
 + (id)sharedPreferences;
 
-- (void)_setValue:(id)arg1 forKey:(struct __CFString { }*)arg2;
-- (id)_valueForKey:(struct __CFString { }*)arg1;
+- (id)objectForKey:(id)arg1;
+- (void)reset;
 - (double)serverTimeoutInterval;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)synchronize;
 
 @end

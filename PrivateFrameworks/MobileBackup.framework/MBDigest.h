@@ -17,7 +17,7 @@
 - (void)updateWithDate:(id)arg1;
 - (BOOL)updateWithFile:(id)arg1 error:(id*)arg2;
 - (void)updateWithInt32:(int)arg1;
-- (void)updateWithInt64:(int)arg1;
+- (void)updateWithInt64:(long long)arg1;
 - (void)updateWithString:(id)arg1;
 
 @end

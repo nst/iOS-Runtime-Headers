@@ -13,6 +13,13 @@
     EDProtection *mProtection;
 }
 
+@property(retain) EDAlignmentInfo * alignmentInfo;
+@property(retain) EDBorders * borders;
+@property(retain) EDContentFormat * contentFormat;
+@property(retain) EDFill * fill;
+@property(retain) EDFont * font;
+@property(retain) EDProtection * protection;
+
 + (id)differentialStyle;
 
 - (id)alignmentInfo;

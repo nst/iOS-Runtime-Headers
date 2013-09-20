@@ -8,7 +8,7 @@
         float g; 
         float b; 
         float a; 
-    struct { 
+    struct Vec2Imp<float> { 
         float x; 
         float y; 
     union { 
@@ -41,16 +41,18 @@
 
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } color;
 @property union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; } gridView;
-@property struct { float x1; float x2; } invFwidth;
+@property struct Vec2Imp<float> { float x1; float x2; } invFwidth;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
 - (union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })gridView;
-- (id)init;
-- (struct { float x1; float x2; })invFwidth;
+- (struct Vec2Imp<float> { float x1; float x2; })invFwidth;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGridView:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })arg1;
-- (void)setInvFwidth:(struct { float x1; float x2; })arg1;
+- (void)setInvFwidth:(struct Vec2Imp<float> { float x1; float x2; })arg1;
+- (void)setup;
 
 @end

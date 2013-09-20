@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CAGradientLayer, UIView;
+@class UIView;
 
 @interface PLCameraLevelView : UIView {
-    CAGradientLayer *_bottomGlowLayer;
     UIView *_lineView;
-    CAGradientLayer *_topGlowLayer;
 }
 
 - (void)dealloc;

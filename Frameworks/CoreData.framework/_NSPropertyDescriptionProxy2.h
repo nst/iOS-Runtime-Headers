@@ -9,7 +9,7 @@
 - (BOOL)_tryRetain;
 - (Class)classForArchiver;
 - (Class)classForCoder;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 
 @end

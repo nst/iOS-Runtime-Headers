@@ -9,6 +9,7 @@
 
 + (id)weakRefWithObject:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

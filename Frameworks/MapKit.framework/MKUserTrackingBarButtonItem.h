@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKUserTrackingView>, MKMapView, UIActivityIndicatorView, UIImage, UIImageView, UINavigationBar, UIToolbar, UIView;
+@class <MKUserTrackingView>, MKMapView, UIButton, UIImage, UINavigationBar, UIToolbar, UIView, _MKUserTrackingButtonController;
 
-@interface MKUserTrackingBarButtonItem : UIBarButtonItem {
+@interface MKUserTrackingBarButtonItem : UIBarButtonItem <MKUserTrackingButtonTarget> {
     UIView *_associatedView;
-    UIImageView *_imageView;
+    _MKUserTrackingButtonController *_controller;
+    UIButton *_customButton;
+    BOOL _hasCustomAssociatedView;
+    BOOL _isLegacy;
     UINavigationBar *_navigationBar;
-    UIActivityIndicatorView *_progressIndicator;
-    BOOL _silverStyle;
-    int _state;
     UIToolbar *_toolbar;
     UIImage *_trackingEmptyImage;
     UIImage *_trackingFollowImage;
@@ -20,16 +20,9 @@
 }
 
 @property(retain) UIView * _associatedView;
-@property(retain) UIImageView * _imageView;
 @property(retain) UINavigationBar * _navigationBar;
-@property(retain) UIActivityIndicatorView * _progressIndicator;
-@property BOOL _silverStyle;
-@property int _state;
+@property(setter=_setState:) int _state;
 @property(retain) UIToolbar * _toolbar;
-@property(retain) UIImage * _trackingEmptyImage;
-@property(retain) UIImage * _trackingFollowImage;
-@property(retain) UIImage * _trackingFollowWithHeadingImage;
-@property(retain) UIImage * _trackingNoneImage;
 @property(setter=_setUserTrackingView:,retain) <MKUserTrackingView> * _userTrackingView;
 @property(retain) MKMapView * mapView;
 
@@ -37,20 +30,14 @@
 
 - (int)_activityIndicatorStyle;
 - (id)_associatedView;
-- (id)_contentAnimation;
-- (id)_expandAnimation;
 - (void)_goToNextMode:(id)arg1;
-- (id)_imageForState:(int)arg1;
-- (id)_imageView;
-- (id)_initWithUserTrackingView:(id)arg1 forceSilverStyle:(BOOL)arg2;
+- (id)_initWithUserTrackingView:(id)arg1;
+- (BOOL)_isHighlightedForState:(int)arg1;
 - (BOOL)_isInMiniBar;
 - (id)_navigationBar;
-- (id)_progressIndicator;
 - (void)_repositionViews;
+- (void)_setState:(int)arg1;
 - (void)_setUserTrackingView:(id)arg1;
-- (BOOL)_shouldAnimateFromState:(int)arg1 toState:(int)arg2;
-- (id)_shrinkAnimation;
-- (BOOL)_silverStyle;
 - (int)_state;
 - (int)_styleForState:(int)arg1;
 - (id)_toolbar;
@@ -58,11 +45,8 @@
 - (id)_trackingFollowImage;
 - (id)_trackingFollowWithHeadingImage;
 - (id)_trackingNoneImage;
-- (void)_updateState;
+- (void)_updateForState:(int)arg1;
 - (id)_userTrackingView;
-- (float)_verticalOffsetForState:(int)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)createView;
 - (id)createViewForNavigationItem:(id)arg1;
 - (id)createViewForToolbar:(id)arg1;
 - (void)dealloc;
@@ -73,17 +57,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setMapView:(id)arg1;
-- (void)setState:(int)arg1;
 - (void)set_associatedView:(id)arg1;
-- (void)set_imageView:(id)arg1;
 - (void)set_navigationBar:(id)arg1;
-- (void)set_progressIndicator:(id)arg1;
-- (void)set_silverStyle:(BOOL)arg1;
-- (void)set_state:(int)arg1;
 - (void)set_toolbar:(id)arg1;
-- (void)set_trackingEmptyImage:(id)arg1;
-- (void)set_trackingFollowImage:(id)arg1;
-- (void)set_trackingFollowWithHeadingImage:(id)arg1;
-- (void)set_trackingNoneImage:(id)arg1;
 
 @end

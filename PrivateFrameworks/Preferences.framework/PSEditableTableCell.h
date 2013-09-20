@@ -2,23 +2,26 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIColor;
+@class PSListController, UIColor;
 
 @interface PSEditableTableCell : PSTableCell <UITextViewDelegate, UITextFieldDelegate> {
+    PSListController *_controllerDelegate;
     BOOL _delaySpecifierRelease;
     id _delegate;
     BOOL _forceFirstResponder;
-    BOOL _isEditing;
     id _realTarget;
+    BOOL _returnKeyTapped;
     SEL _targetSetter;
     UIColor *_textColor;
     BOOL _valueChanged;
 }
 
-@property(readonly) BOOL isEditing;
+@property PSListController * controllerDelegate;
+@property(readonly) BOOL returnKeyTapped;
 
 + (int)cellStyle;
 
+- (BOOL)_cellIsEditing;
 - (void)_saveForExit;
 - (void)_setValueChanged;
 - (BOOL)becomeFirstResponder;
@@ -27,16 +30,20 @@
 - (BOOL)canResignFirstResponder;
 - (void)cellRemovedFromView;
 - (void)controlChanged:(id)arg1;
+- (id)controllerDelegate;
 - (void)dealloc;
 - (void)endEditingAndSave;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (BOOL)isEditing;
 - (BOOL)isFirstResponder;
+- (BOOL)isTextFieldEditing;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (BOOL)resignFirstResponder;
+- (BOOL)returnKeyTapped;
 - (void)setCellEnabled:(BOOL)arg1;
+- (void)setControllerDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPlaceholderText:(id)arg1;
 - (void)setTitle:(id)arg1;

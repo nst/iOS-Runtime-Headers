@@ -5,8 +5,16 @@
 @interface AXVisualAlertSBSystemLocalNotificationAlert : AXVisualAlertSBSystemLocalNotificationAlert_super {
 }
 
++ (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
-+ (id)presentWithLocalNotification:(id)arg1 application:(id)arg2;
-+ (void)stopPlayingAlertSoundOrTone;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (id)_installSafeCategoryValidationMethod;
+
+- (void)_autoMuteTimerFired;
+- (BOOL)_axIsTimerAlert;
+- (void)_axStopAlarmVisualAlertIfSoundNotPlaying;
+- (void)dismiss:(int)arg1;
+- (void)willActivate;
+- (void)willDeactivateForReason:(int)arg1;
 
 @end

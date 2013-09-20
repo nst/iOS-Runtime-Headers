@@ -15,7 +15,9 @@
 @property BOOL isPrimary;
 
 - (id)ID;
+- (void)dealloc;
 - (id)description;
+- (id)initWithDictionary:(id)arg1;
 - (id)initWithType:(id)arg1 primary:(BOOL)arg2;
 - (void)setCharacteristics:(id)arg1;
 - (void)setID:(id)arg1;

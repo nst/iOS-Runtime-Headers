@@ -4,14 +4,19 @@
 
 @class NSData;
 
-@interface PBCodable : NSObject {
+@interface PBCodable : NSObject <NSSecureCoding> {
 }
 
 @property(readonly) NSData * data;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)data;
 - (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
+- (id)formattedText;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;

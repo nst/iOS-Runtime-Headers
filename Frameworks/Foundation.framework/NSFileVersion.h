@@ -37,6 +37,7 @@
 + (BOOL)_conflictsExistForItemAtURL:(id)arg1;
 + (id)_libraryForURL:(id)arg1 clientID:(id)arg2 temporaryStorageIdentifier:(id*)arg3;
 + (void)_markConflicts:(id)arg1 asHandledForItemAtURL:(id)arg2;
++ (id)_otherNonpurgeableVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
 + (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
 + (void)_removeConflictObserver:(void*)arg1;
 + (BOOL)_removeOtherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2 error:(id*)arg3;
@@ -58,6 +59,7 @@
 
 - (id)URL;
 - (id)_documentInfo;
+- (id)_initWithFileURL:(id)arg1 library:(id)arg2 clientID:(id)arg3 generationInfo:(id)arg4;
 - (id)_initWithFileURL:(id)arg1 library:(id)arg2 clientID:(id)arg3 name:(id)arg4 contentsURL:(id)arg5 isBackup:(BOOL)arg6 revision:(id)arg7;
 - (BOOL)_isBackup;
 - (void)_overrideModificationDateWithDate:(id)arg1;

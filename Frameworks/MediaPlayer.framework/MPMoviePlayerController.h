@@ -5,8 +5,7 @@
 @class NSURL, UIView;
 
 @interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
-    void *_internal;
-    BOOL _readyForDisplay;
+    id _implementation;
 }
 
 @property(readonly) UIView * backgroundView;
@@ -25,10 +24,14 @@
 @property(readonly) UIView * view;
 
 + (void)allInstancesResignActive;
++ (void)preparePrerollAds;
 
+- (void).cxx_destruct;
+- (void)_iAd_setVideoAdController:(id)arg1;
+- (void)_iAd_stopPreroll;
+- (id)_iAd_videoAdController;
 - (BOOL)_isReadyForDisplay;
 - (void)_resignActive;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoFrame;
 - (BOOL)allowsAirPlay;
 - (id)backgroundView;
 - (void)beginSeekingBackward;
@@ -43,6 +46,7 @@
 - (void)endSeeking;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
+- (id)initWithAsset:(id)arg1;
 - (id)initWithContentURL:(id)arg1;
 - (double)initialPlaybackTime;
 - (BOOL)isAirPlayVideoActive;
@@ -55,6 +59,7 @@
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (void)pause;
 - (void)play;
+- (void)playPrerollAdWithCompletionHandler:(id)arg1;
 - (double)playableDuration;
 - (int)playbackState;
 - (void)prepareToPlay;

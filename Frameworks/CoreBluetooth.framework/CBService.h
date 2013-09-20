@@ -2,28 +2,39 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBPeripheral, CBUUID, NSArray;
+@class CBPeripheral, CBUUID, NSArray, NSNumber;
 
 @interface CBService : NSObject {
     CBUUID *_UUID;
     NSArray *_characteristics;
+    NSNumber *_endHandle;
     NSArray *_includedServices;
     BOOL _isPrimary;
     CBPeripheral *_peripheral;
+    NSNumber *_startHandle;
 }
 
 @property(readonly) CBUUID * UUID;
 @property(retain) NSArray * characteristics;
+@property(readonly) NSNumber * endHandle;
 @property(retain) NSArray * includedServices;
 @property(readonly) BOOL isPrimary;
 @property(readonly) CBPeripheral * peripheral;
+@property(readonly) NSNumber * startHandle;
 
 - (id)UUID;
 - (id)characteristics;
+- (void)dealloc;
+- (id)endHandle;
+- (id)handleCharacteristicsDiscovered:(id)arg1;
+- (id)handleIncludedServicesDiscovered:(id)arg1;
 - (id)includedServices;
+- (id)initWithPeripheral:(id)arg1 dictionary:(id)arg2;
+- (void)invalidate;
 - (BOOL)isPrimary;
 - (id)peripheral;
 - (void)setCharacteristics:(id)arg1;
 - (void)setIncludedServices:(id)arg1;
+- (id)startHandle;
 
 @end

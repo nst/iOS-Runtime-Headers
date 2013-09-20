@@ -8,10 +8,10 @@
 
 @property BOOL enableSharing;
 
-+ (void)deleteAllLocalSharedAlbumsInLibrary:(id)arg1;
++ (void)deleteAllLocalSharedAlbumsInLibrary:(id)arg1 keepPendingAlbums:(BOOL)arg2;
 + (void)enableCloudSharing:(BOOL)arg1;
 
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (id)description;
 - (BOOL)enableSharing;
 - (void)encodeToXPCObject:(id)arg1;

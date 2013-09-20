@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface NSSortDescriptor : NSObject <NSCoding, NSCopying> {
+@interface NSSortDescriptor : NSObject <NSSecureCoding, NSCopying> {
     NSString *_key;
     SEL _selector;
     id _selectorOrBlock;
@@ -16,12 +16,15 @@
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2 comparator:(id)arg3;
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2 selector:(SEL)arg3;
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(BOOL)arg2;
++ (BOOL)supportsSecureCoding;
 
+- (void)_disallowEvaluation;
 - (BOOL)_isEqualToSortDescriptor:(id)arg1;
 - (id)_selectorName;
 - (void)_setAscending:(BOOL)arg1;
 - (void)_setKey:(id)arg1;
 - (void)_setSelectorName:(id)arg1;
+- (void)allowEvaluation;
 - (BOOL)ascending;
 - (id)comparator;
 - (int)compareObject:(id)arg1 toObject:(id)arg2;

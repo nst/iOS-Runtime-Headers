@@ -42,6 +42,7 @@
 - (void)_removePendingTransfer:(id)arg1;
 - (void)acceptFileTransferIfPreauthorzed:(id)arg1;
 - (void)acceptTransfer:(id)arg1 withPath:(id)arg2 autoRename:(BOOL)arg3 overwrite:(BOOL)arg4;
+- (void)acceptTransfer:(id)arg1;
 - (void)acknowledgeAllPendingTransfers;
 - (void)acknowledgePendingTransfer:(id)arg1;
 - (id)activeTransferGUIDs;
@@ -60,6 +61,7 @@
 - (id)orderedTransfers;
 - (id)orderedTransfersGUIDs;
 - (void)preauthorizeFileTransferFromOtherPerson:(id)arg1 account:(id)arg2 filename:(id)arg3 saveToPath:(id)arg4;
+- (BOOL)registerGUID:(id)arg1 forNewOutgoingTransferWithLocalURL:(id)arg2;
 - (void)removeTransfer:(id)arg1;
 - (void)retargetTransfer:(id)arg1 toPath:(id)arg2;
 - (void)sendTransfer:(id)arg1;

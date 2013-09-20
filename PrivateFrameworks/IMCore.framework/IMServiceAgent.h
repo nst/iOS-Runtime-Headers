@@ -24,7 +24,6 @@
 + (id)sharedAgent;
 
 - (id)currentAVChatInfo;
-- (void)dealloc;
 - (void)launchIfNecessary;
 - (id)myAvailableMessages;
 - (id)myAwayMessages;

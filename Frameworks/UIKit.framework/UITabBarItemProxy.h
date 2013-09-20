@@ -12,6 +12,7 @@
 - (void)dealloc;
 - (id)initWithItem:(id)arg1 inTabBar:(id)arg2;
 - (id)item;
+- (void)setSelected:(BOOL)arg1;
 - (id)view;
 
 @end

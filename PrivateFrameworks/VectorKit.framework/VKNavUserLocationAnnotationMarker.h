@@ -2,55 +2,87 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLDualTexturedMesh, VGLMesh, VGLRenderState, VGLSingleTexturedMesh, VGLTexture, VKAnimation;
+@class VGLRenderState, VGLTexture, VKAnimation;
 
 @interface VKNavUserLocationAnnotationMarker : VKMeshAnnotationMarker {
-    double _animationStartTime;
-    VGLSingleTexturedMesh *_arrowMesh;
-    VGLTexture *_arrowShadowTexture;
-    VGLTexture *_arrowShadowTextureGrey;
+    struct { 
+        struct { 
+            double v[4][4]; 
+        } arrowMatrix; 
+        struct { 
+            double v[4][4]; 
+        } circleMatrix; 
+        struct _VGLColor { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } arrowColor; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    struct _VGLColor { 
+        float r; 
+        float g; 
+        float b; 
+        float a; 
+    float _arrowBrightness;
+    } _arrowColor;
+    } _arrowColorStale;
     VGLTexture *_arrowTexture;
-    VGLTexture *_arrowTextureGrey;
-    VGLDualTexturedMesh *_domeMesh;
-    VGLTexture *_domeTexture;
-    VGLTexture *_domeTextureGrey;
-    VGLMesh *_dropShadowMesh;
+    VKAnimation *_billboardAnimation;
+    float _billboardFactor;
+    float _circleBrightness;
+    VGLTexture *_circleTexture;
     float _greyPuckAlphaScale;
-    double _lastFrameTimestamp;
     double _presentationCourse;
+    BOOL _puckFlipped;
+    VGLRenderState *_puckRenderState;
+    } _puckState;
     int _puckStyle;
     VKAnimation *_puckStyleAnimation;
-    VGLRenderState *_renderState;
-    VGLSingleTexturedMesh *_rimMesh;
     float _scale;
     BOOL _shouldBillboard;
     BOOL _shouldShowCourse;
     double _sizePoints;
     BOOL _stale;
+    int _style;
 }
 
+@property struct _VGLColor { float x1; float x2; float x3; float x4; } innerColor;
 @property double presentationCourse;
 @property float scale;
 @property BOOL shouldBillboard;
 @property BOOL shouldShowCourse;
 @property(getter=isStale) BOOL stale;
+@property int style;
 
-- (void)_drawWithContext:(id)arg1 puckState:(const struct { float x1; struct { double x_2_1_1[4][4]; } x2; struct { double x_3_1_1[4][4]; } x3; struct { double x_4_1_1[4][4]; } x4; union { struct { float x_1_2_1; float x_1_2_2; float x_1_2_3; float x_1_2_4; float x_1_2_5; float x_1_2_6; float x_1_2_7; float x_1_2_8; float x_1_2_9; } x_5_1_1; float x_5_1_2[9]; } x5; id x6; id x7; id x8; int x9; }*)arg2;
-- (id)_newDropShadowMesh;
+- (id).cxx_construct;
+- (void)_drawPuckWithContext:(id)arg1;
 - (void)_updatePuckStyle;
+- (void)_updateTextures;
 - (void)dealloc;
 - (void)drawWithContext:(id)arg1;
-- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2 style:(int)arg3;
+- (struct _VGLColor { float x1; float x2; float x3; float x4; })innerColor;
 - (BOOL)isStale;
+- (void)layoutWithContext:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (double)presentationCourse;
 - (float)scale;
+- (void)setInnerColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
+- (void)setModel:(id)arg1;
 - (void)setPresentationCourse:(double)arg1;
 - (void)setScale:(float)arg1;
 - (void)setShouldBillboard:(BOOL)arg1;
 - (void)setShouldShowCourse:(BOOL)arg1;
 - (void)setStale:(BOOL)arg1;
+- (void)setStyle:(int)arg1;
 - (BOOL)shouldBillboard;
 - (BOOL)shouldShowCourse;
+- (int)style;
+- (void)updateWithStyle:(id)arg1;
 
 @end

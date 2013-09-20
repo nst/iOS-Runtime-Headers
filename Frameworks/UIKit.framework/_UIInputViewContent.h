@@ -16,6 +16,7 @@
 - (struct CGSize { float x1; float x2; })_contentSize;
 - (BOOL)_isToolbar;
 - (void)_setToolbarBackgroundImage:(id)arg1;
+- (void)_setToolbarBackgroundView:(id)arg1;
 - (struct CGSize { float x1; float x2; })_sizeFittingContentViews;
 - (int)_unclippableCorners;
 - (void)_updateCornerClipping;

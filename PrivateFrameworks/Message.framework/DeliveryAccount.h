@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface DeliveryAccount : Account {
+@interface DeliveryAccount : MFAccount {
 }
 
 + (void)_postDeliveryAccountsHaveChanged;
++ (id)accountTypeIdentifier;
 + (id)accountWithHostname:(id)arg1 username:(id)arg2 lookForExistingAccounts:(BOOL)arg3;
 + (id)accountWithHostname:(id)arg1 username:(id)arg2;
 + (id)accountWithIdentifier:(id)arg1;
 + (id)accountWithUniqueId:(id)arg1;
 + (void)addDeliveryAccount:(id)arg1;
-+ (id)basicAccountProperties;
 + (id)carrierDeliveryAccount;
 + (id)deliveryAccounts;
 + (id)existingAccountForUniqueID:(id)arg1;
@@ -20,10 +20,9 @@
 + (id)newDefaultInstance;
 + (void)reloadDeliveryAccounts;
 + (void)removeDeliveryAccount:(id)arg1;
-+ (void)saveAccountInfoToDefaults;
-+ (void)setDeliveryAccounts:(id)arg1;
-+ (id)supportedDataclasses;
 
+- (void)_setAccountProperties:(id)arg1;
+- (void)_updateAccountDescriptionWithUsername:(id)arg1 hostname:(id)arg2;
 - (BOOL)canBeFallbackAccount;
 - (Class)deliveryClass;
 - (id)displayHostname;

@@ -26,6 +26,7 @@
 - (id)instantiateWithOwner:(id)arg1 options:(id)arg2;
 - (BOOL)instantiatingForSimulator;
 - (id)lazyArchiveData;
+- (id)nibDataForPath:(id)arg1;
 - (void)setCaptureEnclosingNIBBundleOnDecode:(BOOL)arg1;
 - (void)setCaptureImplicitLoadingContextOnDecode:(BOOL)arg1;
 - (void)setIdentifierForStringsFile:(id)arg1;

@@ -18,7 +18,7 @@
 @property BOOL defaultChecked;
 @property(copy) NSString * defaultValue;
 @property BOOL disabled;
-@property(readonly) DOMFileList * files;
+@property(retain) DOMFileList * files;
 @property(readonly) DOMHTMLFormElement * form;
 @property BOOL indeterminate;
 @property int maxLength;
@@ -36,7 +36,6 @@
 
 - (void)_accessoryClear;
 - (int)_autocapitalizeType;
-- (BOOL)_isAssistedDateType;
 - (BOOL)_isAutofilled;
 - (BOOL)_isEdited;
 - (BOOL)_isTextField;
@@ -46,7 +45,6 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedRange;
 - (void)_setAutofilled:(BOOL)arg1;
 - (void)_setAutofilled:(BOOL)arg1;
-- (void)_setValueForUser:(id)arg1;
 - (void)_startAssistingDocumentView:(id)arg1;
 - (void)_stopAssistingDocumentView:(id)arg1;
 - (BOOL)_supportsAccessoryClear;
@@ -81,6 +79,7 @@
 - (unsigned int)height;
 - (BOOL)incremental;
 - (BOOL)indeterminate;
+- (BOOL)isAssistedDateType;
 - (BOOL)isEditing;
 - (BOOL)isLikelyToBeginPageLoad;
 - (BOOL)isSecure;
@@ -115,6 +114,7 @@
 - (void)setDefaultValue:(id)arg1;
 - (void)setDirName:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
+- (void)setFiles:(id)arg1;
 - (void)setFormAction:(id)arg1;
 - (void)setFormEnctype:(id)arg1;
 - (void)setFormMethod:(id)arg1;
@@ -130,6 +130,8 @@
 - (void)setName:(id)arg1;
 - (void)setPattern:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
+- (void)setRangeText:(id)arg1 start:(unsigned int)arg2 end:(unsigned int)arg3 selectionMode:(id)arg4;
+- (void)setRangeText:(id)arg1;
 - (void)setReadOnly:(BOOL)arg1;
 - (void)setRequired:(BOOL)arg1;
 - (void)setSelectionDirection:(id)arg1;

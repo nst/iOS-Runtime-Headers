@@ -12,14 +12,12 @@
     float _barcodeVerticalInset;
     NSMutableArray *_bucketTemplates;
     PKPassFieldTemplate *_defaultFieldTemplate;
-    BOOL _scrunched;
 }
 
 @property float barcodeBottomInset;
 @property struct CGSize { float x1; float x2; } barcodeMaxSize;
 @property(retain) NSMutableArray * bucketTemplates;
 @property(retain) PKPassFieldTemplate * defaultFieldTemplate;
-@property BOOL scrunched;
 
 - (void)addBucketTemplate:(id)arg1;
 - (float)barcodeBottomInset;
@@ -27,12 +25,10 @@
 - (id)bucketTemplates;
 - (void)dealloc;
 - (id)defaultFieldTemplate;
-- (BOOL)scrunched;
 - (void)setBarcodeBottomInset:(float)arg1;
 - (void)setBarcodeMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setBucketTemplates:(id)arg1;
 - (void)setDefaultFieldTemplate:(id)arg1;
-- (void)setScrunched:(BOOL)arg1;
 - (id)templateForBucketAtIndex:(unsigned int)arg1;
 
 @end

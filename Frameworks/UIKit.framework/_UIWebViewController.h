@@ -13,6 +13,8 @@
     <_UIWebViewControllerDelegate> *_delegate;
     float _estimatedProgress;
     UIBarButtonItem *_forwardBarButtonItem;
+    BOOL _hasCalledBeginAppearanceTransition;
+    BOOL _hasCalledEndAppearanceTransition;
     BOOL _loading;
     NSString *_pageTitle;
     _UIRemoteWebViewController *_remoteViewController;
@@ -35,6 +37,8 @@
 - (void)_decidePolicyForEncodedRequest:(id)arg1 inMainFrame:(BOOL)arg2 navigationType:(id)arg3 replyHandler:(id)arg4;
 - (void)_dispatchDidDismissViewController;
 - (void)_dispatchWillPresentViewControllerWithCompletionHandler:(id)arg1;
+- (void)_sendBeginAppearanceTransitionIfReadyAnimated:(BOOL)arg1;
+- (void)_sendEndAppearanceTransitionIfReady;
 - (void)_setCanGoBack:(BOOL)arg1 canGoForward:(BOOL)arg2;
 - (void)_setEstimatedProgress:(float)arg1;
 - (void)_setLoading:(BOOL)arg1 error:(id)arg2;
@@ -62,8 +66,13 @@
 - (void)reload;
 - (void)setDelegate:(id)arg1;
 - (void)setURLString:(id)arg1;
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)stopLoading;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

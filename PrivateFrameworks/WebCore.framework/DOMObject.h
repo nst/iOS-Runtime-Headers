@@ -10,11 +10,9 @@
 
 @property(readonly) DOMStyleSheet * sheet;
 
-- (oneway void)_webcore_releaseOnWebThread;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (oneway void)release;
 - (id)sheet;
 
 @end

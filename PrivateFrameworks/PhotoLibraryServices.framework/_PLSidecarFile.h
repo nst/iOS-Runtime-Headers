@@ -25,7 +25,6 @@
 
 - (int)compressedSizeValue;
 - (short)indexValue;
-- (id)objectID;
 - (int)primitiveCompressedSizeValue;
 - (short)primitiveIndexValue;
 - (void)setCompressedSizeValue:(int)arg1;

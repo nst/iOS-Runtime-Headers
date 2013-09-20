@@ -11,7 +11,7 @@
 + (id)sharedHTTPCookieStorage;
 
 - (struct OpaqueCFHTTPCookieStorage { }*)_cookieStorage;
-- (id)_initWithSharedStorage;
+- (id)_initWithCFHTTPCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (void)_readAcceptCookiesPreference;
 - (void)_saveCookies;
 - (void)_setPrivateBrowsingEnabled:(BOOL)arg1;

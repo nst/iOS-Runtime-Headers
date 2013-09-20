@@ -15,14 +15,15 @@
 @property float scale;
 @property int textureSampler;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
 - (float)alpha;
-- (id)init;
 - (float)scale;
 - (void)setAlpha:(float)arg1;
 - (void)setScale:(float)arg1;
 - (void)setTextureSampler:(int)arg1;
+- (void)setup;
 - (int)textureSampler;
 
 @end

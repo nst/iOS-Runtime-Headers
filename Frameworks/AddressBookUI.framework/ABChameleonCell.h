@@ -6,6 +6,7 @@
 
 @interface ABChameleonCell : UITableViewCell {
     int _abCellStyle;
+    BOOL _hasConfiguredBackgroundViews;
     <ABStyleProvider> *_styleProvider;
 }
 

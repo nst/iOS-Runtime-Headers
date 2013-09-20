@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class NSLock, NSMutableDictionary;
+@class NSMutableDictionary;
 
 @interface GLKShadingHash : NSObject {
     NSMutableDictionary *_compiledFshs;
     NSMutableDictionary *_compiledVshs;
-    NSLock *_fshLock;
-    NSLock *_vshLock;
+    struct dispatch_queue_s { } *_fshQueue;
+    struct dispatch_queue_s { } *_vshQueue;
 }
 
 - (id)compiledFshForKey:(id)arg1;

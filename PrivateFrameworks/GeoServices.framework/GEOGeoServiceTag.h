@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOGeoServiceTag : PBCodable {
+@interface GEOGeoServiceTag : PBCodable <NSCopying> {
     int _serviceType;
     NSString *_tag;
 }
@@ -13,6 +13,7 @@
 @property(retain) NSString * tag;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

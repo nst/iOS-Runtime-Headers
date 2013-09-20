@@ -2,23 +2,26 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class <SUManagerClientDelegate>, SUDescriptor;
+@class <SUManagerClientDelegate>, NSXPCConnection, SUDescriptor;
 
-@interface SUManagerClient : NSObject <XPCProxyTarget, SUManagerClientInterface> {
+@interface SUManagerClient : NSObject <SUManagerClientInterface> {
     int _clientType;
     BOOL _connected;
     <SUManagerClientDelegate> *_delegate;
     SUDescriptor *_installDescriptor;
     BOOL _installing;
+    NSXPCConnection *_serverConnection;
     BOOL _serverIsExiting;
-    id _serverProxy;
 }
 
 @property int clientType;
 @property <SUManagerClientDelegate> * delegate;
 @property(retain) SUDescriptor * installDescriptor;
 
-- (void)_invalidateProxy;
+- (void)_invalidateConnection;
+- (id)_remoteInterface;
+- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(BOOL)arg2;
+- (id)_remoteInterfaceWithErrorHandler:(id)arg1;
 - (void)_setClientType;
 - (void)automaticDownloadDidFailToStartForNewUpdateAvailable:(id)arg1 withError:(id)arg2;
 - (void)cancelDownload:(id)arg1;
@@ -47,7 +50,6 @@
 - (void)noteConnectionDropped;
 - (void)noteServerExiting;
 - (void)pauseDownload:(id)arg1;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (void)resumeDownload:(id)arg1;
 - (void)scanDidCompleteWithNewUpdateAvailable:(id)arg1 error:(id)arg2;
 - (void)scanForUpdates:(id)arg1 withResult:(id)arg2;

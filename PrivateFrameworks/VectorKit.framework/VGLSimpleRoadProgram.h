@@ -12,11 +12,10 @@
 @property float lineWidth;
 @property int textureSampler;
 
-- (id)init;
-- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
 - (float)lineWidth;
 - (void)setLineWidth:(float)arg1;
 - (void)setTextureSampler:(int)arg1;
+- (void)setup;
 - (int)textureSampler;
 
 @end

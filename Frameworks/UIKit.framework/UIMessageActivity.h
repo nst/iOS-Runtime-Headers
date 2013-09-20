@@ -10,6 +10,8 @@
 
 @property(retain) MFMessageComposeViewController * messageComposeViewController;
 
++ (int)activityCategory;
+
 - (id)_activityImage;
 - (void)_cleanup;
 - (id)activityTitle;

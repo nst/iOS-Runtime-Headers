@@ -8,20 +8,24 @@
 
 @interface AXThreadTimerTask : NSObject {
     id _block;
+    BOOL active;
     BOOL cancel;
     BOOL finished;
 }
 
-@property(retain) id block;
+@property(getter=isActive) BOOL active;
+@property(copy) id block;
 @property(getter=isCancelled) BOOL cancel;
 @property(getter=isFinished) BOOL finished;
 
 - (id)block;
 - (void)dealloc;
+- (BOOL)isActive;
 - (BOOL)isCancelled;
 - (BOOL)isFinished;
 - (void)run;
 - (void)runAfterDelay:(float)arg1;
+- (void)setActive:(BOOL)arg1;
 - (void)setBlock:(id)arg1;
 - (void)setCancel:(BOOL)arg1;
 - (void)setFinished:(BOOL)arg1;

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class TPLCDView;
+@class TPLegacyLCDView;
 
 @interface SBDeviceLockTitlePhone : SBDeviceLockTitle {
     BOOL _highlighted;
-    TPLCDView *_lcdView;
+    TPLegacyLCDView *_lcdView;
 }
 
 - (id)_initWithStyle:(int)arg1 interfaceOrientation:(int)arg2;

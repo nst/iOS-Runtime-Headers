@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <NSObject>, MMCSEngine;
+@class MMCSEngine;
 
 @interface MMCSRequestorContext : NSObject {
     char **_authTokens;
-    <NSObject> *_context;
     unsigned long _count;
     MMCSEngine *_engine;
     unsigned int *_itemFlags;
@@ -16,7 +15,6 @@
 }
 
 @property char ** authTokens;
-@property <NSObject> * context;
 @property unsigned long count;
 @property MMCSEngine * engine;
 @property unsigned int* itemFlags;
@@ -24,20 +22,18 @@
 @property char ** signatures;
 @property int type;
 
-+ (id)contextWithEngine:(id)arg1 context:(id)arg2 type:(int)arg3;
++ (id)contextWithEngine:(id)arg1 type:(int)arg2;
 
 - (void).cxx_destruct;
 - (char **)authTokens;
-- (id)context;
 - (unsigned long)count;
 - (void)dealloc;
 - (id)engine;
-- (id)initWithEngine:(id)arg1 context:(id)arg2 type:(int)arg3;
+- (id)initWithEngine:(id)arg1 type:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int*)itemFlags;
 - (unsigned long long*)itemIDs;
 - (void)setAuthTokens:(char **)arg1;
-- (void)setContext:(id)arg1;
 - (void)setCount:(unsigned long)arg1;
 - (void)setEngine:(id)arg1;
 - (void)setItemFlags:(unsigned int*)arg1;

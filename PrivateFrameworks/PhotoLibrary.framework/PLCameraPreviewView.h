@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CALayer, NSMutableDictionary, PLCameraFocusLockView, PLCameraFocusPointView, PLCameraFocusView, UIView;
+@class NSMutableDictionary, PLCameraFocusLockView, PLCameraFocusPointView, PLCameraFocusView, PLVideoPreviewView, UIView;
 
 @interface PLCameraPreviewView : UIView {
     struct CGPoint { 
@@ -13,7 +13,6 @@
     PLCameraFocusView *_autoFocusView;
     float _dimmingStrength;
     UIView *_dimmingView;
-    UIView *_disabledView;
     NSMutableDictionary *_faceIDsToViews;
     UIView *_facesContainerView;
     UIView *_focusContainerView;
@@ -21,13 +20,14 @@
     PLCameraFocusLockView *_lockFocusView;
     UIView *_maskingContainerView;
     UIView *_previewContainer;
-    CALayer *_previewLayer;
-    UIView *_snapshotView;
+    BOOL _square;
     } _touchLocation;
+    PLVideoPreviewView *_videoPreviewView;
 }
 
 @property float dimmingStrength;
-@property(retain) CALayer * previewLayer;
+@property(getter=isSquare) BOOL square;
+@property(readonly) PLVideoPreviewView * videoPreviewView;
 
 - (void)animateFocusLock;
 - (void)animateFocusScaleDown;
@@ -36,20 +36,21 @@
 - (void)fadeOutFaceTrackingViews;
 - (void)focusDidEnd;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isSquare;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
-- (id)previewLayer;
 - (void)removeAllFocusViews;
 - (void)removeAutofocusView;
-- (void)setCameraIsChangingModes:(BOOL)arg1;
 - (void)setControlsAreVisible:(BOOL)arg1;
 - (void)setDimmingStrength:(float)arg1 duration:(double)arg2;
 - (void)setDimmingStrength:(float)arg1;
-- (void)setPreviewLayer:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setShouldShowFocus:(BOOL)arg1;
+- (void)setSquare:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSquare:(BOOL)arg1;
 - (void)showAutofocusView;
 - (void)showFaceTrackingViewsForFaces:(id)arg1;
 - (void)showFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showLockFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)zoomToFactor:(float)arg1;
+- (id)videoPreviewView;
 
 @end

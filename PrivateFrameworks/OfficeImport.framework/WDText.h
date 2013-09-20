@@ -16,14 +16,14 @@
 - (id)addParagraphAtIndex:(int)arg1;
 - (id)addTable;
 - (id)addTableAtIndex:(int)arg1;
-- (id)blockAt:(int)arg1;
-- (int)blockCount;
+- (id)blockAt:(unsigned int)arg1;
+- (unsigned int)blockCount;
 - (id)blockIterator;
 - (id)blocks;
 - (id)content;
 - (void)dealloc;
 - (id)document;
-- (int)indexOfBlock:(id)arg1;
+- (unsigned int)indexOfBlock:(id)arg1;
 - (id)initWithDocument:(id)arg1 textType:(int)arg2 tableCell:(id)arg3;
 - (id)initWithDocument:(id)arg1 textType:(int)arg2;
 - (BOOL)isEmpty;

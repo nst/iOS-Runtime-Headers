@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTileGroup : PBCodable {
+@interface GEOTileGroup : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
         unsigned int count; 
@@ -87,6 +87,7 @@
 - (void)clearTileSets;
 - (void)clearXmlIndexs;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

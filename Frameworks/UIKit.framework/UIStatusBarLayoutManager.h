@@ -6,11 +6,13 @@
 
 @interface UIStatusBarLayoutManager : NSObject {
     UIStatusBarForegroundView *_foregroundView;
-    UIStatusBarItemView *_itemViews[24];
+    UIStatusBarItemView *_itemViews[32];
+    BOOL _persistentAnimationsEnabled;
     int _region;
 }
 
 @property UIStatusBarForegroundView * foregroundView;
+@property BOOL persistentAnimationsEnabled;
 
 - (id)_createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForItemView:(id)arg1 startPosition:(float)arg2;
@@ -20,6 +22,7 @@
 - (float)_positionAfterPlacingItemView:(id)arg1 startPosition:(float)arg2;
 - (void)_positionNewItemViewsWithEnabledItems:(BOOL*)arg1;
 - (void)_prepareEnabledItemType:(int)arg1 withEnabledItems:(BOOL*)arg2 withData:(id)arg3 actions:(int)arg4 itemAppearing:(BOOL*)arg5 itemDisappearing:(BOOL*)arg6;
+- (BOOL)_processDelta:(float)arg1 forView:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_repositionedNewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 widthDelta:(float)arg2;
 - (float)_startPosition;
 - (BOOL)_updateItemView:(id)arg1 withData:(id)arg2 actions:(int)arg3 animated:(BOOL)arg4;
@@ -33,6 +36,7 @@
 - (BOOL)itemIsVisible:(id)arg1;
 - (void)itemView:(id)arg1 widthChangedBy:(float)arg2;
 - (void)makeVisibleItemsPerformPendedActions;
+- (BOOL)persistentAnimationsEnabled;
 - (void)positionInvisibleItems;
 - (BOOL)prepareDoubleHeightItemWithEnabledItems:(BOOL*)arg1;
 - (BOOL)prepareEnabledItems:(BOOL*)arg1 withData:(id)arg2 actions:(int)arg3;
@@ -41,6 +45,7 @@
 - (void)removeDisabledItems:(BOOL*)arg1;
 - (float)removeOverlap:(float)arg1 fromItems:(id)arg2;
 - (void)setForegroundView:(id)arg1;
+- (void)setPersistentAnimationsEnabled:(BOOL)arg1;
 - (void)setVisibilityOfAllItems:(BOOL)arg1;
 - (void)setVisibilityOfItem:(id)arg1 visible:(BOOL)arg2;
 - (BOOL)updateDoubleHeightItem;

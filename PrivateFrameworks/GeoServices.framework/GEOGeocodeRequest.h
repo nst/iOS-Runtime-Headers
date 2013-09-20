@@ -16,6 +16,7 @@
 
 - (void)dealloc;
 - (unsigned short)geocodeProvider;
+- (id)initForwardGeocodeWithAddress:(id)arg1;
 - (id)initForwardGeocodeWithAddressDictionary:(id)arg1;
 - (id)initForwardGeocodeWithAddressString:(id)arg1;
 - (id)initReverseGeocodeWithCoordinate:(struct { double x1; double x2; })arg1 includeBusinessOptions:(BOOL)arg2;

@@ -8,7 +8,7 @@
     NSMutableDictionary *_globalIDToLocalURI;
     NSArray *_globalObjectIDs;
     NSManagedObjectContext *_moc;
-    unsigned int _numRangesToReserve;
+    int _numRangesToReserve;
     NSMutableDictionary *_peerEntityNameRangeStartSet;
     NSPersistentStoreCoordinator *_psc;
     NSPersistentStore *_store;
@@ -18,7 +18,7 @@
 
 @property(readonly) NSArray * globalObjectIDs;
 @property(readonly) NSManagedObjectContext * moc;
-@property(readonly) unsigned int numRangesToReserve;
+@property(readonly) int numRangesToReserve;
 @property(readonly) NSPersistentStoreCoordinator * psc;
 @property(readonly) NSPersistentStore * store;
 
@@ -29,7 +29,7 @@
 - (id)init;
 - (id)initWithPersistentStore:(id)arg1 andGlobalObjectIDs:(id)arg2;
 - (id)moc;
-- (unsigned int)numRangesToReserve;
+- (int)numRangesToReserve;
 - (void)prepareForRangeReservationWithRangeStart:(id)arg1 andGlobalID:(id)arg2 andEntityName:(id)arg3;
 - (id)psc;
 - (id)store;

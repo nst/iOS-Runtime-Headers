@@ -10,12 +10,16 @@
     OADStyleMatrix *mStyleMatrix;
 }
 
+@property(retain) OADColorScheme * colorScheme;
 @property(retain) OADFontScheme * fontScheme;
+@property(retain) OADStyleMatrix * styleMatrix;
 
 - (id)colorScheme;
 - (void)dealloc;
 - (id)fontScheme;
+- (void)setColorScheme:(id)arg1;
 - (void)setFontScheme:(id)arg1;
+- (void)setStyleMatrix:(id)arg1;
 - (id)styleMatrix;
 
 @end

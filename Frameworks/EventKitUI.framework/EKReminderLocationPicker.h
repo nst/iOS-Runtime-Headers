@@ -21,6 +21,7 @@
 
 @property <EKReminderLocationPickerDelegate> * locationPickerDelegate;
 
+- (void).cxx_destruct;
 - (int)_accessoryTypeForLocationItem:(id)arg1 isSelected:(BOOL)arg2;
 - (void)_dismissPeoplePicker;
 - (id)_indexPathForSelectedItem;
@@ -39,7 +40,6 @@
 - (void)_updateAccessoryViewForTypedLocation;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)contactsButtonPressed;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (void)failureButtonPressed;
 - (id)initWithModel:(id)arg1 styleProvider:(id)arg2;
@@ -57,6 +57,7 @@
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 withLinkedPeople:(struct __CFArray { }*)arg3;
 - (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setLocationPickerDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -69,7 +70,6 @@
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

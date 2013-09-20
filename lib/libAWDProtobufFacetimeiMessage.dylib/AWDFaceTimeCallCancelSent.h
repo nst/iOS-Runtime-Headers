@@ -9,11 +9,13 @@
         unsigned int timestamp : 1; 
         unsigned int cancelCode : 1; 
         unsigned int errorCode : 1; 
+        unsigned int isVideo : 1; 
         unsigned int sendDuration : 1; 
     unsigned int _cancelCode;
     int _errorCode;
     NSString *_guid;
     } _has;
+    unsigned int _isVideo;
     unsigned int _sendDuration;
     unsigned long long _timestamp;
 }
@@ -24,8 +26,10 @@
 @property BOOL hasCancelCode;
 @property BOOL hasErrorCode;
 @property(readonly) BOOL hasGuid;
+@property BOOL hasIsVideo;
 @property BOOL hasSendDuration;
 @property BOOL hasTimestamp;
+@property unsigned int isVideo;
 @property unsigned int sendDuration;
 @property unsigned long long timestamp;
 
@@ -39,10 +43,12 @@
 - (BOOL)hasCancelCode;
 - (BOOL)hasErrorCode;
 - (BOOL)hasGuid;
+- (BOOL)hasIsVideo;
 - (BOOL)hasSendDuration;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (unsigned int)isVideo;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)sendDuration;
 - (void)setCancelCode:(unsigned int)arg1;
@@ -50,8 +56,10 @@
 - (void)setGuid:(id)arg1;
 - (void)setHasCancelCode:(BOOL)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
+- (void)setHasIsVideo:(BOOL)arg1;
 - (void)setHasSendDuration:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setIsVideo:(unsigned int)arg1;
 - (void)setSendDuration:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

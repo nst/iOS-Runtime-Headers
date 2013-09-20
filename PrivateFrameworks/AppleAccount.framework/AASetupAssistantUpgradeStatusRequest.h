@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class AAAccount;
+@class ACAccount;
 
 @interface AASetupAssistantUpgradeStatusRequest : AARequest {
-    AAAccount *_account;
+    ACAccount *_account;
 }
 
 + (Class)responseClass;

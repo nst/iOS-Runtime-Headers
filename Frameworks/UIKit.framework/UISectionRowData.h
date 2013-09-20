@@ -2,8 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class UITableViewRowData;
+
 @interface UISectionRowData : NSObject <NSCopying> {
-    int _arrayLength;
+    unsigned int _arrayLength;
     int _footerAlignment;
     float _footerHeight;
     float _footerOffset;
@@ -12,7 +14,8 @@
     float _headerOffset;
     float _maxFooterTitleWidth;
     float _maxHeaderTitleWidth;
-    int _numRows;
+    unsigned int _numRows;
+    UITableViewRowData *_rowData;
     float *_rowHeights;
     float *_rowOffsets;
     float _sectionHeight;
@@ -24,19 +27,26 @@
 
 - (float)_defaultSectionFooterHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
 - (float)_defaultSectionHeaderHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
-- (float)_headerOrFooterSizeForTable:(id)arg1 title:(id)arg2 detailText:(id)arg3 isHeader:(BOOL)arg4;
+- (float)_headerOrFooterSizeForTable:(id)arg1 title:(id)arg2 detailText:(id)arg3 isHeader:(BOOL)arg4 stripPaddingForAbuttingView:(BOOL)arg5 isTopHeader:(BOOL)arg6;
 - (int)_rowForPoint:(struct CGPoint { float x1; float x2; })arg1 beginningWithRow:(int)arg2 numberOfRows:(int)arg3;
 - (void)addOffset:(float)arg1 fromRow:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)deleteRowAtIndex:(int)arg1;
+- (float)heightForEmptySection:(int)arg1 inTableView:(id)arg2 rowData:(id)arg3;
+- (float)heightForFooterInSection:(int)arg1 canGuess:(BOOL)arg2;
+- (float)heightForHeaderInSection:(int)arg1 canGuess:(BOOL)arg2;
+- (float)heightForRow:(int)arg1 inSection:(int)arg2 canGuess:(BOOL)arg3;
+- (id)initWithRowData:(id)arg1;
 - (void)insertRowAtIndex:(int)arg1 inSection:(int)arg2 rowHeight:(float)arg3 tableViewRowData:(id)arg4;
 - (void)invalidate;
 - (void)invalidateSectionOffset;
+- (float)offsetForRow:(int)arg1;
 - (void)refreshWithSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
 - (int)rowForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)sectionLocationForReorderedRow:(int)arg1;
 - (int)sectionLocationForRow:(int)arg1;
 - (void)setHeight:(float)arg1 forRow:(int)arg2;
+- (void)updateSectionHeightWithDelta:(float)arg1 updateFooterOffset:(BOOL)arg2;
 
 @end

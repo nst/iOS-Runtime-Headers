@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString;
+@class IMTimer, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface IMChatRegistry : NSObject <NSFastEnumeration> {
     NSMutableArray *_allChats;
@@ -11,13 +11,17 @@
     NSMutableDictionary *_chatGUIDToCurrentThreadMap;
     NSMutableDictionary *_chatGUIDToInfoMap;
     BOOL _daemonHadTerminated;
+    long long _daemonLastFailedMessageID;
+    unsigned int _daemonUnreadCount;
     unsigned int _defaultNumberOfMessagesToLoad;
     BOOL _firstLoad;
     NSString *_historyModificationStamp;
     BOOL _loading;
+    IMTimer *_markAsReadTimer;
     NSMutableArray *_pendingQueries;
     BOOL _postMessageSentNotifications;
     NSMutableDictionary *_threadNameToChatMap;
+    double _timerStartTimeInterval;
     NSMutableArray *_waitingForQueries;
     BOOL _wantsHistoryReload;
 }
@@ -48,6 +52,7 @@
 - (void)_chat:(id)arg1 sendReadReceiptForMessages:(id)arg2;
 - (void)_chat:(id)arg1 setProperties:(id)arg2 ofParticipant:(id)arg3;
 - (void)_chat:(id)arg1 setValue:(id)arg2 forChatProperty:(id)arg3;
+- (void)_chat:(id)arg1 updateDisplayName:(id)arg2;
 - (id)_chatForChatDictionary:(id)arg1 chatItems:(id)arg2 allowCreate:(BOOL)arg3 createdChat:(BOOL*)arg4 outGUID:(id*)arg5;
 - (id)_chatInstanceForGUID:(id)arg1;
 - (void)_chat_declineInvitation:(id)arg1;
@@ -56,6 +61,7 @@
 - (id)_chatsWithMessage:(id)arg1;
 - (id)_ck_chatForEntities:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)_ck_chatForHandles:(id)arg1 createIfNecessary:(BOOL)arg2;
+- (void)_clearMarkAsReadTimerIfNecessary;
 - (id)_createdChatForIMHandle:(id)arg1;
 - (id)_createdChatForIMHandles:(id)arg1 style:(unsigned char)arg2;
 - (id)_createdChatForRoom:(id)arg1 onAccount:(id)arg2;
@@ -64,6 +70,7 @@
 - (unsigned int)_defaultNumberOfMessagesToLoad;
 - (id)_existingChatWithIdentifier:(id)arg1 style:(unsigned char)arg2 account:(id)arg3;
 - (id)_existingChatWithIdentifier:(id)arg1 style:(unsigned char)arg2 service:(id)arg3;
+- (BOOL)_firstLoad;
 - (void)_handleChatReconstructions:(id)arg1;
 - (BOOL)_hasChat:(id)arg1 forService:(id)arg2;
 - (BOOL)_isLoading;
@@ -76,6 +83,7 @@
 - (void)_registerChatDictionary:(id)arg1 forChat:(id)arg2 isIncoming:(BOOL)arg3 newGUID:(id)arg4;
 - (void)_setDefaultNumberOfMessagesToLoad:(unsigned int)arg1;
 - (void)_setPostMessageSentNotifications:(BOOL)arg1;
+- (void)_startMarkAsReadTimerIfNecessary;
 - (void)_unregisterChat:(id)arg1;
 - (void)_unregisterChatWithGUID:(id)arg1;
 - (void)_updateInfo:(id)arg1 forGUID:(id)arg2 updatingUnreadCount:(BOOL)arg3;
@@ -87,7 +95,7 @@
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 messageSent:(id)arg5;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 messageUpdated:(id)arg5;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 messagesUpdated:(id)arg5;
-- (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 notifySentMessage:(id)arg5;
+- (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 notifySentMessage:(id)arg5 sendTime:(id)arg6;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 statusChanged:(int)arg5 handleInfo:(id)arg6;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 updateProperties:(id)arg5;
 - (id)allExistingChats;
@@ -109,12 +117,17 @@
 - (id)existingChatWithGUID:(id)arg1;
 - (void)handleIMChatParticipantsDidChange:(id)arg1;
 - (void)historicalMessageGUIDsDeleted:(id)arg1 chatGUIDs:(id)arg2 queryID:(id)arg3;
-- (void)historyQuery:(id)arg1 chatID:(id)arg2 services:(id)arg3 finishedWithResult:(id)arg4;
+- (void)historyQuery:(id)arg1 chatID:(id)arg2 services:(id)arg3 finishedWithResult:(id)arg4 limit:(unsigned int)arg5;
 - (id)init;
+- (long long)lastFailedMessageID;
+- (void)lastFailedMessageIDChanged:(long long)arg1;
 - (void)leftChat:(id)arg1;
 - (unsigned int)numberOfExistingChats;
 - (void)setupComplete:(BOOL)arg1 info:(id)arg2;
 - (void)setupComplete;
+- (void)systemApplicationDidResume;
+- (unsigned int)unreadCount;
+- (void)unreadCountChanged:(int)arg1;
 - (void)unregisterChat:(id)arg1;
 - (void)unregisterChatWithGUID:(id)arg1;
 

@@ -31,7 +31,7 @@
 - (bool)isTopLevelObject;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDrawable:(id)arg1;
-- (void)setTextBox:(id)arg1;
+- (void)setTextBox:(id)arg1 document:(id)arg2;
 - (void)setTextType:(int)arg1;
 - (id)textBox;
 - (int)textType;

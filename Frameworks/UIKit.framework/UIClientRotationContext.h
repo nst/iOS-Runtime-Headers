@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UISnapshotView, UIView, UIWindow;
+@class NSArray, UISnapshotView, UIView, UIWindow;
 
 @interface UIClientRotationContext : NSObject {
     struct { 
@@ -12,11 +12,12 @@
         BOOL skipSnapshotOfEndState; 
         float contentStretchRightEdgeInset; 
         int edgeClip; 
+    NSArray *_backdropViews;
     UISnapshotView *_contentSnapshotViewStart;
     float _contentTopAdjustmentStart;
     UIView *_contentView;
     BOOL _contentWasHidden;
-    float _duration;
+    double _duration;
     UIView *_footerEndSnapshotView;
     UISnapshotView *_footerSnapshotViewStart;
     UIView *_footerStartSnapshotView;
@@ -33,13 +34,15 @@
     BOOL _skipClientRotationCallbacks;
     BOOL _skipFooterRotation;
     BOOL _skipHeaderRotation;
+    UIView *_snapshotTargetView;
+    BOOL _snapshotTargetWasHidden;
     int _toOrientation;
     UIWindow *_window;
     float contentBottomInset;
 }
 
 @property(readonly) UIView * contentView;
-@property(readonly) float duration;
+@property(readonly) double duration;
 @property(readonly) int fromOrientation;
 @property(readonly) id rotatingClient;
 @property BOOL skipClientRotationCallbacks;
@@ -52,11 +55,12 @@
 - (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(BOOL)arg3 forInterfaceOrientation:(int)arg4;
 - (id)contentView;
 - (void)dealloc;
-- (float)duration;
+- (void)disableBackdropViewUpdates:(BOOL)arg1;
+- (double)duration;
 - (void)finishFirstHalfRotation;
 - (void)finishFullRotateUsingOnePartAnimation:(BOOL)arg1;
 - (int)fromOrientation;
-- (id)initWithClient:(id)arg1 toOrientation:(int)arg2 duration:(float)arg3 andWindow:(id)arg4;
+- (id)initWithClient:(id)arg1 toOrientation:(int)arg2 duration:(double)arg3 andWindow:(id)arg4;
 - (void)rotateSnapshots;
 - (id)rotatingClient;
 - (void)setSkipClientRotationCallbacks:(BOOL)arg1;

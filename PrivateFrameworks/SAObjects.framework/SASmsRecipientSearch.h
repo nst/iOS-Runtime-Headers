@@ -2,26 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSURL, SAPerson;
+@class NSArray;
 
-@interface SASmsRecipientSearch : SABaseClientBoundCommand {
+@interface SASmsRecipientSearch : SADomainCommand {
 }
 
-@property(retain) SAPerson * recipient;
 @property(copy) NSArray * recipients;
-@property(copy) NSURL * targetAppId;
 
 + (id)recipientSearch;
 + (id)recipientSearchWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)recipient;
 - (id)recipients;
 - (BOOL)requiresResponse;
-- (void)setRecipient:(id)arg1;
 - (void)setRecipients:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

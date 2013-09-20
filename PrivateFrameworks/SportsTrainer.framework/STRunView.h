@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SportsTrainer.framework/SportsTrainer
  */
 
-@class <STRunViewDelegate>, NSString, NSTimer, STAnimatableButton, STRunCaloriesLabel, STRunDistanceLabel, STRunPaceLabel, STRunProgressView, STRunTimeLabel, STShadowLabel, SWRunWorkoutProxy, UIButton, UIImageView, UIView;
+@class <STRunViewDelegate>, NSString, NSTimer, STRunCaloriesLabel, STRunDistanceLabel, STRunPaceLabel, STRunProgressView, STRunTimeLabel, SWRunWorkoutProxy, UIButton, UIImageView, UILabel, UIView;
 
 @interface STRunView : UIView {
     struct { 
@@ -27,15 +27,15 @@
     int _currentSeekDirection;
     <STRunViewDelegate> *_delegate;
     double _elapsedWorkoutTime;
-    STAnimatableButton *_endWorkoutButton;
+    UIButton *_endWorkoutButton;
     double _estimatedElapsedWorkoutTime;
     int _interface;
+    UIView *_labelSeparator;
     double _lastWorkoutNotificationTime;
     UIButton *_leftButton;
     UIButton *_nextTrackButton;
-    STShadowLabel *_nowPlayingSongLabel;
+    UILabel *_nowPlayingSongLabel;
     int _orientation;
-    UIImageView *_powerSongGlowView;
     UIButton *_previousTrackButton;
     float _progressToGoal;
     UIButton *_rightButton;
@@ -60,6 +60,8 @@
 @property int orientation;
 @property(readonly) SWRunWorkoutProxy * workoutProxy;
 
+- (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationResumed:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_applicationWillSuspend:(id)arg1;
@@ -78,8 +80,8 @@
 - (id)_endWorkoutLandscapeButtonDownImage;
 - (id)_endWorkoutLandscapeButtonImage;
 - (void)_finishResumeEventsOnly;
-- (id)_greenButtonDownImage;
-- (id)_greenButtonImage;
+- (id)_flatGradientImageWithImage:(id)arg1 startColor:(id)arg2 startPoint:(struct CGPoint { float x1; float x2; })arg3 endColor:(id)arg4 endPoint:(struct CGPoint { float x1; float x2; })arg5;
+- (BOOL)_isLockedMusicInterface;
 - (void)_layoutBottomButtons;
 - (void)_layoutCaloriesInPosition:(int)arg1 isLandscape:(BOOL)arg2 isLockedMusicInterface:(BOOL)arg3 hasProgressView:(BOOL)arg4;
 - (void)_layoutLabel:(id)arg1 inPosition:(int)arg2 isLandscape:(BOOL)arg3 isLockedMusicInterface:(BOOL)arg4 hasProgressView:(BOOL)arg5;
@@ -91,12 +93,9 @@
 - (void)_layoutRunDistanceInPosition:(int)arg1 isLandscape:(BOOL)arg2 isLockedMusicInterface:(BOOL)arg3 hasProgressView:(BOOL)arg4;
 - (void)_layoutRunTimeInPosition:(int)arg1 isLandscape:(BOOL)arg2 isLockedMusicInterface:(BOOL)arg3 hasProgressView:(BOOL)arg4;
 - (void)_layoutSecondaryLabelsForWorkoutType:(int)arg1;
-- (void)_layoutTransportControlsDivider;
 - (id)_mainButtonStringForGoalType:(id)arg1;
 - (void)_nextTrack;
 - (void)_nowPlayingChanged:(id)arg1;
-- (id)_orangeButtonDownImage;
-- (id)_orangeButtonImage;
 - (void)_pause;
 - (void)_pauseWorkoutForResume:(BOOL)arg1;
 - (void)_playPowerSongEventFromRemote:(id)arg1;
@@ -105,17 +104,14 @@
 - (id)_powersongLandscapeButtonDownImage;
 - (id)_powersongLandscapeButtonImage;
 - (void)_previousTrack;
-- (id)_redButtonDownImage;
-- (id)_redButtonImage;
 - (void)_resume;
 - (void)_resumeWorkoutForResume:(BOOL)arg1;
 - (void)_start;
 - (void)_startUpdateTimers;
-- (id)_startWorkoutButtonDownImage;
 - (id)_startWorkoutButtonImage;
+- (id)_startWorkoutEndColor;
 - (void)_startWorkoutEventFromRemote:(id)arg1;
-- (id)_startWorkoutLandscapeButtonDownImage;
-- (id)_startWorkoutLandscapeButtonImage;
+- (id)_startWorkoutStartColor;
 - (void)_stop;
 - (void)_stopUpdateTimers;
 - (void)_subsecondTimerTick:(id)arg1;
@@ -145,6 +141,7 @@
 - (void)setIsLockScreen:(BOOL)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)suspend;
+- (void)updateOrientation;
 - (id)workoutProxy;
 
 @end

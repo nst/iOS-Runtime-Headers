@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class EAGLContext;
+@class VGLResource;
 
 @interface VGLTexture : NSObject {
     struct CGRect { 
@@ -17,37 +17,39 @@
     struct CGSize { 
         float width; 
         float height; 
+    BOOL _anisotropicFiltering;
     } _contentRect;
-    EAGLContext *_context;
     BOOL _dirty;
     BOOL _hasMipmap;
     BOOL _isLoaded;
     int _magFilter;
     int _minFilter;
     int _target;
+    VGLResource *_textureResource;
     } _textureSize;
-    unsigned int _token;
     int _wrapBehaviorX;
     int _wrapBehaviorY;
 }
 
+@property BOOL anisotropicFiltering;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentRect;
 @property(readonly) BOOL dirty;
+@property(getter=isFlipped,readonly) BOOL flipped;
 @property BOOL hasMipmap;
 @property(readonly) BOOL isLoaded;
 @property int magnificationFilter;
 @property int minificationFilter;
 @property int target;
 @property(readonly) struct CGSize { float x1; float x2; } textureSize;
-@property unsigned int token;
 @property int wrapBehavior;
 @property int wrapBehaviorX;
 @property int wrapBehaviorY;
 
 + (void)purge;
 + (id)textureWithName:(id)arg1 forScale:(float)arg2;
-+ (id)textureWithName:(id)arg1;
 
+- (id).cxx_construct;
+- (BOOL)anisotropicFiltering;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (void)dealloc;
 - (BOOL)decodeTexture;
@@ -58,16 +60,18 @@
 - (id)initWithData:(id)arg1 loadImmediately:(BOOL)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithName:(id)arg1;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 requirePowerOf2:(BOOL)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)isFlipped;
 - (BOOL)isLoaded;
 - (BOOL)loadTexture;
 - (int)magnificationFilter;
 - (int)minificationFilter;
+- (void)setAnisotropicFiltering:(BOOL)arg1;
 - (void)setHasMipmap:(BOOL)arg1;
 - (void)setMagnificationFilter:(int)arg1;
 - (void)setMinificationFilter:(int)arg1;
 - (void)setTarget:(int)arg1;
-- (void)setToken:(unsigned int)arg1;
 - (void)setWrapBehavior:(int)arg1;
 - (void)setWrapBehaviorX:(int)arg1;
 - (void)setWrapBehaviorY:(int)arg1;

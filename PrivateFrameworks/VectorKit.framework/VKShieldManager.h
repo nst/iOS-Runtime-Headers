@@ -2,42 +2,31 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSCache, NSMapTable, VKPShieldIndex, VKShieldAtlas;
+@class NSMapTable, VKObjectPool;
 
-@interface VKShieldManager : NSObject {
-    VKShieldAtlas *_defaultAtlas;
-    VKShieldAtlas *_defaultAtlasExtraLarge;
-    VKShieldAtlas *_defaultAtlasLarge;
-    VKShieldAtlas *_defaultAtlasMedium;
-    VKPShieldIndex *_defaultIndex;
-    VKPShieldIndex *_defaultIndexExtraLarge;
-    VKPShieldIndex *_defaultIndexLarge;
-    VKPShieldIndex *_defaultIndexMedium;
-    NSCache *_genericArtworks;
-    BOOL _hasLoadedDefaultAtlas;
-    BOOL _hasLoadedDefaultAtlasExtraLarge;
-    BOOL _hasLoadedDefaultAtlasLarge;
-    BOOL _hasLoadedDefaultAtlasMedium;
-    BOOL _hasLoadedDefaultIndex;
-    BOOL _hasLoadedDefaultIndexExtraLarge;
-    BOOL _hasLoadedDefaultIndexLarge;
-    BOOL _hasLoadedDefaultIndexMedium;
+@interface VKShieldManager : NSObject <GEOResourceManifestTileGroupObserver> {
+    NSMapTable *_defaultAtlases;
+    NSMapTable *_defaultIndexes;
+    VKObjectPool *_genericArtworks;
     NSMapTable *_regionalAtlases;
     NSMapTable *_regionalIndexes;
 }
 
 + (id)sharedManager;
 
-- (void)_activeTileGroupChanged:(id)arg1;
 - (id)_atlasForName:(id)arg1;
-- (id)_defaultAtlasForMode:(int)arg1;
-- (id)_defaultIndexForMode:(int)arg1;
+- (id)_defaultAtlasForSize:(int)arg1 scale:(float)arg2 idiom:(int)arg3;
+- (id)_defaultIndexForSize:(int)arg1 scale:(float)arg2 idiom:(int)arg3;
 - (void)_didReceiveMemoryWarning:(id)arg1;
 - (id)_indexForName:(id)arg1;
-- (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 mode:(int)arg4;
-- (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 resourceNames:(id)arg4 style:(id)arg5 mode:(int)arg6;
+- (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 resourceNames:(id)arg4 style:(id)arg5 size:(int)arg6 idiom:(int)arg7 numberOfLines:(unsigned int)arg8;
+- (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 size:(int)arg4 idiom:(int)arg5 mapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg6;
+- (id)artworkForShieldType:(int)arg1 textLength:(unsigned int)arg2 contentScale:(float)arg3 size:(int)arg4 idiom:(int)arg5;
 - (void)dealloc;
+- (id)imageForShieldType:(int)arg1 shieldText:(id)arg2 contentScale:(float)arg3 size:(int)arg4 idiom:(int)arg5;
 - (id)init;
 - (void)purge;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
+- (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 
 @end

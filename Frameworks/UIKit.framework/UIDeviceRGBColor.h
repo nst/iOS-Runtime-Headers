@@ -6,6 +6,7 @@
     float alphaComponent;
     float blueComponent;
     struct CGColor { } *cachedColor;
+    long cachedColorOnceToken;
     float greenComponent;
     float redComponent;
 }

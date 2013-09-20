@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class LibraryMessage, MFBufferedDataConsumer, MFMailMessageLibrary, NSString;
+@class MFBufferedDataConsumer, MFLibraryMessage, MFMailMessageLibrary, NSString;
 
-@interface _MFDataCollector : NSObject <MFCollectingDataConsumer> {
+@interface _MFDataCollector : NSObject <MFGuaranteedCollectingDataConsumer> {
     MFBufferedDataConsumer *_consumer;
     BOOL _incomplete;
     MFMailMessageLibrary *_library;
-    LibraryMessage *_message;
+    MFLibraryMessage *_message;
     NSString *_part;
     BOOL _partial;
 }

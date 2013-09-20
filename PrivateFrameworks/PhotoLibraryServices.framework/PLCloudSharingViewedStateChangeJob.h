@@ -7,20 +7,20 @@
 @interface PLCloudSharingViewedStateChangeJob : PLCloudSharingJob {
     NSString *_albumGUID;
     BOOL _albumHasUnseenContent;
-    int _albumUnviewedAssetCount;
+    long long _albumUnviewedAssetCount;
     NSString *_assetCollectionGUID;
     BOOL _assetCollectionHasUnreadComments;
     NSDate *_assetCollectionLastViewedCommentDate;
-    int _jobType;
+    long long _jobType;
 }
 
 @property(retain) NSString * albumGUID;
 @property BOOL albumHasUnseenContent;
-@property int albumUnviewedAssetCount;
+@property long long albumUnviewedAssetCount;
 @property(retain) NSString * assetCollectionGUID;
 @property BOOL assetCollectionHasUnreadComments;
 @property(retain) NSDate * assetCollectionLastViewedCommentDate;
-@property int jobType;
+@property long long jobType;
 
 + (void)markAlbum:(id)arg1 asHavingUnseenContent:(BOOL)arg2;
 + (void)markAssetCollection:(id)arg1 asHavingUnreadComments:(BOOL)arg2 inAlbum:(id)arg3;
@@ -33,24 +33,24 @@
 - (void)_executeAssetLastViewedCommentDateChangedWithGroup;
 - (id)albumGUID;
 - (BOOL)albumHasUnseenContent;
-- (int)albumUnviewedAssetCount;
+- (long long)albumUnviewedAssetCount;
 - (id)assetCollectionGUID;
 - (BOOL)assetCollectionHasUnreadComments;
 - (id)assetCollectionLastViewedCommentDate;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
 - (id)initFromXPCObject:(id)arg1;
-- (int)jobType;
+- (long long)jobType;
 - (void)run;
 - (void)runDaemonSide;
 - (void)setAlbumGUID:(id)arg1;
 - (void)setAlbumHasUnseenContent:(BOOL)arg1;
-- (void)setAlbumUnviewedAssetCount:(int)arg1;
+- (void)setAlbumUnviewedAssetCount:(long long)arg1;
 - (void)setAssetCollectionGUID:(id)arg1;
 - (void)setAssetCollectionHasUnreadComments:(BOOL)arg1;
 - (void)setAssetCollectionLastViewedCommentDate:(id)arg1;
-- (void)setJobType:(int)arg1;
+- (void)setJobType:(long long)arg1;
 
 @end

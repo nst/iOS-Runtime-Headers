@@ -4,7 +4,7 @@
 
 @class IMAVChat, NSMutableArray;
 
-@interface CNFConferenceController : NSObject <IMAVControllerDelegate, IMAVInvitationControllerDelegate> {
+@interface CNFConferenceController : NSObject <IMAVControllerDelegate> {
     IMAVChat *_activeAVChat;
     NSMutableArray *_avChatList;
     BOOL _isConnected;
@@ -29,32 +29,27 @@
 - (BOOL)_chat:(id)arg1 isCrossInvitationWithChat:(id)arg2;
 - (void)_cleanUpAfterAVChat;
 - (id)_countryCode;
-- (unsigned int)_currentChatState;
-- (void)_handleAVChatStateChangeFromState:(unsigned int)arg1 to:(unsigned int)arg2 withReason:(unsigned int)arg3;
-- (void)_handleCanceledInvitationForConferenceID:(id)arg1 fromHandle:(id)arg2;
+- (void)_handleAVChatStateChangedToState:(unsigned int)arg1;
 - (void)_handleConferenceConnecting:(id)arg1;
 - (void)_handleConferenceEnded:(id)arg1 withReason:(unsigned int)arg2 withError:(int)arg3;
 - (void)_handleEndAVChat:(id)arg1 withReason:(unsigned int)arg2 error:(int)arg3;
-- (void)_handleInvitationForConferenceID:(id)arg1 fromHandle:(id)arg2;
 - (id)_imHandleFromID:(id)arg1 countryCode:(id)arg2;
 - (id)_imHandleFromURL:(id)arg1;
 - (id)_initWithType:(int)arg1;
-- (void)acceptFaceTimeInvitationForConferenceID:(id)arg1 fromHandle:(id)arg2;
+- (void)acceptFaceTimeInvitationForChat:(id)arg1;
 - (void)activateFaceTime;
 - (int)activationState;
+- (BOOL)activeFaceTimeAudioCallExists;
+- (BOOL)activeFaceTimeCallExists;
 - (id)avChat;
 - (id)avChatForConferenceID:(id)arg1;
 - (void)avChatStateChanged:(id)arg1;
-- (void)avChatStateChangedFrom:(unsigned int)arg1 to:(unsigned int)arg2 reason:(unsigned int)arg3;
 - (BOOL)canSendFaceTimeInvitationTo:(id)arg1;
-- (void)conference:(id)arg1 handleMissedInvitationFromIMHandle:(id)arg2;
-- (void)conference:(id)arg1 receivedCancelledInvitationFromIMHandle:(id)arg2;
-- (void)conference:(id)arg1 receivedInvitationFromIMHandle:(id)arg2;
 - (void)connectToService;
 - (id)currentCallConnectedDate;
 - (id)currentCallRemoteUserId;
 - (void)dealloc;
-- (void)declineFaceTimeInvitationForConferenceID:(id)arg1 fromHandle:(id)arg2;
+- (void)declineFaceTimeInvitationForChat:(id)arg1;
 - (void)disconnectFromService;
 - (void)endFaceTime;
 - (void)faceTimeHistoryChanged:(id)arg1;

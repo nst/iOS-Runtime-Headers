@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalendarURLCell;
+@class UITableViewCell;
 
 @interface EKEventURLInlineEditItem : EKEventEditItem <UITextFieldDelegate> {
-    CalendarURLCell *_cell;
+    UITableViewCell *_cell;
 }
 
+- (void).cxx_destruct;
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2;
-- (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 inSubsection:(int)arg2 forWidth:(float)arg3;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 inSubsection:(unsigned int)arg2 forWidth:(float)arg3;
 - (BOOL)isInline;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;

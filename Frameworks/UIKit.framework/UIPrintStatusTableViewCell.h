@@ -2,23 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIActivityIndicatorView, UILabel, UIView;
+@class UIActivityIndicatorView, UILabel;
 
 @interface UIPrintStatusTableViewCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
     UILabel *_hostLabel;
-    UIView *_verticalBar;
+    UILabel *_titleLabel;
 }
 
-@property(copy) NSString * hostName;
+@property(retain) UILabel * hostLabel;
 @property BOOL showActive;
+@property(retain) UILabel * titleLabel;
 
 - (void)dealloc;
-- (id)hostName;
+- (id)hostLabel;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
-- (void)setHostName:(id)arg1;
+- (void)setHostLabel:(id)arg1;
 - (void)setShowActive:(BOOL)arg1;
+- (void)setTitleLabel:(id)arg1;
 - (BOOL)showActive;
+- (id)titleLabel;
 
 @end

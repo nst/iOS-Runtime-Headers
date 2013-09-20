@@ -2,19 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIButton, UIPrintPanelViewController;
+@class UIPrintPanelViewController;
 
 @interface UIPrintPanelTableViewController : UITableViewController {
+    BOOL _canPrint;
     BOOL _contactingPrinter;
     int _copiesRow;
     int _duplexRow;
     int _paperRow;
-    UIButton *_printButton;
     UIPrintPanelViewController *_printPanelViewController;
     int _rangeRow;
 }
 
-- (void)_setupPrintButtons;
 - (void)_update:(BOOL)arg1;
 - (void)_updateSize;
 - (void)clearPrintPanelViewController;
@@ -29,12 +28,12 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)updateCopies:(id)arg1;
 - (void)updateDuplex:(id)arg1;
 - (void)updatePageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -17,11 +17,13 @@
     NSSet *_relativePathsNotToRemoveIfNotRestored;
     NSSet *_relativePathsNotToRestore;
     NSSet *_relativePathsNotToRestoreToIPods;
+    NSSet *_relativePathsOfSystemFilesToAlwaysRemoveOnRestore;
     NSSet *_relativePathsOfSystemFilesToAlwaysRestore;
     NSSet *_relativePathsToBackgroundRestore;
     NSSet *_relativePathsToBackupAndRestore;
     NSSet *_relativePathsToRemoveOnRestore;
     NSSet *_relativePathsToRestoreOnly;
+    NSSet *_relativePathsToRestoreOnlyFromService;
     NSString *_rootPath;
     BOOL _shouldDigest;
 }
@@ -42,6 +44,7 @@
 @property(retain) NSSet * relativePathsNotToRemoveIfNotRestored;
 @property(retain) NSSet * relativePathsNotToRestore;
 @property(retain) NSSet * relativePathsNotToRestoreToIPods;
+@property(retain) NSSet * relativePathsOfSystemFilesToAlwaysRemoveOnRestore;
 @property(retain) NSSet * relativePathsOfSystemFilesToAlwaysRestore;
 @property(retain) NSSet * relativePathsToBackgroundRestore;
 @property(readonly) NSSet * relativePathsToBackup;
@@ -49,6 +52,7 @@
 @property(retain) NSSet * relativePathsToRemoveOnRestore;
 @property(readonly) NSSet * relativePathsToRestore;
 @property(retain) NSSet * relativePathsToRestoreOnly;
+@property(retain) NSSet * relativePathsToRestoreOnlyFromService;
 @property(readonly) NSString * rootPath;
 @property BOOL shouldDigest;
 
@@ -97,6 +101,7 @@
 - (id)relativePathsNotToRemoveIfNotRestored;
 - (id)relativePathsNotToRestore;
 - (id)relativePathsNotToRestoreToIPods;
+- (id)relativePathsOfSystemFilesToAlwaysRemoveOnRestore;
 - (id)relativePathsOfSystemFilesToAlwaysRestore;
 - (id)relativePathsToBackgroundRestore;
 - (id)relativePathsToBackup;
@@ -104,6 +109,7 @@
 - (id)relativePathsToRemoveOnRestore;
 - (id)relativePathsToRestore;
 - (id)relativePathsToRestoreOnly;
+- (id)relativePathsToRestoreOnlyFromService;
 - (id)rootPath;
 - (void)setRelativePathAggregateDictionaryGroups:(id)arg1;
 - (void)setRelativePathDomainRedirects:(id)arg1;
@@ -116,11 +122,13 @@
 - (void)setRelativePathsNotToRemoveIfNotRestored:(id)arg1;
 - (void)setRelativePathsNotToRestore:(id)arg1;
 - (void)setRelativePathsNotToRestoreToIPods:(id)arg1;
+- (void)setRelativePathsOfSystemFilesToAlwaysRemoveOnRestore:(id)arg1;
 - (void)setRelativePathsOfSystemFilesToAlwaysRestore:(id)arg1;
 - (void)setRelativePathsToBackgroundRestore:(id)arg1;
 - (void)setRelativePathsToBackupAndRestore:(id)arg1;
 - (void)setRelativePathsToRemoveOnRestore:(id)arg1;
 - (void)setRelativePathsToRestoreOnly:(id)arg1;
+- (void)setRelativePathsToRestoreOnlyFromService:(id)arg1;
 - (void)setShouldDigest:(BOOL)arg1;
 - (BOOL)shouldDigest;
 

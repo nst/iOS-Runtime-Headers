@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSLock, NSMutableDictionary, NSXPCConnection, NSXPCInterface;
+@class NSXPCConnection, NSXPCInterface;
 
 @interface _NSXPCDistantObject : NSObject <NSXPCProxyCreating, NSSecureCoding> {
     NSXPCConnection *_connection;
     BOOL _exported;
-    NSMutableDictionary *_knownSelectors;
+    struct __CFDictionary { } *_knownSelectors;
     unsigned long long _proxyNumber;
     NSXPCInterface *_remoteInterface;
-    NSLock *_selectorLock;
+    int _selectorLock;
 }
 
 @property(retain) NSXPCConnection * _connection;
@@ -28,6 +28,7 @@
 - (BOOL)conformsToProtocol:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (void)finalize;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -35,6 +36,7 @@
 - (id)remoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 - (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id)arg2;
+- (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id)arg2;
 - (void)set_connection:(id)arg1;
 - (void)set_exported:(BOOL)arg1;
 - (void)set_proxyNumber:(unsigned long long)arg1;

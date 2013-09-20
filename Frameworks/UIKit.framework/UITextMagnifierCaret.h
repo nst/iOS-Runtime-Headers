@@ -2,66 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder<UITextInput>, UITextMagnifierTimeWeightedPoint, UIView;
-
-@interface UITextMagnifierCaret : UIView <UITextMagnifier> {
+@interface UITextMagnifierCaret : UITextMagnifier {
     struct CGPoint { 
         float x; 
         float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    int _autoscrollDirections;
-    UIView *_autoscrollRenderer;
-    } _magnificationPoint;
-    UIView *_magnifierRenderer;
     } _offset;
-    UIView *_target;
-    UIResponder<UITextInput> *_text;
-    UITextMagnifierTimeWeightedPoint *_weightedPoint;
     float _yOffset;
 }
 
-@property struct CGPoint { float x1; float x2; } animationPoint;
-@property struct CGPoint { float x1; float x2; } magnificationPoint;
 @property struct CGPoint { float x1; float x2; } offset;
-@property(retain) UIView * target;
-@property(readonly) struct CGPoint { float x1; float x2; } terminalPoint;
-@property(readonly) BOOL terminalPointPlacedCarefully;
-@property(retain) UIResponder<UITextInput> * text;
 @property float yOffset;
 
 + (id)sharedCaretMagnifier;
 
-- (void)animateToAutoscrollRenderer;
-- (void)animateToMagnifierRenderer;
 - (struct CGPoint { float x1; float x2; })animationPoint;
-- (void)autoscrollWillNotStart;
 - (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
 - (void)dealloc;
-- (void)detectLostTouches:(id)arg1;
-- (id)initWithDefaultFrame;
-- (struct CGPoint { float x1; float x2; })magnificationPoint;
+- (id)initWithFrame;
 - (struct CGPoint { float x1; float x2; })offset;
-- (void)postAutoscrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)remove;
 - (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAutoscrollDirections:(int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setNeedsDisplay;
 - (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTarget:(id)arg1;
-- (void)setText:(id)arg1;
-- (void)setToMagnifierRenderer;
 - (void)setYOffset:(float)arg1;
 - (void)stopMagnifying:(BOOL)arg1;
-- (id)target;
-- (struct CGPoint { float x1; float x2; })terminalPoint;
 - (BOOL)terminalPointPlacedCarefully;
-- (id)text;
 - (void)updateFrameAndOffset;
-- (void)windowWillRotate:(id)arg1;
 - (float)yOffset;
 - (void)zoomDownAnimation;
 - (void)zoomDownAnimationDidStop:(id)arg1 finished:(id)arg2;

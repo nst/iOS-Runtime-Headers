@@ -5,13 +5,10 @@
 @class UIImage;
 
 @interface TSUImage : NSObject {
-    struct CGSize { 
-        float width; 
-        float height; 
     struct CGImage { } *mCGImage;
+    long mCGImageLock;
     int mOrientation;
     float mScale;
-    } mSize;
 }
 
 @property(readonly) struct CGImage { }* CGImage;
@@ -28,10 +25,14 @@
 + (id)imageWithUIImage:(id)arg1;
 
 - (struct CGImage { }*)CGImage;
+- (struct CGImage { }*)CGImageForContentsScale:(float)arg1;
 - (id)JPEGRepresentationWithCompressionQuality:(float)arg1;
 - (id)PNGRepresentation;
+- (id)TIFFRepresentation;
 - (id)UIImage;
 - (void)dealloc;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 leftCapWidth:(int)arg3 topCapHeight:(int)arg4;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 stretchingCenterWidthBy:(float)arg3;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 isFlipped:(BOOL)arg3;
 - (int)imageOrientation;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
@@ -41,6 +42,8 @@
 - (id)initWithImageSourceRef:(struct CGImageSource { }*)arg1;
 - (id)initWithUIImage:(id)arg1;
 - (BOOL)isEmpty;
+- (struct CGImage { }*)p_imageForContentsScale:(float)arg1;
+- (void)p_loadImageForScreenScaleIfNecessary:(float)arg1;
 - (float)scale;
 - (struct CGSize { float x1; float x2; })size;
 

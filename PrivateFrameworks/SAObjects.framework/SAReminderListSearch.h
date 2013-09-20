@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@class NSString;
 
-@interface SAReminderListSearch : SABaseClientBoundCommand {
+@interface SAReminderListSearch : SADomainCommand {
 }
 
 @property(copy) NSString * name;
-@property(copy) NSURL * targetAppId;
 
 + (id)listSearch;
 + (id)listSearchWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)name;
 - (BOOL)requiresResponse;
 - (void)setName:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

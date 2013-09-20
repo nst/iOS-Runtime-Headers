@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOCategory : PBCodable {
+@interface GEOCategory : PBCodable <NSCopying> {
     struct { 
         unsigned int geoOntologyId : 1; 
     NSString *_alias;
@@ -24,6 +24,7 @@
 - (id)alias;
 - (void)clearLocalizedNames;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

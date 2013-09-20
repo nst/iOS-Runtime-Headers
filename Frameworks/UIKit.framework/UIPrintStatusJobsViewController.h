@@ -10,7 +10,6 @@
     UIPrintingMessageView *_noJobsView;
 }
 
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (void)handleJobListDidChange;
 - (id)init;

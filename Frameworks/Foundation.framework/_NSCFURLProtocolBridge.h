@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @class NSURLAuthenticationChallenge, NSURLProtocol;
 
 @interface _NSCFURLProtocolBridge : NSObject <NSURLProtocolClient> {
@@ -12,6 +17,7 @@
     NSURLProtocol *_nsProt;
 }
 
++ (void)_fillinProtocolImplementation:(struct CFURLProtocolImplementation_V0 { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); }*)arg1;
 + (void)barRequest:(struct _CFURLRequest { }*)arg1;
 + (void)permitRequest:(struct _CFURLRequest { }*)arg1;
 + (void)registerWithCFURLProtocol;

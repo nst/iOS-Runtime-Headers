@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoControllerProtocol>, MPAVController, MPAVItem, MPMovieAccessLog, MPMovieErrorLog, MPSystemNowPlayingController, MPTransitionController, MPVideoView, NSArray, NSDate, NSString, UIImage, UIMovieSnapshotView, UIMovieView, UINavigationController, UIView, UIViewController, _UIHostedWindow;
+@class <MPVideoControllerProtocol>, MPAVController, MPAVItem, MPMovieAccessLog, MPMovieErrorLog, MPSystemNowPlayingController, MPTransitionController, MPVideoView, NSArray, NSDate, NSString, UIImage, UIMovieView, UINavigationController, UIView, UIViewController, _UIHostedWindow;
 
 @interface UIMoviePlayerController : NSObject {
     struct CGRect { 
@@ -23,7 +23,6 @@
         unsigned int alwaysFullscreen : 1; 
         unsigned int canAnimateControlsOverlay : 1; 
         unsigned int autoplayWhenLikelyToKeepUp : 1; 
-        unsigned int externalSourceManagesStatusBar : 1; 
         unsigned int disallowsVideoOut : 1; 
         unsigned int exited : 1; 
         unsigned int generatingOrientationNotifications : 1; 
@@ -38,8 +37,7 @@
         unsigned int alwaysAllowHidingControlsOverlay : 1; 
         unsigned int schedulePortraitLoadingIndicator : 1; 
         unsigned int clientClearedMoviePath : 1; 
-        unsigned int canCommitStatusBarAndOverlayChanges : 1; 
-        unsigned int videoFrameDisplayOnResumeDisabled : 1; 
+        unsigned int canCommitOverlayChanges : 1; 
         unsigned int usingDebugTestPath : 1; 
         unsigned int allowsWirelessPlayback : 1; 
         unsigned int useHostedWindowWhenFullscreen : 1; 
@@ -67,7 +65,6 @@
     MPAVController *_player;
     UINavigationController *_portraitNavigationController;
     UIImage *_posterImage;
-    UIMovieSnapshotView *_snapshotView;
     double _timeToSnapshot;
     double _timeWhenResignedActive;
     UIViewController *_topViewController;
@@ -79,6 +76,7 @@
 }
 
 @property(readonly) MPMovieAccessLog * accessLog;
+@property(readonly) UIView * alternateTextTrackView;
 @property BOOL alwaysAllowHidingControlsOverlay;
 @property(readonly) BOOL areClosedCaptionsAvailable;
 @property unsigned int audioControlsStyle;
@@ -91,6 +89,7 @@
 @property(readonly) NSDate * currentDate;
 @property double currentTime;
 @property id delegate;
+@property BOOL disableAlternateTextTrackRendering;
 @property BOOL disallowsVideoOut;
 @property(readonly) double duration;
 @property(readonly) MPMovieErrorLog * errorLog;
@@ -101,6 +100,7 @@
 @property(readonly) unsigned int hostedWindowContextID;
 @property(readonly) BOOL isPreparedForPlayback;
 @property(retain) MPAVItem * item;
+@property BOOL limitReadAhead;
 @property(copy) NSString * moviePath;
 @property(copy) NSString * movieSubtitle;
 @property(copy) NSString * movieTitle;
@@ -122,18 +122,21 @@
 @property BOOL useApplicationAudioSession;
 @property BOOL useHostedWindowWhenFullscreen;
 @property BOOL useLegacyControls;
-@property BOOL videoFrameDisplayOnResumeDisabled;
 @property(readonly) BOOL videoOutActive;
 @property(readonly) UIView * view;
 @property(readonly) float volume;
 @property(copy) NSString * youTubeVideoID;
 
 + (void)allInstancesResignActive;
++ (void)allInstancesResignActiveForced:(BOOL)arg1;
 + (struct CGSize { float x1; float x2; })fillSizeForMovieBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 movieNaturalSize:(struct CGSize { float x1; float x2; })arg2 interfaceOrientation:(int)arg3 destinationTVOut:(BOOL)arg4;
 + (Class)preferredWindowClass;
 
+- (void).cxx_destruct;
 - (id)_activeVideoController;
-- (void)_addSnapshotViewForTime:(double)arg1;
+- (void)_alternateTextTrackDidOutputNotification:(id)arg1;
+- (void)_alternateTextTrackWillChangeNotification:(id)arg1;
+- (void)_alternateTracksAvailableNotification:(id)arg1;
 - (void)_autoRotateToCurrentOrientationAnimated:(BOOL)arg1;
 - (void)_autoRotateToInterfaceOrientation:(int)arg1 animated:(BOOL)arg2;
 - (id)_backgroundPlaceholderView;
@@ -170,7 +173,6 @@
 - (void)_reconfigurePortraitNavigationItem:(id)arg1 time:(double)arg2 animate:(BOOL)arg3;
 - (void)_registerForNotifications;
 - (void)_reloadForTransitionFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 animated:(BOOL)arg3;
-- (void)_removeSnapshotView;
 - (void)_serverDeathNotification:(id)arg1;
 - (void)_setActiveViewController:(id)arg1 forTransition:(BOOL)arg2;
 - (void)_setTVOutEnabled:(BOOL)arg1;
@@ -194,6 +196,7 @@
 - (void)_willResignNotification:(id)arg1;
 - (void)_willSuspendNotification:(id)arg1;
 - (id)accessLog;
+- (id)alternateTextTrackView;
 - (BOOL)alwaysAllowHidingControlsOverlay;
 - (BOOL)areClosedCaptionsAvailable;
 - (unsigned int)audioControlsStyle;
@@ -214,6 +217,7 @@
 - (void)debugSetup;
 - (void)delayedDebugSetup;
 - (id)delegate;
+- (BOOL)disableAlternateTextTrackRendering;
 - (BOOL)disallowsVideoOut;
 - (double)duration;
 - (void)endExternalTransformation;
@@ -235,6 +239,7 @@
 - (id)item;
 - (void)layoutUIInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fullScreen:(BOOL)arg2;
 - (void)layoutUIInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)limitReadAhead;
 - (id)moviePath;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })moviePlaceholderImageRectForMovieWithAspectRatio:(float)arg1;
 - (id)movieSubtitle;
@@ -283,6 +288,7 @@
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredMovieParts:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)setDisableAlternateTextTrackRendering:(BOOL)arg1;
 - (void)setDisallowsVideoOut:(BOOL)arg1;
 - (void)setDisplayable:(BOOL)arg1 movieParts:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)setDisplayableMovieParts:(unsigned int)arg1 animated:(BOOL)arg2;
@@ -292,6 +298,7 @@
 - (BOOL)setInterfaceOrientation:(int)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)setItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setItem:(id)arg1;
+- (void)setLimitReadAhead:(BOOL)arg1;
 - (void)setManagesStatusBar:(BOOL)arg1;
 - (void)setMoviePath:(id)arg1;
 - (void)setMovieSubtitle:(id)arg1;
@@ -306,9 +313,7 @@
 - (void)setUseApplicationAudioSession:(BOOL)arg1;
 - (void)setUseHostedWindowWhenFullscreen:(BOOL)arg1;
 - (void)setUseLegacyControls:(BOOL)arg1;
-- (void)setVideoFrameDisplayOnResumeDisabled:(BOOL)arg1;
 - (void)setYouTubeVideoID:(id)arg1;
-- (void)snapshotViewWasTapped:(id)arg1;
 - (void)stop;
 - (BOOL)stopAtEnd;
 - (void)tearDownUI;
@@ -319,7 +324,9 @@
 - (BOOL)videoController:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)videoController:(id)arg1 willHideOverlayWithDuration:(double)arg2;
 - (void)videoController:(id)arg1 willShowOverlayWithDuration:(double)arg2;
+- (void)videoControllerDidBeginScrubbing:(id)arg1;
 - (void)videoControllerDidCreateFullscreenView:(id)arg1;
+- (void)videoControllerDidEndScrubbing:(id)arg1;
 - (void)videoControllerDidEnterFullscreen:(id)arg1;
 - (void)videoControllerDidExitFullscreen:(id)arg1;
 - (void)videoControllerDidHideOverlay:(id)arg1;
@@ -328,7 +335,6 @@
 - (BOOL)videoControllerShouldAutohide:(id)arg1;
 - (void)videoControllerWillEnterFullscreen:(id)arg1;
 - (void)videoControllerWillExitFullscreen:(id)arg1 reason:(int)arg2;
-- (BOOL)videoFrameDisplayOnResumeDisabled;
 - (BOOL)videoOutActive;
 - (id)view;
 - (void)viewController:(id)arg1 beginIgnoringChangeTypes:(unsigned int)arg2;

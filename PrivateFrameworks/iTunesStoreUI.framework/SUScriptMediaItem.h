@@ -9,10 +9,10 @@
 
 @property(readonly) MPMediaItem * nativeItem;
 
-+ (id)copyScriptMediaTypesForNativeMediaTypes:(int)arg1;
++ (id)copyScriptMediaTypesForNativeMediaTypes:(unsigned int)arg1;
 + (void)initialize;
-+ (int)nativeMediaTypesForScriptMediaTypes:(id)arg1;
-+ (id)scriptMediaTypeForNativeMediaType:(int)arg1;
++ (unsigned int)nativeMediaTypesForScriptMediaTypes:(id)arg1;
++ (id)scriptMediaTypeForNativeMediaType:(unsigned int)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;

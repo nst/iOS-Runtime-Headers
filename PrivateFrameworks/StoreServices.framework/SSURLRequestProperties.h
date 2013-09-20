@@ -11,6 +11,8 @@
 @interface SSURLRequestProperties : NSObject <SSXPCCoding, NSCoding, NSCopying, NSMutableCopying> {
     int _allowedRetryCount;
     unsigned int _cachePolicy;
+    NSString *_clientAuditBundleIdentifier;
+    NSData *_clientAuditTokenData;
     NSString *_clientIdentifier;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     long long _expectedContentLength;
@@ -19,12 +21,17 @@
     NSDictionary *_httpHeaders;
     NSString *_httpMethod;
     BOOL _isITunesStoreRequest;
+    BOOL _largeDownload;
     unsigned int _networkServiceType;
     NSDictionary *_requestParameters;
     BOOL _requiresExtendedValidationCertificates;
+    BOOL _shouldAddKBSyncData;
     BOOL _shouldDecodeResponse;
+    BOOL _shouldDisableCellular;
     BOOL _shouldDisableCellularFallback;
     BOOL _shouldProcessProtocol;
+    BOOL _shouldSendSecureToken;
+    BOOL _shouldSetCookies;
     double _timeoutInterval;
     NSString *_urlBagKey;
     int _urlBagType;
@@ -46,14 +53,21 @@
 @property(readonly) int allowedRetryCount;
 @property(readonly) unsigned int cachePolicy;
 @property(readonly) BOOL canBeResolved;
+@property(readonly) NSString * clientAuditBundleIdentifier;
+@property(readonly) NSData * clientAuditTokenData;
 @property(readonly) NSString * clientIdentifier;
 @property(readonly) long long expectedContentLength;
+@property(getter=isLargeDownload,readonly) BOOL largeDownload;
 @property(readonly) unsigned int networkServiceType;
 @property(readonly) NSDictionary * requestParameters;
 @property(readonly) BOOL requiresExtendedValidationCertificates;
+@property(readonly) BOOL shouldAddKBSyncData;
 @property(readonly) BOOL shouldDecodeResponse;
+@property(readonly) BOOL shouldDisableCellular;
 @property(readonly) BOOL shouldDisableCellularFallback;
 @property(readonly) BOOL shouldProcessProtocol;
+@property(readonly) BOOL shouldSendSecureToken;
+@property(readonly) BOOL shouldSetCookies;
 @property(readonly) double timeoutInterval;
 @property(readonly) NSArray * userAgentComponents;
 
@@ -70,6 +84,8 @@
 - (int)allowedRetryCount;
 - (unsigned int)cachePolicy;
 - (BOOL)canBeResolved;
+- (id)clientAuditBundleIdentifier;
+- (id)clientAuditTokenData;
 - (id)clientIdentifier;
 - (id)copyURLRequest;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -85,13 +101,18 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isITunesStoreRequest;
+- (BOOL)isLargeDownload;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)networkServiceType;
 - (id)requestParameters;
 - (BOOL)requiresExtendedValidationCertificates;
+- (BOOL)shouldAddKBSyncData;
 - (BOOL)shouldDecodeResponse;
+- (BOOL)shouldDisableCellular;
 - (BOOL)shouldDisableCellularFallback;
 - (BOOL)shouldProcessProtocol;
+- (BOOL)shouldSendSecureToken;
+- (BOOL)shouldSetCookies;
 - (double)timeoutInterval;
 - (id)userAgentComponents;
 

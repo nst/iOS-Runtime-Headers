@@ -2,13 +2,8 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSMutableArray;
-
 @interface AVPixelBufferAttributeMediator : NSObject {
-    NSMutableArray *_layers;
-    struct __CFArray { } *_otherStakeHoldersOrdered;
-    struct __CFDictionary { } *_otherStakeHoldersToAttributesMap;
-    BOOL layersAreSuppressed;
+    struct OpaqueVTPixelBufferAttributesMediator { } *_mediator;
 }
 
 - (void)dealloc;

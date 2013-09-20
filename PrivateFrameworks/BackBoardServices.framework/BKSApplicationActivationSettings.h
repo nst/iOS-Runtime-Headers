@@ -10,6 +10,8 @@
     BOOL _enableTests;
     BOOL _firstLaunchAfterBoot;
     BOOL _flip;
+    BOOL _forBackgroundContentFetching;
+    BOOL _forBackgroundURLSession;
     BOOL _forLocalNotification;
     BOOL _forRemoteNotification;
     int _interfaceOrientation;
@@ -31,6 +33,8 @@
 @property BOOL enableTests;
 @property BOOL firstLaunchAfterBoot;
 @property BOOL flip;
+@property BOOL forBackgroundContentFetching;
+@property BOOL forBackgroundURLSession;
 @property BOOL forLocalNotification;
 @property BOOL forRemoteNotification;
 @property int interfaceOrientation;
@@ -55,6 +59,8 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (BOOL)firstLaunchAfterBoot;
 - (BOOL)flip;
+- (BOOL)forBackgroundContentFetching;
+- (BOOL)forBackgroundURLSession;
 - (BOOL)forLocalNotification;
 - (BOOL)forRemoteNotification;
 - (id)initWithSettings:(id)arg1 zone:(struct _NSZone { }*)arg2;
@@ -69,6 +75,8 @@
 - (void)setEnableTests:(BOOL)arg1;
 - (void)setFirstLaunchAfterBoot:(BOOL)arg1;
 - (void)setFlip:(BOOL)arg1;
+- (void)setForBackgroundContentFetching:(BOOL)arg1;
+- (void)setForBackgroundURLSession:(BOOL)arg1;
 - (void)setForLocalNotification:(BOOL)arg1;
 - (void)setForRemoteNotification:(BOOL)arg1;
 - (void)setInterfaceOrientation:(int)arg1;

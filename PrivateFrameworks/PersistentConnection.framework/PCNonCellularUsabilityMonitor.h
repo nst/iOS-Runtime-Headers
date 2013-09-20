@@ -7,7 +7,7 @@
 @interface PCNonCellularUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol, PCInterfaceUsabilityMonitorDelegate> {
     struct dispatch_queue_s { } *_delegateQueue;
     CUTWeakReference *_delegateReference;
-    BOOL _demoOverride;
+    NSString *_demoOverrideInterface;
     NSMutableArray *_interfaceMonitors;
     struct dispatch_queue_s { } *_ivarQueue;
     struct dispatch_queue_s { } *_monitorDelegateQueue;
@@ -17,12 +17,15 @@
     double _trackedTimeInterval;
 }
 
+@property(readonly) struct __CFString { }* currentRAT;
 @property <PCInterfaceUsabilityMonitorDelegate> * delegate;
 @property(readonly) int interfaceIdentifier;
 @property(readonly) BOOL isInterfaceHistoricallyUsable;
 @property(readonly) BOOL isInterfaceUsable;
 @property(readonly) BOOL isInternetReachable;
+@property(readonly) BOOL isLTEWithCDRX;
 @property(readonly) BOOL isPoorLinkQuality;
+@property(readonly) BOOL isRadioHot;
 @property(readonly) int linkQuality;
 @property(readonly) NSString * linkQualityString;
 
@@ -40,6 +43,7 @@
 - (BOOL)isInterfaceUsable;
 - (BOOL)isInternetReachable;
 - (BOOL)isPoorLinkQuality;
+- (BOOL)isRadioHot;
 - (int)linkQuality;
 - (id)linkQualityString;
 - (void)setDelegate:(id)arg1;

@@ -19,7 +19,6 @@
     id _claimerOrNil;
     NSObject<OS_dispatch_semaphore> *_claimerWaiterOrNull;
     NSObject<OS_xpc_object> *_client;
-    BOOL _didMakePresentersRelinquishToWriter;
     BOOL _didWait;
     BOOL _isRevoked;
     NSMutableOrderedSet *_pendingClaims;
@@ -27,7 +26,6 @@
     NSString *_purposeIDOrNil;
     NSMutableDictionary *_reacquisitionProceduresByPresenterID;
     NSMutableArray *_revocationProcedures;
-    BOOL _revokingIsInexorable;
     id _sandboxToken;
 }
 
@@ -77,6 +75,5 @@
 - (void)unblock;
 - (void)unblockClaimer;
 - (void)whenRevokedPerformProcedure:(id)arg1;
-- (BOOL)willBeRevoked;
 
 @end

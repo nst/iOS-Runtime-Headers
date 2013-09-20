@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class AUSetupController, AutoGuessController, NSDictionary, NSMutableDictionary, NSString, StepByStepController;
+@class AUSetupController, AutoGuessController, NSArray, NSDictionary, NSMutableDictionary, NSString, StepByStepController;
 
-@interface AssistantUIController : NSObject <AutoGuessUIDelegate, SetupUIDelegate, SetupConnectionDelegate, StepByStepUIDelegate, AssistantUIDelegateResult> {
+@interface AssistantUIController : NSObject <AutoGuessUIDelegate, SetupUIDelegate, StepByStepUIDelegate, AssistantUIDelegateResult, SetupUIConfigDelegate> {
     AutoGuessController *_autoGuessController;
+    BOOL _canceling;
     int _connectionStatusSelectorAwaitingResolution;
     id _delegate;
     NSDictionary *_guessCompleteDict;
@@ -13,6 +14,7 @@
     NSDictionary *_lastAutoguessInstrumentation;
     NSDictionary *_lastSetupInstrumentation;
     NSDictionary *_lastStepByStepInstrumentation;
+    NSArray *_paramScanResults;
     AUSetupController *_setupController;
     NSMutableDictionary *_setupOptions;
     int _state;
@@ -30,6 +32,7 @@
 @property(retain) NSDictionary * lastAutoguessInstrumentation;
 @property(retain) NSDictionary * lastSetupInstrumentation;
 @property(retain) NSDictionary * lastStepByStepInstrumentation;
+@property(retain) NSArray * paramScanResults;
 @property(retain) AUSetupController * setupController;
 @property(retain) NSMutableDictionary * setupOptions;
 @property(readonly) int state;
@@ -46,6 +49,7 @@
 - (int)connectionStatusSelectorAwaitingResolution;
 - (void)dealloc;
 - (id)delegate;
+- (void)deliverSetupUIConfigResult:(long)arg1 withOptions:(id)arg2;
 - (long)doneWithAssistant:(BOOL)arg1;
 - (id)guessCompleteDict;
 - (void)handlePresentAutoGuessUIFromAutoGuessCompleteResult:(BOOL)arg1;
@@ -54,10 +58,12 @@
 - (id)lastAutoguessInstrumentation;
 - (id)lastSetupInstrumentation;
 - (id)lastStepByStepInstrumentation;
-- (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 targetProductID:(id)arg3 targetDeviceKind:(id)arg4 targetName:(id)arg5 targetWiFiName:(id)arg6 sourceProductID:(id)arg7 sourceDeviceKind:(id)arg8 sourceName:(id)arg9 sourceWiFiName:(id)arg10 connectionType:(id)arg11;
+- (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 andOwningView:(id)arg3 targetProductID:(id)arg4 targetDeviceKind:(id)arg5 targetName:(id)arg6 targetWiFiName:(id)arg7 sourceProductID:(id)arg8 sourceDeviceKind:(id)arg9 sourceName:(id)arg10 sourceWiFiName:(id)arg11 connectionType:(id)arg12;
+- (id)paramScanResults;
 - (void)presentUIForConnectionVerification:(int)arg1 status:(long)arg2 paramDict:(id)arg3;
 - (void)presentUIForConnectionVerificationResult:(long)arg1 withOptions:(id)arg2;
 - (void)presentUIForStepByStepNextStepResult:(long)arg1 withOptions:(id)arg2;
+- (void)presentUIForUIConfigPrompt:(int)arg1 paramDict:(id)arg2;
 - (void)restoreNetworkDone:(id)arg1;
 - (BOOL)restoreNetworkIfNeeded:(BOOL)arg1 disassociateIfNeeded:(BOOL)arg2 forceQuit:(BOOL)arg3;
 - (void)setAutoGuessController:(id)arg1;
@@ -67,6 +73,7 @@
 - (void)setLastAutoguessInstrumentation:(id)arg1;
 - (void)setLastSetupInstrumentation:(id)arg1;
 - (void)setLastStepByStepInstrumentation:(id)arg1;
+- (void)setParamScanResults:(id)arg1;
 - (void)setSetupController:(id)arg1;
 - (void)setSetupOptions:(id)arg1;
 - (void)setStepByStepController:(id)arg1;
@@ -74,11 +81,13 @@
 - (void)setTargetMACAddress:(id)arg1;
 - (void)setTargetScanRecord:(id)arg1;
 - (void)setupCompleteWithResult:(long)arg1 baseStationInfo:(id)arg2 forController:(id)arg3;
-- (void)setupConnectionStatusUpdated:(int)arg1 status:(long)arg2 paramDict:(id)arg3 forController:(id)arg4;
 - (id)setupController;
 - (id)setupOptions;
 - (void)setupProgressUpdated:(int)arg1 status:(long)arg2 paramDict:(id)arg3 forController:(id)arg4;
 - (id)setupPromptStringForBaseInfo:(id)arg1 andResult:(long)arg2;
+- (void)setupUIConfigConnectionStatusUpdated:(int)arg1 status:(long)arg2 paramDict:(id)arg3 forController:(id)arg4;
+- (void)setupUIConfigPrompt:(int)arg1 paramDict:(id)arg2 forController:(id)arg3;
+- (void)showUIConfigPromptResult:(long)arg1 withOptions:(id)arg2;
 - (long)startAutoGuess;
 - (long)startRestoreFromAutoGuessRecommendation;
 - (long)startRestoreNetwork:(id)arg1;

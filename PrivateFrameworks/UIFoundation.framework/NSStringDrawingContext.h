@@ -14,27 +14,37 @@
             float width; 
             float height; 
         } size; 
+    struct { 
+        unsigned int _wantsNumberOfLineFragments : 1; 
+        unsigned int _wrapsForTruncationMode : 1; 
+        unsigned int _wantsBaselineOffset : 1; 
+        unsigned int _wantsScaledBaselineOffset : 1; 
+        unsigned int _wantsScaledLineHeight : 1; 
+        unsigned int _drawsDebugBaselines : 1; 
+        unsigned int _cachesLayout : 1; 
+        unsigned int _usesSimpleTextEffects : 1; 
     float _actualScaleFactor;
     float _actualTrackingAdjustment;
     float _baselineOffset;
+    id _layout;
     NSDictionary *_linkAttributes;
     unsigned int _maximumNumberOfLines;
     float _minimumScaleFactor;
     float _minimumTrackingAdjustment;
-    BOOL _multilineTruncation;
     unsigned int _numberOfLineFragments;
     float _scaledBaselineOffset;
     float _scaledLineHeight;
+    } _sdcFlags;
     } _totalBounds;
-    BOOL _wantsBaselineOffset;
     BOOL _wantsNumberOfLineFragments;
-    BOOL _wantsScaledBaselineOffset;
-    BOOL _wantsScaledLineHeight;
 }
 
 @property float actualScaleFactor;
 @property float actualTrackingAdjustment;
 @property float baselineOffset;
+@property BOOL cachesLayout;
+@property BOOL drawsDebugBaselines;
+@property(retain) id layout;
 @property unsigned int maximumNumberOfLines;
 @property float minimumScaleFactor;
 @property float minimumTrackingAdjustment;
@@ -42,6 +52,7 @@
 @property float scaledBaselineOffset;
 @property float scaledLineHeight;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } totalBounds;
+@property BOOL usesSimpleTextEffects;
 @property BOOL wantsBaselineOffset;
 @property BOOL wantsNumberOfLineFragments;
 @property BOOL wantsScaledBaselineOffset;
@@ -51,8 +62,12 @@
 - (float)actualScaleFactor;
 - (float)actualTrackingAdjustment;
 - (float)baselineOffset;
+- (BOOL)cachesLayout;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
+- (BOOL)drawsDebugBaselines;
+- (id)layout;
 - (unsigned int)maximumNumberOfLines;
 - (float)minimumScaleFactor;
 - (float)minimumTrackingAdjustment;
@@ -62,6 +77,9 @@
 - (void)setActualScaleFactor:(float)arg1;
 - (void)setActualTrackingAdjustment:(float)arg1;
 - (void)setBaselineOffset:(float)arg1;
+- (void)setCachesLayout:(BOOL)arg1;
+- (void)setDrawsDebugBaselines:(BOOL)arg1;
+- (void)setLayout:(id)arg1;
 - (void)setMaximumNumberOfLines:(unsigned int)arg1;
 - (void)setMinimumScaleFactor:(float)arg1;
 - (void)setMinimumTrackingAdjustment:(float)arg1;
@@ -69,12 +87,14 @@
 - (void)setScaledBaselineOffset:(float)arg1;
 - (void)setScaledLineHeight:(float)arg1;
 - (void)setTotalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setUsesSimpleTextEffects:(BOOL)arg1;
 - (void)setWantsBaselineOffset:(BOOL)arg1;
 - (void)setWantsNumberOfLineFragments:(BOOL)arg1;
 - (void)setWantsScaledBaselineOffset:(BOOL)arg1;
 - (void)setWantsScaledLineHeight:(BOOL)arg1;
 - (void)setWrapsForTruncationMode:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })totalBounds;
+- (BOOL)usesSimpleTextEffects;
 - (BOOL)wantsBaselineOffset;
 - (BOOL)wantsNumberOfLineFragments;
 - (BOOL)wantsScaledBaselineOffset;

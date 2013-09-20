@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOVisibleTileSet : PBCodable {
+@interface GEOVisibleTileSet : PBCodable <NSCopying> {
     unsigned int _identifier;
     int _style;
     struct { unsigned int x1; unsigned int x2; unsigned int x3; } *_tileKeys;
@@ -18,6 +18,7 @@
 - (void)addTileKey:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
 - (void)clearTileKeys;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

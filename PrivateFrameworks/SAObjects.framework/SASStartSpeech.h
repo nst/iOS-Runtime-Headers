@@ -9,7 +9,11 @@
 
 @property(copy) NSString * aceId;
 @property(copy) NSString * audioSource;
+@property BOOL clearContext;
 @property int codec;
+@property(copy) NSString * deviceIdentifier;
+@property(copy) NSString * deviceModel;
+@property BOOL disableAutoEndpointing;
 @property(copy) NSString * dspStatus;
 @property(copy) NSString * headsetAddress;
 @property(copy) NSString * headsetId;
@@ -24,7 +28,11 @@
 + (id)startSpeechWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)audioSource;
+- (BOOL)clearContext;
 - (int)codec;
+- (id)deviceIdentifier;
+- (id)deviceModel;
+- (BOOL)disableAutoEndpointing;
 - (id)dspStatus;
 - (id)encodedClassName;
 - (id)groupIdentifier;
@@ -36,7 +44,11 @@
 - (id)noiseReductionLevel;
 - (id)origin;
 - (void)setAudioSource:(id)arg1;
+- (void)setClearContext:(BOOL)arg1;
 - (void)setCodec:(int)arg1;
+- (void)setDeviceIdentifier:(id)arg1;
+- (void)setDeviceModel:(id)arg1;
+- (void)setDisableAutoEndpointing:(BOOL)arg1;
 - (void)setDspStatus:(id)arg1;
 - (void)setHeadsetAddress:(id)arg1;
 - (void)setHeadsetId:(id)arg1;

@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSMutableArray, Protocol, XPCProxy;
+@class NSMutableArray, Protocol;
 
 @interface SKInvocationQueueProxy : NSObject {
     NSMutableArray *_invocationQueue;
-    XPCProxy *_invocationTarget;
+    id _invocationTarget;
     Protocol *_protocol;
 }
 
-@property(retain) XPCProxy * invocationTarget;
+@property(retain) id invocationTarget;
 
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;

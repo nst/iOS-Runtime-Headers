@@ -12,6 +12,7 @@
 
 @property BOOL keepRemovedAttachments;
 
++ (id)_setOfAllSources;
 + (id)allSources;
 
 - (id)attachmentForURL:(id)arg1 includeRemoved:(BOOL)arg2;

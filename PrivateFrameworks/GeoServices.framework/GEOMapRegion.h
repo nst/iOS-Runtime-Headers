@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOMapRegion : PBCodable {
+@interface GEOMapRegion : PBCodable <NSCopying> {
     struct { 
         unsigned int eastLng : 1; 
         unsigned int northLat : 1; 
@@ -32,12 +32,17 @@
 @property(retain) NSMutableArray * vertexs;
 @property double westLng;
 
++ (id)_mapkit_mapRegionEnclosingAnnotations:(id)arg1;
+
 - (void)addVertex:(id)arg1;
 - (double)centerLat;
 - (double)centerLng;
 - (void)clearVertexs;
 - (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
+- (BOOL)containsLocationWithAccuracy:(id)arg1;
+- (BOOL)containsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -49,6 +54,7 @@
 - (unsigned int)hash;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)initWithMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithRadialPlace:(id)arg1;
 - (id)initWithSpannedRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (double)northLat;

@@ -35,6 +35,7 @@
 - (id)initWithFilename:(id)arg1;
 - (id)lastStatDate;
 - (void)logData:(id)arg1;
+- (void)logLine:(id)arg1 withPrefix:(id)arg2;
 - (void)logString:(id)arg1;
 - (void)setFh:(id)arg1;
 - (void)setLastStatDate:(id)arg1;

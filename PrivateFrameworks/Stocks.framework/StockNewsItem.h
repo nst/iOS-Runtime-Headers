@@ -5,13 +5,13 @@
 @class NSDate, NSString, NSURL;
 
 @interface StockNewsItem : NSObject {
-    unsigned long long ID;
-    NSDate *date;
-    NSString *headline;
-    NSURL *link;
-    NSString *localizedDateString;
-    NSString *source;
-    NSString *summary;
+    unsigned long long _ID;
+    NSDate *_date;
+    NSString *_headline;
+    NSURL *_link;
+    NSString *_localizedDateString;
+    NSString *_source;
+    NSString *_summary;
 }
 
 @property unsigned long long ID;

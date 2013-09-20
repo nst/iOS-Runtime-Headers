@@ -5,6 +5,8 @@
 @class NSDictionary, NSString, NSTimer;
 
 @interface SWRemoteRunWorkoutProxyClient : SWRunWorkoutProxy {
+    NSString *_currentAlbumName;
+    NSString *_currentArtistName;
     NSString *_currentSongName;
     float _goal;
     NSString *_goalType;
@@ -28,6 +30,8 @@
 - (void)activateWorkout;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (id)currentAlbumName;
+- (id)currentArtistName;
 - (id)currentSongName;
 - (void)dealloc;
 - (void)endSeeking;
@@ -35,6 +39,7 @@
 - (void)goToNowPlaying;
 - (float)goal;
 - (id)goalType;
+- (BOOL)hasEverStarted;
 - (BOOL)hasPowerSong;
 - (id)init;
 - (int)musicSelection;

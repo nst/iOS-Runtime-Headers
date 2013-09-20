@@ -4,7 +4,7 @@
 
 @class GEODownloadMetadata, GEOSupportedTileSets;
 
-@interface GEOSupportedTileSetsDownload : PBCodable {
+@interface GEOSupportedTileSetsDownload : PBCodable <NSCopying> {
     GEODownloadMetadata *_metadata;
     GEOSupportedTileSets *_tileSets;
 }
@@ -13,6 +13,7 @@
 @property(retain) GEOSupportedTileSets * tileSets;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

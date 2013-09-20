@@ -9,11 +9,12 @@
 }
 
 - (BOOL)animatesDataChange;
-- (id)contentsImageForStyle:(int)arg1;
+- (BOOL)cachesImage;
+- (id)contentsImage;
 - (void)dealloc;
 - (float)extraRightPadding;
 - (int)textAlignment;
+- (int)textStyle;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
-- (BOOL)usesSmallerTextFont;
 
 @end

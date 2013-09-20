@@ -8,11 +8,13 @@
     struct CGPoint { 
         float x; 
         float y; 
+    int _buttonType;
     unsigned int _delaysRecognitionForGreaterTapCounts;
     id _imp;
     } _locationInView;
 }
 
+@property(setter=_setButtonType:) int _buttonType;
 @property(readonly) struct CGPoint { float x1; float x2; } centroid;
 @property(readonly) struct CGPoint { float x1; float x2; } location;
 @property unsigned int numberOfTapsRequired;
@@ -24,10 +26,16 @@
 + (void)addTapGestureRecognizerToView:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 
 - (void)_appendSubclassDescription:(id)arg1;
+- (int)_buttonType;
 - (BOOL)_delaysRecognitionForGreaterTapCounts;
+- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_resetGestureRecognizer;
+- (void)_setButtonType:(int)arg1;
 - (void)_setDelaysRecognitionForGreaterTapCounts:(BOOL)arg1;
 - (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
+- (float)_touchSloppinessFactor;
 - (float)allowableMovement;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (struct CGPoint { float x1; float x2; })centroid;

@@ -30,13 +30,12 @@
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } desc; 
-        struct Vector<WebCore::MimeClassInfo, 0> { 
+        struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow> { 
+            struct MimeClassInfo {} *m_buffer; 
+            unsigned int m_capacity; 
             unsigned int m_size; 
-            struct VectorBuffer<WebCore::MimeClassInfo, 0> { 
-                struct MimeClassInfo {} *m_buffer; 
-                unsigned int m_capacity; 
-            } m_buffer; 
         } mimes; 
+        boolisApplicationPlugin; 
     struct RetainPtr<__CFBundle *> { 
         struct __CFBundle {} *m_ptr; 
     int (*BP_CreatePluginMIMETypesPreferences)();
@@ -54,7 +53,6 @@
 - (void).cxx_destruct;
 - (id)MIMETypeForExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (id)_objectForInfoDictionaryKey:(id)arg1;
-- (oneway void)_webcore_releaseOnWebThread;
 - (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleIdentifier;
 - (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleVersion;
 - (void)createPropertyListFile;
@@ -68,8 +66,7 @@
 - (BOOL)load;
 - (id)pListForPath:(id)arg1 createFile:(BOOL)arg2;
 - (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
-- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo, 0> { unsigned int x_4_1_1; struct VectorBuffer<WebCore::MimeClassInfo, 0> { struct MimeClassInfo {} *x_2_2_1; unsigned int x_2_2_2; } x_4_1_2; } x4; }*)pluginInfo;
-- (oneway void)release;
+- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow> { struct MimeClassInfo {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; boolx5; }*)pluginInfo;
 - (BOOL)supportsExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (void)unload;

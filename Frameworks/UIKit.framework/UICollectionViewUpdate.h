@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSMutableIndexSet, UICollectionViewData;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, UICollectionView, UICollectionViewData;
 
 @interface UICollectionViewUpdate : NSObject {
     struct CGRect { 
@@ -26,9 +26,14 @@
     id *_animatedFooters;
     id *_animatedHeaders;
     id *_animatedItems;
-    NSMutableArray *_deletedSections;
+    UICollectionView *_collectionView;
+    NSMutableIndexSet *_deletedSections;
+    NSMutableArray *_deletedSupplementaryIndexesSectionArray;
+    NSMutableDictionary *_deletedSupplementaryTopLevelIndexesDict;
     NSMutableArray *_gaps;
-    NSMutableArray *_insertedSections;
+    NSMutableIndexSet *_insertedSections;
+    NSMutableArray *_insertedSupplementaryIndexesSectionArray;
+    NSMutableDictionary *_insertedSupplementaryTopLevelIndexesDict;
     NSMutableIndexSet *_movedItems;
     NSMutableIndexSet *_movedSections;
     int *_newGlobalItemMap;
@@ -46,7 +51,10 @@
 - (void)_computeGaps;
 - (void)_computeItemUpdates;
 - (void)_computeSectionUpdates;
+- (void)_computeSupplementaryUpdates;
 - (void)dealloc;
-- (id)initWithUpdateItems:(id)arg1 oldModel:(id)arg2 newModel:(id)arg3 oldVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 newVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
+- (id)initWithCollectionView:(id)arg1 updateItems:(id)arg2 oldModel:(id)arg3 newModel:(id)arg4 oldVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 newVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6;
+- (id)newIndexPathForSupplementaryElementOfKind:(id)arg1 oldIndexPath:(id)arg2;
+- (id)oldIndexPathForSupplementaryElementOfKind:(id)arg1 newIndexPath:(id)arg2;
 
 @end

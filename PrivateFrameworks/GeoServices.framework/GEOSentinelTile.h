@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOSentinelTile : PBCodable {
+@interface GEOSentinelTile : PBCodable <NSCopying> {
     NSString *_resourceName;
     int _type;
 }
@@ -13,6 +13,7 @@
 @property int type;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

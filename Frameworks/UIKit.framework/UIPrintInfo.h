@@ -22,8 +22,6 @@
 @property(copy) NSString * printerID;
 @property BOOL scaleUp;
 
-+ (void)_saveDuplex:(int)arg1;
-+ (void)_savePrinter:(id)arg1;
 + (id)printInfo;
 + (id)printInfoWithDictionary:(id)arg1;
 

@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class CDXClient, NSData, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString;
+@class CDXClient, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>, NSString, TimingCollection;
 
 @interface GKConnectionInternal : GKConnection <CDXClientDelegate, CDXClientSessionDelegate> {
     struct _opaque_pthread_mutex_t { 
@@ -43,6 +43,7 @@
     NSMutableDictionary *_localGamingSocketToConnectionDataMap;
     NSMutableDictionary *_localGamingSocketToPIDMap;
     NSMutableArray *_pendingConnectionPIDList;
+    TimingCollection *_perfTimers;
     NSString *_pidGUID;
     NSMutableDictionary *_pidToConnectTimeoutSource;
     NSMutableDictionary *_pidToConnectionDataMap;
@@ -51,10 +52,12 @@
     NSMutableDictionary *_pidToRelayConnectionDataMap;
     NSMutableDictionary *_pidToRelayInitiateInfoMap;
     NSMutableDictionary *_pidToRelayUpdateInfoMap;
+    NSMutableSet *_pidsPreparedForConnection;
     NSData *_preblob;
     id _preblobCallback;
     double _preblobCallbackCancelTime;
     NSMutableDictionary *_preblobToPIDMap;
+    struct opaqueRTCReporting { } *_reportingAgent;
     BOOL _toForwardEVents;
     NSMutableDictionary *_updateRelayQueue;
     double _wakeTime;
@@ -81,7 +84,6 @@
 - (BOOL)convertPeerID:(id)arg1 toParticipantID:(id*)arg2;
 - (id)createInitiateRelayDictionaryForParticipant:(id)arg1 remotePeerID:(id)arg2;
 - (id)createInsecureTicketUsingSortedConnectionsFromList:(id)arg1;
-- (id)createRelayUpdateDictionaryForParticipant:(id)arg1 didInitiate:(BOOL)arg2;
 - (void)dealloc;
 - (void)doRelayCheckForRemotePeerID:(id)arg1;
 - (id)eventDelegate;
@@ -99,13 +101,16 @@
 - (void)localGamingReceiveDataHandler:(id)arg1 data:(id)arg2 time:(double)arg3 error:(id)arg4;
 - (id)networkStatistics;
 - (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
+- (id)newRelayUpdateDictionaryForParticipant:(id)arg1 didInitiate:(BOOL)arg2;
 - (id)pidToConnectTimeoutSource;
 - (void)preRelease;
+- (struct opaqueRTCReporting { }*)reportingAgent;
 - (void)setCdxClient:(id)arg1;
 - (void)setCdxSessions:(id)arg1;
 - (void)setEventDelegate:(id)arg1;
 - (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;
 - (void)setPidToConnectTimeoutSource:(id)arg1;
+- (void)setReportingAgent:(struct opaqueRTCReporting { }*)arg1;
 - (BOOL)shouldWeInitiateRelayWithPID:(unsigned int)arg1;
 - (BOOL)startListeningForLocalGamingCDX;
 - (id)timerQueue;

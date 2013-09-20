@@ -2,20 +2,36 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, PKPassBucketTemplate;
+@class NSArray, NSMutableArray, PKPass, PKPassBucketTemplate, PKPassColorProfile;
 
 @interface PKPassBucketView : UIView {
+    int _background;
+    NSArray *_bucket;
     PKPassBucketTemplate *_bucketTemplate;
+    PKPassColorProfile *_colorProfile;
     NSMutableArray *_fieldViews;
+    PKPass *_pass;
 }
 
-@property(readonly) PKPassBucketTemplate * bucketTemplate;
+@property(retain) NSArray * bucket;
+@property(retain) PKPassBucketTemplate * bucketTemplate;
+@property(retain) PKPassColorProfile * colorProfile;
+@property(retain) PKPass * pass;
 
+- (int)_backgroundForBucketTemplate:(id)arg1;
+- (void)_measureAndFitEvenlySizedSubviews;
+- (void)_measureAndFitVariablySizedSubviews;
+- (void)_updateSubviews;
+- (id)bucket;
 - (id)bucketTemplate;
+- (id)colorProfile;
 - (void)dealloc;
-- (id)initWithBucket:(id)arg1 bucketTemplate:(id)arg2;
 - (void)layoutSubviews;
+- (id)pass;
 - (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;
-- (void)setColorProfile:(id)arg1 background:(int)arg2;
+- (void)setBucket:(id)arg1;
+- (void)setBucketTemplate:(id)arg1;
+- (void)setColorProfile:(id)arg1;
+- (void)setPass:(id)arg1;
 
 @end

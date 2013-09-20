@@ -13,6 +13,8 @@
 @property(copy) NSNumber * defaultAlarmOffset;
 @property(getter=isEnabled) BOOL enabled;
 @property(copy) NSString * externalID;
+@property(copy) NSString * externalModificationTag;
+@property BOOL onlyCreatorCanModify;
 @property int sourceType;
 @property(copy) NSString * title;
 
@@ -26,13 +28,17 @@
 - (id)description;
 - (int)entityType;
 - (id)externalID;
+- (id)externalModificationTag;
 - (id)init;
 - (BOOL)isEnabled;
+- (BOOL)onlyCreatorCanModify;
 - (BOOL)refresh;
 - (void)reset;
 - (void)setDefaultAlarmOffset:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setExternalID:(id)arg1;
+- (void)setExternalModificationTag:(id)arg1;
+- (void)setOnlyCreatorCanModify:(BOOL)arg1;
 - (void)setSourceType:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUUID:(id)arg1;

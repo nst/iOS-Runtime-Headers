@@ -14,7 +14,7 @@
     int type;
 }
 
-@property id handler;
+@property(copy) id handler;
 @property(copy) NSString * title;
 @property int type;
 

@@ -4,7 +4,7 @@
 
 @class NSArray, NSNumber, NSString, NSURL;
 
-@interface SAAlarmUpdate : SABaseClientBoundCommand {
+@interface SAAlarmUpdate : SADomainCommand {
 }
 
 @property(copy) NSArray * addedFrequency;
@@ -14,7 +14,6 @@
 @property(copy) NSString * label;
 @property(copy) NSNumber * minute;
 @property(copy) NSArray * removedFrequency;
-@property(copy) NSURL * targetAppId;
 
 + (id)update;
 + (id)updateWithDictionary:(id)arg1 context:(id)arg2;
@@ -36,7 +35,5 @@
 - (void)setLabel:(id)arg1;
 - (void)setMinute:(id)arg1;
 - (void)setRemovedFrequency:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

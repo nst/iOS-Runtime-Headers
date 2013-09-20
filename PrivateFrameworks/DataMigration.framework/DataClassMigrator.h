@@ -15,9 +15,9 @@
 @property(readonly) BOOL shouldPreserveSettingsAfterRestore;
 @property(readonly) BOOL wasPasscodeSetInBackup;
 
+- (void).cxx_destruct;
 - (id)context;
 - (id)dataClassName;
-- (void)dealloc;
 - (BOOL)didMigrateBackupFromDifferentDevice;
 - (BOOL)didRestoreFromBackup;
 - (BOOL)didRestoreFromCloudBackup;

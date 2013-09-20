@@ -5,6 +5,8 @@
 @class NSDictionary;
 
 @interface AVAVVideoSettingsVideoOutputSettings : AVVideoOutputSettings <AVReencodedVideoSettingsForFig> {
+    NSDictionary *_VTCleanApertureDictionary;
+    NSDictionary *_VTPixelAspectRatioDictionary;
     NSDictionary *_adaptedVideoCompressionProperties;
 }
 
@@ -17,11 +19,13 @@
 + (id)eligibleOutputSettingsDictionaryKeys;
 
 - (BOOL)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
+- (id)cleanApertureDictionary;
 - (void)dealloc;
 - (int)height;
 - (id)initWithAVVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (id)initWithTrustedAVVideoSettingsDictionary:(id)arg1;
 - (BOOL)isCodecAvailableOnCurrentSystem;
+- (id)pixelAspectRatioDictionary;
 - (unsigned long)videoCodecType;
 - (id)videoCompressionProperties;
 - (id)videoEncoderSpecification;

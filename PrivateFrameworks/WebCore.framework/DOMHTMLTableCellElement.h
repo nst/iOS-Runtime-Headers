@@ -23,6 +23,7 @@
 @property(copy) NSString * vAlign;
 @property(copy) NSString * width;
 
+- (id)_cellAbove;
 - (id)abbr;
 - (id)align;
 - (id)axis;

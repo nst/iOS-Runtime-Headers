@@ -33,7 +33,7 @@
 - (void)insertNodeAtHead:(id)arg1;
 - (unsigned int)maximumCapacity;
 - (id)objectForKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
-- (id)objectWithoutTouchingForKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
+- (id)objectWithoutPromotingForKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
 - (void)purge;
 - (void)removeAllObjects;
 - (void)removeNode:(id)arg1;

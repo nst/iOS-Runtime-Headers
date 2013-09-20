@@ -14,6 +14,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)purge;
-- (id)textureWithName:(id)arg1 style:(id)arg2 levelOfDetail:(unsigned int)arg3;
+- (id)textureWithName:(id)arg1 style:(id)arg2 levelOfDetail:(unsigned int)arg3 scale:(float)arg4;
 
 @end

@@ -6,33 +6,39 @@
    See Warning(s) below.
  */
 
-@class NSString;
+@class <VKAnimationRunner>, NSString;
 
 @interface VKAnimation : NSObject {
     struct { 
+        unsigned int resuming : 1; 
         unsigned int runsForever : 1; 
         unsigned int startTimestampSet : 1; 
-        unsigned int pauseTimestampSet : 1; 
-        unsigned int completed : 1; 
-        unsigned int state : 2; 
+        unsigned int state : 3; 
     id _completionHandler;
     double _duration;
     } _flags;
+    double _lastTimestamp;
     NSString *_name;
-    double _pauseTimestamp;
     int _priority;
+    <VKAnimationRunner> *_runner;
     double _startTimestamp;
     id _stepHandler;
     id _timingFunction;
 }
 
+@property(copy) id completionHandler;
 @property double duration;
 @property(readonly) int priority;
 @property(readonly) BOOL running;
 @property BOOL runsForever;
+@property(copy) id stepHandler;
 @property(copy) id timingFunction;
 
++ (void)setDragCoefficientGetter:(id)arg1;
+
+- (id).cxx_construct;
 - (void)_stopAnimation:(BOOL)arg1;
+- (id)completionHandler;
 - (void)dealloc;
 - (id)description;
 - (double)duration;
@@ -49,11 +55,15 @@
 - (void)resume;
 - (BOOL)running;
 - (BOOL)runsForever;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setRunsForever:(BOOL)arg1;
+- (void)setStepHandler:(id)arg1;
 - (void)setTimingFunction:(id)arg1;
-- (void)startWithStepHandler:(id)arg1 completionHandler:(id)arg2;
+- (void)startWithRunner:(id)arg1;
+- (id)stepHandler;
 - (void)stop;
 - (id)timingFunction;
+- (void)transferToRunner:(id)arg1;
 
 @end

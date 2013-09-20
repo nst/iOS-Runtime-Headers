@@ -24,7 +24,9 @@
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)setFireDate:(id)arg1;
+- (void)setTolerance:(double)arg1;
 - (double)timeInterval;
+- (double)tolerance;
 - (id)userInfo;
 
 @end

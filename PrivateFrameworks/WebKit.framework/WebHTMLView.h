@@ -47,7 +47,7 @@
 - (id)_frame;
 - (void)_frameOrBoundsChanged;
 - (id)_frameView;
-- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); int x2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; boolx4; boolx5; boolx6; boolx7; boolx8; boolx9; boolx10; unsigned short x11; struct EventTarget {} *x12; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_13_1_1; } x13; unsigned long long x14; struct RefPtr<WebCore::Event> { struct Event {} *x_15_1_1; } x15; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_16_1_1; } x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; struct OwnPtr<WebCore::PlatformKeyboardEvent> { struct PlatformKeyboardEvent {} *x_22_1_1; } x22; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_23_1_1; } x23; unsigned int x24; unsigned int x25 : 1; struct Vector<WebCore::KeypressCommand, 0> { unsigned int x_26_1_1; struct VectorBuffer<WebCore::KeypressCommand, 0> { struct KeypressCommand {} *x_2_2_1; unsigned int x_2_2_2; } x_26_1_2; } x26; }*)arg1;
+- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; boolx5; boolx6; boolx7; boolx8; boolx9; boolx10; boolx11; unsigned short x12; struct EventTarget {} *x13; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_14_1_1; } x14; unsigned long long x15; struct RefPtr<WebCore::Event> { struct Event {} *x_16_1_1; } x16; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_17_1_1; } x17; int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; struct OwnPtr<WebCore::PlatformKeyboardEvent> { struct PlatformKeyboardEvent {} *x_23_1_1; } x23; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_24_1_1; } x24; unsigned int x25; unsigned int x26 : 1; struct Vector<WebCore::KeypressCommand, 0, WTF::CrashOnOverflow> { struct KeypressCommand {} *x_27_1_1; unsigned int x_27_1_2; unsigned int x_27_1_3; } x27; }*)arg1;
 - (BOOL)_hasHTMLDocument;
 - (BOOL)_hasInsertionPoint;
 - (BOOL)_hasSelection;
@@ -94,7 +94,6 @@
 - (BOOL)_web_isDrawingIntoLayer;
 - (void)_web_makePluginSubviewsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)_web_updateLayoutAndStyleIfNeededRecursive;
-- (oneway void)_webcore_releaseOnWebThread;
 - (void)_windowChangedKeyState;
 - (BOOL)acceptsFirstResponder;
 - (id)accessibilityFocusedUIElement;
@@ -221,6 +220,7 @@
 - (void)moveWordRight:(id)arg1;
 - (void)moveWordRightAndModifySelection:(id)arg1;
 - (void)outdent:(id)arg1;
+- (void)overWrite:(id)arg1;
 - (void)pageDown:(id)arg1;
 - (void)pageDownAndModifySelection:(id)arg1;
 - (void)pageUp:(id)arg1;
@@ -229,7 +229,6 @@
 - (void)pasteAsPlainText:(id)arg1;
 - (void)reapplyStyles;
 - (id)rectsForTextMatches;
-- (oneway void)release;
 - (BOOL)resignFirstResponder;
 - (void)scrollWheel:(id)arg1;
 - (BOOL)searchFor:(id)arg1 direction:(BOOL)arg2 caseSensitive:(BOOL)arg3 wrap:(BOOL)arg4 startInSelection:(BOOL)arg5;

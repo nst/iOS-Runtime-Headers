@@ -4,7 +4,7 @@
 
 @class GEODownloadMetadata, GEOResources;
 
-@interface GEOResourceManifestDownload : PBCodable {
+@interface GEOResourceManifestDownload : PBCodable <NSCopying> {
     GEODownloadMetadata *_metadata;
     GEOResources *_resources;
 }
@@ -14,6 +14,7 @@
 @property(retain) GEOResources * resources;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

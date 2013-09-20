@@ -39,6 +39,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
+- (void)pu_setFriction:(double)arg1;
 - (void)runWithCompletion:(id)arg1 forScreen:(id)arg2 runLoopMode:(id)arg3;
 - (void)runWithCompletion:(id)arg1;
 - (int)state;

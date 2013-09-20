@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOSearchAttributionManifest, NSMapTable, NSMutableArray;
+@class NSMapTable, NSMutableArray;
 
 @interface GEOSearchAttributionServerLocalProxy : NSObject <GEOSearchAttributionServerProxy> {
     NSMapTable *_listeners;
-    GEOSearchAttributionManifest *_manifest;
     NSMutableArray *_updateManifestCompletionHandlers;
     NSMutableArray *_updateManifestErrorHandlers;
     BOOL _updatingManifest;
 }
 
 - (void)_loadAttributionInfoForListener:(id)arg1 hasUpdatedManifest:(BOOL)arg2;
-- (id)_manifest;
 - (void)_pruneOldAttributionLogos;
 - (void)_sendError:(id)arg1 toListener:(id)arg2;
 - (void)_sendInfo:(id)arg1 updatedManifest:(BOOL)arg2 toListener:(id)arg3;

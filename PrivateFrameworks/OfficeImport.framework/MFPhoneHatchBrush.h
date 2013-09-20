@@ -10,9 +10,10 @@
 }
 
 + (id)hatchBrushWithColour:(id)arg1 :(int)arg2;
++ (id)patternNameForHatchStyle:(int)arg1;
 
 - (void)dealloc;
-- (void)fillPath:(id)arg1 :(struct CGPath { }*)arg2;
+- (void)fillPath:(id)arg1 :(id)arg2;
 - (id)initWithColour:(id)arg1 :(int)arg2;
 
 @end

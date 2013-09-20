@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <SLFacebookAudienceViewControllerDelegate>, NSArray, SLFacebookPostPrivacySetting;
+@class <SLFacebookAudienceViewControllerDelegate>, NSArray, SLFacebookPostPrivacySetting, UINavigationItem;
 
 @interface SLFacebookAudienceTableViewController : UITableViewController <SLFacebookAudienceViewController> {
+    UINavigationItem *_navigationItem;
     NSArray *_privacySettings;
     SLFacebookPostPrivacySetting *_selectedSetting;
     <SLFacebookAudienceViewControllerDelegate> *_selectionDelegate;
@@ -17,7 +18,6 @@
 - (void)didReceiveMemoryWarning;
 - (id)initWithStyle:(int)arg1;
 - (void)loadView;
-- (id)navigationItem;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setCurrentPrivacySetting:(id)arg1;
 - (void)setPrivacySettings:(id)arg1;
@@ -25,6 +25,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

@@ -17,7 +17,7 @@
 @property(readonly) MPStoreOfferMediaItemCollection * offeredCollection;
 @property(readonly) int preferredStoreOfferVariant;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithOfferedCollection:(id)arg1 localItemsQuery:(id)arg2 preferredStoreOfferVariant:(int)arg3;
 - (id)itemsWithCompletionsCollection;
 - (id)localItems;

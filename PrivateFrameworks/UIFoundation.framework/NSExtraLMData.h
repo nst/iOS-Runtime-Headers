@@ -76,7 +76,8 @@
         unsigned int alwaysDrawsActive : 1; 
         unsigned int usesOldShowPackedGlyphs : 1; 
         unsigned int drawsUnderlinesLikeWebKit : 1; 
-        unsigned int reserved : 14; 
+        unsigned int drawsDebugBaselines : 1; 
+        unsigned int reserved : 13; 
     NSRunStorage *_attachmentSizesRun;
     NSMutableArray *_blockRunsArray;
     } _cachedFontBounds;

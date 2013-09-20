@@ -6,19 +6,27 @@
 
 @interface SSRedeemCodesRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
+    BOOL _cameraRecognized;
+    BOOL _headless;
     NSArray *_redeemCodes;
 }
 
 @property(copy) SSAuthenticationContext * authenticationContext;
+@property BOOL cameraRecognized;
+@property BOOL headless;
 @property(readonly) NSArray * redeemCodes;
 
 - (id)authenticationContext;
+- (BOOL)cameraRecognized;
 - (id)copyXPCEncoding;
 - (void)dealloc;
+- (BOOL)headless;
 - (id)initWithRedeemCodes:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)redeemCodes;
 - (void)setAuthenticationContext:(id)arg1;
+- (void)setCameraRecognized:(BOOL)arg1;
+- (void)setHeadless:(BOOL)arg1;
 - (void)startWithCompletionBlock:(id)arg1;
 - (void)startWithRedeemResponseBlock:(id)arg1;
 

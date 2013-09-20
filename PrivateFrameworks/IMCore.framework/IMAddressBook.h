@@ -11,6 +11,8 @@
 + (void)_watchLocaleChanges;
 + (id*)abAddressBook;
 + (void*)abAddressBookRef;
++ (BOOL)addressBookEnabled;
 + (void)performBlock:(id)arg1;
++ (void)setAddressBookEnabled:(BOOL)arg1;
 
 @end

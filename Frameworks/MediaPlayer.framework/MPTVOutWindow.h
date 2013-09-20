@@ -10,6 +10,7 @@
     MPVideoView *_videoView;
 }
 
+- (void).cxx_destruct;
 - (void)_playbackStateChanged:(id)arg1;
 - (BOOL)_setupTargetScreen:(id)arg1;
 - (void)dealloc;

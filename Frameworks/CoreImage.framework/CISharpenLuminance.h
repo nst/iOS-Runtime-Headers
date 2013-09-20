@@ -10,7 +10,7 @@
 }
 
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputSharpness;
+@property(retain) NSNumber * inputSharpness;
 
 + (id)customAttributes;
 

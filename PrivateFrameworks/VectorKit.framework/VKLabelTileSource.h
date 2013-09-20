@@ -2,28 +2,28 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKLabelFeaturePool;
-
 @interface VKLabelTileSource : VKTileSetBackedTileSource {
-    VKLabelFeaturePool *_featurePool;
+    struct shared_ptr<vk::LabelManager> { 
+        struct LabelManager {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _labelManager;
     int _labelScaleFactor;
     BOOL _localizeLabels;
 }
 
-@property(retain) VKLabelFeaturePool * featurePool;
 @property int labelScaleFactor;
 @property BOOL localizeLabels;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (int)_labelTileType;
 - (void)dealloc;
 - (int)defaultMaximumZoomLevel;
-- (id)featurePool;
-- (id)initWithTileSet:(id)arg1 featurePool:(id)arg2;
+- (id)initWithTileSet:(id)arg1 labelManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
 - (int)labelScaleFactor;
 - (BOOL)localizeLabels;
 - (BOOL)maximumZoomLevelBoundsCamera;
 - (BOOL)minimumZoomLevelBoundsCamera;
-- (void)setFeaturePool:(id)arg1;
 - (void)setLabelScaleFactor:(int)arg1;
 - (void)setLocalizeLabels:(BOOL)arg1;
 - (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;

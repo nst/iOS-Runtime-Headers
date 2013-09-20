@@ -28,6 +28,9 @@
 @property(readonly) int x;
 @property(readonly) int y;
 
++ (id)mf_edgeToEdgeImageAttachmentStyle;
++ (float)mf_maxPhotoWidth;
+
 - (id)absoluteImageURL;
 - (id)align;
 - (id)alt;
@@ -42,7 +45,10 @@
 - (BOOL)isMap;
 - (id)longDesc;
 - (id)lowsrc;
+- (void)mf_applyEdgeToEdgeStyle;
 - (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)mf_isEdgeToEdgeFormatted;
+- (BOOL)mf_shouldFormatEdgeToEdge;
 - (void)mf_unconstrainImageSize;
 - (id)mimeType;
 - (id)name;

@@ -6,14 +6,26 @@
    See Warning(s) below.
  */
 
-@class NSString;
+@class NSLayoutConstraint, NSMutableDictionary, NSString, SLRemoteComposeViewController, SLService, UIView;
 
-@interface SLComposeViewController : UIViewController {
+@interface SLComposeViewController : UIViewController <SLSheetViewHostProtocol> {
     id _completionHandler;
+    NSMutableDictionary *_delayedActions;
+    BOOL _didFailLoadingRemoteViewController;
+    NSLayoutConstraint *_keyboardTopConstraint;
+    UIView *_keyboardTrackingView;
+    int _numImagesAdded;
+    int _numURLsAdded;
+    int _numVideosAdded;
+    SLRemoteComposeViewController *_remoteViewController;
+    int _savedStatusBarStyle;
+    SLService *_service;
     NSString *_serviceType;
+    BOOL _wasPresented;
 }
 
 @property(copy) id completionHandler;
+@property(retain) SLRemoteComposeViewController * remoteViewController;
 @property(readonly) NSString * serviceType;
 
 + (BOOL)canShareItems:(id)arg1 forServiceType:(id)arg2;
@@ -22,18 +34,55 @@
 + (BOOL)isAvailableForServiceType:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_addDelayedAction:(id)arg1 forEvent:(id)arg2;
+- (BOOL)_canAddAttachment:(id)arg1;
+- (int)_countForAttachmentType:(int)arg1;
+- (id)_delayedActions;
+- (void)_handleRemoteViewFailure;
+- (void)_incrementAttachmentCountForType:(int)arg1;
+- (int)_limitForAttachmentType:(int)arg1;
+- (void)_performActionsForEvent:(id)arg1;
+- (void)_resetAttachmentCountForType:(int)arg1;
+- (id)_urlForUntypedAsset:(id)arg1;
+- (BOOL)_useCustomDimmingView;
 - (BOOL)addAttachment:(id)arg1;
 - (id)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
 - (BOOL)addImage:(id)arg1;
 - (BOOL)addImageAsset:(id)arg1;
+- (BOOL)addURL:(id)arg1 withPreviewImage:(id)arg2;
 - (BOOL)addURL:(id)arg1;
+- (BOOL)canAddContent;
+- (BOOL)canSendTweet;
+- (void)completeWithResult:(int)arg1;
 - (id)completionHandler;
+- (void)dealloc;
+- (void)didLoadSheetViewController;
 - (id)initWithServiceType:(id)arg1;
+- (id)initWithServiceViewControllerClassName:(id)arg1 hostingBundleIdentifer:(id)arg2;
+- (void)loadServiceViewControllerWithClassName:(id)arg1 fromServiceBundleWithIdentifier:(id)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)remoteController:(id)arg1 didLoadWithError:(id)arg2;
+- (id)remoteViewController;
+- (void)remoteViewControllerLoadDidTimeout;
 - (BOOL)removeAllImages;
 - (BOOL)removeAllURLs;
 - (id)serviceType;
 - (void)setCompletionHandler:(id)arg1;
 - (BOOL)setInitialText:(id)arg1;
+- (void)setLongitude:(double)arg1 latitude:(double)arg2 name:(id)arg3;
+- (void)setRemoteViewController:(id)arg1;
+- (void)sheetDidSendWithSucess:(id)arg1 error:(id)arg2;
+- (void)sheetFailedWithError:(id)arg1;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)shouldShowNetworkActivityIndicator:(id)arg1;
 - (BOOL)supportsImageAsset:(id)arg1;
+- (BOOL)supportsVideoAsset:(id)arg1;
+- (void)userDidCancel;
+- (void)userDidPost;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidUnload;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

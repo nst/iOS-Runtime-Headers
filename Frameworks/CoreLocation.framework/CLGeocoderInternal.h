@@ -6,11 +6,11 @@
    See Warning(s) below.
  */
 
-@class GEOGeocodeRequest;
+@class GEOGeocodeRequest, NSObject<OS_dispatch_queue>;
 
 @interface CLGeocoderInternal : NSObject {
     id _geocodeCompletionHandler;
-    struct dispatch_queue_s { } *_queue;
+    NSObject<OS_dispatch_queue> *_queue;
     GEOGeocodeRequest *_request;
 }
 

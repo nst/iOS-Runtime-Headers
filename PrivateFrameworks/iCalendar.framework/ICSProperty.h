@@ -14,6 +14,7 @@
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2 additionalParameters:(id)arg3;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_appendDateTimeInDate:(id)arg1 asUTCToResult:(id)arg2;
 - (void)_setParsedValues:(id)arg1 type:(unsigned int)arg2;
 - (void)addParameter:(id)arg1 withRawValue:(id)arg2 options:(unsigned int)arg3;
 - (void)addParametersFromDictionary:(id)arg1;
@@ -26,10 +27,13 @@
 - (BOOL)isMultiValued;
 - (id)parameterValueForName:(id)arg1;
 - (id)parameters;
+- (id)parametersToIncludeForChecksumVersion:(int)arg1;
+- (id)propertiesThatIfPresentExcludeThisComponentFromChecksummingForVersion:(int)arg1;
+- (id)propertiesToIncludeForChecksumVersion:(int)arg1;
 - (void)removeParameterValueForName:(id)arg1;
 - (void)setParameterValue:(id)arg1 forName:(id)arg2;
 - (void)setParameters:(id)arg1;
-- (void)setValue:(id)arg1 type:(int)arg2;
+- (void)setValue:(id)arg1 type:(unsigned int)arg2;
 - (void)setValueAsProperty:(id)arg1 withRawValue:(const char *)arg2 options:(unsigned int)arg3;
 - (id)stringValue;
 - (unsigned int)type;

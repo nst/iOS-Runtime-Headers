@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface UIAccessibilityElement : NSObject <UIAccessibilityIdentification> {
 }
 
 @property id accessibilityContainer;
+@property(retain) NSArray * accessibilityContainerElements;
 @property id accessibilityDelegate;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } accessibilityFrame;
 @property(retain) NSString * accessibilityHint;
@@ -18,17 +19,13 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property BOOL isAccessibilityElement;
 
-- (int)_accessibilityBestCharacterModeForHandwriting;
-- (BOOL)_accessibilityCanDeleteCharacterWithHandwriting;
-- (BOOL)_accessibilityCanHandleDirectHandwritingInput;
-- (void)_accessibilityDeleteCharacterAtCursor;
-- (void)_accessibilityInsertText:(id)arg1 atPosition:(int)arg2;
-- (BOOL)_accessibilityShouldEchoHandwritingCharacter;
+- (id)accessibilityContainerElements;
 - (id)accessibilityDelegate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)dataForKey:(id)arg1;
 - (void)delegateSpecificsForAttribute:(int)arg1 delegate:(id*)arg2 selector:(SEL*)arg3;
 - (id)initWithAccessibilityContainer:(id)arg1;
+- (void)setAccessibilityContainerElements:(id)arg1;
 - (void)setAccessibilityDelegate:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setData:(id)arg1 forKey:(id)arg2;

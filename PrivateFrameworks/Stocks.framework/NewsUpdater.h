@@ -2,6 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
+/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
+   See Warning(s) below.
+ */
+
 @class <NewsUpdaterDelegate>, NewsParserData, Stock, StockNewsItemCollection;
 
 @interface NewsUpdater : XMLHTTPRequest {
@@ -11,6 +15,7 @@
     double _lastResponseTimestamp;
     NewsParserData *_newsParserData;
     Stock *_stock;
+    id _updateCompletionHandler;
 }
 
 @property <NewsUpdaterDelegate> * delegate;
@@ -25,6 +30,7 @@
 - (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
+- (void)fetchNewsForStock:(id)arg1 withCompletion:(id)arg2;
 - (BOOL)fetchNewsForStock:(id)arg1;
 - (id)init;
 - (void)loadNewsCacheFromDiskForSymbol:(id)arg1;

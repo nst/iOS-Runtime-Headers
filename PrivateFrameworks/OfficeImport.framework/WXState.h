@@ -39,11 +39,11 @@
 @property int currentOfficeArtTextType;
 
 - (void)addAnnotationID:(long)arg1 annotation:(id)arg2;
-- (void)addBookmarkId:(int)arg1 name:(id)arg2;
+- (void)addBookmarkId:(long)arg1 name:(id)arg2;
 - (void)addText:(id)arg1 node:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg2;
 - (id)annotationPart;
 - (id)annotationWithID:(long)arg1;
-- (id)bookmarkName:(int)arg1;
+- (id)bookmarkName:(long)arg1;
 - (id)cancelDelegate;
 - (void)clearOutNodesToBeAdded:(id)arg1;
 - (unsigned long)currentCellCNFStyle;

@@ -13,7 +13,7 @@
 + (void)deleteLocalAlbumsForMSASAlbumGUIDs:(id)arg1;
 
 - (id)albumCloudGUIDsToDelete;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;

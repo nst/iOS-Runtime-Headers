@@ -20,7 +20,9 @@
     NSString *_lastSuccessfulURLString;
     BOOL _loadEndedWithError;
     BOOL _loadStartedDuringSimulatedClick;
+    BOOL _loadStoppedFromAPI;
     BOOL _loading;
+    int _loadingState;
     unsigned int _pendingFrameLoadMessages;
     BOOL _securePageHasInsecureContent;
     BOOL _simulatingClick;
@@ -36,6 +38,7 @@
 @property <WebUIBrowserLoadingControllerDelegate> * delegate;
 @property float estimatedProgress;
 @property(getter=isLoading,readonly) BOOL loading;
+@property int loadingState;
 @property(getter=isSecure,readonly) BOOL secure;
 @property(getter=isSimulatingClick,readonly) BOOL simulatingClick;
 @property(copy) NSString * title;
@@ -43,6 +46,7 @@
 - (id)URL;
 - (id)URLString;
 - (BOOL)_URLMayStartLoad:(id)arg1;
+- (void)_attemptTransitionToLoadingState:(int)arg1;
 - (id)_dataSourceURL;
 - (void)_didNotLoadURL;
 - (void)_forceStartLoading;
@@ -73,6 +77,7 @@
 - (BOOL)canGoForward;
 - (void)dealloc;
 - (id)delegate;
+- (void)didDrawTiles;
 - (float)estimatedProgress;
 - (void)finishSimulatedClick;
 - (void)goBack;
@@ -85,14 +90,18 @@
 - (void)loadStartedDuringSimulatedClickForURL:(id)arg1;
 - (void)loadUserTypedAddress:(id)arg1;
 - (void)loadWebClip:(id)arg1 userDriven:(BOOL)arg2;
+- (int)loadingState;
 - (void)reload;
+- (void)reportNetworkDataUsageOfRawBytesSent:(unsigned long long)arg1 rawBytesReceived:(unsigned long long)arg2 cellularBytesSent:(unsigned long long)arg3 cellularBytesReceived:(unsigned long long)arg4;
 - (void)setBrowserView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEstimatedProgress:(float)arg1;
+- (void)setLoadingState:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)stopLoading;
 - (id)title;
+- (void)webThreadWebView:(id)arg1 didLayout:(unsigned int)arg2;
 - (void)webView:(id)arg1 didCancelClientRedirectForFrame:(id)arg2;
 - (void)webView:(id)arg1 didChangeLocationWithinPageForFrame:(id)arg2;
 - (void)webView:(id)arg1 didClearWindowObject:(id)arg2 forFrame:(id)arg3;
@@ -101,10 +110,12 @@
 - (void)webView:(id)arg1 didFailProvisionalLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
+- (void)webView:(id)arg1 didHandleOnloadEventsForFrame:(id)arg2;
 - (void)webView:(id)arg1 didPopStateWithinPageForFrame:(id)arg2;
 - (void)webView:(id)arg1 didPushStateWithinPageForFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveServerRedirectForProvisionalLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveTitle:(id)arg2 forFrame:(id)arg3;
+- (void)webView:(id)arg1 didRemoveFrameFromHierarchy:(id)arg2;
 - (void)webView:(id)arg1 didReplaceStateWithinPageForFrame:(id)arg2;
 - (void)webView:(id)arg1 didRunInsecureContent:(id)arg2;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;

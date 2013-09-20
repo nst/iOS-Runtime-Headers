@@ -14,6 +14,7 @@
 @property BOOL expectsMediaDataInRealTime;
 @property(copy) NSString * extendedLanguageTag;
 @property(copy) NSString * languageCode;
+@property int layer;
 @property BOOL marksOutputTrackAsEnabled;
 @property int mediaTimeScale;
 @property(readonly) NSString * mediaType;
@@ -21,6 +22,7 @@
 @property struct CGSize { float x1; float x2; } naturalSize;
 @property(readonly) AVOutputSettings * outputSettings;
 @property(readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
+@property float preferredVolume;
 @property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
 @property(readonly) struct opaqueCMFormatDescription { }* sourceFormatHint;
 @property(copy) NSDictionary * sourcePixelBufferAttributes;
@@ -42,6 +44,7 @@
 - (id)initWithConfigurationState:(id)arg1;
 - (BOOL)isReadyForMoreMediaData;
 - (id)languageCode;
+- (int)layer;
 - (void)markAsFinished;
 - (BOOL)marksOutputTrackAsEnabled;
 - (int)mediaTimeScale;
@@ -50,6 +53,7 @@
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (id)outputSettings;
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
+- (float)preferredVolume;
 - (void)prepareToEndSession;
 - (BOOL)prepareToFinishWritingReturningError:(id*)arg1;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
@@ -57,10 +61,12 @@
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
 - (void)setExtendedLanguageTag:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
+- (void)setLayer:(int)arg1;
 - (void)setMarksOutputTrackAsEnabled:(BOOL)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreferredVolume:(float)arg1;
 - (void)setSourcePixelBufferAttributes:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setWeakReferenceToAssetWriterInput:(id)arg1;
@@ -71,7 +77,7 @@
 - (id)trackReferences;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (void)transitionAssetWriterAndAllInputsToFailedStatusWithError:(id)arg1;
-- (void)transitionToTerminalStatus:(int)arg1;
+- (id)transitionToAndReturnTerminalHelperWithTerminalStatus:(int)arg1;
 - (id)weakReferenceToAssetWriterInput;
 
 @end

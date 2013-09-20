@@ -10,9 +10,9 @@
     NSNumber *inputScale;
 }
 
-@property(copy) CIVector * inputCenter;
+@property(retain) CIVector * inputCenter;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputScale;
+@property(retain) NSNumber * inputScale;
 
 + (id)customAttributes;
 

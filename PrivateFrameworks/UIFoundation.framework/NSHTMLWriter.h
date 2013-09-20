@@ -45,6 +45,8 @@
     NSData *_webArchiveData;
 }
 
++ (void)initialize;
+
 - (id)HTMLData;
 - (id)HTMLFileWrapper;
 - (void)_appendAttachment:(id)arg1 atIndex:(unsigned int)arg2 toString:(id)arg3;

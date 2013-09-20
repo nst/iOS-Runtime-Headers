@@ -6,7 +6,7 @@
    See Warning(s) below.
  */
 
-@class AVAudioSessionMediaPlayerOnly, AVPlayer, AVPlayerItem, AVQueuePlayer, MPAudioDeviceController, NSArray, NSDictionary, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class AVPlayer, AVPlayerItem, AVQueuePlayer, MPAudioDeviceController, NSArray, NSDictionary, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface MPQueuePlayer : NSObject <MPAudioDeviceControllerDelegate> {
     struct { 
@@ -33,7 +33,6 @@
     int _status;
 }
 
-@property(setter=_setDisplaysUsedForPlayback:,copy) NSArray * _displaysUsedForPlayback;
 @property(readonly) int _externalProtectionStatus;
 @property(readonly) AVPlayer * _player;
 @property int actionAtItemEnd;
@@ -50,25 +49,26 @@
 @property(readonly) NSArray * items;
 @property(readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
 @property(copy) id playbackQueueCommitHandler;
-@property(readonly) AVAudioSessionMediaPlayerOnly * playerAVAudioSession;
+@property(readonly) id playerAVAudioSession;
 @property float rate;
 @property(readonly) int status;
+@property BOOL usesAudioOnlyModeForExternalPlayback;
 @property BOOL usesExternalPlaybackWhileExternalScreenIsActive;
 
+- (void).cxx_destruct;
 - (BOOL)_CALayerDestinationIsTVOut;
-- (id)_displaysUsedForPlayback;
 - (int)_externalProtectionStatus;
 - (id)_player;
 - (BOOL)_resumePlayback:(double)arg1 error:(id*)arg2;
 - (void)_setCALayerDestinationIsTVOut:(BOOL)arg1;
 - (void)_setClientName:(id)arg1;
-- (void)_setDisplaysUsedForPlayback:(id)arg1;
 - (void)_setEQPreset:(int)arg1;
 - (void)_setPreferredLanguageList:(id)arg1;
+- (void)_setPreparesItemsForPlaybackAsynchronously:(BOOL)arg1;
 - (void)_setStoppingFadeOutDuration:(float)arg1;
-- (void)_setVolume:(float)arg1;
+- (void)_setUserVolume:(float)arg1;
 - (void)_setWantsVolumeChangesWhenPausedOrInactive:(BOOL)arg1;
-- (float)_volume;
+- (float)_userVolume;
 - (int)actionAtItemEnd;
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
 - (void)advanceToNextItem;
@@ -109,10 +109,13 @@
 - (void)setDefaultItemEQPresetType:(int)arg1;
 - (void)setDisallowsAMRAudio:(BOOL)arg1;
 - (void)setExternalPlaybackVideoGravity:(id)arg1;
+- (void)setMediaSelectionCriteria:(id)arg1 forMediaCharacteristic:(id)arg2;
 - (void)setPlaybackQueueCommitHandler:(id)arg1;
 - (void)setRate:(float)arg1;
+- (void)setUsesAudioOnlyModeForExternalPlayback:(BOOL)arg1;
 - (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(BOOL)arg1;
 - (int)status;
+- (BOOL)usesAudioOnlyModeForExternalPlayback;
 - (BOOL)usesExternalPlaybackWhileExternalScreenIsActive;
 
 @end

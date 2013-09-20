@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class AccountsManager, NSArray, NoteContext;
+@class ACAccountStore, NSArray, NoteContext;
 
 @interface AccountUtilities : NSObject {
-    AccountsManager *_accountsManager;
+    NSArray *_accountIDsEnabledForNotes;
+    ACAccountStore *_accountStore;
     NoteContext *_noteContext;
-    NSArray *_syncableAccounts;
 }
 
 + (id)sharedAccountUtilities;
 
 - (void).cxx_destruct;
-- (void)accountsChanged;
-- (id)accountsManager;
-- (id)allDisplayAccounts;
-- (id)allSyncableAccounts;
+- (void)_accountStoreDidChange:(id)arg1;
+- (id)accountIDsEnabledForNotes;
+- (id)accountStore;
+- (id)accountsEnabledForNotes;
 - (void)dealloc;
 - (id)defaultStoreSyncIdWithDesiredSyncId:(id)arg1;
 - (id)init;
-- (BOOL)isDeviceLocalAccount:(id)arg1;
 - (BOOL)localNotesExist;
-- (id)syncAccountIdForDisplayAccountId:(id)arg1;
 
 @end

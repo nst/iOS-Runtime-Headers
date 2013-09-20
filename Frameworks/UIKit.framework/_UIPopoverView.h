@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActionSheet, UIImageView, UIPopoverBackgroundView, UIPopoverController, UIView;
+@class UIActionSheet, UIColor, UIImageView, UIPopoverBackgroundView, UIPopoverController, UIView;
 
 @interface _UIPopoverView : UIView {
     UIPopoverBackgroundView *_backgroundView;
@@ -19,6 +19,7 @@
 @property unsigned int arrowDirection;
 @property float arrowOffset;
 @property int backgroundStyle;
+@property(copy) UIColor * popoverBackgroundColor;
 @property UIPopoverController * popoverController;
 @property(retain) UIActionSheet * presentedActionSheet;
 @property BOOL showsBackgroundComponentHighlights;
@@ -49,17 +50,17 @@
 - (id)backgroundView;
 - (id)contentView;
 - (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2 embeddedInView:(BOOL)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)motionBegan:(int)arg1 withEvent:(id)arg2;
-- (void)motionCancelled:(int)arg1 withEvent:(id)arg2;
-- (void)motionEnded:(int)arg1 withEvent:(id)arg2;
+- (id)popoverBackgroundColor;
 - (id)popoverController;
 - (id)presentedActionSheet;
 - (void)setArrowDirection:(unsigned int)arg1;
 - (void)setArrowOffset:(float)arg1;
 - (void)setBackgroundStyle:(int)arg1;
+- (void)setPopoverBackgroundColor:(id)arg1;
 - (void)setPopoverController:(id)arg1;
 - (void)setPresentedActionSheet:(id)arg1;
 - (void)setShowsBackgroundComponentHighlights:(BOOL)arg1;

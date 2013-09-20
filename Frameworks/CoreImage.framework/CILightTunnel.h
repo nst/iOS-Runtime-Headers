@@ -11,10 +11,10 @@
     NSNumber *inputRotation;
 }
 
-@property(copy) CIVector * inputCenter;
+@property(retain) CIVector * inputCenter;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputRadius;
-@property(copy) NSNumber * inputRotation;
+@property(retain) NSNumber * inputRadius;
+@property(retain) NSNumber * inputRotation;
 
 + (id)customAttributes;
 

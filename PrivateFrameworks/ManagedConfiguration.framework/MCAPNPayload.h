@@ -12,7 +12,8 @@
 @property BOOL wasInstalled;
 
 + (id)apnDomainName;
-+ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
 + (id)typeStrings;
 
 - (void).cxx_destruct;

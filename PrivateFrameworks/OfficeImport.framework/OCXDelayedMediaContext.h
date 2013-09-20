@@ -9,6 +9,7 @@
     NSURL *mTargetLocation;
 }
 
+- (id)dataRep;
 - (void)dealloc;
 - (id)initWithTargetLocation:(id)arg1 package:(id)arg2;
 - (bool)loadDelayedNode:(id)arg1;

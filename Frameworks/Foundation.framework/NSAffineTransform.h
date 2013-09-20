@@ -21,6 +21,7 @@
 + (id)transform;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)CAMLType;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (float)angle;
@@ -32,6 +33,7 @@
 - (id)description;
 - (BOOL)differOnlyByTranslation:(id)arg1;
 - (BOOL)differsFrom:(id)arg1;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;

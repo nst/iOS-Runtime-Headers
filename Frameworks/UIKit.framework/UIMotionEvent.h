@@ -35,11 +35,13 @@
 - (BOOL)_isDetectingMotionEvents;
 - (float)_lowPass:(float)arg1;
 - (void)_resetLowPassState;
+- (void)_sendEventToResponder:(id)arg1;
 - (void)_setSubtype:(int)arg1;
 - (int)_shakeState;
 - (void)_updateAccelerometerEnabled;
 - (void)_willResume;
 - (void)_willSuspend;
+- (id)_windows;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (void)dealloc;
 - (id)description;

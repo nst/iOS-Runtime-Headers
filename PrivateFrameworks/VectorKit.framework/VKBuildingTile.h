@@ -3,7 +3,14 @@
  */
 
 @interface VKBuildingTile : VKVectorTile {
+    struct { 
+        float x; 
+        float y; 
+        float z; 
     BOOL _animating;
+    } _cameraPosition;
 }
+
+- (id).cxx_construct;
 
 @end

@@ -7,12 +7,14 @@
 @interface ABMembersFilteredDataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
     void *_addressBook;
     <ABMembersDataSourceDelegate> *_delegate;
+    BOOL _isInPopover;
     NSMutableArray *_records;
     <ABStyleProvider> *_styleProvider;
 }
 
 @property void* addressBook;
 @property <ABMembersDataSourceDelegate> * delegate;
+@property BOOL isInPopover;
 @property(readonly) NSArray * records;
 @property(retain) <ABStyleProvider> * styleProvider;
 
@@ -21,15 +23,18 @@
 - (unsigned int)count;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)isInPopover;
 - (id)records;
 - (void)removeAllRecords;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsInPopover:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 

@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface GEOTrafficIncident : PBCodable {
+@interface GEOTrafficIncident : PBCodable <NSCopying> {
     struct { 
         unsigned int endTime : 1; 
         unsigned int lastUpdated : 1; 
@@ -48,6 +48,7 @@
 @property int vertexOffset;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -15,14 +15,15 @@
 @property float halfAlphaSlope;
 @property float halfWidth;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
 - (float)alphaSlope;
 - (float)halfAlphaSlope;
 - (float)halfWidth;
-- (id)init;
 - (void)setAlphaSlope:(float)arg1;
 - (void)setHalfAlphaSlope:(float)arg1;
 - (void)setHalfWidth:(float)arg1;
+- (void)setup;
 
 @end

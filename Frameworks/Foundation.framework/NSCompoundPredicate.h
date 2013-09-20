@@ -14,6 +14,7 @@
 + (id)andPredicateWithSubpredicates:(id)arg1;
 + (id)notPredicateWithSubpredicate:(id)arg1;
 + (id)orPredicateWithSubpredicates:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (void)_acceptSubpredicates:(id)arg1 flags:(unsigned int)arg2;
 - (id)_predicateOperator;
@@ -23,6 +24,7 @@
 - (BOOL)ab_hasCallback;
 - (id)ab_newQueryWithSortOrder:(unsigned int)arg1 addressBook:(void*)arg2 propertyIndices:(const struct __CFDictionary {}**)arg3;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)allowEvaluation;
 - (unsigned int)compoundPredicateType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

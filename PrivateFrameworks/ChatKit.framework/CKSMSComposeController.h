@@ -8,10 +8,12 @@
     _UIAsyncInvocation *_cancellationInvocation;
     UINavigationController *_clientNavigationController;
     id _delegate;
+    BOOL _didChangeStatusBarStyle;
     int _entryViewInvisible;
     CKSMSComposeRemoteViewController *_remoteViewController;
     CKSMSComposeQueuingRemoteViewControllerProxy *_remoteViewControllerProxy;
     BOOL _safeToAdd;
+    int _savedStatusBarStyle;
 }
 
 @property id delegate;
@@ -29,8 +31,10 @@
 - (id)delegate;
 - (void)disableCameraAttachments;
 - (void)forceCancelComposition;
+- (void)forceMMS;
 - (id)init;
 - (id)initWithNavigationController:(id)arg1;
+- (BOOL)insertAttachmentWithURL:(id)arg1 andDescription:(id)arg2;
 - (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
@@ -43,6 +47,7 @@
 - (void)setRemoteViewController:(id)arg1;
 - (void)setRemoteViewControllerProxy:(id)arg1;
 - (void)setText:(id)arg1 addresses:(id)arg2;
+- (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3;
 - (void)setTextEntryContentsVisible:(BOOL)arg1;
 - (void)setUICustomizationData:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
@@ -51,7 +56,9 @@
 - (void)smsComposeControllerDataInserted;
 - (void)smsComposeControllerSendStartedWithText:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

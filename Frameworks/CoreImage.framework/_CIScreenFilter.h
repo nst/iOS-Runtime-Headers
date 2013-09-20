@@ -12,11 +12,11 @@
     NSNumber *inputWidth;
 }
 
-@property(copy) NSNumber * inputAngle;
-@property(copy) CIVector * inputCenter;
+@property(retain) NSNumber * inputAngle;
+@property(retain) CIVector * inputCenter;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputSharpness;
-@property(copy) NSNumber * inputWidth;
+@property(retain) NSNumber * inputSharpness;
+@property(retain) NSNumber * inputWidth;
 
 + (id)customAttributes;
 

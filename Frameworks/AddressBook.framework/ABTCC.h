@@ -18,6 +18,7 @@
 - (void)callExternalChangeCallbacks:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
+- (unsigned char)isAccessRestricted;
 - (void)simulate:(int)arg1;
 - (void)simulateIfAccessPromptDisplayedThenUserGrantedAccess:(BOOL)arg1 withDelay:(unsigned int)arg2;
 

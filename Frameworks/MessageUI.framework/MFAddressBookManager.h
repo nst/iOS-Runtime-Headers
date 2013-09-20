@@ -7,10 +7,12 @@
     struct __CFArray { } *_clients;
 }
 
++ (BOOL)isAuthorizedToUseAddressBook;
 + (id)sharedManager;
 
 - (void)_applicationResumed:(id)arg1;
 - (void)_handleAddressBookChangeNotification;
+- (void)_handleAddressBookPrefsChangeNotification;
 - (void)addClient:(id)arg1;
 - (void*)addressBook;
 - (void)dealloc;

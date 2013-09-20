@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL, SAMPMediaItem;
+@class SAMPMediaItem;
 
-@interface SAMPGeniusSummon : SABaseClientBoundCommand {
+@interface SAMPGeniusSummon : SADomainCommand {
 }
 
 @property(retain) SAMPMediaItem * mediaItem;
-@property(copy) NSURL * targetAppId;
 
 + (id)geniusSummon;
 + (id)geniusSummonWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)mediaItem;
 - (BOOL)requiresResponse;
 - (void)setMediaItem:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

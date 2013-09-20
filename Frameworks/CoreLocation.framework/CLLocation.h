@@ -4,7 +4,7 @@
 
 @class NSDate, NSString;
 
-@interface CLLocation : NSObject <NSCopying, NSCoding> {
+@interface CLLocation : NSObject <NSCopying, NSSecureCoding> {
     id _internal;
 }
 
@@ -24,9 +24,12 @@
 
 + (id)_mapkit_stringWithType:(int)arg1;
 + (int)_mapkit_typeWithSource:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)_initWithCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (int)_mapkit_source;
+- (struct { double x1; double x2; })_vectorkit_rawCoordinate;
+- (double)_vectorkit_rawCourse;
 - (double)altitude;
 - (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; })clientLocation;
 - (struct { double x1; double x2; })coordinate;
@@ -54,8 +57,6 @@
 - (id)locationDescription;
 - (id)propagateLocationToTime:(double)arg1;
 - (struct { double x1; double x2; })rawCoordinate;
-- (struct { double x1; double x2; })rawCoordinate;
-- (double)rawCourse;
 - (double)rawCourse;
 - (void)setHorizontalAccuracy:(double)arg1;
 - (id)shortDescription;

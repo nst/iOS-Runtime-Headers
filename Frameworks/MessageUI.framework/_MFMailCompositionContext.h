@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFGenericAttachmentStore, MFMessageViewingContext, MailMessage, NSArray, NSString;
+@class MFGenericAttachmentStore, MFMailMessage, MFMessageViewingContext, NSArray, NSString;
 
 @interface _MFMailCompositionContext : NSObject {
     MFGenericAttachmentStore *_attachments;
@@ -15,13 +15,16 @@
     MFMessageViewingContext *_loadingContext;
     NSString *_messageBody;
     id _originalContent;
-    MailMessage *_originalMessage;
+    MFMailMessage *_originalMessage;
+    NSString *_originatingBundleID;
     BOOL _prefersFirstLineSelection;
     NSString *_sendingAddress;
     BOOL _showContentImmediately;
     BOOL _showKeyboardImmediately;
+    int _sourceAccountManagement;
     NSString *_subject;
     NSArray *_toRecipients;
+    BOOL _usingDefaultAccount;
 }
 
 @property(readonly) MFGenericAttachmentStore * attachments;
@@ -33,13 +36,16 @@
 @property BOOL loadRest;
 @property(retain) MFMessageViewingContext * loadingContext;
 @property(retain) id originalContent;
-@property(readonly) MailMessage * originalMessage;
+@property(readonly) MFMailMessage * originalMessage;
+@property(copy) NSString * originatingBundleID;
 @property BOOL prefersFirstLineSelection;
 @property(copy) NSString * sendingAddress;
 @property BOOL showContentImmediately;
 @property BOOL showKeyboardImmediately;
+@property int sourceAccountManagement;
 @property(copy) NSString * subject;
 @property(copy) NSArray * toRecipients;
+@property BOOL usingDefaultAccount;
 
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (id)attachments;
@@ -66,6 +72,7 @@
 - (id)messageBody;
 - (id)originalContent;
 - (id)originalMessage;
+- (id)originatingBundleID;
 - (BOOL)prefersFirstLineSelection;
 - (id)sendingAddress;
 - (void)setBccRecipients:(id)arg1;
@@ -75,15 +82,20 @@
 - (void)setLoadingContext:(id)arg1;
 - (void)setMessageBody:(id)arg1 isHTML:(BOOL)arg2;
 - (void)setOriginalContent:(id)arg1;
+- (void)setOriginatingBundleID:(id)arg1;
 - (void)setPrefersFirstLineSelection:(BOOL)arg1;
 - (void)setSendingAddress:(id)arg1;
 - (void)setShowContentImmediately:(BOOL)arg1;
 - (void)setShowKeyboardImmediately:(BOOL)arg1;
+- (void)setSourceAccountManagement:(int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
+- (void)setUsingDefaultAccount:(BOOL)arg1;
 - (BOOL)showContentImmediately;
 - (BOOL)showKeyboardImmediately;
+- (int)sourceAccountManagement;
 - (id)subject;
 - (id)toRecipients;
+- (BOOL)usingDefaultAccount;
 
 @end

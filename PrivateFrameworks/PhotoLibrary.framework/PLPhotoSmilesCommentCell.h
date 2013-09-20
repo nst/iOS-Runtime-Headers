@@ -2,33 +2,38 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, UIButton, UILabel;
+@class NSOrderedSet, UIButton, UILabel;
 
 @interface PLPhotoSmilesCommentCell : UITableViewCell {
+    BOOL _isVideo;
+    BOOL _showUserLikes;
     UILabel *_smileContentLabel;
     UIButton *_smileImageButton;
-    NSString *_smileString;
-    BOOL _userSmiled;
+    NSOrderedSet *_userLikes;
 }
 
+@property BOOL isVideo;
+@property BOOL showUserLikes;
 @property(readonly) UILabel * smileContentLabel;
 @property(readonly) UIButton * smileImageButton;
-@property(copy) NSString * smileString;
-@property BOOL userSmiled;
+@property(copy) NSOrderedSet * userLikes;
 
-+ (id)_attributedStringForSmileText:(id)arg1;
-+ (float)heightOfSmileCellWithComments:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
-+ (id)smileStringForComments:(id)arg1;
++ (id)_attributedStringForComments:(id)arg1 color:(id)arg2 isVideo:(BOOL)arg3;
++ (id)_smileStringForComments:(id)arg1;
++ (float)heightOfSmileCellWithComments:(id)arg1 forWidth:(float)arg2 isVideo:(BOOL)arg3 forInterfaceOrientation:(int)arg4;
 
+- (void)_updateContent;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isVideo;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
-- (void)setSmileString:(id)arg1;
-- (void)setUserSmiled:(BOOL)arg1;
+- (void)setIsVideo:(BOOL)arg1;
+- (void)setShowUserLikes:(BOOL)arg1;
+- (void)setUserLikes:(id)arg1;
+- (BOOL)showUserLikes;
 - (id)smileContentLabel;
 - (id)smileImageButton;
-- (id)smileString;
-- (BOOL)userSmiled;
+- (id)userLikes;
 
 @end

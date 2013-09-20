@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderVideoCompositionOutputInternal, AVVideoComposition, NSArray, NSDictionary;
+@class <AVVideoCompositing>, AVAssetReaderVideoCompositionOutputInternal, AVVideoComposition, NSArray, NSDictionary;
 
 @interface AVAssetReaderVideoCompositionOutput : AVAssetReaderOutput {
     AVAssetReaderVideoCompositionOutputInternal *_videoCompositionOutputInternal;
 }
 
+@property(readonly) <AVVideoCompositing> * customVideoCompositor;
 @property(copy) AVVideoComposition * videoComposition;
 @property(readonly) NSDictionary * videoSettings;
 @property(readonly) NSArray * videoTracks;
@@ -16,8 +17,12 @@
 
 - (id)_asset;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
+- (id)_errorForOSStatus:(long)arg1;
 - (BOOL)_prepareForReadingReturningError:(id*)arg1;
+- (void)_setVideoComposition:(id)arg1 customVideoCompositorSession:(id)arg2;
+- (void)_setVideoComposition:(id)arg1;
 - (BOOL)alwaysCopiesSampleData;
+- (id)customVideoCompositor;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;

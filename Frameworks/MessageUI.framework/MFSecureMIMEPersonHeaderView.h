@@ -21,6 +21,8 @@
 @property(copy) NSString * signedLabelText;
 @property(copy) NSString * warningLabelText;
 
++ (id)_explanationLabelDefaultAttributes;
+
 - (void)_insert:(BOOL)arg1 subview:(id)arg2;
 - (id)_secureLabel;
 - (void)_setText:(id)arg1 forLabel:(id)arg2;
@@ -31,8 +33,10 @@
 - (BOOL)editing;
 - (id)explanationText;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)secureLabelText;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setButtons:(id)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setExplanationText:(id)arg1;

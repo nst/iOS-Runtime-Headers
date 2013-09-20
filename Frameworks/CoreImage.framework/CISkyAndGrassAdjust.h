@@ -10,9 +10,9 @@
     NSNumber *inputSkyAmount;
 }
 
-@property(copy) NSNumber * inputGrassAmount;
+@property(retain) NSNumber * inputGrassAmount;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputSkyAmount;
+@property(retain) NSNumber * inputSkyAmount;
 
 + (id)customAttributes;
 

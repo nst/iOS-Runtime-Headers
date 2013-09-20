@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, SSSQLitePredicate;
+@class NSArray, NSString, SSSQLitePredicate;
 
 @interface SSSQLiteQueryDescriptor : NSObject <NSCopying> {
     Class _entityClass;
     int _limitCount;
     Class _memoryEntityClass;
+    NSString *_orderingClause;
     NSArray *_orderingDirections;
     NSArray *_orderingProperties;
     SSSQLitePredicate *_predicate;
@@ -17,6 +18,7 @@
 @property Class entityClass;
 @property int limitCount;
 @property Class memoryEntityClass;
+@property(copy) NSString * orderingClause;
 @property(copy) NSArray * orderingDirections;
 @property(copy) NSArray * orderingProperties;
 @property(copy) SSSQLitePredicate * predicate;
@@ -28,6 +30,7 @@
 - (Class)entityClass;
 - (int)limitCount;
 - (Class)memoryEntityClass;
+- (id)orderingClause;
 - (id)orderingDirections;
 - (id)orderingProperties;
 - (id)predicate;
@@ -35,6 +38,7 @@
 - (void)setEntityClass:(Class)arg1;
 - (void)setLimitCount:(int)arg1;
 - (void)setMemoryEntityClass:(Class)arg1;
+- (void)setOrderingClause:(id)arg1;
 - (void)setOrderingDirections:(id)arg1;
 - (void)setOrderingProperties:(id)arg1;
 - (void)setPredicate:(id)arg1;

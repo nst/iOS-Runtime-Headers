@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVVideoComposition, AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class AVAsset, AVCustomVideoCompositorSession, AVVideoComposition, AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AVAssetImageGeneratorInternal : NSObject {
     struct CGSize { 
@@ -22,6 +22,7 @@
     BOOL appliesPreferredTrackTransform;
     AVAsset *asset;
     int cancelledRequestIDThreshold;
+    AVCustomVideoCompositorSession *customVideoCompositorSession;
     struct OpaqueFigAssetImageGenerator { } *generator;
     NSObject<OS_dispatch_queue> *imageRequestQueue;
     } maximumSize;

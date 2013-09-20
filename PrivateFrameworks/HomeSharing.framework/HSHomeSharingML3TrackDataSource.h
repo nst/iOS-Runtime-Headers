@@ -5,11 +5,6 @@
 @interface HSHomeSharingML3TrackDataSource : HSDAAPML3TrackDataSource {
 }
 
-- (id)currentTrackArtworkCacheID;
-- (id)currentTrackFilePath;
-- (int)currentTrackIsDownloading;
-- (long long)currentTrackPersistentID;
-- (long long)currentTrackStoreSagaID;
-- (BOOL)mediaKindIsSupported:(unsigned int)arg1;
+- (id)createImportItem;
 
 @end

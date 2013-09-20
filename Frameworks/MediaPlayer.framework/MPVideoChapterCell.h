@@ -15,6 +15,7 @@
 @property float timeColumnWidth;
 @property(retain) MPTimeMarker * timeMarker;
 
+- (void).cxx_destruct;
 - (id)artworkImageCache;
 - (void)dealloc;
 - (unsigned int)index;

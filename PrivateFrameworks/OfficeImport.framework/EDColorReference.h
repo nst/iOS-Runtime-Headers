@@ -16,7 +16,7 @@
 + (id)colorReferenceWithColorIndex:(unsigned int)arg1 resources:(id)arg2;
 + (id)colorReferenceWithResources:(id)arg1;
 + (id)colorReferenceWithSystemColorID:(int)arg1 resources:(id)arg2;
-+ (id)colorReferenceWithXlThemeIndex:(unsigned int)arg1 tint:(double)arg2 resources:(id)arg3;
++ (id)colorReferenceWithThemeIndex:(unsigned int)arg1 tint:(double)arg2 resources:(id)arg3;
 
 - (id)color;
 - (unsigned int)colorIndex;

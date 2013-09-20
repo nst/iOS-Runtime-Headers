@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Librarian.framework/Librarian
  */
 
-@class NSMutableDictionary, NSURL;
+@class NSMutableDictionary, NSString, NSURL;
 
 @interface LBItem : NSObject {
     NSMutableDictionary *_attributes;
+    NSString *_path;
     id _replacement;
     NSURL *_url;
 }

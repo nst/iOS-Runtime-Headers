@@ -2,53 +2,59 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKAddPassesViewControllerDelegate>, NSDate, NSURL, PKLocalPass, PKRemoteAddPassesViewController, _UIAsyncInvocation;
+@class <PKAddPassesViewControllerDelegate>, NSArray, NSDate, NSURL, PKRemoteAddPassesViewController, _UIAsyncInvocation;
 
 @interface PKAddPassesViewController : UIViewController {
     NSURL *_URL;
+    BOOL _allowsPassIngestion;
     _UIAsyncInvocation *_cancelViewServiceRequest;
-    PKLocalPass *_card;
     <PKAddPassesViewControllerDelegate> *_delegate;
+    NSArray *_passes;
     NSDate *_perfTestingForIngestion;
     int _previousStatusBarStyle;
     PKRemoteAddPassesViewController *_remoteViewController;
+    BOOL _succeeded;
     BOOL _viewHasAppeared;
 }
 
-@property(getter=_URL,setter=_setURL:,retain) NSURL * _URL;
-@property(getter=_cancelViewServiceRequest,setter=_setCancelViewServiceRequest:,retain) _UIAsyncInvocation * _cancelViewServiceRequest;
-@property(getter=_card,setter=_setCard:,retain) PKLocalPass * _card;
-@property(getter=_previousStatusBarStyle,setter=_setPreviousStatusBarStyle:) int _previousStatusBarStyle;
-@property(getter=_remoteViewController,setter=_setRemoteViewController:,retain) PKRemoteAddPassesViewController * _remoteViewController;
+@property(retain) NSURL * URL;
+@property(retain) _UIAsyncInvocation * cancelViewServiceRequest;
 @property <PKAddPassesViewControllerDelegate> * delegate;
+@property(retain) NSArray * passes;
+@property int previousStatusBarStyle;
+@property(retain) PKRemoteAddPassesViewController * remoteViewController;
 
 + (BOOL)isAvailable;
 
-- (id)_URL;
-- (id)_cancelViewServiceRequest;
-- (id)_card;
-- (int)_previousStatusBarStyle;
-- (id)_remoteViewController;
-- (void)_setCancelViewServiceRequest:(id)arg1;
-- (void)_setCard:(id)arg1;
-- (void)_setPreviousStatusBarStyle:(int)arg1;
-- (void)_setRemoteViewController:(id)arg1;
-- (void)_setURL:(id)arg1;
+- (id)URL;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
+- (id)cancelViewServiceRequest;
 - (void)dealloc;
 - (id)delegate;
 - (void)ingestionDidFinishWithResult:(int)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithPass:(id)arg1 orURL:(id)arg2;
 - (id)initWithPass:(id)arg1;
+- (id)initWithPasses:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)loadView;
 - (int)modalPresentationStyle;
 - (int)modalTransitionStyle;
+- (id)passes;
+- (int)previousStatusBarStyle;
+- (id)remoteViewController;
+- (void)setAllowsPassIngestion:(BOOL)arg1;
+- (void)setCancelViewServiceRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setPasses:(id)arg1;
+- (void)setPreviousStatusBarStyle:(int)arg1;
+- (void)setRemoteViewController:(id)arg1;
+- (void)setURL:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)succeeded;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (BOOL)wantsFullScreenLayout;
 
 @end

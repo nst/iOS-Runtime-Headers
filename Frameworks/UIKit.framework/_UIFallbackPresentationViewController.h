@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow;
+@class UIWindow, _UIFallbackPresentationWindow;
 
 @interface _UIFallbackPresentationViewController : UIViewController {
+    _UIFallbackPresentationWindow *_presentationWindow;
     UIWindow *_rotationDecider;
 }
 

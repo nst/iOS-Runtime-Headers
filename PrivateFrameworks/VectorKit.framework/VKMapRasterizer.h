@@ -35,6 +35,7 @@
 @property unsigned int rasterizingScaleFactor;
 @property VKTileProvider * tileProvider;
 
+- (id).cxx_construct;
 - (void)addSubmodel:(id)arg1;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })backgroundColor;
 - (void)dealloc;
@@ -46,11 +47,12 @@
 - (id)mapModel;
 - (void)rasterizeKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 scene:(id)arg2;
 - (unsigned int)rasterizingScaleFactor;
-- (void)recursiveDrawScene:(id)arg1 withContext:(id)arg2;
+- (void)recursiveDrawScene:(id)arg1 withContext:(id)arg2 pass:(unsigned int)arg3;
 - (void)setBackgroundColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMapModel:(id)arg1;
 - (void)setRasterizingScaleFactor:(unsigned int)arg1;
 - (void)setTileProvider:(id)arg1;
+- (unsigned int)supportedRenderPasses;
 - (id)tileProvider;
 
 @end

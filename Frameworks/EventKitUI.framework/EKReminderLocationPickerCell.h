@@ -16,10 +16,10 @@
 
 @property int locationPickerCellAccessoryType;
 
+- (void).cxx_destruct;
 - (id)_exclamationGlyphImage;
 - (id)_failImage;
 - (id)_failPressedImage;
-- (void)dealloc;
 - (id)initWithStyle:(int)arg1 buttonHandler:(id)arg2 styleProvider:(id)arg3;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;

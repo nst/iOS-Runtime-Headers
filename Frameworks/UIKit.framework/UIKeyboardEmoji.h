@@ -5,23 +5,22 @@
 @class NSString;
 
 @interface UIKeyboardEmoji : NSObject {
-    unsigned short _glyph;
-    NSString *emojiString;
+    NSString *_emojiString;
+    BOOL _hasDingbat;
 }
 
 @property(retain) NSString * emojiString;
-@property unsigned short glyph;
-@property(readonly) NSString * key;
+@property BOOL hasDingbat;
 
-+ (id)emojiWithString:(id)arg1;
++ (id)emojiWithString:(id)arg1 hasDingbat:(BOOL)arg2;
 
 - (void)dealloc;
 - (id)emojiString;
-- (unsigned short)glyph;
-- (id)initWithString:(id)arg1;
+- (BOOL)hasDingbat;
+- (id)initWithString:(id)arg1 hasDingbat:(BOOL)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (void)setEmojiString:(id)arg1;
-- (void)setGlyph:(unsigned short)arg1;
+- (void)setHasDingbat:(BOOL)arg1;
 
 @end

@@ -46,8 +46,13 @@
         unsigned int delegateDidCancelEditing : 1; 
         unsigned int delegateEditingAnimationFinished : 1; 
         unsigned int delegateWidthDeltaOriginXDelta : 1; 
+        unsigned int delegateDidBeginAnimatingZoom : 1; 
+        unsigned int delegateDidEndAnimatingZoom : 1; 
+        unsigned int delegateWillZoom : 1; 
+        unsigned int dataSourceRequestThumbnailImageIsSummmary : 1; 
     <UIMovieScrubberDataSource> *_dataSource;
     <UIMovieScrubberDelegate> *_delegate;
+    float _edgeInset;
     BOOL _editable;
     UIMovieScrubberEditingView *_editingView;
     UILabel *_elapsedLabel;
@@ -76,10 +81,12 @@
     double _zoomDelay;
 }
 
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentMargins;
 @property(getter=isContinuous) BOOL continuous;
 @property <UIMovieScrubberDataSource> * dataSource;
 @property <UIMovieScrubberDelegate> * delegate;
 @property double duration;
+@property float edgeInset;
 @property(getter=isEditable) BOOL editable;
 @property(getter=isEditing) BOOL editing;
 @property(readonly) BOOL isInsideNavigationBar;
@@ -90,7 +97,10 @@
 @property double trimEndValue;
 @property double trimStartValue;
 @property double value;
+@property(getter=isZoomAnimating,readonly) BOOL zoomAnimating;
 @property double zoomDelay;
+@property(readonly) double zoomMaximumValue;
+@property(readonly) double zoomMinimumValue;
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
@@ -103,23 +113,23 @@
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
-- (float)_editingFrameDeltaXForValue:(float)arg1 handle:(int)arg2;
 - (int)_editingHandleWithTouch:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForEndValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewFrameForStartValueWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRectForStartTime:(double)arg1 endTime:(double)arg2;
 - (void)_initSubviews;
 - (id)_scriptingInfo;
 - (void)_sendDelayedActions;
 - (void)_setValue:(double)arg1 andSendAction:(BOOL)arg2;
-- (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
-- (void)_sliderAnimationWillStart:(id)arg1 context:(void*)arg2;
+- (void)_setZoomAnimating:(BOOL)arg1;
+- (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2;
 - (void)_sliderValueDidChange:(id)arg1;
 - (void)_trackPressWasHeld;
 - (void)_trimAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateThumbLocation;
 - (void)_updateTimes;
 - (float)_valueForTouch:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentMargins;
 - (void)animateAfterEdit;
 - (void)animateCancelEdit;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -131,21 +141,25 @@
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (double)duration;
+- (float)edgeInset;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)forceUnzoom;
+- (BOOL)forceZoom;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isAnimatingValueChange;
 - (BOOL)isContinuous;
 - (BOOL)isEditable;
 - (BOOL)isEditing;
 - (BOOL)isInsideNavigationBar;
+- (BOOL)isZoomAnimating;
 - (void)layoutSubviews;
 - (double)maximumTrimLength;
 - (double)minimumTrimLength;
 - (void)movieScrubberTrackView:(id)arg1 clampedSizeWidthDelta:(float)arg2 actualSizeWidthDelta:(float)arg3 originXDelta:(float)arg4 minimumVisibleValue:(float)arg5 maximumVisibleValue:(float)arg6;
 - (id)movieScrubberTrackView:(id)arg1 evenlySpacedTimestamps:(int)arg2 startingAt:(id)arg3 endingAt:(id)arg4;
-- (void)movieScrubberTrackView:(id)arg1 requestThumbnailImageForTimestamp:(id)arg2;
-- (id)movieScrubberTrackView:(id)arg1 timestampsStartingAt:(id)arg2 endingAt:(id)arg3 maxCount:(int)arg4;
+- (void)movieScrubberTrackView:(id)arg1 requestThumbnailImageForTimestamp:(id)arg2 isSummaryThumbnail:(BOOL)arg3;
 - (void)movieScrubberTrackViewDidCollapse:(id)arg1;
 - (void)movieScrubberTrackViewDidExpand:(id)arg1;
 - (void)movieScrubberTrackViewDidFinishRequestingThumbnails:(id)arg1;
@@ -161,6 +175,7 @@
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setEdgeInset:(float)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEditing:(BOOL)arg1;
@@ -178,6 +193,7 @@
 - (void)setZoomAnimationDuration:(double)arg1;
 - (void)setZoomDelay:(double)arg1;
 - (BOOL)showTimeViews;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)thumbIsVisible;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForValue:(float)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
@@ -186,5 +202,7 @@
 - (double)trimStartValue;
 - (double)value;
 - (double)zoomDelay;
+- (double)zoomMaximumValue;
+- (double)zoomMinimumValue;
 
 @end

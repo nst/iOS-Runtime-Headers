@@ -11,12 +11,13 @@
     CIImage *inputImage;
 }
 
-@property(retain) NSData * inputCubeData;
-@property(copy) NSNumber * inputCubeDimension;
+@property(copy) NSData * inputCubeData;
+@property(retain) NSNumber * inputCubeDimension;
 @property(retain) CIImage * inputImage;
 
 + (id)customAttributes;
 
+- (BOOL)_checkInputs;
 - (id)_kernel;
 - (id)cubeImage;
 - (void)dealloc;

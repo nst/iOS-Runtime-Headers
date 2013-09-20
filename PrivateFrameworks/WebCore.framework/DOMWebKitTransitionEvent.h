@@ -9,8 +9,10 @@
 
 @property(readonly) double elapsedTime;
 @property(readonly) NSString * propertyName;
+@property(readonly) NSString * pseudoElement;
 
 - (double)elapsedTime;
 - (id)propertyName;
+- (id)pseudoElement;
 
 @end

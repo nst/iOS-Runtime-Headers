@@ -16,9 +16,9 @@
 @property(retain) MPQueueFeeder * feeder;
 @property int feederMode;
 
+- (void).cxx_destruct;
 - (unsigned int)currentItemIndex;
 - (double)currentTime;
-- (void)dealloc;
 - (id)description;
 - (id)feeder;
 - (int)feederMode;

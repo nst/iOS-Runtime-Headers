@@ -2,23 +2,32 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKRecurrenceEnd, NSArray, NSString;
+@class EKCalendarItem, EKRecurrenceEnd, NSArray, NSDate, NSString;
 
 @interface EKRecurrenceRule : EKObject <NSCopying> {
     EKRecurrenceEnd *_cachedEnd;
+    EKCalendarItem *_owner;
+    BOOL _usesEndDate;
 }
 
+@property(readonly) NSString * UUID;
 @property(retain) EKRecurrenceEnd * cachedEnd;
+@property(readonly) NSDate * cachedEndDate;
 @property(readonly) NSString * calendarIdentifier;
 @property(readonly) NSArray * daysOfTheMonth;
 @property(readonly) NSArray * daysOfTheWeek;
 @property(readonly) NSArray * daysOfTheYear;
+@property(readonly) BOOL dirtyStateMayAffectExceptionDates;
 @property(readonly) int firstDayOfTheWeek;
 @property(readonly) int frequency;
+@property(readonly) struct { int x1; int x2; int x3; int x4; int x5; double x6; } gregorianUnits;
 @property(readonly) int interval;
 @property(readonly) NSArray * monthsOfTheYear;
+@property(retain) EKCalendarItem * owner;
 @property(copy) EKRecurrenceEnd * recurrenceEnd;
 @property(readonly) NSArray * setPositions;
+@property(readonly) BOOL shouldPinMonthDays;
+@property(readonly) BOOL usesEndDate;
 @property(readonly) NSArray * weeksOfTheYear;
 
 + (id)iCalendarValueFromDate:(id)arg1 isDateOnly:(BOOL)arg2 isFloating:(BOOL)arg3;
@@ -49,6 +58,7 @@
 - (BOOL)mayOccurAfterDate:(id)arg1;
 - (id)monthsOfTheYear;
 - (id)owner;
+- (void)pinToEndsOfMonthsWithCalendarItem:(id)arg1;
 - (id)recurrenceEnd;
 - (void)reset;
 - (void)setCachedEnd:(id)arg1;
@@ -57,14 +67,16 @@
 - (void)setDaysOfTheYear:(id)arg1;
 - (void)setFirstDayOfTheWeek:(unsigned int)arg1;
 - (void)setFrequency:(int)arg1;
-- (void)setInterval:(int)arg1;
+- (void)setInterval:(unsigned int)arg1;
 - (void)setMonthsOfTheYear:(id)arg1;
+- (void)setOwner:(id)arg1;
 - (id)setPositions;
 - (void)setRecurrenceEnd:(id)arg1;
 - (void)setSetPositions:(id)arg1;
 - (void)setWeeksOfTheYear:(id)arg1;
 - (BOOL)shouldPinMonthDays;
 - (id)stringValueAsDateOnly:(BOOL)arg1 isFloating:(BOOL)arg2;
+- (BOOL)usesEndDate;
 - (id)weeksOfTheYear;
 
 @end

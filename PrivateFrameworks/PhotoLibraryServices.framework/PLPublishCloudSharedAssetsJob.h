@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface PLPublishCloudSharedAssetsJob : PLCloudSharingJob {
     NSString *_batchCommentText;
     BOOL _isNewAlbum;
     NSArray *_originalAssetUUIDs;
     NSString *_publishAlbumCloudGUID;
+    NSDictionary *_trimmedVideoPathInfo;
 }
 
 @property(retain) NSString * batchCommentText;
 @property BOOL isNewAlbum;
 @property(retain) NSArray * originalAssetUUIDs;
 @property(retain) NSString * publishAlbumCloudGUID;
+@property(retain) NSDictionary * trimmedVideoPathInfo;
 
-+ (void)publishBatchOfOriginalAssets:(id)arg1 toSharedAlbum:(id)arg2 isNewAlbum:(BOOL)arg3 batchCommentText:(id)arg4;
++ (void)publishBatchOfOriginalAssets:(id)arg1 toSharedAlbum:(id)arg2 withTrimmedVideoPathInfo:(id)arg3 isNewAlbum:(BOOL)arg4 batchCommentText:(id)arg5;
 
 - (id)batchCommentText;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
@@ -34,6 +36,8 @@
 - (void)setIsNewAlbum:(BOOL)arg1;
 - (void)setOriginalAssetUUIDs:(id)arg1;
 - (void)setPublishAlbumCloudGUID:(id)arg1;
+- (void)setTrimmedVideoPathInfo:(id)arg1;
 - (BOOL)shouldArchiveXPCToDisk;
+- (id)trimmedVideoPathInfo;
 
 @end

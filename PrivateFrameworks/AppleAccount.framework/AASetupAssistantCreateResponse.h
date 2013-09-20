@@ -7,11 +7,15 @@
 @interface AASetupAssistantCreateResponse : AAResponse {
 }
 
+@property(readonly) NSString * HSAAction;
+@property(readonly) NSString * HSAData;
 @property(readonly) NSString * appleID;
 @property(readonly) NSString * personID;
 @property(readonly) NSNumber * status;
 @property(readonly) NSString * statusMessage;
 
+- (id)HSAAction;
+- (id)HSAData;
 - (id)appleID;
 - (id)personID;
 - (id)status;

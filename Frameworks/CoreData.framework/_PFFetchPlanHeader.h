@@ -7,14 +7,15 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSFetchRequest, NSManagedObjectContext, NSSQLCore, NSSQLEntity, NSSQLModel, NSSQLRowCache, NSSQLStatement;
+@class NSFetchRequest, NSManagedObjectContext, NSPersistentStore, NSSQLEntity, NSSQLModel, NSSQLRowCache, NSSQLStatement;
 
 @interface _PFFetchPlanHeader : NSObject {
     struct { 
         unsigned int principal_entity_has_subentities : 1; 
         unsigned int fetch_only_primary_keys : 1; 
         unsigned int fetch_results_style : 3; 
-        unsigned int _reserved : 27; 
+        unsigned int use_clean_memory : 1; 
+        unsigned int _reserved : 26; 
     int (*entity_for_ek_funptr)();
     NSSQLStatement *cached_sql_statement;
     NSManagedObjectContext *current_context;
@@ -22,7 +23,7 @@
     } flags;
     unsigned int requested_batch_size;
     NSSQLRowCache *row_cache;
-    NSSQLCore *sql_core;
+    NSPersistentStore *sql_core;
     NSSQLModel *sql_model;
     NSSQLEntity *statement_entity;
 }

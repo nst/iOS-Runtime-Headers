@@ -12,14 +12,22 @@
 @property(retain) UIImage * icon;
 @property(retain) PKPass * pass;
 
-+ (id)mimeTypesToFileExtensions;
++ (id)UTITypes;
++ (id)fallbackFilenamePrefix;
++ (BOOL)isPreviewable;
 
 - (void)dealloc;
+- (id)generateThumbnail;
+- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)icon;
 - (int)mediaType;
 - (id)pass;
+- (id)passView;
 - (void)setIcon:(id)arg1;
 - (void)setPass:(id)arg1;
+- (BOOL)shouldBeQuickLooked;
+- (BOOL)shouldShowDisclosure;
+- (BOOL)shouldShowViewer;
 - (id)subtitle;
 - (id)title;
 

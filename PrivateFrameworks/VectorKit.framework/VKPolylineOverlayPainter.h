@@ -2,17 +2,57 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEORoute, NSMutableSet, NSSet, VGLRenderState, VGLTexture, VKLRUCache, VKPolylineOverlay, VKRouteLine, VKTileKeyList;
+@class GEORoute, NSSet, NSString, VGLRenderState, VGLTexture, VKAnimation, VKPolylineOverlay, VKRouteLine, VKTileKeyList, VKTrafficDrawStyle;
 
 @interface VKPolylineOverlayPainter : VKOverlayPainter <VKPolylineObserver> {
+    struct RouteLineStyle { 
+        float strokeWidthRegularPoints; 
+        double halfWidthRegularPoints; 
+        double halfWidthRegularUnselectedScale; 
+        double halfWidthRealisticMeters; 
+        struct _VGLColor { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } travelledRegularRouteLineColor; 
+        struct _VGLColor { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } inverseBaseColorSelected; 
+        struct _VGLColor { 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
+        } inverseBaseColorUnselected; 
+        NSString *selectedTextureNameRealistic; 
+        NSString *obscuredTextureNameRealistic; 
+        NSString *travelledTextureNameRealistic; 
+        double widthEnlargementStartZoom; 
+        double widthEnlargementScale; 
+        double maxEnlargement; 
+        float arrowMinZoom; 
+        float selectedArrowMinZoom; 
+        float brightnessRealistic; 
     struct { 
         double v[4][4]; 
+    struct { 
+        double v[4][4]; 
+    float _alphaScale;
+    float _arrowAlphaScale;
+    VKAnimation *_arrowCrossFadeAnimation;
+    VKAnimation *_arrowFadeAnimation;
+    float _contentScale;
+    float _crossfadingDisplayStep;
+    VKAnimation *_fadeAnimation;
+    BOOL _forceRoutelineUpdate;
+    } _inverseMatrix;
     } _matrix;
     VGLTexture *_obscuredTextureRealistic;
-    VKLRUCache *_polylineTilesForKeys;
-    VKTileKeyList *_previousKeysAlongRoute;
     VKTileKeyList *_previousKeysInView;
-    NSMutableSet *_previousTilesAlongRoute;
     NSSet *_previousTilesInView;
     VGLRenderState *_renderState;
     GEORoute *_route;
@@ -21,38 +61,51 @@
     double _routeLineHalfWidthRegular;
     BOOL _selected;
     VGLTexture *_selectedTextureRealistic;
-    VGLTexture *_selectedTextureRegular;
+    BOOL _showArrows;
+    BOOL _showTraffic;
+    double _simplificationEpsilon;
+    int _stencilValue;
+    } _style;
+    unsigned int _targetDisplayStep;
+    VKTrafficDrawStyle *_trafficDrawStyle;
     VGLTexture *_travelledTextureRealistic;
-    VGLTexture *_travelledTextureRegular;
-    VGLTexture *_unselectedTextureRealistic;
-    VGLTexture *_unselectedTextureRegular;
-    BOOL _wasInRealisticModeOnPreviousLayout;
+    BOOL _wasInRealisticMode;
 }
 
 @property(readonly) VKPolylineOverlay * polyline;
 @property(retain) GEORoute * route;
 @property BOOL selected;
+@property BOOL showTraffic;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)_didReceiveMemoryWarning;
-- (id)_polylineTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (id)_polylineTileForOverlayTile:(id)arg1 createIfMissing:(BOOL)arg2;
-- (id)_polylineTileForRoadData:(id)arg1;
-- (float)calculateRouteDistanceToTextureMappingScaler:(float)arg1;
+- (void)_drawRealisticWithContext:(id)arg1;
+- (void)_drawRegularWithContext:(id)arg1;
+- (void)_populateRenderBuffer:(id)arg1 matrix:(const union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; }*)arg2 halfWidth:(float)arg3 context:(id)arg4;
+- (void)_releaseTextures;
+- (BOOL)_shouldShowTraffic;
 - (void)dealloc;
+- (void)drawArrowsWithContext:(id)arg1;
 - (void)drawDebug:(id)arg1 tiles:(id)arg2;
+- (void)drawWithContext:(id)arg1 tiles:(id)arg2 prepare:(BOOL)arg3 updateStencil:(BOOL)arg4;
 - (void)drawWithContext:(id)arg1 tiles:(id)arg2;
 - (id)initWithOverlay:(id)arg1;
 - (void)layoutWithContext:(id)arg1 tiles:(id)arg2 keysInView:(id)arg3;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)polyline;
+- (void)prepareToDrawWithContext:(id)arg1;
 - (id)route;
+- (float)routeLineWidthForCamera:(id)arg1 canvasSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)selected;
+- (void)setContainerModel:(id)arg1;
 - (void)setNeedsLayoutForPolyline:(id)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
-- (void)setupShaders:(BOOL)arg1 showTraffic:(BOOL)arg2 withContext:(id)arg3 andProgram:(id)arg4 forMesh:(id)arg5 withScaler:(float)arg6;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })trafficColorForSpeed:(BOOL)arg1;
-- (id)trafficTextureForSpeed:(BOOL)arg1 withContext:(id)arg2;
-- (float)trafficTextureMappingScalerForSpeed:(BOOL)arg1;
+- (void)setShowTraffic:(BOOL)arg1;
+- (BOOL)showTraffic;
+- (id)stylesheet;
+- (void)stylesheetDidChange;
+- (void)updateRouteLineStencilValue:(int)arg1;
 
 @end

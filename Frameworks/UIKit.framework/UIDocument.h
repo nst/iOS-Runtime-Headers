@@ -19,7 +19,6 @@
         unsigned int inConflict : 1; 
     id _alertPresenter;
     NSTimer *_autosavingTimer;
-    void *_conflictObserver;
     id _differenceDueToRecentChanges;
     id _differenceSincePreservingPreviousVersion;
     id _differenceSinceSaving;
@@ -27,7 +26,6 @@
     NSLock *_documentPropertyLock;
     NSObject<OS_dispatch_queue> *_fileAccessQueue;
     NSObject<OS_dispatch_semaphore> *_fileAccessSemaphore;
-    unsigned int _fileContentsPreservationReason;
     NSDate *_fileModificationDate;
     NSOperationQueue *_filePresenterQueue;
     NSString *_fileType;
@@ -70,7 +68,7 @@
 - (void)_changeWasDone:(id)arg1;
 - (void)_changeWasRedone:(id)arg1;
 - (void)_changeWasUndone:(id)arg1;
-- (void)_coordinateWritingItemAtURL:(id)arg1 error:(id*)arg2 byAccessor:(id)arg3;
+- (BOOL)_coordinateWritingItemAtURL:(id)arg1 error:(id*)arg2 byAccessor:(id)arg3;
 - (id)_fileOpeningQueue;
 - (void)_finishSavingToURL:(id)arg1 forSaveOperation:(int)arg2 changeCount:(id)arg3;
 - (BOOL)_hasSavingError;

@@ -6,14 +6,14 @@
 
 @interface BasicAceContext : NSObject <AceContext> {
     NSMutableDictionary *_groupMap;
-    NSMutableDictionary *_objectMap;
 }
 
++ (id)sharedBasicAceContext;
+
 - (id)aceObjectWithDictionary:(id)arg1;
-- (void)addAcronym:(id)arg1 forGroup:(id)arg2;
-- (void)addClass:(Class)arg1 forCommand:(id)arg2 inGroup:(id)arg3;
 - (Class)classWithClassName:(id)arg1 group:(id)arg2;
 - (void)dealloc;
 - (id)init;
+- (void)registerGroupAcronym:(id)arg1 forGroupWithIdentifier:(id)arg2;
 
 @end

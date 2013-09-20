@@ -29,10 +29,11 @@
 + (void)_pushSurfaceAccelerator:(struct __IOSurfaceAccelerator { }*)arg1;
 + (id)_stackQueueTransferSession;
 
+- (void).cxx_destruct;
 - (struct __IOSurface { }*)_create420Surface;
 - (struct __IOSurface { }*)_createBGRASurface;
 - (struct __IOSurface { }*)_createJPEGSurface;
-- (void)_decodeJPEG:(id)arg1 withInputSurface:(struct __IOSurface { }*)arg2 toIOSurface:(struct __IOSurface { }*)arg3;
+- (long)_decodeJPEG:(id)arg1 withInputSurface:(struct __IOSurface { }*)arg2 toIOSurface:(struct __IOSurface { }*)arg3;
 - (id)_newImageFrom420Surface:(struct __IOSurface { }*)arg1;
 - (struct __IOSurface { }*)_pop420Surface;
 - (struct __IOSurface { }*)_popBGRASurface;

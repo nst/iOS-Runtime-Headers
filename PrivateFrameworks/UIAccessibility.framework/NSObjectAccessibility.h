@@ -5,7 +5,10 @@
 @interface NSObjectAccessibility : NSObjectAccessibility_super {
 }
 
++ (id)_accessibilityTargetClassName;
 + (void)_initializeSafeCategory;
++ (id)_initializeSafeCategoryFromValidationManager;
++ (id)_installSafeCategoryValidationMethod;
 
 - (id)accessibilityUserDefinedActivationPoint;
 - (id)accessibilityUserDefinedFrame;
@@ -13,6 +16,7 @@
 - (id)accessibilityUserDefinedIdentifier;
 - (id)accessibilityUserDefinedLabel;
 - (id)accessibilityUserDefinedLanguage;
+- (id)accessibilityUserDefinedShouldGroupChildren;
 - (id)accessibilityUserDefinedTraits;
 - (id)accessibilityUserDefinedValue;
 - (id)isAccessibilityUserDefinedElement;

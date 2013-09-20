@@ -6,12 +6,12 @@
 }
 
 + (Class)MFComposeRecipientClass;
++ (Class)MFComposeRecipientViewClass;
 + (Class)MFContactsSearchManagerClass;
 + (Class)MFContactsSearchResultsModelClass;
 + (Class)MFMailComposeViewControllerClass;
 + (Class)MFRecipientTableViewCellClass;
 + (Class)MFSearchShadowViewClass;
-+ (Class)_MFComposeRecipientViewClass;
 + (BOOL)canSendMail;
 + (id)newABUnknownPersonViewControllerWithEmailAddress:(id)arg1;
 + (id)newComposeViewController;

@@ -8,6 +8,9 @@
         float g; 
         float b; 
         float a; 
+    struct Vec2Imp<float> { 
+        float x; 
+        float y; 
     struct { 
         float x; 
         float y; 
@@ -16,9 +19,6 @@
         float x; 
         float y; 
         float z; 
-    struct { 
-        float x; 
-        float y; 
     } _color;
     } _halfScreenDims;
     } _localEyeDir;
@@ -34,25 +34,27 @@
 }
 
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } color;
-@property struct { float x1; float x2; } halfScreenDims;
+@property struct Vec2Imp<float> { float x1; float x2; } halfScreenDims;
 @property struct { float x1; float x2; float x3; } localEyeDir;
 @property struct { float x1; float x2; float x3; } localEyePos;
 @property float tanHalfHorizFOV;
 @property int textureSampler;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
-- (struct { float x1; float x2; })halfScreenDims;
-- (id)init;
+- (struct Vec2Imp<float> { float x1; float x2; })halfScreenDims;
 - (struct { float x1; float x2; float x3; })localEyeDir;
 - (struct { float x1; float x2; float x3; })localEyePos;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
-- (void)setHalfScreenDims:(struct { float x1; float x2; })arg1;
+- (void)setHalfScreenDims:(struct Vec2Imp<float> { float x1; float x2; })arg1;
 - (void)setLocalEyeDir:(struct { float x1; float x2; float x3; })arg1;
 - (void)setLocalEyePos:(struct { float x1; float x2; float x3; })arg1;
 - (void)setTanHalfHorizFOV:(float)arg1;
 - (void)setTextureSampler:(int)arg1;
+- (void)setup;
 - (float)tanHalfHorizFOV;
 - (int)textureSampler;
 

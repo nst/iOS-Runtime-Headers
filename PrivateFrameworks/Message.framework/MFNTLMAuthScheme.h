@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFNTLMAuthScheme : AuthScheme {
+@interface MFNTLMAuthScheme : MFAuthScheme {
 }
-
-+ (void)initialize;
 
 - (Class)authenticatorClass;
 - (BOOL)hasEncryption;

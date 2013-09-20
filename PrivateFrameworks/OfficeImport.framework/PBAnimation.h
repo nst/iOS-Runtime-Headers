@@ -5,12 +5,12 @@
 @interface PBAnimation : NSObject {
 }
 
-+ (id)createChartBuild:(id)arg1;
-+ (id)createColorFromBehaviorColor:(struct PptAnimColorBehavior_Color_Struct { unsigned long x1; unsigned long x2; unsigned long x3; unsigned long x4; }*)arg1;
-+ (id)createParaBuild:(id)arg1;
 + (void)generatePpt10AnimationFromState:(id)arg1 timings:(id)arg2;
 + (BOOL)hasPpt10Animations:(id)arg1;
 + (void)mapAnimationsFromSlide:(id)arg1 tgtSlide:(id)arg2 state:(id)arg3;
++ (id)newChartBuild:(id)arg1;
++ (id)newColorFromBehaviorColor:(struct PptAnimColorBehavior_Color_Struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
++ (id)newParaBuild:(id)arg1;
 + (void)parseAnimateBehaviorContainer:(id)arg1 animBehavior:(id)arg2 timeNode:(id)arg3;
 + (id)parseBehaviorContainer:(id)arg1 timeNode:(id)arg2 state:(id)arg3;
 + (void)parseBuildList:(id)arg1 buildMap:(id)arg2 state:(id)arg3;

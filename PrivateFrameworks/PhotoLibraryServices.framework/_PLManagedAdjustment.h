@@ -9,6 +9,4 @@
 + (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 
-- (id)objectID;
-
 @end

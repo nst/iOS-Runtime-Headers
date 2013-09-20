@@ -13,6 +13,8 @@
 + (id)speechRecognized;
 + (id)speechRecognizedWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)ac_userUtteranceValue;
+- (id)af_correctionContext;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)recognition;

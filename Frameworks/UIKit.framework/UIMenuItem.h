@@ -14,6 +14,8 @@
 @property BOOL dontDismiss;
 @property(copy) NSString * title;
 
++ (id)menuItemWithTitle:(id)arg1 action:(SEL)arg2;
+
 - (SEL)action;
 - (void)dealloc;
 - (BOOL)dontDismiss;

@@ -6,6 +6,8 @@
     id constantValue;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)constantValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

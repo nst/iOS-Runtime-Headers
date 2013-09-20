@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOLocationShiftResponse : PBCodable {
+@interface GEOLocationShiftResponse : PBCodable <NSCopying> {
     struct { 
         double _x; 
         double _y; 
@@ -17,6 +17,7 @@
 @property struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; } shiftedPixel;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

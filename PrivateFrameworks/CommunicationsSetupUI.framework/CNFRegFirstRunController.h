@@ -28,7 +28,6 @@
 @property BOOL previousHidesBackButton;
 @property(retain) UIBarButtonItem * previousLeftButton;
 @property(retain) UIBarButtonItem * previousRightButton;
-@property BOOL showSplash;
 @property BOOL timedOut;
 
 - (void)_cancelValidationMode;
@@ -61,7 +60,6 @@
 - (void)_updateUI;
 - (id)_validationModeCancelButton;
 - (id)account;
-- (BOOL)canBeShownFromSuspendedState;
 - (Class)completionControllerClass;
 - (int)currentAppearanceStyle;
 - (id)customLeftButton;

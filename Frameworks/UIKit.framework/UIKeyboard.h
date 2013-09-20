@@ -2,19 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UITextInputTraits;
+@class UITextInputTraits, UIView;
 
 @interface UIKeyboard : UIView <UIKeyboardImplGeometryDelegate> {
     UITextInputTraits *m_defaultTraits;
+    int m_idiom;
     BOOL m_minimized;
     int m_orientation;
     BOOL m_respondingToImplGeometryChange;
-    UIImage *m_snapshot;
+    UIView *m_snapshot;
     BOOL m_typingDisabled;
 }
 
 @property BOOL caretBlinks;
 @property BOOL caretVisible;
+@property int keyboardIdiom;
 @property(getter=isMinimized) BOOL minimized;
 @property BOOL showsCandidatesInline;
 @property BOOL typingEnabled;
@@ -28,7 +30,6 @@
 + (BOOL)isInHardwareKeyboardMode;
 + (BOOL)isOnScreen;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })onscreenFrameForTextInputTraits:(id)arg1;
 + (void)removeAllDynamicDictionaries;
 + (BOOL)respondsToProxGesture;
 + (BOOL)shouldMinimizeForHardwareKeyboard;
@@ -38,7 +39,7 @@
 - (void)_acceptCurrentCandidate;
 - (id)_baseKeyForRepresentedString:(id)arg1;
 - (void)_changeToKeyplane:(id)arg1;
-- (void)_clearCurrentInputManager;
+- (void)_deactivateForBackgrounding;
 - (id)_getAutocorrection;
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
@@ -50,6 +51,7 @@
 - (int)_positionInCandidateList:(id)arg1;
 - (void)_setAutocorrects:(BOOL)arg1;
 - (void)_setInputMode:(id)arg1;
+- (void)_setRenderConfig:(id)arg1;
 - (id)_touchPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_typeCharacter:(id)arg1 withError:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (void)acceptAutocorrection;
@@ -76,6 +78,7 @@
 - (int)interfaceOrientation;
 - (BOOL)isActive;
 - (BOOL)isMinimized;
+- (int)keyboardIdiom;
 - (void)keyboardMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)manualKeyboardWasOrderedIn;
 - (void)manualKeyboardWasOrderedOut;
@@ -97,6 +100,7 @@
 - (void)setCorrectionLearningAllowed:(BOOL)arg1;
 - (void)setDefaultTextInputTraits:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setKeyboardIdiom:(int)arg1;
 - (void)setMinimized:(BOOL)arg1;
 - (void)setNeedsDisplay;
 - (void)setReturnKeyEnabled:(BOOL)arg1;

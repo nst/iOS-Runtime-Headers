@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)objectForKey:(id)arg1;
-- (void)release;
+- (oneway void)release;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

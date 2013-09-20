@@ -11,6 +11,7 @@
     NSTimer *_accuracyFallbackTimer;
     BOOL _activelyTrackingLocation;
     int _authorizationStatus;
+    BOOL _authorizationStatusSet;
     NSTimer *_automaticLocationUpdateTimer;
     <CLLocationManagerDelegate> *_delegate;
     float _lastLocationAccuracy;
@@ -40,6 +41,7 @@
 - (void)_clearLastLocUpdateTime;
 - (double)_lastLocationUpdateTime;
 - (double)_nextPlannedUpdate;
+- (void)_setAuthorizationStatus:(int)arg1;
 - (void)_setUpLocationTimerWithInterval:(float)arg1;
 - (void)_updateLocation:(id)arg1;
 - (BOOL)activelyTrackingLocation;
@@ -57,7 +59,7 @@
 - (BOOL)localWeatherAuthorized;
 - (id)location;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)locationManager;
 - (BOOL)locationTrackingIsReady;
 - (void)setActivelyTrackingLocation:(BOOL)arg1;

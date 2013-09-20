@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSIndexSet, PLAlbumListChangeNotification, PLFilteredAlbumList, PLIndexMapper;
+@class NSIndexSet, PLAssetContainerListChangeNotification, PLFilteredAlbumList, PLIndexMapper;
 
-@interface PLFilteredAlbumListChangeNotification : PLAlbumListChangeNotification <PLIndexMapperDataSource> {
+@interface PLFilteredAlbumListChangeNotification : PLAssetContainerListChangeNotification <PLIndexMapperDataSource> {
     PLFilteredAlbumList *_albumList;
-    PLAlbumListChangeNotification *_backingNotification;
+    PLAssetContainerListChangeNotification *_backingNotification;
     NSIndexSet *_filteredIndexes;
     PLIndexMapper *_indexMapper;
     NSIndexSet *_oldFilteredIndexes;

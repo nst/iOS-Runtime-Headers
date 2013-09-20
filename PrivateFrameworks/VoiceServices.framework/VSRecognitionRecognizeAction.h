@@ -37,6 +37,7 @@
 - (void)_handledThreadedResults:(id)arg1 nextAction:(id)arg2;
 - (BOOL)_hasDeferredStartCallback;
 - (float)_inputLevel;
+- (float)_inputLevelDB;
 - (BOOL)_isActivelyRecognizing;
 - (BOOL)_isRecognizing;
 - (id)_keywordAtIndex:(int)arg1;

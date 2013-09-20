@@ -14,6 +14,7 @@
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (void)_coreCreationForKeys:(const id*)arg1 count:(unsigned long)arg2;
 - (void)_coreDealloc:(BOOL)arg1;

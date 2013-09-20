@@ -5,6 +5,7 @@
 @interface UIClassicWindow : UIWindow {
 }
 
+- (BOOL)_shouldZoom;
 - (void)_updateTransformLayerForClassicPresentation;
 
 @end

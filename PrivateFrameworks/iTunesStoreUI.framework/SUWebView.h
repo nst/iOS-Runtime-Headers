@@ -2,12 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUWebViewDelegate>, NSString, UIColor;
+@class <SUWebViewDelegate>, NSString, UIColor, UIView;
 
 @interface SUWebView : UIWebView {
     unsigned int _scrollingDisabled : 1;
+    BOOL _isPinned;
     UIColor *_originalBackgroundColor;
     BOOL _originalShowsBackgroundShadow;
+    float _pinnedHeaderInsetAdjustment;
+    UIView *_pinnedHeaderView;
     BOOL _showsTopBackgroundShadow;
     int _synchronousLayoutCount;
     UIColor *_topBackgroundColor;
@@ -20,6 +23,7 @@
 @property(retain) UIColor * topBackgroundColor;
 @property(readonly) id windowScriptObject;
 
+- (void)_setPinnedHeaderView:(id)arg1 withTopInsetAdjustment:(float)arg2;
 - (void)_setRichTextReaderViewportSettings;
 - (void)beginSynchronousLayout;
 - (void)dealloc;

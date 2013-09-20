@@ -22,7 +22,7 @@
 - (long long)offset;
 - (id)path;
 - (void)seekToOffset:(long long)arg1 whence:(int)arg2;
-- (void)truncateToLength:(unsigned long)arg1;
+- (void)truncateToLength:(long long)arg1;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

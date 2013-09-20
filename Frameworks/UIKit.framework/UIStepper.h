@@ -17,7 +17,6 @@
     int _repeatCount;
     NSTimer *_repeatTimer;
     double _stepValue;
-    UIColor *_tintColor;
     double _value;
     BOOL _wraps;
 }
@@ -46,6 +45,7 @@
 - (void)_updateCount:(id)arg1;
 - (void)_updateDividerImageForButtonState;
 - (void)_updateHighlightingAtPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)_updateImages;
 - (BOOL)autorepeat;
 - (id)backgroundImageForState:(unsigned int)arg1;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -80,7 +80,6 @@
 - (void)setWraps:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (double)stepValue;
-- (id)tintColor;
 - (double)value;
 - (BOOL)wraps;
 

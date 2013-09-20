@@ -2,31 +2,59 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
+@class NSMutableArray;
+
 @interface UIInputViewAnimationStyle : NSObject {
     BOOL animated;
     double duration;
+    unsigned int extraOptions;
+    NSMutableArray *extraViews;
     BOOL force;
+    BOOL ignoreNewAnimations;
     int outDirection;
+    BOOL persistUntilComplete;
+    BOOL placeholderKeyboard;
 }
 
 @property BOOL animated;
 @property double duration;
+@property unsigned int extraOptions;
+@property(retain) NSMutableArray * extraViews;
 @property BOOL force;
+@property BOOL ignoreNewAnimations;
+@property(readonly) BOOL isAnimationCompleted;
 @property int outDirection;
+@property BOOL persistUntilComplete;
+@property BOOL placeholderKeyboard;
+@property(readonly) BOOL useCustomTransition;
 
 + (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(int)arg3;
 + (id)animationStyleDefault;
 + (id)animationStyleImmediate;
 
 - (BOOL)animated;
+- (void)dealloc;
 - (id)description;
 - (double)duration;
+- (unsigned int)extraOptions;
+- (id)extraViews;
 - (BOOL)force;
+- (BOOL)ignoreNewAnimations;
+- (BOOL)isAnimationCompleted;
 - (BOOL)isEqual:(id)arg1;
+- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
 - (int)outDirection;
+- (BOOL)persistUntilComplete;
+- (BOOL)placeholderKeyboard;
 - (void)setAnimated:(BOOL)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setExtraOptions:(unsigned int)arg1;
+- (void)setExtraViews:(id)arg1;
 - (void)setForce:(BOOL)arg1;
+- (void)setIgnoreNewAnimations:(BOOL)arg1;
 - (void)setOutDirection:(int)arg1;
+- (void)setPersistUntilComplete:(BOOL)arg1;
+- (void)setPlaceholderKeyboard:(BOOL)arg1;
+- (BOOL)useCustomTransition;
 
 @end

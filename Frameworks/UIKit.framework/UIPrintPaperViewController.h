@@ -9,7 +9,6 @@
 }
 
 - (void)adjustPopoverSize;
-- (void)dealloc;
 - (id)initWithPrintPanelViewController:(id)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;

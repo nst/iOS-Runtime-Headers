@@ -14,7 +14,7 @@
     NSString *_filePath;
     unsigned char _matrixEnabled;
     unsigned int _name;
-    int _target;
+    unsigned int _target;
     NSMutableArray *_texGenArray;
     GLKEffectPropertyTexGen *_texGenR;
     GLKEffectPropertyTexGen *_texGenS;
@@ -33,7 +33,7 @@
 @property unsigned char matrixEnabled;
 @property unsigned int name;
 @property(readonly) unsigned char normalizedNormalsMask;
-@property int target;
+@property unsigned int target;
 @property(readonly) NSMutableArray * texGenArray;
 @property(readonly) GLKEffectPropertyTexGen * texGenR;
 @property(readonly) GLKEffectPropertyTexGen * texGenS;
@@ -70,13 +70,13 @@
 - (void)setMatrixEnabled:(unsigned char)arg1;
 - (void)setName:(unsigned int)arg1;
 - (void)setShaderBindings;
-- (void)setTarget:(int)arg1;
+- (void)setTarget:(unsigned int)arg1;
 - (void)setTextureIndex:(int)arg1;
 - (void)setUnit2dLoc:(int)arg1;
 - (void)setUnit2dNameString:(char *)arg1;
 - (void)setUnitCubeLoc:(int)arg1;
 - (void)setUnitCubeNameString:(char *)arg1;
-- (int)target;
+- (unsigned int)target;
 - (id)texGenArray;
 - (id)texGenR;
 - (id)texGenS;

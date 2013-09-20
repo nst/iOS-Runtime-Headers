@@ -28,6 +28,7 @@
 
 @property(readonly) int alignment;
 @property(readonly) int baseWritingDirection;
+@property(readonly) float defaultTabInterval;
 @property(readonly) float firstLineHeadIndent;
 @property(readonly) float headIndent;
 @property(readonly) float hyphenationFactor;
@@ -38,6 +39,7 @@
 @property(readonly) float minimumLineHeight;
 @property(readonly) float paragraphSpacing;
 @property(readonly) float paragraphSpacingBefore;
+@property(readonly) NSArray * tabStops;
 @property(readonly) float tailIndent;
 
 + (int)_defaultWritingDirection;
@@ -51,6 +53,7 @@
 - (BOOL)_isDeallocating;
 - (BOOL)_isSuitableForFastStringDrawingWithAlignment:(int*)arg1 lineBreakMode:(int*)arg2 tighteningFactorForTruncation:(float*)arg3;
 - (BOOL)_tryRetain;
+- (int)_ui_resolvedTextAlignment;
 - (int)alignment;
 - (int)baseWritingDirection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

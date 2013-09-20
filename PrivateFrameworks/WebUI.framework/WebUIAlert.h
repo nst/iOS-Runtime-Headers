@@ -25,7 +25,7 @@
 @property(copy) id actionHandler;
 
 - (id)_buttonTitleForAction:(int)arg1;
-- (int)actionForButtonTag:(unsigned int)arg1;
+- (int)actionForButtonTag:(int)arg1;
 - (id)actionHandler;
 - (id)bodyText;
 - (id)buttonTitles;

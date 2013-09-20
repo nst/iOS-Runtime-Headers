@@ -16,7 +16,7 @@
     unsigned long long offset;
     unsigned int time;
     unsigned long long uncompressedSize;
-    unsigned int utf8NameLength;
+    unsigned long utf8NameLength;
 }
 
 - (int)compareByOffset:(id)arg1;

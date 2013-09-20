@@ -6,7 +6,7 @@
 
 @interface EDPivotConditionalFormat : NSObject {
     EDCollection *mPivotAreas;
-    unsigned int mPriority;
+    unsigned long mPriority;
     int mScope;
     int mType;
 }
@@ -16,9 +16,9 @@
 - (void)dealloc;
 - (id)init;
 - (id)pivotAreas;
-- (unsigned int)priority;
+- (unsigned long)priority;
 - (int)scope;
-- (void)setPriority:(unsigned int)arg1;
+- (void)setPriority:(unsigned long)arg1;
 - (void)setScope:(int)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

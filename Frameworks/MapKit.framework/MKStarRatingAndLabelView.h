@@ -17,6 +17,7 @@
 @property(retain) NSString * sourceName;
 @property(readonly) MKStarRatingView * starRatingView;
 
+- (void)_mapkit_setTextColor:(id)arg1;
 - (void)_setStarStyle:(int)arg1;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;

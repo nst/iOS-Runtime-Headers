@@ -5,6 +5,6 @@
 @interface VKSimpleMapMatcher : VKMapMatcher {
 }
 
-- (id)matchLocation:(id)arg1;
+- (id)matchLocation:(id)arg1 transportType:(int)arg2;
 
 @end

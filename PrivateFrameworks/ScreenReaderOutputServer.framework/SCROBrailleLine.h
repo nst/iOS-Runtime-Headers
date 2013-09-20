@@ -28,9 +28,11 @@
     int _lastToken;
     int _leftInset;
     NSMutableAttributedString *_lineBuffer;
+    int _lineFocus;
     int _lineOffset;
     int _masterStatusCellIndex;
     BOOL _needsDisplayFlush;
+    BOOL _needsFocusFlush;
     BOOL _needsStatusFlush;
     int _rightInset;
     BOOL _showDotsSevenAndEight;
@@ -63,6 +65,7 @@
 - (BOOL)getStatusRouterIndex:(int*)arg1 forRawIndex:(int)arg2;
 - (id)initWithDriver:(id)arg1 mainSize:(int)arg2 statusSize:(int)arg3;
 - (int)lastToken;
+- (int)lineFocus;
 - (int)masterStatusCellIndex;
 - (BOOL)needsDisplayFlush;
 - (id)newLineDescriptorscriptor;
@@ -73,6 +76,7 @@
 - (void)setCurrentUnread:(BOOL)arg1;
 - (void)setDisplayMode:(int)arg1;
 - (void)setFormatter:(id)arg1;
+- (void)setLineFocus:(int)arg1;
 - (void)setMainSize:(int)arg1;
 - (void)setMasterStatusCellIndex:(int)arg1;
 - (void)setRealStatus:(id)arg1;

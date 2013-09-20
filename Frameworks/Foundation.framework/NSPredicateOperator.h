@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSPredicateOperator : NSObject <NSCoding, NSCopying> {
+@interface NSPredicateOperator : NSObject <NSSecureCoding, NSCopying> {
     unsigned int _modifier;
     unsigned int _operatorType;
 }
@@ -12,6 +12,7 @@
 + (id)_newOperatorWithType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
 + (id)operatorWithCustomSelector:(SEL)arg1 modifier:(unsigned int)arg2;
 + (id)operatorWithType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (void)_setModifier:(unsigned int)arg1;
 - (void)_setOptions:(unsigned int)arg1;

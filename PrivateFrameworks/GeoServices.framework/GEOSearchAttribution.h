@@ -4,7 +4,7 @@
 
 @class NSMutableArray, NSString;
 
-@interface GEOSearchAttribution : PBCodable {
+@interface GEOSearchAttribution : PBCodable <NSCopying> {
     NSMutableArray *_attributionURLs;
     NSString *_sourceIdentifier;
     unsigned int _sourceVersion;
@@ -20,6 +20,7 @@
 - (unsigned int)attributionURLsCount;
 - (void)clearAttributionURLs;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

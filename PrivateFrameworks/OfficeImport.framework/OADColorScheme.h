@@ -4,7 +4,7 @@
 
 @class NSMutableDictionary;
 
-@interface OADColorScheme : NSObject {
+@interface OADColorScheme : NSObject <NSCopying> {
     NSMutableDictionary *mColors;
 }
 
@@ -12,6 +12,7 @@
 - (void)addDefaultColors;
 - (unsigned int)colorCount;
 - (id)colorForIndex:(int)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

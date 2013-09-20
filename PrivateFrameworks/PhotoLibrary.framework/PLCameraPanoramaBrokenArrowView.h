@@ -16,7 +16,6 @@
         } size; 
     UIImageView *_arrowHead;
     UIView *_arrowTail;
-    UIImageView *_arrowTailGlow;
     CAShapeLayer *_arrowTailPiecesLayer;
     } _arrowTailRect;
     float _currentNormalizedSpeed;

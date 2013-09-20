@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMNode, NSMutableArray, NSObject<UIFormPeripheral>, NSTimer, UIResponder, UIWebFormAccessory, UIWebFormDelegate, UIWebPDFView, UIWebTouchEventsGestureRecognizer;
+@class <UIWebAutoFillDelegate>, DOMNode, NSHashTable, NSLock, NSMutableArray, NSMutableSet, NSObject<UIFormPeripheral>, NSString, NSTimer, UIResponder, UIWebFormAccessory, UIWebFormDelegate, UIWebPDFView, UIWebTouchEventsGestureRecognizer;
 
-@interface UIWebBrowserView : UIWebDocumentView <UIWebFormAccessoryDelegate, UIBrowserDocumentController, _UIWebRotationDelegate> {
+@interface UIWebBrowserView : UIWebDocumentView <UIWebTouchEventsGestureRecognizerDelegate, UIWebFormAccessoryDelegate, _UIWebRotationDelegate> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -43,9 +43,11 @@
     unsigned int _hasEditedTextField : 1;
     unsigned int _alwaysDispatchesScrollEvents : 1;
     UIWebFormAccessory *_accessory;
+    NSHashTable *_activeHighlighters;
     } _addressViewBounds;
     DOMNode *_assistedNodeStartingFocusRedirects;
     unsigned int _audioSessionCategoryOverride;
+    <UIWebAutoFillDelegate> *_autoFillDelegate;
     DOMNode *_currentAssistedNode;
     NSMutableArray *_deferredTouchEvents;
     unsigned int _dispatchedTouchEvents;
@@ -55,7 +57,13 @@
     } _inputViewBounds;
     float _lastAdjustmentForScroller;
     } _messages;
+    NSMutableSet *_overflowScrollViews;
+    NSMutableSet *_overflowScrollViewsPendingDeletion;
+    NSMutableSet *_overflowScrollViewsPendingInsertion;
     } _pdf;
+    BOOL _pendingGeometryChangeAfterOverflowScroll;
+    NSLock *_pendingOverflowDataLock;
+    NSMutableArray *_pendingOverflowScrolls;
     UIWebTouchEventsGestureRecognizer *_webTouchEventsGestureRecognizer;
 }
 
@@ -68,29 +76,34 @@
 @property BOOL allowsInlineMediaPlayback;
 @property BOOL alwaysDispatchesScrollEvents;
 @property unsigned int audioSessionCategoryOverride;
+@property <UIWebAutoFillDelegate> * autoFillDelegate;
 @property(readonly) BOOL hasEditedTextField;
 @property BOOL inputViewObeysDOMFocus;
 @property(readonly) BOOL isDispatchingTouchEvents;
 @property BOOL mediaPlaybackRequiresUserAction;
+@property NSString * networkInterfaceName;
 
-+ (id)_PDFPageNumberLabel:(BOOL)arg1;
 + (id)getUIWebBrowserViewForWebFrame:(id)arg1;
-+ (BOOL)isAutoFillAllowed;
++ (void)initialize;
 + (float)preferredScrollDecelerationFactor;
 
 - (id)_absoluteUrlRelativeToDocumentURL:(id)arg1;
 - (id)_accessory;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_activeRectForRectToCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_addAdditionalSubview:(id)arg1;
 - (void)_autoFillFrame:(id)arg1;
 - (void)_beginAllowingFocusRedirects;
-- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(int)arg4 toValue:(float)arg5;
-- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(int)arg4;
+- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(unsigned int)arg4 toValue:(float)arg5;
+- (void)_centerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSizeChange:(BOOL)arg2 withVisibleHeight:(float)arg3 pinningEdge:(unsigned int)arg4;
 - (void)_clearAllConsoleMessages;
+- (void)_clearFormAutoFillStateForFrame:(id)arg1;
 - (void)_clearSelectionAndUI;
+- (id)_collectAdditionalSubviews;
 - (struct CGPoint { float x1; float x2; })_convertWindowPointToViewport:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_currentAssistedNode;
 - (struct CGSize { float x1; float x2; })_defaultScrollViewContentSize;
 - (void)_deferWebEvent:(id)arg1;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_didScroll;
 - (void)_dispatchWebEvent:(id)arg1;
 - (void)_displayFormNodeInputView;
@@ -99,23 +112,30 @@
 - (id)_editingDelegateForEverythingExceptForms;
 - (void)_endAllowingFocusRedirects;
 - (void)_endDeferringEvents;
-- (unsigned int)_firstVisiblePDFPageNumber;
 - (void)_handleDeferredEvents;
-- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (BOOL)_hasSubviewContainingWebContent:(id)arg1;
 - (id)_input;
+- (BOOL)_isAutoFilling;
 - (BOOL)_keepKeyboardVisibleDuringFocusRedirects;
 - (void)_keyboardDidChangeFrame:(id)arg1;
 - (id)_keyboardResponder;
 - (void)_keyboardWillChangeFrame:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_originForPDFPageLabelInSuperview:(id)arg1;
+- (void)_nextAccessoryTab:(id)arg1;
+- (void)_noteOverflowScrollViewPendingDeletion:(id)arg1;
+- (void)_noteOverflowScrollViewPendingInsertion:(id)arg1;
+- (void)_overflowScrollView:(id)arg1 didEndScrollingForNode:(id)arg2;
+- (void)_overflowScrollView:(id)arg1 scrollOffsetChangedForNode:(id)arg2 whileScrolling:(BOOL)arg3;
+- (void)_overflowScrollView:(id)arg1 willStartScrollingForNode:(id)arg2;
+- (void)_prevAccessoryTab:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
+- (void)_removeAdditionalSubview:(id)arg1;
+- (void)_removeFindOnPageHighlighter:(id)arg1;
 - (BOOL)_requiresKeyboardResetOnReload;
 - (BOOL)_requiresKeyboardWhenFirstResponder;
 - (void)_resetFormDataForFrame:(id)arg1;
 - (void)_scrollCaretToVisible:(id)arg1;
-- (void)_setAddressViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setInputViewBoundsForAutomaticKeyboardInfo:(id)arg1 adjustScrollView:(BOOL)arg2;
 - (void)_setSelectedDOMRangeAndUpdateUI:(id)arg1;
 - (BOOL)_shouldDeferEvents;
@@ -127,13 +147,16 @@
 - (void)_stopAssistingKeyboard;
 - (void)_stopAssistingNode:(id)arg1;
 - (void)_updateAccessory;
+- (void)_updateAutoFillButton;
 - (void)_updateFixedPositionContent;
 - (void)_updateFixedPositioningObjectsLayoutAfterScroll;
 - (void)_updateFixedPositioningObjectsLayoutAfterVisibleGeometryChange;
+- (void)_updateFixedPositioningObjectsLayoutDuringScroll;
 - (void)_updateFixedPositioningObjectsLayoutSoon;
-- (void)_updatePDFPageNumberLabelWithUserScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateScrollerViewForInputView:(id)arg1;
+- (void)_webThreadOverflowScrollOffsetChanged;
 - (void)_webTouchEventsRecognized:(id)arg1;
+- (void)_webViewFormEditedStatusHasChanged:(id)arg1;
 - (void)_zoomToNode:(id)arg1 forceScroll:(BOOL)arg2;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4 formAssistantFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 animationDuration:(double)arg6;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withScale:(float)arg3 forceScroll:(BOOL)arg4;
@@ -144,20 +167,21 @@
 - (void)accessoryDone;
 - (void)accessoryTab:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })activeRectForRectOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)addFindOnPageHighlighter;
 - (BOOL)allowDOMFocusRedirects;
 - (BOOL)allowsInlineMediaPlayback;
 - (BOOL)alwaysDispatchesScrollEvents;
+- (BOOL)appendOverflowScrollForNode:(id)arg1 offset:(struct CGPoint { float x1; float x2; })arg2 whileScrolling:(BOOL)arg3;
 - (void)assistFormNode:(id)arg1;
 - (unsigned int)audioSessionCategoryOverride;
-- (void)autoFillWithElementValue;
-- (BOOL)canAutoFill;
+- (id)autoFillDelegate;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)clearMessagesMatchingMask:(int)arg1;
 - (BOOL)considerHeightOfRectOfInterestForRotation;
 - (struct CGSize { float x1; float x2; })contentSizeForScrollView:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)dealloc;
-- (void)formDelegateHandleTextChangeWithAutoFillSuggestions:(BOOL)arg1;
+- (void)formDelegateTextDidChange;
 - (id)formElement;
 - (BOOL)hasEditedTextField;
 - (float)heightToKeepVisible;
@@ -168,15 +192,18 @@
 - (BOOL)inputViewObeysDOMFocus;
 - (void)installGestureRecognizers;
 - (BOOL)isAccessoryEnabled;
+- (BOOL)isAnyTouchOverActiveArea:(id)arg1;
 - (BOOL)isAutoFillMode;
-- (BOOL)isAutoFilling;
 - (BOOL)isDispatchingTouchEvents;
 - (BOOL)isEditable;
+- (id)keyCommands;
 - (BOOL)mediaPlaybackRequiresUserAction;
 - (id)messagesMatchingMask:(int)arg1;
 - (float)minimumVerticalContentOffset;
+- (id)networkInterfaceName;
 - (BOOL)playsNicelyWithGestures;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfInterestForRotation;
+- (void)redrawScaledDocument;
 - (BOOL)resignFirstResponder;
 - (void)rotateEnclosingScrollViewToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)scaleForProposedNewScale:(float)arg1 andOldScale:(float)arg2;
@@ -186,18 +213,23 @@
 - (void)setAllowsInlineMediaPlayback:(BOOL)arg1;
 - (void)setAlwaysDispatchesScrollEvents:(BOOL)arg1;
 - (void)setAudioSessionCategoryOverride:(unsigned int)arg1;
+- (void)setAutoFillDelegate:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInputViewObeysDOMFocus:(BOOL)arg1;
 - (void)setMediaPlaybackRequiresUserAction:(BOOL)arg1;
+- (void)setNetworkInterfaceName:(id)arg1;
 - (void)set_accessory:(id)arg1;
 - (void)set_currentAssistedNode:(id)arg1;
 - (void)set_editingDelegateForEverythingExceptForms:(id)arg1;
 - (void)set_input:(id)arg1;
+- (BOOL)shouldIgnoreWebTouch;
+- (void)simulateDidScroll;
 - (id)textDocument;
 - (id)textFormElement;
 - (void)updateBoundariesOfScrollView:(id)arg1 withScales:(struct { float x1; float x2; float x3; })arg2;
 - (void)webView:(id)arg1 addMessageToConsole:(id)arg2 withSource:(id)arg3;
+- (void)webView:(id)arg1 didCreateOrUpdateScrollingLayer:(id)arg2 withContentsLayer:(id)arg3 scrollSize:(id)arg4 forNode:(id)arg5 allowHorizontalScrollbar:(BOOL)arg6 allowVerticalScrollbar:(BOOL)arg7;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
@@ -206,7 +238,8 @@
 - (void)webView:(id)arg1 elementDidBlurNode:(id)arg2;
 - (void)webView:(id)arg1 elementDidFocusNode:(id)arg2;
 - (void)webView:(id)arg1 willCloseFrame:(id)arg2;
+- (void)webView:(id)arg1 willRemoveScrollingLayer:(id)arg2 withContentsLayer:(id)arg3 forNode:(id)arg4;
+- (void)webViewDidCommitCompositingLayerChanges:(id)arg1;
 - (void)webViewDidPreventDefaultForEvent:(id)arg1;
-- (void)webViewFormEditedStatusHasChanged:(id)arg1;
 
 @end

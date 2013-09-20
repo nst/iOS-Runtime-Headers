@@ -4,13 +4,12 @@
 
 @class NSArray, NSData, NSURL;
 
-@interface SALocalSearchSendToProtobufConduit : SABaseClientBoundCommand {
+@interface SALocalSearchSendToProtobufConduit : SADomainCommand {
 }
 
 @property(copy) NSArray * attributes;
 @property(copy) NSURL * endpoint;
 @property(copy) NSData * rawRequest;
-@property(copy) NSURL * targetAppId;
 @property int timeoutInSeconds;
 
 + (id)sendToProtobufConduit;
@@ -25,9 +24,7 @@
 - (void)setAttributes:(id)arg1;
 - (void)setEndpoint:(id)arg1;
 - (void)setRawRequest:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (void)setTimeoutInSeconds:(int)arg1;
-- (id)targetAppId;
 - (int)timeoutInSeconds;
 
 @end

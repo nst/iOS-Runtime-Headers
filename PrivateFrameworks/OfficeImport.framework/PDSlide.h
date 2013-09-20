@@ -11,11 +11,13 @@
 }
 
 - (void)addComment:(id)arg1;
+- (id)background;
 - (id)commentAtIndex:(unsigned int)arg1;
 - (unsigned int)commentCount;
 - (void)dealloc;
 - (id)defaultTheme;
 - (void)doneWithContent;
+- (BOOL)hasMappableSlideNumberShape;
 - (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
 - (id)notesSlide;
 - (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;

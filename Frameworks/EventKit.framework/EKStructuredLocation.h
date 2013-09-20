@@ -7,7 +7,9 @@
 @interface EKStructuredLocation : EKObject <NSCopying> {
 }
 
+@property(copy) NSString * addressBookEntityID;
 @property(retain) CLLocation * geoLocation;
+@property(readonly) BOOL isStructured;
 @property double radius;
 @property(retain) NSString * title;
 

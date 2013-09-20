@@ -29,7 +29,7 @@
 - (id)description;
 - (id)globalID;
 - (id)init;
-- (id)initWithTransactionEntry:(id)arg1 andGlobalIDCache:(id)arg2;
+- (id)initWithTransactionEntry:(id)arg1 ubiquityRootLocation:(id)arg2 andGlobalIDCache:(id)arg3;
 - (id)knowledgeVector;
 - (void)setActingPeerID:(id)arg1;
 - (void)setGlobalID:(id)arg1;

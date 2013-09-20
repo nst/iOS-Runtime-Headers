@@ -25,6 +25,8 @@
 + (id)displayNameForCurrentUser:(id)arg1;
 + (id)enabledKeyboardLanguages;
 + (Class)getASAssetQueryClass;
++ (BOOL)shouldIgnoreFontAsset:(id)arg1;
++ (BOOL)shouldRetryWithServer;
 + (BOOL)shouldTryServer;
 
 - (id).cxx_construct;

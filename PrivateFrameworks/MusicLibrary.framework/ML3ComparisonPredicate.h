@@ -8,7 +8,7 @@
     BOOL _caseInsensitive;
     int _comparison;
     NSString *_transformFunction;
-    BOOL _treatNullAsBlank;
+    NSString *_treatNullAsString;
     id _value;
 }
 
@@ -16,36 +16,37 @@
 @property int comparison;
 @property(readonly) NSString * operator;
 @property(copy) NSString * transformFunction;
-@property BOOL treatNullAsBlank;
+@property(copy) NSString * treatNullAsString;
 @property(retain) id value;
 
 + (id)predicateWithProperty:(id)arg1 equalToInt64:(long long)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToInteger:(int)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
-+ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4 treatNullAsBlank:(BOOL)arg5;
++ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4 treatNullAsString:(id)arg5;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 transformFunction:(id)arg4;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3;
 
 - (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (void)bindToStatement:(id)arg1 bindingIndex:(inout int*)arg2;
 - (BOOL)caseInsensitive;
 - (int)comparison;
+- (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4 transformFunction:(id)arg5 treatNullAsBlank:(BOOL)arg6;
+- (id)initWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(BOOL)arg4 transformFunction:(id)arg5 treatNullAsString:(id)arg6;
 - (BOOL)isEqual:(id)arg1;
 - (id)operator;
 - (void)setCaseInsensitive:(BOOL)arg1;
 - (void)setComparison:(int)arg1;
 - (void)setTransformFunction:(id)arg1;
-- (void)setTreatNullAsBlank:(BOOL)arg1;
+- (void)setTreatNullAsString:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)transformFunction;
-- (BOOL)treatNullAsBlank;
+- (id)treatNullAsString;
 - (id)value;
+- (id)valueToBindForOperation:(int)arg1;
 
 @end

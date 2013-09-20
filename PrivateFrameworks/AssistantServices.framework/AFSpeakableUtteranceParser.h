@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSMutableDictionary;
+@class NSLocale, NSMutableDictionary;
 
 @interface AFSpeakableUtteranceParser : NSObject {
     id _functionHandler;
+    NSLocale *_locale;
     NSMutableDictionary *_providers;
 }
 
@@ -14,16 +15,19 @@
 
 + (BOOL)_shouldAutomaticallyProvideFunctions;
 + (id)parseUserGeneratedMessage:(id)arg1;
++ (id)speakableUtteranceParserForCurrentLanguage;
 
 - (void).cxx_destruct;
-- (id)_handleControlCodeAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; struct { int x_4_1_1; int x_4_1_2; } x4; int x5; int x6; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4 hadEmpties:(BOOL*)arg5;
-- (id)_handleOptionalAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; struct { int x_4_1_1; int x_4_1_2; } x4; int x5; int x6; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4;
-- (id)_handleProviderAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; struct { int x_4_1_1; int x_4_1_2; } x4; int x5; int x6; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4;
+- (id)_handleControlCodeAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4 hadEmpties:(BOOL*)arg5;
+- (id)_handleOptionalAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4;
+- (id)_handleProviderAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4;
 - (BOOL)handleTTSCodes;
 - (BOOL)handlesFunctions;
 - (id)init;
-- (id)parseStringWithFormat:(id)arg1 error:(id*)arg2 hadEmpties:(BOOL*)arg3;
+- (id)initWithLocale:(id)arg1;
+- (id)parseStringRemovingControlCharacters:(id)arg1 error:(id*)arg2;
 - (id)parseStringWithFormat:(id)arg1 error:(id*)arg2;
+- (id)parseStringWithFormat:(id)arg1 includeControlCharacters:(BOOL)arg2 error:(id*)arg3 hadEmpties:(BOOL*)arg4;
 - (void)registerProvider:(id)arg1 forNamespace:(id)arg2;
 - (void)setHandleTTSCodes:(BOOL)arg1;
 - (void)setHandlesFunctions:(BOOL)arg1;

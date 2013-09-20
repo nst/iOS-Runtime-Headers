@@ -6,7 +6,6 @@
 
 @interface PLCameraViewController : UIViewController {
     PLCameraView *_cameraView;
-    BOOL _ignoreAppearCallbacks;
 }
 
 - (BOOL)_displaysFullScreen;

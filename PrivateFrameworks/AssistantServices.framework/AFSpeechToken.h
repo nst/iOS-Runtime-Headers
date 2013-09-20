@@ -4,7 +4,7 @@
 
 @class NSString;
 
-@interface AFSpeechToken : NSObject {
+@interface AFSpeechToken : NSObject <NSSecureCoding> {
     int _confidence;
     double _endTime;
     BOOL _removeSpaceAfter;
@@ -20,12 +20,14 @@
 @property double startTime;
 @property(copy) NSString * text;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (int)confidenceScore;
 - (id)description;
-- (id)dkPlistRepresentation;
+- (void)encodeWithCoder:(id)arg1;
 - (double)endTime;
-- (id)initWithDKPlistRepresentation:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)removeSpaceAfter;
 - (BOOL)removeSpaceBefore;
 - (void)setConfidenceScore:(int)arg1;

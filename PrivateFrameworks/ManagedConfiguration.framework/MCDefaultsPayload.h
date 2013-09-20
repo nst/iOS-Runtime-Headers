@@ -8,16 +8,16 @@
     NSDictionary *_defaultsByDomain;
 }
 
-+ (id)_allowedDefaults;
-+ (id)localizedDescriptionForPayloadCount:(unsigned int)arg1;
++ (id)localizedPluralForm;
++ (id)localizedSingularForm;
 + (id)typeStrings;
 
 - (void).cxx_destruct;
-- (BOOL)_checkForValidDefaults:(id)arg1 outError:(id*)arg2;
 - (id)defaultsForDomain:(id)arg1;
 - (id)description;
 - (id)domains;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (BOOL)isAllowedToWriteDefaults;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 

@@ -10,6 +10,4 @@
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
-- (id)objectID;
-
 @end

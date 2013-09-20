@@ -25,10 +25,12 @@
 
 + (id)storeLookupIDForAlbumItemsQuery:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_specificationForArtworkSizesToRequest;
 - (id)albumItemsQuery;
-- (void)dealloc;
 - (id)initWithAlbumItemsQuery:(id)arg1 tokenID:(int)arg2 wantsArtwork:(BOOL)arg3 responseBlock:(id)arg4;
+- (id)lookupRequestForAlbumWithRepresentativeItem:(id)arg1;
+- (id)lookupRequestForStorePlaylistIdentifier:(id)arg1;
 - (id)newLookupRequest;
 - (id)responseBlock;
 - (id)storeLookupID;

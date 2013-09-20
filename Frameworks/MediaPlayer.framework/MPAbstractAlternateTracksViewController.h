@@ -8,9 +8,12 @@
 }
 
 - (void)_alternateTypesChangedNotification:(id)arg1;
+- (BOOL)_hasAudioGroup;
+- (BOOL)_hasSubtitlesGroup;
 - (void)addLoadingUI;
 - (id)alternateTracks;
 - (id)arrayForGroup:(int)arg1;
+- (unsigned int)countOfGroups;
 - (void)dealloc;
 - (unsigned int)indexForGroup:(int)arg1;
 - (id)init;

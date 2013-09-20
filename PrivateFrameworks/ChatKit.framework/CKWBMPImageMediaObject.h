@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKWBMPImageMediaObject : CKFixedImageMediaObject {
+@interface CKWBMPImageMediaObject : CKImageMediaObject {
 }
 
-+ (id)mimeTypesToFileExtensions;
-
-- (id)imageData;
-- (int)mediaType;
++ (id)UTITypes;
++ (Class)imageDataClass;
 
 @end

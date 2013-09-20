@@ -5,7 +5,7 @@
 @interface GQHTextStyle : NSObject {
 }
 
-+ (struct __GSFont { }*)createFontFromName:(struct __CFString { }*)arg1 size:(float)arg2;
++ (struct __CTFont { }*)createFontFromName:(struct __CFString { }*)arg1 size:(float)arg2;
 + (BOOL)getDefaultLineHeight:(struct __CFString { }*)arg1 fontSize:(float)arg2 defLineHeight:(int*)arg3;
 + (void)mapStyle:(id)arg1 style:(id)arg2 state:(id)arg3 isSpan:(BOOL)arg4;
 + (void)mapStyle:(id)arg1 style:(id)arg2 state:(id)arg3;

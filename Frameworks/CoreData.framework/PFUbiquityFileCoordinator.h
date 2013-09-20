@@ -18,6 +18,6 @@
 - (void)dealloc;
 - (id)initWithFilePresenter:(id)arg1;
 - (id)localPeerID;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (BOOL)shouldRetryForError:(id)arg1 ignoreFile:(BOOL*)arg2;
 
 @end

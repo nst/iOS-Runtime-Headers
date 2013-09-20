@@ -16,6 +16,7 @@
     int _numHBIDataPoints;
     NSString *_persistentUUID;
     NSNumber *_successfulRequests;
+    BOOL _syncingAllowed;
     NSNumber *_timeInNetworking;
     NSNumber *_timeSpan;
 }
@@ -29,6 +30,7 @@
 @property(retain) NSNumber * falseMoreAvailableCount;
 @property(retain) NSString * persistentUUID;
 @property(retain) NSNumber * successfulRequests;
+@property BOOL syncingAllowed;
 @property(retain) NSNumber * timeInNetworking;
 @property(retain) NSNumber * timeSpan;
 
@@ -61,9 +63,11 @@
 - (void)setFalseMoreAvailableCount:(id)arg1;
 - (void)setPersistentUUID:(id)arg1;
 - (void)setSuccessfulRequests:(id)arg1;
+- (void)setSyncingAllowed:(BOOL)arg1;
 - (void)setTimeInNetworking:(id)arg1;
 - (void)setTimeSpan:(id)arg1;
 - (id)successfulRequests;
+- (BOOL)syncingAllowed;
 - (id)timeInNetworking;
 - (id)timeSpan;
 

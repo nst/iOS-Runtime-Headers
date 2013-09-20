@@ -4,7 +4,7 @@
 
 @class GEOLatLng, GEOMapRegion, GEOPlace, GEOPlaceSearchRequest, GEOPlaceSearchResponse, NSData, NSMutableArray, NSString;
 
-@interface GEOProblem : PBCodable {
+@interface GEOProblem : PBCodable <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -136,6 +136,7 @@
 - (void)clearVisibleTileSets;
 - (id)comments;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)correctedFieldAtIndex:(unsigned int)arg1;
 - (id)correctedFields;
 - (unsigned int)correctedFieldsCount;

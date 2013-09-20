@@ -9,12 +9,15 @@
     NSArray *_providers;
 }
 
+@property(readonly) NSString * activityTypeAddToReadingList;
 @property(readonly) NSString * activityTypeAssignToContact;
 @property(readonly) NSString * activityTypeCopyToPasteboard;
 @property(readonly) NSString * activityTypeMail;
 @property(readonly) NSString * activityTypeMessage;
 @property(readonly) NSString * activityTypePostToFacebook;
+@property(readonly) NSString * activityTypePostToFlickr;
 @property(readonly) NSString * activityTypePostToTwitter;
+@property(readonly) NSString * activityTypePostToVimeo;
 @property(readonly) NSString * activityTypePostToWeibo;
 @property(readonly) NSString * activityTypePrint;
 @property(readonly) NSString * activityTypeSaveToCameraRoll;
@@ -25,12 +28,15 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
+- (id)activityTypeAddToReadingList;
 - (id)activityTypeAssignToContact;
 - (id)activityTypeCopyToPasteboard;
 - (id)activityTypeMail;
 - (id)activityTypeMessage;
 - (id)activityTypePostToFacebook;
+- (id)activityTypePostToFlickr;
 - (id)activityTypePostToTwitter;
+- (id)activityTypePostToVimeo;
 - (id)activityTypePostToWeibo;
 - (id)activityTypePrint;
 - (id)activityTypeSaveToCameraRoll;

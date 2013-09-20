@@ -9,7 +9,7 @@
     ODDPresentationPoint *mParent;
 }
 
-- (void)addChild:(id)arg1 order:(unsigned long)arg2;
+- (void)addChild:(id)arg1 order:(unsigned int)arg2;
 - (id)children;
 - (void)dealloc;
 - (id)parent;

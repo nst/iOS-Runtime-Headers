@@ -17,6 +17,7 @@
 
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)getMuteStateForPeer:(id)arg1;
 - (id)initWithGKSession:(id)arg1 sessionName:(id)arg2;
 - (float)inputMeter;
 - (BOOL)isActiveSession;

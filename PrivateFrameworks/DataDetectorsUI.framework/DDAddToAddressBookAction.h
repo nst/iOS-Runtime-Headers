@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDAddToAddressBookAction : DDAction {
+@interface DDAddToAddressBookAction : DDAddressAction {
 }
 
 - (int)interactionType;

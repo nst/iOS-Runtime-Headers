@@ -6,32 +6,40 @@
    See Warning(s) below.
  */
 
-@class NSBlock, NSString, NSXPCInterface;
+@class NSBlock, NSDictionary, NSXPCInterface;
 
 @interface _NSXPCConnectionReplyInfo : NSObject {
     id _cleanupBlock;
     id _errorBlock;
     NSXPCInterface *_interface;
+    unsigned long long _proxyNumber;
     NSBlock *_replyBlock;
-    NSString *_selector;
+    SEL _selector;
+    NSDictionary *_userInfo;
 }
 
 @property(copy) id cleanupBlock;
 @property(copy) id errorBlock;
 @property(retain) NSXPCInterface * interface;
+@property unsigned long long proxyNumber;
 @property(copy) NSBlock * replyBlock;
-@property(copy) NSString * selector;
+@property SEL selector;
+@property(retain) NSDictionary * userInfo;
 
 - (id)cleanupBlock;
 - (void)dealloc;
 - (id)errorBlock;
 - (id)interface;
+- (unsigned long long)proxyNumber;
 - (id)replyBlock;
-- (id)selector;
+- (SEL)selector;
 - (void)setCleanupBlock:(id)arg1;
 - (void)setErrorBlock:(id)arg1;
 - (void)setInterface:(id)arg1;
+- (void)setProxyNumber:(unsigned long long)arg1;
 - (void)setReplyBlock:(id)arg1;
-- (void)setSelector:(id)arg1;
+- (void)setSelector:(SEL)arg1;
+- (void)setUserInfo:(id)arg1;
+- (id)userInfo;
 
 @end

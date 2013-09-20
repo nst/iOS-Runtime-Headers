@@ -10,7 +10,7 @@
 
 - (void)_openConnection;
 - (void)dealloc;
-- (int)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
+- (id)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
 - (Class)deliveryClass;
 - (id)newMessageWriter;
 

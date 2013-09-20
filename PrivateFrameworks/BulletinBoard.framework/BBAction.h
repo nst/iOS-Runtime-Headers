@@ -8,66 +8,63 @@
 
 @class NSDictionary, NSString, NSURL;
 
-@interface BBAction : NSObject {
+@interface BBAction : NSObject <NSCopying, NSCoding> {
+    int _actionType;
     NSDictionary *_activatePluginContext;
     NSString *_activatePluginName;
-    BOOL _canBypassPinLock;
-    BOOL _hasCallblock;
+    BOOL _deliverResponse;
     id _internalBlock;
     NSString *_launchBundleID;
+    BOOL _launchCanBypassPinLock;
     NSURL *_launchURL;
-    int _replyType;
 }
 
+@property int actionType;
 @property(copy) NSDictionary * activatePluginContext;
 @property(copy) NSString * activatePluginName;
 @property BOOL canBypassPinLock;
-@property BOOL hasCallblock;
 @property(copy) id internalBlock;
 @property(copy) NSString * launchBundleID;
+@property BOOL launchCanBypassPinLock;
 @property(retain) NSURL * launchURL;
-@property int replyType;
 
++ (id)action;
 + (id)actionWithActivatePluginName:(id)arg1 activationContext:(id)arg2;
 + (id)actionWithCallblock:(id)arg1;
 + (id)actionWithLaunchBundleID:(id)arg1 callblock:(id)arg2;
 + (id)actionWithLaunchURL:(id)arg1 callblock:(id)arg2;
-+ (id)actionWithTextReplyCallblock:(id)arg1;
 
-- (id)_initWithInternalCallblock:(id)arg1 replyType:(int)arg2;
+- (int)actionType;
 - (id)activatePluginContext;
 - (id)activatePluginName;
 - (id)bundleID;
 - (BOOL)canBypassPinLock;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)deliverResponse:(id)arg1;
+- (BOOL)deliverResponse:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasCallblock;
 - (BOOL)hasLaunchInfo;
 - (unsigned int)hash;
 - (id)initWithActivatePluginName:(id)arg1 activationContext:(id)arg2;
-- (id)initWithCallblock:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTextReplyCallblock:(id)arg1;
 - (id)internalBlock;
 - (BOOL)isAppLaunchAction;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isURLLaunchAction;
 - (id)launchBundleID;
+- (BOOL)launchCanBypassPinLock;
 - (id)launchURL;
 - (id)partialDescription;
-- (int)replyType;
+- (void)setActionType:(int)arg1;
 - (void)setActivatePluginContext:(id)arg1;
 - (void)setActivatePluginName:(id)arg1;
+- (void)setCallblock:(id)arg1;
 - (void)setCanBypassPinLock:(BOOL)arg1;
-- (void)setHasCallblock:(BOOL)arg1;
 - (void)setInternalBlock:(id)arg1;
 - (void)setLaunchBundleID:(id)arg1;
+- (void)setLaunchCanBypassPinLock:(BOOL)arg1;
 - (void)setLaunchURL:(id)arg1;
-- (void)setReplyType:(int)arg1;
 - (id)url;
-- (BOOL)wantsTextReply;
 
 @end

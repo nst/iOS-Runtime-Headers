@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString, NSURL;
+@class NSDate, NSString;
 
-@interface SANoteSearch : SABaseClientBoundCommand {
+@interface SANoteSearch : SADomainCommand {
 }
 
 @property(copy) NSString * contentQuery;
 @property(copy) NSDate * fromDate;
-@property(copy) NSURL * targetAppId;
 @property(copy) NSDate * toDate;
 
 + (id)search;
@@ -22,9 +21,7 @@
 - (BOOL)requiresResponse;
 - (void)setContentQuery:(id)arg1;
 - (void)setFromDate:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (void)setToDate:(id)arg1;
-- (id)targetAppId;
 - (id)toDate;
 
 @end

@@ -5,10 +5,10 @@
 @class NSMutableArray, NSMutableDictionary, NSString;
 
 @interface SymbolParserData : NSObject {
-    NSString *bufferString;
-    NSMutableDictionary *dictionary;
+    NSString *_bufferString;
+    NSMutableDictionary *_dictionary;
+    NSMutableArray *_symbols;
     int state;
-    NSMutableArray *symbols;
 }
 
 @property(retain) NSString * bufferString;

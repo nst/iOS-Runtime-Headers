@@ -86,6 +86,16 @@
             float width; 
             float height; 
         } size; 
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    int activeClippingMode;
     double animationStartTime;
     int animationState;
     UIInputViewAnimationStyle *animationStyle;
@@ -98,14 +108,17 @@
     } endFloatingFrameScreen;
     } endFrame;
     } endFrameScreen;
+    BOOL ignoreFrameChanges;
     UIInputViewSet *newSet;
     UIInputViewSet *oldSet;
     BOOL skipFencing;
     BOOL skipNotifications;
     UISnapshotView *snapshotView;
+    } snapshotViewBeginFrame;
     } snapshotViewEndFrame;
 }
 
+@property int activeClippingMode;
 @property double animationStartTime;
 @property int animationState;
 @property(retain) UIInputViewAnimationStyle * animationStyle;
@@ -114,6 +127,7 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFrame;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFrameScreen;
 @property(readonly) int beginState;
+@property(readonly) int cancelState;
 @property BOOL cancelled;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } deprecatedBounds;
 @property(readonly) struct CGPoint { float x1; float x2; } deprecatedCenterBegin;
@@ -123,13 +137,16 @@
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrameScreen;
 @property(readonly) int endState;
+@property BOOL ignoreFrameChanges;
 @property(retain) UIInputViewSet * oldSet;
 @property BOOL skipFencing;
 @property BOOL skipNotifications;
 @property(retain) UISnapshotView * snapshotView;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewBeginFrame;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewEndFrame;
 @property(readonly) int transitioningState;
 
+- (int)activeClippingMode;
 - (double)animationStartTime;
 - (int)animationState;
 - (id)animationStyle;
@@ -138,6 +155,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrameScreen;
 - (int)beginState;
+- (int)cancelState;
 - (BOOL)cancelled;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deprecatedBounds;
@@ -150,6 +168,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrameScreen;
 - (int)endState;
 - (BOOL)fadeAccessoryView;
+- (BOOL)ignoreFrameChanges;
 - (BOOL)isAlmostDone;
 - (BOOL)isOnScreen;
 - (id)newSet;
@@ -157,6 +176,7 @@
 - (void)postNotificationsForTransitionEnd;
 - (void)postNotificationsForTransitionStart;
 - (BOOL)requiresAutomaticAppearanceEnabled;
+- (void)setActiveClippingMode:(int)arg1;
 - (void)setAnimationStartTime:(double)arg1;
 - (void)setAnimationState:(int)arg1;
 - (void)setAnimationStyle:(id)arg1;
@@ -169,16 +189,20 @@
 - (void)setEndFloatingFrameScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEndFrameScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setIgnoreFrameChanges:(BOOL)arg1;
 - (void)setNewSet:(id)arg1;
 - (void)setOldSet:(id)arg1;
 - (void)setSkipFencing:(BOOL)arg1;
 - (void)setSkipNotifications:(BOOL)arg1;
 - (void)setSnapshotView:(id)arg1;
+- (void)setSnapshotViewBeginFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSnapshotViewEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldCompleteOnSuspend;
+- (BOOL)shouldRecomputeEndFrame;
 - (BOOL)skipFencing;
 - (BOOL)skipNotifications;
 - (id)snapshotView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewBeginFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotViewEndFrame;
 - (BOOL)subsumesTransition:(id)arg1;
 - (int)transitioningState;

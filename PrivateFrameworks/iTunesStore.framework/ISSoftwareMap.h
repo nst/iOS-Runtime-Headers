@@ -10,9 +10,11 @@
 
 @property(readonly) NSArray * applications;
 
++ (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
 + (void)_startWatchingInstallationNotifications;
 + (id)applicationForBundleIdentifier:(id)arg1 applicationType:(struct __CFString { }*)arg2;
 + (id)applicationForBundleIdentifier:(id)arg1;
++ (id)copySoftwareUpdatesPropertyListWithApplications:(id)arg1 updatesContext:(id)arg2;
 + (id)currentMap;
 + (BOOL)currentMapIsValid;
 + (BOOL)haveApplicationsOfType:(struct __CFString { }*)arg1;
@@ -22,7 +24,6 @@
 + (void)startObservingNotifications;
 
 - (void)_loadFromMobileInstallation;
-- (id)_newSoftwareUpdateDictionaryForApplication:(id)arg1;
 - (id)applicationForBundleIdentifier:(id)arg1;
 - (id)applicationForItemIdentifier:(id)arg1;
 - (id)applications;

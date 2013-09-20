@@ -21,8 +21,7 @@
 - (id)autorelease;
 - (void)doCleanupForURL:(id)arg1;
 - (BOOL)registerURLForCleanup:(id)arg1;
-- (void)release;
-- (void)removeDirectory:(id)arg1;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (id)temporaryLinksDirectoryForStore:(id)arg1;

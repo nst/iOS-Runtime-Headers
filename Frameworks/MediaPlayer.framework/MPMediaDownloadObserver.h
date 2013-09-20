@@ -14,7 +14,6 @@
     long long _pid;
     id _progressHandler;
     NSObject<OS_dispatch_queue> *_queue;
-    int _retainCount;
 }
 
 @property(readonly) BOOL canCancel;
@@ -22,16 +21,20 @@
 @property(readonly) double downloadProgress;
 @property(readonly) long long persistentID;
 @property(copy) id progressHandler;
+@property(getter=isPurchasing,readonly) BOOL purchasing;
+@property(readonly) double rawDownloadProgress;
+@property(readonly) double rawDownloadTotal;
 @property(getter=isRestoreDownload,readonly) BOOL restoreDownload;
 
++ (id)newObserverForMediaCollection:(id)arg1;
 + (id)newObserverForMediaItem:(id)arg1;
-+ (id)newObserverForMediaItemPersistentID:(unsigned long long)arg1 downloadStatus:(int)arg2 storeID:(long long)arg3;
++ (id)newObserverForMediaItemPersistentID:(unsigned long long)arg1 isPendingSync:(BOOL)arg2 storeID:(long long)arg3;
++ (id)newObserverForRadioTrackStoreID:(long long)arg1;
 + (id)sharedITunesStoreDownloadManager;
 
-- (BOOL)_isDeallocating;
+- (void).cxx_destruct;
 - (void)_onQueue_invalidate;
 - (void)_onQueue_setShouldFireProgressHandler;
-- (BOOL)_tryRetain;
 - (BOOL)canCancel;
 - (void)cancelDownload;
 - (void)dealloc;
@@ -39,12 +42,12 @@
 - (id)init;
 - (void)invalidate;
 - (BOOL)isCurrentlyPlayable;
+- (BOOL)isPurchasing;
 - (BOOL)isRestoreDownload;
 - (long long)persistentID;
 - (id)progressHandler;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
+- (double)rawDownloadProgress;
+- (double)rawDownloadTotal;
 - (void)setProgressHandler:(id)arg1;
 
 @end

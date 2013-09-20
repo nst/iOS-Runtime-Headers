@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOTileRequesterDelegate>, GEOTileKeyList, NSString, NSThread;
+@class <GEOTileRequesterDelegate>, GEOTileKeyList, NSData, NSString, NSThread;
 
 @interface GEOTileRequester : NSObject {
+    NSData *_auditToken;
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;
     id _context;
@@ -14,6 +15,7 @@
     NSThread *_thread;
 }
 
+@property(retain) NSData * auditToken;
 @property(retain) NSString * bundleIdentifier;
 @property(retain) NSString * bundleVersion;
 @property(retain) id context;
@@ -27,6 +29,7 @@
 + (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (unsigned char)tileProviderIdentifier;
 
+- (id)auditToken;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
 - (void)cancel;
@@ -36,6 +39,7 @@
 - (id)initWithKeyList:(id)arg1;
 - (id)keyList;
 - (BOOL)requireWiFi;
+- (void)setAuditToken:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setContext:(id)arg1;

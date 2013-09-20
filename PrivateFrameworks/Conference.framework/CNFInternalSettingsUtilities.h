@@ -9,9 +9,12 @@
 + (id)currentInternalSettingsBundle;
 + (BOOL)isViceroyLoggingEnabled;
 + (void)killEverything;
++ (void)killFaceTime;
 + (void)killImagent;
 + (void)killImavagent;
 + (void)killMediaServerd;
++ (void)killMobilePhone;
++ (void)killMobileSMS;
 + (void)nukeKeychain;
 + (void)setCurrentInternalSettingsBundle:(id)arg1;
 + (void)setIDSEnvironment:(id)arg1;

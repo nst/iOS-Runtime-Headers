@@ -13,6 +13,7 @@
 @property <EKReminderEditorDelegate> * reminderEditorDelegate;
 @property(retain) <EKStyleProvider> * styleProvider;
 
+- (void).cxx_destruct;
 - (BOOL)_canDetachSingleOccurrence;
 - (void)_copyEventForPossibleRevert;
 - (id)_editItems;
@@ -21,12 +22,11 @@
 - (id)_viewForSheet;
 - (BOOL)allowsDeletingFutureOccurrences;
 - (void)customizeActionSheet:(id)arg1;
-- (void)dealloc;
 - (id)defaultAlertTitle;
 - (id)defaultTitleForCalendarItem;
 - (void)editItem:(id)arg1 didCommitFromDetailViewController:(BOOL)arg2;
 - (void)editItem:(id)arg1 didEndDatePickingAnimated:(BOOL)arg2;
-- (void)editItem:(id)arg1 willBeginDatePickingWithDate:(id)arg2 action:(SEL)arg3 animated:(BOOL)arg4 forSubitem:(int)arg5 inSubsection:(int)arg6;
+- (void)editItem:(id)arg1 willBeginDatePickingWithDate:(id)arg2 action:(SEL)arg3 animated:(BOOL)arg4 forSubitem:(unsigned int)arg5 inSubsection:(unsigned int)arg6;
 - (void)editItemTextChanged:(id)arg1;
 - (unsigned int)entityType;
 - (void)loadView;

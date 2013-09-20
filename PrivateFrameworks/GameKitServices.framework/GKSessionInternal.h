@@ -62,7 +62,7 @@
 @property(getter=isAvailable) BOOL available;
 @property(getter=isBusy) BOOL busy;
 @property(readonly) GKConnection * connection;
-@property id dataReceiveHandler;
+@property(readonly) id dataReceiveHandler;
 @property <GKSessionDelegate> * delegate;
 @property double disconnectTimeout;
 @property(readonly) NSString * displayName;
@@ -140,7 +140,6 @@
 - (void)setBusy:(BOOL)arg1;
 - (void)setDOOBReceiveHandler:(id)arg1 withContext:(void*)arg2 inBand:(unsigned int)arg3;
 - (void)setDataReceiveHandler:(id)arg1 withContext:(void*)arg2;
-- (void)setDataReceiveHandler:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisconnectTimeout:(double)arg1;
 - (void)setDisplayName:(id)arg1 forPeer:(unsigned int)arg2;

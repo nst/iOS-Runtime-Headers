@@ -11,7 +11,7 @@
 }
 
 + (unsigned int)findStartFrom:(id)arg1 annotation:(const struct WrdAnnotation { int (**x1)(); int x2; int x3; int x4; struct WrdAnnotationReferenceDescriptor {} *x5; struct WrdDateTime {} *x6; }*)arg2;
-+ (void)readFrom:(id)arg1 at:(long)arg2 paragraph:(id)arg3;
-+ (void)readRangedFrom:(id)arg1 index:(unsigned long)arg2 type:(int)arg3 paragraph:(id)arg4;
++ (void)readFrom:(id)arg1 at:(int)arg2 paragraph:(id)arg3;
++ (void)readRangedFrom:(id)arg1 index:(unsigned int)arg2 type:(int)arg3 paragraph:(id)arg4;
 
 @end

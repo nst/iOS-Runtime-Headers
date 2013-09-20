@@ -34,10 +34,10 @@
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } strokeColor;
 @property int texturePolygonSampler;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
-- (id)init;
-- (id)initWithVertName:(id)arg1 fragName:(id)arg2;
+- (id).cxx_construct;
 - (int)isPolygonSolidColor;
 - (int)isToBeStroked;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })polygonColor;
@@ -48,6 +48,7 @@
 - (void)setScale:(float)arg1;
 - (void)setStrokeColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTexturePolygonSampler:(int)arg1;
+- (void)setup;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })strokeColor;
 - (int)texturePolygonSampler;
 

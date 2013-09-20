@@ -12,6 +12,8 @@
 @property(readonly) NSArray * appleIDAliases;
 @property(readonly) NSDictionary * dataclassProperties;
 @property(readonly) NSString * firstName;
+@property(readonly) NSString * fmipAuthToken;
+@property(readonly) NSString * iCloudAuthToken;
 @property(readonly) NSString * lastName;
 @property(readonly) NSString * primaryEmail;
 @property(readonly) NSNumber * primaryEmailVerified;
@@ -22,6 +24,8 @@
 - (id)appleIDAliases;
 - (id)dataclassProperties;
 - (id)firstName;
+- (id)fmipAuthToken;
+- (id)iCloudAuthToken;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)lastName;

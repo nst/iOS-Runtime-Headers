@@ -4,7 +4,7 @@
 
 @class NSDictionary, NSString;
 
-@interface FTGetRegionMetadataMessage : FTMessage <NSCopying> {
+@interface FTGetRegionMetadataMessage : IDSBaseMessage <NSCopying> {
     NSString *_language;
     NSDictionary *_responseRegionInformation;
 }

@@ -8,9 +8,8 @@
     NSString *_notChargingString;
 }
 
-- (id)contentsImageForStyle:(int)arg1;
+- (id)contentsImage;
 - (void)dealloc;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
-- (BOOL)usesSmallerTextFont;
 
 @end

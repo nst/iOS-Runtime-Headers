@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSData;
+@class NSData, UIImage;
 
 @interface _MPGeniusMixArtworkCache : NSObject {
-    struct CGImage { } *_artworkImage;
+    UIImage *_artworkImage;
     NSData *_data;
 }
 
-@property(readonly) struct CGImage { }* artworkImage;
+@property(readonly) UIImage * artworkImage;
 @property(readonly) unsigned int coverCount;
 @property(readonly) struct CGSize { float x1; float x2; } coverSize;
 @property(readonly) unsigned long long entityArtworkCacheHash;
@@ -17,10 +17,10 @@
 + (id)artworkCacheWithContentsOfFile:(id)arg1;
 + (id)artworkCacheWithCoverCount:(unsigned int)arg1 coverSize:(struct CGSize { float x1; float x2; })arg2 entityArtworkCacheHash:(unsigned long long)arg3 artworkData:(void*)arg4 length:(unsigned int)arg5;
 
-- (struct CGImage { }*)artworkImage;
+- (void).cxx_destruct;
+- (id)artworkImage;
 - (unsigned int)coverCount;
 - (struct CGSize { float x1; float x2; })coverSize;
-- (void)dealloc;
 - (unsigned long long)entityArtworkCacheHash;
 - (id)init;
 - (BOOL)writeToFile:(id)arg1;

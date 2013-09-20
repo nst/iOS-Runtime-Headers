@@ -7,6 +7,7 @@
 
 + (unsigned int)_remoteNotificationServerPort;
 + (int)enabledRemoteNotificationTypes;
++ (id)getNotificationUserInfoForToken:(int)arg1;
 + (id)getPendingNotificationUserInfo;
 + (void)getSupportedTypes:(id*)arg1 enabledTypes:(id*)arg2;
 + (BOOL)hasRegisteredBundleIdentifiers;

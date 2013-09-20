@@ -12,13 +12,17 @@
     BOOL _selected;
     BOOL _showSelectAllButton;
     EKSource *_source;
+    NSString *_title;
+    NSString *_titleForBeginningOfSentence;
+    NSString *_typeTitle;
 }
 
 @property(readonly) NSArray * calendarInfos;
 @property(readonly) NSSet * calendarSet;
 @property(readonly) BOOL isSubscribed;
-@property(readonly) int numCalendars;
-@property(readonly) int numSelectedCalendars;
+@property(readonly) unsigned int numCalendars;
+@property(readonly) unsigned int numSelectableCalendars;
+@property(readonly) unsigned int numSelectedCalendars;
 @property BOOL selected;
 @property(readonly) NSSet * selectedCalendarSet;
 @property(readonly) BOOL showAddCalendarButton;
@@ -29,19 +33,21 @@
 @property(readonly) NSString * title;
 @property(readonly) NSString * typeTitle;
 
-- (id)calendarAtIndex:(int)arg1;
+- (void).cxx_destruct;
+- (id)calendarAtIndex:(unsigned int)arg1;
 - (id)calendarInfos;
 - (id)calendarSet;
 - (id)copyCalendars;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithCustomGroupType:(int)arg1;
 - (id)initWithSource:(id)arg1;
 - (void)insertCalendarInfo:(id)arg1;
+- (void)insertDeclinedEventsItem;
 - (BOOL)isSubscribed;
-- (int)numCalendars;
-- (int)numSelectedCalendars;
+- (unsigned int)numCalendars;
+- (unsigned int)numSelectableCalendars;
+- (unsigned int)numSelectedCalendars;
 - (void)removeCalendar:(id)arg1;
 - (void)selectAll;
 - (void)selectNone;

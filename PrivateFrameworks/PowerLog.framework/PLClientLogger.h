@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PowerLog.framework/PowerLog
  */
 
-@interface PLClientLogger : NSObject {
+@interface PLClientLogger : PLXPCConnectionClient {
 }
 
 + (id)sharedInstance;
 
-- (BOOL)logEvent:(id)arg1 withContent:(id)arg2 blessed:(BOOL)arg3;
+- (void)PLXPCinvalidationHandler;
+- (BOOL)logEvent:(id)arg1 withContent:(id)arg2 withContentOrder:(id)arg3 forClientID:(short)arg4;
 
 @end

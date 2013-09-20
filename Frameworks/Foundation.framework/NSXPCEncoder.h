@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSXPCEncoderDelegate>, NSMutableArray, NSObject<OS_xpc_object>, NSXPCConnection;
+@class <NSXPCEncoderDelegate>, NSObject<OS_xpc_object>, NSXPCConnection;
 
 @interface NSXPCEncoder : NSXPCCoder {
     BOOL _askForReplacement;
     NSXPCConnection *_connection;
-    NSMutableArray *_containers;
     <NSXPCEncoderDelegate> *_delegate;
+    void **_encoder;
+    unsigned long long _genericIndex;
     NSObject<OS_xpc_object> *_oolObjects;
     struct __CFDictionary { } *_replacedByDelegateObjects;
     struct __CFDictionary { } *_replacedObjects;
@@ -17,15 +18,13 @@
 @property NSXPCConnection * _connection;
 @property <NSXPCEncoderDelegate> * delegate;
 
-- (void)_addObject:(id)arg1 forKey:(id)arg2;
+- (void)_checkObject:(id)arg1;
 - (id)_connection;
 - (id)_createRootXPCObject;
 - (void)_encodeArrayOfObjects:(id)arg1 forKey:(id)arg2;
-- (id)_encodeXPCObject:(id)arg1;
-- (void)_popContainer;
-- (void)_pushContainer:(id)arg1;
-- (void)_pushContainerForKey:(id)arg1;
-- (id)_topContainer;
+- (void)_encodeCString:(const char *)arg1 forKey:(id)arg2;
+- (void)_encodeObject:(id)arg1;
+- (id)_replaceObject:(id)arg1;
 - (BOOL)allowsKeyedCoding;
 - (void)dealloc;
 - (id)debugDescription;

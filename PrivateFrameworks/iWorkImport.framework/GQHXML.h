@@ -18,6 +18,7 @@
 
 - (void)addCharRef:(const char *)arg1;
 - (void)addContent:(struct __CFString { }*)arg1;
+- (void)addMetaTagWithTextFormat:(struct __CFString { }*)arg1;
 - (void)addStyleClass:(struct __CFString { }*)arg1;
 - (void)addStyleClassLast:(struct __CFString { }*)arg1;
 - (void)addViewportMetaTagForDocumentSize:(struct CGSize { float x1; float x2; })arg1 maximumScale:(float)arg2;
@@ -37,6 +38,6 @@
 - (void)setAttribute:(const char *)arg1 intValue:(int)arg2;
 - (void)setAttribute:(const char *)arg1 value:(const char *)arg2;
 - (void)startElement:(const char *)arg1;
-- (BOOL)writeToOutputBundle:(id)arg1;
+- (BOOL)writeToOutputBundle:(id)arg1 isThumbnail:(BOOL)arg2;
 
 @end

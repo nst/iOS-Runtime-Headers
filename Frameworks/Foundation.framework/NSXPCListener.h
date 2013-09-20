@@ -6,13 +6,13 @@
 
 @interface NSXPCListener : NSObject {
     <NSXPCListenerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_internalQueue;
     id _reserved1;
     id _reserved2;
     NSString *_serviceName;
     unsigned long long _state;
     NSObject<OS_dispatch_queue> *_userQueue;
     void *_xconnection;
+    void *reserved0;
 }
 
 @property <NSXPCListenerDelegate> * delegate;
@@ -23,6 +23,8 @@
 + (id)serviceListener;
 
 - (id)_initShared;
+- (id)_queue;
+- (void)_setQueue:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)endpoint;

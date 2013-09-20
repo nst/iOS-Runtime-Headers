@@ -39,6 +39,7 @@
 - (int)connectionBehavior;
 - (void)dealloc;
 - (void)getFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 authToken:(id)arg4 completionBlock:(id)arg5;
+- (id)init;
 - (BOOL)isActive;
 - (void)putFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 authToken:(id)arg4 completionBlock:(id)arg5;
 - (BOOL)registerFiles:(id)arg1;

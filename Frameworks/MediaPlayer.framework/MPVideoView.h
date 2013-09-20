@@ -2,20 +2,21 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, MPMovieSnapshotController, NSString;
+@class MPAVController, NSDictionary, NSString;
 
 @interface MPVideoView : UIView {
+    NSDictionary *_AVURLAssetOptions;
     NSString *_moviePath;
     NSString *_movieSubtitle;
     NSString *_movieTitle;
     MPAVController *_player;
     unsigned int _scaleMode;
-    MPMovieSnapshotController *_snapshotController;
     double _startTime;
     double _stopTime;
     NSString *_videoID;
 }
 
+@property(retain) NSDictionary * AVURLAssetOptions;
 @property(readonly) BOOL canChangeScaleMode;
 @property(readonly) unsigned int effectiveScaleMode;
 @property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieContentFrame;
@@ -30,11 +31,13 @@
 
 + (Class)layerClass;
 
+- (void).cxx_destruct;
+- (id)AVURLAssetOptions;
 - (void)_bufferingStateChangedNotification:(id)arg1;
 - (void)_playbackStateChangedNotification:(id)arg1;
 - (BOOL)canChangeScaleMode;
-- (void)cancelSnapshots;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (unsigned int)effectiveScaleMode;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieContentFrame;
@@ -48,7 +51,7 @@
 - (id)player;
 - (void)prepareAVControllerQueue;
 - (unsigned int)scaleMode;
-- (void)scheduleThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 time:(float)arg3 delegate:(id)arg4;
+- (void)setAVURLAssetOptions:(id)arg1;
 - (void)setMovieSubtitle:(id)arg1;
 - (void)setMovieTitle:(id)arg1;
 - (void)setMovieWithPath:(id)arg1;

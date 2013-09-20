@@ -20,6 +20,8 @@
 - (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHtml:(id)arg1;
+- (id)sourceURL;
+- (id)userStyleSheet;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (id)webView;

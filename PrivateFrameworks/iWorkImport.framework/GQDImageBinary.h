@@ -13,7 +13,7 @@
 }
 
 - (id).cxx_construct;
-- (struct __CFURL { }*)absoluteUrlForState:(id)arg1;
+- (struct __CFURL { }*)createAbsoluteUrlForState:(id)arg1;
 - (void)dealloc;
 - (int)readDataAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (struct __CFString { }*)relativePath;

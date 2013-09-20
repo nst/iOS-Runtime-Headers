@@ -19,6 +19,7 @@
 @property BOOL showingLoadingUI;
 @property(retain) NSArray * titles;
 
+- (void).cxx_destruct;
 - (id)_addLabel:(unsigned int)arg1;
 - (id)_addLoadingLabel;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;

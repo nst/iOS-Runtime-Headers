@@ -4,26 +4,61 @@
 
 @class NSString;
 
-@interface CLRegion : NSObject <NSCopying, NSCoding> {
-    id _internal;
+@interface CLRegion : NSObject <NSCopying, NSSecureCoding> {
+    struct { 
+        BOOL identifier[512]; 
+        int type; 
+        boolnotifyOnEntry; 
+        boolnotifyOnExit; 
+        union { 
+            struct { 
+                BOOL proximityUUID[512]; 
+                unsigned short major; 
+                unsigned short minor; 
+                int definitionMask; 
+                boolnotifyEntryStateOnDisplay; 
+            } beaconAttributes; 
+            struct { 
+                struct { 
+                    double latitude; 
+                    double longitude; 
+                } center; 
+                double radius; 
+                double desiredAccuracy; 
+            } circularAttributes; 
+        } ; 
+    } fRegion;
 }
 
 @property(readonly) struct { double x1; double x2; } center;
-@property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; BOOL x3[512]; } clientRegion;
+@property(readonly) struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; } clientRegion;
 @property(readonly) NSString * identifier;
+@property BOOL notifyOnEntry;
+@property BOOL notifyOnExit;
 @property(readonly) double radius;
 
++ (BOOL)supportsSecureCoding;
+
+- (void)_encodeWithCoder:(id)arg1;
+- (id)_initWithCoder:(id)arg1;
 - (struct { double x1; double x2; })center;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; BOOL x3[512]; })clientRegion;
+- (struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })clientRegion;
 - (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)initCircularRegionWithCenter:(struct { double x1; double x2; })arg1 radius:(double)arg2 identifier:(id)arg3;
-- (id)initWithClientRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; double x2; BOOL x3[512]; })arg1;
+- (id)initWithClientRegion:(struct { BOOL x1[512]; int x2; boolx3; boolx4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; boolx_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)notifyOnEntry;
+- (BOOL)notifyOnExit;
 - (double)radius;
+- (void)setNotifyOnEntry:(BOOL)arg1;
+- (void)setNotifyOnExit:(BOOL)arg1;
 
 @end

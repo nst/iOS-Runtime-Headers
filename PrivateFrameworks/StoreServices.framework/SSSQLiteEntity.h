@@ -17,6 +17,7 @@
 + (BOOL)_insertValues:(id)arg1 intoTable:(id)arg2 withPersistentID:(long long)arg3 database:(id)arg4;
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2;
 + (id)copyDatabaseDictionaryToSetClientDictionary:(id)arg1;
++ (id)countForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
 + (id)databasePropertyToGetClientProperty:(id)arg1;
 + (id)databasePropertyToSetClientProperty:(id)arg1;
 + (id)databaseTable;

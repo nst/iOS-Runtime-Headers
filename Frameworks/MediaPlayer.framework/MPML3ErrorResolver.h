@@ -14,6 +14,7 @@
 @property(retain) MPMediaItem * mediaItem;
 @property(retain) SSKeybagRequest * request;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)error;
 - (id)initWithMediaItem:(id)arg1;

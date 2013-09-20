@@ -2,14 +2,34 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIImage;
+@class NSArray, UIColor, UIImage;
 
 @interface UIImageView : UIView {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    BOOL __animatesContents;
+    } _cachedEdgeInsetsForEffects;
     UIImage *_decompressingHighlightedImage;
     UIImage *_decompressingImage;
+    } _edgeInsetsForEffects;
+    BOOL _edgeInsetsForEffectsAreValid;
     id _storage;
 }
 
+@property(setter=_setAnimatesContents:) BOOL _animatesContents;
+@property(setter=_setDefaultRenderingMode:) int _defaultRenderingMode;
+@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _edgeInsetsForEffects;
+@property(setter=_setEdgeInsetsForEffectsAreValid:) BOOL _edgeInsetsForEffectsAreValid;
+@property(setter=_setMasksTemplateImages:) BOOL _masksTemplateImages;
+@property(setter=_setTemplateImageRenderingEffects:) unsigned int _templateImageRenderingEffects;
 @property double animationDuration;
 @property(copy) NSArray * animationImages;
 @property int animationRepeatCount;
@@ -18,21 +38,44 @@
 @property(copy) NSArray * highlightedAnimationImages;
 @property(retain) UIImage * highlightedImage;
 @property(retain) UIImage * image;
+@property(retain) UIColor * tintColor;
 @property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 
 + (id)backgroundImageViewForImage:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
+- (id)_activeImage;
+- (BOOL)_animatesContents;
+- (void)_applySettingsForLegibilityStyle:(int)arg1;
 - (id)_cachedPretiledImageForImage:(id)arg1;
 - (BOOL)_canDrawContent;
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
+- (int)_defaultRenderingMode;
+- (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForEffects;
+- (BOOL)_edgeInsetsForEffectsAreValid;
+- (id)_effectiveTintColorWithImage:(id)arg1;
+- (id)_generateBackdropMaskImage;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_masksTemplateImages;
+- (BOOL)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(BOOL)arg2;
+- (BOOL)_needsImageEffectsForImage:(id)arg1;
 - (BOOL)_recomputePretilingState;
+- (void)_setAnimatesContents:(BOOL)arg1;
+- (void)_setDefaultRenderingMode:(int)arg1;
+- (void)_setEdgeInsetsForEffectsAreValid:(BOOL)arg1;
 - (BOOL)_setImageViewContents:(id)arg1;
+- (void)_setMasksTemplateImages:(BOOL)arg1;
+- (void)_setTemplateImageRenderingEffects:(unsigned int)arg1;
 - (void)_setViewGeometry:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forMetric:(int)arg2;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (BOOL)_shouldDrawImage:(id)arg1;
+- (BOOL)_shouldTreatImageAsTemplate:(id)arg1;
+- (unsigned int)_templateImageRenderingEffects;
+- (void)_templateSettingsDidChange;
+- (void)_updateMasking;
 - (void)_updatePretiledImageCacheForImage:(id)arg1;
 - (void)_updateState;
+- (void)_updateTemplateProperties;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (double)animationDuration;
 - (id)animationImages;
@@ -57,6 +100,7 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isHighlighted;
 - (void)layoutSubviews;
+- (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { float x1; float x2; })arg1 asynchronously:(BOOL)arg2 handler:(id)arg3;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationImages:(id)arg1;
@@ -73,6 +117,7 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
+- (void)tintColorDidChange;
 - (BOOL)useBlockyMagnificationInClassic;
 
 @end

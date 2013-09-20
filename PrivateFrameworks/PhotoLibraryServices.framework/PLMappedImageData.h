@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, PLImageTableSegment;
+@class NSData, NSString, PLImageTableSegment;
 
 @interface PLMappedImageData : NSMutableData {
     void *_bytes;
     BOOL _freeBytes;
     unsigned long _length;
+    NSData *_pl_data;
     PLImageTableSegment *_segment;
 }
 
 @property unsigned int imageHeight;
 @property unsigned int imageWidth;
-@property BOOL isPlaceholder;
 @property(copy) NSString * photoUUID;
 
 - (struct PLImageTableEntryFooter_s { struct { unsigned char x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; unsigned char x_1_1_4; unsigned char x_1_1_5; unsigned char x_1_1_6; unsigned char x_1_1_7; unsigned char x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned char x_1_1_13; unsigned char x_1_1_14; unsigned char x_1_1_15; unsigned char x_1_1_16; } x1; unsigned int x2; unsigned int x3; int x4; }*)_footer;
@@ -22,16 +22,17 @@
 - (void)dealloc;
 - (unsigned int)imageHeight;
 - (unsigned int)imageWidth;
+- (id)initWithEntryLength:(unsigned int)arg1;
 - (id)initWithImageTableSegment:(id)arg1 bytes:(void*)arg2 length:(unsigned long)arg3;
-- (BOOL)isPlaceholder;
+- (id)initWithThumbnailPath:(id)arg1;
 - (unsigned int)length;
-- (int)lengthIncludingFooter;
+- (unsigned int)lengthIncludingFooter;
 - (void*)mutableBytes;
 - (id)photoUUID;
 - (unsigned int)pl_advisoryLength;
+- (BOOL)pl_writeToPath:(id)arg1;
 - (void)setImageHeight:(unsigned int)arg1;
 - (void)setImageWidth:(unsigned int)arg1;
-- (void)setIsPlaceholder:(BOOL)arg1;
 - (void)setPhotoUUID:(id)arg1;
 
 @end

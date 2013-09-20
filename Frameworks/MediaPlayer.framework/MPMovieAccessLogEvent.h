@@ -5,13 +5,10 @@
 @class AVPlayerItemAccessLogEvent, NSDate, NSString;
 
 @interface MPMovieAccessLogEvent : NSObject <NSCopying> {
-    struct MPMovieAccessLogEventInternal { 
-        AVPlayerItemAccessLogEvent *event; 
-    } _internal;
+    AVPlayerItemAccessLogEvent *_event;
 }
 
 @property(readonly) NSString * URI;
-@property struct MPMovieAccessLogEventInternal { id x1; } _internal;
 @property(readonly) double durationWatched;
 @property(readonly) double indicatedBitrate;
 @property(readonly) long long numberOfBytesTransferred;
@@ -26,11 +23,10 @@
 @property(readonly) double segmentsDownloadedDuration;
 @property(readonly) NSString * serverAddress;
 
+- (void).cxx_destruct;
 - (id)URI;
 - (id)_initWithAVItemAccessLogEvent:(id)arg1;
-- (struct MPMovieAccessLogEventInternal { id x1; })_internal;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (double)durationWatched;
 - (double)indicatedBitrate;
 - (long long)numberOfBytesTransferred;
@@ -44,6 +40,5 @@
 - (double)playbackStartOffset;
 - (double)segmentsDownloadedDuration;
 - (id)serverAddress;
-- (void)set_internal:(struct MPMovieAccessLogEventInternal { id x1; })arg1;
 
 @end

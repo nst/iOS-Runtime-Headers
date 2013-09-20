@@ -21,8 +21,12 @@
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 @property(readonly) <NSObject><NSCopying> * value;
 
++ (BOOL)_clientExpectsISOUserDataKeysInQuickTimeUserDataKeySpace;
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
++ (id)_isoUserDataKeysRequiringKeySpaceConversion;
++ (id)_replaceQuickTimeUserDataKeySpaceWithISOUserDataKeySpaceIfRequired:(id)arg1;
 + (id)metadataItemsFromArray:(id)arg1 filteredAndSortedAccordingToPreferredLanguages:(id)arg2;
++ (id)metadataItemsFromArray:(id)arg1 filteredByMetadataItemFilter:(id)arg2;
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
 + (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
 + (id)metadataItemsFromArray:(id)arg1 withStringValue:(id)arg2;

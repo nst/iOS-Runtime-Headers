@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class <GKVoiceChatSessionDelegate>, GKRWLock, GKSessionInternal, GKVoiceChatServiceFocus, GKWifiListener, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, VoiceChatSessionRoster;
+@class <GKVoiceChatSessionDelegate>, GKInterfaceListener, GKRWLock, GKSessionInternal, GKVoiceChatServiceFocus, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, VoiceChatSessionRoster;
 
-@interface GKVoiceChatSessionInternal : NSObject <GKSessionVoiceChatDelegate, GKVoiceChatClient, VideoConferenceSpeakingDelegate, WifiListenerDelegate> {
+@interface GKVoiceChatSessionInternal : NSObject <GKSessionVoiceChatDelegate, GKVoiceChatClient, VideoConferenceSpeakingDelegate, InterfaceListenerDelegate> {
     unsigned int _conferenceID;
     NSMutableArray *_connectedFocusPeers;
     NSMutableArray *_connectedPeers;
@@ -23,7 +23,7 @@
     NSString *_sessionName;
     unsigned int _sessionState;
     GKVoiceChatServiceFocus *_vcService;
-    GKWifiListener *_wifiListener;
+    GKInterfaceListener *_wifiListener;
     BOOL activeSession;
     unsigned int congestionState;
     <GKVoiceChatSessionDelegate> *delegate;
@@ -58,6 +58,7 @@
 - (void)didStartSpeaking:(id)arg1;
 - (void)didStopSpeaking:(id)arg1;
 - (id)encodePeerID:(id)arg1;
+- (BOOL)getMuteStateForPeer:(id)arg1;
 - (int)goodChannels;
 - (void)handlePeerDisconnected:(id)arg1;
 - (void)informClientVoiceChatConnecting:(id)arg1;
@@ -68,6 +69,7 @@
 - (void)informClientVoiceChatSilent:(id)arg1;
 - (void)informClientVoiceChatSpeaking:(id)arg1;
 - (id)initWithGKSession:(id)arg1 publicWrapper:(id)arg2 sessionName:(id)arg3;
+- (void)interfaceStateDidChangeWithWifiUp:(BOOL)arg1 withCellUp:(BOOL)arg2;
 - (BOOL)isActiveSession;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isUsingSuppression;
@@ -105,10 +107,9 @@
 - (void)updatedMutedPeers:(id)arg1 forPeer:(id)arg2;
 - (void)updatedSubscribedBeaconList:(id)arg1;
 - (void)voiceChatService:(id)arg1 didNotStartWithParticipantID:(id)arg2 error:(id)arg3;
-- (void)voiceChatService:(id)arg1 didReceiveInvitationFromParticipantID:(id)arg2 callID:(int)arg3;
+- (void)voiceChatService:(id)arg1 didReceiveInvitationFromParticipantID:(id)arg2 callID:(unsigned long)arg3;
 - (void)voiceChatService:(id)arg1 didStartWithParticipantID:(id)arg2;
 - (void)voiceChatService:(id)arg1 didStopWithParticipantID:(id)arg2 error:(id)arg3;
 - (void)voiceChatService:(id)arg1 sendData:(id)arg2 toParticipantID:(id)arg3;
-- (void)wifiStateDidChange:(BOOL)arg1;
 
 @end

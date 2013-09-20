@@ -2,13 +2,17 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSExpression : NSObject <NSCoding, NSCopying> {
+@interface NSExpression : NSObject <NSSecureCoding, NSCopying> {
+    struct _expressionFlags { 
+        unsigned int _evaluationBlocked : 1; 
+        unsigned int _reservedExpressionFlags : 31; 
+    } _expressionFlags;
     unsigned int _expressionType;
-    void *_reserved;
 }
 
 + (id)_newKeyPathExpressionForString:(id)arg1;
 + (id)expressionForAggregate:(id)arg1;
++ (id)expressionForAnyKey;
 + (id)expressionForBlock:(id)arg1 arguments:(id)arg2;
 + (id)expressionForConstantValue:(id)arg1;
 + (id)expressionForEvaluatedObject;
@@ -26,10 +30,13 @@
 + (id)expressionWithFormat:(id)arg1 argumentArray:(id)arg2;
 + (id)expressionWithFormat:(id)arg1 arguments:(void*)arg2;
 + (id)expressionWithFormat:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
+- (BOOL)_allowsEvaluation;
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (BOOL)_shouldUseParensWithDescription;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)allowEvaluation;
 - (id)arguments;
 - (id)collection;
 - (id)constantValue;

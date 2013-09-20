@@ -2,6 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
+/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
+   The runtime does not encode function signature information.  We use a signature of: 
+           "int (*funcName)()",  where funcName might be null. 
+ */
+
 @interface NSIndexSet : NSObject <NSCopying, NSMutableCopying, NSCoding> {
     struct { 
         unsigned int _isEmpty : 1; 
@@ -23,13 +28,21 @@
     } _internal;
 }
 
+@property(readonly) BOOL isSingleContiguousRange;
+
++ (id)_gkIndexSetWithArray:(id)arg1;
 + (id)indexSet;
 + (id)indexSetWithIndex:(unsigned int)arg1;
 + (id)indexSetWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 + (id)indexSetWithIndexes:(unsigned int)arg1;
 + (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
++ (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 
+- (void)__ck_enumerateIndexesByProximityToIndex:(unsigned int)arg1 usingBlock:(id)arg2;
+- (id)__ck_indexPathItemsInSection:(int)arg1;
+- (id)__ck_indexPathRowsInSection:(int)arg1;
+- (id)__ck_indexSetShiftedForInsertedIndexes:(id)arg1 deletedIndexes:(id)arg2;
 - (unsigned int)__getContainmentVector:(out BOOL*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)_gkIndexSetByAddingIndex:(int)arg1;
 - (id)_gkIndexSetByRemovingIndex:(int)arg1;
@@ -40,6 +53,7 @@
 - (unsigned int)_indexOfRangeContainingIndex:(unsigned int)arg1;
 - (id)_init;
 - (id)_numberEnumerator;
+- (id)_pl_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(BOOL)arg2;
 - (void)_setContentToContentFromIndexSet:(id)arg1;
 - (Class)classForCoder;
 - (BOOL)containsIndex:(unsigned int)arg1;
@@ -67,6 +81,8 @@
 - (unsigned int)indexLessThanIndex:(unsigned int)arg1;
 - (unsigned int)indexLessThanOrEqualToIndex:(unsigned int)arg1;
 - (unsigned int)indexPassingTest:(id)arg1;
+- (id)indexSetByAddingIndexes:(id)arg1;
+- (id)indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
 - (id)indexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
 - (id)indexesPassingTest:(id)arg1;
@@ -78,17 +94,25 @@
 - (id)initWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
 - (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (id)initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (id)initWithMessage:(const struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Range> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)intersectsIndexesInIndexSet:(id)arg1;
 - (BOOL)intersectsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIndexSet:(id)arg1;
 - (BOOL)isSingleContiguousRange;
+- (BOOL)isSingleContiguousRange;
 - (unsigned int)lastIndex;
+- (id)mf_commaSeparatedString;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)pl_indexSetByExtractingIndexes:(id)arg1;
+- (id)pl_indexSetAdjustedForDeletions:(id)arg1;
+- (id)pl_indexSetAdjustedForInsertions:(id)arg1;
 - (id)pl_shortDescription;
+- (unsigned int)pu_indexAtIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
 - (unsigned int)rangeCount;
 - (id)replacementObjectForPortCoder:(id)arg1;
+- (void)saveToMessage:(struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; struct RepeatedPtrField<TSP::Range> { void **x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; } x3; int x4; unsigned int x5[1]; }*)arg1;
 
 @end

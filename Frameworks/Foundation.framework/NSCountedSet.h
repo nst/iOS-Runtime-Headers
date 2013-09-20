@@ -23,7 +23,7 @@
 - (id)initWithArray:(id)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithObjects:(id*)arg1 count:(unsigned int)arg2;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (id)initWithSet:(id)arg1 copyItems:(BOOL)arg2;
 - (id)initWithSet:(id)arg1;
 - (id)member:(id)arg1;

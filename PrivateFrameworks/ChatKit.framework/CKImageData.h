@@ -20,10 +20,11 @@
 @property(readonly) struct CGSize { float x1; float x2; } ptSize;
 @property(readonly) struct CGSize { float x1; float x2; } pxSize;
 
-+ (id)MIMETypeForData:(id)arg1;
++ (id)UTITypeForData:(id)arg1;
 
 - (id)MIMEType;
 - (id)UTIType;
+- (id)_thumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 atIndex:(unsigned int)arg2;
 - (id)_thumbnailFitToSize:(struct CGSize { float x1; float x2; })arg1 atIndex:(unsigned int)arg2;
 - (unsigned int)count;
 - (id)data;
@@ -35,7 +36,9 @@
 - (struct CGSize { float x1; float x2; })ptSize;
 - (struct CGSize { float x1; float x2; })pxSize;
 - (void)setData:(id)arg1;
+- (id)thumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)thumbnailFitToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)thumbnailsFillToSize:(struct CGSize { float x1; float x2; })arg1 maxCount:(unsigned int)arg2;
 - (id)thumbnailsFitToSize:(struct CGSize { float x1; float x2; })arg1 maxCount:(unsigned int)arg2;
 
 @end

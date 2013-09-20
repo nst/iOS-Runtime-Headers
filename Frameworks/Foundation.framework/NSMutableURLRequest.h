@@ -5,9 +5,7 @@
 @interface NSMutableURLRequest : NSURLRequest {
 }
 
-+ (id)_gkHTTPGETRequestWithURL:(id)arg1 playerID:(id)arg2 authToken:(id)arg3 pushToken:(id)arg4 gameDescriptor:(id)arg5;
-+ (id)_gkHTTPPOSTRequestWithURL:(id)arg1 playerID:(id)arg2 authToken:(id)arg3 pushToken:(id)arg4 gameDescriptor:(id)arg5 postData:(id)arg6;
-+ (id)_gkHTTPRequestWithURL:(id)arg1 playerID:(id)arg2 authToken:(id)arg3 pushToken:(id)arg4 gameDescriptor:(id)arg5;
++ (id)_gkHTTPRequestWithURL:(id)arg1 postData:(id)arg2;
 + (int)hashForPlayerID:(id)arg1;
 + (void)setPlayerIDHashParametersFromBag:(id)arg1;
 
@@ -48,6 +46,8 @@
 - (void)setPushToken:(id)arg1;
 - (void)setRequestPriority:(unsigned int)arg1;
 - (void)setRestrictions:(id)arg1;
+- (void)setSAPSignature:(id)arg1;
+- (void)setSAPversion:(id)arg1;
 - (void)setStoreMode:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (void)setURL:(id)arg1;

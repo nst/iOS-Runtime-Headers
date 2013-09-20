@@ -2,15 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIView;
-
-@interface CKTranscriptCell : UITableViewCell {
-    UIView *_separatorHighlight;
+@interface CKTranscriptCell : CKEditableCollectionViewCell {
 }
 
-- (void)dealloc;
-- (void)layoutSubviews;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSeparatorHighlightVisible:(BOOL)arg1;
+- (void)configureForRow:(id)arg1;
+- (void)configureForRowObject:(id)arg1;
 
 @end

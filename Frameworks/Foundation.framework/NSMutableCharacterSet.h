@@ -31,6 +31,7 @@
 - (void)formIntersectionWithCharacterSet:(id)arg1;
 - (void)formUnionWithCharacterSet:(id)arg1;
 - (id)init;
+- (id)initWithCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)invert;
 - (BOOL)isMutable;

@@ -7,7 +7,7 @@
 
 + (id)allProperties;
 + (id)artworkCacheIDProperty;
-+ (id)countingQueryForMPMediaEntityProperty:(id)arg1 library:(id)arg2 identifier:(long long)arg3;
++ (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(long long)arg3;
 + (id)databaseTable;
 + (id)defaultOrderingProperties;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
@@ -15,6 +15,7 @@
 + (id)predisambiguatedProperties;
 + (id)propertiesForGroupingKey;
 + (id)propertyForMPMediaEntityProperty:(id)arg1;
++ (BOOL)propertyIsCountProperty:(id)arg1;
 + (int)revisionTrackingCode;
 + (id)trackForeignPersistentID;
 

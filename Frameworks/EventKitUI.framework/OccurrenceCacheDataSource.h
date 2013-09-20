@@ -12,6 +12,7 @@
     EKEventStore *_eventStore;
 }
 
+- (void).cxx_destruct;
 - (id)_cachedDays;
 - (int)cachedDayCount;
 - (id)cachedOccurrenceAtIndexPath:(id)arg1;
@@ -19,7 +20,6 @@
 - (BOOL)cachedOccurrencesAreLoaded;
 - (int)countOfOccurrencesAtDayIndex:(int)arg1;
 - (id)dateAtDayIndex:(int)arg1;
-- (void)dealloc;
 - (void)fetchDaysInBackgroundStartingFromSection:(int)arg1;
 - (id)initWithEventStore:(id)arg1 calendars:(id)arg2;
 - (void)invalidate;

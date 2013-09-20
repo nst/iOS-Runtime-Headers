@@ -7,7 +7,7 @@
     unsigned short mDigitSubstitutionLanguage;
     int mDigitSubstitutionMethod;
     float mFirstTabOffset;
-    unsigned long mFormatFlags;
+    unsigned int mFormatFlags;
     int mHotkeyPrefix;
     int mLineAlignment;
     int mTabStopCount;
@@ -20,7 +20,7 @@
 - (unsigned short)digitSubstitutionLanguage;
 - (int)digitSubstitutionMethod;
 - (float)firstTabOffset;
-- (unsigned long)formatFlags;
+- (unsigned int)formatFlags;
 - (int)hotkeyPrefix;
 - (id)init;
 - (int)lineAlignment;
@@ -28,7 +28,7 @@
 - (void)setDigitSubstitutionLanguage:(unsigned short)arg1;
 - (void)setDigitSubstitutionMethod:(int)arg1;
 - (void)setFirstTabOffset:(float)arg1;
-- (void)setFormatFlags:(unsigned long)arg1;
+- (void)setFormatFlags:(unsigned int)arg1;
 - (void)setHotkeyPrefix:(int)arg1;
 - (void)setLineAlignment:(int)arg1;
 - (void)setTabStops:(const float*)arg1 count:(int)arg2;

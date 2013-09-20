@@ -4,7 +4,7 @@
 
 @class NSMutableSet, NSSet, NSString;
 
-@interface SUScanOptions : NSObject <NSCoding> {
+@interface SUScanOptions : NSObject <NSSecureCoding> {
     BOOL _forced;
     NSString *_identifier;
     NSMutableSet *_types;
@@ -13,6 +13,8 @@
 @property(getter=isForced) BOOL forced;
 @property(retain) NSString * identifier;
 @property(retain) NSSet * types;
+
++ (BOOL)supportsSecureCoding;
 
 - (void)addType:(int)arg1;
 - (void)clearTypes;

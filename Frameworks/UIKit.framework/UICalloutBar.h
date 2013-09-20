@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSString, UICalloutBarButton, UICalloutBarOverlay, UIResponder;
+@class NSArray, NSMutableArray, NSString, UICalloutBarBackground, UICalloutBarButton, UIResponder;
 
 @interface UICalloutBar : UIView {
     struct CGPoint { 
@@ -59,7 +59,7 @@
     BOOL m_ignoreFade;
     BOOL m_ignoringEvents;
     UICalloutBarButton *m_nextButton;
-    UICalloutBarOverlay *m_overlay;
+    UICalloutBarBackground *m_overlay;
     int m_pageCount;
     } m_pointAboveControls;
     } m_pointBelowControls;
@@ -106,7 +106,7 @@
 + (void)_releaseSharedInstance;
 + (id)activeCalloutBar;
 + (void)fadeSharedCalloutBar;
-+ (void)fadeSharedCalloutBarIfNeededForView:(id)arg1 window:(id)arg2;
++ (void)fadeSharedCalloutBarIfNeededForTouchInView:(id)arg1 window:(id)arg2;
 + (void)hideSharedCalloutBar;
 + (id)sharedCalloutBar;
 + (BOOL)sharedCalloutBarIsVisible;
@@ -117,7 +117,7 @@
 - (BOOL)_updateVisibleItemsAnimated:(BOOL)arg1;
 - (void)addRectToEvade:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)appear;
-- (void)appearAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)appearAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (int)arrowDirection;
 - (void)buttonHighlighted:(id)arg1 highlighted:(BOOL)arg2;
 - (void)buttonPressed:(id)arg1;
@@ -137,7 +137,8 @@
 - (void)flattenForAlertOrResignActive:(id)arg1;
 - (BOOL)hasReplacements;
 - (void)hide;
-- (void)hideAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
+- (void)hideAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })pointAboveControls;
 - (struct CGPoint { float x1; float x2; })pointBelowControls;
@@ -149,6 +150,7 @@
 - (id)rectsToEvade;
 - (void)removeFromSuperview;
 - (id)replacements;
+- (void)resetPage;
 - (id)responderTarget;
 - (void)setArrowDirection:(int)arg1;
 - (void)setControlFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

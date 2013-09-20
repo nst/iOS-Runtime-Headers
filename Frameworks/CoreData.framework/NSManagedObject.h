@@ -47,6 +47,7 @@
 + (Class)classForEntity:(id)arg1;
 + (BOOL)contextShouldIgnoreUnmodeledPropertyChanges;
 + (void)initialize;
++ (BOOL)isTracked;
 + (void)release;
 + (BOOL)resolveClassMethod:(SEL)arg1;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
@@ -106,12 +107,14 @@
 - (id)_newSetFromSet:(id)arg1 byApplyingDiffs:(id)arg2;
 - (id)_newSnapshotForUndo__;
 - (void)_nilOutReservedCurrentEventSnapshot__;
+- (id)_obsoleteAttributes;
 - (id)_originalSnapshot__;
 - (id)_persistentProperties__;
 - (void)_prepropagateDeleteForMerge;
-- (void)_propagateDelete:(BOOL)arg1;
+- (void)_propagateDelete:(unsigned int)arg1;
 - (void)_propagateDelete;
 - (id)_referenceQueue__;
+- (id)_removeObsoleteKeysFromDictionary:(id)arg1;
 - (id)_reservedCurrentEventSnapshot;
 - (void)_setGenericValue:(id)arg1 forKey:(id)arg2 withIndex:(long)arg3 flags:(long)arg4;
 - (void)_setHasRetainedStoreResources__:(BOOL)arg1;
@@ -157,6 +160,7 @@
 - (void)didSave;
 - (void)didTurnIntoFault;
 - (void)diffOrderedSets:(id)arg1 :(id)arg2 :(id*)arg3 :(id*)arg4 :(id*)arg5 :(id*)arg6 :(id*)arg7;
+- (void)encodeWithCoder:(id)arg1;
 - (id)entity;
 - (unsigned int)faultingState;
 - (void)finalize;
@@ -191,12 +195,15 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)setValuesForKeysWithDictionary:(id)arg1;
+- (void)setValuesWithObject:(id)arg1;
 - (BOOL)validateForDelete:(id*)arg1;
 - (BOOL)validateForInsert:(id*)arg1;
 - (BOOL)validateForUpdate:(id*)arg1;
+- (BOOL)validateRequiredAttributesForObject:(id)arg1 error:(id*)arg2;
 - (BOOL)validateValue:(id*)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)valueForKey:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
+- (BOOL)wasForgotten;
 - (void)willAccessValueForKey:(id)arg1;
 - (void)willChange:(unsigned int)arg1 valuesAtIndexes:(id)arg2 forKey:(id)arg3;
 - (void)willChangeValueForKey:(id)arg1 withSetMutation:(unsigned int)arg2 usingObjects:(id)arg3;

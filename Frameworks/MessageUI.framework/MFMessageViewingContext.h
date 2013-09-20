@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class ActivityMonitor, MFError, MFLock, MailMessage, MessageBody, MimePart, NSArray, NSObject<MFMessageViewingContextDelegate>;
+@class MFActivityMonitor, MFAttachmentManager, MFError, MFLock, MFMailMessage, MFMessageBody, MFMimePart, NSArray, NSObject<MFMessageViewingContextDelegate>;
 
 @interface MFMessageViewingContext : NSObject {
     unsigned int _loadedFullData : 1;
@@ -12,19 +12,22 @@
     unsigned int _isOutgoingMessage : 1;
     unsigned int _isDraftMessage : 1;
     unsigned int _isEditableMessage : 1;
-    MessageBody *_body;
+    unsigned int _showMailboxName : 1;
+    MFAttachmentManager *_attachmentManager;
+    MFMessageBody *_body;
     id _content;
     MFLock *_contentLock;
     unsigned int _contentOffset;
     NSObject<MFMessageViewingContextDelegate> *_delegate;
     unsigned int _loadIncrement;
-    ActivityMonitor *_loadTask;
-    MimePart *_loadedPart;
-    MailMessage *_message;
+    MFActivityMonitor *_loadTask;
+    MFMimePart *_loadedPart;
+    MFMailMessage *_message;
     MFError *_secureMIMEError;
     NSArray *_signers;
 }
 
+@property(readonly) MFAttachmentManager * attachmentManager;
 @property(readonly) id content;
 @property(readonly) unsigned int contentOffset;
 @property NSObject<MFMessageViewingContextDelegate> * delegate;
@@ -37,18 +40,18 @@
 @property(readonly) BOOL isMessageSigned;
 @property BOOL isOutgoingMessage;
 @property(readonly) BOOL isPartial;
-@property(readonly) ActivityMonitor * loadTask;
-@property(readonly) MimePart * loadedPart;
-@property(readonly) MailMessage * message;
-@property(readonly) MessageBody * messageBody;
+@property(readonly) MFActivityMonitor * loadTask;
+@property(readonly) MFMimePart * loadedPart;
+@property(readonly) MFMailMessage * message;
+@property(readonly) MFMessageBody * messageBody;
 @property(readonly) MFError * secureMimeError;
+@property BOOL showMailboxName;
 @property(readonly) NSArray * signers;
 
 + (BOOL)isAttachmentTooLarge:(id)arg1;
 + (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;
 
-- (void)_loadAttachments:(id)arg1;
-- (void)_notifyAttachmentComplete:(id)arg1 monitor:(id)arg2;
+- (void)_notifyAttachmentComplete:(id)arg1 data:(id)arg2;
 - (void)_notifyCompletelyComplete;
 - (void)_notifyFullMessageLoadFailed;
 - (void)_notifyInitialLoadComplete;
@@ -58,6 +61,7 @@
 - (void)_setMessageBody:(id)arg1;
 - (void)_setSecureMIMEError:(id)arg1;
 - (void)_setSigners:(id)arg1;
+- (id)attachmentManager;
 - (id)attachments;
 - (void)cancelLoad;
 - (id)content;
@@ -68,7 +72,7 @@
 - (id)fileWrappersForImageAttachments;
 - (BOOL)hasLoaded;
 - (BOOL)hasNoContent;
-- (id)initWithMessage:(id)arg1;
+- (id)initWithMessage:(id)arg1 attachmentManager:(id)arg2;
 - (BOOL)isDraftMessage;
 - (BOOL)isEditableMessage;
 - (BOOL)isMessageEncrypted;
@@ -85,13 +89,14 @@
 - (id)loadedPart;
 - (id)message;
 - (id)messageBody;
-- (id)saveableAttachments;
 - (id)secureMimeError;
 - (void)setDelegate:(id)arg1;
 - (void)setIsDraftMessage:(BOOL)arg1;
 - (void)setIsEditableMessage:(BOOL)arg1;
 - (void)setIsOutgoingMessage:(BOOL)arg1;
 - (void)setLoadTask:(id)arg1;
+- (void)setShowMailboxName:(BOOL)arg1;
+- (BOOL)showMailboxName;
 - (id)signers;
 - (id)uniqueID;
 - (void)unload;

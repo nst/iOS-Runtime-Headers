@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKLineDrawStyle : NSObject <_VKStyle> {
+@interface VKLineDrawStyle : VKDrawStyle {
     struct vector<LineDash, vk_allocator<LineDash> > { 
         struct LineDash {} *__begin_; 
         struct LineDash {} *__end_; 
@@ -22,7 +22,7 @@
             struct LineDash {} *__first_; 
         } __end_cap_; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -31,7 +31,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -40,7 +40,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -53,20 +53,20 @@
             struct _VGLColor {} *extra; 
         } u; 
         unsigned char count; 
-    struct VKProfileSparseRamp<GEOVectorTilePoint> { 
-        union { 
+    struct VKProfileSparseRamp<geo::Vec2Imp<float> > { 
+        union _u { 
             struct VKProfileSparseRampValue { 
-                struct { 
+                struct Vec2Imp<float> { 
                     float x; 
                     float y; 
                 } value; 
                 unsigned char hi; 
             } v[2]; 
-            struct { /* ? */ } *extra; 
+            struct Vec2Imp<float> {} *extra; 
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<float> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 float value; 
                 unsigned char hi; 
@@ -75,7 +75,7 @@
         } u; 
         unsigned char count; 
     struct VKProfileSparseRamp<_VGLColor> { 
-        union { 
+        union _u { 
             struct VKProfileSparseRampValue { 
                 struct _VGLColor { 
                     float r; 
@@ -103,7 +103,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })dropShadowColorAtZoom:(float)arg1;
-- (struct { float x1; float x2; })dropShadowOffsetAtZoom:(float)arg1;
+- (struct Vec2Imp<float> { float x1; float x2; })dropShadowOffsetAtZoom:(float)arg1;
 - (float)dropShadowWidthAtZoom:(float)arg1;
 - (void)fillDashPattern:(float**)arg1 length:(unsigned int*)arg2 atZoom:(float)arg3;
 - (BOOL)hasDashAtAnyZ;
@@ -115,7 +115,7 @@
 - (float)insetShadowHeightAtZoom:(float)arg1;
 - (void)stippleArray:(float**)arg1 length:(unsigned int*)arg2 atZoom:(float)arg3;
 - (void)strokeDashPattern:(float**)arg1 length:(unsigned int*)arg2 atZoom:(float)arg3;
-- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2;
-- (void)takeFromZoomInvariantProperties:(id)arg1;
+- (void)takeFromStyleProperties:(id)arg1 atZoom:(unsigned int)arg2 globals:(id)arg3;
+- (id)variant;
 
 @end

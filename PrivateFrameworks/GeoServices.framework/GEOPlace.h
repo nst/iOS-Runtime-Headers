@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOAddress, GEOLatLng, GEOMapRegion, NSMutableArray, NSString;
+@class GEOAddress, GEOBusiness, GEOLatLng, GEOMapRegion, GEORating, NSMutableArray, NSString;
 
-@interface GEOPlace : PBCodable {
+@interface GEOPlace : PBCodable <NSCopying> {
     struct { 
+        unsigned int area : 1; 
         unsigned int geoId : 1; 
         unsigned int uID : 1; 
         unsigned int addressGeocodeAccuracy : 1; 
@@ -15,6 +16,7 @@
         unsigned int isDisputed : 1; 
     GEOAddress *_address;
     int _addressGeocodeAccuracy;
+    double _area;
     NSMutableArray *_business;
     GEOLatLng *_center;
     NSMutableArray *_entryPoints;
@@ -26,6 +28,8 @@
     NSString *_name;
     GEOAddress *_phoneticAddress;
     NSString *_phoneticName;
+    NSString *_spokenAddress;
+    NSString *_spokenName;
     int _type;
     long long _uID;
     int _version;
@@ -33,12 +37,16 @@
 
 @property(retain) GEOAddress * address;
 @property int addressGeocodeAccuracy;
+@property double area;
 @property(retain) NSMutableArray * business;
 @property(retain) GEOLatLng * center;
 @property(retain) NSMutableArray * entryPoints;
+@property(readonly) GEOBusiness * firstBusiness;
+@property(readonly) GEORating * firstRating;
 @property long long geoId;
 @property(readonly) BOOL hasAddress;
 @property BOOL hasAddressGeocodeAccuracy;
+@property BOOL hasArea;
 @property(readonly) BOOL hasCenter;
 @property BOOL hasGeoId;
 @property BOOL hasIsDisputed;
@@ -47,6 +55,8 @@
 @property(readonly) BOOL hasName;
 @property(readonly) BOOL hasPhoneticAddress;
 @property(readonly) BOOL hasPhoneticName;
+@property(readonly) BOOL hasSpokenAddress;
+@property(readonly) BOOL hasSpokenName;
 @property BOOL hasType;
 @property BOOL hasUID;
 @property BOOL hasVersion;
@@ -56,6 +66,8 @@
 @property(retain) NSString * name;
 @property(retain) GEOAddress * phoneticAddress;
 @property(retain) NSString * phoneticName;
+@property(retain) NSString * spokenAddress;
+@property(retain) NSString * spokenName;
 @property int type;
 @property long long uID;
 @property int version;
@@ -66,24 +78,34 @@
 - (id)address;
 - (id)addressDictionary;
 - (int)addressGeocodeAccuracy;
+- (double)area;
+- (id)arrivalMapRegion;
+- (id)arrivalMapRegionForTransportType:(int)arg1;
 - (id)business;
 - (id)businessAtIndex:(unsigned int)arg1;
 - (unsigned int)businessCount;
 - (unsigned long long)businessID;
 - (id)businessName;
 - (id)center;
+- (id)clLocation;
+- (id)clRegion;
 - (void)clearBusiness;
 - (void)clearEntryPoints;
+- (struct { double x1; double x2; })coordinate;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)entryPointAtIndex:(unsigned int)arg1;
 - (id)entryPoints;
 - (unsigned int)entryPointsCount;
+- (id)firstBusiness;
+- (id)firstRating;
 - (long long)geoId;
 - (BOOL)hasAddress;
 - (BOOL)hasAddressGeocodeAccuracy;
+- (BOOL)hasArea;
 - (BOOL)hasCenter;
 - (BOOL)hasGeoId;
 - (BOOL)hasIsDisputed;
@@ -93,10 +115,14 @@
 - (BOOL)hasPhoneticAddress;
 - (BOOL)hasPhoneticName;
 - (BOOL)hasSingleBusiness;
+- (BOOL)hasSpokenAddress;
+- (BOOL)hasSpokenName;
 - (BOOL)hasType;
 - (BOOL)hasUID;
 - (BOOL)hasVersion;
 - (unsigned int)hash;
+- (id)initWithCLLocation:(id)arg1;
+- (id)initWithPlacemark:(id)arg1;
 - (BOOL)isDisputed;
 - (BOOL)isEqual:(id)arg1;
 - (int)localSearchProviderID;
@@ -104,14 +130,17 @@
 - (id)name;
 - (id)phoneticAddress;
 - (id)phoneticName;
+- (double)radialDistance;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setAddressGeocodeAccuracy:(int)arg1;
+- (void)setArea:(double)arg1;
 - (void)setBusiness:(id)arg1;
 - (void)setCenter:(id)arg1;
 - (void)setEntryPoints:(id)arg1;
 - (void)setGeoId:(long long)arg1;
 - (void)setHasAddressGeocodeAccuracy:(BOOL)arg1;
+- (void)setHasArea:(BOOL)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
 - (void)setHasIsDisputed:(BOOL)arg1;
 - (void)setHasLocalSearchProviderID:(BOOL)arg1;
@@ -124,9 +153,13 @@
 - (void)setName:(id)arg1;
 - (void)setPhoneticAddress:(id)arg1;
 - (void)setPhoneticName:(id)arg1;
+- (void)setSpokenAddress:(id)arg1;
+- (void)setSpokenName:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setUID:(long long)arg1;
 - (void)setVersion:(int)arg1;
+- (id)spokenAddress;
+- (id)spokenName;
 - (int)type;
 - (long long)uID;
 - (int)version;

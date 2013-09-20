@@ -4,7 +4,7 @@
 
 @class NSMutableArray;
 
-@interface GEOHours : PBCodable {
+@interface GEOHours : PBCodable <NSCopying> {
     struct { 
         int *list; 
         unsigned int count; 
@@ -22,6 +22,7 @@
 - (void)clearDays;
 - (void)clearTimeRanges;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)dayAtIndex:(unsigned int)arg1;
 - (int*)days;
 - (unsigned int)daysCount;

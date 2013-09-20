@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKStyle;
+@class VGLMeshVendor, VKStyle;
 
-@interface VKCoastlineGroup : VGLCullableMesh {
+@interface VKCoastlineGroup : NSObject {
     struct { 
         float x; 
         float y; 
@@ -21,25 +21,30 @@
         float a; 
     } _antialiasingBrushColor;
     float _antialiasingBrushWidth;
+    VGLMeshVendor *_coastlineVendor;
     } _offsetDirection;
     } _shadowColor;
     float _shadowWidth;
     VKStyle *_style;
+    unsigned int _tilePointSize;
     BOOL _visible;
 }
 
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } antialiasingBrushColor;
 @property float antialiasingBrushWidth;
+@property(readonly) VGLMeshVendor * coastlineVendor;
 @property struct { float x1; float x2; float x3; } offsetDirection;
 @property struct _VGLColor { float x1; float x2; float x3; float x4; } shadowColor;
 @property float shadowWidth;
 @property(readonly) VKStyle * style;
 @property BOOL visible;
 
+- (id).cxx_construct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })antialiasingBrushColor;
 - (float)antialiasingBrushWidth;
+- (id)coastlineVendor;
 - (void)dealloc;
-- (id)initWithStyle:(id)arg1;
+- (id)initWithStyle:(id)arg1 tilePointSize:(unsigned int)arg2;
 - (struct { float x1; float x2; float x3; })offsetDirection;
 - (void)setAntialiasingBrushColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setAntialiasingBrushWidth:(float)arg1;

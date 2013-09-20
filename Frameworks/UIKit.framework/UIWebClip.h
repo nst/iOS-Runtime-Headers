@@ -21,6 +21,7 @@
     BOOL iconIsScreenShotBased;
     NSArray *icons;
     NSString *identifier;
+    UIImage *initialLaunchImage;
     NSURL *pageURL;
     BOOL removalDisallowed;
     UIImage *startupImage;
@@ -42,6 +43,7 @@
 @property(readonly) BOOL iconIsScreenShotBased;
 @property(retain) NSArray * icons;
 @property(copy) NSString * identifier;
+@property(retain) UIImage * initialLaunchImage;
 @property(retain) NSURL * pageURL;
 @property BOOL removalDisallowed;
 @property(retain) UIImage * startupImage;
@@ -98,6 +100,7 @@
 - (BOOL)iconIsScreenShotBased;
 - (id)icons;
 - (id)identifier;
+- (id)initialLaunchImage;
 - (id)pageURL;
 - (BOOL)removalDisallowed;
 - (BOOL)removeFromDisk;
@@ -112,6 +115,7 @@
 - (void)setIconImageFromScreenshot:(id)arg1;
 - (void)setIcons:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setInitialLaunchImage:(id)arg1;
 - (void)setPageURL:(id)arg1;
 - (void)setRemovalDisallowed:(BOOL)arg1;
 - (void)setStartupImage:(id)arg1;

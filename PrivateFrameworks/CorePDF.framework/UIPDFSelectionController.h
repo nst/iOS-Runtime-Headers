@@ -57,6 +57,7 @@
 - (void)clearSelection;
 - (struct CGPoint { float x1; float x2; })currentSelectionPoint;
 - (void)dealloc;
+- (id)description;
 - (void)endTracking:(struct CGPoint { float x1; float x2; })arg1;
 - (void)extendSelectionToParagraph;
 - (void)hideWidget;

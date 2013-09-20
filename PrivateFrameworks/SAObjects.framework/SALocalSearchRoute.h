@@ -4,7 +4,7 @@
 
 @class NSData;
 
-@interface SALocalSearchRoute : AceObject <SAAceSerializable> {
+@interface SALocalSearchRoute : AceObject <SABackgroundContextObject> {
 }
 
 @property(copy) NSData * routeAsZilchBinary;

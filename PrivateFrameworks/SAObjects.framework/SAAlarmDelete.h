@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSURL;
+@class NSArray;
 
-@interface SAAlarmDelete : SABaseClientBoundCommand {
+@interface SAAlarmDelete : SADomainCommand {
 }
 
 @property(copy) NSArray * alarmIds;
-@property(copy) NSURL * targetAppId;
 
 + (id)delete;
 + (id)deleteWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setAlarmIds:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

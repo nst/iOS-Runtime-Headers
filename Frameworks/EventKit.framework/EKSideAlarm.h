@@ -15,5 +15,6 @@
 @property(retain) NSString * entityTimeZone;
 @property(retain) NSString * externalID;
 @property(retain) NSDate * fireTime;
+@property(retain) NSNumber * isDelayedProximityAlarm;
 
 @end

@@ -5,6 +5,8 @@
 @interface PLWallpaperAlbum : PLManagedAlbum {
 }
 
+@property short wallpaperAlbumType;
+
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)wallpaperAlbumInLibrary:(id)arg1;
@@ -12,6 +14,7 @@
 - (id)_kindDescription;
 - (void)awakeFromInsert;
 - (id)localizedTitle;
+- (unsigned int)photosCount;
 - (id)posterImage;
 
 @end

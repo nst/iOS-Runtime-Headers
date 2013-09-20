@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSLock, NSMutableArray, NSMutableSet, NSString, SUClientInterface, SUScriptNativeObject, SUScriptObject, SUScriptObjectInvocationBatch, SUWebImagePool, WebFrame;
+@class NSLock, NSMutableArray, NSMutableSet, NSString, SUClientInterface, SUScriptNativeObject, SUScriptObject, SUScriptObjectInvocationBatch, WebFrame;
 
 @interface SUScriptObject : NSObject {
     unsigned int _checkOutWhenHidden : 1;
@@ -19,7 +19,6 @@
 @property(getter=_className,readonly) NSString * className;
 @property(readonly) SUClientInterface * clientInterface;
 @property(readonly) struct OpaqueJSContext { }* copyJavaScriptContext;
-@property(readonly) SUWebImagePool * imagePool;
 @property(retain) SUScriptNativeObject * nativeObject;
 @property SUScriptObject * parentScriptObject;
 @property(readonly) NSMutableArray * scriptAttributeKeys;
@@ -52,7 +51,6 @@
 - (void)dispatchEvent:(id)arg1 forName:(id)arg2;
 - (BOOL)equals:(id)arg1;
 - (void)finalizeForWebScript;
-- (id)imagePool;
 - (id)init;
 - (id)invocationBatch:(BOOL)arg1;
 - (BOOL)isVisible;

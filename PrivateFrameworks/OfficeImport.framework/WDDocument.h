@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDate, NSMutableArray, NSString, OADBackground, OADTheme, WDCitationTable, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
+@class NSDate, NSMutableArray, NSMutableSet, NSString, OADBackground, OADTheme, WDCitationTable, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
 
 @interface WDDocument : OCDDocument {
     unsigned int mMirrorMargins : 1;
@@ -48,6 +48,8 @@
     NSString *mKinsokuAltBreakBefore;
     WDListDefinitionTable *mListDefinitionTable;
     WDListTable *mListTable;
+    NSDate *mModificationDate;
+    NSMutableSet *mObjPointers;
     NSString *mOleFilename;
     WDRevisionAuthorTable *mRevisionAuthorTable;
     NSMutableArray *mSections;
@@ -65,6 +67,7 @@
 - (void)addImageBullets;
 - (id)addList:(id)arg1;
 - (id)addListDefinition;
+- (void)addObjPointer:(id)arg1;
 - (void)addRevisionAuthor:(id)arg1;
 - (id)addSection;
 - (id)annotationBlockIterator;
@@ -76,7 +79,7 @@
 - (BOOL)borderSurroundHeader;
 - (id)changeTrackingEditAuthors;
 - (id)changeTrackingEditDates;
-- (int)citationCount;
+- (unsigned int)citationCount;
 - (id)citationFor:(id)arg1;
 - (id)creationDate;
 - (void)dealloc;
@@ -112,13 +115,14 @@
 - (id)kinsokuAltBreakAfter;
 - (id)kinsokuAltBreakBefore;
 - (BOOL)kinsokuStrict;
+- (id)lastModDate;
 - (id)lastSection;
-- (id)listAt:(int)arg1;
-- (int)listCount;
+- (id)listAt:(unsigned int)arg1;
+- (unsigned int)listCount;
 - (id)listDefinitionAt:(int)arg1;
-- (int)listDefinitionCount;
+- (unsigned int)listDefinitionCount;
 - (id)listDefinitionTable;
-- (id)listDefinitionWithId:(int)arg1;
+- (id)listDefinitionWithId:(long)arg1;
 - (id)listTable;
 - (id)mainBlocksIterator;
 - (id)mainRunsIterator;
@@ -134,12 +138,13 @@
 - (id)newSectionIterator;
 - (id)oleFilename;
 - (void)removeEmptySections;
-- (int)revisionAuthorAddLookup:(id)arg1;
-- (id)revisionAuthorAt:(int)arg1;
-- (int)revisionAuthorCount;
+- (void)removeObjPointer:(id)arg1;
+- (unsigned int)revisionAuthorAddLookup:(id)arg1;
+- (id)revisionAuthorAt:(unsigned int)arg1;
+- (unsigned int)revisionAuthorCount;
 - (id)revisionAuthorTable;
-- (id)sectionAt:(int)arg1;
-- (int)sectionCount;
+- (id)sectionAt:(unsigned int)arg1;
+- (unsigned int)sectionCount;
 - (id)sectionIterator;
 - (id)sections;
 - (void)setAutoHyphenate:(BOOL)arg1;
@@ -162,6 +167,7 @@
 - (void)setKinsokuAltBreakAfter:(id)arg1;
 - (void)setKinsokuAltBreakBefore:(id)arg1;
 - (void)setKinsokuStrict:(BOOL)arg1;
+- (void)setLastModDate:(id)arg1;
 - (void)setMirrorMargins:(BOOL)arg1;
 - (void)setOleFilename:(id)arg1;
 - (void)setShowComments:(BOOL)arg1;

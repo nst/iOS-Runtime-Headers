@@ -8,6 +8,7 @@
 }
 
 @property(retain) SASportsLeague * league;
+@property(retain) SAUIAppPunchOut * leagueAppPunchOut;
 @property(retain) SAUIAppPunchOut * punchOut;
 
 + (id)snippet;
@@ -16,8 +17,10 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)league;
+- (id)leagueAppPunchOut;
 - (id)punchOut;
 - (void)setLeague:(id)arg1;
+- (void)setLeagueAppPunchOut:(id)arg1;
 - (void)setPunchOut:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVAssetWriterInputTerminalHelper : AVAssetWriterInputHelper {
+@interface AVAssetWriterInputTerminalHelper : AVAssetWriterInputHelper <AVAssetWriterInputMediaDataRequesterDelegate> {
     BOOL _didRequestMediaDataOnce;
     int _terminalStatus;
 }
@@ -13,8 +13,10 @@
 - (id)initWithConfigurationState:(id)arg1;
 - (BOOL)isReadyForMoreMediaData;
 - (void)markAsFinished;
+- (BOOL)mediaDataRequesterShouldRequestMediaData:(id)arg1;
+- (void)requestMediaDataOnceIfNecessaryWithMediaDataRequester:(id)arg1;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
 - (int)status;
-- (void)transitionToTerminalStatus:(int)arg1;
+- (id)transitionToAndReturnTerminalHelperWithTerminalStatus:(int)arg1;
 
 @end

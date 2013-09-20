@@ -20,6 +20,7 @@
 + (void)setHostCacheEnabled:(BOOL)arg1;
 
 - (void)__resolveWithFlags:(int)arg1 resultArray:(id)arg2 handler:(id)arg3;
+- (id)_thingToResolve;
 - (id)address;
 - (id)addresses;
 - (void)blockingResolveUntil:(int)arg1;

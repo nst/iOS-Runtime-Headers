@@ -2,43 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKAnnotation>, NSString, UICalloutView, UIImage, UIView;
-
 @interface MKAnnotationViewInternal : NSObject {
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGPoint { 
-        float x; 
-        float y; 
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    struct { 
-        unsigned int disabled : 1; 
-        unsigned int selected : 1; 
-        unsigned int canShowCallout : 1; 
-        unsigned int isHighlighted : 1; 
-        unsigned int canDisplayDisclosureInCallout : 1; 
-        unsigned int canDisplayPlacemarkInCallout : 1; 
-        unsigned int draggable : 1; 
-    <MKAnnotation> *annotation;
-    } calloutOffset;
-    UICalloutView *calloutView;
-    } centerOffset;
-    unsigned int dragState;
-    } flags;
-    UIImage *image;
-    UIView *leftCalloutAccessoryView;
-    } mapTransform;
-    unsigned int mapType;
-    NSString *reuseIdentifier;
-    UIView *rightCalloutAccessoryView;
-    unsigned int zIndex;
 }
 
 @end

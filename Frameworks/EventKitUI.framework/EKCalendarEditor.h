@@ -23,6 +23,7 @@
 @property BOOL isNewCalendar;
 @property(retain) <EKStyleProvider> * styleProvider;
 
+- (void).cxx_destruct;
 - (void)_deleteCalendar;
 - (void)_deleteClicked:(id)arg1;
 - (id)_editItems;
@@ -34,7 +35,6 @@
 - (id)calendar;
 - (void)calendarItemStartedEditing:(id)arg1;
 - (void)cancel:(id)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)delegate;
 - (void)done:(id)arg1;
@@ -45,6 +45,7 @@
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)owningNavigationController;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)scrollViewDidScroll:(id)arg1;
 - (int)sectionForCalendarEditItem:(id)arg1;
 - (void)setCalendar:(id)arg1;
@@ -64,7 +65,7 @@
 - (id)tableView;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

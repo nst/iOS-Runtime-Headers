@@ -17,10 +17,9 @@
 @property <MSPublishStorageProtocolDelegate> * delegate;
 
 - (void).cxx_destruct;
-- (void)_closeFDForAsset:(id)arg1;
 - (int)_getFileDescriptorFromItem:(unsigned long long)arg1;
 - (id)_getUTIFromItem:(unsigned long long)arg1;
-- (void)_putItemDone:(unsigned long long)arg1 error:(id)arg2;
+- (void)_putItemDone:(unsigned long long)arg1 putReceipt:(id)arg2 error:(id)arg3;
 - (void)_putItemsFailure;
 - (void)_requestCompleted;
 - (void)computeHashForAsset:(id)arg1;

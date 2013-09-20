@@ -2,22 +2,18 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VGLContext;
+@class VGLResource;
 
 @interface VGLShader : NSObject {
-    VGLContext *context;
-    int token;
+    VGLResource *_resource;
 }
 
-@property VGLContext * context;
-@property(readonly) int token;
+@property(readonly) unsigned int token;
 
-- (id)context;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 shaderType:(unsigned int)arg2;
+- (id)initWithName:(id)arg1 shaderType:(unsigned int)arg2 resource:(id)arg3;
 - (void)printShaderInfoLog;
-- (void)setContext:(id)arg1;
 - (BOOL)status:(unsigned int)arg1;
-- (int)token;
+- (unsigned int)token;
 
 @end

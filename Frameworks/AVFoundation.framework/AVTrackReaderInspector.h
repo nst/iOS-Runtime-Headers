@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSArray;
+@class AVWeakReference;
 
 @interface AVTrackReaderInspector : AVAssetTrackInspector {
-    NSArray *_cachedMediaCharacteristics;
     struct OpaqueFigFormatReader { } *_formatReader;
     unsigned long _mediaType;
     int _trackID;
@@ -13,6 +12,7 @@
     AVWeakReference *_weakReferenceToAsset;
 }
 
+- (unsigned long)_figMediaType;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (struct OpaqueFigTrackReader { }*)_trackReader;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
@@ -32,9 +32,10 @@
 - (BOOL)isSelfContained;
 - (id)languageCode;
 - (int)layer;
-- (id)mediaCharacteristics;
+- (id)loudnessInfo;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minSampleDuration;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)nominalFrameRate;

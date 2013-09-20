@@ -6,15 +6,17 @@
    See Warning(s) below.
  */
 
-@class <MFMessageBodyElement_Private>, DOMRange;
+@class <MFMessageBodyElement_Private>, DOMRange, NSMutableArray;
 
 @interface MFMessageBodyDOMQuoteSubparser : MFMessageBodySubparser {
-    <MFMessageBodyElement_Private> *_dedendedAttributionLastElement;
-    <MFMessageBodyElement_Private> *_dedentedAttributionLastTextElement;
     id _foundDedentedAttributionRangeBlock;
     id _foundTrailingEmptyQuoteRangeBlock;
+    <MFMessageBodyElement_Private> *_lastUnindentedAttributionHint;
+    <MFMessageBodyElement_Private> *_lastUnindentedElement;
     unsigned int _trailingEmptyQuoteLevel;
     DOMRange *_trailingEmptyQuoteRange;
+    unsigned int _unindentedSiblingGap;
+    NSMutableArray *_unindentedSiblingNodes;
 }
 
 - (void)_enumerateSurroundableRangesInRange:(id)arg1 withBlock:(id)arg2;

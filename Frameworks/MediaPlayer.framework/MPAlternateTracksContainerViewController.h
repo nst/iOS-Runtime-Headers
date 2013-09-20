@@ -5,7 +5,7 @@
 @interface MPAlternateTracksContainerViewController : UIViewController {
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;
 
 @end

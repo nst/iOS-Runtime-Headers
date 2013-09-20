@@ -12,11 +12,13 @@
 @property(retain) CAAnimation * animation;
 @property(copy) NSString * key;
 
+- (id)CAMLTypeForKey:(id)arg1;
 - (id)animation;
 - (void)apply:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
+- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)key;

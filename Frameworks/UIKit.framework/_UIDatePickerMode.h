@@ -16,6 +16,7 @@
     NSDate *_baseDate;
     NSDateComponents *_baseDateComponents;
     NSArray *_dateFormatters;
+    _UIDatePickerView *_datePickerView;
     UIFont *_defaultTimeFont;
     unsigned int *_elements;
     UIFont *_font;
@@ -35,7 +36,6 @@
     double _todaySinceReferenceDate;
     UIColor *_todayTextColor;
     int _yearsSinceBaseDate;
-    _UIDatePickerView *datePickerView;
 }
 
 @property(readonly) UIFont * amPmFont;
@@ -48,6 +48,8 @@
 @property(readonly) int displayedCalendarUnits;
 @property unsigned int* elements;
 @property(readonly) UIFont * font;
+@property(getter=is24Hour,readonly) BOOL is24Hour;
+@property(getter=isTimeIntervalMode,readonly) BOOL isTimeIntervalMode;
 @property(retain) NSString * localizedFormatString;
 @property(readonly) NSDate * maximumDate;
 @property(readonly) NSDateComponents * maximumDateComponents;
@@ -63,12 +65,14 @@
 @property(retain) NSDateComponents * todayDateComponents;
 @property double todaySinceReferenceDate;
 @property(readonly) UIColor * todayTextColor;
+@property(readonly) float totalComponentWidth;
 @property int yearsSinceBaseDate;
 
 + (id)_datePickerModeWithFormatString:(id)arg1 datePickerView:(id)arg2;
 + (id)_datePickerModeWithMode:(int)arg1 datePickerView:(id)arg2;
 + (int)datePickerMode;
 + (unsigned int)extractableCalendarUnits;
++ (void)initialize;
 + (id)newDateFromGregorianYear:(int)arg1 month:(int)arg2 day:(int)arg3 timeZone:(id)arg4;
 
 - (id)_dateByEnsuringValue:(int)arg1 forCalendarUnit:(unsigned int)arg2;
@@ -109,6 +113,7 @@
 - (int)hourForRow:(int)arg1;
 - (id)init;
 - (BOOL)is24Hour;
+- (BOOL)isTimeIntervalMode;
 - (void)loadDate:(id)arg1 animated:(BOOL)arg2;
 - (id)locale;
 - (id)localizedFormatString;
@@ -131,6 +136,7 @@
 - (void)resetComponentWidths;
 - (void)resetSelectedDateComponentsWithValuesUnderSelectionBars;
 - (int)rowForDate:(id)arg1 dateComponents:(id)arg2 component:(int)arg3 currentRow:(int)arg4;
+- (int)rowForValue:(int)arg1 forCalendarUnit:(unsigned int)arg2 currentRow:(int)arg3;
 - (float)rowHeight;
 - (int)secondForRow:(int)arg1;
 - (id)selectedDateComponents;
@@ -158,6 +164,8 @@
 - (float)totalComponentWidthWithFont:(id)arg1;
 - (void)updateEnabledStateOfViewForRow:(int)arg1 inComponent:(int)arg2;
 - (void)updateSelectedDateComponentsWithNewValueInComponent:(int)arg1;
+- (int)validateValue:(int)arg1 forCalendarUnit:(unsigned int)arg2;
+- (int)valueForDate:(id)arg1 dateComponents:(id)arg2 calendarUnit:(unsigned int)arg3;
 - (int)valueForRow:(int)arg1 inCalendarUnit:(unsigned int)arg2;
 - (id)viewForRow:(int)arg1 inComponent:(int)arg2 reusingView:(id)arg3;
 - (float)widthForCalendarUnit:(unsigned int)arg1 font:(id)arg2 maxWidth:(float)arg3;

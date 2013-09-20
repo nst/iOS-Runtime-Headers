@@ -4,14 +4,14 @@
 
 @class NSMutableArray;
 
-@interface PDAnimateTimeBehavior : PDCommonBehaviorData {
+@interface PDAnimateTimeBehavior : PDAnimateBehavior {
     NSMutableArray *mTimeAnimateValues;
 }
 
 - (void)addTimeAnimateValue:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)timeAnimateValueAtIndex:(int)arg1;
-- (int)timeAnimateValueCount;
+- (id)timeAnimateValueAtIndex:(unsigned int)arg1;
+- (unsigned int)timeAnimateValueCount;
 
 @end

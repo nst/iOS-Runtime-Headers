@@ -19,6 +19,7 @@
 @property(retain) ICSDuration * duration;
 @property(retain) NSArray * exdate;
 @property(retain) NSArray * exrule;
+@property BOOL forcedAllDay;
 @property(readonly) BOOL isAllDay;
 @property(retain) ICSDate * last_modified;
 @property(retain) NSString * location;
@@ -42,6 +43,8 @@
 @property BOOL x_apple_ignore_on_restore;
 @property BOOL x_apple_needs_reply;
 @property(retain) ICSStructuredLocation * x_apple_structured_location;
+@property(retain) ICSDuration * x_apple_travel_duration;
+@property(retain) ICSStructuredLocation * x_apple_travel_start;
 @property(retain) NSArray * x_calendarserver_attendee_comment;
 @property(retain) NSString * x_calendarserver_private_comment;
 @property BOOL x_wr_itipalreadysent;
@@ -53,6 +56,8 @@
 
 - (void)fixComponent;
 - (BOOL)isDefaultAlarmDeleted;
+- (id)propertiesThatIfPresentExcludeThisComponentFromChecksummingForVersion:(int)arg1;
+- (id)propertiesToIncludeForChecksumVersion:(int)arg1;
 - (void)setTransp:(int)arg1;
 - (void)setX_apple_dontschedule:(BOOL)arg1;
 - (void)setX_apple_ews_busystatus:(int)arg1;

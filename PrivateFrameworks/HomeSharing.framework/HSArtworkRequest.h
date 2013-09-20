@@ -5,9 +5,9 @@
 @interface HSArtworkRequest : HSRequest {
 }
 
-+ (id)requestWithDatabaseID:(unsigned int)arg1 itemID:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
++ (id)requestWithDatabaseID:(unsigned int)arg1 itemID:(unsigned long long)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 
 - (BOOL)acceptsGzipEncoding;
-- (id)initWithDatabaseID:(unsigned int)arg1 itemID:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
+- (id)initWithDatabaseID:(unsigned int)arg1 itemID:(unsigned long long)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 
 @end

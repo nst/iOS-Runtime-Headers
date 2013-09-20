@@ -19,7 +19,6 @@
     int _flavor;
 }
 
-- (id).cxx_construct;
 - (struct _CSTypeRef { unsigned int x1; unsigned int x2; })_symbolicator;
 - (unsigned long long*)backtrace;
 - (unsigned int)backtraceLength;

@@ -15,18 +15,23 @@
 + (id)_activityFunctionImage:(id)arg1;
 + (id)_activityGenericImage:(id)arg1;
 + (id)_activityImageForApplication:(id)arg1;
-+ (id)_activityImageForPrerenderedImage:(id)arg1;
++ (int)activityCategory;
 
 - (id)_activityImage;
+- (id)_attachmentNameForActivityItem:(id)arg1;
 - (id)_beforeActivity;
-- (BOOL)_canAdjustOrder;
 - (BOOL)_canPerformWithSuppliedActivityItems:(id)arg1;
 - (void)_cleanup;
+- (id)_dataTypeIdentifierForActivityItem:(id)arg1;
 - (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (id)_embeddedActivityViewController;
 - (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)_setActivityCompletionHandler:(id)arg1;
 - (void)_setSubject:(id)arg1;
+- (id)_subjectForActivityItem:(id)arg1;
+- (id)_thumbnailImageForActivityItem:(id)arg1;
+- (struct CGSize { float x1; float x2; })_thumbnailSize;
+- (void)_willPresentAsFormSheet;
 - (id)activityCompletionHandler;
 - (void)activityDidFinish:(BOOL)arg1;
 - (id)activityImage;

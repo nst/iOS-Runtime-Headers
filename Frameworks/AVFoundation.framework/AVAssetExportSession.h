@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVAssetExportSessionInternal, AVAudioMix, AVVideoComposition, NSArray, NSError, NSString, NSURL;
+@class <AVVideoCompositing>, AVAsset, AVAssetExportSessionInternal, AVAudioMix, AVMetadataItemFilter, AVVideoComposition, NSArray, NSError, NSString, NSURL;
 
 @interface AVAssetExportSession : NSObject {
     AVAssetExportSessionInternal *_exportSession;
@@ -10,11 +10,14 @@
 
 @property(readonly) AVAsset * asset;
 @property(copy) AVAudioMix * audioMix;
+@property(copy) NSString * audioTimePitchAlgorithm;
+@property(readonly) <AVVideoCompositing> * customVideoCompositor;
 @property(readonly) NSError * error;
 @property(readonly) long long estimatedOutputFileLength;
 @property long long fileLengthLimit;
 @property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxDuration;
 @property(copy) NSArray * metadata;
+@property(retain) AVMetadataItemFilter * metadataItemFilter;
 @property(copy) NSString * outputFileType;
 @property(copy) NSURL * outputURL;
 @property(readonly) NSString * presetName;
@@ -25,39 +28,59 @@
 @property struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
 @property(copy) AVVideoComposition * videoComposition;
 
++ (id)_asynchronousDispatchQueue;
 + (id)_audioOnlyPresets;
 + (id)_audioVideoPresets;
 + (BOOL)_canWriteMediaOfAsset:(id)arg1 toFileType:(id)arg2;
++ (BOOL)_disableExportCompatibilityCheck;
++ (BOOL)_disablePassthrough;
 + (long long)_estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;
++ (BOOL)_failsAudioPassthroughRestrictions:(id)arg1 outputFileType:(id)arg2;
 + (id)_figRemakerNotificationNames;
 + (int)_getPassthroughExportPolicyForAssetTrack:(id)arg1 fileType:(id)arg2 asChapterTrack:(BOOL)arg3;
-+ (BOOL)_isCompositionWithMultipleNonEmptyEdits:(id)arg1;
 + (BOOL)_isExportPreset:(id)arg1 compatibleWithAsset:(id)arg2 outputFileType:(id)arg3;
 + (BOOL)_isNonPassthroughExportPreset:(id)arg1 compatibleWithAsset:(id)arg2 outputFileType:(id)arg3;
 + (BOOL)_isNonPassthroughExportPreset:(id)arg1 compatibleWithAssetContainingPlayableAudio:(BOOL)arg2 playableVideo:(BOOL)arg3 outputFileType:(id)arg4;
 + (BOOL)_isPassthroughExportPresetCompatibleWithAsset:(id)arg1 outputFileType:(id)arg2;
-+ (BOOL)_isPassthroughSupportedForAsset:(id)arg1;
++ (BOOL)_isPassthroughExportSupportedForAudioFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 forFileType:(struct __CFString { }*)arg2 asChapterTrack:(BOOL)arg3 usingModifiedFormatDescription:(const struct opaqueCMFormatDescription {}**)arg4;
++ (BOOL)_isPassthroughExportSupportedForFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 forFileType:(struct __CFString { }*)arg2 asChapterTrack:(BOOL)arg3;
 + (struct { long long x1; int x2; unsigned int x3; long long x4; })_maximumDurationForPreset:(id)arg1 fileSizeBytesLimit:(long long)arg2 properties:(id)arg3;
++ (id)_mediaTypesToFailPassthroughExport;
++ (id)_mediaTypesToStripOnPassthroughExport;
 + (id)_settingForPreset:(id)arg1;
 + (id)_utTypesForAudioOnly;
 + (id)_utTypesForDefaultPassthroughPreset;
 + (id)_utTypesForPresets;
++ (id)_videoCompressionPropertiesForVideoSetting:(id)arg1;
 + (id)allExportPresets;
 + (void)determineCompatibilityOfExportPreset:(id)arg1 withAsset:(id)arg2 outputFileType:(id)arg3 completionHandler:(id)arg4;
 + (long long)estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;
 + (id)exportPresetsCompatibleWithAsset:(id)arg1;
 + (id)exportSessionWithAsset:(id)arg1 presetName:(id)arg2;
++ (id)keyPathsForValuesAffectingEstimatedOutputFileLength;
 + (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumDurationForPreset:(id)arg1 properties:(id)arg2;
 
+- (id)_actualOutputFileType;
 - (id)_actualPresetName;
 - (id)_actualSettingForPreset:(id)arg1;
+- (id)_actualSettingForPresetAppleM4VAppleTV:(id)arg1;
+- (id)_addAudioPassthroughTrack:(id)arg1 asChapterTrack:(BOOL)arg2 toFigRemaker:(struct OpaqueFigRemaker { }*)arg3 returningTrackID:(int*)arg4;
 - (void)_addListeners;
+- (id)_addTracksAndPropertiesToFigRemakerForPassthroughExport:(struct OpaqueFigRemaker { }*)arg1;
+- (id)_audioProcessingOptions;
+- (int)_averageBitRateForSourceAndPreset:(id)arg1 targetFrameRate:(float)arg2;
 - (BOOL)_canPassThroughAudio:(id)arg1 checkEnabled:(BOOL)arg2 checkProtected:(BOOL)arg3;
-- (BOOL)_canPassThroughVideo:(id)arg1 checkEnabled:(BOOL)arg2 checkAll:(BOOL)arg3 checkProtected:(BOOL)arg4;
-- (struct OpaqueFigRemaker { }*)_createFigRemaker;
+- (BOOL)_canPassThroughVideo:(id)arg1 remaker:(struct OpaqueFigRemaker { }*)arg2 checkEnabled:(BOOL)arg3 checkAll:(BOOL)arg4 checkProtected:(BOOL)arg5;
+- (BOOL)_canPerformFastFrameRateConversionWithPreset:(id)arg1 usingRemaker:(struct OpaqueFigRemaker { }*)arg2;
+- (id)_createFigRemaker:(struct OpaqueFigRemaker {}**)arg1;
+- (void)_createFormatWriterOptions:(id*)arg1 forFileFormat:(id)arg2;
+- (void)_createRemakerAndBeginExport;
+- (void)_createRemakerOptions:(id*)arg1 forFileFormat:(id)arg2;
 - (id)_determineCompatibleFileTypes;
 - (struct CGSize { float x1; float x2; })_getSourceDimension;
+- (float)_getSourceVideoFrameRate;
 - (int)_getTrackCountOfType:(id)arg1 checkEnabled:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_getUntransformedSourceDimension;
 - (void)_handleFigRemakerNotification:(id)arg1 payload:(id)arg2;
 - (void)_handleFigRemakerNotificationAsync:(id)arg1 payload:(id)arg2;
 - (BOOL)_hasProtectedNonAudioVideoTracks;
@@ -68,10 +91,13 @@
 - (BOOL)_totalSizeOfTracksIsWithinFileLengthLimit:(id)arg1 forSetting:(id)arg2;
 - (void)_transitionToStatus:(int)arg1 error:(id)arg2;
 - (void)_updateProgress;
+- (void)_validateOutputFileTypeForExport;
 - (BOOL)_validateSettablePropertiesReturningError:(id*)arg1;
 - (id)asset;
 - (id)audioMix;
+- (id)audioTimePitchAlgorithm;
 - (void)cancelExport;
+- (id)customVideoCompositor;
 - (void)dealloc;
 - (id)description;
 - (void)determineCompatibleFileTypesWithCompletionHandler:(id)arg1;
@@ -84,24 +110,29 @@
 - (id)initWithAsset:(id)arg1 presetName:(id)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
 - (id)metadata;
+- (id)metadataItemFilter;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minVideoFrameDuration;
 - (id)outputFileType;
 - (id)outputURL;
 - (id)presetName;
 - (float)progress;
 - (void)setAudioMix:(id)arg1;
+- (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (void)setFileLengthLimit:(long long)arg1;
 - (void)setMetadata:(id)arg1;
+- (void)setMetadataItemFilter:(id)arg1;
+- (void)setMinVideoFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setOutputFileType:(id)arg1;
 - (void)setOutputURL:(id)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
-- (void)setUsesHardwareVideoEncoderIfAvailable:(BOOL)arg1;
 - (void)setVideoComposition:(id)arg1;
+- (void)setVideoFrameRateConversionAlgorithm:(id)arg1;
 - (BOOL)shouldOptimizeForNetworkUse;
 - (int)status;
 - (id)supportedFileTypes;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
-- (BOOL)usesHardwareVideoEncoderIfAvailable;
 - (id)videoComposition;
+- (id)videoFrameRateConversionAlgorithm;
 
 @end

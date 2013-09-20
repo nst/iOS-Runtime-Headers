@@ -5,13 +5,17 @@
 @class NSString, NSURL, SUPlayerStatus;
 
 @interface SUScriptAudioPlayer : SUScriptObject {
+    NSURL *_certificateUrl;
+    NSURL *_keyUrl;
     SUPlayerStatus *_playerStatus;
     NSURL *_url;
 }
 
 @property(readonly) NSString * URL;
+@property(readonly) NSString * certificateURL;
 @property(readonly) double currentTime;
 @property(readonly) double duration;
+@property(readonly) NSString * keyURL;
 @property(readonly) NSString * nowPlayingKeyAlbumTitle;
 @property(readonly) NSString * nowPlayingKeyAlbumTrackCount;
 @property(readonly) NSString * nowPlayingKeyAlbumTrackNumber;
@@ -40,10 +44,12 @@
 - (void)_audioPlayerStateChangeNotification:(id)arg1;
 - (id)_className;
 - (id)attributeKeys;
+- (id)certificateURL;
 - (double)currentTime;
 - (void)dealloc;
 - (double)duration;
-- (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 keyURL:(id)arg2 certificateURL:(id)arg3;
+- (id)keyURL;
 - (id)nowPlayingKeyAlbumTitle;
 - (id)nowPlayingKeyAlbumTrackCount;
 - (id)nowPlayingKeyAlbumTrackNumber;

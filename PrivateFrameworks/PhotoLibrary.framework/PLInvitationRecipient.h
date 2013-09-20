@@ -2,24 +2,40 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MFComposeRecipient, NSString;
+@class MFComposeRecipient, NSArray, NSMutableArray, NSString;
 
 @interface PLInvitationRecipient : NSObject {
-    NSString *_emailAddress;
+    NSMutableArray *_allEmails;
+    NSMutableArray *_allPhones;
     NSString *_firstName;
+    NSString *_invalidAddressString;
     NSString *_lastName;
     MFComposeRecipient *_mfRecipient;
+    NSString *_selectedEmailString;
+    NSString *_selectedPhoneString;
 }
 
-@property(readonly) NSString * emailAddress;
+@property(readonly) NSArray * allEmails;
+@property(readonly) NSArray * allPhones;
 @property(readonly) NSString * firstName;
+@property(readonly) NSString * invalidAddressString;
 @property(readonly) NSString * lastName;
+@property(readonly) NSString * selectedEmailString;
+@property(readonly) NSString * selectedPhoneString;
 
++ (id)validEmailAddressFromComposeRecipient:(id)arg1;
++ (id)validPhoneNumberFromString:(id)arg1;
+
+- (id)allEmails;
+- (id)allPhones;
 - (void)dealloc;
+- (id)description;
 - (id)displayName;
-- (id)emailAddress;
 - (id)firstName;
 - (id)initWithRecipient:(id)arg1;
+- (id)invalidAddressString;
 - (id)lastName;
+- (id)selectedEmailString;
+- (id)selectedPhoneString;
 
 @end

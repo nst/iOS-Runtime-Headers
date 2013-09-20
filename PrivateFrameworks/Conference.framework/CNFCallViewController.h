@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class AVController, CNFAudioDeviceController, CNFAudioPlayer, CNFDisplayController, NSObject<CNFCallViewControllerDelegate>, NSURL, UIWindow;
+@class AVController, CNFAudioDeviceController, CNFDisplayController, NSObject<CNFCallViewControllerDelegate>, NSURL, TUAudioPlayer, UIWindow;
 
-@interface CNFCallViewController : UIViewController <UIApplicationDelegate, CNFDisplayControllerDelegate, CNFSoundPlayerDelegateProtocol, CNFAudioDeviceControllerProtocol> {
-    BOOL _audioWasInterrupted;
+@interface CNFCallViewController : UIViewController <TUAudioPlayerDelegateProtocol, UIApplicationDelegate, CNFDisplayControllerDelegate, CNFAudioDeviceControllerProtocol> {
     AVController *_avController;
     NSObject<CNFCallViewControllerDelegate> *_delegate;
     CNFAudioDeviceController *_deviceController;
@@ -14,7 +13,7 @@
     BOOL _initialMuteState;
     BOOL _isOutgoingInvitation;
     NSURL *_originationURL;
-    CNFAudioPlayer *_player;
+    TUAudioPlayer *_player;
 }
 
 @property NSObject<CNFCallViewControllerDelegate> * delegate;
@@ -25,7 +24,6 @@
 @property(retain) NSURL * originationURL;
 @property(retain) UIWindow * window;
 
-- (BOOL)_beginAudioInterruption;
 - (void)_delayedPlayOutgoingRingSound;
 - (BOOL)_endAudioInterruption;
 - (void)_forceAudioCompletion;
@@ -36,7 +34,6 @@
 - (void)_handleFirstRemoteFrame:(id)arg1;
 - (void)_handleInvitationSent:(id)arg1;
 - (void)_handleStateChanged:(id)arg1;
-- (void)_handleTelephonyStateChanged:(id)arg1;
 - (void)_muteConference:(BOOL)arg1;
 - (void)_playOutgoingRingSound;
 - (void)_stopSounds;

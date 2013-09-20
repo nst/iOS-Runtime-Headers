@@ -27,6 +27,7 @@
 @property int toInterfaceOrientation;
 @property(retain) MPViewController * toViewController;
 
+- (void).cxx_destruct;
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;
 - (void)addViewToFadeIn:(id)arg1 restoreOnPop:(BOOL)arg2;
 - (void)addViewToFadeOut:(id)arg1 restoreOnPop:(BOOL)arg2;

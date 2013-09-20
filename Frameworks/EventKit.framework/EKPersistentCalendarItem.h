@@ -31,10 +31,12 @@
 @property(copy) NSString * notes;
 @property(retain) EKPersistentOrganizer * organizer;
 @property(retain) EKPersistentCalendarItem * originalItem;
+@property(copy) NSDate * participationStatusModifiedDate;
 @property int priority;
 @property(copy) NSSet * recurrenceRules;
 @property(retain) EKPersistentAttendee * selfAttendee;
 @property(readonly) int selfParticipantStatus;
+@property int sequence;
 @property(copy) NSString * sharedItemCreatedByDisplayName;
 @property(copy) NSString * sharedItemCreatedByEmailAddress;
 @property(copy) NSString * sharedItemCreatedByFirstName;
@@ -75,6 +77,7 @@
 - (id)exceptionDates;
 - (id)externalData;
 - (id)externalID;
+- (id)externalModificationTag;
 - (BOOL)hasAlarms;
 - (BOOL)hasAttachments;
 - (BOOL)hasAttendees;
@@ -92,6 +95,7 @@
 - (id)notes;
 - (id)organizer;
 - (id)originalItem;
+- (id)participationStatusModifiedDate;
 - (void)primitiveValueChangedForKey:(id)arg1;
 - (int)priority;
 - (id)recurrenceRules;
@@ -103,6 +107,7 @@
 - (void)removeRecurrenceRule:(id)arg1;
 - (id)selfAttendee;
 - (int)selfParticipantStatus;
+- (int)sequence;
 - (void)setAction:(id)arg1;
 - (void)setAlarms:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
@@ -115,14 +120,17 @@
 - (void)setExceptionDates:(id)arg1;
 - (void)setExternalData:(id)arg1;
 - (void)setExternalID:(id)arg1;
+- (void)setExternalModificationTag:(id)arg1;
 - (void)setLastModifiedDate:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setOrganizer:(id)arg1;
 - (void)setOriginalItem:(id)arg1;
+- (void)setParticipationStatusModifiedDate:(id)arg1;
 - (void)setPriority:(int)arg1;
 - (void)setRecurrenceRules:(id)arg1;
 - (void)setSelfAttendee:(id)arg1;
+- (void)setSequence:(int)arg1;
 - (void)setSharedItemCreatedByDisplayName:(id)arg1;
 - (void)setSharedItemCreatedByEmailAddress:(id)arg1;
 - (void)setSharedItemCreatedByFirstName:(id)arg1;

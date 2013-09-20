@@ -12,12 +12,12 @@
 
 @property(copy) NSString * noteText;
 
+- (void).cxx_destruct;
 - (BOOL)becomeFirstResponder;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)loadView;
 - (id)noteText;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (BOOL)resignFirstResponder;
 - (void)setNoteText:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -26,7 +26,6 @@
 - (BOOL)validateAllowingAlert:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

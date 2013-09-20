@@ -13,6 +13,7 @@
     NSSet *_originalUserAddresses;
     NSURL *_outboxURL;
     CalDAVServerVersion *_serverVersion;
+    BOOL _supportsCalendarUserSearch;
     NSURL *_updatedPrincipalURL;
     NSSet *_userAddresses;
 }
@@ -25,6 +26,7 @@
 @property(readonly) NSSet * originalUserAddresses;
 @property(readonly) NSURL * outboxURL;
 @property(readonly) CalDAVServerVersion * serverVersion;
+@property(readonly) BOOL supportsCalendarUserSearch;
 @property(readonly) NSURL * updatedPrincipalURL;
 @property(readonly) NSSet * userAddresses;
 
@@ -45,6 +47,7 @@
 - (id)serverVersion;
 - (void)setDelegatePrincipalURL:(id)arg1;
 - (void)startTaskGroup;
+- (BOOL)supportsCalendarUserSearch;
 - (id)updatedPrincipalURL;
 - (id)userAddresses;
 

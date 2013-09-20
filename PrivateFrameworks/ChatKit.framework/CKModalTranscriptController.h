@@ -8,38 +8,41 @@
     BOOL _alreadySetUp;
     BOOL _cameraSelectionDisabled;
     int _entryViewInvisible;
+    BOOL _forceMMS;
     BOOL _mimeType;
     NSMutableArray *_partsToInsert;
     NSMutableArray *_typesToInsert;
 }
 
+@property BOOL forceMMS;
 @property BOOL mimeType;
 
-+ (id)_newMediaObjectForFilename:(id)arg1 mimeType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
-
 - (void)_addPart:(id)arg1;
+- (void)_conversationListDidFinishLoading:(id)arg1;
 - (BOOL)_insertMediaObject:(id)arg1;
+- (void)_setConversation:(id)arg1;
 - (BOOL)_shouldAllowCameraAttachments;
 - (BOOL)_shouldUseDefaultFirstResponder;
 - (BOOL)_shouldUseExistingConversations;
-- (BOOL)_shouldUseKeyWindowStack;
-- (BOOL)_shouldUseNextFirstResponder;
 - (void)dealloc;
 - (void)disableCameraAttachments;
+- (BOOL)forceMMS;
 - (BOOL)getContainerWidth:(float*)arg1 offset:(float*)arg2;
 - (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
+- (void)insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3;
 - (void)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 - (void)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (void)insertTextPart:(id)arg1;
 - (BOOL)mimeType;
 - (void)registerForNotifications;
 - (void)setCanEditRecipients:(BOOL)arg1;
+- (void)setForceMMS:(BOOL)arg1;
 - (void)setMimeType:(BOOL)arg1;
 - (void)setPendingAddresses:(id)arg1;
 - (void)setTextEntryContentsVisible:(BOOL)arg1;
 - (BOOL)shouldDismissAfterSend;
 - (void)transitionFromNewMessageToConversation;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

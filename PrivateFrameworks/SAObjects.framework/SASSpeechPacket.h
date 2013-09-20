@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSData, NSString;
+@class NSArray, NSString;
 
 @interface SASSpeechPacket : SABaseCommand <SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;
-@property(copy) NSData * data;
 @property int packetNumber;
 @property(copy) NSArray * packets;
 @property(copy) NSString * refId;
@@ -16,12 +15,10 @@
 + (id)speechPacket;
 + (id)speechPacketWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)data;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (int)packetNumber;
 - (id)packets;
-- (void)setData:(id)arg1;
 - (void)setPacketNumber:(int)arg1;
 - (void)setPackets:(id)arg1;
 

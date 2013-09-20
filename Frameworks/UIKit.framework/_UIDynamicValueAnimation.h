@@ -27,6 +27,9 @@
 @property double value;
 @property double velocity;
 
++ (id)_dynamicValueAnimationMatchingCASpringAnimationWithMass:(double)arg1 stiffness:(double)arg2 damping:(float)arg3 velocity:(float)arg4 fromValue:(double)arg5 toValue:(double)arg6;
++ (id)pu_dynamicValueAnimationWithInitialValue:(double)arg1 initialVelocity:(double)arg2 targetValue:(double)arg3 stiffness:(double)arg4 dampingFactor:(double)arg5 epsilon:(double)arg6;
+
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
 - (double)_multiplier;

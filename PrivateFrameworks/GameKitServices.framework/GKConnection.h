@@ -6,6 +6,7 @@
 }
 
 @property id eventDelegate;
+@property struct opaqueRTCReporting { }* reportingAgent;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)externalAddressForCDXSelfConnectionData:(id)arg1;
@@ -27,8 +28,10 @@
 - (id)networkStatistics;
 - (id)networkStatisticsDictionaryForGCKStats:(void*)arg1;
 - (void)preRelease;
+- (struct opaqueRTCReporting { }*)reportingAgent;
 - (void)setEventDelegate:(id)arg1;
 - (void)setParticipantID:(id)arg1 forPeerID:(id)arg2;
+- (void)setReportingAgent:(struct opaqueRTCReporting { }*)arg1;
 - (void)updateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 
 @end

@@ -10,12 +10,14 @@
 @property(readonly) NSString * UUID;
 @property unsigned int allowedEntityTypes;
 @property BOOL allowsContentModifications;
+@property(copy) NSString * bulkRequests;
 @property BOOL canBePublished;
 @property BOOL canBeShared;
 @property(getter=isColorDisplayOnly) BOOL colorDisplayOnly;
 @property(copy) NSString * colorString;
 @property int displayOrder;
 @property(copy) NSString * externalID;
+@property(copy) NSString * externalModificationTag;
 @property(getter=isHidden) BOOL hidden;
 @property(getter=isImmutable) BOOL immutable;
 @property unsigned int invitationStatus;
@@ -29,6 +31,7 @@
 @property BOOL prohibitsScheduling;
 @property(getter=isPublished) BOOL published;
 @property(copy) NSString * publishedURL;
+@property(copy) NSString * pushKey;
 @property BOOL schedulingProhibited;
 @property(copy) NSURL * selfIdentityAddress;
 @property(copy) NSString * selfIdentityDisplayName;
@@ -42,7 +45,9 @@
 @property int sharingInvitationResponse;
 @property int sharingStatus;
 @property(retain) EKPersistentSource * source;
+@property(copy) NSString * subcalAccountID;
 @property(getter=isSubscribed) BOOL subscribed;
+@property(copy) NSString * symbolicColorName;
 @property(copy) NSString * title;
 
 + (id)calendar;
@@ -53,6 +58,7 @@
 - (void)addSharee:(id)arg1;
 - (unsigned int)allowedEntityTypes;
 - (BOOL)allowsContentModifications;
+- (id)bulkRequests;
 - (BOOL)canBePublished;
 - (BOOL)canBeShared;
 - (id)colorString;
@@ -60,6 +66,7 @@
 - (int)displayOrder;
 - (int)entityType;
 - (id)externalID;
+- (id)externalModificationTag;
 - (id)init;
 - (unsigned int)invitationStatus;
 - (BOOL)isColorDisplayOnly;
@@ -77,6 +84,7 @@
 - (id)ownerIdentityLastName;
 - (BOOL)prohibitsScheduling;
 - (id)publishedURL;
+- (id)pushKey;
 - (void)removeSharee:(id)arg1;
 - (BOOL)schedulingProhibited;
 - (id)selfIdentityAddress;
@@ -86,12 +94,14 @@
 - (id)selfIdentityLastName;
 - (void)setAllowedEntityTypes:(unsigned int)arg1;
 - (void)setAllowsContentModifications:(BOOL)arg1;
+- (void)setBulkRequests:(id)arg1;
 - (void)setCanBePublished:(BOOL)arg1;
 - (void)setCanBeShared:(BOOL)arg1;
 - (void)setColorDisplayOnly:(BOOL)arg1;
 - (void)setColorString:(id)arg1;
 - (void)setDisplayOrder:(int)arg1;
 - (void)setExternalID:(id)arg1;
+- (void)setExternalModificationTag:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setImmutable:(BOOL)arg1;
 - (void)setInvitationStatus:(unsigned int)arg1;
@@ -105,6 +115,7 @@
 - (void)setProhibitsScheduling:(BOOL)arg1;
 - (void)setPublished:(BOOL)arg1;
 - (void)setPublishedURL:(id)arg1;
+- (void)setPushKey:(id)arg1;
 - (void)setSchedulingProhibited:(BOOL)arg1;
 - (void)setSelfIdentityAddress:(id)arg1;
 - (void)setSelfIdentityDisplayName:(id)arg1;
@@ -118,7 +129,9 @@
 - (void)setSharingInvitationResponse:(int)arg1;
 - (void)setSharingStatus:(int)arg1;
 - (void)setSource:(id)arg1;
+- (void)setSubcalAccountID:(id)arg1;
 - (void)setSubscribed:(BOOL)arg1;
+- (void)setSymbolicColorName:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (id)sharedOwnerAddress;
@@ -127,6 +140,8 @@
 - (int)sharingInvitationResponse;
 - (int)sharingStatus;
 - (id)source;
+- (id)subcalAccountID;
+- (id)symbolicColorName;
 - (id)title;
 - (BOOL)validate:(id*)arg1;
 

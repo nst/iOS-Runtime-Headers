@@ -2,18 +2,19 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEditItemViewControllerDelegate>, <EKIdentityProtocol>;
+@class <EKEditItemViewControllerDelegate>, <EKIdentityProtocol>, ABPersonViewController;
 
-@interface EKIdentityViewController : ABPersonViewController <ABPersonViewControllerDelegate, EKEditItemViewControllerProtocol> {
+@interface EKIdentityViewController : UIViewController <ABPersonViewControllerDelegate, EKEditItemViewControllerProtocol> {
     <EKIdentityProtocol> *_identity;
+    ABPersonViewController *_personViewController;
 }
 
 @property <EKEditItemViewControllerDelegate> * editDelegate;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithIdentity:(id)arg1;
+- (void)loadView;
 - (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setIdentity:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

@@ -20,6 +20,7 @@
 - (void)addResourceData:(id)arg1 mimeType:(id)arg2 uuid:(id)arg3 completionQueue:(id)arg4 completionBlock:(id)arg5;
 - (void)addResourceFile:(id)arg1 mimeType:(id)arg2 uuid:(id)arg3 completionQueue:(id)arg4 completionBlock:(id)arg5;
 - (void)authorizeWithPICRequest:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
+- (void)authorizeWithPICRequest:(id)arg1 options:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
 - (void)checkAuthentication;
 - (void)dealloc;
 - (void)ensureConnected;
@@ -31,13 +32,12 @@
 - (void)getSlideshowInfoWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)getVolumeWithOptions:(unsigned int)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (id)init;
+- (void)insertItem:(id)arg1 afterItem:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
 - (struct MediaControlClientImp { }*)internalClient;
 - (void)invalidate;
 - (void)performRemoteAction:(id)arg1 withParams:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
-- (void)playRemoteWithParams:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
-- (void)playWithLocalFilePath:(id)arg1 params:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
-- (void)playWithLocalFilePath:(id)arg1 startPosition:(float)arg2 playInfo:(id)arg3 completionQueue:(id)arg4 completionBlock:(id)arg5;
-- (void)playWithRemoteURL:(id)arg1 startPosition:(float)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
+- (void)playWithParams:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
+- (void)removeItem:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)removeResource:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)sendPhotoData:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)sendPhotoData:(id)arg1 options:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
@@ -45,6 +45,7 @@
 - (void)setHost:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPosition:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
+- (void)setPosition:(float)arg1 options:(id)arg2 completionQueue:(id)arg3 completionBlock:(id)arg4;
 - (void)setProperty:(id)arg1 qualifier:(id)arg2 value:(id)arg3 completionQueue:(id)arg4 completionBlock:(id)arg5;
 - (void)setRate:(float)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
 - (void)setSlideshowInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;

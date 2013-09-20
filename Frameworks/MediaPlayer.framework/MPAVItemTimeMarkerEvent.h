@@ -18,13 +18,13 @@
 @property(retain) MPTimeMarker * chapterMarker;
 @property(retain) MPTimeMarker * closedCaptionMarker;
 
+- (void).cxx_destruct;
 - (id)AVItem;
 - (id)URLMarker;
 - (id)artworkMarker;
 - (id)chapterMarker;
 - (id)closedCaptionMarker;
 - (id)crossedMarkerOfType:(int)arg1;
-- (void)dealloc;
 - (id)initWithTimeMarkerNotificationUserInfo:(id)arg1;
 - (void)setAVItem:(id)arg1;
 - (void)setArtworkMarker:(id)arg1;

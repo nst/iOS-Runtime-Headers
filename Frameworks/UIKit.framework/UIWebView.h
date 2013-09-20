@@ -14,10 +14,15 @@
 @property unsigned int dataDetectorTypes;
 @property <UIWebViewDelegate> * delegate;
 @property BOOL detectsPhoneNumbers;
+@property float gapBetweenPages;
 @property BOOL keyboardDisplayRequiresUserAction;
 @property(getter=isLoading,readonly) BOOL loading;
 @property BOOL mediaPlaybackAllowsAirPlay;
 @property BOOL mediaPlaybackRequiresUserAction;
+@property(readonly) unsigned int pageCount;
+@property float pageLength;
+@property int paginationBreakingMode;
+@property int paginationMode;
 @property(readonly) NSURLRequest * request;
 @property BOOL scalesPageToFit;
 @property(readonly) UIScrollView * scrollView;
@@ -26,6 +31,7 @@
 + (void)_fixPathsForSandboxDirectoryChange;
 + (id)_relativePathFromAbsolutePath:(id)arg1 removingPathComponents:(unsigned int)arg2;
 + (void)_updatePersistentStoragePaths;
++ (void)initialize;
 
 - (void)_addShortcut:(id)arg1;
 - (BOOL)_alwaysDispatchesScrollEvents;
@@ -43,6 +49,7 @@
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 enableReachability:(BOOL)arg2;
 - (id)_initWithWebView:(id)arg1;
 - (id)_makeAlertView;
+- (id)_networkInterfaceName;
 - (unsigned int)_pageCount;
 - (float)_pageLength;
 - (BOOL)_paginationBehavesLikeColumns;
@@ -58,6 +65,7 @@
 - (void)_setDrawInWebThread:(BOOL)arg1;
 - (void)_setDrawsCheckeredPattern:(BOOL)arg1;
 - (void)_setGapBetweenPages:(float)arg1;
+- (void)_setNetworkInterfaceName:(id)arg1;
 - (void)_setOverridesOrientationChangeEventHandling:(BOOL)arg1;
 - (void)_setPageLength:(float)arg1;
 - (void)_setPaginationBehavesLikeColumns:(BOOL)arg1;
@@ -65,6 +73,7 @@
 - (void)_setRichTextReaderViewportSettings;
 - (void)_setScalesPageToFitViewportSettings;
 - (void)_setWebSelectionEnabled:(BOOL)arg1;
+- (void)_updateBrowserViewExposedScrollViewRect;
 - (void)_updateCheckeredPattern;
 - (void)_updateOpaqueAndBackgroundColor;
 - (void)_updateRequest;
@@ -86,6 +95,7 @@
 - (BOOL)detectsPhoneNumbers;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (float)gapBetweenPages;
 - (void)goBack;
 - (void)goForward;
 - (id)initWithCoder:(id)arg1;
@@ -99,6 +109,10 @@
 - (BOOL)mediaPlaybackAllowsAirPlay;
 - (BOOL)mediaPlaybackRequiresUserAction;
 - (struct CGImage { }*)newSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)pageCount;
+- (float)pageLength;
+- (int)paginationBreakingMode;
+- (int)paginationMode;
 - (void)reload;
 - (id)request;
 - (void)restoreStateFromHistoryItem:(id)arg1 forWebView:(id)arg2;
@@ -108,6 +122,7 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)scrollViewDidZoom:(id)arg1;
 - (void)scrollViewWasRemoved:(id)arg1;
@@ -122,10 +137,14 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDetectsPhoneNumbers:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGapBetweenPages:(float)arg1;
 - (void)setKeyboardDisplayRequiresUserAction:(BOOL)arg1;
 - (void)setMediaPlaybackAllowsAirPlay:(BOOL)arg1;
 - (void)setMediaPlaybackRequiresUserAction:(BOOL)arg1;
 - (void)setOpaque:(BOOL)arg1;
+- (void)setPageLength:(float)arg1;
+- (void)setPaginationBreakingMode:(int)arg1;
+- (void)setPaginationMode:(int)arg1;
 - (void)setScalesPageToFit:(BOOL)arg1;
 - (void)setSuppressesIncrementalRendering:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

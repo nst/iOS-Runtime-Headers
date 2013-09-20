@@ -4,11 +4,12 @@
 
 @class NSURLResponseInternal;
 
-@interface NSURLResponse : NSObject <NSCoding, NSCopying> {
+@interface NSURLResponse : NSObject <NSSecureCoding, NSCopying> {
     NSURLResponseInternal *_internal;
 }
 
 + (id)_responseWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)MIMEType;
 - (id)URL;
@@ -26,6 +27,7 @@
 - (id)allHeaderFields;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)expectedContentLength;
 - (id)init;
@@ -35,5 +37,6 @@
 - (int)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;
+- (id)webui_certificateChain;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class <VSRecognitionSessionDelegate>, NSArray, NSString, VSRecognitionAction, VSSpeechSynthesizer;
+@class <VSRecognitionSessionDelegate>, NSArray, NSString, VSKeepAlive, VSRecognitionAction, VSSpeechSynthesizer;
 
 @interface VSRecognitionSession : NSObject {
     struct { 
@@ -28,7 +28,7 @@
     NSString *_debugDumpPath;
     <VSRecognitionSessionDelegate> *_delegate;
     id _handlingThread;
-    void *_keepAlive;
+    VSKeepAlive *_keepAlive;
     unsigned int _keywordPhase;
     NSString *_languageID;
     double _levelInterval;
@@ -67,6 +67,7 @@
 - (id)init;
 - (id)initWithModelIdentifier:(id)arg1;
 - (float)inputLevel;
+- (float)inputLevelDB;
 - (BOOL)isActivelyRecognizing;
 - (BOOL)isBusy;
 - (BOOL)isFinished;

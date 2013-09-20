@@ -10,6 +10,7 @@
 @property(copy) NSDate * dateSent;
 @property(retain) SAPersonAttribute * fromEmail;
 @property(copy) NSString * message;
+@property(copy) NSString * messagePreview;
 @property(copy) NSNumber * outgoing;
 @property(copy) NSArray * receivingAddresses;
 @property(copy) NSArray * recipientsBcc;
@@ -28,6 +29,7 @@
 - (id)fromEmail;
 - (id)groupIdentifier;
 - (id)message;
+- (id)messagePreview;
 - (id)outgoing;
 - (id)receivingAddresses;
 - (id)recipientsBcc;
@@ -37,6 +39,7 @@
 - (void)setDateSent:(id)arg1;
 - (void)setFromEmail:(id)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setMessagePreview:(id)arg1;
 - (void)setOutgoing:(id)arg1;
 - (void)setReceivingAddresses:(id)arg1;
 - (void)setRecipientsBcc:(id)arg1;

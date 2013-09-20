@@ -21,6 +21,7 @@
 @property BOOL videoOutActive;
 @property(retain) MPVideoView * videoView;
 
+- (void).cxx_destruct;
 - (void)_reloadThumbnails;
 - (void)_sizeColumnsToFit;
 - (id)chapterTimeMarkers;

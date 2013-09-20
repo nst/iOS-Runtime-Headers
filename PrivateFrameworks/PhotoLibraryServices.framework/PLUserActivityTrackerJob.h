@@ -17,12 +17,14 @@
 + (void)_noteActivity:(long long)arg1 uuid:(id)arg2;
 + (void)_noteActivity:(long long)arg1 uuids:(id)arg2;
 + (id)_queue;
++ (id)_uuidsFilteringNulls:(id)arg1;
++ (id)_uuidsForAssets:(id)arg1;
 + (id)managedObjectContext;
 + (id)managedObjectModel;
 + (id)persistentStoreCoordinator;
 + (void)trackAlbumChosenForPictureFrame:(struct NSObject { Class x1; }*)arg1;
-+ (void)trackAlbumStartedSlideShow:(struct NSObject { Class x1; }*)arg1;
 + (void)trackAlbumUUIDWasDeleted:(id)arg1;
++ (void)trackAssetContainerStartedSlideShow:(id)arg1;
 + (void)trackAssetUUIDsWereDeleted:(id)arg1;
 + (void)trackAssetWasLoadedViaAPI:(id)arg1;
 + (void)trackAssetWasPickedViaAPI:(id)arg1;
@@ -41,17 +43,19 @@
 + (void)trackPhotoSetAsWallpaper:(id)arg1;
 + (void)trackPhotoWasEditedWithAutoEnhance:(id)arg1;
 + (void)trackPhotoWasEditedWithCrop:(id)arg1;
++ (void)trackPhotoWasEditedWithFilters:(id)arg1;
 + (void)trackPhotoWasEditedWithRedEye:(id)arg1;
 + (void)trackPhotoWasEditedWithRotation:(id)arg1;
 + (void)trackPhotoWasEditedWithStraighten:(id)arg1;
 + (void)trackPhotoWasViewed:(id)arg1;
 + (void)trackPhotoWasZoomed:(id)arg1;
++ (void)trackSlalomWasEdited:(id)arg1;
 + (void)trackVideoWasPlayed:(id)arg1;
 + (void)trackVideoWasTrimmed:(id)arg1;
 
 - (long long)activity;
 - (id)clientID;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
 - (id)initFromXPCObject:(id)arg1;

@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSMutableArray, RUIObjectModel, RUITableViewRow, UIDatePicker, UIPickerView, UITableView;
+@class NSDictionary, NSMutableArray, NSString, RUIObjectModel, RUITableHeaderView, RUITableViewRow, UIDatePicker, UIPickerView, UITableView, _UIBackdropView;
 
 @interface RUITableView : RUIElement <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
-    float _customMargin;
     UIDatePicker *_datePicker;
     RUITableViewRow *_defaultFirstResponderRow;
+    NSDictionary *_footerViewAttributes;
     float _fullscreenCellHeight;
+    RUITableHeaderView *_headerView;
+    NSDictionary *_headerViewAttributes;
     float _lastLayoutWidth;
     RUIObjectModel *_objectModel;
+    _UIBackdropView *_pickerBackdrop;
     BOOL _registeredForNotifications;
     NSMutableArray *_sections;
     UIPickerView *_selectPicker;
@@ -21,6 +24,10 @@
 }
 
 @property(retain) RUITableViewRow * defaultFirstResponderRow;
+@property(retain) NSDictionary * footerViewAttributes;
+@property(retain) NSString * headerTitle;
+@property(readonly) RUITableHeaderView * headerView;
+@property(retain) NSDictionary * headerViewAttributes;
 @property RUIObjectModel * objectModel;
 @property(readonly) NSMutableArray * sections;
 @property(getter=isShowingPicker,readonly) BOOL showingPicker;
@@ -35,10 +42,13 @@
 - (void)automaticKeyboardDidShow:(id)arg1;
 - (void)dealloc;
 - (id)defaultFirstResponderRow;
+- (id)footerViewAttributes;
+- (id)headerTitle;
+- (id)headerView;
+- (id)headerViewAttributes;
 - (id)indexPathForRow:(id)arg1;
 - (id)init;
 - (BOOL)isShowingPicker;
-- (float)marginForTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)objectModel;
 - (id)objectModelRowForIndexPath:(id)arg1;
@@ -50,10 +60,15 @@
 - (void)sectionActivatedLink:(id)arg1 attributes:(id)arg2;
 - (id)sections;
 - (void)setAttributes:(id)arg1;
-- (void)setCustomMargin:(float)arg1;
 - (void)setDefaultFirstResponderRow:(id)arg1;
+- (void)setFooterViewAttributes:(id)arg1;
+- (void)setHeaderTitle:(id)arg1;
+- (void)setHeaderViewAttributes:(id)arg1;
 - (void)setObjectModel:(id)arg1;
+- (id)sourceURL;
 - (id)sourceURLForRUITableViewRow;
+- (id)sourceURLForRUITableViewSection;
+- (Class)tableCellClassForTableViewRow:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -62,12 +77,14 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (id)tableView;
+- (id)textFieldRow:(id)arg1 changeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldStartedEditing:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

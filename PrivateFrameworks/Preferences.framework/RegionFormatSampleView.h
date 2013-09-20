@@ -5,6 +5,7 @@
 @class UILabel;
 
 @interface RegionFormatSampleView : UIView <PSHeaderFooterView> {
+    float _labelTopPadding[4];
     UILabel *_labels[4];
     float _sized;
 }

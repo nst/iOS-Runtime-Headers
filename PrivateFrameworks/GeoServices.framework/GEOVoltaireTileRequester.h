@@ -4,7 +4,7 @@
 
 @class GEOVoltaireSimpleTileRequester, NSMutableArray, NSThread, NSTimer;
 
-@interface GEOVoltaireTileRequester : GEOTileRequester <GEOVoltaireMultiTileDownloaderDelegate, GEOTileRequesterDelegate> {
+@interface GEOVoltaireTileRequester : GEOTileRequester <GEOVoltaireMultiTileDownloaderDelegate, GEOTileRequesterDelegate, GEOResourceManifestTileGroupObserver> {
     NSMutableArray *_activeDownloads;
     NSTimer *_activeTileGroupTimeoutTimer;
     NSMutableArray *_errors;
@@ -19,13 +19,14 @@
 + (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (unsigned char)tileProviderIdentifier;
 
-- (void)_didReceiveActiveTileGroup:(id)arg1;
 - (void)_failedToReceiveActiveTileGroup:(id)arg1;
 - (void)_startWithTileKeys:(id)arg1;
 - (void)cancel;
 - (void)cleanup;
 - (void)dealloc;
 - (id)multiTileURLStringForTileKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 useStatusCodes:(BOOL*)arg2;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
+- (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)start;
 - (void)tileDownload:(id)arg1 didFailWithError:(id)arg2;
 - (void)tileDownload:(id)arg1 didReceiveData:(id)arg2 edition:(unsigned int)arg3 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg4;

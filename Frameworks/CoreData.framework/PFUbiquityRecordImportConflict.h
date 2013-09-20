@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDate, NSDictionary, NSManagedObject, NSNumber, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector;
+@class NSArray, NSDate, NSDictionary, NSManagedObject, NSMutableDictionary, NSNumber, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector;
 
 @interface PFUbiquityRecordImportConflict : NSObject {
     NSDate *_conflictLogDate;
@@ -14,6 +14,7 @@
     PFUbiquityKnowledgeVector *_currentKnowledgeVector;
     NSDictionary *_globalIDIndexToLocalIDURIMap;
     PFUbiquityImportContext *_importContext;
+    NSMutableDictionary *_relationshipsToObjectIDsToCheck;
     NSManagedObject *_sourceObject;
     NSArray *_transactionHistory;
 }
@@ -27,15 +28,19 @@
 @property(retain) PFUbiquityKnowledgeVector * currentKnowledgeVector;
 @property(retain) NSDictionary * globalIDIndexToLocalIDURIMap;
 @property(retain) PFUbiquityImportContext * importContext;
+@property(readonly) NSDictionary * relationshipToObjectIDsToCheck;
 @property(retain) NSManagedObject * sourceObject;
 @property(retain) NSArray * transactionHistory;
 
++ (id)createSnapshotFromManagedObject:(id)arg1 withSourceObject:(id)arg2;
 + (id)createTransactionLogForTransactionEntry:(id)arg1 withImportContext:(id)arg2 error:(id*)arg3;
 + (id)electAncestorKnowledgeVectorForKnowledgeVector:(id)arg1 withExportingPeerID:(id)arg2 fromPeerSnapshotCollection:(id)arg3;
 + (void)initialize;
 + (int)resolvedTypeForConflictingLogType:(int)arg1 andLatestTransactionEntry:(id)arg2 skipObject:(BOOL*)arg3;
 
 - (id)_newNormalizedSnapshot:(id)arg1 forObject:(id)arg2;
+- (void)addObjectID:(id)arg1 forRelationship:(id)arg2;
+- (void)addObjectIDsForDiff:(id)arg1 forRelationship:(id)arg2;
 - (id)conflictLogDate;
 - (id)conflictingLogContent;
 - (id)conflictingLogKnowledgeVector;
@@ -45,14 +50,15 @@
 - (id)createSetOfManagedObjectIDsForGlobalIDsInRelationship:(id)arg1 withValue:(id)arg2 withGlobalIDToLocalIDURIMap:(id)arg3 andTransactionLog:(id)arg4;
 - (id)createSnapshotDictionaryForObjectWithEntry:(id)arg1 inTransactionLog:(id)arg2 withError:(id*)arg3;
 - (id)createSnapshotDictionaryFromLogEntry:(id)arg1 withError:(id*)arg2;
+- (id)createSnapshotFromBaselineForEntry:(id)arg1 error:(id*)arg2;
 - (id)createSnapshotFromLogContent:(id)arg1 withTransactionLog:(id)arg2;
-- (id)createSnapshotFromManagedObject:(id)arg1;
 - (id)currentKnowledgeVector;
 - (void)dealloc;
 - (id)description;
 - (id)globalIDIndexToLocalIDURIMap;
 - (id)importContext;
 - (id)init;
+- (id)relationshipToObjectIDsToCheck;
 - (BOOL)resolveConflict:(id*)arg1;
 - (BOOL)resolveMergeConflictForLogContent:(id)arg1 previousSnapshot:(id)arg2 andAncestorSnapshot:(id)arg3 withOldVersion:(unsigned int)arg4 andNewVersion:(unsigned int)arg5 error:(id*)arg6;
 - (void)setConflictLogDate:(id)arg1;

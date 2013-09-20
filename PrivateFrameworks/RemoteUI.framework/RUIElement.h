@@ -10,10 +10,10 @@
 
 @property(retain) NSDictionary * attributes;
 
+- (id)URLAttributeForImageName:(id)arg1 getScale:(float*)arg2;
 - (int)_horizontalAlignmentForString:(id)arg1;
 - (id)attributes;
 - (void)dealloc;
-- (id)imageAttributeAndScale:(float*)arg1;
 - (void)imageLoaded:(id)arg1;
 - (BOOL)loadImage;
 - (void)populatePostbackDictionary:(id)arg1;
@@ -21,5 +21,6 @@
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)sourceURL;
 
 @end

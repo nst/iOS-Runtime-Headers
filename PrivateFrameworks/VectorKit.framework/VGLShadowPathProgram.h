@@ -24,14 +24,16 @@
 @property struct { float x1; float x2; float x3; } direction;
 @property float width;
 
-+ (id)program;
++ (id)fragName;
++ (id)vertName;
 
+- (id).cxx_construct;
 - (struct _VGLColor { float x1; float x2; float x3; float x4; })color;
 - (struct { float x1; float x2; float x3; })direction;
-- (id)init;
 - (void)setColor:(struct _VGLColor { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDirection:(struct { float x1; float x2; float x3; })arg1;
 - (void)setWidth:(float)arg1;
+- (void)setup;
 - (float)width;
 
 @end

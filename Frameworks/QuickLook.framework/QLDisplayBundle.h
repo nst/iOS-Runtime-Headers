@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewItem>, <QLPreviewItemInteractionDelegate>, NSString;
+@class <QLPreviewItem>, <QLPreviewItemInteractionDelegate>, NSString, NSTimer, UIView;
 
 @interface QLDisplayBundle : UIViewController {
     struct { 
@@ -28,10 +28,15 @@
     NSString *_password;
     <QLPreviewItem> *_previewItem;
     int _previewMode;
+    NSTimer *_refreshTimer;
     } clientContext;
 }
 
+@property(readonly) UIView * accessoryView;
+@property(readonly) int airPlayMode;
+@property(readonly) UIView * airplayView;
 @property struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } clientContext;
+@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
 @property <QLPreviewItemInteractionDelegate> * delegate;
 @property int index;
 @property BOOL loaded;
@@ -41,28 +46,33 @@
 @property int previewMode;
 
 + (double)allowedLoadingDelay;
-+ (id)backgroundColorForBackgroundType:(int)arg1;
-+ (int)backgroundTypeForUTI:(id)arg1 andMode:(int)arg2;
 + (BOOL)needsAVControls;
 
 - (void)_notifyDidLoadWithError:(id)arg1;
 - (void)_performCancelLoad;
 - (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
-- (int)backgroundType;
+- (id)accessoryView;
+- (int)airPlayMode;
+- (id)airplayView;
 - (void)beginScrubbing;
+- (void)beginTrackingViewUpdates;
 - (BOOL)canBeCached;
 - (BOOL)canCopyToPasteboard;
 - (void)cancelLoad;
 - (void)cancelLoadIfNeeded;
 - (struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })clientContext;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)didFailLoadingWithError:(id)arg1;
 - (void)didLoad;
 - (void)didReceiveMemoryWarning;
+- (void)discardAirPlayView;
 - (void)endScrubbing;
+- (void)endTrackingViewUpdates;
 - (void)enterBackground;
+- (id)gestureRecognizersForFullScreenDisplay;
 - (int)index;
 - (id)init;
 - (void)loadIfNeededWithHints:(id)arg1;
@@ -71,7 +81,6 @@
 - (BOOL)loading;
 - (int)modalPresentationStyle;
 - (BOOL)overlayIsHidden;
-- (BOOL)overlayOwnedByDisplayBundle;
 - (id)password;
 - (id)pdfPreviewData;
 - (id)previewItem;
@@ -85,11 +94,14 @@
 - (void)setIndex:(int)arg1;
 - (void)setLoaded:(BOOL)arg1;
 - (void)setLoading:(BOOL)arg1;
+- (void)setNavigationBarVerticalOffset:(float)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPassword:(id)arg1;
 - (void)setPreviewItem:(id)arg1;
 - (void)setPreviewMode:(int)arg1;
+- (void)setupAirPlayView;
 - (void)togglePlayState;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidUpdate;
 
 @end

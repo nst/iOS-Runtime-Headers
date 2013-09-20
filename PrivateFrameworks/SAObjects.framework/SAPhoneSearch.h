@@ -2,41 +2,47 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSNumber, NSString, NSURL;
+@class NSArray, NSDate, NSNumber;
 
-@interface SAPhoneSearch : SABaseClientBoundCommand {
+@interface SAPhoneSearch : SADomainCommand {
 }
 
+@property(copy) NSArray * contacts;
 @property(copy) NSDate * end;
-@property(copy) NSString * incomingPhoneNumber;
-@property(copy) NSNumber * limit;
-@property BOOL missed;
-@property(copy) NSString * outgoingPhoneNumber;
+@property(copy) NSNumber * faceTime;
+@property(copy) NSNumber * faceTimeAudio;
+@property(copy) NSNumber * isNew;
+@property(copy) NSNumber * last;
+@property(copy) NSNumber * missed;
+@property(copy) NSNumber * outgoing;
 @property(copy) NSDate * start;
-@property(copy) NSURL * targetAppId;
-@property(copy) NSString * timeZoneId;
+@property(copy) NSNumber * voiceMail;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)contacts;
 - (id)encodedClassName;
 - (id)end;
+- (id)faceTime;
+- (id)faceTimeAudio;
 - (id)groupIdentifier;
-- (id)incomingPhoneNumber;
-- (id)limit;
-- (BOOL)missed;
-- (id)outgoingPhoneNumber;
+- (id)isNew;
+- (id)last;
+- (id)missed;
+- (id)outgoing;
 - (BOOL)requiresResponse;
+- (void)setContacts:(id)arg1;
 - (void)setEnd:(id)arg1;
-- (void)setIncomingPhoneNumber:(id)arg1;
-- (void)setLimit:(id)arg1;
-- (void)setMissed:(BOOL)arg1;
-- (void)setOutgoingPhoneNumber:(id)arg1;
+- (void)setFaceTime:(id)arg1;
+- (void)setFaceTimeAudio:(id)arg1;
+- (void)setIsNew:(id)arg1;
+- (void)setLast:(id)arg1;
+- (void)setMissed:(id)arg1;
+- (void)setOutgoing:(id)arg1;
 - (void)setStart:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (void)setTimeZoneId:(id)arg1;
+- (void)setVoiceMail:(id)arg1;
 - (id)start;
-- (id)targetAppId;
-- (id)timeZoneId;
+- (id)voiceMail;
 
 @end

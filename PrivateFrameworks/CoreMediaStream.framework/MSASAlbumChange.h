@@ -13,6 +13,7 @@
     NSString *_ownerFirstName;
     NSString *_ownerFullName;
     NSString *_ownerLastName;
+    NSString *_ownerPersonID;
     BOOL _wasDeleted;
 }
 
@@ -24,6 +25,7 @@
 @property(copy) NSString * ownerFirstName;
 @property(copy) NSString * ownerFullName;
 @property(copy) NSString * ownerLastName;
+@property(copy) NSString * ownerPersonID;
 @property BOOL wasDeleted;
 
 - (void).cxx_destruct;
@@ -36,6 +38,7 @@
 - (id)ownerFirstName;
 - (id)ownerFullName;
 - (id)ownerLastName;
+- (id)ownerPersonID;
 - (void)setGUID:(id)arg1;
 - (void)setInvitation:(id)arg1;
 - (void)setName:(id)arg1;
@@ -43,6 +46,7 @@
 - (void)setOwnerFirstName:(id)arg1;
 - (void)setOwnerFullName:(id)arg1;
 - (void)setOwnerLastName:(id)arg1;
+- (void)setOwnerPersonID:(id)arg1;
 - (void)setURLString:(id)arg1;
 - (void)setWasDeleted:(BOOL)arg1;
 - (BOOL)wasDeleted;

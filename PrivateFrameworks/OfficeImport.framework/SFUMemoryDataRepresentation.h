@@ -4,7 +4,7 @@
 
 @class NSData;
 
-@interface SFUMemoryDataRepresentation : SFUDataRepresentation {
+@interface SFUMemoryDataRepresentation : OISFUDataRepresentation {
     NSData *mData;
 }
 

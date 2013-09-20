@@ -4,7 +4,7 @@
 
 @class UIKeyboard, UIWebSelectTableViewController;
 
-@interface UIWebSelectPopover : UIWebRotatingAccessoryPopover <UIWebFormControl> {
+@interface UIWebSelectPopover : UIWebFormRotatingAccessoryPopover <UIWebFormControl> {
     UIKeyboard *_keyboard;
     UIWebSelectTableViewController *_tableViewController;
 }
@@ -14,6 +14,7 @@
 - (id)_tableViewController;
 - (void)_userActionDismissedPopover:(id)arg1;
 - (void)controlBeginEditing;
+- (void)controlEndEditing;
 - (id)controlView;
 - (void)dealloc;
 - (id)initWithDOMHTMLSelectElement:(id)arg1 cachedItems:(id)arg2 singleSelectionItem:(id)arg3 singleSelectionIndex:(unsigned int)arg4 multipleSelection:(BOOL)arg5;

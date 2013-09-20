@@ -41,6 +41,7 @@
         double lastBrailleChordPosted; 
         double brailleCharExponentialMovingAverage; 
         double brailleTranslationTimeout; 
+    BOOL _automaticBrailleTranslationEnabled;
     struct __CFRunLoopTimer { } *_blinkerEventTimer;
     BOOL _blinkingEnabled;
     <SCROBrailleDriverProtocol> *_brailleDriver;
@@ -69,6 +70,7 @@
     int _statusSize;
 }
 
+@property BOOL automaticBrailleTranslationEnabled;
 @property BOOL delegateWantsDisplayCallback;
 @property BOOL delegateWantsPanningCallbacks;
 
@@ -109,6 +111,7 @@
 - (void)_unloadNotification:(id)arg1;
 - (void)_updateDisplay;
 - (id)aggregatedStatus;
+- (BOOL)automaticBrailleTranslationEnabled;
 - (void)beginUpdates;
 - (id)configuration;
 - (void)dealloc;
@@ -129,6 +132,7 @@
 - (void)panRight;
 - (id)realStatus;
 - (void)setAggregatedStatus:(id)arg1;
+- (void)setAutomaticBrailleTranslationEnabled:(BOOL)arg1;
 - (void)setBrailleFormatter:(id)arg1;
 - (void)setDelegateWantsDisplayCallback:(BOOL)arg1;
 - (void)setDelegateWantsPanningCallbacks:(BOOL)arg1;

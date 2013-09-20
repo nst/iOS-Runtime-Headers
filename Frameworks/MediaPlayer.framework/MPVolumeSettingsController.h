@@ -8,10 +8,12 @@
     NSString *_audioCategory;
 }
 
+- (void).cxx_destruct;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)audioRoutingPicker:(id)arg1 didSelectRouteAtIndex:(int)arg2;
 - (id)createBackAlert;
 - (id)createFrontAlert;
-- (void)dealloc;
+- (void)flip;
 - (id)initWithAudioCategory:(id)arg1;
 - (void)twoSidedAlertControllerDidDismiss:(id)arg1;
 

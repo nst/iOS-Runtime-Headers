@@ -7,7 +7,7 @@
            "int (*funcName)()",  where funcName might be null. 
  */
 
-@class NSArray, NSMetadataQuery, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSPredicate, NSThread;
+@class LBFSEventsWatcher, NSArray, NSMetadataQuery, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSOperationQueue, NSPredicate;
 
 @interface LBQuery : NSObject {
     struct { 
@@ -34,7 +34,6 @@
     void *_create_value_context;
     NSMutableDictionary *_created;
     int _disableCount;
-    NSThread *_executeThread;
     NSMutableIndexSet *_insertionSet;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     unsigned long _notifyInterval;
@@ -42,11 +41,13 @@
     NSPredicate *_predicate;
     int _previousQueryState;
     NSMetadataQuery *_query;
+    NSOperationQueue *_queryQueue;
     int _queryState;
     NSMutableIndexSet *_removalSet;
     NSMutableIndexSet *_replacementSet;
     NSMutableArray *_results;
     NSMutableDictionary *_resultsDict;
+    struct __CFRunLoop { } *_runLoop;
     unsigned long _scopeOptions;
     NSArray *_searchScopes;
     void *_sort_context;
@@ -57,6 +58,7 @@
     NSMutableDictionary *_toBeRemoved;
     NSMutableDictionary *_toBeReplaced;
     NSArray *_values;
+    LBFSEventsWatcher *_watcher;
     bool_pendingChanges;
     bool_pendingNote;
     bool_ubiquitousGatherComplete;
@@ -74,7 +76,6 @@
 - (void)_processUpdates;
 - (void)_runQuery;
 - (void)_sendNote;
-- (void)_stop;
 - (void)_updateQueryResultForURL:(id)arg1 info:(id)arg2 updateType:(int)arg3;
 - (void)_willChange:(unsigned int)arg1 inSet:(id)arg2;
 - (void)_willInsert:(id)arg1;
@@ -96,13 +97,14 @@
 - (void)postNote:(struct __CFString { }*)arg1;
 - (id)predicate;
 - (void)processUpdates;
+- (id)queryQueue;
 - (const void*)resultAtIndex:(int)arg1;
 - (unsigned int)resultCount;
-- (void)runBlock:(id)arg1;
 - (void)sendNote;
 - (void)setBatchingParameters:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (void)setCreateResultFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)setCreateValueFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (void)setQueryQueue:(id)arg1;
 - (void)setSearchScope:(id)arg1 withOptions:(unsigned long)arg2;
 - (void)setSortComparator:(int (*)())arg1 withContext:(void*)arg2;
 - (void)startObserver;

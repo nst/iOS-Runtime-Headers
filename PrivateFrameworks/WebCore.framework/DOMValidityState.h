@@ -5,6 +5,7 @@
 @interface DOMValidityState : DOMObject {
 }
 
+@property(readonly) BOOL badInput;
 @property(readonly) BOOL customError;
 @property(readonly) BOOL patternMismatch;
 @property(readonly) BOOL rangeOverflow;
@@ -15,6 +16,7 @@
 @property(readonly) BOOL valid;
 @property(readonly) BOOL valueMissing;
 
+- (BOOL)badInput;
 - (BOOL)customError;
 - (void)dealloc;
 - (void)finalize;

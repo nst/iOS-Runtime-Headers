@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, PLImageView, PLManagedAsset, PLVideoView, UIImageView;
+@class NSString, PLImageView, PLManagedAsset, PLVideoView;
 
-@interface PLExpandableImageView : PLExpandableView <PLStackableImage> {
+@interface PLExpandableImageView : PLExpandableView {
     struct CGSize { 
         float width; 
         float height; 
@@ -59,15 +59,10 @@
 }
 
 @property(getter=isBorderAndAccessoriesVisible) BOOL borderAndAccessoriesVisible;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frameOfImage;
 @property(readonly) struct CGSize { float x1; float x2; } imageSize;
-@property(readonly) UIImageView * imageView;
-@property(readonly) BOOL isBeingManipulated;
 @property(copy) NSString * name;
 @property(retain) PLManagedAsset * photo;
-@property(getter=isShadowEnabled) BOOL shadowEnabled;
 @property(readonly) BOOL showsPlaceholder;
-@property float transitionProgress;
 @property(retain) PLVideoView * videoView;
 
 + (float)imageBorderWidth;

@@ -16,6 +16,7 @@
 
 @property unsigned int tapCount;
 
+- (void).cxx_destruct;
 - (void)_delayedHandleTaps:(id)arg1;
 - (void)_resetTapTimer;
 - (void)_setTapTimerWithDuration:(double)arg1;

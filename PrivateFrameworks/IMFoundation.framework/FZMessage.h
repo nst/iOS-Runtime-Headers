@@ -68,6 +68,7 @@
 - (void)_generateBodyTextIfNeeded;
 - (void)_regenerateBodyData;
 - (void)_regenerateBodyText;
+- (void)_updateFlags:(unsigned long long)arg1;
 - (id)account;
 - (id)accountID;
 - (void)adjustIsEmptyFlag;
@@ -92,12 +93,6 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithIMRemoteObjectSerializedDictionary:(id)arg1;
 - (id)initWithSender:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 error:(id)arg7 guid:(id)arg8;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 error:(id)arg7 guid:(id)arg8;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 guid:(id)arg7 account:(id)arg8 accountID:(id)arg9 service:(id)arg10 handle:(id)arg11 roomName:(id)arg12 error:(id)arg13;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 guid:(id)arg7 messageID:(long long)arg8 account:(id)arg9 accountID:(id)arg10 service:(id)arg11 handle:(id)arg12 roomName:(id)arg13 error:(id)arg14;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 body:(id)arg5 attributes:(id)arg6 fileTransferGUIDs:(id)arg7 flags:(unsigned long long)arg8 guid:(id)arg9 messageID:(long long)arg10 account:(id)arg11 accountID:(id)arg12 service:(id)arg13 handle:(id)arg14 roomName:(id)arg15 error:(id)arg16;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 body:(id)arg5 attributes:(id)arg6 fileTransferGUIDs:(id)arg7 flags:(unsigned long long)arg8 guid:(id)arg9 messageID:(long long)arg10 account:(id)arg11 accountID:(id)arg12 service:(id)arg13 handle:(id)arg14 roomName:(id)arg15 errorType:(unsigned int)arg16;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 subject:(id)arg5 body:(id)arg6 attributes:(id)arg7 fileTransferGUIDs:(id)arg8 flags:(unsigned long long)arg9 guid:(id)arg10 messageID:(long long)arg11 account:(id)arg12 accountID:(id)arg13 service:(id)arg14 handle:(id)arg15 roomName:(id)arg16 errorType:(unsigned int)arg17;
 - (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 subject:(id)arg5 body:(id)arg6 bodyData:(id)arg7 attributes:(id)arg8 fileTransferGUIDs:(id)arg9 flags:(unsigned long long)arg10 guid:(id)arg11 messageID:(long long)arg12 account:(id)arg13 accountID:(id)arg14 service:(id)arg15 handle:(id)arg16 roomName:(id)arg17 unformattedID:(id)arg18 countryCode:(id)arg19 errorType:(unsigned int)arg20;
 - (BOOL)isAlert;
 - (BOOL)isDelivered;

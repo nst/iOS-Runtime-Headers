@@ -57,6 +57,7 @@
 - (id)error;
 - (id)initWithURL:(id)arg1 method:(id)arg2;
 - (id)method;
+- (void)performCompletionBlock:(id)arg1;
 - (void)performSynchronously;
 - (id)permanentlyRedirectedURL;
 - (id)responseData;

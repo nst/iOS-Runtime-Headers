@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUGridViewDataSource>, <SUGridViewDelegate>, NSMutableDictionary, SUGridRowTableViewCellLayoutManager, UIControl, UITableView;
+@class <SUGridViewDataSource>, <SUGridViewDelegate>, NSArray, NSMutableArray, NSMutableDictionary, SUGridRowTableViewCellLayoutManager, UIControl, UITableView;
 
 @interface SUGridView : UIView <UITableViewDataSource, UITableViewDelegate> {
     struct { 
@@ -15,10 +15,13 @@
         unsigned int titleForHeader : 1; 
         unsigned int viewForHeader : 1; 
         unsigned int willDisplayCell : 1; 
+        unsigned int selectionDidChange : 1; 
     int _animationCount;
     struct __CFArray { } *_columnCountBySection;
     <SUGridViewDataSource> *_dataSource;
     <SUGridViewDelegate> *_delegate;
+    NSMutableArray *_editSelection;
+    BOOL _editing;
     SUGridRowTableViewCellLayoutManager *_layoutManager;
     } _respondFlags;
     NSMutableDictionary *_reusableCells;
@@ -28,11 +31,13 @@
 
 @property <SUGridViewDataSource> * dataSource;
 @property <SUGridViewDelegate> * delegate;
+@property(readonly) NSArray * editSelection;
 @property(readonly) UITableView * tableView;
 
 - (void)_animateDeletionOfCell:(id)arg1;
 - (void)_animateDeletionOfCellsAtIndexPaths:(id)arg1;
 - (BOOL)_canDeleteCellAtIndexPath:(id)arg1;
+- (void)_configureCellForEdit:(id)arg1 indexPath:(id)arg2;
 - (id)_copyCellSetForIndexPaths:(id)arg1;
 - (void)_deleteAnimationStopped;
 - (void)_endSwipeToDelete;
@@ -40,6 +45,7 @@
 - (int)_minimumColumnCount;
 - (void)_reloadColumnCounts;
 - (void)_reuseColumnCellsForCell:(id)arg1;
+- (void)_toggleEditStateForCell:(id)arg1;
 - (void)_touchCaptureAction:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
 - (id)dataSource;
@@ -48,6 +54,7 @@
 - (void)deleteCellsAtIndexPaths:(id)arg1 animated:(BOOL)arg2;
 - (void)deleteSections:(id)arg1 withRowAnimation:(int)arg2;
 - (id)dequeueReusableCellWithIdentifier:(id)arg1;
+- (id)editSelection;
 - (int)globalIndexForCellAtIndexPath:(id)arg1;
 - (int)globalRowForRowAtIndexPath:(id)arg1;
 - (id)indexPathForCell:(id)arg1;
@@ -61,6 +68,7 @@
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

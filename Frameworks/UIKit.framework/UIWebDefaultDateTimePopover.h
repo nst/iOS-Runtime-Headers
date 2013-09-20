@@ -4,7 +4,7 @@
 
 @class UIWebDateTimePopoverViewController;
 
-@interface UIWebDefaultDateTimePopover : UIWebRotatingAccessoryPopover <UIWebFormControl> {
+@interface UIWebDefaultDateTimePopover : UIWebFormRotatingAccessoryPopover <UIWebFormControl> {
     UIWebDateTimePopoverViewController *_webDateTimeViewController;
 }
 
@@ -13,6 +13,7 @@
 - (id)_webDateTimeViewController;
 - (void)clear:(id)arg1;
 - (void)controlBeginEditing;
+- (void)controlEndEditing;
 - (id)controlView;
 - (void)dealloc;
 - (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(int)arg2;

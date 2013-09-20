@@ -6,6 +6,8 @@
     unsigned int _position;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 position:(unsigned int)arg4;

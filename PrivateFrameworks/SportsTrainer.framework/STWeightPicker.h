@@ -27,7 +27,6 @@
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
-- (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
 - (void)saveCurrentWeight;
 - (int)selectedWeightUnit;
 - (void)setWeightInLbs:(float)arg1 animated:(BOOL)arg2;

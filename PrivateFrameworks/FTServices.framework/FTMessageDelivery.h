@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class FTMessage, FTMessageQueue, IMTimer, NSArray, NSNumber, NSString;
+@class FTMessageQueue, IDSBaseMessage, IMTimer, NSArray, NSNumber, NSString;
 
 @interface FTMessageDelivery : NSObject <FTMessageQueueDelegate> {
     unsigned int _maxConcurrentMessages;
@@ -16,7 +16,7 @@
 
 @property(readonly) NSArray * allMessages;
 @property(readonly) BOOL busy;
-@property(readonly) FTMessage * currentMessage;
+@property(readonly) IDSBaseMessage * currentMessage;
 @property(readonly) BOOL hasQueuedItems;
 @property unsigned int maxConcurrentMessages;
 @property(readonly) int maxMessageSize;
@@ -47,6 +47,7 @@
 - (void)invalidate;
 - (unsigned int)maxConcurrentMessages;
 - (int)maxMessageSize;
+- (void)networkStateChanged;
 - (id)protocolVersion;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
 - (id)queuedMessages;

@@ -6,9 +6,9 @@
 
 @interface EKTimeZone : NSObject <NSCopying> {
     void *_internal;
-    long _lastEnd;
+    long long _lastEnd;
     unsigned int _lastIndex;
-    long _lastStart;
+    long long _lastStart;
     NSString *_name;
     double _offset;
 }

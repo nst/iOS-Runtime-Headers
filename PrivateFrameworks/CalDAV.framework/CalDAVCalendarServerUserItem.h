@@ -27,6 +27,7 @@
 - (id)acceptedURL;
 - (id)access;
 - (id)commonName;
+- (int)compare:(id)arg1;
 - (id)copyParseRules;
 - (void)dealloc;
 - (id)description;

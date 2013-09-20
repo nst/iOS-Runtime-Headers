@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOUIActionCapture : PBCodable {
+@interface GEOUIActionCapture : PBCodable <NSCopying> {
     struct { 
         unsigned int duration : 1; 
         unsigned int actionType : 1; 
@@ -22,6 +22,7 @@
 
 - (int)actionType;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

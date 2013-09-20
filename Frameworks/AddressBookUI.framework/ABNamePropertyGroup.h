@@ -2,35 +2,37 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPrimaryValueDelegate>, NSMutableArray, NSMutableDictionary, NSMutableSet;
+@class <ABPrimaryValueDelegate>, ABUIPerson, NSMutableArray, NSMutableDictionary, NSMutableSet;
 
 @interface ABNamePropertyGroup : ABAbstractPropertyGroup {
     <ABPrimaryValueDelegate> *_delegate;
-    void *_preferredPerson;
+    ABUIPerson *_preferredPerson;
     NSMutableArray *_properties;
     NSMutableSet *_propertiesWithMultipleValuePlaceholders;
     NSMutableDictionary *_valuesByPersonByProperty;
 }
 
 @property <ABPrimaryValueDelegate> * delegate;
-@property(readonly) void* preferredPerson;
+@property(readonly) ABUIPerson * preferredPerson;
 
-- (int)_addItemForProperty:(int)arg1 duringReload:(BOOL)arg2;
+- (void)_addItemForProperty:(int)arg1 duringReload:(BOOL)arg2;
 - (id)_allPeople;
 - (void)_clearAllCachedInfo;
+- (id)_fakePersonFromCurrentProperties;
 - (int)_indexForProperty:(int)arg1;
 - (id)_indexPathForIndexPath:(id)arg1;
-- (int)_insertItemAtIndex:(int)arg1 forProperty:(int)arg2 duringReload:(BOOL)arg3;
+- (void)_insertItemAtIndex:(int)arg1 forProperty:(int)arg2 duringReload:(BOOL)arg3;
 - (BOOL)_isEmptyValue:(id)arg1 forProperty:(int)arg2;
 - (id)_labelAtIndex:(int)arg1;
 - (id)_newLocalizedPlaceholderForProperty:(int)arg1;
-- (int)_propertyAtIndex:(int)arg1;
+- (int)_propertyAtIndex:(unsigned int)arg1;
 - (void)_removeMultipleValuePlaceholderForProperty:(int)arg1;
 - (void)_removeValueForProperty:(int)arg1;
 - (void)_setValue:(id)arg1 forProperty:(int)arg2;
 - (BOOL)_showsMultipleValuePlaceholderForProperty:(int)arg1;
-- (id)_valueForProperty:(int)arg1 person:(void*)arg2;
+- (id)_valueForProperty:(int)arg1 person:(id)arg2;
 - (void)addNameProperty:(int)arg1;
+- (BOOL)autofillValuesForRow:(unsigned int)arg1;
 - (BOOL)canSave;
 - (id)copyCompositeName;
 - (id)copyCompositeNameIgnoringOrganization:(BOOL)arg1;
@@ -41,9 +43,8 @@
 - (id)keyboardSettingsForRow:(unsigned int)arg1;
 - (struct __CFArray { }*)nameProperties;
 - (unsigned int)namePropertiesCount;
-- (void*)newFakePersonFromCurrentProperties;
 - (id)placeholderTextForRow:(unsigned int)arg1;
-- (void*)preferredPerson;
+- (id)preferredPerson;
 - (id)primaryValueForProperty:(int)arg1;
 - (int)property;
 - (int)propertyForRow:(unsigned int)arg1;

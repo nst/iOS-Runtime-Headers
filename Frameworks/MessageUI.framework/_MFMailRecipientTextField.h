@@ -5,8 +5,9 @@
 @interface _MFMailRecipientTextField : MFComposeTextField {
 }
 
-- (void)_handleKeyEvent:(struct __GSEvent { }*)arg1;
+- (void)_handleKeyUIEvent:(id)arg1;
 - (id)_previousKeyResponder;
 - (id)customOverlayContainer;
+- (void)paste:(id)arg1;
 
 @end

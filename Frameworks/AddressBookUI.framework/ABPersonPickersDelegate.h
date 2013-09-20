@@ -41,9 +41,7 @@
 - (BOOL)pickerViewController:(id)arg1 shouldDismissAfterSelectingItem:(id)arg2;
 - (BOOL)pickerViewControllerShouldDismissKeyboard:(id)arg1;
 - (BOOL)popoverSizeUpdatesDisabled;
-- (id)primarySourceNameForPerson:(void*)arg1;
 - (void)removeImagePickerControllerFromUI;
-- (id)secondarySourceNameForPerson:(void*)arg1;
 - (id)selectedPeople;
 - (void)setDataSource:(id)arg1;
 - (void)setHelper:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, VGLMesh, VKRealisticPolygonMaker;
+@class NSArray, NSMutableArray, NSMutableDictionary, VGLMesh, VKRealisticPolygonMaker, VKStyle;
 
 @interface VKRealisticRoadGroup : NSObject {
     struct VKTileKey { 
@@ -15,12 +15,6 @@
         float g; 
         float b; 
         float a; 
-    struct _VGLColor { 
-        float r; 
-        float g; 
-        float b; 
-        float a; 
-    } _casingColor;
     VGLMesh *_casingFacades;
     float _casingHeight;
     float _casingShadowLift;
@@ -42,10 +36,10 @@
     } _sidewalkColor;
     float _sidewalkShadowWidth;
     VGLMesh *_sidewalkShadows;
+    VKStyle *_style;
     } _tileKey;
 }
 
-@property(readonly) struct _VGLColor { float x1; float x2; float x3; float x4; } casingColor;
 @property(readonly) VGLMesh * casingFacades;
 @property(readonly) float casingShadowRamp;
 @property(readonly) VGLMesh * casingShadows;
@@ -57,11 +51,11 @@
 @property(readonly) float roadShadowWidth;
 @property(readonly) VGLMesh * roadShadows;
 @property(readonly) VGLMesh * sidewalkShadows;
+@property(retain) VKStyle * style;
 
 - (id).cxx_construct;
-- (id)_meshForStyle:(id)arg1 tileKey:(struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })arg2;
-- (void)addRoadForPolygon:(const struct { float x1; float x2; }*)arg1 pointCount:(unsigned int)arg2 characteristicPoints:(const struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; int x_2_1_2; float x_2_1_3; BOOL x_2_1_4; BOOL x_2_1_5; BOOL x_2_1_6; BOOL x_2_1_7; BOOL x_2_1_8; struct { unsigned char x_9_2_1; unsigned short x_9_2_2; } x_2_1_9[16]; } x2; }*)arg3 characteristicPointCount:(unsigned int)arg4 withStyle:(id)arg5;
-- (struct _VGLColor { float x1; float x2; float x3; float x4; })casingColor;
+- (id)_meshForStyle:(id)arg1 tileKey:(struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })arg2 scale:(float)arg3;
+- (void)addRoadForPolygon:(const struct Vec2Imp<float> { float x1; float x2; }*)arg1 pointCount:(unsigned int)arg2 characteristicPoints:(const struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; int x_2_1_2; float x_2_1_3; BOOL x_2_1_4; BOOL x_2_1_5; BOOL x_2_1_6; BOOL x_2_1_7; BOOL x_2_1_8; struct { unsigned char x_9_2_1; unsigned short x_9_2_2; } x_2_1_9[16]; } x2; }*)arg3 characteristicPointCount:(unsigned int)arg4 withStyle:(id)arg5;
 - (id)casingFacades;
 - (float)casingShadowRamp;
 - (id)casingShadows;
@@ -75,8 +69,10 @@
 - (float)roadShadowWidth;
 - (id)roadShadows;
 - (void)setRenderZ:(int)arg1;
+- (void)setStyle:(id)arg1;
 - (id)sidewalkShadows;
+- (id)style;
 - (unsigned int)triangleCount;
-- (void)updateComponentsWithModelViewProjectionMatrix:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })arg1;
+- (void)updateComponentsWithModelViewProjectionMatrix:(union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })arg1 contentScale:(float)arg2;
 
 @end

@@ -5,17 +5,17 @@
 @class WMFPlayer;
 
 @interface WMFReader : NSObject <MFReader> {
-    unsigned long m_cursor;
-    unsigned long m_length;
+    unsigned int m_cursor;
+    unsigned int m_length;
     const char *m_pBuffer;
     WMFPlayer *m_player;
-    long m_recordsRead;
+    int m_recordsRead;
 }
 
-- (int)checkBytesAvailable:(unsigned long)arg1;
+- (int)checkBytesAvailable:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithWMFPlayer:(id)arg1;
-- (int)moveDataCursor:(unsigned long)arg1;
+- (int)moveDataCursor:(unsigned int)arg1;
 - (int)play:(id)arg1;
 - (int)playHeaders;
 - (int)playRecord;

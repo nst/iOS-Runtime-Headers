@@ -9,8 +9,6 @@
 + (BOOL)canFilterByProperty:(id)arg1;
 + (id)defaultPropertyValues;
 
-- (void)clearBookmarkTime;
-- (void)dealloc;
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
@@ -25,7 +23,7 @@
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
 - (unsigned long long)persistentID;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)updateLastUsedDateToCurrentDate;
+- (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id)arg1;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 

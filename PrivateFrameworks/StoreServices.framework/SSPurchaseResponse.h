@@ -2,26 +2,36 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSError, SSPurchase, SSURLConnectionResponse;
+@class NSArray, NSError, NSMutableDictionary, SSPurchase, SSURLConnectionResponse;
 
 @interface SSPurchaseResponse : NSObject <SSXPCCoding> {
+    BOOL _cancelsPurchaseBatch;
+    NSArray *_downloadIdentifiers;
     NSError *_error;
     SSPurchase *_purchase;
     SSURLConnectionResponse *_response;
+    NSMutableDictionary *_transactionIdentifiers;
 }
 
 @property(retain) SSURLConnectionResponse * URLResponse;
+@property BOOL cancelsPurchaseBatch;
+@property(copy) NSArray * downloadIdentifiers;
 @property(copy) NSError * error;
 @property(copy) SSPurchase * purchase;
 
 - (id)URLResponse;
+- (BOOL)cancelsPurchaseBatch;
 - (id)copyXPCEncoding;
 - (void)dealloc;
+- (id)downloadIdentifiers;
 - (id)error;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)purchase;
+- (void)setCancelsPurchaseBatch:(BOOL)arg1;
+- (void)setDownloadIdentifiers:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setPurchase:(id)arg1;
 - (void)setURLResponse:(id)arg1;
+- (id)transactionIdentifierForItemIdentifier:(long long)arg1;
 
 @end

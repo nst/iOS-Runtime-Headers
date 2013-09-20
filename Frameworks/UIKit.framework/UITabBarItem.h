@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSSet, NSString, UIImage, UIView;
+@class NSString, UIColor, UIImage, UIView;
 
 @interface UITabBarItem : UIBarItem {
     struct UIEdgeInsets { 
@@ -22,18 +22,24 @@
     SEL _action;
     id _appearanceStorage;
     NSString *_badgeValue;
-    UIImage *_image;
+    int _barMetrics;
     } _imageInsets;
-    NSSet *_possibleTitles;
+    int _imageStyle;
     UIImage *_selectedImage;
+    UIImage *_selectedTemplateImage;
     } _tabBarItemFlags;
     int _tag;
     id _target;
+    UIImage *_templateImage;
+    UIColor *_tintColor;
     NSString *_title;
     UIImage *_unselectedImage;
     UIView *_view;
 }
 
+@property(setter=_setBarMetrics:) int _barMetrics;
+@property(setter=_setImageStyle:) int _imageStyle;
+@property(setter=_setTintColor:,retain) UIColor * _tintColor;
 @property SEL action;
 @property BOOL animatedBadge;
 @property(copy) NSString * badgeValue;
@@ -43,17 +49,30 @@
 @property(retain) UIView * view;
 @property BOOL viewIsCustom;
 
-+ (id)_appearanceProxyViewClasses;
++ (id)_appearanceBlindViewClasses;
 
-- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 withTint:(BOOL)arg3;
-- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2;
+- (int)_barMetrics;
+- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 idiom:(int)arg3;
+- (id)_createViewForTabBar:(id)arg1 showingBadge:(BOOL)arg2 withTint:(BOOL)arg3 idiom:(int)arg4;
+- (int)_imageStyle;
 - (id)_internalTemplateImage;
+- (id)_internalTemplateImages;
 - (id)_internalTitle;
+- (BOOL)_isSelected;
+- (void)_setBarMetrics:(int)arg1;
+- (void)_setImageStyle:(int)arg1;
 - (void)_setInternalTemplateImage:(id)arg1;
 - (void)_setInternalTitle:(id)arg1;
+- (void)_setSelected:(BOOL)arg1;
+- (void)_setTintColor:(id)arg1;
 - (void)_setTitleTextAttributeValue:(id)arg1 forAttributeKey:(id)arg2 state:(unsigned int)arg3;
+- (id)_tintColor;
+- (void)_updateButtonForTintColor:(id)arg1 selected:(BOOL)arg2;
 - (id)_updateImageWithTintColor:(id)arg1 isSelected:(BOOL)arg2 getImageOffset:(struct UIOffset { float x1; float x2; }*)arg3;
+- (void)_updateToMatchCurrentState;
 - (void)_updateView;
+- (void)_updateViewForIdiom:(int)arg1 positionItems:(BOOL)arg2;
+- (void)_updateViewForIdiom:(int)arg1;
 - (SEL)action;
 - (BOOL)animatedBadge;
 - (id)badgeValue;
@@ -66,6 +85,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTabBarSystemItem:(int)arg1 tag:(int)arg2;
+- (id)initWithTitle:(id)arg1 image:(id)arg2 selectedImage:(id)arg3;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(int)arg3;
 - (BOOL)isEnabled;
 - (BOOL)isSystemItem;

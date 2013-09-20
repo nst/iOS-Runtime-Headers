@@ -11,6 +11,7 @@
 
 - (void)backgroundContinuationEnabledDidChange:(BOOL)arg1;
 - (void)dealloc;
+- (void)didTakeScreenshot;
 - (void)hideTopMostMiniAlert;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;

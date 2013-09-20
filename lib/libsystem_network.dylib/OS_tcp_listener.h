@@ -6,6 +6,5 @@
 }
 
 - (void)_dispose;
-- (void)_xref_dispose;
 
 @end

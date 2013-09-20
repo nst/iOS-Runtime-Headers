@@ -13,8 +13,6 @@
         unsigned int delegateInteritemSpacingForSection : 1; 
         unsigned int delegateLineSpacingForSection : 1; 
         unsigned int delegateAlignmentOptions : 1; 
-        unsigned int keepDelegateInfoWhileInvalidating : 1; 
-        unsigned int keepAllDataWhileInvalidating : 1; 
         unsigned int layoutDataIsValid : 1; 
         unsigned int delegateInfoIsValid : 1; 
     struct CGSize { 
@@ -72,6 +70,8 @@
 @property int scrollDirection;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInset;
 
++ (Class)invalidationContextClass;
+
 - (void)_fetchItemsInfo;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForFooterInSection:(int)arg1 usingData:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForHeaderInSection:(int)arg1 usingData:(id)arg2;
@@ -79,7 +79,6 @@
 - (void)_getSizingInfos;
 - (void)_invalidateButKeepAllInfo;
 - (void)_invalidateButKeepDelegateInfo;
-- (void)_invalidateLayout;
 - (id)_layoutAttributesForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_rowAlignmentOptions;
 - (void)_setRowAlignmentsOptions:(id)arg1;
@@ -105,7 +104,8 @@
 - (id)initialLayoutAttributesForFooterInInsertedSection:(int)arg1;
 - (id)initialLayoutAttributesForHeaderInInsertedSection:(int)arg1;
 - (id)initialLayoutAttributesForInsertedItemAtIndexPath:(id)arg1;
-- (void)invalidateLayout;
+- (void)invalidateLayoutWithContext:(id)arg1;
+- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })itemSize;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForFooterInSection:(int)arg1 usingData:(id)arg2;

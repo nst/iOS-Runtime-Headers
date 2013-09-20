@@ -16,8 +16,8 @@
 @property(retain) EKStructuredLocation * location;
 @property int type;
 
+- (void).cxx_destruct;
 - (id)addressDictionary;
-- (void)dealloc;
 - (id)description;
 - (BOOL)isLocationBeingDetermined;
 - (id)label;

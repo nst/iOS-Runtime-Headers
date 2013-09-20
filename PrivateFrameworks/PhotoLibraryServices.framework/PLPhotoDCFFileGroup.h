@@ -20,13 +20,11 @@
 }
 
 + (id)allMetadataFileExtensions;
-+ (struct CGImage { }*)createThumbnailOfImage:(struct CGImage { }*)arg1 format:(int)arg2 fullPath:(id)arg3 orientation:(int)arg4 outThumbnailData:(id*)arg5;
 
 - (void)addExtension:(id)arg1;
 - (void)addExtensionsFromMetadataDirectory;
 - (int)compare:(id)arg1;
 - (void)createMetadataDirectoryIfNecessary;
-- (void)createWildcatThumbnailsFromImage:(struct CGImage { }*)arg1 orientation:(int)arg2 options:(id)arg3 delegate:(id)arg4;
 - (id)date;
 - (void)dealloc;
 - (id)delegate;

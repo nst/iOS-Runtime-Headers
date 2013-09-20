@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSURL, SALocalSearchMapItem;
+@class NSNumber, NSString, SALocalSearchMapItem;
 
-@interface SALocalSearchShowMapPoints : SABaseClientBoundCommand {
+@interface SALocalSearchShowMapPoints : SADomainCommand {
 }
 
 @property(copy) NSString * directionsType;
@@ -13,7 +13,6 @@
 @property(copy) NSNumber * regionOfInterestRadiusInMiles;
 @property BOOL showDirections;
 @property BOOL showTraffic;
-@property(copy) NSURL * targetAppId;
 
 + (id)showMapPoints;
 + (id)showMapPointsWithDictionary:(id)arg1 context:(id)arg2;
@@ -31,9 +30,7 @@
 - (void)setRegionOfInterestRadiusInMiles:(id)arg1;
 - (void)setShowDirections:(BOOL)arg1;
 - (void)setShowTraffic:(BOOL)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (BOOL)showDirections;
 - (BOOL)showTraffic;
-- (id)targetAppId;
 
 @end

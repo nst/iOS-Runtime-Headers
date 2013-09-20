@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMAccount, IMHandle, IMMessage, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class IMAccount, IMHandle, IMMessage, IMTimingCollection, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
 @interface IMChat : NSObject {
     unsigned int _hasBeenConfigured : 1;
@@ -11,7 +11,10 @@
     unsigned int _wasInvitationHandled : 1;
     unsigned int _didSendAFinishedMessage : 1;
     unsigned int _shouldPostIndividualItemChanges : 1;
+    unsigned int _shouldPostWillChangeNotification : 1;
+    unsigned int _shouldPostJoinStatusChangeNotifications : 1;
     unsigned int _didPostWillChangeNotification : 1;
+    unsigned int _hasPendingMarkRead : 1;
     IMAccount *_account;
     unsigned int _cachedFailureCount;
     NSMutableSet *_cachedReadMessages;
@@ -26,7 +29,9 @@
     NSDate *_dateModified;
     unsigned int _dbFailedCount;
     unsigned int _dbUnreadCount;
+    NSString *_displayName;
     NSString *_guid;
+    NSMutableSet *_guids;
     NSString *_identifier;
     IMMessage *_invitationForPendingParticipants;
     int _joinState;
@@ -38,14 +43,18 @@
     NSArray *_participants;
     NSString *_roomName;
     NSString *_roomNameWithoutSuffix;
-    int _rowIDOfMostRecentFailedMessage;
     unsigned char _style;
+    IMTimingCollection *_timingCollection;
+    NSString *_typingGUID;
     id _typingIndicatorTimer;
     NSMutableDictionary *_unfinishedChatItemMap;
 }
 
+@property(setter=_setGUIDs:,retain) NSMutableSet * _guids;
 @property(readonly) BOOL _isRefreshing;
 @property(setter=_setShouldPostIndividualItemChanges:) BOOL _shouldPostIndividualItemChanges;
+@property(setter=_setShouldPostJoinStatusChangeNotifications:) BOOL _shouldPostJoinStatusChangeNotifications;
+@property(setter=_setShouldPostWillChangeNotification:) BOOL _shouldPostWillChangeNotification;
 @property(readonly) BOOL _shouldRegisterChat;
 @property(readonly) IMAccount * account;
 @property(readonly) BOOL canHaveMultipleParticipants;
@@ -55,6 +64,7 @@
 @property void* contextInfo;
 @property(readonly) NSDate * dateCreated;
 @property(readonly) NSDate * dateModified;
+@property NSString * displayName;
 @property(readonly) NSString * guid;
 @property(readonly) BOOL hasUnhandledInvitation;
 @property(retain) IMMessage * invitationForPendingParticipants;
@@ -63,6 +73,8 @@
 @property(readonly) IMMessage * lastIncomingFinishedMessage;
 @property(readonly) IMMessage * lastIncomingMessage;
 @property(readonly) IMMessage * lastMessage;
+@property(readonly) NSString * localTypingMessageGUID;
+@property BOOL localUserIsTyping;
 @property(readonly) unsigned int messageCount;
 @property(readonly) unsigned int messageFailureCount;
 @property unsigned int numberOfMessagesToKeepLoaded;
@@ -84,7 +96,6 @@
 - (id)__ck_previousAccountForService:(id)arg1;
 - (void)__ck_setAndIncrementDowngradeMarkersForManual:(BOOL)arg1;
 - (void)__ck_setPreviousAccount:(id)arg1 forService:(id)arg2;
-- (void)__ck_targetToService:(id)arg1;
 - (void)__clearReadMessageCache;
 - (void)_accountControllerUpdated:(id)arg1;
 - (void)_accountLoggedOut:(id)arg1;
@@ -102,6 +113,7 @@
 - (id)_buildLoadQueryForSynchronize;
 - (void)_cacheReadMessageGUID:(id)arg1;
 - (id)_chatItemForGUID:(id)arg1;
+- (BOOL)_checkMessageOrderingWithItems:(id)arg1;
 - (void)_cleanupTimestamps;
 - (void)_clearCachedIdentifier;
 - (void)_clearIncomingTypingIndicators;
@@ -114,9 +126,12 @@
 - (BOOL)_doesChatItemContainTimestamp:(id)arg1;
 - (void)_endChatItemChanges;
 - (void)_endLegacyHistoryLoading;
+- (void)_endTiming;
 - (void)_fixHeader;
 - (void)_fixLastReceipientMessage;
 - (void)_fixLastStatusMessageIfNecessary;
+- (void)_fixMessageOrderingWithItems:(id)arg1;
+- (id)_guids;
 - (void)_handleDeliveredCommand:(id)arg1;
 - (void)_handleHandleStatusChanged:(id)arg1;
 - (void)_handleIncomingCommand:(id)arg1;
@@ -124,9 +139,10 @@
 - (void)_handleMessageGUIDDeletions:(id)arg1;
 - (BOOL)_hasCommunicatedOnService:(id)arg1;
 - (id)_initWithDictionaryRepresentation:(id)arg1 initialItems:(id)arg2 participantsHint:(id)arg3 accountHint:(id)arg4;
-- (id)_initWithGUID:(id)arg1 account:(id)arg2 style:(unsigned char)arg3 roomName:(id)arg4 chatItems:(id)arg5 participants:(id)arg6;
+- (id)_initWithGUID:(id)arg1 account:(id)arg2 style:(unsigned char)arg3 roomName:(id)arg4 displayName:(id)arg5 chatItems:(id)arg6 participants:(id)arg7;
 - (void)_initialize;
 - (unsigned int)_insertChatItem:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_insertHistoricalChatItems:(id)arg1 queryID:(id)arg2 isRefresh:(BOOL)arg3 isHistoryQuery:(BOOL)arg4 limit:(unsigned int)arg5;
 - (void)_insertHistoricalChatItems:(id)arg1 queryID:(id)arg2 isRefresh:(BOOL)arg3 isHistoryQuery:(BOOL)arg4;
 - (void)_insertLegacyHistory:(id)arg1;
 - (void)_inviteParticipants:(id)arg1 reason:(id)arg2;
@@ -161,22 +177,30 @@
 - (void)_setChatProperties:(id)arg1;
 - (void)_setDBFailedCount:(unsigned int)arg1;
 - (void)_setDBUnreadCount:(unsigned int)arg1;
+- (void)_setDisplayName:(id)arg1;
+- (void)_setGUIDs:(id)arg1;
 - (void)_setIsRefreshing:(BOOL)arg1;
 - (void)_setJoinState:(int)arg1 quietly:(BOOL)arg2;
 - (void)_setJoinState:(int)arg1;
+- (void)_setLocalUserIsTyping:(BOOL)arg1 suppliedGUID:(id)arg2;
 - (void)_setParticipantState:(unsigned int)arg1 forHandle:(id)arg2 quietly:(BOOL)arg3;
-- (void)_setRowIDOfMostRecentFailedMessage:(int)arg1;
 - (void)_setSearchResultChatItems:(id)arg1;
 - (void)_setShouldPostIndividualItemChanges:(BOOL)arg1;
+- (void)_setShouldPostJoinStatusChangeNotifications:(BOOL)arg1;
+- (void)_setShouldPostWillChangeNotification:(BOOL)arg1;
 - (void)_setTimerForReadMessageCache;
 - (void)_setTypingIndicatorTimeout;
 - (void)_setupObservation;
 - (BOOL)_shouldAnnouncePeopleJoin;
 - (BOOL)_shouldDisplayInitialTypingIndicator;
 - (BOOL)_shouldPostIndividualItemChanges;
+- (BOOL)_shouldPostJoinStatusChangeNotifications;
+- (BOOL)_shouldPostWillChangeNotification;
 - (BOOL)_shouldRegisterChat;
 - (void)_showErrorMessage:(id)arg1;
+- (void)_startTiming:(id)arg1;
 - (id)_timeStampForChatItem:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)_timingCollection;
 - (void)_trimMessagesAsNeeded;
 - (void)_trimMessagesLeavingNumber:(unsigned int)arg1;
 - (void)_typingIndicatorTimedOut:(id)arg1;
@@ -212,7 +236,9 @@
 - (BOOL)deleteAllHistory;
 - (BOOL)deleteChatItem:(id)arg1;
 - (BOOL)deleteChatItems:(id)arg1;
+- (BOOL)deleteMessageParts:(id)arg1 forMessage:(id)arg2;
 - (id)description;
+- (id)displayName;
 - (id)guid;
 - (BOOL)hasUnhandledInvitation;
 - (id)init;
@@ -227,6 +253,10 @@
 - (void)leave;
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2 loadImmediately:(BOOL)arg3;
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2;
+- (id)loadMessagesUpToGUID:(id)arg1 date:(id)arg2 limit:(unsigned int)arg3 loadImmediately:(BOOL)arg4;
+- (id)loadMessagesUpToGUID:(id)arg1 limit:(unsigned int)arg2;
+- (id)localTypingMessageGUID;
+- (BOOL)localUserIsTyping;
 - (void)mark;
 - (void)markAllMessagesAsRead;
 - (void)markMessageAsRead:(id)arg1;
@@ -248,7 +278,9 @@
 - (BOOL)sendDowngradeNotificationTo:(id)arg1;
 - (void)sendMessage:(id)arg1;
 - (void)setContextInfo:(void*)arg1;
+- (void)setDisplayName:(id)arg1;
 - (void)setInvitationForPendingParticipants:(id)arg1;
+- (void)setLocalUserIsTyping:(BOOL)arg1;
 - (void)setNumberOfMessagesToKeepLoaded:(unsigned int)arg1;
 - (void)setRecipient:(id)arg1 locally:(BOOL)arg2;
 - (void)setRecipient:(id)arg1;

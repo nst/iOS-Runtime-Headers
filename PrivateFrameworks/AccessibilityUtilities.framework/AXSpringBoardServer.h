@@ -6,55 +6,87 @@
    See Warning(s) below.
  */
 
-@class NSMutableArray;
+@class AXAccessQueue, NSMutableArray;
 
 @interface AXSpringBoardServer : AXServer {
+    AXAccessQueue *_accessQueue;
     NSMutableArray *_actionHandlers;
     id _currentAlertHandler;
     NSMutableArray *_gestureOverrides;
 }
 
+@property(retain) AXAccessQueue * accessQueue;
+@property(retain) NSMutableArray * actionHandlers;
+@property(copy) id currentAlertHandler;
+@property(retain) NSMutableArray * gestureOverrides;
+
 + (id)server;
 
-- (BOOL)_connectIfNecessary;
-- (void)_connectServerIfNecessary;
+- (void)_didConnectToClient;
+- (void)_didConnectToServer;
 - (id)_handleActionResult:(id)arg1;
 - (id)_handleGestureOverrideResult:(id)arg1;
 - (id)_handleReplyResult:(id)arg1;
 - (id)_serviceName;
 - (BOOL)_shouldValidateEntitlements;
+- (void)_wasDisconnectedFromClient;
+- (void)_willClearServer;
+- (id)accessQueue;
+- (id)actionHandlers;
 - (int)activeApplicationOrientation;
+- (int)activeInterfaceOrientation;
 - (void)cleanupAlertHandler;
+- (void)copyStringToPasteboard:(id)arg1;
+- (id)currentAlertHandler;
 - (void)dealloc;
+- (id)gestureOverrides;
 - (void)hideAlert;
+- (void)hideNotificationCenter;
 - (id)init;
+- (BOOL)isAppSwitcherVisible;
+- (BOOL)isControlCenterVisible;
+- (BOOL)isGuidedAccessActive;
 - (BOOL)isMakingEmergencyCall;
+- (BOOL)isMediaPlaying;
+- (BOOL)isNotificationCenterVisible;
 - (BOOL)isOrientationLocked;
-- (BOOL)isPointInsideAccessibilityInspector:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned char x11[0]; }*)arg1;
+- (BOOL)isPointInsideAccessibilityInspector:(id)arg1;
 - (BOOL)isRingerMuted;
 - (BOOL)isScreenLockedWithPasscode:(BOOL*)arg1;
 - (BOOL)isSideSwitchUsedForOrientation;
+- (BOOL)isSiriListening;
+- (BOOL)isSiriVisible;
+- (BOOL)isSpringboardFrontmost;
+- (BOOL)isSyncingRestoringResettingOrUpdating;
 - (BOOL)isSystemSleeping;
-- (BOOL)isVideoPlaying;
 - (BOOL)isVoiceControlRunning;
 - (void)openAppSwitcher;
 - (void)openAssistiveTouchCustomGestureCreation;
+- (void)openSCATCustomGestureCreation;
 - (void)openSiri;
 - (void)openVoiceControl;
 - (int)pid;
-- (void)registerOverrideIntentForGesture:(int)arg1 withHandler:(id)arg2 withIdentifierCallback:(id)arg3;
+- (void)registerOverrideIntentForGesture:(unsigned int)arg1 withHandler:(id)arg2 withIdentifierCallback:(id)arg3;
 - (void)registerSpringBoardActionHandler:(id)arg1 withIdentifierCallback:(id)arg2;
-- (void)removeActionHandler:(struct NSString { Class x1; }*)arg1;
-- (void)removeOverrideIntent:(struct NSString { Class x1; }*)arg1;
+- (void)removeActionHandler:(id)arg1;
+- (void)removeOverrideIntent:(id)arg1;
 - (void)resetDimTimer;
-- (void)setCancelGestureActivation:(int)arg1 cancelEnabled:(BOOL)arg2;
+- (void)setAccessQueue:(id)arg1;
+- (void)setActionHandlers:(id)arg1;
+- (void)setCancelGestureActivation:(unsigned int)arg1 cancelEnabled:(BOOL)arg2;
+- (void)setCurrentAlertHandler:(id)arg1;
+- (void)setGestureOverrides:(id)arg1;
+- (void)setSiriListening:(BOOL)arg1;
 - (void)setSystemGesturesEnabled:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (void)showAlert:(int)arg1 withHandler:(id)arg2 withData:(id)arg3;
 - (void)showAlert:(int)arg1 withHandler:(id)arg2;
+- (void)showControlCenter:(BOOL)arg1;
+- (void)showNotificationCenter;
+- (void)startHearingAidServer;
 - (void)takeScreenshot;
-- (void)toggleGuidedAccess;
 - (void)toggleHearingControl;
+- (void)toggleNotificationCenter;
 - (int)topEventPidOverride;
 - (float)volumeLevel;
 

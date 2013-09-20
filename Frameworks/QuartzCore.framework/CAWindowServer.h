@@ -22,7 +22,9 @@
 - (void)addDisplay:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)displayWithDisplayId:(unsigned int)arg1;
 - (id)displayWithName:(id)arg1;
+- (id)displayWithUniqueId:(id)arg1;
 - (id)displays;
 - (id)init;
 - (BOOL)isMirroringEnabled;

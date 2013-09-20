@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSNumber, NSString, SAVoice;
 
 @interface SASetAssistantData : SABaseCommand <SAServerBoundCommand> {
 }
 
 @property(copy) NSArray * abSources;
 @property(copy) NSString * aceId;
+@property(copy) NSNumber * allowUserGeneratedContent;
 @property(copy) NSString * anchor;
 @property BOOL censorSpeech;
 @property(copy) NSString * countryCode;
@@ -26,13 +27,16 @@
 @property(copy) NSNumber * storefront;
 @property(copy) NSString * temperatureUnit;
 @property(copy) NSString * timeZoneId;
+@property(retain) SAVoice * ttsVoice;
 @property(copy) NSNumber * twentyFourHourTimeDisplay;
 @property(copy) NSNumber * uiScale;
+@property BOOL voiceOver;
 
 + (id)setAssistantData;
 + (id)setAssistantDataWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)abSources;
+- (id)allowUserGeneratedContent;
 - (id)anchor;
 - (BOOL)censorSpeech;
 - (id)countryCode;
@@ -49,6 +53,7 @@
 - (id)parentalRestrictions;
 - (id)region;
 - (void)setAbSources:(id)arg1;
+- (void)setAllowUserGeneratedContent:(id)arg1;
 - (void)setAnchor:(id)arg1;
 - (void)setCensorSpeech:(BOOL)arg1;
 - (void)setCountryCode:(id)arg1;
@@ -65,12 +70,16 @@
 - (void)setStorefront:(id)arg1;
 - (void)setTemperatureUnit:(id)arg1;
 - (void)setTimeZoneId:(id)arg1;
+- (void)setTtsVoice:(id)arg1;
 - (void)setTwentyFourHourTimeDisplay:(id)arg1;
 - (void)setUiScale:(id)arg1;
+- (void)setVoiceOver:(BOOL)arg1;
 - (id)storefront;
 - (id)temperatureUnit;
 - (id)timeZoneId;
+- (id)ttsVoice;
 - (id)twentyFourHourTimeDisplay;
 - (id)uiScale;
+- (BOOL)voiceOver;
 
 @end

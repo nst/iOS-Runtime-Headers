@@ -15,6 +15,7 @@
     BOOL _shouldShowStatusImages;
 }
 
+- (void).cxx_destruct;
 - (id)_attendingImage;
 - (id)_imageForStatus:(int)arg1;
 - (id)_maybeImage;

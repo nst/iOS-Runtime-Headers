@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, SFUZipArchive;
+@class NSMutableDictionary, OISFUZipArchive;
 
 @interface OCPZipPackage : OCPPackage {
-    SFUZipArchive *mArchive;
+    OISFUZipArchive *mArchive;
     NSMutableDictionary *mParts;
 }
 

@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableArray;
+@class ML3DatabaseConnection, ML3MusicLibrary, NSMutableArray;
 
 @interface ML3EntityReplacer : NSObject {
+    ML3DatabaseConnection *_connection;
+    ML3MusicLibrary *_library;
+    NSMutableArray *_naturalStatements;
     struct __CFDictionary { } *_propertyToIndexPair;
-    NSMutableArray *_statements;
 }
 
 @property(getter=isOpen,readonly) BOOL open;
@@ -16,12 +18,12 @@
 - (void)bindInt:(int)arg1 forProperty:(id)arg2;
 - (void)bindNullForProperty:(id)arg1;
 - (void)bindPersistentID:(long long)arg1;
+- (void)bindValue:(id)arg1 forProperty:(id)arg2;
 - (void)clearBindings;
 - (void)close;
 - (void)dealloc;
-- (id)initWithEntityClass:(Class)arg1 properties:(id)arg2 databaseConnection:(id)arg3;
+- (id)initWithEntityClass:(Class)arg1 properties:(id)arg2 library:(id)arg3;
 - (BOOL)isOpen;
 - (BOOL)perform;
-- (void)statementForProperty:(id)arg1 usingBlock:(id)arg2;
 
 @end

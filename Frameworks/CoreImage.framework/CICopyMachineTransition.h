@@ -15,14 +15,14 @@
     NSNumber *inputWidth;
 }
 
-@property(copy) NSNumber * inputAngle;
-@property(copy) CIColor * inputColor;
-@property(copy) CIVector * inputExtent;
+@property(retain) NSNumber * inputAngle;
+@property(retain) CIColor * inputColor;
+@property(retain) CIVector * inputExtent;
 @property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputOpacity;
+@property(retain) NSNumber * inputOpacity;
 @property(retain) CIImage * inputTargetImage;
-@property(copy) NSNumber * inputTime;
-@property(copy) NSNumber * inputWidth;
+@property(retain) NSNumber * inputTime;
+@property(retain) NSNumber * inputWidth;
 
 + (id)customAttributes;
 

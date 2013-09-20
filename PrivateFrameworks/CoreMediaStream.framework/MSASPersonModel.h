@@ -35,7 +35,7 @@
 - (long long)dbQueueSmallestCommandSequenceNumber;
 - (BOOL)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;
 - (void)enqueueAssetCollectionForUpload:(id)arg1 album:(id)arg2;
-- (void)enqueueAssetForDownload:(id)arg1 album:(id)arg2;
+- (void)enqueueAssetForDownload:(id)arg1 inAlbumWithGUID:(id)arg2;
 - (void)enqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
 - (void)enqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 pendingOnAssetCollectionGUID:(id)arg5;
 - (void)enqueueCommandAtHeadOfQueue:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
@@ -45,7 +45,7 @@
 - (int)itemsForDownloadCountFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2;
 - (id)itemsForUpload;
 - (id)nextItemsForDownloadFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2 thumbnails:(BOOL)arg3 maxCount:(int)arg4;
-- (id)nextItemsForUploadAlbumGUID:(id)arg1 maxCount:(int)arg2;
+- (id)nextItemsForUploadAlbumGUID:(id)arg1 maxPriority:(int)arg2 maxCount:(int)arg3;
 - (id)nextItemsForUploadMaxCount:(int)arg1;
 - (long long)nextMMCSItemID;
 - (void)purgeCompletionBlock:(id)arg1;

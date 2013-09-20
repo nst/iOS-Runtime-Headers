@@ -22,9 +22,11 @@
 - (void)handleEnabledChangedForConnection:(id)arg1;
 - (id)init;
 - (BOOL)isTheOnlyDataOutput;
+- (id)recommendedAudioSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)sampleBufferCallbackQueue;
 - (id)sampleBufferDelegate;
 - (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
 - (void)setSession:(id)arg1;
+- (id)supportedAssetWriterOutputFileTypes;
 
 @end

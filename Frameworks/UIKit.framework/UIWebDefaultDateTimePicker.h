@@ -24,6 +24,7 @@
 - (id)_sanitizeInputValueForFormatter:(id)arg1;
 - (int)_timeZoneOffsetFromGMT:(id)arg1;
 - (void)controlBeginEditing;
+- (void)controlEndEditing;
 - (id)controlView;
 - (void)dealloc;
 - (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(int)arg2;

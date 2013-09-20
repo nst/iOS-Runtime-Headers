@@ -4,7 +4,7 @@
 
 @class SUDescriptor, SUDownloadMetadata, SUOperationProgress;
 
-@interface SUDownload : NSObject <NSCoding, NSCopying> {
+@interface SUDownload : NSObject <NSSecureCoding, NSCopying> {
     SUDescriptor *_descriptor;
     SUDownloadMetadata *_metadata;
     SUOperationProgress *_progress;
@@ -14,8 +14,11 @@
 @property(retain) SUDownloadMetadata * metadata;
 @property(retain) SUOperationProgress * progress;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)descriptor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

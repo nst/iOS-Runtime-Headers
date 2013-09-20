@@ -4,10 +4,10 @@
 
 @class NSMutableArray, WDDocument, WDStyle;
 
-@interface WDListDefinition : NSObject {
+@interface WDListDefinition : NSObject <NSCopying> {
     WDDocument *mDocument;
     NSMutableArray *mLevels;
-    int mListId;
+    long mListId;
     WDStyle *mListStyle;
     WDStyle *mListStyleLink;
     int mType;
@@ -20,10 +20,10 @@
 - (id)initWithDocument:(id)arg1;
 - (id)levelAt:(int)arg1;
 - (int)levelCount;
-- (int)listId;
+- (long)listId;
 - (id)listStyle;
 - (id)listStyleLink;
-- (void)setListId:(int)arg1;
+- (void)setListId:(long)arg1;
 - (void)setListStyle:(id)arg1;
 - (void)setListStyleLink:(id)arg1;
 - (void)setType:(int)arg1;

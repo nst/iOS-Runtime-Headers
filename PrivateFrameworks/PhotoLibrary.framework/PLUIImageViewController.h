@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, PLCropOverlay, PLImageCache, PLImageLoadingQueue, PLImageSource, PLManagedAsset, PLPhotoTileViewController, PLVideoRemaker, PLVideoView, UIImage;
+@class NSURL, PLCropOverlay, PLImageCache, PLImageLoadingQueue, PLImageSource, PLManagedAsset, PLPhotoTileViewController, PLVideoRemaker, PLVideoView, UIImage;
 
 @interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate> {
     struct CGRect { 
@@ -31,7 +31,7 @@
     PLManagedAsset *_photo;
     int _previousStatusBarStyle;
     PLVideoRemaker *_remaker;
-    NSString *_videoPath;
+    NSURL *_videoURL;
     PLVideoView *_videoView;
 }
 
@@ -46,22 +46,24 @@
 - (void)_updateGestureSettings;
 - (Class)_viewClass;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrame;
+- (void)attachScrubberPalette;
 - (BOOL)clientIsWallpaper;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;
+- (id)cropOverlay;
 - (int)cropOverlayMode;
 - (void)cropOverlayPause:(id)arg1;
 - (void)cropOverlayPlay:(id)arg1;
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (void)cropOverlayWasOKed:(id)arg1;
 - (void)dealloc;
-- (void)didChooseVideoAtPath:(id)arg1 options:(id)arg2;
+- (void)didChooseVideoAtURL:(id)arg1 options:(id)arg2;
 - (int)imageFormat;
 - (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
 - (id)initWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithImageData:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithPhoto:(id)arg1;
 - (id)initWithUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)initWithVideoPath:(id)arg1;
+- (id)initWithVideoURL:(id)arg1;
 - (void)loadView;
 - (void)photoTileViewController:(id)arg1 didAppear:(BOOL)arg2;
 - (void)photoTileViewController:(id)arg1 didDisappear:(BOOL)arg2;
@@ -81,6 +83,7 @@
 - (id)useButtonTitle;
 - (void)videoRemakerDidBeginRemaking:(id)arg1;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
+- (void)videoView:(id)arg1 scrubberWasCreated:(id)arg2 slalomRegionEditor:(id)arg3;
 - (BOOL)videoViewCanBeginPlayback:(id)arg1;
 - (BOOL)videoViewCanCreateMetadata:(id)arg1;
 - (void)videoViewDidBeginPlayback:(id)arg1;

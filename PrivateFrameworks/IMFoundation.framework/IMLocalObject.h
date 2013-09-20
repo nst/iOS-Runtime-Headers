@@ -15,12 +15,14 @@
 
 + (void)_registerIMLocalObject:(id)arg1;
 + (id)_registeredIMLocalObjectForPort:(unsigned int)arg1;
++ (void)_setExceptionHandlingDisabled:(BOOL)arg1;
 + (void)_unregisterIMLocalObject:(id)arg1;
 + (void)initialize;
 
 - (void)_cancelHandlerCompleted;
 - (void)_clearPort:(BOOL)arg1;
-- (void)_enqueueInvocation:(id)arg1;
+- (id)_currentMessageContext;
+- (void)_enqueueInvocation:(id)arg1 xpcMessage:(id)arg2;
 - (BOOL)_handleInvocation:(id)arg1;
 - (void)_handleNewInvocations;
 - (void)_noteNewInvocation;

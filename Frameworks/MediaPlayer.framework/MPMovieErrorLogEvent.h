@@ -5,13 +5,10 @@
 @class AVPlayerItemErrorLogEvent, NSDate, NSString;
 
 @interface MPMovieErrorLogEvent : NSObject <NSCopying> {
-    struct MPMovieErrorLogEventInternal { 
-        AVPlayerItemErrorLogEvent *event; 
-    } _internal;
+    AVPlayerItemErrorLogEvent *_event;
 }
 
 @property(readonly) NSString * URI;
-@property struct MPMovieErrorLogEventInternal { id x1; } _internal;
 @property(readonly) NSDate * date;
 @property(readonly) NSString * errorComment;
 @property(readonly) NSString * errorDomain;
@@ -19,17 +16,15 @@
 @property(readonly) NSString * playbackSessionID;
 @property(readonly) NSString * serverAddress;
 
+- (void).cxx_destruct;
 - (id)URI;
 - (id)_initWithAVItemErrorLogEvent:(id)arg1;
-- (struct MPMovieErrorLogEventInternal { id x1; })_internal;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
-- (void)dealloc;
 - (id)errorComment;
 - (id)errorDomain;
 - (int)errorStatusCode;
 - (id)playbackSessionID;
 - (id)serverAddress;
-- (void)set_internal:(struct MPMovieErrorLogEventInternal { id x1; })arg1;
 
 @end

@@ -18,6 +18,7 @@
 @property int simultaneousGestureTypes;
 @property <MPSwipableViewDelegate> * swipeDelegate;
 
+- (void).cxx_destruct;
 - (void)_activityGestureRecognized:(id)arg1;
 - (void)_pinchGestureRecognized:(id)arg1;
 - (void)_swipeGestureRecognized:(id)arg1;
@@ -37,5 +38,6 @@
 - (int)simultaneousGestureTypes;
 - (id)swipeDelegate;
 - (void)willMoveToSuperview:(id)arg1;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

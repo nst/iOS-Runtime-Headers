@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetTrack, AVOutputSettings;
+@class AVAssetTrack, AVOutputSettings, NSString;
 
 @interface AVAssetReaderTrackOutputInternal : NSObject {
+    NSString *audioTimePitchAlgorithm;
     AVOutputSettings *outputSettings;
     AVAssetTrack *track;
 }

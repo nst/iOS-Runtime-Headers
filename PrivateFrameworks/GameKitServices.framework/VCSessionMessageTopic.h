@@ -17,7 +17,7 @@
     int latestOutgoingMessageIndex;
     int latestReceivedTopicMessageNumber;
     NSObject<OS_dispatch_queue> *outMessageQueue;
-    int p2pID;
+    unsigned long p2pID;
     id receiveBlock;
     BOOL shouldEncodeTopicKeyInMessage;
     NSString *topicKey;
@@ -35,7 +35,7 @@
 - (void)sendMessage:(id)arg1 withSequence:(int)arg2 numRetries:(int)arg3;
 - (void)sendMessage:(id)arg1;
 - (void)setIsSendingEnabled:(BOOL)arg1;
-- (void)setP2PID:(int)arg1;
+- (void)setP2PID:(unsigned long)arg1;
 - (id)topicKey;
 
 @end

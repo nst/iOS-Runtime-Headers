@@ -4,13 +4,12 @@
 
 @class NSString, NSURL;
 
-@interface SAFmfVisibilitySetCompleted : SABaseClientBoundCommand <SAServerBoundCommand> {
+@interface SAFmfVisibilitySetCompleted : SADomainCommand <SAServerBoundCommand> {
 }
 
 @property(copy) NSString * aceId;
 @property(copy) NSString * refId;
 @property(copy) NSURL * searchContext;
-@property(copy) NSURL * targetAppId;
 
 + (id)visibilitySetCompleted;
 + (id)visibilitySetCompletedWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,7 +19,5 @@
 - (BOOL)requiresResponse;
 - (id)searchContext;
 - (void)setSearchContext:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

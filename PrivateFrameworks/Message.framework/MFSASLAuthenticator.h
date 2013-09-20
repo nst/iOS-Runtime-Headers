@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class Account, AuthScheme, Connection;
+@class MFAccount, MFAuthScheme, MFConnection;
 
 @interface MFSASLAuthenticator : NSObject {
-    Account *_account;
-    AuthScheme *_authScheme;
+    MFAccount *_account;
+    MFAuthScheme *_authScheme;
     int _authenticationState;
-    Connection *_connection;
+    MFConnection *_connection;
 }
 
 - (id)account;

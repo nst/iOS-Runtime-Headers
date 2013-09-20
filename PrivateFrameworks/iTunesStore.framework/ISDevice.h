@@ -23,7 +23,6 @@
 - (int)_deviceClass;
 - (BOOL)checkCapabilities:(id)arg1 withMismatches:(id*)arg2;
 - (id)copyProtocolConditionalContext;
-- (id)copyPurchaseValidationContext;
 - (void)dealloc;
 - (id)deviceName;
 - (id)guid;
@@ -31,6 +30,7 @@
 - (id)init;
 - (BOOL)releasePowerAssertion:(id)arg1;
 - (void)requestFreeSpace:(unsigned long long)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id)arg4;
+- (void)resetLocationAndPrivacy;
 - (id)serialNumber;
 - (id)supportedOfferDeviceForDevices:(id)arg1;
 - (id)systemName;

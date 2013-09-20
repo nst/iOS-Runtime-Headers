@@ -8,7 +8,7 @@
 }
 
 @property(copy) NSString * aceId;
-@property(copy) NSArray * phoneLogIds;
+@property(copy) NSArray * phoneSearchResults;
 @property(copy) NSString * refId;
 
 + (id)searchCompleted;
@@ -16,7 +16,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)phoneLogIds;
-- (void)setPhoneLogIds:(id)arg1;
+- (id)phoneSearchResults;
+- (void)setPhoneSearchResults:(id)arg1;
 
 @end

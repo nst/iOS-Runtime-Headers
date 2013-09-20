@@ -3,13 +3,13 @@
  */
 
 @interface MFPColorCurveEffect : MFPEffect {
-    long mAdjustValue;
+    int mAdjustValue;
     int mAdjustment;
     int mChannel;
 }
 
 + (id)GUID;
 
-- (id)initWithAdjustment:(int)arg1 channel:(int)arg2 adjustValue:(long)arg3;
+- (id)initWithAdjustment:(int)arg1 channel:(int)arg2 adjustValue:(int)arg3;
 
 @end

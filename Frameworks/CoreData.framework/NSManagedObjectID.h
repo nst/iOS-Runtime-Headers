@@ -20,8 +20,11 @@
 - (BOOL)_tryRetain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)entity;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;
+- (id)pl_shortURI;
 
 @end

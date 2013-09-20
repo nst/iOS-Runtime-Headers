@@ -23,7 +23,6 @@
 - (id)accountLoginStatus:(id)arg1;
 - (id)accountType:(id)arg1;
 - (id)bundle;
-- (BOOL)canBeShownFromSuspendedState;
 - (void)dealloc;
 - (id)initWithAccount:(id)arg1;
 - (BOOL)isConnectedToDaemon;

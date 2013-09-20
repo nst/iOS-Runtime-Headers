@@ -11,6 +11,7 @@
 @property(readonly) NSArray * ports;
 
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
+- (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
 - (void)didStartForSession:(id)arg1;
 - (void)didStopForSession:(id)arg1 error:(id)arg2;

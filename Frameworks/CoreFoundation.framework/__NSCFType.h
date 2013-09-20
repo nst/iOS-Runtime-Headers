@@ -9,6 +9,7 @@
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
+- (void)dealloc;
 - (id)description;
 - (void)finalize;
 - (unsigned int)hash;

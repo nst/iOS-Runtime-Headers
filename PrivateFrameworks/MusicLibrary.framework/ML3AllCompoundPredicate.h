@@ -6,5 +6,6 @@
 }
 
 - (id)compoundOperatorJoiner;
+- (id)predicateOptimizedForEntityClass:(Class)arg1;
 
 @end

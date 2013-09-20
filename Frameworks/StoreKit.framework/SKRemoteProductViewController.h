@@ -10,18 +10,20 @@
 
 @property SKStoreProductViewController * productViewController;
 
++ (id)exportedInterface;
++ (id)serviceViewControllerInterface;
+
 - (void)didFinish;
 - (void)didFinishWithResult:(id)arg1;
 - (void)didReceiveTitle:(id)arg1;
 - (void)loadDidFinishWithResult:(id)arg1 error:(id)arg2;
 - (void)presentPageWithRequest:(id)arg1 animated:(id)arg2;
 - (id)productViewController;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
+- (void)promptForStarRating;
 - (void)setProductViewController:(id)arg1;
 - (void)setStatusBarHidden:(id)arg1 withAnimation:(id)arg2;
 - (void)setStatusBarStyle:(id)arg1 animated:(id)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (void)storeKit_setWantsFullScreenLayout:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

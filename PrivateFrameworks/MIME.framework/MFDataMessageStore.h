@@ -4,7 +4,7 @@
 
 @class NSData;
 
-@interface MFDataMessageStore : MessageStore {
+@interface MFDataMessageStore : MFMessageStore {
     NSData *_data;
     Class _messageClass;
 }

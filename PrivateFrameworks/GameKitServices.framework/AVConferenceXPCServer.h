@@ -28,6 +28,7 @@
 - (id)allocWithZone:(struct _NSZone { }*)arg1;
 - (void)appendContextToDictionary:(id)arg1 forConnection:(id)arg2;
 - (void)appendPIDToDictionary:(id)arg1 pid:(int)arg2;
+- (id)authorizedTokenData;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createClientDiedDictionary;

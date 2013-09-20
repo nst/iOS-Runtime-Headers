@@ -4,7 +4,7 @@
 
 @class GEOPhoto, NSString;
 
-@interface GEOUser : PBCodable {
+@interface GEOUser : PBCodable <NSCopying> {
     GEOPhoto *_image;
     NSString *_name;
 }
@@ -15,6 +15,7 @@
 @property(retain) NSString * name;
 
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

@@ -5,17 +5,20 @@
 @class <SCROBrailleTranslatorProtocol>, NSBundle, NSLock;
 
 @interface SCROBrailleTranslationManager : NSObject {
+    BOOL _alwaysUsesNemethCodeForTechnicalText;
     BOOL _auxTableSupportsContractedBraille;
     BOOL _auxTableSupportsEightDotBraille;
     <SCROBrailleTranslatorProtocol> *_auxTranslator;
     NSBundle *_auxTranslatorBundle;
     NSLock *_contentLock;
+    <SCROBrailleTranslatorProtocol> *_nemethTranslator;
     BOOL _tableSupportsContractedBraille;
     BOOL _tableSupportsEightDotBraille;
     <SCROBrailleTranslatorProtocol> *_translator;
     NSBundle *_translatorBundle;
 }
 
+@property BOOL alwaysUsesNemethCodeForTechnicalText;
 @property(readonly) BOOL auxiliaryTableSupportsContractedBraille;
 @property(readonly) BOOL auxiliaryTableSupportsEightDotBraille;
 @property(readonly) BOOL primaryTableSupportsContractedBraille;
@@ -25,6 +28,9 @@
 + (void)initialize;
 + (id)sharedManager;
 
+- (id)_loadTableIdentifier:(id)arg1 bundle:(id*)arg2 existingBundle:(id)arg3 existingTranslator:(id)arg4;
+- (id)_printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5 isTechnical:(BOOL)arg6;
+- (BOOL)alwaysUsesNemethCodeForTechnicalText;
 - (id)autorelease;
 - (id)auxiliaryTableIdentifier;
 - (BOOL)auxiliaryTableSupportsContractedBraille;
@@ -35,11 +41,13 @@
 - (id)primaryTableIdentifier;
 - (BOOL)primaryTableSupportsContractedBraille;
 - (BOOL)primaryTableSupportsEightDotBraille;
+- (id)printBrailleForTechnicalText:(id)arg1 primaryTable:(BOOL)arg2 locations:(id*)arg3;
 - (id)printBrailleForText:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;
 - (id)printBrailleForText:(id)arg1 primaryTable:(BOOL)arg2 contracted:(BOOL)arg3 eightDot:(BOOL)arg4 locations:(id*)arg5;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
+- (void)setAlwaysUsesNemethCodeForTechnicalText:(BOOL)arg1;
 - (void)setAuxiliaryTranslationTableWithTableIdentifier:(id)arg1;
 - (void)setPrimaryTranslationTableWithTableIdentifier:(id)arg1;
 - (id)textForPrintBraille:(id)arg1 contracted:(BOOL)arg2 eightDot:(BOOL)arg3 locations:(id*)arg4;

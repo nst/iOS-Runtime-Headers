@@ -24,6 +24,7 @@
         float left; 
         float bottom; 
         float right; 
+    Class _appearanceGuideClass;
     id _appearanceStorage;
     UIToolbarButtonBadge *_badge;
     BOOL _badgeAnimated;
@@ -46,6 +47,7 @@
     UIColor *_toolbarTintColor;
 }
 
+@property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
 @property(setter=_setTintColor:,retain) UIColor * _tintColor;
 @property(getter=isAnimatedTrashButton) BOOL animatedTrashButton;
 
@@ -66,6 +68,7 @@
 - (void)_adjustToolbarButtonInfoTintColorHasChanged:(BOOL)arg1;
 - (void)_animateImage:(float)arg1 withButtonBar:(id)arg2 target:(id)arg3 didFinishSelector:(SEL)arg4;
 - (void)_animateImage:(float)arg1 withButtonBar:(id)arg2;
+- (Class)_appearanceGuideClass;
 - (void)_applyBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (id)_backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
@@ -75,13 +78,15 @@
 - (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_defaultTitleColorForState:(unsigned int)arg1;
 - (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
-- (struct UIOffset { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })_defaultTitleShadowOffsetForState:(unsigned int)arg1;
 - (id)_info;
+- (BOOL)_infoIsButton;
 - (BOOL)_isBordered;
 - (BOOL)_isOn;
 - (id)_newButton;
 - (float)_paddingForLeft:(BOOL)arg1;
 - (void)_positionBadge;
+- (void)_setAppearanceGuideClass:(Class)arg1;
 - (void)_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
@@ -96,11 +101,14 @@
 - (void)_setInfoExtremityWidth:(float)arg1 isMin:(BOOL)arg2;
 - (void)_setInfoFlexibleWidth:(BOOL)arg1;
 - (void)_setInfoWidth:(float)arg1;
+- (void)_setLastHighlightSuccessful:(BOOL)arg1;
 - (void)_setOn:(BOOL)arg1;
 - (void)_setPressed:(BOOL)arg1;
 - (void)_setTintColor:(id)arg1;
 - (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setTouchHasHighlighted:(BOOL)arg1;
+- (BOOL)_shouldApplyPadding;
 - (void)_showPressedIndicator:(BOOL)arg1;
 - (void)_sizeView:(id)arg1 toPossibleTitles:(id)arg2 pressedTitle:(id)arg3;
 - (id)_tintColor;
@@ -127,7 +135,6 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setSizesToFitImage:(BOOL)arg1;
-- (void)setTintColor:(id)arg1;
 - (void)setToolbarTintColor:(id)arg1;
 - (void)setUseSelectedImage:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

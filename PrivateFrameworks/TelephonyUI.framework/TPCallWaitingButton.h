@@ -2,29 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPButton;
-
-@interface TPCallWaitingButton : UIImageView {
-    unsigned int _type : 1;
-    TPButton *_innerButton;
+@interface TPCallWaitingButton : TPButton {
 }
 
-+ (id)_buttonForType:(int)arg1;
-+ (struct CGSize { float x1; float x2; })defaultSizeForType:(int)arg1;
-+ (float)defaultVerticalCenteringOffset;
++ (id)callWaitingLayoutViewWithTopButton:(id)arg1 bottomButton:(id)arg2;
++ (float)yWindowOffsetForCallWaitingLayoutView;
 
-- (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
-- (void)addTarget:(id)arg1 action:(SEL)arg2 forEvents:(int)arg3;
-- (void)dealloc;
-- (id)initBottomForIncomingCallWaiting;
-- (id)initBottomForSecondIncomingCallWaiting;
-- (id)initBottomForTTYWithTitle:(id)arg1;
-- (id)initTopForIncomingCallWaiting;
-- (id)initTopForTTY;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 type:(int)arg2;
-- (BOOL)isEnabled;
-- (void)removeTarget:(id)arg1 forControlEvents:(unsigned int)arg2;
-- (void)removeTarget:(id)arg1 forEvents:(int)arg2;
-- (void)setEnabled:(BOOL)arg1;
+- (id)initWithCustomTitle:(id)arg1 subtitle:(id)arg2;
+- (id)initWithCustomTitle:(id)arg1;
+- (id)initWithType:(int)arg1;
 
 @end

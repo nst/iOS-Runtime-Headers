@@ -7,6 +7,7 @@
 @interface MSASProtocol : NSObject <NSURLConnectionDelegate> {
     NSURL *_baseURL;
     MSASPConnectionGate *_gate;
+    NSString *_headerVersion;
     BOOL _isShuttingDown;
     NSObject<OS_dispatch_queue> *_memberQueue;
     NSObject<OS_dispatch_group> *_pendingConnectionsGroup;
@@ -18,6 +19,7 @@
 
 @property(retain) NSURL * baseURL;
 @property(retain) MSASPConnectionGate * gate;
+@property(readonly) NSString * headerVersion;
 @property BOOL isShuttingDown;
 @property(retain) NSObject<OS_dispatch_queue> * memberQueue;
 @property(retain) NSObject<OS_dispatch_group> * pendingConnectionsGroup;
@@ -36,12 +38,15 @@
 - (id)_deleteAssetsURLWithBaseURL:(id)arg1;
 - (id)_deleteCommentURLWithBaseURL:(id)arg1;
 - (id)_deleteURLWithBaseURL:(id)arg1;
+- (id)_enableMultipleContributorsURLWithBaseURL:(id)arg1;
 - (id)_enablePublicAccessURLWithBaseURL:(id)arg1;
 - (id)_getAlbumURL;
 - (id)_getAssetsURLWithBaseURL:(id)arg1;
 - (id)_getChangesURL;
 - (id)_getCommentsURLWithBaseURL:(id)arg1;
 - (id)_getTokensURLWithBaseURL:(id)arg1;
+- (id)_getUploadTokensURLWithBaseURL:(id)arg1;
+- (id)_getVideoURLWithBaseURL:(id)arg1;
 - (id)_putAssetsURLWithBaseURL:(id)arg1;
 - (id)_serverSideConfigURL;
 - (id)_setAlbumStateURL;
@@ -57,7 +62,7 @@
 - (void)acceptInvitationWithToken:(id)arg1 completionBlock:(id)arg2;
 - (void)addComment:(id)arg1 toAssetCollection:(id)arg2 inAlbum:(id)arg3 albumURLString:(id)arg4 completionBlock:(id)arg5;
 - (void)addSharingRelationships:(id)arg1 toAlbum:(id)arg2 completionBlock:(id)arg3;
-- (void)albumSummaryAlbum:(id)arg1 albumURLString:(id)arg2 resetSync:(BOOL)arg3 resetSyncedBlock:(id)arg4 assetCollectionChangeBlock:(id)arg5 completionBlock:(id)arg6;
+- (void)albumSummaryAlbum:(id)arg1 albumURLString:(id)arg2 resetSync:(BOOL)arg3 completionBlock:(id)arg4;
 - (id)baseURL;
 - (void)createAlbum:(id)arg1 completionBlock:(id)arg2;
 - (void)dealloc;
@@ -74,13 +79,16 @@
 - (void)getServerSideConfigCompletionBlock:(id)arg1;
 - (void)getSharingInfoForAlbum:(id)arg1 albumURLString:(id)arg2 completionBlock:(id)arg3;
 - (void)getTokensForAssets:(id)arg1 inAlbum:(id)arg2 albumURLString:(id)arg3 completionBlock:(id)arg4;
+- (void)getUploadTokens:(id)arg1 forAssetCollectionWithGUID:(id)arg2 inAlbumWithGUID:(id)arg3 albumURLString:(id)arg4 completionBlock:(id)arg5;
+- (void)getVideoURL:(id)arg1 forAssetCollectionWithGUID:(id)arg2 inAlbumWithGUID:(id)arg3 albumURLString:(id)arg4 completionBlock:(id)arg5;
+- (id)headerVersion;
 - (id)initWithPersonID:(id)arg1;
 - (BOOL)isShuttingDown;
 - (id)memberQueue;
 - (id)pendingConnectionsGroup;
 - (id)pendingConnectionsQueue;
 - (id)personID;
-- (void)putAssetCollections:(id)arg1 intoAlbum:(id)arg2 completionBlock:(id)arg3;
+- (void)putAssetCollections:(id)arg1 intoAlbum:(id)arg2 albumURLString:(id)arg3 completionBlock:(id)arg4;
 - (void)removeSharingRelationships:(id)arg1 fromAlbum:(id)arg2 completionBlock:(id)arg3;
 - (BOOL)responseDict:(id)arg1 containsLimitErrorCode:(id)arg2 outMaxAllowed:(id*)arg3;
 - (void)sendURLRequest:(id)arg1 bodyObj:(id)arg2 completionBlock:(id)arg3;
@@ -93,6 +101,7 @@
 - (void)setGate:(id)arg1;
 - (void)setIsShuttingDown:(BOOL)arg1;
 - (void)setMemberQueue:(id)arg1;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbum:(id)arg2 completionBlock:(id)arg3;
 - (void)setPendingConnectionsGroup:(id)arg1;
 - (void)setPendingConnectionsQueue:(id)arg1;
 - (void)setPublicAccessEnabled:(BOOL)arg1 forAlbum:(id)arg2 completionBlock:(id)arg3;

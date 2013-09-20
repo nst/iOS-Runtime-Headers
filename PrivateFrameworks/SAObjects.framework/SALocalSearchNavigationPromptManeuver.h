@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSURL;
+@class NSNumber;
 
-@interface SALocalSearchNavigationPromptManeuver : SABaseClientBoundCommand {
+@interface SALocalSearchNavigationPromptManeuver : SADomainCommand {
 }
 
 @property(copy) NSNumber * maneuverIndex;
-@property(copy) NSURL * targetAppId;
 
 + (id)navigationPromptManeuver;
 + (id)navigationPromptManeuverWithDictionary:(id)arg1 context:(id)arg2;
@@ -18,7 +17,5 @@
 - (id)maneuverIndex;
 - (BOOL)requiresResponse;
 - (void)setManeuverIndex:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

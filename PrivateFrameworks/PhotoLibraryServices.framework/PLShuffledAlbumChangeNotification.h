@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSIndexSet, NSOrderedSet, PLAlbumChangeNotification, PLShuffledAlbum;
+@class NSIndexSet, NSOrderedSet, PLAssetContainerChangeNotification, PLShuffledAlbum;
 
-@interface PLShuffledAlbumChangeNotification : PLAlbumChangeNotification {
+@interface PLShuffledAlbumChangeNotification : PLAssetContainerChangeNotification {
     PLShuffledAlbum *_album;
-    PLAlbumChangeNotification *_backingNotification;
+    PLAssetContainerChangeNotification *_backingNotification;
     NSIndexSet *_changedIndexes;
     NSOrderedSet *_newSet;
 }

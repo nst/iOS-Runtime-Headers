@@ -30,6 +30,7 @@
 - (id)_preferredLanguageIDsFromUserSelectedKeyboards;
 - (id)ambiguousDialectsFromUserKeyboardPreferences;
 - (id)basicDescription;
+- (id)characterSetForRanges:(id)arg1;
 - (id)commonCharacters;
 - (void)dealloc;
 - (id)debugDescription;
@@ -39,6 +40,7 @@
 - (id)dialectForLanguageID:(id)arg1;
 - (id)dialectForSystemLanguage;
 - (id)dialectThatCanSpeakCharacter:(unsigned short)arg1;
+- (id)dialectsThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)init;
 - (BOOL)isCharacterCommon:(unsigned short)arg1;
 - (id)langMaps;

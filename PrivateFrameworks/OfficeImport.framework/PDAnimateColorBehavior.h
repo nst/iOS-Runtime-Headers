@@ -4,7 +4,7 @@
 
 @class OADColor;
 
-@interface PDAnimateColorBehavior : PDCommonBehaviorData {
+@interface PDAnimateColorBehavior : PDAnimateBehavior {
     OADColor *mBy;
     int mColorSpace;
     int mDirection;

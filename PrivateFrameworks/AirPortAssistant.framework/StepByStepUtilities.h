@@ -7,6 +7,7 @@
 
 + (int)autoGuessRecommendationToMatrixTag:(id)arg1;
 + (id)findSourceBaseByName:(id)arg1 fromParamDict:(id)arg2;
++ (id)findSourceBaseByRadioName:(id)arg1 fromParamDict:(id)arg2;
 + (id)findSourceConfigByName:(id)arg1 fromParamDict:(id)arg2;
 + (id)findSourceNetworkByName:(id)arg1 fromParamDict:(id)arg2;
 + (void)formatRecommendation:(id)arg1 fromParamDict:(id)arg2 forStep:(int)arg3 restoreString:(id*)arg4 restoreSpecificString:(id*)arg5 dontRecommendString:(id*)arg6;

@@ -30,12 +30,13 @@
 - (id)_storeIdentifier;
 - (id)_storeInfo1;
 - (id)entity;
+- (id)entityName;
 - (void)finalize;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;
-- (void)release;
+- (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 

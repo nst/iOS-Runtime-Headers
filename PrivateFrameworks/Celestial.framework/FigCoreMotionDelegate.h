@@ -52,6 +52,7 @@
     double dGyroUpdateInterval;
     double dLatestFusedMotionCopied;
     double dLatestTimestamp;
+    struct OpaqueFigSemaphore { } *dataSemaphore;
     } fusedRingAccel[256];
     BOOL fusedRingDoingBiasEstimation[256];
     int fusedRingIndex;
@@ -59,6 +60,8 @@
     } fusedRingQuaternion[256];
     double fusedRingTime[256];
     BOOL gettingAttitudeChange;
+    double latestGravityDataTime;
+    double latestMotionDataTime;
     BOOL manageAccel;
     BOOL manageFusedMotion;
     BOOL manageGravity;
@@ -71,6 +74,7 @@
 }
 
 - (id)copyAllFusedMotionData;
+- (id)copyFusedMotionData:(double)arg1 endTime:(double)arg2 timeoutValue:(double)arg3 errOut:(int*)arg4;
 - (id)copyNewFusedMotionData;
 - (void)dealloc;
 - (void)didUpdateAcceleration:(struct { float x1; float x2; float x3; })arg1 time:(double)arg2;
@@ -79,14 +83,14 @@
 - (void)didUpdatePositionWithAcceleration:(struct { float x1; float x2; float x3; }*)arg1 forTimeStamp:(double)arg2;
 - (void)didUpdatePositionWithTimeStamp:(double)arg1;
 - (void)didUpdateVelocityWithAcceleration:(struct { float x1; float x2; float x3; }*)arg1 forTimeStamp:(double)arg2;
-- (void)getCurrentAttitude:(double*)arg1 :(double*)arg2 :(double*)arg3;
-- (void)getCurrentDeltaAttitude:(double*)arg1 :(double*)arg2 :(double*)arg3;
+- (void)getCurrentAttitudeRoll:(double*)arg1 pitch:(double*)arg2 yaw:(double*)arg3;
+- (void)getCurrentDeltaAttitudeRoll:(double*)arg1 pitch:(double*)arg2 yaw:(double*)arg3;
 - (void)getCurrentDeltaQuaternion:(struct { double x1; double x2; double x3; double x4; }*)arg1;
 - (void)getCurrentQuaternion:(struct { double x1; double x2; double x3; double x4; }*)arg1;
-- (long)getFusedVector:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
+- (long)getFusedVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (long)getGravityZ:(float*)arg1 forTimeStamp:(double)arg2;
-- (void)getPosition:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
-- (long)getVector:(float*)arg1 :(float*)arg2 :(float*)arg3 forTimeStamp:(double)arg4;
+- (void)getPositionX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
+- (long)getVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (id)init;
 - (id)initWithAccelerometer:(BOOL)arg1 gravityZ:(BOOL)arg2 fusedMotion:(BOOL)arg3 accelUpdateInterval:(float)arg4 fusedMotionUpdateInterval:(float)arg5;
 - (BOOL)isCopyingAllData;

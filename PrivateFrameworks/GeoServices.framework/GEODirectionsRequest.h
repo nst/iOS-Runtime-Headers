@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation, GEOMapRegion, GEORouteAttributes, NSData, NSMutableArray;
+@class GEOClientCapabilities, GEOLocation, GEOMapRegion, GEORouteAttributes, NSData, NSMutableArray;
 
-@interface GEODirectionsRequest : PBRequest {
+@interface GEODirectionsRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int departureTime : 1; 
-        unsigned int maxRouteCount : 1; 
+        unsigned int mainTransportTypeMaxRouteCount : 1; 
         unsigned int timeSinceLastRerouteRequest : 1; 
+        unsigned int getRouteForZilchPoints : 1; 
+    GEOClientCapabilities *_clientCapabilities;
     GEOMapRegion *_currentMapRegion;
     GEOLocation *_currentUserLocation;
     int _departureTime;
+    BOOL _getRouteForZilchPoints;
     } _has;
-    unsigned int _maxRouteCount;
+    unsigned int _mainTransportTypeMaxRouteCount;
+    NSData *_originalDirectionsResponseID;
     NSData *_originalRouteID;
     NSData *_originalRouteZilchPoints;
     GEORouteAttributes *_routeAttributes;
@@ -22,18 +26,24 @@
     NSMutableArray *_waypoints;
 }
 
+@property(retain) GEOClientCapabilities * clientCapabilities;
 @property(retain) GEOMapRegion * currentMapRegion;
 @property(retain) GEOLocation * currentUserLocation;
 @property int departureTime;
+@property BOOL getRouteForZilchPoints;
+@property(readonly) BOOL hasClientCapabilities;
 @property(readonly) BOOL hasCurrentMapRegion;
 @property(readonly) BOOL hasCurrentUserLocation;
 @property BOOL hasDepartureTime;
-@property BOOL hasMaxRouteCount;
+@property BOOL hasGetRouteForZilchPoints;
+@property BOOL hasMainTransportTypeMaxRouteCount;
+@property(readonly) BOOL hasOriginalDirectionsResponseID;
 @property(readonly) BOOL hasOriginalRouteID;
 @property(readonly) BOOL hasOriginalRouteZilchPoints;
 @property(readonly) BOOL hasRouteAttributes;
 @property BOOL hasTimeSinceLastRerouteRequest;
-@property unsigned int maxRouteCount;
+@property unsigned int mainTransportTypeMaxRouteCount;
+@property(retain) NSData * originalDirectionsResponseID;
 @property(retain) NSData * originalRouteID;
 @property(retain) NSData * originalRouteZilchPoints;
 @property(retain) GEORouteAttributes * routeAttributes;
@@ -45,24 +55,31 @@
 - (void)addWaypoint:(id)arg1;
 - (void)clearServiceTags;
 - (void)clearWaypoints;
+- (id)clientCapabilities;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentMapRegion;
 - (id)currentUserLocation;
 - (void)dealloc;
 - (int)departureTime;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)getRouteForZilchPoints;
+- (BOOL)hasClientCapabilities;
 - (BOOL)hasCurrentMapRegion;
 - (BOOL)hasCurrentUserLocation;
 - (BOOL)hasDepartureTime;
-- (BOOL)hasMaxRouteCount;
+- (BOOL)hasGetRouteForZilchPoints;
+- (BOOL)hasMainTransportTypeMaxRouteCount;
+- (BOOL)hasOriginalDirectionsResponseID;
 - (BOOL)hasOriginalRouteID;
 - (BOOL)hasOriginalRouteZilchPoints;
 - (BOOL)hasRouteAttributes;
 - (BOOL)hasTimeSinceLastRerouteRequest;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)maxRouteCount;
+- (unsigned int)mainTransportTypeMaxRouteCount;
+- (id)originalDirectionsResponseID;
 - (id)originalRouteID;
 - (id)originalRouteZilchPoints;
 - (BOOL)readFrom:(id)arg1;
@@ -72,13 +89,17 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
+- (void)setClientCapabilities:(id)arg1;
 - (void)setCurrentMapRegion:(id)arg1;
 - (void)setCurrentUserLocation:(id)arg1;
 - (void)setDepartureTime:(int)arg1;
+- (void)setGetRouteForZilchPoints:(BOOL)arg1;
 - (void)setHasDepartureTime:(BOOL)arg1;
-- (void)setHasMaxRouteCount:(BOOL)arg1;
+- (void)setHasGetRouteForZilchPoints:(BOOL)arg1;
+- (void)setHasMainTransportTypeMaxRouteCount:(BOOL)arg1;
 - (void)setHasTimeSinceLastRerouteRequest:(BOOL)arg1;
-- (void)setMaxRouteCount:(unsigned int)arg1;
+- (void)setMainTransportTypeMaxRouteCount:(unsigned int)arg1;
+- (void)setOriginalDirectionsResponseID:(id)arg1;
 - (void)setOriginalRouteID:(id)arg1;
 - (void)setOriginalRouteZilchPoints:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;

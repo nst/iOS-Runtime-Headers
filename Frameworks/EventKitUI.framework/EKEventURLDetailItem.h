@@ -8,9 +8,10 @@
     UITableViewCell *_cell;
 }
 
-- (id)cellForSubitemAtIndex:(int)arg1;
+- (void).cxx_destruct;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
-- (float)defaultCellHeightForSubitemAtIndex:(int)arg1 forWidth:(float)arg2;
+- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
 - (void)reset;
 

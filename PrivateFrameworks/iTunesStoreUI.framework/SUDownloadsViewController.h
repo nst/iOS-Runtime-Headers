@@ -9,6 +9,7 @@
     SUClientInterface *_clientInterface;
     SUDownloadManager *_downloadManager;
     UIView *_emptyDownloadQueueView;
+    BOOL _isEditing;
     BOOL _isUsingNetwork;
     NSObject<OS_dispatch_source> *_reloadFromServerTimer;
 }
@@ -25,6 +26,7 @@
 - (void)_tabConfigurationChanged:(id)arg1;
 - (void)_updatePurchasedPlaylistButton;
 - (void)applicationWillEnterForeground;
+- (id)contentScrollView;
 - (id)copyScriptViewController;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;

@@ -20,6 +20,7 @@
 - (id)init;
 - (void)layoutScene:(id)arg1 withContext:(id)arg2;
 - (id)modelRoot;
+- (void)runAnimation:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)worldDisplayDidChange;
 - (void)worldLayoutDidChange;

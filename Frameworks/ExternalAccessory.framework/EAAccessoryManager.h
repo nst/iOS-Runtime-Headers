@@ -8,9 +8,10 @@
 
 @class EABluetoothAccessoryPicker, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSTimer;
 
-@interface EAAccessoryManager : NSObject <EABluetoothAccessoryPickerDelegate> {
+@interface EAAccessoryManager : NSObject <EABluetoothAccessoryPickerDelegate, EADiscoveredWirelessAccessoryDelegate> {
     NSMutableArray *_connectedAccessories;
     NSObject<OS_dispatch_queue> *_connectionQueue;
+    NSMutableArray *_discoveredWirelessAccessories;
     EABluetoothAccessoryPicker *_picker;
     id _pickerCompletion;
     NSTimer *_pickerTimer;
@@ -21,6 +22,8 @@
 
 @property(readonly) NSArray * connectedAccessories;
 
++ (void)accessibilityStartListening;
++ (void)accessibilityStopListening;
 + (BOOL)isLoggingEnabled;
 + (void)registerCapabilities:(unsigned int)arg1;
 + (id)sharedAccessoryManager;
@@ -46,6 +49,12 @@
 - (void)_nmeaFilteringSupportChanged:(id)arg1;
 - (void)_notifyObserversThatAccessoryDisconnectedWithUserInfo:(id)arg1;
 - (void)_removeAllAccessoriesFromArray:(id)arg1 notifyClients:(BOOL)arg2;
+- (void)_timeSyncInfoUpdated:(id)arg1;
+- (void)_vehicleDataUpdated:(id)arg1;
+- (void)_wirelessAccessoryAvailable:(id)arg1;
+- (void)_wirelessAccessoryDidConnect:(id)arg1;
+- (void)_wirelessAccessoryDisconnected:(id)arg1;
+- (void)_wirelessAccessoryNotAvailable:(id)arg1;
 - (void)accessibilityAction:(id)arg1;
 - (void)accessibilityContextChange:(id)arg1;
 - (void)accessibilityItemPropertyRequest:(id)arg1;
@@ -56,8 +65,10 @@
 - (id)connectedAccessories;
 - (void)dealloc;
 - (void)devicePicker:(id)arg1 didSelectAddress:(id)arg2 errorCode:(int)arg3;
+- (void)disconnectWirelessAccessory:(id)arg1;
 - (void)endSession:(unsigned int)arg1 forConnectionID:(unsigned int)arg2;
 - (id)init;
+- (void)initiateConnectionToWirelessAccessory:(id)arg1;
 - (void)openCompleteForSession:(unsigned int)arg1 connectionID:(unsigned int)arg2;
 - (void)pointOfInterestSelection:(id)arg1;
 - (void)registerForLocalNotifications;
@@ -67,6 +78,8 @@
 - (BOOL)shouldAllowCppRuntime;
 - (BOOL)shouldAllowInternalProtocols;
 - (void)showBluetoothAccessoryPickerWithNameFilter:(id)arg1 completion:(id)arg2;
+- (void)startWirelessAccessoryDiscovery;
+- (void)stopWirelessAccessoryDiscovery;
 - (void)unregisterForLocalNotifications;
 - (void)wakeAccessoryWithToken:(id)arg1;
 

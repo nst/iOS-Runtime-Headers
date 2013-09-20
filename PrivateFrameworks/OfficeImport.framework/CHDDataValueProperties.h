@@ -24,6 +24,6 @@
 - (void)setDataValueIndex:(unsigned int)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (void)setMarker:(id)arg1;
-- (id)shallowCopyWithIndex:(int)arg1;
+- (id)shallowCopyWithIndex:(unsigned int)arg1;
 
 @end

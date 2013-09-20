@@ -2,28 +2,69 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendar, NSArray, NSDate, NSString, NSTimeZone, NSURL;
+@class EKAttendee, EKCalendar, EKCalendarItem, EKOrganizer, EKStructuredLocation, NSArray, NSDate, NSString, NSTimeZone, NSURL;
 
 @interface EKCalendarItem : EKObject {
-    int _actionsDisabledCachedValue;
+    int _actionsStateCachedValue;
+    BOOL _haveCachedActionsState;
+    EKAttendee *_selfAttendee;
+    NSString *_sharedItemCreatedByEmailAddress;
 }
 
 @property(copy) NSURL * URL;
 @property(readonly) NSString * UUID;
+@property(copy) NSURL * action;
+@property(readonly) int actionsState;
 @property(copy) NSArray * alarms;
+@property(copy) NSArray * allAlarms;
+@property(getter=isAllDay) BOOL allDay;
+@property(readonly) BOOL allowsAlarmModifications;
+@property(readonly) BOOL allowsAttendeeModifications;
+@property(readonly) BOOL allowsCalendarModifications;
+@property(readonly) BOOL allowsRecurrenceModifications;
+@property(readonly) NSArray * attachments;
 @property(readonly) NSArray * attendees;
 @property(retain) EKCalendar * calendar;
 @property(readonly) NSString * calendarItemExternalIdentifier;
 @property(readonly) NSString * calendarItemIdentifier;
 @property(readonly) NSDate * creationDate;
+@property(getter=isDefaultAlarmRemoved) BOOL defaultAlarmRemoved;
+@property(copy) NSString * externalID;
+@property(copy) NSString * externalModificationTag;
+@property(readonly) NSURL * externalURI;
 @property(readonly) BOOL hasAlarms;
 @property(readonly) BOOL hasAttendees;
 @property(readonly) BOOL hasNotes;
 @property(readonly) BOOL hasRecurrenceRules;
+@property(readonly) BOOL isEditable;
+@property(readonly) BOOL isExternallyOrganizedInvitation;
+@property(readonly) BOOL isFloating;
+@property(readonly) BOOL isOrganizedBySharedCalendarOwner;
+@property(readonly) BOOL isSelfOrganized;
+@property(readonly) BOOL isSelfOrganizedInvitation;
 @property(readonly) NSDate * lastModifiedDate;
 @property(copy) NSString * location;
 @property(copy) NSString * notes;
+@property(retain) EKOrganizer * organizer;
+@property(readonly) EKCalendarItem * originalItem;
+@property int priority;
 @property(copy) NSArray * recurrenceRules;
+@property(readonly) BOOL requiresDetach;
+@property(retain) EKAttendee * selfAttendee;
+@property(readonly) int selfParticipantStatus;
+@property(copy) NSString * sharedItemCreatedByDisplayName;
+@property(copy) NSString * sharedItemCreatedByEmailAddress;
+@property(copy) NSString * sharedItemCreatedByFirstName;
+@property(copy) NSString * sharedItemCreatedByLastName;
+@property(copy) NSDate * sharedItemCreatedDate;
+@property(copy) NSTimeZone * sharedItemCreatedTimeZone;
+@property(copy) NSString * sharedItemModifiedByDisplayName;
+@property(copy) NSString * sharedItemModifiedByEmailAddress;
+@property(copy) NSString * sharedItemModifiedByFirstName;
+@property(copy) NSString * sharedItemModifiedByLastName;
+@property(copy) NSDate * sharedItemModifiedDate;
+@property(copy) NSTimeZone * sharedItemModifiedTimeZone;
+@property(copy) EKStructuredLocation * structuredLocation;
 @property(copy) NSTimeZone * timeZone;
 @property(copy) NSString * title;
 
@@ -39,11 +80,12 @@
 - (id)_recurrencesRelation;
 - (id)_selfAttendeeRelation;
 - (id)action;
-- (BOOL)actionsDisabled;
+- (int)actionsState;
 - (void)addAlarm:(id)arg1;
 - (void)addAttendee:(id)arg1;
 - (void)addRecurrenceRule:(id)arg1;
 - (id)alarms;
+- (id)allAlarms;
 - (BOOL)allowsAlarmModifications;
 - (BOOL)allowsAttendeeModifications;
 - (BOOL)allowsCalendarModifications;
@@ -56,11 +98,15 @@
 - (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id*)arg3;
 - (id)creationDate;
 - (id)description;
+- (id)externalID;
+- (id)externalModificationTag;
 - (id)externalURI;
+- (id)findOriginalAlarmStartingWith:(id)arg1;
 - (BOOL)hasAlarms;
 - (BOOL)hasAttendees;
 - (BOOL)hasNotes;
 - (BOOL)hasRecurrenceRules;
+- (BOOL)isAlarmAcknowledgedPropertyDirty;
 - (BOOL)isAllDay;
 - (BOOL)isDefaultAlarmRemoved;
 - (BOOL)isEditable;
@@ -77,9 +123,11 @@
 - (id)organizer;
 - (id)originalItem;
 - (int)priority;
-- (void)rebase;
+- (BOOL)rebase;
 - (id)recurrenceRules;
+- (void)removeAcknowledgedSnoozedAlarms;
 - (void)removeAlarm:(id)arg1;
+- (void)removeAllSnoozedAlarms;
 - (void)removeAttendee:(id)arg1;
 - (void)removeRecurrenceRule:(id)arg1;
 - (BOOL)requiresDetach;
@@ -87,19 +135,24 @@
 - (int)selfParticipantStatus;
 - (void)setAction:(id)arg1;
 - (void)setAlarms:(id)arg1;
+- (void)setAllAlarms:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
 - (void)setAttendees:(id)arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDefaultAlarmRemoved:(BOOL)arg1;
+- (void)setExternalID:(id)arg1;
+- (void)setExternalModificationTag:(id)arg1;
 - (void)setLastModifiedDate:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setOrganizer:(id)arg1;
 - (void)setPriority:(int)arg1;
 - (void)setRecurrenceRules:(id)arg1;
+- (void)setSelfAttendee:(id)arg1;
 - (void)setSharedItemCreatedByAddress:(id)arg1;
 - (void)setSharedItemCreatedByDisplayName:(id)arg1;
+- (void)setSharedItemCreatedByEmailAddress:(id)arg1;
 - (void)setSharedItemCreatedByFirstName:(id)arg1;
 - (void)setSharedItemCreatedByLastName:(id)arg1;
 - (void)setSharedItemCreatedDate:(id)arg1;
@@ -126,6 +179,8 @@
 - (id)sharedItemModifiedByLastName;
 - (id)sharedItemModifiedDate;
 - (id)sharedItemModifiedTimeZone;
+- (void)snoozeAlarm:(id)arg1 withLocation:(id)arg2 proximity:(int)arg3;
+- (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
 - (id)structuredLocation;
 - (id)timeZone;
 - (id)title;

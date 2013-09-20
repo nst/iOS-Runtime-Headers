@@ -30,6 +30,7 @@
 - (void)_addAttributeMapping:(id)arg1;
 - (void)_addRelationshipMapping:(id)arg1;
 - (void)_createCachesAndOptimizeState;
+- (BOOL)_hasInferredMappingNeedingValidation;
 - (id)_initWithSourceEntityDescription:(id)arg1 destinationEntityDescription:(id)arg2;
 - (id)_mappingsByName;
 - (id)_migrationPolicy;

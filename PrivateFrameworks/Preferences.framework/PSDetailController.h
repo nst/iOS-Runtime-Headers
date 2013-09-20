@@ -20,6 +20,7 @@
 - (void)statusBarWillAnimateByHeight:(float)arg1;
 - (void)suspend;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

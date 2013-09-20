@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PDAnimateScaleBehavior : PDCommonBehaviorData {
+@interface PDAnimateScaleBehavior : PDAnimateBehavior {
     struct CGPoint { 
         float x; 
         float y; 

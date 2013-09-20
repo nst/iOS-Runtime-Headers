@@ -6,9 +6,9 @@
    See Warning(s) below.
  */
 
-@class BKSProcessAssertion, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, _UIAsyncInvocation, _UIViewServiceSessionEndpoint;
+@class BKSProcessAssertion, NSError, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, _UIAsyncInvocation;
 
-@interface _UIViewServiceInterfaceConnectionRequest : NSObject <XPCProxyTarget> {
+@interface _UIViewServiceInterfaceConnectionRequest : NSObject {
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
     NSError *_cancellationError;
@@ -18,18 +18,16 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceBundleIdentifier;
     BKSProcessAssertion *_serviceProcessAssertion;
-    _UIViewServiceSessionEndpoint *_serviceSessionEndpoint;
-    NSObject<OS_xpc_object> *_serviceSessionManagerConnection;
-    _UIAsyncInvocation *_sessionConnectionCancelInvocation;
+    NSXPCConnection *_serviceSessionConnection;
     int _sessionRequestNotifyToken;
 }
 
++ (id)connectToViewServiceViaXPCObjectsWithBundleIdentifier:(id)arg1 connectionHandler:(id)arg2;
 + (id)connectToViewServiceWithBundleIdentifier:(id)arg1 connectionHandler:(id)arg2;
 
 - (int)__automatic_invalidation_logic;
 - (void)_cancelUnconditionallyThen:(id)arg1;
 - (void)_cancelWithError:(id)arg1;
-- (void)_connectToServiceSessionViaEndpoint:(id)arg1;
 - (void)_createProcessAssertion;
 - (void)_didConnectToService;
 - (void)_establishConnection;
@@ -37,7 +35,6 @@
 - (void)_launchService;
 - (BOOL)_tryRetain;
 - (void)dealloc;
-- (id)proxy:(id)arg1 detailedSignatureForSelector:(SEL)arg2;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

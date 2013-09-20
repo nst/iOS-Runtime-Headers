@@ -6,7 +6,6 @@
 
 @interface UIPDFPopupAnnotationView : UIPDFAnnotationView {
     UIImage *_image;
-    int _style;
 }
 
 - (void)dealloc;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, SSAuthenticationContext, SUClientInterface, SUScriptAccount, SUScriptAccountManager, SUScriptAppleAccountStore, SUScriptApplication, SUScriptDevice, SUScriptFairPlayContext, SUScriptKeyValueStore, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptPreviewOverlay, SUScriptProtocol, SUScriptPurchaseManager, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, SUWebImagePool, WebFrame;
+@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, SSAuthenticationContext, SUClientInterface, SUScriptAccount, SUScriptAccountManager, SUScriptAppleAccountStore, SUScriptApplication, SUScriptDevice, SUScriptFairPlayContext, SUScriptKeyValueStore, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptPreviewOverlay, SUScriptProtocol, SUScriptPurchaseManager, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, WebFrame;
 
 @interface SUScriptInterface : SUScriptObject {
     SUScriptAccountManager *_accountManager;
@@ -20,11 +20,12 @@
     SUScriptOperationDelegate *_scriptOperationDelegate;
     SUScriptWindowContext *_scriptWindowContext;
     id _threadSafeDelegate;
-    SUWebImagePool *_webImagePool;
 }
 
 @property(readonly) SUScriptFairPlayContext * accountCreationSecureContext;
 @property(readonly) NSArray * accounts;
+@property(readonly) NSString * actionTypeDismissSheet;
+@property(readonly) NSString * actionTypeDismissWindows;
 @property(readonly) NSString * actionTypeReturnToLibrary;
 @property(readonly) SUScriptAppleAccountStore * appleAccountStore;
 @property(readonly) SUScriptApplication * application;
@@ -75,6 +76,8 @@
 - (id)accountForDSID:(id)arg1;
 - (id)accountName;
 - (id)accounts;
+- (id)actionTypeDismissSheet;
+- (id)actionTypeDismissWindows;
 - (id)actionTypeReturnToLibrary;
 - (id)activeAudioPlayers;
 - (id)activeNetworkType;
@@ -111,7 +114,7 @@
 - (void)dismissWindowsWithOptions:(id)arg1;
 - (void)dispatchGlobalEventWithName:(id)arg1 payload:(id)arg2;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
-- (id)getAudioPlayerForURL:(id)arg1;
+- (id)getAudioPlayerForURL:(id)arg1 keyURL:(id)arg2 certificateURL:(id)arg3;
 - (id)getDownloadQueueWithQueueType:(id)arg1;
 - (void)getInstalledSoftwareApplicationsWithCompletionFunction:(id)arg1;
 - (void)getSoftwareApplicationWithAdamID:(id)arg1 completionFunction:(id)arg2;
@@ -126,7 +129,6 @@
 - (void)handleTrackListWithPropertyListString:(id)arg1;
 - (id)hardwareType;
 - (BOOL)haveAccount;
-- (id)imagePool;
 - (id)init;
 - (void)initAuthentication;
 - (id)installedSoftwareApplications;
@@ -152,26 +154,27 @@
 - (id)makeDateFormatter;
 - (id)makeDialog;
 - (id)makeDocumentInteractionController;
+- (id)makeDonationViewControllerWithCharityIdentifier:(id)arg1;
 - (id)makeFacebookRequestWithURL:(id)arg1 requestMethod:(id)arg2;
 - (id)makeFacebookSessionWithAccount:(id)arg1;
+- (id)makeGiftViewController;
 - (id)makeLinearGradientWithX0:(float)arg1 y0:(float)arg2 x1:(float)arg3 y1:(float)arg4;
 - (id)makeLookupRequest;
 - (id)makeMediaPlayerItemWithProperties:(id)arg1;
 - (id)makeMediaPlayerViewControllerWithMediaPlayerItem:(id)arg1;
 - (id)makeMenuViewController;
-- (id)makeMessage;
-- (id)makeMessageEntryViewController;
 - (id)makeNavigationControllerWithRootViewController:(id)arg1;
 - (id)makeNumberFormatterWithStyle:(id)arg1;
 - (id)makePopOverWithViewController:(id)arg1;
 - (id)makeRadialGradientWithX0:(float)arg1 y0:(float)arg2 r0:(float)arg3 x1:(float)arg4 y1:(float)arg5 r1:(float)arg6;
+- (id)makeRedeemViewController;
 - (id)makeReportAProblemViewControllerWithAdamID:(id)arg1;
 - (id)makeReviewWithAdamID:(id)arg1;
 - (id)makeScriptActionWithType:(id)arg1;
-- (id)makeScriptImagePickerController;
 - (id)makeSegmentedControl;
 - (id)makeSplitViewController;
 - (id)makeStorePageWithURLs:(id)arg1;
+- (id)makeStoreSheetViewController;
 - (id)makeTextFieldWithStyle:(id)arg1 placeholder:(id)arg2 value:(id)arg3 width:(id)arg4;
 - (id)makeTweetComposeViewController;
 - (id)makeURLRequestWithURLs:(id)arg1 timeoutInterval:(id)arg2;

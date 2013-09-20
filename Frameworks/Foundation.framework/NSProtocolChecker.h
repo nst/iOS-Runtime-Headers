@@ -8,6 +8,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)protocolCheckerWithTarget:(id)arg1 protocol:(id)arg2;
 
+- (id)_imMethodSignatureForSelector:(SEL)arg1;
 - (const char *)_localClassNameForClass;
 - (BOOL)conformsToProtocol:(id)arg1;
 - (void)doesNotRecognizeSelector:(SEL)arg1;

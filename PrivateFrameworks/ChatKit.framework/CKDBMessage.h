@@ -22,7 +22,7 @@
     NSString *_madridChatIdentifier;
     NSString *_madridRoomname;
     NSString *_madridService;
-    int _madridType;
+    long long _madridType;
     NSArray *_messageParts;
     NSString *_plainBody;
     NSArray *_recipients;
@@ -51,18 +51,18 @@
 @property(readonly) NSString * madridChatIdentifier;
 @property(readonly) NSString * madridRoomname;
 @property(readonly) NSString * madridService;
-@property(readonly) int madridType;
+@property(readonly) long long madridType;
 @property(readonly) NSArray * messageParts;
 @property(readonly) NSString * plainBody;
 @property(readonly) NSArray * recipients;
 @property(readonly) NSString * subject;
 @property(readonly) NSString * text;
 
-- (struct { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; long long x3; }*)_copyMadridAttachmentRecordForGUID:(id)arg1;
+- (struct _IMDAttachmentRecordStruct { }*)_copyMadridAttachmentRecordForGUID:(id)arg1;
 - (BOOL)_hasAttachments;
 - (void)_loadMessageParts;
 - (id)address;
-- (id)alertImageData;
+- (id)alertImage;
 - (id)attachmentText:(BOOL)arg1;
 - (id)attachmentText;
 - (id)date;
@@ -87,7 +87,7 @@
 - (id)madridChatIdentifier;
 - (id)madridRoomname;
 - (id)madridService;
-- (int)madridType;
+- (long long)madridType;
 - (id)messageParts;
 - (id)plainBody;
 - (id)previewText;

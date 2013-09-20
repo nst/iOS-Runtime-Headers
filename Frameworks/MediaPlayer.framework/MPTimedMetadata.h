@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, NSString;
+@class AVMetadataItem, NSDictionary, NSString;
 
 @interface MPTimedMetadata : NSObject {
-    void *_internal;
+    AVMetadataItem *_metadataItem;
 }
 
 @property(readonly) NSDictionary * allMetadata;
@@ -14,9 +14,9 @@
 @property(readonly) double timestamp;
 @property(readonly) id value;
 
+- (void).cxx_destruct;
 - (id)_initWithMetadataItem:(id)arg1;
 - (id)allMetadata;
-- (void)dealloc;
 - (id)init;
 - (id)key;
 - (id)keyspace;

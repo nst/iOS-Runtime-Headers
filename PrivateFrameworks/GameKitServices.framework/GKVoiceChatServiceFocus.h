@@ -19,19 +19,19 @@
 
 + (id)defaultVoiceChatService;
 
-- (BOOL)acceptCallID:(int)arg1 error:(id*)arg2;
+- (BOOL)acceptCallID:(unsigned long)arg1 error:(id*)arg2;
 - (id)currentFocus;
 - (void)dealloc;
-- (void)denyCallID:(int)arg1;
-- (id)dictionaryForCallID:(int)arg1 isIncomingDictonary:(BOOL)arg2;
+- (void)denyCallID:(unsigned long)arg1;
+- (id)dictionaryForCallID:(unsigned long)arg1 isIncomingDictonary:(BOOL)arg2;
 - (id)dictionaryForNonce:(int)arg1 participantID:(id)arg2 isIncomingDictonary:(BOOL)arg3;
 - (id)dictionaryForParticipantID:(id)arg1 isIncomingDictonary:(BOOL)arg2;
 - (BOOL)hasMic;
-- (id)incomingDictionaryMatchingOriginalCallID:(int)arg1 participantID:(id)arg2;
+- (id)incomingDictionaryMatchingOriginalCallID:(unsigned long)arg1 participantID:(id)arg2;
 - (id)init;
 - (BOOL)isAudioPausedToParticipantID:(id)arg1;
 - (double)localBitrate;
-- (id)localDisplayNameForCallID:(int)arg1;
+- (id)localDisplayNameForCallID:(unsigned long)arg1;
 - (double)localFramerate;
 - (void*)localVideoLayer;
 - (id)openOutgoingDictionaryForParticipantID:(id)arg1;
@@ -47,7 +47,7 @@
 - (double)remoteBitrate;
 - (void)remoteCancelled:(id)arg1;
 - (void)remoteCancelledProc:(id)arg1;
-- (id)remoteDisplayNameForCallID:(int)arg1;
+- (id)remoteDisplayNameForCallID:(unsigned long)arg1;
 - (double)remoteFramerate;
 - (void*)remoteVideoLayer;
 - (void)sendFocusChange:(BOOL)arg1;
@@ -68,7 +68,7 @@
 - (void)stopVoiceChatProc:(id)arg1;
 - (void)updatedConnectedPeers:(id)arg1;
 - (void)updatedMutedPeers:(id)arg1 forParticipantID:(id)arg2;
-- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(int)arg3 error:(id)arg4;
-- (void)videoConference:(id)arg1 didStopWithCallID:(int)arg2 error:(id)arg3;
+- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned long)arg3 error:(id)arg4;
+- (void)videoConference:(id)arg1 didStopWithCallID:(unsigned long)arg2 error:(id)arg3;
 
 @end

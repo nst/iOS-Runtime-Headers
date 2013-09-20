@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMailMimePart : MimePart {
+@interface MFMailMimePart : MFMimePart {
 }
 
 + (Class)attachmentClass;

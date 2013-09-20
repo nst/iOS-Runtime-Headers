@@ -10,7 +10,9 @@
         float y; 
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
+    BOOL _canRestoreInputViews;
     <_UIViewServiceDeputyDelegate> *_delegate;
+    BOOL _didResignForDisappear;
     UIWindow *_hostedWindow;
     _UIAsyncInvocation *_invalidationInvocation;
     BOOL _isRestoringInputViews;
@@ -19,11 +21,13 @@
     } _windowOffset;
 }
 
-+ (id)operatorWithRemoteViewControllerProxy:(id)arg1;
++ (id)XPCInterface;
++ (id)operatorWithRemoteViewControllerProxy:(id)arg1 hostPID:(int)arg2;
 
 - (int)__automatic_invalidation_logic;
 - (void)__createHostedTextEffectsWithReplyHandler:(id)arg1;
 - (void)__hostDidEnterBackground;
+- (void)__hostViewWillAppear:(BOOL)arg1;
 - (void)__hostViewWillDisappear:(BOOL)arg1;
 - (void)__hostWillEnterForeground;
 - (void)__prepareForDisconnectionWithCompletionHandler:(id)arg1;
@@ -32,7 +36,11 @@
 - (void)_invalidateUnconditionallyThen:(id)arg1;
 - (BOOL)_isDeallocating;
 - (void)_prepareForDisconnectionUnconditionallyThen:(id)arg1;
+- (id)_queue;
+- (void)_restoreInputViews;
+- (void)_sendNotification:(id)arg1;
 - (BOOL)_tryRetain;
+- (void)_viewServiceHostWillEnterForeground:(id)arg1;
 - (void)dealloc;
 - (void)finishRotation;
 - (id)invalidate;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPlaceSearchFeedbackRequest : PBRequest {
+@interface GEOPlaceSearchFeedbackRequest : PBRequest <NSCopying> {
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
@@ -45,6 +45,7 @@
 
 - (long long)businessID;
 - (void)copyTo:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

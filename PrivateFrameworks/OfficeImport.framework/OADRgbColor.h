@@ -26,7 +26,9 @@
 - (id)initWithRedByte:(float)arg1 greenByte:(float)arg2 blueByte:(float)arg3;
 - (id)initWithWhite:(float)arg1;
 - (id)initWithWhiteByte:(float)arg1;
+- (BOOL)isBlack;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isWhite;
 - (float)red;
 - (unsigned char)redByte;
 - (id)rgbColorWithFraction:(float)arg1 ofRgbColor:(id)arg2;
